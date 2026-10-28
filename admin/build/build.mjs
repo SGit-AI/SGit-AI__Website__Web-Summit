@@ -9,7 +9,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../.
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
 const VERSION = fs.readFileSync(path.join(ROOT, 'admin/build/version.txt'), 'utf8').trim()
 const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
-const NAV = [['Articles', 'articles/index.html'], ['Team', 'team/index.html'], ['Briefing', 'briefing/index.html'], ['The agent', 'agent/index.html'], ['About', 'about/index.html'], ['Versions', 'admin/versions.html']]
+const NAV = [['Articles', 'articles/index.html'], ['Team', 'team/index.html'], ['Keys', 'keys/index.html'], ['Briefing', 'briefing/index.html'], ['The agent', 'agent/index.html'], ['About', 'about/index.html'], ['Versions', 'admin/versions.html']]
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 const slug = s => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
@@ -166,6 +166,15 @@ write('team/index.html', page({
 }))
 twin('team/index.html', 'The team', team.about, team.members.map(m => `- [${m.name}](${m.id}/index.md): ${m.role} (${KINDS[m.kind]}, ${m.status})`).join('\n'))
 pages.push({ rel: 'team/index.html', title: 'The team', description: 'Who runs this site: the people, the agent and the roles still open.' })
+
+// public keys: data/keys.json -> keys/index.html, keys/index.md and one public bundle file per key
+const keyData = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/keys.json'), 'utf8'))
+const keyFile = k => `sha256-${k.bundle.signing_fingerprint.split(':')[1]}.json`
+for (const k of keyData.keys) write(`keys/${keyFile(k)}`, JSON.stringify({ label: k.bundle.label, fingerprint: k.bundle.fingerprint, signing_fingerprint: k.bundle.signing_fingerprint, bundle: k.bundle }, null, 2) + '\n')
+const keySection = k => `<h2 id="${k.id}">${esc(k.label)}</h2><p>${esc(k.role)}</p><table><tr><th>Signing fingerprint</th><td><code>${esc(k.bundle.signing_fingerprint)}</code></td></tr><tr><th>Encryption fingerprint</th><td><code>${esc(k.bundle.fingerprint)}</code></td></tr><tr><th>How it got here</th><td>${esc(k.how)}</td></tr><tr><th>Added</th><td>${esc(k.added)}</td></tr><tr><th>Public bundle</th><td><a href="${keyFile(k)}">${keyFile(k)}</a></td></tr></table><details><summary>The public keys, as text</summary><pre><code>${esc(k.bundle.encrypt.trim())}\n${esc(k.bundle.sign.trim())}</code></pre></details>`
+write('keys/index.html', page({ rel: 'keys/index.html', title: 'Public keys', description: 'The public keys published on this site, and how each came to be trusted.', body: `<p>${inline(keyData.about)}</p>${keyData.keys.map(keySection).join('')}`, mdTwin: 'keys/index.md' }))
+twin('keys/index.html', 'Public keys', keyData.about, keyData.keys.map(k => `## ${k.label}\n\n${k.role}\n\n- Signing fingerprint: ${k.bundle.signing_fingerprint}\n- Encryption fingerprint: ${k.bundle.fingerprint}\n- How it got here: ${k.how}\n- Public bundle: ${keyFile(k)}`).join('\n\n'))
+pages.push({ rel: 'keys/index.html', title: 'Public keys', description: 'The public keys published on this site, and how each came to be trusted.' })
 
 // versions
 const versions = JSON.parse(fs.readFileSync(path.join(ROOT, 'admin/versions.json'), 'utf8'))

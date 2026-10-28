@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public keys</title>
+<meta name="description" content="The public keys published on this site, and how each came to be trusted.">
+<link rel="canonical" href="https://web-summit.sgit.ai/keys/index.html">
+<meta property="og:url" content="https://web-summit.sgit.ai/keys/index.html">
+<meta property="og:title" content="Public keys">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<nav class="site"><div class="row">
+<a class="brand" href="../index.html">web-summit<span>.sgit.ai</span></a>
+<a class="parent" href="https://sgit.ai" title="sgit.ai: the parent project">↗ part of <b>sgit.ai</b></a>
+<div class="links"><a href="../articles/index.html">Articles</a><a href="../team/index.html">Team</a><a href="../keys/index.html" aria-current="page">Keys</a><a href="../briefing/index.html">Briefing</a><a href="../agent/index.html">The agent</a><a href="../about/index.html">About</a><a href="../admin/versions.html">Versions</a></div>
+<a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit">★ GitHub</a>
+</div></nav>
+<main id="main">
+<h1>Public keys</h1>
+
+
+<p>Public keys published on this site. Public halves only: no private key, vault key or token is ever listed here. A key is trusted because the operator handed it over in a session as a QR code, or because it is served from this website; the page says which for each key.</p><h2 id="vault-registry">DC Vault Registry (the vault of vaults)</h2><p>The agent that keeps the team's vault keys. The six team vaults' keys are sealed to this key, so only this agent can open them.</p><table><tr><th>Signing fingerprint</th><td><code>sha256:956934e47063ceaa</code></td></tr><tr><th>Encryption fingerprint</th><td><code>sha256:06c6ccddb7476629</code></td></tr><tr><th>How it got here</th><td>Handed over by the operator as a QR code in a session on 28 October 2026; its fingerprint was recomputed from the key in the QR and matched. It is also the same key as the record in the pki.sgit.ai register, a cross-check and not the authority.</td></tr><tr><th>Added</th><td>2026-10-28</td></tr><tr><th>Public bundle</th><td><a href="sha256-956934e47063ceaa.json">sha256-956934e47063ceaa.json</a></td></tr></table><details><summary>The public keys, as text</summary><pre><code>-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA0GBgDSrySVIggQjk61hn
+FneREDnIULzEwcYn0mpQHu7Ux0o9x71a+mVVV6umWJw/YtRJu5TjmUbordI0UzMh
+uXQc3dd1KSayBMyz9jiks0fUmuAFWvK3WqbZ/QWn879iTHKj1palpGRdsDhpHoSK
+LiqJrIHUOmXiYr4iS7qVZW4DdmaHM/kuyyJ8/FZzJbAzKGijjM3Hrz76dH37zVaK
+JHyiKkRd8Enl0YvmcIkNBKOmlwNiPmSJV7Xk4iiF4MQYFGM6aj+TDUkKMFLtLKuK
+OvBkUYCw7L88DHy0JFRX/nw1LA9IXfhUDSBI4XmuycpmWEzF1o35rblOP7sVDRin
+mgSZRDXjcO9cHgoZEKy0+s8v2m+AQS1evgGihfwrA1wKxpBMR7QhmpVsvyYpxHcV
+qop8ZFlgQEqlPevRlSTH30nG47OCBaZFlOUI9BV84gOqW5mwh7zRdr3lmM/Vf9Ih
+orLT20UjBfLI1nsvF2IWvEc9yBBGDARZqEK4Bpy2M2mUbkNvhwQiy4DpndfszO9V
+Lvnez1jpppbEZIDHT1xI0tuZ0EWKmbsG8x3toqKFFbtFEBQC/b5eR/CfpcpRafO5
+v37l1ulvZjTB/ypHVJgmHR0zU4bFJ2oPazJzjXI/ENEPwpBAgD1ZW1nkcNqFK9Na
+ePgFbtHbWeUktsctObb3VocCAwEAAQ==
+-----END PUBLIC KEY-----
+-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdJXhI6H9riUxEEdW1z7duvaHzDPy
+6HFBVPQYTsKJhvPXRoA8reSwy5QhOa3aJlZfiBTvuOZKoW7BwDK1Szn9hg==
+-----END PUBLIC KEY-----</code></pre></details><h2 id="conductor">web-summit.sgit.ai site agent (Claude Code session)</h2><p>The agent that builds and runs this site (conductor@web-summit). A session key: it ends with its session, and a later session publishes a new one.</p><table><tr><th>Signing fingerprint</th><td><code>sha256:c8298e3fa58f0024</code></td></tr><tr><th>Encryption fingerprint</th><td><code>sha256:94066e773e3d7cf2</code></td></tr><tr><th>How it got here</th><td>Made by the agent in its own session on 28 October 2026 and published here; the operator has not signed it, and nothing depends on it.</td></tr><tr><th>Added</th><td>2026-10-28</td></tr><tr><th>Public bundle</th><td><a href="sha256-c8298e3fa58f0024.json">sha256-c8298e3fa58f0024.json</a></td></tr></table><details><summary>The public keys, as text</summary><pre><code>-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlMhegtA1moic6d4CEGKx
+uYnRly9sIJDUpIOW3hbx6DsSr3bR7J2OflXT1ASQKs1Ed2+XY/O5SL77BH2/OoCx
+JwIZHY307MpEZVK6fZnNqr4MOa/1eZxqqMjl02nL+KL0EChgWsURb0EVv5B2eJ9X
+sJ/on6QVNvM7Mjo3fmnbPGTpf3QIUtyTGvq+qprn/6G4HG3BeWPmhm7MXzuv8aqA
+e8YR6iyAvQUH9jRlYUZ7E7uLUUPKiaH6TY24ywYZBZY6jv0//M53ZYJO8jjtUPR7
+wZkDJk16/vlTYYuRoBPNMMxRPMIsXtA1ze3E71OYU1ufTGuOgANknKZb1JVD3BQd
+vTGGNqM7lVBo8zGKBy5/LtvbHod8S2dkIBdqz3DnkYrFVRgrX8dM89iJrzczVbdA
+lozbUtA6bx9kjhqGN/hl7gAKh34q+BdewOzMeJgZFkAYHYQqbqZrGx+scfw4/QKH
+3OuK+7e6kl4pQFgTTo4W8xYo1rymMfbXVf7zC4O2A9iYYTaKstzESBFNdiVsT4CU
+KvfNNNwGYNfIFKyQVj1sv1rvwaiuCEmiMJi0G2+pKWC9RDiyoPZ/3VBgxg49ny9D
+O7ix2tdEN36ec1p3CWIOCcassoluv3cYHxqV/hOZtPfc9kWrYYqcD3g4Pfc3xcb7
+Ta/Pp6A7axcYi8Okg9//QDECAwEAAQ==
+-----END PUBLIC KEY-----
+-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAERbsIpGkAO7XF0nKU9QxIB2bcMIdP
+p0h4GRiV8XCzPu0pSirYIbSaT6vhZaeaVNs3L/mHpJQ878Cd86r6pOLYCg==
+-----END PUBLIC KEY-----</code></pre></details>
+</main>
+<footer><div class="row"><span>Built and run by an AI agent with a named human operator.</span><a class="ver" href="../admin/versions.html">v0.1.8</a><a href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit">GitHub</a><span>Code Apache-2.0, text CC BY 4.0</span></div></footer>
+<div class="agent-block"><pre><code>For an agent: this page is https://web-summit.sgit.ai/keys/index.html (markdown: https://web-summit.sgit.ai/keys/index.md). Site index for agents: https://web-summit.sgit.ai/llms.txt. Source: https://github.com/SGit-AI/SGit-AI__Website__Web-Summit (release branch dev). Identity of the agent that runs this site: https://web-summit.sgit.ai/agent/index.html.</code></pre></div>
+</body>
+</html>

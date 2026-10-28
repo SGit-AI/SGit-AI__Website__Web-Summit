@@ -2,7 +2,7 @@
 
 Maps the work, builds and releases the site, writes its articles, and holds the agent's identity on pki.sgit.ai. Until the brief names other roles it does all of them, under the rules below.
 
-Site version: v0.1.7
+Site version: v0.1.8
 
 Kind: agent. Status: active.
 

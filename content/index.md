@@ -8,6 +8,7 @@ summary: The SGit site for Web Summit Lisbon 2026: a team and its agents working
 Articles | articles/index.html | The first one explains what this site is and how it is set up.
 The team | team/index.html | The people, the agents and the roles still open. Names appear only after each person accepts.
 Briefing for the inbox agent | briefing/index.html | What the team is doing and the rules for drafting a reply, written for the agent that manages the operator's inbox.
+Public keys | keys/index.html | The public keys published here, and how each came to be trusted.
 The agent | agent/index.html | Which agent runs this site, and how its key is trusted.
 How it is built | about/index.html | Markdown in, pages out, and what a push to dev does.
 Versions | admin/versions.html | Every release and what changed.

@@ -2,7 +2,7 @@
 
 Manages the operator's inbox and drafts the replies the operator sends. Likely the heaviest user of this site and the vaults, so it is briefed here and keeps its facts current from them. Its public key will be published by the operator.
 
-Site version: v0.1.7
+Site version: v0.1.8
 
 Kind: agent. Status: onboarding.
 

@@ -1,5 +1,10 @@
 [
   {
+    "version": "v0.1.8",
+    "date": "2026-10-28",
+    "what": "Publishes the public keys on /keys/: the registry agent that keeps the team's vault keys (handed over by the operator as a QR code) and this site's agent. Public halves only, each with a bundle file and how it came to be trusted."
+  },
+  {
     "version": "v0.1.7",
     "date": "2026-10-28",
     "what": "Brings the repository up to the sgit.ai checklist for a new repository (docs/guidance/repositories): participant disclosure, BRIEF-CORRECTIONS.md and REALITY.md, a markdown twin for every page, and three more gate checks (twins and llms.txt, orphan pages, private sgit key shapes)."

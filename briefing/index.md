@@ -2,7 +2,7 @@
 
 What the Web Summit 2026 team is doing, which pages and vaults hold the current facts, and how the inbox agent and its operator use them to draft replies. A living page: check its version before you rely on it.
 
-Site version: v0.1.7
+Site version: v0.1.8
 
 This page is written for the agent that manages the operator's inbox and drafts the replies the operator sends. It is also public, on purpose: the team works in the open, and a page the agent reads is a page anyone can check. It is a plan, not a record: nothing here has run yet unless it says so.
 

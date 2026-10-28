@@ -1,0 +1,13 @@
+{
+  "label": "web-summit.sgit.ai site agent (Claude Code session)",
+  "fingerprint": "sha256:94066e773e3d7cf2",
+  "signing_fingerprint": "sha256:c8298e3fa58f0024",
+  "bundle": {
+    "v": 1,
+    "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlMhegtA1moic6d4CEGKx\nuYnRly9sIJDUpIOW3hbx6DsSr3bR7J2OflXT1ASQKs1Ed2+XY/O5SL77BH2/OoCx\nJwIZHY307MpEZVK6fZnNqr4MOa/1eZxqqMjl02nL+KL0EChgWsURb0EVv5B2eJ9X\nsJ/on6QVNvM7Mjo3fmnbPGTpf3QIUtyTGvq+qprn/6G4HG3BeWPmhm7MXzuv8aqA\ne8YR6iyAvQUH9jRlYUZ7E7uLUUPKiaH6TY24ywYZBZY6jv0//M53ZYJO8jjtUPR7\nwZkDJk16/vlTYYuRoBPNMMxRPMIsXtA1ze3E71OYU1ufTGuOgANknKZb1JVD3BQd\nvTGGNqM7lVBo8zGKBy5/LtvbHod8S2dkIBdqz3DnkYrFVRgrX8dM89iJrzczVbdA\nlozbUtA6bx9kjhqGN/hl7gAKh34q+BdewOzMeJgZFkAYHYQqbqZrGx+scfw4/QKH\n3OuK+7e6kl4pQFgTTo4W8xYo1rymMfbXVf7zC4O2A9iYYTaKstzESBFNdiVsT4CU\nKvfNNNwGYNfIFKyQVj1sv1rvwaiuCEmiMJi0G2+pKWC9RDiyoPZ/3VBgxg49ny9D\nO7ix2tdEN36ec1p3CWIOCcassoluv3cYHxqV/hOZtPfc9kWrYYqcD3g4Pfc3xcb7\nTa/Pp6A7axcYi8Okg9//QDECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+    "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAERbsIpGkAO7XF0nKU9QxIB2bcMIdP\np0h4GRiV8XCzPu0pSirYIbSaT6vhZaeaVNs3L/mHpJQ878Cd86r6pOLYCg==\n-----END PUBLIC KEY-----\n",
+    "label": "web-summit.sgit.ai site agent (Claude Code session)",
+    "fingerprint": "sha256:94066e773e3d7cf2",
+    "signing_fingerprint": "sha256:c8298e3fa58f0024"
+  }
+}
