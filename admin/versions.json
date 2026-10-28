@@ -1,5 +1,10 @@
 [
   {
+    "version": "v0.1.7",
+    "date": "2026-10-28",
+    "what": "Brings the repository up to the sgit.ai checklist for a new repository (docs/guidance/repositories): participant disclosure, BRIEF-CORRECTIONS.md and REALITY.md, a markdown twin for every page, and three more gate checks (twins and llms.txt, orphan pages, private sgit key shapes)."
+  },
+  {
     "version": "v0.1.6",
     "date": "2026-10-28",
     "what": "Redesign in the house style of sgit.ai, coding.sgit.ai and ux.sgit.ai: warm paper palette and teal accent as tokens with a dark theme, sticky nav with the parent-site pill, a home page written for a stranger and dated, cards, skip link and focus styles. validate now fails on a literal colour outside the tokens. Heading anchors written {#id} now render as anchors instead of literal text."

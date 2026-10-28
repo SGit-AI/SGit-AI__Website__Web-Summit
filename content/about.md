@@ -21,6 +21,10 @@ Pages are written as markdown in `content/` and rendered by `node admin/build/bu
 
 CI runs three jobs in order: **validate**, **tag**, **deploy**. A red validate means no tag and no deploy. The version lives in `admin/build/version.txt`, appears in every page's footer, and is in the subject of the release commit (`site v0.1.2: one sentence`). The [article on how this site is set up](../articles/how-this-site-is-set-up.html) explains each step.
 
+## Who builds it, and what interest they have
+
+See [the participant disclosure](participant.html).
+
 ## Licence
 
 Code is Apache-2.0. The text and data of this site are CC BY 4.0.

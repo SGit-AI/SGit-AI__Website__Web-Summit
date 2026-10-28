@@ -2,7 +2,7 @@
 
 The SGit site for Web Summit Lisbon 2026: a team and its agents working in public. What exists today is the site, its release pipeline, the team roster and six vaults; the company map and news are still to come.
 
-Site version: v0.1.6
+Site version: v0.1.7
 
 ```cards
 Articles | articles/index.html | The first one explains what this site is and how it is set up.

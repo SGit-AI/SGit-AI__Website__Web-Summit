@@ -30,3 +30,7 @@ The agent's record is in `agent/identity.json` (public statements only) and desc
 ## Team
 
 The roster is `data/team.json` (the shape of the PHP newsroom's roster); `build.mjs` renders `/team/` and a page per member. The conductor (this agent, `conductor@web-summit`) keeps it. Roles marked open are proposals, not commitments, until the brief says otherwise.
+
+## The estate's standard
+
+This repository follows https://sgit.ai/docs/guidance/repositories.md (read it, and /llms.txt, before changing the shape of the site): the brief, `BRIEF-CORRECTIONS.md`, `REALITY.md` (a thing not in it does not exist), one version on every push, the gate, a markdown twin for every page, the participant disclosure, and a credentials tier that is never committed. Not yet done, recorded in `REALITY.md`: `review/`, a release script that verifies the live site, the Agent Contact file, a row on nfrs.sgit.ai.

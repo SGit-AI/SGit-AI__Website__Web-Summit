@@ -9,6 +9,7 @@
 //   6. div balance
 //   7. every page ends with an agent block
 //   8. every article has a markdown twin, and a .sig that names a signer
+//  12. every page has its .md twin and is named in llms.txt; no page is an orphan (reachable from index.html by links)
 //  11. assets/site.css writes colour only between tokens:start and tokens:end
 //  10. no source file is gitignored: a build tool that is not in the repository cannot be run by CI
 //   9. the generated pages are up to date with content/ (build.mjs would change nothing)
@@ -75,10 +76,12 @@ for (const p of listed) if (!fs.existsSync(path.join(ROOT, p))) errors.push(`sit
 for (const f of htmlFiles) if (!listed.includes(rel(f))) errors.push(`sitemap.xml is missing ${rel(f)}`)
 
 // 5. key-leak tripwire
+const SGIT_KEY = /sgit_private_(vault|read)_[A-Za-z0-9]/
 const KEY_SHAPE = /[A-Za-z0-9_-]{20,}:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/
 for (const f of files) {
     if (/\.(png|jpg|jpeg|gif|webp|ico|woff2?|zip|pdf)$/.test(f)) continue
     const t = fs.readFileSync(f, 'utf8')
+    if (SGIT_KEY.test(t)) errors.push(`${rel(f)}: contains a private sgit key (vault or private read)`)
     if (KEY_SHAPE.test(t)) errors.push(`${rel(f)}: contains a vault-key-shaped string`)
     if (/-----BEGIN (RSA |EC )?PRIVATE KEY-----/.test(t)) errors.push(`${rel(f)}: contains a private key`)
 }
@@ -110,6 +113,25 @@ try {
     const after = snap()
     if (before !== after) errors.push('generated pages are stale: run node admin/build/build.mjs and commit the result')
 } catch (e) { errors.push(`build.mjs failed: ${e.message}`) }
+
+// 12. twins, llms.txt and orphans
+for (const f of htmlFiles) {
+    const r = rel(f), twin = r.replace(/\.html$/, '.md')
+    if (!fs.existsSync(path.join(ROOT, twin))) errors.push(`${r}: no markdown twin ${twin}`)
+    if (!llms.includes(`/${r}`)) errors.push(`llms.txt does not name /${r}`)
+}
+{
+    const seen = new Set(['index.html']), queue = ['index.html']
+    while (queue.length) {
+        const cur = queue.pop(), dir = path.dirname(cur)
+        for (const m of read(cur).matchAll(/href="([^"#]+)(?:#[^"]*)?"/g)) {
+            if (/^(https?:|mailto:|data:|\/\/)/.test(m[1]) || !m[1].endsWith('.html')) continue
+            const t = path.normalize(path.join(dir, m[1])).split(path.sep).join('/')
+            if (!seen.has(t) && fs.existsSync(path.join(ROOT, t))) { seen.add(t); queue.push(t) }
+        }
+    }
+    for (const f of htmlFiles) if (!seen.has(rel(f))) errors.push(`${rel(f)}: nothing links to it (an orphan page)`)
+}
 
 // 11. colour only through tokens: no literal colour in site.css outside the tokens block
 {

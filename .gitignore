@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Credentials tier: never committed (vault keys, tokens, key stores)
+.credentials/

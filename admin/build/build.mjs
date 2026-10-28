@@ -105,6 +105,9 @@ ${body}
 `
 }
 
+const twinPath = rel => rel.replace(/\.html$/, '.md')
+const twin = (rel, title, summary, md) => write(twinPath(rel), `# ${title}\n\n${summary}\n\nSite version: ${VERSION}\n\n${md.trim()}\n`)
+
 const pages = []   // {rel, title, description}
 const articles = []
 
@@ -126,16 +129,17 @@ write('articles/index.html', page({
     rel: 'articles/index.html', title: 'Articles', description: 'Everything published on web-summit.sgit.ai, newest first.',
     body: `<ul>${articles.map(a => `<li><a href="${a.s}.html">${inline(a.title)}</a><br><span class="meta">${esc(a.date)} · ${esc(a.author)}</span><br>${esc(a.summary)}</li>`).join('')}</ul>`
 }))
+twin('articles/index.html', 'Articles', 'Everything published on web-summit.sgit.ai, newest first.', articles.map(a => `- [${a.title}](${a.s}.md): ${a.date}, ${a.author}. ${a.summary}`).join('\n'))
 pages.push({ rel: 'articles/index.html', title: 'Articles', description: 'Everything published here, newest first.' })
 
 // plain pages: content/index.md -> index.html, content/<name>.md -> <name>/index.html
 for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWith('.md'))) {
     const raw = fs.readFileSync(path.join(ROOT, 'content', f), 'utf8')
     const { meta, body } = parse(raw)
-    const name = f.replace(/\.md$/, ''), rel = name === 'index' ? 'index.html' : `${name}/index.html`
-    write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + render(body), mdTwin: name === 'index' ? 'index.md' : `${name}/index.md`, lead: meta.lead || '', home: name === 'index' }))
+    const name = f.replace(/\.md$/, ''), rel = meta.path || (name === 'index' ? 'index.html' : `${name}/index.html`)
+    write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + render(body), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index' }))
     pages.push({ rel, title: meta.title, description: meta.summary })
-    if (name !== 'index') write(`${name}/index.md`, `# ${meta.title}\n\n${meta.summary}\n\nSite version: ${VERSION}\n\n${body.trim()}\n`)
+    if (name !== 'index') twin(rel, meta.title, meta.summary, body)
     if (name === 'index') write('index.md', `# ${meta.title}\n\n${meta.summary}\n\nSite version: ${VERSION}\n\n${body.trim()}\n`)
 }
 
@@ -152,6 +156,7 @@ for (const m of team.members) {
         rel, title: `${m.name}: ${m.role}`, description: m.summary,
         body: `<p>${inline(m.summary)}</p><p class="meta">${facts.map(([k, v]) => `<b>${k}</b> ${k === 'Kind' || k === 'Status' ? esc(v) : v}`).join(' · ')}</p><h2 id="owns">What they own</h2>${list(m.owns)}<h2 id="rules">The rules they work by</h2>${list(m.rules)}${home ? `<h2 id="home">Their home</h2><ul>${home}</ul>` : ''}<p><a href="../index.html">The team</a></p>`
     }))
+    twin(rel, `${m.name}: ${m.role}`, m.summary, `Kind: ${KINDS[m.kind]}. Status: ${m.status}.\n\n## What they own\n\n${m.owns.map(x => `- ${x}`).join('\n') || 'None yet.'}\n\n## The rules they work by\n\n${m.rules.map(x => `- ${x}`).join('\n') || 'None yet.'}`)
     pages.push({ rel, title: `${m.name}: ${m.role}`, description: m.summary })
 }
 const row = m => `<tr><td><a href="${m.id}/index.html">${esc(m.name)}</a></td><td>${esc(m.role)}</td><td>${KINDS[m.kind]}</td><td>${esc(m.status)}</td></tr>`
@@ -159,6 +164,7 @@ write('team/index.html', page({
     rel: 'team/index.html', title: 'The team', description: 'Who runs this site: the people, the agent and the roles still open.',
     body: `<p>${inline(team.about)}</p><table><tr><th>Member</th><th>Role</th><th>Kind</th><th>Status</th></tr>${team.members.map(row).join('')}</table><p>How the work is released: <a href="../about/index.html">About</a>.</p>`
 }))
+twin('team/index.html', 'The team', team.about, team.members.map(m => `- [${m.name}](${m.id}/index.md): ${m.role} (${KINDS[m.kind]}, ${m.status})`).join('\n'))
 pages.push({ rel: 'team/index.html', title: 'The team', description: 'Who runs this site: the people, the agent and the roles still open.' })
 
 // versions
@@ -167,6 +173,7 @@ write('admin/versions.html', page({
     rel: 'admin/versions.html', title: 'Versions', description: 'Every release of this site and what changed.',
     body: `<p>Every push to <code>dev</code> is a minor release (v0.1.x); every push to <code>main</code> is a major one. CI tags the release.</p><table><tr><th>Version</th><th>Date</th><th>What changed</th></tr>${versions.map(v => `<tr><td class="vnum">${v.version}</td><td>${v.date}</td><td>${esc(v.what)}</td></tr>`).join('')}</table>`
 }))
+twin('admin/versions.html', 'Versions', 'Every release of this site and what changed.', versions.map(v => `- ${v.version} (${v.date}): ${v.what}`).join('\n'))
 pages.push({ rel: 'admin/versions.html', title: 'Versions', description: 'Release history.' })
 
 // machine surfaces
