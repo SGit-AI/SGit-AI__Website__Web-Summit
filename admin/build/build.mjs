@@ -9,7 +9,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../.
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
 const VERSION = fs.readFileSync(path.join(ROOT, 'admin/build/version.txt'), 'utf8').trim()
 const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
-const NAV = [['Articles', 'articles/index.html'], ['Team', 'team/index.html'], ['The agent', 'agent/index.html'], ['About', 'about/index.html'], ['Versions', 'admin/versions.html']]
+const NAV = [['Articles', 'articles/index.html'], ['Team', 'team/index.html'], ['Briefing', 'briefing/index.html'], ['The agent', 'agent/index.html'], ['About', 'about/index.html'], ['Versions', 'admin/versions.html']]
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 const slug = s => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
@@ -121,8 +121,9 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
     const raw = fs.readFileSync(path.join(ROOT, 'content', f), 'utf8')
     const { meta, body } = parse(raw)
     const name = f.replace(/\.md$/, ''), rel = name === 'index' ? 'index.html' : `${name}/index.html`
-    write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body) }))
+    write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: name === 'index' ? 'index.md' : `${name}/index.md` }))
     pages.push({ rel, title: meta.title, description: meta.summary })
+    if (name !== 'index') write(`${name}/index.md`, `# ${meta.title}\n\n${meta.summary}\n\nSite version: ${VERSION}\n\n${body.trim()}\n`)
     if (name === 'index') write('index.md', `# ${meta.title}\n\n${meta.summary}\n\nSite version: ${VERSION}\n\n${body.trim()}\n`)
 }
 

@@ -14,8 +14,15 @@
         "promotion from dev to main (a major release)",
         "confirming each agent's key as its operator"
       ],
-      "rules": ["Agents write next to the brief, never over it."],
-      "home": [["https://pki.sgit.ai/directory/anchors.json", "His anchor key in the pki.sgit.ai register"]]
+      "rules": [
+        "Agents write next to the brief, never over it."
+      ],
+      "home": [
+        [
+          "https://pki.sgit.ai/directory/anchors.json",
+          "His anchor key in the pki.sgit.ai register"
+        ]
+      ]
     },
     {
       "id": "conductor",
@@ -43,9 +50,42 @@
         "Keys never go into a file, a page or a message."
       ],
       "home": [
-        ["agent/index.html", "The agent's identity"],
-        ["admin/versions.html", "Versions"],
-        ["articles/index.html", "Articles"]
+        [
+          "agent/index.html",
+          "The agent's identity"
+        ],
+        [
+          "admin/versions.html",
+          "Versions"
+        ],
+        [
+          "articles/index.html",
+          "Articles"
+        ]
+      ]
+    },
+    {
+      "id": "inbox",
+      "name": "The inbox agent",
+      "kind": "agent",
+      "role": "Operator's inbox: drafts the replies the operator sends",
+      "status": "onboarding",
+      "summary": "Manages the operator's inbox and drafts the replies the operator sends. Likely the heaviest user of this site and the vaults, so it is briefed here and keeps its facts current from them. Its public key will be published by the operator.",
+      "owns": [
+        "the drafts in the operator's drafts folder",
+        "the note that goes with each draft: what it used, what it could not confirm",
+        "its own outbox in the mail vault"
+      ],
+      "rules": [
+        "No agent sends email: it drafts, a person sends.",
+        "It states only facts the site or a vault supports, and says what is to be confirmed.",
+        "Consent and contact details: nothing about a person goes public without their yes."
+      ],
+      "home": [
+        [
+          "briefing/index.html",
+          "The briefing for the inbox agent"
+        ]
       ]
     },
     {
@@ -55,7 +95,9 @@
       "role": "Build, gate and release (open)",
       "status": "open",
       "summary": "Proposed from the PHP team's dev role. Today the conductor does this.",
-      "owns": ["the build, the gate and the release"],
+      "owns": [
+        "the build, the gate and the release"
+      ],
       "rules": [],
       "home": []
     },
@@ -66,7 +108,9 @@
       "role": "Dated articles (open)",
       "status": "open",
       "summary": "Proposed from the PHP team's journalist role. Waits for the brief: there is nothing sourced to write about the event yet.",
-      "owns": ["articles that carry only claims the evidence supports"],
+      "owns": [
+        "articles that carry only claims the evidence supports"
+      ],
       "rules": [],
       "home": []
     },
@@ -77,7 +121,9 @@
       "role": "Sources and evidence (open)",
       "status": "open",
       "summary": "Proposed from the PHP team's evidence roles. Waits for the brief to say what is to be researched.",
-      "owns": ["capturing and hashing every source a claim rests on"],
+      "owns": [
+        "capturing and hashing every source a claim rests on"
+      ],
       "rules": [],
       "home": []
     }

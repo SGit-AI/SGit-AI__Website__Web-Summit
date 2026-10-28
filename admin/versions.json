@@ -1,5 +1,10 @@
 [
   {
+    "version": "v0.1.5",
+    "date": "2026-10-28",
+    "what": "Adds the briefing for the inbox agent (what the team is doing, the rules for a reply, where the current facts live, how the agent and its operator use the vaults) and the inbox agent on the team roster."
+  },
+  {
     "version": "v0.1.4",
     "date": "2026-10-28",
     "what": "Records that pki.sgit.ai keys are paused for now, and how an agent's key is trusted instead."
