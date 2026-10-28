@@ -2,8 +2,9 @@
 
 Every release of this site and what changed.
 
-Site version: v0.1.8
+Site version: v0.1.9
 
+- v0.1.9 (2026-10-28): REALITY.md catches up with /keys/ and the sealed vault keys.
 - v0.1.8 (2026-10-28): Publishes the public keys on /keys/: the registry agent that keeps the team's vault keys (handed over by the operator as a QR code) and this site's agent. Public halves only, each with a bundle file and how it came to be trusted.
 - v0.1.7 (2026-10-28): Brings the repository up to the sgit.ai checklist for a new repository (docs/guidance/repositories): participant disclosure, BRIEF-CORRECTIONS.md and REALITY.md, a markdown twin for every page, and three more gate checks (twins and llms.txt, orphan pages, private sgit key shapes).
 - v0.1.6 (2026-10-28): Redesign in the house style of sgit.ai, coding.sgit.ai and ux.sgit.ai: warm paper palette and teal accent as tokens with a dark theme, sticky nav with the parent-site pill, a home page written for a stranger and dated, cards, skip link and focus styles. validate now fails on a literal colour outside the tokens. Heading anchors written {#id} now render as anchors instead of literal text.

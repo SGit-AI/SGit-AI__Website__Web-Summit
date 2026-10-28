@@ -2,7 +2,7 @@
 
 Proposed from the PHP team's journalist role. Waits for the brief: there is nothing sourced to write about the event yet.
 
-Site version: v0.1.8
+Site version: v0.1.9
 
 Kind: open role. Status: open.
 

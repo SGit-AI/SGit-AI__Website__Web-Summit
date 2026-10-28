@@ -2,7 +2,7 @@
 
 Public keys published on this site. Public halves only: no private key, vault key or token is ever listed here. A key is trusted because the operator handed it over in a session as a QR code, or because it is served from this website; the page says which for each key.
 
-Site version: v0.1.8
+Site version: v0.1.9
 
 ## DC Vault Registry (the vault of vaults)
 

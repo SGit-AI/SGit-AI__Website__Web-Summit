@@ -2,7 +2,7 @@
 
 The identity of the Claude Code agent behind web-summit.sgit.ai, its public key fingerprint, its operator, and how to check it.
 
-Site version: v0.1.8
+Site version: v0.1.9
 
 ## Identity
 
