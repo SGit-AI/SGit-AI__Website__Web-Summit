@@ -36,14 +36,19 @@ function render(md) {
     let i = 0
     while (i < lines.length) {
         const l = lines[i]
-        if (l.startsWith('```')) {
+        if (l.startsWith('```cards')) {
+            const rows = []
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++) rows.push(lines[i].split('|').map(c => c.trim()))
+            i++
+            out.push(`<div class="cards">${rows.map(([t, h, d]) => `<a class="card" href="${h}"><b>${inline(t)}</b><span>${inline(d)}</span></a>`).join('')}</div>`)
+        } else if (l.startsWith('```')) {
             const buf = []
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) buf.push(lines[i])
             i++
             out.push(`<pre><code>${esc(buf.join('\n'))}</code></pre>`)
         } else if (/^#{2,3} /.test(l)) {
-            const n = l.match(/^#+/)[0].length, t = l.replace(/^#+ /, '')
-            out.push(`<h${n} id="${slug(t)}">${inline(t)}</h${n}>`); i++
+            const n = l.match(/^#+/)[0].length, raw = l.replace(/^#+ /, ''), anchor = raw.match(/\s*\{#([a-z0-9-]+)\}\s*$/), t = raw.replace(/\s*\{#[a-z0-9-]+\}\s*$/, '')
+            out.push(`<h${n} id="${anchor ? anchor[1] : slug(t)}">${inline(t)}</h${n}>`); i++
         } else if (/^- /.test(l)) {
             const items = []
             for (; i < lines.length && /^- /.test(lines[i]); i++) items.push(`<li>${inline(lines[i].slice(2))}</li>`)
@@ -63,7 +68,7 @@ function render(md) {
     return out.join('\n')
 }
 
-function page({ rel, title, description, body, meta = '', mdTwin = '' }) {
+function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false }) {
     const up = '../'.repeat(rel.split('/').length - 1)
     const url = `https://${HOST}/${rel}`
     const agent = `For an agent: this page is ${url}${mdTwin ? ` (markdown: https://${HOST}/${mdTwin})` : ''}. Site index for agents: https://${HOST}/llms.txt. Source: ${REPO} (release branch dev). Identity of the agent that runs this site: https://${HOST}/agent/index.html.`
@@ -80,13 +85,20 @@ function page({ rel, title, description, body, meta = '', mdTwin = '' }) {
 <link rel="stylesheet" href="${up}assets/site.css">
 </head>
 <body>
-<header><a class="brand" href="${up}index.html">web-summit.sgit.ai</a>${NAV.map(([t, h]) => `<a href="${up}${h}">${t}</a>`).join('')}</header>
-<main>
+<a class="skip" href="#main">Skip to the content</a>
+<nav class="site"><div class="row">
+<a class="brand" href="${up}index.html">web-summit<span>.sgit.ai</span></a>
+<a class="parent" href="https://sgit.ai" title="sgit.ai: the parent project">↗ part of <b>sgit.ai</b></a>
+<div class="links">${NAV.map(([t, h]) => `<a href="${up}${h}"${rel === h || rel.startsWith(h.replace('index.html', '')) && h.endsWith('index.html') && h !== 'index.html' ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</div>
+<a class="gh" href="${REPO}">★ GitHub</a>
+</div></nav>
+<main id="main"${home ? ' class="home"' : ''}>
 <h1>${inline(title)}</h1>
+${lead ? `<p class="lead">${inline(lead)}</p>` : ''}
 ${meta}
 ${body}
 </main>
-<footer>SGit · <a class="ver" href="${up}admin/versions.html">${VERSION}</a> · <a href="${REPO}">GitHub</a> · code Apache-2.0, text CC BY 4.0</footer>
+<footer><div class="row"><span>Built and run by an AI agent with a named human operator.</span><a class="ver" href="${up}admin/versions.html">${VERSION}</a><a href="${REPO}">GitHub</a><span>Code Apache-2.0, text CC BY 4.0</span></div></footer>
 <div class="agent-block"><pre><code>${esc(agent)}</code></pre></div>
 </body>
 </html>
@@ -121,7 +133,7 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
     const raw = fs.readFileSync(path.join(ROOT, 'content', f), 'utf8')
     const { meta, body } = parse(raw)
     const name = f.replace(/\.md$/, ''), rel = name === 'index' ? 'index.html' : `${name}/index.html`
-    write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: name === 'index' ? 'index.md' : `${name}/index.md` }))
+    write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + render(body), mdTwin: name === 'index' ? 'index.md' : `${name}/index.md`, lead: meta.lead || '', home: name === 'index' }))
     pages.push({ rel, title: meta.title, description: meta.summary })
     if (name !== 'index') write(`${name}/index.md`, `# ${meta.title}\n\n${meta.summary}\n\nSite version: ${VERSION}\n\n${body.trim()}\n`)
     if (name === 'index') write('index.md', `# ${meta.title}\n\n${meta.summary}\n\nSite version: ${VERSION}\n\n${body.trim()}\n`)

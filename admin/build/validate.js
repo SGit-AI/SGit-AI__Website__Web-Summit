@@ -9,6 +9,7 @@
 //   6. div balance
 //   7. every page ends with an agent block
 //   8. every article has a markdown twin, and a .sig that names a signer
+//  11. assets/site.css writes colour only between tokens:start and tokens:end
 //  10. no source file is gitignored: a build tool that is not in the repository cannot be run by CI
 //   9. the generated pages are up to date with content/ (build.mjs would change nothing)
 'use strict'
@@ -109,6 +110,13 @@ try {
     const after = snap()
     if (before !== after) errors.push('generated pages are stale: run node admin/build/build.mjs and commit the result')
 } catch (e) { errors.push(`build.mjs failed: ${e.message}`) }
+
+// 11. colour only through tokens: no literal colour in site.css outside the tokens block
+{
+    const css = read('assets/site.css')
+    const outside = css.replace(/\/\* tokens:start \*\/[\s\S]*?\/\* tokens:end \*\//, '').replace(/\/\*[\s\S]*?\*\//g, '')
+    if (/#[0-9a-fA-F]{3,8}\b|\brgba?\(|\bhsla?\(/.test(outside)) errors.push('assets/site.css: a literal colour outside the tokens block')
+}
 
 // 10. nothing the site needs is gitignored (CI only sees what git tracks; this broke the first release)
 try {
