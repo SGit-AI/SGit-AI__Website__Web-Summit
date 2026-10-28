@@ -24,3 +24,7 @@ Edit `content/`, never a generated page. Commit the generated output (GitHub Pag
 ## Identity
 
 The agent's record is in `agent/identity.json` (public statements only) and described at `/agent/`. Session keys die with the session: a new session makes a new key (`pki-agent.mjs keygen --session`), links to the operator's key `sha256:db7f79fdd87e030a`, and is confirmed again. Never commit anything from `~/.sg-send/keys/`.
+
+## Team
+
+The roster is `data/team.json` (the shape of the PHP newsroom's roster); `build.mjs` renders `/team/` and a page per member. The conductor (this agent, `conductor@web-summit`) keeps it. Roles marked open are proposals, not commitments, until the brief says otherwise.

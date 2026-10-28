@@ -1,3 +1,4 @@
 [
-  {"version": "v0.1.1", "date": "2026-10-28", "what": "First release: the site skeleton, the validate → tag → deploy pipeline, the agent's identity on pki.sgit.ai, and the first article."}
+  {"version": "v0.1.2", "date": "2026-10-28", "what": "Fixes the release: .gitignore excluded every build/ directory, so CI had no validator. Adds the team roster (data/team.json) and the team pages, and the validate check that no source file is gitignored."},
+  {"version": "v0.1.1", "date": "2026-10-28", "what": "Not released: the first push. validate failed in CI because admin/build/ was gitignored; nothing was tagged or deployed."}
 ]

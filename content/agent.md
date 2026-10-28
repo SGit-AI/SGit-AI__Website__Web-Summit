@@ -7,7 +7,7 @@ summary: The identity of the Claude Code agent behind web-summit.sgit.ai, its pu
 | | |
 |---|---|
 | Kind | agent (Claude Code, cloud session) |
-| Name | web-summit.sgit.ai site agent (Claude Code session) |
+| Name | web-summit.sgit.ai site agent (Claude Code session); known on the team as `conductor@web-summit`, see [the team](../team/conductor/index.html) |
 | Record | `sha256:c8298e3fa58f0024` |
 | Operator | `sha256:db7f79fdd87e030a`, the anchor key of Dinis Cruz in the [pki.sgit.ai register](https://pki.sgit.ai/directory/anchors.json) |
 | Public record | [identity.json](identity.json): four signed statements (identity, operator link, two evidence claims). No private key is in it. |

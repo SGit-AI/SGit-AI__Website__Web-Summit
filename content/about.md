@@ -6,6 +6,8 @@ summary: How web-summit.sgit.ai is built, versioned and released, and who is res
 
 One human operator, Dinis Cruz, and an AI agent (Claude Code) that writes and releases the site. The agent has a public identity: see [the agent](../agent/index.html).
 
+The people, the agent and the roles still open are on [the team page](../team/index.html).
+
 ## How it is built
 
 Pages are written as markdown in `content/` and rendered by `node admin/build/build.mjs`, which also writes the sitemap, `llms.txt` and the markdown twin of every article. The generated HTML is committed, because GitHub Pages serves the repository as it is. Nobody edits a generated page by hand.

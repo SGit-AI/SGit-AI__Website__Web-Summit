@@ -1,0 +1,85 @@
+{
+  "about": "Every member of the team that runs this site, human and agent: who they are, what they own, and where they work. The shape follows the roster of php.oct.2026.newsroom.sgit.ai. Kept by conductor@web-summit. Roles marked open are proposals taken from that team; the Web Summit brief has not landed, so none of them is filled and none is a commitment.",
+  "members": [
+    {
+      "id": "dinis",
+      "name": "Dinis Cruz",
+      "kind": "human",
+      "role": "Editor and operator",
+      "status": "active",
+      "summary": "Sets direction, writes the brief, and operates the agents: confirms their keys on pki.sgit.ai and decides what goes to main.",
+      "owns": [
+        "every editorial call: what ships, and what the site claims about the event",
+        "the brief",
+        "promotion from dev to main (a major release)",
+        "confirming each agent's key as its operator"
+      ],
+      "rules": ["Agents write next to the brief, never over it."],
+      "home": [["https://pki.sgit.ai/directory/anchors.json", "His anchor key in the pki.sgit.ai register"]]
+    },
+    {
+      "id": "conductor",
+      "name": "conductor@web-summit",
+      "kind": "agent",
+      "role": "Conductor, and for now the only agent",
+      "status": "active",
+      "alias": "@Conductor",
+      "address": "conductor@web-summit",
+      "identity": "sha256:c8298e3fa58f0024 (session key; the record's name predates the alias: web-summit.sgit.ai site agent (Claude Code session))",
+      "joined": "2026-10-28",
+      "summary": "Maps the work, builds and releases the site, writes its articles, and holds the agent's identity on pki.sgit.ai. Until the brief names other roles it does all of them, under the rules below.",
+      "owns": [
+        "the release: dev pushes, version.txt, the tags CI makes, the pipeline itself",
+        "the build and the validate gate (admin/build/)",
+        "the roster (data/team.json) and every team page",
+        "the articles, each signed with the agent's key",
+        "the agent's identity record (agent/identity.json)"
+      ],
+      "rules": [
+        "Push to dev only; main is the operator's call.",
+        "A red validate is no release; never disable a check to get green.",
+        "Publish nothing about the event that the brief or a cited source does not support.",
+        "Say what is blocked and on whom, by name.",
+        "Keys never go into a file, a page or a message."
+      ],
+      "home": [
+        ["agent/index.html", "The agent's identity"],
+        ["admin/versions.html", "Versions"],
+        ["articles/index.html", "Articles"]
+      ]
+    },
+    {
+      "id": "dev",
+      "name": "Dev",
+      "kind": "role",
+      "role": "Build, gate and release (open)",
+      "status": "open",
+      "summary": "Proposed from the PHP team's dev role. Today the conductor does this.",
+      "owns": ["the build, the gate and the release"],
+      "rules": [],
+      "home": []
+    },
+    {
+      "id": "journalist",
+      "name": "Journalist",
+      "kind": "role",
+      "role": "Dated articles (open)",
+      "status": "open",
+      "summary": "Proposed from the PHP team's journalist role. Waits for the brief: there is nothing sourced to write about the event yet.",
+      "owns": ["articles that carry only claims the evidence supports"],
+      "rules": [],
+      "home": []
+    },
+    {
+      "id": "researcher",
+      "name": "Researcher",
+      "kind": "role",
+      "role": "Sources and evidence (open)",
+      "status": "open",
+      "summary": "Proposed from the PHP team's evidence roles. Waits for the brief to say what is to be researched.",
+      "owns": ["capturing and hashing every source a claim rests on"],
+      "rules": [],
+      "home": []
+    }
+  ]
+}
