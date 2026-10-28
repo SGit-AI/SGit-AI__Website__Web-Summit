@@ -1,0 +1,82 @@
+# Deploys web-summit.sgit.ai to GitHub Pages, in the order the other SGit sites use:
+# validate → tag → deploy.
+#
+#   1. validate    — admin/build/validate.js: structure, links, version agreement, canonical host,
+#                    agent block, signed articles, key-leak tripwire. A failure stops everything: no tag,
+#                    no publish. Also runs on pull requests.
+#   2. tag-release — owned by admin/build/tag_release.sh.
+#                      push to dev  -> the next minor (v0.1.N -> v0.1.N+1)
+#                      push to main -> the next major (v0.N.M -> v0.N+1.0)
+#                    The version comes from admin/build/version.txt and must also be in the release
+#                    commit's subject ("site vX.Y.Z: ...").
+#   3. deploy      — publishes the commit. Never when validation or tagging failed.
+name: deploy-pages
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+    branches: [dev, main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate the site
+        run: node admin/build/validate.js
+
+  tag-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [validate]
+    if: github.event_name == 'push'
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Tag this release
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          git config user.name  'GitHub Actions'
+          git config user.email 'actions@github.com'
+          admin/build/tag_release.sh
+
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [validate, tag-release]
+    # Publish after a manual dispatch (tag-release skipped) too — never when validation or tagging failed, never from a PR.
+    if: always() && github.event_name != 'pull_request' && needs.validate.result == 'success' && (needs.tag-release.result == 'success' || needs.tag-release.result == 'skipped')
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble site artifact
+        run: |
+          mkdir -p /tmp/site
+          rsync -a ./ /tmp/site/ --exclude '.git' --exclude '.github' --exclude '.sg_vault' --exclude 'content' --exclude 'admin/build'
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: /tmp/site
+      - id: deployment
+        uses: actions/deploy-pages@v4
