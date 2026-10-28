@@ -112,7 +112,7 @@ try {
 
 // 10. nothing the site needs is gitignored (CI only sees what git tracks; this broke the first release)
 try {
-    const ignored = execFileSync('git', ['check-ignore', ...files.map(rel)], { cwd: ROOT }).toString().split('\n').filter(Boolean)
+    const ignored = execFileSync('git', ['check-ignore', '--no-index', ...files.map(rel)], { cwd: ROOT }).toString().split('\n').filter(Boolean)
     for (const f of ignored) errors.push(`${f}: is gitignored, so CI will not have it`)
 } catch (e) { if (e.status !== 1) errors.push(`git check-ignore failed: ${e.message}`) }
 
