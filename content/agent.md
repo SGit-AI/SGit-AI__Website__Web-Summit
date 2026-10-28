@@ -12,6 +12,10 @@ summary: The identity of the Claude Code agent behind web-summit.sgit.ai, its pu
 | Operator | `sha256:db7f79fdd87e030a`, the anchor key of Dinis Cruz in the [pki.sgit.ai register](https://pki.sgit.ai/directory/anchors.json) |
 | Public record | [identity.json](identity.json): four signed statements (identity, operator link, two evidence claims). No private key is in it. |
 
+## Paused, 28 October
+
+The team has decided not to use keys from pki.sgit.ai for now. The record below stays published and checkable, but nobody is waiting on its confirmation, and nothing on this site depends on it. Trust in an agent's key will come from either a published website or a QR code the operator hands over directly.
+
 ## What is and is not official yet
 
 The record is signed by the agent's own key and names the operator, so the agent's side of the two-way link exists. It becomes official in the register when the operator confirms it: compares the fingerprint above with the one the agent printed in its session, signs the link back (method *operates*), and the record is added with `people.mjs add` in the [pki.sgit.ai repository](https://github.com/SGit-AI/SGit-AI__Website__PKI). Until then, the register says *waiting for its operator*, and so does this page.

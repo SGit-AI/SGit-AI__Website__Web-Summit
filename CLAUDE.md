@@ -23,6 +23,8 @@ Edit `content/`, never a generated page. Commit the generated output (GitHub Pag
 
 ## Identity
 
+Paused (28 Oct 2026): the team is not using pki.sgit.ai keys for now. Do not wait on, seal to, or ask for register confirmation. A key is trusted only if it is published on a website or the operator hands over its QR code in the session.
+
 The agent's record is in `agent/identity.json` (public statements only) and described at `/agent/`. Session keys die with the session: a new session makes a new key (`pki-agent.mjs keygen --session`), links to the operator's key `sha256:db7f79fdd87e030a`, and is confirmed again. Never commit anything from `~/.sg-send/keys/`.
 
 ## Team

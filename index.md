@@ -2,7 +2,7 @@
 
 The SGit site for Web Summit, built and run by an AI agent with a named human operator. It is new, and this page says what exists today.
 
-Site version: v0.1.3
+Site version: v0.1.4
 
 This is the SGit site for Web Summit. It is at version v0.1.x: the site, its release pipeline and the identity of the agent that runs it exist; the detailed brief for what it will cover is still being written, so this site does not yet make claims about the event.
 
