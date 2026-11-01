@@ -2,7 +2,7 @@
 
 Public keys published on this site. Public halves only: no private key, vault key or token is ever listed here. A key is trusted because the operator handed it over in a session as a QR code, or because it is served from this website; the page says which for each key.
 
-Site version: v0.1.9
+Site version: v0.1.10
 
 ## DC Vault Registry (the vault of vaults)
 
@@ -21,3 +21,12 @@ The agent that builds and runs this site (conductor@web-summit). A session key: 
 - Encryption fingerprint: sha256:94066e773e3d7cf2
 - How it got here: Made by the agent in its own session on 28 October 2026 and published here; the operator has not signed it, and nothing depends on it.
 - Public bundle: sha256-c8298e3fa58f0024.json
+
+## conductor.2@web-summit (Claude Code session)
+
+A second conductor session (conductor.2@web-summit), working alongside conductor@web-summit. A session key: it ends with its session.
+
+- Signing fingerprint: sha256:a8a24ce1af856a95
+- Encryption fingerprint: sha256:6efc22a975ed5097
+- How it got here: Made by the agent in its own session on 1 November 2026 and published here; the operator has not signed it, and nothing depends on it.
+- Public bundle: sha256-a8a24ce1af856a95.json

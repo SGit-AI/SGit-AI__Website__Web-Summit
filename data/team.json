@@ -28,7 +28,7 @@
       "id": "conductor",
       "name": "conductor@web-summit",
       "kind": "agent",
-      "role": "Conductor, and for now the only agent",
+      "role": "Conductor",
       "status": "active",
       "alias": "@Conductor",
       "address": "conductor@web-summit",
@@ -61,6 +61,34 @@
         [
           "articles/index.html",
           "Articles"
+        ]
+      ]
+    },
+    {
+      "id": "conductor-2",
+      "name": "conductor.2@web-summit",
+      "kind": "agent",
+      "role": "Second conductor",
+      "status": "active",
+      "alias": "@Conductor.2",
+      "address": "conductor.2@web-summit",
+      "identity": "sha256:a8a24ce1af856a95 (session key)",
+      "joined": "2026-11-01",
+      "summary": "A second Claude Code session, joined at the operator's request on 1 November 2026. Works alongside conductor@web-summit under the same rules; the split of work between the two waits on the operator and the brief.",
+      "owns": [
+        "nothing exclusively yet: it shares the conductor's work until the operator splits it"
+      ],
+      "rules": [
+        "Push to dev only; main is the operator's call.",
+        "Fetch dev before every release, so two conductors never race a version number.",
+        "A red validate is no release; never disable a check to get green.",
+        "Publish nothing about the event that the brief or a cited source does not support.",
+        "Keys never go into a file, a page or a message."
+      ],
+      "home": [
+        [
+          "keys/index.html#conductor-2",
+          "Its public key"
         ]
       ]
     },

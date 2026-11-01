@@ -31,6 +31,21 @@
         "fingerprint": "sha256:94066e773e3d7cf2",
         "signing_fingerprint": "sha256:c8298e3fa58f0024"
       }
+    },
+    {
+      "id": "conductor-2",
+      "label": "conductor.2@web-summit (Claude Code session)",
+      "role": "A second conductor session (conductor.2@web-summit), working alongside conductor@web-summit. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 1 November 2026 and published here; the operator has not signed it, and nothing depends on it.",
+      "added": "2026-11-01",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsquun2ATCjV8uQIAC+h/\n0m7xS+UBhCebArFt9PWUiQfPMosKnTl0mpsyv8stjLYZfCUNFKM9N1Mgl0iPHQ4B\nRo01CFw+O626dLPXBOXeh4oG1pg3+QooqPTlXGdkw5GYQVuf+O/uSHE3oiTNLOD9\n5HhGaB0f8007ER/goNu+Dc7ZFxuk7tuhAON1lRhEpTDmC5tTY3Hu+pvlB+TCG08L\nSt0qoWF78o5El4AnKcnq8H9SFyUVEmdPBsMCMLRv3dSjetLpNejIQW7//mcgsKH9\nnp3XdQee3l0SCwyywgsRnP6fI6TQTI7Siw1G8tfFuMqa6HygJjzLk77aAAxj3DPy\np2iW+BcdvsE+Jo0cWcLau/Ioc5jD/f4DquJQfNyNGlkZ90mWw8ExgJSlSYrLZU6B\nynJmPZn8CAyeWDlyK2SnCQI9tG55MTXn6VNDiWZfxb7eaFTZqqZoPRnmDfEHw/sT\ntz8pCfJGK1JDtPCKTr+kYlPJf6VNH9kIAG46xj1PpBBVGIKPCV+l4CYTigcZOFtO\nLdXB8R/t4jTDFYVBzov/ZC7p6cNnmfBeOKoj293GShCUKEMefde0kQ8JvyFlENMk\noxt0tw1V8u03sFSFqiEblDaW1e3YeQKdPmwbZ3hk2u5lT6abXws/FV2U1vVd0Vsa\njBJxUrXor8yVBLFNRCZqCAECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3o/vJJ/WSt3keguBd+DdXktpB0Jt\nEKGVwowyFsBtSxZpnGVm9IdGVSzu+XuLy2VZyZwye7+juB/FiPL5JtMKzg==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor.2@web-summit (Claude Code session)",
+        "fingerprint": "sha256:6efc22a975ed5097",
+        "signing_fingerprint": "sha256:a8a24ce1af856a95"
+      }
     }
   ]
 }

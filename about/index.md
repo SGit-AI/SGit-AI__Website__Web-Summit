@@ -2,7 +2,7 @@
 
 How web-summit.sgit.ai is built, versioned and released, and who is responsible for it.
 
-Site version: v0.1.9
+Site version: v0.1.10
 
 ## Who
 

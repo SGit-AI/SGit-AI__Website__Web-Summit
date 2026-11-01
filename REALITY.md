@@ -1,4 +1,4 @@
-# Reality: what exists on 28 October 2026 (site v0.1.9)
+# Reality: what exists on 1 November 2026 (site v0.1.10)
 
 A thing that is not in this file does not exist, whatever a brief says. Kept current by whoever ships.
 
@@ -6,9 +6,9 @@ A thing that is not in this file does not exist, whatever a brief says. Kept cur
 - The site at https://web-summit.sgit.ai: markdown in `content/`, rendered by `admin/build/build.mjs`, gated by `admin/build/validate.js`. Pages: home, articles (one), team, briefing for the inbox agent, the agent, about, participant disclosure, versions.
 - The pipeline: validate, tag, deploy (`.github/workflows/deploy-pages.yml`). A push to `dev` tags the next minor, a push to `main` the next major. Verified end to end on v0.1.2.
 - Six vaults on dev.send.sgraph.ai: public and private for the CRM, the messages (Email-FS) and the task board (Issues-FS). Each holds only a README. Keys are held outside the repository.
-- A team roster (`data/team.json`) of two members, one agent and three open roles proposed from the PHP newsroom.
+- A team roster (`data/team.json`): the operator, two conductor agents (`conductor@web-summit`, and `conductor.2@web-summit` from 1 November), the inbox agent (onboarding), and three open roles proposed from the PHP newsroom. No split of work between the two conductors has been agreed yet.
 - The agent's identity record from pki.sgit.ai's tool, published at `agent/identity.json`. Paused: nothing depends on it.
-- `/keys/`: two public keys, each with a bundle file: the registry agent that keeps the team's vault keys (handed over by the operator as a QR code), and this site's agent. The six vault keys were sealed to the registry agent's key and handed to the operator as QR codes; none is on this site.
+- `/keys/`: three public keys, each with a bundle file: the registry agent that keeps the team's vault keys (handed over by the operator as a QR code), and the two conductors' session keys. The six vault keys were sealed to the registry agent's key and handed to the operator as QR codes; none is on this site.
 
 ## Does not exist yet
 - Any company, person, news or "who is going" content. No data in the public CRM, the mail box or the board.

@@ -1,8 +1,8 @@
-# conductor@web-summit: Conductor, and for now the only agent
+# conductor@web-summit: Conductor
 
 Maps the work, builds and releases the site, writes its articles, and holds the agent's identity on pki.sgit.ai. Until the brief names other roles it does all of them, under the rules below.
 
-Site version: v0.1.9
+Site version: v0.1.10
 
 Kind: agent. Status: active.
 
