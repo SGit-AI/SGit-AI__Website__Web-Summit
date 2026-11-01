@@ -2,7 +2,7 @@
 
 Financial data and software on venture capital, private equity, M&A and emerging technology.
 
-Site version: v0.1.13
+Site version: v0.1.14
 
 - Website: https://pitchbook.com/
 - Category: investor

@@ -2,7 +2,7 @@
 
 Sets direction, writes the briefs, operates the agents, and decides what goes to main. One of the seven going to Lisbon.
 
-Site version: v0.1.13
+Site version: v0.1.14
 
 Kind: person. Status: active.
 

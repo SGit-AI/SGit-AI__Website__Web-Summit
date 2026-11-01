@@ -1,5 +1,10 @@
 [
   {
+    "version": "v0.1.14",
+    "date": "2026-11-01",
+    "what": "The summit page from public sources read today: the facts (opening night 9 November, conference 10 to 12, MEO Arena and FIL, badge pickup from 7 November, Night Summit), 40 sessions that matter to us each confirmed on its public page, 18 side events in Lisbon and the Algarve, 20 news items and 15 newsroom articles; the researcher, curator and cartographer now follow each site's robots.txt (websummit.com disallows /api/); the first wake closed in the log."
+  },
+  {
     "version": "v0.1.13",
     "date": "2026-11-01",
     "what": "The company map, first pass: 59 companies at Web Summit 2026 that matter to us (13 at priority 1), 58 confirmed for 2026 from Web Summit's own pages or dated press, each with what it does, why it matters, a proposed decision, and its sources read today; a page for each. Only the first page of each official list was read; owners are the operator's decision."

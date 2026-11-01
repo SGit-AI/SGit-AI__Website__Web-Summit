@@ -2,7 +2,7 @@
 
 The companies at Web Summit 2026 that matter to us, from public material, with a proposed decision and an owner for each.
 
-Site version: v0.1.13
+Site version: v0.1.14
 
 - [1Password](1password/index.md) (P1, meet, confirmed, owner to decide): Secures every identity, from people to AI agents: passwords, passkeys and secrets for over 150,000 businesses, and a security layer for how agents authenticate and connect to the internet. Why: partner/story: building "the security layer for how agents authenticate and connect"; agent identity and secrets sit next to sgit vaults and agent policies
 - [Cisco (Outshift by Cisco)](cisco-outshift/index.md) (P1, meet, confirmed, owner to decide): Networking and security; at Web Summit it presents Outshift by Cisco (incubation of emerging tech) and Cisco DevNet (developer platform for agentic AI), with open-source projects in agentic AI, quantum and next-gen infrastructure. Why: partner/story: Outshift by Cisco and DevNet position themselves as the developer platform for agentic AI with open-source projects; a route to the agent-infrastructure community

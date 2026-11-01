@@ -2,7 +2,7 @@
 
 Builds agentic AI solutions for European businesses on its own Kairos platform: secure, compliant agents grounded in business context and plugged into existing systems; 400+ solutions over almost 20 years.
 
-Site version: v0.1.13
+Site version: v0.1.14
 
 - Website: https://www.cnext.eu
 - Category: ai-agents

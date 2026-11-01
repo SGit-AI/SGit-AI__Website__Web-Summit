@@ -2,7 +2,7 @@
 
 EU executive; Executive Vice-President Henna Virkkunen (Tech Sovereignty, Security and Democracy) is an announced 2026 speaker.
 
-Site version: v0.1.13
+Site version: v0.1.14
 
 - Website: https://commission.europa.eu/
 - Category: other

@@ -5,7 +5,7 @@
       "id": "wake-2026-11-01T0013Z",
       "agent": "conductor",
       "started": "2026-11-01T00:13:00Z",
-      "ended": "",
+      "ended": "2026-11-01T00:45:00Z",
       "kind": "operator's request in chat",
       "objective": "Join as conductor, then implement as much of the two briefs as possible",
       "commit": "7eeb148",
@@ -21,12 +21,26 @@
         "curator",
         "designer"
       ],
-      "outcome": "in progress",
-      "release": "",
-      "achieved": [],
-      "blockers": [],
-      "for_you": [],
-      "next": "the first scheduled wake, 2 hours after the schedule is created"
+      "outcome": "ok",
+      "release": "v0.1.14",
+      "achieved": [
+        "joined as conductor.2@web-summit; key confirmed by its push",
+        "the team template from the briefs: 8 roles with policies, wake, schedule, hold, comms, 4 new gate checks",
+        "company map: 59 companies (researcher)",
+        "summit: facts, 40 sessions, 18 side events, 20 news items (curator)",
+        "design track worked back: approve by Mon 2 Nov 14:00 (designer)",
+        "schedule: every 2 hours at :27 UTC, into this session"
+      ],
+      "blockers": [
+        "only the first page of each websummit.com list could be read",
+        "owners, cards, budget and design decisions wait on the operator"
+      ],
+      "for_you": [
+        "approve designs by Mon 2 Nov 14:00 or drop items",
+        "names, ids and yes for the seven; owners for priority-1 companies",
+        "say whether the full Web Summit lists may be read another way (the app export)"
+      ],
+      "next": "scheduled wake at 02:27 UTC"
     }
   ]
 }

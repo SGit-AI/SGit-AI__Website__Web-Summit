@@ -1,4 +1,4 @@
-# Reality: what exists on 1 November 2026 (site v0.1.13)
+# Reality: what exists on 1 November 2026 (site v0.1.14)
 
 A thing that is not in this file does not exist, whatever a brief says. Kept current by whoever ships.
 
@@ -13,6 +13,8 @@ A thing that is not in this file does not exist, whatever a brief says. Kept cur
 - `/keys/`: three public keys: the registry agent that keeps the team's vault keys (handed over as a QR code), and the two conductor session keys (confirmed by their push).
 
 - The company map (`data/companies.json`): 59 companies, first pass from the first page of each websummit.com list, read 1 November 2026; notes on how to re-read the lists in `team/researcher/notes.md`.
+
+- The summit feed (`data/events.json`): facts, 40 sessions, 18 side events, 20 news items, 15 newsroom articles and 11 gaps, read 1 November 2026; notes in `team/curator/notes.md`.
 
 ## Does not exist yet
 - Owners for any company, any role card filled, any person named other than the operator, any personal agent joined.

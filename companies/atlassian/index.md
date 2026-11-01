@@ -2,7 +2,7 @@
 
 Team collaboration software; its AI platform, anchored by Rovo and the Teamwork Graph, connects work across Jira, Confluence and Jira Service Management for 350,000+ customers.
 
-Site version: v0.1.13
+Site version: v0.1.14
 
 - Website: https://www.atlassian.com
 - Category: platform
