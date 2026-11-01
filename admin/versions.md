@@ -2,8 +2,9 @@
 
 Every release of this site and what changed.
 
-Site version: v0.1.12
+Site version: v0.1.13
 
+- v0.1.13 (2026-11-01): The company map, first pass: 59 companies at Web Summit 2026 that matter to us (13 at priority 1), 58 confirmed for 2026 from Web Summit's own pages or dated press, each with what it does, why it matters, a proposed decision, and its sources read today; a page for each. Only the first page of each official list was read; owners are the operator's decision.
 - v0.1.12 (2026-11-01): The design track worked backwards from the summit, from the suppliers' published lead times read today: design approved by Monday 2 November 14:00, the safest orders that evening, what is already too late, how to put codes on print, and the brief for the designer. Also records the conductor's scheduled task (every 2 hours at :27 UTC, into its standing session).
 - v0.1.11 (2026-11-01): The team from the briefs: the briefs published in full (BRIEF.md); eight agent roles each with a role file and a behaviour policy; the wake protocol, the schedule, the banners, the hold and the board and mailroom as files; pages for the company map, the summit, the plan worked back from 9 November, the people and agents, and the session log; a live countdown and numbers computed from the data; four new gate checks (policy overlap, sourced companies, nothing private, complete wake records); CI runs no longer cancel each other.
 - v0.1.10 (2026-11-01): A second conductor agent, conductor.2@web-summit, joins the team: its roster entry and its public session key.

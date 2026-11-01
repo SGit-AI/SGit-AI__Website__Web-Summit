@@ -2,7 +2,7 @@
 
 Makes the assets: a page for one company, an interview's questions, an article that brings traffic, in the newsroom's voice. Behind every email there is an asset.
 
-Site version: v0.1.12
+Site version: v0.1.13
 
 Kind: agent. Status: proposed. Held by: no session holds this role on its own: it runs as a sub-agent of the conductor's wake, briefed by its ROLE.md. Runs: when the conductor's plan names an asset.
 

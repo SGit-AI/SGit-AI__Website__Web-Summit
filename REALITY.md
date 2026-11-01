@@ -1,4 +1,4 @@
-# Reality: what exists on 1 November 2026 (site v0.1.12)
+# Reality: what exists on 1 November 2026 (site v0.1.13)
 
 A thing that is not in this file does not exist, whatever a brief says. Kept current by whoever ships.
 
@@ -11,6 +11,8 @@ A thing that is not in this file does not exist, whatever a brief says. Kept cur
 - The conductor role is held by conductor.2@web-summit (key `sha256:a8a24ce1af856a95`, from 1 November); the first session, conductor@web-summit, has ended.
 - Six vaults on dev.send.sgraph.ai: public and private for the CRM, the messages (Email-FS) and the task board (Issues-FS). Each holds only a README. Keys are held outside the repository.
 - `/keys/`: three public keys: the registry agent that keeps the team's vault keys (handed over as a QR code), and the two conductor session keys (confirmed by their push).
+
+- The company map (`data/companies.json`): 59 companies, first pass from the first page of each websummit.com list, read 1 November 2026; notes on how to re-read the lists in `team/researcher/notes.md`.
 
 ## Does not exist yet
 - Owners for any company, any role card filled, any person named other than the operator, any personal agent joined.

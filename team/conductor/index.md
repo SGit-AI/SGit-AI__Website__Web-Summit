@@ -2,7 +2,7 @@
 
 Opens and closes every wake, chooses which roles run in it, routes requests, keeps the schedule, the keys, the build, the gate and the site true, and writes the daily debrief. Held by conductor.2@web-summit, the session that joined on 1 November 2026; the first session, conductor@web-summit, built the site from 28 October and has ended.
 
-Site version: v0.1.12
+Site version: v0.1.13
 
 Kind: agent. Status: active. Held by: conductor.2@web-summit (session key sha256:a8a24ce1af856a95, from 1 November 2026); before it, conductor@web-summit (sha256:c8298e3fa58f0024, 28 October, ended). Runs: every 2 hours, opens the wake.
 
