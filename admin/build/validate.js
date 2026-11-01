@@ -13,6 +13,10 @@
 //  11. assets/site.css writes colour only between tokens:start and tokens:end
 //  10. no source file is gitignored: a build tool that is not in the repository cannot be run by CI
 //   9. the generated pages are up to date with content/ (build.mjs would change nothing)
+//  13. behaviour policies: no two roles claim the same path; every ROLE.md names start.mjs and banner.mjs
+//  14. the company map: every company has a source with a URL and the date read
+//  15. public forever: no email, phone number or key shape in comms/, data/ or team/
+//  16. every closed wake record has its five steps
 'use strict'
 const fs = require('fs')
 const path = require('path')
@@ -145,6 +149,44 @@ try {
     const ignored = execFileSync('git', ['check-ignore', '--no-index', ...files.map(rel)], { cwd: ROOT }).toString().split('\n').filter(Boolean)
     for (const f of ignored) errors.push(`${f}: is gitignored, so CI will not have it`)
 } catch (e) { if (e.status !== 1) errors.push(`git check-ignore failed: ${e.message}`) }
+
+// 13. behaviour policies: every agent role has ROLE.md and policy.json; no two policies claim the same path;
+//     every ROLE.md names start.mjs and banner.mjs (the wake protocol, team/conductor/WAKE.md)
+{
+    const team = JSON.parse(read('data/team.json'))
+    const pols = []
+    for (const m of team.members.filter(m => m.kind === 'agent' && fs.existsSync(path.join(ROOT, 'team', m.id, 'policy.json')))) {
+        const role = read(`team/${m.id}/ROLE.md`)
+        for (const tool of ['admin/tools/start.mjs', 'admin/tools/banner.mjs']) if (!role.includes(tool.split('/').pop())) errors.push(`team/${m.id}/ROLE.md does not name ${tool}`)
+        const p = JSON.parse(read(`team/${m.id}/policy.json`))
+        if (p.agent !== m.id) errors.push(`team/${m.id}/policy.json names agent ${p.agent}`)
+        pols.push([m.id, p.scope.writes])
+    }
+    const toRe = g => new RegExp('^' + g.replace(/[.+^${}()|[\]\\]/g, '\\$&').replace(/\*\*/g, '\u0000').replace(/\*/g, '[^/]*').replace(/\u0000/g, '.*') + '$')
+    const sample = g => g.replace(/\*\*/g, 'x/y').replace(/\*/g, 'x')
+    for (let i = 0; i < pols.length; i++) for (let j = i + 1; j < pols.length; j++) for (const a of pols[i][1]) for (const b of pols[j][1]) {
+        if (toRe(a).test(sample(b)) || toRe(b).test(sample(a))) errors.push(`policies overlap: ${pols[i][0]} writes ${a}, ${pols[j][0]} writes ${b}`)
+    }
+}
+
+// 14. the company map: every company has an id, a name, an attending status and at least one source with a URL and the date read
+{
+    const c = JSON.parse(read('data/companies.json')), ids = new Set()
+    for (const co of c.companies || []) {
+        if (!/^[a-z0-9-]+$/.test(co.id || '')) errors.push(`data/companies.json: bad id "${co.id}"`)
+        if (ids.has(co.id)) errors.push(`data/companies.json: duplicate id ${co.id}`); ids.add(co.id)
+        if (!co.name || !co.attending) errors.push(`data/companies.json: ${co.id} has no name or attending status`)
+        if (!(co.sources || []).length || co.sources.some(s => !/^https?:\/\//.test(s.url || '') || !s.read_on)) errors.push(`data/companies.json: ${co.id} has a fact without a source URL and a date read`)
+    }
+}
+
+// 15. public forever: no email address, phone number or key shape in comms/, data/ or team/ (admin/tools/comms_check.mjs)
+try { execFileSync('node', [path.join(__dirname, '..', 'tools', 'comms_check.mjs')], { cwd: ROOT, stdio: 'pipe' }) }
+catch (e) { errors.push(`comms_check: ${(e.stdout || '').toString()}${(e.stderr || '').toString()}`.trim()) }
+
+// 16. every wake record that is closed has its five steps (admin/tools/wake.mjs check)
+try { execFileSync('node', [path.join(__dirname, '..', 'tools', 'wake.mjs'), 'check'], { cwd: ROOT, stdio: 'pipe' }) }
+catch (e) { errors.push(`wake check: ${(e.stderr || '').toString()}`.trim()) }
 
 if (errors.length) { console.error(errors.map(e => 'FAIL ' + e).join('\n')); process.exit(1) }
 console.log(`OK ${VERSION}: ${htmlFiles.length} pages`)

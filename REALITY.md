@@ -1,20 +1,21 @@
-# Reality: what exists on 1 November 2026 (site v0.1.10)
+# Reality: what exists on 1 November 2026 (site v0.1.11)
 
 A thing that is not in this file does not exist, whatever a brief says. Kept current by whoever ships.
 
 ## Exists
-- The site at https://web-summit.sgit.ai: markdown in `content/`, rendered by `admin/build/build.mjs`, gated by `admin/build/validate.js`. Pages: home, articles (one), team, briefing for the inbox agent, the agent, about, participant disclosure, versions.
-- The pipeline: validate, tag, deploy (`.github/workflows/deploy-pages.yml`). A push to `dev` tags the next minor, a push to `main` the next major. Verified end to end on v0.1.2.
+- The site at https://web-summit.sgit.ai: markdown in `content/` and data in `data/`, rendered by `admin/build/build.mjs`, gated by `admin/build/validate.js` (16 checks). Pages: home with a live countdown and computed numbers, the company map (one page per company), the summit (facts, sessions, side events, news), the plan (schedule, decisions, design track, the follow-up loop, card questions), the team (people, agents, where they meet; a page each), the session log, articles (one), briefing for the inbox agent, keys, the agent, about, participant disclosure, versions.
+- The briefs, published in full in `BRIEF.md`: the team brief (30 Oct) and part two (31 Oct).
+- The pipeline: validate, tag, deploy (`.github/workflows/deploy-pages.yml`). A push to `dev` tags the next minor, a push to `main` the next major. From v0.1.11 runs no longer cancel each other (`cancel-in-progress: false`).
+- The team template: a `ROLE.md`, `policy.json` and `status.json` for each of eight agent roles (conductor, researcher, cartographer, writer, curator, analyst, designer, security) in `team/<id>/`; the gate fails if two policies claim the same path. The wake protocol (`team/conductor/WAKE.md`), the schedule (`team/conductor/schedule.json`), the tools (`admin/tools/start.mjs`, `banner.mjs`, `wake.mjs`, `comms_check.mjs`), the hold (`team/<id>/HOLD.md`, which stops `start.mjs`), and the board and mailroom as files (`comms/`, empty).
+- The roster (`data/team.json`): the operator, six unnamed seats for the other people going, the designer's seat, the eight agent roles, and the operator's inbox agent (onboarding). Only the operator is named.
+- The conductor role is held by conductor.2@web-summit (key `sha256:a8a24ce1af856a95`, from 1 November); the first session, conductor@web-summit, has ended.
 - Six vaults on dev.send.sgraph.ai: public and private for the CRM, the messages (Email-FS) and the task board (Issues-FS). Each holds only a README. Keys are held outside the repository.
-- A team roster (`data/team.json`): the operator, two conductor agents (`conductor@web-summit`, and `conductor.2@web-summit` from 1 November), the inbox agent (onboarding), and three open roles proposed from the PHP newsroom. No split of work between the two conductors has been agreed yet.
-- The agent's identity record from pki.sgit.ai's tool, published at `agent/identity.json`. Paused: nothing depends on it.
-- `/keys/`: three public keys, each with a bundle file: the registry agent that keeps the team's vault keys (handed over by the operator as a QR code), and the two conductors' session keys. The six vault keys were sealed to the registry agent's key and handed to the operator as QR codes; none is on this site.
+- `/keys/`: three public keys: the registry agent that keeps the team's vault keys (handed over as a QR code), and the two conductor session keys (confirmed by their push).
 
 ## Does not exist yet
-- Any company, person, news or "who is going" content. No data in the public CRM, the mail box or the board.
-- A routing agent, the message envelope in use, write-only outboxes, a stand.
-- The inbox agent's public key on this site (waiting for its QR).
-- Append lanes on the six vaults, and sealed append tokens published per agent.
-- The Agent Contact file (`/.well-known/sgit-agents.json`) and a comms vault for this site's agent.
-- The `review/` folder, a release script that verifies the live site, a row on nfrs.sgit.ai.
-- Any run of the plan: nothing in the briefs has happened yet.
+- Owners for any company, any role card filled, any person named other than the operator, any personal agent joined.
+- Any asset (a page made for a company), any meeting booked, any email drafted from this site, any number of links sent or pages opened.
+- Personal CRMs, shared ids in use across them, and any data in the team's CRM vaults.
+- Separate sessions per role: today the roles run as sub-agents of the conductor's session.
+- A release script that verifies the live site, the `review/` folder, the Agent Contact file, a row on nfrs.sgit.ai, a key file and QR per role in the template's layout.
+- Any print order, quote or approved design.

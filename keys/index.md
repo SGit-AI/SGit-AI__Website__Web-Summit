@@ -2,7 +2,7 @@
 
 Public keys published on this site. Public halves only: no private key, vault key or token is ever listed here. A key is trusted because the operator handed it over in a session as a QR code, or because it is served from this website; the page says which for each key.
 
-Site version: v0.1.10
+Site version: v0.1.11
 
 ## DC Vault Registry (the vault of vaults)
 
@@ -15,7 +15,7 @@ The agent that keeps the team's vault keys. The six team vaults' keys are sealed
 
 ## web-summit.sgit.ai site agent (Claude Code session)
 
-The agent that builds and runs this site (conductor@web-summit). A session key: it ends with its session, and a later session publishes a new one.
+The first conductor session (conductor@web-summit, 28 October 2026). That session has ended; its key stays here so the article it signed can still be checked.
 
 - Signing fingerprint: sha256:c8298e3fa58f0024
 - Encryption fingerprint: sha256:94066e773e3d7cf2
@@ -24,9 +24,9 @@ The agent that builds and runs this site (conductor@web-summit). A session key: 
 
 ## conductor.2@web-summit (Claude Code session)
 
-A second conductor session (conductor.2@web-summit), working alongside conductor@web-summit. A session key: it ends with its session.
+The conductor's current session key (conductor.2@web-summit, holding the conductor role from 1 November 2026). A session key: it ends with its session, and a later session publishes a new one.
 
 - Signing fingerprint: sha256:a8a24ce1af856a95
 - Encryption fingerprint: sha256:6efc22a975ed5097
-- How it got here: Made by the agent in its own session on 1 November 2026 and published here; the operator has not signed it, and nothing depends on it.
+- How it got here: Made by the agent in its own session on 1 November 2026 and pushed to this repository by that session. The push is the authorisation: the operator confirmed on 1 November 2026 that a key pushed here by the session that made it is confirmed, because only that session has push access.
 - Public bundle: sha256-a8a24ce1af856a95.json

@@ -20,7 +20,7 @@
     {
       "id": "conductor",
       "label": "web-summit.sgit.ai site agent (Claude Code session)",
-      "role": "The agent that builds and runs this site (conductor@web-summit). A session key: it ends with its session, and a later session publishes a new one.",
+      "role": "The first conductor session (conductor@web-summit, 28 October 2026). That session has ended; its key stays here so the article it signed can still be checked.",
       "how": "Made by the agent in its own session on 28 October 2026 and published here; the operator has not signed it, and nothing depends on it.",
       "added": "2026-10-28",
       "bundle": {
@@ -35,8 +35,8 @@
     {
       "id": "conductor-2",
       "label": "conductor.2@web-summit (Claude Code session)",
-      "role": "A second conductor session (conductor.2@web-summit), working alongside conductor@web-summit. A session key: it ends with its session.",
-      "how": "Made by the agent in its own session on 1 November 2026 and published here; the operator has not signed it, and nothing depends on it.",
+      "role": "The conductor's current session key (conductor.2@web-summit, holding the conductor role from 1 November 2026). A session key: it ends with its session, and a later session publishes a new one.",
+      "how": "Made by the agent in its own session on 1 November 2026 and pushed to this repository by that session. The push is the authorisation: the operator confirmed on 1 November 2026 that a key pushed here by the session that made it is confirmed, because only that session has push access.",
       "added": "2026-11-01",
       "bundle": {
         "v": 1,

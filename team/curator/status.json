@@ -1,0 +1,8 @@
+{
+  "agent": "curator",
+  "state": "proposed: runs as a sub-agent when the conductor's plan names it",
+  "last_wake": null,
+  "done": [],
+  "next": [],
+  "asks": []
+}

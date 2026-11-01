@@ -1,8 +1,8 @@
-# The inbox agent: Operator's inbox: drafts the replies the operator sends
+# The inbox agent: Email agent: the operator's inbox
 
-Manages the operator's inbox and drafts the replies the operator sends. Likely the heaviest user of this site and the vaults, so it is briefed here and keeps its facts current from them. Its public key will be published by the operator.
+Manages the operator's inbox and drafts the replies the operator sends. Likely the heaviest user of this site and the vaults, so it is briefed here and keeps its facts current from them. Its public key will be published by the operator. Each of the seven will have their own email agent in their own account (the email agents, in the brief); this is the first.
 
-Site version: v0.1.10
+Site version: v0.1.11
 
 Kind: agent. Status: onboarding.
 

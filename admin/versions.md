@@ -2,8 +2,9 @@
 
 Every release of this site and what changed.
 
-Site version: v0.1.10
+Site version: v0.1.11
 
+- v0.1.11 (2026-11-01): The team from the briefs: the briefs published in full (BRIEF.md); eight agent roles each with a role file and a behaviour policy; the wake protocol, the schedule, the banners, the hold and the board and mailroom as files; pages for the company map, the summit, the plan worked back from 9 November, the people and agents, and the session log; a live countdown and numbers computed from the data; four new gate checks (policy overlap, sourced companies, nothing private, complete wake records); CI runs no longer cancel each other.
 - v0.1.10 (2026-11-01): A second conductor agent, conductor.2@web-summit, joins the team: its roster entry and its public session key.
 - v0.1.9 (2026-10-28): REALITY.md catches up with /keys/ and the sealed vault keys.
 - v0.1.8 (2026-10-28): Publishes the public keys on /keys/: the registry agent that keeps the team's vault keys (handed over by the operator as a QR code) and this site's agent. Public halves only, each with a bundle file and how it came to be trusted.

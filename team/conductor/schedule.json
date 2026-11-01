@@ -1,0 +1,24 @@
+{
+  "about": "The team's schedule. At the operator's word of 1 November 2026, one scheduled task wakes the conductor's standing session every 2 hours; each wake runs the other roles as sub-agents, chosen by its plan, and is closed by a second conductor sub-agent (team/conductor/WAKE.md). The task fires into that one session, as the newsroom's agents learned (why-agent-loops-are-hard): a fresh session per run loses the key, the state and the clone.",
+  "timezone": "UTC",
+  "cadence": "every 2 hours, round the clock, until the operator changes it",
+  "step_limit_minutes": 45,
+  "runs": [
+    {
+      "agent": "conductor",
+      "cron": "0 */2 * * *",
+      "mode": "fires into the conductor's standing session (this repository's conductor session), never a fresh one",
+      "status": "see team/conductor/status.json for the task id",
+      "job": "open the wake, plan which roles run, run them as sub-agents, review, release, log, close"
+    }
+  ],
+  "roles_run_as_sub_agents": [
+    "researcher",
+    "cartographer",
+    "curator",
+    "writer",
+    "analyst",
+    "designer",
+    "security"
+  ]
+}

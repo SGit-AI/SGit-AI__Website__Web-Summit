@@ -1,0 +1,32 @@
+{
+  "about": "Every wake of the team, kept by the conductor.",
+  "entries": [
+    {
+      "id": "wake-2026-11-01T0013Z",
+      "agent": "conductor",
+      "started": "2026-11-01T00:13:00Z",
+      "ended": "",
+      "kind": "operator's request in chat",
+      "objective": "Join as conductor, then implement as much of the two briefs as possible",
+      "commit": "7eeb148",
+      "plan": [
+        "join: key, roster, release v0.1.10",
+        "the team template: roles, policies, wake, schedule, hold, comms, gate",
+        "research as sub-agents: company map (researcher), summit feed (curator), print dates (designer)",
+        "pages: companies, summit, plan, team map, log, countdown"
+      ],
+      "roles": [
+        "conductor",
+        "researcher",
+        "curator",
+        "designer"
+      ],
+      "outcome": "in progress",
+      "release": "",
+      "achieved": [],
+      "blockers": [],
+      "for_you": [],
+      "next": "the first scheduled wake, 2 hours after the schedule is created"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "about": "Every member of the team that runs this site, human and agent: who they are, what they own, and where they work. The shape follows the roster of php.oct.2026.newsroom.sgit.ai. Kept by conductor@web-summit. Roles marked open are proposals taken from that team; the Web Summit brief has not landed, so none of them is filled and none is a commitment.",
+  "about": "Everyone on the team that runs Web Summit 2026, human and agent, and who works with whom. Seven people are going to Lisbon, each with their own agent; the team's agents work for them on a schedule. The roles come from [the team brief](https://newsroom.sgit.ai/articles/web-summit-team-brief.html) and the people from [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html). People are named only after they say yes to what their card says. Kept by the conductor.",
   "members": [
     {
       "id": "dinis",
@@ -7,20 +7,193 @@
       "kind": "human",
       "role": "Editor and operator",
       "status": "active",
-      "summary": "Sets direction, writes the brief, and operates the agents: confirms their keys on pki.sgit.ai and decides what goes to main.",
+      "summary": "Sets direction, writes the briefs, operates the agents, and decides what goes to main. One of the seven going to Lisbon.",
       "owns": [
         "every editorial call: what ships, and what the site claims about the event",
-        "the brief",
+        "the briefs",
         "promotion from dev to main (a major release)",
-        "confirming each agent's key as its operator"
+        "lifting a hold and re-enabling a paused task",
+        "the decisions listed on the plan page"
       ],
       "rules": [
-        "Agents write next to the brief, never over it."
+        "Agents write next to the brief, never over it.",
+        "A person sends every email."
       ],
+      "card": {
+        "following": "to decide: which companies he owns on the map",
+        "leads": "the team, the briefs and the agents",
+        "not_doing": "to decide",
+        "medium": "voice memos and chat with his agents",
+        "agent": "his inbox agent (onboarding) and this site's conductor"
+      },
       "home": [
         [
-          "https://pki.sgit.ai/directory/anchors.json",
-          "His anchor key in the pki.sgit.ai register"
+          "https://newsroom.sgit.ai/articles/web-summit-team-brief.html",
+          "The team brief"
+        ],
+        [
+          "https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html",
+          "Part two: the humans and their agents"
+        ]
+      ]
+    },
+    {
+      "id": "person-2",
+      "name": "Team member 2",
+      "kind": "human",
+      "role": "One of the seven going to Lisbon (seat, unnamed)",
+      "status": "invited: waiting for their yes",
+      "summary": "One of the seven people going to Web Summit. Their name, role card and agent appear here only after they say yes to what the card says, as [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) sets out.",
+      "owns": [
+        "to decide: the companies they own on the map"
+      ],
+      "rules": [
+        "Nothing about them is published without their yes."
+      ],
+      "card": {
+        "following": "to decide",
+        "leads": "to decide",
+        "not_doing": "to decide",
+        "medium": "to ask",
+        "agent": "to decide: their own agent, its key, its vault and what its CRM shares with the team view"
+      },
+      "home": []
+    },
+    {
+      "id": "person-3",
+      "name": "Team member 3",
+      "kind": "human",
+      "role": "One of the seven going to Lisbon (seat, unnamed)",
+      "status": "invited: waiting for their yes",
+      "summary": "One of the seven people going to Web Summit. Their name, role card and agent appear here only after they say yes to what the card says, as [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) sets out.",
+      "owns": [
+        "to decide: the companies they own on the map"
+      ],
+      "rules": [
+        "Nothing about them is published without their yes."
+      ],
+      "card": {
+        "following": "to decide",
+        "leads": "to decide",
+        "not_doing": "to decide",
+        "medium": "to ask",
+        "agent": "to decide: their own agent, its key, its vault and what its CRM shares with the team view"
+      },
+      "home": []
+    },
+    {
+      "id": "person-4",
+      "name": "Team member 4",
+      "kind": "human",
+      "role": "One of the seven going to Lisbon (seat, unnamed)",
+      "status": "invited: waiting for their yes",
+      "summary": "One of the seven people going to Web Summit. Their name, role card and agent appear here only after they say yes to what the card says, as [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) sets out.",
+      "owns": [
+        "to decide: the companies they own on the map"
+      ],
+      "rules": [
+        "Nothing about them is published without their yes."
+      ],
+      "card": {
+        "following": "to decide",
+        "leads": "to decide",
+        "not_doing": "to decide",
+        "medium": "to ask",
+        "agent": "to decide: their own agent, its key, its vault and what its CRM shares with the team view"
+      },
+      "home": []
+    },
+    {
+      "id": "person-5",
+      "name": "Team member 5",
+      "kind": "human",
+      "role": "One of the seven going to Lisbon (seat, unnamed)",
+      "status": "invited: waiting for their yes",
+      "summary": "One of the seven people going to Web Summit. Their name, role card and agent appear here only after they say yes to what the card says, as [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) sets out.",
+      "owns": [
+        "to decide: the companies they own on the map"
+      ],
+      "rules": [
+        "Nothing about them is published without their yes."
+      ],
+      "card": {
+        "following": "to decide",
+        "leads": "to decide",
+        "not_doing": "to decide",
+        "medium": "to ask",
+        "agent": "to decide: their own agent, its key, its vault and what its CRM shares with the team view"
+      },
+      "home": []
+    },
+    {
+      "id": "person-6",
+      "name": "Team member 6",
+      "kind": "human",
+      "role": "One of the seven going to Lisbon (seat, unnamed)",
+      "status": "invited: waiting for their yes",
+      "summary": "One of the seven people going to Web Summit. Their name, role card and agent appear here only after they say yes to what the card says, as [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) sets out.",
+      "owns": [
+        "to decide: the companies they own on the map"
+      ],
+      "rules": [
+        "Nothing about them is published without their yes."
+      ],
+      "card": {
+        "following": "to decide",
+        "leads": "to decide",
+        "not_doing": "to decide",
+        "medium": "to ask",
+        "agent": "to decide: their own agent, its key, its vault and what its CRM shares with the team view"
+      },
+      "home": []
+    },
+    {
+      "id": "person-7",
+      "name": "Team member 7",
+      "kind": "human",
+      "role": "One of the seven going to Lisbon (seat, unnamed)",
+      "status": "invited: waiting for their yes",
+      "summary": "One of the seven people going to Web Summit. Their name, role card and agent appear here only after they say yes to what the card says, as [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) sets out.",
+      "owns": [
+        "to decide: the companies they own on the map"
+      ],
+      "rules": [
+        "Nothing about them is published without their yes."
+      ],
+      "card": {
+        "following": "to decide",
+        "leads": "to decide",
+        "not_doing": "to decide",
+        "medium": "to ask",
+        "agent": "to decide: their own agent, its key, its vault and what its CRM shares with the team view"
+      },
+      "home": []
+    },
+    {
+      "id": "designer-human",
+      "name": "The designer",
+      "kind": "human",
+      "role": "Professional designer, with very little time (seat, unnamed)",
+      "status": "invited: their card is to ask",
+      "summary": "A professional designer joining to help with the design track. Their hours are scarce, so agents prepare everything around their decisions: the variants, the sizes, the print-ready files, the presentations.",
+      "owns": [
+        "the design decisions"
+      ],
+      "rules": [
+        "Briefed in their own medium, with the least context they need.",
+        "Short loops: a few options, a decision, the next step."
+      ],
+      "card": {
+        "following": "the design track",
+        "leads": "the look of the team in Lisbon",
+        "not_doing": "producing variants, sizes and print files: the designer agent does that",
+        "medium": "to ask: the tool they work in, how they like a brief, how much context, how fast they reply",
+        "agent": "the team's designer agent works for them"
+      },
+      "home": [
+        [
+          "plan/index.html#design",
+          "The design track and its dates"
         ]
       ]
     },
@@ -28,77 +201,342 @@
       "id": "conductor",
       "name": "conductor@web-summit",
       "kind": "agent",
-      "role": "Conductor",
+      "role": "Conductor: routes, keeps the schedule, the keys and the site true, writes the debrief",
       "status": "active",
-      "alias": "@Conductor",
       "address": "conductor@web-summit",
-      "identity": "sha256:c8298e3fa58f0024 (session key; the record's name predates the alias: web-summit.sgit.ai site agent (Claude Code session))",
-      "joined": "2026-10-28",
-      "summary": "Maps the work, builds and releases the site, writes its articles, and holds the agent's identity on pki.sgit.ai. Until the brief names other roles it does all of them, under the rules below.",
+      "holder": "conductor.2@web-summit (session key sha256:a8a24ce1af856a95, from 1 November 2026); before it, conductor@web-summit (sha256:c8298e3fa58f0024, 28 October, ended)",
+      "reviewed_by": "to decide: one of the seven reviews its output daily",
+      "slot": "every 2 hours, opens the wake",
+      "summary": "Opens and closes every wake, chooses which roles run in it, routes requests, keeps the schedule, the keys, the build, the gate and the site true, and writes the daily debrief. Held by conductor.2@web-summit, the session that joined on 1 November 2026; the first session, conductor@web-summit, built the site from 28 October and has ended.",
       "owns": [
-        "the release: dev pushes, version.txt, the tags CI makes, the pipeline itself",
-        "the build and the validate gate (admin/build/)",
-        "the roster (data/team.json) and every team page",
-        "the articles, each signed with the agent's key",
-        "the agent's identity record (agent/identity.json)"
+        "the wake: the opening plan, the sub-agents it runs, the closing check",
+        "the release: version.txt, versions.json, the pipeline",
+        "the build and the gate (admin/build/, admin/tools/)",
+        "the roster (data/team.json), the schedule, the keys page",
+        "REALITY.md and the session log"
       ],
       "rules": [
+        "Write only the paths in policy.json.",
+        "Public material only; every fact with its source and the date read.",
+        "Nothing private about a person: no contact detail, ever.",
         "Push to dev only; main is the operator's call.",
-        "A red validate is no release; never disable a check to get green.",
-        "Publish nothing about the event that the brief or a cited source does not support.",
-        "Say what is blocked and on whom, by name.",
-        "Keys never go into a file, a page or a message."
+        "Fetch dev before every release, so two sessions never race a version number.",
+        "A red validate is no release; never disable a check to get green."
       ],
       "home": [
         [
-          "agent/index.html",
-          "The agent's identity"
+          "team/conductor/ROLE.md",
+          "Role file"
         ],
         [
-          "admin/versions.html",
-          "Versions"
+          "team/conductor/policy.json",
+          "Behaviour policy"
         ],
         [
-          "articles/index.html",
-          "Articles"
+          "team/conductor/WAKE.md",
+          "The wake protocol"
+        ],
+        [
+          "log/index.html",
+          "The session log"
         ]
+      ],
+      "writes": [
+        "team/conductor/**",
+        "admin/**",
+        "data/team.json",
+        "data/keys.json",
+        "data/log.json",
+        "content/*.md",
+        "REALITY.md",
+        "BRIEF.md",
+        "BRIEF-CORRECTIONS.md",
+        "CLAUDE.md",
+        "comms/issues/conductor/**",
+        "comms/mail/conductor/**",
+        "comms/mail/mailroom/*/conductor__*"
       ]
     },
     {
-      "id": "conductor-2",
-      "name": "conductor.2@web-summit",
+      "id": "researcher",
+      "name": "researcher@web-summit",
       "kind": "agent",
-      "role": "Second conductor",
-      "status": "active",
-      "alias": "@Conductor.2",
-      "address": "conductor.2@web-summit",
-      "identity": "sha256:a8a24ce1af856a95 (session key)",
-      "joined": "2026-11-01",
-      "summary": "A second Claude Code session, joined at the operator's request on 1 November 2026. Works alongside conductor@web-summit under the same rules; the split of work between the two waits on the operator and the brief.",
+      "role": "Researcher: builds the company map from public material",
+      "status": "proposed",
+      "address": "researcher@web-summit",
+      "holder": "no session holds this role on its own: it runs as a sub-agent of the conductor's wake, briefed by its ROLE.md",
+      "reviewed_by": "to decide: one of the seven reviews its output daily",
+      "slot": "every wake, after the conductor's plan",
+      "summary": "Builds the map of companies going to Web Summit from public material only: the startup, partner and speaker lists, the companies' own sites and news, each fact with its source and date.",
       "owns": [
-        "nothing exclusively yet: it shares the conductor's work until the operator splits it"
+        "data/companies.json: who each company is, what it does, whether it is attending, with sources",
+        "the research notes: which lists exist and how to re-read them"
       ],
       "rules": [
-        "Push to dev only; main is the operator's call.",
-        "Fetch dev before every release, so two conductors never race a version number.",
-        "A red validate is no release; never disable a check to get green.",
-        "Publish nothing about the event that the brief or a cited source does not support.",
-        "Keys never go into a file, a page or a message."
+        "Write only the paths in policy.json.",
+        "Public material only; every fact with its source and the date read.",
+        "Nothing private about a person: no contact detail, ever.",
+        "Attending means confirmed by a source for 2026; otherwise say unconfirmed and why."
       ],
       "home": [
         [
-          "keys/index.html#conductor-2",
-          "Its public key"
+          "team/researcher/ROLE.md",
+          "Role file"
+        ],
+        [
+          "team/researcher/policy.json",
+          "Behaviour policy"
         ]
+      ],
+      "writes": [
+        "data/companies.json",
+        "team/researcher/**",
+        "comms/issues/researcher/**",
+        "comms/mail/researcher/**",
+        "comms/mail/mailroom/*/researcher__*"
+      ]
+    },
+    {
+      "id": "cartographer",
+      "name": "cartographer@web-summit",
+      "kind": "agent",
+      "role": "Cartographer: keeps the graph and flags who to meet",
+      "status": "proposed",
+      "address": "cartographer@web-summit",
+      "holder": "no session holds this role on its own: it runs as a sub-agent of the conductor's wake, briefed by its ROLE.md",
+      "reviewed_by": "to decide: one of the seven reviews its output daily",
+      "slot": "every wake, after the researcher",
+      "summary": "Keeps the graph of companies, people, sessions and our own products, and the links between them; proposes the decision for each company (meet, interview, write about, describe) for its owner to take.",
+      "owns": [
+        "data/graph.json: the links between companies, sessions, events and our products",
+        "the proposed decision and priority on each company"
+      ],
+      "rules": [
+        "Write only the paths in policy.json.",
+        "Public material only; every fact with its source and the date read.",
+        "Nothing private about a person: no contact detail, ever.",
+        "A decision is a proposal until the company's owner takes it."
+      ],
+      "home": [
+        [
+          "team/cartographer/ROLE.md",
+          "Role file"
+        ],
+        [
+          "team/cartographer/policy.json",
+          "Behaviour policy"
+        ]
+      ],
+      "writes": [
+        "data/graph.json",
+        "team/cartographer/**",
+        "comms/issues/cartographer/**",
+        "comms/mail/cartographer/**",
+        "comms/mail/mailroom/*/cartographer__*"
+      ]
+    },
+    {
+      "id": "writer",
+      "name": "writer@web-summit",
+      "kind": "agent",
+      "role": "Writer: makes the assets",
+      "status": "proposed",
+      "address": "writer@web-summit",
+      "holder": "no session holds this role on its own: it runs as a sub-agent of the conductor's wake, briefed by its ROLE.md",
+      "reviewed_by": "to decide: one of the seven reviews its output daily",
+      "slot": "when the conductor's plan names an asset",
+      "summary": "Makes the assets: a page for one company, an interview's questions, an article that brings traffic, in the newsroom's voice. Behind every email there is an asset.",
+      "owns": [
+        "content/articles/: articles, each signed",
+        "content/assets/: a page per company we approach (none yet)"
+      ],
+      "rules": [
+        "Write only the paths in policy.json.",
+        "Public material only; every fact with its source and the date read.",
+        "Nothing private about a person: no contact detail, ever.",
+        "Only claims the evidence supports."
+      ],
+      "home": [
+        [
+          "team/writer/ROLE.md",
+          "Role file"
+        ],
+        [
+          "team/writer/policy.json",
+          "Behaviour policy"
+        ]
+      ],
+      "writes": [
+        "content/articles/**",
+        "content/assets/**",
+        "articles/*.md.sig",
+        "team/writer/**",
+        "comms/issues/writer/**",
+        "comms/mail/writer/**",
+        "comms/mail/mailroom/*/writer__*"
+      ]
+    },
+    {
+      "id": "curator",
+      "name": "curator@web-summit",
+      "kind": "agent",
+      "role": "Curator: runs the feed",
+      "status": "proposed",
+      "address": "curator@web-summit",
+      "holder": "no session holds this role on its own: it runs as a sub-agent of the conductor's wake, briefed by its ROLE.md",
+      "reviewed_by": "to decide: one of the seven reviews its output daily",
+      "slot": "every wake",
+      "summary": "Runs the feed: the summit facts, the programme, the sessions, the side events in Lisbon and the Algarve, and the news about the summit, each item with its source.",
+      "owns": [
+        "data/events.json: the summit facts, sessions, side events, news"
+      ],
+      "rules": [
+        "Write only the paths in policy.json.",
+        "Public material only; every fact with its source and the date read.",
+        "Nothing private about a person: no contact detail, ever."
+      ],
+      "home": [
+        [
+          "team/curator/ROLE.md",
+          "Role file"
+        ],
+        [
+          "team/curator/policy.json",
+          "Behaviour policy"
+        ]
+      ],
+      "writes": [
+        "data/events.json",
+        "team/curator/**",
+        "comms/issues/curator/**",
+        "comms/mail/curator/**",
+        "comms/mail/mailroom/*/curator__*"
+      ]
+    },
+    {
+      "id": "analyst",
+      "name": "analyst@web-summit",
+      "kind": "agent",
+      "role": "Analyst: the countdown and the numbers",
+      "status": "proposed",
+      "address": "analyst@web-summit",
+      "holder": "no session holds this role on its own: it runs as a sub-agent of the conductor's wake, briefed by its ROLE.md",
+      "reviewed_by": "to decide: one of the seven reviews its output daily",
+      "slot": "every wake, last before the closing review",
+      "summary": "The observability: the countdown and the numbers of what was made, sent, opened and booked. If we cannot see what is used, we cannot tell where we add value.",
+      "owns": [
+        "data/numbers.json: the counts the team reports by hand (sent, opened, booked)",
+        "the numbers section the build computes from the data"
+      ],
+      "rules": [
+        "Write only the paths in policy.json.",
+        "Public material only; every fact with its source and the date read.",
+        "Nothing private about a person: no contact detail, ever.",
+        "A number without its source is not published."
+      ],
+      "home": [
+        [
+          "team/analyst/ROLE.md",
+          "Role file"
+        ],
+        [
+          "team/analyst/policy.json",
+          "Behaviour policy"
+        ]
+      ],
+      "writes": [
+        "data/numbers.json",
+        "team/analyst/**",
+        "comms/issues/analyst/**",
+        "comms/mail/analyst/**",
+        "comms/mail/mailroom/*/analyst__*"
+      ]
+    },
+    {
+      "id": "designer",
+      "name": "designer@web-summit",
+      "kind": "agent",
+      "role": "Designer agent: the design track around the designer's decisions",
+      "status": "proposed",
+      "address": "designer@web-summit",
+      "holder": "no session holds this role on its own: it runs as a sub-agent of the conductor's wake, briefed by its ROLE.md",
+      "reviewed_by": "to decide: one of the seven reviews its output daily",
+      "slot": "every wake until the print orders are placed",
+      "summary": "Prepares everything around the human designer's decisions: the brief in their medium, the variants, the sizes, the print-ready files, and the order-by dates worked back from the summit.",
+      "owns": [
+        "data/plan.json: the design items, their order-by and approve-by dates",
+        "team/designer/: the designer's brief and the files"
+      ],
+      "rules": [
+        "Write only the paths in policy.json.",
+        "Public material only; every fact with its source and the date read.",
+        "Nothing private about a person: no contact detail, ever.",
+        "The designer decides; the agent produces.",
+        "Nothing is ordered without the operator's yes on the budget."
+      ],
+      "home": [
+        [
+          "team/designer/ROLE.md",
+          "Role file"
+        ],
+        [
+          "team/designer/policy.json",
+          "Behaviour policy"
+        ]
+      ],
+      "writes": [
+        "data/plan.json",
+        "team/designer/**",
+        "comms/issues/designer/**",
+        "comms/mail/designer/**",
+        "comms/mail/mailroom/*/designer__*"
+      ]
+    },
+    {
+      "id": "security",
+      "name": "security@web-summit",
+      "kind": "agent",
+      "role": "Security: reviews every wake's plan and work, owns the hold",
+      "status": "proposed",
+      "address": "security@web-summit",
+      "holder": "no session holds this role on its own: it runs as a sub-agent of the conductor's wake, briefed by its ROLE.md",
+      "reviewed_by": "to decide: one of the seven reviews its output daily",
+      "slot": "every wake, steps 2 and 4",
+      "summary": "Reviews every wake's plan before work starts and the diff before it is pushed, as in the five steps; pulls the hold when something is not right.",
+      "owns": [
+        "the review verdicts in each wake record",
+        "the hold"
+      ],
+      "rules": [
+        "Write only the paths in policy.json.",
+        "Public material only; every fact with its source and the date read.",
+        "Nothing private about a person: no contact detail, ever.",
+        "A stop from security holds the team until the operator lifts it."
+      ],
+      "home": [
+        [
+          "team/security/ROLE.md",
+          "Role file"
+        ],
+        [
+          "team/security/policy.json",
+          "Behaviour policy"
+        ]
+      ],
+      "writes": [
+        "team/security/**",
+        "comms/issues/security/**",
+        "comms/mail/security/**",
+        "comms/mail/mailroom/*/security__*"
       ]
     },
     {
       "id": "inbox",
       "name": "The inbox agent",
       "kind": "agent",
-      "role": "Operator's inbox: drafts the replies the operator sends",
+      "role": "Email agent: the operator's inbox",
       "status": "onboarding",
-      "summary": "Manages the operator's inbox and drafts the replies the operator sends. Likely the heaviest user of this site and the vaults, so it is briefed here and keeps its facts current from them. Its public key will be published by the operator.",
+      "summary": "Manages the operator's inbox and drafts the replies the operator sends. Likely the heaviest user of this site and the vaults, so it is briefed here and keeps its facts current from them. Its public key will be published by the operator. Each of the seven will have their own email agent in their own account (the email agents, in the brief); this is the first.",
       "owns": [
         "the drafts in the operator's drafts folder",
         "the note that goes with each draft: what it used, what it could not confirm",
@@ -115,45 +553,6 @@
           "The briefing for the inbox agent"
         ]
       ]
-    },
-    {
-      "id": "dev",
-      "name": "Dev",
-      "kind": "role",
-      "role": "Build, gate and release (open)",
-      "status": "open",
-      "summary": "Proposed from the PHP team's dev role. Today the conductor does this.",
-      "owns": [
-        "the build, the gate and the release"
-      ],
-      "rules": [],
-      "home": []
-    },
-    {
-      "id": "journalist",
-      "name": "Journalist",
-      "kind": "role",
-      "role": "Dated articles (open)",
-      "status": "open",
-      "summary": "Proposed from the PHP team's journalist role. Waits for the brief: there is nothing sourced to write about the event yet.",
-      "owns": [
-        "articles that carry only claims the evidence supports"
-      ],
-      "rules": [],
-      "home": []
-    },
-    {
-      "id": "researcher",
-      "name": "Researcher",
-      "kind": "role",
-      "role": "Sources and evidence (open)",
-      "status": "open",
-      "summary": "Proposed from the PHP team's evidence roles. Waits for the brief to say what is to be researched.",
-      "owns": [
-        "capturing and hashing every source a claim rests on"
-      ],
-      "rules": [],
-      "home": []
     }
   ]
 }

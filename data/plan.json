@@ -1,0 +1,136 @@
+{
+  "about": "Everything worked backwards from the summit, 9 to 12 November 2026 in Lisbon. From the [team brief](https://newsroom.sgit.ai/articles/web-summit-team-brief.html), [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) and [the plan of 26 October](https://newsroom.sgit.ai/articles/web-summit-2026-the-plan.html). Goals in the plan's order: usage first, the sale after. This is a plan: nothing on it has happened unless its status says so.",
+  "phases": [
+    {
+      "when": "31 Oct to 2 Nov",
+      "what": "The site and the team up from the template: brief, roles, policies, keys, the schedule, the first release; the company map started.",
+      "status": "now"
+    },
+    {
+      "when": "2 Nov",
+      "what": "First meetings of the team (the operator's lunch): owners for the first companies, the role cards, the design budget, who orders what.",
+      "status": "planned"
+    },
+    {
+      "when": "3 to 8 Nov",
+      "what": "The map filled and prioritised; an asset (a page) for each of the first companies; meetings booked; the design files approved and sent to print; meetups in the Algarve.",
+      "status": "planned"
+    },
+    {
+      "when": "by 6 to 7 Nov",
+      "what": "Printed items delivered (UK by 6 Nov, Algarve and Lisbon by 7 Nov): see the design track below.",
+      "status": "planned"
+    },
+    {
+      "when": "9 to 12 Nov, Lisbon",
+      "what": "Seven people, one board, a daily debrief on this site, the map updated after every meeting, content published as it happens; every memo or card acted on within the hour.",
+      "status": "planned"
+    },
+    {
+      "when": "The week after",
+      "what": "Every conversation followed up from the map, every page made, a debrief of the team itself; then each role pauses.",
+      "status": "planned"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "owners",
+      "question": "Who owns which companies on the map (one owner each among the seven).",
+      "from": "both briefs",
+      "status": "open"
+    },
+    {
+      "id": "cards",
+      "question": "Each person's role card: what they follow, which conversations they lead, what they are not doing, and their yes to be named.",
+      "from": "part two",
+      "status": "open"
+    },
+    {
+      "id": "agent-owners",
+      "question": "Who reviews which team agent's output daily.",
+      "from": "team brief",
+      "status": "open"
+    },
+    {
+      "id": "person-agents",
+      "question": "How each person's agent joins: its key, its vault, what its CRM shares with the team view.",
+      "from": "part two",
+      "status": "open"
+    },
+    {
+      "id": "design-budget",
+      "question": "The design budget, the designer, and the order-by dates once there are quotes.",
+      "from": "both briefs",
+      "status": "open"
+    },
+    {
+      "id": "designer-card",
+      "question": "The designer's card, once asked how they like to work.",
+      "from": "part two",
+      "status": "open"
+    },
+    {
+      "id": "email-first",
+      "question": "Which email accounts join first, and when each email agent gets its key.",
+      "from": "team brief",
+      "status": "open"
+    },
+    {
+      "id": "addresses",
+      "question": "Who receives the printed items, and where (Algarve, UK or Lisbon). Kept private: never on this site.",
+      "from": "part two",
+      "status": "open"
+    },
+    {
+      "id": "sell",
+      "question": "What we can sell at the summit, and how someone buys it from a phone.",
+      "from": "part two",
+      "status": "open"
+    },
+    {
+      "id": "crm-vaults",
+      "question": "Where the team CRM lives: the existing CRM vaults (public and private) on dev.send.sgraph.ai, with one file per company and person by shared id, as the inbox recipe describes. The public map on this site is the team view.",
+      "from": "the conductor, 1 Nov",
+      "status": "proposed"
+    },
+    {
+      "id": "cadence",
+      "question": "The schedule: a conductor wake every 2 hours, in the conductor's standing session. Change it to hourly or 4-hourly as the work needs.",
+      "from": "the operator, 1 Nov",
+      "status": "decided",
+      "answer": "every 2 hours, from 1 November 2026"
+    }
+  ],
+  "design": {
+    "about": "T-shirts, hoodies, cards for everyone, flyers, a banner and stickers: each has to be designed, approved, ordered, printed and delivered before 9 November, so each gets the date its design must be approved and the date it must be ordered, from the printers' published lead times. Every printed item carries a code that leads to a page. The designer decides; the designer agent produces.",
+    "items": [],
+    "too_late": [],
+    "qr": [],
+    "sources": []
+  },
+  "loop": [
+    "**Something is recorded:** a voice memo after a conversation, a photo of a business card, a note to an agent, a code scanned at our stand.",
+    "**The owner's agent picks it up** at its next wake, within the hour.",
+    "**The record is updated:** the company and the person in the owner's personal CRM (private), the conversation in its timeline, the next step; the team view on this site shows only the owner, the status and the next step.",
+    "**An asset is made:** a page for that company, with what was discussed and what we can do for them.",
+    "**A follow-up is drafted** in the person's own email, waiting for them.",
+    "**The person sends it.** No email goes out on its own."
+  ],
+  "card_questions": [
+    "What do you want to get out of Web Summit, in one line?",
+    "Which companies, sectors or people do you want to own on the map? Which do you already know?",
+    "Which conversations will you lead, and what are you not doing?",
+    "Where are you before the summit (Algarve, UK, Lisbon), for meetups and deliveries? (kept private)",
+    "Which agent do you work with today, and which email account should your email agent run in?",
+    "How do you like to receive a brief: a page, a voice note, a call, a message? How much context, and how fast do you usually reply?",
+    "What may your card on this site say, and may it carry your name? (nothing is published without your yes)"
+  ],
+  "kickstart": [
+    "Agree owners for the first 10 to 20 companies on the [company map](../companies/index.html), starting with priority 1.",
+    "Fill each person's role card from the questions above, and say yes or no to being named.",
+    "Set the design budget, name who talks to the designer, and agree the items, quantities and delivery addresses (privately); the order-by dates on this page are the deadline.",
+    "Pick the first three assets to make (a page each for a company we want to meet), and who sends the link.",
+    "Agree the daily rhythm in Lisbon: the debrief time, and that every memo or card goes to the owner's agent within the hour.",
+    "Agree what we sell and show: the five-minute path to value for each product, as the plan asks."
+  ]
+}

@@ -135,3 +135,15 @@ footer .row { max-width: var(--wide); margin: 0 auto; padding: 1rem var(--gutter
     nav.site .gh { display: none; }
     main { padding-top: 1.4rem; }
 }
+
+/* summit additions: countdown, numbers, pills, wide tables, banners */
+.countdown { display: inline-block; margin: 0.2rem 0 1rem; padding: 0.45rem 0.9rem; font-weight: 600; color: var(--accent-ink); background: var(--accent); border-radius: var(--radius); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: 0.7rem; margin: 1rem 0 1.4rem; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.7rem 0.9rem; }
+.stat b { display: block; font-size: 1.6rem; color: var(--accent-dk); line-height: 1.1; }
+.stat span { color: var(--ink-2); font-size: 0.85rem; }
+.pill { display: inline-block; padding: 0.05rem 0.5rem; font-size: 0.8rem; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); color: var(--ink-2); white-space: nowrap; }
+.pill.hot { background: var(--accent-soft); color: var(--accent-dk); border-color: var(--accent); }
+.scroll { overflow-x: auto; max-width: 100%; }
+.scroll table { min-width: 36rem; }
+pre.banner { font-size: 0.72rem; line-height: 1.25; overflow-x: auto; }

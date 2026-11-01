@@ -1,0 +1,8 @@
+{
+  "agent": "conductor",
+  "state": "active: running as the conductor's session",
+  "last_wake": null,
+  "done": [],
+  "next": [],
+  "asks": []
+}
