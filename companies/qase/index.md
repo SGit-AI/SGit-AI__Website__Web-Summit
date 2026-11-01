@@ -2,7 +2,7 @@
 
 Test management platform used by 2,000+ engineering teams; launching Tiden, which records what was asked and checks every change made by coding agents against it.
 
-Site version: v0.1.18
+Site version: v0.1.19
 
 - Website: https://www.qase.io/
 - Category: devtools

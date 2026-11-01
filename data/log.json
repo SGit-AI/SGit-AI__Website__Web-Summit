@@ -189,6 +189,36 @@
         "names and ids for the seven; owners for first meetings"
       ],
       "next": "scheduled wake at 10:27 UTC"
+    },
+    {
+      "id": "wake-2026-11-01T1028Z",
+      "agent": "conductor",
+      "started": "2026-11-01T10:28:09Z",
+      "ended": "2026-11-01T10:32:00Z",
+      "kind": "scheduled, every 2 hours at :27 UTC",
+      "objective": "Check for operator answers and new public material; idle if nothing worth a role's time",
+      "commit": "475bbfa",
+      "plan": [
+        "check: operator answers, mail, boards, holds",
+        "check: the Web Summit schedule for change"
+      ],
+      "roles": [],
+      "outcome": "idle",
+      "release": "v0.1.19",
+      "achieved": [
+        "checked: no operator answers, no mail, no board items, no hold",
+        "no role run: the next useful work (owners, cards, card QR codes, publishing the article) waits on the operator"
+      ],
+      "blockers": [
+        "owners, names, budget, design and the signing move wait on the operator"
+      ],
+      "for_you": [
+        "approve designs by Mon 2 Nov 14:00",
+        "agree the signing move",
+        "names and ids for the seven; owners for first meetings",
+        "proposal: slow the schedule to every 4 hours until your answers arrive, then back to every 2"
+      ],
+      "next": "scheduled wake at 12:27 UTC"
     }
   ]
 }

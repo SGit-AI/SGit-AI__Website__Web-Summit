@@ -2,7 +2,7 @@
 
 Web and mobile accessibility software, services and training.
 
-Site version: v0.1.18
+Site version: v0.1.19
 
 - Website: https://www.deque.com/
 - Category: devtools

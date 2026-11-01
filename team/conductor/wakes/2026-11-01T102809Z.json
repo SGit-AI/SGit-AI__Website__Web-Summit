@@ -1,0 +1,11 @@
+{
+  "agent": "conductor",
+  "started": "2026-11-01T10:28:09Z",
+  "kind": "scheduled, every 2 hours at :27 UTC",
+  "objective": "Check for operator answers and new public material; idle if nothing worth a role's time",
+  "commit": "475bbfa",
+  "plan": [],
+  "steps": [],
+  "outcome": "idle",
+  "closed": "2026-11-01T10:28:24.831Z"
+}

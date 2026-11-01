@@ -2,7 +2,7 @@
 
 Identity platform that helps businesses verify people and organisations, assess risk and build trust online (from its CEO's Web Summit bio; the company site refused an automated read).
 
-Site version: v0.1.18
+Site version: v0.1.19
 
 - Website: https://withpersona.com/
 - Category: security

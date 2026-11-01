@@ -2,7 +2,7 @@
 
 A professional designer joining to help with the design track. Their hours are scarce, so agents prepare everything around their decisions: the variants, the sizes, the print-ready files, the presentations.
 
-Site version: v0.1.18
+Site version: v0.1.19
 
 Kind: person. Status: invited: their card is to ask.
 

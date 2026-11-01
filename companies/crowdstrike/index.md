@@ -2,7 +2,7 @@
 
 Global cybersecurity company with a cloud-native, AI-native platform protecting endpoints, cloud workloads, identities and data.
 
-Site version: v0.1.18
+Site version: v0.1.19
 
 - Website: https://www.crowdstrike.com/
 - Category: security

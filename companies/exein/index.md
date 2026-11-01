@@ -2,7 +2,7 @@
 
 Runtime security for physical AI, data systems, AI agents, cloud workloads, Linux and Kubernetes.
 
-Site version: v0.1.18
+Site version: v0.1.19
 
 - Website: https://www.exein.io/
 - Category: security

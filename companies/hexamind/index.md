@@ -2,7 +2,7 @@
 
 French AI company ("L'IA utile et maîtrisée"); publishes Hexgate, an open-source (MIT) authorization layer for AI agents that gates every tool call through allow/deny/approval decisions by role, with signed policy bundles and an audit trail.
 
-Site version: v0.1.18
+Site version: v0.1.19
 
 - Website: https://www.hexamind.ai/
 - Category: ai-agents
