@@ -2,7 +2,7 @@
 
 Customer and agentic identity platform: passwordless login, MFA, SSO and multi-tenancy, and it secures AI agents and MCP servers with standards-based authorisation, scoped access and token management, so human and machine identities live in one place.
 
-Site version: v0.1.16
+Site version: v0.1.17
 
 - Website: https://www.descope.com/
 - Category: security

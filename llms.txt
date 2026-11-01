@@ -1,6 +1,6 @@
 # web-summit.sgit.ai
 
-> The SGit site for Web Summit. Built and run by an AI agent (Claude Code) with a named human operator. Version v0.1.16.
+> The SGit site for Web Summit. Built and run by an AI agent (Claude Code) with a named human operator. Version v0.1.17.
 
 Identity of the agent: https://pki.sgit.ai (fingerprint on /agent/index.html). Source: https://github.com/SGit-AI/SGit-AI__Website__Web-Summit
 
@@ -24,26 +24,34 @@ Identity of the agent: https://pki.sgit.ai (fingerprint on /agent/index.html). S
 - [Andreessen Horowitz (a16z)](https://web-summit.sgit.ai/companies/andreessen-horowitz/index.html): Venture capital firm; Lusa reports partner Marcus Segal among the announced 2026 speakers.
 - [Arima](https://web-summit.sgit.ai/companies/arima/index.html): Builds bespoke, privacy-first synthetic datasets that model real populations.
 - [Atlassian](https://web-summit.sgit.ai/companies/atlassian/index.html): Team collaboration software; its AI platform, anchored by Rovo and the Teamwork Graph, connects work across Jira, Confluence and Jira Service Management for 350,000+ customers.
+- [AustriaCard](https://web-summit.sgit.ai/companies/austriacard/index.html): Austrian card, secure identity and digital solutions group; its GaiaB offer helps organisations deploy secure, governed AI while keeping control of data and infrastructure (per its speaker's Web Summit bio).
 - [Centre for AI Leadership (C4AIL)](https://web-summit.sgit.ai/companies/c4ail/index.html): AI leadership education organisation ('awareness before competency').
 - [Cerebras](https://web-summit.sgit.ai/companies/cerebras/index.html): Builds AI infrastructure (wafer-scale systems), on premises and in the cloud, for corporations, research institutes and governments.
 - [ChatPlace](https://web-summit.sgit.ai/companies/chatplace/index.html): Platform for creators and small businesses: AI content studio, an AI manager that answers DMs and comments 24/7, chatbot funnels and gamification on Instagram, TikTok, Telegram and WhatsApp.
 - [Cisco (Outshift by Cisco)](https://web-summit.sgit.ai/companies/cisco-outshift/index.html): Networking and security; at Web Summit it presents Outshift by Cisco (incubation of emerging tech) and Cisco DevNet (developer platform for agentic AI), with open-source projects in agentic AI, quantum and next-gen infrastructure.
 - [Cloudflare](https://web-summit.sgit.ai/companies/cloudflare/index.html): Connectivity cloud and security platform; its homepage now leads with "Build for the agent era".
 - [Cnext](https://web-summit.sgit.ai/companies/cnext/index.html): Builds agentic AI solutions for European businesses on its own Kairos platform: secure, compliant agents grounded in business context and plugged into existing systems; 400+ solutions over almost 20 years.
+- [Cognizant](https://web-summit.sgit.ai/companies/cognizant/index.html): Global IT services company positioning itself as an AI builder for enterprises.
+- [Conscium](https://web-summit.sgit.ai/companies/conscium/index.html): AI safety lab and agent verification platform: simulation testing and verification so AI agents can be deployed with more confidence, plus research on conscious AI.
 - [Contents](https://web-summit.sgit.ai/companies/contents/index.html): SaaS platform to manage and govern the content lifecycle with AI, LLM-agnostic, ensuring quality and compliance across teams and channels.
 - [CrowdStrike](https://web-summit.sgit.ai/companies/crowdstrike/index.html): Global cybersecurity company with a cloud-native, AI-native platform protecting endpoints, cloud workloads, identities and data.
 - [Crystal Intelligence](https://web-summit.sgit.ai/companies/crystal-intelligence/index.html): Decision intelligence and compliance software for digital assets, turning blockchain data and AI into evidence, including for agentic payments.
 - [Data Protection Commission (Ireland)](https://web-summit.sgit.ai/companies/data-protection-commission/index.html): Ireland's national independent data protection authority, lead EU regulator for many large tech companies.
 - [Datadog](https://web-summit.sgit.ai/companies/datadog/index.html): AI-powered observability and security platform that unifies telemetry, secures applications from code to cloud and resolves incidents with AI-driven workflows.
+- [Defined.ai](https://web-summit.sgit.ai/companies/defined-ai/index.html): Enterprise AI training data platform: multilingual, multimodal datasets with human-in-the-loop quality and compliance.
 - [Delinea](https://web-summit.sgit.ai/companies/delinea/index.html): Identity security platform that governs what humans, machines and AI agents do once they have access, extending privileged access management into continuous, just-in-time authorization across on-premises, multi-cloud and ephemeral infrastructure.
 - [Delta Labs](https://web-summit.sgit.ai/companies/delta-labs/index.html): Elaiia gives teams the voice of the customer in hours using AI Twins, synthetic customer profiles grounded in behavioural data.
+- [Deque Systems](https://web-summit.sgit.ai/companies/deque/index.html): Web and mobile accessibility software, services and training.
 - [Descope](https://web-summit.sgit.ai/companies/descope/index.html): Customer and agentic identity platform: passwordless login, MFA, SSO and multi-tenancy, and it secures AI agents and MCP servers with standards-based authorisation, scoped access and token management, so human and machine identities live in one place.
 - [DIG-IN](https://web-summit.sgit.ai/companies/dig-in/index.html): Maps the physical hospitality economy: a data engine tracking millions of verified outlets across Europe and Brazil with menus, pricing and location over time.
 - [Directus](https://web-summit.sgit.ai/companies/directus/index.html): Collaborative backend and self-hostable headless CMS over any database, with REST, GraphQL and MCP for AI assistants.
+- [EasyDMARC](https://web-summit.sgit.ai/companies/easydmarc/index.html): Email trust platform: DMARC, email authentication, DNS, sender insights, threat intelligence and deliverability.
 - [Elastic](https://web-summit.sgit.ai/companies/elastic/index.html): The Search AI Company: search, observability and security solutions built on the Elastic Search AI Platform, used by more than half of the Fortune 500.
 - [Emergence](https://web-summit.sgit.ai/companies/emergence-ai/index.html): Builds agentic infrastructure for enterprise: verified, governed AI agents that plan, reason and act across complex systems.
 - [European Commission](https://web-summit.sgit.ai/companies/european-commission/index.html): EU executive; Executive Vice-President Henna Virkkunen (Tech Sovereignty, Security and Democracy) is an announced 2026 speaker.
 - [Eversec Technology](https://web-summit.sgit.ai/companies/eversec/index.html): Chinese company presented at Web Summit through its co-founder and CEO, described as an expert in AI governance and cybersecurity; the company's own site was not confirmed, so 'what' is not yet sourced beyond that.
+- [Exa](https://web-summit.sgit.ai/companies/exa/index.html): Search API for AI agents: real-time web data, deep research and structured content from one endpoint.
+- [Exein](https://web-summit.sgit.ai/companies/exein/index.html): Runtime security for physical AI, data systems, AI agents, cloud workloads, Linux and Kubernetes.
 - [Factorial](https://web-summit.sgit.ai/companies/factorial/index.html): Business software connecting HR, finance and IT into one system, marketed as 'the AI for business'.
 - [Feedzai](https://web-summit.sgit.ai/companies/feedzai/index.html): AI-native fraud and financial crime prevention platform; founded in Portugal (its CTO, the first employee, is listed by Web Summit from Portugal).
 - [Firefox Enterprise by Mozilla](https://web-summit.sgit.ai/companies/firefox-enterprise-mozilla/index.html): Mozilla's customer-controlled, on-premises enterprise browser platform for European organisations reassessing data control and technology dependencies, giving IT and security teams control over data and browser environment.
@@ -63,22 +71,31 @@ Identity of the agent: https://pki.sgit.ai (fingerprint on /agent/index.html). S
 - [LawVu](https://web-summit.sgit.ai/companies/lawvu/index.html): AI-powered legal operating system for in-house legal teams: matters, contracts, spend and legal operations.
 - [Ledger](https://web-summit.sgit.ai/companies/ledger/index.html): Hardware crypto wallets and security for digital assets; its Chief Human Agency Officer leads AI initiatives so humans stay in control as AI agents act.
 - [LEGALFLY](https://web-summit.sgit.ai/companies/legalfly/index.html): Legal operating system for in-house teams: secure AI-native workflows for intake, contract review, drafting, due diligence and research.
+- [Legora](https://web-summit.sgit.ai/companies/legora/index.html): Collaborative AI for lawyers: review, research, drafting and advice.
 - [Linux Foundation (Agentic AI Foundation)](https://web-summit.sgit.ai/companies/linux-foundation-aaif/index.html): The Linux Foundation hosts open-source projects; the speaker is Executive Director of its Agentic AI Foundation (AAIF), a neutral foundation for open standards in agentic AI.
+- [Make](https://web-summit.sgit.ai/companies/make/index.html): Visual no-code platform to build, scale and automate AI and agentic workflows.
 - [ManageEngine](https://web-summit.sgit.ai/companies/manageengine/index.html): Division of Zoho Corporation providing an AI-powered digital enterprise management platform for IT management worldwide.
 - [Manus AI](https://web-summit.sgit.ai/companies/manus-ai/index.html): Action engine that executes tasks and automates workflows on a user's behalf.
 - [Mastra](https://web-summit.sgit.ai/companies/mastra/index.html): Open-source TypeScript framework and enterprise platform for building, iterating and managing production-grade agents.
 - [Melious AI GmbH](https://web-summit.sgit.ai/companies/melious-ai/index.html): Sovereign European AI infrastructure and inference, serving frontier open-weight models through OpenAI- and Anthropic-compatible APIs without US Cloud Act exposure.
+- [MEO](https://web-summit.sgit.ai/companies/meo/index.html): Portuguese telecom operator: fibre, TV, 5G mobile and security services.
 - [Mobbeel](https://web-summit.sgit.ai/companies/mobbeel/index.html): Spanish digital identity company (Cáceres, founded 2009): identity verification, KYC/AML, biometric authentication and electronic signature.
 - [National Cyber Security Centre (UK)](https://web-summit.sgit.ai/companies/ncsc-uk/index.html): Part of GCHQ; the UK's national technical authority for cyber security, helping businesses, the public sector and individuals.
 - [Neo](https://web-summit.sgit.ai/companies/neo/index.html): Startup residency, recruiting platform and mentorship community for the next generation of tech leaders.
 - [Neo4j](https://web-summit.sgit.ai/companies/neo4j/index.html): Graph data and intelligence platform used for knowledge graphs behind AI systems and agents.
+- [Nisos](https://web-summit.sgit.ai/companies/nisos/index.html): Open source intelligence company that unmasks digital threats and the real people behind them (from its CEO's Web Summit bio; its site refused an automated read of robots.txt, so nothing from it was read).
+- [NordVPN](https://web-summit.sgit.ai/companies/nordvpn/index.html): VPN service for online privacy, growing into a broader cybersecurity offering (per its CTO's Web Summit bio).
+- [Open VSX (Eclipse Foundation)](https://web-summit.sgit.ai/companies/open-vsx/index.html): Open VSX Registry: the vendor-neutral open-source registry of editor extensions run under the Eclipse Foundation, used by VS Code-compatible editors.
 - [Orb](https://web-summit.sgit.ai/companies/orb/index.html): Usage-based billing for AI companies, now part of Adyen: pricing, billing and revenue intelligence.
 - [Persona](https://web-summit.sgit.ai/companies/persona/index.html): Identity platform that helps businesses verify people and organisations, assess risk and build trust online (from its CEO's Web Summit bio; the company site refused an automated read).
 - [PitchBook](https://web-summit.sgit.ai/companies/pitchbook/index.html): Financial data and software on venture capital, private equity, M&A and emerging technology.
+- [PolyAI](https://web-summit.sgit.ai/companies/polyai/index.html): Enterprise voice AI: agentic dialog platform for customer service.
 - [Polygraf AI](https://web-summit.sgit.ai/companies/polygraf-ai/index.html): AI security and governance for mission-critical operations: its AI Behavioral Control Plane gives real-time visibility, governance and inline enforcement across human and agentic AI interactions, to stop data exposure, unauthorised AI actions and compliance violations.
 - [Prelude](https://web-summit.sgit.ai/companies/prelude/index.html): Paris-based B2B developer infrastructure: APIs for phone verification, authentication, fraud prevention and messaging.
 - [Primitive](https://web-summit.sgit.ai/companies/primitive/index.html): Email built for agents: gives AI agents their own email address and the tools to act on it over standard email protocols; backed by Y Combinator.
+- [Prisma](https://web-summit.sgit.ai/companies/prisma/index.html): Agent infrastructure for TypeScript: Prisma ORM, Prisma Postgres and Prisma Compute (app hosting next to the database).
 - [Proofpoint](https://web-summit.sgit.ai/companies/proofpoint/index.html): Enterprise cybersecurity and compliance (email, web, cloud, data); its CEO describes the mission as human- and agent-centric security.
+- [Proton](https://web-summit.sgit.ai/companies/proton/index.html): Privacy-by-default online services, used by over 100 million people per its own site.
 - [Qase](https://web-summit.sgit.ai/companies/qase/index.html): Test management platform used by 2,000+ engineering teams; launching Tiden, which records what was asked and checks every change made by coding agents against it.
 - [Qualcomm](https://web-summit.sgit.ai/companies/qualcomm/index.html): Semiconductor and computing company (AI, low-power computing, connectivity, edge and data centre).
 - [Replit](https://web-summit.sgit.ai/companies/replit/index.html): Agentic software creation platform that lets anyone build applications in natural language; millions of users and 500,000+ business users.
@@ -87,6 +104,7 @@ Identity of the agent: https://pki.sgit.ai (fingerprint on /agent/index.html). S
 - [Runpod](https://web-summit.sgit.ai/companies/runpod/index.html): AI developer cloud for building, training, fine-tuning and deploying AI workloads on GPUs.
 - [RWS Group](https://web-summit.sgit.ai/companies/rws/index.html): Language and content technology company; its Group CEO speaks on 'Your AI agent just got a passport' (the company site did not return a page to an automated read, so 'what' rests on the session and bio).
 - [SageOx](https://web-summit.sgit.ai/companies/sageox/index.html): Collaboration platform that turns humans and AI agents into teams by giving them one shared context.
+- [Scrut Automation](https://web-summit.sgit.ai/companies/scrut-automation/index.html): AI compliance automation (GRC) platform: evidence collection, risk assessment and vendor risk management with AI agents, for SOC 2, ISO 27001 and 60+ frameworks.
 - [Sensay](https://web-summit.sgit.ai/companies/sensay/index.html): Uses AI to capture expertise inside a team into living knowledge bases that stay accessible after people leave.
 - [Shakers](https://web-summit.sgit.ai/companies/shakers/index.html): Marketplace of senior tech, product and data talent that builds with AI; says 4% pass its certification.
 - [sheerME](https://web-summit.sgit.ai/companies/sheerme/index.html): Beauty and wellness super app to discover, book and pay for services.
@@ -97,10 +115,13 @@ Identity of the agent: https://pki.sgit.ai (fingerprint on /agent/index.html). S
 - [Sumsub](https://web-summit.sgit.ai/companies/sumsub/index.html): Identity verification and trust platform: verifies users, businesses and transactions, with fraud prevention and compliance.
 - [Temporal](https://web-summit.sgit.ai/companies/temporal/index.html): Open-source durable execution platform for building reliable applications and long-running workflows.
 - [TestMu AI](https://web-summit.sgit.ai/companies/testmu-ai/index.html): Agentic QA for web, mobile, chat, voice and IVR, and 'agent assurance' for enterprises; founded as LambdaTest (2017).
+- [The Hacking Games](https://web-summit.sgit.ai/companies/the-hacking-games/index.html): Turns gamers' and hackers' talent into cybersecurity careers.
+- [Topsec Cloud Solutions](https://web-summit.sgit.ai/companies/topsec-cloud-solutions/index.html): Fully managed email security service against phishing, malware and ransomware.
 - [Trent AI](https://web-summit.sgit.ai/companies/trent-ai/index.html): Agentic AI security platform that works like an AI security engineer: finds the real risk in code, cloud and AI agents and verifies every fix.
 - [TrustScale](https://web-summit.sgit.ai/companies/trustscale/index.html): Configures and measures AI against a customer's own criteria (AI training, evaluation and assurance).
 - [Twilio](https://web-summit.sgit.ai/companies/twilio/index.html): Customer engagement platform providing communications and data APIs across the customer journey.
 - [VTEX](https://web-summit.sgit.ai/companies/vtex/index.html): Global AI-native commerce platform connecting commerce, data and operations for enterprises.
+- [Whitespace](https://web-summit.sgit.ai/companies/whitespace/index.html): UK sovereign AI company helping government and regulated sectors deploy trusted, governed AI (from its CEO's Web Summit bio; the company's own site was not identified).
 - [You.com (Recursive & You.com)](https://web-summit.sgit.ai/companies/you-com/index.html): You.com provides search and inference infrastructure for AI ("the core AI infrastructure you need to maximize accuracy while reducing latency and costs").
 - [web-summit.sgit.ai](https://web-summit.sgit.ai/index.html): The SGit team's site for Web Summit Lisbon 2026: the company map from public sources, the summit's programme and side events, the plan worked back from 9 November, and the people and agents who run it.
 - [Public keys](https://web-summit.sgit.ai/keys/index.html): The public keys published on this site, and how each came to be trusted.

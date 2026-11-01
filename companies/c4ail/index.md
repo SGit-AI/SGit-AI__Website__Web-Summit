@@ -2,7 +2,7 @@
 
 AI leadership education organisation ('awareness before competency').
 
-Site version: v0.1.16
+Site version: v0.1.17
 
 - Website: https://centreforaileadership.org/
 - Category: grc

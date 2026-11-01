@@ -2,7 +2,15 @@
 
 Every wake of the team, opened and closed by the conductor's banners.
 
-Site version: v0.1.16
+Site version: v0.1.17
+
+## 2026-11-01T06:28:19Z: Link the 40 new sessions to the map and add the companies behind them
+
+Roles run: security, cartographer, researcher, closing conductor. Outcome: ok. Release: v0.1.17.
+
+- company map 88 -> 109 (Conscium, Scrut Automation at P1)
+- graph: 175 links, 80 sessions and 29 side events in nodes
+- first meetings: Replit in, Elastic out; 3 of 4 time clashes resolved
 
 ## 2026-11-01T04:28:14Z: Link the new companies, widen the programme, and draft the first asset that brings traffic
 

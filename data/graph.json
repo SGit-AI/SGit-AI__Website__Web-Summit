@@ -1,7 +1,7 @@
 {
   "about": "Links between companies, sessions, events, people seats and our products. Kept by the cartographer.",
   "read_on": "2026-11-01",
-  "method": "Built by cartographer@web-summit on 1 November 2026 (revised in the wake of 04:28Z) from the committed data/companies.json (HEAD, 88 companies) and data/events.json (HEAD). Company-to-session and company-to-side-event links only where a session speaker's organisation is the company, or the session or event names it as host; source is the session or event URL. Company-to-product links, proposals, clusters and first meetings are our judgement and are proposals until each company's owner decides. Proposals echo the researcher's decision and priority from data/companies.json.",
+  "method": "Built by cartographer@web-summit on 1 November 2026 (revised in the wakes of 04:28Z and 06:28Z) from the committed data/companies.json (HEAD, 88 companies) and data/events.json (HEAD). Company-to-session and company-to-side-event links only where a session speaker's organisation is the company, or the session or event names it as host; source is the session or event URL. Company-to-product links, proposals, clusters and first meetings are our judgement and are proposals until each company's owner decides. Proposals echo the researcher's decision and priority from data/companies.json.",
   "nodes": {
     "products": [
       {
@@ -81,7 +81,47 @@
       "ws26-s37",
       "ws26-s38",
       "ws26-s39",
-      "ws26-s40"
+      "ws26-s40",
+      "ws26-s41",
+      "ws26-s42",
+      "ws26-s43",
+      "ws26-s44",
+      "ws26-s45",
+      "ws26-s46",
+      "ws26-s47",
+      "ws26-s48",
+      "ws26-s49",
+      "ws26-s50",
+      "ws26-s51",
+      "ws26-s52",
+      "ws26-s53",
+      "ws26-s54",
+      "ws26-s55",
+      "ws26-s56",
+      "ws26-s57",
+      "ws26-s58",
+      "ws26-s59",
+      "ws26-s60",
+      "ws26-s61",
+      "ws26-s62",
+      "ws26-s63",
+      "ws26-s64",
+      "ws26-s65",
+      "ws26-s66",
+      "ws26-s67",
+      "ws26-s68",
+      "ws26-s69",
+      "ws26-s70",
+      "ws26-s71",
+      "ws26-s72",
+      "ws26-s73",
+      "ws26-s74",
+      "ws26-s75",
+      "ws26-s76",
+      "ws26-s77",
+      "ws26-s78",
+      "ws26-s79",
+      "ws26-s80"
     ],
     "side_events": [
       "se01",
@@ -101,7 +141,18 @@
       "se15",
       "se16",
       "se17",
-      "se18"
+      "se18",
+      "se19",
+      "se20",
+      "se21",
+      "se22",
+      "se23",
+      "se24",
+      "se25",
+      "se26",
+      "se27",
+      "se28",
+      "se29"
     ]
   },
   "links": [
@@ -379,6 +430,69 @@
       "source": "https://websummit.com/sessions/lis26/e76fb932-a260-464d-b56a-cf6af8c4b271/an-ai-identity-crisis/"
     },
     {
+      "from": "company:manageengine",
+      "to": "session:ws26-s49",
+      "kind": "hosts",
+      "why": "hosts the masterclass on Log360 and Zia AI when an attack has started",
+      "source": "https://websummit.com/sessions/lis26/2ac488bf-54c0-4eaa-bedc-5dd271625643/the-attack-has-started-now-what-see-log360-zia-ai-in-action-hosted-by-manageengine/"
+    },
+    {
+      "from": "company:replit",
+      "to": "session:ws26-s51",
+      "kind": "speaks-at",
+      "why": "President speaks on what a self-driving company looks like",
+      "source": "https://websummit.com/sessions/lis26/a54a6d5f-1f53-43fd-93c6-dd2c3d63a4fe/what-does-a-self-driving-company-look-like/"
+    },
+    {
+      "from": "company:launchdarkly",
+      "to": "session:ws26-s52",
+      "kind": "speaks-at",
+      "why": "co-founder and CEO speaks on pricing SaaS when users are agents",
+      "source": "https://websummit.com/sessions/lis26/9e5469da-4430-430f-9ada-277e3d2dc715/pricing-saas-when-users-are-agents/"
+    },
+    {
+      "from": "company:twilio",
+      "to": "session:ws26-s54",
+      "kind": "hosts",
+      "why": "hosts the masterclass on breaking your AI phone agent before customers do",
+      "source": "https://websummit.com/sessions/lis26/d1e1e64e-8909-44de-879b-c18b6e07ac86/how-to-break-your-ai-phone-agent-before-your-customers-hosted-by-twilio/"
+    },
+    {
+      "from": "company:launchdarkly",
+      "to": "session:ws26-s62",
+      "kind": "speaks-at",
+      "why": "co-founder and CEO speaks on coding without crashing",
+      "source": "https://websummit.com/sessions/lis26/c23c0b87-7b82-492f-a46b-af652fe6529e/give-me-a-brake-coding-without-crashing/"
+    },
+    {
+      "from": "company:datadog",
+      "to": "session:ws26-s65",
+      "kind": "hosts",
+      "why": "hosts the masterclass on monitoring in the age of GenAI",
+      "source": "https://websummit.com/sessions/lis26/3fec214a-c6f3-41bb-ace2-b45b50f6d964/monitoring-in-the-age-of-genai-beyond-golden-signals-hosted-by-datadog/"
+    },
+    {
+      "from": "company:cisco-outshift",
+      "to": "session:ws26-s66",
+      "kind": "hosts",
+      "why": "Cisco Systems hosts the masterclass on open-source AI platform engineering",
+      "source": "https://websummit.com/sessions/lis26/5f4ac039-83e3-4b2b-9415-3efa64804ee1/democratising-ai-platform-engineering-with-open-source-hosted-by-cisco-systems/"
+    },
+    {
+      "from": "company:trent-ai",
+      "to": "session:ws26-s73",
+      "kind": "speaks-at",
+      "why": "co-founder and chief scientist on the open vs closed AI debate",
+      "source": "https://websummit.com/sessions/lis26/0a834d30-6d0c-49ed-986c-6e2eed88f8ab/open-vs-closed-the-debate-defining-the-ai-era/"
+    },
+    {
+      "from": "company:european-commission",
+      "to": "session:ws26-s75",
+      "kind": "hosts",
+      "why": "DG Connect hosts the masterclass on practical support for building AI in Europe",
+      "source": "https://websummit.com/sessions/lis26/9f18a423-b002-4d0f-b2ea-c85880ae8340/building-ai-in-europe-practical-support-for-innovators-hosted-by-european-commission-dg-connect/"
+    },
+    {
       "from": "company:ibm",
       "to": "side_event:se10",
       "kind": "hosts",
@@ -398,6 +512,13 @@
       "kind": "hosts",
       "why": "co-organiser of the startup football tournament before the summit",
       "source": "https://jornaleconomico.sapo.pt/noticias/manie-volta-a-juntar-startups-em-torneio-de-futebol-antes-da-web-summit-em-lisboa/"
+    },
+    {
+      "from": "company:cisco-outshift",
+      "to": "side_event:se23",
+      "kind": "hosts",
+      "why": "Cisco showcase at the PTW Palace on moving from automation to agentic operations",
+      "source": "https://portugaltechweek.com/events/from-automation-to-autonomy-how-ai-is-changing-the-way-we-run-technology-2/"
     },
     {
       "from": "company:cisco-outshift",
@@ -2033,73 +2154,73 @@
     {
       "company": "delinea",
       "why": "agent access in production is the case ABP writes policies for; two sessions",
-      "session_or_event": "session:ws26-s06 (10 Nov 12:30, Masterclass 3, they host) or session:ws26-s37 (12 Nov 15:15, Stage 8)",
+      "session_or_event": "session:ws26-s06 (10 Nov 12:30-13:15, Masterclass 3, they host); fallback session:ws26-s37 (12 Nov 15:15-15:35, Stage 8, overlaps Airia ws26-s38)",
       "status": "proposed"
     },
     {
       "company": "descope",
       "why": "agent and MCP authorisation is the identity half of a behaviour policy; a hands-on session",
-      "session_or_event": "session:ws26-s36 (12 Nov 14:00, Developer Lounge, they run it)",
+      "session_or_event": "session:ws26-s36 (12 Nov 14:00-14:45, Developer Lounge, they run it)",
       "status": "proposed"
     },
     {
       "company": "airia",
       "why": "runtime policy and audit evidence for agents: the nearest competitor or partner to ABP",
-      "session_or_event": "session:ws26-s38 (12 Nov 15:25, Stage 9)",
+      "session_or_event": "session:ws26-s38 (12 Nov 15:25-15:36, Stage 9)",
       "status": "proposed"
     },
     {
       "company": "primitive",
       "why": "email built for agents meets our email agent and signed vaults",
-      "session_or_event": "session:ws26-s29 (12 Nov 10:50, Stage 9)",
+      "session_or_event": "session:ws26-s29 (12 Nov 10:50-11:00, Stage 9)",
       "status": "proposed"
     },
     {
       "company": "emergence-ai",
       "why": "verified, governed enterprise agents; the talk is when agents go rogue",
-      "session_or_event": "session:ws26-s26 (12 Nov 10:15, Stage 13)",
+      "session_or_event": "session:ws26-s26 (12 Nov 10:15-10:35, Stage 13)",
       "status": "proposed"
     },
     {
       "company": "feedzai",
       "why": "Portugal's best-known security scale-up on agents letting themselves in; a local anchor",
-      "session_or_event": "session:ws26-s32 (12 Nov 12:00, Stage 7; same slot as the cybersecurity meetup ws26-s39)",
+      "session_or_event": "session:ws26-s32 (12 Nov 12:00-12:20, Stage 7; clashes with the cybersecurity meetup ws26-s39, 12:00-12:25)",
       "status": "proposed"
     },
     {
       "company": "linux-foundation-aaif",
       "why": "open standards for agents: where a behaviour-policy format could become a spec",
-      "session_or_event": "session:ws26-s16 (11 Nov 11:10, Stage 13)",
+      "session_or_event": "session:ws26-s16 (11 Nov 11:10-11:30, Stage 13)",
       "status": "proposed"
     },
     {
       "company": "hexamind",
       "why": "Hexgate is the nearest open-source neighbour of ABP: compete or partner",
-      "session_or_event": "session:ws26-s39 (people in cybersecurity meetup, 12 Nov 12:00); stand not yet read",
+      "session_or_event": "stand (not yet read); or session:ws26-s39 (people in cybersecurity meetup, 12 Nov 12:00-12:25, Meetup 1; clashes with Feedzai ws26-s32; their attendance is not confirmed)",
       "status": "proposed"
     },
     {
       "company": "1password",
       "why": "agent identity and secrets next to our vaults",
-      "session_or_event": "partner stand (location not yet read); session:ws26-s39 (people in cybersecurity meetup, 12 Nov 12:00)",
+      "session_or_event": "partner stand (location not yet read); or session:ws26-s39 (people in cybersecurity meetup, 12 Nov 12:00-12:25, Meetup 1; clashes with Feedzai ws26-s32; their attendance is not confirmed)",
       "status": "proposed"
     },
     {
       "company": "cisco-outshift",
-      "why": "open-source agentic AI platform; a route to agent builders",
-      "session_or_event": "session:ws26-s33 (12 Nov 12:10, Stage 8), or the partner stand",
+      "why": "open-source agentic AI platform; a route to agent builders; three places",
+      "session_or_event": "side_event:se23 (11 Nov 17:30-18:30, PTW Palace, Cisco showcase); fallback session:ws26-s66 (12 Nov 13:00-13:45, Masterclass 1, they host; overlaps ws26-s40) or session:ws26-s33 (12 Nov 12:10-12:30, Stage 8; overlaps ws26-s32)",
       "status": "proposed"
     },
     {
-      "company": "elastic",
-      "why": "AI security operations and a host of a side event: two easy places to meet",
-      "session_or_event": "session:ws26-s05 (10 Nov 11:30, Masterclass 4) or side_event:se14 (10 Nov 19:00)",
+      "company": "replit",
+      "why": "agentic software creation: agents writing code need a harness; a featured speaker with a talk of its own",
+      "session_or_event": "session:ws26-s51 (10 Nov 16:00-16:20, Stage 13)",
       "status": "proposed"
     },
     {
       "company": "startup-portugal",
       "why": "the door to Portuguese startups and our Algarve work",
-      "session_or_event": "session:ws26-s07 (10 Nov 12:00, Masterclass 1, they host) or session:ws26-s40 (founders in Portugal meetup, 12 Nov 13:30)",
+      "session_or_event": "session:ws26-s40 (founders in Portugal meetup, 12 Nov 13:30-13:55, Meetup 6); fallback session:ws26-s07 (10 Nov 12:00-12:45, Masterclass 1, they host; overlaps ws26-s06 and ws26-s78)",
       "status": "proposed"
     }
   ]

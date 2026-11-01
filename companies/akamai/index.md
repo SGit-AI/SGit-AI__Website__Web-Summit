@@ -2,7 +2,7 @@
 
 Cloud company that powers and protects AI applications: cloud computing from core to edge plus multi-layered security against cyber threats.
 
-Site version: v0.1.16
+Site version: v0.1.17
 
 - Website: https://www.akamai.com/
 - Category: security

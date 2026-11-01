@@ -57,11 +57,22 @@ const sess=[['cloudflare','ws26-s01','speaks-at','co-founder and CEO on the agen
  ['eversec','ws26-s10','speaks-at','CEO speaks on security for the human-machine era'],
  ['data-protection-commission','ws26-s03','speaks-at','Commissioner speaks on regulating big tech'],
  ['c4ail','ws26-s19','speaks-at','co-founder on the panel beyond the AI agent hype'],
- ['crystal-intelligence','ws26-s31','speaks-at','COO speaks on an AI identity crisis']];
+ ['crystal-intelligence','ws26-s31','speaks-at','COO speaks on an AI identity crisis'],
+ // added 1 Nov 2026 (third wake, 06:28Z): new sessions ws26-s41..s80 whose speaker org or host is a company at HEAD
+ ['manageengine','ws26-s49','hosts','hosts the masterclass on Log360 and Zia AI when an attack has started'],
+ ['replit','ws26-s51','speaks-at','President speaks on what a self-driving company looks like'],
+ ['launchdarkly','ws26-s52','speaks-at','co-founder and CEO speaks on pricing SaaS when users are agents'],
+ ['twilio','ws26-s54','hosts','hosts the masterclass on breaking your AI phone agent before customers do'],
+ ['launchdarkly','ws26-s62','speaks-at','co-founder and CEO speaks on coding without crashing'],
+ ['datadog','ws26-s65','hosts','hosts the masterclass on monitoring in the age of GenAI'],
+ ['cisco-outshift','ws26-s66','hosts','Cisco Systems hosts the masterclass on open-source AI platform engineering'],
+ ['trent-ai','ws26-s73','speaks-at','co-founder and chief scientist on the open vs closed AI debate'],
+ ['european-commission','ws26-s75','hosts','DG Connect hosts the masterclass on practical support for building AI in Europe']];
 for(const [c,s,k,w] of sess){if(!S[s])throw s;L(c,'session:'+s,k,w,S[s].source);}
 for(const [c,s,k,w] of [['ibm','se10','hosts','co-hosts the tech hub side event and happy hour with Aubay Portugal'],
  ['elastic','se14','hosts','hosts an evening of dinner and networking in Lisbon'],
- ['shakers','se06','hosts','co-organiser of the startup football tournament before the summit']]){if(!E[s])throw s;L(c,'side_event:'+s,k,w,E[s].source);}
+ ['shakers','se06','hosts','co-organiser of the startup football tournament before the summit'],
+ ['cisco-outshift','se23','hosts','Cisco showcase at the PTW Palace on moving from automation to agentic operations']]){if(!E[s])throw s;L(c,'side_event:'+s,k,w,E[s].source);}
 // products, by our judgement
 const P=[
 ['cisco-outshift','abp','could-partner','agentic AI developer platform whose builders need behaviour policies'],
@@ -206,25 +217,30 @@ for(const cl of clusters)for(const c of cl.companies)if(!ids.has(c))throw c;
 const inCl=new Set(clusters.flatMap(c=>c.companies));const nocl=[...ids].filter(i=>!inCl.has(i));if(nocl.length)throw new Error('no cluster '+nocl);
 // revised 1 Nov 2026 (second wake): Descope, Airia, Emergence, Feedzai and the Linux Foundation (AAIF) in;
 // Cloudflare, CrowdStrike, Mastra, Polygraf AI and KPMG Portugal out (still proposals in their own right).
+// revised 1 Nov 2026 (third wake, 06:28Z): Replit in (meet, priority 1, now has its own talk ws26-s51); Elastic out
+// (its decision is not meet). Times de-clashed: Delinea leads with ws26-s06 (ws26-s37 overlaps Airia ws26-s38),
+// Cisco leads with side_event se23 (ws26-s33 overlaps Feedzai and the meetup; ws26-s66 overlaps ws26-s40),
+// Startup Portugal leads with ws26-s40 (ws26-s07 overlaps Delinea ws26-s06 and the Lisbon founders meetup ws26-s78).
+// Left open: Feedzai ws26-s32 and the cybersecurity meetup ws26-s39 (Hexamind, 1Password) share 12 Nov 12:00.
 const fm=[
- ['delinea','agent access in production is the case ABP writes policies for; two sessions','session:ws26-s06 (10 Nov 12:30, Masterclass 3, they host) or session:ws26-s37 (12 Nov 15:15, Stage 8)'],
- ['descope','agent and MCP authorisation is the identity half of a behaviour policy; a hands-on session','session:ws26-s36 (12 Nov 14:00, Developer Lounge, they run it)'],
- ['airia','runtime policy and audit evidence for agents: the nearest competitor or partner to ABP','session:ws26-s38 (12 Nov 15:25, Stage 9)'],
- ['primitive','email built for agents meets our email agent and signed vaults','session:ws26-s29 (12 Nov 10:50, Stage 9)'],
- ['emergence-ai','verified, governed enterprise agents; the talk is when agents go rogue','session:ws26-s26 (12 Nov 10:15, Stage 13)'],
- ['feedzai','Portugal\'s best-known security scale-up on agents letting themselves in; a local anchor','session:ws26-s32 (12 Nov 12:00, Stage 7; same slot as the cybersecurity meetup ws26-s39)'],
- ['linux-foundation-aaif','open standards for agents: where a behaviour-policy format could become a spec','session:ws26-s16 (11 Nov 11:10, Stage 13)'],
- ['hexamind','Hexgate is the nearest open-source neighbour of ABP: compete or partner','session:ws26-s39 (people in cybersecurity meetup, 12 Nov 12:00); stand not yet read'],
- ['1password','agent identity and secrets next to our vaults','partner stand (location not yet read); session:ws26-s39 (people in cybersecurity meetup, 12 Nov 12:00)'],
- ['cisco-outshift','open-source agentic AI platform; a route to agent builders','session:ws26-s33 (12 Nov 12:10, Stage 8), or the partner stand'],
- ['elastic','AI security operations and a host of a side event: two easy places to meet','session:ws26-s05 (10 Nov 11:30, Masterclass 4) or side_event:se14 (10 Nov 19:00)'],
- ['startup-portugal','the door to Portuguese startups and our Algarve work','session:ws26-s07 (10 Nov 12:00, Masterclass 1, they host) or session:ws26-s40 (founders in Portugal meetup, 12 Nov 13:30)']
+ ['delinea','agent access in production is the case ABP writes policies for; two sessions','session:ws26-s06 (10 Nov 12:30-13:15, Masterclass 3, they host); fallback session:ws26-s37 (12 Nov 15:15-15:35, Stage 8, overlaps Airia ws26-s38)'],
+ ['descope','agent and MCP authorisation is the identity half of a behaviour policy; a hands-on session','session:ws26-s36 (12 Nov 14:00-14:45, Developer Lounge, they run it)'],
+ ['airia','runtime policy and audit evidence for agents: the nearest competitor or partner to ABP','session:ws26-s38 (12 Nov 15:25-15:36, Stage 9)'],
+ ['primitive','email built for agents meets our email agent and signed vaults','session:ws26-s29 (12 Nov 10:50-11:00, Stage 9)'],
+ ['emergence-ai','verified, governed enterprise agents; the talk is when agents go rogue','session:ws26-s26 (12 Nov 10:15-10:35, Stage 13)'],
+ ['feedzai','Portugal\'s best-known security scale-up on agents letting themselves in; a local anchor','session:ws26-s32 (12 Nov 12:00-12:20, Stage 7; clashes with the cybersecurity meetup ws26-s39, 12:00-12:25)'],
+ ['linux-foundation-aaif','open standards for agents: where a behaviour-policy format could become a spec','session:ws26-s16 (11 Nov 11:10-11:30, Stage 13)'],
+ ['hexamind','Hexgate is the nearest open-source neighbour of ABP: compete or partner','stand (not yet read); or session:ws26-s39 (people in cybersecurity meetup, 12 Nov 12:00-12:25, Meetup 1; clashes with Feedzai ws26-s32; their attendance is not confirmed)'],
+ ['1password','agent identity and secrets next to our vaults','partner stand (location not yet read); or session:ws26-s39 (people in cybersecurity meetup, 12 Nov 12:00-12:25, Meetup 1; clashes with Feedzai ws26-s32; their attendance is not confirmed)'],
+ ['cisco-outshift','open-source agentic AI platform; a route to agent builders; three places','side_event:se23 (11 Nov 17:30-18:30, PTW Palace, Cisco showcase); fallback session:ws26-s66 (12 Nov 13:00-13:45, Masterclass 1, they host; overlaps ws26-s40) or session:ws26-s33 (12 Nov 12:10-12:30, Stage 8; overlaps ws26-s32)'],
+ ['replit','agentic software creation: agents writing code need a harness; a featured speaker with a talk of its own','session:ws26-s51 (10 Nov 16:00-16:20, Stage 13)'],
+ ['startup-portugal','the door to Portuguese startups and our Algarve work','session:ws26-s40 (founders in Portugal meetup, 12 Nov 13:30-13:55, Meetup 6); fallback session:ws26-s07 (10 Nov 12:00-12:45, Masterclass 1, they host; overlaps ws26-s06 and ws26-s78)']
 ].map(([company,why,where])=>({company,why,session_or_event:where,status:'proposed'}));
 if(fm.length>12)throw new Error('more than 12 first meetings');
 for(const f of fm){if(!ids.has(f.company))throw f.company;for(const m of f.session_or_event.matchAll(/(session|side_event):([\w-]+)/g)){if(!(m[1]==='session'?S:E)[m[2]])throw m[0];}}
 const graph={about:'Links between companies, sessions, events, people seats and our products. Kept by the cartographer.',
  read_on:'2026-11-01',
- method:'Built by cartographer@web-summit on 1 November 2026 (revised in the wake of 04:28Z) from the committed data/companies.json (HEAD, '+comps.length+' companies) and data/events.json (HEAD). Company-to-session and company-to-side-event links only where a session speaker\'s organisation is the company, or the session or event names it as host; source is the session or event URL. Company-to-product links, proposals, clusters and first meetings are our judgement and are proposals until each company\'s owner decides. Proposals echo the researcher\'s decision and priority from data/companies.json.',
+ method:'Built by cartographer@web-summit on 1 November 2026 (revised in the wakes of 04:28Z and 06:28Z) from the committed data/companies.json (HEAD, '+comps.length+' companies) and data/events.json (HEAD). Company-to-session and company-to-side-event links only where a session speaker\'s organisation is the company, or the session or event names it as host; source is the session or event URL. Company-to-product links, proposals, clusters and first meetings are our judgement and are proposals until each company\'s owner decides. Proposals echo the researcher\'s decision and priority from data/companies.json.',
  nodes:{products,sessions:ev.sessions.map(s=>s.id),side_events:ev.side_events.map(s=>s.id)},
  links,proposals,clusters,first_meetings:fm};
 fs.writeFileSync(R+'/data/graph.json',JSON.stringify(graph,null,2)+'\n');

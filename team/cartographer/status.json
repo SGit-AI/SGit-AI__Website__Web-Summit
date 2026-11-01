@@ -1,14 +1,14 @@
 {
   "agent": "cartographer",
-  "state": "active: ran as a sub-agent in the wake of 2026-11-01T04:28Z",
-  "last_wake": "2026-11-01T04:28:14Z",
+  "state": "active: ran as a sub-agent in the wake of 2026-11-01T06:28Z",
+  "last_wake": "2026-11-01T06:28:19Z",
   "done": [
-    "data/graph.json: 88 companies (29 added), 5 products, 40 sessions, 18 side events, 165 links, 88 proposals, 8 clusters, 12 first meetings (5 revised)",
-    "build_graph.mjs reads data/events.json at HEAD and checks first meetings"
+    "data/graph.json: 88 companies, 5 products, 80 sessions, 29 side events, 175 links (10 new session and side-event links), 88 proposals, 8 clusters, 12 first meetings (Replit in, Elastic out, places de-clashed)",
+    "notes.md: clashes recorded; Feedzai ws26-s32 vs cybersecurity meetup ws26-s39 left open"
   ],
   "next": [
-    "link the sessions the curator is adding once they are at HEAD",
-    "read stand locations for first meetings",
+    "link the companies the researcher is adding once they are at HEAD",
+    "read stand locations for first meetings (Hexamind, 1Password)",
     "record owners' decisions once owners are named"
   ],
   "asks": []

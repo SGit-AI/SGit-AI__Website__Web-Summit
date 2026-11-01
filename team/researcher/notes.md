@@ -94,3 +94,37 @@ Speakers' organisations in the 40 sessions that I left out as off-topic or not c
 - **Country fields** for speaker-only companies come from the attendee page (the speaker's listing), so they may be the speaker's country rather than the headquarters (check AISLE, Crystal Intelligence, Trent AI).
 - Still not read: the full startup, partner and speaker lists (client-side search service; see the first pass). No Algarve company found this pass either.
 - No personal data beyond public speakers' names and roles as Web Summit lists them; no contact details collected.
+
+## Third pass, 2026-11-01 (researcher@web-summit, sub-agent of the conductor's wake started 2026-11-01T06:28:19Z)
+
+Output: 21 companies added to `data/companies.json` (now 109). Every one is confirmed for 2026 by a LIS26 session page (ws26-s41 to s80 in `data/events.json`) naming its speaker's organisation. 2 at priority 1, 7 at priority 2, 12 at priority 3. No existing entry was changed; one sentence added to `method`.
+
+### What I read
+
+- `https://websummit.com/robots.txt` first: still `Disallow: /api/`, `Allow: /`. Nothing under /api/ was read.
+- The 40 session pages ws26-s41 to s80 (same `__NEXT_DATA__` shape as the second pass). Four (s68, s75, s77, s78) list no speakers; s61's speaker has no organisation.
+- 27 public attendee pages for the candidate speakers. The href in the session page has no trailing slash and answers 308; add the slash.
+- Four appearance pages for hosted masterclasses: Make, Deque, Open VSX (slug `open-vsx-`, trailing hyphen), AustriaCard Holdings. Deque, Make and AustriaCard pages carry the company website.
+- For each company: its `robots.txt` first, then, only if `/` was allowed, the homepage title and meta description.
+
+### What I added (priority)
+
+conscium 1, scrut-automation 1; whitespace 2, exein 2, proton 2, exa 2, make 2, cognizant 2, open-vsx 2; easydmarc 3, topsec-cloud-solutions 3, nordvpn 3, nisos 3, the-hacking-games 3, deque 3, legora 3, polyai 3, meo 3, defined-ai 3, prisma 3, austriacard 3.
+
+### Left out, and why
+
+- Media and podcasts: Harvard Business School/HBR, Financial Times, Forbes, CNN, FUTUREPROOF Podcast, MIT Technology Review, Somewhere on Earth, MD Media Fusion, INC, PCMag, France 24, Kyiv Post, UnHerd, Wired, Fortune, an independent columnist.
+- Universities, think tanks, NGOs: Stanford HAI, Stanford University, Future Government Institute, Aspen Institute Central Europe, The Elders, The Vatican.
+- Governments and public bodies: European Parliament, Council of Europe (its AI Framework Convention is relevant to AI governance, but the speaker is the Commissioner for Human Rights on a rights panel; a candidate if the team wants policy bodies), Government of Czech Republic, Government of Slovakia, Madeira, Government of the State of Sao Paulo, Serpro (Brazil's state IT company), National Centre for Advanced Computing (Portugal's CNCA, FCT; Portuguese sovereign compute; a candidate for the Portugal list if public bodies count).
+- Off-topic or at the edge: iBanFirst (payments), Vivaldi (browser), Lenovo (device security masterclass; hardware vendor), Mindstone (AI upskilling), SGF Global (energy recruitment), SENEN GROUP (industrial AI consulting), Inflect (infrastructure marketplace), SkyDeck Ventures (investor).
+- Already on the map, not changed: ManageEngine, Replit, LaunchDarkly, Twilio, Datadog, Cisco (as cisco-outshift), Trent AI, European Commission. Their new session pages (s49, s51, s52/s62, s54, s65, s66, s73, s75) could be added to their sources by a later pass.
+
+### What I could not confirm
+
+- **Nisos**: `nisos.com/robots.txt` answered 403. I stopped there and read nothing from the site; `website` is empty and `what` rests on its CEO's Web Summit bio.
+- **Whitespace**: no site could be tied to the company. `whitespace.co.uk` loads but its page text does not name the sovereign AI business; `whitespace.ai` is a domain for sale. `website` empty; `what` from the CEO's bio.
+- **Proton**: the speaker is listed from France; Proton's headquarters is not stated on the pages read, so the country field says so.
+- **Defined.ai**: listed from the United States. Its founder's Portugal ties are not stated on any page read, so it is not marked Portugal.
+- **Open VSX** homepage has a title and no description; AustriaCard's homepage has a title only. Their `what` leans on the Web Summit bios and appearance pages.
+- **Country fields** for speaker-only companies come from the speaker's attendee listing, which may not be the headquarters (check Scrut Automation, EasyDMARC, Exa, Cognizant).
+- No personal data beyond public speakers' names and roles as Web Summit lists them; no contact details or personal links collected.

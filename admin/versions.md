@@ -2,8 +2,9 @@
 
 Every release of this site and what changed.
 
-Site version: v0.1.16
+Site version: v0.1.17
 
+- v0.1.17 (2026-11-01): Third scheduled wake (06:28 UTC): the company map grows to 109, each new one confirmed on a public 2026 session page (Conscium and Scrut Automation at priority 1); the graph links the map to the new sessions and side events (175 links), and the proposed first meetings now have no clash except one, on 12 November at 12:00.
 - v0.1.16 (2026-11-01): Second scheduled wake (04:28 UTC): the graph now covers all 88 companies with 165 links, and the proposed first meetings each have a session, a time and a stage; the summit page doubles to 80 sessions and 29 side events, read only from pages robots.txt allows; a first article is drafted (unpublished until the operator agrees who signs).
 - v0.1.15 (2026-11-01): First scheduled wake (02:28 UTC): the company map grows to 88 companies, each new one confirmed on a public 2026 session page; the graph links companies to sessions, side events and our products, with 8 clusters and 12 proposed first meetings shown on the map; the final, tested QR codes for the flyer, banner, stickers and tees are ready for Monday's artwork.
 - v0.1.14 (2026-11-01): The summit page from public sources read today: the facts (opening night 9 November, conference 10 to 12, MEO Arena and FIL, badge pickup from 7 November, Night Summit), 40 sessions that matter to us each confirmed on its public page, 18 side events in Lisbon and the Algarve, 20 news items and 15 newsroom articles; the researcher, curator and cartographer now follow each site's robots.txt (websummit.com disallows /api/); the first wake closed in the log.

@@ -1,6 +1,6 @@
 {
   "read_on": "2026-11-01",
-  "method": "Read the team brief and plan (newsroom.sgit.ai) and sgit.ai/llms.txt for who we are (sgit vaults, RiskMandate Agent Behaviour Policies, SHarness, the newsroom API). Then read the server-rendered HTML of websummit.com (robots.txt allows all but /api/): the 2026 event partners page (first 40 partners embedded in the page), the featured startups page (first 100, alphabetical A to Su, all GROWTH), the speakers and featured attendees pages (first 20 each), the schedule page (first sessions), and the track pages. Each entry carries conferenceSlug \"lis26\", which is what makes it a 2026 confirmation; each links to a public /appearances/lis26/<id>/<slug> or /attendees/lis26/<id>/<slug> page, from which the company website was read. The rest of each list is loaded client-side from a search service and was NOT read (see notes). Added press (Lusa via AMAN, Fast Company ME, The Portugal Guides, Executive Digest, IBTimes Colombia) and one third-party startup list (Future Feed), used only as \"unconfirmed\" leads unless the company is also on websummit.com. Filtered for relevance to us: AI-agent security and governance, identity, devtools for agents, GRC, Portugal, and a few investors and policy bodies. Homepage titles/meta descriptions were read for speakers' companies. First pass by the researcher on 1 November 2026: the first page of each official list only (partners, featured startups to 'Su', speakers, featured attendees); the rest of each list is loaded by the browser and was not read. Later wakes extend it. Second pass by the researcher on 1 November 2026: read the 40 LIS26 session pages listed in data/events.json (each carries conferenceSlug lis26 and names each speaker's organisation), the linked public /attendees/lis26/ pages and two /appearances/lis26/ pages, and each company's own homepage; added 29 speakers' companies in agent security, identity, AI governance, developer tools and Portugal, each confirmed by a session page.",
+  "method": "Read the team brief and plan (newsroom.sgit.ai) and sgit.ai/llms.txt for who we are (sgit vaults, RiskMandate Agent Behaviour Policies, SHarness, the newsroom API). Then read the server-rendered HTML of websummit.com (robots.txt allows all but /api/): the 2026 event partners page (first 40 partners embedded in the page), the featured startups page (first 100, alphabetical A to Su, all GROWTH), the speakers and featured attendees pages (first 20 each), the schedule page (first sessions), and the track pages. Each entry carries conferenceSlug \"lis26\", which is what makes it a 2026 confirmation; each links to a public /appearances/lis26/<id>/<slug> or /attendees/lis26/<id>/<slug> page, from which the company website was read. The rest of each list is loaded client-side from a search service and was NOT read (see notes). Added press (Lusa via AMAN, Fast Company ME, The Portugal Guides, Executive Digest, IBTimes Colombia) and one third-party startup list (Future Feed), used only as \"unconfirmed\" leads unless the company is also on websummit.com. Filtered for relevance to us: AI-agent security and governance, identity, devtools for agents, GRC, Portugal, and a few investors and policy bodies. Homepage titles/meta descriptions were read for speakers' companies. First pass by the researcher on 1 November 2026: the first page of each official list only (partners, featured startups to 'Su', speakers, featured attendees); the rest of each list is loaded by the browser and was not read. Later wakes extend it. Second pass by the researcher on 1 November 2026: read the 40 LIS26 session pages listed in data/events.json (each carries conferenceSlug lis26 and names each speaker's organisation), the linked public /attendees/lis26/ pages and two /appearances/lis26/ pages, and each company's own homepage; added 29 speakers' companies in agent security, identity, AI governance, developer tools and Portugal, each confirmed by a session page. Third pass by the researcher on 1 November 2026: read the 40 further LIS26 session pages ws26-s41 to s80 in data/events.json, the linked public /attendees/lis26/ and four /appearances/lis26/ pages, and each company's robots.txt and then its homepage (title and description only), and added 21 speakers' companies in agent testing, AI governance and GRC, security, developer tools and Portugal, each confirmed by a session page.",
   "sources": [
     {
       "url": "https://newsroom.sgit.ai/articles/web-summit-team-brief.md",
@@ -2777,6 +2777,714 @@
           "url": "https://crystalintelligence.com/",
           "read_on": "2026-11-01",
           "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "conscium",
+      "name": "Conscium",
+      "website": "https://conscium.com/",
+      "what": "AI safety lab and agent verification platform: simulation testing and verification so AI agents can be deployed with more confidence, plus research on conscious AI.",
+      "category": "ai-agents",
+      "country": "United Kingdom",
+      "attending": "confirmed: Calum Chace (Co-founder) is listed on the LIS26 session page 'The biological bottleneck'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "meet: agent testing and verification is the evidence side of RiskMandate Agent Behaviour Policies and SHarness; a policy says what an agent may do, verification shows whether it did",
+      "decision": "meet",
+      "priority": 1,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/553f8328-1300-406a-887a-b139455238c7/the-biological-bottleneck/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'The biological bottleneck', 12 Nov, Cybersecurity Summit, Stage 8, names Conscium as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/70405268-9440-4c81-a239-cc7156a96600/calum-chace/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Calum Chace, Co-founder, Conscium; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://conscium.com/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "scrut-automation",
+      "name": "Scrut Automation",
+      "website": "https://www.scrut.io/",
+      "what": "AI compliance automation (GRC) platform: evidence collection, risk assessment and vendor risk management with AI agents, for SOC 2, ISO 27001 and 60+ frameworks.",
+      "category": "grc",
+      "country": "United States",
+      "attending": "confirmed: Nicholas Muy (CISO) is listed on the LIS26 session page 'The biological bottleneck'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "meet: a GRC platform that runs AI agents and whose CISO leads AI governance; agent behaviour policies and The Cyber Boardroom speak to the same buyer, and its agents themselves need policies",
+      "decision": "meet",
+      "priority": 1,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/553f8328-1300-406a-887a-b139455238c7/the-biological-bottleneck/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'The biological bottleneck', 12 Nov, Cybersecurity Summit, Stage 8, names Scrut Automation as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/056fe625-28f3-4f70-bc2a-a429d44c3361/nicholas-muy/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Nicholas Muy, CISO, Scrut Automation; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://www.scrut.io/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "whitespace",
+      "name": "Whitespace",
+      "website": "",
+      "what": "UK sovereign AI company helping government and regulated sectors deploy trusted, governed AI (from its CEO's Web Summit bio; the company's own site was not identified).",
+      "category": "grc",
+      "country": "United Kingdom",
+      "attending": "confirmed: Paul Jenkinson (Co-founder & CEO) is listed on the LIS26 session page 'Securing the AI frontline'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "describe: governed AI for regulated sectors, on 'Securing the AI frontline'; governance a buyer can check is what Agent Behaviour Policies and encrypted SGit vaults offer",
+      "decision": "describe",
+      "priority": 2,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/e1587abd-ee14-4af3-8703-d02df1ba1f78/securing-the-ai-frontline/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'Securing the AI frontline', 12 Nov, Cybersecurity Summit, Stage 8, names Whitespace as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/3f26a8cf-0526-4759-9d24-c4747ef74665/paul-jenkinson/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Paul Jenkinson, Co-founder & CEO, Whitespace; country and industry as listed by Web Summit; public bio"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "exein",
+      "name": "Exein",
+      "website": "https://www.exein.io/",
+      "what": "Runtime security for physical AI, data systems, AI agents, cloud workloads, Linux and Kubernetes.",
+      "category": "security",
+      "country": "Italy",
+      "attending": "confirmed: Giovanni Alberto Falcione (Co-founder & CTO) is listed on the LIS26 session page 'Securing the AI frontline'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "write-about: runtime security that now names AI agents; runtime enforcement is where an agent behaviour policy bites, and SHarness is a harness at the same layer",
+      "decision": "write-about",
+      "priority": 2,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/e1587abd-ee14-4af3-8703-d02df1ba1f78/securing-the-ai-frontline/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'Securing the AI frontline', 12 Nov, Cybersecurity Summit, Stage 8, names Exein as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/b12a20bc-910f-48ba-be06-d490d5b63166/giovanni-alberto-falcione/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Giovanni Alberto Falcione, Co-founder & CTO, Exein; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://www.exein.io/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "proton",
+      "name": "Proton",
+      "website": "https://proton.me/",
+      "what": "Privacy-by-default online services, used by over 100 million people per its own site.",
+      "category": "security",
+      "country": "France (the speaker's Web Summit listing; headquarters not sourced)",
+      "attending": "confirmed: Raphael Auphan (Chief Operating Officer) is listed on the LIS26 session page 'Big Tech detox'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "write-about: 'Big Tech detox' on European encrypted alternatives; SGit's encrypted vaults make the same privacy-by-default argument for files and agent-run sites",
+      "decision": "write-about",
+      "priority": 2,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/e8ad3cf3-06b8-451a-bc7f-0ba6786588dc/big-tech-detox/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'Big Tech detox', 12 Nov, Cybersecurity Summit, Stage 8, names Proton as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/5475282a-017b-4bc9-a1e3-01363282c02e/raphael-auphan/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Raphael Auphan, Chief Operating Officer, Proton; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://proton.me/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "exa",
+      "name": "Exa",
+      "website": "https://exa.ai/",
+      "what": "Search API for AI agents: real-time web data, deep research and structured content from one endpoint.",
+      "category": "ai-agents",
+      "country": "United States",
+      "attending": "confirmed: Will Bryk (Co-founder & CEO) is listed on the LIS26 session page 'Search built for AI agents'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "write-about: 'Search built for AI agents' is the agent-readable web; our sites publish llms.txt and markdown twins for exactly these readers, and what an agent may fetch is a policy question",
+      "decision": "write-about",
+      "priority": 2,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/a433a1bc-b53a-4689-a8f8-c7eb8088148c/search-built-for-ai-agents/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'Search built for AI agents', 12 Nov, AI Summit, Stage 13, names Exa as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/6f5ebc37-fbca-490f-bc46-4d94e81ee69e/will-bryk/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Will Bryk, Co-founder & CEO, Exa; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://exa.ai/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "make",
+      "name": "Make",
+      "website": "https://www.make.com/",
+      "what": "Visual no-code platform to build, scale and automate AI and agentic workflows.",
+      "category": "ai-agents",
+      "country": "Czechia",
+      "attending": "confirmed: Valery Mezencev (Senior Product Marketing Manager) is listed on the LIS26 session page 'Make AI agents work beyond the demo [Hosted by Make]'",
+      "attending_as": "speaker's company (masterclass host)",
+      "why_it_matters": "describe: hosts 'Make AI agents work beyond the demo'; agents built by non-developers are where behaviour policies and a safe harness matter most",
+      "decision": "describe",
+      "priority": 2,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/65eb8e8f-60b8-4772-ab2a-d1a11807aa33/make-ai-agents-work-beyond-the-demo-hosted-by-make/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'Make AI agents work beyond the demo [Hosted by Make]', 11 Nov, Masterclasses, Masterclass 2, names Make as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/appearances/lis26/d3c491fd-2366-4215-b0c7-ce696b56f590/make/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 appearance page: Make, Czechia, AI & machine learning, as listed by Web Summit; hosts the session"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/d972f72e-cdba-4110-9e38-8352dfb5a7dc/valery-mezencev/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Valery Mezencev, Senior Product Marketing Manager, Make; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://www.make.com/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "cognizant",
+      "name": "Cognizant",
+      "website": "https://www.cognizant.com/",
+      "what": "Global IT services company positioning itself as an AI builder for enterprises.",
+      "category": "platform",
+      "country": "United States",
+      "attending": "confirmed: Babak Hodjat (Chief AI Officer) is listed on the LIS26 session page 'Be part of history: help build the first pages of the agentic web'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "describe: its Chief AI Officer runs 'help build the first pages of the agentic web' in the Developer Lounge; a hands-on chance to show agent-run SGit sites with llms.txt",
+      "decision": "describe",
+      "priority": 2,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/e6276948-d2f7-4565-95e4-9caccd1a5211/be-part-of-history-help-build-the-first-pages-of-the-agentic-web/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'Be part of history: help build the first pages of the agentic web', 12 Nov, Developer Summit, Developer Lounge, names Cognizant as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/f18640a5-8db0-428a-82ad-1abd56cee73e/babak-hodjat/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Babak Hodjat, Chief AI Officer, Cognizant; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://www.cognizant.com/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "open-vsx",
+      "name": "Open VSX (Eclipse Foundation)",
+      "website": "https://open-vsx.org/",
+      "what": "Open VSX Registry: the vendor-neutral open-source registry of editor extensions run under the Eclipse Foundation, used by VS Code-compatible editors.",
+      "category": "devtools",
+      "country": "Canada",
+      "attending": "confirmed: Jamie Ayala (Senior Product Marketing Manager) is listed on the LIS26 session page 'Building AI products without building everything [Hosted by Open VSX]'",
+      "attending_as": "speaker's company (masterclass host)",
+      "why_it_matters": "write-about: extension registries are the supply chain of AI coding tools; which extensions an agent's editor may load is an agent behaviour policy, and SHarness is a harness for that kind of tool",
+      "decision": "write-about",
+      "priority": 2,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/828790e8-5f4b-4869-bb79-e1114cbd9365/building-ai-products-without-building-everything-hosted-by-open-vsx/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'Building AI products without building everything [Hosted by Open VSX]', 12 Nov, Masterclasses, Masterclass 3, names Open VSX as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/appearances/lis26/3c2bc007-b2ef-4663-afc4-784153c25194/open-vsx-/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 appearance page: Open VSX, Canada, AI & machine learning, as listed by Web Summit; hosts the session"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/9666ba6e-6acf-4c01-8516-ac289f49a08c/jamie-ayala/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Jamie Ayala, Senior Product Marketing Manager, Open VSX; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://open-vsx.org/",
+          "read_on": "2026-11-01",
+          "supports": "its own site: the page title 'Open VSX Registry' and Eclipse Foundation page assets (the page has no description)"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/34ee7d85-f385-479a-85af-70f661515a09/thomas-froment/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Thomas Froment, Program Lead, Development Tools, Eclipse Foundation; country and industry as listed by Web Summit; public bio"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "easydmarc",
+      "name": "EasyDMARC",
+      "website": "https://easydmarc.com/",
+      "what": "Email trust platform: DMARC, email authentication, DNS, sender insights, threat intelligence and deliverability.",
+      "category": "security",
+      "country": "Armenia",
+      "attending": "confirmed: Gerasim Hovhannisyan (Co-founder & CEO) is listed on the LIS26 session page 'The perimeter is dead. So what happens to trust?'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "describe: 'The perimeter is dead. So what happens to trust?'; sender authentication is the email form of signed provenance",
+      "decision": "describe",
+      "priority": 3,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/d0816a68-eabc-4539-89dc-483c4eed929a/the-perimeter-is-dead-so-what-happens-to-trust/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'The perimeter is dead. So what happens to trust?', 12 Nov, Cybersecurity Summit, Stage 8, names EasyDMARC, Inc. as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/178a66d7-101a-4544-8382-6e811f0a1dab/gerasim-hovhannisyan/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Gerasim Hovhannisyan, Co-founder & CEO, EasyDMARC, Inc.; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://easydmarc.com/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "topsec-cloud-solutions",
+      "name": "Topsec Cloud Solutions",
+      "website": "https://www.topsec.com/",
+      "what": "Fully managed email security service against phishing, malware and ransomware.",
+      "category": "security",
+      "country": "Ireland",
+      "attending": "confirmed: Niall Mackey (Managing Director) is listed on the LIS26 session page 'The perimeter is dead. So what happens to trust?'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "describe: same 'perimeter is dead' session; a managed-security voice for The Cyber Boardroom audience",
+      "decision": "describe",
+      "priority": 3,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/d0816a68-eabc-4539-89dc-483c4eed929a/the-perimeter-is-dead-so-what-happens-to-trust/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'The perimeter is dead. So what happens to trust?', 12 Nov, Cybersecurity Summit, Stage 8, names Topsec Cloud Solutions as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/f2639e2b-9a14-4a55-9045-49c25e4afa34/niall-mackey/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Niall Mackey, Managing Director, Topsec Cloud Solutions; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://topsec.com/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "nordvpn",
+      "name": "NordVPN",
+      "website": "https://nordvpn.com/",
+      "what": "VPN service for online privacy, growing into a broader cybersecurity offering (per its CTO's Web Summit bio).",
+      "category": "security",
+      "country": "Lithuania",
+      "attending": "confirmed: Marijus Briedis (CTO) is listed on the LIS26 session page 'Zombie data: How your data comes back to haunt you'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "describe: 'Zombie data: How your data comes back to haunt you'; data that persists after deletion is a case for encrypted, versioned vaults with keys the owner holds",
+      "decision": "describe",
+      "priority": 3,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/2fad9e2b-9933-4f05-a09e-d4dda60587cb/zombie-data-how-your-data-comes-back-to-haunt-you/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'Zombie data: How your data comes back to haunt you', 12 Nov, Cybersecurity Summit, Stage 8, names NordVPN as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/ddf3611d-f5b4-4f94-9692-9148ee3a6b0d/marijus-briedis/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Marijus Briedis, CTO, NordVPN; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://nordvpn.com/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "nisos",
+      "name": "Nisos",
+      "website": "",
+      "what": "Open source intelligence company that unmasks digital threats and the real people behind them (from its CEO's Web Summit bio; its site refused an automated read of robots.txt, so nothing from it was read).",
+      "category": "security",
+      "country": "United States",
+      "attending": "confirmed: Ryan LaSalle (CEO) is listed on the LIS26 session page 'Is there a foreign operative on your payroll?'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "describe: 'Is there a foreign operative on your payroll?' (insider threat); identity of the human behind an account, a board-level risk for The Cyber Boardroom",
+      "decision": "describe",
+      "priority": 3,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/82e616b5-67bb-44f2-b4df-25642654fc0f/is-there-a-foreign-operative-on-your-payroll/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'Is there a foreign operative on your payroll?', 12 Nov, Cybersecurity Summit, Stage 8, names Nisos as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/9c97211a-9422-4c16-991b-bb4c702a4fcc/ryan-lasalle/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Ryan LaSalle, CEO, Nisos; country and industry as listed by Web Summit; public bio"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "the-hacking-games",
+      "name": "The Hacking Games",
+      "website": "https://www.thehackinggames.com/",
+      "what": "Turns gamers' and hackers' talent into cybersecurity careers.",
+      "category": "security",
+      "country": "United Kingdom",
+      "attending": "confirmed: John Madelin (Chief Product Officer) is listed on the LIS26 session page 'The real threat isn’t a nation-state, it’s a teenager.'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "describe: 'The real threat isn't a nation-state, it's a teenager'; a talent and threat story for the newsroom",
+      "decision": "describe",
+      "priority": 3,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/e70c32c5-0639-4bde-b105-f77b39b49419/the-real-threat-isn-t-a-nation-state-it-s-a-teenager/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'The real threat isn’t a nation-state, it’s a teenager.', 12 Nov, Cybersecurity Summit, Stage 8, names The Hacking Games as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/796b1533-252c-42db-a9ff-badf2bdef3b3/john-madelin/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: John Madelin, Chief Product Officer, The Hacking Games; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://thehackinggames.com/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "deque",
+      "name": "Deque Systems",
+      "website": "https://www.deque.com/",
+      "what": "Web and mobile accessibility software, services and training.",
+      "category": "devtools",
+      "country": "United States",
+      "attending": "confirmed: Dylan Barrell (CTO) is listed on the LIS26 session page 'Can you trust your AI agent's accessibility? [Hosted by Deque]'",
+      "attending_as": "speaker's company (masterclass host)",
+      "why_it_matters": "describe: hosts 'Can you trust your AI agent's accessibility?'; agent-generated sites (ours included) need checking against accessibility rules",
+      "decision": "describe",
+      "priority": 3,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/74aa4557-4a99-4624-b2e7-0e1ca1b388d4/can-you-trust-your-ai-agent-s-accessibility-hosted-by-deque/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'Can you trust your AI agent's accessibility? [Hosted by Deque]', 12 Nov, Masterclasses, Masterclass 2, names Deque Systems as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/appearances/lis26/49491341-039a-4e77-ba4b-14c22d9b9de7/deque/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 appearance page: Deque, United States, SaaS, as listed by Web Summit; hosts the session"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/564b144a-17c0-4f84-b1e7-16f55a99bc44/dylan-barrell/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Dylan Barrell, CTO, Deque Systems; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://www.deque.com/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "legora",
+      "name": "Legora",
+      "website": "https://legora.com/",
+      "what": "Collaborative AI for lawyers: review, research, drafting and advice.",
+      "category": "ai-agents",
+      "country": "Sweden",
+      "attending": "confirmed: Jacob Lauritzen (CTO) is listed on the LIS26 session page 'Beyond the model: Scaling AI agents for professional work'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "describe: 'Scaling AI agents for professional work'; agents in regulated professional work need auditable behaviour policies",
+      "decision": "describe",
+      "priority": 3,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/fad36198-b0af-4295-bec3-b7671b62e786/beyond-the-model-scaling-ai-agents-for-professional-work/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'Beyond the model: Scaling AI agents for professional work', 12 Nov, AI Summit, Stage 13, names Legora as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/f57385bd-ae81-4cc7-980c-dbc45e0f99f3/jacob-lauritzen/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Jacob Lauritzen, CTO, Legora; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://legora.com/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "polyai",
+      "name": "PolyAI",
+      "website": "https://poly.ai/",
+      "what": "Enterprise voice AI: agentic dialog platform for customer service.",
+      "category": "ai-agents",
+      "country": "United Kingdom",
+      "attending": "confirmed: Nikola Mrkšić (Co-founder & CEO) is listed on the LIS26 session page 'Coaching an AI agent like human talent'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "describe: 'Coaching an AI agent like human talent'; coaching is a behaviour policy written in prose",
+      "decision": "describe",
+      "priority": 3,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/8c1c7b41-7711-424d-9214-20d2d29d32f0/coaching-an-ai-agent-like-human-talent/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'Coaching an AI agent like human talent', 11 Nov, AI Summit, Stage 13, names PolyAI as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/5f1690fc-01f0-4146-a2ac-8286cd7c9698/nikola-mrk%C5%A1i%C4%87/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Nikola Mrkšić, Co-founder & CEO, PolyAI; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://poly.ai/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "meo",
+      "name": "MEO",
+      "website": "https://www.meo.pt/",
+      "what": "Portuguese telecom operator: fibre, TV, 5G mobile and security services.",
+      "category": "platform",
+      "country": "Portugal",
+      "attending": "confirmed: José Pedro Nascimento (Chief Technology Officer) is listed on the LIS26 session page 'The autonomous enterprise: Networks, cloud and AI agents'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "describe: Portugal's ecosystem; its CTO on 'The autonomous enterprise: Networks, cloud and AI agents'",
+      "decision": "describe",
+      "priority": 3,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/5847852b-93e5-4590-b1f8-eb657b7fae4c/the-autonomous-enterprise-networks-cloud-and-ai-agents/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'The autonomous enterprise: Networks, cloud and AI agents', 11 Nov, Corporate Innovation Summit, Stage 7, names MEO as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/bd8a75b9-590f-47fe-bb2e-78ba3190af17/jos%C3%A9-pedro-nascimento/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: José Pedro Nascimento, Chief Technology Officer, MEO; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://www.meo.pt/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "defined-ai",
+      "name": "Defined.ai",
+      "website": "https://defined.ai/",
+      "what": "Enterprise AI training data platform: multilingual, multimodal datasets with human-in-the-loop quality and compliance.",
+      "category": "other",
+      "country": "United States",
+      "attending": "confirmed: Daniela Braga (Founder & CEO) is listed on the LIS26 session page 'Give me a brake: Coding without crashing'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "describe: on 'Give me a brake: Coding without crashing' with LaunchDarkly; data provenance and compliance for AI",
+      "decision": "describe",
+      "priority": 3,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/c23c0b87-7b82-492f-a46b-af652fe6529e/give-me-a-brake-coding-without-crashing/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'Give me a brake: Coding without crashing', 11 Nov, Developer Summit, Stage 10, names Defined.ai as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/e027a639-37eb-4d9b-bf6e-ee641c169830/daniela-braga/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Daniela Braga, Founder & CEO, Defined.ai; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://defined.ai/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "prisma",
+      "name": "Prisma",
+      "website": "https://www.prisma.io/",
+      "what": "Agent infrastructure for TypeScript: Prisma ORM, Prisma Postgres and Prisma Compute (app hosting next to the database).",
+      "category": "devtools",
+      "country": "United States",
+      "attending": "confirmed: Søren Bramer Schmidt (CEO) is listed on the LIS26 session page 'Rebuilding open source with AI: Lessons Learned'",
+      "attending_as": "speaker's company",
+      "why_it_matters": "describe: 'Rebuilding open source with AI: Lessons learned'; hosting for apps agents build, next to SGit's agent-run sites",
+      "decision": "describe",
+      "priority": 3,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/b742e8f7-343c-4868-8eac-4b488f1351d9/rebuilding-open-source-with-ai-lessons-learned/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'Rebuilding open source with AI: Lessons Learned', 12 Nov, Developer Summit, Stage 10, names Prisma as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/3f19cc38-1d8a-4c9d-ab2c-b00e61d2c17f/s%C3%B8ren-bramer-schmidt/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Søren Bramer Schmidt, CEO, Prisma; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://www.prisma.io/",
+          "read_on": "2026-11-01",
+          "supports": "what the company does, from its own site (title and description)"
+        }
+      ],
+      "owner": "to decide",
+      "status": "to contact",
+      "assets": []
+    },
+    {
+      "id": "austriacard",
+      "name": "AustriaCard",
+      "website": "https://www.austriacard.com/",
+      "what": "Austrian card, secure identity and digital solutions group; its GaiaB offer helps organisations deploy secure, governed AI while keeping control of data and infrastructure (per its speaker's Web Summit bio).",
+      "category": "security",
+      "country": "Austria",
+      "attending": "confirmed: Christos Rizos (Group Business Development Director, AI & Digital Solutions) is listed on the LIS26 session page 'AI sovereignty: Data control, governance and predictable AI costs [Hosted by Austriacard Holdings]'",
+      "attending_as": "speaker's company (masterclass host)",
+      "why_it_matters": "describe: hosts 'AI sovereignty: Data control, governance and predictable AI costs'; data control is the SGit vault argument",
+      "decision": "describe",
+      "priority": 3,
+      "sources": [
+        {
+          "url": "https://websummit.com/sessions/lis26/2230e1d4-188d-4ab0-9f3d-a418dff6c20b/ai-sovereignty-data-control-governance-and-predictable-ai-costs-hosted-by-austriacard-holdings/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 session page (conferenceSlug lis26): 'AI sovereignty: Data control, governance and predictable AI costs [Hosted by Austriacard Holdings]', 11 Nov, Masterclasses, Masterclass 3, names AustriaCard as the speaker's organisation"
+        },
+        {
+          "url": "https://websummit.com/appearances/lis26/c6e69b87-de24-4f2b-895c-8e7f00ea209e/austriacard-holdings/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 appearance page: AUSTRIACARD HOLDINGS, Austria, AI & machine learning, as listed by Web Summit; hosts the session"
+        },
+        {
+          "url": "https://websummit.com/attendees/lis26/bba37b95-b83c-4e91-bba2-28ef9cc3e6a2/christos-rizos/",
+          "read_on": "2026-11-01",
+          "supports": "LIS26 attendee page: Christos Rizos, Group Business Development Director, AI & Digital Solutions, AustriaCard; country and industry as listed by Web Summit; public bio"
+        },
+        {
+          "url": "https://www.austriacard.com/",
+          "read_on": "2026-11-01",
+          "supports": "its own site: title only (no description); the AI offer rests on the speaker's Web Summit bio"
         }
       ],
       "owner": "to decide",

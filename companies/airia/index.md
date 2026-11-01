@@ -2,7 +2,7 @@
 
 AI security and governance platform: one control layer for agents, models, tools, data access, runtime policy, red teaming and audit-ready evidence.
 
-Site version: v0.1.16
+Site version: v0.1.17
 
 - Website: https://airia.com/
 - Category: grc

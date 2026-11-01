@@ -2,7 +2,7 @@
 
 The facts, the programme, the side events and the news, from public sources.
 
-Site version: v0.1.16
+Site version: v0.1.17
 
 ## The facts
 

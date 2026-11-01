@@ -2,7 +2,7 @@
 
 SaaS platform to manage and govern the content lifecycle with AI, LLM-agnostic, ensuring quality and compliance across teams and channels.
 
-Site version: v0.1.16
+Site version: v0.1.17
 
 - Website: https://www.contents.com/
 - Category: grc

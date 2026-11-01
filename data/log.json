@@ -118,6 +118,42 @@
         "names and ids for the seven; owners for the first meetings"
       ],
       "next": "scheduled wake at 06:27 UTC: link the 40 new sessions (cartographer), analyst numbers"
+    },
+    {
+      "id": "wake-2026-11-01T0628Z",
+      "agent": "conductor",
+      "started": "2026-11-01T06:28:19Z",
+      "ended": "2026-11-01T06:55:00Z",
+      "kind": "scheduled, every 2 hours at :27 UTC",
+      "objective": "Link the 40 new sessions to the map and add the companies behind them",
+      "commit": "f49bf7d",
+      "plan": [
+        "cartographer: link companies at HEAD to the 40 sessions added last wake",
+        "researcher: add the relevant organisations that speak at those sessions"
+      ],
+      "roles": [
+        "security",
+        "cartographer",
+        "researcher",
+        "closing conductor"
+      ],
+      "outcome": "ok",
+      "release": "v0.1.17",
+      "achieved": [
+        "company map 88 -> 109 (Conscium, Scrut Automation at P1)",
+        "graph: 175 links, 80 sessions and 29 side events in nodes",
+        "first meetings: Replit in, Elastic out; 3 of 4 time clashes resolved"
+      ],
+      "blockers": [
+        "the article waits on who signs",
+        "owners, names, budget, design wait on the operator"
+      ],
+      "for_you": [
+        "approve designs by Mon 2 Nov 14:00",
+        "agree the signing move",
+        "names and ids for the seven; owners for first meetings"
+      ],
+      "next": "scheduled wake at 08:27 UTC: link the 21 new companies"
     }
   ]
 }

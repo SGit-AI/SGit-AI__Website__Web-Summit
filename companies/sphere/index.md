@@ -2,7 +2,7 @@
 
 AI-native platform automating revenue-based (tax) compliance across 130+ regions: registrations, filings and remittance.
 
-Site version: v0.1.16
+Site version: v0.1.17
 
 - Website: https://www.getsphere.com/
 - Category: grc

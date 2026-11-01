@@ -2,7 +2,7 @@
 
 Language and content technology company; its Group CEO speaks on 'Your AI agent just got a passport' (the company site did not return a page to an automated read, so 'what' rests on the session and bio).
 
-Site version: v0.1.16
+Site version: v0.1.17
 
 - Website: unknown
 - Category: ai-agents

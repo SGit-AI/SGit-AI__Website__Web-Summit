@@ -2,7 +2,7 @@
 
 AI security and governance for mission-critical operations: its AI Behavioral Control Plane gives real-time visibility, governance and inline enforcement across human and agentic AI interactions, to stop data exposure, unauthorised AI actions and compliance violations.
 
-Site version: v0.1.16
+Site version: v0.1.17
 
 - Website: https://www.polygraf.ai
 - Category: security
