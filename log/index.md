@@ -2,7 +2,13 @@
 
 Every wake of the team, opened and closed by the conductor's banners.
 
-Site version: v0.1.20
+Site version: v0.1.21
+
+## 2026-11-01T14:28:34Z: Check for operator answers and new material; idle if nothing worth a role's time
+
+Roles run: . Outcome: idle. Release: v0.1.21.
+
+- checked: no operator answers, no mail, no board items, no hold, no other pushes
 
 ## 2026-11-01T12:28:14Z: Check for operator answers and new material; idle if nothing worth a role's time
 

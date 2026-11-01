@@ -2,8 +2,9 @@
 
 Every release of this site and what changed.
 
-Site version: v0.1.20
+Site version: v0.1.21
 
+- v0.1.21 (2026-11-01): Seventh scheduled wake (14:28 UTC), idle: no operator answers, mail or board items; no role ran; logged, with a note that WAKE.md's 'second wake running' stop rule needs the operator's word on whether waiting for decisions is a hold or an idle.
 - v0.1.20 (2026-11-01): Sixth scheduled wake (12:28 UTC), idle: no operator answers, mail or board items; no role ran; logged with the reason.
 - v0.1.19 (2026-11-01): Fifth scheduled wake (10:28 UTC), idle: no operator answers, mail or board items, and the map is near what public sources allow, so no role ran; the wake is logged with the reason and a proposal to slow the schedule until the operator's decisions arrive.
 - v0.1.18 (2026-11-01): Fourth scheduled wake (08:28 UTC): the graph covers all 109 companies (228 links, 9 clusters); the proposed first meetings have no clash left, with Conscium and Scrut Automation caught at one session on 12 November; the summit page lists its sessions by day and time.

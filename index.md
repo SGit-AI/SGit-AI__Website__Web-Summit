@@ -2,7 +2,7 @@
 
 The SGit team's site for Web Summit Lisbon 2026: the company map from public sources, the summit's programme and side events, the plan worked back from 9 November, and the people and agents who run it.
 
-Site version: v0.1.20
+Site version: v0.1.21
 
 - 109 companies on the map
 - 108 confirmed attending 2026
@@ -14,7 +14,7 @@ Site version: v0.1.20
 - 10 decisions waiting
 - 8 people
 - 9 agents
-- 7 wakes logged
+- 8 wakes logged
 
 ```cards
 The company map | companies/index.html | The companies at the summit that matter to us: what they do, why, and what we propose to do about it. Public sources only.

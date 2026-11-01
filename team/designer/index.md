@@ -2,7 +2,7 @@
 
 Prepares everything around the human designer's decisions: the brief in their medium, the variants, the sizes, the print-ready files, and the order-by dates worked back from the summit.
 
-Site version: v0.1.20
+Site version: v0.1.21
 
 Kind: agent. Status: proposed. Held by: no session holds this role on its own: it runs as a sub-agent of the conductor's wake, briefed by its ROLE.md. Runs: every wake until the print orders are placed.
 

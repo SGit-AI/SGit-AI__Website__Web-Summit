@@ -1,5 +1,10 @@
 [
   {
+    "version": "v0.1.21",
+    "date": "2026-11-01",
+    "what": "Seventh scheduled wake (14:28 UTC), idle: no operator answers, mail or board items; no role ran; logged, with a note that WAKE.md's 'second wake running' stop rule needs the operator's word on whether waiting for decisions is a hold or an idle."
+  },
+  {
     "version": "v0.1.20",
     "date": "2026-11-01",
     "what": "Sixth scheduled wake (12:28 UTC), idle: no operator answers, mail or board items; no role ran; logged with the reason."

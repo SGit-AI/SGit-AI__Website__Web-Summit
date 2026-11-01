@@ -2,7 +2,7 @@
 
 Business software connecting HR, finance and IT into one system, marketed as 'the AI for business'.
 
-Site version: v0.1.20
+Site version: v0.1.21
 
 - Website: https://factorial.com/
 - Category: other

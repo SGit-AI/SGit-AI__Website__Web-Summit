@@ -2,7 +2,7 @@
 
 Connectivity cloud and security platform; its homepage now leads with "Build for the agent era".
 
-Site version: v0.1.20
+Site version: v0.1.21
 
 - Website: https://www.cloudflare.com/
 - Category: security
