@@ -6,9 +6,9 @@
   "runs": [
     {
       "agent": "conductor",
-      "cron": "0 */2 * * *",
+      "cron": "27 */2 * * *",
       "mode": "fires into the conductor's standing session (this repository's conductor session), never a fresh one",
-      "status": "see team/conductor/status.json for the task id",
+      "status": "running: task trig_013G1PyPEwAG5qNRmuUXKbWP, every 2 hours at :27 UTC, into the conductor's standing session (created 1 November 2026 00:27 UTC at the operator's word); first wake 02:27 UTC",
       "job": "open the wake, plan which roles run, run them as sub-agents, review, release, log, close"
     }
   ],

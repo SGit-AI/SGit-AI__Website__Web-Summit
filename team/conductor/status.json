@@ -1,8 +1,10 @@
 {
   "agent": "conductor",
-  "state": "active: running as the conductor's session",
-  "last_wake": null,
+  "state": "active: the conductor's standing session (conductor.2@web-summit)",
+  "last_wake": "2026-11-01T00:13:00Z",
   "done": [],
   "next": [],
-  "asks": []
+  "asks": [],
+  "task": "trig_013G1PyPEwAG5qNRmuUXKbWP",
+  "task_schedule": "27 */2 * * * UTC, every 2 hours at :27, into this session; created 1 November 2026 00:27 UTC at the operator's word"
 }

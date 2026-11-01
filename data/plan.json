@@ -7,6 +7,11 @@
       "status": "now"
     },
     {
+      "when": "Mon 2 Nov, 14:00",
+      "what": "**Design approved** for the cards (7), flyer, stickers and tee artwork, with the QR codes generated from final URLs and test-printed; the safest print orders go in that evening (Portugal before 20:00, UK before 19:00). See the design track.",
+      "status": "planned"
+    },
+    {
       "when": "2 Nov",
       "what": "First meetings of the team (the operator's lunch): owners for the first companies, the role cards, the design budget, who orders what.",
       "status": "planned"
@@ -102,11 +107,305 @@
     }
   ],
   "design": {
-    "about": "T-shirts, hoodies, cards for everyone, flyers, a banner and stickers: each has to be designed, approved, ordered, printed and delivered before 9 November, so each gets the date its design must be approved and the date it must be ordered, from the printers' published lead times. Every printed item carries a code that leads to a page. The designer decides; the designer agent produces.",
-    "items": [],
-    "too_late": [],
-    "qr": [],
-    "sources": []
+    "about": "T-shirts, hoodies, cards for everyone, flyers, a banner and stickers: each has to be designed, approved, ordered, printed and delivered before 9 November, so each gets the date its design must be approved and the date it must be ordered, from the printers' published lead times. Every printed item carries a code that leads to a page. The designer decides; the designer agent produces. Lead times and prices are the suppliers' published figures read on 1 November 2026, not quotes; the real totals appear only at checkout. Delivery target: Friday 6 November everywhere (online printers in Portugal do not deliver on Saturdays).",
+    "items": [
+      {
+        "id": "business-cards",
+        "item": "Business cards, one design per person with a personal QR",
+        "quantity": "7 x 100 (7 separate artworks; 85x55 mm)",
+        "approve_by": "SAFEST: Mon 2 Nov 14:00 (all 7 cards, QR URLs live and tested). FALLBACK: Tue 3 Nov 14:00.",
+        "order_by": "PT: SAFEST: Mon 2 Nov before 20:00 Lisbon (arrives Thu 5, one day to spare). LAST POSSIBLE: Tue 3 Nov before 20:00 (arrives Fri 6, no margin). · UK: SAFEST: Mon 2 Nov, Vistaprint Rush before 19:00 (arrives Wed 4, two days to reprint). FALLBACK: Thu 5 Nov before 11:00 (Vistaprint Next Day) / 12:00 (MOO) for…",
+        "deliver_by": "Fri 6 Nov",
+        "supplier": "PT: Vistaprint PT (vistaprint.pt), 'Envio urgente' eligible card range · UK: Vistaprint UK (Rush / Next Day) or MOO (next-day on selected cards); instantprint as…",
+        "notes": "Seven different names = seven separate products/line items at Vistaprint (minimum 100 each). Each QR points to https://web-summit.sgit.ai/team/<id>/; those pages must exist before ordering (the roster today shows role…"
+      },
+      {
+        "id": "flyers",
+        "item": "Small flyer to hand out, QR to the summit site",
+        "quantity": "500 (A6 105x148 mm recommended; A5 if more text)",
+        "approve_by": "SAFEST: Mon 2 Nov 14:00. FALLBACK: Wed 4 Nov 14:00.",
+        "order_by": "PT: SAFEST: Mon 2 Nov 20:00 (arrives Wed 4). LAST POSSIBLE: Wed 4 Nov 20:00 (arrives Fri 6). · UK: SAFEST: Mon 2 Nov before 19:00, Vistaprint Rush (arrives Wed 4). FALLBACK: Thu 5 Nov before 11:00, Next Day (arrives Fri 6).",
+        "deliver_by": "Fri 6 Nov",
+        "supplier": "PT: Vistaprint PT flyers (Envio urgente eligible) · UK: Vistaprint UK Next-Day Flyers or instantprint next-day flyers",
+        "notes": "Flyers are light: print once (in PT for delivery to the Algarve, or UK and carry). 500 A6 on 150gsm weighs roughly 1.2 kg (estimate)."
+      },
+      {
+        "id": "roll-up-banner",
+        "item": "Roll-up / roller banner for the stand or meetups",
+        "quantity": "1 (approx. 85x200 cm; check exact product size)",
+        "approve_by": "Mon 2 Nov 12:00 (banner artwork is the simplest piece: logo, one line, URL/QR).",
+        "order_by": "PT: Vistaprint PT standard: would have needed ordering by Thu 29 Oct for Fri 6 -> TOO LATE. 360imprimir/Pixartprinting: order Mon 2 Nov only if the checkout date… · UK: SAFEST: Tue 3 Nov (next-day -> Wed 4). FALLBACK: Thu 5 Nov before the cut-off (shown at checkout, not published on the page) -> Fri 6.",
+        "deliver_by": "Fri 6 Nov",
+        "supplier": "PT: No safe published express option found in PT: Vistaprint PT roll-ups are NOT in its… · UK: instantprint roller banner (next-day), carried to Lisbon by a UK traveller",
+        "notes": "Recommended: print in the UK (instantprint next day) and a UK person checks it in as luggage (cassette ~85-90 cm long in a carry case, length estimate), OR a local PT shop confirmed by phone on Mon 2. Do not rely on…"
+      },
+      {
+        "id": "stickers",
+        "item": "Stickers (logo / QR)",
+        "quantity": "250 (e.g. 50 mm circle or sticker sheets)",
+        "approve_by": "SAFEST: Mon 2 Nov 14:00. FALLBACK: Tue 3 Nov 14:00.",
+        "order_by": "PT: SAFEST: Mon 2 Nov 20:00 (Thu 5). LAST POSSIBLE: Tue 3 Nov 20:00 (Fri 6). · UK: SAFEST: Mon 2 Nov 19:00 Rush (Wed 4). FALLBACK: Wed 4 Nov 19:00 Rush (Fri 6) or Thu 5 next-day where offered.",
+        "deliver_by": "Fri 6 Nov",
+        "supplier": "PT: Vistaprint PT sticker sheets ('Envio urgente' eligible; round single stickers eligibility… · UK: Vistaprint UK circle sticker sheets (Rush eligible) or instantprint 'Next Day Stickers' /…",
+        "notes": "Optional item: drop first if time runs short."
+      },
+      {
+        "id": "t-shirts",
+        "item": "Branded T-shirts",
+        "quantity": "~7 (sizes per person: TO DECIDE)",
+        "approve_by": "SAFEST: Mon 2 Nov 14:00 (artwork + colour + everyone's size). FALLBACK: Tue 3 Nov 14:00.",
+        "order_by": "PT: SAFEST: Mon 2 Nov 20:00 (Thu 5). LAST POSSIBLE: Tue 3 Nov 20:00 (Fri 6). · UK: SAFEST: Mon 2 Nov 19:00 Vistaprint Rush (Wed 4). FALLBACK: Wed 4 Nov 19:00 Rush (Fri 6), or an express DTG printer booked by phone Tue 3.",
+        "deliver_by": "Fri 6 Nov",
+        "supplier": "PT: Vistaprint PT Fruit of the Loom unisex T-shirt (the only T-shirt in its 'envio urgente'… · UK: Vistaprint UK Fruit of the Loom unisex T-shirt ('express shipping available'); fallback a…",
+        "notes": "Decide ONE garment colour and print position for everyone. Collect sizes today; it gates the order. Order tees for everyone in one country and carry, to keep one batch colour-matched."
+      },
+      {
+        "id": "hoodies",
+        "item": "Branded hoodies",
+        "quantity": "~7 (sizes: TO DECIDE)",
+        "approve_by": "Mon 2 Nov 12:00 (reuse the T-shirt artwork).",
+        "order_by": "PT: Pre-travel delivery via Vistaprint: TOO LATE (needed ordering by Thu 29 Oct). Option A: local shop, book Mon 2 Nov morning. Option B: Vistaprint PT standard… · UK: Vistaprint: TOO LATE. Express printer: confirm by phone Mon 2, order by Tue 3 Nov for Thu 5/Fri 6.",
+        "deliver_by": "Fri 6 Nov",
+        "supplier": "PT: No published express hoodie option: Vistaprint PT hoodies (e.g. B&C) are not in its… · UK: Vistaprint UK hoodies (e.g. B&C ID.003) are not in its express clothing list; UK express…",
+        "notes": "Hoodies are the item most at risk. Recommendation: treat them as nice-to-have; if no shop confirms by Mon 2 noon, drop them or accept delivery in Lisbon on ~Tue 10."
+      }
+    ],
+    "too_late": [
+      "STANDARD service for everything, both countries: Vistaprint Standard is 6 business days incl. production, so delivery by Fri 6 needed ordering by Thu 29 Oct. Economy (8-10 / 10 business days) was too late even earlier.",
+      "Vistaprint UK 'Express' (4 business days): last possible order is TOMORROW Mon 2 Nov 20:00 for Fri 6; after that only Rush (2 days) or Next Day remain.",
+      "Hoodies via Vistaprint (PT and UK): not express-eligible, so ordering Mon 2 arrives ~Tue 10 Nov at best. Pre-travel hoodies need a local express printer.",
+      "Roll-up banner via Vistaprint (PT and UK): not in either fast-delivery list -> standard only -> too late.",
+      "Embroidery of any garment this week: digitising + production makes it unrealistic; use print (DTG/DTF/vinyl).",
+      "Saturday 7 Nov delivery in the Algarve/Lisbon: online printers deliver Mon-Fri, so plan on Fri 6.",
+      "Collecting on Sun 8 Nov in Lisbon from a courier: no Sunday courier delivery; only from an address that received it by Fri 6, or a shop that is open (not verified)."
+    ],
+    "qr": [
+      "Url rule: Encode the shortest stable HTTPS URL we control: https://web-summit.sgit.ai/team/<id>/ (about 35-40 characters -> a small QR, version 3, 29x29 modules, at error correction M). Do not use a third-party shortener or a 'dynamic QR' service that can expire or be re-pointed; if we want analytics, add a short query such as ?src=card.",
+      "Minimum size: Business card: at least 20 x 20 mm of code (22-25 mm preferred) plus the quiet zone. A6/A5 flyer: 25-30 mm. Sticker: 20 mm minimum. Roll-up: width >= scanning distance / 10 (about 15 cm for 1.5 m).",
+      "Quiet zone: At least 4 modules of empty space on all sides (on a 22 mm, 29-module code that is ~3 mm); never let it touch the trim or a background pattern.",
+      "Contrast: Dark modules on a light, plain background; black (100% K) on white is safest; at least ~4:1 contrast; never inverted (light on dark), never on a gradient or photo. Brand colour is fine only if it is dark.",
+      "Error correction: Level M by default; use Q/H only if a logo is placed in the centre (and then make the code larger).",
+      "Format: Generate as vector (SVG/PDF/EPS), place at 100%, do not rasterise or resample; keep it out of the 3 mm trim/safe zone; avoid gloss/foil/spot UV over it.",
+      "Human fallback: Print the short URL as text under the code (e.g. web-summit.sgit.ai/team/dinis).",
+      "Test before ordering: ['Scan the final PDF on screen with at least one iPhone and one Android camera app.', 'Print the card at 100% on an office printer, cut to size, scan from 15-30 cm in normal indoor light and in dim light.', \"Confirm each code opens the right person's page over mobile data (not office wifi) and the page loads fast.\", 'Check every one of the 7 cards: a swapped QR is the most likely error.', \"Check the supplier's on-screen proof again after upload (some tools resample images).\"]",
+      "Sources: ['https://scanova.io/blog/qr-code-guidelines-for-best-results/', 'https://www.qrstuff.com/feeds/blog/qr-code-size-poster', 'https://qr.deloitte.com/help/en/article/what-is-the-minimum-size-of-a-qr-code', 'https://www.qr-code-generator.com/blog/qr-code-distance/']"
+    ],
+    "sources": [
+      {
+        "url": "https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.md",
+        "what": "Context: 'Work backwards from the summit' and 'A designer with very little time'"
+      },
+      {
+        "url": "https://www.vistaprint.co.uk/delivery",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.co.uk/fast-delivery/Business-Cards",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.co.uk/business-cards/standard",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.co.uk/marketing-materials/next-day-flyers",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.co.uk/signs-posters/banners/roller-banners",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.co.uk/fast-delivery/signage",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.co.uk/labels-stickers/stickers/circle-stickers",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.co.uk/shop-by/fast-delivery/labels-stickers",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.co.uk/clothing-bags/t-shirts/fruit-of-the-loom-men-s-basic-t-shirt",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.co.uk/clothing-bags/all-express-delivery",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.co.uk/clothing-bags/sweatshirts/b-c-tm-hoodie",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.co.uk/fast-delivery/PrintAdvertising-and-Office",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.pt/envio",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.pt/envio-rapido/cartoes-de-visita",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.pt/cartoes-de-visita/standard",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.pt/envio-rapido/publicidade-impressa-e-materiais-de-escritorio",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.pt/materiais-de-marketing/flyers",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.pt/envio-rapido/sinaletica",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.pt/placas-e-posteres/lonas-publicitarias/retratil",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.pt/envio-rapido/etiquetas-autocolantes",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.pt/etiquetas-e-autocolantes/autocolantes/autocolantes-redondos",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.pt/vestuario-e-sacos/t-shirts/t-shirt-basica-fruit-of-the-loom-para-homem",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.pt/vestuario-e-sacos/tudo-entrega-urgente",
+        "what": ""
+      },
+      {
+        "url": "https://www.vistaprint.pt/vestuario-e-sacos/sweatshirts/b-c-com-capuz",
+        "what": ""
+      },
+      {
+        "url": "https://www.360imprimir.pt/roll-up?ppp=39956514",
+        "what": ""
+      },
+      {
+        "url": "https://www.360imprimir.pt/cartoes-de-visita",
+        "what": ""
+      },
+      {
+        "url": "https://portaldaqueixa.com/brands/360imprimir/complaints",
+        "what": ""
+      },
+      {
+        "url": "https://www.pixartprinting.pt/expositores/roll-up/",
+        "what": ""
+      },
+      {
+        "url": "https://www.pixartprinting.pt/",
+        "what": ""
+      },
+      {
+        "url": "https://instantprint.co.uk/next-day-printing",
+        "what": ""
+      },
+      {
+        "url": "https://instantprint.co.uk/artwork-and-design",
+        "what": ""
+      },
+      {
+        "url": "https://instantprint.co.uk/roller-banners",
+        "what": ""
+      },
+      {
+        "url": "https://www.moo.com/uk/about/next-day-delivery",
+        "what": ""
+      },
+      {
+        "url": "https://www.moo.com/uk/about/fast-and-free-delivery-uk",
+        "what": ""
+      },
+      {
+        "url": "https://www.moo.com/uk/business-cards",
+        "what": ""
+      },
+      {
+        "url": "https://www.printed.com/blog/cut-off-times/",
+        "what": ""
+      },
+      {
+        "url": "https://www.tradeprint.co.uk/same-day-printing",
+        "what": ""
+      },
+      {
+        "url": "https://www.printful.com/uk/shipping",
+        "what": ""
+      },
+      {
+        "url": "https://shop.bl.uk/pages/delivery-information-teemill",
+        "what": ""
+      },
+      {
+        "url": "https://js.a4apparel.co.uk/shirt printers/",
+        "what": ""
+      },
+      {
+        "url": "https://ch.trustpilot.com/review/www.thetshirtman.co.uk",
+        "what": ""
+      },
+      {
+        "url": "https://www.timeout.pt/lisboa/pt/compras/estampa-salgada",
+        "what": ""
+      },
+      {
+        "url": "https://www.timeout.pt/lisboa/pt/compras/levis-print-bar",
+        "what": ""
+      },
+      {
+        "url": "https://www.zaask.pt/grafica/algarve/faro",
+        "what": ""
+      },
+      {
+        "url": "https://scanova.io/blog/qr-code-guidelines-for-best-results/",
+        "what": ""
+      },
+      {
+        "url": "https://www.qrstuff.com/feeds/blog/qr-code-size-poster",
+        "what": ""
+      },
+      {
+        "url": "https://qr.deloitte.com/help/en/article/what-is-the-minimum-size-of-a-qr-code",
+        "what": ""
+      },
+      {
+        "url": "https://www.qr-code-generator.com/blog/qr-code-distance/",
+        "what": ""
+      }
+    ],
+    "critical_path": [
+      "Sun 1 Nov (today): send the designer's brief; collect each person's name/title/slug and T-shirt/hoodie size; pick garment colour.",
+      "Mon 2 Nov 09:00: phone a Lisbon/Algarve textile printer (hoodies, maybe tees) and a large-format shop (roll-up); phone a UK express garment printer.",
+      "Mon 2 Nov 14:00: DESIGN APPROVED (cards x7, flyer, stickers, tee/hoodie artwork). QR codes generated from final URLs and test-printed.",
+      "Mon 2 Nov by 19:00 (UK Rush) / 20:00 Lisbon (PT Urgente): ORDER cards, flyers, stickers, tees.",
+      "Tue 3 Nov: order roll-up (instantprint UK, or PT shop confirmed by phone); last PT Urgente order day for Fri 6 delivery (cards, stickers, tees).",
+      "Wed 4 Nov: last PT flyer Urgente day and last UK Rush day for Fri 6. Check arrivals; reorder anything wrong.",
+      "Thu 5 Nov before 11:00/12:00: last UK Next Day order (cards, flyers, roll-up at instantprint).",
+      "Fri 6 Nov: everything in hand (UK); PT deliveries land. Sat 7-Sun 8: pack; UK travellers carry banner/UK items."
+    ],
+    "recommendation": [
+      "Paper items (cards, flyers, stickers): order Mon 2 Nov on the express tier in the country where each item is needed; simplest is to print all cards and flyers in PT (Urgente) delivered to the Algarve by Thu 5, with UK colleagues collecting in Lisbon; UK-only cards via Vistaprint UK Rush/MOO as backup.",
+      "Banner: instantprint UK next-day, carried by a UK traveller; or a PT shop confirmed by phone on Mon 2.",
+      "Tees: Vistaprint express (FOTL unisex) Mon 2 in one country, one colour for everyone.",
+      "Hoodies: only if a local express printer confirms by Mon 2 noon; otherwise drop or deliver to Lisbon ~Tue 10.",
+      "One person owns ordering and tracking; every order confirmation (with promised delivery date shown at checkout) is recorded before payment."
+    ],
+    "read_on": "2026-11-01"
   },
   "loop": [
     "**Something is recorded:** a voice memo after a conversation, a photo of a business card, a note to an agent, a code scanned at our stand.",

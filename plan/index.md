@@ -2,11 +2,12 @@
 
 Everything worked backwards from the summit, 9 to 12 November 2026 in Lisbon. From the [team brief](https://newsroom.sgit.ai/articles/web-summit-team-brief.html), [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) and [the plan of 26 October](https://newsroom.sgit.ai/articles/web-summit-2026-the-plan.html). Goals in the plan's order: usage first, the sale after. This is a plan: nothing on it has happened unless its status says so.
 
-Site version: v0.1.11
+Site version: v0.1.12
 
 ## Schedule
 
 - 31 Oct to 2 Nov: The site and the team up from the template: brief, roles, policies, keys, the schedule, the first release; the company map started. (now)
+- Mon 2 Nov, 14:00: **Design approved** for the cards (7), flyer, stickers and tee artwork, with the QR codes generated from final URLs and test-printed; the safest print orders go in that evening (Portugal before 20:00, UK before 19:00). See the design track. (planned)
 - 2 Nov: First meetings of the team (the operator's lunch): owners for the first companies, the role cards, the design budget, who orders what. (planned)
 - 3 to 8 Nov: The map filled and prioritised; an asset (a page) for each of the first companies; meetings booked; the design files approved and sent to print; meetups in the Algarve. (planned)
 - by 6 to 7 Nov: Printed items delivered (UK by 6 Nov, Algarve and Lisbon by 7 Nov): see the design track below. (planned)
@@ -29,7 +30,12 @@ Site version: v0.1.11
 
 ## Design track
 
-
+- Business cards, one design per person with a personal QR (7 x 100 (7 separate artworks; 85x55 mm)): approve by SAFEST: Mon 2 Nov 14:00 (all 7 cards, QR URLs live and tested). FALLBACK: Tue 3 Nov 14:00., order by PT: SAFEST: Mon 2 Nov before 20:00 Lisbon (arrives Thu 5, one day to spare). LAST POSSIBLE: Tue 3 Nov before 20:00 (arrives Fri 6, no margin). · UK: SAFEST: Mon 2 Nov, Vistaprint Rush before 19:00 (arrives Wed 4, two days to reprint). FALLBACK: Thu 5 Nov before 11:00 (Vistaprint Next Day) / 12:00 (MOO) for…, delivered by Fri 6 Nov. PT: Vistaprint PT (vistaprint.pt), 'Envio urgente' eligible card range · UK: Vistaprint UK (Rush / Next Day) or MOO (next-day on selected cards); instantprint as…
+- Small flyer to hand out, QR to the summit site (500 (A6 105x148 mm recommended; A5 if more text)): approve by SAFEST: Mon 2 Nov 14:00. FALLBACK: Wed 4 Nov 14:00., order by PT: SAFEST: Mon 2 Nov 20:00 (arrives Wed 4). LAST POSSIBLE: Wed 4 Nov 20:00 (arrives Fri 6). · UK: SAFEST: Mon 2 Nov before 19:00, Vistaprint Rush (arrives Wed 4). FALLBACK: Thu 5 Nov before 11:00, Next Day (arrives Fri 6)., delivered by Fri 6 Nov. PT: Vistaprint PT flyers (Envio urgente eligible) · UK: Vistaprint UK Next-Day Flyers or instantprint next-day flyers
+- Roll-up / roller banner for the stand or meetups (1 (approx. 85x200 cm; check exact product size)): approve by Mon 2 Nov 12:00 (banner artwork is the simplest piece: logo, one line, URL/QR)., order by PT: Vistaprint PT standard: would have needed ordering by Thu 29 Oct for Fri 6 -> TOO LATE. 360imprimir/Pixartprinting: order Mon 2 Nov only if the checkout date… · UK: SAFEST: Tue 3 Nov (next-day -> Wed 4). FALLBACK: Thu 5 Nov before the cut-off (shown at checkout, not published on the page) -> Fri 6., delivered by Fri 6 Nov. PT: No safe published express option found in PT: Vistaprint PT roll-ups are NOT in its… · UK: instantprint roller banner (next-day), carried to Lisbon by a UK traveller
+- Stickers (logo / QR) (250 (e.g. 50 mm circle or sticker sheets)): approve by SAFEST: Mon 2 Nov 14:00. FALLBACK: Tue 3 Nov 14:00., order by PT: SAFEST: Mon 2 Nov 20:00 (Thu 5). LAST POSSIBLE: Tue 3 Nov 20:00 (Fri 6). · UK: SAFEST: Mon 2 Nov 19:00 Rush (Wed 4). FALLBACK: Wed 4 Nov 19:00 Rush (Fri 6) or Thu 5 next-day where offered., delivered by Fri 6 Nov. PT: Vistaprint PT sticker sheets ('Envio urgente' eligible; round single stickers eligibility… · UK: Vistaprint UK circle sticker sheets (Rush eligible) or instantprint 'Next Day Stickers' /…
+- Branded T-shirts (~7 (sizes per person: TO DECIDE)): approve by SAFEST: Mon 2 Nov 14:00 (artwork + colour + everyone's size). FALLBACK: Tue 3 Nov 14:00., order by PT: SAFEST: Mon 2 Nov 20:00 (Thu 5). LAST POSSIBLE: Tue 3 Nov 20:00 (Fri 6). · UK: SAFEST: Mon 2 Nov 19:00 Vistaprint Rush (Wed 4). FALLBACK: Wed 4 Nov 19:00 Rush (Fri 6), or an express DTG printer booked by phone Tue 3., delivered by Fri 6 Nov. PT: Vistaprint PT Fruit of the Loom unisex T-shirt (the only T-shirt in its 'envio urgente'… · UK: Vistaprint UK Fruit of the Loom unisex T-shirt ('express shipping available'); fallback a…
+- Branded hoodies (~7 (sizes: TO DECIDE)): approve by Mon 2 Nov 12:00 (reuse the T-shirt artwork)., order by PT: Pre-travel delivery via Vistaprint: TOO LATE (needed ordering by Thu 29 Oct). Option A: local shop, book Mon 2 Nov morning. Option B: Vistaprint PT standard… · UK: Vistaprint: TOO LATE. Express printer: confirm by phone Mon 2, order by Tue 3 Nov for Thu 5/Fri 6., delivered by Fri 6 Nov. PT: No published express hoodie option: Vistaprint PT hoodies (e.g. B&C) are not in its… · UK: Vistaprint UK hoodies (e.g. B&C ID.003) are not in its express clothing list; UK express…
 
 ## The loop
 

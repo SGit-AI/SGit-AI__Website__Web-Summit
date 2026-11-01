@@ -2,7 +2,7 @@
 
 The SGit team's site for Web Summit Lisbon 2026: the company map from public sources, the summit's programme and side events, the plan worked back from 9 November, and the people and agents who run it.
 
-Site version: v0.1.11
+Site version: v0.1.12
 
 - 0 companies on the map
 - 0 confirmed attending 2026
