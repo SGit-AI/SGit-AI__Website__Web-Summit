@@ -219,6 +219,34 @@
         "proposal: slow the schedule to every 4 hours until your answers arrive, then back to every 2"
       ],
       "next": "scheduled wake at 12:27 UTC"
+    },
+    {
+      "id": "wake-2026-11-01T1228Z",
+      "agent": "conductor",
+      "started": "2026-11-01T12:28:14Z",
+      "ended": "2026-11-01T12:30:00Z",
+      "kind": "scheduled, every 2 hours at :27 UTC",
+      "objective": "Check for operator answers and new material; idle if nothing worth a role's time",
+      "commit": "9e95648",
+      "plan": [
+        "check: operator answers, mail, boards, holds"
+      ],
+      "roles": [],
+      "outcome": "idle",
+      "release": "v0.1.20",
+      "achieved": [
+        "checked: no operator answers, no mail, no board items, no hold, no other pushes"
+      ],
+      "blockers": [
+        "owners, names, budget, design and the signing move wait on the operator"
+      ],
+      "for_you": [
+        "approve designs by Mon 2 Nov 14:00",
+        "agree the signing move",
+        "names and ids for the seven; owners for first meetings",
+        "say whether to slow the schedule to every 4 hours"
+      ],
+      "next": "scheduled wake at 14:27 UTC"
     }
   ]
 }

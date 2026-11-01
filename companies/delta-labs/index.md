@@ -2,7 +2,7 @@
 
 Elaiia gives teams the voice of the customer in hours using AI Twins, synthetic customer profiles grounded in behavioural data.
 
-Site version: v0.1.19
+Site version: v0.1.20
 
 - Website: https://www.delta-labs.ch
 - Category: ai-agents

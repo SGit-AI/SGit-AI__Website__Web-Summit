@@ -2,7 +2,7 @@
 
 Agentic QA for web, mobile, chat, voice and IVR, and 'agent assurance' for enterprises; founded as LambdaTest (2017).
 
-Site version: v0.1.19
+Site version: v0.1.20
 
 - Website: https://www.testmuai.com/
 - Category: devtools

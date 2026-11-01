@@ -2,7 +2,7 @@
 
 Venture capital firm; Lusa reports partner Marcus Segal among the announced 2026 speakers.
 
-Site version: v0.1.19
+Site version: v0.1.20
 
 - Website: https://a16z.com/
 - Category: investor

@@ -2,7 +2,7 @@
 
 Plug-and-play on-chain privacy with built-in compliance.
 
-Site version: v0.1.19
+Site version: v0.1.20
 
 - Website: https://0xbow.io
 - Category: grc

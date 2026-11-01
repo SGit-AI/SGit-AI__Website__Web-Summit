@@ -1,5 +1,10 @@
 [
   {
+    "version": "v0.1.20",
+    "date": "2026-11-01",
+    "what": "Sixth scheduled wake (12:28 UTC), idle: no operator answers, mail or board items; no role ran; logged with the reason."
+  },
+  {
     "version": "v0.1.19",
     "date": "2026-11-01",
     "what": "Fifth scheduled wake (10:28 UTC), idle: no operator answers, mail or board items, and the map is near what public sources allow, so no role ran; the wake is logged with the reason and a proposal to slow the schedule until the operator's decisions arrive."

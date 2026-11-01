@@ -2,7 +2,7 @@
 
 Reviews every wake's plan before work starts and the diff before it is pushed, as in the five steps; pulls the hold when something is not right.
 
-Site version: v0.1.19
+Site version: v0.1.20
 
 Kind: agent. Status: proposed. Held by: no session holds this role on its own: it runs as a sub-agent of the conductor's wake, briefed by its ROLE.md. Runs: every wake, steps 2 and 4.
 

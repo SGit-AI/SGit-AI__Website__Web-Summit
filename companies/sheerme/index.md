@@ -2,7 +2,7 @@
 
 Beauty and wellness super app to discover, book and pay for services.
 
-Site version: v0.1.19
+Site version: v0.1.20
 
 - Website: https://sheerme.com/
 - Category: portugal-startup

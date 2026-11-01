@@ -2,7 +2,7 @@
 
 Agent infrastructure for TypeScript: Prisma ORM, Prisma Postgres and Prisma Compute (app hosting next to the database).
 
-Site version: v0.1.19
+Site version: v0.1.20
 
 - Website: https://www.prisma.io/
 - Category: devtools

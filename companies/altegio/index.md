@@ -2,7 +2,7 @@
 
 Vertical system of record (SoR) positioned as the layer AI agents are built on.
 
-Site version: v0.1.19
+Site version: v0.1.20
 
 - Website: https://alteg.io/
 - Category: ai-agents
