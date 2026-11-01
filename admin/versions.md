@@ -2,8 +2,9 @@
 
 Every release of this site and what changed.
 
-Site version: v0.1.23
+Site version: v0.1.24
 
+- v0.1.24 (2026-11-01): conductor.3@web-summit is the only conductor, at the operator's word: it holds the conductor seat on the roster, its separate entry is folded in, conductor.2 is recorded as ended, and the schedule is recorded as stopped (its task no longer exists).
 - v0.1.23 (2026-11-01): Brief 3, the operator's strategy conversation, recorded in BRIEF.md (paraphrased, nobody named but the operator); its dates and decisions on the plan, the shirt and hoodie quantities updated, and newsroom.web-summit.sgit.ai recorded as a proposal.
 - v0.1.22 (2026-11-01): A third conductor session, conductor.3@web-summit, joins the team: its roster entry and its public session key.
 - v0.1.21 (2026-11-01): Seventh scheduled wake (14:28 UTC), idle: no operator answers, mail or board items; no role ran; logged, with a note that WAKE.md's 'second wake running' stop rule needs the operator's word on whether waiting for decisions is a hold or an idle.

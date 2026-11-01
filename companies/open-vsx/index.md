@@ -2,7 +2,7 @@
 
 Open VSX Registry: the vendor-neutral open-source registry of editor extensions run under the Eclipse Foundation, used by VS Code-compatible editors.
 
-Site version: v0.1.23
+Site version: v0.1.24
 
 - Website: https://open-vsx.org/
 - Category: devtools

@@ -2,7 +2,7 @@
 
 Legal operating system for in-house teams: secure AI-native workflows for intake, contract review, drafting, due diligence and research.
 
-Site version: v0.1.23
+Site version: v0.1.24
 
 - Website: https://www.legalfly.com
 - Category: grc

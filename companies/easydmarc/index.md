@@ -2,7 +2,7 @@
 
 Email trust platform: DMARC, email authentication, DNS, sender insights, threat intelligence and deliverability.
 
-Site version: v0.1.23
+Site version: v0.1.24
 
 - Website: https://easydmarc.com/
 - Category: security

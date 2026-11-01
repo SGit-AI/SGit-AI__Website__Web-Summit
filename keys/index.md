@@ -2,7 +2,7 @@
 
 Public keys published on this site. Public halves only: no private key, vault key or token is ever listed here. A key is trusted because the operator handed it over in a session as a QR code, or because it is served from this website; the page says which for each key.
 
-Site version: v0.1.23
+Site version: v0.1.24
 
 ## DC Vault Registry (the vault of vaults)
 
@@ -24,7 +24,7 @@ The first conductor session (conductor@web-summit, 28 October 2026). That sessio
 
 ## conductor.2@web-summit (Claude Code session)
 
-The conductor's current session key (conductor.2@web-summit, holding the conductor role from 1 November 2026). A session key: it ends with its session, and a later session publishes a new one.
+The second conductor session (conductor.2@web-summit), 1 November 2026 from 00:13 to its last wake at 14:31 UTC. Ended: a session key dies with its session; kept here as the record of what signed its pushes.
 
 - Signing fingerprint: sha256:a8a24ce1af856a95
 - Encryption fingerprint: sha256:6efc22a975ed5097
@@ -33,7 +33,7 @@ The conductor's current session key (conductor.2@web-summit, holding the conduct
 
 ## conductor.3@web-summit (Claude Code session)
 
-A third conductor session (conductor.3@web-summit), joined at the operator's request. A session key: it ends with its session.
+The conductor session (conductor.3@web-summit) that holds the conductor seat, the only conductor from 1 November 2026 at the operator's word. A session key: it ends with its session.
 
 - Signing fingerprint: sha256:62eb11234d3237d5
 - Encryption fingerprint: sha256:ecbb2756634ba022

@@ -1,6 +1,6 @@
 {
   "agent": "conductor",
-  "state": "active: the conductor's standing session (conductor.2@web-summit)",
+  "state": "active: held by conductor.3@web-summit, the only conductor (operator, 1 Nov 2026); no scheduled wake is running",
   "last_wake": "2026-11-01T14:28:34Z",
   "done": [],
   "next": [],
@@ -9,6 +9,6 @@
     "Proposal: slow the schedule to every 4 hours until the operator's decisions arrive (owners, names, budget, signing), since the map is near what public sources allow; the schedule is the operator's to change.",
     "WAKE.md, Stopping, says to hold when a decision is missing for the second wake running. Read literally it applies now; the conductor treats waiting on the operator with nothing else to do as idle, since a hold would also pause the operator's schedule. The operator to say which."
   ],
-  "task": "trig_013G1PyPEwAG5qNRmuUXKbWP",
-  "task_schedule": "27 */2 * * * UTC, every 2 hours at :27, into this session; created 1 November 2026 00:27 UTC at the operator's word"
+  "task": null,
+  "task_schedule": "none: conductor.2's task trig_013G1PyPEwAG5qNRmuUXKbWP no longer exists (checked 1 Nov 2026 ~18:45 UTC); its last wake was 14:28 UTC. Restarting the schedule into conductor.3's session is the operator's call."
 }

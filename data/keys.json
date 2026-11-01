@@ -35,7 +35,7 @@
     {
       "id": "conductor-2",
       "label": "conductor.2@web-summit (Claude Code session)",
-      "role": "The conductor's current session key (conductor.2@web-summit, holding the conductor role from 1 November 2026). A session key: it ends with its session, and a later session publishes a new one.",
+      "role": "The second conductor session (conductor.2@web-summit), 1 November 2026 from 00:13 to its last wake at 14:31 UTC. Ended: a session key dies with its session; kept here as the record of what signed its pushes.",
       "how": "Made by the agent in its own session on 1 November 2026 and pushed to this repository by that session. The push is the authorisation: the operator confirmed on 1 November 2026 that a key pushed here by the session that made it is confirmed, because only that session has push access.",
       "added": "2026-11-01",
       "bundle": {
@@ -50,7 +50,7 @@
     {
       "id": "conductor-3",
       "label": "conductor.3@web-summit (Claude Code session)",
-      "role": "A third conductor session (conductor.3@web-summit), joined at the operator's request. A session key: it ends with its session.",
+      "role": "The conductor session (conductor.3@web-summit) that holds the conductor seat, the only conductor from 1 November 2026 at the operator's word. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 1 November 2026 and published here; the operator has not signed it, and nothing depends on it.",
       "added": "2026-11-01",
       "bundle": {

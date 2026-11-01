@@ -204,10 +204,10 @@
       "role": "Conductor: routes, keeps the schedule, the keys and the site true, writes the debrief",
       "status": "active",
       "address": "conductor@web-summit",
-      "holder": "conductor.2@web-summit (session key sha256:a8a24ce1af856a95, from 1 November 2026); before it, conductor@web-summit (sha256:c8298e3fa58f0024, 28 October, ended)",
+      "holder": "conductor.3@web-summit (session key sha256:62eb11234d3237d5, from 1 November 2026, 18:38 UTC; the only conductor, at the operator's word); before it, conductor.2@web-summit (sha256:a8a24ce1af856a95, 1 November 00:13 to 14:31, ended) and conductor@web-summit (sha256:c8298e3fa58f0024, 28 October, ended)",
       "reviewed_by": "to decide: one of the seven reviews its output daily",
       "slot": "every 2 hours, opens the wake",
-      "summary": "Opens and closes every wake, chooses which roles run in it, routes requests, keeps the schedule, the keys, the build, the gate and the site true, and writes the daily debrief. Held by conductor.2@web-summit, the session that joined on 1 November 2026; the first session, conductor@web-summit, built the site from 28 October and has ended.",
+      "summary": "Opens and closes every wake, chooses which roles run in it, routes requests, keeps the schedule, the keys, the build, the gate and the site true, and writes the daily debrief. Held by conductor.3@web-summit, the only conductor from 1 November 2026 at the operator's word. Before it, conductor.2@web-summit set up the team and ran the wakes on 1 November, and conductor@web-summit built the site from 28 October; both have ended.",
       "owns": [
         "the wake: the opening plan, the sub-agents it runs, the closing check",
         "the release: version.txt, versions.json, the pipeline",
@@ -239,6 +239,10 @@
         [
           "log/index.html",
           "The session log"
+        ],
+        [
+          "keys/index.html#conductor-3",
+          "The holder's public key"
         ]
       ],
       "writes": [
@@ -255,34 +259,6 @@
         "comms/issues/conductor/**",
         "comms/mail/conductor/**",
         "comms/mail/mailroom/*/conductor__*"
-      ]
-    },
-    {
-      "id": "conductor-3",
-      "name": "conductor.3@web-summit",
-      "kind": "agent",
-      "role": "Third conductor session",
-      "status": "active",
-      "alias": "@Conductor.3",
-      "address": "conductor.3@web-summit",
-      "identity": "sha256:62eb11234d3237d5 (session key)",
-      "joined": "2026-11-01",
-      "summary": "A third Claude Code session, joined at the operator's request on 1 November 2026, with a brief from the operator to follow. Works under the conductor's rules alongside conductor.2@web-summit, which holds the conductor seat; the split of work waits on the operator and the brief.",
-      "owns": [
-        "nothing exclusively yet: it shares the conductor's work until the operator splits it"
-      ],
-      "rules": [
-        "Push to dev only; main is the operator's call.",
-        "Fetch dev before every release, so two conductors never race a version number.",
-        "A red validate is no release; never disable a check to get green.",
-        "Publish nothing about the event that the brief or a cited source does not support.",
-        "Keys never go into a file, a page or a message."
-      ],
-      "home": [
-        [
-          "keys/index.html#conductor-3",
-          "Its public key"
-        ]
       ]
     },
     {

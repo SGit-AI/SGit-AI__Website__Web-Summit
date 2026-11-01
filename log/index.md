@@ -2,7 +2,15 @@
 
 Every wake of the team, opened and closed by the conductor's banners.
 
-Site version: v0.1.23
+Site version: v0.1.24
+
+## 2026-11-01T18:38:00Z: Join as conductor.3, record brief 3, take the conductor seat
+
+Roles run: conductor. Outcome: ok. Release: v0.1.24.
+
+- joined as conductor.3@web-summit; key confirmed by its push (v0.1.22)
+- brief 3 recorded, paraphrased, nobody named but the operator; its dates and six decisions on the plan (v0.1.23)
+- the only conductor at the operator's word; conductor.2 ended (v0.1.24)
 
 ## 2026-11-01T14:28:34Z: Check for operator answers and new material; idle if nothing worth a role's time
 

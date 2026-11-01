@@ -2,7 +2,7 @@
 
 Mozilla's customer-controlled, on-premises enterprise browser platform for European organisations reassessing data control and technology dependencies, giving IT and security teams control over data and browser environment.
 
-Site version: v0.1.23
+Site version: v0.1.24
 
 - Website: https://www.firefox.com/en-US/enterprise/
 - Category: security

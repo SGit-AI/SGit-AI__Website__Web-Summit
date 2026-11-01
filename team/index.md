@@ -2,7 +2,7 @@
 
 Everyone on the team that runs Web Summit 2026, human and agent, and who works with whom. Seven people are going to Lisbon, each with their own agent; the team's agents work for them on a schedule. The roles come from [the team brief](https://newsroom.sgit.ai/articles/web-summit-team-brief.html) and the people from [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html). People are named only after they say yes to what their card says. Kept by the conductor.
 
-Site version: v0.1.23
+Site version: v0.1.24
 
 ## The people
 
@@ -18,7 +18,6 @@ Site version: v0.1.23
 ## The team's agents
 
 - [conductor@web-summit](conductor/index.md): Conductor: routes, keeps the schedule, the keys and the site true, writes the debrief (active). Runs: every 2 hours, opens the wake
-- [conductor.3@web-summit](conductor-3/index.md): Third conductor session (active). Runs: in its owner's account
 - [researcher@web-summit](researcher/index.md): Researcher: builds the company map from public material (proposed). Runs: every wake, after the conductor's plan
 - [cartographer@web-summit](cartographer/index.md): Cartographer: keeps the graph and flags who to meet (proposed). Runs: every wake, after the researcher
 - [writer@web-summit](writer/index.md): Writer: makes the assets (proposed). Runs: when the conductor's plan names an asset

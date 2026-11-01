@@ -2,7 +2,7 @@
 
 Building KeewanoDB, a database for AI agents and machine reasoning that stores every event across users, devices and agents as an ordered history with context.
 
-Site version: v0.1.23
+Site version: v0.1.24
 
 - Website: https://www.keewano.com/
 - Category: ai-agents

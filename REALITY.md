@@ -1,4 +1,4 @@
-# Reality: what exists on 1 November 2026 (site v0.1.23)
+# Reality: what exists on 1 November 2026 (site v0.1.24)
 
 A thing that is not in this file does not exist, whatever a brief says. Kept current by whoever ships.
 
@@ -8,7 +8,7 @@ A thing that is not in this file does not exist, whatever a brief says. Kept cur
 - The pipeline: validate, tag, deploy (`.github/workflows/deploy-pages.yml`). A push to `dev` tags the next minor, a push to `main` the next major. From v0.1.11 runs no longer cancel each other (`cancel-in-progress: false`).
 - The team template: a `ROLE.md`, `policy.json` and `status.json` for each of eight agent roles (conductor, researcher, cartographer, writer, curator, analyst, designer, security) in `team/<id>/`; the gate fails if two policies claim the same path. The wake protocol (`team/conductor/WAKE.md`), the schedule (`team/conductor/schedule.json`), the tools (`admin/tools/start.mjs`, `banner.mjs`, `wake.mjs`, `comms_check.mjs`), the hold (`team/<id>/HOLD.md`, which stops `start.mjs`), and the board and mailroom as files (`comms/`, empty).
 - The roster (`data/team.json`): the operator, six unnamed seats for the other people going, the designer's seat, the eight agent roles, and the operator's inbox agent (onboarding). Only the operator is named.
-- The conductor role is held by conductor.2@web-summit (key `sha256:a8a24ce1af856a95`, from 1 November); the first session, conductor@web-summit, has ended. A third session, conductor.3@web-summit (key `sha256:62eb11234d3237d5`), joined at the operator's request on 1 November at 18:38 UTC and works alongside it; no split of work between them has been agreed yet.
+- The conductor role is held by conductor.3@web-summit (key `sha256:62eb11234d3237d5`), the only conductor from 1 November at the operator's word. conductor.2@web-summit (`sha256:a8a24ce1af856a95`, last wake 14:28 UTC on 1 November) and the first session, conductor@web-summit, have ended. No scheduled wake runs: conductor.2's task no longer exists, and a new one waits on the operator.
 - Six vaults on dev.send.sgraph.ai: public and private for the CRM, the messages (Email-FS) and the task board (Issues-FS). Each holds only a README. Keys are held outside the repository.
 - `/keys/`: four public keys: the registry agent that keeps the team's vault keys (handed over as a QR code), and the three conductor session keys (each confirmed by its push).
 

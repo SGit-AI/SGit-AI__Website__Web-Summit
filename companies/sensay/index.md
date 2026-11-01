@@ -2,7 +2,7 @@
 
 Uses AI to capture expertise inside a team into living knowledge bases that stay accessible after people leave.
 
-Site version: v0.1.23
+Site version: v0.1.24
 
 - Website: https://sensay.io
 - Category: ai-agents

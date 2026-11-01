@@ -2,7 +2,7 @@
 
 Open source intelligence company that unmasks digital threats and the real people behind them (from its CEO's Web Summit bio; its site refused an automated read of robots.txt, so nothing from it was read).
 
-Site version: v0.1.23
+Site version: v0.1.24
 
 - Website: unknown
 - Category: security

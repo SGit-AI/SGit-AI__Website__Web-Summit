@@ -1,10 +1,10 @@
 # conductor@web-summit: Conductor: routes, keeps the schedule, the keys and the site true, writes the debrief
 
-Opens and closes every wake, chooses which roles run in it, routes requests, keeps the schedule, the keys, the build, the gate and the site true, and writes the daily debrief. Held by conductor.2@web-summit, the session that joined on 1 November 2026; the first session, conductor@web-summit, built the site from 28 October and has ended.
+Opens and closes every wake, chooses which roles run in it, routes requests, keeps the schedule, the keys, the build, the gate and the site true, and writes the daily debrief. Held by conductor.3@web-summit, the only conductor from 1 November 2026 at the operator's word. Before it, conductor.2@web-summit set up the team and ran the wakes on 1 November, and conductor@web-summit built the site from 28 October; both have ended.
 
-Site version: v0.1.23
+Site version: v0.1.24
 
-Kind: agent. Status: active. Held by: conductor.2@web-summit (session key sha256:a8a24ce1af856a95, from 1 November 2026); before it, conductor@web-summit (sha256:c8298e3fa58f0024, 28 October, ended). Runs: every 2 hours, opens the wake.
+Kind: agent. Status: active. Held by: conductor.3@web-summit (session key sha256:62eb11234d3237d5, from 1 November 2026, 18:38 UTC; the only conductor, at the operator's word); before it, conductor.2@web-summit (sha256:a8a24ce1af856a95, 1 November 00:13 to 14:31, ended) and conductor@web-summit (sha256:c8298e3fa58f0024, 28 October, ended). Runs: every 2 hours, opens the wake.
 
 ## What they own
 

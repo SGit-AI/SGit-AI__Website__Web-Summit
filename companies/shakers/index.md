@@ -2,7 +2,7 @@
 
 Marketplace of senior tech, product and data talent that builds with AI; says 4% pass its certification.
 
-Site version: v0.1.23
+Site version: v0.1.24
 
 - Website: https://www.shakersworks.com/pt/
 - Category: other
