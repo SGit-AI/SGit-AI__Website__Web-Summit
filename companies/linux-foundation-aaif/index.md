@@ -2,7 +2,7 @@
 
 The Linux Foundation hosts open-source projects; the speaker is Executive Director of its Agentic AI Foundation (AAIF), a neutral foundation for open standards in agentic AI.
 
-Site version: v0.1.22
+Site version: v0.1.23
 
 - Website: https://aaif.io/
 - Category: ai-agents

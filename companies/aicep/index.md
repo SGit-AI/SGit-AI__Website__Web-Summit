@@ -2,7 +2,7 @@
 
 Portugal's public trade and investment agency: attracts inward investment and helps Portuguese companies expand abroad; offices in about 50 countries.
 
-Site version: v0.1.22
+Site version: v0.1.23
 
 - Website: https://www.portugalglobal.pt
 - Category: portugal-startup

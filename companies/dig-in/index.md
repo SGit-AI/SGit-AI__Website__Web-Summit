@@ -2,7 +2,7 @@
 
 Maps the physical hospitality economy: a data engine tracking millions of verified outlets across Europe and Brazil with menus, pricing and location over time.
 
-Site version: v0.1.22
+Site version: v0.1.23
 
 - Website: https://www.dig-in.io/
 - Category: portugal-startup

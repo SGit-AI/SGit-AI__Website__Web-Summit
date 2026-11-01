@@ -2,7 +2,7 @@
 
 Portuguese tech recruitment ecosystem ("where technology meets people").
 
-Site version: v0.1.22
+Site version: v0.1.23
 
 - Website: https://itrtechgroup.com/
 - Category: portugal-startup

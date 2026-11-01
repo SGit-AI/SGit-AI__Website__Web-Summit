@@ -1,4 +1,4 @@
-# Reality: what exists on 1 November 2026 (site v0.1.22)
+# Reality: what exists on 1 November 2026 (site v0.1.23)
 
 A thing that is not in this file does not exist, whatever a brief says. Kept current by whoever ships.
 
@@ -27,4 +27,5 @@ A thing that is not in this file does not exist, whatever a brief says. Kept cur
 - Personal CRMs, shared ids in use across them, and any data in the team's CRM vaults.
 - Separate sessions per role: today the roles run as sub-agents of the conductor's session.
 - A release script that verifies the live site, the `review/` folder, the Agent Contact file, a row on nfrs.sgit.ai, a key file and QR per role in the template's layout.
+- newsroom.web-summit.sgit.ai: proposed by the operator on 1 November (its own repository and agentic team, run by one of the human collaborators); no repository, DNS or team yet.
 - Any print order, quote or approved design. The dates to meet are on the plan page (design approved by Mon 2 Nov 14:00).

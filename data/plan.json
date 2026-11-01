@@ -22,6 +22,36 @@
       "status": "planned"
     },
     {
+      "when": "Mon 2 and Tue 3 Nov",
+      "what": "Nail it all down (brief 3): each person's gravity and strategy, the shirts and hoodies, the merch sponsor ask, the first friendly's agentic team.",
+      "status": "planned"
+    },
+    {
+      "when": "Wed 4 Nov",
+      "what": "A plan, a mapping and the agents in place for each person (brief 3).",
+      "status": "planned"
+    },
+    {
+      "when": "by Thu 5 or Fri 6 Nov",
+      "what": "About 20 meetings booked with people primed to meet us; a team member arrives on Thu 5 (brief 3).",
+      "status": "planned"
+    },
+    {
+      "when": "Fri 6 and Sat 7 Nov",
+      "what": "For each booked meeting, what we bring: their analysis, the risk analysis, how RiskMandate helps, and how they buy (brief 3).",
+      "status": "planned"
+    },
+    {
+      "when": "Tue 10 and Wed 11 Nov",
+      "what": "Everyone we meet primed for the stand on Thu 12: a meeting booked or a QR scanned (brief 3).",
+      "status": "planned"
+    },
+    {
+      "when": "Thu 12 Nov",
+      "what": "Our day on the stand (brief 3; the stand location to go on the shirts once known).",
+      "status": "planned"
+    },
+    {
       "when": "by 6 to 7 Nov",
       "what": "Printed items delivered (UK by 6 Nov, Algarve and Lisbon by 7 Nov): see the design track below.",
       "status": "planned"
@@ -104,6 +134,42 @@
       "from": "the operator, 1 Nov",
       "status": "decided",
       "answer": "every 2 hours, from 1 November 2026"
+    },
+    {
+      "id": "gravity",
+      "question": "Each person's gravity: what they want from the summit (business, a job, RiskMandate, SGit) and the strategy the team runs for it.",
+      "from": "brief 3",
+      "status": "open"
+    },
+    {
+      "id": "analysis-pipeline",
+      "question": "The card-to-analysis loop: which agent turns a card or email into the company analysis, the risk analysis and how RiskMandate helps, within the hour, and who reviews it before it is sent.",
+      "from": "brief 3",
+      "status": "open"
+    },
+    {
+      "id": "shirts",
+      "question": "Shirts and hoodies: how many per person, a colour per person, which messages, the stand location, a backup design, and who produces them by when.",
+      "from": "brief 3",
+      "status": "open"
+    },
+    {
+      "id": "merch-sponsor",
+      "question": "A sponsor for the merch: who is asked, with what brief, deck and business case, and whether the organisers allow sponsor logos.",
+      "from": "brief 3",
+      "status": "open"
+    },
+    {
+      "id": "first-friendly",
+      "question": "The first friendly's agentic team: what it runs (site, calendar, email, promotion, student work), under which behaviour policies, starting when.",
+      "from": "brief 3",
+      "status": "open"
+    },
+    {
+      "id": "newsroom",
+      "question": "newsroom.web-summit.sgit.ai: its own repository and agentic team, managed by which human collaborator, and what it publishes that this site does not.",
+      "from": "the operator to conductor.3, 1 Nov",
+      "status": "proposed"
     }
   ],
   "design": {
@@ -152,7 +218,7 @@
       {
         "id": "t-shirts",
         "item": "Branded T-shirts",
-        "quantity": "~7 (sizes per person: TO DECIDE)",
+        "quantity": "5 to 7 people, several each (about 20 each was said in brief 3; to confirm), a different colour per person, a set of messages, the stand location, and a plainer backup (sizes per person: TO DECIDE)",
         "approve_by": "SAFEST: Mon 2 Nov 14:00 (artwork + colour + everyone's size). FALLBACK: Tue 3 Nov 14:00.",
         "order_by": "PT: SAFEST: Mon 2 Nov 20:00 (Thu 5). LAST POSSIBLE: Tue 3 Nov 20:00 (Fri 6). · UK: SAFEST: Mon 2 Nov 19:00 Vistaprint Rush (Wed 4). FALLBACK: Wed 4 Nov 19:00 Rush (Fri 6), or an express DTG printer booked by phone Tue 3.",
         "deliver_by": "Fri 6 Nov",
@@ -162,7 +228,7 @@
       {
         "id": "hoodies",
         "item": "Branded hoodies",
-        "quantity": "~7 (sizes: TO DECIDE)",
+        "quantity": "~7, one per person (the operator wants one; brief 3) (sizes: TO DECIDE)",
         "approve_by": "Mon 2 Nov 12:00 (reuse the T-shirt artwork).",
         "order_by": "PT: Pre-travel delivery via Vistaprint: TOO LATE (needed ordering by Thu 29 Oct). Option A: local shop, book Mon 2 Nov morning. Option B: Vistaprint PT standard… · UK: Vistaprint: TOO LATE. Express printer: confirm by phone Mon 2, order by Tue 3 Nov for Thu 5/Fri 6.",
         "deliver_by": "Fri 6 Nov",

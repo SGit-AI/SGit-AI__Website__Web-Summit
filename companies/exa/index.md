@@ -2,7 +2,7 @@
 
 Search API for AI agents: real-time web data, deep research and structured content from one endpoint.
 
-Site version: v0.1.22
+Site version: v0.1.23
 
 - Website: https://exa.ai/
 - Category: ai-agents

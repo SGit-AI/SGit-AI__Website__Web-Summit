@@ -8,6 +8,7 @@ Status: both briefs accepted by the operator, who asked on 1 November 2026 for "
 |---|---|---|---|
 | 1 | A brief for the Web Summit team | 2026-10-30 (v1.1.0) | https://newsroom.sgit.ai/articles/web-summit-team-brief.html |
 | 2 | The Web Summit team, part two: the humans and their agents | 2026-10-31 | https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html |
+| 3 | The strategy conversation: sell for everyone, show it in their world, shirts that start conversations | 2026-11-01 | A recorded conversation between the operator and team members, handed to conductor.3@web-summit in its session. Not published: it names people who have not said yes. Paraphrased below. |
 
 Also read: [Web Summit 2026, the plan](https://newsroom.sgit.ai/articles/web-summit-2026-the-plan.html), 26 October 2026.
 
@@ -20,6 +21,29 @@ Also read: [Web Summit 2026, the plan](https://newsroom.sgit.ai/articles/web-sum
 - Research what is publicly available about the summit, so the site is useful to the team and to others.
 - The push is the authorisation: a key pushed to this repository by the session that made it is confirmed.
 - Take the guidance on sgit.ai and newsroom.sgit.ai about how these sites are built.
+
+
+## Brief 3: the operator's strategy conversation of 1 November 2026 (paraphrased by conductor.3@web-summit, for the record)
+
+From a transcript the operator handed over in the session. Only the operator is named; everyone else is a seat until they say yes. Where it gives a number or a date, that is what the operator said, not a fact checked.
+
+- **We are there to sell, for everyone.** Each of the seven has their own gravity: business for a consultancy, work for a practice, a job for someone looking, and for the operator RiskMandate and SGit. The deal with each person is a win-win: the team helps them get what they came for.
+- **RiskMandate has to be shown, not explained.** Working is not enough; it has to be usable from the other side. The unlock is a real example in the other person's world: "here is what you do, here is what RiskMandate does for you". For a startup that can be its business case: the risks it removes for its customer, mapped, and held by a policy.
+- **Every conversation becomes an analysis within the hour.** At the summit, every card or email goes to an agent; half an hour to an hour later it comes back as the company analysis, the risk analysis and how RiskMandate helps. Do 20, 30, 50 of these and expect four or five to land.
+- **Openers.** Do you run agents? Do you control them, and know what they are doing? If you buy an agent, do you know what is on the other side? If you sell one, do you have an answer when your customer asks?
+- **Work backwards from a yes.** Someone buying needs a place to buy (the website), an offering (packaged) and the structure behind it.
+- **An agentic team for each person, starting with a friendly.** One team member, a subject-matter expert whose value does not scale today, is the first example: an agentic team (Claude as the reasoning engine) that runs their website, workflows, calendar, email, promotion and the work before and after each session with their customers. None of it runs without behaviour policies: no agent gets free rein of an email account or of customer data. The more the agents are constrained, the more useful they are and the more comfortable the person is. That team member is a friendly: they try it, give honest feedback and give it more than one round. A second team member could sell this as a service.
+- **Every person gets a newsroom and an agentic workflow.** The way to learn it is to work on it: each of us with a newsroom for their own work and agents working round the clock under policy.
+- **Shirts and hoodies that start conversations.** Five to seven people, several shirts each (about 20 each was said), and a hoodie. A very different colour per person so a group stands out; a set of messages (perhaps seven, one per person), not just RiskMandate; the stand location on them so people come back; a plainer backup shirt in case the venue pushes back. The designer designs; production still has to be found. The operator is willing to pay, but would rather a sponsor did: a team member is asked to try, with an agent-made brief, deck and business case ("your logo on shirts worn at Web Summit"), to be checked with the organisers first.
+- **The venue on selling.** The operator asked whether they could sell on site; the organisers' lawyer said no.
+- **The stand is on the 12th.** Everyone met on the 10th and 11th should be primed to come to the stand, book a meeting or scan a QR.
+- **Agent-sent outreach as the demo.** Agents map the brief and send the email; a person follows up. If the email works and is not spooky, the reply "can I have that?" is a lead for a team member's service (from £500 to £10k was said). A "no" is a signal too.
+- **Timeline.** Mon 2 and Tue 3 Nov: nail it all down. Wed 4: a plan, a mapping and the agents. Thu 5: a team member arrives. By Thu 5 or Fri 6: about 20 meetings booked with people primed to meet us. Fri 6 and Sat 7: decide what we do in each meeting: "here is the stuff, here is how you buy it".
+
+## The operator's words to conductor.3@web-summit, 1 November 2026 (paraphrased)
+
+- Join the team as conductor.3@web-summit.
+- A separate site, newsroom.web-summit.sgit.ai, with its own agentic team, managed by one of the human collaborators. (Recorded as a proposal on the plan; it does not exist yet.)
 
 ---
 

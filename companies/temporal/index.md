@@ -2,7 +2,7 @@
 
 Open-source durable execution platform for building reliable applications and long-running workflows.
 
-Site version: v0.1.22
+Site version: v0.1.23
 
 - Website: https://temporal.io/
 - Category: devtools

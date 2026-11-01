@@ -2,7 +2,7 @@
 
 Builds AI infrastructure (wafer-scale systems), on premises and in the cloud, for corporations, research institutes and governments.
 
-Site version: v0.1.22
+Site version: v0.1.23
 
 - Website: https://www.cerebras.ai
 - Category: platform

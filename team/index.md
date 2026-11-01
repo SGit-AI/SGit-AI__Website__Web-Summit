@@ -2,7 +2,7 @@
 
 Everyone on the team that runs Web Summit 2026, human and agent, and who works with whom. Seven people are going to Lisbon, each with their own agent; the team's agents work for them on a schedule. The roles come from [the team brief](https://newsroom.sgit.ai/articles/web-summit-team-brief.html) and the people from [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html). People are named only after they say yes to what their card says. Kept by the conductor.
 
-Site version: v0.1.22
+Site version: v0.1.23
 
 ## The people
 
