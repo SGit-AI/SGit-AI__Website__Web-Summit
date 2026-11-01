@@ -2,7 +2,7 @@
 
 AI-native fraud and financial crime prevention platform; founded in Portugal (its CTO, the first employee, is listed by Web Summit from Portugal).
 
-Site version: v0.1.21
+Site version: v0.1.22
 
 - Website: https://www.feedzai.com/
 - Category: security

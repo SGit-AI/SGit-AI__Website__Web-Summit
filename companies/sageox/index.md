@@ -2,7 +2,7 @@
 
 Collaboration platform that turns humans and AI agents into teams by giving them one shared context.
 
-Site version: v0.1.21
+Site version: v0.1.22
 
 - Website: https://sageox.ai/
 - Category: ai-agents

@@ -2,7 +2,7 @@
 
 AI compliance automation (GRC) platform: evidence collection, risk assessment and vendor risk management with AI agents, for SOC 2, ISO 27001 and 60+ frameworks.
 
-Site version: v0.1.21
+Site version: v0.1.22
 
 - Website: https://www.scrut.io/
 - Category: grc

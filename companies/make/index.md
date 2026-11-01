@@ -2,7 +2,7 @@
 
 Visual no-code platform to build, scale and automate AI and agentic workflows.
 
-Site version: v0.1.21
+Site version: v0.1.22
 
 - Website: https://www.make.com/
 - Category: ai-agents

@@ -2,7 +2,7 @@
 
 Startup residency, recruiting platform and mentorship community for the next generation of tech leaders.
 
-Site version: v0.1.21
+Site version: v0.1.22
 
 - Website: https://neo.com/
 - Category: investor

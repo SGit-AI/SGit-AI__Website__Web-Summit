@@ -2,7 +2,7 @@
 
 The Search AI Company: search, observability and security solutions built on the Elastic Search AI Platform, used by more than half of the Fortune 500.
 
-Site version: v0.1.21
+Site version: v0.1.22
 
 - Website: https://www.elastic.co/
 - Category: devtools

@@ -2,7 +2,7 @@
 
 Customer engagement platform providing communications and data APIs across the customer journey.
 
-Site version: v0.1.21
+Site version: v0.1.22
 
 - Website: https://www.twilio.com/en-us/solutions/startups
 - Category: devtools

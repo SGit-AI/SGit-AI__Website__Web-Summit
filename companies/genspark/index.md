@@ -2,7 +2,7 @@
 
 All-in-one AI workspace aiming to autopilot busywork for knowledge workers; says it reached $250M ARR in 12 months.
 
-Site version: v0.1.21
+Site version: v0.1.22
 
 - Website: https://genspark.ai
 - Category: ai-agents

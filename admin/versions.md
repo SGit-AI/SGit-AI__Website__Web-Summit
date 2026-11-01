@@ -2,8 +2,9 @@
 
 Every release of this site and what changed.
 
-Site version: v0.1.21
+Site version: v0.1.22
 
+- v0.1.22 (2026-11-01): A third conductor session, conductor.3@web-summit, joins the team: its roster entry and its public session key.
 - v0.1.21 (2026-11-01): Seventh scheduled wake (14:28 UTC), idle: no operator answers, mail or board items; no role ran; logged, with a note that WAKE.md's 'second wake running' stop rule needs the operator's word on whether waiting for decisions is a hold or an idle.
 - v0.1.20 (2026-11-01): Sixth scheduled wake (12:28 UTC), idle: no operator answers, mail or board items; no role ran; logged with the reason.
 - v0.1.19 (2026-11-01): Fifth scheduled wake (10:28 UTC), idle: no operator answers, mail or board items, and the map is near what public sources allow, so no role ran; the wake is logged with the reason and a proposal to slow the schedule until the operator's decisions arrive.

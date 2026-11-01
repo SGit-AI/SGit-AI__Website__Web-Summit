@@ -1,0 +1,13 @@
+{
+  "label": "conductor.3@web-summit (Claude Code session)",
+  "fingerprint": "sha256:ecbb2756634ba022",
+  "signing_fingerprint": "sha256:62eb11234d3237d5",
+  "bundle": {
+    "v": 1,
+    "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsVzx75p5YshajeyqnRDc\ndryLD+Gp+TTg/pNXbYGV4fG84P+ltzjst1V4th/UcKgpIIt7qOCEY9VG4JMghp+h\ngoq2a2rIzdX6j1wnrXL/1O5TwsML9FSfTJlY6hJ130feNFrKs+JXXhKygjhkdNun\nj8uX2FDF0qxpyyZcwOi5DH1h+ZLLcHMmTFJVQhUgDw3dS/jzlMvjHd31YOq+L0L6\nNSlC4Hyzo6s39IH6dDgchWc0mBqquXvIML0Vs7Ij6y7yQlI0ftOpTT33zJV9Cznu\nAfq+98dvNTKOgQAnwUESPlgsbuMRZ8l7E6FSAz5JaMqQsHGqoEdg0piz6Z+thhvD\nnpiGABvv06iYz7A4Ok0Gx2v1lIQLwUUyupqj7ErnRywg572tT/3fLc8Bt5Rrqid2\nJcBbT33bnoK8sAegNaES3WxrLh2exKDfOGgnO9Kz2kikXZYuSxAsa54Rwcl10WJP\ndDYy6J52ZoGE5R6GUCR1ZAlVW/P23uGM7kkYvqAZnkursMLu0xvbgS1Br3BIxkAa\nqktTiT5znN/kOvzRMmMhlSGCj8i/U6MljE3PB5bJ0PXN0Xq1dQ/ztDOfRd7exNle\nuvtezsuWbscZhuKTvMWca64iGlUXiGYjQT+cw7ww01P8d8HKfHKyiD8Bl4B820ZO\nUWoztqwCs84lp7O0TpNXRHcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+    "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEXCrztgk+fFrkyXJxYjoxUzKQyQ2e\ny0o/e97tQ4v/FTZxmDYd48gOCH9RImZrVBOi4R/g6OscbWPWAyIb2f2F8Q==\n-----END PUBLIC KEY-----\n",
+    "label": "conductor.3@web-summit (Claude Code session)",
+    "fingerprint": "sha256:ecbb2756634ba022",
+    "signing_fingerprint": "sha256:62eb11234d3237d5"
+  }
+}

@@ -2,7 +2,7 @@
 
 Agentic AI security platform that works like an AI security engineer: finds the real risk in code, cloud and AI agents and verifies every fix.
 
-Site version: v0.1.21
+Site version: v0.1.22
 
 - Website: https://trent.ai/
 - Category: security

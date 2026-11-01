@@ -1,4 +1,4 @@
-# Reality: what exists on 1 November 2026 (site v0.1.21)
+# Reality: what exists on 1 November 2026 (site v0.1.22)
 
 A thing that is not in this file does not exist, whatever a brief says. Kept current by whoever ships.
 
@@ -8,9 +8,9 @@ A thing that is not in this file does not exist, whatever a brief says. Kept cur
 - The pipeline: validate, tag, deploy (`.github/workflows/deploy-pages.yml`). A push to `dev` tags the next minor, a push to `main` the next major. From v0.1.11 runs no longer cancel each other (`cancel-in-progress: false`).
 - The team template: a `ROLE.md`, `policy.json` and `status.json` for each of eight agent roles (conductor, researcher, cartographer, writer, curator, analyst, designer, security) in `team/<id>/`; the gate fails if two policies claim the same path. The wake protocol (`team/conductor/WAKE.md`), the schedule (`team/conductor/schedule.json`), the tools (`admin/tools/start.mjs`, `banner.mjs`, `wake.mjs`, `comms_check.mjs`), the hold (`team/<id>/HOLD.md`, which stops `start.mjs`), and the board and mailroom as files (`comms/`, empty).
 - The roster (`data/team.json`): the operator, six unnamed seats for the other people going, the designer's seat, the eight agent roles, and the operator's inbox agent (onboarding). Only the operator is named.
-- The conductor role is held by conductor.2@web-summit (key `sha256:a8a24ce1af856a95`, from 1 November); the first session, conductor@web-summit, has ended.
+- The conductor role is held by conductor.2@web-summit (key `sha256:a8a24ce1af856a95`, from 1 November); the first session, conductor@web-summit, has ended. A third session, conductor.3@web-summit (key `sha256:62eb11234d3237d5`), joined at the operator's request on 1 November at 18:38 UTC and works alongside it; no split of work between them has been agreed yet.
 - Six vaults on dev.send.sgraph.ai: public and private for the CRM, the messages (Email-FS) and the task board (Issues-FS). Each holds only a README. Keys are held outside the repository.
-- `/keys/`: three public keys: the registry agent that keeps the team's vault keys (handed over as a QR code), and the two conductor session keys (confirmed by their push).
+- `/keys/`: four public keys: the registry agent that keeps the team's vault keys (handed over as a QR code), and the three conductor session keys (each confirmed by its push).
 
 - The company map (`data/companies.json`): 109 companies, from the first page of each websummit.com list and the public 2026 session pages, read 1 November 2026; the graph (`data/graph.json`): all 109 linked, 228 links, 9 clusters, 12 proposed first meetings; notes on how to re-read the lists in `team/researcher/notes.md`.
 

@@ -2,7 +2,7 @@
 
 Platform for creators and small businesses: AI content studio, an AI manager that answers DMs and comments 24/7, chatbot funnels and gamification on Instagram, TikTok, Telegram and WhatsApp.
 
-Site version: v0.1.21
+Site version: v0.1.22
 
 - Website: https://chatplace.io/
 - Category: portugal-startup

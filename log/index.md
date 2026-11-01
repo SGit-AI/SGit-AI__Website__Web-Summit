@@ -2,7 +2,7 @@
 
 Every wake of the team, opened and closed by the conductor's banners.
 
-Site version: v0.1.21
+Site version: v0.1.22
 
 ## 2026-11-01T14:28:34Z: Check for operator answers and new material; idle if nothing worth a role's time
 
