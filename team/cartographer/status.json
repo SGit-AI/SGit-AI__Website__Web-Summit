@@ -1,14 +1,15 @@
 {
   "agent": "cartographer",
-  "state": "active: ran as a sub-agent in the wake of 2026-11-01T06:28Z",
-  "last_wake": "2026-11-01T06:28:19Z",
+  "state": "active: ran as a sub-agent in the wake of 2026-11-01T08:28Z",
+  "last_wake": "2026-11-01T08:28:23Z",
   "done": [
-    "data/graph.json: 88 companies, 5 products, 80 sessions, 29 side events, 175 links (10 new session and side-event links), 88 proposals, 8 clusters, 12 first meetings (Replit in, Elastic out, places de-clashed)",
-    "notes.md: clashes recorded; Feedzai ws26-s32 vs cybersecurity meetup ws26-s39 left open"
+    "data/graph.json: 109 companies, 5 products, 80 sessions, 29 side events, 228 links (21 new session links sourced to session URLs, 32 new product links marked our judgement), 109 proposals, 9 clusters (new: security, privacy and trust), 12 first meetings",
+    "first meetings: Conscium and Scrut Automation in (ws26-s45), Hexamind and 1Password out (places unconfirmed); Feedzai/meetup clash closed; ws26-s45 vs Primitive ws26-s29 resolved (meet after 11:10)",
+    "notes.md: fourth-wake section"
   ],
   "next": [
-    "link the companies the researcher is adding once they are at HEAD",
-    "read stand locations for first meetings (Hexamind, 1Password)",
+    "link speaker organisations still off the map once the researcher adds them",
+    "read stand locations, then reconsider Hexamind and 1Password for first meetings",
     "record owners' decisions once owners are named"
   ],
   "asks": []

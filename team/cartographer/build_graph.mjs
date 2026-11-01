@@ -67,7 +67,29 @@ const sess=[['cloudflare','ws26-s01','speaks-at','co-founder and CEO on the agen
  ['datadog','ws26-s65','hosts','hosts the masterclass on monitoring in the age of GenAI'],
  ['cisco-outshift','ws26-s66','hosts','Cisco Systems hosts the masterclass on open-source AI platform engineering'],
  ['trent-ai','ws26-s73','speaks-at','co-founder and chief scientist on the open vs closed AI debate'],
- ['european-commission','ws26-s75','hosts','DG Connect hosts the masterclass on practical support for building AI in Europe']];
+ ['european-commission','ws26-s75','hosts','DG Connect hosts the masterclass on practical support for building AI in Europe'],
+ // added 1 Nov 2026 (fourth wake, 08:28Z): the 21 companies new at HEAD, from the researcher's third pass
+ ['conscium','ws26-s45','speaks-at','co-founder speaks on the biological bottleneck'],
+ ['scrut-automation','ws26-s45','speaks-at','CISO speaks on the biological bottleneck, with Conscium'],
+ ['whitespace','ws26-s42','speaks-at','co-founder and CEO speaks on securing the AI frontline'],
+ ['exein','ws26-s42','speaks-at','co-founder and CTO speaks on securing the AI frontline, with Whitespace'],
+ ['proton','ws26-s47','speaks-at','COO speaks on a Big Tech detox'],
+ ['exa','ws26-s56','speaks-at','co-founder and CEO speaks on search built for AI agents'],
+ ['make','ws26-s53','hosts','hosts the masterclass on making AI agents work beyond the demo'],
+ ['cognizant','ws26-s59','speaks-at','Chief AI Officer runs the Developer Lounge session on building the first pages of the agentic web'],
+ ['open-vsx','ws26-s67','hosts','hosts the masterclass on building AI products without building everything, with the Eclipse Foundation'],
+ ['easydmarc','ws26-s41','speaks-at','co-founder and CEO speaks on trust once the perimeter is dead'],
+ ['topsec-cloud-solutions','ws26-s41','speaks-at','Managing Director speaks on trust once the perimeter is dead'],
+ ['nordvpn','ws26-s43','speaks-at','CTO speaks on zombie data'],
+ ['nisos','ws26-s44','speaks-at','CEO speaks on insider threats from foreign operatives'],
+ ['the-hacking-games','ws26-s46','speaks-at','two speakers on teenagers as the real threat'],
+ ['deque','ws26-s55','hosts','hosts the masterclass on whether you can trust your AI agent\'s accessibility'],
+ ['legora','ws26-s57','speaks-at','CTO speaks on scaling AI agents for professional work'],
+ ['polyai','ws26-s58','speaks-at','co-founder and CEO speaks on coaching an AI agent like human talent'],
+ ['meo','ws26-s60','speaks-at','CTO speaks on the autonomous enterprise: networks, cloud and AI agents'],
+ ['defined-ai','ws26-s62','speaks-at','founder and CEO speaks on coding without crashing, with LaunchDarkly'],
+ ['prisma','ws26-s64','speaks-at','CEO speaks on rebuilding open source with AI'],
+ ['austriacard','ws26-s76','hosts','hosts the masterclass on AI sovereignty, data control and predictable AI costs']];
 for(const [c,s,k,w] of sess){if(!S[s])throw s;L(c,'session:'+s,k,w,S[s].source);}
 for(const [c,s,k,w] of [['ibm','se10','hosts','co-hosts the tech hub side event and happy hour with Aubay Portugal'],
  ['elastic','se14','hosts','hosts an evening of dinner and networking in Lisbon'],
@@ -198,20 +220,54 @@ const P=[
 ['data-protection-commission','sgit','relevant-to','GDPR enforcement is the backdrop for encrypted vaults holding personal data'],
 ['data-protection-commission','newsroom','relevant-to','regulating big tech: describe'],
 ['c4ail','cyber-boardroom','relevant-to','AI leadership education for the executives The Cyber Boardroom serves'],
-['crystal-intelligence','abp','relevant-to','compliance evidence for agentic payments, adjacent to policies for agents that move money']];
+['crystal-intelligence','abp','relevant-to','compliance evidence for agentic payments, adjacent to policies for agents that move money'],
+// added 1 Nov 2026 (fourth wake, 08:28Z)
+['conscium','abp','could-partner','agent verification shows whether an agent kept to what its policy says it may do'],
+['conscium','sharness','competes-with','simulation testing and verification of agents, close to harness checks'],
+['scrut-automation','abp','could-partner','a GRC platform whose buyers will be asked for agent policies, and whose own agents need them'],
+['scrut-automation','cyber-boardroom','relevant-to','compliance and risk evidence for the boards The Cyber Boardroom serves'],
+['whitespace','abp','relevant-to','governed AI for regulated sectors needs governance a buyer can check'],
+['whitespace','sgit','relevant-to','sovereign AI for government next to encrypted, customer-held vaults'],
+['exein','sharness','relevant-to','runtime security for AI agents works at the same layer as a harness'],
+['exein','abp','relevant-to','runtime enforcement is where a behaviour policy bites'],
+['proton','sgit','relevant-to','privacy-by-default services make the same argument as encrypted vaults'],
+['proton','newsroom','relevant-to','European encrypted alternatives to Big Tech: a story'],
+['exa','abp','relevant-to','what an agent may search and fetch is a behaviour-policy question'],
+['exa','newsroom','relevant-to','search built for agents reads the llms.txt and markdown twins we publish'],
+['make','abp','could-buy','agents built by non-developers on a no-code platform need written policies'],
+['make','sharness','relevant-to','no-code agent workflows a harness could check'],
+['cognizant','newsroom','relevant-to','building the first pages of the agentic web: a hands-on place to show agent-run sites'],
+['cognizant','abp','could-buy','an IT services firm building agents for enterprises will be asked for their policies'],
+['open-vsx','sharness','relevant-to','editor extensions are the supply chain of AI coding tools a harness runs'],
+['open-vsx','abp','relevant-to','which extensions an agent\'s editor may load is a policy question'],
+['easydmarc','sgit','relevant-to','sender authentication is the email form of signed provenance'],
+['topsec-cloud-solutions','cyber-boardroom','relevant-to','managed email security: the threat picture boards ask about'],
+['nordvpn','sgit','relevant-to','data that comes back after deletion is a case for vaults whose keys the owner holds'],
+['nisos','cyber-boardroom','relevant-to','insider threat and who is behind an account: a board-level risk'],
+['the-hacking-games','newsroom','relevant-to','teenage hackers as talent and threat: a story'],
+['deque','sharness','relevant-to','checking agent-made pages against accessibility rules is a harness check'],
+['deque','newsroom','relevant-to','our agent-built sites need the same accessibility checks'],
+['legora','abp','could-buy','agents in regulated professional work need auditable behaviour policies'],
+['polyai','abp','could-buy','coaching a voice agent is a behaviour policy written in prose'],
+['meo','newsroom','relevant-to','a Portuguese operator on networks and AI agents: describe'],
+['defined-ai','newsroom','relevant-to','training-data provenance and compliance: describe'],
+['prisma','sgit','relevant-to','hosting for apps agents build, next to agent-run SGit sites'],
+['austriacard','sgit','relevant-to','data control and sovereign AI is the vault argument'],
+['austriacard','abp','relevant-to','governed AI deployments need written policies']];
 for(const [c,p,k,w] of P)L(c,'product:'+p,k,w+' (our judgement)');
 // every company linked?
 const linked=new Set(links.map(l=>l.from.slice(8)));
 const missing=[...ids].filter(i=>!linked.has(i)); if(missing.length)throw new Error('unlinked '+missing);
 const proposals=comps.map(c=>({company:c.id,decision:c.decision,priority:c.priority,why:c.why_it_matters.replace(/\s*—\s*/g,'; '),status:'proposed'}));
 const clusters=[
- {id:'agent-identity',name:'Agent identity and access',companies:['1password','delinea','prelude','mobbeel','primitive','spacecomputer','cloudflare','descope','persona','sumsub','rws','ledger','feedzai'],why:'Who an agent is and what it can reach: the ground next to SGit keys and vaults.'},
- {id:'agent-governance',name:'Agent governance and AI security',companies:['polygraf-ai','hexamind','crowdstrike','cisco-outshift','kiggu','akamai','manageengine','firefox-enterprise-mozilla','elastic','datadog','airia','aisle','trent-ai','launchdarkly','proofpoint','roost','eversec','testmu-ai'],why:'Controlling and watching what agents do: where Agent Behaviour Policies and SHarness compete and partner.'},
- {id:'agent-frameworks',name:'Agent frameworks, runtimes and products',companies:['mastra','temporal','replit','qase','keewano','manus-ai','genspark','strawberry','you-com','atlassian','altegio','emergence-ai','jetbrains','sageox','neo4j','directus','linux-foundation-aaif'],why:'The builders and their agents: the ones whose agents need a mandate and a harness.'},
- {id:'agent-buyers',name:'Companies selling agents to businesses',companies:['cnext','getvocal-ai','chatplace','legalfly','sensay','delta-labs','factorial'],why:'They sell trust and control in agents to their customers: likely buyers of written policies.'},
- {id:'grc-regulation',name:'GRC, audit and regulation',companies:['kpmg-portugal','risiq','contents','sphere','0xbow','arima','european-commission','ibm','airia','lawvu','trustscale','ncsc-uk','data-protection-commission','c4ail','crystal-intelligence'],why:'The people who answer for agents: auditors, regulators and compliance tools.'},
- {id:'portugal',name:'Portugal ecosystem',companies:['startup-portugal','air-apps','chatplace','dig-in','itrecruiter','sheerme','vtex','kpmg-portugal','shakers','aicep','feedzai'],why:'Our Algarve and Portugal community work, and the Portuguese-language site.'},
- {id:'infrastructure',name:'AI infrastructure and sovereign cloud',companies:['melious-ai','gcore','cerebras','google-cloud','runpod','twilio','orb','qualcomm'],why:'Where agents run and how they are paid for; the EU-hosted options matter to us.'},
+ {id:'agent-identity',name:'Agent identity and access',companies:['1password','delinea','prelude','mobbeel','primitive','spacecomputer','cloudflare','descope','persona','sumsub','rws','ledger','feedzai','austriacard'],why:'Who an agent is and what it can reach: the ground next to SGit keys and vaults.'},
+ {id:'agent-governance',name:'Agent governance and AI security',companies:['polygraf-ai','hexamind','crowdstrike','cisco-outshift','kiggu','akamai','manageengine','firefox-enterprise-mozilla','elastic','datadog','airia','aisle','trent-ai','launchdarkly','proofpoint','roost','eversec','testmu-ai','conscium','exein','deque'],why:'Controlling and watching what agents do: where Agent Behaviour Policies and SHarness compete and partner.'},
+ {id:'agent-frameworks',name:'Agent frameworks, runtimes and products',companies:['mastra','temporal','replit','qase','keewano','manus-ai','genspark','strawberry','you-com','atlassian','altegio','emergence-ai','jetbrains','sageox','neo4j','directus','linux-foundation-aaif','exa','make','open-vsx','prisma'],why:'The builders and their agents: the ones whose agents need a mandate and a harness.'},
+ {id:'agent-buyers',name:'Companies selling agents to businesses',companies:['cnext','getvocal-ai','chatplace','legalfly','sensay','delta-labs','factorial','cognizant','legora','polyai'],why:'They sell trust and control in agents to their customers: likely buyers of written policies.'},
+ {id:'grc-regulation',name:'GRC, audit and regulation',companies:['kpmg-portugal','risiq','contents','sphere','0xbow','arima','european-commission','ibm','airia','lawvu','trustscale','ncsc-uk','data-protection-commission','c4ail','crystal-intelligence','scrut-automation','whitespace'],why:'The people who answer for agents: auditors, regulators and compliance tools.'},
+ {id:'portugal',name:'Portugal ecosystem',companies:['startup-portugal','air-apps','chatplace','dig-in','itrecruiter','sheerme','vtex','kpmg-portugal','shakers','aicep','feedzai','meo'],why:'Our Algarve and Portugal community work, and the Portuguese-language site.'},
+ {id:'infrastructure',name:'AI infrastructure and sovereign cloud',companies:['melious-ai','gcore','cerebras','google-cloud','runpod','twilio','orb','qualcomm','whitespace','austriacard','defined-ai','meo'],why:'Where agents run and how they are paid for; the EU-hosted options matter to us.'},
+ {id:'security-privacy',name:'Security, privacy and trust (not agent-specific)',companies:['easydmarc','topsec-cloud-solutions','nordvpn','nisos','the-hacking-games','proton'],why:'Email trust, privacy, insider threat and talent: stories for the newsroom and The Cyber Boardroom audience; describe, not first meetings.'},
  {id:'investors',name:'Investors and market intelligence',companies:['andreessen-horowitz','neo','pitchbook'],why:'Capital and data on the category; describe and research, not a first meeting.'}];
 for(const cl of clusters)for(const c of cl.companies)if(!ids.has(c))throw c;
 const inCl=new Set(clusters.flatMap(c=>c.companies));const nocl=[...ids].filter(i=>!inCl.has(i));if(nocl.length)throw new Error('no cluster '+nocl);
@@ -221,17 +277,21 @@ const inCl=new Set(clusters.flatMap(c=>c.companies));const nocl=[...ids].filter(
 // (its decision is not meet). Times de-clashed: Delinea leads with ws26-s06 (ws26-s37 overlaps Airia ws26-s38),
 // Cisco leads with side_event se23 (ws26-s33 overlaps Feedzai and the meetup; ws26-s66 overlaps ws26-s40),
 // Startup Portugal leads with ws26-s40 (ws26-s07 overlaps Delinea ws26-s06 and the Lisbon founders meetup ws26-s78).
-// Left open: Feedzai ws26-s32 and the cybersecurity meetup ws26-s39 (Hexamind, 1Password) share 12 Nov 12:00.
+// revised 1 Nov 2026 (fourth wake, 08:28Z): Conscium and Scrut Automation in (both meet, priority 1, one session ws26-s45
+// between them, on agent verification and AI governance); Hexamind and 1Password out (their places were guesses: stand not
+// read, meetup attendance not confirmed). This also closes the Feedzai ws26-s32 / meetup ws26-s39 clash. ws26-s45
+// (10:45-11:10, Stage 8) overlaps Primitive ws26-s29 (10:50-11:00, Stage 9): Primitive at its talk, then Conscium and
+// Scrut as they come off Stage 8 at 11:10.
 const fm=[
  ['delinea','agent access in production is the case ABP writes policies for; two sessions','session:ws26-s06 (10 Nov 12:30-13:15, Masterclass 3, they host); fallback session:ws26-s37 (12 Nov 15:15-15:35, Stage 8, overlaps Airia ws26-s38)'],
  ['descope','agent and MCP authorisation is the identity half of a behaviour policy; a hands-on session','session:ws26-s36 (12 Nov 14:00-14:45, Developer Lounge, they run it)'],
  ['airia','runtime policy and audit evidence for agents: the nearest competitor or partner to ABP','session:ws26-s38 (12 Nov 15:25-15:36, Stage 9)'],
  ['primitive','email built for agents meets our email agent and signed vaults','session:ws26-s29 (12 Nov 10:50-11:00, Stage 9)'],
  ['emergence-ai','verified, governed enterprise agents; the talk is when agents go rogue','session:ws26-s26 (12 Nov 10:15-10:35, Stage 13)'],
- ['feedzai','Portugal\'s best-known security scale-up on agents letting themselves in; a local anchor','session:ws26-s32 (12 Nov 12:00-12:20, Stage 7; clashes with the cybersecurity meetup ws26-s39, 12:00-12:25)'],
+ ['feedzai','Portugal\'s best-known security scale-up on agents letting themselves in; a local anchor','session:ws26-s32 (12 Nov 12:00-12:20, Stage 7)'],
  ['linux-foundation-aaif','open standards for agents: where a behaviour-policy format could become a spec','session:ws26-s16 (11 Nov 11:10-11:30, Stage 13)'],
- ['hexamind','Hexgate is the nearest open-source neighbour of ABP: compete or partner','stand (not yet read); or session:ws26-s39 (people in cybersecurity meetup, 12 Nov 12:00-12:25, Meetup 1; clashes with Feedzai ws26-s32; their attendance is not confirmed)'],
- ['1password','agent identity and secrets next to our vaults','partner stand (location not yet read); or session:ws26-s39 (people in cybersecurity meetup, 12 Nov 12:00-12:25, Meetup 1; clashes with Feedzai ws26-s32; their attendance is not confirmed)'],
+ ['conscium','agent verification is the evidence side of ABP and SHarness: a policy says what an agent may do, verification shows whether it did','session:ws26-s45 (12 Nov 10:45-11:10, Stage 8, with Scrut Automation); meet the speakers as they come off at 11:10, after Primitive ws26-s29 (Stage 9) ends at 11:00'],
+ ['scrut-automation','a GRC platform that runs agents and whose CISO leads AI governance: the same buyer as ABP and The Cyber Boardroom','session:ws26-s45 (12 Nov 10:45-11:10, Stage 8, with Conscium); meet the speakers as they come off at 11:10, after Primitive ws26-s29 (Stage 9) ends at 11:00'],
  ['cisco-outshift','open-source agentic AI platform; a route to agent builders; three places','side_event:se23 (11 Nov 17:30-18:30, PTW Palace, Cisco showcase); fallback session:ws26-s66 (12 Nov 13:00-13:45, Masterclass 1, they host; overlaps ws26-s40) or session:ws26-s33 (12 Nov 12:10-12:30, Stage 8; overlaps ws26-s32)'],
  ['replit','agentic software creation: agents writing code need a harness; a featured speaker with a talk of its own','session:ws26-s51 (10 Nov 16:00-16:20, Stage 13)'],
  ['startup-portugal','the door to Portuguese startups and our Algarve work','session:ws26-s40 (founders in Portugal meetup, 12 Nov 13:30-13:55, Meetup 6); fallback session:ws26-s07 (10 Nov 12:00-12:45, Masterclass 1, they host; overlaps ws26-s06 and ws26-s78)']
@@ -240,7 +300,7 @@ if(fm.length>12)throw new Error('more than 12 first meetings');
 for(const f of fm){if(!ids.has(f.company))throw f.company;for(const m of f.session_or_event.matchAll(/(session|side_event):([\w-]+)/g)){if(!(m[1]==='session'?S:E)[m[2]])throw m[0];}}
 const graph={about:'Links between companies, sessions, events, people seats and our products. Kept by the cartographer.',
  read_on:'2026-11-01',
- method:'Built by cartographer@web-summit on 1 November 2026 (revised in the wakes of 04:28Z and 06:28Z) from the committed data/companies.json (HEAD, '+comps.length+' companies) and data/events.json (HEAD). Company-to-session and company-to-side-event links only where a session speaker\'s organisation is the company, or the session or event names it as host; source is the session or event URL. Company-to-product links, proposals, clusters and first meetings are our judgement and are proposals until each company\'s owner decides. Proposals echo the researcher\'s decision and priority from data/companies.json.',
+ method:'Built by cartographer@web-summit on 1 November 2026 (revised in the wakes of 04:28Z, 06:28Z and 08:28Z) from the committed data/companies.json (HEAD, '+comps.length+' companies) and data/events.json (HEAD). Company-to-session and company-to-side-event links only where a session speaker\'s organisation is the company, or the session or event names it as host; source is the session or event URL. Company-to-product links, proposals, clusters and first meetings are our judgement and are proposals until each company\'s owner decides. Proposals echo the researcher\'s decision and priority from data/companies.json.',
  nodes:{products,sessions:ev.sessions.map(s=>s.id),side_events:ev.side_events.map(s=>s.id)},
  links,proposals,clusters,first_meetings:fm};
 fs.writeFileSync(R+'/data/graph.json',JSON.stringify(graph,null,2)+'\n');

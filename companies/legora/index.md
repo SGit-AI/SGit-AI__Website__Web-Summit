@@ -2,7 +2,7 @@
 
 Collaborative AI for lawyers: review, research, drafting and advice.
 
-Site version: v0.1.17
+Site version: v0.1.18
 
 - Website: https://legora.com/
 - Category: ai-agents

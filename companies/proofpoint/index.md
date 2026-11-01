@@ -2,7 +2,7 @@
 
 Enterprise cybersecurity and compliance (email, web, cloud, data); its CEO describes the mission as human- and agent-centric security.
 
-Site version: v0.1.17
+Site version: v0.1.18
 
 - Website: https://www.proofpoint.com/
 - Category: security

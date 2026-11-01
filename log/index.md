@@ -2,7 +2,15 @@
 
 Every wake of the team, opened and closed by the conductor's banners.
 
-Site version: v0.1.17
+Site version: v0.1.18
+
+## 2026-11-01T08:28:23Z: Link the 21 new companies; give the summit page an agenda by day
+
+Roles run: security, cartographer, closing conductor. Outcome: ok. Release: v0.1.18.
+
+- graph: all 109 companies, 228 links, 9 clusters
+- first meetings: Conscium and Scrut in, Hexamind and 1Password out until stand data; no clashes
+- summit page: sessions by day and time
 
 ## 2026-11-01T06:28:19Z: Link the 40 new sessions to the map and add the companies behind them
 

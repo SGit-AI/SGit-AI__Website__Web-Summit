@@ -2,7 +2,7 @@
 
 The companies at Web Summit 2026 that matter to us, from public material, with a proposed decision and an owner for each.
 
-Site version: v0.1.17
+Site version: v0.1.18
 
 - [1Password](1password/index.md) (P1, meet, confirmed, owner to decide): Secures every identity, from people to AI agents: passwords, passkeys and secrets for over 150,000 businesses, and a security layer for how agents authenticate and connect to the internet. Why: partner/story: building "the security layer for how agents authenticate and connect"; agent identity and secrets sit next to sgit vaults and agent policies
 - [Airia](airia/index.md) (P1, meet, confirmed, owner to decide): AI security and governance platform: one control layer for agents, models, tools, data access, runtime policy, red teaming and audit-ready evidence. Why: competitor/partner: runtime policy and audit evidence for every AI agent is the same ground as RiskMandate Agent Behaviour Policies; meet to compare and to find where an insurable, enforced policy adds to a governance layer
@@ -121,21 +121,22 @@ Site version: v0.1.17
 3. airia: runtime policy and audit evidence for agents: the nearest competitor or partner to ABP Where: AI sprawl is exploding. Get ahead of governance and security challenges before it’s boo late (12 Nov 15:25-15:36, Stage 9)
 4. primitive: email built for agents meets our email agent and signed vaults Where: Connecting the bots: Building secure infrastructure for inter-agent communication (12 Nov 10:50-11:00, Stage 9)
 5. emergence-ai: verified, governed enterprise agents; the talk is when agents go rogue Where: When AI agents go rogue (12 Nov 10:15-10:35, Stage 13)
-6. feedzai: Portugal's best-known security scale-up on agents letting themselves in; a local anchor Where: Who let the agent in? (12 Nov 12:00-12:20, Stage 7; clashes with the cybersecurity meetup ws26-s39, 12:00-12:25)
+6. feedzai: Portugal's best-known security scale-up on agents letting themselves in; a local anchor Where: Who let the agent in? (12 Nov 12:00-12:20, Stage 7)
 7. linux-foundation-aaif: open standards for agents: where a behaviour-policy format could become a spec Where: Why AI agents stall at the production line (11 Nov 11:10-11:30, Stage 13)
-8. hexamind: Hexgate is the nearest open-source neighbour of ABP: compete or partner Where: stand (not yet read); or 🔐 People in cybersecurity meetup (people in cybersecurity meetup, 12 Nov 12:00-12:25, Meetup 1; clashes with Feedzai ws26-s32; their attendance is not confirmed)
-9. 1password: agent identity and secrets next to our vaults Where: partner stand (location not yet read); or 🔐 People in cybersecurity meetup (people in cybersecurity meetup, 12 Nov 12:00-12:25, Meetup 1; clashes with Feedzai ws26-s32; their attendance is not confirmed)
+8. conscium: agent verification is the evidence side of ABP and SHarness: a policy says what an agent may do, verification shows whether it did Where: The biological bottleneck (12 Nov 10:45-11:10, Stage 8, with Scrut Automation); meet the speakers as they come off at 11:10, after Primitive ws26-s29 (Stage 9) ends at 11:00
+9. scrut-automation: a GRC platform that runs agents and whose CISO leads AI governance: the same buyer as ABP and The Cyber Boardroom Where: The biological bottleneck (12 Nov 10:45-11:10, Stage 8, with Conscium); meet the speakers as they come off at 11:10, after Primitive ws26-s29 (Stage 9) ends at 11:00
 10. cisco-outshift: open-source agentic AI platform; a route to agent builders; three places Where: From Automation to Autonomy: How AI is changing the way we run technology (Cisco showcase) (11 Nov 17:30-18:30, PTW Palace, Cisco showcase); fallback Democratising AI platform engineering with open-source [Hosted by Cisco Systems] (12 Nov 13:00-13:45, Masterclass 1, they host; overlaps ws26-s40) or It takes two to trust: Operationalizing public-private security (12 Nov 12:10-12:30, Stage 8; overlaps ws26-s32)
 11. replit: agentic software creation: agents writing code need a harness; a featured speaker with a talk of its own Where: What does a self-driving company look like? (10 Nov 16:00-16:20, Stage 13)
 12. startup-portugal: the door to Portuguese startups and our Algarve work Where: 🧳 Founders building in Portugal meetup (founders in Portugal meetup, 12 Nov 13:30-13:55, Meetup 6); fallback A guide to Portugal's startup scene [Hosted by Startup Portugal] (10 Nov 12:00-12:45, Masterclass 1, they host; overlaps ws26-s06 and ws26-s78)
 
 ## Clusters
 
-- Agent identity and access: 1password, delinea, prelude, mobbeel, primitive, spacecomputer, cloudflare, descope, persona, sumsub, rws, ledger, feedzai
-- Agent governance and AI security: polygraf-ai, hexamind, crowdstrike, cisco-outshift, kiggu, akamai, manageengine, firefox-enterprise-mozilla, elastic, datadog, airia, aisle, trent-ai, launchdarkly, proofpoint, roost, eversec, testmu-ai
-- Agent frameworks, runtimes and products: mastra, temporal, replit, qase, keewano, manus-ai, genspark, strawberry, you-com, atlassian, altegio, emergence-ai, jetbrains, sageox, neo4j, directus, linux-foundation-aaif
-- Companies selling agents to businesses: cnext, getvocal-ai, chatplace, legalfly, sensay, delta-labs, factorial
-- GRC, audit and regulation: kpmg-portugal, risiq, contents, sphere, 0xbow, arima, european-commission, ibm, airia, lawvu, trustscale, ncsc-uk, data-protection-commission, c4ail, crystal-intelligence
-- Portugal ecosystem: startup-portugal, air-apps, chatplace, dig-in, itrecruiter, sheerme, vtex, kpmg-portugal, shakers, aicep, feedzai
-- AI infrastructure and sovereign cloud: melious-ai, gcore, cerebras, google-cloud, runpod, twilio, orb, qualcomm
+- Agent identity and access: 1password, delinea, prelude, mobbeel, primitive, spacecomputer, cloudflare, descope, persona, sumsub, rws, ledger, feedzai, austriacard
+- Agent governance and AI security: polygraf-ai, hexamind, crowdstrike, cisco-outshift, kiggu, akamai, manageengine, firefox-enterprise-mozilla, elastic, datadog, airia, aisle, trent-ai, launchdarkly, proofpoint, roost, eversec, testmu-ai, conscium, exein, deque
+- Agent frameworks, runtimes and products: mastra, temporal, replit, qase, keewano, manus-ai, genspark, strawberry, you-com, atlassian, altegio, emergence-ai, jetbrains, sageox, neo4j, directus, linux-foundation-aaif, exa, make, open-vsx, prisma
+- Companies selling agents to businesses: cnext, getvocal-ai, chatplace, legalfly, sensay, delta-labs, factorial, cognizant, legora, polyai
+- GRC, audit and regulation: kpmg-portugal, risiq, contents, sphere, 0xbow, arima, european-commission, ibm, airia, lawvu, trustscale, ncsc-uk, data-protection-commission, c4ail, crystal-intelligence, scrut-automation, whitespace
+- Portugal ecosystem: startup-portugal, air-apps, chatplace, dig-in, itrecruiter, sheerme, vtex, kpmg-portugal, shakers, aicep, feedzai, meo
+- AI infrastructure and sovereign cloud: melious-ai, gcore, cerebras, google-cloud, runpod, twilio, orb, qualcomm, whitespace, austriacard, defined-ai, meo
+- Security, privacy and trust (not agent-specific): easydmarc, topsec-cloud-solutions, nordvpn, nisos, the-hacking-games, proton
 - Investors and market intelligence: andreessen-horowitz, neo, pitchbook

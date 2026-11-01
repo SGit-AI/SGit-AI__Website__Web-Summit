@@ -2,7 +2,7 @@
 
 Email built for agents: gives AI agents their own email address and the tools to act on it over standard email protocols; backed by Y Combinator.
 
-Site version: v0.1.17
+Site version: v0.1.18
 
 - Website: https://www.onprimitive.com/
 - Category: ai-agents

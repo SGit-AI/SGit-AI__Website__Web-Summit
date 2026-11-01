@@ -2,7 +2,7 @@
 
 Part of GCHQ; the UK's national technical authority for cyber security, helping businesses, the public sector and individuals.
 
-Site version: v0.1.17
+Site version: v0.1.18
 
 - Website: https://www.ncsc.gov.uk/
 - Category: other

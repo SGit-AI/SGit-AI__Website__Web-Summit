@@ -154,6 +154,41 @@
         "names and ids for the seven; owners for first meetings"
       ],
       "next": "scheduled wake at 08:27 UTC: link the 21 new companies"
+    },
+    {
+      "id": "wake-2026-11-01T0828Z",
+      "agent": "conductor",
+      "started": "2026-11-01T08:28:23Z",
+      "ended": "2026-11-01T08:50:00Z",
+      "kind": "scheduled, every 2 hours at :27 UTC",
+      "objective": "Link the 21 new companies; give the summit page an agenda by day",
+      "commit": "5f64ba2",
+      "plan": [
+        "cartographer: link the 21 companies added last wake",
+        "conductor: the summit page's sessions grouped by day"
+      ],
+      "roles": [
+        "security",
+        "cartographer",
+        "closing conductor"
+      ],
+      "outcome": "ok",
+      "release": "v0.1.18",
+      "achieved": [
+        "graph: all 109 companies, 228 links, 9 clusters",
+        "first meetings: Conscium and Scrut in, Hexamind and 1Password out until stand data; no clashes",
+        "summit page: sessions by day and time"
+      ],
+      "blockers": [
+        "the article waits on who signs",
+        "owners, names, budget, design wait on the operator"
+      ],
+      "for_you": [
+        "approve designs by Mon 2 Nov 14:00",
+        "agree the signing move",
+        "names and ids for the seven; owners for first meetings"
+      ],
+      "next": "scheduled wake at 10:27 UTC"
     }
   ]
 }

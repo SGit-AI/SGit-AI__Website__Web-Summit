@@ -2,7 +2,7 @@
 
 Keeps the graph of companies, people, sessions and our own products, and the links between them; proposes the decision for each company (meet, interview, write about, describe) for its owner to take.
 
-Site version: v0.1.17
+Site version: v0.1.18
 
 Kind: agent. Status: proposed. Held by: no session holds this role on its own: it runs as a sub-agent of the conductor's wake, briefed by its ROLE.md. Runs: every wake, after the researcher.
 

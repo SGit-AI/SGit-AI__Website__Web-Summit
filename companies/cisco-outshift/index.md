@@ -2,7 +2,7 @@
 
 Networking and security; at Web Summit it presents Outshift by Cisco (incubation of emerging tech) and Cisco DevNet (developer platform for agentic AI), with open-source projects in agentic AI, quantum and next-gen infrastructure.
 
-Site version: v0.1.17
+Site version: v0.1.18
 
 - Website: https://outshift.cisco.com/
 - Category: ai-agents

@@ -1,6 +1,16 @@
 # Cartographer notes
 
-Written by cartographer@web-summit, a sub-agent in the conductor's wake. Status: third pass, proposed.
+Written by cartographer@web-summit, a sub-agent in the conductor's wake. Status: fourth pass, proposed.
+
+## Wake of 2026-11-01T08:28Z: the 21 new companies
+
+- HEAD `data/companies.json` now has 109 companies; the graph covered 88. Added the 21 new ones from the researcher's third pass: Conscium, Scrut Automation, Whitespace, Exein, Proton, Exa, Make, Cognizant, Open VSX (Eclipse Foundation), EasyDMARC, Topsec Cloud Solutions, NordVPN, Nisos, The Hacking Games, Deque Systems, Legora, PolyAI, MEO, Defined.ai, Prisma, AustriaCard.
+- Each has a session link sourced to the session URL in `data/events.json` at HEAD (21 links: 17 speaks-at, 4 hosts: Make ws26-s53, Deque ws26-s55, Open VSX ws26-s67, AustriaCard ws26-s76). Pairs share a session: Conscium and Scrut ws26-s45; Whitespace and Exein ws26-s42; EasyDMARC and Topsec ws26-s41. Defined.ai is in ws26-s62 with LaunchDarkly.
+- Product links (32, all marked our judgement), a proposal each echoing the researcher's decision and priority (status proposed), and cluster membership. New cluster 9, "Security, privacy and trust (not agent-specific)": EasyDMARC, Topsec, NordVPN, Nisos, The Hacking Games, Proton. Whitespace, AustriaCard and MEO are in two clusters.
+- Totals: 5 products, 80 sessions, 29 side events, 228 links (speaks-at 55, hosts 18, could-partner 25, relevant-to 108, competes-with 9, could-buy 13), 109 proposals, 9 clusters, 12 first meetings.
+- First meetings revised (all proposed): in Conscium and Scrut Automation (both meet, priority 1; one session, ws26-s45, 12 Nov 10:45-11:10, Stage 8, catches both; agent verification and AI governance sit closest to ABP and SHarness). Out: Hexamind and 1Password (their places were guesses: stand not read, cybersecurity meetup attendance not confirmed). They keep their meet proposals and are the first to add back as stand visits once stand data is read.
+- Clashes: dropping Hexamind and 1Password closes clash 1 (Feedzai ws26-s32 vs the meetup ws26-s39); Feedzai keeps its talk. New overlap: ws26-s45 (10:45-11:10, Stage 8) and Primitive ws26-s29 (10:50-11:00, Stage 9). Resolved: Primitive at its talk, then Conscium and Scrut as they come off Stage 8 at 11:10. 12 Nov now runs Emergence 10:15, Primitive 10:50, Conscium and Scrut 11:10, Feedzai 12:00, Startup Portugal 13:30, Descope 14:00, Airia 15:25, with no overlaps among leading places.
+- Not confirmed: that Conscium and Scrut speakers will stay at Stage 8 after their session; Proton's headquarters (the researcher's note); Nisos's site was not read (its robots.txt refused an automated read). Speaker names are not copied into the graph.
 
 ## Wake of 2026-11-01T06:28Z: sessions ws26-s41..s80 and side events se19..se29
 
@@ -51,7 +61,7 @@ Written by cartographer@web-summit, a sub-agent in the conductor's wake. Status:
 ## Next wake
 
 1. Done this wake: the 29 new companies are linked, and the session-speaker organisations listed above are now on the map (JetBrains, LaunchDarkly, Neo4j, Emergence, Aisle, TestMu AI, Trent AI, SageOx, Linux Foundation, AICEP, Persona, Sumsub, Feedzai, Descope, Airia).
-2. Done this wake for ws26-s41..s80: Replit got its talk (ws26-s51). Temporal, Manus AI, You.com, Atlassian, a16z and Neo still have none in our 80-session feed. Link the companies the researcher is adding now once they are at HEAD (many are speaker orgs listed in the 06:28Z section).
+2. Done (08:28Z): the 21 speaker companies from the 06:28Z list are on the map and linked. Still not on the map: iBanFirst, Vivaldi, Serpro, Lenovo, Mindstone, SGF Global, The Elders, Council of Europe, European Parliament, SkyDeck Ventures, Stanford HAI, SENEN GROUP, Inflect; side-event hosts Sanity, Bejamas, Softr, Cybertech Acceleration. Earlier (06:28Z) for ws26-s41..s80: Replit got its talk (ws26-s51). Temporal, Manus AI, You.com, Atlassian, a16z and Neo still have none in our 80-session feed. Link the companies the researcher is adding now once they are at HEAD (many are speaker orgs listed in the 06:28Z section).
 3. When the curator reads more sessions, match speakers' organisations again, and give each speaker company with no session its talk.
-4. Read stand and exhibition-day data, then replace the "not yet read" places in first_meetings.
+4. Read stand and exhibition-day data; then reconsider Hexamind and 1Password (meet, priority 1, out of first meetings for want of a confirmed place).
 5. Owners: once owners are named, record who took which proposal; keep decisions as proposals until then.
