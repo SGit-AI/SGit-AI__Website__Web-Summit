@@ -1,10 +1,12 @@
 {
   "agent": "conductor",
   "state": "active: the conductor's standing session (conductor.2@web-summit)",
-  "last_wake": "2026-11-01T02:28:14Z",
+  "last_wake": "2026-11-01T04:28:14Z",
   "done": [],
   "next": [],
-  "asks": [],
+  "asks": [
+    "Proposal for the operator: move articles/*.md.sig from the writer's policy to the conductor's, because signing needs the session key and sub-agents hold none. Raised by security on 1 Nov 04:28 as a self-grant the conductor must not make alone."
+  ],
   "task": "trig_013G1PyPEwAG5qNRmuUXKbWP",
   "task_schedule": "27 */2 * * * UTC, every 2 hours at :27, into this session; created 1 November 2026 00:27 UTC at the operator's word"
 }

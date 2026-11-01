@@ -975,6 +975,862 @@
       "speakers": [],
       "why_relevant": "Official meetup for founders building in Portugal.",
       "source": "https://websummit.com/sessions/lis26/ed1416dc-d0bd-4231-af12-dcd2c9e15c4e/founders-building-in-portugal-meetup/"
+    },
+    {
+      "id": "ws26-s41",
+      "title": "The perimeter is dead. So what happens to trust?",
+      "day": "2026-11-12",
+      "time": "15:35-16:00 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 8",
+      "track": "Cybersecurity Summit",
+      "speakers": [
+        {
+          "name": "Gerasim Hovhannisyan",
+          "org": "EasyDMARC, Inc.",
+          "title": "Co-founder & CEO"
+        },
+        {
+          "name": "Sonia Azzouzi Boudie",
+          "org": "iBanFirst",
+          "title": "Chief of Tech & Strategy Officer"
+        },
+        {
+          "name": "Niall Mackey",
+          "org": "Topsec Cloud Solutions",
+          "title": "Managing Director"
+        }
+      ],
+      "why_relevant": "Trust after the perimeter: deepfake identity fraud and phishing; our trust and identity theme on the Cybersecurity Summit stage.",
+      "source": "https://websummit.com/sessions/lis26/d0816a68-eabc-4539-89dc-483c4eed929a/the-perimeter-is-dead-so-what-happens-to-trust/"
+    },
+    {
+      "id": "ws26-s42",
+      "title": "Securing the AI frontline",
+      "day": "2026-11-12",
+      "time": "14:20-14:45 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 8",
+      "track": "Cybersecurity Summit",
+      "speakers": [
+        {
+          "name": "Paul Jenkinson",
+          "org": "Whitespace",
+          "title": "Co-founder & CEO"
+        },
+        {
+          "name": "Giovanni Alberto Falcione",
+          "org": "Exein",
+          "title": "Co-founder & CTO"
+        },
+        {
+          "name": "Sinéad O'Sullivan",
+          "org": "Harvard Business School/Harvard Business Review",
+          "title": "Strategy and Competitiveness"
+        },
+        {
+          "name": "Mehul Srivastava",
+          "org": "Financial Times",
+          "title": "Senior Foreign Affairs Correspondent"
+        }
+      ],
+      "why_relevant": "State actors targeting autonomous systems and critical infrastructure: security of the systems agents will run.",
+      "source": "https://websummit.com/sessions/lis26/e1587abd-ee14-4af3-8703-d02df1ba1f78/securing-the-ai-frontline/"
+    },
+    {
+      "id": "ws26-s43",
+      "title": "Zombie data: How your data comes back to haunt you",
+      "day": "2026-11-12",
+      "time": "14:10-14:30 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 8",
+      "track": "Cybersecurity Summit",
+      "speakers": [
+        {
+          "name": "Marijus Briedis",
+          "org": "NordVPN",
+          "title": "CTO"
+        }
+      ],
+      "why_relevant": "Stolen session cookies and profile data bypass passwords and MFA: identity and session trust, the core of our key work.",
+      "source": "https://websummit.com/sessions/lis26/2fad9e2b-9933-4f05-a09e-d4dda60587cb/zombie-data-how-your-data-comes-back-to-haunt-you/"
+    },
+    {
+      "id": "ws26-s44",
+      "title": "Is there a foreign operative on your payroll?",
+      "day": "2026-11-12",
+      "time": "12:30-12:45 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 8",
+      "track": "Cybersecurity Summit",
+      "speakers": [
+        {
+          "name": "Ryan LaSalle",
+          "org": "Nisos",
+          "title": "CEO"
+        }
+      ],
+      "why_relevant": "Insider-identity case study (a North Korean operative hired remotely): proving who someone is, the human side of identity.",
+      "source": "https://websummit.com/sessions/lis26/82e616b5-67bb-44f2-b4df-25642654fc0f/is-there-a-foreign-operative-on-your-payroll/"
+    },
+    {
+      "id": "ws26-s45",
+      "title": "The biological bottleneck",
+      "day": "2026-11-12",
+      "time": "10:45-11:10 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 8",
+      "track": "Cybersecurity Summit",
+      "speakers": [
+        {
+          "name": "Calum Chace",
+          "org": "Conscium",
+          "title": "Co-founder"
+        },
+        {
+          "name": "Nicholas Muy",
+          "org": "Scrut Automation",
+          "title": "CISO"
+        },
+        {
+          "name": "John Koetsier",
+          "org": "Forbes, Freelance",
+          "title": "Forbes columnist & Tech First Podcast Host"
+        }
+      ],
+      "why_relevant": "Human oversight of autonomous agents in security, with a compliance-automation speaker (Scrut): oversight is our governance question.",
+      "source": "https://websummit.com/sessions/lis26/553f8328-1300-406a-887a-b139455238c7/the-biological-bottleneck/"
+    },
+    {
+      "id": "ws26-s46",
+      "title": "The real threat isn’t a nation-state, it’s a teenager.",
+      "day": "2026-11-12",
+      "time": "14:45-15:15 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 8",
+      "track": "Cybersecurity Summit",
+      "speakers": [
+        {
+          "name": "John Madelin",
+          "org": "The Hacking Games",
+          "title": "Chief Product Officer"
+        },
+        {
+          "name": "Conor Freeman",
+          "org": "The Hacking Games",
+          "title": "Former Black Hat Hacker & Offensive Security Lead"
+        }
+      ],
+      "why_relevant": "Real attacker data from young AI-equipped hackers: grounds threat models in what actually gets in.",
+      "source": "https://websummit.com/sessions/lis26/e70c32c5-0639-4bde-b105-f77b39b49419/the-real-threat-isn-t-a-nation-state-it-s-a-teenager/"
+    },
+    {
+      "id": "ws26-s47",
+      "title": "Big Tech detox",
+      "day": "2026-11-12",
+      "time": "11:30-11:50 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 8",
+      "track": "Cybersecurity Summit",
+      "speakers": [
+        {
+          "name": "Raphael Auphan",
+          "org": "Proton",
+          "title": "Chief Operating Officer"
+        },
+        {
+          "name": "Jon von Tetzchner",
+          "org": "Vivaldi",
+          "title": "Co-founder & CEO"
+        },
+        {
+          "name": "Lisa Eadicicco",
+          "org": "CNN",
+          "title": "Tech Editor"
+        }
+      ],
+      "why_relevant": "Proton and Vivaldi on digital sovereignty and leaving surveillance stacks: privacy and control of one's own data.",
+      "source": "https://websummit.com/sessions/lis26/e8ad3cf3-06b8-451a-bc7f-0ba6786588dc/big-tech-detox/"
+    },
+    {
+      "id": "ws26-s48",
+      "title": "Brazil's blueprint for cyber resilience",
+      "day": "2026-11-12",
+      "time": "16:20-16:30 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 8",
+      "track": "Cybersecurity Summit",
+      "speakers": [
+        {
+          "name": "Wilton Itaiguara Gonçalves Mota",
+          "org": "Serpro",
+          "title": "President and CEO"
+        }
+      ],
+      "why_relevant": "Sovereign cloud as a pillar of national cybersecurity (Brazil's Serpro): sovereignty and control, a governance theme.",
+      "source": "https://websummit.com/sessions/lis26/dea217b2-6cf6-4b44-b508-d04754c0b367/brazil-s-blueprint-for-cyber-resilience/"
+    },
+    {
+      "id": "ws26-s49",
+      "title": "The attack has started, now what? See Log360 & Zia AI in action [Hosted by ManageEngine]",
+      "day": "2026-11-10",
+      "time": "12:30-13:15 (Lisbon, WET = UTC+0)",
+      "stage": "Masterclass 4",
+      "track": "Masterclasses",
+      "speakers": [
+        {
+          "name": "José Fonseca",
+          "org": "ManageEngine",
+          "title": "Technical Expert"
+        }
+      ],
+      "why_relevant": "Hands-on incident response and automated playbooks, delivered in Portuguese: practical security ops for the local audience.",
+      "source": "https://websummit.com/sessions/lis26/2ac488bf-54c0-4eaa-bedc-5dd271625643/the-attack-has-started-now-what-see-log360-zia-ai-in-action-hosted-by-manageengine/"
+    },
+    {
+      "id": "ws26-s50",
+      "title": "Building a secure device foundation for AI [Hosted by Lenovo]",
+      "day": "2026-11-10",
+      "time": "13:00-13:45 (Lisbon, WET = UTC+0)",
+      "stage": "Masterclass 2",
+      "track": "Masterclasses",
+      "speakers": [
+        {
+          "name": "Burke Stephenson",
+          "org": "Lenovo",
+          "title": "Head of Cybersecurity Sales - EMEA"
+        },
+        {
+          "name": "Bernard Wolff",
+          "org": "LEnovo",
+          "title": "ThinkShield Cybersecurity Technical Solution Lead MEMEA"
+        }
+      ],
+      "why_relevant": "Device security foundation with local and hybrid AI: data exposure and control when AI runs on endpoints.",
+      "source": "https://websummit.com/sessions/lis26/1524845c-370e-4161-b2c3-b7a38c6aaf85/building-a-secure-device-foundation-for-ai-hosted-by-lenovo/"
+    },
+    {
+      "id": "ws26-s51",
+      "title": "What does a self-driving company look like?",
+      "day": "2026-11-10",
+      "time": "16:00-16:20 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 13",
+      "track": "AI Summit",
+      "speakers": [
+        {
+          "name": "Michele Catasta",
+          "org": "Replit",
+          "title": "President"
+        }
+      ],
+      "why_relevant": "Replit on a company run by agents, which it says needs the right security, governance and controls: agent governance in practice.",
+      "source": "https://websummit.com/sessions/lis26/a54a6d5f-1f53-43fd-93c6-dd2c3d63a4fe/what-does-a-self-driving-company-look-like/"
+    },
+    {
+      "id": "ws26-s52",
+      "title": "Pricing SaaS when users are agents",
+      "day": "2026-11-12",
+      "time": "14:45-15:05 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 7",
+      "track": "SaaS Summit",
+      "speakers": [
+        {
+          "name": "Edith Harbaugh",
+          "org": "LaunchDarkly",
+          "title": "Co-founder & CEO"
+        },
+        {
+          "name": "Joshua Wöhle",
+          "org": "Mindstone",
+          "title": "CEO"
+        },
+        {
+          "name": "Jeremy Goldman",
+          "org": "FUTUREPROOF Podcast",
+          "title": "Host"
+        }
+      ],
+      "why_relevant": "Pricing when the users are agents, not seats: how agent identity changes the commercial model of software.",
+      "source": "https://websummit.com/sessions/lis26/9e5469da-4430-430f-9ada-277e3d2dc715/pricing-saas-when-users-are-agents/"
+    },
+    {
+      "id": "ws26-s53",
+      "title": "Make AI agents work beyond the demo [Hosted by Make]",
+      "day": "2026-11-11",
+      "time": "14:00-14:45 (Lisbon, WET = UTC+0)",
+      "stage": "Masterclass 2",
+      "track": "Masterclasses",
+      "speakers": [
+        {
+          "name": "Valery Mezencev",
+          "org": "Make",
+          "title": "Senior Product Marketing Manager"
+        }
+      ],
+      "why_relevant": "Moving agents from demo to dependable business processes: the production-readiness question we write about.",
+      "source": "https://websummit.com/sessions/lis26/65eb8e8f-60b8-4772-ab2a-d1a11807aa33/make-ai-agents-work-beyond-the-demo-hosted-by-make/"
+    },
+    {
+      "id": "ws26-s54",
+      "title": "How to break your AI phone agent before your customers [Hosted by Twilio]",
+      "day": "2026-11-10",
+      "time": "16:30-17:15 (Lisbon, WET = UTC+0)",
+      "stage": "Masterclass 4",
+      "track": "Masterclasses",
+      "speakers": [
+        {
+          "name": "Bianca St Louis",
+          "org": "Twilio",
+          "title": "Developer Ecosystem, Startups"
+        }
+      ],
+      "why_relevant": "Testing AI voice agents with thousands of calls before launch: adversarial testing of agents.",
+      "source": "https://websummit.com/sessions/lis26/d1e1e64e-8909-44de-879b-c18b6e07ac86/how-to-break-your-ai-phone-agent-before-your-customers-hosted-by-twilio/"
+    },
+    {
+      "id": "ws26-s55",
+      "title": "Can you trust your AI agent's accessibility? [Hosted by Deque]",
+      "day": "2026-11-12",
+      "time": "12:00-12:45 (Lisbon, WET = UTC+0)",
+      "stage": "Masterclass 2",
+      "track": "Masterclasses",
+      "speakers": [
+        {
+          "name": "Dylan Barrell",
+          "org": "Deque Systems",
+          "title": "CTO"
+        }
+      ],
+      "why_relevant": "AI agents writing accessible, EAA-compliant code with an MCP server: agents, MCP and an EU regulation in one session.",
+      "source": "https://websummit.com/sessions/lis26/74aa4557-4a99-4624-b2e7-0e1ca1b388d4/can-you-trust-your-ai-agent-s-accessibility-hosted-by-deque/"
+    },
+    {
+      "id": "ws26-s56",
+      "title": "Search built for AI agents",
+      "day": "2026-11-12",
+      "time": "15:40-16:00 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 13",
+      "track": "AI Summit",
+      "speakers": [
+        {
+          "name": "Will Bryk",
+          "org": "Exa",
+          "title": "Co-founder & CEO"
+        }
+      ],
+      "why_relevant": "Infrastructure for agents searching the web: what an agent can reach and how good its sources are.",
+      "source": "https://websummit.com/sessions/lis26/a433a1bc-b53a-4689-a8f8-c7eb8088148c/search-built-for-ai-agents/"
+    },
+    {
+      "id": "ws26-s57",
+      "title": "Beyond the model: Scaling AI agents for professional work",
+      "day": "2026-11-12",
+      "time": "11:55-12:15 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 13",
+      "track": "AI Summit",
+      "speakers": [
+        {
+          "name": "Jacob Lauritzen",
+          "org": "Legora",
+          "title": "CTO"
+        },
+        {
+          "name": "Niall Firth",
+          "org": "MIT Technology Review",
+          "title": "News Editor"
+        }
+      ],
+      "why_relevant": "Agents professionals can trust with high-stakes legal work (Legora): trust in agent output.",
+      "source": "https://websummit.com/sessions/lis26/fad36198-b0af-4295-bec3-b7671b62e786/beyond-the-model-scaling-ai-agents-for-professional-work/"
+    },
+    {
+      "id": "ws26-s58",
+      "title": "Coaching an AI agent like human talent",
+      "day": "2026-11-11",
+      "time": "15:00-15:20 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 13",
+      "track": "AI Summit",
+      "speakers": [
+        {
+          "name": "Nikola Mrkšić",
+          "org": "PolyAI",
+          "title": "Co-founder & CEO"
+        },
+        {
+          "name": "Ania Lichtarowicz",
+          "org": "Somewhere on Earth: The Tech Global Podcast",
+          "title": "Managing Director and Editor"
+        }
+      ],
+      "why_relevant": "Agents that coach and improve other agents, with human decision points (PolyAI): oversight design.",
+      "source": "https://websummit.com/sessions/lis26/8c1c7b41-7711-424d-9214-20d2d29d32f0/coaching-an-ai-agent-like-human-talent/"
+    },
+    {
+      "id": "ws26-s59",
+      "title": "Be part of history: help build the first pages of the agentic web",
+      "day": "2026-11-12",
+      "time": "15:00-15:55 (Lisbon, WET = UTC+0)",
+      "stage": "Developer Lounge",
+      "track": "Developer Summit",
+      "speakers": [
+        {
+          "name": "Babak Hodjat",
+          "org": "Cognizant",
+          "title": "Chief AI Officer"
+        }
+      ],
+      "why_relevant": "Live workshop building interconnected multi-agent systems with open-source tools: hands-on agent interop for developers.",
+      "source": "https://websummit.com/sessions/lis26/e6276948-d2f7-4565-95e4-9caccd1a5211/be-part-of-history-help-build-the-first-pages-of-the-agentic-web/"
+    },
+    {
+      "id": "ws26-s60",
+      "title": "The autonomous enterprise: Networks, cloud and AI agents",
+      "day": "2026-11-11",
+      "time": "15:20-15:40 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 7",
+      "track": "Corporate Innovation Summit",
+      "speakers": [
+        {
+          "name": "Mauricio Sion",
+          "org": "SGF Global",
+          "title": "Founder & Executive Chairman"
+        },
+        {
+          "name": "José Pedro Nascimento",
+          "org": "MEO",
+          "title": "Chief Technology Officer"
+        },
+        {
+          "name": "Marta Dhanis",
+          "org": "MD Media Fusion",
+          "title": "Journalist & TV Host"
+        }
+      ],
+      "why_relevant": "MEO's CTO on autonomous networks and AI agents: a major Portuguese operator's agent plans.",
+      "source": "https://websummit.com/sessions/lis26/5847852b-93e5-4590-b1f8-eb657b7fae4c/the-autonomous-enterprise-networks-cloud-and-ai-agents/"
+    },
+    {
+      "id": "ws26-s61",
+      "title": "When agents write the code, does a framework like Angular still matter?",
+      "day": "2026-11-12",
+      "time": "11:00-11:55 (Lisbon, WET = UTC+0)",
+      "stage": "Developer Lounge",
+      "track": "Developer Summit",
+      "speakers": [
+        {
+          "name": "Grzegorz Lipke",
+          "org": null,
+          "title": null
+        }
+      ],
+      "why_relevant": "Community talk on what changes when agents write the code: developer practice in the agent era.",
+      "source": "https://websummit.com/sessions/lis26/dab3a547-0122-4464-91de-a1262e50d894/when-agents-write-the-code-does-a-framework-like-angular-still-matter/"
+    },
+    {
+      "id": "ws26-s62",
+      "title": "Give me a brake: Coding without crashing",
+      "day": "2026-11-11",
+      "time": "12:10-12:30 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 10",
+      "track": "Developer Summit",
+      "speakers": [
+        {
+          "name": "Edith Harbaugh",
+          "org": "LaunchDarkly",
+          "title": "Co-founder & CEO"
+        },
+        {
+          "name": "Daniela Braga",
+          "org": "Defined.ai",
+          "title": "Founder & CEO"
+        },
+        {
+          "name": "Kit Eaton",
+          "org": "INC",
+          "title": "Technology writer"
+        }
+      ],
+      "why_relevant": "Feature flags and training data as the emergency brake for AI-generated code: control and rollback for agent-written software.",
+      "source": "https://websummit.com/sessions/lis26/c23c0b87-7b82-492f-a46b-af652fe6529e/give-me-a-brake-coding-without-crashing/"
+    },
+    {
+      "id": "ws26-s63",
+      "title": "Beyond the prompt: Building resilient systems in the vibe coding era",
+      "day": "2026-11-12",
+      "time": "14:05-14:25 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 10",
+      "track": "Developer Summit",
+      "speakers": [
+        {
+          "name": "Rob Pegoraro",
+          "org": "PCMag",
+          "title": "Contributor"
+        }
+      ],
+      "why_relevant": "Who fixes vibe-coded prototypes at scale: developers shifting to architecture, security and reliability.",
+      "source": "https://websummit.com/sessions/lis26/613fe4dd-e6ea-4bf9-9289-d7385ab7aef7/beyond-the-prompt-building-resilient-systems-in-the-vibe-coding-era/"
+    },
+    {
+      "id": "ws26-s64",
+      "title": "Rebuilding open source with AI: Lessons Learned",
+      "day": "2026-11-12",
+      "time": "16:05-16:25 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 10",
+      "track": "Developer Summit",
+      "speakers": [
+        {
+          "name": "Søren Bramer Schmidt",
+          "org": "Prisma",
+          "title": "CEO"
+        }
+      ],
+      "why_relevant": "Prisma's CEO on rewriting Prisma with coding agents and what it means for open-source libraries.",
+      "source": "https://websummit.com/sessions/lis26/b742e8f7-343c-4868-8eac-4b488f1351d9/rebuilding-open-source-with-ai-lessons-learned/"
+    },
+    {
+      "id": "ws26-s65",
+      "title": "Monitoring in the age of GenAI: Beyond golden signals [Hosted by Datadog]",
+      "day": "2026-11-11",
+      "time": "10:00-10:45 (Lisbon, WET = UTC+0)",
+      "stage": "Masterclass 2",
+      "track": "Masterclasses",
+      "speakers": [
+        {
+          "name": "Clara Jacintho",
+          "org": "Datadog",
+          "title": "Software Engineer"
+        }
+      ],
+      "why_relevant": "Monitoring GenAI beyond golden signals: hallucination, PII leakage and cost as measurable signals.",
+      "source": "https://websummit.com/sessions/lis26/3fec214a-c6f3-41bb-ace2-b45b50f6d964/monitoring-in-the-age-of-genai-beyond-golden-signals-hosted-by-datadog/"
+    },
+    {
+      "id": "ws26-s66",
+      "title": "Democratising AI platform engineering with open-source [Hosted by Cisco Systems]",
+      "day": "2026-11-12",
+      "time": "13:00-13:45 (Lisbon, WET = UTC+0)",
+      "stage": "Masterclass 1",
+      "track": "Masterclasses",
+      "speakers": [
+        {
+          "name": "Alfonso (Poncho) Sandoval Rosas",
+          "org": "CIsco Systems",
+          "title": "Senior Developer Advocate 🥑"
+        }
+      ],
+      "why_relevant": "Open-source AI platform engineering (CAIPE, a CNCF Sandbox project): fully FOSS tooling for small teams.",
+      "source": "https://websummit.com/sessions/lis26/5f4ac039-83e3-4b2b-9415-3efa64804ee1/democratising-ai-platform-engineering-with-open-source-hosted-by-cisco-systems/"
+    },
+    {
+      "id": "ws26-s67",
+      "title": "Building AI products without building everything [Hosted by Open VSX]",
+      "day": "2026-11-12",
+      "time": "14:30-15:15 (Lisbon, WET = UTC+0)",
+      "stage": "Masterclass 3",
+      "track": "Masterclasses",
+      "speakers": [
+        {
+          "name": "Thomas Froment",
+          "org": "Eclipse Foundation",
+          "title": "Program Lead, Development Tools"
+        },
+        {
+          "name": "Jamie Ayala",
+          "org": "Open VSX",
+          "title": "Senior Product Marketing Manager"
+        }
+      ],
+      "why_relevant": "Open VSX and the Eclipse Foundation on how open-source foundations underpin AI developer tools like Cursor and Windsurf.",
+      "source": "https://websummit.com/sessions/lis26/828790e8-5f4b-4869-bb79-e1114cbd9365/building-ai-products-without-building-everything-hosted-by-open-vsx/"
+    },
+    {
+      "id": "ws26-s68",
+      "title": "🐙 Open source & contributors meetup",
+      "day": "2026-11-10",
+      "time": "16:00-16:55 (Lisbon, WET = UTC+0)",
+      "stage": "Meetup 4",
+      "track": "Meetup",
+      "speakers": [],
+      "why_relevant": "Official open source and contributors meetup: people to meet.",
+      "source": "https://websummit.com/sessions/lis26/8e588d08-9f6d-43de-97d6-c0a1471edc8d/open-source-contributors-meetup/"
+    },
+    {
+      "id": "ws26-s69",
+      "title": "Do we need a UN AI treaty?",
+      "day": "2026-11-11",
+      "time": "10:05-10:30 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 11",
+      "track": "Policy Summit",
+      "speakers": [
+        {
+          "name": "Mary Robinson",
+          "org": "The Elders",
+          "title": "Founding Member"
+        },
+        {
+          "name": "Charles Pellegrin",
+          "org": "France 24",
+          "title": "Business Editor"
+        }
+      ],
+      "why_relevant": "Mary Robinson on whether the world needs a binding UN treaty on AI: global AI governance.",
+      "source": "https://websummit.com/sessions/lis26/e957eedc-8414-42ca-8572-4806d21e8d85/do-we-need-a-un-ai-treaty/"
+    },
+    {
+      "id": "ws26-s70",
+      "title": "Putting human rights into artificial intelligence",
+      "day": "2026-11-11",
+      "time": "10:50-11:10 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 11",
+      "track": "Policy Summit",
+      "speakers": [
+        {
+          "name": "Michael O'Flaherty",
+          "org": "Council of Europe",
+          "title": "Commissioner for Human Rights"
+        },
+        {
+          "name": "Paul Tighe",
+          "org": "The Vatican",
+          "title": "Secretary of the Dicastery for Culture and Education"
+        },
+        {
+          "name": "Georja Calvin-Smith",
+          "org": "France 24",
+          "title": "Productrice principale / Présentatrice"
+        }
+      ],
+      "why_relevant": "Council of Europe on human rights in AI and constitutional approaches by AI companies: AI governance and standards.",
+      "source": "https://websummit.com/sessions/lis26/3a0acb6d-9fd0-4431-ab32-5526addbdcc8/putting-human-rights-into-artificial-intelligence/"
+    },
+    {
+      "id": "ws26-s71",
+      "title": "Free or controlled internet? The great DSA debate",
+      "day": "2026-11-10",
+      "time": "10:05-10:25 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 11",
+      "track": "Policy Summit",
+      "speakers": [
+        {
+          "name": "Alexandra Geese",
+          "org": "The European Parliament",
+          "title": "MEP"
+        },
+        {
+          "name": "Balázs Orban",
+          "org": "European Parliament",
+          "title": "MEP"
+        },
+        {
+          "name": "Arba Kokalari",
+          "org": "European Parliament",
+          "title": "MEP Group of the European People's Party"
+        },
+        {
+          "name": "Luc Chénier",
+          "org": "Kyiv Post",
+          "title": "CEO"
+        }
+      ],
+      "why_relevant": "Three MEPs debate the Digital Services Act: EU platform regulation from the people who vote on it.",
+      "source": "https://websummit.com/sessions/lis26/33c61f4c-b906-4056-aefa-ca2f45c27d55/free-or-controlled-internet-the-great-dsa-debate/"
+    },
+    {
+      "id": "ws26-s72",
+      "title": "Chat Control 2.0: The government in your DMs?",
+      "day": "2026-11-10",
+      "time": "10:50-11:10 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 11",
+      "track": "Policy Summit",
+      "speakers": [
+        {
+          "name": "Michael McNamara",
+          "org": "The European Parliament",
+          "title": "MEP"
+        },
+        {
+          "name": "Thomas Fazi",
+          "org": "UnHerd",
+          "title": "Author"
+        },
+        {
+          "name": "Esther Paniagua",
+          "org": "Press and radio columnist",
+          "title": "Award winning independent tech journalist"
+        }
+      ],
+      "why_relevant": "Chat Control 2.0 and encryption: an MEP on the line between child protection and private communications.",
+      "source": "https://websummit.com/sessions/lis26/66c13c83-4b26-4655-95a9-051b17258832/chat-control-2-0-the-government-in-your-dms/"
+    },
+    {
+      "id": "ws26-s73",
+      "title": "Open vs closed: The debate defining the AI era",
+      "day": "2026-11-11",
+      "time": "11:55-12:25 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 11",
+      "track": "Policy Summit",
+      "speakers": [
+        {
+          "name": "Chon Tang",
+          "org": "SkyDeck Ventures",
+          "title": "Founding Partner"
+        },
+        {
+          "name": "Alvin W. Graylin",
+          "org": "Stanford HAI",
+          "title": "Prof. AI Policy at UW | Digital Fellow"
+        },
+        {
+          "name": "Carmem Domingues",
+          "org": "Future Government Institute",
+          "title": "Distinguished Fellow (former Biden White House AI Advisor)"
+        },
+        {
+          "name": "Neil Lawrence",
+          "org": "Trent AI",
+          "title": "Co-founder & Chief Scientist"
+        },
+        {
+          "name": "Amit Katwala",
+          "org": "Wired",
+          "title": "Features Editor"
+        }
+      ],
+      "why_relevant": "Open versus closed AI models and national security: the policy frame for open-source agents.",
+      "source": "https://websummit.com/sessions/lis26/0a834d30-6d0c-49ed-986c-6e2eed88f8ab/open-vs-closed-the-debate-defining-the-ai-era/"
+    },
+    {
+      "id": "ws26-s74",
+      "title": "Frontline Europe: AI, sovereignty and truth",
+      "day": "2026-11-12",
+      "time": "10:30-11:00 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 11",
+      "track": "Policy Summit",
+      "speakers": [
+        {
+          "name": "Jan Lipavský",
+          "org": "Government of Czech Republic",
+          "title": "Former Minister of Foreign Affairs of the Czech Republic"
+        },
+        {
+          "name": "Miroslav Wlachovský",
+          "org": "government of Slovakia",
+          "title": "Former Minister of Foreign and European Affairs of Slovakia"
+        },
+        {
+          "name": "Maty Bohacek",
+          "org": "Stanford University",
+          "title": "AI Researcher"
+        },
+        {
+          "name": "Tomáš Klvaňa",
+          "org": "Aspen Institute Central Europe",
+          "title": "Executive Director"
+        }
+      ],
+      "why_relevant": "Czech and Slovak ministers on AI sovereignty, verifying information and disinformation: trust and provenance at state level.",
+      "source": "https://websummit.com/sessions/lis26/c0581238-2d66-434c-9e16-eee93fef3867/frontline-europe-ai-sovereignty-and-truth/"
+    },
+    {
+      "id": "ws26-s75",
+      "title": "Building AI in Europe: Practical support for innovators [Hosted by European Commission - DG Connect]",
+      "day": "2026-11-11",
+      "time": "14:30-15:15 (Lisbon, WET = UTC+0)",
+      "stage": "Masterclass 3",
+      "track": "Masterclasses",
+      "speakers": [],
+      "why_relevant": "European Commission DG Connect on EU support for AI, including regulatory guidance: the nearest the schedule gets to AI Act help.",
+      "source": "https://websummit.com/sessions/lis26/9f18a423-b002-4d0f-b2ea-c85880ae8340/building-ai-in-europe-practical-support-for-innovators-hosted-by-european-commission-dg-connect/"
+    },
+    {
+      "id": "ws26-s76",
+      "title": "AI sovereignty: Data control, governance and predictable AI costs [Hosted by Austriacard Holdings]",
+      "day": "2026-11-11",
+      "time": "11:30-12:15 (Lisbon, WET = UTC+0)",
+      "stage": "Masterclass 3",
+      "track": "Masterclasses",
+      "speakers": [
+        {
+          "name": "Christos Rizos",
+          "org": "AustriaCard",
+          "title": "Group Business Development Director, AI & Digital Solutions"
+        }
+      ],
+      "why_relevant": "Running agentic AI on-premises and air-gapped, with data control and governance: sovereign agent deployment.",
+      "source": "https://websummit.com/sessions/lis26/2230e1d4-188d-4ab0-9f3d-a418dff6c20b/ai-sovereignty-data-control-governance-and-predictable-ai-costs-hosted-by-austriacard-holdings/"
+    },
+    {
+      "id": "ws26-s77",
+      "title": "🧭 Let's talk AI ethics & responsible tech meetup",
+      "day": "2026-11-10",
+      "time": "14:00-14:55 (Lisbon, WET = UTC+0)",
+      "stage": "Meetup 4",
+      "track": "Meetup",
+      "speakers": [],
+      "why_relevant": "Official AI ethics and responsible tech meetup: ethicists, policymakers and technologists to meet.",
+      "source": "https://websummit.com/sessions/lis26/26661314-5fb1-472c-bfbf-cd3ccf6e969f/let-s-talk-ai-ethics-responsible-tech-meetup/"
+    },
+    {
+      "id": "ws26-s78",
+      "title": "🇵🇹 Lisbon founders & CEOs meetup",
+      "day": "2026-11-10",
+      "time": "12:00-12:55 (Lisbon, WET = UTC+0)",
+      "stage": "Meetup 4",
+      "track": "Meetup",
+      "speakers": [],
+      "why_relevant": "Official Lisbon founders and CEOs meetup: the local startup scene.",
+      "source": "https://websummit.com/sessions/lis26/397e5775-9be9-471e-b660-24196fe51554/lisbon-founders-ceos-meetup/"
+    },
+    {
+      "id": "ws26-s79",
+      "title": "The next digital frontier",
+      "day": "2026-11-11",
+      "time": "10:30-10:50 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 11",
+      "track": "Policy Summit",
+      "speakers": [
+        {
+          "name": "Miguel Albuquerque",
+          "org": "Madeira",
+          "title": "President"
+        },
+        {
+          "name": "Vahan Agopyan",
+          "org": "Government of the State of Sao Paulo, Brazil",
+          "title": "Secretary of Science, Technology and Innovation"
+        },
+        {
+          "name": "Eleanor Pringle",
+          "org": "Fortune",
+          "title": "Senior Reporter Economics and Markets"
+        }
+      ],
+      "why_relevant": "Madeira's regional president on building a digital economy and AI in government: Portugal's own tech policy.",
+      "source": "https://websummit.com/sessions/lis26/2b66ba08-e60a-43a0-9f78-8f81c380af59/the-next-digital-frontier/"
+    },
+    {
+      "id": "ws26-s80",
+      "title": "Building AI on your own terms: From technology discovery to real-world scale",
+      "day": "2026-11-11",
+      "time": "11:05-11:30 (Lisbon, WET = UTC+0)",
+      "stage": "Stage 7",
+      "track": "Corporate Innovation Summit",
+      "speakers": [
+        {
+          "name": "Ronnie Sheth",
+          "org": "SENEN GROUP",
+          "title": "Founder & CEO"
+        },
+        {
+          "name": "Mike Nguyen",
+          "org": "Inflect",
+          "title": "CEO"
+        },
+        {
+          "name": "João Nuno Ferreira",
+          "org": "National Centre for Advanced Computing",
+          "title": "President"
+        },
+        {
+          "name": "Luc Chénier",
+          "org": "Kyiv Post",
+          "title": "CEO"
+        }
+      ],
+      "why_relevant": "Portugal's National Centre for Advanced Computing on moving from AI dependency to sovereignty.",
+      "source": "https://websummit.com/sessions/lis26/d135a390-9d48-4b6f-92c0-6992993cdd6f/building-ai-on-your-own-terms-from-technology-discovery-to-real-world-scale/"
     }
   ],
   "side_events": [
@@ -1128,6 +1984,94 @@
       "what": "The newsroom says the team will hold meetups in the Algarve before the summit. No date or venue has been published. UNCONFIRMED",
       "source": "https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html",
       "unconfirmed": true
+    },
+    {
+      "id": "se19",
+      "title": "Portugal Tech Week Palace",
+      "date": "2026-11-09 to 2026-11-13, 10:00-22:00",
+      "place": "PTW Palace, Rua Gomes Freire 98, Lisbon",
+      "what": "Portugal Tech Week's flagship venue during the summit: five days of fringe sessions, with registration per event",
+      "source": "https://portugaltechweek.com/events/portugal-tech-week-palace-09-13-november/"
+    },
+    {
+      "id": "se20",
+      "title": "Build Your Second Brain with Claude",
+      "date": "2026-11-09, 10:00-11:30",
+      "place": "PTW Palace, Rua Gomes Freire 98, Lisbon",
+      "what": "Hands-on workshop on keeping personal context in one folder that Claude and other models can use. A Portugal Tech Week event",
+      "source": "https://portugaltechweek.com/events/build-your-second-brain-with-claude/"
+    },
+    {
+      "id": "se21",
+      "title": "Superconnectors Lisbon 2026 @ Web Summit",
+      "date": "2026-11-10, 17:00-19:00",
+      "place": "Lisbon (venue not given on the page)",
+      "what": "Startups pitch an ask and a vetted audience bids introductions. Listed by Portugal Tech Week",
+      "source": "https://portugaltechweek.com/events/superconnectors-lisbon-2026-web-summit/"
+    },
+    {
+      "id": "se22",
+      "title": "Fake by Default: How to prove what's real",
+      "date": "2026-11-11, 11:30-12:30",
+      "place": "PTW Palace (Palacete Gomes Freire), Lisbon",
+      "what": "Panel on authenticity, integrity and chain of custody of digital content, deepfake fraud and the 'liar's dividend'. Organised by Cybertech Acceleration with the 351 Portuguese Startup Association. Close to our provenance and trust theme",
+      "source": "https://portugaltechweek.com/events/fake-by-default-how-to-prove-whats-real-2/"
+    },
+    {
+      "id": "se23",
+      "title": "From Automation to Autonomy: How AI is changing the way we run technology (Cisco showcase)",
+      "date": "2026-11-11, 17:30-18:30",
+      "place": "PTW Palace, Rua Gomes Freire 98, Lisbon",
+      "what": "Cisco on the move from automation to agentic operations, and where to draw the line between machine and human decisions",
+      "source": "https://portugaltechweek.com/events/from-automation-to-autonomy-how-ai-is-changing-the-way-we-run-technology-2/"
+    },
+    {
+      "id": "se24",
+      "title": "Ukrainian Community Networking",
+      "date": "2026-11-10, 18:00-22:30",
+      "place": "IDB Rooftop by Mīrārī, Lisbon",
+      "what": "Networking for Ukrainian founders and tech professionals; free with registration. On the Web Summit schedule",
+      "source": "https://websummit.com/sessions/lis26/2df8236e-20e6-458b-85e0-7bb0b3948440/ukrainian-community-networking/"
+    },
+    {
+      "id": "se25",
+      "title": "AI Content OS VIP Dinner: Costa Coffee lessons",
+      "date": "2026-11-10, 19:30-22:00",
+      "place": "Rua das Portas de Santo Antão, Lisbon (exact place shared after registration)",
+      "what": "Invitation-only dinner on AI content operations hosted by Sanity and Bejamas. On the Web Summit schedule",
+      "source": "https://websummit.com/sessions/lis26/af0e6d56-55d1-4358-8020-4bb3577e087c/ai-content-os-vip-dinner-costa-coffee-lessons/"
+    },
+    {
+      "id": "se26",
+      "title": "Work in Finland side event",
+      "date": "2026-11-11, 17:30-21:00",
+      "place": "Hotel Olissippo Oriente, Lisbon",
+      "what": "Evening on working in Finland: an opening by the ambassador, a keynote and a panel. On the Web Summit schedule",
+      "source": "https://websummit.com/sessions/lis26/a501aede-3f80-45cb-b983-b070ededa87c/work-in-finland-side-event/"
+    },
+    {
+      "id": "se27",
+      "title": "Romanian Tech Night at Web Summit Lisbon 2026",
+      "date": "2026-11-11, 18:30-21:30",
+      "place": "Centre of Lisbon (venue not given on the page)",
+      "what": "Romanian startup networking evening with Romanian and Portuguese founders and investors. On the Web Summit schedule",
+      "source": "https://websummit.com/sessions/lis26/63d139b3-d63c-40f4-9612-0e6f2cb873f9/romanian-tech-night-at-web-summit-lisbon-2026/"
+    },
+    {
+      "id": "se28",
+      "title": "AI Build Sprint: Ship a Business App for Your Ops",
+      "date": "2026-11-11, 19:00-22:00",
+      "place": "Hotel Tivoli Oriente, Lisbon",
+      "what": "Build a no-code business app in 60 minutes with the Softr team. On the Web Summit schedule",
+      "source": "https://websummit.com/sessions/lis26/70dbfe60-5408-4d7a-abf6-29c2ef24be48/ai-build-sprint-ship-a-business-app-for-your-ops/"
+    },
+    {
+      "id": "se29",
+      "title": "EIT Jumpstarter Awards Ceremony",
+      "date": "2026-11-12, 17:30-21:00",
+      "place": "Unicorn Factory Lisboa",
+      "what": "Awards for EIT Jumpstarter 2026, the EU's EIT pre-acceleration programme, then a reception. On the Web Summit schedule",
+      "source": "https://websummit.com/sessions/lis26/7c1ea722-494c-4c91-90e6-3de506744c9b/eit-jumpstarter-awards-ceremony/"
     }
   ],
   "news": [
@@ -1366,12 +2310,12 @@
   ],
   "gaps": [
     "No Web Summit 2026 attendance figure is audited or final. '70,000+' is Web Summit's own claim, and the official 2026 numbers usually come out during the event (the 2025 numbers came out on 13 Nov 2025).",
-    "The schedule is still growing ('adding more every week'). 823 sessions were published on 2026-11-01. The Opening Night (9 Nov 18:00) has no title or speakers yet ('Coming soon...'). Sessions for the confirmed Apple speaker (Sébastien Gros) were not found by title, so re-check.",
-    "No session title or description mentions the EU AI Act, NIS2 or DORA explicitly. The regulation content found is Henna Virkkunen (EC), the DPC 'Regulating big tech', and Policy Summit panels.",
+    "The schedule is still growing ('adding more every week'). 823 sessions were published on 2026-11-01 (first count). Re-checked later on 2026-11-01 on the public date page https://websummit.com/schedule/date/2026-11-09/: the Opening Night (9 Nov 18:00, Centre Stage) is still listed as 'Coming soon...' with no speakers. No session for the press-confirmed Apple speaker (Sébastien Gros) appears in the Centre Stage track (39 sessions, https://websummit.com/schedule/), so re-check.",
+    "No session title or description mentions the EU AI Act, NIS2 or DORA explicitly (re-checked on 2026-11-01 across the Cybersecurity, AI, Developer, Policy, SaaS, Corporate Innovation and Centre Stage tracks, the masterclasses and the meetups: 535 sessions). The regulation content found is Henna Virkkunen (EC), the DPC 'Regulating big tech', the DSA and Chat Control debates on the Policy Summit, a European Commission DG Connect masterclass that offers 'regulatory guidance' (ws26-s75), and a Deque masterclass on the European Accessibility Act (ws26-s55).",
     "Some session speakers are listed with no organisation (the Developer Lounge sessions and several masterclasses). They are left null as listed.",
     "The ALPHA, BETA and GROWTH startup package names were not found on the 2026 Web Summit pages read. Road 2 Web Summit (Startup Portugal) offers a discount on packages, according to a search snippet, but this is unconfirmed on the page.",
     "No overall venue opening hours are published. Only registration and Night Summit hours are official.",
-    "Lisbon side events: there is no single public list. Web Summit lists some off-site side events in its own schedule. Portugal Tech Week (300+ events) has a site with submissions, but its event list was not crawled this run. Altss lists zero side events. Luma and Eventbrite were not searched directly.",
+    "Lisbon side events: there is no single public list. Web Summit lists off-site side events in its own schedule (13 found on 2026-11-01, all now in the feed). Portugal Tech Week (6-15 Nov) lists its events at https://portugaltechweek.com/events/; on 2026-11-01 only its home page and five Lisbon events were read, so its list is still incomplete. Altss lists zero side events. Luma and Eventbrite were not searched directly. No new Algarve events before the summit were listed by Algarve Evolution on 2026-11-01.",
     "No dates or venues are published for our own Algarve meetups before the summit (newsroom, 31 Oct).",
     "The Helical Fusion press release date (30 Oct) comes from search results; einnews.com blocked us.",
     "The Web Summit press-release list (a Google Sheet) is not public, so press releases are not in the feed.",

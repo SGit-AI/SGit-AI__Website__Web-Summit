@@ -80,6 +80,44 @@
         "owners for the 12 proposed first meetings"
       ],
       "next": "scheduled wake at 04:27 UTC: link the 29 new companies (cartographer), the summit track pages (curator)"
+    },
+    {
+      "id": "wake-2026-11-01T0428Z",
+      "agent": "conductor",
+      "started": "2026-11-01T04:28:14Z",
+      "ended": "2026-11-01T04:55:00Z",
+      "kind": "scheduled, every 2 hours at :27 UTC",
+      "objective": "Link the new companies, widen the programme, and draft the first asset that brings traffic",
+      "commit": "9598ecb",
+      "plan": [
+        "cartographer: link the 29 companies added last wake",
+        "curator: sessions from the Cybersecurity, AI, Developer and Policy track pages",
+        "writer: first article, the agent security map of Web Summit 2026, as a draft"
+      ],
+      "roles": [
+        "security",
+        "cartographer",
+        "curator",
+        "writer",
+        "closing conductor"
+      ],
+      "outcome": "ok",
+      "release": "v0.1.16",
+      "achieved": [
+        "graph: 88 companies, 165 links; first meetings revised with a time and stage each",
+        "summit: 80 sessions, 29 side events, robots.txt followed",
+        "draft article: The agent security map of Web Summit 2026 (team/writer/drafts/)",
+        "security changed the plan once: the conductor may not widen its own write paths"
+      ],
+      "blockers": [
+        "publishing the article needs the operator to agree who signs (proposal: move articles/*.md.sig to the conductor, the key holder)"
+      ],
+      "for_you": [
+        "agree the signing move, so the draft can be published",
+        "approve designs by Mon 2 Nov 14:00",
+        "names and ids for the seven; owners for the first meetings"
+      ],
+      "next": "scheduled wake at 06:27 UTC: link the 40 new sessions (cartographer), analyst numbers"
     }
   ]
 }

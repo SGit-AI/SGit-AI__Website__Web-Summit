@@ -1,7 +1,7 @@
 {
   "about": "Links between companies, sessions, events, people seats and our products. Kept by the cartographer.",
   "read_on": "2026-11-01",
-  "method": "Built by cartographer@web-summit on 1 November 2026 from the committed data/companies.json (HEAD, 59 companies) and data/events.json. Company-to-session and company-to-side-event links only where a session speaker's organisation is the company, or the session or event names it as host; source is the session or event URL. Company-to-product links, proposals, clusters and first meetings are our judgement and are proposals until each company's owner decides. Proposals echo the researcher's decision and priority from data/companies.json.",
+  "method": "Built by cartographer@web-summit on 1 November 2026 (revised in the wake of 04:28Z) from the committed data/companies.json (HEAD, 88 companies) and data/events.json (HEAD). Company-to-session and company-to-side-event links only where a session speaker's organisation is the company, or the session or event names it as host; source is the session or event URL. Company-to-product links, proposals, clusters and first meetings are our judgement and are proposals until each company's owner decides. Proposals echo the researcher's decision and priority from data/companies.json.",
   "nodes": {
     "products": [
       {
@@ -167,6 +167,216 @@
       "kind": "speaks-at",
       "why": "speaks on identity, access and user trust",
       "source": "https://websummit.com/sessions/lis26/5a32be7c-7846-4880-be27-d0782c3b83dc/beyond-the-front-door-identity-access-and-user-trust/"
+    },
+    {
+      "from": "company:descope",
+      "to": "session:ws26-s36",
+      "kind": "hosts",
+      "why": "runs the Developer Lounge session on auth for AI agents and MCP servers",
+      "source": "https://websummit.com/sessions/lis26/2701a938-524f-4c24-b0da-cb8fdd4e030b/a-identity-auth-tips-to-secure-ai-agents-and-mcp-servers/"
+    },
+    {
+      "from": "company:persona",
+      "to": "session:ws26-s21",
+      "kind": "speaks-at",
+      "why": "CEO speaks on defending money against AI-powered fraud",
+      "source": "https://websummit.com/sessions/lis26/fee750f6-f935-464b-a11d-aebd458d9805/in-bots-we-trust-defending-money-against-ai-powered-fraud/"
+    },
+    {
+      "from": "company:persona",
+      "to": "session:ws26-s37",
+      "kind": "speaks-at",
+      "why": "CEO speaks on identity, access and user trust",
+      "source": "https://websummit.com/sessions/lis26/5a32be7c-7846-4880-be27-d0782c3b83dc/beyond-the-front-door-identity-access-and-user-trust/"
+    },
+    {
+      "from": "company:airia",
+      "to": "session:ws26-s38",
+      "kind": "speaks-at",
+      "why": "CEO speaks on AI sprawl, governance and security",
+      "source": "https://websummit.com/sessions/lis26/0753d94e-3227-408e-b04d-a095ee327061/ai-sprawl-is-exploding-get-ahead-of-governance-and-security-challenges-before-it-s-boo-late/"
+    },
+    {
+      "from": "company:aisle",
+      "to": "session:ws26-s35",
+      "kind": "speaks-at",
+      "why": "founder speaks on securing the software foundation with AI",
+      "source": "https://websummit.com/sessions/lis26/7e66baa2-493f-4228-90d9-42861cd46717/securing-the-software-foundation-of-civilisation-with-ai/"
+    },
+    {
+      "from": "company:emergence-ai",
+      "to": "session:ws26-s26",
+      "kind": "speaks-at",
+      "why": "co-founder speaks on when AI agents go rogue",
+      "source": "https://websummit.com/sessions/lis26/afe1fd71-2a98-41e4-8707-9101353797b3/when-ai-agents-go-rogue/"
+    },
+    {
+      "from": "company:trent-ai",
+      "to": "session:ws26-s22",
+      "kind": "speaks-at",
+      "why": "co-founder speaks on viable systems, judgement and AI safety",
+      "source": "https://websummit.com/sessions/lis26/3c980247-e062-492c-823a-11d388db1439/viable-systems-judgement-and-ai-safety/"
+    },
+    {
+      "from": "company:launchdarkly",
+      "to": "session:ws26-s34",
+      "kind": "speaks-at",
+      "why": "CEO speaks on who holds the kill switch",
+      "source": "https://websummit.com/sessions/lis26/53d083ac-79f1-48e0-8862-e236167233d8/who-holds-the-kill-switch/"
+    },
+    {
+      "from": "company:jetbrains",
+      "to": "session:ws26-s28",
+      "kind": "speaks-at",
+      "why": "CEO speaks on taming the agent swarm",
+      "source": "https://websummit.com/sessions/lis26/9fd40607-9fe9-4805-9831-dfffb69c5e35/taming-the-agent-swarm/"
+    },
+    {
+      "from": "company:sumsub",
+      "to": "session:ws26-s31",
+      "kind": "speaks-at",
+      "why": "co-founders speak on an AI identity crisis",
+      "source": "https://websummit.com/sessions/lis26/e76fb932-a260-464d-b56a-cf6af8c4b271/an-ai-identity-crisis/"
+    },
+    {
+      "from": "company:feedzai",
+      "to": "session:ws26-s32",
+      "kind": "speaks-at",
+      "why": "CTO speaks on who let the agent in",
+      "source": "https://websummit.com/sessions/lis26/1de6a591-ec17-4399-8f28-13f4bff1cae1/who-let-the-agent-in/"
+    },
+    {
+      "from": "company:proofpoint",
+      "to": "session:ws26-s27",
+      "kind": "speaks-at",
+      "why": "CEO speaks on defence at machine speed",
+      "source": "https://websummit.com/sessions/lis26/9374ad36-05ca-4ed0-8f48-b86c09fca8ff/outsmarting-ai-defence-at-machine-speed/"
+    },
+    {
+      "from": "company:linux-foundation-aaif",
+      "to": "session:ws26-s16",
+      "kind": "speaks-at",
+      "why": "Agentic AI Foundation director speaks on why agents stall at the production line",
+      "source": "https://websummit.com/sessions/lis26/1520fda2-92bb-4e9c-8843-1582aa04c031/why-ai-agents-stall-at-the-production-line/"
+    },
+    {
+      "from": "company:roost",
+      "to": "session:ws26-s30",
+      "kind": "speaks-at",
+      "why": "COO speaks on open-source defences",
+      "source": "https://websummit.com/sessions/lis26/913b8fc9-7e6c-4a2f-96a4-df52b6bd2942/the-attackers-are-open-source-the-defences-aren-t/"
+    },
+    {
+      "from": "company:ncsc-uk",
+      "to": "session:ws26-s33",
+      "kind": "speaks-at",
+      "why": "CTO speaks on public-private security, with Cisco",
+      "source": "https://websummit.com/sessions/lis26/060f80ea-044f-46f2-a67d-e6c9dc67b106/it-takes-two-to-trust-operationalizing-public-private-security/"
+    },
+    {
+      "from": "company:testmu-ai",
+      "to": "session:ws26-s20",
+      "kind": "speaks-at",
+      "why": "CEO speaks on when AI verifies AI",
+      "source": "https://websummit.com/sessions/lis26/159fe8f9-7900-4f36-93e1-8b794cd11949/when-ai-verifies-ai/"
+    },
+    {
+      "from": "company:sageox",
+      "to": "session:ws26-s23",
+      "kind": "speaks-at",
+      "why": "co-founder speaks on context for agents",
+      "source": "https://websummit.com/sessions/lis26/e2d68390-d300-42d0-ac9a-bb730e4f5988/agents-don-t-need-prompts-they-need-context/"
+    },
+    {
+      "from": "company:neo4j",
+      "to": "session:ws26-s15",
+      "kind": "speaks-at",
+      "why": "CTO speaks on why agents do not understand your business",
+      "source": "https://websummit.com/sessions/lis26/52d3afb3-f921-4a73-9284-4ee6593e11d9/why-your-ai-agents-don-t-understand-your-business-and-how-to-fix-it/"
+    },
+    {
+      "from": "company:directus",
+      "to": "session:ws26-s18",
+      "kind": "speaks-at",
+      "why": "co-founder speaks on what to feed agents",
+      "source": "https://websummit.com/sessions/lis26/858c105c-7c26-4196-bbc1-5a6ef6a35f55/don-t-feed-shit-to-agents/"
+    },
+    {
+      "from": "company:rws",
+      "to": "session:ws26-s04",
+      "kind": "speaks-at",
+      "why": "CEO speaks on a passport for AI agents",
+      "source": "https://websummit.com/sessions/lis26/9c3c972f-ab62-4fe3-ab66-9e98d3017168/your-ai-agent-just-got-a-passport/"
+    },
+    {
+      "from": "company:lawvu",
+      "to": "session:ws26-s08",
+      "kind": "speaks-at",
+      "why": "CEO speaks on who takes the fall for autonomous AI",
+      "source": "https://websummit.com/sessions/lis26/0d8d5be9-0778-4aa5-833b-e112a669ecfa/who-takes-the-fall-for-autonomous-ai/"
+    },
+    {
+      "from": "company:factorial",
+      "to": "session:ws26-s09",
+      "kind": "speaks-at",
+      "why": "CEO speaks on employees' own AI agents",
+      "source": "https://websummit.com/sessions/lis26/106fd2e8-f41f-4e52-85d7-ed6d0e5ecd9f/double-agents-are-your-employees-ai-agents-working-for-or-against-your-business/"
+    },
+    {
+      "from": "company:trustscale",
+      "to": "session:ws26-s11",
+      "kind": "speaks-at",
+      "why": "CEO on the panel whose AI is it anyway",
+      "source": "https://websummit.com/sessions/lis26/4a442f4c-c3da-4c62-89ad-b65cc22f988b/whose-ai-is-it-anyway/"
+    },
+    {
+      "from": "company:qualcomm",
+      "to": "session:ws26-s14",
+      "kind": "speaks-at",
+      "why": "speaks on the AI agent economy",
+      "source": "https://websummit.com/sessions/lis26/7bd19b8b-b399-42d5-b94f-df528a27696a/the-ai-agent-economy/"
+    },
+    {
+      "from": "company:aicep",
+      "to": "session:ws26-s24",
+      "kind": "hosts",
+      "why": "hosts the masterclass connecting Portuguese startups to global markets",
+      "source": "https://websummit.com/sessions/lis26/2f8c4adf-ebea-46d7-b876-1b9bd5a6c1dc/aicep-connecting-portuguese-startups-to-global-markets-hosted-by-aicep/"
+    },
+    {
+      "from": "company:ledger",
+      "to": "session:ws26-s21",
+      "kind": "speaks-at",
+      "why": "speaks on defending money against AI-powered fraud",
+      "source": "https://websummit.com/sessions/lis26/fee750f6-f935-464b-a11d-aebd458d9805/in-bots-we-trust-defending-money-against-ai-powered-fraud/"
+    },
+    {
+      "from": "company:eversec",
+      "to": "session:ws26-s10",
+      "kind": "speaks-at",
+      "why": "CEO speaks on security for the human-machine era",
+      "source": "https://websummit.com/sessions/lis26/2685d2a1-c9d6-4a49-bd39-342c03e627f4/building-security-for-the-human-machine-era/"
+    },
+    {
+      "from": "company:data-protection-commission",
+      "to": "session:ws26-s03",
+      "kind": "speaks-at",
+      "why": "Commissioner speaks on regulating big tech",
+      "source": "https://websummit.com/sessions/lis26/ad121169-9e44-4f1a-b5a8-7d804851f472/regulating-big-tech/"
+    },
+    {
+      "from": "company:c4ail",
+      "to": "session:ws26-s19",
+      "kind": "speaks-at",
+      "why": "co-founder on the panel beyond the AI agent hype",
+      "source": "https://websummit.com/sessions/lis26/9351ba39-a48a-45c4-b147-8688ea48ba4a/beyond-the-ai-agent-hype/"
+    },
+    {
+      "from": "company:crystal-intelligence",
+      "to": "session:ws26-s31",
+      "kind": "speaks-at",
+      "why": "COO speaks on an AI identity crisis",
+      "source": "https://websummit.com/sessions/lis26/e76fb932-a260-464d-b56a-cf6af8c4b271/an-ai-identity-crisis/"
     },
     {
       "from": "company:ibm",
@@ -706,6 +916,349 @@
       "kind": "relevant-to",
       "why": "verified identity for people, counterpart of signed identity for agents (our judgement)",
       "source": "our judgement"
+    },
+    {
+      "from": "company:descope",
+      "to": "product:abp",
+      "kind": "could-partner",
+      "why": "scoped agent and MCP authorisation is the identity half of what a behaviour policy governs (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:descope",
+      "to": "product:sgit",
+      "kind": "relevant-to",
+      "why": "agent identities and tokens next to signed agent keys and vaults (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:persona",
+      "to": "product:sgit",
+      "kind": "relevant-to",
+      "why": "verifying the person behind an agent, counterpart of signed agent identity (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:persona",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "two sessions on identity and AI fraud: a story (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:airia",
+      "to": "product:abp",
+      "kind": "competes-with",
+      "why": "runtime policy and audit evidence for every agent, the same ground as ABP (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:airia",
+      "to": "product:sharness",
+      "kind": "could-partner",
+      "why": "red teaming and runtime policy that SHarness could exercise (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:aisle",
+      "to": "product:sharness",
+      "kind": "relevant-to",
+      "why": "autonomous agents that fix vulnerabilities need a harness (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:aisle",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "an interview on agents securing open-source code (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:emergence-ai",
+      "to": "product:abp",
+      "kind": "could-partner",
+      "why": "verified, governed enterprise agents need written behaviour policies (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:emergence-ai",
+      "to": "product:sharness",
+      "kind": "could-partner",
+      "why": "agents that plan and act across systems are what a harness checks (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:trent-ai",
+      "to": "product:sharness",
+      "kind": "competes-with",
+      "why": "an AI security engineer that verifies every fix, close to harness checks (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:trent-ai",
+      "to": "product:abp",
+      "kind": "relevant-to",
+      "why": "agent security findings feed what a policy should forbid (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:launchdarkly",
+      "to": "product:abp",
+      "kind": "relevant-to",
+      "why": "a kill switch is one enforcement point a behaviour policy can name (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:launchdarkly",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "who holds the kill switch: a story (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:jetbrains",
+      "to": "product:sharness",
+      "kind": "relevant-to",
+      "why": "many coding agents at once need a harness each (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:jetbrains",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "taming the agent swarm: a story (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:sumsub",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "identity when AI can fake people: describe (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:feedzai",
+      "to": "product:abp",
+      "kind": "could-partner",
+      "why": "agents letting themselves into SaaS and payments need a mandate; a Portuguese anchor (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:feedzai",
+      "to": "product:cyber-boardroom",
+      "kind": "relevant-to",
+      "why": "fraud and financial crime risk boards ask about (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:feedzai",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "Portugal's best-known security scale-up: a story (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:proofpoint",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "agent-centric security from a large vendor: describe (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:linux-foundation-aaif",
+      "to": "product:abp",
+      "kind": "could-partner",
+      "why": "open standards for agents are where a behaviour-policy format could become a spec (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:linux-foundation-aaif",
+      "to": "product:sgit",
+      "kind": "relevant-to",
+      "why": "open-source agent infrastructure next to open, git-based vaults (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:roost",
+      "to": "product:sharness",
+      "kind": "could-partner",
+      "why": "open-source safety tooling next to our open harness (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:roost",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "open defences against open-source attackers: a story (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:ncsc-uk",
+      "to": "product:cyber-boardroom",
+      "kind": "relevant-to",
+      "why": "NCSC guidance is a reference for board-level cyber risk (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:ncsc-uk",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "public-private security: a story (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:testmu-ai",
+      "to": "product:sharness",
+      "kind": "competes-with",
+      "why": "agent assurance testing, close to harness checks (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:testmu-ai",
+      "to": "product:abp",
+      "kind": "relevant-to",
+      "why": "assurance evidence an insurer of agent behaviour would want (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:sageox",
+      "to": "product:sgit",
+      "kind": "competes-with",
+      "why": "shared context for humans and agents, compared with git-held context in vaults (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:neo4j",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "knowledge graphs as agent context: describe (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:directus",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "MCP access to content backends, relevant to agent-run websites (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:rws",
+      "to": "product:sgit",
+      "kind": "relevant-to",
+      "why": "a passport for agents is agent identity, next to signed agent keys (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:rws",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "agent identity talk: a story (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:lawvu",
+      "to": "product:abp",
+      "kind": "could-buy",
+      "why": "in-house legal teams answer for agent actions and write the policies (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:lawvu",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "who takes the fall for autonomous AI: a story (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:factorial",
+      "to": "product:abp",
+      "kind": "could-buy",
+      "why": "employees' own agents in HR and finance need a behaviour policy (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:trustscale",
+      "to": "product:abp",
+      "kind": "could-partner",
+      "why": "measuring AI against your own criteria is close to measuring an agent against its policy (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:trustscale",
+      "to": "product:sharness",
+      "kind": "relevant-to",
+      "why": "AI evaluation and assurance next to harness checks (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:qualcomm",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "on-device agents: describe only (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:aicep",
+      "to": "product:cyber-boardroom",
+      "kind": "could-partner",
+      "why": "the public route for setting up in Portugal and the Algarve, and for going abroad (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:aicep",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "Portuguese startups going global: a story (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:ledger",
+      "to": "product:sgit",
+      "kind": "relevant-to",
+      "why": "hardware keys as a model for agent signing keys (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:ledger",
+      "to": "product:abp",
+      "kind": "relevant-to",
+      "why": "keeping humans in control of agents that move money (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:eversec",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "security for the human-machine era: describe (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:data-protection-commission",
+      "to": "product:sgit",
+      "kind": "relevant-to",
+      "why": "GDPR enforcement is the backdrop for encrypted vaults holding personal data (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:data-protection-commission",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "regulating big tech: describe (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:c4ail",
+      "to": "product:cyber-boardroom",
+      "kind": "relevant-to",
+      "why": "AI leadership education for the executives The Cyber Boardroom serves (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:crystal-intelligence",
+      "to": "product:abp",
+      "kind": "relevant-to",
+      "why": "compliance evidence for agentic payments, adjacent to policies for agents that move money (our judgement)",
+      "source": "our judgement"
     }
   ],
   "proposals": [
@@ -1121,6 +1674,209 @@
       "priority": 3,
       "why": "partner/story: verified identity for people is the counterpart of signed identity for agents (our email-agent keys)",
       "status": "proposed"
+    },
+    {
+      "company": "descope",
+      "decision": "meet",
+      "priority": 1,
+      "why": "partner/story: agent and MCP authorisation (scoped, short-lived credentials, no shared keys) is the identity half of what RiskMandate Agent Behaviour Policies and SHarness govern; a natural integration and interview",
+      "status": "proposed"
+    },
+    {
+      "company": "persona",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "story: two 2026 sessions on identity and AI-powered fraud ('Beyond the front door' and 'In bots we trust'); verifying who is behind an agent is the root of agent identity",
+      "status": "proposed"
+    },
+    {
+      "company": "airia",
+      "decision": "meet",
+      "priority": 1,
+      "why": "competitor/partner: runtime policy and audit evidence for every AI agent is the same ground as RiskMandate Agent Behaviour Policies; meet to compare and to find where an insurable, enforced policy adds to a governance layer",
+      "status": "proposed"
+    },
+    {
+      "company": "aisle",
+      "decision": "interview",
+      "priority": 2,
+      "why": "story: autonomous agents fixing security bugs in critical software are exactly the agents whose permitted actions need a policy and a harness (SHarness); good AI Summit interview",
+      "status": "proposed"
+    },
+    {
+      "company": "emergence-ai",
+      "decision": "meet",
+      "priority": 1,
+      "why": "story/partner: its 2026 session is 'When AI agents go rogue'; verified and governed agents is the problem RiskMandate policies and SHarness answer",
+      "status": "proposed"
+    },
+    {
+      "company": "trent-ai",
+      "decision": "meet",
+      "priority": 2,
+      "why": "partner/story: agent security tooling with a safety and judgement angle ('Viable systems, judgement, and AI safety'); overlaps with SHarness",
+      "status": "proposed"
+    },
+    {
+      "company": "launchdarkly",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "story: 'Who holds the kill switch?' is the runtime-control side of agent behaviour policies; a kill switch is one enforcement point a policy can name",
+      "status": "proposed"
+    },
+    {
+      "company": "jetbrains",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "story: 'Taming the agent swarm' on many coding agents at once; where a harness and policy per agent (SHarness, RiskMandate) matter to developers",
+      "status": "proposed"
+    },
+    {
+      "company": "sumsub",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: 'An AI identity crisis' on identity when AI can fake people; context for agent identity and who an agent acts for",
+      "status": "proposed"
+    },
+    {
+      "company": "feedzai",
+      "decision": "meet",
+      "priority": 1,
+      "why": "story/partner: Portugal's best-known security scale-up, speaking on 'Who let the agent in?' (agents in SaaS and fraud); a local anchor for the agent-authorisation story",
+      "status": "proposed"
+    },
+    {
+      "company": "proofpoint",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: a large security vendor framing 'agent-centric security' (Cybersecurity Summit, 'Outsmarting AI'); a reference point for the market",
+      "status": "proposed"
+    },
+    {
+      "company": "linux-foundation-aaif",
+      "decision": "meet",
+      "priority": 1,
+      "why": "partner/story: open standards for agents are where agent identity and behaviour policies should land; ask how a policy format could become an open spec",
+      "status": "proposed"
+    },
+    {
+      "company": "roost",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "story: 'The attackers are open source. The defences aren't.' matches our open, git-based approach; possible partner for open safety tooling",
+      "status": "proposed"
+    },
+    {
+      "company": "ncsc-uk",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "story: public-private security ('It takes two to trust', with Cisco); NCSC guidance is a reference for The Cyber Boardroom",
+      "status": "proposed"
+    },
+    {
+      "company": "testmu-ai",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: 'When AI verifies AI'; agent assurance testing is evidence an insurer of agent behaviour (RiskMandate) would want",
+      "status": "proposed"
+    },
+    {
+      "company": "sageox",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: shared context for agents ('Agents don't need prompts, they need context'); compares with git-held context in SGit vaults",
+      "status": "proposed"
+    },
+    {
+      "company": "neo4j",
+      "decision": "describe",
+      "priority": 3,
+      "why": "describe: knowledge graphs as agent context (Developer Summit); background only",
+      "status": "proposed"
+    },
+    {
+      "company": "directus",
+      "decision": "describe",
+      "priority": 3,
+      "why": "describe: MCP access to content backends ('Don't feed shit to agents'); relevant to agent-run websites",
+      "status": "proposed"
+    },
+    {
+      "company": "rws",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "story: the session title is agent identity ('a passport' for agents); worth hearing for the agent-identity theme",
+      "status": "proposed"
+    },
+    {
+      "company": "lawvu",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "story: 'Who takes the fall for autonomous AI?' is liability for agent actions, the question RiskMandate's insurable policies answer",
+      "status": "proposed"
+    },
+    {
+      "company": "factorial",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: 'Double agents' on employees' own AI agents in the business; shadow agents need a behaviour policy",
+      "status": "proposed"
+    },
+    {
+      "company": "trustscale",
+      "decision": "meet",
+      "priority": 2,
+      "why": "partner/story: AI assurance against your own criteria is close to measuring an agent against its behaviour policy (RiskMandate); Policy Summit panel",
+      "status": "proposed"
+    },
+    {
+      "company": "qualcomm",
+      "decision": "describe",
+      "priority": 3,
+      "why": "describe: 'The AI agent economy' (AI Summit); on-device agents are background for where agents run",
+      "status": "proposed"
+    },
+    {
+      "company": "aicep",
+      "decision": "meet",
+      "priority": 2,
+      "why": "partner: the public route for Portuguese startups going international, and for a foreign company setting up in Portugal or the Algarve",
+      "status": "proposed"
+    },
+    {
+      "company": "ledger",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "story/partner: keeping humans in control of agents that move money; hardware keys are a model for agent signing keys",
+      "status": "proposed"
+    },
+    {
+      "company": "eversec",
+      "decision": "describe",
+      "priority": 3,
+      "why": "describe: 'Building security for the human-machine era' (Policy Summit); part of the Chinese delegation's security story",
+      "status": "proposed"
+    },
+    {
+      "company": "data-protection-commission",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: 'Regulating big tech' on Centre Stage; GDPR enforcement is the backdrop for encrypted vaults and agents handling personal data",
+      "status": "proposed"
+    },
+    {
+      "company": "c4ail",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: AI leadership for executives fits The Cyber Boardroom's audience; panel 'Beyond the AI agent hype'",
+      "status": "proposed"
+    },
+    {
+      "company": "crystal-intelligence",
+      "decision": "describe",
+      "priority": 3,
+      "why": "describe: compliance evidence for agentic payments; adjacent to policies for agents that move money",
+      "status": "proposed"
     }
   ],
   "clusters": [
@@ -1134,7 +1890,13 @@
         "mobbeel",
         "primitive",
         "spacecomputer",
-        "cloudflare"
+        "cloudflare",
+        "descope",
+        "persona",
+        "sumsub",
+        "rws",
+        "ledger",
+        "feedzai"
       ],
       "why": "Who an agent is and what it can reach: the ground next to SGit keys and vaults."
     },
@@ -1151,7 +1913,15 @@
         "manageengine",
         "firefox-enterprise-mozilla",
         "elastic",
-        "datadog"
+        "datadog",
+        "airia",
+        "aisle",
+        "trent-ai",
+        "launchdarkly",
+        "proofpoint",
+        "roost",
+        "eversec",
+        "testmu-ai"
       ],
       "why": "Controlling and watching what agents do: where Agent Behaviour Policies and SHarness compete and partner."
     },
@@ -1169,7 +1939,13 @@
         "strawberry",
         "you-com",
         "atlassian",
-        "altegio"
+        "altegio",
+        "emergence-ai",
+        "jetbrains",
+        "sageox",
+        "neo4j",
+        "directus",
+        "linux-foundation-aaif"
       ],
       "why": "The builders and their agents: the ones whose agents need a mandate and a harness."
     },
@@ -1182,7 +1958,8 @@
         "chatplace",
         "legalfly",
         "sensay",
-        "delta-labs"
+        "delta-labs",
+        "factorial"
       ],
       "why": "They sell trust and control in agents to their customers: likely buyers of written policies."
     },
@@ -1197,7 +1974,14 @@
         "0xbow",
         "arima",
         "european-commission",
-        "ibm"
+        "ibm",
+        "airia",
+        "lawvu",
+        "trustscale",
+        "ncsc-uk",
+        "data-protection-commission",
+        "c4ail",
+        "crystal-intelligence"
       ],
       "why": "The people who answer for agents: auditors, regulators and compliance tools."
     },
@@ -1213,7 +1997,9 @@
         "sheerme",
         "vtex",
         "kpmg-portugal",
-        "shakers"
+        "shakers",
+        "aicep",
+        "feedzai"
       ],
       "why": "Our Algarve and Portugal community work, and the Portuguese-language site."
     },
@@ -1227,7 +2013,8 @@
         "google-cloud",
         "runpod",
         "twilio",
-        "orb"
+        "orb",
+        "qualcomm"
       ],
       "why": "Where agents run and how they are paid for; the EU-hosted options matter to us."
     },
@@ -1246,73 +2033,73 @@
     {
       "company": "delinea",
       "why": "agent access in production is the case ABP writes policies for; two sessions",
-      "session_or_event": "session:ws26-s06 (10 Nov, Masterclass 3, they host) or session:ws26-s37 (12 Nov, Stage 8)",
+      "session_or_event": "session:ws26-s06 (10 Nov 12:30, Masterclass 3, they host) or session:ws26-s37 (12 Nov 15:15, Stage 8)",
+      "status": "proposed"
+    },
+    {
+      "company": "descope",
+      "why": "agent and MCP authorisation is the identity half of a behaviour policy; a hands-on session",
+      "session_or_event": "session:ws26-s36 (12 Nov 14:00, Developer Lounge, they run it)",
+      "status": "proposed"
+    },
+    {
+      "company": "airia",
+      "why": "runtime policy and audit evidence for agents: the nearest competitor or partner to ABP",
+      "session_or_event": "session:ws26-s38 (12 Nov 15:25, Stage 9)",
       "status": "proposed"
     },
     {
       "company": "primitive",
       "why": "email built for agents meets our email agent and signed vaults",
-      "session_or_event": "session:ws26-s29 (12 Nov, Stage 9)",
+      "session_or_event": "session:ws26-s29 (12 Nov 10:50, Stage 9)",
       "status": "proposed"
     },
     {
-      "company": "cloudflare",
-      "why": "what an agent can reach on the web; a Centre Stage talk",
-      "session_or_event": "session:ws26-s01 (10 Nov, Centre Stage)",
+      "company": "emergence-ai",
+      "why": "verified, governed enterprise agents; the talk is when agents go rogue",
+      "session_or_event": "session:ws26-s26 (12 Nov 10:15, Stage 13)",
       "status": "proposed"
     },
     {
-      "company": "cisco-outshift",
-      "why": "open-source agentic AI platform; a route to agent builders",
-      "session_or_event": "session:ws26-s33 (12 Nov, Stage 8), or the partner stand",
+      "company": "feedzai",
+      "why": "Portugal's best-known security scale-up on agents letting themselves in; a local anchor",
+      "session_or_event": "session:ws26-s32 (12 Nov 12:00, Stage 7; same slot as the cybersecurity meetup ws26-s39)",
       "status": "proposed"
     },
     {
-      "company": "elastic",
-      "why": "AI security operations and a host of a side event: two easy places to meet",
-      "session_or_event": "session:ws26-s05 (10 Nov, Masterclass 4) or side_event:se14 (10 Nov evening)",
-      "status": "proposed"
-    },
-    {
-      "company": "startup-portugal",
-      "why": "the door to Portuguese startups and our Algarve work",
-      "session_or_event": "session:ws26-s07 (10 Nov, Masterclass 1, they host) or session:ws26-s40 (founders in Portugal meetup, 12 Nov)",
+      "company": "linux-foundation-aaif",
+      "why": "open standards for agents: where a behaviour-policy format could become a spec",
+      "session_or_event": "session:ws26-s16 (11 Nov 11:10, Stage 13)",
       "status": "proposed"
     },
     {
       "company": "hexamind",
       "why": "Hexgate is the nearest open-source neighbour of ABP: compete or partner",
-      "session_or_event": "session:ws26-s39 (people in cybersecurity meetup, 12 Nov); stand not yet read",
-      "status": "proposed"
-    },
-    {
-      "company": "polygraf-ai",
-      "why": "an AI behavioral control plane: compete or partner on policy enforcement",
-      "session_or_event": "session:ws26-s39 (people in cybersecurity meetup, 12 Nov); startup stand day not yet read",
+      "session_or_event": "session:ws26-s39 (people in cybersecurity meetup, 12 Nov 12:00); stand not yet read",
       "status": "proposed"
     },
     {
       "company": "1password",
       "why": "agent identity and secrets next to our vaults",
-      "session_or_event": "partner stand (location not yet read); session:ws26-s39 (people in cybersecurity meetup, 12 Nov)",
+      "session_or_event": "partner stand (location not yet read); session:ws26-s39 (people in cybersecurity meetup, 12 Nov 12:00)",
       "status": "proposed"
     },
     {
-      "company": "mastra",
-      "why": "the leading TypeScript agent framework: its agents need policies and a harness",
-      "session_or_event": "startup stand (day not yet read); session:ws26-s12 (Developer Lounge, 10 Nov) is the nearest developer session",
+      "company": "cisco-outshift",
+      "why": "open-source agentic AI platform; a route to agent builders",
+      "session_or_event": "session:ws26-s33 (12 Nov 12:10, Stage 8), or the partner stand",
       "status": "proposed"
     },
     {
-      "company": "kpmg-portugal",
-      "why": "auditors will be asked to assure agent behaviour; an event partner in Lisbon",
-      "session_or_event": "partner stand (location not yet read); session:ws26-s40 (founders in Portugal meetup, 12 Nov)",
+      "company": "elastic",
+      "why": "AI security operations and a host of a side event: two easy places to meet",
+      "session_or_event": "session:ws26-s05 (10 Nov 11:30, Masterclass 4) or side_event:se14 (10 Nov 19:00)",
       "status": "proposed"
     },
     {
-      "company": "crowdstrike",
-      "why": "the AI-native security reference point; decision is write-about, a talk to cover",
-      "session_or_event": "session:ws26-s25 (12 Nov, Stage 8)",
+      "company": "startup-portugal",
+      "why": "the door to Portuguese startups and our Algarve work",
+      "session_or_event": "session:ws26-s07 (10 Nov 12:00, Masterclass 1, they host) or session:ws26-s40 (founders in Portugal meetup, 12 Nov 13:30)",
       "status": "proposed"
     }
   ]

@@ -1,14 +1,15 @@
 {
   "agent": "cartographer",
-  "state": "active: ran as a sub-agent in the wake of 2026-11-01T02:28Z",
-  "last_wake": "2026-11-01T02:28:14Z",
+  "state": "active: ran as a sub-agent in the wake of 2026-11-01T04:28Z",
+  "last_wake": "2026-11-01T04:28:14Z",
   "done": [
-    "data/graph.json: 5 products, 40 sessions, 18 side events, 86 links, 59 proposals, 8 clusters, 12 first meetings"
+    "data/graph.json: 88 companies (29 added), 5 products, 40 sessions, 18 side events, 165 links, 88 proposals, 8 clusters, 12 first meetings (5 revised)",
+    "build_graph.mjs reads data/events.json at HEAD and checks first meetings"
   ],
   "next": [
-    "link companies added after HEAD",
-    "ask researcher to add session-speaker organisations",
-    "read stand locations for first meetings"
+    "link the sessions the curator is adding once they are at HEAD",
+    "read stand locations for first meetings",
+    "record owners' decisions once owners are named"
   ],
   "asks": []
 }

@@ -2,7 +2,7 @@
 
 Cybersecurity company building confidential computing, key management, attestation and zero-trust services for cloud and AI workloads, extended to satellites and space systems.
 
-Site version: v0.1.15
+Site version: v0.1.16
 
 - Website: https://spacecomputer.io/
 - Category: security

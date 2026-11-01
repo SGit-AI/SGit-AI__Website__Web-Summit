@@ -2,7 +2,16 @@
 
 Every wake of the team, opened and closed by the conductor's banners.
 
-Site version: v0.1.15
+Site version: v0.1.16
+
+## 2026-11-01T04:28:14Z: Link the new companies, widen the programme, and draft the first asset that brings traffic
+
+Roles run: security, cartographer, curator, writer, closing conductor. Outcome: ok. Release: v0.1.16.
+
+- graph: 88 companies, 165 links; first meetings revised with a time and stage each
+- summit: 80 sessions, 29 side events, robots.txt followed
+- draft article: The agent security map of Web Summit 2026 (team/writer/drafts/)
+- security changed the plan once: the conductor may not widen its own write paths
 
 ## 2026-11-01T02:28:14Z: Deepen the map and link it to the programme; prepare what Monday's print deadline needs
 

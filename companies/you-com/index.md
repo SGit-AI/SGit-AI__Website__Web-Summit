@@ -2,7 +2,7 @@
 
 You.com provides search and inference infrastructure for AI ("the core AI infrastructure you need to maximize accuracy while reducing latency and costs").
 
-Site version: v0.1.15
+Site version: v0.1.16
 
 - Website: https://you.com/
 - Category: ai-agents

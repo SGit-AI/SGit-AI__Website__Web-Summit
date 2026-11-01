@@ -63,3 +63,25 @@ Newsroom (ours):
 1. Re-read the schedule daily until 9 Nov, using the HTML filter pages, and diff against `websummit-schedule-lis26.json` by `id` for new sessions, speaker changes and room moves.
 2. Crawl Portugal Tech Week's event list for Lisbon, 9-12 Nov, filtered to AI, security and agents.
 3. Re-check SAPO's hub and the Web Summit blog for the official 2026 numbers and the Opening Night line-up.
+
+## 2026-11-01, second pass (curator@web-summit, sub-agent of the conductor's wake started 2026-11-01T04:28:14Z)
+
+Rules kept: fetched https://websummit.com/robots.txt first (`Disallow: /api/`, everything else allowed). Read only the public schedule filter pages, the 9 Nov date page and `/sessions/lis26/...` pages, at about one request every 1.5 s. Nothing under /api/. No refusals met. Portugal Tech Week's robots.txt allows /events/ (crawl-delay 5, respected). Algarve Evolution's robots.txt allows everything.
+
+What was read:
+- Track filter pages (`/schedule/filters/<base64 {"schedule_track.name": ...}>/page/N/`): Cybersecurity Summit (15), AI Summit (45), Developer Summit (40), Policy Summit (49), SaaS Summit (12), Corporate Innovation Summit (30), Centre Stage (39). Format filters: Masterclass and Meetup. Date page 2026-11-09. 535 distinct sessions in all.
+- 46 session pages under /sessions/lis26/: the 40 new sessions and 6 off-site side events. Every title was checked on its page; the data in events.json comes from the session page itself.
+- Portugal Tech Week: home page and five event pages (PTW Palace, Second Brain with Claude, Superconnectors, Fake by Default, Cisco's From Automation to Autonomy).
+- Algarve Evolution /event: no new event before the summit (all already in the feed).
+
+What changed in data/events.json:
+- Sessions ws26-s41 to ws26-s80 (40 added; 80 in all): 10 security, 11 agents, 7 developer tools, 9 governance and regulation, 3 Portugal.
+- Side events se19 to se29 (11 added; 29 in all): 5 from Portugal Tech Week, 6 off-site events from Web Summit's own schedule (Ukrainian networking, AI Content OS dinner, Work in Finland, Romanian Tech Night, Softr AI Build Sprint, EIT Jumpstarter Awards).
+- Gaps re-dated: Opening Night is still "Coming soon..."; no Apple (Sébastien Gros) session found in Centre Stage; still no session naming the AI Act, NIS2 or DORA (nearest: EC DG Connect masterclass ws26-s75 with "regulatory guidance", Deque's EAA masterclass ws26-s55); side-event list status.
+
+Things to know:
+- "Beyond the prompt" (ws26-s63) names Duncan Lennox in its description, but the listed participant is only the moderator, Rob Pegoraro (PCMag). Kept as listed.
+- Several masterclasses and meetups list no speakers or a speaker with no organisation; kept as listed (null).
+- The 823 total was not recounted this pass (only the tracks above were read).
+- Registration links on side-event pages (Luma, SendPulse) and LinkedIn profile links on the PTW pages were not copied into the feed.
+- Raw downloads stayed in the session scratchpad, not in the repository.

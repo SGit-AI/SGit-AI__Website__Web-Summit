@@ -2,7 +2,7 @@
 
 The facts, the programme, the side events and the news, from public sources.
 
-Site version: v0.1.15
+Site version: v0.1.16
 
 ## The facts
 
@@ -73,6 +73,46 @@ Site version: v0.1.15
 - 2026-11-12 AI sprawl is exploding. Get ahead of governance and security challenges before it’s boo late (Kevin Kiley) https://websummit.com/sessions/lis26/0753d94e-3227-408e-b04d-a095ee327061/ai-sprawl-is-exploding-get-ahead-of-governance-and-security-challenges-before-it-s-boo-late/
 - 2026-11-12 🔐 People in cybersecurity meetup () https://websummit.com/sessions/lis26/16fe1819-c28f-47c8-9387-28560658a4c2/people-in-cybersecurity-meetup/
 - 2026-11-12 🧳 Founders building in Portugal meetup () https://websummit.com/sessions/lis26/ed1416dc-d0bd-4231-af12-dcd2c9e15c4e/founders-building-in-portugal-meetup/
+- 2026-11-12 The perimeter is dead. So what happens to trust? (Gerasim Hovhannisyan, Sonia Azzouzi Boudie, Niall Mackey) https://websummit.com/sessions/lis26/d0816a68-eabc-4539-89dc-483c4eed929a/the-perimeter-is-dead-so-what-happens-to-trust/
+- 2026-11-12 Securing the AI frontline (Paul Jenkinson, Giovanni Alberto Falcione, Sinéad O'Sullivan, Mehul Srivastava) https://websummit.com/sessions/lis26/e1587abd-ee14-4af3-8703-d02df1ba1f78/securing-the-ai-frontline/
+- 2026-11-12 Zombie data: How your data comes back to haunt you (Marijus Briedis) https://websummit.com/sessions/lis26/2fad9e2b-9933-4f05-a09e-d4dda60587cb/zombie-data-how-your-data-comes-back-to-haunt-you/
+- 2026-11-12 Is there a foreign operative on your payroll? (Ryan LaSalle) https://websummit.com/sessions/lis26/82e616b5-67bb-44f2-b4df-25642654fc0f/is-there-a-foreign-operative-on-your-payroll/
+- 2026-11-12 The biological bottleneck (Calum Chace, Nicholas Muy, John Koetsier) https://websummit.com/sessions/lis26/553f8328-1300-406a-887a-b139455238c7/the-biological-bottleneck/
+- 2026-11-12 The real threat isn’t a nation-state, it’s a teenager. (John Madelin, Conor Freeman) https://websummit.com/sessions/lis26/e70c32c5-0639-4bde-b105-f77b39b49419/the-real-threat-isn-t-a-nation-state-it-s-a-teenager/
+- 2026-11-12 Big Tech detox (Raphael Auphan, Jon von Tetzchner, Lisa Eadicicco) https://websummit.com/sessions/lis26/e8ad3cf3-06b8-451a-bc7f-0ba6786588dc/big-tech-detox/
+- 2026-11-12 Brazil's blueprint for cyber resilience (Wilton Itaiguara Gonçalves Mota) https://websummit.com/sessions/lis26/dea217b2-6cf6-4b44-b508-d04754c0b367/brazil-s-blueprint-for-cyber-resilience/
+- 2026-11-10 The attack has started, now what? See Log360 & Zia AI in action [Hosted by ManageEngine] (José Fonseca) https://websummit.com/sessions/lis26/2ac488bf-54c0-4eaa-bedc-5dd271625643/the-attack-has-started-now-what-see-log360-zia-ai-in-action-hosted-by-manageengine/
+- 2026-11-10 Building a secure device foundation for AI [Hosted by Lenovo] (Burke Stephenson, Bernard Wolff) https://websummit.com/sessions/lis26/1524845c-370e-4161-b2c3-b7a38c6aaf85/building-a-secure-device-foundation-for-ai-hosted-by-lenovo/
+- 2026-11-10 What does a self-driving company look like? (Michele Catasta) https://websummit.com/sessions/lis26/a54a6d5f-1f53-43fd-93c6-dd2c3d63a4fe/what-does-a-self-driving-company-look-like/
+- 2026-11-12 Pricing SaaS when users are agents (Edith Harbaugh, Joshua Wöhle, Jeremy Goldman) https://websummit.com/sessions/lis26/9e5469da-4430-430f-9ada-277e3d2dc715/pricing-saas-when-users-are-agents/
+- 2026-11-11 Make AI agents work beyond the demo [Hosted by Make] (Valery Mezencev) https://websummit.com/sessions/lis26/65eb8e8f-60b8-4772-ab2a-d1a11807aa33/make-ai-agents-work-beyond-the-demo-hosted-by-make/
+- 2026-11-10 How to break your AI phone agent before your customers [Hosted by Twilio] (Bianca St Louis) https://websummit.com/sessions/lis26/d1e1e64e-8909-44de-879b-c18b6e07ac86/how-to-break-your-ai-phone-agent-before-your-customers-hosted-by-twilio/
+- 2026-11-12 Can you trust your AI agent's accessibility? [Hosted by Deque] (Dylan Barrell) https://websummit.com/sessions/lis26/74aa4557-4a99-4624-b2e7-0e1ca1b388d4/can-you-trust-your-ai-agent-s-accessibility-hosted-by-deque/
+- 2026-11-12 Search built for AI agents (Will Bryk) https://websummit.com/sessions/lis26/a433a1bc-b53a-4689-a8f8-c7eb8088148c/search-built-for-ai-agents/
+- 2026-11-12 Beyond the model: Scaling AI agents for professional work (Jacob Lauritzen, Niall Firth) https://websummit.com/sessions/lis26/fad36198-b0af-4295-bec3-b7671b62e786/beyond-the-model-scaling-ai-agents-for-professional-work/
+- 2026-11-11 Coaching an AI agent like human talent (Nikola Mrkšić, Ania Lichtarowicz) https://websummit.com/sessions/lis26/8c1c7b41-7711-424d-9214-20d2d29d32f0/coaching-an-ai-agent-like-human-talent/
+- 2026-11-12 Be part of history: help build the first pages of the agentic web (Babak Hodjat) https://websummit.com/sessions/lis26/e6276948-d2f7-4565-95e4-9caccd1a5211/be-part-of-history-help-build-the-first-pages-of-the-agentic-web/
+- 2026-11-11 The autonomous enterprise: Networks, cloud and AI agents (Mauricio Sion, José Pedro Nascimento, Marta Dhanis) https://websummit.com/sessions/lis26/5847852b-93e5-4590-b1f8-eb657b7fae4c/the-autonomous-enterprise-networks-cloud-and-ai-agents/
+- 2026-11-12 When agents write the code, does a framework like Angular still matter? (Grzegorz Lipke) https://websummit.com/sessions/lis26/dab3a547-0122-4464-91de-a1262e50d894/when-agents-write-the-code-does-a-framework-like-angular-still-matter/
+- 2026-11-11 Give me a brake: Coding without crashing (Edith Harbaugh, Daniela Braga, Kit Eaton) https://websummit.com/sessions/lis26/c23c0b87-7b82-492f-a46b-af652fe6529e/give-me-a-brake-coding-without-crashing/
+- 2026-11-12 Beyond the prompt: Building resilient systems in the vibe coding era (Rob Pegoraro) https://websummit.com/sessions/lis26/613fe4dd-e6ea-4bf9-9289-d7385ab7aef7/beyond-the-prompt-building-resilient-systems-in-the-vibe-coding-era/
+- 2026-11-12 Rebuilding open source with AI: Lessons Learned (Søren Bramer Schmidt) https://websummit.com/sessions/lis26/b742e8f7-343c-4868-8eac-4b488f1351d9/rebuilding-open-source-with-ai-lessons-learned/
+- 2026-11-11 Monitoring in the age of GenAI: Beyond golden signals [Hosted by Datadog] (Clara Jacintho) https://websummit.com/sessions/lis26/3fec214a-c6f3-41bb-ace2-b45b50f6d964/monitoring-in-the-age-of-genai-beyond-golden-signals-hosted-by-datadog/
+- 2026-11-12 Democratising AI platform engineering with open-source [Hosted by Cisco Systems] (Alfonso (Poncho) Sandoval Rosas) https://websummit.com/sessions/lis26/5f4ac039-83e3-4b2b-9415-3efa64804ee1/democratising-ai-platform-engineering-with-open-source-hosted-by-cisco-systems/
+- 2026-11-12 Building AI products without building everything [Hosted by Open VSX] (Thomas Froment, Jamie Ayala) https://websummit.com/sessions/lis26/828790e8-5f4b-4869-bb79-e1114cbd9365/building-ai-products-without-building-everything-hosted-by-open-vsx/
+- 2026-11-10 🐙 Open source & contributors meetup () https://websummit.com/sessions/lis26/8e588d08-9f6d-43de-97d6-c0a1471edc8d/open-source-contributors-meetup/
+- 2026-11-11 Do we need a UN AI treaty? (Mary Robinson, Charles Pellegrin) https://websummit.com/sessions/lis26/e957eedc-8414-42ca-8572-4806d21e8d85/do-we-need-a-un-ai-treaty/
+- 2026-11-11 Putting human rights into artificial intelligence (Michael O'Flaherty, Paul Tighe, Georja Calvin-Smith) https://websummit.com/sessions/lis26/3a0acb6d-9fd0-4431-ab32-5526addbdcc8/putting-human-rights-into-artificial-intelligence/
+- 2026-11-10 Free or controlled internet? The great DSA debate (Alexandra Geese, Balázs Orban, Arba Kokalari, Luc Chénier) https://websummit.com/sessions/lis26/33c61f4c-b906-4056-aefa-ca2f45c27d55/free-or-controlled-internet-the-great-dsa-debate/
+- 2026-11-10 Chat Control 2.0: The government in your DMs? (Michael McNamara, Thomas Fazi, Esther Paniagua) https://websummit.com/sessions/lis26/66c13c83-4b26-4655-95a9-051b17258832/chat-control-2-0-the-government-in-your-dms/
+- 2026-11-11 Open vs closed: The debate defining the AI era (Chon Tang, Alvin W. Graylin, Carmem Domingues, Neil Lawrence, Amit Katwala) https://websummit.com/sessions/lis26/0a834d30-6d0c-49ed-986c-6e2eed88f8ab/open-vs-closed-the-debate-defining-the-ai-era/
+- 2026-11-12 Frontline Europe: AI, sovereignty and truth (Jan Lipavský, Miroslav Wlachovský, Maty Bohacek, Tomáš Klvaňa) https://websummit.com/sessions/lis26/c0581238-2d66-434c-9e16-eee93fef3867/frontline-europe-ai-sovereignty-and-truth/
+- 2026-11-11 Building AI in Europe: Practical support for innovators [Hosted by European Commission - DG Connect] () https://websummit.com/sessions/lis26/9f18a423-b002-4d0f-b2ea-c85880ae8340/building-ai-in-europe-practical-support-for-innovators-hosted-by-european-commission-dg-connect/
+- 2026-11-11 AI sovereignty: Data control, governance and predictable AI costs [Hosted by Austriacard Holdings] (Christos Rizos) https://websummit.com/sessions/lis26/2230e1d4-188d-4ab0-9f3d-a418dff6c20b/ai-sovereignty-data-control-governance-and-predictable-ai-costs-hosted-by-austriacard-holdings/
+- 2026-11-10 🧭 Let's talk AI ethics & responsible tech meetup () https://websummit.com/sessions/lis26/26661314-5fb1-472c-bfbf-cd3ccf6e969f/let-s-talk-ai-ethics-responsible-tech-meetup/
+- 2026-11-10 🇵🇹 Lisbon founders & CEOs meetup () https://websummit.com/sessions/lis26/397e5775-9be9-471e-b660-24196fe51554/lisbon-founders-ceos-meetup/
+- 2026-11-11 The next digital frontier (Miguel Albuquerque, Vahan Agopyan, Eleanor Pringle) https://websummit.com/sessions/lis26/2b66ba08-e60a-43a0-9f78-8f81c380af59/the-next-digital-frontier/
+- 2026-11-11 Building AI on your own terms: From technology discovery to real-world scale (Ronnie Sheth, Mike Nguyen, João Nuno Ferreira, Luc Chénier) https://websummit.com/sessions/lis26/d135a390-9d48-4b6f-92c0-6992993cdd6f/building-ai-on-your-own-terms-from-technology-discovery-to-real-world-scale/
 
 ## Side events
 
@@ -94,6 +134,17 @@ Site version: v0.1.15
 - 2026-11-14, 09:30-13:30 In-Person AI Workshop, Portimão (Claude ecosystem, in Portuguese), BrilhaVértice – Formação Profissional, Portimão: Hands-on 4-hour workshop on the Claude ecosystem for businesses. After the summit; listed by Algarve Evolution https://www.algarveevolution.pt/event/in-person-ai-workshop-portimao-184/register
 - 2026-11-19, 21:00-23:00 Algarve Evolution: Open Mic Pitch Night (2nd edition), Faro: Open-stage pitches: no judges, no ranking. After the summit, a chance to follow up with the Algarve community https://www.algarveevolution.pt/event/open-mic-pitch-night-second-edition-185/register
 - not set Our own Algarve meetups before Lisbon, Algarve: The newsroom says the team will hold meetups in the Algarve before the summit. No date or venue has been published. UNCONFIRMED https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html
+- 2026-11-09 to 2026-11-13, 10:00-22:00 Portugal Tech Week Palace, PTW Palace, Rua Gomes Freire 98, Lisbon: Portugal Tech Week's flagship venue during the summit: five days of fringe sessions, with registration per event https://portugaltechweek.com/events/portugal-tech-week-palace-09-13-november/
+- 2026-11-09, 10:00-11:30 Build Your Second Brain with Claude, PTW Palace, Rua Gomes Freire 98, Lisbon: Hands-on workshop on keeping personal context in one folder that Claude and other models can use. A Portugal Tech Week event https://portugaltechweek.com/events/build-your-second-brain-with-claude/
+- 2026-11-10, 17:00-19:00 Superconnectors Lisbon 2026 @ Web Summit, Lisbon (venue not given on the page): Startups pitch an ask and a vetted audience bids introductions. Listed by Portugal Tech Week https://portugaltechweek.com/events/superconnectors-lisbon-2026-web-summit/
+- 2026-11-11, 11:30-12:30 Fake by Default: How to prove what's real, PTW Palace (Palacete Gomes Freire), Lisbon: Panel on authenticity, integrity and chain of custody of digital content, deepfake fraud and the 'liar's dividend'. Organised by Cybertech Acceleration with the 351 Portuguese Startup Association. Close to our provenance and trust theme https://portugaltechweek.com/events/fake-by-default-how-to-prove-whats-real-2/
+- 2026-11-11, 17:30-18:30 From Automation to Autonomy: How AI is changing the way we run technology (Cisco showcase), PTW Palace, Rua Gomes Freire 98, Lisbon: Cisco on the move from automation to agentic operations, and where to draw the line between machine and human decisions https://portugaltechweek.com/events/from-automation-to-autonomy-how-ai-is-changing-the-way-we-run-technology-2/
+- 2026-11-10, 18:00-22:30 Ukrainian Community Networking, IDB Rooftop by Mīrārī, Lisbon: Networking for Ukrainian founders and tech professionals; free with registration. On the Web Summit schedule https://websummit.com/sessions/lis26/2df8236e-20e6-458b-85e0-7bb0b3948440/ukrainian-community-networking/
+- 2026-11-10, 19:30-22:00 AI Content OS VIP Dinner: Costa Coffee lessons, Rua das Portas de Santo Antão, Lisbon (exact place shared after registration): Invitation-only dinner on AI content operations hosted by Sanity and Bejamas. On the Web Summit schedule https://websummit.com/sessions/lis26/af0e6d56-55d1-4358-8020-4bb3577e087c/ai-content-os-vip-dinner-costa-coffee-lessons/
+- 2026-11-11, 17:30-21:00 Work in Finland side event, Hotel Olissippo Oriente, Lisbon: Evening on working in Finland: an opening by the ambassador, a keynote and a panel. On the Web Summit schedule https://websummit.com/sessions/lis26/a501aede-3f80-45cb-b983-b070ededa87c/work-in-finland-side-event/
+- 2026-11-11, 18:30-21:30 Romanian Tech Night at Web Summit Lisbon 2026, Centre of Lisbon (venue not given on the page): Romanian startup networking evening with Romanian and Portuguese founders and investors. On the Web Summit schedule https://websummit.com/sessions/lis26/63d139b3-d63c-40f4-9612-0e6f2cb873f9/romanian-tech-night-at-web-summit-lisbon-2026/
+- 2026-11-11, 19:00-22:00 AI Build Sprint: Ship a Business App for Your Ops, Hotel Tivoli Oriente, Lisbon: Build a no-code business app in 60 minutes with the Softr team. On the Web Summit schedule https://websummit.com/sessions/lis26/70dbfe60-5408-4d7a-abf6-29c2ef24be48/ai-build-sprint-ship-a-business-app-for-your-ops/
+- 2026-11-12, 17:30-21:00 EIT Jumpstarter Awards Ceremony, Unicorn Factory Lisboa: Awards for EIT Jumpstarter 2026, the EU's EIT pre-acceleration programme, then a reception. On the Web Summit schedule https://websummit.com/sessions/lis26/7c1ea722-494c-4c91-90e6-3de506744c9b/eit-jumpstarter-awards-ceremony/
 
 ## News
 

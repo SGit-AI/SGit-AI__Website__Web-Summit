@@ -3,7 +3,8 @@ import {execSync} from 'child_process';
 const R='/home/user/SGit-AI__Website__Web-Summit';
 const comps=JSON.parse(execSync('git show HEAD:data/companies.json',{cwd:R})).companies;
 const ids=new Set(comps.map(c=>c.id));
-const ev=JSON.parse(fs.readFileSync(R+'/data/events.json'));
+// read events at HEAD: sessions another agent adds in the working tree wait for the next wake
+const ev=JSON.parse(execSync('git show HEAD:data/events.json',{cwd:R}));
 const S=Object.fromEntries(ev.sessions.map(s=>[s.id,s]));
 const E=Object.fromEntries(ev.side_events.map(s=>[s.id,s]));
 const J='our judgement';
@@ -25,7 +26,38 @@ const sess=[['cloudflare','ws26-s01','speaks-at','co-founder and CEO on the agen
  ['crowdstrike','ws26-s25','speaks-at','speaks on AI vs AI in cyber defence'],
  ['primitive','ws26-s29','speaks-at','speaks on secure infrastructure for inter-agent communication'],
  ['cisco-outshift','ws26-s33','speaks-at','Cisco Systems speaks on public-private security'],
- ['delinea','ws26-s37','speaks-at','speaks on identity, access and user trust']];
+ ['delinea','ws26-s37','speaks-at','speaks on identity, access and user trust'],
+ // added 1 Nov 2026 (second wake): the 29 companies new at HEAD, all from session speakers
+ ['descope','ws26-s36','hosts','runs the Developer Lounge session on auth for AI agents and MCP servers'],
+ ['persona','ws26-s21','speaks-at','CEO speaks on defending money against AI-powered fraud'],
+ ['persona','ws26-s37','speaks-at','CEO speaks on identity, access and user trust'],
+ ['airia','ws26-s38','speaks-at','CEO speaks on AI sprawl, governance and security'],
+ ['aisle','ws26-s35','speaks-at','founder speaks on securing the software foundation with AI'],
+ ['emergence-ai','ws26-s26','speaks-at','co-founder speaks on when AI agents go rogue'],
+ ['trent-ai','ws26-s22','speaks-at','co-founder speaks on viable systems, judgement and AI safety'],
+ ['launchdarkly','ws26-s34','speaks-at','CEO speaks on who holds the kill switch'],
+ ['jetbrains','ws26-s28','speaks-at','CEO speaks on taming the agent swarm'],
+ ['sumsub','ws26-s31','speaks-at','co-founders speak on an AI identity crisis'],
+ ['feedzai','ws26-s32','speaks-at','CTO speaks on who let the agent in'],
+ ['proofpoint','ws26-s27','speaks-at','CEO speaks on defence at machine speed'],
+ ['linux-foundation-aaif','ws26-s16','speaks-at','Agentic AI Foundation director speaks on why agents stall at the production line'],
+ ['roost','ws26-s30','speaks-at','COO speaks on open-source defences'],
+ ['ncsc-uk','ws26-s33','speaks-at','CTO speaks on public-private security, with Cisco'],
+ ['testmu-ai','ws26-s20','speaks-at','CEO speaks on when AI verifies AI'],
+ ['sageox','ws26-s23','speaks-at','co-founder speaks on context for agents'],
+ ['neo4j','ws26-s15','speaks-at','CTO speaks on why agents do not understand your business'],
+ ['directus','ws26-s18','speaks-at','co-founder speaks on what to feed agents'],
+ ['rws','ws26-s04','speaks-at','CEO speaks on a passport for AI agents'],
+ ['lawvu','ws26-s08','speaks-at','CEO speaks on who takes the fall for autonomous AI'],
+ ['factorial','ws26-s09','speaks-at','CEO speaks on employees\' own AI agents'],
+ ['trustscale','ws26-s11','speaks-at','CEO on the panel whose AI is it anyway'],
+ ['qualcomm','ws26-s14','speaks-at','speaks on the AI agent economy'],
+ ['aicep','ws26-s24','hosts','hosts the masterclass connecting Portuguese startups to global markets'],
+ ['ledger','ws26-s21','speaks-at','speaks on defending money against AI-powered fraud'],
+ ['eversec','ws26-s10','speaks-at','CEO speaks on security for the human-machine era'],
+ ['data-protection-commission','ws26-s03','speaks-at','Commissioner speaks on regulating big tech'],
+ ['c4ail','ws26-s19','speaks-at','co-founder on the panel beyond the AI agent hype'],
+ ['crystal-intelligence','ws26-s31','speaks-at','COO speaks on an AI identity crisis']];
 for(const [c,s,k,w] of sess){if(!S[s])throw s;L(c,'session:'+s,k,w,S[s].source);}
 for(const [c,s,k,w] of [['ibm','se10','hosts','co-hosts the tech hub side event and happy hour with Aubay Portugal'],
  ['elastic','se14','hosts','hosts an evening of dinner and networking in Lisbon'],
@@ -105,40 +137,94 @@ const P=[
 ['akamai','abp','relevant-to','agent traffic at the edge: what agents may reach'],
 ['gcore','sgit','relevant-to','European edge and cloud as a hosting and sovereignty option'],
 ['manageengine','sharness','could-buy','mid-market IT teams will govern agents on endpoints'],
-['mobbeel','sgit','relevant-to','verified identity for people, counterpart of signed identity for agents']];
+['mobbeel','sgit','relevant-to','verified identity for people, counterpart of signed identity for agents'],
+// added 1 Nov 2026 (second wake)
+['descope','abp','could-partner','scoped agent and MCP authorisation is the identity half of what a behaviour policy governs'],
+['descope','sgit','relevant-to','agent identities and tokens next to signed agent keys and vaults'],
+['persona','sgit','relevant-to','verifying the person behind an agent, counterpart of signed agent identity'],
+['persona','newsroom','relevant-to','two sessions on identity and AI fraud: a story'],
+['airia','abp','competes-with','runtime policy and audit evidence for every agent, the same ground as ABP'],
+['airia','sharness','could-partner','red teaming and runtime policy that SHarness could exercise'],
+['aisle','sharness','relevant-to','autonomous agents that fix vulnerabilities need a harness'],
+['aisle','newsroom','relevant-to','an interview on agents securing open-source code'],
+['emergence-ai','abp','could-partner','verified, governed enterprise agents need written behaviour policies'],
+['emergence-ai','sharness','could-partner','agents that plan and act across systems are what a harness checks'],
+['trent-ai','sharness','competes-with','an AI security engineer that verifies every fix, close to harness checks'],
+['trent-ai','abp','relevant-to','agent security findings feed what a policy should forbid'],
+['launchdarkly','abp','relevant-to','a kill switch is one enforcement point a behaviour policy can name'],
+['launchdarkly','newsroom','relevant-to','who holds the kill switch: a story'],
+['jetbrains','sharness','relevant-to','many coding agents at once need a harness each'],
+['jetbrains','newsroom','relevant-to','taming the agent swarm: a story'],
+['sumsub','newsroom','relevant-to','identity when AI can fake people: describe'],
+['feedzai','abp','could-partner','agents letting themselves into SaaS and payments need a mandate; a Portuguese anchor'],
+['feedzai','cyber-boardroom','relevant-to','fraud and financial crime risk boards ask about'],
+['feedzai','newsroom','relevant-to','Portugal\'s best-known security scale-up: a story'],
+['proofpoint','newsroom','relevant-to','agent-centric security from a large vendor: describe'],
+['linux-foundation-aaif','abp','could-partner','open standards for agents are where a behaviour-policy format could become a spec'],
+['linux-foundation-aaif','sgit','relevant-to','open-source agent infrastructure next to open, git-based vaults'],
+['roost','sharness','could-partner','open-source safety tooling next to our open harness'],
+['roost','newsroom','relevant-to','open defences against open-source attackers: a story'],
+['ncsc-uk','cyber-boardroom','relevant-to','NCSC guidance is a reference for board-level cyber risk'],
+['ncsc-uk','newsroom','relevant-to','public-private security: a story'],
+['testmu-ai','sharness','competes-with','agent assurance testing, close to harness checks'],
+['testmu-ai','abp','relevant-to','assurance evidence an insurer of agent behaviour would want'],
+['sageox','sgit','competes-with','shared context for humans and agents, compared with git-held context in vaults'],
+['neo4j','newsroom','relevant-to','knowledge graphs as agent context: describe'],
+['directus','newsroom','relevant-to','MCP access to content backends, relevant to agent-run websites'],
+['rws','sgit','relevant-to','a passport for agents is agent identity, next to signed agent keys'],
+['rws','newsroom','relevant-to','agent identity talk: a story'],
+['lawvu','abp','could-buy','in-house legal teams answer for agent actions and write the policies'],
+['lawvu','newsroom','relevant-to','who takes the fall for autonomous AI: a story'],
+['factorial','abp','could-buy','employees\' own agents in HR and finance need a behaviour policy'],
+['trustscale','abp','could-partner','measuring AI against your own criteria is close to measuring an agent against its policy'],
+['trustscale','sharness','relevant-to','AI evaluation and assurance next to harness checks'],
+['qualcomm','newsroom','relevant-to','on-device agents: describe only'],
+['aicep','cyber-boardroom','could-partner','the public route for setting up in Portugal and the Algarve, and for going abroad'],
+['aicep','newsroom','relevant-to','Portuguese startups going global: a story'],
+['ledger','sgit','relevant-to','hardware keys as a model for agent signing keys'],
+['ledger','abp','relevant-to','keeping humans in control of agents that move money'],
+['eversec','newsroom','relevant-to','security for the human-machine era: describe'],
+['data-protection-commission','sgit','relevant-to','GDPR enforcement is the backdrop for encrypted vaults holding personal data'],
+['data-protection-commission','newsroom','relevant-to','regulating big tech: describe'],
+['c4ail','cyber-boardroom','relevant-to','AI leadership education for the executives The Cyber Boardroom serves'],
+['crystal-intelligence','abp','relevant-to','compliance evidence for agentic payments, adjacent to policies for agents that move money']];
 for(const [c,p,k,w] of P)L(c,'product:'+p,k,w+' (our judgement)');
 // every company linked?
 const linked=new Set(links.map(l=>l.from.slice(8)));
 const missing=[...ids].filter(i=>!linked.has(i)); if(missing.length)throw new Error('unlinked '+missing);
 const proposals=comps.map(c=>({company:c.id,decision:c.decision,priority:c.priority,why:c.why_it_matters.replace(/\s*—\s*/g,'; '),status:'proposed'}));
 const clusters=[
- {id:'agent-identity',name:'Agent identity and access',companies:['1password','delinea','prelude','mobbeel','primitive','spacecomputer','cloudflare'],why:'Who an agent is and what it can reach: the ground next to SGit keys and vaults.'},
- {id:'agent-governance',name:'Agent governance and AI security',companies:['polygraf-ai','hexamind','crowdstrike','cisco-outshift','kiggu','akamai','manageengine','firefox-enterprise-mozilla','elastic','datadog'],why:'Controlling and watching what agents do: where Agent Behaviour Policies and SHarness compete and partner.'},
- {id:'agent-frameworks',name:'Agent frameworks, runtimes and products',companies:['mastra','temporal','replit','qase','keewano','manus-ai','genspark','strawberry','you-com','atlassian','altegio'],why:'The builders and their agents: the ones whose agents need a mandate and a harness.'},
- {id:'agent-buyers',name:'Companies selling agents to businesses',companies:['cnext','getvocal-ai','chatplace','legalfly','sensay','delta-labs'],why:'They sell trust and control in agents to their customers: likely buyers of written policies.'},
- {id:'grc-regulation',name:'GRC, audit and regulation',companies:['kpmg-portugal','risiq','contents','sphere','0xbow','arima','european-commission','ibm'],why:'The people who answer for agents: auditors, regulators and compliance tools.'},
- {id:'portugal',name:'Portugal ecosystem',companies:['startup-portugal','air-apps','chatplace','dig-in','itrecruiter','sheerme','vtex','kpmg-portugal','shakers'],why:'Our Algarve and Portugal community work, and the Portuguese-language site.'},
- {id:'infrastructure',name:'AI infrastructure and sovereign cloud',companies:['melious-ai','gcore','cerebras','google-cloud','runpod','twilio','orb'],why:'Where agents run and how they are paid for; the EU-hosted options matter to us.'},
+ {id:'agent-identity',name:'Agent identity and access',companies:['1password','delinea','prelude','mobbeel','primitive','spacecomputer','cloudflare','descope','persona','sumsub','rws','ledger','feedzai'],why:'Who an agent is and what it can reach: the ground next to SGit keys and vaults.'},
+ {id:'agent-governance',name:'Agent governance and AI security',companies:['polygraf-ai','hexamind','crowdstrike','cisco-outshift','kiggu','akamai','manageengine','firefox-enterprise-mozilla','elastic','datadog','airia','aisle','trent-ai','launchdarkly','proofpoint','roost','eversec','testmu-ai'],why:'Controlling and watching what agents do: where Agent Behaviour Policies and SHarness compete and partner.'},
+ {id:'agent-frameworks',name:'Agent frameworks, runtimes and products',companies:['mastra','temporal','replit','qase','keewano','manus-ai','genspark','strawberry','you-com','atlassian','altegio','emergence-ai','jetbrains','sageox','neo4j','directus','linux-foundation-aaif'],why:'The builders and their agents: the ones whose agents need a mandate and a harness.'},
+ {id:'agent-buyers',name:'Companies selling agents to businesses',companies:['cnext','getvocal-ai','chatplace','legalfly','sensay','delta-labs','factorial'],why:'They sell trust and control in agents to their customers: likely buyers of written policies.'},
+ {id:'grc-regulation',name:'GRC, audit and regulation',companies:['kpmg-portugal','risiq','contents','sphere','0xbow','arima','european-commission','ibm','airia','lawvu','trustscale','ncsc-uk','data-protection-commission','c4ail','crystal-intelligence'],why:'The people who answer for agents: auditors, regulators and compliance tools.'},
+ {id:'portugal',name:'Portugal ecosystem',companies:['startup-portugal','air-apps','chatplace','dig-in','itrecruiter','sheerme','vtex','kpmg-portugal','shakers','aicep','feedzai'],why:'Our Algarve and Portugal community work, and the Portuguese-language site.'},
+ {id:'infrastructure',name:'AI infrastructure and sovereign cloud',companies:['melious-ai','gcore','cerebras','google-cloud','runpod','twilio','orb','qualcomm'],why:'Where agents run and how they are paid for; the EU-hosted options matter to us.'},
  {id:'investors',name:'Investors and market intelligence',companies:['andreessen-horowitz','neo','pitchbook'],why:'Capital and data on the category; describe and research, not a first meeting.'}];
 for(const cl of clusters)for(const c of cl.companies)if(!ids.has(c))throw c;
 const inCl=new Set(clusters.flatMap(c=>c.companies));const nocl=[...ids].filter(i=>!inCl.has(i));if(nocl.length)throw new Error('no cluster '+nocl);
+// revised 1 Nov 2026 (second wake): Descope, Airia, Emergence, Feedzai and the Linux Foundation (AAIF) in;
+// Cloudflare, CrowdStrike, Mastra, Polygraf AI and KPMG Portugal out (still proposals in their own right).
 const fm=[
- ['delinea','agent access in production is the case ABP writes policies for; two sessions','session:ws26-s06 (10 Nov, Masterclass 3, they host) or session:ws26-s37 (12 Nov, Stage 8)'],
- ['primitive','email built for agents meets our email agent and signed vaults','session:ws26-s29 (12 Nov, Stage 9)'],
- ['cloudflare','what an agent can reach on the web; a Centre Stage talk','session:ws26-s01 (10 Nov, Centre Stage)'],
- ['cisco-outshift','open-source agentic AI platform; a route to agent builders','session:ws26-s33 (12 Nov, Stage 8), or the partner stand'],
- ['elastic','AI security operations and a host of a side event: two easy places to meet','session:ws26-s05 (10 Nov, Masterclass 4) or side_event:se14 (10 Nov evening)'],
- ['startup-portugal','the door to Portuguese startups and our Algarve work','session:ws26-s07 (10 Nov, Masterclass 1, they host) or session:ws26-s40 (founders in Portugal meetup, 12 Nov)'],
- ['hexamind','Hexgate is the nearest open-source neighbour of ABP: compete or partner','session:ws26-s39 (people in cybersecurity meetup, 12 Nov); stand not yet read'],
- ['polygraf-ai','an AI behavioral control plane: compete or partner on policy enforcement','session:ws26-s39 (people in cybersecurity meetup, 12 Nov); startup stand day not yet read'],
- ['1password','agent identity and secrets next to our vaults','partner stand (location not yet read); session:ws26-s39 (people in cybersecurity meetup, 12 Nov)'],
- ['mastra','the leading TypeScript agent framework: its agents need policies and a harness','startup stand (day not yet read); session:ws26-s12 (Developer Lounge, 10 Nov) is the nearest developer session'],
- ['kpmg-portugal','auditors will be asked to assure agent behaviour; an event partner in Lisbon','partner stand (location not yet read); session:ws26-s40 (founders in Portugal meetup, 12 Nov)'],
- ['crowdstrike','the AI-native security reference point; decision is write-about, a talk to cover','session:ws26-s25 (12 Nov, Stage 8)']
+ ['delinea','agent access in production is the case ABP writes policies for; two sessions','session:ws26-s06 (10 Nov 12:30, Masterclass 3, they host) or session:ws26-s37 (12 Nov 15:15, Stage 8)'],
+ ['descope','agent and MCP authorisation is the identity half of a behaviour policy; a hands-on session','session:ws26-s36 (12 Nov 14:00, Developer Lounge, they run it)'],
+ ['airia','runtime policy and audit evidence for agents: the nearest competitor or partner to ABP','session:ws26-s38 (12 Nov 15:25, Stage 9)'],
+ ['primitive','email built for agents meets our email agent and signed vaults','session:ws26-s29 (12 Nov 10:50, Stage 9)'],
+ ['emergence-ai','verified, governed enterprise agents; the talk is when agents go rogue','session:ws26-s26 (12 Nov 10:15, Stage 13)'],
+ ['feedzai','Portugal\'s best-known security scale-up on agents letting themselves in; a local anchor','session:ws26-s32 (12 Nov 12:00, Stage 7; same slot as the cybersecurity meetup ws26-s39)'],
+ ['linux-foundation-aaif','open standards for agents: where a behaviour-policy format could become a spec','session:ws26-s16 (11 Nov 11:10, Stage 13)'],
+ ['hexamind','Hexgate is the nearest open-source neighbour of ABP: compete or partner','session:ws26-s39 (people in cybersecurity meetup, 12 Nov 12:00); stand not yet read'],
+ ['1password','agent identity and secrets next to our vaults','partner stand (location not yet read); session:ws26-s39 (people in cybersecurity meetup, 12 Nov 12:00)'],
+ ['cisco-outshift','open-source agentic AI platform; a route to agent builders','session:ws26-s33 (12 Nov 12:10, Stage 8), or the partner stand'],
+ ['elastic','AI security operations and a host of a side event: two easy places to meet','session:ws26-s05 (10 Nov 11:30, Masterclass 4) or side_event:se14 (10 Nov 19:00)'],
+ ['startup-portugal','the door to Portuguese startups and our Algarve work','session:ws26-s07 (10 Nov 12:00, Masterclass 1, they host) or session:ws26-s40 (founders in Portugal meetup, 12 Nov 13:30)']
 ].map(([company,why,where])=>({company,why,session_or_event:where,status:'proposed'}));
+if(fm.length>12)throw new Error('more than 12 first meetings');
+for(const f of fm){if(!ids.has(f.company))throw f.company;for(const m of f.session_or_event.matchAll(/(session|side_event):([\w-]+)/g)){if(!(m[1]==='session'?S:E)[m[2]])throw m[0];}}
 const graph={about:'Links between companies, sessions, events, people seats and our products. Kept by the cartographer.',
  read_on:'2026-11-01',
- method:'Built by cartographer@web-summit on 1 November 2026 from the committed data/companies.json (HEAD, '+comps.length+' companies) and data/events.json. Company-to-session and company-to-side-event links only where a session speaker\'s organisation is the company, or the session or event names it as host; source is the session or event URL. Company-to-product links, proposals, clusters and first meetings are our judgement and are proposals until each company\'s owner decides. Proposals echo the researcher\'s decision and priority from data/companies.json.',
+ method:'Built by cartographer@web-summit on 1 November 2026 (revised in the wake of 04:28Z) from the committed data/companies.json (HEAD, '+comps.length+' companies) and data/events.json (HEAD). Company-to-session and company-to-side-event links only where a session speaker\'s organisation is the company, or the session or event names it as host; source is the session or event URL. Company-to-product links, proposals, clusters and first meetings are our judgement and are proposals until each company\'s owner decides. Proposals echo the researcher\'s decision and priority from data/companies.json.',
  nodes:{products,sessions:ev.sessions.map(s=>s.id),side_events:ev.side_events.map(s=>s.id)},
  links,proposals,clusters,first_meetings:fm};
 fs.writeFileSync(R+'/data/graph.json',JSON.stringify(graph,null,2)+'\n');

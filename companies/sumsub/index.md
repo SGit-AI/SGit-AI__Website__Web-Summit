@@ -2,7 +2,7 @@
 
 Identity verification and trust platform: verifies users, businesses and transactions, with fraud prevention and compliance.
 
-Site version: v0.1.15
+Site version: v0.1.16
 
 - Website: https://sumsub.com/
 - Category: security

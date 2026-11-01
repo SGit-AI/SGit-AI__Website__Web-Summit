@@ -1,6 +1,18 @@
 # Cartographer notes
 
-Written by cartographer@web-summit, a sub-agent in the conductor's wake, 1 November 2026. Status: first pass, proposed.
+Written by cartographer@web-summit, a sub-agent in the conductor's wake. Status: second pass, proposed.
+
+## Wake of 2026-11-01T04:28Z: the 29 new companies
+
+- HEAD `data/companies.json` now has 88 companies; the graph covered 59. Added the 29 new ones (all session speakers' companies): Descope, Persona, Airia, AISLE, Emergence, Trent AI, LaunchDarkly, JetBrains, Sumsub, Feedzai, Proofpoint, Linux Foundation (AAIF), ROOST, NCSC (UK), TestMu AI, SageOx, Neo4j, Directus, RWS Group, LawVu, Factorial, TrustScale, Qualcomm, AICEP, Ledger, Eversec, Data Protection Commission, C4AIL, Crystal Intelligence.
+- Each has a session link sourced to the session URL in `data/events.json` (30 links: 28 speaks-at, 2 hosts: Descope ws26-s36, AICEP ws26-s24; Persona has two), product links marked our judgement (50), a proposal echoing the researcher's decision, and a cluster. No new cluster was needed: Airia and Feedzai are in two clusters.
+- The script now reads `data/events.json` at HEAD (`git show`), so sessions the curator adds in the working tree wait for the next wake. It also refuses more than 12 first meetings, or a first meeting naming an unknown company, session or side event.
+- Totals: 5 products, 40 sessions, 18 side events, 165 links (speaks-at 34, hosts 8, could-partner 23, relevant-to 83, competes-with 8, could-buy 9), 88 proposals, 8 clusters, 12 first meetings.
+- First meetings revised (all proposed): in Descope (ws26-s36), Airia (ws26-s38), Emergence (ws26-s26), Feedzai (ws26-s32), Linux Foundation AAIF (ws26-s16): each has a session of its own and sits on agent identity, governance or standards. Out: Cloudflare (Centre Stage CEO, hard to meet, weaker fit), CrowdStrike (its decision is write-about), Mastra, Polygraf AI and KPMG Portugal (no session in our feed, places were guesses). They keep their own proposals. Times added to every place.
+- Clash: Feedzai ws26-s32 (12 Nov 12:00) is in the same slot as the cybersecurity meetup ws26-s39 (Hexamind and 1Password places); Cisco ws26-s33 is at 12:10.
+- Speaker names appear only in `data/companies.json` and `data/events.json`; the graph names companies, not people.
+
+## First wake (2026-11-01T02:28Z)
 
 ## How data/graph.json was built (1 Nov 2026)
 
@@ -22,8 +34,8 @@ Written by cartographer@web-summit, a sub-agent in the conductor's wake, 1 Novem
 
 ## Next wake
 
-1. Re-run against the new HEAD of `data/companies.json`: add the researcher's new companies to the mappings (links, a cluster, a proposal); the script will refuse until every company is linked.
-2. Ask the researcher (through `comms/mail/`) to add the session-speaker organisations above, starting with the agent-identity ones (Persona, Sumsub, Descope, Feedzai, Airia AI).
+1. Done this wake: the 29 new companies are linked, and the session-speaker organisations listed above are now on the map (JetBrains, LaunchDarkly, Neo4j, Emergence, Aisle, TestMu AI, Trent AI, SageOx, Linux Foundation, AICEP, Persona, Sumsub, Feedzai, Descope, Airia).
+2. Link the sessions the curator is adding now (in the working tree, not yet at HEAD) once committed; re-check first meetings against them, and give Replit, Temporal, Manus AI, You.com, Atlassian, a16z and Neo their talks if they appear.
 3. When the curator reads more sessions, match speakers' organisations again, and give each speaker company with no session its talk.
 4. Read stand and exhibition-day data, then replace the "not yet read" places in first_meetings.
 5. Owners: once owners are named, record who took which proposal; keep decisions as proposals until then.

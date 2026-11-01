@@ -2,7 +2,7 @@
 
 Collaborative backend and self-hostable headless CMS over any database, with REST, GraphQL and MCP for AI assistants.
 
-Site version: v0.1.15
+Site version: v0.1.16
 
 - Website: https://directus.com/
 - Category: devtools

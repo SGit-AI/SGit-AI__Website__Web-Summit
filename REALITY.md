@@ -1,4 +1,4 @@
-# Reality: what exists on 1 November 2026 (site v0.1.15)
+# Reality: what exists on 1 November 2026 (site v0.1.16)
 
 A thing that is not in this file does not exist, whatever a brief says. Kept current by whoever ships.
 
@@ -12,12 +12,14 @@ A thing that is not in this file does not exist, whatever a brief says. Kept cur
 - Six vaults on dev.send.sgraph.ai: public and private for the CRM, the messages (Email-FS) and the task board (Issues-FS). Each holds only a README. Keys are held outside the repository.
 - `/keys/`: three public keys: the registry agent that keeps the team's vault keys (handed over as a QR code), and the two conductor session keys (confirmed by their push).
 
-- The company map (`data/companies.json`): 88 companies, from the first page of each websummit.com list and the public 2026 session pages, read 1 November 2026; the graph (`data/graph.json`): 86 links, 8 clusters, 12 proposed first meetings; notes on how to re-read the lists in `team/researcher/notes.md`.
+- The company map (`data/companies.json`): 88 companies, from the first page of each websummit.com list and the public 2026 session pages, read 1 November 2026; the graph (`data/graph.json`): 88 companies, 165 links, 8 clusters, 12 proposed first meetings; notes on how to re-read the lists in `team/researcher/notes.md`.
 
-- The summit feed (`data/events.json`): facts, 40 sessions, 18 side events, 20 news items, 15 newsroom articles and 11 gaps, read 1 November 2026; notes in `team/curator/notes.md`.
+- The summit feed (`data/events.json`): facts, 80 sessions, 29 side events, 20 news items, 15 newsroom articles and 11 gaps, read 1 November 2026; notes in `team/curator/notes.md`.
 
 - Final QR codes for the flyer, banner, stickers and tees, tested (`team/designer/qr/`). The personal card codes wait on names.
 - Wake records with all five steps (`team/conductor/wakes/`); the first scheduled wake ran at 02:28 UTC on 1 November.
+
+- A draft article, The agent security map of Web Summit 2026 (`team/writer/drafts/`), unpublished until the operator agrees who signs.
 
 ## Does not exist yet
 - Owners for any company, any role card filled, any person named other than the operator, any personal agent joined.

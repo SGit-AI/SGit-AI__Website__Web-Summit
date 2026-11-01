@@ -2,7 +2,7 @@
 
 Secures every identity, from people to AI agents: passwords, passkeys and secrets for over 150,000 businesses, and a security layer for how agents authenticate and connect to the internet.
 
-Site version: v0.1.15
+Site version: v0.1.16
 
 - Website: https://www.1password.com
 - Category: security

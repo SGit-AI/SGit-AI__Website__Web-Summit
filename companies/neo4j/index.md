@@ -2,7 +2,7 @@
 
 Graph data and intelligence platform used for knowledge graphs behind AI systems and agents.
 
-Site version: v0.1.15
+Site version: v0.1.16
 
 - Website: https://neo4j.com/
 - Category: devtools
