@@ -41,6 +41,45 @@
         "say whether the full Web Summit lists may be read another way (the app export)"
       ],
       "next": "scheduled wake at 02:27 UTC"
+    },
+    {
+      "id": "wake-2026-11-01T0228Z",
+      "agent": "conductor",
+      "started": "2026-11-01T02:28:14Z",
+      "ended": "2026-11-01T03:05:00Z",
+      "kind": "scheduled, every 2 hours at :27 UTC",
+      "objective": "Deepen the map and link it to the programme; prepare what Monday's print deadline needs",
+      "commit": "1eebbc5",
+      "plan": [
+        "researcher: more companies from the allowed schedule pages",
+        "cartographer: graph.json linking companies, sessions, events",
+        "designer: flyer and banner QR codes, final and tested"
+      ],
+      "roles": [
+        "security",
+        "researcher",
+        "cartographer",
+        "designer",
+        "closing conductor"
+      ],
+      "outcome": "ok",
+      "release": "v0.1.15",
+      "achieved": [
+        "company map 59 -> 88, each new one confirmed on a lis26 session page",
+        "graph: 86 links, 8 clusters, 12 proposed first meetings",
+        "QR codes for flyer, banner, sticker, tee, each decoded twice",
+        "five steps recorded: plan go, pre-review change then go, work done, post-review clean, post-check as-planned"
+      ],
+      "blockers": [
+        "the full websummit.com lists still load only in the browser",
+        "owners, names and the design budget wait on the operator"
+      ],
+      "for_you": [
+        "approve designs by Mon 2 Nov 14:00; the QR codes are in team/designer/qr/",
+        "names and ids for the seven, so the card codes can be made",
+        "owners for the 12 proposed first meetings"
+      ],
+      "next": "scheduled wake at 04:27 UTC: link the 29 new companies (cartographer), the summit track pages (curator)"
     }
   ]
 }

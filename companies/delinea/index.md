@@ -2,7 +2,7 @@
 
 Identity security platform that governs what humans, machines and AI agents do once they have access, extending privileged access management into continuous, just-in-time authorization across on-premises, multi-cloud and ephemeral infrastructure.
 
-Site version: v0.1.14
+Site version: v0.1.15
 
 - Website: https://Delinea.com
 - Category: security

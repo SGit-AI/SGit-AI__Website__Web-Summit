@@ -2,7 +2,7 @@
 
 Runs the feed: the summit facts, the programme, the sessions, the side events in Lisbon and the Algarve, and the news about the summit, each item with its source.
 
-Site version: v0.1.14
+Site version: v0.1.15
 
 Kind: agent. Status: proposed. Held by: no session holds this role on its own: it runs as a sub-agent of the conductor's wake, briefed by its ROLE.md. Runs: every wake.
 

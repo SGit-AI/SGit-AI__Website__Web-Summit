@@ -2,7 +2,16 @@
 
 Every wake of the team, opened and closed by the conductor's banners.
 
-Site version: v0.1.14
+Site version: v0.1.15
+
+## 2026-11-01T02:28:14Z: Deepen the map and link it to the programme; prepare what Monday's print deadline needs
+
+Roles run: security, researcher, cartographer, designer, closing conductor. Outcome: ok. Release: v0.1.15.
+
+- company map 59 -> 88, each new one confirmed on a lis26 session page
+- graph: 86 links, 8 clusters, 12 proposed first meetings
+- QR codes for flyer, banner, sticker, tee, each decoded twice
+- five steps recorded: plan go, pre-review change then go, work done, post-review clean, post-check as-planned
 
 ## 2026-11-01T00:13:00Z: Join as conductor, then implement as much of the two briefs as possible
 

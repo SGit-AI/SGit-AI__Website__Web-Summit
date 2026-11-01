@@ -1,5 +1,10 @@
 [
   {
+    "version": "v0.1.15",
+    "date": "2026-11-01",
+    "what": "First scheduled wake (02:28 UTC): the company map grows to 88 companies, each new one confirmed on a public 2026 session page; the graph links companies to sessions, side events and our products, with 8 clusters and 12 proposed first meetings shown on the map; the final, tested QR codes for the flyer, banner, stickers and tees are ready for Monday's artwork."
+  },
+  {
     "version": "v0.1.14",
     "date": "2026-11-01",
     "what": "The summit page from public sources read today: the facts (opening night 9 November, conference 10 to 12, MEO Arena and FIL, badge pickup from 7 November, Night Summit), 40 sessions that matter to us each confirmed on its public page, 18 side events in Lisbon and the Algarve, 20 news items and 15 newsroom articles; the researcher, curator and cartographer now follow each site's robots.txt (websummit.com disallows /api/); the first wake closed in the log."

@@ -1,8 +1,14 @@
 {
   "agent": "cartographer",
-  "state": "proposed: runs as a sub-agent when the conductor's plan names it",
-  "last_wake": null,
-  "done": [],
-  "next": [],
+  "state": "active: ran as a sub-agent in the wake of 2026-11-01T02:28Z",
+  "last_wake": "2026-11-01T02:28:14Z",
+  "done": [
+    "data/graph.json: 5 products, 40 sessions, 18 side events, 86 links, 59 proposals, 8 clusters, 12 first meetings"
+  ],
+  "next": [
+    "link companies added after HEAD",
+    "ask researcher to add session-speaker organisations",
+    "read stand locations for first meetings"
+  ],
   "asks": []
 }

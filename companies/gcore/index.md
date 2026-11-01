@@ -2,7 +2,7 @@
 
 Edge AI, cloud computing, CDN, cybersecurity and low-latency network services across six continents, with 210+ points of presence.
 
-Site version: v0.1.14
+Site version: v0.1.15
 
 - Website: https://gcore.com/
 - Category: security

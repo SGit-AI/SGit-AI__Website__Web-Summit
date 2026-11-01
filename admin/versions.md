@@ -2,8 +2,9 @@
 
 Every release of this site and what changed.
 
-Site version: v0.1.14
+Site version: v0.1.15
 
+- v0.1.15 (2026-11-01): First scheduled wake (02:28 UTC): the company map grows to 88 companies, each new one confirmed on a public 2026 session page; the graph links companies to sessions, side events and our products, with 8 clusters and 12 proposed first meetings shown on the map; the final, tested QR codes for the flyer, banner, stickers and tees are ready for Monday's artwork.
 - v0.1.14 (2026-11-01): The summit page from public sources read today: the facts (opening night 9 November, conference 10 to 12, MEO Arena and FIL, badge pickup from 7 November, Night Summit), 40 sessions that matter to us each confirmed on its public page, 18 side events in Lisbon and the Algarve, 20 news items and 15 newsroom articles; the researcher, curator and cartographer now follow each site's robots.txt (websummit.com disallows /api/); the first wake closed in the log.
 - v0.1.13 (2026-11-01): The company map, first pass: 59 companies at Web Summit 2026 that matter to us (13 at priority 1), 58 confirmed for 2026 from Web Summit's own pages or dated press, each with what it does, why it matters, a proposed decision, and its sources read today; a page for each. Only the first page of each official list was read; owners are the operator's decision.
 - v0.1.12 (2026-11-01): The design track worked backwards from the summit, from the suppliers' published lead times read today: design approved by Monday 2 November 14:00, the safest orders that evening, what is already too late, how to put codes on print, and the brief for the designer. Also records the conductor's scheduled task (every 2 hours at :27 UTC, into its standing session).

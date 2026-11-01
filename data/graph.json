@@ -1,4 +1,1319 @@
 {
   "about": "Links between companies, sessions, events, people seats and our products. Kept by the cartographer.",
-  "links": []
+  "read_on": "2026-11-01",
+  "method": "Built by cartographer@web-summit on 1 November 2026 from the committed data/companies.json (HEAD, 59 companies) and data/events.json. Company-to-session and company-to-side-event links only where a session speaker's organisation is the company, or the session or event names it as host; source is the session or event URL. Company-to-product links, proposals, clusters and first meetings are our judgement and are proposals until each company's owner decides. Proposals echo the researcher's decision and priority from data/companies.json.",
+  "nodes": {
+    "products": [
+      {
+        "id": "sgit",
+        "name": "SGit",
+        "what": "Encrypted, versioned vaults that people and agents share, with signed history.",
+        "url": "https://sgit.ai",
+        "source": "REALITY.md; https://sgit.ai/llms.txt"
+      },
+      {
+        "id": "cyber-boardroom",
+        "name": "The Cyber Boardroom",
+        "what": "Our company, which takes the Algarve Evolution startup membership and shares its open-source workflows and technology.",
+        "url": null,
+        "url_note": "no website URL in our sources yet; the newsroom article is the only public statement we hold",
+        "source": "https://newsroom.sgit.ai/articles/joining-algarve-evolution.html"
+      },
+      {
+        "id": "abp",
+        "name": "RiskMandate Agent Behaviour Policies",
+        "what": "Written policies for what an AI agent may and may not do, for the people who answer for it.",
+        "url": "https://riskmandate.ai/abp.html",
+        "source": "https://riskmandate.ai/abp.html"
+      },
+      {
+        "id": "sharness",
+        "name": "SHarness",
+        "what": "A harness for running and checking agents, introduced by the newsroom.",
+        "url": "https://newsroom.sgit.ai/articles/introducing-sharness.html",
+        "source": "https://newsroom.sgit.ai/articles/introducing-sharness.html"
+      },
+      {
+        "id": "newsroom",
+        "name": "The SGit newsroom",
+        "what": "Our agent-run newsroom: articles with markdown twins and an API.",
+        "url": "https://newsroom.sgit.ai",
+        "source": "https://newsroom.sgit.ai"
+      }
+    ],
+    "sessions": [
+      "ws26-s01",
+      "ws26-s02",
+      "ws26-s03",
+      "ws26-s04",
+      "ws26-s05",
+      "ws26-s06",
+      "ws26-s07",
+      "ws26-s08",
+      "ws26-s09",
+      "ws26-s10",
+      "ws26-s11",
+      "ws26-s12",
+      "ws26-s13",
+      "ws26-s14",
+      "ws26-s15",
+      "ws26-s16",
+      "ws26-s17",
+      "ws26-s18",
+      "ws26-s19",
+      "ws26-s20",
+      "ws26-s21",
+      "ws26-s22",
+      "ws26-s23",
+      "ws26-s24",
+      "ws26-s25",
+      "ws26-s26",
+      "ws26-s27",
+      "ws26-s28",
+      "ws26-s29",
+      "ws26-s30",
+      "ws26-s31",
+      "ws26-s32",
+      "ws26-s33",
+      "ws26-s34",
+      "ws26-s35",
+      "ws26-s36",
+      "ws26-s37",
+      "ws26-s38",
+      "ws26-s39",
+      "ws26-s40"
+    ],
+    "side_events": [
+      "se01",
+      "se02",
+      "se03",
+      "se04",
+      "se05",
+      "se06",
+      "se07",
+      "se08",
+      "se09",
+      "se10",
+      "se11",
+      "se12",
+      "se13",
+      "se14",
+      "se15",
+      "se16",
+      "se17",
+      "se18"
+    ]
+  },
+  "links": [
+    {
+      "from": "company:cloudflare",
+      "to": "session:ws26-s01",
+      "kind": "speaks-at",
+      "why": "co-founder and CEO on the agentic internet",
+      "source": "https://websummit.com/sessions/lis26/4421ffa8-97ef-4466-8669-31c47cff3b5a/the-agentic-internet-who-controls-the-web/"
+    },
+    {
+      "from": "company:european-commission",
+      "to": "session:ws26-s02",
+      "kind": "speaks-at",
+      "why": "Executive Vice-President on Europe's tech moment",
+      "source": "https://websummit.com/sessions/lis26/ec64d706-da78-4041-bf35-5810a3df34b1/has-europe-s-tech-moment-arrived/"
+    },
+    {
+      "from": "company:elastic",
+      "to": "session:ws26-s05",
+      "kind": "hosts",
+      "why": "hosts the AI-security SOC masterclass",
+      "source": "https://websummit.com/sessions/lis26/212f884a-834e-4db2-b5f3-9ea3ef39a0ed/dogfooding-ai-security-lessons-from-our-own-soc-hosted-by-elastic/"
+    },
+    {
+      "from": "company:delinea",
+      "to": "session:ws26-s06",
+      "kind": "hosts",
+      "why": "hosts the masterclass on letting AI agents into production safely",
+      "source": "https://websummit.com/sessions/lis26/31ab2f9b-f8b1-4b73-b1e8-f686507c3aab/trust-issues-letting-ai-agents-into-production-safely-hosted-by-delinea/"
+    },
+    {
+      "from": "company:startup-portugal",
+      "to": "session:ws26-s07",
+      "kind": "hosts",
+      "why": "hosts the guide to Portugal's startup scene",
+      "source": "https://websummit.com/sessions/lis26/437ebaa7-ccc4-4e89-a01f-0ae1958e7726/a-guide-to-portugal-s-startup-scene-hosted-by-startup-portugal/"
+    },
+    {
+      "from": "company:crowdstrike",
+      "to": "session:ws26-s25",
+      "kind": "speaks-at",
+      "why": "speaks on AI vs AI in cyber defence",
+      "source": "https://websummit.com/sessions/lis26/26295ff3-84c1-4329-84cb-7ca7aaa18fac/ai-vs-ai-the-battle-for-the-cyber-advantage/"
+    },
+    {
+      "from": "company:primitive",
+      "to": "session:ws26-s29",
+      "kind": "speaks-at",
+      "why": "speaks on secure infrastructure for inter-agent communication",
+      "source": "https://websummit.com/sessions/lis26/5faacf74-8493-412c-a03e-ca82993cee91/connecting-the-bots-building-secure-infrastructure-for-inter-agent-communication/"
+    },
+    {
+      "from": "company:cisco-outshift",
+      "to": "session:ws26-s33",
+      "kind": "speaks-at",
+      "why": "Cisco Systems speaks on public-private security",
+      "source": "https://websummit.com/sessions/lis26/060f80ea-044f-46f2-a67d-e6c9dc67b106/it-takes-two-to-trust-operationalizing-public-private-security/"
+    },
+    {
+      "from": "company:delinea",
+      "to": "session:ws26-s37",
+      "kind": "speaks-at",
+      "why": "speaks on identity, access and user trust",
+      "source": "https://websummit.com/sessions/lis26/5a32be7c-7846-4880-be27-d0782c3b83dc/beyond-the-front-door-identity-access-and-user-trust/"
+    },
+    {
+      "from": "company:ibm",
+      "to": "side_event:se10",
+      "kind": "hosts",
+      "why": "co-hosts the tech hub side event and happy hour with Aubay Portugal",
+      "source": "https://websummit.com/sessions/lis26/2fe7fc31-3eee-42f7-b22d-23ddc98083c4/building-a-tech-hub-side-event-happy-hour-aubay-portugal-ibm/"
+    },
+    {
+      "from": "company:elastic",
+      "to": "side_event:se14",
+      "kind": "hosts",
+      "why": "hosts an evening of dinner and networking in Lisbon",
+      "source": "https://websummit.com/sessions/lis26/7af523ac-6153-4f20-b76f-c7a9e7dcdf50/an-evening-with-elastic-in-lisbon/"
+    },
+    {
+      "from": "company:shakers",
+      "to": "side_event:se06",
+      "kind": "hosts",
+      "why": "co-organiser of the startup football tournament before the summit",
+      "source": "https://jornaleconomico.sapo.pt/noticias/manie-volta-a-juntar-startups-em-torneio-de-futebol-antes-da-web-summit-em-lisboa/"
+    },
+    {
+      "from": "company:cisco-outshift",
+      "to": "product:abp",
+      "kind": "could-partner",
+      "why": "agentic AI developer platform whose builders need behaviour policies (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:cisco-outshift",
+      "to": "product:sharness",
+      "kind": "relevant-to",
+      "why": "open-source agent infrastructure; a place to run SHarness checks (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:hexamind",
+      "to": "product:abp",
+      "kind": "competes-with",
+      "why": "Hexgate enforces company policy on each agent tool call (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:hexamind",
+      "to": "product:sharness",
+      "kind": "could-partner",
+      "why": "an open-source policy enforcer SHarness could test against (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:primitive",
+      "to": "product:sgit",
+      "kind": "could-partner",
+      "why": "agent email addresses meet our email agent and signed vault history (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:primitive",
+      "to": "product:abp",
+      "kind": "relevant-to",
+      "why": "agents acting by email need a written mandate (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:mastra",
+      "to": "product:abp",
+      "kind": "could-partner",
+      "why": "agents built on the framework need behaviour policies (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:mastra",
+      "to": "product:sharness",
+      "kind": "could-partner",
+      "why": "a framework whose agents SHarness could run and check (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:qase",
+      "to": "product:sharness",
+      "kind": "competes-with",
+      "why": "Tiden checks agent-written changes against what was asked, close to SHarness (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:replit",
+      "to": "product:sharness",
+      "kind": "relevant-to",
+      "why": "agentic software creation; agents writing code need a harness (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:replit",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "a featured speaker on agentic creation: a newsroom story (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:kpmg-portugal",
+      "to": "product:abp",
+      "kind": "could-buy",
+      "why": "audit and advisory firms will be asked to assure agent behaviour (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:kpmg-portugal",
+      "to": "product:cyber-boardroom",
+      "kind": "could-partner",
+      "why": "board-level cyber risk is shared ground (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:startup-portugal",
+      "to": "product:cyber-boardroom",
+      "kind": "could-partner",
+      "why": "the door to Portuguese startups for our Algarve work (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:startup-portugal",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "source for a Portuguese ecosystem story (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:1password",
+      "to": "product:sgit",
+      "kind": "could-partner",
+      "why": "agent secrets and identity next to our encrypted vaults (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:1password",
+      "to": "product:abp",
+      "kind": "relevant-to",
+      "why": "the security layer for how agents authenticate; policies decide what they then do (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:cloudflare",
+      "to": "product:abp",
+      "kind": "relevant-to",
+      "why": "what an agent can reach on the web is a behaviour-policy question (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:cloudflare",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "the agentic internet talk is a newsroom story (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:crowdstrike",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "AI-native security reference point for an article (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:crowdstrike",
+      "to": "product:cyber-boardroom",
+      "kind": "relevant-to",
+      "why": "the threat picture boards ask about (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:delinea",
+      "to": "product:abp",
+      "kind": "could-partner",
+      "why": "governs what agents do once they have access; ABP writes what they should do (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:delinea",
+      "to": "product:sgit",
+      "kind": "relevant-to",
+      "why": "identity for machines and agents next to signed agent keys (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:polygraf-ai",
+      "to": "product:abp",
+      "kind": "competes-with",
+      "why": "an AI behavioral control plane enforcing inline governance (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:polygraf-ai",
+      "to": "product:sharness",
+      "kind": "could-partner",
+      "why": "runtime enforcement that SHarness could exercise (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:cnext",
+      "to": "product:abp",
+      "kind": "could-buy",
+      "why": "builds compliant agents for European businesses; needs policies to show (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:getvocal-ai",
+      "to": "product:abp",
+      "kind": "could-buy",
+      "why": "sells contact-centre agents on full control and trust (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:keewano",
+      "to": "product:sgit",
+      "kind": "relevant-to",
+      "why": "an ordered event history for agents parallels versioned vaults (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:manus-ai",
+      "to": "product:abp",
+      "kind": "relevant-to",
+      "why": "a general action agent is the archetype that needs a mandate (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:strawberry",
+      "to": "product:abp",
+      "kind": "relevant-to",
+      "why": "browser companions acting in signed-in accounts need a mandate (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:you-com",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "a featured speaker on agent infrastructure: a story (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:datadog",
+      "to": "product:sharness",
+      "kind": "relevant-to",
+      "why": "observability of agent runs next to harness checks (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:temporal",
+      "to": "product:sharness",
+      "kind": "could-partner",
+      "why": "durable execution runs long agents that a harness checks (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:legalfly",
+      "to": "product:abp",
+      "kind": "could-buy",
+      "why": "in-house legal teams write the policies agents follow (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:risiq",
+      "to": "product:abp",
+      "kind": "could-buy",
+      "why": "bank risk and regulatory work needs evidence of agent policy (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:risiq",
+      "to": "product:cyber-boardroom",
+      "kind": "relevant-to",
+      "why": "board-level risk governance for banks (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:european-commission",
+      "to": "product:abp",
+      "kind": "relevant-to",
+      "why": "the AI Act is the regulatory backdrop for behaviour policies (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:european-commission",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "EU tech sovereignty is a newsroom story (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:atlassian",
+      "to": "product:abp",
+      "kind": "relevant-to",
+      "why": "Rovo agents across Jira and Confluence act for teams (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:melious-ai",
+      "to": "product:sgit",
+      "kind": "could-partner",
+      "why": "sovereign EU inference as a possible backend for our agents (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:air-apps",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "a Portuguese success story (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:chatplace",
+      "to": "product:abp",
+      "kind": "could-buy",
+      "why": "an AI manager that answers for creators needs a mandate (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:firefox-enterprise-mozilla",
+      "to": "product:sgit",
+      "kind": "relevant-to",
+      "why": "same audience: EU organisations seeking customer-controlled tools (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:kiggu",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "AI plus human offensive security: an interview (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:kiggu",
+      "to": "product:sharness",
+      "kind": "relevant-to",
+      "why": "automated security orchestration next to harness checks (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:spacecomputer",
+      "to": "product:sgit",
+      "kind": "could-partner",
+      "why": "key management and attestation share our verifiable approach (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:altegio",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "a system of record as the layer agents build on (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:delta-labs",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "synthetic customer twins relate to our synthetic-user studies (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:genspark",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "a fast-growing agent workspace: a headline for an article (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:sensay",
+      "to": "product:sgit",
+      "kind": "relevant-to",
+      "why": "living team knowledge bases next to shared vaults (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:elastic",
+      "to": "product:sharness",
+      "kind": "relevant-to",
+      "why": "security operations with AI, close to harness checks (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:orb",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "usage-based billing, relevant to how we charge for the newsroom API (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:prelude",
+      "to": "product:sgit",
+      "kind": "relevant-to",
+      "why": "verification and authentication APIs next to signed agent identity (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:runpod",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "GPU cloud: describe only (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:twilio",
+      "to": "product:sgit",
+      "kind": "relevant-to",
+      "why": "communications APIs used by agents that send messages (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:0xbow",
+      "to": "product:sgit",
+      "kind": "relevant-to",
+      "why": "privacy with compliance parallels encrypted vaults (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:arima",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "privacy-first synthetic data: describe (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:contents",
+      "to": "product:newsroom",
+      "kind": "competes-with",
+      "why": "AI content lifecycle with governance, close to the newsroom's evidence trail (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:sphere",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "AI-native tax compliance: describe (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:andreessen-horowitz",
+      "to": "product:cyber-boardroom",
+      "kind": "relevant-to",
+      "why": "an investor in AI and infrastructure; agent security as a category (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:neo",
+      "to": "product:cyber-boardroom",
+      "kind": "relevant-to",
+      "why": "early-stage investor and residency for technical founders (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:pitchbook",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "capital-markets data for researching investors on the map (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:shakers",
+      "to": "product:cyber-boardroom",
+      "kind": "could-partner",
+      "why": "a marketplace of European AI builders as an implementer channel (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:cerebras",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "fast inference hardware: describe only (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:google-cloud",
+      "to": "product:sharness",
+      "kind": "relevant-to",
+      "why": "Agent Development Kit ecosystem whose agents a harness could check (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:ibm",
+      "to": "product:abp",
+      "kind": "relevant-to",
+      "why": "watsonx responsible-AI governance overlaps behaviour policies (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:dig-in",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "a Portuguese data company: describe (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:itrecruiter",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "the Portuguese tech talent market: describe (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:sheerme",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "a Portuguese consumer app: describe (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:vtex",
+      "to": "product:newsroom",
+      "kind": "relevant-to",
+      "why": "commerce platform with Portugal as country: describe (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:akamai",
+      "to": "product:abp",
+      "kind": "relevant-to",
+      "why": "agent traffic at the edge: what agents may reach (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:gcore",
+      "to": "product:sgit",
+      "kind": "relevant-to",
+      "why": "European edge and cloud as a hosting and sovereignty option (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:manageengine",
+      "to": "product:sharness",
+      "kind": "could-buy",
+      "why": "mid-market IT teams will govern agents on endpoints (our judgement)",
+      "source": "our judgement"
+    },
+    {
+      "from": "company:mobbeel",
+      "to": "product:sgit",
+      "kind": "relevant-to",
+      "why": "verified identity for people, counterpart of signed identity for agents (our judgement)",
+      "source": "our judgement"
+    }
+  ],
+  "proposals": [
+    {
+      "company": "cisco-outshift",
+      "decision": "meet",
+      "priority": 1,
+      "why": "partner/story: Outshift by Cisco and DevNet position themselves as the developer platform for agentic AI with open-source projects; a route to the agent-infrastructure community",
+      "status": "proposed"
+    },
+    {
+      "company": "hexamind",
+      "decision": "meet",
+      "priority": 1,
+      "why": "partner/competitor: Hexgate enforces company policy on each agent tool call, the nearest open-source neighbour to RiskMandate and SHarness; compare designs, possible joint demo",
+      "status": "proposed"
+    },
+    {
+      "company": "primitive",
+      "decision": "meet",
+      "priority": 1,
+      "why": "partner/story: \"email built for agents\" gives each agent its own address; directly relevant to our email-agent brief (one official email agent per person, signed mail)",
+      "status": "proposed"
+    },
+    {
+      "company": "mastra",
+      "decision": "meet",
+      "priority": 1,
+      "why": "partner/customer: leading open-source TypeScript agent framework; agents built on it need behaviour policies and shared encrypted state (RiskMandate, sgit)",
+      "status": "proposed"
+    },
+    {
+      "company": "qase",
+      "decision": "meet",
+      "priority": 1,
+      "why": "partner/story: its new product Tiden keeps a record of what you asked for and checks every agent-written change against it, the same idea as our gate and briefs",
+      "status": "proposed"
+    },
+    {
+      "company": "replit",
+      "decision": "meet",
+      "priority": 1,
+      "why": "story/partner: agentic software creation for non-developers, and a featured speaker (Michele Catasta); the \"everyone codes with agents\" audience for SHarness and RiskMandate",
+      "status": "proposed"
+    },
+    {
+      "company": "kpmg-portugal",
+      "decision": "meet",
+      "priority": 1,
+      "why": "customer/partner: KPMG Portugal is an event partner and runs the Global Tech Innovator final in Lisbon; audit and advisory firms are the buyers and validators of AI governance and board-level cyber advice",
+      "status": "proposed"
+    },
+    {
+      "company": "startup-portugal",
+      "decision": "meet",
+      "priority": 1,
+      "why": "partner/story: the door to the Portuguese startups going, and to the Portuguese-language site the plan mentions; ask for the 2026 selected list",
+      "status": "proposed"
+    },
+    {
+      "company": "1password",
+      "decision": "meet",
+      "priority": 1,
+      "why": "partner/story: building \"the security layer for how agents authenticate and connect\"; agent identity and secrets sit next to sgit vaults and agent policies",
+      "status": "proposed"
+    },
+    {
+      "company": "cloudflare",
+      "decision": "meet",
+      "priority": 1,
+      "why": "partner/story: co-founder and CEO is a featured 2026 speaker and the site now says \"build for the agent era\"; edge platform for agents",
+      "status": "proposed"
+    },
+    {
+      "company": "crowdstrike",
+      "decision": "write-about",
+      "priority": 1,
+      "why": "story: co-founder and CEO is a featured 2026 speaker; AI-native endpoint, identity and cloud security, the reference point for any agent-security story",
+      "status": "proposed"
+    },
+    {
+      "company": "delinea",
+      "decision": "meet",
+      "priority": 1,
+      "why": "partner/story: governs what humans, machines and AI agents do once they have access; just-in-time authorization is the identity-side twin of RiskMandate/SHarness policy enforcement",
+      "status": "proposed"
+    },
+    {
+      "company": "polygraf-ai",
+      "decision": "meet",
+      "priority": 1,
+      "why": "customer/partner: an AI Behavioral Control Plane enforcing inline governance on human and agentic AI interactions is the closest commercial neighbour to RiskMandate Agent Behaviour Policies; compare notes, possible integration",
+      "status": "proposed"
+    },
+    {
+      "company": "cnext",
+      "decision": "meet",
+      "priority": 2,
+      "why": "customer: builds secure, compliant agents for European businesses on its Kairos platform; a services firm that could adopt agent behaviour policies",
+      "status": "proposed"
+    },
+    {
+      "company": "getvocal-ai",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "customer/story: contact-centre AI fleet sold on \"full control\" and trust; policy enforcement is their selling point too",
+      "status": "proposed"
+    },
+    {
+      "company": "keewano",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "story: a database built for AI agents (ordered event history with context); interview on agent memory and audit",
+      "status": "proposed"
+    },
+    {
+      "company": "manus-ai",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "story: general-purpose action agent (\"goes beyond answers to execute tasks\"); co-founder speaking; the archetype of an agent that needs a behaviour policy",
+      "status": "proposed"
+    },
+    {
+      "company": "strawberry",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "story: AI-native browser whose companions act inside signed-in accounts, exactly the case where an agent behaviour policy matters",
+      "status": "proposed"
+    },
+    {
+      "company": "you-com",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "story: Richard Socher (You.com) is a featured speaker; search and inference infrastructure for AI agents",
+      "status": "proposed"
+    },
+    {
+      "company": "datadog",
+      "decision": "describe",
+      "priority": 2,
+      "why": "partner/story: AI-powered observability and security; observability of agent runs is a theme of our website workflow",
+      "status": "proposed"
+    },
+    {
+      "company": "temporal",
+      "decision": "interview",
+      "priority": 2,
+      "why": "partner/story: durable execution is the runtime under long-running agents; a talk on foundations over frameworks fits our \"primitives first\" story",
+      "status": "proposed"
+    },
+    {
+      "company": "legalfly",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "customer/story: secure AI-native legal workflows for in-house teams; legal teams are the ones who write the policies agents must follow",
+      "status": "proposed"
+    },
+    {
+      "company": "risiq",
+      "decision": "meet",
+      "priority": 2,
+      "why": "customer/partner: advises banks on risk, governance and regulatory processes; a GRC buyer for agent-policy evidence",
+      "status": "proposed"
+    },
+    {
+      "company": "european-commission",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "story: EU AI Act and digital sovereignty are the regulatory backdrop for agent behaviour policies and EU-held encrypted vaults",
+      "status": "proposed"
+    },
+    {
+      "company": "atlassian",
+      "decision": "describe",
+      "priority": 2,
+      "why": "story/customer: Rovo agents across Jira and Confluence; co-founder and CEO Mike Cannon-Brookes is a featured speaker",
+      "status": "proposed"
+    },
+    {
+      "company": "melious-ai",
+      "decision": "meet",
+      "priority": 2,
+      "why": "partner: sovereign European inference with an Anthropic- and OpenAI-compatible API; a possible EU-hosted backend for agents that must avoid the US Cloud Act",
+      "status": "proposed"
+    },
+    {
+      "company": "air-apps",
+      "decision": "write-about",
+      "priority": 2,
+      "why": "story: one of Portugal's top app developers (30+ apps, 100M+ downloads, roots in Portugal); a Portuguese success story to write about",
+      "status": "proposed"
+    },
+    {
+      "company": "chatplace",
+      "decision": "meet",
+      "priority": 2,
+      "why": "customer/story: Portuguese AI manager that answers DMs and comments 24/7 for creators; an agent acting in someone's name, a RiskMandate use case",
+      "status": "proposed"
+    },
+    {
+      "company": "firefox-enterprise-mozilla",
+      "decision": "meet",
+      "priority": 2,
+      "why": "partner/story: customer-controlled browser for European digital sovereignty; same audience (EU orgs reassessing data control) as client-side-encrypted sgit vaults",
+      "status": "proposed"
+    },
+    {
+      "company": "kiggu",
+      "decision": "interview",
+      "priority": 2,
+      "why": "story/partner: AI-plus-human offensive security for companies without a security team; KPMG Global Tech Innovator finalist in Lisbon, a natural interview",
+      "status": "proposed"
+    },
+    {
+      "company": "spacecomputer",
+      "decision": "meet",
+      "priority": 2,
+      "why": "partner/story: confidential computing, key management and attestation for AI workloads; shares sgit's verifiable-trust and key-management concerns",
+      "status": "proposed"
+    },
+    {
+      "company": "altegio",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: pitches a vertical system of record as \"the layer AI agents are built on\"",
+      "status": "proposed"
+    },
+    {
+      "company": "delta-labs",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: synthetic customer \"AI Twins\"; relates to our synthetic-users studies",
+      "status": "proposed"
+    },
+    {
+      "company": "genspark",
+      "decision": "write-about",
+      "priority": 3,
+      "why": "story: fast-growing agent workspace (\"$250M ARR in 12 months\"); a headline for an article on agents at the summit",
+      "status": "proposed"
+    },
+    {
+      "company": "sensay",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: captures departing employees' knowledge into living knowledge bases; describe",
+      "status": "proposed"
+    },
+    {
+      "company": "elastic",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: search, observability and security on one AI platform; describe for the map",
+      "status": "proposed"
+    },
+    {
+      "company": "orb",
+      "decision": "describe",
+      "priority": 3,
+      "why": "none: usage-based billing for AI companies (now part of Adyen); relevant to how we charge for the newsroom API",
+      "status": "proposed"
+    },
+    {
+      "company": "prelude",
+      "decision": "describe",
+      "priority": 3,
+      "why": "partner/story: developer APIs for verification, authentication and fraud prevention; identity verification for agent-sent messages",
+      "status": "proposed"
+    },
+    {
+      "company": "runpod",
+      "decision": "describe",
+      "priority": 3,
+      "why": "none/partner: GPU developer cloud; describe only",
+      "status": "proposed"
+    },
+    {
+      "company": "twilio",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: customer engagement APIs; describe only",
+      "status": "proposed"
+    },
+    {
+      "company": "0xbow",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: on-chain privacy with built-in compliance; privacy-plus-compliance parallels encrypted vaults",
+      "status": "proposed"
+    },
+    {
+      "company": "arima",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: privacy-first synthetic datasets; describe",
+      "status": "proposed"
+    },
+    {
+      "company": "contents",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: AI content lifecycle with governance and compliance, LLM-agnostic; close to the newsroom's own evidence-tied publishing",
+      "status": "proposed"
+    },
+    {
+      "company": "sphere",
+      "decision": "describe",
+      "priority": 3,
+      "why": "none/story: AI-native tax compliance across 130+ regions; describe",
+      "status": "proposed"
+    },
+    {
+      "company": "andreessen-horowitz",
+      "decision": "describe",
+      "priority": 3,
+      "why": "investor: a top AI/infra investor present; a story about agent security as a category is a reason to talk",
+      "status": "proposed"
+    },
+    {
+      "company": "neo",
+      "decision": "describe",
+      "priority": 3,
+      "why": "investor: Ali Partovi (Founding Partner) is a featured attendee; early-stage residency and investor for technical founders",
+      "status": "proposed"
+    },
+    {
+      "company": "pitchbook",
+      "decision": "describe",
+      "priority": 3,
+      "why": "investor-intel: capital-markets data; useful to research investors on the map",
+      "status": "proposed"
+    },
+    {
+      "company": "shakers",
+      "decision": "describe",
+      "priority": 3,
+      "why": "partner: marketplace of certified European AI builders; possible channel for implementers",
+      "status": "proposed"
+    },
+    {
+      "company": "cerebras",
+      "decision": "describe",
+      "priority": 3,
+      "why": "none: fast AI inference hardware and cloud; describe only",
+      "status": "proposed"
+    },
+    {
+      "company": "google-cloud",
+      "decision": "describe",
+      "priority": 3,
+      "why": "partner: AI stack including agents and security; the Agent Development Kit ecosystem (which Hexgate also supports) is where agent policies plug in",
+      "status": "proposed"
+    },
+    {
+      "company": "ibm",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: official AI Summit partner; watsonx and \"responsible AI\" governance messaging overlaps GRC",
+      "status": "proposed"
+    },
+    {
+      "company": "dig-in",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: Portuguese data engine mapping the hospitality economy; describe",
+      "status": "proposed"
+    },
+    {
+      "company": "itrecruiter",
+      "decision": "describe",
+      "priority": 3,
+      "why": "none: Portuguese tech recruitment ecosystem; describe",
+      "status": "proposed"
+    },
+    {
+      "company": "sheerme",
+      "decision": "describe",
+      "priority": 3,
+      "why": "none: Portuguese beauty and wellness super app; describe",
+      "status": "proposed"
+    },
+    {
+      "company": "vtex",
+      "decision": "describe",
+      "priority": 3,
+      "why": "none/story: commerce platform listed for 2026 with Portugal as country; describe for the Portuguese view of the map",
+      "status": "proposed"
+    },
+    {
+      "company": "akamai",
+      "decision": "describe",
+      "priority": 3,
+      "why": "story: cloud and security platform \"that powers and protects an AI-driven world\"; context for agent-traffic security",
+      "status": "proposed"
+    },
+    {
+      "company": "gcore",
+      "decision": "describe",
+      "priority": 3,
+      "why": "partner: European (Luxembourg) edge AI, cloud and cybersecurity infrastructure; possible hosting/sovereignty conversation",
+      "status": "proposed"
+    },
+    {
+      "company": "manageengine",
+      "decision": "describe",
+      "priority": 3,
+      "why": "customer/story: IT management (Zoho) for mid-market IT teams who will govern agents on endpoints, a SHarness audience",
+      "status": "proposed"
+    },
+    {
+      "company": "mobbeel",
+      "decision": "describe",
+      "priority": 3,
+      "why": "partner/story: verified identity for people is the counterpart of signed identity for agents (our email-agent keys)",
+      "status": "proposed"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "agent-identity",
+      "name": "Agent identity and access",
+      "companies": [
+        "1password",
+        "delinea",
+        "prelude",
+        "mobbeel",
+        "primitive",
+        "spacecomputer",
+        "cloudflare"
+      ],
+      "why": "Who an agent is and what it can reach: the ground next to SGit keys and vaults."
+    },
+    {
+      "id": "agent-governance",
+      "name": "Agent governance and AI security",
+      "companies": [
+        "polygraf-ai",
+        "hexamind",
+        "crowdstrike",
+        "cisco-outshift",
+        "kiggu",
+        "akamai",
+        "manageengine",
+        "firefox-enterprise-mozilla",
+        "elastic",
+        "datadog"
+      ],
+      "why": "Controlling and watching what agents do: where Agent Behaviour Policies and SHarness compete and partner."
+    },
+    {
+      "id": "agent-frameworks",
+      "name": "Agent frameworks, runtimes and products",
+      "companies": [
+        "mastra",
+        "temporal",
+        "replit",
+        "qase",
+        "keewano",
+        "manus-ai",
+        "genspark",
+        "strawberry",
+        "you-com",
+        "atlassian",
+        "altegio"
+      ],
+      "why": "The builders and their agents: the ones whose agents need a mandate and a harness."
+    },
+    {
+      "id": "agent-buyers",
+      "name": "Companies selling agents to businesses",
+      "companies": [
+        "cnext",
+        "getvocal-ai",
+        "chatplace",
+        "legalfly",
+        "sensay",
+        "delta-labs"
+      ],
+      "why": "They sell trust and control in agents to their customers: likely buyers of written policies."
+    },
+    {
+      "id": "grc-regulation",
+      "name": "GRC, audit and regulation",
+      "companies": [
+        "kpmg-portugal",
+        "risiq",
+        "contents",
+        "sphere",
+        "0xbow",
+        "arima",
+        "european-commission",
+        "ibm"
+      ],
+      "why": "The people who answer for agents: auditors, regulators and compliance tools."
+    },
+    {
+      "id": "portugal",
+      "name": "Portugal ecosystem",
+      "companies": [
+        "startup-portugal",
+        "air-apps",
+        "chatplace",
+        "dig-in",
+        "itrecruiter",
+        "sheerme",
+        "vtex",
+        "kpmg-portugal",
+        "shakers"
+      ],
+      "why": "Our Algarve and Portugal community work, and the Portuguese-language site."
+    },
+    {
+      "id": "infrastructure",
+      "name": "AI infrastructure and sovereign cloud",
+      "companies": [
+        "melious-ai",
+        "gcore",
+        "cerebras",
+        "google-cloud",
+        "runpod",
+        "twilio",
+        "orb"
+      ],
+      "why": "Where agents run and how they are paid for; the EU-hosted options matter to us."
+    },
+    {
+      "id": "investors",
+      "name": "Investors and market intelligence",
+      "companies": [
+        "andreessen-horowitz",
+        "neo",
+        "pitchbook"
+      ],
+      "why": "Capital and data on the category; describe and research, not a first meeting."
+    }
+  ],
+  "first_meetings": [
+    {
+      "company": "delinea",
+      "why": "agent access in production is the case ABP writes policies for; two sessions",
+      "session_or_event": "session:ws26-s06 (10 Nov, Masterclass 3, they host) or session:ws26-s37 (12 Nov, Stage 8)",
+      "status": "proposed"
+    },
+    {
+      "company": "primitive",
+      "why": "email built for agents meets our email agent and signed vaults",
+      "session_or_event": "session:ws26-s29 (12 Nov, Stage 9)",
+      "status": "proposed"
+    },
+    {
+      "company": "cloudflare",
+      "why": "what an agent can reach on the web; a Centre Stage talk",
+      "session_or_event": "session:ws26-s01 (10 Nov, Centre Stage)",
+      "status": "proposed"
+    },
+    {
+      "company": "cisco-outshift",
+      "why": "open-source agentic AI platform; a route to agent builders",
+      "session_or_event": "session:ws26-s33 (12 Nov, Stage 8), or the partner stand",
+      "status": "proposed"
+    },
+    {
+      "company": "elastic",
+      "why": "AI security operations and a host of a side event: two easy places to meet",
+      "session_or_event": "session:ws26-s05 (10 Nov, Masterclass 4) or side_event:se14 (10 Nov evening)",
+      "status": "proposed"
+    },
+    {
+      "company": "startup-portugal",
+      "why": "the door to Portuguese startups and our Algarve work",
+      "session_or_event": "session:ws26-s07 (10 Nov, Masterclass 1, they host) or session:ws26-s40 (founders in Portugal meetup, 12 Nov)",
+      "status": "proposed"
+    },
+    {
+      "company": "hexamind",
+      "why": "Hexgate is the nearest open-source neighbour of ABP: compete or partner",
+      "session_or_event": "session:ws26-s39 (people in cybersecurity meetup, 12 Nov); stand not yet read",
+      "status": "proposed"
+    },
+    {
+      "company": "polygraf-ai",
+      "why": "an AI behavioral control plane: compete or partner on policy enforcement",
+      "session_or_event": "session:ws26-s39 (people in cybersecurity meetup, 12 Nov); startup stand day not yet read",
+      "status": "proposed"
+    },
+    {
+      "company": "1password",
+      "why": "agent identity and secrets next to our vaults",
+      "session_or_event": "partner stand (location not yet read); session:ws26-s39 (people in cybersecurity meetup, 12 Nov)",
+      "status": "proposed"
+    },
+    {
+      "company": "mastra",
+      "why": "the leading TypeScript agent framework: its agents need policies and a harness",
+      "session_or_event": "startup stand (day not yet read); session:ws26-s12 (Developer Lounge, 10 Nov) is the nearest developer session",
+      "status": "proposed"
+    },
+    {
+      "company": "kpmg-portugal",
+      "why": "auditors will be asked to assure agent behaviour; an event partner in Lisbon",
+      "session_or_event": "partner stand (location not yet read); session:ws26-s40 (founders in Portugal meetup, 12 Nov)",
+      "status": "proposed"
+    },
+    {
+      "company": "crowdstrike",
+      "why": "the AI-native security reference point; decision is write-about, a talk to cover",
+      "session_or_event": "session:ws26-s25 (12 Nov, Stage 8)",
+      "status": "proposed"
+    }
+  ]
 }

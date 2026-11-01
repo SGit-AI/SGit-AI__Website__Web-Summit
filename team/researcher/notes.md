@@ -67,3 +67,30 @@ Query parameters (`?search=`, `?page=`) do NOT change what the server renders. E
 4. The 2026 Cybersecurity Summit and AI Summit sessions (the schedule has pagination; the app has the rest). A CrowdStrike "AI vs. AI" session with its EMEA CTO was reported by a search summary, but I could not trace it to a primary source, so it is not used.
 5. No people data beyond public speakers listed by Web Summit with their public role. No emails, phones or addresses were collected.
 6. Owners and status (to contact, contacted, and so on) are left for the cartographer and the team. The brief wants an owner among the seven for each company.
+
+## Second pass, 2026-11-01 (researcher@web-summit, sub-agent of the conductor's wake started 2026-11-01T02:28:14Z)
+
+Output: 29 companies added to `data/companies.json` (now 88). Every one is confirmed for 2026 by a LIS26 session page naming its speaker's organisation. 6 at priority 1, 11 at priority 2, 12 at priority 3.
+
+### What I read
+
+- `https://websummit.com/robots.txt` first: still `Disallow: /api/`, `Allow: /`. Nothing under /api/ was read.
+- The 40 session pages listed in `data/events.json` (`/sessions/lis26/<uuid>/<slug>/`). Each page's `__NEXT_DATA__` holds the session under `props.pageProps.data.page.template.customPage.sessionDetailsTemplate[0].session`, with `conferenceSlug: "lis26"`, `starts_at`, `location`, `schedule_track`, and `timeslot_participations[]` (name, `company_name`, `job_title`, `attendance_id`). Hosted sessions also carry `appearance_id`, `appearance_name`, `appearance_country`, `appearance_industry`.
+- The speakers' public attendee pages, built as `/attendees/lis26/<attendance_id>/<name-slug>/`. They give company, country, industry and a public bio. Note: the country on an attendee page is the attendee's listing and may not be the company's headquarters (Descope shows United Kingdom there and United States on its appearance page; I used the appearance page). Two slugs 404'd (Qualcomm's and AICEP's speakers); the session page alone confirms them.
+- Two appearance pages: Descope, and AICEP (its slug is `aicep---portugal-trade-%26-invest`, copied from the session page's href; a guessed slug 404s).
+- Each company's own homepage, title and meta description only.
+
+### What I added (priority)
+
+By id and priority: descope 1, airia 1, emergence-ai 1, feedzai 1, linux-foundation-aaif 1; persona 2, aisle 2, trent-ai 2, launchdarkly 2, jetbrains 2, roost 2, ncsc-uk 2, rws 2, lawvu 2, trustscale 2, aicep 2, ledger 2; sumsub 3, proofpoint 3, testmu-ai 3, sageox 3, neo4j 3, directus 3, factorial 3, qualcomm 3, eversec 3, data-protection-commission 3, c4ail 3, crystal-intelligence 3.
+
+Speakers' organisations in the 40 sessions that I left out as off-topic or not companies: The Atlantic, POLITICO, Foreign Policy, Dataconomy, Wired, TIME, HBR, Mashable, The Guardian, PCMag, ECO, Renascença and other media; Purpose, Berkeley Center for Law and Business, Georgetown University, Future Government Institute, Kill List, The New World, Human intention, AI-Curious, Lush, the US Government, the Government of Portugal; Tencent, Granola, Aaru (relevant only at the edge). Elastic, Delinea, Startup Portugal, Cloudflare, CrowdStrike, Cisco, Primitive and the European Commission were already in the map; I did not change their entries (the new session pages could be added to their sources by a later pass).
+
+### What I could not confirm
+
+- **Persona**: `withpersona.com` answered 403 with a bot challenge. I stopped there; its `what` rests on its CEO's Web Summit bio, and its own site is not listed as a source.
+- **RWS Group**: `rws.com` returned 202 with an empty body; `website` left empty, `what` rests on the session and bio.
+- **Eversec Technology**: `eversec.com.cn` loads (title 行为智能) but the page does not name Eversec, so I could not tie the domain to the company; `website` left empty.
+- **Country fields** for speaker-only companies come from the attendee page (the speaker's listing), so they may be the speaker's country rather than the headquarters (check AISLE, Crystal Intelligence, Trent AI).
+- Still not read: the full startup, partner and speaker lists (client-side search service; see the first pass). No Algarve company found this pass either.
+- No personal data beyond public speakers' names and roles as Web Summit lists them; no contact details collected.

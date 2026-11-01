@@ -1,0 +1,47 @@
+{
+  "agent": "conductor",
+  "started": "2026-11-01T02:28:14Z",
+  "kind": "scheduled, every 2 hours at :27 UTC",
+  "objective": "First scheduled wake: deepen the map and link it to the programme; prepare what Monday's print deadline needs",
+  "commit": "1eebbc5",
+  "plan": [],
+  "steps": [
+    {
+      "n": 1,
+      "step": "plan",
+      "verdict": "go",
+      "comment": "Three roles, files disjoint: researcher writes data/companies.json + team/researcher/**; cartographer writes data/graph.json + team/cartographer/**; designer writes team/designer/** (QR SVGs for the flyer and banner, final root URL, tested). No requests open. Personal card QRs blocked on names and ids.",
+      "at": "2026-11-01T02:28:29.054Z"
+    },
+    {
+      "n": 2,
+      "step": "pre-review",
+      "verdict": "go",
+      "comment": "First review: change (cartographer may link only company ids present at wake start). Amended; re-review: go. Note: all role policies are still proposed, not yet agreed by the operator.",
+      "at": "2026-11-01T02:29:14.019Z"
+    },
+    {
+      "n": 3,
+      "step": "work",
+      "verdict": "done",
+      "comment": "researcher: +29 companies (88), all confirmed on lis26 session pages, robots.txt followed; cartographer: data/graph.json, 86 links, 8 clusters, 12 proposed first meetings; designer: 4 final QR codes (flyer, banner, sticker, tee) each decoded by two decoders; conductor: graph rendered in the build.",
+      "at": "2026-11-01T02:34:59.146Z"
+    },
+    {
+      "n": 4,
+      "step": "post-review",
+      "verdict": "clean",
+      "comment": "All writes inside policy; validate OK (119 pages); comms_check OK; no personal data, keys or /api/ sources; QR kit pinned and domain-locked; graph ids all exist at HEAD.",
+      "at": "2026-11-01T02:35:45.711Z"
+    },
+    {
+      "n": 5,
+      "step": "post-check",
+      "verdict": "as-planned",
+      "comment": "Closing conductor: all three items done with evidence (88 companies, graph 86 links/8 clusters/12 first meetings, QR flyer+banner decoded); extras inside roles: sticker and tee codes, regen scripts.",
+      "at": "2026-11-01T02:36:28.468Z"
+    }
+  ],
+  "outcome": "ok",
+  "closed": "2026-11-01T02:36:28.536Z"
+}

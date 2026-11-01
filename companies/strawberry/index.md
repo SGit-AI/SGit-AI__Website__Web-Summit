@@ -2,7 +2,7 @@
 
 The AI-native browser.
 
-Site version: v0.1.14
+Site version: v0.1.15
 
 - Website: https://strawberrybrowser.com
 - Category: ai-agents

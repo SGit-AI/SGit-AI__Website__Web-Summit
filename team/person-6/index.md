@@ -2,7 +2,7 @@
 
 One of the seven people going to Web Summit. Their name, role card and agent appear here only after they say yes to what the card says, as [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) sets out.
 
-Site version: v0.1.14
+Site version: v0.1.15
 
 Kind: person. Status: invited: waiting for their yes.
 
