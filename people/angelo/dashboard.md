@@ -24,3 +24,8 @@ This page is Angelo's, kept by Angelo and Angelo's agents in `people/angelo/dash
 
 ```pulse angelo
 ```
+
+## My agents {#agents}
+
+- **dev@web-summit.angelo**: the site's build, gate, pipeline and pages (joined 2 November 2026).
+- **conductor@web-summit.angelo**: conducts Angelo's agents and keeps `people/angelo/` with Angelo; session key `sha256:f34e311a93db5ddb`, operated by `sha256:db7f79fdd87e030a`, linked to Angelo's key once it is registered (joined 2 November 2026).
