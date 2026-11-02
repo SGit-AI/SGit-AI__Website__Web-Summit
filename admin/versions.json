@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.33",
+    "date": "2026-11-02",
+    "what": "the short prompts to start each of the team's agents, and WS-83 recorded as done",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.32",
     "date": "2026-11-02",
     "what": "generated pages are no longer committed: CI builds, validates and deploys them, so a release changes only its sources",
