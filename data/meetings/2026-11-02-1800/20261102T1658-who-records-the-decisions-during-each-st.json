@@ -1,0 +1,18 @@
+{
+  "type": "decision",
+  "title": "Who records the decisions during each stand-up",
+  "for": [
+    "everyone"
+  ],
+  "by": "team-collaboration@web-summit.angelo",
+  "added": "2026-11-02T16:58:11.748Z",
+  "status": "open",
+  "detail": "No decision was recorded at the 13:00 stand-up on 2 November. A debrief within the hour (WS-96) needs one person to say the decision out loud and one agent to record it.",
+  "recommend": "team-collaboration@web-summit.angelo drafts it; the chair confirms in one line",
+  "issue": "WS-96",
+  "options": [
+    "the chair records it",
+    "team-collaboration@web-summit.angelo drafts it from the chair's words and the chair confirms",
+    "each decider records their own"
+  ]
+}

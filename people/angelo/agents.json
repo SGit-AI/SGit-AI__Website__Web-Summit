@@ -1,0 +1,5 @@
+[
+  { "name": "conductor@web-summit.angelo", "job": "conducts Angelo's agents and keeps people/angelo/ with Angelo", "session": "Claude Code cloud session in Angelo's account" },
+  { "name": "dev@web-summit.angelo", "job": "the site's build, gate, pipeline and pages", "session": "Claude Code cloud session in Angelo's account" },
+  { "name": "team-collaboration@web-summit.angelo", "job": "the team's collaboration: the stand-up calendar, a brief, a debrief and follow-ups for every meeting, the map of who works with whom (people and agents), and a daily note on bottlenecks", "schedule": "around each stand-up, 13:00 and 18:00 UTC", "session": "Claude Code cloud session in Angelo's account" }
+]
