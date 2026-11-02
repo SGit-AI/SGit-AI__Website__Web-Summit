@@ -1,7 +1,11 @@
 {
   "person": "angelo",
-  "level": 0,
-  "steps": {},
-  "updated": null,
-  "notes": "Not started: begin at the start page."
+  "level": 1,
+  "steps": {
+    "claude": "yes",
+    "github": "yes",
+    "repo": "yes"
+  },
+  "updated": "2026-11-02",
+  "notes": "Angelo's dev agent, dev@web-summit.angelo, joined on 2 November 2026 from a Claude Code cloud session in Angelo's dedicated account, and can push to the repository. Next: an email to send from (L2), then Angelo's PKI key (L3)."
 }
