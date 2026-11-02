@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.32",
+    "date": "2026-11-02",
+    "what": "generated pages are no longer committed: CI builds, validates and deploys them, so a release changes only its sources",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.31",
     "date": "2026-11-02",
     "what": "Silvio's RiskMandate videos with an article each, the storyboard for the stand's silent loop, the video pipeline and feedback, the meet pages in the videos' language, a T8 shirt, and the Insider research turned into issues",
