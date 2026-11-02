@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.91",
+    "date": "2026-11-02",
+    "what": "WS-103, the home page redesigned (Dinis's screenshot of 22:18)",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.90",
     "date": "2026-11-02",
     "what": "the build 3.3 s -> 0.45 s and the gate 3.0 s -> 1.0 s: the stand-ups read git history once",
