@@ -7,11 +7,13 @@ path: meet/vicky/index.html
 
 ## RiskMandate, in short {#riskmandate}
 
-AI agents act for people and companies. RiskMandate puts them under a behaviour policy: what each agent may do, and what it must never do. So you can answer the questions everyone is starting to ask:
+**Know their reach. Define their mandate. Control the gap.** AI agents now act for companies. RiskMandate gives each one a factual record teams can check: its **Reach** (what it can actually access or affect), its **Mandate** (what the business authorised it to do), the **Gap** between them, and the real **Barriers**, with a Licence to Operate saying who authorised it and who is accountable. The questions it answers:
 
-- **Do you know what your agents are doing?**
+- **Do you know what your agents can reach?**
 - **If you buy an agent, do you know what's on the other side?**
 - **If you sell one, what do you say when your customer asks?**
+
+Watch it in 53 seconds: [Reach, Mandate, Gap](../../videos/reach-mandate-gap/index.html), or the story: [fifty new agents](../../videos/fifty-new-agents/index.html).
 
 ## Talk to us {#talk}
 

@@ -36,6 +36,7 @@ Or send your picks to Vicky or Dinis and they commit them for you. The tally, bu
 | **T5** RISK MANDATE: agents with a mandate. The brand, big: for when we want the name remembered more than a question. | [![T5 front](../assets/design/tee-T5-front.svg)](../assets/design/tee-T5-front.svg) | [![T5 back](../assets/design/tee-T5-back.svg)](../assets/design/tee-T5-back.svg) |
 | **T6** I brought 6 agents to Web Summit. True, playful, and a demo in itself: each of us runs an agentic team. | [![T6 front](../assets/design/tee-T6-front.svg)](../assets/design/tee-T6-front.svg) | [![T6 back](../assets/design/tee-T6-back.svg)](../assets/design/tee-T6-back.svg) |
 | **T7** The plain backup. If the venue pushes back on messages: the name on the chest, the QR on the back. | [![T7 front](../assets/design/tee-T7-front.svg)](../assets/design/tee-T7-front.svg) | [![T7 back](../assets/design/tee-T7-back.svg)](../assets/design/tee-T7-back.svg) |
+| **T8** Know their reach. Define their mandate. Control the gap. RiskMandate's own line, from Silvio's video: the product in three short sentences. | [![T8 front](../assets/design/tee-T8-front.svg)](../assets/design/tee-T8-front.svg) | [![T8 back](../assets/design/tee-T8-back.svg)](../assets/design/tee-T8-back.svg) |
 
 ## The seven, a colour and a line each {#seven}
 
@@ -69,6 +70,9 @@ A proposal: each of us in our own colour, with a different line, so a group of u
 
 ## More lines to choose from {#lines}
 
+- Know their reach. Define their mandate. Control the gap.
+- Building is not authorising.
+- Same agent. Different reach.
 - Do you know what your agents are doing?
 - My agents have a policy. Do yours?
 - Who's on the other side of your agent?

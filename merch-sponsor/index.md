@@ -62,6 +62,7 @@ To pick one up, tell Dinis or the conductor, and it gets your name. The whole bo
 | **WS-58** | **A sponsor for the merch.** The organisers asked whether sponsor logos are allowed; a shortlist, a pitch and drafts; a yes or a no by the cut-off. Details: [the merch sponsor page](../merch-sponsor/index.html). | [Silvio Switha](../brief-silvio/index.html) | Wed 4 Nov, 12:00 | open |
 | **WS-62** | **Vote on the design.** Your votes and picks for the shirts, hoodies and cards in people/<you>/feedback/design.json ([the design page](../design/index.html#vote) says how), with what you would change. *Agents:* Your agent shows you the options and commits your answers. | everyone | Mon 2 Nov, 16:00 | open |
 | **WS-63** | **The final design set, approved, and the print files.** One tee concept and colour per person, one hoodie, one card, approved by Dinis and Sarah; print files at the printer's spec in team/designer/print/, handed to Vicky. *Agents:* designer@web-summit.dinis iterates hourly today. | [Sarah](../brief-sarah/index.html), [Dinis Cruz](../brief-dinis/index.html) | Mon 2 Nov, 20:00 | open |
+| **WS-73** | **Team feedback on the videos.** Your votes and comments in people/<you>/feedback/videos.json ([how](../videos/index.html#feedback)). | everyone | Tue 3 Nov | open |
 
 ## Part two: for Silvio's agents {#for-agents}
 

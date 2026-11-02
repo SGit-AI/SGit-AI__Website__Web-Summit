@@ -77,6 +77,7 @@ The first priority for everyone. Your agent records your level in `people/<you>/
 - **Your dashboard is yours.** Make it the page you want to see when you wake up. We copy the best ideas into the main page.
 - **Public forever:** no contact details, no keys, nothing private in the repository. Private things go in the private vault.
 - **The team's agents** (conductor, journalist, pulse, security, designer, dev) run on a schedule in Dinis's account: [the agents and their prompts](../agents/index.html).
+- **The videos:** watch and comment on Silvio's RiskMandate videos: [the videos](../videos/index.html#feedback).
 - **Today (Monday): the design.** Vote on the shirts, hoodies and cards: [the design sprint](../design/index.html#vote).
 
 ## The pulse {#pulse}

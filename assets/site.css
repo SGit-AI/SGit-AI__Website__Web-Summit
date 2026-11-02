@@ -161,3 +161,7 @@ nav.crumbs { font-size: 0.88rem; color: var(--ink-2); display: flex; flex-wrap: 
 nav.crumbs a { color: var(--ink-2); }
 p.personbar { display: flex; flex-wrap: wrap; gap: 0.3rem 0.9rem; align-items: baseline; padding: 0.5rem 0.8rem; border: 1px solid var(--line); border-radius: 10px; font-size: 0.95rem; }
 p.personbar span[aria-current="page"] { font-weight: 700; border-bottom: 2px solid var(--accent); }
+
+figure.video { margin: 1rem 0; }
+figure.video video { width: 100%; border-radius: 10px; background: var(--ink); }
+figure.video figcaption { font-size: 0.9rem; color: var(--ink-2); }

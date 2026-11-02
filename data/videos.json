@@ -1,0 +1,21 @@
+{
+  "about": "The team's videos, for the feedback tally (people/<id>/feedback/videos.json: votes love|yes|no per option, comments).",
+  "options": [
+    {
+      "id": "V-reach",
+      "name": "Reach, Mandate, Gap (the visual explanation, 53 s)"
+    },
+    {
+      "id": "V-stories-1",
+      "name": "RiskMandate Stories: fifty new agents (2 min 44 s)"
+    },
+    {
+      "id": "V-loop",
+      "name": "The 2-minute silent loop for the stand (the storyboard)"
+    },
+    {
+      "id": "V-publish",
+      "name": "Publish both now on YouTube, Instagram and LinkedIn"
+    }
+  ]
+}

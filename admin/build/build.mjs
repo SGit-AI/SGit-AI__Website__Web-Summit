@@ -13,7 +13,7 @@ const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
 const SECTIONS = [
     { t: 'Start', h: 'start/index.html', re: /^start\//, sub: [] },
     { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet)\b/, sub: [['People', 'team/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['Meet us', 'meet/index.html']] },
-    { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|merch-sponsor)\b/, sub: [['The board', 'briefs/index.html#issues'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Log', 'log/index.html'], ['Merch sponsor', 'merch-sponsor/index.html']] },
+    { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|merch-sponsor|videos|research)\b/, sub: [['The board', 'briefs/index.html#issues'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Merch sponsor', 'merch-sponsor/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
     { t: 'About', h: 'about/index.html', re: /^(about|articles|keys|admin|agent\/|briefing)\b/, sub: [['About', 'about/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['Versions', 'admin/versions.html'], ['The site agent', 'agent/index.html'], ['Inbox briefing', 'briefing/index.html']] },
 ]
@@ -57,9 +57,17 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) buf.push(lines[i])
             i++
             out.push(`<pre><code>${esc(buf.join('\n'))}</code></pre>`)
+        } else if (/^!video\[/.test(l)) {
+            // !video[caption](file.mp4 poster.jpg): a video that plays inline, muted controls, with its poster
+            const m = l.match(/^!video\[([^\]]*)\]\(([^)\s]+)(?:\s+([^)\s]+))?\)/)
+            out.push(`<figure class="video"><video controls playsinline preload="none"${m[3] ? ` poster="${m[3]}"` : ''} src="${m[2]}"></video><figcaption>${inline(m[1])}</figcaption></figure>`); i++
         } else if (/^#{2,3} /.test(l)) {
             const n = l.match(/^#+/)[0].length, raw = l.replace(/^#+ /, ''), anchor = raw.match(/\s*\{#([a-z0-9-]+)\}\s*$/), t = raw.replace(/\s*\{#[a-z0-9-]+\}\s*$/, '')
             out.push(`<h${n} id="${anchor ? anchor[1] : slug(t)}">${inline(t)}</h${n}>`); i++
+        } else if (/^\d+\. /.test(l)) {
+            const items = []
+            for (; i < lines.length && /^\d+\. /.test(lines[i]); i++) items.push(`<li>${inline(lines[i].replace(/^\d+\. /, ''))}</li>`)
+            out.push(`<ol>${items.join('')}</ol>`)
         } else if (/^- /.test(l)) {
             const items = []
             for (; i < lines.length && /^- /.test(lines[i]); i++) items.push(`<li>${inline(lines[i].slice(2))}</li>`)
@@ -72,7 +80,7 @@ function render(md) {
         } else if (l.trim() === '') i++
         else {
             const buf = []
-            for (; i < lines.length && lines[i].trim() !== '' && !/^(```|#{2,3} |- |\|)/.test(lines[i]); i++) buf.push(lines[i])
+            for (; i < lines.length && lines[i].trim() !== '' && !/^(```|#{2,3} |- |\d+\. |\||!video\[)/.test(lines[i]); i++) buf.push(lines[i])
             out.push(`<p>${inline(buf.join(' '))}</p>`)
         }
     }

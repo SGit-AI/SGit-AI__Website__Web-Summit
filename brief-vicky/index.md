@@ -63,6 +63,8 @@ Pick any of these up, or anyone else's on [the board](../briefs/index.html#issue
 | **WS-61** | **Try the voice memo to follow-up loop once.** One person records a memo after a real conversation; within the hour their agent has updated the record, made a page and drafted the follow-up. | anyone | Sat 7 Nov | open |
 | **WS-62** | **Vote on the design.** Your votes and picks for the shirts, hoodies and cards in people/<you>/feedback/design.json ([the design page](../design/index.html#vote) says how), with what you would change. *Agents:* Your agent shows you the options and commits your answers. | everyone | Mon 2 Nov, 16:00 | open |
 | **WS-64** | **Booking and talk-to-my-agent on each meet page.** Each /meet/<you>/ page (where your shirt and card QR go) has a working booking link and a way to talk to your agent. | [Angelo](../brief-angelo/index.html), [Jose Bota](../brief-jose/index.html), everyone | Thu 5 Nov | open |
+| **WS-70** | **Full transcripts of both videos.** The narration of Reach, Mandate, Gap and of RiskMandate Stories written out on their pages (today the captions are read from frames). | anyone | Wed 4 Nov | open |
+| **WS-73** | **Team feedback on the videos.** Your votes and comments in people/<you>/feedback/videos.json ([how](../videos/index.html#feedback)). | everyone | Tue 3 Nov | open |
 
 ### Who you work with {#tag-team}
 

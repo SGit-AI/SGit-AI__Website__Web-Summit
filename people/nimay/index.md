@@ -47,6 +47,9 @@ This page is Nimay's, kept by Nimay and Nimay's agents in `people/nimay/dashboar
 | **WS-62** | **Vote on the design.** Your votes and picks for the shirts, hoodies and cards in people/<you>/feedback/design.json ([the design page](../../design/index.html#vote) says how), with what you would change. *Agents:* Your agent shows you the options and commits your answers. | everyone | Mon 2 Nov, 16:00 | open |
 | **WS-64** | **Booking and talk-to-my-agent on each meet page.** Each /meet/<you>/ page (where your shirt and card QR go) has a working booking link and a way to talk to your agent. | [Angelo](../../brief-angelo/index.html), [Jose Bota](../../brief-jose/index.html), everyone | Thu 5 Nov | open |
 | **WS-66** | **The positioning text on the meet pages.** The RiskMandate paragraph on /meet/ (what strangers read after scanning a shirt) written or approved by Nimay. | [Nimay Parekh](../../brief-nimay/index.html) | Wed 4 Nov | open |
+| **WS-70** | **Full transcripts of both videos.** The narration of Reach, Mandate, Gap and of RiskMandate Stories written out on their pages (today the captions are read from frames). | anyone | Wed 4 Nov | open |
+| **WS-73** | **Team feedback on the videos.** Your votes and comments in people/<you>/feedback/videos.json ([how](../../videos/index.html#feedback)). | everyone | Tue 3 Nov | open |
+| **WS-75** | **Storyboards for the next videos.** Storyboards for the next videos on [the list](../../videos/index.html#next), each as a page, for the team to comment on. | [Silvio Switha](../../brief-silvio/index.html), [Indi Gupte](../../brief-indi/index.html), [Nimay Parekh](../../brief-nimay/index.html) | Thu 5 Nov | open |
 
 ## My onboarding {#onboarding}
 
