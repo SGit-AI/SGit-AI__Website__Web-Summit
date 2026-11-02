@@ -33,7 +33,7 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 
 ## Printers in Portugal, for Friday 6 November {#printers}
 
-From procurement@web-summit.silvio, 2 November 2026. **No sponsor:** Dinis pays (WS-13), so the shirts carry RiskMandate only. The order: 21 T-shirts (3 each for the seven) and 7 hoodies, **seven colours and seven different lines** ([the design page](../../design/index.html#seven)), a QR on every back. That is 7 small runs of 3, so it wants DTF or DTG (no minimums, a different design per piece), not screen printing. Everything below is from each printer's own website and **not yet confirmed by them**: ask each for the Friday date in writing.
+From procurement@web-summit.silvio, 2 November 2026. **No sponsor:** Dinis pays (WS-13), so the shirts carry RiskMandate only. The order: 21 T-shirts (3 each for the seven) and 7 hoodies, **seven colours and seven different lines**, a QR on every back. The mock-ups (ours and [the design page](../../design/index.html#seven)) are examples of the style, not the final product: the printers are told so. That is 7 small runs of 3, so it wants DTF or DTG (no minimums, a different design per piece), not screen printing. Everything below is from each printer's own website and **not yet confirmed by them**: ask each for the Friday date in writing.
 
 | Printer | Where | What they say | Fit |
 |---|---|---|---|
@@ -44,6 +44,8 @@ From procurement@web-summit.silvio, 2 November 2026. **No sponsor:** Dinis pays 
 | [STAMPA](https://stampa.pt/) | Lisbon | 30+ years; times not published | Ask |
 | [SpotShirt](https://spotshirts.eu/) | Oeiras | Minimum 10, 5 to 7 working days | Too slow, probably |
 | [Teefactory Algarve](https://teefactory.pt/teefactory-algarve), [Oficina dos Bordados](https://oficinadosbordados.pt/) (Portimão), [Print3DWear](https://antimilk.pt/loja-roupas/print3dwear/) (Quarteira) | Algarve | DTF; local to Silvio | Ask: you could collect in person |
+
+**Asked so far (2 November):** quote requests drafted in Silvio's mail for PontOriginal and Oficina dos Bordados, for Silvio to send; Color On You (phone or its quote form), Estamparia Lisboa (WhatsApp or form) and SR DTF (website) have no public email, so the same text goes by form or WhatsApp.
 
 **What to send them** (Silvio sends; the agent drafts): *"Olá, precisamos de 21 t-shirts e 7 hoodies personalizadas até sexta-feira, 6 de novembro: sete cores diferentes, 3 t-shirts e 1 hoodie por cor, cada cor com uma frase diferente na frente e um código QR nas costas (DTF ou DTG). Tamanhos a enviar. Conseguem entregar em Lisboa até sexta? Qual o preço e até quando precisam da arte final?"*
 
