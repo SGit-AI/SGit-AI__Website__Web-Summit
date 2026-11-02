@@ -1,0 +1,14 @@
+{
+  "about": "Every channel the team uses, so nothing is lost as the team grows (WS-95). Kept by the conductor; add a row when a channel starts. Public: names and purposes only, never a link that grants access, a number or an address.",
+  "channels": [
+    {"id": "site", "name": "web-summit.sgit.ai", "kind": "website", "for": "everyone, people and agents", "purpose": "The centre: briefs, the board, the stand-ups, dashboards, reports", "status": "live"},
+    {"id": "repo", "name": "GitHub: SGit-AI/SGit-AI__Website__Web-Summit (dev)", "kind": "repository", "for": "everyone with push", "purpose": "Where people and agents commit; commits are how agents talk (Agent:, Issue:, For:)", "status": "live"},
+    {"id": "standups", "name": "Stand-ups, 13:00 and 18:00", "kind": "meeting", "for": "the seven", "purpose": "Decisions, questions, ideas; agenda and briefings at /meetings/", "status": "from 2 November"},
+    {"id": "whatsapp", "name": "The team's WhatsApp group", "kind": "chat", "for": "the people", "purpose": "Quick human messages; the start page link goes here. A broadcast number is WS-39", "status": "live"},
+    {"id": "slack", "name": "RiskMandate Slack", "kind": "chat", "for": "to decide", "purpose": "Possible home for the journalist's reports (WS-39)", "status": "exists, not wired"},
+    {"id": "drive", "name": "RiskMandate Google Drive: videos folder", "kind": "files", "for": "the team", "purpose": "Video masters, drafts with timestamped comments, published versions", "status": "live"},
+    {"id": "email", "name": "Each person's email (workspace accounts where needed)", "kind": "email", "for": "each person", "purpose": "Drafts by agents, sent by people (WS-04, WS-11)", "status": "being set up"},
+    {"id": "vaults", "name": "SGit vaults (public and private)", "kind": "encrypted store", "for": "the team, by key", "purpose": "What cannot be public: meetings, contacts (WS-23, WS-24)", "status": "being set up"},
+    {"id": "pki", "name": "pki.sgit.ai", "kind": "identity", "for": "everyone", "purpose": "Each person's and agent's key; vault keys sealed to them (WS-03)", "status": "being set up"}
+  ]
+}

@@ -42,11 +42,16 @@
       ],
       "core": true,
       "agents": [
+        "abp@web-summit.dinis",
         "conductor@web-summit.dinis",
+        "designer@web-summit.dinis",
+        "dev@web-summit.dinis",
+        "inbox@web-summit.dinis",
         "journalist@web-summit.dinis",
+        "project-manager@web-summit.dinis",
         "pulse@web-summit.dinis",
         "security@web-summit.dinis",
-        "inbox@web-summit.dinis"
+        "sgit@web-summit.dinis"
       ]
     },
     {
@@ -54,7 +59,7 @@
       "name": "Silvio Switha",
       "kind": "human",
       "role": "Ideas, outreach, local, and video",
-      "status": "briefed: card to fill",
+      "status": "connected (L1, 2 November): card to fill",
       "summary": "Get things done: the outreach, the local Algarve work, and the videos that carry RiskMandate further. Brief: [Brief for Silvio](../../brief-silvio/index.html); dashboard: [Silvio's dashboard](../../people/silvio/index.html).",
       "owns": [
         "the merch sponsor ask (side quest)",
@@ -84,10 +89,13 @@
       ],
       "core": true,
       "agents": [
-        "outreach@web-summit.silvio",
-        "video@web-summit.silvio",
+        "conductor@web-summit.silvio",
+        "dev@web-summit.silvio",
         "local@web-summit.silvio",
-        "sponsor@web-summit.silvio"
+        "outreach@web-summit.silvio",
+        "procurement@web-summit.silvio",
+        "sponsor@web-summit.silvio",
+        "video@web-summit.silvio"
       ]
     },
     {
@@ -134,7 +142,7 @@
       "name": "Angelo",
       "kind": "human",
       "role": "Technical lead: the site, the agents, the behaviour policies",
-      "status": "briefed: card to fill",
+      "status": "connected (L1, 2 November): card to fill",
       "summary": "Make the setup work for everyone: the site, GitHub, the agents, and a behaviour policy for every agent and person. Brief: [Brief for Angelo](../../brief-angelo/index.html); dashboard: [Angelo's dashboard](../../people/angelo/index.html).",
       "owns": [
         "to decide: the companies they own on the map"
@@ -163,9 +171,10 @@
       ],
       "core": true,
       "agents": [
+        "conductor@web-summit.angelo",
         "dev@web-summit.angelo",
-        "policy@web-summit.angelo",
-        "helper@web-summit.angelo"
+        "helper@web-summit.angelo",
+        "policy@web-summit.angelo"
       ]
     },
     {
