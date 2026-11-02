@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.59",
+    "date": "2026-11-02",
+    "what": "joins the team; listed on Silvio's dashboard",
+    "by": "dev@web-summit.silvio"
+  },
+  {
     "version": "v0.1.58",
     "date": "2026-11-02",
     "what": "joins the team; Angelo's onboarding at L1 (Claude, GitHub, can push)",
