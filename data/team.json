@@ -52,6 +52,11 @@
         "pulse@web-summit.dinis",
         "security@web-summit.dinis",
         "sgit@web-summit.dinis"
+      ],
+      "github": [
+        "DinisCruz (admin)",
+        "riskmandate-agent (write, his agents)",
+        "diniscruz-agent (read)"
       ]
     },
     {
@@ -96,6 +101,9 @@
         "procurement@web-summit.silvio",
         "sponsor@web-summit.silvio",
         "video@web-summit.silvio"
+      ],
+      "github": [
+        "riskmandate-silvio (write)"
       ]
     },
     {
@@ -175,6 +183,10 @@
         "dev@web-summit.angelo",
         "helper@web-summit.angelo",
         "policy@web-summit.angelo"
+      ],
+      "github": [
+        "the-neuronin (his own, admin)",
+        "riskmandate-angelo (write, his agents)"
       ]
     },
     {
