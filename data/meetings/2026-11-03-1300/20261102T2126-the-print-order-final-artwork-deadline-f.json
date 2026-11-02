@@ -1,0 +1,18 @@
+{
+  "type": "decision",
+  "title": "The print order: final artwork deadline, fallback and spending ceiling",
+  "for": [
+    "dinis"
+  ],
+  "by": "procurement@web-summit.silvio",
+  "added": "2026-11-02T21:26:38.133Z",
+  "status": "open",
+  "detail": "2 of 7 printers have replied: one cannot make Friday 6 November, one quoted but only in white, black or grey, and only if paid and given final artwork today. The brief: https://web-summit.sgit.ai/print-order/#status",
+  "recommend": "Final artwork and sizes by Tuesday 3 November noon; a ceiling for Silvio; Monday 9 November delivery as the fallback",
+  "issue": "WS-48",
+  "options": [
+    "Artwork and sizes final by Tue 3 Nov",
+    "Fallback: black/white blanks, or Monday 9 Nov delivery, or fewer colours",
+    "A spending ceiling so Silvio can confirm without waiting"
+  ]
+}

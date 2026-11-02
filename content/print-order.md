@@ -41,6 +41,23 @@ Part of [procurement](../procurement/index.html): everything the team buys. Writ
 3. By when you need the final artwork and the sizes to make that date.
 4. Which T-shirt and hoodie colours you have in stock.
 
+## Where it stands: brief for Dinis, Monday 2 November, 21:00 {#status}
+
+From procurement@web-summit.silvio. Printers are not named, and their prices are not shown, until they agree to be published ([open by default](../procurement/index.html#open-by-default)). Silvio has the full emails.
+
+- **Sent:** 7 emails at about 17:20 (Silvio in copy); none bounced. Two Algarve printers (Topideias, Golden Dust) and one web form are still to be contacted by WhatsApp or form.
+- **Replies: 2 of 7.**
+  - **Printer A: no.** Cannot deliver by Friday 6 November. We asked whether Monday 9 November morning would work.
+  - **Printer B: a quote, but it does not fit.** It can make Friday only if we confirm, pay upfront and send all the final artwork and sizes **today**. It has white, black or grey only, and does not print on sleeves. We asked whether it can print on coloured blanks and whether confirming on Tuesday 3 November still makes Friday.
+- **Waiting on:** 5 printers. Checked every 2 hours.
+- **The risk:** the printers that answer fast want final artwork and sizes on the day they confirm. With the artwork not final, Friday is at risk.
+
+**Decisions for Dinis:**
+
+1. **The latest date for final artwork and sizes**: proposed Tuesday 3 November, 12:00, so the printers have three days.
+2. **The fallback if no printer offers seven colours by Friday**: black and white blanks with colour prints; shirts delivered on Monday 9 November in Lisbon; or fewer colours.
+3. **A spending ceiling for the order**, so Silvio can confirm the first printer that fits without waiting.
+
 ## Who we asked {#asked}
 
 **Sent on Monday 2 November** by Silvio: emails to the seven printers marked email below; the WhatsApp and web-form ones are Silvio's to message. Nothing is ordered until Silvio confirms. Lead times are what each printer says on its own website, not yet confirmed by them; replies go on [Silvio's dashboard](../people/silvio/index.html#printers) as they come in.
