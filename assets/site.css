@@ -45,8 +45,9 @@
 :root {
     --sans    : ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     --mono    : ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
-    --measure : 46rem;
-    --wide    : 72rem;
+    --measure : 50rem;   /* a readable line for prose; tables, code, cards and figures take the full width */
+    --wide    : 82rem;
+    --rail    : 13.5rem;
     --radius  : 10px;
     --gutter  : 16px;
 }
@@ -80,7 +81,10 @@ p code, li code, td code {
     background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px;
     padding: 0.08em 0.35em; font-size: 0.86em;
 }
-pre { background: var(--code-bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.9rem 1rem; overflow-x: auto; font-size: 0.88rem; line-height: 1.5; }
+pre { position: relative; background: var(--code-bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.9rem 1rem; overflow-x: auto; font-size: 0.88rem; line-height: 1.5; white-space: pre-wrap; }
+pre.has-copy { padding-right: 4.6rem; }
+pre .copy { position: absolute; top: 0.5rem; right: 0.5rem; font: 600 0.75rem var(--sans); padding: 0.25rem 0.6rem; border: 1px solid var(--line-2); border-radius: 6px; background: var(--surface); color: var(--ink); cursor: pointer; }
+pre .copy:hover { border-color: var(--accent); }
 pre code { background: none; border: 0; padding: 0; font-size: inherit; }
 
 .skip { position: absolute; left: -999px; top: 0; background: var(--accent); color: var(--accent-ink); padding: 0.5rem 1rem; z-index: 100; }
@@ -105,9 +109,22 @@ nav.site .links a:hover { color: var(--ink); }
 nav.site .links a[aria-current="page"] { color: var(--ink); font-weight: 600; box-shadow: inset 0 -2px 0 var(--accent); }
 nav.site .gh { margin-left: auto; }
 
-/* ---------- page ---------- */
-main { max-width: var(--measure); margin: 0 auto; padding: 2rem var(--gutter) 3rem; }
-main.home { max-width: var(--wide); }
+/* ---------- page: the frame uses the width; a rail on the left on wide screens (WS-91) ---------- */
+.frame { max-width: var(--wide); margin: 0 auto; padding: 0 var(--gutter); }
+main { min-width: 0; padding: 2rem 0 3rem; }
+main > p, main > ul, main > ol, main > h2, main > h3 { max-width: var(--measure); }
+.rail { display: none; }
+@media (min-width: 64rem) {
+    .frame.with-rail { display: grid; grid-template-columns: var(--rail) minmax(0, 1fr); gap: 3rem; }
+    .rail { display: block; position: sticky; top: 3.6rem; align-self: start; max-height: calc(100vh - 4rem); overflow-y: auto; padding: 2.2rem 0 2rem; font-size: 0.9rem; }
+    .rail ul { list-style: none; padding: 0; margin: 0 0 1.4rem; border-left: 1px solid var(--line); }
+    .rail li { margin: 0; }
+    .rail a { display: block; padding: 0.22rem 0 0.22rem 0.8rem; margin-left: -1px; border-left: 2px solid transparent; color: var(--ink-2); text-decoration: none; line-height: 1.35; }
+    .rail a:hover { color: var(--ink); border-left-color: var(--line-2); }
+    .rail a[aria-current="page"] { color: var(--ink); font-weight: 600; border-left-color: var(--accent); }
+    .rail-h { margin: 0 0 0.4rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); }
+    nav.subnav { display: none; }
+}
 .lead { font-size: 1.2rem; line-height: 1.55; color: var(--ink-2); max-width: 40rem; margin: 0.4rem 0 1rem; }
 .meta { color: var(--ink-2); font-size: 0.9rem; }
 .asof { display: inline-block; margin: 0 0 1rem; padding: 0.2rem 0.65rem; font-size: 0.82rem; color: var(--accent-dk); background: var(--accent-soft); border-radius: 999px; }
@@ -120,7 +137,10 @@ main.home { max-width: var(--wide); }
 .card span { color: var(--ink-2); font-size: 0.95rem; }
 
 table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; font-size: 0.95rem; }
-th, td { border: 1px solid var(--line); padding: 0.45rem 0.7rem; text-align: left; vertical-align: top; }
+/* cells break between words, never inside one (the body's overflow-wrap: anywhere split 'Issue' into letters) */
+th, td { border: 1px solid var(--line); padding: 0.45rem 0.7rem; text-align: left; vertical-align: top; overflow-wrap: normal; word-break: normal; }
+th { white-space: nowrap; }
+td code { overflow-wrap: anywhere; }
 th { background: var(--surface-2); }
 
 ul { padding-left: 1.3rem; }
@@ -166,3 +186,20 @@ figure.video { margin: 1rem 0; }
 figure.video video { width: 100%; border-radius: 10px; background: var(--ink); }
 figure.video figcaption { font-size: 0.9rem; color: var(--ink-2); }
 figure.video.drive iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 10px; background: var(--ink); }
+
+/* the cast (WS-92): figures on cards, rows of figures, icons */
+svg.fig { flex: none; display: block; }
+svg.icon { flex: none; vertical-align: middle; }
+.card.person, .card.agent { display: flex; gap: 0.9rem; align-items: center; }
+.card.person b, .card.agent b { overflow-wrap: anywhere; }
+.cards.cast { grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); }
+.castrow { display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; align-items: flex-end; margin: 0.6rem 0 1.4rem; }
+.castrow figure { margin: 0; text-align: center; }
+.castrow figcaption { font-size: 0.8rem; color: var(--ink-2); }
+.castrow.moods { gap: 0.3rem 0.8rem; margin: 0; }
+.castrow.icons { gap: 0.5rem; }
+figure.castone { margin: 0; }
+.whois { display: flex; gap: 1.2rem; align-items: center; max-width: var(--measure); }
+.whois p { margin: 0; }
+p.personbar svg.icon { align-self: center; }
+td > b:only-child { white-space: nowrap; }

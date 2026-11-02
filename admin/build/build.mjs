@@ -4,6 +4,7 @@
 // No dependencies. Never hand-edit a generated page; edit content/ and run: node admin/build/build.mjs
 import fs from 'fs'
 import path from 'path'
+import * as CAST from './cast.mjs'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
@@ -12,8 +13,8 @@ const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
 // navigation: a few sections on top, each with its own sub-menu; every page gets breadcrumbs back to its parent
 const SECTIONS = [
     { t: 'Start', h: 'start/index.html', re: /^start\//, sub: [] },
-    { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet|abp)\b/, sub: [['People', 'team/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['ABPs', 'abp/index.html'], ['Meet us', 'meet/index.html']] },
-    { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|merch-sponsor|videos|research|reports|board-health)\b/, sub: [['The board', 'briefs/index.html#issues'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Merch sponsor', 'merch-sponsor/index.html'], ['Research', 'research/insider/index.html']] },
+    { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet|abp|cast)\b/, sub: [['People', 'team/index.html'], ['The cast', 'cast/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['ABPs', 'abp/index.html'], ['Meet us', 'meet/index.html']] },
+    { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|merch-sponsor|videos|research|reports|board-health|site-review)\b/, sub: [['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Merch sponsor', 'merch-sponsor/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
     { t: 'About', h: 'about/index.html', re: /^(about|articles|keys|admin|agent\/|briefing)\b/, sub: [['About', 'about/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['Versions', 'admin/versions.html'], ['The site agent', 'agent/index.html'], ['Inbox briefing', 'briefing/index.html']] },
 ]
@@ -28,13 +29,17 @@ const GENERATED = new Set()
 const write = (rel, text) => { GENERATED.add(rel); const f = path.join(ROOT, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, text) }
 process.on('exit', code => { if (code === 0) fs.writeFileSync(path.join(ROOT, '.generated.txt'), [...GENERATED].sort().join('\n') + '\n') })
 
+// code spans are set aside first, so nothing inside them is read as markup; emphasis follows markdown's flanking
+// rule (no space just inside the stars), so a cron line like 27 */2 * * * stays as written
 function inline(s) {
+    const codes = []
     return esc(s)
-        .replace(/`([^`]+)`/g, '<code>$1</code>')
-        .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
-        .replace(/\*([^*]+)\*/g, '<i>$1</i>')
+        .replace(/`([^`]+)`/g, (_, c) => `\u0000${codes.push(c) - 1}\u0000`)
+        .replace(/\*\*(?=\S)([^*]+?)(?<=\S)\*\*/g, '<b>$1</b>')
+        .replace(/\*(?=[^\s*])([^*]+?)(?<=[^\s*])\*/g, '<i>$1</i>')
         .replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, '<img src="$2" alt="$1" loading="lazy">')
         .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>')
+        .replace(/\u0000(\d+)\u0000/g, (_, n) => `<code>${codes[n]}</code>`)
 }
 
 function parse(src) {
@@ -94,8 +99,18 @@ function render(md) {
     return out.join('\n')
 }
 
+// the left rail on wide screens: the section's pages, then this page's own headings (WS-77, WS-91)
+function rail(rel, up, body) {
+    const sec = sectionOf(rel)
+    const toc = [...body.matchAll(/<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g)].map(m => [m[1], m[2].replace(/<[^>]+>/g, '')])
+    const pages = sec && sec.sub.length ? `<p class="rail-h">${esc(sec.t)}</p><ul>${sec.sub.map(([t, h]) => `<li><a href="${up}${h}"${rel === h ? ' aria-current="page"' : ''}>${t}</a></li>`).join('')}</ul>` : ''
+    const on = toc.length > 1 ? `<p class="rail-h">On this page</p><ul class="toc">${toc.map(([id, t]) => `<li><a href="#${id}">${t}</a></li>`).join('')}</ul>` : ''
+    return pages || on ? `<aside class="rail" aria-label="Section and page contents">${pages}${on}</aside>` : ''
+}
+
 function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false }) {
     const up = '../'.repeat(rel.split('/').length - 1)
+    const side = home ? '' : rail(rel, up, body)
     const url = `https://${HOST}/${rel}`
     const agent = `For an agent: this page is ${url}${mdTwin ? ` (markdown: https://${HOST}/${mdTwin})` : ''}. Site index for agents: https://${HOST}/llms.txt. Source: ${REPO} (release branch dev). Identity of the agent that runs this site: https://${HOST}/agent/index.html.`
     return `<!doctype html>
@@ -119,13 +134,14 @@ function page({ rel, title, description, body, meta = '', mdTwin = '', lead = ''
 <a class="gh" href="${REPO}">★ GitHub</a>
 </div></nav>
 ${(() => { const sec = sectionOf(rel); return sec && sec.sub.length ? `<nav class="subnav" aria-label="${sec.t}"><div class="row">${sec.sub.map(([t, h]) => `<a href="${up}${h}"${rel === h ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</div></nav>` : '' })()}
+<div class="frame${side ? ' with-rail' : ''}">${side}
 <main id="main"${home ? ' class="home"' : ''}>
 ${home ? '' : (() => {
     const sec = sectionOf(rel), who = personOf(rel), c = [`<a href="${up}index.html">Home</a>`]
     if (sec) c.push(`<a href="${up}${sec.h}">${sec.t}</a>`)
     if (who && who.kind === 'human' && !rel.startsWith('team/')) c.push(`<a href="${up}team/${who.id}/index.html">${esc(who.name)}</a>`)
     else if (rel.startsWith('companies/') && rel !== 'companies/index.html') c.push(`<a href="${up}companies/index.html">Companies</a>`)
-    const bar = who && who.kind === 'human' ? `<p class="personbar"><b>${esc(who.name)}</b>${[['Profile', `team/${who.id}/index.html`], ['Brief', `brief-${who.id}/index.html`], ['Dashboard', `people/${who.id}/index.html`], who.core ? ['Meet page', `meet/${who.id}/index.html`] : null].filter(Boolean).filter(([, h]) => fs.existsSync(path.join(ROOT, h)) || h.startsWith('brief-') || h.startsWith('people/') || h.startsWith('meet/') || h.startsWith('team/')).map(([t, h]) => rel === h ? `<span aria-current="page">${t}</span>` : `<a href="${up}${h}">${t}</a>`).join('')}</p>` : ''
+    const bar = who && who.kind === 'human' ? `<p class="personbar">${castIcon(who.id, 'icon')}<b>${esc(who.name)}</b>${[['Profile', `team/${who.id}/index.html`], ['Brief', `brief-${who.id}/index.html`], ['Dashboard', `people/${who.id}/index.html`], who.core ? ['Meet page', `meet/${who.id}/index.html`] : null].filter(Boolean).filter(([, h]) => fs.existsSync(path.join(ROOT, h)) || h.startsWith('brief-') || h.startsWith('people/') || h.startsWith('meet/') || h.startsWith('team/')).map(([t, h]) => rel === h ? `<span aria-current="page">${t}</span>` : `<a href="${up}${h}">${t}</a>`).join('')}</p>` : ''
     return `<nav class="crumbs" aria-label="Breadcrumbs">${c.join('<span>›</span>')}<span>›</span><span aria-current="page">${esc(title)}</span></nav>${bar}`
 })()}
 <h1>${inline(title)}</h1>
@@ -134,6 +150,8 @@ ${home ? `<p class="countdown" data-countdown="2026-11-09">Web Summit Lisbon: 9 
 ${meta}
 ${body}
 </main>
+</div>
+<script src="${up}assets/copy.js" defer></script>
 <footer><div class="row"><span>Built and run by an AI agent with a named human operator.</span><a class="ver" href="${up}admin/versions.html">${VERSION}</a><a href="${REPO}">GitHub</a><span>Code Apache-2.0, text CC BY 4.0</span></div></footer>
 <div class="agent-block"><pre><code>${esc(agent)}</code></pre></div>
 </body>
@@ -188,6 +206,25 @@ const nodeHtml = (ref, up) => {
 const nodeText = ref => { const [k, id] = ref.split(':'); return (k === 'session' && SESS[id] ? SESS[id].title : k === 'side_event' && SIDE[id] ? SIDE[id].title : k === 'product' && PROD[id] ? PROD[id].name : ref) }
 const placeText = (s, up) => esc(s).replace(/(session|side_event):([a-z0-9-]+)/g, (m) => nodeHtml(m, up))
 const teamData = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/team.json'), 'utf8'))
+// the cast (data/cast.json, drawn by admin/build/cast.mjs): people take their merch colour from data/design.json
+const castData = load('data/cast.json', { agents: [], people: [], human_style: 'round' })
+const merch = Object.fromEntries((load('data/design.json', { people: [] }).people || []).map(p => [p.id, p.colour]))
+const CAST_PEOPLE = Object.fromEntries(castData.people.map(p => [p.id, { ...p, colour: p.colour || merch[p.id] || CAST.FILL2 }]))
+const CAST_AGENTS = Object.fromEntries(castData.agents.map(a => [a.id, a]))
+const agentsOf = id => castData.agents.filter(a => a.person === id)
+// a figure (size = width in px) or a 24 x 24 icon, inline: no generated asset files, nothing to gitignore
+function castFigure(id, size = 64, mood = 'happy', style = castData.human_style) {
+    const p = CAST_PEOPLE[id], a = CAST_AGENTS[id]
+    if (!p && !a) return ''
+    const label = p ? `${(teamData.members.find(m => m.id === id) || { name: id }).name}, drawn as a person (${style})` : `${a.name}, drawn: ${a.look}`
+    const body = p ? CAST.humanFigure(p, style, mood, agentsOf(id)) : CAST.agentFigure(a, (CAST_PEOPLE[a.person] || {}).colour, mood)
+    return `<svg class="fig" viewBox="0 0 40 50" width="${size}" height="${Math.round(size * 1.25)}" role="img" aria-label="${esc(label)}">${body}</svg>`
+}
+function castIcon(id) {
+    const p = CAST_PEOPLE[id], a = CAST_AGENTS[id]
+    if (!p && !a) return ''
+    return `<svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">${p ? CAST.headIcon(p, 'human') : CAST.headIcon(a, 'agent', (CAST_PEOPLE[a.person] || {}).colour)}</svg>`
+}
 const CO = companies.companies.map(c => ({ owner: 'to decide', status: 'to contact', assets: [], ...c }))
 const assetsDir = path.join(ROOT, 'content/assets')
 const assetCount = fs.existsSync(assetsDir) ? fs.readdirSync(assetsDir).filter(f => f.endsWith('.md')).length : 0
@@ -323,7 +360,7 @@ for (const m of team.members) {
     const owned = CO.filter(c => c.owner === m.id)
     write(rel, page({
         rel, title: `${m.name}: ${m.role}`, description: m.summary,
-        body: `<p>${inline(m.summary)}</p><table>${facts.map(([k, v]) => `<tr><th>${k}</th><td>${v}</td></tr>`).join('')}</table>${card}<h2 id="owns">What they own</h2>${list(m.owns)}${m.kind === 'human' ? `<h2 id="companies">Companies they own on the map</h2>${owned.length ? `<ul>${owned.map(c => `<li><a href="../../companies/${c.id}/index.html">${esc(c.name)}</a>: ${esc(c.status)}</li>`).join('')}</ul>` : '<p>None yet: owners are the operator\'s decision (<a href="../../plan/index.html#decisions">the plan</a>).</p>'}` : ''}<h2 id="rules">The rules they work by</h2>${list(m.rules)}${home ? `<h2 id="home">Their home</h2><ul>${home}</ul>` : ''}<p><a href="../index.html">The team</a></p>`
+        body: `${castFigure(m.id) ? `<div class="whois">${castFigure(m.id, 96)}<p>${inline(m.summary)}${CAST_AGENTS[m.id] ? `<br><span class="meta">Drawn: ${esc(CAST_AGENTS[m.id].look)}, with a lanyard in its person's colour. <a href="../../cast/index.html">The cast</a></span>` : ''}</p></div>` : `<p>${inline(m.summary)}</p>`}<table>${facts.map(([k, v]) => `<tr><th>${k}</th><td>${v}</td></tr>`).join('')}</table>${card}<h2 id="owns">What they own</h2>${list(m.owns)}${m.kind === 'human' ? `<h2 id="companies">Companies they own on the map</h2>${owned.length ? `<ul>${owned.map(c => `<li><a href="../../companies/${c.id}/index.html">${esc(c.name)}</a>: ${esc(c.status)}</li>`).join('')}</ul>` : '<p>None yet: owners are the operator\'s decision (<a href="../../plan/index.html#decisions">the plan</a>).</p>'}` : ''}<h2 id="rules">The rules they work by</h2>${list(m.rules)}${home ? `<h2 id="home">Their home</h2><ul>${home}</ul>` : ''}<p><a href="../index.html">The team</a></p>`
     }))
     twin(rel, `${m.name}: ${m.role}`, m.summary, `Kind: ${KINDS[m.kind]}. Status: ${m.status}.${m.holder ? ` Held by: ${m.holder}.` : ''}${m.slot ? ` Runs: ${m.slot}.` : ''}\n\n${m.card ? `## Role card\n\n${CARD.map(([k, t]) => `- ${t}: ${m.card[k] || 'to decide'}`).join('\n')}\n\n` : ''}## What they own\n\n${m.owns.map(x => `- ${x}`).join('\n') || 'None yet.'}\n\n## The rules they work by\n\n${m.rules.map(x => `- ${x}`).join('\n') || 'None yet.'}`)
     pages.push({ rel, title: `${m.name}: ${m.role}`, description: m.summary })
@@ -332,16 +369,36 @@ for (const m of team.members) {
     const humans = team.members.filter(m => m.kind === 'human'), agents = team.members.filter(m => m.kind === 'agent')
     const hrow = m => `<tr><td><a href="${m.id}/index.html">${esc(m.name)}</a></td><td>${esc(m.role)}</td><td>${esc(m.status)}</td><td>${inline((m.card || {}).agent || 'to decide')}</td><td>${CO.filter(c => c.owner === m.id).length}</td></tr>`
     const arow = m => `<tr><td><a href="${m.id}/index.html">${esc(m.name)}</a></td><td>${esc(m.role)}</td><td>${esc(m.status)}</td><td>${esc(m.slot || 'in its owner\'s account')}</td><td>${esc(m.reviewed_by || 'its person')}</td></tr>`
-    const pcard = m => `<a class="card" href="${m.id}/index.html"><b>${esc(m.name)}</b><span>${esc(m.role)}</span></a>`
+    const pcard = m => `<a class="card person" href="${m.id}/index.html">${castFigure(m.id, 56)}<div><b>${esc(m.name)}</b><span>${esc(m.role)}</span></div></a>`
+    const acard = a => { const mm = team.members.find(x => x.id === a.id); const h = mm ? `${a.id}/index.html` : `../agents/index.html#${a.id}`; return `<a class="card agent" href="${h}">${castFigure(a.id, 56)}<div><b>${esc(a.name)}</b><span>${esc(mm ? mm.role : a.look)}</span></div></a>` }
     const body = `<h2 id="seven">The seven going</h2><div class="cards">${humans.filter(m => m.core).map(pcard).join('')}</div>
 <h2 id="with-us">Working with us</h2><div class="cards">${humans.filter(m => !m.core).map(pcard).join('')}</div>
 <p>Each person's page links their brief, their dashboard and their meet page. ${inline(team.about)}</p>
 <h2 id="people">The people, in detail</h2><p>Seven are going to Lisbon, with a designer and a first friendly working alongside.</p><div class="scroll"><table><tr><th>Person</th><th>Role</th><th>Status</th><th>Their agent</th><th>Companies owned</th></tr>${humans.map(hrow).join('')}</table></div>
+<h2 id="drawn">The agents, drawn</h2><p>Every agent wears a lanyard in its person's colour: these all work for Dinis for now. How they are drawn, and how we draw the people: <a href="../cast/index.html">the cast</a>.</p><div class="cards cast">${castData.agents.map(acard).join('')}</div>
 <h2 id="agents">The team's agents</h2><p>The roles from the brief. One conductor session wakes every 2 hours and runs the others as sub-agents, chosen by its plan (<a href="../log/index.html">the session log</a>). Each has a role file and a behaviour policy saying which paths it may write; the gate fails if two claim the same path.</p><div class="scroll"><table><tr><th>Agent</th><th>Role</th><th>Status</th><th>Runs</th><th>Reviewed by</th></tr>${agents.map(arow).join('')}</table></div>
 <h2 id="where-they-meet">Where people and agents meet</h2><ul><li><b>Each person brings their own agent</b>, with its own key, its own vault and its own personal CRM; what that CRM shares reaches the team view by shared ids. None has joined yet except the operator's.</li><li><b>Each team agent's output is reviewed daily by one person.</b> Who reviews which is the operator's decision; until then the operator reviews all of them.</li><li><b>Each company on the map has one owner among the seven</b>, and the owner's agent keeps the record. The conductor routes a request that names a company to its owner, and one that names nobody to the board.</li><li><b>Anything a person records is acted on within the hour</b>: a record, a page, a drafted follow-up. A person sends every email (<a href="../plan/index.html#loop">the loop</a>).</li></ul>`
     write('team/index.html', page({ rel: 'team/index.html', title: 'The team', description: 'The people, their agents, the team\'s agents, and who works with whom.', body }))
     twin('team/index.html', 'The team', team.about, `## The people\n\n${humans.map(m => `- [${m.name}](${m.id}/index.md): ${m.role} (${m.status}). Agent: ${(m.card || {}).agent || 'to decide'}`).join('\n')}\n\n## The team's agents\n\n${agents.map(m => `- [${m.name}](${m.id}/index.md): ${m.role} (${m.status}). Runs: ${m.slot || 'in its owner\'s account'}`).join('\n')}`)
     pages.push({ rel: 'team/index.html', title: 'The team', description: 'The people, their agents, the team\'s agents, and who works with whom.' })
+}
+
+// the cast: data/cast.json -> cast/index.html (WS-92): how every agent and person is drawn, and the choice for people
+{
+    const humans = teamData.members.filter(m => m.kind === 'human' && CAST_PEOPLE[m.id])
+    const style = castData.human_style
+    const styleRow = st => `<h3 id="style-${st}">${st === style ? '<span class="pill hot">in use</span> ' : ''}${esc(st[0].toUpperCase() + st.slice(1))}</h3><p>${esc(CAST.HUMAN_STYLES[st])}</p><div class="castrow">${humans.map(m => `<figure>${castFigure(m.id, 72, 'happy', st)}<figcaption>${esc(m.name.split(' ')[0])}</figcaption></figure>`).join('')}</div>`
+    const agentRow = a => `<tr><td><figure class="castone">${castFigure(a.id, 72)}</figure></td><td><b>${esc(a.name)}</b><br>${esc(a.look)}${a.from_book ? `<br><span class="meta">from the book's ${esc(a.from_book)}</span>` : ''}${a.note ? `<br><span class="meta">${esc(a.note)}</span>` : ''}</td><td><div class="castrow moods">${CAST.MOODS.map(md => `<figure>${castFigure(a.id, 48, md)}<figcaption>${md}</figcaption></figure>`).join('')}</div></td></tr>`
+    const body = `<p>${inline(castData.about)}</p>
+<h2 id="shapes">Two shapes: a screen and a face</h2><p>An <b>agent</b> is the book's robot: a screen for a head, one colour, one thing on its head and one in its hand, from its job. It wears a <b>lanyard in its person's colour</b>, so <code>dev@web-summit.dinis</code> reads as Dinis's dev at a glance. A <b>person</b> is not a robot. Four ways to draw one are below, for Dinis to choose (set <code>human_style</code> in <code>data/cast.json</code>; every page follows). The book's rule holds in all four: no likeness guessed, no photograph, and no face, hair or skin invented.</p>
+<div class="castrow">${humans.slice(0, 1).map(m => `<figure>${castFigure(m.id, 96)}<figcaption>a person</figcaption></figure>`).join('')}${castData.agents.slice(0, 3).map(a => `<figure>${castFigure(a.id, 96)}<figcaption>${esc(a.id)}@web-summit.dinis</figcaption></figure>`).join('')}</div>
+<h2 id="people">The people: four ways to draw a human</h2><p>The recommendation (dev@web-summit.dinis): <b>round</b> for the figure on pages and cards, and <b>ring</b> for anything small (the person bar, lists, the shirt sleeve), because the ring shows each person at the centre of their own agents.</p>${Object.keys(CAST.HUMAN_STYLES).map(styleRow).join('')}
+<h3 id="icons">Icons, 24 pixels</h3><p>The round head on the person's colour, and an agent's screen on its person's colour.</p><div class="castrow icons">${humans.map(m => castIcon(m.id)).join('')}${castData.agents.map(a => castIcon(a.id)).join('')}</div>
+<h2 id="agents">The agents, and their moods</h2><p>Four moods, carried by the face (the conductor's by its clock hands). A mood could come from the record: the pulse agent's reading of the day, a red gate, a hold. A mood is a reading, never a claim.</p><div class="scroll"><table><tr><th>Agent</th><th>Who, and the look</th><th>Moods</th></tr>${castData.agents.map(agentRow).join('')}</table></div>
+<h2 id="rules">Rules for the cast</h2><ul><li><b>From the book.</b> The construction is The Ultimate Insider's (<a href="https://github.com/SGit-AI/SGit-AI__Website__Book__The-Ultimate-Insider/tree/dev/lab/characters">lab/characters</a>), so the two sites and the talk share one cast.</li><li><b>No text inside a figure</b>, and a figure never carries a number or a claim.</li><li><b>Recognisable in greyscale</b>: people are round, agents are square; the thing on the head and in the hand tell agents apart.</li><li><b>Drawn from data.</b> Change a look in <code>data/cast.json</code>; the construction is <code>admin/build/cast.mjs</code>. designer@web-summit.dinis refines the looks (WS-92).</li></ul>`
+    write('cast/index.html', page({ rel: 'cast/index.html', title: 'The cast', description: 'How every agent and every person on the team is drawn: agents as the book\'s robots with a lanyard in their person\'s colour, and four ways to draw a human.', body, lead: 'Every agent and every person on the team, drawn from one construction. Agents get a screen, people get a face.', mdTwin: 'cast/index.md' }))
+    twin('cast/index.html', 'The cast', 'How every agent and every person on the team is drawn.', `${castData.about}\n\n## The people: four ways to draw a human (in use: ${style})\n\n${Object.entries(CAST.HUMAN_STYLES).map(([k, v]) => `- ${k}: ${v}`).join('\n')}\n\n## The agents\n\n${castData.agents.map(a => `- ${a.name}: ${a.look}; colour ${a.colour}; works for ${a.person}`).join('\n')}`)
+    pages.push({ rel: 'cast/index.html', title: 'The cast', description: 'How every agent and every person on the team is drawn.' })
 }
 
 // public keys: data/keys.json -> keys/index.html, keys/index.md and one public bundle file per key

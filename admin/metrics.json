@@ -49,6 +49,17 @@
       "validate_seconds_after": 0.58,
       "ci_seconds_before": 47,
       "ci_seconds_after": 45
+    },
+    {
+      "date": "2026-11-02",
+      "by": "dev@web-summit.dinis",
+      "release": "next",
+      "note": "dev pass 3 (WS-91, WS-92, Dinis): layout uses the width (82rem frame, left rail), table/prompt/asterisk fixes (10 pages rendered wrong before), the cast inline from data/cast.json (no image files). Pages 184 -> 194 (the cast, the site review, collections added by others). Build 0.27 -> 0.35 s, validate 0.58 -> 0.71 s (more pages, larger pages). The cast page is 268 KB because every figure is inline (about 110 of them); if that matters, the figures move to cached SVG files.",
+      "files_changed_by_release_commit": 3,
+      "build_seconds": 0.35,
+      "validate_seconds_after": 0.71,
+      "ci_seconds_before": 45,
+      "ci_seconds_after": null
     }
   ]
 }
