@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.45",
+    "date": "2026-11-02",
+    "what": "the abp, sgit and project-manager agents get their sections, the journalist's reports and the ABPs render as sections, and the conductor's own ABP is the template",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.44",
     "date": "2026-11-02",
     "what": "releases deploy again: the tagger no longer fails on old catch-up tags GitHub will not let CI push",
