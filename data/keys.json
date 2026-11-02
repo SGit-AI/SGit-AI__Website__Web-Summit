@@ -61,6 +61,21 @@
         "fingerprint": "sha256:ecbb2756634ba022",
         "signing_fingerprint": "sha256:62eb11234d3237d5"
       }
+    },
+    {
+      "id": "dev-angelo",
+      "label": "dev@web-summit.angelo (Claude Code session)",
+      "role": "Angelo's dev agent (dev@web-summit.angelo): the site's build, gate, pipeline and pages. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 2 November 2026 and pushed to this repository from Angelo's account; the push, and the account on the commit, are its authorisation (the push is the authorisation). It is not linked to the operator's key, and nothing depends on it.",
+      "added": "2026-11-02",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA3a6zOORsG+f+HOJWw1Cv\nhr875GtFa9OLpJdwiyJwrARfrRuzlNjMxch5sylbZKGJe5KIWJravLLE1ErEc81J\nIpLl94hL3M+2973jOGbFRZ+U9CEBNnWjM4Gkd/g57ETvnEU0bAgy5tXipNPR08Hh\n1Xi6p8QPZ39P0OMdc7/UPN870RORKWYCXhZo8JOwvj79Cx5faFZEkvMTbQ6mrvZS\nf5CPfwPfKKBlKbuWxH72ZsVr5xPmx4tfQU/SyVV9MHehbcbCMvgGUwbsixLnS2sj\ndCNMXs96P0doS+0YKN8+vnq/oXkZLUG+ktTorW++/vTPE1a9yS36dTCvDOuNtFdU\ne8lWaNWX9q5ejwCJKqN/ozbIezXLMayKfeOBUjS04iHAsPBH6aaCKq8tdTq/BlRq\ny/fSmagCW/lsfKUs0j5NcAX4BVQejrvJx62tzUWsoR80xkGlXulxcSjf3B7aXTpr\nYIT2CaT7yzCFVwwEldqzqvw4zy8BXVq7bo808pQbgqyyJZfheR+Oh0DJSFP2ecil\nlOw8oXcAC/0XgjtodsgmgBD+/1AA2ev2XBB06Twh/UkIZP00gQRK0cJT4f4haKp5\nopxQLAF/tt9GONzlJtdV3pBGB4/l9NLqL2dpS0gupscO64M+lqkXYaq/2Kq23M8t\nxSvCZY6f2oroPZYaArGSipkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZyjvKnTxEqrqosnn/vxkTmB8Pg8Z\nk0UVbyOTnsOHF4qj4iVgmQy5Gt3hv3ohKfwVABlru5MyBJn5FiznhEV7+g==\n-----END PUBLIC KEY-----\n",
+        "label": "dev@web-summit.angelo (Claude Code session)",
+        "fingerprint": "sha256:f2b24d04b8e048d9",
+        "signing_fingerprint": "sha256:b478b82a3a9995eb"
+      }
     }
   ]
 }
