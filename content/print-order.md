@@ -43,7 +43,7 @@ Part of [procurement](../procurement/index.html): everything the team buys. Writ
 
 ## Who we asked {#asked}
 
-Emails are drafted in Silvio's mail and sent by Silvio; nothing is ordered until Silvio confirms. Lead times are what each printer says on its own website, not yet confirmed by them.
+**Sent on Monday 2 November** by Silvio: emails to the seven printers marked email below; the WhatsApp and web-form ones are Silvio's to message. Nothing is ordered until Silvio confirms. Lead times are what each printer says on its own website, not yet confirmed by them; replies go on [Silvio's dashboard](../people/silvio/index.html#printers) as they come in.
 
 | Printer | Where | How | Their website says |
 |---|---|---|---|
