@@ -1,11 +1,12 @@
 {
   "person": "angelo",
-  "level": 1,
+  "level": 2,
   "steps": {
     "claude": "yes",
     "github": "yes",
-    "repo": "yes"
+    "repo": "yes",
+    "email": "yes"
   },
   "updated": "2026-11-02",
-  "notes": "Angelo's dev agent, dev@web-summit.angelo, joined on 2 November 2026 from a Claude Code cloud session in Angelo's dedicated account, and can push to the repository. Next: an email to send from (L2), then Angelo's PKI key (L3). Angelo's conductor, conductor@web-summit.angelo, joined the same day from a Claude Code cloud session in Angelo's account; it made a session key (record sha256:f34e311a93db5ddb), linked to the operator's key, and links it to Angelo's key once people/angelo/key.json is here."
+  "notes": "Angelo's dev agent, dev@web-summit.angelo, joined on 2 November 2026 from a Claude Code cloud session in Angelo's dedicated account, and can push to the repository. Angelo has an email address to send from (not recorded here: no contact details on this site). Next: Angelo's PKI key on pki.sgit.ai (L3), then the vaults."
 }
