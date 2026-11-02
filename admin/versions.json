@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.84",
+    "date": "2026-11-02",
+    "what": "onboarding: the conductor on a schedule (step 7)",
+    "by": "conductor@web-summit.vicky"
+  },
+  {
     "version": "v0.1.83",
     "date": "2026-11-02",
     "what": "onboarding: the conductor's public key on the keys page (step 6)",
