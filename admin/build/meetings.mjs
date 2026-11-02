@@ -19,7 +19,11 @@ export function meetingsContext(ROOT) {
     // an open item from an earlier stand-up carries over to every later one until it is decided or closed
     const agenda = id => { const i = all.findIndex(s => s.id === id); return all.slice(0, i + 1).flatMap(s => items(s.id).filter(x => s.id === id || x.status === 'open').map(x => ({ ...x, carried: s.id !== id }))) }
     const next = () => all.find(s => new Date(s.at) > NOW()) || all[all.length - 1]
-    const log = since => { try { return execFileSync('git', ['log', `--since=${since}`, '--format=%cI%x1f%an%x1f%s'], { cwd: ROOT, maxBuffer: 16 << 20 }).toString().split('\n').filter(Boolean).map(l => { const [at, an, s] = l.split('\x1f'); return { at, an, s, release: /^site v[0-9]/.test(s) } }) } catch { return [] } }
+    // the history is read once per build and filtered here: it was one git process per person, per stand-up, four
+    // times over (about 300 a build, 1.9 of the build's 2.6 seconds, and the gate builds twice; dev@web-summit.dinis)
+    let history = null
+    const readHistory = () => { try { return execFileSync('git', ['log', '--format=%cI%x1f%an%x1f%s'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString().split('\n').filter(Boolean).map(l => { const [at, an, s] = l.split('\x1f'); return { at, t: Date.parse(at), an, s, release: /^site v[0-9]/.test(s) } }) } catch { return [] } }
+    const log = since => { history ??= readHistory(); const from = Date.parse(since); return history.filter(x => x.t >= from).map(({ t, ...x }) => x) }
     const ack = id => { const f = path.join(ROOT, 'people', id, 'ack.json'); return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null }
     return { S, all, items, agenda, next, log, ack }
 }

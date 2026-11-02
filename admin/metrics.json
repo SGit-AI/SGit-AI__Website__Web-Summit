@@ -60,6 +60,22 @@
       "validate_seconds_after": 0.71,
       "ci_seconds_before": 45,
       "ci_seconds_after": null
+    },
+    {
+      "date": "2026-11-02",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass 4: the stand-ups (admin/build/meetings.mjs) spawned git log four times per person per stand-up, about 300 processes a build; now the history is read once and filtered in memory. All 612 generated files byte-identical (BUILD_NOW fixed). CI time after: next wake.",
+      "files_changed_by_release_commit": 3,
+      "tracked_files": 388,
+      "repo_pack_mib": 17.98,
+      "pages": 274,
+      "build_seconds_before": 3.32,
+      "build_seconds_after": 0.45,
+      "validate_seconds_before": 3.05,
+      "validate_seconds_after": 0.99,
+      "ci_seconds_before": 49,
+      "ci_seconds_after": null
     }
   ]
 }
