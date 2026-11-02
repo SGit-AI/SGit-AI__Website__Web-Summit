@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.75",
+    "date": "2026-11-02",
+    "what": "dashboards: the setup leaderboard (computed levels), the team as a picture, templates and a dashboard for seven people, the dashboard agent; the key guidance corrected",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.74",
     "date": "2026-11-02",
     "what": "print order: a second reply (quote, limited colours); permission asked, name withheld",
