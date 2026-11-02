@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.101",
+    "date": "2026-11-02",
+    "what": "the home page redesigned (WS-103): the design, the spec, Needs you first, and WS-104 for the build",
+    "by": "designer@web-summit.dinis"
+  },
+  {
     "version": "v0.1.100",
     "date": "2026-11-02",
     "what": "the release step numbers a major on main even when main is fast-forwarded to a dev release (found by a simulation before v0.2.0)",
