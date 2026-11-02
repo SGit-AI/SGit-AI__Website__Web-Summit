@@ -50,8 +50,15 @@ if [ -n "$PREV" ]; then
     while [ "$GAP" != "$TAG" ]; do
       C=$(grep -m1 -F ";site $GAP:" <<< "$LOG" | cut -d';' -f1 || true)
       [ -z "$C" ] && { echo "::error::latest tag is $PREV and this is $TAG, but no release commit for $GAP is in this history"; exit 1; }
-      git tag "$GAP" "$C"; [ "$PUSH" = 1 ] && git push origin "refs/tags/$GAP"
-      echo "caught up: tagged ${C:0:9} as $GAP (its own run was superseded)"
+      git tag "$GAP" "$C"
+      # best effort: GitHub refuses the Actions token a tag on a commit whose workflow file differs from
+      # the default branch's (v0.1.37/38 after the workflow changed in v0.1.39). The check above (every
+      # missed version has its release commit) is what matters; this release's own tag must still push.
+      if [ "$PUSH" = 1 ] && ! git push -q origin "refs/tags/$GAP" 2>/dev/null; then
+        echo "::warning::could not push $GAP (${C:0:9}); its release commit is in the history, so carrying on"
+      else
+        echo "caught up: tagged ${C:0:9} as $GAP (its own run was superseded)"
+      fi
       GAP=$(awk -F. '{printf "%s.%s.%d", $1, $2, $3+1}' <<< "$GAP")
       # a gap that would pass this release means version.txt went backwards
       [ "$(printf '%s\n%s\n' "$GAP" "$TAG" | sort -V | tail -1)" != "$TAG" ] && { echo "::error::$TAG is not after $PREV"; exit 1; }
