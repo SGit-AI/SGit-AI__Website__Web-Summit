@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.2.1",
+    "date": "2026-11-02",
+    "what": "WS-105: main deploys (v0.2.0 is live); branch protection to confirm",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.2.0",
     "date": "2026-11-02",
     "what": "major release: dev at d94d368 promoted to main"
