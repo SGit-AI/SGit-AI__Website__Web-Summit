@@ -2,7 +2,7 @@
 title: Brief for Silvio and his agents, a sponsor for the team's merch
 summary: What Silvio is asked to do for Web Summit 2026 (find a sponsor for the team's shirts and hoodies), the dates it has to meet, and the instructions for the agents that help him. Part one is for Silvio; part two is for his agents. A living page: check its version before you rely on it.
 ---
-From the operator, Dinis Cruz, in the team's strategy conversation of 1 November 2026 ([brief 3](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/BRIEF.md)). Written by the conductor, conductor.3@web-summit, on 2 November 2026. Where this page says *to confirm*, it is the conductor's reading, not something that was said.
+From the operator, Dinis Cruz, in the team's strategy conversation of 1 November 2026 ([brief 3](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/BRIEF.md)). Written by the conductor, conductor.3@web-summit, on 2 November 2026. All the briefs: [the briefs](../briefs/index.html). Where this page says *to confirm*, it is the conductor's reading, not something that was said.
 
 ## In one line {#in-one-line}
 
@@ -47,6 +47,13 @@ Answer these to Dinis, in whatever way suits you (a message, a voice note). They
 3. Your co-brand partner idea: who, and on what terms (kept private).
 4. Which agent do you work with today (Claude, or something else), and which email account should drafts go into?
 5. How do you like to receive a brief, and how fast do you usually reply?
+
+### Issues you can pick up {#issues}
+
+To pick one up, tell Dinis or the conductor, and it gets your name. The whole board is on [the briefs page](../briefs/index.html#issues).
+
+```issues silvio
+```
 
 ## Part two: for Silvio's agents {#for-agents}
 

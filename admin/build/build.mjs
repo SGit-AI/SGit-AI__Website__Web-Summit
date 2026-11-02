@@ -9,7 +9,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../.
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
 const VERSION = fs.readFileSync(path.join(ROOT, 'admin/build/version.txt'), 'utf8').trim()
 const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
-const NAV = [['Companies', 'companies/index.html'], ['Summit', 'summit/index.html'], ['Plan', 'plan/index.html'], ['Team', 'team/index.html'], ['Log', 'log/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['About', 'about/index.html'], ['Versions', 'admin/versions.html']]
+const NAV = [['Briefs', 'briefs/index.html'], ['Companies', 'companies/index.html'], ['Summit', 'summit/index.html'], ['Plan', 'plan/index.html'], ['Team', 'team/index.html'], ['Log', 'log/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['About', 'about/index.html'], ['Versions', 'admin/versions.html']]
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 const slug = s => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
@@ -173,10 +173,23 @@ const NUMBERS = [
 const NUMBERS_HTML = (up = '') => `<div class="stats">${NUMBERS.map(([n, t, h]) => `<a class="stat card" href="${up}${h}"><b>${n}</b><span>${t}</span></a>`).join('')}</div>`
 const NUMBERS_MD = NUMBERS.map(([n, t]) => `- ${n} ${t}`).join('\n')
 
+// the issues board: data/issues.json, expanded wherever a page has a fence: ```issues <member id | all>``` then ```
+const ISSUES = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/issues.json'), 'utf8'))
+const memberName = id => (teamData.members.find(m => m.id === id) || {}).name || id
+const issuesMd = who => {
+    const rows = ISSUES.issues.filter(x => who === 'all' || x.for.includes(who) || x.for.includes('everyone') || x.for.includes('anyone'))
+    if (!rows.length) return 'No issues for this member yet.'
+    const cell = v => String(v).replace(/\|/g, '/').replace(/\n/g, ' ')
+    return ['| Issue | What, and what done looks like | For | Due | Status |', '|---|---|---|---|---|',
+        ...rows.map(x => `| **${x.id}** | **${cell(x.title)}.** ${cell(x.done)}${x.agents ? ` Agents: ${cell(x.agents)}` : ''} | ${x.for.map(f => f === 'everyone' ? 'everyone' : f === 'anyone' ? 'anyone' : `[${memberName(f)}](../brief-${f}/index.html)`).join(', ')} | ${cell(x.due)} | ${cell(x.status)}${x.picked_by ? `: ${cell(x.picked_by)}` : ''} |`)].join('\n')
+}
+const expandIssues = body => body.replace(/```issues ([a-z0-9-]+)\n```/g, (_, who) => issuesMd(who))
+
 // plain pages: content/index.md -> index.html, content/<name>.md -> <name>/index.html
 for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWith('.md'))) {
     const raw = fs.readFileSync(path.join(ROOT, 'content', f), 'utf8')
-    const { meta, body } = parse(raw)
+    const { meta, body: rawBody } = parse(raw)
+    const body = expandIssues(rawBody)
     const name = f.replace(/\.md$/, ''), rel = meta.path || (name === 'index' ? 'index.html' : `${name}/index.html`)
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + render(body).replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index' }))
     pages.push({ rel, title: meta.title, description: meta.summary })

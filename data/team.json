@@ -1,5 +1,5 @@
 {
-  "about": "Everyone on the team that runs Web Summit 2026, human and agent, and who works with whom. Seven people are going to Lisbon, each with their own agent; the team's agents work for them on a schedule. The roles come from [the team brief](https://newsroom.sgit.ai/articles/web-summit-team-brief.html) and the people from [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html). From 2 November 2026, at the operator's word, the team's members are named here (only the team uses this site, and speed matters); still no contact details, ever. Kept by the conductor.",
+  "about": "Everyone on the team that runs Web Summit 2026, human and agent, and who works with whom. Seven people are going to Lisbon, with a designer, each with their own agent; the team's agents work for them on a schedule. The roles come from [the team brief](https://newsroom.sgit.ai/articles/web-summit-team-brief.html) and the people from [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html). From 2 November 2026, at the operator's word, the team's members are named here (only the team uses this site, and speed matters); still no contact details, ever. Each person's brief, and the issues they can pick up: [the briefs](../briefs/index.html). Kept by the conductor.",
   "members": [
     {
       "id": "dinis",
@@ -28,6 +28,10 @@
       },
       "home": [
         [
+          "brief-dinis/index.html",
+          "The brief, and the agents' instructions"
+        ],
+        [
           "https://newsroom.sgit.ai/articles/web-summit-team-brief.html",
           "The team brief"
         ],
@@ -43,7 +47,7 @@
       "kind": "human",
       "role": "Sales: a sponsor for the team's merch, and leads for his own business",
       "status": "briefed: card to fill",
-      "summary": "One of the people going to Web Summit. Asked by the operator on 1 November 2026 to find a sponsor for the team's shirts and hoodies, with agents that scout, pitch, draft and track while he sends; every company impressed by the pitch is a lead for his own business. His brief and his agents' instructions: [Brief for Silvio and his agents](../../brief-silvio/index.html).",
+      "summary": "One of the people going to Web Summit. Asked by the operator on 1 November 2026 to find a sponsor for the team's shirts and hoodies, with agents that scout, pitch, draft and track while he sends; every company impressed by the pitch is a lead for his own business. His brief and his agents' instructions: [Brief for Silvio and his agents](../../brief-silvio/index.html); all the briefs: [the briefs](../../briefs/index.html).",
       "owns": [
         "the merch sponsor ask (plan decision: merch-sponsor)",
         "to decide: the companies he owns on the map"
@@ -68,140 +72,176 @@
       ]
     },
     {
-      "id": "person-3",
-      "name": "Team member 3",
+      "id": "nime",
+      "name": "Nime",
       "kind": "human",
-      "role": "One of the seven going to Lisbon (seat, unnamed)",
-      "status": "invited: waiting for their yes",
-      "summary": "One of the seven people going to Web Summit. Their name, role card and agent appear here only after they say yes to what the card says, as [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) sets out.",
+      "role": "RiskMandate and SGit: shows them working, in each company's world",
+      "status": "briefed: card to fill",
+      "summary": "Sell RiskMandate (and SGit) by showing each company what it does for them, before and at the summit. Brief and agents' instructions: [Brief for Nime](../../brief-nime/index.html).",
       "owns": [
         "to decide: the companies they own on the map"
       ],
       "rules": [
-        "Nothing about them is published without their yes."
+        "Named at the operator's word (2 November 2026); no contact detail, ever.",
+        "Their agents draft; they send every message.",
+        "Anything private stays in their own CRM, never on this site."
       ],
       "card": {
         "following": "to decide",
         "leads": "to decide",
         "not_doing": "to decide",
         "medium": "to ask",
-        "agent": "to decide: their own agent, its key, its vault and what its CRM shares with the team view"
+        "agent": "to decide: their own agent (part two of the brief is its instructions until then)"
       },
-      "home": []
+      "home": [
+        [
+          "brief-nime/index.html",
+          "Their brief, and their agents' instructions"
+        ]
+      ]
     },
     {
-      "id": "person-4",
-      "name": "Team member 4",
+      "id": "angela",
+      "name": "Angela",
       "kind": "human",
-      "role": "One of the seven going to Lisbon (seat, unnamed)",
-      "status": "invited: waiting for their yes",
-      "summary": "One of the seven people going to Web Summit. Their name, role card and agent appear here only after they say yes to what the card says, as [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) sets out.",
+      "role": "Business for Angela's consultancy",
+      "status": "briefed: card to fill",
+      "summary": "Come home from Web Summit with clients for the consultancy. Brief and agents' instructions: [Brief for Angela](../../brief-angela/index.html).",
       "owns": [
         "to decide: the companies they own on the map"
       ],
       "rules": [
-        "Nothing about them is published without their yes."
+        "Named at the operator's word (2 November 2026); no contact detail, ever.",
+        "Their agents draft; they send every message.",
+        "Anything private stays in their own CRM, never on this site."
       ],
       "card": {
         "following": "to decide",
         "leads": "to decide",
         "not_doing": "to decide",
         "medium": "to ask",
-        "agent": "to decide: their own agent, its key, its vault and what its CRM shares with the team view"
+        "agent": "to decide: their own agent (part two of the brief is its instructions until then)"
       },
-      "home": []
+      "home": [
+        [
+          "brief-angela/index.html",
+          "Their brief, and their agents' instructions"
+        ]
+      ]
     },
     {
-      "id": "person-5",
-      "name": "Team member 5",
+      "id": "vicky",
+      "name": "Vicky",
       "kind": "human",
-      "role": "One of the seven going to Lisbon (seat, unnamed)",
-      "status": "invited: waiting for their yes",
-      "summary": "One of the seven people going to Web Summit. Their name, role card and agent appear here only after they say yes to what the card says, as [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) sets out.",
+      "role": "A job: the right employer at the summit",
+      "status": "briefed: card to fill",
+      "summary": "Leave Web Summit with a job, or with the conversations that lead to one. Brief and agents' instructions: [Brief for Vicky](../../brief-vicky/index.html).",
       "owns": [
         "to decide: the companies they own on the map"
       ],
       "rules": [
-        "Nothing about them is published without their yes."
+        "Named at the operator's word (2 November 2026); no contact detail, ever.",
+        "Their agents draft; they send every message.",
+        "Anything private stays in their own CRM, never on this site."
       ],
       "card": {
         "following": "to decide",
         "leads": "to decide",
         "not_doing": "to decide",
         "medium": "to ask",
-        "agent": "to decide: their own agent, its key, its vault and what its CRM shares with the team view"
+        "agent": "to decide: their own agent (part two of the brief is its instructions until then)"
       },
-      "home": []
+      "home": [
+        [
+          "brief-vicky/index.html",
+          "Their brief, and their agents' instructions"
+        ]
+      ]
     },
     {
-      "id": "person-6",
-      "name": "Team member 6",
+      "id": "daniela",
+      "name": "Daniela",
       "kind": "human",
-      "role": "One of the seven going to Lisbon (seat, unnamed)",
-      "status": "invited: waiting for their yes",
-      "summary": "One of the seven people going to Web Summit. Their name, role card and agent appear here only after they say yes to what the card says, as [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) sets out.",
+      "role": "The first friendly: an agentic team for Daniela's teaching",
+      "status": "briefed: card to fill",
+      "summary": "Find the students who aren't finding Daniela today, with an agentic team that runs the work around the teaching. Brief and agents' instructions: [Brief for Daniela](../../brief-daniela/index.html).",
       "owns": [
         "to decide: the companies they own on the map"
       ],
       "rules": [
-        "Nothing about them is published without their yes."
+        "Named at the operator's word (2 November 2026); no contact detail, ever.",
+        "Their agents draft; they send every message.",
+        "Anything private stays in their own CRM, never on this site."
       ],
       "card": {
         "following": "to decide",
         "leads": "to decide",
         "not_doing": "to decide",
         "medium": "to ask",
-        "agent": "to decide: their own agent, its key, its vault and what its CRM shares with the team view"
+        "agent": "to decide: their own agent (part two of the brief is its instructions until then)"
       },
-      "home": []
+      "home": [
+        [
+          "brief-daniela/index.html",
+          "Their brief, and their agents' instructions"
+        ]
+      ]
     },
     {
-      "id": "person-7",
-      "name": "Team member 7",
+      "id": "india",
+      "name": "India",
       "kind": "human",
-      "role": "One of the seven going to Lisbon (seat, unnamed)",
-      "status": "invited: waiting for their yes",
-      "summary": "One of the seven people going to Web Summit. Their name, role card and agent appear here only after they say yes to what the card says, as [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) sets out.",
+      "role": "Selling websites and agent setups, one-off",
+      "status": "briefed: card to fill",
+      "summary": "Sell websites and agentic setups as one-off jobs, starting with Daniela. Brief and agents' instructions: [Brief for India](../../brief-india/index.html).",
       "owns": [
         "to decide: the companies they own on the map"
       ],
       "rules": [
-        "Nothing about them is published without their yes."
+        "Named at the operator's word (2 November 2026); no contact detail, ever.",
+        "Their agents draft; they send every message.",
+        "Anything private stays in their own CRM, never on this site."
       ],
       "card": {
         "following": "to decide",
         "leads": "to decide",
         "not_doing": "to decide",
         "medium": "to ask",
-        "agent": "to decide: their own agent, its key, its vault and what its CRM shares with the team view"
+        "agent": "to decide: their own agent (part two of the brief is its instructions until then)"
       },
-      "home": []
+      "home": [
+        [
+          "brief-india/index.html",
+          "Their brief, and their agents' instructions"
+        ]
+      ]
     },
     {
-      "id": "designer-human",
-      "name": "The designer",
+      "id": "sarah",
+      "name": "Sarah",
       "kind": "human",
-      "role": "Professional designer, with very little time (seat, unnamed)",
-      "status": "invited: their card is to ask",
-      "summary": "A professional designer joining to help with the design track. Their hours are scarce, so agents prepare everything around their decisions: the variants, the sizes, the print-ready files, the presentations.",
+      "role": "Designer: the shirts, hoodies, cards and flyer",
+      "status": "briefed: card to fill",
+      "summary": "Design the things that make people at the summit want to talk to us, with as little of Sarah's time as possible. Brief and agents' instructions: [Brief for Sarah](../../brief-sarah/index.html).",
       "owns": [
         "the design decisions"
       ],
       "rules": [
-        "Briefed in their own medium, with the least context they need.",
-        "Short loops: a few options, a decision, the next step."
+        "Named at the operator's word (2 November 2026); no contact detail, ever.",
+        "Their agents draft; they send every message.",
+        "Anything private stays in their own CRM, never on this site."
       ],
       "card": {
-        "following": "the design track",
-        "leads": "the look of the team in Lisbon",
-        "not_doing": "producing variants, sizes and print files: the designer agent does that",
-        "medium": "to ask: the tool they work in, how they like a brief, how much context, how fast they reply",
-        "agent": "the team's designer agent works for them"
+        "following": "to decide",
+        "leads": "to decide",
+        "not_doing": "to decide",
+        "medium": "to ask",
+        "agent": "to decide: their own agent (part two of the brief is its instructions until then)"
       },
       "home": [
         [
-          "plan/index.html#design",
-          "The design track and its dates"
+          "brief-sarah/index.html",
+          "Their brief, and their agents' instructions"
         ]
       ]
     },

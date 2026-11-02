@@ -2,7 +2,7 @@
 
 Portuguese telecom operator: fibre, TV, 5G mobile and security services.
 
-Site version: v0.1.25
+Site version: v0.1.26
 
 - Website: https://www.meo.pt/
 - Category: platform

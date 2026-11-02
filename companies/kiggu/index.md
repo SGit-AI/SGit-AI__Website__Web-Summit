@@ -2,7 +2,7 @@
 
 Colombian offensive-cybersecurity startup; Kiggu Pro orchestrates automated security, agentic AI and expert human talent in one environment, acting as the security team for companies that lack one.
 
-Site version: v0.1.25
+Site version: v0.1.26
 
 - Website: https://www.kiggu.io
 - Category: security

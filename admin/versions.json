@@ -1,5 +1,10 @@
 [
   {
+    "version": "v0.1.26",
+    "date": "2026-11-02",
+    "what": "The briefs: a top-level view (/briefs/), a brief for each of the eight people with instructions for their agents, and a board of 23 issues a person and their agents can pick up (data/issues.json), shown on each brief. The roster names the team at the operator's word."
+  },
+  {
     "version": "v0.1.25",
     "date": "2026-11-02",
     "what": "The brief for Silvio and his agents (/brief-silvio/): a sponsor for the merch, the dates, and the instructions and behaviour policy for his agents. Silvio named on the roster at the operator's word; 3 T-shirts per participant."

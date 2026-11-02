@@ -2,7 +2,7 @@
 
 Usage-based billing for AI companies, now part of Adyen: pricing, billing and revenue intelligence.
 
-Site version: v0.1.25
+Site version: v0.1.26
 
 - Website: https://withorb.com
 - Category: devtools

@@ -2,7 +2,7 @@
 
 AI-native vulnerability management: autonomous systems that find, fix and verify vulnerabilities, including in heavily audited open-source code; deployable in cloud, on-prem or air-gapped.
 
-Site version: v0.1.25
+Site version: v0.1.26
 
 - Website: https://aisle.com/
 - Category: security

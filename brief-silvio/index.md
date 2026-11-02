@@ -2,9 +2,9 @@
 
 What Silvio is asked to do for Web Summit 2026 (find a sponsor for the team's shirts and hoodies), the dates it has to meet, and the instructions for the agents that help him. Part one is for Silvio; part two is for his agents. A living page: check its version before you rely on it.
 
-Site version: v0.1.25
+Site version: v0.1.26
 
-From the operator, Dinis Cruz, in the team's strategy conversation of 1 November 2026 ([brief 3](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/BRIEF.md)). Written by the conductor, conductor.3@web-summit, on 2 November 2026. Where this page says *to confirm*, it is the conductor's reading, not something that was said.
+From the operator, Dinis Cruz, in the team's strategy conversation of 1 November 2026 ([brief 3](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/BRIEF.md)). Written by the conductor, conductor.3@web-summit, on 2 November 2026. All the briefs: [the briefs](../briefs/index.html). Where this page says *to confirm*, it is the conductor's reading, not something that was said.
 
 ## In one line {#in-one-line}
 
@@ -49,6 +49,25 @@ Answer these to Dinis, in whatever way suits you (a message, a voice note). They
 3. Your co-brand partner idea: who, and on what terms (kept private).
 4. Which agent do you work with today (Claude, or something else), and which email account should drafts go into?
 5. How do you like to receive a brief, and how fast do you usually reply?
+
+### Issues you can pick up {#issues}
+
+To pick one up, tell Dinis or the conductor, and it gets your name. The whole board is on [the briefs page](../briefs/index.html#issues).
+
+| Issue | What, and what done looks like | For | Due | Status |
+|---|---|---|---|---|
+| **WS-01** | **Ask the organisers whether a sponsor logo on team clothing is allowed.** A written yes or no from Web Summit, recorded on the plan. They have already said we can't sell on site. | [Silvio](../brief-silvio/index.html), [Dinis Cruz](../brief-dinis/index.html) | Mon 2 Nov | open |
+| **WS-02** | **Shortlist 15 to 25 merch sponsor candidates.** A sourced table (company, why they'd care, who to approach as a role, source and date, fit 1 to 3), with five picked to pitch. Agents: Scout, from the company map and Silvio's network. | [Silvio](../brief-silvio/index.html) | Tue 3 Nov | open |
+| **WS-03** | **Pitch and outreach drafts for the top sponsor candidates.** For each of the top 5 to 10, a one-page business case, a 5-slide deck and a draft of at most 120 words in Silvio's drafts. Silvio sends. Agents: Pitch writer and outreach drafter. | [Silvio](../brief-silvio/index.html) | Tue 3 Nov | open |
+| **WS-04** | **Everyone's shirt and hoodie: size, colour, message.** One line per person (size, a colour no one else has, their message), sent to Sarah. Sizes stay private if anyone prefers. | everyone | Mon 2 Nov | open |
+| **WS-05** | **Seven conversation openers for the shirts.** Seven short lines, one per person, from the openers in brief 3 (do you control your agents? do you know what's on the other side of the agent you're buying?), plus one plainer backup. Sarah and Dinis pick. Agents: Any writer agent can draft them; a person picks. | [Sarah](../brief-sarah/index.html), anyone | Mon 2 Nov | open |
+| **WS-07** | **Quote and order the print run: 21 T-shirts and 7 hoodies.** Two quotes (a printer in Portugal and a UK next-day option), one order placed, delivery by Fri 6 Nov to someone who'll be in Lisbon. The address stays private. Agents: The researcher agent finds printers and prices; a person orders. | anyone | Tue 3 Nov quote, Wed 4 Nov order | open |
+| **WS-08** | **Owners for the 20 priority-1 companies on the map.** Each priority-1 company has one owner among the seven, recorded on the company map. Agents: The cartographer agent proposes a split by who knows whom; people agree. | everyone | Tue 3 Nov | open |
+| **WS-11** | **Twenty meetings booked before we land.** About 20 people who'll be at the summit, primed and booked, each with a date, an owner and what we bring. Drafts are written by agents and sent by their owner. Agents: Each owner's agent drafts the outreach. | everyone | Thu 5 to Fri 6 Nov | open |
+| **WS-12** | **What we bring to each booked meeting.** For each meeting: their analysis, their risk analysis, how we help, and how they buy. Agents: Writer agent, from WS-09's loop. | everyone | Sat 7 Nov | open |
+| **WS-18** | **The sessions each person attends.** For each person, 3 to 6 sessions from the summit page that fit what they want, with the speakers worth meeting. Agents: The curator agent proposes from the summit page; each person picks. | everyone | Sat 7 Nov | open |
+| **WS-22** | **Fill in your card.** Answers to the questions at the end of your brief, sent to Dinis. Your page on the team shows them. | everyone | Tue 3 Nov | open |
+| **WS-23** | **Try the voice memo to follow-up loop once, before the summit.** One person records a voice memo after a real conversation; within the hour their agent has updated the record, made a page and drafted the follow-up. Recorded on the log. | anyone | Sat 7 Nov | open |
 
 ## Part two: for Silvio's agents {#for-agents}
 

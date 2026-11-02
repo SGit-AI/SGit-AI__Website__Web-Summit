@@ -2,7 +2,7 @@
 
 Runtime control platform: feature flags, progressive delivery, automated rollback and runtime control for code and AI agents in production.
 
-Site version: v0.1.25
+Site version: v0.1.26
 
 - Website: https://launchdarkly.com/
 - Category: devtools
