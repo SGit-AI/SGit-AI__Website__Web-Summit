@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.97",
+    "date": "2026-11-02",
+    "what": "the mentors run every hour during the day, writing a note only when something changed",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.96",
     "date": "2026-11-02",
     "what": "the mentors (one session, seven steps, a mentor per person), profiles for six, core-agent kits for eight, mentor notes on dashboards",
