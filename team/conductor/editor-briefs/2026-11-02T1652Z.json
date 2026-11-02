@@ -1,0 +1,42 @@
+{
+  "number": 2,
+  "date": "2 November 2026",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "Silvio and Angelo are in; most of your agents are not running",
+  "when": "2 November 2026, 16:52 UTC (since brief 1, 04:35 UTC)",
+  "by": "conductor@web-summit.dinis",
+  "headline": "Two of the seven have connected in the last twenty minutes: Silvio (three agents) and Angelo (two), both at level 1 with push access. Five are not yet connected, and nobody has voted on the design, though the vote closed at 16:00. The bigger gap is ours: of your nine team agents, only the ABP agent has a scheduled task, so the journalist, pulse, security, designer, dev, project manager and SGit agents have not run since about 04:00. What needs you: the schedules, the design at 18:00, and one GitHub admin I cannot place.",
+  "stats": [
+    {"n": "3 of 9", "label": "people connected (you, Silvio, Angelo)"},
+    {"n": "5", "label": "agents of theirs now committing (Silvio 3, Angelo 2)"},
+    {"n": "1 of 9", "label": "of your team agents on a schedule (abp)"},
+    {"n": "0", "label": "design votes, pulse check-ins or acknowledgements"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "Put your team agents on their schedules", "detail": "Only abp@web-summit.dinis has a scheduled task (every 4 hours; its 16:10 wake has not fired yet). The other eight sessions exist but have no task, so nothing has run since about 04:00: no reports, no pulse summary, no security review, no board health.", "options": ["I create the eight tasks now, each firing into its existing session, on the schedules on the agents page", "you create them yourself"], "recommend": "Let me create them now; you can pause any one later."},
+    {"id": "2", "ask": "Decide the design at the 18:00 stand-up", "detail": "No votes came by 16:00, and nothing from the 13:00 stand-up was recorded as decided. Print files are due tonight (WS-63).", "options": ["you and Sarah pick at 18:00 from the designer's proposed set", "move to Tuesday 14:00"], "recommend": "Pick at 18:00: the designer's set, a line and colour each, T8 for the line Know their reach."},
+    {"id": "3", "ask": "Who is the-neuronin?", "detail": "Besides you, the GitHub account the-neuronin has admin on the repository. Silvio and Angelo come in as riskmandate-silvio and riskmandate-angelo (write); riskmandate-agent (write) and diniscruz-agent (read) are yours.", "options": ["it is someone on the team (say who)", "remove its access"], "recommend": "Tell me who it is, so the roster and the inventory are complete."}
+  ],
+  "you_asked": [
+    {"at": "2 Nov, morning", "said": "keep track of every single piece of the puzzle", "done": "Everything on the team counted: people, every agent (from the roster, people/<id>/agents.json and the git log) and every channel", "where": "/team/everything/", "status": "done"},
+    {"at": "2 Nov, morning", "said": "there's the element of the dashboard that can be created programmatically, in a deterministic way, and then there's the element of the dashboard that needs an agent", "done": "Every dashboard opens with a built block (next stand-up, since you last looked, my agents), then everything below is the person's and their agents'", "where": "/people/<id>/, WS-94", "status": "in progress"},
+    {"at": "2 Nov, morning", "said": "One at 1o'clock, one at 6pm", "done": "The stand-ups, an agenda built through the day, a briefing per person as page, JSON and PDF", "where": "/meetings/", "status": "done"},
+    {"at": "2 Nov", "said": "can you also brief me on who joined?", "done": "This brief", "where": "team/conductor/editor-briefs/", "status": "done"}
+  ],
+  "team": [
+    {"id": "Silvio", "status": "new", "doing": "L1 (Claude, GitHub, push); agents conductor, procurement (printing and merch, drafts only), dev; L2 waits on an email to send from"},
+    {"id": "Angelo", "status": "new", "doing": "L1 (Claude, GitHub, push); agents conductor, dev; links to his key once people/angelo/key.json is in"},
+    {"id": "Nimay, Vicky, Indi, Jose", "status": "waiting", "doing": "not connected yet"},
+    {"id": "Sarah, Daniela", "status": "waiting", "doing": "not connected yet"},
+    {"id": "your agents", "status": "partly", "doing": "abp ran at 08:25 and 12:20; the other eight last ran about 04:00"}
+  ],
+  "sections": [
+    {"title": "Since brief 1", "items": [
+      "8 releases (v0.1.54 to v0.1.61), all numbered by CI.",
+      "The stand-ups: 7 items for 13:00, carried to 18:00 because none was recorded as decided.",
+      "Built today: the inventory (/team/everything/), the dashboards' built block, and Silvio's and Angelo's agents on the roster, as Silvio's dev agent asked."
+    ]}
+  ],
+  "next": ["The 18:00 stand-up: the design, then the carried 13:00 decisions.", "Once you say yes: the eight schedules.", "Your 18:00 briefing PDF at about 17:30."],
+  "sources": ["git log origin/dev since 04:35 UTC: 8 releases; the five joining commits 16:31 to 16:47 UTC.", "GitHub collaborators of the repository, read at 16:49 UTC.", "Scheduled tasks of this account, read at 16:50 UTC: one enabled (abp).", "data/meetings/, people/*/ read at 16:51 UTC."]
+}
