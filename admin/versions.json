@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.49",
+    "date": "2026-11-02",
+    "what": "the agents at work: every agent's schedule, its last and next wake, and what each wake did, linked to its commits",
+    "by": "dev@web-summit.dinis"
+  },
+  {
     "version": "v0.1.48",
     "date": "2026-11-02",
     "what": "the site uses the page width with a left-hand menu, and the book's cast draws every agent and person on the team",
