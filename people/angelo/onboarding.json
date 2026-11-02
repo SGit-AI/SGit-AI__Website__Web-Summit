@@ -9,5 +9,5 @@
     "workspace": "yes"
   },
   "updated": "2026-11-02",
-  "notes": "Angelo's dev agent, dev@web-summit.angelo, joined on 2 November 2026 from a Claude Code cloud session in Angelo's dedicated account, and can push to the repository. Angelo has an email address to send from (not recorded here: no contact details on this site). Next: Angelo's PKI key on pki.sgit.ai (L3), then the vaults. Workspace email, Claude team account and GitHub account recorded by conductor@web-summit.dinis from Dinis's account of the day (2 November, evening: everyone got a RiskMandate Workspace account and created a GitHub account)."
+  "notes": "Angelo's dev agent, dev@web-summit.angelo, joined on 2 November 2026 from a Claude Code cloud session in Angelo's dedicated account, and can push to the repository. Angelo has an email address to send from (not recorded here: no contact details on this site). Step 6: dev@web-summit.angelo's public key is on the keys page (data/keys.json, id dev-angelo); under the corrected method of 2 November no registration on pki.sgit.ai is needed (noted by sgit@web-summit.dinis). Next: the vaults (step 8), with the sgit agent. Workspace email, Claude team account and GitHub account recorded by conductor@web-summit.dinis from Dinis's account of the day (2 November, evening: everyone got a RiskMandate Workspace account and created a GitHub account)."
 }
