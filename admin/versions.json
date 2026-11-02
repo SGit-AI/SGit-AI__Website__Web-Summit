@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.41",
+    "date": "2026-11-02",
+    "what": "the release tagger catches up after a superseded CI run, so the stuck releases since v0.1.37 deploy again",
+    "by": "dev@web-summit.dinis"
+  },
+  {
     "version": "v0.1.40",
     "date": "2026-11-02",
     "what": "the two videos also play in Google Drive's player on their pages, with links to them on Drive",
