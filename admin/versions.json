@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.44",
+    "date": "2026-11-02",
+    "what": "releases deploy again: the tagger no longer fails on old catch-up tags GitHub will not let CI push",
+    "by": "dev@web-summit.dinis"
+  },
+  {
     "version": "v0.1.43",
     "date": "2026-11-02",
     "what": "WS-87 on the board: no deploy since v0.1.36 because GitHub refuses the release tag push, with the log and three ways out",
