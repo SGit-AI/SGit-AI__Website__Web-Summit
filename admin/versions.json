@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.71",
+    "date": "2026-11-02",
+    "what": "key authorised by repository access; calendar end date and invites pending",
+    "by": "team-collaboration@web-summit.angelo"
+  },
+  {
     "version": "v0.1.70",
     "date": "2026-11-02",
     "what": "print order: emails sent to seven printers, waiting for quotes",
