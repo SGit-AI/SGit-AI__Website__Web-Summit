@@ -39,8 +39,8 @@
     {
       "date": "2026-11-02",
       "by": "dev@web-summit.dinis",
-      "release": "v0.1.45",
-      "note": "dev pass 2 (WS-86): one shared list of secret shapes (admin/build/secrets.cjs) for check 5 and comms_check, with fixtures the gate must catch; comms_check also scans content/ and every text type; .gitignore guards key files again. CI measured is v0.1.44, the first two-job run (pass 1 recorded null). Validate +0.07 s for scanning content/.",
+      "release": "v0.1.46",
+      "note": "dev pass 2 (WS-86): one shared list of secret shapes (admin/build/secrets.cjs) for check 5 and comms_check, with fixtures the gate must catch; comms_check reads every text type (content/ waits on WS-88); .gitignore guards key files again. CI measured is v0.1.44, the first two-job run (pass 1 recorded null). Validate +0.07 s (the shared rules and self-test).",
       "files_changed_by_release_commit": 3,
       "tracked_files": 310,
       "repo_pack_mib": 17,

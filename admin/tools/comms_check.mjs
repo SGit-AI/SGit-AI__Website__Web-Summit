@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Everything in content/, comms/, data/, team/, people/ and board/ is public, forever. This refuses contact details
-// and key shapes in them (the key shapes are admin/build/secrets.cjs, shared with the gate's check 5).
+// Everything in comms/, data/, team/, people/ and board/ is public, forever. This refuses contact details
+// and key shapes in them (content/ too once WS-88 is settled; the key shapes are admin/build/secrets.cjs, shared with the gate's check 5).
 // Exported for validate.js; run on its own: node admin/tools/comms_check.mjs
 import fs from 'fs'
 import path from 'path'
@@ -18,7 +18,9 @@ const RULES = [
 function walk(d, out = []) { if (!fs.existsSync(d)) return out; for (const n of fs.readdirSync(d)) { const p = path.join(d, n); fs.statSync(p).isDirectory() ? walk(p, out) : out.push(p) } return out }
 // what the build wrote (.generated.txt) is checked through its sources; every other non-binary file is read
 const generated = () => { const g = path.join(ROOT, '.generated.txt'); return new Set(fs.existsSync(g) ? fs.readFileSync(g, 'utf8').split('\n').filter(Boolean) : []) }
-export function check(dirs = ['content', 'comms', 'data', 'team', 'people', 'board']) {
+// content/ joins once WS-88 settles whether a role address (the Drive service account, in content/abp/) may be public;
+// until then content/ is key-scanned by the gate's check 5 only
+export function check(dirs = ['comms', 'data', 'team', 'people', 'board']) {
     const errors = [], gen = generated()
     for (const f of dirs.flatMap(d => walk(path.join(ROOT, d)))) {
         if (secrets.BINARY.test(f) || gen.has(path.relative(ROOT, f))) continue
