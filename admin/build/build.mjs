@@ -12,8 +12,8 @@ const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
 // navigation: a few sections on top, each with its own sub-menu; every page gets breadcrumbs back to its parent
 const SECTIONS = [
     { t: 'Start', h: 'start/index.html', re: /^start\//, sub: [] },
-    { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet)\b/, sub: [['People', 'team/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['Meet us', 'meet/index.html']] },
-    { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|merch-sponsor|videos|research)\b/, sub: [['The board', 'briefs/index.html#issues'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Merch sponsor', 'merch-sponsor/index.html'], ['Research', 'research/insider/index.html']] },
+    { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet|abp)\b/, sub: [['People', 'team/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['ABPs', 'abp/index.html'], ['Meet us', 'meet/index.html']] },
+    { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|merch-sponsor|videos|research|reports|board-health)\b/, sub: [['The board', 'briefs/index.html#issues'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Merch sponsor', 'merch-sponsor/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
     { t: 'About', h: 'about/index.html', re: /^(about|articles|keys|admin|agent\/|briefing)\b/, sub: [['About', 'about/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['Versions', 'admin/versions.html'], ['The site agent', 'agent/index.html'], ['Inbox briefing', 'briefing/index.html']] },
 ]
@@ -41,7 +41,7 @@ function parse(src) {
     const m = src.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/)
     if (!m) throw new Error('missing front matter')
     const meta = {}
-    for (const l of m[1].split('\n')) { const i = l.indexOf(':'); if (i > 0) meta[l.slice(0, i).trim()] = l.slice(i + 1).trim() }
+    for (const l of m[1].split('\n')) { const i = l.indexOf(':'); if (i > 0) meta[l.slice(0, i).trim()] = l.slice(i + 1).trim().replace(/^"(.*)"$/, '$1') }
     return { meta, body: m[2] }
 }
 
@@ -262,6 +262,28 @@ const expandIssues = (body, up = '../') => { UP = up; return body
     .replace(/```onboarding ([a-z0-9-]+)\n```/g, (_, w) => onboardingMd(w))
     .replace(/```pulse ([a-z0-9-]+)\n```/g, (_, w) => pulseMd(w))
     .replace(/```feedback ([a-z0-9-]+)\n```/g, (_, w) => feedbackMd(w)) }
+
+// collections: every folder under content/ except articles is a section: content/<dir>/<slug>.md -> <dir>/<slug>/index.html,
+// newest first on <dir>/index.html (unless content/<dir>.md writes that page itself). Front matter: title, summary, optional date.
+// The journalist's reports (content/reports/) and the ABPs (content/abp/) live here; a new folder needs no build change.
+const COLLECTIONS = { reports: 'The reports: what happened, every two hours', abp: 'Agent Behaviour Policies: one for each of our agents' }
+for (const dir of fs.readdirSync(path.join(ROOT, 'content'), { withFileTypes: true }).filter(d => d.isDirectory() && d.name !== 'articles').map(d => d.name).sort()) {
+    const items = fs.readdirSync(path.join(ROOT, 'content', dir)).filter(f => f.endsWith('.md')).sort().reverse().map(f => {
+        const { meta, body: rawBody } = parse(fs.readFileSync(path.join(ROOT, 'content', dir, f), 'utf8'))
+        const slug = f.replace(/\.md$/, ''), rel = `${dir}/${slug}/index.html`, title = meta.title || slug, body = expandIssues(rawBody, '../../')
+        write(rel, page({ rel, title, description: meta.summary || title, body: render(body).replace(/href="\.\.\/(?!\.\.)/g, 'href="../../'), mdTwin: twinPath(rel) }))
+        pages.push({ rel, title, description: meta.summary || title })
+        twin(rel, title, meta.summary || title, body)
+        return { slug, title, summary: meta.summary || '', date: meta.date || '' }
+    })
+    if (!fs.existsSync(path.join(ROOT, 'content', dir + '.md'))) {
+        const rel = `${dir}/index.html`, title = COLLECTIONS[dir] || dir
+        const md = items.map(x => `- [${x.title}](${x.slug}/index.html)${x.summary ? `: ${x.summary}` : ''}`).join('\n') || 'Nothing here yet.'
+        write(rel, page({ rel, title, description: `${title}: ${items.length} so far, newest first.`, body: render(md), mdTwin: twinPath(rel) }))
+        pages.push({ rel, title, description: `${title}: ${items.length} so far, newest first.` })
+        twin(rel, title, `${items.length} so far, newest first.`, md)
+    }
+}
 
 // plain pages: content/index.md -> index.html, content/<name>.md -> <name>/index.html
 for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWith('.md'))) {
