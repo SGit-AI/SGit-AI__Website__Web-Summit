@@ -1,7 +1,25 @@
 {
   "about": "Quality and speed, measured on every refactoring pass (the dev agent's mandate, WS-65): how many files a release changes, how long the build and the gate take, and how long CI takes. Append a row per pass; never edit an old one.",
   "rows": [
-    {"date": "2026-11-02", "by": "conductor@web-summit.dinis", "release": "v0.1.31", "note": "before WS-83: generated pages committed", "files_changed_by_release_commit": 359, "tracked_files": 660, "build_and_gate_seconds_clean_checkout": null},
-    {"date": "2026-11-02", "by": "conductor@web-summit.dinis", "release": "v0.1.32", "note": "after WS-83: generated output gitignored, CI builds and deploys", "files_changed_by_release_commit": null, "tracked_files": 298, "build_and_gate_seconds_clean_checkout": 1.35}
+    {
+      "date": "2026-11-02",
+      "by": "conductor@web-summit.dinis",
+      "release": "v0.1.31",
+      "note": "before WS-83: generated pages committed",
+      "files_changed_by_release_commit": 359,
+      "tracked_files": 660,
+      "build_and_gate_seconds_clean_checkout": null,
+      "ci_seconds": 42
+    },
+    {
+      "date": "2026-11-02",
+      "by": "conductor@web-summit.dinis",
+      "release": "v0.1.32",
+      "note": "after WS-83: generated output gitignored, CI builds and deploys",
+      "files_changed_by_release_commit": 3,
+      "tracked_files": 298,
+      "build_and_gate_seconds_clean_checkout": 1.35,
+      "ci_seconds": 48
+    }
   ]
 }
