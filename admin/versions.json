@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.34",
+    "date": "2026-11-02",
+    "what": "the journalist's first report, and 'What happened' at the top of the home page",
+    "by": "journalist@web-summit.dinis"
+  },
+  {
     "version": "v0.1.33",
     "date": "2026-11-02",
     "what": "the short prompts to start each of the team's agents, and WS-83 recorded as done",
