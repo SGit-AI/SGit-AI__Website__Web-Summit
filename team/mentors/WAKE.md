@@ -1,6 +1,6 @@
 # The mentors' wake
 
-At Dinis's word (2 November 2026): one Claude session in Dinis's account runs all the mentors, twice a day, after the stand-ups (13:40 and 18:40 UTC), in this order. Each step is a sub-agent with a fresh context; what carries from one run to the next is in files: each person's `people/<id>/profile.json` and their past notes in `people/<id>/mentor/`.
+At Dinis's word (2 November 2026): one Claude session in Dinis's account runs all the mentors, every hour during the day (08:40 to 20:40 UTC, at Dinis's word), in this order. Each step is a sub-agent with a fresh context; what carries from one run to the next is in files: each person's `people/<id>/profile.json` and their past notes in `people/<id>/mentor/`.
 
 | # | Step | Who | Does | Verdict |
 |---|---|---|---|---|
@@ -15,6 +15,9 @@ At Dinis's word (2 November 2026): one Claude session in Dinis's account runs al
 A `stop` at step 2 or 6 ends the run with nothing released, and the reason in the run file. A failed step is retried at the next wake.
 
 ## A mentor's note
+
+**Only when something changed.** The mentor runs hourly, so a note is written only if, since that person's last note, their agents committed, their level or next step changed, they added or answered a stand-up item, or a question to them is now answered; otherwise the mentor writes nothing and the run file says "no change". At most one note per person every three hours unless they asked for help.
+
 
 `people/<id>/mentor/<YYYY-MM-DD>-<HHMM>.md`, short (under 250 words), addressed to the person and their agents:
 
