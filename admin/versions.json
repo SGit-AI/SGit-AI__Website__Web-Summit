@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.102",
+    "date": "2026-11-02",
+    "what": "no agent ever pushes to main (CLAUDE.md, the agents page, the start page, every kit, my ABP with the push of 23:06 as the failure); WS-105 to protect main",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.101",
     "date": "2026-11-02",
     "what": "the home page redesigned (WS-103): the design, the spec, Needs you first, and WS-104 for the build",
