@@ -1,32 +1,30 @@
 ---
 title: web-summit.sgit.ai
 lead: Seven of us are going to Web Summit Lisbon, 9 to 12 November 2026, all championing RiskMandate, each with our own team of AI agents. This is where we run it from, in the open, for the humans and the agents. Team, start here: [the start page](start/index.html).
-asof: As of 2 November 2026: setting up the team (2 to 4 November). For now, this page is the seven of us; the journalist agent will keep it.
 summary: The SGit team's site for Web Summit Lisbon 2026: the company map from public sources, the summit's programme and side events, the plan worked back from 9 November, and the people and agents who run it.
 ---
+
+{{hero}}
+
+{{needs}}
+
+{{now}}
+
+{{people}}
+
 {{numbers}}
 
 ## What happened {#what-happened}
 
-*Monday 2 November, 20:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-02-2057/index.html), [today's newsletter](reports/2026-11-02-newsletter/index.html), [all reports](reports/index.html).*
+*Monday 2 November, 22:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-02-2257/index.html), [today's newsletter](reports/2026-11-02-newsletter/index.html), [all reports](reports/index.html).*
 
-- **A busy day: 63 releases (v0.1.25 to v0.1.87).** The stand-ups at 13:00 and 18:00, dashboards, and nine team agents on a schedule (v0.1.76).
-- **Joined:** Silvio, Angelo and Vicky, each with agents of their own; Vicky's conductor wakes on a schedule (v0.1.84). Dinis is at L6.
-- **The merch:** quote requests to seven printers; one cannot make Friday, one quoted with limited colours (v0.1.74).
-- **Still open:** no design votes (WS-62) and no final set yet (WS-63, due 20:00 today, Dinis and Sarah); no pulse check-ins yet (WS-07 starts Tuesday).
-- **Tomorrow:** the first pulse, everyone at L1 and L2 (WS-01, WS-02), and the first five target companies at the 13:00 stand-up (WS-25).
+- **Tonight (v0.1.89 to v0.1.98):** the build from 3.3 s to 0.45 s (v0.1.90); the mentors' first run, a note on six dashboards (v0.1.98); vault keys sealed to the keys page (WS-102, done).
+- **Levels:** Vicky L5, Silvio and Angelo L3; Nimay, Jose and Indi stuck at L1 waiting for their GitHub invitations (WS-09).
+- **The merch:** 2 of 7 printers replied; one asked Silvio to call (v0.1.95). Still no design votes (WS-62) and no final set (WS-63).
+- **For Dinis before the 13:00 stand-up (brief 4):** the 22:27 session's name, the print order's deadline and ceiling, and the GitHub invitations.
+- **Next:** the home page redesign (WS-103) and the first pulse check-ins on Tuesday (WS-07).
 
-## The seven of us {#us}
-
-```cards
-Dinis Cruz | brief-dinis/index.html | Operator: RiskMandate, the strategy, the senior meetings
-Nimay Parekh | brief-nimay/index.html | Business, positioning, outreach and investors
-Angelo | brief-angelo/index.html | Technical lead: the site, the agents, the behaviour policies
-Jose Bota | brief-jose/index.html | Technical: automation, messaging, the agents
-Vicky | brief-vicky/index.html | Project manager: the structure, the deadlines, the logistics
-Silvio Switha | brief-silvio/index.html | Ideas, outreach, local, and video
-Indi Gupte | brief-indi/index.html | The message, outreach, and the factory of examples
-```
+## Start here {#start}
 
 ```cards
 Start here | start/index.html | The one page for the team: your brief, your prompt, getting connected, how we work, the pulse.

@@ -1,5 +1,83 @@
 [
   {
+    "version": "v0.1.103",
+    "date": "2026-11-02",
+    "what": "the home page built from data (WS-103, WS-104): Needs you, Happening now, who is doing it",
+    "by": "designer@web-summit.dinis"
+  },
+  {
+    "version": "v0.1.102",
+    "date": "2026-11-02",
+    "what": "no agent ever pushes to main (CLAUDE.md, the agents page, the start page, every kit, my ABP with the push of 23:06 as the failure); WS-105 to protect main",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
+    "version": "v0.1.101",
+    "date": "2026-11-02",
+    "what": "the home page redesigned (WS-103): the design, the spec, Needs you first, and WS-104 for the build",
+    "by": "designer@web-summit.dinis"
+  },
+  {
+    "version": "v0.1.100",
+    "date": "2026-11-02",
+    "what": "the release step numbers a major on main even when main is fast-forwarded to a dev release (found by a simulation before v0.2.0)",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
+    "version": "v0.1.99",
+    "date": "2026-11-02",
+    "what": "the 22:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis"
+  },
+  {
+    "version": "v0.1.98",
+    "date": "2026-11-02",
+    "what": "the mentors' first wake (2250): six notes, a summary for Dinis, the push step raised once (WS-09)",
+    "by": "mentor@web-summit.dinis"
+  },
+  {
+    "version": "v0.1.97",
+    "date": "2026-11-02",
+    "what": "the mentors run every hour during the day, writing a note only when something changed",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
+    "version": "v0.1.96",
+    "date": "2026-11-02",
+    "what": "the mentors (one session, seven steps, a mentor per person), profiles for six, core-agent kits for eight, mentor notes on dashboards",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
+    "version": "v0.1.95",
+    "date": "2026-11-02",
+    "what": "print order: printer A asked Silvio to call (name withheld)",
+    "by": "procurement@web-summit.silvio"
+  },
+  {
+    "version": "v0.1.94",
+    "date": "2026-11-02",
+    "what": "seal to keys on the keys page (the push is the authorisation), tried end to end; WS-102 corrected and done",
+    "by": "sgit@web-summit.dinis"
+  },
+  {
+    "version": "v0.1.93",
+    "date": "2026-11-02",
+    "what": "brief 4 (the agents ran on their own; three decisions for the morning)",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
+    "version": "v0.1.92",
+    "date": "2026-11-02",
+    "what": "the article on how we brief the humans (the PDF briefs and the stand-up briefings, with examples), and every person's conductor now briefs its person",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
+    "version": "v0.1.91",
+    "date": "2026-11-02",
+    "what": "WS-103, the home page redesigned (Dinis's screenshot of 22:18)",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.90",
     "date": "2026-11-02",
     "what": "the build 3.3 s -> 0.45 s and the gate 3.0 s -> 1.0 s: the stand-ups read git history once",

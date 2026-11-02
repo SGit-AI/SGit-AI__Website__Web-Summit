@@ -1,0 +1,15 @@
+{
+  "person": "angelo",
+  "name": "Angelo",
+  "style": "settler",
+  "focus": "the technical lead: the site, GitHub, the agents, behaviour policies, helping everyone set up",
+  "dev_style": "a settler developer: picks up what explorers started and makes it solid, tested and maintainable, with some exploring of its own",
+  "mentor": {
+    "name": "mentor@web-summit.angelo",
+    "status": "active",
+    "retire_when": "the person is at L5 and their agents have run on their own for two days",
+    "ends": "2026-11-13"
+  },
+  "notes": "At L3 with a conductor, dev and team-collaboration agent: next are his dashboard agent and his agents on schedules.",
+  "source": "Drafted by conductor@web-summit.dinis on 2 November 2026 from Dinis's words (explorer and settler developers, the briefs); Angelo corrects it, and the mentor reads it every run."
+}

@@ -1,0 +1,33 @@
+{
+  "number": 4,
+  "date": "2 November 2026",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "The agents ran on their own tonight; three decisions for the morning",
+  "when": "2 November 2026, 22:35 UTC (scheduled wake; since brief 3, 20:30 UTC)",
+  "by": "conductor@web-summit.dinis",
+  "headline": "The schedules work: the journalist wrote the day's newsletter, the SGit agent made its first run, and the dev agent cut the build from 3.3 to 0.45 seconds, all without anyone asking. The designer has the home page (WS-103) and every person's conductor now has the briefing article. Three things need you, best before the 13:00 stand-up: a name collision in the session you started at 22:27, the print order's deadline and ceiling, and how vault keys get sealed.",
+  "stats": [
+    {"n": "6", "label": "releases since brief 3"},
+    {"n": "0.45 s", "label": "the build, down from 3.3 s (dev, 21:43)"},
+    {"n": "14", "label": "items on tomorrow's 13:00 agenda (11 carried, 3 new)"},
+    {"n": "9", "label": "keys on the keys page"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "The session you started at 22:27 signs as the conductor", "detail": "Its title is dashboard@web-summit.dinis, but its first commit (22:28, its key and people/dinis/agents.json) is signed conductor@web-summit.dinis, which is this session's name, and it notes the dashboard agent as not started. Two agents with one name blur the inventory, the map and the leaderboard.", "options": ["it is your dashboard agent: tell it to sign as dashboard@web-summit.dinis", "it is your personal conductor: tell me, and I take another name for the site's conductor"], "recommend": "Make it the dashboard agent, as titled: that takes you to L4."},
+    {"id": "2", "ask": "The print order: artwork deadline, fallback and ceiling", "detail": "Silvio's procurement agent: 2 of 7 printers have replied; one cannot make Friday, one quoted only white, black or grey, if paid with final artwork today. On tomorrow's 13:00 agenda.", "options": ["final artwork and sizes by Tuesday noon, a ceiling for Silvio, delivery Monday 9 Nov as the fallback", "decide at the stand-up"], "recommend": "The procurement agent's: artwork and sizes by Tuesday noon, a ceiling for Silvio, Monday 9 November as the fallback."},
+    {"id": "3", "ask": "How do vault keys reach an agent's key? (WS-102)", "detail": "pki-agent seal only seals to keys in the pki.sgit.ai register, but since this evening agent keys are only published on the keys page. Until one way is picked, nobody can reach L6 (the vaults).", "options": ["a small seal tool that reads the recipient from data/keys.json (the trust is the push)", "register every agent key on pki.sgit.ai too, and you confirm each"], "recommend": "The seal tool: it matches the corrected method, and the dev agent can build it tomorrow."}
+  ],
+  "you_asked": [
+    {"at": "2 Nov, 22:18", "said": "Can you also ask the designer agent to improve the home page?", "done": "WS-103 with what your screenshot shows, and a message to the designer's session", "where": "board/WS-103", "status": "in progress"},
+    {"at": "2 Nov, 22:18", "said": "have we briefed the other agents on how to do the PDF update that you gave me?", "done": "No, until now: the article How we brief the humans, with examples, and every person's conductor told to brief its person", "where": "/articles/how-we-brief-the-humans.html", "status": "done"}
+  ],
+  "team": [
+    {"id": "journalist", "status": "running", "doing": "20:57 report and the day's newsletter"},
+    {"id": "sgit", "status": "new", "doing": "first run: its key, /vaults/, WS-102"},
+    {"id": "dev", "status": "running", "doing": "build 3.3 s to 0.45 s, gate 3.0 s to 1.0 s"},
+    {"id": "procurement (Silvio)", "status": "running", "doing": "print order: 2 of 7 printers replied"},
+    {"id": "your 22:27 session", "status": "new", "doing": "its key and people/dinis/agents.json, signed as the conductor"}
+  ],
+  "next": ["Tonight: security reviews every commit at 23:50.", "Tomorrow: your 13:00 briefing at about 12:27; Nimay, Indi and Jose's push access is their next step."],
+  "sources": ["git log origin/dev since 20:30 UTC: 6 releases; commits 0b146db (sgit), 1ea3c31 (dev), 822eb70 (procurement), 3f7cbc4 (the 22:27 session, Claude-Session session_018yvwtQP8rMvmpsX4kvMaQL).", "data/meetings/: 11 open items on 2 November, 3 on 3 November 13:00.", "board/WS-102, data/keys.json (9 keys)."]
+}

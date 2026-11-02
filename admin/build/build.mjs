@@ -10,6 +10,7 @@ import { meetingsContext, buildMeetings, sinceMd } from './meetings.mjs'
 import { inventory, inventoryMd, myAgentsMd } from './inventory.mjs'
 import { onboarding, LEVELS } from './onboarding.mjs'
 import { orgchartSvg } from './orgchart.mjs'
+import { homeBlocks, expandHome } from './home.mjs'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
@@ -116,6 +117,7 @@ function rail(rel, up, body) {
 function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false }) {
     const up = '../'.repeat(rel.split('/').length - 1)
     const side = home ? '' : rail(rel, up, body)
+    const heroed = home && body.includes('class="hm-hero"')   // the home page's hero band (WS-103) is its title
     const url = `https://${HOST}/${rel}`
     const agent = `For an agent: this page is ${url}${mdTwin ? ` (markdown: https://${HOST}/${mdTwin})` : ''}. Site index for agents: https://${HOST}/llms.txt. Source: ${REPO} (release branch dev). Identity of the agent that runs this site: https://${HOST}/agent/index.html.`
     return `<!doctype html>
@@ -149,9 +151,9 @@ ${home ? '' : (() => {
     const bar = who && who.kind === 'human' ? `<p class="personbar">${castIcon(who.id, 'icon')}<b>${esc(who.name)}</b>${[['Profile', `team/${who.id}/index.html`], ['Brief', `brief-${who.id}/index.html`], ['Dashboard', `people/${who.id}/index.html`], who.core ? ['Meet page', `meet/${who.id}/index.html`] : null].filter(Boolean).filter(([, h]) => fs.existsSync(path.join(ROOT, h)) || h.startsWith('brief-') || h.startsWith('people/') || h.startsWith('meet/') || h.startsWith('team/')).map(([t, h]) => rel === h ? `<span aria-current="page">${t}</span>` : `<a href="${up}${h}">${t}</a>`).join('')}</p>` : ''
     return `<nav class="crumbs" aria-label="Breadcrumbs">${c.join('<span>›</span>')}<span>›</span><span aria-current="page">${esc(title)}</span></nav>${bar}`
 })()}
-<h1>${inline(title)}</h1>
+${heroed ? '' : `<h1>${inline(title)}</h1>
 ${lead ? `<p class="lead">${inline(lead)}</p>` : ''}
-${home ? `<p class="countdown" data-countdown="2026-11-09">Web Summit Lisbon: 9 to 12 November 2026</p><script src="assets/countdown.js" defer></script>` : ''}
+${home ? `<p class="countdown" data-countdown="2026-11-09">Web Summit Lisbon: 9 to 12 November 2026</p><script src="assets/countdown.js" defer></script>` : ''}`}
 ${meta}
 ${body}
 </main>
@@ -353,7 +355,7 @@ const INV = getINV()
 }
 {
     const rel = 'team/everything/index.html', title = 'Everything: every person, agent and channel', md = inventoryMd(INV, onboard, LEVELS)
-    write(rel, page({ rel, title, description: `${INV.people.length} people, ${INV.agents.length} agents, ${INV.channels.length} channels.`, body: render(md), mdTwin: twinPath(rel) }))
+    write(rel, page({ rel, title, description: `${INV.people.length} people, ${INV.agents.length} agents, ${INV.channels.length} channels.`, body: NUMBERS_HTML('../../') + render(md), mdTwin: twinPath(rel) }))
     pages.push({ rel, title, description: `${INV.people.length} people, ${INV.agents.length} agents, ${INV.channels.length} channels.` }); twin(rel, title, `${INV.people.length} people, ${INV.agents.length} agents, ${INV.channels.length} channels.`, md)
 }
 
@@ -366,19 +368,29 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
     const raw = fs.readFileSync(path.join(ROOT, 'content', f), 'utf8')
     const { meta, body: rawBody } = parse(raw)
     const name = f.replace(/\.md$/, ''), body = expandIssues(rawBody, name === 'index' ? '' : '../'), rel = meta.path || (name === 'index' ? 'index.html' : `${name}/index.html`)
-    write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + render(body).replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index' }))
+    let html = render(body), md = body
+    if (name === 'index') ({ html, md } = expandHome(html, md, homeBlocks({ ROOT, teamData, onboard, LEVELS, INV, MEET, ISSUES, plan, castData, merch })))
+    write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + html.replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index' }))
     pages.push({ rel, title: meta.title, description: meta.summary })
     if (name !== 'index') twin(rel, meta.title, meta.summary, body)
-    if (name === 'index') write('index.md', `# ${meta.title}\n\n${meta.summary}\n\nSite version: ${VERSION}\n\n${body.trim().replace('{{numbers}}', NUMBERS_MD)}\n`)
+    if (name === 'index') write('index.md', `# ${meta.title}\n\n${meta.summary}\n\nSite version: ${VERSION}\n\n${md.trim().replace('{{numbers}}', NUMBERS_MD)}\n`)
 }
 
 
+// a person's mentor (team/mentors/WAKE.md): the latest note, and their core-agent kit, on their dashboard
+const mentorMd = id => {
+    const d = path.join(ROOT, 'people', id, 'mentor'), kit = fs.existsSync(path.join(ROOT, 'people', id, 'kit', 'README.md'))
+    const notes = fs.existsSync(d) ? fs.readdirSync(d).filter(f => /^\d{4}-\d{2}-\d{2}-\d{4}\.md$/.test(f)).sort() : []
+    const last = notes.length ? fs.readFileSync(path.join(d, notes[notes.length - 1]), 'utf8').replace(/^---[\s\S]*?---\n/, '').replace(/^#+ .*\n/gm, '').trim() : ''
+    const k = kit ? `Your core agents, ready to start (three steps each): [your kit](${REPO}/blob/dev/people/${id}/kit/README.md).\n\n` : ''
+    return (last || kit) ? `## From your mentor {#mentor}\n\n${k}${last ? `*${notes[notes.length - 1].replace(/\.md$/, '')}:* ${last}\n\n` : ''}` : ''
+}
 // each person's own area: people/<id>/dashboard.md -> people/<id>/index.html (their page, kept by them and their agents)
 for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const f = path.join(ROOT, 'people', m.id, 'dashboard.md')
     if (!fs.existsSync(f)) continue
     const { meta, body: rawBody } = parse(fs.readFileSync(f, 'utf8'))
-    const nxm = MEET.next(), body = `## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
+    const nxm = MEET.next(), body = `## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
     const rel = `people/${m.id}/index.html`
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel) }))
     pages.push({ rel, title: meta.title, description: meta.summary })

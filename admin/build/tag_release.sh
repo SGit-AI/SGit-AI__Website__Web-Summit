@@ -25,7 +25,10 @@ for try in 1 2 3; do
   git fetch --quiet --tags origin "$BRANCH"
   git checkout -q -B "$BRANCH" "origin/$BRANCH"
   SUBJECT=$(git log -1 --format=%s)
-  if [[ "$SUBJECT" =~ ^site\ v[0-9]+\.[0-9]+\.[0-9]+: ]] && [ "$(git log -1 --format=%an)" = 'GitHub Actions' ]; then
+  # the head is already CI's release: deploy it again, no new number. Except on main when it is a dev release
+  # (dev fast-forwarded to main for a major): that head still needs its major number (v0.N.M -> v0.N+1.0).
+  HEADVER=$(grep -oP '^site v\K[0-9]+\.[0-9]+\.[0-9]+(?=:)' <<< "$SUBJECT" || true)
+  if [ -n "$HEADVER" ] && [ "$(git log -1 --format=%an)" = 'GitHub Actions' ] && { [ "$BRANCH" != main ] || [ "${HEADVER##*.}" = 0 ]; }; then
     echo "the head is already a CI release ($SUBJECT); rebuilding it to deploy, no new number"
     node admin/build/build.mjs > /dev/null; node admin/build/validate.js; exit 0
   fi
@@ -39,6 +42,7 @@ for try in 1 2 3; do
 
   printf '%s\n' "$NEW" > admin/build/version.txt
   WHAT=$(sed -E 's/^[^ :]+@web-summit\.[a-z0-9-]+: //; s/^site v[0-9.]+: //' <<< "$SUBJECT")
+  [ "$BRANCH" = main ] && WHAT="major release: dev at ${HEADVER:-$(git rev-parse --short HEAD)} promoted to main"
   node -e '
     const fs = require("fs"), [v, what, by] = process.argv.slice(1)
     const rows = JSON.parse(fs.readFileSync("admin/versions.json", "utf8")).filter(r => r.version !== v)

@@ -1,18 +1,15 @@
 ---
 id: WS-102
-title: Seal the vault keys to keys on the keys page (pki-agent seal needs the register)
+title: Seal the vault keys to keys on the keys page: the push is the authorisation
 area: tech
 for: dinis, angelo, jose
 due: Wed 4 Nov
-status: open
+status: done
 picked_by: sgit@web-summit.dinis
-agents: sgit@web-summit.dinis found it and writes the steps; dev@web-summit.dinis or dev@web-summit.angelo builds the tool if Dinis agrees.
+agents: sgit@web-summit.dinis built and tested the tool.
 ---
-Step 8 (the vaults) seals each vault key to an agent's key. The corrected key method of 2 November (CLAUDE.md, the start page step 6) publishes agent keys only on the keys page (`data/keys.json`), with no registration on pki.sgit.ai. But `pki-agent.mjs seal --to FP` looks the recipient up in the pki.sgit.ai register and refuses one that does not chain to the pinned root (the tool, `seal` and `vouched`), so today it cannot seal to any key that is only on the keys page. Its `--unverified` flag would skip the check, which is not a trust model.
+**Decided by Dinis (2 November, evening):** a key is trusted because it was pushed to this repository, not because it is in the pki.sgit.ai register. Only an account with push access to `SGit-AI/SGit-AI__Website__Web-Summit` can put a key on the keys page, so the push is the authorisation ([the push is the authorisation](https://newsroom.sgit.ai/articles/the-push-is-the-authorisation.html), CLAUDE.md "Identity and names"). This issue's first version said the opposite (that `pki-agent.mjs seal` needs the register, so a choice was needed). That was wrong for this team: the register is a check that `pki-agent.mjs seal` makes, and not our trust rule.
 
-Two ways out, for Dinis to pick:
+**Done:** `admin/tools/seal.mjs` seals a secret to a key on the keys page. It reads the recipient's bundle from `origin/dev:data/keys.json` (what was pushed, not a local edit), names the commit that pushed it, and refuses if the copy the live site serves (`/keys/sha256-<fp>.json`) differs. The sealing is pki-agent.mjs's own code, unmodified. It is loaded from the downloaded tool and its sha256 is printed. The output is a pki.sgit.ai sealed link (and a QR code, with `--qr`) that the recipient opens with `node pki-agent.mjs open`. A test secret was sealed to `sgit-dinis` and opened by that session from both the link and the QR code, on 2 November. Steps: [the vaults page](../vaults/index.html#sealing).
 
-1. **A seal from the keys page.** A small tool (for example `admin/tools/seal.mjs`) that takes the recipient's public bundle from `data/keys.json` by id and seals with the same envelope `pki-agent.mjs open` reads. The trust is the one CLAUDE.md states: the key was pushed to this repository by the session that made it.
-2. **Register the agent keys too.** Each agent also submits its record to pki.sgit.ai and the operator confirms it, so the existing `seal` works unchanged.
-
-Done looks like: a test vault key sealed to one agent key on the keys page and opened by that agent, the steps in [the vaults page](../vaults/index.html), and nothing secret in the repository.
+**Next, not this issue:** sealing the six team vault keys to the team's agents (step 8) needs the holder of those keys, the vault registry key, to run this tool. Open questions from the article stay open here too: proof that the session holds the private half, which writer may replace which role's key, and retiring an old session's key.

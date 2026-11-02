@@ -1,0 +1,15 @@
+{
+  "person": "nimay",
+  "name": "Nimay Parekh",
+  "style": "to ask",
+  "focus": "business positioning, investors, outreach and meetings; very little time",
+  "dev_style": "a developer that keeps everything ready for him: pages and decks from his notes, nothing he has to maintain",
+  "mentor": {
+    "name": "mentor@web-summit.nimay",
+    "status": "active",
+    "retire_when": "the person is at L5 and their agents have run on their own for two days",
+    "ends": "2026-11-13"
+  },
+  "notes": "At L1: the next step is push access; keep every ask to one line, he has the least time.",
+  "source": "Drafted by conductor@web-summit.dinis on 2 November 2026 from Dinis's words (explorer and settler developers, the briefs); Nimay corrects it, and the mentor reads it every run."
+}

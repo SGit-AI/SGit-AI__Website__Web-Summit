@@ -4,7 +4,7 @@ The SGit site for Web Summit, built and run by a Claude Code agent with a named 
 
 ## Branches and versions
 
-- Work on and push to `dev` only. Every push to `dev` is a **minor** release: the next `v0.1.N`. A push to `main` is a **major** release (`v0.N+1.0`) and is the operator's call.
+- Work on and push to `dev` only. Every push to `dev` is a **minor** release. **No agent ever pushes to `main`, for any reason, even when asked for a major release.** A major release is a pull request from `dev` to `main`, opened by an agent if asked, and merged only by Dinis; the merge is the release (`v0.N+1.0`). (Rule made absolute on 2 November 2026, after the conductor pushed to `main` directly when asked for a major release.)
 - **CI owns the version** (https://newsroom.sgit.ai/articles/ci-owns-the-version.html): nobody who pushes writes a number. Commit your **source** changes with the convention (subject `<agent>@web-summit.<person>: <what>`, trailer `Agent:`), then `AGENT=<agent>@web-summit.<person> admin/tools/release.sh`: it rebases on dev, runs the gate locally, pushes (retrying if someone pushed first) and waits for the live site. CI (`.github/workflows/deploy-pages.yml`) runs the gate on the push, then one release at a time `admin/build/tag_release.sh` bumps the newest version, writes `version.txt`, the `versions.json` row and REALITY.md, builds, runs the gate, commits `site vX.Y.Z: <your subject>` as GitHub Actions, tags and deploys that tree. Never edit `version.txt` or `versions.json`. A red gate is no release.
 - Never force-push, rewrite history, disable a check to get green, or push an empty commit.
 
