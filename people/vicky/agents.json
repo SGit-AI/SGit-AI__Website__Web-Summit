@@ -1,4 +1,4 @@
 [
   {"name": "conductor@web-summit.vicky", "job": "conducts Vicky's agents and keeps people/vicky/ with Vicky: onboarding, the agents, the dashboard's own part", "session": "Claude Code cloud session in Vicky's account", "schedule": "07:30, 12:30 and 17:30 UTC, before each stand-up"},
-  {"name": "dashboard@web-summit.vicky", "job": "keeps Vicky's dashboard, people/vicky/dashboard.md, the page Vicky reads first", "session": "Claude Code cloud session in Vicky's account"}
+  {"name": "dashboard@web-summit.vicky", "job": "keeps Vicky's dashboard, people/vicky/dashboard.md, the page Vicky reads first", "session": "Claude Code cloud session in Vicky's account", "schedule": "daily at 07:30 UTC"}
 ]
