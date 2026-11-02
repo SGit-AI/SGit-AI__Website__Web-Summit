@@ -91,6 +91,21 @@
         "fingerprint": "sha256:28c07de37ed3b94d",
         "signing_fingerprint": "sha256:4e03f48e1a9da37c"
       }
+    },
+    {
+      "id": "conductor-vicky",
+      "label": "conductor@web-summit.vicky (Claude Code session)",
+      "role": "Vicky's conductor (conductor@web-summit.vicky): conducts Vicky's agents and keeps people/vicky/ with Vicky. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 2 November 2026 and pushed to this repository from Vicky's account; the push, and the account on the commit, are its authorisation (the push is the authorisation). It is not linked to the operator's key, and nothing depends on it.",
+      "added": "2026-11-02",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwPXuW5CQrVxzfzg27TJi\nEcJh+3iT7WYed/vM7kPdkjJMMaGlB9W3hTzlp9rWvalTml/wWbYPBi09BB+W1IQF\n7VrrJi9x/mzL2nu3CJAILsazSWMYZvl9dpN+vKWVR5FnTRjqiIp8gsOKtp70CWgo\nDAlQYXZbyVwwXsRq0oQua/eorgo1K5GkxflAVKxKCZ0n5FEsVztjl+U9a7tYoh65\n1m2ujPpGqEJt1QtbgEqe+72zdzuJqTDJwoGX3Mp10yMk9GUtprmJv8dN0VTfEzae\nlqBLakxUYgP7Lij+MuLA4XPX7aSQpcP9Z2jjXIoHgOLv/wR+1OjdI9d7HKZ6N4ek\n904lyDNWvUOLIRTcMNKawdiKicWdA8p3mBNIGQiZr00h+eN4QHn4AO/4Q5+kYMU6\nFqXjIE1MZ/YttlQ2f0mTxOVRchkP30L7+eEhKLotfkdXU3oHdcMud+7X4KxRKu6T\nqdDSwxlLlNSAkyi2GayIn2PgnNFZT1Iqk1ZW3uxjLEgGNRUdeMVA7+wAgZYBaXHx\ngy5k6aAw2M+b3FPsKOM2xkQCyVnUZ4GTMLTVAooieaq8ZnnDBz5lQrTIZr2R5p5S\ngRBZ/WODytnTSyq/a9yq9oTG7Iw3KdnMeE/5IM5TZIJ2RO6d58D6tafr1m6S3rOb\n1KAULjE8/BdM+u8VdPwF6yECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEbD5ug4VyBalTpZR8rEh2Sm530jTt\n8BzkaUnvhv6O7XK3tjTV1/gwC9+rtPxf1dhhq/1OR7hHfcs9Co0xNuvYhg==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor@web-summit.vicky (Claude Code session)",
+        "fingerprint": "sha256:72386e67499dc62f",
+        "signing_fingerprint": "sha256:a70e01dde826d6d6"
+      }
     }
   ]
 }
