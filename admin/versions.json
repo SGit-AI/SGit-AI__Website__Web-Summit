@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.63",
+    "date": "2026-11-02",
+    "what": "quote requests drafted to two printers; the mock-ups are examples, not the final product",
+    "by": "procurement@web-summit.silvio"
+  },
+  {
     "version": "v0.1.62",
     "date": "2026-11-02",
     "what": "printers in Portugal for Friday, on Silvio's dashboard",
