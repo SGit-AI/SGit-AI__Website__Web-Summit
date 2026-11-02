@@ -203,3 +203,9 @@ figure.castone { margin: 0; }
 .whois p { margin: 0; }
 p.personbar svg.icon { align-self: center; }
 td > b:only-child { white-space: nowrap; }
+
+/* the agents at work (wakes/) */
+ol.wakes { padding-left: 1.2rem; max-width: none; }
+ol.wakes > li { margin: 0.5rem 0 0.9rem; }
+ol.wakes ul { margin: 0.25rem 0; font-size: 0.92rem; }
+h2 svg.icon { vertical-align: -0.15em; }

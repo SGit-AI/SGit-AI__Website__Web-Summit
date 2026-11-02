@@ -33,6 +33,10 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+        with:
+          # the agents-at-work page (wakes/) is built from the history; blobless keeps the clone small
+          fetch-depth: 0
+          filter: blob:none
       - uses: actions/setup-node@v4
         with:
           node-version: "22"

@@ -42,7 +42,9 @@ for attempt in 1 2 3 4 5; do
   node admin/build/build.mjs >/dev/null
   node admin/build/validate.js
   git add -A
-  git commit -q -m "site $NEXT: $SENTENCE" -m "Agent: $AGENT" ${TRAILERS:+-m "$TRAILERS"}
+  # one trailer paragraph, so git can read it (git log --format='%(trailers:key=Agent)'); separate -m's made two
+  git commit -q -m "site $NEXT: $SENTENCE" -m "Agent: $AGENT${TRAILERS:+
+$TRAILERS}"
   [ "${DRY:-0}" = 1 ] && { echo "DRY: would push $NEXT"; exit 0; }
   if git push -q origin "$BRANCH"; then echo "pushed $NEXT"; break; fi
   echo "release.sh: someone pushed first; dropping $NEXT and trying again"

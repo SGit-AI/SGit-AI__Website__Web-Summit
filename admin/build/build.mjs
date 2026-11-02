@@ -5,6 +5,7 @@
 import fs from 'fs'
 import path from 'path'
 import * as CAST from './cast.mjs'
+import { execFileSync } from 'child_process'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
@@ -13,7 +14,7 @@ const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
 // navigation: a few sections on top, each with its own sub-menu; every page gets breadcrumbs back to its parent
 const SECTIONS = [
     { t: 'Start', h: 'start/index.html', re: /^start\//, sub: [] },
-    { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet|abp|cast)\b/, sub: [['People', 'team/index.html'], ['The cast', 'cast/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['ABPs', 'abp/index.html'], ['Meet us', 'meet/index.html']] },
+    { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet|abp|cast|wakes)\b/, sub: [['People', 'team/index.html'], ['The cast', 'cast/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['At work', 'wakes/index.html'], ['ABPs', 'abp/index.html'], ['Meet us', 'meet/index.html']] },
     { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|merch-sponsor|videos|research|reports|board-health|site-review)\b/, sub: [['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Merch sponsor', 'merch-sponsor/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
     { t: 'About', h: 'about/index.html', re: /^(about|articles|keys|admin|agent\/|briefing)\b/, sub: [['About', 'about/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['Versions', 'admin/versions.html'], ['The site agent', 'agent/index.html'], ['Inbox briefing', 'briefing/index.html']] },
@@ -488,6 +489,64 @@ ${(events.gaps || []).length ? `<h2 id="gaps">What we could not confirm</h2>${li
     write('log/index.html', page({ rel: 'log/index.html', title: 'The session log', description: 'Every wake of the team, opened and closed by the conductor\'s banners.', body }))
     twin('log/index.html', 'The session log', 'Every wake of the team, opened and closed by the conductor\'s banners.', entries.map(e => `## ${e.started}: ${e.objective}\n\nRoles run: ${(e.roles || []).join(', ')}. Outcome: ${e.outcome}. Release: ${e.release || 'none'}.\n\n${(e.achieved || []).map(x => `- ${x}`).join('\n')}`).join('\n\n'))
     pages.push({ rel: 'log/index.html', title: 'The session log', description: 'Every wake of the team, opened and closed by the conductor\'s banners.' })
+}
+
+// the agents at work: git history -> wakes/index.html. Commits are how agents talk: each carries "Agent: <name>"
+// (and usually "Claude-Session: <url>"). A wake is an agent's source commits closed by its release commit
+// ("site vX.Y.Z: ..."). Read from the commit bodies, not git's trailer parser (release.sh wrote the trailers as
+// separate paragraphs until v0.1.49). "Now" is the HEAD commit's time, so the page is the same however often it is built.
+{
+    const GH = `${REPO}/commit/`
+    let commits = [], note = ''
+    try {
+        const raw = execFileSync('git', ['log', '--since=2026-10-25', '--format=%H%x1f%cI%x1f%s%x1f%b%x1e'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()
+        commits = raw.split('\x1e').map(r => r.trim()).filter(Boolean).map(r => {
+            const [sha, at, subject, body = ''] = r.split('\x1f')
+            const agent = (body.match(/^Agent: *(\S+)/m) || [])[1] || (subject.match(/^([a-z0-9-]+@web-summit\.[a-z0-9-]+):/) || [])[1] || ''
+            const session = (body.match(/^Claude-Session: *(https:\/\/claude\.ai\/code\/session_[A-Za-z0-9]+)/m) || [])[1] || ''
+            const release = (subject.match(/^site (v\d+\.\d+\.\d+): (.*)$/) || []).slice(1)
+            return { sha, at, subject, agent, session, version: release[0] || '', what: release[1] || '' }
+        }).filter(c => c.agent).reverse()
+        if (execFileSync('git', ['rev-parse', '--is-shallow-repository'], { cwd: ROOT }).toString().trim() === 'true') note = 'This build had only part of the history (a shallow clone), so older wakes may be missing.'
+    } catch { note = 'The git history was not available to this build, so no wakes are listed.' }
+    const now = commits.length ? Date.parse(commits[commits.length - 1].at) : 0
+    // the cron fields this team uses: *, */n, a-b, lists; minutes and hours only (every day)
+    const field = (f, v) => f.split(',').some(p => p === '*' || (p.startsWith('*/') ? v % +p.slice(2) === 0 : p.includes('-') ? v >= +p.split('-')[0] && v <= +p.split('-')[1] : +p === v))
+    const fires = (cron, t) => { const d = new Date(t); return cron.split(/,\s+(?=\d+\s)/).some(c => { const [m, h] = c.trim().split(/\s+/); return field(m, d.getUTCMinutes()) && field(h, d.getUTCHours()) }) }
+    const seek = (cron, from, dir) => { let t = Math.floor(from / 60000) * 60000; for (let i = 0; i < 2880; i++) { t += dir * 60000; if (fires(cron, t)) return t } return null }
+    const hm = t => new Date(t).toISOString().slice(11, 16)
+    const when = t => { const d = new Date(t); return `${d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' })}, ${hm(t)}` }
+    const ago = t => { const m = Math.round((now - t) / 60000); return m < 60 ? `${m} min` : m < 2880 ? `${Math.floor(m / 60)} h ${m % 60} min` : `${Math.round(m / 1440)} days` }
+    const names = [...new Set([...castData.agents.filter(a => a.cron || commits.some(c => c.agent === a.name)).map(a => a.name), ...commits.map(c => c.agent)])]
+    const wakesOf = name => {
+        const out = []; let cur = []
+        for (const c of commits.filter(c => c.agent === name)) { cur.push(c); if (c.version) { out.push(cur); cur = [] } }
+        if (cur.length) out.push(cur)
+        return out.reverse()
+    }
+    const rows = [], sections = []
+    for (const name of names) {
+        const a = castData.agents.find(x => x.name === name), ws = wakesOf(name), last = ws[0] ? Date.parse(ws[0][ws[0].length - 1].at) : null
+        const prev = a && a.cron ? seek(a.cron, now + 60000, -1) : null, next = a && a.cron ? seek(a.cron, now, 1) : null
+        // missed: its last slot passed more than an hour before this build and nothing came after it (and it has run before)
+        const state = !ws.length ? pill('not started') : a && a.cron && prev && last && last < prev && now - prev > 3600000 ? pill(`missed ${hm(prev)}?`, true) : pill('on schedule')
+        const id = (a && a.id) || slug(name)
+        rows.push(`<tr><td>${a ? castIcon(a.id) : ''} <a href="#${id}">${esc(name)}</a></td><td>${esc((a && a.when) || 'a person\'s agent')}${a && a.cron ? `<br><code>${esc(a.cron)}</code>` : ''}</td><td>${last ? `${when(last)}<br><span class="meta">${ago(last)} before this build</span>` : 'never'}</td><td>${next ? when(next) : '-'}</td><td>${ws.filter(w => w[w.length - 1].version).length}</td><td>${state}</td></tr>`)
+        const wake = w => {
+            const rel = w.find(c => c.version), first = w[0], end = w[w.length - 1], sess = w.map(c => c.session).find(Boolean)
+            const src = w.filter(c => !c.version)
+            return `<li><b>${when(Date.parse(first.at))}</b>${rel ? ` · <a href="${GH}${rel.sha}">${rel.version}</a>: ${inline(rel.what)}` : ' · <i>not released yet</i>'}${src.length ? `<ul>${src.map(c => `<li><a href="${GH}${c.sha}"><code>${c.sha.slice(0, 7)}</code></a> ${hm(Date.parse(c.at))} ${esc(c.subject.replace(/^[a-z0-9-]+@web-summit\.[a-z0-9-]+: */, ''))}</li>`).join('')}</ul>` : ''}${sess ? `<span class="meta"><a href="${esc(sess)}">the session</a> (opens for its account's owner)</span>` : ''}</li>`
+        }
+        sections.push(`<h2 id="${id}">${a ? castIcon(a.id) + ' ' : ''}${esc(name)}</h2><p class="meta">${esc((a && a.when) || 'a person\'s agent')}${a && a.look ? ` · drawn with ${esc(a.look)}` : ''}${a ? ` · <a href="../agents/index.html#${a.id}">its job and prompt</a>` : ''}</p>${ws.length ? `<ol class="wakes">${ws.slice(0, 25).map(wake).join('')}</ol>${ws.length > 25 ? `<p class="meta">And ${ws.length - 25} earlier wakes: <a href="${REPO}/commits/dev">the full history</a>.</p>` : ''}` : '<p>No wake recorded yet.</p>'}`)
+    }
+    const asOf = now ? when(now) : 'unknown'
+    const body = `<p>Every agent wired up on this team: when it is scheduled to fire, when it last did, and what each wake did, newest first, each linked to its commits. Built from the git history: every commit names its agent (<code>Agent:</code>) and its session (<code>Claude-Session:</code>); a wake is an agent's commits closed by its release. Times are UTC (Lisbon is UTC in November), as of the newest commit in this build: <b>${asOf}</b>. Each release rebuilds this page.${note ? ` ${note}` : ''}</p>
+<h2 id="now">Who fires when</h2><div class="scroll"><table><tr><th>Agent</th><th>Schedule</th><th>Last wake</th><th>Next, from the schedule</th><th>Releases</th><th>State</th></tr>${rows.join('')}</table></div><p class="meta">"Missed?" means the schedule had a slot more than an hour before this build and the agent has committed nothing since: its session may be asleep or stuck, or it found nothing worth a release. The conductor checks.</p>
+${sections.join('\n')}`
+    const md = names.map(n => { const a = castData.agents.find(x => x.name === n); return `## ${n}\n\n${(a && a.when) || 'a person\'s agent'}${a && a.cron ? ` (cron ${a.cron})` : ''}\n\n${wakesOf(n).slice(0, 25).map(w => { const r = w.find(c => c.version); return `- ${w[0].at.slice(0, 16)}Z ${r ? `${r.version}: ${r.what} (${GH}${r.sha})` : 'not released yet'}` }).join('\n') || 'No wake recorded yet.'}` }).join('\n\n')
+    write('wakes/index.html', page({ rel: 'wakes/index.html', title: 'The agents at work', description: 'Every agent on the team: its schedule, when it last fired, and what each wake did, linked to its commits.', body, lead: 'When each agent fires, when it last did, and what it did in each wake.', mdTwin: 'wakes/index.md' }))
+    twin('wakes/index.html', 'The agents at work', `Every agent's schedule and wakes, from the git history, as of ${asOf} UTC.`, md)
+    pages.push({ rel: 'wakes/index.html', title: 'The agents at work', description: 'Every agent: its schedule, its last wake, and what each wake did.' })
 }
 
 // machine surfaces

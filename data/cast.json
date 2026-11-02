@@ -1,32 +1,213 @@
 {
-  "about": "The cast: how every agent and every person on the team is drawn. Agents are the book's robot (a screen for a head, one colour, one thing on the head and one in the hand, from their job) wearing a lanyard in their person's colour. People are drawn in one of four styles until Dinis picks one (human_style). People's colours come from data/design.json (the merch colours); colour here is only for those without one. Drawn by admin/build/cast.mjs, ported from The Ultimate Insider's lab/characters/make_cast.py. Looks are a first proposal for designer@web-summit.dinis to refine (WS-92).",
+  "about": "The cast: how every agent and every person on the team is drawn. Agents are the book's robot (a screen for a head, one colour, one thing on the head and one in the hand, from their job) wearing a lanyard in their person's colour. People are drawn in one of four styles until Dinis picks one (human_style). People's colours come from data/design.json (the merch colours); colour here is only for those without one. Drawn by admin/build/cast.mjs, ported from The Ultimate Insider's lab/characters/make_cast.py. cron and when are each agent's schedule (UTC), the same as content/agents.md, used by the wakes page (/wakes/). Looks are a first proposal for designer@web-summit.dinis to refine (WS-92).",
   "human_style": "round",
   "agents": [
-    { "id": "conductor", "name": "conductor@web-summit.dinis", "person": "dinis", "colour": "#b0481a", "head": "clock", "hand": "baton", "look": "a clock for a face, a baton", "from_book": "conductor" },
-    { "id": "journalist", "name": "journalist@web-summit.dinis", "person": "dinis", "colour": "#57534e", "head": "fedora", "hand": "notepad", "look": "a fedora with a press card, a notepad" },
-    { "id": "pulse", "name": "pulse@web-summit.dinis", "person": "dinis", "colour": "#be123c", "head": "heart-antenna", "hand": "clipboard", "look": "a heart on its antenna, a clipboard" },
-    { "id": "security", "name": "security@web-summit.dinis", "person": "dinis", "colour": "#5b5f97", "head": "helmet", "hand": "shield", "look": "a helmet, a shield" },
-    { "id": "designer", "name": "designer@web-summit.dinis", "person": "dinis", "colour": "#c2416b", "head": "beret", "hand": "pencil", "look": "a beret, a pencil", "from_book": "designer" },
-    { "id": "dev", "name": "dev@web-summit.dinis", "person": "dinis", "colour": "#3d7a3d", "head": "hard-hat", "hand": "spanner", "look": "a hard hat, a spanner", "from_book": "dev" },
-    { "id": "abp", "name": "abp@web-summit.dinis", "person": "dinis", "colour": "#0f766e", "head": "mortarboard", "hand": "scroll", "look": "a mortarboard, a signed policy", "note": "RiskMandate's colour: the ABP agent is RiskMandate applied to the team" },
-    { "id": "sgit", "name": "sgit@web-summit.dinis", "person": "dinis", "colour": "#4a56a6", "head": "headband", "hand": "vault", "look": "a headband, a vault", "from_book": "ruv-sgit" },
-    { "id": "project-manager", "name": "project-manager@web-summit.dinis", "person": "dinis", "colour": "#a16207", "head": "visor", "hand": "clipboard", "look": "a visor, a clipboard" },
-    { "id": "researcher", "name": "researcher@web-summit", "person": "dinis", "colour": "#2f6f8f", "head": "none", "glasses": true, "hand": "magnifier", "look": "round glasses, a magnifier", "from_book": "researcher" },
-    { "id": "cartographer", "name": "cartographer@web-summit", "person": "dinis", "colour": "#4d7c0f", "head": "cap-backwards", "hand": "map", "look": "a cap, a map" },
-    { "id": "writer", "name": "writer@web-summit", "person": "dinis", "colour": "#7a4f9a", "head": "wavy-hair", "hand": "quill", "look": "wavy hair, a quill", "from_book": "storyteller" },
-    { "id": "curator", "name": "curator@web-summit", "person": "dinis", "colour": "#b45309", "head": "glasses-on-head", "hand": "book", "look": "glasses pushed up, a book" },
-    { "id": "analyst", "name": "analyst@web-summit", "person": "dinis", "colour": "#0e7490", "head": "headphones", "hand": "chart", "look": "headphones, a chart" },
-    { "id": "inbox", "name": "The inbox agent", "person": "dinis", "colour": "#9d174d", "head": "antenna", "hand": "envelope", "look": "an antenna, an envelope" }
+    {
+      "id": "conductor",
+      "name": "conductor@web-summit.dinis",
+      "person": "dinis",
+      "colour": "#b0481a",
+      "head": "clock",
+      "hand": "baton",
+      "look": "a clock for a face, a baton",
+      "from_book": "conductor",
+      "cron": "27 */2 * * *",
+      "when": "every 2 hours at :27"
+    },
+    {
+      "id": "journalist",
+      "name": "journalist@web-summit.dinis",
+      "person": "dinis",
+      "colour": "#57534e",
+      "head": "fedora",
+      "hand": "notepad",
+      "look": "a fedora with a press card, a notepad",
+      "cron": "57 */2 * * *",
+      "when": "every 2 hours at :57, 30 minutes after the conductor"
+    },
+    {
+      "id": "pulse",
+      "name": "pulse@web-summit.dinis",
+      "person": "dinis",
+      "colour": "#be123c",
+      "head": "heart-antenna",
+      "hand": "clipboard",
+      "look": "a heart on its antenna, a clipboard",
+      "cron": "40 8 * * *, 10 13 * * *, 40 19 * * *",
+      "when": "08:40, 13:10 and 19:40"
+    },
+    {
+      "id": "security",
+      "name": "security@web-summit.dinis",
+      "person": "dinis",
+      "colour": "#5b5f97",
+      "head": "helmet",
+      "hand": "shield",
+      "look": "a helmet, a shield",
+      "cron": "50 11 * * *, 50 23 * * *",
+      "when": "11:50 and 23:50"
+    },
+    {
+      "id": "designer",
+      "name": "designer@web-summit.dinis",
+      "person": "dinis",
+      "colour": "#c2416b",
+      "head": "beret",
+      "hand": "pencil",
+      "look": "a beret, a pencil",
+      "from_book": "designer",
+      "cron": "15 9-20 * * *",
+      "when": "hourly, 09:15 to 20:15 (then daily at 09:15 until the files are at the printer)"
+    },
+    {
+      "id": "dev",
+      "name": "dev@web-summit.dinis",
+      "person": "dinis",
+      "colour": "#3d7a3d",
+      "head": "hard-hat",
+      "hand": "spanner",
+      "look": "a hard hat, a spanner",
+      "from_book": "dev",
+      "cron": "40 */3 * * *",
+      "when": "every 3 hours at :40"
+    },
+    {
+      "id": "abp",
+      "name": "abp@web-summit.dinis",
+      "person": "dinis",
+      "colour": "#0f766e",
+      "head": "mortarboard",
+      "hand": "scroll",
+      "look": "a mortarboard, a signed policy",
+      "note": "RiskMandate's colour: the ABP agent is RiskMandate applied to the team",
+      "cron": "10 */4 * * *",
+      "when": "every 4 hours at :10"
+    },
+    {
+      "id": "sgit",
+      "name": "sgit@web-summit.dinis",
+      "person": "dinis",
+      "colour": "#4a56a6",
+      "head": "headband",
+      "hand": "vault",
+      "look": "a headband, a vault",
+      "from_book": "ruv-sgit",
+      "cron": "50 */4 * * *",
+      "when": "every 4 hours at :50"
+    },
+    {
+      "id": "project-manager",
+      "name": "project-manager@web-summit.dinis",
+      "person": "dinis",
+      "colour": "#a16207",
+      "head": "visor",
+      "hand": "clipboard",
+      "look": "a visor, a clipboard",
+      "cron": "50 7,12,17 * * *",
+      "when": "07:50, 12:50 and 17:50"
+    },
+    {
+      "id": "researcher",
+      "name": "researcher@web-summit",
+      "person": "dinis",
+      "colour": "#2f6f8f",
+      "head": "none",
+      "glasses": true,
+      "hand": "magnifier",
+      "look": "round glasses, a magnifier",
+      "from_book": "researcher",
+      "when": "inside the conductor's wake, as a sub-agent"
+    },
+    {
+      "id": "cartographer",
+      "name": "cartographer@web-summit",
+      "person": "dinis",
+      "colour": "#4d7c0f",
+      "head": "cap-backwards",
+      "hand": "map",
+      "look": "a cap, a map",
+      "when": "inside the conductor's wake, as a sub-agent"
+    },
+    {
+      "id": "writer",
+      "name": "writer@web-summit",
+      "person": "dinis",
+      "colour": "#7a4f9a",
+      "head": "wavy-hair",
+      "hand": "quill",
+      "look": "wavy hair, a quill",
+      "from_book": "storyteller",
+      "when": "inside the conductor's wake, as a sub-agent"
+    },
+    {
+      "id": "curator",
+      "name": "curator@web-summit",
+      "person": "dinis",
+      "colour": "#b45309",
+      "head": "glasses-on-head",
+      "hand": "book",
+      "look": "glasses pushed up, a book",
+      "when": "inside the conductor's wake, as a sub-agent"
+    },
+    {
+      "id": "analyst",
+      "name": "analyst@web-summit",
+      "person": "dinis",
+      "colour": "#0e7490",
+      "head": "headphones",
+      "hand": "chart",
+      "look": "headphones, a chart",
+      "when": "inside the conductor's wake, as a sub-agent"
+    },
+    {
+      "id": "inbox",
+      "name": "The inbox agent",
+      "person": "dinis",
+      "colour": "#9d174d",
+      "head": "antenna",
+      "hand": "envelope",
+      "look": "an antenna, an envelope",
+      "when": "in the operator's account, not scheduled here"
+    }
   ],
   "people": [
-    { "id": "dinis", "hand": "map" },
-    { "id": "nimay", "hand": "slide" },
-    { "id": "angelo", "hand": "spanner" },
-    { "id": "jose", "hand": "envelope" },
-    { "id": "vicky", "hand": "clipboard" },
-    { "id": "silvio", "hand": "stopwatch" },
-    { "id": "indi", "hand": "quill" },
-    { "id": "sarah", "colour": "#0f8a8a", "hand": "pencil" },
-    { "id": "daniela", "colour": "#8a5a2b", "hand": "book" }
+    {
+      "id": "dinis",
+      "hand": "map"
+    },
+    {
+      "id": "nimay",
+      "hand": "slide"
+    },
+    {
+      "id": "angelo",
+      "hand": "spanner"
+    },
+    {
+      "id": "jose",
+      "hand": "envelope"
+    },
+    {
+      "id": "vicky",
+      "hand": "clipboard"
+    },
+    {
+      "id": "silvio",
+      "hand": "stopwatch"
+    },
+    {
+      "id": "indi",
+      "hand": "quill"
+    },
+    {
+      "id": "sarah",
+      "colour": "#0f8a8a",
+      "hand": "pencil"
+    },
+    {
+      "id": "daniela",
+      "colour": "#8a5a2b",
+      "hand": "book"
+    }
   ]
 }
