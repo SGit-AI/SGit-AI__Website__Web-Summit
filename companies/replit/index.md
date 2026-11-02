@@ -2,7 +2,7 @@
 
 Agentic software creation platform that lets anyone build applications in natural language; millions of users and 500,000+ business users.
 
-Site version: v0.1.29
+Site version: v0.1.30
 
 - Website: https://replit.com/
 - Category: devtools

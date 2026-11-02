@@ -2,7 +2,7 @@
 
 You scanned Nimay's shirt or card at Web Summit 2026. Who Nimay is, what RiskMandate does, and how to book a meeting or talk to Nimay's agent.
 
-Site version: v0.1.29
+Site version: v0.1.30
 
 **Hello, and thanks for scanning.** You met Nimay Parekh, from the RiskMandate team at Web Summit Lisbon, 9 to 12 November 2026.
 

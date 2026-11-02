@@ -2,7 +2,7 @@
 
 You scanned Vicky's shirt or card at Web Summit 2026. Who Vicky is, what RiskMandate does, and how to book a meeting or talk to Vicky's agent.
 
-Site version: v0.1.29
+Site version: v0.1.30
 
 **Hello, and thanks for scanning.** You met Vicky, from the RiskMandate team at Web Summit Lisbon, 9 to 12 November 2026.
 

@@ -2,7 +2,7 @@
 
 Enterprise voice AI: agentic dialog platform for customer service.
 
-Site version: v0.1.29
+Site version: v0.1.30
 
 - Website: https://poly.ai/
 - Category: ai-agents

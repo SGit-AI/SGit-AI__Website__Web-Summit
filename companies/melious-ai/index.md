@@ -2,7 +2,7 @@
 
 Sovereign European AI infrastructure and inference, serving frontier open-weight models through OpenAI- and Anthropic-compatible APIs without US Cloud Act exposure.
 
-Site version: v0.1.29
+Site version: v0.1.30
 
 - Website: https://melious.ai
 - Category: platform

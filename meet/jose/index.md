@@ -2,7 +2,7 @@
 
 You scanned Jose's shirt or card at Web Summit 2026. Who Jose is, what RiskMandate does, and how to book a meeting or talk to Jose's agent.
 
-Site version: v0.1.29
+Site version: v0.1.30
 
 **Hello, and thanks for scanning.** You met Jose Bota, from the RiskMandate team at Web Summit Lisbon, 9 to 12 November 2026.
 

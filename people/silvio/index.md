@@ -2,7 +2,7 @@
 
 The page Silvio Switha sees first: their issues, their onboarding, their pulse, and whatever else they choose. Theirs to change, with their agents.
 
-Site version: v0.1.29
+Site version: v0.1.30
 
 This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dashboard.md`. It starts the same as everyone's: change it to show what you want to see when you wake up, take ideas from the others, and the best of them go on the main page.
 

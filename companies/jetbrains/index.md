@@ -2,7 +2,7 @@
 
 Developer tools vendor (IntelliJ IDEA and other IDEs, the Kotlin language) with AI coding agents in its tools.
 
-Site version: v0.1.29
+Site version: v0.1.30
 
 - Website: https://www.jetbrains.com/
 - Category: devtools

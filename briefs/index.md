@@ -2,7 +2,7 @@
 
 The top-level view of the Web Summit 2026 team, all championing RiskMandate: what each person is aiming for, a link to each person's brief (with the instructions for their agents), the dates, and the board of issues that a person and their agents can pick up.
 
-Site version: v0.1.29
+Site version: v0.1.30
 
 Seven people going, all championing RiskMandate, each with their own focus, for Web Summit (9 to 12 November 2026, Lisbon), and the agents that work for them, with a designer and a first friendly working alongside. From the team's strategy conversation of 1 November 2026 ([brief 3](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/BRIEF.md)). Kept by the conductor, conductor@web-summit.dinis.
 

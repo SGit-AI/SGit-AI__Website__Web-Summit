@@ -2,7 +2,7 @@
 
 Jose Bota, one of the seven at Web Summit 2026: the focus, the issues to pick up, who to tag-team with, and the instructions for Jose's agents. Everyone champions RiskMandate. A living page: check its version before you rely on it.
 
-Site version: v0.1.29
+Site version: v0.1.30
 
 Jose Bota, one of the seven. From the operator's guidance of 2 November 2026, written by the conductor (conductor@web-summit.dinis). Start with [the start page](../start/index.html); all the briefs are on [the briefs](../briefs/index.html). Your own page: [Jose's dashboard](../people/jose/index.html).
 

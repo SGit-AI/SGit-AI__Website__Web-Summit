@@ -2,7 +2,7 @@
 
 Semiconductor and computing company (AI, low-power computing, connectivity, edge and data centre).
 
-Site version: v0.1.29
+Site version: v0.1.30
 
 - Website: https://www.qualcomm.com/
 - Category: platform

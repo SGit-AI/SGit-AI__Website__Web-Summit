@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.30",
+    "date": "2026-11-02",
+    "what": "navigation: five sections with sub-menus, breadcrumbs and a person bar on every page, the team page opening with everyone's cards",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.29",
     "date": "2026-11-02",
     "what": "the design sprint (29 mock-ups and a vote), a meet page for each of the seven behind their QR codes, the agents and their prompts, and the developer's refactoring mandate",

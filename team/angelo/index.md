@@ -2,7 +2,7 @@
 
 Make the setup work for everyone: the site, GitHub, the agents, and a behaviour policy for every agent and person. Brief: [Brief for Angelo](../../brief-angelo/index.html); dashboard: [Angelo's dashboard](../../people/angelo/index.html).
 
-Site version: v0.1.29
+Site version: v0.1.30
 
 Kind: person. Status: briefed: card to fill.
 

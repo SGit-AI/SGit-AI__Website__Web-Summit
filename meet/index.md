@@ -2,7 +2,7 @@
 
 The RiskMandate team at Web Summit 2026: seven people, each with their own page, and how to meet us.
 
-Site version: v0.1.29
+Site version: v0.1.30
 
 Seven of us are at Web Summit Lisbon, 9 to 12 November 2026, for RiskMandate: AI agents under behaviour policies. Our stand day is **Thursday 12 November**.
 

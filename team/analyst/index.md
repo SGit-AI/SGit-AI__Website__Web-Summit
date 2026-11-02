@@ -2,7 +2,7 @@
 
 The observability: the countdown and the numbers of what was made, sent, opened and booked. If we cannot see what is used, we cannot tell where we add value.
 
-Site version: v0.1.29
+Site version: v0.1.30
 
 Kind: agent. Status: proposed. Held by: no session holds this role on its own: it runs as a sub-agent of the conductor's wake, briefed by its ROLE.md. Runs: every wake, last before the closing review.
 
