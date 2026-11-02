@@ -1,73 +1,58 @@
 #!/usr/bin/env bash
-# Tags the release commit. Called by CI (the release job, before it deploys) with BRANCH=dev|main; PUSH=0 for a dry run.
-#   dev  -> the next minor: v0.1.N -> v0.1.N+1
-#   main -> the next major: v0.N.M -> v0.N+1.0
-# The version is owned by admin/build/version.txt and must also be in the subject of the release
-# commit ("site vX.Y.Z: ..."). The release commit is the newest commit whose subject says so: HEAD on a
-# direct push, HEAD's parent when a pull request lands as a merge commit.
+# CI owns the version (https://newsroom.sgit.ai/articles/ci-owns-the-version.html). Called by the release job
+# with BRANCH=dev|main, after the gate passed on the pushed commit. Nobody but CI writes the number:
+#   1. take the branch head as it is now (a push that landed meanwhile rides this release),
+#   2. read the newest version (the newest tag, or version.txt if a hand-bumped one is higher, during the move),
+#      and bump it: dev the last number, main the middle one,
+#   3. write admin/build/version.txt, the admin/versions.json row (the pushed subject and its Agent: trailer)
+#      and REALITY.md's version, build, and run the gate on exactly that tree,
+#   4. commit as GitHub Actions ("site vX.Y.Z: <the pushed subject>"), tag that commit, push the branch, then the
+#      tag; if the branch moved, start again from its new head (three tries).
+# The release job then deploys the tree this script built and checked. PUSH=0 does everything but push.
 set -euo pipefail
 BRANCH=${BRANCH:?BRANCH must be dev or main}
 PUSH=${PUSH:-1}
-git fetch --tags --quiet 2>/dev/null || true
+git config user.name 'GitHub Actions'; git config user.email 'actions@github.com'
 
-VER=$(grep -oP '^v\K[0-9]+\.[0-9]+\.[0-9]+' admin/build/version.txt)
-TAG="v$VER"
-echo "version.txt says $TAG (branch $BRANCH)"
-
-# Read the history once: piping git log into an early-exiting reader dies of SIGPIPE under pipefail.
-LOG=$(git log --format='%H;%s')
-NEWEST=$(grep -oP '^[0-9a-f]+;site v\K[0-9]+\.[0-9]+\.[0-9]+(?=:)' <<< "$LOG" | head -1 || true)
-if [ -z "$NEWEST" ]; then
-  echo "::error::no commit in this history carries a version in its subject (\"site vX.Y.Z: ...\")"; exit 1
-fi
-if [ "$NEWEST" != "$VER" ]; then
-  echo "::error::version.txt says $TAG but the newest release commit is v$NEWEST — the two disagree"; exit 1
-fi
-REL=$(grep -m1 -F ";site v$VER:" <<< "$LOG" | cut -d';' -f1)
-
-if git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
-  if [ "$(git rev-parse "refs/tags/$TAG^{commit}")" = "$REL" ]; then
-    echo "$TAG is already on the release commit; nothing to do"; exit 0
-  fi
-  echo "::error::$TAG already exists on an earlier commit — version.txt was not bumped for this release"; exit 1
-fi
-
-PREV=$(git tag --list 'v*' | sort -V | tail -1 || true)
-if [ -n "$PREV" ]; then
-  MINOR=$(awk -F. '{printf "%s.%s.%d", $1, $2, $3+1}' <<< "$PREV")
-  MAJOR=$(awk -F. '{split($1,a,"v"); printf "v%s.%d.0", a[2], $2+1}' <<< "$PREV")
-  case "$BRANCH" in
-    dev)  WANT=$MINOR ;;
-    main) WANT=$MAJOR ;;
-    *) echo "::error::unknown branch $BRANCH"; exit 1 ;;
-  esac
-  # Concurrency keeps one pending run per group, so a run queued behind another can be superseded and
-  # never tag its release (v0.1.37, 2 Nov). On dev, catch up: every version between the latest tag and
-  # this one must have its own release commit in this history; each is tagged in order. Anything else
-  # (a skipped number, a release commit missing) still fails.
-  if [ "$TAG" != "$WANT" ] && [ "$BRANCH" = dev ]; then
-    GAP=$WANT
-    while [ "$GAP" != "$TAG" ]; do
-      C=$(grep -m1 -F ";site $GAP:" <<< "$LOG" | cut -d';' -f1 || true)
-      [ -z "$C" ] && { echo "::error::latest tag is $PREV and this is $TAG, but no release commit for $GAP is in this history"; exit 1; }
-      git tag "$GAP" "$C"
-      # best effort: GitHub refuses the Actions token a tag on a commit whose workflow file differs from
-      # the default branch's (v0.1.37/38 after the workflow changed in v0.1.39). The check above (every
-      # missed version has its release commit) is what matters; this release's own tag must still push.
-      if [ "$PUSH" = 1 ] && ! git push -q origin "refs/tags/$GAP" 2>/dev/null; then
-        echo "::warning::could not push $GAP (${C:0:9}); its release commit is in the history, so carrying on"
-      else
-        echo "caught up: tagged ${C:0:9} as $GAP (its own run was superseded)"
-      fi
-      GAP=$(awk -F. '{printf "%s.%s.%d", $1, $2, $3+1}' <<< "$GAP")
-      # a gap that would pass this release means version.txt went backwards
-      [ "$(printf '%s\n%s\n' "$GAP" "$TAG" | sort -V | tail -1)" != "$TAG" ] && { echo "::error::$TAG is not after $PREV"; exit 1; }
-    done
-  elif [ "$TAG" != "$WANT" ]; then
-    echo "::error::latest tag is $PREV; a push to $BRANCH must be $WANT, got $TAG"; exit 1
+# guard (a warning while agents move to the new release.sh): only CI writes version.txt
+if [ -n "${BEFORE:-}" ] && git cat-file -e "$BEFORE" 2>/dev/null; then
+  if git log --format=%an "$BEFORE..HEAD" -- admin/build/version.txt | grep -qv '^GitHub Actions$'; then
+    echo "::warning::version.txt was edited outside CI since ${BEFORE:0:9}; CI's number replaces it (only CI writes the version)"
   fi
 fi
 
-git tag "$TAG" "$REL"
-[ "$PUSH" = 1 ] && git push origin "refs/tags/$TAG"
-echo "tagged ${REL:0:9} as $TAG"
+for try in 1 2 3; do
+  git fetch --quiet --tags origin "$BRANCH"
+  git checkout -q -B "$BRANCH" "origin/$BRANCH"
+  SUBJECT=$(git log -1 --format=%s)
+  if [[ "$SUBJECT" =~ ^site\ v[0-9]+\.[0-9]+\.[0-9]+: ]] && [ "$(git log -1 --format=%an)" = 'GitHub Actions' ]; then
+    echo "the head is already a CI release ($SUBJECT); nothing new to release"; exit 0
+  fi
+  AGENT=$(git log -1 --format='%(trailers:key=Agent,valueonly,separator=%x2C )' | head -1)
+  LAST_TAG=$(git tag --list 'v*' | sort -V | tail -1); LAST_TAG=${LAST_TAG:-v0.0.0}
+  FILE=$(cat admin/build/version.txt 2>/dev/null || echo v0.0.0)
+  LAST=$(printf '%s\n%s\n' "$LAST_TAG" "$FILE" | sort -V | tail -1)
+  IFS=. read -r A B C <<< "${LAST#v}"
+  if [ "$BRANCH" = main ]; then NEW="v$A.$((B + 1)).0"; else NEW="v$A.$B.$((C + 1))"; fi
+  echo "newest version $LAST (tag $LAST_TAG, version.txt $FILE) -> $NEW on $BRANCH"
+
+  printf '%s\n' "$NEW" > admin/build/version.txt
+  WHAT=$(sed -E 's/^[^ :]+@web-summit\.[a-z0-9-]+: //; s/^site v[0-9.]+: //' <<< "$SUBJECT")
+  node -e '
+    const fs = require("fs"), [v, what, by] = process.argv.slice(1)
+    const rows = JSON.parse(fs.readFileSync("admin/versions.json", "utf8")).filter(r => r.version !== v)
+    rows.unshift({ version: v, date: new Date().toISOString().slice(0, 10), what, ...(by ? { by } : {}) })
+    fs.writeFileSync("admin/versions.json", JSON.stringify(rows, null, 2) + "\n")' "$NEW" "$WHAT" "$AGENT"
+  sed -i -E "s/\(site v[0-9]+\.[0-9]+\.[0-9]+\)/(site $NEW)/" REALITY.md
+  node admin/build/build.mjs > /dev/null
+  node admin/build/validate.js
+  git add admin/build/version.txt admin/versions.json REALITY.md
+  git commit -q -m "site $NEW: $WHAT" -m "Released by CI from $(git rev-parse --short HEAD) ($SUBJECT)${AGENT:+
+Agent: $AGENT}"
+  git tag "$NEW"
+  [ "$PUSH" = 1 ] || { echo "PUSH=0: would release $NEW"; exit 0; }
+  if git push -q origin "HEAD:$BRANCH"; then git push -q origin "refs/tags/$NEW"; echo "released $NEW"; exit 0; fi
+  git tag -d "$NEW" > /dev/null
+  echo "$BRANCH moved while releasing; taking it in (attempt $try)"
+done
+echo "::error::$BRANCH kept moving; nothing released"; exit 1

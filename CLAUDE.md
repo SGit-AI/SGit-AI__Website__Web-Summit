@@ -5,7 +5,7 @@ The SGit site for Web Summit, built and run by a Claude Code agent with a named 
 ## Branches and versions
 
 - Work on and push to `dev` only. Every push to `dev` is a **minor** release: the next `v0.1.N`. A push to `main` is a **major** release (`v0.N+1.0`) and is the operator's call.
-- Many people and agents push here. Commit your **source** changes (never the generated pages), then release with `AGENT=<agent>@web-summit.<person> admin/tools/release.sh "<one sentence>"`: it rebases on dev, bumps `admin/build/version.txt`, adds the `admin/versions.json` row, builds, validates, commits `site vX.Y.Z: <sentence>`, pushes (retrying if someone pushed first) and checks the live site. CI (`.github/workflows/deploy-pages.yml`) validates, tags via `admin/build/tag_release.sh`, then deploys. A red validate is no release.
+- **CI owns the version** (https://newsroom.sgit.ai/articles/ci-owns-the-version.html): nobody who pushes writes a number. Commit your **source** changes with the convention (subject `<agent>@web-summit.<person>: <what>`, trailer `Agent:`), then `AGENT=<agent>@web-summit.<person> admin/tools/release.sh`: it rebases on dev, runs the gate locally, pushes (retrying if someone pushed first) and waits for the live site. CI (`.github/workflows/deploy-pages.yml`) runs the gate on the push, then one release at a time `admin/build/tag_release.sh` bumps the newest version, writes `version.txt`, the `versions.json` row and REALITY.md, builds, runs the gate, commits `site vX.Y.Z: <your subject>` as GitHub Actions, tags and deploys that tree. Never edit `version.txt` or `versions.json`. A red gate is no release.
 - Never force-push, rewrite history, disable a check to get green, or push an empty commit.
 
 ## Build
@@ -15,7 +15,7 @@ node admin/build/build.mjs      # content/ -> HTML, sitemap.xml, llms.txt, index
 node admin/build/validate.js    # the gate; must print OK
 ```
 
-Edit `content/`, `data/`, `board/` and `people/`, never a generated page. Generated output is **never committed**: it is gitignored, CI builds it, validates it and deploys it as the Pages artifact (WS-83). A release commit changes only sources plus `version.txt` and `versions.json`.
+Edit `content/`, `data/`, `board/` and `people/`, never a generated page. Generated output is **never committed**: it is gitignored, CI builds it, validates it and deploys it as the Pages artifact (WS-83). CI's release commit changes only `version.txt`, `versions.json` and REALITY.md's version.
 
 ## Articles
 

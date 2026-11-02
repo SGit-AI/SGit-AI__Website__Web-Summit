@@ -1,18 +1,14 @@
-# Deploys web-summit.sgit.ai to GitHub Pages, in the order the other SGit sites use:
-# validate → tag → deploy, in two jobs (each job hop costs ~5 s of runner start-up, WS-65).
+# Deploys web-summit.sgit.ai to GitHub Pages. CI owns the version
+# (https://newsroom.sgit.ai/articles/ci-owns-the-version.html): nobody who pushes writes a number.
 #
-#   1. validate — builds (admin/build/build.mjs; generated output is never committed), then
-#                 admin/build/validate.js: structure, links, version agreement, canonical host, agent
-#                 block, signed articles, key-leak tripwire. On a push it uploads the very pages it
-#                 checked as the Pages artifact, so what is deployed is what passed the gate (no
-#                 second build). A failure stops everything: no tag, no publish. Also runs on PRs,
-#                 read-only.
-#   2. release  — tags via admin/build/tag_release.sh (push only):
-#                   push to dev  -> the next minor (v0.1.N -> v0.1.N+1)
-#                   push to main -> the next major (v0.N.M -> v0.N+1.0)
-#                 The version comes from admin/build/version.txt and must also be in the release
-#                 commit's subject ("site vX.Y.Z: ..."). Then deploys the artifact; a failed tag is
-#                 no deploy.
+#   1. validate — builds the pushed commit (generated output is never committed) and runs
+#                 admin/build/validate.js. A failure stops everything. Also runs on PRs, read-only.
+#   2. release  — one at a time (concurrency group "release", never cancelled): admin/build/tag_release.sh
+#                 takes the branch head as it is now, bumps the newest version (dev the last number,
+#                 main the middle one), writes version.txt, the versions row and REALITY.md, builds,
+#                 runs the gate again on that tree, commits as GitHub Actions ("site vX.Y.Z: <subject>"),
+#                 tags it and pushes; then deploys exactly that tree. A dropped pending run is harmless:
+#                 its commits ride the next release. A manual dispatch builds and deploys without a number.
 name: deploy-pages
 on:
   push:
@@ -22,9 +18,6 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-concurrency:
-  group: pages
-  cancel-in-progress: false
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -44,22 +37,16 @@ jobs:
         run: node admin/build/build.mjs
       - name: Validate the site
         run: node admin/build/validate.js
-      - name: Assemble the site artifact (the pages the gate just checked)
-        if: github.event_name != 'pull_request'
-        run: |
-          mkdir -p /tmp/site
-          rsync -a ./ /tmp/site/ --exclude '.git' --exclude '.github' --exclude '.sg_vault' --exclude 'content' --exclude 'admin/build' --exclude '.generated.txt'
-      - uses: actions/upload-pages-artifact@v3
-        if: github.event_name != 'pull_request'
-        with:
-          path: /tmp/site
 
   release:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     needs: [validate]
-    # Never from a PR. A manual dispatch deploys without tagging.
+    # Never from a PR. One release at a time; a pending run may be dropped, which is harmless.
     if: github.event_name != 'pull_request'
+    concurrency:
+      group: release
+      cancel-in-progress: false
     permissions:
       contents: write
       pages: write
@@ -69,17 +56,28 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-        if: github.event_name == 'push'
         with:
           fetch-depth: 0
-      - name: Tag this release
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Number, build, check, commit and tag this release (CI owns the version)
         if: github.event_name == 'push'
         env:
           BRANCH: ${{ github.ref_name }}
+          BEFORE: ${{ github.event.before }}
+        run: admin/build/tag_release.sh
+      - name: Build (a manual dispatch, no number)
+        if: github.event_name != 'push'
+        run: node admin/build/build.mjs && node admin/build/validate.js
+      - name: Assemble the site artifact (the tree just built and checked)
         run: |
-          git config user.name  'GitHub Actions'
-          git config user.email 'actions@github.com'
-          admin/build/tag_release.sh
+          mkdir -p /tmp/site
+          rsync -a ./ /tmp/site/ --exclude '.git' --exclude '.github' --exclude '.sg_vault' --exclude 'content' --exclude 'admin/build' --exclude '.generated.txt'
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: /tmp/site
       - uses: actions/configure-pages@v5
         with:
           enablement: true
