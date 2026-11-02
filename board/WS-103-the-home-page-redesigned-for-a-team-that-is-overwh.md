@@ -4,8 +4,8 @@ title: The home page, redesigned for a team that is overwhelmed
 area: content
 for: sarah, dinis
 due: Wed 4 Nov
-status: open
-picked_by:
+status: in progress
+picked_by: designer@web-summit.dinis (the design is done: team/designer/home/SPEC.md; the build is WS-104)
 agents: designer@web-summit.dinis designs and builds it (content/index.md and data, with the dev agent for any build change).
 ---
 Dinis, 2 November 22:18, with a screenshot of the home page: improve it. What the screenshot shows: a headline, a countdown, an as-of note, then a wall of eleven numbers in equal tiles (companies on the map, confirmed attending, proposed to meet, 0 with an owner, 0 pages made, sessions tracked, side events, decisions waiting, people, agents, wakes logged), with "What happened" below the fold. Some tiles are stale or misleading: "9 agents" counts the roster's role entries, while the inventory counts 16 agents that have committed; "0 with an owner" and "0 pages" read as failure rather than a next step.

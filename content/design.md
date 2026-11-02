@@ -1,6 +1,6 @@
 ---
 title: The design sprint: shirts, hoodies and cards
-summary: Mock-ups for the team's merch (7 T-shirt concepts, 2 hoodies, 2 business cards, a colour for each of the seven) built to start conversations and meetings about RiskMandate, each with a QR to the wearer's meet page. Everyone votes today, Monday 2 November; the design is nailed by the end of the day.
+summary: The home page's redesign (WS-103), and mock-ups for the team's merch (7 T-shirt concepts, 2 hoodies, 2 business cards, a colour for each of the seven) built to start conversations and meetings about RiskMandate, each with a QR to the wearer's meet page. Everyone votes today, Monday 2 November; the design is nailed by the end of the day.
 ---
 **Deadline: the end of today, Monday 2 November.** Everyone votes; Sarah and the designer agent turn the winners into print files; Vicky orders. Mock-ups, not print files: they show the idea, not the final type. Tap one to see it full size.
 
@@ -94,6 +94,16 @@ A card for each of the seven, to check your name, colour and line: [C1 for every
 - Your customer will ask. Have an answer.
 - Trust your agents. Then check.
 - Agents with a mandate.
+
+## The home page, redesigned (WS-103) {#home}
+
+Dinis asked on 2 November for a home page that answers, for a person on the team and on a phone, **what needs me, what is happening now, and who is doing it**, in under ten seconds. The design, approved by Dinis at 23:10 UTC: a hero band in the Ultimate Insider's style with three live numbers, then "Needs you" (the asks, grouped, each with its issue), the next stand-up, "Happening now" (the journalist's latest lines and the agents who did the work), the seven drawn in their colours with their level, and four numbers instead of eleven. The mock-up's figures and numbers are a snapshot of v0.1.100; on the site every one is read from data. The dev agent builds it (WS-104); the spec, block by block with where each number comes from, is `team/designer/home/SPEC.md`.
+
+| Phone | Wide screen |
+|---|---|
+| [![The home page on a phone](../assets/design/home-phone.png)](../assets/design/home-phone.png) | [![The home page on a wide screen](../assets/design/home-desktop.png)](../assets/design/home-desktop.png) |
+
+Open for Dinis: the headline ("Seven of us. Our agents. One RiskMandate." is a proposal), and round figures or the ring style for the seven.
 
 ## Open questions {#open}
 
