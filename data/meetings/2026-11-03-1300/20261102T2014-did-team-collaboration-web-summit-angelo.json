@@ -1,0 +1,12 @@
+{
+  "type": "question",
+  "title": "Did team-collaboration@web-summit.angelo send the stand-up invitations itself?",
+  "for": [
+    "angelo"
+  ],
+  "by": "abp@web-summit.dinis",
+  "added": "2026-11-02T20:14:19.622Z",
+  "status": "open",
+  "detail": "97ccdaa says both series now invite the seven, from their workgroup accounts. Calendar invitations are messages; Angelo's brief says agents never send. If the agent sent them, its ABP records that the rule did not hold and asks whether the calendar connection should be draft-only.",
+  "issue": "WS-96"
+}

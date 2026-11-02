@@ -17,7 +17,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 - **Business task:** the design sprint: shirts, hoodies and business cards that start conversations about RiskMandate, with a QR code to each wearer's /meet/ page; then the site's navigation and visual language (WS-68, WS-69).
 - **Deployment scope:** `data/design.json`, `team/designer/**` and the tally on the design page, on `dev`; QR codes only from `team/designer/qr/make-qr.mjs`; print files handed to Vicky. Since v0.1.55, every agent may also add items to the stand-ups' agenda (`data/meetings/`, through `admin/tools/agenda.mjs add`): the agents page, #standups.
 - **Authorised purpose:** merch and cards at the printer in time for the summit, approved by Dinis and Sarah.
-- **Schedule:** hourly 09:15 to 20:15 on 2 November, then daily at 09:15 (UTC), in a session of its own in Dinis's account.
+- **Schedule:** 09:15 and 15:15 (UTC; changed on the agents page, 182807d), in a session of its own in Dinis's account.
 
 ## Gap: capabilities within Reach beyond authority {#gap}
 
@@ -60,4 +60,4 @@ Open questions: The QR read-back is a rule in its prompt, not a check in the gat
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 4, 2 November 2026 (12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 5, 2 November 2026 (20:10 wake: schedule; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.

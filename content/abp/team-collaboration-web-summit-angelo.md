@@ -21,6 +21,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: A
 
 ## Gap: capabilities within Reach beyond authority {#gap}
 
+- 97ccdaa: "Both series ... now invite the seven going to Lisbon, from their workgroup accounts". Calendar invitations are messages to people; whether the agent or Angelo sent them is not recorded. Its brief's first rule is "never send". A question for Angelo at the next stand-up.
+- 996cee0: at Angelo's word, its write access to the repository is its authorisation, so its session key is not linked to Angelo's or the operator's key: no key chain stands behind its commits, only the GitHub account.
 - "Keeps the stand-ups on the calendar": it reaches a calendar. Whose calendar, and whether it can invite or message people, is not known from the repository.
 - Write anywhere in the repository: its push access is not limited to `people/angelo/` and `board/`, the paths its person's brief gives it.
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November).
@@ -37,7 +39,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: A
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 (scans `people/` and `board/`) |
 | security@web-summit.dinis reviews every commit twice a day | review, after the fact | team/security/reviews/ |
 
-**In the history** (dev, read 2 November 2026 17:15 UTC): 06cee32: `people/angelo/agents.json`, `people/angelo/dashboard.md`, two new board issues (WS-96, WS-97) and one stand-up agenda item in `data/meetings/`. Inside its mandate (the board and the agenda are everyone's). Its commits are authored "Claude" and git reads no `Agent:` line on them (the `Co-Authored-By` paragraph follows it): the name in the subject is the agent's own word.
+**In the history** (dev, read 2 November 2026 20:15 UTC): since 17:15 also 996cee0 and 97ccdaa, board WS-96 and its person's dashboard, inside its mandate. Earlier: 06cee32: `people/angelo/agents.json`, `people/angelo/dashboard.md`, two new board issues (WS-96, WS-97) and one stand-up agenda item in `data/meetings/`. Inside its mandate (the board and the agenda are everyone's). Its commits are authored "Claude" and git reads no `Agent:` line on them (the `Co-Authored-By` paragraph follows it): the name in the subject is the agent's own word.
 
 Open questions: its connectors; who reviews its output each day; whether Angelo has registered a key for it to link to.
 
@@ -54,4 +56,4 @@ Open questions: its connectors; who reviews its output each day; whether Angelo 
 
 ## Provenance {#provenance}
 
-Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 1, 2 November 2026, in `content/abp/` with its history in git.
+Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 2, 2 November 2026 (20:10 wake: the invitations, the key), in `content/abp/` with its history in git.

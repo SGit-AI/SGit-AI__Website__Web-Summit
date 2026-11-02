@@ -21,6 +21,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: A
 ## Gap: capabilities within Reach beyond authority {#gap}
 
 - Its job is the build, the gate and CI, which dev@web-summit.dinis also holds until it is handed over: two agents with the same write paths and no recorded order between them.
+- ebbe647: it published its session key in `data/keys.json` (sha256:b478b82a3a9995eb); at Angelo's word it is not linked to the operator's key, so its authorisation is the push itself.
+- 746a42b: Angelo has an email account to send from (L2); no agent's mandate here says it may send from it.
 - Since v0.1.51 a change to `admin/build/tag_release.sh` runs in CI with a token that can write to the repository and deploy; its job includes that file.
 - Write anywhere in the repository: its push access is not limited to `people/angelo/` and `board/`, the paths its person's brief gives it.
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November).
@@ -37,7 +39,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: A
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 (scans `people/` and `board/`) |
 | security@web-summit.dinis reviews every commit twice a day | review, after the fact | team/security/reviews/ |
 
-**In the history** (dev, read 2 November 2026 17:15 UTC): fc79f3e: `people/angelo/onboarding.json` (Angelo's onboarding at L1). Inside its person's folder. Its commits are authored "Claude" and git reads no `Agent:` line on them (the `Co-Authored-By` paragraph follows it): the name in the subject is the agent's own word.
+**In the history** (dev, read 2 November 2026 20:15 UTC): since 17:15 also 746a42b (`people/angelo/onboarding.json`) and ebbe647 (`data/keys.json`, its own entry), inside its mandate. Earlier: fc79f3e: `people/angelo/onboarding.json` (Angelo's onboarding at L1). Inside its person's folder. Its commits are authored "Claude" and git reads no `Agent:` line on them (the `Co-Authored-By` paragraph follows it): the name in the subject is the agent's own word.
 
 Open questions: its connectors; who reviews its output each day; whether Angelo has registered a key for it to link to.
 
@@ -54,4 +56,4 @@ Open questions: its connectors; who reviews its output each day; whether Angelo 
 
 ## Provenance {#provenance}
 
-Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 1, 2 November 2026, in `content/abp/` with its history in git.
+Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 2, 2 November 2026 (20:10 wake: its key, Angelo's email), in `content/abp/` with its history in git.

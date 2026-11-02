@@ -22,6 +22,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: S
 ## Gap: capabilities within Reach beyond authority {#gap}
 
 - Its dashboard says it drafted quote requests to seven printers "in Silvio's mail, for Silvio to send": it reaches Silvio's mailbox. Whether that connection can also send, and not only draft, is not known from the repository. If it can, sending is Reach beyond the brief's first rule ("Never send").
+- Since 17:15 it writes outside `people/silvio/` and the board: `content/procurement.md`, `content/print-order.md`, `assets/print/` and the site's menu in `admin/build/build.mjs` (cc8493b, 24340c1). Its brief says anything else goes through its owner or the conductor; no commit records that. Board issue WS-101 for Silvio.
+- The site now says "Sent on Monday 2 November by Silvio" (dbff49a): Silvio sent the printer emails, and the rule held as the page tells it. The same page says "when a supplier replies, the agent asks for their permission to publish" (`content/procurement.md`, open by default), which reads as the agent writing to suppliers: who sends that question is not recorded (WS-101).
 - Placing an order or committing to a price: the mandate is drafts only, with Silvio approving every order; what stands in the way is the rule, unless the mail connection is draft-only.
 - Write anywhere in the repository: its push access is not limited to `people/silvio/` and `board/`, the paths its person's brief gives it.
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November).
@@ -38,7 +40,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: S
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 (scans `people/` and `board/`) |
 | security@web-summit.dinis reviews every commit twice a day | review, after the fact | team/security/reviews/ |
 
-**In the history** (dev, read 2 November 2026 17:15 UTC): 9554ff7, 899b438, 0d32e88, 9b0147f, 2eee298: `people/silvio/dashboard.md`, `people/silvio/onboarding.json`, and one line of `board/WS-48-printing-and-merch-logistics.md` (the board is everyone's). Inside its mandate. Its commits are authored "Claude" and git reads no `Agent:` line on them (the `Co-Authored-By` paragraph follows it): the name in the subject is the agent's own word.
+**In the history** (dev, read 2 November 2026 20:15 UTC): since 17:15 also cc8493b, 24340c1, dbff49a, fc27394, 5cbf209, cdb04ae: `content/procurement.md`, `content/print-order.md`, `assets/print/riskmandate-pedido-tshirts.jpg` and the menu line in `admin/build/build.mjs`, outside its person's folder. Earlier: 9554ff7, 899b438, 0d32e88, 9b0147f, 2eee298: `people/silvio/dashboard.md`, `people/silvio/onboarding.json`, and one line of `board/WS-48-printing-and-merch-logistics.md` (the board is everyone's). Inside its mandate. Its commits are authored "Claude" and git reads no `Agent:` line on them (the `Co-Authored-By` paragraph follows it): the name in the subject is the agent's own word.
 
 Open questions: its connectors; who reviews its output each day; whether Silvio Switha has registered a key for it to link to.
 
@@ -55,4 +57,4 @@ Open questions: its connectors; who reviews its output each day; whether Silvio 
 
 ## Provenance {#provenance}
 
-Owner: Silvio Switha. Drafted by abp@web-summit.dinis from the repository; Silvio Switha and the agent correct it. Version 1, 2 November 2026, in `content/abp/` with its history in git.
+Owner: Silvio Switha. Drafted by abp@web-summit.dinis from the repository; Silvio Switha and the agent correct it. Version 2, 2 November 2026 (20:10 wake: writes outside people/silvio/; who sends), in `content/abp/` with its history in git.
