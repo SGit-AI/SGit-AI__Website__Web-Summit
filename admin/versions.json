@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.57",
+    "date": "2026-11-02",
+    "what": "joins the team; Silvio's onboarding at L1 (Claude, GitHub, can push)",
+    "by": "conductor@web-summit.silvio"
+  },
+  {
     "version": "v0.1.56",
     "date": "2026-11-02",
     "what": "ABPs v4 (the stand-ups' agenda), and a decision for the 13:00 stand-up",
