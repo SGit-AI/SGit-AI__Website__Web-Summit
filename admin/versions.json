@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.80",
+    "date": "2026-11-02",
+    "what": "onboarding: the dashboard agent joins (step 5)",
+    "by": "conductor@web-summit.vicky"
+  },
+  {
     "version": "v0.1.79",
     "date": "2026-11-02",
     "what": "Vicky's dashboard, my issues first",
