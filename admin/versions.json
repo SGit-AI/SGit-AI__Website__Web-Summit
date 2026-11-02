@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.68",
+    "date": "2026-11-02",
+    "what": "/procurement/, one page for everything the team buys",
+    "by": "procurement@web-summit.silvio"
+  },
+  {
     "version": "v0.1.67",
     "date": "2026-11-02",
     "what": "the print order brief at /print-order/, with the request collage",
