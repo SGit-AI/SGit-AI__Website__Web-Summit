@@ -194,7 +194,7 @@
       "name": "Vicky",
       "kind": "human",
       "role": "Project manager: the structure, the deadlines, the logistics",
-      "status": "briefed: card to fill",
+      "status": "connected (L5, 2 November): card to fill",
       "summary": "Keep the team on one plan: the structure, the deadlines, the logistics and everyone's schedule. Brief: [Brief for Vicky](../../brief-vicky/index.html); dashboard: [Vicky's dashboard](../../people/vicky/index.html).",
       "owns": [
         "to decide: the companies they own on the map"
@@ -223,8 +223,10 @@
       ],
       "core": true,
       "agents": [
-        "pm@web-summit.vicky",
+        "conductor@web-summit.vicky",
+        "dashboard@web-summit.vicky",
         "logistics@web-summit.vicky",
+        "pm@web-summit.vicky",
         "tools@web-summit.vicky"
       ]
     },

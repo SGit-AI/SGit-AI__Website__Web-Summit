@@ -1,0 +1,33 @@
+{
+  "number": 3,
+  "date": "2 November 2026",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "Vicky goes straight to the top; your agents are all on schedules",
+  "when": "2 November 2026, 20:30 UTC (the conductor's first scheduled wake; since brief 2, 16:52 UTC)",
+  "by": "conductor@web-summit.dinis",
+  "headline": "Vicky connected this evening and is now first on the setup leaderboard, at L5: her conductor and the team's first dashboard agent are running, have published their keys and are on a schedule. Four people are now connected (you, Vicky, Angelo, Silvio). All nine of your team agents now have schedules. What needs you: what was decided at today's two stand-ups, so I can record it in your words, and a yes for your own dashboard agent.",
+  "stats": [
+    {"n": "4 of 9", "label": "people connected (you, Vicky, Angelo, Silvio)"},
+    {"n": "L5", "label": "Vicky, first on the leaderboard"},
+    {"n": "9 of 9", "label": "of your team agents on a schedule"},
+    {"n": "7", "label": "stand-up items carried to tomorrow 13:00, none recorded as decided"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "What was decided at the 13:00 and 18:00 stand-ups?", "detail": "Nothing was recorded, so all seven items carry to tomorrow 13:00 (the start page, the design, main's protection, the RiskMandate paragraph, the video accounts, connecting, the print run). A line per decision is enough; I record it in your words.", "options": ["send me the decisions", "leave them on tomorrow's agenda"], "recommend": "Send them: a carried agenda that was really decided makes tomorrow's stand-up slower."},
+    {"id": "2", "ask": "Start your own dashboard agent", "detail": "dashboard@web-summit.dinis takes you from L3 to L4 and gives the team a second example after Vicky's.", "options": ["go: I create the session and its schedule (07:30, 12:30, 17:30)", "you start it yourself from the agents page"], "recommend": "Go."}
+  ],
+  "you_asked": [
+    {"at": "2 Nov, 19:5x", "said": "Yes, can you create those schedules", "done": "Eight scheduled tasks, each into its agent's own session; the agents page shows the real times", "where": "/agents/", "status": "done"},
+    {"at": "2 Nov, 19:5x", "said": "Is angelo", "done": "the-neuronin recorded as Angelo's own GitHub account; every account with access is on the roster", "where": "data/team.json", "status": "done"},
+    {"at": "2 Nov, 20:1x", "said": "This pic is super cool which page is it in?", "done": "/team/map/, rebuilt from the git log every release", "where": "/team/map/", "status": "done"}
+  ],
+  "team": [
+    {"id": "Vicky", "status": "new", "doing": "L5: conductor and dashboard agents, keys published, on a schedule"},
+    {"id": "Angelo", "status": "running", "doing": "L3: dev, conductor and team-collaboration (stand-up calendar invites)"},
+    {"id": "Silvio", "status": "running", "doing": "L3: procurement asked seven printers for quotes; two replies so far"},
+    {"id": "Nimay, Indi, Jose", "status": "waiting", "doing": "L1: push access next"},
+    {"id": "Sarah, Daniela", "status": "waiting", "doing": "L0"}
+  ],
+  "next": ["Tonight: sgit's first real run (20:50), the journalist (20:57), dev (21:40), security (23:50).", "Tomorrow: your 13:00 briefing PDF at about 12:27."],
+  "sources": ["git log origin/dev since 16:52 UTC; the setup leaderboard (/team/setup/), built at 20:28 UTC.", "data/meetings/: no item with status decided.", "This account's scheduled tasks, created 19:55 UTC."]
+}
