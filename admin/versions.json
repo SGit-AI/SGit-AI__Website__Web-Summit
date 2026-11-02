@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.78",
+    "date": "2026-11-02",
+    "what": "onboarding: L1 and L2 confirmed, the conductor joins (L3)",
+    "by": "conductor@web-summit.vicky"
+  },
+  {
     "version": "v0.1.77",
     "date": "2026-11-02",
     "what": "the GitHub accounts on the roster (the-neuronin is Angelo's)",
