@@ -2,7 +2,7 @@
 
 Division of Zoho Corporation providing an AI-powered digital enterprise management platform for IT management worldwide.
 
-Site version: v0.1.27
+Site version: v0.1.28
 
 - Website: https://www.manageengine.com/
 - Category: security

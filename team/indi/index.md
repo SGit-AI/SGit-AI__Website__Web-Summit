@@ -2,7 +2,7 @@
 
 Make sure the message makes sense everywhere, and build the examples we send to every company we go for. Brief: [Brief for Indi](../../brief-indi/index.html); dashboard: [Indi's dashboard](../../people/indi/index.html).
 
-Site version: v0.1.27
+Site version: v0.1.28
 
 Kind: person. Status: briefed: card to fill.
 

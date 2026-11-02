@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.28",
+    "date": "2026-11-02",
+    "what": "how we operate: the start page for the team, a brief and a folder per person, 61 issues on the board as files, the levels, the pulse, and a release script for many committers",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.27",
     "date": "2026-11-02",
     "what": "The seven core team members by name (Dinis Cruz, Silvio Switha, Nimay Parekh, Vicky, Jose Bota, Angelo, Indi Gupte): briefs renamed, a brief for Jose, Sarah and Daniela shown as working with the team, and shared issues shown only to the seven."

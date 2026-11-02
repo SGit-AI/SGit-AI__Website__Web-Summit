@@ -2,7 +2,7 @@
 
 Ireland's national independent data protection authority, lead EU regulator for many large tech companies.
 
-Site version: v0.1.27
+Site version: v0.1.28
 
 - Website: https://www.dataprotection.ie/
 - Category: grc

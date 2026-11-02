@@ -2,7 +2,7 @@
 
 Turn RiskMandate's position into meetings, and meetings into customers and investors. Brief: [Brief for Nimay](../../brief-nimay/index.html); dashboard: [Nimay's dashboard](../../people/nimay/index.html).
 
-Site version: v0.1.27
+Site version: v0.1.28
 
 Kind: person. Status: briefed: card to fill.
 

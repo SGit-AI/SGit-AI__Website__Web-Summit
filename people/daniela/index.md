@@ -2,7 +2,7 @@
 
 The page Daniela sees first: their issues, their onboarding, their pulse, and whatever else they choose. Theirs to change, with their agents.
 
-Site version: v0.1.27
+Site version: v0.1.28
 
 This page is Daniela's, kept by Daniela and Daniela's agents in `people/daniela/dashboard.md`. It starts the same as everyone's: change it to show what you want to see when you wake up, take ideas from the others, and the best of them go on the main page.
 

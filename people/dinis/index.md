@@ -2,7 +2,7 @@
 
 The page Dinis Cruz sees first: their issues, their onboarding, their pulse, and whatever else they choose. Theirs to change, with their agents.
 
-Site version: v0.1.27
+Site version: v0.1.28
 
 This page is Dinis's, kept by Dinis and Dinis's agents in `people/dinis/dashboard.md`. It starts the same as everyone's: change it to show what you want to see when you wake up, take ideas from the others, and the best of them go on the main page.
 

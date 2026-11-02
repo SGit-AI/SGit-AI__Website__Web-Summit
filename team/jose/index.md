@@ -2,7 +2,7 @@
 
 Make the team's machinery run: automation, messaging channels, and the technical work Jose and Angelo share. Brief: [Brief for Jose](../../brief-jose/index.html); dashboard: [Jose's dashboard](../../people/jose/index.html).
 
-Site version: v0.1.27
+Site version: v0.1.28
 
 Kind: person. Status: briefed: card to fill.
 

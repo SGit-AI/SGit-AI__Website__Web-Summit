@@ -2,7 +2,7 @@
 
 Everyone on the team that runs Web Summit 2026, human and agent, and who works with whom. Seven people are going to Lisbon (Dinis Cruz, Silvio Switha, Nimay Parekh, Vicky, Jose Bota, Angelo and Indi Gupte), working with a designer (Sarah) and a first friendly (Daniela), each with their own agent; the team's agents work for them on a schedule. The roles come from [the team brief](https://newsroom.sgit.ai/articles/web-summit-team-brief.html) and the people from [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html). From 2 November 2026, at the operator's word, the team's members are named here (only the team uses this site, and speed matters); still no contact details, ever. Everyone champions RiskMandate. Each person's brief, dashboard and the issues they can pick up: [the start page](../start/index.html) and [the briefs](../briefs/index.html). Agents are named `<agent>@web-summit.<person>`. Kept by the conductor.
 
-Site version: v0.1.27
+Site version: v0.1.28
 
 ## The people
 

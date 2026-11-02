@@ -2,7 +2,7 @@
 
 Everything worked backwards from the summit, 9 to 12 November 2026 in Lisbon. From the [team brief](https://newsroom.sgit.ai/articles/web-summit-team-brief.html), [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) and [the plan of 26 October](https://newsroom.sgit.ai/articles/web-summit-2026-the-plan.html). Goals in the plan's order: usage first, the sale after. This is a plan: nothing on it has happened unless its status says so.
 
-Site version: v0.1.27
+Site version: v0.1.28
 
 ## Schedule
 

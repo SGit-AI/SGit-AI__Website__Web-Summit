@@ -2,7 +2,7 @@
 
 Optimised AI stack (infrastructure, Gemini models, data, multi-cloud security, developer tools, agents and applications) for organisations in the agentic era.
 
-Site version: v0.1.27
+Site version: v0.1.28
 
 - Website: https://cloud.google.com
 - Category: platform

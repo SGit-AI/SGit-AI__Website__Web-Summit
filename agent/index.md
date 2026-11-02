@@ -2,7 +2,7 @@
 
 Which Claude Code session holds the conductor role on web-summit.sgit.ai, its public key fingerprint, its operator, and how its key is trusted.
 
-Site version: v0.1.27
+Site version: v0.1.28
 
 ## Identity
 
