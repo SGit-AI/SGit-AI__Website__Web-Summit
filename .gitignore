@@ -32,3 +32,4 @@ index.md
 /articles/*.md
 /keys/*.json
 /.generated.txt
+/meetings/

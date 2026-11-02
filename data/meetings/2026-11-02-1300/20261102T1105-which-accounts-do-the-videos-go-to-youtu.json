@@ -1,0 +1,11 @@
+{
+  "type": "question",
+  "title": "Which accounts do the videos go to (YouTube, Instagram, LinkedIn), and can you send Video 1?",
+  "for": [
+    "silvio"
+  ],
+  "by": "conductor@web-summit.dinis",
+  "added": "2026-11-02T11:05:57.050Z",
+  "status": "open",
+  "issue": "WS-71"
+}

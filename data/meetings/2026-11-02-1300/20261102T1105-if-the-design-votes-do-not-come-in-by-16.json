@@ -1,0 +1,18 @@
+{
+  "type": "decision",
+  "title": "If the design votes do not come in by 16:00, who decides?",
+  "for": [
+    "dinis",
+    "sarah"
+  ],
+  "by": "conductor@web-summit.dinis",
+  "added": "2026-11-02T11:05:56.926Z",
+  "status": "open",
+  "detail": "Print files are due tonight (WS-63); no votes yet.",
+  "recommend": "Dinis and Sarah at 18:00.",
+  "issue": "WS-63",
+  "options": [
+    "Dinis and Sarah at 18:00",
+    "move to Tuesday 14:00"
+  ]
+}

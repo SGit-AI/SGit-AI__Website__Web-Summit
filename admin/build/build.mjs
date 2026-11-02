@@ -6,6 +6,7 @@ import fs from 'fs'
 import path from 'path'
 import * as CAST from './cast.mjs'
 import { execFileSync } from 'child_process'
+import { meetingsContext, buildMeetings, sinceMd } from './meetings.mjs'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
@@ -15,7 +16,7 @@ const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
 const SECTIONS = [
     { t: 'Start', h: 'start/index.html', re: /^start\//, sub: [] },
     { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet|abp|cast|wakes)\b/, sub: [['People', 'team/index.html'], ['The cast', 'cast/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['At work', 'wakes/index.html'], ['ABPs', 'abp/index.html'], ['Meet us', 'meet/index.html']] },
-    { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|merch-sponsor|videos|research|reports|board-health|site-review|updates)\b/, sub: [['Updates', 'updates/index.html'], ['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Merch sponsor', 'merch-sponsor/index.html'], ['Research', 'research/insider/index.html']] },
+    { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|merch-sponsor|videos|research|reports|board-health|site-review|updates|meetings)\b/, sub: [['Stand-ups', 'meetings/index.html'], ['Updates', 'updates/index.html'], ['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Merch sponsor', 'merch-sponsor/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
     { t: 'About', h: 'about/index.html', re: /^(about|articles|keys|admin|agent\/|briefing)\b/, sub: [['About', 'about/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['Versions', 'admin/versions.html'], ['The site agent', 'agent/index.html'], ['Inbox briefing', 'briefing/index.html']] },
 ]
@@ -336,6 +337,10 @@ for (const dir of fs.readdirSync(path.join(ROOT, 'content'), { withFileTypes: tr
     twin(rel, title, `${briefs.length} briefs so far, newest first.`, md)
 }
 
+// the stand-ups: data/meetings/ -> meetings/ (admin/build/meetings.mjs)
+const MEET = meetingsContext(ROOT)
+buildMeetings({ ROOT, C: MEET, PEOPLE, ISSUES, write, page, render, twin, pages })
+
 // plain pages: content/index.md -> index.html, content/<name>.md -> <name>/index.html
 for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWith('.md'))) {
     const raw = fs.readFileSync(path.join(ROOT, 'content', f), 'utf8')
@@ -353,7 +358,7 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const f = path.join(ROOT, 'people', m.id, 'dashboard.md')
     if (!fs.existsSync(f)) continue
     const { meta, body: rawBody } = parse(fs.readFileSync(f, 'utf8'))
-    const body = expandIssues(rawBody, '../../')
+    const nxm = MEET.next(), body = `## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n` + expandIssues(rawBody, '../../')
     const rel = `people/${m.id}/index.html`
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel) }))
     pages.push({ rel, title: meta.title, description: meta.summary })

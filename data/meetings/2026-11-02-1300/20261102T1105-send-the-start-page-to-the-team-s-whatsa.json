@@ -1,0 +1,16 @@
+{
+  "type": "decision",
+  "title": "Send the start page to the team's WhatsApp, if not done",
+  "for": [
+    "dinis"
+  ],
+  "by": "conductor@web-summit.dinis",
+  "added": "2026-11-02T11:05:56.898Z",
+  "status": "open",
+  "detail": "Onboarding, the design vote, the pulse and video feedback all wait on it (brief 1, ask 1).",
+  "recommend": "Send now; say vote on the shirts by 16:00.",
+  "options": [
+    "sent",
+    "send after a change"
+  ]
+}

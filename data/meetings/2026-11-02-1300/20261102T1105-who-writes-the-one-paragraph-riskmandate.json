@@ -1,0 +1,19 @@
+{
+  "type": "decision",
+  "title": "Who writes the one-paragraph RiskMandate message, by when?",
+  "for": [
+    "nimay",
+    "dinis",
+    "indi"
+  ],
+  "by": "conductor@web-summit.dinis",
+  "added": "2026-11-02T11:05:57.021Z",
+  "status": "open",
+  "detail": "Every page, shirt and outreach draft hangs on it (WS-15). The videos' line is a start: Know their reach. Define their mandate. Control the gap.",
+  "recommend": "Indi drafts by 18:00, Nimay approves.",
+  "issue": "WS-15",
+  "options": [
+    "Nimay today",
+    "Indi drafts, Nimay approves"
+  ]
+}

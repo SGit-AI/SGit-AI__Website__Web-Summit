@@ -1,0 +1,16 @@
+{
+  "type": "decision",
+  "title": "Protect main on GitHub",
+  "for": [
+    "dinis"
+  ],
+  "by": "conductor@web-summit.dinis",
+  "added": "2026-11-02T11:05:56.958Z",
+  "status": "open",
+  "detail": "Any agent with push can push to main or edit the CI workflow (the conductor's ABP).",
+  "recommend": "Protect main now; dev stays open for CI.",
+  "options": [
+    "protect main now",
+    "leave it this week"
+  ]
+}

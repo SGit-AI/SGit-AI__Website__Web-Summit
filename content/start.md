@@ -69,6 +69,14 @@ The first priority for everyone. Your agent records your level in `people/<you>/
 - **The videos:** watch and comment on Silvio's RiskMandate videos: [the videos](../videos/index.html#feedback).
 - **Today (Monday): the design.** Vote on the shirts, hoodies and cards: [the design sprint](../design/index.html#vote).
 
+## The stand-ups {#standups}
+
+Two a day, **13:00 and 18:00** (Lisbon = UTC): for deciding, not for reporting. Before each one, read **your briefing**: it is on your dashboard and on [the stand-ups page](../meetings/index.html): the decisions and questions for you, your issues due, and what happened since you last looked.
+
+- **Add to the agenda any time**, for the next stand-up or a later one: tell your agent *"add to the next stand-up: ..."* (a decision, a question, an idea or a quick sync).
+- **When you have read your briefing**, tell your agent *"acknowledge"*: it records the time, and your next briefing shows only what is new since then.
+- **Your dashboard has two parts**: the top is built for you (the next stand-up, since you last looked); below it is yours, which you and your agents change as you like.
+
 ## The pulse {#pulse}
 
 Three times a day (morning, midday, evening), your agent interviews you for two minutes, or you type, and commits `people/<you>/pulse/<YYYY-MM-DD>-<morning|midday|evening>.md`. Public, on [the pulse page](../pulse/index.html). The questions:
