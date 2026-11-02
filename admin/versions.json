@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.86",
+    "date": "2026-11-02",
+    "what": "brief 3 corrected: 11 stand-up items carry over, not 7 (two agents added items)",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.85",
     "date": "2026-11-02",
     "what": "brief 3 (Vicky at L5, all agents scheduled); Vicky's agents on the roster",
