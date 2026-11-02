@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Tags the release commit. Called by CI (tag-release job) with BRANCH=dev|main; PUSH=0 for a dry run.
+# Tags the release commit. Called by CI (the release job, before it deploys) with BRANCH=dev|main; PUSH=0 for a dry run.
 #   dev  -> the next minor: v0.1.N -> v0.1.N+1
 #   main -> the next major: v0.N.M -> v0.N+1.0
 # The version is owned by admin/build/version.txt and must also be in the subject of the release

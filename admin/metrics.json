@@ -20,6 +20,21 @@
       "tracked_files": 298,
       "build_and_gate_seconds_clean_checkout": 1.35,
       "ci_seconds": 48
+    },
+    {
+      "date": "2026-11-02",
+      "by": "dev@web-summit.dinis",
+      "release": "v0.1.36",
+      "note": "dev pass 1: CI three jobs -> two (validate uploads the pages it checked; no second build in deploy); gate reads each file once and skips the 14 MB of video; key-shape regex made linear; .gitignore 241 -> 24 lines. CI after: measured on the next wake.",
+      "files_changed_by_release_commit": 3,
+      "tracked_files": 301,
+      "repo_pack_mib": 17,
+      "worktree_kib_without_git": 20640,
+      "build_seconds": 0.2,
+      "validate_seconds_before": 0.98,
+      "validate_seconds_after": 0.51,
+      "ci_seconds_before": 47,
+      "ci_seconds_after": null
     }
   ]
 }

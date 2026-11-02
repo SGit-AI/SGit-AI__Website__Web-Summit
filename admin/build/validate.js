@@ -25,7 +25,10 @@ const { execFileSync } = require('child_process')
 const ROOT = path.resolve(__dirname, '..', '..')
 const errors = []
 const rel = f => path.relative(ROOT, f).split(path.sep).join('/')
-const read = p => fs.readFileSync(path.join(ROOT, p), 'utf8')
+// every file is read once, however many checks look at it (WS-65: the gate read each page 4-5 times)
+const cache = new Map()
+const text = f => { if (!cache.has(f)) cache.set(f, fs.readFileSync(f, 'utf8')); return cache.get(f) }
+const read = p => text(path.join(ROOT, p))
 
 function walk(dir, out = []) {
     for (const name of fs.readdirSync(dir)) {
@@ -42,7 +45,7 @@ const htmlFiles = files.filter(f => f.endsWith('.html'))
 const VERSION = read('admin/build/version.txt').trim()
 if (!/^v\d+\.\d+\.\d+$/.test(VERSION)) errors.push(`version.txt does not carry a vX.Y.Z version: "${VERSION}"`)
 for (const f of htmlFiles) {
-    for (const m of fs.readFileSync(f, 'utf8').matchAll(/class="ver"[^>]*>(v\d+\.\d+\.\d+)</g)) {
+    for (const m of text(f).matchAll(/class="ver"[^>]*>(v\d+\.\d+\.\d+)</g)) {
         if (m[1] !== VERSION) errors.push(`${rel(f)}: version badge ${m[1]} != ${VERSION}`)
     }
 }
@@ -54,7 +57,7 @@ if (new Set(rows).size !== rows.length) errors.push('admin/versions.html lists a
 
 // 2. internal links
 for (const f of htmlFiles) {
-    for (const m of fs.readFileSync(f, 'utf8').matchAll(/(?:href|src)="([^"#]+)(?:#[^"]*)?"/g)) {
+    for (const m of text(f).matchAll(/(?:href|src)="([^"#]+)(?:#[^"]*)?"/g)) {
         if (/^(https?:|mailto:|data:|\/\/)/.test(m[1])) continue
         if (!fs.existsSync(path.resolve(path.dirname(f), m[1]))) errors.push(`${rel(f)}: broken link -> ${m[1]}`)
     }
@@ -64,7 +67,7 @@ for (const f of htmlFiles) {
 const HOST = read('CNAME').trim()
 if (!/^[a-z0-9.-]+$/.test(HOST)) errors.push(`CNAME does not carry a hostname: "${HOST}"`)
 for (const f of htmlFiles) {
-    const t = fs.readFileSync(f, 'utf8')
+    const t = text(f)
     if (!/rel="canonical"/.test(t)) errors.push(`${rel(f)}: no canonical link`)
     const claimed = [...t.matchAll(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/g), ...t.matchAll(/<meta[^>]+property="og:url"[^>]+content="([^"]+)"/g)].map(m => m[1])
     for (const u of claimed) if (!u.startsWith(`https://${HOST}/`)) errors.push(`${rel(f)}: canonical/og:url is not on ${HOST} -> ${u}`)
@@ -81,10 +84,10 @@ for (const f of htmlFiles) if (!listed.includes(rel(f))) errors.push(`sitemap.xm
 
 // 5. key-leak tripwire
 const SGIT_KEY = /sgit_private_(vault|read)_[A-Za-z0-9]/
-const KEY_SHAPE = /[A-Za-z0-9_-]{20,}:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/
+const KEY_SHAPE = /(?<![A-Za-z0-9_-])[A-Za-z0-9_-]{20,}:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/
 for (const f of files) {
-    if (/\.(png|jpg|jpeg|gif|webp|ico|woff2?|zip|pdf)$/.test(f)) continue
-    const t = fs.readFileSync(f, 'utf8')
+    if (/\.(png|jpg|jpeg|gif|webp|ico|woff2?|zip|pdf|mp4|webm|mov|mp3|m4a)$/.test(f)) continue  // binaries: not text a key can be pasted into; the two videos alone were 14 MB of the gate's reading
+    const t = text(f)
     if (SGIT_KEY.test(t)) errors.push(`${rel(f)}: contains a private sgit key (vault or private read)`)
     if (KEY_SHAPE.test(t)) errors.push(`${rel(f)}: contains a vault-key-shaped string`)
     if (/-----BEGIN (RSA |EC )?PRIVATE KEY-----/.test(t)) errors.push(`${rel(f)}: contains a private key`)
@@ -92,7 +95,7 @@ for (const f of files) {
 
 // 6. div balance, 7. agent block
 for (const f of htmlFiles) {
-    const t = fs.readFileSync(f, 'utf8')
+    const t = text(f)
     const open = (t.match(/<div\b/g) || []).length, close = (t.match(/<\/div>/g) || []).length
     if (open !== close) errors.push(`${rel(f)}: ${open} <div> vs ${close} </div>`)
     if (!/class="agent-block"[\s\S]*<\/div>\s*<\/body>/.test(t)) errors.push(`${rel(f)}: does not end with an agent block`)

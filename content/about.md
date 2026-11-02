@@ -19,7 +19,7 @@ Pages are written as markdown in `content/` and rendered by `node admin/build/bu
 | `dev` | `v0.1.x`, next minor | a release; the site goes live |
 | `main` | next major, `v0.N.0` | a deliberate promotion |
 
-CI runs three jobs in order: **validate**, **tag**, **deploy**. A red validate means no tag and no deploy. The version lives in `admin/build/version.txt`, appears in every page's footer, and is in the subject of the release commit (`site v0.1.2: one sentence`). The [article on how this site is set up](../articles/how-this-site-is-set-up.html) explains each step.
+CI runs in order: **validate** (build, gate, and package the very pages it checked), then **tag** and **deploy** in one job. A red validate means no tag and no deploy. The version lives in `admin/build/version.txt`, appears in every page's footer, and is in the subject of the release commit (`site v0.1.2: one sentence`). The [article on how this site is set up](../articles/how-this-site-is-set-up.html) explains each step.
 
 ## Who builds it, and what interest they have
 
