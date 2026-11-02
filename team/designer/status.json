@@ -1,8 +1,22 @@
 {
   "agent": "designer",
-  "state": "active: ran as a sub-agent in the wake of 2026-11-01T02:28Z",
-  "last_wake": "2026-11-01T02:28:14Z",
-  "done": [],
-  "next": [],
-  "asks": []
+  "address": "designer@web-summit.dinis",
+  "state": "active: a scheduled session of its own, hourly 09:15 to 20:15 UTC on 2 Nov 2026",
+  "last_wake": "2026-11-02T03:00Z",
+  "done": [
+    "Indi given a line of their own (T8), so no two of the seven wear the same shirt",
+    "T8 re-set in six short lines, legible at distance",
+    "seven-lineup.svg: the seven side by side",
+    "cards-C1-seven.svg and cards-C2-seven.svg: a card for each person",
+    "C1 brand line in the wearer's colour (the colour test compared against #fff while the data says #ffffff)",
+    "the vote status on the design page"
+  ],
+  "next": [
+    "09:15: read people/*/feedback/design.json and comments; add the variants asked for",
+    "by 18:00 Lisbon: propose the final set (WS-63)",
+    "after approval: print files in team/designer/print/, For: pm@web-summit.vicky"
+  ],
+  "asks": [
+    "policy.json scope.writes lists only data/plan.json and team/designer/**, but the job on /agents/ writes data/design.json, assets/design/ and content/design.md: for Dinis to agree a wider scope"
+  ]
 }

@@ -45,30 +45,46 @@ for c in D['tees']:
     back += back_block(p, ink, 170 if c.get('back') else 150)
     write(f"tee-{c['id']}-back.svg", svg(400, 490, back, f"{c['id']} back"))
     made += [f"tee-{c['id']}-front.svg", f"tee-{c['id']}-back.svg"]
-for p in D['people']:  # the seven together, each in their colour with their proposed line
+def seven_body(p):  # one of the seven: their colour, their tee's front, their name at the hem
     c = next(t for t in D['tees'] if t['id'] == p['tee'])
     body = f'<path d="{TEE}" fill="{p["colour"]}" stroke="#0002"/>'
     if c.get('chest'): body += lines(c['front'], 250, 150, 11, p['ink'])
-    else: body += lines(c['front'], 200, 175, fit(c['front'], 190, 34), p['ink'])
-    body += lines([p['first'].upper()], 200, 455, 14, p['ink'], 800)
+    else:
+        size = fit(c['front'], 190, 34); body += lines(c['front'], 200, 175, size, p['ink'])
+        if c.get('sub'): body += lines([c['sub']], 200, 175 + size * 1.12 * len(c['front']) + 14, 14, p['ink'], 500)
+    return c, body + lines([p['first'].upper()], 200, 455, 14, p['ink'], 800)
+for p in D['people']:  # the seven, one each
+    c, body = seven_body(p)
     write(f"seven-{p['id']}.svg", svg(400, 490, body, f"{p['first']}: {c['id']}")); made.append(f"seven-{p['id']}.svg")
+# the seven side by side, the way people will see three or four of us together on the floor
+lineup = ''.join(f'<g transform="translate({i * 400},0)">{seven_body(p)[1]}</g>' for i, p in enumerate(D['people']))
+n = len(D['people'])
+write('seven-lineup.svg', svg(400 * n, 490, lineup, 'The seven together, a colour and a line each')); made.append('seven-lineup.svg')
 for h in D['hoodies']:
     p = PEOPLE[h['sample']]; col, ink = p['colour'], p['ink']
     front = f'<path d="{HOOD}" fill="{col}" stroke="#0002"/><rect x="140" y="360" width="120" height="70" rx="12" fill="#0001"/>' + lines(h['chest'], 255, 200, 11, ink)
     back = f'<path d="{HOOD}" fill="{col}" stroke="#0002"/>' + lines(h['back'], 200, 190, fit(h['back'], 200, 40), ink) + qr(p['id'], 170, 330, 60) + lines(['RISKMANDATE · WEB SUMMIT 2026'], 200, 420, 11, ink)
     write(f"hoodie-{h['id']}-front.svg", svg(400, 500, front, f"{h['id']} front")); write(f"hoodie-{h['id']}-back.svg", svg(400, 500, back, f"{h['id']} back"))
     made += [f"hoodie-{h['id']}-front.svg", f"hoodie-{h['id']}-back.svg"]
-for cd in D['cards']:
-    p = PEOPLE[cd['sample']]; col, ink = p['colour'], p['ink']
+def card_front(cd, p):
+    col, ink = p['colour'], p['ink']
     if cd['style'] == 'band':
         front = f'<rect x="20" y="20" width="340" height="220" rx="8" fill="#fff" stroke="#0003"/><rect x="20" y="20" width="26" height="220" rx="4" fill="{col}"/>'
         front += lines([p['name']], 66, 92, 24, '#111', 800, anchor='start') + lines([p['role']], 66, 116, 12, '#444', 500, anchor='start')
-        front += lines([f"“{p['line']}”"], 66, 160, 12, '#111', 700, anchor='start') + lines(['RISKMANDATE · WEB SUMMIT 2026'], 66, 215, 11, col if p['ink'] == '#fff' else '#111', 800, anchor='start')
+        front += lines([f"“{p['line']}”"], 66, 160, 12, '#111', 700, anchor='start') + lines(['RISKMANDATE · WEB SUMMIT 2026'], 66, 215, 11, col if p['ink'].lower() in ('#fff', '#ffffff') else '#111', 800, anchor='start')
     else:
         front = f'<rect x="20" y="20" width="340" height="220" rx="8" fill="{col}"/>' + lines(['RISK', 'MANDATE'], 40, 90, 34, ink, 900, 1.0, 'start')
         front += lines([p['name']], 40, 180, 18, ink, 800, anchor='start') + lines(['Web Summit 2026 · Lisbon'], 40, 204, 12, ink, 500, anchor='start')
+    return front
+for cd in D['cards']:
+    p = PEOPLE[cd['sample']]; front = card_front(cd, p)
     back = f'<rect x="20" y="20" width="340" height="220" rx="8" fill="#fff" stroke="#0003"/>' + qr(p['id'], 40, 50, 150)
     back += lines(['Meet me', 'Book a meeting', 'Talk to my agent'], 210, 90, 14, '#111', 700, 1.6, 'start') + lines(['web-summit.sgit.ai', f"/meet/{p['id']}/"], 210, 196, 10, '#444', 500, 1.3, 'start')
     write(f"card-{cd['id']}-front.svg", svg(380, 260, front, f"{cd['id']} front")); write(f"card-{cd['id']}-back.svg", svg(380, 260, back, f"{cd['id']} back"))
     made += [f"card-{cd['id']}-front.svg", f"card-{cd['id']}-back.svg"]
+# everyone's card, C1 and C2, on one sheet each, so each person can check their own name, colour and line
+for cd in D['cards']:
+    cols = 2; rows = -(-len(D['people']) // cols)
+    sheet = ''.join(f'<g transform="translate({(i % cols) * 380},{(i // cols) * 260})">{card_front(cd, p)}</g>' for i, p in enumerate(D['people']))
+    write(f"cards-{cd['id']}-seven.svg", svg(380 * cols, 260 * rows, sheet, f"{cd['id']}: a card for each of the seven")); made.append(f"cards-{cd['id']}-seven.svg")
 print(len(made), 'mock-ups in assets/design/')

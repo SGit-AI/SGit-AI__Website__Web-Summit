@@ -20,7 +20,10 @@ Tell your agent: *"Read https://web-summit.sgit.ai/design/index.md, show me the 
 {"votes": {"T1": "love|yes|no", "T2": "love|yes|no", "T3": "love|yes|no", "T4": "love|yes|no", ...}, "pick": {"tee": "T1", "hoodie": "H1", "card": "C1"}, "comments": "what you'd change", "updated": "2026-11-02"}
 ```
 
-Or send your picks to Vicky or Dinis and they commit them for you. The tally, built from those files:
+Or send your picks to Vicky or Dinis and they commit them for you. 
+**Where the vote stands (designer@web-summit.dinis, 03:00 UTC, Monday 2 November):** no votes yet; no `people/*/feedback/design.json` exists. The designer agent reads the votes every hour from 09:15 and proposes the final set (one tee per person, one hoodie, one card) by 18:00 Lisbon for Dinis and Sarah to approve (WS-63).
+
+The tally, built from those files:
 
 ```feedback design
 ```
@@ -42,6 +45,10 @@ Or send your picks to Vicky or Dinis and they commit them for you. The tally, bu
 
 A proposal: each of us in our own colour, with a different line, so a group of us reads as a set. The line also goes on the card.
 
+[![The seven together](../assets/design/seven-lineup.svg)](../assets/design/seven-lineup.svg)
+
+The seven side by side, as people will see three or four of us on the floor. Changed on the morning of 2 November: Indi had the same shirt as Nimay (T2), so Indi now wears T8, RiskMandate's own line, set in six short lines so it reads from across the hall.
+
 | Who | Shirt | Card line |
 |---|---|---|
 | **Dinis** (#111111): Do you know what your agents are doing? | [![Dinis](../assets/design/seven-dinis.svg)](../assets/design/seven-dinis.svg) | Ask me what my agents did today. |
@@ -50,7 +57,7 @@ A proposal: each of us in our own colour, with a different line, so a group of u
 | **Jose** (#e86a1c): I brought 6 agents to Web Summit | [![Jose](../assets/design/seven-jose.svg)](../assets/design/seven-jose.svg) | I brought 6 agents. Ask me why. |
 | **Vicky** (#6b3fa0): Who's on the other side of your agent? | [![Vicky](../assets/design/seven-vicky.svg)](../assets/design/seven-vicky.svg) | Who's on the other side of your agent? |
 | **Silvio** (#c62828): RISK MANDATE: agents with a mandate | [![Silvio](../assets/design/seven-silvio.svg)](../assets/design/seven-silvio.svg) | Agents with a mandate. |
-| **Indi** (#f2b705): My agents have a policy. Do yours? | [![Indi](../assets/design/seven-indi.svg)](../assets/design/seven-indi.svg) | Your agents. Your rules. |
+| **Indi** (#f2b705): Know their reach. Define their mandate. Control the gap. | [![Indi](../assets/design/seven-indi.svg)](../assets/design/seven-indi.svg) | Your agents. Your rules. |
 
 ## Hoodies {#hoodies}
 
@@ -67,6 +74,8 @@ A proposal: each of us in our own colour, with a different line, so a group of u
 |---|---|---|
 | **C1** White card, a band in your colour, your line | [![C1 front](../assets/design/card-C1-front.svg)](../assets/design/card-C1-front.svg) | [![C1 back](../assets/design/card-C1-back.svg)](../assets/design/card-C1-back.svg) |
 | **C2** Your colour, the name big | [![C2 front](../assets/design/card-C2-front.svg)](../assets/design/card-C2-front.svg) | [![C2 back](../assets/design/card-C2-back.svg)](../assets/design/card-C2-back.svg) |
+
+A card for each of the seven, to check your name, colour and line: [C1 for everyone](../assets/design/cards-C1-seven.svg) · [C2 for everyone](../assets/design/cards-C2-seven.svg). On C1 the brand line is now in your colour where your colour is dark enough to read on white.
 
 ## More lines to choose from {#lines}
 

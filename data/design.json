@@ -68,7 +68,7 @@
       "role": "RiskMandate",
       "colour": "#f2b705",
       "ink": "#111111",
-      "tee": "T2",
+      "tee": "T8",
       "line": "Your agents. Your rules."
     }
   ],
@@ -161,13 +161,16 @@
     {
       "id": "T8",
       "name": "Know their reach. Define their mandate. Control the gap.",
-      "sample": "nimay",
+      "sample": "indi",
       "front": [
-        "KNOW THEIR REACH.",
-        "DEFINE THEIR MANDATE.",
-        "CONTROL THE GAP."
+        "KNOW THEIR",
+        "REACH.",
+        "DEFINE THEIR",
+        "MANDATE.",
+        "CONTROL",
+        "THE GAP."
       ],
-      "why": "RiskMandate's own line, from Silvio's video: the product in three short sentences."
+      "why": "RiskMandate's own line, from Silvio's video: the product in three short sentences, set in six short lines so it reads from across the hall."
     }
   ],
   "hoodies": [
