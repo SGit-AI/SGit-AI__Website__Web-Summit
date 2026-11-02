@@ -76,6 +76,21 @@
         "fingerprint": "sha256:f2b24d04b8e048d9",
         "signing_fingerprint": "sha256:b478b82a3a9995eb"
       }
+    },
+    {
+      "id": "dashboard-vicky",
+      "label": "dashboard@web-summit.vicky (Claude Code session)",
+      "role": "Vicky's dashboard agent (dashboard@web-summit.vicky): keeps people/vicky/dashboard.md, the part of Vicky's dashboard below the built top. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 2 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository from Vicky's account; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); the operator has not confirmed it, and nothing depends on it.",
+      "added": "2026-11-02",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA66yM7ED5s6WMD1Tgq0Ha\ningWwAQaH8EDphWCj0q1zeQxDiAaXbaY0s/38oQ7zp7sJLSqw3XjrmFCH37ub+kV\nyuD+Z9lNqd2lj4dGrrWehq9JCjQ/Rx/6nOtgBVylMdZZZSR9cXomlWVvaZFgBSPG\nhsgkAuAbrZOzwYDR/QBVoytat8NR7UEl5JFm88hbrCDIvnd++vrZNvgmYjDYsGoF\nJuMkek412ltR2KWpY1GdtC4iB4UkGuGM6VpvmTTx1LIBeW4tnhAZK556y/7GBsq+\nKe2fo+qJi7FLeneHUlbJqgqTmsi8fA78+pi3SSMYBPRspTqHcfPA8i9+bC1rKDIy\n3kxKhENtJEUsmzjGGNagSdj1RPw6lF65mYIFzl0nX+9fp7ILmT8GqKBzigHll7Sm\nM2eQUdxHKlA5kragay4X4BpDGePyLaiKthc99jQNAMwULbOSPVmk26arD3Y7mARg\nfMQbLpB2YiY9HJBcL9CqIP+8ufLhGjPBzY5gqnW2tZV/KyT+pffM+tzMUwZi7/md\nLJ9lb940b0hJTiQ3Ar5z2GfmdNIkW/b0qLHSbg1L+m3/0Rdh386dW5qRnX6bC4LR\nNif/tS8U5w6RdgwZ7741v051qo0sXw5rNlTWlY0TEF37UAIkzKHzgMYP8/VxK9lS\n/IjusyQlJy1KRHpWSXhUHCkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEJfUjh8kot2m5mWDsxjUC8+Vxjoaw\n76uC2n5dmf2iEt7xGQFg0RYxieZVz7kEn8tQ46YWbrNnipMQZ6Yuukrq8g==\n-----END PUBLIC KEY-----\n",
+        "label": "dashboard@web-summit.vicky (Claude Code session)",
+        "fingerprint": "sha256:28c07de37ed3b94d",
+        "signing_fingerprint": "sha256:4e03f48e1a9da37c"
+      }
     }
   ]
 }
