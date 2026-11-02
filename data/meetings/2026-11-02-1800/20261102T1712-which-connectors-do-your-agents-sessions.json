@@ -1,0 +1,13 @@
+{
+  "type": "question",
+  "title": "Which connectors do your agents' sessions have?",
+  "for": [
+    "silvio",
+    "angelo"
+  ],
+  "by": "abp@web-summit.dinis",
+  "added": "2026-11-02T17:12:17.288Z",
+  "status": "open",
+  "detail": "Their ABPs are in content/abp/ (drafts from the repository alone). Two things only you can answer: can procurement@web-summit.silvio's mail connection send, or only draft? Whose calendar does team-collaboration@web-summit.angelo use, and can it invite people? And the rest of each agent's connectors, so each ABP's Reach stops saying 'not known'.",
+  "issue": "WS-34"
+}
