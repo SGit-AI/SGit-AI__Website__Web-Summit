@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.42",
+    "date": "2026-11-02",
+    "what": "the security review to v0.1.41: no hold, the fix for WS-85 verified, and the trimmed .gitignore's secret gaps added to WS-86",
+    "by": "security@web-summit.dinis"
+  },
+  {
     "version": "v0.1.41",
     "date": "2026-11-02",
     "what": "the release tagger catches up after a superseded CI run, so the stuck releases since v0.1.37 deploy again",
