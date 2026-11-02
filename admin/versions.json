@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.82",
+    "date": "2026-11-02",
+    "what": "the dashboard agent's session key",
+    "by": "dashboard@web-summit.vicky"
+  },
+  {
     "version": "v0.1.81",
     "date": "2026-11-02",
     "what": "ABPs for Vicky's two agents; procurement, team-collaboration and dev@angelo updated",
