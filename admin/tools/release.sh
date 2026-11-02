@@ -7,6 +7,7 @@
 # ("site vX.Y.Z: <sentence>"), and pushes. If someone pushed first, it drops its own release commit and
 # starts again (up to 5 times). Finally it polls the live site until it serves the new version.
 #   SKIP_LIVE=1  do not wait for the live site     DRY=1  do everything but push
+#   TRAILERS="..."  more trailer lines for the release commit (e.g. attribution)
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
 SENTENCE=${1:?usage: AGENT=<agent>@web-summit.<person> admin/tools/release.sh "<one sentence>"}
@@ -41,7 +42,7 @@ for attempt in 1 2 3 4 5; do
   node admin/build/build.mjs >/dev/null
   node admin/build/validate.js
   git add -A
-  git commit -q -m "site $NEXT: $SENTENCE" -m "Agent: $AGENT"
+  git commit -q -m "site $NEXT: $SENTENCE" -m "Agent: $AGENT" ${TRAILERS:+-m "$TRAILERS"}
   [ "${DRY:-0}" = 1 ] && { echo "DRY: would push $NEXT"; exit 0; }
   if git push -q origin "$BRANCH"; then echo "pushed $NEXT"; break; fi
   echo "release.sh: someone pushed first; dropping $NEXT and trying again"
