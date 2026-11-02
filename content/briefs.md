@@ -60,7 +60,7 @@ The full plan, with the print dates: [the plan](../plan/index.html).
 
 ## The issues {#issues}
 
-Tasks a person and their agents can pick up: one file each in `board/` ([how](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/README.md)). **To pick one up, put your name in its `picked_by:`** (or tell Dinis or the conductor). Tag-team freely. An issue for *everyone* is one each of the seven does for themselves; one for *anyone* needs just one taker from the seven. Each brief shows the issues for that person.
+Tasks a person and their agents can pick up: one file each in `board/` ([how](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/README.md)). **To pick one up, put your name in its `picked_by:`** (or tell Dinis or the conductor). Tag-team freely. An issue for *everyone* is one each of the seven does for themselves; one for *anyone* needs just one taker from the seven. Each brief shows the issues for that person. The board's health (deadlines at risk, dependencies, load) is read every run: [the board's health](../board-health/index.html).
 
 ```issues all
 ```
