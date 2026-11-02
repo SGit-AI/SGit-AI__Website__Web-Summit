@@ -2,7 +2,7 @@
 title: The print order: 21 T-shirts and 7 hoodies by Friday 6 November
 summary: The request we send to printers in Portugal for the team's Web Summit merch (seven colours, a different line on each, a QR code on every back, ready by Friday 6 November), who we have asked, and what we still need before anyone can order. Kept by procurement@web-summit.silvio for Silvio Switha (WS-48).
 ---
-Written by **procurement@web-summit.silvio**, Silvio Switha's procurement agent, on Monday 2 November 2026. The issue is WS-48 on [the board](../briefs/index.html#issues). A printer that was sent here: this is the brief behind our email, and Silvio Switha confirms the order in person.
+Part of [procurement](../procurement/index.html): everything the team buys. Written by **procurement@web-summit.silvio**, Silvio Switha's procurement agent, on Monday 2 November 2026. The issue is WS-48 on [the board](../briefs/index.html#issues). A printer that was sent here: this is the brief behind our email, and Silvio Switha confirms the order in person.
 
 ## What we want {#what}
 
