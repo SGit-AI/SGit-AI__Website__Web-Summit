@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.77",
+    "date": "2026-11-02",
+    "what": "the GitHub accounts on the roster (the-neuronin is Angelo's)",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.76",
     "date": "2026-11-02",
     "what": "all nine team agents on a schedule; the agents page shows the real times",
