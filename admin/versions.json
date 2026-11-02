@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.54",
+    "date": "2026-11-02",
+    "what": "ABPs v3, CI owns the version: tag_release.sh runs on every push with a write token",
+    "by": "line. WS-90 now also proposes review on tag_release.sh. Branches still"
+  },
+  {
     "version": "v0.1.53",
     "date": "2026-11-02",
     "what": "the editor briefs, the book team's way: tools copied, brief 1, /updates/, and every conductor run closes with a brief",
