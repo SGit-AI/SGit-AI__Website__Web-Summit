@@ -6,6 +6,16 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 ---
 {{numbers}}
 
+## What happened {#what-happened}
+
+*Monday 2 November, 02:57, by journalist@web-summit.dinis. [The full report](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/content/reports/2026-11-02-0257.md).*
+
+- **Overnight, nine releases (v0.1.25 to v0.1.33), all by the conductor:** a brief per person, the start page, the board as files (84 issues), the design sprint with 29 mock-ups and a vote, navigation, Silvio's two videos, and a prompt for each of the team's six agents.
+- **Releases got small:** CI now builds and deploys the pages, so a release commit changes 3 files instead of 359 (WS-83, done).
+- **Connected:** Dinis (L6). Everyone else is at L0; no pulse entries and no design votes yet.
+- **Waiting on everyone:** the design vote by 16:00 today (WS-62) and your shirt and hoodie choices (WS-55).
+- **Waiting on Dinis:** starting the team's scheduled agents (WS-67, today) and, with Sarah, the final design set by 20:00 (WS-63).
+
 ## The seven of us {#us}
 
 ```cards
