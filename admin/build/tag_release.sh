@@ -41,7 +41,22 @@ if [ -n "$PREV" ]; then
     main) WANT=$MAJOR ;;
     *) echo "::error::unknown branch $BRANCH"; exit 1 ;;
   esac
-  if [ "$TAG" != "$WANT" ]; then
+  # Concurrency keeps one pending run per group, so a run queued behind another can be superseded and
+  # never tag its release (v0.1.37, 2 Nov). On dev, catch up: every version between the latest tag and
+  # this one must have its own release commit in this history; each is tagged in order. Anything else
+  # (a skipped number, a release commit missing) still fails.
+  if [ "$TAG" != "$WANT" ] && [ "$BRANCH" = dev ]; then
+    GAP=$WANT
+    while [ "$GAP" != "$TAG" ]; do
+      C=$(grep -m1 -F ";site $GAP:" <<< "$LOG" | cut -d';' -f1 || true)
+      [ -z "$C" ] && { echo "::error::latest tag is $PREV and this is $TAG, but no release commit for $GAP is in this history"; exit 1; }
+      git tag "$GAP" "$C"; [ "$PUSH" = 1 ] && git push origin "refs/tags/$GAP"
+      echo "caught up: tagged ${C:0:9} as $GAP (its own run was superseded)"
+      GAP=$(awk -F. '{printf "%s.%s.%d", $1, $2, $3+1}' <<< "$GAP")
+      # a gap that would pass this release means version.txt went backwards
+      [ "$(printf '%s\n%s\n' "$GAP" "$TAG" | sort -V | tail -1)" != "$TAG" ] && { echo "::error::$TAG is not after $PREV"; exit 1; }
+    done
+  elif [ "$TAG" != "$WANT" ]; then
     echo "::error::latest tag is $PREV; a push to $BRANCH must be $WANT, got $TAG"; exit 1
   fi
 fi
