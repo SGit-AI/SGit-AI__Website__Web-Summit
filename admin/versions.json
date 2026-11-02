@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.50",
+    "date": "2026-11-02",
+    "what": "abp@web-summit.dinis: each ABP now records what its agent's commits actually touched",
+    "by": "abp@web-summit.dinis"
+  },
+  {
     "version": "v0.1.49",
     "date": "2026-11-02",
     "what": "the agents at work: every agent's schedule, its last and next wake, and what each wake did, linked to its commits",
