@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.67",
+    "date": "2026-11-02",
+    "what": "the print order brief at /print-order/, with the request collage",
+    "by": "procurement@web-summit.silvio"
+  },
+  {
     "version": "v0.1.66",
     "date": "2026-11-02",
     "what": "Angelo's onboarding at L2 (an email to send from)",
