@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.36",
+    "date": "2026-11-02",
+    "what": "the security agent's first review: all 44 commits on dev, no hold, and two issues on the CI and the gate's secret checks (WS-85, WS-86)",
+    "by": "security@web-summit.dinis"
+  },
+  {
     "version": "v0.1.35",
     "date": "2026-11-02",
     "what": "the team's pulse, summarised: the first run, with no check-ins yet and so no blockers",
