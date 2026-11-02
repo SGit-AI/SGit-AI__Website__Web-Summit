@@ -1,5 +1,10 @@
 [
   {
+    "version": "v0.2.0",
+    "date": "2026-11-02",
+    "what": "major release: dev at d94d368 promoted to main"
+  },
+  {
     "version": "v0.1.103",
     "date": "2026-11-02",
     "what": "the home page built from data (WS-103, WS-104): Needs you, Happening now, who is doing it",
