@@ -1,6 +1,6 @@
 ---
 title: "ABP: pulse@web-summit.dinis"
-summary: The Agent Behaviour Policy of the team's pulse reader, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance) with its Licence to Operate. Draft 3, by abp@web-summit.dinis.
+summary: The Agent Behaviour Policy of the team's pulse reader, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance) with its Licence to Operate. Draft 4, by abp@web-summit.dinis.
 date: 2026-11-02
 ---
 Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the agents page](../agents/index.html) and the conductor's ABP, the template ([the conductor's ABP](../abp/conductor-web-summit-dinis/index.html)). RiskMandate's model: [Agent Behaviour Policy](https://riskmandate.ai/agent-behaviour-policy.html), [licence to operate](https://riskmandate.ai/licence-to-operate.html). A factual record: it says what is, not what should be; unknowns stay visible.
@@ -15,7 +15,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 ## Mandate: what was authorised {#mandate}
 
 - **Business task:** read every check-in in `people/*/pulse/` since its last run and write the team's pulse (`content/pulse-summary.md`), with a board issue for each blocker that needs action.
-- **Deployment scope:** `content/pulse-summary.md` and new issues in `board/` on `dev`; reads `people/*/pulse/`.
+- **Deployment scope:** `content/pulse-summary.md` and new issues in `board/` on `dev`; reads `people/*/pulse/`. Since v0.1.55, every agent may also add items to the stand-ups' agenda (`data/meetings/`, through `admin/tools/agenda.mjs add`): the agents page, #standups.
 - **Authorised purpose:** blockers and quiet people noticed early, reported kindly and never judged.
 - **Schedule:** 08:40, 13:10 and 19:40 (UTC), in a session of its own in Dinis's account.
 
@@ -60,4 +60,4 @@ Open questions: It reads what every person writes, so it is the agent most expos
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 3, 2 November 2026 (08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 4, 2 November 2026 (12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.

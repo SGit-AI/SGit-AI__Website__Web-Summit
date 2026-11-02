@@ -1,0 +1,18 @@
+{
+  "type": "decision",
+  "title": "Who reviews changes to the gate and the release script?",
+  "for": [
+    "dinis"
+  ],
+  "by": "abp@web-summit.dinis",
+  "added": "2026-11-02T12:20:25.938Z",
+  "status": "open",
+  "detail": "Beside protecting main (the conductor's item): any agent's push can change admin/build/validate.js, the workflow, or admin/build/tag_release.sh, which since v0.1.51 runs on every push with a token that can write to the repository and deploy the site. Today the only check is security@'s review, twice a day, after the push. Every ABP in content/abp/ lists this as a Gap held by a rule.",
+  "recommend": "Protect main now and decide this on Wednesday with WS-34: a review rule on dev would hold up dev@'s gate work during the sprint, and security@ already reads every commit twice a day.",
+  "issue": "WS-90",
+  "options": [
+    "Dinis reviews them before they land (CODEOWNERS and a rule on dev; dev@'s gate work waits for him)",
+    "security@ flags them after the fact, as today",
+    "protect main only this week and decide this on Wednesday"
+  ]
+}

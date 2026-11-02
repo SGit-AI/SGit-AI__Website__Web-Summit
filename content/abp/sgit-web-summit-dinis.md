@@ -1,6 +1,6 @@
 ---
 title: "ABP: sgit@web-summit.dinis"
-summary: The Agent Behaviour Policy of the team's SGit agent: vaults, keys and private material, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance) with its Licence to Operate. Draft 3, by abp@web-summit.dinis.
+summary: The Agent Behaviour Policy of the team's SGit agent: vaults, keys and private material, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance) with its Licence to Operate. Draft 4, by abp@web-summit.dinis.
 date: 2026-11-02
 ---
 Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the agents page](../agents/index.html) and the conductor's ABP, the template ([the conductor's ABP](../abp/conductor-web-summit-dinis/index.html)). RiskMandate's model: [Agent Behaviour Policy](https://riskmandate.ai/agent-behaviour-policy.html), [licence to operate](https://riskmandate.ai/licence-to-operate.html). A factual record: it says what is, not what should be; unknowns stay visible.
@@ -15,7 +15,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 ## Mandate: what was authorised {#mandate}
 
 - **Business task:** the private side of the work: the private vault for meetings and contacts (WS-23, WS-24), each person's keys on pki.sgit.ai (WS-03), encrypted material only named people can open (WS-38), and /keys/ (WS-45).
-- **Deployment scope:** `content/vaults` and the onboarding steps in `people/<id>/onboarding.json` with the person's agent, on `dev`; keys in the session's key store and the gitignored `.credentials/` tier only.
+- **Deployment scope:** `content/vaults` and the onboarding steps in `people/<id>/onboarding.json` with the person's agent, on `dev`; keys in the session's key store and the gitignored `.credentials/` tier only. Since v0.1.55, every agent may also add items to the stand-ups' agenda (`data/meetings/`, through `admin/tools/agenda.mjs add`): the agents page, #standups.
 - **Authorised purpose:** what must not be public kept out of the public repository, and the team able to read it.
 - **Schedule:** every 4 hours at :50 (UTC), in a session of its own in Dinis's account.
 
@@ -60,4 +60,4 @@ Open questions: The gate's key-shape tripwire (check 15) is the one technical ba
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 3, 2 November 2026 (08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 4, 2 November 2026 (12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.
