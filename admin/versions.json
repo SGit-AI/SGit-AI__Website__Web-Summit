@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.98",
+    "date": "2026-11-02",
+    "what": "the mentors' first wake (2250): six notes, a summary for Dinis, the push step raised once (WS-09)",
+    "by": "mentor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.97",
     "date": "2026-11-02",
     "what": "the mentors run every hour during the day, writing a note only when something changed",
