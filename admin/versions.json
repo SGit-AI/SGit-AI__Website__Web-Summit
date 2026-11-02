@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.2",
+    "date": "2026-11-02",
+    "what": "the version at the top of every page, linked to its own row with the commit; two gate checks (em-dashes, scripts parse); WS-106 for the rest of the estate's standard",
+    "by": "conductor@web-summit.dinis",
+    "from": "44c61a6bf"
+  },
+  {
     "version": "v0.2.1",
     "date": "2026-11-02",
     "what": "WS-105: main deploys (v0.2.0 is live); branch protection to confirm",
