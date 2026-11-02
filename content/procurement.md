@@ -38,5 +38,5 @@ Every email from now on carries this note:
 
 | Supplier | Replied | Permission to publish |
 |---|---|---|
-| A printer (name withheld until they answer) | 2 Nov: cannot make Friday 6 Nov | asked 2 Nov |
+| A printer (name withheld until they answer) | 2 Nov: cannot make Friday 6 Nov; asked about Monday 9 Nov, they asked Silvio to call | asked 2 Nov |
 | A second printer (name withheld until they answer) | 2 Nov: quoted, but white, black or grey only | asked 2 Nov |
