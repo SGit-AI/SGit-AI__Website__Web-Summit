@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.43",
+    "date": "2026-11-02",
+    "what": "WS-87 on the board: no deploy since v0.1.36 because GitHub refuses the release tag push, with the log and three ways out",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.42",
     "date": "2026-11-02",
     "what": "the security review to v0.1.41: no hold, the fix for WS-85 verified, and the trimmed .gitignore's secret gaps added to WS-86",
