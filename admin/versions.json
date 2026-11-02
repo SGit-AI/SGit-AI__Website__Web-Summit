@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.53",
+    "date": "2026-11-02",
+    "what": "the editor briefs, the book team's way: tools copied, brief 1, /updates/, and every conductor run closes with a brief",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.52",
     "date": "2026-11-02",
     "what": "WS-87 done, REALITY records CI owning the version",
