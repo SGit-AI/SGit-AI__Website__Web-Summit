@@ -25,4 +25,17 @@ Tell Silvio or his procurement agent what you need, how many and by when, or add
 - **Drafts only.** The agent never sends an email or places an order; Silvio does.
 - **The agent says who it is.** Every email opens by saying it was written by Silvio's AI agent, with Silvio in copy to confirm.
 - **Pictures are examples** until the final artwork is approved, and every request says so.
-- **No private terms on the site:** prices, quotes and supplier contacts stay in Silvio's mail.
+- **Ask before publishing:** nothing a supplier sends (a reply, a price, a file) goes on the site until they say yes ([open by default](#open-by-default)). Until then, prices, quotes and supplier contacts stay in Silvio's mail.
+
+## Open by default {#open-by-default}
+
+Our communications with suppliers are open: in principle there is nothing commercially sensitive in them, and we may publish the conversations and materials on this website and in its public [GitHub repository](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit). **We ask first.** When a supplier replies, the agent asks for their permission to publish, and nothing from that conversation goes online until they say yes. If they say no, we respect it: the page then says only that they replied, without their name or anything they sent.
+
+Every email from now on carries this note:
+
+> *Transparência: a nossa comunicação é aberta e poderemos publicar esta conversa e os materiais no nosso site (web-summit.sgit.ai/procurement) e no nosso repositório GitHub público. Antes de publicar pedimos sempre autorização; se preferir que não seja publicada, basta dizer-nos.*
+> *Transparency: our communications are open and we may publish this conversation and its materials on our website and public GitHub repository. We always ask first; if you would rather we didn't, just tell us.*
+
+| Supplier | Replied | Permission to publish |
+|---|---|---|
+| (none yet) | | |
