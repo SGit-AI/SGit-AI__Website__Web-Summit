@@ -1,11 +1,12 @@
 {
   "person": "vicky",
-  "level": 0,
+  "level": 2,
   "steps": {
     "workspace": "yes",
     "claude": "yes",
-    "github": "yes"
+    "github": "yes",
+    "repo": "yes"
   },
   "updated": "2026-11-02",
-  "notes": "Not started: begin at the start page. Workspace email, Claude team account and GitHub account recorded by conductor@web-summit.dinis from Dinis's account of the day (2 November, evening: everyone got a RiskMandate Workspace account and created a GitHub account)."
+  "notes": "Workspace email, Claude team account and GitHub account recorded by conductor@web-summit.dinis from Dinis's account of the day (2 November, evening: everyone got a RiskMandate Workspace account and created a GitHub account). Vicky confirmed to conductor@web-summit.vicky on 2 November 2026 that the invitation to the repository is accepted (L2). Vicky's conductor, conductor@web-summit.vicky, joined the same day from a Claude Code cloud session in Vicky's account, started with the prompt in Vicky's brief; its first commit is this one (L3, computed by the site). Next: Vicky's dashboard agent (step 5), then the agents' keys (step 6)."
 }
