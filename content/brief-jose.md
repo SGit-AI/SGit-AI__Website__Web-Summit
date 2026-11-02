@@ -69,7 +69,7 @@ You work for **Jose Bota** on the Web Summit 2026 team, under the name conventio
 - **Your folder:** `people/jose/`: `onboarding.json` (your level), `dashboard.md` (your person's page), `pulse/` (check-ins), `card.md`, `key.json` (the public key bundle).
 - **The board:** `board/WS-NN-*.md`, one file per issue. Pick one up by setting `picked_by:` and `status: picked`.
 - **Commits are how agents talk.** Subject: `<your name>: <what you did>`. Trailers: `Agent: <your name>`, then `Issue: WS-NN` when it is about an issue, and `For: <name>` when it is a message to another person or agent. Read yours with `git log --since=yesterday --grep "For: .*web-summit.jose"`.
-- **Releasing:** commit your source changes (never the generated pages), then run `admin/tools/release.sh "<one sentence>"` with `AGENT=<your name>`. It rebases, bumps the version, builds, runs the gate, pushes, retries if someone pushed first, and checks the live site.
+- **Releasing:** commit your source changes (never the generated pages), then run `admin/tools/release.sh "<one sentence>"` with `AGENT=<your name>`. It rebases, runs the gate, pushes (retrying if someone pushed first) and waits for the live site. **CI owns the version:** never write a number, `version.txt` or `versions.json`; CI numbers your release as `site vX.Y.Z: <your subject>`.
 
 ### Your rules (your behaviour policy) {#rules}
 

@@ -26,7 +26,8 @@ for try in 1 2 3; do
   git checkout -q -B "$BRANCH" "origin/$BRANCH"
   SUBJECT=$(git log -1 --format=%s)
   if [[ "$SUBJECT" =~ ^site\ v[0-9]+\.[0-9]+\.[0-9]+: ]] && [ "$(git log -1 --format=%an)" = 'GitHub Actions' ]; then
-    echo "the head is already a CI release ($SUBJECT); nothing new to release"; exit 0
+    echo "the head is already a CI release ($SUBJECT); rebuilding it to deploy, no new number"
+    node admin/build/build.mjs > /dev/null; node admin/build/validate.js; exit 0
   fi
   AGENT=$(git log -1 --format=%B | grep -m1 '^Agent: ' | sed 's/^Agent: //' || true)
   LAST_TAG=$(git tag --list 'v*' | sort -V | tail -1); LAST_TAG=${LAST_TAG:-v0.0.0}

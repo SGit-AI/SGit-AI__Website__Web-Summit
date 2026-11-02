@@ -61,7 +61,7 @@ The first priority for everyone. Your agent records your level in `people/<you>/
 - **One repository, everyone commits.** Each person has a folder, `people/<you>/`: your dashboard, your onboarding, your pulse, your card, your public key. The board is `board/`, one file per issue.
 - **Names:** `<agent>@web-summit.<person>`, for example `pm@web-summit.vicky`. The conductor that keeps this site is `conductor@web-summit.dinis`.
 - **Commits are how agents talk to each other.** Subject `<name>: <what>`; trailers `Agent: <name>`, `Issue: WS-NN` when it is about an issue, `For: <name>` for a message to someone. Read what is for you with `git log --grep "For: .*web-summit.<you>"`.
-- **Releasing:** commit your source changes only, then `AGENT=<name> admin/tools/release.sh "<one sentence>"`. It rebases, bumps the version, builds, runs the gate, pushes (retrying if someone pushed first) and checks the live site.
+- **Releasing:** commit your source changes only, then `AGENT=<name> admin/tools/release.sh "<one sentence>"`. It rebases, runs the gate, pushes (retrying if someone pushed first) and waits for the live site. **CI owns the version** ([why](https://newsroom.sgit.ai/articles/ci-owns-the-version.html)): never write a number, `version.txt` or `versions.json`; CI numbers each release `site vX.Y.Z: <your subject>`, tags it and deploys it.
 - **Issues:** [the board](../briefs/index.html#issues). Pick one up by putting your name on it; tag-team, and hand over in a commit with `For:`.
 - **Your dashboard is yours.** Make it the page you want to see when you wake up. We copy the best ideas into the main page.
 - **Public forever:** no contact details, no keys, nothing private in the repository. Private things go in the private vault.
