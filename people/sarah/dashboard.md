@@ -1,26 +1,22 @@
 ---
 title: Sarah's dashboard
-summary: The page Sarah sees first: their issues, their onboarding, their pulse, and whatever else they choose. Theirs to change, with their agents.
+summary: The page Sarah reads first. The top is built for Sarah; the rest starts from the designer template and is Sarah's, and Sarah's dashboard agent's, to change.
 ---
-This page is Sarah's, kept by Sarah and Sarah's agents in `people/sarah/dashboard.md`. It starts the same as everyone's: change it to show what you want to see when you wake up, take ideas from the others, and the best of them go on the main page.
+Started by the conductor on 2 November from [the designer template](../../dashboards/index.html#designer): What needs a design decision, and what the team voted. Tell your dashboard agent (`dashboard@web-summit.sarah`) what you want here and what you never look at; it changes this part.
 
-## Today {#today}
+## The vote {#vote}
 
-- **My focus:** Design what makes people at the summit want to talk to us about RiskMandate, with as little of Sarah's time as possible.
-- **My brief:** [Brief for Sarah](../../brief-sarah/index.html)
-- **The board:** [all issues](../../briefs/index.html#issues) · **The team's pulse:** [pulse](../../pulse/index.html) · **What happened:** [home](../../index.html)
+```feedback design
+```
+
+[The design sprint](../../design/index.html) · [the print order](../../print-order/index.html)
+
+## Design issues {#design}
+
+```issues area:merch
+```
 
 ## My issues {#issues}
 
 ```issues sarah
-```
-
-## My onboarding {#onboarding}
-
-```onboarding sarah
-```
-
-## My pulse {#pulse}
-
-```pulse sarah
 ```

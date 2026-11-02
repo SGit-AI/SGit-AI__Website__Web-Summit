@@ -1,26 +1,15 @@
 ---
 title: Daniela's dashboard
-summary: The page Daniela sees first: their issues, their onboarding, their pulse, and whatever else they choose. Theirs to change, with their agents.
+summary: The page Daniela reads first. The top is built for Daniela; the rest starts from the the first friendly template and is Daniela's, and Daniela's dashboard agent's, to change.
 ---
-This page is Daniela's, kept by Daniela and Daniela's agents in `people/daniela/dashboard.md`. It starts the same as everyone's: change it to show what you want to see when you wake up, take ideas from the others, and the best of them go on the main page.
+Started by the conductor on 2 November from [the the first friendly template](../../dashboards/index.html#friendly): Your agentic team, and what it needs from you. Tell your dashboard agent (`dashboard@web-summit.daniela`) what you want here and what you never look at; it changes this part.
 
-## Today {#today}
+## Your agentic team {#team}
 
-- **My focus:** Show what an agentic team under behaviour policies does for one expert: Daniela's teaching, and the students who aren't finding Daniela yet.
-- **My brief:** [Brief for Daniela](../../brief-daniela/index.html)
-- **The board:** [all issues](../../briefs/index.html#issues) · **The team's pulse:** [pulse](../../pulse/index.html) · **What happened:** [home](../../index.html)
+```issues area:friendly
+```
 
 ## My issues {#issues}
 
 ```issues daniela
-```
-
-## My onboarding {#onboarding}
-
-```onboarding daniela
-```
-
-## My pulse {#pulse}
-
-```pulse daniela
 ```

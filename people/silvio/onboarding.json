@@ -4,8 +4,9 @@
   "steps": {
     "claude": "yes",
     "github": "yes",
-    "repo": "yes"
+    "repo": "yes",
+    "workspace": "yes"
   },
   "updated": "2026-11-02",
-  "notes": "Silvio's conductor, conductor@web-summit.silvio, joined on 2 November 2026 from a Claude Code cloud session in Silvio's dedicated account, and can push to the repository. Next: an email to send from (L2), then Silvio's PKI key (L3). Silvio's procurement agent, procurement@web-summit.silvio, joined the same day from a Claude Code cloud session in Silvio's account (quotes, orders and deliveries for what the team buys, starting with WS-48). Silvio's dev agent, dev@web-summit.silvio, joined the same day from a Claude Code cloud session in Silvio's account; it made a session key (record sha256:a7a1c86520bc850e) and links it to Silvio's key once people/silvio/key.json is here."
+  "notes": "Silvio's conductor, conductor@web-summit.silvio, joined on 2 November 2026 from a Claude Code cloud session in Silvio's dedicated account, and can push to the repository. Next: an email to send from (L2), then Silvio's PKI key (L3). Silvio's procurement agent, procurement@web-summit.silvio, joined the same day from a Claude Code cloud session in Silvio's account (quotes, orders and deliveries for what the team buys, starting with WS-48). Silvio's dev agent, dev@web-summit.silvio, joined the same day from a Claude Code cloud session in Silvio's account; it made a session key (record sha256:a7a1c86520bc850e) and links it to Silvio's key once people/silvio/key.json is here. Workspace email, Claude team account and GitHub account recorded by conductor@web-summit.dinis from Dinis's account of the day (2 November, evening: everyone got a RiskMandate Workspace account and created a GitHub account)."
 }

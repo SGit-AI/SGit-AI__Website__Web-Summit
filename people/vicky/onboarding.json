@@ -1,7 +1,11 @@
 {
   "person": "vicky",
   "level": 0,
-  "steps": {},
-  "updated": null,
-  "notes": "Not started: begin at the start page."
+  "steps": {
+    "workspace": "yes",
+    "claude": "yes",
+    "github": "yes"
+  },
+  "updated": "2026-11-02",
+  "notes": "Not started: begin at the start page. Workspace email, Claude team account and GitHub account recorded by conductor@web-summit.dinis from Dinis's account of the day (2 November, evening: everyone got a RiskMandate Workspace account and created a GitHub account)."
 }

@@ -8,6 +8,8 @@ import * as CAST from './cast.mjs'
 import { execFileSync } from 'child_process'
 import { meetingsContext, buildMeetings, sinceMd } from './meetings.mjs'
 import { inventory, inventoryMd, myAgentsMd } from './inventory.mjs'
+import { onboarding, LEVELS } from './onboarding.mjs'
+import { orgchartSvg } from './orgchart.mjs'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
@@ -16,7 +18,7 @@ const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
 // navigation: a few sections on top, each with its own sub-menu; every page gets breadcrumbs back to its parent
 const SECTIONS = [
     { t: 'Start', h: 'start/index.html', re: /^start\//, sub: [] },
-    { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet|abp|cast|wakes)\b/, sub: [['People', 'team/index.html'], ['Everything', 'team/everything/index.html'], ['The cast', 'cast/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['At work', 'wakes/index.html'], ['ABPs', 'abp/index.html'], ['Meet us', 'meet/index.html']] },
+    { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet|abp|cast|wakes)\b/, sub: [['People', 'team/index.html'], ['The map', 'team/map/index.html'], ['Setup', 'team/setup/index.html'], ['Everything', 'team/everything/index.html'], ['The cast', 'cast/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['At work', 'wakes/index.html'], ['ABPs', 'abp/index.html'], ['Meet us', 'meet/index.html']] },
     { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|merch-sponsor|print-order|procurement|videos|research|reports|board-health|site-review|updates|meetings)\b/, sub: [['Stand-ups', 'meetings/index.html'], ['Updates', 'updates/index.html'], ['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Merch sponsor', 'merch-sponsor/index.html'], ['Procurement', 'procurement/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
     { t: 'About', h: 'about/index.html', re: /^(about|articles|keys|admin|agent\/|briefing)\b/, sub: [['About', 'about/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['Versions', 'admin/versions.html'], ['The site agent', 'agent/index.html'], ['Inbox briefing', 'briefing/index.html']] },
@@ -267,16 +269,13 @@ const issuesMd = who => {
     return ['| Issue | What, and what done looks like | For | Due | Status |', '|---|---|---|---|---|',
         ...rows.map(x => `| **${x.id}** | **${cell(x.title)}.** ${cell(x.done).replace(/\]\(\.\.\//g, `](${UP}`)}${x.agents ? ` *Agents:* ${cell(x.agents)}` : ''} | ${x.for.map(who2).join(', ')} | ${cell(x.due)} | ${cell(x.status)}${x.picked_by ? `: ${cell(x.picked_by)}` : ''} |`)].join('\n')
 }
-// onboarding: people/<id>/onboarding.json, kept by each person's agent; ```onboarding <id | all>```
-const LEVELS = ['L0 not connected', 'L1 a dedicated Claude account', 'L2 GitHub, the repository and email', 'L3 a PKI key and vault access', 'L4 a Claude session on a schedule', 'L5 several agents in one session', 'L6 several Claude sessions on schedules']
-const STEPS = [['claude', 'Claude'], ['github', 'GitHub'], ['repo', 'Can push'], ['email', 'Email'], ['pki', 'PKI key'], ['vault', 'Vaults'], ['schedule', 'Scheduled'], ['multi', 'Several sessions']]
-const onboard = id => { const f = path.join(ROOT, 'people', id, 'onboarding.json'); return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : { level: 0, steps: {} } }
+// onboarding (admin/build/onboarding.mjs): the steps, the computed level and the leaderboard; ```onboarding <id | all>```
+let INV_ = null
+const getINV = () => INV_ || (INV_ = inventory(ROOT, teamData))
+const OB = onboarding(ROOT, getINV)
+const onboard = OB.onboard
 const PEOPLE = () => teamData.members.filter(m => m.kind === 'human')
-const onboardingMd = who => {
-    const ms = PEOPLE().filter(m => who === 'all' || m.id === who)
-    return ['| Person | Level | ' + STEPS.map(s => s[1]).join(' | ') + ' | Updated |', '|---|---|' + STEPS.map(() => '---|').join('') + '---|',
-        ...ms.map(m => { const o = onboard(m.id); return `| [${m.name}](${UP}people/${m.id}/index.html) | ${LEVELS[o.level || 0]} | ${STEPS.map(([k]) => o.steps?.[k] || 'not yet').join(' | ')} | ${o.updated || 'never'} |` })].join('\n')
-}
+const onboardingMd = who => OB.table(PEOPLE().filter(m => who === 'all' || m.id === who), UP)
 // the pulse: people/<id>/pulse/<YYYY-MM-DD>-<morning|midday|evening>.md, written by the person or their agent; ```pulse <id | all>```
 const PULSE = () => PEOPLE().flatMap(m => { const d = path.join(ROOT, 'people', m.id, 'pulse'); return fs.existsSync(d) ? fs.readdirSync(d).filter(f => f.endsWith('.md')).map(f => ({ id: m.id, name: m.name, f, text: fs.readFileSync(path.join(d, f), 'utf8') })) : [] }).sort((a, b) => b.f.localeCompare(a.f))
 const pulseMd = who => {
@@ -339,7 +338,19 @@ for (const dir of fs.readdirSync(path.join(ROOT, 'content'), { withFileTypes: tr
 }
 
 // everything on the team, counted (WS-95): /team/everything/ (admin/build/inventory.mjs)
-const INV = inventory(ROOT, teamData)
+const INV = getINV()
+{
+    const rel = 'team/setup/index.html', title = 'Setup: who has set up what', md = OB.leaderboard(PEOPLE())
+    write(rel, page({ rel, title, description: 'The onboarding leaderboard: every person, every step, and their next step.', body: render(md), mdTwin: twinPath(rel) }))
+    pages.push({ rel, title, description: 'The onboarding leaderboard: every person, every step, and their next step.' }); twin(rel, title, 'The onboarding leaderboard.', md)
+}
+{
+    const O = orgchartSvg(ROOT, INV), active = INV.agents.filter(a => a.commits > 0)
+    const md = `Everyone on the team in one picture: the ${INV.people.length} people in a ring around the site and the board, and each person's agents branching out from them. A filled agent has committed (bigger means more commits); a hollow one is proposed in a brief but not running yet. A grey curve is a message between agents (a commit with \`For:\`), ${O.edges} pairs so far. Hover for names and counts.\n\n- **${active.length} agents running** for ${new Set(active.map(a => a.person)).size} people, **${INV.agents.length - active.length} proposed**.\n- The numbers behind it: [everything on the team](../everything/index.html) · [who has set up what](../setup/index.html) · [the agents at work](../../wakes/index.html).`
+    const rel = 'team/map/index.html', title = 'The team as a picture: people and their agents'
+    write(rel, page({ rel, title, description: `${INV.people.length} people and ${active.length} running agents, drawn.`, body: `<figure class="orgchart">${O.svg}</figure>` + render(md), mdTwin: twinPath(rel) }))
+    pages.push({ rel, title, description: `${INV.people.length} people and ${active.length} running agents, drawn.` }); twin(rel, title, `${INV.people.length} people and ${active.length} running agents.`, md)
+}
 {
     const rel = 'team/everything/index.html', title = 'Everything: every person, agent and channel', md = inventoryMd(INV, onboard, LEVELS)
     write(rel, page({ rel, title, description: `${INV.people.length} people, ${INV.agents.length} agents, ${INV.channels.length} channels.`, body: render(md), mdTwin: twinPath(rel) }))

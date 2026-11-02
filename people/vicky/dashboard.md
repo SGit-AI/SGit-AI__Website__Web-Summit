@@ -1,26 +1,26 @@
 ---
 title: Vicky's dashboard
-summary: The page Vicky sees first: their issues, their onboarding, their pulse, and whatever else they choose. Theirs to change, with their agents.
+summary: The page Vicky reads first. The top is built for Vicky; the rest starts from the project manager template and is Vicky's, and Vicky's dashboard agent's, to change.
 ---
-This page is Vicky's, kept by Vicky and Vicky's agents in `people/vicky/dashboard.md`. It starts the same as everyone's: change it to show what you want to see when you wake up, take ideas from the others, and the best of them go on the main page.
+Started by the conductor on 2 November from [the project manager template](../../dashboards/index.html#pm): Deadlines, owners, logistics, and whether the team is aligned. Tell your dashboard agent (`dashboard@web-summit.vicky`) what you want here and what you never look at; it changes this part.
 
-## Today {#today}
+## The board's health {#health}
 
-- **My focus:** Keep the team on one plan: the structure, the deadlines, the logistics and everyone's schedule.
-- **My brief:** [Brief for Vicky](../../brief-vicky/index.html)
-- **The board:** [all issues](../../briefs/index.html#issues) · **The team's pulse:** [pulse](../../pulse/index.html) · **What happened:** [home](../../index.html)
+[The board's health](../../board-health/index.html) · [the stand-ups](../../meetings/index.html) · [the setup leaderboard](../../team/setup/index.html)
+
+## Project management {#pm}
+
+```issues area:pm
+```
+
+## Merch and printing {#merch}
+
+[The print order](../../print-order/index.html) · [procurement](../../procurement/index.html)
+
+```issues area:merch
+```
 
 ## My issues {#issues}
 
 ```issues vicky
-```
-
-## My onboarding {#onboarding}
-
-```onboarding vicky
-```
-
-## My pulse {#pulse}
-
-```pulse vicky
 ```

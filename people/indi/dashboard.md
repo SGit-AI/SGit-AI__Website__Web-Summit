@@ -1,26 +1,26 @@
 ---
 title: Indi's dashboard
-summary: The page Indi Gupte sees first: their issues, their onboarding, their pulse, and whatever else they choose. Theirs to change, with their agents.
+summary: The page Indi reads first. The top is built for Indi; the rest starts from the outreach and business template and is Indi's, and Indi's dashboard agent's, to change.
 ---
-This page is Indi's, kept by Indi and Indi's agents in `people/indi/dashboard.md`. It starts the same as everyone's: change it to show what you want to see when you wake up, take ideas from the others, and the best of them go on the main page.
+Started by the conductor on 2 November from [the outreach and business template](../../dashboards/index.html#outreach): Who we are meeting, who is hot, and the message. Tell your dashboard agent (`dashboard@web-summit.indi`) what you want here and what you never look at; it changes this part.
 
-## Today {#today}
+## The message and the pitch {#message}
 
-- **My focus:** Make sure the message makes sense everywhere, and build the examples we send to every company we go for.
-- **My brief:** [Brief for Indi](../../brief-indi/index.html)
-- **The board:** [all issues](../../briefs/index.html#issues) · **The team's pulse:** [pulse](../../pulse/index.html) · **What happened:** [home](../../index.html)
+```issues area:riskmandate
+```
+
+## Outreach and meetings {#outreach}
+
+The booked meetings and contacts live in the private vault, never here. On this site: the work.
+
+```issues area:outreach
+```
+
+## The companies {#companies}
+
+[The company map](../../companies/index.html): priority 1 first.
 
 ## My issues {#issues}
 
 ```issues indi
-```
-
-## My onboarding {#onboarding}
-
-```onboarding indi
-```
-
-## My pulse {#pulse}
-
-```pulse indi
 ```

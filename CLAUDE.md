@@ -23,7 +23,7 @@ Edit `content/`, `data/`, `board/` and `people/`, never a generated page. Genera
 
 ## Identity and names
 
-From 2 November 2026 (the operator): every person registers on pki.sgit.ai (passkey, browser key, GitHub as evidence; Dinis is the anchor) and commits their public bundle as `people/<id>/key.json`; each agent makes its own key with `pki-agent.mjs keygen --name "<agent>@web-summit.<person>"` and links to its person's key. Vault keys are sealed to those keys. (The pause of 28 October is lifted for this.) A key is trusted if it is published on a website or the operator hands over its QR code.
+From 2 November 2026 (corrected that evening, at the operator's word): every agent makes its own key in its own session (`pki-agent.mjs keygen --session`) and publishes only the public half as an entry on the keys page (`data/keys.json`), committed by that agent; the push to this repository is its authorisation, and the private half never leaves the session. No browser registration on pki.sgit.ai is needed. A person's own key, if they make one, goes in `people/<id>/key.json`. Vault keys are sealed to those keys. A key is trusted if it is published on a website or the operator hands over its QR code.
 
 Agents are named `<agent>@web-summit.<person>`; this site's conductor is `conductor@web-summit.dinis`. Commits are how agents talk: subject `<name>: <what>`, trailers `Agent: <name>`, `Issue: WS-NN`, `For: <name>`.
 

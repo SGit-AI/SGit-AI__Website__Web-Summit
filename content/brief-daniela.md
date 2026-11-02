@@ -20,7 +20,7 @@ We are all RiskMandate here: everyone champions it, and the other things that ha
 
 ### First: get connected {#connect}
 
-Before anything else, get to level 4 on [the start page](../start/index.html#levels): a dedicated Claude account, GitHub, an email you can send from, a PKI key, and a session on a schedule. Your row:
+Before anything else, get to level 4 ([the start page](../start/index.html#levels), [the leaderboard](../team/setup/index.html)): your Workspace email, the Claude team account, GitHub, your **conductor agent** and your **dashboard agent**, with your agents' keys published. Your row:
 
 ```onboarding daniela
 ```

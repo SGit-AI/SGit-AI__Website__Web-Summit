@@ -1,10 +1,10 @@
 ---
 id: WS-03
-title: Get to L3: a PKI key registered on pki.sgit.ai, and access to the team's vaults
+title: Get to L4: your agents' keys published, and a dashboard agent
 area: onboarding
 for: everyone
 due: Wed 4 Nov
 status: open
 picked_by:
 ---
-You registered on [pki.sgit.ai](https://pki.sgit.ai/people/how.html) (a passkey, a key pair made in the browser, your GitHub as evidence), Dinis has verified you as the anchor, and your public bundle is in people/<you>/key.json. The vault keys come to you sealed to that key.
+Corrected 2 November (evening): no browser registration. Each agent makes its own key in its session (`pki-agent.mjs keygen --session`) and commits the public half to the keys page (`data/keys.json`); the push is the authorisation. With your dashboard agent running, that is L4. Steps 5 and 6 on [the start page](../start/index.html#steps).

@@ -1,26 +1,26 @@
 ---
 title: Nimay's dashboard
-summary: The page Nimay Parekh sees first: their issues, their onboarding, their pulse, and whatever else they choose. Theirs to change, with their agents.
+summary: The page Nimay reads first. The top is built for Nimay; the rest starts from the outreach and business template and is Nimay's, and Nimay's dashboard agent's, to change.
 ---
-This page is Nimay's, kept by Nimay and Nimay's agents in `people/nimay/dashboard.md`. It starts the same as everyone's: change it to show what you want to see when you wake up, take ideas from the others, and the best of them go on the main page.
+Started by the conductor on 2 November from [the outreach and business template](../../dashboards/index.html#outreach): Who we are meeting, who is hot, and the message. Tell your dashboard agent (`dashboard@web-summit.nimay`) what you want here and what you never look at; it changes this part.
 
-## Today {#today}
+## The message and the pitch {#message}
 
-- **My focus:** Turn RiskMandate's position into meetings, and meetings into customers and investors.
-- **My brief:** [Brief for Nimay](../../brief-nimay/index.html)
-- **The board:** [all issues](../../briefs/index.html#issues) · **The team's pulse:** [pulse](../../pulse/index.html) · **What happened:** [home](../../index.html)
+```issues area:riskmandate
+```
+
+## Outreach and meetings {#outreach}
+
+The booked meetings and contacts live in the private vault, never here. On this site: the work.
+
+```issues area:outreach
+```
+
+## The companies {#companies}
+
+[The company map](../../companies/index.html): priority 1 first.
 
 ## My issues {#issues}
 
 ```issues nimay
-```
-
-## My onboarding {#onboarding}
-
-```onboarding nimay
-```
-
-## My pulse {#pulse}
-
-```pulse nimay
 ```

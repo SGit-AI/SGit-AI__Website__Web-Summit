@@ -1,26 +1,23 @@
 ---
 title: Dinis's dashboard
-summary: The page Dinis Cruz sees first: their issues, their onboarding, their pulse, and whatever else they choose. Theirs to change, with their agents.
+summary: The page Dinis reads first. The top is built for Dinis; the rest starts from the the operator template and is Dinis's, and Dinis's dashboard agent's, to change.
 ---
-This page is Dinis's, kept by Dinis and Dinis's agents in `people/dinis/dashboard.md`. It starts the same as everyone's: change it to show what you want to see when you wake up, take ideas from the others, and the best of them go on the main page.
+Started by the conductor on 2 November from [the the operator template](../../dashboards/index.html#operator): Decisions first, then whether the team and its agents are moving. Tell your dashboard agent (`dashboard@web-summit.dinis`) what you want here and what you never look at; it changes this part.
 
-## Today {#today}
+## Waiting on me {#waiting}
 
-- **My focus:** Make RiskMandate understood, tried and bought at Web Summit, and run the team and its agents that get us there.
-- **My brief:** [Brief for Dinis](../../brief-dinis/index.html)
-- **The board:** [all issues](../../briefs/index.html#issues) · **The team's pulse:** [pulse](../../pulse/index.html) · **What happened:** [home](../../index.html)
+- The decisions in my next briefing (the link above), and in [the latest conductor brief](../../updates/index.html).
+- [The board's health](../../board-health/index.html): what is at risk and what waits on me.
+
+## Is everyone connected? {#setup}
+
+[The setup leaderboard](../../team/setup/index.html) · [everything on the team](../../team/everything/index.html)
+
+## Are the agents working? {#agents}
+
+[The agents at work](../../wakes/index.html) · [the ABPs](../../abp/index.html) · [the reports](../../reports/index.html)
 
 ## My issues {#issues}
 
 ```issues dinis
-```
-
-## My onboarding {#onboarding}
-
-```onboarding dinis
-```
-
-## My pulse {#pulse}
-
-```pulse dinis
 ```

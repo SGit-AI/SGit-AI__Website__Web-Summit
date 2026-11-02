@@ -28,32 +28,32 @@ summary: The one page for the Web Summit 2026 team. Find your name, open your br
 - **By Saturday (7 Nov): the plan.** Who we meet, who is booked, who is excited to meet us, who can connect the dots, and a detailed schedule for each of us.
 - **10 to 12 Nov: the summit.** Our stand day is Thursday 12.
 
-## Get connected: the levels {#levels}
+## Get connected: the workflow {#levels}
 
-The first priority for everyone. Your agent records your level in `people/<you>/onboarding.json`; the table below is built from those files.
+The first priority for everyone, in this order. Where you are is on [the setup leaderboard](../team/setup/index.html), worked out from what you have done: the steps you do by hand go in `people/<you>/onboarding.json` (your agent writes it), and the rest the site sees for itself.
 
 | Level | What it means |
 |---|---|
-| **L0** | Not connected. |
-| **L1** | A dedicated Claude account (or a dedicated project) for this work. |
-| **L2** | GitHub: you can push to [this repository](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit), and you have an email you can send from. |
-| **L3** | A PKI key registered on pki.sgit.ai, and access to the team's vaults. |
-| **L4** | A Claude session on a schedule (for example every morning). |
-| **L5** | Several agents run inside one Claude session. |
-| **L6** | Several Claude sessions, each on its own schedule. Use a separate session for each agent that runs on its own schedule, and a separate session per topic. |
+| **L1** | You are logged in to your RiskMandate Workspace email, and to the Claude team account with that email. |
+| **L2** | You have a GitHub account and can push to [this repository](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit). |
+| **L3** | Your **conductor agent** is running and has committed. |
+| **L4** | Your **dashboard agent** is running, and your agents have published their keys. |
+| **L5** | Your agents run on a schedule. |
+| **L6** | You can open the team's vaults: fully wired. |
 
 ```onboarding all
 ```
 
 ### The steps, for you and your agent {#steps}
 
-1. **Claude (L1).** A dedicated Claude account or project. Paste the prompt from your brief into a new session.
-2. **GitHub (L2).** Send your GitHub username to Dinis; accept the invitation to `SGit-AI/SGit-AI__Website__Web-Summit`. Your agent clones it (branch `dev`) and pushes its first commit: your `people/<you>/onboarding.json`.
-3. **Email (L2).** An address you can send from: your own, or a workspace account Dinis creates for you.
-4. **PKI key (L3).** Register at [pki.sgit.ai](https://pki.sgit.ai/people/how.html): a passkey, a key pair made in your browser, your GitHub account as evidence. Dinis, the anchor, verifies you. Commit your public bundle (never the private key) as `people/<you>/key.json`. Each of your agents makes its own key with [pki-agent](https://pki.sgit.ai/agents/pki-agent.mjs) (`node pki-agent.mjs keygen --name "<agent>@web-summit.<you>"`) and links to yours (`node pki-agent.mjs operator <your fingerprint>`).
-5. **Vaults (L3).** Dinis seals the team's vault keys to your key; you open them with your key. The private vault holds what can't be public (meetings, contacts).
-6. **A schedule (L4).** One scheduled session that pulls the repository each morning, reads your dashboard and the board, asks you for your pulse, and tells you what is waiting on you.
-7. **More agents (L5, L6).** Name them by the convention, run them as sub-agents first, then give each scheduled agent its own session.
+1. **Workspace email (L1).** Log in to the RiskMandate Google Workspace account Dinis made for you. Its agent alias is where invitations and your agents' mail arrive. This is how the stand-up invites reach you.
+2. **Claude (L1).** Log in to the Claude team account with that same email. Open a new session for each agent you start.
+3. **GitHub (L2).** Create a GitHub account with your Workspace email, send Dinis the username, and accept the invitation to `SGit-AI/SGit-AI__Website__Web-Summit`. Your agents push with it.
+4. **Your conductor agent (L3).** In a new Claude session, paste the prompt from your brief. It is `conductor@web-summit.<you>`: it runs your other agents, keeps `people/<you>/` (your onboarding, `agents.json`, your dashboard's own part), and its first commit puts you at L3.
+5. **Your dashboard agent (L4).** In another session, start `dashboard@web-summit.<you>` with the prompt on [the agents page](../agents/index.html#dashboard-agent). It keeps your dashboard, the page you read first, from [the templates](../dashboards/index.html), and asks you what you want on it.
+6. **Agent keys (L4).** Each agent makes its own key in its own session and publishes only the public half: `node pki-agent.mjs keygen --session` ([the tool](https://pki.sgit.ai/agents/pki-agent.mjs)), then an entry for it on the keys page (`data/keys.json`), committed by that agent. The push to this repository is its authorisation; the private half never leaves the session. No browser and no website registration needed.
+7. **A schedule (L5).** Give your conductor and dashboard agents a scheduled task that fires into their own session (for example 07:30, 12:30 and 17:30, before each stand-up).
+8. **The vaults (L6).** The sgit agent seals the team's vault keys to your agents' keys; your agent opens them. The private vault holds what cannot be public (meetings, contacts).
 
 ## How we work {#how}
 
