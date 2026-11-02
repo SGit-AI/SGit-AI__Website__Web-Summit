@@ -28,7 +28,7 @@ for try in 1 2 3; do
   if [[ "$SUBJECT" =~ ^site\ v[0-9]+\.[0-9]+\.[0-9]+: ]] && [ "$(git log -1 --format=%an)" = 'GitHub Actions' ]; then
     echo "the head is already a CI release ($SUBJECT); nothing new to release"; exit 0
   fi
-  AGENT=$(git log -1 --format='%(trailers:key=Agent,valueonly,separator=%x2C )' | head -1)
+  AGENT=$(git log -1 --format=%B | grep -m1 '^Agent: ' | sed 's/^Agent: //' || true)
   LAST_TAG=$(git tag --list 'v*' | sort -V | tail -1); LAST_TAG=${LAST_TAG:-v0.0.0}
   FILE=$(cat admin/build/version.txt 2>/dev/null || echo v0.0.0)
   LAST=$(printf '%s\n%s\n' "$LAST_TAG" "$FILE" | sort -V | tail -1)
