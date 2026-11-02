@@ -1,7 +1,7 @@
 # Deploys web-summit.sgit.ai to GitHub Pages, in the order the other SGit sites use:
 # validate → tag → deploy.
 #
-#   1. validate    — admin/build/validate.js: structure, links, version agreement, canonical host,
+#   1. validate    — builds (admin/build/build.mjs; generated output is never committed), then admin/build/validate.js: structure, links, version agreement, canonical host,
 #                    agent block, signed articles, key-leak tripwire. A failure stops everything: no tag,
 #                    no publish. Also runs on pull requests.
 #   2. tag-release — owned by admin/build/tag_release.sh.
@@ -35,6 +35,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Build the site (generated output is never committed)
+        run: node admin/build/build.mjs
       - name: Validate the site
         run: node admin/build/validate.js
 
@@ -68,10 +70,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Build the site
+        run: node admin/build/build.mjs
       - name: Assemble site artifact
         run: |
           mkdir -p /tmp/site
-          rsync -a ./ /tmp/site/ --exclude '.git' --exclude '.github' --exclude '.sg_vault' --exclude 'content' --exclude 'admin/build'
+          rsync -a ./ /tmp/site/ --exclude '.git' --exclude '.github' --exclude '.sg_vault' --exclude 'content' --exclude 'admin/build' --exclude '.generated.txt'
       - uses: actions/configure-pages@v5
         with:
           enablement: true

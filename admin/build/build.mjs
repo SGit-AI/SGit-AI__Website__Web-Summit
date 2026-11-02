@@ -23,7 +23,10 @@ const personOf = rel => { const m = rel.match(/^(?:brief-([a-z0-9-]+)|people\/([
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 const slug = s => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
-const write = (rel, text) => { const f = path.join(ROOT, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, text) }
+// everything written here is generated: gitignored, built by CI, never committed; the list goes to .generated.txt for the gate
+const GENERATED = new Set()
+const write = (rel, text) => { GENERATED.add(rel); const f = path.join(ROOT, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, text) }
+process.on('exit', code => { if (code === 0) fs.writeFileSync(path.join(ROOT, '.generated.txt'), [...GENERATED].sort().join('\n') + '\n') })
 
 function inline(s) {
     return esc(s)

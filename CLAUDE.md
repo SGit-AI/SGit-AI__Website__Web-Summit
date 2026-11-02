@@ -15,7 +15,7 @@ node admin/build/build.mjs      # content/ -> HTML, sitemap.xml, llms.txt, index
 node admin/build/validate.js    # the gate; must print OK
 ```
 
-Edit `content/`, never a generated page. Commit the generated output (GitHub Pages serves the tree).
+Edit `content/`, `data/`, `board/` and `people/`, never a generated page. Generated output is **never committed**: it is gitignored, CI builds it, validates it and deploys it as the Pages artifact (WS-83). A release commit changes only sources plus `version.txt` and `versions.json`.
 
 ## Articles
 

@@ -109,13 +109,13 @@ for (const f of files.filter(f => /^articles\/[^/]+\.html$/.test(rel(f)) && rel(
     } catch { errors.push(`${md}.sig: not JSON`) }
 }
 
-// 9. generated pages are current: rebuild into the same tree and see whether git sees a change
+// 9. the build touches no tracked file: generated output is gitignored and built by CI, never committed
 try {
     const snap = () => execFileSync('git', ['diff', 'HEAD', '--stat'], { cwd: ROOT }).toString() + execFileSync('git', ['status', '--porcelain'], { cwd: ROOT }).toString()
     const before = snap()
     execFileSync('node', [path.join(__dirname, 'build.mjs')], { cwd: ROOT, stdio: 'pipe' })
     const after = snap()
-    if (before !== after) errors.push('generated pages are stale: run node admin/build/build.mjs and commit the result')
+    if (before !== after) errors.push('build.mjs changed a tracked file: generated output must be gitignored and never committed (see .gitignore)')
 } catch (e) { errors.push(`build.mjs failed: ${e.message}`) }
 
 // 12. twins, llms.txt and orphans
@@ -144,9 +144,11 @@ for (const f of htmlFiles) {
     if (/#[0-9a-fA-F]{3,8}\b|\brgba?\(|\bhsla?\(/.test(outside)) errors.push('assets/site.css: a literal colour outside the tokens block')
 }
 
-// 10. nothing the site needs is gitignored (CI only sees what git tracks; this broke the first release)
+// 10. no source file is gitignored (CI only sees what git tracks; this broke the first release); generated files are, on purpose
 try {
-    const ignored = execFileSync('git', ['check-ignore', '--no-index', ...files.map(rel)], { cwd: ROOT }).toString().split('\n').filter(Boolean)
+    const gen = new Set((fs.existsSync(path.join(ROOT, '.generated.txt')) ? read('.generated.txt') : '').split('\n').filter(Boolean).concat(['.generated.txt']))
+    const sources = files.map(rel).filter(f => !gen.has(f))
+    const ignored = execFileSync('git', ['check-ignore', '--no-index', ...sources], { cwd: ROOT }).toString().split('\n').filter(Boolean)
     for (const f of ignored) errors.push(`${f}: is gitignored, so CI will not have it`)
 } catch (e) { if (e.status !== 1) errors.push(`git check-ignore failed: ${e.message}`) }
 
