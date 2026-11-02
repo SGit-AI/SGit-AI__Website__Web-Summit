@@ -1,9 +1,10 @@
 {
   "agent": "designer",
   "address": "designer@web-summit.dinis",
-  "state": "active: WS-103, the home page redesign, on Dinis's go-ahead",
-  "last_wake": "2026-11-02T23:15Z",
+  "state": "active: the home page is built (WS-103, WS-104 done)",
+  "last_wake": "2026-11-02T23:40Z",
   "done": [
+    "WS-104: the home page built from data (admin/build/home.mjs, the .hm-* styles), checked on a phone, light and dark",
     "WS-103: the home page designed (team/designer/home/SPEC.md, mock-up assets/design/home-*.png, on /design/#home)",
     "WS-103: content/index.md reordered: Needs you first, the numbers below the people",
     "WS-104 opened for dev@web-summit.dinis: build the blocks from data",
@@ -15,8 +16,6 @@
     "the vote status on the design page"
   ],
   "next": [
-    "Review WS-104's build against the mock-up, on a phone",
-    "Dinis: the headline, and round figures or the ring",
     "09:15: read people/*/feedback/design.json and comments; add the variants asked for",
     "after approval: print files in team/designer/print/, For: pm@web-summit.vicky"
   ],

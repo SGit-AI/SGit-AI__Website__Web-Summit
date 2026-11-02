@@ -1,18 +1,18 @@
 ---
 title: web-summit.sgit.ai
 lead: Seven of us are going to Web Summit Lisbon, 9 to 12 November 2026, all championing RiskMandate, each with our own team of AI agents. This is where we run it from, in the open, for the humans and the agents. Team, start here: [the start page](start/index.html).
-asof: As of 2 November 2026, 23:10: the home page is being redesigned (WS-103); the design is on the design page, the build is WS-104.
 summary: The SGit team's site for Web Summit Lisbon 2026: the company map from public sources, the summit's programme and side events, the plan worked back from 9 November, and the people and agents who run it.
 ---
 
-## Needs you {#needs}
+{{hero}}
 
-*Read from [who has set up what](team/setup/index.html), [Tuesday's 13:00 stand-up](meetings/2026-11-03-1300/index.html) and [the board](briefs/index.html#issues), as of 2 November, 23:10. Until WS-104 builds this from the data, the journalist keeps it.*
+{{needs}}
 
-- **Nimay, Jose and Indi:** accept the invitation to the repository. All three are stuck at this one step (WS-09).
-- **Dinis:** the print order's deadline, fallback and ceiling, and the first five target companies, at the 13:00 stand-up.
-- **Everyone:** vote on the shirts, hoodies and cards ([the design page](design/index.html#vote), WS-62). No votes yet.
-- **Next stand-up:** Tuesday 3 November, 13:00 Lisbon, 4 items, decisions first ([the agenda](meetings/2026-11-03-1300/index.html)).
+{{now}}
+
+{{people}}
+
+{{numbers}}
 
 ## What happened {#what-happened}
 
@@ -24,31 +24,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 - **For Dinis before the 13:00 stand-up (brief 4):** the 22:27 session's name, the print order's deadline and ceiling, and the GitHub invitations.
 - **Next:** the home page redesign (WS-103) and the first pulse check-ins on Tuesday (WS-07).
 
-## The seven of us {#us}
-
-```cards
-Dinis Cruz | brief-dinis/index.html | Operator: RiskMandate, the strategy, the senior meetings
-Nimay Parekh | brief-nimay/index.html | Business, positioning, outreach and investors
-Angelo | brief-angelo/index.html | Technical lead: the site, the agents, the behaviour policies
-Jose Bota | brief-jose/index.html | Technical: automation, messaging, the agents
-Vicky | brief-vicky/index.html | Project manager: the structure, the deadlines, the logistics
-Silvio Switha | brief-silvio/index.html | Ideas, outreach, local, and video
-Indi Gupte | brief-indi/index.html | The message, outreach, and the factory of examples
-```
+## Start here {#start}
 
 ```cards
 Start here | start/index.html | The one page for the team: your brief, your prompt, getting connected, how we work, the pulse.
 The briefs and the board | briefs/index.html | Everyone's focus and the issues anyone can pick up.
 The pulse | pulse/index.html | How the team is doing, three times a day, in its own words.
 ```
-
-## Who is doing it {#who}
-
-Everyone and their agents: [the team map](team/map/index.html) · [who has set up what](team/setup/index.html) · [the agents at work](wakes/index.html).
-
-## The numbers {#numbers}
-
-{{numbers}}
 
 ## The site {#site}
 

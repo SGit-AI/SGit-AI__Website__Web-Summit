@@ -1,6 +1,6 @@
 # The home page, redesigned (WS-103): the design
 
-By designer@web-summit.dinis, 2 November 2026, on Dinis's go-ahead (23:10 UTC, in this agent's session). The build work is WS-104, for dev@web-summit.dinis. The mock-up is `assets/design/home-phone.png` and `assets/design/home-desktop.png`, made by `team/designer/mockups/make-home-mock.mjs`, and shown on the design page (https://web-summit.sgit.ai/design/#home).
+By designer@web-summit.dinis, 2 November 2026, on Dinis's go-ahead (23:10 UTC, in this agent's session). **Built** the same night by designer@web-summit.dinis, on Dinis's word to implement it (WS-104): `admin/build/home.mjs`, the `.hm-*` styles in `assets/site.css`, and the placeholders in `content/index.md`. Dinis kept the headline, and the figures as agreed: round for people, square for agents. The mock-up is `assets/design/home-phone.png` and `assets/design/home-desktop.png`, made by `team/designer/mockups/make-home-mock.mjs`, and shown on the design page (https://web-summit.sgit.ai/design/#home).
 
 ## The job of the page
 
@@ -17,7 +17,7 @@ Every number and every line is read from data on each build; none is typed. The 
 | 3 | **Next stand-up** | One bar: the time, the day, how many items, "decisions first". Links to the meeting page. | `data/meetings/schedule.json` and the next meeting's folder |
 | 4 | **Happening now** | The journalist's latest three lines, the time and the link to the full report, and the drawings of the agents who did the work (the agents named in those lines, else the agents with commits since the previous report). | The newest `content/reports/*.md` (its "What happened" list), `data/cast.json`, `cast.mjs agentFigure` |
 | 5 | **Who is doing it** | The core seven drawn (`humanFigure`, round, in their merch colour), each with a level bar in their colour, `L<n> · <k> agents`, and a link to their page. Mood from their level: happy at L3 and above, worried below, so the stuck read at a glance. 4 across on a phone, 7 on a wide screen. Under it, links to the team map and the setup page. | `data/design.json` (colours), `onboarding.mjs` (level, agents running) |
-| 6 | **The numbers** | Four tiles, not eleven: issues open (of the total), stand-up items waiting, design votes in (of 7), and one more that matters this week (today: printers replied, from procurement). Each tile links to its page. The eleven move to `/everything/`. | `board/`, `data/meetings/`, `people/*/feedback/design.json`, procurement's data |
+| 6 | **The numbers** | Four tiles, not eleven: issues open (of the total), stand-up items waiting, design votes in (of 7), and one more that matters this week (as built: decisions waiting on the plan; printers replied has no data file yet). Each tile links to its page. The eleven move to `/everything/`. | `board/`, `data/meetings/`, `people/*/feedback/design.json`, procurement's data |
 | 7 | **Then** | "What happened" (the journalist's section, as now), the site cards, how we work, the sources: as they are today. | `content/index.md` |
 
 ## Rules
@@ -43,7 +43,7 @@ Fences in `content/index.md`, expanded in `expandIssues` like the others, so the
 {{numbers}}   (reduced to the four)
 ```
 
-## Open, for Dinis
+## Decided by Dinis
 
-- The headline: "Seven of us. Our agents. One RiskMandate." is a proposal.
-- Round figures or the ring style for the seven (the cast page's recommendation: ring for anything small).
+- The headline: "Seven of us. Our agents. One RiskMandate."
+- Round figures for the people, square (a screen for a head) for the agents, so the two read apart.

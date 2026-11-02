@@ -97,13 +97,13 @@ A card for each of the seven, to check your name, colour and line: [C1 for every
 
 ## The home page, redesigned (WS-103) {#home}
 
-Dinis asked on 2 November for a home page that answers, for a person on the team and on a phone, **what needs me, what is happening now, and who is doing it**, in under ten seconds. The design, approved by Dinis at 23:10 UTC: a hero band in the Ultimate Insider's style with three live numbers, then "Needs you" (the asks, grouped, each with its issue), the next stand-up, "Happening now" (the journalist's latest lines and the agents who did the work), the seven drawn in their colours with their level, and four numbers instead of eleven. The mock-up's figures and numbers are a snapshot of v0.1.100; on the site every one is read from data. The dev agent builds it (WS-104); the spec, block by block with where each number comes from, is `team/designer/home/SPEC.md`.
+Dinis asked on 2 November for a home page that answers, for a person on the team and on a phone, **what needs me, what is happening now, and who is doing it**, in under ten seconds. The design, approved by Dinis at 23:10 UTC: a hero band in the Ultimate Insider's style with three live numbers, then "Needs you" (the asks, grouped, each with its issue), the next stand-up, "Happening now" (the journalist's latest lines and the agents who did the work), the seven drawn in their colours with their level, and four numbers instead of eleven. The mock-up's figures and numbers are a snapshot of v0.1.100; on the site every one is read from data. Built on 2 November and live on [the home page](../index.html) (WS-104); the spec, block by block with where each number comes from, is `team/designer/home/SPEC.md`.
 
 | Phone | Wide screen |
 |---|---|
 | [![The home page on a phone](../assets/design/home-phone.png)](../assets/design/home-phone.png) | [![The home page on a wide screen](../assets/design/home-desktop.png)](../assets/design/home-desktop.png) |
 
-Open for Dinis: the headline ("Seven of us. Our agents. One RiskMandate." is a proposal), and round figures or the ring style for the seven.
+Decided by Dinis: the headline, "Seven of us. Our agents. One RiskMandate.", and round figures for the people with square ones for the agents, so the two read apart.
 
 ## Open questions {#open}
 
