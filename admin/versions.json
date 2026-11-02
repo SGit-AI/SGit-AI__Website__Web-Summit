@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.93",
+    "date": "2026-11-02",
+    "what": "brief 4 (the agents ran on their own; three decisions for the morning)",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.92",
     "date": "2026-11-02",
     "what": "the article on how we brief the humans (the PDF briefs and the stand-up briefings, with examples), and every person's conductor now briefs its person",
