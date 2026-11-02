@@ -1,6 +1,6 @@
-# Indi Gupte: Selling websites and agent setups, one-off
+# Indi Gupte: The message, outreach, and the factory of examples
 
-Sell websites and agentic setups as one-off jobs, starting with Daniela. Brief and agents' instructions: [Brief for Indi](../../brief-indi/index.html).
+Make sure the message makes sense everywhere, and build the examples we send to every company we go for. Brief: [Brief for Indi](../../brief-indi/index.html); dashboard: [Indi's dashboard](../../people/indi/index.html).
 
 Site version: v0.1.27
 

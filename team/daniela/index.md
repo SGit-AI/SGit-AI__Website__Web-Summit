@@ -1,6 +1,6 @@
-# Daniela: The first friendly: an agentic team for Daniela's teaching (works with the team; not one of the seven)
+# Daniela: The first friendly: an agentic team for Daniela's teaching
 
-Find the students who aren't finding Daniela today, with an agentic team that runs the work around the teaching. Brief and agents' instructions: [Brief for Daniela](../../brief-daniela/index.html).
+Show what an agentic team under behaviour policies does for one expert: Daniela's teaching, and the students who aren't finding Daniela yet. Brief: [Brief for Daniela](../../brief-daniela/index.html); dashboard: [Daniela's dashboard](../../people/daniela/index.html).
 
 Site version: v0.1.27
 

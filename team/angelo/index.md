@@ -1,6 +1,6 @@
-# Angelo: Business for Angelo's consultancy
+# Angelo: Technical lead: the site, the agents, the behaviour policies
 
-Come home from Web Summit with clients for the consultancy. Brief and agents' instructions: [Brief for Angelo](../../brief-angelo/index.html).
+Make the setup work for everyone: the site, GitHub, the agents, and a behaviour policy for every agent and person. Brief: [Brief for Angelo](../../brief-angelo/index.html); dashboard: [Angelo's dashboard](../../people/angelo/index.html).
 
 Site version: v0.1.27
 

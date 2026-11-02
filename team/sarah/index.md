@@ -1,6 +1,6 @@
-# Sarah: Designer: the shirts, hoodies, cards and flyer (works with the team; not one of the seven)
+# Sarah: Designer: the shirts, hoodies, cards and flyer
 
-Design the things that make people at the summit want to talk to us, with as little of Sarah's time as possible. Brief and agents' instructions: [Brief for Sarah](../../brief-sarah/index.html).
+Design what makes people at the summit want to talk to us about RiskMandate, with as little of Sarah's time as possible. Brief: [Brief for Sarah](../../brief-sarah/index.html); dashboard: [Sarah's dashboard](../../people/sarah/index.html).
 
 Site version: v0.1.27
 

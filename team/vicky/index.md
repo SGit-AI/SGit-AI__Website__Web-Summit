@@ -1,6 +1,6 @@
-# Vicky: A job: the right employer at the summit
+# Vicky: Project manager: the structure, the deadlines, the logistics
 
-Leave Web Summit with a job, or with the conversations that lead to one. Brief and agents' instructions: [Brief for Vicky](../../brief-vicky/index.html).
+Keep the team on one plan: the structure, the deadlines, the logistics and everyone's schedule. Brief: [Brief for Vicky](../../brief-vicky/index.html); dashboard: [Vicky's dashboard](../../people/vicky/index.html).
 
 Site version: v0.1.27
 

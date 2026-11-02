@@ -2,6 +2,10 @@
 
 Where a brief was wrong, what was found, and what was done instead. The briefs themselves are never edited to look right afterwards. Newest first. Format: date, brief, what it said, what is true, what was done.
 
+- **2026-11-02, brief 4.** Agent names were `conductor.N@web-summit`. The operator: `<agent>@web-summit.<person>`. The conductor is now `conductor@web-summit.dinis`; the gate's leak check knows the convention.
+- **2026-11-02, brief 4 and CLAUDE.md.** CLAUDE.md said pki.sgit.ai keys were paused (28 Oct). The operator: everyone registers a PKI key. CLAUDE.md updated.
+- **2026-11-02, brief 4.** Brief 3 read as each person with their own aim, the merch sponsor first for Silvio. The operator: everyone champions RiskMandate; the sponsor is a side quest. The briefs were rewritten and the sponsor brief moved to `/merch-sponsor/`.
+
 - **2026-11-02, brief 3 (the transcript).** Spelled the names Nime, Angela and India, and v0.1.26 counted Daniela and Sarah among the seven. The operator: the seven are Dinis Cruz, Silvio Switha, Nimay Parekh, Vicky, Jose Bota, Angelo and Indi Gupte. Pages renamed (`/brief-nimay/`, `/brief-angelo/`, `/brief-indi/`, new `/brief-jose/`); Sarah and Daniela listed as working with the team.
 
 - **2026-11-02, brief 3.** Read as several shirts each, about 20 each. The operator: 3 T-shirts per participant. The plan says 3 each.

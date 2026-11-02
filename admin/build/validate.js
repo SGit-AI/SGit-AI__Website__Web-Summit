@@ -180,7 +180,7 @@ try {
     }
 }
 
-// 15. public forever: no email address, phone number or key shape in comms/, data/ or team/ (admin/tools/comms_check.mjs)
+// 15. public forever: no email address, phone number or key shape in comms/, data/, team/, people/ or board/ (admin/tools/comms_check.mjs)
 try { execFileSync('node', [path.join(__dirname, '..', 'tools', 'comms_check.mjs')], { cwd: ROOT, stdio: 'pipe' }) }
 catch (e) { errors.push(`comms_check: ${(e.stdout || '').toString()}${(e.stderr || '').toString()}`.trim()) }
 

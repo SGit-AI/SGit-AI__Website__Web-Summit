@@ -8,6 +8,7 @@ Status: both briefs accepted by the operator, who asked on 1 November 2026 for "
 |---|---|---|---|
 | 1 | A brief for the Web Summit team | 2026-10-30 (v1.1.0) | https://newsroom.sgit.ai/articles/web-summit-team-brief.html |
 | 2 | The Web Summit team, part two: the humans and their agents | 2026-10-31 | https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html |
+| 4 | How we operate: everyone on RiskMandate, set up the team first, the roles, the levels, the pulse | 2026-11-02 | The operator's guidance to the conductor in its session, paraphrased below. |
 | 3 | The strategy conversation: sell for everyone, show it in their world, shirts that start conversations | 2026-11-01 | A recorded conversation between the operator and team members, handed to conductor.3@web-summit in its session. Not published: it names people who have not said yes. Paraphrased below. |
 
 Also read: [Web Summit 2026, the plan](https://newsroom.sgit.ai/articles/web-summit-2026-the-plan.html), 26 October 2026.
@@ -39,6 +40,24 @@ From a transcript the operator handed over in the session. Only the operator is 
 - **The stand is on the 12th.** Everyone met on the 10th and 11th should be primed to come to the stand, book a meeting or scan a QR.
 - **Agent-sent outreach as the demo.** Agents map the brief and send the email; a person follows up. If the email works and is not spooky, the reply "can I have that?" is a lead for a team member's service (from £500 to £10k was said). A "no" is a signal too.
 - **Timeline.** Mon 2 and Tue 3 Nov: nail it all down. Wed 4: a plan, a mapping and the agents. Thu 5: a team member arrives. By Thu 5 or Fri 6: about 20 meetings booked with people primed to meet us. Fri 6 and Sat 7: decide what we do in each meeting: "here is the stuff, here is how you buy it".
+
+## Brief 4: how we operate, the operator's guidance of 2 November 2026 (paraphrased by the conductor)
+
+- **We are all RiskMandate.** Everyone champions it; the side objectives (sponsors, jobs, other businesses) come through it. Laser focus now on the messaging, the alignment and the work for the summit.
+- **Set up the team first, in two or three days**, like non-functional requirements: everyone connected, the workflow, the ideas, lots of brainstorming, the execution, everyone aligned, the agents and the loops running on a natural schedule. By **Thursday**, the targets and a big outreach (Thursday and Friday); by **Saturday**, the plan: the schedule, who we meet, who is booked, who is excited, who can connect the dots, a detailed schedule for each person. Leverage every connection.
+- **The website is the centre**, for the humans and the agents. Everyone has a big list of tasks, can tag-team and pick up each other's, and briefs their own agents. Everyone brings an agentic team.
+- **First priority: everyone connected.** Levels: not connected; a dedicated Claude account; a Claude session on a schedule; several agents in one session; several Claude sessions on schedules (separate sessions for agents on different schedules, and recommended per topic). A checklist per person by tomorrow: Claude, GitHub (added to the repository, so everyone commits), an email they can send from (workspace accounts where needed), a PKI key registered (with their GitHub), access to the vaults.
+- **One page to send by WhatsApp**, linking to everyone's instructions and prompts.
+- **Issues-FS and Email-FS for now**, and commit messages as the way agents talk to each other.
+- **Names:** `<agent>@web-summit.<person>`, e.g. `conductor@web-summit.dinis`; `web-summit`, with the hyphen.
+- **One repository for now**, everyone committing all the time, so it has to be efficient and CI fast; split later if needed.
+- **Articles and regular updates:** a journalist agent keeps the home page and the flows, and reports what happened every two hours. For now the home page is the seven of us. The conductor lists the agentic team to run on a schedule in the operator's account.
+- **The pulse:** at least daily (start, middle and end of the day), each person's agent interviews them: their understanding, blockers, what we should be doing, what works and what doesn't, ideas, how they feel. Public. Later the same for the agents, and a conductor of conductors.
+- **Encrypted materials on the site**, readable only by named team members' keys (e.g. a vault access key for the week): an experiment.
+- **Billing:** every site we make has the same billing element as newsroom.sgit.ai.
+- **Observability lanes** on the site: who visits, what they see.
+- **Each person's own dashboard**, the page they see when they wake up, which they change as they like; the best ideas go into the main page.
+- **The people:** Nimay: business positioning, strategy, outreach, the people to meet, investors, the site's positioning content, demos; meets the hot leads with Dinis; has meetings booked (a private vault for now); little time, so help Nimay and Nimay's agent, and ask for ideas. Angelo: the most technical after Dinis; the dev agents, GitHub, helping everyone with setup, the advanced cases (Daniela's site, hosting Silvio's videos), behaviour policies for every agent and person (secure harness policies later), the conductor of conductors. Jose Bota: technical, in one bucket with Angelo, the two choosing between them; a WhatsApp flow in n8n (a number in the team group to broadcast?), and the RiskMandate Slack. Vicky: project manager: the structure, the logistics (printing, deadlines), the meta-tasks, alignment; agents that do project management and build mini tools. Silvio: ideas, local contacts and a doer in the Algarve (ads, printing), videos (a pipeline to YouTube and Instagram), a powerful agentic team and advanced project-management workflows to leverage, outreach (which companies, the messaging, following every contact). Indi: joins Thursday, remote until then: the message makes sense, outreach, the vaults and examples for every company we go for (a factory people pick from), with Daniela the website, onboarding and learning environment.
 
 ## The operator's words to conductor.3@web-summit, 1 November 2026 (paraphrased)
 

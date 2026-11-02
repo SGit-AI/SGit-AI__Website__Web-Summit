@@ -9,7 +9,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../.
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
 const VERSION = fs.readFileSync(path.join(ROOT, 'admin/build/version.txt'), 'utf8').trim()
 const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
-const NAV = [['Briefs', 'briefs/index.html'], ['Companies', 'companies/index.html'], ['Summit', 'summit/index.html'], ['Plan', 'plan/index.html'], ['Team', 'team/index.html'], ['Log', 'log/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['About', 'about/index.html'], ['Versions', 'admin/versions.html']]
+const NAV = [['Start', 'start/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Companies', 'companies/index.html'], ['Summit', 'summit/index.html'], ['Plan', 'plan/index.html'], ['Team', 'team/index.html'], ['Log', 'log/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['About', 'about/index.html'], ['Versions', 'admin/versions.html']]
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 const slug = s => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
@@ -173,31 +173,71 @@ const NUMBERS = [
 const NUMBERS_HTML = (up = '') => `<div class="stats">${NUMBERS.map(([n, t, h]) => `<a class="stat card" href="${up}${h}"><b>${n}</b><span>${t}</span></a>`).join('')}</div>`
 const NUMBERS_MD = NUMBERS.map(([n, t]) => `- ${n} ${t}`).join('\n')
 
-// the issues board: data/issues.json, expanded wherever a page has a fence: ```issues <member id | all>``` then ```
-const ISSUES = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/issues.json'), 'utf8'))
+// the board: board/<id>-<slug>.md, one file per issue (front matter: id, title, for, due, status, picked_by, area, agents;
+// the body says what done looks like). One file each, so many people and agents can pick up issues without
+// colliding. Expanded wherever a page has a fence: ```issues <member id | all | area:<area>>``` then ```
+const BOARD_DIR = path.join(ROOT, 'board')
+const ISSUES = { issues: (fs.existsSync(BOARD_DIR) ? fs.readdirSync(BOARD_DIR).filter(f => /^WS-\d+.*\.md$/.test(f)).sort() : []).map(f => {
+    const { meta, body } = parse(fs.readFileSync(path.join(BOARD_DIR, f), 'utf8'))
+    const split = v => (v || '').split(',').map(x => x.trim()).filter(Boolean)
+    return { ...meta, file: f, for: split(meta.for), done: body.trim().replace(/\n+/g, ' ') }
+}) }
 const isCore = id => !!(teamData.members.find(m => m.id === id) || {}).core
 const memberName = id => (teamData.members.find(m => m.id === id) || {}).name || id
 const issuesMd = who => {
-    const rows = ISSUES.issues.filter(x => who === 'all' || x.for.includes(who) || (isCore(who) && (x.for.includes('everyone') || x.for.includes('anyone'))))
-    if (!rows.length) return 'No issues for this member yet.'
-    const cell = v => String(v).replace(/\|/g, '/').replace(/\n/g, ' ')
+    const rows = ISSUES.issues.filter(x => who === 'all' || (who.startsWith('area:') ? x.area === who.slice(5) : (x.for.includes(who) || (isCore(who) && (x.for.includes('everyone') || x.for.includes('anyone'))))))
+    if (!rows.length) return 'No issues here yet.'
+    const cell = v => String(v || '').replace(/\|/g, '/')
+    const who2 = f => f === 'everyone' ? 'everyone' : f === 'anyone' ? 'anyone' : `[${memberName(f)}](${UP}brief-${f}/index.html)`
     return ['| Issue | What, and what done looks like | For | Due | Status |', '|---|---|---|---|---|',
-        ...rows.map(x => `| **${x.id}** | **${cell(x.title)}.** ${cell(x.done)}${x.agents ? ` Agents: ${cell(x.agents)}` : ''} | ${x.for.map(f => f === 'everyone' ? 'everyone' : f === 'anyone' ? 'anyone' : `[${memberName(f)}](../brief-${f}/index.html)`).join(', ')} | ${cell(x.due)} | ${cell(x.status)}${x.picked_by ? `: ${cell(x.picked_by)}` : ''} |`)].join('\n')
+        ...rows.map(x => `| **${x.id}** | **${cell(x.title)}.** ${cell(x.done).replace(/\]\(\.\.\//g, `](${UP}`)}${x.agents ? ` *Agents:* ${cell(x.agents)}` : ''} | ${x.for.map(who2).join(', ')} | ${cell(x.due)} | ${cell(x.status)}${x.picked_by ? `: ${cell(x.picked_by)}` : ''} |`)].join('\n')
 }
-const expandIssues = body => body.replace(/```issues ([a-z0-9-]+)\n```/g, (_, who) => issuesMd(who))
+// onboarding: people/<id>/onboarding.json, kept by each person's agent; ```onboarding <id | all>```
+const LEVELS = ['L0 not connected', 'L1 a dedicated Claude account', 'L2 GitHub, the repository and email', 'L3 a PKI key and vault access', 'L4 a Claude session on a schedule', 'L5 several agents in one session', 'L6 several Claude sessions on schedules']
+const STEPS = [['claude', 'Claude'], ['github', 'GitHub'], ['repo', 'Can push'], ['email', 'Email'], ['pki', 'PKI key'], ['vault', 'Vaults'], ['schedule', 'Scheduled'], ['multi', 'Several sessions']]
+const onboard = id => { const f = path.join(ROOT, 'people', id, 'onboarding.json'); return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : { level: 0, steps: {} } }
+const PEOPLE = () => teamData.members.filter(m => m.kind === 'human')
+const onboardingMd = who => {
+    const ms = PEOPLE().filter(m => who === 'all' || m.id === who)
+    return ['| Person | Level | ' + STEPS.map(s => s[1]).join(' | ') + ' | Updated |', '|---|---|' + STEPS.map(() => '---|').join('') + '---|',
+        ...ms.map(m => { const o = onboard(m.id); return `| [${m.name}](${UP}people/${m.id}/index.html) | ${LEVELS[o.level || 0]} | ${STEPS.map(([k]) => o.steps?.[k] || 'not yet').join(' | ')} | ${o.updated || 'never'} |` })].join('\n')
+}
+// the pulse: people/<id>/pulse/<YYYY-MM-DD>-<morning|midday|evening>.md, written by the person or their agent; ```pulse <id | all>```
+const PULSE = () => PEOPLE().flatMap(m => { const d = path.join(ROOT, 'people', m.id, 'pulse'); return fs.existsSync(d) ? fs.readdirSync(d).filter(f => f.endsWith('.md')).map(f => ({ id: m.id, name: m.name, f, text: fs.readFileSync(path.join(d, f), 'utf8') })) : [] }).sort((a, b) => b.f.localeCompare(a.f))
+const pulseMd = who => {
+    const es = PULSE().filter(e => who === 'all' || e.id === who).slice(0, who === 'all' ? 40 : 10)
+    if (!es.length) return 'No check-ins yet.'
+    return es.map(e => `### ${e.name}, ${e.f.replace(/\.md$/, '')}\n\n${e.text.replace(/^---[\s\S]*?---\n/, '').trim().replace(/^#+ /gm, '')}`).join('\n\n')
+}
+let UP = '../'
+const expandIssues = (body, up = '../') => { UP = up; return body
+    .replace(/```issues ([a-z0-9:-]+)\n```/g, (_, w) => issuesMd(w))
+    .replace(/```onboarding ([a-z0-9-]+)\n```/g, (_, w) => onboardingMd(w))
+    .replace(/```pulse ([a-z0-9-]+)\n```/g, (_, w) => pulseMd(w)) }
 
 // plain pages: content/index.md -> index.html, content/<name>.md -> <name>/index.html
 for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWith('.md'))) {
     const raw = fs.readFileSync(path.join(ROOT, 'content', f), 'utf8')
     const { meta, body: rawBody } = parse(raw)
-    const body = expandIssues(rawBody)
-    const name = f.replace(/\.md$/, ''), rel = meta.path || (name === 'index' ? 'index.html' : `${name}/index.html`)
+    const name = f.replace(/\.md$/, ''), body = expandIssues(rawBody, name === 'index' ? '' : '../'), rel = meta.path || (name === 'index' ? 'index.html' : `${name}/index.html`)
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + render(body).replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index' }))
     pages.push({ rel, title: meta.title, description: meta.summary })
     if (name !== 'index') twin(rel, meta.title, meta.summary, body)
     if (name === 'index') write('index.md', `# ${meta.title}\n\n${meta.summary}\n\nSite version: ${VERSION}\n\n${body.trim().replace('{{numbers}}', NUMBERS_MD)}\n`)
 }
 
+
+// each person's own area: people/<id>/dashboard.md -> people/<id>/index.html (their page, kept by them and their agents)
+for (const m of teamData.members.filter(m => m.kind === 'human')) {
+    const f = path.join(ROOT, 'people', m.id, 'dashboard.md')
+    if (!fs.existsSync(f)) continue
+    const { meta, body: rawBody } = parse(fs.readFileSync(f, 'utf8'))
+    const body = expandIssues(rawBody, '../../')
+    const rel = `people/${m.id}/index.html`
+    write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel) }))
+    pages.push({ rel, title: meta.title, description: meta.summary })
+    twin(rel, meta.title, meta.summary, body)
+}
 
 // the team: data/team.json -> team/index.html (people, agents, who works with whom) and team/<id>/index.html
 const team = teamData

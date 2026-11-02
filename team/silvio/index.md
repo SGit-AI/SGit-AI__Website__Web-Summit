@@ -1,6 +1,6 @@
-# Silvio Switha: Sales: a sponsor for the team's merch, and leads for his own business
+# Silvio Switha: Ideas, outreach, local, and video
 
-One of the people going to Web Summit. Asked by the operator on 1 November 2026 to find a sponsor for the team's shirts and hoodies, with agents that scout, pitch, draft and track while he sends; every company impressed by the pitch is a lead for his own business. His brief and his agents' instructions: [Brief for Silvio and his agents](../../brief-silvio/index.html); all the briefs: [the briefs](../../briefs/index.html).
+Get things done: the outreach, the local Algarve work, and the videos that carry RiskMandate further. Brief: [Brief for Silvio](../../brief-silvio/index.html); dashboard: [Silvio's dashboard](../../people/silvio/index.html).
 
 Site version: v0.1.27
 
@@ -16,7 +16,7 @@ Kind: person. Status: briefed: card to fill.
 
 ## What they own
 
-- the merch sponsor ask (plan decision: merch-sponsor)
+- the merch sponsor ask (side quest)
 - to decide: the companies he owns on the map
 
 ## The rules they work by

@@ -1,6 +1,6 @@
-# Dinis Cruz: Editor and operator
+# Dinis Cruz: Operator: RiskMandate, the strategy, the senior meetings
 
-Sets direction, writes the briefs, operates the agents, and decides what goes to main. One of the seven going to Lisbon.
+Make RiskMandate understood, tried and bought at Web Summit, and run the team and its agents that get us there. Brief: [Brief for Dinis](../../brief-dinis/index.html); dashboard: [Dinis's dashboard](../../people/dinis/index.html).
 
 Site version: v0.1.27
 

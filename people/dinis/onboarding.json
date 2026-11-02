@@ -1,0 +1,16 @@
+{
+  "person": "dinis",
+  "level": 6,
+  "steps": {
+    "claude": "yes",
+    "github": "yes",
+    "repo": "yes",
+    "email": "yes",
+    "pki": "yes",
+    "schedule": "yes",
+    "multi": "yes",
+    "vault": "yes"
+  },
+  "updated": "2026-11-02",
+  "notes": "Dinis's account runs the team's agents."
+}

@@ -1,13 +1,13 @@
 {
-  "about": "Everyone on the team that runs Web Summit 2026, human and agent, and who works with whom. Seven people are going to Lisbon (Dinis Cruz, Silvio Switha, Nimay Parekh, Vicky, Jose Bota, Angelo and Indi Gupte), working with a designer (Sarah) and a first friendly (Daniela), each with their own agent; the team's agents work for them on a schedule. The roles come from [the team brief](https://newsroom.sgit.ai/articles/web-summit-team-brief.html) and the people from [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html). From 2 November 2026, at the operator's word, the team's members are named here (only the team uses this site, and speed matters); still no contact details, ever. Each person's brief, and the issues they can pick up: [the briefs](../briefs/index.html). Kept by the conductor.",
+  "about": "Everyone on the team that runs Web Summit 2026, human and agent, and who works with whom. Seven people are going to Lisbon (Dinis Cruz, Silvio Switha, Nimay Parekh, Vicky, Jose Bota, Angelo and Indi Gupte), working with a designer (Sarah) and a first friendly (Daniela), each with their own agent; the team's agents work for them on a schedule. The roles come from [the team brief](https://newsroom.sgit.ai/articles/web-summit-team-brief.html) and the people from [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html). From 2 November 2026, at the operator's word, the team's members are named here (only the team uses this site, and speed matters); still no contact details, ever. Everyone champions RiskMandate. Each person's brief, dashboard and the issues they can pick up: [the start page](../start/index.html) and [the briefs](../briefs/index.html). Agents are named `<agent>@web-summit.<person>`. Kept by the conductor.",
   "members": [
     {
       "id": "dinis",
       "name": "Dinis Cruz",
       "kind": "human",
-      "role": "Editor and operator",
+      "role": "Operator: RiskMandate, the strategy, the senior meetings",
       "status": "active",
-      "summary": "Sets direction, writes the briefs, operates the agents, and decides what goes to main. One of the seven going to Lisbon.",
+      "summary": "Make RiskMandate understood, tried and bought at Web Summit, and run the team and its agents that get us there. Brief: [Brief for Dinis](../../brief-dinis/index.html); dashboard: [Dinis's dashboard](../../people/dinis/index.html).",
       "owns": [
         "every editorial call: what ships, and what the site claims about the event",
         "the briefs",
@@ -40,17 +40,24 @@
           "Part two: the humans and their agents"
         ]
       ],
-      "core": true
+      "core": true,
+      "agents": [
+        "conductor@web-summit.dinis",
+        "journalist@web-summit.dinis",
+        "pulse@web-summit.dinis",
+        "security@web-summit.dinis",
+        "inbox@web-summit.dinis"
+      ]
     },
     {
       "id": "silvio",
       "name": "Silvio Switha",
       "kind": "human",
-      "role": "Sales: a sponsor for the team's merch, and leads for his own business",
+      "role": "Ideas, outreach, local, and video",
       "status": "briefed: card to fill",
-      "summary": "One of the people going to Web Summit. Asked by the operator on 1 November 2026 to find a sponsor for the team's shirts and hoodies, with agents that scout, pitch, draft and track while he sends; every company impressed by the pitch is a lead for his own business. His brief and his agents' instructions: [Brief for Silvio and his agents](../../brief-silvio/index.html); all the briefs: [the briefs](../../briefs/index.html).",
+      "summary": "Get things done: the outreach, the local Algarve work, and the videos that carry RiskMandate further. Brief: [Brief for Silvio](../../brief-silvio/index.html); dashboard: [Silvio's dashboard](../../people/silvio/index.html).",
       "owns": [
-        "the merch sponsor ask (plan decision: merch-sponsor)",
+        "the merch sponsor ask (side quest)",
         "to decide: the companies he owns on the map"
       ],
       "rules": [
@@ -68,18 +75,28 @@
       "home": [
         [
           "brief-silvio/index.html",
-          "His brief, and his agents' instructions"
+          "Their brief, and their agents' instructions"
+        ],
+        [
+          "people/silvio/index.html",
+          "Their dashboard"
         ]
       ],
-      "core": true
+      "core": true,
+      "agents": [
+        "outreach@web-summit.silvio",
+        "video@web-summit.silvio",
+        "local@web-summit.silvio",
+        "sponsor@web-summit.silvio"
+      ]
     },
     {
       "id": "nimay",
       "name": "Nimay Parekh",
       "kind": "human",
-      "role": "RiskMandate and SGit: shows them working, in each company's world",
+      "role": "Business, positioning, outreach and investors",
       "status": "briefed: card to fill",
-      "summary": "Sell RiskMandate (and SGit) by showing each company what it does for them, before and at the summit. Brief and agents' instructions: [Brief for Nimay](../../brief-nimay/index.html).",
+      "summary": "Turn RiskMandate's position into meetings, and meetings into customers and investors. Brief: [Brief for Nimay](../../brief-nimay/index.html); dashboard: [Nimay's dashboard](../../people/nimay/index.html).",
       "owns": [
         "to decide: the companies they own on the map"
       ],
@@ -99,17 +116,26 @@
         [
           "brief-nimay/index.html",
           "Their brief, and their agents' instructions"
+        ],
+        [
+          "people/nimay/index.html",
+          "Their dashboard"
         ]
       ],
-      "core": true
+      "core": true,
+      "agents": [
+        "positioning@web-summit.nimay",
+        "meetings@web-summit.nimay",
+        "leads@web-summit.nimay"
+      ]
     },
     {
       "id": "angelo",
       "name": "Angelo",
       "kind": "human",
-      "role": "Business for Angelo's consultancy",
+      "role": "Technical lead: the site, the agents, the behaviour policies",
       "status": "briefed: card to fill",
-      "summary": "Come home from Web Summit with clients for the consultancy. Brief and agents' instructions: [Brief for Angelo](../../brief-angelo/index.html).",
+      "summary": "Make the setup work for everyone: the site, GitHub, the agents, and a behaviour policy for every agent and person. Brief: [Brief for Angelo](../../brief-angelo/index.html); dashboard: [Angelo's dashboard](../../people/angelo/index.html).",
       "owns": [
         "to decide: the companies they own on the map"
       ],
@@ -129,17 +155,26 @@
         [
           "brief-angelo/index.html",
           "Their brief, and their agents' instructions"
+        ],
+        [
+          "people/angelo/index.html",
+          "Their dashboard"
         ]
       ],
-      "core": true
+      "core": true,
+      "agents": [
+        "dev@web-summit.angelo",
+        "policy@web-summit.angelo",
+        "helper@web-summit.angelo"
+      ]
     },
     {
       "id": "vicky",
       "name": "Vicky",
       "kind": "human",
-      "role": "A job: the right employer at the summit",
+      "role": "Project manager: the structure, the deadlines, the logistics",
       "status": "briefed: card to fill",
-      "summary": "Leave Web Summit with a job, or with the conversations that lead to one. Brief and agents' instructions: [Brief for Vicky](../../brief-vicky/index.html).",
+      "summary": "Keep the team on one plan: the structure, the deadlines, the logistics and everyone's schedule. Brief: [Brief for Vicky](../../brief-vicky/index.html); dashboard: [Vicky's dashboard](../../people/vicky/index.html).",
       "owns": [
         "to decide: the companies they own on the map"
       ],
@@ -159,17 +194,26 @@
         [
           "brief-vicky/index.html",
           "Their brief, and their agents' instructions"
+        ],
+        [
+          "people/vicky/index.html",
+          "Their dashboard"
         ]
       ],
-      "core": true
+      "core": true,
+      "agents": [
+        "pm@web-summit.vicky",
+        "logistics@web-summit.vicky",
+        "tools@web-summit.vicky"
+      ]
     },
     {
       "id": "daniela",
       "name": "Daniela",
       "kind": "human",
-      "role": "The first friendly: an agentic team for Daniela's teaching (works with the team; not one of the seven)",
+      "role": "The first friendly: an agentic team for Daniela's teaching",
       "status": "briefed: card to fill",
-      "summary": "Find the students who aren't finding Daniela today, with an agentic team that runs the work around the teaching. Brief and agents' instructions: [Brief for Daniela](../../brief-daniela/index.html).",
+      "summary": "Show what an agentic team under behaviour policies does for one expert: Daniela's teaching, and the students who aren't finding Daniela yet. Brief: [Brief for Daniela](../../brief-daniela/index.html); dashboard: [Daniela's dashboard](../../people/daniela/index.html).",
       "owns": [
         "to decide: the companies they own on the map"
       ],
@@ -189,16 +233,25 @@
         [
           "brief-daniela/index.html",
           "Their brief, and their agents' instructions"
+        ],
+        [
+          "people/daniela/index.html",
+          "Their dashboard"
         ]
+      ],
+      "agents": [
+        "site@web-summit.daniela",
+        "calendar@web-summit.daniela",
+        "lessons@web-summit.daniela"
       ]
     },
     {
       "id": "indi",
       "name": "Indi Gupte",
       "kind": "human",
-      "role": "Selling websites and agent setups, one-off",
+      "role": "The message, outreach, and the factory of examples",
       "status": "briefed: card to fill",
-      "summary": "Sell websites and agentic setups as one-off jobs, starting with Daniela. Brief and agents' instructions: [Brief for Indi](../../brief-indi/index.html).",
+      "summary": "Make sure the message makes sense everywhere, and build the examples we send to every company we go for. Brief: [Brief for Indi](../../brief-indi/index.html); dashboard: [Indi's dashboard](../../people/indi/index.html).",
       "owns": [
         "to decide: the companies they own on the map"
       ],
@@ -218,18 +271,27 @@
         [
           "brief-indi/index.html",
           "Their brief, and their agents' instructions"
+        ],
+        [
+          "people/indi/index.html",
+          "Their dashboard"
         ]
       ],
-      "core": true
+      "core": true,
+      "agents": [
+        "messaging@web-summit.indi",
+        "factory@web-summit.indi",
+        "builder@web-summit.indi"
+      ]
     },
     {
       "id": "jose",
       "name": "Jose Bota",
       "kind": "human",
       "core": true,
-      "role": "One of the seven: aim to confirm",
+      "role": "Technical: automation, messaging, the agents",
       "status": "briefed: card to fill",
-      "summary": "To confirm with Jose: what Jose wants to get out of Web Summit. Until then, the shared work the whole team does. Brief and agents' instructions: [Brief for Jose](../../brief-jose/index.html).",
+      "summary": "Make the team's machinery run: automation, messaging channels, and the technical work Jose and Angelo share. Brief: [Brief for Jose](../../brief-jose/index.html); dashboard: [Jose's dashboard](../../people/jose/index.html).",
       "owns": [
         "to decide: the companies they own on the map"
       ],
@@ -249,16 +311,25 @@
         [
           "brief-jose/index.html",
           "Their brief, and their agents' instructions"
+        ],
+        [
+          "people/jose/index.html",
+          "Their dashboard"
         ]
+      ],
+      "agents": [
+        "automation@web-summit.jose",
+        "dev@web-summit.jose",
+        "helper@web-summit.jose"
       ]
     },
     {
       "id": "sarah",
       "name": "Sarah",
       "kind": "human",
-      "role": "Designer: the shirts, hoodies, cards and flyer (works with the team; not one of the seven)",
+      "role": "Designer: the shirts, hoodies, cards and flyer",
       "status": "briefed: card to fill",
-      "summary": "Design the things that make people at the summit want to talk to us, with as little of Sarah's time as possible. Brief and agents' instructions: [Brief for Sarah](../../brief-sarah/index.html).",
+      "summary": "Design what makes people at the summit want to talk to us about RiskMandate, with as little of Sarah's time as possible. Brief: [Brief for Sarah](../../brief-sarah/index.html); dashboard: [Sarah's dashboard](../../people/sarah/index.html).",
       "owns": [
         "the design decisions"
       ],
@@ -278,16 +349,24 @@
         [
           "brief-sarah/index.html",
           "Their brief, and their agents' instructions"
+        ],
+        [
+          "people/sarah/index.html",
+          "Their dashboard"
         ]
+      ],
+      "agents": [
+        "designer@web-summit.sarah",
+        "writer@web-summit.sarah"
       ]
     },
     {
       "id": "conductor",
-      "name": "conductor@web-summit",
+      "name": "conductor@web-summit.dinis",
       "kind": "agent",
       "role": "Conductor: routes, keeps the schedule, the keys and the site true, writes the debrief",
       "status": "active",
-      "address": "conductor@web-summit",
+      "address": "conductor@web-summit.dinis",
       "holder": "conductor.3@web-summit (session key sha256:62eb11234d3237d5, from 1 November 2026, 18:38 UTC; the only conductor, at the operator's word); before it, conductor.2@web-summit (sha256:a8a24ce1af856a95, 1 November 00:13 to 14:31, ended) and conductor@web-summit (sha256:c8298e3fa58f0024, 28 October, ended)",
       "reviewed_by": "to decide: one of the seven reviews its output daily",
       "slot": "every 2 hours, opens the wake",

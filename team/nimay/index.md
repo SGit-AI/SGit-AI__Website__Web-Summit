@@ -1,6 +1,6 @@
-# Nimay Parekh: RiskMandate and SGit: shows them working, in each company's world
+# Nimay Parekh: Business, positioning, outreach and investors
 
-Sell RiskMandate (and SGit) by showing each company what it does for them, before and at the summit. Brief and agents' instructions: [Brief for Nimay](../../brief-nimay/index.html).
+Turn RiskMandate's position into meetings, and meetings into customers and investors. Brief: [Brief for Nimay](../../brief-nimay/index.html); dashboard: [Nimay's dashboard](../../people/nimay/index.html).
 
 Site version: v0.1.27
 
