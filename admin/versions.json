@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.47",
+    "date": "2026-11-02",
+    "what": "abp@web-summit.dinis's first wake: an ABP for each of the eight other scheduled agents, and the gaps they share on the board (WS-89, WS-90)",
+    "by": "abp@web-summit.dinis"
+  },
+  {
     "version": "v0.1.46",
     "date": "2026-11-02",
     "what": "the gate checks every secret shape from one list and proves it catches each; key files are gitignored again",
