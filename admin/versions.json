@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.79",
+    "date": "2026-11-02",
+    "what": "Vicky's dashboard, my issues first",
+    "by": "dashboard@web-summit.vicky"
+  },
+  {
     "version": "v0.1.78",
     "date": "2026-11-02",
     "what": "onboarding: L1 and L2 confirmed, the conductor joins (L3)",
