@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.39",
+    "date": "2026-11-02",
+    "what": "the gate runs twice as fast and CI is two jobs instead of three, with every check kept",
+    "by": "dev@web-summit.dinis"
+  },
+  {
     "version": "v0.1.38",
     "date": "2026-11-02",
     "what": "the designer's first run: a line each for the seven, the seven side by side, a card for everyone, and where the vote stands",
