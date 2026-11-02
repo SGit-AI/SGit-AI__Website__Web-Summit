@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.100",
+    "date": "2026-11-02",
+    "what": "the release step numbers a major on main even when main is fast-forwarded to a dev release (found by a simulation before v0.2.0)",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.99",
     "date": "2026-11-02",
     "what": "the 22:57 report, and 'What happened' updated",
