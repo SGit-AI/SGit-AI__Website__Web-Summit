@@ -15,7 +15,7 @@ const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
 const SECTIONS = [
     { t: 'Start', h: 'start/index.html', re: /^start\//, sub: [] },
     { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet|abp|cast|wakes)\b/, sub: [['People', 'team/index.html'], ['The cast', 'cast/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['At work', 'wakes/index.html'], ['ABPs', 'abp/index.html'], ['Meet us', 'meet/index.html']] },
-    { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|merch-sponsor|videos|research|reports|board-health|site-review)\b/, sub: [['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Merch sponsor', 'merch-sponsor/index.html'], ['Research', 'research/insider/index.html']] },
+    { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|merch-sponsor|videos|research|reports|board-health|site-review|updates)\b/, sub: [['Updates', 'updates/index.html'], ['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Merch sponsor', 'merch-sponsor/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
     { t: 'About', h: 'about/index.html', re: /^(about|articles|keys|admin|agent\/|briefing)\b/, sub: [['About', 'about/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['Versions', 'admin/versions.html'], ['The site agent', 'agent/index.html'], ['Inbox briefing', 'briefing/index.html']] },
 ]
@@ -321,6 +321,19 @@ for (const dir of fs.readdirSync(path.join(ROOT, 'content'), { withFileTypes: tr
         pages.push({ rel, title, description: `${title}: ${items.length} so far, newest first.` })
         twin(rel, title, `${items.length} so far, newest first.`, md)
     }
+}
+
+// the conductor's briefs to Dinis (team/conductor/editor-briefs/<stamp>.json and the PDF as sent; the HTML is not kept): /updates/
+{
+    const dir = path.join(ROOT, 'team/conductor/editor-briefs')
+    const briefs = fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.endsWith('.json')).sort().reverse().map(f => ({ stamp: f.replace(/\.json$/, ''), ...JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')) })) : []
+    const md = ['After every run the conductor writes Dinis a brief: what needs him, what happened, his words and what was done with them, and where every number came from. The way of doing it is the book team\'s ([how](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/team/conductor/editor-briefs/README.md)). Newest first.', '',
+        '| # | Date | Brief | Read |', '|---|---|---|---|',
+        ...briefs.map(b => `| ${b.number || ''} | ${b.date || b.stamp} | **${String(b.title).replace(/\|/g, '/')}.** ${String(b.headline || '').replace(/\|/g, '/').slice(0, 220)}${String(b.headline || '').length > 220 ? '...' : ''} | [PDF](../team/conductor/editor-briefs/${b.stamp}.pdf) |`)].join('\n')
+    const rel = 'updates/index.html', title = 'Updates: the conductor\'s briefs to Dinis'
+    write(rel, page({ rel, title, description: `${briefs.length} briefs so far, newest first.`, body: render(md), mdTwin: twinPath(rel) }))
+    pages.push({ rel, title, description: `${briefs.length} briefs so far, newest first.` })
+    twin(rel, title, `${briefs.length} briefs so far, newest first.`, md)
 }
 
 // plain pages: content/index.md -> index.html, content/<name>.md -> <name>/index.html

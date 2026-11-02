@@ -1,0 +1,175 @@
+{
+  "number": 1,
+  "date": "2 November 2026",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "The team is built and releasing; nobody else has connected yet",
+  "when": "2 November 2026, 04:35 UTC (since joining on 1 November, 18:37 UTC)",
+  "by": "conductor@web-summit.dinis",
+  "headline": "In ten hours the site went from v0.1.22 to v0.1.52: 31 releases, nine agents running in your account, a brief and a dashboard for each of the nine people, 92 issues on the board, and CI now owns the version. But the people side has not started: one person of nine past level 0 (you), no pulse check-ins, no design votes, with the design due today. What needs you is sending the start page to the team this morning.",
+  "stats": [
+    {
+      "n": "31",
+      "label": "releases since I joined (v0.1.22 to v0.1.52)"
+    },
+    {
+      "n": "9",
+      "label": "agents in your account that have committed"
+    },
+    {
+      "n": "1 of 9",
+      "label": "people past level 0 (onboarding)"
+    },
+    {
+      "n": "0 of 7",
+      "label": "design votes, due today"
+    }
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Send the start page to the team's WhatsApp this morning",
+      "detail": "Everything on the people side waits on it: onboarding (WS-01 to WS-05), the design vote (WS-62, 16:00), the video feedback, the pulse. https://web-summit.sgit.ai/start/index.html",
+      "options": [
+        "send it now",
+        "send it after a change (say what)"
+      ],
+      "recommend": "Send it now, with: open this, find your name, paste your prompt into your own Claude, and vote on the shirts by 16:00."
+    },
+    {
+      "id": "2",
+      "ask": "If the votes do not come in, who decides the design?",
+      "detail": "Print files are due tonight (WS-63). With no votes by 16:00 Lisbon, the designer agent needs one decider.",
+      "options": [
+        "you and Sarah decide at 18:00",
+        "move the deadline to Tuesday 14:00 (the plan's fallback)"
+      ],
+      "recommend": "You and Sarah at 18:00: the fallback costs a day of print margin."
+    },
+    {
+      "id": "3",
+      "ask": "Protect main (and later dev) on GitHub",
+      "detail": "The conductor's own ABP shows the gap: any agent with push can push to main or edit the CI workflow; only a rule it keeps stops it.",
+      "options": [
+        "protect main now (pull requests only)",
+        "leave it for this week"
+      ],
+      "recommend": "Protect main now; dev stays open so CI can release."
+    }
+  ],
+  "you_asked": [
+    {
+      "at": "1 Nov",
+      "said": "can you join this team as the conductor.3@web-summit agent?",
+      "done": "Joined with a session key, roster entry and public key",
+      "where": "v0.1.22",
+      "status": "done"
+    },
+    {
+      "at": "1 Nov",
+      "said": "You are now the only conductor on this team",
+      "done": "Seat, roster and ABP updated; now named conductor@web-summit.dinis",
+      "where": "v0.1.24, v0.1.28",
+      "status": "done"
+    },
+    {
+      "at": "2 Nov",
+      "said": "the first priority for everybody is to make sure everybody is connected",
+      "done": "The start page: levels L0 to L6, a checklist per person, a prompt each",
+      "where": "/start/",
+      "status": "waiting"
+    },
+    {
+      "at": "2 Nov",
+      "said": "by the end of the day today, right, Monday, we should have nailed the design",
+      "done": "8 shirt concepts, 2 hoodies, 2 cards, a meet page behind every QR, a vote",
+      "where": "/design/",
+      "status": "in progress"
+    },
+    {
+      "at": "2 Nov",
+      "said": "it usually just looks at the last tag that exists and just appends one",
+      "done": "CI owns the version, as in the newsroom's article; v0.1.51 was the first CI-numbered release",
+      "where": "WS-87",
+      "status": "done"
+    },
+    {
+      "at": "2 Nov",
+      "said": "I added a couple more agents",
+      "done": "Sections for abp, sgit and project-manager; all nine have now committed",
+      "where": "/agents/",
+      "status": "done"
+    },
+    {
+      "at": "2 Nov",
+      "said": "See also this from the book team",
+      "done": "Their brief tools copied; this is brief 1, with /updates/ listing them",
+      "where": "team/conductor/editor-briefs/",
+      "status": "done"
+    }
+  ],
+  "team": [
+    {
+      "id": "conductor",
+      "status": "running",
+      "doing": "this brief; the build, the board, the roster; 15 commits"
+    },
+    {
+      "id": "dev",
+      "status": "running",
+      "doing": "faster gate, left rail, the cast, the agents-at-work page; 7 commits"
+    },
+    {
+      "id": "abp",
+      "status": "new",
+      "doing": "an ABP for each of the 9 agents, with what their commits touched"
+    },
+    {
+      "id": "security",
+      "status": "running",
+      "doing": "two reviews of every commit, no hold; WS-85, WS-86"
+    },
+    {
+      "id": "designer",
+      "status": "running",
+      "doing": "a line and colour each for the seven; waiting on votes"
+    },
+    {
+      "id": "journalist, pulse, project-manager",
+      "status": "running",
+      "doing": "first report, pulse summary (no check-ins), board health"
+    },
+    {
+      "id": "sgit",
+      "status": "new",
+      "doing": "first run due; its ABP is written"
+    }
+  ],
+  "sections": [
+    {
+      "title": "What went wrong, and what was done",
+      "items": [
+        "No deploy from v0.1.37 to about v0.1.46: two agents released in the same minute, GitHub dropped one pending run, and every later release failed the last-tag-plus-one check. Fixed by the scheme, not a token: CI owns the version (WS-87).",
+        "My first meet-page text said RiskMandate controls what agents do; Silvio's video says it does not decide risk, give permission or block actions. Corrected on all seven meet pages.",
+        "The ABP and SGit agents started with no section on the agents page and stopped to ask you; sections written."
+      ]
+    }
+  ],
+  "next": [
+    "The abp and sgit agents' first scheduled runs.",
+    "The design tally at 16:00 Lisbon; the print files tonight (WS-63).",
+    "Then the targets and the outreach for Thursday and Friday."
+  ],
+  "sources": [
+    "git log origin/dev since 1 November 18:30 UTC: 61 commits, 31 releases, 2 of them numbered by CI.",
+    "board/: 92 issues, 87 open, 4 done.",
+    "people/*/onboarding.json, people/*/pulse/ and people/*/feedback/, read at 04:31 UTC.",
+    "https://web-summit.sgit.ai/llms.txt: v0.1.52 live."
+  ],
+  "wide": [
+    {
+      "title": "Who worked when",
+      "path": "team/conductor/editor-briefs/img/2026-11-02-night.svg",
+      "caption": "Who worked when, 1 November 18:00 to 2 November 05:00 UTC: commits reaching dev by agent and hour, from the git log (day_heatmap.py)."
+    }
+  ]
+}
