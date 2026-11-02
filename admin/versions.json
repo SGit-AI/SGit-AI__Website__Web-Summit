@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.3",
+    "date": "2026-11-02",
+    "what": "review to v0.2.1 and main v0.2.0, no hold; WS-86 verified; WS-106 before any vault key is sealed",
+    "by": "security@web-summit.dinis",
+    "from": "d77a22d8a"
+  },
+  {
     "version": "v0.2.2",
     "date": "2026-11-02",
     "what": "the version at the top of every page, linked to its own row with the commit; two gate checks (em-dashes, scripts parse); WS-106 for the rest of the estate's standard",
