@@ -2,7 +2,7 @@
 
 What Vicky is aiming for at Web Summit 2026, what the team does to get there, the issues Vicky can pick up, and the instructions for Vicky's agents. Part one is for Vicky; part two is for the agents. A living page: check its version before you rely on it.
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 From the team's strategy conversation of 1 November 2026 ([brief 3](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/BRIEF.md)), written by the conductor, conductor.3@web-summit, on 2 November 2026. All the briefs: [the briefs](../briefs/index.html). Where this page says *to confirm*, it's the conductor's reading, not something that was said.
 
@@ -26,7 +26,7 @@ Dinis wants everyone going to get what they came for, and for Vicky that's a job
 
 - **Mon 2 and Tue 3 Nov:** nail it down: cards, owners, shirts.
 - **Wed 4 Nov:** a plan, a mapping and the agents in place for each person.
-- **Thu 5 Nov:** India arrives.
+- **Thu 5 Nov:** Indi arrives.
 - **by Thu 5 or Fri 6 Nov:** about 20 meetings booked with people primed to meet us.
 - **Fri 6 and Sat 7 Nov:** for each meeting, what we bring.
 - **Tue 10 to Thu 12 Nov:** the summit; our stand day is **Thursday 12**.

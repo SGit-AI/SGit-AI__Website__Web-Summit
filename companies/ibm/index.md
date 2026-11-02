@@ -2,7 +2,7 @@
 
 AI solutions including watsonx, IBM Research and consulting to scale responsible AI across the enterprise.
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 - Website: https://www.ibm.com/us-en
 - Category: platform

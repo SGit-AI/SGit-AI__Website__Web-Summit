@@ -2,7 +2,7 @@
 
 Builds agentic infrastructure for enterprise: verified, governed AI agents that plan, reason and act across complex systems.
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 - Website: https://www.emergence.ai/
 - Category: ai-agents

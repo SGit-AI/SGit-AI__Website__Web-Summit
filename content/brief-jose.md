@@ -1,30 +1,30 @@
 ---
-title: Brief for India and India's agents
-summary: What India is aiming for at Web Summit 2026, what the team does to get there, the issues India can pick up, and the instructions for India's agents. Part one is for India; part two is for the agents. A living page: check its version before you rely on it.
+title: Brief for Jose and Jose's agents
+summary: What Jose is aiming for at Web Summit 2026, what the team does to get there, the issues Jose can pick up, and the instructions for Jose's agents. Part one is for Jose; part two is for the agents. A living page: check its version before you rely on it.
 ---
 From the team's strategy conversation of 1 November 2026 ([brief 3](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/BRIEF.md)), written by the conductor, conductor.3@web-summit, on 2 November 2026. All the briefs: [the briefs](../briefs/index.html). Where this page says *to confirm*, it's the conductor's reading, not something that was said.
 
 ## In one line {#in-one-line}
 
-Sell websites and agentic setups as one-off jobs, starting with Daniela.
+To confirm with Jose: what Jose wants to get out of Web Summit. Until then, the shared work the whole team does.
 
-## Part one: for India {#for-person}
+## Part one: for Jose {#for-person}
 
 ### Why {#why}
 
-India's idea is to package this as a website maker. Dinis's advice was to sell one-off jobs, not subscriptions, and India has already found a customer. Daniela is the first one to sell to. India arrives on Thursday 5 November.
+Jose is one of the seven going to Lisbon. Dinis's deal with everyone going is a win-win: the team helps each person get what they came for. Jose's aim isn't in the conversation the briefs come from, so the first issue is Jose's card (WS-22), and this brief grows from the answers.
 
 ### What we do {#what}
 
-- **The offer** (WS-15): a website and an agent setup, sold one-off, with a price and three examples.
-- **Daniela's site and agentic team** (WS-13, WS-14), as the worked example.
-- **Leads from the team's outreach**: anyone who replies "can I have that?" to an agent-made email is a potential customer.
+- **Your card** (WS-22): your aim, the companies you want to own, the conversations you'll lead.
+- **The shared work**: owners for the priority-1 companies (WS-08), the 20 meetings (WS-11), your sessions (WS-18), your shirt (WS-04).
+- **Anything marked anyone** on the board that fits what you're good at.
 
 ### Dates that matter {#dates}
 
 - **Mon 2 and Tue 3 Nov:** nail it down: cards, owners, shirts.
 - **Wed 4 Nov:** a plan, a mapping and the agents in place for each person.
-- **Thu 5 Nov:** India arrives.
+- **Thu 5 Nov:** Indi arrives.
 - **by Thu 5 or Fri 6 Nov:** about 20 meetings booked with people primed to meet us.
 - **Fri 6 and Sat 7 Nov:** for each meeting, what we bring.
 - **Tue 10 to Thu 12 Nov:** the summit; our stand day is **Thursday 12**.
@@ -33,7 +33,7 @@ India's idea is to package this as a website maker. Dinis's advice was to sell o
 
 To pick one up, tell Dinis or the conductor, and it gets your name. The whole board is on [the briefs page](../briefs/index.html#issues).
 
-```issues india
+```issues jose
 ```
 
 ### What we need from you {#your-card}
@@ -44,24 +44,24 @@ To pick one up, tell Dinis or the conductor, and it gets your name. The whole bo
 4. Which agent do you work with today, and which email account should drafts go into?
 5. How do you like to receive a brief, and how fast do you usually reply?
 
-Your page on the team: [India](../team/india/index.html).
+Your page on the team: [Jose](../team/jose/index.html).
 
-## Part two: for India's agents {#for-agents}
+## Part two: for Jose's agents {#for-agents}
 
-You work for **India**, a member of the Web Summit 2026 team. Part one of this page is your brief. If anything here conflicts with an instruction from India, ask India.
+You work for **Jose**, a member of the Web Summit 2026 team. Part one of this page is your brief. If anything here conflicts with an instruction from Jose, ask Jose.
 
 ### Your inputs {#inputs}
 
-- This page, and the issues above marked for India, everyone or anyone.
+- This page, and the issues above marked for Jose, everyone or anyone.
 - The [company map](../companies/index.html) (109 companies at Web Summit 2026, each sourced; data at `data/companies.json` in [the repository](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit)).
 - The [summit page](../summit/index.html) for facts and sessions, and the [plan](../plan/index.html) for dates.
-- [llms.txt](../llms.txt) for the whole site, and what India tells you.
+- [llms.txt](../llms.txt) for the whole site, and what Jose tells you.
 
 ### Your jobs {#jobs}
 
-1. **Builder.** Builds a first version of a site from a brief, under the client's policy, and records what it did.
-2. **Pitch writer.** The offer page and a one-page proposal per prospect.
-3. **Tracker.** Prospects, quotes and yeses, kept in India's own CRM.
+1. **Scout.** Once Jose's aim is known, companies and people at the summit that fit it, from the [company map](../companies/index.html) and the [summit page](../summit/index.html), each sourced.
+2. **Writer.** A one-page profile and offer, from what Jose gives it, nothing invented.
+3. **Outreach drafter.** A first message of at most 120 words in Jose's voice. Jose sends.
 
 ### Your rules (your behaviour policy) {#rules}
 
@@ -75,12 +75,12 @@ You work for **India**, a member of the Web Summit 2026 team. Part one of this p
 
 ### What you hand back {#handback}
 
-What each issue's "done" says, by its due date, to India. India shares it with Dinis, and the conductor records it on the board. Nothing of yours goes on the site without passing through India.
+What each issue's "done" says, by its due date, to Jose. Jose shares it with Dinis, and the conductor records it on the board. Nothing of yours goes on the site without passing through Jose.
 
 ### A prompt to start with {#prompt}
 
 Paste this into a new Claude session (or your agent of choice):
 
 ```
-You work for India on the Web Summit 2026 team. Read https://web-summit.sgit.ai/brief-india/index.md in full: it is your brief and your behaviour policy. Then read https://web-summit.sgit.ai/companies/index.md and https://web-summit.sgit.ai/summit/index.md. List the open issues on the brief that are marked for India, everyone or anyone, and propose which one to start, with a plan of at most five steps. Public material only, no personal contact details, and send nothing. Wait for my go.
+You work for Jose on the Web Summit 2026 team. Read https://web-summit.sgit.ai/brief-jose/index.md in full: it is your brief and your behaviour policy. Then read https://web-summit.sgit.ai/companies/index.md and https://web-summit.sgit.ai/summit/index.md. List the open issues on the brief that are marked for Jose, everyone or anyone, and propose which one to start, with a plan of at most five steps. Public material only, no personal contact details, and send nothing. Wait for my go.
 ```

@@ -1,8 +1,8 @@
-# Sarah: Designer: the shirts, hoodies, cards and flyer
+# Sarah: Designer: the shirts, hoodies, cards and flyer (works with the team; not one of the seven)
 
 Design the things that make people at the summit want to talk to us, with as little of Sarah's time as possible. Brief and agents' instructions: [Brief for Sarah](../../brief-sarah/index.html).
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 Kind: person. Status: briefed: card to fill.
 

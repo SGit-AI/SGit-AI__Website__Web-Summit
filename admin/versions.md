@@ -2,8 +2,9 @@
 
 Every release of this site and what changed.
 
-Site version: v0.1.26
+Site version: v0.1.27
 
+- v0.1.27 (2026-11-02): The seven core team members by name (Dinis Cruz, Silvio Switha, Nimay Parekh, Vicky, Jose Bota, Angelo, Indi Gupte): briefs renamed, a brief for Jose, Sarah and Daniela shown as working with the team, and shared issues shown only to the seven.
 - v0.1.26 (2026-11-02): The briefs: a top-level view (/briefs/), a brief for each of the eight people with instructions for their agents, and a board of 23 issues a person and their agents can pick up (data/issues.json), shown on each brief. The roster names the team at the operator's word.
 - v0.1.25 (2026-11-02): The brief for Silvio and his agents (/brief-silvio/): a sponsor for the merch, the dates, and the instructions and behaviour policy for his agents. Silvio named on the roster at the operator's word; 3 T-shirts per participant.
 - v0.1.24 (2026-11-01): conductor.3@web-summit is the only conductor, at the operator's word: it holds the conductor seat on the roster, its separate entry is folded in, conductor.2 is recorded as ended, and the schedule is recorded as stopped (its task no longer exists).

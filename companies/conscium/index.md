@@ -2,7 +2,7 @@
 
 AI safety lab and agent verification platform: simulation testing and verification so AI agents can be deployed with more confidence, plus research on conscious AI.
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 - Website: https://conscium.com/
 - Category: ai-agents

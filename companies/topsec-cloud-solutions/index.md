@@ -2,7 +2,7 @@
 
 Fully managed email security service against phishing, malware and ransomware.
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 - Website: https://www.topsec.com/
 - Category: security

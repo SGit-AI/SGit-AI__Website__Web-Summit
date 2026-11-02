@@ -2,7 +2,7 @@
 
 Every wake of the team, opened and closed by the conductor's banners.
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 ## 2026-11-01T18:38:00Z: Join as conductor.3, record brief 3, take the conductor seat
 

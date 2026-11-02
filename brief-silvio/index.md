@@ -2,7 +2,7 @@
 
 What Silvio is asked to do for Web Summit 2026 (find a sponsor for the team's shirts and hoodies), the dates it has to meet, and the instructions for the agents that help him. Part one is for Silvio; part two is for his agents. A living page: check its version before you rely on it.
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 From the operator, Dinis Cruz, in the team's strategy conversation of 1 November 2026 ([brief 3](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/BRIEF.md)). Written by the conductor, conductor.3@web-summit, on 2 November 2026. All the briefs: [the briefs](../briefs/index.html). Where this page says *to confirm*, it is the conductor's reading, not something that was said.
 
@@ -18,7 +18,7 @@ Dinis: "this is for you, because you're a good salesman". The challenge: **can w
 
 ### What we offer a sponsor {#offer}
 
-- **The merch.** Each person going (5 to 7 of us) gets **3 T-shirts** and a **hoodie**, so 15 to 21 shirts and 5 to 7 hoodies. Each person wears a very different colour, so a group of us stands out on the floor.
+- **The merch.** Each of the seven going gets **3 T-shirts** and a **hoodie**, so 21 shirts and 7 hoodies. Each person wears a very different colour, so a group of us stands out on the floor.
 - **The exposure.** Worn across the summit, 9 to 12 November 2026 in Lisbon: the conference days are 10, 11 and 12 November, and our stand day is **Thursday 12 November**. The shirts carry the stand location, so people come back. The [summit page](../summit/index.html) has the published facts and sessions.
 - **The messages.** The shirts don't just say RiskMandate. They carry a set of conversation openers (do you control your agents? do you know what's on the other side of the agent you're buying?), maybe one per person. The sponsor's logo goes next to RiskMandate and SGit.
 - **A co-brand.** One idea from the conversation was a shared line with a partner business, a security company for example. Who, and on what terms, is for you and Dinis to agree.
@@ -56,9 +56,9 @@ To pick one up, tell Dinis or the conductor, and it gets your name. The whole bo
 
 | Issue | What, and what done looks like | For | Due | Status |
 |---|---|---|---|---|
-| **WS-01** | **Ask the organisers whether a sponsor logo on team clothing is allowed.** A written yes or no from Web Summit, recorded on the plan. They have already said we can't sell on site. | [Silvio](../brief-silvio/index.html), [Dinis Cruz](../brief-dinis/index.html) | Mon 2 Nov | open |
-| **WS-02** | **Shortlist 15 to 25 merch sponsor candidates.** A sourced table (company, why they'd care, who to approach as a role, source and date, fit 1 to 3), with five picked to pitch. Agents: Scout, from the company map and Silvio's network. | [Silvio](../brief-silvio/index.html) | Tue 3 Nov | open |
-| **WS-03** | **Pitch and outreach drafts for the top sponsor candidates.** For each of the top 5 to 10, a one-page business case, a 5-slide deck and a draft of at most 120 words in Silvio's drafts. Silvio sends. Agents: Pitch writer and outreach drafter. | [Silvio](../brief-silvio/index.html) | Tue 3 Nov | open |
+| **WS-01** | **Ask the organisers whether a sponsor logo on team clothing is allowed.** A written yes or no from Web Summit, recorded on the plan. They have already said we can't sell on site. | [Silvio Switha](../brief-silvio/index.html), [Dinis Cruz](../brief-dinis/index.html) | Mon 2 Nov | open |
+| **WS-02** | **Shortlist 15 to 25 merch sponsor candidates.** A sourced table (company, why they'd care, who to approach as a role, source and date, fit 1 to 3), with five picked to pitch. Agents: Scout, from the company map and Silvio's network. | [Silvio Switha](../brief-silvio/index.html) | Tue 3 Nov | open |
+| **WS-03** | **Pitch and outreach drafts for the top sponsor candidates.** For each of the top 5 to 10, a one-page business case, a 5-slide deck and a draft of at most 120 words in Silvio's drafts. Silvio sends. Agents: Pitch writer and outreach drafter. | [Silvio Switha](../brief-silvio/index.html) | Tue 3 Nov | open |
 | **WS-04** | **Everyone's shirt and hoodie: size, colour, message.** One line per person (size, a colour no one else has, their message), sent to Sarah. Sizes stay private if anyone prefers. | everyone | Mon 2 Nov | open |
 | **WS-05** | **Seven conversation openers for the shirts.** Seven short lines, one per person, from the openers in brief 3 (do you control your agents? do you know what's on the other side of the agent you're buying?), plus one plainer backup. Sarah and Dinis pick. Agents: Any writer agent can draft them; a person picks. | [Sarah](../brief-sarah/index.html), anyone | Mon 2 Nov | open |
 | **WS-07** | **Quote and order the print run: 21 T-shirts and 7 hoodies.** Two quotes (a printer in Portugal and a UK next-day option), one order placed, delivery by Fri 6 Nov to someone who'll be in Lisbon. The address stays private. Agents: The researcher agent finds printers and prices; a person orders. | anyone | Tue 3 Nov quote, Wed 4 Nov order | open |

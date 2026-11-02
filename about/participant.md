@@ -2,7 +2,7 @@
 
 Who builds this site, who it is built for, and what interest the builders have in what the site is about. Written so a reader can weigh what they read here.
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 ## Who builds this site
 

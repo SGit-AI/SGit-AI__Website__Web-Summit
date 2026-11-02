@@ -2,7 +2,7 @@
 
 Decision intelligence and compliance software for digital assets, turning blockchain data and AI into evidence, including for agentic payments.
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 - Website: https://crystalintelligence.com/
 - Category: grc

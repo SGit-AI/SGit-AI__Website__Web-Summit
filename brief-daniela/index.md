@@ -2,7 +2,7 @@
 
 What Daniela is aiming for at Web Summit 2026, what the team does to get there, the issues Daniela can pick up, and the instructions for Daniela's agents. Part one is for Daniela; part two is for the agents. A living page: check its version before you rely on it.
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 From the team's strategy conversation of 1 November 2026 ([brief 3](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/BRIEF.md)), written by the conductor, conductor.3@web-summit, on 2 November 2026. All the briefs: [the briefs](../briefs/index.html). Where this page says *to confirm*, it's the conductor's reading, not something that was said.
 
@@ -20,14 +20,14 @@ Daniela teaches English and is the team's best example of a subject-matter exper
 
 - **The agentic team** (WS-13): agents for the website, the calendar, email, promotion, and the preparation before and after each lesson. Claude is the reasoning engine.
 - **Behaviour policies first.** No agent gets free rein of an email account or of students' data. The more each agent is constrained, the more useful and the more comfortable it is.
-- **The website, first version** (WS-14), built with India.
+- **The website, first version** (WS-14), built with Indi.
 - **The story**: Daniela's setup becomes the example we show at the summit.
 
 ### Dates that matter {#dates}
 
 - **Mon 2 and Tue 3 Nov:** nail it down: cards, owners, shirts.
 - **Wed 4 Nov:** a plan, a mapping and the agents in place for each person.
-- **Thu 5 Nov:** India arrives.
+- **Thu 5 Nov:** Indi arrives.
 - **by Thu 5 or Fri 6 Nov:** about 20 meetings booked with people primed to meet us.
 - **Fri 6 and Sat 7 Nov:** for each meeting, what we bring.
 - **Tue 10 to Thu 12 Nov:** the summit; our stand day is **Thursday 12**.
@@ -38,17 +38,8 @@ To pick one up, tell Dinis or the conductor, and it gets your name. The whole bo
 
 | Issue | What, and what done looks like | For | Due | Status |
 |---|---|---|---|---|
-| **WS-04** | **Everyone's shirt and hoodie: size, colour, message.** One line per person (size, a colour no one else has, their message), sent to Sarah. Sizes stay private if anyone prefers. | everyone | Mon 2 Nov | open |
-| **WS-05** | **Seven conversation openers for the shirts.** Seven short lines, one per person, from the openers in brief 3 (do you control your agents? do you know what's on the other side of the agent you're buying?), plus one plainer backup. Sarah and Dinis pick. Agents: Any writer agent can draft them; a person picks. | [Sarah](../brief-sarah/index.html), anyone | Mon 2 Nov | open |
-| **WS-07** | **Quote and order the print run: 21 T-shirts and 7 hoodies.** Two quotes (a printer in Portugal and a UK next-day option), one order placed, delivery by Fri 6 Nov to someone who'll be in Lisbon. The address stays private. Agents: The researcher agent finds printers and prices; a person orders. | anyone | Tue 3 Nov quote, Wed 4 Nov order | open |
-| **WS-08** | **Owners for the 20 priority-1 companies on the map.** Each priority-1 company has one owner among the seven, recorded on the company map. Agents: The cartographer agent proposes a split by who knows whom; people agree. | everyone | Tue 3 Nov | open |
-| **WS-11** | **Twenty meetings booked before we land.** About 20 people who'll be at the summit, primed and booked, each with a date, an owner and what we bring. Drafts are written by agents and sent by their owner. Agents: Each owner's agent drafts the outreach. | everyone | Thu 5 to Fri 6 Nov | open |
-| **WS-12** | **What we bring to each booked meeting.** For each meeting: their analysis, their risk analysis, how we help, and how they buy. Agents: Writer agent, from WS-09's loop. | everyone | Sat 7 Nov | open |
-| **WS-13** | **Daniela's agentic team: what it runs, and the policy for each agent.** A list of agents (website, calendar, email, promotion, lesson preparation before and after) with a behaviour policy for each: what it may read, write and never do. No agent gets free rein of an email account or students' data. | [Daniela](../brief-daniela/index.html), [India](../brief-india/index.html) | Wed 4 Nov | open |
-| **WS-14** | **Daniela's website, first version.** A live first version of Daniela's site, built and kept by an agent under its policy, with feedback from Daniela after one round. | [India](../brief-india/index.html), [Daniela](../brief-daniela/index.html) | Fri 6 Nov | open |
-| **WS-18** | **The sessions each person attends.** For each person, 3 to 6 sessions from the summit page that fit what they want, with the speakers worth meeting. Agents: The curator agent proposes from the summit page; each person picks. | everyone | Sat 7 Nov | open |
-| **WS-22** | **Fill in your card.** Answers to the questions at the end of your brief, sent to Dinis. Your page on the team shows them. | everyone | Tue 3 Nov | open |
-| **WS-23** | **Try the voice memo to follow-up loop once, before the summit.** One person records a voice memo after a real conversation; within the hour their agent has updated the record, made a page and drafted the follow-up. Recorded on the log. | anyone | Sat 7 Nov | open |
+| **WS-13** | **Daniela's agentic team: what it runs, and the policy for each agent.** A list of agents (website, calendar, email, promotion, lesson preparation before and after) with a behaviour policy for each: what it may read, write and never do. No agent gets free rein of an email account or students' data. | [Daniela](../brief-daniela/index.html), [Indi Gupte](../brief-indi/index.html) | Wed 4 Nov | open |
+| **WS-14** | **Daniela's website, first version.** A live first version of Daniela's site, built and kept by an agent under its policy, with feedback from Daniela after one round. | [Indi Gupte](../brief-indi/index.html), [Daniela](../brief-daniela/index.html) | Fri 6 Nov | open |
 
 ### What we need from you {#your-card}
 

@@ -18,14 +18,14 @@ Daniela teaches English and is the team's best example of a subject-matter exper
 
 - **The agentic team** (WS-13): agents for the website, the calendar, email, promotion, and the preparation before and after each lesson. Claude is the reasoning engine.
 - **Behaviour policies first.** No agent gets free rein of an email account or of students' data. The more each agent is constrained, the more useful and the more comfortable it is.
-- **The website, first version** (WS-14), built with India.
+- **The website, first version** (WS-14), built with Indi.
 - **The story**: Daniela's setup becomes the example we show at the summit.
 
 ### Dates that matter {#dates}
 
 - **Mon 2 and Tue 3 Nov:** nail it down: cards, owners, shirts.
 - **Wed 4 Nov:** a plan, a mapping and the agents in place for each person.
-- **Thu 5 Nov:** India arrives.
+- **Thu 5 Nov:** Indi arrives.
 - **by Thu 5 or Fri 6 Nov:** about 20 meetings booked with people primed to meet us.
 - **Fri 6 and Sat 7 Nov:** for each meeting, what we bring.
 - **Tue 10 to Thu 12 Nov:** the summit; our stand day is **Thursday 12**.

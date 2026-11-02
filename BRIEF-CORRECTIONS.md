@@ -2,6 +2,8 @@
 
 Where a brief was wrong, what was found, and what was done instead. The briefs themselves are never edited to look right afterwards. Newest first. Format: date, brief, what it said, what is true, what was done.
 
+- **2026-11-02, brief 3 (the transcript).** Spelled the names Nime, Angela and India, and v0.1.26 counted Daniela and Sarah among the seven. The operator: the seven are Dinis Cruz, Silvio Switha, Nimay Parekh, Vicky, Jose Bota, Angelo and Indi Gupte. Pages renamed (`/brief-nimay/`, `/brief-angelo/`, `/brief-indi/`, new `/brief-jose/`); Sarah and Daniela listed as working with the team.
+
 - **2026-11-02, brief 3.** Read as several shirts each, about 20 each. The operator: 3 T-shirts per participant. The plan says 3 each.
 - **2026-11-02, brief 2 and the roster.** Said people are named only after they say yes to their card. The operator: name the team now, since only the team uses this site and speed matters. Members are named as they are briefed; contact details are still never published.
 

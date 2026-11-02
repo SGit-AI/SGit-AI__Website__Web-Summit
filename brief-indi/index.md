@@ -1,8 +1,8 @@
-# Brief for India and India's agents
+# Brief for Indi and Indi's agents
 
-What India is aiming for at Web Summit 2026, what the team does to get there, the issues India can pick up, and the instructions for India's agents. Part one is for India; part two is for the agents. A living page: check its version before you rely on it.
+What Indi is aiming for at Web Summit 2026, what the team does to get there, the issues Indi can pick up, and the instructions for Indi's agents. Part one is for Indi; part two is for the agents. A living page: check its version before you rely on it.
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 From the team's strategy conversation of 1 November 2026 ([brief 3](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/BRIEF.md)), written by the conductor, conductor.3@web-summit, on 2 November 2026. All the briefs: [the briefs](../briefs/index.html). Where this page says *to confirm*, it's the conductor's reading, not something that was said.
 
@@ -10,11 +10,11 @@ From the team's strategy conversation of 1 November 2026 ([brief 3](https://gith
 
 Sell websites and agentic setups as one-off jobs, starting with Daniela.
 
-## Part one: for India {#for-person}
+## Part one: for Indi {#for-person}
 
 ### Why {#why}
 
-India's idea is to package this as a website maker. Dinis's advice was to sell one-off jobs, not subscriptions, and India has already found a customer. Daniela is the first one to sell to. India arrives on Thursday 5 November.
+Indi's idea is to package this as a website maker. Dinis's advice was to sell one-off jobs, not subscriptions, and Indi has already found a customer. Daniela is the first one to sell to. Indi arrives on Thursday 5 November.
 
 ### What we do {#what}
 
@@ -26,7 +26,7 @@ India's idea is to package this as a website maker. Dinis's advice was to sell o
 
 - **Mon 2 and Tue 3 Nov:** nail it down: cards, owners, shirts.
 - **Wed 4 Nov:** a plan, a mapping and the agents in place for each person.
-- **Thu 5 Nov:** India arrives.
+- **Thu 5 Nov:** Indi arrives.
 - **by Thu 5 or Fri 6 Nov:** about 20 meetings booked with people primed to meet us.
 - **Fri 6 and Sat 7 Nov:** for each meeting, what we bring.
 - **Tue 10 to Thu 12 Nov:** the summit; our stand day is **Thursday 12**.
@@ -43,9 +43,9 @@ To pick one up, tell Dinis or the conductor, and it gets your name. The whole bo
 | **WS-08** | **Owners for the 20 priority-1 companies on the map.** Each priority-1 company has one owner among the seven, recorded on the company map. Agents: The cartographer agent proposes a split by who knows whom; people agree. | everyone | Tue 3 Nov | open |
 | **WS-11** | **Twenty meetings booked before we land.** About 20 people who'll be at the summit, primed and booked, each with a date, an owner and what we bring. Drafts are written by agents and sent by their owner. Agents: Each owner's agent drafts the outreach. | everyone | Thu 5 to Fri 6 Nov | open |
 | **WS-12** | **What we bring to each booked meeting.** For each meeting: their analysis, their risk analysis, how we help, and how they buy. Agents: Writer agent, from WS-09's loop. | everyone | Sat 7 Nov | open |
-| **WS-13** | **Daniela's agentic team: what it runs, and the policy for each agent.** A list of agents (website, calendar, email, promotion, lesson preparation before and after) with a behaviour policy for each: what it may read, write and never do. No agent gets free rein of an email account or students' data. | [Daniela](../brief-daniela/index.html), [India](../brief-india/index.html) | Wed 4 Nov | open |
-| **WS-14** | **Daniela's website, first version.** A live first version of Daniela's site, built and kept by an agent under its policy, with feedback from Daniela after one round. | [India](../brief-india/index.html), [Daniela](../brief-daniela/index.html) | Fri 6 Nov | open |
-| **WS-15** | **India's one-off offer, packaged.** A page with the offer (a website and an agent setup, sold one-off, not as a subscription), the price, and three examples, Daniela's among them. | [India](../brief-india/index.html) | Thu 5 Nov | open |
+| **WS-13** | **Daniela's agentic team: what it runs, and the policy for each agent.** A list of agents (website, calendar, email, promotion, lesson preparation before and after) with a behaviour policy for each: what it may read, write and never do. No agent gets free rein of an email account or students' data. | [Daniela](../brief-daniela/index.html), [Indi Gupte](../brief-indi/index.html) | Wed 4 Nov | open |
+| **WS-14** | **Daniela's website, first version.** A live first version of Daniela's site, built and kept by an agent under its policy, with feedback from Daniela after one round. | [Indi Gupte](../brief-indi/index.html), [Daniela](../brief-daniela/index.html) | Fri 6 Nov | open |
+| **WS-15** | **Indi's one-off offer, packaged.** A page with the offer (a website and an agent setup, sold one-off, not as a subscription), the price, and three examples, Daniela's among them. | [Indi Gupte](../brief-indi/index.html) | Thu 5 Nov | open |
 | **WS-18** | **The sessions each person attends.** For each person, 3 to 6 sessions from the summit page that fit what they want, with the speakers worth meeting. Agents: The curator agent proposes from the summit page; each person picks. | everyone | Sat 7 Nov | open |
 | **WS-22** | **Fill in your card.** Answers to the questions at the end of your brief, sent to Dinis. Your page on the team shows them. | everyone | Tue 3 Nov | open |
 | **WS-23** | **Try the voice memo to follow-up loop once, before the summit.** One person records a voice memo after a real conversation; within the hour their agent has updated the record, made a page and drafted the follow-up. Recorded on the log. | anyone | Sat 7 Nov | open |
@@ -58,24 +58,24 @@ To pick one up, tell Dinis or the conductor, and it gets your name. The whole bo
 4. Which agent do you work with today, and which email account should drafts go into?
 5. How do you like to receive a brief, and how fast do you usually reply?
 
-Your page on the team: [India](../team/india/index.html).
+Your page on the team: [Indi](../team/indi/index.html).
 
-## Part two: for India's agents {#for-agents}
+## Part two: for Indi's agents {#for-agents}
 
-You work for **India**, a member of the Web Summit 2026 team. Part one of this page is your brief. If anything here conflicts with an instruction from India, ask India.
+You work for **Indi**, a member of the Web Summit 2026 team. Part one of this page is your brief. If anything here conflicts with an instruction from Indi, ask Indi.
 
 ### Your inputs {#inputs}
 
-- This page, and the issues above marked for India, everyone or anyone.
+- This page, and the issues above marked for Indi, everyone or anyone.
 - The [company map](../companies/index.html) (109 companies at Web Summit 2026, each sourced; data at `data/companies.json` in [the repository](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit)).
 - The [summit page](../summit/index.html) for facts and sessions, and the [plan](../plan/index.html) for dates.
-- [llms.txt](../llms.txt) for the whole site, and what India tells you.
+- [llms.txt](../llms.txt) for the whole site, and what Indi tells you.
 
 ### Your jobs {#jobs}
 
 1. **Builder.** Builds a first version of a site from a brief, under the client's policy, and records what it did.
 2. **Pitch writer.** The offer page and a one-page proposal per prospect.
-3. **Tracker.** Prospects, quotes and yeses, kept in India's own CRM.
+3. **Tracker.** Prospects, quotes and yeses, kept in Indi's own CRM.
 
 ### Your rules (your behaviour policy) {#rules}
 
@@ -89,12 +89,12 @@ You work for **India**, a member of the Web Summit 2026 team. Part one of this p
 
 ### What you hand back {#handback}
 
-What each issue's "done" says, by its due date, to India. India shares it with Dinis, and the conductor records it on the board. Nothing of yours goes on the site without passing through India.
+What each issue's "done" says, by its due date, to Indi. Indi shares it with Dinis, and the conductor records it on the board. Nothing of yours goes on the site without passing through Indi.
 
 ### A prompt to start with {#prompt}
 
 Paste this into a new Claude session (or your agent of choice):
 
 ```
-You work for India on the Web Summit 2026 team. Read https://web-summit.sgit.ai/brief-india/index.md in full: it is your brief and your behaviour policy. Then read https://web-summit.sgit.ai/companies/index.md and https://web-summit.sgit.ai/summit/index.md. List the open issues on the brief that are marked for India, everyone or anyone, and propose which one to start, with a plan of at most five steps. Public material only, no personal contact details, and send nothing. Wait for my go.
+You work for Indi on the Web Summit 2026 team. Read https://web-summit.sgit.ai/brief-indi/index.md in full: it is your brief and your behaviour policy. Then read https://web-summit.sgit.ai/companies/index.md and https://web-summit.sgit.ai/summit/index.md. List the open issues on the brief that are marked for Indi, everyone or anyone, and propose which one to start, with a plan of at most five steps. Public material only, no personal contact details, and send nothing. Wait for my go.
 ```

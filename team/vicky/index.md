@@ -2,7 +2,7 @@
 
 Leave Web Summit with a job, or with the conversations that lead to one. Brief and agents' instructions: [Brief for Vicky](../../brief-vicky/index.html).
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 Kind: person. Status: briefed: card to fill.
 

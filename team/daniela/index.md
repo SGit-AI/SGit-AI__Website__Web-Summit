@@ -1,8 +1,8 @@
-# Daniela: The first friendly: an agentic team for Daniela's teaching
+# Daniela: The first friendly: an agentic team for Daniela's teaching (works with the team; not one of the seven)
 
 Find the students who aren't finding Daniela today, with an agentic team that runs the work around the teaching. Brief and agents' instructions: [Brief for Daniela](../../brief-daniela/index.html).
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 Kind: person. Status: briefed: card to fill.
 

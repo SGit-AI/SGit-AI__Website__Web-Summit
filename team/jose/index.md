@@ -1,8 +1,8 @@
-# Nime: RiskMandate and SGit: shows them working, in each company's world
+# Jose Bota: One of the seven: aim to confirm
 
-Sell RiskMandate (and SGit) by showing each company what it does for them, before and at the summit. Brief and agents' instructions: [Brief for Nime](../../brief-nime/index.html).
+To confirm with Jose: what Jose wants to get out of Web Summit. Until then, the shared work the whole team does. Brief and agents' instructions: [Brief for Jose](../../brief-jose/index.html).
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 Kind: person. Status: briefed: card to fill.
 

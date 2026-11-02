@@ -1,8 +1,8 @@
-# India: Selling websites and agent setups, one-off
+# Indi Gupte: Selling websites and agent setups, one-off
 
-Sell websites and agentic setups as one-off jobs, starting with Daniela. Brief and agents' instructions: [Brief for India](../../brief-india/index.html).
+Sell websites and agentic setups as one-off jobs, starting with Daniela. Brief and agents' instructions: [Brief for Indi](../../brief-indi/index.html).
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 Kind: person. Status: briefed: card to fill.
 

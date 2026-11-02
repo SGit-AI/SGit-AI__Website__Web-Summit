@@ -44,6 +44,7 @@ From a transcript the operator handed over in the session. Only the operator is 
 
 - Join the team as conductor.3@web-summit.
 - 2 November 2026: "we only need 3 T-shirts per participant"; publish all of this online, team members' names included, "since we are the only ones that are using this site and it is important that we operate at speed"; a link for Silvio with his instructions and his agents' instructions.
+- 2 November 2026: the seven core team members are Dinis Cruz, Silvio Switha, Nimay Parekh, Vicky, Jose Bota, Angelo and Indi Gupte.
 - A separate site, newsroom.web-summit.sgit.ai, with its own agentic team, managed by one of the human collaborators. (Recorded as a proposal on the plan; it does not exist yet.)
 
 ---

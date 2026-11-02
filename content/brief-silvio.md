@@ -16,7 +16,7 @@ Dinis: "this is for you, because you're a good salesman". The challenge: **can w
 
 ### What we offer a sponsor {#offer}
 
-- **The merch.** Each person going (5 to 7 of us) gets **3 T-shirts** and a **hoodie**, so 15 to 21 shirts and 5 to 7 hoodies. Each person wears a very different colour, so a group of us stands out on the floor.
+- **The merch.** Each of the seven going gets **3 T-shirts** and a **hoodie**, so 21 shirts and 7 hoodies. Each person wears a very different colour, so a group of us stands out on the floor.
 - **The exposure.** Worn across the summit, 9 to 12 November 2026 in Lisbon: the conference days are 10, 11 and 12 November, and our stand day is **Thursday 12 November**. The shirts carry the stand location, so people come back. The [summit page](../summit/index.html) has the published facts and sessions.
 - **The messages.** The shirts don't just say RiskMandate. They carry a set of conversation openers (do you control your agents? do you know what's on the other side of the agent you're buying?), maybe one per person. The sponsor's logo goes next to RiskMandate and SGit.
 - **A co-brand.** One idea from the conversation was a shared line with a partner business, a security company for example. Who, and on what terms, is for you and Dinis to agree.

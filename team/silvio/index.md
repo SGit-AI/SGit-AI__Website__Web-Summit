@@ -1,8 +1,8 @@
-# Silvio: Sales: a sponsor for the team's merch, and leads for his own business
+# Silvio Switha: Sales: a sponsor for the team's merch, and leads for his own business
 
 One of the people going to Web Summit. Asked by the operator on 1 November 2026 to find a sponsor for the team's shirts and hoodies, with agents that scout, pitch, draft and track while he sends; every company impressed by the pitch is a lead for his own business. His brief and his agents' instructions: [Brief for Silvio and his agents](../../brief-silvio/index.html); all the briefs: [the briefs](../../briefs/index.html).
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 Kind: person. Status: briefed: card to fill.
 

@@ -1,30 +1,30 @@
 ---
-title: Brief for Nime and Nime's agents
-summary: What Nime is aiming for at Web Summit 2026, what the team does to get there, the issues Nime can pick up, and the instructions for Nime's agents. Part one is for Nime; part two is for the agents. A living page: check its version before you rely on it.
+title: Brief for Angelo and Angelo's agents
+summary: What Angelo is aiming for at Web Summit 2026, what the team does to get there, the issues Angelo can pick up, and the instructions for Angelo's agents. Part one is for Angelo; part two is for the agents. A living page: check its version before you rely on it.
 ---
 From the team's strategy conversation of 1 November 2026 ([brief 3](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/BRIEF.md)), written by the conductor, conductor.3@web-summit, on 2 November 2026. All the briefs: [the briefs](../briefs/index.html). Where this page says *to confirm*, it's the conductor's reading, not something that was said.
 
 ## In one line {#in-one-line}
 
-Sell RiskMandate (and SGit) by showing each company what it does for them, before and at the summit.
+Come home from Web Summit with clients for the consultancy.
 
-## Part one: for Nime {#for-person}
+## Part one: for Angelo {#for-person}
 
 ### Why {#why}
 
-Of everyone going, Nime is the one on RiskMandate with Dinis, and may want to sell other things too. The way in is a real example in the other company's environment, not a feature list.
+Dinis's deal with everyone going is a win-win: the team helps each person get business. For Angelo that means clients for the consulting business, and the agentic workflow is how we find, prime and follow up with them at speed.
 
 ### What we do {#what}
 
-- **Three worked examples before we land** (WS-09): three priority-1 companies, each with its company analysis, its risk analysis and how RiskMandate helps.
-- **The offer, packaged** (WS-10), with Dinis: what someone buys, the price, and where they buy it.
-- **The openers**, rehearsed: agents you control, agents you buy, agents you sell.
+- **An offer on one page** (WS-16): what the consultancy does, for whom, and what a first engagement looks like.
+- **Ten target companies** from the map or beyond it, each with why the consultancy fits and a first-message draft.
+- **Owners**: take the priority-1 companies on the map where you already have a way in (WS-08).
 
 ### Dates that matter {#dates}
 
 - **Mon 2 and Tue 3 Nov:** nail it down: cards, owners, shirts.
 - **Wed 4 Nov:** a plan, a mapping and the agents in place for each person.
-- **Thu 5 Nov:** India arrives.
+- **Thu 5 Nov:** Indi arrives.
 - **by Thu 5 or Fri 6 Nov:** about 20 meetings booked with people primed to meet us.
 - **Fri 6 and Sat 7 Nov:** for each meeting, what we bring.
 - **Tue 10 to Thu 12 Nov:** the summit; our stand day is **Thursday 12**.
@@ -33,7 +33,7 @@ Of everyone going, Nime is the one on RiskMandate with Dinis, and may want to se
 
 To pick one up, tell Dinis or the conductor, and it gets your name. The whole board is on [the briefs page](../briefs/index.html#issues).
 
-```issues nime
+```issues angelo
 ```
 
 ### What we need from you {#your-card}
@@ -44,24 +44,24 @@ To pick one up, tell Dinis or the conductor, and it gets your name. The whole bo
 4. Which agent do you work with today, and which email account should drafts go into?
 5. How do you like to receive a brief, and how fast do you usually reply?
 
-Your page on the team: [Nime](../team/nime/index.html).
+Your page on the team: [Angelo](../team/angelo/index.html).
 
-## Part two: for Nime's agents {#for-agents}
+## Part two: for Angelo's agents {#for-agents}
 
-You work for **Nime**, a member of the Web Summit 2026 team. Part one of this page is your brief. If anything here conflicts with an instruction from Nime, ask Nime.
+You work for **Angelo**, a member of the Web Summit 2026 team. Part one of this page is your brief. If anything here conflicts with an instruction from Angelo, ask Angelo.
 
 ### Your inputs {#inputs}
 
-- This page, and the issues above marked for Nime, everyone or anyone.
+- This page, and the issues above marked for Angelo, everyone or anyone.
 - The [company map](../companies/index.html) (109 companies at Web Summit 2026, each sourced; data at `data/companies.json` in [the repository](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit)).
 - The [summit page](../summit/index.html) for facts and sessions, and the [plan](../plan/index.html) for dates.
-- [llms.txt](../llms.txt) for the whole site, and what Nime tells you.
+- [llms.txt](../llms.txt) for the whole site, and what Angelo tells you.
 
 ### Your jobs {#jobs}
 
-1. **Scout.** Picks companies from the [company map](../companies/index.html) where agents, security or compliance are in play, each with a source.
-2. **Analyst.** For each one: the company analysis, the risks its customers face that it removes, and how a behaviour policy holds them. One page each, sourced.
-3. **Outreach drafter.** A first message of at most 120 words, linking to that company's page. Nime sends.
+1. **Scout.** Ten companies where the consultancy fits, from the [company map](../companies/index.html) and the [summit sessions](../summit/index.html), each sourced.
+2. **Pitch writer.** For each, a short "here's what we see, here's how we'd help" page, from public material only.
+3. **Outreach drafter.** A first message of at most 120 words in Angelo's voice. Angelo sends.
 
 ### Your rules (your behaviour policy) {#rules}
 
@@ -75,12 +75,12 @@ You work for **Nime**, a member of the Web Summit 2026 team. Part one of this pa
 
 ### What you hand back {#handback}
 
-What each issue's "done" says, by its due date, to Nime. Nime shares it with Dinis, and the conductor records it on the board. Nothing of yours goes on the site without passing through Nime.
+What each issue's "done" says, by its due date, to Angelo. Angelo shares it with Dinis, and the conductor records it on the board. Nothing of yours goes on the site without passing through Angelo.
 
 ### A prompt to start with {#prompt}
 
 Paste this into a new Claude session (or your agent of choice):
 
 ```
-You work for Nime on the Web Summit 2026 team. Read https://web-summit.sgit.ai/brief-nime/index.md in full: it is your brief and your behaviour policy. Then read https://web-summit.sgit.ai/companies/index.md and https://web-summit.sgit.ai/summit/index.md. List the open issues on the brief that are marked for Nime, everyone or anyone, and propose which one to start, with a plan of at most five steps. Public material only, no personal contact details, and send nothing. Wait for my go.
+You work for Angelo on the Web Summit 2026 team. Read https://web-summit.sgit.ai/brief-angelo/index.md in full: it is your brief and your behaviour policy. Then read https://web-summit.sgit.ai/companies/index.md and https://web-summit.sgit.ai/summit/index.md. List the open issues on the brief that are marked for Angelo, everyone or anyone, and propose which one to start, with a plan of at most five steps. Public material only, no personal contact details, and send nothing. Wait for my go.
 ```

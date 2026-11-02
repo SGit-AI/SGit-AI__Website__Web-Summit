@@ -1,8 +1,8 @@
-# Angela: Business for Angela's consultancy
+# Angelo: Business for Angelo's consultancy
 
-Come home from Web Summit with clients for the consultancy. Brief and agents' instructions: [Brief for Angela](../../brief-angela/index.html).
+Come home from Web Summit with clients for the consultancy. Brief and agents' instructions: [Brief for Angelo](../../brief-angelo/index.html).
 
-Site version: v0.1.26
+Site version: v0.1.27
 
 Kind: person. Status: briefed: card to fill.
 

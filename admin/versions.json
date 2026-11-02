@@ -1,5 +1,10 @@
 [
   {
+    "version": "v0.1.27",
+    "date": "2026-11-02",
+    "what": "The seven core team members by name (Dinis Cruz, Silvio Switha, Nimay Parekh, Vicky, Jose Bota, Angelo, Indi Gupte): briefs renamed, a brief for Jose, Sarah and Daniela shown as working with the team, and shared issues shown only to the seven."
+  },
+  {
     "version": "v0.1.26",
     "date": "2026-11-02",
     "what": "The briefs: a top-level view (/briefs/), a brief for each of the eight people with instructions for their agents, and a board of 23 issues a person and their agents can pick up (data/issues.json), shown on each brief. The roster names the team at the operator's word."

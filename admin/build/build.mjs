@@ -175,9 +175,10 @@ const NUMBERS_MD = NUMBERS.map(([n, t]) => `- ${n} ${t}`).join('\n')
 
 // the issues board: data/issues.json, expanded wherever a page has a fence: ```issues <member id | all>``` then ```
 const ISSUES = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/issues.json'), 'utf8'))
+const isCore = id => !!(teamData.members.find(m => m.id === id) || {}).core
 const memberName = id => (teamData.members.find(m => m.id === id) || {}).name || id
 const issuesMd = who => {
-    const rows = ISSUES.issues.filter(x => who === 'all' || x.for.includes(who) || x.for.includes('everyone') || x.for.includes('anyone'))
+    const rows = ISSUES.issues.filter(x => who === 'all' || x.for.includes(who) || (isCore(who) && (x.for.includes('everyone') || x.for.includes('anyone'))))
     if (!rows.length) return 'No issues for this member yet.'
     const cell = v => String(v).replace(/\|/g, '/').replace(/\n/g, ' ')
     return ['| Issue | What, and what done looks like | For | Due | Status |', '|---|---|---|---|---|',

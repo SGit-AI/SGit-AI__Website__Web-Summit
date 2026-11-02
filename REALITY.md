@@ -1,4 +1,4 @@
-# Reality: what exists on 1 November 2026 (site v0.1.26)
+# Reality: what exists on 1 November 2026 (site v0.1.27)
 
 A thing that is not in this file does not exist, whatever a brief says. Kept current by whoever ships.
 
@@ -10,7 +10,7 @@ A thing that is not in this file does not exist, whatever a brief says. Kept cur
 - The roster (`data/team.json`): the operator, six unnamed seats for the other people going, the designer's seat, the eight agent roles, and the operator's inbox agent (onboarding). Only the operator is named.
 - The conductor role is held by conductor.3@web-summit (key `sha256:62eb11234d3237d5`), the only conductor from 1 November at the operator's word. conductor.2@web-summit (`sha256:a8a24ce1af856a95`, last wake 14:28 UTC on 1 November) and the first session, conductor@web-summit, have ended. No scheduled wake runs: conductor.2's task no longer exists, and a new one waits on the operator.
 - Six vaults on dev.send.sgraph.ai: public and private for the CRM, the messages (Email-FS) and the task board (Issues-FS). Each holds only a README. Keys are held outside the repository.
-- `/briefs/`: the top-level view of the team, a brief per person (`/brief-<id>/`, with instructions for their agents), and the board of issues from `data/issues.json` (23 open, none picked up yet; picked up by telling the operator or the conductor).
+- `/briefs/`: the top-level view of the team, a brief per person, the seven and the two working with them (`/brief-<id>/`, with instructions for their agents), and the board of issues from `data/issues.json` (23 open, none picked up yet; picked up by telling the operator or the conductor).
 - `/keys/`: four public keys: the registry agent that keeps the team's vault keys (handed over as a QR code), and the three conductor session keys (each confirmed by its push).
 
 - The company map (`data/companies.json`): 109 companies, from the first page of each websummit.com list and the public 2026 session pages, read 1 November 2026; the graph (`data/graph.json`): all 109 linked, 228 links, 9 clusters, 12 proposed first meetings; notes on how to re-read the lists in `team/researcher/notes.md`.
@@ -23,7 +23,7 @@ A thing that is not in this file does not exist, whatever a brief says. Kept cur
 - A draft article, The agent security map of Web Summit 2026 (`team/writer/drafts/`), unpublished until the operator agrees who signs.
 
 ## Does not exist yet
-- Owners for any company, any role card filled, any personal agent joined. Named so far (2 November, at the operator's word, spelled as transcribed): Dinis, Silvio, Nime, Angela, Vicky, Daniela, India and Sarah, each with a brief at `/brief-<id>/` (part two for their agents); no card filled yet.
+- Owners for any company, any role card filled, any personal agent joined. Named (2 November, at the operator's word): the seven going, Dinis Cruz, Silvio Switha, Nimay Parekh, Vicky, Jose Bota, Angelo and Indi Gupte, and working with them Sarah (designer) and Daniela (first friendly); each has a brief at `/brief-<id>/` (part two for their agents). No card filled yet; Jose's aim is not yet known.
 - Any asset (a page made for a company), any meeting booked, any email drafted from this site, any number of links sent or pages opened.
 - Personal CRMs, shared ids in use across them, and any data in the team's CRM vaults.
 - Separate sessions per role: today the roles run as sub-agents of the conductor's session.
