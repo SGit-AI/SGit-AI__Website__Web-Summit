@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.94",
+    "date": "2026-11-02",
+    "what": "seal to keys on the keys page (the push is the authorisation), tried end to end; WS-102 corrected and done",
+    "by": "sgit@web-summit.dinis"
+  },
+  {
     "version": "v0.1.93",
     "date": "2026-11-02",
     "what": "brief 4 (the agents ran on their own; three decisions for the morning)",
