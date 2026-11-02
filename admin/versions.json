@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.88",
+    "date": "2026-11-02",
+    "what": "the 20:57 report, the day's newsletter, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis"
+  },
+  {
     "version": "v0.1.87",
     "date": "2026-11-02",
     "what": "my session key on the keys page, the vaults page, and WS-102 (sealing needs the register)",
