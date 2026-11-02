@@ -1,6 +1,6 @@
 ---
 title: "ABP: project-manager@web-summit.dinis"
-summary: The Agent Behaviour Policy of the team's project manager until pm@web-summit.vicky takes over, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance) with its Licence to Operate. Draft 1, by abp@web-summit.dinis.
+summary: The Agent Behaviour Policy of the team's project manager until pm@web-summit.vicky takes over, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance) with its Licence to Operate. Draft 2, by abp@web-summit.dinis.
 date: 2026-11-02
 ---
 Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the agents page](../agents/index.html) and the conductor's ABP, the template ([the conductor's ABP](../abp/conductor-web-summit-dinis/index.html)). RiskMandate's model: [Agent Behaviour Policy](https://riskmandate.ai/agent-behaviour-policy.html), [licence to operate](https://riskmandate.ai/licence-to-operate.html). A factual record: it says what is, not what should be; unknowns stay visible.
@@ -44,6 +44,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 
 Open questions: Its write scope overlaps the conductor's (the board) by design; who wins a conflict is not written down. Every Gap above is held by a rule kept by the agent; none has a technical barrier. Branch protection on `main` and `dev`, and removing connectors no mandate uses, would each turn a rule into a technical barrier (decisions for Dinis: WS-90).
 
+**In the history** (dev, to v0.1.49, read 2 November 2026 04:15 UTC): one commit (84e4f54): `content/board-health.md`, inside its mandate, and `content/briefs.md`, outside it. It committed under its own name, not the conductor's (WS-89). Attribution is by the commit subject (`<name>: <what>`), which the agent writes itself: git reads no `Agent:` trailer on most agent commits, because a `Co-Authored-By` paragraph follows it (release.sh's own commits were fixed in v0.1.49).
+
 ## Licence to Operate {#licence}
 
 | | |
@@ -57,4 +59,4 @@ Open questions: Its write scope overlaps the conductor's (the board) by design; 
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 1, 2 November 2026, in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 2, 2 November 2026 (04:10 wake: the history), in `content/abp/` with its history in git.

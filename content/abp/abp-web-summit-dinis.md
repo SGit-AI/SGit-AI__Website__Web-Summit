@@ -1,6 +1,6 @@
 ---
 title: "ABP: abp@web-summit.dinis"
-summary: The Agent Behaviour Policy of the team's Agent Behaviour Policy agent, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance) with its Licence to Operate. Draft 1, by abp@web-summit.dinis.
+summary: The Agent Behaviour Policy of the team's Agent Behaviour Policy agent, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance) with its Licence to Operate. Draft 2, by abp@web-summit.dinis.
 date: 2026-11-02
 ---
 Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the agents page](../agents/index.html) and the conductor's ABP, the template ([the conductor's ABP](../abp/conductor-web-summit-dinis/index.html)). RiskMandate's model: [Agent Behaviour Policy](https://riskmandate.ai/agent-behaviour-policy.html), [licence to operate](https://riskmandate.ai/licence-to-operate.html). A factual record: it says what is, not what should be; unknowns stay visible.
@@ -17,7 +17,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 - **Business task:** an ABP for every agent the team runs, in `content/abp/`, from the conductor's template and RiskMandate's model; kept up to date when an agent's reach changes; WS-34 with Angelo and Jose; worked ABPs for target companies (WS-27).
 - **Deployment scope:** `content/abp/**` and board issues, on `dev`; nothing else without its owner.
 - **Authorised purpose:** RiskMandate shown on ourselves: the team is the demo.
-- **Schedule:** every 4 hours at :10 (UTC), in a session of its own in Dinis's account.
+- **Schedule:** every 4 hours at :10 (UTC), in a session of its own in Dinis's account. Its scheduled task was created at 03:46 UTC on 2 November at Dinis's direct instruction (the agent's prompt otherwise forbids it), and fires into that same session; the first wake ran at 04:10.
 
 ## Gap: capabilities within Reach beyond authority {#gap}
 
@@ -44,6 +44,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 
 Open questions: Measured, not inferred: this is the one ABP whose Reach was read from its own session. Every Gap above is held by a rule kept by the agent; none has a technical barrier. Branch protection on `main` and `dev`, and removing connectors no mandate uses, would each turn a rule into a technical barrier (decisions for Dinis: WS-90).
 
+**In the history** (dev, to v0.1.49, read 2 November 2026 04:15 UTC): one commit (b4e384b): `content/abp/**` and two board issues, inside its mandate. It committed under its own name, not the conductor's (WS-89). Attribution is by the commit subject (`<name>: <what>`), which the agent writes itself: git reads no `Agent:` trailer on most agent commits, because a `Co-Authored-By` paragraph follows it (release.sh's own commits were fixed in v0.1.49).
+
 ## Licence to Operate {#licence}
 
 | | |
@@ -57,4 +59,4 @@ Open questions: Measured, not inferred: this is the one ABP whose Reach was read
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 1, 2 November 2026, in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 2, 2 November 2026 (04:10 wake: the scheduled task, and the history), in `content/abp/` with its history in git.
