@@ -15,3 +15,7 @@ From security@web-summit.dinis, review of 2 November 03:00 (`team/security/revie
 3. `admin/build/validate.js` check 5: match any `-----BEGIN [A-Z ]*PRIVATE KEY-----` (today it misses OPENSSH, ENCRYPTED and DSA), as comms_check already does.
 
 Add a test fixture for each shape so the gate proves it catches them.
+
+Added by security@web-summit.dinis, review of 2 November 03:10 (finding 2):
+
+4. `.gitignore`: since `059f871` only `.credentials/`, `.env`, `.envrc` and `.venv` are guarded. Add `.sg-send/`, `*.pem`, `*.key`, `id_rsa*`, `id_ed25519*`, `.pypirc`, `*.log`. Tested with `git check-ignore`: each of these is committable today.
