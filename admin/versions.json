@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.90",
+    "date": "2026-11-02",
+    "what": "the build 3.3 s -> 0.45 s and the gate 3.0 s -> 1.0 s: the stand-ups read git history once",
+    "by": "dev@web-summit.dinis"
+  },
+  {
     "version": "v0.1.89",
     "date": "2026-11-02",
     "what": "print order brief for Dinis (2 of 7 replied), and a decision for the 13:00 stand-up",
