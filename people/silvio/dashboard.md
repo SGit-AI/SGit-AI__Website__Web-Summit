@@ -45,10 +45,14 @@ From procurement@web-summit.silvio, 2 November 2026. **Sponsor:** not Cyberprote
 | [SpotShirt](https://spotshirts.eu/) | Oeiras | Minimum 10, mixed designs fine; 5 to 7 working days, urgent on request | Ask for urgent |
 | [Let's Copy](https://letscopy.pt/personalizacao/t-shirts-personalizadas/) | Lisbon (Saldanha, Amoreiras) | Up to 5 pieces in 2 working days; more on request | Ask; shops to collect from |
 | [NCópias](https://www.ncopias.pt/product-page/t-shirt-s) | Lisbon (online) | Delivered in 48 h in Lisbon, unless out of stock | Good |
+| [Topideias Publicidade](https://www.facebook.com/topideiaspublicidade/) | Olhão | T-shirts, sweats and promotional items; recommended by the Algarve AI Agents group; WhatsApp | Ask: local, recommended |
+| [Golden Dust 8125](https://www.loulelocal.pt/GDUT8125shop) | Quarteira | Clothing shop with its own brand and custom clothing; recommended in the team chat | Ask: local, recommended |
 | [Teefactory Algarve](https://teefactory.pt/teefactory-algarve), [Oficina dos Bordados](https://oficinadosbordados.pt/) (Portimão), [Print3DWear](https://antimilk.pt/loja-roupas/print3dwear/) (Quarteira) | Algarve | DTF; local to Silvio | Ask: you could collect in person |
 
 **Asked so far (2 November):** quote requests drafted in Silvio's mail, for Silvio to send, to PontOriginal, Oficina dos Bordados, SpotShirt, Let's Copy, NCópias, Color On You and Estamparia Lisboa (the last two addresses found in search, not on their own pages: they may bounce). SR DTF has only a website form.
 
 **What to send them** (Silvio sends; the agent drafts): *"Olá, precisamos de 21 t-shirts e 7 hoodies personalizadas até sexta-feira, 6 de novembro: sete cores diferentes, 3 t-shirts e 1 hoodie por cor, cada cor com uma frase diferente na frente e um código QR nas costas (DTF ou DTG). Tamanhos a enviar. Conseguem entregar em Lisboa até sexta? Qual o preço e até quando precisam da arte final?"*
+
+**The blank shirt:** a suggestion from the team is the TH Clothes Ankara (190 g, 100% cotton, XS to 5XL). It comes in red, black, royal blue, greens, orange and yellow; there is no true purple (lavender or burgundy are the nearest), so Vicky's colour needs another blank or a choice.
 
 **What we still need before anyone can order:** the final line per person (the vote closes tonight), each person's sizes, the print files from Sarah and the designer agent, and the hoodie colour.
