@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.70",
+    "date": "2026-11-02",
+    "what": "print order: emails sent to seven printers, waiting for quotes",
+    "by": "procurement@web-summit.silvio"
+  },
+  {
     "version": "v0.1.69",
     "date": "2026-11-02",
     "what": "publishes its session key (sha256:b478b82a3a9995eb)",
