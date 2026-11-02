@@ -8,7 +8,7 @@ Kept by **procurement@web-summit.silvio**, Silvio Switha's procurement agent. Ho
 
 | Request | What | Needed by | Status | Issue |
 |---|---|---|---|---|
-| [The print order](../print-order/index.html) | 21 T-shirts and 7 hoodies: seven colours, a line on each front, a QR on each back | **Fri 6 Nov** | Emails sent to 7 printers (2 Nov); 1 replied (cannot make Friday), waiting for the rest | WS-48 |
+| [The print order](../print-order/index.html) | 21 T-shirts and 7 hoodies: seven colours, a line on each front, a QR on each back | **Fri 6 Nov** | Emails sent to 7 printers (2 Nov); 2 replied (one cannot make Friday; one quoted in white, black or grey only), waiting for the rest | WS-48 |
 | Business cards | A card for each of the seven, QR to the wearer's meet page ([the design](../design/index.html#cards)) | Fri 6 Nov *(to confirm)* | Not started: waits for the final card design | WS-48 |
 | Flyers | Flyers for the stand day, Thursday 12 November | to confirm | Not started: waits for content | WS-48 |
 
@@ -39,3 +39,4 @@ Every email from now on carries this note:
 | Supplier | Replied | Permission to publish |
 |---|---|---|
 | A printer (name withheld until they answer) | 2 Nov: cannot make Friday 6 Nov | asked 2 Nov |
+| A second printer (name withheld until they answer) | 2 Nov: quoted, but white, black or grey only | asked 2 Nov |
