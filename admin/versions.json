@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.96",
+    "date": "2026-11-02",
+    "what": "the mentors (one session, seven steps, a mentor per person), profiles for six, core-agent kits for eight, mentor notes on dashboards",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.95",
     "date": "2026-11-02",
     "what": "print order: printer A asked Silvio to call (name withheld)",
