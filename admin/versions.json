@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.37",
+    "date": "2026-11-02",
+    "what": "the board's health, first run: today's merch deadlines at risk, WS-09 gating everyone, two issues to close",
+    "by": "project-manager@web-summit.dinis"
+  },
+  {
     "version": "v0.1.36",
     "date": "2026-11-02",
     "what": "the security agent's first review: all 44 commits on dev, no hold, and two issues on the CI and the gate's secret checks (WS-85, WS-86)",
