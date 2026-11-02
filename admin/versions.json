@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.51",
+    "date": "2026-11-02",
+    "what": "the release step rebuilds when the head is already released; the briefs and start page say CI owns the version",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.50",
     "date": "2026-11-02",
     "what": "abp@web-summit.dinis: each ABP now records what its agent's commits actually touched",
