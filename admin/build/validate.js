@@ -82,15 +82,12 @@ const listed = [...read('sitemap.xml').matchAll(new RegExp(`<loc>https://${HOST}
 for (const p of listed) if (!fs.existsSync(path.join(ROOT, p))) errors.push(`sitemap.xml lists a page that does not exist: /${p}`)
 for (const f of htmlFiles) if (!listed.includes(rel(f))) errors.push(`sitemap.xml is missing ${rel(f)}`)
 
-// 5. key-leak tripwire
-const SGIT_KEY = /sgit_private_(vault|read)_[A-Za-z0-9]/
-const KEY_SHAPE = /(?<![A-Za-z0-9_-])[A-Za-z0-9_-]{20,}:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/
+// 5. key-leak tripwire: every text file, one list of shapes (admin/build/secrets.cjs), and its fixtures must all be caught
+const secrets = require('./secrets.cjs')
+errors.push(...secrets.selfTest())
 for (const f of files) {
-    if (/\.(png|jpg|jpeg|gif|webp|ico|woff2?|zip|pdf|mp4|webm|mov|mp3|m4a)$/.test(f)) continue  // binaries: not text a key can be pasted into; the two videos alone were 14 MB of the gate's reading
-    const t = text(f)
-    if (SGIT_KEY.test(t)) errors.push(`${rel(f)}: contains a private sgit key (vault or private read)`)
-    if (KEY_SHAPE.test(t)) errors.push(`${rel(f)}: contains a vault-key-shaped string`)
-    if (/-----BEGIN (RSA |EC )?PRIVATE KEY-----/.test(t)) errors.push(`${rel(f)}: contains a private key`)
+    if (secrets.BINARY.test(f)) continue
+    for (const what of secrets.keyHits(text(f))) errors.push(`${rel(f)}: contains ${what}`)
 }
 
 // 6. div balance, 7. agent block
@@ -185,7 +182,7 @@ try {
     }
 }
 
-// 15. public forever: no email address, phone number or key shape in comms/, data/, team/, people/ or board/ (admin/tools/comms_check.mjs)
+// 15. public forever: no email address, phone number or key shape in content/, comms/, data/, team/, people/ or board/ (admin/tools/comms_check.mjs)
 try { execFileSync('node', [path.join(__dirname, '..', 'tools', 'comms_check.mjs')], { cwd: ROOT, stdio: 'pipe' }) }
 catch (e) { errors.push(`comms_check: ${(e.stdout || '').toString()}${(e.stderr || '').toString()}`.trim()) }
 

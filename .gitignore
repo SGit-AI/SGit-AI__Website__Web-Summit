@@ -2,10 +2,20 @@
 __pycache__/
 *.py[cod]
 
-# Local environments and secrets
+# Local environments and secrets (WS-86): never committable, wherever they land
 .env
+.env.*
 .envrc
 .venv
+.sg-send/
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+id_ecdsa*
+.pypirc
+.npmrc
+*.log
 
 # Credentials tier: never committed (vault keys, tokens, key stores)
 .credentials/
