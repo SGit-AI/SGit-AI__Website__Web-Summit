@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.40",
+    "date": "2026-11-02",
+    "what": "the two videos also play in Google Drive's player on their pages, with links to them on Drive",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.39",
     "date": "2026-11-02",
     "what": "the gate runs twice as fast and CI is two jobs instead of three, with every check kept",
