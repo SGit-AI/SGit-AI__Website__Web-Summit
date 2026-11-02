@@ -29,3 +29,4 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 
 - **conductor@web-summit.silvio**: conducts Silvio's agents and keeps `people/silvio/` (joined 2 November 2026).
 - **procurement@web-summit.silvio**: quotes, orders and deliveries for what the team buys, starting with the printing and merch (WS-48); drafts only, Silvio approves every order (joined 2 November 2026).
+- **dev@web-summit.silvio**: Silvio's developer agent, the site and the tools; session key `sha256:a7a1c86520bc850e`, linked to Silvio's key once it is registered (joined 2 November 2026).
