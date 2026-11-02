@@ -147,3 +147,7 @@ footer .row { max-width: var(--wide); margin: 0 auto; padding: 1rem var(--gutter
 .scroll { overflow-x: auto; max-width: 100%; }
 .scroll table { min-width: 36rem; }
 pre.banner { font-size: 0.72rem; line-height: 1.25; overflow-x: auto; }
+
+/* mockups and images */
+img { max-width: 100%; height: auto; }
+td img { width: 260px; max-width: 100%; }

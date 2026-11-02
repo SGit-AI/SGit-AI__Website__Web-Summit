@@ -26,7 +26,7 @@ This page is Dinis's, kept by Dinis and Dinis's agents in `people/dinis/dashboar
 | **WS-08** | **Fill in your card.** Answers to the questions at the end of your brief, committed to people/<you>/card.md or sent to Dinis. | everyone | Tue 3 Nov | open |
 | **WS-09** | **Add everyone's GitHub account to the repository.** Every one of the seven (and Sarah and Daniela, if they want) can push to dev. | [Dinis Cruz](../../brief-dinis/index.html) | Tue 3 Nov | open |
 | **WS-10** | **Workspace email accounts where they are needed.** Everyone who needs one has an account they can send from. | [Dinis Cruz](../../brief-dinis/index.html) | Tue 3 Nov | open |
-| **WS-11** | **Start the team's scheduled sessions in this account.** The conductor, the journalist, the pulse reader and security running on their schedules (the list is in [Dinis's brief](../../brief-dinis/index.html#team-agents)). | [Dinis Cruz](../../brief-dinis/index.html) | Mon 2 Nov | open |
+| **WS-11** | **Start the team's scheduled sessions in this account.** The conductor, the journalist, the pulse reader and security running on their schedules (superseded by WS-67: [the prompts](../../agents/index.html)). | [Dinis Cruz](../../brief-dinis/index.html) | Mon 2 Nov | open |
 | **WS-12** | **Verify each person's key on pki.sgit.ai as the anchor.** Each registered person verified; then the vault keys sealed to each of them. | [Dinis Cruz](../../brief-dinis/index.html) | Wed 4 Nov | open |
 | **WS-13** | **The merch budget if no sponsor comes.** A yes to pay, and the cut-off for it. | [Dinis Cruz](../../brief-dinis/index.html) | Wed 4 Nov, 12:00 | open |
 | **WS-14** | **newsroom.web-summit.sgit.ai: who runs it.** The person who runs it, its repository and its DNS. | [Dinis Cruz](../../brief-dinis/index.html) | Tue 3 Nov | open |
@@ -45,6 +45,10 @@ This page is Dinis's, kept by Dinis and Dinis's agents in `people/dinis/dashboar
 | **WS-51** | **Technical articles: what we did and how.** Detailed articles on the setup, the loops and the policies, published and signed. | anyone, [Angelo](../../brief-angelo/index.html) | from Wed 4 Nov | open |
 | **WS-55** | **Everyone's shirt and hoodie: size, colour, message.** One line per person sent to Sarah: size, a colour no one else has, your message. | everyone | Mon 2 Nov | open |
 | **WS-61** | **Try the voice memo to follow-up loop once.** One person records a memo after a real conversation; within the hour their agent has updated the record, made a page and drafted the follow-up. | anyone | Sat 7 Nov | open |
+| **WS-62** | **Vote on the design.** Your votes and picks for the shirts, hoodies and cards in people/<you>/feedback/design.json ([the design page](../../design/index.html#vote) says how), with what you would change. *Agents:* Your agent shows you the options and commits your answers. | everyone | Mon 2 Nov, 16:00 | open |
+| **WS-63** | **The final design set, approved, and the print files.** One tee concept and colour per person, one hoodie, one card, approved by Dinis and Sarah; print files at the printer's spec in team/designer/print/, handed to Vicky. *Agents:* designer@web-summit.dinis iterates hourly today. | [Sarah](../../brief-sarah/index.html), [Dinis Cruz](../../brief-dinis/index.html) | Mon 2 Nov, 20:00 | open |
+| **WS-64** | **Booking and talk-to-my-agent on each meet page.** Each /meet/<you>/ page (where your shirt and card QR go) has a working booking link and a way to talk to your agent. | [Angelo](../../brief-angelo/index.html), [Jose Bota](../../brief-jose/index.html), everyone | Thu 5 Nov | open |
+| **WS-67** | **Start the team's scheduled agents.** Conductor, journalist, pulse, security, designer and dev each in its own session with its schedule ([the prompts](../../agents/index.html)). | [Dinis Cruz](../../brief-dinis/index.html) | Mon 2 Nov | open |
 
 ## My onboarding {#onboarding}
 

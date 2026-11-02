@@ -58,6 +58,8 @@ Pick any of these up, or anyone else's on [the board](../briefs/index.html#issue
 | **WS-59** | **Daniela's agentic team: what it runs, and a policy for each agent.** Agents for the website, calendar, email, promotion and lesson preparation, each with a behaviour policy; none with free rein of an email account or students' data. | [Daniela](../brief-daniela/index.html), [Indi Gupte](../brief-indi/index.html), [Angelo](../brief-angelo/index.html) | Wed 4 Nov | open |
 | **WS-60** | **Daniela's website, and the learning environment.** A live site for Daniela, the onboarding for students and the environment Daniela works in, published with the billing element. | [Indi Gupte](../brief-indi/index.html), [Daniela](../brief-daniela/index.html), [Angelo](../brief-angelo/index.html) | Fri 6 Nov | open |
 | **WS-61** | **Try the voice memo to follow-up loop once.** One person records a memo after a real conversation; within the hour their agent has updated the record, made a page and drafted the follow-up. | anyone | Sat 7 Nov | open |
+| **WS-62** | **Vote on the design.** Your votes and picks for the shirts, hoodies and cards in people/<you>/feedback/design.json ([the design page](../design/index.html#vote) says how), with what you would change. *Agents:* Your agent shows you the options and commits your answers. | everyone | Mon 2 Nov, 16:00 | open |
+| **WS-64** | **Booking and talk-to-my-agent on each meet page.** Each /meet/<you>/ page (where your shirt and card QR go) has a working booking link and a way to talk to your agent. | [Angelo](../brief-angelo/index.html), [Jose Bota](../brief-jose/index.html), everyone | Thu 5 Nov | open |
 
 ### Who you work with {#tag-team}
 

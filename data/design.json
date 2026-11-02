@@ -1,0 +1,44 @@
+{
+  "about": "The merch design sprint of Monday 2 November 2026: the concepts for the T-shirts, hoodies and cards, a colour for each of the seven, and the options the team votes on (people/<id>/feedback/design.json). Mock-ups are made from this file by team/designer/mockups/make-mockups.py. Every QR goes to the person's /meet/<id>/ page, so the printed code never has to change.",
+  "people": [
+    {"id": "dinis", "first": "Dinis", "name": "Dinis Cruz", "role": "RiskMandate", "colour": "#111111", "ink": "#ffffff", "tee": "T1", "line": "Ask me what my agents did today."},
+    {"id": "nimay", "first": "Nimay", "name": "Nimay Parekh", "role": "RiskMandate", "colour": "#1f3a93", "ink": "#ffffff", "tee": "T2", "line": "My agents have a policy. Do yours?"},
+    {"id": "angelo", "first": "Angelo", "name": "Angelo", "role": "RiskMandate", "colour": "#1e7b4f", "ink": "#ffffff", "tee": "T4", "line": "Ask me how I control my agents."},
+    {"id": "jose", "first": "Jose", "name": "Jose Bota", "role": "RiskMandate", "colour": "#e86a1c", "ink": "#111111", "tee": "T6", "line": "I brought 6 agents. Ask me why."},
+    {"id": "vicky", "first": "Vicky", "name": "Vicky", "role": "RiskMandate", "colour": "#6b3fa0", "ink": "#ffffff", "tee": "T3", "line": "Who's on the other side of your agent?"},
+    {"id": "silvio", "first": "Silvio", "name": "Silvio Switha", "role": "RiskMandate", "colour": "#c62828", "ink": "#ffffff", "tee": "T5", "line": "Agents with a mandate."},
+    {"id": "indi", "first": "Indi", "name": "Indi Gupte", "role": "RiskMandate", "colour": "#f2b705", "ink": "#111111", "tee": "T2", "line": "Your agents. Your rules."}
+  ],
+  "tees": [
+    {"id": "T1", "name": "Do you know what your agents are doing?", "sample": "dinis", "front": ["DO YOU KNOW", "WHAT YOUR AGENTS", "ARE DOING?"], "back": ["I DO.", "ASK ME."], "why": "A question nobody can answer with a yes; the back says the wearer can."},
+    {"id": "T2", "name": "My agents have a policy. Do yours?", "sample": "nimay", "front": ["MY AGENTS", "HAVE A POLICY."], "sub": "Do yours?", "why": "Says what RiskMandate is in five words and asks the question."},
+    {"id": "T3", "name": "Who's on the other side of your agent?", "sample": "vicky", "front": ["WHO'S ON THE", "OTHER SIDE OF", "YOUR AGENT?"], "why": "For buyers of agents: the risk they haven't thought about."},
+    {"id": "T4", "name": "Ask me how I control my agents", "sample": "angelo", "front": ["ASK ME HOW", "I CONTROL", "MY AGENTS"], "why": "An open invitation; works for anyone on the team, technical or not."},
+    {"id": "T5", "name": "RISK MANDATE: agents with a mandate", "sample": "silvio", "front": ["RISK", "MANDATE"], "sub": "agents with a mandate", "why": "The brand, big: for when we want the name remembered more than a question."},
+    {"id": "T6", "name": "I brought 6 agents to Web Summit", "sample": "jose", "front": ["I BROUGHT", "6 AGENTS TO", "WEB SUMMIT."], "sub": "Ask me what they're doing.", "why": "True, playful, and a demo in itself: each of us runs an agentic team."},
+    {"id": "T7", "name": "The plain backup", "sample": "indi", "chest": true, "front": ["RISKMANDATE"], "back": ["RISKMANDATE", "WEB SUMMIT 2026"], "why": "If the venue pushes back on messages: the name on the chest, the QR on the back."}
+  ],
+  "hoodies": [
+    {"id": "H1", "name": "Agents under policy", "sample": "dinis", "chest": ["RISKMANDATE"], "back": ["AGENTS", "UNDER", "POLICY"]},
+    {"id": "H2", "name": "Your agents. Your rules.", "sample": "silvio", "chest": ["RISKMANDATE"], "back": ["YOUR AGENTS.", "YOUR RULES."]}
+  ],
+  "cards": [
+    {"id": "C1", "name": "White card, a band in your colour, your line", "sample": "vicky", "style": "band"},
+    {"id": "C2", "name": "Your colour, the name big", "sample": "jose", "style": "full"}
+  ],
+  "options": [
+    {"id": "T1", "name": "Do you know what your agents are doing?"},
+    {"id": "T2", "name": "My agents have a policy. Do yours?"},
+    {"id": "T3", "name": "Who's on the other side of your agent?"},
+    {"id": "T4", "name": "Ask me how I control my agents"},
+    {"id": "T5", "name": "RISK MANDATE, big"},
+    {"id": "T6", "name": "I brought 6 agents to Web Summit"},
+    {"id": "T7", "name": "The plain backup"},
+    {"id": "H1", "name": "Hoodie: agents under policy"},
+    {"id": "H2", "name": "Hoodie: your agents, your rules"},
+    {"id": "C1", "name": "Card: white, a band in your colour"},
+    {"id": "C2", "name": "Card: your colour, the name big"},
+    {"id": "colours", "name": "A colour each, as on the seven"},
+    {"id": "qr-meet", "name": "The QR on the back goes to your meet page"}
+  ]
+}

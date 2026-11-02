@@ -61,6 +61,8 @@ Pick any of these up, or anyone else's on [the board](../briefs/index.html#issue
 | **WS-53** | **Silvio's agentic project-management workflow, written up.** How it works, what we can use here, and one part of it running for the team. | [Silvio Switha](../brief-silvio/index.html), [Vicky](../brief-vicky/index.html) | Wed 4 Nov | open |
 | **WS-55** | **Everyone's shirt and hoodie: size, colour, message.** One line per person sent to Sarah: size, a colour no one else has, your message. | everyone | Mon 2 Nov | open |
 | **WS-61** | **Try the voice memo to follow-up loop once.** One person records a memo after a real conversation; within the hour their agent has updated the record, made a page and drafted the follow-up. | anyone | Sat 7 Nov | open |
+| **WS-62** | **Vote on the design.** Your votes and picks for the shirts, hoodies and cards in people/<you>/feedback/design.json ([the design page](../design/index.html#vote) says how), with what you would change. *Agents:* Your agent shows you the options and commits your answers. | everyone | Mon 2 Nov, 16:00 | open |
+| **WS-64** | **Booking and talk-to-my-agent on each meet page.** Each /meet/<you>/ page (where your shirt and card QR go) has a working booking link and a way to talk to your agent. | [Angelo](../brief-angelo/index.html), [Jose Bota](../brief-jose/index.html), everyone | Thu 5 Nov | open |
 
 ### Who you work with {#tag-team}
 

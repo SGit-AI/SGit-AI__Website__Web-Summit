@@ -67,16 +67,7 @@ You work for **Dinis Cruz** on the Web Summit 2026 team, under the name conventi
 
 ### The team's scheduled agents, in this account {#team-agents}
 
-Each one a separate Claude session on its own schedule (level 6), all writing to this repository:
-
-| Agent | Schedule (UTC; Lisbon is UTC in November) | Writes |
-|---|---|---|
-| conductor@web-summit.dinis | every 2 hours at :27 | the wake: build, gate, roster, board, log, REALITY.md |
-| journalist@web-summit.dinis | every 2 hours at :57, after the conductor | the home page, reports/, the daily newsletter |
-| pulse@web-summit.dinis | 08:40, 13:10, 19:40 | pulse/index (the team's pulse), flags on the board |
-| security@web-summit.dinis | 11:50 and 23:50 | security notes on the board; a hold if something leaked |
-
-The researcher, cartographer, curator, writer and designer keep running as sub-agents of the conductor's wake.
+Conductor, journalist, pulse, security, designer and dev, each its own scheduled session: [the agents and the prompts to start them](../agents/index.html).
 
 ### How we work in the repository {#how}
 

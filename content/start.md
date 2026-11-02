@@ -2,6 +2,8 @@
 title: Start here
 summary: The one page for the Web Summit 2026 team. Find your name, open your brief, paste your prompt into your own Claude, and get connected (Claude, GitHub, email, a PKI key, a schedule). Then how we work, the pulse, and the dates. Everyone champions RiskMandate.
 ---
+**Today, Monday: vote on the shirts, hoodies and cards on [the design page](../design/index.html#vote).**
+
 **Team: start here.** Find your name, open your brief, and paste the prompt from it into your own Claude. Your agent then takes you through getting connected, one step at a time. Everything here is public, on purpose: how we work is part of what we show.
 
 ## Find your name {#people}
@@ -63,7 +65,8 @@ The first priority for everyone. Your agent records your level in `people/<you>/
 - **Issues:** [the board](../briefs/index.html#issues). Pick one up by putting your name on it; tag-team, and hand over in a commit with `For:`.
 - **Your dashboard is yours.** Make it the page you want to see when you wake up. We copy the best ideas into the main page.
 - **Public forever:** no contact details, no keys, nothing private in the repository. Private things go in the private vault.
-- **The team's agents** (conductor, journalist, pulse, security) run on a schedule in Dinis's account; [the list](../brief-dinis/index.html#team-agents).
+- **The team's agents** (conductor, journalist, pulse, security, designer, dev) run on a schedule in Dinis's account: [the agents and their prompts](../agents/index.html).
+- **Today (Monday): the design.** Vote on the shirts, hoodies and cards: [the design sprint](../design/index.html#vote).
 
 ## The pulse {#pulse}
 

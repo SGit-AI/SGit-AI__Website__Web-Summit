@@ -9,7 +9,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../.
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
 const VERSION = fs.readFileSync(path.join(ROOT, 'admin/build/version.txt'), 'utf8').trim()
 const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
-const NAV = [['Start', 'start/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Companies', 'companies/index.html'], ['Summit', 'summit/index.html'], ['Plan', 'plan/index.html'], ['Team', 'team/index.html'], ['Log', 'log/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['About', 'about/index.html'], ['Versions', 'admin/versions.html']]
+const NAV = [['Start', 'start/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Design', 'design/index.html'], ['Agents', 'agents/index.html'], ['Companies', 'companies/index.html'], ['Summit', 'summit/index.html'], ['Plan', 'plan/index.html'], ['Team', 'team/index.html'], ['Log', 'log/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['About', 'about/index.html'], ['Versions', 'admin/versions.html']]
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 const slug = s => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
@@ -20,6 +20,7 @@ function inline(s) {
         .replace(/`([^`]+)`/g, '<code>$1</code>')
         .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
         .replace(/\*([^*]+)\*/g, '<i>$1</i>')
+        .replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, '<img src="$2" alt="$1" loading="lazy">')
         .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>')
 }
 
@@ -209,11 +210,24 @@ const pulseMd = who => {
     if (!es.length) return 'No check-ins yet.'
     return es.map(e => `### ${e.name}, ${e.f.replace(/\.md$/, '')}\n\n${e.text.replace(/^---[\s\S]*?---\n/, '').trim().replace(/^#+ /gm, '')}`).join('\n\n')
 }
+// feedback: people/<id>/feedback/<topic>.json {votes: {<option id>: love|yes|no}, pick: {<kind>: <option id>}, comments, updated};
+// ```feedback <topic>``` renders the tally, with the options from data/<topic>.json (options: [{id, name}])
+const feedbackMd = topic => {
+    const optsFile = path.join(ROOT, 'data', topic + '.json')
+    const opts = fs.existsSync(optsFile) ? JSON.parse(fs.readFileSync(optsFile, 'utf8')).options : []
+    const fb = PEOPLE().map(m => { const f = path.join(ROOT, 'people', m.id, 'feedback', topic + '.json'); return fs.existsSync(f) ? { m, ...JSON.parse(fs.readFileSync(f, 'utf8')) } : null }).filter(Boolean)
+    const n = (o, v) => fb.filter(x => (x.votes || {})[o] === v).length
+    const picks = o => fb.filter(x => Object.values(x.pick || {}).includes(o)).map(x => x.m.name.split(' ')[0])
+    const table = ['| Option | Love | Yes | No | Picked by |', '|---|---|---|---|---|', ...opts.map(o => `| **${o.id}** ${o.name} | ${n(o.id, 'love')} | ${n(o.id, 'yes')} | ${n(o.id, 'no')} | ${picks(o.id).join(', ') || '-'} |`)].join('\n')
+    const said = fb.filter(x => x.comments).map(x => `- **${x.m.name.split(' ')[0]}** (${x.updated || 'undated'}): ${String(x.comments).replace(/\n/g, ' ')}`).join('\n')
+    return `${fb.length} of ${PEOPLE().filter(m => m.core).length} have voted so far.\n\n${table}${said ? '\n\n' + said : ''}`
+}
 let UP = '../'
 const expandIssues = (body, up = '../') => { UP = up; return body
     .replace(/```issues ([a-z0-9:-]+)\n```/g, (_, w) => issuesMd(w))
     .replace(/```onboarding ([a-z0-9-]+)\n```/g, (_, w) => onboardingMd(w))
-    .replace(/```pulse ([a-z0-9-]+)\n```/g, (_, w) => pulseMd(w)) }
+    .replace(/```pulse ([a-z0-9-]+)\n```/g, (_, w) => pulseMd(w))
+    .replace(/```feedback ([a-z0-9-]+)\n```/g, (_, w) => feedbackMd(w)) }
 
 // plain pages: content/index.md -> index.html, content/<name>.md -> <name>/index.html
 for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWith('.md'))) {

@@ -18,6 +18,7 @@ This page is Sarah's, kept by Sarah and Sarah's agents in `people/sarah/dashboar
 |---|---|---|---|---|
 | **WS-56** | **The shirt messages: RiskMandate openers.** Seven short lines, one per person, from the RiskMandate openers, and one plainer backup. | [Sarah](../../brief-sarah/index.html), [Nimay Parekh](../../brief-nimay/index.html), [Indi Gupte](../../brief-indi/index.html) | Mon 2 Nov | open |
 | **WS-57** | **Shirt and hoodie artwork, final.** Seven colourways (3 T-shirts each and a hoodie), the stand location, the QR, room for a sponsor logo, a backup design. | [Sarah](../../brief-sarah/index.html) | Wed 4 Nov, 12:00 | open |
+| **WS-63** | **The final design set, approved, and the print files.** One tee concept and colour per person, one hoodie, one card, approved by Dinis and Sarah; print files at the printer's spec in team/designer/print/, handed to Vicky. *Agents:* designer@web-summit.dinis iterates hourly today. | [Sarah](../../brief-sarah/index.html), [Dinis Cruz](../../brief-dinis/index.html) | Mon 2 Nov, 20:00 | open |
 
 ## My onboarding {#onboarding}
 

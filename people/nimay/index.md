@@ -44,6 +44,9 @@ This page is Nimay's, kept by Nimay and Nimay's agents in `people/nimay/dashboar
 | **WS-55** | **Everyone's shirt and hoodie: size, colour, message.** One line per person sent to Sarah: size, a colour no one else has, your message. | everyone | Mon 2 Nov | open |
 | **WS-56** | **The shirt messages: RiskMandate openers.** Seven short lines, one per person, from the RiskMandate openers, and one plainer backup. | [Sarah](../../brief-sarah/index.html), [Nimay Parekh](../../brief-nimay/index.html), [Indi Gupte](../../brief-indi/index.html) | Mon 2 Nov | open |
 | **WS-61** | **Try the voice memo to follow-up loop once.** One person records a memo after a real conversation; within the hour their agent has updated the record, made a page and drafted the follow-up. | anyone | Sat 7 Nov | open |
+| **WS-62** | **Vote on the design.** Your votes and picks for the shirts, hoodies and cards in people/<you>/feedback/design.json ([the design page](../../design/index.html#vote) says how), with what you would change. *Agents:* Your agent shows you the options and commits your answers. | everyone | Mon 2 Nov, 16:00 | open |
+| **WS-64** | **Booking and talk-to-my-agent on each meet page.** Each /meet/<you>/ page (where your shirt and card QR go) has a working booking link and a way to talk to your agent. | [Angelo](../../brief-angelo/index.html), [Jose Bota](../../brief-jose/index.html), everyone | Thu 5 Nov | open |
+| **WS-66** | **The positioning text on the meet pages.** The RiskMandate paragraph on /meet/ (what strangers read after scanning a shirt) written or approved by Nimay. | [Nimay Parekh](../../brief-nimay/index.html) | Wed 4 Nov | open |
 
 ## My onboarding {#onboarding}
 

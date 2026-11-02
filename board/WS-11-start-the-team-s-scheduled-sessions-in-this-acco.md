@@ -7,4 +7,4 @@ due: Mon 2 Nov
 status: open
 picked_by:
 ---
-The conductor, the journalist, the pulse reader and security running on their schedules (the list is in [Dinis's brief](../brief-dinis/index.html#team-agents)).
+The conductor, the journalist, the pulse reader and security running on their schedules (superseded by WS-67: [the prompts](../agents/index.html)).
