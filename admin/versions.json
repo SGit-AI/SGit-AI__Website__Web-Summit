@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.55",
+    "date": "2026-11-02",
+    "what": "briefing pages link the board from their own depth",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.54",
     "date": "2026-11-02",
     "what": "ABPs v3, CI owns the version: tag_release.sh runs on every push with a write token",
