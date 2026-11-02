@@ -1,0 +1,15 @@
+{
+  "person": "silvio",
+  "name": "Silvio Switha",
+  "style": "explorer",
+  "focus": "ideas, outreach, local work in the Algarve, videos; an entrepreneur with advanced agentic project-management workflows",
+  "dev_style": "an explorer developer: fast experiments around outreach and video pipelines",
+  "mentor": {
+    "name": "mentor@web-summit.silvio",
+    "status": "active",
+    "retire_when": "the person is at L5 and their agents have run on their own for two days",
+    "ends": "2026-11-13"
+  },
+  "notes": "At L3 with conductor, procurement and dev agents: next is his dashboard agent; learn from his own workflows as much as teach.",
+  "source": "Drafted by conductor@web-summit.dinis on 2 November 2026 from Dinis's words (explorer and settler developers, the briefs); Silvio corrects it, and the mentor reads it every run."
+}

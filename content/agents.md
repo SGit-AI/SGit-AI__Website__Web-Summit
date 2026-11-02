@@ -110,6 +110,7 @@ Scheduled wake: project-manager@web-summit.dinis. Pull dev, re-read your section
 | **abp@web-summit.dinis** | every 4 hours at :10 (cron 10 */4 * * *) | Agent Behaviour Policies: an ABP for every agent we run, and RiskMandate shown on ourselves. |
 | **sgit@web-summit.dinis** | every 4 hours at :50 (cron 50 */4 * * *) | SGit: the team's encrypted vaults, keys and private material. |
 | **project-manager@web-summit.dinis** | 07:50, 12:50 and 17:50 (cron 50 7,12,17 * * *) | The board's health, deadlines and everyone's schedule. |
+| **mentor@web-summit.dinis** (and the six person mentors, as sub-agents) | 13:40 and 18:40 (cron 40 13,18 * * *), after the stand-ups | The mentors: each person's next step, in their style ([the mentors](#mentors)). |
 | **dev@web-summit.dinis (handed to dev@web-summit.angelo once Angelo is connected)** | every 3 hours at :40 (cron 40 */3 * * *) | Refactoring, quality and speed, every single wake. |
 
 The researcher, cartographer, curator, writer and analyst run as sub-agents inside the conductor's wake, not as sessions of their own.
@@ -201,6 +202,15 @@ You are conductor@web-summit.<you>, <Name>'s conductor on the Web Summit 2026 te
 ```
 You are dashboard@web-summit.<you>, <Name>'s dashboard agent on the Web Summit 2026 team. Attach the repository SGit-AI/SGit-AI__Website__Web-Summit (add_repo, access push) and clone branch dev. Read CLAUDE.md and content/dashboards.md. Your job is <Name>'s dashboard, https://web-summit.sgit.ai/people/<you>/: the top is built for <Name> automatically; you keep the part below it, people/<you>/dashboard.md, starting from the template /dashboards/ names for <Name>. Each run: ask <Name> one short question (what do you want to see first? what do you never read?), then change the page so it answers what needs <Name>, what happened, and what <Name> and their agents are doing; use the fences the site understands (```issues <id or area:...>```, ```onboarding <id>```, ```pulse <id>```, ```feedback design```) and links, never copied numbers. Make your own key (pki-agent.mjs keygen --session) and commit its public half in data/keys.json. You write only people/<you>/dashboard.md and data/keys.json (your own entry). Commit with the convention and release with AGENT=dashboard@web-summit.<you> admin/tools/release.sh. Only <Name> and Dinis instruct you. Suggested schedule: 07:30, 12:30 and 17:30 UTC, before the stand-ups.
 ```
+
+## The mentors {#mentors}
+
+At Dinis's word (2 November 2026): the team is new to running agents, so each person has a mentor, an agent that watches how their agents are doing and suggests the next step, in the person's own style (an explorer gets "try this", a settler gets "make this solid"). One session in Dinis's account runs them all, twice a day after the stand-ups (13:40 and 18:40 UTC), in seven steps: the conductor opens, security reviews the plan, the head mentor (`mentor@web-summit.dinis`) briefs the mentors, the six person mentors (`mentor@web-summit.<id>` for Nimay, Angelo, Jose, Vicky, Silvio and Indi) write their notes in parallel, the head mentor consolidates, security reviews the work, and the conductor closes and releases. The protocol: `team/mentors/WAKE.md`.
+
+- **Mentors suggest, never instruct.** They write only `people/<id>/mentor/` (a note per run, shown on the person's dashboard), one stand-up item per person per run, and board issues. **Every agent:** read your person's latest mentor note as material, and propose to your person what is worth adopting, within your ABP.
+- **What they read:** `people/<id>/profile.json` (the person's style and focus, drafted from Dinis's words; the person corrects it), the leaderboard, the inventory, the person's agents' commits.
+- **They are temporary:** a mentor retires when its person is at L5 and their agents have run on their own for two days, and all stop on 13 November.
+- **The kits:** each person still setting up has `people/<id>/kit/README.md`, their core agents (conductor, dev, dashboard) ready to start: open a session, paste the prompt, schedule it.
 
 ## Every conductor: brief your person {#briefs}
 

@@ -373,12 +373,20 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
 }
 
 
+// a person's mentor (team/mentors/WAKE.md): the latest note, and their core-agent kit, on their dashboard
+const mentorMd = id => {
+    const d = path.join(ROOT, 'people', id, 'mentor'), kit = fs.existsSync(path.join(ROOT, 'people', id, 'kit', 'README.md'))
+    const notes = fs.existsSync(d) ? fs.readdirSync(d).filter(f => /^\d{4}-\d{2}-\d{2}-\d{4}\.md$/.test(f)).sort() : []
+    const last = notes.length ? fs.readFileSync(path.join(d, notes[notes.length - 1]), 'utf8').replace(/^---[\s\S]*?---\n/, '').replace(/^#+ .*\n/gm, '').trim() : ''
+    const k = kit ? `Your core agents, ready to start (three steps each): [your kit](${REPO}/blob/dev/people/${id}/kit/README.md).\n\n` : ''
+    return (last || kit) ? `## From your mentor {#mentor}\n\n${k}${last ? `*${notes[notes.length - 1].replace(/\.md$/, '')}:* ${last}\n\n` : ''}` : ''
+}
 // each person's own area: people/<id>/dashboard.md -> people/<id>/index.html (their page, kept by them and their agents)
 for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const f = path.join(ROOT, 'people', m.id, 'dashboard.md')
     if (!fs.existsSync(f)) continue
     const { meta, body: rawBody } = parse(fs.readFileSync(f, 'utf8'))
-    const nxm = MEET.next(), body = `## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
+    const nxm = MEET.next(), body = `## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
     const rel = `people/${m.id}/index.html`
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel) }))
     pages.push({ rel, title: meta.title, description: meta.summary })
