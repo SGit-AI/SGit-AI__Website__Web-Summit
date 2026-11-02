@@ -58,6 +58,7 @@ The first priority for everyone, in this order. Where you are is on [the setup l
 ## How we work {#how}
 
 - **The website is the centre**, for the humans and for the agents. Every page has a markdown twin (`index.md`) for agents, and [llms.txt](../llms.txt) lists them all.
+- **Never push to `main`** (you, or any of your agents): only `dev`. A major release is a pull request to `main` that Dinis merges.
 - **One repository, everyone commits.** Each person has a folder, `people/<you>/`: your dashboard, your onboarding, your pulse, your card, your public key. The board is `board/`, one file per issue.
 - **Names:** `<agent>@web-summit.<person>`, for example `pm@web-summit.vicky`. The conductor that keeps this site is `conductor@web-summit.dinis`.
 - **Commits are how agents talk to each other.** Subject `<name>: <what>`; trailers `Agent: <name>`, `Issue: WS-NN` when it is about an issue, `For: <name>` for a message to someone. Read what is for you with `git log --grep "For: .*web-summit.<you>"`.
