@@ -2,7 +2,7 @@
 
 Builds bespoke, privacy-first synthetic datasets that model real populations.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 - Website: https://arimadata.com/solutions/co-ventures/
 - Category: grc

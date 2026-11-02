@@ -2,7 +2,7 @@
 
 The page Sarah sees first: their issues, their onboarding, their pulse, and whatever else they choose. Theirs to change, with their agents.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 This page is Sarah's, kept by Sarah and Sarah's agents in `people/sarah/dashboard.md`. It starts the same as everyone's: change it to show what you want to see when you wake up, take ideas from the others, and the best of them go on the main page.
 

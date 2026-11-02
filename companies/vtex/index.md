@@ -2,7 +2,7 @@
 
 Global AI-native commerce platform connecting commerce, data and operations for enterprises.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 - Website: https://www.vtex.com/en-us/solutions/business-needs/
 - Category: portugal-startup

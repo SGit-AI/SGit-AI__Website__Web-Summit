@@ -2,7 +2,7 @@
 
 Configures and measures AI against a customer's own criteria (AI training, evaluation and assurance).
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 - Website: https://trustscale.ai/
 - Category: grc

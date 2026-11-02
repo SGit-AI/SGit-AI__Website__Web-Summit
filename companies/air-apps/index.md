@@ -2,7 +2,7 @@
 
 Portuguese-rooted full-cycle product studio with 30+ AI-powered consumer apps and 100M+ downloads, with a San Francisco hub; says it is on track for $100M revenue in 2026.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 - Website: https://airapps.co
 - Category: portugal-startup

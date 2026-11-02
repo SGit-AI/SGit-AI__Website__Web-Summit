@@ -2,7 +2,7 @@
 
 You scanned Dinis's shirt or card at Web Summit 2026. Who Dinis is, what RiskMandate does, and how to book a meeting or talk to Dinis's agent.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 **Hello, and thanks for scanning.** You met Dinis Cruz, from the RiskMandate team at Web Summit Lisbon, 9 to 12 November 2026.
 

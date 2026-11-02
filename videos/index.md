@@ -2,7 +2,7 @@
 
 The team's RiskMandate videos (Silvio's visual explanation and the first RiskMandate Story), the storyboard for the 2-minute silent loop at our stand, the pipeline from idea to published video, and how the team and anyone else gives feedback.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 RiskMandate is technical, so a 20-second promo is not enough: we explain it with stories and visual explanations, with and without sound. Made by Silvio Switha's video pipeline; published here first, then on our video channels.
 

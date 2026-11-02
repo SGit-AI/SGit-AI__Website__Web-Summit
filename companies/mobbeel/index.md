@@ -2,7 +2,7 @@
 
 Spanish digital identity company (Cáceres, founded 2009): identity verification, KYC/AML, biometric authentication and electronic signature.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 - Website: https://www.mobbeel.com/en/
 - Category: security

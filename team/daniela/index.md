@@ -2,7 +2,7 @@
 
 Show what an agentic team under behaviour policies does for one expert: Daniela's teaching, and the students who aren't finding Daniela yet. Brief: [Brief for Daniela](../../brief-daniela/index.html); dashboard: [Daniela's dashboard](../../people/daniela/index.html).
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 Kind: person. Status: briefed: card to fill.
 

@@ -2,7 +2,7 @@
 
 Global IT services company positioning itself as an AI builder for enterprises.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 - Website: https://www.cognizant.com/
 - Category: platform

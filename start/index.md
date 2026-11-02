@@ -2,7 +2,7 @@
 
 The one page for the Web Summit 2026 team. Find your name, open your brief, paste your prompt into your own Claude, and get connected (Claude, GitHub, email, a PKI key, a schedule). Then how we work, the pulse, and the dates. Everyone champions RiskMandate.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 **Today, Monday: vote on the shirts, hoodies and cards on [the design page](../design/index.html#vote).**
 

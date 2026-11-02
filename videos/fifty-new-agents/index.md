@@ -2,7 +2,7 @@
 
 Silvio's 2 minute 44 second story. On Monday, fifty new AI agents arrive in finance, HR and engineering. Before switching them on, the team asks about Reach, Mandate, the Gap and real Barriers; writes an Agent Behaviour Policy and a Licence to Operate; and finds what a record does, and does not, do. Captioned, so it works without sound.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 By Silvio Switha, November 2026. 2 minutes 44 seconds, narrated and captioned. The operator's verdict: "good narrative, and the visual elements and animations match 90% of what is being described".
 

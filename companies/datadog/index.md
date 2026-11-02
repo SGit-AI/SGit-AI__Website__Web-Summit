@@ -2,7 +2,7 @@
 
 AI-powered observability and security platform that unifies telemetry, secures applications from code to cloud and resolves incidents with AI-driven workflows.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 - Website: https://www.datadoghq.com/
 - Category: devtools

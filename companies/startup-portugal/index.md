@@ -2,7 +2,7 @@
 
 Portugal's national startup agency; with Web Summit runs Road 2 Web Summit, selecting up to 125 Portuguese startups for the 2026 edition with a bootcamp in Porto and Lisbon and a Portugal stand.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 - Website: https://startupportugal.com/
 - Category: portugal-startup

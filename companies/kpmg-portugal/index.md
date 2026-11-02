@@ -2,7 +2,7 @@
 
 Global network of professional services firms providing audit, tax and advisory services; listed for Web Summit 2026 as KPMG Portugal.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 - Website: https://kpmg.com/xx/en.html
 - Category: grc

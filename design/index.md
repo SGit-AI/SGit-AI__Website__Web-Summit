@@ -2,7 +2,7 @@
 
 Mock-ups for the team's merch (7 T-shirt concepts, 2 hoodies, 2 business cards, a colour for each of the seven) built to start conversations and meetings about RiskMandate, each with a QR to the wearer's meet page. Everyone votes today, Monday 2 November; the design is nailed by the end of the day.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 **Deadline: the end of today, Monday 2 November.** Everyone votes; Sarah and the designer agent turn the winners into print files; Vicky orders. Mock-ups, not print files: they show the idea, not the final type. Tap one to see it full size.
 

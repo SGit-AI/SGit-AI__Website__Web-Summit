@@ -2,7 +2,7 @@
 
 Silvio's 53-second animated explanation of RiskMandate: an AI agent's Reach (what it can access or affect), its Mandate (what the business authorised it to do), the Delta between them, and the Barriers that limit unwanted behaviour, at the scale of one agent and of thousands. Ends with "Know their reach. Define their mandate. Control the gap."
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 By Silvio Switha, November 2026. 53 seconds, no narration needed. The operator's verdict: "spot on: I really like those visual explanations."
 

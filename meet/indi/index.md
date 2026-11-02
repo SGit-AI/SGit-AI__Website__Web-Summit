@@ -2,7 +2,7 @@
 
 You scanned Indi's shirt or card at Web Summit 2026. Who Indi is, what RiskMandate does, and how to book a meeting or talk to Indi's agent.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 **Hello, and thanks for scanning.** You met Indi Gupte, from the RiskMandate team at Web Summit Lisbon, 9 to 12 November 2026.
 

@@ -2,7 +2,7 @@
 
 Secondary to RiskMandate, which is everyone's focus. What Silvio is asked to do for Web Summit 2026 (find a sponsor for the team's shirts and hoodies), the dates it has to meet, and the instructions for the agents that help him. Part one is for Silvio; part two is for his agents. A living page: check its version before you rely on it.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 From the operator, Dinis Cruz, in the team's strategy conversation of 1 November 2026 ([brief 3](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/BRIEF.md)). Written by the conductor, conductor.3@web-summit, on 2 November 2026. All the briefs: [the briefs](../briefs/index.html). Where this page says *to confirm*, it is the conductor's reading, not something that was said.
 

@@ -2,7 +2,7 @@
 
 The storyboard for the video on the screen at our stand: about two minutes, looping, no sound, readable text, understandable from any point. It combines the story and robot of RiskMandate Stories with the visual explanations of Reach, Mandate, Gap. Built from Silvio's proposal; for the team to comment on before it is made.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 From Silvio's proposal of 2 November 2026, with the operator's notes. **Three jobs:** stop people walking past, explain the problem and RiskMandate's answer, and start a conversation. **Rules:** no sound; every scene carries its own caption and the RiskMandate name, so someone who arrives mid-loop still understands it; large text, readable from three metres; no scene longer than 20 seconds; the last frame is the invitation, then it loops.
 

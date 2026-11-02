@@ -2,7 +2,7 @@
 
 Research by a researcher agent for the conductor, 2 November 2026: how the Ultimate Insider book and talk sites do navigation, releases, personas, infographics, animations, project management and messaging, and the prioritised list of what to bring to web-summit.sgit.ai.
 
-Site version: v0.1.30
+Site version: v0.1.31
 
 Read by a researcher sub-agent of conductor@web-summit.dinis from [the book's repository](https://github.com/SGit-AI/SGit-AI__Website__Book__The-Ultimate-Insider) and [the live book site](https://the-ultimate-insider.book.sgit.ai), at the operator's request. What we are doing about it is on [the board](../../briefs/index.html#issues) (WS-77 to WS-84).
 
