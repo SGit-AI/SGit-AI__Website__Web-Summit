@@ -2,7 +2,7 @@
 
 VPN service for online privacy, growing into a broader cybersecurity offering (per its CTO's Web Summit bio).
 
-Site version: v0.1.24
+Site version: v0.1.25
 
 - Website: https://nordvpn.com/
 - Category: security

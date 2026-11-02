@@ -1,5 +1,5 @@
 {
-  "about": "Everyone on the team that runs Web Summit 2026, human and agent, and who works with whom. Seven people are going to Lisbon, each with their own agent; the team's agents work for them on a schedule. The roles come from [the team brief](https://newsroom.sgit.ai/articles/web-summit-team-brief.html) and the people from [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html). People are named only after they say yes to what their card says. Kept by the conductor.",
+  "about": "Everyone on the team that runs Web Summit 2026, human and agent, and who works with whom. Seven people are going to Lisbon, each with their own agent; the team's agents work for them on a schedule. The roles come from [the team brief](https://newsroom.sgit.ai/articles/web-summit-team-brief.html) and the people from [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html). From 2 November 2026, at the operator's word, the team's members are named here (only the team uses this site, and speed matters); still no contact details, ever. Kept by the conductor.",
   "members": [
     {
       "id": "dinis",
@@ -38,26 +38,34 @@
       ]
     },
     {
-      "id": "person-2",
-      "name": "Team member 2",
+      "id": "silvio",
+      "name": "Silvio",
       "kind": "human",
-      "role": "One of the seven going to Lisbon (seat, unnamed)",
-      "status": "invited: waiting for their yes",
-      "summary": "One of the seven people going to Web Summit. Their name, role card and agent appear here only after they say yes to what the card says, as [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html) sets out.",
+      "role": "Sales: a sponsor for the team's merch, and leads for his own business",
+      "status": "briefed: card to fill",
+      "summary": "One of the people going to Web Summit. Asked by the operator on 1 November 2026 to find a sponsor for the team's shirts and hoodies, with agents that scout, pitch, draft and track while he sends; every company impressed by the pitch is a lead for his own business. His brief and his agents' instructions: [Brief for Silvio and his agents](../../brief-silvio/index.html).",
       "owns": [
-        "to decide: the companies they own on the map"
+        "the merch sponsor ask (plan decision: merch-sponsor)",
+        "to decide: the companies he owns on the map"
       ],
       "rules": [
-        "Nothing about them is published without their yes."
+        "Named at the operator's word (2 November 2026); no contact detail, ever.",
+        "His agents draft; he sends every message.",
+        "Anything private (a partner's terms, a contact) stays in his own CRM, never on this site."
       ],
       "card": {
-        "following": "to decide",
-        "leads": "to decide",
+        "following": "sponsor candidates for the merch; to add: companies he owns",
+        "leads": "the sponsor conversations",
         "not_doing": "to decide",
         "medium": "to ask",
-        "agent": "to decide: their own agent, its key, its vault and what its CRM shares with the team view"
+        "agent": "to decide: his own agent (the brief's part two is its instructions until then)"
       },
-      "home": []
+      "home": [
+        [
+          "brief-silvio/index.html",
+          "His brief, and his agents' instructions"
+        ]
+      ]
     },
     {
       "id": "person-3",

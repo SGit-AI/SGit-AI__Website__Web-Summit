@@ -2,7 +2,7 @@
 
 Open-source TypeScript framework and enterprise platform for building, iterating and managing production-grade agents.
 
-Site version: v0.1.24
+Site version: v0.1.25
 
 - Website: https://www.mastra.ai
 - Category: devtools

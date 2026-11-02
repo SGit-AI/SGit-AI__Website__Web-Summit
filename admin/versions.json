@@ -1,5 +1,10 @@
 [
   {
+    "version": "v0.1.25",
+    "date": "2026-11-02",
+    "what": "The brief for Silvio and his agents (/brief-silvio/): a sponsor for the merch, the dates, and the instructions and behaviour policy for his agents. Silvio named on the roster at the operator's word; 3 T-shirts per participant."
+  },
+  {
     "version": "v0.1.24",
     "date": "2026-11-01",
     "what": "conductor.3@web-summit is the only conductor, at the operator's word: it holds the conductor seat on the roster, its separate entry is folded in, conductor.2 is recorded as ended, and the schedule is recorded as stopped (its task no longer exists)."

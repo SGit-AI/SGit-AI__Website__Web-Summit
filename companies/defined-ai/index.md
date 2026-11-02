@@ -2,7 +2,7 @@
 
 Enterprise AI training data platform: multilingual, multimodal datasets with human-in-the-loop quality and compliance.
 
-Site version: v0.1.24
+Site version: v0.1.25
 
 - Website: https://defined.ai/
 - Category: other

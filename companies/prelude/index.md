@@ -2,7 +2,7 @@
 
 Paris-based B2B developer infrastructure: APIs for phone verification, authentication, fraud prevention and messaging.
 
-Site version: v0.1.24
+Site version: v0.1.25
 
 - Website: https://prelude.so/
 - Category: devtools

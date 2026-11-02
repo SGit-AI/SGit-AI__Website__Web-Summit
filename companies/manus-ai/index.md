@@ -2,7 +2,7 @@
 
 Action engine that executes tasks and automates workflows on a user's behalf.
 
-Site version: v0.1.24
+Site version: v0.1.25
 
 - Website: https://manus.im/
 - Category: ai-agents

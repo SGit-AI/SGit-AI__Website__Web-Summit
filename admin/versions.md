@@ -2,8 +2,9 @@
 
 Every release of this site and what changed.
 
-Site version: v0.1.24
+Site version: v0.1.25
 
+- v0.1.25 (2026-11-02): The brief for Silvio and his agents (/brief-silvio/): a sponsor for the merch, the dates, and the instructions and behaviour policy for his agents. Silvio named on the roster at the operator's word; 3 T-shirts per participant.
 - v0.1.24 (2026-11-01): conductor.3@web-summit is the only conductor, at the operator's word: it holds the conductor seat on the roster, its separate entry is folded in, conductor.2 is recorded as ended, and the schedule is recorded as stopped (its task no longer exists).
 - v0.1.23 (2026-11-01): Brief 3, the operator's strategy conversation, recorded in BRIEF.md (paraphrased, nobody named but the operator); its dates and decisions on the plan, the shirt and hoodie quantities updated, and newsroom.web-summit.sgit.ai recorded as a proposal.
 - v0.1.22 (2026-11-01): A third conductor session, conductor.3@web-summit, joins the team: its roster entry and its public session key.

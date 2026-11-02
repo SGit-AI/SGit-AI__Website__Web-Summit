@@ -1,13 +1,13 @@
 # The team
 
-Everyone on the team that runs Web Summit 2026, human and agent, and who works with whom. Seven people are going to Lisbon, each with their own agent; the team's agents work for them on a schedule. The roles come from [the team brief](https://newsroom.sgit.ai/articles/web-summit-team-brief.html) and the people from [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html). People are named only after they say yes to what their card says. Kept by the conductor.
+Everyone on the team that runs Web Summit 2026, human and agent, and who works with whom. Seven people are going to Lisbon, each with their own agent; the team's agents work for them on a schedule. The roles come from [the team brief](https://newsroom.sgit.ai/articles/web-summit-team-brief.html) and the people from [part two](https://newsroom.sgit.ai/articles/web-summit-humans-and-their-agents.html). From 2 November 2026, at the operator's word, the team's members are named here (only the team uses this site, and speed matters); still no contact details, ever. Kept by the conductor.
 
-Site version: v0.1.24
+Site version: v0.1.25
 
 ## The people
 
 - [Dinis Cruz](dinis/index.md): Editor and operator (active). Agent: his inbox agent (onboarding) and this site's conductor
-- [Team member 2](person-2/index.md): One of the seven going to Lisbon (seat, unnamed) (invited: waiting for their yes). Agent: to decide: their own agent, its key, its vault and what its CRM shares with the team view
+- [Silvio](silvio/index.md): Sales: a sponsor for the team's merch, and leads for his own business (briefed: card to fill). Agent: to decide: his own agent (the brief's part two is its instructions until then)
 - [Team member 3](person-3/index.md): One of the seven going to Lisbon (seat, unnamed) (invited: waiting for their yes). Agent: to decide: their own agent, its key, its vault and what its CRM shares with the team view
 - [Team member 4](person-4/index.md): One of the seven going to Lisbon (seat, unnamed) (invited: waiting for their yes). Agent: to decide: their own agent, its key, its vault and what its CRM shares with the team view
 - [Team member 5](person-5/index.md): One of the seven going to Lisbon (seat, unnamed) (invited: waiting for their yes). Agent: to decide: their own agent, its key, its vault and what its CRM shares with the team view

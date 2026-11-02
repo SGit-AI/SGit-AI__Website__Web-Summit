@@ -2,7 +2,7 @@
 
 Austrian card, secure identity and digital solutions group; its GaiaB offer helps organisations deploy secure, governed AI while keeping control of data and infrastructure (per its speaker's Web Summit bio).
 
-Site version: v0.1.24
+Site version: v0.1.25
 
 - Website: https://www.austriacard.com/
 - Category: security

@@ -2,7 +2,7 @@
 
 Chinese company presented at Web Summit through its co-founder and CEO, described as an expert in AI governance and cybersecurity; the company's own site was not confirmed, so 'what' is not yet sourced beyond that.
 
-Site version: v0.1.24
+Site version: v0.1.25
 
 - Website: unknown
 - Category: security

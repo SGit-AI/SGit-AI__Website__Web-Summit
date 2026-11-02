@@ -2,7 +2,7 @@
 
 The companies at Web Summit 2026 that matter to us, from public material, with a proposed decision and an owner for each.
 
-Site version: v0.1.24
+Site version: v0.1.25
 
 - [1Password](1password/index.md) (P1, meet, confirmed, owner to decide): Secures every identity, from people to AI agents: passwords, passkeys and secrets for over 150,000 businesses, and a security layer for how agents authenticate and connect to the internet. Why: partner/story: building "the security layer for how agents authenticate and connect"; agent identity and secrets sit next to sgit vaults and agent policies
 - [Airia](airia/index.md) (P1, meet, confirmed, owner to decide): AI security and governance platform: one control layer for agents, models, tools, data access, runtime policy, red teaming and audit-ready evidence. Why: competitor/partner: runtime policy and audit evidence for every AI agent is the same ground as RiskMandate Agent Behaviour Policies; meet to compare and to find where an insurable, enforced policy adds to a governance layer

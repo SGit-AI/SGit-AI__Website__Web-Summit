@@ -1,4 +1,4 @@
-# Reality: what exists on 1 November 2026 (site v0.1.24)
+# Reality: what exists on 1 November 2026 (site v0.1.25)
 
 A thing that is not in this file does not exist, whatever a brief says. Kept current by whoever ships.
 
@@ -22,7 +22,7 @@ A thing that is not in this file does not exist, whatever a brief says. Kept cur
 - A draft article, The agent security map of Web Summit 2026 (`team/writer/drafts/`), unpublished until the operator agrees who signs.
 
 ## Does not exist yet
-- Owners for any company, any role card filled, any person named other than the operator, any personal agent joined.
+- Owners for any company, any role card filled, any personal agent joined. Named so far: the operator, and Silvio (briefed 2 November, `/brief-silvio/`; card not yet filled).
 - Any asset (a page made for a company), any meeting booked, any email drafted from this site, any number of links sent or pages opened.
 - Personal CRMs, shared ids in use across them, and any data in the team's CRM vaults.
 - Separate sessions per role: today the roles run as sub-agents of the conductor's session.
