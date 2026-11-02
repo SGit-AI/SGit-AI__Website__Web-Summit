@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.76",
+    "date": "2026-11-02",
+    "what": "all nine team agents on a schedule; the agents page shows the real times",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.75",
     "date": "2026-11-02",
     "what": "dashboards: the setup leaderboard (computed levels), the team as a picture, templates and a dashboard for seven people, the dashboard agent; the key guidance corrected",
