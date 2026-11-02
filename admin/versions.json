@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.48",
+    "date": "2026-11-02",
+    "what": "the site uses the page width with a left-hand menu, and the book's cast draws every agent and person on the team",
+    "by": "dev@web-summit.dinis"
+  },
+  {
     "version": "v0.1.47",
     "date": "2026-11-02",
     "what": "abp@web-summit.dinis's first wake: an ABP for each of the eight other scheduled agents, and the gaps they share on the board (WS-89, WS-90)",
