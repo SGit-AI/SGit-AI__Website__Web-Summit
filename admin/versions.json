@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.81",
+    "date": "2026-11-02",
+    "what": "ABPs for Vicky's two agents; procurement, team-collaboration and dev@angelo updated",
+    "by": "abp@web-summit.dinis"
+  },
+  {
     "version": "v0.1.80",
     "date": "2026-11-02",
     "what": "onboarding: the dashboard agent joins (step 5)",
