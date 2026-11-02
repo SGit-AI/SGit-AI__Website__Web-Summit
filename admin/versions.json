@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.61",
+    "date": "2026-11-02",
+    "what": "everything on the team counted (people, agents from the git log, channels); dashboards open with a built block; Silvio's and Angelo's agents on the roster",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.60",
     "date": "2026-11-02",
     "what": "joins the team; listed on Angelo's dashboard",
