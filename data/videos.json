@@ -17,5 +17,18 @@
       "id": "V-publish",
       "name": "Publish both now on YouTube, Instagram and LinkedIn"
     }
-  ]
+  ],
+  "drive": {
+    "folder": "RiskMandate (agents)/videos (private working folder; only the files below are shared)",
+    "files": {
+      "reach-mandate-gap": {
+        "id": "1QWOcRJFlG86MBBlNLghbev5yFx8apHwk",
+        "name": "2026-11-02_reach-mandate-gap_v1.mp4"
+      },
+      "stories-fifty-new-agents": {
+        "id": "1r4Mf4LZjX5Av5n7yM0WvBO23-duXBgr8",
+        "name": "2026-11-02_stories-fifty-new-agents_v1.mp4"
+      }
+    }
+  }
 }

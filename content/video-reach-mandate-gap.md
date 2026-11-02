@@ -7,6 +7,8 @@ By Silvio Switha, November 2026. 53 seconds, no narration needed. The operator's
 
 !video[Reach, Mandate, Gap: 53 seconds. Plays without sound.](../../assets/video/riskmandate-reach-mandate-gap.mp4 ../../assets/video/reach-14.jpg)
 
+!drive[The same video in Google Drive's player](1QWOcRJFlG86MBBlNLghbev5yFx8apHwk)
+
 ## What it shows {#what}
 
 1. **An agent at the centre of a network:** email, files, payments, APIs, customer data, internal systems. Everything it is connected to.

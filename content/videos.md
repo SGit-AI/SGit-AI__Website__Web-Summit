@@ -11,6 +11,12 @@ RiskMandate Stories: fifty new agents | fifty-new-agents/index.html | 2 min 44 s
 Storyboard: the 2-minute silent loop | storyboard-loop/index.html | For the screen at our stand: stop, explain, start a conversation.
 ```
 
+## Where the videos live {#where}
+
+- **On this site:** each video's page plays a web copy, and Google Drive's player underneath.
+- **On Google Drive:** [Reach, Mandate, Gap](https://drive.google.com/file/d/1QWOcRJFlG86MBBlNLghbev5yFx8apHwk/view) and [RiskMandate Stories: fifty new agents](https://drive.google.com/file/d/1r4Mf4LZjX5Av5n7yM0WvBO23-duXBgr8/view): the published versions, from the team's working folder (masters, drafts, storyboards, published), where the team comments with timestamps.
+- **Next:** YouTube, Instagram and LinkedIn (WS-71).
+
 ## The pipeline {#pipeline}
 
 | Step | What | Who |

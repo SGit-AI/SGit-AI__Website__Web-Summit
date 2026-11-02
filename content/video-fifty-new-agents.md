@@ -7,6 +7,8 @@ By Silvio Switha, November 2026. 2 minutes 44 seconds, narrated and captioned. T
 
 !video[RiskMandate Stories: fifty new agents. 2 min 44 s, with captions.](../../assets/video/riskmandate-stories-fifty-new-agents.mp4 ../../assets/video/stories-6.jpg)
 
+!drive[The same video in Google Drive's player](1r4Mf4LZjX5Av5n7yM0WvBO23-duXBgr8)
+
 ## The story, scene by scene {#story}
 
 1. **Monday: 50 new AI agents** for finance, HR and engineering. A small robot, *Agent*, walks in with the team.

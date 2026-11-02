@@ -60,6 +60,10 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) buf.push(lines[i])
             i++
             out.push(`<pre><code>${esc(buf.join('\n'))}</code></pre>`)
+        } else if (/^!drive\[/.test(l)) {
+            // !drive[caption](<Google Drive file id>): Drive's own player (the file must be shared as anyone with the link)
+            const m = l.match(/^!drive\[([^\]]*)\]\(([A-Za-z0-9_-]+)\)/)
+            out.push(`<figure class="video drive"><iframe src="https://drive.google.com/file/d/${m[2]}/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="${esc(m[1])}"></iframe><figcaption>${inline(m[1])} · <a href="https://drive.google.com/file/d/${m[2]}/view">open in Google Drive</a></figcaption></figure>`); i++
         } else if (/^!video\[/.test(l)) {
             // !video[caption](file.mp4 poster.jpg): a video that plays inline, muted controls, with its poster
             const m = l.match(/^!video\[([^\]]*)\]\(([^)\s]+)(?:\s+([^)\s]+))?\)/)
@@ -83,7 +87,7 @@ function render(md) {
         } else if (l.trim() === '') i++
         else {
             const buf = []
-            for (; i < lines.length && lines[i].trim() !== '' && !/^(```|#{2,3} |- |\d+\. |\||!video\[)/.test(lines[i]); i++) buf.push(lines[i])
+            for (; i < lines.length && lines[i].trim() !== '' && !/^(```|#{2,3} |- |\d+\. |\||!video\[|!drive\[)/.test(lines[i]); i++) buf.push(lines[i])
             out.push(`<p>${inline(buf.join(' '))}</p>`)
         }
     }
