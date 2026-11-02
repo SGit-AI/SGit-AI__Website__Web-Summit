@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.85",
+    "date": "2026-11-02",
+    "what": "brief 3 (Vicky at L5, all agents scheduled); Vicky's agents on the roster",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.84",
     "date": "2026-11-02",
     "what": "onboarding: the conductor on a schedule (step 7)",
