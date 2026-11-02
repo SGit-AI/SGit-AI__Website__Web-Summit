@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.35",
+    "date": "2026-11-02",
+    "what": "the team's pulse, summarised: the first run, with no check-ins yet and so no blockers",
+    "by": "pulse@web-summit.dinis"
+  },
+  {
     "version": "v0.1.34",
     "date": "2026-11-02",
     "what": "the journalist's first report, and 'What happened' at the top of the home page",
