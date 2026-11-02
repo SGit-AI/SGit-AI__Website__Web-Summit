@@ -44,10 +44,10 @@ for try in 1 2 3; do
   WHAT=$(sed -E 's/^[^ :]+@web-summit\.[a-z0-9-]+: //; s/^site v[0-9.]+: //' <<< "$SUBJECT")
   [ "$BRANCH" = main ] && WHAT="major release: dev at ${HEADVER:-$(git rev-parse --short HEAD)} promoted to main"
   node -e '
-    const fs = require("fs"), [v, what, by] = process.argv.slice(1)
+    const fs = require("fs"), [v, what, by, from] = process.argv.slice(1)
     const rows = JSON.parse(fs.readFileSync("admin/versions.json", "utf8")).filter(r => r.version !== v)
-    rows.unshift({ version: v, date: new Date().toISOString().slice(0, 10), what, ...(by ? { by } : {}) })
-    fs.writeFileSync("admin/versions.json", JSON.stringify(rows, null, 2) + "\n")' "$NEW" "$WHAT" "$AGENT"
+    rows.unshift({ version: v, date: new Date().toISOString().slice(0, 10), what, ...(by ? { by } : {}), ...(from ? { from } : {}) })
+    fs.writeFileSync("admin/versions.json", JSON.stringify(rows, null, 2) + "\n")' "$NEW" "$WHAT" "$AGENT" "$(git rev-parse --short=9 HEAD)"
   sed -i -E "s/\(site v[0-9]+\.[0-9]+\.[0-9]+\)/(site $NEW)/" REALITY.md
   node admin/build/build.mjs > /dev/null
   node admin/build/validate.js
