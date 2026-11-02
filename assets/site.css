@@ -151,3 +151,13 @@ pre.banner { font-size: 0.72rem; line-height: 1.25; overflow-x: auto; }
 /* mockups and images */
 img { max-width: 100%; height: auto; }
 td img { width: 260px; max-width: 100%; }
+
+/* navigation: section sub-menu, breadcrumbs, the person bar */
+nav.subnav { border-bottom: 1px solid var(--line); background: var(--nav-bg); }
+nav.subnav .row { max-width: var(--wide); margin: 0 auto; display: flex; flex-wrap: wrap; gap: 0.1rem 1rem; padding: 0.35rem var(--gutter); font-size: 0.92rem; }
+nav.subnav a { color: var(--ink-2); text-decoration: none; padding: 0.15rem 0; }
+nav.subnav a[aria-current="page"], nav.subnav a:hover { color: var(--ink); border-bottom: 2px solid var(--accent); }
+nav.crumbs { font-size: 0.88rem; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.2rem 0 0.6rem; }
+nav.crumbs a { color: var(--ink-2); }
+p.personbar { display: flex; flex-wrap: wrap; gap: 0.3rem 0.9rem; align-items: baseline; padding: 0.5rem 0.8rem; border: 1px solid var(--line); border-radius: 10px; font-size: 0.95rem; }
+p.personbar span[aria-current="page"] { font-weight: 700; border-bottom: 2px solid var(--accent); }

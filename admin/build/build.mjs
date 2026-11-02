@@ -9,7 +9,17 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../.
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
 const VERSION = fs.readFileSync(path.join(ROOT, 'admin/build/version.txt'), 'utf8').trim()
 const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
-const NAV = [['Start', 'start/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Design', 'design/index.html'], ['Agents', 'agents/index.html'], ['Companies', 'companies/index.html'], ['Summit', 'summit/index.html'], ['Plan', 'plan/index.html'], ['Team', 'team/index.html'], ['Log', 'log/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['About', 'about/index.html'], ['Versions', 'admin/versions.html']]
+// navigation: a few sections on top, each with its own sub-menu; every page gets breadcrumbs back to its parent
+const SECTIONS = [
+    { t: 'Start', h: 'start/index.html', re: /^start\//, sub: [] },
+    { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet)\b/, sub: [['People', 'team/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['Meet us', 'meet/index.html']] },
+    { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|merch-sponsor)\b/, sub: [['The board', 'briefs/index.html#issues'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Log', 'log/index.html'], ['Merch sponsor', 'merch-sponsor/index.html']] },
+    { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
+    { t: 'About', h: 'about/index.html', re: /^(about|articles|keys|admin|agent\/|briefing)\b/, sub: [['About', 'about/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['Versions', 'admin/versions.html'], ['The site agent', 'agent/index.html'], ['Inbox briefing', 'briefing/index.html']] },
+]
+const NAV = SECTIONS.map(s => [s.t, s.h])
+const sectionOf = rel => SECTIONS.find(s => s.re.test(rel))
+const personOf = rel => { const m = rel.match(/^(?:brief-([a-z0-9-]+)|people\/([a-z0-9-]+)|meet\/([a-z0-9-]+)|team\/([a-z0-9-]+))\//); const id = m && (m[1] || m[2] || m[3] || m[4]); return id && teamData.members.find(x => x.id === id) }
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 const slug = s => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
@@ -90,10 +100,19 @@ function page({ rel, title, description, body, meta = '', mdTwin = '', lead = ''
 <nav class="site"><div class="row">
 <a class="brand" href="${up}index.html">web-summit<span>.sgit.ai</span></a>
 <a class="parent" href="https://sgit.ai" title="sgit.ai: the parent project">↗ part of <b>sgit.ai</b></a>
-<div class="links">${NAV.map(([t, h]) => `<a href="${up}${h}"${rel === h || rel.startsWith(h.replace('index.html', '')) && h.endsWith('index.html') && h !== 'index.html' ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</div>
+<div class="links">${SECTIONS.map(x => `<a href="${up}${x.h}"${sectionOf(rel) === x ? ' aria-current="page"' : ''}>${x.t}</a>`).join('')}</div>
 <a class="gh" href="${REPO}">★ GitHub</a>
 </div></nav>
+${(() => { const sec = sectionOf(rel); return sec && sec.sub.length ? `<nav class="subnav" aria-label="${sec.t}"><div class="row">${sec.sub.map(([t, h]) => `<a href="${up}${h}"${rel === h ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</div></nav>` : '' })()}
 <main id="main"${home ? ' class="home"' : ''}>
+${home ? '' : (() => {
+    const sec = sectionOf(rel), who = personOf(rel), c = [`<a href="${up}index.html">Home</a>`]
+    if (sec) c.push(`<a href="${up}${sec.h}">${sec.t}</a>`)
+    if (who && who.kind === 'human' && !rel.startsWith('team/')) c.push(`<a href="${up}team/${who.id}/index.html">${esc(who.name)}</a>`)
+    else if (rel.startsWith('companies/') && rel !== 'companies/index.html') c.push(`<a href="${up}companies/index.html">Companies</a>`)
+    const bar = who && who.kind === 'human' ? `<p class="personbar"><b>${esc(who.name)}</b>${[['Profile', `team/${who.id}/index.html`], ['Brief', `brief-${who.id}/index.html`], ['Dashboard', `people/${who.id}/index.html`], who.core ? ['Meet page', `meet/${who.id}/index.html`] : null].filter(Boolean).filter(([, h]) => fs.existsSync(path.join(ROOT, h)) || h.startsWith('brief-') || h.startsWith('people/') || h.startsWith('meet/') || h.startsWith('team/')).map(([t, h]) => rel === h ? `<span aria-current="page">${t}</span>` : `<a href="${up}${h}">${t}</a>`).join('')}</p>` : ''
+    return `<nav class="crumbs" aria-label="Breadcrumbs">${c.join('<span>›</span>')}<span>›</span><span aria-current="page">${esc(title)}</span></nav>${bar}`
+})()}
 <h1>${inline(title)}</h1>
 ${lead ? `<p class="lead">${inline(lead)}</p>` : ''}
 ${home ? `<p class="countdown" data-countdown="2026-11-09">Web Summit Lisbon: 9 to 12 November 2026</p><script src="assets/countdown.js" defer></script>` : ''}
@@ -276,8 +295,11 @@ for (const m of team.members) {
     const humans = team.members.filter(m => m.kind === 'human'), agents = team.members.filter(m => m.kind === 'agent')
     const hrow = m => `<tr><td><a href="${m.id}/index.html">${esc(m.name)}</a></td><td>${esc(m.role)}</td><td>${esc(m.status)}</td><td>${inline((m.card || {}).agent || 'to decide')}</td><td>${CO.filter(c => c.owner === m.id).length}</td></tr>`
     const arow = m => `<tr><td><a href="${m.id}/index.html">${esc(m.name)}</a></td><td>${esc(m.role)}</td><td>${esc(m.status)}</td><td>${esc(m.slot || 'in its owner\'s account')}</td><td>${esc(m.reviewed_by || 'its person')}</td></tr>`
-    const body = `<p>${inline(team.about)}</p>
-<h2 id="people">The people</h2><p>Seven are going to Lisbon, plus a designer with very little time. A seat is named only after its person says yes to what the card says.</p><div class="scroll"><table><tr><th>Person</th><th>Role</th><th>Status</th><th>Their agent</th><th>Companies owned</th></tr>${humans.map(hrow).join('')}</table></div>
+    const pcard = m => `<a class="card" href="${m.id}/index.html"><b>${esc(m.name)}</b><span>${esc(m.role)}</span></a>`
+    const body = `<h2 id="seven">The seven going</h2><div class="cards">${humans.filter(m => m.core).map(pcard).join('')}</div>
+<h2 id="with-us">Working with us</h2><div class="cards">${humans.filter(m => !m.core).map(pcard).join('')}</div>
+<p>Each person's page links their brief, their dashboard and their meet page. ${inline(team.about)}</p>
+<h2 id="people">The people, in detail</h2><p>Seven are going to Lisbon, with a designer and a first friendly working alongside.</p><div class="scroll"><table><tr><th>Person</th><th>Role</th><th>Status</th><th>Their agent</th><th>Companies owned</th></tr>${humans.map(hrow).join('')}</table></div>
 <h2 id="agents">The team's agents</h2><p>The roles from the brief. One conductor session wakes every 2 hours and runs the others as sub-agents, chosen by its plan (<a href="../log/index.html">the session log</a>). Each has a role file and a behaviour policy saying which paths it may write; the gate fails if two claim the same path.</p><div class="scroll"><table><tr><th>Agent</th><th>Role</th><th>Status</th><th>Runs</th><th>Reviewed by</th></tr>${agents.map(arow).join('')}</table></div>
 <h2 id="where-they-meet">Where people and agents meet</h2><ul><li><b>Each person brings their own agent</b>, with its own key, its own vault and its own personal CRM; what that CRM shares reaches the team view by shared ids. None has joined yet except the operator's.</li><li><b>Each team agent's output is reviewed daily by one person.</b> Who reviews which is the operator's decision; until then the operator reviews all of them.</li><li><b>Each company on the map has one owner among the seven</b>, and the owner's agent keeps the record. The conductor routes a request that names a company to its owner, and one that names nobody to the board.</li><li><b>Anything a person records is acted on within the hour</b>: a record, a page, a drafted follow-up. A person sends every email (<a href="../plan/index.html#loop">the loop</a>).</li></ul>`
     write('team/index.html', page({ rel: 'team/index.html', title: 'The team', description: 'The people, their agents, the team\'s agents, and who works with whom.', body }))
