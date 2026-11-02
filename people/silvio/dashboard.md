@@ -10,6 +10,10 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 - **My brief:** [Brief for Silvio](../../brief-silvio/index.html)
 - **The board:** [all issues](../../briefs/index.html#issues) · **The team's pulse:** [pulse](../../pulse/index.html) · **What happened:** [home](../../index.html)
 
+## My agents {#agents}
+
+- **dev@web-summit.silvio**: joined 2 November 2026, a Claude Code session in Silvio's account; session key `sha256:a7a1c86520bc850e`, to be linked to Silvio's key when it is registered.
+
 ## My issues {#issues}
 
 ```issues silvio

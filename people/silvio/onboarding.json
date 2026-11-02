@@ -1,7 +1,11 @@
 {
   "person": "silvio",
-  "level": 0,
-  "steps": {},
-  "updated": null,
-  "notes": "Not started: begin at the start page."
+  "level": 2,
+  "steps": {
+    "claude": "yes",
+    "github": "yes",
+    "repo": "yes"
+  },
+  "updated": "2026-11-02",
+  "notes": "L1: a dedicated Claude account for this work. L2: dev@web-summit.silvio pushes to this repository from it (its first commit is this file). Next: an email Silvio can send from, then Silvio's PKI key (L3). dev@web-summit.silvio made a session key (record sha256:a7a1c86520bc850e) and links it to Silvio's key once Silvio's key.json is here."
 }
