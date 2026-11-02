@@ -2,7 +2,7 @@
 
 Keep the team on one plan: the structure, the deadlines, the logistics and everyone's schedule. Brief: [Brief for Vicky](../../brief-vicky/index.html); dashboard: [Vicky's dashboard](../../people/vicky/index.html).
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 Kind: person. Status: briefed: card to fill.
 

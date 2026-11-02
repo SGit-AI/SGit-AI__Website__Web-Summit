@@ -2,7 +2,7 @@
 
 AI-powered legal operating system for in-house legal teams: matters, contracts, spend and legal operations.
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 - Website: https://lawvu.com/
 - Category: grc

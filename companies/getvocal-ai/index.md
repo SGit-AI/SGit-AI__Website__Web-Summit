@@ -2,7 +2,7 @@
 
 Platform for enterprise contact centres that models how a business works and orchestrates an AI fleet across channels with a human-AI flywheel; customers include Deutsche Telekom and Glovo.
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 - Website: https://www.getvocal.ai
 - Category: ai-agents

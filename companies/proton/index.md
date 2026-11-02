@@ -2,7 +2,7 @@
 
 Privacy-by-default online services, used by over 100 million people per its own site.
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 - Website: https://proton.me/
 - Category: security

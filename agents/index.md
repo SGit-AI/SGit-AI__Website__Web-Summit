@@ -2,7 +2,7 @@
 
 Every agent on the Web Summit 2026 team: the team's scheduled agents in Dinis's account (conductor, journalist, pulse, security, designer, dev), each with its schedule and the prompt to start it, and where each person's own agents get theirs.
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 How to start each agent: open a new Claude session in the right account, paste its prompt, let it run once, then create a scheduled task that fires into that same session on the schedule given (a fresh session per run loses the clone and the state). One session per scheduled agent (level 6 on [the start page](../start/index.html#levels)).
 

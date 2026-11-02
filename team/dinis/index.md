@@ -2,7 +2,7 @@
 
 Make RiskMandate understood, tried and bought at Web Summit, and run the team and its agents that get us there. Brief: [Brief for Dinis](../../brief-dinis/index.html); dashboard: [Dinis's dashboard](../../people/dinis/index.html).
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 Kind: person. Status: active.
 

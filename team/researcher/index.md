@@ -2,7 +2,7 @@
 
 Builds the map of companies going to Web Summit from public material only: the startup, partner and speaker lists, the companies' own sites and news, each fact with its source and date.
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 Kind: agent. Status: proposed. Held by: no session holds this role on its own: it runs as a sub-agent of the conductor's wake, briefed by its ROLE.md. Runs: every wake, after the conductor's plan.
 

@@ -2,7 +2,7 @@
 
 The page Jose Bota sees first: their issues, their onboarding, their pulse, and whatever else they choose. Theirs to change, with their agents.
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 This page is Jose's, kept by Jose and Jose's agents in `people/jose/dashboard.md`. It starts the same as everyone's: change it to show what you want to see when you wake up, take ideas from the others, and the best of them go on the main page.
 

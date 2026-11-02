@@ -2,7 +2,7 @@
 
 You scanned Silvio's shirt or card at Web Summit 2026. Who Silvio is, what RiskMandate does, and how to book a meeting or talk to Silvio's agent.
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 **Hello, and thanks for scanning.** You met Silvio Switha, from the RiskMandate team at Web Summit Lisbon, 9 to 12 November 2026.
 

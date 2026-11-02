@@ -2,7 +2,7 @@
 
 AI developer cloud for building, training, fine-tuning and deploying AI workloads on GPUs.
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 - Website: https://www.runpod.io/
 - Category: devtools

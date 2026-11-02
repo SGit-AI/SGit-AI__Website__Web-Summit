@@ -2,8 +2,9 @@
 
 Every release of this site and what changed.
 
-Site version: v0.1.28
+Site version: v0.1.29
 
+- v0.1.29 (2026-11-02): the design sprint (29 mock-ups and a vote), a meet page for each of the seven behind their QR codes, the agents and their prompts, and the developer's refactoring mandate
 - v0.1.28 (2026-11-02): how we operate: the start page for the team, a brief and a folder per person, 61 issues on the board as files, the levels, the pulse, and a release script for many committers
 - v0.1.27 (2026-11-02): The seven core team members by name (Dinis Cruz, Silvio Switha, Nimay Parekh, Vicky, Jose Bota, Angelo, Indi Gupte): briefs renamed, a brief for Jose, Sarah and Daniela shown as working with the team, and shared issues shown only to the seven.
 - v0.1.26 (2026-11-02): The briefs: a top-level view (/briefs/), a brief for each of the eight people with instructions for their agents, and a board of 23 issues a person and their agents can pick up (data/issues.json), shown on each brief. The roster names the team at the operator's word.

@@ -2,7 +2,7 @@
 
 Helps banks meet regulatory requirements and build risk management; advisory plus Ribeca, a SaaS platform for integrated ESG and risk management and reporting.
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 - Website: https://risiq.de/
 - Category: grc

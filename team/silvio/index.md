@@ -2,7 +2,7 @@
 
 Get things done: the outreach, the local Algarve work, and the videos that carry RiskMandate further. Brief: [Brief for Silvio](../../brief-silvio/index.html); dashboard: [Silvio's dashboard](../../people/silvio/index.html).
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 Kind: person. Status: briefed: card to fill.
 

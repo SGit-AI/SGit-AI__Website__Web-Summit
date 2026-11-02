@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.29",
+    "date": "2026-11-02",
+    "what": "the design sprint (29 mock-ups and a vote), a meet page for each of the seven behind their QR codes, the agents and their prompts, and the developer's refactoring mandate",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.28",
     "date": "2026-11-02",
     "what": "how we operate: the start page for the team, a brief and a folder per person, 61 issues on the board as files, the levels, the pulse, and a release script for many committers",

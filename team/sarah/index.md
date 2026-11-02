@@ -2,7 +2,7 @@
 
 Design what makes people at the summit want to talk to us about RiskMandate, with as little of Sarah's time as possible. Brief: [Brief for Sarah](../../brief-sarah/index.html); dashboard: [Sarah's dashboard](../../people/sarah/index.html).
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 Kind: person. Status: briefed: card to fill.
 

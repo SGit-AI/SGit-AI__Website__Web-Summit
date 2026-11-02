@@ -2,7 +2,7 @@
 
 Independent nonprofit building open-source online safety tools as a public good.
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 - Website: https://roost.tools/
 - Category: security

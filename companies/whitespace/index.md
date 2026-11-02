@@ -2,7 +2,7 @@
 
 UK sovereign AI company helping government and regulated sectors deploy trusted, governed AI (from its CEO's Web Summit bio; the company's own site was not identified).
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 - Website: unknown
 - Category: grc

@@ -2,7 +2,7 @@
 
 Turns gamers' and hackers' talent into cybersecurity careers.
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 - Website: https://www.thehackinggames.com/
 - Category: security

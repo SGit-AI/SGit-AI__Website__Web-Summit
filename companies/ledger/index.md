@@ -2,7 +2,7 @@
 
 Hardware crypto wallets and security for digital assets; its Chief Human Agency Officer leads AI initiatives so humans stay in control as AI agents act.
 
-Site version: v0.1.28
+Site version: v0.1.29
 
 - Website: https://www.ledger.com/
 - Category: security
