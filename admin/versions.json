@@ -1,5 +1,11 @@
 [
   {
+    "version": "v0.1.52",
+    "date": "2026-11-02",
+    "what": "WS-87 done, REALITY records CI owning the version",
+    "by": "conductor@web-summit.dinis"
+  },
+  {
     "version": "v0.1.51",
     "date": "2026-11-02",
     "what": "the release step rebuilds when the head is already released; the briefs and start page say CI owns the version",
