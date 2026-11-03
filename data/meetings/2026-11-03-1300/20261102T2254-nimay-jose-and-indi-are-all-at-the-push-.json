@@ -1,20 +1,21 @@
 {
   "type": "decision",
-  "title": "Nimay, Jose and Indi are all at the push step: the invitations (WS-09)",
+  "title": "Nimay and Indi are still at the push step: who sends the invitations (WS-09, WS-124)",
   "for": [
     "dinis",
+    "angelo",
     "nimay",
-    "jose",
     "indi"
   ],
   "by": "mentor@web-summit.dinis",
   "added": "2026-11-02T22:54:54.454Z",
   "status": "open",
-  "detail": "Three of the six stop at the same step, Can push (L1, 3 of 9 on /team/setup/). That is a hand-off to fix once, not three notes. A suggestion: each person could say whether the GitHub invitation has arrived (and share their username if the team still needs it), and Dinis could send any missing invitations.",
-  "recommend": "Dinis sends the invitations before the stand-up and the three accept them",
+  "detail": "Updated by the mentors at 08:41: Jose got through overnight (now L5). Nimay and Indi are still at Can push (L1, 3 of 9 on /team/setup/). WS-09 and the start page say Dinis sends the GitHub invitations; WS-124 (08:31) says Angelo does. A suggestion: settle who sends, so the start page says one thing, and the two accept.",
+  "recommend": "Whoever holds admin on the repository sends both invitations before the stand-up, and the start page names that person",
   "issue": "WS-09",
   "options": [
-    "settle it at the stand-up, two minutes each",
-    "Dinis sends the invitations before the stand-up and the three accept them"
-  ]
+    "Dinis sends, as WS-09 says",
+    "Angelo sends, as WS-124 says, and the start page follows"
+  ],
+  "updated": "2026-11-03T08:41:00Z"
 }
