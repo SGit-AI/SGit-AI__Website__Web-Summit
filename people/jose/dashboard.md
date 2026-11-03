@@ -8,13 +8,13 @@ Kept by `dashboard@web-summit.jose` from [the builder template](../../dashboards
 
 ## What needs me {#needs}
 
-Your conductor's latest is [brief 3](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-03T1225Z.pdf) (12:25), with options and a recommendation for each; it corrects brief 2: you have been on the roster since 02:38.
+Your conductor's latest is [brief 4](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-03T1725Z.pdf) (17:25), with options and a recommendation for each. Your sizes are in (WS-130 done) and the roster item is merged into WS-09, so neither needs you now.
 
-- **13:00, one item is yours:** confirm that `riskmandate-jose` is your account, in your own words, so the roster item closes ([the stand-ups](../../meetings/index.html)).
-- **Your midday pulse:** confirm or change the draft your conductor wrote, after the stand-up.
-- **WS-39, which route:** your dev agent, your designer and your mentor all wait on it: drafts to you that you forward (works today), Slack once someone with admin makes the app, or a gateway on a WhatsApp Web session (ban risk). The findings: [WS-39-findings.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/WS-39-findings.md).
+- **WS-39, which route (due Wednesday 4 November):** still open, and your dev agent, your designer and your mentor all wait on it: drafts to you that you forward (works today), Slack once someone with admin makes the app, or a gateway on a WhatsApp Web session (ban risk). The findings: [WS-39-findings.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/WS-39-findings.md).
+- **Your evening pulse:** none yet today; your conductor has a draft and needs one "feeling" line from you.
+- **L6, your first vault:** `vault@web-summit.jose` is running and has its key; L6 counts once it makes and publishes a vault ([your vault agent](../../vault-agent/index.html), WS-120).
+- **Your mentor's suggestion:** a "ran without a prompt" line in every scheduled commit, so the two-day clock to its handover can be read from git. It covers me too: say yes or no and I follow.
 - **Your designer's pick:** a direction for your command centre and a broadcast look, in [people/jose/design](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/design/README.md).
-- **L6, the vaults:** start `vault@web-summit.jose` (WS-120, you go first with Angelo and Silvio): the access token in your Claude environment, then the prompt on [your vault agent](../../vault-agent/index.html). Your mentor's 08:41 note suggests the same.
 
 Messages for you: commits with `For: jose` in [the log on dev](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commits/dev); every brief is in [people/jose/briefs](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/jose/briefs).
 
@@ -45,4 +45,5 @@ The list with jobs and schedules is [agents.json](https://github.com/SGit-AI/SGi
 - **dashboard@web-summit.jose**: keeps this part of the page, before each stand-up.
 - **dev@web-summit.jose**: WS-39 (the broadcast drafts for your n8n flow) and WS-74; its work and findings are in [people/jose/dev](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/README.md).
 - **designer@web-summit.jose**: on demand; its work is in [people/jose/design](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/design/README.md).
-- **Next:** `vault@web-summit.jose` (WS-120). Still only proposed in your brief: `automation@web-summit.jose` (dev is doing WS-39 for now) and `helper@web-summit.jose` (WS-35).
+- **vault@web-summit.jose**: creates and manages your SGit vaults (WS-120); started 3 November, key published, no vault yet.
+- Still only proposed in your brief: `automation@web-summit.jose` (dev is doing WS-39 for now) and `helper@web-summit.jose` (WS-35).
