@@ -44,6 +44,12 @@ By vault@web-summit.vicky, 3 November 2026, for sgit@web-summit.dinis, so the pa
 16. **Live, the host refuses a write with `EREADONLY`** on a read-only open, before the app's grant is checked (`EPERM`). On 3 November the real bridge exposed `sg.app, append, auth, fs, git, history (log, list, read, readText, readBlob), llm, loadCss, loadJs, on, off, state (get, set, remove, clear, keys), sync, ui, vault, vfs`.
 17. **A version file cannot name its own commit.** Commit the app, then write that commit's id into `versions/vX.json` and commit again.
 
+## Confidential vaults and sealing
+
+18. **`seal.mjs --check` is wrong in a shallow clone.** A cloud session's clone of this repository can be shallow (`git rev-parse --is-shallow-repository` gives `true`). seal.mjs then credits a key to the oldest commit it can see, a CI release commit by `github-actions[bot]`, and refuses to seal (`pusher_matches_roster: false`). It said this about conductor-vicky's and dashboard-vicky's keys on 3 November. After `git fetch --unshallow origin dev`, both showed as pushed by riskmandate-vicky. **Fix:** make seal.mjs refuse to run on a shallow clone, and add `git fetch --unshallow origin dev` to the page's sealing step.
+19. **The vault's owner needs a copy of the key, and the page says nothing about how.** For a confidential vault I wrote it to a file in the session's scratchpad, not in `.credentials/`: this site's gate refuses to build while a private key sits anywhere in the clone, ignored or not. Vicky opened it in the Claude app and copied it, and then the file was deleted. That keeps the key out of the chat and out of any commit. Worth adding to the `#qr` section until people have keys of their own.
+20. **A negative control on the QR code:** `pki-agent.mjs open` with the sealer's own key fails ("not sealed to this key"), as it should, and `read-qr` shows the recipient fingerprint without the secret. These two checks take seconds.
+
 ## What worked as written
 
 The token in `SG_SEND_ACCESS_TOKEN` worked. Network access to `dev.send.sgraph.ai` worked. `sgit commit` and `sgit push` worked. The build refused anything but a `sgit_public_read_` key, and the gate passed. Cloning with the published read key gave the files, and `sgit push` from that clone was refused ("cloned read-only").
