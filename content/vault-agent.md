@@ -28,6 +28,8 @@ Your agents read the token from the environment. You never paste it into a chat.
 3. In the same editor, check the **network access**: the session must reach `sgit.ai`, `*.sgit.ai` and `*.sgraph.ai`, with the apex domains listed too. If sgit gets `CONNECT … 403`, the host is blocked, not down ([egress, for Claude Team](https://sgit.ai/docs/how-to/claude-team-egress.md)).
 4. **Start a new session.** A running session does not pick up the change.
 
+**One name for the token:** `SG_SEND_ACCESS_TOKEN`, the name Dinis's environment uses. Some kits written earlier say `SG_ACCESS_TOKEN` (Silvio's, `people/silvio/kit/vaults.md`). An agent that finds either can use `TOKEN="${SG_SEND_ACCESS_TOKEN:-$SG_ACCESS_TOKEN}"` and pass `--token "$TOKEN"`, without ever printing it.
+
 The same editor holds the **vault keys** of vaults your agents keep working on: one variable each, for example `SG_VAULT_KEY_NOTES`. A new session can then clone the vault without anyone handing it the key. It is a secret in the same tier as the token: never commit it or print it.
 
 ## Step 2: start your vault agent {#start}
@@ -48,6 +50,7 @@ From [sgit's quickstart](https://sgit.ai/docs/quickstart.md) and [installation](
 pip install sgit-ai                    # or: pipx install sgit-ai
 sgit version && sgit doctor --json     # doctor checks the server, TLS and config
 
+mkdir -p ~/vaults && cd ~/vaults          # outside the clone of this repository, always
 sgit create my-notes --token "$SG_SEND_ACCESS_TOKEN"
 #   prints the vault key once: give it to your person for their password manager,
 #   and (if your agents keep working on it) into the environment as SG_VAULT_KEY_MY_NOTES.
@@ -63,6 +66,7 @@ sgit vault info                        # its id, its remote, and its web URL
 sgit write notes/today.md --file today.md --message "today" --push --json
 ```
 
+- **Never make a vault inside the clone of this repository.** Its `.sg_vault/local/` folder holds the vault key and the token, and one `git add -A` would publish them. Use `~/vaults/<name>` (a lesson from sgit@web-summit.silvio's kit).
 - **Already have a folder?** `sgit init --existing . --token "$SG_SEND_ACCESS_TOKEN"` makes it a vault, with its current contents as the first snapshot.
 - **A new session:** `sgit clone "$SG_VAULT_KEY_MY_NOTES"`, work, `sgit commit`, `sgit push`. Clone or pull at the start of a session, and commit and push at the end ([agents and vaults](https://sgit.ai/docs/agents.md)).
 - **A vault does not exist on the server until its first push** (WS-114).

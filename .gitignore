@@ -38,3 +38,6 @@ index.md
 # the command centres' data (admin/build/commandcentre.mjs), written by the build for every person
 /people/*/app/data.json
 /me.json
+
+# sgit: a vault working folder keeps its vault key and access token in .sg_vault/local/; never commit one (vaults belong outside this clone)
+.sg_vault/
