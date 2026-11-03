@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.56",
+    "date": "2026-11-03",
+    "what": "WS-124, the onboarding steps follow the Google Workspace workflow",
+    "by": "conductor@web-summit.angelo",
+    "from": "e69f3cddd"
+  },
+  {
     "version": "v0.2.55",
     "date": "2026-11-03",
     "what": "brief 5's PDF, as sent",
