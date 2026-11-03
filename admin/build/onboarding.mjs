@@ -8,13 +8,13 @@ import path from 'path'
 
 export const STEPS = [
     ['workspace', 'Workspace email', 'manual'], ['claude', 'Claude (team)', 'manual'], ['github', 'GitHub account', 'manual'], ['repo', 'Can push', 'manual'],
-    ['conductor', 'Conductor agent', 'auto'], ['dashboard', 'Dashboard agent', 'auto'], ['keys', 'Agent keys', 'auto'], ['schedule', 'On a schedule', 'both'], ['vault', 'Vaults', 'manual']]
+    ['conductor', 'Conductor agent', 'auto'], ['dashboard', 'Dashboard agent', 'auto'], ['keys', 'Agent keys', 'auto'], ['schedule', 'On a schedule', 'both'], ['vault', 'Vaults', 'both']]
 export const LEVELS = ['L0 not started', 'L1 Workspace email and Claude', 'L2 GitHub and push access', 'L3 a conductor agent running', 'L4 a dashboard agent and agent keys', 'L5 agents on a schedule', 'L6 the vaults: fully wired']
 const GROUPS = [['workspace', 'claude'], ['github', 'repo'], ['conductor'], ['dashboard', 'keys'], ['schedule'], ['vault']]
 const HOW = {
     workspace: 'log in to your RiskMandate Workspace email', claude: 'log in to the Claude team account with that email', github: 'create a GitHub account (with your Workspace email) and send Dinis the username',
-    repo: 'accept the invitation to the repository', conductor: 'start your conductor agent with the prompt in your brief', dashboard: 'start your dashboard agent (the start page, step 6)',
-    keys: 'have each agent make its key and publish the public half (the start page, step 7)', schedule: 'give your conductor and dashboard agents a schedule', vault: 'open the team vaults with your key (the sgit agent will help)'
+    repo: 'accept the invitation to the repository', conductor: 'start your conductor agent with the prompt in your brief', dashboard: 'start your dashboard agent (the start page, step 5)',
+    keys: 'have each agent make its key and publish the public half (the start page, step 6)', schedule: 'give your conductor and dashboard agents a schedule', vault: 'start your vault agent and publish your first vault (the vault agent page; the start page, step 8)'
 }
 
 export function onboarding(ROOT, getINV) {
@@ -26,7 +26,9 @@ export function onboarding(ROOT, getINV) {
             conductor: mine.some(a => a.agent === 'conductor' && a.commits > 0),
             dashboard: mine.some(a => a.agent === 'dashboard' && a.commits > 0),
             keys: fs.existsSync(path.join(ROOT, 'people', id, 'key.json')) || keys.includes(`@web-summit.${id}`),
-            schedule: mine.some(a => a.schedule) || m.steps.schedule === 'yes'
+            schedule: mine.some(a => a.schedule) || m.steps.schedule === 'yes',
+            // a published vault of their own (people/<id>/vaults.json, checked by the build), or the step recorded by hand
+            vault: (() => { try { return (JSON.parse(fs.readFileSync(path.join(ROOT, 'people', id, 'vaults.json'), 'utf8')).vaults || []).length > 0 } catch { return false } })() || m.steps.vault === 'yes'
         }
         const steps = Object.fromEntries(STEPS.map(([k, , kind]) => [k, kind === 'manual' ? m.steps[k] === 'yes' : kind === 'auto' ? auto[k] || m.steps[k] === 'yes' : auto[k]]))
         let level = 0; for (const g of GROUPS) { if (g.every(k => steps[k])) level++; else break }
