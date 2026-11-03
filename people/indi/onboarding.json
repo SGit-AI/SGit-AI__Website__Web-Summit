@@ -1,6 +1,6 @@
 {
   "person": "indi",
-  "level": 3,
+  "level": 4,
   "steps": {
     "workspace": "yes",
     "claude": "yes",
@@ -8,5 +8,5 @@
     "repo": "yes"
   },
   "updated": "2026-11-03",
-  "notes": "Can push: Angelo invited Indi's GitHub account on 3 November (about 18:50 UTC, commit 575d48b), and on 3 November two agents in Indi's Claude account pushed to dev: dev@web-summit.indi (commit 5eac229, 22:57 UTC) and conductor@web-summit.indi (this entry). The conductor and agent-key steps are read from the repository. Keys: neither agent could make one yet, because the session's network policy refuses pki.sgit.ai (and web-summit.sgit.ai). Next for Indi: allow those hosts in the Claude environment's network settings, then start dashboard@web-summit.indi from the kit (people/indi/kit/README.md). Workspace email, Claude team account and GitHub account recorded by conductor@web-summit.dinis from Dinis's account of the day (2 November, evening)."
+  "notes": "Can push: Angelo invited Indi's GitHub account on 3 November (about 18:50 UTC, commit 575d48b), and that evening three agents in Indi's Claude account pushed to dev: dev@web-summit.indi (5eac229), conductor@web-summit.indi (799d37c) and dashboard@web-summit.indi (8f6fae9). Keys: the environment's network policy first refused pki.sgit.ai; once the hosts were allowed (by 23:00 UTC), dev@web-summit.indi (1d6d844) and conductor@web-summit.indi published their session keys in data/keys.json. The conductor, dashboard and agent-key steps are read from the repository. Next for Indi: a scheduled task for the conductor and dashboard agents (people/indi/kit/README.md). Workspace email, Claude team account and GitHub account recorded by conductor@web-summit.dinis from Dinis's account of the day (2 November, evening)."
 }

@@ -1,9 +1,47 @@
 [
-  {"name": "conductor@web-summit.indi", "job": "conducts Indi's agents, keeps people/indi/, feeds the stand-ups and briefs Indi", "session": "Claude Code cloud session in Indi's account", "status": "running", "planned_schedule": "07:20, 12:20 and 17:20 UTC (cron 20 7,12,17 * * *), once Indi creates the scheduled task"},
-  {"name": "dev@web-summit.indi", "job": "explorer developer for the factory (WS-27): a page or vault per target company, fast", "session": "Claude Code cloud session in Indi's account", "status": "running", "planned_schedule": "09:30 and 15:30 UTC (cron 30 9,15 * * *), once Indi creates the scheduled task"},
-  {"name": "dashboard@web-summit.indi", "job": "keeps Indi's dashboard below the built block (people/indi/dashboard.md)", "session": "not started", "status": "planned", "planned_schedule": "07:30, 12:30 and 17:30 UTC (cron 30 7,12,17 * * *)"},
-  {"name": "messaging@web-summit.indi", "job": "checks every new page and draft against the message", "session": "not started", "status": "planned"},
-  {"name": "factory@web-summit.indi", "job": "for each target company: the analysis, the risk analysis and how RiskMandate helps, as a page or vault (WS-27)", "session": "not started", "status": "planned"},
-  {"name": "builder@web-summit.indi", "job": "Daniela's site and learning environment, under Daniela's policies", "session": "not started", "status": "planned"},
-  {"name": "vault@web-summit.indi", "job": "Indi's SGit vaults and their keys (WS-121)", "session": "not started", "status": "planned"}
+ {
+  "name": "conductor@web-summit.indi",
+  "job": "conducts Indi's agents, keeps people/indi/, feeds the stand-ups and briefs Indi",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "planned_schedule": "07:20, 12:20 and 17:20 UTC (cron 20 7,12,17 * * *), once Indi creates the scheduled task"
+ },
+ {
+  "name": "dev@web-summit.indi",
+  "job": "explorer developer for the factory (WS-27): a page or vault per target company, fast",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "planned_schedule": "09:30 and 15:30 UTC (cron 30 9,15 * * *), once Indi creates the scheduled task"
+ },
+ {
+  "name": "dashboard@web-summit.indi",
+  "job": "keeps Indi's dashboard below the built block (people/indi/dashboard.md)",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "planned_schedule": "07:30, 12:30 and 17:30 UTC (cron 30 7,12,17 * * *)"
+ },
+ {
+  "name": "messaging@web-summit.indi",
+  "job": "checks every new page and draft against the message",
+  "session": "not started",
+  "status": "planned"
+ },
+ {
+  "name": "factory@web-summit.indi",
+  "job": "for each target company: the analysis, the risk analysis and how RiskMandate helps, as a page or vault (WS-27)",
+  "session": "not started",
+  "status": "planned"
+ },
+ {
+  "name": "builder@web-summit.indi",
+  "job": "Daniela's site and learning environment, under Daniela's policies",
+  "session": "not started",
+  "status": "planned"
+ },
+ {
+  "name": "vault@web-summit.indi",
+  "job": "Indi's SGit vaults and their keys (WS-121)",
+  "session": "not started",
+  "status": "planned"
+ }
 ]

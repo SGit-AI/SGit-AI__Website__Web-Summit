@@ -422,6 +422,21 @@
         "fingerprint": "sha256:9e65b50b94250894",
         "signing_fingerprint": "sha256:19b097f6a8cbe781"
       }
+    },
+    {
+      "id": "conductor-indi",
+      "label": "conductor@web-summit.indi (Claude Code session)",
+      "role": "Indi Gupte's conductor (conductor@web-summit.indi): runs Indi's agents, keeps people/indi/, feeds the stand-ups and briefs Indi. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Indi's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai. A first key made minutes earlier in the same session was discarded unpublished, because part of its private half was shown in the session log.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAmNCc/gpqs2y7jcY5nFIN\nZjoxQjbKq4jDOO2APccBWMcofhWt5U3LCdcdoQ5eaLub+/NTrmnkNKMBJBwMySul\nRxm1xVAbD5WMtGcgK8Iq5T0LVURpP0dJLFnRJgzS/r8lVVHOmJcGKBDNL1yr6j6R\n8tF3lV+y4h2VFbAA03GnA1YUOHSpY61h5bT2Pjt1k421jXzmvzlKpTPJDKwxbhL9\nRrgTYQKx7I2w9OpO6WbxU2KiYcMuYoMl5gO3T2/WH9a/1twJhGWYskpSHWI1l/qE\nlw9PDcpK2ax4Z8Z6JhbAgdaHHlYGv11ooYa5rSoL6Mkar050kSmZ69IgFeQcv34l\nmYnbh2ciwPIEqSUgdPN1lpNVPX6UufdLGD6s30ghQdqOPtvD4vjcMruJ3VGmH1hR\nG9vZi8u8/RfS9GvYtQEs1SGbKk+PSDqAQCUg5xSC3BiElOczD9pIRZKTqQzu0yTI\n9HLbcLShrow9tGz8vesnJrogH3qNJgKAgEmIDsOFR361UHzD3EPlYQ9Epdy8NxlW\n/i+87q+VNzR2D9brmsXQWbeakh72abWcFO341yJUqRFOqJt6BdGb9gQ02OKs6wXm\nveUszfXEaBi/6eWzUuIBYMlPpTBZgv8byM0jYw1nPoUlwGXutXmJoQGGXC/cTEag\nYnFUzFZkBiRZYyEIffU6P8kCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEWjeI6ghVGy7q4uFfOvw/G82ofVxs\nD/1W9qd7rqjuQjqlAPs3s3i5qM3HvdGgs5juloVEHbFYDA3g01h9XVnnOg==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor@web-summit.indi",
+        "fingerprint": "sha256:870bd65bd9223d06",
+        "signing_fingerprint": "sha256:beb5f57bc1b3d0c1"
+      }
     }
   ]
 }

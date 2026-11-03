@@ -1,0 +1,65 @@
+{
+  "number": 2,
+  "date": "3 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "L4: your three agents run and two keys are published; a schedule is next",
+  "when": "3 November 2026, 23:05 UTC (wake; since brief 1, 23:00 UTC)",
+  "by": "conductor@web-summit.indi",
+  "headline": "Since brief 1 the network block is gone: dev@web-summit.indi and this conductor made their keys and published the public halves. With your dashboard agent running, you are at L4, 7 of 9 steps. Next is a scheduled task for your agents (L5). One failure to report: my first key was discarded, explained below.",
+  "stats": [
+    {"n": "L4", "label": "your level (was L1 this evening)"},
+    {"n": "7 of 9", "label": "setup steps done"},
+    {"n": "3", "label": "agents of yours that have committed (conductor, dev, dashboard)"},
+    {"n": "2", "label": "agent keys published (dev, conductor)"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Create the scheduled tasks for your conductor and dashboard agents (L5)",
+      "detail": "No scheduled task is listed on your account yet. The kit (people/indi/kit/README.md) has each one's times and its scheduled-task prompt: conductor 07:20, 12:20, 17:20 UTC; dashboard 07:30, 12:30, 17:30 UTC; dev 09:30, 15:30 UTC.",
+      "options": ["I create them in each session", "ask me to create mine in this session", "not yet"],
+      "recommend": "Ask me to create mine here, and do the same in the dashboard and dev sessions: it is one sentence in each."
+    },
+    {
+      "id": "2",
+      "ask": "A first company for the factory (WS-27)",
+      "detail": "Unchanged from brief 1: dev@web-summit.indi waits for your go and one company.",
+      "options": ["name a company", "wait for the first five (WS-25, on the 13:00 agenda)", "not now"],
+      "recommend": "Wait for WS-25 at 13:00 and take the first company from it."
+    }
+  ],
+  "you_asked": [
+    {"at": "3 Nov, about 23:00 UTC", "said": "(Brief 1, ask 1) allow the hosts", "done": "Done in practice: pki.sgit.ai answers now. My stand-up item on it is closed, with the outcome.", "where": "data/meetings/2026-11-04-1300/", "status": "done"},
+    {"at": "3 Nov, 23:02 UTC", "said": "Scheduled wake: do one run, release it, and report in five lines.", "done": "This run: my key, agents.json and onboarding.json brought up to date, this brief.", "where": "data/keys.json, people/indi/", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "1. What happened",
+      "items": [
+        "dev@web-summit.indi published its key at 23:00 UTC (1d6d844, sha256:19b097f6a8cbe781).",
+        "dashboard@web-summit.indi started and rebuilt your dashboard in three parts (8f6fae9, c54dd1a, 90c42ce).",
+        "This conductor's key is published as conductor-indi (signing sha256:beb5f57bc1b3d0c1), linked to Dinis's key sha256:db7f79fdd87e030a.",
+        "A failure: my first key (sha256:40286c07d0862b7f) was never published. A command of mine printed part of its private half into this session's log, so I deleted it and made the one above."
+      ]
+    },
+    {
+      "title": "2. From your mentor",
+      "items": [
+        "No new note since 19:40 UTC. Its suggestions (accept the invitation, start your kit's agents) are now done."
+      ]
+    }
+  ],
+  "next": [
+    "Your scheduled tasks (L5), when you choose.",
+    "13:00 stand-up: WS-25's first five companies, and from it the first factory company.",
+    "Your dashboard still says to allow pki.sgit.ai; I have told dashboard@web-summit.indi it is done.",
+    "Tell me 'acknowledge' when you have read briefs 1 and 2."
+  ],
+  "sources": [
+    "git log: 575d48b, 5eac229, 799d37c, 8f6fae9, c54dd1a, 1d6d844, 90c42ce",
+    "data/keys.json (conductor-indi, dev-indi)",
+    "the leaderboard as built at 23:05 UTC: L4, 7 of 9",
+    "the scheduled-task list for this account at 23:05 UTC: empty",
+    "people/indi/mentor/2026-11-03-1940.md"
+  ]
+}

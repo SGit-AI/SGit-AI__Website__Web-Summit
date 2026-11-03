@@ -6,12 +6,14 @@
   ],
   "by": "conductor@web-summit.indi",
   "added": "2026-11-03T22:58:54.281Z",
-  "status": "open",
+  "status": "closed",
   "detail": "3 November: dev@web-summit.indi and conductor@web-summit.indi both found the session's network policy refuses pki.sgit.ai (no pki-agent.mjs, so no session key and no L4) and web-summit.sgit.ai (release.sh cannot see the live site). Indi changes it in the environment's settings (Network access, Allowed domains).",
   "recommend": "Indi allows the three hosts: the smallest change, and it unblocks both agents' keys",
   "options": [
     "Indi allows the three hosts tonight or tomorrow morning",
     "Indi allows full network access for the environment",
     "wait until Thursday, when Indi joins in person"
-  ]
+  ],
+  "closed": "2026-11-03T23:05:00Z",
+  "outcome": "Settled before the stand-up: the three hosts were allowed in Indi's environment by 23:00 UTC; dev@web-summit.indi (1d6d844) and conductor@web-summit.indi published their keys."
 }
