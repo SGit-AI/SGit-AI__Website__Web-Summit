@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.39",
+    "date": "2026-11-03",
+    "what": "how every one of Silvio's agents creates and uses a vault (people/silvio/kit/vaults.md)",
+    "by": "sgit@web-summit.silvio",
+    "from": "369de34f9"
+  },
+  {
     "version": "v0.2.38",
     "date": "2026-11-03",
     "what": "publish my session key on the keys page (public half only)",
