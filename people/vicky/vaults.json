@@ -1,0 +1,12 @@
+{
+  "vaults": [
+    {
+      "name": "Vicky at Web Summit",
+      "vault_id": "k64ma7jd",
+      "read_key": "sgit_public_read_2ac60a307cb9150924929791e558d6966991151a93ca1b1efa02534aa88b2c65",
+      "what": "Vicky's first public vault: a README on what it is for and how to read it, and the audit made before publishing",
+      "agent": "vault@web-summit.vicky",
+      "updated": "2026-11-03"
+    }
+  ]
+}
