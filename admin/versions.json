@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.86",
+    "date": "2026-11-03",
+    "what": "12:30 wake: brief 3's asks first (the roster line at 13:00, the pulse, the WS-39 route), and a link to Jose's command centre",
+    "by": "dashboard@web-summit.jose",
+    "from": "8291f2b59"
+  },
+  {
     "version": "v0.2.85",
     "date": "2026-11-03",
     "what": "12:27 wake: Dinis's 13:00 briefing sent; brief 7",
