@@ -5,6 +5,7 @@
 import fs from 'fs'
 import path from 'path'
 import * as CAST from './cast.mjs'
+import { dayTimeline } from './charts.mjs'
 import { execFileSync } from 'child_process'
 import { meetingsContext, buildMeetings, sinceMd } from './meetings.mjs'
 import { inventory, inventoryMd, myAgentsMd } from './inventory.mjs'
@@ -683,7 +684,23 @@ ${(events.gaps || []).length ? `<h2 id="gaps">What we could not confirm</h2>${li
         sections.push(`<h2 id="${id}">${a ? castIcon(a.id) + ' ' : ''}${esc(name)}</h2><p class="meta">${esc((a && a.when) || 'a person\'s agent')}${a && a.look ? ` · drawn with ${esc(a.look)}` : ''}${a ? ` · <a href="../agents/index.html#${a.id}">its job and prompt</a>` : ''}</p>${ws.length ? `<ol class="wakes">${ws.slice(0, 25).map(wake).join('')}</ol>${ws.length > 25 ? `<p class="meta">And ${ws.length - 25} earlier wakes: <a href="${REPO}/commits/dev">the full history</a>.</p>` : ''}` : '<p>No wake recorded yet.</p>'}`)
     }
     const asOf = now ? when(now) : 'unknown'
+    // today's runs as a picture (WS-123, item 3): every scheduled slot met, missed or still to come, from the crons and the history
+    const todayTl = (() => {
+        if (!now) return ''
+        const day = new Date(now).toISOString().slice(0, 10), t0 = Date.parse(day + 'T00:00:00Z')
+        const rows = castData.agents.filter(a => a.cron).map(a => {
+            const mine = commits.filter(c => c.agent === a.name && !c.version).map(c => Date.parse(c.at)).filter(t => t >= t0 && t < t0 + 864e5)
+            const slots = []; for (let t = t0; t < t0 + 864e5; t += 60000) if (fires(a.cron, t)) slots.push(t)
+            const near = (t, s) => t >= s - 6e5 && t <= s + 36e5
+            const marks = slots.map(sl => ({ t: sl, state: sl > now ? 'due' : mine.some(t => near(t, sl)) ? 'met' : now - sl < 36e5 ? 'due' : 'missed', title: `${hm(sl)} UTC: ${sl > now || now - sl < 36e5 ? 'scheduled' : mine.some(t => near(t, sl)) ? 'ran' : 'no commit within the hour'}` }))
+            const extra = mine.filter(t => !slots.some(sl => near(t, sl))).filter((t, k, xs) => k === 0 || t - xs[k - 1] > 18e5)
+            return { label: a.name.replace('@web-summit.', '@'), href: `#${a.id}`, marks: [...marks, ...extra.map(t => ({ t, state: 'extra', title: `${hm(t)} UTC: a wake outside its slots` }))] }
+        })
+        const n = s => rows.reduce((k, r) => k + r.marks.filter(m => m.state === s).length, 0)
+        return `<h2 id="today">Today, every scheduled run</h2><p class="meta">${n('met')} ran, ${n('missed')} missed, ${n('due')} still to come, as of ${hm(now)} UTC (the newest commit in this build). A wake that finds nothing to do commits nothing, so it shows as missed until idle runs are recorded on the agents' lanes (WS-114).</p><div class="scroll">${dayTimeline({ day, now, rows })}</div>`
+    })()
     const body = `<p>Every agent wired up on this team: when it is scheduled to fire, when it last did, and what each wake did, newest first, each linked to its commits. Built from the git history: every commit names its agent (<code>Agent:</code>) and its session (<code>Claude-Session:</code>); a wake is an agent's commits closed by its release. Times are UTC (Lisbon is UTC in November), as of the newest commit in this build: <b>${asOf}</b>. Each release rebuilds this page.${note ? ` ${note}` : ''}</p>
+${todayTl}
 <h2 id="now">Who fires when</h2><div class="scroll"><table><tr><th>Agent</th><th>Schedule</th><th>Last wake</th><th>Next, from the schedule</th><th>Releases</th><th>State</th></tr>${rows.join('')}</table></div><p class="meta">"Missed?" means the schedule had a slot more than an hour before this build and the agent has committed nothing since: its session may be asleep or stuck, or it found nothing worth a release. The conductor checks.</p>
 ${sections.join('\n')}`
     const md = names.map(n => { const a = castData.agents.find(x => x.name === n); return `## ${n}\n\n${(a && a.when) || 'a person\'s agent'}${a && a.cron ? ` (cron ${a.cron})` : ''}\n\n${wakesOf(n).slice(0, 25).map(w => { const r = w.find(c => c.version); return `- ${w[0].at.slice(0, 16)}Z ${r ? `${r.version}: ${r.what} (${GH}${r.sha})` : 'not released yet'}` }).join('\n') || 'No wake recorded yet.'}` }).join('\n\n')

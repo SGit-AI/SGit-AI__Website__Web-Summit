@@ -103,6 +103,17 @@
       "validate_seconds": 1.9,
       "ci_seconds_before": 56,
       "ci_seconds_after": null
+    },
+    {
+      "date": "2026-11-03",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass 8 (WS-123 item 3): admin/build/charts.mjs, dayTimeline on /wakes/ (classes only, look in site.css on tokens). Build 1.64 -> 2.4 s between passes as pages landed (322 pages); not investigated this pass.",
+      "pages": 322,
+      "build_seconds": 1.36,
+      "validate_seconds": 2.19,
+      "ci_seconds_before": 47,
+      "ci_seconds_after": null
     }
   ]
 }

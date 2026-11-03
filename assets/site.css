@@ -15,6 +15,7 @@
     --accent-dk   : #115e59;
     --accent-ink  : #ffffff;
     --accent-soft : #e6f4f1;
+    --warn        : #b42318;   /* charts: a missed run (WS-123) */
     --focus       : #0f766e;
     --code-bg     : #f2f0e9;
     --nav-bg      : rgb(250 249 245 / 0.92);
@@ -41,6 +42,7 @@
         --accent-dk   : #8be3d9;
         --accent-ink  : #0b1f1d;
         --accent-soft : #14302d;
+        --warn        : #f97066;   /* charts: a missed run (WS-123) */
         --focus       : #5fd4c8;
         --code-bg     : #24241f;
         --nav-bg      : rgb(20 20 18 / 0.92);
@@ -340,3 +342,19 @@ main.home .for-you { margin-top: 1rem; }
     .fy-tiles > div { min-width: 40%; }
     .fy-spark { flex: 1; }
 }
+
+/* charts (admin/build/charts.mjs, WS-123): structure in the SVG, the look here, on tokens; the designer owns this block */
+svg.ch { display: block; width: 100%; min-width: 760px; height: auto; font: 12px var(--sans); }
+.ch .ch-quiet { fill: var(--surface-2); }
+.ch .ch-grid { stroke: var(--line); }
+.ch .ch-row { stroke: var(--line); stroke-dasharray: 2 4; }
+.ch .ch-axis, .ch .ch-key, .ch .ch-nowl { fill: var(--ink-2); }
+.ch .ch-label { fill: var(--ink); font-weight: 600; }
+.ch a .ch-label { fill: var(--accent-dk); }
+.ch .ch-met { fill: var(--accent); }
+.ch .ch-due { fill: var(--surface); stroke: var(--ink-2); stroke-width: 1.5; }
+.ch .ch-extra { fill: var(--ink-2); }
+.ch .ch-missed circle { fill: var(--warn); }
+.ch .ch-missed path { stroke: var(--surface); stroke-width: 1.6; stroke-linecap: round; }
+.ch .ch-now { stroke: var(--warn); stroke-width: 1.5; }
+.ch .ch-nowl { fill: var(--warn); font-weight: 600; }
