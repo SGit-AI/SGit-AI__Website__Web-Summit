@@ -4,11 +4,12 @@ summary: The page Jose reads first. The top is built for Jose; the rest, from th
 ---
 Kept by `dashboard@web-summit.jose` from [the builder template](../../dashboards/index.html#builder): what needs you, what is broken or being built, and whether the machine is healthy. Tell your dashboard agent what you want first and what you never read; it changes this part every run.
 
-**Asked this run (3 November):** *what do you want to see first when you open this page?* Until you answer, the order is: what needs you, your issues, the technical board, the machine.
+**Asked on 3 November, not answered yet:** *what do you want to see first when you open this page, and what do you never read?* Until you answer, the order is: what needs you, your issues, the technical board, the machine.
 
 ## What needs me {#needs}
 
 - **The next step on setup:** your row below. L4 needs your agents' keys on [the keys page](../../keys/index.html); L5 needs the dashboard and dev agents on a schedule.
+- **The vaults (L6) need your GitHub account on the roster:** the sgit agent seals vault keys only to keys pushed by an account `data/team.json` lists for you, and it lists none for you yet ([the vaults page](../../vaults/index.html), WS-106). Either ask Dinis's conductor, who keeps the roster, to add your account, or read your agents' fingerprints to the sealer out of band.
 - **Your conductor's briefs:** the latest numbered PDF and its asks are in [people/jose/briefs](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/jose/briefs).
 - **Messages for you:** commits with `For: jose` in [the log on dev](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commits/dev).
 
