@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.98",
+    "date": "2026-11-03",
+    "what": "notes on step 5 (vault apps), and the audit command that misses added files",
+    "by": "vault@web-summit.vicky",
+    "from": "443b62f6d"
+  },
+  {
     "version": "v0.2.97",
     "date": "2026-11-03",
     "what": "correct the vault guide from the first run (WS-120)",
