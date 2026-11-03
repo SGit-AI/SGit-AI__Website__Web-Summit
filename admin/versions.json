@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.12",
+    "date": "2026-11-03",
+    "what": "seal.mjs asks GitHub who pushed a key and checks it against the roster; pki-agent pinned (WS-106)",
+    "by": "sgit@web-summit.dinis",
+    "from": "a813cdc0e"
+  },
+  {
     "version": "v0.2.11",
     "date": "2026-11-03",
     "what": "on a schedule at Jose's word (07:20, 12:20, 17:20 UTC, into its own session)",
