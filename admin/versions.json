@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.19",
+    "date": "2026-11-03",
+    "what": "/print/ restyled to the print order's example (poster style), Silvio's line \"Your AI has access. Does it have permission?\"",
+    "by": "designer@web-summit.dinis",
+    "from": "f185f2494"
+  },
+  {
     "version": "v0.2.18",
     "date": "2026-11-03",
     "what": "started; session key dev-jose published (public half only) in data/keys.json",
