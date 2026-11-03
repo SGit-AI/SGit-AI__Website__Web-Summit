@@ -1,6 +1,6 @@
 /* The factory's infographics (WS-27): pastel, rounded, easy on the eye. Dark ink on light pastel in both themes. */
-.ig { --ig-ink: #33324a; --ig-soft: #6b6984; --ig-bg: #fdfcf8; font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; }
-.ig h2, .ig h4, .ig-card b, .ig-num, .ig-expand { font-family: 'Nunito', 'Atkinson Hyperlegible', system-ui, sans-serif; }
+.ig { --ig-ink: #33324a; --ig-soft: #6b6984; --ig-bg: #fdfcf8; font-family: 'Lexend', system-ui, sans-serif; }
+.ig h2, .ig h4, .ig-card b, .ig-num, .ig-expand { font-family: 'Nunito', 'Lexend', system-ui, sans-serif; }
 .ig-top { display: flex; flex-wrap: wrap; gap: .4rem; margin: .5rem 0 1rem; }
 .ig-chip { background: var(--c); color: var(--ig-ink); border-radius: 999px; padding: .2rem .75rem; font-size: .85rem; }
 .ig-tag { font-size: 1.2rem; line-height: 1.5; }
@@ -12,7 +12,7 @@
 .ig-expand:hover, .ig-expand:focus-visible { background: #cdefe3; }
 .ig-graphic { margin: .9rem 0; overflow-x: auto; }
 .ig-svg { width: 100%; height: auto; display: block; min-width: 520px; }
-.ig-svg .sv { font: 14px 'Atkinson Hyperlegible', system-ui, sans-serif; fill: #33324a; }
+.ig-svg .sv { font: 14px 'Lexend', system-ui, sans-serif; fill: #33324a; }
 .ig-svg .svb { font: 800 15px 'Nunito', system-ui, sans-serif; }
 .ig-svg .svg-gap { font-style: italic; fill: #4f6f93; }
 .ig-two { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }

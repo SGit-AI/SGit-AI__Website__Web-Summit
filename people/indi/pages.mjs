@@ -8,7 +8,7 @@ import path from 'node:path'
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 const PAL = ['#cdefe3', '#e3ddf7', '#ffe1d0', '#fff3c4', '#d6ecfa', '#f9d9e3']  // mint, lavender, peach, butter, sky, rose
 const EDGE = ['#7cc9ad', '#a99be0', '#f0a37f', '#e5c75c', '#86bde6', '#e597b0']
-const HEAD = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito:wght@600;800&display=swap"><link rel="stylesheet" href="FACTORY/factory.css"><script src="FACTORY/factory.js" defer></script>'
+const HEAD = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&family=Nunito:wght@600;800&display=swap"><link rel="stylesheet" href="FACTORY/factory.css"><script src="FACTORY/factory.js" defer></script>'
 
 // wrap text into SVG lines of about n characters
 function lines(t, n) {

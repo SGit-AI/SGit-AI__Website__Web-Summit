@@ -13,15 +13,69 @@
   },
   "companies": [
     {
+      "id": "cisco-outshift",
+      "tagline": "Cisco's incubator and developer platform for agentic AI: building the plumbing that agents will run on.",
+      "flow": [
+        "Outshift incubates new tech",
+        "DevNet: a developer platform for agentic AI",
+        "Open-source agent projects for the community"
+      ],
+      "what_n": "Through Outshift and DevNet, Cisco gives developers open-source building blocks for agents that talk to each other and to the network.",
+      "what_l": "Cisco builds the roads and traffic lights of the internet. Now it is building the roads AI assistants will drive on.",
+      "risks": [
+        {
+          "t": "Agents on the network",
+          "n": "Agents built on shared infrastructure can reach systems and other agents far beyond their task, across company boundaries.",
+          "l": "Once on the motorway, a car can drive anywhere, not just to the shop."
+        },
+        {
+          "t": "Open source, many hands",
+          "n": "Open-source agent components spread fast; each adopter inherits defaults that may grant more reach than they need.",
+          "l": "Free car kits are great, but everyone builds them with the same loose bolts."
+        },
+        {
+          "t": "Who answers for an agent?",
+          "n": "In multi-agent systems, responsibility for an action is split between builders, operators and the platform.",
+          "l": "After a pile-up, who was driving?"
+        }
+      ],
+      "helps": {
+        "reach": "Every system and agent a DevNet-built agent can contact.",
+        "mandate": "The task its owner approved.",
+        "gap": "Connections the agent has but its task never uses.",
+        "barriers": "Network controls and agent identities, named as evidence.",
+        "provenance": "Which team built it, on which open-source version.",
+        "n": "RiskMandate offers the agent-infrastructure community a common record per agent: a behaviour policy that travels with the agent across the network. Open projects could ship with an example policy, so every adopter starts with a stated mandate.",
+        "l": "Cisco builds the roads; RiskMandate is the driving licence that says where each car may go."
+      },
+      "opener": "You are building the roads for agents. Could every agent on them carry a licence that says where it may go?"
+    },
+    {
       "id": "hexamind",
       "tagline": "An open-source gatekeeper for every tool an AI agent calls: the closest neighbour to what we do.",
-      "flow": ["Hexgate: an open-source permission layer", "Developers wire it between agent and tools", "Every tool call: allow, deny or ask a human"],
+      "flow": [
+        "Hexgate: an open-source permission layer",
+        "Developers wire it between agent and tools",
+        "Every tool call: allow, deny or ask a human"
+      ],
       "what_n": "Hexgate sits between an agent and its tools and enforces the company's policy on each call, by role, with signed policy bundles and an audit trail.",
       "what_l": "Hexamind makes a bouncer for AI assistants. Every time an assistant tries to do something, the bouncer checks the list and says yes, no, or 'ask a person first'.",
       "risks": [
-        {"t": "Policy says yes, business says no", "n": "A gate enforces whatever the policy says; if the policy is wider than the agent's real task, the gate faithfully allows the wrong thing.", "l": "A bouncer with the wrong guest list lets the wrong people in, politely."},
-        {"t": "Approval fatigue", "n": "Human approval steps on frequent tool calls get rubber-stamped, turning a control into a formality.", "l": "If the bouncer asks the manager every five minutes, the manager starts saying yes without looking."},
-        {"t": "Proving it to the buyer", "n": "Enterprises and insurers need evidence that the gate covers every path the agent has, not only the tools it was wired to.", "l": "The bouncer only guards the front door. Who checks the back door?"}
+        {
+          "t": "Policy says yes, business says no",
+          "n": "A gate enforces whatever the policy says; if the policy is wider than the agent's real task, the gate faithfully allows the wrong thing.",
+          "l": "A bouncer with the wrong guest list lets the wrong people in, politely."
+        },
+        {
+          "t": "Approval fatigue",
+          "n": "Human approval steps on frequent tool calls get rubber-stamped, turning a control into a formality.",
+          "l": "If the bouncer asks the manager every five minutes, the manager starts saying yes without looking."
+        },
+        {
+          "t": "Proving it to the buyer",
+          "n": "Enterprises and insurers need evidence that the gate covers every path the agent has, not only the tools it was wired to.",
+          "l": "The bouncer only guards the front door. Who checks the back door?"
+        }
       ],
       "helps": {
         "reach": "Every tool and data path each agent can reach, not only those behind the gate.",
@@ -35,15 +89,259 @@
       "opener": "Your gate enforces the policy; we write down what the policy should be and prove it holds. Shall we try one agent together?"
     },
     {
+      "id": "primitive",
+      "tagline": "Email built for AI agents: each agent gets its own address and can send and receive like a person.",
+      "flow": [
+        "An email address for each agent",
+        "Agents read and send real email",
+        "Backed by Y Combinator"
+      ],
+      "what_n": "Primitive gives agents their own mailboxes and tools over standard email protocols, so agents can correspond with people and systems directly.",
+      "what_l": "Primitive gives each AI assistant its own email account, so it can write and reply to emails by itself.",
+      "risks": [
+        {
+          "t": "Speaking for the company",
+          "n": "An agent with a mailbox can make commitments, share data or reply to the wrong person in the company's name.",
+          "l": "The assistant can promise a customer a discount nobody approved."
+        },
+        {
+          "t": "Email is an open door",
+          "n": "Incoming mail is untrusted input; a crafted message can steer an agent that reads and acts on it.",
+          "l": "Anyone can post a letter that says 'please send me the files', and the assistant might."
+        },
+        {
+          "t": "Proving who sent it",
+          "n": "Recipients need to know whether a message came from a person or an agent, and which one.",
+          "l": "Was this letter from the manager, or from their robot?"
+        }
+      ],
+      "helps": {
+        "reach": "Whom the agent can write to, what it can attach, what it reads.",
+        "mandate": "Which conversations it is allowed to have, and about what.",
+        "gap": "Recipients and topics beyond the task.",
+        "barriers": "Allow-lists, human approval before sending, signed mail.",
+        "provenance": "Which person owns each agent mailbox.",
+        "n": "RiskMandate writes down, per agent mailbox, who it may write to, what it may say and what reviews stand in the way. That is the record a business needs before letting an agent email customers. Our own team runs email agents under the same rule: agents draft, people send.",
+        "l": "Primitive gives the assistant a mailbox; RiskMandate is the rulebook for what it may say and to whom."
+      },
+      "opener": "Your agents have their own mailboxes. We write down what each may say and to whom. We do it for our own email agents."
+    },
+    {
+      "id": "mastra",
+      "tagline": "A leading open-source TypeScript framework for building production AI agents.",
+      "flow": [
+        "Open-source TypeScript framework",
+        "Developers build and run agents",
+        "Enterprise platform to manage them"
+      ],
+      "what_n": "Mastra gives developers the parts to build agents, workflows and tool integrations, and a platform to run and manage them in production.",
+      "what_l": "Mastra is a Lego kit for building AI assistants, plus a garage for keeping them running.",
+      "risks": [
+        {
+          "t": "Easy to add tools",
+          "n": "Frameworks make adding tools and integrations easy; each one widens what the agent can reach.",
+          "l": "With Lego it is easy to add one more arm, and every arm can grab something."
+        },
+        {
+          "t": "Many agents, little record",
+          "n": "Teams ship many agents quickly; few write down what each is for or who owns it.",
+          "l": "Lots of robots in the garage, no labels on any of them."
+        },
+        {
+          "t": "Shared state and secrets",
+          "n": "Agents share memory, keys and state; a leak in one reaches the others.",
+          "l": "All the robots share one toolbox and one set of keys."
+        }
+      ],
+      "helps": {
+        "reach": "The tools and integrations each Mastra agent is wired to.",
+        "mandate": "The workflow it was built for.",
+        "gap": "Tools registered but not needed for that workflow.",
+        "barriers": "Framework guards, approvals and tests, named with evidence.",
+        "provenance": "The owner and version of each agent in the platform.",
+        "n": "A behaviour policy could be generated from a Mastra agent's own definition (its tools and workflows) and kept beside the code, so every agent ships with a record of its reach and mandate. Encrypted shared state (sgit vaults) answers the shared-secrets risk.",
+        "l": "Mastra builds the robots; RiskMandate puts a label on each one: what it is for and what it must not touch."
+      },
+      "opener": "Every Mastra agent already declares its tools. We could turn that into a behaviour policy automatically. Worth a try?"
+    },
+    {
+      "id": "qase",
+      "tagline": "Test management for 2,000+ engineering teams, now checking every change a coding agent makes against what was asked.",
+      "flow": [
+        "Test management platform",
+        "Tiden records what was asked",
+        "Checks each agent-written change against it"
+      ],
+      "what_n": "Qase's new product Tiden keeps the original request and verifies that each change a coding agent makes matches it.",
+      "what_l": "Qase keeps the shopping list and checks that the AI came back with only what was on it.",
+      "risks": [
+        {
+          "t": "Checking the code, not the reach",
+          "n": "Verifying changes against a request does not cover what the agent could have done with its access.",
+          "l": "The shopping matches the list, but the assistant still had your credit card all day."
+        },
+        {
+          "t": "Vague requests",
+          "n": "If the original request is loose, any change can be argued to match it.",
+          "l": "'Get some food' allows almost anything."
+        },
+        {
+          "t": "Trust in the checker",
+          "n": "Customers must trust that the verifier itself is complete and not bypassed.",
+          "l": "Who checks the person checking the receipts?"
+        }
+      ],
+      "helps": {
+        "reach": "What the coding agent can change: repositories, pipelines, secrets.",
+        "mandate": "The request Tiden records.",
+        "gap": "Access beyond what the request needs.",
+        "barriers": "Tiden's checks as review evidence; branch rules as technical ones.",
+        "provenance": "Who made the request, which agent, which version.",
+        "n": "Tiden and RiskMandate share an idea: write down what was asked, then check. Tiden checks the changes; RiskMandate covers the agent's whole reach and the barriers around it. Together: a mandate per task and per agent. Our own site works this way, with a gate before every release.",
+        "l": "Qase checks the shopping; RiskMandate also checks who held the credit card and what else they could have bought."
+      },
+      "opener": "Tiden records what was asked. We record what the agent could do. Together that is the full picture."
+    },
+    {
+      "id": "replit",
+      "tagline": "Anyone can build an app by describing it; the agent writes, runs and ships the code.",
+      "flow": [
+        "Describe an app in plain words",
+        "Replit's agent writes and runs the code",
+        "Millions of users, 500,000+ businesses"
+      ],
+      "what_n": "Replit's agent turns natural-language requests into working, deployed applications, so people who do not code can build software.",
+      "what_l": "You tell Replit what app you want, like you'd tell a builder what house you want, and its AI builds it for you.",
+      "risks": [
+        {
+          "t": "The agent touches production",
+          "n": "A coding agent with deploy and database rights can change or delete live data while doing an unrelated task.",
+          "l": "Asked to repaint a room, the builder knocks down a wall."
+        },
+        {
+          "t": "Builders who can't review",
+          "n": "Non-developers cannot judge what the agent changed, so mistakes and unsafe code ship unseen.",
+          "l": "If you can't read the plans, you can't spot the missing fire exit."
+        },
+        {
+          "t": "Secrets and data in the app",
+          "n": "Agent-built apps can embed keys, expose customer data or call services the owner never meant to use.",
+          "l": "The house gets built with the spare key taped to the front door."
+        }
+      ],
+      "helps": {
+        "reach": "What the agent can change: code, databases, deploys, connected services.",
+        "mandate": "What the builder actually asked for, in their words.",
+        "gap": "Changes beyond the request, such as deleting data or new services.",
+        "barriers": "Checkpoints, rollbacks and separate environments, named with evidence.",
+        "provenance": "Who asked, which agent version built it, who approved the deploy.",
+        "n": "For Replit's business users, RiskMandate makes each agent's licence to operate explicit: what it may touch, what it may not, and what stops it. That is the record a company's security team or insurer asks for before letting staff build with agents.",
+        "l": "RiskMandate is the building permit: it says what the builder may change, and checks nothing else was touched."
+      },
+      "opener": "Your users build with agents. Their security teams will ask what those agents may touch. We answer that, per agent."
+    },
+    {
+      "id": "kpmg-portugal",
+      "tagline": "Audit, tax and advisory: the people boards trust to say whether risk is under control.",
+      "flow": [
+        "Audit, tax and advisory",
+        "Boards and regulators rely on its view",
+        "Now asked about AI agents too"
+      ],
+      "what_n": "KPMG Portugal is an event partner and runs the Global Tech Innovator final in Lisbon; audit and advisory firms validate how clients govern risk, now including AI.",
+      "what_l": "KPMG are the inspectors companies call in to check the books and the risks, and to tell the board it is safe.",
+      "risks": [
+        {
+          "t": "Auditing agents without a record",
+          "n": "Clients deploy agents faster than they document them; auditors have nothing consistent to test.",
+          "l": "You can't inspect a house with no plans."
+        },
+        {
+          "t": "Their own agents",
+          "n": "Advisory firms use AI agents on confidential client data; the same questions apply to them.",
+          "l": "The inspector's own assistant has keys to every client's office."
+        },
+        {
+          "t": "Opinions on new ground",
+          "n": "Signing off on AI controls without a shared standard is a professional risk.",
+          "l": "Saying 'it's safe' when there is no rulebook yet."
+        }
+      ],
+      "helps": {
+        "reach": "A client's agents and what each can touch.",
+        "mandate": "What the client's business authorised.",
+        "gap": "The audit finding: reach beyond mandate.",
+        "barriers": "Controls with evidence an auditor can test.",
+        "provenance": "Owner, reviewer and version: the audit trail.",
+        "n": "RiskMandate produces exactly what an auditor needs: a consistent, evidenced record per agent. For KPMG it can be a tool to assess clients' agents and a model for governing its own. A partner, not a competitor.",
+        "l": "RiskMandate gives the inspector a checklist for AI assistants, so they know what to look at."
+      },
+      "opener": "Your clients will ask you whether their agents are under control. Here is a record you can audit."
+    },
+    {
+      "id": "startup-portugal",
+      "tagline": "Portugal's startup agency: the door to the Portuguese startups at Web Summit.",
+      "flow": [
+        "National startup agency",
+        "Road 2 Web Summit: up to 125 startups",
+        "Bootcamp in Porto and Lisbon, a Portugal stand"
+      ],
+      "what_n": "Startup Portugal selects and prepares Portuguese startups for Web Summit and runs the Portugal stand.",
+      "what_l": "Startup Portugal is the coach that picks the national team of young companies and gets them ready for the big match.",
+      "risks": [
+        {
+          "t": "Startups adopt agents first",
+          "n": "Small teams lean on AI agents for code, sales and support, usually with broad access and no record.",
+          "l": "A five-person company gives its robot the keys to everything, because it's faster."
+        },
+        {
+          "t": "Enterprise buyers will ask",
+          "n": "Large customers will require evidence of AI governance before buying from startups.",
+          "l": "The big client asks 'how do you control your AI?' and the startup has no answer."
+        },
+        {
+          "t": "A national reputation",
+          "n": "An incident at one showcased startup reflects on the programme.",
+          "l": "One player's foul is on the whole team's highlights."
+        }
+      ],
+      "helps": {
+        "reach": "What each startup's agents can access.",
+        "mandate": "What the founders actually need them to do.",
+        "gap": "Shortcuts that gave agents too much.",
+        "barriers": "Simple, cheap controls a small team can keep.",
+        "provenance": "An owner for every agent, even in a team of five.",
+        "n": "A light RiskMandate template for startups: one page per agent, written in an hour, that answers the enterprise buyer's question. Startup Portugal could offer it in the bootcamp. It also opens the Portuguese-language audience the plan mentions.",
+        "l": "RiskMandate gives each young company a one-page answer to 'is your AI under control?'"
+      },
+      "opener": "Your 125 startups will be asked how they control their AI. We can give each one a one-page answer."
+    },
+    {
       "id": "1password",
       "tagline": "Passwords and secrets for 150,000 businesses, now including the AI agents that log in on their behalf.",
-      "flow": ["Passwords, passkeys and secrets", "For people, machines and AI agents", "How agents log in and connect"],
+      "flow": [
+        "Passwords, passkeys and secrets",
+        "For people, machines and AI agents",
+        "How agents log in and connect"
+      ],
       "what_n": "1Password is building a security layer for how agents authenticate and connect, so agent credentials are held and handed out like human ones.",
       "what_l": "1Password is a safe for keys. Now it also hands keys to AI assistants, so they can open the doors they need without anyone writing passwords on sticky notes.",
       "risks": [
-        {"t": "A key that opens too much", "n": "An agent given a vault item or broad token inherits everything that credential can reach, far beyond its task.", "l": "Give the assistant the office key and it can open the finance room too."},
-        {"t": "Credentials outlive the task", "n": "Long-lived secrets issued to agents stay valid after the work ends or the agent is replaced.", "l": "The temp left, but their key still works."},
-        {"t": "Who used the key?", "n": "Shared or delegated credentials blur attribution between the person, the agent and the session.", "l": "If three people share one badge, the log can't say who went in."}
+        {
+          "t": "A key that opens too much",
+          "n": "An agent given a vault item or broad token inherits everything that credential can reach, far beyond its task.",
+          "l": "Give the assistant the office key and it can open the finance room too."
+        },
+        {
+          "t": "Credentials outlive the task",
+          "n": "Long-lived secrets issued to agents stay valid after the work ends or the agent is replaced.",
+          "l": "The temp left, but their key still works."
+        },
+        {
+          "t": "Who used the key?",
+          "n": "Shared or delegated credentials blur attribution between the person, the agent and the session.",
+          "l": "If three people share one badge, the log can't say who went in."
+        }
       ],
       "helps": {
         "reach": "Which secrets and vault items each agent can retrieve, and what they unlock.",
@@ -57,26 +355,726 @@
       "opener": "You hand agents their keys. We write down which keys each agent should have, and show the gap. Could we map one of yours?"
     },
     {
-      "id": "replit",
-      "tagline": "Anyone can build an app by describing it; the agent writes, runs and ships the code.",
-      "flow": ["Describe an app in plain words", "Replit's agent writes and runs the code", "Millions of users, 500,000+ businesses"],
-      "what_n": "Replit's agent turns natural-language requests into working, deployed applications, so people who do not code can build software.",
-      "what_l": "You tell Replit what app you want, like you'd tell a builder what house you want, and its AI builds it for you.",
+      "id": "cloudflare",
+      "tagline": "A connectivity cloud and security platform, now saying 'build for the agent era'.",
+      "flow": [
+        "Connectivity cloud and security",
+        "Developers run code at the edge",
+        "Building for the agent era"
+      ],
+      "what_n": "Cloudflare's platform lets developers build and run agents at the edge and protects sites from automated traffic, including agents.",
+      "what_l": "Cloudflare sits in front of many websites as their bouncer and post office; now AI assistants come through its doors too.",
       "risks": [
-        {"t": "The agent touches production", "n": "A coding agent with deploy and database rights can change or delete live data while doing an unrelated task.", "l": "Asked to repaint a room, the builder knocks down a wall."},
-        {"t": "Builders who can't review", "n": "Non-developers cannot judge what the agent changed, so mistakes and unsafe code ship unseen.", "l": "If you can't read the plans, you can't spot the missing fire exit."},
-        {"t": "Secrets and data in the app", "n": "Agent-built apps can embed keys, expose customer data or call services the owner never meant to use.", "l": "The house gets built with the spare key taped to the front door."}
+        {
+          "t": "Good bots and bad bots",
+          "n": "Sites must tell legitimate agents acting for a user from abusive automation.",
+          "l": "At the door: is this a customer's assistant or a burglar?"
+        },
+        {
+          "t": "Agents built on the edge",
+          "n": "Agents running on its platform reach the customers' APIs and data, often with broad tokens.",
+          "l": "Robots that live inside the post office can open a lot of parcels."
+        },
+        {
+          "t": "Scale",
+          "n": "At Cloudflare's scale, a default that gives agents too much reach repeats across millions of deployments.",
+          "l": "One loose bolt, copied a million times."
+        }
       ],
       "helps": {
-        "reach": "What the agent can change: code, databases, deploys, connected services.",
-        "mandate": "What the builder actually asked for, in their words.",
-        "gap": "Changes beyond the request, such as deleting data or new services.",
-        "barriers": "Checkpoints, rollbacks and separate environments, named with evidence.",
-        "provenance": "Who asked, which agent version built it, who approved the deploy.",
-        "n": "For Replit's business users, RiskMandate makes each agent's licence to operate explicit: what it may touch, what it may not, and what stops it. That is the record a company's security team or insurer asks for before letting staff build with agents.",
-        "l": "RiskMandate is the building permit: it says what the builder may change, and checks nothing else was touched."
+        "reach": "What an agent on the platform can call and read.",
+        "mandate": "What its owner deployed it to do.",
+        "gap": "Tokens and bindings beyond that.",
+        "barriers": "Platform controls, named with evidence.",
+        "provenance": "Owner and version per deployed agent.",
+        "n": "An agent that arrives with a published behaviour policy is easier to trust at the door, and an agent built on the platform can ship with one. RiskMandate is a way to say, in one record, what an agent is allowed to do: useful on both sides of Cloudflare's network.",
+        "l": "RiskMandate gives each assistant a pass that says what it is allowed to do, so the bouncer can check it."
       },
-      "opener": "Your users build with agents. Their security teams will ask what those agents may touch. We answer that, per agent."
+      "opener": "You decide which agents get through. What if each agent carried a policy that says what it may do?"
+    },
+    {
+      "id": "delinea",
+      "tagline": "Identity security that governs what people, machines and AI agents do once they are in.",
+      "flow": [
+        "Privileged access management",
+        "Just-in-time permissions",
+        "For humans, machines and AI agents"
+      ],
+      "what_n": "Delinea extends privileged access into continuous, just-in-time authorization, granting access only when needed, across cloud and on-premises systems.",
+      "what_l": "Delinea hands out the master keys only for the minutes they are needed, then takes them back.",
+      "risks": [
+        {
+          "t": "Just in time, but for what?",
+          "n": "Just-in-time access still needs a definition of what the agent should be allowed to request.",
+          "l": "You can lend the key for ten minutes, but which doors should it open?"
+        },
+        {
+          "t": "Agents ask faster than people",
+          "n": "Agents request access at machine speed; approval processes built for people do not keep up.",
+          "l": "A hundred key requests a minute, and one tired manager."
+        },
+        {
+          "t": "Evidence for others",
+          "n": "Boards and insurers need the access policy explained in business terms, not only enforced.",
+          "l": "The keys are safe, but can you explain why to the insurer?"
+        }
+      ],
+      "helps": {
+        "reach": "Every privileged system the agent could request.",
+        "mandate": "The business task the access serves.",
+        "gap": "Privileges requestable but not needed.",
+        "barriers": "Delinea's just-in-time grants as technical evidence.",
+        "provenance": "Who approved each policy and when.",
+        "n": "Delinea enforces access; RiskMandate states, per agent, what the access is for and shows Delinea's controls as the barrier. The identity-side twin of an Agent Behaviour Policy: a natural integration.",
+        "l": "Delinea controls the keys; RiskMandate writes down why each assistant needs them."
+      },
+      "opener": "You enforce what agents may access. We write down why, in a record the board and insurer can read."
+    },
+    {
+      "id": "polygraf-ai",
+      "tagline": "A behavioural control plane that watches and enforces what humans and AI agents do, live.",
+      "flow": [
+        "AI Behavioral Control Plane",
+        "Watches human and agent AI use",
+        "Stops data leaks and unauthorised actions"
+      ],
+      "what_n": "Polygraf AI gives real-time visibility, governance and inline enforcement across human and agentic AI interactions in mission-critical operations.",
+      "what_l": "Polygraf is a referee that watches every move the AI makes and blows the whistle before a foul.",
+      "risks": [
+        {
+          "t": "Rules from where?",
+          "n": "Inline enforcement is only as good as the policy it enforces; someone must define each agent's mandate.",
+          "l": "A referee needs a rulebook."
+        },
+        {
+          "t": "False calls",
+          "n": "Overblocking stops real work; underblocking lets risky actions through.",
+          "l": "A referee who blows the whistle too much ruins the game; too little, someone gets hurt."
+        },
+        {
+          "t": "Explaining to the business",
+          "n": "Security signals need translating into accepted risk for leaders and insurers.",
+          "l": "The referee's notes mean nothing to the fans unless someone explains them."
+        }
+      ],
+      "helps": {
+        "reach": "What each monitored agent can do.",
+        "mandate": "What the business authorised: the rulebook.",
+        "gap": "What the control plane should watch hardest.",
+        "barriers": "Polygraf's inline enforcement as evidence.",
+        "provenance": "Who wrote and approved the rules.",
+        "n": "Closest commercial neighbour. RiskMandate's Agent Behaviour Policy is the rulebook and the record; Polygraf can be the enforcement. Compare notes and look for an integration where a policy written once is enforced live.",
+        "l": "Polygraf is the referee; RiskMandate writes the rulebook and keeps the scorecard."
+      },
+      "opener": "You enforce behaviour live. We write the behaviour policy. Could one feed the other?"
+    },
+    {
+      "id": "descope",
+      "tagline": "One identity platform for people and AI agents: logins for humans, scoped access for agents and MCP servers.",
+      "flow": [
+        "Customer identity: login, MFA, SSO",
+        "Agent and MCP server authorisation",
+        "Scoped, short-lived tokens"
+      ],
+      "what_n": "Descope secures agents and MCP servers with standards-based authorisation, scoped access and token management, beside its customer login products.",
+      "what_l": "Descope runs the front desk: it checks who you are, and now gives AI assistants visitor badges that only work for certain rooms and expire.",
+      "risks": [
+        {
+          "t": "Scopes chosen in a hurry",
+          "n": "Developers grant broad scopes to make agents work; the token is valid but too wide.",
+          "l": "The badge works, but it opens every floor."
+        },
+        {
+          "t": "Agents acting for users",
+          "n": "Delegated access mixes the user's rights with the agent's actions, blurring who did what.",
+          "l": "The assistant uses your badge, so the log says it was you."
+        },
+        {
+          "t": "MCP everywhere",
+          "n": "Each new MCP server is a new door an agent can reach.",
+          "l": "Every week a new door is added to the building."
+        }
+      ],
+      "helps": {
+        "reach": "Every scope and MCP server the agent can use.",
+        "mandate": "The scopes its task really needs.",
+        "gap": "Scopes granted beyond that.",
+        "barriers": "Descope's short-lived scoped tokens as technical evidence.",
+        "provenance": "Who granted each scope, and when.",
+        "n": "Descope is the identity half of what an Agent Behaviour Policy governs. The policy says which scopes an agent should have; Descope issues exactly those. A natural integration and a good interview for the site.",
+        "l": "Descope prints the badges; RiskMandate decides which rooms each badge should open."
+      },
+      "opener": "You issue agents scoped tokens. We write down which scopes each agent should have, and why."
+    },
+    {
+      "id": "airia",
+      "tagline": "One governance layer for AI: agents, models, tools, data, runtime policy and audit evidence.",
+      "flow": [
+        "One control layer for AI",
+        "Runtime policy and red teaming",
+        "Audit-ready evidence"
+      ],
+      "what_n": "Airia offers enterprises a single platform to secure and govern agents, models, tools and data access, with runtime policy and evidence.",
+      "what_l": "Airia is a control tower for all the company's AI: it watches, sets rules and keeps the logbook.",
+      "risks": [
+        {
+          "t": "Governance without insurance",
+          "n": "Runtime policy reduces risk, but leaders and insurers still need a statement of accepted residual risk.",
+          "l": "The control tower helps, but who pays if a plane still crashes?"
+        },
+        {
+          "t": "Agents outside the tower",
+          "n": "Agents built outside the platform are not governed by it.",
+          "l": "Planes that never talk to the tower."
+        },
+        {
+          "t": "Crowded market",
+          "n": "Many governance layers compete; buyers ask what makes one trustworthy.",
+          "l": "Five control towers, which one do you trust?"
+        }
+      ],
+      "helps": {
+        "reach": "Every agent in the enterprise, governed or not.",
+        "mandate": "What the business authorised for each.",
+        "gap": "Where governance ends and reach continues.",
+        "barriers": "Airia's runtime policy as evidence.",
+        "provenance": "Owner, reviewer and version per agent.",
+        "n": "RiskMandate's distinctive point is an insurable, evidenced policy per agent with a licence to operate. Airia governs at runtime; RiskMandate is the record that leaders and insurers sign off. Meet to compare and find where the two add up.",
+        "l": "Airia runs the control tower; RiskMandate is the flight licence each plane needs before take-off."
+      },
+      "opener": "You govern AI at runtime. We give each agent a licence an insurer can read. Where do we meet?"
+    },
+    {
+      "id": "emergence-ai",
+      "tagline": "Agentic infrastructure for enterprises: verified, governed agents. Speaking on 'When AI agents go rogue'.",
+      "flow": [
+        "Agentic infrastructure for enterprise",
+        "Agents plan, reason and act",
+        "Verified and governed"
+      ],
+      "what_n": "Emergence builds infrastructure for enterprise agents that plan and act across complex systems, with verification and governance.",
+      "what_l": "Emergence builds AI workers that can do whole jobs across a company's systems, with checks built in.",
+      "risks": [
+        {
+          "t": "Agents that plan",
+          "n": "Planning agents choose their own steps; the path they take may cross systems nobody expected.",
+          "l": "Ask it to book a meeting and it decides to reorganise the calendar."
+        },
+        {
+          "t": "Going rogue",
+          "n": "An agent acting within its reach but outside its mandate is the 'rogue' case their talk names.",
+          "l": "It did nothing it couldn't do, just things nobody asked."
+        },
+        {
+          "t": "Proving 'verified'",
+          "n": "Enterprises need to see what verified means for each agent.",
+          "l": "'It's been checked': by whom, against what?"
+        }
+      ],
+      "helps": {
+        "reach": "Every system an Emergence agent can plan across.",
+        "mandate": "The goal the business set.",
+        "gap": "Plans that leave the mandate: the rogue zone.",
+        "barriers": "Its verification and governance, as evidence.",
+        "provenance": "Owner and version of each agent.",
+        "n": "Their talk asks what happens when agents go rogue; RiskMandate's answer is the Gap: know the reach, define the mandate, control the difference. A story partner and a possible joint example.",
+        "l": "An agent goes rogue when it does what it can, not what it was asked. RiskMandate measures that difference."
+      },
+      "opener": "Your talk is 'When AI agents go rogue'. Rogue is the gap between reach and mandate. We measure it."
+    },
+    {
+      "id": "feedzai",
+      "tagline": "Portugal's AI-native fraud prevention scale-up, speaking on 'Who let the agent in?'",
+      "flow": [
+        "AI-native fraud prevention",
+        "Financial crime prevention",
+        "Now: agents making payments"
+      ],
+      "what_n": "Feedzai uses AI to prevent fraud and financial crime; founded in Portugal.",
+      "what_l": "Feedzai uses AI to spot fraud, such as fake or stolen payments, for businesses that handle money.",
+      "risks": [
+        {
+          "t": "Agents that pay",
+          "n": "Shopping and payment agents act for customers; a fraudulent agent and a legitimate one look alike.",
+          "l": "A robot is buying things with your card. Is it yours?"
+        },
+        {
+          "t": "Who authorised it?",
+          "n": "Fraud decisions need to know what the customer actually authorised the agent to do.",
+          "l": "Did you tell your assistant to spend that much?"
+        },
+        {
+          "t": "Agents inside banks",
+          "n": "Banks' own agents in operations and SaaS reach sensitive data and payment flows.",
+          "l": "The bank's own robots can move money too."
+        }
+      ],
+      "helps": {
+        "reach": "What a payment agent can spend and where.",
+        "mandate": "What the customer authorised.",
+        "gap": "Spending beyond the authorisation: a fraud signal.",
+        "barriers": "Limits, step-up checks, Feedzai's models.",
+        "provenance": "Whose agent, which version, approved when.",
+        "n": "A stated mandate per agent is a strong fraud signal: an agent acting outside its published policy is suspicious. For Feedzai it is a new input; for its bank customers, a governance record. A local Portuguese anchor for the agent-authorisation story.",
+        "l": "If every shopping robot carried a note saying what its owner allowed, spotting the fake ones gets easier."
+      },
+      "opener": "'Who let the agent in?' Our answer: the agent's own policy, saying what it was allowed to do."
+    },
+    {
+      "id": "linux-foundation-aaif",
+      "tagline": "A neutral home for open standards in agentic AI.",
+      "flow": [
+        "The Linux Foundation hosts open source",
+        "The Agentic AI Foundation (AAIF)",
+        "Open standards for agents"
+      ],
+      "what_n": "The AAIF is a neutral foundation for open standards and projects in agentic AI, under the Linux Foundation.",
+      "what_l": "The Linux Foundation is where companies agree on shared rules, like agreeing on the size of plugs so everything fits.",
+      "risks": [
+        {
+          "t": "No common policy format",
+          "n": "Each vendor describes agent permissions differently, so policies cannot travel between tools.",
+          "l": "Every country with its own plug."
+        },
+        {
+          "t": "Standards that ignore the business",
+          "n": "Technical standards may cover identity and protocols but not what the business authorised.",
+          "l": "The plug fits, but nobody says what you're allowed to plug in."
+        },
+        {
+          "t": "Slow consensus",
+          "n": "Agents spread faster than standards are agreed.",
+          "l": "The appliances arrive before the plug rules do."
+        }
+      ],
+      "helps": {
+        "reach": "A standard way to describe what an agent can access.",
+        "mandate": "A standard way to state what it may do.",
+        "gap": "Computed the same way everywhere.",
+        "barriers": "Evidence fields any tool can fill.",
+        "provenance": "Signed owner, reviewer and version.",
+        "n": "RiskMandate's Agent Behaviour Policy could become an open spec: Reach, Mandate, Gap, Barriers and Provenance as a common format. Ask the AAIF how a policy format becomes a standard.",
+        "l": "RiskMandate's one-page agent record could become the standard plug for AI safety."
+      },
+      "opener": "Agents need a common way to say what they may do. Could a behaviour policy format become an open spec?"
+    },
+    {
+      "id": "conscium",
+      "tagline": "An AI safety lab that tests and verifies agents in simulation before they are deployed.",
+      "flow": [
+        "AI safety research lab",
+        "Simulation testing of agents",
+        "Verification before deployment"
+      ],
+      "what_n": "Conscium tests and verifies agents in simulation so they can be deployed with more confidence, and researches conscious AI.",
+      "what_l": "Conscium is a flight simulator for AI assistants: it tests them in a pretend world before they go to work.",
+      "risks": [
+        {
+          "t": "Testing against what?",
+          "n": "Verification needs a statement of intended behaviour to test against.",
+          "l": "You can't mark an exam with no answer sheet."
+        },
+        {
+          "t": "Simulation is not production",
+          "n": "Real deployments reach systems the simulation never had.",
+          "l": "The simulator has no real passengers."
+        },
+        {
+          "t": "Results nobody reads",
+          "n": "Test results must reach the owners, security and insurers in a form they use.",
+          "l": "A pass certificate in a drawer."
+        }
+      ],
+      "helps": {
+        "reach": "What the agent will reach in production, to simulate.",
+        "mandate": "The answer sheet: what it should do.",
+        "gap": "The cases to test hardest.",
+        "barriers": "Conscium's verification as review evidence.",
+        "provenance": "Which version passed which tests.",
+        "n": "A behaviour policy says what an agent may do; verification shows whether it did. RiskMandate gives Conscium the answer sheet and gives its results a place in the agent's record.",
+        "l": "RiskMandate writes the answer sheet; Conscium marks the exam."
+      },
+      "opener": "A policy says what an agent may do; your verification shows it does. Shall we join them up?"
+    },
+    {
+      "id": "scrut-automation",
+      "tagline": "Compliance automation for SOC 2, ISO 27001 and 60+ frameworks, run with AI agents.",
+      "flow": [
+        "GRC platform",
+        "AI agents collect evidence and assess risk",
+        "SOC 2, ISO 27001 and 60+ frameworks"
+      ],
+      "what_n": "Scrut uses AI agents to collect compliance evidence, assess risk and manage vendor risk across many frameworks.",
+      "what_l": "Scrut does the paperwork that proves a company follows security rules, using AI helpers.",
+      "risks": [
+        {
+          "t": "Agents with wide read access",
+          "n": "Evidence-collecting agents need access to many customer systems.",
+          "l": "The paperwork robot can open every filing cabinet."
+        },
+        {
+          "t": "No framework for agents yet",
+          "n": "Customers' own AI agents are not yet covered well by existing control frameworks.",
+          "l": "The rulebook has no chapter on robots."
+        },
+        {
+          "t": "Trust in automated evidence",
+          "n": "Auditors must trust evidence gathered by agents.",
+          "l": "Can you trust a report the robot wrote about itself?"
+        }
+      ],
+      "helps": {
+        "reach": "What Scrut's agents and its customers' agents can touch.",
+        "mandate": "The compliance task they serve.",
+        "gap": "Read access beyond the evidence needed.",
+        "barriers": "Controls mapped to frameworks.",
+        "provenance": "Owner and version, ready for the auditor.",
+        "n": "Agent Behaviour Policies could be a new evidence type in Scrut: one record per agent, mapped to the controls auditors already use. And Scrut's own agents need policies; we can write the first one with them.",
+        "l": "RiskMandate adds the missing chapter on AI assistants to the compliance rulebook."
+      },
+      "opener": "Your platform runs agents and audits controls. An agent policy is both. Shall we write one for yours?"
+    },
+    {
+      "id": "cnext",
+      "tagline": "Builds secure, compliant agents for European businesses on its own Kairos platform.",
+      "flow": [
+        "Kairos agent platform",
+        "Agents plugged into business systems",
+        "400+ solutions in almost 20 years"
+      ],
+      "what_n": "Cnext builds agentic AI solutions grounded in business context and connected to existing systems, for European companies.",
+      "what_l": "Cnext is a builder that makes custom AI assistants for European companies and plugs them into their systems.",
+      "risks": [
+        {
+          "t": "Plugged into everything",
+          "n": "Agents connected to existing systems inherit those systems' broad access.",
+          "l": "The new assistant gets the old admin password."
+        },
+        {
+          "t": "Compliance claims",
+          "n": "Clients expect EU compliance; proving it per agent is work.",
+          "l": "Saying 'it's compliant' and showing it are different jobs."
+        },
+        {
+          "t": "Handover",
+          "n": "After delivery, the client owns the agent; the record of its intent must survive the handover.",
+          "l": "The builder leaves; does the owner know what the house can do?"
+        }
+      ],
+      "helps": {
+        "reach": "Each delivered agent's connections.",
+        "mandate": "What the client ordered.",
+        "gap": "Connections beyond the order.",
+        "barriers": "Kairos controls, named with evidence.",
+        "provenance": "Builder, client owner and version at handover.",
+        "n": "Every Cnext delivery could include an Agent Behaviour Policy: a handover document that shows the client, its auditors and insurers what the agent may do. A services firm that could adopt RiskMandate across hundreds of builds.",
+        "l": "RiskMandate is the instruction manual and safety sheet that comes with each assistant Cnext builds."
+      },
+      "opener": "Each agent you deliver could come with a behaviour policy. It answers the client's compliance question."
+    },
+    {
+      "id": "risiq",
+      "tagline": "Risk and regulatory advice for banks, with a platform for ESG and risk reporting.",
+      "flow": [
+        "Advises banks on risk and regulation",
+        "Ribeca: risk and ESG reporting",
+        "Banks meet regulators' demands"
+      ],
+      "what_n": "Risiq helps banks build risk management and meet regulatory requirements, with the Ribeca platform for integrated reporting.",
+      "what_l": "Risiq helps banks keep their risk homework in order for the regulators.",
+      "risks": [
+        {
+          "t": "Agents in regulated banks",
+          "n": "Banks adopting AI agents must show regulators how each is controlled.",
+          "l": "The regulator will ask the bank: what are your robots allowed to do?"
+        },
+        {
+          "t": "A new risk category",
+          "n": "Agent risk does not fit neatly into existing risk registers.",
+          "l": "There is no box on the form for 'AI assistant'."
+        },
+        {
+          "t": "Evidence over promises",
+          "n": "Regulators want evidence, not policy statements.",
+          "l": "'We have rules' is not enough; show they work."
+        }
+      ],
+      "helps": {
+        "reach": "Every agent in the bank and what it touches.",
+        "mandate": "What the bank authorised.",
+        "gap": "The risk to register.",
+        "barriers": "Controls with evidence for the regulator.",
+        "provenance": "Owner and reviewer: accountability.",
+        "n": "RiskMandate gives agent risk a place in the risk register: one evidenced record per agent that a GRC adviser like Risiq can report on. A buyer and a partner for agent-policy evidence in banking.",
+        "l": "RiskMandate adds the 'AI assistant' box to the bank's risk forms, and fills it in properly."
+      },
+      "opener": "Your banks will need to report agent risk to regulators. We give each agent an evidenced record."
+    },
+    {
+      "id": "melious-ai",
+      "tagline": "Sovereign European AI: frontier open-weight models served from Europe, outside the US Cloud Act.",
+      "flow": [
+        "Sovereign European AI infrastructure",
+        "Open-weight models, compatible APIs",
+        "Agents that must stay in Europe"
+      ],
+      "what_n": "Melious serves open-weight models through OpenAI- and Anthropic-compatible APIs from European infrastructure.",
+      "what_l": "Melious runs AI brains on European computers, so European data does not have to travel to the US.",
+      "risks": [
+        {
+          "t": "Sovereign model, global reach",
+          "n": "The model may stay in Europe while the agent using it reaches systems anywhere.",
+          "l": "The brain stays home, but the hands reach abroad."
+        },
+        {
+          "t": "Customers' agents",
+          "n": "Agents built on its APIs can do anything their builders wire them to.",
+          "l": "Melious supplies the brain; it can't see what the body does."
+        },
+        {
+          "t": "Proving sovereignty",
+          "n": "Customers must show regulators where data went, end to end.",
+          "l": "Prove the data never left the country."
+        }
+      ],
+      "helps": {
+        "reach": "Where each agent's data and actions really go.",
+        "mandate": "What the customer allowed, including where.",
+        "gap": "Reach outside the sovereignty promise.",
+        "barriers": "EU hosting as technical evidence.",
+        "provenance": "Which model, which version, which owner.",
+        "n": "Sovereignty is one barrier in an agent's record. RiskMandate shows it alongside the agent's full reach, so customers can prove the whole path stays within what they promised.",
+        "l": "RiskMandate checks the whole trip, not just where the brain lives."
+      },
+      "opener": "Your hosting is one barrier. We show the whole agent's reach, so customers can prove sovereignty end to end."
+    },
+    {
+      "id": "chatplace",
+      "tagline": "A Portuguese AI manager that answers creators' messages and comments, 24 hours a day.",
+      "flow": [
+        "Creators and small businesses",
+        "AI manager answers DMs and comments",
+        "Instagram, TikTok, Telegram, WhatsApp"
+      ],
+      "what_n": "ChatPlace offers an AI content studio, an AI manager that replies 24/7, chatbot funnels and gamification across social channels.",
+      "what_l": "ChatPlace gives creators a robot assistant that replies to fans and customers while they sleep.",
+      "risks": [
+        {
+          "t": "Speaking as someone",
+          "n": "The agent speaks in the creator's name; a wrong reply is the creator's reply.",
+          "l": "The robot says something silly, and it looks like you said it."
+        },
+        {
+          "t": "Manipulated by messages",
+          "n": "Public messages can be crafted to make the agent misbehave.",
+          "l": "Trolls can trick the robot into saying things."
+        },
+        {
+          "t": "Personal data",
+          "n": "Conversations carry customers' personal data across platforms.",
+          "l": "The robot reads a lot of private messages."
+        }
+      ],
+      "helps": {
+        "reach": "Channels, messages and data the agent handles.",
+        "mandate": "What the creator wants it to say and do.",
+        "gap": "Topics and promises it must avoid.",
+        "barriers": "Filters, templates and human review.",
+        "provenance": "Which creator owns it and approved its voice.",
+        "n": "An agent acting in someone's name is RiskMandate's simplest use case. A one-page policy per creator's agent says what it may say and promise, which protects the creator and gives ChatPlace a trust feature.",
+        "l": "RiskMandate is the rulebook the creator writes for their robot: what it may say and what it must never promise."
+      },
+      "opener": "Your agents speak in creators' names. A one-page policy per agent protects them, and sells."
+    },
+    {
+      "id": "firefox-enterprise-mozilla",
+      "tagline": "A customer-controlled enterprise browser for European organisations that want control of their data.",
+      "flow": [
+        "On-premises enterprise browser",
+        "IT controls data and environment",
+        "For European digital sovereignty"
+      ],
+      "what_n": "Firefox Enterprise gives European organisations a browser platform they control, for data control and fewer technology dependencies.",
+      "what_l": "Mozilla makes a version of Firefox that companies run themselves, so they decide where their data goes.",
+      "risks": [
+        {
+          "t": "Agents in the browser",
+          "n": "Browser-based AI agents act with the user's logged-in sessions across every site.",
+          "l": "An AI helper in the browser can use everything you're logged into."
+        },
+        {
+          "t": "Data leaving through agents",
+          "n": "Agents can send page contents to outside AI services.",
+          "l": "The helper can copy what's on screen and send it away."
+        },
+        {
+          "t": "Policy in two places",
+          "n": "Browser policies and AI policies are set by different teams.",
+          "l": "Two rulebooks that don't talk to each other."
+        }
+      ],
+      "helps": {
+        "reach": "Sessions and sites an agent can use through the browser.",
+        "mandate": "The tasks the organisation allows.",
+        "gap": "Sites and data flows beyond that.",
+        "barriers": "Browser controls as technical evidence.",
+        "provenance": "Owner and approver per agent.",
+        "n": "For organisations reassessing control, agents in the browser are the next question. RiskMandate states each agent's reach and mandate, and enterprise browser controls become its barriers. Same audience as client-side-encrypted sgit vaults.",
+        "l": "RiskMandate writes down what each browser helper may do; the company's own Firefox enforces it."
+      },
+      "opener": "Your customers want control. Agents in the browser are next. We write down what each may do."
+    },
+    {
+      "id": "spacecomputer",
+      "tagline": "Confidential computing, keys and attestation for cloud and AI workloads, up to satellites.",
+      "flow": [
+        "Confidential computing and key management",
+        "Attestation and zero trust",
+        "Cloud, AI and space systems"
+      ],
+      "what_n": "SpaceComputer builds confidential computing, key management, attestation and zero-trust services for cloud and AI workloads, extended to space systems.",
+      "what_l": "SpaceComputer builds locked rooms for computer work, with proof that nobody peeked, even on satellites.",
+      "risks": [
+        {
+          "t": "Locked room, wide reach",
+          "n": "An agent in a confidential environment can still reach and act on outside systems.",
+          "l": "The room is locked, but the worker inside has a phone."
+        },
+        {
+          "t": "Keys for agents",
+          "n": "Agents holding keys can use them beyond their task.",
+          "l": "A robot with a key ring."
+        },
+        {
+          "t": "Attesting behaviour",
+          "n": "Attestation proves what code runs, not whether its actions were authorised.",
+          "l": "Proof of who is in the room, not of what they did."
+        }
+      ],
+      "helps": {
+        "reach": "What the attested agent can still reach outside.",
+        "mandate": "What it was authorised to do.",
+        "gap": "Actions attestation does not cover.",
+        "barriers": "Attestation and key controls as evidence.",
+        "provenance": "Attested version, owner and reviewer.",
+        "n": "Attestation proves which agent is running; a behaviour policy says what it may do. Together they make a verifiable agent. Shared ground with sgit on keys and verifiable trust.",
+        "l": "SpaceComputer proves who is in the room; RiskMandate says what they are allowed to do there."
+      },
+      "opener": "You prove which code is running. We say what it may do. Together: a verifiable agent."
+    },
+    {
+      "id": "trent-ai",
+      "tagline": "An AI security engineer that finds the real risk in code, cloud and AI agents, and verifies each fix.",
+      "flow": [
+        "Agentic AI security platform",
+        "Finds risk in code, cloud and agents",
+        "Verifies every fix"
+      ],
+      "what_n": "Trent AI works like an AI security engineer: it finds the real risk in code, cloud and agents and checks that fixes work.",
+      "what_l": "Trent AI is a robot security guard that walks the building, finds the weak spots, and checks they got fixed.",
+      "risks": [
+        {
+          "t": "Finding risk needs intent",
+          "n": "Judging an agent's risk needs to know what it was meant to do.",
+          "l": "The guard can't tell if the open door is a problem unless it knows who should use it."
+        },
+        {
+          "t": "The scanner's own reach",
+          "n": "A security agent needs broad access, making it a high-value target.",
+          "l": "The guard has every key."
+        },
+        {
+          "t": "Fixes that drift",
+          "n": "Fixes verified today drift as agents change.",
+          "l": "The lock was fixed, then someone changed it again."
+        }
+      ],
+      "helps": {
+        "reach": "What each scanned agent can touch.",
+        "mandate": "Its intended job: the context for judging risk.",
+        "gap": "The findings that matter most.",
+        "barriers": "Verified fixes as evidence.",
+        "provenance": "Version history, so drift shows.",
+        "n": "A behaviour policy gives Trent's findings their context (reach versus mandate), and Trent's verified fixes become evidence in the policy. Its own agent needs a policy too.",
+        "l": "RiskMandate tells the security robot what each door is for, so it knows which open doors matter."
+      },
+      "opener": "Your platform finds agent risk. A behaviour policy tells it what each agent is meant to do."
+    },
+    {
+      "id": "trustscale",
+      "tagline": "Measures AI against a customer's own criteria: training, evaluation and assurance.",
+      "flow": [
+        "AI training and evaluation",
+        "Against the customer's own criteria",
+        "AI assurance"
+      ],
+      "what_n": "TrustScale configures and measures AI against criteria each customer defines.",
+      "what_l": "TrustScale lets a company write its own test for its AI, and then marks the AI against it.",
+      "risks": [
+        {
+          "t": "Criteria for agents",
+          "n": "Agents act, not only answer; criteria must cover actions and access.",
+          "l": "Testing what the robot says, but not what it does."
+        },
+        {
+          "t": "Whose criteria?",
+          "n": "Criteria written by one team may miss what security, legal or insurers need.",
+          "l": "One teacher writes the exam, others need to grade it."
+        },
+        {
+          "t": "Assurance over time",
+          "n": "An agent that passed once may change.",
+          "l": "Passed the test last month; what about today?"
+        }
+      ],
+      "helps": {
+        "reach": "What the agent can do, to test against.",
+        "mandate": "The criteria, written as a mandate.",
+        "gap": "Where to aim the tests.",
+        "barriers": "TrustScale's assessments as evidence.",
+        "provenance": "Which version was assessed, when.",
+        "n": "Measuring an agent against its behaviour policy is assurance against your own criteria. RiskMandate's mandate can become TrustScale's criteria, and its results the policy's evidence. Met on the Policy Summit panel.",
+        "l": "RiskMandate writes the exam from the business's rules; TrustScale marks it."
+      },
+      "opener": "You measure AI against the customer's criteria. A behaviour policy is those criteria for an agent."
+    },
+    {
+      "id": "aicep",
+      "tagline": "Portugal's trade and investment agency: in about 50 countries, bringing investment in and taking Portuguese companies out.",
+      "flow": [
+        "Public trade and investment agency",
+        "Inward investment to Portugal",
+        "Portuguese companies going abroad"
+      ],
+      "what_n": "AICEP attracts investment into Portugal and helps Portuguese companies expand abroad, with offices in about 50 countries.",
+      "what_l": "AICEP is Portugal's shop window abroad, and its welcome desk for foreign companies.",
+      "risks": [
+        {
+          "t": "Exporting AI products",
+          "n": "Portuguese companies selling AI abroad will face foreign buyers' governance questions.",
+          "l": "The customer abroad asks: is your AI safe? Can you prove it?"
+        },
+        {
+          "t": "Investors ask too",
+          "n": "Investors check AI risk in due diligence.",
+          "l": "Before investing, they look under the bonnet."
+        },
+        {
+          "t": "A country's AI story",
+          "n": "Portugal's reputation as a tech hub benefits from showing trusted AI.",
+          "l": "A country known for safe, trustworthy AI attracts more business."
+        }
+      ],
+      "helps": {
+        "reach": "What a company's agents can do.",
+        "mandate": "What it authorised them to do.",
+        "gap": "The question buyers and investors ask.",
+        "barriers": "Evidence that travels across borders.",
+        "provenance": "Clear ownership, in any language.",
+        "n": "RiskMandate gives Portuguese companies a portable record of how their AI agents are controlled, useful in export sales and investment rounds. AICEP is the route to those companies and to firms setting up in Portugal.",
+        "l": "RiskMandate is a passport for a company's AI assistants: it shows abroad what they are allowed to do."
+      },
+      "opener": "Portuguese companies selling AI abroad will be asked how they control it. We can give them the answer."
     }
   ]
 }
