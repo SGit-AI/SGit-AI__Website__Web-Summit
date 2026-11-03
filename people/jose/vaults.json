@@ -1,0 +1,21 @@
+{
+  "vaults": [
+    {
+      "name": "Jose on RiskMandate",
+      "vault_id": "tt7orxlk",
+      "read_key": "sgit_public_read_4dacd3c0df0956e79444262f1df17495758e73ce183534d7581f1164675b59b3",
+      "what": "A short README: what RiskMandate does and Jose's role on the team (automation, messaging, sites, the technical pool with Angelo). Public, audited before publication.",
+      "agent": "vault@web-summit.jose",
+      "updated": "2026-11-03"
+    },
+    {
+      "name": "Reach, Mandate, Gap",
+      "vault_id": "3b9y9n9t",
+      "read_key": "sgit_public_read_61eb18a77759ed0ee737fda03befd205d30f0ff6036e9d7703cc71f0d427a8f9",
+      "what": "A vault app: pick an example agent, tick what it is authorised to do, and see the gap between its reach and its mandate. Self-contained, read-only, audited before publication.",
+      "agent": "vault@web-summit.jose",
+      "updated": "2026-11-03",
+      "app": true
+    }
+  ]
+}
