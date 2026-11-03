@@ -27,6 +27,10 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November; still at 08:15 on 3 November).
 - Anything its session's other connectors can do: not known to this ABP.
 
+- **Since 16:50 on 3 November** a scripted audit exists: `admin/tools/vault-audit.mjs` (ad9e353, WS-128) walks every revision and the working files of a vault and refuses the gate's key shapes, the short-id vault key, token assignments, emails and phone numbers, printing only where. It is a technical check, but the agent runs it itself before publishing: whether it was run is the agent's word, not a gate's.
+
+- **Since 16:00:** it published the read key of Angelo's first public vault, ucvg2pkv (3f4bfc8), after an audit by a separate security sub-agent of every file in all three commits; the earlier vault, whose key reached a transcript, is deleted from the server. It also corrected the shared vault guide (b28182b), outside `people/angelo/`.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -55,4 +59,4 @@ Open questions: its connectors; who reviews its output each day; whether Angelo 
 
 ## Provenance {#provenance}
 
-Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 1, 3 November 2026, in `content/abp/` with its history in git.
+Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 2, 3 November 2026 (20:10 wake: ucvg2pkv published; the scripted audit), in `content/abp/` with its history in git.

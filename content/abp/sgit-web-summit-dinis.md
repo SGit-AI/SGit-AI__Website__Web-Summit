@@ -34,6 +34,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 
 - **The vault guide it keeps** (`content/vault-agent.md`) is what every person's vault agent follows. On 3 November it recommended `sgit vault info`, which printed a vault key into vault@web-summit.angelo's transcript (7502d99), and its audit step used commands that miss added files (443b62f); the mentors note the guide still lists the command (2d7791d, WS-128). A step in the guide reaches every vault agent at once.
 
+- **It built the scripted audit** (`admin/tools/vault-audit.mjs`, ad9e353, WS-128) that every vault agent now runs before publishing a read key: one more tool in `admin/`, outside `content/vaults`, and a barrier for every other vault agent that it maintains.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -64,4 +66,4 @@ Open questions: The gate's key-shape tripwire (check 15) is the one technical ba
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 7, 3 November 2026 (16:10 wake: the guide's two holes; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 8, 3 November 2026 (20:10 wake: vault-audit.mjs; 16:10 wake: the guide's two holes; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.

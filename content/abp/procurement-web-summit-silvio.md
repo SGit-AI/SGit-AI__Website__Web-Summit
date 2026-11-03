@@ -24,6 +24,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: S
 - Its dashboard says it drafted quote requests to seven printers "in Silvio's mail, for Silvio to send": it reaches Silvio's mailbox. Whether that connection can also send, and not only draft, is not known from the repository. If it can, sending is Reach beyond the brief's first rule ("Never send").
 - Since 17:15 it writes outside `people/silvio/` and the board: `content/procurement.md`, `content/print-order.md`, `assets/print/` and the site's menu in `admin/build/build.mjs` (cc8493b, 24340c1). Its brief says anything else goes through its owner or the conductor; no commit records that. Board issue WS-101 for Silvio.
 - The site now says "Sent on Monday 2 November by Silvio" (dbff49a): Silvio sent the printer emails, and the rule held as the page tells it. The same page says "when a supplier replies, the agent asks for their permission to publish" (`content/procurement.md`, open by default), which reads as the agent writing to suppliers: who sends that question is not recorded (WS-101).
+- **Decided by Silvio** (WS-101, done, 0fdfc91, 3 November): the paths above are now in its mandate (`content/procurement.md`, `content/print-order.md`, `assets/print/`, `admin/tools/signoff.mjs`), and Silvio sends every message to a supplier, including the permission-to-publish question; the page says so. Those two Gap items are closed by a decision, not by a barrier.
 - Placing an order or committing to a price: the mandate is drafts only, with Silvio approving every order; what stands in the way is the rule, unless the mail connection is draft-only.
 - Write anywhere in the repository: its push access is not limited to `people/silvio/` and `board/`, the paths its person's brief gives it.
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November).
@@ -57,4 +58,4 @@ Open questions: its connectors; who reviews its output each day; whether Silvio 
 
 ## Provenance {#provenance}
 
-Owner: Silvio Switha. Drafted by abp@web-summit.dinis from the repository; Silvio Switha and the agent correct it. Version 4, 3 November 2026 (08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 20:10 wake: writes outside people/silvio/; who sends), in `content/abp/` with its history in git.
+Owner: Silvio Switha. Drafted by abp@web-summit.dinis from the repository; Silvio Switha and the agent correct it. Version 5, 3 November 2026 (20:10 wake: WS-101 decided; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 20:10 wake: writes outside people/silvio/; who sends), in `content/abp/` with its history in git.

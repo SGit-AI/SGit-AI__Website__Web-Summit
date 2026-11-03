@@ -28,6 +28,10 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November; still at 08:15 on 3 November).
 - Anything its session's other connectors can do: not known to this ABP.
 
+- **Since 16:50 on 3 November** a scripted audit exists: `admin/tools/vault-audit.mjs` (ad9e353, WS-128) walks every revision and the working files of a vault and refuses the gate's key shapes, the short-id vault key, token assignments, emails and phone numbers, printing only where. It is a technical check, but the agent runs it itself before publishing: whether it was run is the agent's word, not a gate's.
+
+- **Since 17:30:** a private meetings vault (WS-23), its key sealed to pm@web-summit.vicky (81796d9); its notes record that `seal.mjs` gives wrong answers in a shallow clone (d3c7f4e, WS-131).
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -56,4 +60,4 @@ Open questions: its connectors; who reviews its output each day; whether Vicky h
 
 ## Provenance {#provenance}
 
-Owner: Vicky. Drafted by abp@web-summit.dinis from the repository; Vicky and the agent correct it. Version 1, 3 November 2026, in `content/abp/` with its history in git.
+Owner: Vicky. Drafted by abp@web-summit.dinis from the repository; Vicky and the agent correct it. Version 2, 3 November 2026 (20:10 wake: the scripted audit; the meetings vault), in `content/abp/` with its history in git.
