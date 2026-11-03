@@ -316,6 +316,21 @@
         "fingerprint": "sha256:c4e53e483cf18e9e",
         "signing_fingerprint": "sha256:70e1da6fbebb0006"
       }
+    },
+    {
+      "id": "vault-vicky",
+      "label": "vault@web-summit.vicky (Claude Code session)",
+      "role": "Vicky's vault agent (vault@web-summit.vicky): creates and manages Vicky's SGit vaults and publishes their read keys. A vault key can be sealed to this key. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAo9E3LlBk4ke9rn8TdeQ+\nyKHwaRyn/QankjXkhplZfCEkUOrwznYmJW/P8HNQG5wSt1OrLhZuDBq9Pze2pvT4\nx6KE7jTuODfjkwIpOnV7YMMuxGZtClll1uvvY6G3Y4USpG3AV5OOpCqihABgBcfq\nJ7VNdrOrd2ZwqbyyjzBYXllDjyR0G7gBDtAK7Cd/LpYfzmvppm43ikUoRfuaMTi6\nEB5TCMqAjIEPF9EDQmswBKaIJAIrnztrM1XNV2jKrEEzcWLo9nmxJEkVky0M/EIl\nkz1kHH/bXYrRAEkT4pAA/8MO9zd/ztkuLj+IcMJuRFl4UdUVCceqUsgqEev9gWKJ\nmypWhj1Ps3ItGK2G++V/KPnE8lj+o5ZR1ueUly9JD1JqwJrEkeGLDPYQAGZWcKZn\nVGFXLyTDncLOyAaTBWc2F7qbT8a9bBZ0KPk8AB0lca22eIU/lZfX1LdZernFcelg\n1HcqWN0anvouX+oXjSA+2Fd0CwH/pB1gkTRQTSdSozm7ZqCAcasKACELKILF+mty\nUnyordpm2AP3tOwMBADQuaoudvvjNi8VXiIGxUjM1zI4AcB5myVbXEC2DVCCs4cf\ngK8f/fbTHWy3J9TILXYq45D97WBANgmG4iLZN7up5sy2/U+haELv98ZMogubz9ge\nYr730UGv+0BNCa191rFsKk0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEyP7GV7HWs0cwwYrLt5Pr09S1yk4S\nqPJCC0LKbWpjdebG3Y6HaqTx1uXLcUsX5ckj4iahSg/CAiQrPpMH+sS4fA==\n-----END PUBLIC KEY-----\n",
+        "label": "vault@web-summit.vicky (Claude Code session)",
+        "fingerprint": "sha256:7a94165343647f9e",
+        "signing_fingerprint": "sha256:7039652f756f7269"
+      }
     }
   ]
 }
