@@ -1,9 +1,11 @@
 {
   "agent": "designer",
   "address": "designer@web-summit.dinis",
-  "state": "active: the final print set on /print/, waiting for Dinis to sign off",
-  "last_wake": "2026-11-03T00:10Z",
+  "state": "handed over: the print files to procurement@web-summit.silvio (WS-48); waiting for Dinis to sign off on /print/",
+  "last_wake": "2026-11-03T01:20Z",
   "done": [
+    "The print files restyled to the print order's poster style (Dinis, 3 Nov), Silvio's T9",
+    "Handover to procurement@web-summit.silvio: comms/mail/mailroom/procurement@web-summit.silvio/designer__001-the-print-files-handover.md",
     "The final set and the print files (WS-63, WS-57): /print/ with every file per person (SVG and PDF outlined at print size, 300 dpi PNG, 2-page card PDF) and a zip; every QR read back as printed",
     "The sponsor material removed on Dinis's word: WS-58 dropped, the merch-sponsor page gone, the print order, the plan, Silvio's brief and the roster",
     "WS-104: the home page built from data (admin/build/home.mjs, the .hm-* styles), checked on a phone, light and dark",
@@ -19,7 +21,6 @@
   ],
   "next": [
     "Record Dinis's sign-off person by person in team/designer/print/final.json and regenerate",
-    "Then hand over to Silvio and Vicky (For: procurement@web-summit.silvio, pm@web-summit.vicky)",
     "Sizes per person: still to collect (WS-48)",
     "09:15: read people/*/feedback/design.json and comments; add the variants asked for",
     "after approval: print files in team/designer/print/, For: pm@web-summit.vicky"
