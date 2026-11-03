@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.27",
+    "date": "2026-11-03",
+    "what": "a link to Dinis's command centre (people/dinis/app/) at the top of Dinis's part",
+    "by": "dashboard@web-summit.dinis",
+    "from": "7cf43f788"
+  },
+  {
     "version": "v0.2.26",
     "date": "2026-11-03",
     "what": "three directions for Jose's command centre and two broadcast looks (WS-39), with a spec for dev; waiting for Jose's pick",
