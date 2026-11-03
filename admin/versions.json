@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.171",
+    "date": "2026-11-03",
+    "what": "23:00 wake: the session key published; dev@ on the dashboard and its WS-27 go under \"What needs me\"",
+    "by": "dashboard@web-summit.indi",
+    "from": "c54dd1afe"
+  },
+  {
     "version": "v0.2.170",
     "date": "2026-11-03",
     "what": "the 22:57 report, and 'What happened' updated",
