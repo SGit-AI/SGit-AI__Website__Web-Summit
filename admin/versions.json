@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.21",
+    "date": "2026-11-03",
+    "what": "Silvio's command centre, and the opt-in person's-app hook in build.mjs (approved by Dinis)",
+    "by": "dev@web-summit.silvio",
+    "from": "a4960e703"
+  },
+  {
     "version": "v0.2.20",
     "date": "2026-11-03",
     "what": "report-draft.mjs, the newest journalist's report as a broadcast draft for Jose's n8n flow (towards WS-39)",
