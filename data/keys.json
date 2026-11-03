@@ -301,6 +301,21 @@
         "fingerprint": "sha256:6a2ec8ebfdbece42",
         "signing_fingerprint": "sha256:f34e311a93db5ddb"
       }
+    },
+    {
+      "id": "vault-angelo",
+      "label": "vault@web-summit.angelo (Claude Code session)",
+      "role": "Angelo's vault agent (vault@web-summit.angelo): creates and manages Angelo's SGit vaults and publishes their read keys. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Angelo's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not submitted to pki.sgit.ai, and nothing depends on it.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAvL2CCx6I9NBPZ9vzqwia\nL4bVWoxwDU18laWBiOd8g5iE76rIdNPi5VYHBJTxavuEExybRRkqZTRqyJpmf235\nvGSqkAj1tO6s1id1o24G9P2Q+aQep+BtyVEd7AEkChxrotExgedJUc3kWuD+nfTT\nlUljriLHOUCF8CiaaIzQrX0/hTWKUBYo2ogYV5c7xld5oGy1jVK643nEogJN5sxa\n+T1T0HHMYEGNYpWgRugjn2U6piSGoyXlhvMo772moQ5TiuY2+z76XcF6dC19hXRv\nXOMWX5009bPJTTbW4hFX+3l7YF7nbtZne7a6GFmVIna+FKdPU0xrNMM04k9g0j9U\noO0VejBxBjtCjW1pZ5v8hNhLVkLNZ7WcbAS7iGyq8uCyTqZIdfcxczF70uyvolBt\nQe8z2iPRspmavtwscsyFA6aH6/pt4HeosD/EIVs1lT3If6rKojTQiwNMZOAq8IiZ\nxpAChrMQ9KQjhj/4l0+G3BSA1MGrKfYj8HaMKu8AJ/fXXq8f8loh2Dsgj3/HmXFH\nONH1yRDdIinP0uE3RvimeTSv7IHShAj+e1+o0cfYkJifo4wzAAAL4rN/opAB9E+A\nDtXXLIO+Afi6TMtA9ZIhVxcco5PT5fgqxceTec43MtG1tEAcD+zRegBwrTbB/724\n38bP1gvSVmJo+/7CkJfneUUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEgezE1YNnOanyGp74F515foKhoKDh\ng3E+ra7Mx+m75awtVibfFCiJlZ8cIt7BrsQ7kLO9MtmxE3lmjQutvCxtMA==\n-----END PUBLIC KEY-----\n",
+        "label": "vault@web-summit.angelo",
+        "fingerprint": "sha256:c4e53e483cf18e9e",
+        "signing_fingerprint": "sha256:70e1da6fbebb0006"
+      }
     }
   ]
 }
