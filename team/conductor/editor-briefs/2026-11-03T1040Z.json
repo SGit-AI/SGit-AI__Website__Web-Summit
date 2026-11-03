@@ -1,0 +1,41 @@
+{
+  "number": 6,
+  "date": "2026-11-03",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "Vicky's agents are running on their own; the three asks of brief 5 still wait for you",
+  "when": "Tuesday 3 November 2026, 10:40 UTC",
+  "by": "conductor@web-summit.dinis",
+  "headline": "A busy morning without you: 14 commits from 11 agents since brief 5. Vicky's conductor sent her first brief and gave her sizes for the print order, and her dashboard agent took up WS-123 by itself, the first person's agent to shape the For-you panel. The dev agent added a burn-down to 12 November. The designer finished the printer's fixes and the Official Sign-off on /print/ for 16:00. Brief 5's three asks are still open: protect main, the print order's ceiling, and the invitations.",
+  "stats": [
+    {"n": "14", "label": "agent commits since brief 5"},
+    {"n": "11", "label": "agents that committed"},
+    {"n": "18", "label": "items on the 13:00 agenda (one merged)"},
+    {"n": "0", "label": "pulse check-ins so far"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "Protect main on GitHub (WS-105), repeated from brief 5", "detail": "Still unprotected at the abp agent's 08:15 check. Settings, Branches, a rule on main requiring a pull request.", "options": ["protect main now", "leave it this week"], "recommend": "Protect main now: five minutes, and the first ABP barrier becomes a control."},
+    {"id": "2", "ask": "The print order's ceiling and fallback before the 16:00 sign-off (WS-48, WS-13, WS-113), repeated", "detail": "The designer has put the printer's four fixes into the files and the Official Sign-off on /print/. The third printer can make Friday in our colours if confirmed today.", "options": ["a ceiling at 13:00, Silvio confirms today", "one colour on all shirts", "wait"], "recommend": "A ceiling at 13:00."},
+    {"id": "3", "ask": "Send Nimay's and Indi's GitHub invitations (WS-09, WS-124), repeated", "detail": "Jose has moved on (L1 to L5 overnight, his mentor's 08:41 note); Nimay and Indi still stop at 'Can push'. riskmandate-jose is already on the roster.", "options": ["send them now", "at 13:00"], "recommend": "Send them now."}
+  ],
+  "you_asked": [
+    {"at": "3 Nov, 02:30", "said": "the dashboard agent should be the one that now manages these parts ... see what other agents can help", "done": "Dev: me.json gate checks, a chart helper, today's runs on /wakes/, the board's burn-down. Vicky's dashboard agent: her issues first in her panel. Your dashboard and designer agents have not started their parts (the designer did the 16:00 print sign-off first, rightly).", "where": "WS-123", "status": "in progress"}
+  ],
+  "team": [
+    {"id": "Vicky's agents", "status": "active", "doing": "brief 1 to Vicky, her print sizes, WS-46 picked, her first board-health note, her For-you panel"},
+    {"id": "Angelo's conductor", "status": "active", "doing": "WS-125 the everybody-else guide, two 13:00 decisions"},
+    {"id": "designer@web-summit.dinis", "status": "active", "doing": "WS-113: the printer's fixes and the Official Sign-off on /print/"},
+    {"id": "dev@web-summit.dinis", "status": "active", "doing": "WS-123: the burn-down and charts any page can ask for"},
+    {"id": "the mentors", "status": "quiet", "doing": "08:41 notes for Jose, Angelo, Silvio; 09:41 no change"}
+  ],
+  "next": [
+    "12:27 wake: your 13:00 briefing PDF.",
+    "13:00: the first decisions recorded in your words (WS-107); one item asks who records them.",
+    "Still waiting on your word: a viz@web-summit.dinis agent for the charts."
+  ],
+  "sources": [
+    "git log since 2026-11-03T08:36Z (dev)",
+    "data/meetings/2026-11-03-1300/ and the carried items",
+    "board/WS-09, WS-105, WS-113, WS-123, WS-124",
+    "people/*/pulse/ (empty at 10:40)"
+  ]
+}
