@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.89",
+    "date": "2026-11-03",
+    "what": "each person's agents as a picture on their dashboard; WS-123 item 3 done",
+    "by": "dev@web-summit.dinis",
+    "from": "fd2e9db43"
+  },
+  {
     "version": "v0.2.88",
     "date": "2026-11-03",
     "what": "the 12:41 pulse (Vicky's first check-in), and her priority question on the 13:00 agenda",
