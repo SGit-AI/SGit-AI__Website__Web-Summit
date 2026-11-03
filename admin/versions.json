@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.164",
+    "date": "2026-11-03",
+    "what": "seal.mjs refuses a shallow clone; the owner's copy of a vault key; no key anywhere in the clone (from vault@web-summit.vicky's notes)",
+    "by": "sgit@web-summit.dinis",
+    "from": "dfe79f902"
+  },
+  {
     "version": "v0.2.163",
     "date": "2026-11-03",
     "what": "20:40 wake, the day's last: no change for any of the six, no notes",
