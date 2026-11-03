@@ -53,6 +53,7 @@
         speak: 'M11 5L6 9H2v6h4l5 4zM15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14',
         github: 'M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3.1-.4 6.4-1.5 6.4-6.9a5.4 5.4 0 0 0-1.5-3.7 5 5 0 0 0-.1-3.8s-1.2-.4-3.9 1.5a13.4 13.4 0 0 0-7 0C6.3 1.6 5.1 2 5.1 2a5 5 0 0 0-.1 3.8 5.4 5.4 0 0 0-1.5 3.7c0 5.4 3.3 6.5 6.4 6.9a3.4 3.4 0 0 0-.9 2.6V22',
         back: 'M15 18l-6-6 6-6',
+        down: 'M6 9l6 6 6-6',
     }
     const ico = (n, cls = 'ico') => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${P[n]}"/></svg>`
 
@@ -121,7 +122,7 @@
         const c = counts()
         const badge = { tasks: c.overdue ? [c.overdue, 'red'] : [c.open, ''], waiting: [c.waiting, 'yellow'] }
         const navItem = ([id, label, icon]) => `<a href="#${id}" data-view="${id}"${S.view === id ? ' aria-current="page"' : ''} title="${esc(label)}">${ico(icon)}<span class="lbl">${esc(label)}</span>${badge[id] && badge[id][0] ? `<span class="badge ${badge[id][1]}">${badge[id][0]}</span>` : ''}</a>`
-        root.innerHTML = `<div class="cc">
+        root.innerHTML = `<div class="cc" data-ask="${S.askOpen ? 'open' : 'closed'}">
 <div class="cc-layout">
   <aside class="cc-side" aria-label="Command centre">
     <div class="cc-brand"><span class="cc-mark" aria-hidden="true">R</span><div><b>RiskMandate</b><span>Silvio Command Center</span></div></div>
@@ -148,7 +149,9 @@
       <form id="cc-askform"><label class="sr" for="cc-askq">Ask Claude</label><input id="cc-askq" placeholder="Speak or type… e.g. “brief me for today”" autocomplete="off">
       <button class="cc-iconbtn cc-mic" type="button" data-mic="cc-askq" aria-pressed="false" aria-label="Dictate">${ico('mic', '')}</button>
       <button class="cc-btn gold" type="submit" aria-label="Prepare the prompt">${ico('send', '')}</button></form>
+      <button class="cc-iconbtn cc-askclose" id="cc-askclose" type="button" aria-label="Collapse the Claude bar">${ico('down', '')}</button>
     </div>
+    <button class="cc-askfab" id="cc-askfab" type="button" aria-controls="cc-askbar" aria-expanded="${S.askOpen ? 'true' : 'false'}" aria-label="Ask Claude: open the voice and text bar">${ico('mic', '')}</button>
   </div>
 </div>
 <nav class="cc-tabs" aria-label="Views">
@@ -158,13 +161,25 @@
 </div>`
         $('#cc-theme').onclick = () => { store.set('theme', html.dataset.theme === 'dark' ? 'light' : 'dark'); applyTheme(); render() }
         $('#cc-search').onsubmit = e => { e.preventDefault(); S.q = $('#cc-q').value.trim(); S.scope = 'board'; go('tasks') }
-        $('#cc-askform').onsubmit = e => { e.preventDefault(); S.askDraft = $('#cc-askq').value.trim(); go('ask') }
+        $('#cc-askform').onsubmit = e => { e.preventDefault(); S.askDraft = $('#cc-askq').value.trim(); S.askOpen = false; go('ask') }
+        // phones: the bar collapses to a floating microphone; desktop keeps the bar (the button and the collapse control are hidden there)
+        $('#cc-askfab').onclick = () => setAsk(true)
+        $('#cc-askclose').onclick = () => setAsk(false)
+        $('#cc-askbar').addEventListener('keydown', e => { if (e.key === 'Escape' && PHONE.matches) { e.stopPropagation(); setAsk(false) } })
         $('#cc-more').onclick = moreSheet
         bindMics(root)
         tick()
     }
     // the greeting follows the viewer's own clock (the device's local time zone): 05-11 morning, 12-17 afternoon, else evening
     const greeting = (d = new Date()) => { const h = d.getHours(); return h >= 5 && h < 12 ? 'Good morning' : h >= 12 && h < 18 ? 'Good afternoon' : 'Good evening' }
+    const PHONE = matchMedia('(max-width: 767px)')
+    function setAsk(open) {
+        S.askOpen = open
+        const c = $('.cc', root); if (!c) return
+        c.dataset.ask = open ? 'open' : 'closed'; $('#cc-askfab').setAttribute('aria-expanded', String(open))
+        if (!open && rec) rec.stop()
+        if (PHONE.matches) (open ? $('#cc-askq') : $('#cc-askfab')).focus()
+    }
     const tick = () => {
         const el = $('#cc-clock'); if (el) el.textContent = new Date().toLocaleDateString([], { weekday: 'long', day: 'numeric', month: 'long' }) + ' · ' + fmtTime(Date.now())
         const g = $('#cc-greet'); if (g && g.textContent !== greeting()) g.textContent = greeting()
@@ -510,7 +525,7 @@ ${card('Privacy', `<p class="note">This page is public on GitHub Pages, like the
         const meta = VIEWS.find(x => x[0] === S.view)
         $('#cc-title').innerHTML = `${esc(meta[1])}<small>${S.view === 'home' ? 'RiskMandate · Web Summit 2026' : 'Silvio Command Center'}</small>`
         $('#cc-view').innerHTML = V[S.view]()
-        $('#cc-askbar').hidden = S.view === 'ask'
+        $('#cc-askbar').hidden = S.view === 'ask'; $('#cc-askfab').hidden = S.view === 'ask'
         document.title = `${meta[1]} · Silvio's command centre`
         bind(root)
         window.scrollTo(0, S.lastView === S.view ? y : 0)

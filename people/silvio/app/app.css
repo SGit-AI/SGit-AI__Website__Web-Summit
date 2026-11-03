@@ -535,3 +535,36 @@ html.cc-on[data-theme="light"] .cc-ask .wave::after { background: radial-gradien
     .cc-urgent .cc-task .due { margin-top: 4px; font-size: 12px; }
     .cc-urgent .cc-task .due b { font-size: 12px; }
 }
+
+/* ===== Usability (3 November 2026): on phones the Claude bar collapses to a floating microphone ===== */
+.cc-askfab, .cc-askclose { display: none; }
+@media (max-width: 767px) {
+    .cc[data-ask="closed"] .cc-ask { display: none; }
+    .cc-ask { gap: 6px; animation: cc-ask-in .16s ease-out; transform-origin: 100% 100%; }
+    .cc-askclose { display: grid; width: 44px; height: 44px; flex: none; }
+    .cc-askfab { display: grid; place-items: center; position: fixed; right: 16px; bottom: calc(var(--rm-tabbar) + 14px + env(safe-area-inset-bottom)); z-index: 41;
+        width: 56px; height: 56px; padding: 0; border-radius: 50%; border: 0; cursor: pointer; color: #fff;
+        background: conic-gradient(from 210deg, #A855F7, #05BFE9, #F5B942, #A855F7);
+        box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 10px 26px -8px rgba(168,85,247,.65), 0 4px 12px rgba(0,0,0,.35);
+        transition: transform .15s ease, box-shadow .15s ease; }
+    .cc-askfab::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.22), rgba(7,17,31,.92) 70%); }
+    html.cc-on[data-theme="light"] .cc-askfab { color: #4C1D95; box-shadow: 0 0 0 1px rgba(76,29,149,.12), 0 10px 24px -10px rgba(126,34,206,.55), 0 3px 10px rgba(23,36,58,.18); }
+    html.cc-on[data-theme="light"] .cc-askfab::after { background: radial-gradient(circle at 35% 30%, #fff, #F1ECFB 70%); }
+    .cc-askfab svg { position: relative; z-index: 1; width: 24px; height: 24px; }
+    .cc-askfab:active { transform: scale(.95); }
+    .cc[data-ask="open"] .cc-askfab, .cc-askfab[hidden] { display: none; }
+    /* the last item can always scroll clear of the button and the tab bar */
+    .cc-content { padding-bottom: calc(var(--rm-tabbar) + 88px + env(safe-area-inset-bottom)); }
+}
+@keyframes cc-ask-in { from { opacity: 0; transform: translateY(6px) scale(.97); } to { opacity: 1; transform: none; } }
+/* the field keeps its own rounded focus ring (border and glow) instead of the square outline */
+.cc-ask input:focus-visible { outline: none; border-radius: 999px; }
+/* the global focus rule rounds to 6px; the assistant's round controls keep their shape, with the same visible ring */
+.cc-ask button:focus-visible { border-radius: 999px; }
+.cc-askfab:focus-visible { border-radius: 50%; outline: 3px solid var(--rm-focus); outline-offset: 3px; }
+/* very small phones (320 to 360px): the hero's four buttons stay on one line each */
+@media (max-width: 360px) {
+    .cc-hero .cc-actions { gap: 6px; }
+    .cc-hero .cc-actions .cc-btn { padding: 0 8px; gap: 6px; font-size: 13px; white-space: nowrap; }
+    .cc-hero .cc-actions .cc-btn svg { width: 16px; height: 16px; }
+}
