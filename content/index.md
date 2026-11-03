@@ -16,13 +16,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Tuesday 3 November, 02:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-03-0257/index.html), [yesterday's newsletter](reports/2026-11-02-newsletter/index.html), [all reports](reports/index.html).*
+*Tuesday 3 November, 04:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-03-0457/index.html), [yesterday's newsletter](reports/2026-11-02-newsletter/index.html), [all reports](reports/index.html).*
 
-- **Today's priority: the print sign-off.** Four fixes to the files, then everyone signs with their agent's key; the printer needs a yes by the end of today (WS-113).
-- **A command centre for every person,** from Silvio's design (`people/<id>/app/`).
-- **Jose at L5** with four agents; his dev agent turns these reports into WhatsApp and Slack drafts (WS-39).
-- **Security:** the PKI section (/pki/) and five issues (WS-115 to WS-119).
+- **A quiet night (v0.2.44 to v0.2.46).** A "Who are you?" picker and a For-you panel on every page (WS-123); the gate checks me.json.
+- **Six more behaviour policies** (Jose's four agents, sgit@silvio, dashboard@dinis); vaults are made outside the repository.
+- **Today's priority: the print sign-off.** Four fixes to the files by 16:00, then everyone signs; the printer needs a yes by the end of today (WS-113).
 - **Waiting on Dinis:** the print sign-off and budget (WS-113, WS-13), and GitHub for Nimay and Indi (WS-09).
+- **This morning:** the first pulse check-ins (WS-07).
 
 ## Start here {#start}
 
