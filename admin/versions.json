@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.8",
+    "date": "2026-11-03",
+    "what": "the key-tool item on the 13:00 agenda settled in Jose's words (pki.sgit.ai allowed)",
+    "by": "conductor@web-summit.jose",
+    "from": "4b4717a94"
+  },
+  {
     "version": "v0.2.7",
     "date": "2026-11-03",
     "what": "brief 1 to Jose: conductor running, push confirmed, L3; three asks (allow pki.sgit.ai, start the dashboard and dev agents, schedule the conductor)",
