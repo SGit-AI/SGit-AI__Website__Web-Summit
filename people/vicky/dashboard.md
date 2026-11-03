@@ -32,6 +32,11 @@ Published by my vault agent (`vault@web-summit.vicky`), each audited before its 
 ```vaults vicky
 ```
 
+Open it here, live from the vault (read only; nothing loads until you click):
+
+```vault-app vicky k64ma7jd
+```
+
 ## The board's health {#health}
 
 [The board's health](../../board-health/index.html) · [the setup leaderboard](../../team/setup/index.html)

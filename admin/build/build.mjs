@@ -93,6 +93,11 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
             out.push(CHARTS[name] ? `<figure class="chart">${CHARTS[name](arg)}</figure>` : `<p class="meta">(no chart called ${esc(name)})</p>`)
+        } else if (/^```vault-app [a-z0-9-]+ [a-z0-9]{8,12}\s*$/.test(l)) {
+            const [person, id] = l.slice(13).trim().split(' ')
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push(vaultAppHtml(person, id))
         } else if (l.startsWith('```')) {
             const buf = []
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) buf.push(lines[i])
@@ -364,8 +369,31 @@ const vaultsMd = who => {
     const cell = s => String(s || '').replace(/\|/g, '/').replace(/\n/g, ' ')
     return ['| Vault | Whose | What it holds | Open it (read only) |', '|---|---|---|---|', ...vs.map(v => `| **${cell(v.name)}** (\`${v.vault_id}\`) | ${cell(v.pname)}${v.agent ? `, ${cell(v.agent)}` : ''} | ${cell(v.what)} | [in SG/Vault](https://dev.vault.sgraph.ai/#${v.read_key}%3A${v.vault_id}) · \`sgit clone ${v.read_key}:${v.vault_id}\` |`)].join('\n')
 }
+// a published vault opened live in the page: ```vault-app <person> <vault id>``` (added by conductor@web-summit.vicky,
+// 3 November 2026, at Vicky's word). The official SG/Vault embed, as on https://sgit.ai/demos/vault-app-embed.html:
+// on a click, dev.vault.sgraph.ai loads in an iframe (?embed=1), says vault-embed-ready, and only then gets the read
+// key by postMessage, pinned to its origin; the key is never in a URL or the frame's storage, and the vault opens
+// read-only. The key comes only from the person's vaults.json, which vaultsMd's check limits to sgit_public_read_.
+let VAULT_APPS = 0
+const vaultAppHtml = (person, id) => {
+    const v = VAULTS().find(x => x.person === person && x.vault_id === id)
+    if (!v) throw new Error(`vault-app ${person} ${id}: no such vault in people/${person}/vaults.json`)
+    if (!/^sgit_public_read_[0-9a-f]{64}$/.test(String(v.read_key || ''))) throw new Error(`people/${person}/vaults.json: "${v.name}" needs a read_key of the form sgit_public_read_<64 hex> (never a vault key)`)
+    const n = ++VAULT_APPS, k = `va${n}`
+    return `<div class="vault-app" id="${k}"><p><button type="button" data-mode="app">Open the app</button> <button type="button" data-mode="vault">Browse its files</button> <button type="button" data-fs hidden>Full screen</button></p>` +
+        `<p class="meta" data-note>${esc(v.name)} (<code>${v.vault_id}</code>), read only. Opens <code>dev.vault.sgraph.ai</code> in a frame and hands it this page's published read key.</p>` +
+        `<iframe title="${esc(v.name)}, the vault opened read-only" allow="fullscreen" allowfullscreen hidden style="width:100%;height:70vh;border:1px solid #ccc;border-radius:6px"></iframe></div>` +
+        `<script>(function(){var O='https://dev.vault.sgraph.ai',C=${JSON.stringify(v.read_key + ':' + v.vault_id)},b=document.getElementById('${k}'),f=b.querySelector('iframe'),t=b.querySelector('[data-note]'),fs=b.querySelector('[data-fs]'),armed=null,T=null;` +
+        `window.addEventListener('message',function(e){if(e.origin!==O||!f.contentWindow||e.source!==f.contentWindow)return;var d=e.data||{};` +
+        `if(d.sg==='vault-embed-ready'&&armed){clearTimeout(T);e.source.postMessage({sg:'vault-open',key:C,mode:armed},O);t.textContent='Opening, read only...';}` +
+        `else if(d.sg==='vault-ready'){t.textContent='Open, read only'+(d.fileCount?': '+d.fileCount+' files':'')+'.';}else if(d.sg==='vault-error'){t.textContent='Could not open the vault: '+(d.message||'unknown error');}});` +
+        `function mount(m){armed=m;f.hidden=false;fs.hidden=false;t.textContent='Connecting to the vault...';f.src=O+(m==='vault'?'/en-gb/vault/':'/en-gb/app/')+'?embed=1&parent='+encodeURIComponent(location.origin);clearTimeout(T);` +
+        `T=setTimeout(function(){if(m==='app'){f.src=O+'/#'+encodeURIComponent(C);t.textContent='The handshake timed out; opened by the link instead.';}else{t.textContent='The handshake timed out. Reload and try again.';}},12000);}` +
+        `b.querySelectorAll('[data-mode]').forEach(function(x){x.addEventListener('click',function(){mount(x.getAttribute('data-mode'));});});` +
+        `fs.addEventListener('click',function(){try{if(f.requestFullscreen)f.requestFullscreen();}catch(e){}});}());</script>`
+}
 let UP = '../'
-const expandIssues = (body, up = '../') => { UP = up; return body
+const expandIssues =(body, up = '../') => { UP = up; return body
     .replace(/```issues ([a-z0-9:-]+)\n```/g, (_, w) => issuesMd(w))
     .replace(/```onboarding ([a-z0-9-]+)\n```/g, (_, w) => onboardingMd(w))
     .replace(/```pulse ([a-z0-9-]+)\n```/g, (_, w) => pulseMd(w))
