@@ -393,3 +393,8 @@ svg.ch { display: block; width: 100%; min-width: 760px; height: auto; font: 12px
 .so-files ul { columns: 2; font-size: 0.82rem; }
 @media (max-width: 40rem) { .so-files ul { columns: 1; } }
 
+.ch .ch-done { fill: var(--accent-soft); stroke: var(--accent); }
+.ch .ch-open { fill: none; stroke: var(--accent-dk); stroke-width: 2.5; stroke-linejoin: round; }
+.ch .ch-open-pt { fill: var(--accent-dk); }
+.ch .ch-pace { stroke: var(--warn); stroke-width: 1.8; stroke-dasharray: 6 5; }
+figure.chart { margin: 1rem 0 1.4rem; overflow-x: auto; }

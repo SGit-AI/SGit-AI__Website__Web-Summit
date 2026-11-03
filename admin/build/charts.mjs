@@ -37,3 +37,28 @@ export function dayTimeline({ day, now, rows, quiet = [[0, 7], [22, 24]], width 
     out.push('</svg>')
     return out.join('')
 }
+
+/**
+ * The board, burning down to a date: burndown({ series: [{ day: 'YYYY-MM-DD', open, opened, closed }], target:
+ * 'YYYY-MM-DD', label }). A line of the issues still open at the end of each day, bars of the issues closed that day,
+ * and a dashed line from today's open count to none on the target day: the pace the board needs.
+ */
+export function burndown({ series, target, width = 960, height = 300, label = 'The board, burning down' }) {
+    if (!series.length) return ''
+    const L = 48, R = 20, T = 20, B = 44, w = width - L - R, h = height - T - B
+    const days = [...series.map(s => s.day)], last = series[series.length - 1]
+    for (let d = Date.parse(last.day + 'T12:00:00Z') + 864e5; d <= Date.parse(target + 'T12:00:00Z'); d += 864e5) days.push(new Date(d).toISOString().slice(0, 10))
+    const n = days.length, max = Math.max(1, ...series.map(s => s.open), ...series.map(s => s.closed)), top = Math.ceil(max / 10) * 10
+    const x = k => L + (n === 1 ? w / 2 : k * w / (n - 1)), y = v => T + h - v / top * h, bw = Math.max(4, Math.min(22, w / n * 0.5))
+    const out = [`<svg class="ch ch-bd" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="bd-t bd-d"><title id="bd-t">${esc(label)}, to ${esc(target)}</title>`,
+        `<desc id="bd-d">${esc(`${last.open} open on ${last.day}; ${series.reduce((a, s) => a + s.closed, 0)} closed since ${series[0].day}; ${n - series.length} days to ${target}.`)}</desc>`]
+    for (let v = 0; v <= top; v += top / 5) out.push(`<line class="ch-grid" x1="${L}" x2="${L + w}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}"/><text class="ch-axis" x="${L - 8}" y="${(y(v) + 4).toFixed(1)}" text-anchor="end">${v}</text>`)
+    days.forEach((d, k) => out.push(`<text class="ch-axis" x="${x(k).toFixed(1)}" y="${T + h + 18}" text-anchor="middle">${d.slice(8)}</text>`))
+    series.forEach((s, k) => { if (s.closed) out.push(`<rect class="ch-done" x="${(x(k) - bw / 2).toFixed(1)}" y="${y(s.closed).toFixed(1)}" width="${bw.toFixed(1)}" height="${(T + h - y(s.closed)).toFixed(1)}"><title>${s.day}: ${s.closed} closed, ${s.opened} opened</title></rect>`) })
+    out.push(`<polyline class="ch-open" points="${series.map((s, k) => `${x(k).toFixed(1)},${y(s.open).toFixed(1)}`).join(' ')}"/>`)
+    series.forEach((s, k) => out.push(`<circle class="ch-open-pt" cx="${x(k).toFixed(1)}" cy="${y(s.open).toFixed(1)}" r="3.5"><title>${s.day}: ${s.open} open</title></circle>`))
+    out.push(`<line class="ch-pace" x1="${x(series.length - 1).toFixed(1)}" y1="${y(last.open).toFixed(1)}" x2="${x(n - 1).toFixed(1)}" y2="${y(0).toFixed(1)}"/>`)
+    out.push(`<text class="ch-key" x="${(x(series.length - 1) + 12).toFixed(1)}" y="${(y(last.open) - 10).toFixed(1)}">${esc(target.slice(8))} Nov: none open needs ${Math.ceil(last.open / Math.max(1, n - series.length))} a day</text>`)
+    out.push(`<text class="ch-axis" x="${L}" y="${height - 6}">day of the month (UTC)</text></svg>`)
+    return out.join('')
+}

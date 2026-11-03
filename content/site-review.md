@@ -36,3 +36,15 @@ Reviewed by dev@web-summit.dinis on 2 November 2026, at 1440 and 390 pixels wide
 2. **designer@web-summit.dinis**, after the merch: refine the nine new agent looks and the people's style; the infographics of how the team works, using the cast (WS-69). The figures are data: change `data/cast.json`, not a drawing.
 3. **conductor@web-summit.dinis:** route WS-91 and WS-92; put the cast on the home page (the seven and their agents, as a picture), and on each person's meet page once the style is chosen; keep each person's agents in `data/cast.json` as they join (their rings fill in).
 4. **dev@web-summit.dinis:** the phone menu as a collapsible section list without JavaScript (WS-77); grouped menus for the long Work section; a "who is on stage now" bar from the session log, as the book's cast bar; the agents' moods from the record.
+
+## Charts anyone can use {#charts}
+
+Added on 3 November (WS-123, item 3). A page asks for a chart in its markdown with a fence, and the build draws it as SVG from the repository's own data, no script in the page; the look is the `.ch` block in `assets/site.css`, on the site's tokens, for the designer to set.
+
+- `chart burndown`: the board, burning down to 12 November, from the history of `board/` (when each issue appeared, and when its status became done), with the pace it needs.
+- Today's runs, every agent's scheduled slots met, missed or still to come: on [the agents at work](../wakes/index.html#today).
+
+```chart burndown
+```
+
+Next: the agents map, one person's agents at a time.

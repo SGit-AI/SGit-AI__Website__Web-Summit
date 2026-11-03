@@ -114,6 +114,17 @@
       "validate_seconds": 2.19,
       "ci_seconds_before": 47,
       "ci_seconds_after": null
+    },
+    {
+      "date": "2026-11-03",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass 9 (WS-123 item 3): burndown() and the chart fence in render(). Correction to the previous row (pass 8): its note says the build reached 2.4 s; that was one early measure in a busy clone, and the figure the row records, 1.36 s, is the one measured at release. Rows are never edited, so the correction is here.",
+      "pages": 324,
+      "build_seconds": 1.69,
+      "validate_seconds": 2.49,
+      "ci_seconds_before": 41,
+      "ci_seconds_after": null
     }
   ]
 }

@@ -5,7 +5,7 @@
 import fs from 'fs'
 import path from 'path'
 import * as CAST from './cast.mjs'
-import { dayTimeline } from './charts.mjs'
+import { dayTimeline, burndown } from './charts.mjs'
 import { execFileSync } from 'child_process'
 import { meetingsContext, buildMeetings, sinceMd } from './meetings.mjs'
 import { inventory, inventoryMd, myAgentsMd } from './inventory.mjs'
@@ -36,6 +36,8 @@ const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&
 const slug = s => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 // everything written here is generated: gitignored, built by CI, never committed; the list goes to .generated.txt for the gate
 const GENERATED = new Set()
+// charts a page can ask for in its markdown: ```chart <name>``` then ``` (admin/build/charts.mjs; filled in below, once the data is read)
+const CHARTS = {}
 const write = (rel, text) => { GENERATED.add(rel); const f = path.join(ROOT, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, text) }
 // On success, anything the last build wrote that this one did not is deleted (a removed page's old output made every
 // clone that had built it fail the gate until cleaned by hand; release.sh runs the gate locally). Only paths in the old
@@ -86,6 +88,11 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) rows.push(lines[i].split('|').map(c => c.trim()))
             i++
             out.push(`<div class="cards">${rows.map(([t, h, d]) => `<a class="card" href="${h}"><b>${inline(t)}</b><span>${inline(d)}</span></a>`).join('')}</div>`)
+        } else if (/^```chart [a-z-]+\s*$/.test(l)) {
+            const name = l.slice(9).trim()
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push(CHARTS[name] ? `<figure class="chart">${CHARTS[name]()}</figure>` : `<p class="meta">(no chart called ${esc(name)})</p>`)
         } else if (l.startsWith('```')) {
             const buf = []
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) buf.push(lines[i])
@@ -286,6 +293,30 @@ const ISSUES = { issues: (fs.existsSync(BOARD_DIR) ? fs.readdirSync(BOARD_DIR).f
     const split = v => (v || '').split(',').map(x => x.trim()).filter(Boolean)
     return { ...meta, file: f, for: split(meta.for), done: body.trim().replace(/\n+/g, ' ') }
 }) }
+// the board's history, from one git log of board/ (when each issue's file appeared, and the last status its commits
+// set), as a burn-down to the summit's last day: ```chart burndown``` (WS-123, item 3)
+CHARTS.burndown = (() => {
+    let memo = null
+    return () => memo ??= (() => {
+        const seen = {}
+        try {
+            let at = null, file = null
+            for (const l of execFileSync('git', ['log', '--reverse', '--format=@@%cI', '-p', '--no-color', '--', 'board/'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString().split('\n')) {
+                if (l.startsWith('@@20')) at = l.slice(2, 12)
+                else if (l.startsWith('+++ b/board/WS-')) { file = l.slice(12); seen[file] ??= { opened: at, status: 'open', at } }
+                else if (file && l.startsWith('+status:')) { seen[file].status = l.slice(8).trim(); seen[file].at = at }
+            }
+        } catch { return '<p class="meta">The board history was not available to this build.</p>' }
+        const live = new Set(ISSUES.issues.map(x => x.file)), rows = Object.entries(seen).filter(([f]) => live.has(f)).map(([, v]) => v)
+        if (!rows.length) return ''
+        const first = rows.map(r => r.opened).sort()[0], today = new Date().toISOString().slice(0, 10), series = []
+        for (let d = Date.parse(first + 'T12:00:00Z'); d <= Date.parse(today + 'T12:00:00Z'); d += 864e5) {
+            const day = new Date(d).toISOString().slice(0, 10), done = r => r.status === 'done' && r.at <= day
+            series.push({ day, open: rows.filter(r => r.opened <= day && !done(r)).length, opened: rows.filter(r => r.opened === day).length, closed: rows.filter(r => r.status === 'done' && r.at === day).length })
+        }
+        return burndown({ series, target: '2026-11-12', label: 'The board, burning down to the last day of Web Summit' })
+    })()
+})()
 const isCore = id => !!(teamData.members.find(m => m.id === id) || {}).core
 const memberName = id => (teamData.members.find(m => m.id === id) || {}).name || id
 const issuesMd = who => {
