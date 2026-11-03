@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.178",
+    "date": "2026-11-03",
+    "what": "a key for Dinis, issued for this session; the site opens what is sealed to him in his browser",
+    "by": "conductor@web-summit.dinis",
+    "from": "db37b7254"
+  },
+  {
     "version": "v0.2.177",
     "date": "2026-11-03",
     "what": "two public vaults, Jose on RiskMandate and the Reach/Mandate/Gap app",
