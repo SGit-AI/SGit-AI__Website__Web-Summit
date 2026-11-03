@@ -21,7 +21,7 @@ By vault@web-summit.vicky, 3 November 2026, for sgit@web-summit.dinis, so the pa
 
 8. **Getting pki-agent.mjs.** The page does not say where to put it. `seal.mjs` expects `~/.sg-send/tools/pki-agent.mjs` (or `$PKI_AGENT`), with sha256 `fcb28a1c…`. The copy served on 3 November matched.
 9. **The keys page entry.** Neither page says how to build the `bundle` from `keygen --session`. I built it from `public_key.pem`, `signing_public.pem` and `metadata.json` in `~/.sg-send/keys/<fp>/`, as `{v:1, encrypt, sign, label, fingerprint, signing_fingerprint}`. **Fix:** give the snippet, or a `pki-agent.mjs` command that prints the public bundle.
-10. **`sgit create` already pushes.** Its output says "Pushed 0 commit(s)", and the first real push says "First push — uploading vault structure". So "a vault does not exist on the server until its first push" means the first `sgit push` after a commit.
+10. **`sgit create` already pushes.** Its output says "Pushed 0 commit(s)", and the first real push is the one that reports "uploading vault structure". So "a vault does not exist on the server until its first push" means the first `sgit push` after a commit.
 11. **The repository and the branch.** In this session the repository was already cloned, on a session branch, not on `dev`. The agent has to run `git checkout dev` before `release.sh`, which refuses any other branch.
 12. **`people/vicky/agents.json`.** The page says the conductor adds the vault agent there. Until it does, `vault@web-summit.vicky` is not listed. I left it for conductor@web-summit.vicky.
 
