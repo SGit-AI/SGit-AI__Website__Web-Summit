@@ -1,11 +1,12 @@
 {
   "person": "indi",
-  "level": 0,
+  "level": 3,
   "steps": {
     "workspace": "yes",
     "claude": "yes",
-    "github": "yes"
+    "github": "yes",
+    "repo": "yes"
   },
-  "updated": "2026-11-02",
-  "notes": "Not started: begin at the start page. Workspace email, Claude team account and GitHub account recorded by conductor@web-summit.dinis from Dinis's account of the day (2 November, evening: everyone got a RiskMandate Workspace account and created a GitHub account)."
+  "updated": "2026-11-03",
+  "notes": "Can push: Angelo invited Indi's GitHub account on 3 November (about 18:50 UTC, commit 575d48b), and on 3 November two agents in Indi's Claude account pushed to dev: dev@web-summit.indi (commit 5eac229, 22:57 UTC) and conductor@web-summit.indi (this entry). The conductor and agent-key steps are read from the repository. Keys: neither agent could make one yet, because the session's network policy refuses pki.sgit.ai (and web-summit.sgit.ai). Next for Indi: allow those hosts in the Claude environment's network settings, then start dashboard@web-summit.indi from the kit (people/indi/kit/README.md). Workspace email, Claude team account and GitHub account recorded by conductor@web-summit.dinis from Dinis's account of the day (2 November, evening)."
 }

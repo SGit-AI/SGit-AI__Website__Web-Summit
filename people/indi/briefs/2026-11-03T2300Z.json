@@ -1,0 +1,84 @@
+{
+  "number": 1,
+  "date": "3 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Your conductor is running; one network setting blocks your agents' keys",
+  "when": "3 November 2026, 23:00 UTC (first run)",
+  "by": "conductor@web-summit.indi",
+  "headline": "You can push: two of your agents pushed to dev tonight, which puts you at L3 once this release builds. The one thing holding you back is a network setting: your Claude environment refuses pki.sgit.ai, so no agent of yours can make its key (L4). One decision needs you, and it is on the 13:00 stand-up; nothing is decided here.",
+  "stats": [
+    {"n": "L3", "label": "your level once this release builds (was L1)"},
+    {"n": "2", "label": "agents of yours that have committed (conductor, dev)"},
+    {"n": "0", "label": "agent keys published (blocked by the network policy)"},
+    {"n": "4", "label": "issues for you due Wed 4 Nov (WS-15, WS-19, WS-59, WS-125)"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Allow the hosts your agents need in your Claude environment",
+      "detail": "The environment's network policy refuses pki.sgit.ai (the key tool) and web-summit.sgit.ai (the live site). Change it in the cloud environment menu in the session's title bar, then Edit, then Network access: add the hosts under Allowed domains, leaving 'Allow package managers' ticked. Steps: code.claude.com/docs/en/cloud-environments#network-access.",
+      "options": ["allow pki.sgit.ai, web-summit.sgit.ai and sgit.ai", "allow full network access", "wait until Thursday"],
+      "recommend": "Allow the three hosts: the smallest change, and it unblocks both agents' keys and L4."
+    },
+    {
+      "id": "2",
+      "ask": "Start your dashboard agent",
+      "detail": "Open a new session in your Claude account and paste the dashboard prompt from your kit (people/indi/kit/README.md). Its first commit counts on the leaderboard.",
+      "options": ["now", "after the network change", "not yet"],
+      "recommend": "After the network change, so it can make its key in its first run."
+    },
+    {
+      "id": "3",
+      "ask": "A first company for the factory (WS-27)",
+      "detail": "dev@web-summit.indi is waiting for your go and one company to build the first factory page on: its analysis, its risks and how RiskMandate helps. Your mentor suggests the same.",
+      "options": ["name a company", "wait for the first five (WS-25, on the 13:00 agenda)", "not now"],
+      "recommend": "Wait for WS-25 at 13:00 and take the first company from it, so the page matches the list."
+    }
+  ],
+  "you_asked": [
+    {"at": "3 Nov, 23:00 UTC", "said": "You are conductor@web-summit.indi, Indi Gupte's conductor.", "done": "Read the brief, the kit and the mentor notes; onboarding.json and agents.json written; one stand-up item; this brief. The key could not be made.", "where": "people/indi/, data/meetings/2026-11-04-1300/", "status": "in progress"}
+  ],
+  "sections": [
+    {
+      "title": "1. What happened",
+      "items": [
+        "Angelo invited your GitHub account to the repository at about 18:50 UTC (commit 575d48b).",
+        "dev@web-summit.indi made its first run at 22:57 UTC: a run log, and the same network block (commit 5eac229).",
+        "This conductor recorded 'Can push' in people/indi/onboarding.json, with that evidence, and listed your seven agents (two running, five planned) in people/indi/agents.json.",
+        "Your 13:00 stand-up on 4 November has one item from me: the network decision above."
+      ]
+    },
+    {
+      "title": "2. From your mentor (suggestions only)",
+      "items": [
+        "19:40 note: accept the invitation, then paste the first prompt from your kit. Both are now done, in practice.",
+        "Its question, 'did the invitation arrive?': the pushes tonight say yes. Tell me if you want me to answer it on your behalf in a commit."
+      ]
+    },
+    {
+      "title": "3. Your issues due tomorrow",
+      "table": {
+        "head": ["Issue", "What", "Status"],
+        "rows": [
+          ["WS-15", "The RiskMandate message: one paragraph, three openers, one demo (with Nimay, Dinis)", "open"],
+          ["WS-19", "The card-to-analysis loop, tried on three companies", "open"],
+          ["WS-59", "Daniela's agentic team: what it runs, and a policy for each agent", "open"],
+          ["WS-125", "The setup guide for everybody else (picked by Angelo)", "picked"]
+        ]
+      }
+    }
+  ],
+  "next": [
+    "Once the hosts are allowed: my key, and dev's, in data/keys.json (L4 with the dashboard agent).",
+    "Your scheduled tasks: the kit has the times (conductor 07:20, 12:20, 17:20 UTC) for L5.",
+    "13:00 stand-up: the network decision, and WS-25's first five companies.",
+    "Tell me 'acknowledge' when you have read this, and I will write people/indi/ack.json."
+  ],
+  "sources": [
+    "git log: 575d48b, 5eac229, 1e0febc",
+    "people/indi/mentor/2026-11-03-1940.md",
+    "board/WS-15, WS-19, WS-27, WS-59, WS-125 at commit 5eac229",
+    "admin/build/onboarding.mjs (how the level is computed)",
+    "the proxy's status at 22:58 UTC: pki.sgit.ai and web-summit.sgit.ai refused (403)"
+  ]
+}
