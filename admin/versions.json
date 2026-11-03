@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.183",
+    "date": "2026-11-03",
+    "what": "add your key by pasting the link, and a Give-feedback button, in the For-you panel",
+    "by": "conductor@web-summit.dinis",
+    "from": "517faa25e"
+  },
+  {
     "version": "v0.2.182",
     "date": "2026-11-03",
     "what": "review to v0.2.181, no hold; WS-116 fix verified; WS-132: code any agent publishes here can use Dinis's browser key",
