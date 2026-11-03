@@ -1,0 +1,105 @@
+{
+  "number": 1,
+  "date": "3 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "Your conductor is running and you can push; the keys are blocked by one setting",
+  "when": "3 November 2026, 00:40 UTC (first run)",
+  "by": "conductor@web-summit.jose",
+  "headline": "Your first agent is live: conductor@web-summit.jose started from your kit and pushed its first commit to dev from your account, which proves your push access and puts you at L3 on the leaderboard. Agent keys (L4) are blocked because this session's network policy refuses pki.sgit.ai, where the key tool lives. Two minutes in the environment settings fixes it. Three things need you, best before the 13:00 stand-up.",
+  "stats": [
+    {"n": "L3", "label": "your level, computed by the site (was L1)"},
+    {"n": "5 of 9", "label": "setup steps done"},
+    {"n": "1 of 5", "label": "your agents running (the conductor)"},
+    {"n": "0", "label": "of your agents' keys published (blocked)"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Allow pki.sgit.ai in your Claude environment",
+      "detail": "Every agent makes its key with pki-agent.mjs, downloaded from pki.sgit.ai. This session's network policy refused that host at 00:34 UTC, so no agent of yours can make a key, and L4 needs keys. It is on the 13:00 agenda.",
+      "options": [
+        "add pki.sgit.ai under Allowed domains (cloud environment menu in the session title bar, Edit, Network access), keeping package managers ticked",
+        "ask Dinis for a copy of the tool in the repository instead"
+      ],
+      "recommend": "Allow the host now; then tell me and I make my key at once."
+    },
+    {
+      "id": "2",
+      "ask": "Start your dashboard agent (and your dev agent)",
+      "detail": "Both prompts are ready in people/jose/kit/README.md: open a new session, paste the prompt, let it run once. The dashboard agent is the other half of L4.",
+      "options": [
+        "dashboard agent today, dev agent today too",
+        "dashboard agent today, dev agent after the stand-up"
+      ],
+      "recommend": "Both today, after you allow pki.sgit.ai, so each makes its key on its first run."
+    },
+    {
+      "id": "3",
+      "ask": "Put me on a schedule",
+      "detail": "Create a scheduled task that fires into this same session at 07:20, 12:20 and 17:20 UTC (cron 20 7,12,17 * * *), with the scheduled-task prompt in the kit. That is the L5 step for the conductor.",
+      "options": [
+        "yes, at those times",
+        "different times (tell me)"
+      ],
+      "recommend": "Yes, at those times: each run lands before a stand-up."
+    }
+  ],
+  "you_asked": [
+    {
+      "at": "3 Nov, 00:30",
+      "said": "You are conductor@web-summit.jose, Jose Bota's conductor.",
+      "done": "Read CLAUDE.md, the start page, your brief, your profile, the agents page, your kit and your mentor's note; recorded your push access and declared your agents; added one item to the 13:00 stand-up; this brief",
+      "where": "commit 44b2feb on dev",
+      "status": "done"
+    },
+    {
+      "at": "3 Nov, 00:30",
+      "said": "Make your own key ... and commit only its public half as an entry in data/keys.json.",
+      "done": "Not done: pki.sgit.ai refused by the session's network policy. Nothing faked.",
+      "where": "people/jose/onboarding.json",
+      "status": "waiting"
+    }
+  ],
+  "sections": [
+    {
+      "title": "What changed in people/jose/",
+      "items": [
+        "onboarding.json: Can push = yes (evidence: this conductor's commit, pushed from your account); level 3; the key blocker recorded.",
+        "agents.json (new): conductor running; dashboard and dev ready in the kit; automation (WS-39) and helper (WS-35) proposed in your brief. No schedule claimed until one exists.",
+        "dashboard.md: a short 'My agents' section, until your dashboard agent takes the page over."
+      ]
+    },
+    {
+      "title": "From your mentor (suggestions, yours to take or leave)",
+      "items": [
+        "The note of 2 Nov, 22:50 asked whether the GitHub invitation had arrived: it had; you can push.",
+        "It suggests your dev agent's first job could be writing up your n8n WhatsApp flow (what it does, what you tried, what you learned), feeding WS-39 (due Wed 4 Nov), and pairing with Angelo on WS-33 and WS-35. I propose the same: shall I hand that to dev@web-summit.jose once it runs?"
+      ]
+    },
+    {
+      "title": "Your open issues due soonest",
+      "table": {
+        "head": ["Issue", "Due", "What"],
+        "rows": [
+          ["WS-33", "Tue 3 Nov", "Make the repository safe for everyone to commit to"],
+          ["WS-35", "Tue 3 to Wed 4 Nov", "Help each person through setup (L1 to L4)"],
+          ["WS-39", "Wed 4 Nov", "A WhatsApp number in the team group, and the RiskMandate Slack"],
+          ["WS-34", "Wed 4 Nov", "Behaviour policies for every agent and every person"]
+        ]
+      }
+    }
+  ],
+  "next": [
+    "When you allow pki.sgit.ai: make my session key and publish its public half in data/keys.json.",
+    "When your dashboard and dev agents start: record them in agents.json and onboarding.json.",
+    "Next run: read any new mentor note and anything for you in the git log, then brief 2."
+  ],
+  "sources": [
+    "git log on dev, 3 Nov 00:38 UTC (commit 44b2feb pushed by release.sh)",
+    "the leaderboard logic: admin/build/onboarding.mjs",
+    "board/*.md, 'for: jose' and 'due'",
+    "people/jose/mentor/2026-11-02-2250.md",
+    "the agent proxy's status: pki.sgit.ai connect_rejected, 3 Nov 00:34 UTC",
+    "data/meetings/2026-11-03-1300/20261103T0035-jose-s-agents-cannot-fetch-the-key-tool-.json"
+  ]
+}
