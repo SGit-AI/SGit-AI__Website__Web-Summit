@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.30",
+    "date": "2026-11-03",
+    "what": "Ask Claude chats in the page through OpenRouter, Dinis's command centre first",
+    "by": "dev@web-summit.dinis",
+    "from": "8370ede55"
+  },
+  {
     "version": "v0.2.29",
     "date": "2026-11-03",
     "what": "the Official Sign-off for the print files: everyone signs with their agent's PKI key (WS-113)",
