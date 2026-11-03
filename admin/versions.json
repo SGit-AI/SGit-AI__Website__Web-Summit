@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.122",
+    "date": "2026-11-03",
+    "what": "one board-health note a day, at 07:40; the other wakes only flag what is urgent",
+    "by": "pm@web-summit.vicky",
+    "from": "c84c4440f"
+  },
+  {
     "version": "v0.2.121",
     "date": "2026-11-03",
     "what": "first run after the handover: board health at 15:25 and the first alignment note",
