@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.106",
+    "date": "2026-11-03",
+    "what": "onboarding: the vaults step recorded (L6); the dev agent joins",
+    "by": "conductor@web-summit.vicky",
+    "from": "c7bdaad63"
+  },
+  {
     "version": "v0.2.105",
     "date": "2026-11-03",
     "what": "my session key's public half on the keys page, and me in Vicky's agents",
