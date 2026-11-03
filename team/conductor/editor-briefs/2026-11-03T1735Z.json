@@ -1,0 +1,33 @@
+{
+  "number": 9,
+  "date": "2026-11-03",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "The order is confirmed and every size is in; the generic QR waits for one word from you",
+  "when": "Tuesday 3 November 2026, 17:35 UTC",
+  "by": "conductor@web-summit.dinis",
+  "headline": "The print order is confirmed with the printer (procurement@web-summit.silvio, after your yes at 14:45 via Silvio), and every size is in (WS-130 done; the T-shirts a mix of M, L and XL per colour, your call). Angelo is the second at L6 and signed his print set. But the generic QR has not replaced the signed set: the designer has the switch ready and is waiting for your yes in its own session, rightly, since my message is not your word. 2 of 7 sets are signed. Main is still unprotected.",
+  "stats": [
+    {"n": "41", "label": "agent commits since brief 8"},
+    {"n": "2 of 7", "label": "print sets signed (Vicky, Angelo)"},
+    {"n": "2", "label": "people at L6 (Vicky, Angelo)"},
+    {"n": "14", "label": "decisions for you at 18:00"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "Say yes to the designer: the generic QR becomes the main set", "detail": "Its session (designer@web-summit.dinis) has the change stashed and asks for your yes there. Once it releases, every set is signed again on the new files, so Vicky's and Angelo's sign-offs are superseded and their agents re-sign.", "options": ["reply yes in the designer session", "keep the personal QR codes"], "recommend": "Reply yes in the designer session now; then give me your words to sign your set, the hoodie and the card."},
+    {"id": "2", "ask": "Your sign-off: your set, the hoodie H1 and the card C1", "detail": "On the new files, once the designer releases. Your words, e.g. 'I approve my print set, the hoodie and the card', and I sign with my key (now named conductor@web-summit.dinis on the keys page).", "options": ["approve", "changes (say which)"], "recommend": "Approve once the generic set is live."},
+    {"id": "3", "ask": "The 13:00 decisions, still unrecorded", "detail": "Your dashboard agent recorded today's merch yes and the sizes; nothing from the 13:00 itself. At 18:00, say each decision aloud and I record it from your words (WS-107).", "options": ["record at 18:00", "send me the 13:00 decisions in a message"], "recommend": "At 18:00, one line per decision."}
+  ],
+  "you_asked": [
+    {"at": "3 Nov, ~14:45", "said": "my tshirt size which is XL", "done": "people/dinis/merch.json", "where": "v0.2.134", "status": "done"},
+    {"at": "3 Nov, ~17:05", "said": "XL for me, and switch to generic QR", "done": "Hoodie XL recorded; the generic QR confirmation recorded on WS-113 and passed to the designer, who is waiting for your yes in its session.", "where": "WS-113", "status": "waiting on you"}
+  ],
+  "team": [
+    {"id": "procurement@web-summit.silvio", "status": "active", "doing": "the order confirmed with the printer; WS-130 every size in; the sign-off tool fixed and in the gate (WS-116)"},
+    {"id": "Angelo's agents", "status": "L6", "doing": "his first vault, his print set signed, WS-128 and WS-129 raised"},
+    {"id": "Vicky's agents", "status": "L6", "doing": "logistics@ and pm@ took over from her conductor at 15:16"},
+    {"id": "designer@web-summit.dinis", "status": "waiting on you", "doing": "the generic-QR switch, stashed until your yes"},
+    {"id": "dashboard@web-summit.dinis", "status": "active", "doing": "fourteen 18:00 decisions in order of urgency, the print sign-off first"}
+  ],
+  "next": ["18:00: the stand-up; decisions recorded in your words.", "After your yes: the generic set live, every set re-signed, the order sheet to the printer."],
+  "sources": ["git log since 2026-11-03T14:36Z (dev)", "print/ at 17:30 (2 of 7 signed)", "the designer session's status at 17:30", "api.github.com branches/main at 17:30 (protected: false)"]
+}
