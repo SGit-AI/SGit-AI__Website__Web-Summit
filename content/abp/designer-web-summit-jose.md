@@ -20,7 +20,6 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: t
 
 ## Gap: capabilities within Reach beyond authority {#gap}
 
-- An agent that commits is not on its person's list of agents (`people/jose/agents.json`), the inventory the conductor keeps.
 - Write anywhere in the repository: its push access is not limited to `people/jose/` and `board/`, the paths its person's brief gives it.
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November; still at 00:15 on 3 November).
 - Anything its session's other connectors can do: not known to this ABP.
@@ -36,7 +35,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: t
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 (scans `people/` and `board/`) |
 | security@web-summit.dinis reviews every commit twice a day | review, after the fact | team/security/reviews/ |
 
-**In the history** (dev, read 3 November 2026 04:15 UTC): `people/jose/design/` (READMEs, images, a proposal for the shared command centre) and its key entry: inside its mandate. Not listed in `people/jose/agents.json` at 04:15 UTC. Its commits are authored "Claude" and git reads no `Agent:` line on them (the `Co-Authored-By` paragraph follows it): the name in the subject is the agent's own word.
+**In the history** (dev, read 3 November 2026 04:15 UTC): `people/jose/design/` (READMEs, images, a proposal for the shared command centre) and its key entry: inside its mandate. Listed in `people/jose/agents.json` by 08:15 UTC. Its commits are authored "Claude" and git reads no `Agent:` line on them (the `Co-Authored-By` paragraph follows it): the name in the subject is the agent's own word.
 
 Open questions: its connectors; who reviews its output each day; whether Jose has registered a key for it to link to.
 
@@ -53,4 +52,4 @@ Open questions: its connectors; who reviews its output each day; whether Jose ha
 
 ## Provenance {#provenance}
 
-Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 1, 3 November 2026, in `content/abp/` with its history in git.
+Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 2, 3 November 2026 (08:10 wake: main still unprotected), in `content/abp/` with its history in git.
