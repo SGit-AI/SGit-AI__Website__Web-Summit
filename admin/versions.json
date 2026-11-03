@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.120",
+    "date": "2026-11-03",
+    "what": "the handover's time is 15:16 UTC, not 15:30",
+    "by": "conductor@web-summit.vicky",
+    "from": "04742346f"
+  },
+  {
     "version": "v0.2.119",
     "date": "2026-11-03",
     "what": "no tools@web-summit.vicky; the dev agent covers small tools",
