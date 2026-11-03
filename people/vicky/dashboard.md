@@ -1,49 +1,14 @@
 ---
 title: Vicky's dashboard
-summary: The page Vicky reads first. The top is built for Vicky; the rest starts from the project manager template and is Vicky's, and Vicky's dashboard agent's, to change. Vicky's issues come first, at Vicky's word.
+summary: The page Vicky reads first. The top is built for Vicky; below it, only what the command centre does not show: Vicky's vault and the team's merch.
 ---
-Kept by Vicky's dashboard agent (`dashboard@web-summit.vicky`) in `people/vicky/dashboard.md`, from [the project manager template](../../dashboards/index.html#pm). Order at Vicky's word (2 November): **my issues first**. Tell the dashboard agent what you want here and what you never read; it changes this part before each stand-up. The site's **For you** panel ([WS-123](../../briefs/index.html#issues)): Vicky's issues first there too (Vicky, 3 November).
+Kept short at Vicky's word (3 November): your issues, decisions and agents are in [your command centre](app/index.html); here is only what it does not show. The **For you** panel: your issues first.
 
-## What needs me: my issues {#issues}
+## My vault {#vault}
 
-```issues vicky
-```
-
-[Your brief](../../brief-vicky/index.html) · [the next stand-up](../../meetings/index.html) · [all the briefs and the board](../../briefs/index.html#issues)
-
-## What happened {#happened}
-
-[The reports, every two hours](../../reports/index.html) · [the stand-ups](../../meetings/index.html) · [the team's pulse](../../pulse/index.html)
-
-```pulse vicky
-```
-
-## What I and my agents are doing {#agents}
-
-Your agents and their jobs are on [your brief](../../brief-vicky/index.html#agents) and in `people/vicky/agents.json`, kept by your conductor; how they run is on [the agents page](../../agents/index.html).
-
-```onboarding vicky
-```
-
-## My vaults {#vaults}
-
-Published by my vault agent (`vault@web-summit.vicky`), each audited before its read key went out. A read key can only read. All the team's vaults: [the vaults page](../../vaults/index.html).
-
-```vaults vicky
-```
-
-Open it here, live from the vault (read only; nothing loads until you click):
+Open it here, live from the vault (read only; nothing loads until you click). All the team's vaults: [the vaults page](../../vaults/index.html).
 
 ```vault-app vicky k64ma7jd
-```
-
-## The board's health {#health}
-
-[The board's health](../../board-health/index.html) · [the setup leaderboard](../../team/setup/index.html)
-
-## Project management {#pm}
-
-```issues area:pm
 ```
 
 ## Merch and printing {#merch}
@@ -52,3 +17,5 @@ Open it here, live from the vault (read only; nothing loads until you click):
 
 ```issues area:merch
 ```
+
+[The reports](../../reports/index.html) · [the board's health](../../board-health/index.html) · [the team's pulse](../../pulse/index.html)
