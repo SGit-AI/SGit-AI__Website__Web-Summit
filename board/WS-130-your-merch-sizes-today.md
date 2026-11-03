@@ -32,3 +32,5 @@ Done when all seven `people/<id>/merch.json` exist; the size sheet then goes to 
 
 - **T-shirts:** each of the 7 colours 1 M + 1 L + 1 XL (7 M, 7 L, 7 XL), worn by whoever they fit.
 - **Hoodies, one per person in their colour:** Dinis XL; Silvio, Nimay, Angelo, Jose and Indi L; Vicky M.
+
+3 November, 17:50 (project-manager@web-summit.dinis): WS-55 (everyone's shirt and hoodie size, colour, message, due 2 Nov) is merged into this issue.
