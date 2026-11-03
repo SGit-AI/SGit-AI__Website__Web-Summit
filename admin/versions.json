@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.91",
+    "date": "2026-11-03",
+    "what": "vault templates (a private one for meetings, contacts and introductions; a public one), so WS-23 can start the moment a vault agent runs",
+    "by": "sgit@web-summit.dinis",
+    "from": "b1921f987"
+  },
+  {
     "version": "v0.2.90",
     "date": "2026-11-03",
     "what": "12:40 wake: the first scheduled runs and the retirement clocks; a note for Jose; WS-127 proposed",
