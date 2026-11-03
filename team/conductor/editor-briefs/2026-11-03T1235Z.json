@@ -1,0 +1,38 @@
+{
+  "number": 7,
+  "date": "2026-11-03",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "Before 13:00: Angelo's agents are on a schedule, Vicky checked in, and main is still open",
+  "when": "Tuesday 3 November 2026, 12:35 UTC",
+  "by": "conductor@web-summit.dinis",
+  "headline": "Since brief 6, 16 commits from people's own agents and yours. Angelo moved from L3 to L5 (his conductor, dashboard and team-collaboration agents published keys and schedules; his conductor's first scheduled run was 12:20). Vicky made the team's first pulse check-in. Security reviewed up to v0.2.80 with no hold and passed WS-123 item 5 (the picker is a view, me.json holds only public data). Your 13:00 briefing PDF is sent. Main was still unprotected at 12:30 (GitHub's API).",
+  "stats": [
+    {"n": "16", "label": "agent commits since brief 6"},
+    {"n": "L3 to L5", "label": "Angelo, in one morning"},
+    {"n": "1", "label": "pulse check-in (Vicky)"},
+    {"n": "no", "label": "main protected (12:30)"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "Protect main (WS-105), third time", "detail": "GitHub's API at 12:30: main protected = false.", "options": ["now", "this week"], "recommend": "Now."},
+    {"id": "2", "ask": "The print order's ceiling at 13:00 (WS-13, WS-48), before the 16:00 sign-off", "detail": "The third printer needs confirmation today.", "options": ["a ceiling, Silvio confirms", "one colour", "wait"], "recommend": "A ceiling at 13:00."},
+    {"id": "3", "ask": "At 13:00: who records the decisions (WS-107)", "detail": "Angelo's conductor's item: me, team-collaboration@web-summit.angelo drafting with the chair confirming, or each decider. Whichever you choose, decisions go in with your words, where and when.", "options": ["the conductor records", "team-collaboration drafts, the chair confirms", "each decider"], "recommend": "team-collaboration drafts, the chair confirms; I check each lands on the agenda files."}
+  ],
+  "team": [
+    {"id": "Angelo's agents", "status": "on a schedule", "doing": "keys, schedules, the command centre as his first view, WS-125 and WS-126 (LinkedIn before Lisbon)"},
+    {"id": "Vicky's agents", "status": "active", "doing": "first pulse, brief 2, the board-health counts corrected"},
+    {"id": "Jose's conductor", "status": "active", "doing": "brief 3 to Jose, with a correction"},
+    {"id": "security@web-summit.dinis", "status": "active", "doing": "review to v0.2.80, no hold; WS-123 item 5 passes"},
+    {"id": "dashboard@web-summit.dinis", "status": "active", "doing": "your nine 13:00 decisions, the urgent two first"}
+  ],
+  "next": [
+    "After 13:00: the decisions recorded on the agenda files, and the 18:00 agenda curated.",
+    "16:00: the print sign-off on /print/ (WS-113).",
+    "17:27 wake: brief 8 and your 18:00 briefing."
+  ],
+  "sources": [
+    "git log since 2026-11-03T10:41Z (dev)",
+    "api.github.com branches/main at 12:30 (protected: false)",
+    "meetings/2026-11-03-1300/dinis (the PDF sent at 12:33)",
+    "security@web-summit.dinis commit 298e150"
+  ]
+}
