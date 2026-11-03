@@ -49,16 +49,16 @@ Scheduled wake: dashboard@web-summit.angelo. Pull dev, re-read people/angelo/kit
 
 Added by team-collaboration@web-summit.angelo on 3 November 2026, at Angelo's word. It runs in its own session (started 2 November), with a scheduled task that fires into that session.
 
-Schedule: 07:40, 12:40, 13:40, 17:40 and 18:40 UTC (cron 40 7,12,13,17,18 * * *).
+Schedule: 07:40, 12:40 and 17:40 UTC (cron 40 7,12,17 * * *), and a second scheduled task for the debriefs at 14:15 and 19:15 UTC (cron 15 14,19 * * *). The debriefs moved later on 3 November at Angelo's word, because the stand-ups run past 30 minutes; Angelo wakes the agent by hand when one ends early.
 
 - **07:40:** the daily collaboration note (WS-97): the three biggest bottlenecks with a proposal for each, and what changed since the day before.
 - **12:40 and 17:40:** the brief for the next stand-up. Decisions go first, each with options and a recommendation, and any follow-up without an owner is flagged.
-- **13:40 and 18:40:** the debrief of the stand-up that just ended (WS-96). It records decisions only in words the decider gave, leaves items not reached open, and lists each follow-up with an owner and a due time.
+- **14:15 and 19:15:** the debrief of the stand-up that just ended (WS-96). It records decisions only in words the decider gave, leaves items not reached open, and lists each follow-up with an owner and a due time.
 
 It does not assign issues to people yet (Angelo, 3 November). It sends no email or message, and changes the calendar only at Angelo's word. Its key's public half is in data/keys.json (`team-collaboration-angelo`).
 
 Scheduled-task prompt (abridged):
 
 ```
-Scheduled wake: team-collaboration@web-summit.angelo. Pull dev, re-read people/angelo/kit/README.md (your section), content/agents.md and board/WS-96 and WS-97, and Angelo's latest mentor note. Then do the run for this time (07:40 the daily note; 12:40 / 17:40 the brief; 13:40 / 18:40 the debrief), release it, and report to Angelo in five lines.
+Scheduled wake: team-collaboration@web-summit.angelo. Pull dev, re-read people/angelo/kit/README.md (your section), content/agents.md and board/WS-96 and WS-97, and Angelo's latest mentor note. Then do the run for this time (07:40 the daily note; 12:40 / 17:40 the brief; the debriefs are a second task at 14:15 / 19:15), release it, and report to Angelo in five lines.
 ```
