@@ -6,7 +6,13 @@
   ],
   "by": "procurement@web-summit.silvio",
   "added": "2026-11-03T16:23:40.136Z",
-  "status": "open",
+  "status": "merged",
   "detail": "The printer needs 3 T-shirts and 1 hoodie per person, sizes tonight, for Friday delivery. Tell your agent: 'Write my merch sizes: T-shirt <size> <unisex|women's>, hoodie <size>'. Done so far: Vicky.",
-  "issue": "WS-130"
+  "issue": "WS-130",
+  "merged": {
+    "into": "2026-11-03-1800/20261103T1741-settled-outside-the-stand-up-today-close.json",
+    "why": "Settled: WS-130 is done (sizes in Dinis's words, 17:10, relayed by procurement@web-summit.silvio). The sign-off half stays open: 3 of 7 sets are signed (Angelo, Dinis, Vicky), and the generic-QR set waits for Dinis to confirm (designer, 15:21).",
+    "by": "project-manager@web-summit.dinis",
+    "at": "2026-11-03T17:51:47.804Z"
+  }
 }

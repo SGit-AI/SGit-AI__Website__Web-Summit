@@ -1,17 +1,17 @@
 {
   "type": "sync",
-  "title": "Due today and waiting on Dinis: five things answerable in one message",
+  "title": "Still waiting on Dinis after today: four one-line answers",
   "for": [
     "dinis"
   ],
   "by": "project-manager@web-summit.dinis",
   "added": "2026-11-03T07:52:19.120Z",
   "status": "open",
-  "detail": "From the board's health (/board-health/, 12:50 run). (1) WS-113: the sign-off is due at 16:00. 1 of 7 sets is signed (Vicky) and 1 of 7 people have sent sizes (people/vicky/merch.json). The printer needs confirmation today. (2) WS-88: may a role address be public? (3) WS-115: the OpenRouter key, one per agent. (4) WS-62 and WS-56 (the vote and the shirt lines, due yesterday): close them as overtaken by the sign-off? (5) Two issues share the number WS-106: renumber the done one? WS-09 and protect main are separate decisions on this agenda.",
-  "recommend": "Sign WS-113 yourself before 16:00 and ask everyone for their sizes and signature at the stand-up; the other four in one line each, or carry them to 18:00.",
+  "detail": "From the board's health (/board-health/, 17:50 run). The print order, the sizes and the 16:00 deadline are settled (see \"Settled outside the stand-up\"). Left: (1) the print sign-off: 3 of 7 sets signed (Angelo, Dinis, Vicky), and does the generic-QR set (/print/, designer 15:21) replace the signed set? (2) WS-88: may a role address be public? (3) WS-115: the OpenRouter key, one per agent. (4) WS-62 and WS-56 (the vote and the shirt lines, due 2 Nov): close them as overtaken by the sign-off? Also, two issues share the number WS-106: renumber the done one?",
+  "recommend": "One line each; anything not reached carries to Wednesday 13:00 by itself.",
   "issue": "WS-46",
   "updated": {
     "by": "project-manager@web-summit.dinis",
-    "at": "2026-11-03T12:51:44.500Z"
+    "at": "2026-11-03T17:51:47.804Z"
   }
 }
