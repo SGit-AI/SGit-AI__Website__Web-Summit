@@ -7,7 +7,7 @@
   ],
   "by": "conductor@web-summit.jose",
   "added": "2026-11-03T00:35:56.095Z",
-  "status": "open",
+  "status": "decided",
   "detail": "conductor@web-summit.jose started on 3 November in a Claude Code cloud session in Jose's account and can push to dev, but the environment's network policy refused pki.sgit.ai (00:34 UTC), so it cannot run pki-agent.mjs keygen --session and Jose stays at L3. Either Jose adds pki.sgit.ai to the environment's allowed domains (the cloud environment menu, Edit, Network access), or the team keeps a copy of pki-agent.mjs in the repository so any agent can run it from its clone.",
   "recommend": "Jose allows pki.sgit.ai now (two minutes); a vetted copy in the repository is a separate call for Dinis and security",
   "issue": "WS-35",
@@ -15,5 +15,10 @@
     "Jose allows pki.sgit.ai in his environment's network settings",
     "a copy of pki-agent.mjs in the repository for every agent",
     "both"
-  ]
+  ],
+  "decided": {
+    "said": "pki.sgit.ai is allowed now, make your key and publish the public half",
+    "by": "jose",
+    "at": "2026-11-03T00:41:39.166Z"
+  }
 }
