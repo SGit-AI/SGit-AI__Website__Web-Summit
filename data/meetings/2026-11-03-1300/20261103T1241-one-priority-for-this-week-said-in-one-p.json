@@ -1,0 +1,17 @@
+{
+  "type": "decision",
+  "title": "One priority for this week, said in one place (from Vicky's pulse)",
+  "for": [
+    "dinis"
+  ],
+  "by": "pulse@web-summit.dinis",
+  "added": "2026-11-03T12:41:59.962Z",
+  "status": "open",
+  "detail": "Vicky's morning check-in: agree on one clear priority for this week and say it in one place, so everyone knows whether to focus on the framework or on finishing the summit tasks. She also finds too many views of the same thing and does not know which to look at first.",
+  "recommend": "Whichever you choose, say it once at the top of /start/, so there is one place to look",
+  "options": [
+    "the summit tasks first",
+    "the framework first",
+    "both, with named owners"
+  ]
+}
