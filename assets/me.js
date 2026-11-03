@@ -30,6 +30,8 @@
             panel.innerHTML = render(me, ME)
             const x = panel.querySelector('[data-me-clear]'); if (x) x.onclick = () => { set(''); draw() }
             if (KR && KR.person === me.id) unlocked(me)
+            else if (KR) addKeyBox(me)
+            const fb = panel.querySelector('[data-feedback]'); if (fb) fb.onclick = () => { try { localStorage.setItem('fb.on', 'true') } catch { } location.reload() }
         }
         draw()
         window.addEventListener('storage', e => { if (e.key === KEY) draw() })
@@ -50,6 +52,14 @@
     const agent = a => `<li><span class="dot ${esc(a.status)}" aria-hidden="true"></span><b>${esc(a.name.split('@')[0])}</b> <span class="muted">${esc(a.status)}${a.last_at ? ', ' + esc(ago(a.last_at)) : ''}</span>${a.last ? `<br><span class="muted">${esc(a.last)}</span>` : ''}</li>`
 
     // the person's own key is in this browser (assets/keyring.js): open what is sealed to them on the site
+    // no key for this person here yet: paste the link (or scan the QR with the phone's camera, which opens the link)
+    function addKeyBox(p) {
+        const box = document.createElement('details'); box.className = 'fy-unlocked'
+        box.innerHTML = `<summary>Add your key, ${esc(p.first)}</summary><p class="muted">Your conductor gives you a key as a QR code or a link. On a phone, scan the QR with the camera; on a computer, paste the link here. It stays in this browser only.</p><form><label class="sr" for="fy-key">Your key link</label><input id="fy-key" type="password" autocomplete="off" placeholder="paste the link from your conductor" style="width:100%;max-width:32rem"> <button type="submit">Add</button> <span class="muted" data-msg></span></form>`
+        panel.appendChild(box)
+        box.querySelector('form').onsubmit = async e => { e.preventDefault(); const msg = box.querySelector('[data-msg]'); try { const who = await KR.add(box.querySelector('input').value); box.querySelector('input').value = ''; try { localStorage.setItem('ws.me', who) } catch { } location.reload() } catch (err) { msg.textContent = err.message } }
+    }
+
     async function unlocked(p) {
         const box = document.createElement('div'); box.className = 'fy-unlocked'
         box.innerHTML = `<h2>Unlocked: only your key opens this</h2><p class="muted">Key ${esc(KR.fingerprint)}, issued to ${esc(p.first)} for this session. <button type="button" data-lock>Remove the key from this browser</button></p><div class="fy-sealed muted">Opening…</div>`
@@ -77,7 +87,7 @@
         }
         const b = blocks[section] || blocks.home
         return `<header><span class="av" style="--c:${esc(p.colour)}">${esc(ini(p.name))}</span><div><b>For you, ${esc(p.first)}</b><span class="muted">${esc(p.level_name)} · ${p.open} open issues · data ${esc(ME.version)}, ${esc(ago(ME.built_at))}</span></div>
-<nav class="fy-go"><a href="${up}${esc(p.links.centre)}">Command centre</a><a href="${up}${esc(p.links.dashboard)}">Dashboard</a><a href="${up}${esc(p.briefing)}">Stand-up briefing</a><button type="button" data-me-clear>Not ${esc(p.first)}?</button></nav></header>
+<nav class="fy-go"><a href="${up}${esc(p.links.centre)}">Command centre</a><a href="${up}${esc(p.links.dashboard)}">Dashboard</a><a href="${up}${esc(p.briefing)}">Stand-up briefing</a><button type="button" data-feedback title="Open the feedback pane on every page of this browser">Give feedback</button><button type="button" data-me-clear>Not ${esc(p.first)}?</button></nav></header>
 <div class="fy-body">${ring(p)}<div class="fy-tiles">${tiles.map(([n, l, t]) => `<div class="${t}"><b>${n}</b><span>${esc(l)}</span></div>`).join('')}</div>${spark(p)}</div>
 <div class="fy-cols">${b.map(([h, x]) => `<div><h2>${esc(h)}</h2>${x}</div>`).join('')}</div>`
     }
