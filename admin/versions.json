@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.157",
+    "date": "2026-11-03",
+    "what": "19:15 wake: the 18:00 debrief waits for the transcript; no call decision has reached the repository yet",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "dbb8a40ff"
+  },
+  {
     "version": "v0.2.156",
     "date": "2026-11-03",
     "what": "Vicky's view on who records the stand-up decisions (WS-107): option 2",
