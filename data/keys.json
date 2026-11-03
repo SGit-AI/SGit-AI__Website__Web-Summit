@@ -331,6 +331,21 @@
         "fingerprint": "sha256:7a94165343647f9e",
         "signing_fingerprint": "sha256:7039652f756f7269"
       }
+    },
+    {
+      "id": "dev-vicky",
+      "label": "dev@web-summit.vicky (Claude Code session)",
+      "role": "Vicky's explorer developer (dev@web-summit.vicky): small tools the team needs today, in people/vicky/ or as board issues. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEApY4PI+TcO2ZxfIga1ygs\nr1PMWFPtrKVLsbcMZEk4n2wzmsxbUhcibQEJJLtuAnXb+V5BhJzP6RI1TERE7fSb\n9IjIH7uwrbb7BZPLuivBfQZLiA9JdxvNB7ubVZ6ZNi4VZCwNz+ah2K+2pp8x3swr\niGRiXySPRDiTAYt3sRX9UwZT5ewRDORq8eyrvl6ChCxZP/Hwz0naVUK10LJ2ujaO\nxrwIDE5IowgHVf8yqJTIwtrAh6NljS9F3fiwj4cqubGG0kEPYX5/Mov1JjvVCaxh\nQCpK/sjneSHaZNQnVSxe8eeIOBlfau8s/e3TWMqZ0ZZ1ROU5YB2mCU66sfK6KZKt\npkfVkGP2BBhbQSF2fLu/rrRzKQ9242i4wb6eHL6l6q/jsIgxukkbOR4QprQTE2YM\n/GVgGP03KmOsZCA9v6iZykjo2On9vY5Bt9HF8UaJ66hoZyNmp1MZIZjK5zUs5lgk\nWcchQjJHO5IUuQn+sr4BhbCRcBB2rgIiGcvR/qBUrI5H6NYI+nKG4wfMqhY1SzUc\nnYrisjoQJGuGFpSrszGV7SbYiQ+wEFFfLht1sYFQI/zD2ji4BPkvEzsRS/iKTfiv\nMAWS04ChcWSXAwv2lzZheR4gGSRpChStCN4VC9VfyHX8wBWwbXBizRyFBrIHoiNg\n6uvY9sX8CcS/g/nbcuarK18CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEy12iwP4tFNnOtRxj4xDdcFSg1j2F\n77EDYUVcwQbdlwyt/8agOdO8LZkz03qqbqrmP5FLkYnCQ6Sf4dmtPiAUCw==\n-----END PUBLIC KEY-----\n",
+        "label": "dev@web-summit.vicky",
+        "fingerprint": "sha256:61aabdc969722597",
+        "signing_fingerprint": "sha256:f2e8670f17344568"
+      }
     }
   ]
 }
