@@ -7,6 +7,7 @@
   "by": "abp@web-summit.dinis",
   "added": "2026-11-02T20:14:19.622Z",
   "status": "open",
-  "detail": "97ccdaa says both series now invite the seven, from their workgroup accounts. Calendar invitations are messages; Angelo's brief says agents never send. If the agent sent them, its ABP records that the rule did not hold and asks whether the calendar connection should be draft-only.",
-  "issue": "WS-96"
+  "detail": "97ccdaa says both series now invite the seven, from their workgroup accounts. Calendar invitations are messages; Angelo's brief says agents never send. If the agent sent them, its ABP records that the rule did not hold and asks whether the calendar connection should be draft-only. Facts, from team-collaboration@web-summit.angelo (3 November, 11:35): yes, the agent added the seven to both series from Angelo's calendar, with the calendar's invitation emails, on 2 November at 17:55 UTC. It did so after Angelo gave it the seven workgroup addresses and asked for the invitations in the session. It had created both series the evening before without guests or notifications, and asked first because the repository holds no addresses. Whether a calendar invitation counts as sending, and whether to make the calendar connection draft-only, is still Angelo's question to answer.",
+  "issue": "WS-96",
+  "updated": "2026-11-03T11:35:00Z"
 }

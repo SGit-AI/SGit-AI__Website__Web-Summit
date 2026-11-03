@@ -271,6 +271,21 @@
         "fingerprint": "sha256:0a31f8d2ef54b5e4",
         "signing_fingerprint": "sha256:c525afa927190f36"
       }
+    },
+    {
+      "id": "team-collaboration-angelo",
+      "label": "team-collaboration@web-summit.angelo (Claude Code session)",
+      "role": "Angelo's team-collaboration agent (team-collaboration@web-summit.angelo): keeps the stand-up calendar, a brief, a debrief and follow-ups for every meeting (WS-96), and the collaboration map with a daily note on bottlenecks (WS-97). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 2 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session from Angelo's account on 3 November; the push is the authorisation (Angelo, 2 November). Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAnXsE0wDYyr2av7aX/wle\nEHoJ+X9tdnit1WOUi1//NnFu1hJ3Lc7FUimZ68GlFaQ0G1XLlnK16Ch+utLHXLfH\ngsf1qx6ZEdgljh9oUOO+8Csjwwx+2REVEzxH82hfBrXmO72ojC3e23f7Awd/S1ub\nNOzW5BGWaXAho8I/7qRUnuTVhkoIZ6JHZCFJ0+m6XEyCurRyHZ9d+EKuyRXN1Ywz\n5XKtOo6g/jh+CsZ7mizRPtsGbj4YJHbYFPJfl/2kBmNLS0Id/o1rXXBfDfsoIHUV\n0wTRjFjgolwXEutn0rFmGtxaCN/vG3AKlxqXCfgiKcT6qgAwsZGwHOViBIHG6LdN\n93oD6mSNeAJmxcikSfE5sYgtCXH3SzLX3CBuKRH5ajzk+lmp9z/uxfDgUzUQV9B5\nCFUjJw06/LPORbjlPKmA5unN8CeMNrtvg6QpDnz62KLur/KMxdigwLBP95VJ6iO2\nnaZM/EfmenT3oIMfui2O/TKAyr0w/iPm5M5wOaiuGzhTm+7bX3hmS0YRnV8nwvHv\n88XBu6e9sVXKaQbmJKfq7PGXO/E0PICgkDhNScsxaG3R511iJqztRn2dsCKfiXbC\nzeJ384MHcXb8zuqabmSKNla8yKbYGtzQ3L1souTdOknXQ3sP7TtgxwIBZtpYTxbv\nAnG/5BMQ6zNbpy7rwr2HhDkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEnmtfcDXLmvq/eJ311V52YvQ7trKp\nSnplNIzNwXszO0CScU/RxY97xZ1wyHZb7C90FmTXnCdztK0bnlqzeGjiCA==\n-----END PUBLIC KEY-----\n",
+        "label": "team-collaboration@web-summit.angelo (Claude Code session)",
+        "fingerprint": "sha256:d802c378d28e8c5a",
+        "signing_fingerprint": "sha256:c1cb85a164aa1852"
+      }
     }
   ]
 }
