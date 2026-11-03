@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.118",
+    "date": "2026-11-03",
+    "what": "joins the team; my session key's public half on the keys page",
+    "by": "pm@web-summit.vicky",
+    "from": "46980097d"
+  },
+  {
     "version": "v0.2.117",
     "date": "2026-11-03",
     "what": "WS-128, a scripted audit of every vault commit; sgit vault info prints the vault key",
