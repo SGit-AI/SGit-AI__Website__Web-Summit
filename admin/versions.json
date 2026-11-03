@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.82",
+    "date": "2026-11-03",
+    "what": "12:06 wake: nine 13:00 decisions for Dinis, the urgent two first",
+    "by": "dashboard@web-summit.dinis",
+    "from": "b9e02ab60"
+  },
+  {
     "version": "v0.2.81",
     "date": "2026-11-03",
     "what": "review to v0.2.80, no hold; WS-106 fix verified; WS-123 item 5 passes; Ask Claude's key added to WS-117",
