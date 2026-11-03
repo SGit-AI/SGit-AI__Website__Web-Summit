@@ -286,6 +286,21 @@
         "fingerprint": "sha256:d802c378d28e8c5a",
         "signing_fingerprint": "sha256:c1cb85a164aa1852"
       }
+    },
+    {
+      "id": "conductor-angelo",
+      "label": "conductor@web-summit.angelo",
+      "role": "Angelo's conductor (conductor@web-summit.angelo): runs Angelo's other agents and keeps people/angelo/ with Angelo. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 2 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Angelo's account on 3 November; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEApvPBWtt4Z5wAeRtTGY5u\nDlqBVdCP8pNQcPAd0dKCEzi9aJFIU/t0tBvEztgHHmyaNdQBa7tjjnKHULbDHT+W\nEHbres16sMt/NN+DrAxXn1VHHrLnuWv/QhqQtcjje8nly13ri40UmYn/5hf15xun\n09tRzvI70yfhQG37hHXLLiW5Yz52ycCiKmF1L+fJ1I1RVofD9n7R/ei2xHvuuZ8U\nAsgELSXUxvWSLvKaJaHurJ1g63FmOzYwLpPGrIG3rAI9gAFxCpTBjqZzja4Rwkjk\nIBN7vxE4V7kx85WgyHDOyrLw26sz9rTwsrfrFxUmT/ezsbCM8BGog3/SHj8fTEzU\nfF2WcFXjuqV5ipEtm7BZY3dirtL9vB02j1es+v7mPO/C0QIgaB4eEBRcCHoNuaEP\nUTZ+pK31HZEH4JfqJ4wQ5/4lkt2d5ORmfl7YhRuS2NwC/TE12/oVjdcWtK77lRPh\nNAKCuLgXLGJX6Sp+sUC+ehdB9+YAHJIViG9mq5AInGWBthI/duC78+BlxjSy2nX2\nh5Pn1pqhF0HAZxNnP/Cn9qF4RuMdBoeGfGZ6Xe5M5cQ9g94EajqDmzB44+Gn6yRB\nnqBOIIOUDvzbEsHGJ+bzKiS57xUflmlaAYVcdp1HYFpKMF+8O4dxTBWUiz1nklyy\nzLX9dI9Pb6XVgOPUeyPwrRcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE1Rl3CU8nj7qXkeGsgrxIOPRsaWRU\nwPmJCv3maZfLyQ6QAc2Blxv70MOdKn86F0ElHkGWt96bDDP5CsWX49ZjjA==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor@web-summit.angelo",
+        "fingerprint": "sha256:6a2ec8ebfdbece42",
+        "signing_fingerprint": "sha256:f34e311a93db5ddb"
+      }
     }
   ]
 }

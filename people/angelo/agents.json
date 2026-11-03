@@ -2,7 +2,8 @@
   {
     "name": "conductor@web-summit.angelo",
     "job": "conducts Angelo's agents and keeps people/angelo/ with Angelo",
-    "session": "Claude Code cloud session in Angelo's account"
+    "session": "Claude Code cloud session in Angelo's account",
+    "schedule": "07:20, 12:20 and 17:20 UTC (cron 20 7,12,17 * * *), a scheduled task into its own session, at Angelo's word (3 November)"
   },
   {
     "name": "dev@web-summit.angelo",
@@ -13,6 +14,12 @@
     "name": "team-collaboration@web-summit.angelo",
     "job": "the team's collaboration: the stand-up calendar, a brief, a debrief and follow-ups for every meeting, the map of who works with whom (people and agents), and a daily note on bottlenecks",
     "schedule": "07:40, 12:40, 13:40, 17:40, 18:40 UTC (cron 40 7,12,13,17,18 * * *): the daily note at 07:40, each stand-up's brief 20 minutes before it, its debrief 40 minutes after it starts",
+    "session": "Claude Code cloud session in Angelo's account"
+  },
+  {
+    "name": "dashboard@web-summit.angelo",
+    "job": "keeps Angelo's command centre (his first view) and the classic dashboard, and asks Angelo one question a run",
+    "schedule": "30 7,12,17 * * * (07:30, 12:30, 17:30 UTC)",
     "session": "Claude Code cloud session in Angelo's account"
   }
 ]
