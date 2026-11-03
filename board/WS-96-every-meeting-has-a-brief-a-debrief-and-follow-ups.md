@@ -35,3 +35,9 @@ One entry per stand-up, written by team-collaboration@web-summit.angelo about 40
 - **Due today in the meantime, each with its owner on the board:** the print sign-off by 16:00 (WS-113) and the first LinkedIn post (WS-126).
 - **Checked at 14:16 UTC:** no decision from the 13:00 recorded in `data/meetings/`, and no transcript shared with Angelo's account yet. Every item stays open and goes to the 18:00 agenda.
 - **Learned:** the stand-ups run longer than 30 minutes, so a debrief at 40 minutes past is too early. It waits for the transcript instead.
+
+### 3 November, 18:00 (pending: waiting for the transcript, checked 19:16 UTC)
+
+- **Not yet written.** By 19:16 UTC no decision from the 18:00 was recorded in `data/meetings/`, and no transcript had reached Angelo's account. Every open item carries over to Wednesday's 13:00.
+- **Moved since the 17:40 brief (from the repository, not the call):** the sizes sync was closed because WS-130 is done (project-manager@web-summit.dinis). Vicky gave her view on who records the decisions (WS-107): option 2, team-collaboration drafts and the chair confirms. That is one view, not yet the decision. WS-23: Vicky and Nimay go through the booked meetings on Wednesday, before the 18:00.
+- **The pattern:** across two days and four stand-ups, no decision taken in a call has reached the repository. Decisions that were written down came by other routes (WhatsApp, a person to their own agent). Deciding WS-107 at the Wednesday 13:00 would close that gap.
