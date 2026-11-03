@@ -6,9 +6,9 @@
 // Optional: TODAY=2026-11-04 to see the board as of another day.
 import fs from 'fs'
 import path from 'path'
-import { build } from './app/data.mjs'
+import { build } from '../../admin/build/commandcentre.mjs'
 
-// one data layer for the dashboard's numbers and the command centre (people/silvio/app/data.mjs):
+// one data layer for the dashboard's numbers and the command centre (the team's shared admin/build/commandcentre.mjs):
 // the board, the agents (same rule as the site's inventory) and git history
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 const ME = 'silvio'
