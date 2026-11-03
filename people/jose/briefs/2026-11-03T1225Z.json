@@ -1,0 +1,89 @@
+{
+  "number": 3,
+  "date": "3 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "A correction: you are already on the roster; at 13:00 only one item is yours",
+  "when": "3 November 2026, 12:25 UTC (scheduled wake; since brief 2, 07:20 UTC)",
+  "by": "conductor@web-summit.jose",
+  "headline": "Brief 2 was wrong on one point: riskmandate-jose has been on the roster since 02:38 (sgit@web-summit.dinis, commit 31f3319), and the vaults page now says conductor-jose can be sealed to. I read the agenda item, not data/team.json, and should have checked the file. So the L6 blocker is no longer the roster but your vault agent (WS-120). The 13:00 agenda also changed: 'who records' and the push item (WS-09) no longer name you. Still preparing only: nothing on the board touched.",
+  "stats": [
+    {"n": "L5", "label": "your level (8 of 9); next: vaults"},
+    {"n": "1", "label": "13:00 decision still naming you (the roster)"},
+    {"n": "36", "label": "team commits since brief 2"},
+    {"n": "0", "label": "pulse check-ins on the team so far (08:40)"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "13:00: confirm riskmandate-jose is your account (the roster item)",
+      "detail": "Updated at 10:35 by conductor@web-summit.dinis: the account is on the roster; what is left is Dinis's confirmation. One line from you in your own words lets me close it with agenda.mjs decide (WS-107).",
+      "options": ["'riskmandate-jose is my account': I record it", "leave it to Dinis at the stand-up"],
+      "recommend": "Say the line: the item closes before the stand-up and nobody spends time on it."
+    },
+    {
+      "id": "2",
+      "ask": "Your pulse: confirm the draft from brief 2 as your midday check-in",
+      "detail": "The 13:00 sync 'The pulse starts today' asks everyone for people/<you>/pulse/2026-11-03-midday.md after the stand-up; the pulse agent reads at 13:10 and 19:40. Brief 2, section 6, has the draft; its 'blocking me' line about the roster is now wrong and I would drop it.",
+      "options": ["commit it as midday, without the roster line, with your 'feeling' answer", "you edit it first"],
+      "recommend": "Send me your 'feeling' line and any edits; I commit at once."
+    },
+    {
+      "id": "3",
+      "ask": "WS-39: which route (your dev agent and your mentor both wait on it)",
+      "detail": "From people/jose/dev/WS-39-findings.md: the official WhatsApp API cannot post into the team's existing group. Routes: 3, n8n drafts to you and you forward (works today); 4, Slack, once someone with admin makes the app and channel; 1, a third-party gateway on a WhatsApp Web session (risk of a ban; the gateway sees the group).",
+      "options": ["route 3 now, Slack next (dev's proposal)", "a gateway (route 1), with Dinis's agreement", "Slack only"],
+      "recommend": "Route 3 now and Slack next: official, no new number, and people still send."
+    }
+  ],
+  "you_asked": [
+    {"at": "3 Nov, about 02:05", "said": "Overnight: prepare, do not decide. Until I reply, do not pick, close, move or comment on any board issue.", "done": "Still in force: no reply since, and nothing on the board touched by me", "where": "git log", "status": "in progress"},
+    {"at": "3 Nov, about 02:05", "said": "Draft a split with Angelo.", "done": "Brief 2, section 3; waiting for your word before anything is picked or handed over", "where": "brief 2", "status": "waiting"}
+  ],
+  "sections": [
+    {
+      "title": "The correction",
+      "items": [
+        "Brief 2 said: 'data/team.json does not list [riskmandate-jose] for you, so the sealing tool refuses them.' Wrong at the time it was written: sgit@web-summit.dinis added riskmandate-jose (write) at 02:38 (31f3319), saying Dinis settled WS-106.",
+        "content/vaults.md now shows conductor-jose: pushed by riskmandate-jose, on the roster for jose, can be sealed to.",
+        "What I change: before writing about a file's state, I read the file, not an item about it."
+      ]
+    },
+    {
+      "title": "The 13:00 agenda, as it now is for you",
+      "items": [
+        "Your roster item: decision 1 above.",
+        "'Who records the decisions': merged at 10:35 into conductor@web-summit.angelo's item, now for Dinis, Angelo and Vicky (not you).",
+        "The push item (WS-09): now for Dinis, Angelo, Nimay and Indi; you are off it. Nimay and Indi are still at Can push (L1, 3 of 9).",
+        "Sync for everyone: the pulse starts today (decision 2)."
+      ]
+    },
+    {
+      "title": "From your mentor (08:41 note; suggestions)",
+      "items": [
+        "Start the vault agent from /vault-agent/ and publish a first vault (WS-120, due Wed 4 Nov): it needs SG_SEND_ACCESS_TOKEN set in your Claude environment, never in chat. That is the last step to L6.",
+        "Two of your agents wait on a choice: the designer's command-centre direction (Mission Control, Flight Deck or Morning Brief, in people/jose/design/command-centre/), and the WS-39 route (decision 3).",
+        "Its question, 'Is your roster item settled?', is answered by the correction above."
+      ]
+    },
+    {
+      "title": "Your agents since brief 2",
+      "items": [
+        "dashboard@web-summit.jose, 07:37: the 13:00 decisions, the vault agent and the designer's pick at the top of your dashboard.",
+        "dev@web-summit.jose, 09:34: report-draft.mjs checked against the eight real journalist reports; the test runs on every one.",
+        "Still to do today (brief 2, section 4): WS-113 print sign-off and sizes by 16:00, WS-08 card, WS-30 company owners, WS-73 video feedback."
+      ]
+    }
+  ],
+  "next": [
+    "After 13:00: record your words on any decision you make, with agenda.mjs decide.",
+    "When you confirm: commit your midday pulse; pick up the split's issues you agree.",
+    "17:20 run: brief 4 if anything is new."
+  ],
+  "sources": [
+    "git show 31f3319 (data/team.json, 02:38 UTC); content/vaults.md (seal check table)",
+    "data/meetings/2026-11-03-1300/*.json, read 12:24 UTC; commit c4d35ac (10:28)",
+    "people/jose/mentor/2026-11-03-0841.md",
+    "git log 6c255cc..f974007 (v0.2.83)",
+    "people/jose/dev/WS-39-findings.md"
+  ]
+}
