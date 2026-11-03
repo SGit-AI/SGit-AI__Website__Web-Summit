@@ -5,7 +5,7 @@
 import fs from 'fs'
 import path from 'path'
 import * as CAST from './cast.mjs'
-import { dayTimeline, burndown } from './charts.mjs'
+import { dayTimeline, burndown, agentsMap } from './charts.mjs'
 import { execFileSync } from 'child_process'
 import { meetingsContext, buildMeetings, sinceMd } from './meetings.mjs'
 import { inventory, inventoryMd, myAgentsMd } from './inventory.mjs'
@@ -88,11 +88,11 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) rows.push(lines[i].split('|').map(c => c.trim()))
             i++
             out.push(`<div class="cards">${rows.map(([t, h, d]) => `<a class="card" href="${h}"><b>${inline(t)}</b><span>${inline(d)}</span></a>`).join('')}</div>`)
-        } else if (/^```chart [a-z-]+\s*$/.test(l)) {
-            const name = l.slice(9).trim()
+        } else if (/^```chart [a-z-]+( [a-z0-9-]+)?\s*$/.test(l)) {
+            const [name, arg] = l.slice(9).trim().split(' ')
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
-            out.push(CHARTS[name] ? `<figure class="chart">${CHARTS[name]()}</figure>` : `<p class="meta">(no chart called ${esc(name)})</p>`)
+            out.push(CHARTS[name] ? `<figure class="chart">${CHARTS[name](arg)}</figure>` : `<p class="meta">(no chart called ${esc(name)})</p>`)
         } else if (l.startsWith('```')) {
             const buf = []
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) buf.push(lines[i])
@@ -409,6 +409,20 @@ for (const dir of fs.readdirSync(path.join(ROOT, 'content'), { withFileTypes: tr
 
 // everything on the team, counted (WS-95): /team/everything/ (admin/build/inventory.mjs)
 const INV = getINV()
+// one person's agents and who they write to: ```chart agents-map <person id>``` (WS-123, item 3). "For:" lines from the
+// whole history, read once; a recipient is an agent name or a person's id
+CHARTS['agents-map'] = (() => {
+    let talks = null
+    const read = () => { const m = new Map(); try { for (const b of execFileSync('git', ['log', '--format=%b%x1e'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString().split('\x1e')) {
+        const from = (b.match(/^Agent: *([a-z0-9-]+@web-summit\.[a-z0-9-]+)/m) || [])[1]; if (!from) continue
+        for (const line of b.match(/^For: *(.+)$/gm) || []) for (const to of line.slice(4).split(/,\s*/).map(x => x.trim()).filter(x => /^[a-z0-9-]+(@web-summit\.[a-z0-9-]+)?$/.test(x))) { const k = `${from}|${to}`; m.set(k, (m.get(k) || 0) + 1) }
+    } } catch { } return [...m].map(([k, n]) => { const [from, to] = k.split('|'); return { from, to, n } }) }
+    return id => {
+        const who = teamData.members.find(x => x.id === id && x.kind === 'human'); if (!who) return `<p class="meta">(no person called ${esc(String(id))})</p>`
+        talks ??= read()
+        return agentsMap({ person: { id, name: who.name }, agents: INV.agents.filter(a => a.person === id), talks })
+    }
+})()
 {
     const rel = 'team/setup/index.html', title = 'Setup: who has set up what', md = OB.leaderboard(PEOPLE())
     write(rel, page({ rel, title, description: 'The onboarding leaderboard: every person, every step, and their next step.', body: render(md), mdTwin: twinPath(rel) }))
@@ -459,7 +473,7 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const f = path.join(ROOT, 'people', m.id, 'dashboard.md')
     if (!fs.existsSync(f)) continue
     const { meta, body: rawBody } = parse(fs.readFileSync(f, 'utf8'))
-    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
+    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n\`\`\`chart agents-map ${m.id}\n\`\`\`\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
     const rel = `people/${m.id}/index.html`
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel) }))
     pages.push({ rel, title: meta.title, description: meta.summary })

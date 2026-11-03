@@ -43,8 +43,8 @@ Added on 3 November (WS-123, item 3). A page asks for a chart in its markdown wi
 
 - `chart burndown`: the board, burning down to 12 November, from the history of `board/` (when each issue appeared, and when its status became done), with the pace it needs.
 - Today's runs, every agent's scheduled slots met, missed or still to come: on [the agents at work](../wakes/index.html#today).
+- `chart agents-map <person id>`: one person's agents around them, sized by their commits (dashed when not running yet), and everyone they wrote to ("For:" in their commits). On every person's dashboard, under My agents.
 
 ```chart burndown
 ```
 
-Next: the agents map, one person's agents at a time.

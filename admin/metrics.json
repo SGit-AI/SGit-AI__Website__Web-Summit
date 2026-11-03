@@ -125,6 +125,17 @@
       "validate_seconds": 2.49,
       "ci_seconds_before": 41,
       "ci_seconds_after": null
+    },
+    {
+      "date": "2026-11-03",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass 10 (WS-123 item 3 done): agentsMap() on every dashboard; one more git log read per build (the For: lines).",
+      "pages": 326,
+      "build_seconds": 1.56,
+      "validate_seconds": 2.5,
+      "ci_seconds_before": 73,
+      "ci_seconds_after": null
     }
   ]
 }

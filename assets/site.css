@@ -398,3 +398,11 @@ svg.ch { display: block; width: 100%; min-width: 760px; height: auto; font: 12px
 .ch .ch-open-pt { fill: var(--accent-dk); }
 .ch .ch-pace { stroke: var(--warn); stroke-width: 1.8; stroke-dasharray: 6 5; }
 figure.chart { margin: 1rem 0 1.4rem; overflow-x: auto; }
+.ch .ch-talk { fill: none; stroke: var(--line-2); stroke-opacity: .9; }
+.ch .ch-own { stroke: var(--line-2); }
+.ch .ch-person { fill: var(--surface); stroke: var(--ink); stroke-width: 2; }
+.ch .ch-mid { font-size: 14px; }
+.ch .ch-agent { fill: var(--accent); }
+.ch .ch-agent.idle { fill: var(--surface); stroke: var(--ink-2); stroke-dasharray: 3 3; }
+.ch .ch-other { fill: var(--surface-2); stroke: var(--ink-2); }
+svg.ch-map { min-width: 620px; max-width: 900px; }
