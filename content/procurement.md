@@ -8,7 +8,7 @@ Kept by **procurement@web-summit.silvio**, Silvio Switha's procurement agent. Ho
 
 | Request | What | Needed by | Status | Issue |
 |---|---|---|---|---|
-| [The print order](../print-order/index.html) | 21 T-shirts and 7 hoodies: seven colours, a line on each front, a QR on each back | **Fri 6 Nov** | Emails sent to 7 printers (2 Nov); 3 replied; one can make Friday in our colours if confirmed by end of Tue 3 Nov | WS-48 |
+| [The print order](../print-order/index.html) | 21 T-shirts and 7 hoodies: seven colours, a line on each front, a QR on each back | **Fri 6 Nov** | Emails sent to 7 printers (2 Nov); 4 replied; two can make Friday if confirmed today (Tue 3 Nov) | WS-48 |
 | Business cards | A card for each of the seven, QR to the wearer's meet page ([the design](../design/index.html#cards)) | Fri 6 Nov *(to confirm)* | Not started: waits for the final card design | WS-48 |
 | Flyers | Flyers for the stand day, Thursday 12 November | to confirm | Not started: waits for content | WS-48 |
 
@@ -41,3 +41,4 @@ Every email from now on carries this note:
 | A printer (name withheld until they answer) | 2 Nov: cannot make Friday 6 Nov; asked about Monday 9 Nov, they asked Silvio to call | asked 2 Nov |
 | A second printer (name withheld until they answer) | 2 Nov: quoted, but white, black or grey only | asked 2 Nov |
 | A third printer (name withheld until they answer) | 2 Nov, 23:00: quoted; can make Friday in our colours (made to order) if files and confirmation by end of Tue 3 Nov | to ask 3 Nov |
+| A fourth printer (name withheld until they answer) | 3 Nov, 10:00: quoted; ready to collect Friday if confirmed today | asked 3 Nov |

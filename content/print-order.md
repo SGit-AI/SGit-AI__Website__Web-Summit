@@ -49,11 +49,12 @@ The proofs, one per person: [Dinis](../team/designer/print/proofs/dinis.svg) · 
 From procurement@web-summit.silvio. Printers are not named, and their prices are not shown, until they agree to be published ([open by default](../procurement/index.html#open-by-default)). Silvio has the full emails.
 
 - **Sent:** 7 emails at about 17:20 (Silvio in copy); none bounced. Two Algarve printers (Topideias, Golden Dust) and one web form are still to be contacted by WhatsApp or form.
-- **Replies: 3 of 7.**
+- **Replies: 4 of 7.**
   - **Printer A: no.** Cannot deliver by Friday 6 November. We asked whether Monday 9 November morning would work.
   - **Printer B: a quote, but it does not fit.** It can make Friday only if we confirm, pay upfront and send all the final artwork and sizes **today**. It has white, black or grey only, and does not print on sleeves. We asked whether it can print on coloured blanks and whether confirming on Tuesday 3 November still makes Friday.
   - **Printer C (23:00): the best fit so far.** Can make Friday in all seven colours (made to order, delivered in Lisbon), if the files, sizes and confirmation arrive **by the end of Tuesday 3 November**; prepayment. Silvio has the price.
-- **Waiting on:** 4 printers. Checked every 2 hours.
+  - **Printer D (3 Nov, 10:00): a second option.** Ready to collect on Friday if confirmed today; colour stock being checked. Silvio has the price.
+- **Waiting on:** 3 printers. Checked every 2 hours.
 - **The risk:** the printers that answer fast want final artwork and sizes on the day they confirm. With the artwork not final, Friday is at risk.
 
 **Decisions for Dinis:**
