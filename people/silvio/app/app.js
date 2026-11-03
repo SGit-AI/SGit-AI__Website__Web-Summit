@@ -133,7 +133,7 @@
   </aside>
   <div class="cc-main">
     <header class="cc-top">
-      <div class="title" id="cc-title"></div><div class="grow"></div>
+      <span class="cc-mark sm" aria-hidden="true">R</span><div class="title" id="cc-title"></div><div class="grow"></div>
       <form class="cc-search" role="search" id="cc-search"><label class="sr" for="cc-q">Search the board</label>${ico('search', '')}<input id="cc-q" type="search" placeholder="Search issues, WS-NN, people…" value="${esc(S.q)}"></form>
       <button class="cc-iconbtn" id="cc-theme" type="button" aria-label="Switch to ${html.dataset.theme === 'dark' ? 'light' : 'dark'} mode">${ico(html.dataset.theme === 'dark' ? 'sun' : 'moon', '')}</button>
       <div class="cc-today"><time id="cc-clock"></time><br><span>${esc(TZ)}</span></div>
@@ -176,7 +176,7 @@
 <span class="due"><b>${esc(i.due ? i.due.replace(/^daily from /, 'daily · ') : 'no date')}</b>${i.due_at && !i.recurring && i.status !== 'done' ? esc(rel(i.due_at)) : ''}</span>
 </button>`
     }
-    const card = (title, inner, opts = {}) => `<section class="cc-card ${opts.cls || ''}" aria-labelledby="h-${opts.id || title.replace(/\W+/g, '')}"><header><h2 id="h-${opts.id || title.replace(/\W+/g, '')}">${esc(title)}</h2>${opts.more ? `<button class="more" type="button" data-go="${opts.more}">View all →</button>` : ''}${opts.extra || ''}</header>${inner}</section>`
+    const card = (title, inner, opts = {}) => `<section class="cc-card ${opts.cls || ''}" aria-labelledby="h-${opts.id || title.replace(/\W+/g, '')}"><header>${opts.icon ? `<span class="hic" aria-hidden="true">${ico(opts.icon, '')}</span>` : ''}<h2 id="h-${opts.id || title.replace(/\W+/g, '')}">${esc(title)}</h2>${opts.more ? `<button class="more" type="button" data-go="${opts.more}">View all →</button>` : ''}${opts.extra || ''}</header>${inner}</section>`
     const empty = t => `<div class="cc-empty">${t}</div>`
     const srcLine = () => `<p class="cc-src"><span>Live from the repository: <a href="${D.repo}/tree/dev/board" target="_blank" rel="noopener">board/WS-*.md</a>, data/team.json, git history</span><span>Built ${esc(fmtDay(D.built_at))} ${esc(fmtTime(D.built_at))} (${esc(D.version)})</span><span>Urgency is derived from due dates: the board has no priority field</span></p>`
 
@@ -188,7 +188,8 @@
         const toSummit = Math.max(0, Math.ceil((new Date(D.summit.opening) - Date.now()) / 864e5))
         const kpi = (key, label, val, sub, tone, icon) => `<button class="cc-kpi" type="button" data-kpi="${key}"><span class="ic t-${tone}">${ico(icon, '')}</span><span><span class="lbl">${label}</span><span class="val num">${val}</span><span class="sub">${sub}</span></span></button>`
         return `
-<section class="cc-hero"><div class="grow"><h1>${greet}, Silvio.</h1><p>${c.open} open issues named for you · ${c.soon} due within 72 hours · ${D.decisions.length} decisions waiting · <b>${toSummit} days</b> to Web Summit opening night.</p></div>
+<section class="cc-hero"><div class="grow"><p class="eyebrow">${esc(new Date().toLocaleDateString([], { weekday: 'short', day: 'numeric', month: 'short' }))} · Web Summit Lisbon</p><h1>${greet}, <span class="gild">Silvio</span>.</h1><p>${c.open} open issues named for you · ${c.soon} due within 72 hours · ${D.decisions.length} decisions waiting.</p></div>
+<div class="cc-count" role="img" aria-label="${toSummit} days to Web Summit opening night"><b class="num">${toSummit}</b><span>days to<br>opening night</span></div>
 <div class="cc-actions"><button class="cc-btn gold" type="button" data-go="ask">${ico('claude', '')}Ask Claude</button><button class="cc-btn tint t-green" type="button" data-new>${ico('plus', '')}New task</button><button class="cc-btn tint t-conductor" type="button" data-go="board">${ico('board', '')}Team board</button><button class="cc-btn tint t-blue" type="button" data-go="waiting">${ico('wait', '')}Decisions</button></div></section>
 <div class="cc-kpis">
 ${kpi('open', 'My tasks', c.open, `of ${c.total} named for me`, 'blue', 'tasks')}
@@ -199,12 +200,12 @@ ${kpi('waiting', 'Waiting / decisions', c.waiting, 'on others or on me', 'yellow
 ${kpi('done', 'Completed', c.done, 'status: done', 'green', 'check')}
 </div>
 <div class="cc-grid">
-${card("Today's priority tasks", o.length ? `<div class="cc-list">${o.map(i => taskRow(i, true)).join('')}</div>` : empty('Nothing open is named for you.'), { cls: 'cc-span-5', more: 'tasks', id: 'prio' })}
-${card('Workstreams', streamsProgress(), { cls: 'cc-span-4', more: 'streams', id: 'ws' })}
-${card('Inbox and email', inboxMini(), { cls: 'cc-span-3', more: 'inbox', id: 'inb' })}
-${card("Today's agenda", agendaRows(Date.now(), true), { cls: 'cc-span-4', more: 'calendar', id: 'ag' })}
-${card('Team activity', activityRows(8), { cls: 'cc-span-5', id: 'act', extra: `<span class="note" style="margin-left:auto">last 48 h, from git</span>` })}
-${card('Decisions I need', decisionRows(4), { cls: 'cc-span-3', more: 'waiting', id: 'dec' })}
+${card("Today's priority tasks", o.length ? `<div class="cc-list">${o.map(i => taskRow(i, true)).join('')}</div>` : empty('Nothing open is named for you.'), { cls: 'cc-span-5', more: 'tasks', id: 'prio', icon: 'flag' })}
+${card('Workstreams', streamsProgress(), { cls: 'cc-span-4', more: 'streams', id: 'ws', icon: 'streams' })}
+${card('Inbox', inboxMini(), { cls: 'cc-span-3', more: 'inbox', id: 'inb', icon: 'inbox' })}
+${card("Today's agenda", agendaRows(Date.now(), true), { cls: 'cc-span-4', more: 'calendar', id: 'ag', icon: 'cal' })}
+${card('Team activity', activityRows(8), { cls: 'cc-span-5', id: 'act', icon: 'reports', extra: `<span class="note" style="margin-left:auto">last 48 h, from git</span>` })}
+${card('Decisions I need', decisionRows(4), { cls: 'cc-span-3', more: 'waiting', id: 'dec', icon: 'wait' })}
 </div>${srcLine()}`
     }
 

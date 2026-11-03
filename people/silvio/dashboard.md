@@ -21,7 +21,7 @@ From [the team roster](../../team/index.html) and [my brief](../../brief-silvio/
 | **Outreach** | 5 first companies, then 50 sourced targets with an owner and a drafted message for Thu 5 and Fri 6 Nov; every contact followed up | outreach@web-summit.silvio | WS-24, WS-25, WS-26, WS-28 | Nimay, Indi, Vicky |
 | **Video** | The pipeline to YouTube and Instagram run once; the videos published; the 2-minute silent loop for the stand | video@web-summit.silvio | WS-40, WS-52, WS-71, WS-72, WS-75, WS-80 | Angelo, Jose, Sarah |
 | **Local and procurement** | 21 T-shirts and 7 hoodies in Lisbon on time; Algarve printing and ads mapped | procurement@ and local@web-summit.silvio | WS-48, WS-54, WS-101 | Vicky |
-| **Merch sponsor** (side quest) | A yes or a no by Wed 4 Nov, 12:00 | sponsor@web-summit.silvio | WS-58 | Dinis |
+| ~~Merch sponsor~~ | Closed: dropped by Dinis on 2 Nov, the merch is RiskMandate only | none | WS-58 (done) | Dinis |
 | **Agentic PM** | My project-management workflow written up, one part running for the team | conductor@web-summit.silvio | WS-53 | Vicky |
 | **Ideas** | What should we do that we aren't? One idea a day to the stand-up | me | none yet | everyone |
 
@@ -32,13 +32,13 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-03, from the boar
 | Signal | Now | |
 |---|---|---|
 | Days to opening night | **7** | █░░░░░░░░░ |
-| Health | **34 / 100 (red)** | ███░░░░░░░ |
-| Open issues | **15** of 15 | ░░░░░░░░░░ done |
+| Health | **43 / 100 (red)** | ████░░░░░░ |
+| Open issues | **14** of 15 | █░░░░░░░░░ done |
 | Overdue | **0** | none |
-| Due in 48 hours | **10** | WS-54, WS-101, WS-58, WS-24, WS-25, WS-40, WS-48, WS-52, WS-53, WS-71 |
-| Nobody picked yet | **14** | WS-54, WS-101, WS-58, WS-24, WS-25, WS-40, WS-52, WS-53, WS-71, WS-26, WS-75, WS-80, WS-28, WS-72 |
-| Agents active (7 days) | **2 of 8** | ███░░░░░░░ |
-| Messages for me (24 h) | **7** | `git log --since=yesterday --grep "For: .*web-summit.silvio"` |
+| Due in 48 hours | **9** | WS-54, WS-101, WS-24, WS-25, WS-40, WS-48, WS-52, WS-53, WS-71 |
+| Nobody picked yet | **13** | WS-54, WS-101, WS-24, WS-25, WS-40, WS-52, WS-53, WS-71, WS-26, WS-75, WS-80, WS-28, WS-72 |
+| Agents active (7 days) | **3 of 7** | ████░░░░░░ |
+| Messages for me (24 h) | **9** | `git log --since=yesterday --grep "For: .*web-summit.silvio"` |
 | Pulse today | **0 of 3** | ░░░ |
 | Onboarding level | **L1** of L4 | █░░░ |
 
@@ -49,7 +49,7 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-03, from the boar
 | Outreach | 4 ████░░ | WS-24 (Wed 4 Nov) | 0 of 4 |
 | Video | 6 ██████ | WS-40 (Wed 4 Nov) | 0 of 6 |
 | Local and procurement | 3 ███░░░ | WS-54 (Tue 3 Nov) | 1 of 3 |
-| Merch sponsor | 1 █░░░░░ | WS-58 (Wed 4 Nov, 12:00) | 0 of 1 |
+| Merch sponsor | 0 ░░░░░░ | none | 0 of 0 |
 | Agentic PM | 1 █░░░░░ | WS-53 (Wed 4 Nov) | 0 of 1 |
 
 ### By day {#by-day}
@@ -57,7 +57,7 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-03, from the boar
 | Due | Issues |
 |---|---|
 | 2026-11-03 | WS-54 Local Algarve: printing, ads and who can do what; WS-101 procurement@web-summit.silvio writes outside people/silvio/, and who asks suppliers to publish? |
-| 2026-11-04 | WS-58 A sponsor for the merch; WS-24 Every existing contact and introduction followed up; WS-25 The first five companies; WS-40 Hosting for Silvio's videos; WS-48 Printing and merch logistics; WS-52 The video pipeline: YouTube and Instagram; WS-53 Silvio's agentic project-management workflow, written up; WS-71 Publish the videos on YouTube, Instagram and LinkedIn |
+| 2026-11-04 | WS-24 Every existing contact and introduction followed up; WS-25 The first five companies; WS-40 Hosting for Silvio's videos; WS-48 Printing and merch logistics; WS-52 The video pipeline: YouTube and Instagram; WS-53 Silvio's agentic project-management workflow, written up; WS-71 Publish the videos on YouTube, Instagram and LinkedIn |
 | 2026-11-05 | WS-26 The big outreach: 50 targets for Thursday and Friday; WS-75 Storyboards for the next videos; WS-80 The cast: a character for each of our agents |
 | 2026-11-06 | WS-28 Who can connect the dots |
 | 2026-11-07 | WS-72 Make the 2-minute silent loop for the stand |
@@ -67,11 +67,10 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-03, from the boar
 | Agent | Job | Commits 24 h | Commits 7 days | Last seen |
 |---|---|---|---|---|
 | ● conductor@web-summit.silvio | Runs Silvio's other agents and keeps people/silvio/ | 1 | 1 | 11-02 21:56 UTC |
-| ○ dev@web-summit.silvio | Builds what Silvio and the conductor ask for: this command centre, tools | 0 | 0 | never |
+| ● dev@web-summit.silvio | Builds what Silvio and the conductor ask for: this command centre, tools | 2 | 2 | 11-03 00:11 UTC |
 | ○ local@web-summit.silvio | Algarve options: printers, ads, prices, lead times | 0 | 0 | never |
 | ○ outreach@web-summit.silvio | Targets, messages and follow-ups; drafts in Silvio's account, Silvio sends | 0 | 0 | never |
 | ● procurement@web-summit.silvio | Quotes, orders and deliveries for what the team buys (WS-48); drafts only, Silvio approves | 8 | 8 | 11-02 22:40 UTC |
-| ○ sponsor@web-summit.silvio | The merch sponsor ask (merch-sponsor page, part two) | 0 | 0 | never |
 | ○ video@web-summit.silvio | The pipeline to YouTube, Instagram and this site | 0 | 0 | never |
 | ○ dashboard@web-summit.silvio | Keeps Silvio's dashboard and asks one question a run | 0 | 0 | never |
 
@@ -83,7 +82,7 @@ Web Summit is 10 to 12 November. Working back from it; a line slips, the stand-u
 |---|---|---|
 | Mon 2 Nov | Printers asked (done: 7 emailed); roles and dashboard up | Local |
 | Tue 3 Nov | Algarve options mapped (WS-54); procurement's write rules settled (WS-101); a printer that can make Friday chosen, with Dinis's ceiling | Local |
-| Wed 4 Nov | Sponsor yes or no by 12:00 (WS-58); first five companies (WS-25); contacts followed up (WS-24); video hosting and pipeline (WS-40, WS-52); videos live (WS-71); PM write-up (WS-53); print order placed (WS-48) | all |
+| Wed 4 Nov | Merch budget from Dinis by 12:00 (WS-13); first five companies (WS-25); contacts followed up (WS-24); video hosting and pipeline (WS-40, WS-52); videos live (WS-71); PM write-up (WS-53); print order placed (WS-48) | all |
 | Thu 5 Nov | 50 targets ready, outreach day one (WS-26); storyboards (WS-75); the cast (WS-80) | Outreach, Video |
 | Fri 6 Nov | Outreach day two; the merch delivered; who connects the dots (WS-28) | Outreach, Local |
 | Sat 7 Nov | The silent loop for the stand, plus a version with sound (WS-72) | Video |
@@ -114,7 +113,7 @@ Counts only, never names: the people and companies stay in my own CRM (my brief'
 | Artwork final and sizes in | 7 people | 0 | ░░░░░░░░░░ |
 | Order placed (Silvio approves) | 1 | 0 | ░░░░░░░░░░ |
 | Delivered in Lisbon | 21 T-shirts, 7 hoodies | 0 | ░░░░░░░░░░ |
-| Sponsor | yes or no by Wed 12:00 | open | ░░░░░░░░░░ |
+| Sponsor | dropped by Dinis, 2 Nov (WS-58 done) | none | n/a |
 
 ### Video (WS-52, WS-71, WS-72) {#video-funnel}
 
@@ -132,7 +131,7 @@ What my agents cannot decide, oldest first. Take this list to the stand-up.
 1. **Dinis:** the artwork and sizes deadline, the fallback if no printer makes Friday, and a spending ceiling for the merch (procurement's brief, 2 November, on [the print order](../../print-order/index.html#status)).
 2. **Dinis:** may procurement@ write outside `people/silvio/`, and who asks suppliers before they are published (WS-101)?
 3. **Me:** which companies I own on the map (my card).
-4. **Me:** which agents to start next. On the map today three are running (conductor, dev, procurement); outreach, local, sponsor and video are still dashed lines.
+4. **Me:** which agents to start next. On the map today three are running (conductor, dev, procurement); outreach, local and video are still dashed lines (sponsor is no longer needed).
 
 ## Monitor and controls {#controls}
 
@@ -177,12 +176,12 @@ Next: an email to send from (L2), then my PKI key (L3), then a conductor on a sc
 - **dev@web-summit.silvio**: Silvio's developer agent, the site and the tools; session key `sha256:a7a1c86520bc850e`, linked to Silvio's key once it is registered (joined 2 November 2026).
 - **outreach@web-summit.silvio**: targets, messages and follow-ups; drafts in my account, I send (planned).
 - **local@web-summit.silvio**: Algarve options: printers, ads, prices, lead times (planned).
-- **sponsor@web-summit.silvio**: the merch sponsor ask (planned).
+- **sponsor@web-summit.silvio**: not needed: the sponsor ask was dropped by Dinis on 2 November (WS-58).
 - **video@web-summit.silvio**: the pipeline to YouTube, Instagram and this site (planned).
 
 ## Printers in Portugal, for Friday 6 November {#printers}
 
-From procurement@web-summit.silvio, 2 November 2026. **Sponsor:** not Cyberprotech; maybe another one (not a security company, so clients aren't confused), maybe none. Not blocking: the printers are asked to quote with room for a small sleeve logo. The order: 21 T-shirts (3 each for the seven) and 7 hoodies, **seven colours and seven different lines**, a QR on every back. The mock-ups (ours and [the design page](../../design/index.html#seven)) are examples of the style, not the final product: the printers are told so. That is 7 small runs of 3, so it wants DTF or DTG (no minimums, a different design per piece), not screen printing. Everything below is from each printer's own website and **not yet confirmed by them**: ask each for the Friday date in writing.
+From procurement@web-summit.silvio, 2 November 2026. **Sponsor:** none: dropped by Dinis on 2 November (WS-58); the merch is RiskMandate only. Not blocking: the printers are asked to quote with room for a small sleeve logo. The order: 21 T-shirts (3 each for the seven) and 7 hoodies, **seven colours and seven different lines**, a QR on every back. The mock-ups (ours and [the design page](../../design/index.html#seven)) are examples of the style, not the final product: the printers are told so. That is 7 small runs of 3, so it wants DTF or DTG (no minimums, a different design per piece), not screen printing. Everything below is from each printer's own website and **not yet confirmed by them**: ask each for the Friday date in writing.
 
 | Printer | Where | What they say | Fit |
 |---|---|---|---|
