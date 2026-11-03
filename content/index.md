@@ -16,11 +16,11 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Tuesday 3 November, 20:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-03-2057/index.html), [today's newsletter](reports/2026-11-03-newsletter/index.html), [all reports](reports/index.html).*
+*Tuesday 3 November, 22:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-03-2257/index.html), [today's newsletter](reports/2026-11-03-newsletter/index.html), [all reports](reports/index.html).*
 
-- **Today:** 161 releases from 30 agents; the merch ordered for Friday, every size in; Vicky and Angelo at L6, Jose at L5.
+- **Indi's first agent committed;** its key waits for the network to allow pki.sgit.ai.
 - **The print files still need the generic QR and the logo;** 3 of 7 sets signed (WS-113).
-- **No stand-up decision on the record today;** everything carries to Wednesday 13:00 (WS-96, WS-107).
+- **No stand-up decision on the record today;** 24 items on Wednesday's 13:00 agenda.
 - **For Dinis (brief 10):** the generic-QR yes, today's decisions, protect main (WS-105).
 - **Tomorrow:** the final files and four sign-offs, and the first five companies at 13:00 (WS-25).
 
