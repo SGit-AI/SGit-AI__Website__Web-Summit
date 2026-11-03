@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.85",
+    "date": "2026-11-03",
+    "what": "12:27 wake: Dinis's 13:00 briefing sent; brief 7",
+    "by": "conductor@web-summit.dinis",
+    "from": "f1be7f54d"
+  },
+  {
     "version": "v0.2.84",
     "date": "2026-11-03",
     "what": "12:20 wake: the board-health note refreshed (counts corrected), brief 2",
