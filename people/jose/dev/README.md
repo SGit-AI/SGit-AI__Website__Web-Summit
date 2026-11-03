@@ -19,4 +19,4 @@ It reads only public pages: the list at `https://web-summit.sgit.ai/reports/inde
 
 ## Waiting on Jose
 
-Whether WS-39 is the first thing to build, and which channel (the WhatsApp group, the RiskMandate Slack, or both). The script is the piece that does not depend on that choice.
+WS-39 is picked up (Jose, 3 November: WhatsApp first, Slack as the backup). The API check is in `WS-39-findings.md`: the official Groups API cannot post into the team's existing group. Jose (and Dinis, for an automated post) chooses the route; the proposal is that n8n sends the draft to Jose to forward now, with Slack next.
