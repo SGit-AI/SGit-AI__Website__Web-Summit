@@ -1,0 +1,31 @@
+{
+  "number": 10,
+  "date": "2026-11-03",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "Your sign-off is in; the generic QR and the stand-up decisions still need your word",
+  "when": "Tuesday 3 November 2026, 20:35 UTC",
+  "by": "conductor@web-summit.dinis",
+  "headline": "Since brief 9: you signed your print set, the hoodie and the card (3 of 7 sets; the shared designs done). Angelo invited Indi to the repository, so the push step is moving without you. Vicky acknowledged her briefing and gave her view on who records decisions. But nothing from either stand-up today is on the record (team-collaboration@web-summit.angelo still had no transcript at 19:15), and the generic QR is still waiting for your yes in the designer's session.",
+  "stats": [
+    {"n": "22", "label": "agent commits since brief 9"},
+    {"n": "3 of 7", "label": "print sets signed; hoodie and card done"},
+    {"n": "0", "label": "stand-up decisions recorded today"},
+    {"n": "no", "label": "main protected (20:30)"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "Yes to the designer for the generic QR", "detail": "The switch is stashed in designer@web-summit.dinis, waiting for your yes in that session. It changes the T-shirt and hoodie backs, so the three sign-offs so far are re-signed after it (yours on your word, in one line).", "options": ["yes in the designer session", "keep the personal QR"], "recommend": "Yes tonight, so Silvio, Nimay, Indi and Jose sign the final files tomorrow morning."},
+    {"id": "2", "ask": "Today's decisions, from both stand-ups", "detail": "Neither the 13:00 nor the 18:00 reached the repository. One line per decision, as you said it, and I record each (WS-107). Vicky's view on who records: team-collaboration drafts, the chair confirms.", "options": ["send me the lines", "the transcript to Angelo's account", "re-decide tomorrow at 13:00"], "recommend": "Send the lines tonight, or choose option 2 for the recorder at tomorrow's 13:00."},
+    {"id": "3", "ask": "Protect main (WS-105)", "detail": "Still false at 20:30.", "options": ["now", "this week"], "recommend": "Now."}
+  ],
+  "you_asked": [
+    {"at": "3 Nov, ~17:30", "said": "I approve my print set, the hoodie and the card", "done": "Signed with the conductor's key over the current files (people/dinis/signoff/print.json); the shared designs recorded with your words.", "where": "/print/", "status": "done"}
+  ],
+  "team": [
+    {"id": "Angelo's agents", "status": "L6", "doing": "Indi invited to the repository; his dashboard wishlist (a kanban); the 18:00 debrief waiting"},
+    {"id": "Vicky's agents", "status": "L6", "doing": "briefing acknowledged; the meetings vault for WS-23 with Nimay tomorrow"},
+    {"id": "project-manager@web-summit.dinis", "status": "active", "doing": "49 issues due tomorrow; the waiting-on-you item down to four"},
+    {"id": "the mentors", "status": "active", "doing": "notes for Vicky and Indi; WS-131 (a shallow clone gives wrong answers)"}
+  ],
+  "next": ["22:27 wake: the board and the 13:00 agenda of 4 November.", "Tomorrow 13:00: the decisions recorded, by whoever you choose."],
+  "sources": ["git log since 2026-11-03T17:36Z (dev)", "print/ at 20:30", "team-collaboration@web-summit.angelo commit dbb8a40", "api.github.com branches/main at 20:30"]
+}
