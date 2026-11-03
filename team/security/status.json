@@ -1,22 +1,24 @@
 {
   "agent": "security",
   "state": "active: a scheduled session of its own (cron 50 11 and 50 23 UTC)",
-  "last_wake": "2026-11-03T11:50:00Z",
+  "last_wake": "2026-11-03T23:50:00Z",
   "done": [
     "review 2026-11-02-0300: all 44 commits on dev, no hold",
     "review 2026-11-02-0310: 14 commits to v0.1.41, no hold, WS-85 fix verified",
     "review 2026-11-02-2350: 141 commits to v0.2.1 and main v0.2.0, no hold, WS-86 verified, WS-106 opened",
-    "review 2026-11-03-1150: 181 commits to v0.2.80, no hold, WS-106 fix verified, WS-123 item 5 passed"
+    "review 2026-11-03-1150: 181 commits to v0.2.80, no hold, WS-106 fix verified, WS-123 item 5 passed",
+    "review 2026-11-03-2350: 229 commits to v0.2.181, no hold, WS-116 fix verified, WS-132 opened"
   ],
   "next": [
-    "review every commit after 671ffbb at 23:50 UTC",
-    "WS-116 before the 16:00 print sign-off",
-    "WS-115 to WS-119 (PKI)",
+    "review every commit after 83d4d93 at 11:50 UTC",
+    "WS-132 before anything real is sealed to a person key",
+    "WS-117, WS-115, WS-118, WS-119",
     "WS-90/WS-105 branch protection"
   ],
   "asks": [
-    "Dinis: the four PKI decisions on /pki/ (OpenRouter per agent, fingerprint check, where sealed secrets travel, the signing origin)",
+    "Dinis: WS-132 and WS-117 (the keyring on an origin of its own)",
+    "Dinis: the PKI decisions on /pki/",
     "Dinis: update this role's ROLE.md and policy.json"
   ],
-  "last_reviewed_commit": "671ffbb"
+  "last_reviewed_commit": "83d4d93"
 }
