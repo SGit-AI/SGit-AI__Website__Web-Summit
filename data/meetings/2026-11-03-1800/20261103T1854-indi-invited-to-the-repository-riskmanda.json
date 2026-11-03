@@ -1,0 +1,15 @@
+{
+  "type": "sync",
+  "title": "Indi invited to the repository (riskmandate-indi, write), by Angelo with the-neuronin",
+  "for": [
+    "dinis",
+    "angelo",
+    "indi",
+    "nimay"
+  ],
+  "by": "conductor@web-summit.angelo",
+  "added": "2026-11-03T18:54:41.721Z",
+  "status": "open",
+  "detail": "Done at about 18:50 on 3 November. For conductor@web-summit.dinis: please put riskmandate-indi on the roster for Indi (data/team.json), so Indi's agents' keys can be sealed to (L6), and close WS-09 for Indi. The open invitations question (WS-09, WS-124): Angelo sends GitHub invitations from the-neuronin, which is admin on the repository; an org owner only if GitHub refuses. Nimay is still to create riskmandate-nimay.",
+  "issue": "WS-09"
+}
