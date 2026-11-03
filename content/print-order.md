@@ -44,24 +44,24 @@ The proofs, one per person: [Dinis](../team/designer/print/proofs/dinis.svg) · 
 3. By when you need the final artwork and the sizes to make that date.
 4. Which T-shirt and hoodie colours you have in stock.
 
-## Where it stands: brief for Dinis, Monday 2 November, 21:00 {#status}
+## Where it stands: brief for Dinis, Tuesday 3 November, 14:30 {#status}
 
-From procurement@web-summit.silvio. Printers are not named, and their prices are not shown, until they agree to be published ([open by default](../procurement/index.html#open-by-default)). Silvio has the full emails.
+From procurement@web-summit.silvio. Printers are not named, and prices are not shown, until each printer agrees to be published ([open by default](../procurement/index.html#open-by-default)). **Silvio has the names and prices and gives them to Dinis directly.**
 
-- **Sent:** 7 emails at about 17:20 (Silvio in copy); none bounced. Two Algarve printers (Topideias, Golden Dust) and one web form are still to be contacted by WhatsApp or form.
+**Dinis, your yes is needed today: the best printer's deadline is the end of today, Tuesday 3 November.**
+
+1. **Yes to the spend** for the best quote (Printer C), or a spending ceiling. Silvio has the figure.
+2. **Sign off on [/print/](../print/index.html):** the shared hoodie and card designs, and your own set (tell your agent "sign off my print set"). Your designer agent has made all four fixes; the files are ready.
+3. **Ask everyone** to sign off their own set and send their sizes this afternoon. So far only Vicky has done both.
+
+As soon as Dinis says yes, Silvio confirms with Printer C and sends the files and sizes.
+
 - **Replies: 4 of 7.**
-  - **Printer A: no.** Cannot deliver by Friday 6 November. We asked whether Monday 9 November morning would work.
-  - **Printer B: a quote, but it does not fit.** It can make Friday only if we confirm, pay upfront and send all the final artwork and sizes **today**. It has white, black or grey only, and does not print on sleeves. We asked whether it can print on coloured blanks and whether confirming on Tuesday 3 November still makes Friday.
-  - **Printer C (23:00): the best fit so far.** Can make Friday in all seven colours (made to order, delivered in Lisbon), if the files, sizes and confirmation arrive **by the end of Tuesday 3 November**; prepayment. Silvio has the price.
-  - **Printer D (3 Nov, 10:00): a second option.** Ready to collect on Friday if confirmed today; colour stock being checked. Silvio has the price.
+  - **Printer C: the best fit.** Friday 6 November in Lisbon, delivery free, prepayment, **if files, sizes and confirmation arrive by the end of today**. White and black in stock; our colours made to order. Asked to confirm all seven colours, purple above all, on T-shirts and hoodies.
+  - **Printer D: the backup.** Ready to collect on Friday if confirmed today; costs more. Asked about the seven colours.
+  - **Printer B: does not fit** (white, black or grey only). **Printer A: cannot make Friday.**
 - **Waiting on:** 3 printers. Checked every 2 hours.
-- **The risk:** the printers that answer fast want final artwork and sizes on the day they confirm. With the artwork not final, Friday is at risk.
-
-**Decisions for Dinis:**
-
-1. **The latest date for final artwork and sizes**: proposed Tuesday 3 November, 12:00, so the printers have three days.
-2. **The fallback if no printer offers seven colours by Friday**: black and white blanks with colour prints; shirts delivered on Monday 9 November in Lisbon; or fewer colours.
-3. **A spending ceiling for the order**, so Silvio can confirm the first printer that fits without waiting.
+- **Sign-off:** 1 of 7 (Vicky); the shared designs awaiting Dinis. **Sizes:** 1 of 7 (Vicky).
 
 ## Who we asked {#asked}
 
