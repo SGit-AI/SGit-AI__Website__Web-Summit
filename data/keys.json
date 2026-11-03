@@ -60,7 +60,8 @@
         "label": "conductor.3@web-summit (Claude Code session)",
         "fingerprint": "sha256:ecbb2756634ba022",
         "signing_fingerprint": "sha256:62eb11234d3237d5"
-      }
+      },
+      "agent": "conductor@web-summit.dinis"
     },
     {
       "id": "dev-angelo",

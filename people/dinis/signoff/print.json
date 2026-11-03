@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "set": "print",
+  "page": "/print/",
+  "person": "dinis",
+  "decision": "approved",
+  "said": "I approve my print set, the hoodie and the card",
+  "note": "",
+  "by": "conductor@web-summit.dinis",
+  "at": "2026-11-03T17:31:29Z",
+  "files": {
+    "dinis-card-back.pdf": "74b9dcd92d7d26329b637e498fa78530b67e41b292e05f150f152ff33636e43e",
+    "dinis-card-back.svg": "da6c6af8bbd3faa862cb331d22bd66834106050eb00c1594159f3654e2d3abdc",
+    "dinis-card-front.pdf": "833bb4e951427802c23d7b6e36fee3decf9cc4d1c8b0bbdea14c33005e3f9335",
+    "dinis-card-front.svg": "c3900a7b1f0d17e5ee3580864b328f5c2d8c007afc336f03211cbe84a391f6a6",
+    "dinis-card.pdf": "bc220c4a075e8d97f1e9eef0821c961bf4c477b71fcd3ec51734df947db141c3",
+    "dinis-hoodie-back.pdf": "d4eab1c5f2b3b4b45075fa68028f3f6a89d21bb1b5e36728d58f62b3d78dc70d",
+    "dinis-hoodie-back.png": "ae31e3dde9de4e40da93d70ab2a0010197f3e284eacc5e644ebdb6c1aafda14f",
+    "dinis-hoodie-back.svg": "859bc8df1dbe1fe02c1410c34dbf1127b389444ab37d22167c4adef5654a9c67",
+    "dinis-hoodie-chest.pdf": "92ab8ac64bba761d2dd922e373ff04c8b734b5ab625b24dd460908a0342919d6",
+    "dinis-hoodie-chest.png": "aeb5394dc3c7d665090b0507e9d5f0b3f13eb3cd48b07c58940d5f528a2394dd",
+    "dinis-hoodie-chest.svg": "aa3cffc88c51453af710681d1866d9a9f46957630640b1c353d41e33a400c924",
+    "dinis-tee-back.pdf": "04fe77df58bd1a6f97b0bc9896c5098eaeec8db9442f320e0eceb2a1adb08c73",
+    "dinis-tee-back.png": "ab60962cd38d59547da92c997538148a48bdf7d8e7f049af94a7f60eece2cc7b",
+    "dinis-tee-back.svg": "2d842e9e8c8e6757e5169faa59f9f5c7282028c59934ebd5aacd65749813eb93",
+    "dinis-tee-front-small.pdf": "41218a22fa1f2fbd0baa1bc04e356e26386725b52f943084ee735b2d7dea2dc4",
+    "dinis-tee-front-small.png": "3453ca25268ecbdbf359aaf25bca0c2f060382285bdc5959af6d2bca1bdb18f0",
+    "dinis-tee-front-small.svg": "73788b03368bc944f90650e96aa01486fb9831aebea9dfb05928d5dc2b515084",
+    "dinis-tee-front.pdf": "4d501692b3677d8f2957d6c04853ea2861ee4bfae06aa403062d6146d5414472",
+    "dinis-tee-front.png": "fb9acba3db351218b152130b6aa8be8774e57b48941216522e36c67bbfb3f982",
+    "dinis-tee-front.svg": "a85fc0b1e073226837b3330710251629869cdcfd273c03f29fb903100d34d9f5"
+  }
+}

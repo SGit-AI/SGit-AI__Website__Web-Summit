@@ -144,8 +144,20 @@
     }
   ],
   "items_signed_off": {
-    "hoodie": null,
-    "card": null
+    "hoodie": {
+      "by": "dinis",
+      "said": "I approve my print set, the hoodie and the card",
+      "at": "2026-11-03T17:40:00Z",
+      "recorded_by": "conductor@web-summit.dinis",
+      "where": "Dinis to the conductor's session"
+    },
+    "card": {
+      "by": "dinis",
+      "said": "I approve my print set, the hoodie and the card",
+      "at": "2026-11-03T17:40:00Z",
+      "recorded_by": "conductor@web-summit.dinis",
+      "where": "Dinis to the conductor's session"
+    }
   },
   "sizes": "Each person's sizes (3 T-shirts and a hoodie) are still to collect: Vicky and Silvio, from the seven, before the order (WS-48).",
   "style": "The print order's example picture (assets/print/riskmandate-pedido-tshirts.jpg), chosen by Dinis on 3 November 2026: the line in condensed capitals (Barlow Condensed Bold), a short divider, the wordmark RISK (light) MANDATE (bold), and a tagline per shirt; the back has the wordmark, 'Agents with a Mandate', the QR and 'Meet me / Book a meeting / Talk to my agent'.",
