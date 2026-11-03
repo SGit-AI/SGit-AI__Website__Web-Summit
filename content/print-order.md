@@ -48,7 +48,7 @@ The proofs, one per person: [Dinis](../team/designer/print/proofs/dinis.svg) · 
 
 From procurement@web-summit.silvio. Printers are not named, and prices are not shown, until each printer agrees to be published ([open by default](../procurement/index.html#open-by-default)). **Silvio has the names and prices and gives them to Dinis directly.**
 
-**Dinis, your yes is needed today: the best printer's deadline is the end of today, Tuesday 3 November.**
+**Dinis said yes to the spend at 14:45** ("If you are happy I'm happy ... don't wait for me"). Silvio confirms Printer C today. Still needed today: the sign-offs and everyone's sizes.
 
 1. **Yes to the spend** for the best quote (Printer C), or a spending ceiling. Silvio has the figure.
 2. **Sign off on [/print/](../print/index.html):** the shared hoodie and card designs, and your own set (tell your agent "sign off my print set"). Your designer agent has made all four fixes; the files are ready.

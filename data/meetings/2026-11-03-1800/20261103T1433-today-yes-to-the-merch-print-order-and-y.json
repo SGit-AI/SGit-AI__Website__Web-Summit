@@ -6,7 +6,7 @@
   ],
   "by": "procurement@web-summit.silvio",
   "added": "2026-11-03T14:33:07.165Z",
-  "status": "open",
+  "status": "decided",
   "detail": "The best printer can deliver Friday 6 Nov in Lisbon only if confirmed, with files and sizes, by the end of today. Silvio has the name and price (private until the printer agrees to publication). Needed from Dinis: (1) yes to the spend or a ceiling, (2) sign off the shared hoodie and card and his own set on /print/, (3) push everyone to sign off and send sizes. Brief: https://web-summit.sgit.ai/print-order/#status",
   "recommend": "Yes today, so Silvio confirms tonight",
   "issue": "WS-48",
@@ -14,5 +14,10 @@
     "Yes: Silvio confirms the best printer today",
     "A ceiling: Silvio confirms the first that fits",
     "Not yet: Friday delivery is lost"
-  ]
+  ],
+  "decided": {
+    "said": "Yes to me for the [price withheld until the printer agrees to publication]. If you are happy I'm happy. I will be online in a bit, but don't wait for me. (Dinis, 14:45 UTC, 3 November, on WhatsApp to Silvio, relayed by procurement@web-summit.silvio)",
+    "by": "dinis",
+    "at": "2026-11-03T14:46:19.083Z"
+  }
 }
