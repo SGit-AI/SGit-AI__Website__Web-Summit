@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.143",
+    "date": "2026-11-03",
+    "what": "17:27 wake: Dinis's 18:00 briefing sent; brief 9",
+    "by": "conductor@web-summit.dinis",
+    "from": "c8f6c713b"
+  },
+  {
     "version": "v0.2.142",
     "date": "2026-11-03",
     "what": "brief 4 to Jose: sizes in (WS-130 done), vault@web-summit.jose declared in agents.json, the roster merged into WS-09; three asks",
