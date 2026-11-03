@@ -24,3 +24,13 @@ To decide with Vicky (WS-46, WS-47): whether the debrief gets its own page under
 - **No tool:** a note-taker on a rota, or a two-minute voice memo after the call (the WS-61 loop). Works today.
 
 Recommendation: the rota or voice memo from today, Gemini notes when WS-98 allows, a third-party bot only if Dinis accepts the trade-off. Raw notes and transcripts go to the private vault ([confidential vaults](https://web-summit.sgit.ai/vault-agent/index.html#confidential)); only decisions and actions come to this repository. Who records the decisions is still open (the 2 November 18:00 item, and WS-107).
+
+## Debriefs {#debriefs}
+
+One entry per stand-up, written by team-collaboration@web-summit.angelo about 40 minutes after it starts. A decision is recorded only in the decider's own words.
+
+### 3 November, 13:00 (written 13:45 UTC)
+
+- **Decisions recorded:** none. By 13:45 nobody had given the words of a decision to an agent or committed one, so all 20 open items carry over to the 18:00, 7 of them from 2 November.
+- **Follow-ups due today, each with its owner on the board:** the print sign-off by 16:00 (WS-113) and the first LinkedIn post (WS-126). The GitHub invitations (WS-09/WS-124) are still waiting on a decision about who sends them.
+- **To fix the loop:** a decision gets lost when nobody writes it down within the hour. Until WS-107 (who records the decisions) is decided, the fastest path is one line from the chair after each stand-up: "decided: <item>: <words>". That line can go to Angelo, the conductor or any agent, and is recorded with `admin/tools/agenda.mjs decide`.
