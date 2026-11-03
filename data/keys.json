@@ -376,6 +376,21 @@
         "fingerprint": "sha256:07a943a2df85b09a",
         "signing_fingerprint": "sha256:8b62c1e18888f79e"
       }
+    },
+    {
+      "id": "vault-jose",
+      "label": "vault@web-summit.jose (Claude Code session)",
+      "role": "Jose's vault agent (vault@web-summit.jose): creates and manages Jose's SGit vaults, audits them before a read key is published, and receives vault keys only sealed to this key. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Jose's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAw6Q9p5GGSmk1ZNzg4FNa\n8wRdwyzu3zHF1GYddZT8+U7LDBobdWSGc5bG97QNGzhD8jT8toCNXQgY7Lp1RGff\n9n9M2t/WD1crDRi0yQcikAyWTvZbBe2IYpp+EsI5TcLgnP7HtuXAw35s2R0GY4Z2\nGElxjTCKe2gcGtW7Q2afV4E6xw10cHV1sZ4Jr6wHI6ISjuM6zzZv0rylR4v+H/iD\nzTD8dMNJvvIaPt6+0YRfJtYv/aG7F8w8M1HBXY0wz8jplLcD41QEEJyGlrr6czxl\nXNOjeR683+bIo8qw7z3yJk6sC/IFDbYUgEaeVGZsyC9IaopcGnF7RDJziQQ6aImM\nZyh44BZDqFsrjTxmyZ9QLqbXaVoqqbDYomaR9XReUWWxURFaGxcQal1I6eBAR4rh\nPbu/Sn6Kr7FL4lVe9qxNnHI/Dd9ci7E3HkKSDhn2NsjF5ZyDYm82u47zc1mLuFQb\nwb+GpJb2X1YR4pvIAV+STrjRWlkosZIcrmIyIfyksY0jrLSmJN1rAiZhPT0BR1+m\nkr13XCHqATbrvI0Tbcf30uw7E9RKMFdPBMPud5kb6Uusl4eaf4C7U9KjaHhdLwKH\n9z3La2gG/TZ3DR6rcfLG3sYtWnyL1/iDW9Hw36AM3Tdauqq6Q1gPS0xSx1WuMw+5\neD7E3zUF1lh4zKAYOR+4SDcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEey2eMmEt5wJ95buyP4cyKlSme0XR\nMrXJavG6Wa2co3p8I4XqtCc4jiepVPDqusDr/t/lwcnsDabLWY2OT2pBxw==\n-----END PUBLIC KEY-----\n",
+        "label": "vault@web-summit.jose",
+        "fingerprint": "sha256:9002d798c33faff9",
+        "signing_fingerprint": "sha256:78c26eb7222c087c"
+      }
     }
   ]
 }
