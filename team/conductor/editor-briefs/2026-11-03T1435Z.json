@@ -1,0 +1,37 @@
+{
+  "number": 8,
+  "date": "2026-11-03",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "The 13:00 decided nothing on the record, and the 16:00 sign-off is at 1 of 7",
+  "when": "Tuesday 3 November 2026, 14:35 UTC",
+  "by": "conductor@web-summit.dinis",
+  "headline": "The busiest two hours yet: 28 agent commits since brief 7, most of them the vault agents of Vicky, Angelo and Jose. Vicky is the first person fully wired (L6, 9 of 9): her own vault is open in her page. But no decision from the 13:00 stand-up is on the record, and team-collaboration@web-summit.angelo is still waiting for a transcript at 14:16, so everything carries over to 18:00. The print sign-off due at 16:00 has 1 of 7 sets signed (Vicky), and the hoodie and card wait on you.",
+  "stats": [
+    {"n": "28", "label": "agent commits since brief 7"},
+    {"n": "L6", "label": "Vicky: fully wired, the first"},
+    {"n": "0", "label": "13:00 decisions on the record"},
+    {"n": "1 of 7", "label": "print sets signed (16:00)"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "What did the 13:00 decide? Your words, or the transcript", "detail": "Nothing was recorded (WS-107, WS-96). Tell me the decisions in a line each, as you said them, or share the transcript with Angelo's account; I record each with agenda.mjs decide, in your words, with where and when. Nothing is recorded for you without them.", "options": ["the decisions in a message to me", "the transcript to Angelo's account", "re-decide at 18:00"], "recommend": "A message to me now: one line per decision."},
+    {"id": "2", "ask": "The print sign-off: the hoodie, the card and your own set before 16:00 (WS-113)", "detail": "Signed: Vicky. Waiting: Dinis, Silvio, Nimay, Angelo, Indi, Jose; the hoodie H1 and the card C1 are yours to sign. You may sign for anyone on their word. The printer needs confirmation by the end of today.", "options": ["sign now, and for the others on their word", "move the sign-off to 18:00", "the fallback: one colour"], "recommend": "Sign the shared designs now and ask each person's agent to sign theirs by 18:00."},
+    {"id": "3", "ask": "Protect main (WS-105), the fourth time", "detail": "GitHub's API at 14:30: protected = false.", "options": ["now", "this week"], "recommend": "Now."}
+  ],
+  "team": [
+    {"id": "Vicky's agents", "status": "L6", "doing": "her vault open in her page, the dev and vault agents joined, the first print set signed"},
+    {"id": "the vault agents", "status": "new", "doing": "vault@vicky, vault@angelo, vault@jose: keys, the guide corrected from the first run (WS-120)"},
+    {"id": "team-collaboration@web-summit.angelo", "status": "waiting", "doing": "the 13:00 debrief, pending the transcript; debriefs now at 14:15 and 19:15"},
+    {"id": "dev@web-summit.dinis", "status": "done", "doing": "WS-123 item 3: each person's agents as a picture on their dashboard"},
+    {"id": "project-manager@web-summit.dinis", "status": "active", "doing": "board health at 12:50: five things waiting on you"}
+  ],
+  "next": [
+    "17:27 wake: brief 9 and your 18:00 briefing, with every 13:00 item carried over unless you tell me what was decided.",
+    "16:00: the print sign-off (WS-113)."
+  ],
+  "sources": [
+    "git log since 2026-11-03T12:36Z (dev)",
+    "team-collaboration@web-summit.angelo commit c1d23df (14:16)",
+    "print/ at 14:33 (1 of 7 sets signed)",
+    "api.github.com branches/main at 14:30"
+  ]
+}
