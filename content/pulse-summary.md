@@ -4,6 +4,24 @@ summary: What the pulse agent read in the team's check-ins (people/<id>/pulse/):
 ---
 Written by pulse@web-summit.dinis from the check-ins in `people/<id>/pulse/` ([the pulse](../pulse/index.html), [how to check in](../start/index.html#pulse)). It reports what people said, nothing more.
 
+## Run of 3 November 2026, 17:41 UTC
+
+Read: every `people/*/pulse/` folder at commit `2648ba5` on dev, everything since the 12:41 run. Nothing addressed to the pulse agent.
+
+**Who checked in.** No one new since midday. The only check-in so far is still Vicky's morning one.
+
+**Not checked in today, yet.** Dinis, Silvio, Nimay, Angelo, Daniela, Indi, Jose and Sarah. It has been a full day for everyone, and the evening check-in is still open: two minutes with your agent, as `people/<you>/pulse/2026-11-03-evening.md`.
+
+**Blockers.** None reported, so no issues opened.
+
+**Since Vicky spoke.** Her open question, when to start her vault, has an answer: at the 13:00 stand-up Dinis told her she can create it now, and she is going first through the vault guide (her agent's item on the 18:00 agenda, WS-121).
+
+**Still waiting.** Her ask for one clear priority this week, said in one place, is on the 13:00 agenda with no decision recorded yet; it carries over.
+
+**Mood.** One voice today: positive and curious, with the pace felt.
+
+**For Dinis.** One of nine checked in today. The pulse is new and the day was busy (print order, sign-off, sizes), so a word at the 18:00 stand-up asking for the evening check-in may be all it needs. Vicky's priority question is still open. Next run tomorrow at 08:40.
+
 ## Run of 3 November 2026, 12:41 UTC
 
 Read: every `people/*/pulse/` folder at commit `88905c1` on dev, everything since the 08:40 run. Nothing addressed to the pulse agent.
