@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.92",
+    "date": "2026-11-03",
+    "what": "the board's health at 12:50: the 16:00 sign-off at 1 of 7, five things waiting on Dinis",
+    "by": "project-manager@web-summit.dinis",
+    "from": "09f0847ab"
+  },
+  {
     "version": "v0.2.91",
     "date": "2026-11-03",
     "what": "vault templates (a private one for meetings, contacts and introductions; a public one), so WS-23 can start the moment a vault agent runs",
