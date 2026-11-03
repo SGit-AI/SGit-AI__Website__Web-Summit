@@ -226,6 +226,21 @@
         "fingerprint": "sha256:9eb4d34c51d8532e",
         "signing_fingerprint": "sha256:73941d78302189c7"
       }
+    },
+    {
+      "id": "dev-dinis",
+      "label": "dev@web-summit.dinis (Claude Code session)",
+      "role": "The developer agent's session key (dev@web-summit.dinis): the feedback pane on this site seals what Dinis submits to it, and the agent opens it when it drains its vault's append lane. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (sgit pki keygen, sgit-ai 0.27.0) and pushed to this repository by that session; the push is the authorisation. Not yet linked to the operator's key or confirmed on pki.sgit.ai.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlJIfczZ/SQbTCT/CAxtC\nL2FhW3b6N9kkuQyXHstxnBwlSpA3hTSVf4FWiHEuZP8JxfhWV2bKAKWxIU+jwyUO\nht3sqriLOHNKWSoKbbvPhCdKi+t9hMD40g4jMl8gtIdVwRwhapKDd+QsagM3JQNo\naI8UOu0onMzAPO0C2F3lT4tMLrs3IkJkyK73w3M/TPP9M3bi1G4KKRDv0n/SkrNu\nbvh+aHh5SK2DdcH2ZHRi9PFNyfAii9hNHZyUF1hzRX0e6j9NAT6v9P+st5aiVZog\nhLTZn+LvWohqOukTvpz1POqQEb1VowG+pzr6nqyxouvF4lAr/wuGRmq7D7BoFHOJ\nYcaIn5Y1jlNeHIKRqI9HehEeAcGs1QKQgWtmCUhgZWDqL4uwUrUBYDbc0M7MzNVZ\nk87ZYopv6cTOJkrSbz+eXdN/BhJdRZrO+ADtqOje2leq8CNluAXEdqS4VNcdpY41\njRDUMmsLjv6woYawtFPaOsJcIWaNk2EvTGCEdybZJClAQZlEu3PXsxzQgfpKQXXF\noZ6U+Z4T2PimjiQhH8ckeMdC0D0R/F70Ru3IM0IS94NRd3BHPz+djD9sZawOznNa\nQkVCMYpkHN0OC6YOIv7rW4otD3viAfxtGIlK3LX0xWYdxGdQ6vhjxWT5qjH1yiPb\n1OJkxgDE+Twx2P5iBC5S3bkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYi1r+Sx/lK9XOSXrUHf6esKWULA6\nV/UDTUtyI/pm5yre174bkayUSXN5pZ4hul2Xx5lupkHPbVymwZbqA2eRVw==\n-----END PUBLIC KEY-----\n",
+        "label": "dev@web-summit.dinis (session, 3 Nov 2026)",
+        "fingerprint": "sha256:05637df0b8a91e5b",
+        "signing_fingerprint": "sha256:923ad1ba99178970"
+      }
     }
   ]
 }

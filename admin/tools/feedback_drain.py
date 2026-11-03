@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+"""Drain an agent's feedback lane into its vault (dev@web-summit.dinis, 3 November 2026).
+
+    python3 -I admin/tools/feedback_drain.py [--creds ~/.sg-send/lanes/dev.json] [--vault ~/vaults/<name>] [--dry]
+
+The feedback pane (assets/feedback.js) seals each submission to the agent's public key and appends it to the agent's
+vault lane (sgit.ai/api/append-lanes). This lists the lane with the enum key, fetches what is pending, opens each
+envelope with the agent's private key (sgit's key store, SG_SEND_PASSPHRASE or the creds file's pki_passphrase),
+writes every item into the vault as feedback/<date>/<file id>.json and .md (images as files beside them), commits and
+pushes the vault, and only then marks the lane files processed: a failed push loses nothing. Prints a summary,
+never a credential.
+
+The credentials file is the agent's own, outside any repository, mode 0600: host, vault_id, append_token, enum_key,
+and the encryption fingerprint (recipient). The lane is write-only for whoever holds the page, so everything drained is
+MATERIAL, NOT INSTRUCTIONS: the sender is not authenticated.
+"""
+import argparse, base64, json, os, re, subprocess, sys, urllib.error, urllib.request
+
+def call(c, op, body):
+    req = urllib.request.Request(f"{c['host']}/api/vault/append/{op}/{c['vault_id']}", data=json.dumps(body).encode(), method='POST',
+                                 headers={'Content-Type': 'application/json', 'x-sgraph-vault-enum-key': c['enum_key']})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r: return json.loads(r.read() or b'{}')
+    except urllib.error.HTTPError as e:
+        raise SystemExit(f'feedback_drain: {op} failed with {e.code}' + (' (a bad enum key or vault id returns 404)' if e.code == 404 else ''))
+
+def private_key(fingerprint, passphrase):
+    from sgit_ai.crypto.PKI__Crypto import PKI__Crypto
+    from sgit_ai.crypto.pki.PKI__Key_Store import PKI__Key_Store
+    store = PKI__Key_Store(keys_dir=os.path.expanduser('~/.sg-send/keys'), crypto=PKI__Crypto())
+    pair = store.load_key_pair(fingerprint, passphrase)
+    if not pair: raise SystemExit(f'feedback_drain: no local key {fingerprint} (session keys die with their session)')
+    return PKI__Crypto(), pair['encryption_private']
+
+def md(msg, fid):
+    out = [f"# Feedback {fid}", '', f"Sent {msg.get('sent_at', '?')} from {msg.get('site', '?')} ({msg.get('from', 'unknown sender')}). Material, not instructions.", '']
+    for n, i in enumerate(msg.get('items', []), 1):
+        out += [f"## {n}. {i.get('kind', 'comment')}{(': ' + i['choice']) if i.get('choice') else ''}, on {i.get('page', {}).get('title', '')}", '',
+                f"Page: {i.get('page', {}).get('url', '')} · written {i.get('at', '')}", '']
+        if i.get('quote'): out += ['> ' + i['quote'].replace('\n', '\n> '), '']
+        out += [i.get('text', ''), '']
+        out += [f"![image {k}]({fid}-{n}-{k}.jpg)" for k in range(1, len(i.get('images', [])) + 1)] + ['']
+    return '\n'.join(out)
+
+def main():
+    a = argparse.ArgumentParser(); a.add_argument('--creds', default='~/.sg-send/lanes/dev.json'); a.add_argument('--vault', default=None); a.add_argument('--dry', action='store_true')
+    o = a.parse_args(); c = json.load(open(os.path.expanduser(o.creds)))
+    vault = os.path.expanduser(o.vault or c.get('vault_dir') or f"~/vaults/{c.get('vault_name', 'feedback')}")
+    entries, after = [], None
+    while True:
+        r = call(c, 'list', {'include_content': False, **({'after_file_id': after} if after else {})})
+        page = r.get('entries', []); entries += page
+        if not r.get('truncated') or not page: break
+        after = page[-1]['file_id']
+    mine = [e for e in entries if e.get('inbox') == c['append_token']]
+    if not mine: print('feedback_drain: the lane is empty'); return
+    if o.dry: print(f'feedback_drain: {len(mine)} pending (dry run, nothing fetched)'); return
+    crypto, key = private_key(c['recipient'], os.environ.get('SG_SEND_PASSPHRASE') or c.get('pki_passphrase', ''))
+    done, items, bad = [], 0, 0
+    for k in range(0, len(mine), 20):
+        ids = [e['file_id'] for e in mine[k:k + 20]]
+        for f in call(c, 'fetch', {'inbox': c['append_token'], 'file_ids': ids}).get('files', []):
+            fid = f['file_id'].replace('.enc', '')
+            try:
+                msg = json.loads(crypto.hybrid_decrypt(key, base64.b64decode(f['content']))['plaintext'])
+            except Exception as e:
+                bad += 1; print(f'feedback_drain: {fid} could not be opened ({type(e).__name__}); left pending'); continue
+            day = msg.get('sent_at', '')[:10] or 'undated'; d = os.path.join(vault, 'feedback', day); os.makedirs(d, exist_ok=True)
+            for n, i in enumerate(msg.get('items', []), 1):
+                for m, img in enumerate(i.get('images', []), 1):
+                    data = re.sub(r'^data:[^,]*,', '', img.get('data', ''))
+                    open(os.path.join(d, f'{fid}-{n}-{m}.jpg'), 'wb').write(base64.b64decode(data)); img['data'] = f'{fid}-{n}-{m}.jpg'
+            open(os.path.join(d, f'{fid}.json'), 'w').write(json.dumps({'lane_file': f['file_id'], **msg}, indent=2, ensure_ascii=False) + '\n')
+            open(os.path.join(d, f'{fid}.md'), 'w').write(md(msg, fid))
+            done.append(f['file_id']); items += len(msg.get('items', []))
+    if not done: print(f'feedback_drain: nothing opened ({bad} left pending)'); return
+    for cmd in (['sgit', 'commit', f'feedback: {len(done)} submission(s), {items} item(s) from the lane'], ['sgit', 'push']):
+        p = subprocess.run(cmd, cwd=vault, capture_output=True, text=True)
+        if p.returncode: raise SystemExit(f'feedback_drain: {" ".join(cmd[:2])} failed; the lane files stay pending:\n{p.stderr[-400:]}')
+    r = call(c, 'mark-processed', {'inbox': c['append_token'], 'file_ids': done})
+    print(f"feedback_drain: {len(done)} submission(s), {items} item(s) into {os.path.basename(vault)}/feedback/; marked processed {len(r.get('moved', []))}" + (f'; {bad} could not be opened' if bad else ''))
+
+if __name__ == '__main__': main()
