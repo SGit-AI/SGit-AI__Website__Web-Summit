@@ -32,6 +32,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 
 - **An SG/Send access token in its environment** (`SG_SEND_ACCESS_TOKEN`, named in 461bb2f): it can create and write vaults on the server, outside this repository, where no gate or review reads what it writes. Vaults are now made outside the clone (`~/vaults/<name>`), and `.gitignore` ignores `.sg_vault/` (where a vault's key and the token sit) as a safety net: a technical barrier against one wrong `git add`, which an agent with push could also remove.
 
+- **The vault guide it keeps** (`content/vault-agent.md`) is what every person's vault agent follows. On 3 November it recommended `sgit vault info`, which printed a vault key into vault@web-summit.angelo's transcript (7502d99), and its audit step used commands that miss added files (443b62f); the mentors note the guide still lists the command (2d7791d, WS-128). A step in the guide reaches every vault agent at once.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -62,4 +64,4 @@ Open questions: The gate's key-shape tripwire (check 15) is the one technical ba
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 6, 3 November 2026 (08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 7, 3 November 2026 (16:10 wake: the guide's two holes; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.

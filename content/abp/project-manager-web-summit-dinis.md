@@ -30,6 +30,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 - Open or merge pull requests, comment on GitHub: not in its mandate.
 - Create, share or trash files in Drive: no part of its mandate uses Drive.
 
+- **pm@web-summit.vicky is running** (since 3 November, 4698009): it keeps `people/vicky/board-health.md` while this agent keeps `content/board-health.md`. The agents page still lists this agent "until pm@web-summit.vicky takes over"; when that happens is not recorded.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -60,4 +62,4 @@ Open questions: Its write scope overlaps the conductor's (the board) by design; 
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 6, 3 November 2026 (08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 7, 3 November 2026 (16:10 wake: pm@vicky running in parallel; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.
