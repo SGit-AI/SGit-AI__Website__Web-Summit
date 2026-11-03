@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.49",
+    "date": "2026-11-03",
+    "what": "the 06:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "8ad9ae059"
+  },
+  {
     "version": "v0.2.48",
     "date": "2026-11-03",
     "what": "a chart helper, and today's runs as a picture on /wakes/ (WS-123, item 3)",
