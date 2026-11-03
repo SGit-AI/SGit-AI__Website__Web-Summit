@@ -211,6 +211,21 @@
         "fingerprint": "sha256:ab29677c9756bfb6",
         "signing_fingerprint": "sha256:28b8d056bfb8e4ce"
       }
+    },
+    {
+      "id": "procurement-silvio",
+      "label": "procurement@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's procurement agent (procurement@web-summit.silvio): finds suppliers, drafts the emails Silvio sends, keeps /procurement/, and signs Silvio's sign-offs on his word (admin/tools/signoff.mjs). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA+pRBLndrnc/UaQuARRkA\ngTbjAZRBZqdtCs3BdC8/oHnZKIHJJSsQ1jpCZKnyU9T17vlTPOXaBECoL6Uu+Exc\nwUFcA2ED8FNL4TBHDwAseDUnYX1No/LNkTpfDEL0NCgEX4XRSszMhO4MZQIFbJw0\nRsKp9X5pB1mnfCx+EcjIGa6jKMOAD6DpqmDG4fptU7X8w5CsopEPQ/u/JrxUF4v0\ne09yZvmIsR90dl56V88uF8gguljaq9FxWBUUP9SJAov8yG64iHXjxORnMB1YrNKx\noF+c4Si/9rlqld37Cg558arstf54US1fdMC8wmMnc9K6x6oFQFWUWLC3m2Xaya1J\nP2JlSK3xkhh3L8Vhu8omy8l1sSrmbdbRgoKOfD0TkSTitlGnFmIKKYrJttBMTERv\n4pftwriaFPQXOmMqyoBrv1rYzo7cVeIqFpL9tzMJuADOKOgfYmF20T8iE0WI+8+L\n4RERg9qZrJJm8Ua5ezrDcj4i9Xv36Vjop2GBJ4YOI+Box80zD39uUfYHOUj9ecox\nYT7AOVWmO/ul2QFRSTRf3mcs94yoAGSS5Z8oUzecXXtxKA0kPYJPUnjqKPzRB1zk\nWjT2HPderQPu5rT5unqDSVyKcWpmnWJ8S2chAANXjjYoY51fmzNOnEKh/a+DJRTH\nHnQYX42OYbpV6LBTjmtA9VkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEpymIO/b92msq0Yt70+Z/2qNHT/ST\nxYpiCO+ZrYDj1Y0RfYu44Nb86ziUnNZs8NoJzpH4A3bxudDQHd51+fjrxQ==\n-----END PUBLIC KEY-----\n",
+        "label": "procurement@web-summit.silvio",
+        "fingerprint": "sha256:9eb4d34c51d8532e",
+        "signing_fingerprint": "sha256:73941d78302189c7"
+      }
     }
   ]
 }

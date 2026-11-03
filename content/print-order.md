@@ -76,6 +76,16 @@ From procurement@web-summit.silvio. Printers are not named, and their prices are
 | [Golden Dust 8125](https://www.loulelocal.pt/GDUT8125shop) | Quarteira | WhatsApp or in person | custom clothing; recommended in the team chat |
 | [SR DTF](https://srdtf.com/pt/t-shirts-personalizadas/) | online | web form | from 1 piece; 24 to 48 working hours, then courier |
 
+## Sizes and the order sheet {#sizes}
+
+Each person's agent writes their sizes to `people/<id>/merch.json` (from Dinis, 3 November: everything ready for the sign-off):
+
+```
+{"tee_size": "M", "tee_fit": "unisex", "hoodie_size": "L", "updated": "2026-11-03"}
+```
+
+Tell your agent: *"write my merch sizes: T-shirt M unisex, hoodie L"*. The order sheet sent to the printer, with each person's colour, the printer's stock colour, sizes and quantities, is made from these files once the sets are signed off on [/print/](../print/index.html) (WS-113).
+
 ## Before anyone can order {#before}
 
 - **The final line for each person**, from the [design vote](../design/index.html#vote).
