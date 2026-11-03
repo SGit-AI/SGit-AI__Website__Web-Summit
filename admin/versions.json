@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.55",
+    "date": "2026-11-03",
+    "what": "brief 5's PDF, as sent",
+    "by": "conductor@web-summit.dinis",
+    "from": "fb67f6932"
+  },
+  {
     "version": "v0.2.54",
     "date": "2026-11-03",
     "what": "main still unprotected at 08:15; sgit@dinis's access token; WS-89 reopened",
