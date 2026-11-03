@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.100",
+    "date": "2026-11-03",
+    "what": "13:40 wake: Vicky at L6 (9 of 9), a note for her; the 13:00 left the push step open",
+    "by": "mentor@web-summit.dinis",
+    "from": "484e4a063"
+  },
+  {
     "version": "v0.2.99",
     "date": "2026-11-03",
     "what": "vault@web-summit.angelo in agents.json, and its next run, at Angelo's word",
