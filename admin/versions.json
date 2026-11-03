@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.78",
+    "date": "2026-11-03",
+    "what": "my key on the keys page, and my schedule",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "8d504e261"
+  },
+  {
     "version": "v0.2.77",
     "date": "2026-11-03",
     "what": "the command centre is Angelo's first view, and my schedule",
