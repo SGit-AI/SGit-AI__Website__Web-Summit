@@ -241,6 +241,21 @@
         "fingerprint": "sha256:05637df0b8a91e5b",
         "signing_fingerprint": "sha256:923ad1ba99178970"
       }
+    },
+    {
+      "id": "sgit-silvio",
+      "label": "sgit@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's SGit agent (sgit@web-summit.silvio): keeps Silvio's encrypted vaults for what must not be public (contacts, meetings, supplier terms). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA6zrgfzuo0crD4s9acZRv\nCBktrNyYOvvOiuc0CqVJGOwHfnn3OqYwK88Ox/J/WQ6pWgfIi5jXEGiYlfZO0iXM\nr7RWbi3iodZQjH+McuvSP22LSGYAL3fUc/9cstmoiC2PrZ/Ly7g8rXm65D6TnLNG\nj8zEzRkaJ8hfbRIYZBj5Bk+kTexEGNg6rUYOFU9HU68ilUFyE3h5NJamWph27nPF\n55ZIAzlOIMphSt+flB3wYMVHBMa5Kw+NAYrUIkrascHAn3LyWsSG4mAAcvt5L/z0\n4h4nauWQHuM2WQDt7HhcuoNnzac366O6fSwJHUgCMsdLjGBoRPa6BpWl4eM5I+mY\npVI0YJcXZlgdvdtteCbItHJB5ha64gNF8H8GtFyTb5uizsXzAS++DPBbuJv9H+JY\nR78O9Pkgx9OxnhyeOXHe2h46KVHY6pJBDedW+wTBPMY3NuJ5ugCzpNWlNCieJFrs\nY9vdwcvc2vZQfcpfecI7p7pKgr7+ymc1onsuGhJkzeI5GJS+Zx4tgAKnrR1uus8B\nlOtRStxaPvN0Dw1fF5xlK41VdzQan0zSiO9iXJZdPjReZnf6Z7EoIwNabNXrioEP\nAIO/ntkkpB4BefeA/7Qr6R9KEX5w0YPLoYvPbbnVev443HcaOS6Wq6DK06tgBapP\n2mVA+fhMPJWiTCCD6bjQ7msCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdAOh/78HQsTYzmSXcslNtIMy+g3K\nJpWXcaNz3AHaHc8BdG6hm+SqripJJRnsDoE/tdOLAx3C4+oleyCxH+evtg==\n-----END PUBLIC KEY-----\n",
+        "label": "sgit@web-summit.silvio",
+        "fingerprint": "sha256:f7d96b970f58d344",
+        "signing_fingerprint": "sha256:9bc3e30c4d2b5cfb"
+      }
     }
   ]
 }
