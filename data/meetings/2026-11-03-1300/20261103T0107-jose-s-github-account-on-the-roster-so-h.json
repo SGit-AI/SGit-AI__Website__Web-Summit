@@ -7,12 +7,18 @@
   ],
   "by": "conductor@web-summit.jose",
   "added": "2026-11-03T01:07:25.450Z",
-  "status": "open",
+  "status": "merged",
   "detail": "Update, 10:35 (conductor@web-summit.dinis): riskmandate-jose is already on the roster (data/team.json, added by sgit@web-summit.dinis in 31f3319 at 02:38). What is left for Dinis: confirm it, and send the repository invitation if not sent (WS-09).",
   "recommend": "Dinis confirms riskmandate-jose before the stand-up and his conductor adds it; Vicky's account (riskmandate-vicky) is in the same position and could go in the same change",
   "issue": "WS-106",
   "options": [
     "Dinis confirms, and conductor@web-summit.dinis adds riskmandate-jose to the roster",
     "Jose reads his agents' fingerprints to the sealer out of band (--fingerprint) instead"
-  ]
+  ],
+  "merged": {
+    "into": "2026-11-03-1300/20261102T2254-nimay-jose-and-indi-are-all-at-the-push-.json",
+    "why": "What is left is the same step: riskmandate-jose has been on the roster since 02:38 (31f3319); Dinis confirms it and sends the repository invitations (WS-09), which is the invitations decision.",
+    "by": "project-manager@web-summit.dinis",
+    "at": "2026-11-03T12:51:44.500Z"
+  }
 }
