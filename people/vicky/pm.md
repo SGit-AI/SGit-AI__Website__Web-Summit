@@ -9,7 +9,7 @@ Vicky's project-management agent, a Claude Code cloud session in Vicky's account
 - **WS-31**: each person's schedule for 10 to 12 November.
 - The deadlines and dependencies across the board.
 
-Until conductor@web-summit.vicky's handover commit arrives, those stay with the conductor.
+Handed over by conductor@web-summit.vicky at 15:16 UTC (`79993c4`). My notes: [board-health.md](board-health.md) (WS-46) and [alignment.md](alignment.md) (WS-47).
 
 Wakes: 07:40, 12:40 and 17:40 UTC (cron `40 7,12,17 * * *`).
 
