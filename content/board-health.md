@@ -24,7 +24,7 @@ Read: `board/` and `people/*/onboarding.json` at commit `f1e31ea` on dev (v0.1.3
 **Dependencies worth writing down.**
 
 - **Getting connected comes first.** WS-09 (Dinis adds everyone's GitHub account, Tue 3 Nov) gates WS-02 (L2, push access), which gates every issue a person closes by committing. Then WS-02 leads to WS-03 (a PKI key) and WS-12 (Dinis verifies the keys), and on to WS-04 and WS-05. Today only Dinis is past level 0.
-- **The merch chain**, all due by Wed 4 Nov, 12:00: WS-62, WS-55 and WS-56 lead to WS-63 (the final set and print files), then to WS-57 (the final artwork) and WS-48 (printing logistics, Vicky and Silvio). WS-58 (a sponsor) and WS-13 (the budget if no sponsor comes) are due at the same hour, so the budget decision cannot wait for the sponsor.
+- **The merch chain**, all due by Wed 4 Nov, 12:00: WS-62, WS-55 and WS-56 lead to WS-63 (the final set and print files), then to WS-57 (the final artwork) and WS-48 (printing logistics, Vicky and Silvio). WS-13 (the budget) is due at the same hour; WS-58 (a sponsor) was dropped on 2 November: RiskMandate only.
 - **Outreach**: WS-30 (owners for the 20 priority-1 companies, Tue 3 Nov) comes before WS-25 (the first five companies, Wed 4 Nov) and WS-26 (50 targets, Thu 5 Nov).
 
 **Duplicates and stale issues.**

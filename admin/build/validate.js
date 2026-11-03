@@ -152,6 +152,16 @@ try {
     for (const f of ignored) errors.push(`${f}: is gitignored, so CI will not have it`)
 } catch (e) { if (e.status !== 1) errors.push(`git check-ignore failed: ${e.message}`) }
 
+// 17. prose has no em-dashes (the estate's house style; the guidance on sgit.ai lists it in every gate)
+for (const dir of ['content', 'board', 'people']) for (const f of walk(path.join(ROOT, dir)).filter(f => f.endsWith('.md'))) if (read(rel(f)).includes('\u2014')) errors.push(`${rel(f)}: an em-dash in prose (use a colon, a comma or a full stop)`)
+
+// 18. every script parses: the site's own .js files and every inline script in a generated page
+{
+    const vm = require('vm'), parse = (code, where) => { try { new vm.Script(code, { filename: where }) } catch (e) { errors.push(`${where}: script does not parse: ${e.message}`) } }
+    for (const f of files.filter(f => f.endsWith('.js') && rel(f).startsWith('assets/'))) { const c = read(rel(f)); if (!/^\s*(import|export)\s/m.test(c)) parse(c, rel(f)) }
+    for (const f of htmlFiles) for (const m of read(rel(f)).matchAll(/<script(?![^>]*\bsrc=)(?![^>]*type="(?:application\/ld\+json|application\/json|module)")[^>]*>([\s\S]*?)<\/script>/g)) if (m[1].trim()) parse(m[1], rel(f) + ' (inline script)')
+}
+
 // 13. behaviour policies: every agent role has ROLE.md and policy.json; no two policies claim the same path;
 //     every ROLE.md names start.mjs and banner.mjs (the wake protocol, team/conductor/WAKE.md)
 {

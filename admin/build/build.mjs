@@ -20,7 +20,7 @@ const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
 const SECTIONS = [
     { t: 'Start', h: 'start/index.html', re: /^start\//, sub: [] },
     { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet|abp|cast|wakes)\b/, sub: [['People', 'team/index.html'], ['The map', 'team/map/index.html'], ['Setup', 'team/setup/index.html'], ['Everything', 'team/everything/index.html'], ['The cast', 'cast/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['At work', 'wakes/index.html'], ['ABPs', 'abp/index.html'], ['Meet us', 'meet/index.html']] },
-    { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|merch-sponsor|print-order|procurement|videos|research|reports|board-health|site-review|updates|meetings)\b/, sub: [['Stand-ups', 'meetings/index.html'], ['Updates', 'updates/index.html'], ['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Merch sponsor', 'merch-sponsor/index.html'], ['Procurement', 'procurement/index.html'], ['Research', 'research/insider/index.html']] },
+    { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|print|print-order|procurement|videos|research|reports|board-health|site-review|updates|meetings)\b/, sub: [['Stand-ups', 'meetings/index.html'], ['Updates', 'updates/index.html'], ['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Print files', 'print/index.html'], ['Procurement', 'procurement/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
     { t: 'About', h: 'about/index.html', re: /^(about|articles|keys|admin|agent\/|briefing)\b/, sub: [['About', 'about/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['Versions', 'admin/versions.html'], ['The site agent', 'agent/index.html'], ['Inbox briefing', 'briefing/index.html']] },
 ]
@@ -137,6 +137,7 @@ function page({ rel, title, description, body, meta = '', mdTwin = '', lead = ''
 <nav class="site"><div class="row">
 <a class="brand" href="${up}index.html">web-summit<span>.sgit.ai</span></a>
 <a class="parent" href="https://sgit.ai" title="sgit.ai: the parent project">↗ part of <b>sgit.ai</b></a>
+<a class="ver" href="${up}admin/versions.html#${VERSION}" title="This version of the site: what changed, and the commit">${VERSION}</a>
 <div class="links">${SECTIONS.map(x => `<a href="${up}${x.h}"${sectionOf(rel) === x ? ' aria-current="page"' : ''}>${x.t}</a>`).join('')}</div>
 <a class="gh" href="${REPO}">★ GitHub</a>
 </div></nav>
@@ -159,7 +160,7 @@ ${body}
 </main>
 </div>
 <script src="${up}assets/copy.js" defer></script>
-<footer><div class="row"><span>Built and run by an AI agent with a named human operator.</span><a class="ver" href="${up}admin/versions.html">${VERSION}</a><a href="${REPO}">GitHub</a><span>Code Apache-2.0, text CC BY 4.0</span></div></footer>
+<footer><div class="row"><span>Built and run by an AI agent with a named human operator.</span><a class="ver" href="${up}admin/versions.html#${VERSION}">${VERSION}</a><a href="${REPO}">GitHub</a><span>Code Apache-2.0, text CC BY 4.0</span></div></footer>
 <div class="agent-block"><pre><code>${esc(agent)}</code></pre></div>
 </body>
 </html>
@@ -481,7 +482,7 @@ pages.push({ rel: 'keys/index.html', title: 'Public keys', description: 'The pub
 const versions = JSON.parse(fs.readFileSync(path.join(ROOT, 'admin/versions.json'), 'utf8'))
 write('admin/versions.html', page({
     rel: 'admin/versions.html', title: 'Versions', description: 'Every release of this site and what changed.',
-    body: `<p>Every push to <code>dev</code> is a minor release (v0.1.x); every push to <code>main</code> is a major one. CI tags the release.</p><table><tr><th>Version</th><th>Date</th><th>What changed</th></tr>${versions.map(v => `<tr><td class="vnum">${v.version}</td><td>${v.date}</td><td>${esc(v.what)}</td></tr>`).join('')}</table>`
+    body: `<p>Every push to <code>dev</code> is a minor release; a pull request merged to <code>main</code> is a major one. CI owns the version: it numbers, tags and deploys each release, and records the commit it was built from. The version in the top bar of every page links to its own row here.</p><table><tr><th>Version</th><th>Date</th><th>What changed</th><th>Built from</th></tr>${versions.map(v => `<tr id="${v.version}"><td class="vnum">${v.version}</td><td>${v.date}</td><td>${esc(v.what)}${v.by ? ` <i>(${esc(v.by)})</i>` : ''}</td><td>${v.from ? `<a href="${REPO}/commit/${v.from}"><code>${v.from}</code></a> · ` : ''}<a href="${REPO}/tree/${v.version}">tag</a></td></tr>`).join('')}</table>`
 }))
 twin('admin/versions.html', 'Versions', 'Every release of this site and what changed.', versions.map(v => `- ${v.version} (${v.date}): ${v.what}`).join('\n'))
 pages.push({ rel: 'admin/versions.html', title: 'Versions', description: 'Release history.' })

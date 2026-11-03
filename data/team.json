@@ -67,7 +67,7 @@
       "status": "connected (L1, 2 November): card to fill",
       "summary": "Get things done: the outreach, the local Algarve work, and the videos that carry RiskMandate further. Brief: [Brief for Silvio](../../brief-silvio/index.html); dashboard: [Silvio's dashboard](../../people/silvio/index.html).",
       "owns": [
-        "the merch sponsor ask (side quest)",
+        "the print order for the merch, with procurement@web-summit.silvio (WS-48)",
         "to decide: the companies he owns on the map"
       ],
       "rules": [
@@ -76,8 +76,8 @@
         "Anything private (a partner's terms, a contact) stays in his own CRM, never on this site."
       ],
       "card": {
-        "following": "sponsor candidates for the merch; to add: companies he owns",
-        "leads": "the sponsor conversations",
+        "following": "to add: companies he owns",
+        "leads": "the print order (the printers, through his procurement agent)",
         "not_doing": "to decide",
         "medium": "to ask",
         "agent": "to decide: his own agent (the brief's part two is its instructions until then)"
@@ -99,7 +99,6 @@
         "local@web-summit.silvio",
         "outreach@web-summit.silvio",
         "procurement@web-summit.silvio",
-        "sponsor@web-summit.silvio",
         "video@web-summit.silvio"
       ],
       "github": [

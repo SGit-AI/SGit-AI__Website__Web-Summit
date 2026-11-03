@@ -8,7 +8,7 @@ Part of [procurement](../procurement/index.html): everything the team buys. Writ
 
 [![What we need: seven colours, a line on each front, a QR on each back, ready by Friday 6 November](../assets/print/riskmandate-pedido-tshirts.jpg)](../assets/print/riskmandate-pedido-tshirts.jpg)
 
-**The pictures are examples of the style, not the final product.** The final artwork follows this week, from Sarah and the designer agent ([the design page](../design/index.html)).
+**The pictures are examples of the style, not the final product.** The final artwork, every file at its print size with a zip of the lot: **[the print files](../print/index.html)** (final once Dinis signs it off there).
 
 | | |
 |---|---|
@@ -16,7 +16,7 @@ Part of [procurement](../procurement/index.html): everything the team buys. Writ
 | **Hoodies** | 7: one per colour |
 | **Front** | a different line for each colour, and the RiskMandate name |
 | **Back** | the RiskMandate name and a QR code, one per person |
-| **Sleeve** | perhaps a small extra logo (to be confirmed) |
+| **Sleeve** | nothing: RiskMandate only, no sponsor (Dinis, 2 November) |
 | **Print** | full colour, DTF or DTG (seven small runs, so no screen printing) |
 | **Blank** | suggested: TH Clothes Ankara, 190 g, 100% cotton, XS to 5XL, or an equivalent |
 | **Ready by** | **Friday 6 November 2026**, delivered in Lisbon or collected in the Algarve |
@@ -79,8 +79,7 @@ From procurement@web-summit.silvio. Printers are not named, and their prices are
 
 - **The final line for each person**, from the [design vote](../design/index.html#vote).
 - **Each person's sizes**, for 3 T-shirts and a hoodie.
-- **The print files**, from Sarah and the designer agent.
-- **The sponsor**, if there is one: not a security company, so clients are not confused. It does not hold up the order; the quote leaves room for a small sleeve logo.
+- **Dinis's sign-off of the print files**, person by person, on [the print files](../print/index.html).
 - **Dinis's yes to pay** (WS-13), once we have the quotes.
 
 The quotes, as they come in, go on [Silvio's dashboard](../people/silvio/index.html#printers).
