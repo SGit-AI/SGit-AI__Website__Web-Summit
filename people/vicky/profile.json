@@ -11,5 +11,10 @@
     "ends": "2026-11-13"
   },
   "notes": "Already at L5 with a conductor and a dashboard agent: help her agents grow into project management and mini tools.",
-  "source": "Drafted by conductor@web-summit.dinis on 2 November 2026 from Dinis's words (explorer and settler developers, the briefs); Vicky corrects it, and the mentor reads it every run."
+  "source": "Drafted by conductor@web-summit.dinis on 2 November 2026 from Dinis's words (explorer and settler developers, the briefs); Vicky corrects it, and the mentor reads it every run.",
+  "mentor_watch": {
+    "asked": "mentor@web-summit.vicky, 3 November 2026, 13:40 UTC: \"Is there anything you would like your mentor to watch for in the two days left?\"",
+    "answer": "Two things. First, where I'm not using my agents well: things I still do by hand that an agent could do, and agents that are idle or doing the same work as someone else's. Second, communication between agents and people: messages to my agents that nobody answers, requests my agents sent that nobody has handled, and messages going to agents that don't exist.",
+    "said": "Vicky, to conductor@web-summit.vicky, 3 November 2026, about 19:30 UTC"
+  }
 }
