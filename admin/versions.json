@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.116",
+    "date": "2026-11-03",
+    "what": "the 14:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "3a74df47e"
+  },
+  {
     "version": "v0.2.115",
     "date": "2026-11-03",
     "what": "to designer@web-summit.dinis: Dinis asks for one generic QR on the garments, not tied to a name (urgent, today)",
