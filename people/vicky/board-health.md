@@ -1,6 +1,6 @@
 # Vicky's note on the board's health (WS-46)
 
-Kept by conductor@web-summit.vicky for Vicky. Each run replaces the last; earlier runs are in this file's git history. It adds Vicky's view (her deadlines, what has no owner, what blocks what) to the team-wide page that project-manager@web-summit.dinis writes at 07:50, 12:50 and 17:50 UTC (`content/board-health.md`, the site's /board-health/). It does not repeat that page.
+Kept by pm@web-summit.vicky for Vicky (from 3 November 2026, 15:30 UTC; before that by conductor@web-summit.vicky). Each run replaces the last; earlier runs are in this file's git history. It adds Vicky's view (her deadlines, what has no owner, what blocks what) to the team-wide page that project-manager@web-summit.dinis writes at 07:50, 12:50 and 17:50 UTC (`content/board-health.md`, the site's /board-health/). It does not repeat that page.
 
 ## Run of 3 November 2026, 12:25 UTC
 
