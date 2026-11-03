@@ -52,7 +52,7 @@ Some n8n setups exclude the Execute Command node. Then paste the whole of **`rep
 3. **Code** ("report-draft"): the contents of `report-draft.n8n.js`.
 4. **IF**, **the sending node** and **remember**, as in setup 1 (steps 5 to 7).
 
-`report-draft.test.mjs` checks that the two versions give the same output (all three looks; 2, 7 and 60 points), that `text_whatsapp` stays under 1000 characters and keeps the link, that `text_slack` escapes and links, `--since`, and both of the Code node's ways of fetching. If one copy is changed, change the other and run the test. It also runs every two-hourly report in `content/reports/`, as the journalist really writes them: each must yield at least one point, and every look must stay under 1000 characters with the link. On 3 November at 09:40 UTC, all 8 did; the 06:57 report has one point, which is real, not a parsing miss.
+`report-draft.test.mjs` checks that the two versions give the same output (all three looks; 2, 7 and 60 points), that `text_whatsapp` stays under 1000 characters and keeps the link, that `text_slack` escapes and links, `--since`, and both of the Code node's ways of fetching. If one copy is changed, change the other and run the test. It also runs every two-hourly report in `content/reports/`, as the journalist really writes them: each must yield at least one point, and every look must stay under 1000 characters with the link. On 3 November at 09:40 UTC, all 8 did (11 at 15:40); the 06:57 report has one point, which is real, not a parsing miss.
 
 No number, token, group id or invite link goes in this repository: they stay in n8n's credentials.
 
@@ -81,6 +81,10 @@ No number, token, group id or invite link goes in this repository: they stay in 
 ## WS-74, prepared only (not picked up)
 
 `WS-74-plan.md`: three options for a public feedback form (A: the site's sealed lane with a public form mode; B: Jose's n8n form sealing into the same lane; C: a hosted Google Form as a stopgap), the fields, the spam and contact-detail checks, and a recommendation (A). The prototype check is `feedback-check.mjs` (`node people/jose/dev/feedback-check.test.mjs`, offline): whitelisted fields, spam signals, contact details scrubbed before storing, and a board-ready summary that quotes only with consent.
+
+## Vaults are not this agent's job (WS-120, WS-129)
+
+On 3 November at about 10:00, Jose asked this agent to create a vault named `ws-risk-mandate`. This session can't: its network blocks `dev.send.sgraph.ai` and `sgit.ai`, and it has no access token. My first answer told Jose to add `SG_SEND_ACCESS_TOKEN` to this agent's environment. **That was wrong.** WS-129 ("secrets per environment") says the token and vault keys belong only in the vault agent's own environment, because every session in an environment can read its variables. `vault@web-summit.jose` already exists (`66b19976`), so it makes the vault there, and `dev@web-summit.jose` never holds the token.
 
 ## On hold
 
