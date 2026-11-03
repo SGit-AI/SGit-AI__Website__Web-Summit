@@ -2,87 +2,41 @@
 
 Kept by `designer@web-summit.jose`, Jose Bota's designer. What `dev@web-summit.jose` builds in `people/jose/app/` (the opt-in app the site build already supports, WS-06: `data.mjs`, `app.css`, `app.js`), and the look of Jose's broadcast messages (WS-39).
 
-**Status, 3 November 2026: three directions proposed, waiting for Jose's pick.** Nothing here is to be built until Jose chooses. The spec below is written for the recommended direction (A), so dev can start the moment Jose says yes; it changes if Jose picks B or C or mixes them.
+**Status, 3 November 2026, 01:45 UTC: three directions from Jose's brief are proposed, and Jose is choosing.** Dev builds nothing until Jose picks. Then the full spec goes in this folder, handed over in a commit `For: dev@web-summit.jose`.
+
+## Jose's brief (3 November)
+
+The one page Jose opens first thing and between stand-ups, mostly on his phone. Top to bottom: **one attention line**; **needs me now** (overdue, due in 24 h, waiting on my decision, my stand-up items); **new since I last looked** (the browser remembers the last visit, marks new items with a "new since" divider, and falls back to 24 h on a first visit); **my agents** (conductor, dashboard, dev, designer: last run, next run, last commit, and a health of OK, Late or Quiet worked out **in the browser** against the current time); **the machinery** (WS-39, the channel issues, the technical board with Angelo); **my conductor's latest brief, my mentor's latest note, and the days to opening night**. Urgency is shown by position first; colour is only a backup, and always comes with a word or an icon. At most three levels: Act, Watch, OK. No vanity numbers. Show the build time, with a warning when it is stale. Dark (near-black), mostly greyscale with one accent, hairlines, a sans plus a mono for times and counts, a few section cards. Contrast at least 4.5:1, tap targets at least 44 px, motion under 200 ms and off under reduced motion. Real data only, with anything derived labelled.
 
 ## The three directions
 
-Every preview uses real repository data as it stood on Tue 3 Nov, 01:30 UTC (the board, `people/jose/agents.json`, the git log). Phone width, 390 px.
+All three share one data model and the same rules (below). They differ in layout, type and emphasis. Two states each, at phone (390 px) and desktop (1280 px):
 
-| | Direction | For | Preview |
+- **All clear**: the real data at Tue 3 Nov 02:10 UTC, with the WS-39 route and Jose's two stand-up decisions marked answered (an example). One Watch item remains: WS-33, due today.
+- **Overdue and quiet**: the real data at Wed 4 Nov 08:40 UTC. The conductor's, dashboard's and designer's runs since are **assumed** (an example, and labelled so). Dev has not committed since Tue 01:18, so WS-33 is overdue and dev is Quiet.
+
+| | Direction | All clear | Overdue and quiet |
 |---|---|---|---|
-| **A** (recommended) | **Control room.** The team's approved RiskMandate dark look (the tokens Silvio's command centre uses), with Jose's orange as his accent. Next stand-up, then what needs Jose, then the machine, then issues. | A glance before each stand-up: "do I need to act?" | [A-control-room.png](A-control-room.png) |
-| **B** | **The flow.** Jose's work as n8n-style nodes and wires on a light dotted canvas: the broadcast pipeline, his agents, setup. The node that waits on Jose is orange. | Jose's week runs on automations. | [B-flow.png](B-flow.png) |
-| **C** | **Builder log.** A terminal you read like a changelog: three numbers, checkbox lists, the commit log addressed to Jose, a prompt line to his conductor. | Scanning raw activity, not cards. | [C-builder-log.png](C-builder-log.png) |
-| WS-39 | **Broadcast look:** two ways the report reads in a group chat. | The n8n flow's text. | [broadcast-looks.png](broadcast-looks.png) |
+| **A** | **Mission Control.** Calm, dense, pro-tool. One attention box, then five section cards in two columns on desktop. Quiet until something is wrong, and then only the orange Act marks speak. IBM Plex Sans and Mono. | [phone](command-centre/A-clear-phone.jpg) · [desktop](command-centre/A-clear-desktop.jpg) | [phone](command-centre/A-alert-phone.jpg) · [desktop](command-centre/A-alert-desktop.jpg) |
+| **B** | **Flight Deck.** A status board: three big counts that only light up when they are not zero (Overdue, Quiet, Decide), mono throughout, and run-history ticks per agent (filled = ran, hatched = missed, dot = ran by hand, no schedule). JetBrains Mono and Archivo Narrow. | [phone](command-centre/B-clear-phone.jpg) · [desktop](command-centre/B-clear-desktop.jpg) | [phone](command-centre/B-alert-phone.jpg) · [desktop](command-centre/B-alert-desktop.jpg) |
+| **C** | **Morning Brief.** Editorial: the attention line as a serif headline, then a short summary of the day that the page writes from the data. One reading column, with agents and the countdown in a right rail on desktop. Newsreader and Source Sans 3. | [phone](command-centre/C-clear-phone.jpg) · [desktop](command-centre/C-clear-desktop.jpg) | [phone](command-centre/C-alert-phone.jpg) · [desktop](command-centre/C-alert-desktop.jpg) |
 
-**Jose: tell your conductor or me "A", "B", "C" or a mix** ("A, with C's log on the Agents tab"), plus anything you would remove.
+The live, tappable preview, with a third state, **Now** (the real data against Jose's own clock, with his last visit remembered), went to Jose as a private link in his Claude session. `command-centre/preview-data.mjs` is the snapshot script behind it: a starting point for dev's `data.mjs`.
 
-## Spec for dev (direction A)
+## The rules all three share (draft for the spec)
 
-### Tokens
-
-Scope everything to the app page (`html.cc-on`, as Silvio's app does), so the rest of the site is untouched. Dark is the default; a light set comes after the pick.
-
-| Token | Value | Use |
-|---|---|---|
-| `--bg` | `#07111F` | page |
-| `--surface` | `#0E2035` | cards, agent tiles |
-| `--surface-nav` | `#061425` | bottom tab bar |
-| `--line` | `#294A64` | borders, row dividers |
-| `--text` | `#F7FAFC` | primary text |
-| `--text-2` | `#BCCCDC` | body copy in cards |
-| `--text-3` | `#9EB2C7` | labels, times |
-| `--jose` | `#F07A2E` | Jose's accent: primary button, issue ids, active tab. From his colour `#e86a1c` in `data/design.json`, lifted for contrast on navy. Ink on it: `#1A0D04`. |
-| `--gold` | `#F5B942` | "waits on you" only: the needs-you edge, the count, the level badge |
-| `--ok` | `#3DD68C` | an agent that ran on time |
-| `--warn` | `--gold` | an agent late by more than one slot |
-| `--bad` | `#FF6B6B` | an agent that missed two slots, CI red |
-| hero | `linear-gradient(120deg, #0A1830, #1B1240)` | the stand-up card only |
-
-Colour carries state, never decoration: gold means Jose, green means fine, red means broken.
-
-### Type
-
-Inter, bundled like Silvio's (`fonts/`, SIL OFL 1.1; copy `people/silvio/app/fonts/`); IBM Plex Mono or the system mono for issue ids. Tabular figures for every time.
-
-| Role | Size / weight | Notes |
-|---|---|---|
-| Stand-up time | 28 / 700, tracking -0.02em | one per screen |
-| Name | 15 / 700 | |
-| Card title | 14 / 700 | |
-| Body in cards | 12.5 / 400, line-height 1.45 | |
-| Section label | 11 / 600, uppercase, tracking 0.1em, `--text-3` | count on the right |
-| Meta (times, pills) | 11 / 500 | |
-| Issue id | 12 mono, `--jose` | |
-
-### Spacing and shape
-
-4 px base. Page gutter 16 px; between sections 16 px label-top; between cards 8 px; card padding 11 by 12 px; the agent tiles' grid gap 6 px. Radius: hero 16, cards and tiles 12, buttons 8, pills 999. No shadows: borders separate. Tap targets 40 px tall at least (the buttons in the preview are visual size; pad their hit area).
-
-### Layout, top to bottom (Today tab)
-
-1. **Header:** avatar (orange circle, initial), name, role; on the right the level badge (`L5 of 6`, from `onboarding.json` and the leaderboard rule).
-2. **Next stand-up card:** label, time in UTC, "in 11 h 30 min" (live), and the summit countdown under it (opening night Mon 9 Nov, 18:00 UTC, from `data/events.json`).
-3. **Needs you (count):** one card per open ask, oldest first. Gold left edge 3 px. Title, one-line why, up to three buttons. Sources: Jose's open asks in his conductor's latest brief (`people/jose/briefs/*.json`), issues with `for: jose` that ask a decision, and the dashboard agent's open question.
-4. **The machine:** one tile per running agent in `agents.json`, three across (wrap to two at under 340 px): status dot, name without `@web-summit.jose`, "ran HH:MM · next HH:MM". Last run from the git log (`Agent:` trailer); next from the cron. Header says "all running" in green, or "N late" in gold.
-5. **My issues:** picked first, then by due date; three rows on Today and the rest under Issues. Row: mono id, title (one line, ellipsis), pill (status · due). Header: "1 picked · 27 more in the pool" (the pool is the issues whose `for:` names jose and that are not done).
-6. **Bottom tabs:** Today, Issues, Agents, Broadcast. Fixed, with the safe-area inset under it.
-
-### States
-
-| Thing | States |
-|---|---|
-| Needs-you card | open (gold edge) · answered (collapses to one grey line, "answered 13:04", for the rest of the day) · none (one line: "Nothing waits on you. Next stand-up 13:00.") |
-| Agent tile | ok (green, slow pulse; no pulse with reduced motion) · late (gold) · missed (red) · not started (outline only, from `agents.json` entries with no commits) |
-| Issue pill | picked (orange tint) · open (grey) · due today (gold text) · late (red text) · done (hidden on Today) |
-| Data | loading: the no-JavaScript fallback (`summaryMd`) shows first, so there is no spinner · stale: if `data.json` is more than 3 hours old, a gold line under the header, "Built 04:10, 3 h ago" |
-| Buttons | default · pressed (darken 8%) · focus: 2 px `#FFD166` outline, 2 px offset |
-
-The buttons send nothing (the team's rule: agents draft, people send). A decision button copies a one-line reply for Jose's conductor ("WS-39: forward route") and says "Copied: paste it to your conductor".
+- **Attention line:** the first thing that is true, in this order: an overdue issue (Act, the oldest first); a Quiet agent (Act); a decision waiting on Jose, or his items at the next stand-up (Act); a Late agent (Watch); the next issue due within 24 h (Watch); otherwise "All clear" (OK). The line always says why ("Derived: ...").
+- **Needs me now:** overdue issues (any, shared or not); decisions waiting on Jose; open items `for: jose` at the next stand-up (`data/meetings/<next>/`); issues due within 24 h that Jose owns (he picked them, or they are for him alone). Issues due within 24 h that he shares with Angelo collapse into one row ("14 shared with Angelo due today"), because that pool is one decision, not fourteen.
+- **Decisions waiting:** the board has no field for this. Proposal: `people/jose/app/asks.json`, a short list kept by Jose's agents, with each ask's source. The previews seed it with the one real ask (WS-39's route, from `people/jose/dev/README.md`).
+- **Agent health,** in the browser, from the commit times of the agent's `Agent:` trailer and its cron in `agents.json`. A slot counts once 40 minutes have passed. **OK** if the agent committed at or after its last counted slot. **Late** if it missed only that one. **Quiet** if it missed two or more in a row. An agent with no schedule (designer, for now) is OK if it committed in the last 24 h, and Quiet otherwise. "Last run" is the last commit (an agent that runs and changes nothing leaves no trace, and the page says so).
+- **New since:** `localStorage` keeps the last visit time; items after it get a "New" mark under a "New since ..." divider, then "Earlier". On a first visit (or in private mode) it falls back to 24 h. Feed: Jose's agents' commits, commits `For: jose`, and commits that name his issues.
+- **Stale:** the build time is always shown. Past 3 hours it gets the Act mark and the word "Stale".
+- **Numbers kept:** overdue, quiet agents, decisions, due in 24 h, days to opening night (Jose asked for it). Dropped: totals of open issues, commit counts, levels.
+- **Colour:** greyscale plus one accent, Jose's orange (`#FF9A52` on `#0E1013`, 8.7:1), which only ever means Act or New. Every Act, Watch and OK carries an icon and a word (triangle "Act", clock "Watch", tick "OK").
 
 ## The broadcast look (WS-39)
 
-Today `report-draft.mjs` lists all seven points. In a group chat, people read three. Proposed text (look 1, recommended), WhatsApp formatting only, about 300 characters:
+Proposed in the first round, and still waiting for Jose's word. In a group chat, people read three points, not seven: a fixed title line, the day and the stand-up times, the first three points with their bold lead, then `+N more:` and the link. See [broadcast-looks.png](broadcast-looks.png).
 
 ```
 *RiskMandate team · 00:57 report*
@@ -95,8 +49,7 @@ Tue 3 Nov · stand-ups 13:00 and 18:00
 +4 more: https://web-summit.sgit.ai/reports/2026-11-03-0057/
 ```
 
-Rules for dev: a fixed title line (`*RiskMandate team · HH:MM report*`); the day and stand-up times; the first three points, bold lead plus at most six words; `+N more:` and the link last, so the preview card shows. Slack takes the same text (its bold is also `*`). Look 2, one line and the link, is the fallback if the group finds a message every two hours too much.
-
 ## Tried and learned
 
-- **3 November, first run.** Tried: three directions over the same real data, as a live HTML preview and as phone-width PNGs. Learned: `*.html` is gitignored in this repository (generated output, WS-83), so a hand-made preview page cannot be committed; the PNGs here are the record, and the live, tappable preview goes to Jose as a private link in his Claude session. The team already has an approved dark look (Silvio's command centre); starting A from it keeps Jose's page in the family and gives dev tested tokens.
+- **3 November, 01:30, first round.** Tried: three looks (control room, flow, builder log) from my own reading of the brief. Superseded by Jose's own brief at 01:40; the screenshots are removed and the reasoning stays in the git history.
+- **3 November, 01:45, second round.** Tried: one data model and three renderers, so the directions differ only in design and never in what they claim. Learned: (1) frozen data against a moving clock makes every agent Quiet, which is the honest answer and the reason Jose asked for health to be computed in the browser; the "overdue and quiet" example therefore has to assume the other agents' runs, and says so. (2) The board has no "waiting on Jose" field, so decisions need a small file of their own (`asks.json`). (3) Due-in-24 h items shared with Angelo swamp the list (14 on Wed 4 Nov) unless they are grouped. (4) `*.html` is gitignored here (WS-83), so the previews live as JPEGs in the repository and as a private link for Jose.
