@@ -2,6 +2,8 @@
 title: Dinis's dashboard
 summary: The page Dinis reads first. The top is built for Dinis (the next stand-up, what happened, Dinis's agents). Below it, kept by dashboard@web-summit.dinis at Dinis's word of 3 November: the decisions blocking Dinis, today's milestones, the team's agents, the ecosystem's health, the KPIs, and the OKRs to set.
 ---
+**[Your command centre](app/index.html)**: the same data as this page, as an app (the shared engine from Silvio's design).
+
 Kept by `dashboard@web-summit.dinis`. What Dinis asked for (3 November, 01:30 UTC): *"the status of all my agents, the status of the other agents, the health of the main ecosystem, any key decisions that are blocking for me, the major milestones for the day. And then we look at a bunch of KPIs, and we need to set a bunch of OKRs and KPIs."* Your agents' status is in the built part above ([my agents](#my-agents)); the rest follows in that order. Every number lives on the page it links to, so nothing here goes stale.
 
 ## Blocking on me {#blocking}
