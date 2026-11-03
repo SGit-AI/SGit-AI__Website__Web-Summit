@@ -136,6 +136,19 @@
       "validate_seconds": 2.5,
       "ci_seconds_before": 73,
       "ci_seconds_after": null
+    },
+    {
+      "date": "2026-11-03",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass 11: CI was 47 -> 73 s; its build step alone took 14 s (1.5 s locally). Cause, mine: the burn-down read old board files (git log -p), and CI clones blobless, so each old file was fetched on demand. Now file names only: a cold build in a blobless clone 24.8 s -> 2.0 s, same figures (117 not done, 13 done).",
+      "pages": 328,
+      "build_seconds": 1.78,
+      "validate_seconds": 3.19,
+      "cold_blobless_build_seconds_before": 24.8,
+      "cold_blobless_build_seconds_after": 2,
+      "ci_seconds_before": 65,
+      "ci_seconds_after": null
     }
   ]
 }

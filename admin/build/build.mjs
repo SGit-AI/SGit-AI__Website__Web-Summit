@@ -298,26 +298,28 @@ const ISSUES = { issues: (fs.existsSync(BOARD_DIR) ? fs.readdirSync(BOARD_DIR).f
     const split = v => (v || '').split(',').map(x => x.trim()).filter(Boolean)
     return { ...meta, file: f, for: split(meta.for), done: body.trim().replace(/\n+/g, ' ') }
 }) }
-// the board's history, from one git log of board/ (when each issue's file appeared, and the last status its commits
-// set), as a burn-down to the summit's last day: ```chart burndown``` (WS-123, item 3)
+// the board's history as a burn-down to the summit's last day: ```chart burndown``` (WS-123, item 3). From one git log
+// of board/ with file NAMES only (no contents: CI's clone is blobless, and reading old contents fetched every old board
+// file one by one, 14 s of a 25 s CI build on 3 November): an issue opened the day its file first appears, and a done
+// issue closed the day its file last changed (its current status is today's file). "Closed" is therefore "last edited
+// while done", close enough for a day-by-day chart.
 CHARTS.burndown = (() => {
     let memo = null
     return () => memo ??= (() => {
-        const seen = {}
+        const first = {}, last = {}
         try {
-            let at = null, file = null
-            for (const l of execFileSync('git', ['log', '--reverse', '--format=@@%cI', '-p', '--no-color', '--', 'board/'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString().split('\n')) {
+            let at = null
+            for (const l of execFileSync('git', ['log', '--reverse', '--no-renames', '--format=@@%cI', '--name-only', '--', 'board/'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString().split('\n')) {
                 if (l.startsWith('@@20')) at = l.slice(2, 12)
-                else if (l.startsWith('+++ b/board/WS-')) { file = l.slice(12); seen[file] ??= { opened: at, status: 'open', at } }
-                else if (file && l.startsWith('+status:')) { seen[file].status = l.slice(8).trim(); seen[file].at = at }
+                else if (l.startsWith('board/WS-')) { const f = l.slice(6); first[f] ??= at; last[f] = at }
             }
         } catch { return '<p class="meta">The board history was not available to this build.</p>' }
-        const live = new Set(ISSUES.issues.map(x => x.file)), rows = Object.entries(seen).filter(([f]) => live.has(f)).map(([, v]) => v)
+        const rows = ISSUES.issues.filter(x => first[x.file]).map(x => ({ opened: first[x.file], done: x.status === 'done', at: last[x.file] }))
         if (!rows.length) return ''
-        const first = rows.map(r => r.opened).sort()[0], today = new Date().toISOString().slice(0, 10), series = []
-        for (let d = Date.parse(first + 'T12:00:00Z'); d <= Date.parse(today + 'T12:00:00Z'); d += 864e5) {
-            const day = new Date(d).toISOString().slice(0, 10), done = r => r.status === 'done' && r.at <= day
-            series.push({ day, open: rows.filter(r => r.opened <= day && !done(r)).length, opened: rows.filter(r => r.opened === day).length, closed: rows.filter(r => r.status === 'done' && r.at === day).length })
+        const from = rows.map(r => r.opened).sort()[0], today = new Date().toISOString().slice(0, 10), series = []
+        for (let d = Date.parse(from + 'T12:00:00Z'); d <= Date.parse(today + 'T12:00:00Z'); d += 864e5) {
+            const day = new Date(d).toISOString().slice(0, 10), closed = r => r.done && r.at <= day
+            series.push({ day, open: rows.filter(r => r.opened <= day && !closed(r)).length, opened: rows.filter(r => r.opened === day).length, closed: rows.filter(r => r.done && r.at === day).length })
         }
         return burndown({ series, target: '2026-11-12', label: 'The board, burning down to the last day of Web Summit' })
     })()
