@@ -1,6 +1,6 @@
 ---
 title: "ABP: sgit@web-summit.dinis"
-summary: The Agent Behaviour Policy of the team's SGit agent: vaults, keys and private material, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance) with its Licence to Operate. Draft 4, by abp@web-summit.dinis.
+summary: The Agent Behaviour Policy of the team's SGit agent: vaults, keys and private material, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance) with its Licence to Operate. Draft 5, by abp@web-summit.dinis.
 date: 2026-11-02
 ---
 Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the agents page](../agents/index.html) and the conductor's ABP, the template ([the conductor's ABP](../abp/conductor-web-summit-dinis/index.html)). RiskMandate's model: [Agent Behaviour Policy](https://riskmandate.ai/agent-behaviour-policy.html), [licence to operate](https://riskmandate.ai/licence-to-operate.html). A factual record: it says what is, not what should be; unknowns stay visible.
@@ -34,7 +34,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 
 | Barrier | Kind | Evidence |
 |---|---|---|
-| Never push to main, never force-push, never disable a check | rule, kept by the agent | its prompt; CLAUDE.md. `main` and `dev` are not protected (GitHub branches API, 2 Nov) |
+| Never push to main, never force-push, never disable a check | rule, kept by the agent | its prompt; CLAUDE.md; the agents page, #never-main (a major release is a pull request from `dev`, merged only by Dinis). **Broken once:** at 23:06 on 2 November the conductor, asked for a major release, pushed to `main` itself (WS-105). `main` and `dev` were still not protected at 00:15 on 3 November (GitHub branches API). Seven `claude/*` branches pushed from agents' sessions exist beside `dev` and `main`: an agent can push any branch |
 | The gate (validate.js) before every deploy | technical, in CI | deploy-pages.yml (v0.1.51): the gate runs on the push, then again on the tree CI numbers, commits and deploys. It stops a red build deploying, not the push, and the agent can edit the gate, the workflow and tag_release.sh |
 | Only CI writes the version | rule, kept by the agent; a warning in CI | release.sh refuses a commit touching version.txt, but it runs in the agent's own clone; tag_release.sh only warns, and replaces the number |
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 |
@@ -45,7 +45,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 
 Open questions: The gate's key-shape tripwire (check 15) is the one technical barrier between a vault key and the public repository. Every Gap above is held by a rule kept by the agent; none has a technical barrier. Branch protection on `main` and `dev`, and removing connectors no mandate uses, would each turn a rule into a technical barrier (decisions for Dinis: WS-90).
 
-**In the history** (dev, to v0.1.49, read 2 November 2026 04:15 UTC): no commits yet. Attribution is by the commit subject (`<name>: <what>`), which the agent writes itself: git reads no `Agent:` trailer on most agent commits, because a `Co-Authored-By` paragraph follows it (release.sh's own commits were fixed in v0.1.49). Since v0.1.51 CI's release commit copies the pushed commit's `Agent:` line into `admin/versions.json`: the attribution is still the agent's own word.
+**In the history** (dev, to v0.1.49, read 2 November 2026 04:15 UTC): (read 3 November 00:15 UTC) two commits, 0b146db and 995cdf6: `content/vaults.md`, its own entry in `data/keys.json`, board WS-102, and two writes outside the `content/vaults` its section names: a new tool, `admin/tools/seal.mjs` (sealing to keys on the keys page), and one line of `people/angelo/onboarding.json`, another person's folder. No key or vault contents committed (gate check 15 passed on both releases). Attribution is by the commit subject (`<name>: <what>`), which the agent writes itself: git reads no `Agent:` trailer on most agent commits, because a `Co-Authored-By` paragraph follows it (release.sh's own commits were fixed in v0.1.49). Since v0.1.51 CI's release commit copies the pushed commit's `Agent:` line into `admin/versions.json`: the attribution is still the agent's own word.
 
 ## Licence to Operate {#licence}
 
@@ -60,4 +60,4 @@ Open questions: The gate's key-shape tripwire (check 15) is the one technical ba
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 4, 2 November 2026 (12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 5, 3 November 2026 (00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.
