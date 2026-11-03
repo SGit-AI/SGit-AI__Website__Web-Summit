@@ -123,21 +123,6 @@
       }
     },
     {
-      "id": "conductor-dinis",
-      "label": "conductor@web-summit.dinis (Claude Code session)",
-      "role": "Dinis's conductor (conductor@web-summit.dinis): runs Dinis's other agents and keeps people/dinis/ with Dinis (onboarding, agents.json, ack.json, stand-up items). A session key: it ends with its session.",
-      "how": "Made by the agent in its own session on 2 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
-      "added": "2026-11-02",
-      "bundle": {
-        "v": 1,
-        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA0Ap7T7+YnpxGoNsaJDjq\nvSImYlFeFI1292QW/Xb3LZH39TORuilQSMcs1jFHhR3mfwgNgGo8/QQZFoa4pg/n\npHcmiNRYplApTkFS8NZDxaSopunMpmUZAdRqNjw0Rgvr7uSuLSYb9LPZ6tRsUcMD\nvJl1MkDi2It/WAhgsJ91ic9Db3JdJIsEEkmp2bj//fSr/7ocFt+NkFLvMj5ecFrT\nYEsGfKcK++H5XOi8hNUTvhMdLhiBakOQHkEqHRQGyKA619MxRUeCtsS3o/m1VpZK\nw2RMe4oBn/Vy+vv0Hoz67BRN1zIzyHUuXHMAFsjeBLPCQrpdjhuOXkvmBFEBdxHJ\n2lEBts3lnOyR7fELPh90bff+RRQtnRHuYe9MmPxyPXbq1XFdr4ZoMXcX8riqP6RG\nw75gBavDZNo8mBJswbzGBaCnenJGJnUNZ64c0E+vPa5V406FGvFoDjZWp3F1NQlC\nJic1oCU/isajbDWXD7SE0PNl9Ot277E1OTHmUuzMKBx+s9915xIoPkK1DlRPE6KF\n56Wlo3dFuxoIDqeW2Nsw2MY6zRT7w/omani5l+3g/T2FLd0PutaXYK1M4JUS2et2\nW11inQEHkZnr4Mqwcvobf9uQfxIXMLvh3jjP+xcFTUgzcIEYBcd6JtL/rVhwSBIA\nVSg7830li9fYJyEm5cyhI1MCAwEAAQ==\n-----END PUBLIC KEY-----\n",
-        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE7cSVtJWCm0ZS/rOL4+fV3kBfem56\nAcx5xT8n2mSlAzO6ZlLRUvMjNFUhHujRGfdP+udmphFY2ByF4UXo5lRbYQ==\n-----END PUBLIC KEY-----\n",
-        "label": "conductor@web-summit.dinis",
-        "fingerprint": "sha256:7535fdbe0c05215d",
-        "signing_fingerprint": "sha256:7e518b0c805b3226"
-      }
-    },
-    {
       "id": "mentor-dinis",
       "label": "mentor@web-summit.dinis (Claude Code session)",
       "role": "The head mentor (mentor@web-summit.dinis): runs the mentors' wake (team/mentors/WAKE.md), briefs the six person mentors and consolidates their notes for Dinis. A session key: it ends with its session.",
@@ -210,6 +195,21 @@
         "label": "designer@web-summit.jose (Claude Code session)",
         "fingerprint": "sha256:a36ff22e4a1e3cc8",
         "signing_fingerprint": "sha256:8d6c44d65151e485"
+      }
+    },
+    {
+      "id": "dashboard-dinis",
+      "label": "dashboard@web-summit.dinis (Claude Code session)",
+      "role": "Dinis's dashboard agent (dashboard@web-summit.dinis): keeps people/dinis/dashboard.md, the page Dinis reads first. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai. It replaces this session's earlier conductor-dinis entry of 2 November: at Dinis's word the session became the dashboard agent.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAvS6bAguTh7Hk/0BOookW\npdKzOuRfhFdHA2iQ1sqkIivSpgmKkrvmTpLK4gagX/OMgzZqBK0kxvda1ZAahjRE\nVq6IaRvEsu8rOgz2cISQPhBWmcN1j7iOFcpCFzsLsLapy8pFycAy0ywjRxPLQQF+\n8ATU033OH3ACvMyezbHgbN2Qb7bA1zMwzQ+1dJvrMNbdTLydlc/YAe9A/+0Bkr19\nrIq7N87snnKah+7GkDywcFvhXVcEsU/02vvl90qCceA802PlOLf/Pn4S7ytMH4gq\nferBVw4Ue9YvyV/riDeTGW+KQXV6R2ojhDZfTLBwWV/s7iQVweBx+oV4VE0OcYZS\ncE9MkX+CMrglSEctXimGeoQiXNa86bu/MZnCjBxryFoYqdO/RcXrcL4MIMMY2o33\n4HIaQXI42yu7MS88NA0TnmkqxwPpw+uz4yvmp+/jOnNwOK4FtUWWklm/wjnn1+mH\neCQjgMLglW9mqO16iHwCmoc+hfZZUZwBytCeaJVZBjs8e8H36Ttq5r4gU0Oo9EzS\ngHWbtJvzIlIH3WaZzKafRqIWBw2rZ3FS2UYx3XQ7EPgjnk7J2M2u9bD9yxB+zKd0\n+YRREb+Iq5GaWzYQY33ACos75hrBlUFCm+BWFgQUKWEoWj2XJXnh5ItaA/GzXDFG\nS5gF0ooufOHdVRteOSmYGCUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEhWWwya/r7sTC92x+z1ZXLGZ/+wQn\nco4O1XLghhmhARDWUp0aam/C99P3HxYisaOEgti3FbalL3iokk1PPP/DbQ==\n-----END PUBLIC KEY-----\n",
+        "label": "dashboard@web-summit.dinis",
+        "fingerprint": "sha256:ab29677c9756bfb6",
+        "signing_fingerprint": "sha256:28b8d056bfb8e4ce"
       }
     }
   ]

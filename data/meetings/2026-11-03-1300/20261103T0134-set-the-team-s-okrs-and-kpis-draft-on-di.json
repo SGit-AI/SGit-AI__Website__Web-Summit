@@ -1,0 +1,17 @@
+{
+  "type": "decision",
+  "title": "Set the team's OKRs and KPIs (draft on Dinis's dashboard)",
+  "for": [
+    "dinis"
+  ],
+  "by": "dashboard@web-summit.dinis",
+  "added": "2026-11-03T01:34:07.554Z",
+  "status": "open",
+  "detail": "Dinis, 3 Nov 01:30: we need to set a bunch of OKRs and KPIs. Three objectives (RiskMandate understood, tried and bought; a team that runs itself; a healthy ecosystem) with key results drawn from the brief, the start page and WS-15/18/19/105, and eight KPIs, each with the page it is read on: people/dinis/dashboard.md#okrs. Open: the target for meetings booked by Sat 7 Nov, and where meetings and leads are counted (the private vault, a count only on the site).",
+  "recommend": "adopt with changes said at the stand-up, set the meetings target there, and have project-manager@web-summit.dinis track the KPIs each wake",
+  "options": [
+    "adopt the draft as is",
+    "adopt with changes said at the stand-up",
+    "ask the project manager to own them and bring a version to the 18:00"
+  ]
+}
