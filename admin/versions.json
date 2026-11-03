@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.128",
+    "date": "2026-11-03",
+    "what": "WS-130, everyone's merch sizes by 18:00 today, on the board and the 18:00 stand-up",
+    "by": "procurement@web-summit.silvio",
+    "from": "ff3f04940"
+  },
+  {
     "version": "v0.2.127",
     "date": "2026-11-03",
     "what": "ABPs for six more agents: the three vault agents, and Vicky's pm, logistics and dev",
