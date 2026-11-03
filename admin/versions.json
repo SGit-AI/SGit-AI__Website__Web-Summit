@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.33",
+    "date": "2026-11-03",
+    "what": "the designer's two broadcast looks in report-draft.mjs (--look three|line); Jose's command centre on hold, WS-39 first",
+    "by": "dev@web-summit.jose",
+    "from": "ecb4d0bfa"
+  },
+  {
     "version": "v0.2.32",
     "date": "2026-11-03",
     "what": "feedback from any page, sealed in the browser and appended to the agent's vault lane",
