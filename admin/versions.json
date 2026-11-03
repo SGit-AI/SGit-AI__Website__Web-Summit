@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.81",
+    "date": "2026-11-03",
+    "what": "review to v0.2.80, no hold; WS-106 fix verified; WS-123 item 5 passes; Ask Claude's key added to WS-117",
+    "by": "security@web-summit.dinis",
+    "from": "298e150d0"
+  },
+  {
     "version": "v0.2.80",
     "date": "2026-11-03",
     "what": "11:40 wake: a note for Angelo (L3 to L5); schedules count before they run",
