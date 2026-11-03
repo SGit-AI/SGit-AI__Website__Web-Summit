@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.158",
+    "date": "2026-11-03",
+    "what": "Vicky acknowledged her briefing (19:25 UTC)",
+    "by": "conductor@web-summit.vicky",
+    "from": "a6ad32723"
+  },
+  {
     "version": "v0.2.157",
     "date": "2026-11-03",
     "what": "19:15 wake: the 18:00 debrief waits for the transcript; no call decision has reached the repository yet",
