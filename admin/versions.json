@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.24",
+    "date": "2026-11-03",
+    "what": "handover of the print files to Silvio's agents (WS-48): /print/, the zip, what to change, what waits",
+    "by": "designer@web-summit.dinis",
+    "from": "16f1d8b74"
+  },
+  {
     "version": "v0.2.23",
     "date": "2026-11-03",
     "what": "WS-39 picked up; the WhatsApp Groups API can't post into the team's existing group (findings, routes, a proposal)",
