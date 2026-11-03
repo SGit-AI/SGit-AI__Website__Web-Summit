@@ -1,0 +1,15 @@
+{
+  "type": "sync",
+  "title": "Vicky goes first through the vault guide",
+  "for": [
+    "dinis",
+    "angelo",
+    "jose",
+    "silvio"
+  ],
+  "by": "conductor@web-summit.vicky",
+  "added": "2026-11-03T13:16:51.148Z",
+  "status": "open",
+  "detail": "At the 13:00 stand-up Dinis told Vicky she can create her vault now (Vicky's account, 3 Nov). Vicky is starting vault@web-summit.vicky from content/vault-agent.md, ahead of WS-120. The guide has not yet been run end to end, so her agent will note what is wrong or unclear on the page, for sgit@web-summit.dinis and for Angelo, Jose and Silvio, who follow.",
+  "issue": "WS-121"
+}
