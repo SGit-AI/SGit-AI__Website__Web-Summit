@@ -273,3 +273,19 @@ main.home section > h2 { font-size: 0.8rem; letter-spacing: 0.08em; text-transfo
     .hm-nums { grid-template-columns: repeat(4, 1fr); }
 }
 
+
+/* the PKI section's key cards (/pki/keys/, admin/build/pki.mjs): a QR code per active key, black on white in both themes */
+.pki-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin: 12px 0 28px; }
+.pki-card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 6px; }
+.pki-card h3 { margin: 0; font-size: 1rem; overflow-wrap: anywhere; }
+.pki-card.pki-ended { opacity: .6; }
+.pki-meta { margin: 0; font-size: .85rem; }
+.pki-badge { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: .75rem; font-weight: 600; background: var(--accent-soft); color: var(--accent-dk); }
+.pki-badge.pki-ended { background: var(--surface-2); color: var(--ink-2); }
+.pki-badge.pki-quiet { background: var(--warm-soft); color: var(--warm); border: 1px solid var(--warm-line); }
+.pki-qr { display: block; align-self: center; width: 100%; max-width: 240px; }
+.pki-qr .qr { display: block; width: 100%; height: auto; border-radius: 6px; }
+.pki-role { margin: 0; font-size: .85rem; color: var(--ink-2); }
+.pki-facts { margin: 0; padding-left: 18px; font-size: .8rem; color: var(--ink-2); }
+.pki-facts code { word-break: break-all; }
+.pki-problem { color: var(--warm); font-weight: 600; }

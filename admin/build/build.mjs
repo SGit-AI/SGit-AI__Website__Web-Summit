@@ -11,6 +11,7 @@ import { inventory, inventoryMd, myAgentsMd } from './inventory.mjs'
 import { onboarding, LEVELS } from './onboarding.mjs'
 import { orgchartSvg } from './orgchart.mjs'
 import { homeBlocks, expandHome } from './home.mjs'
+import { keysPage as pkiKeysPage } from './pki.mjs'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
@@ -22,6 +23,7 @@ const SECTIONS = [
     { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet|abp|cast|wakes)\b/, sub: [['People', 'team/index.html'], ['The map', 'team/map/index.html'], ['Setup', 'team/setup/index.html'], ['Everything', 'team/everything/index.html'], ['The cast', 'cast/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['At work', 'wakes/index.html'], ['ABPs', 'abp/index.html'], ['Meet us', 'meet/index.html']] },
     { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|log|print|print-order|procurement|videos|research|reports|board-health|site-review|updates|meetings)\b/, sub: [['Stand-ups', 'meetings/index.html'], ['Updates', 'updates/index.html'], ['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Print files', 'print/index.html'], ['Procurement', 'procurement/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
+    { t: 'PKI', h: 'pki/index.html', re: /^(pki|keys|vaults)\b/, sub: [['PKI', 'pki/index.html'], ['Keys and QR codes', 'pki/keys/index.html'], ['Giving out secrets', 'pki/secrets/index.html'], ['Signing off', 'pki/sign-off/index.html'], ['Sign in with pki.sgit.ai', 'pki/sso/index.html'], ['Review', 'pki/review/index.html'], ['Public keys', 'keys/index.html'], ['Vaults', 'vaults/index.html']] },
     { t: 'About', h: 'about/index.html', re: /^(about|articles|keys|admin|agent\/|briefing)\b/, sub: [['About', 'about/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['Versions', 'admin/versions.html'], ['The site agent', 'agent/index.html'], ['Inbox briefing', 'briefing/index.html']] },
 ]
 const NAV = SECTIONS.map(s => [s.t, s.h])
@@ -498,6 +500,12 @@ const keySection = k => `<h2 id="${k.id}">${esc(k.label)}</h2><p>${esc(k.role)}<
 write('keys/index.html', page({ rel: 'keys/index.html', title: 'Public keys', description: 'The public keys published on this site, and how each came to be trusted.', body: `<p>${inline(keyData.about)}</p>${keyData.keys.map(keySection).join('')}`, mdTwin: 'keys/index.md' }))
 twin('keys/index.html', 'Public keys', keyData.about, keyData.keys.map(k => `## ${k.label}\n\n${k.role}\n\n- Signing fingerprint: ${k.bundle.signing_fingerprint}\n- Encryption fingerprint: ${k.bundle.fingerprint}\n- How it got here: ${k.how}\n- Public bundle: ${keyFile(k)}`).join('\n\n'))
 pages.push({ rel: 'keys/index.html', title: 'Public keys', description: 'The public keys published on this site, and how each came to be trusted.' })
+// the PKI section's key cards and QR codes: /pki/keys/ (admin/build/pki.mjs, security@web-summit.dinis)
+{
+    const P = pkiKeysPage({ ROOT, keyData, teamData, esc }), rel = 'pki/keys/index.html', title = 'Keys and QR codes: every agent\'s key', description = 'Every key on the keys page as a card, with a QR code in pki.sgit.ai\'s format for each active key, to seal a secret to it.'
+    write(rel, page({ rel, title, description, body: render(P.intro) + P.html, mdTwin: twinPath(rel) }))
+    pages.push({ rel, title, description }); twin(rel, title, description, P.md)
+}
 
 // versions
 const versions = JSON.parse(fs.readFileSync(path.join(ROOT, 'admin/versions.json'), 'utf8'))
