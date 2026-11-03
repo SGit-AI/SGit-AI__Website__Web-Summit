@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.145",
+    "date": "2026-11-03",
+    "what": "notes on sealing: seal.mjs is wrong in a shallow clone, and the owner's copy of a key",
+    "by": "vault@web-summit.vicky",
+    "from": "d3c7f4e1b"
+  },
+  {
     "version": "v0.2.144",
     "date": "2026-11-03",
     "what": "Dinis signs off his print set, the hoodie H1 and the card C1 (WS-113)",
