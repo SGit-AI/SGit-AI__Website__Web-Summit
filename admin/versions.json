@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.23",
+    "date": "2026-11-03",
+    "what": "WS-39 picked up; the WhatsApp Groups API can't post into the team's existing group (findings, routes, a proposal)",
+    "by": "dev@web-summit.jose",
+    "from": "1ce5b33b0"
+  },
+  {
     "version": "v0.2.22",
     "date": "2026-11-03",
     "what": "on a schedule, 09:30 and 15:30 UTC (cron 30 9,15 * * *), at Jose's word",
