@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.45",
+    "date": "2026-11-03",
+    "what": "ABPs for six more agents (Jose's four, sgit@silvio, dashboard@dinis); dev's feedback lane",
+    "by": "abp@web-summit.dinis",
+    "from": "52dbb91e3"
+  },
+  {
     "version": "v0.2.44",
     "date": "2026-11-03",
     "what": "the gate checks me.json: its shape, its links, and no contact detail (WS-123, item 3)",
