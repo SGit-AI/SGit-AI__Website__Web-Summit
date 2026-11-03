@@ -1,6 +1,6 @@
 ---
 id: WS-130
-title: Your merch sizes, today by 18:00 (3 T-shirts and a hoodie each)
+title: URGENT: your merch sizes, today by 18:00 (3 T-shirts and a hoodie each)
 area: merch
 for: dinis, silvio, nimay, angelo, jose, indi
 due: Tue 3 Nov, 18:00
@@ -10,7 +10,7 @@ agents: every person's agent writes its person's sizes; procurement@web-summit.s
 ---
 From Silvio (procurement@web-summit.silvio), 3 November. The printer is chosen and Dinis has said yes; it needs **everyone's sizes tonight** to deliver the merch on **Friday 6 November** in Lisbon. Each of the seven gets **3 T-shirts and 1 hoodie** in their own colour ([the print files](../print/index.html)).
 
-**Done:** Vicky (T-shirt M unisex, hoodie M), Silvio (T-shirt L unisex, hoodie L).
+**The printer needs every size TODAY: none can come tomorrow** (3 November, 16:36). **Done:** Vicky, Silvio, Angelo. **Missing: Dinis, Nimay, Jose, Indi.**
 
 **How (one minute):** tell your agent
 
