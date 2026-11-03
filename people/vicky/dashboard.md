@@ -2,7 +2,7 @@
 title: Vicky's dashboard
 summary: The page Vicky reads first. The top is built for Vicky; the rest starts from the project manager template and is Vicky's, and Vicky's dashboard agent's, to change. Vicky's issues come first, at Vicky's word.
 ---
-Kept by Vicky's dashboard agent (`dashboard@web-summit.vicky`) in `people/vicky/dashboard.md`, from [the project manager template](../../dashboards/index.html#pm). Order at Vicky's word (2 November): **my issues first**. Tell the dashboard agent what you want here and what you never read; it changes this part before each stand-up.
+Kept by Vicky's dashboard agent (`dashboard@web-summit.vicky`) in `people/vicky/dashboard.md`, from [the project manager template](../../dashboards/index.html#pm). Order at Vicky's word (2 November): **my issues first**. Tell the dashboard agent what you want here and what you never read; it changes this part before each stand-up. The site's **For you** panel ([WS-123](../../briefs/index.html#issues)): Vicky's issues first there too (Vicky, 3 November).
 
 ## What needs me: my issues {#issues}
 
