@@ -4,7 +4,7 @@
   "job": "conducts Indi's agents, keeps people/indi/, feeds the stand-ups and briefs Indi",
   "session": "Claude Code cloud session in Indi's account",
   "status": "running",
-  "planned_schedule": "07:20, 12:20 and 17:20 UTC (cron 20 7,12,17 * * *), once Indi creates the scheduled task"
+  "schedule": "07:20, 12:20 and 17:20 GMT (cron 20 7,12,17 * * *), a scheduled task firing into its own session, from 3 November"
  },
  {
   "name": "dev@web-summit.indi",
