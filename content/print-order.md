@@ -6,14 +6,17 @@ Part of [procurement](../procurement/index.html): everything the team buys. Writ
 
 ## What we want {#what}
 
-[![What we need: seven colours, a line on each front, a QR on each back, ready by Friday 6 November](../assets/print/riskmandate-pedido-tshirts.jpg)](../assets/print/riskmandate-pedido-tshirts.jpg)
+[![The final set for one of the seven: T-shirt front and back, hoodie front and back, business card](../team/designer/print/proofs/silvio.svg)](../team/designer/print/proofs/silvio.svg)
 
-**The pictures are examples of the style, not the final product.** The final artwork, every file at its print size with a zip of the lot: **[the print files](../print/index.html)** (final once Dinis signs it off there).
+The proofs, one per person: [Dinis](../team/designer/print/proofs/dinis.svg) · [Nimay](../team/designer/print/proofs/nimay.svg) · [Angelo](../team/designer/print/proofs/angelo.svg) · [Jose](../team/designer/print/proofs/jose.svg) · [Vicky](../team/designer/print/proofs/vicky.svg) · [Silvio](../team/designer/print/proofs/silvio.svg) · [Indi](../team/designer/print/proofs/indi.svg). (The first email of 2 November carried an earlier example picture; it is replaced by these proofs.)
+
+**Waiting for sign-off.** The final artwork, every file at its print size with a zip of the lot: **[the print files](../print/index.html)** (final once Dinis signs it off there).
 
 | | |
 |---|---|
 | **T-shirts** | 21: seven colours, 3 per colour |
 | **Hoodies** | 7: one per colour |
+| **Business cards** | 700: 100 per person, 85 x 55 mm, 350 g/m2 matt, both sides (in the same pack) |
 | **Front** | a different line for each colour, and the RiskMandate name |
 | **Back** | the RiskMandate name and a QR code, one per person |
 | **Sleeve** | nothing: RiskMandate only, no sponsor (Dinis, 2 November) |
@@ -88,7 +91,7 @@ Tell your agent: *"write my merch sizes: T-shirt M unisex, hoodie L"*. The order
 
 ## Before anyone can order {#before}
 
-- **The final line for each person**, from the [design vote](../design/index.html#vote).
+- **The sign-off of every set** on [/print/](../print/index.html) (WS-113): the final lines are there.
 - **Each person's sizes**, for 3 T-shirts and a hoodie.
 - **Dinis's sign-off of the print files**, person by person, on [the print files](../print/index.html).
 - **Dinis's yes to pay** (WS-13), once we have the quotes.
