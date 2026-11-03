@@ -36,7 +36,17 @@ def font(w):
     if not os.path.exists(p):
         import urllib.request; os.makedirs(FONTDIR, exist_ok=True); urllib.request.urlretrieve(FONT_URL.format(w=w), p)
     return TTFont(p)
-FONTS = {w: font(w) for w in ['Light', 'Medium', 'SemiBold', 'Bold', 'ExtraBold']}
+WEIGHTS = ['Light', 'Regular', 'Medium', 'SemiBold', 'Bold', 'ExtraBold']
+FONTS = {w: font(w) for w in WEIGHTS}
+# the thinnest stroke of a weight, as a share of the font size: the stem of 'I' x 0.85 (the bars and curves run thinner)
+STROKE = {w: 0.85 * (FONTS[w]['glyf']['I'].xMax - FONTS[w]['glyf']['I'].xMin) / FONTS[w]['head'].unitsPerEm for w in WEIGHTS}
+MIN_STROKE = [0.0]   # set to the garments' minimum while a garment file is made (DTF holds 1 mm), 0 for the cards
+THINNEST = [99.0]    # the thinnest stroke written into the file being made, in mm
+def eff(w, size):
+    """The weight actually used: the lightest at or above w whose thinnest stroke holds MIN_STROKE at this size."""
+    i = WEIGHTS.index(w)
+    while MIN_STROKE[0] and i < len(WEIGHTS) - 1 and STROKE[WEIGHTS[i]] * size < MIN_STROKE[0]: i += 1
+    return WEIGHTS[i]
 WHITE, BLACK = '#FFFFFF', '#000000'
 SITE = 'https://web-summit.sgit.ai'
 
@@ -49,7 +59,7 @@ def width1(txt, w):  # advance width of a line at a font size of 1
 
 def text(txt, w, size, x, y, fill, anchor='middle'):
     """One line of text as an outlined path; (x, y) is the baseline at the anchor. Apostrophes are set typographic."""
-    txt = txt.replace("'", "\u2019")
+    txt = txt.replace("'", "\u2019"); w = eff(w, size); THINNEST[0] = min(THINNEST[0], STROKE[w] * size)
     f = FONTS[w]; gs = f.getGlyphSet(); cmap = f.getBestCmap(); hm = f['hmtx']; s = size / f['head'].unitsPerEm
     wd = width1(txt, w) * size
     x0 = x - wd / 2 if anchor == 'middle' else x - wd if anchor == 'end' else x
@@ -96,10 +106,12 @@ def stack(blocks, width):
 
 def mark(cx, top, width, fill):
     """RISK MANDATE, as on the example: RISK light, MANDATE bold, a space between; centred on cx, width wide."""
-    gap = 0.22
-    total = width1('RISK', 'Light') + gap + width1('MANDATE', 'Bold'); size = width / total
+    gap = 0.22; lw = 'Light'
+    for _ in range(3):  # RISK takes a heavier weight where light would print thinner than the minimum stroke
+        total = width1('RISK', lw) + gap + width1('MANDATE', 'Bold'); size = width / total; lw = eff('Light', size)
+    total = width1('RISK', lw) + gap + width1('MANDATE', 'Bold'); size = width / total
     ch = cap_height('Bold') * size; x0 = cx - width / 2
-    return (text('RISK', 'Light', size, x0, top + ch, fill, 'start') + text('MANDATE', 'Bold', size, x0 + (width1('RISK', 'Light') + gap) * size, top + ch, fill, 'start')), ch
+    return (text('RISK', lw, size, x0, top + ch, fill, 'start') + text('MANDATE', 'Bold', size, x0 + (width1('RISK', lw) + gap) * size, top + ch, fill, 'start')), ch
 
 def ink(p): return WHITE if p['ink'].lower() in ('#fff', '#ffffff') else BLACK
 
@@ -108,14 +120,14 @@ def person_parts(pid):
     front = fp.get('front', t['front']); sub = fp.get('sub', t.get('sub'))
     return p, fp, t, front, sub
 
-def tee_front(pid):
+def tee_front(pid, W=None, label=''):
     """The example's front: the line in condensed capitals, a divider, the wordmark, the shirt's tagline."""
-    p, fp, t, front, sub = person_parts(pid); W = F['garments']['tee']['front']['width_mm']; c = ink(p)
+    p, fp, t, front, sub = person_parts(pid); W = W or F['garments']['tee']['front']['width_mm']; c = ink(p); k = W / 250
     size = fit(front, 'ExtraBold', W, 80)
-    blocks = [('lines', front, 'ExtraBold', size, c, 0.98), ('gap', size * 0.55), ('rule', 40, 1.5, c), ('gap', size * 0.5), ('mark', 160, c)]
-    if fp.get('tagline'): blocks += [('gap', 5), ('lines', [fp['tagline']], 'Medium', min(11.5, 160 / width1(fp['tagline'], 'Medium')), c, 1)]
+    blocks = [('lines', front, 'ExtraBold', size, c, 0.98), ('gap', size * 0.55), ('rule', 40 * k, 1.5, c), ('gap', size * 0.5), ('mark', 150 * k, c)]
+    if fp.get('tagline'): blocks += [('gap', 5), ('lines', [fp['tagline']], 'Medium', min(11 * k, 150 * k / width1(fp['tagline'], 'Medium')), c, 1)]
     body, h = stack(blocks, W)
-    return svg(W, h + 2, body, f"{p['first']}: T-shirt front ({fp['tee']}), print {W} mm wide"), W, h + 2
+    return svg(W, h + 2, body, f"{p['first']}: T-shirt front ({fp['tee']}){label}, print {W} mm wide"), W, h + 2
 
 def back_blocks(pid, W, lines, code, c, big_cap):
     """The example's back: (the hoodie's line,) the wordmark and 'Agents with a Mandate', the person's QR, the three asks."""
@@ -139,8 +151,12 @@ def hoodie_chest(pid):
 
 def hoodie_back(pid):
     p = PEOPLE[pid]; hd = HOODIES[F['garments']['hoodie']['design']]; W = F['garments']['hoodie']['back']['width_mm']
-    body, h = stack(back_blocks(pid, W, hd['back'], F['garments']['hoodie']['qr_code_mm'], ink(p), 80), W)
-    return svg(W, h + 2, body, f"{p['first']}: hoodie back ({hd['id']}), print {W} mm wide"), W, h + 2
+    cap, mh = 80, F['garments']['hoodie']['back'].get('max_height_mm', 9999)
+    while True:
+        body, h = stack(back_blocks(pid, W, hd['back'], F['garments']['hoodie']['qr_code_mm'], ink(p), cap), W)
+        if h + 2 <= mh or cap <= 20: break
+        cap -= 1
+    return svg(W, h + 2, body, f"{p['first']}: hoodie back ({hd['id']}), print {W} x {h + 2:.0f} mm"), W, h + 2
 
 def card(pid, side):
     """C1: white, a band in the person's colour, their name and line; the back their QR. Trim 85 x 55, 3 mm bleed."""
@@ -194,9 +210,14 @@ OUT = os.path.join(HERE, 'files'); os.makedirs(os.path.join(HERE, 'proofs'), exi
 manifest = []
 for fp in F['people']:
     pid = fp['id']; os.makedirs(os.path.join(OUT, pid), exist_ok=True); files = {}
-    for name, fn in [('tee-front', tee_front), ('tee-back', tee_back), ('hoodie-chest', hoodie_chest), ('hoodie-back', hoodie_back),
+    small = F['garments']['tee']['front_small']['width_mm']
+    for name, fn in [('tee-front', tee_front), ('tee-front-small', lambda i: tee_front(i, small, " for XS, S and women's")), ('tee-back', tee_back), ('hoodie-chest', hoodie_chest), ('hoodie-back', hoodie_back),
                      ('card-front', lambda i: card(i, 'front')), ('card-back', lambda i: card(i, 'back'))]:
+        MIN_STROKE[0] = 0.0 if name.startswith('card') else F['min_stroke_mm']; THINNEST[0] = 99.0
         s, w, h = fn(pid); files[name] = (s, w, h)
+        if not name.startswith('card'):
+            assert THINNEST[0] >= F['min_stroke_mm'] - 1e-9, f"{pid} {name}: a stroke of {THINNEST[0]:.2f} mm"
+            fp.setdefault('_thinnest', {})[name] = round(THINNEST[0], 2)
         rel = f'files/{pid}/{pid}-{name}'
         open(os.path.join(HERE, rel + '.svg'), 'w').write(s)
         manifest.append({'svg': rel + '.svg', 'pdf': rel + '.pdf', 'png': None if name.startswith('card') else rel + '.png', 'w': round(w, 2), 'h': round(h, 2)})
@@ -240,33 +261,34 @@ U = '../team/designer/print'
 rows = []
 for fp in F['people']:
     p = PEOPLE[fp['id']]; pid = fp['id']; t = TEES[fp['tee']]; front = fp.get('front', t['front']); sub = fp.get('sub', t.get('sub'))
-    so = fp.get('signed_off'); status = f"**signed off** by {so['by']}, {so['at']}" if so else '**waiting for Dinis**'
     c, m, y, k = cmyk(p['colour'])
     rows.append(f"""### {p['name']} {{#{pid}}}
+
+{{{{signoff:{pid}}}}}
 
 [![{p['first']}: the final set]({U}/proofs/{pid}.svg)]({U}/proofs/{pid}.svg)
 
 | | |
 |---|---|
-| **Sign-off** | {status} |
-| **Colour** | {p['colour']} (about C{c} M{m} Y{y} K{k}); ink **{'white' if ink(p) == WHITE else 'black'}** |
+| **Colour** | {p['colour']} (about C{c} M{m} Y{y} K{k}); stock colour: **{fp.get('stock_colour', 'to confirm')}**; ink **{'white' if ink(p) == WHITE else 'black'}** |
 | **T-shirt ({fp['tee']}), x {F['garments']['tee']['count_each']}** | front: "{' '.join(front)}", then RISK MANDATE and "{fp.get('tagline', '')}"; back: RISK MANDATE, "Agents with a Mandate", the QR to {SITE}/meet/{pid}/, "Meet me / Book a meeting / Talk to my agent" |
 | **Hoodie ({F['garments']['hoodie']['design']}), x {F['garments']['hoodie']['count_each']}** | chest: RISK MANDATE; back: "{' '.join(HOODIES[F['garments']['hoodie']['design']]['back'])}", then the T-shirt's back |
 | **Card ({F['card']['design']}), x {F['card']['count_each']}** | "{p['line']}" |
-| **T-shirt files** | front [SVG]({U}/files/{pid}/{pid}-tee-front.svg) · [PDF]({U}/files/{pid}/{pid}-tee-front.pdf) · [PNG]({U}/files/{pid}/{pid}-tee-front.png) ({mmx(fp['_size']['tee-front'])}); back [SVG]({U}/files/{pid}/{pid}-tee-back.svg) · [PDF]({U}/files/{pid}/{pid}-tee-back.pdf) · [PNG]({U}/files/{pid}/{pid}-tee-back.png) ({mmx(fp['_size']['tee-back'])}) |
+| **T-shirt files** | front [SVG]({U}/files/{pid}/{pid}-tee-front.svg) · [PDF]({U}/files/{pid}/{pid}-tee-front.pdf) · [PNG]({U}/files/{pid}/{pid}-tee-front.png) ({mmx(fp['_size']['tee-front'])}); front for XS, S and women's [SVG]({U}/files/{pid}/{pid}-tee-front-small.svg) · [PDF]({U}/files/{pid}/{pid}-tee-front-small.pdf) · [PNG]({U}/files/{pid}/{pid}-tee-front-small.png) ({mmx(fp['_size']['tee-front-small'])}); back [SVG]({U}/files/{pid}/{pid}-tee-back.svg) · [PDF]({U}/files/{pid}/{pid}-tee-back.pdf) · [PNG]({U}/files/{pid}/{pid}-tee-back.png) ({mmx(fp['_size']['tee-back'])}) |
 | **Hoodie files** | chest [SVG]({U}/files/{pid}/{pid}-hoodie-chest.svg) · [PDF]({U}/files/{pid}/{pid}-hoodie-chest.pdf) · [PNG]({U}/files/{pid}/{pid}-hoodie-chest.png) ({mmx(fp['_size']['hoodie-chest'])}); back [SVG]({U}/files/{pid}/{pid}-hoodie-back.svg) · [PDF]({U}/files/{pid}/{pid}-hoodie-back.pdf) · [PNG]({U}/files/{pid}/{pid}-hoodie-back.png) ({mmx(fp['_size']['hoodie-back'])}) |
 | **Card files** | [PDF, both sides]({U}/files/{pid}/{pid}-card.pdf) (91 x 61 mm with bleed); front [SVG]({U}/files/{pid}/{pid}-card-front.svg) · back [SVG]({U}/files/{pid}/{pid}-card-back.svg) |
+| **Thinnest stroke** | {min(fp['_thinnest'].values()):.1f} mm on the garments (the minimum is {F['min_stroke_mm']:g} mm) |
 {f"| **Changed** | {fp['note']} |" if fp.get('note') else ''}""".rstrip())
-waiting = [PEOPLE[x['id']]['first'] for x in F['people'] if not x.get('signed_off')]
-allso = not waiting and all(F['items_signed_off'].values())
 G, C = F['garments'], F['card']
 page = f"""---
 title: Print files: the RiskMandate merch
-summary: Everything a printer needs for the Web Summit 2026 team's RiskMandate merch (7 x 3 T-shirts, 7 hoodies, 7 x 100 business cards), as vector files at their real size with a zip of the lot, and the final set for Dinis to sign off person by person. RiskMandate only.
+summary: The Official Sign-off of the RiskMandate merch, and everything a printer needs for the Web Summit 2026 team's RiskMandate merch (7 x 3 T-shirts, 7 hoodies, 7 x 100 business cards), as vector files at their real size with a zip of the lot, and the final set for Dinis to sign off person by person. RiskMandate only.
 ---
-**{'Signed off: ready to print.' if allso else 'Waiting for sign-off: do not print yet.'}** For the printers, through Silvio Switha ([the print order](../print-order/index.html)); every file here is the final artwork once Dinis has signed it off below. Made by **designer@web-summit.dinis** from `data/design.json` and `team/designer/print/final.json` (`team/designer/print/make-print.py`).
+{{{{signoff-summary}}}}
 
-[**Download everything (zip, {os.path.getsize(zp) // 1024} KB)**]({U}/riskmandate-print-files.zip): one folder per person, with a README.
+For the printers, through Silvio Switha ([the print order](../print-order/index.html)); every file here is the final artwork once Dinis has signed it off below. Made by **designer@web-summit.dinis** from `data/design.json` and `team/designer/print/final.json` (`team/designer/print/make-print.py`).
+
+{{{{signoff-download:{os.path.getsize(zp) // 1024}}}}}
 
 ## The order {{#order}}
 
@@ -287,7 +309,9 @@ summary: Everything a printer needs for the Web Summit 2026 team's RiskMandate m
 
 ## The seven, for sign-off {{#seven}}
 
-Dinis: check each person's set (the proof shows the files as printed, on the garment colour) and say "sign off <name>" or what to change; the hoodie and the card design are signed off once for everyone. Waiting: {', '.join(waiting) if waiting else 'nobody'}. Hoodie: {'signed off' if F['items_signed_off']['hoodie'] else 'waiting'}. Card: {'signed off' if F['items_signed_off']['card'] else 'waiting'}.
+**How it is signed** (WS-113): each person signs their own set, through their agent, with the agent's key on [the keys page](../keys/index.html); Dinis signs the shared designs (the hoodie H1 and the card C1) and may sign for anyone on their word. A sign-off covers the exact bytes of the files: if a file changes afterwards, the set shows **superseded** and is signed again. The status of every set is read from the signatures at each build (`admin/tools/signoff.mjs`).
+
+{{{{signoff-shared}}}}
 
 {chr(10).join(rows)}
 

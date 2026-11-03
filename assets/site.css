@@ -27,6 +27,14 @@
     --warm-soft   : #fff4ec;
     --warm-line   : #f1d2bd;
     --warm        : #b0481a;
+    --ok          : #146c43;   /* the sign-off badges on /print/ (WS-113) */
+    --ok-soft     : #e3f4ea;
+    --warn        : #9a5b00;
+    --warn-soft   : #fdf1dc;
+    --bad         : #b42318;
+    --bad-soft    : #fde7e4;
+    --wait        : #5c5f66;
+    --wait-soft   : #eeede8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -54,6 +62,14 @@
         --warm-soft   : #2a1d15;
         --warm-line   : #4a2e1e;
         --warm        : #f0a070;
+        --ok          : #6fd39b;
+        --ok-soft     : #12301f;
+        --warn        : #f3c069;
+        --warn-soft   : #33270f;
+        --bad         : #ff8a7a;
+        --bad-soft    : #3a1714;
+        --wait        : #a9a59b;
+        --wait-soft   : #24241f;
     }
 }
 /* tokens:end */
@@ -358,3 +374,22 @@ svg.ch { display: block; width: 100%; min-width: 760px; height: auto; font: 12px
 .ch .ch-missed path { stroke: var(--surface); stroke-width: 1.6; stroke-linecap: round; }
 .ch .ch-now { stroke: var(--warn); stroke-width: 1.5; }
 .ch .ch-nowl { fill: var(--warn); font-weight: 600; }
+
+/* the Official Sign-off on /print/ (WS-113): a badge per set, the signature block, the summary bar and the download */
+.so-badge { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; border: 1px solid currentColor; }
+.so-ok { color: var(--ok); background: var(--ok-soft); }
+.so-warn { color: var(--warn); background: var(--warn-soft); }
+.so-bad { color: var(--bad); background: var(--bad-soft); }
+.so-wait { color: var(--wait); background: var(--wait-soft); }
+.so-summary { border: 1px solid currentColor; border-radius: var(--radius); padding: 0.7rem 0.9rem; margin: 0.4rem 0 1rem; }
+.so-summary span { color: var(--ink); }
+.so-download { display: inline-block; border: 1px solid currentColor; border-radius: var(--radius); padding: 0.6rem 0.9rem; font-weight: 700; text-decoration: none; min-height: 44px; }
+.so-download small { font-weight: 400; color: var(--ink-2); }
+.so-set { margin: 0.5rem 0 0.8rem; }
+.so-sig { margin: 0.6rem 0; padding: 0.6rem 0.9rem; border-left: 4px solid var(--ok); background: var(--surface); border-radius: 0 var(--radius) var(--radius) 0; }
+.so-sig p { margin: 0.2rem 0; }
+.so-how, .so-files { margin: 0.5rem 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.5rem 0.8rem; }
+.so-how pre { white-space: pre-wrap; font-size: 0.8rem; }
+.so-files ul { columns: 2; font-size: 0.82rem; }
+@media (max-width: 40rem) { .so-files ul { columns: 1; } }
+

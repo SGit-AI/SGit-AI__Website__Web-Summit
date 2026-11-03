@@ -8,29 +8,34 @@
   "garments": {
     "tee": {
       "count_each": 3,
-      "blank": "TH Clothes Ankara, 190 g, 100% cotton, or an equivalent (the printer's suggestion is welcome)",
+      "blank": "B&C #E190 (Exact 190), 100% cotton, the printer's blank; or an equivalent",
       "method": "DTF or DTG, full colour (seven small runs, so no screen printing)",
       "front": {
-        "width_mm": 280,
+        "width_mm": 250,
         "from_collar_mm": 80
       },
       "back": {
         "width_mm": 220,
         "from_collar_mm": 70
       },
-      "qr_code_mm": 120
+      "qr_code_mm": 120,
+      "front_small": {
+        "width_mm": 220,
+        "for": "XS, S and women's fits"
+      }
     },
     "hoodie": {
       "count_each": 1,
       "design": "H1",
       "method": "DTF or DTG",
       "chest": {
-        "width_mm": 90,
+        "width_mm": 110,
         "where": "left chest (wearer's left), top 180 mm below the shoulder seam"
       },
       "back": {
-        "width_mm": 260,
-        "from_collar_mm": 90
+        "width_mm": 300,
+        "max_height_mm": 380,
+        "from_collar_mm": 120
       },
       "qr_code_mm": 90
     }
@@ -58,7 +63,8 @@
         "AGENTS ARE",
         "DOING?"
       ],
-      "tagline": "Clarity. Control. Confidence."
+      "tagline": "Clarity. Control. Confidence.",
+      "stock_colour": "Black"
     },
     {
       "id": "nimay",
@@ -69,7 +75,8 @@
         "HAVE A POLICY.",
         "DO YOURS?"
       ],
-      "tagline": "Safe AI. Real Business."
+      "tagline": "Safe AI. Real Business.",
+      "stock_colour": "Royal Blue (or Cobalt Blue)"
     },
     {
       "id": "angelo",
@@ -80,7 +87,8 @@
         "HOW I CONTROL",
         "MY AGENTS."
       ],
-      "tagline": "From Access to Accountability."
+      "tagline": "From Access to Accountability.",
+      "stock_colour": "Kelly Green (or Bottle Green, darker)"
     },
     {
       "id": "jose",
@@ -92,7 +100,8 @@
       ],
       "note": "The example said 'I brought 6 agents to Web Summit': nothing but RiskMandate goes on the merch, so it ends 'Ask me why.', as on Jose's card.",
       "signed_off": null,
-      "tagline": "Ideas. Builders. Results."
+      "tagline": "Ideas. Builders. Results.",
+      "stock_colour": "Orange"
     },
     {
       "id": "vicky",
@@ -103,7 +112,8 @@
         "THE OTHER SIDE",
         "OF YOUR AGENT?"
       ],
-      "tagline": "People. Policy. Protection."
+      "tagline": "People. Policy. Protection.",
+      "stock_colour": "Radiant Purple (or Urban Purple)"
     },
     {
       "id": "silvio",
@@ -115,7 +125,8 @@
         "DOES IT HAVE",
         "PERMISSION?"
       ],
-      "tagline": "AI Agents. Your Rules."
+      "tagline": "AI Agents. Your Rules.",
+      "stock_colour": "Red (or Fire Red)"
     },
     {
       "id": "indi",
@@ -128,7 +139,8 @@
         "MANDATE.",
         "CONTROL THE GAP."
       ],
-      "tagline": "Govern AI. Grow with Confidence."
+      "tagline": "Govern AI. Grow with Confidence.",
+      "stock_colour": "Gold (or Solar Yellow)"
     }
   ],
   "items_signed_off": {
@@ -136,5 +148,7 @@
     "card": null
   },
   "sizes": "Each person's sizes (3 T-shirts and a hoodie) are still to collect: Vicky and Silvio, from the seven, before the order (WS-48).",
-  "style": "The print order's example picture (assets/print/riskmandate-pedido-tshirts.jpg), chosen by Dinis on 3 November 2026: the line in condensed capitals (Barlow Condensed Bold), a short divider, the wordmark RISK (light) MANDATE (bold), and a tagline per shirt; the back has the wordmark, 'Agents with a Mandate', the QR and 'Meet me / Book a meeting / Talk to my agent'."
+  "style": "The print order's example picture (assets/print/riskmandate-pedido-tshirts.jpg), chosen by Dinis on 3 November 2026: the line in condensed capitals (Barlow Condensed Bold), a short divider, the wordmark RISK (light) MANDATE (bold), and a tagline per shirt; the back has the wordmark, 'Agents with a Mandate', the QR and 'Meet me / Book a meeting / Talk to my agent'.",
+  "min_stroke_mm": 1.0,
+  "stock_colours_source": "The B&C #E190 colour list, https://www.clubmartin.com/Sustainable-Cotton-T-Shirt-E190-Roundneck/BCTU03T, read 3 November 2026: proposed, to confirm on the printer's own swatch."
 }

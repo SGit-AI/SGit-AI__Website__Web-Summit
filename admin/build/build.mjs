@@ -12,6 +12,7 @@ import { inventory, inventoryMd, myAgentsMd } from './inventory.mjs'
 import { onboarding, LEVELS } from './onboarding.mjs'
 import { orgchartSvg } from './orgchart.mjs'
 import { homeBlocks, expandHome } from './home.mjs'
+import { expandSignoff } from './signoff-ui.mjs'
 import { keysPage as pkiKeysPage } from './pki.mjs'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
@@ -406,9 +407,10 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
     const name = f.replace(/\.md$/, ''), body = expandIssues(rawBody, name === 'index' ? '' : '../'), rel = meta.path || (name === 'index' ? 'index.html' : `${name}/index.html`)
     let html = render(body), md = body
     if (name === 'index') ({ html, md } = expandHome(html, md, homeBlocks({ ROOT, teamData, onboard, LEVELS, INV, MEET, ISSUES, plan, castData, merch })))
+    if (name === 'print') ({ html, md } = expandSignoff(html, md, ROOT))   // the Official Sign-off, from the signatures (WS-113)
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + html.replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index' }))
     pages.push({ rel, title: meta.title, description: meta.summary })
-    if (name !== 'index') twin(rel, meta.title, meta.summary, body)
+    if (name !== 'index') twin(rel, meta.title, meta.summary, md)
     if (name === 'index') write('index.md', `# ${meta.title}\n\n${meta.summary}\n\nSite version: ${VERSION}\n\n${md.trim().replace('{{numbers}}', NUMBERS_MD)}\n`)
 }
 
