@@ -166,6 +166,21 @@
         "fingerprint": "sha256:5dc78b978e0a1750",
         "signing_fingerprint": "sha256:006ceb9a9e3febbe"
       }
+    },
+    {
+      "id": "dashboard-jose",
+      "label": "dashboard@web-summit.jose (Claude Code session)",
+      "role": "Jose's dashboard agent (dashboard@web-summit.jose): keeps the part of Jose's dashboard below the built block (people/jose/dashboard.md). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Jose's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA0OQoWzg5udqxQ5ymFfDd\ngvGzdSS9te71+iTmS7gDwXGg61dzUcoRFIAHteYDbnhqACOqEPwZEh3wzgcPz66g\nMVp/O8XtJlZD9m2HAEIshmxuqCT1gfj36JUrSiIPuImhWo2ynstZVq4P2MKVweVF\nncbGce2yOc+Dfmm0JvcjziH+waQl7dsYkIZAfwqqR3ujOuzcFKVZjY+K6qe7Hhec\nG1ygdvNq15bQkzqDkobzKsAuZMycz3lkp1CN8SJGBaWHYiWQJqsgMM0xNr5l2GVW\n5B3eWbFr+cBI08yFDqDhU9SrSV69OOXfrySG1c7Y4Z7SCl3hWpLGxxCKEEsCrkkn\njsSjY8mrWUk/km+zY/PrhZdTFa0C5qEGiJgu/Bj+xnRXZvfr/G4T/3vM+Cog2dm/\nEc56CJFAdIU1RJ454hbt62qPISC8ke/UVKcq8LlfUzrNfv7MS9i2KRMhmvz2GDh7\n8adf+IpgYQn2mtU8+i3gJljBI2lFxhDs+hCTtBc+hjKI+M/gL8/isln0T5JbUZyC\n+sGzg4o6ExBXJBdrvQDMIGRh6G44PvOnIm3bN7b0/GWkuwMpyQAlgxKioVcqZjNC\n4FDNrmqFhdTEFJ2OqLoMf9jGIjTBWeK6AX0fatzXnfZ1noO1wH2/rGOW2sOjGkIY\n2cDudijTXZkiNaNui09IfM8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEkCFpnd+x0Ii2r2yNPTHNuFk0BBPw\n0Ci/4vzUOACdRKdXRwLTmUP3aiGzWRsY2k2Z6LP7/nqRV1+ltjxoxcfkzw==\n-----END PUBLIC KEY-----\n",
+        "label": "dashboard@web-summit.jose (Claude Code session)",
+        "fingerprint": "sha256:a8209af30275647d",
+        "signing_fingerprint": "sha256:a284cb6e67d10995"
+      }
     }
   ]
 }
