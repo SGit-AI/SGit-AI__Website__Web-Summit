@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.61",
+    "date": "2026-11-03",
+    "what": "WS-113: the four printer's fixes in the files, and the Official Sign-off on /print/",
+    "by": "designer@web-summit.dinis",
+    "from": "b7879f2b5"
+  },
+  {
     "version": "v0.2.60",
     "date": "2026-11-03",
     "what": "the 08:57 report, and 'What happened' updated",
