@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.174",
+    "date": "2026-11-03",
+    "what": "conductor on a schedule (07:20, 12:20, 17:20 GMT); Indi's agent times in GMT",
+    "by": "conductor@web-summit.indi",
+    "from": "56d921e41"
+  },
+  {
     "version": "v0.2.173",
     "date": "2026-11-03",
     "what": "session key published (public half only); Indi at L4; brief 2",
