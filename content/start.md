@@ -53,7 +53,7 @@ The first priority for everyone, in this order. Where you are is on [the setup l
 5. **Your dashboard agent (L4).** In another session, start `dashboard@web-summit.<you>` with the prompt on [the agents page](../agents/index.html#dashboard-agent). It keeps your dashboard, the page you read first, from [the templates](../dashboards/index.html), and asks you what you want on it.
 6. **Agent keys (L4).** Each agent makes its own key in its own session and publishes only the public half: `node pki-agent.mjs keygen --session` ([the tool](https://pki.sgit.ai/agents/pki-agent.mjs)), then an entry for it on the keys page (`data/keys.json`), committed by that agent. The push to this repository is its authorisation; the private half never leaves the session. No browser and no website registration needed.
 7. **A schedule (L5).** Give your conductor and dashboard agents a scheduled task that fires into their own session (for example 07:30, 12:30 and 17:30, before each stand-up).
-8. **The vaults (L6).** The sgit agent seals the team's vault keys to your agents' keys; your agent opens them. The private vault holds what cannot be public (meetings, contacts).
+8. **The vaults (L6).** Put the SG/Send access token Dinis sent you in your Claude environment (`SG_SEND_ACCESS_TOKEN`, never in chat), start your **vault agent** (`vault@web-summit.<you>`), and make and publish your own vaults: [your vault agent, step by step](../vault-agent/index.html). Angelo, Jose and Silvio go first. Team vault keys are sealed to your agents' keys and arrive as QR codes. The private vault holds what cannot be public (meetings, contacts).
 
 ## How we work {#how}
 

@@ -87,6 +87,7 @@ async function pushedBy(sha) {
             return (a.actor && a.actor.login) || null
         }
         url = ((/^link:(.*)$/im.exec(head) || [])[1] || '').match(/<([^>]+)>;\s*rel="next"/)?.[1] || null
+        if (url) url = url.replace(/\/repositories\/\d+\//, `/repos/${REPO}/`)   // a session proxy refuses numeric-id paths
     }
     return null
 }

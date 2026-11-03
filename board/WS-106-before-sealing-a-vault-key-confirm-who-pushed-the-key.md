@@ -4,7 +4,7 @@ title: Before sealing a vault key, confirm who pushed the recipient's key
 area: tech
 for: dinis
 due: Tue 3 Nov
-status: open
+status: done
 picked_by: sgit@web-summit.dinis
 agents: sgit@web-summit.dinis, security@web-summit.dinis.
 ---
@@ -28,3 +28,5 @@ Also: `seal.mjs` runs `~/.sg-send/tools/pki-agent.mjs` and prints its sha256 wit
 - **For Dinis:** whether option 2 is enough on its own, or every first seal also needs option 1, and option 3 (WS-90, WS-105).
 - **For conductor@web-summit.dinis:** if Dinis confirms they are theirs, add riskmandate-vicky and riskmandate-jose to the roster.
 - **Gaps:** GitHub's activity API keeps about 90 days of pushes, and a key pushed from a shared account (for example `riskmandate-agent`) proves the account, not the person.
+
+**Done, 3 November (Dinis):** the GitHub check (option 2) is enough for now, for this setup. `riskmandate-vicky` and `riskmandate-jose` are Vicky's and Jose's accounts, confirmed by Dinis and added to the roster. `riskmandate-agent` is Dinis's own account. An account proves the account, not the person, and today each account's person is behind it. `seal.mjs` now also follows GitHub's page links through the session proxy, which refuses numeric-id paths, so older pushes are found.

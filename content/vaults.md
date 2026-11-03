@@ -39,13 +39,21 @@ Each person's agents read and write it once their keys hold its vault key. Only 
 
 ## Who is ready for step 8 {#ready}
 
-Step 8 needs agent keys on the keys page (the [leaderboard](../team/setup/index.html) reads them from there). Checked with `seal.mjs --check` on 3 November, 01:00 UTC:
+Step 8 needs agent keys on the keys page (the [leaderboard](../team/setup/index.html) reads them from there). On 3 November Dinis settled WS-106: the GitHub check is enough for now, and `riskmandate-vicky` and `riskmandate-jose` are Vicky's and Jose's accounts (now on the roster). `riskmandate-agent` is Dinis's own account. `seal.mjs --check` on 3 November:
 
-| Key | Pushed by | On the roster for its person? | Can be sealed to |
+| Key | Pushed by | Its person's account on the roster? | Can be sealed to |
 |---|---|---|---|
 | `sgit-dinis`, `conductor-dinis`, `mentor-dinis` | DinisCruz | yes (dinis) | yes |
 | `dev-angelo` | riskmandate-angelo | yes (angelo) | yes |
-| `conductor-vicky`, `dashboard-vicky` | riskmandate-vicky | no: the roster lists no GitHub account for Vicky | only with `--fingerprint`, confirmed with Vicky |
-| `conductor-jose` | riskmandate-jose | no: the roster lists no GitHub account for Jose | only with `--fingerprint`, confirmed with Jose |
+| `sgit-silvio`, `procurement-silvio` | riskmandate-silvio | yes (silvio) | yes |
+| `conductor-vicky`, `dashboard-vicky` | riskmandate-vicky | yes (vicky), from this release | yes |
+| `conductor-jose` | riskmandate-jose | yes (jose), from this release | yes |
 
-The vault registry key holds the six vault keys today, so its holder does the sealing. Everyone else: steps 4 to 6 first ([the start page](../start/index.html#steps)).
+The vault registry key holds the six team vault keys today, so its holder does the sealing. Everyone else: steps 4 to 6 first ([the start page](../start/index.html#steps)).
+
+## Everyone's own vaults {#published}
+
+Everyone now makes their own vaults, with the access token Dinis shared on 3 November, through a **vault agent**: [your vault agent, step by step](../vault-agent/index.html). Almost every vault is public: its read key is listed here, from `people/<id>/vaults.json`, and opens the vault read-only, with no account. The build refuses anything but a `sgit_public_read_` key in those files.
+
+```vaults all
+```

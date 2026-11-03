@@ -55,7 +55,7 @@
       ],
       "github": [
         "DinisCruz (admin)",
-        "riskmandate-agent (write, his agents)",
+        "riskmandate-agent (write, Dinis's own account, used for his agents)",
         "diniscruz-agent (read)"
       ]
     },
@@ -227,6 +227,9 @@
         "logistics@web-summit.vicky",
         "pm@web-summit.vicky",
         "tools@web-summit.vicky"
+      ],
+      "github": [
+        "riskmandate-vicky (write)"
       ]
     },
     {
@@ -343,6 +346,9 @@
         "automation@web-summit.jose",
         "dev@web-summit.jose",
         "helper@web-summit.jose"
+      ],
+      "github": [
+        "riskmandate-jose (write)"
       ]
     },
     {
