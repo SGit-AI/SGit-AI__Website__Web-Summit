@@ -150,5 +150,5 @@
       "List the open tech issues for Angelo and Jose on the board (board/WS-*.md, area tech) with their due dates and picked_by. Propose a split between Angelo and Jose by fit and due date, and draft the picked_by changes for my go. Commit nothing yet."
     ]
   },
-  "ideas": "One idea a day for the stand-up, from the technical side."
+  "ideas": "Angelo's wishlist (3 Nov): a kanban of cards with owners, priority, tags, dates and status; organise by planned day or status and move cards by hand; send messages and tasks to agents or people securely through vault append lanes. Details on the classic dashboard, 'What I want from my dashboard'."
 }

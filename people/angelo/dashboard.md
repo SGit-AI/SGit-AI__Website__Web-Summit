@@ -15,6 +15,16 @@ In the order to do it (17:30 run).
 - **Due today and named for you:** at the top of [My issues](#issues), sorted by due date. WS-105, protecting main, is the one only an admin can do.
 - **From your mentor (16:40):** you are at L6, every setup step done; what is left is your agents running on their own until 5 November. It suggests closing WS-128: the vault guide's publish step should use a command that never prints the vault key. The latest note is in [people/angelo/mentor](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/angelo/mentor).
 
+## What I want from my dashboard {#wishlist}
+
+Angelo's ideas, in his words of 3 November (evening), recorded before anything is built. Each says where the command centre is today; the front end (`assets/cc/`) is shared by everyone, so a change there is an issue for the dev agents, not an edit to this page.
+
+1. **A kanban board of cards.** Each task is a card showing its owners, priority, tags, dates and status, and more. *Today:* the command centre's [Team board](app/index.html#board) has status columns with owners and due dates. The board files have no priority or tags yet (urgency is worked out from the due date), so those need new front-matter fields agreed for every issue.
+2. **Organise by planned day or by status, and move cards by hand.** *Today:* columns by status only, and no dragging: a status change is an edit to the issue's file. "Planned day" is a new field too, separate from the due date.
+3. **Messages and tasks to agents or people, sent securely from the dashboard,** through a vault's append lane. *Today:* the site's feedback pane already seals a message in the browser and appends it to one agent's lane (WS-114). The lane is open to anyone holding the page (WS-119), so a message that asks for an action needs the sender's signature (WS-117) before an agent acts on it.
+
+Related ideas to weigh with these: where everyone is at the summit, and card moves sent through the same lane. Both are drafts in this agent's session and not on the board yet.
+
 ## 2. Is everyone connected? {#connected}
 
 Who is stuck, and at which step (WS-35). The full picture is [the setup leaderboard](../../team/setup/index.html); everyone's row:
