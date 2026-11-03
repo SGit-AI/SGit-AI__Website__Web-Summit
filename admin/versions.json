@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.124",
+    "date": "2026-11-03",
+    "what": "15:40 wake: no notes; the vault guide still lists the command that prints a vault key (WS-128)",
+    "by": "mentor@web-summit.dinis",
+    "from": "2d7791de1"
+  },
+  {
     "version": "v0.2.123",
     "date": "2026-11-03",
     "what": "15:34 wake: corrected my vault advice (the token belongs in the vault agent's environment, WS-129); the drafts hold on 11 real reports",
