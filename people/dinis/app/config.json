@@ -1,0 +1,13 @@
+{
+  "about": "Dinis's command centre settings (admin/build/commandcentre.mjs reads this; anything not set here comes from the defaults). llm turns on chat in the page through OpenRouter, with Dinis's own key kept in his browser only (3 November, at Dinis's word). No key or secret ever goes in this file.",
+  "llm": {
+    "provider": "openrouter",
+    "default_model": "anthropic/claude-sonnet-5.5",
+    "models": [
+      ["anthropic/claude-sonnet-5.5", "Claude Sonnet 5.5"],
+      ["anthropic/claude-opus-5.5", "Claude Opus 5.5"],
+      ["anthropic/claude-haiku-5.5", "Claude Haiku 5.5"],
+      ["anthropic/claude-fable-5.1", "Claude Fable 5.1"]
+    ]
+  }
+}

@@ -1,8 +1,10 @@
 // The team's command centre (people/<id>/app/): Silvio's approved V4 design over real repository data, made shared
 // from people/silvio/app/ by conductor@web-summit.dinis (3 November). Reads data.json (built by
 // admin/build/commandcentre.mjs from board/WS-*.md, data/team.json, data/meetings/, people/<id>/ and git history).
-// No credentials, no private data, no network calls beyond data.json; private services are reached by handing off
-// to them (Gmail, Google Calendar, Claude), and the page says so. Kept by conductor@web-summit.dinis; a person's own app/data.mjs overrides it.
+// No credentials in the repository, no private data, no network calls beyond data.json; private services are reached
+// by handing off to them (Gmail, Google Calendar, Claude), and the page says so. One exception, only where the person's
+// config.json sets "llm" (Dinis first, 3 November): Ask Claude chats in the page through OpenRouter, with the person's
+// own key kept in this browser's localStorage and sent only to openrouter.ai (dev@web-summit.dinis). Kept by conductor@web-summit.dinis; a person's own app/data.mjs overrides it.
 (() => {
     'use strict'
     const root = document.getElementById('cc')
@@ -368,10 +370,89 @@ ${calId ? `<iframe class="cc-cal" title="Your Google Calendar (agenda)" src="htt
         task: ['Plan this issue', 'Make a plan of at most five steps to finish this issue, say what you can do yourself and what you need from me, and wait for my go.'],
         idea: ['An idea', 'Help me shape one idea for the stand-up: what should the team do before Web Summit that it is not doing? Give me three options with the cost and the first step of each.'],
     }
+    // ---------- chat in the page: OpenRouter, the person's own key, on this device only ----------
+    const OR = 'https://openrouter.ai/api/v1/chat/completions'
+    const LLM = () => D.llm || null
+    const MODELS = () => (LLM() && LLM().models) || [['anthropic/claude-sonnet-5.5', 'Claude Sonnet 5.5']]
+    const chat = {
+        key: () => store.get('or.key', ''),
+        model: () => store.get('or.model', (LLM() && LLM().default_model) || MODELS()[0][0]),
+        log: () => store.get('chat', []),
+        save: m => store.set('chat', m.slice(-40)),
+        busy: null,
+    }
+    const keyHint = k => k ? `…${k.slice(-4)}` : 'none'
+    // the model's words, safely: escaped first, then a little markdown (paragraphs, lists, bold, code, links)
+    const mdLite = t => esc(t)
+        .replace(/```([\s\S]*?)```/g, (_, c) => `<pre><code>${c.replace(/^\w*\n/, '')}</code></pre>`)
+        .replace(/`([^`\n]+)`/g, '<code>$1</code>')
+        .replace(/\*\*([^*\n]+)\*\*/g, '<b>$1</b>')
+        .replace(/\[([^\]\n]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+        .replace(/^(?:[-*] .*(?:\n|$))+/gm, b => `<ul>${b.trim().split('\n').map(l => `<li>${l.replace(/^[-*] /, '')}</li>`).join('')}</ul>`)
+        .replace(/\n{2,}/g, '</p><p>').replace(/\n/g, '<br>')
+    const system = () => `You are Claude, working with ${D.person.name} (${D.person.role}) from their Web Summit 2026 command centre on web-summit.sgit.ai. Be brief, concrete and practical; British English. You have no tools here: you cannot read their email, calendar or the repository beyond the context below; say so when it matters and suggest what to hand to their agents.\n\n${context()}\n\n${RULES_()}`
+    const bubble = (m, i) => `<div class="cc-msg ${m.role === 'user' ? 'me' : 'ai'}" data-i="${i}"><div class="who">${m.role === 'user' ? esc(FIRST) : esc((MODELS().find(x => x[0] === m.model) || [, m.model || 'Claude'])[1])}</div><div class="txt"><p>${mdLite(m.content || '')}</p></div>${m.meta ? `<div class="meta">${esc(m.meta)}</div>` : ''}</div>`
+    const keyForm = () => `<form id="or-form" class="cc-orform"><label class="f" for="or-key">Your OpenRouter key</label>
+<div class="cc-filters"><input id="or-key" type="password" autocomplete="off" spellcheck="false" placeholder="sk-or-v1-…" style="flex:1;min-width:240px"><button class="cc-btn primary" type="submit">Save on this device</button></div>
+<p class="note">Make one at <a href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener">openrouter.ai/settings/keys</a> <b>with a credit limit</b>, just for this page. It is kept in this browser's local storage, on this device only, and sent only to openrouter.ai. It is never in the repository, never in data.json, and other people's command centres never see it. Remove it any time in Settings.</p></form>`
+    function chatCard() {
+        const k = chat.key(), log = chat.log()
+        if (!k) return card('Chat with Claude, here in the page', `<p>Ask Claude can answer right here, through OpenRouter, with your board as context. It needs your own OpenRouter key, once, on this device.</p>${keyForm()}`, { cls: 'cc-span-7', id: 'chat' })
+        return card('Chat with Claude', `<div class="cc-filters" style="margin-bottom:10px">
+<label class="sr" for="or-model">Model</label><select id="or-model">${MODELS().map(([v, l]) => `<option value="${esc(v)}"${chat.model() === v ? ' selected' : ''}>${esc(l)}</option>`).join('')}</select>
+<span class="note">Key ${esc(keyHint(k))} on this device · <a href="#settings">change</a></span><span style="flex:1"></span>
+<button class="cc-btn" type="button" id="chat-new">${ico('plus', '')}New chat</button><button class="cc-btn" type="button" id="chat-copy"${log.length ? '' : ' disabled'}>${ico('copy', '')}Copy</button></div>
+<div class="cc-chatlog" id="chat-log" aria-live="polite">${log.length ? log.map(bubble).join('') : `<p class="note">Start with a template above, type, or dictate. Your open issues and decisions go with the first message${$('#ask-ctx') && !$('#ask-ctx').checked ? ' (switched off below)' : ''}.</p>`}</div>`, { cls: 'cc-span-12', id: 'chat' })
+    }
+    async function send() {
+        const ta = $('#ask-text'), q = (ta.value || '').trim()
+        if (!q || chat.busy) return
+        const log = chat.log(), model = chat.model()
+        log.push({ role: 'user', content: q }); const reply = { role: 'assistant', content: '', model }; log.push(reply); chat.save(log)
+        ta.value = ''; S.askDraft = ''
+        const box = $('#chat-log'); box.innerHTML = log.map(bubble).join(''); box.scrollTop = box.scrollHeight
+        const out = box.lastElementChild.querySelector('.txt'), meta = document.createElement('div'); meta.className = 'meta'; box.lastElementChild.appendChild(meta)
+        const withCtx = $('#ask-ctx') ? $('#ask-ctx').checked : true
+        const messages = [...(withCtx ? [{ role: 'system', content: system() }] : []), ...log.slice(0, -1).map(({ role, content }) => ({ role, content }))]
+        const ctl = new AbortController(); chat.busy = ctl; sendState(true)
+        const t0 = performance.now()
+        try {
+            const r = await fetch(OR, {
+                method: 'POST', signal: ctl.signal,
+                headers: { 'Authorization': `Bearer ${chat.key()}`, 'Content-Type': 'application/json', 'HTTP-Referer': location.origin + location.pathname, 'X-Title': 'web-summit.sgit.ai command centre' },
+                body: JSON.stringify({ model, messages, stream: true, usage: { include: true }, provider: { data_collection: 'deny' } }),
+            })
+            if (!r.ok) { const e = await r.json().catch(() => ({})); throw new Error((e.error && e.error.message) || `OpenRouter said ${r.status}`) }
+            const rd = r.body.getReader(), dec = new TextDecoder(); let buf = '', usage = null
+            for (;;) {
+                const { done, value } = await rd.read(); if (done) break
+                buf += dec.decode(value, { stream: true }); const lines = buf.split('\n'); buf = lines.pop()
+                for (const l of lines) {
+                    if (!l.startsWith('data: ') || l === 'data: [DONE]') continue
+                    let j; try { j = JSON.parse(l.slice(6)) } catch { continue }
+                    if (j.error) throw new Error(j.error.message || 'the stream stopped')
+                    const d = j.choices && j.choices[0] && j.choices[0].delta && j.choices[0].delta.content
+                    if (d) { reply.content += d; out.innerHTML = `<p>${mdLite(reply.content)}</p>`; box.scrollTop = box.scrollHeight }
+                    if (j.usage) usage = j.usage
+                }
+            }
+            reply.meta = `${((performance.now() - t0) / 1000).toFixed(1)} s${usage ? ` · ${usage.prompt_tokens} in, ${usage.completion_tokens} out${usage.cost != null ? ` · $${Number(usage.cost).toFixed(4)}` : ''}` : ''}`
+        } catch (e) {
+            reply.meta = e.name === 'AbortError' ? 'Stopped.' : `Not answered: ${e.message}`
+            if (!reply.content) reply.content = e.name === 'AbortError' ? '(stopped)' : '(no answer)'
+        } finally {
+            meta.textContent = reply.meta || ''; chat.save(log); chat.busy = null; sendState(false); ta.focus()
+            const c = $('#chat-copy'); if (c) c.disabled = false
+        }
+    }
+    function sendState(on) { const s = $('#chat-send'), x = $('#chat-stop'); if (s) s.disabled = on; if (x) x.hidden = !on }
+
     V.ask = () => {
         const draft = S.askDraft || ''
+        const live = !!LLM() && !!chat.key()
         return `<div class="cc-grid">
-${card('Ask Claude', `<div class="cc-filters" style="margin-bottom:12px">${Object.entries(PROMPTS).filter(([k]) => k !== 'task').map(([k, [l]]) => `<button class="cc-btn" type="button" data-prompt="${k}">${esc(l)}</button>`).join('')}</div>
+${LLM() ? chatCard() : ''}
+${card(live ? 'Your message' : 'Ask Claude', `<div class="cc-filters" style="margin-bottom:12px">${Object.entries(PROMPTS).filter(([k]) => k !== 'task').map(([k, [l]]) => `<button class="cc-btn" type="button" data-prompt="${k}">${esc(l)}</button>`).join('')}</div>
 <label class="f" for="ask-text">Your request (type, or press the microphone and speak)</label>
 <textarea id="ask-text" placeholder="e.g. Brief me for today">${esc(draft)}</textarea>
 <div class="cc-filters" style="margin-top:10px">
@@ -380,10 +461,14 @@ ${card('Ask Claude', `<div class="cc-filters" style="margin-bottom:12px">${Objec
 <label style="display:inline-flex;gap:8px;align-items:center;min-height:44px;font:500 14px/20px var(--rm-font)"><input type="checkbox" id="ask-ctx" checked> Add my board context</label></div>
 <p class="note" id="mic-status" aria-live="polite" style="margin-top:6px">${speechOK() ? 'Speech is turned into text by your browser; nothing is recorded by this page.' : 'Dictation is not available in this browser: type instead, or use your keyboard’s microphone.'}</p>
 <div class="cc-filters" style="margin-top:14px">
-<button class="cc-btn gold" type="button" id="ask-open">${ico('ext', '')}Copy and open Claude</button>
+${live ? `<button class="cc-btn gold" type="button" id="chat-send">${ico('claude', '')}Send to ${esc((MODELS().find(x => x[0] === chat.model()) || [, 'Claude'])[1])}</button><button class="cc-btn" type="button" id="chat-stop" hidden>Stop</button><button class="cc-btn" type="button" id="ask-open">${ico('ext', '')}Open in claude.ai instead</button>` : `<button class="cc-btn gold" type="button" id="ask-open">${ico('ext', '')}Copy and open Claude</button>`}
 <button class="cc-btn" type="button" id="ask-copy">${ico('copy', '')}Copy prompt</button>
 <button class="cc-btn" type="button" id="ask-speak">${ico('speak', '')}Read my day aloud</button></div>`, { cls: 'cc-span-7', id: 'askc' })}
-${card('How this works', `<div class="cc-list">
+${card('How this works', LLM() ? `<div class="cc-list">
+<div class="cc-conn t-green"><span class="dot"></span><div><b>Chat here</b><p>Your message, with your open issues and decisions as context, goes from this browser straight to OpenRouter and the model you pick (Sonnet 5.5 by default); the answer streams back here. Templates and dictation work as before. Requests ask OpenRouter's providers not to keep or train on the data ("data_collection: deny").</p></div></div>
+<div class="cc-conn t-yellow"><span class="dot"></span><div><b>Your key, on this device</b><p>Kept in this browser's local storage, not in the repository. Anyone using this browser profile, or a script running on this page, could read it: give it a credit limit on OpenRouter, and remove it in Settings on a shared machine. The conversation is kept on this device too (New chat clears it).</p></div></div>
+<div class="cc-conn t-slate"><span class="dot"></span><div><b>Next: the key never in the page</b><p>The estate's pattern (sgit.ai, OpenRouter partnership page): a bounded key held by a vault host, so the page calls the model without ever seeing the key. No tools yet: Gmail, Calendar and the repository stay with Claude and your agents.</p></div></div>
+</div>` : `<div class="cc-list">
 <div class="cc-conn t-green"><span class="dot"></span><div><b>Works now</b><p>Dictation (browser speech-to-text), templates with your live board context, copy to clipboard, open Claude in a new tab or the app, and reading your day aloud (the page's own numbers, spoken by your device).</p></div></div>
 <div class="cc-conn t-yellow"><span class="dot"></span><div><b>A handoff, not a chat</b><p>This public page has no Claude key and never will. The prompt is copied; paste it into Claude (it is also passed in the link, which Claude may or may not pre-fill). Claude's own connectors (Gmail, Drive, GitHub) do the work there.</p></div></div>
 <div class="cc-conn t-slate"><span class="dot"></span><div><b>Later: a real assistant</b><p>Conversational voice and answers on the page need a private backend holding a Claude API key behind your own sign-in. Not on GitHub Pages.</p></div></div>
@@ -409,6 +494,7 @@ ${card('Team commits in 48 h, by person', bars(Object.entries(people).sort((a, b
     }
 
     V.settings = () => `<div class="cc-grid">
+${LLM() ? card('Model provider: OpenRouter', chat.key() ? `<div class="cc-rows"><div class="cc-row wide"><span class="what">Key on this device<small>Local storage only; sent only to openrouter.ai</small></span><span class="side">${esc(keyHint(chat.key()))}</span></div><div class="cc-row wide"><span class="what">Model<small>For Ask Claude</small></span><span class="side">${esc((MODELS().find(x => x[0] === chat.model()) || [, chat.model()])[1])}</span></div></div><div class="cc-filters" style="margin-top:10px"><button class="cc-btn" type="button" id="or-replace">Replace the key</button><button class="cc-btn" type="button" id="or-remove">Remove the key and the conversation</button></div><div id="or-replace-box" hidden>${keyForm()}</div>` : keyForm(), { cls: 'cc-span-12', id: 'or' }) : ''}
 ${card('Appearance', `<div class="cc-filters">${['dark', 'light', 'system'].map(t => `<button class="cc-btn${store.get('theme', 'dark') === t ? ' primary' : ''}" type="button" data-theme-set="${t}">${t[0].toUpperCase() + t.slice(1)}</button>`).join('')}</div><p class="note" style="margin-top:10px">Dark is the default. Your choice is saved in this browser only.</p>`, { cls: 'cc-span-6', id: 's1' })}
 ${card('This device', `<div class="cc-rows"><div class="cc-row wide"><span class="what">Time zone<small>From your device</small></span><span class="side">${esc(TZ)}</span></div><div class="cc-row wide"><span class="what">Speech language<small>For dictation</small></span><span class="side">${esc(S.voiceLang)}</span></div><div class="cc-row wide"><span class="what">Calendar ID<small>Saved only here</small></span><span class="side">${store.get('calId', '') ? 'set' : 'not set'}</span></div></div>`, { cls: 'cc-span-6', id: 's2' })}
 ${card('Connections', `<div class="cc-rows">
@@ -520,6 +606,16 @@ ${card('Privacy', `<p class="note">This page is public on GitHub Pages, like the
         const ac = $('#ask-copy', scope); if (ac) ac.onclick = () => copy(fullPrompt())
         const as = $('#ask-speak', scope); if (as) as.onclick = speakDay
         const at = $('#ask-text', scope); if (at) at.oninput = () => { S.askDraft = at.value }
+        // the chat (only where config.json sets llm)
+        const of = $('#or-form', scope); if (of) of.onsubmit = e => { e.preventDefault(); const k = $('#or-key', of).value.trim(); if (!/^sk-or-/.test(k)) { toast('That does not look like an OpenRouter key (sk-or-…)'); return } store.set('or.key', k); toast('Key saved on this device'); render() }
+        const om = $('#or-model', scope); if (om) om.onchange = () => { store.set('or.model', om.value); render() }
+        const cs = $('#chat-send', scope); if (cs) cs.onclick = send
+        const cx = $('#chat-stop', scope); if (cx) cx.onclick = () => chat.busy && chat.busy.abort()
+        const cn = $('#chat-new', scope); if (cn) cn.onclick = () => { if (chat.busy) chat.busy.abort(); chat.save([]); render() }
+        const cy = $('#chat-copy', scope); if (cy) cy.onclick = () => copy(chat.log().map(m => `${m.role === 'user' ? FIRST : 'Claude'}: ${m.content}`).join('\n\n'))
+        if (at && LLM() && chat.key()) at.onkeydown = e => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); send() } }
+        const orr = $('#or-replace', scope); if (orr) orr.onclick = () => { $('#or-replace-box').hidden = false; $('#or-key').focus() }
+        const orx = $('#or-remove', scope); if (orx) orx.onclick = () => { try { localStorage.removeItem('cc.or.key'); localStorage.removeItem('cc.chat') } catch { } toast('Key and conversation removed from this device'); render() }
     }
 
     // ---------- routing ----------

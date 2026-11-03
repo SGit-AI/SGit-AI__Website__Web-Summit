@@ -99,6 +99,8 @@ export function build(root, person, now = new Date()) {
         about: `Built from the repository at build time: board/WS-*.md, data/team.json, data/meetings/, people/${person}/ and git history. Public, like the rest of the site.`,
         built_at: now.toISOString(), version, person: { id: person, name: me.name || person, role: me.role || '', owns: me.owns || [], status: me.status || '' },
         summit: config.summit, standups: config.standups, workstreams: config.workstreams, decisions, funnels: config.funnels, prompts: config.prompts, mail_searches: config.mail_searches, connectors: config.connectors, ideas: config.ideas || '',
+        // chat in the page (assets/cc/app.js): only where the person's config.json sets it; the key is never here
+        llm: config.llm || null,
         onboarding: { level: onboarding.level ?? null, steps: onboarding.steps || {}, updated: onboarding.updated || '' },
         issues, agents, activity, messages,
         repo: 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit', branch: 'dev',
