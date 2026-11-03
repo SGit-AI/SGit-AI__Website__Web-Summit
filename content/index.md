@@ -16,13 +16,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Tuesday 3 November, 12:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-03-1257/index.html), [yesterday's newsletter](reports/2026-11-02-newsletter/index.html), [all reports](reports/index.html).*
+*Tuesday 3 November, 14:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-03-1457/index.html), [yesterday's newsletter](reports/2026-11-02-newsletter/index.html), [all reports](reports/index.html).*
 
-- **The first pulse check-in:** Vicky asks for one priority this week, said in one place, and fewer views of the same thing.
-- **Angelo at L5:** his three agents ran on their schedules for the first time.
-- **The 16:00 sign-off is at 1 of 7** (WS-113): sizes and sign-off on [/print/](print/index.html), everyone but Vicky.
-- **At the 13:00 stand-up:** an owner for LinkedIn and a first post today (WS-126).
-- **Still waiting on Dinis:** protect main (WS-105), a print ceiling (WS-13), the GitHub invitations (WS-09).
+- **The print spend is approved** (Dinis, 14:45, via Silvio); Printer C to be confirmed today (WS-48).
+- **One generic QR on the garments** (Dinis, 14:54): the files are being regenerated, so every sign-off is redone (WS-113).
+- **Sizes:** only Vicky's are in (WS-55). The printer's deadline is tonight.
+- **Vicky is the first at L6,** with her own vault open in her page.
+- **The 13:00 stand-up recorded no decisions;** all 20 items carry over to 18:00.
 
 ## Start here {#start}
 
