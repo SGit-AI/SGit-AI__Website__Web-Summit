@@ -6,13 +6,13 @@ Kept short at Vicky's word (3 November): your issues, decisions and agents are i
 
 ## Needs me today and tomorrow {#needs-me}
 
-*Written by your dashboard agent at each wake from [the board](../../briefs/index.html#issues), [the 18:00 stand-up agenda](../../meetings/2026-11-03-1800/index.html) and [your conductor's brief 2](briefs/2026-11-03T1230Z.pdf). Last updated: Tue 3 Nov, 14:50 UTC.*
+*Written by your dashboard agent at each wake from [the board](../../briefs/index.html#issues), [the 18:00 stand-up agenda](../../meetings/2026-11-03-1800/index.html), [tomorrow's 13:00 agenda](../../meetings/2026-11-04-1300/index.html) and [your conductor's brief 2](briefs/2026-11-03T1230Z.pdf). Last updated: Tue 3 Nov, 17:45 UTC.*
 
-- **Decide:** WS-107, who records the stand-up decisions (recommended: team-collaboration@web-summit.angelo drafts, the chair confirms).
-- **Decide:** how often you want your board-health note (your conductor recommends once a day, at 07:20).
+- **Decide:** WS-107, who records the stand-up decisions; still open (recommended: team-collaboration@web-summit.angelo drafts, the chair confirms).
 - **Today, 18:00 stand-up:** you go first through the vault guide (WS-121).
-- **Today:** WS-23, Nimay's meetings vault, is due; its new date waits on Nimay or Dinis. Your midday pulse (WS-07).
-- **Tomorrow, Wed 4 Nov:** WS-25 first five companies, WS-29 hot leads, WS-48 printing logistics, WS-53 Silvio's PM workflow, WS-41 the pulse app; WS-49 mini tools starts.
+- **Today:** WS-23, Nimay's meetings vault, is due; its new date still waits on Nimay or Dinis.
+- **Tomorrow, 13:00 stand-up:** decide the first five companies with Nimay and Silvio (WS-25).
+- **Tomorrow, Wed 4 Nov:** WS-29 hot leads, WS-48 printing logistics (your logistics agent has sizes and sign-offs), WS-53 Silvio's PM workflow, WS-41 the pulse app; WS-49 mini tools starts.
 
 ## My vault {#vault}
 
