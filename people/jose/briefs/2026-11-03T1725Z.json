@@ -1,0 +1,72 @@
+{
+  "number": 4,
+  "date": "3 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "Sizes in, your vault agent started, the roster settled into WS-09",
+  "when": "3 November 2026, 17:25 UTC (scheduled wake; since brief 3, 12:25 UTC)",
+  "by": "conductor@web-summit.jose",
+  "headline": "Your sizes reached the printer's sheet on time: WS-130 was closed at 17:14, with Dinis's call that T-shirts are now a shared mix (1 M, 1 L, 1 XL per colour) and your hoodie is L. Your fifth agent, vault@web-summit.jose, started and published its key; it has not yet made a vault, so you stay at L5. The roster item was merged into the invitations item (WS-09). Still preparing only: nothing on the board touched by me.",
+  "stats": [
+    {"n": "L5", "label": "your level (8 of 9); next: a first vault"},
+    {"n": "5", "label": "your agents running, 5 keys published"},
+    {"n": "74", "label": "team commits since brief 3"},
+    {"n": "07:22, 5 Nov", "label": "earliest mentor handover (two days on schedule)"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "WS-39: which route (still open from brief 3; due Wed 4 Nov)",
+      "detail": "Your dev agent's findings: the official API cannot post into the team's existing group. Its drafts now hold on 11 real reports (15:34).",
+      "options": ["route 3 now (n8n drafts to you, you forward), Slack next", "a gateway (route 1), with Dinis's agreement", "Slack only"],
+      "recommend": "Route 3 now and Slack next."
+    },
+    {
+      "id": "2",
+      "ask": "Your evening pulse (none yet today)",
+      "detail": "WS-07 is daily from today; people/jose/pulse/ is empty. Brief 2, section 6, has a draft; drop its roster line (settled).",
+      "options": ["commit the draft as evening, with your 'feeling' line", "you edit it first", "skip today"],
+      "recommend": "Send your 'feeling' line; I commit people/jose/pulse/2026-11-03-evening.md."
+    },
+    {
+      "id": "3",
+      "ask": "Your mentor's suggestion: a 'ran without a prompt' line in every scheduled commit",
+      "detail": "From the 12:40 note, so the two-day clock to its handover is easy to see. It would be a commit trailer or line from your conductor, dashboard and dev agents on their scheduled wakes.",
+      "options": ["yes, all three scheduled agents", "no"],
+      "recommend": "Yes: one line, no cost, and it makes the clock checkable from git log."
+    }
+  ],
+  "you_asked": [
+    {"at": "3 Nov, about 17:10", "said": "WS-130: Jose merch sizes L", "done": "people/jose/merch.json: T-shirt L, hoodie L, your words quoted (c895e69, 17:12); fit left out, not stated. Then Dinis's call made T-shirts a shared mix; your hoodie stays L.", "where": "people/jose/merch.json, board/WS-130", "status": "done"},
+    {"at": "3 Nov, about 02:05", "said": "Overnight: prepare, do not decide.", "done": "Still in force: the split with Angelo (brief 2) waits for your word", "where": "brief 2", "status": "waiting"}
+  ],
+  "sections": [
+    {
+      "title": "What happened since brief 3",
+      "items": [
+        "WS-130 done (17:14, procurement@web-summit.silvio, from Dinis on WhatsApp): 'Jose is L'; T-shirts 7 M, 7 L, 7 XL, one of each per colour, worn by whoever they fit; hoodies one per person, yours L.",
+        "vault@web-summit.jose: 13:31 corrected the vault guide from its first run; 17:01 published its session key. Create, push and audit not yet run, so step 9 (Vaults) is not done.",
+        "dev@web-summit.jose, 15:34: corrected its vault advice (the token belongs in the vault agent's environment, WS-129); the WS-39 drafts hold on 11 real reports.",
+        "Your roster item: merged at 12:51 by project-manager@web-summit.dinis into the invitations item (WS-09): riskmandate-jose is on the roster; what is left is Dinis's confirmation.",
+        "people/jose/agents.json: vault@web-summit.jose added (no schedule recorded)."
+      ]
+    },
+    {
+      "title": "Still open from today",
+      "items": [
+        "WS-113 print sign-off: your set not signed. With T-shirts now a shared mix, check /print/ for what is still yours to sign.",
+        "WS-08 card, WS-30 company owners, WS-73 video feedback: nothing in people/jose/ yet.",
+        "The split with Angelo (brief 2, section 3) and the designer's command-centre pick."
+      ]
+    }
+  ],
+  "next": [
+    "Tomorrow 07:20: brief 5 if anything is new.",
+    "With your word: the pulse, the WS-39 route to dev, the split."
+  ],
+  "sources": [
+    "git log 9181217..887fa22 (v0.2.141)",
+    "board/WS-130 (17:14 update); data/meetings/2026-11-03-1300/20261103T0107-*.json (merged)",
+    "people/jose/mentor/2026-11-03-1240.md",
+    "commits 1611789, 66b1997 (vault@web-summit.jose), 8fe508f (dev@web-summit.jose)"
+  ]
+}
