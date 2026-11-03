@@ -24,6 +24,15 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..')
 HERE = os.path.join(ROOT, 'team/designer/print')
 D = json.load(open(os.path.join(ROOT, 'data/design.json')))
 F = json.load(open(os.path.join(HERE, 'final.json')))
+# --variant generic: the same set with one QR for everyone on the garment backs (to /meet/, team/designer/qr/qr-meet.svg),
+# the cards keeping each person's own code; written to variants/generic/, never over the main set, whose files people sign.
+# --page-only: rewrite content/print.md from the data without touching a file (a re-render changes the bytes: a PDF carries
+# its creation time, so it would supersede every sign-off).
+VARIANT = sys.argv[sys.argv.index('--variant') + 1] if '--variant' in sys.argv else None
+PAGE_ONLY = '--page-only' in sys.argv
+assert VARIANT in (None, 'generic'), VARIANT
+DEST = os.path.join(HERE, 'variants', VARIANT) if VARIANT else HERE
+GENERIC_QR = VARIANT == 'generic'
 PEOPLE = {p['id']: p for p in D['people']}
 TEES = {t['id']: t for t in D['tees']}
 HOODIES = {h['id']: h for h in D['hoodies']}
@@ -77,7 +86,7 @@ def fit(lines, w, width, cap):
 
 def qr(pid, x, y, code_mm):
     """The person's code, vector: a white panel the size of the code and its 4-module quiet zone, black modules."""
-    t = open(os.path.join(ROOT, 'team/designer/qr', f'qr-meet-{pid}.svg')).read()
+    t = open(os.path.join(ROOT, 'team/designer/qr', f'qr-meet-{pid}.svg' if pid else 'qr-meet.svg')).read()   # no id: the team's /meet/
     d = re.search(r'<path d="([^"]+)"', t).group(1); n = int(re.search(r'viewBox="0 0 (\d+)', t).group(1))
     panel = code_mm * n / (n - 8); s = panel / n
     return f'<g transform="translate({x:.2f},{y:.2f}) scale({s:.4f})"><rect width="{n}" height="{n}" fill="{WHITE}"/><path d="{d}" fill="{BLACK}"/></g>', panel
@@ -135,7 +144,7 @@ def back_blocks(pid, W, lines, code, c, big_cap):
     if lines:
         s_ = fit(lines, 'ExtraBold', W, big_cap); blocks += [('lines', lines, 'ExtraBold', s_, c, 0.98), ('gap', s_ * 0.5), ('rule', 34, 1.2, c), ('gap', s_ * 0.45)]
     mw = min(W * 0.8, 175)
-    blocks += [('mark', mw, c), ('gap', 4), ('lines', ['Agents with a Mandate'], 'Medium', mw * 0.11, c, 1), ('gap', 10), ('qr', pid, code), ('gap', 10),
+    blocks += [('mark', mw, c), ('gap', 4), ('lines', ['Agents with a Mandate'], 'Medium', mw * 0.11, c, 1), ('gap', 10), ('qr', None if GENERIC_QR else pid, code), ('gap', 10),
                ('lines', ['Meet me', 'Book a meeting', 'Talk to my agent'], 'SemiBold', min(13, W / width1('Talk to my agent', 'SemiBold')), c, 1.25)]
     return blocks
 
@@ -206,7 +215,7 @@ def cmyk(hexc):  # a naive conversion, for the printer's reference only: the pri
     return tuple(round(v * 100) for v in ((1 - r - k) / (1 - k), (1 - g - k) / (1 - k), (1 - b - k) / (1 - k), k))
 
 # ---- make everything ----
-OUT = os.path.join(HERE, 'files'); os.makedirs(os.path.join(HERE, 'proofs'), exist_ok=True)
+OUT = os.path.join(DEST, 'files'); os.makedirs(os.path.join(DEST, 'proofs'), exist_ok=True)
 manifest = []
 for fp in F['people']:
     pid = fp['id']; os.makedirs(os.path.join(OUT, pid), exist_ok=True); files = {}
@@ -219,12 +228,13 @@ for fp in F['people']:
             assert THINNEST[0] >= F['min_stroke_mm'] - 1e-9, f"{pid} {name}: a stroke of {THINNEST[0]:.2f} mm"
             fp.setdefault('_thinnest', {})[name] = round(THINNEST[0], 2)
         rel = f'files/{pid}/{pid}-{name}'
-        open(os.path.join(HERE, rel + '.svg'), 'w').write(s)
+        if not PAGE_ONLY: open(os.path.join(DEST, rel + '.svg'), 'w').write(s)
         manifest.append({'svg': rel + '.svg', 'pdf': rel + '.pdf', 'png': None if name.startswith('card') else rel + '.png', 'w': round(w, 2), 'h': round(h, 2)})
-    open(os.path.join(HERE, 'proofs', f'{pid}.svg'), 'w').write(proof(pid, files))
+    if not PAGE_ONLY: open(os.path.join(DEST, 'proofs', f'{pid}.svg'), 'w').write(proof(pid, files))
     for name in files: fp.setdefault('_size', {})[name] = (round(files[name][1]), round(files[name][2]))
-json.dump(manifest, open(os.path.join(HERE, 'files', 'manifest.json'), 'w'), indent=1)
-subprocess.run(['node', os.path.join(HERE, 'render.mjs'), HERE], check=True)
+if not PAGE_ONLY:
+    json.dump(manifest, open(os.path.join(DEST, 'files', 'manifest.json'), 'w'), indent=1)
+    subprocess.run(['node', os.path.join(HERE, 'render.mjs'), DEST], check=True)
 
 # one card PDF per person with both sides is what most card printers ask for: render.mjs makes <id>-card.pdf too
 # ---- the zip for the printers ----
@@ -244,20 +254,33 @@ Ink: white (#FFFFFF) or black (#000000) as given, on the garment colour. The QR 
 panel, never recoloured, never cropped into its white border. Nothing on the sleeves.
 Garments: {F['garments']['tee']['count_each']} T-shirts and {F['garments']['hoodie']['count_each']} hoodie per person, in the person's colour (see the page).
 Cards: {F['card']['count_each']} per person, {F['card']['stock']}.
+QR codes: {'ONE CODE FOR EVERYONE on the garment backs, to ' + SITE + '/meet/ (the team page); each card keeps its own person' + "'" + 's code' if GENERIC_QR else 'each person' + "'" + 's own code, to ' + SITE + '/meet/<id>/, on their garments and card'}.
 """
-open(os.path.join(HERE, 'files', 'README.txt'), 'w').write(README)
-zp = os.path.join(HERE, 'riskmandate-print-files.zip')
-with zipfile.ZipFile(zp, 'w', zipfile.ZIP_DEFLATED) as z:
-    z.write(os.path.join(HERE, 'files', 'README.txt'), 'riskmandate-print-files/README.txt')
+zp = os.path.join(DEST, 'riskmandate-print-files' + (f'-{VARIANT}' if VARIANT else '') + '.zip')
+if not PAGE_ONLY:
+  open(os.path.join(DEST, 'files', 'README.txt'), 'w').write(README)
+  with zipfile.ZipFile(zp, 'w', zipfile.ZIP_DEFLATED) as z:
+    z.write(os.path.join(DEST, 'files', 'README.txt'), 'riskmandate-print-files/README.txt')
     for fp in F['people']:
         for f in sorted(os.listdir(os.path.join(OUT, fp['id']))):
             if f.endswith(('-card-front.pdf', '-card-back.pdf')): continue
             z.write(os.path.join(OUT, fp['id'], f), f"riskmandate-print-files/{fp['id']}/{f}")
-print('print files:', len(manifest), 'items for', len(F['people']), 'people; zip', os.path.getsize(zp) // 1024, 'KB')
+print('print files:', len(manifest), 'items for', len(F['people']), 'people; zip', os.path.getsize(zp) // 1024, 'KB', f'({VARIANT})' if VARIANT else '')
+if VARIANT: sys.exit(0)   # a variant is shown on the main page (--page-only), never as a page of its own
 
 # ---- the page: content/print.md ----
 def mmx(s): return f'{s[0]} x {s[1]} mm'
 U = '../team/designer/print'
+GZ = os.path.join(HERE, 'variants', 'generic', 'riskmandate-print-files-generic.zip')
+generic_section = '' if not os.path.exists(GZ) else f"""
+## Proposed: one QR code for everyone (waiting for Dinis to confirm) {{#generic-qr}}
+
+Relayed to the designer agent by procurement@web-summit.silvio: Dinis, 14:54 UTC on 3 November, to Silvio, *"can the QR be generic so that we don't tie it to a name"*. Ready as a complete second set: **every T-shirt and hoodie back carries one code, to [{SITE}/meet/](../meet/index.html)** (the team page, listing all seven); the business cards keep each person's own code, since a card carries the person's name. Everything else is unchanged.
+
+**Not yet the files to print.** The sets above are the ones being signed (Vicky's approval stands on them). When Dinis confirms this change, the generic set becomes the main set, and every set is signed again.
+
+[Download the generic set (zip, {os.path.getsize(GZ) // 1024} KB)]({U}/variants/generic/riskmandate-print-files-generic.zip) · proofs: {' · '.join(f"[{PEOPLE[x['id']]['first']}]({U}/variants/generic/proofs/{x['id']}.svg)" for x in F['people'])}
+"""
 rows = []
 for fp in F['people']:
     p = PEOPLE[fp['id']]; pid = fp['id']; t = TEES[fp['tee']]; front = fp.get('front', t['front']); sub = fp.get('sub', t.get('sub'))
@@ -289,6 +312,7 @@ summary: The Official Sign-off of the RiskMandate merch, and everything a printe
 For the printers, through Silvio Switha ([the print order](../print-order/index.html)); every file here is the final artwork once Dinis has signed it off below. Made by **designer@web-summit.dinis** from `data/design.json` and `team/designer/print/final.json` (`team/designer/print/make-print.py`).
 
 {{{{signoff-download:{os.path.getsize(zp) // 1024}}}}}
+{generic_section}
 
 ## The order {{#order}}
 

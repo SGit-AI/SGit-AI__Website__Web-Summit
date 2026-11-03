@@ -8,6 +8,15 @@ For the printers, through Silvio Switha ([the print order](../print-order/index.
 
 {{signoff-download:5713}}
 
+## Proposed: one QR code for everyone (waiting for Dinis to confirm) {#generic-qr}
+
+Relayed to the designer agent by procurement@web-summit.silvio: Dinis, 14:54 UTC on 3 November, to Silvio, *"can the QR be generic so that we don't tie it to a name"*. Ready as a complete second set: **every T-shirt and hoodie back carries one code, to [https://web-summit.sgit.ai/meet/](../meet/index.html)** (the team page, listing all seven); the business cards keep each person's own code, since a card carries the person's name. Everything else is unchanged.
+
+**Not yet the files to print.** The sets above are the ones being signed (Vicky's approval stands on them). When Dinis confirms this change, the generic set becomes the main set, and every set is signed again.
+
+[Download the generic set (zip, 5715 KB)](../team/designer/print/variants/generic/riskmandate-print-files-generic.zip) · proofs: [Dinis](../team/designer/print/variants/generic/proofs/dinis.svg) · [Nimay](../team/designer/print/variants/generic/proofs/nimay.svg) · [Angelo](../team/designer/print/variants/generic/proofs/angelo.svg) · [Jose](../team/designer/print/variants/generic/proofs/jose.svg) · [Vicky](../team/designer/print/variants/generic/proofs/vicky.svg) · [Silvio](../team/designer/print/variants/generic/proofs/silvio.svg) · [Indi](../team/designer/print/variants/generic/proofs/indi.svg)
+
+
 ## The order {#order}
 
 | Item | How many | Print | Notes |

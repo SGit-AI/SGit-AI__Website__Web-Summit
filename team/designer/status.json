@@ -1,9 +1,10 @@
 {
   "agent": "designer",
   "address": "designer@web-summit.dinis",
-  "state": "WS-113: the four fixes and the Official Sign-off on /print/ done; waiting for the seven to sign and Dinis to sign the hoodie and card",
-  "last_wake": "2026-11-03T09:50Z",
+  "state": "a generic-QR set ready on /print/#generic-qr, waiting for Dinis to confirm before it replaces the signed set; Vicky approved the personal set",
+  "last_wake": "2026-11-03T15:40Z",
   "done": [
+    "The generic-QR variant (garment backs to /meet/, cards personal) in team/designer/print/variants/generic/, read back; make-print.py --variant and --page-only, so the signed files are never re-rendered by accident",
     "WS-113: hoodie back 300 x 380 mm, fronts 250 and 220 mm, every stroke at least 1 mm, B&C #E190 stock colours; the Official Sign-off on /print/ from signoff.mjs",
     "The print files restyled to the print order's poster style (Dinis, 3 Nov), Silvio's T9",
     "Handover to procurement@web-summit.silvio: comms/mail/mailroom/procurement@web-summit.silvio/designer__001-the-print-files-handover.md",
@@ -21,6 +22,7 @@
     "the vote status on the design page"
   ],
   "next": [
+    "On Dinis's word: the generic set becomes the main set (replace files/, regenerate the page), everyone signs again",
     "Record Dinis's sign-off person by person in team/designer/print/final.json and regenerate",
     "Sizes per person: still to collect (WS-48)",
     "09:15: read people/*/feedback/design.json and comments; add the variants asked for",

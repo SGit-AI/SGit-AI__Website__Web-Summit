@@ -1,0 +1,345 @@
+[
+ {
+  "svg": "files/dinis/dinis-tee-front.svg",
+  "pdf": "files/dinis/dinis-tee-front.pdf",
+  "png": "files/dinis/dinis-tee-front.png",
+  "w": 250,
+  "h": 270.11
+ },
+ {
+  "svg": "files/dinis/dinis-tee-front-small.svg",
+  "pdf": "files/dinis/dinis-tee-front-small.pdf",
+  "png": "files/dinis/dinis-tee-front-small.png",
+  "w": 220,
+  "h": 238.72
+ },
+ {
+  "svg": "files/dinis/dinis-tee-back.svg",
+  "pdf": "files/dinis/dinis-tee-back.pdf",
+  "png": "files/dinis/dinis-tee-back.png",
+  "w": 220,
+  "h": 258.08
+ },
+ {
+  "svg": "files/dinis/dinis-hoodie-chest.svg",
+  "pdf": "files/dinis/dinis-hoodie-chest.pdf",
+  "png": "files/dinis/dinis-hoodie-chest.png",
+  "w": 110,
+  "h": 15.44
+ },
+ {
+  "svg": "files/dinis/dinis-hoodie-back.svg",
+  "pdf": "files/dinis/dinis-hoodie-back.pdf",
+  "png": "files/dinis/dinis-hoodie-back.png",
+  "w": 300,
+  "h": 379.84
+ },
+ {
+  "svg": "files/dinis/dinis-card-front.svg",
+  "pdf": "files/dinis/dinis-card-front.pdf",
+  "png": null,
+  "w": 91,
+  "h": 61
+ },
+ {
+  "svg": "files/dinis/dinis-card-back.svg",
+  "pdf": "files/dinis/dinis-card-back.pdf",
+  "png": null,
+  "w": 91,
+  "h": 61
+ },
+ {
+  "svg": "files/nimay/nimay-tee-front.svg",
+  "pdf": "files/nimay/nimay-tee-front.pdf",
+  "png": "files/nimay/nimay-tee-front.png",
+  "w": 250,
+  "h": 200.32
+ },
+ {
+  "svg": "files/nimay/nimay-tee-front-small.svg",
+  "pdf": "files/nimay/nimay-tee-front-small.pdf",
+  "png": "files/nimay/nimay-tee-front-small.png",
+  "w": 220,
+  "h": 177.3
+ },
+ {
+  "svg": "files/nimay/nimay-tee-back.svg",
+  "pdf": "files/nimay/nimay-tee-back.pdf",
+  "png": "files/nimay/nimay-tee-back.png",
+  "w": 220,
+  "h": 258.08
+ },
+ {
+  "svg": "files/nimay/nimay-hoodie-chest.svg",
+  "pdf": "files/nimay/nimay-hoodie-chest.pdf",
+  "png": "files/nimay/nimay-hoodie-chest.png",
+  "w": 110,
+  "h": 15.44
+ },
+ {
+  "svg": "files/nimay/nimay-hoodie-back.svg",
+  "pdf": "files/nimay/nimay-hoodie-back.pdf",
+  "png": "files/nimay/nimay-hoodie-back.png",
+  "w": 300,
+  "h": 379.84
+ },
+ {
+  "svg": "files/nimay/nimay-card-front.svg",
+  "pdf": "files/nimay/nimay-card-front.pdf",
+  "png": null,
+  "w": 91,
+  "h": 61
+ },
+ {
+  "svg": "files/nimay/nimay-card-back.svg",
+  "pdf": "files/nimay/nimay-card-back.pdf",
+  "png": null,
+  "w": 91,
+  "h": 61
+ },
+ {
+  "svg": "files/angelo/angelo-tee-front.svg",
+  "pdf": "files/angelo/angelo-tee-front.pdf",
+  "png": "files/angelo/angelo-tee-front.png",
+  "w": 250,
+  "h": 200.64
+ },
+ {
+  "svg": "files/angelo/angelo-tee-front-small.svg",
+  "pdf": "files/angelo/angelo-tee-front-small.pdf",
+  "png": "files/angelo/angelo-tee-front-small.png",
+  "w": 220,
+  "h": 177.58
+ },
+ {
+  "svg": "files/angelo/angelo-tee-back.svg",
+  "pdf": "files/angelo/angelo-tee-back.pdf",
+  "png": "files/angelo/angelo-tee-back.png",
+  "w": 220,
+  "h": 258.08
+ },
+ {
+  "svg": "files/angelo/angelo-hoodie-chest.svg",
+  "pdf": "files/angelo/angelo-hoodie-chest.pdf",
+  "png": "files/angelo/angelo-hoodie-chest.png",
+  "w": 110,
+  "h": 15.44
+ },
+ {
+  "svg": "files/angelo/angelo-hoodie-back.svg",
+  "pdf": "files/angelo/angelo-hoodie-back.pdf",
+  "png": "files/angelo/angelo-hoodie-back.png",
+  "w": 300,
+  "h": 379.84
+ },
+ {
+  "svg": "files/angelo/angelo-card-front.svg",
+  "pdf": "files/angelo/angelo-card-front.pdf",
+  "png": null,
+  "w": 91,
+  "h": 61
+ },
+ {
+  "svg": "files/angelo/angelo-card-back.svg",
+  "pdf": "files/angelo/angelo-card-back.pdf",
+  "png": null,
+  "w": 91,
+  "h": 61
+ },
+ {
+  "svg": "files/jose/jose-tee-front.svg",
+  "pdf": "files/jose/jose-tee-front.pdf",
+  "png": "files/jose/jose-tee-front.png",
+  "w": 250,
+  "h": 230.6
+ },
+ {
+  "svg": "files/jose/jose-tee-front-small.svg",
+  "pdf": "files/jose/jose-tee-front-small.pdf",
+  "png": "files/jose/jose-tee-front-small.png",
+  "w": 220,
+  "h": 203.95
+ },
+ {
+  "svg": "files/jose/jose-tee-back.svg",
+  "pdf": "files/jose/jose-tee-back.pdf",
+  "png": "files/jose/jose-tee-back.png",
+  "w": 220,
+  "h": 258.08
+ },
+ {
+  "svg": "files/jose/jose-hoodie-chest.svg",
+  "pdf": "files/jose/jose-hoodie-chest.pdf",
+  "png": "files/jose/jose-hoodie-chest.png",
+  "w": 110,
+  "h": 15.44
+ },
+ {
+  "svg": "files/jose/jose-hoodie-back.svg",
+  "pdf": "files/jose/jose-hoodie-back.pdf",
+  "png": "files/jose/jose-hoodie-back.png",
+  "w": 300,
+  "h": 379.84
+ },
+ {
+  "svg": "files/jose/jose-card-front.svg",
+  "pdf": "files/jose/jose-card-front.pdf",
+  "png": null,
+  "w": 91,
+  "h": 61
+ },
+ {
+  "svg": "files/jose/jose-card-back.svg",
+  "pdf": "files/jose/jose-card-back.pdf",
+  "png": null,
+  "w": 91,
+  "h": 61
+ },
+ {
+  "svg": "files/vicky/vicky-tee-front.svg",
+  "pdf": "files/vicky/vicky-tee-front.pdf",
+  "png": "files/vicky/vicky-tee-front.png",
+  "w": 250,
+  "h": 188.01
+ },
+ {
+  "svg": "files/vicky/vicky-tee-front-small.svg",
+  "pdf": "files/vicky/vicky-tee-front-small.pdf",
+  "png": "files/vicky/vicky-tee-front-small.png",
+  "w": 220,
+  "h": 166.47
+ },
+ {
+  "svg": "files/vicky/vicky-tee-back.svg",
+  "pdf": "files/vicky/vicky-tee-back.pdf",
+  "png": "files/vicky/vicky-tee-back.png",
+  "w": 220,
+  "h": 258.08
+ },
+ {
+  "svg": "files/vicky/vicky-hoodie-chest.svg",
+  "pdf": "files/vicky/vicky-hoodie-chest.pdf",
+  "png": "files/vicky/vicky-hoodie-chest.png",
+  "w": 110,
+  "h": 15.44
+ },
+ {
+  "svg": "files/vicky/vicky-hoodie-back.svg",
+  "pdf": "files/vicky/vicky-hoodie-back.pdf",
+  "png": "files/vicky/vicky-hoodie-back.png",
+  "w": 300,
+  "h": 379.84
+ },
+ {
+  "svg": "files/vicky/vicky-card-front.svg",
+  "pdf": "files/vicky/vicky-card-front.pdf",
+  "png": null,
+  "w": 91,
+  "h": 61
+ },
+ {
+  "svg": "files/vicky/vicky-card-back.svg",
+  "pdf": "files/vicky/vicky-card-back.pdf",
+  "png": null,
+  "w": 91,
+  "h": 61
+ },
+ {
+  "svg": "files/silvio/silvio-tee-front.svg",
+  "pdf": "files/silvio/silvio-tee-front.pdf",
+  "png": "files/silvio/silvio-tee-front.png",
+  "w": 250,
+  "h": 275.38
+ },
+ {
+  "svg": "files/silvio/silvio-tee-front-small.svg",
+  "pdf": "files/silvio/silvio-tee-front-small.pdf",
+  "png": "files/silvio/silvio-tee-front-small.png",
+  "w": 220,
+  "h": 243.36
+ },
+ {
+  "svg": "files/silvio/silvio-tee-back.svg",
+  "pdf": "files/silvio/silvio-tee-back.pdf",
+  "png": "files/silvio/silvio-tee-back.png",
+  "w": 220,
+  "h": 258.08
+ },
+ {
+  "svg": "files/silvio/silvio-hoodie-chest.svg",
+  "pdf": "files/silvio/silvio-hoodie-chest.pdf",
+  "png": "files/silvio/silvio-hoodie-chest.png",
+  "w": 110,
+  "h": 15.44
+ },
+ {
+  "svg": "files/silvio/silvio-hoodie-back.svg",
+  "pdf": "files/silvio/silvio-hoodie-back.pdf",
+  "png": "files/silvio/silvio-hoodie-back.png",
+  "w": 300,
+  "h": 379.84
+ },
+ {
+  "svg": "files/silvio/silvio-card-front.svg",
+  "pdf": "files/silvio/silvio-card-front.pdf",
+  "png": null,
+  "w": 91,
+  "h": 61
+ },
+ {
+  "svg": "files/silvio/silvio-card-back.svg",
+  "pdf": "files/silvio/silvio-card-back.pdf",
+  "png": null,
+  "w": 91,
+  "h": 61
+ },
+ {
+  "svg": "files/indi/indi-tee-front.svg",
+  "pdf": "files/indi/indi-tee-front.pdf",
+  "png": "files/indi/indi-tee-front.png",
+  "w": 250,
+  "h": 243.56
+ },
+ {
+  "svg": "files/indi/indi-tee-front-small.svg",
+  "pdf": "files/indi/indi-tee-front-small.pdf",
+  "png": "files/indi/indi-tee-front-small.png",
+  "w": 220,
+  "h": 215.35
+ },
+ {
+  "svg": "files/indi/indi-tee-back.svg",
+  "pdf": "files/indi/indi-tee-back.pdf",
+  "png": "files/indi/indi-tee-back.png",
+  "w": 220,
+  "h": 258.08
+ },
+ {
+  "svg": "files/indi/indi-hoodie-chest.svg",
+  "pdf": "files/indi/indi-hoodie-chest.pdf",
+  "png": "files/indi/indi-hoodie-chest.png",
+  "w": 110,
+  "h": 15.44
+ },
+ {
+  "svg": "files/indi/indi-hoodie-back.svg",
+  "pdf": "files/indi/indi-hoodie-back.pdf",
+  "png": "files/indi/indi-hoodie-back.png",
+  "w": 300,
+  "h": 379.84
+ },
+ {
+  "svg": "files/indi/indi-card-front.svg",
+  "pdf": "files/indi/indi-card-front.pdf",
+  "png": null,
+  "w": 91,
+  "h": 61
+ },
+ {
+  "svg": "files/indi/indi-card-back.svg",
+  "pdf": "files/indi/indi-card-back.pdf",
+  "png": null,
+  "w": 91,
+  "h": 61
+ }
+]
