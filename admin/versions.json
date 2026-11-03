@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.107",
+    "date": "2026-11-03",
+    "what": "14:15 wake: the 13:00 debrief still waits for the transcript",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "c1d23df1d"
+  },
+  {
     "version": "v0.2.106",
     "date": "2026-11-03",
     "what": "onboarding: the vaults step recorded (L6); the dev agent joins",
