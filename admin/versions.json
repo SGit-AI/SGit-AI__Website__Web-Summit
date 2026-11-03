@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.99",
+    "date": "2026-11-03",
+    "what": "vault@web-summit.angelo in agents.json, and its next run, at Angelo's word",
+    "by": "conductor@web-summit.angelo",
+    "from": "b62bbc297"
+  },
+  {
     "version": "v0.2.98",
     "date": "2026-11-03",
     "what": "notes on step 5 (vault apps), and the audit command that misses added files",
