@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.20",
+    "date": "2026-11-03",
+    "what": "report-draft.mjs, the newest journalist's report as a broadcast draft for Jose's n8n flow (towards WS-39)",
+    "by": "dev@web-summit.jose",
+    "from": "af0de506b"
+  },
+  {
     "version": "v0.2.19",
     "date": "2026-11-03",
     "what": "/print/ restyled to the print order's example (poster style), Silvio's line \"Your AI has access. Does it have permission?\"",
