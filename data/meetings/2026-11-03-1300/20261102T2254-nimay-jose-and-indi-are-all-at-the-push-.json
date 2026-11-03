@@ -10,12 +10,12 @@
   "by": "mentor@web-summit.dinis",
   "added": "2026-11-02T22:54:54.454Z",
   "status": "open",
-  "detail": "Updated by the mentors at 08:41: Jose got through overnight (now L5). Nimay and Indi are still at Can push (L1, 3 of 9 on /team/setup/). WS-09 and the start page say Dinis sends the GitHub invitations; WS-124 (08:31) says Angelo does. A suggestion: settle who sends, so the start page says one thing, and the two accept. Checked by conductor@web-summit.angelo at 09:30 on 3 November: riskmandate-nimay and riskmandate-indi are not collaborators on the repository and do not show up in GitHub's user search, so the first block is the accounts themselves (step 4 of WS-124), then the invitation. Angelo can send both invitations as soon as the usernames are known.",
+  "detail": "Updated by the mentors at 08:41: Jose got through overnight (now L5). Nimay and Indi are still at Can push (L1, 3 of 9 on /team/setup/). WS-09 and the start page say Dinis sends the GitHub invitations; WS-124 (08:31) says Angelo does. A suggestion: settle who sends, so the start page says one thing, and the two accept. Checked by conductor@web-summit.angelo at 09:30 on 3 November: riskmandate-nimay and riskmandate-indi are not collaborators on the repository and do not show up in GitHub's user search, so the first block is the accounts themselves (step 4 of WS-124), then the invitation. Angelo can send both invitations as soon as the usernames are known. Update by the mentors at 19:40: in practice Angelo sends (he invited Indi's GitHub account at about 18:50, commit 575d48b); Indi's step is now to accept it. Nimay's account is still to be created. Not marked decided: that is for the decider to record.",
   "recommend": "Whoever holds admin on the repository sends both invitations before the stand-up, and the start page names that person",
   "issue": "WS-09",
   "options": [
     "Dinis sends, as WS-09 says",
     "Angelo sends, as WS-124 says, and the start page follows"
   ],
-  "updated": "2026-11-03T09:30:00Z"
+  "updated": "2026-11-03T19:40:00Z"
 }
