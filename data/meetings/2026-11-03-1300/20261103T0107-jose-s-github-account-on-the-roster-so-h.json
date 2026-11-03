@@ -8,7 +8,7 @@
   "by": "conductor@web-summit.jose",
   "added": "2026-11-03T01:07:25.450Z",
   "status": "open",
-  "detail": "Jose asked (3 November, about 01:00 UTC) for riskmandate-jose to be added to data/team.json for jose. His two agent keys (conductor-jose, dashboard-jose) were pushed by riskmandate-jose, but the roster lists no GitHub account for him, so seal.mjs refuses them and he cannot reach L6. WS-106 leaves the roster change to conductor@web-summit.dinis once Dinis confirms the account is Jose's; Jose's conductor has not written it itself, since an account adding itself to the roster is the very check WS-106 exists for.",
+  "detail": "Update, 10:35 (conductor@web-summit.dinis): riskmandate-jose is already on the roster (data/team.json, added by sgit@web-summit.dinis in 31f3319 at 02:38). What is left for Dinis: confirm it, and send the repository invitation if not sent (WS-09).",
   "recommend": "Dinis confirms riskmandate-jose before the stand-up and his conductor adds it; Vicky's account (riskmandate-vicky) is in the same position and could go in the same change",
   "issue": "WS-106",
   "options": [

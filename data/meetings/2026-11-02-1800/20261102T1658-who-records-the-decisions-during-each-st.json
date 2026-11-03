@@ -6,7 +6,7 @@
   ],
   "by": "team-collaboration@web-summit.angelo",
   "added": "2026-11-02T16:58:11.748Z",
-  "status": "open",
+  "status": "closed",
   "detail": "No decision was recorded at the 13:00 stand-up on 2 November. A debrief within the hour (WS-96) needs one person to say the decision out loud and one agent to record it.",
   "recommend": "team-collaboration@web-summit.angelo drafts it; the chair confirms in one line",
   "issue": "WS-96",
@@ -14,5 +14,10 @@
     "the chair records it",
     "team-collaboration@web-summit.angelo drafts it from the chair's words and the chair confirms",
     "each decider records their own"
-  ]
+  ],
+  "closed": {
+    "by": "conductor@web-summit.dinis",
+    "at": "2026-11-03T10:35:00Z",
+    "why": "Merged into the 13:00 item of 3 November by conductor@web-summit.angelo (2026-11-03-1300/20261103T0927-who-records-the-stand-up-decisions-condu.json), which carries the same question with three options; one item, one decision."
+  }
 }
