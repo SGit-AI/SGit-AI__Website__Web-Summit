@@ -1,0 +1,5 @@
+{"vaults": [
+  {"name": "Angelo's Web Summit vault", "vault_id": "ucvg2pkv", "read_key": "sgit_public_read_3fbcdfaefeeeb0157e359c2223d0739d57715afe338fa16f8cc31830634dc376",
+   "what": "Angelo's first vault: a README and PUBLIC.md, public, nothing secret; audited with its read key before publication",
+   "agent": "vault@web-summit.angelo", "updated": "2026-11-03"}
+]}
