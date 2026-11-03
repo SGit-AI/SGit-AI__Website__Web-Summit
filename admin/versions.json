@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.44",
+    "date": "2026-11-03",
+    "what": "the gate checks me.json: its shape, its links, and no contact detail (WS-123, item 3)",
+    "by": "dev@web-summit.dinis",
+    "from": "44595dc81"
+  },
+  {
     "version": "v0.2.43",
     "date": "2026-11-03",
     "what": "the 02:57 report, and 'What happened' updated",
