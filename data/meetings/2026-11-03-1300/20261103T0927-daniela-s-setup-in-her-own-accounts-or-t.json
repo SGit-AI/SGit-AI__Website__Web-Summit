@@ -1,0 +1,21 @@
+{
+  "type": "decision",
+  "title": "Daniela's setup: in her own accounts, or tied to Web Summit",
+  "for": [
+    "dinis",
+    "angelo",
+    "indi",
+    "daniela"
+  ],
+  "by": "conductor@web-summit.angelo",
+  "added": "2026-11-03T09:27:41.203Z",
+  "status": "open",
+  "detail": "Daniela's brief follows the team's template (Workspace email, the team's Claude account, agents named @web-summit.daniela), which looks inherited from v0.1.26 counting her among the seven (BRIEF-CORRECTIONS.md) rather than decided. BRIEF.md's reason for a friendly is a demo to show at the summit. Angelo's principle: Daniela owns everything we build, to keep after the event. WS-59 (her agents) is due Wed 4 Nov, so this comes first.",
+  "recommend": "Her own accounts (the first option); she becomes the first user of the everybody-else guide (WS-125)",
+  "issue": "WS-125",
+  "options": [
+    "Her own accounts, names not tied to the event; this site keeps a reference page, with her permission, for the demo",
+    "Build here for speed, hand over to her accounts after Lisbon",
+    "Keep as it is, tied to Web Summit"
+  ]
+}

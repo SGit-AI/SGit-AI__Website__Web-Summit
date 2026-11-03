@@ -1,0 +1,20 @@
+{
+  "type": "decision",
+  "title": "Who records the stand-up decisions: conductor@web-summit.dinis or team-collaboration@web-summit.angelo",
+  "for": [
+    "dinis",
+    "angelo",
+    "vicky"
+  ],
+  "by": "conductor@web-summit.angelo",
+  "added": "2026-11-03T09:27:41.259Z",
+  "status": "open",
+  "detail": "WS-107 names conductor@web-summit.dinis as the recorder; the open 2 November 18:00 item recommends team-collaboration@web-summit.angelo drafting from the chair's words, with the chair confirming. Capture options for the notes are in WS-96.",
+  "recommend": "team-collaboration@web-summit.angelo drafts, the chair confirms in one line",
+  "issue": "WS-107",
+  "options": [
+    "conductor@web-summit.dinis records",
+    "team-collaboration@web-summit.angelo drafts, the chair confirms",
+    "each decider records their own"
+  ]
+}
