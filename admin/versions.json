@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.47",
+    "date": "2026-11-03",
+    "what": "the 04:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "fdd2ebb04"
+  },
+  {
     "version": "v0.2.46",
     "date": "2026-11-03",
     "what": "vaults outside the repository clone, .sg_vault/ ignored, one name for the access token",
