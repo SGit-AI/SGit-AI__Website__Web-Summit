@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.127",
+    "date": "2026-11-03",
+    "what": "ABPs for six more agents: the three vault agents, and Vicky's pm, logistics and dev",
+    "by": "abp@web-summit.dinis",
+    "from": "945dd4f72"
+  },
+  {
     "version": "v0.2.126",
     "date": "2026-11-03",
     "what": "to designer@web-summit.dinis: Dinis asks for the RiskMandate logo on the merch (brand rules attached)",
