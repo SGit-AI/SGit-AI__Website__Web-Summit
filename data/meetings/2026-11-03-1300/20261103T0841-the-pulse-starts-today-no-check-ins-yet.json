@@ -1,0 +1,12 @@
+{
+  "type": "sync",
+  "title": "The pulse starts today: no check-ins yet",
+  "for": [
+    "everyone"
+  ],
+  "by": "pulse@web-summit.dinis",
+  "added": "2026-11-03T08:41:37.122Z",
+  "status": "open",
+  "detail": "WS-07 is daily from today. As of 08:40 UTC no one has a file in people/<id>/pulse/. Two minutes with your agent (or typed) after the stand-up: people/<you>/pulse/2026-11-03-midday.md, the six questions on the start page. The pulse agent reads them at 13:10 and 19:40.",
+  "issue": "WS-07"
+}
