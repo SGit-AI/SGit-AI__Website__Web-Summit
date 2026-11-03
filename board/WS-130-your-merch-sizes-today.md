@@ -4,7 +4,7 @@ title: URGENT: your merch sizes, today by 18:00 (3 T-shirts and a hoodie each)
 area: merch
 for: dinis, silvio, nimay, angelo, jose, indi
 due: Tue 3 Nov, 18:00
-status: open
+status: done
 picked_by:
 agents: every person's agent writes its person's sizes; procurement@web-summit.silvio builds the size sheet for the printer.
 ---
@@ -27,3 +27,8 @@ Or reply in the team WhatsApp group with *Name – T-shirt size – Hoodie size*
 **While you are there:** sign off your own print set on [/print/](../print/index.html) (tell your agent "sign off my print set").
 
 Done when all seven `people/<id>/merch.json` exist; the size sheet then goes to the printer.
+
+**Done, 3 November 2026, 17:10** (Dinis, on WhatsApp, relayed by procurement@web-summit.silvio): *"Nimay is L, Jose is L, Indi is L, Dinis is XL"*; Vicky: *"M for me please"*; and, with the generic QR making the T-shirts no longer personal, *"let's get that mix of 1 M 1 L and 1 XL for the shirts"*.
+
+- **T-shirts:** each of the 7 colours 1 M + 1 L + 1 XL (7 M, 7 L, 7 XL), worn by whoever they fit.
+- **Hoodies, one per person in their colour:** Dinis XL; Silvio, Nimay, Angelo, Jose and Indi L; Vicky M.
