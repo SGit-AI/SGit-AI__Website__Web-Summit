@@ -18,7 +18,8 @@ What must not be public (booked meetings, contacts, introductions, the week's ac
 1. The agent makes its own key in its session (`node pki-agent.mjs keygen --session`) and commits only the public half to `data/keys.json`. The private half never leaves the session.
 2. The holder of a vault key seals it to that key, read from what was pushed:
    `node admin/tools/seal.mjs --to <key id> --from-vault <vault dir> --expires 2 --qr sealed.png`.
-   The tool takes the bundle from `origin/dev:data/keys.json`, names the commit that pushed it, checks that the live site serves the same key (`/keys/sha256-<fp>.json`), and seals with pki-agent.mjs's own code. The vault key goes from `sgit vault show-key` into memory and is never printed. `--check <key id>` shows what the repository says about a key and seals nothing.
+   The tool takes the bundle from `origin/dev:data/keys.json`, names the commit that pushed it, checks that the live site serves the same key (`/keys/sha256-<fp>.json`), and seals with pki-agent.mjs's own code (refusing any copy whose sha256 is not the pinned one).
+   **Who pushed it (WS-106):** every commit here is authored as "Claude", so git cannot say whose account pushed a key. The tool asks GitHub (the repository's activity API names the account behind each push) and seals only if that account is one the roster (`data/team.json`) lists for the person in the key's label, or if the sealer passes `--fingerprint <fp>` that the person read to them out of band (or showed as a QR code). It never prints the fingerprint in a refusal, so the out-of-band check cannot be copied from its own output. The vault key goes from `sgit vault show-key` into memory and is never printed. `--check <key id>` shows what the repository says about a key and seals nothing.
 3. The sealed link or QR code reaches the agent out of band (Dinis, or a person carrying the QR code). The agent opens it with `node pki-agent.mjs open <link or qr.png> --save <dir>` and keeps the vault key in its session's key store, or in the gitignored `.credentials/` tier.
 4. The agent clones the vault with `sgit` and reads and writes it there.
 
@@ -38,9 +39,13 @@ Each person's agents read and write it once their keys hold its vault key. Only 
 
 ## Who is ready for step 8 {#ready}
 
-Step 8 needs agent keys on the keys page (the [leaderboard](../team/setup/index.html) reads them from there):
+Step 8 needs agent keys on the keys page (the [leaderboard](../team/setup/index.html) reads them from there). Checked with `seal.mjs --check` on 3 November, 01:00 UTC:
 
-- **Dinis:** the vault registry key holds the vault keys today; sgit@web-summit.dinis has its own key (`sgit-dinis`).
-- **Vicky:** conductor@web-summit.vicky (`conductor-vicky`) and dashboard@web-summit.vicky (`dashboard-vicky`). Ready to be sealed to.
-- **Angelo:** dev@web-summit.angelo (`dev-angelo`). Ready to be sealed to.
-- **Everyone else:** steps 4 to 6 first ([the start page](../start/index.html#steps)).
+| Key | Pushed by | On the roster for its person? | Can be sealed to |
+|---|---|---|---|
+| `sgit-dinis`, `conductor-dinis`, `mentor-dinis` | DinisCruz | yes (dinis) | yes |
+| `dev-angelo` | riskmandate-angelo | yes (angelo) | yes |
+| `conductor-vicky`, `dashboard-vicky` | riskmandate-vicky | no: the roster lists no GitHub account for Vicky | only with `--fingerprint`, confirmed with Vicky |
+| `conductor-jose` | riskmandate-jose | no: the roster lists no GitHub account for Jose | only with `--fingerprint`, confirmed with Jose |
+
+The vault registry key holds the six vault keys today, so its holder does the sealing. Everyone else: steps 4 to 6 first ([the start page](../start/index.html#steps)).
