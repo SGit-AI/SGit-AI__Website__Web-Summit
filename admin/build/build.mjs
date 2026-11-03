@@ -114,7 +114,7 @@ function rail(rel, up, body) {
     return pages || on ? `<aside class="rail" aria-label="Section and page contents">${pages}${on}</aside>` : ''
 }
 
-function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false }) {
+function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false, head = '' }) {
     const up = '../'.repeat(rel.split('/').length - 1)
     const side = home ? '' : rail(rel, up, body)
     const heroed = home && body.includes('class="hm-hero"')   // the home page's hero band (WS-103) is its title
@@ -130,7 +130,7 @@ function page({ rel, title, description, body, meta = '', mdTwin = '', lead = ''
 <link rel="canonical" href="${url}">
 <meta property="og:url" content="${url}">
 <meta property="og:title" content="${esc(title)}">
-<link rel="stylesheet" href="${up}assets/site.css">
+<link rel="stylesheet" href="${up}assets/site.css">${head}
 </head>
 <body>
 <a class="skip" href="#main">Skip to the content</a>
@@ -395,6 +395,22 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel) }))
     pages.push({ rel, title: meta.title, description: meta.summary })
     twin(rel, meta.title, meta.summary, body)
+}
+
+// a person's app, opt-in (WS-06): if people/<id>/app/data.mjs exists, its build(ROOT) is written to
+// people/<id>/app/data.json and people/<id>/app/index.html loads that folder's app.css and app.js on top of the
+// usual page (summaryMd(data) is the no-JavaScript fallback and the markdown twin). The person's agents keep the
+// folder; everything in it is public, like the rest of the site.
+for (const m of teamData.members.filter(m => m.kind === 'human')) {
+    const dir = path.join(ROOT, 'people', m.id, 'app')
+    if (!fs.existsSync(path.join(dir, 'data.mjs'))) continue
+    const app = await import(path.join(dir, 'data.mjs'))
+    const data = app.build(ROOT, m.id)
+    write(`people/${m.id}/app/data.json`, JSON.stringify(data))
+    const rel = `people/${m.id}/app/index.html`, title = `${m.name}'s command centre`, md = app.summaryMd(data)
+    const description = `${m.name}'s command centre: tasks from the board, agents, workstreams and decisions, built from the repository.`
+    write(rel, page({ rel, title, description, mdTwin: twinPath(rel), head: '<link rel="stylesheet" href="app.css"><script src="app.js" defer></script>', body: `<div id="cc" data-src="data.json"></div><div id="cc-fallback">${render(md)}</div>` }))
+    pages.push({ rel, title, description }); twin(rel, title, description, md)
 }
 
 // the team: data/team.json -> team/index.html (people, agents, who works with whom) and team/<id>/index.html
