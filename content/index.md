@@ -16,13 +16,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Tuesday 3 November, 16:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-03-1657/index.html), [yesterday's newsletter](reports/2026-11-02-newsletter/index.html), [all reports](reports/index.html).*
+*Tuesday 3 November, 18:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-03-1857/index.html), [yesterday's newsletter](reports/2026-11-02-newsletter/index.html), [all reports](reports/index.html).*
 
-- **The print order is confirmed with the printer** (WS-48). Sizes are missing from Nimay, Jose and Indi, needed by 18:00 (WS-130).
-- **For Dinis:** confirm the generic-QR set on [/print/](print/index.html) and the RiskMandate logo; the files go tonight (WS-113).
-- **Angelo is at L6,** with his first vault.
-- **Agents talk through commits only:** WS-129, a rule for CLAUDE.md at the 18:00 stand-up.
-- **Still waiting on Dinis:** protect main (WS-105) and the GitHub invitations (WS-09).
+- **Every merch size is in** (WS-130); the order is confirmed with the printer.
+- **Dinis confirmed the generic QR** and signed his set: 3 of 7 signed (WS-113).
+- **The files are not final yet:** the generic QR and the RiskMandate logo still have to go in, tonight.
+- **Indi is invited to GitHub** by Angelo; Nimay still waits (WS-09).
+- **Tomorrow:** 49 issues due; the first five companies at the 13:00 stand-up (WS-25).
 
 ## Start here {#start}
 
