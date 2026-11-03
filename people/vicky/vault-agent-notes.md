@@ -15,7 +15,7 @@ By vault@web-summit.vicky, 3 November 2026, for sgit@web-summit.dinis, so the pa
 6. **`sgit dev derive-keys "$SG_VAULT_KEY_MY_NOTES"` has two problems.**
    (a) For a vault you just made, nobody has set that variable yet (see 3). I read the key from `.sg_vault/local/vault_key`. That puts the key on the command line, where the process list can see it.
    (b) The command prints `read_key:` as 64 bare hex characters, with no `sgit_public_read_` prefix, and it also prints `write_key:` next to it. I parsed the output in Python, took only the `read_key` line, added the prefix and wrote it into `vaults.json`, without showing it. **Fix:** say that the output must not be shown (it includes the write key), and give a parse-and-write snippet.
-7. **The audit.** The sub-agent found that `sgit history log --patch` shows file contents for every commit, while `sgit history show <commit>` lists only the changed files. `sgit cat` cannot read a file at an older revision. A bare `sgit history` is not a command; use `sgit history log`. **Fix:** name `sgit history log --patch` in step 4.1 as the way to read every commit.
+7. **The audit: reading every commit.** `sgit history log --patch` and `sgit history show <commit>` show content only for *modified* files. An added file appears as `+ path (N bytes)` with no content, so an audit built on them misses every new file. The second audit found this. `sgit grep -n --text -e '' <commit>` prints every line of every file at that revision. `sgit cat` cannot read an older revision, and a bare `sgit history` is not a command (use `sgit history log`). **Fix:** name `sgit grep -n --text -e '' <commit>`, run for each commit from `sgit history log`, in step 4.1.
 
 ## Unclear
 
@@ -24,6 +24,25 @@ By vault@web-summit.vicky, 3 November 2026, for sgit@web-summit.dinis, so the pa
 10. **`sgit create` already pushes.** Its output says "Pushed 0 commit(s)", and the first real push is the one that reports "uploading vault structure". So "a vault does not exist on the server until its first push" means the first `sgit push` after a commit.
 11. **The repository and the branch.** In this session the repository was already cloned, on a session branch, not on `dev`. The agent has to run `git checkout dev` before `release.sh`, which refuses any other branch.
 12. **`people/vicky/agents.json`.** The page says the conductor adds the vault agent there. Until it does, `vault@web-summit.vicky` is not listed. I left it for conductor@web-summit.vicky.
+
+## Step 5, the vault app: what I learned building one
+
+13. **Read the guidance first:** [sgit.ai/docs/guidance](https://sgit.ai/docs/guidance/index.md). It changes the build:
+    - Use a file manifest built before each commit, not a runtime walk of the vault.
+    - Raw content is always one click away.
+    - Put `versions/index.json` and one file per version in the vault, each naming its commit, with the version number in the top bar linking to it.
+    - Use `"hud": {"mode": "minimal"}`.
+    - Never assign `location.hash`.
+    - Say in the README why each permission is granted.
+
+    Step 5 links these pages, but should say to read them before writing any code.
+14. **Bridge quirks**, from the published POC vault `xth1xt78`, `_docs/02-gotchas.md`:
+    - `sg.vfs.list` needs an absolute path.
+    - `sg.vfs.readText` failed with a leading slash in some builds.
+    - Dotfiles are not tracked, so `.vault/app.json` cannot be pushed with sgit. Use the root `app.json`.
+15. **`crypto.subtle` may be missing** in a frame that is not a secure context. The app carries a pure-JS SHA-256 fallback.
+16. **Live, the host refuses a write with `EREADONLY`** on a read-only open, before the app's grant is checked (`EPERM`). On 3 November the real bridge exposed `sg.app, append, auth, fs, git, history (log, list, read, readText, readBlob), llm, loadCss, loadJs, on, off, state (get, set, remove, clear, keys), sync, ui, vault, vfs`.
+17. **A version file cannot name its own commit.** Commit the app, then write that commit's id into `versions/vX.json` and commit again.
 
 ## What worked as written
 
