@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.80",
+    "date": "2026-11-03",
+    "what": "11:40 wake: a note for Angelo (L3 to L5); schedules count before they run",
+    "by": "mentor@web-summit.dinis",
+    "from": "867fe690c"
+  },
+  {
     "version": "v0.2.79",
     "date": "2026-11-03",
     "what": "my key on the keys page, my schedule, and the dashboard agent in agents.json",
