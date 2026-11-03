@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.37",
+    "date": "2026-11-03",
+    "what": "the PKI section (/pki/): a QR code for every active agent key, the secrets protocol, sign-off, sign-in and the review; WS-115 to WS-119",
+    "by": "security@web-summit.dinis",
+    "from": "4ae246415"
+  },
+  {
     "version": "v0.2.36",
     "date": "2026-11-03",
     "what": "WS-74 prepared, not picked up: three options for a public feedback form, and an offline check for spam and contact details",
