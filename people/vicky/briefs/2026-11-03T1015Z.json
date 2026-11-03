@@ -1,0 +1,83 @@
+{
+  "number": 1,
+  "date": "3 November 2026",
+  "kicker": "Web Summit 2026 · Vicky's conductor brief",
+  "title": "You are at L5; your sizes are in, WS-46 is yours, and the merch order closes tonight",
+  "when": "3 November 2026, 10:15 UTC (after your answers to the 07:30 note)",
+  "by": "conductor@web-summit.vicky",
+  "headline": "The print order is today's critical path: the printer needs everyone's sizes and signed print sets by the end of today, and yours are the only sizes in so far (1 of 7). WS-46 is picked with your name, your first board-health note is in people/vicky/board-health.md, and both your agents now run on the kit's schedules. Three things need you, below; nothing in them is decided.",
+  "stats": [
+    {"n": "L5", "label": "your level, computed by the site (8 of 9 steps; vaults left)"},
+    {"n": "1 of 7", "label": "people with sizes in people/<id>/merch.json (yours)"},
+    {"n": "17", "label": "open issues due today with no owner"},
+    {"n": "3", "label": "your own issues due today (WS-23, WS-47, WS-100)"}
+  ],
+  "for_you": [
+    {"group": "Before 16:00 today"},
+    {
+      "id": "1",
+      "ask": "Sign off your print set on /print/ (WS-113, by 16:00)",
+      "detail": "Each person's agent signs that person's set with its key, on the person's own words (admin/tools/signoff.mjs). The designer still has four fixes to make to the files (hoodie back, T-shirt front width, thin strokes, stock colours); a set signed before a fix shows as superseded and must be signed again. Your purple (#6B3FA0) is still being matched to Printer C's blanks.",
+      "options": ["approve your set as it is now", "request changes (say what)", "look again once the designer's fixes land, then approve or request changes before 16:00"],
+      "recommend": "Look once the fixes land, then tell me 'approve' or the changes in your own words; I sign with my key and release."
+    },
+    {"group": "For the 13:00 stand-up or later"},
+    {
+      "id": "2",
+      "ask": "WS-23 (Nimay's booked meetings in a private vault) is due today but cannot be done today",
+      "detail": "No one has published a vault yet; vaults come with WS-120 (Angelo, Jose and Silvio, Wed 4 Nov) and WS-121 (everyone, Fri 6 Nov), and your vaults step is the one you have not done, as you chose.",
+      "options": ["move the date to after WS-121 (Fri 6 Nov)", "keep the date and hold the meetings privately elsewhere until the vaults open", "raise it with Nimay at 13:00"],
+      "recommend": "Move it to after WS-121 and tell Nimay at 13:00; I can add it to the agenda as a decision if you say so."
+    },
+    {
+      "id": "3",
+      "ask": "Who keeps the team-wide board-health page",
+      "detail": "project-manager@web-summit.dinis writes /board-health/ (content/board-health.md) at 07:50, 12:50 and 17:50 UTC and says it covers WS-46 until your agent takes it over. That page is outside people/vicky/, so taking it over needs its owner's agreement. Until you decide, your note sits beside it.",
+      "options": ["keep two: Dinis's project manager keeps the team page, your note gives your view", "your agents take the page over (ask Dinis)"],
+      "recommend": "Keep two for now: the team page is already running three times a day, and your note adds your deadlines and dependencies without repeating it."
+    }
+  ],
+  "you_asked": [
+    {"at": "3 Nov, about 10:00 UTC", "said": "My size: T-shirt M, hoodie M. Put it where the team's rules say sizes go.", "done": "people/vicky/merch.json, the shape WS-113's order sheet reads: T-shirt M unisex (your answer on fit), hoodie M", "where": "commit faa9d55", "status": "done"},
+    {"at": "3 Nov, about 10:00 UTC", "said": "Go on WS-46.", "done": "WS-46 picked (Vicky, conductor@web-summit.vicky); first note in people/vicky/board-health.md", "where": "commit ee056a5", "status": "done"},
+    {"at": "3 Nov, about 10:00 UTC", "said": "Follow the kit for the schedules and the PDF briefs.", "done": "Conductor wakes at 07:20, 12:20, 17:20 UTC with the kit's prompt; dashboard agent at 07:30, 12:30, 17:30 UTC; both in people/vicky/agents.json; this is brief 1", "where": "commit ee056a5; this brief", "status": "done"},
+    {"at": "3 Nov, about 10:00 UTC", "said": "Wait on the vaults for now; the start page says Angelo, Jose and Silvio go first.", "done": "Nothing done on the vaults", "where": "", "status": "waiting"}
+  ],
+  "sections": [
+    {
+      "title": "1. Deadlines at risk today (from people/vicky/board-health.md)",
+      "items": [
+        "The merch order: WS-113 sign-off by 16:00, the printer's confirmation by the end of today. Sizes: 1 of 7 in. WS-55, where sizes are asked for, was due Monday and has no owner.",
+        "WS-56, the shirt messages: due Monday, no owner, nothing came in.",
+        "Yours: WS-23 (blocked on the vaults), WS-100 (the GitHub step written down, with Angelo; Nimay and Indi still stop at the push step), WS-47 (alignment from the pulse: no check-ins anywhere yet)."
+      ]
+    },
+    {
+      "title": "2. Your issues due tomorrow, Wednesday 4 November, all without an owner",
+      "items": ["WS-25 The first five companies (with Silvio, Nimay)", "WS-29 Hot leads go to Nimay or Dinis (with Nimay)", "WS-41 The pulse app (with Angelo, Jose)", "WS-53 Silvio's project-management workflow, written up (with Silvio)", "WS-48 Printing and merch logistics (with Silvio; his procurement agent has the printer)", "WS-49 Mini tools for the team (starts tomorrow; your mentor suggests one small tool as a first try)"]
+    },
+    {
+      "title": "3. Your agents",
+      "table": {
+        "head": ["Agent", "Schedule (UTC)", "State"],
+        "rows": [
+          ["conductor@web-summit.vicky", "07:20, 12:20, 17:20", "running; key conductor-vicky on the keys page"],
+          ["dashboard@web-summit.vicky", "07:30, 12:30, 17:30", "running; key dashboard-vicky on the keys page"],
+          ["dev@web-summit.vicky", "09:30, 15:30 (kit)", "not started: the kit has its prompt, for WS-49 when you want it"]
+        ]
+      }
+    }
+  ],
+  "next": [
+    "12:20 UTC: the next scheduled run; the board-health note is refreshed before the 13:00 stand-up.",
+    "When you say so: sign your print set (item 1), add WS-23 to the 13:00 agenda (item 2).",
+    "Your first pulse check-in (WS-07): I can interview you in two minutes whenever you like."
+  ],
+  "sources": [
+    "board/WS-*.md front matter at commit 72f1643 (site v0.2.66)",
+    "board/WS-113 and comms/mail/mailroom/procurement@web-summit.silvio/designer__001-the-print-files-handover.md",
+    "content/board-health.md, run of 3 Nov 07:50 UTC",
+    "people/*/merch.json, people/*/pulse/, people/vicky/kit/README.md, people/vicky/agents.json",
+    "git log: faa9d55, ee056a5"
+  ]
+}
