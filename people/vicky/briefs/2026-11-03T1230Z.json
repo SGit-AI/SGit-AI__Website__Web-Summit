@@ -1,0 +1,52 @@
+{
+  "number": 2,
+  "date": "3 November 2026",
+  "kicker": "Web Summit 2026 · Vicky's conductor brief",
+  "title": "Midday: your set is the only one signed; the merch order closes at 16:00",
+  "when": "3 November 2026, 12:30 UTC (scheduled wake; since brief 1, 10:15 UTC)",
+  "by": "conductor@web-summit.vicky",
+  "headline": "Since brief 1 you signed your print set, gave the team its first pulse check-in, and put WS-23 on the 13:00 agenda. The merch order is still the day's risk: 1 of 7 sets signed and 1 of 7 sizes in, three and a half hours before the 16:00 sign-off. One question needs you, from your mentor; nothing is decided here.",
+  "stats": [
+    {"n": "1 of 7", "label": "print sets signed off (yours, approved 10:34 UTC)"},
+    {"n": "1 of 7", "label": "people with sizes in (yours)"},
+    {"n": "23", "label": "open issues due today with no owner (corrected count)"},
+    {"n": "1", "label": "pulse check-ins on the team so far (yours)"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "How often you want the board-health note (your mentor's question, 10:40 UTC)",
+      "detail": "Today it was written at 10:20 and refreshed at 12:25. The conductor wakes at 07:20, 12:20 and 17:20 UTC, and Dinis's project manager writes the team page at 07:50, 12:50 and 17:50.",
+      "options": ["once a day, at 07:20, before the day starts", "every conductor wake (three a day)", "only when something changes"],
+      "recommend": "Once a day at 07:20, plus a line in the brief when something changes: the team page already runs three times a day, and you asked for fewer views."
+    }
+  ],
+  "you_asked": [
+    {"at": "3 Nov, about 10:25 UTC", "said": "Add WS-23 to the 13:00 agenda: if Nimay isn't there, ask Dinis to decide the new date.", "done": "Decision item on the 13:00 agenda; a commit for Nimay and Dinis explaining why it waits on the vaults; the due date unchanged", "where": "commit 2b6c02f", "status": "waiting"},
+    {"at": "3 Nov, about 10:25 UTC", "said": "Keep two board-health pages for now.", "done": "Recorded in your note with your words", "where": "people/vicky/board-health.md", "status": "done"},
+    {"at": "3 Nov, about 10:34 UTC", "said": "Sign off my print set. I've checked it and I'm happy with it.", "done": "Signed with conductor-vicky's key; verify: approved", "where": "commit 5edc938", "status": "done"},
+    {"at": "3 Nov, about 11:00 UTC", "said": "Commit it as it stands", "done": "Your morning pulse, the team's first", "where": "commit 02d03ca", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "1. What changed since brief 1",
+      "items": [
+        "Correction: brief 1 said the designer's fixes were still to come; they had landed at 09:21 UTC (b7879f2).",
+        "Correction: the board-health note's 10:20 counts of issues without an owner were too low (a parsing mistake, now fixed and explained in the note): 23 due today, 40 due tomorrow.",
+        "The printer's fourth reply: ready Friday if confirmed today (procurement@web-summit.silvio, add8b59, addressed to logistics@web-summit.vicky, an agent of yours that is not started).",
+        "Your mentor's 10:40 note: your agents' two-day clock starts at their first commit made without your prompt; a handover on 5 November at the earliest. It suggests trying the vault agent page before Friday."
+      ]
+    }
+  ],
+  "next": [
+    "13:00 stand-up: WS-23's new date (Nimay, or Dinis).",
+    "16:00: the print sign-off; I will tell you how many sets are signed at the 17:20 wake.",
+    "Your midday pulse, whenever you have two minutes."
+  ],
+  "sources": [
+    "admin/tools/signoff.mjs verify at 12:25 UTC",
+    "board/WS-*.md at commit f974007 (site v0.2.83)",
+    "people/vicky/mentor/2026-11-03-1040.md",
+    "git log: b7879f2, add8b59, 2b6c02f, 5edc938, 02d03ca"
+  ]
+}
