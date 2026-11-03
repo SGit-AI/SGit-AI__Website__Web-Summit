@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.146",
+    "date": "2026-11-03",
+    "what": "17:30 wake: \"Needs me\" refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "7b64b6569"
+  },
+  {
     "version": "v0.2.145",
     "date": "2026-11-03",
     "what": "notes on sealing: seal.mjs is wrong in a shallow clone, and the owner's copy of a key",
