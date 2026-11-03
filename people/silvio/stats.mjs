@@ -6,61 +6,30 @@
 // Optional: TODAY=2026-11-04 to see the board as of another day.
 import fs from 'fs'
 import path from 'path'
-import { execFileSync } from 'child_process'
+import { build } from './app/data.mjs'
 
+// one data layer for the dashboard's numbers and the command centre (people/silvio/app/data.mjs):
+// the board, the agents (same rule as the site's inventory) and git history
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 const ME = 'silvio'
-const SUMMIT = new Date('2026-11-10T09:00:00Z') // Web Summit, Lisbon, 10 to 12 November (WS-31)
 const TODAY = process.env.TODAY ? new Date(process.env.TODAY + 'T12:00:00Z') : new Date()
-
-// Silvio's workstreams, from the brief (brief-silvio.md) and the team map; an issue not listed here is "Other"
-const STREAMS = {
-    'Outreach': ['WS-24', 'WS-25', 'WS-26', 'WS-28'],
-    'Video': ['WS-40', 'WS-52', 'WS-71', 'WS-72', 'WS-75', 'WS-80'],
-    'Local and procurement': ['WS-48', 'WS-54', 'WS-101'],
-    'Merch sponsor': ['WS-58'],
-    'Agentic PM': ['WS-53'],
-}
-const streamOf = id => Object.keys(STREAMS).find(s => STREAMS[s].includes(id)) || 'Other'
-
-// Silvio's agents (data/team.json) and the workstream each one carries
-const AGENT_STREAM = {
-    conductor: 'all of them', dev: 'the site and tools', procurement: 'Local and procurement',
-    local: 'Local and procurement', outreach: 'Outreach', sponsor: 'Merch sponsor', video: 'Video',
-}
-
-const git = (...a) => { try { return execFileSync('git', a, { cwd: ROOT, encoding: 'utf8' }) } catch { return '' } }
-const frontMatter = t => { const m = t.match(/^---\n([\s\S]*?)\n---/); const o = {}; if (m) for (const l of m[1].split('\n')) { const i = l.indexOf(':'); if (i > 0) o[l.slice(0, i).trim()] = l.slice(i + 1).trim() } return o }
-const dueDate = s => { const m = (s || '').match(/(\d{1,2}) Nov/); return m ? new Date(Date.UTC(2026, 10, +m[1], 23, 59)) : null }
+const D = build(ROOT, ME, TODAY)
+const SUMMIT = new Date(D.summit.opening)
+const STREAMS = Object.fromEntries(D.workstreams.map(w => [w.name, w.issues]))
 const day = d => d.toISOString().slice(0, 10)
 
-// 1. the issues for Silvio
-const issues = fs.readdirSync(path.join(ROOT, 'board')).filter(f => /^WS-\d+.*\.md$/.test(f)).map(f => {
-    const fm = frontMatter(fs.readFileSync(path.join(ROOT, 'board', f), 'utf8'))
-    return { ...fm, file: f, due_at: dueDate(fm.due), stream: streamOf(fm.id) }
-}).filter(i => (i.for || '').split(/,\s*/).includes(ME))
-    .sort((a, b) => (a.due_at || 0) - (b.due_at || 0) || a.id.localeCompare(b.id, 'en', { numeric: true }))
-
+const issues = D.issues.filter(i => i.named).map(i => ({ ...i, due_at: i.due_at ? new Date(i.due_at) : null, stream: (D.workstreams.find(w => w.id === i.stream) || {}).name || 'Other' }))
 const done = i => /^(done|closed)/.test(i.status)
 const open = issues.filter(i => !done(i))
-const overdue = open.filter(i => i.due_at && i.due_at < TODAY)
+const overdue = open.filter(i => i.due_at && !i.recurring && i.due_at < TODAY)
 const next48 = open.filter(i => i.due_at && i.due_at >= TODAY && i.due_at - TODAY < 48 * 3600e3)
 const unowned = open.filter(i => !i.picked_by)
-
-// 2. the agents: active means at least one commit signed with its Agent: trailer
-const log = git('log', '--since=7 days ago', '--format=%x1e%cI%x1f%B')
-const commits = log.split('\x1e').filter(Boolean).map(c => { const [at, body] = c.split('\x1f'); return { at: new Date(at), agent: (body.match(/^Agent: (\S+)/m) || [])[1], fors: [...body.matchAll(/^For: (.+)$/gm)].map(m => m[1]) } })
-const agents = Object.keys(AGENT_STREAM).map(a => {
-    const name = `${a}@web-summit.${ME}`, mine = commits.filter(c => c.agent === name)
-    return { name, stream: AGENT_STREAM[a], n7: mine.length, n24: mine.filter(c => TODAY - c.at < 864e5).length, last: mine[0]?.at }
-})
-const inbox = commits.filter(c => TODAY - c.at < 864e5 && c.fors.some(f => f.includes(`web-summit.${ME}`) || f.trim() === ME))
-
-// 3. pulse and onboarding
+const agents = D.agents.map(a => ({ name: a.name, stream: a.job, n7: a.commits_7d, n24: a.commits_24h, last: a.last_at ? new Date(a.last_at) : null }))
+const inbox = D.messages.filter(m => TODAY - new Date(m.at) < 864e5)
 const pulseDir = path.join(ROOT, 'people', ME, 'pulse')
 const pulses = fs.existsSync(pulseDir) ? fs.readdirSync(pulseDir).filter(f => f.endsWith('.md')) : []
 const pulseToday = pulses.filter(f => f.startsWith(day(TODAY))).length
-const onboarding = JSON.parse(fs.readFileSync(path.join(ROOT, 'people', ME, 'onboarding.json'), 'utf8'))
+const onboarding = D.onboarding
 
 // 4. the health score: a rough 0 to 100 for the morning glance
 const days = Math.max(0, Math.ceil((SUMMIT - TODAY) / 864e5))
@@ -77,7 +46,7 @@ const md = [
     '',
     '| Signal | Now | |',
     '|---|---|---|',
-    `| Days to Lisbon | **${days}** | ${bar(Math.max(0, 8 - days), 8)} |`,
+    `| Days to opening night | **${days}** | ${bar(Math.max(0, 8 - days), 8)} |`,
     `| Health | **${health} / 100 (${light})** | ${bar(health, 100)} |`,
     `| Open issues | **${open.length}** of ${issues.length} | ${bar(issues.length - open.length, issues.length)} done |`,
     `| Overdue | **${overdue.length}** | ${overdue.map(i => i.id).join(', ') || 'none'} |`,
@@ -102,7 +71,7 @@ const md = [
     '',
     '### Agents {#agent-activity}',
     '',
-    '| Agent | Carries | Commits 24 h | Commits 7 days | Last seen |',
+    '| Agent | Job | Commits 24 h | Commits 7 days | Last seen |',
     '|---|---|---|---|---|',
     ...agents.map(a => `| ${a.n7 ? '●' : '○'} ${a.name} | ${a.stream} | ${a.n24} | ${a.n7} | ${when(a.last)} |`),
     '',

@@ -1,0 +1,52 @@
+{
+  "about": "Silvio's command centre: the configuration that is not on the board. Every decision and number here carries its source; the tasks themselves are always read from board/WS-*.md. Kept by Silvio's agents (people/silvio/ only). Public: no contact details, no private terms, no supplier names or prices until they agree.",
+  "person": "silvio",
+  "summit": {
+    "opening": "2026-11-09T18:00:00Z",
+    "label": "Web Summit Lisbon: opening night Mon 9 Nov, conference Tue 10 to Thu 12 Nov",
+    "source": "data/events.json (from websummit.com/schedule and venue essentials)"
+  },
+  "standups": {
+    "times_utc": ["13:00", "18:00"],
+    "source": "WS-96 and the team's stand-up calendar (team-collaboration@web-summit.angelo)"
+  },
+  "workstreams": [
+    { "id": "outreach", "name": "Outreach", "colour": "outreach", "agent": "outreach@web-summit.silvio", "issues": ["WS-24", "WS-25", "WS-26", "WS-28"], "with": "Nimay, Indi, Vicky", "goal": "Five first companies, then 50 sourced targets with an owner and a drafted message for Thu 5 and Fri 6 Nov; every contact followed up." },
+    { "id": "video", "name": "Video", "colour": "video", "agent": "video@web-summit.silvio", "issues": ["WS-40", "WS-52", "WS-71", "WS-72", "WS-75", "WS-80"], "with": "Angelo, Jose, Sarah", "goal": "The pipeline to YouTube and Instagram run once, the videos published, the silent loop for the stand." },
+    { "id": "local", "name": "Local and procurement", "colour": "procurement", "agent": "procurement@web-summit.silvio", "issues": ["WS-48", "WS-54", "WS-101"], "with": "Vicky", "goal": "21 T-shirts and 7 hoodies in Lisbon on time; Algarve printing and ads mapped." },
+    { "id": "sponsor", "name": "Merch sponsor", "colour": "local", "agent": "sponsor@web-summit.silvio", "issues": ["WS-58"], "with": "Dinis", "goal": "A yes or a no by the cut-off (proposed Wed 4 Nov, 12:00)." },
+    { "id": "pm", "name": "Agentic PM", "colour": "conductor", "agent": "conductor@web-summit.silvio", "issues": ["WS-53", "WS-06"], "with": "Vicky", "goal": "The workflow written up, one part running for the team; this dashboard." }
+  ],
+  "agents": {
+    "conductor": { "colour": "conductor", "job": "Runs Silvio's other agents and keeps people/silvio/", "schedule": "07:20, 12:20, 17:20 UTC (kit)" },
+    "dev": { "colour": "dev", "job": "Builds what Silvio and the conductor ask for: this command centre, tools", "schedule": "09:30, 15:30 UTC (kit)" },
+    "procurement": { "colour": "procurement", "job": "Quotes, orders and deliveries for what the team buys (WS-48); drafts only, Silvio approves", "schedule": "every 2 hours while quotes are open" },
+    "dashboard": { "colour": "conductor", "job": "Keeps Silvio's dashboard and asks one question a run", "schedule": "07:30, 12:30, 17:30 UTC (kit)" },
+    "outreach": { "colour": "outreach", "job": "Targets, messages and follow-ups; drafts in Silvio's account, Silvio sends", "schedule": "" },
+    "local": { "colour": "local", "job": "Algarve options: printers, ads, prices, lead times", "schedule": "" },
+    "sponsor": { "colour": "local", "job": "The merch sponsor ask (merch-sponsor page, part two)", "schedule": "" },
+    "video": { "colour": "video", "job": "The pipeline to YouTube, Instagram and this site", "schedule": "" }
+  },
+  "decisions": [
+    { "who": "Dinis", "what": "The latest date for final artwork and sizes (proposed Tue 3 Nov, 12:00)", "issue": "WS-48", "since": "2026-11-02T21:00:00Z", "source": "print-order/index.html#status" },
+    { "who": "Dinis", "what": "The fallback if no printer offers seven colours by Friday", "issue": "WS-48", "since": "2026-11-02T21:00:00Z", "source": "print-order/index.html#status" },
+    { "who": "Dinis", "what": "A spending ceiling for the merch order, so Silvio can confirm the first printer that fits", "issue": "WS-13", "since": "2026-11-02T21:00:00Z", "source": "print-order/index.html#status" },
+    { "who": "Dinis", "what": "Confirm the sponsor cut-off, Wed 4 Nov 12:00 (marked proposed)", "issue": "WS-58", "since": "2026-11-02T00:00:00Z", "source": "merch-sponsor/index.html" },
+    { "who": "Silvio", "what": "Where procurement may write, and who replies to suppliers", "issue": "WS-101", "since": "2026-11-02T00:00:00Z", "source": "board/WS-101" },
+    { "who": "Silvio", "what": "Which companies Silvio owns on the map", "issue": "", "since": "2026-11-02T00:00:00Z", "source": "team/silvio/index.html" }
+  ],
+  "funnels": [
+    {
+      "name": "Merch order",
+      "issue": "WS-48",
+      "as_of": "2026-11-02T21:00:00Z",
+      "source": "print-order/index.html#status",
+      "stages": [
+        { "stage": "Printers asked", "now": 7, "target": 10, "note": "3 more by WhatsApp or web form" },
+        { "stage": "Replied", "now": 2, "target": 7, "note": "A: not by Friday; B: only white, black or grey" },
+        { "stage": "A quote that fits Friday", "now": 0, "target": 1 },
+        { "stage": "Order placed (Silvio approves)", "now": 0, "target": 1 }
+      ]
+    }
+  ]
+}
