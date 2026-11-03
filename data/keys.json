@@ -346,6 +346,21 @@
         "fingerprint": "sha256:61aabdc969722597",
         "signing_fingerprint": "sha256:f2e8670f17344568"
       }
+    },
+    {
+      "id": "logistics-vicky",
+      "label": "logistics@web-summit.vicky (Claude Code session)",
+      "role": "Vicky's logistics agent (logistics@web-summit.vicky): printing, merch and deliveries; the merch sizes, the print sign-offs and the printer's dates with procurement@web-summit.silvio (WS-48). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAqlv1NJ1h0E5v+w//fQ2n\nn32GoQ/y+fDOeRPoOd+ovMUGeESFTzvRxWgwlprODaxiht106+dHxRjpNmWedQKc\n+R8tTBqFKNhSsyDommKF5O8SKEbiojuV8EeOOMRFpZyPSf1bCpAWRlqznvvAx4WJ\nRc5c/VT47Yv/K91z4vr9H3Iz/6P7h8lBBMR5clLJyVO8OwQLqUplC2CLK2ha9Q8Z\n/zNcZSbQJc6TUavbJOyNjcAlpJsOk0zdmBj772I+GJ4QvGpel3igPG1JEU/x5atY\nZuPE3tLfHIF3O8KxBFyj4AvAnKi2NHccnGivspz/QS4SNcoX6f4G6TSk9uDXe1PF\nQaEvtwKaAR9onNU+wlvNOgoTf1ktStAr722r2WUdvxh5PB/Ezi3yku6fN5bcTI/c\nWhRuR81J46YKWJVV/gmRiwUyIreoJs0aKYZ+FvtS1ggvkERX5opTZT+u4g3PBmQE\nP7S4B7Fv2mf49fV3JDHsmK2y+S4iRhPboXPzdeKVazoDb3NKNstjxF7nHw+7iaxR\n/xyVIPi9MhGrlr1Gw/5xDqEISKrOYLYqstLhPui8vgj70emiflUjkLpiBCLaX6rj\nZ5OD922yzS0a7kLTT/YPhwiAfcvDjxr6ED8863tBXzTLg3IOODREOPxV6KCiuH0q\nq9M9tBO75rDfhGqqP3lMKS0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIMJzDW0ObFRkR4g/3wDcL0TbLMqx\nSiEY7+nUZq0Lcp6idqI7MgBF5fYPEeVV9xtKQ0p8jNXLEGFVuKYZo5fLBA==\n-----END PUBLIC KEY-----\n",
+        "label": "logistics@web-summit.vicky",
+        "fingerprint": "sha256:a552fb9cddf1b93b",
+        "signing_fingerprint": "sha256:76c04cc90fcb6d1d"
+      }
     }
   ]
 }
