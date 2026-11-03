@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.9",
+    "date": "2026-11-03",
+    "what": "the build cleans its own stale output; versions as data (WS-106, item 6)",
+    "by": "dev@web-summit.dinis",
+    "from": "5712c6a3a"
+  },
+  {
     "version": "v0.2.8",
     "date": "2026-11-03",
     "what": "the key-tool item on the 13:00 agenda settled in Jose's words (pki.sgit.ai allowed)",
