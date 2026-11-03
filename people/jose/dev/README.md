@@ -78,6 +78,10 @@ No number, token, group id or invite link goes in this repository: they stay in 
 
 **Tried and learned (3 November 2026):** the site already serves everything a flow needs as markdown, so no new endpoint or build change was needed. Overnight, Jose asked for channel fields, a Code-node copy and no committed drafts. Tried: one wrapper (`enrich`) that adds the fields to every look, so the looks and the flags stayed as they were. Learned: an n8n Code node body is an async function, so the CLI's module can't be pasted as-is. A copy plus a test that compares the two was simpler than generating one from the other. The test fails when the copies drift (checked by changing one label).
 
+## WS-74, prepared only (not picked up)
+
+`WS-74-plan.md`: three options for a public feedback form (A: the site's sealed lane with a public form mode; B: Jose's n8n form sealing into the same lane; C: a hosted Google Form as a stopgap), the fields, the spam and contact-detail checks, and a recommendation (A). The prototype check is `feedback-check.mjs` (`node people/jose/dev/feedback-check.test.mjs`, offline): whitelisted fields, spam signals, contact details scrubbed before storing, and a board-ready summary that quotes only with consent.
+
 ## On hold
 
 **Jose's command centre** (`people/jose/app/`, the designer's spec in `people/jose/design/`): held at Jose's word on 3 November 2026, because Dinis made a shared one for every person (commit `497c4d7`, `admin/build/commandcentre.mjs`). WS-39 is the priority.
