@@ -1,5 +1,5 @@
 {
-  "about": "Angelo's command centre settings, kept by dashboard@web-summit.angelo (people/angelo/ only); admin/build/commandcentre.mjs reads this and takes the rest from its defaults. The order follows Angelo's five questions: what needs me now, is everyone connected, is the machine healthy, the technical pool with Jose, and what my agents did. Issues, decisions on the stand-up agenda and agents' commits are always read from the board, data/meetings/ and git; nothing here copies a number. Public: no contact details, no keys.",
+  "about": "Angelo's command centre settings, and his first view (his answer on 3 November); the classic dashboard follows the same order. Kept by dashboard@web-summit.angelo (people/angelo/ only); admin/build/commandcentre.mjs reads this and takes the rest from its defaults. The order follows Angelo's five questions: what needs me now, is everyone connected, is the machine healthy, the technical pool with Jose, and what my agents did. Issues, decisions on the stand-up agenda and agents' commits are always read from the board, data/meetings/ and git; nothing here copies a number. Public: no contact details, no keys.",
   "person": "angelo",
   "workstreams": [
     {
@@ -7,7 +7,13 @@
       "name": "Is everyone connected?",
       "colour": "blue",
       "agent": "conductor@web-summit.angelo",
-      "issues": ["WS-35", "WS-100", "WS-124", "WS-125", "WS-120"],
+      "issues": [
+        "WS-35",
+        "WS-100",
+        "WS-124",
+        "WS-125",
+        "WS-120"
+      ],
       "with": "Jose, Dinis, Indi, Daniela",
       "goal": "Everyone at L4 (dashboard agent running, agents' keys published): who is stuck on /team/setup/ and at which step (WS-35), one consistent GitHub hand-off (WS-124 against WS-09), and the vaults next (WS-120)."
     },
@@ -16,7 +22,18 @@
       "name": "The machine",
       "colour": "dev",
       "agent": "dev@web-summit.angelo",
-      "issues": ["WS-105", "WS-90", "WS-33", "WS-106", "WS-65", "WS-45", "WS-111", "WS-85", "WS-87", "WS-83"],
+      "issues": [
+        "WS-105",
+        "WS-90",
+        "WS-33",
+        "WS-106",
+        "WS-65",
+        "WS-45",
+        "WS-111",
+        "WS-85",
+        "WS-87",
+        "WS-83"
+      ],
       "with": "Jose, Dinis",
       "goal": "main protected and 'never push to main' enforced (WS-105, WS-90), every release through a green gate, CI failures seen the same hour, every running agent's key published (WS-45), and the estate's repository standard met (WS-106)."
     },
@@ -25,7 +42,28 @@
       "name": "The technical pool with Jose",
       "colour": "orange",
       "agent": "dev@web-summit.angelo",
-      "issues": ["WS-34", "WS-36", "WS-37", "WS-38", "WS-40", "WS-41", "WS-42", "WS-43", "WS-44", "WS-64", "WS-68", "WS-74", "WS-76", "WS-77", "WS-78", "WS-84", "WS-91", "WS-117", "WS-102", "WS-39"],
+      "issues": [
+        "WS-34",
+        "WS-36",
+        "WS-37",
+        "WS-38",
+        "WS-40",
+        "WS-41",
+        "WS-42",
+        "WS-43",
+        "WS-44",
+        "WS-64",
+        "WS-68",
+        "WS-74",
+        "WS-76",
+        "WS-77",
+        "WS-78",
+        "WS-84",
+        "WS-91",
+        "WS-117",
+        "WS-102",
+        "WS-39"
+      ],
       "with": "Jose",
       "goal": "One pool for Angelo and Jose: each issue has a name in picked_by, and the two choose who takes what."
     },
@@ -34,7 +72,12 @@
       "name": "Running the team",
       "colour": "conductor",
       "agent": "team-collaboration@web-summit.angelo",
-      "issues": ["WS-96", "WS-97", "WS-98", "WS-95"],
+      "issues": [
+        "WS-96",
+        "WS-97",
+        "WS-98",
+        "WS-95"
+      ],
       "with": "Vicky, Dinis",
       "goal": "Every stand-up on the calendar with a brief, a debrief and follow-ups (WS-96), and a daily note on bottlenecks (WS-97)."
     },
@@ -43,31 +86,57 @@
       "name": "RiskMandate, friendlies and content",
       "colour": "yellow",
       "agent": "",
-      "issues": ["WS-18", "WS-20", "WS-59", "WS-60", "WS-126", "WS-51", "WS-69", "WS-71", "WS-81"],
+      "issues": [
+        "WS-18",
+        "WS-20",
+        "WS-59",
+        "WS-60",
+        "WS-126",
+        "WS-51",
+        "WS-69",
+        "WS-71",
+        "WS-81"
+      ],
       "with": "Nimay, Indi, Daniela, Silvio",
       "goal": "The demos and landing page for RiskMandate, Daniela's agentic team and site, and the technical articles."
     }
   ],
   "agents": {
-    "conductor": { "colour": "conductor", "job": "Runs Angelo's other agents, keeps people/angelo/, adds Angelo's stand-up items and writes his numbered briefs", "schedule": "07:20, 12:20, 17:20 UTC (kit)" },
-    "dev": { "colour": "dev", "job": "The site's build, gate, pipeline and pages; the machine and the technical pool", "schedule": "09:30, 15:30 UTC (kit)" },
-    "team-collaboration": { "colour": "conductor", "job": "The stand-up calendar, a brief, debrief and follow-ups for every meeting (WS-96), and the daily bottleneck note (WS-97)", "schedule": "around each stand-up, 13:00 and 18:00 UTC" },
-    "dashboard": { "colour": "conductor", "job": "Keeps both of Angelo's views (this command centre and the classic dashboard) and asks Angelo one question a run", "schedule": "07:30, 12:30, 17:30 UTC (kit)" }
-  },
-  "decisions": [
-    {
-      "who": "Angelo",
-      "what": "Which view do you open first: the classic dashboard (/people/angelo/) or this command centre? Until you answer, both are kept, in the same order.",
-      "issue": "",
-      "since": "2026-11-03T11:30:00Z",
-      "source": "people/angelo/index.html",
-      "recommend": "Tell dashboard@web-summit.angelo in its session; one word is enough."
+    "conductor": {
+      "colour": "conductor",
+      "job": "Runs Angelo's other agents, keeps people/angelo/, adds Angelo's stand-up items and writes his numbered briefs",
+      "schedule": "07:20, 12:20, 17:20 UTC (kit)"
+    },
+    "dev": {
+      "colour": "dev",
+      "job": "The site's build, gate, pipeline and pages; the machine and the technical pool",
+      "schedule": "09:30, 15:30 UTC (kit)"
+    },
+    "team-collaboration": {
+      "colour": "conductor",
+      "job": "The stand-up calendar, a brief, debrief and follow-ups for every meeting (WS-96), and the daily bottleneck note (WS-97)",
+      "schedule": "around each stand-up, 13:00 and 18:00 UTC"
+    },
+    "dashboard": {
+      "colour": "conductor",
+      "job": "Keeps Angelo's command centre (his first view) and the classic dashboard, and asks Angelo one question a run",
+      "schedule": "07:30, 12:30, 17:30 UTC (scheduled task, from 3 Nov)"
     }
-  ],
+  },
+  "decisions": [],
   "prompts": {
-    "connected": ["Who is stuck?", "Read https://web-summit.sgit.ai/team/setup/index.md and people/*/onboarding.json on branch dev of SGit-AI/SGit-AI__Website__Web-Summit. For each person below L4, say the step they are stuck on, how long they have been there (from git log), and the one thing I can do to unblock them (WS-35). Draft any message; send nothing."],
-    "machine": ["Is the machine healthy?", "For SGit-AI/SGit-AI__Website__Web-Summit: is main protected (WS-105, WS-90)? What was the last release on dev, did its gate pass, and did any CI run fail in the last 24 hours? Which agents committed this week without an entry in data/keys.json? Answer in five lines with links."],
-    "pool": ["Split the pool with Jose", "List the open tech issues for Angelo and Jose on the board (board/WS-*.md, area tech) with their due dates and picked_by. Propose a split between Angelo and Jose by fit and due date, and draft the picked_by changes for my go. Commit nothing yet."]
+    "connected": [
+      "Who is stuck?",
+      "Read https://web-summit.sgit.ai/team/setup/index.md and people/*/onboarding.json on branch dev of SGit-AI/SGit-AI__Website__Web-Summit. For each person below L4, say the step they are stuck on, how long they have been there (from git log), and the one thing I can do to unblock them (WS-35). Draft any message; send nothing."
+    ],
+    "machine": [
+      "Is the machine healthy?",
+      "For SGit-AI/SGit-AI__Website__Web-Summit: is main protected (WS-105, WS-90)? What was the last release on dev, did its gate pass, and did any CI run fail in the last 24 hours? Which agents committed this week without an entry in data/keys.json? Answer in five lines with links."
+    ],
+    "pool": [
+      "Split the pool with Jose",
+      "List the open tech issues for Angelo and Jose on the board (board/WS-*.md, area tech) with their due dates and picked_by. Propose a split between Angelo and Jose by fit and due date, and draft the picked_by changes for my go. Commit nothing yet."
+    ]
   },
   "ideas": "One idea a day for the stand-up, from the technical side."
 }
