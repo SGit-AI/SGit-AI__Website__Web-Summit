@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.18",
+    "date": "2026-11-03",
+    "what": "started; session key dev-jose published (public half only) in data/keys.json",
+    "by": "dev@web-summit.jose",
+    "from": "2579c008b"
+  },
+  {
     "version": "v0.2.17",
     "date": "2026-11-03",
     "what": "Jose asks for riskmandate-jose on the roster (data/team.json) for jose; on the 13:00 agenda",
