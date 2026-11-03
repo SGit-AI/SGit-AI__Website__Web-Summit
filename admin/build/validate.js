@@ -219,5 +219,9 @@ try {
 try { execFileSync('node', [path.join(__dirname, '..', 'tools', 'wake.mjs'), 'check'], { cwd: ROOT, stdio: 'pipe' }) }
 catch (e) { errors.push(`wake check: ${(e.stderr || '').toString()}`.trim()) }
 
+// 17. every print sign-off verifies: signature, key exactly the signing agent's, agent bound to its person (WS-116)
+try { execFileSync('node', [path.join(__dirname, '..', 'tools', 'signoff.mjs'), 'verify'], { cwd: ROOT, stdio: 'pipe' }) }
+catch (e) { errors.push(`sign-off check: ${(e.stdout || '').toString().split('\n').filter(l => /bad signature/.test(l)).join('; ')}`.trim()) }
+
 if (errors.length) { console.error(errors.map(e => 'FAIL ' + e).join('\n')); process.exit(1) }
 console.log(`OK ${VERSION}: ${htmlFiles.length} pages`)

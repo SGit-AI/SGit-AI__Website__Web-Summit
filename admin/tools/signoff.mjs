@@ -5,6 +5,7 @@
 //
 //   node admin/tools/signoff.mjs sign --person <id> --by <agent> --said "<the person's own words>" \
 //        [--decision approved|changes] [--note "what to change"] [--set print]
+//        [--on-word-of dinis]   (only for Dinis's agents signing someone else's set on Dinis's word)
 //     writes people/<id>/signoff/<set>.json: the decision, the person's words, the agent, the time, and the sha256 of
 //     every file in the set, so a sign-off covers exactly those bytes. Then sign it with the agent's key:
 //       node pki-agent.mjs sign people/<id>/signoff/<set>.json     (-> <set>.json.sig)
@@ -30,18 +31,27 @@ const fileHashes = (set, id) => {
     if (!fs.existsSync(dir)) return null
     return Object.fromEntries(fs.readdirSync(dir).filter(f => !f.startsWith('.')).sort().map(f => [f, sha(fs.readFileSync(path.join(dir, f)))]))
 }
+// WS-116 (security@web-summit.dinis): an agent is <agent>@web-summit.<person>; a key belongs to the agent its label's
+// first word names (or its `agent` field), exactly; an agent signs only for its own person, or it is Dinis's agent and
+// the statement says it signs on Dinis's word (on_word_of: "dinis").
+const personOf = agent => (/^[a-z0-9.-]+@web-summit\.([a-z0-9-]+)$/.exec(agent || '') || [])[1]
+const keyAgent = k => k.agent || ((k.bundle && k.bundle.label) || k.label || '').trim().split(/\s+/)[0]
+const mayBind = st => personOf(st.by) === st.person || (personOf(st.by) === 'dinis' && st.on_word_of === 'dinis')
 const canonical = o => JSON.stringify(o, Object.keys(o).sort(), 2) + '\n'
 
 function sign() {
     const set = arg('set', 'print'), person = arg('person'), by = arg('by'), said = arg('said')
-    const decision = arg('decision', 'approved'), note = arg('note', '')
+    const decision = arg('decision', 'approved'), note = arg('note', ''), onWordOf = arg('on-word-of')
     if (!SETS[set]) fail(`unknown set ${set}`)
     if (!person || !by || !said) fail('sign needs --person, --by and --said (the person\'s own words)')
     if (!['approved', 'changes'].includes(decision)) fail('--decision is approved or changes')
     if (decision === 'changes' && !note) fail('--decision changes needs --note saying what to change')
+    if (!personOf(by)) fail(`--by must be <agent>@web-summit.<person>, not ${by}`)
     const files = fileHashes(set, person)
     if (!files) fail(`no files for ${person} in set ${set}`)
     const st = { v: 1, set, page: SETS[set].page, person, decision, said, note, by, at: new Date().toISOString().replace(/\.\d+Z$/, 'Z'), files }
+    if (onWordOf) st.on_word_of = onWordOf
+    if (!mayBind(st)) fail(`${by} may not sign ${person}'s set: only ${person}'s own agents, or Dinis's with --on-word-of dinis`)
     const out = path.join(ROOT, 'people', person, 'signoff', set + '.json')
     fs.mkdirSync(path.dirname(out), { recursive: true })
     fs.writeFileSync(out, JSON.stringify(st, null, 2) + '\n')
@@ -65,7 +75,8 @@ export function check(set = 'print') {
         let ok = false
         try { ok = crypto.verify('sha256', bytes, { key: key.bundle.sign, dsaEncoding: 'ieee-p1363' }, Buffer.from(sig.signature, 'base64')) } catch {}
         if (!ok) return { ...r, status: 'bad signature', why: 'the signature does not verify' }
-        if (!(key.bundle.label || key.label || '').includes(st.by)) return { ...r, status: 'bad signature', why: `key ${key.id} is not ${st.by}'s` }
+        if (keyAgent(key) !== st.by) return { ...r, status: 'bad signature', why: `key ${key.id} is ${keyAgent(key)}'s, not ${st.by}'s` }
+        if (st.person !== m.id || !mayBind(st)) return { ...r, status: 'bad signature', why: `${st.by} may not sign ${m.id}'s set` }
         const now = fileHashes(set, m.id) || {}, changed = Object.keys({ ...now, ...st.files }).filter(k => now[k] !== st.files[k])
         if (changed.length) return { ...r, status: 'superseded', why: `changed since: ${changed.join(', ')}` }
         return { ...r, status: st.decision === 'approved' ? 'approved' : 'changes requested' }

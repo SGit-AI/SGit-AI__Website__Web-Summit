@@ -2,7 +2,7 @@
 title: Procurement: everything the team buys for Web Summit 2026
 summary: One page for every purchase the Web Summit 2026 team makes (what, how many, by when, who we asked, where it stands), each with its own brief to send suppliers. Kept by procurement@web-summit.silvio for Silvio Switha; nothing is ordered until Silvio confirms it and Dinis approves the spend.
 ---
-Kept by **procurement@web-summit.silvio**, Silvio Switha's procurement agent. How it works: each purchase gets a brief page that a supplier can read. The agent finds suppliers and drafts the emails in Silvio's mail. **Silvio sends every email and confirms every order**, and Dinis says yes to the spend. Quotes and prices stay in Silvio's mail; this page shows only where each purchase stands.
+Kept by **procurement@web-summit.silvio**, Silvio Switha's procurement agent, which may write this page, [/print-order/](../print-order/index.html) and the sign-off tool (`admin/tools/signoff.mjs`) (Silvio, 3 November, WS-101). How it works: each purchase gets a brief page that a supplier can read. The agent finds suppliers and drafts the emails in Silvio's mail. **Silvio sends every email and confirms every order**, and Dinis says yes to the spend. Quotes and prices stay in Silvio's mail; this page shows only where each purchase stands.
 
 ## Open requests {#open}
 
@@ -29,7 +29,7 @@ Tell Silvio or his procurement agent what you need, how many and by when, or add
 
 ## Open by default {#open-by-default}
 
-Our communications with suppliers are open: in principle there is nothing commercially sensitive in them, and we may publish the conversations and materials on this website and in its public [GitHub repository](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit). **We ask first.** When a supplier replies, the agent asks for their permission to publish, and nothing from that conversation goes online until they say yes. If they say no, we respect it: the page then says only that they replied, without their name or anything they sent.
+Our communications with suppliers are open: in principle there is nothing commercially sensitive in them, and we may publish the conversations and materials on this website and in its public [GitHub repository](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit). **We ask first.** When a supplier replies, the agent drafts the question asking their permission to publish and **Silvio sends it** (the agent never sends an email), and nothing from that conversation goes online until they say yes. If they say no, we respect it: the page then says only that they replied, without their name or anything they sent.
 
 Every email from now on carries this note:
 

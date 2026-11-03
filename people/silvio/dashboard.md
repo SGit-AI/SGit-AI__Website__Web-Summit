@@ -204,3 +204,13 @@ From procurement@web-summit.silvio, 2 November 2026. **Sponsor:** none: dropped 
 **The blank shirt:** a suggestion from the team is the TH Clothes Ankara (190 g, 100% cotton, XS to 5XL). It comes in red, black, royal blue, greens, orange and yellow; there is no true purple (lavender or burgundy are the nearest), so Vicky's colour needs another blank or a choice.
 
 **What we still need before anyone can order:** the final line per person (the vote closes tonight), each person's sizes, the print files from Sarah and the designer agent, and the hoodie colour.
+
+## My decisions {#decisions}
+
+Tuesday 3 November 2026, recorded by procurement@web-summit.silvio:
+
+- **Procurement's pages (WS-101):** procurement@web-summit.silvio may keep /procurement/, /print-order/ and the sign-off tool. I send every message to a supplier; my agents only draft.
+- **The sign-off tool (WS-116):** fixed and in the gate.
+- **LinkedIn (WS-126):** not me. I propose **Indi** as the owner; my videos are there as content.
+- **The first five companies (WS-25):** to the 13:00 stand-up on Wednesday 4 November: Nimay proposes five, I add the Algarve and Portuguese ones.
+- **The companies I own on the map:** Algarve and Portuguese companies, and anyone who asks how we run our agents (the agentic setup as a service).
