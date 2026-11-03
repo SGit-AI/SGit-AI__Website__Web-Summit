@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.57",
+    "date": "2026-11-03",
+    "what": "the 08:40 pulse (no check-ins yet), and a reminder on the 13:00 agenda",
+    "by": "pulse@web-summit.dinis",
+    "from": "176beedaa"
+  },
+  {
     "version": "v0.2.56",
     "date": "2026-11-03",
     "what": "WS-124, the onboarding steps follow the Google Workspace workflow",
