@@ -8,6 +8,9 @@
 //                                         stand-ups, the first three points, "+N more:" and the link
 //   node report-draft.mjs --look line     the designer's look 2: one line of leads, then the link
 //   node report-draft.mjs --file <index.md> [--report <report.md>]   offline, from saved copies (for tests)
+// Every draft also carries id (the slug), created_at (when this draft was made, UTC), source_url (the markdown read),
+// text_whatsapp (plain text, WhatsApp's own *bold*, under 1000 characters) and text_slack (Slack mrkdwn).
+// report-draft.n8n.js is the same logic for an n8n Code node (network only, no fs); report-draft.test.mjs keeps the two equal.
 import fs from 'node:fs'
 
 const SITE = process.env.SITE || 'https://web-summit.sgit.ai/'
@@ -49,6 +52,23 @@ export const draftLine = (item, reportMd = '') => {
     return { new: true, slug: item.slug, title: item.title, link, look: 'line', text: `*${time}* · ${body || item.summary}.\n${link}` }
 }
 
+// The fields every look shares, for Jose's n8n flow (WS-39). text stays as it was; the two channel texts are made from it.
+export const WA_MAX = 1000
+export const slackEscape = t => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+export const forWhatsApp = (text, link) => {
+    if (text.length <= WA_MAX) return text
+    const lines = text.split('\n').filter(l => !l.includes(link)), tail = `\n\n${link}`
+    while (lines.length && (lines.join('\n') + tail).length > WA_MAX) lines.pop() // drop the last points first, keep the link
+    return (lines.join('\n').trimEnd() + tail).slice(0, WA_MAX)
+}
+export const forSlack = (text, link) => slackEscape(text)
+    .replace(/^\+(\d+) more: (\S+)$/m, (_, n, u) => `<${u}|+${n} more in the full report>`)
+    .replace(new RegExp(`(^|\\s)${link.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?=\\s|$)`, 'g'), (_, sp) => `${sp}<${link}|Read the report>`)
+export const enrich = (d, now = new Date()) => {
+    const text_whatsapp = forWhatsApp(d.text, d.link)
+    return { id: d.slug, created_at: now.toISOString(), source_url: `${SITE}reports/${d.slug}/index.md`, ...d, text_whatsapp, text_slack: forSlack(text_whatsapp, d.link) }
+}
+
 export const draft = (item, reportMd = '') => {
     const link = `${SITE}reports/${item.slug}/`
     const head = [`*${item.title}*`, item.summary].filter(Boolean).join('\n')
@@ -66,10 +86,10 @@ if (import.meta.url === `file://${process.argv[1]}`) {
         const items = parseIndex(await get(SITE + 'reports/index.md', arg('file')))
         const newest = items.find(x => /^\d{4}-\d{2}-\d{2}-\d{4}$/.test(x.slug)) // the two-hourly reports, not the newsletter
         if (!newest) throw new Error('no report found in the list')
-        if (arg('since') === newest.slug) { console.log(JSON.stringify({ new: false, slug: newest.slug })); process.exit(0) }
+        if (arg('since') === newest.slug) { console.log(JSON.stringify({ new: false, id: newest.slug, slug: newest.slug })); process.exit(0) }
         const report = await get(`${SITE}reports/${newest.slug}/index.md`, arg('report'))
         const make = { three: draftThree, line: draftLine, full: draft }[arg('look') || 'full']
         if (!make) throw new Error(`unknown --look ${arg('look')}: three, line or full`)
-        console.log(JSON.stringify(make(newest, report), null, 2))
+        console.log(JSON.stringify(enrich(make(newest, report)), null, 2))
     } catch (e) { console.error('report-draft: ' + e.message); process.exit(1) }
 }
