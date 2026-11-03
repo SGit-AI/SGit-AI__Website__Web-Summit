@@ -22,8 +22,8 @@ Started by the conductor on 2 November from [the builder template](../../dashboa
 
 Kept by `conductor@web-summit.jose` until the dashboard agent starts. Declared in [agents.json](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/agents.json); the prompts are in [the kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/kit/README.md).
 
-- **conductor@web-summit.jose**: running since 3 November, not yet on a schedule.
+- **conductor@web-summit.jose**: running since 3 November, key published (conductor-jose on the keys page), not yet on a schedule.
 - **dashboard@web-summit.jose** and **dev@web-summit.jose**: ready in the kit, not started.
 - **automation@web-summit.jose** (WS-39) and **helper@web-summit.jose** (WS-35): proposed in the brief.
 
-Blocked: agent keys, until pki.sgit.ai is allowed in the session's network settings (on the next stand-up).
+Next for L4: start the dashboard agent; it makes and publishes its own key.

@@ -151,6 +151,21 @@
         "fingerprint": "sha256:c5ff8c95547a3d44",
         "signing_fingerprint": "sha256:101cffc2128f85f3"
       }
+    },
+    {
+      "id": "conductor-jose",
+      "label": "conductor@web-summit.jose (Claude Code session)",
+      "role": "Jose's conductor (conductor@web-summit.jose): runs Jose's other agents and keeps people/jose/ with Jose (onboarding, agents.json, ack.json, stand-up items, briefs). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session from Jose's account, at Jose's word; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlVV/Xhtm0wjf9KmYfRup\nItTS3OtDjWpiwvJpOJsASgwGvUvGZtpgQmeste/q+kJEl6wDN9Z7hNpsiqPD+OM/\niU6N7sjtd0sg9cBrDLqBPsJ4VF1H7C4lyG6ECsK/TlMRVP1bpmhbtYfwuSXmMJPN\n66pddhvcRejz932Z9wwJ1TOVw4aINkK0nbTPXQRniUbpNLmBa3lTjhX6Ae33dmM0\nh64hAiNVslAqoZA1dv11z/UAlO4Zs8ttIlp6vHRbet2aK1e448f1iHXqTKCn7j3N\n+tXS18vOl615yHiZYvzrlPHofVKDfvX3PSm1lcsNpdK6P8RLYfndx8SlyOuGBAfK\nzdlzKzXB0UFO/R1Fk2+RLre4PW4bn6UOVXNrD2iOhIOIOjvIlgGShwn2chEhOB8E\nddrS7OKbsnoHNpjT/dOsDz4lF2EFW1vDNE64ThN7LBXQOWI7YKDe/iVlW9bCxLkj\nANKezzTf2HjRMU4QVfJ9IX/mhj0x+Hct2ljq2Ppr+A4aJQiX9+2yuLEgGB9x+iLG\nyj5M4RBRMpjwG6asVAZDDVxuFfKIyM/33YkDKtMi0i5ZOcsstScfqVSvhlIdfwHk\nW7WV2bNN6HZjexDMM1byrYgGtsQl8O7aD4jQNvNErtZVzWIRetH61dXrxnUaACGY\nbhr0D0bdhxR5Mr+LG0aTORsCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEE46IECPUJDilnrwRoiE1gO0WAVn5\nXn7oJr9v/T80xngF3ZfGCHlTxHtftYiIBySV1nFhbGDcmbXQ5wvWgvZDiA==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor@web-summit.jose (Claude Code session)",
+        "fingerprint": "sha256:5dc78b978e0a1750",
+        "signing_fingerprint": "sha256:006ceb9a9e3febbe"
+      }
     }
   ]
 }
