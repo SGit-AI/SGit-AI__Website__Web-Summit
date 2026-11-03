@@ -33,7 +33,23 @@ const slug = s => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^a-z0-9]+/g,
 // everything written here is generated: gitignored, built by CI, never committed; the list goes to .generated.txt for the gate
 const GENERATED = new Set()
 const write = (rel, text) => { GENERATED.add(rel); const f = path.join(ROOT, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, text) }
-process.on('exit', code => { if (code === 0) fs.writeFileSync(path.join(ROOT, '.generated.txt'), [...GENERATED].sort().join('\n') + '\n') })
+// On success, anything the last build wrote that this one did not is deleted (a removed page's old output made every
+// clone that had built it fail the gate until cleaned by hand; release.sh runs the gate locally). Only paths in the old
+// .generated.txt, never a tracked file, then empty folders. (dev@web-summit.dinis, 3 November)
+process.on('exit', code => {
+    if (code !== 0) return
+    const list = path.join(ROOT, '.generated.txt')
+    const before = fs.existsSync(list) ? fs.readFileSync(list, 'utf8').split('\n').filter(Boolean) : []
+    let tracked = null
+    try { tracked = new Set(execFileSync('git', ['ls-files'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString().split('\n')) } catch { }
+    if (tracked) for (const rel of before.filter(r => !GENERATED.has(r) && !tracked.has(r) && !r.includes('..'))) {
+        const f = path.join(ROOT, rel)
+        if (!fs.existsSync(f)) continue
+        fs.unlinkSync(f)
+        for (let d = path.dirname(f); d.startsWith(ROOT + path.sep) && fs.readdirSync(d).length === 0; d = path.dirname(d)) fs.rmdirSync(d)
+    }
+    fs.writeFileSync(list, [...GENERATED].sort().join('\n') + '\n')
+})
 
 // code spans are set aside first, so nothing inside them is read as markup; emphasis follows markdown's flanking
 // rule (no space just inside the stars), so a cron line like 27 */2 * * * stays as written
@@ -466,9 +482,15 @@ pages.push({ rel: 'keys/index.html', title: 'Public keys', description: 'The pub
 const versions = JSON.parse(fs.readFileSync(path.join(ROOT, 'admin/versions.json'), 'utf8'))
 write('admin/versions.html', page({
     rel: 'admin/versions.html', title: 'Versions', description: 'Every release of this site and what changed.',
-    body: `<p>Every push to <code>dev</code> is a minor release; a pull request merged to <code>main</code> is a major one. CI owns the version: it numbers, tags and deploys each release, and records the commit it was built from. The version in the top bar of every page links to its own row here.</p><table><tr><th>Version</th><th>Date</th><th>What changed</th><th>Built from</th></tr>${versions.map(v => `<tr id="${v.version}"><td class="vnum">${v.version}</td><td>${v.date}</td><td>${esc(v.what)}${v.by ? ` <i>(${esc(v.by)})</i>` : ''}</td><td>${v.from ? `<a href="${REPO}/commit/${v.from}"><code>${v.from}</code></a> · ` : ''}<a href="${REPO}/tree/${v.version}">tag</a></td></tr>`).join('')}</table>`
+    body: `<p class="meta">As data: <a href="../versions/index.json">versions/index.json</a>, and one file per version (<code>versions/v0.2.7.json</code> and so on).</p><p>Every push to <code>dev</code> is a minor release; a pull request merged to <code>main</code> is a major one. CI owns the version: it numbers, tags and deploys each release, and records the commit it was built from. The version in the top bar of every page links to its own row here.</p><table><tr><th>Version</th><th>Date</th><th>What changed</th><th>Built from</th></tr>${versions.map(v => `<tr id="${v.version}"><td class="vnum">${v.version}</td><td>${v.date}</td><td>${esc(v.what)}${v.by ? ` <i>(${esc(v.by)})</i>` : ''}</td><td>${v.from ? `<a href="${REPO}/commit/${v.from}"><code>${v.from}</code></a> · ` : ''}<a href="${REPO}/tree/${v.version}">tag</a></td></tr>`).join('')}</table>`
 }))
 twin('admin/versions.html', 'Versions', 'Every release of this site and what changed.', versions.map(v => `- ${v.version} (${v.date}): ${v.what}`).join('\n'))
+// versions as data (WS-106, item 6; sgit.ai/docs/guidance/index.md): versions/index.json and one file per version
+{
+    const row = v => ({ version: v.version, date: v.date, commit: v.from || null, tag: v.version, by: v.by || null, what: v.what })
+    write('versions/index.json', JSON.stringify({ site: `https://${HOST}`, latest: VERSION, source: 'admin/versions.json (written by CI only)', versions: versions.map(v => ({ ...row(v), file: `${v.version}.json` })) }, null, 2) + '\n')
+    for (const v of versions) write(`versions/${v.version}.json`, JSON.stringify(row(v), null, 2) + '\n')
+}
 pages.push({ rel: 'admin/versions.html', title: 'Versions', description: 'Release history.' })
 
 // the company map: data/companies.json -> companies/index.html and companies/<id>/index.html
