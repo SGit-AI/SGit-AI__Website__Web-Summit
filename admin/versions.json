@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.64",
+    "date": "2026-11-03",
+    "what": "09:41 wake: no change for any of the six, no notes",
+    "by": "mentor@web-summit.dinis",
+    "from": "35c1bd00d"
+  },
+  {
     "version": "v0.2.63",
     "date": "2026-11-03",
     "what": "09:34 wake: report-draft.mjs checked against the eight real reports, and the test now runs on every one",
