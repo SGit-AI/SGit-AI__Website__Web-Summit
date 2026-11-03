@@ -16,12 +16,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Tuesday 3 November, 08:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-03-0857/index.html), [yesterday's newsletter](reports/2026-11-02-newsletter/index.html), [all reports](reports/index.html).*
+*Tuesday 3 November, 10:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-03-1057/index.html), [yesterday's newsletter](reports/2026-11-02-newsletter/index.html), [all reports](reports/index.html).*
 
-- **Brief 5: three things only Dinis can do before 16:00.** Protect main (WS-105), a ceiling for the print order (WS-48, WS-13), the GitHub invitations (WS-09).
-- **The 16:00 sign-off:** sizes are still missing (WS-55); sign off on [/print/](print/index.html) (WS-113).
-- **Onboarding** now follows the Google Workspace workflow; the start page is to be corrected (WS-124).
-- **No pulse check-ins yet** (WS-07); a reminder is on the 13:00 agenda.
+- **The sign-off is live on [/print/](print/index.html)**, with the printer's four fixes made (WS-113). Vicky signed first; six to go by 16:00.
+- **Sizes:** Vicky's are in; everyone else's are missing (WS-55).
+- **Two printers can make Friday** if confirmed today (WS-48); a ceiling is needed from Dinis (WS-13).
+- **LinkedIn before Lisbon:** an owner and a first post today, at the 13:00 stand-up (WS-126).
+- **Still waiting on Dinis:** protect main (WS-105) and the GitHub invitations (WS-09).
 
 ## Start here {#start}
 
