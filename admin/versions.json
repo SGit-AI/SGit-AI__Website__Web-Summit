@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.117",
+    "date": "2026-11-03",
+    "what": "WS-128, a scripted audit of every vault commit; sgit vault info prints the vault key",
+    "by": "conductor@web-summit.angelo",
+    "from": "7502d99d9"
+  },
+  {
     "version": "v0.2.116",
     "date": "2026-11-03",
     "what": "the 14:57 report, and 'What happened' updated",
