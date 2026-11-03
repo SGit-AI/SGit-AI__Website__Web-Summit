@@ -95,6 +95,9 @@
     const md = s => (s || '').split(/\n\s*\n/).map(p => /^\s*([-*]|\d+\.) /.test(p) ? `<ul>${p.split('\n').map(l => `<li>${mdInline(l.replace(/^\s*([-*]|\d+\.) /, ''))}</li>`).join('')}</ul>` : `<p>${mdInline(p)}</p>`).join('')
 
     const named = () => D.issues.filter(i => i.named)
+    // the three most urgent open issues: overdue, then due in 24 h, then due soon, then the rest; earliest due first
+    const URANK = { overdue: 0, p1: 1, soon: 2, ongoing: 3, later: 4, none: 5 }
+    const urgentTop = () => openNamed().slice().sort((a, b) => URANK[urgency(a).k] - URANK[urgency(b).k] || (a.due_at || '9').localeCompare(b.due_at || '9')).slice(0, 3)
     const openNamed = () => named().filter(i => i.status !== 'done')
 
     // ---------- state ----------
@@ -160,7 +163,12 @@
         bindMics(root)
         tick()
     }
-    const tick = () => { const el = $('#cc-clock'); if (el) el.textContent = new Date().toLocaleDateString([], { weekday: 'long', day: 'numeric', month: 'long' }) + ' · ' + fmtTime(Date.now()) }
+    // the greeting follows the viewer's own clock (the device's local time zone): 05-11 morning, 12-17 afternoon, else evening
+    const greeting = (d = new Date()) => { const h = d.getHours(); return h >= 5 && h < 12 ? 'Good morning' : h >= 12 && h < 18 ? 'Good afternoon' : 'Good evening' }
+    const tick = () => {
+        const el = $('#cc-clock'); if (el) el.textContent = new Date().toLocaleDateString([], { weekday: 'long', day: 'numeric', month: 'long' }) + ' · ' + fmtTime(Date.now())
+        const g = $('#cc-greet'); if (g && g.textContent !== greeting()) g.textContent = greeting()
+    }
     setInterval(tick, 30e3)
 
     // ---------- pieces ----------
@@ -184,13 +192,15 @@
     const V = {}
     V.home = () => {
         const c = counts(), o = openNamed().slice(0, 6)
-        const hour = new Date().getHours(), greet = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening'
+        const greet = greeting()
         const toSummit = Math.max(0, Math.ceil((new Date(D.summit.opening) - Date.now()) / 864e5))
         const kpi = (key, label, val, sub, tone, icon) => `<button class="cc-kpi" type="button" data-kpi="${key}"><span class="ic t-${tone}">${ico(icon, '')}</span><span><span class="lbl">${label}</span><span class="val num">${val}</span><span class="sub">${sub}</span></span></button>`
         return `
-<section class="cc-hero"><div class="grow"><p class="eyebrow">${esc(new Date().toLocaleDateString([], { weekday: 'short', day: 'numeric', month: 'short' }))} · Web Summit Lisbon</p><h1>${greet}, <span class="gild">Silvio</span>.</h1><p>${c.open} open issues named for you · ${c.soon} due within 72 hours · ${D.decisions.length} decisions waiting.</p></div>
+<section class="cc-hero"><div class="grow"><p class="eyebrow">${esc(new Date().toLocaleDateString([], { weekday: 'short', day: 'numeric', month: 'short' }))} · Web Summit Lisbon</p><h1><span id="cc-greet">${greet}</span>, <span class="gild">Silvio</span>.</h1><p>${c.open} open issues named for you · ${c.soon} due within 72 hours · ${D.decisions.length} decisions waiting.</p></div>
 <div class="cc-count" role="img" aria-label="${toSummit} days to Web Summit opening night"><b class="num">${toSummit}</b><span>days to<br>opening night</span></div>
 <div class="cc-actions"><button class="cc-btn gold" type="button" data-go="ask">${ico('claude', '')}Ask Claude</button><button class="cc-btn tint t-green" type="button" data-new>${ico('plus', '')}New task</button><button class="cc-btn tint t-conductor" type="button" data-go="board">${ico('board', '')}Team board</button><button class="cc-btn tint t-blue" type="button" data-go="waiting">${ico('wait', '')}Decisions</button></div></section>
+<section class="cc-urgent" aria-labelledby="h-urgent"><header><h2 id="h-urgent">${ico('flag', '')}Most urgent</h2><button class="more" type="button" data-go="tasks">All ${c.open} →</button></header>
+${urgentTop().length ? `<div class="cc-list">${urgentTop().map(i => taskRow(i, true)).join('')}</div>` : empty('Nothing open is named for you.')}</section>
 <div class="cc-kpis">
 ${kpi('open', 'My tasks', c.open, `of ${c.total} named for me`, 'blue', 'tasks')}
 ${kpi('soon', 'Due in 72 h', c.soon, 'derived from due dates', 'orange', 'flag')}
