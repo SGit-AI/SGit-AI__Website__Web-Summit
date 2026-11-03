@@ -2,53 +2,30 @@
 title: The board's health
 summary: What the project manager read on the board (board/WS-NN-*.md), the plan and the stand-up agenda, at 07:50, 12:50 and 17:50 UTC: deadlines at risk today and tomorrow, what waits on Dinis, dependencies, duplicates and each person's load. WS-46, until pm@web-summit.vicky takes it over.
 ---
-Written by project-manager@web-summit.dinis from the issue files in `board/` ([the board](../briefs/index.html#issues)), `data/meetings/` ([the stand-ups](../meetings/index.html)), `people/*/onboarding.json` and the git log. It covers WS-46 until Vicky's own agent, pm@web-summit.vicky, takes it over. Each run replaces the last; earlier runs are in the file's git history.
+Written by project-manager@web-summit.dinis from the issue files in `board/` ([the board](../briefs/index.html#issues)), `data/meetings/` ([the stand-ups](../meetings/index.html)), `people/*/onboarding.json` and the git log. Vicky picked up WS-46 at 10:20; her own note, for her deadlines, is [people/vicky/board-health.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/board-health.md) (conductor@web-summit.vicky). This page stays the team-wide view until Vicky decides otherwise. Each run replaces the last; earlier runs are in the file's git history.
 
-## Run of 3 November 2026, 07:50 UTC
+## Run of 3 November 2026, 12:50 UTC
 
-Read: everything at commit `159ca9c` on dev (v0.2.52).
+Read: everything at commit `7539649` on dev (v0.2.90). Since 07:50: four new issues (WS-124 to WS-127), Vicky connected with her first check-in and sign-off, and Angelo's agents ran on schedule for the first time.
 
-**The board in one line.** 124 issue files: 101 open, 6 picked, 4 in progress, 13 done (two of them moved to done this run, below). Every issue has a `for:`. Two files share the number WS-106 (below).
+**The board in one line.** 128 issue files: 102 open, 9 picked, 4 in progress, 13 done. Of the 34 due by today, 27 have nobody in `picked_by:`. WS-105 says `picked`, but `picked_by:` is empty.
 
-**Waiting on Dinis: one message answers these.** They are also one item on the 13:00 stand-up.
+**Waiting on Dinis.** The 13:00 stand-up has them all. The urgent ones:
 
-1. **WS-09, the GitHub invitations.** Nimay and Indi stop at the push step (the mentor's decision on the 13:00 agenda). Sarah and Daniela have not started.
-2. **WS-113, the print sign-off, by 16:00 today.** The files are on [/print/](../print/index.html). The printer that fits needs confirmation by the end of today (procurement@web-summit.silvio, 3 Nov 00:40).
-3. **WS-105, protect main.** The github-pages environment allows main. Still to confirm: GitHub refuses an agent's push to main.
-4. **WS-88.** May a role address (the Drive service account) be public?
-5. **WS-115.** The OpenRouter key, one per agent, sealed and signed by you.
-6. **WS-62 and WS-56** (the vote and the shirt lines, due yesterday, nothing came in): close them as overtaken by the sign-off, or keep them open? Also: should the done WS-106 be renumbered WS-124?
+1. **WS-113, the print sign-off, 16:00.** The printer's four fixes are in the files, and the sign-off is on [/print/](../print/index.html) (designer, 09:21). **1 of 7 sets is signed (Vicky) and 1 of 7 people have sent sizes** (`people/vicky/merch.json`). A fourth printer can deliver on Friday if confirmed today (procurement@web-summit.silvio, 10:40). The ceiling and fallback are a decision on the agenda.
+2. **WS-09 / WS-124, the GitHub invitations.** Nimay and Indi stop at the push step. Jose's roster line has been in since 02:38, so that item is merged into this one.
+3. **WS-126, the first LinkedIn post today.** It's for six owners and nobody has picked it up.
+4. **Protect main (WS-105, WS-90)**: abp@web-summit.dinis found main still unprotected at 08:15.
+5. In one line each: WS-88 (a public role address), WS-115 (OpenRouter keys), closing WS-62 and WS-56 as overtaken by the sign-off, and renumbering the done WS-106 (WS-124 is now taken, so the next free number).
 
-**Due today, Tuesday 3 November, and at risk.**
+**Due today and still open, beyond the above.** WS-107 (who records the decisions, on the agenda at 13:00); WS-116 (sign-off bound to its person, 16:00, Silvio and Dinis); WS-01, WS-02, WS-08, WS-30 and WS-73 for everyone (five of nine are connected); WS-33, WS-35 and WS-100 (Angelo, Jose, Vicky); WS-10, WS-14 and WS-98 (Dinis); WS-23 (a new date proposed on the agenda, as it needs the vaults); WS-54 and WS-101 (Silvio). Overdue since yesterday: WS-55 (sizes, still needed), WS-56, WS-62, WS-63 (in progress, with the sign-off).
 
-| Issue | For | Due | Reading |
-|---|---|---|---|
-| WS-113 Print files and the Official Sign-off | dinis, everyone | 16:00 | **The day's critical path.** Four fixes to the files first (designer), then each person signs. It also needs sizes (next row). |
-| WS-55 Everyone's shirt and hoodie size | everyone | was Mon 2 Nov | **Overdue, and still needed.** WS-113's order sheet reads each person's `people/<id>/merch.json`, and none exists yet. |
-| WS-116 Sign-off bound to its person | silvio, dinis | 16:00 | Has to land before the sign-off means anything. |
-| WS-107 Decisions in the person's own words | dinis, everyone | 13:00 | `agenda.mjs decide` already records them. Done once someone runs it at today's stand-up. |
-| WS-01, WS-02, WS-08, WS-30, WS-73 | everyone | today | Five of the nine are connected: Dinis (L6), Jose (L5), Angelo and Vicky (L2) and Silvio (L1). So at most five can do these today. |
-| WS-33, WS-35, WS-100 | angelo, jose, vicky | today | The repository made safe, setup help, and the GitHub step written down. These are the way out of the row above. |
-| WS-10, WS-14, WS-98 | dinis | today | Workspace email, who runs the newsroom, Meet recording. None picked up. |
-| WS-23, WS-54, WS-101 | nimay, vicky, silvio | today | WS-101 (procurement@web-summit.silvio writes outside `people/silvio/`) needs Silvio's answer, not a fix by others. |
+**Due tomorrow, Wednesday 4 November.** Noon: WS-57 (final artwork) and WS-48 (printing logistics) after the sign-off, and WS-13 (the budget). Then most of the tech column (WS-34, WS-39, WS-41, WS-45, WS-64, WS-68, WS-74, WS-77, WS-78, WS-91, WS-114, WS-118 to WS-120, WS-122) and WS-125 (Angelo's first outline of the setup guide).
 
-**Due tomorrow, Wednesday 4 November.** The merch deadline is noon: WS-57 (the final artwork, in progress) and WS-48 (printing logistics) both follow WS-113. WS-13 (the budget) is due at the same hour. WS-58 is done: there is no sponsor, the merch is RiskMandate only. Most of the tech column falls due too: WS-34, WS-39 (picked by Jose), WS-41, WS-45, WS-64, WS-68, WS-74, WS-77, WS-78, WS-91, WS-114, WS-118, WS-119, WS-120, WS-122.
+**Dependencies.** Unchanged since 07:50. Invitations (WS-09) lead to push (WS-02), then a key, then each person's agents. For the merch: WS-116, then WS-113 at 16:00, then WS-57 and WS-48 at noon tomorrow, with sizes (WS-55) feeding the order sheet. For vaults: WS-120 tomorrow, then WS-121 on Friday, and WS-23 waits on them.
 
-**Dependencies.**
+**Tidied this run.** On the 13:00 stand-up, two items are merged: Jose's roster line into the invitations decision, and "the pulse starts today" into Vicky's priority question (she checked in at 11:26). The waiting-on-Dinis item now lists five things, with today's sign-off counts. team-collaboration@web-summit.angelo has proposed an order for the 30 minutes (deadlines today first, then who records, then the rest), and this page agrees with it. The 13:00 has 19 open items. On the board, the WS-106 notes no longer suggest WS-124.
 
-- **Connecting people unblocks everything else.** WS-09 (invitations) leads to WS-02 (push), then WS-03 (key), then WS-112, WS-99 and WS-121 (each person's conductor, dashboard and vault agents). Jose went from L3 to L5 overnight once pki.sgit.ai was allowed in his environment. The same path works for the others.
-- **Merch:** WS-116, then WS-113 (16:00 today), then WS-57 and WS-48 (noon tomorrow), then the print order. Sizes (WS-55) feed WS-113's order sheet.
-- **Vaults:** WS-106 (the vault-key check, done), then WS-102 (done), then WS-120 (Angelo, Jose and Silvio first, tomorrow), then WS-121 (everyone, Friday).
+**Load.** Open issues per named owner (in brackets, due by tomorrow): Angelo 41 (25), Dinis 39 (30), Jose 30 (17), Silvio 17 (12), Nimay 16 (11), Indi 14 (7), Vicky 13 (12), Sarah 9 (6), Daniela 3 (2). Another 23 are for everyone and 6 for anyone.
 
-**Tidied this run.**
-
-- WS-67 (start the team's scheduled agents) is **done**: all nine are on a schedule (commit `182807d`).
-- WS-11 is **merged into WS-67**, which its own text says supersedes it. The note is in both files.
-- WS-90 and WS-105 overlap (branch protection), and WS-105 is the main half. The note is in both files; close them together.
-- **Two issues are numbered WS-106**, opened two minutes apart: the estate's repository standard (open, Angelo and Jose) and the vault-key check (done). The note is in both files.
-- **Stand-ups:** three carried items merged. "If the design votes do not come in" and "the design: final set" go into today's print-order decision, and "where is everyone on connecting" into the WS-09 invitations decision. Today's 13:00 has 15 open items, 10 of them decisions.
-- WS-65 (stop rewriting ~160 pages) still looks done by WS-83 and WS-85. That is for Angelo, Jose or the dev agent to confirm.
-
-**Load.** Open issues per named owner (in brackets, due by tomorrow): Angelo 37 (22), Dinis 36 (28), Jose 30 (17), Silvio 16 (11), Nimay 15 (10), Vicky 13 (12), Indi 12 (5), Sarah 9 (6), Daniela 2 (1). Another 22 are for everyone and 6 for anyone. Dinis's 28 due by tomorrow is the bottleneck. Most of them are one-line answers, which is why they are listed first.
-
-**The pulse.** No check-ins yet in any `people/*/pulse/` folder. WS-07 starts today.
+**The pulse.** One check-in: Vicky's morning (`people/vicky/pulse/2026-11-03-morning.md`). Her question about one priority for the week is on the 13:00 agenda.
