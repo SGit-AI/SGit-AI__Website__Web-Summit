@@ -23,7 +23,7 @@
     },
     {
       "when": "Mon 2 and Tue 3 Nov",
-      "what": "Nail it all down (brief 3): each person's gravity and strategy, the shirts and hoodies, the merch sponsor ask, the first friendly's agentic team.",
+      "what": "Nail it all down (brief 3): each person's gravity and strategy, the shirts and hoodies, the first friendly's agentic team.",
       "status": "planned"
     },
     {
@@ -157,7 +157,8 @@
       "id": "merch-sponsor",
       "question": "A sponsor for the merch: who is asked, with what brief, deck and business case, and whether the organisers allow sponsor logos. Owner: Silvio (his brief: [brief-silvio](../brief-silvio/index.html)); proposed cut-off Wed 4 Nov 12:00.",
       "from": "brief 3",
-      "status": "in progress"
+      "status": "decided",
+      "answer": "No sponsor: the merch is RiskMandate only, no other brand and no Web Summit name or logo (Dinis, 2 November 2026). The print files: /print/."
     },
     {
       "id": "first-friendly",
@@ -218,7 +219,7 @@
       {
         "id": "t-shirts",
         "item": "Branded T-shirts",
-        "quantity": "3 per person going (the seven: 21 shirts; the operator, 2 Nov), a very different colour per person, a set of messages, the stand location, a plainer backup; sponsor logo if one says yes by Wed 4 Nov 12:00 (proposed) (sizes per person: TO DECIDE)",
+        "quantity": "3 per person going (the seven: 21 shirts; the operator, 2 Nov), a very different colour per person, a set of messages, a plainer backup (sizes per person: TO DECIDE)",
         "approve_by": "SAFEST: Mon 2 Nov 14:00 (artwork + colour + everyone's size). FALLBACK: Tue 3 Nov 14:00.",
         "order_by": "PT: SAFEST: Mon 2 Nov 20:00 (Thu 5). LAST POSSIBLE: Tue 3 Nov 20:00 (Fri 6). · UK: SAFEST: Mon 2 Nov 19:00 Vistaprint Rush (Wed 4). FALLBACK: Wed 4 Nov 19:00 Rush (Fri 6), or an express DTG printer booked by phone Tue 3.",
         "deliver_by": "Fri 6 Nov",

@@ -19,7 +19,7 @@ We are all RiskMandate here: everyone champions it, and the other things that ha
 - **Local.** In the Algarve, ads, printing, who can do what: Silvio is the one.
 - **Video.** Silvio makes great videos: the pipeline to our YouTube and Instagram, and this site.
 - **An advanced agentic team.** Silvio's project-management workflows are some of the best around: how do we use them here? Pick up issues your team can do.
-- **The merch sponsor**, as a side quest: [the merch sponsor page](../merch-sponsor/index.html).
+- **The print order**: getting the merch printed from [the print files](../print/index.html), with your procurement agent ([the print order](../print-order/index.html)). RiskMandate only: no sponsor (Dinis, 2 November).
 
 ### First: get connected {#connect}
 
@@ -64,7 +64,6 @@ You work for **Silvio Switha** on the Web Summit 2026 team, under the name conve
 - **outreach@web-summit.silvio**: Targets, messages and follow-ups: drafts in Silvio's account, Silvio sends.
 - **video@web-summit.silvio**: The video pipeline to YouTube, Instagram and this site.
 - **local@web-summit.silvio**: Algarve options: printers, ads, prices, lead times.
-- **sponsor@web-summit.silvio**: The merch sponsor ask ([its instructions](../merch-sponsor/index.html#for-agents)).
 
 ### How we work in the repository {#how}
 

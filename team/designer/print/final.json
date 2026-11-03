@@ -1,0 +1,46 @@
+{
+  "about": "The final merch set for print: the RiskMandate T-shirts, hoodies and business cards of the seven going to Web Summit 2026, proposed by designer@web-summit.dinis on 2 November 2026 for Dinis to sign off item by item. RiskMandate only (Dinis, 2 November 2026): no sponsor, no other brand, no Web Summit name or logo on anything printed. The print files are made from this file and data/design.json by team/designer/print/make-print.py and published at /print/ for the printers. Sign-off: set signed_off to {\"by\": \"dinis\", \"at\": \"<ISO time>\"} on each item (Dinis, or his agent on his word).",
+  "rules": [
+    "RiskMandate only: no sponsor logo, no other brand, no Web Summit name or logo, on any garment or card (Dinis, 2 November 2026).",
+    "Nothing on the sleeves.",
+    "Every back and every card carries the wearer's own QR code, to https://web-summit.sgit.ai/meet/<id>/, black on a white panel with its quiet zone."
+  ],
+  "garments": {
+    "tee": {
+      "count_each": 3,
+      "blank": "TH Clothes Ankara, 190 g, 100% cotton, or an equivalent (the printer's suggestion is welcome)",
+      "method": "DTF or DTG, full colour (seven small runs, so no screen printing)",
+      "front": {"width_mm": 250, "from_collar_mm": 80},
+      "back": {"width_mm": 200, "from_collar_mm": 70},
+      "qr_code_mm": 110
+    },
+    "hoodie": {
+      "count_each": 1,
+      "design": "H1",
+      "method": "DTF or DTG",
+      "chest": {"width_mm": 90, "where": "left chest (wearer's left), top 180 mm below the shoulder seam"},
+      "back": {"width_mm": 260, "from_collar_mm": 90},
+      "qr_code_mm": 90
+    }
+  },
+  "card": {
+    "design": "C1",
+    "count_each": 100,
+    "trim_mm": [85, 55],
+    "bleed_mm": 3,
+    "safe_mm": 3,
+    "stock": "350 g/m2 or heavier, matt, both sides printed, square corners",
+    "qr_code_mm": 24
+  },
+  "people": [
+    {"id": "dinis", "tee": "T1", "signed_off": null},
+    {"id": "nimay", "tee": "T2", "signed_off": null},
+    {"id": "angelo", "tee": "T4", "signed_off": null},
+    {"id": "jose", "tee": "T6", "front": ["I BROUGHT", "6 AGENTS."], "sub": "Ask me what they're doing.", "note": "T6 said 'to Web Summit': taken out, as nothing but RiskMandate goes on the merch.", "signed_off": null},
+    {"id": "vicky", "tee": "T3", "signed_off": null},
+    {"id": "silvio", "tee": "T5", "signed_off": null},
+    {"id": "indi", "tee": "T8", "signed_off": null}
+  ],
+  "items_signed_off": {"hoodie": null, "card": null},
+  "sizes": "Each person's sizes (3 T-shirts and a hoodie) are still to collect: Vicky and Silvio, from the seven, before the order (WS-48)."
+}

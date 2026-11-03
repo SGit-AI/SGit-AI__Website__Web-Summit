@@ -48,8 +48,8 @@ Daniela | ../brief-daniela/index.html | The first friendly: an agentic team for 
 
 ## Dates {#dates}
 
-- **Mon 2 and Tue 3 Nov:** nail it down: cards, owners, shirts, the sponsor ask.
-- **Wed 4 Nov, 12:00:** shirt artwork final; sponsor yes or no *(proposed)*.
+- **Mon 2 and Tue 3 Nov:** nail it down: cards, owners, shirts.
+- **Wed 4 Nov, 12:00:** shirt artwork final ([the print files](../print/index.html)); no sponsor, RiskMandate only (Dinis, 2 Nov).
 - **Wed 4 Nov:** a plan, a mapping and the agents in place for each person.
 - **Thu 5 Nov:** Indi arrives.
 - **by Thu 5 or Fri 6 Nov:** about 20 meetings booked; merch delivered by Fri 6.
