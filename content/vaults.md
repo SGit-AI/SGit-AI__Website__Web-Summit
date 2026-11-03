@@ -27,7 +27,7 @@ Tried end to end on 2 November: a test secret was sealed to `sgit-dinis` from th
 
 ## The private vault: a proposed shape {#private}
 
-For WS-23 (Nimay's booked meetings) and WS-24 (every contact and introduction followed up). This is a proposal. Nothing is in the vault yet.
+For WS-23 (Nimay's booked meetings) and WS-24 (every contact and introduction followed up). Nothing is in a vault yet. The shape is ready as [a template](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/team/sgit/vault-templates/private): the three folders with a `_template.md` each, the rules in `PRIVATE.md`, and `AUDIT.md` for what leaves the vault.
 
 | Folder | One file per | Fields |
 |---|---|---|

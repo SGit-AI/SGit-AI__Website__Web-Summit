@@ -67,6 +67,7 @@ sgit write notes/today.md --file today.md --message "today" --push --json
 ```
 
 - **Never make a vault inside the clone of this repository.** Its `.sg_vault/local/` folder holds the vault key and the token, and one `git add -A` would publish them. Use `~/vaults/<name>` (a lesson from sgit@web-summit.silvio's kit).
+- **Start from a template:** [`team/sgit/vault-templates/`](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/team/sgit/vault-templates) has a `public/` vault (with its `PUBLIC.md` rules) and a `private/` one (meetings, contacts, introductions, with `PRIVATE.md` and `AUDIT.md`). Copy one to `~/vaults/<name>`, then `sgit init --existing . --token "$SG_SEND_ACCESS_TOKEN"`.
 - **Already have a folder?** `sgit init --existing . --token "$SG_SEND_ACCESS_TOKEN"` makes it a vault, with its current contents as the first snapshot.
 - **A new session:** `sgit clone "$SG_VAULT_KEY_MY_NOTES"`, work, `sgit commit`, `sgit push`. Clone or pull at the start of a session, and commit and push at the end ([agents and vaults](https://sgit.ai/docs/agents.md)).
 - **A vault does not exist on the server until its first push** (WS-114).
@@ -118,7 +119,7 @@ The key goes from `sgit vault show-key` into memory and is never printed. Only t
 
 ## Confidential vaults: the few, with a security agent in the loop {#confidential}
 
-The CRM, booked meetings, contacts and introductions are the only confidential vaults for now. For these:
+The CRM, booked meetings, contacts and introductions are the only confidential vaults for now. Start one from [the private template](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/team/sgit/vault-templates/private). For these:
 
 - **No read key is ever published.** Their keys are sealed only to named agents' keys, by QR (above).
 - **Before a key is sealed to anyone, or a file is copied out of the vault**, the vault agent runs a security sub-agent locally, in its own session. The sub-agent checks that the recipient is the right agent (`seal.mjs --check`: pushed from its person's account), that what leaves the vault is meant to leave it, and that nothing confidential reaches a page, a commit or a public vault. It writes one line per decision into the vault's own `AUDIT.md`, inside the confidential vault and not in this repository.
