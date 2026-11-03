@@ -51,12 +51,17 @@ export function buildMeetings({ ROOT, C, PEOPLE, ISSUES, write, page, render, tw
     const idx = `${C.S.about}\n\n**Next: [${nx.day} ${nx.time} UTC](${nx.id}/index.html)**, ${C.agenda(nx.id).filter(x => x.status === 'open').length} items open. Every person's briefing for it is linked from its page.\n\n## The rules {#rules}\n\n${C.S.rules.map(r => `- ${r}`).join('\n')}\n\n## The stand-ups {#list}\n\n| Stand-up | Open: decisions · questions · ideas · syncs | Decided |\n|---|---|---|\n${rows.join('\n')}\n\n## Add an item {#add}\n\nTell your agent *"add to the next stand-up: ..."*, or run:\n\n\`\`\`\nnode admin/tools/agenda.mjs add --by <your name> --type decision --title "..." --for dinis --options "a|b" --recommend "..." [--meeting after-next|<YYYY-MM-DD-HHMM>]\n\`\`\`\n\nthen commit \`data/meetings/\` and release. One file per item, so nobody collides.`
     const rel = 'meetings/index.html', title = 'Stand-ups: the agenda, building through the day'
     write(rel, page({ rel, title, description: `Two stand-ups a day; next ${nx.id}.`, body: render(idx), mdTwin: rel.replace(/\.html$/, '.md') })); pages.push({ rel, title, description: `Two stand-ups a day; next ${nx.id}.` }); twin(rel, title, `Two stand-ups a day; next ${nx.id}.`, idx)
+    // personal briefings only for today's stand-ups and those still to come: one from an earlier day, rebuilt later,
+    // showed TODAY's "since you last looked" under an old date, and cost 27 files a stand-up. Today's stay, because
+    // dashboards and briefs link them during the day. Its agenda page always stays: that is the record.
+    // (dev@web-summit.dinis, 3 November)
+    const upcoming = s => s.day >= today
     for (const s of show) {
         const list = C.agenda(s.id), people = PEOPLE()
-        const md = `${s.day} at ${s.time} UTC (Lisbon). Decisions first, then questions, ideas and quick syncs. Read your briefing before.\n\n## Agenda {#agenda}\n\n${agendaMd(list)}\n\n## Everyone's briefing {#briefings}\n\n${people.map(p => `- [${p.name}](${p.id}/index.html): ${list.filter(x => x.status === 'open' && forMe(x, p.id)).length} items for them`).join('\n')}`
+        const md = `${s.day} at ${s.time} UTC (Lisbon). Decisions first, then questions, ideas and quick syncs. Read your briefing before.\n\n## Agenda {#agenda}\n\n${agendaMd(list)}\n\n## Everyone's briefing {#briefings}\n\n${upcoming(s) ? people.map(p => `- [${p.name}](${p.id}/index.html): ${list.filter(x => x.status === 'open' && forMe(x, p.id)).length} items for them`).join('\n') : 'This stand-up has passed. Briefings are built for the stand-ups still to come; the agenda above is the record.'}`
         const r = `meetings/${s.id}/index.html`, t = `Stand-up, ${s.day} ${s.time}`
         write(r, page({ rel: r, title: t, description: `The agenda for the ${s.day} ${s.time} stand-up.`, body: render(md), mdTwin: r.replace(/\.html$/, '.md') })); pages.push({ rel: r, title: t, description: `The agenda for the ${s.day} ${s.time} stand-up.` }); twin(r, t, `The agenda for the ${s.day} ${s.time} stand-up.`, md)
-        for (const p of people) {
+        for (const p of upcoming(s) ? people : []) {
             const mine = list.filter(x => x.status === 'open' && forMe(x, p.id)), first = p.name.split(' ')[0]
             const iss = ISSUES.issues.filter(x => x.status !== 'done' && (x.for.includes(p.id) || (p.core && x.for.includes('everyone'))) && dueSoon(x.due, s.day))
             const bmd = `Your briefing for the ${s.day} ${s.time} stand-up, ${first}. Read it before; the stand-up is for deciding, not for reporting.\n\n## On the agenda for you {#agenda}\n\n${agendaMd(mine, '../../../')}\n\n## Your issues due by tomorrow {#due}\n\n${iss.length ? iss.map(x => `- **${x.id}** ${x.title} (due ${x.due}, ${x.status})`).join('\n') : 'None.'}\n\n## Since you last looked {#since}\n\n${sinceMd(C, p.id, '../../../')}\n\n## The whole agenda {#all}\n\n[The ${s.time} stand-up](../index.html)`

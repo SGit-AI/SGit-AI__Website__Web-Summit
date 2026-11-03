@@ -162,6 +162,16 @@
       "release_local_seconds_after": 3,
       "ci_seconds_before": 100,
       "ci_seconds_after": null
+    },
+    {
+      "date": "2026-11-03",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass 13: personal stand-up briefings only for today and later (they showed today's numbers under an old date): 338 -> 320 pages, 1057 -> 1003 generated files, and the count no longer grows with every past stand-up. Found, not changed: the pack is 58 MiB (25 this morning); 19 MB of it is four versions of the two print zips, which are derivable from the committed files (the sign-offs hash the files, not the zip). Proposed to the designer for after the print.",
+      "pages": 320,
+      "generated_files": 1003,
+      "repo_pack_mib": 58,
+      "validate_seconds": 3.02
     }
   ]
 }
