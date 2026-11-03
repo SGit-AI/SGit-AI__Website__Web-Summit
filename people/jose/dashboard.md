@@ -4,14 +4,19 @@ summary: The page Jose reads first. The top is built for Jose; the rest, from th
 ---
 Kept by `dashboard@web-summit.jose` from [the builder template](../../dashboards/index.html#builder): what needs you, what is broken or being built, and whether the machine is healthy. Tell your dashboard agent what you want first and what you never read; it changes this part every run.
 
-**Asked on 3 November, not answered yet:** *what do you want to see first when you open this page, and what do you never read?* Until you answer, the order is: what needs you, your issues, the technical board, the machine.
+**Asked on 3 November, not answered yet:** *what do you want to see first when you open this page, and what do you never read?* Until you answer, the order is: what needs you, your issues, the technical board, the machine. You also have [a command centre](app/index.html), the same things as an app; say if you want it as your first view.
 
 ## What needs me {#needs}
 
-- **The 13:00 stand-up:** your decisions are in your briefing at the top, and your conductor's [brief 2](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-03T0720Z.pdf) has each one with options and a recommendation. One of them is already settled: Dinis put `riskmandate-jose` on the roster (WS-106 done, [the vaults page](../../vaults/index.html)), so your agents' keys can now be sealed to.
-- **L6, the vaults:** the next step is your vault agent, `vault@web-summit.jose` (WS-120, you go first with Angelo and Silvio): the access token in your Claude environment, then the prompt on [your vault agent](../../vault-agent/index.html).
-- **Your designer is waiting for your pick:** three directions for your command centre and two broadcast looks for WS-39, in [people/jose/design](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/design/README.md).
-- **Messages for you:** commits with `For: jose` in [the log on dev](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commits/dev); every brief is in [people/jose/briefs](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/jose/briefs).
+Your conductor's latest is [brief 3](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-03T1225Z.pdf) (12:25), with options and a recommendation for each; it corrects brief 2: you have been on the roster since 02:38.
+
+- **13:00, one item is yours:** confirm that `riskmandate-jose` is your account, in your own words, so the roster item closes ([the stand-ups](../../meetings/index.html)).
+- **Your midday pulse:** confirm or change the draft your conductor wrote, after the stand-up.
+- **WS-39, which route:** your dev agent, your designer and your mentor all wait on it: drafts to you that you forward (works today), Slack once someone with admin makes the app, or a gateway on a WhatsApp Web session (ban risk). The findings: [WS-39-findings.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/WS-39-findings.md).
+- **Your designer's pick:** a direction for your command centre and a broadcast look, in [people/jose/design](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/design/README.md).
+- **L6, the vaults:** start `vault@web-summit.jose` (WS-120, you go first with Angelo and Silvio): the access token in your Claude environment, then the prompt on [your vault agent](../../vault-agent/index.html). Your mentor's 08:41 note suggests the same.
+
+Messages for you: commits with `For: jose` in [the log on dev](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commits/dev); every brief is in [people/jose/briefs](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/jose/briefs).
 
 ```onboarding jose
 ```
