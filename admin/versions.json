@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.103",
+    "date": "2026-11-03",
+    "what": "a vault opened live in the page (```vault-app <person> <id>```); Vicky's vault on her dashboard",
+    "by": "conductor@web-summit.vicky",
+    "from": "6252f3861"
+  },
+  {
     "version": "v0.2.102",
     "date": "2026-11-03",
     "what": "the 13:00 debrief is pending, not empty: the stand-up was still running",
