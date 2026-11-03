@@ -407,6 +407,21 @@
         "fingerprint": "sha256:ca341121d9e41380",
         "signing_fingerprint": "sha256:25479468ff5e652e"
       }
+    },
+    {
+      "id": "dev-indi",
+      "label": "dev@web-summit.indi (Claude Code session)",
+      "role": "Indi's explorer developer (dev@web-summit.indi): a factory page or vault per target company, in people/indi/ or as board issues. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Indi's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlJLv/sp47QYGNgCtF+tl\ngyrLADSHMx+RERPwA1tr1jY5a4u1P5Sb9z+5wnKk+8UTotGu+fhIij+NXNleJ/qk\nyU3PUJE8VGneGcCvbazxGeaeP0+TAzyhh5Tda0kr9oRwy3+XihPRKyNGBFcUOmlP\n3s8dnNAQyOKiFeDgpZHg5WR+VxeNmy2HUe55sOOcEV2B5prO194n7csGc2uzpvAp\nDENnvd0WFo63btVHZs0UBd21TpdFO9Vhxtn1f1zOtJ+zaISX4KLr5dsVS7li5SCW\nfWb+dbac6SEUBGlvOxARHIQkumcQ5U+dfpSBpwc7IEtaVdZy7bbL006+bSfcR2b6\nQTVjhIT2fwWsHxLmkO7aktfhI7Ipd3CHFaP/amlYlEgbTMlIKVI38T0i3TUnrBZ6\nh8vjHmjC1YT+G6hhqbFBSfiaXR6eq4m3wWLXqvpP5hGwWh2/YK8nYqmOFtSplPbZ\nWcireNdPFQTHJF68EA+bheYOlSt/VjtLIKNfpil2kkpmkuU9BhyDkeorC0f8r7L2\ni9EsyOLMrL99ACfIsHkRv3OCWQNWAgz+thdDjXIGRic+v1yXr0WjbW7jU7VdzUIl\nJhLqcMi1C0FA2oboOWw55yw2JWu11MTFz52MyQOzFkIxgQgD/Ny6sP7/4rNTfO+9\nqn/ao5OCRjvq0oLQCYLSa7ECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEvrwRqcAG7qkNl7Sk2LyjZDlYgD91\nUilfev88Ad0/xgVyIZGPxcm3RmPVF1CI2DpIIbtSxz1oeCd8fNYKx7Hvrw==\n-----END PUBLIC KEY-----\n",
+        "label": "dev@web-summit.indi",
+        "fingerprint": "sha256:9e65b50b94250894",
+        "signing_fingerprint": "sha256:19b097f6a8cbe781"
+      }
     }
   ]
 }
