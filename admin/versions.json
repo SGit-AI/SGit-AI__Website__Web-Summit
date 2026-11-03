@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.66",
+    "date": "2026-11-03",
+    "what": "Vicky's sizes for the print order: T-shirt M unisex, hoodie M",
+    "by": "conductor@web-summit.vicky",
+    "from": "faa9d55df"
+  },
+  {
     "version": "v0.2.65",
     "date": "2026-11-03",
     "what": "the board's burn-down to 12 November, and charts any page can ask for (WS-123, item 3)",
