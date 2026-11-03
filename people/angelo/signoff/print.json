@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "set": "print",
+  "page": "/print/",
+  "person": "angelo",
+  "decision": "approved",
+  "said": "Approved as per design and sentence",
+  "note": "",
+  "by": "conductor@web-summit.angelo",
+  "at": "2026-11-03T17:07:59Z",
+  "files": {
+    "angelo-card-back.pdf": "674731a658ac7cfaac0e4d9cae086ee08ec9685650ef7cb16c251fc326064a92",
+    "angelo-card-back.svg": "ec75ec58bc529352e38bcfdb0eabbaaa0e120e4f12a94d23137d44c7f4c14cf0",
+    "angelo-card-front.pdf": "2b80bfe623e9ec7cc98efca0b8e8ec895f8e300841bd7653b7586680053d5ff7",
+    "angelo-card-front.svg": "01a07e94ef275fecb904a21928fd09a994dbc5ed5fbb4938a4f7a707bf39b8fb",
+    "angelo-card.pdf": "850860e12d0cefa7aa231044ff24668992409238f47d4161224efcc0cc1ff004",
+    "angelo-hoodie-back.pdf": "f2da52ef00db14674678c4798785837f0f18e73a967c1110ec37df1c8b1fa6fb",
+    "angelo-hoodie-back.png": "f6cf07b6bebaedd6dfeba2ca1414b6d6e1fb31440a58fd3c489dee5cdfadb19c",
+    "angelo-hoodie-back.svg": "f901c10c94efe3f060a950971a2cb2635b5b65759cf1bccf64a4369b8a46777d",
+    "angelo-hoodie-chest.pdf": "8995028a4184a1437f314d90351b293351d5f320b1797e85205a8b679cee38c2",
+    "angelo-hoodie-chest.png": "32e99c8747c6a19a6b6404251d14e8cfae0002b96e85de166767fd3e96bfd657",
+    "angelo-hoodie-chest.svg": "bc9c58b87b4fa65212c0e0bf2a98552f58908aed1768f7569253c87fcbee41b9",
+    "angelo-tee-back.pdf": "fef68202106d8645fd0a16007436edbd8bc5ac8ad72998d710d7ff7adc2b1c87",
+    "angelo-tee-back.png": "1e49df84c1f034952fd4d829e0f4aa4fce3cb915611c789225ef274aec263f93",
+    "angelo-tee-back.svg": "0ba377d6ee473764e869192a165381afbe57000364ea52bd5ba38a7bbf71a95a",
+    "angelo-tee-front-small.pdf": "62d7d8f956a79b61ee4d3fa26092f144842e1c0a2ebd04700e14bb656c679c22",
+    "angelo-tee-front-small.png": "6c47cbbbd86db9e92f313b0e9f5bd276763e4c952f116202c44fce9eb0b69a36",
+    "angelo-tee-front-small.svg": "d441b7fd0ae0d264ef324bed72d4b0c3aa7e2eb32fb7058d4c669da17c7f736c",
+    "angelo-tee-front.pdf": "61aa6706749508bc8e071556aac67bf107d4a2c7bfefe50fbb204d617ac7e1ce",
+    "angelo-tee-front.png": "bc9ecfd57a2deec91512be84c92939f07c0cbedfef2f488df49f48dec5bd934d",
+    "angelo-tee-front.svg": "1d725c597412217dfbaad57bbf246dbe3bbbec6f04b7ef53be87f2a0b02de085"
+  }
+}
