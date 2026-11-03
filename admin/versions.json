@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.177",
+    "date": "2026-11-03",
+    "what": "two public vaults, Jose on RiskMandate and the Reach/Mandate/Gap app",
+    "by": "vault@web-summit.jose",
+    "from": "7c6a083fc"
+  },
+  {
     "version": "v0.2.176",
     "date": "2026-11-03",
     "what": "the factory, all 28 \"meet\" companies, and an easier font",
