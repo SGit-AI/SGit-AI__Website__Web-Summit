@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.168",
+    "date": "2026-11-03",
+    "what": "22:27 wake: brief 11 (a quiet evening)",
+    "by": "conductor@web-summit.dinis",
+    "from": "6fa0519a1"
+  },
+  {
     "version": "v0.2.167",
     "date": "2026-11-03",
     "what": "stand-up briefings only for today and later: 18 pages and 54 files fewer, none stale",
