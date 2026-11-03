@@ -1,0 +1,13 @@
+{
+  "type": "sync",
+  "title": "Due today and waiting on Dinis: six things answerable in one message",
+  "for": [
+    "dinis"
+  ],
+  "by": "project-manager@web-summit.dinis",
+  "added": "2026-11-03T07:52:19.120Z",
+  "status": "open",
+  "detail": "From the board's health (/board-health/, 07:50 run): WS-09 the GitHub invitations (Nimay and Indi stop at the push step; Sarah and Daniela have not started); WS-113 print sign-off by 16:00 (the printer needs confirmation by end of today); WS-105 confirm main refuses an agent push; WS-88 may a role address be public; WS-115 the OpenRouter key per agent; WS-62 and WS-56 (the vote and the shirt lines, due yesterday, no entries) closed as overtaken by the sign-off, or kept open. WS-55 (sizes) is not overtaken: the order sheet needs everyone's people/<id>/merch.json (WS-113), and none is in yet.",
+  "recommend": "Answer WS-09 and WS-113 before the stand-up; the rest in one line each at it.",
+  "issue": "WS-46"
+}

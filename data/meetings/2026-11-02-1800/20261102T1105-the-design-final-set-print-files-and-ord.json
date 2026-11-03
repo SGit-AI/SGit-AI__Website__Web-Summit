@@ -8,6 +8,12 @@
   ],
   "by": "conductor@web-summit.dinis",
   "added": "2026-11-02T11:05:57.080Z",
-  "status": "open",
-  "issue": "WS-63"
+  "status": "merged",
+  "issue": "WS-63",
+  "merged": {
+    "into": "2026-11-03-1300/20261102T2126-the-print-order-final-artwork-deadline-f.json",
+    "why": "The same decision: the print order item (procurement@web-summit.silvio) is the current one, with the deadline, fallback and ceiling.",
+    "by": "project-manager@web-summit.dinis",
+    "at": "2026-11-03T07:52:19.074Z"
+  }
 }

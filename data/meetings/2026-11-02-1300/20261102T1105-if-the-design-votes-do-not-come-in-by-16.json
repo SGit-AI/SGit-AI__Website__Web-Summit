@@ -7,12 +7,18 @@
   ],
   "by": "conductor@web-summit.dinis",
   "added": "2026-11-02T11:05:56.926Z",
-  "status": "open",
+  "status": "merged",
   "detail": "Print files are due tonight (WS-63); no votes yet.",
   "recommend": "Dinis and Sarah at 18:00.",
   "issue": "WS-63",
   "options": [
     "Dinis and Sarah at 18:00",
     "move to Tuesday 14:00"
-  ]
+  ],
+  "merged": {
+    "into": "2026-11-03-1300/20261102T2126-the-print-order-final-artwork-deadline-f.json",
+    "why": "Overtaken: no votes came in, the final set is proposed on /print/, and the sign-off (WS-113, 16:00 today) and the print order item decide it.",
+    "by": "project-manager@web-summit.dinis",
+    "at": "2026-11-03T07:52:19.074Z"
+  }
 }

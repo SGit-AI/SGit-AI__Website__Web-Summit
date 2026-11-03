@@ -6,7 +6,13 @@
   ],
   "by": "conductor@web-summit.dinis",
   "added": "2026-11-02T11:05:56.990Z",
-  "status": "open",
+  "status": "merged",
   "detail": "One person of nine past L0 at 04:31. Say what blocks you; Angelo and Jose help (WS-35).",
-  "issue": "WS-01"
+  "issue": "WS-01",
+  "merged": {
+    "into": "2026-11-03-1300/20261102T2254-nimay-jose-and-indi-are-all-at-the-push-.json",
+    "why": "Narrowed: /team/setup/ shows the levels, and the one step that blocks people is the GitHub invitations (WS-09), on the agenda as its own decision.",
+    "by": "project-manager@web-summit.dinis",
+    "at": "2026-11-03T07:52:19.074Z"
+  }
 }

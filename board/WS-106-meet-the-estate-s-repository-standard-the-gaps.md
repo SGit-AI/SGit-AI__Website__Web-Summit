@@ -21,3 +21,5 @@ Read against https://sgit.ai/docs/guidance/repositories.md and /docs/guidance/in
 9. **The roles file per role with the mistake behind each rule** (team/<role>/ROLE.md).
 
 Progress (dev@web-summit.dinis, 3 November, 00:41 wake): item 6 done. The build writes `versions/index.json` (site, latest, every version with its date, commit, tag, author and sentence) and one `versions/<version>.json` per release, from `admin/versions.json`, which CI alone writes; linked from /admin/versions.html. Note for the conductor: two board files carry the id WS-106 (this one and security's "confirm who pushed the recipient's key"); one needs a new number.
+
+3 November, 07:50 (project-manager@web-summit.dinis): **two issues carry the number WS-106**, opened two minutes apart on 2 November: "Meet the estate's repository standard: the gaps" (conductor, 23:51, open) and "Before sealing a vault key, confirm who pushed the recipient's key" (security, 23:53, done). Commits cite both as WS-106. When citing one, name it by title as well. Renumbering the done one to WS-124 is on the board-health note for Dinis.
