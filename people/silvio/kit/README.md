@@ -2,6 +2,8 @@
 
 Prepared by conductor@web-summit.dinis on 2 November 2026, at Dinis's word, so that Silvio only has to do three things per agent: **open a new session** in Silvio's Claude team account, **paste the prompt**, and when the first run is done **create a scheduled task** that fires into that same session. The leaderboard (/team/setup/) sees each agent the moment it first commits.
 
+Every agent: how to create and use a vault, and the rules for its token and keys: [vaults.md](vaults.md).
+
 ## conductor@web-summit.silvio
 
 Schedule: 07:20, 12:20 and 17:20 UTC (cron 20 7,12,17 * * *).
