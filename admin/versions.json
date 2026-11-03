@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.125",
+    "date": "2026-11-03",
+    "what": "CI's build step 14 s -> about 2 s: the burn-down reads file names, not old contents",
+    "by": "dev@web-summit.dinis",
+    "from": "9031868e0"
+  },
+  {
     "version": "v0.2.124",
     "date": "2026-11-03",
     "what": "15:40 wake: no notes; the vault guide still lists the command that prints a vault key (WS-128)",
