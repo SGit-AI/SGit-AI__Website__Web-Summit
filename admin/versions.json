@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.4",
+    "date": "2026-11-03",
+    "what": "the print files for the RiskMandate merch on /print/, for sign-off; the sponsor material removed",
+    "by": "designer@web-summit.dinis",
+    "from": "9338d6478"
+  },
+  {
     "version": "v0.2.3",
     "date": "2026-11-02",
     "what": "review to v0.2.1 and main v0.2.0, no hold; WS-86 verified; WS-106 before any vault key is sealed",
