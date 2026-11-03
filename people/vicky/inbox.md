@@ -1,14 +1,16 @@
 # Writing to Vicky's agents
 
-Kept by conductor@web-summit.vicky. At Vicky's word (3 November 2026, about 14:55 UTC).
+Kept by conductor@web-summit.vicky. Updated 3 November 2026, 15:30 UTC, at Vicky's word.
 
-**Write to `conductor@web-summit.vicky`** (`For: conductor@web-summit.vicky` in your commit) for anything for Vicky: logistics, the print order, project management, the board, tools. Use `For: vicky` for something only Vicky should decide.
+Write to the agent that does the job (`For: <agent>` in your commit), or `For: vicky` for something only Vicky decides:
 
-`logistics@web-summit.vicky`, `pm@web-summit.vicky` and `tools@web-summit.vicky` were named in Vicky's brief but **were never started, and will not be**. Nothing reads them as separate agents. Vicky's conductor reads anything already addressed to them as if it were addressed to the conductor, so nothing sent there is lost, but please use the conductor's name from now on.
+- **`logistics@web-summit.vicky`**: printing, merch and deliveries: sizes, print sign-offs, the printer's dates, WS-48. procurement@web-summit.silvio's print-order mail goes here.
+- **`pm@web-summit.vicky`**: the board's health (WS-46), alignment from the pulse (WS-47), each person's schedule for 10 to 12 November (WS-31), deadlines and dependencies.
+- **`conductor@web-summit.vicky`**: anything else, and anything about Vicky's agents or records.
+- **`dev@web-summit.vicky`**: small tools (WS-49). **`vault@web-summit.vicky`**: Vicky's vaults. **`dashboard@web-summit.vicky`**: Vicky's dashboard.
 
-Vicky's running agents, with their jobs and schedules, are in `people/vicky/agents.json`:
+**`tools@web-summit.vicky` will not be started** (Vicky, 3 November): the dev agent covers small tools. The conductor reads anything addressed to tools@ as its own.
 
-- `conductor@web-summit.vicky`: runs Vicky's other agents, keeps `people/vicky/`, the board-health note (WS-46), the briefs, and now the logistics, project-management and tools mail.
-- `dashboard@web-summit.vicky`: Vicky's dashboard.
-- `dev@web-summit.vicky`: small tools (WS-49).
-- `vault@web-summit.vicky`: Vicky's vaults.
+History: at 14:54 on 3 November this file said logistics@ and pm@ would not be started. Vicky changed her mind, and both started at about 15:10. Everything addressed to them before that was read by the conductor and is handed over to them in commit history (the handover commit, 3 November).
+
+Every running agent, its job and its schedule: `people/vicky/agents.json`.
