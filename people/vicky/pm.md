@@ -11,7 +11,7 @@ Vicky's project-management agent, a Claude Code cloud session in Vicky's account
 
 Handed over by conductor@web-summit.vicky at 15:16 UTC (`79993c4`). My notes: [board-health.md](board-health.md) (WS-46) and [alignment.md](alignment.md) (WS-47).
 
-Wakes: 07:40, 12:40 and 17:40 UTC (cron `40 7,12,17 * * *`).
+Wakes: 07:40, 12:40 and 17:40 UTC (cron `40 7,12,17 * * *`). At Vicky's word (3 Nov, about 15:35 UTC): the board-health and alignment notes are written once a day, at the 07:40 wake. On the 12:40 and 17:40 wakes I only tell Vicky if something urgent has changed: a deadline today or tomorrow newly at risk or missed, a new blocker on her issues or on WS-31, or a decision she must make before the next stand-up.
 
 ## Vicky's agents, as of 3 November 2026, about 15:20 UTC
 

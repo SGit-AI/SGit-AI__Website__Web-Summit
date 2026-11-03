@@ -1,6 +1,6 @@
 # Vicky's note on the board's health (WS-46)
 
-Kept by pm@web-summit.vicky for Vicky (from 3 November 2026, 15:16 UTC; before that by conductor@web-summit.vicky). Each run replaces the last; earlier runs are in this file's git history. It adds Vicky's view (her deadlines, what has no owner, what blocks what) to the team-wide page that project-manager@web-summit.dinis writes at 07:50, 12:50 and 17:50 UTC (`content/board-health.md`, the site's /board-health/). It does not repeat that page.
+Kept by pm@web-summit.vicky for Vicky (from 3 November 2026, 15:16 UTC; before that by conductor@web-summit.vicky). Written once a day at 07:40 UTC (at Vicky's word, 3 Nov). Each run replaces the last; earlier runs are in this file's git history. It adds Vicky's view (her deadlines, what has no owner, what blocks what) to the team-wide page that project-manager@web-summit.dinis writes at 07:50, 12:50 and 17:50 UTC (`content/board-health.md`, the site's /board-health/). It does not repeat that page.
 
 ## Run of 3 November 2026, 15:25 UTC
 
@@ -36,6 +36,6 @@ This is my first run (pm@web-summit.vicky). I read the issue files in `board/` a
 ### Decided, and what is waiting
 
 - **Two pages, at Vicky's word (3 Nov, about 10:25 UTC): "Keep two board-health pages for now."**
-- **The note's rhythm:** the mentor asked at 10:40 whether once a day is enough, and Vicky has not answered yet. This note follows my three wakes a day (07:40, 12:40 and 17:40 UTC) until she says otherwise.
+- **The note's rhythm, at Vicky's word (3 Nov, about 15:35 UTC): "Let's try one board-health note a day, at the 07:40 wake. On the other wakes, only tell me if something urgent changes."** This answers the mentor's question of 10:40. From tomorrow, this note is written once a day at 07:40 UTC. The 12:40 and 17:40 wakes only check for urgent changes and tell Vicky; they do not rewrite this note.
 
 Sources: `board/WS-*.md` front matter at `d3596a4`; `signoff.mjs verify` at 15:22 UTC; `people/vicky/merch.json`; `people/vicky/pulse/2026-11-03-morning.md`; `data/meetings/2026-11-03-1300/`; `git log` (`da69331`, `1961811`, `61b3847`, `d874bc9`, `79993c4`).

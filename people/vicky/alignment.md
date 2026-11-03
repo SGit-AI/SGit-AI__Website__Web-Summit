@@ -1,6 +1,6 @@
 # Team alignment from the pulse (WS-47)
 
-Kept by pm@web-summit.vicky for Vicky. Each run replaces the last; earlier runs are in this file's git history. It reads every `people/*/pulse/` check-in and records what blocks people, where the team disagrees, and what to raise with Dinis early. It quotes only what people wrote in their own check-ins.
+Kept by pm@web-summit.vicky for Vicky. Written once a day at 07:40 UTC, with the board-health note (at Vicky's word, 3 Nov). Each run replaces the last; earlier runs are in this file's git history. It reads every `people/*/pulse/` check-in and records what blocks people, where the team disagrees, and what to raise with Dinis early. It quotes only what people wrote in their own check-ins.
 
 ## Run of 3 November 2026, 15:25 UTC
 
