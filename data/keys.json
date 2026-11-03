@@ -256,6 +256,21 @@
         "fingerprint": "sha256:f7d96b970f58d344",
         "signing_fingerprint": "sha256:9bc3e30c4d2b5cfb"
       }
+    },
+    {
+      "id": "dashboard-angelo",
+      "label": "dashboard@web-summit.angelo (Claude Code session)",
+      "role": "Angelo's dashboard agent (dashboard@web-summit.angelo): keeps Angelo's two views, the part of the classic dashboard below the built block (people/angelo/dashboard.md) and the command centre's settings (people/angelo/app/config.json). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Angelo's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAkcHfb+PVP3q3fqIcPjZj\nB7jHzDnKbv9e/Immab5aez0OzH1HizBNXPcVxDLaVJfLZjl9SWSfsMmYz6+BdY+l\nmPUrdWiquTJjFYYoxgOxAp/fsuIIvylgnae9ZY8/HH3nJlewhmJQ0tSc5a1US4hx\nhiLR334d5vEgOoeXYhGQhs/ihrEqrXK8wZfhnuyCfU8+e8lx4SIOZKeFdlC0cKYs\nsgEMVBEkYngpwizBtsB6VcgmzJnTCsmyj3tgJt+W4EHb1EUFnX9lU5Xlx5GP2wPA\n010a7i+vneCWi5XXRQ+BId6s7M9Xn/7KKpFXJFDUuA25baxMQhDKqybUxU7xi61V\nFx3KMeP2pY2kg5Dqtz7ajZRWuHBVRL7J7zgMPfsLv1eRO4/MbIWjZmQqueQ+VSgT\nDJXk+liV8iqyn3A6LIFxrwWxqCR+WczgO/Z2QX8hOxzxZHLzX5z9ohmgKcHQR41G\n2hvXlmGSOH46YoO87nGRjfVfw/C2ISgA9wKJbiYoarp3hJD4ITypUB4mfzrG6zid\nDFe3qGPIeUI6ft5zillUVZMxTn0IQH1Py+oTgGvrFSNRd5qv+9H9K9WNaOXUqVke\nD8IVVBs0xOJyDVmEzWiXcAA11LcXifos+ivOcSLta4vzOhVy/7Nyj50JMqdszeNT\nSTH3PxZfP3zOQ/e/kbR7TCsCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYLRyr/Ub+x8ZK9z4bgK0WY68jy7n\neKVDJxRFOK2K/mAE35OYtN0+p79+5CTq17wq9ti3AyzPL3f86AHZwHayHw==\n-----END PUBLIC KEY-----\n",
+        "label": "dashboard@web-summit.angelo (Claude Code session)",
+        "fingerprint": "sha256:0a31f8d2ef54b5e4",
+        "signing_fingerprint": "sha256:c525afa927190f36"
+      }
     }
   ]
 }

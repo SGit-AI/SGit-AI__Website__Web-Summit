@@ -1,32 +1,59 @@
 ---
 title: Angelo's dashboard
-summary: The page Angelo sees first: their issues, their onboarding, their pulse, and whatever else they choose. Theirs to change, with their agents.
+summary: The page Angelo reads first. The top is built for Angelo; the rest is kept by Angelo's dashboard agent (dashboard@web-summit.angelo) in five sections: what needs Angelo now, whether everyone is connected, the machine, the technical pool with Jose, and what Angelo's agents are doing.
 ---
-This page is Angelo's, kept by Angelo and Angelo's agents in `people/angelo/dashboard.md`. It starts the same as everyone's: change it to show what you want to see when you wake up, take ideas from the others, and the best of them go on the main page.
+Kept by `dashboard@web-summit.angelo`, in the same order as [your command centre](app/index.html): what needs you now, is everyone connected, the machine, the technical pool with Jose, and your agents. Tell your dashboard agent what you want first and what you never read; it changes this part every run.
 
-## Today {#today}
+**My question for you (3 November), not answered yet:** *which view do you want to open first, this classic dashboard or [the command centre](app/index.html)?* Until you answer, both are kept, in the same order.
 
-- **My focus:** Make the setup work for everyone: the site, GitHub, the agents, and a behaviour policy for every agent and person.
-- **My brief:** [Brief for Angelo](../../brief-angelo/index.html)
-- **The board:** [all issues](../../briefs/index.html#issues) · **The team's pulse:** [pulse](../../pulse/index.html) · **What happened:** [home](../../index.html)
+## 1. Needs me now {#needs}
+
+- **The 13:00 stand-up:** the decisions and questions waiting on you are in your briefing at the top and on [today's agenda](../../meetings/2026-11-03-1300/index.html): who sends the GitHub invitations (WS-09 or WS-124), whether team-collaboration sent the stand-up invitations itself (WS-96), Daniela's accounts (WS-125), who records the decisions (WS-107), and LinkedIn (WS-126).
+- **Invitations to send:** the people still at the push step on [the setup leaderboard](../../team/setup/index.html) are waiting on a GitHub invitation; your mentor asks whether WS-124 replaces WS-09's hand-off, so that new usernames come to you.
+- **Due today:** the issues named for you with today's date are at the top of [My issues](#issues), sorted by due date.
+- **From your mentor:** the latest note is in [people/angelo/mentor](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/angelo/mentor); it is material, take what helps.
+
+## 2. Is everyone connected? {#connected}
+
+Who is stuck, and at which step (WS-35). The full picture is [the setup leaderboard](../../team/setup/index.html); everyone's row:
+
+```onboarding all
+```
+
+The onboarding issues:
+
+```issues area:onboarding
+```
+
+## 3. The machine {#machine}
+
+- **main's protection:** WS-105 and WS-90 below; until they are done, "never push to main" is a rule, not a setting.
+- **The last release and its gate:** [the versions](../../admin/versions.html) (the version in the top bar links to its row), built and gated by [CI](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/actions/workflows/deploy-pages.yml).
+- **CI failures:** [failed runs](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/actions?query=is%3Afailure).
+- **Keys published against agents running:** [the keys page](../../keys/index.html) against [the agents at work](../../wakes/index.html) and [everything on the team](../../team/everything/index.html).
+
+## 4. The technical pool with Jose {#pool}
+
+One pool: you two choose who takes what, and `picked_by` says who did. [Jose's dashboard](../jose/index.html) shows the same board.
+
+```issues area:tech
+```
+
+## 5. My agents {#agents}
+
+What each did since the last run is in "My agents, as the team sees them" at the top and in [the log on dev](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commits/dev); the prompts and schedules are in [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md).
+
+- **conductor@web-summit.angelo**: runs your other agents, keeps `people/angelo/`, adds your stand-up items and writes your briefs. Runs 07:20, 12:20 and 17:20 UTC.
+- **dev@web-summit.angelo**: the site's build, gate, pipeline and pages. Runs 09:30 and 15:30 UTC.
+- **team-collaboration@web-summit.angelo**: the stand-up calendar, a brief, a debrief and follow-ups for every meeting (WS-96), and the daily bottleneck note (WS-97). Runs around each stand-up.
+- **dashboard@web-summit.angelo**: keeps this page and your command centre. Joined 3 November with its key on [the keys page](../../keys/index.html); runs 07:30, 12:30 and 17:30 UTC once you give it its scheduled task.
 
 ## My issues {#issues}
 
 ```issues angelo
 ```
 
-## My onboarding {#onboarding}
-
-```onboarding angelo
-```
-
 ## My pulse {#pulse}
 
 ```pulse angelo
 ```
-
-## My agents {#agents}
-
-- **dev@web-summit.angelo**: the site's build, gate, pipeline and pages (joined 2 November 2026).
-- **conductor@web-summit.angelo**: conducts Angelo's agents and keeps `people/angelo/` with Angelo; session key `sha256:f34e311a93db5ddb`, operated by `sha256:db7f79fdd87e030a`, linked to Angelo's key once it is registered (joined 2 November 2026).
-- **team-collaboration@web-summit.angelo**: the team's collaboration. It keeps the stand-ups on the calendar (13:00 and 18:00 UTC daily), makes sure every meeting has a brief, a debrief and follow-ups with owners (WS-96), maps who works with whom among people and agents, and writes a daily note on bottlenecks (WS-97). Session key `sha256:c1cb85a164aa1852`, operated by `sha256:db7f79fdd87e030a`; authorised by its write access to this repository, so no separate confirmation (Angelo, 2 November) (joined 2 November 2026).
