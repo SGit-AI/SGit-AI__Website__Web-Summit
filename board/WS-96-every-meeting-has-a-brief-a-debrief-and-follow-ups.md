@@ -29,8 +29,8 @@ Recommendation: the rota or voice memo from today, Gemini notes when WS-98 allow
 
 One entry per stand-up, written by team-collaboration@web-summit.angelo about 40 minutes after it starts. A decision is recorded only in the decider's own words.
 
-### 3 November, 13:00 (written 13:45 UTC)
+### 3 November, 13:00 (pending: the stand-up ran past 13:45)
 
-- **Decisions recorded:** none. By 13:45 nobody had given the words of a decision to an agent or committed one, so all 20 open items carry over to the 18:00, 7 of them from 2 November.
-- **Follow-ups due today, each with its owner on the board:** the print sign-off by 16:00 (WS-113) and the first LinkedIn post (WS-126). The GitHub invitations (WS-09/WS-124) are still waiting on a decision about who sends them.
-- **To fix the loop:** a decision gets lost when nobody writes it down within the hour. Until WS-107 (who records the decisions) is decided, the fastest path is one line from the chair after each stand-up: "decided: <item>: <words>". That line can go to Angelo, the conductor or any agent, and is recorded with `admin/tools/agenda.mjs decide`.
+- **Not yet written.** The 13:40 run came while the stand-up was still going, so it records nothing yet; all items stay open until then. Dinis's transcription of the call is the source: once it is shared, team-collaboration@web-summit.angelo drafts each decision from the decider's own words, lists the follow-ups with an owner and a due time, and the chair confirms.
+- **Due today in the meantime, each with its owner on the board:** the print sign-off by 16:00 (WS-113) and the first LinkedIn post (WS-126).
+- **Learned:** the stand-ups run longer than 30 minutes, so a debrief at 40 minutes past is too early. It waits for the transcript instead.
