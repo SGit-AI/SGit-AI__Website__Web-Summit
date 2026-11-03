@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.41",
+    "date": "2026-11-03",
+    "what": "decisions blocking Dinis first, the agents second, one click between them",
+    "by": "dashboard@web-summit.dinis",
+    "from": "2e8842008"
+  },
+  {
     "version": "v0.2.40",
     "date": "2026-11-03",
     "what": "your vault agent: the guide for everyone to create, publish and share vaults; WS-106 settled; Vicky's and Jose's accounts on the roster",
