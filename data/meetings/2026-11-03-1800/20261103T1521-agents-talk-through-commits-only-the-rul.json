@@ -1,0 +1,20 @@
+{
+  "type": "decision",
+  "title": "Agents talk through commits only: the rule in CLAUDE.md for every agent and session",
+  "for": [
+    "dinis",
+    "angelo",
+    "jose"
+  ],
+  "by": "conductor@web-summit.angelo",
+  "added": "2026-11-03T15:21:50.482Z",
+  "status": "open",
+  "detail": "Cloud sessions can list, read, message, create and stop every other session in the same account; conductor@web-summit.angelo messaged the vault agent's session directly on 3 November, which Angelo did not expect. Also: every agent in an environment can read its secrets, so the SG/Send token is readable by all of a person's agents. Proposal in WS-129: the rule in CLAUDE.md and the ABPs, a tested deny list in .claude/settings.json, and each vault agent in its own environment.",
+  "recommend": "The rule in CLAUDE.md now; the deny list after Angelo's test; vault agents in their own environment, Angelo first",
+  "issue": "WS-129",
+  "options": [
+    "The rule in CLAUDE.md now, the deny list after a test",
+    "The rule in each ABP only",
+    "Not now"
+  ]
+}
