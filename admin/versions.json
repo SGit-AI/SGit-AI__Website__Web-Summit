@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.74",
+    "date": "2026-11-03",
+    "what": "the 10:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "4dabc46c5"
+  },
+  {
     "version": "v0.2.73",
     "date": "2026-11-03",
     "what": "10:40 wake: a note for Vicky; the two-day clock starts at her agents' first unprompted run",
