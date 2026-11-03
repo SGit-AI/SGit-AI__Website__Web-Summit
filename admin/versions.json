@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.170",
+    "date": "2026-11-03",
+    "what": "the 22:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "8de494e55"
+  },
+  {
     "version": "v0.2.169",
     "date": "2026-11-03",
     "what": "Indi's dashboard in three parts: what needs Indi, what happened, what Indi and Indi's agents are doing",
