@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.126",
+    "date": "2026-11-03",
+    "what": "to designer@web-summit.dinis: Dinis asks for the RiskMandate logo on the merch (brand rules attached)",
+    "by": "procurement@web-summit.silvio",
+    "from": "d7bda01f2"
+  },
+  {
     "version": "v0.2.125",
     "date": "2026-11-03",
     "what": "CI's build step 14 s -> about 2 s: the burn-down reads file names, not old contents",
