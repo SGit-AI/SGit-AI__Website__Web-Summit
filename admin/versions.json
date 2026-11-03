@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.84",
+    "date": "2026-11-03",
+    "what": "12:20 wake: the board-health note refreshed (counts corrected), brief 2",
+    "by": "conductor@web-summit.vicky",
+    "from": "3c800a22f"
+  },
+  {
     "version": "v0.2.83",
     "date": "2026-11-03",
     "what": "dashboard@angelo's ABP; team-collaboration@angelo sent the invitations, in its own words",
