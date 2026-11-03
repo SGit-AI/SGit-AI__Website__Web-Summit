@@ -1,0 +1,142 @@
+{
+  "number": 2,
+  "date": "3 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "You are at L5; three decisions at 13:00, a draft split with Angelo, and six things due today",
+  "when": "3 November 2026, 07:20 UTC (scheduled wake; since brief 1, 00:40 UTC)",
+  "by": "conductor@web-summit.jose",
+  "headline": "Overnight your agents went from one to four, all with keys and three on schedules, and the site puts you at L5 (8 of 9 steps); the vaults (L6) wait on the roster decision at 13:00. As you asked, this run prepares and decides nothing: no board issue was picked, closed, moved or commented on. Three decisions need you at 13:00; the split with Angelo, today's due list, WS-108 and your pulse are drafts below for you to confirm.",
+  "stats": [
+    {"n": "L5", "label": "your level, computed by the site (8 of 9 steps)"},
+    {"n": "4", "label": "your agents running, 4 keys on the keys page"},
+    {"n": "21", "label": "commits by your agents since 00:00 UTC"},
+    {"n": "6", "label": "issues due today for you"}
+  ],
+  "for_you": [
+    {"group": "The 13:00 stand-up: your three decisions (from your briefing page)"},
+    {
+      "id": "1",
+      "ask": "Who records the decisions during each stand-up (carried over from 2 Nov, 18:00; WS-96, WS-107)",
+      "detail": "No decision was recorded at the 13:00 stand-up on 2 November. WS-107 (due today, 13:00) says every decision is closed with the decider's words verbatim, and nobody records a decision for someone else in their own words.",
+      "options": ["the chair records it", "team-collaboration@web-summit.angelo drafts it from the chair's words and the chair confirms", "each decider records their own"],
+      "recommend": "team-collaboration@web-summit.angelo drafts, and each decider confirms in one line (your conductor records yours with agenda.mjs decide), which keeps WS-107's own-words rule."
+    },
+    {
+      "id": "2",
+      "ask": "The push step for Nimay, Jose and Indi (WS-09): flag, your part is done",
+      "detail": "The item (by mentor@web-summit.dinis, 2 Nov 22:54) still lists you at the push step. Your onboarding.json has repo: yes since 3 Nov 00:38 (commit 44b2feb, pushed from your account), and every agent of yours has pushed since. Nimay and Indi are still at Can push (L1, 3 of 9).",
+      "options": ["say at the stand-up that you are done, and the item narrows to Nimay and Indi", "stay out of it: Dinis settles it for the other two"],
+      "recommend": "Say you are done in one line; for Nimay and Indi, the item's own recommendation (Dinis sends the invitations before the stand-up and they accept)."
+    },
+    {
+      "id": "3",
+      "ask": "Your GitHub account on the roster, so your agents' keys can be sealed to (L6, WS-106)",
+      "detail": "Your agents' keys (conductor-jose, dashboard-jose, dev-jose, designer-jose) were pushed by riskmandate-jose, which data/team.json does not list for you, so the sealing tool refuses them. Your own conductor did not add it: an account adding itself to the roster is the check WS-106 exists for.",
+      "options": ["Dinis confirms riskmandate-jose and conductor@web-summit.dinis adds it (Vicky's account in the same change)", "you read your agents' fingerprints to the sealer out of band (--fingerprint)"],
+      "recommend": "Dinis confirms and his conductor adds it: one change, and it works for every later key you publish."
+    }
+  ],
+  "you_asked": [
+    {"at": "3 Nov, about 02:05", "said": "Overnight: prepare, do not decide. Until I reply, do not pick, close, move or comment on any board issue.", "done": "Nothing on the board touched by me. Two exceptions before your message: dev@web-summit.jose set WS-39 to picked (Jose, dev@web-summit.jose) at 01:18; and dev and designer prepared WS-74 and WS-39 material in people/jose/ without picking anything (02:09 to 02:16).", "where": "git log, board/WS-39", "status": "done"},
+    {"at": "3 Nov, about 02:05", "said": "WS-01 to WS-04 are shared team issues; do not close them. List my evidence", "done": "Below, section 1", "where": "this brief", "status": "done"},
+    {"at": "3 Nov, about 02:05", "said": "Draft a split with Angelo.", "done": "Below, section 3, with what the board says against what you wrote", "where": "this brief", "status": "waiting"},
+    {"at": "3 Nov, about 02:05", "said": "Pulse: draft answers to the six start-page questions for my morning check-in; I confirm before you commit.", "done": "Drafted below, section 6; nothing committed to people/jose/pulse/", "where": "this brief", "status": "waiting"},
+    {"at": "3 Nov, about 02:15", "said": "Find the newsroom article \"Jose Bota's two agent apps\" and summarise", "done": "Could not read it: newsroom.sgit.ai is refused by this session's network policy (07:21 UTC) and does not resolve for the web-fetch helper; the article is not in the repository or in GitHub code search. Section 5 has the board's facts only.", "where": "board/WS-108", "status": "waiting"},
+    {"at": "3 Nov, about 02:15", "said": "list the designer as on demand (no schedule)", "done": "designer@web-summit.jose added to people/jose/agents.json as on demand, no schedule field", "where": "people/jose/agents.json", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "1. WS-01 to WS-04: your evidence (shared issues, left open)",
+      "table": {
+        "head": ["Issue", "Step", "Your evidence"],
+        "rows": [
+          ["WS-01 (L1)", "Workspace, Claude", "onboarding.json: workspace yes, claude yes (recorded by conductor@web-summit.dinis, 2 Nov)"],
+          ["WS-02 (L2)", "GitHub, push", "onboarding.json: github yes, repo yes; first push 44b2feb, 3 Nov 00:38, from your account"],
+          ["WS-03 (L4)", "Keys, dashboard agent", "data/keys.json: conductor-jose, dashboard-jose, dev-jose, designer-jose (all added 3 Nov); dashboard agent's first commit 94931b5"],
+          ["WS-04 (L4/L5)", "On a schedule", "agents.json: conductor 07:20/12:20/17:20, dashboard 07:30/12:30/17:30, dev 09:30/15:30 UTC; designer on demand"],
+          ["L6", "Vaults", "Blocked: the roster lists no GitHub account for you (decision 3). Also new: WS-120 (due Wed 4 Nov) asks you to start vault@web-summit.jose, which needs SG_SEND_ACCESS_TOKEN in your Claude environment"]
+        ]
+      }
+    },
+    {
+      "title": "2. The 13:00 setup sync",
+      "text": "\"Where is everyone on connecting (L0 to L4)?\" (carried over from 2 Nov). Your line: L5, 8 of 9, four agents with keys, three on schedules; the vaults wait on the roster. Offer: Nimay and Indi are stuck at Can push, and WS-35 asks you and Angelo to help."
+    },
+    {
+      "title": "3. Draft split with Angelo (nothing picked)",
+      "table": {
+        "head": ["Issue", "Due", "Draft", "Board today, and fit"],
+        "rows": [
+          ["WS-39 WhatsApp / Slack", "Wed 4", "yours", "already picked (Jose, dev@web-summit.jose); findings and two broadcast looks ready. Core n8n and messaging: fits"],
+          ["WS-108 your two apps", "Wed 4", "yours", "open; agents: conductor@web-summit.jose asks you. Your own apps: fits"],
+          ["WS-74 public feedback form", "Wed 4", "yours", "open, not picked; dev prepared three options (people/jose/dev/WS-74-plan.md). Intake into n8n: fits"],
+          ["WS-41 the pulse app", "Wed 4", "yours", "open; for angelo, jose, vicky. Reminders at each slot are automation: fits. Can slip to Thu: 'the files version works now'"],
+          ["WS-33 repo safe for everyone", "Tue 3", "Angelo", "open; release.sh and CI, Angelo's dev agent's ground"],
+          ["WS-35 setup help L1 to L4", "Tue 3 to Wed 4", "Angelo", "open; note helper@web-summit.jose (in your brief) was proposed for this: if Angelo takes it, it is not needed"],
+          ["WS-37 observability lanes", "Thu 5", "Angelo", "open; can wait to Thu"],
+          ["WS-42 billing on our sites", "Thu 5", "Angelo", "open; can wait to Thu"],
+          ["WS-65, WS-91", "Wed 4", "Dinis's dev", "picked_by dev@web-summit.dinis on both (WS-65 still says status open)"],
+          ["WS-68, WS-77", "Wed 4", "Dinis's agents", "not picked; agents lines: designer and dev @dinis (WS-68), dev @dinis (WS-77)"],
+          ["WS-71", "Wed 4", "video@web-summit.silvio", "not picked; agents line says video@web-summit.silvio"],
+          ["WS-38, WS-45", "Thu 5, Wed 4", "sgit@web-summit.dinis", "differs: neither has an agents line or picked_by, so the board does not say sgit@web-summit.dinis; worth a line from Dinis's conductor"]
+        ]
+      }
+    },
+    {
+      "title": "3b. Also yours on the board, not in the split",
+      "items": [
+        "Wed 4: WS-18 demos, WS-34 behaviour policies, WS-40 video hosting, WS-120 vault agent (no picked_by or agents line on the first three).",
+        "Thu 5 to Sun 8, can wait: WS-36 conductor of conductors (Thu), WS-38 encrypted materials (Thu), WS-43 agent wellness (Fri), WS-106 estate standard (Fri), WS-84 offline copy (Sun); WS-44 is 'later'."
+      ]
+    },
+    {
+      "title": "4. Due today for you, and what you do",
+      "table": {
+        "head": ["Issue", "Due", "What you need to do"],
+        "rows": [
+          ["WS-113 print sign-off", "16:00", "Look at your proof on /print/ (T-shirt T6: 'I BROUGHT / 6 AGENTS. / ASK ME WHY.'), then tell an agent 'sign off my print set' or what to change, in your words; it signs with its key (admin/tools/signoff.mjs). Also your sizes (tee size, fit, hoodie size) for people/jose/merch.json. Nobody has signed yet; the board lists four file fixes for the designer first"],
+          ["WS-08 your card", "today", "Answer the five questions at the end of your brief (role, companies, conversations, accounts, how you like briefs); I write people/jose/card.md (none exists yet), no contact details"],
+          ["WS-30 owners for priority-1 companies", "today", "All 20 priority-1 companies on the map say owner 'to decide'. Say which you want to own (WS-108's ReachCheck meetings may point to some)"],
+          ["WS-73 video feedback", "today", "Watch Silvio's videos and give votes and comments; your agent writes people/jose/feedback/videos.json (none yet)"],
+          ["WS-107 decisions in your words", "13:00", "At the stand-up, say each decision out loud; I record your words with agenda.mjs decide, never mine"],
+          ["WS-07 pulse", "morning, midday, evening", "Confirm or edit the draft in section 6; I commit people/jose/pulse/2026-11-03-morning.md"]
+        ]
+      }
+    },
+    {
+      "title": "5. WS-108: Hack the Agent and ReachCheck (from the board only)",
+      "items": [
+        "Not read: the newsroom article \"Jose Bota's two agent apps\". newsroom.sgit.ai is refused by this session's network policy; allowing it, as with pki.sgit.ai, lets me summarise it on the next run.",
+        "What the board says the article says: Hack the Agent is a five-level prompt-injection game, a stand demo with a QR code to join; ReachCheck checks an agent's setup against its owner's mandate (the ABP model), for one-to-one meetings. Our site mentions neither; your brief lists only automation.",
+        "With your yes, the issue would: link both from your brief and your profile, add them to WS-15's demo options, and put a QR on the stand material (designer@web-summit.dinis, the stand; conductor@web-summit.dinis, your brief).",
+        "What it needs from you before Mon 9 Nov: the board names only your yes (due Wed 4 Nov, a stand-up item first). From the steps it lists, the links and QR need each app's public URL, which the board does not give."
+      ]
+    },
+    {
+      "title": "6. Your morning pulse: a draft for you to edit (not committed)",
+      "items": [
+        "Where we are: setup day. I'm at L5 with four agents (conductor, dashboard, dev, designer); vaults wait on the roster. The team is uneven: Nimay and Indi are still at the push step.",
+        "Blocking me: the roster entry for my GitHub account (L6), and my agents can't reach newsroom.sgit.ai.",
+        "What we should be doing: get everyone to L4 today, so Thursday's outreach has agents behind it; settle WS-15's one demo, since my two apps could be it.",
+        "Working / not: the agents ship fast once connected (21 commits from mine since midnight); not yet: WhatsApp can't post into our existing group by the official API (WS-39 findings).",
+        "Ideas: route 3 for WS-39 now (n8n drafts to me, I forward), Slack next.",
+        "Feeling: [yours to fill in]."
+      ]
+    }
+  ],
+  "next": [
+    "12:20 run: record your 13:00 words with agenda.mjs decide; commit your pulse once you confirm it.",
+    "When you say: pick up the issues of the split you agree, and hand the rest to Angelo with a For: commit.",
+    "If newsroom.sgit.ai is allowed: summarise the article for WS-108.",
+    "Your mentor's latest note is still 2 Nov 22:50 (the mentors next run at 08:40)."
+  ],
+  "sources": [
+    "git log on dev, 3 Nov 00:00 to 07:21 UTC (HEAD f24d615, v0.2.50)",
+    "board/WS-*.md: status, picked_by, agents, due (read 07:25 UTC)",
+    "meetings/2026-11-03-1300/jose/index.md (built at 07:25 UTC) and data/meetings/2026-11-03-1300/",
+    "team/setup/ (built), admin/build/onboarding.mjs, people/jose/onboarding.json, people/jose/agents.json, data/keys.json",
+    "data/companies.json (20 priority-1, owner 'to decide'); team/designer/print/final.json (Jose's set)",
+    "people/jose/dev/WS-39-findings.md, people/jose/dev/WS-74-plan.md",
+    "agent proxy: newsroom.sgit.ai connect_rejected, 3 Nov 07:21 UTC"
+  ]
+}
