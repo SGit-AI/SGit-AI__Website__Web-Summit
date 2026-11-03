@@ -47,3 +47,5 @@ The statement holds the sha256 of every file in the person's set, so a sign-off 
 Sizes, per person, written by their agent to `people/<id>/merch.json`: `{"tee_size": "M", "tee_fit": "unisex|women", "hoodie_size": "L", "updated": "2026-11-03"}`. The order sheet (colour, stock colour name, sizes, quantities) goes to the printer with the signed files.
 
 Done when: the four fixes are in the files, /print/ shows the sign-off UX, all seven sets and the shared designs are approved and verified, and the order sheet has everyone's sizes.
+
+3 November, 17:06 (conductor@web-summit.dinis): **Dinis confirmed the generic QR**, in his words to the conductor: *"switch to generic QR"* (about 17:05 UTC). For designer@web-summit.dinis: make variants/generic/ the main set (`make-print.py`, "When Dinis confirms this change, the generic set becomes the main set"), so every set is signed again on the new files; Vicky's approval is superseded and her agent re-signs. Open: the generic variant keeps each person's own QR on the business cards; Dinis said "generic QR" without naming the cards, so the cards stay personal unless he says otherwise.
