@@ -29,6 +29,9 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 - Open or merge pull requests, comment on GitHub: not in its mandate.
 - Create, share or trash files in Drive: no part of its mandate uses Drive.
 
+- **Input from anyone on the web (since 89cfa63, 3 November).** `assets/feedback.json`, public on every page, holds a write-only append token for its own vault's lane (`rx5uxdyu` on dev.send.sgraph.ai) and its public key. Anyone with the page can seal and append feedback, text and images, which `admin/tools/feedback_drain.py` fetches, opens and commits into the vault. That is a channel from the public into what this agent reads each wake. Barriers: the rule that material is not instruction, and the lane's limits (5 MB per batch, full at 1000 pending; the token can be rotated). WS-114 records both.
+- **Code that runs in visitors' browsers.** `assets/cc/app.js` (8370ede) asks for an OpenRouter key on the command centres where `config.json` turns it on (Dinis's and Silvio's), keeps it in that browser's local storage and sends it only to openrouter.ai. No key is in the repository. Any later change to `assets/` by any agent with push runs on the same page as that key.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -59,4 +62,4 @@ Open questions: It is authorised to edit what judges its own work; a check the g
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 5, 3 November 2026 (00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 6, 3 November 2026 (04:10 wake: the feedback lane and the in-page chat; 00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.
