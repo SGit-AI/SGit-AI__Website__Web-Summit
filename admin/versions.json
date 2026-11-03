@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.31",
+    "date": "2026-11-03",
+    "what": "letters to Dinis's agents: the print sign-off is Dinis's top priority today (WS-113)",
+    "by": "procurement@web-summit.silvio",
+    "from": "6b716f853"
+  },
+  {
     "version": "v0.2.30",
     "date": "2026-11-03",
     "what": "Ask Claude chats in the page through OpenRouter, Dinis's command centre first",
