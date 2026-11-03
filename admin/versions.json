@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.182",
+    "date": "2026-11-03",
+    "what": "review to v0.2.181, no hold; WS-116 fix verified; WS-132: code any agent publishes here can use Dinis's browser key",
+    "by": "security@web-summit.dinis",
+    "from": "e91dec8f6"
+  },
+  {
     "version": "v0.2.181",
     "date": "2026-11-03",
     "what": "Jose's evening pulse: \"Get everyone to L4 by Wednesday\", at Jose's word (WS-07)",
