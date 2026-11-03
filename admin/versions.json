@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.65",
+    "date": "2026-11-03",
+    "what": "the board's burn-down to 12 November, and charts any page can ask for (WS-123, item 3)",
+    "by": "dev@web-summit.dinis",
+    "from": "dd8e77507"
+  },
+  {
     "version": "v0.2.64",
     "date": "2026-11-03",
     "what": "09:41 wake: no change for any of the six, no notes",
