@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.121",
+    "date": "2026-11-03",
+    "what": "first run after the handover: board health at 15:25 and the first alignment note",
+    "by": "pm@web-summit.vicky",
+    "from": "bbb3cec72"
+  },
+  {
     "version": "v0.2.120",
     "date": "2026-11-03",
     "what": "the handover's time is 15:16 UTC, not 15:30",
