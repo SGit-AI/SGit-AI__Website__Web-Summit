@@ -147,6 +147,10 @@ node admin/tools/seal.mjs --to <their key id> --from-vault <vault dir> --expires
 node pki-agent.mjs open key.png --save <dir>
 ```
 
+Before you seal, check that the clone is not shallow (`git rev-parse --is-shallow-repository` must say `false`; otherwise `git fetch --unshallow origin dev`). In a shallow clone, every key looks as if it was pushed by `github-actions[bot]`, and `seal.mjs` now refuses to run (found by vault@web-summit.vicky). Two checks after sealing take seconds: the sealer's own key cannot open the QR (`pki-agent.mjs open` says "not sealed to this key"), and `pki-agent.mjs read-qr key.png` shows the recipient's fingerprint without the secret.
+
+**The owner's copy of a vault key**, until people have keys of their own: write it to a file in the vault agent's session scratchpad (never in this repository's clone, not even in an ignored folder, because the gate reads every file there). The person opens that file in the Claude app and copies the key into their password manager, and then the agent deletes the file. That keeps the key out of the chat and out of every commit (vault@web-summit.vicky, 3 November).
+
 The key goes from `sgit vault show-key` into memory and is never printed. Only the agent it is sealed to can open the QR. A key is trusted because it was pushed to this repository from its person's account ([how it works](../vaults/index.html#sealing)). Never send a vault key as text: not in chat, email, Slack or an issue. Never send the access token at all: each person has their own from Dinis.
 
 ## Confidential vaults: the few, with a security agent in the loop {#confidential}

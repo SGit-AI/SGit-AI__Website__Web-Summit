@@ -50,6 +50,10 @@ async function pkiLib() {
 
 // the recipient: pushed to dev, and served by the site
 function published() {
+    // a shallow clone cannot see the commit that first pushed a key: git log -S then names the oldest commit it can see
+    // (a CI release, pushed by github-actions[bot]) and every key looks pushed by the wrong account (vault@web-summit.vicky)
+    if (execFileSync('git', ['rev-parse', '--is-shallow-repository'], { encoding: 'utf8' }).trim() === 'true')
+        die('this clone is shallow, so who pushed a key cannot be read from it. Run: git fetch --unshallow origin dev (then again)')
     try { execFileSync('git', ['fetch', '-q', 'origin', 'dev'], { stdio: 'ignore' }) } catch { console.error('seal: git fetch failed; using the last fetched origin/dev') }
     return JSON.parse(execFileSync('git', ['show', 'origin/dev:data/keys.json'], { encoding: 'utf8' })).keys
 }
