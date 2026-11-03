@@ -125,6 +125,10 @@
   },
   "decisions": [],
   "prompts": {
+    "pending": [
+      "What's pending for me?",
+      "For Angelo on the Web Summit team (SGit-AI/SGit-AI__Website__Web-Summit, branch dev): list what is pending for him, in the order to do it: the open decisions and questions for him in data/meetings/ for the next stand-up, the open issues named for him that are due today or overdue (board/WS-*.md), his next setup step (people/angelo/onboarding.json, /team/setup/), and his latest mentor note's question (people/angelo/mentor/). One line each, with the issue id. Commit nothing."
+    ],
     "connected": [
       "Who is stuck?",
       "Read https://web-summit.sgit.ai/team/setup/index.md and people/*/onboarding.json on branch dev of SGit-AI/SGit-AI__Website__Web-Summit. For each person below L4, say the step they are stuck on, how long they have been there (from git log), and the one thing I can do to unblock them (WS-35). Draft any message; send nothing."

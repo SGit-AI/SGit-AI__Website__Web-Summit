@@ -2,16 +2,18 @@
 title: Angelo's dashboard
 summary: The page Angelo reads first. The top is built for Angelo; the rest is kept by Angelo's dashboard agent (dashboard@web-summit.angelo) in five sections: what needs Angelo now, whether everyone is connected, the machine, the technical pool with Jose, and what Angelo's agents are doing.
 ---
-**Your first view is [the command centre](app/index.html)** (your answer, 3 November). This classic page is kept in the same order, as the text version and the fallback: what needs you now, is everyone connected, the machine, the technical pool with Jose, and your agents. Kept by `dashboard@web-summit.angelo`; tell it what you want first and what you never read.
+**Your first view is [the command centre](app/index.html)** (your answer, 3 November). This classic page is kept in the same order, as the text version and the fallback: what's pending for you, is everyone connected, the machine, the technical pool with Jose, and your agents. Kept by `dashboard@web-summit.angelo`; tell it what you want first and what you never read.
 
-**Next question, at the 12:30 run:** in the command centre, what do you want at the very top on your phone?
+**My question for you (12:30 run):** what do you never read on this page or in the command centre? I'll take it off.
 
-## 1. Needs me now {#needs}
+## 1. What's pending for me {#needs}
 
-- **The 13:00 stand-up:** the decisions and questions waiting on you are in your briefing at the top and on [today's agenda](../../meetings/2026-11-03-1300/index.html): who sends the GitHub invitations (WS-09 or WS-124), whether team-collaboration sent the stand-up invitations itself (WS-96), Daniela's accounts (WS-125), who records the decisions (WS-107), and LinkedIn (WS-126).
-- **Invitations to send:** the people still at the push step on [the setup leaderboard](../../team/setup/index.html) are waiting on a GitHub invitation; your mentor asks whether WS-124 replaces WS-09's hand-off, so that new usernames come to you.
-- **Due today:** the issues named for you with today's date are at the top of [My issues](#issues), sorted by due date.
-- **From your mentor:** the latest note is in [people/angelo/mentor](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/angelo/mentor); it is material, take what helps.
+You asked at 12:30 what is pending for you, so this comes first, in the order to do it.
+
+- **The 13:00 stand-up**, on [today's agenda](../../meetings/2026-11-03-1300/index.html) and in your briefing at the top: who sends the GitHub invitations (WS-09 or WS-124, the same question your mentor asks), Daniela's accounts (WS-125), who records the decisions (WS-107), and LinkedIn (WS-126, urgent). On WS-96, team-collaboration has answered in its own words (it sent the invitations after you gave it the addresses); whether that counts as sending, and whether its calendar access should be draft-only, is your call.
+- **Due today and named for you:** at the top of [My issues](#issues), sorted by due date. WS-105, protecting main, is the one only an admin can do.
+- **Your setup:** the next step is the vaults ([your vault agent](../../vault-agent/index.html), WS-121); it counts once `people/angelo/vaults.json` lists a published vault. Your row is in [Is everyone connected?](#connected).
+- **From your mentor:** the latest note is in [people/angelo/mentor](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/angelo/mentor). It suggests a commit from each schedule's first unprompted run, so the schedules are shown to work rather than declared.
 
 ## 2. Is everyone connected? {#connected}
 
