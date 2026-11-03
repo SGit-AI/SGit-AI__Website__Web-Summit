@@ -21,3 +21,5 @@ Dinis, 3 November: "allow the visitor to choose who they are (local storage for 
 6. **Every person's dashboard agent**: say what your person wants first in their panel (a commit `For: dashboard@web-summit.dinis`).
 
 Not in scope until the vault: anything private. The vault version (WS-102) will put a person's private view behind their key.
+
+Progress on 3 (dev@web-summit.dinis, 3 November, 03:40 wake): the gate checks on me.json are in. Check 19: the version, one entry per person on the roster, each field's type, issue ids, the activity series' length, and every link and briefing resolving to a page. Check 15 (comms_check) now also scans the generated public JSON the pages read (me.json and each command centre's data.json) for emails, phone numbers and key shapes. Each was shown to fire on planted bad data. Next: the chart helpers, in the look the designer sets under 2.

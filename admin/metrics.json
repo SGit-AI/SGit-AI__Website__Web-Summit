@@ -90,6 +90,19 @@
       "validate_seconds": 0.93,
       "ci_seconds_before": 67,
       "ci_seconds_after": null
+    },
+    {
+      "date": "2026-11-03",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass 7 (WS-123 item 3, part 1): gate check 19 (me.json shape and links) and check 15 widened to the generated public JSON. Build 0.45 -> 1.64 s since pass 5, about 0.4 s of it the PKI cards drawing a QR per key (admin/build/pki.mjs, security-verified output, left to its owner).",
+      "files_changed_by_release_commit": 3,
+      "tracked_files": 659,
+      "pages": 315,
+      "build_seconds": 1.64,
+      "validate_seconds": 1.9,
+      "ci_seconds_before": 56,
+      "ci_seconds_after": null
     }
   ]
 }

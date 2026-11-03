@@ -196,6 +196,25 @@ for (const dir of ['content', 'board', 'people']) for (const f of walk(path.join
 try { execFileSync('node', [path.join(__dirname, '..', 'tools', 'comms_check.mjs')], { cwd: ROOT, stdio: 'pipe' }) }
 catch (e) { errors.push(`comms_check: ${(e.stdout || '').toString()}${(e.stderr || '').toString()}`.trim()) }
 
+// 19. me.json, every person's For-you slice (WS-123): its shape, one entry per person on the roster, links that resolve
+//     (its contact details are checked by check 15 with the rest of the generated public JSON)
+try {
+    const me = JSON.parse(read('me.json')), team = JSON.parse(read('data/team.json'))
+    if (me.version !== VERSION) errors.push(`me.json: version ${me.version} is not ${VERSION}`)
+    if (isNaN(Date.parse(me.built_at))) errors.push('me.json: built_at is not a time')
+    const want = team.members.filter(m => m.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', m.id))).map(m => m.id).sort(), got = Object.keys(me.people || {}).sort()
+    if (want.join() !== got.join()) errors.push(`me.json: people are ${got.join(', ') || 'none'}, the roster says ${want.join(', ')}`)
+    const SHAPE = { id: 'string', name: 'string', first: 'string', role: 'string', level: 'number', level_name: 'string', open: 'number', overdue: 'number', soon: 'number', urgent: 'array', decisions: 'array', agents: 'array', messages: 'array', daily: 'array', days: 'array', since: 'object', briefing: 'string', standup: 'string', links: 'object' }
+    const kind = v => Array.isArray(v) ? 'array' : v === null ? 'null' : typeof v
+    for (const [id, p] of Object.entries(me.people || {})) {
+        for (const [k, t] of Object.entries(SHAPE)) if (kind(p[k]) !== t) errors.push(`me.json: ${id}.${k} is ${kind(p[k])}, not ${t}`)
+        if (p.id !== id) errors.push(`me.json: ${id} carries id ${p.id}`)
+        for (const u of p.urgent || []) if (!/^WS-\d+$/.test(u.id || '') || !u.title) errors.push(`me.json: ${id} has an urgent item without an issue id or title`)
+        if ((p.daily || []).length !== (p.days || []).length) errors.push(`me.json: ${id}.daily and days differ in length`)
+        for (const rel of [p.briefing, ...Object.values(p.links || {})].filter(Boolean)) if (!fs.existsSync(path.join(ROOT, rel))) errors.push(`me.json: ${id} links to ${rel}, which does not exist`)
+    }
+} catch (e) { errors.push(`me.json: ${e.message}`) }
+
 // 16. every wake record that is closed has its five steps (admin/tools/wake.mjs check)
 try { execFileSync('node', [path.join(__dirname, '..', 'tools', 'wake.mjs'), 'check'], { cwd: ROOT, stdio: 'pipe' }) }
 catch (e) { errors.push(`wake check: ${(e.stderr || '').toString()}`.trim()) }

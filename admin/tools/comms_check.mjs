@@ -27,6 +27,13 @@ export function check(dirs = ['comms', 'data', 'team', 'people', 'board']) {
         const t = fs.readFileSync(f, 'utf8')
         for (const [re, what, allowed] of RULES) for (const m of t.matchAll(re)) if (!allowed(m[0])) errors.push(`${path.relative(ROOT, f)}: looks like ${what}: ${m[0].slice(0, 12)}…`)
     }
+    // the generated public JSON that pages read in the browser (WS-123): built from the sources above, but assembled,
+    // so it is checked as it ships too. me.json is every person's For-you slice; data.json each command centre's
+    const published = ['me.json', ...(fs.existsSync(path.join(ROOT, 'people')) ? fs.readdirSync(path.join(ROOT, 'people')).map(id => `people/${id}/app/data.json`) : [])]
+    for (const rel of published.filter(r => fs.existsSync(path.join(ROOT, r)))) {
+        const t = fs.readFileSync(path.join(ROOT, rel), 'utf8')
+        for (const [re, what, allowed] of RULES) for (const m of t.matchAll(re)) if (!allowed(m[0])) errors.push(`${rel} (generated): looks like ${what}: ${m[0].slice(0, 12)}…`)
+    }
     return errors
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
