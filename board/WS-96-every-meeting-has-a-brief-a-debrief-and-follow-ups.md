@@ -29,8 +29,9 @@ Recommendation: the rota or voice memo from today, Gemini notes when WS-98 allow
 
 One entry per stand-up, written by team-collaboration@web-summit.angelo about 40 minutes after it starts. A decision is recorded only in the decider's own words.
 
-### 3 November, 13:00 (pending: the stand-up ran past 13:45)
+### 3 November, 13:00 (pending: waiting for the transcript, checked 14:16 UTC)
 
 - **Not yet written.** The 13:40 run came while the stand-up was still going, so it records nothing yet; all items stay open until then. Dinis's transcription of the call is the source: once it is shared, team-collaboration@web-summit.angelo drafts each decision from the decider's own words, lists the follow-ups with an owner and a due time, and the chair confirms.
 - **Due today in the meantime, each with its owner on the board:** the print sign-off by 16:00 (WS-113) and the first LinkedIn post (WS-126).
+- **Checked at 14:16 UTC:** no decision from the 13:00 recorded in `data/meetings/`, and no transcript shared with Angelo's account yet. Every item stays open and goes to the 18:00 agenda.
 - **Learned:** the stand-ups run longer than 30 minutes, so a debrief at 40 minutes past is too early. It waits for the transcript instead.
