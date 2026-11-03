@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "set": "print",
+  "page": "/print/",
+  "person": "vicky",
+  "decision": "approved",
+  "said": "Sign off my print set. I've checked it and I'm happy with it.",
+  "note": "",
+  "by": "conductor@web-summit.vicky",
+  "at": "2026-11-03T10:34:47Z",
+  "files": {
+    "vicky-card-back.pdf": "5cfae217b07e84b16e97ad6806e8084456e6a98b161fbaa0cfc9c133c8f79322",
+    "vicky-card-back.svg": "ad7edf698a1a55d4445cf6fbc4e25300a37471db56cdcca26f29fd1ad8e6359d",
+    "vicky-card-front.pdf": "a0506dfd06bcb3fffe2a56c747b947924fdd7b9e4cc0d0d1040d1d9298dd2042",
+    "vicky-card-front.svg": "8dd294e27729444332a5a38cd5580defc808afb78805c96f7b322b2b63d99521",
+    "vicky-card.pdf": "ffc91befb552719ae2e2ceac13c40dd91efa98247715704e63a63fb2ee3f0d1e",
+    "vicky-hoodie-back.pdf": "c6a0782d7d62baaefb398020a9fb4a25227259df45b7945b3fdabcd0c5f2a3c3",
+    "vicky-hoodie-back.png": "987059bbe8725b2ed93a19a6857ad729f639ab0de40400e937457ddef195e732",
+    "vicky-hoodie-back.svg": "5dc2c87c5b6e4473fabdc96393180f44a0a56b3b09566a03c16161c2b4ce6272",
+    "vicky-hoodie-chest.pdf": "4f537034ae7f9ec1e11a0256d2ae148ca120b2b8284bf913915c2c8bbc903a6e",
+    "vicky-hoodie-chest.png": "c249192b355fd1a7866764a3046f1ed63bd56135dd974b068f1d642c8b60e2e4",
+    "vicky-hoodie-chest.svg": "adb0437e9483e6faa0eba1dd1bbc2a19e047b3d551b04cafa97667afc6537a72",
+    "vicky-tee-back.pdf": "06b44bb9ee07d43462acb941fd083eea7420b5adb9496ca9ac923ae6ab9dab9d",
+    "vicky-tee-back.png": "542d514392872ac99fa0bc250962609bf26c19e74b9d324d61c0ef538ea4533c",
+    "vicky-tee-back.svg": "6bc47b134f3151b0f10f019c1294bf8a3aaad9d7581647e9fa26a8f078150065",
+    "vicky-tee-front-small.pdf": "cdcd04fab63e2ec51aae43376d15f85a4db34023ce07dce66956c28c3a9074b9",
+    "vicky-tee-front-small.png": "99187b33d50216a790d8c54de64f9c793910f49fe516399b786296d9bf74f1d3",
+    "vicky-tee-front-small.svg": "8cba60a2247a714f370ad83eb09a050b0235e49a0473fd13b37085b8f232a82b",
+    "vicky-tee-front.pdf": "32a95dcd22da5c9dc0ed6a6341a23f55c05ab5cbe52a6d32cba9dafbecc25c35",
+    "vicky-tee-front.png": "f0458edd292e157678e0f84dfe8c64e766d32468dde2d78398c0ededf34ab33e",
+    "vicky-tee-front.svg": "a094b535d2cd7e00ed9622e31435d0f4ee0fbd60ddf5fc7ed4a4d05198d7797d"
+  }
+}
