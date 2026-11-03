@@ -12,8 +12,8 @@ everything goes in one zip for the printers, and content/print.md (the page /pri
 
 RiskMandate only (Dinis, 2 November 2026): no sponsor, no other brand, no Web Summit name or logo on anything printed.
 
-Needs: pip install fonttools (a scratch venv is fine), and the Inter font (OFL; /usr/share/fonts/opentype/inter/ in the cloud
-sessions, or https://rsms.me/inter/). Apache-2.0. By designer@web-summit.dinis.
+Needs: pip install fonttools (a scratch venv is fine). The font, Barlow Condensed (SIL Open Font License 1.1), is fetched
+on the first run from github.com/google/fonts into ~/.cache/web-summit-fonts (or $BARLOW_DIR). Apache-2.0. By designer@web-summit.dinis.
 """
 import html, json, os, re, subprocess, sys, zipfile
 from fontTools.ttLib import TTFont
@@ -27,8 +27,16 @@ F = json.load(open(os.path.join(HERE, 'final.json')))
 PEOPLE = {p['id']: p for p in D['people']}
 TEES = {t['id']: t for t in D['tees']}
 HOODIES = {h['id']: h for h in D['hoodies']}
-FONTDIR = os.environ.get('INTER_DIR', '/usr/share/fonts/opentype/inter')
-FONTS = {w: TTFont(os.path.join(FONTDIR, f'Inter-{w}.otf')) for w in ['Medium', 'SemiBold', 'Bold', 'ExtraBold', 'Black']}
+# the poster style Dinis chose (3 November): Barlow Condensed (SIL Open Font License 1.1), fetched once from the Google Fonts
+# repository into a cache outside the repository (a font is binary, and the gate reads every file in team/ as text)
+FONTDIR = os.environ.get('BARLOW_DIR', os.path.expanduser('~/.cache/web-summit-fonts'))
+FONT_URL = 'https://raw.githubusercontent.com/google/fonts/main/ofl/barlowcondensed/BarlowCondensed-{w}.ttf'
+def font(w):
+    p = os.path.join(FONTDIR, f'BarlowCondensed-{w}.ttf')
+    if not os.path.exists(p):
+        import urllib.request; os.makedirs(FONTDIR, exist_ok=True); urllib.request.urlretrieve(FONT_URL.format(w=w), p)
+    return TTFont(p)
+FONTS = {w: font(w) for w in ['Light', 'Medium', 'SemiBold', 'Bold', 'ExtraBold']}
 WHITE, BLACK = '#FFFFFF', '#000000'
 SITE = 'https://web-summit.sgit.ai'
 
@@ -75,12 +83,23 @@ def stack(blocks, width):
         if b[0] == 'gap': y += b[1]; continue
         if b[0] == 'qr':
             g, panel = qr(b[1], (width - b[2] * 37 / 29) / 2, y, b[2]); body += g; y += panel; continue
+        if b[0] == 'rule':  # a short divider: ('rule', width, thickness, fill)
+            body += f'<rect x="{(width - b[1]) / 2:.2f}" y="{y:.2f}" width="{b[1]:.2f}" height="{b[2]:.2f}" fill="{b[3]}"/>'; y += b[2]; continue
+        if b[0] == 'mark':  # the wordmark, RISK light and MANDATE bold: ('mark', width, fill)
+            g, h = mark(width / 2, y, b[1], b[2]); body += g; y += h; continue
         _, ls, w, size, fill, lead = b
         ch = cap_height(w) * size
         for i, l in enumerate(ls):
             y += ch if i == 0 else size * lead
             body += text(l, w, size, width / 2, y, fill)
     return body, y
+
+def mark(cx, top, width, fill):
+    """RISK MANDATE, as on the example: RISK light, MANDATE bold, a space between; centred on cx, width wide."""
+    gap = 0.22
+    total = width1('RISK', 'Light') + gap + width1('MANDATE', 'Bold'); size = width / total
+    ch = cap_height('Bold') * size; x0 = cx - width / 2
+    return (text('RISK', 'Light', size, x0, top + ch, fill, 'start') + text('MANDATE', 'Bold', size, x0 + (width1('RISK', 'Light') + gap) * size, top + ch, fill, 'start')), ch
 
 def ink(p): return WHITE if p['ink'].lower() in ('#fff', '#ffffff') else BLACK
 
@@ -90,39 +109,38 @@ def person_parts(pid):
     return p, fp, t, front, sub
 
 def tee_front(pid):
+    """The example's front: the line in condensed capitals, a divider, the wordmark, the shirt's tagline."""
     p, fp, t, front, sub = person_parts(pid); W = F['garments']['tee']['front']['width_mm']; c = ink(p)
-    size = fit(front, 'ExtraBold', W, 52)
-    blocks = [('lines', front, 'ExtraBold', size, c, 1.12)]
-    if sub: blocks += [('gap', size * 0.45), ('lines', [sub], 'Medium', min(size * 0.42, W / width1(sub, 'Medium')), c, 1.2)]
-    if 'RISK' not in ''.join(front):  # the name on every front, under the line (T5's line is the name)
-        blocks += [('gap', size * 0.75), ('lines', ['RISKMANDATE'], 'Black', 100 / width1('RISKMANDATE', 'Black'), c, 1)]
+    size = fit(front, 'ExtraBold', W, 80)
+    blocks = [('lines', front, 'ExtraBold', size, c, 0.98), ('gap', size * 0.55), ('rule', 40, 1.5, c), ('gap', size * 0.5), ('mark', 160, c)]
+    if fp.get('tagline'): blocks += [('gap', 5), ('lines', [fp['tagline']], 'Medium', min(11.5, 160 / width1(fp['tagline'], 'Medium')), c, 1)]
     body, h = stack(blocks, W)
-    return svg(W, h + 1, body, f"{p['first']}: T-shirt front ({fp['tee']}), print {W} mm wide"), W, h + 1
+    return svg(W, h + 2, body, f"{p['first']}: T-shirt front ({fp['tee']}), print {W} mm wide"), W, h + 2
 
 def back_blocks(pid, W, lines, code, c, big_cap):
-    p = PEOPLE[pid]; blocks = []
+    """The example's back: (the hoodie's line,) the wordmark and 'Agents with a Mandate', the person's QR, the three asks."""
+    blocks = []
     if lines:
-        s = fit(lines, 'ExtraBold', W, big_cap); blocks += [('lines', lines, 'ExtraBold', s, c, 1.12), ('gap', s * 0.6)]
-    scan = f"SCAN TO MEET {p['first'].upper()}"
-    blocks += [('qr', pid, code), ('gap', 9), ('lines', [scan], 'ExtraBold', min(10, W / width1(scan, 'ExtraBold')), c, 1),
-               ('gap', 5), ('lines', ['book a meeting · talk to my agent'], 'Medium', min(6.5, W / width1('book a meeting · talk to my agent', 'Medium')), c, 1),
-               ('gap', 12), ('lines', ['RISKMANDATE'], 'Black', (W * 0.55) / width1('RISKMANDATE', 'Black'), c, 1)]
+        s_ = fit(lines, 'ExtraBold', W, big_cap); blocks += [('lines', lines, 'ExtraBold', s_, c, 0.98), ('gap', s_ * 0.5), ('rule', 34, 1.2, c), ('gap', s_ * 0.45)]
+    mw = min(W * 0.8, 175)
+    blocks += [('mark', mw, c), ('gap', 4), ('lines', ['Agents with a Mandate'], 'Medium', mw * 0.11, c, 1), ('gap', 10), ('qr', pid, code), ('gap', 10),
+               ('lines', ['Meet me', 'Book a meeting', 'Talk to my agent'], 'SemiBold', min(13, W / width1('Talk to my agent', 'SemiBold')), c, 1.25)]
     return blocks
 
 def tee_back(pid):
-    p, fp, t, front, sub = person_parts(pid); W = F['garments']['tee']['back']['width_mm']
-    body, h = stack(back_blocks(pid, W, t.get('back') if not t.get('chest') else None, F['garments']['tee']['qr_code_mm'], ink(p), 40), W)
-    return svg(W, h + 1, body, f"{p['first']}: T-shirt back, print {W} mm wide"), W, h + 1
+    p = PEOPLE[pid]; W = F['garments']['tee']['back']['width_mm']
+    body, h = stack(back_blocks(pid, W, None, F['garments']['tee']['qr_code_mm'], ink(p), 40), W)
+    return svg(W, h + 2, body, f"{p['first']}: T-shirt back, print {W} mm wide"), W, h + 2
 
 def hoodie_chest(pid):
     p = PEOPLE[pid]; W = F['garments']['hoodie']['chest']['width_mm']
-    body, h = stack([('lines', ['RISKMANDATE'], 'Black', W / width1('RISKMANDATE', 'Black'), ink(p), 1)], W)
-    return svg(W, h + 0.5, body, f"{p['first']}: hoodie chest, print {W} mm wide"), W, h + 0.5
+    g, h = mark(W / 2, 0, W, ink(p))
+    return svg(W, h + 0.5, g, f"{p['first']}: hoodie chest, print {W} mm wide"), W, h + 0.5
 
 def hoodie_back(pid):
     p = PEOPLE[pid]; hd = HOODIES[F['garments']['hoodie']['design']]; W = F['garments']['hoodie']['back']['width_mm']
-    body, h = stack(back_blocks(pid, W, hd['back'], F['garments']['hoodie']['qr_code_mm'], ink(p), 70), W)
-    return svg(W, h + 1, body, f"{p['first']}: hoodie back ({hd['id']}), print {W} mm wide"), W, h + 1
+    body, h = stack(back_blocks(pid, W, hd['back'], F['garments']['hoodie']['qr_code_mm'], ink(p), 80), W)
+    return svg(W, h + 2, body, f"{p['first']}: hoodie back ({hd['id']}), print {W} mm wide"), W, h + 2
 
 def card(pid, side):
     """C1: white, a band in the person's colour, their name and line; the back their QR. Trim 85 x 55, 3 mm bleed."""
@@ -130,19 +148,18 @@ def card(pid, side):
     dark = ink(p) == WHITE
     if side == 'front':
         body = f'<rect x="0" y="0" width="{b + 9}" height="{H}" fill="{p["colour"]}"/>'
-        x = b + 15
-        body += text(p['name'], 'Bold', min(5.6, (tw - 18) / width1(p['name'], 'Bold')), x, b + 17, '#111111', 'start')
-        body += text('RiskMandate', 'Medium', 3.0, x, b + 22.6, '#555555', 'start')
+        x = b + 15; room = tw - 18
+        body += text(p['name'], 'Bold', min(7.2, room / width1(p['name'], 'Bold')), x, b + 16, '#111111', 'start')
         line = f"“{p['line']}”"; ls = [line]
-        if width1(line, 'SemiBold') * 3.2 > tw - 18:  # two lines, split near the middle at a space
+        if width1(line, 'SemiBold') * 4.2 > room:  # two lines, split near the middle at a space
             words = line.split(' '); k = max(range(1, len(words)), key=lambda i: -abs(len(' '.join(words[:i])) - len(line) / 2)); ls = [' '.join(words[:k]), ' '.join(words[k:])]
-        for i, l in enumerate(ls): body += text(l, 'SemiBold', min(3.2, (tw - 18) / width1(l, 'SemiBold')), x, b + 33 + i * 4.4, '#111111', 'start')
-        body += text('RISKMANDATE', 'Black', 2.9, x, b + th - 6, p['colour'] if dark else '#111111', 'start')
+        for i, l in enumerate(ls): body += text(l, 'SemiBold', min(4.2, room / width1(l, 'SemiBold')), x, b + 27 + i * 5.2, '#111111', 'start')
+        g, _ = mark(x + 17, b + th - 10, 34, p['colour'] if dark else '#111111'); body += g
         return svg(W, H, body, f"{p['first']}: business card front (C1), trim {tw} x {th} mm, {b} mm bleed", bg=WHITE), W, H
     g, panel = qr(pid, b + 4.5, b + (th - C['qr_code_mm'] * 37 / 29) / 2, C['qr_code_mm'])
     x = b + 4.5 + panel + 4
-    body = g + ''.join(text(l, 'Bold', 3.5, x, b + 19 + i * 5.6, '#111111', 'start') for i, l in enumerate(['Meet me', 'Book a meeting', 'Talk to my agent']))
-    body += text('web-summit.sgit.ai', 'Medium', 2.5, x, b + 41, '#555555', 'start') + text(f'/meet/{pid}/', 'Medium', 2.5, x, b + 44.4, '#555555', 'start')
+    body = g + ''.join(text(l, 'SemiBold', 4.4, x, b + 19 + i * 5.8, '#111111', 'start') for i, l in enumerate(['Meet me', 'Book a meeting', 'Talk to my agent']))
+    body += text('web-summit.sgit.ai', 'Medium', 3.0, x, b + 41, '#555555', 'start') + text(f'/meet/{pid}/', 'Medium', 3.0, x, b + 44.6, '#555555', 'start')
     return svg(W, H, body, f"{p['first']}: business card back (C1), trim {tw} x {th} mm, {b} mm bleed", bg=WHITE), W, H
 
 TEE = 'M120,30 L165,10 Q200,40 235,10 L280,30 L380,90 L345,150 L305,128 L305,470 L95,470 L95,128 L55,150 L20,90 Z'
@@ -233,8 +250,8 @@ for fp in F['people']:
 |---|---|
 | **Sign-off** | {status} |
 | **Colour** | {p['colour']} (about C{c} M{m} Y{y} K{k}); ink **{'white' if ink(p) == WHITE else 'black'}** |
-| **T-shirt ({fp['tee']}), x {F['garments']['tee']['count_each']}** | front: "{' '.join(front)}"{f' / "{sub}"' if sub else ''}; back: {'"' + ' '.join(t['back']) + '", ' if t.get('back') and not t.get('chest') else ''}the QR to {SITE}/meet/{pid}/ |
-| **Hoodie ({F['garments']['hoodie']['design']}), x {F['garments']['hoodie']['count_each']}** | chest: RISKMANDATE; back: "{' '.join(HOODIES[F['garments']['hoodie']['design']]['back'])}", the QR |
+| **T-shirt ({fp['tee']}), x {F['garments']['tee']['count_each']}** | front: "{' '.join(front)}", then RISK MANDATE and "{fp.get('tagline', '')}"; back: RISK MANDATE, "Agents with a Mandate", the QR to {SITE}/meet/{pid}/, "Meet me / Book a meeting / Talk to my agent" |
+| **Hoodie ({F['garments']['hoodie']['design']}), x {F['garments']['hoodie']['count_each']}** | chest: RISK MANDATE; back: "{' '.join(HOODIES[F['garments']['hoodie']['design']]['back'])}", then the T-shirt's back |
 | **Card ({F['card']['design']}), x {F['card']['count_each']}** | "{p['line']}" |
 | **T-shirt files** | front [SVG]({U}/files/{pid}/{pid}-tee-front.svg) · [PDF]({U}/files/{pid}/{pid}-tee-front.pdf) · [PNG]({U}/files/{pid}/{pid}-tee-front.png) ({mmx(fp['_size']['tee-front'])}); back [SVG]({U}/files/{pid}/{pid}-tee-back.svg) · [PDF]({U}/files/{pid}/{pid}-tee-back.pdf) · [PNG]({U}/files/{pid}/{pid}-tee-back.png) ({mmx(fp['_size']['tee-back'])}) |
 | **Hoodie files** | chest [SVG]({U}/files/{pid}/{pid}-hoodie-chest.svg) · [PDF]({U}/files/{pid}/{pid}-hoodie-chest.pdf) · [PNG]({U}/files/{pid}/{pid}-hoodie-chest.png) ({mmx(fp['_size']['hoodie-chest'])}); back [SVG]({U}/files/{pid}/{pid}-hoodie-back.svg) · [PDF]({U}/files/{pid}/{pid}-hoodie-back.pdf) · [PNG]({U}/files/{pid}/{pid}-hoodie-back.png) ({mmx(fp['_size']['hoodie-back'])}) |
@@ -262,6 +279,7 @@ summary: Everything a printer needs for the Web Summit 2026 team's RiskMandate m
 ## The rules {{#rules}}
 
 {chr(10).join('- ' + r for r in F['rules'])}
+- **Style:** the print order's example picture, chosen by Dinis on 3 November: the line in condensed capitals, a divider, RISK MANDATE, a tagline; the back with the wordmark, the QR and the three asks.
 - **Files:** SVG and PDF are vector at 100%, every letter converted to outlines, so no fonts are needed. PNG is 300 dpi with a transparent background, at the print size. Print at 100%, never scaled to fit.
 - **Ink:** white or black, as given for each person, on the garment's colour. The colours below are the garment colours; the CMYK values are a naive conversion for reference: match the blank to the colour, or tell Silvio the nearest you have.
 - **The QR code** is black on its own white panel with its quiet zone: never recolour it, crop into the white border, or print it smaller than given ({G['tee']['qr_code_mm']} mm on a T-shirt, {G['hoodie']['qr_code_mm']} mm on a hoodie, {C['qr_code_mm']} mm on a card). Each person's code goes on that person's items only.
