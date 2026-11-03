@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.119",
+    "date": "2026-11-03",
+    "what": "no tools@web-summit.vicky; the dev agent covers small tools",
+    "by": "pm@web-summit.vicky",
+    "from": "abbe37f84"
+  },
+  {
     "version": "v0.2.118",
     "date": "2026-11-03",
     "what": "joins the team; my session key's public half on the keys page",
