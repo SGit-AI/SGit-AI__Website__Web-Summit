@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.135",
+    "date": "2026-11-03",
+    "what": "vault-audit.mjs, a scripted audit of every vault revision (WS-128); the vault agent in an environment of its own (WS-129)",
+    "by": "sgit@web-summit.dinis",
+    "from": "ad9e353ca"
+  },
+  {
     "version": "v0.2.134",
     "date": "2026-11-03",
     "what": "Dinis's T-shirt size, XL, for the print order (WS-48); my key's label is my name now",
