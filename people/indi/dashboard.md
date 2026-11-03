@@ -15,9 +15,9 @@ Remote until Thursday 5 November. Where you are, and the next step ([how](../../
 
 Your conductor, dev and dashboard agents are running; the prompts are in [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/indi/kit/README.md). For agent keys, allow `pki.sgit.ai` in your Claude environment's network settings.
 
-### Your go on the first factory page {#factory-go}
+### The factory: one infographic per company {#factory}
 
-dev@web-summit.indi is ready to build one page for one target company (WS-27): the analysis, the risks and how RiskMandate helps. It needs from you the company, or a yes to its pick.
+**[Open the factory](factory/index.html)** (WS-27): for each company we want to meet, what it does, the risks it faces from AI agents and how RiskMandate helps, in pictures, in normal and lay terms side by side. Built by dev@web-summit.indi at your go (3 November); review each before it is used.
 
 ### Five answers the team needs {#card}
 

@@ -1,0 +1,82 @@
+{
+  "about": "The factory (WS-27): our analysis per target company, rendered by people/indi/pages.mjs. The sourced facts (name, what it does, sources) come from data/companies.json; everything here is analysis, not the company's statements. Written by dev@web-summit.indi.",
+  "written": "3 November 2026",
+  "intro": "For every company we want to meet at Web Summit: what it does, the risks it faces from AI agents, and how RiskMandate helps, each in normal terms and in lay terms side by side. To help the team understand what we are doing and why each conversation matters.",
+  "riskmandate": {
+    "reach": "Everything an AI agent can actually access or affect: systems, data, actions, connectors.",
+    "mandate": "What the business has authorised it to do: the task, the scope, the purpose.",
+    "gap": "What the agent could do but was never asked to. This is where the risk lives.",
+    "barriers": "The real controls that stop unwanted behaviour, each with evidence: technical, rule or review.",
+    "provenance": "Who owns the agent, who reviewed it, and which version is running.",
+    "n": "RiskMandate gives every AI agent an Agent Behaviour Policy: a factual record of its Reach, its Mandate, the Gap between them, the Barriers that hold, and its Provenance, ending in a Licence to Operate. Operators, security, leadership and insurers each read the same record from their own side. The line: know their reach, define their mandate, control the gap.",
+    "l": "An AI agent is like a new employee with a master key. RiskMandate writes down which doors the key opens, which rooms the employee is actually meant to be in, and what stops them wandering into the others. Then everyone, from the boss to the insurer, can see it on one page."
+  },
+  "companies": [
+    {
+      "id": "hexamind",
+      "tagline": "An open-source gatekeeper for every tool an AI agent calls: the closest neighbour to what we do.",
+      "flow": ["Hexgate: an open-source permission layer", "Developers wire it between agent and tools", "Every tool call: allow, deny or ask a human"],
+      "what_n": "Hexgate sits between an agent and its tools and enforces the company's policy on each call, by role, with signed policy bundles and an audit trail.",
+      "what_l": "Hexamind makes a bouncer for AI assistants. Every time an assistant tries to do something, the bouncer checks the list and says yes, no, or 'ask a person first'.",
+      "risks": [
+        {"t": "Policy says yes, business says no", "n": "A gate enforces whatever the policy says; if the policy is wider than the agent's real task, the gate faithfully allows the wrong thing.", "l": "A bouncer with the wrong guest list lets the wrong people in, politely."},
+        {"t": "Approval fatigue", "n": "Human approval steps on frequent tool calls get rubber-stamped, turning a control into a formality.", "l": "If the bouncer asks the manager every five minutes, the manager starts saying yes without looking."},
+        {"t": "Proving it to the buyer", "n": "Enterprises and insurers need evidence that the gate covers every path the agent has, not only the tools it was wired to.", "l": "The bouncer only guards the front door. Who checks the back door?"}
+      ],
+      "helps": {
+        "reach": "Every tool and data path each agent can reach, not only those behind the gate.",
+        "mandate": "The task each agent was approved for, written down by the business.",
+        "gap": "Tools the gate allows that the mandate never needed.",
+        "barriers": "Hexgate becomes a named technical barrier, with its audit trail as evidence.",
+        "provenance": "Who signed each policy bundle, who reviewed it, which version runs.",
+        "n": "RiskMandate is the record above the gate: it says what the gate's policy should be, from the mandate, and shows the gate as evidence that the barrier holds. Hexgate enforces; RiskMandate explains and proves. A joint demo writes a policy in RiskMandate and enforces it in Hexgate.",
+        "l": "Hexamind builds the bouncer; RiskMandate writes the guest list and shows the insurer the bouncer is doing the job."
+      },
+      "opener": "Your gate enforces the policy; we write down what the policy should be and prove it holds. Shall we try one agent together?"
+    },
+    {
+      "id": "1password",
+      "tagline": "Passwords and secrets for 150,000 businesses, now including the AI agents that log in on their behalf.",
+      "flow": ["Passwords, passkeys and secrets", "For people, machines and AI agents", "How agents log in and connect"],
+      "what_n": "1Password is building a security layer for how agents authenticate and connect, so agent credentials are held and handed out like human ones.",
+      "what_l": "1Password is a safe for keys. Now it also hands keys to AI assistants, so they can open the doors they need without anyone writing passwords on sticky notes.",
+      "risks": [
+        {"t": "A key that opens too much", "n": "An agent given a vault item or broad token inherits everything that credential can reach, far beyond its task.", "l": "Give the assistant the office key and it can open the finance room too."},
+        {"t": "Credentials outlive the task", "n": "Long-lived secrets issued to agents stay valid after the work ends or the agent is replaced.", "l": "The temp left, but their key still works."},
+        {"t": "Who used the key?", "n": "Shared or delegated credentials blur attribution between the person, the agent and the session.", "l": "If three people share one badge, the log can't say who went in."}
+      ],
+      "helps": {
+        "reach": "Which secrets and vault items each agent can retrieve, and what they unlock.",
+        "mandate": "The few credentials the agent's job actually needs.",
+        "gap": "Secrets in reach but outside the mandate: the first thing to cut.",
+        "barriers": "Scoped, short-lived credentials from 1Password as technical evidence.",
+        "provenance": "The person who granted each credential and when it was reviewed.",
+        "n": "RiskMandate turns 'what can this agent unlock' into a reviewed record per agent, so 1Password's controls map to a stated mandate. Customers get a reason for each grant, and a gap list to close.",
+        "l": "1Password hands out the keys; RiskMandate keeps the list of which keys each assistant should have, and spots the spare ones."
+      },
+      "opener": "You hand agents their keys. We write down which keys each agent should have, and show the gap. Could we map one of yours?"
+    },
+    {
+      "id": "replit",
+      "tagline": "Anyone can build an app by describing it; the agent writes, runs and ships the code.",
+      "flow": ["Describe an app in plain words", "Replit's agent writes and runs the code", "Millions of users, 500,000+ businesses"],
+      "what_n": "Replit's agent turns natural-language requests into working, deployed applications, so people who do not code can build software.",
+      "what_l": "You tell Replit what app you want, like you'd tell a builder what house you want, and its AI builds it for you.",
+      "risks": [
+        {"t": "The agent touches production", "n": "A coding agent with deploy and database rights can change or delete live data while doing an unrelated task.", "l": "Asked to repaint a room, the builder knocks down a wall."},
+        {"t": "Builders who can't review", "n": "Non-developers cannot judge what the agent changed, so mistakes and unsafe code ship unseen.", "l": "If you can't read the plans, you can't spot the missing fire exit."},
+        {"t": "Secrets and data in the app", "n": "Agent-built apps can embed keys, expose customer data or call services the owner never meant to use.", "l": "The house gets built with the spare key taped to the front door."}
+      ],
+      "helps": {
+        "reach": "What the agent can change: code, databases, deploys, connected services.",
+        "mandate": "What the builder actually asked for, in their words.",
+        "gap": "Changes beyond the request, such as deleting data or new services.",
+        "barriers": "Checkpoints, rollbacks and separate environments, named with evidence.",
+        "provenance": "Who asked, which agent version built it, who approved the deploy.",
+        "n": "For Replit's business users, RiskMandate makes each agent's licence to operate explicit: what it may touch, what it may not, and what stops it. That is the record a company's security team or insurer asks for before letting staff build with agents.",
+        "l": "RiskMandate is the building permit: it says what the builder may change, and checks nothing else was touched."
+      },
+      "opener": "Your users build with agents. Their security teams will ask what those agents may touch. We answer that, per agent."
+    }
+  ]
+}

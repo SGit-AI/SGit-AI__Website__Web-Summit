@@ -510,6 +510,18 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     twin(rel, meta.title, meta.summary, body)
 }
 
+// a person's own extra pages (WS-27, dev@web-summit.indi, 3 November): people/<id>/pages.mjs exports
+// build(ROOT) -> [{rel, title, description, body (HTML), md (the twin), head?}], every rel under people/<id>/.
+for (const m of teamData.members.filter(m => m.kind === 'human')) {
+    const f = path.join(ROOT, 'people', m.id, 'pages.mjs')
+    if (!fs.existsSync(f)) continue
+    for (const p of (await import(f)).build(ROOT)) {
+        if (!p.rel.startsWith(`people/${m.id}/`) || !p.rel.endsWith('.html')) throw new Error(`people/${m.id}/pages.mjs: ${p.rel} is outside people/${m.id}/`)
+        write(p.rel, page({ rel: p.rel, title: p.title, description: p.description, body: p.body, head: p.head || '', mdTwin: twinPath(p.rel) }))
+        pages.push({ rel: p.rel, title: p.title, description: p.description }); twin(p.rel, p.title, p.description, p.md)
+    }
+}
+
 // a person's command centre (WS-06; Silvio's design, made shared on 3 November at Dinis's word): every person with a
 // people/<id>/ folder gets people/<id>/app/, built by admin/build/commandcentre.mjs with the front end in assets/cc/
 // (their agents may add people/<id>/app/config.json). A person's own people/<id>/app/data.mjs, app.css and app.js
