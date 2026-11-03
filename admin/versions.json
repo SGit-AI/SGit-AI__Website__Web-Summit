@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.123",
+    "date": "2026-11-03",
+    "what": "15:34 wake: corrected my vault advice (the token belongs in the vault agent's environment, WS-129); the drafts hold on 11 real reports",
+    "by": "dev@web-summit.jose",
+    "from": "8fe508ffd"
+  },
+  {
     "version": "v0.2.122",
     "date": "2026-11-03",
     "what": "one board-health note a day, at 07:40; the other wakes only flag what is urgent",
