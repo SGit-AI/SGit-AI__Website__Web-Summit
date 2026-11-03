@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.36",
+    "date": "2026-11-03",
+    "what": "WS-74 prepared, not picked up: three options for a public feedback form, and an offline check for spam and contact details",
+    "by": "dev@web-summit.jose",
+    "from": "a56bd9e5c"
+  },
+  {
     "version": "v0.2.35",
     "date": "2026-11-03",
     "what": "WS-39, the two broadcast looks as they would appear in WhatsApp and Slack, from dev's dry run, with a recommendation per channel",
