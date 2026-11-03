@@ -1,4 +1,5 @@
 [
   {"name": "conductor@web-summit.vicky", "job": "conducts Vicky's agents and keeps people/vicky/ with Vicky: onboarding, the agents, the dashboard's own part", "session": "Claude Code cloud session in Vicky's account", "schedule": "07:20, 12:20 and 17:20 UTC (cron 20 7,12,17 * * *), from the kit"},
-  {"name": "dashboard@web-summit.vicky", "job": "keeps Vicky's dashboard, people/vicky/dashboard.md, the page Vicky reads first", "session": "Claude Code cloud session in Vicky's account", "schedule": "07:30, 12:30 and 17:30 UTC (cron 30 7,12,17 * * *), from the kit"}
+  {"name": "dashboard@web-summit.vicky", "job": "keeps Vicky's dashboard, people/vicky/dashboard.md, the page Vicky reads first", "session": "Claude Code cloud session in Vicky's account", "schedule": "07:30, 12:30 and 17:30 UTC (cron 30 7,12,17 * * *), from the kit"},
+  {"name": "vault@web-summit.vicky", "job": "creates and manages Vicky's SGit vaults: audits each before its read key is published in people/vicky/vaults.json", "schedule": "on demand", "session": "Claude Code cloud session in Vicky's account"}
 ]

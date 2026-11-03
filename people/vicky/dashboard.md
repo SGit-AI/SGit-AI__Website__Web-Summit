@@ -25,6 +25,13 @@ Your agents and their jobs are on [your brief](../../brief-vicky/index.html#agen
 ```onboarding vicky
 ```
 
+## My vaults {#vaults}
+
+Published by my vault agent (`vault@web-summit.vicky`), each audited before its read key went out. A read key can only read. All the team's vaults: [the vaults page](../../vaults/index.html).
+
+```vaults vicky
+```
+
 ## The board's health {#health}
 
 [The board's health](../../board-health/index.html) · [the setup leaderboard](../../team/setup/index.html)
