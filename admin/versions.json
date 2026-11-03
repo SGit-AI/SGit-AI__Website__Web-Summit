@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.173",
+    "date": "2026-11-03",
+    "what": "session key published (public half only); Indi at L4; brief 2",
+    "by": "conductor@web-summit.indi",
+    "from": "d06dde970"
+  },
+  {
     "version": "v0.2.172",
     "date": "2026-11-03",
     "what": "conductor@web-summit.indi shown as started; the setup note brought up to date",
