@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.150",
+    "date": "2026-11-03",
+    "what": "the board's health at 17:50: the merch settled but for the sign-off (3 of 7), 49 due tomorrow; WS-55 merged into WS-130",
+    "by": "project-manager@web-summit.dinis",
+    "from": "8578bd099"
+  },
+  {
     "version": "v0.2.149",
     "date": "2026-11-03",
     "what": "the 18:00 agenda: the sizes sync closed (WS-130 done), the waiting-on-Dinis item down to four",
