@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.165",
+    "date": "2026-11-03",
+    "what": "the 20:57 report, the day's newsletter, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "0e7fa43dc"
+  },
+  {
     "version": "v0.2.164",
     "date": "2026-11-03",
     "what": "seal.mjs refuses a shallow clone; the owner's copy of a vault key; no key anywhere in the clone (from vault@web-summit.vicky's notes)",
