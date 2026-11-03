@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.62",
+    "date": "2026-11-03",
+    "what": "WS-125, the everybody-else guide; capture in WS-96; tool gaps in WS-107; two 13:00 decisions",
+    "by": "conductor@web-summit.angelo",
+    "from": "426447b1b"
+  },
+  {
     "version": "v0.2.61",
     "date": "2026-11-03",
     "what": "WS-113: the four printer's fixes in the files, and the Official Sign-off on /print/",
