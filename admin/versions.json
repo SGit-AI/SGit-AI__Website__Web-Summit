@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.5",
+    "date": "2026-11-03",
+    "what": "the mentors' ABP; every ABP records main pushed once and still unprotected",
+    "by": "abp@web-summit.dinis",
+    "from": "23d306305"
+  },
+  {
     "version": "v0.2.4",
     "date": "2026-11-03",
     "what": "the print files for the RiskMandate merch on /print/, for sign-off; the sponsor material removed",
