@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.14",
+    "date": "2026-11-03",
+    "what": "the 00:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "9a59fdf09"
+  },
+  {
     "version": "v0.2.13",
     "date": "2026-11-03",
     "what": "my session key on the keys page (public half only, id dashboard-jose), and Jose's dashboard reshaped around what needs Jose",
