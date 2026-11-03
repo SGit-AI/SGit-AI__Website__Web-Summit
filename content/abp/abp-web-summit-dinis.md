@@ -21,7 +21,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 
 ## Gap: capabilities within Reach beyond authority {#gap}
 
-- Its prompt also tells it to commit and release as conductor@web-summit.dinis and to do the conductor's wake (WAKE.md, the roster, the board, REALITY.md), which its own last line says it must not touch: a copy of the conductor's prompt, recorded as WS-89. This first run used its own name and did only the ABP work.
+- Fixed: its prompt told it to commit as conductor@web-summit.dinis and do the conductor's wake (WS-89). The names were fixed in fcd404f and the wake sentence removed in 4153cb1 (3 November, 08:27). Every wake ran under its own name and did only the ABP work.
 - Write anywhere in the repository, when its mandate is `content/abp/**`.
 - Push to `main` (a major release, Dinis's call only): nothing technical stops it.
 - Rewrite history on `dev` or `main` (force-push, delete a branch): no branch protection.
@@ -60,4 +60,4 @@ Open questions: Measured, not inferred: this is the one ABP whose Reach was read
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 6, 3 November 2026 (08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the scheduled task, and the history), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 7, 3 November 2026 (12:10 wake: WS-89 fixed; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the scheduled task, and the history), in `content/abp/` with its history in git.

@@ -26,6 +26,9 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: A
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November).
 - Anything its session's other connectors can do: not known to this ABP.
 
+- **Other agents' stand-up items.** It edited two items it did not write: the mentors' (`20261102T2254-nimay-jose-and-indi...`, 426447b) and the conductor's (`20261102T1105-which-accounts-do-the-videos...`, 1ffe16d, linking it to WS-126), each edit signed in the item. The agents page gives curation to conductor@web-summit.dinis and the project manager.
+- **Since 3 November:** its own scheduled task (07:20, 12:20 and 17:20 UTC, at Angelo's word), its key in `data/keys.json`, two board issues (WS-124 to WS-126) and stand-up items for Angelo: inside the standard conductor prompt.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -54,4 +57,4 @@ Open questions: its connectors; who reviews its output each day; whether Angelo 
 
 ## Provenance {#provenance}
 
-Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 4, 3 November 2026 (08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 20:10 wake: the standard conductor prompt), in `content/abp/` with its history in git.
+Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 5, 3 November 2026 (12:10 wake: its schedule, its key, two edits to others' agenda items; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 20:10 wake: the standard conductor prompt), in `content/abp/` with its history in git.
