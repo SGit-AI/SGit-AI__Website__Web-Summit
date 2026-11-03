@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.155",
+    "date": "2026-11-03",
+    "what": "the 18:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "2b15a78ff"
+  },
+  {
     "version": "v0.2.154",
     "date": "2026-11-03",
     "what": "Indi invited to the repository by Angelo; riskmandate-indi for the roster",
