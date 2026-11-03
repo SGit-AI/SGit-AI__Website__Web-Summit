@@ -4,16 +4,16 @@ summary: The page Angelo reads first. The top is built for Angelo; the rest is k
 ---
 **Your first view is [the command centre](app/index.html)** (your answer, 3 November). This classic page is kept in the same order, as the text version and the fallback: what's pending for you, is everyone connected, the machine, the technical pool with Jose, and your agents. Kept by `dashboard@web-summit.angelo`; tell it what you want first and what you never read.
 
-**My question for you (12:30 run):** what do you never read on this page or in the command centre? I'll take it off.
+**My question for you (still open from 12:30):** what do you never read on this page or in the command centre? I'll take it off.
 
 ## 1. What's pending for me {#needs}
 
-You asked at 12:30 what is pending for you, so this comes first, in the order to do it.
+In the order to do it (17:30 run).
 
-- **The 13:00 stand-up**, on [today's agenda](../../meetings/2026-11-03-1300/index.html) and in your briefing at the top: who sends the GitHub invitations (WS-09 or WS-124, the same question your mentor asks), Daniela's accounts (WS-125), who records the decisions (WS-107), and LinkedIn (WS-126, urgent). On WS-96, team-collaboration has answered in its own words (it sent the invitations after you gave it the addresses); whether that counts as sending, and whether its calendar access should be draft-only, is your call.
+- **The 18:00 stand-up**, on [its agenda](../../meetings/2026-11-03-1800/index.html) and in your briefing at the top: the decision on WS-129 (agents talk through commits only, as a rule in CLAUDE.md for every agent; your conductor raised it), and a sync on WS-121 (Vicky goes first through the vault guide).
+- **Still open from 13:00**, on [that agenda](../../meetings/2026-11-03-1300/index.html): who sends the GitHub invitations (WS-09 or WS-124, the question your mentor keeps asking), Daniela's accounts (WS-125), who records the decisions (WS-107), and LinkedIn (WS-126). On WS-96, team-collaboration answered in its own words (it sent the invitations after you gave it the addresses); whether that counts as sending, and whether its calendar access should be draft-only, is your call.
 - **Due today and named for you:** at the top of [My issues](#issues), sorted by due date. WS-105, protecting main, is the one only an admin can do.
-- **Your setup:** the next step is the vaults ([your vault agent](../../vault-agent/index.html), WS-121); it counts once `people/angelo/vaults.json` lists a published vault. Your row is in [Is everyone connected?](#connected).
-- **From your mentor:** the latest note is in [people/angelo/mentor](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/angelo/mentor). It suggests a commit from each schedule's first unprompted run, so the schedules are shown to work rather than declared.
+- **From your mentor (16:40):** you are at L6, every setup step done; what is left is your agents running on their own until 5 November. It suggests closing WS-128: the vault guide's publish step should use a command that never prints the vault key. The latest note is in [people/angelo/mentor](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/angelo/mentor).
 
 ## 2. Is everyone connected? {#connected}
 
@@ -48,6 +48,7 @@ What each did since the last run is in "My agents, as the team sees them" at the
 - **conductor@web-summit.angelo**: runs your other agents, keeps `people/angelo/`, adds your stand-up items and writes your briefs. Runs 07:20, 12:20 and 17:20 UTC.
 - **dev@web-summit.angelo**: the site's build, gate, pipeline and pages. Runs 09:30 and 15:30 UTC.
 - **team-collaboration@web-summit.angelo**: the stand-up calendar, a brief, a debrief and follow-ups for every meeting (WS-96), and the daily bottleneck note (WS-97). Runs at 07:40 (the daily note), 12:40 and 17:40 (each stand-up's brief) and 14:15 and 19:15 (its debrief, or when Angelo wakes it), UTC.
+- **vault@web-summit.angelo**: your SGit vaults: it published your first vault after an audit and corrected the vault guide from that run (WS-120). Its schedule is proposed, not set yet (09:50 and 15:50 UTC, at your word).
 - **dashboard@web-summit.angelo**: keeps this page and your command centre. Joined 3 November with its key on [the keys page](../../keys/index.html); runs 07:30, 12:30 and 17:30 UTC on its scheduled task.
 
 ## My issues {#issues}

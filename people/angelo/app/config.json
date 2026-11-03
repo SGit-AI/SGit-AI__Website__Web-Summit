@@ -12,7 +12,10 @@
         "WS-100",
         "WS-124",
         "WS-125",
-        "WS-120"
+        "WS-120",
+        "WS-121",
+        "WS-128",
+        "WS-129"
       ],
       "with": "Jose, Dinis, Indi, Daniela",
       "goal": "Everyone at L4 (dashboard agent running, agents' keys published): who is stuck on /team/setup/ and at which step (WS-35), one consistent GitHub hand-off (WS-124 against WS-09), and the vaults next (WS-120)."
@@ -121,6 +124,11 @@
       "colour": "conductor",
       "job": "Keeps Angelo's command centre (his first view) and the classic dashboard, and asks Angelo one question a run",
       "schedule": "07:30, 12:30, 17:30 UTC (scheduled task, from 3 Nov)"
+    },
+    "vault": {
+      "colour": "slate",
+      "job": "Creates and manages Angelo's SGit vaults, audits each before its read key is published, and corrects the vault guide from its runs (WS-120)",
+      "schedule": "proposed: 09:50, 15:50 UTC (at Angelo's word)"
     }
   },
   "decisions": [],
