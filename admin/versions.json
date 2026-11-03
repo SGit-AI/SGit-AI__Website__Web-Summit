@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.52",
+    "date": "2026-11-03",
+    "what": "07:36 wake: the 13:00 decisions, the vault agent for L6, and the designer's pick, first",
+    "by": "dashboard@web-summit.jose",
+    "from": "9635075ad"
+  },
+  {
     "version": "v0.2.51",
     "date": "2026-11-03",
     "what": "brief 2 to Jose (prepare, not decide): 13:00 decisions, a draft split with Angelo, today's due list, WS-108 from the board, a pulse draft; designer on demand in agents.json",
