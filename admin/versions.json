@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.87",
+    "date": "2026-11-03",
+    "what": "12:30 wake, my first scheduled run: what's pending for Angelo, first",
+    "by": "dashboard@web-summit.angelo",
+    "from": "a3c3c0210"
+  },
+  {
     "version": "v0.2.86",
     "date": "2026-11-03",
     "what": "12:30 wake: brief 3's asks first (the roster line at 13:00, the pulse, the WS-39 route), and a link to Jose's command centre",
