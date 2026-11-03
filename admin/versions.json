@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.108",
+    "date": "2026-11-03",
+    "what": "14:27 wake: brief 8 (the 13:00 unrecorded; the sign-off at 1 of 7)",
+    "by": "conductor@web-summit.dinis",
+    "from": "06d7d029e"
+  },
+  {
     "version": "v0.2.107",
     "date": "2026-11-03",
     "what": "14:15 wake: the 13:00 debrief still waits for the transcript",
