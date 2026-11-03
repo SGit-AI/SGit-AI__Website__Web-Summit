@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.132",
+    "date": "2026-11-03",
+    "what": "order confirmed with the printer; every size needed today (missing: Dinis, Nimay, Jose, Indi)",
+    "by": "procurement@web-summit.silvio",
+    "from": "01feb4ceb"
+  },
+  {
     "version": "v0.2.131",
     "date": "2026-11-03",
     "what": "publish the read key of Angelo's first vault (ucvg2pkv)",
