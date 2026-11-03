@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.42",
+    "date": "2026-11-03",
+    "what": "the access token is server access only; the vault key is the encryption",
+    "by": "sgit@web-summit.silvio",
+    "from": "c2d8d5d69"
+  },
+  {
     "version": "v0.2.41",
     "date": "2026-11-03",
     "what": "decisions blocking Dinis first, the agents second, one click between them",
