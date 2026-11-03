@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.43",
+    "date": "2026-11-03",
+    "what": "the 02:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "e1411e371"
+  },
+  {
     "version": "v0.2.42",
     "date": "2026-11-03",
     "what": "the access token is server access only; the vault key is the encryption",
