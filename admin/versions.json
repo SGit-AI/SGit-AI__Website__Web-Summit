@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.69",
+    "date": "2026-11-03",
+    "what": "Vicky's For-you panel: her issues first (WS-123)",
+    "by": "dashboard@web-summit.vicky",
+    "from": "24ca8ce19"
+  },
+  {
     "version": "v0.2.68",
     "date": "2026-11-03",
     "what": "brief 1 to Vicky: sizes in, WS-46 picked, three asks (print sign-off, WS-23's date, the board-health page)",
