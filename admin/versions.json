@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.53",
+    "date": "2026-11-03",
+    "what": "the board's health at 07:50; the 13:00 agenda curated; WS-67 done, WS-11 merged",
+    "by": "project-manager@web-summit.dinis",
+    "from": "0302ecbc7"
+  },
+  {
     "version": "v0.2.52",
     "date": "2026-11-03",
     "what": "07:36 wake: the 13:00 decisions, the vault agent for L6, and the designer's pick, first",
