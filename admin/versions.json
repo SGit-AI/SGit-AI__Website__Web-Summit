@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.32",
+    "date": "2026-11-03",
+    "what": "feedback from any page, sealed in the browser and appended to the agent's vault lane",
+    "by": "dev@web-summit.dinis",
+    "from": "89cfa63a3"
+  },
+  {
     "version": "v0.2.31",
     "date": "2026-11-03",
     "what": "letters to Dinis's agents: the print sign-off is Dinis's top priority today (WS-113)",
