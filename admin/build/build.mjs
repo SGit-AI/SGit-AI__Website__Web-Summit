@@ -150,18 +150,20 @@ function page({ rel, title, description, body, meta = '', mdTwin = '', lead = ''
 <meta property="og:title" content="${esc(title)}">
 <link rel="stylesheet" href="${up}assets/site.css">${head}
 </head>
-<body>
+<body data-section="${home ? 'home' : (sectionOf(rel)?.t || 'other').toLowerCase()}" data-up="${up}">
 <a class="skip" href="#main">Skip to the content</a>
 <nav class="site"><div class="row">
 <a class="brand" href="${up}index.html">web-summit<span>.sgit.ai</span></a>
 <a class="parent" href="https://sgit.ai" title="sgit.ai: the parent project">↗ part of <b>sgit.ai</b></a>
 <a class="ver" href="${up}admin/versions.html#${VERSION}" title="This version of the site: what changed, and the commit">${VERSION}</a>
 <div class="links">${SECTIONS.map(x => `<a href="${up}${x.h}"${sectionOf(rel) === x ? ' aria-current="page"' : ''}>${x.t}</a>`).join('')}</div>
+<div class="me-pick" id="me-pick"></div>
 <a class="gh" href="${REPO}">★ GitHub</a>
 </div></nav>
 ${(() => { const sec = sectionOf(rel); return sec && sec.sub.length ? `<nav class="subnav" aria-label="${sec.t}"><div class="row">${sec.sub.map(([t, h]) => `<a href="${up}${h}"${rel === h ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</div></nav>` : '' })()}
 <div class="frame${side ? ' with-rail' : ''}">${side}
 <main id="main"${home ? ' class="home"' : ''}>
+<section class="for-you" id="for-you" hidden aria-label="For you"></section>
 ${home ? '' : (() => {
     const sec = sectionOf(rel), who = personOf(rel), c = [`<a href="${up}index.html">Home</a>`]
     if (sec) c.push(`<a href="${up}${sec.h}">${sec.t}</a>`)
@@ -178,6 +180,7 @@ ${body}
 </main>
 </div>
 <script src="${up}assets/copy.js" defer></script>
+<script src="${up}assets/me.js" defer></script>
 <script src="${up}assets/feedback.js" defer></script>
 <footer><div class="row"><span>Built and run by an AI agent with a named human operator.</span><a class="ver" href="${up}admin/versions.html#${VERSION}">${VERSION}</a><a href="${REPO}">GitHub</a><span>Code Apache-2.0, text CC BY 4.0</span></div></footer>
 <div class="agent-block"><pre><code>${esc(agent)}</code></pre></div>
@@ -434,6 +437,13 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
 // (their agents may add people/<id>/app/config.json). A person's own people/<id>/app/data.mjs, app.css and app.js
 // replace the shared ones (Silvio's). summaryMd(data) is the no-JavaScript fallback and the markdown twin.
 const CC = await import(path.join(ROOT, 'admin/build/commandcentre.mjs'))
+// "who are you" (Dinis, 3 November): the visitor picks a person (kept in their browser, localStorage; the vault comes
+// later) and every page shows a "For you" panel from me.json: their issues, decisions, agents, what changed. Public data
+// only, the same as the pages; choosing a person is a view, not a sign-in. Front end: assets/me.js. Kept with
+// dashboard@web-summit.dinis (the panels' content) and designer@web-summit.dinis (the look).
+const ME = { built_at: new Date().toISOString(), version: VERSION, people: {} }
+const DAYS14 = [...Array(10)].map((_, k) => new Date(Date.now() - (9 - k) * 864e5).toISOString().slice(0, 10))
+const daily = (() => { const by = {}; try { for (const l of execFileSync('git', ['log', '--since=10 days ago', '--format=%cI%x1f%s%x1f%b%x1e'], { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 << 20 }).split('\x1e')) { const [at, sub, body] = l.trim().split('\x1f'); if (!at || /^site v\d/.test(sub)) continue; const d = at.slice(0, 10); for (const p of new Set([...`${sub}\n${body || ''}`.matchAll(/@web-summit\.([a-z0-9-]+)/g)].map(x => x[1]))) { by[p] ??= {}; by[p][d] = (by[p][d] || 0) + 1 } } } catch {} return id => DAYS14.map(d => (by[id] || {})[d] || 0) })()
 for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const dir = path.join(ROOT, 'people', m.id, 'app')
     if (!fs.existsSync(path.join(ROOT, 'people', m.id))) continue
@@ -443,11 +453,30 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     // the switcher at the top of every command centre: everyone's, in roster order
     data.team = teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => ({ id: x.id, name: x.name }))
     write(`people/${m.id}/app/data.json`, JSON.stringify(data))
+    {   // this person's slice of me.json
+        const o = onboard(m.id), nx = MEET.next(), a = MEET.ack(m.id), since = MEET.log(a?.acknowledged_at || new Date(Date.now() - 864e5).toISOString())
+        const open = data.issues.filter(i => i.named && i.status !== 'done'), h = i => i.due_at ? (Date.parse(i.due_at) - Date.now()) / 36e5 : 1e9
+        ME.people[m.id] = {
+            id: m.id, name: m.name, first: m.name.split(' ')[0], role: m.role || '', colour: CAST_PEOPLE[m.id]?.colour || merch[m.id] || '',
+            level: o.level, level_name: LEVELS[o.level], next: o.next,
+            open: open.length, overdue: open.filter(i => h(i) < 0 && !i.recurring).length, soon: open.filter(i => h(i) >= 0 && h(i) <= 72).length,
+            urgent: open.filter(i => !i.recurring).sort((x, y) => h(x) - h(y)).slice(0, 5).map(i => ({ id: i.id, title: i.title, due: i.due, status: i.status, late: h(i) < 0 })),
+            decisions: data.decisions.slice(0, 6).map(d => ({ what: d.what, issue: d.issue, source: d.source })),
+            agents: data.agents.map(g => ({ name: g.name, status: g.status, last_at: g.last_at, last: (g.last_subject || '').replace(/^[^:]+: /, '').slice(0, 120) })),
+            messages: data.messages.slice(0, 5).map(x => ({ at: x.at, from: x.agent, subject: x.subject.replace(/^[^:]+: /, '').slice(0, 140) })),
+            daily: daily(m.id), days: DAYS14,
+            acked: a?.acknowledged_at || null, since: { releases: since.filter(x => x.release).length, commits: since.filter(x => !x.release).length },
+            briefing: `meetings/${nx.id}/${m.id}/index.html`, standup: `${nx.day} ${nx.time}`,
+            links: { dashboard: `people/${m.id}/index.html`, centre: `people/${m.id}/app/index.html`, brief: `brief-${m.id}/index.html`, profile: `team/${m.id}/index.html` },
+        }
+    }
     const rel = `people/${m.id}/app/index.html`, title = `${m.name}'s command centre`, md = app.summaryMd(data)
     const description = `${m.name}'s command centre: tasks from the board, agents, workstreams and decisions, built from the repository.`
     write(rel, page({ rel, title, description, mdTwin: twinPath(rel), head: own ? '<link rel="stylesheet" href="app.css"><script src="app.js" defer></script>' : '<link rel="stylesheet" href="../../../assets/cc/app.css"><script src="../../../assets/cc/app.js" defer></script>', body: `<div id="cc" data-src="data.json"></div><div id="cc-fallback">${render(md)}</div>` }))
     pages.push({ rel, title, description }); twin(rel, title, description, md)
 }
+
+write('me.json', JSON.stringify(ME))
 
 // the team: data/team.json -> team/index.html (people, agents, who works with whom) and team/<id>/index.html
 const team = teamData

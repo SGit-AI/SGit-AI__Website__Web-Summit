@@ -289,3 +289,54 @@ main.home section > h2 { font-size: 0.8rem; letter-spacing: 0.08em; text-transfo
 .pki-facts { margin: 0; padding-left: 18px; font-size: .8rem; color: var(--ink-2); }
 .pki-facts code { word-break: break-all; }
 .pki-problem { color: var(--warm); font-weight: 600; }
+
+/* "Who are you?" and the For-you panel (assets/me.js, Dinis 3 November): a view of the site for one person, chosen in
+   this browser. The person's own colour arrives as --c from data/cast.json; everything else is tokens. */
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+nav.site .me-pick { margin-left: auto; display: flex; align-items: center; }
+nav.site .me-pick + .gh { margin-left: 0; }
+nav.site .me-pick label { display: flex; }
+nav.site .me-pick select { font: inherit; font-size: 0.88rem; font-weight: 600; color: var(--ink); background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 999px; padding: 0.3rem 0.7rem; margin-left: 0.35rem; cursor: pointer; }
+.av { width: 1.7rem; height: 1.7rem; border-radius: 50%; display: inline-grid; place-items: center; font-size: 0.72rem; font-weight: 700; color: var(--hero-ink); background: var(--c, var(--accent)); flex: none; }
+.for-you { border: 1px solid var(--line); border-left: 5px solid var(--c, var(--accent)); border-radius: 12px; background: var(--surface); box-shadow: var(--shadow); padding: 0.9rem 1.1rem; margin: 0 0 1.4rem; }
+.for-you header { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 0.8rem; }
+.for-you header > div { display: flex; flex-direction: column; line-height: 1.3; }
+.for-you header .av { width: 2.4rem; height: 2.4rem; font-size: 0.9rem; }
+.for-you .muted { color: var(--ink-2); font-size: 0.85rem; }
+.for-you .fy-go { margin-left: auto; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.for-you .fy-go a, .for-you .fy-go button { font: inherit; font-size: 0.85rem; padding: 0.3rem 0.7rem; border: 1px solid var(--line-2); border-radius: 999px; text-decoration: none; color: var(--ink); background: var(--surface-2); cursor: pointer; }
+.for-you .fy-go a:first-child { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.for-you .fy-body { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem 1.2rem; margin: 0.8rem 0 0.4rem; }
+.fy-ring { position: relative; width: 3.4rem; height: 3.4rem; display: grid; place-items: center; text-decoration: none; color: var(--ink); }
+.fy-ring svg { position: absolute; inset: 0; }
+.fy-ring circle { fill: none; stroke-width: 4; }
+.fy-ring .bg { stroke: var(--line); }
+.fy-ring .fg { stroke: var(--c, var(--accent)); stroke-linecap: round; }
+.fy-tiles { display: flex; flex-wrap: wrap; gap: 0.5rem; flex: 1; }
+.fy-tiles > div { min-width: 7.5rem; flex: 1; background: var(--surface-2); border-radius: 10px; padding: 0.45rem 0.7rem; display: flex; flex-direction: column; }
+.fy-tiles b { font-size: 1.45rem; line-height: 1.2; }
+.fy-tiles span { font-size: 0.78rem; color: var(--ink-2); }
+.fy-tiles .warn { background: var(--warm-soft); box-shadow: inset 0 0 0 1px var(--warm-line); }
+.fy-tiles .warn b { color: var(--warm); }
+.fy-spark { margin: 0; width: 10.5rem; }
+.fy-spark svg { width: 100%; height: 2.2rem; display: block; }
+.fy-spark rect { fill: var(--c, var(--accent)); opacity: 0.55; }
+.fy-spark rect.today { opacity: 1; }
+.fy-spark figcaption { font-size: 0.72rem; color: var(--ink-2); }
+.fy-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 0.4rem 1.4rem; }
+.fy-cols h2 { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); margin: 0.8rem 0 0.3rem; border: 0; padding: 0; }
+.fy-list { list-style: none; padding: 0; margin: 0; font-size: 0.92rem; }
+.fy-list li { padding: 0.28rem 0; border-top: 1px solid var(--line); }
+.fy-list li:first-child { border-top: 0; }
+.fy-list .late { color: var(--warm); font-size: 0.8rem; font-weight: 600; }
+.fy-list .due { color: var(--ink-2); font-size: 0.8rem; }
+.fy-list .dot { display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--line-2); margin-right: 0.35rem; }
+.fy-list .dot.active { background: var(--accent); }
+[data-for].is-me { outline: 3px solid var(--accent); outline-offset: 2px; }
+main.home .for-you { margin-top: 1rem; }
+@media (max-width: 640px) {
+    .for-you .fy-go { margin-left: 0; }
+    .fy-tiles { flex-basis: 100%; order: 2; }
+    .fy-tiles > div { min-width: 40%; }
+    .fy-spark { flex: 1; }
+}
