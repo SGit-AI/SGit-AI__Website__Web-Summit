@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.77",
+    "date": "2026-11-03",
+    "what": "the command centre is Angelo's first view, and my schedule",
+    "by": "dashboard@web-summit.angelo",
+    "from": "353bfc42c"
+  },
+  {
     "version": "v0.2.76",
     "date": "2026-11-03",
     "what": "Vicky's first pulse check-in (3 Nov, morning)",
