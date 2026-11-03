@@ -22,7 +22,7 @@ Started by the conductor on 2 November from [the builder template](../../dashboa
 
 Kept by `conductor@web-summit.jose` until the dashboard agent starts. Declared in [agents.json](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/agents.json); the prompts are in [the kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/kit/README.md).
 
-- **conductor@web-summit.jose**: running since 3 November, key published (conductor-jose on the keys page), not yet on a schedule.
+- **conductor@web-summit.jose**: running since 3 November, key published (conductor-jose on the keys page), wakes at 07:20, 12:20 and 17:20 UTC.
 - **dashboard@web-summit.jose** and **dev@web-summit.jose**: ready in the kit, not started.
 - **automation@web-summit.jose** (WS-39) and **helper@web-summit.jose** (WS-35): proposed in the brief.
 
