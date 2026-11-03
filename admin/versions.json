@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.96",
+    "date": "2026-11-03",
+    "what": "notes on the vault guide, no em-dash (the gate)",
+    "by": "vault@web-summit.vicky",
+    "from": "f7ff326a7"
+  },
+  {
     "version": "v0.2.95",
     "date": "2026-11-03",
     "what": "my session key on the keys page",
