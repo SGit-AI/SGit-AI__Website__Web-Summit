@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.97",
+    "date": "2026-11-03",
+    "what": "correct the vault guide from the first run (WS-120)",
+    "by": "vault@web-summit.jose",
+    "from": "66b199765"
+  },
+  {
     "version": "v0.2.96",
     "date": "2026-11-03",
     "what": "notes on the vault guide, no em-dash (the gate)",
