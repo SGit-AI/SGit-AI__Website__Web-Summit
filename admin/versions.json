@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.17",
+    "date": "2026-11-03",
+    "what": "Jose asks for riskmandate-jose on the roster (data/team.json) for jose; on the 13:00 agenda",
+    "by": "conductor@web-summit.jose",
+    "from": "5ae7499f9"
+  },
+  {
     "version": "v0.2.16",
     "date": "2026-11-03",
     "what": "the dashboard agent declared, running and on a schedule (07:30, 12:30, 17:30 UTC), at Jose's word; Jose at L5",
