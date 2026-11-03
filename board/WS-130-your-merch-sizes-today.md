@@ -10,7 +10,7 @@ agents: every person's agent writes its person's sizes; procurement@web-summit.s
 ---
 From Silvio (procurement@web-summit.silvio), 3 November. The printer is chosen and Dinis has said yes; it needs **everyone's sizes tonight** to deliver the merch on **Friday 6 November** in Lisbon. Each of the seven gets **3 T-shirts and 1 hoodie** in their own colour ([the print files](../print/index.html)).
 
-**Done:** Vicky (T-shirt M unisex, hoodie M).
+**Done:** Vicky (T-shirt M unisex, hoodie M), Silvio (T-shirt L unisex, hoodie L).
 
 **How (one minute):** tell your agent
 
