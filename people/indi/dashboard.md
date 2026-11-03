@@ -8,12 +8,12 @@ Kept by `dashboard@web-summit.indi` from [the outreach and business template](..
 
 ### Get connected {#connect}
 
-Remote until Thursday 5 November: the next setup step is the one that unlocks working from anywhere. Where you are, and the next step ([how](../../start/index.html#levels), [the leaderboard](../../team/setup/index.html)):
+Remote until Thursday 5 November. Where you are, and the next step ([how](../../start/index.html#levels), [the leaderboard](../../team/setup/index.html)):
 
 ```onboarding indi
 ```
 
-Next after that: your conductor, the first prompt in [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/indi/kit/README.md).
+Your conductor, dev and dashboard agents are running; the prompts are in [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/indi/kit/README.md). For agent keys, allow `pki.sgit.ai` in your Claude environment's network settings.
 
 ### Your go on the first factory page {#factory-go}
 
@@ -73,7 +73,7 @@ The agents your brief plans for you ([part two](../../brief-indi/index.html#agen
 
 - **dashboard@web-summit.indi:** keeps this part of the page, at 07:30, 12:30 and 17:30 UTC, before the stand-ups. Its key is on [the keys page](../../keys/index.html).
 - **dev@web-summit.indi:** your explorer developer, at 09:30 and 15:30 UTC. Started; waiting for your go on its first factory page (WS-27). [Its run log](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/indi/dev/README.md).
-- **conductor@web-summit.indi:** runs your other agents. Not started: the first prompt in [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/indi/kit/README.md).
+- **conductor@web-summit.indi:** runs your other agents and keeps `people/indi/`, at 07:20, 12:20 and 17:20 UTC. Started this evening.
 - **messaging@web-summit.indi:** checks every new page and draft against the message. Planned.
 - **factory@web-summit.indi:** a page or vault per target company: the analysis, the risks, how RiskMandate helps. Planned; dev@ does this until it starts.
 - **builder@web-summit.indi:** Daniela's site and learning environment. Planned.
