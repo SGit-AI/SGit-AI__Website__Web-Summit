@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.11",
+    "date": "2026-11-03",
+    "what": "on a schedule at Jose's word (07:20, 12:20, 17:20 UTC, into its own session)",
+    "by": "conductor@web-summit.jose",
+    "from": "8932b3778"
+  },
+  {
     "version": "v0.2.10",
     "date": "2026-11-03",
     "what": "WS-89 fixed: the abp, sgit and project-manager prompts sign, release and read For: under their own names, not the conductor's",
