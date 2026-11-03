@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.59",
+    "date": "2026-11-03",
+    "what": "the vaults step (L6) counts itself once a person publishes a vault; the step hints point at the right steps",
+    "by": "sgit@web-summit.dinis",
+    "from": "31dcb002b"
+  },
+  {
     "version": "v0.2.58",
     "date": "2026-11-03",
     "what": "08:41 wake: notes for Jose (L1 to L5), Angelo and Silvio; who sends the invitations at 13:00 (WS-09, WS-124)",
