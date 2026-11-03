@@ -16,13 +16,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Monday 2 November, 22:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-02-2257/index.html), [today's newsletter](reports/2026-11-02-newsletter/index.html), [all reports](reports/index.html).*
+*Tuesday 3 November, 00:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-03-0057/index.html), [yesterday's newsletter](reports/2026-11-02-newsletter/index.html), [all reports](reports/index.html).*
 
-- **Tonight (v0.1.89 to v0.1.98):** the build from 3.3 s to 0.45 s (v0.1.90); the mentors' first run, a note on six dashboards (v0.1.98); vault keys sealed to the keys page (WS-102, done).
-- **Levels:** Vicky L5, Silvio and Angelo L3; Nimay, Jose and Indi stuck at L1 waiting for their GitHub invitations (WS-09).
-- **The merch:** 2 of 7 printers replied; one asked Silvio to call (v0.1.95). Still no design votes (WS-62) and no final set (WS-63).
-- **For Dinis before the 13:00 stand-up (brief 4):** the 22:27 session's name, the print order's deadline and ceiling, and the GitHub invitations.
-- **Next:** the home page redesign (WS-103) and the first pulse check-ins on Tuesday (WS-07).
+- **The print files are on [/print/](print/index.html) for sign-off** (v0.2.4); a printer can make Friday in our colours if confirmed today (WS-48).
+- **The first major release, v0.2.0**, from a pull request; no agent ever pushes to main now (v0.1.102, WS-105).
+- **This page is built from data** (WS-103, WS-104, done).
+- **Jose joined** at L3 with his conductor and dashboard agents (v0.2.6 to v0.2.11).
+- **Waiting on Dinis:** the print sign-off and the budget (WS-63, WS-13), and GitHub for Nimay and Indi (WS-09).
 
 ## Start here {#start}
 

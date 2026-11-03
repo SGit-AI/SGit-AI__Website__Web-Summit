@@ -3,8 +3,8 @@ Made by designer@web-summit.dinis from data/design.json and team/designer/print/
 
 RiskMandate only: no sponsor, no other brand, no Web Summit name or logo.
 One folder per person. In each:
-  <id>-tee-front.*    T-shirt front, print 250 mm wide, top 80 mm below the collar
-  <id>-tee-back.*     T-shirt back, print 200 mm wide, top 70 mm below the collar
+  <id>-tee-front.*    T-shirt front, print 280 mm wide, top 80 mm below the collar
+  <id>-tee-back.*     T-shirt back, print 220 mm wide, top 70 mm below the collar
   <id>-hoodie-chest.* Hoodie left chest, 90 mm wide
   <id>-hoodie-back.*  Hoodie back, print 260 mm wide, top 90 mm below the collar
   <id>-card.pdf       Business card, 2 pages (front, back), 85 x 55 mm trim + 3 mm bleed

@@ -1,5 +1,103 @@
 [
   {
+    "version": "v0.2.19",
+    "date": "2026-11-03",
+    "what": "/print/ restyled to the print order's example (poster style), Silvio's line \"Your AI has access. Does it have permission?\"",
+    "by": "designer@web-summit.dinis",
+    "from": "f185f2494"
+  },
+  {
+    "version": "v0.2.18",
+    "date": "2026-11-03",
+    "what": "started; session key dev-jose published (public half only) in data/keys.json",
+    "by": "dev@web-summit.jose",
+    "from": "2579c008b"
+  },
+  {
+    "version": "v0.2.17",
+    "date": "2026-11-03",
+    "what": "Jose asks for riskmandate-jose on the roster (data/team.json) for jose; on the 13:00 agenda",
+    "by": "conductor@web-summit.jose",
+    "from": "5ae7499f9"
+  },
+  {
+    "version": "v0.2.16",
+    "date": "2026-11-03",
+    "what": "the dashboard agent declared, running and on a schedule (07:30, 12:30, 17:30 UTC), at Jose's word; Jose at L5",
+    "by": "conductor@web-summit.jose",
+    "from": "9a8f1563d"
+  },
+  {
+    "version": "v0.2.15",
+    "date": "2026-11-03",
+    "what": "what needs Jose now includes the roster gap that blocks the vaults (L6)",
+    "by": "dashboard@web-summit.jose",
+    "from": "d0335c808"
+  },
+  {
+    "version": "v0.2.14",
+    "date": "2026-11-03",
+    "what": "the 00:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "9a59fdf09"
+  },
+  {
+    "version": "v0.2.13",
+    "date": "2026-11-03",
+    "what": "my session key on the keys page (public half only, id dashboard-jose), and Jose's dashboard reshaped around what needs Jose",
+    "by": "dashboard@web-summit.jose",
+    "from": "94931b58c"
+  },
+  {
+    "version": "v0.2.12",
+    "date": "2026-11-03",
+    "what": "seal.mjs asks GitHub who pushed a key and checks it against the roster; pki-agent pinned (WS-106)",
+    "by": "sgit@web-summit.dinis",
+    "from": "a813cdc0e"
+  },
+  {
+    "version": "v0.2.11",
+    "date": "2026-11-03",
+    "what": "on a schedule at Jose's word (07:20, 12:20, 17:20 UTC, into its own session)",
+    "by": "conductor@web-summit.jose",
+    "from": "8932b3778"
+  },
+  {
+    "version": "v0.2.10",
+    "date": "2026-11-03",
+    "what": "WS-89 fixed: the abp, sgit and project-manager prompts sign, release and read For: under their own names, not the conductor's",
+    "by": "conductor@web-summit.dinis",
+    "from": "fcd404f5c"
+  },
+  {
+    "version": "v0.2.9",
+    "date": "2026-11-03",
+    "what": "the build cleans its own stale output; versions as data (WS-106, item 6)",
+    "by": "dev@web-summit.dinis",
+    "from": "5712c6a3a"
+  },
+  {
+    "version": "v0.2.8",
+    "date": "2026-11-03",
+    "what": "the key-tool item on the 13:00 agenda settled in Jose's words (pki.sgit.ai allowed)",
+    "by": "conductor@web-summit.jose",
+    "from": "4b4717a94"
+  },
+  {
+    "version": "v0.2.7",
+    "date": "2026-11-03",
+    "what": "brief 1 to Jose: conductor running, push confirmed, L3; three asks (allow pki.sgit.ai, start the dashboard and dev agents, schedule the conductor)",
+    "by": "conductor@web-summit.jose",
+    "from": "9be05bd76"
+  },
+  {
+    "version": "v0.2.6",
+    "date": "2026-11-03",
+    "what": "first run; Jose's onboarding (push, conductor), agents.json, his agents on the dashboard, a stand-up item on the key tool",
+    "by": "conductor@web-summit.jose",
+    "from": "44b2feb80"
+  },
+  {
     "version": "v0.2.5",
     "date": "2026-11-03",
     "what": "the mentors' ABP; every ABP records main pushed once and still unprotected",

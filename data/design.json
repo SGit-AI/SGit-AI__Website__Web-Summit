@@ -37,7 +37,7 @@
       "name": "Jose Bota",
       "role": "RiskMandate",
       "colour": "#e86a1c",
-      "ink": "#111111",
+      "ink": "#ffffff",
       "tee": "T6",
       "line": "I brought 6 agents. Ask me why."
     },
@@ -58,7 +58,7 @@
       "role": "RiskMandate",
       "colour": "#c62828",
       "ink": "#ffffff",
-      "tee": "T5",
+      "tee": "T9",
       "line": "Agents with a mandate."
     },
     {
@@ -171,6 +171,18 @@
         "THE GAP."
       ],
       "why": "RiskMandate's own line, from Silvio's video: the product in three short sentences, set in six short lines so it reads from across the hall."
+    },
+    {
+      "id": "T9",
+      "name": "Your AI has access. Does it have permission?",
+      "sample": "silvio",
+      "front": [
+        "YOUR AI",
+        "HAS ACCESS.",
+        "DOES IT HAVE",
+        "PERMISSION?"
+      ],
+      "why": "From the print order's example picture, chosen by Dinis on 3 November 2026: access is not permission, the gap RiskMandate controls."
     }
   ],
   "hoodies": [
@@ -246,6 +258,10 @@
     {
       "id": "T8",
       "name": "Know their reach. Define their mandate. Control the gap."
+    },
+    {
+      "id": "T9",
+      "name": "Your AI has access. Does it have permission?"
     },
     {
       "id": "H1",

@@ -1,5 +1,5 @@
 {
-  "about": "The final merch set for print: the RiskMandate T-shirts, hoodies and business cards of the seven going to Web Summit 2026, proposed by designer@web-summit.dinis on 2 November 2026 for Dinis to sign off item by item. RiskMandate only (Dinis, 2 November 2026): no sponsor, no other brand, no Web Summit name or logo on anything printed. The print files are made from this file and data/design.json by team/designer/print/make-print.py and published at /print/ for the printers. Sign-off: set signed_off to {\"by\": \"dinis\", \"at\": \"<ISO time>\"} on each item (Dinis, or his agent on his word).",
+  "about": "The final merch set for print: the RiskMandate T-shirts, hoodies and business cards of the seven going to Web Summit 2026, proposed by designer@web-summit.dinis on 2 November 2026, restyled on 3 November to the poster style of the print order's example picture (Dinis's choice), with Silvio's line 'Your AI has access. Does it have permission?' for Dinis to sign off item by item. RiskMandate only (Dinis, 2 November 2026): no sponsor, no other brand, no Web Summit name or logo on anything printed. The print files are made from this file and data/design.json by team/designer/print/make-print.py and published at /print/ for the printers. Sign-off: set signed_off to {\"by\": \"dinis\", \"at\": \"<ISO time>\"} on each item (Dinis, or his agent on his word).",
   "rules": [
     "RiskMandate only: no sponsor logo, no other brand, no Web Summit name or logo, on any garment or card (Dinis, 2 November 2026).",
     "Nothing on the sleeves.",
@@ -10,37 +10,131 @@
       "count_each": 3,
       "blank": "TH Clothes Ankara, 190 g, 100% cotton, or an equivalent (the printer's suggestion is welcome)",
       "method": "DTF or DTG, full colour (seven small runs, so no screen printing)",
-      "front": {"width_mm": 250, "from_collar_mm": 80},
-      "back": {"width_mm": 200, "from_collar_mm": 70},
-      "qr_code_mm": 110
+      "front": {
+        "width_mm": 280,
+        "from_collar_mm": 80
+      },
+      "back": {
+        "width_mm": 220,
+        "from_collar_mm": 70
+      },
+      "qr_code_mm": 120
     },
     "hoodie": {
       "count_each": 1,
       "design": "H1",
       "method": "DTF or DTG",
-      "chest": {"width_mm": 90, "where": "left chest (wearer's left), top 180 mm below the shoulder seam"},
-      "back": {"width_mm": 260, "from_collar_mm": 90},
+      "chest": {
+        "width_mm": 90,
+        "where": "left chest (wearer's left), top 180 mm below the shoulder seam"
+      },
+      "back": {
+        "width_mm": 260,
+        "from_collar_mm": 90
+      },
       "qr_code_mm": 90
     }
   },
   "card": {
     "design": "C1",
     "count_each": 100,
-    "trim_mm": [85, 55],
+    "trim_mm": [
+      85,
+      55
+    ],
     "bleed_mm": 3,
     "safe_mm": 3,
     "stock": "350 g/m2 or heavier, matt, both sides printed, square corners",
     "qr_code_mm": 24
   },
   "people": [
-    {"id": "dinis", "tee": "T1", "signed_off": null},
-    {"id": "nimay", "tee": "T2", "signed_off": null},
-    {"id": "angelo", "tee": "T4", "signed_off": null},
-    {"id": "jose", "tee": "T6", "front": ["I BROUGHT", "6 AGENTS."], "sub": "Ask me what they're doing.", "note": "T6 said 'to Web Summit': taken out, as nothing but RiskMandate goes on the merch.", "signed_off": null},
-    {"id": "vicky", "tee": "T3", "signed_off": null},
-    {"id": "silvio", "tee": "T5", "signed_off": null},
-    {"id": "indi", "tee": "T8", "signed_off": null}
+    {
+      "id": "dinis",
+      "tee": "T1",
+      "signed_off": null,
+      "front": [
+        "DO YOU KNOW",
+        "WHAT YOUR",
+        "AGENTS ARE",
+        "DOING?"
+      ],
+      "tagline": "Clarity. Control. Confidence."
+    },
+    {
+      "id": "nimay",
+      "tee": "T2",
+      "signed_off": null,
+      "front": [
+        "MY AGENTS",
+        "HAVE A POLICY.",
+        "DO YOURS?"
+      ],
+      "tagline": "Safe AI. Real Business."
+    },
+    {
+      "id": "angelo",
+      "tee": "T4",
+      "signed_off": null,
+      "front": [
+        "ASK ME",
+        "HOW I CONTROL",
+        "MY AGENTS."
+      ],
+      "tagline": "From Access to Accountability."
+    },
+    {
+      "id": "jose",
+      "tee": "T6",
+      "front": [
+        "I BROUGHT",
+        "6 AGENTS.",
+        "ASK ME WHY."
+      ],
+      "note": "The example said 'I brought 6 agents to Web Summit': nothing but RiskMandate goes on the merch, so it ends 'Ask me why.', as on Jose's card.",
+      "signed_off": null,
+      "tagline": "Ideas. Builders. Results."
+    },
+    {
+      "id": "vicky",
+      "tee": "T3",
+      "signed_off": null,
+      "front": [
+        "WHO'S ON",
+        "THE OTHER SIDE",
+        "OF YOUR AGENT?"
+      ],
+      "tagline": "People. Policy. Protection."
+    },
+    {
+      "id": "silvio",
+      "tee": "T9",
+      "signed_off": null,
+      "front": [
+        "YOUR AI",
+        "HAS ACCESS.",
+        "DOES IT HAVE",
+        "PERMISSION?"
+      ],
+      "tagline": "AI Agents. Your Rules."
+    },
+    {
+      "id": "indi",
+      "tee": "T8",
+      "signed_off": null,
+      "front": [
+        "KNOW THEIR",
+        "REACH.",
+        "DEFINE THEIR",
+        "MANDATE.",
+        "CONTROL THE GAP."
+      ],
+      "tagline": "Govern AI. Grow with Confidence."
+    }
   ],
-  "items_signed_off": {"hoodie": null, "card": null},
-  "sizes": "Each person's sizes (3 T-shirts and a hoodie) are still to collect: Vicky and Silvio, from the seven, before the order (WS-48)."
+  "items_signed_off": {
+    "hoodie": null,
+    "card": null
+  },
+  "sizes": "Each person's sizes (3 T-shirts and a hoodie) are still to collect: Vicky and Silvio, from the seven, before the order (WS-48).",
+  "style": "The print order's example picture (assets/print/riskmandate-pedido-tshirts.jpg), chosen by Dinis on 3 November 2026: the line in condensed capitals (Barlow Condensed Bold), a short divider, the wordmark RISK (light) MANDATE (bold), and a tagline per shirt; the back has the wordmark, 'Agents with a Mandate', the QR and 'Meet me / Book a meeting / Talk to my agent'."
 }

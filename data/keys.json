@@ -151,6 +151,51 @@
         "fingerprint": "sha256:c5ff8c95547a3d44",
         "signing_fingerprint": "sha256:101cffc2128f85f3"
       }
+    },
+    {
+      "id": "conductor-jose",
+      "label": "conductor@web-summit.jose (Claude Code session)",
+      "role": "Jose's conductor (conductor@web-summit.jose): runs Jose's other agents and keeps people/jose/ with Jose (onboarding, agents.json, ack.json, stand-up items, briefs). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session from Jose's account, at Jose's word; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlVV/Xhtm0wjf9KmYfRup\nItTS3OtDjWpiwvJpOJsASgwGvUvGZtpgQmeste/q+kJEl6wDN9Z7hNpsiqPD+OM/\niU6N7sjtd0sg9cBrDLqBPsJ4VF1H7C4lyG6ECsK/TlMRVP1bpmhbtYfwuSXmMJPN\n66pddhvcRejz932Z9wwJ1TOVw4aINkK0nbTPXQRniUbpNLmBa3lTjhX6Ae33dmM0\nh64hAiNVslAqoZA1dv11z/UAlO4Zs8ttIlp6vHRbet2aK1e448f1iHXqTKCn7j3N\n+tXS18vOl615yHiZYvzrlPHofVKDfvX3PSm1lcsNpdK6P8RLYfndx8SlyOuGBAfK\nzdlzKzXB0UFO/R1Fk2+RLre4PW4bn6UOVXNrD2iOhIOIOjvIlgGShwn2chEhOB8E\nddrS7OKbsnoHNpjT/dOsDz4lF2EFW1vDNE64ThN7LBXQOWI7YKDe/iVlW9bCxLkj\nANKezzTf2HjRMU4QVfJ9IX/mhj0x+Hct2ljq2Ppr+A4aJQiX9+2yuLEgGB9x+iLG\nyj5M4RBRMpjwG6asVAZDDVxuFfKIyM/33YkDKtMi0i5ZOcsstScfqVSvhlIdfwHk\nW7WV2bNN6HZjexDMM1byrYgGtsQl8O7aD4jQNvNErtZVzWIRetH61dXrxnUaACGY\nbhr0D0bdhxR5Mr+LG0aTORsCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEE46IECPUJDilnrwRoiE1gO0WAVn5\nXn7oJr9v/T80xngF3ZfGCHlTxHtftYiIBySV1nFhbGDcmbXQ5wvWgvZDiA==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor@web-summit.jose (Claude Code session)",
+        "fingerprint": "sha256:5dc78b978e0a1750",
+        "signing_fingerprint": "sha256:006ceb9a9e3febbe"
+      }
+    },
+    {
+      "id": "dashboard-jose",
+      "label": "dashboard@web-summit.jose (Claude Code session)",
+      "role": "Jose's dashboard agent (dashboard@web-summit.jose): keeps the part of Jose's dashboard below the built block (people/jose/dashboard.md). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Jose's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA0OQoWzg5udqxQ5ymFfDd\ngvGzdSS9te71+iTmS7gDwXGg61dzUcoRFIAHteYDbnhqACOqEPwZEh3wzgcPz66g\nMVp/O8XtJlZD9m2HAEIshmxuqCT1gfj36JUrSiIPuImhWo2ynstZVq4P2MKVweVF\nncbGce2yOc+Dfmm0JvcjziH+waQl7dsYkIZAfwqqR3ujOuzcFKVZjY+K6qe7Hhec\nG1ygdvNq15bQkzqDkobzKsAuZMycz3lkp1CN8SJGBaWHYiWQJqsgMM0xNr5l2GVW\n5B3eWbFr+cBI08yFDqDhU9SrSV69OOXfrySG1c7Y4Z7SCl3hWpLGxxCKEEsCrkkn\njsSjY8mrWUk/km+zY/PrhZdTFa0C5qEGiJgu/Bj+xnRXZvfr/G4T/3vM+Cog2dm/\nEc56CJFAdIU1RJ454hbt62qPISC8ke/UVKcq8LlfUzrNfv7MS9i2KRMhmvz2GDh7\n8adf+IpgYQn2mtU8+i3gJljBI2lFxhDs+hCTtBc+hjKI+M/gL8/isln0T5JbUZyC\n+sGzg4o6ExBXJBdrvQDMIGRh6G44PvOnIm3bN7b0/GWkuwMpyQAlgxKioVcqZjNC\n4FDNrmqFhdTEFJ2OqLoMf9jGIjTBWeK6AX0fatzXnfZ1noO1wH2/rGOW2sOjGkIY\n2cDudijTXZkiNaNui09IfM8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEkCFpnd+x0Ii2r2yNPTHNuFk0BBPw\n0Ci/4vzUOACdRKdXRwLTmUP3aiGzWRsY2k2Z6LP7/nqRV1+ltjxoxcfkzw==\n-----END PUBLIC KEY-----\n",
+        "label": "dashboard@web-summit.jose (Claude Code session)",
+        "fingerprint": "sha256:a8209af30275647d",
+        "signing_fingerprint": "sha256:a284cb6e67d10995"
+      }
+    },
+    {
+      "id": "dev-jose",
+      "label": "dev@web-summit.jose (Claude Code session)",
+      "role": "Jose's developer (dev@web-summit.jose): a builder developer for automations and integrations (n8n, WhatsApp, the site); builds in people/jose/ or as issues on the board. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Jose's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAuaIH+UU/jqCe2XZdaEHQ\nQVci7dTpqooaY/nBSIVD6T9btDaMG0XjDuLxxLrxmvgbDSdv1awoH/c/PjH2J7SI\nSes8AYWO34sxk5qBKyztaC+s6rVU010nqiUnESm+hQrjSpbxiW5GrUBsHZVe3/4C\nDf6ogxxruZJUXd0o+4tAj0Pwtn8qSThE3B/8Q+4Q8X1dTKSPP/gRPrjMa75fOLD9\n4jEhJcHuUG75FX2nGso/fMyT9fIZdDtdJYQtdAbxXogLhItS3BysRQX77SINZAYt\nYl6mEy0z7ytFhJ2adglUGcQZEwcxVBdk+asc0yIQGCCGgIGPGxC/khKMW52b5H9b\ncwhH1SDbdDh5zv092oF+9+MpaOVC14lCRKnOOgj+351he0VW8FdJRRPJ0f4GtPhh\nFqt8IUeU6G0SOLfx2I8V8rCkXp3OeGmlQosV7D75GOksplrhjfCm2HO7bXTFFngv\nz80WqKg87fyXdHrFW8LI+xB87Gdhuxvgij0e0hyDpoiLydfa95niVfA2H5mxOjFW\nrrqlhng9UWIgFR3gJ+2HQcPLbGp4P15qwLzWzsYe3TIuA0+31GHVb1lWi5PCSB+d\nNvuBMSm5410+BW/pnBziWu0TloI1zl0aPmDv11aUEK5bUGbyD0kh4XUfmxPwUo9a\nVZUFzlDljzDTYwzIsODv4d8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdsPm19eKLefroP72CXngIsoaErBB\n7housiMpijWAAv8OldnawGe8KWwoKPL8W1geOforxw602ndIUaAIh/k2ug==\n-----END PUBLIC KEY-----\n",
+        "label": "dev@web-summit.jose (Claude Code session)",
+        "fingerprint": "sha256:44f5a4ccf8bc8e1a",
+        "signing_fingerprint": "sha256:6c8543d09183f1e2"
+      }
     }
   ]
 }

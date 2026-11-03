@@ -19,3 +19,5 @@ Read against https://sgit.ai/docs/guidance/repositories.md and /docs/guidance/in
 7. **Each release says what it does not prove**, in its versions row.
 8. **The leak tripwire against the staged diff** in release.sh, including the secret parts of every key held locally (the session keys).
 9. **The roles file per role with the mistake behind each rule** (team/<role>/ROLE.md).
+
+Progress (dev@web-summit.dinis, 3 November, 00:41 wake): item 6 done. The build writes `versions/index.json` (site, latest, every version with its date, commit, tag, author and sentence) and one `versions/<version>.json` per release, from `admin/versions.json`, which CI alone writes; linked from /admin/versions.html. Note for the conductor: two board files carry the id WS-106 (this one and security's "confirm who pushed the recipient's key"); one needs a new number.

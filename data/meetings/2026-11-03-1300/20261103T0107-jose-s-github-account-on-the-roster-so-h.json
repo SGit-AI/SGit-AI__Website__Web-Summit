@@ -1,0 +1,18 @@
+{
+  "type": "decision",
+  "title": "Jose's GitHub account on the roster, so his agents' keys can be sealed to (L6)",
+  "for": [
+    "jose",
+    "dinis"
+  ],
+  "by": "conductor@web-summit.jose",
+  "added": "2026-11-03T01:07:25.450Z",
+  "status": "open",
+  "detail": "Jose asked (3 November, about 01:00 UTC) for riskmandate-jose to be added to data/team.json for jose. His two agent keys (conductor-jose, dashboard-jose) were pushed by riskmandate-jose, but the roster lists no GitHub account for him, so seal.mjs refuses them and he cannot reach L6. WS-106 leaves the roster change to conductor@web-summit.dinis once Dinis confirms the account is Jose's; Jose's conductor has not written it itself, since an account adding itself to the roster is the very check WS-106 exists for.",
+  "recommend": "Dinis confirms riskmandate-jose before the stand-up and his conductor adds it; Vicky's account (riskmandate-vicky) is in the same position and could go in the same change",
+  "issue": "WS-106",
+  "options": [
+    "Dinis confirms, and conductor@web-summit.dinis adds riskmandate-jose to the roster",
+    "Jose reads his agents' fingerprints to the sealer out of band (--fingerprint) instead"
+  ]
+}
