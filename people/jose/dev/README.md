@@ -52,7 +52,7 @@ Some n8n setups exclude the Execute Command node. Then paste the whole of **`rep
 3. **Code** ("report-draft"): the contents of `report-draft.n8n.js`.
 4. **IF**, **the sending node** and **remember**, as in setup 1 (steps 5 to 7).
 
-`report-draft.test.mjs` checks that the two versions give the same output (all three looks; 2, 7 and 60 points), that `text_whatsapp` stays under 1000 characters and keeps the link, that `text_slack` escapes and links, `--since`, and both of the Code node's ways of fetching. If one copy is changed, change the other and run the test.
+`report-draft.test.mjs` checks that the two versions give the same output (all three looks; 2, 7 and 60 points), that `text_whatsapp` stays under 1000 characters and keeps the link, that `text_slack` escapes and links, `--since`, and both of the Code node's ways of fetching. If one copy is changed, change the other and run the test. It also runs every two-hourly report in `content/reports/`, as the journalist really writes them: each must yield at least one point, and every look must stay under 1000 characters with the link. On 3 November at 09:40 UTC, all 8 did; the 06:57 report has one point, which is real, not a parsing miss.
 
 No number, token, group id or invite link goes in this repository: they stay in n8n's credentials.
 

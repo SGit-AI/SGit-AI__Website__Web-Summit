@@ -66,4 +66,18 @@ await test('n8n: an unknown look throws', async () => {
     await assert.rejects(runN8n({ look: 'x' }), /unknown look x/)
 })
 
+// every two-hourly report in the repository, as the journalist really writes them: a change of format shows up here
+const reportsDir = path.join(here, '..', '..', '..', 'content', 'reports')
+for (const f of fs.existsSync(reportsDir) ? fs.readdirSync(reportsDir).filter(f => /^\d{4}-\d{2}-\d{2}-\d{4}\.md$/.test(f)) : []) {
+    await test(`the real report ${f}: points found, every look under 1000 characters with the link`, async () => {
+        const md = fs.readFileSync(path.join(reportsDir, f), 'utf8'), s = f.replace(/\.md$/, '')
+        const title = (md.match(/^title: "?(.*?)"?$/m) || [])[1] || s, summary = (md.match(/^summary: "?(.*?)"?$/m) || [])[1] || ''
+        assert.ok(cli.points(md).length >= 1, 'no points under "## What happened"')
+        for (const make of [cli.draft, cli.draftThree, cli.draftLine]) {
+            const d = cli.enrich(make({ slug: s, title, summary }, md))
+            assert.ok(d.text_whatsapp.length < 1000 && d.text_whatsapp.includes(d.link) && d.text_slack.includes(`<${d.link}|`))
+        }
+    })
+}
+
 console.log(`${passed} passed`)
