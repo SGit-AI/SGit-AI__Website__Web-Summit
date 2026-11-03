@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.167",
+    "date": "2026-11-03",
+    "what": "stand-up briefings only for today and later: 18 pages and 54 files fewer, none stale",
+    "by": "dev@web-summit.dinis",
+    "from": "7492a9ee5"
+  },
+  {
     "version": "v0.2.166",
     "date": "2026-11-03",
     "what": "WS-94 for Silvio: his dashboard kept three times a day; agents.json; the decisions already taken",
