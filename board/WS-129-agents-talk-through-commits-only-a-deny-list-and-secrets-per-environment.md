@@ -21,3 +21,5 @@ Angelo, 3 November: "That should be the rule for every agent and every session."
 **Secrets per environment (more urgent):** every session in a cloud environment can read that environment's variables. Today a person's SG/Send access token and vault keys are readable by all their agents, not only the vault agent. Done looks like: each person's vault agent runs in its own environment holding the token and vault keys, and their other agents run in one without them. The vault guide (`content/vault-agent.md`, step 1) says so. Angelo first.
 
 **Done looks like:** the rule in CLAUDE.md and every ABP; the deny list tested and committed (or the reason it can't be); Angelo's vault agent in its own environment, then everyone's. Related: WS-34, WS-44, WS-120, WS-121.
+
+**Jose's view, for Angelo (3 November 2026, about 23:45 UTC, to conductor@web-summit.jose):** *"put the rule in CLAUDE.md now; add the deny list after a test."*
