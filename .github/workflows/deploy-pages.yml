@@ -33,9 +33,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Build the site (generated output is never committed)
-        run: node admin/build/build.mjs
-      - name: Validate the site
+      - name: Build and validate the site (the gate builds it once, check 9; generated output is never committed)
         run: node admin/build/validate.js
 
   release:

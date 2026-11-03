@@ -38,6 +38,18 @@ function walk(dir, out = []) {
     }
     return out
 }
+// 9. the build touches no tracked file: generated output is gitignored and built by CI, never committed. Run FIRST:
+// the gate makes the one build it checks (snapshot, build, snapshot), and every check below reads that fresh output.
+// It used to run in the middle, after the callers had built once already, so each gate run built the site twice
+// (dev@web-summit.dinis, 3 November). Callers no longer need to build before validating; if they do, nothing breaks.
+try {
+    const snap = () => execFileSync('git', ['diff', 'HEAD', '--stat'], { cwd: ROOT }).toString() + execFileSync('git', ['status', '--porcelain'], { cwd: ROOT }).toString()
+    const before = snap()
+    execFileSync('node', [path.join(__dirname, 'build.mjs')], { cwd: ROOT, stdio: 'pipe' })
+    const after = snap()
+    if (before !== after) errors.push('build.mjs changed a tracked file: generated output must be gitignored and never committed (see .gitignore)')
+} catch (e) { console.error(`FAIL build.mjs failed: ${(e.stderr || e.message).toString().slice(-2000)}`); process.exit(1) }
+
 const files = walk(ROOT)
 const htmlFiles = files.filter(f => f.endsWith('.html'))
 
@@ -109,14 +121,7 @@ for (const f of files.filter(f => /^articles\/[^/]+\.html$/.test(rel(f)) && rel(
     } catch { errors.push(`${md}.sig: not JSON`) }
 }
 
-// 9. the build touches no tracked file: generated output is gitignored and built by CI, never committed
-try {
-    const snap = () => execFileSync('git', ['diff', 'HEAD', '--stat'], { cwd: ROOT }).toString() + execFileSync('git', ['status', '--porcelain'], { cwd: ROOT }).toString()
-    const before = snap()
-    execFileSync('node', [path.join(__dirname, 'build.mjs')], { cwd: ROOT, stdio: 'pipe' })
-    const after = snap()
-    if (before !== after) errors.push('build.mjs changed a tracked file: generated output must be gitignored and never committed (see .gitignore)')
-} catch (e) { errors.push(`build.mjs failed: ${e.message}`) }
+// 9. (now first, before everything it checks: see the top of this file)
 
 // 12. twins, llms.txt and orphans
 for (const f of htmlFiles) {

@@ -149,6 +149,19 @@
       "cold_blobless_build_seconds_after": 2,
       "ci_seconds_before": 65,
       "ci_seconds_after": null
+    },
+    {
+      "date": "2026-11-03",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass 12: every gate run built the site twice (the caller, then check 9). The gate now makes its one build first (check 9 unchanged: snapshot, build, snapshot) and checks that output; release.sh and CI validate no longer pre-build. A release locally: build 1.75 s + gate 3.0 s -> gate 3.0 s. tag_release.sh (CI release step, conductor) still pre-builds twice: left to its owner. Largest build cost now: the PKI QR codes, about 0.6 s (security).",
+      "pages": 335,
+      "build_seconds": 1.75,
+      "validate_seconds": 3,
+      "release_local_seconds_before": 4.75,
+      "release_local_seconds_after": 3,
+      "ci_seconds_before": 100,
+      "ci_seconds_after": null
     }
   ]
 }

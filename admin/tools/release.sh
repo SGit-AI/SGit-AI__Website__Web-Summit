@@ -25,8 +25,7 @@ for attempt in 1 2 3 4 5; do
   if git diff --name-only "origin/$BRANCH..HEAD" | grep -qxE 'admin/build/version.txt|admin/versions.json'; then
     echo "release.sh: your commits change version.txt or versions.json; only CI writes those now. Drop those changes."; exit 1
   fi
-  node admin/build/build.mjs > /dev/null
-  node admin/build/validate.js
+  node admin/build/validate.js   # the gate builds the site itself, once (check 9)
   [ "${DRY:-0}" = 1 ] && { echo "DRY: would push $(git rev-list --count "origin/$BRANCH..HEAD") commit(s)"; exit 0; }
   MINE=$(git rev-parse HEAD)
   if git push -q origin "HEAD:$BRANCH"; then echo "pushed ${MINE:0:9}; CI numbers the release"; break; fi
