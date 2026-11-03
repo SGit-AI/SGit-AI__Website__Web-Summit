@@ -196,6 +196,21 @@
         "fingerprint": "sha256:44f5a4ccf8bc8e1a",
         "signing_fingerprint": "sha256:6c8543d09183f1e2"
       }
+    },
+    {
+      "id": "designer-jose",
+      "label": "designer@web-summit.jose (Claude Code session)",
+      "role": "Jose's web and graphic designer (designer@web-summit.jose): designs Jose's command centre (people/jose/app/, built by dev@web-summit.jose) and the look of Jose's broadcast messages (WS-39); works in people/jose/. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Jose's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it.",
+      "added": "2026-11-03",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAvp+ZkKxklUONXq4+nu4h\nSwXryGEJQ2leTfEErQ7x1wCQLr/Xqgh406cefe2g9yiYEIAjT3H0OL+5G4FDNrQZ\nHXxrt/GaQqXYD6OvqNeq03nhzZPyzzdcrIFEj2gYpWk2/wbpYOX2dSo0ilLutmaF\nGNbEb76DHYzb1NhGCc2hj3TcgO2kq639H9TXRwJRcoTI+sirHApHrsLNioR800aZ\naOLCgWgUkrIEIBcKBhh3p10IT5Y/SF5fEU9y1p9UVA/5dp73hS8X/xPO0/iDyy+3\ntidXfN2UzKTVoIdPyVHDmCfzjpmMD+Arcr2xPeARTW2RGhzY7r2oKxbGGlx4wQ5W\n3wtEjU33tiS6mToxo0EciSiw3IlvbS+Q2503+FUycHnE62r4ewkOA0CChqbt/Xkn\nZpii+jmuNM9tcn3+7nHCe1shw8yv/1czYXihmrIdwQSbShuFJAyiYJvZhU4KLXxk\nmbQODtDVZJAsldd9JQqVfqEQCCaPUUdYVHMSLUYa5N2D/QcSqQ6Kvy5xX3NKNmuQ\nuP+L+11MFhKiYfxL0RDKHIerCM884JUQ6T4AuZ8jF6CE3G+EE/lMP2foN1Wxf4QT\nDNIQ8tS0VEZJXNn9wO4xZUiPEyVqvUAF8OzfS3+d+xs9g2j2kSRhqjF33y1NOWEb\ngI82BMovUo0ynAtCa32b1ikCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEe8EhOWxO5xdftZhSl3Vzbz1W8+MN\n1gMUT6lSRZOuquMnNihPRginQlR1Gbi0MyFXYgPKCck7R2zzq49VduMPvw==\n-----END PUBLIC KEY-----\n",
+        "label": "designer@web-summit.jose (Claude Code session)",
+        "fingerprint": "sha256:a36ff22e4a1e3cc8",
+        "signing_fingerprint": "sha256:8d6c44d65151e485"
+      }
     }
   ]
 }
