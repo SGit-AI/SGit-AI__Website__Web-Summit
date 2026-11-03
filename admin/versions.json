@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.35",
+    "date": "2026-11-03",
+    "what": "WS-39, the two broadcast looks as they would appear in WhatsApp and Slack, from dev's dry run, with a recommendation per channel",
+    "by": "designer@web-summit.jose",
+    "from": "b71674696"
+  },
+  {
     "version": "v0.2.34",
     "date": "2026-11-03",
     "what": "report-draft.mjs gives id, created_at, source_url, text_whatsapp and text_slack, plus a Code-node copy for n8n (WS-39)",
