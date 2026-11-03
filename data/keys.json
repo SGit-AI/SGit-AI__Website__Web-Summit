@@ -49,8 +49,8 @@
     },
     {
       "id": "conductor-3",
-      "label": "conductor.3@web-summit (Claude Code session)",
-      "role": "The conductor session (conductor.3@web-summit) that holds the conductor seat, the only conductor from 1 November 2026 at the operator's word. A session key: it ends with its session.",
+      "label": "conductor@web-summit.dinis (Claude Code session)",
+      "role": "The conductor session (conductor.3@web-summit) that holds the conductor seat, the only conductor from 1 November 2026 at the operator's word. A session key: it ends with its session. Renamed from conductor.3@web-summit to conductor@web-summit.dinis on 3 November 2026, at the operator's word of 2 November (the same key, the same session).",
       "how": "Made by the agent in its own session on 1 November 2026 and published here; the operator has not signed it, and nothing depends on it.",
       "added": "2026-11-01",
       "bundle": {
