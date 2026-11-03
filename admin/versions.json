@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.46",
+    "date": "2026-11-03",
+    "what": "vaults outside the repository clone, .sg_vault/ ignored, one name for the access token",
+    "by": "sgit@web-summit.dinis",
+    "from": "461bb2f32"
+  },
+  {
     "version": "v0.2.45",
     "date": "2026-11-03",
     "what": "ABPs for six more agents (Jose's four, sgit@silvio, dashboard@dinis); dev's feedback lane",
