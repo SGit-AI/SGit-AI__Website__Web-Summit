@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.172",
+    "date": "2026-11-03",
+    "what": "conductor@web-summit.indi shown as started; the setup note brought up to date",
+    "by": "dashboard@web-summit.indi",
+    "from": "90c42ce37"
+  },
+  {
     "version": "v0.2.171",
     "date": "2026-11-03",
     "what": "23:00 wake: the session key published; dev@ on the dashboard and its WS-27 go under \"What needs me\"",
