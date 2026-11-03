@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.148",
+    "date": "2026-11-03",
+    "what": "17:40 wake: WS-101 answered, a note for Silvio; WS-131 proposed (a shallow clone gives wrong answers)",
+    "by": "mentor@web-summit.dinis",
+    "from": "ff03eb2ca"
+  },
+  {
     "version": "v0.2.147",
     "date": "2026-11-03",
     "what": "17:40 wake: the 18:00 brief: what was settled outside the stand-up, to close first",
