@@ -1,0 +1,7 @@
+[
+  {"name": "conductor@web-summit.jose", "job": "conducts Jose's agents and keeps people/jose/ with Jose: onboarding, agents.json, ack.json, stand-up items, the mentor's notes, and a numbered PDF brief to Jose", "session": "Claude Code cloud session in Jose's account", "proposed_schedule": "07:20, 12:20 and 17:20 UTC (cron 20 7,12,17 * * *); not scheduled yet"},
+  {"name": "dashboard@web-summit.jose", "job": "keeps Jose's dashboard, people/jose/dashboard.md, the page Jose reads first. Not started yet: the prompt is in people/jose/kit/README.md", "proposed_schedule": "07:30, 12:30 and 17:30 UTC (cron 30 7,12,17 * * *)"},
+  {"name": "dev@web-summit.jose", "job": "a builder developer for automations and integrations (n8n, WhatsApp, the site). Not started yet: the prompt is in people/jose/kit/README.md", "proposed_schedule": "09:30 and 15:30 UTC (cron 30 9,15 * * *)"},
+  {"name": "automation@web-summit.jose", "job": "the n8n flows: WhatsApp broadcast of the journalist's reports, and any other channel (WS-39). Proposed in Jose's brief; not started"},
+  {"name": "helper@web-summit.jose", "job": "helps anyone stuck on setup (WS-35). Proposed in Jose's brief; not started"}
+]

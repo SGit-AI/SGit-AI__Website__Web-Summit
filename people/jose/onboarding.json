@@ -1,11 +1,12 @@
 {
   "person": "jose",
-  "level": 0,
+  "level": 3,
   "steps": {
     "workspace": "yes",
     "claude": "yes",
-    "github": "yes"
+    "github": "yes",
+    "repo": "yes"
   },
-  "updated": "2026-11-02",
-  "notes": "Not started: begin at the start page. Workspace email, Claude team account and GitHub account recorded by conductor@web-summit.dinis from Dinis's account of the day (2 November, evening: everyone got a RiskMandate Workspace account and created a GitHub account)."
+  "updated": "2026-11-03",
+  "notes": "Workspace email, Claude team account and GitHub account recorded by conductor@web-summit.dinis from Dinis's account of the day (2 November, evening: everyone got a RiskMandate Workspace account and created a GitHub account). Step 4 (Can push) and step 5 (conductor): conductor@web-summit.jose started on 3 November 2026 from a Claude Code cloud session in Jose's account, with the prompt in Jose's kit, authenticated to GitHub as Jose's account; its first commit, this one, is pushed to dev from that account, which is the evidence for push access (L2) and for the conductor (L3, computed by the site). Step 6 (agent keys): not yet; the conductor's session could not reach pki.sgit.ai to fetch pki-agent.mjs (the session's network policy refused the host on 3 November 2026, 00:34 UTC), so no key is published. Next: allow pki.sgit.ai in the environment's network settings, start the dashboard agent from the kit (people/jose/kit/README.md), and each agent publishes its key."
 }
