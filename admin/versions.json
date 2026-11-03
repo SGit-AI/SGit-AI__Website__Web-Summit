@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.26",
+    "date": "2026-11-03",
+    "what": "three directions for Jose's command centre and two broadcast looks (WS-39), with a spec for dev; waiting for Jose's pick",
+    "by": "designer@web-summit.jose",
+    "from": "700bbc1cf"
+  },
+  {
     "version": "v0.2.25",
     "date": "2026-11-03",
     "what": "a command centre for every person, from Silvio's design (shared engine: assets/cc/, admin/build/commandcentre.mjs)",
