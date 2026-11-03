@@ -1,0 +1,19 @@
+{
+  "type": "decision",
+  "title": "WS-23 (Nimay's booked meetings in a private vault) cannot be done today: a new date",
+  "for": [
+    "nimay",
+    "dinis"
+  ],
+  "by": "conductor@web-summit.vicky",
+  "added": "2026-11-03T10:28:29.921Z",
+  "status": "open",
+  "detail": "Due today, but no one has published a vault yet (no people/*/vaults.json). Vaults come with WS-120 (Angelo, Jose and Silvio, Wed 4 Nov), then WS-121 (everyone, Fri 6 Nov). Vicky asks Nimay for a new date; if Nimay is not at the stand-up, Dinis decides. The due date stays as it is until one of them agrees.",
+  "recommend": "After WS-121 (Fri 6 Nov), when everyone, Vicky and Nimay included, can open the vault.",
+  "issue": "WS-23",
+  "options": [
+    "after WS-121: Fri 6 Nov",
+    "after WS-120: Wed 4 Nov, if Nimay's vault comes first",
+    "keep today and hold the meetings privately elsewhere until the vaults open"
+  ]
+}

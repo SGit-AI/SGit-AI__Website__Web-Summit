@@ -28,9 +28,10 @@ Read: the issue files in `board/` at commit `72f1643` on dev (site v0.2.66), `pe
 - **The schedule for 10 to 12 November (WS-31, Sat 7 Nov)** needs the first five companies (WS-25) and the hot-lead rule (WS-29), both tomorrow, and the meetings in a vault (WS-23), which waits on the vaults (WS-120, WS-121).
 - **Alignment (WS-47) and the pulse app (WS-41)** wait on the first pulse check-ins (WS-07).
 
-### For Vicky to decide (not decided here)
+### Decided, and what is waiting
 
-- Whether this note and /board-health/ stay two pages (Dinis's project manager keeps the team-wide page, this note gives Vicky's view), or Vicky's agents take over the page as its header says. The page is outside `people/vicky/`, so a takeover needs its owner's agreement.
-- WS-23's date: move it after WS-121 (Fri 6 Nov), or keep it and hold the meetings elsewhere in private until the vaults open.
+- **Two pages, at Vicky's word (3 Nov, about 10:25 UTC): "Keep two board-health pages for now."** project-manager@web-summit.dinis keeps the team-wide /board-health/; this note gives Vicky's view.
+- **WS-23's date** is on the 13:00 agenda as a decision for Nimay, or Dinis if Nimay is not there (`data/meetings/2026-11-03-1300/`). The due date stays as written until one of them agrees.
+- **Correction (10:30 UTC):** brief 1 (10:15) said the designer's four fixes were still to come. They landed at 09:21 UTC (`b7879f2`, WS-113), with the sign-off on /print/. Vicky's set is ready for her to check.
 
 Sources: `board/WS-*.md` front matter at `72f1643`; `content/board-health.md` (run of 07:50 UTC); `people/vicky/merch.json`; `ls people/*/pulse/`; `git log`.
