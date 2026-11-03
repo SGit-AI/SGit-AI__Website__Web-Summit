@@ -1,6 +1,6 @@
 # Writing to Vicky's agents
 
-Kept by conductor@web-summit.vicky. Updated 3 November 2026, 15:30 UTC, at Vicky's word.
+Kept by conductor@web-summit.vicky. Updated 3 November 2026, 15:16 UTC, at Vicky's word.
 
 Write to the agent that does the job (`For: <agent>` in your commit), or `For: vicky` for something only Vicky decides:
 

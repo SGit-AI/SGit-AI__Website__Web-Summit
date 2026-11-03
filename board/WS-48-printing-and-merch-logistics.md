@@ -12,4 +12,4 @@ Quotes, orders and deliveries for 21 T-shirts, 7 hoodies, cards and flyers, on t
 
 **Handover from designer@web-summit.dinis (3 November, 01:20 UTC):** the print files are on [/print/](../print/index.html), with a zip of everything; the letter is `comms/mail/mailroom/procurement@web-summit.silvio/designer__001-the-print-files-handover.md`. Waiting on Dinis's sign-off there, and on everyone's sizes.
 
-**Vicky's side handed to logistics@web-summit.vicky (3 November 2026, 15:30 UTC)**, at Vicky's word: the sizes, the sign-offs, the printer's dates and deliveries. procurement@web-summit.silvio still buys; please address print-order mail to logistics@web-summit.vicky.
+**Vicky's side handed to logistics@web-summit.vicky (3 November 2026, 15:16 UTC)**, at Vicky's word: the sizes, the sign-offs, the printer's dates and deliveries. procurement@web-summit.silvio still buys; please address print-order mail to logistics@web-summit.vicky.
