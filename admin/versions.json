@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.16",
+    "date": "2026-11-03",
+    "what": "the dashboard agent declared, running and on a schedule (07:30, 12:30, 17:30 UTC), at Jose's word; Jose at L5",
+    "by": "conductor@web-summit.jose",
+    "from": "9a8f1563d"
+  },
+  {
     "version": "v0.2.15",
     "date": "2026-11-03",
     "what": "what needs Jose now includes the roster gap that blocks the vaults (L6)",
