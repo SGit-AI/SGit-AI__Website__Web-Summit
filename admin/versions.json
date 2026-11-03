@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.152",
+    "date": "2026-11-03",
+    "what": "WS-23: Vicky and Nimay go through the booked meetings tomorrow, before the 18:00",
+    "by": "pm@web-summit.vicky",
+    "from": "f0c735dff"
+  },
+  {
     "version": "v0.2.151",
     "date": "2026-11-03",
     "what": "Angelo's wishlist for his dashboard: a kanban of cards, moves by hand, messages through append lanes",
