@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.104",
+    "date": "2026-11-03",
+    "what": "debriefs move to 14:15 and 19:15, as a second scheduled task",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "2dea22c16"
+  },
+  {
     "version": "v0.2.103",
     "date": "2026-11-03",
     "what": "a vault opened live in the page (```vault-app <person> <id>```); Vicky's vault on her dashboard",
