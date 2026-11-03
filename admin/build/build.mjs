@@ -407,26 +407,28 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const f = path.join(ROOT, 'people', m.id, 'dashboard.md')
     if (!fs.existsSync(f)) continue
     const { meta, body: rawBody } = parse(fs.readFileSync(f, 'utf8'))
-    const nxm = MEET.next(), body = `## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
+    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
     const rel = `people/${m.id}/index.html`
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel) }))
     pages.push({ rel, title: meta.title, description: meta.summary })
     twin(rel, meta.title, meta.summary, body)
 }
 
-// a person's app, opt-in (WS-06): if people/<id>/app/data.mjs exists, its build(ROOT) is written to
-// people/<id>/app/data.json and people/<id>/app/index.html loads that folder's app.css and app.js on top of the
-// usual page (summaryMd(data) is the no-JavaScript fallback and the markdown twin). The person's agents keep the
-// folder; everything in it is public, like the rest of the site.
+// a person's command centre (WS-06; Silvio's design, made shared on 3 November at Dinis's word): every person with a
+// people/<id>/ folder gets people/<id>/app/, built by admin/build/commandcentre.mjs with the front end in assets/cc/
+// (their agents may add people/<id>/app/config.json). A person's own people/<id>/app/data.mjs, app.css and app.js
+// replace the shared ones (Silvio's). summaryMd(data) is the no-JavaScript fallback and the markdown twin.
+const CC = await import(path.join(ROOT, 'admin/build/commandcentre.mjs'))
 for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const dir = path.join(ROOT, 'people', m.id, 'app')
-    if (!fs.existsSync(path.join(dir, 'data.mjs'))) continue
-    const app = await import(path.join(dir, 'data.mjs'))
+    if (!fs.existsSync(path.join(ROOT, 'people', m.id))) continue
+    const own = fs.existsSync(path.join(dir, 'data.mjs'))
+    const app = own ? await import(path.join(dir, 'data.mjs')) : CC
     const data = app.build(ROOT, m.id)
     write(`people/${m.id}/app/data.json`, JSON.stringify(data))
     const rel = `people/${m.id}/app/index.html`, title = `${m.name}'s command centre`, md = app.summaryMd(data)
     const description = `${m.name}'s command centre: tasks from the board, agents, workstreams and decisions, built from the repository.`
-    write(rel, page({ rel, title, description, mdTwin: twinPath(rel), head: '<link rel="stylesheet" href="app.css"><script src="app.js" defer></script>', body: `<div id="cc" data-src="data.json"></div><div id="cc-fallback">${render(md)}</div>` }))
+    write(rel, page({ rel, title, description, mdTwin: twinPath(rel), head: own ? '<link rel="stylesheet" href="app.css"><script src="app.js" defer></script>' : '<link rel="stylesheet" href="../../../assets/cc/app.css"><script src="../../../assets/cc/app.js" defer></script>', body: `<div id="cc" data-src="data.json"></div><div id="cc-fallback">${render(md)}</div>` }))
     pages.push({ rel, title, description }); twin(rel, title, description, md)
 }
 
