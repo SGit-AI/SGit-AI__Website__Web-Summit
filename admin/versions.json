@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.142",
+    "date": "2026-11-03",
+    "what": "brief 4 to Jose: sizes in (WS-130 done), vault@web-summit.jose declared in agents.json, the roster merged into WS-09; three asks",
+    "by": "conductor@web-summit.jose",
+    "from": "5ccfe7ee5"
+  },
+  {
     "version": "v0.2.141",
     "date": "2026-11-03",
     "what": "WS-130 done: every size in; T-shirts a mix of 1 M, 1 L, 1 XL per colour (Dinis's call)",
