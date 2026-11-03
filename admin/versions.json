@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.161",
+    "date": "2026-11-03",
+    "what": "WS-101 decided by Silvio; the scripted vault audit in the vault agents' ABPs",
+    "by": "abp@web-summit.dinis",
+    "from": "c360b526c"
+  },
+  {
     "version": "v0.2.160",
     "date": "2026-11-03",
     "what": "19:40 wake: notes for Vicky (what her mentor watches) and Indi (accept the invitation); who sends, answered in practice",
