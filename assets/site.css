@@ -406,3 +406,9 @@ figure.chart { margin: 1rem 0 1.4rem; overflow-x: auto; }
 .ch .ch-agent.idle { fill: var(--surface); stroke: var(--ink-2); stroke-dasharray: 3 3; }
 .ch .ch-other { fill: var(--surface-2); stroke: var(--ink-2); }
 svg.ch-map { min-width: 620px; max-width: 900px; }
+/* the person's own key in this browser (assets/keyring.js): what only they can open */
+.fy-unlocked { margin-top: 0.9rem; padding-top: 0.6rem; border-top: 1px dashed var(--line-2); }
+.fy-unlocked h2 { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 0.2rem; border: 0; padding: 0; }
+.fy-unlocked button { font: inherit; font-size: 0.8rem; border: 1px solid var(--line-2); border-radius: 999px; background: var(--surface-2); padding: 0.1rem 0.6rem; cursor: pointer; }
+.fy-unlocked dl { display: grid; grid-template-columns: auto 1fr; gap: 0.1rem 0.8rem; margin: 0.3rem 0 0; font-size: 0.88rem; }
+.fy-unlocked dt { color: var(--ink-2); }

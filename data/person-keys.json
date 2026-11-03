@@ -1,0 +1,27 @@
+{
+  "about": "Keys a conductor issues to its person for one session (admin/tools/person-key.mjs): public halves only. The issuing agent also holds the private half, so it can read what is sealed to the person; a new session issues a new key. The step before each person holds their own key on pki.sgit.ai.",
+  "keys": [
+    {
+      "person": "dinis",
+      "fingerprint": "sha256:c7ec751484fbf03d",
+      "signing_fingerprint": "sha256:0a2094c80a84ace2",
+      "status": "active",
+      "issued_by": "conductor@web-summit.dinis",
+      "session": "session_018yvwtMPVc6R9iMzkBcVpE2",
+      "issued_at": "2026-11-03T23:42:56Z",
+      "valid": "while the issuing session lives",
+      "encrypt": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "ykDuwR9cDHVPWNO5QnohO6LvUvRBuVkfQDcmDuxyHt8",
+        "y": "iRqoPZXsQb4vsXUGCr5usF-TLE7xWqQgJRk8g4sUPoQ"
+      },
+      "sign": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "epmfiNTpAamg1QDbPTtXNYsW2hF1Tma35pdrdIqX-Ms",
+        "y": "qim0NAXg--hoQ_qZlETHD0ihmSQIHbHS5oPAwnj68ls"
+      }
+    }
+  ]
+}

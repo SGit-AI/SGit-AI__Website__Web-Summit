@@ -1,0 +1,15 @@
+{
+  "v": "ws-ecies-1",
+  "to": "dinis",
+  "key": "sha256:c7ec751484fbf03d",
+  "by": "conductor@web-summit.dinis",
+  "at": "2026-11-03T23:43:05Z",
+  "epk": {
+    "kty": "EC",
+    "crv": "P-256",
+    "x": "SE-Va5EnOOuPHIMcyMCaIw0AKEFE8Zivh3v1qNlS4OU",
+    "y": "pWX9J-qyce2IZVm21drR8j33vCqgNIW_SOan_NVlCIc"
+  },
+  "iv": "wkO5JTYSn0/TtKFD",
+  "ct": "4DaXXqV73aoYEza+bSSsVwBD2lKp7pmwKn8ItCCaoNKfhDm6PWqGa54s68L44kMFjNiyzTiLpNlHomBazQ56Cb6KhFnm7d9YnJlhMyfGZjGNaqzMzYPWkLsavaTjXzOdRDF7pUjSvCHrRGkKLxFXqnorKFZOMF5HsQuL5bnoPZOMr90dIIoNFaO2hOhSEKQrTTF14B0ZFOPMNWLNWOlYBj3KOvHVFD0D2zGJk48yX8yUGHiKBj9XImGPujttvnbpsmP7fjjvqFhNuwuhcKo/EMK9l20FqtDwhNirNh/yPfbW/e2Wj2ovNZvdumkN6xnc4OWuNasFvxMzR7lvTXc="
+}

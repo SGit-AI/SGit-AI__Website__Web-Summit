@@ -194,6 +194,7 @@ ${body}
 </main>
 </div>
 <script src="${up}assets/copy.js" defer></script>
+<script src="${up}assets/keyring.js" defer></script>
 <script src="${up}assets/me.js" defer></script>
 <script src="${up}assets/feedback.js" defer></script>
 <footer><div class="row"><span>Built and run by an AI agent with a named human operator.</span><a class="ver" href="${up}admin/versions.html#${VERSION}">${VERSION}</a><a href="${REPO}">GitHub</a><span>Code Apache-2.0, text CC BY 4.0</span></div></footer>
@@ -557,6 +558,8 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
             daily: daily(m.id), days: DAYS14,
             acked: a?.acknowledged_at || null, since: { releases: since.filter(x => x.release).length, commits: since.filter(x => !x.release).length },
             briefing: `meetings/${nx.id}/${m.id}/index.html`, standup: `${nx.day} ${nx.time}`,
+            // what is sealed to this person (admin/tools/person-key.mjs seal): ciphertext, opened only by their key in their browser
+            sealed: (d => fs.existsSync(d) ? fs.readdirSync(d).filter(x => x.endsWith('.json')).sort().reverse().map(x => `data/sealed/${m.id}/${x}`) : [])(path.join(ROOT, 'data/sealed', m.id)),
             links: { dashboard: `people/${m.id}/index.html`, centre: `people/${m.id}/app/index.html`, brief: `brief-${m.id}/index.html`, profile: `team/${m.id}/index.html` },
         }
     }

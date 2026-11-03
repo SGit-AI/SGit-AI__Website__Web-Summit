@@ -15,7 +15,8 @@
     const pick = document.getElementById('me-pick'), panel = document.getElementById('for-you')
     if (!pick) return
 
-    fetch(up + 'me.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : Promise.reject(r.status)).then(ME => {
+    const KR = window.WSKeyring, krReady = KR ? KR.ready.catch(() => null) : Promise.resolve(null)
+    Promise.all([fetch(up + 'me.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : Promise.reject(r.status)), krReady]).then(([ME]) => {
         const people = Object.values(ME.people)
         const draw = () => {
             const me = ME.people[get()]
@@ -28,6 +29,7 @@
             panel.hidden = false; panel.style.setProperty('--c', me.colour || '')
             panel.innerHTML = render(me, ME)
             const x = panel.querySelector('[data-me-clear]'); if (x) x.onclick = () => { set(''); draw() }
+            if (KR && KR.person === me.id) unlocked(me)
         }
         draw()
         window.addEventListener('storage', e => { if (e.key === KEY) draw() })
@@ -46,6 +48,22 @@
     }
     const issue = i => `<li><a href="${up}briefs/index.html#issues"><code>${esc(i.id)}</code> ${esc(i.title)}</a> <span class="${i.late ? 'late' : 'due'}">${esc(i.due || '')}${i.late ? ', late' : ''}</span></li>`
     const agent = a => `<li><span class="dot ${esc(a.status)}" aria-hidden="true"></span><b>${esc(a.name.split('@')[0])}</b> <span class="muted">${esc(a.status)}${a.last_at ? ', ' + esc(ago(a.last_at)) : ''}</span>${a.last ? `<br><span class="muted">${esc(a.last)}</span>` : ''}</li>`
+
+    // the person's own key is in this browser (assets/keyring.js): open what is sealed to them on the site
+    async function unlocked(p) {
+        const box = document.createElement('div'); box.className = 'fy-unlocked'
+        box.innerHTML = `<h2>Unlocked: only your key opens this</h2><p class="muted">Key ${esc(KR.fingerprint)}, issued to ${esc(p.first)} for this session. <button type="button" data-lock>Remove the key from this browser</button></p><div class="fy-sealed muted">Opening…</div>`
+        panel.appendChild(box)
+        box.querySelector('[data-lock]').onclick = async () => { await KR.lock(); box.remove() }
+        const out = [], files = p.sealed || []
+        for (const f of files) {
+            try { const env = await (await fetch(up + f, { cache: 'no-cache' })).json(); if (env.key !== KR.fingerprint) continue; out.push({ f, by: env.by, at: env.at, m: await KR.open(env) }) }
+            catch (e) { out.push({ f, err: String(e.message || e) }) }
+        }
+        const show = x => x.err ? `<li class="muted">${esc(x.f)}: could not open (${esc(x.err)})</li>`
+            : `<li><b>${esc(x.m.title || x.f.split('/').pop())}</b> <span class="muted">from ${esc(x.by || 'unknown')}, ${esc(ago(x.at))}</span>${x.m.text ? `<br>${esc(x.m.text)}` : ''}${x.m.fields ? `<dl>${Object.entries(x.m.fields).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>` : ''}</li>`
+        box.querySelector('.fy-sealed').outerHTML = out.length ? `<ul class="fy-list">${out.map(show).join('')}</ul>` : '<p class="muted">Nothing sealed to you yet.</p>'
+    }
 
     function render(p, ME) {
         const tiles = [[p.overdue, 'overdue', p.overdue ? 'warn' : ''], [p.soon, 'due in 72 h', ''], [p.decisions.length, 'decisions waiting', p.decisions.length ? 'warn' : ''], [p.since.releases, p.acked ? `releases since you said "seen it" (${ago(p.acked)})` : 'releases in 24 h (tell your agent "acknowledge")', '']]
