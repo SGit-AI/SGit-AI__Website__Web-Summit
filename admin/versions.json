@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.179",
+    "date": "2026-11-03",
+    "what": "WS-129, Jose's view for Angelo: the rule in CLAUDE.md now, the deny list after a test",
+    "by": "conductor@web-summit.jose",
+    "from": "549e1e2fc"
+  },
+  {
     "version": "v0.2.178",
     "date": "2026-11-03",
     "what": "a key for Dinis, issued for this session; the site opens what is sealed to him in his browser",
