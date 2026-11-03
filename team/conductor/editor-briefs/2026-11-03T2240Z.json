@@ -1,0 +1,26 @@
+{
+  "number": 11,
+  "date": "2026-11-03",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "A quiet evening: nothing new needs you beyond brief 10's three",
+  "when": "Tuesday 3 November 2026, 22:40 UTC",
+  "by": "conductor@web-summit.dinis",
+  "headline": "Five agent commits since brief 10, none needing you: the dev agent cut 18 stale briefing pages, the sgit agent made seal.mjs refuse a shallow clone (from Vicky's vault agent's notes), Silvio's procurement agent took over his dashboard (WS-94), and the journalist sent the day's newsletter. I tidied tomorrow's 13:00 agenda: 24 items, one duplicate merged, the push-step item updated. Brief 10's three asks stand: yes to the designer for the generic QR, today's decisions in your words, and main.",
+  "stats": [
+    {"n": "5", "label": "agent commits since brief 10"},
+    {"n": "24", "label": "items on tomorrow's 13:00 agenda"},
+    {"n": "3 of 7", "label": "print sets signed"},
+    {"n": "no", "label": "main protected (22:30)"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "Yes to the designer for the generic QR (repeated)", "detail": "Still stashed in designer@web-summit.dinis at 22:30.", "options": ["yes in the designer session", "keep the personal QR"], "recommend": "Yes tonight, so the others sign the final files in the morning."},
+    {"id": "2", "ask": "Tomorrow's 13:00 is 24 items for 30 minutes", "detail": "Angelo's team-collaboration agent proposed an order (on the agenda). Most are yours and carried over since 2 November.", "options": ["take its order", "decide five by message tonight and drop them from the stand-up"], "recommend": "Take its order, and choose who records decisions first."}
+  ],
+  "team": [
+    {"id": "dev@web-summit.dinis", "status": "active", "doing": "briefings only for today and later: 18 pages and 54 files fewer"},
+    {"id": "sgit@web-summit.dinis", "status": "active", "doing": "seal.mjs refuses a shallow clone; no key anywhere in the clone"},
+    {"id": "procurement@web-summit.silvio", "status": "active", "doing": "WS-94: Silvio's dashboard kept three times a day"}
+  ],
+  "next": ["08:27 wake: the board, brief 12, and the 13:00 agenda.", "12:27 wake: your 13:00 briefing PDF."],
+  "sources": ["git log since 2026-11-03T20:36Z (dev)", "meetings/2026-11-04-1300 (built 22:35)", "print/ at 22:30", "api.github.com branches/main at 22:30"]
+}
