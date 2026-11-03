@@ -1,0 +1,44 @@
+{
+  "number": 5,
+  "date": "2026-11-03",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "The site now knows who you are; three things only you can do before 16:00",
+  "when": "Tuesday 3 November 2026, 08:35 UTC",
+  "by": "conductor@web-summit.dinis",
+  "headline": "Since brief 4: everyone has a command centre built from Silvio's design, every page opens with a For-you panel for the person the visitor picks, and the dev agent has already added a chart helper and gate checks on it. Overnight 11 commits from 8 agents, 4 of them other people's agents. Three asks are yours and nobody else's: protect main (still open at 08:15), the print order's deadline, ceiling and fallback before the 16:00 sign-off, and the GitHub invitations that hold three people at the same step.",
+  "stats": [
+    {"n": "9", "label": "command centres, one per person"},
+    {"n": "11", "label": "agent commits since 03:00 UTC, 8 agents"},
+    {"n": "10", "label": "decisions for you at 13:00"},
+    {"n": "3 of 6", "label": "people stopped at the push step"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "Protect main on GitHub (WS-105)", "detail": "abp@web-summit.dinis checked the GitHub API at 08:15: main and dev are unprotected, so the rule 'no agent pushes to main' is still hope, not a control (the push of 2 November is the failure on record). Only a repository admin can set it: Settings, Branches, a rule on main requiring a pull request.", "options": ["protect main now (5 minutes)", "leave it this week"], "recommend": "Protect main now; it turns the ABPs' first barrier into a control."},
+    {"id": "2", "ask": "The print order: final artwork deadline, spending ceiling and fallback (WS-48, WS-13)", "detail": "Two of seven printers replied (one cannot make Friday; one only in white, black or grey). A third can make Friday in our colours if confirmed by the end of today. The sign-off on /print/ is at 16:00 (WS-113).", "options": ["confirm the third printer today within a ceiling you name", "one colour on all shirts as the fallback", "wait for more replies"], "recommend": "Name a ceiling at 13:00 and let Silvio confirm the third printer today."},
+    {"id": "3", "ask": "The GitHub invitations (WS-09)", "detail": "Nimay, Jose and Indi all stop at 'Can push'. The mentors raised it once for all three: one hand-off to fix, not three notes. Jose also asks for riskmandate-jose on the roster.", "options": ["send the three invitations now", "at the stand-up"], "recommend": "Send them now; it unblocks three people's agents today."}
+  ],
+  "you_asked": [
+    {"at": "3 Nov, 01:20", "said": "review the great dashboard that Silvio just published ... start creating the dashboards for others based on that", "done": "Reviewed (good: real data, no mail on a public page, honest agent status; fixed: decisions from the agenda, clipped buttons, broken labels, fixed initials). A shared engine gives everyone one; Silvio's agent has since moved his onto it.", "where": "/people/<id>/app/, v0.2.25", "status": "done"},
+    {"at": "3 Nov, 01:40", "said": "an easy and very visible option for me to switch UX and dashboards for everybody", "done": "A row at the top of every command centre: Site, Command centre or Classic, and a button per person.", "where": "v0.2.28", "status": "done"},
+    {"at": "3 Nov, 02:30", "said": "allow the visitor to select who they are ... the whole website structured to show the information for them ... the dashboard agent manages these parts ... see what other agents can help", "done": "The picker and the For-you panel on every page (v0.2.43); WS-123 splits the rest: dashboard (panels), designer (the look), dev (charts, gate), journalist, security. Dev has done its first two parts.", "where": "WS-123", "status": "in progress"},
+    {"at": "3 Nov, 00:50", "said": "read the latest articles in newsroom.sgit.ai ... 100% applicable here", "done": "Six issues filed, WS-107 to WS-112; WS-89 now fully fixed (abp@web-summit.dinis caught that my first fix left the conductor's wake sentence in three prompts).", "where": "board/", "status": "done"}
+  ],
+  "team": [
+    {"id": "dev@web-summit.dinis", "status": "on WS-123", "doing": "chart helper and today's runs as a picture on /wakes/; gate checks on me.json"},
+    {"id": "dashboard@web-summit.dinis", "status": "waiting on you", "doing": "five 13:00 decisions for you first on your dashboard; asks whether its OKR draft goes on the agenda"},
+    {"id": "designer@web-summit.dinis", "status": "briefed", "doing": "WS-123 item 2, the look of the For-you panel and the charts: no commit yet"},
+    {"id": "abp@web-summit.dinis", "status": "active", "doing": "ABPs for six more agents; found WS-89 half done"},
+    {"id": "Jose's agents", "status": "active", "doing": "brief 2 to Jose (his conductor), the 13:00 decisions first (his dashboard), WS-39 broadcasts"}
+  ],
+  "next": [
+    "12:27 wake: your 13:00 briefing PDF, sent before the stand-up.",
+    "13:00: decisions recorded in your words with admin/tools/agenda.mjs decide (WS-107), the first time.",
+    "Waiting on your word: a viz@web-summit.dinis agent for the charts (proposed in my last reply)."
+  ],
+  "sources": [
+    "git log since 2026-11-03T03:00Z (dev)",
+    "board/WS-09, WS-48, WS-89, WS-105, WS-113, WS-123",
+    "meetings/2026-11-03-1300/dinis (built 08:30)",
+    "abp@web-summit.dinis commit e214c4b (the branch check at 08:15)"
+  ]
+}

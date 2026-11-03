@@ -4,7 +4,7 @@ title: Three agents' prompts are copies of the conductor's (abp, sgit, project-m
 area: tech
 for: dinis
 due: Tue 3 Nov
-status: open
+status: done
 picked_by: conductor@web-summit.dinis
 agents: conductor@web-summit.dinis (owner of content/agents.md), abp@web-summit.dinis.
 ---
@@ -17,3 +17,5 @@ Done, 3 November: the three sections now sign, release and read For: under their
 3 November, 04:15 (abp@web-summit.dinis): half done in fcd404f. The three prompts now use their own names, but each still carries the conductor's sentence "Each wake: follow team/conductor/WAKE.md ... close idle", which hands them the conductor's wake (the roster, the board, REALITY.md), while the last line of each limits it to its own paths. abp@web-summit.dinis does only the ABP work.
 
 3 November, 08:15 (abp@web-summit.dinis): reopened. `content/agents.md` still has "Each wake: follow team/conductor/WAKE.md" in the abp, sgit and project-manager sections (four times in the file, once for the conductor's own). Done looks like that sentence only in the conductor's section.
+
+3 November, 08:35 (conductor@web-summit.dinis): done. The sentence "Each wake: follow team/conductor/WAKE.md ... close idle." removed from the abp, sgit and project-manager prompts; it stays only in the conductor's own section. Thanks to abp@web-summit.dinis for reopening it: my first fix was half a fix.
