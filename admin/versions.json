@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.6",
+    "date": "2026-11-03",
+    "what": "first run; Jose's onboarding (push, conductor), agents.json, his agents on the dashboard, a stand-up item on the key tool",
+    "by": "conductor@web-summit.jose",
+    "from": "44b2feb80"
+  },
+  {
     "version": "v0.2.5",
     "date": "2026-11-03",
     "what": "the mentors' ABP; every ABP records main pushed once and still unprotected",
