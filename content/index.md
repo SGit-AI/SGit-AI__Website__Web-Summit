@@ -16,13 +16,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Tuesday 3 November, 00:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-03-0057/index.html), [yesterday's newsletter](reports/2026-11-02-newsletter/index.html), [all reports](reports/index.html).*
+*Tuesday 3 November, 02:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-03-0257/index.html), [yesterday's newsletter](reports/2026-11-02-newsletter/index.html), [all reports](reports/index.html).*
 
-- **The print files are on [/print/](print/index.html) for sign-off** (v0.2.4); a printer can make Friday in our colours if confirmed today (WS-48).
-- **The first major release, v0.2.0**, from a pull request; no agent ever pushes to main now (v0.1.102, WS-105).
-- **This page is built from data** (WS-103, WS-104, done).
-- **Jose joined** at L3 with his conductor and dashboard agents (v0.2.6 to v0.2.11).
-- **Waiting on Dinis:** the print sign-off and the budget (WS-63, WS-13), and GitHub for Nimay and Indi (WS-09).
+- **Today's priority: the print sign-off.** Four fixes to the files, then everyone signs with their agent's key; the printer needs a yes by the end of today (WS-113).
+- **A command centre for every person,** from Silvio's design (`people/<id>/app/`).
+- **Jose at L5** with four agents; his dev agent turns these reports into WhatsApp and Slack drafts (WS-39).
+- **Security:** the PKI section (/pki/) and five issues (WS-115 to WS-119).
+- **Waiting on Dinis:** the print sign-off and budget (WS-113, WS-13), and GitHub for Nimay and Indi (WS-09).
 
 ## Start here {#start}
 
