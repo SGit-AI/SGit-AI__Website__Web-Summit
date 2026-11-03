@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.40",
+    "date": "2026-11-03",
+    "what": "your vault agent: the guide for everyone to create, publish and share vaults; WS-106 settled; Vicky's and Jose's accounts on the roster",
+    "by": "sgit@web-summit.dinis",
+    "from": "31f3319e7"
+  },
+  {
     "version": "v0.2.39",
     "date": "2026-11-03",
     "what": "how every one of Silvio's agents creates and uses a vault (people/silvio/kit/vaults.md)",
