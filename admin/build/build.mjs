@@ -407,7 +407,7 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const f = path.join(ROOT, 'people', m.id, 'dashboard.md')
     if (!fs.existsSync(f)) continue
     const { meta, body: rawBody } = parse(fs.readFileSync(f, 'utf8'))
-    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
+    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
     const rel = `people/${m.id}/index.html`
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel) }))
     pages.push({ rel, title: meta.title, description: meta.summary })
@@ -425,6 +425,8 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const own = fs.existsSync(path.join(dir, 'data.mjs'))
     const app = own ? await import(path.join(dir, 'data.mjs')) : CC
     const data = app.build(ROOT, m.id)
+    // the switcher at the top of every command centre: everyone's, in roster order
+    data.team = teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => ({ id: x.id, name: x.name }))
     write(`people/${m.id}/app/data.json`, JSON.stringify(data))
     const rel = `people/${m.id}/app/index.html`, title = `${m.name}'s command centre`, md = app.summaryMd(data)
     const description = `${m.name}'s command centre: tasks from the board, agents, workstreams and decisions, built from the repository.`

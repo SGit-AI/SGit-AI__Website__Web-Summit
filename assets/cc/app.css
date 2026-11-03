@@ -570,3 +570,17 @@ html.cc-on[data-theme="light"] .cc-ask .wave::after { background: radial-gradien
     .cc-hero .cc-actions .cc-btn { padding: 0 8px; gap: 6px; font-size: 13px; white-space: nowrap; }
     .cc-hero .cc-actions .cc-btn svg { width: 16px; height: 16px; }
 }
+
+/* the switcher (Dinis, 3 November): back to the site, everyone's command centre, and the classic dashboard, always visible */
+.cc-switch { display: flex; align-items: center; gap: 10px; padding: 8px 24px; overflow-x: auto; scrollbar-width: thin; border-bottom: 1px solid var(--rm-border); background: var(--rm-surface); font: 600 13px/18px var(--rm-font); white-space: nowrap; }
+.cc-switch a { color: var(--rm-text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px 5px 6px; border-radius: 999px; border: 1px solid var(--rm-border); flex: none; }
+.cc-switch a:hover { color: var(--rm-text); background: var(--rm-surface-hover); }
+.cc-switch a[aria-current="page"] { color: #1A1203; background: linear-gradient(140deg, #FFD978, #F5B942); border-color: #F5B942; }
+.cc-switch .cc-back { padding-left: 8px; }
+.cc-switch .cc-back svg { width: 16px; height: 16px; }
+.cc-switch .people, .cc-switch .ux { display: flex; gap: 6px; }
+.cc-switch .av { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font: 700 10px/1 var(--rm-font); background: var(--rm-chip-bg); color: var(--rm-text); }
+.cc-switch a[aria-current="page"] .av { background: rgba(0,0,0,.15); color: #1A1203; }
+.cc-switch .ux a { padding-left: 10px; }
+.cc-switch .sep { width: 1px; height: 22px; background: var(--rm-border); flex: none; }
+@media (max-width: 760px) { .cc-switch { padding: 8px 12px; } }

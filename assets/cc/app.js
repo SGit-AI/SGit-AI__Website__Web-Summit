@@ -137,6 +137,13 @@
     <div class="foot">Data ${esc(D.version)} · ${esc(ago(D.built_at))}<br><a href="../index.html">Classic dashboard</a> · <a href="../../../index.html">Site</a></div>
   </aside>
   <div class="cc-main">
+    <nav class="cc-switch" aria-label="Back to the site, and everyone's command centre">
+      <a class="cc-back" href="../../../index.html">${ico('back', '')}Site</a>
+      <span class="sep" aria-hidden="true"></span>
+      <div class="ux" role="group" aria-label="Which view of ${esc(FIRST)}'s page"><a aria-current="page" href="index.html">Command centre</a><a href="../index.html">Classic</a></div>
+      <span class="sep" aria-hidden="true"></span>
+      <div class="people">${(D.team || []).map(p => `<a href="../../${esc(p.id)}/app/index.html"${p.id === ME ? ' aria-current="page"' : ''} title="${esc(p.name)}'s command centre"><span class="av">${esc(p.name.split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase())}</span>${esc(p.name.split(' ')[0])}</a>`).join('')}</div>
+    </nav>
     <header class="cc-top">
       <span class="cc-mark sm" aria-hidden="true">R</span><div class="title" id="cc-title"></div><div class="grow"></div>
       <form class="cc-search" role="search" id="cc-search"><label class="sr" for="cc-q">Search the board</label>${ico('search', '')}<input id="cc-q" type="search" placeholder="Search issues, WS-NN, people…" value="${esc(S.q)}"></form>
@@ -524,6 +531,7 @@ ${card('Privacy', `<p class="note">This page is public on GitHub Pages, like the
         const meta = VIEWS.find(x => x[0] === S.view)
         $('#cc-title').innerHTML = `${esc(meta[1])}<small>${S.view === 'home' ? 'RiskMandate · Web Summit 2026' : FIRST + "'s command centre"}</small>`
         $('#cc-view').innerHTML = V[S.view]()
+        { const cur = $('.cc-switch .people [aria-current]'), bar = $('.cc-switch'); if (cur && bar && cur.offsetLeft + cur.offsetWidth > bar.clientWidth) bar.scrollLeft = cur.offsetLeft - 80 }
         $('#cc-askbar').hidden = S.view === 'ask'; $('#cc-askfab').hidden = S.view === 'ask'
         document.title = `${meta[1]} · ${FIRST}'s command centre`
         bind(root)
