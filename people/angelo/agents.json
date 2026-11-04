@@ -28,5 +28,11 @@
     "job": "creates and manages Angelo's SGit vaults, audits each before its read key is published, and corrects the vault guide from its runs (WS-120)",
     "schedule": "09:50 and 21:50 UTC (cron 50 9,21 * * *), set by the agent on 4 November",
     "session": "Claude Code cloud session in Angelo's account"
+  },
+  {
+    "name": "helper@web-summit.angelo",
+    "job": "answers setup questions from anyone on the team, keeps the help page (/help/), and proposes fixes to the guides' owners",
+    "schedule": "proposed: every two hours, round the clock (cron 50 */2 * * *), to be set by the agent",
+    "session": "Claude Code cloud session in Angelo's account"
   }
 ]
