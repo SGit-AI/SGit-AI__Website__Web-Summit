@@ -81,6 +81,8 @@ Print files: [front SVG](https://web-summit.sgit.ai/team/designer/print/concepts
 
 ## The stickers {#stickers}
 
+The stickers' own brief, with each sticker large: [the stickers page](../../stickers/index.html).
+
 [All four on a laptop lid, and the print proof (PDF)](https://web-summit.sgit.ai/team/designer/print/stickers/stickers-overview.pdf)
 
 ![The four stickers at real size on a laptop lid](../../team/designer/print/stickers/stickers-overview-p1.png)
