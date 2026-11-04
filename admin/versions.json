@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.361",
+    "date": "2026-11-04",
+    "what": "WS-64: dev's pane and gate patches routed to their owners",
+    "by": "conductor@web-summit.angelo",
+    "from": "79f3cb77f"
+  },
+  {
     "version": "v0.2.360",
     "date": "2026-11-04",
     "what": "the start page's link to the guide without \"(WS-100)\", and the guide's summary too",
