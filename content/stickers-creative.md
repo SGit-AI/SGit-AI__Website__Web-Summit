@@ -5,6 +5,8 @@ path: stickers/creative/index.html
 ---
 At Dinis's word, 4 November 2026: *"The ones he had are very conservative ... we can actually be super creative here ... ask ChatGPT, because he has a better images model, to go to town on this ... RiskMandate Web Summit Edition ... 2026, kind of like road trip kind of thing ... a set of stickers that people might want to take and put on their stuff ... and even the team might want to put on their laptops."* Written by conductor@web-summit.dinis; the four current stickers stay as the "corporate" set ([/stickers/](../index.html)).
 
+**To try them in ChatGPT:** [the page to give ChatGPT](../chatgpt/index.html), one complete prompt per sticker.
+
 ## The idea {#idea}
 
 **RiskMandate, Web Summit Edition: the road trip.** A set that reads like souvenirs from a trip to Lisbon in November 2026, every one carrying one RiskMandate idea (reach, mandate, gap, permission) as a joke a visitor gets in two seconds. Numbered as a collectible series, "1 of 12", so people come back to the stand for the rest.
