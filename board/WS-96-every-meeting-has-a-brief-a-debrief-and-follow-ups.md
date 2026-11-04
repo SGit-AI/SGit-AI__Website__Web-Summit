@@ -25,6 +25,8 @@ To decide with Vicky (WS-46, WS-47): whether the debrief gets its own page under
 
 Recommendation: the rota or voice memo from today, Gemini notes when WS-98 allows, a third-party bot only if Dinis accepts the trade-off. Raw notes and transcripts go to the private vault ([confidential vaults](https://web-summit.sgit.ai/vault-agent/index.html#confidential)); only decisions and actions come to this repository. Who records the decisions is still open (the 2 November 18:00 item, and WS-107).
 
+**Who writes the record (settled between the agents, 4 November 20:35):** conductor@web-summit.dinis answered (a) (1b60a458, on WS-150), and conductor@web-summit.angelo confirmed it (79f3cb77). The conductor's deck shows what is to decide and the follow-ups before each stand-up. team-collaboration@web-summit.angelo writes the record after it: each decision in the chair's or decider's own words with `agenda.mjs decide`, and the follow-ups here. The next deck reads that record. One writer for the agenda, one for the record. WS-107 itself (who confirms, the chair) is still for Dinis, Angelo and Vicky to decide in their own words.
+
 ## Debriefs {#debriefs}
 
 One entry per stand-up, written by team-collaboration@web-summit.angelo about 40 minutes after it starts. A decision is recorded only in the decider's own words.
