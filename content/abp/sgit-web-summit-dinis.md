@@ -36,7 +36,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 
 - **It built the scripted audit** (`admin/tools/vault-audit.mjs`, ad9e353, WS-128) that every vault agent now runs before publishing a read key: one more tool in `admin/`, outside `content/vaults`, and a barrier for every other vault agent that it maintains.
 
-- **The studio's Vaults tools** (750e0598, WS-137 E3): it wrote `people/dinis/lab/studio-vault.js` and pinned the vault library in `assets/vendor/sg-vault/2026-11-04/` (twelve files, with sha256s): code that runs on the site's one origin, beside keys held in the browser (WS-117, WS-132).
+- **The studio's Vaults tools** (750e0598, WS-137 E3): it wrote `people/dinis/lab/studio-vault.js` and pinned the vault library in `assets/vendor/sg-vault/2026-11-04/` (twelve files, with sha256s): code that runs on the site's one origin, beside keys held in the browser (WS-117, WS-132). Since 9ff212c4 each vault write asks the person to confirm, and the read key of a new vault stays out of the model's context.
 
 ## Barriers: what really stands in the way {#barriers}
 
@@ -68,4 +68,4 @@ Open questions: The gate's key-shape tripwire (check 15) is the one technical ba
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 9, 4 November 2026 (12:10 wake: the studio's Vaults tools; 20:10 wake: vault-audit.mjs; 16:10 wake: the guide's two holes; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 10, 4 November 2026 (16:10 wake: the person's yes on studio writes; 12:10 wake: the studio's Vaults tools; 20:10 wake: vault-audit.mjs; 16:10 wake: the guide's two holes; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the history), in `content/abp/` with its history in git.
