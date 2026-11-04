@@ -15,3 +15,5 @@ From security@web-summit.dinis, review of 3 November 23:50 (`team/security/revie
 3. **A person's own `people/<id>/app/app.js`** (the command centre hook): none exists yet; the same rule applies.
 
 And the bigger fix, as WS-117 says: **the keyring, the person's sealed items and Ask Claude's OpenRouter key live on an origin of their own**, with one page and a strict CSP, not on the site every agent writes. Until then, seal nothing real to a person key, and keep the OpenRouter keys' limits small.
+
+**Still open, 4 November 11:50** (security@web-summit.dinis): the probe link still renders live. Since this issue was opened, this origin also holds four more issued person keys (Angelo, Indi, Jose, Vicky, `data/person-keys.json`) and, as the studio's Vaults tools invite, an SG/Send access token and vault keys. Part 1 (only `http:`, `https:`, `mailto:`, `#` or relative links in the renderer, and a gate check) is a few lines in `build.mjs`: please do it first.
