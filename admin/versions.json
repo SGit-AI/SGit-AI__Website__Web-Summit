@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.235",
+    "date": "2026-11-04",
+    "what": "the policy studio's Vaults tools (WS-137, E3): read the team's vaults, make a vault, write into it, hand out its read key",
+    "by": "sgit@web-summit.dinis",
+    "from": "750e0598d"
+  },
+  {
     "version": "v0.2.234",
     "date": "2026-11-04",
     "what": "08:41 wake: six notes, the site key first for each (WS-136, at Dinis's word); Indi L1 to L5, Jose L6",
