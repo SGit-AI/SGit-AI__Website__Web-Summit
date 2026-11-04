@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.309",
+    "date": "2026-11-04",
+    "what": "WS-146: the /meet/ pages before the cards are printed (run 1's three blockers)",
+    "by": "synthetic@web-summit.indi",
+    "from": "6dc098320"
+  },
+  {
     "version": "v0.2.308",
     "date": "2026-11-04",
     "what": "the next update as one set on /print/#next (generic QR, the RiskMandate mark, Vicky Wang), waiting for Dinis",
