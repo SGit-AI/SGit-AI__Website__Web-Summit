@@ -1,0 +1,231 @@
+{
+  "name": "WS-74: answers waiting on Jose's feedback lane, a note to Jose",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "20 7,12,17 * * *"
+            }
+          ]
+        }
+      },
+      "id": "ws74-07-20-12-20-and-17-20-utc",
+      "name": "07:20, 12:20 and 17:20 UTC",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Settings: fill these in n8n, never in the repository (people/jose/automation/README.md, \"WS-74: to fill in n8n\").\nconst s = $getWorkflowStaticData('global')\nreturn [{ json: {\n  last: s.last || '',         // what the last note said (a count, or 'stale'); kept by \"Remember the note\"\n  site: 'https://web-summit.sgit.ai/',\n  agent: 'vault@web-summit.jose', // whose lane: the entry in the site's assets/feedback.json lanes[]\n  host: 'https://dev.send.sgraph.ai', // the only server the enum key is ever sent to; a lane on any other host stops the run\n  warn_at: 800,               // say so loudly from here: at 1000 pending the lane refuses new answers (507)\n  mode: 'text',               // 'text' (needs Jose to have messaged the number in the last 24 h) or 'template'\n  to: '',                     // FILL IN: Jose's own WhatsApp number, digits with country code, only Jose\n  phone_number_id: '',        // FILL IN: the business number's Phone number ID (Meta app, WhatsApp, API setup)\n  graph_version: '',          // FILL IN: the Graph API version your Meta app uses, e.g. v23.0\n  template_name: '',          // FILL IN for mode 'template': an approved template with one body parameter {{1}}\n  template_language: '',      // FILL IN for mode 'template': its language code, e.g. en\n} }]"
+      },
+      "id": "ws74-settings",
+      "name": "Settings",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Find the lane: the agent's entry in the site's public assets/feedback.json (host, vault id, append token: all public).\nconst s = $input.first().json\nconst url = s.site + 'assets/feedback.json'\nconst get = this.helpers && this.helpers.httpRequest\n  ? async u => { const r = await this.helpers.httpRequest({ url: u, json: false }); return typeof r === 'string' ? JSON.parse(r) : r }\n  : async u => { const r = await fetch(u); if (!r.ok) throw new Error(url + ': ' + r.status); return r.json() }\nconst cfg = await get(url)\nconst lane = (cfg.lanes || [cfg]).find(l => l.agent === s.agent)\nif (!lane) throw new Error('WS-74: no lane for ' + s.agent + ' in ' + url)\nif (lane.host !== s.host) throw new Error('WS-74: the lane in ' + url + ' is on ' + lane.host + ', not ' + s.host + ': the enum key goes nowhere else (change host in Settings if the lane really moved)')\nif (!/^[a-z0-9]+$/.test(lane.vault_id) || !/^[0-9a-f]{16,128}$/.test(lane.append_token)) throw new Error('WS-74: the lane in ' + url + ' does not look right')\nreturn [{ json: { agent: lane.agent, vault_id: lane.vault_id, append_token: lane.append_token, url: lane.host + '/api/vault/append/list/' + lane.vault_id } }]"
+      },
+      "id": "ws74-find-the-lane",
+      "name": "Find the lane",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        440,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.url }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ include_content: false }) }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          },
+          "pagination": {
+            "pagination": {
+              "paginationMode": "updateAParameterInEachRequest",
+              "parameters": {
+                "parameters": [
+                  {
+                    "type": "body",
+                    "name": "after_file_id",
+                    "value": "={{ ($response.body.entries || []).slice(-1)[0]?.file_id }}"
+                  }
+                ]
+              },
+              "paginationCompleteWhen": "other",
+              "completeExpression": "={{ $response.statusCode !== 200 || !$response.body.truncated || !($response.body.entries || []).length }}",
+              "limitPagesFetched": true,
+              "maxRequests": 25
+            }
+          }
+        }
+      },
+      "id": "ws74-list-the-lane",
+      "name": "List the lane",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        660,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": ""
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Draft the note: count what is pending on the lane; nothing new to say means no items, so nothing is sent.\nconst s = $('Settings').first().json, lane = $('Find the lane').first().json\nconst pages = $input.all().map(i => i.json)\nconst bad = pages.find(p => p.statusCode !== 200)\nlet state, text\nif (bad && (bad.statusCode === 404 || bad.statusCode === 401 || bad.statusCode === 403)) {\n  state = 'stale'\n  text = '*WS-74 feedback lane*\\nn8n could not list ' + lane.agent + \"'s lane (\" + bad.statusCode + '): the enum key in n8n is no longer the lane\\'s, usually because a new vault session made a new one. Ask vault@web-summit.jose for the new key and update the n8n credential \"WS-74 lane enum key\". Nothing was lost: answers stay pending until drained.'\n} else if (bad) {\n  throw new Error('WS-74: listing the lane returned ' + bad.statusCode)\n} else {\n  const body = p => typeof p.body === 'string' ? JSON.parse(p.body) : (p.body || {})\n  const entries = pages.flatMap(p => body(p).entries || [])\n  // every pending file on the vault, whatever its lane: answers sent under an earlier token (before a new vault session)\n  // are drained too (feedback_drain.py takes every lane it holds), so they count; the 507 limit is per lane, the site's one\n  const all = new Map(entries.map(e => [e.file_id, e.inbox]))\n  const n = all.size, onLane = [...all.values()].filter(t => t === lane.append_token).length\n  const more = !!body(pages[pages.length - 1]).truncated\n  state = String(n) + (more ? '+' : '')\n  if (n === 0) state = '0'\n  const was = /^\\d+\\+?$/.test(s.last) && s.last !== '0' ? ' (was ' + s.last.replace('+', ' or more') + ' at the last note)' : ''\n  text = '*WS-74 feedback lane*\\n' + (more ? 'At least ' : '') + n + (n === 1 ? ' answer is' : ' answers are') + ' waiting on ' + lane.agent + \"'s vault\" + (onLane !== n ? ' (' + onLane + ' on the lane the site uses now)' : '') + was + '. ' +\n    'vault@web-summit.jose drains them into jose-inbox; feedback-summary.mjs makes the summary a person reads, and nothing is quoted without the person\\'s tick.' +\n    (onLane >= s.warn_at ? '\\n\\n*Warning:* at 1000 pending the lane refuses new answers (507). Ask vault@web-summit.jose to drain it now.' : '')\n}\n// say something only when it changed; an empty lane (after a drain) is remembered without a note, so the next answers\n// are reported even if their count equals the last note's\nif (state === '0') { $getWorkflowStaticData('global').last = '0'; return [] }\nif (state === s.last) return []\nconst need = ['to', 'phone_number_id', 'graph_version'].concat(s.mode === 'template' ? ['template_name', 'template_language'] : [])\nconst missing = need.filter(k => !String(s[k] || '').trim())\nif (missing.length) throw new Error('WS-74: fill in the Settings node first: ' + missing.join(', '))\nif (!['text', 'template'].includes(s.mode)) throw new Error('WS-74: mode is text or template')\nconst to = String(s.to).replace(/[^0-9]/g, '')\n// a template parameter may not hold new lines, tabs or more than four spaces in a row\nconst flat = text.replace(/\\s*\\n+\\s*/g, ' · ').replace(/\\t/g, ' ').replace(/ {2,}/g, ' ').slice(0, 1000)\nconst msg = s.mode === 'text'\n  ? { messaging_product: 'whatsapp', recipient_type: 'individual', to, type: 'text', text: { preview_url: false, body: text } }\n  : { messaging_product: 'whatsapp', recipient_type: 'individual', to, type: 'template', template: { name: s.template_name, language: { code: s.template_language }, components: [{ type: 'body', parameters: [{ type: 'text', text: flat }] }] } }\nreturn [{ json: { state, text, url: 'https://graph.facebook.com/' + s.graph_version + '/' + s.phone_number_id + '/messages', body: msg } }]"
+      },
+      "id": "ws74-draft-the-note",
+      "name": "Draft the note",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.url }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.body) }}",
+        "options": {}
+      },
+      "id": "ws74-send-to-jose",
+      "name": "Send to Jose",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1100,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": ""
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Remember the note: only after Meta accepted it, so a failed send is tried again at the next run.\n// n8n keeps static data for runs of the active workflow, not for manual test runs.\n$getWorkflowStaticData('global').last = $('Draft the note').first().json.state\nreturn $input.all()"
+      },
+      "id": "ws74-remember-the-note",
+      "name": "Remember the note",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1320,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "07:20, 12:20 and 17:20 UTC": {
+      "main": [
+        [
+          {
+            "node": "Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Settings": {
+      "main": [
+        [
+          {
+            "node": "Find the lane",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find the lane": {
+      "main": [
+        [
+          {
+            "node": "List the lane",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List the lane": {
+      "main": [
+        [
+          {
+            "node": "Draft the note",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Draft the note": {
+      "main": [
+        [
+          {
+            "node": "Send to Jose",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send to Jose": {
+      "main": [
+        [
+          {
+            "node": "Remember the note",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "UTC",
+    "saveDataSuccessExecution": "none"
+  },
+  "meta": {
+    "note": "From people/jose/automation/WS-74-pending.build.mjs (automation@web-summit.jose). Counts only, never content; to Jose only. Fill in the Settings node and the two credentials (people/jose/automation/README.md, \"WS-74: to fill in n8n\")."
+  }
+}

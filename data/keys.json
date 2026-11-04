@@ -705,6 +705,21 @@
         "fingerprint": "sha256:38d481448952ffdd",
         "signing_fingerprint": "sha256:c01b41de5e7b00f9"
       }
+    },
+    {
+      "id": "automation-jose",
+      "label": "automation@web-summit.jose (Claude Code session)",
+      "role": "Jose's automation agent (automation@web-summit.jose): the n8n flows that carry the team's information to people, as code with tests (people/jose/automation/). Drafts only; a person sends. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Jose's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAr/oEh2Ws/6DpQlJpKTSr\nk3ge+c7JnhEppwRGhwss79ce3F4vXd1m8d7dpvIZSNfrzo+lxQZip7aFdT9UHGIj\nY9nAh6/uZB8rrSsn/xhXGh/i3nFO0KJBHjB6+m+aohMgCTdpSoQojlbQsxcP4Frj\nH+THUY5BH5Xz0laOgdOgUSqUuts1GPNirtV1uiC5ck8lVecW189yPBFFXgQzOy2V\ncdP7nG2odmoJTVrEZmImg5Wz5/fnnrz4yalbSb7erSpkl/KQGngFHCMFJIpbPJuH\njzaeSqUIshDW3iqi3p+h86UjV6FW3QieQS5pxhpzxHfaBOW8z9YTyZXQOVrgpDXP\nnHJNNENc5YafaeHDbzyRKRTD5lwQ6Bf8aiQArG0RZ78mc6ho+aFj6xDkaO3pqwcJ\ngaXrZdk6Rz+ix1390fhqbHzt7vHC0UgU9/6d8Gra0RP3IcGWdyOTCFcZxOuqK4PU\nGxt6T2JO1BNZKAkFweRBJIM1gyiQIcmGuoxKic9oBNbWPIJ6p+elWAm1pCrrazmt\nGYdsOqIuuu+Q5/H8qJNr3TfVx32pCzPCTGx32pszCVjgfw2ARcwd39CHTxcMAV6m\n7oQgDfFKdnQhJo9Ua6pcqpJ8KJTHx6K3J86AtCXT3K98j5aTAFkJkE13OOuFBr07\nWdJ9w4oRT6iWmH4i/qK6OhkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEWBkdj8ya49qYHDTh/IcSH78Co+ng\nGDcUT+SsaYvATTmhSba4NZRKFeEraVGLgCVvLLFd1TzMeGuj1Kzf5XMDKA==\n-----END PUBLIC KEY-----\n",
+        "label": "automation@web-summit.jose",
+        "fingerprint": "sha256:d80ff2624a72ce1f",
+        "signing_fingerprint": "sha256:b1a18d5a5b2fab8c"
+      }
     }
   ]
 }
