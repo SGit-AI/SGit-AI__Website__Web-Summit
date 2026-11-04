@@ -1,0 +1,81 @@
+{
+  "number": 3,
+  "date": "4 November 2026",
+  "kicker": "Web Summit 2026 · Vicky's conductor brief",
+  "title": "Wednesday: five of your issues fall due today, and two of your agents have not moved since the handover",
+  "when": "4 November 2026, 07:25 UTC (the daily brief; since brief 2, 3 Nov 12:30 UTC)",
+  "by": "conductor@web-summit.vicky",
+  "headline": "Overnight your setup held: L6, six agents, your print sign-off still valid, and your WS-23 plan with Nimay set for today before the 18:00. What your mentor now watches for you (your words) already shows two gaps: logistics@ has not committed since the handover at 15:16 yesterday (its first wake is 08:10 today), and dev@ has not committed since it started, because it waits for your go on a plan. Three things need you; nothing is decided here.",
+  "stats": [
+    {"n": "L6", "label": "your level (9 of 9 steps)"},
+    {"n": "3 of 7", "label": "print sets signed: Dinis, Angelo, yours"},
+    {"n": "5", "label": "of your issues due today with no owner (WS-25, 29, 41, 53; WS-49 starts)"},
+    {"n": "0", "label": "messages to agents of yours that do not exist, since the handover"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Your dev agent's plan (WS-49, mini tools, starts today)",
+      "detail": "dev@web-summit.vicky's scheduled wakes (09:30 and 15:30) propose a plan of at most five steps and build nothing until you approve it in its own session. It has not committed since it started at 14:08 yesterday, so a plan may be waiting there. Your pulse idea, a 'start here every morning' page per person, would fit WS-49.",
+      "options": ["open its session after 09:30 and approve or change its plan", "give it the 'start here every morning' page as its first tool", "leave it idle until after the summit prep"],
+      "recommend": "Give it the 'start here every morning' page: it answers your own pulse (too many views) and is small enough for one day."
+    },
+    {
+      "id": "2",
+      "ask": "WS-100, the GitHub step written down for newcomers, is a day overdue and has no owner",
+      "detail": "It is yours with Angelo. Your pulse said non-technical members get stuck at the GitHub and environment steps; Nimay and Indi still stop at the push step.",
+      "options": ["you take the plain-language guide, with dev@ or me drafting it for you to check", "hand it to Angelo at 13:00", "ask for a new date at 13:00"],
+      "recommend": "Take it: you went through the steps yourself yesterday, which is what a plain-language guide needs; I draft it in people/vicky/ for you to check before it goes anywhere."
+    },
+    {
+      "id": "3",
+      "ask": "Your other issues due today: who takes them",
+      "detail": "WS-25 (the first five companies, with Silvio and Nimay; on today's 13:00 agenda), WS-29 (hot leads go to Nimay or Dinis, with Nimay), WS-41 (the pulse app, with Angelo and Jose), WS-53 (Silvio's project-management workflow written up, with Silvio). None has an owner.",
+      "options": ["join WS-25 at 13:00 and leave the others to their co-owners", "ask pm@ to propose owners and dates for all four before 13:00", "take WS-53 with Silvio (it is about how agents run project management)"],
+      "recommend": "Ask pm@ to propose owners and dates for the four before 13:00; you decide at the stand-up."
+    }
+  ],
+  "you_asked": [
+    {"at": "3 Nov, about 15:00 UTC", "said": "Start logistics@web-summit.vicky ... and pm@web-summit.vicky ... Don't hand anything over until the new agents are running.", "done": "Both committed and scheduled; handed over at 15:16 UTC; agents.json, inbox.md and the board updated; the other agents told", "where": "commits 79993c4, 788ca3a", "status": "done"},
+    {"at": "3 Nov, about 17:30 UTC", "said": "I'm for option 2: Angelo's team-collaboration agent drafts, the chair confirms. I told Angelo at the stand-up.", "done": "Added to the WS-107 agenda item as your view; the item stays open for Dinis and Angelo", "where": "commit dd767b7", "status": "waiting"},
+    {"at": "3 Nov, 19:25 UTC", "said": "acknowledge", "done": "people/vicky/ack.json", "where": "commit a6ad327", "status": "done"},
+    {"at": "3 Nov, about 19:30 UTC", "said": "Two things. First, where I'm not using my agents well ... Second, communication between agents and people ...", "done": "In people/vicky/profile.json (mentor_watch) and a commit to your mentor; its 19:40 note says it will watch exactly that", "where": "commit 62be528", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "1. Your agents since the handover (3 Nov 15:16 UTC)",
+      "table": {
+        "head": ["Agent", "Commits", "Last"],
+        "rows": [
+          ["pm@", "6", "3 Nov 18:45: WS-23, you and Nimay go through the booked meetings today, before the 18:00"],
+          ["vault@", "3", "3 Nov 17:36: the private meetings vault for WS-23 exists, its key sealed to pm@"],
+          ["dashboard@", "3", "3 Nov 18:53: two tables on your dashboard, 'Needs me' and 'To follow up'"],
+          ["logistics@", "0", "3 Nov 15:09 (its hello, before the handover); first wake 08:10 today"],
+          ["dev@", "0", "3 Nov 14:08 (its key); waits for your go on a plan"]
+        ]
+      }
+    },
+    {
+      "title": "2. Still open from yesterday's stand-ups",
+      "items": [
+        "WS-23's new date (Nimay, or Dinis): no decision recorded; your plan with Nimay is today before the 18:00.",
+        "WS-107, who records the decisions: your view is on the item; no decision recorded.",
+        "One priority for this week, said in one place (from your pulse): open.",
+        "Your print sign-off still stands: the one-QR-for-everyone set is not yet the set to print (content/print.md), so nothing to re-sign yet."
+      ]
+    }
+  ],
+  "next": [
+    "08:10: logistics@'s first wake after the handover; I check at 12:20 that it took WS-48.",
+    "13:00 stand-up: WS-25, and items 2 and 3 if you choose.",
+    "Before 18:00: you and Nimay on the booked meetings (WS-23).",
+    "Tomorrow 07:20: brief 4."
+  ],
+  "sources": [
+    "git log since 3 Nov 15:16 UTC, by Agent: trailer",
+    "board/WS-*.md front matter at site v0.2.220",
+    "admin/tools/signoff.mjs verify at 07:21 UTC; content/print.md",
+    "data/meetings/2026-11-03-1300, 2026-11-03-1800, 2026-11-04-1300",
+    "people/vicky/mentor/2026-11-03-1940.md"
+  ]
+}
