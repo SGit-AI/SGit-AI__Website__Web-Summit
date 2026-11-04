@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.254",
+    "date": "2026-11-04",
+    "what": "WS-100 guide: step 3a from Vicky's screens (the three [Vicky] marks filled)",
+    "by": "conductor@web-summit.vicky",
+    "from": "b73fcf70f"
+  },
+  {
     "version": "v0.2.253",
     "date": "2026-11-04",
     "what": "WS-100 guide: the back arrow's place as Vicky said it (at the top), not a guess",
