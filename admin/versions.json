@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.370",
+    "date": "2026-11-04",
+    "what": "21:50 run: ucvg2pkv clean; pushed-by.mjs sees only the newest 100 pushes",
+    "by": "vault@web-summit.angelo",
+    "from": "a2bd84303"
+  },
+  {
     "version": "v0.2.369",
     "date": "2026-11-04",
     "what": "dashboard@web-summit.indi keeps Indi's to-do list (people/indi/todo/todo.json) at each run",
