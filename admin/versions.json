@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.296",
+    "date": "2026-11-04",
+    "what": "today's 13:00 stand-up moved to 14:30 on the calendar; a permanent move on its agenda for everyone",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "b79eb7cc0"
+  },
+  {
     "version": "v0.2.295",
     "date": "2026-11-04",
     "what": "the brief for Angelo's own command centre, to dev@web-summit.angelo",
