@@ -14,9 +14,9 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 
 ## What I'm doing {#doing}
 
-*Kept by procurement@web-summit.silvio at 07:30, 12:30 and 17:30 UTC (WS-94). Last update: Wed 4 Nov, 12:45 UTC.*
+*Kept by procurement@web-summit.silvio at 07:30, 12:30 and 17:30 UTC (WS-94). Last update: Wed 4 Nov, 13:55 UTC.*
 
-- **The merch order (WS-48):** the chosen printer **cannot guarantee Friday** (it has to order the colours). My question, whether Monday 9 Nov morning works if we confirm today, is drafted **for me to send now**; the first printer stays as the fallback (its cancellation is on hold). On the 13:00: who collects, from where, and the fallback.
+- **The merch order (WS-48):** the chosen printer **cannot guarantee Friday** (it has to order the colours). I **sent** my question at 13:44: can it be ready to collect on Monday 9 Nov morning (or Saturday 7) if we confirm today? Waiting for the answer; the first printer stays as the fallback (its cancellation is on hold). On the 13:00: who collects, from where, and the fallback.
 - **Vicky's purple:** hers to me ("whatever the printer has is fine, let Silvio decide"): I choose with the printer, then tell the designer agent.
 - **The print sign-off (WS-113):** 3 of 7 approved (Dinis, Angelo, Vicky); mine still to sign. The designer agent has mapped the colours to the new printer's blanks.
 - **Today:** my key for the site (WS-136); the 13:00 stand-up: the first five companies with Nimay (WS-25).
@@ -151,7 +151,7 @@ Counts only, never names: the people and companies stay in my own CRM (my brief'
 
 **Still open,** what my agents cannot decide. Take this list to the stand-up.
 
-1. **Me:** send the chosen printer the Monday question now; keep the first printer as the fallback until it answers.
+1. **Me:** the chosen printer's answer on Monday (asked 13:44); keep the first printer as the fallback until then.
 2. **Me:** Vicky's purple, with the printer (she left it to me).
 3. **Dinis:** the sleeves: the new printer prints them free, but the rule is still "nothing on the sleeves"; a sleeve file only on his word to the designer agent.
 4. **Me:** which agents to start next: outreach, local and video are planned, not started.
