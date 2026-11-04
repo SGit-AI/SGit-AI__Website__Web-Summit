@@ -2,7 +2,7 @@
 
 Kept by `designer@web-summit.jose`, Jose Bota's designer: the design of Jose's command centre, and the look of Jose's broadcast messages (WS-39).
 
-**Status, 3 November 2026: on hold.** There is no spec for dev and no build. Jose's page, `/people/jose/app/`, is the team's shared command centre (`assets/cc/`, `admin/build/commandcentre.mjs`, since 497c4d7) and stays that way: nothing here overrides it, and nothing was created under `people/jose/app/`. Jose picked a design from this round (below); what it would add is written up as a draft, [proposal-shared-cc.md](proposal-shared-cc.md): how each improvement could fit the shared engine instead.
+**Status, 4 November 2026: a brief for dev.** At Jose's word, Jose gets his own app in `people/jose/app/`, built the way Angelo's is: it extends the shared command centre instead of replacing it, adds a **Mission** view with the design Jose picked, and changes nobody else's page. The brief, the tested rules and the screenshots: [mission/](mission/BRIEF.md), for `dev@web-summit.jose`. (On 3 November it was on hold, and the round was written up as a draft for the shared engine, [proposal-shared-cc.md](proposal-shared-cc.md); that draft stays as it is.)
 
 ## Jose's brief (3 November)
 

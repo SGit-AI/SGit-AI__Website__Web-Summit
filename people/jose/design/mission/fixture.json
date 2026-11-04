@@ -1,0 +1,1011 @@
+{
+ "about": "Jose's command centre: built from the repository at build time (board/, data/team.json, data/meetings/, people/jose/, content/reports/, git history). Public, like the rest of the site; judged in the browser.",
+ "built_at": "2026-11-03T02:00:00.000Z",
+ "version": "v0.2.30",
+ "person": {
+  "id": "jose",
+  "name": "Jose Bota"
+ },
+ "config": {
+  "grace_minutes": 40,
+  "stale_after_hours": 3,
+  "standups_utc": [
+   "13:00",
+   "18:00"
+  ],
+  "channels": [
+   "WS-39"
+  ]
+ },
+ "summit": {
+  "opening": "2026-11-09T18:00:00Z",
+  "label": "Web Summit opening night, Mon 9 Nov, Centre Stage from 18:00 (Lisbon = UTC)",
+  "source": "data/events.json, opening_night"
+ },
+ "issues": [
+  {
+   "id": "WS-18",
+   "title": "The demos we run at the summit",
+   "area": "riskmandate",
+   "for": [
+    "nimay",
+    "dinis",
+    "angelo",
+    "jose"
+   ],
+   "due": "Wed 4 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-18-the-demos-we-run-at-the-summit.md",
+   "group": "other",
+   "with": [
+    "nimay",
+    "dinis",
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-33",
+   "title": "Make the repository safe for everyone to commit to all the time",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose"
+   ],
+   "due": "Tue 3 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-33-make-the-repository-safe-for-everyone-to-commit.md",
+   "group": "tech",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-34",
+   "title": "Behaviour policies for every agent and every person",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose"
+   ],
+   "due": "Wed 4 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-34-behaviour-policies-for-every-agent-and-every-per.md",
+   "group": "tech",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-35",
+   "title": "Help each person through setup (L1 to L4)",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose"
+   ],
+   "due": "Tue 3 to Wed 4 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-35-help-each-person-through-setup-l1-to-l4.md",
+   "group": "tech",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-36",
+   "title": "A conductor of conductors",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose",
+    "dinis"
+   ],
+   "due": "Thu 5 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-36-a-conductor-of-conductors.md",
+   "group": "tech",
+   "with": [
+    "angelo",
+    "dinis"
+   ]
+  },
+  {
+   "id": "WS-37",
+   "title": "Observability lanes on the site",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose"
+   ],
+   "due": "Thu 5 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-37-observability-lanes-on-the-site.md",
+   "group": "tech",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-38",
+   "title": "Encrypted materials on the site, readable only by named team members",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose"
+   ],
+   "due": "Thu 5 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-38-encrypted-materials-on-the-site-readable-only-by.md",
+   "group": "tech",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-39",
+   "title": "A WhatsApp number in the team group, and the RiskMandate Slack",
+   "area": "tech",
+   "for": [
+    "jose"
+   ],
+   "due": "Wed 4 Nov",
+   "status": "picked",
+   "picked_by": "Jose, dev@web-summit.jose",
+   "file": "board/WS-39-a-whatsapp-number-in-the-team-group-and-the-risk.md",
+   "group": "channels",
+   "with": []
+  },
+  {
+   "id": "WS-40",
+   "title": "Hosting for Silvio's videos",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose",
+    "silvio"
+   ],
+   "due": "Wed 4 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-40-hosting-for-silvio-s-videos.md",
+   "group": "tech",
+   "with": [
+    "angelo",
+    "silvio"
+   ]
+  },
+  {
+   "id": "WS-41",
+   "title": "The pulse app",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose",
+    "vicky"
+   ],
+   "due": "Wed 4 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-41-the-pulse-app.md",
+   "group": "tech",
+   "with": [
+    "angelo",
+    "vicky"
+   ]
+  },
+  {
+   "id": "WS-42",
+   "title": "Billing on our sites, like newsroom.sgit.ai",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose"
+   ],
+   "due": "Thu 5 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-42-billing-on-our-sites-like-newsroom-sgit-ai.md",
+   "group": "tech",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-43",
+   "title": "An agent wellness questionnaire",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose"
+   ],
+   "due": "Fri 6 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-43-an-agent-wellness-questionnaire.md",
+   "group": "tech",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-44",
+   "title": "Secure harness policies (an experiment, not a priority)",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose"
+   ],
+   "due": "later",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-44-secure-harness-policies-an-experiment-not-a-prio.md",
+   "group": "tech",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-45",
+   "title": "Keys page from everyone's key files",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose"
+   ],
+   "due": "Wed 4 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-45-keys-page-from-everyone-s-key-files.md",
+   "group": "tech",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-64",
+   "title": "Booking and talk-to-my-agent on each meet page",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose",
+    "everyone"
+   ],
+   "due": "Thu 5 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-64-booking-and-talk-to-my-agent-on-each-meet-page.md",
+   "group": "tech",
+   "with": [
+    "angelo",
+    "everyone"
+   ]
+  },
+  {
+   "id": "WS-65",
+   "title": "Stop rewriting ~160 pages on every release",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose"
+   ],
+   "due": "Wed 4 Nov",
+   "status": "open",
+   "picked_by": "dev@web-summit.dinis",
+   "file": "board/WS-65-stop-rewriting-160-pages-on-every-release.md",
+   "group": "tech",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-68",
+   "title": "Navigation that anyone can find their way around",
+   "area": "tech",
+   "for": [
+    "sarah",
+    "angelo",
+    "jose"
+   ],
+   "due": "Wed 4 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-68-navigation-that-anyone-can-find-their-way-around.md",
+   "group": "tech",
+   "with": [
+    "sarah",
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-69",
+   "title": "The visual language: personas, infographics, animations",
+   "area": "content",
+   "for": [
+    "sarah",
+    "indi",
+    "angelo",
+    "jose"
+   ],
+   "due": "Thu 5 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-69-the-visual-language-personas-infographics-animations.md",
+   "group": "other",
+   "with": [
+    "sarah",
+    "indi",
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-71",
+   "title": "Publish the videos on YouTube, Instagram and LinkedIn",
+   "area": "content",
+   "for": [
+    "silvio",
+    "angelo",
+    "jose"
+   ],
+   "due": "Wed 4 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-71-publish-the-videos-on-youtube-instagram-and-link.md",
+   "group": "other",
+   "with": [
+    "silvio",
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-74",
+   "title": "A public feedback form for the videos and pages",
+   "area": "tech",
+   "for": [
+    "jose",
+    "angelo"
+   ],
+   "due": "Wed 4 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-74-a-public-feedback-form-for-the-videos-and-pages.md",
+   "group": "tech",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-76",
+   "title": "Move the videos to proper hosting",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose"
+   ],
+   "due": "Thu 5 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-76-move-the-videos-to-proper-hosting.md",
+   "group": "tech",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-77",
+   "title": "Left-hand section menus, and a top nav that scrolls on a phone",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose"
+   ],
+   "due": "Wed 4 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-77-left-hand-section-menus-and-a-top-nav-that-scrol.md",
+   "group": "tech",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-78",
+   "title": "A tokens file and a kicker line on every page",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose",
+    "sarah"
+   ],
+   "due": "Wed 4 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-78-a-tokens-file-and-a-kicker-line-on-every-page.md",
+   "group": "tech",
+   "with": [
+    "angelo",
+    "sarah"
+   ]
+  },
+  {
+   "id": "WS-81",
+   "title": "Meet the team, animated",
+   "area": "content",
+   "for": [
+    "angelo",
+    "jose"
+   ],
+   "due": "Fri 6 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-81-meet-the-team-animated.md",
+   "group": "other",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-84",
+   "title": "An offline copy for the summit's wifi",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose"
+   ],
+   "due": "Sun 8 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-84-an-offline-copy-for-the-summit-s-wifi.md",
+   "group": "tech",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-91",
+   "title": "The site uses the width, with navigation and usability people can find their way around",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose",
+    "dinis"
+   ],
+   "due": "Wed 4 Nov",
+   "status": "in progress",
+   "picked_by": "dev@web-summit.dinis",
+   "file": "board/WS-91-the-site-uses-the-width-navigation-and-usability.md",
+   "group": "tech",
+   "with": [
+    "angelo",
+    "dinis"
+   ]
+  },
+  {
+   "id": "WS-106",
+   "title": "Meet the estate's repository standard: the gaps",
+   "area": "tech",
+   "for": [
+    "angelo",
+    "jose"
+   ],
+   "due": "Fri 6 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-106-meet-the-estate-s-repository-standard-the-gaps.md",
+   "group": "tech",
+   "with": [
+    "angelo"
+   ]
+  },
+  {
+   "id": "WS-108",
+   "title": "Jose's two apps (Hack the Agent, ReachCheck) as the stand demos, if Jose agrees",
+   "area": "riskmandate",
+   "for": [
+    "jose",
+    "dinis"
+   ],
+   "due": "Wed 4 Nov",
+   "status": "open",
+   "picked_by": "",
+   "file": "board/WS-108-jose-s-two-apps-as-the-stand-demos.md",
+   "group": "other",
+   "with": [
+    "dinis"
+   ]
+  }
+ ],
+ "agents": [
+  {
+   "name": "conductor",
+   "full": "conductor@web-summit.jose",
+   "job": "conducts Jose's agents and keeps people/jose/ with Jose: onboarding, agents.json, ack.json, stand-up items, the mentor's notes, and a numbered PDF brief to Jose",
+   "schedule_utc": [
+    "07:20",
+    "12:20",
+    "17:20"
+   ],
+   "on_demand": false,
+   "schedule_note": "",
+   "declared": true,
+   "runs": [
+    "2026-11-03T01:07:30.000Z",
+    "2026-11-03T01:06:26.000Z",
+    "2026-11-03T00:53:11.000Z",
+    "2026-11-03T00:41:39.000Z",
+    "2026-11-03T00:41:29.000Z",
+    "2026-11-03T00:36:53.000Z",
+    "2026-11-03T00:36:05.000Z"
+   ],
+   "last": {
+    "hash": "5ae7499",
+    "at": "2026-11-03T01:07:30.000Z",
+    "subject": "Jose asks for riskmandate-jose on the roster (data/team.json) for jose; on the 13:00 agenda"
+   }
+  },
+  {
+   "name": "dashboard",
+   "full": "dashboard@web-summit.jose",
+   "job": "keeps Jose's dashboard, people/jose/dashboard.md, the page Jose reads first",
+   "schedule_utc": [
+    "07:30",
+    "12:30",
+    "17:30"
+   ],
+   "on_demand": false,
+   "schedule_note": "",
+   "declared": true,
+   "runs": [
+    "2026-11-03T01:01:36.000Z",
+    "2026-11-03T00:56:59.000Z"
+   ],
+   "last": {
+    "hash": "d0335c8",
+    "at": "2026-11-03T01:01:36.000Z",
+    "subject": "what needs Jose now includes the roster gap that blocks the vaults (L6)"
+   }
+  },
+  {
+   "name": "dev",
+   "full": "dev@web-summit.jose",
+   "job": "a builder developer for automations and integrations (n8n, WhatsApp, the site). Started on 3 November 2026 from the prompt in people/jose/kit/README.md; its session key is dev-jose in data/keys.json",
+   "schedule_utc": [
+    "09:30",
+    "15:30"
+   ],
+   "on_demand": false,
+   "schedule_note": "",
+   "declared": true,
+   "runs": [
+    "2026-11-03T01:18:35.000Z",
+    "2026-11-03T01:15:01.000Z",
+    "2026-11-03T01:12:13.000Z",
+    "2026-11-03T01:09:06.000Z"
+   ],
+   "last": {
+    "hash": "1ce5b33",
+    "at": "2026-11-03T01:18:35.000Z",
+    "subject": "WS-39 picked up; the WhatsApp Groups API can't post into the team's existing group (findings, routes, a proposal)"
+   }
+  },
+  {
+   "name": "designer",
+   "full": "designer@web-summit.jose",
+   "job": "",
+   "schedule_utc": [],
+   "on_demand": true,
+   "schedule_note": "",
+   "declared": false,
+   "runs": [
+    "2026-11-03T01:42:15.000Z",
+    "2026-11-03T01:33:13.000Z",
+    "2026-11-03T01:33:13.000Z"
+   ],
+   "last": {
+    "hash": "1d81b9b",
+    "at": "2026-11-03T01:42:15.000Z",
+    "subject": "Jose's command centre, three directions from his brief (Mission Control, Flight Deck, Morning Brief), each all-clear and overdue-plus-quiet at phone and desktop; waiting for Jose's pick"
+   }
+  }
+ ],
+ "not_started": [
+  "automation",
+  "helper"
+ ],
+ "standup": [
+  {
+   "meeting": "2026-11-03-1300",
+   "file": "data/meetings/2026-11-03-1300/20261102T2254-nimay-jose-and-indi-are-all-at-the-push-.json",
+   "type": "decision",
+   "title": "Nimay, Jose and Indi are all at the push step: the invitations (WS-09)",
+   "for": [
+    "dinis",
+    "nimay",
+    "jose",
+    "indi"
+   ],
+   "by": "mentor@web-summit.dinis",
+   "issue": "WS-09",
+   "recommend": "Dinis sends the invitations before the stand-up and the three accept them",
+   "added": "2026-11-02T22:54:54.454Z"
+  },
+  {
+   "meeting": "2026-11-03-1300",
+   "file": "data/meetings/2026-11-03-1300/20261103T0107-jose-s-github-account-on-the-roster-so-h.json",
+   "type": "decision",
+   "title": "Jose's GitHub account on the roster, so his agents' keys can be sealed to (L6)",
+   "for": [
+    "jose",
+    "dinis"
+   ],
+   "by": "conductor@web-summit.jose",
+   "issue": "WS-106",
+   "recommend": "Dinis confirms riskmandate-jose before the stand-up and his conductor adds it; Vicky's account (riskmandate-vicky) is in the same position and could go in the same change",
+   "added": "2026-11-03T01:07:25.450Z"
+  }
+ ],
+ "asks": [],
+ "feed": [
+  {
+   "at": "2026-11-03T01:42:15.000Z",
+   "who": "designer@web-summit.jose",
+   "subject": "Jose's command centre, three directions from his brief (Mission Control, Flight Deck, Morning Brief), each all-clear and overdue-plus-quiet at phone and desktop; waiting for Jose's pick",
+   "tags": [
+    "yours",
+    "for-you"
+   ],
+   "hash": "1d81b9b",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/1d81b9b"
+  },
+  {
+   "at": "2026-11-03T01:33:13.000Z",
+   "who": "designer@web-summit.jose",
+   "subject": "three directions for Jose's command centre and two broadcast looks (WS-39), with a spec for dev; waiting for Jose's pick",
+   "tags": [
+    "yours",
+    "for-you",
+    "issue:WS-39"
+   ],
+   "hash": "700bbc1",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/700bbc1"
+  },
+  {
+   "at": "2026-11-03T01:33:13.000Z",
+   "who": "designer@web-summit.jose",
+   "subject": "started; session key designer-jose published (public half only) in data/keys.json",
+   "tags": [
+    "yours"
+   ],
+   "hash": "14bedc5",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/14bedc5"
+  },
+  {
+   "at": "2026-11-03T01:18:35.000Z",
+   "who": "dev@web-summit.jose",
+   "subject": "WS-39 picked up; the WhatsApp Groups API can't post into the team's existing group (findings, routes, a proposal)",
+   "tags": [
+    "yours",
+    "for-you",
+    "issue:WS-39"
+   ],
+   "hash": "1ce5b33",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/1ce5b33"
+  },
+  {
+   "at": "2026-11-03T01:15:01.000Z",
+   "who": "dev@web-summit.jose",
+   "subject": "on a schedule, 09:30 and 15:30 UTC (cron 30 9,15 * * *), at Jose's word",
+   "tags": [
+    "yours",
+    "for-you"
+   ],
+   "hash": "dd1558b",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/dd1558b"
+  },
+  {
+   "at": "2026-11-03T01:12:13.000Z",
+   "who": "dev@web-summit.jose",
+   "subject": "report-draft.mjs, the newest journalist's report as a broadcast draft for Jose's n8n flow (towards WS-39)",
+   "tags": [
+    "yours",
+    "for-you",
+    "issue:WS-39"
+   ],
+   "hash": "af0de50",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/af0de50"
+  },
+  {
+   "at": "2026-11-03T01:09:06.000Z",
+   "who": "dev@web-summit.jose",
+   "subject": "started; session key dev-jose published (public half only) in data/keys.json",
+   "tags": [
+    "yours",
+    "for-you"
+   ],
+   "hash": "2579c00",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/2579c00"
+  },
+  {
+   "at": "2026-11-03T01:07:30.000Z",
+   "who": "conductor@web-summit.jose",
+   "subject": "Jose asks for riskmandate-jose on the roster (data/team.json) for jose; on the 13:00 agenda",
+   "tags": [
+    "yours",
+    "issue:WS-106"
+   ],
+   "hash": "5ae7499",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/5ae7499"
+  },
+  {
+   "at": "2026-11-03T01:06:26.000Z",
+   "who": "conductor@web-summit.jose",
+   "subject": "the dashboard agent declared, running and on a schedule (07:30, 12:30, 17:30 UTC), at Jose's word; Jose at L5",
+   "tags": [
+    "yours",
+    "for-you"
+   ],
+   "hash": "9a8f156",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/9a8f156"
+  },
+  {
+   "at": "2026-11-03T01:01:36.000Z",
+   "who": "dashboard@web-summit.jose",
+   "subject": "what needs Jose now includes the roster gap that blocks the vaults (L6)",
+   "tags": [
+    "yours",
+    "for-you",
+    "issue:WS-106"
+   ],
+   "hash": "d0335c8",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/d0335c8"
+  },
+  {
+   "at": "2026-11-03T00:58:35.000Z",
+   "who": "journalist@web-summit.dinis",
+   "subject": "the 00:57 report, and 'What happened' updated",
+   "tags": [
+    "issue:WS-106"
+   ],
+   "hash": "9a59fdf",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/9a59fdf"
+  },
+  {
+   "at": "2026-11-03T00:57:00.000Z",
+   "who": "journalist@web-summit.dinis",
+   "subject": "What happened: Tuesday 3 November, 00:57",
+   "tags": [
+    "report"
+   ],
+   "hash": null,
+   "link": "reports/2026-11-03-0057/index.html"
+  },
+  {
+   "at": "2026-11-03T00:56:59.000Z",
+   "who": "dashboard@web-summit.jose",
+   "subject": "my session key on the keys page (public half only, id dashboard-jose), and Jose's dashboard reshaped around what needs Jose",
+   "tags": [
+    "yours",
+    "for-you",
+    "issue:WS-35"
+   ],
+   "hash": "94931b5",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/94931b5"
+  },
+  {
+   "at": "2026-11-03T00:54:34.000Z",
+   "who": "sgit@web-summit.dinis",
+   "subject": "seal.mjs asks GitHub who pushed a key and checks it against the roster; pki-agent pinned (WS-106)",
+   "tags": [
+    "issue:WS-106"
+   ],
+   "hash": "a813cdc",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/a813cdc"
+  },
+  {
+   "at": "2026-11-03T00:53:11.000Z",
+   "who": "conductor@web-summit.jose",
+   "subject": "on a schedule at Jose's word (07:20, 12:20, 17:20 UTC, into its own session)",
+   "tags": [
+    "yours",
+    "for-you"
+   ],
+   "hash": "8932b37",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/8932b37"
+  },
+  {
+   "at": "2026-11-03T00:43:53.000Z",
+   "who": "dev@web-summit.dinis",
+   "subject": "the build cleans its own stale output; versions as data (WS-106, item 6)",
+   "tags": [
+    "issue:WS-106",
+    "issue:WS-65"
+   ],
+   "hash": "5712c6a",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/5712c6a"
+  },
+  {
+   "at": "2026-11-03T00:41:39.000Z",
+   "who": "conductor@web-summit.jose",
+   "subject": "the key-tool item on the 13:00 agenda settled in Jose's words (pki.sgit.ai allowed)",
+   "tags": [
+    "yours",
+    "for-you",
+    "issue:WS-35"
+   ],
+   "hash": "4b4717a",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/4b4717a"
+  },
+  {
+   "at": "2026-11-03T00:41:29.000Z",
+   "who": "conductor@web-summit.jose",
+   "subject": "my session key on the keys page (public half only, id conductor-jose), at Jose's word",
+   "tags": [
+    "yours",
+    "for-you",
+    "issue:WS-35"
+   ],
+   "hash": "f394c4b",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/f394c4b"
+  },
+  {
+   "at": "2026-11-03T00:36:53.000Z",
+   "who": "conductor@web-summit.jose",
+   "subject": "brief 1 to Jose: conductor running, push confirmed, L3; three asks (allow pki.sgit.ai, start the dashboard and dev agents, schedule the conductor)",
+   "tags": [
+    "yours",
+    "for-you"
+   ],
+   "hash": "9be05bd",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/9be05bd"
+  },
+  {
+   "at": "2026-11-03T00:36:05.000Z",
+   "who": "conductor@web-summit.jose",
+   "subject": "first run; Jose's onboarding (push, conductor), agents.json, his agents on the dashboard, a stand-up item on the key tool",
+   "tags": [
+    "yours",
+    "for-you",
+    "issue:WS-35"
+   ],
+   "hash": "44b2feb",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/44b2feb"
+  },
+  {
+   "at": "2026-11-03T00:12:46.000Z",
+   "who": "abp@web-summit.dinis",
+   "subject": "the mentors' ABP; every ABP records main pushed once and still unprotected",
+   "tags": [
+    "issue:WS-34"
+   ],
+   "hash": "23d3063",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/23d3063"
+  },
+  {
+   "at": "2026-11-02T23:53:06.000Z",
+   "who": "security@web-summit.dinis",
+   "subject": "review to v0.2.1 and main v0.2.0, no hold; WS-86 verified; WS-106 before any vault key is sealed",
+   "tags": [
+    "issue:WS-106"
+   ],
+   "hash": "d77a22d",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/d77a22d"
+  },
+  {
+   "at": "2026-11-02T23:51:57.000Z",
+   "who": "conductor@web-summit.dinis",
+   "subject": "the version at the top of every page, linked to its own row with the commit; two gate checks (em-dashes, scripts parse); WS-106 for the rest of the estate's standard",
+   "tags": [
+    "issue:WS-106"
+   ],
+   "hash": "44c61a6",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/44c61a6"
+  },
+  {
+   "at": "2026-11-02T22:57:00.000Z",
+   "who": "journalist@web-summit.dinis",
+   "subject": "What happened: Monday 2 November, 22:57",
+   "tags": [
+    "report"
+   ],
+   "hash": null,
+   "link": "reports/2026-11-02-2257/index.html"
+  },
+  {
+   "at": "2026-11-02T21:43:27.000Z",
+   "who": "dev@web-summit.dinis",
+   "subject": "the build 3.3 s -> 0.45 s and the gate 3.0 s -> 1.0 s: the stand-ups read git history once",
+   "tags": [
+    "issue:WS-65"
+   ],
+   "hash": "1ea3c31",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/1ea3c31"
+  },
+  {
+   "at": "2026-11-02T20:57:00.000Z",
+   "who": "journalist@web-summit.dinis",
+   "subject": "What happened: Monday 2 November, 20:57",
+   "tags": [
+    "report"
+   ],
+   "hash": null,
+   "link": "reports/2026-11-02-2057/index.html"
+  },
+  {
+   "at": "2026-11-02T20:14:24.000Z",
+   "who": "abp@web-summit.dinis",
+   "subject": "ABPs for Vicky's two agents; procurement, team-collaboration and dev@angelo updated",
+   "tags": [
+    "issue:WS-34"
+   ],
+   "hash": "0ea68cc",
+   "link": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commit/0ea68cc"
+  },
+  {
+   "at": "2026-11-02T02:57:00.000Z",
+   "who": "journalist@web-summit.dinis",
+   "subject": "What happened: Monday 2 November, 02:57",
+   "tags": [
+    "report"
+   ],
+   "hash": null,
+   "link": "reports/2026-11-02-0257/index.html"
+  }
+ ],
+ "brief": {
+  "n": 1,
+  "title": "Your conductor is running and you can push; the keys are blocked by one setting",
+  "when": "3 November 2026, 00:40 UTC (first run)",
+  "at": "2026-11-03T00:40:00Z",
+  "file": "people/jose/briefs/2026-11-03T0040Z.pdf"
+ },
+ "mentor": {
+  "at": "2026-11-02T22:50:00.000Z",
+  "line": "Once you can push, you could open a new session and paste the first prompt in your kit (linked above). Your conductor would then set up the rest with you.",
+  "file": "people/jose/mentor/2026-11-02-2250.md"
+ },
+ "repo": "https://github.com/SGit-AI/SGit-AI__Website__Web-Summit",
+ "team": [
+  {
+   "id": "dinis",
+   "name": "Dinis Cruz"
+  },
+  {
+   "id": "silvio",
+   "name": "Silvio Switha"
+  },
+  {
+   "id": "nimay",
+   "name": "Nimay Parekh"
+  },
+  {
+   "id": "angelo",
+   "name": "Angelo"
+  },
+  {
+   "id": "vicky",
+   "name": "Vicky"
+  },
+  {
+   "id": "daniela",
+   "name": "Daniela"
+  },
+  {
+   "id": "indi",
+   "name": "Indi Gupte"
+  },
+  {
+   "id": "jose",
+   "name": "Jose Bota"
+  },
+  {
+   "id": "sarah",
+   "name": "Sarah"
+  }
+ ]
+}
