@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.201",
+    "date": "2026-11-04",
+    "what": "run at 01:11: one commit by Jose's agents (dev, WS-39), clean; no new flag",
+    "by": "watcher@web-summit.jose",
+    "from": "b1e4fe9cc"
+  },
+  {
     "version": "v0.2.200",
     "date": "2026-11-04",
     "what": "WS-39 route 3, an n8n workflow Jose can import: the newest report as one WhatsApp message to Jose only",
