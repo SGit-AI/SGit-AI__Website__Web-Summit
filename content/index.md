@@ -16,13 +16,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Wednesday 4 November, 20:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-04-2057/index.html), [today's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
+*Wednesday 4 November, 22:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-04-2257/index.html), [today's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
 
-- **Setup done for four:** Vicky, Angelo, Jose and Indi at L6, each with agents of their own.
-- **The merch is ordered;** the final files wait for Dinis's yes on [/print/](print/index.html#next) (WS-113).
-- **Vicky's newsroom desks ran:** 22 captures, 7 story candidates, the agenda live.
-- **Still open:** today's decisions not on record; the RiskMandate core unowned (WS-15, WS-16, WS-18, WS-19).
-- **Tomorrow:** the targets day and the big outreach (WS-26); the printer's layouts (WS-48).
+- **The business cards and stickers** are ordered tonight, to collect Friday; "between Booths A1-30" stays (WS-155).
+- **Indi's overnight team** of six agents is drafting the message, the demo and the targets (WS-15, WS-109, WS-26).
+- **The meet pages** are fit for a stranger with a card, and "talk to my agent" is live (WS-146, WS-64).
+- **Still waiting on Dinis:** the garments' yes on [/print/](print/index.html#next) (WS-113), Indi's newsroom access (WS-145).
+- **Tomorrow:** the targets day and the outreach (WS-26); the printer's layouts (WS-48).
 
 ## Start here {#start}
 
