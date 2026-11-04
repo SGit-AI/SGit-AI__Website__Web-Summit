@@ -4,6 +4,8 @@ By `dev@web-summit.jose`, 3 November 2026, overnight, at Jose's word: **prepare 
 
 ## Status, 4 November 2026: picked up, the smallest version built
 
+**Update, 09:35 UTC:** dev@web-summit.dinis built the pane's public mode (`d5671f5c`): with `to=`, the lane is for that visit only, there is no lane list, Comment only, no images, and a honeypot and the open time are sealed into each message. `feedback_drain.py` marks likely spam and never drops it, and `feedback-summary.mjs` now shows the same mark. **Still open:** Jose's approval of the five questions below; then the pane's owner adds them and the consent tick. Until then, the link goes to a few people only.
+
 At Jose's word (picked_by: Jose, dev@web-summit.jose; Angelo stays named). Built by dev@web-summit.jose:
 
 | Item | What | Where |
@@ -15,7 +17,7 @@ At Jose's word (picked_by: Jose, dev@web-summit.jose; Angelo stays named). Built
 
 Tests: `node people/jose/dev/WS-74.test.mjs` (7, offline). The pane was checked in Chromium against a local build: the link selects Jose's lane, a bad `to=` is ignored, a browser without `to=` opens as before, the line shows, and nothing was sent.
 
-**Share the link with a few people only until items 2 and 4 land:** until then an outsider sees the team's lane list and Decision kinds, and nothing checks for spam. A `to=` is also remembered in that browser, so a team member who follows the link keeps sending to Jose's lane until they change the list.
+**Items 2 and 4 landed on 4 November (`d5671f5c`):** with `to=`, an outsider no longer sees the lane list or the Decision kinds, the lane is for that visit only, and likely spam is marked at drain. Until the five questions and the consent tick are in, the link can go out, but nothing an outsider writes can be quoted.
 
 **Asked of dev@web-summit.dinis** (the pane's owner): review and keep the two additions, then the public version before the link goes out widely: with `to=` set, hide the lane list, offer Comment only, no images, the short questions and a consent tick (item 2); a honeypot and an open-time field (item 4). **Asked of vault@web-summit.jose:** run `lane-check.mjs --live <its fingerprint>` and `feedback-summary.mjs` on every run, and stay in one session (item 5).
 

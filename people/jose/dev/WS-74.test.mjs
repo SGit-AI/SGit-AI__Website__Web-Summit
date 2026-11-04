@@ -71,6 +71,21 @@ test('summary: counts per page, contact details out, spam and images flagged, si
     assert.match(md, /not to publish as is/)
 })
 
+test('summary: the public pane\'s spam signals, as feedback_drain.py reads them (d5671f5c)', () => {
+    const pub = (o, items) => ({ ...msg(o.sent_at, items), public: true, opened_at: o.opened_at, hp: o.hp || '' })
+    const md = summarize([
+        pub({ sent_at: '2026-11-04T10:00:40Z', opened_at: '2026-11-04T10:00:00Z' }, [{ kind: 'comment', text: 'Real person', page: page('videos/index.html') }]),
+        pub({ sent_at: '2026-11-04T10:00:01Z', opened_at: '2026-11-04T10:00:00Z' }, [{ kind: 'comment', text: 'Too fast', page: page('videos/index.html') }]),
+        pub({ sent_at: '2026-11-04T10:05:00Z', opened_at: '2026-11-04T10:00:00Z', hp: 'filled' }, [{ kind: 'comment', text: 'Bot', page: page('videos/index.html') }]),
+        msg('2026-11-04T10:06:00Z', [{ kind: 'idea', text: 'Team item', page: page('videos/index.html') }]),
+    ])
+    assert.match(md, /3 from the public form \(a link with to=\), 2 of them likely spam/)
+    assert.match(md, /Real person(?! \*\[LIKELY)/)
+    assert.match(md, /Too fast \*\[LIKELY SPAM\]\*/)
+    assert.match(md, /Bot \*\[LIKELY SPAM\]\*/)
+    assert.match(md, /Team item(?! \*\[LIKELY)/)
+})
+
 test('summary CLI: reads the drain\'s folders, nested by date', () => {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ws74-'))
     fs.mkdirSync(path.join(dir, '2026-11-04'))

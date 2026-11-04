@@ -14,14 +14,16 @@ const files = dir => fs.readdirSync(dir, { withFileTypes: true }).flatMap(e => e
 
 export function summarize(messages, { since = '' } = {}) {
     const subs = messages.filter(m => m && Array.isArray(m.items) && String(m.sent_at || '') >= since)
-    const items = subs.flatMap(m => m.items.map(i => ({ ...i, signed: /^signed by .* \(verified/.test(m.verified || ''), sent_at: m.sent_at })))
+    // the public pane's spam signals (assets/feedback.js, d5671f5c): the same rule as feedback_drain.py, marked, never dropped
+    const spam = m => !!m.public && (!!m.hp || (Date.parse(m.sent_at) - Date.parse(m.opened_at)) / 1000 < 3)
+    const items = subs.flatMap(m => m.items.map(i => ({ ...i, signed: /^signed by .* \(verified/.test(m.verified || ''), public: !!m.public, likely_spam: spam(m), sent_at: m.sent_at })))
     const by = {}
     for (const i of items) (by[(i.page && (i.page.path || i.page.url)) || '(no page)'] ||= []).push(i)
     const when = subs.map(m => m.sent_at).filter(Boolean).sort()
     const out = [
         `# Public feedback${since ? ` since ${since}` : ''}: ${items.length} item${items.length === 1 ? '' : 's'} in ${subs.length} submission${subs.length === 1 ? '' : 's'}`, '',
         when.length ? `From ${when[0]} to ${when[when.length - 1]}. ` : '',
-        `${items.filter(i => i.signed).length} signed by a team member's key; the rest are unsigned, from anyone with the page. Contact details and links are taken out below. **For a person to read, not to publish as is:** nobody has agreed to be quoted.`, '',
+        `${items.filter(i => i.public).length} from the public form (a link with to=), ${items.filter(i => i.likely_spam).length} of them likely spam (the hidden field filled, or sent within 3 seconds); ${items.filter(i => i.signed).length} signed by a team member's key; the rest are unsigned, from anyone with the page. Contact details and links are taken out below. **For a person to read, not to publish as is:** nobody has agreed to be quoted.`, '',
     ]
     for (const page of Object.keys(by).sort()) {
         const xs = by[page], kinds = {}
@@ -29,7 +31,7 @@ export function summarize(messages, { since = '' } = {}) {
         out.push(`## ${page}`, '', `${xs.length} item${xs.length === 1 ? '' : 's'}: ${Object.entries(kinds).map(([k, n]) => `${n} ${k}`).join(', ')}.`, '')
         for (const i of xs) {
             const t = scrub(i.text), links = (String(i.text || '').match(/https?:\/\/|www\./gi) || []).length
-            const flags = [i.signed ? 'signed' : '', t.removed ? 'contact details or links removed' : '', links >= 2 ? 'possible spam: several links' : '', (i.images || []).length ? `${i.images.length} image(s) in the vault, not shown` : ''].filter(Boolean)
+            const flags = [i.likely_spam ? 'LIKELY SPAM' : '', i.signed ? 'signed' : '', t.removed ? 'contact details or links removed' : '', links >= 2 ? 'possible spam: several links' : '', (i.images || []).length ? `${i.images.length} image(s) in the vault, not shown` : ''].filter(Boolean)
             out.push(`- ${i.kind || 'comment'}${i.choice ? ` (${i.choice})` : ''}: ${t.text.replace(/\s*\n\s*/g, ' ') || '(no text)'}${flags.length ? ` *[${flags.join('; ')}]*` : ''}`)
         }
         out.push('')
