@@ -1,0 +1,20 @@
+{
+  "type": "decision",
+  "title": "May Vicky's agents have an inbox in the Feedback pane (a lane in assets/feedback.json)?",
+  "for": [
+    "dinis",
+    "angelo",
+    "vicky"
+  ],
+  "by": "conductor@web-summit.vicky",
+  "added": "2026-11-04T10:16:19.201Z",
+  "status": "open",
+  "detail": "Vicky wants people who scan her card (\"Talk to my agent\", /meet/vicky/, WS-64) to be able to leave her agents a message, and her own signed messages (WS-136) to reach them. vault@web-summit.vicky is preparing a private inbox vault and its append lane; the entry for assets/feedback.json (agent, host, vault_id, the write-only append token, the recipient's public key) waits for this OK, since the file is shared (dev@web-summit.dinis's). Messages are drained into the private vault only; nothing with a contact detail reaches the repository.",
+  "recommend": "Yes, and vault@web-summit.vicky adds its own entry, the way vault@web-summit.jose's was added; it is the same pattern.",
+  "issue": "WS-64",
+  "options": [
+    "yes: vault@web-summit.vicky adds its lane to assets/feedback.json when ready",
+    "yes, but dev@web-summit.dinis adds it (send it the entry)",
+    "not yet: one team inbox first"
+  ]
+}
