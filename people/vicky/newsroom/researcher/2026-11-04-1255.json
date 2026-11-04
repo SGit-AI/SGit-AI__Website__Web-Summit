@@ -1,0 +1,145 @@
+{
+  "desk": "researcher",
+  "agent": "researcher@web-summit.vicky",
+  "run": "2026-11-04T12:55Z",
+  "beats_this_run": [
+    "summit",
+    "portugal"
+  ],
+  "note": "Every capture read by this agent at its source on the date shown. Public material only; no contact details. Not found this run: an announcement of a Startup Portugal stand or delegation size for Lisbon 2026, and any Portuguese government announcement tied to the summit.",
+  "captures": [
+    {
+      "beat": "summit",
+      "says": "Web Summit 2026 runs in Lisbon from Monday 9 to Thursday 12 November 2026, at the MEO Arena and FIL, Rossio dos Olivais, Parque das Nações. The venue map will be in the Web Summit mobile app.",
+      "source_url": "https://websummit.com/essentials/venue/",
+      "source_title": "Venue | Essentials | Web Summit",
+      "read_at": "2026-11-04T12:40Z"
+    },
+    {
+      "beat": "summit",
+      "says": "Lanyards and wristbands are collected at Lisbon airport Terminal 1 (from Saturday 7 November, 9.30am to 10pm, then 7.30am to 10pm Sunday and Monday, 7.30am to 3pm Tuesday) or at Pavilhão de Portugal beside the venue (from Saturday 7 November, 12pm to 6pm, to Thursday 12 November, 7.30am to 4.45pm). Bring your ticket (in the app) and photo ID; times may change.",
+      "source_url": "https://websummit.com/essentials/registration/",
+      "source_title": "Registration: how, when and where | Web Summit",
+      "read_at": "2026-11-04T12:40Z"
+    },
+    {
+      "beat": "summit",
+      "says": "Oriente metro station (red line) is about 300 metres from the MEO Arena and 600 metres from registration at Pavilhão de Portugal. Web Summit lists a Carris shuttle bus between Oriente and Praça do Comércio, Carris lines 705, 725, 728, 750, 759 and 794, and a discounted 1, 3 or 5 day transport pass with Metropolitano de Lisboa.",
+      "source_url": "https://websummit.com/essentials/the-city/",
+      "source_title": "The city: getting around Lisbon | Web Summit",
+      "read_at": "2026-11-04T12:40Z"
+    },
+    {
+      "beat": "summit",
+      "says": "Inside the venue, bags should be small (two bag drops, at the South and North entrances), food and drink stands are cashless, free event wifi covers the MEO Arena, and you may bring your own food and a reusable cup. Lost and found is in Pavilion 5 and Cloakroom A.",
+      "source_url": "https://websummit.com/essentials/venue/",
+      "source_title": "Venue | Essentials | Web Summit",
+      "read_at": "2026-11-04T12:40Z"
+    },
+    {
+      "beat": "summit",
+      "says": "The Web Summit app (iOS and Android) holds your ticket as a QR code, needed to register. It builds a personal schedule, finds people and companies, and books meetings; there is no built-in chat.",
+      "source_url": "https://websummit.com/essentials/app/",
+      "source_title": "Mobile app | Essentials | Web Summit",
+      "read_at": "2026-11-04T12:41Z"
+    },
+    {
+      "beat": "summit",
+      "says": "Three public passes are listed: General attendee at 1,595 euros, VIP at 1,950 euros and Chairperson at 24,950 euros (prices including sales tax, as read). General includes the exhibition floor, talks, masterclasses and Night Summit.",
+      "source_url": "https://websummit.com/tickets/",
+      "source_title": "Tickets | Web Summit",
+      "read_at": "2026-11-04T12:33Z"
+    },
+    {
+      "beat": "summit",
+      "says": "The 2026 programme has 17 content tracks over four days, including AI Summit, Policy Summit, Cybersecurity Summit, Energy Summit, Health Summit, MoneyConf, Venture Summit and Developer Summit.",
+      "source_url": "https://websummit.com/tracks/",
+      "source_title": "Tracks | Web Summit",
+      "read_at": "2026-11-04T12:37Z"
+    },
+    {
+      "beat": "summit",
+      "says": "The 2026 schedule is live on websummit.com, with talks, masterclasses and meetups added every week, including a meetup for first-time attendees on Tuesday 10 November at 11am.",
+      "source_url": "https://websummit.com/schedule/",
+      "source_title": "Schedule | Web Summit",
+      "read_at": "2026-11-04T12:51Z"
+    },
+    {
+      "beat": "announcements",
+      "says": "Web Summit's first State of the Industry survey (1,455 founders, investors, engineers and creators, published 22 October 2026) found 55% say AI strengthens their critical thinking and 60% say it has increased their workload. Web Summit expects more than 70,000 attendees from more than 100 countries, including 10,000 startups, in Lisbon.",
+      "source_url": "https://websummit.com/blog/news/web-summits-first-state-of-the-industry-survey-finds-tech-torn-on-ai/",
+      "source_title": "Web Summit's first state of the industry survey finds tech torn on AI",
+      "read_at": "2026-11-04T12:45Z"
+    },
+    {
+      "beat": "announcements",
+      "says": "Web Summit announced on 21 October 2026 the 16 digital creators in its Creator Programme, who will document the Lisbon event live from the floor.",
+      "source_url": "https://websummit.com/blog/marketing/creator-programme-web-summit-2026/",
+      "source_title": "Unveiling the creators joining us at Web Summit 2026",
+      "read_at": "2026-11-04T12:45Z"
+    },
+    {
+      "beat": "summit",
+      "says": "Web Summit says that in 2025 over 22,000 startups applied to its startup programme and about 2,700 were accepted, in ALPHA (under 1 million dollars raised), BETA and GROWTH categories.",
+      "source_url": "https://websummit.com/blog/startups-investors/how-we-select-our-startups/",
+      "source_title": "How we select our startups | Web Summit",
+      "read_at": "2026-11-04T12:45Z"
+    },
+    {
+      "beat": "europe",
+      "says": "The EU's Health and Digital Executive Agency (HaDEA) will be at stand E418 in Pavilion 4 all week, and hosts a session on EU funding for technological sovereignty on 11 November at 15.30, with four EU-funded projects.",
+      "source_url": "https://hadea.ec.europa.eu/events/web-summit-2026-2026-11-09_en",
+      "source_title": "Web Summit 2026 | HaDEA",
+      "read_at": "2026-11-04T12:32Z"
+    },
+    {
+      "beat": "portugal",
+      "says": "Road 2 Web Summit, run by Startup Portugal and Web Summit for the 11th time, selects up to 125 Portuguese startups for a preparation bootcamp in Porto and Lisbon, with 50% off the ALPHA or BETA package and space on the Portugal stand. In 2025 it supported 115 startups, which raised 40 million euros; Galp sponsors two prizes (15,000 and 5,000 euros).",
+      "source_url": "https://tek.sapo.pt/extras/site-do-dia/artigos/road-2-web-summit-2026-ja-aceita-candidaturas-de-startups-portuguesas-para-mais-uma-edicao/",
+      "source_title": "Road 2 Web Summit 2026 já aceita candidaturas de startups portuguesas (Tek Notícias, 14 August 2026)",
+      "read_at": "2026-11-04T12:52Z"
+    },
+    {
+      "beat": "portugal",
+      "says": "Startup Portugal describes Road 2 Web Summit as its joint programme with Web Summit for promising early-stage Portuguese startups, and says it has helped more than 1,000 startups gain international exposure over more than ten years.",
+      "source_url": "https://startupportugal.com/pt/programs/road-2-web-summit-pt/",
+      "source_title": "Road 2 Web Summit | Startup Portugal",
+      "read_at": "2026-11-04T12:48Z"
+    },
+    {
+      "beat": "portugal",
+      "says": "Granter, the Portuguese AI grant platform that won Web Summit's PITCH competition in November 2025, raised 1.6 million euros, led by 3xP Global's Impact Innovation Fund under Banco Português de Fomento's programme, to expand into Spain, Germany and Italy.",
+      "source_url": "https://portugalstartupnews.com/2026/11/03/granter-secures-e1-6m-to-expand-its-ai-grant-platform-into-spain-germany-and-italy/",
+      "source_title": "Granter secures 1.6M euros to expand its AI grant platform (Portugal Startup News, 3 November 2026)",
+      "read_at": "2026-11-04T12:49Z"
+    },
+    {
+      "beat": "portugal",
+      "says": "Porto cleantech Seamoretech, a University of Porto engineering spin-off that recovers freshwater and minerals from desalination brine, raised 1.1 million euros in a first seed closing and plans a commercial launch in Spain in 2027.",
+      "source_url": "https://portugalstartupnews.com/2026/11/02/seamoretech-raises-e1-1m-to-recover-freshwater-and-minerals-from-desalination-waste-plans-spain-launch/",
+      "source_title": "Seamoretech raises 1.1M euros (Portugal Startup News, 2 November 2026)",
+      "read_at": "2026-11-04T12:49Z"
+    },
+    {
+      "beat": "portugal",
+      "says": "Algarve Evolution, based in Faro, aims to support 500 companies, help create 150 startups and reach 50,000 people in the Algarve by 2032, to grow the region's economy beyond tourism.",
+      "source_url": "https://portugalstartupnews.com/2026/11/01/algarve-evolution-aims-to-support-500-companies-and-help-create-150-startups-by-2032-in-push-beyond-tourism/",
+      "source_title": "Algarve Evolution aims to support 500 companies (Portugal Startup News, 1 November 2026)",
+      "read_at": "2026-11-04T12:49Z"
+    },
+    {
+      "beat": "portugal",
+      "says": "Unicorn Factory Lisboa announced its 2026 Entrepreneurship Awards on 27 October at the Técnico Innovation Center, on its fourth anniversary; startup winners include BloodFlow (most promising), knok (most impactful) and RTBeamTech (youth).",
+      "source_url": "https://portugalstartupnews.com/2026/10/27/winners-announced-for-2026-entrepreneurship-awards-by-unicorn-factory-lisboa/",
+      "source_title": "Winners announced for 2026 Entrepreneurship Awards by Unicorn Factory Lisboa (Portugal Startup News)",
+      "read_at": "2026-11-04T12:50Z"
+    },
+    {
+      "beat": "portugal",
+      "says": "Porto edtech Intuitivo, a past PITCH winner, raised 1.35 million euros led by Caixa Capital and the Impact Innovation Fund to expand into Brazil; its assessment platform serves more than 500 schools and 75,000 teachers in Portugal.",
+      "source_url": "https://portugalstartupnews.com/2026/10/23/intuitivo-raises-e1-35m-to-expand-into-brazil-with-a-platform-that-cuts-teachers-workload/",
+      "source_title": "Intuitivo raises 1.35M euros to expand into Brazil (Portugal Startup News, 23 October 2026)",
+      "read_at": "2026-11-04T12:50Z"
+    }
+  ]
+}

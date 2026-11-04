@@ -499,6 +499,21 @@
         "fingerprint": "sha256:8b0ff22957bd775b",
         "signing_fingerprint": "sha256:b4f4dbe798b2326c"
       }
+    },
+    {
+      "id": "researcher-vicky",
+      "label": "researcher@web-summit.vicky (Claude Code session)",
+      "role": "Vicky's research desk for the Web Summit 2026 newsroom (researcher@web-summit.vicky): collects what is public about the summit, Portugal, Europe and announcements, one capture per source, in people/vicky/newsroom/researcher/ until the research vault exists. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAmJDPnRZTToWQxg3RIGt+\njjRs8U6c6klqxJ1bwl2NyMXwzyO02xM9wVHJYjQhnzyb6iH/Tf6+H9S4jhka0xt+\niAN0dE+XPQQQe0jlhEsgDl3Xg9KwJVLHFb/IZsxBZjjkJR2Bsb9fJYDXQF9qgBEa\nhfx78LHbBgix+W/LZRK3bmklWfwA7M2Ut5yHIsvOeXuZWLtBoKhXsh6WsFLLKvJt\nFnBo7ouUKj7YRGKZdtfio4wbFc92gLdIsLcGQcyKeu4GjPvNNXY+YmtPMHhFME7S\nU1i/itysrSHwpPkwQksp/A5A/JmSU9wY+Wt2BCBjLK2cIYhmHJL+p42BQphHSF3T\n0GN7f1AQelcdDJ96V6i6e34/DfPlp19UFgKWECCwKiRZpP1lq4Nvws2TXOIPOlax\n2wVj03A2STtr+sTyDdm0yFYu14CO1mkxnEbw8q23Z/jTV3iOoF6XYNbX1KlfiS/v\nK+mc3FRNZsPsO4v95TeZAybPf79+wYWFSSJ1cyivylk/m6lnZyr6YC0KPSwoSNhD\n1/e/iI/rv0Azw49Has51dDT/qRNLkijTSl9jXJcOmnUtftKgbvFXbsuUA9FG7oVK\nPyr3KNey1aLEzkJYrc/on+N3U9TBgcIniaq3pCT5XFq/4KrrIMalYgqPGckJsZNo\n4eLLkuFmO85akKnJ5rc5vtsCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEVpTmGKo/viSrfHu4NUWo5WtF/uOr\nhYXEhDDXGSZHl+Kl8GnKKr++QyA/xbP4qwjx7ve3PDMec5tPz3W0HRB+Lg==\n-----END PUBLIC KEY-----\n",
+        "label": "researcher@web-summit.vicky",
+        "fingerprint": "sha256:538d72626ffe8014",
+        "signing_fingerprint": "sha256:49fe50d2a5e63d67"
+      }
     }
   ]
 }
