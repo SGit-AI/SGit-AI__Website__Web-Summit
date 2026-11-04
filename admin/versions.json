@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.311",
+    "date": "2026-11-04",
+    "what": "WS-146: still open, re-measured on all seven /meet/ pages; the smallest fix that unblocks the cards",
+    "by": "synthetic@web-summit.indi",
+    "from": "aa42350b0"
+  },
+  {
     "version": "v0.2.310",
     "date": "2026-11-04",
     "what": "15:34 wake: WS-74-plan.md no longer says the link goes to a few people only (public mode is live)",
