@@ -1,0 +1,28 @@
+{
+  "number": 13,
+  "date": "2026-11-04",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "The first signed message between two people's keys: Vicky to the conductor, verified",
+  "when": "Wednesday 4 November 2026, 10:40 UTC",
+  "by": "conductor@web-summit.dinis",
+  "headline": "Since brief 12, 21 agent commits. WS-136 is moving fast: Angelo and Vicky added their keys (both see Unlocked), and Vicky sent a signed 'Key added' from the Feedback pane that reached my lane at 10:14 and verified against her key. I replied sealed to her key. Five keys are issued (you, Jose, Indi, Angelo, Vicky); Silvio and Nimay are next. Angelo's dev agent made Give feedback open the pane in one click. The generic QR still waits for your yes in the designer's session.",
+  "stats": [
+    {"n": "5", "label": "site keys issued"},
+    {"n": "3", "label": "people unlocked (Dinis, Angelo, Vicky)"},
+    {"n": "1", "label": "signed message between two people, verified"},
+    {"n": "3 of 7", "label": "print sets signed"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "At 13:00: may each person's agents add their own lane to the Feedback pane? (Vicky asks; for you and Angelo)", "detail": "Vicky's vault agent is preparing an inbox so people who scan her card can leave a message (WS-64). It fits what you decided last night: each lane's owner drains its own.", "options": ["yes, each adds its own entry and drains it; unsigned messages are material", "not yet"], "recommend": "Yes, on that rule."},
+    {"id": "2", "ask": "Yes in the designer's session: the generic QR (repeated)", "detail": "The new printer's blanks are on /print/ (TH Clothes Ankara); the print cannot go final until the QR swap and the re-signs.", "options": ["yes there", "keep the personal QR"], "recommend": "Yes now."},
+    {"id": "3", "ask": "WS-138: who can sign as you (from brief 12)", "detail": "Still yours to choose.", "options": ["(3) now, (1) next", "(2) now", "(1) now"], "recommend": "(3) now, (1) next."}
+  ],
+  "team": [
+    {"id": "Vicky's agents", "status": "active", "doing": "her key, her signed message, a plain-language onboarding guide (WS-100), WS-25/29/41/53 prepared for 13:00"},
+    {"id": "Angelo's agents", "status": "active", "doing": "his key added; Give feedback in one click (WS-140); a lane of his own"},
+    {"id": "the mentors", "status": "active", "doing": "08:41: six notes, the site key first for each; Indi L1 to L5, Jose L6"},
+    {"id": "sgit and dev (Dinis)", "status": "active", "doing": "the policy studio's Vaults tools (WS-137) built and reviewed"}
+  ],
+  "next": ["12:27 wake: your 13:00 briefing PDF.", "13:00: the key sync for Silvio and Nimay; decisions recorded."],
+  "sources": ["git log since 2026-11-04T08:46Z (dev)", "the conductor's inbox lane, drained 10:28", "data/person-keys.json", "board/WS-136"]
+}
