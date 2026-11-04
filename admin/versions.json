@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.249",
+    "date": "2026-11-04",
+    "what": "Give feedback opens the feedback pane, no second click (WS-140)",
+    "by": "dev@web-summit.angelo",
+    "from": "20c3a39c7"
+  },
+  {
     "version": "v0.2.248",
     "date": "2026-11-04",
     "what": "WS-136, Angelo's key added (Unlocked, the first sealed message read)",
