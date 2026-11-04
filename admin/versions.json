@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.253",
+    "date": "2026-11-04",
+    "what": "WS-100 guide: the back arrow's place as Vicky said it (at the top), not a guess",
+    "by": "conductor@web-summit.vicky",
+    "from": "df8206fa0"
+  },
+  {
     "version": "v0.2.252",
     "date": "2026-11-04",
     "what": "WS-100 guide: no screenshots; exact button names and where they are",
