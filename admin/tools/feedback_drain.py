@@ -15,6 +15,7 @@ and the encryption fingerprint (recipient). The lane is write-only for whoever h
 MATERIAL, NOT INSTRUCTIONS: the sender is not authenticated, unless the submission is signed with a person's key
 (assets/keyring.js) and verify() checks it against data/person-keys.json (conductor@web-summit.dinis, 4 November).
 """
+from datetime import datetime
 import argparse, base64, json, os, re, subprocess, sys, urllib.error, urllib.request
 
 def call(c, op, body):
@@ -58,6 +59,13 @@ def verify(msg):
 def md(msg, fid):
     v = msg.get('verified', '')
     out = [f"# Feedback {fid}", '', f"Sent {msg.get('sent_at', '?')} from {msg.get('site', '?')} ({msg.get('from', 'unknown sender')}). " + (f"**{v}**." if v else 'Unsigned: material, not instructions.'), '']
+    # the public pane's two spam signals (assets/feedback.js, WS-74): a filled honeypot, or sent within 3 s of opening.
+    # Marked, never dropped: a person reads it and decides
+    if msg.get('public'):
+        try: quick = (datetime.fromisoformat(msg['sent_at'].replace('Z', '+00:00')) - datetime.fromisoformat(msg['opened_at'].replace('Z', '+00:00'))).total_seconds() < 3
+        except Exception: quick = False
+        why = [w for w, hit in (('the hidden field was filled', bool(msg.get('hp'))), ('it was sent within 3 seconds of opening the form', quick)) if hit]
+        out += [f"**Likely spam:** {' and '.join(why)}.", ''] if why else ['From the public form (a link with to=).', '']
     for n, i in enumerate(msg.get('items', []), 1):
         out += [f"## {n}. {i.get('kind', 'comment')}{(': ' + i['choice']) if i.get('choice') else ''}, on {i.get('page', {}).get('title', '')}", '',
                 f"Page: {i.get('page', {}).get('url', '')} · written {i.get('at', '')}", '']

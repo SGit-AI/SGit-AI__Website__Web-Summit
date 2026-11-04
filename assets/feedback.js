@@ -14,12 +14,16 @@
     // WS-74 (dev@web-summit.jose, 4 November 2026, at Jose's word): ?feedback=on&to=<agent> opens on that agent's lane,
     // so a link can send an outsider to the right inbox; an agent not in lanes[] falls back as before
     const qto = new URLSearchParams(location.search).get('to')
-    if (q === 'on' && qto && /^[a-z0-9-]+@web-summit\.[a-z0-9-]+$/.test(qto)) LS.set('to', qto)
+    // the public mode (WS-74 item 2 and 4, dev@web-summit.dinis): a link with to= is for someone outside the team, so for
+    // this visit only (not remembered, a team member keeps their own lane): no lane list, Comment only, no images (a
+    // screenshot can show a contact detail), and two spam signals the drain can check, a honeypot and the time it opened
+    const PUBLIC = q === 'on' && !!qto && /^[a-z0-9-]+@web-summit\.[a-z0-9-]+$/.test(qto)
+    const OPENED = new Date().toISOString()
     if (q === 'off') LS.del('on')
     if (!LS.get('on', false)) return
     const script = document.currentScript, base = script ? script.src.replace(/feedback\.js(\?.*)?$/, '') : '/assets/'
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
-    const KINDS = [['comment', 'Comment'], ['decision', 'Decision'], ['idea', 'Idea'], ['bug', 'Something wrong']]
+    const KINDS = PUBLIC ? [['comment', 'Comment']] : [['comment', 'Comment'], ['decision', 'Decision'], ['idea', 'Idea'], ['bug', 'Something wrong']]
     const CHOICES = ['Approve', 'Reject', 'Change it', 'Not now']
     let CFG = null, items = LS.get('items', []), open = false, quote = '', pasted = [], kind = 'comment'
     const save = () => { if (!LS.set('items', items)) toast('This browser is out of local storage: submit or delete some items (images take the most room).') }
@@ -76,7 +80,7 @@
 .fb-pane .imgs img{width:88px;height:66px;object-fit:cover;border-radius:6px;border:1px solid #e5e1d5}
 .fb-pane .imgs button{position:absolute;top:2px;right:2px;padding:0 5px;font-size:11px}
 .fb-pane h4{margin:16px 0 4px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#5c5f66}
-.fb-pane footer{border-top:1px solid #e5e1d5;padding:10px 14px}.fb-toast{position:fixed;left:50%;bottom:72px;transform:translateX(-50%);z-index:10000;background:#1c1d21;color:#fff;padding:8px 14px;border-radius:8px;font:500 13px/18px system-ui,sans-serif}
+.fb-pane .fb-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}.fb-pane footer{border-top:1px solid #e5e1d5;padding:10px 14px}.fb-toast{position:fixed;left:50%;bottom:72px;transform:translateX(-50%);z-index:10000;background:#1c1d21;color:#fff;padding:8px 14px;border-radius:8px;font:500 13px/18px system-ui,sans-serif}
 @media (prefers-color-scheme:dark){.fb-pane{background:#1c1c19;color:#ecebe6;border-color:#46453d}.fb-pane textarea,.fb-pane select{background:#24241f;border-color:#46453d}.fb-pane button{background:#24241f;border-color:#46453d}.fb-pane .it,.fb-pane header,.fb-pane footer{border-color:#34332d}.fb-pane .meta,.fb-pane h4,.fb-pane .q{color:#a9a59b}}`
     function toast(t) { const el = document.createElement('div'); el.className = 'fb-toast'; el.setAttribute('role', 'status'); el.textContent = t; document.body.appendChild(el); setTimeout(() => el.remove(), 3200) }
     const thumbs = (imgs, id) => imgs && imgs.length ? `<div class="imgs">${imgs.map((m, n) => `<span><img src="${m.data}" alt="${esc(m.name)}">${id ? `<button type="button" data-rmimg="${id}:${n}" aria-label="Remove image">×</button>` : ''}</span>`).join('')}</div>` : ''
@@ -96,11 +100,12 @@ ${i.kind === 'decision' ? `<div class="row">${CHOICES.map(c => `<button type="bu
         if (!open) { if (pane) pane.remove(); return }
         if (!pane) { pane = document.createElement('aside'); pane.className = 'fb-pane'; pane.setAttribute('aria-label', 'Your feedback'); document.body.appendChild(pane) }
         const u = unsent(), s = items.filter(i => i.sent_at).slice(-20).reverse()
-        pane.innerHTML = `<header><b>Feedback${CFG ? ` to ${ALL && ALL.lanes ? `<select data-to aria-label="Send to">${ALL.lanes.map(l => `<option${l.agent === CFG.agent ? ' selected' : ''}>${esc(l.agent)}</option>`).join('')}</select>` : esc(CFG.agent)}` : ''}</b><button type="button" data-close aria-label="Close">Close</button></header>
+        pane.innerHTML = `<header><b>Feedback${CFG ? ` to ${ALL && ALL.lanes && !PUBLIC ? `<select data-to aria-label="Send to">${ALL.lanes.map(l => `<option${l.agent === CFG.agent ? ' selected' : ''}>${esc(l.agent)}</option>`).join('')}</select>` : esc(CFG.agent)}` : ''}</b><button type="button" data-close aria-label="Close">Close</button></header>
 <div class="fb-body"><form class="fb-new"><label class="meta" for="fb-kind">On this page: ${esc(document.title)}</label>
-<div class="row"><select id="fb-kind" style="width:auto">${KINDS.map(([v, l]) => `<option value="${v}"${v === kind ? ' selected' : ''}>${l}</option>`).join('')}</select></div>
+<input type="text" name="website" class="fb-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="row"${PUBLIC ? ' hidden' : ''}><select id="fb-kind" style="width:auto">${KINDS.map(([v, l]) => `<option value="${v}"${v === kind ? ' selected' : ''}>${l}</option>`).join('')}</select></div>
 ${quote ? `<div class="q">${esc(quote)}</div>` : '<p class="meta">Tip: select text on the page first to quote it.</p>'}
-<textarea id="fb-text" placeholder="Your comment. Paste or drop images here."></textarea>${thumbs(pasted.map(x => x), '')}
+<textarea id="fb-text" placeholder="${PUBLIC ? 'Your comment.' : 'Your comment. Paste or drop images here.'}"></textarea>${thumbs(pasted.map(x => x), '')}
 <p class="meta">Please don't include your name, email or phone number. If you'd like a reply, tell the person who sent you the link.</p>
 <div class="row"><button class="go" type="submit">Add</button><span class="meta">Kept on this device until you submit.</span></div></form>
 <h4>To send (${u.length})</h4>${u.length ? u.map(itemHtml).join('') : '<p class="meta">Nothing waiting.</p>'}
@@ -114,8 +119,8 @@ ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
         { const t = p.querySelector('[data-to]'); if (t) t.onchange = () => { pick(t.value); render() } }
         const f = p.querySelector('.fb-new'), ta = p.querySelector('#fb-text')
         p.querySelector('#fb-kind').onchange = e => { kind = e.target.value }
-        ta.addEventListener('paste', async e => { const fs = [...(e.clipboardData || {}).files || []]; if (fs.length) { e.preventDefault(); const keep = ta.value; await takeImages(fs, pasted); render(); document.querySelector('#fb-text').value = keep } })
-        ta.addEventListener('drop', async e => { e.preventDefault(); const keep = ta.value; await takeImages(e.dataTransfer.files, pasted); render(); document.querySelector('#fb-text').value = keep })
+        if (!PUBLIC) ta.addEventListener('paste', async e => { const fs = [...(e.clipboardData || {}).files || []]; if (fs.length) { e.preventDefault(); const keep = ta.value; await takeImages(fs, pasted); render(); document.querySelector('#fb-text').value = keep } })
+        ta.addEventListener('drop', async e => { e.preventDefault(); if (PUBLIC) return; const keep = ta.value; await takeImages(e.dataTransfer.files, pasted); render(); document.querySelector('#fb-text').value = keep })
         ta.addEventListener('dragover', e => e.preventDefault())
         f.onsubmit = e => {
             e.preventDefault(); const text = ta.value.trim(); if (!text && !pasted.length) return
@@ -141,7 +146,7 @@ ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
                 // signed when the person's key is in this browser (assets/keyring.js): the signature is over items_json, byte for byte
                 const KR = window.WSKeyring, me = KR && KR.person, items_json = JSON.stringify(b)
                 const signed = me ? { person: me, key: KR.fingerprint, alg: 'ECDSA-P256-SHA256-P1363', sig: await KR.sign(items_json) } : null
-                await append(JSON.stringify({ type: 'web-summit.feedback/v1', to: CFG.agent, site: location.origin, sent_at: new Date().toISOString(), from: me ? `${me} (signed with their key in this browser)` : 'the feedback pane on this device (unauthenticated)', ...(signed ? { signed, items_json } : {}), items: b }))
+                await append(JSON.stringify({ type: 'web-summit.feedback/v1', to: CFG.agent, site: location.origin, sent_at: new Date().toISOString(), public: PUBLIC, opened_at: OPENED, hp: (document.querySelector('.fb-hp') || {}).value || '', from: me ? `${me} (signed with their key in this browser)` : 'the feedback pane on this device (unauthenticated)', ...(signed ? { signed, items_json } : {}), items: b }))
                 const at = new Date().toISOString(); b.forEach(i => { i.sent_at = at }); sent += b.length; save()
             }
             toast(`Sent ${sent} to ${CFG.agent}'s vault`)
@@ -151,6 +156,6 @@ ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
     const st = document.createElement('style'); st.textContent = css; document.head.appendChild(st)
     // several lanes (feedback.json lanes[], conductor@web-summit.dinis, 4 November): the pane sends to the one chosen
     let ALL = null
-    const pick = to => { if (!ALL) return; const l = (ALL.lanes || [ALL]); CFG = l.find(x => x.agent === to) || l[0]; LS.set('to', CFG.agent) }
-    fetch(base + 'feedback.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(c => { ALL = c; if (c) pick(LS.get('to', '')); render() }).catch(() => render())
+    const pick = (to, keep = true) => { if (!ALL) return; const l = (ALL.lanes || [ALL]); CFG = l.find(x => x.agent === to) || l[0]; if (keep) LS.set('to', CFG.agent) }
+    fetch(base + 'feedback.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(c => { ALL = c; if (c) PUBLIC ? pick(qto, false) : pick(LS.get('to', '')); render() }).catch(() => render())
 })()
