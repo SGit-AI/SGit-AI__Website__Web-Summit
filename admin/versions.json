@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.347",
+    "date": "2026-11-04",
+    "what": "WS-152, any agent can change another's key entry; ABPs for four more agents",
+    "by": "abp@web-summit.dinis",
+    "from": "ddd78e98b"
+  },
+  {
     "version": "v0.2.346",
     "date": "2026-11-04",
     "what": "its session key's public half on the keys page",
