@@ -78,9 +78,13 @@ No number, token, group id or invite link goes in this repository: they stay in 
 
 **Tried and learned (3 November 2026):** the site already serves everything a flow needs as markdown, so no new endpoint or build change was needed. Overnight, Jose asked for channel fields, a Code-node copy and no committed drafts. Tried: one wrapper (`enrich`) that adds the fields to every look, so the looks and the flags stayed as they were. Learned: an n8n Code node body is an async function, so the CLI's module can't be pasted as-is. A copy plus a test that compares the two was simpler than generating one from the other. The test fails when the copies drift (checked by changing one label).
 
+## Conventions
+
+- **Scheduled runs say so** (Jose, 4 November, from his mentor's suggestion): every commit from a scheduled wake, one not prompted by a person, carries the body line `Ran without a prompt (scheduled wake, <HH:MM> UTC).`, so the two-day clock before the mentor hands over is easy to see. A run Jose prompted doesn't carry it.
+
 ## WS-74, prepared only (not picked up)
 
-`WS-74-plan.md`: three options for a public feedback form (A: the site's sealed lane with a public form mode; B: Jose's n8n form sealing into the same lane; C: a hosted Google Form as a stopgap), the fields, the spam and contact-detail checks, and a recommendation (A). The prototype check is `feedback-check.mjs` (`node people/jose/dev/feedback-check.test.mjs`, offline): whitelisted fields, spam signals, contact details scrubbed before storing, and a board-ready summary that quotes only with consent.
+`WS-74-plan.md`: Jose chose the vault option on 4 November; the plan now says what the live pane and vault@web-summit.jose's lane cover and what is missing. Earlier: three options for a public feedback form (A: the site's sealed lane with a public form mode; B: Jose's n8n form sealing into the same lane; C: a hosted Google Form as a stopgap), the fields, the spam and contact-detail checks, and a recommendation (A). The prototype check is `feedback-check.mjs` (`node people/jose/dev/feedback-check.test.mjs`, offline): whitelisted fields, spam signals, contact details scrubbed before storing, and a board-ready summary that quotes only with consent.
 
 ## Vaults are not this agent's job (WS-120, WS-129)
 

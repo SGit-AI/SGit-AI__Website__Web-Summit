@@ -2,6 +2,36 @@
 
 By `dev@web-summit.jose`, 3 November 2026, overnight, at Jose's word: **prepare only**. The issue is not picked up, nothing is built on the site, and nothing is sent. Read: `board/WS-74-*.md`, `board/WS-114-*.md`, commit `89cfa63a` (the sealed feedback pane), `assets/feedback.js`, `assets/feedback.json`, `admin/tools/feedback_drain.py` and `content/videos.md`, all on `dev` at v0.2.34.
 
+## 4 November: the vault option, checked against what is live
+
+Jose (4 November, overnight): go with the vault option (A). His vault agent has an inbox vault with an append lane that the site's feedback pane can send to: does that cover WS-74, and what is missing? Read on `dev` at v0.2.193: `assets/feedback.js` (last changed in `1d764eed`), `assets/feedback.json`, `admin/tools/feedback_drain.py`, `people/jose/lanes/`, and `vault@web-summit.jose`'s commits `fa34c089` and `d05b5264`. Nothing was sent to the lane to check this: this session can't reach `dev.send.sgraph.ai`, and the brief says send nothing.
+
+### Already covered
+
+| WS-74 needs | What is live | Evidence |
+|---|---|---|
+| No GitHub account | The pane runs in any browser and sends with a write-only append token | `assets/feedback.js` |
+| Answers land where the team reads them | The lane on `jose-inbox` (`jjrcow03`) is in `assets/feedback.json` lanes[], and vault@web-summit.jose drains it into `jose-inbox/feedback/<date>/` on every run | `fa34c089`, `people/jose/lanes/README.md` |
+| Only the team can read them | Each message is sealed in the browser to vault@web-summit.jose's public key (`vault-jose`, `sha256:9002d798c33faff9`); the lane server sees ciphertext | `assets/feedback.js` `seal()`; tested end to end at about 00:26 UTC |
+| Material, not instructions | Unsigned messages are marked as such; only a person's verified key changes that | `feedback_drain.py` `verify()` |
+| Nothing published by itself | Answers stay in the vault; nothing on the site changes when one arrives | `feedback_drain.py` writes only to the vault |
+
+**So the transport is done.** What is missing is the public form itself and its safeguards.
+
+### Missing, most important first
+
+1. **A way in for outsiders.** The pane is off until `?feedback=on`, and nothing on `/videos/` or the video pages links to it. `/videos/` still says "a short public form is coming". There is also no way to choose the lane from the link: the pane opens on the first lane in `lanes[]` (`conductor@web-summit.dinis`) or the last one chosen in that browser. *Needed:* a link such as `?feedback=on&to=vault@web-summit.jose` that preselects Jose's lane, and a "Give feedback" line on `/videos/` and each video page. The pane change is about two lines in `assets/feedback.js`, which is dev@web-summit.dinis's file.
+2. **A public mode of the pane.** Today an outsider would see a "Send to" list of the team's agents and the team's kinds (Decision: Approve, Reject, Change it, Not now). *Needed:* with `to=` set, hide the list and offer only Comment. Ideally add WS-74's short questions (love / like / not for me, would you show it to someone, and the tick "you may quote this anonymously"). Without that tick, nothing an outsider writes can ever be quoted.
+3. **Contact details.** Nothing stops someone typing an email or a number, or pasting a screenshot that shows one. They are sealed and private, so nothing is *published*, which is what WS-74 requires. But anything later copied out of the vault (a summary, the board) needs scrubbing. *Needed:* a line in the pane ("please don't include your name, email or number"); in public mode, no images; and `feedback-check.mjs`'s `scrub()` run before anything leaves the vault.
+4. **Spam.** The pane has no honeypot and no timing check. The lane takes up to 1000 pending messages of up to 5 MB each, and its token is public. A flood fills Jose's lane only, not the team's, but until it is drained or the token rotated, real answers are refused (507). *Needed:* the honeypot and the timing field in public mode, and `feedback-check`'s spam flags at drain time (dropped, only counted). Rotating the token is one configure call by vault@web-summit.jose.
+5. **The session key.** Messages are sealed to vault@web-summit.jose's *session* key, as Jose chose (`81a77d77`). If that session ends, every answer sent before the recipient block in `assets/feedback.json` is updated is sealed to a dead key and lost. `people/jose/lanes/README.md` says so. For a form we give to strangers during the summit week, that is the biggest operational risk. *Needed:* the vault agent's scheduled session kept alive (same session, like this one), and a check on each run that the published recipient is still its live key.
+6. **From the vault to the team.** The drain files each answer as markdown in `jose-inbox`, which only vault@web-summit.jose can read. *Needed:* a person-reviewed summary (counts per video, quotes only with consent): `feedback-check.mjs`'s `boardFile()`. Silvio, whose videos they are, reads it.
+7. **The board.** WS-74 is still `open`, with nobody on it, and is for Jose and Angelo. Picking it up is Jose's call.
+
+### The smallest version that meets WS-74
+
+Items 1, 3 (the line in the pane), 5 and 6 together: a link that opens the pane on Jose's lane, a sentence asking for no contact details, the vault agent staying in one session, and a summary a person reads. Items 2 and 4 make it better and safer, and are worth doing before the link is sent widely.
+
 ## What the issue asks
 
 > Anyone we send a video to can say what they think, without a GitHub account; answers land where the team reads them (n8n, a vault, or the board). No contact details published. (WS-74, for jose and angelo, due Wed 4 Nov)
