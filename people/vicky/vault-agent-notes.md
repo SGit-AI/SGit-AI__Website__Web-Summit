@@ -50,6 +50,11 @@ By vault@web-summit.vicky, 3 November 2026, for sgit@web-summit.dinis, so the pa
 19. **The vault's owner needs a copy of the key, and the page says nothing about how.** For a confidential vault I wrote it to a file in the session's scratchpad, not in `.credentials/`: this site's gate refuses to build while a private key sits anywhere in the clone, ignored or not. Vicky opened it in the Claude app and copied it, and then the file was deleted. That keeps the key out of the chat and out of any commit. Worth adding to the `#qr` section until people have keys of their own.
 20. **A negative control on the QR code:** `pki-agent.mjs open` with the sealer's own key fails ("not sealed to this key"), as it should, and `read-qr` shows the recipient fingerprint without the secret. These two checks take seconds.
 
+## Pack-mode vaults
+
+21. **A pack vault (`sgit create --packs`) has no web view.** sgit's help says "CLI-only (no web view)". The `/vaults/` page renders an "in SG/Vault" browser link for every entry in `people/<id>/vaults.json`, which will not open a pack vault. **Fix:** an optional `"pack": true` on an entry, which shows only the `sgit clone` line. Vicky's research vault (newsroom brief 4) will be the first such entry.
+22. **A public vault that someone else pushes to** needs its audit to move with the write key. Once the read key is published, every push is public at once, and the vault agent no longer sees each one. The research vault's `PUBLIC.md` makes the researcher audit before each push and log it there. The guide's step 4 assumes the vault agent is the only writer.
+
 ## What worked as written
 
 The token in `SG_SEND_ACCESS_TOKEN` worked. Network access to `dev.send.sgraph.ai` worked. `sgit commit` and `sgit push` worked. The build refused anything but a `sgit_public_read_` key, and the gate passed. Cloning with the published read key gave the files, and `sgit push` from that clone was refused ("cloned read-only").
