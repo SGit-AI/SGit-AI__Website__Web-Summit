@@ -28,6 +28,8 @@ export const dueAt = s => {
 const AGENT_RE = /(?:^|\n|Agent: )([a-z0-9-]+@web-summit\.[a-z0-9-]+)(?=:|\s|$)/g
 
 const git = (root, args) => { try { return execFileSync('git', args, { cwd: root, encoding: 'utf8', maxBuffer: 64 << 20 }) } catch { return '' } }
+// the week's history, read once per build: the same for every person, and it was one git process each (dev@web-summit.dinis)
+const WEEK = new Map(), week = root => { if (!WEEK.has(root)) WEEK.set(root, git(root, ['log', '--since=7 days ago', '--format=%x1e%H%x1f%cI%x1f%s%x1f%b'])); return WEEK.get(root) }
 
 const DEFAULTS = {
     summit: { opening: '2026-11-09T18:00:00Z', label: 'Web Summit Lisbon: opening night Mon 9 Nov, conference Tue 10 to Thu 12 Nov', source: 'data/events.json' },
@@ -63,7 +65,7 @@ export function build(root, person, now = new Date()) {
     }).sort((a, b) => (a.due_at || '9').localeCompare(b.due_at || '9') || a.id.localeCompare(b.id, 'en', { numeric: true }))
 
     // 2. git history, the last 7 days: who committed what (release commits by CI are left out)
-    const raw = git(root, ['log', '--since=7 days ago', '--format=%x1e%H%x1f%cI%x1f%s%x1f%b'])
+    const raw = week(root)
     const commits = raw.split('\x1e').filter(Boolean).map(c => {
         const [hash, at, subject, body] = c.split('\x1f')
         const names = [...new Set([...`${subject}\n${body || ''}`.matchAll(AGENT_RE)].map(x => x[1]))]
