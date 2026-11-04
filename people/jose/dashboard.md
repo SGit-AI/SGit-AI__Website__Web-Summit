@@ -16,6 +16,13 @@ Your conductor's latest is [brief 4](https://github.com/SGit-AI/SGit-AI__Website
 - **Your mentor's suggestion:** a "ran without a prompt" line in every scheduled commit, so the two-day clock to its handover can be read from git. It covers me too: say yes or no and I follow.
 - **Your designer's pick:** a direction for your command centre and a broadcast look, in [people/jose/design](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/design/README.md).
 
+- **Turn on Ask Claude in [your command centre](app/index.html#ask)** (Jose, 4 November: yes, as Dinis has it). Three steps:
+  1. **Your conductor** adds an `llm` block to `people/jose/app/config.json`, copied from Dinis's (OpenRouter, Sonnet 5.5 by default), and releases.
+  2. **You** make a key just for this page at openrouter.ai/settings/keys, **with a small credit limit**.
+  3. **You** paste it only into the command centre's own form ("Save on this device"): it stays in that browser and goes only to openrouter.ai. Never into a chat, a commit or a message, and not on a shared machine; Settings removes it.
+
+  Until WS-117 moves the key to an origin of its own, any script on this site could read it (WS-132), so keep the limit small and disable the key if in doubt.
+
 Messages for you: commits with `For: jose` in [the log on dev](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commits/dev); every brief is in [people/jose/briefs](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/jose/briefs).
 
 ```onboarding jose
