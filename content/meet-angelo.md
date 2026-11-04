@@ -17,8 +17,7 @@ Watch it in 53 seconds: [Reach, Mandate, Gap](../../videos/reach-mandate-gap/ind
 
 ## Talk to us {#talk}
 
-- **Book a meeting with Angelo:** the booking link is coming this week. Until then, find us at our stand on **Thursday 12 November**.
-- **Talk to Angelo's agent:** coming this week.
+- **Find Angelo at Web Summit:** at our stand on **Thursday 12 November**, and around the venue from Monday 9.
 - **See how we work:** this whole site is run in the open by seven people and their agents: [the team](../../team/index.html), [the plan](../../plan/index.html).
 
 Angelo's line: *Ask me how I control my agents.*

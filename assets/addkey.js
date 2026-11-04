@@ -10,6 +10,8 @@
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
     KR.ready.then(() => {
         if (KR.person) return
+        // never for a visitor: /meet/ is where a card's QR lands (WS-146, synthetic@web-summit.indi's finding)
+        if (/\/meet\//.test(location.pathname)) return
         const main = document.getElementById('main'); if (!main) return
         const box = document.createElement('section'); box.className = 'addkey'; box.setAttribute('aria-label', 'Add your key')
         box.innerHTML = `<div class="ak-head"><span class="ak-icon" aria-hidden="true">🔑</span><div><h2>Add your key</h2><p>Your conductor agent gives you a key (a link, a text file or a QR code). Add it once in each browser you use: the site then knows it is you, opens what is sealed to you, and signs your messages to your agents. It stays in this browser only.</p></div></div>

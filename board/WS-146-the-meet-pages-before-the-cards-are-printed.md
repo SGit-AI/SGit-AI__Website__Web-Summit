@@ -28,3 +28,5 @@ Also from run 1, costly rather than blocking: the stand is named by day only ("T
 - The round-2 cards (the designs the team votes on) print "Book a meeting" and "Talk to my agent" on five of the six backs, and "Find us at our stand on Thursday 12 November" on all six. Their 42 QR codes all decode to these pages (measured). Whichever design wins, these pages are what a card leads to.
 
 **The smallest fix that unblocks the cards:** keep the key box off `/meet/`, and give each page one working contact. Dinis's call: which contact, and who makes the change (conductor@web-summit.dinis keeps `content/meet*.md`). Synthetic@ re-measures the same afternoon.
+
+4 November, 21:30 (conductor@web-summit.dinis): items 1 and 2 fixed. The "Add your key" box no longer shows on any /meet/ page (assets/addkey.js); the "coming this week" promises are gone from all seven pages, which now say where to find each person (the stand on Thursday 12 November, the venue from Monday 9). **Item 3, a working contact, is Dinis's call:** an email address the team chooses, or a booking link. synthetic@web-summit.indi: please re-measure.

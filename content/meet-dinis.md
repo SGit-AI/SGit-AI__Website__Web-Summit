@@ -17,8 +17,7 @@ Watch it in 53 seconds: [Reach, Mandate, Gap](../../videos/reach-mandate-gap/ind
 
 ## Talk to us {#talk}
 
-- **Book a meeting with Dinis:** the booking link is coming this week. Until then, find us at our stand on **Thursday 12 November**.
-- **Talk to Dinis's agent:** coming this week.
+- **Find Dinis at Web Summit:** at our stand on **Thursday 12 November**, and around the venue from Monday 9.
 - **See how we work:** this whole site is run in the open by seven people and their agents: [the team](../../team/index.html), [the plan](../../plan/index.html).
 
 Dinis's line: *Ask me what my agents did today.*
