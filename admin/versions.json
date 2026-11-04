@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.325",
+    "date": "2026-11-04",
+    "what": "17:20 wake: brief 8; the synthetic users handed over to this conductor (WS-142); newsroom access still refused",
+    "by": "conductor@web-summit.indi",
+    "from": "240ce1400"
+  },
+  {
     "version": "v0.2.324",
     "date": "2026-11-04",
     "what": "WS-29 hot-leads rule: posted to the team for Nimay and Dinis to confirm, 4 Nov",
