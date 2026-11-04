@@ -58,17 +58,6 @@
       "goal": "21 T-shirts and 7 hoodies in Lisbon on time; Algarve printing and ads mapped."
     },
     {
-      "id": "sponsor",
-      "name": "Merch sponsor",
-      "colour": "local",
-      "agent": "sponsor@web-summit.silvio",
-      "issues": [
-        "WS-58"
-      ],
-      "with": "Dinis",
-      "goal": "Closed: dropped by Dinis on 2 Nov 2026; no sponsor, the merch is RiskMandate only (WS-58, done)."
-    },
-    {
       "id": "pm",
       "name": "Agentic PM",
       "colour": "conductor",
@@ -123,75 +112,7 @@
       "schedule": ""
     }
   },
-  "decisions": [
-    {
-      "who": "Dinis",
-      "what": "The latest date for final artwork and sizes (proposed Tue 3 Nov, 12:00)",
-      "issue": "WS-48",
-      "since": "2026-11-02T21:00:00Z",
-      "source": "print-order/index.html#status"
-    },
-    {
-      "who": "Dinis",
-      "what": "The fallback if no printer offers seven colours by Friday",
-      "issue": "WS-48",
-      "since": "2026-11-02T21:00:00Z",
-      "source": "print-order/index.html#status"
-    },
-    {
-      "who": "Dinis",
-      "what": "The merch budget: a spending ceiling, so Silvio can confirm the first printer that fits (no sponsor is coming)",
-      "issue": "WS-13",
-      "since": "2026-11-02T21:00:00Z",
-      "source": "print-order/index.html#status"
-    },
-    {
-      "who": "Silvio",
-      "what": "Where procurement may write, and who replies to suppliers",
-      "issue": "WS-101",
-      "since": "2026-11-02T00:00:00Z",
-      "source": "board/WS-101"
-    },
-    {
-      "who": "Silvio",
-      "what": "Which companies Silvio owns on the map",
-      "issue": "",
-      "since": "2026-11-02T00:00:00Z",
-      "source": "team/silvio/index.html"
-    }
-  ],
-  "funnels": [
-    {
-      "name": "Merch order",
-      "issue": "WS-48",
-      "as_of": "2026-11-02T21:00:00Z",
-      "source": "print-order/index.html#status",
-      "stages": [
-        {
-          "stage": "Printers asked",
-          "now": 7,
-          "target": 10,
-          "note": "3 more by WhatsApp or web form"
-        },
-        {
-          "stage": "Replied",
-          "now": 2,
-          "target": 7,
-          "note": "A: not by Friday; B: only white, black or grey"
-        },
-        {
-          "stage": "A quote that fits Friday",
-          "now": 0,
-          "target": 1
-        },
-        {
-          "stage": "Order placed (Silvio approves)",
-          "now": 0,
-          "target": 1
-        }
-      ]
-    }
-  ],
+  "decisions": [],
   "llm": {
     "provider": "openrouter",
     "default_model": "anthropic/claude-sonnet-5.5",
@@ -213,5 +134,19 @@
         "Claude Fable 5.1"
       ]
     ]
-  }
+  },
+  "links": [
+    [
+      "Mine",
+      "My private desk: Gmail, Calendar, Claude",
+      "https://claude.ai/artifact/RaKZdWWg5yN3D5tue1dZmM",
+      "private: only Silvio can open it"
+    ],
+    [
+      "Mine",
+      "My test page (the Lab)",
+      "https://claude.ai/artifact/1RCwGGKm3XU9mCwajfcn93",
+      "private"
+    ]
+  ]
 }
