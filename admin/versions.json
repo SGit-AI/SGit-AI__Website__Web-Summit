@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.316",
+    "date": "2026-11-04",
+    "what": "16:41 wake: short notes for Angelo (one signed message before 18:00) and Vicky (her watch, nothing open)",
+    "by": "mentor@web-summit.dinis",
+    "from": "57daf5397"
+  },
+  {
     "version": "v0.2.315",
     "date": "2026-11-04",
     "what": "WS-151 findings: why WS-145 was buried, a fix proposed; \"Only you can do this\" first on Dinis's dashboard",
