@@ -1,54 +1,131 @@
 {
  "schema": "web-summit.sgit.ai/watcher-activity/v1",
  "by": "watcher@web-summit.jose",
- "run": "2026-11-04T01:11Z",
+ "run": "2026-11-04T23:20Z",
  "scope": "Jose's agents only (policy.json scope_decision, until the 4 November 13:00 stand-up decides)",
  "range": {
-  "from": "4eaa80c",
-  "to": "aa6582f",
+  "from": "aa6582f",
+  "to": "3759445",
   "branch": "dev",
-  "why_from": "state.json's last commit (the first run's end)"
+  "why_from": "state.json's last commit; the watcher had no schedule until 23:10, so this run covers the whole day"
  },
  "counts": {
-  "commits": 6,
-  "ci_releases": 3,
-  "jose_agents": 1,
+  "commits": 487,
+  "ci_releases": 184,
+  "jose_agents": 23,
   "watcher_own": 1,
-  "other_people_agents_not_listed": 1,
+  "other_people_agents_not_listed": 279,
   "no_agent_name": 0
  },
  "by_agent": {
-  "dev@web-summit.jose": 1
+  "dev@web-summit.jose": 5,
+  "conductor@web-summit.jose": 8,
+  "vault@web-summit.jose": 3,
+  "dashboard@web-summit.jose": 7
  },
- "flags": [],
+ "flags": [
+  {
+   "level": "medium",
+   "what": "commits by Jose's agents with no Reviewed-by trailer",
+   "where": "22d73f0, ec753e9, db7ea40 (dashboard@web-summit.jose, 07:34 UTC)",
+   "context": "committed while dashboard was held (hold.json since 07:31) and pushed with 33e2db3 (07:35), which carries the pass that lifted the hold"
+  },
+  {
+   "level": "medium",
+   "what": "code the build runs changed (WS-133)",
+   "where": "45e4b6e (conductor@web-summit.jose, 17:08): admin/build/build.mjs, admin/tools/telemetry_drain.py, assets/telemetry.js, assets/telemetry.json",
+   "context": "its review record (people/jose/reviewer/reviews/2026-11-04-1705-conductor.md line 12) cites Jose's agreement and says the commit tells build.mjs's owner and security; not yet reviewed by security"
+  },
+  {
+   "level": "note",
+   "what": "writes outside the lane",
+   "where": "6a5befb (dev, 01:15): assets/feedback.js, content/videos.md, content/video-fifty-new-agents.md, content/video-reach-mandate-gap.md",
+   "context": "its review record (2026-11-04-0114-dev.md line 8) says Jose's instruction covers them; reviewed by security"
+  },
+  {
+   "level": "note",
+   "what": "writes outside the lane",
+   "where": "e1bb01b (conductor, 02:09): data/person-keys.json, data/sealed/jose/2026-11-04T0208Z-hello.json",
+   "context": "its review record (2026-11-04-0210-conductor.md lines 8 and 18) calls it a documented exception, and records that the conductor's session also holds the private half of Jose's person key; reviewed by security, which raised person keys under WS-132"
+  },
+  {
+   "level": "note",
+   "what": "board files not named in the commit's Issue: trailer",
+   "where": "dd8dbcb (conductor, 01:56): board/WS-15-*, board/WS-18-*",
+   "context": "its Issue: trailer names WS-108 and WS-134"
+  },
+  {
+   "level": "info",
+   "what": "three reviewer holds today, all lifted",
+   "where": "d8301cd (vault, 01:26), f2772a9 (conductor, 07:23), bce97f2 (dashboard, 07:33)",
+   "context": "in f2772a9, hold.json's since (07:35) is later than the commit (07:23)"
+  },
+  {
+   "level": "info",
+   "what": "the watcher had no schedule",
+   "where": "no scheduled task until 2026-11-04 23:10 UTC; the 07:15, 12:15 and 17:15 runs did not happen",
+   "context": "scheduled now: cron 15 7,12,17 * * * UTC, firing into its own session (not in git: the scheduled task was created by this session)"
+  }
+ ],
  "reviewer_trailer": {
   "started": "2026-11-04T00:52:25Z",
   "checked": [
-   "aa6582f"
+   "6a5befb",
+   "28bda3d",
+   "d8301cd",
+   "e90614b",
+   "4029152",
+   "5e01a1a",
+   "dd8dbcb",
+   "c5376d7",
+   "e1bb01b",
+   "f2772a9",
+   "c807dfa",
+   "bce97f2",
+   "22d73f0",
+   "ec753e9",
+   "db7ea40",
+   "33e2db3",
+   "97cffba",
+   "c129574",
+   "ad5996f",
+   "80b8078",
+   "45e4b6e",
+   "d41a456",
+   "9b9ded9"
   ],
-  "missing": []
+  "missing": [
+   "22d73f0",
+   "ec753e9",
+   "db7ea40"
+  ],
+  "hold_only_commits_without_trailer": [
+   "d8301cd"
+  ]
  },
  "branches": {
   "main": "no new commit (last 81353d4, site v0.2.0, 2 November)",
-  "claude/*": "none moved since the first run"
+  "claude/conductor-jose-setup-ogxaka": "at d5a3428 (conductor@web-summit.jose, 23:11), on dev, after this run's range",
+  "claude/relaxed-hypatia-eo624i": "unchanged, 63e25ec",
+  "other claude/*": "other people's agents; out of scope"
  },
  "agents": [
   {
    "agent": "conductor@web-summit.jose",
    "schedule": "20 7,12,17 * * *",
-   "last_commit": "2026-11-04T00:55Z",
+   "last_commit": "2026-11-04T17:22Z",
    "state": "on time"
   },
   {
    "agent": "dashboard@web-summit.jose",
    "schedule": "30 7,12,17 * * *",
-   "last_commit": "2026-11-03T17:31Z",
+   "last_commit": "2026-11-04T17:33Z",
    "state": "on time (next slot 07:30)"
   },
   {
    "agent": "dev@web-summit.jose",
    "schedule": "30 9,15 * * *",
-   "last_commit": "2026-11-04T01:10Z",
+   "last_commit": "2026-11-04T15:35Z",
    "state": "on time"
   },
   {
@@ -60,31 +137,428 @@
   {
    "agent": "vault@web-summit.jose",
    "schedule": null,
-   "last_commit": "2026-11-04T00:40Z",
+   "last_commit": "2026-11-04T01:31Z",
    "state": "on demand"
   },
   {
    "agent": "watcher@web-summit.jose",
-   "schedule": "15 7,12,17 * * * (proposed; no scheduled task made by this session)",
-   "last_commit": "2026-11-04T01:00Z",
-   "state": "running"
+   "schedule": "15 7,12,17 * * * (scheduled 2026-11-04 23:10 UTC)",
+   "last_commit": "2026-11-04T01:13Z",
+   "state": "stopped: no schedule until 23:10; scheduled now"
   }
  ],
  "commits": [
   {
-   "sha": "aa6582f",
-   "time": "2026-11-04T01:10:18Z",
+   "sha": "6a5befb",
+   "time": "2026-11-04T01:15:33Z",
    "agent": "dev@web-summit.jose",
-   "subject": "dev@web-summit.jose: WS-39 route 3, an n8n workflow Jose can import: the newest report as one WhatsApp message to Jose only",
+   "subject": "dev@web-summit.jose: WS-74 picked up for Jose; the smallest public feedback form: a link that opens the pane on Jose's lane, no contact details asked",
    "issue": [
-    "WS-39"
+    "WS-74"
    ],
-   "files": 6,
-   "outside_person_folder": [],
-   "security": "not yet reviewed (after last_reviewed_commit 83d4d93)",
+   "files": 11,
+   "outside_person_folder": [
+    {
+     "file": "assets/feedback.js",
+     "note": "outside the lane: listed, not judged"
+    },
+    {
+     "file": "board/WS-74-a-public-feedback-form-for-the-videos-and-pages.md",
+     "note": "board file of an issue in its Issue: trailer (in lane)"
+    },
+    {
+     "file": "content/video-fifty-new-agents.md",
+     "note": "outside the lane: listed, not judged"
+    },
+    {
+     "file": "content/video-reach-mandate-gap.md",
+     "note": "outside the lane: listed, not judged"
+    },
+    {
+     "file": "content/videos.md",
+     "note": "outside the lane: listed, not judged"
+    }
+   ],
+   "security": "reviewed by security (2026-11-04-1150)",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
-   "findings": [],
-   "note": "adds .mjs files in people/jose/dev/; the build does not run them (it runs only people/<id>/pages.mjs and app/data.mjs, WS-133)"
+   "findings": []
+  },
+  {
+   "sha": "28bda3d",
+   "time": "2026-11-04T01:15:57Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: overnight, Jose's 25 issues due Wed 4 Nov in one list; WS-120 marked with his side; WS-74's open question handed to dev",
+   "issue": [
+    "WS-120",
+    "WS-74"
+   ],
+   "files": 5,
+   "outside_person_folder": [
+    {
+     "file": "board/WS-120-vaults-first-angelo-jose-silvio.md",
+     "note": "board file of an issue in its Issue: trailer (in lane)"
+    }
+   ],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "d8301cd",
+   "time": "2026-11-04T01:26:41Z",
+   "agent": "vault@web-summit.jose",
+   "subject": "vault@web-summit.jose: held by reviewer@web-summit.jose: a draft issue would have published a token's value",
+   "issue": [
+    "WS-134"
+   ],
+   "files": 2,
+   "outside_person_folder": [],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": null,
+   "findings": []
+  },
+  {
+   "sha": "e90614b",
+   "time": "2026-11-04T01:31:37Z",
+   "agent": "vault@web-summit.jose",
+   "subject": "vault@web-summit.jose: WS-135, three gaps in the vault audit, for its owner",
+   "issue": [
+    "WS-135"
+   ],
+   "files": 1,
+   "outside_person_folder": [
+    {
+     "file": "board/WS-135-three-gaps-in-the-vault-audit.md",
+     "note": "board file of an issue in its Issue: trailer (in lane)"
+    }
+   ],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "4029152",
+   "time": "2026-11-04T01:31:37Z",
+   "agent": "vault@web-summit.jose",
+   "subject": "vault@web-summit.jose: lane key checked every run; vault keys handed to Jose; create output kept out",
+   "issue": [
+    "WS-120",
+    "WS-114"
+   ],
+   "files": 5,
+   "outside_person_folder": [],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "5e01a1a",
+   "time": "2026-11-04T01:43:08Z",
+   "agent": "dev@web-summit.jose",
+   "subject": "dev@web-summit.jose: README line 96 names \"an earlier test vault\" instead of the old vault name, at Jose's word",
+   "issue": [],
+   "files": 2,
+   "outside_person_folder": [],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "dd8dbcb",
+   "time": "2026-11-04T01:56:22Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: WS-108 picked up, Jose says yes: Hack the Agent and ReachCheck offered as stand demos, in his profile, WS-15's options and WS-18; the watcher ignores its own commits and CI's releases",
+   "issue": [
+    "WS-108",
+    "WS-134"
+   ],
+   "files": 7,
+   "outside_person_folder": [
+    {
+     "file": "board/WS-108-jose-s-two-apps-as-the-stand-demos.md",
+     "note": "board file of an issue in its Issue: trailer (in lane)"
+    },
+    {
+     "file": "board/WS-15-the-riskmandate-message-one-paragraph-three-open.md",
+     "note": "outside the lane: listed, not judged"
+    },
+    {
+     "file": "board/WS-18-the-demos-we-run-at-the-summit.md",
+     "note": "outside the lane: listed, not judged"
+    }
+   ],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "c5376d7",
+   "time": "2026-11-04T01:57:18Z",
+   "agent": "dev@web-summit.jose",
+   "subject": "dev@web-summit.jose: WS-74's form questions proposed for Jose's approval; WS-41, the pulse app, a one-page plan (nothing built)",
+   "issue": [
+    "WS-74",
+    "WS-41"
+   ],
+   "files": 3,
+   "outside_person_folder": [],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "e1bb01b",
+   "time": "2026-11-04T02:09:56Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: Jose's person key for the site, public half only (sha256:6b6b6fee14c2527c), and a first message sealed to it",
+   "issue": [
+    "WS-123"
+   ],
+   "files": 3,
+   "outside_person_folder": [
+    {
+     "file": "data/person-keys.json",
+     "note": "outside the lane: listed, not judged"
+    },
+    {
+     "file": "data/sealed/jose/2026-11-04T0208Z-hello.json",
+     "note": "outside the lane: listed, not judged"
+    }
+   ],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "f2772a9",
+   "time": "2026-11-04T07:23:25Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: held by reviewer@web-summit.jose: brief 5 had two wrong claims and an unsourced recommendation; only the hold and its record pushed",
+   "issue": [
+    "WS-134"
+   ],
+   "files": 2,
+   "outside_person_folder": [],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": "reviewer@web-summit.jose (hold)",
+   "findings": []
+  },
+  {
+   "sha": "c807dfa",
+   "time": "2026-11-04T07:24:48Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: brief 5 to Jose (three asks: the watcher's scope, the split, his key), fixed after the reviewer's hold; the hold lifted",
+   "issue": [
+    "WS-112",
+    "WS-134"
+   ],
+   "files": 4,
+   "outside_person_folder": [],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "bce97f2",
+   "time": "2026-11-04T07:33:19Z",
+   "agent": "dashboard@web-summit.jose",
+   "subject": "dashboard@web-summit.jose: held by reviewer@web-summit.jose: my dashboard asked Jose again for a decision he made (the scheduled-run line); only the hold and its record pushed",
+   "issue": [],
+   "files": 2,
+   "outside_person_folder": [],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": "reviewer@web-summit.jose (hold)",
+   "findings": []
+  },
+  {
+   "sha": "22d73f0",
+   "time": "2026-11-04T07:34:48Z",
+   "agent": "dashboard@web-summit.jose",
+   "subject": "dashboard@web-summit.jose: what Jose leads and is not doing, in Jose's words, with the issues for each lane",
+   "issue": [
+    "WS-18"
+   ],
+   "files": 1,
+   "outside_person_folder": [],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": null,
+   "findings": []
+  },
+  {
+   "sha": "ec753e9",
+   "time": "2026-11-04T07:34:48Z",
+   "agent": "dashboard@web-summit.jose",
+   "subject": "dashboard@web-summit.jose: \"turn on Ask Claude\" in what needs Jose, at Jose's word, with the steps for the conductor and for Jose",
+   "issue": [
+    "WS-132"
+   ],
+   "files": 1,
+   "outside_person_folder": [],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": null,
+   "findings": []
+  },
+  {
+   "sha": "db7ea40",
+   "time": "2026-11-04T07:34:48Z",
+   "agent": "dashboard@web-summit.jose",
+   "subject": "dashboard@web-summit.jose: 07:30 wake: brief 5's three asks first; WS-39 route 3 built; the vault, reviewer and watcher among Jose's agents",
+   "issue": [
+    "WS-134"
+   ],
+   "files": 1,
+   "outside_person_folder": [],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": null,
+   "findings": []
+  },
+  {
+   "sha": "33e2db3",
+   "time": "2026-11-04T07:35:47Z",
+   "agent": "dashboard@web-summit.jose",
+   "subject": "dashboard@web-summit.jose: the reviewer's hold fixed: the mentor item dropped (Jose agreed, 1c93350b), WS-26 cited, Ask Claude's step 1 exact",
+   "issue": [
+    "WS-134"
+   ],
+   "files": 3,
+   "outside_person_folder": [],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "97cffba",
+   "time": "2026-11-04T09:36:35Z",
+   "agent": "dev@web-summit.jose",
+   "subject": "dev@web-summit.jose: 09:34 wake: the feedback summary marks the public pane's likely spam (WS-74), and this session reaches newsroom.sgit.ai (WS-139)",
+   "issue": [
+    "WS-74",
+    "WS-139"
+   ],
+   "files": 5,
+   "outside_person_folder": [
+    {
+     "file": "board/WS-74-a-public-feedback-form-for-the-videos-and-pages.md",
+     "note": "board file of an issue in its Issue: trailer (in lane)"
+    }
+   ],
+   "security": "reviewed by security (2026-11-04-1150)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "c129574",
+   "time": "2026-11-04T12:23:52Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: brief 6 to Jose (L6; the two 13:00 decisions; the watcher has not run since 01:11); WS-139's evidence that his agents reach newsroom.sgit.ai",
+   "issue": [
+    "WS-139",
+    "WS-134",
+    "WS-112"
+   ],
+   "files": 4,
+   "outside_person_folder": [
+    {
+     "file": "board/WS-139-jose-s-agents-cannot-reach-newsroom-sgit-ai.md",
+     "note": "board file of an issue in its Issue: trailer (in lane)"
+    }
+   ],
+   "security": "not yet reviewed (after cb3e1864)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "ad5996f",
+   "time": "2026-11-04T12:33:10Z",
+   "agent": "dashboard@web-summit.jose",
+   "subject": "dashboard@web-summit.jose: 12:30 wake: brief 6 first (the two 13:00 items, the watcher's missing schedule, WS-139 to close); the key and the split carried over",
+   "issue": [
+    "WS-134"
+   ],
+   "files": 2,
+   "outside_person_folder": [],
+   "security": "not yet reviewed (after cb3e1864)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "80b8078",
+   "time": "2026-11-04T15:35:44Z",
+   "agent": "dev@web-summit.jose",
+   "subject": "dev@web-summit.jose: 15:34 wake: WS-74-plan.md no longer says the link goes to a few people only (public mode is live)",
+   "issue": [
+    "WS-74"
+   ],
+   "files": 2,
+   "outside_person_folder": [],
+   "security": "not yet reviewed (after cb3e1864)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "45e4b6e",
+   "time": "2026-11-04T17:08:41Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: the site sends its page views (WS-37): two vaults, five lanes, assets/telemetry.js on every page, an hourly drain and a drain from inside the data vault",
+   "issue": [
+    "WS-37"
+   ],
+   "files": 9,
+   "outside_person_folder": [
+    {
+     "file": "admin/build/build.mjs",
+     "note": "outside the lane: listed, not judged"
+    },
+    {
+     "file": "admin/tools/telemetry_drain.py",
+     "note": "outside the lane: listed, not judged"
+    },
+    {
+     "file": "assets/telemetry.js",
+     "note": "outside the lane: listed, not judged"
+    },
+    {
+     "file": "assets/telemetry.json",
+     "note": "outside the lane: listed, not judged"
+    },
+    {
+     "file": "board/WS-37-observability-lanes-on-the-site.md",
+     "note": "board file of an issue in its Issue: trailer (in lane)"
+    }
+   ],
+   "security": "not yet reviewed (after cb3e1864)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "d41a456",
+   "time": "2026-11-04T17:22:52Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: brief 7 to Jose: the page views are live (32 drained, Angelo's signed view verified); the 13:00 items carry to 18:00; his key by 18:00",
+   "issue": [
+    "WS-37",
+    "WS-134",
+    "WS-136"
+   ],
+   "files": 3,
+   "outside_person_folder": [],
+   "security": "not yet reviewed (after cb3e1864)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "9b9ded9",
+   "time": "2026-11-04T17:33:01Z",
+   "agent": "dashboard@web-summit.jose",
+   "subject": "dashboard@web-summit.jose: 17:30 wake: brief 7 first (the two 18:00 items, the site key by 18:00, the test rows); the page views live (WS-37)",
+   "issue": [
+    "WS-136"
+   ],
+   "files": 2,
+   "outside_person_folder": [],
+   "security": "not yet reviewed (after cb3e1864)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
   }
  ],
  "could_not_check": [
@@ -111,7 +585,10 @@
   }
  ],
  "own_commits_skipped": [
-  "f64a65e (the first run's release)",
-  "CI releases alone never make a run new"
+  "b1e4fe9 (the 01:11 run's release)",
+  "CI releases alone never make a run new (ROLE.md step 8)"
+ ],
+ "notes": [
+  "git's own trailer parsing misses Agent: and Reviewed-by: in 15 of the 23 commits (every conductor and dashboard commit) because they sit in a paragraph before Co-Authored-By; the watcher reads the whole message"
  ]
 }
