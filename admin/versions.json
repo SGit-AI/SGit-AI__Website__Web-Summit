@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.390",
+    "date": "2026-11-04",
+    "what": "Jose's dashboard made for action: a Needs-me table, his lanes with his vault app live, agents only when wrong, and the command centre to come",
+    "by": "dashboard@web-summit.jose",
+    "from": "f56e33c1b"
+  },
+  {
     "version": "v0.2.389",
     "date": "2026-11-04",
     "what": "Silvio's config: the decisions already taken, the sponsor workstream and the old merch funnel out; his own links in",
