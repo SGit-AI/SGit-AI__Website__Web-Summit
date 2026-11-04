@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.206",
+    "date": "2026-11-04",
+    "what": "WS-108 picked up, Jose says yes: Hack the Agent and ReachCheck offered as stand demos, in his profile, WS-15's options and WS-18; the watcher ignores its own commits and CI's releases",
+    "by": "conductor@web-summit.jose",
+    "from": "dd8dbcb5d"
+  },
+  {
     "version": "v0.2.205",
     "date": "2026-11-04",
     "what": "README line 96 names \"an earlier test vault\" instead of the old vault name, at Jose's word",
