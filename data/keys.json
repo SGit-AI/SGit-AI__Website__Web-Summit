@@ -562,6 +562,22 @@
         "fingerprint": "sha256:a82105c0c781e6c0",
         "signing_fingerprint": "sha256:03b03f13ea2a1d09"
       }
+    },
+    {
+      "id": "accountant-indi",
+      "label": "accountant@web-summit.indi (Claude Code session)",
+      "role": "Indi Gupte's token accountant (accountant@web-summit.indi): measures the tokens Indi's agents use and briefs Indi and Dinis at 17:30 UTC daily (WS-148). A session key: it ends with its session. Seal nothing to it but what the accountant needs.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Indi's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAtH2j/rfvymuDPjO1K06T\nvs+Z3gjPCP0tHMN2vhAmheqD5DD4bbKsv7i8+T/WWnr9pBx4j45FqbmkzKRW/tQ0\nZ/S7znmjzaBagI/C9+xcwrLTs2aE5sGc8KtkdBoLcD2gSRve+5XZ5Zzbo1HfmLHt\nBCxUyhRM8nRvz5a9zQGkRSDboB2nxNUIL3MN1Nz+d282dX62fx3mM0LXzdvXfh6K\nrC73ZN6X0WjF/pidJDueYRHBywSzYqMTaEF7RiOHqh9vhq4E8wTYaHw6ayEgi8Tx\nGhQvNJZEneimfughJKNiDYSdWf+0Sv6meV1k5SaBkYL1IR+7zdgJ+251QA+bY2sC\nuZ+QVL+n0FfnZwrqPGw59N0F4+2AwOAWkjLLoNUESdBbRIYiyKOHPoq6qczGEjAU\nQU1iYd9IbsWYgTCXo9nuXfQb36xtOd2HepF3LwqRO24DBSOAJI8TppQHPgMDEf3z\nEEn6SGNd2ZISdXE1dxiwHtrjmX7u03h2swhNLMhf7tq1+VuMpUOEqC1wPhhPdf2a\nFLXOJ+RaYaZiADTwbjjlGd6XlA/ktJ0eTr1ag/K3YwD4SkPcWBSGZ9K6xzVWimVW\nSv2rmd5ipzsAh7tc1mm7q4xDgXyP/7iS9ShqtxD/30+HkEDuyleqTt1eHo9kOAg5\nbK0ldPIp8ggJTUvU3RNAKycCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEXLHKtg+lbJQu/bEzQkpsJOBkiNlY\ntIdeafIS0z0+4MeZNMan99AK4IbvtJDU0eIo3i3rxV9fPUcggLeGm8cylA==\n-----END PUBLIC KEY-----\n",
+        "label": "accountant@web-summit.indi",
+        "fingerprint": "sha256:9a4c8f2488a24b2e",
+        "signing_fingerprint": "sha256:4c7e51fd42f728b8"
+      },
+      "status": "active"
     }
   ]
 }

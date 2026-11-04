@@ -58,5 +58,12 @@
   "session": "Claude Code cloud session in Indi's account",
   "status": "handed over",
   "note": "4 November, about 16:00 UTC, at Indi's word: one agent carries WS-142 on, conductor@web-summit.indi (people/indi/synthetic/HANDOVER.md). Both synthetic keys are ended. Run 3 waits on WS-146 (the /meet/ page) and on Indi saying where its vault key goes."
+ },
+ {
+  "name": "accountant@web-summit.indi",
+  "job": "token accountant: measures the tokens Indi's agents use, finds the waste, proposes changes, briefs Indi and Dinis at 17:30 UTC daily (WS-148)",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "schedule": "17:30 UTC daily (WS-148)"
  }
 ]

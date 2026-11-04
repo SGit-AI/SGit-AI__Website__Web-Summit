@@ -308,7 +308,8 @@
         "messaging@web-summit.indi",
         "factory@web-summit.indi",
         "builder@web-summit.indi",
-        "synthetic@web-summit.indi"
+        "synthetic@web-summit.indi",
+        "accountant@web-summit.indi"
       ]
     },
     {
