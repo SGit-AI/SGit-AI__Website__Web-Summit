@@ -206,7 +206,15 @@ ${body}
 }
 
 const twinPath = rel => rel.replace(/\.html$/, '.md')
-const twin = (rel, title, summary, md) => write(twinPath(rel), `# ${title}\n\n${summary}\n\nSite version: ${VERSION}\n\n${md.trim()}\n`)
+// a chart fence in a twin becomes the chart's own words (its SVG <title> and <desc>, what a screen reader hears), so an
+// agent reading the markdown gets what the picture says, not a fence it cannot draw (dev@web-summit.dinis, 4 November)
+const chartWords = md => md.replace(/^```chart ([a-z-]+)(?: ([a-z0-9-]+))?\s*\n```\s*$/gm, (_, name, arg) => {
+    const svg = CHARTS[name] ? CHARTS[name](arg) : ''
+    const t = (svg.match(/<title[^>]*>([^<]*)<\/title>/) || [])[1], d = (svg.match(/<desc[^>]*>([^<]*)<\/desc>/) || [])[1]
+    const un = x => String(x || '').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&')
+    return t ? `*Chart: ${un(t)}.* ${un(d)} (Drawn on the HTML page.)` : ''
+})
+const twin = (rel, title, summary, md) => write(twinPath(rel), `# ${title}\n\n${summary}\n\nSite version: ${VERSION}\n\n${chartWords(md).trim()}\n`)
 
 const pages = []   // {rel, title, description}
 const articles = []

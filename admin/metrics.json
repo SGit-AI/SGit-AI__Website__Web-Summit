@@ -189,6 +189,14 @@
       "note": "dev pass 15 (WS-74, the feedback pane's public mode): quiet window (1 commit). Gate 2.96 s at 395 pages.",
       "pages": 395,
       "validate_seconds": 2.96
+    },
+    {
+      "date": "2026-11-04",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass 16: chart fences in markdown twins become the chart's own title and description; no twin carries a raw fence now (it was the dashboards and the site review). Gate 3.33 s at 399 pages.",
+      "pages": 399,
+      "validate_seconds": 3.33
     }
   ]
 }
