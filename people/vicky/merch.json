@@ -2,5 +2,11 @@
   "tee_size": "M",
   "tee_fit": "unisex",
   "hoodie_size": "M",
-  "updated": "2026-11-03"
+  "updated": "2026-11-04",
+  "colour": {
+    "first": "purple",
+    "second": "lavender",
+    "then": "any colour nobody else has, Silvio's choice",
+    "said": "Vicky, to conductor@web-summit.vicky, 4 November 2026, about 16:10 UTC: \"If purple isn't available, lavender. If that doesn't work either, he can pick any colour nobody else has.\""
+  }
 }
