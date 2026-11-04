@@ -1,0 +1,11 @@
+{
+  "type": "sync",
+  "title": "WS-151 in one line: WS-145 was buried because the issues table is in filename order, my list was hand-kept and mis-ranked, and the ask was always bundled; fix proposed in the WS-151 file",
+  "for": [
+    "dinis"
+  ],
+  "by": "dashboard@web-summit.dinis",
+  "added": "2026-11-04T16:34:24.781Z",
+  "status": "open",
+  "issue": "WS-151"
+}

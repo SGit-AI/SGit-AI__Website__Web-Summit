@@ -2,7 +2,7 @@
 title: Dinis's dashboard
 summary: The page Dinis reads first. The top is built for Dinis (the next stand-up, what happened, Dinis's agents). Below it, kept by dashboard@web-summit.dinis at Dinis's word of 3 November: the decisions blocking Dinis first, then the agents (one click between them), today's milestones, the ecosystem's health, the KPIs, and the OKRs to set.
 ---
-**Flick:** [**Decisions blocking me**](#blocking) · [**Agents**](#agents) · [Today](#today) · [Health](#health) · [KPIs](#kpis) · [OKRs](#okrs) · [My issues](#issues) · in the command centre: [decisions](app/index.html#waiting) · [agents](app/index.html#agents)
+**Flick:** [**Only you**](#only-you) · [**Decide**](#decide) · [**Agents**](#agents) · [Today](#today) · [Health](#health) · [KPIs](#kpis) · [OKRs](#okrs) · [My issues](#issues) · in the command centre: [decisions](app/index.html#waiting) · [agents](app/index.html#agents)
 
 **New, 4 November:** [your lab](lab/index.html), browser experiments from a conversation to an agent policy, and the first, [the policy studio](lab/studio/index.html). (Added by dev@web-summit.dinis.)
 
@@ -10,17 +10,33 @@ Kept by `dashboard@web-summit.dinis`. What Dinis asked for (3 November, 01:30 UT
 
 ## 1. Decisions blocking me {#blocking}
 
-- **Decide at the next stand-up:** [your briefing](#standup) (at the top of this page) lists the decisions for you, each with options and a recommendation. Same list as an app: [command centre, decisions](app/index.html#waiting).
-- **Done since yesterday:** the merch yes (WS-48, your words to Silvio, 3 Nov 14:45 UTC: *"Yes to me for the [price withheld]. If you are happy I'm happy."*); your sizes, XL and XL (WS-130); your print set signed off with your key, hoodie H1 and card C1 (WS-113, [people/dinis/signoff/](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/dinis/signoff)). The first five target companies item was closed and Jose's roster item merged, without a decision recorded in your words.
-- **At the 13:00 stand-up today, sixteen decisions for you** (as of the 12:06 wake, Wed 4 Nov; [your 13:00 briefing](../../meetings/2026-11-04-1300/dinis/index.html) is the live list). Thirteen carried over from yesterday (nothing at the 18:00 was recorded as decided), and three are new since the morning. Urgent first:
-  - **Today, for Thursday's outreach:** the RiskMandate paragraph, who writes it (WS-15, due today); one priority for the week (from Vicky's pulse); LinkedIn, who owns it and the first post, a day late (WS-126).
-  - **Today, the machine:** who records the stand-up decisions (WS-107), which is why the list keeps carrying over; protect `main` and who reviews the gate (WS-105, WS-90); agents talk through commits only (WS-129); how far Jose's security watcher watches (WS-134, new).
-  - **New since the morning:** the newsroom, meaning Indi's reader-first patch, push access for Indi and who publishes (WS-141); may `dev@web-summit.angelo` change shared site code through an issue it picked (WS-34); an inbox for Vicky's agents in the Feedback pane (WS-64).
-  - **The rest:** the print order's deadline, fallback and ceiling (WS-48, probably settled by your yes: say so and it closes); Nimay's and Indi's invitations (WS-09, WS-124); Daniela's setup (WS-125); a new date for WS-23; the start page to the team's WhatsApp; the OKRs ([the draft below](#okrs)).
-- **Due today on the board and open, for you:** WS-13 (the merch budget, due 12:00 and still open: your yes of 3 Nov may close it), WS-15 and WS-18 (the message and the demos), WS-109 (the one demo), WS-132 (before anything real is sealed to a person key), WS-12, WS-118, WS-119, WS-122. Overdue from yesterday: WS-09, WS-10, WS-105, WS-107, WS-115, WS-126. The full list is under [my issues](#issues).
-- **Your lab:** [people/dinis/lab/](lab/index.html), nine experiments mapped by `dev@web-summit.dinis`, the first being [the policy studio](lab/studio/index.html) (WS-137).
-- **The latest conductor brief:** [the updates](../../updates/index.html), at most three asks, each with a recommendation.
-- **Only you can unblock these on the board:** WS-09 (everyone's GitHub access), WS-10 (Workspace email), WS-13 (the merch budget), WS-14 (who runs the newsroom), WS-105 (protect `main` in the repository's settings). Status and due dates are under [my issues](#issues); what is overdue or at risk is on [the board's health](../../board-health/index.html).
+Ranked by **who is blocked, and whether only you can act**, then the due date; at most five in each list ([WS-151](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-151-incident-ws-145-not-surfaced-to-dinis.md), the incident on why WS-145 was buried here). As of 16:35 UTC, Wed 4 Nov.
+
+### Only you can do this {#only-you}
+
+1. **WS-145: give Indi write access to the newsroom repository.** Blocks Indi's newsroom desks (WS-141), and Vicky's, which moved to that repository at 16:16. Under a minute: [SGit-AI/SGit-AI__Website__Newsroom__Web-Summit](https://github.com/SGit-AI/SGit-AI__Website__Newsroom__Web-Summit), *Settings, Collaborators and teams, Add people*, `riskmandate-indi`, **Write**. Angelo is not an admin there (`a6c8a915`), so it is yours alone.
+2. **WS-09: Nimay's push access to this repository.** Nimay is still at L1 ([the leaderboard](../../team/setup/index.html)); check the invitation went out to his GitHub account, in this repository's *Collaborators*.
+3. **WS-115: the OpenRouter key, one per agent, sealed and signed by you.** Overdue since yesterday; the agents that need a model wait on it.
+4. **WS-105: protect `main`** (*Settings, Rules*: pull requests only, merged by you). Overdue since yesterday; nobody is blocked, but every agent with push can still reach `main`.
+5. **WS-13: the merch budget.** Due today at 12:00 and still open; your yes of 3 Nov (WS-48) may close it: say so.
+
+### Decide at the 18:00 stand-up {#decide}
+
+Twenty decisions for you on [your 18:00 briefing](../../meetings/2026-11-04-1800/dinis/index.html); nothing at 14:30 was recorded as decided. The five that block the most:
+
+1. **Who records the stand-up decisions** (WS-107): until this is decided, every other decision carries over, which is why there are twenty.
+2. **LinkedIn before Lisbon**, who owns it and the first post (WS-126), a day late.
+3. **The RiskMandate paragraph**, who writes it, by when (WS-15): tomorrow's outreach needs it.
+4. **One priority for this week**, said in one place (from Vicky's pulse).
+5. **The newsroom**: Indi's patch and who owns which desk (WS-141); the access itself is item 1 above.
+
+The other fifteen are on [the briefing](../../meetings/2026-11-04-1800/dinis/index.html), including the OKRs ([the draft below](#okrs)).
+
+### Also {#also}
+
+- **Done since yesterday:** the merch yes (WS-48, your words to Silvio, 3 Nov 14:45 UTC: *"Yes to me for the [price withheld]. If you are happy I'm happy."*); your sizes, XL and XL (WS-130); your print set signed off with your key (WS-113).
+- **The latest conductor brief:** [the updates](../../updates/index.html). Overdue and at risk: [the board's health](../../board-health/index.html). Everything for you: [my issues](#issues).
+- **Your lab:** [people/dinis/lab/](lab/index.html), the first experiment being [the policy studio](lab/studio/index.html) (WS-137).
 
 **→ [Flick to the agents](#agents)**
 

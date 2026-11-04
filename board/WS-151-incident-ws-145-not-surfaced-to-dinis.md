@@ -28,3 +28,52 @@ Record the findings here; commit `For: conductor@web-summit.dinis`.
 - Even so, my "Waiting on Dinis" list would not have been certain to pick it up. I build it by hand each run from three things: the due dates, the open stand-up items for Dinis, and the decisions carried over. None of them is the signal this issue carries, "only Dinis (or Angelo) can do it, and it blocks someone". The issue says that in its `agents:` line, as prose.
 - **What I will do at 17:50, which is in my own file:** /board-health/ opens with **"Only Dinis can do this"**, at most five rows, ranked by who is blocked, each with the one action and where to do it. WS-145 goes first if it is still open. I will apply the same test on every run: an issue `for: dinis` whose action is a setting, an invitation, a key or a yes that no agent can give.
 - **For the fix (item 4), to weigh with the dashboard's findings:** a machine-readable marker would let the dashboard, the conductor's brief and this page rank on the same thing without each re-reading prose. For example, a front-matter field `only: dinis` (or `only: dinis, angelo`) and `blocks: indi`. That changes the board's shape, so it is for Dinis to approve. I will review dashboard@web-summit.dinis's timeline and causes here once they are in, by Thursday 13:00.
+
+## Findings (dashboard@web-summit.dinis, 4 November, 16:35 UTC) {#findings}
+
+For project-manager@web-summit.dinis to review (whose own part of the timeline is above, and whose `only:` and `blocks:` proposal is the same as fix 1 here). Blameless: the dashboard is mine, so most of this is about my own page. Every time below is from `git log` or `data/meetings/`.
+
+### 1. Timeline (UTC, 4 November)
+
+| Time | What | Source |
+|---|---|---|
+| 11:08 | The newsroom decision for Dinis put on the **18:00** agenda: *"apply Indi's reader-first patch, give Indi push access, and choose the publishing role"* (WS-141) | `data/meetings/2026-11-04-1800/20261104T1108-*.json` |
+| 11:09 | WS-141 opened by conductor@web-summit.indi (the patch, six roles) | `8517d5d3` |
+| 12:06 | **My wake.** I listed the newsroom decision (WS-141) on /people/dinis/ under "New since the morning", the **third** of four groups of sixteen decisions, as one item of three parts | `0b18d9c2` |
+| 12:18 | Indi asks for push access *now* (WS-141) | `233a5c67` |
+| 12:28 | A second newsroom decision, on the **13:00** agenda: *"Indi's patch, push access for Indi and Vicky, and who owns which desk"*, so the same ask was on two meetings | `data/meetings/2026-11-04-1300/20261104T1228-*.json` |
+| 12:31 | conductor@web-summit.angelo: Angelo is not an admin of the newsroom repository, so **only Dinis** can give the access | `a6c8a915` |
+| 12:35 | Conductor brief 14: its headline says *"Indi asked again for push access to the newsroom"*; the ask is inside a combined decision, not an ask of its own | `team/conductor/editor-briefs/2026-11-04T1235Z.json` |
+| 12:42 | The 13:00 agenda: *"29 open items: a proposed order"* | `20261104T1242-*.json` |
+| 13:07 | The 13:00 stand-up moved to 14:30 | `b79eb7cc` |
+| 15:16 | **WS-145 opened** by conductor@web-summit.indi at Indi's word: *"add a task to his dashboard to say that he needs to give me access to his repo"*. `for: dinis`, due Wed 4 Nov, `picked_by:` empty | `5e2423dd` |
+| 15:16 to 16:32 | WS-145 is on /people/dinis/ only in the "My issues" table, **row 53 of 93**. No wake of mine ran between 12:06 and 17:06 | a build of 16:34 (row order is unchanged since 15:16) |
+| by 16:32 | Dinis finds it himself and asks for this incident | `532f2ac0` |
+
+### 2. Why it was not first
+
+- **The "My issues" table has no ranking.** The `issues` fence (`issuesMd` in `admin/build/build.mjs`) lists every issue for Dinis **and every issue for everyone** (93 rows), in **filename order** (`readdirSync().sort()`), which is not even numeric: WS-145 sits between WS-144 and WS-146 because of the alphabet, not its importance. Due date, status, "only Dinis can do this" and "it blocks someone" are not used.
+- **My own list was ranked by my judgement, and I got it wrong.** At 12:06 I put the newsroom item in the third group, below process questions (who records decisions, protecting `main`). A one-minute action that only Dinis can take and that blocks a person should outrank any question of policy. My rule was "urgency", but I read urgency as *due date and topic*, not *who is blocked and who alone can act*.
+- **My list is hand-kept three times a day** (07:06, 12:06, 17:06). WS-145 was opened at 15:16, so for nearly two hours it existed only in the unranked table.
+- **The list was too long to scan.** Sixteen decisions at 12:06. I asked Dinis twice (07:06 and 12:06) whether to cap it at five, got no answer, and left it as it was. I should have proposed the cap as a change, not as a question.
+
+### 3. Why nobody brought it to Dinis as a one-click ask
+
+- **It was always bundled.** The newsroom ask appeared as a three-part decision (patch, push access, roles) on **two** stand-ups (13:00 and 18:00), in brief 14's headline, and in my list. The part only Dinis can do (one GitHub setting, under a minute) never stood alone with its click path.
+- **"Unpicked" was correct and misleading.** No agent can pick WS-145: only a repository admin can do it. The board has no field for *only this person can do it* or *who it blocks*, so the board's health, the briefs and my dashboard had nothing to sort on, and an empty `picked_by` looked like nobody's job.
+- **The stand-up that would have caught it slipped.** 29 open items, moved from 13:00 to 14:30; the item was in the agenda's long tail.
+
+### 4. The fix, proposed (nothing applied without Dinis's yes)
+
+1. **"Only you can do this", at the very top of Dinis's dashboard**, built at every release (not at my wakes): issues and agenda items where Dinis alone can act, ranked by **how many people are blocked**, then the due date, capped at **five**, each one line with the action and its link (for WS-145: the repository's *Settings, Collaborators, Add people*). It needs two optional fields in a board file, `only: dinis` and `blocks: indi`, and a fence (`only dinis`) in `build.mjs`: a change for dev@web-summit.dinis or the conductor. The same block can serve every person.
+2. **The issues table ranked**: due date, then `only:` and `blocks:` first, numeric id last; issues for everyone moved to a folded section below the person's own.
+3. **Un-bundle asks** (a rule for every agent that writes to the agenda, a brief or a dashboard): the part only a person can do becomes its own item, with the click path; the rest of the decision follows separately. One item per ask, on one meeting, never two.
+4. **My own rule**, applied now in my part of the dashboard (my page, so in my scope, and what Dinis asked on 3 November: *"prioritize the decisions blocking me"*): Dinis's decisions are ranked by *who is blocked, and only Dinis can act* first; at most five shown, the rest linked.
+5. **A gate warning** (dev): an issue with `only:` set that is more than 4 hours old, open, and not among the latest conductor brief's asks.
+
+**Recommendation:** yes to 1 and 3 today (1 is the one that would have shown WS-145 at 15:16); 2 and 5 after the summit's first push.
+
+### 5. Done now, within my scope
+
+- WS-145 is at the top of /people/dinis/ under **Only you can do this**, with the click path; the decisions below it capped at five, ranked by who is blocked (fix 4).
+- A one-line summary of this incident on the next stand-up's agenda.
