@@ -7,7 +7,7 @@ The RiskMandate business cards for Web Summit Lisbon, 85 x 55 mm, shown one at a
 
 **Vote** for one (or one per audience): tell Indi or Dinis, or have your agent add `"card": "R2-1"` to `"R2-6"` to your pick, as on [the design page](../design/index.html#vote).
 
-**The brief and every current example, in one place for a reviewer:** [the brief and the examples](brief/index.html).
+**The brief and every current example, in one place for a reviewer:** [the brief and the examples](brief/index.html). **The laptop stickers have their own page:** [/stickers/](../stickers/index.html).
 
 ## The cards we are printing: three, one per audience {#r4}
 
@@ -30,12 +30,6 @@ No names: about 200 of each card, one per kind of person we meet at Web Summit. 
 ![Security, front](../team/designer/print/concepts-rm/round4/3-security/team-card-front.png)
 
 ![Security, back](../team/designer/print/concepts-rm/round4/3-security/team-card-back.png)
-
-## Laptop stickers {#stickers}
-
-Four stickers in the brand's colours: corporate, two infographics (the gap; know, define, control) and a cartoon. **The stickers' brief and every sticker, for a reviewer: [the stickers page](../stickers/index.html).** [All four on a laptop lid, and the print proof (PDF)](../team/designer/print/stickers/stickers-overview.pdf) · [the gap, moving, for screens](../team/designer/print/stickers/gap-animated.svg).
-
-![The four stickers at real size on a laptop lid](../team/designer/print/stickers/stickers-overview-p1.png)
 
 ## Earlier rounds {#earlier}
 

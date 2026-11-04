@@ -1,6 +1,6 @@
 ---
-title: Business cards and stickers, the brief and the examples
-summary: The brief for RiskMandate's Web Summit business cards and laptop stickers, and every current example with its print files, in one place for a person or an agent to review. Three audience cards (Executives, GRC, Security), no names, 200 each; four stickers.
+title: Business cards, the brief and the examples
+summary: The brief for RiskMandate's Web Summit business cards, and every current example with its print files, in one place for a person or an agent to review. Three audience cards (Executives, GRC, Security), no names, 200 each. The stickers have their own page.
 path: cards/brief/index.html
 ---
 **For a reviewer, human or agent.** Below are the brief as it stands and every current design, with direct links to the print files. Everything is at `https://web-summit.sgit.ai/`; this page's plain-text twin is [index.md](index.md). Made by designer@web-summit.indi, 4 November 2026. The full history and the earlier rounds are on [the cards page](../index.html).
@@ -81,18 +81,7 @@ Print files: [front SVG](https://web-summit.sgit.ai/team/designer/print/concepts
 
 ## The stickers {#stickers}
 
-The stickers' own brief, with each sticker large: [the stickers page](../../stickers/index.html).
-
-[All four on a laptop lid, and the print proof (PDF)](https://web-summit.sgit.ai/team/designer/print/stickers/stickers-overview.pdf)
-
-![The four stickers at real size on a laptop lid](../../team/designer/print/stickers/stickers-overview-p1.png)
-
-| Sticker | Size (cut) | What it shows | Files |
-|---|---|---|---|
-| Corporate | 100 x 40 mm, rounded | The brand's own lockup (seal + "RiskMandate"), AGENT BEHAVIOUR POLICIES | [SVG](https://web-summit.sgit.ai/team/designer/print/stickers/corporate.svg) · [PDF](https://web-summit.sgit.ai/team/designer/print/stickers/corporate.pdf) · [PNG](https://web-summit.sgit.ai/team/designer/print/stickers/corporate.png) |
-| The gap | Ø 76 mm | One bar: what it can reach; the green part authorised; the striped rest the gap. "Control the gap." | [SVG](https://web-summit.sgit.ai/team/designer/print/stickers/gap.svg) · [PDF](https://web-summit.sgit.ai/team/designer/print/stickers/gap.pdf) · [PNG](https://web-summit.sgit.ai/team/designer/print/stickers/gap.png) · [moving, for screens](https://web-summit.sgit.ai/team/designer/print/stickers/gap-animated.svg) |
-| Know, define, control | 100 x 40 mm, rounded | A radar, a signed page, a control dial | [SVG](https://web-summit.sgit.ai/team/designer/print/stickers/steps.svg) · [PDF](https://web-summit.sgit.ai/team/designer/print/stickers/steps.pdf) · [PNG](https://web-summit.sgit.ai/team/designer/print/stickers/steps.png) |
-| Cartoon | 76 x 76 mm, rounded | Our agent holding every key: "Your AI has access. Does it have permission?" | [SVG](https://web-summit.sgit.ai/team/designer/print/stickers/cartoon.svg) · [PDF](https://web-summit.sgit.ai/team/designer/print/stickers/cartoon.pdf) · [PNG](https://web-summit.sgit.ai/team/designer/print/stickers/cartoon.png) |
+The stickers have their own page, with their brief and every sticker: [/stickers/](../../stickers/index.html), and the bolder set at [/stickers/creative/](../../stickers/creative/index.html).
 
 ## How they were checked {#checked}
 

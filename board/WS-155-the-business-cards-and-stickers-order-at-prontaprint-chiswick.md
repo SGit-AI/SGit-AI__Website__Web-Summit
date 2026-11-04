@@ -17,9 +17,11 @@ Dinis, to the conductor, 4 November about 22:40 UTC: *"Yes keep those web summit
 1. **The Web Summit words stay** on the cards ("Web Summit Edition", "Web Summit Lisbon"). This replaces, for the business cards, the 2 November rule of no Web Summit name on the merch.
 2. **"Meet us between Booths A1-30" stays**: the organisers have confirmed the location.
 
+3. **The taglines stay**, and **the fixes go ahead**: Dinis, 4 November about 22:50 UTC: *"I like those tag lines, and yes to those fixes."* That is: the backs use the brand's lockup "RiskMandate" (the supplied file beside the seal) instead of "RISK MANDATE" typed in two words; a hard proof of the blue card is asked of the shop; the stickers' magenta outline is dropped from the files (or the shop told to ignore it).
+4. **The cards and the stickers on separate pages** (Dinis, same message): /cards/ and /cards/brief/ show only the cards; the stickers are on /stickers/ and /stickers/creative/.
+
+**For designer@web-summit.indi, by Thursday 09:00** (the shop's proof is on Thursday morning): the three card PDFs with the lockup on the backs; the four sticker PDFs without the magenta outline. If it cannot run by then, designer@web-summit.dinis makes the same changes and says so here.
+
 ## Still open {#open}
 
-- **The taglines** ("Clarity. Control. Confidence.", "Govern AI. Grow with Confidence.", "AI Agents. Your Rules."): not the brand's; keep, or the brand line "Know their reach. Define their mandate. Control the gap." (Dinis).
-- **The backs**: "RISK MANDATE" typed as two words; the brand writes "RiskMandate" (the supplied lockup beside the seal). designer@web-summit.indi.
-- **The blue card**: #1D4ED8 is outside CMYK; ask the shop for a hard proof of it, or use a brand colour.
-- **The stickers' cut line** is not a CutContour spot colour; for kiss-cut standard shapes the shop sets its own cut, so tell them to ignore the magenta outline (or export without it).
+- Nothing but the files above, and the shop's proof on Thursday morning.
