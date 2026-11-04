@@ -131,7 +131,7 @@ class Side:
         """RISK MANDATE: Barlow Condensed, RISK light, MANDATE bold (the merch's wordmark), centred on y_mid."""
         size = capmm / cap('Barlow Condensed', 700); gap = 0.22 * size
         w = width('RISK', 'Barlow Condensed', 300, size) + gap + width('MANDATE', 'Barlow Condensed', 700, size)
-        x0 = x - w / 2 if anchor == 'middle' else x; yb = y_mid + capmm / 2
+        x0 = x - w / 2 if anchor == 'middle' else x - w if anchor == 'end' else x; yb = y_mid + capmm / 2
         self.text('RISK', 'Barlow Condensed', 300, size, x0, yb, fill, 'wordmark')
         self.text('MANDATE', 'Barlow Condensed', 700, size, x0 + w - width('MANDATE', 'Barlow Condensed', 700, size), yb, fill, 'wordmark')
         return x0, w
@@ -297,20 +297,27 @@ def cmyk(hexc):   # a naive conversion for reference; the printer proofs and mat
     if k >= 1: return [0, 0, 0, 100]
     return [round(v * 100) for v in ((1 - r - k) / (1 - k), (1 - g - k) / (1 - k), (1 - b - k) / (1 - k), k)]
 
-spec_all = {}
-for cid, C in CONCEPTS.items():
-    d = os.path.join(HERE, cid); os.makedirs(os.path.join(d, 'live'), exist_ok=True)
-    spec = {'concept': cid, 'name': C['name'], 'rationale': C['rationale'], 'type': C['type'], 'notes': C['notes'],
-            'palette': [{'name': nm, 'hex': h, 'cmyk': cmyk(h)} for nm, h in C['palette']], 'files': {}}
-    for pid in ONLY:
-        p = PEOPLE[pid]; front, back = C['build'](p, pid)
-        for side, S in (('front', front), ('back', back)):
-            title = f'{p["name"]}: RiskMandate business card, concept {C["name"]}, {side}. Trim 85 x 55 mm, 3 mm bleed (91 x 61 mm)'
-            fn = f'{pid}-card-{side}.svg'
-            open(os.path.join(d, fn), 'w').write(S.svg(title))
-            open(os.path.join(d, 'live', fn), 'w').write(S.svg(title + ', live text', live=True))
-            spec['files'][fn] = {'person': pid, 'side': side, 'bg': S.bg, 'items': S.items,
-                                 'accent': {'name': f'{p["name"].split()[0]}’s colour', 'hex': p['colour'], 'cmyk': cmyk(p['colour'])}}
-    json.dump(spec, open(os.path.join(d, 'spec.json'), 'w'), indent=1, ensure_ascii=False)
-    spec_all[cid] = spec
-print('made', ', '.join(f'{c}: {len(s["files"])} files' for c, s in spec_all.items()))
+def build(concepts, base, only):
+    """Write each concept's print files, live copies and spec.json under base/<concept>/."""
+    made = {}
+    for cid, C in concepts.items():
+        d = os.path.join(base, cid); os.makedirs(os.path.join(d, 'live'), exist_ok=True)
+        spec = {'concept': cid, 'name': C['name'], 'rationale': C['rationale'], 'type': C['type'], 'notes': C['notes'],
+                'audience': C.get('audience', 'general'),
+                'palette': [{'name': nm, 'hex': h, 'cmyk': cmyk(h)} for nm, h in C['palette']], 'files': {}}
+        for pid in only:
+            p = PEOPLE[pid]; front, back = C['build'](p, pid)
+            for side, S in (('front', front), ('back', back)):
+                title = f'{p["name"]}: RiskMandate business card, {C.get("kind", "concept")} {C["name"]}, {side}. Trim 85 x 55 mm, 3 mm bleed (91 x 61 mm)'
+                fn = f'{pid}-card-{side}.svg'
+                open(os.path.join(d, fn), 'w').write(S.svg(title))
+                open(os.path.join(d, 'live', fn), 'w').write(S.svg(title + ', live text', live=True))
+                spec['files'][fn] = {'person': pid, 'side': side, 'bg': S.bg, 'items': S.items,
+                                     'accent': {'name': f'{p["name"].split()[0]}\u2019s colour', 'hex': p['colour'], 'cmyk': cmyk(p['colour'])}}
+        json.dump(spec, open(os.path.join(d, 'spec.json'), 'w'), indent=1, ensure_ascii=False)
+        made[cid] = spec
+    print('made', ', '.join(f'{c}: {len(s["files"])} files' for c, s in made.items()))
+    return made
+
+if __name__ == '__main__':
+    build(CONCEPTS, HERE, ONLY)

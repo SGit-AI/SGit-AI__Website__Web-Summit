@@ -17,6 +17,21 @@ from PIL import Image
 
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, '..', '..', '..', '..'))
 SCR = sys.argv[1]
+SUB = sys.argv[2] if len(sys.argv) > 2 else ''          # round2: the six Web Summit designs
+BASE = os.path.join(HERE, SUB)
+CONCEPTS = sorted(d for d in os.listdir(BASE) if os.path.exists(os.path.join(BASE, d, 'spec.json')))
+ROUND2 = SUB == 'round2'
+def norm_txt(t): return re.sub(r'[^a-z0-9]+', ' ', t.replace('\u2019', "'").lower()).strip()
+# round 2's copy, each checked against its source file (Dinis, 4 November: Web Summit by name, for these cards)
+DESIGN_MD = open(os.path.join(ROOT, 'content/design.md')).read()
+MEET_MD = open(os.path.join(ROOT, 'content/meet.md')).read() + open(os.path.join(ROOT, 'content/meet-indi.md')).read()
+SOURCED = {
+    'headline': ['Your customer will ask. Have an answer.', 'Would your agent pass an audit?', 'Same agent. Different reach.', 'Building is not authorising.'],
+    'event': ['Web Summit Lisbon, 9 to 12 November 2026', 'find us at our stand on Thursday 12 November'],
+}
+for h in SOURCED['headline']: assert h in DESIGN_MD, h
+assert 'Web Summit Lisbon, 9 to 12 November 2026' in MEET_MD and 'find us at our stand on **Thursday 12 November**' in MEET_MD
+BRAND_BADGE = 'Agent Behaviour Policies: what one agent can reach, what you authorised it to do, and the gap between the two.'   # riskmandate.ai/brand, "Badge"
 MEAS = json.load(open(os.path.join(SCR, 'measure.json')))
 DESIGN = {p['id']: p for p in json.load(open(os.path.join(ROOT, 'data/design.json')))['people']}
 TEAM = {m['id']: m for m in json.load(open(os.path.join(ROOT, 'data/team.json')))['members']}
@@ -35,14 +50,14 @@ def overlap(a, b): return a[0] < b[2] and b[0] < a[2] and a[1] < b[3] and b[1] <
 def own_card(pid):
     f = os.path.join(ROOT, f'people/{pid}/business-card.json'); return json.load(open(f)) if os.path.exists(f) else {}
 
-for concept in ['a-band', 'b-seal', 'c-poster']:
+for concept in CONCEPTS:
     for pid in DESIGN:
         url = f'https://web-summit.sgit.ai/meet/{pid}/'
         name = own_card(pid).get('name', DESIGN[pid]['name']); line = DESIGN[pid]['line']
         for side in ['front', 'back']:
-            rel = f'{concept}/{pid}-card-{side}.svg'; f = os.path.join(HERE, rel)
+            rel = f'{concept}/{pid}-card-{side}.svg'; f = os.path.join(BASE, rel)
             if not os.path.exists(f): fail(rel, 'missing'); continue
-            s = open(f).read(); live = open(os.path.join(HERE, concept, 'live', f'{pid}-card-{side}.svg')).read()
+            s = open(f).read(); live = open(os.path.join(BASE, concept, 'live', f'{pid}-card-{side}.svg')).read()
             # size and bleed
             if not re.match(r'<svg [^>]*width="91mm" height="61mm" viewBox="0 0 91 61"', s): fail(rel, 'not 91 x 61 mm with viewBox 0 0 91 61')
             if '<text' in s: fail(rel, 'live text in a print file')
@@ -106,23 +121,40 @@ for concept in ['a-band', 'b-seal', 'c-poster']:
                 cr = contrast(t['fill'], t['bg'])
                 if cr < (3 if large else 4.5): fail(rel, f'{t["role"]} contrast {cr:.2f} on {t["bg"]}')
                 low = t['text'].lower()
-                if re.search(r'@|\+\d|\d{3}[ .-]\d{3}|web summit|www\.|linkedin|twitter|instagram|\.com', low): fail(rel, f'contact or other brand: "{t["text"]}"')
+                if re.search(r'@|\+\d|\d{3}[ .-]\d{3}|www\.|linkedin|twitter|instagram|\.com', low): fail(rel, f'contact or other brand: "{t["text"]}"')
             by = lambda r: [t['text'] for t in texts if t['role'] == r]
             norm = lambda x: x.replace('’', "'").strip('“”')
             if 'name' in by('name') or by('name'):
                 if by('name') != [name]: fail(rel, f'name {by("name")} != {name}')
             if by('role'):
-                role = by('role')[0]; ok_role = own_card(pid).get('title') == role or role in TEAM[pid]['role'].replace('RiskMandate, ', '')
+                role = ' '.join(by('role')); ok_role = own_card(pid).get('title') == role or role in TEAM[pid]['role'].replace('RiskMandate, ', '')
                 if not ok_role: fail(rel, f'role "{role}" not from the brief')
+            if not ROUND2 and 'web summit' in ' '.join(t['text'].lower() for t in texts): fail(rel, 'the Web Summit name, outside round 2')
+            # round 2's copy: every headline, event and register line from its source
+            if ROUND2:
+                hl = norm_txt(' '.join(by('headline')))
+                ok_hl = [norm_txt(h) for h in SOURCED['headline']]
+                if hl and not (hl in ok_hl or hl in [a + ' ' + b for a in ok_hl for b in ok_hl]): fail(rel, f'headline not from content/design.md: "{hl}"')
+                ev = norm_txt(' '.join(by('event'))); evs = [norm_txt(e) for e in SOURCED['event']]
+                if ev and ev not in evs + [evs[0] + ' ' + evs[1], evs[1] + ' ' + evs[0]]: fail(rel, f'event line not from content/meet*.md: "{ev}"')
+                for t in [t for t in texts if t['role'] in ('register', 'label')]:
+                    if norm_txt(t['text']) not in norm_txt(BRAND_BADGE): fail(rel, f'{t["role"]} not from the brand badge line: "{t["text"]}"')
+            # nothing collides: text, QR panel and seal boxes (as measured, shrunk 0.4 mm for ascenders and descenders)
+            bx = [(it['role'], [it['box'][0] + .4, it['box'][1] + .4, it['box'][2] - .4, it['box'][3] - .4]) for it in items if it['role'] not in ('placeholder',)]
+            for i in range(len(bx)):
+                for j in range(i + 1, len(bx)):
+                    if overlap(bx[i][1], bx[j][1]): fail(rel, f'{bx[i][0]} and {bx[j][0]} overlap')
             if by('line') and norm(' '.join(by('line'))) != line: fail(rel, f'line "{" ".join(by("line"))}" != "{line}"')
             u = ''.join(by('url'))
             if u and u != url.replace('https://', ''): fail(rel, f'URL text "{u}"')
-            pv = os.path.join(HERE, concept, f'{pid}-card-{side}.png')
+            pv = os.path.join(BASE, concept, f'{pid}-card-{side}.png')
             if Image.open(pv).size != (1004, 650): fail(rel, 'preview not 1004 x 650')
             n_ok += 1
         # each person's card carries name, line, QR and URL across its two sides
-        both = open(os.path.join(HERE, concept, 'live', f'{pid}-card-front.svg')).read() + open(os.path.join(HERE, concept, 'live', f'{pid}-card-back.svg')).read()
-        for need in ['data-role="name"', 'data-role="role"', 'data-role="line"', 'data-role="url"', 'id="qr"', 'id="rm-logo"', 'data-role="wordmark"']:
+        both = open(os.path.join(BASE, concept, 'live', f'{pid}-card-front.svg')).read() + open(os.path.join(BASE, concept, 'live', f'{pid}-card-back.svg')).read()
+        needs = ['data-role="name"', 'data-role="role"', 'data-role="url"', 'id="qr"', 'id="rm-logo"', 'data-role="wordmark"']
+        needs += ['data-role="event"'] if ROUND2 else ['data-role="line"']
+        for need in needs:
             if need not in both: fail(f'{concept}/{pid}', f'no {need} on either side')
 
 print(f'{n_ok} sides checked')

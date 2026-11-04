@@ -8,6 +8,7 @@
   "The seal sits on its own white strip, with half its width clear on every side, so the mark is never shown on a coloured field and the colour never touches it.",
   "The asks and URL are set in a monospace with a › prompt: the \"talk to my agent\" idea, a little playful. If it reads too technical, set them in Barlow Condensed as on A."
  ],
+ "audience": "general",
  "palette": [
   {
    "name": "White",

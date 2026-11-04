@@ -77,6 +77,23 @@ The seven side by side, as people will see three or four of us on the floor. Cha
 
 A card for each of the seven, to check your name, colour and line: [C1 for everyone](../assets/design/cards-C1-seven.svg) · [C2 for everyone](../assets/design/cards-C2-seven.svg). On C1 the brand line is now in your colour where your colour is dark enough to read on white.
 
+## Business cards, round 2: six designs for Web Summit {#cards-r2}
+
+Dinis, 4 November (11:02, relayed by Indi): *"6 complete different variations of the cards, including audience specific ones (C-Level Execs, Risk & Policy focused, and tech & engineering focused) ... web summit specific and point them to our booth on the 12th"*. Made by designer@web-summit.indi from the RiskMandate brand page (the real mark, its colours) for all seven. Every card names Web Summit Lisbon in plain text, never Web Summit's logo, and sends people to our stand on Thursday 12 November. The stand location goes on once we know it. Every QR still goes to your own meet page.
+
+[![Six card designs for Indi, front and back](../team/designer/print/concepts-rm/round2/compare.png)](../team/designer/print/concepts-rm/round2/compare.png)
+
+| Design | For | The idea | All seven |
+|---|---|---|---|
+| **R2-1 Seal** | everyone | The seal leads on the container black; the brand strip ends in your colour | [sheet](../team/designer/print/concepts-rm/round2/1-seal/sheet.png) |
+| **R2-2 Pass** | everyone | A ticket to our stand: Web Summit and the day, the seal and your colour on the stub | [sheet](../team/designer/print/concepts-rm/round2/2-pass/sheet.png) |
+| **R2-3 Record** | Risk & Policy | "Would your agent pass an audit?", then reach, authorised and the gap, as the record RiskMandate makes | [sheet](../team/designer/print/concepts-rm/round2/3-record/sheet.png) |
+| **R2-4 Boardroom** | C-Level | "Your customer will ask. Have an answer.", and a lot of quiet | [sheet](../team/designer/print/concepts-rm/round2/4-boardroom/sheet.png) |
+| **R2-5 Terminal** | Tech & Engineering | "Same agent. Different reach." in the brand's mono, on the darkest canvas | [sheet](../team/designer/print/concepts-rm/round2/5-terminal/sheet.png) |
+| **R2-6 Signature** | everyone | Your name as big as the card allows, over a line in your colour | [sheet](../team/designer/print/concepts-rm/round2/6-signature/sheet.png) |
+
+**Vote:** as above, with `"card": "R2-1"` to `"R2-6"` in your pick, or tell Indi or Dinis. The audience cards can be printed alongside an everyone card (for example 60 of one and 40 of another). The print files, the checks and the notes on each design: `team/designer/print/concepts-rm/round2/README.md`.
+
 ## More lines to choose from {#lines}
 
 - Know their reach. Define their mandate. Control the gap.
@@ -107,7 +124,7 @@ Decided by Dinis: the headline, "Seven of us. Our agents. One RiskMandate.", and
 
 ## Open questions {#open}
 
-- **RiskMandate only** (Dinis, 2 November): no sponsor, no other brand, no Web Summit name or logo on the merch. The final files: [the print files](../print/index.html).
+- **RiskMandate only** (Dinis, 2 November): no sponsor, no other brand, no Web Summit name or logo on the merch. The final files: [the print files](../print/index.html). For the business cards, Dinis asked on 4 November for Web Summit and our stand day to be named ([round 2](#cards-r2)): the name in plain text, still no Web Summit logo and no other brand.
 - **The stand location**, once we know it.
 - **Sizes and colours** per person (on the board).
 - **Booking and "talk to my agent"** on the meet pages: links to come (on the board).

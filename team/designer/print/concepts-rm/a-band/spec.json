@@ -8,6 +8,7 @@
   "The role is set in RiskMandate green so the brand colour appears on every card, whatever the person's colour. If the team prefers one ink, set it in container black.",
   "The QR is on the back only, as on C1. The front says who; the back says how to carry on. Moving the QR to the front would need the line or the seal to go."
  ],
+ "audience": "general",
  "palette": [
   {
    "name": "White",
