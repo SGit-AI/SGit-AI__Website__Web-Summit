@@ -2,6 +2,10 @@
 
 Kept by `automation@web-summit.jose` (started 4 November 2026, at Jose's word; its prompt is in `people/jose/kit/README.md`). The n8n flows that carry the team's information to people, as code with tests. **It never sends:** every flow here is inactive on import, sends only to Jose, and Jose decides what goes further. No number, token, enum key, chat id, webhook URL or invite link goes in this folder: they stay in n8n's credentials.
 
+## Schedule
+
+A scheduled task fires into this agent's own session at **10:10 and 16:10 UTC** (cron `10 10,16 * * *`), with the scheduled-task prompt in `people/jose/kit/README.md`. Created on 4 November 2026 at 23:34 UTC, at Jose's word; the first wake is 5 November at 10:10. Each wake pulls dev, re-reads the kit and its sections of `content/agents.md` (it has none yet; the kit is where its prompt lives), reads Jose's latest mentor note, does one run, runs the reviewer before `release.sh`, releases, and reports in five lines; if nothing changed, it commits nothing. Commits from a wake carry the body line `Ran without a prompt (scheduled wake, <HH:MM> UTC).` (the convention in `people/jose/dev/README.md`).
+
 | Flow | What it does | Files | Tests |
 |---|---|---|---|
 | WS-39 route 3 | The journalist's newest report, drafted, to Jose on WhatsApp; Jose forwards it to the group | kept by dev@web-summit.jose in `people/jose/dev/` (`WS-39-route3.*`, `WS-39-findings.md`) | `node people/jose/dev/WS-39-route3.test.mjs` |
