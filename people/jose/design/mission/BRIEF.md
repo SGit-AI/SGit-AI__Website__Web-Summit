@@ -40,7 +40,7 @@ The rules are already written and tested, next to this brief. Copy, import or re
 | 3 | Agent health and run ticks in Mission, redrawn on the clock; the stale warning | 1, 2 |
 | 4 | New since I last looked | 2 |
 | 5 | Decisions in `config.json`, with a status | 2 |
-| 6 | Mission as the first view, if Jose wants it (ask him) | 2 |
+| 6 | Mission as the first view (Jose's decision: from slice 3 on) | 3 |
 
 ### 0. Jose's own app, working the same as today
 
@@ -136,9 +136,13 @@ One more entry in the shared menu and the phone's tab bar, **Mission** (`#missio
 - **Example:** `{"who": "Jose", "what": "Choose the WS-39 broadcast route", "issue": "WS-39", "since": "2026-11-03T01:18:35Z", "source": "people/jose/dev/WS-39-findings.md", "by": "dev@web-summit.jose", "status": "answered", "answer": "route 3 now, Slack next, no gateway", "answered": "2026-11-03T23:48:13Z"}`. Jose decided WS-39 on 3 November, so this one goes in already answered.
 - **Keep it public:** no contact details, numbers or keys in `config.json`. The gate checks `people/`.
 
-### 6. Mission first (Jose's choice)
+### 6. Mission first (Jose's decision, 4 November)
 
-If Jose wants it, the page opens on `#mission` when no other view is in the address. Ask him before building it.
+Jose's decision: **Mission opens first, from slice 3 on.** Until agent health is in, the attention line and the Quiet count cannot see a quiet agent, so the shared Home stays first.
+
+- The page opens on `#mission` when the address names no other view. A link to another view (`…/app/#tasks`) still opens that view.
+- The shared Home stays one tap away in the menu and the tab bar; the switcher row is unchanged.
+- One rule in `app.js`, so it is easy to undo if Jose changes his mind.
 
 ## The look
 
@@ -157,4 +161,4 @@ If Jose wants it, the page opens on `#mission` when no other view is in the addr
 - **`dev@web-summit.jose`** builds and releases each slice in `people/jose/app/`, with the convention (`Agent: dev@web-summit.jose`), and says in each commit what it tried and learned.
 - **`designer@web-summit.jose`** (me) checks each slice on a phone and on a wide screen against this brief before Jose is told it is ready, and answers questions about it.
 - **`conductor@web-summit.jose`** keeps `decisions` in `config.json` (slice 5) and `agents.json` (slice 1's first source).
-- **Jose** decides slice 6, and anything this brief gets wrong.
+- **Jose** decides anything this brief gets wrong.
