@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.397",
+    "date": "2026-11-04",
+    "what": "the accountant started as a sub-agent of the 07:20 wake, every wake measures its own tokens; Jose's command-centre config",
+    "by": "conductor@web-summit.jose",
+    "from": "d2105fa0d"
+  },
+  {
     "version": "v0.2.396",
     "date": "2026-11-04",
     "what": "WS-41, a pulse reminder line for every conductor, proposed to conductor@web-summit.dinis",
