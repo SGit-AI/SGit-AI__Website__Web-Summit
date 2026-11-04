@@ -1,0 +1,1665 @@
+{
+ "concept": "c-poster",
+ "name": "C. Poster",
+ "rationale": "The card is a small version of the shirt: the person's line, big, in their colour, with the seal on a white strip below.",
+ "type": "Barlow Condensed (name, role, line, wordmark) + JetBrains Mono (asks, URL)",
+ "notes": [
+  "The back is the person's colour, full bleed, with their line in Barlow Condensed ExtraBold: the same voice as their T-shirt, so card and shirt read as one set across a hall.",
+  "The seal sits on its own white strip, with half its width clear on every side, so the mark is never shown on a coloured field and the colour never touches it.",
+  "The asks and URL are set in a monospace with a › prompt: the \"talk to my agent\" idea, a little playful. If it reads too technical, set them in Barlow Condensed as on A."
+ ],
+ "audience": "general",
+ "palette": [
+  {
+   "name": "White",
+   "hex": "#FFFFFF",
+   "cmyk": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Container black",
+   "hex": "#161615",
+   "cmyk": [
+    0,
+    0,
+    5,
+    91
+   ]
+  },
+  {
+   "name": "RiskMandate green",
+   "hex": "#1A7F5A",
+   "cmyk": [
+    80,
+    0,
+    29,
+    50
+   ]
+  }
+ ],
+ "files": {
+  "dinis-card-front.svg": {
+   "person": "dinis",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Dinis Cruz",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 20.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      11.06,
+      33.72,
+      16
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Operator: the strategy, the senior meetings",
+     "font": "Barlow Condensed",
+     "weight": 500,
+     "pt": 8.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      19.4,
+      53.0,
+      21.5
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      23.38,
+      84.0,
+      54.0
+     ],
+     "modules": [
+      56.69,
+      26.69,
+      80.69,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "asks",
+     "text": "› Meet me",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      26.76,
+      22.29,
+      28.69
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "› Book a meeting",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      30.96,
+      33.4,
+      32.89
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "› Talk to my agent",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      35.16,
+      36.58,
+      37.09
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "JetBrains Mono",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      45.49,
+      34.67,
+      47.29
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/dinis/",
+     "font": "JetBrains Mono",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      48.89,
+      25.78,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Dinis’s colour",
+    "hex": "#111111",
+    "cmyk": [
+     0,
+     0,
+     0,
+     93
+    ]
+   }
+  },
+  "dinis-card-back.svg": {
+   "person": "dinis",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "line",
+     "text": "Ask me what my",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 33.66,
+     "fill": "#FFFFFF",
+     "bg": "#111111",
+     "box": [
+      8,
+      10.03,
+      80.46,
+      18.34
+     ]
+    },
+    {
+     "role": "line",
+     "text": "agents did today.",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 33.66,
+     "fill": "#FFFFFF",
+     "bg": "#111111",
+     "box": [
+      8,
+      21.66,
+      84.0,
+      29.97
+     ]
+    },
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 8.5,
+     "box": [
+      8.0,
+      44.75,
+      16.5,
+      53.25
+     ],
+     "clear": 4.25
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      20.75,
+      47.5,
+      27.17,
+      50.5
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      28.11,
+      47.5,
+      42.72,
+      50.5
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Dinis’s colour",
+    "hex": "#111111",
+    "cmyk": [
+     0,
+     0,
+     0,
+     93
+    ]
+   }
+  },
+  "nimay-card-front.svg": {
+   "person": "nimay",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Nimay Parekh",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 20.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      11.06,
+      44.42,
+      16
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Business, positioning, outreach and investors",
+     "font": "Barlow Condensed",
+     "weight": 500,
+     "pt": 8.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      19.4,
+      55.39,
+      21.5
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      23.38,
+      84.0,
+      54.0
+     ],
+     "modules": [
+      56.69,
+      26.69,
+      80.69,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "asks",
+     "text": "› Meet me",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      26.76,
+      22.29,
+      28.69
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "› Book a meeting",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      30.96,
+      33.4,
+      32.89
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "› Talk to my agent",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      35.16,
+      36.58,
+      37.09
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "JetBrains Mono",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      45.49,
+      34.67,
+      47.29
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/nimay/",
+     "font": "JetBrains Mono",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      48.89,
+      25.78,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Nimay’s colour",
+    "hex": "#1f3a93",
+    "cmyk": [
+     79,
+     61,
+     0,
+     42
+    ]
+   }
+  },
+  "nimay-card-back.svg": {
+   "person": "nimay",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "line",
+     "text": "My agents have",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 27.71,
+     "fill": "#FFFFFF",
+     "bg": "#1f3a93",
+     "box": [
+      8,
+      7.0,
+      64.18,
+      13.84
+     ]
+    },
+    {
+     "role": "line",
+     "text": "a policy.",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 27.71,
+     "fill": "#FFFFFF",
+     "bg": "#1f3a93",
+     "box": [
+      8,
+      16.58,
+      38.58,
+      23.42
+     ]
+    },
+    {
+     "role": "line",
+     "text": "Do yours?",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 27.71,
+     "fill": "#FFFFFF",
+     "bg": "#1f3a93",
+     "box": [
+      8,
+      26.16,
+      44.21,
+      33.0
+     ]
+    },
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 8.5,
+     "box": [
+      8.0,
+      44.75,
+      16.5,
+      53.25
+     ],
+     "clear": 4.25
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      20.75,
+      47.5,
+      27.17,
+      50.5
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      28.11,
+      47.5,
+      42.72,
+      50.5
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Nimay’s colour",
+    "hex": "#1f3a93",
+    "cmyk": [
+     79,
+     61,
+     0,
+     42
+    ]
+   }
+  },
+  "angelo-card-front.svg": {
+   "person": "angelo",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Angelo",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 20.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      11.06,
+      25.86,
+      16
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Technical lead: the site, the agents, the behaviour policies",
+     "font": "Barlow Condensed",
+     "weight": 500,
+     "pt": 8.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      19.4,
+      68.69,
+      21.5
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      23.38,
+      84.0,
+      54.0
+     ],
+     "modules": [
+      56.69,
+      26.69,
+      80.69,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "asks",
+     "text": "› Meet me",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      26.76,
+      22.29,
+      28.69
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "› Book a meeting",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      30.96,
+      33.4,
+      32.89
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "› Talk to my agent",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      35.16,
+      36.58,
+      37.09
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "JetBrains Mono",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      45.49,
+      34.67,
+      47.29
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/angelo/",
+     "font": "JetBrains Mono",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      48.89,
+      27.26,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Angelo’s colour",
+    "hex": "#1e7b4f",
+    "cmyk": [
+     76,
+     0,
+     36,
+     52
+    ]
+   }
+  },
+  "angelo-card-back.svg": {
+   "person": "angelo",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "line",
+     "text": "Ask me how I",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 30.98,
+     "fill": "#FFFFFF",
+     "bg": "#1e7b4f",
+     "box": [
+      8,
+      10.82,
+      61.63,
+      18.47
+     ]
+    },
+    {
+     "role": "line",
+     "text": "control my agents.",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 30.98,
+     "fill": "#FFFFFF",
+     "bg": "#1e7b4f",
+     "box": [
+      8,
+      21.53,
+      84.0,
+      29.18
+     ]
+    },
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 8.5,
+     "box": [
+      8.0,
+      44.75,
+      16.5,
+      53.25
+     ],
+     "clear": 4.25
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      20.75,
+      47.5,
+      27.17,
+      50.5
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      28.11,
+      47.5,
+      42.72,
+      50.5
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Angelo’s colour",
+    "hex": "#1e7b4f",
+    "cmyk": [
+     76,
+     0,
+     36,
+     52
+    ]
+   }
+  },
+  "jose-card-front.svg": {
+   "person": "jose",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Jose Bota",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 20.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      11.06,
+      33.9,
+      16
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Technical: automation, messaging, the agents",
+     "font": "Barlow Condensed",
+     "weight": 500,
+     "pt": 8.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      19.4,
+      56.02,
+      21.5
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      23.38,
+      84.0,
+      54.0
+     ],
+     "modules": [
+      56.69,
+      26.69,
+      80.69,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "asks",
+     "text": "› Meet me",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      26.76,
+      22.29,
+      28.69
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "› Book a meeting",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      30.96,
+      33.4,
+      32.89
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "› Talk to my agent",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      35.16,
+      36.58,
+      37.09
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "JetBrains Mono",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      45.49,
+      34.67,
+      47.29
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/jose/",
+     "font": "JetBrains Mono",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      48.89,
+      24.3,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Jose’s colour",
+    "hex": "#e86a1c",
+    "cmyk": [
+     0,
+     54,
+     88,
+     9
+    ]
+   }
+  },
+  "jose-card-back.svg": {
+   "person": "jose",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "line",
+     "text": "I brought 6 agents.",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 30.97,
+     "fill": "#FFFFFF",
+     "bg": "#e86a1c",
+     "box": [
+      8,
+      10.82,
+      84.0,
+      18.47
+     ]
+    },
+    {
+     "role": "line",
+     "text": "Ask me why.",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 30.97,
+     "fill": "#FFFFFF",
+     "bg": "#e86a1c",
+     "box": [
+      8,
+      21.53,
+      59.32,
+      29.18
+     ]
+    },
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 8.5,
+     "box": [
+      8.0,
+      44.75,
+      16.5,
+      53.25
+     ],
+     "clear": 4.25
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      20.75,
+      47.5,
+      27.17,
+      50.5
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      28.11,
+      47.5,
+      42.72,
+      50.5
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Jose’s colour",
+    "hex": "#e86a1c",
+    "cmyk": [
+     0,
+     54,
+     88,
+     9
+    ]
+   }
+  },
+  "vicky-card-front.svg": {
+   "person": "vicky",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Vicky Wang",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 20.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      11.06,
+      38.7,
+      16
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Project Manager",
+     "font": "Barlow Condensed",
+     "weight": 500,
+     "pt": 8.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      19.4,
+      24.93,
+      21.5
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      23.38,
+      84.0,
+      54.0
+     ],
+     "modules": [
+      56.69,
+      26.69,
+      80.69,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "asks",
+     "text": "› Meet me",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      26.76,
+      22.29,
+      28.69
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "› Book a meeting",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      30.96,
+      33.4,
+      32.89
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "› Talk to my agent",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      35.16,
+      36.58,
+      37.09
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "JetBrains Mono",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      45.49,
+      34.67,
+      47.29
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/vicky/",
+     "font": "JetBrains Mono",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      48.89,
+      25.78,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Vicky’s colour",
+    "hex": "#6b3fa0",
+    "cmyk": [
+     33,
+     61,
+     0,
+     37
+    ]
+   }
+  },
+  "vicky-card-back.svg": {
+   "person": "vicky",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "line",
+     "text": "Who’s on the",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 27.71,
+     "fill": "#FFFFFF",
+     "bg": "#6b3fa0",
+     "box": [
+      8,
+      7.0,
+      54.51,
+      13.84
+     ]
+    },
+    {
+     "role": "line",
+     "text": "other side of",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 27.71,
+     "fill": "#FFFFFF",
+     "bg": "#6b3fa0",
+     "box": [
+      8,
+      16.58,
+      53.87,
+      23.42
+     ]
+    },
+    {
+     "role": "line",
+     "text": "your agent?",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 27.71,
+     "fill": "#FFFFFF",
+     "bg": "#6b3fa0",
+     "box": [
+      8,
+      26.16,
+      51.55,
+      33.0
+     ]
+    },
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 8.5,
+     "box": [
+      8.0,
+      44.75,
+      16.5,
+      53.25
+     ],
+     "clear": 4.25
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      20.75,
+      47.5,
+      27.17,
+      50.5
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      28.11,
+      47.5,
+      42.72,
+      50.5
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Vicky’s colour",
+    "hex": "#6b3fa0",
+    "cmyk": [
+     33,
+     61,
+     0,
+     37
+    ]
+   }
+  },
+  "silvio-card-front.svg": {
+   "person": "silvio",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Silvio Switha",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 20.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      11.06,
+      41.51,
+      16
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Ideas, outreach, local, and video",
+     "font": "Barlow Condensed",
+     "weight": 500,
+     "pt": 8.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      19.4,
+      41.54,
+      21.5
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      23.38,
+      84.0,
+      54.0
+     ],
+     "modules": [
+      56.69,
+      26.69,
+      80.69,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "asks",
+     "text": "› Meet me",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      26.76,
+      22.29,
+      28.69
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "› Book a meeting",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      30.96,
+      33.4,
+      32.89
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "› Talk to my agent",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      35.16,
+      36.58,
+      37.09
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "JetBrains Mono",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      45.49,
+      34.67,
+      47.29
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/silvio/",
+     "font": "JetBrains Mono",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      48.89,
+      27.26,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Silvio’s colour",
+    "hex": "#c62828",
+    "cmyk": [
+     0,
+     80,
+     80,
+     22
+    ]
+   }
+  },
+  "silvio-card-back.svg": {
+   "person": "silvio",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "line",
+     "text": "Agents with",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 36.85,
+     "fill": "#FFFFFF",
+     "bg": "#c62828",
+     "box": [
+      8,
+      9.08,
+      65.16,
+      18.18
+     ]
+    },
+    {
+     "role": "line",
+     "text": "a mandate.",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 36.85,
+     "fill": "#FFFFFF",
+     "bg": "#c62828",
+     "box": [
+      8,
+      21.82,
+      61.87,
+      30.92
+     ]
+    },
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 8.5,
+     "box": [
+      8.0,
+      44.75,
+      16.5,
+      53.25
+     ],
+     "clear": 4.25
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      20.75,
+      47.5,
+      27.17,
+      50.5
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      28.11,
+      47.5,
+      42.72,
+      50.5
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Silvio’s colour",
+    "hex": "#c62828",
+    "cmyk": [
+     0,
+     80,
+     80,
+     22
+    ]
+   }
+  },
+  "indi-card-front.svg": {
+   "person": "indi",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Indi Gupte",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 20.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      11.06,
+      34.07,
+      16
+     ]
+    },
+    {
+     "role": "role",
+     "text": "The message, outreach, and the factory of examples",
+     "font": "Barlow Condensed",
+     "weight": 500,
+     "pt": 8.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      19.4,
+      62.76,
+      21.5
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      23.38,
+      84.0,
+      54.0
+     ],
+     "modules": [
+      56.69,
+      26.69,
+      80.69,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "asks",
+     "text": "› Meet me",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      26.76,
+      22.29,
+      28.69
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "› Book a meeting",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      30.96,
+      33.4,
+      32.89
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "› Talk to my agent",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      35.16,
+      36.58,
+      37.09
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "JetBrains Mono",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      45.49,
+      34.67,
+      47.29
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/indi/",
+     "font": "JetBrains Mono",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      48.89,
+      24.3,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Indi’s colour",
+    "hex": "#f2b705",
+    "cmyk": [
+     0,
+     24,
+     98,
+     5
+    ]
+   }
+  },
+  "indi-card-back.svg": {
+   "person": "indi",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "line",
+     "text": "Your agents.",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 36.85,
+     "fill": "#161615",
+     "bg": "#f2b705",
+     "box": [
+      8,
+      9.08,
+      69.15,
+      18.18
+     ]
+    },
+    {
+     "role": "line",
+     "text": "Your rules.",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 36.85,
+     "fill": "#161615",
+     "bg": "#f2b705",
+     "box": [
+      8,
+      21.82,
+      60.68,
+      30.92
+     ]
+    },
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 8.5,
+     "box": [
+      8.0,
+      44.75,
+      16.5,
+      53.25
+     ],
+     "clear": 4.25
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      20.75,
+      47.5,
+      27.17,
+      50.5
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#161615",
+     "bg": "#FFFFFF",
+     "box": [
+      28.11,
+      47.5,
+      42.72,
+      50.5
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Indi’s colour",
+    "hex": "#f2b705",
+    "cmyk": [
+     0,
+     24,
+     98,
+     5
+    ]
+   }
+  }
+ }
+}

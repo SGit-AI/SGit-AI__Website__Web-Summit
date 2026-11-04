@@ -1,0 +1,1350 @@
+{
+ "concept": "6-signature",
+ "name": "6. Signature",
+ "rationale": "Name first, as big as the card allows, over a line in your colour; the seal and the QR together on the dark back.",
+ "type": "Barlow Condensed (name, wordmark) + Geist; JetBrains Mono for the stand line",
+ "notes": [
+  "The colour line runs edge to edge, so the seven together read as a set across a table.",
+  "The person's own line stays on the front, under the role.",
+  "The back pairs the knockout seal with the QR, on the container black."
+ ],
+ "audience": "general",
+ "palette": [
+  {
+   "name": "White",
+   "hex": "#FFFFFF",
+   "cmyk": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Ink",
+   "hex": "#0D0D0C",
+   "cmyk": [
+    0,
+    0,
+    8,
+    95
+   ]
+  },
+  {
+   "name": "Muted",
+   "hex": "#4A4845",
+   "cmyk": [
+    0,
+    3,
+    7,
+    71
+   ]
+  },
+  {
+   "name": "Green",
+   "hex": "#1A7F5A",
+   "cmyk": [
+    80,
+    0,
+    29,
+    50
+   ]
+  },
+  {
+   "name": "Container",
+   "hex": "#161615",
+   "cmyk": [
+    0,
+    0,
+    5,
+    91
+   ]
+  },
+  {
+   "name": "Warm white",
+   "hex": "#F7F6F2",
+   "cmyk": [
+    0,
+    0,
+    2,
+    3
+   ]
+  }
+ ],
+ "files": {
+  "dinis-card-front.svg": {
+   "person": "dinis",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Dinis Cruz",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 34.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      12.6,
+      51.72,
+      21
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Operator: the strategy, the senior meetings",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      31.12,
+      62.51,
+      33.0
+     ]
+    },
+    {
+     "role": "line",
+     "text": "Ask me what my agents did today.",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 9.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      36.95,
+      59.7,
+      39.2
+     ]
+    },
+    {
+     "role": "event",
+     "text": "FIND US AT OUR STAND ON THURSDAY 12 NOVEMBER",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      50.2,
+      73.19,
+      52
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Dinis’s colour",
+    "hex": "#111111",
+    "cmyk": [
+     0,
+     0,
+     0,
+     93
+    ]
+   }
+  },
+  "dinis-card-back.svg": {
+   "person": "dinis",
+   "side": "back",
+   "bg": "#161615",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "knockout",
+     "d": 16,
+     "box": [
+      12.0,
+      13.0,
+      28.0,
+      29.0
+     ],
+     "clear": 8.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      9.02,
+      38.0,
+      15.44,
+      41.0
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      16.38,
+      38.0,
+      30.98,
+      41.0
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      8,
+      46.85,
+      29.8,
+      48.6
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/dinis/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      8,
+      50.25,
+      22.85,
+      52.0
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      15.19,
+      84.0,
+      45.81
+     ],
+     "modules": [
+      56.69,
+      18.5,
+      80.69,
+      42.5
+     ],
+     "mm": 24.0
+    }
+   ],
+   "accent": {
+    "name": "Dinis’s colour",
+    "hex": "#111111",
+    "cmyk": [
+     0,
+     0,
+     0,
+     93
+    ]
+   }
+  },
+  "nimay-card-front.svg": {
+   "person": "nimay",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Nimay Parekh",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 34.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      12.6,
+      69.92,
+      21
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Business, positioning, outreach and investors",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      31.12,
+      64.83,
+      33.0
+     ]
+    },
+    {
+     "role": "line",
+     "text": "My agents have a policy. Do yours?",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 9.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      36.95,
+      60.78,
+      39.2
+     ]
+    },
+    {
+     "role": "event",
+     "text": "FIND US AT OUR STAND ON THURSDAY 12 NOVEMBER",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      50.2,
+      73.19,
+      52
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Nimay’s colour",
+    "hex": "#1f3a93",
+    "cmyk": [
+     79,
+     61,
+     0,
+     42
+    ]
+   }
+  },
+  "nimay-card-back.svg": {
+   "person": "nimay",
+   "side": "back",
+   "bg": "#161615",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "knockout",
+     "d": 16,
+     "box": [
+      12.0,
+      13.0,
+      28.0,
+      29.0
+     ],
+     "clear": 8.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      9.02,
+      38.0,
+      15.44,
+      41.0
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      16.38,
+      38.0,
+      30.98,
+      41.0
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      8,
+      46.85,
+      29.8,
+      48.6
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/nimay/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      8,
+      50.25,
+      24.35,
+      52.0
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      15.19,
+      84.0,
+      45.81
+     ],
+     "modules": [
+      56.69,
+      18.5,
+      80.69,
+      42.5
+     ],
+     "mm": 24.0
+    }
+   ],
+   "accent": {
+    "name": "Nimay’s colour",
+    "hex": "#1f3a93",
+    "cmyk": [
+     79,
+     61,
+     0,
+     42
+    ]
+   }
+  },
+  "angelo-card-front.svg": {
+   "person": "angelo",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Angelo",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 34.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      12.6,
+      38.36,
+      21
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Technical lead: the site, the agents, the behaviour policies",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      31.12,
+      80.61,
+      33.0
+     ]
+    },
+    {
+     "role": "line",
+     "text": "Ask me how I control my agents.",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 9.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      36.95,
+      56.88,
+      39.2
+     ]
+    },
+    {
+     "role": "event",
+     "text": "FIND US AT OUR STAND ON THURSDAY 12 NOVEMBER",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      50.2,
+      73.19,
+      52
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Angelo’s colour",
+    "hex": "#1e7b4f",
+    "cmyk": [
+     76,
+     0,
+     36,
+     52
+    ]
+   }
+  },
+  "angelo-card-back.svg": {
+   "person": "angelo",
+   "side": "back",
+   "bg": "#161615",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "knockout",
+     "d": 16,
+     "box": [
+      12.0,
+      13.0,
+      28.0,
+      29.0
+     ],
+     "clear": 8.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      9.02,
+      38.0,
+      15.44,
+      41.0
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      16.38,
+      38.0,
+      30.98,
+      41.0
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      8,
+      46.85,
+      29.8,
+      48.6
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/angelo/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      8,
+      50.25,
+      25.18,
+      52.0
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      15.19,
+      84.0,
+      45.81
+     ],
+     "modules": [
+      56.69,
+      18.5,
+      80.69,
+      42.5
+     ],
+     "mm": 24.0
+    }
+   ],
+   "accent": {
+    "name": "Angelo’s colour",
+    "hex": "#1e7b4f",
+    "cmyk": [
+     76,
+     0,
+     36,
+     52
+    ]
+   }
+  },
+  "jose-card-front.svg": {
+   "person": "jose",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Jose Bota",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 34.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      12.6,
+      52.03,
+      21
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Technical: automation, messaging, the agents",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      31.12,
+      65.48,
+      33.0
+     ]
+    },
+    {
+     "role": "line",
+     "text": "I brought 6 agents. Ask me why.",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 9.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      36.95,
+      55.96,
+      39.2
+     ]
+    },
+    {
+     "role": "event",
+     "text": "FIND US AT OUR STAND ON THURSDAY 12 NOVEMBER",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      50.2,
+      73.19,
+      52
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Jose’s colour",
+    "hex": "#e86a1c",
+    "cmyk": [
+     0,
+     54,
+     88,
+     9
+    ]
+   }
+  },
+  "jose-card-back.svg": {
+   "person": "jose",
+   "side": "back",
+   "bg": "#161615",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "knockout",
+     "d": 16,
+     "box": [
+      12.0,
+      13.0,
+      28.0,
+      29.0
+     ],
+     "clear": 8.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      9.02,
+      38.0,
+      15.44,
+      41.0
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      16.38,
+      38.0,
+      30.98,
+      41.0
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      8,
+      46.85,
+      29.8,
+      48.6
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/jose/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      8,
+      50.25,
+      22.19,
+      52.0
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      15.19,
+      84.0,
+      45.81
+     ],
+     "modules": [
+      56.69,
+      18.5,
+      80.69,
+      42.5
+     ],
+     "mm": 24.0
+    }
+   ],
+   "accent": {
+    "name": "Jose’s colour",
+    "hex": "#e86a1c",
+    "cmyk": [
+     0,
+     54,
+     88,
+     9
+    ]
+   }
+  },
+  "vicky-card-front.svg": {
+   "person": "vicky",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Vicky Wang",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 34.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      12.6,
+      60.19,
+      21
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Project Manager",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      31.12,
+      28.91,
+      33.0
+     ]
+    },
+    {
+     "role": "line",
+     "text": "Who’s on the other side of your agent?",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 9.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      36.95,
+      66.21,
+      39.2
+     ]
+    },
+    {
+     "role": "event",
+     "text": "FIND US AT OUR STAND ON THURSDAY 12 NOVEMBER",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      50.2,
+      73.19,
+      52
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Vicky’s colour",
+    "hex": "#6b3fa0",
+    "cmyk": [
+     33,
+     61,
+     0,
+     37
+    ]
+   }
+  },
+  "vicky-card-back.svg": {
+   "person": "vicky",
+   "side": "back",
+   "bg": "#161615",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "knockout",
+     "d": 16,
+     "box": [
+      12.0,
+      13.0,
+      28.0,
+      29.0
+     ],
+     "clear": 8.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      9.02,
+      38.0,
+      15.44,
+      41.0
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      16.38,
+      38.0,
+      30.98,
+      41.0
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      8,
+      46.85,
+      29.8,
+      48.6
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/vicky/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      8,
+      50.25,
+      23.52,
+      52.0
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      15.19,
+      84.0,
+      45.81
+     ],
+     "modules": [
+      56.69,
+      18.5,
+      80.69,
+      42.5
+     ],
+     "mm": 24.0
+    }
+   ],
+   "accent": {
+    "name": "Vicky’s colour",
+    "hex": "#6b3fa0",
+    "cmyk": [
+     33,
+     61,
+     0,
+     37
+    ]
+   }
+  },
+  "silvio-card-front.svg": {
+   "person": "silvio",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Silvio Switha",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 34.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      12.6,
+      64.97,
+      21
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Ideas, outreach, local, and video",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      31.12,
+      47.9,
+      33.0
+     ]
+    },
+    {
+     "role": "line",
+     "text": "Agents with a mandate.",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 9.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      36.95,
+      43.57,
+      39.2
+     ]
+    },
+    {
+     "role": "event",
+     "text": "FIND US AT OUR STAND ON THURSDAY 12 NOVEMBER",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      50.2,
+      73.19,
+      52
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Silvio’s colour",
+    "hex": "#c62828",
+    "cmyk": [
+     0,
+     80,
+     80,
+     22
+    ]
+   }
+  },
+  "silvio-card-back.svg": {
+   "person": "silvio",
+   "side": "back",
+   "bg": "#161615",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "knockout",
+     "d": 16,
+     "box": [
+      12.0,
+      13.0,
+      28.0,
+      29.0
+     ],
+     "clear": 8.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      9.02,
+      38.0,
+      15.44,
+      41.0
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      16.38,
+      38.0,
+      30.98,
+      41.0
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      8,
+      46.85,
+      29.8,
+      48.6
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/silvio/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      8,
+      50.25,
+      23.35,
+      52.0
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      15.19,
+      84.0,
+      45.81
+     ],
+     "modules": [
+      56.69,
+      18.5,
+      80.69,
+      42.5
+     ],
+     "mm": 24.0
+    }
+   ],
+   "accent": {
+    "name": "Silvio’s colour",
+    "hex": "#c62828",
+    "cmyk": [
+     0,
+     80,
+     80,
+     22
+    ]
+   }
+  },
+  "indi-card-front.svg": {
+   "person": "indi",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Indi Gupte",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 34.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      12.6,
+      52.32,
+      21
+     ]
+    },
+    {
+     "role": "role",
+     "text": "The message, outreach, and the factory of examples",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      31.12,
+      73.83,
+      33.0
+     ]
+    },
+    {
+     "role": "line",
+     "text": "Your agents. Your rules.",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 9.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      36.95,
+      43.37,
+      39.2
+     ]
+    },
+    {
+     "role": "event",
+     "text": "FIND US AT OUR STAND ON THURSDAY 12 NOVEMBER",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      50.2,
+      73.19,
+      52
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Indi’s colour",
+    "hex": "#f2b705",
+    "cmyk": [
+     0,
+     24,
+     98,
+     5
+    ]
+   }
+  },
+  "indi-card-back.svg": {
+   "person": "indi",
+   "side": "back",
+   "bg": "#161615",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "knockout",
+     "d": 16,
+     "box": [
+      12.0,
+      13.0,
+      28.0,
+      29.0
+     ],
+     "clear": 8.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      9.02,
+      38.0,
+      15.44,
+      41.0
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      16.38,
+      38.0,
+      30.98,
+      41.0
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      8,
+      46.85,
+      29.8,
+      48.6
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/indi/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      8,
+      50.25,
+      21.57,
+      52.0
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      15.19,
+      84.0,
+      45.81
+     ],
+     "modules": [
+      56.69,
+      18.5,
+      80.69,
+      42.5
+     ],
+     "mm": 24.0
+    }
+   ],
+   "accent": {
+    "name": "Indi’s colour",
+    "hex": "#f2b705",
+    "cmyk": [
+     0,
+     24,
+     98,
+     5
+    ]
+   }
+  }
+ }
+}

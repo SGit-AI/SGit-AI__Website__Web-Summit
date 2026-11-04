@@ -1,0 +1,2135 @@
+{
+ "concept": "2-pass",
+ "name": "2. Pass",
+ "rationale": "The card as a ticket to our stand: Web Summit and the day on the main part, the seal and your colour on the stub.",
+ "type": "Barlow Condensed (name, day) + Geist (role, asks, URL) + JetBrains Mono for the ticket labels: three faces, one over the brief, as the brand pairs a sans with a mono",
+ "notes": [
+  "The perforation is a printed dashed line, not a die cut: no extra cost, no finish.",
+  "The stub's colour block bleeds off the top-right edge only; the seal sits on white above it, 5 mm clear.",
+  "The QR is on the back with the asks, so the ticket face can stay about the place and the day."
+ ],
+ "audience": "general, Web Summit",
+ "palette": [
+  {
+   "name": "White",
+   "hex": "#FFFFFF",
+   "cmyk": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Ink",
+   "hex": "#0D0D0C",
+   "cmyk": [
+    0,
+    0,
+    8,
+    95
+   ]
+  },
+  {
+   "name": "Muted",
+   "hex": "#4A4845",
+   "cmyk": [
+    0,
+    3,
+    7,
+    71
+   ]
+  },
+  {
+   "name": "Faint (perforation)",
+   "hex": "#8A8780",
+   "cmyk": [
+    0,
+    2,
+    7,
+    46
+   ]
+  },
+  {
+   "name": "Green",
+   "hex": "#1A7F5A",
+   "cmyk": [
+    80,
+    0,
+    29,
+    50
+   ]
+  }
+ ],
+ "files": {
+  "dinis-card-front.svg": {
+   "person": "dinis",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      9.7,
+      33.19,
+      11.5
+     ]
+    },
+    {
+     "role": "event",
+     "text": "9 TO 12 NOVEMBER 2026",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      13.2,
+      39.11,
+      15
+     ]
+    },
+    {
+     "role": "name",
+     "text": "Dinis Cruz",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 22.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      22.07,
+      36.29,
+      27.5
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Operator: the strategy, the senior meetings",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      30.75,
+      58.88,
+      32.5
+     ]
+    },
+    {
+     "role": "event",
+     "text": "FIND US AT OUR STAND ON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      43.2,
+      42.08,
+      45
+     ]
+    },
+    {
+     "role": "event",
+     "text": "Thursday 12 November",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 13.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      48.79,
+      45.8,
+      52
+     ]
+    },
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 10,
+     "box": [
+      68.5,
+      12.0,
+      78.5,
+      22.0
+     ],
+     "clear": 5.0
+    }
+   ],
+   "accent": {
+    "name": "Dinis’s colour",
+    "hex": "#111111",
+    "cmyk": [
+     0,
+     0,
+     0,
+     93
+    ]
+   }
+  },
+  "dinis-card-back.svg": {
+   "person": "dinis",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "qr",
+     "box": [
+      7,
+      15.19,
+      37.62,
+      45.81
+     ],
+     "modules": [
+      10.31,
+      18.5,
+      34.31,
+      42.5
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      12.0,
+      49.04,
+      15.0
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      49.98,
+      12.0,
+      64.59,
+      15.0
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Meet me",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      24.12,
+      53.81,
+      26.0
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Book a meeting",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      28.32,
+      62.65,
+      30.2
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Talk to my agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      32.52,
+      64.07,
+      34.4
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      38.75,
+      64.42,
+      40.5
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/dinis/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      42.15,
+      57.47,
+      43.9
+     ]
+    },
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      47.2,
+      67.81,
+      49
+     ]
+    },
+    {
+     "role": "event",
+     "text": "9 TO 12 NOVEMBER 2026",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      50.7,
+      73.74,
+      52.5
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Dinis’s colour",
+    "hex": "#111111",
+    "cmyk": [
+     0,
+     0,
+     0,
+     93
+    ]
+   }
+  },
+  "nimay-card-front.svg": {
+   "person": "nimay",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      9.7,
+      33.19,
+      11.5
+     ]
+    },
+    {
+     "role": "event",
+     "text": "9 TO 12 NOVEMBER 2026",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      13.2,
+      39.11,
+      15
+     ]
+    },
+    {
+     "role": "name",
+     "text": "Nimay Parekh",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 22.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      22.07,
+      48.06,
+      27.5
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Business, positioning, outreach and",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      30.75,
+      49.46,
+      32.5
+     ]
+    },
+    {
+     "role": "role",
+     "text": "investors",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      33.95,
+      18.99,
+      35.7
+     ]
+    },
+    {
+     "role": "event",
+     "text": "FIND US AT OUR STAND ON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      43.2,
+      42.08,
+      45
+     ]
+    },
+    {
+     "role": "event",
+     "text": "Thursday 12 November",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 13.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      48.79,
+      45.8,
+      52
+     ]
+    },
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 10,
+     "box": [
+      68.5,
+      12.0,
+      78.5,
+      22.0
+     ],
+     "clear": 5.0
+    }
+   ],
+   "accent": {
+    "name": "Nimay’s colour",
+    "hex": "#1f3a93",
+    "cmyk": [
+     79,
+     61,
+     0,
+     42
+    ]
+   }
+  },
+  "nimay-card-back.svg": {
+   "person": "nimay",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "qr",
+     "box": [
+      7,
+      15.19,
+      37.62,
+      45.81
+     ],
+     "modules": [
+      10.31,
+      18.5,
+      34.31,
+      42.5
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      12.0,
+      49.04,
+      15.0
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      49.98,
+      12.0,
+      64.59,
+      15.0
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Meet me",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      24.12,
+      53.81,
+      26.0
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Book a meeting",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      28.32,
+      62.65,
+      30.2
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Talk to my agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      32.52,
+      64.07,
+      34.4
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      38.75,
+      64.42,
+      40.5
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/nimay/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      42.15,
+      58.97,
+      43.9
+     ]
+    },
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      47.2,
+      67.81,
+      49
+     ]
+    },
+    {
+     "role": "event",
+     "text": "9 TO 12 NOVEMBER 2026",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      50.7,
+      73.74,
+      52.5
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Nimay’s colour",
+    "hex": "#1f3a93",
+    "cmyk": [
+     79,
+     61,
+     0,
+     42
+    ]
+   }
+  },
+  "angelo-card-front.svg": {
+   "person": "angelo",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      9.7,
+      33.19,
+      11.5
+     ]
+    },
+    {
+     "role": "event",
+     "text": "9 TO 12 NOVEMBER 2026",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      13.2,
+      39.11,
+      15
+     ]
+    },
+    {
+     "role": "name",
+     "text": "Angelo",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 22.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      22.07,
+      27.64,
+      27.5
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Technical lead: the site, the agents, the",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      30.75,
+      53.85,
+      32.5
+     ]
+    },
+    {
+     "role": "role",
+     "text": "behaviour policies",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      33.95,
+      29.32,
+      35.7
+     ]
+    },
+    {
+     "role": "event",
+     "text": "FIND US AT OUR STAND ON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      43.2,
+      42.08,
+      45
+     ]
+    },
+    {
+     "role": "event",
+     "text": "Thursday 12 November",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 13.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      48.79,
+      45.8,
+      52
+     ]
+    },
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 10,
+     "box": [
+      68.5,
+      12.0,
+      78.5,
+      22.0
+     ],
+     "clear": 5.0
+    }
+   ],
+   "accent": {
+    "name": "Angelo’s colour",
+    "hex": "#1e7b4f",
+    "cmyk": [
+     76,
+     0,
+     36,
+     52
+    ]
+   }
+  },
+  "angelo-card-back.svg": {
+   "person": "angelo",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "qr",
+     "box": [
+      7,
+      15.19,
+      37.62,
+      45.81
+     ],
+     "modules": [
+      10.31,
+      18.5,
+      34.31,
+      42.5
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      12.0,
+      49.04,
+      15.0
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      49.98,
+      12.0,
+      64.59,
+      15.0
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Meet me",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      24.12,
+      53.81,
+      26.0
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Book a meeting",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      28.32,
+      62.65,
+      30.2
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Talk to my agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      32.52,
+      64.07,
+      34.4
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      38.75,
+      64.42,
+      40.5
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/angelo/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      42.15,
+      59.8,
+      43.9
+     ]
+    },
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      47.2,
+      67.81,
+      49
+     ]
+    },
+    {
+     "role": "event",
+     "text": "9 TO 12 NOVEMBER 2026",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      50.7,
+      73.74,
+      52.5
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Angelo’s colour",
+    "hex": "#1e7b4f",
+    "cmyk": [
+     76,
+     0,
+     36,
+     52
+    ]
+   }
+  },
+  "jose-card-front.svg": {
+   "person": "jose",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      9.7,
+      33.19,
+      11.5
+     ]
+    },
+    {
+     "role": "event",
+     "text": "9 TO 12 NOVEMBER 2026",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      13.2,
+      39.11,
+      15
+     ]
+    },
+    {
+     "role": "name",
+     "text": "Jose Bota",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 22.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      22.07,
+      36.49,
+      27.5
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Technical: automation, messaging, the",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      30.75,
+      52.93,
+      32.5
+     ]
+    },
+    {
+     "role": "role",
+     "text": "agents",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      33.95,
+      16.11,
+      35.7
+     ]
+    },
+    {
+     "role": "event",
+     "text": "FIND US AT OUR STAND ON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      43.2,
+      42.08,
+      45
+     ]
+    },
+    {
+     "role": "event",
+     "text": "Thursday 12 November",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 13.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      48.79,
+      45.8,
+      52
+     ]
+    },
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 10,
+     "box": [
+      68.5,
+      12.0,
+      78.5,
+      22.0
+     ],
+     "clear": 5.0
+    }
+   ],
+   "accent": {
+    "name": "Jose’s colour",
+    "hex": "#e86a1c",
+    "cmyk": [
+     0,
+     54,
+     88,
+     9
+    ]
+   }
+  },
+  "jose-card-back.svg": {
+   "person": "jose",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "qr",
+     "box": [
+      7,
+      15.19,
+      37.62,
+      45.81
+     ],
+     "modules": [
+      10.31,
+      18.5,
+      34.31,
+      42.5
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      12.0,
+      49.04,
+      15.0
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      49.98,
+      12.0,
+      64.59,
+      15.0
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Meet me",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      24.12,
+      53.81,
+      26.0
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Book a meeting",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      28.32,
+      62.65,
+      30.2
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Talk to my agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      32.52,
+      64.07,
+      34.4
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      38.75,
+      64.42,
+      40.5
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/jose/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      42.15,
+      56.81,
+      43.9
+     ]
+    },
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      47.2,
+      67.81,
+      49
+     ]
+    },
+    {
+     "role": "event",
+     "text": "9 TO 12 NOVEMBER 2026",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      50.7,
+      73.74,
+      52.5
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Jose’s colour",
+    "hex": "#e86a1c",
+    "cmyk": [
+     0,
+     54,
+     88,
+     9
+    ]
+   }
+  },
+  "vicky-card-front.svg": {
+   "person": "vicky",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      9.7,
+      33.19,
+      11.5
+     ]
+    },
+    {
+     "role": "event",
+     "text": "9 TO 12 NOVEMBER 2026",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      13.2,
+      39.11,
+      15
+     ]
+    },
+    {
+     "role": "name",
+     "text": "Vicky Wang",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 22.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      22.07,
+      41.77,
+      27.5
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Project Manager",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      30.75,
+      27.52,
+      32.5
+     ]
+    },
+    {
+     "role": "event",
+     "text": "FIND US AT OUR STAND ON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      43.2,
+      42.08,
+      45
+     ]
+    },
+    {
+     "role": "event",
+     "text": "Thursday 12 November",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 13.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      48.79,
+      45.8,
+      52
+     ]
+    },
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 10,
+     "box": [
+      68.5,
+      12.0,
+      78.5,
+      22.0
+     ],
+     "clear": 5.0
+    }
+   ],
+   "accent": {
+    "name": "Vicky’s colour",
+    "hex": "#6b3fa0",
+    "cmyk": [
+     33,
+     61,
+     0,
+     37
+    ]
+   }
+  },
+  "vicky-card-back.svg": {
+   "person": "vicky",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "qr",
+     "box": [
+      7,
+      15.19,
+      37.62,
+      45.81
+     ],
+     "modules": [
+      10.31,
+      18.5,
+      34.31,
+      42.5
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      12.0,
+      49.04,
+      15.0
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      49.98,
+      12.0,
+      64.59,
+      15.0
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Meet me",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      24.12,
+      53.81,
+      26.0
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Book a meeting",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      28.32,
+      62.65,
+      30.2
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Talk to my agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      32.52,
+      64.07,
+      34.4
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      38.75,
+      64.42,
+      40.5
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/vicky/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      42.15,
+      58.14,
+      43.9
+     ]
+    },
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      47.2,
+      67.81,
+      49
+     ]
+    },
+    {
+     "role": "event",
+     "text": "9 TO 12 NOVEMBER 2026",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      50.7,
+      73.74,
+      52.5
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Vicky’s colour",
+    "hex": "#6b3fa0",
+    "cmyk": [
+     33,
+     61,
+     0,
+     37
+    ]
+   }
+  },
+  "silvio-card-front.svg": {
+   "person": "silvio",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      9.7,
+      33.19,
+      11.5
+     ]
+    },
+    {
+     "role": "event",
+     "text": "9 TO 12 NOVEMBER 2026",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      13.2,
+      39.11,
+      15
+     ]
+    },
+    {
+     "role": "name",
+     "text": "Silvio Switha",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 22.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      22.07,
+      44.87,
+      27.5
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Ideas, outreach, local, and video",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      30.75,
+      45.24,
+      32.5
+     ]
+    },
+    {
+     "role": "event",
+     "text": "FIND US AT OUR STAND ON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      43.2,
+      42.08,
+      45
+     ]
+    },
+    {
+     "role": "event",
+     "text": "Thursday 12 November",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 13.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      48.79,
+      45.8,
+      52
+     ]
+    },
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 10,
+     "box": [
+      68.5,
+      12.0,
+      78.5,
+      22.0
+     ],
+     "clear": 5.0
+    }
+   ],
+   "accent": {
+    "name": "Silvio’s colour",
+    "hex": "#c62828",
+    "cmyk": [
+     0,
+     80,
+     80,
+     22
+    ]
+   }
+  },
+  "silvio-card-back.svg": {
+   "person": "silvio",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "qr",
+     "box": [
+      7,
+      15.19,
+      37.62,
+      45.81
+     ],
+     "modules": [
+      10.31,
+      18.5,
+      34.31,
+      42.5
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      12.0,
+      49.04,
+      15.0
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      49.98,
+      12.0,
+      64.59,
+      15.0
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Meet me",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      24.12,
+      53.81,
+      26.0
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Book a meeting",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      28.32,
+      62.65,
+      30.2
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Talk to my agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      32.52,
+      64.07,
+      34.4
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      38.75,
+      64.42,
+      40.5
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/silvio/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      42.15,
+      57.97,
+      43.9
+     ]
+    },
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      47.2,
+      67.81,
+      49
+     ]
+    },
+    {
+     "role": "event",
+     "text": "9 TO 12 NOVEMBER 2026",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      50.7,
+      73.74,
+      52.5
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Silvio’s colour",
+    "hex": "#c62828",
+    "cmyk": [
+     0,
+     80,
+     80,
+     22
+    ]
+   }
+  },
+  "indi-card-front.svg": {
+   "person": "indi",
+   "side": "front",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      9.7,
+      33.19,
+      11.5
+     ]
+    },
+    {
+     "role": "event",
+     "text": "9 TO 12 NOVEMBER 2026",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      13.2,
+      39.11,
+      15
+     ]
+    },
+    {
+     "role": "name",
+     "text": "Indi Gupte",
+     "font": "Barlow Condensed",
+     "weight": 800,
+     "pt": 22.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      22.07,
+      36.68,
+      27.5
+     ]
+    },
+    {
+     "role": "role",
+     "text": "The message, outreach, and the factory of",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      30.75,
+      57.39,
+      32.5
+     ]
+    },
+    {
+     "role": "role",
+     "text": "examples",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      33.95,
+      19.45,
+      35.7
+     ]
+    },
+    {
+     "role": "event",
+     "text": "FIND US AT OUR STAND ON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      43.2,
+      42.08,
+      45
+     ]
+    },
+    {
+     "role": "event",
+     "text": "Thursday 12 November",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 13.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      48.79,
+      45.8,
+      52
+     ]
+    },
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 10,
+     "box": [
+      68.5,
+      12.0,
+      78.5,
+      22.0
+     ],
+     "clear": 5.0
+    }
+   ],
+   "accent": {
+    "name": "Indi’s colour",
+    "hex": "#f2b705",
+    "cmyk": [
+     0,
+     24,
+     98,
+     5
+    ]
+   }
+  },
+  "indi-card-back.svg": {
+   "person": "indi",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "qr",
+     "box": [
+      7,
+      15.19,
+      37.62,
+      45.81
+     ],
+     "modules": [
+      10.31,
+      18.5,
+      34.31,
+      42.5
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 12.15,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      12.0,
+      49.04,
+      15.0
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.15,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      49.98,
+      12.0,
+      64.59,
+      15.0
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Meet me",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      24.12,
+      53.81,
+      26.0
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Book a meeting",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      28.32,
+      62.65,
+      30.2
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Talk to my agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      32.52,
+      64.07,
+      34.4
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      38.75,
+      64.42,
+      40.5
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/indi/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      42.15,
+      56.19,
+      43.9
+     ]
+    },
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      47.2,
+      67.81,
+      49
+     ]
+    },
+    {
+     "role": "event",
+     "text": "9 TO 12 NOVEMBER 2026",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      50.7,
+      73.74,
+      52.5
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Indi’s colour",
+    "hex": "#f2b705",
+    "cmyk": [
+     0,
+     24,
+     98,
+     5
+    ]
+   }
+  }
+ }
+}

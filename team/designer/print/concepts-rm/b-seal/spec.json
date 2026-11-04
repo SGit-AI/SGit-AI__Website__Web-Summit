@@ -1,0 +1,1485 @@
+{
+ "concept": "b-seal",
+ "name": "B. Seal",
+ "rationale": "The seal leads, big, on the container black; a strip of the brand's own accents makes it pop; the white side puts the name and the QR together.",
+ "type": "Barlow Condensed (name, wordmark) + Geist (role, line, asks, URL), the face the brand's print files are lettered in",
+ "notes": [
+  "The seal is the supplied knockout mark, 22 mm across as drawn, on the container colour (#161615) with 11 mm clear on every side. Ask the printer for a rich black so the field does not print grey on matt stock.",
+  "The strip is the brand's accent set: green, the lighter green (front only, as the brand keeps it for dark surfaces), blue, and small shares of gold and red, which the brand says to use sparingly. 4 mm deep after trim, 3 mm bleed.",
+  "The person's own colour closes each strip (the last 12%, after a 0.8 mm gap) and is the 16 x 2 mm bar above the asks. On the dark front Dinis's near-black block barely shows, so his front strip reads as ending early; his back shows it clearly."
+ ],
+ "audience": "general",
+ "palette": [
+  {
+   "name": "Container",
+   "hex": "#161615",
+   "cmyk": [
+    0,
+    0,
+    5,
+    91
+   ]
+  },
+  {
+   "name": "Warm white (text on dark)",
+   "hex": "#F7F6F2",
+   "cmyk": [
+    0,
+    0,
+    2,
+    3
+   ]
+  },
+  {
+   "name": "Ink (text on light)",
+   "hex": "#0D0D0C",
+   "cmyk": [
+    0,
+    0,
+    8,
+    95
+   ]
+  },
+  {
+   "name": "White",
+   "hex": "#FFFFFF",
+   "cmyk": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "RiskMandate green",
+   "hex": "#1A7F5A",
+   "cmyk": [
+    80,
+    0,
+    29,
+    50
+   ]
+  },
+  {
+   "name": "Lighter green, dark only",
+   "hex": "#22C55E",
+   "cmyk": [
+    83,
+    0,
+    52,
+    23
+   ]
+  },
+  {
+   "name": "RiskMandate blue",
+   "hex": "#1D4ED8",
+   "cmyk": [
+    87,
+    64,
+    0,
+    15
+   ]
+  },
+  {
+   "name": "Gold, sparingly",
+   "hex": "#B45309",
+   "cmyk": [
+    0,
+    54,
+    95,
+    29
+   ]
+  },
+  {
+   "name": "Red, very sparingly",
+   "hex": "#C0392B",
+   "cmyk": [
+    0,
+    70,
+    78,
+    25
+   ]
+  }
+ ],
+ "files": {
+  "dinis-card-front.svg": {
+   "person": "dinis",
+   "side": "front",
+   "bg": "#161615",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "knockout",
+     "d": 22,
+     "box": [
+      34.5,
+      9.0,
+      56.5,
+      31.0
+     ],
+     "clear": 11.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 13.77,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      33.05,
+      42.2,
+      40.33,
+      45.6
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 13.77,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      41.4,
+      42.2,
+      57.95,
+      45.6
+     ]
+    },
+    {
+     "role": "line",
+     "text": "Ask me what my agents did today.",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      23.96,
+      48.92,
+      67.04,
+      50.8
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Dinis’s colour",
+    "hex": "#111111",
+    "cmyk": [
+     0,
+     0,
+     0,
+     93
+    ]
+   }
+  },
+  "dinis-card-back.svg": {
+   "person": "dinis",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Dinis Cruz",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 17.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      11.8,
+      29.48,
+      16
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Operator: the strategy, the senior meetings",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      19.42,
+      62.51,
+      21.3
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      7,
+      23.38,
+      37.62,
+      54.0
+     ],
+     "modules": [
+      10.31,
+      26.69,
+      34.31,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "asks",
+     "text": "Meet me",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      33.41,
+      53.81,
+      35.29
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Book a meeting",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      37.61,
+      62.65,
+      39.49
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Talk to my agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      41.81,
+      64.07,
+      43.69
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai/meet/dinis/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      48.94,
+      79.27,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Dinis’s colour",
+    "hex": "#111111",
+    "cmyk": [
+     0,
+     0,
+     0,
+     93
+    ]
+   }
+  },
+  "nimay-card-front.svg": {
+   "person": "nimay",
+   "side": "front",
+   "bg": "#161615",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "knockout",
+     "d": 22,
+     "box": [
+      34.5,
+      9.0,
+      56.5,
+      31.0
+     ],
+     "clear": 11.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 13.77,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      33.05,
+      42.2,
+      40.33,
+      45.6
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 13.77,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      41.4,
+      42.2,
+      57.95,
+      45.6
+     ]
+    },
+    {
+     "role": "line",
+     "text": "My agents have a policy. Do yours?",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      23.51,
+      48.92,
+      67.49,
+      50.8
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Nimay’s colour",
+    "hex": "#1f3a93",
+    "cmyk": [
+     79,
+     61,
+     0,
+     42
+    ]
+   }
+  },
+  "nimay-card-back.svg": {
+   "person": "nimay",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Nimay Parekh",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 17.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      11.8,
+      38.25,
+      16
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Business, positioning, outreach and investors",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      19.42,
+      64.83,
+      21.3
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      7,
+      23.38,
+      37.62,
+      54.0
+     ],
+     "modules": [
+      10.31,
+      26.69,
+      34.31,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "asks",
+     "text": "Meet me",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      33.41,
+      53.81,
+      35.29
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Book a meeting",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      37.61,
+      62.65,
+      39.49
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Talk to my agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      41.81,
+      64.07,
+      43.69
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai/meet/nimay/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      48.94,
+      80.77,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Nimay’s colour",
+    "hex": "#1f3a93",
+    "cmyk": [
+     79,
+     61,
+     0,
+     42
+    ]
+   }
+  },
+  "angelo-card-front.svg": {
+   "person": "angelo",
+   "side": "front",
+   "bg": "#161615",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "knockout",
+     "d": 22,
+     "box": [
+      34.5,
+      9.0,
+      56.5,
+      31.0
+     ],
+     "clear": 11.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 13.77,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      33.05,
+      42.2,
+      40.33,
+      45.6
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 13.77,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      41.4,
+      42.2,
+      57.95,
+      45.6
+     ]
+    },
+    {
+     "role": "line",
+     "text": "Ask me how I control my agents.",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      25.13,
+      48.92,
+      65.87,
+      50.8
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Angelo’s colour",
+    "hex": "#1e7b4f",
+    "cmyk": [
+     76,
+     0,
+     36,
+     52
+    ]
+   }
+  },
+  "angelo-card-back.svg": {
+   "person": "angelo",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Angelo",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 17.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      11.8,
+      22.74,
+      16
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Technical lead: the site, the agents, the behaviour policies",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      19.42,
+      80.61,
+      21.3
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      7,
+      23.38,
+      37.62,
+      54.0
+     ],
+     "modules": [
+      10.31,
+      26.69,
+      34.31,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "asks",
+     "text": "Meet me",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      33.41,
+      53.81,
+      35.29
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Book a meeting",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      37.61,
+      62.65,
+      39.49
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Talk to my agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      41.81,
+      64.07,
+      43.69
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai/meet/angelo/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      48.94,
+      81.6,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Angelo’s colour",
+    "hex": "#1e7b4f",
+    "cmyk": [
+     76,
+     0,
+     36,
+     52
+    ]
+   }
+  },
+  "jose-card-front.svg": {
+   "person": "jose",
+   "side": "front",
+   "bg": "#161615",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "knockout",
+     "d": 22,
+     "box": [
+      34.5,
+      9.0,
+      56.5,
+      31.0
+     ],
+     "clear": 11.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 13.77,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      33.05,
+      42.2,
+      40.33,
+      45.6
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 13.77,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      41.4,
+      42.2,
+      57.95,
+      45.6
+     ]
+    },
+    {
+     "role": "line",
+     "text": "I brought 6 agents. Ask me why.",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      25.51,
+      48.92,
+      65.49,
+      50.8
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Jose’s colour",
+    "hex": "#e86a1c",
+    "cmyk": [
+     0,
+     54,
+     88,
+     9
+    ]
+   }
+  },
+  "jose-card-back.svg": {
+   "person": "jose",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Jose Bota",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 17.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      11.8,
+      29.54,
+      16
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Technical: automation, messaging, the agents",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      19.42,
+      65.48,
+      21.3
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      7,
+      23.38,
+      37.62,
+      54.0
+     ],
+     "modules": [
+      10.31,
+      26.69,
+      34.31,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "asks",
+     "text": "Meet me",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      33.41,
+      53.81,
+      35.29
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Book a meeting",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      37.61,
+      62.65,
+      39.49
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Talk to my agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      41.81,
+      64.07,
+      43.69
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai/meet/jose/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      48.94,
+      78.6,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Jose’s colour",
+    "hex": "#e86a1c",
+    "cmyk": [
+     0,
+     54,
+     88,
+     9
+    ]
+   }
+  },
+  "vicky-card-front.svg": {
+   "person": "vicky",
+   "side": "front",
+   "bg": "#161615",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "knockout",
+     "d": 22,
+     "box": [
+      34.5,
+      9.0,
+      56.5,
+      31.0
+     ],
+     "clear": 11.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 13.77,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      33.05,
+      42.2,
+      40.33,
+      45.6
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 13.77,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      41.4,
+      42.2,
+      57.95,
+      45.6
+     ]
+    },
+    {
+     "role": "line",
+     "text": "Who’s on the other side of your agent?",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      21.24,
+      48.92,
+      69.76,
+      50.8
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Vicky’s colour",
+    "hex": "#6b3fa0",
+    "cmyk": [
+     33,
+     61,
+     0,
+     37
+    ]
+   }
+  },
+  "vicky-card-back.svg": {
+   "person": "vicky",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Vicky Wang",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 17.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      11.8,
+      33.4,
+      16
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Project Manager",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      19.42,
+      28.91,
+      21.3
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      7,
+      23.38,
+      37.62,
+      54.0
+     ],
+     "modules": [
+      10.31,
+      26.69,
+      34.31,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "asks",
+     "text": "Meet me",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      33.41,
+      53.81,
+      35.29
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Book a meeting",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      37.61,
+      62.65,
+      39.49
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Talk to my agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      41.81,
+      64.07,
+      43.69
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai/meet/vicky/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      48.94,
+      79.93,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Vicky’s colour",
+    "hex": "#6b3fa0",
+    "cmyk": [
+     33,
+     61,
+     0,
+     37
+    ]
+   }
+  },
+  "silvio-card-front.svg": {
+   "person": "silvio",
+   "side": "front",
+   "bg": "#161615",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "knockout",
+     "d": 22,
+     "box": [
+      34.5,
+      9.0,
+      56.5,
+      31.0
+     ],
+     "clear": 11.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 13.77,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      33.05,
+      42.2,
+      40.33,
+      45.6
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 13.77,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      41.4,
+      42.2,
+      57.95,
+      45.6
+     ]
+    },
+    {
+     "role": "line",
+     "text": "Agents with a mandate.",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      30.68,
+      48.92,
+      60.32,
+      50.8
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Silvio’s colour",
+    "hex": "#c62828",
+    "cmyk": [
+     0,
+     80,
+     80,
+     22
+    ]
+   }
+  },
+  "silvio-card-back.svg": {
+   "person": "silvio",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Silvio Switha",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 17.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      11.8,
+      35.76,
+      16
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Ideas, outreach, local, and video",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      19.42,
+      47.9,
+      21.3
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      7,
+      23.38,
+      37.62,
+      54.0
+     ],
+     "modules": [
+      10.31,
+      26.69,
+      34.31,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "asks",
+     "text": "Meet me",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      33.41,
+      53.81,
+      35.29
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Book a meeting",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      37.61,
+      62.65,
+      39.49
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Talk to my agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      41.81,
+      64.07,
+      43.69
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai/meet/silvio/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      48.94,
+      79.76,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Silvio’s colour",
+    "hex": "#c62828",
+    "cmyk": [
+     0,
+     80,
+     80,
+     22
+    ]
+   }
+  },
+  "indi-card-front.svg": {
+   "person": "indi",
+   "side": "front",
+   "bg": "#161615",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "knockout",
+     "d": 22,
+     "box": [
+      34.5,
+      9.0,
+      56.5,
+      31.0
+     ],
+     "clear": 11.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 13.77,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      33.05,
+      42.2,
+      40.33,
+      45.6
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 13.77,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      41.4,
+      42.2,
+      57.95,
+      45.6
+     ]
+    },
+    {
+     "role": "line",
+     "text": "Your agents. Your rules.",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      30.76,
+      48.92,
+      60.24,
+      50.8
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Indi’s colour",
+    "hex": "#f2b705",
+    "cmyk": [
+     0,
+     24,
+     98,
+     5
+    ]
+   }
+  },
+  "indi-card-back.svg": {
+   "person": "indi",
+   "side": "back",
+   "bg": "#FFFFFF",
+   "items": [
+    {
+     "role": "name",
+     "text": "Indi Gupte",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 17.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      11.8,
+      29.77,
+      16
+     ]
+    },
+    {
+     "role": "role",
+     "text": "The message, outreach, and the factory of examples",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#1A7F5A",
+     "bg": "#FFFFFF",
+     "box": [
+      8,
+      19.42,
+      73.83,
+      21.3
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      7,
+      23.38,
+      37.62,
+      54.0
+     ],
+     "modules": [
+      10.31,
+      26.69,
+      34.31,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "asks",
+     "text": "Meet me",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      33.41,
+      53.81,
+      35.29
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Book a meeting",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      37.61,
+      62.65,
+      39.49
+     ]
+    },
+    {
+     "role": "asks",
+     "text": "Talk to my agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 7.5,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      41.81,
+      64.07,
+      43.69
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai/meet/indi/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#FFFFFF",
+     "box": [
+      42.62,
+      48.94,
+      77.99,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Indi’s colour",
+    "hex": "#f2b705",
+    "cmyk": [
+     0,
+     24,
+     98,
+     5
+    ]
+   }
+  }
+ }
+}
