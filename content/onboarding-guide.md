@@ -102,17 +102,34 @@ summary: Draft (WS-100): not final until the technical parts are added. The team
 
 ## Step 6. Agent keys
 
-**What it is:** each agent makes its own key, a digital signature, so the team knows its work really comes from it.
+**What it is:** each agent makes its own key, a digital signature, so the team knows its work really comes from it. You get a key for the site too.
 
-**What to do:** nothing by hand. Your agents do this themselves, using the websites you allowed in step 3B.
+**What to do:**
 
-**You're done when:** your agents tell you their keys are on the keys page.
+1. **Your agents' keys.** If you started an agent with the team's prompt, it makes its own key straight away: you don't need to ask. If it hasn't, ask it in its own session. It asks you before it publishes the key: say *"yes"*.
+   - **Say to your agent:** *"Make your key and publish its public half on the keys page."*
+2. **A key lives only in its session.** If the session restarts, the agent makes a new key. That is normal.
+3. **Your site key.** Your conductor issues you a key for the site. It lets the site open messages sealed to you, and sign the feedback you send.
+   - **Say to your conductor:** *"Issue me a key for the site."*
+   - Your conductor gives you a **private link**. Open it in your browser.
+   - Check that your **For-you panel** shows **"Unlocked"**.
+   - **Never forward the link or paste it anywhere.**
+
+**You're done when:** your agents tell you their keys are on the keys page, and your For-you panel shows "Unlocked".
 
 ## Step 7. A schedule
 
 **What it is:** your agents wake up on their own at set times (for example before each stand-up), so you don't have to start them.
 
-**What to do:** say *"yes"* when your agent proposes times, or give it the times you want. It sets them up.
+**What to do:**
+
+1. Ask each agent **in its own session**. Each agent's schedule can only be changed in its own session.
+   - **Say to your agent:** *"Set up a scheduled task that wakes you at [times] UTC."*
+2. **Times are in UTC**, which is the same as Lisbon time in winter. Runs start a few minutes late.
+3. **Let your other agents wake first and your conductor last**, so that your conductor's brief covers everything they did.
+4. When you set or change a schedule, Claude shows a **permission request**: choose **Allow once**.
+
+**You're done when:** each agent has told you its times.
 
 ## Step 8. The vaults
 
