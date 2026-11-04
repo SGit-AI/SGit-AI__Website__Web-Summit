@@ -18,6 +18,10 @@ At Dinis's word, 4 November 2026: *"The ones he had are very conservative ... we
 - **Positive and clever, never scary.** The joke is on agents with too much reach, not on anyone's company.
 - **Printable as die-cut vinyl:** a flat design with a white outline border about 3 mm wide all round (the cut follows it), a plain transparent or white background, no tiny detail under 1 mm, generated at 2048 x 2048 px or larger.
 
+## What ProntaPrint Chiswick can print by Friday {#printer}
+
+From their own pages, read 4 November by the conductor's research: **"Stickers on a Sheet", kiss-cut, in circles, rectangles or squares only, on white vinyl (gloss or matt) or matt paper**, CMYK, one side; artwork as a **CMYK PDF, 3 mm bleed, 3 mm safe zone, 300 dpi, fonts outlined**. No custom die-cut, clear or holographic stock is listed there. So for this order every sticker is a **circle, square or rectangle**: a shaped idea (the pastel de nata, the sardine tin, the stamp) is art **inside** that shape, on a full-bleed coloured ground, not cut to its outline; the hologram (8) becomes a gold-and-green seal printed on white vinyl. Prompts: replace "thick white outline border ... transparent background" with "full-bleed square (or round) composition, background colour to the edges, important text and faces at least 5 mm inside the edge".
+
 ## The twelve {#set}
 
 | # | Sticker | The joke | Size, shape |
@@ -25,11 +29,11 @@ At Dinis's word, 4 November 2026: *"The ones he had are very conservative ... we
 | 1 | **The road-trip patch** | "RiskMandate · Web Summit Edition · Lisbon 2026": a retro travel patch, the bridge and the river, a little green robot in a convertible, holding a map labelled MANDATE | 76 mm round |
 | 2 | **Tram 28 ticket** | A yellow Lisbon tram ticket: "AGENT PASS · VALID WITHIN MANDATE ONLY" | 90 x 45 mm, ticket |
 | 3 | **Azulejo tile** | A blue-and-white Portuguese tile whose pattern is the gap bar: "CONTROL THE GAP" | 60 x 60 mm square |
-| 4 | **Pastel de nata** | A golden custard tart with a tiny green tick: "FULLY AUTHORISED" | 60 mm, die-cut to shape |
-| 5 | **Passport stamp** | An entry stamp: "MANDATE APPROVED · LIS · 09-12 NOV 2026" | 70 mm, uneven stamp edge |
-| 6 | **Road sign** | A triangular warning sign with a robot walking off a cliff edge: "AGENT CROSSING: KNOW THEIR REACH" | 70 mm triangle |
-| 7 | **The keys** | Our robot holding a huge bunch of keys, sweating: "WITH GREAT ACCESS COMES GREAT RESPONSIBILITY" | 76 mm, die-cut to shape |
-| 8 | **The hologram seal** | A shiny "VERIFIED MANDATE" seal (printed on holographic vinyl if the shop has it) | 50 mm round |
+| 4 | **Pastel de nata** | A golden custard tart with a tiny green tick: "FULLY AUTHORISED" | 60 mm round |
+| 5 | **Passport stamp** | An entry stamp: "MANDATE APPROVED · LIS · 09-12 NOV 2026" | 70 mm round |
+| 6 | **Road sign** | A triangular warning sign (drawn inside the square) with a robot walking off a cliff edge: "AGENT CROSSING: KNOW THEIR REACH" | 70 mm square |
+| 7 | **The keys** | Our robot holding a huge bunch of keys, sweating: "WITH GREAT ACCESS COMES GREAT RESPONSIBILITY" | 76 mm square |
+| 8 | **The seal** | A gold-and-green "VERIFIED MANDATE" seal (holographic vinyl is not on Chiswick's list) | 50 mm round |
 | 9 | **Surf's up** | The robot surfing a big Nazaré wave of data, calm: "RIDING THE WAVE, WITHIN MANDATE" | 76 x 60 mm |
 | 10 | **Hello, my name is** | The name-tag classic: "HELLO, MY AGENT'S MANDATE IS ____" with a blank to write on | 90 x 55 mm |
 | 11 | **Least privilege** | Retro "I ♥ LEAST PRIVILEGE" in the 1970s souvenir style | 76 x 40 mm |
