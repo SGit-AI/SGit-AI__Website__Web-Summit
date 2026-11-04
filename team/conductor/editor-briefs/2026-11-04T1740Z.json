@@ -1,0 +1,33 @@
+{
+  "number": 15,
+  "date": "2026-11-04",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "The 18:00 deck is ready; observability is live; Angelo asked for open points first, and got them",
+  "when": "Wednesday 4 November 2026, 17:40 UTC",
+  "by": "conductor@web-summit.dinis",
+  "headline": "46 agent commits since the 14:30. The deck for 18:00 is at /meetings/2026-11-04-1800/show/: 17 slides, open points first (Angelo asked for it in a signed message at 17:25, the second signed message from a person to my lane), then the day hour by hour, the agents, each person's work with screenshots, the 14:30 looked back, a first RACI, decisions and follow-ups. Jose's conductor put page views live on the site at 17:08 from the observability pack, with a visit signed by Jose's key verified. The merch is ordered. Your dashboard now opens with what only you can do (WS-151).",
+  "stats": [
+    {"n": "17", "label": "slides for the 18:00"},
+    {"n": "2", "label": "signed messages from people (Vicky, Angelo)"},
+    {"n": "5", "label": "lanes live for the site's page views"},
+    {"n": "ordered", "label": "the merch (Silvio, 17:09)"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "The RACI: accept the first cut, or mark it up in the meeting", "detail": "Slide 15. Eight workstreams, seven people, one A per row; you are A on six.", "options": ["accept", "mark up now", "later"], "recommend": "Mark up now; then every dashboard leads with its A and R rows."},
+    {"id": "2", "ask": "The newsroom: write access for Indi (WS-145) and Vicky, Indi's patch, the desks split", "detail": "Still open from the 14:30; only you can give the access.", "options": ["all yes", "access only", "not yet"], "recommend": "All yes."},
+    {"id": "3", "ask": "Observability: who sees per-person reads", "detail": "Jose's vault is private today; you asked for a public one for the team's reads.", "options": ["the team's reads public, others counts only", "keep private"], "recommend": "The team's reads public, counts only for everyone else."}
+  ],
+  "you_asked": [
+    {"at": "4 Nov, ~17:10", "said": "focus on the debrief for the next meeting that we have at 6 p.m. ... think of this as a slide deck ... very visual ... the RACI matrix ... follow-ups at the end", "done": "17 slides on the site, presented with arrow keys and F, all slides on the page; screenshots of everyone's work; a first RACI; built by a script so it can be rebuilt before every stand-up.", "where": "/meetings/2026-11-04-1800/show/", "status": "done"},
+    {"at": "4 Nov, ~16:50", "said": "create brief pack with all the technical details to replicate this by Jose's agents", "done": "/observability-pack/, eight pages; Jose's conductor built from it within the hour.", "where": "WS-37", "status": "done"}
+  ],
+  "team": [
+    {"id": "Jose's agents", "status": "active", "doing": "page views live: two vaults, five lanes, hourly drain"},
+    {"id": "Silvio's agents", "status": "active", "doing": "merch ordered, sleeve logo, Vicky's colours"},
+    {"id": "Vicky's agents", "status": "active", "doing": "researcher runs, newsroom vaults, the hot-leads rule for Nimay and Dinis to confirm"},
+    {"id": "Indi's agents", "status": "active", "doing": "synthetic users handed to her conductor; highlights on every show page"},
+    {"id": "dashboard and project-manager (Dinis)", "status": "done", "doing": "WS-151: Only you can do this, first"}
+  ],
+  "next": ["18:00: present the deck; decisions recorded in your words.", "20:27 wake: the RACI on every dashboard, as you mark it up."],
+  "sources": ["git log since 2026-11-04T14:36Z (dev)", "the conductor's inbox lane (Angelo's message, verified)", "board/ at 17:35", "/meetings/2026-11-04-1800/show/"]
+}

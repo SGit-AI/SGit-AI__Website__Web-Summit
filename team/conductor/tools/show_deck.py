@@ -71,6 +71,27 @@ S.append(('cover', f'''<div class="cover"><p class="kick">RiskMandate · Web Sum
 <p class="big">Wednesday 4 November 2026 · 18:00 Lisbon · <b>5 days</b> to opening night (Mon 9 Nov), our stand Thu 12 Nov</p>
 <div class="tiles"><div><b>{len(rows)}</b>agent commits since yesterday's 18:00</div><div><b>{rel}</b>releases</div><div><b>{active_agents}</b>agents at work today</div><div><b>{len(klist)} of 7</b>people with a site key</div></div>
 <p class="cap">Built from the repository at {datetime.datetime.now(datetime.timezone.utc):%H:%M} UTC. Nobody was asked what they did.</p></div>'''))
+# Angelo, signed message of 4 November 17:25: "a section at the top for urgent, late, logistics open points"
+def board():
+    out = []
+    for f in sorted(os.listdir('board')):
+        if not re.match(r'WS-\d+.*\.md$', f): continue
+        t = open(os.path.join('board', f)).read(); m = re.match(r'---\n(.*?)\n---', t, re.S)
+        if not m: continue
+        meta = {}
+        for l in m.group(1).split('\n'):
+            if ':' in l: k, v = l.split(':', 1); meta[k.strip()] = v.strip().strip('"')
+        meta['file'] = f; out.append(meta)
+    return out
+today = datetime.datetime.now(datetime.timezone.utc).day
+def dday(d):
+    m = re.search(r'(\d{1,2}) Nov', d or ''); return int(m.group(1)) if m and 'daily' not in (d or '') else None
+B = [x for x in board() if x.get('status') not in ('done',)]
+late = sorted([x for x in B if dday(x.get('due')) is not None and dday(x.get('due')) < today], key=lambda x: dday(x['due']))
+urgent = [x for x in B if dday(x.get('due')) == today]
+logi = [x for x in B if x.get('area') in ('merch', 'ops') or re.search(r'print|merch|shirt|hoodie|collect|travel|hotel|badge|ticket|booth|the stand(?![-\w])', x.get('title', ''), re.I)]
+def row(x, tone): return f'<li class="{tone}"><b>{E(x["id"])}</b> {E(x.get("title", "")[:95])} <span>{E(x.get("due", ""))} · {E(x.get("for", ""))} · {E(x.get("status", ""))}</span></li>'
+S.append(('Urgent, late and logistics', f'<h2>Open points first: urgent, late, logistics</h2><div class="three"><div><h3>Late ({len(late)})</h3><ul class="pts">' + ''.join(row(x, 'late') for x in late[:9]) + (f'<li class="more">and {len(late) - 9} more on the board</li>' if len(late) > 9 else '') + f'</ul></div><div><h3>Due today ({len(urgent)})</h3><ul class="pts">' + ''.join(row(x, 'today') for x in urgent[:9]) + (f'<li class="more">and {len(urgent) - 9} more</li>' if len(urgent) > 9 else '') + f'</ul></div><div><h3>Logistics ({len(logi)})</h3><ul class="pts">' + ''.join(row(x, 'logi') for x in logi[:9]) + '</ul></div></div><p class="cap">From the board at build time: open issues past their due date, due today, and logistics (merch, print, travel, the stand). At Angelo\'s ask (a signed message, 17:25).</p>'))
 S.append(('The day, hour by hour', f'<h2>Who worked when: commits per hour, per person (their agents), since yesterday 18:00</h2>{heat()}<p class="cap">The night is not empty: Indi\'s factory at 23:00, Jose\'s agents from 23:40 to 02:00, Dinis\'s journalist every two hours. Each square is an hour; darker is more.</p>'))
 S.append(('The agents', f'<h2>{active_agents} agents did work today; {akeys} keys on the keys page</h2>{dots()}<p class="cap">One dot per agent that committed under its own name since yesterday 18:00.</p>'))
 S.append(('Since the 14:30 stand-up', f'<h2>Since the 14:30 stand-up</h2>{bars(since, "Commits since 14:30, by person (their agents).")}' + items([
@@ -154,7 +175,7 @@ css = '''
 .deck .keys{display:grid;grid-template-columns:repeat(4,1fr);gap:1em;margin:1em 0}.deck .keys .k{border:2px dashed var(--line-2);border-radius:14px;padding:1em;opacity:.6}.deck .keys .k.on{border:2px solid var(--c);opacity:1}.deck .keys b{display:block;font-size:1.3em}.deck .keys span{color:var(--ink-2)}
 .deck .raci{border-collapse:collapse;font-size:.95em;width:100%}.deck .raci td,.deck .raci th{border:1px solid var(--line);padding:.35em .5em;text-align:center}.deck .raci td:first-child{text-align:left}
 .deck .rA{background:var(--accent);color:var(--accent-ink);font-weight:800}.deck .rR{background:var(--accent-soft);font-weight:700}.deck .rC{color:var(--ink)}.deck .rI{color:var(--ink-2)}
-.deck .decide li{font-size:1.1em;margin:.5em 0}
+.deck .three{display:grid;grid-template-columns:repeat(3,1fr);gap:1em;min-height:0;flex:1 1 0;overflow:hidden}.deck .three h3{margin:0 0 .3em;font-size:1em}.deck .pts{list-style:none;padding:0;margin:0;font-size:.72em}.deck .pts li{margin:.25em 0;padding-left:.5em;border-left:4px solid var(--line-2)}.deck .pts li.late{border-color:var(--warm)}.deck .pts li.today{border-color:var(--accent)}.deck .pts span{display:block;color:var(--ink-2)}.deck .decide li{font-size:1.1em;margin:.5em 0}
 .deck.presenting{position:fixed;inset:0;z-index:1000;background:var(--bg);padding:2vh 2vw;display:flex;align-items:center;justify-content:center}
 .deck.presenting>:not(.slide):not(.deck-bar){display:none}.deck.presenting .deck-bar{position:fixed;top:.6em;left:1em;z-index:2}.deck.presenting .slide{display:none;width:min(96vw,170vh);margin:0;font-size:clamp(14px,1.45vw,26px)}.deck.presenting .slide.current{display:flex}
 html.deck-on body{overflow:hidden}
