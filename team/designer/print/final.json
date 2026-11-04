@@ -8,7 +8,7 @@
   "garments": {
     "tee": {
       "count_each": 3,
-      "blank": "B&C #E190 (Exact 190), 100% cotton, the printer's blank; or an equivalent",
+      "blank": "TH Clothes Ankara, 190 g, 100% cotton (the printer's blank, from 3 November); hoodies TH Clothes",
       "method": "DTF or DTG, full colour (seven small runs, so no screen printing)",
       "front": {
         "width_mm": 250,
@@ -64,7 +64,7 @@
         "DOING?"
       ],
       "tagline": "Clarity. Control. Confidence.",
-      "stock_colour": "Black"
+      "stock_colour": "preto (black)"
     },
     {
       "id": "nimay",
@@ -76,7 +76,7 @@
         "DO YOURS?"
       ],
       "tagline": "Safe AI. Real Business.",
-      "stock_colour": "Royal Blue (or Cobalt Blue)"
+      "stock_colour": "azul real or azul eclipse"
     },
     {
       "id": "angelo",
@@ -88,7 +88,7 @@
         "MY AGENTS."
       ],
       "tagline": "From Access to Accountability.",
-      "stock_colour": "Kelly Green (or Bottle Green, darker)"
+      "stock_colour": "verde pastos or verde pântano"
     },
     {
       "id": "jose",
@@ -101,7 +101,7 @@
       "note": "The example said 'I brought 6 agents to Web Summit': nothing but RiskMandate goes on the merch, so it ends 'Ask me why.', as on Jose's card.",
       "signed_off": null,
       "tagline": "Ideas. Builders. Results.",
-      "stock_colour": "Orange"
+      "stock_colour": "laranja (orange)"
     },
     {
       "id": "vicky",
@@ -113,7 +113,7 @@
         "OF YOUR AGENT?"
       ],
       "tagline": "People. Policy. Protection.",
-      "stock_colour": "Radiant Purple (or Urban Purple)"
+      "stock_colour": "no true purple in Ankara: lavanda or bordô, for Dinis or Vicky to choose"
     },
     {
       "id": "silvio",
@@ -126,7 +126,7 @@
         "PERMISSION?"
       ],
       "tagline": "AI Agents. Your Rules.",
-      "stock_colour": "Red (or Fire Red)"
+      "stock_colour": "vermelho (red)"
     },
     {
       "id": "indi",
@@ -140,7 +140,7 @@
         "CONTROL THE GAP."
       ],
       "tagline": "Govern AI. Grow with Confidence.",
-      "stock_colour": "Gold (or Solar Yellow)"
+      "stock_colour": "amarelo (yellow)"
     }
   ],
   "items_signed_off": {
@@ -162,5 +162,5 @@
   "sizes": "Each person's sizes (3 T-shirts and a hoodie) are still to collect: Vicky and Silvio, from the seven, before the order (WS-48).",
   "style": "The print order's example picture (assets/print/riskmandate-pedido-tshirts.jpg), chosen by Dinis on 3 November 2026: the line in condensed capitals (Barlow Condensed Bold), a short divider, the wordmark RISK (light) MANDATE (bold), and a tagline per shirt; the back has the wordmark, 'Agents with a Mandate', the QR and 'Meet me / Book a meeting / Talk to my agent'.",
   "min_stroke_mm": 1.0,
-  "stock_colours_source": "The B&C #E190 colour list, https://www.clubmartin.com/Sustainable-Cotton-T-Shirt-E190-Roundneck/BCTU03T, read 3 November 2026: proposed, to confirm on the printer's own swatch."
+  "stock_colours_source": "The nearest TH Clothes Ankara colours, from the print order (content/print-order.md, procurement@web-summit.silvio), after the order moved to the second printer (3 November): to confirm on the printer's colour charts, which Silvio has."
 }

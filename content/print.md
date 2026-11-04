@@ -21,7 +21,7 @@ Relayed to the designer agent by procurement@web-summit.silvio: Dinis, 14:54 UTC
 
 | Item | How many | Print | Notes |
 |---|---|---|---|
-| **T-shirts** | 3 per person, 7 colours: 21 | front 250 mm wide, top 80 mm below the collar; back 220 mm wide, top 70 mm below the collar | DTF or DTG, full colour (seven small runs, so no screen printing). Blank: B&C #E190 (Exact 190), 100% cotton, the printer's blank; or an equivalent. |
+| **T-shirts** | 3 per person, 7 colours: 21 | front 250 mm wide, top 80 mm below the collar; back 220 mm wide, top 70 mm below the collar | DTF or DTG, full colour (seven small runs, so no screen printing). Blank: TH Clothes Ankara, 190 g, 100% cotton (the printer's blank, from 3 November); hoodies TH Clothes. |
 | **Hoodies** | 1 per person: 7 | chest: left chest (wearer's left), top 180 mm below the shoulder seam, 110 mm wide; back 300 mm wide, top 120 mm below the collar | DTF or DTG, in the person's colour. |
 | **Business cards** | 100 per person: 700 | 85 x 55 mm trim, 3 mm bleed all round, 3 mm safe area | 350 g/m2 or heavier, matt, both sides printed, square corners. |
 
@@ -50,7 +50,7 @@ Relayed to the designer agent by procurement@web-summit.silvio: Dinis, 14:54 UTC
 
 | | |
 |---|---|
-| **Colour** | #111111 (about C0 M0 Y0 K93); stock colour: **Black**; ink **white** |
+| **Colour** | #111111 (about C0 M0 Y0 K93); stock colour: **preto (black)**; ink **white** |
 | **T-shirt (T1), x 3** | front: "DO YOU KNOW WHAT YOUR AGENTS ARE DOING?", then RISK MANDATE and "Clarity. Control. Confidence."; back: RISK MANDATE, "Agents with a Mandate", the QR to https://web-summit.sgit.ai/meet/dinis/, "Meet me / Book a meeting / Talk to my agent" |
 | **Hoodie (H1), x 1** | chest: RISK MANDATE; back: "AGENTS UNDER POLICY", then the T-shirt's back |
 | **Card (C1), x 100** | "Ask me what my agents did today." |
@@ -66,7 +66,7 @@ Relayed to the designer agent by procurement@web-summit.silvio: Dinis, 14:54 UTC
 
 | | |
 |---|---|
-| **Colour** | #1f3a93 (about C79 M61 Y0 K42); stock colour: **Royal Blue (or Cobalt Blue)**; ink **white** |
+| **Colour** | #1f3a93 (about C79 M61 Y0 K42); stock colour: **azul real or azul eclipse**; ink **white** |
 | **T-shirt (T2), x 3** | front: "MY AGENTS HAVE A POLICY. DO YOURS?", then RISK MANDATE and "Safe AI. Real Business."; back: RISK MANDATE, "Agents with a Mandate", the QR to https://web-summit.sgit.ai/meet/nimay/, "Meet me / Book a meeting / Talk to my agent" |
 | **Hoodie (H1), x 1** | chest: RISK MANDATE; back: "AGENTS UNDER POLICY", then the T-shirt's back |
 | **Card (C1), x 100** | "My agents have a policy. Do yours?" |
@@ -82,7 +82,7 @@ Relayed to the designer agent by procurement@web-summit.silvio: Dinis, 14:54 UTC
 
 | | |
 |---|---|
-| **Colour** | #1e7b4f (about C76 M0 Y36 K52); stock colour: **Kelly Green (or Bottle Green, darker)**; ink **white** |
+| **Colour** | #1e7b4f (about C76 M0 Y36 K52); stock colour: **verde pastos or verde pântano**; ink **white** |
 | **T-shirt (T4), x 3** | front: "ASK ME HOW I CONTROL MY AGENTS.", then RISK MANDATE and "From Access to Accountability."; back: RISK MANDATE, "Agents with a Mandate", the QR to https://web-summit.sgit.ai/meet/angelo/, "Meet me / Book a meeting / Talk to my agent" |
 | **Hoodie (H1), x 1** | chest: RISK MANDATE; back: "AGENTS UNDER POLICY", then the T-shirt's back |
 | **Card (C1), x 100** | "Ask me how I control my agents." |
@@ -98,7 +98,7 @@ Relayed to the designer agent by procurement@web-summit.silvio: Dinis, 14:54 UTC
 
 | | |
 |---|---|
-| **Colour** | #e86a1c (about C0 M54 Y88 K9); stock colour: **Orange**; ink **white** |
+| **Colour** | #e86a1c (about C0 M54 Y88 K9); stock colour: **laranja (orange)**; ink **white** |
 | **T-shirt (T6), x 3** | front: "I BROUGHT 6 AGENTS. ASK ME WHY.", then RISK MANDATE and "Ideas. Builders. Results."; back: RISK MANDATE, "Agents with a Mandate", the QR to https://web-summit.sgit.ai/meet/jose/, "Meet me / Book a meeting / Talk to my agent" |
 | **Hoodie (H1), x 1** | chest: RISK MANDATE; back: "AGENTS UNDER POLICY", then the T-shirt's back |
 | **Card (C1), x 100** | "I brought 6 agents. Ask me why." |
@@ -115,7 +115,7 @@ Relayed to the designer agent by procurement@web-summit.silvio: Dinis, 14:54 UTC
 
 | | |
 |---|---|
-| **Colour** | #6b3fa0 (about C33 M61 Y0 K37); stock colour: **Radiant Purple (or Urban Purple)**; ink **white** |
+| **Colour** | #6b3fa0 (about C33 M61 Y0 K37); stock colour: **no true purple in Ankara: lavanda or bordô, for Dinis or Vicky to choose**; ink **white** |
 | **T-shirt (T3), x 3** | front: "WHO'S ON THE OTHER SIDE OF YOUR AGENT?", then RISK MANDATE and "People. Policy. Protection."; back: RISK MANDATE, "Agents with a Mandate", the QR to https://web-summit.sgit.ai/meet/vicky/, "Meet me / Book a meeting / Talk to my agent" |
 | **Hoodie (H1), x 1** | chest: RISK MANDATE; back: "AGENTS UNDER POLICY", then the T-shirt's back |
 | **Card (C1), x 100** | "Who's on the other side of your agent?" |
@@ -131,7 +131,7 @@ Relayed to the designer agent by procurement@web-summit.silvio: Dinis, 14:54 UTC
 
 | | |
 |---|---|
-| **Colour** | #c62828 (about C0 M80 Y80 K22); stock colour: **Red (or Fire Red)**; ink **white** |
+| **Colour** | #c62828 (about C0 M80 Y80 K22); stock colour: **vermelho (red)**; ink **white** |
 | **T-shirt (T9), x 3** | front: "YOUR AI HAS ACCESS. DOES IT HAVE PERMISSION?", then RISK MANDATE and "AI Agents. Your Rules."; back: RISK MANDATE, "Agents with a Mandate", the QR to https://web-summit.sgit.ai/meet/silvio/, "Meet me / Book a meeting / Talk to my agent" |
 | **Hoodie (H1), x 1** | chest: RISK MANDATE; back: "AGENTS UNDER POLICY", then the T-shirt's back |
 | **Card (C1), x 100** | "Agents with a mandate." |
@@ -147,7 +147,7 @@ Relayed to the designer agent by procurement@web-summit.silvio: Dinis, 14:54 UTC
 
 | | |
 |---|---|
-| **Colour** | #f2b705 (about C0 M24 Y98 K5); stock colour: **Gold (or Solar Yellow)**; ink **black** |
+| **Colour** | #f2b705 (about C0 M24 Y98 K5); stock colour: **amarelo (yellow)**; ink **black** |
 | **T-shirt (T8), x 3** | front: "KNOW THEIR REACH. DEFINE THEIR MANDATE. CONTROL THE GAP.", then RISK MANDATE and "Govern AI. Grow with Confidence."; back: RISK MANDATE, "Agents with a Mandate", the QR to https://web-summit.sgit.ai/meet/indi/, "Meet me / Book a meeting / Talk to my agent" |
 | **Hoodie (H1), x 1** | chest: RISK MANDATE; back: "AGENTS UNDER POLICY", then the T-shirt's back |
 | **Card (C1), x 100** | "Your agents. Your rules." |
