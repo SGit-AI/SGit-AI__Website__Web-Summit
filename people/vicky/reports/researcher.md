@@ -25,3 +25,11 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - 21 captures went into vault 41j3e9s9, one file per source, captures/2026-11-04-<short-name>.md: the 22 captures of the 12:55 and 15:46 runs, the two of websummit.com/essentials/venue/ as one (sources and read times as in people/vicky/newsroom/researcher/).
 - Audited before the push: vault-audit.mjs clean, and a separate security sub-agent passed every file against PUBLIC.md rules 1 to 4; the line is in the vault's PUBLIC.md audit table. sgit status: in sync with the remote.
 - Not done: the bodies are the earlier runs' summaries; exact quotes were not added, as no source was re-read this run (vault 41j3e9s9, captures/).
+
+## Wed 4 Nov 2026, 19:30 UTC run (the summit, Portugal, announcements)
+
+- 4 captures went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- The summit: Metro de Lisboa's Web Summit Transport Pass, 3 days 23 euros, 5 days 31.50 euros, sold only at the airport accreditation area, 7 to 10 November (metrolisboa.pt); Metro adds Red and Green line service and station surveillance for about 75,000 participants (executivedigest.sapo.pt, 4 Nov). The two disagree on a one-day online pass; both quoted, not resolved.
+- Portugal: Técnico (ULisboa) at stand E272, Pavilion 2, 10 to 12 November, with robots, a VR demo and six spin-offs (tecnico.ulisboa.pt, 29 Oct).
+- Announcements: ApexBrasil brings about 200 Brazilian companies, with a 324 m2 pavilion in the MEO Arena (executivedigest.sapo.pt, 4 Nov).
+- Nothing new since the earlier runs on websummit.com/blog or portugalstartupnews.com; no exact quotes added yet to the 21 earlier captures.
