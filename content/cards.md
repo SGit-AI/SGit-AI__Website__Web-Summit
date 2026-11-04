@@ -1,11 +1,41 @@
 ---
 title: The business cards, to look at
-summary: The RiskMandate business card designs for Web Summit Lisbon, one card at a time and full width, made to be seen on a phone; round 3 (the revamp after the user tests), the six round-2 designs and the round-1 card B.
+summary: The RiskMandate business cards for Web Summit Lisbon, one at a time and full width for a phone: the three audience cards we are printing (Executives, GRC, Security; no names), then the earlier rounds.
 path: cards/index.html
 ---
 The RiskMandate business cards for Web Summit Lisbon, 85 x 55 mm, shown one at a time so they read on a phone. Each shows Dinis's card, front then back; every design has a sheet with all seven. Every QR goes to the person's own meet page. The details, the checks and the sources of every line: [the design page](../design/index.html#cards-r2).
 
 **Vote** for one (or one per audience): tell Indi or Dinis, or have your agent add `"card": "R2-1"` to `"R2-6"` to your pick, as on [the design page](../design/index.html#vote).
+
+## The cards we are printing: three, one per audience {#r4}
+
+No names: about 200 of each card, one per kind of person we meet at Web Summit. The colour tells us which card to hand over; the audience is never printed. Every QR goes to [the team page](../meet/index.html). [All three on one landscape page (PDF)](../team/designer/print/concepts-rm/cards-overview-round4.pdf).
+
+### Executives: black {#r4-exec}
+
+![Executives, front](../team/designer/print/concepts-rm/round4/1-executives/team-card-front.png)
+
+![Executives, back](../team/designer/print/concepts-rm/round4/1-executives/team-card-back.png)
+
+### GRC, governance, risk and compliance: green {#r4-grc}
+
+![GRC, front](../team/designer/print/concepts-rm/round4/2-grc/team-card-front.png)
+
+![GRC, back](../team/designer/print/concepts-rm/round4/2-grc/team-card-back.png)
+
+### Security professionals: blue {#r4-sec}
+
+![Security, front](../team/designer/print/concepts-rm/round4/3-security/team-card-front.png)
+
+![Security, back](../team/designer/print/concepts-rm/round4/3-security/team-card-back.png)
+
+## Laptop stickers {#stickers}
+
+Four stickers in the brand's colours: corporate, two infographics (the gap; know, define, control) and a cartoon. [All four on a laptop lid, and the print proof (PDF)](../team/designer/print/stickers/stickers-overview.pdf) · [the gap, moving, for screens](../team/designer/print/stickers/gap-animated.svg).
+
+![The four stickers at real size on a laptop lid](../team/designer/print/stickers/stickers-overview-p1.png)
+
+## Earlier rounds {#earlier}
 
 **All the designs on two landscape pages, in a grid:** [the overview PDF](../team/designer/print/concepts-rm/cards-overview-indi.pdf) (A4, Indi's cards; [page 1](../team/designer/print/concepts-rm/cards-overview-indi-p1.png) · [page 2](../team/designer/print/concepts-rm/cards-overview-indi-p2.png)).
 
