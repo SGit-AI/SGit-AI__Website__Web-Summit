@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.185",
+    "date": "2026-11-04",
+    "what": "Jose's card, the five questions from his brief answered in his own words (WS-08)",
+    "by": "conductor@web-summit.jose",
+    "from": "862076f56"
+  },
+  {
     "version": "v0.2.184",
     "date": "2026-11-04",
     "what": "the append lane from Dinis's browser to the conductor, signed with his key and verified on drain (WS-114, WS-119)",
