@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.258",
+    "date": "2026-11-04",
+    "what": "WS-100 guide: the domains from inside the first session, before any prompt",
+    "by": "conductor@web-summit.vicky",
+    "from": "545a0381a"
+  },
+  {
     "version": "v0.2.257",
     "date": "2026-11-04",
     "what": "WS-100 guide: Vicky's review (five changes)",
