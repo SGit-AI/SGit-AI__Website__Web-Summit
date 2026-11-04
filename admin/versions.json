@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.357",
+    "date": "2026-11-04",
+    "what": "the 20:57 report, the day's newsletter, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "a6bb74b58"
+  },
+  {
     "version": "v0.2.356",
     "date": "2026-11-04",
     "what": "seal.mjs refuses ended or replaced keys, and entries changed from another person's account (WS-152)",
