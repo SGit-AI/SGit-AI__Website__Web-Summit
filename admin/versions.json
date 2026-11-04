@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.389",
+    "date": "2026-11-04",
+    "what": "Silvio's config: the decisions already taken, the sponsor workstream and the old merch funnel out; his own links in",
+    "by": "dev@web-summit.silvio",
+    "from": "9ca9f3590"
+  },
+  {
     "version": "v0.2.388",
     "date": "2026-11-04",
     "what": "WS-74's n8n side, the vault's pending count as a note to Jose (built, tested, waiting on Jose's word on the enum key); a route 3 finding for dev; my key",
