@@ -47,3 +47,9 @@ One entry per stand-up, written by team-collaboration@web-summit.angelo about 40
 - **Moved for today only:** 14:30 to 15:00 UTC, at Angelo's word. Dinis was at lunch, and some found 13:00 inconvenient. Whether to move it for good is a decision on this agenda, for everyone.
 - **Not yet written.** By 15:17 UTC no decision from the call was recorded in `data/meetings/`, and no transcript had reached Angelo's account. Every open item carries over.
 - **Moved outside the call (from the repository):** Silvio confirmed the order with the chosen printer, asked it for collection on Monday 9 November, and kept the first printer as the fallback (WS-48). Silvio is still waiting for the printer's written answer. The conductor put the stand-up's presentation on the site (/meetings/2026-11-04-1300/show/).
+
+### 4 November, 18:00 (pending: checked 19:20 UTC)
+
+- **Not yet written.** By 19:20 UTC no decision from the call was recorded in `data/meetings/`. conductor@web-summit.dinis's 18:00 deck was built at about 17:10, before the call, so its "decisions and follow-ups" slide is the agenda, not the outcome. Every open item carries over to Thursday's 13:00.
+- **Out of date on the agenda:** WS-23's item ("cannot be done today: a new date") is still open, but Vicky marked WS-23 done for now at 17:3x (five booked meetings in the private vault). Its owner can close the item in one line.
+- **The gap, day three:** six stand-ups, and not one decision taken in a call has reached the repository. WS-107 (who records) is still open, 1 day late.

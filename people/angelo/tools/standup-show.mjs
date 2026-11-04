@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 // Prototype (team-collaboration@web-summit.angelo): the "decide and unblock" half of a stand-up show,
 // built only from data/meetings/ and board/. Same CSS vocabulary as team/conductor/shows/*.show.
-//   node people/angelo/tools/standup-show.mjs . <meeting id> [now ISO] > team/conductor/shows/<meeting id>.part.show
+//   node people/angelo/tools/standup-show.mjs . <meeting id> [now ISO]          one-page fragment (.show)
+//   node people/angelo/tools/standup-show.mjs --deck . <meeting id> [now ISO]   JSON [[title, slide body], ...] for
+//     team/conductor/tools/show_deck.py's S list (deck.js, 16:9): S += json.load(...); the first pair's body carries the CSS
 // Read-only: it writes to stdout and changes nothing. Proposal and options: board/WS-150.
 import fs from 'node:fs'
 import path from 'node:path'
 
-const [ROOT, MEETING, NOW_ARG] = process.argv.slice(2)
+const DECK = process.argv.includes('--deck')
+const [ROOT, MEETING, NOW_ARG] = process.argv.slice(2).filter(a => a !== '--deck')
 const NOW = new Date(NOW_ARG || Date.now())
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
 const MDIR = path.join(ROOT, 'data/meetings')
@@ -59,6 +62,25 @@ const css = `<style>.show .cards{display:grid;grid-template-columns:repeat(auto-
 .show .recline{font-size:14px;color:var(--ink-2);margin:4px 0 0}.show .miss{color:#b91c1c;font-size:15px;margin:4px 0}
 .show .big{font:800 clamp(48px,9vw,96px)/1 Georgia,serif;color:var(--accent)}</style>`
 
+
+if (DECK) {
+  // slides for conductor@web-summit.dinis's deck: the parts its deck does not have yet (WS-150). Its slide 2
+  // already lists late, due-today and logistics issues, so this gives decisions and who they wait on.
+  const dcss = `<style>.deck .dcards{display:grid;grid-template-columns:1fr 1fr;gap:.7em;flex:1 1 0;min-height:0}
+.deck .dcard{border:1px solid var(--line);border-radius:12px;padding:.6em .8em;font-size:.72em;overflow:hidden;background:var(--surface-2,var(--surface))}
+.deck .dcard b{display:block;font:700 1.15em/1.25 Georgia,serif;margin:.35em 0}.deck .dmeta{display:flex;flex-wrap:wrap;gap:.35em}
+.deck .who{color:#fff;border-radius:99px;padding:.05em .7em;font:600 .85em/1.6 ui-monospace,monospace}
+.deck .age,.deck .due{font:600 .85em/1.6 ui-monospace,monospace;border:1px solid var(--line);border-radius:99px;padding:0 .6em;color:var(--ink-2)}
+.deck .age.old,.deck .due.late{background:#b91c1c;border-color:#b91c1c;color:#fff}.deck .due.now{background:#a16207;border-color:#a16207;color:#fff}
+.deck .dcard ol{margin:.2em 0 0 1.1em;padding:0}.deck .dcard .rec{color:var(--ink-2);margin:.3em 0 0}.deck .dcard .miss{color:#b91c1c}</style>`
+  const dcard = x => `<div class="dcard"><div class="dmeta">${who(x).map(p => `<span class="who" style="background:${COL[p] || '#6b7280'}">${esc(NAMES[p] || p)}</span>`).join('')}${age(carried(x))}${due(x)}</div><b>${esc(x.title)}</b>${x.options ? `<ol>${x.options.slice(0, 3).map(o => `<li>${esc(o.slice(0, 90))}</li>`).join('')}</ol>` : '<p class="miss">No options yet.</p>'}${x.recommend ? `<p class="rec">Recommended: ${esc(x.recommend.slice(0, 120))}</p>` : ''}</div>`
+  const slides = []
+  slides.push(['Decide now', `${dcss}<div class="kick">Decide · ${decisions.length} waiting, ${oldest.length} carried 3× or more</div><h2>The four that cannot wait</h2><div class="dcards">${decisions.slice(0, 4).map(dcard).join('')}</div><p class="cap">Most urgent first (a date this week), then the oldest. Say each as “decided: &lt;item&gt;: &lt;words&gt;”. From data/meetings/ and board/ (team-collaboration@web-summit.angelo, WS-150).</p>`])
+  slides.push(['Who is waited on', `<div class="kick">Who is waited on</div><h2>${open.length} open items, by the person they wait for</h2><div class="bars">${load.map(r => `<div class="b"><span>${esc(NAMES[r.p])}</span><i style="width:${Math.round(100 * r.n / max)}%;background:${COL[r.p]}"></i><b>${r.n}</b></div>`).join('')}</div><p class="cap">${load[0] ? `${esc(NAMES[load[0].p])} holds ${load[0].n} of ${open.length}; ${oldest.length} decisions have been carried three times or more. Who takes one off them today?` : ''}</p>`])
+  if (settled.length) slides.push(['Settled since the last stand-up', `<div class="kick">Settled</div><h2>Decided since the last stand-up</h2><ul>${settled.map(x => `<li><b>${esc(x.title)}</b>: “${esc(x.decided.said)}” (${esc(NAMES[x.decided.by] || x.decided.by)})</li>`).join('')}</ul>`])
+  process.stdout.write(JSON.stringify(slides, null, 1) + '\n')
+  process.exit(0)
+}
 const s = []
 s.push(`<section><div class="k">Decide · ${esc(MEETING)}</div><h1>${decisions.length} decisions waiting, <em>${oldest.length}</em> carried three times or more</h1><p class="sub">Built from data/meetings/ and board/ at ${NOW.toISOString().slice(11, 16)} UTC. Most urgent first: a deadline this week, then the oldest.</p><div class="tiles"><div><b>${open.length}</b>open agenda items</div><div><b>${decisions.length}</b>decisions</div><div><b>${settled.length}</b>settled since the last stand-up</div><div><b>${nOpt.length}</b>decisions with no options yet</div></div></section>`)
 s.push(`<section><div class="k">Decide now</div><h2>The five that cannot wait</h2><div class="cards">${decisions.slice(0, 5).map(card).join('')}</div><p class="sub">Say each as <b>“decided: &lt;item&gt;: &lt;words&gt;”</b> so the record carries it.</p></section>`)
