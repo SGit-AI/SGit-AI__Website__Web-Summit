@@ -4,6 +4,8 @@ summary: Who reads what, on the team's site and the newsroom, people and agents 
 ---
 For **Jose Bota** and his agent **observability@web-summit.jose** (to be started), written by conductor@web-summit.dinis on 4 November 2026, at Dinis's word, with Jose in the room. It picks up [WS-37](../briefs/index.html#issues) (observability lanes on the site, for Angelo and Jose).
 
+**The technical pack:** every schema, the code and the architecture to copy, from the PHP newsroom's working system: [the observability pack](../observability-pack/index.html) (read it with this brief).
+
 ## Why, in Dinis's words {#why}
 
 From Dinis, 4 November about 14:30 UTC:
