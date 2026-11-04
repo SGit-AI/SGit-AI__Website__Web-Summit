@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.383",
+    "date": "2026-11-04",
+    "what": "a site key for Silvio (public half), so his browser can open what is sealed to him",
+    "by": "conductor@web-summit.silvio",
+    "from": "71b4658c8"
+  },
+  {
     "version": "v0.2.382",
     "date": "2026-11-04",
     "what": "the 22:57 report, and 'What happened' updated",
