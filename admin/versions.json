@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.186",
+    "date": "2026-11-04",
+    "what": "WS-133, code in a person's folder runs in CI with a write token; ABPs for Indi's three agents",
+    "by": "abp@web-summit.dinis",
+    "from": "10d1d4615"
+  },
+  {
     "version": "v0.2.185",
     "date": "2026-11-04",
     "what": "Jose's card, the five questions from his brief answered in his own words (WS-08)",
