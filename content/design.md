@@ -126,7 +126,7 @@ Decided by Dinis: the headline, "Seven of us. Our agents. One RiskMandate.", and
 
 ## Open questions {#open}
 
-- **RiskMandate only** (Dinis, 2 November): no sponsor, no other brand, no Web Summit name or logo on the merch. The final files: [the print files](../print/index.html). For the business cards, Dinis asked on 4 November for Web Summit and our stand day to be named ([round 2](#cards-r2)): the name in plain text, still no Web Summit logo and no other brand.
+- **RiskMandate only** (Dinis, 2 November): no sponsor, no other brand, no Web Summit name or logo on the merch. **Changed for the business cards** (Dinis, 4 November, 22:40): the Web Summit words stay on the cards, and so does "Meet us between Booths A1-30", which the organisers have confirmed ([WS-155](../briefs/index.html#issues)). The final files: [the print files](../print/index.html). For the business cards, Dinis asked on 4 November for Web Summit and our stand day to be named ([round 2](#cards-r2)): the name in plain text, still no Web Summit logo and no other brand.
 - **The stand location:** between Booths A1-30, on Thursday 12 November (Indi, 4 November); on the business cards (round 4).
 - **Sizes and colours** per person (on the board).
 - **Booking and "talk to my agent"** on the meet pages: links to come (on the board).
