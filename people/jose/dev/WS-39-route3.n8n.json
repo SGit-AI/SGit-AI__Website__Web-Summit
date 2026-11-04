@@ -1,0 +1,168 @@
+{
+  "name": "WS-39 route 3: the journalist's report to Jose on WhatsApp",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "5,35 7-22 * * *"
+            }
+          ]
+        }
+      },
+      "id": "every-30-minutes-07-05-to-22-35-utc",
+      "name": "Every 30 minutes, 07:05 to 22:35 UTC",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Settings: fill these in n8n, never in the repository (WS-39-findings.md, \"To fill in n8n\").\nconst s = $getWorkflowStaticData('global')\nreturn [{ json: {\n  since: s.lastId || '',      // the last report sent; kept by \"Remember the report\"\n  look: 'three',              // 'three', 'line' or 'full' (people/jose/dev/README.md)\n  mode: 'text',               // 'text' (needs Jose to have messaged the number in the last 24 h) or 'template'\n  to: '',                     // FILL IN: Jose's own WhatsApp number, digits with country code, only Jose\n  phone_number_id: '',        // FILL IN: the business number's Phone number ID (Meta app, WhatsApp, API setup)\n  graph_version: '',          // FILL IN: the Graph API version your Meta app uses, e.g. v23.0\n  template_name: '',          // FILL IN for mode 'template': an approved template with one body parameter {{1}}\n  template_language: '',      // FILL IN for mode 'template': its language code, e.g. en\n} }]"
+      },
+      "id": "settings",
+      "name": "Settings",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// report-draft.n8n.js: report-draft.mjs for an n8n Code node, when Execute Command is off (WS-39).\n// Paste the whole file into a Code node (JavaScript, mode \"Run Once for All Items\"). Network only, no fs.\n// Input (optional), from the item before it: { \"since\": \"<id of the last draft sent>\", \"look\": \"full\" | \"three\" | \"line\" }\n// Output: one item, the same JSON as `node report-draft.mjs` (id, created_at, source_url, text_whatsapp, text_slack, ...),\n// or { new: false, id } when the newest report is `since`. It drafts only: the next node sends, if Jose's flow says so.\n// Kept equal to report-draft.mjs by report-draft.test.mjs: change both, then run the test.\n\nconst SITE = 'https://web-summit.sgit.ai/'\nconst MAX = 700, WA_MAX = 1000\nconst STANDUPS = '13:00 and 18:00' // data/channels.json, \"Stand-ups, 13:00 and 18:00\"\nconst DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']\n\n// n8n's own HTTP helper when the Code node has it, otherwise the runtime's fetch\nconst helpers = (typeof this !== 'undefined' && this && this.helpers) || {}\nconst get = async url => {\n    if (typeof helpers.httpRequest === 'function') return String(await helpers.httpRequest({ method: 'GET', url, json: false }))\n    const r = await fetch(url)\n    if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`)\n    return r.text()\n}\n\nconst parseIndex = md => [...md.matchAll(/^- \\[(.+?)\\]\\(([^)/]+)\\/index\\.html\\)(?::\\s*(.*))?$/gm)].map(m => ({ title: m[1], slug: m[2], summary: m[3] || '' }))\nconst points = md => {\n    const sec = md.split(/^## /m).find(s => /^What happened/.test(s)) || ''\n    return [...sec.matchAll(/^\\d+\\.\\s+\\*\\*(.+?)\\*\\*/gm)].map(m => m[1].trim())\n}\nconst when = slug => {\n    const [, y, mo, d, hh, mm] = slug.match(/^(\\d{4})-(\\d{2})-(\\d{2})-(\\d{2})(\\d{2})$/) || []\n    if (!y) return { day: '', time: '' }\n    const dt = new Date(Date.UTC(+y, +mo - 1, +d))\n    return { day: `${DAYS[dt.getUTCDay()]} ${+d} ${MONTHS[+mo - 1]}`, time: `${hh}:${mm}` }\n}\nconst lead = p => p.replace(/[.:;,]+$/, '')\n\nconst draftThree = (item, reportMd = '') => {\n    const link = `${SITE}reports/${item.slug}/`, { day, time } = when(item.slug), ps = points(reportMd)\n    const lines = [`*RiskMandate team · ${time} report*`, `${day} · stand-ups ${STANDUPS}`, '', ...ps.slice(0, 3).map(p => `▸ *${lead(p)}*`), '']\n    lines.push(ps.length > 3 ? `+${ps.length - 3} more: ${link}` : link)\n    return { new: true, slug: item.slug, title: item.title, link, look: 'three', text: lines.join('\\n') }\n}\nconst draftLine = (item, reportMd = '') => {\n    const link = `${SITE}reports/${item.slug}/`, { time } = when(item.slug), ps = points(reportMd).map(lead)\n    let body = ''\n    for (const p of ps) { const next = body ? `${body}; ${p.replace(/^(The|A|An) /, w => w.toLowerCase())}` : p; if (next.length > 160) break; body = next }\n    return { new: true, slug: item.slug, title: item.title, link, look: 'line', text: `*${time}* · ${body || item.summary}.\\n${link}` }\n}\nconst draft = (item, reportMd = '') => {\n    const link = `${SITE}reports/${item.slug}/`\n    const head = [`*${item.title}*`, item.summary].filter(Boolean).join('\\n')\n    let text = head, used = 0\n    for (const p of points(reportMd)) {\n        const next = `${text}${used ? '' : '\\n'}\\n• ${p}`\n        if ((next + '\\n\\n' + link).length > MAX) break\n        text = next; used++\n    }\n    return { new: true, slug: item.slug, title: item.title, link, text: `${text}\\n\\n${link}` }\n}\n\nconst slackEscape = t => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')\nconst forWhatsApp = (text, link) => {\n    if (text.length <= WA_MAX) return text\n    const lines = text.split('\\n').filter(l => !l.includes(link)), tail = `\\n\\n${link}`\n    while (lines.length && (lines.join('\\n') + tail).length > WA_MAX) lines.pop()\n    return (lines.join('\\n').trimEnd() + tail).slice(0, WA_MAX)\n}\nconst forSlack = (text, link) => slackEscape(text)\n    .replace(/^\\+(\\d+) more: (\\S+)$/m, (_, n, u) => `<${u}|+${n} more in the full report>`)\n    .replace(new RegExp(`(^|\\\\s)${link.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')}(?=\\\\s|$)`, 'g'), (_, sp) => `${sp}<${link}|Read the report>`)\nconst enrich = (d, now = new Date()) => {\n    const text_whatsapp = forWhatsApp(d.text, d.link)\n    return { id: d.slug, created_at: now.toISOString(), source_url: `${SITE}reports/${d.slug}/index.md`, ...d, text_whatsapp, text_slack: forSlack(text_whatsapp, d.link) }\n}\n\nconst input = (typeof $input !== 'undefined' && $input.first() && $input.first().json) || {}\nconst items = parseIndex(await get(SITE + 'reports/index.md'))\nconst newest = items.find(x => /^\\d{4}-\\d{2}-\\d{2}-\\d{4}$/.test(x.slug)) // the two-hourly reports, not the newsletter\nif (!newest) throw new Error('report-draft: no report found in the list')\nif (input.since === newest.slug) return [{ json: { new: false, id: newest.slug, slug: newest.slug } }]\nconst make = { three: draftThree, line: draftLine, full: draft }[input.look || 'full']\nif (!make) throw new Error(`report-draft: unknown look ${input.look}: three, line or full`)\nreturn [{ json: enrich(make(newest, await get(`${SITE}reports/${newest.slug}/index.md`))) }]\n"
+      },
+      "id": "draft-the-report",
+      "name": "Draft the report",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        440,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build the WhatsApp message: nothing new means no items, so nothing is sent.\nconst d = $input.first().json, s = $('Settings').first().json\nif (!d.new) return []\nconst need = ['to', 'phone_number_id', 'graph_version'].concat(s.mode === 'template' ? ['template_name', 'template_language'] : [])\nconst missing = need.filter(k => !String(s[k] || '').trim())\nif (missing.length) throw new Error('route 3: fill in the Settings node first: ' + missing.join(', '))\nif (!['text', 'template'].includes(s.mode)) throw new Error('route 3: mode is text or template')\nconst to = String(s.to).replace(/[^0-9]/g, '')\n// a template parameter may not hold new lines, tabs or more than four spaces in a row\nconst flat = d.text_whatsapp.replace(/\\s*\\n+\\s*/g, ' · ').replace(/\\t/g, ' ').replace(/ {2,}/g, ' ').slice(0, 1000)\nconst body = s.mode === 'text'\n  ? { messaging_product: 'whatsapp', recipient_type: 'individual', to, type: 'text', text: { preview_url: true, body: d.text_whatsapp } }\n  : { messaging_product: 'whatsapp', recipient_type: 'individual', to, type: 'template', template: { name: s.template_name, language: { code: s.template_language }, components: [{ type: 'body', parameters: [{ type: 'text', text: flat }] }] } }\nreturn [{ json: { id: d.id, mode: s.mode, url: 'https://graph.facebook.com/' + s.graph_version + '/' + s.phone_number_id + '/messages', body } }]"
+      },
+      "id": "build-the-whatsapp-message",
+      "name": "Build the WhatsApp message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        660,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.url }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.body) }}",
+        "options": {}
+      },
+      "id": "send-to-jose",
+      "name": "Send to Jose",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": ""
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Remember the report: only after Meta accepted the message, so a failed send is retried at the next poll.\n// n8n keeps static data for runs of the active workflow, not for manual test runs.\n$getWorkflowStaticData('global').lastId = $('Build the WhatsApp message').first().json.id\nreturn $input.all()"
+      },
+      "id": "remember-the-report",
+      "name": "Remember the report",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Every 30 minutes, 07:05 to 22:35 UTC": {
+      "main": [
+        [
+          {
+            "node": "Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Settings": {
+      "main": [
+        [
+          {
+            "node": "Draft the report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Draft the report": {
+      "main": [
+        [
+          {
+            "node": "Build the WhatsApp message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build the WhatsApp message": {
+      "main": [
+        [
+          {
+            "node": "Send to Jose",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send to Jose": {
+      "main": [
+        [
+          {
+            "node": "Remember the report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "UTC"
+  },
+  "meta": {
+    "note": "From people/jose/dev/WS-39-route3.build.mjs (dev@web-summit.jose). Drafts only, to Jose only; Jose forwards to the group. Fill in the Settings node and the credential (WS-39-findings.md, \"To fill in n8n\")."
+  }
+}

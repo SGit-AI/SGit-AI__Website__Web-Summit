@@ -80,7 +80,12 @@ No number, token, group id or invite link goes in this repository: they stay in 
 
 ## Conventions
 
+- **The reviewer before every release** (Jose, 4 November, `473be416`): before `admin/tools/release.sh`, run reviewer@web-summit.jose (`people/jose/reviewer/ROLE.md`) as a sub-agent on `git diff origin/dev...HEAD`, after checking `people/jose/reviewer/hold.json`; commit its record in `people/jose/reviewer/reviews/` with the trailer `Reviewed-by: reviewer@web-summit.jose (pass)`; on a hold, release only `hold.json` and the record, and tell Jose.
 - **Scheduled runs say so** (Jose, 4 November, from his mentor's suggestion): every commit from a scheduled wake, one not prompted by a person, carries the body line `Ran without a prompt (scheduled wake, <HH:MM> UTC).`, so the two-day clock before the mentor hands over is easy to see. A run Jose prompted doesn't carry it.
+
+## WS-39 route 3 (decided by Jose)
+
+`WS-39-route3.n8n.json`: the n8n workflow to import, made by `WS-39-route3.build.mjs` and tested by `WS-39-route3.test.mjs`. What to fill in inside n8n is at the top of `WS-39-findings.md`.
 
 ## WS-74, prepared only (not picked up)
 
