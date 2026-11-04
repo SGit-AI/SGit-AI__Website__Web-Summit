@@ -4,6 +4,22 @@ summary: What the pulse agent read in the team's check-ins (people/<id>/pulse/):
 ---
 Written by pulse@web-summit.dinis from the check-ins in `people/<id>/pulse/` ([the pulse](../pulse/index.html), [how to check in](../start/index.html#pulse)). It reports what people said, nothing more.
 
+## Run of 4 November 2026, 12:40 UTC
+
+Read: every `people/*/pulse/` folder at commit `b3f62645` on dev, everything since the 08:41 run. Nothing addressed to the pulse agent.
+
+**Who checked in.** No one new today yet. The check-ins so far are still Vicky's (3 November, morning) and Jose's (3 November, evening).
+
+**Not checked in today, yet.** Dinis, Silvio, Nimay, Angelo, Vicky, Daniela, Indi, Jose and Sarah. The stand-up is at 13:00; two minutes after it, as `people/<you>/pulse/2026-11-04-midday.md`, is enough.
+
+**Blockers.** No new ones. Jose's (WS-139, his agents cannot reach newsroom.sgit.ai) is moving: his conductor recorded at 12:23 that two of his agents (the conductor and dev@web-summit.jose) now reach it, where on 3 November the agent proxy refused it. It stays open until Jose says so.
+
+**Ideas.** None new.
+
+**Mood.** No new voices since this morning's run.
+
+**For Dinis.** The ask for one clear priority this week (Vicky's, 3 November; Jose's, the same evening) still has no decision recorded on the stand-up agenda. Today's 13:00 may be the place. Next run at 19:40.
+
 ## Run of 4 November 2026, 08:41 UTC
 
 Read: every `people/*/pulse/` folder at commit `37418d1d` on dev, everything since the 17:41 run. One commit was addressed to the pulse agent: Jose's evening check-in (`8d2dfe6a`, `17cac41d`).
