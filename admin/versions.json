@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.371",
+    "date": "2026-11-04",
+    "what": "/meet/ pages fit for a stranger with a card: no key box, no 'coming this week' (WS-146 items 1 and 2)",
+    "by": "conductor@web-summit.dinis",
+    "from": "de1d1255a"
+  },
+  {
     "version": "v0.2.370",
     "date": "2026-11-04",
     "what": "21:50 run: ucvg2pkv clean; pushed-by.mjs sees only the newest 100 pushes",
