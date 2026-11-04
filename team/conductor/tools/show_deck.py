@@ -157,8 +157,6 @@ S.append(('Follow-ups', '<h2>Follow-ups, each with an owner</h2>' + items([
 
 css = '''
 .deck{--paper:var(--surface);font-size:17px}.deck *{box-sizing:border-box}
-.deck .deck-bar{display:flex;gap:1em;align-items:center;margin:0 0 1em}.deck .deck-bar button{font:inherit;font-weight:700;padding:.5em 1em;border-radius:10px;border:0;background:var(--accent);color:var(--accent-ink);cursor:pointer}
-.deck .deck-help{color:var(--ink-2);font-size:.85em}
 .deck .slide{position:relative;aspect-ratio:16/9;background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:2.2em 2.6em;margin:0 0 1.6em;overflow:hidden;display:flex;flex-direction:column}
 .deck .slide h1{font:800 3.4em/1.05 Georgia,serif;margin:.4em 0}.deck .slide h2{font:700 1.75em/1.2 Georgia,serif;margin:0 0 1em;border:0;padding:0}
 .deck .slide-n{position:absolute;right:1em;bottom:.6em;font:600 .75em ui-monospace,monospace;color:var(--ink-2)}
@@ -176,12 +174,19 @@ css = '''
 .deck .raci{border-collapse:collapse;font-size:.95em;width:100%}.deck .raci td,.deck .raci th{border:1px solid var(--line);padding:.35em .5em;text-align:center}.deck .raci td:first-child{text-align:left}
 .deck .rA{background:var(--accent);color:var(--accent-ink);font-weight:800}.deck .rR{background:var(--accent-soft);font-weight:700}.deck .rC{color:var(--ink)}.deck .rI{color:var(--ink-2)}
 .deck .three{display:grid;grid-template-columns:repeat(3,1fr);gap:1em;min-height:0;flex:1 1 0;overflow:hidden}.deck .three h3{margin:0 0 .3em;font-size:1em}.deck .pts{list-style:none;padding:0;margin:0;font-size:.72em}.deck .pts li{margin:.25em 0;padding-left:.5em;border-left:4px solid var(--line-2)}.deck .pts li.late{border-color:var(--warm)}.deck .pts li.today{border-color:var(--accent)}.deck .pts span{display:block;color:var(--ink-2)}.deck .decide li{font-size:1.1em;margin:.5em 0}
-.deck.presenting{position:fixed;inset:0;z-index:1000;background:var(--bg);padding:2vh 2vw;display:flex;align-items:center;justify-content:center}
-.deck.presenting>:not(.slide):not(.deck-bar){display:none}.deck.presenting .deck-bar{position:fixed;top:.6em;left:1em;z-index:2}.deck.presenting .slide{display:none;width:min(96vw,170vh);margin:0;font-size:clamp(14px,1.45vw,26px)}.deck.presenting .slide.current{display:flex}
+.deck.one .slide{display:none;margin:0}.deck.one .slide.current{display:flex}.deck.one>:not(.slide):not(.deck-bar){display:none}
+.deck .deck-bar{display:flex;align-items:center;gap:.5em;flex-wrap:wrap;margin:.8em 0 1.2em}.deck .deck-bar button,.deck .deck-pdf{font:inherit;font-size:.9em;font-weight:700;padding:.45em .9em;border-radius:10px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none}
+.deck .deck-bar [data-prev],.deck .deck-bar [data-next]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);min-width:3em}.deck .deck-bar button:disabled{opacity:.35;cursor:default}
+.deck .deck-pos{font:600 .9em ui-monospace,monospace;min-width:4.5em;text-align:center}.deck .deck-gap{flex:1}
+.deck.all .deck-bar{position:sticky;bottom:0;background:var(--bg);padding:.5em 0;margin:0}
+.deck.full,.deck:fullscreen{position:fixed;inset:0;z-index:1000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1vh 2vw;font-size:clamp(14px,1.45vw,26px)}
+.deck.full .slide.current,.deck:fullscreen .slide.current{width:min(96vw,150vh)}.deck.full .deck-bar,.deck:fullscreen .deck-bar{width:min(96vw,150vh);margin:.6em 0 0}
 html.deck-on body{overflow:hidden}
-@media (max-width:760px){.deck .slide{aspect-ratio:auto;padding:1.2em}.deck .two,.deck .tiles,.deck .keys{grid-template-columns:1fr}.deck .slide h1{font-size:2.2em}}
+@media (max-width:760px){.deck .slide{aspect-ratio:auto;min-height:70vh;padding:1.1em;overflow:visible}.deck .two,.deck .tiles,.deck .keys,.deck .three{grid-template-columns:1fr}.deck .two{flex:none}.deck .shot img{flex:none;height:auto;max-height:45vh}
+.deck .slide h1{font-size:2.2em}.deck .slide h2{font-size:1.35em}.deck .dotrow{grid-template-columns:5em 1fr}.deck .dotrow em{grid-column:1/-1}.deck .raci{font-size:.75em}.deck .bars .b{grid-template-columns:5em 1fr 2.5em}.deck .three{flex:none;overflow:visible}.deck .deck-gap{display:none}}
+@media print{.deck .deck-bar{display:none}}
 '''
-frag = f'<style>{css}</style>\n<div class="deck">' + ''.join(f'<section class="slide" aria-label="{E(t)}">{b}</section>' for t, b in S) + '</div>\n<script src="../../../assets/deck.js" defer></script>\n'
+frag = f'<style>{css}</style>\n<div class="deck one" data-pdf="{IMG}deck.pdf">' + ''.join(f'<section class="slide" aria-label="{E(t)}">{b}</section>' for t, b in S) + '</div>\n<script src="../../../assets/deck.js" defer></script>\n'
 os.makedirs('team/conductor/shows', exist_ok=True)
 open(f'team/conductor/shows/{MID}.show', 'w').write(frag)
 print(f'{len(S)} slides -> team/conductor/shows/{MID}.show ({len(frag)} bytes)')
