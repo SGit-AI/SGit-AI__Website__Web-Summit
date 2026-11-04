@@ -24,6 +24,6 @@ export function build(ROOT) {
     const head = rel => `<link rel="stylesheet" href="${rel}studio.css">`
     return [
         { rel: 'people/dinis/lab/index.html', title: "Dinis's lab: from a conversation to an agent policy", description: 'The browser experiments towards an end-to-end MVP: research a company or a scenario, write its Agent Behaviour Policy, animate it, keep it in a vault.', body: hub, md: hubMd, head: head('') },
-        { rel: 'people/dinis/lab/studio/index.html', title: 'The policy studio', description: 'A chat with Claude that uses the tools you choose to research a company or scenario and write its Agent Behaviour Policy, with an animated picture.', body: studio, md: studioMd, head: head('../') + '<script src="../studio.js" defer></script>' },
+        { rel: 'people/dinis/lab/studio/index.html', title: 'The policy studio', description: 'A chat with Claude that uses the tools you choose to research a company or scenario and write its Agent Behaviour Policy, with an animated picture.', body: studio, md: studioMd, head: head('../') + '<script src="../studio-vault.js" defer></script><script src="../studio.js" defer></script>' },
     ]
 }

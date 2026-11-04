@@ -35,11 +35,11 @@
     },
     {
       "id": "E3",
-      "status": "next",
+      "status": "built",
       "title": "Vaults from the browser",
       "what": "Tools to create a vault, write the policy and its pictures into it, read it back, and hand out a read key: the demo is then a vault, not a page.",
-      "how": "The estate's pinned browser library, not new crypto: the newsroom's vendored `assets/vendor/sg-vault/v0.2.3/` and its wrapper `newsroom-vault.js` (createVault, openVault, ensureLoaded, writeFile, readText), as documented on sgit.ai (`/docs/vault/vault-from-javascript`): `SGVault.create` or `SGVault.open` on dev.send.sgraph.ai with the person's access token (`x-sgraph-access-token`), `addFile` then `pushIfMatch()`, merging on a conflict. Gotcha from the guide: `ensureLoaded` a folder before writing into it. Tools: create_vault, write_to_vault, read_from_vault, share_read_key.",
-      "reuse": "The newsroom's vault wrapper (vendored copy, pinned); pki.sgit.ai's `account.js`, which already creates and opens vaults in the browser; the append lanes on this site.",
+      "how": "Built on 4 November by sgit@web-summit.dinis, as the studio's fourth tool group, Vaults (off by default; `people/dinis/lab/studio-vault.js`). It uses the vault UI's own library, pinned on this origin (`assets/vendor/sg-vault/2026-11-04/`, twelve files with their sha256s), as sgit.ai's `/docs/vault/vault-from-javascript` recommends. Tools: team_vaults (the vaults on /vaults/, with their public read keys), read_vault (any vault, by its public read key; it refuses anything else), create_vault (a new vault on dev.send.sgraph.ai with a README; returns its id and public read key), write_to_vault (one file into a vault made in this browser, published with compare-and-swap, merging on a conflict) and read_my_vault. The model never sees a vault key or the access token: the person pastes the token into the panel under the studio, and sees and copies each new vault key there. Tested in a headless browser against the live server: it listed the team's three vaults, read Jose's app vault, made a vault, wrote and updated `/policy/policy.md`, and read it back, and no tool result held the key or the token. Experimental until security@web-summit.dinis has reviewed it: the token and the vault keys sit in this origin's local storage.",
+      "reuse": "The vault UI's library (SGraph-AI App Send), pinned; the studio's tool loop (E1); the published read keys in people/<id>/vaults.json.",
       "who": "sgit@web-summit.dinis with dev@web-summit.dinis; security@web-summit.dinis reviews before a real key is used",
       "issue": "WS-137"
     },

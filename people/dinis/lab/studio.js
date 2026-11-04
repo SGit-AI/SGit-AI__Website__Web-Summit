@@ -72,6 +72,7 @@
             schema: { type: 'object', properties: { title: { type: 'string' }, actors: { type: 'array', items: { type: 'object', properties: { id: { type: 'string' }, name: { type: 'string' }, kind: { type: 'string', enum: ['person', 'agent', 'system'] } }, required: ['id', 'name', 'kind'] } }, steps: { type: 'array', items: { type: 'object', properties: { from: { type: 'string' }, to: { type: 'string' }, what: { type: 'string' }, risk: { type: 'boolean', description: 'true when this step is in the Gap: possible, not authorised' } }, required: ['from', 'to', 'what'] } } }, required: ['actors', 'steps'] },
             async run(spec) { S.scenario = spec; save(); drawScenario(); return `drawn: ${spec.actors.length} actors, ${spec.steps.length} steps` } },
     }
+    Object.assign(TOOLS, window.STUDIO_TOOLS || {})   // more tool groups from other files: the Vaults group is studio-vault.js (E3, sgit@web-summit.dinis)
     const DEFAULT_ON = ['site_search', 'read_page', 'company_facts', 'abp_template', 'write_policy', 'draw_scenario']
     S.tools ??= DEFAULT_ON
     const on = () => S.tools.filter(t => TOOLS[t])
