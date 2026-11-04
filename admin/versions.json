@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.239",
+    "date": "2026-11-04",
+    "what": "review of the studio's Vaults tools (WS-137, E3): keep, with one finding",
+    "by": "dev@web-summit.dinis",
+    "from": "31cc3991d"
+  },
+  {
     "version": "v0.2.238",
     "date": "2026-11-04",
     "what": "09:34 wake: the feedback summary marks the public pane's likely spam (WS-74), and this session reaches newsroom.sgit.ai (WS-139)",
