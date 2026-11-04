@@ -1,0 +1,328 @@
+{
+ "schema": "web-summit.sgit.ai/watcher-activity/v1",
+ "by": "watcher@web-summit.jose",
+ "run": "2026-11-04T00:58Z",
+ "scope": "Jose's agents only (policy.json scope_decision, until the 4 November 13:00 stand-up decides)",
+ "range": {
+  "from": "83d4d93",
+  "to": "4eaa80c",
+  "branch": "dev",
+  "why_from": "first run: state.json had no last commit, so it starts at security's last_reviewed_commit (team/security/status.json)"
+ },
+ "counts": {
+  "commits": 36,
+  "ci_releases": 15,
+  "jose_agents": 14,
+  "other_people_agents_not_listed": 7,
+  "no_agent_name": 0
+ },
+ "by_agent": {
+  "conductor@web-summit.jose": 9,
+  "dev@web-summit.jose": 1,
+  "vault@web-summit.jose": 4
+ },
+ "flags": [
+  {
+   "level": "note",
+   "what": "key-shape rule hit, location and rule only",
+   "where": "fa34c08 people/jose/lanes/vault-jose.json line 7",
+   "rule": "a token assignment (vault-audit.mjs)",
+   "context": "the file says the append token is public on purpose (it can only write to the lane); not yet reviewed by security"
+  },
+  {
+   "level": "low",
+   "what": "review record time later than its commit",
+   "where": "people/jose/reviewer/reviews/2026-11-04-0110-conductor.md (committed in 4eaa80c at 00:55 UTC; the record says about 01:10 UTC)"
+  },
+  {
+   "level": "info",
+   "what": "session branch is a pre-rebase copy",
+   "where": "claude/relaxed-hypatia-eo624i at 63e25ec (vault@web-summit.jose), the same patch as 1770d61 on dev"
+  }
+ ],
+ "reviewer_trailer": {
+  "started": "2026-11-04T00:52:25Z",
+  "checked": [
+   "473be41",
+   "4eaa80c"
+  ],
+  "missing": []
+ },
+ "branches": {
+  "main": "no new commit (last 81353d4, site v0.2.0, 2 November)",
+  "claude/conductor-jose-setup-ogxaka": "at 4eaa80c, the same as dev (conductor@web-summit.jose)",
+  "claude/relaxed-hypatia-eo624i": "63e25ec (vault@web-summit.jose), a copy of 1770d61",
+  "other claude/* branches": "no Jose agent; out of scope"
+ },
+ "agents": [
+  {
+   "agent": "conductor@web-summit.jose",
+   "schedule": "20 7,12,17 * * *",
+   "last_commit": "2026-11-04T00:55Z",
+   "state": "on time"
+  },
+  {
+   "agent": "dashboard@web-summit.jose",
+   "schedule": "30 7,12,17 * * *",
+   "last_commit": "2026-11-03T17:31Z",
+   "state": "on time (next slot 07:30)"
+  },
+  {
+   "agent": "dev@web-summit.jose",
+   "schedule": "30 9,15 * * *",
+   "last_commit": "2026-11-04T00:51Z",
+   "state": "on time"
+  },
+  {
+   "agent": "designer@web-summit.jose",
+   "schedule": null,
+   "last_commit": "2026-11-03T02:15Z",
+   "state": "on demand"
+  },
+  {
+   "agent": "vault@web-summit.jose",
+   "schedule": null,
+   "last_commit": "2026-11-04T00:40Z",
+   "state": "on demand"
+  },
+  {
+   "agent": "watcher@web-summit.jose",
+   "schedule": "15 7,12,17 * * * (proposed; no scheduled task made by this session)",
+   "last_commit": null,
+   "state": "first run"
+  }
+ ],
+ "commits": [
+  {
+   "sha": "862076f",
+   "time": "2026-11-04T00:07:45Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: Jose's card, the five questions from his brief answered in his own words (WS-08)",
+   "issue": [
+    "WS-08"
+   ],
+   "files": 1,
+   "outside_person_folder": [],
+   "security": "not yet reviewed (after last_reviewed_commit 83d4d93)",
+   "reviewed_by": "before the reviewer started",
+   "findings": []
+  },
+  {
+   "sha": "40197ea",
+   "time": "2026-11-04T00:18:15Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: WS-120, Jose's part done with its evidence (two vaults on /vaults/, the guide fix); the issue stays open for Angelo and Silvio",
+   "issue": [
+    "WS-120"
+   ],
+   "files": 1,
+   "outside_person_folder": [
+    {
+     "file": "board/WS-120-vaults-first-angelo-jose-silvio.md",
+     "note": "board file of the issue in its Issue: trailer (in lane)"
+    }
+   ],
+   "security": "not yet reviewed (after last_reviewed_commit 83d4d93)",
+   "reviewed_by": "before the reviewer started",
+   "findings": []
+  },
+  {
+   "sha": "320593a",
+   "time": "2026-11-04T00:18:37Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: WS-120, a wrong reason removed from my note (dev.send.sgraph.ai is reachable; I just did not open the vaults)",
+   "issue": [
+    "WS-120"
+   ],
+   "files": 1,
+   "outside_person_folder": [
+    {
+     "file": "board/WS-120-vaults-first-angelo-jose-silvio.md",
+     "note": "board file of the issue in its Issue: trailer (in lane)"
+    }
+   ],
+   "security": "not yet reviewed (after last_reviewed_commit 83d4d93)",
+   "reviewed_by": "before the reviewer started",
+   "findings": []
+  },
+  {
+   "sha": "d074533",
+   "time": "2026-11-04T00:21:14Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: two tasks for vault: unlist \"Jose on RiskMandate\" (keep the vault), and an append lane sealed to a key that outlives the session",
+   "issue": [
+    "WS-114",
+    "WS-120",
+    "WS-129"
+   ],
+   "files": 1,
+   "outside_person_folder": [],
+   "security": "not yet reviewed (after last_reviewed_commit 83d4d93)",
+   "reviewed_by": "before the reviewer started",
+   "findings": []
+  },
+  {
+   "sha": "81a77d7",
+   "time": "2026-11-04T00:23:19Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: vault's lane task revised at Jose's word: the session key, as CLAUDE.md says; no held key; republish and update the lane when a session ends",
+   "issue": [
+    "WS-114",
+    "WS-120"
+   ],
+   "files": 1,
+   "outside_person_folder": [],
+   "security": "not yet reviewed (after last_reviewed_commit 83d4d93)",
+   "reviewed_by": "before the reviewer started",
+   "findings": []
+  },
+  {
+   "sha": "96c2379",
+   "time": "2026-11-04T00:24:51Z",
+   "agent": "vault@web-summit.jose",
+   "subject": "vault@web-summit.jose: unlist \"Jose on RiskMandate\" (tt7orxlk); only \"Reach, Mandate, Gap\" stays listed",
+   "issue": [
+    "WS-120"
+   ],
+   "files": 1,
+   "outside_person_folder": [],
+   "security": "not yet reviewed (after last_reviewed_commit 83d4d93)",
+   "reviewed_by": "before the reviewer started",
+   "findings": []
+  },
+  {
+   "sha": "fa34c08",
+   "time": "2026-11-04T00:27:20Z",
+   "agent": "vault@web-summit.jose",
+   "subject": "vault@web-summit.jose: my append lane is live; please add it to assets/feedback.json lanes[]",
+   "issue": [
+    "WS-114"
+   ],
+   "files": 1,
+   "outside_person_folder": [],
+   "security": "not yet reviewed (after last_reviewed_commit 83d4d93)",
+   "reviewed_by": "before the reviewer started",
+   "findings": [
+    {
+     "file": "people/jose/lanes/vault-jose.json",
+     "line": 7,
+     "rule": "a token assignment"
+    }
+   ]
+  },
+  {
+   "sha": "d05b526",
+   "time": "2026-11-04T00:27:36Z",
+   "agent": "vault@web-summit.jose",
+   "subject": "vault@web-summit.jose: please record my lane, and that I drain it, in my ABP",
+   "issue": [
+    "WS-114"
+   ],
+   "files": 1,
+   "outside_person_folder": [],
+   "security": "not yet reviewed (after last_reviewed_commit 83d4d93)",
+   "reviewed_by": "before the reviewer started",
+   "findings": []
+  },
+  {
+   "sha": "1770d61",
+   "time": "2026-11-04T00:40:49Z",
+   "agent": "vault@web-summit.jose",
+   "subject": "vault@web-summit.jose: drafts for Jose to review: watcher@web-summit.jose and reviewer@web-summit.jose",
+   "issue": [],
+   "files": 7,
+   "outside_person_folder": [
+    {
+     "file": "data/meetings/2026-11-04-1300/20261104T0035-jose-s-security-watcher-how-far-does-it-.json",
+     "note": "the stand-up agenda (in lane)"
+    }
+   ],
+   "security": "not yet reviewed (after last_reviewed_commit 83d4d93)",
+   "reviewed_by": "before the reviewer started",
+   "findings": []
+  },
+  {
+   "sha": "9f9c929",
+   "time": "2026-11-04T00:41:20Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: vault's drafts for watcher and reviewer brought to dev, reviewed; the watcher commits nothing when a run finds nothing new; both proposed, not started",
+   "issue": [
+    "WS-34"
+   ],
+   "files": 3,
+   "outside_person_folder": [],
+   "security": "not yet reviewed (after last_reviewed_commit 83d4d93)",
+   "reviewed_by": "before the reviewer started",
+   "findings": []
+  },
+  {
+   "sha": "551cf19",
+   "time": "2026-11-04T00:44:09Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: WS-134 opened for Jose's watcher and reviewer; four changes to the drafts at Jose's word; neither started",
+   "issue": [
+    "WS-134"
+   ],
+   "files": 6,
+   "outside_person_folder": [
+    {
+     "file": "board/WS-134-jose-s-security-watcher-and-code-reviewer.md",
+     "note": "board file of the issue in its Issue: trailer (in lane)"
+    },
+    {
+     "file": "data/meetings/2026-11-04-1300/20261104T0035-jose-s-security-watcher-how-far-does-it-.json",
+     "note": "the stand-up agenda (in lane)"
+    }
+   ],
+   "security": "not yet reviewed (after last_reviewed_commit 83d4d93)",
+   "reviewed_by": "before the reviewer started",
+   "findings": []
+  },
+  {
+   "sha": "1c93350",
+   "time": "2026-11-04T00:51:05Z",
+   "agent": "dev@web-summit.jose",
+   "subject": "dev@web-summit.jose: WS-74's vault option checked against what is live: the transport is done, the public form is not",
+   "issue": [
+    "WS-74"
+   ],
+   "files": 2,
+   "outside_person_folder": [],
+   "security": "not yet reviewed (after last_reviewed_commit 83d4d93)",
+   "reviewed_by": "before the reviewer started",
+   "findings": []
+  },
+  {
+   "sha": "473be41",
+   "time": "2026-11-04T00:53:50Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: Jose's code reviewer started at his word; \"run the reviewer before release.sh\" in every prompt of his kit; the watcher stays unstarted",
+   "issue": [
+    "WS-134"
+   ],
+   "files": 6,
+   "outside_person_folder": [],
+   "security": "not yet reviewed (after last_reviewed_commit 83d4d93)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  },
+  {
+   "sha": "4eaa80c",
+   "time": "2026-11-04T00:55:25Z",
+   "agent": "conductor@web-summit.jose",
+   "subject": "conductor@web-summit.jose: the watcher ready for Jose to start, scope Jose's agents only until the stand-up decides; its prompts in the kit",
+   "issue": [
+    "WS-134"
+   ],
+   "files": 5,
+   "outside_person_folder": [],
+   "security": "not yet reviewed (after last_reviewed_commit 83d4d93)",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)",
+   "findings": []
+  }
+ ],
+ "could_not_check": [
+  "whether the scheduled tasks themselves exist (only commits are visible)",
+  "other people's agents (out of scope until the stand-up)"
+ ]
+}
