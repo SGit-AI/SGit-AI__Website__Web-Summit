@@ -1,23 +1,25 @@
 # logistics@web-summit.vicky
 
-Vicky's logistics agent: printing, merch and deliveries (WS-48), with procurement@web-summit.silvio, who buys. Started by Vicky in a Claude Code cloud session on 3 November 2026, about 15:05 UTC. Key on [the keys page](../../keys/index.html): `logistics-vicky` (signing sha256:76c04cc90fcb6d1d, encryption sha256:a552fb9cddf1b93b), a session key.
+Vicky's logistics agent: printing, merch and deliveries (WS-48), with procurement@web-summit.silvio, who buys. Started by Vicky in a Claude Code cloud session on 3 November 2026, about 15:05 UTC; Vicky's side of WS-48 handed over by conductor@web-summit.vicky at 15:16 UTC (79993c49). Key on [the keys page](../../keys/index.html): `logistics-vicky` (signing sha256:76c04cc90fcb6d1d, encryption sha256:a552fb9cddf1b93b), a session key. Runs at 08:10, 12:10 and 15:10 UTC.
 
-**Not taking anything over yet.** At 14:54 today conductor@web-summit.vicky wrote (people/vicky/inbox.md) that this agent would not be started and that it reads logistics mail itself. Vicky has since started it. Until conductor@web-summit.vicky hands the logistics over in a commit, keep writing to the conductor; this file only records where the merch stands.
+**Write to me** (`For: logistics@web-summit.vicky`) about the print order: sizes, sign-offs, the printer's dates, collection and delivery.
 
-## What I keep, once handed over
+## What I keep
 
 - **Sizes:** each person's `people/<id>/merch.json` (the shape in WS-113), written by that person's agent. I tally them; I record a size someone posted elsewhere only with Vicky's go.
 - **Sign-offs:** `node admin/tools/signoff.mjs verify`, each run. I never sign anyone's set.
-- **The printer's dates and the delivery**, from procurement@web-summit.silvio; no supplier name, price or contact here until Silvio's agent says the supplier agreed.
+- **The printer's dates, collection and delivery**, from procurement@web-summit.silvio, who buys; no supplier name, price or contact here until Silvio's agent says the supplier agreed.
 - **Drafts only:** Vicky sends.
 
-## Where it stands, 3 November, 15:10 UTC
+## Where it stands, Wednesday 4 November, 08:15 UTC
 
-From the repository at site v0.2.117.
+From the repository at site v0.2.230.
 
 | | |
 |---|---|
-| **Sizes** | 1 of 7: Vicky (T-shirt M unisex, hoodie M). Dinis, Nimay, Angelo, Jose, Silvio and Indi: no `merch.json` yet. |
-| **Sign-offs** (`signoff.mjs verify`) | 1 of 7 approved: Vicky. Six awaiting; the shared hoodie and card designs awaiting Dinis. |
-| **Coming** | Dinis asked at 14:54 for one generic QR on the garments (procurement@web-summit.silvio, 14:55, to designer@web-summit.dinis). When the files are regenerated, every sign-off, Vicky's included, shows superseded and is signed again. |
-| **The printer** | Dinis said yes to the spend at 14:45; Silvio confirms the printer today. The printer needs files, sizes and confirmation by the end of today, Tuesday 3 November, for Friday 6 November in Lisbon ([the print order](../../print-order/index.html#status)). |
+| **Sizes** | Settled (WS-130 done, Dinis's words relayed at 17:10, 3 Nov): T-shirts 1 M + 1 L + 1 XL in each of the seven colours (21), worn by whoever they fit; hoodies Dinis XL, Vicky M, the other five L. In `merch.json`: Dinis, Angelo, Jose, Silvio, Vicky; Nimay and Indi only in WS-130 (not needed now the T-shirts are a mix). |
+| **Sign-offs** (`signoff.mjs verify`) | 3 of 7 approved: Dinis (with the shared hoodie and card), Angelo, Vicky. Awaiting: Silvio, Nimay, Indi, Jose. All three approvals are of the **personal-QR** set. |
+| **The generic QR** | Dinis confirmed it at about 17:05 on 3 Nov ("switch to generic QR", conductor@web-summit.dinis, 8107e61b). The generic set is made and checked ([/print/#generic-qr](../../print/index.html#generic-qr)), but not yet swapped in: designer@web-summit.dinis has not committed since 15:21 on 3 Nov. Once it is, every sign-off shows superseded and is signed again. |
+| **Still with the designer** | The generic swap; the stock colours re-mapped to the new printer's blanks (TH Clothes Ankara T-shirts, TH Clothes hoodies); the RiskMandate logo (Dinis's ask, d7bda01f); a sleeve file only on Dinis's own word. |
+| **Purple** | Vicky's colour (#6B3FA0). Ankara has no true purple: lavanda or bordô are nearest. Vicky's choice: on the 13:00 agenda. |
+| **The printer** | Changed on the evening of 3 Nov to the second printer (Dinis's call, accepting the extra cost). Files due there **this morning, Wednesday 4 Nov**; ready **Friday 6 Nov**; collected by **Monday 9 Nov** morning at the latest. Not named here until it agrees to publication. Who collects, and where, not yet recorded. |
