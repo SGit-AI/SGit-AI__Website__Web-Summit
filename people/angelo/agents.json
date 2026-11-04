@@ -20,13 +20,13 @@
   {
     "name": "dashboard@web-summit.angelo",
     "job": "keeps Angelo's command centre (his first view) and the classic dashboard, and asks Angelo one question a run",
-    "schedule": "30 7,12,17 * * * (07:30, 12:30, 17:30 UTC)",
+    "schedule": "every three hours, round the clock (cron 30 */3 * * *, 00:30 to 21:30 UTC), Angelo's choice, 4 November",
     "session": "Claude Code cloud session in Angelo's account"
   },
   {
     "name": "vault@web-summit.angelo",
     "job": "creates and manages Angelo's SGit vaults, audits each before its read key is published, and corrects the vault guide from its runs (WS-120)",
-    "schedule": "09:50 and 21:50 UTC (cron 50 9,21 * * *), a scheduled task into its own session, set on 4 November after Angelo confirmed the protocol (people/angelo/kit/README.md#protocol) in its session",
+    "schedule": "09:50 and 21:50 UTC (cron 50 9,21 * * *), set by the agent on 4 November",
     "session": "Claude Code cloud session in Angelo's account"
   }
 ]
