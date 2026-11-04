@@ -2,23 +2,25 @@
 
 Kept by pm@web-summit.vicky for Vicky. Written once a day at 07:40 UTC, with the board-health note (at Vicky's word, 3 Nov). Each run replaces the last; earlier runs are in this file's git history. It reads every `people/*/pulse/` check-in and records what blocks people, where the team disagrees, and what to raise with Dinis early. It quotes only what people wrote in their own check-ins.
 
-## Run of 3 November 2026, 15:25 UTC
+## Run of 4 November 2026, 07:40 UTC
 
-Read: `people/*/pulse/` at commit `d3596a4` on dev.
+Read: `people/*/pulse/` at commit `4a115a6` on dev.
 
-**Check-ins: 1 of 9 people.** Only Vicky has checked in (`people/vicky/pulse/2026-11-03-morning.md`, the morning of 3 November). The other eight pulse folders hold only `.keep`. One voice is not alignment, so this run only lists the themes to look for in the next check-ins.
+**Check-ins: 2 of 9 people.** Vicky (`people/vicky/pulse/2026-11-03-morning.md`) and Jose (`people/jose/pulse/2026-11-03-evening.md`). The other seven pulse folders hold only `.keep`.
 
-### From Vicky's check-in
+### Where the two agree
 
-- **Blocking:** nothing. Her open question, when she can set up her vault, has since been answered: she reached L6 at 13:45 (`484e4a0`).
-- **To raise with Dinis:** one clear priority for this week, said in one place: the framework, or finishing the summit tasks. This is on the stand-up as a decision (pulse@web-summit.dinis), carried over from 13:00 to 18:00 without a decision.
-- **The onboarding gap:** some people are at L5 or L6, others still at L1. The GitHub and environment steps are hard without a technical background. The issues that already cover this are WS-100 (the GitHub step for newcomers, due today, no owner) and WS-125 (Angelo's setup guide, outline due tomorrow).
-- **Too many views:** her dashboard, the command centre, the For-you panel, the board, the briefings, two board-health pages and the briefs. Her idea is one "start here every morning" page per person. This note and `board-health.md` are two more views, so both are kept short. Whether to link them from her dashboard is dashboard@web-summit.vicky's call.
+- **Priorities.** Vicky asks for "one clear priority for this week, and say it in one place". Jose says "I need clearer priorities" and is "a bit overwhelmed by the number of open issues". The decision is on the stand-up (pulse@web-summit.dinis, carried over since 3 November 13:00) and is still not decided. **Raise with Dinis: both check-ins ask for it.**
+- **The team is uneven.** Vicky: "some of us are at L5 or L6, others are still at L1." Jose: "Nimay and Indi are still at the push step." Jose's aim: "Get everyone to L4 by Wednesday, so Thursday's outreach has agents behind it." That is today.
 
-### What to watch for in the next check-ins
+### Blocking
 
-1. Whether others name the same priority question.
-2. Who is stuck at L1 or L2, and on which step (WS-09 and WS-124: Nimay and Indi were at the push step at 12:50, according to /board-health/).
-3. Load: Angelo had 41 open issues and Dinis 39 at 12:50 (/board-health/).
+- **Jose:** "My agents can't reach newsroom.sgit.ai." Indi's agents have a similar block, with pki.sgit.ai (conductor@web-summit.indi, a decision on today's 13:00 agenda).
+- **Vicky:** nothing.
 
-Sources: `people/*/pulse/` at `d3596a4`; `content/board-health.md` (run of 12:50); `data/meetings/2026-11-03-1300/`; `git log` (`484e4a0`).
+### What to watch
+
+1. Whether the other seven check in, Nimay and Indi above all (both are still at the push step).
+2. Load: 48 issues are due today, 36 of them without an owner (board-health.md, this morning).
+
+Sources: `people/*/pulse/` at `4a115a6`; `data/meetings/2026-11-04-1300/`.
