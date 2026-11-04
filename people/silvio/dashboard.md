@@ -14,7 +14,7 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 
 ## What I'm doing {#doing}
 
-*Kept by procurement@web-summit.silvio at 07:30, 12:30 and 17:30 UTC (WS-94). Last update: Wed 4 Nov, 17:25 UTC.*
+*Kept by procurement@web-summit.silvio at 07:30, 12:30 and 17:30 UTC (WS-94). Last update: Wed 4 Nov, 17:45 UTC.*
 
 - **The merch order (WS-48):** **ordered** with the chosen printer (4 Nov, evening): T-shirts 1 M, 1 L, 1 XL per colour (a lighter model where a size is missing), hoodies one per person, Vicky's in lavender, the RiskMandate logo on the left sleeve. **Thursday:** the printer's layouts to approve and its invoice to pay. The final files once Dinis confirms /print/#next.
 - **Vicky's purple:** hers to me ("whatever the printer has is fine, let Silvio decide"): I choose with the printer, then tell the designer agent.
@@ -56,12 +56,12 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-04, from the boar
 |---|---|---|
 | Days to opening night | **6** | ███░░░░░░░ |
 | Health | **18 / 100 (red)** | ██░░░░░░░░ |
-| Open issues | **15** of 19 | ██░░░░░░░░ done |
+| Open issues | **16** of 20 | ██░░░░░░░░ done |
 | Overdue | **1** | WS-54 |
-| Due in 48 hours | **11** | WS-24, WS-25, WS-40, WS-48, WS-52, WS-53, WS-71, WS-120, WS-26, WS-75, WS-80 |
+| Due in 48 hours | **12** | WS-24, WS-25, WS-40, WS-48, WS-52, WS-53, WS-71, WS-120, WS-26, WS-75, WS-80, WS-149 |
 | Nobody picked yet | **14** | WS-54, WS-126, WS-24, WS-25, WS-40, WS-52, WS-53, WS-71, WS-120, WS-26, WS-75, WS-80, WS-28, WS-72 |
 | Agents active (7 days) | **3 of 7** | ████░░░░░░ |
-| Messages for me (24 h) | **20** | `git log --since=yesterday --grep "For: .*web-summit.silvio"` |
+| Messages for me (24 h) | **13** | `git log --since=yesterday --grep "For: .*web-summit.silvio"` |
 | Pulse today | **0 of 3** | ░░░ |
 | Onboarding level | **L1** of L4 | █░░░ |
 
@@ -81,7 +81,7 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-04, from the boar
 |---|---|
 | 2026-11-03 (late) | WS-54 Local Algarve: printing, ads and who can do what; WS-126 "LinkedIn: build the hype before Lisbon" |
 | 2026-11-04 | WS-24 Every existing contact and introduction followed up; WS-25 The first five companies; WS-40 Hosting for Silvio's videos; WS-48 Printing and merch logistics; WS-52 The video pipeline: YouTube and Instagram; WS-53 Silvio's agentic project-management workflow, written up; WS-71 Publish the videos on YouTube, Instagram and LinkedIn; WS-120 "Vaults, first through: Angelo, Jose and Silvio start a vault agent, make a vault and publish it" |
-| 2026-11-05 | WS-26 The big outreach: 50 targets for Thursday and Friday; WS-75 Storyboards for the next videos; WS-80 The cast: a character for each of our agents |
+| 2026-11-05 | WS-26 The big outreach: 50 targets for Thursday and Friday; WS-75 Storyboards for the next videos; WS-80 The cast: a character for each of our agents; WS-149 "The most important thing each person did, on the stand-up's show page, updated at every release" |
 | 2026-11-06 | WS-28 Who can connect the dots |
 | 2026-11-07 | WS-72 Make the 2-minute silent loop for the stand |
 
@@ -89,11 +89,11 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-04, from the boar
 
 | Agent | Job | Commits 24 h | Commits 7 days | Last seen |
 |---|---|---|---|---|
-| ● conductor@web-summit.silvio | Runs Silvio's other agents and keeps people/silvio/ | 0 | 2 | 11-02 21:56 UTC |
+| ● conductor@web-summit.silvio | Runs Silvio's other agents and keeps people/silvio/ | 1 | 3 | 11-04 14:16 UTC |
 | ● dev@web-summit.silvio | Builds what Silvio and the conductor ask for: this command centre, tools | 0 | 9 | 11-03 02:15 UTC |
 | ○ local@web-summit.silvio | Algarve options: printers, ads, prices, lead times | 0 | 0 | never |
 | ○ outreach@web-summit.silvio | Targets, messages and follow-ups; drafts in Silvio's account, Silvio sends | 0 | 0 | never |
-| ● procurement@web-summit.silvio | Quotes, orders and deliveries for what the team buys (WS-48); drafts only, Silvio approves | 16 | 33 | 11-04 10:40 UTC |
+| ● procurement@web-summit.silvio | Quotes, orders and deliveries for what the team buys (WS-48); drafts only, Silvio approves | 17 | 44 | 11-04 17:12 UTC |
 | ○ video@web-summit.silvio | The pipeline to YouTube, Instagram and this site | 0 | 0 | never |
 | ○ dashboard@web-summit.silvio | Keeps Silvio's dashboard and asks one question a run | 0 | 0 | never |
 
@@ -151,14 +151,15 @@ Counts only, never names: the people and companies stay in my own CRM (my brief'
 
 **Still open,** what my agents cannot decide. Take this list to the stand-up.
 
-1. **Me:** the chosen printer's written answer (expected after 15:00), then the cancellation to the first printer.
-2. **Me:** Vicky's purple, with the printer (she left it to me).
+1. **Dinis:** his word to the designer agent: the next set (/print/#next) as final, the logo on the left sleeve, black ink on the lavender hoodie; then the files go to the printer.
+2. **Me (Thursday):** approve the printer's layouts and pass its invoice to Dinis.
 3. **Dinis:** the sleeves: the new printer prints them free, but the rule is still "nothing on the sleeves"; a sleeve file only on his word to the designer agent.
 4. **Me:** which agents to start next: outreach, local and video are planned, not started.
 5. **Me, with Nimay (Wed 13:00):** the first five companies and the first message (WS-25).
 
 **Decided** (3 November 2026, recorded by procurement@web-summit.silvio):
 
+- **The order (4 Nov, evening):** placed with the chosen printer; the first printer released (17:10). Vicky's colours: purple T-shirts, lavender hoodie (her choice). Sleeves: the RiskMandate logo (Dinis, in person, 17:10).
 - **The printer (Dinis, 3 Nov evening):** the second option, for its quality and service; he accepts the extra cost. (14:45: yes to the first printer's quote, which could not invoice outside Portugal.) The generic QR on the garments (Dinis, about 17:20). The T-shirts as a mix of 1 M, 1 L and 1 XL per colour (Dinis, 17:10).
 - **Procurement's pages (WS-101):** procurement@web-summit.silvio may keep /procurement/, /print-order/ and the sign-off tool. I send every message to a supplier; my agents only draft.
 - **The sign-off tool (WS-116):** fixed and in the gate.
