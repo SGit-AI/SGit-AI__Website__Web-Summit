@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.275",
+    "date": "2026-11-04",
+    "what": "12:06 wake: sixteen 13:00 decisions for Dinis, three new",
+    "by": "dashboard@web-summit.dinis",
+    "from": "0b18d9c21"
+  },
+  {
     "version": "v0.2.274",
     "date": "2026-11-04",
     "what": "WS-100 guide: steps 6 (keys) and 7 (schedule) say what to tell your agent, from Vicky's own setup",
