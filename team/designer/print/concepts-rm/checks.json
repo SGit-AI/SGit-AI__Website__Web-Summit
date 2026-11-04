@@ -1,0 +1,1404 @@
+{
+ "a-band/indi-card-front.svg": {
+  "bg": "#FFFFFF",
+  "items": [
+   {
+    "text": "Indi Gupte",
+    "font": "bc-Bold",
+    "size_mm": 7.4,
+    "size_pt": 20.98,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     18.33,
+     12.1,
+     44.66,
+     18.88
+    ],
+    "role": "name",
+    "contrast": 18.11
+   },
+   {
+    "text": "The message and outreach",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     18.12,
+     21.04,
+     52.97,
+     23.58
+    ],
+    "role": "role",
+    "contrast": 4.97
+   },
+   {
+    "text": "\u201cYour agents. Your rules.\u201d",
+    "font": "in-SemiBold",
+    "size_mm": 3.5,
+    "size_pt": 9.92,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     18.28,
+     28.95,
+     62.6,
+     32.26
+    ],
+    "role": "line",
+    "contrast": 18.11
+   },
+   {
+    "text": "RM",
+    "font": "in-Medium",
+    "size_mm": 2.5,
+    "size_pt": 7.09,
+    "fill": "#8C8C8C",
+    "bg": "#FFFFFF",
+    "box": [
+     20.75,
+     43.08,
+     24.25,
+     44.9
+    ],
+    "role": "placeholder",
+    "contrast": 3.36
+   },
+   {
+    "text": "LOGO",
+    "font": "in-Medium",
+    "size_mm": 2.5,
+    "size_pt": 7.09,
+    "fill": "#8C8C8C",
+    "bg": "#FFFFFF",
+    "box": [
+     19.14,
+     46.16,
+     25.92,
+     48.02
+    ],
+    "role": "placeholder",
+    "contrast": 3.36
+   },
+   {
+    "text": "RISK",
+    "font": "bc-Light",
+    "size_mm": 6.243,
+    "size_pt": 17.7,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     31.99,
+     43.27,
+     40.71,
+     47.73
+    ],
+    "role": "wordmark",
+    "contrast": 18.11
+   },
+   {
+    "text": "MANDATE",
+    "font": "bc-Bold",
+    "size_mm": 6.243,
+    "size_pt": 17.7,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     42.48,
+     43.32,
+     63.33,
+     47.68
+    ],
+    "role": "wordmark",
+    "contrast": 18.11
+   }
+  ],
+  "logo": {
+   "x": 18,
+   "y": 41,
+   "size": 9,
+   "clear": 4.5,
+   "variant": "containered"
+  },
+  "qr": null,
+  "safe": [
+   7,
+   7,
+   84,
+   54
+  ]
+ },
+ "a-band/indi-card-back.svg": {
+  "bg": "#FFFFFF",
+  "items": [
+   {
+    "text": "Meet me",
+    "font": "in-SemiBold",
+    "size_mm": 3.4,
+    "size_pt": 9.64,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     42.87,
+     18.53,
+     56.77,
+     21.04
+    ],
+    "role": "text",
+    "contrast": 18.11
+   },
+   {
+    "text": "Book a meeting",
+    "font": "in-SemiBold",
+    "size_mm": 3.4,
+    "size_pt": 9.64,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     42.87,
+     23.41,
+     67.75,
+     26.73
+    ],
+    "role": "text",
+    "contrast": 18.11
+   },
+   {
+    "text": "Talk to my agent",
+    "font": "in-SemiBold",
+    "size_mm": 3.4,
+    "size_pt": 9.64,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     42.76,
+     28.53,
+     69.85,
+     31.73
+    ],
+    "role": "text",
+    "contrast": 18.11
+   },
+   {
+    "text": "web-summit.sgit.ai",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     42.7,
+     38.46,
+     67.26,
+     41.08
+    ],
+    "role": "url",
+    "contrast": 4.97
+   },
+   {
+    "text": "/meet/indi/",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     42.67,
+     42.04,
+     56.7,
+     44.4
+    ],
+    "role": "url",
+    "contrast": 4.97
+   }
+  ],
+  "logo": null,
+  "qr": {
+   "x": 7.5,
+   "y": 15.189655172413794,
+   "panel": 30.620689655172413,
+   "code": 24,
+   "module": 0.8275862068965517,
+   "path_sha": "04d1eb7a4a3a64e25bec0a0ffa60769668ae1b7611e6c7ed815a6ff13fb96e14"
+  },
+  "safe": [
+   7,
+   7,
+   84,
+   54
+  ]
+ },
+ "a-band/dinis-card-front.svg": {
+  "bg": "#FFFFFF",
+  "items": [
+   {
+    "text": "Dinis Cruz",
+    "font": "bc-Bold",
+    "size_mm": 7.4,
+    "size_pt": 20.98,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     18.33,
+     12.1,
+     44.37,
+     17.56
+    ],
+    "role": "name",
+    "contrast": 18.11
+   },
+   {
+    "text": "Operator: the strategy",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     18.15,
+     21.01,
+     46.5,
+     23.58
+    ],
+    "role": "role",
+    "contrast": 4.97
+   },
+   {
+    "text": "\u201cAsk me what my agents did today.\u201d",
+    "font": "in-SemiBold",
+    "size_mm": 3.5,
+    "size_pt": 9.92,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     18.28,
+     28.83,
+     79.49,
+     32.26
+    ],
+    "role": "line",
+    "contrast": 18.11
+   },
+   {
+    "text": "RM",
+    "font": "in-Medium",
+    "size_mm": 2.5,
+    "size_pt": 7.09,
+    "fill": "#8C8C8C",
+    "bg": "#FFFFFF",
+    "box": [
+     20.75,
+     43.08,
+     24.25,
+     44.9
+    ],
+    "role": "placeholder",
+    "contrast": 3.36
+   },
+   {
+    "text": "LOGO",
+    "font": "in-Medium",
+    "size_mm": 2.5,
+    "size_pt": 7.09,
+    "fill": "#8C8C8C",
+    "bg": "#FFFFFF",
+    "box": [
+     19.14,
+     46.16,
+     25.92,
+     48.02
+    ],
+    "role": "placeholder",
+    "contrast": 3.36
+   },
+   {
+    "text": "RISK",
+    "font": "bc-Light",
+    "size_mm": 6.243,
+    "size_pt": 17.7,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     31.99,
+     43.27,
+     40.71,
+     47.73
+    ],
+    "role": "wordmark",
+    "contrast": 18.11
+   },
+   {
+    "text": "MANDATE",
+    "font": "bc-Bold",
+    "size_mm": 6.243,
+    "size_pt": 17.7,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     42.48,
+     43.32,
+     63.33,
+     47.68
+    ],
+    "role": "wordmark",
+    "contrast": 18.11
+   }
+  ],
+  "logo": {
+   "x": 18,
+   "y": 41,
+   "size": 9,
+   "clear": 4.5,
+   "variant": "containered"
+  },
+  "qr": null,
+  "safe": [
+   7,
+   7,
+   84,
+   54
+  ]
+ },
+ "a-band/dinis-card-back.svg": {
+  "bg": "#FFFFFF",
+  "items": [
+   {
+    "text": "Meet me",
+    "font": "in-SemiBold",
+    "size_mm": 3.4,
+    "size_pt": 9.64,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     42.87,
+     18.53,
+     56.77,
+     21.04
+    ],
+    "role": "text",
+    "contrast": 18.11
+   },
+   {
+    "text": "Book a meeting",
+    "font": "in-SemiBold",
+    "size_mm": 3.4,
+    "size_pt": 9.64,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     42.87,
+     23.41,
+     67.75,
+     26.73
+    ],
+    "role": "text",
+    "contrast": 18.11
+   },
+   {
+    "text": "Talk to my agent",
+    "font": "in-SemiBold",
+    "size_mm": 3.4,
+    "size_pt": 9.64,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     42.76,
+     28.53,
+     69.85,
+     31.73
+    ],
+    "role": "text",
+    "contrast": 18.11
+   },
+   {
+    "text": "web-summit.sgit.ai",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     42.7,
+     38.46,
+     67.26,
+     41.08
+    ],
+    "role": "url",
+    "contrast": 4.97
+   },
+   {
+    "text": "/meet/dinis/",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     42.67,
+     42.04,
+     58.16,
+     44.4
+    ],
+    "role": "url",
+    "contrast": 4.97
+   }
+  ],
+  "logo": null,
+  "qr": {
+   "x": 7.5,
+   "y": 15.189655172413794,
+   "panel": 30.620689655172413,
+   "code": 24,
+   "module": 0.8275862068965517,
+   "path_sha": "e36e9c367b1efc1f350e81402c431eef582ce20322f0681ba7fd9a203dcc2163"
+  },
+  "safe": [
+   7,
+   7,
+   84,
+   54
+  ]
+ },
+ "b-seal/indi-card-front.svg": {
+  "bg": "#161615",
+  "items": [
+   {
+    "text": "RM",
+    "font": "in-Medium",
+    "size_mm": 2.5,
+    "size_pt": 7.09,
+    "fill": "#9A9A9A",
+    "bg": "#161615",
+    "box": [
+     43.75,
+     16.58,
+     47.25,
+     18.4
+    ],
+    "role": "placeholder",
+    "contrast": 6.44
+   },
+   {
+    "text": "LOGO",
+    "font": "in-Medium",
+    "size_mm": 2.5,
+    "size_pt": 7.09,
+    "fill": "#9A9A9A",
+    "bg": "#161615",
+    "box": [
+     42.14,
+     19.66,
+     48.92,
+     21.52
+    ],
+    "role": "placeholder",
+    "contrast": 6.44
+   },
+   {
+    "text": "RISK",
+    "font": "bc-Light",
+    "size_mm": 7.803,
+    "size_pt": 22.12,
+    "fill": "#FFFFFF",
+    "bg": "#161615",
+    "box": [
+     26.12,
+     35.44,
+     37.02,
+     41.02
+    ],
+    "role": "wordmark",
+    "contrast": 18.11
+   },
+   {
+    "text": "MANDATE",
+    "font": "bc-Bold",
+    "size_mm": 7.803,
+    "size_pt": 22.12,
+    "fill": "#FFFFFF",
+    "bg": "#161615",
+    "box": [
+     39.23,
+     35.5,
+     65.29,
+     40.96
+    ],
+    "role": "wordmark",
+    "contrast": 18.11
+   },
+   {
+    "text": "Agents with a Mandate",
+    "font": "in-Medium",
+    "size_mm": 2.8,
+    "size_pt": 7.94,
+    "fill": "#FFFFFF",
+    "bg": "#161615",
+    "box": [
+     30.19,
+     45.38,
+     60.75,
+     48.1
+    ],
+    "role": "tagline",
+    "contrast": 18.11
+   }
+  ],
+  "logo": {
+   "x": 37.5,
+   "y": 11,
+   "size": 16,
+   "clear": 8.0,
+   "variant": "knockout"
+  },
+  "qr": null,
+  "safe": [
+   7,
+   7,
+   84,
+   54
+  ]
+ },
+ "b-seal/indi-card-back.svg": {
+  "bg": "#FFFFFF",
+  "items": [
+   {
+    "text": "Indi Gupte",
+    "font": "bc-Bold",
+    "size_mm": 7.4,
+    "size_pt": 20.98,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     7.83,
+     11.1,
+     34.16,
+     17.88
+    ],
+    "role": "name",
+    "contrast": 18.11
+   },
+   {
+    "text": "The message and outreach",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     7.62,
+     23.54,
+     42.47,
+     26.08
+    ],
+    "role": "role",
+    "contrast": 4.97
+   },
+   {
+    "text": "\u201cYour agents. Your rules.\u201d",
+    "font": "in-SemiBold",
+    "size_mm": 3.2,
+    "size_pt": 9.07,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     7.76,
+     30.17,
+     48.27,
+     33.19
+    ],
+    "role": "line",
+    "contrast": 18.11
+   },
+   {
+    "text": "web-summit.sgit.ai",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     7.58,
+     44.76,
+     32.14,
+     47.38
+    ],
+    "role": "url",
+    "contrast": 4.97
+   },
+   {
+    "text": "/meet/indi/",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     7.55,
+     48.34,
+     21.58,
+     50.7
+    ],
+    "role": "url",
+    "contrast": 4.97
+   }
+  ],
+  "logo": null,
+  "qr": {
+   "x": 53.37931034482759,
+   "y": 15.189655172413794,
+   "panel": 30.620689655172413,
+   "code": 24,
+   "module": 0.8275862068965517,
+   "path_sha": "04d1eb7a4a3a64e25bec0a0ffa60769668ae1b7611e6c7ed815a6ff13fb96e14"
+  },
+  "safe": [
+   7,
+   7,
+   84,
+   54
+  ]
+ },
+ "b-seal/dinis-card-front.svg": {
+  "bg": "#161615",
+  "items": [
+   {
+    "text": "RM",
+    "font": "in-Medium",
+    "size_mm": 2.5,
+    "size_pt": 7.09,
+    "fill": "#9A9A9A",
+    "bg": "#161615",
+    "box": [
+     43.75,
+     16.58,
+     47.25,
+     18.4
+    ],
+    "role": "placeholder",
+    "contrast": 6.44
+   },
+   {
+    "text": "LOGO",
+    "font": "in-Medium",
+    "size_mm": 2.5,
+    "size_pt": 7.09,
+    "fill": "#9A9A9A",
+    "bg": "#161615",
+    "box": [
+     42.14,
+     19.66,
+     48.92,
+     21.52
+    ],
+    "role": "placeholder",
+    "contrast": 6.44
+   },
+   {
+    "text": "RISK",
+    "font": "bc-Light",
+    "size_mm": 7.803,
+    "size_pt": 22.12,
+    "fill": "#FFFFFF",
+    "bg": "#161615",
+    "box": [
+     26.12,
+     35.44,
+     37.02,
+     41.02
+    ],
+    "role": "wordmark",
+    "contrast": 18.11
+   },
+   {
+    "text": "MANDATE",
+    "font": "bc-Bold",
+    "size_mm": 7.803,
+    "size_pt": 22.12,
+    "fill": "#FFFFFF",
+    "bg": "#161615",
+    "box": [
+     39.23,
+     35.5,
+     65.29,
+     40.96
+    ],
+    "role": "wordmark",
+    "contrast": 18.11
+   },
+   {
+    "text": "Agents with a Mandate",
+    "font": "in-Medium",
+    "size_mm": 2.8,
+    "size_pt": 7.94,
+    "fill": "#FFFFFF",
+    "bg": "#161615",
+    "box": [
+     30.19,
+     45.38,
+     60.75,
+     48.1
+    ],
+    "role": "tagline",
+    "contrast": 18.11
+   }
+  ],
+  "logo": {
+   "x": 37.5,
+   "y": 11,
+   "size": 16,
+   "clear": 8.0,
+   "variant": "knockout"
+  },
+  "qr": null,
+  "safe": [
+   7,
+   7,
+   84,
+   54
+  ]
+ },
+ "b-seal/dinis-card-back.svg": {
+  "bg": "#FFFFFF",
+  "items": [
+   {
+    "text": "Dinis Cruz",
+    "font": "bc-Bold",
+    "size_mm": 7.4,
+    "size_pt": 20.98,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     7.83,
+     11.1,
+     33.87,
+     16.56
+    ],
+    "role": "name",
+    "contrast": 18.11
+   },
+   {
+    "text": "Operator: the strategy",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     7.65,
+     23.51,
+     36.0,
+     26.08
+    ],
+    "role": "role",
+    "contrast": 4.97
+   },
+   {
+    "text": "\u201cAsk me what my agents did",
+    "font": "in-SemiBold",
+    "size_mm": 3.2,
+    "size_pt": 9.07,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     7.76,
+     30.06,
+     51.4,
+     33.19
+    ],
+    "role": "line",
+    "contrast": 18.11
+   },
+   {
+    "text": "today.\u201d",
+    "font": "in-SemiBold",
+    "size_mm": 3.2,
+    "size_pt": 9.07,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     7.53,
+     34.47,
+     18.79,
+     37.47
+    ],
+    "role": "line",
+    "contrast": 18.11
+   },
+   {
+    "text": "web-summit.sgit.ai",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     7.58,
+     44.76,
+     32.14,
+     47.38
+    ],
+    "role": "url",
+    "contrast": 4.97
+   },
+   {
+    "text": "/meet/dinis/",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     7.55,
+     48.34,
+     23.04,
+     50.7
+    ],
+    "role": "url",
+    "contrast": 4.97
+   }
+  ],
+  "logo": null,
+  "qr": {
+   "x": 53.37931034482759,
+   "y": 15.189655172413794,
+   "panel": 30.620689655172413,
+   "code": 24,
+   "module": 0.8275862068965517,
+   "path_sha": "e36e9c367b1efc1f350e81402c431eef582ce20322f0681ba7fd9a203dcc2163"
+  },
+  "safe": [
+   7,
+   7,
+   84,
+   54
+  ]
+ },
+ "c-poster/indi-card-front.svg": {
+  "bg": "#f2b705",
+  "items": [
+   {
+    "text": "Indi Gupte",
+    "font": "bc-ExtraBold",
+    "size_mm": 10.5,
+    "size_pt": 29.76,
+    "fill": "#111111",
+    "bg": "#f2b705",
+    "box": [
+     7.87,
+     7.54,
+     46.08,
+     17.2
+    ],
+    "role": "name",
+    "contrast": 10.39
+   },
+   {
+    "text": "The message and outreach",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#111111",
+    "bg": "#f2b705",
+    "box": [
+     7.62,
+     18.54,
+     42.47,
+     21.08
+    ],
+    "role": "role",
+    "contrast": 10.39
+   },
+   {
+    "text": "\u201cYour agents. Your rules.\u201d",
+    "font": "bc-SemiBold",
+    "size_mm": 5.4,
+    "size_pt": 15.31,
+    "fill": "#111111",
+    "bg": "#f2b705",
+    "box": [
+     7.52,
+     28.02,
+     56.7,
+     32.91
+    ],
+    "role": "line",
+    "contrast": 10.39
+   },
+   {
+    "text": "RISK",
+    "font": "bc-Light",
+    "size_mm": 5.853,
+    "size_pt": 16.59,
+    "fill": "#111111",
+    "bg": "#f2b705",
+    "box": [
+     7.96,
+     48.46,
+     16.14,
+     52.65
+    ],
+    "role": "wordmark",
+    "contrast": 10.39
+   },
+   {
+    "text": "MANDATE",
+    "font": "bc-Bold",
+    "size_mm": 5.853,
+    "size_pt": 16.59,
+    "fill": "#111111",
+    "bg": "#f2b705",
+    "box": [
+     17.79,
+     48.5,
+     37.34,
+     52.6
+    ],
+    "role": "wordmark",
+    "contrast": 10.39
+   }
+  ],
+  "logo": null,
+  "qr": null,
+  "safe": [
+   7,
+   7,
+   84,
+   54
+  ]
+ },
+ "c-poster/indi-card-back.svg": {
+  "bg": "#FFFFFF",
+  "items": [
+   {
+    "text": "RM",
+    "font": "in-Medium",
+    "size_mm": 2.5,
+    "size_pt": 7.09,
+    "fill": "#8C8C8C",
+    "bg": "#FFFFFF",
+    "box": [
+     11.75,
+     11.08,
+     15.25,
+     12.9
+    ],
+    "role": "placeholder",
+    "contrast": 3.36
+   },
+   {
+    "text": "LOGO",
+    "font": "in-Medium",
+    "size_mm": 2.5,
+    "size_pt": 7.09,
+    "fill": "#8C8C8C",
+    "bg": "#FFFFFF",
+    "box": [
+     10.14,
+     14.16,
+     16.92,
+     16.02
+    ],
+    "role": "placeholder",
+    "contrast": 3.36
+   },
+   {
+    "text": "RISK",
+    "font": "bc-Light",
+    "size_mm": 4.682,
+    "size_pt": 13.27,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     22.87,
+     11.82,
+     29.41,
+     15.18
+    ],
+    "role": "wordmark",
+    "contrast": 18.11
+   },
+   {
+    "text": "MANDATE",
+    "font": "bc-Bold",
+    "size_mm": 4.682,
+    "size_pt": 13.27,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     30.74,
+     11.86,
+     46.37,
+     15.14
+    ],
+    "role": "wordmark",
+    "contrast": 18.11
+   },
+   {
+    "text": "Meet me",
+    "font": "in-SemiBold",
+    "size_mm": 3.4,
+    "size_pt": 9.64,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     9.25,
+     27.53,
+     23.14,
+     30.04
+    ],
+    "role": "text",
+    "contrast": 18.11
+   },
+   {
+    "text": "Book a meeting",
+    "font": "in-SemiBold",
+    "size_mm": 3.4,
+    "size_pt": 9.64,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     9.25,
+     32.41,
+     34.13,
+     35.73
+    ],
+    "role": "text",
+    "contrast": 18.11
+   },
+   {
+    "text": "Talk to my agent",
+    "font": "in-SemiBold",
+    "size_mm": 3.4,
+    "size_pt": 9.64,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     9.14,
+     37.53,
+     36.23,
+     40.73
+    ],
+    "role": "text",
+    "contrast": 18.11
+   },
+   {
+    "text": "web-summit.sgit.ai",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     9.08,
+     44.46,
+     33.64,
+     47.08
+    ],
+    "role": "url",
+    "contrast": 4.97
+   },
+   {
+    "text": "/meet/indi/",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     9.05,
+     48.04,
+     23.08,
+     50.4
+    ],
+    "role": "url",
+    "contrast": 4.97
+   }
+  ],
+  "logo": {
+   "x": 9,
+   "y": 9,
+   "size": 9,
+   "clear": 4.5,
+   "variant": "containered"
+  },
+  "qr": {
+   "x": 53.37931034482759,
+   "y": 15.189655172413794,
+   "panel": 30.620689655172413,
+   "code": 24,
+   "module": 0.8275862068965517,
+   "path_sha": "04d1eb7a4a3a64e25bec0a0ffa60769668ae1b7611e6c7ed815a6ff13fb96e14"
+  },
+  "safe": [
+   7,
+   7,
+   84,
+   54
+  ]
+ },
+ "c-poster/dinis-card-front.svg": {
+  "bg": "#111111",
+  "items": [
+   {
+    "text": "Dinis Cruz",
+    "font": "bc-ExtraBold",
+    "size_mm": 10.5,
+    "size_pt": 29.76,
+    "fill": "#FFFFFF",
+    "bg": "#111111",
+    "box": [
+     7.87,
+     7.54,
+     45.65,
+     15.36
+    ],
+    "role": "name",
+    "contrast": 18.88
+   },
+   {
+    "text": "Operator: the strategy",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#FFFFFF",
+    "bg": "#111111",
+    "box": [
+     7.65,
+     18.51,
+     36.0,
+     21.08
+    ],
+    "role": "role",
+    "contrast": 18.88
+   },
+   {
+    "text": "\u201cAsk me what my agents did today.\u201d",
+    "font": "bc-SemiBold",
+    "size_mm": 5.4,
+    "size_pt": 15.31,
+    "fill": "#FFFFFF",
+    "bg": "#111111",
+    "box": [
+     7.52,
+     27.9,
+     76.18,
+     32.91
+    ],
+    "role": "line",
+    "contrast": 18.88
+   },
+   {
+    "text": "RISK",
+    "font": "bc-Light",
+    "size_mm": 5.853,
+    "size_pt": 16.59,
+    "fill": "#FFFFFF",
+    "bg": "#111111",
+    "box": [
+     7.96,
+     48.46,
+     16.14,
+     52.65
+    ],
+    "role": "wordmark",
+    "contrast": 18.88
+   },
+   {
+    "text": "MANDATE",
+    "font": "bc-Bold",
+    "size_mm": 5.853,
+    "size_pt": 16.59,
+    "fill": "#FFFFFF",
+    "bg": "#111111",
+    "box": [
+     17.79,
+     48.5,
+     37.34,
+     52.6
+    ],
+    "role": "wordmark",
+    "contrast": 18.88
+   }
+  ],
+  "logo": null,
+  "qr": null,
+  "safe": [
+   7,
+   7,
+   84,
+   54
+  ]
+ },
+ "c-poster/dinis-card-back.svg": {
+  "bg": "#FFFFFF",
+  "items": [
+   {
+    "text": "RM",
+    "font": "in-Medium",
+    "size_mm": 2.5,
+    "size_pt": 7.09,
+    "fill": "#8C8C8C",
+    "bg": "#FFFFFF",
+    "box": [
+     11.75,
+     11.08,
+     15.25,
+     12.9
+    ],
+    "role": "placeholder",
+    "contrast": 3.36
+   },
+   {
+    "text": "LOGO",
+    "font": "in-Medium",
+    "size_mm": 2.5,
+    "size_pt": 7.09,
+    "fill": "#8C8C8C",
+    "bg": "#FFFFFF",
+    "box": [
+     10.14,
+     14.16,
+     16.92,
+     16.02
+    ],
+    "role": "placeholder",
+    "contrast": 3.36
+   },
+   {
+    "text": "RISK",
+    "font": "bc-Light",
+    "size_mm": 4.682,
+    "size_pt": 13.27,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     22.87,
+     11.82,
+     29.41,
+     15.18
+    ],
+    "role": "wordmark",
+    "contrast": 18.11
+   },
+   {
+    "text": "MANDATE",
+    "font": "bc-Bold",
+    "size_mm": 4.682,
+    "size_pt": 13.27,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     30.74,
+     11.86,
+     46.37,
+     15.14
+    ],
+    "role": "wordmark",
+    "contrast": 18.11
+   },
+   {
+    "text": "Meet me",
+    "font": "in-SemiBold",
+    "size_mm": 3.4,
+    "size_pt": 9.64,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     9.25,
+     27.53,
+     23.14,
+     30.04
+    ],
+    "role": "text",
+    "contrast": 18.11
+   },
+   {
+    "text": "Book a meeting",
+    "font": "in-SemiBold",
+    "size_mm": 3.4,
+    "size_pt": 9.64,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     9.25,
+     32.41,
+     34.13,
+     35.73
+    ],
+    "role": "text",
+    "contrast": 18.11
+   },
+   {
+    "text": "Talk to my agent",
+    "font": "in-SemiBold",
+    "size_mm": 3.4,
+    "size_pt": 9.64,
+    "fill": "#161615",
+    "bg": "#FFFFFF",
+    "box": [
+     9.14,
+     37.53,
+     36.23,
+     40.73
+    ],
+    "role": "text",
+    "contrast": 18.11
+   },
+   {
+    "text": "web-summit.sgit.ai",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     9.08,
+     44.46,
+     33.64,
+     47.08
+    ],
+    "role": "url",
+    "contrast": 4.97
+   },
+   {
+    "text": "/meet/dinis/",
+    "font": "in-Medium",
+    "size_mm": 2.7,
+    "size_pt": 7.65,
+    "fill": "#1A7F5A",
+    "bg": "#FFFFFF",
+    "box": [
+     9.05,
+     48.04,
+     24.54,
+     50.4
+    ],
+    "role": "url",
+    "contrast": 4.97
+   }
+  ],
+  "logo": {
+   "x": 9,
+   "y": 9,
+   "size": 9,
+   "clear": 4.5,
+   "variant": "containered"
+  },
+  "qr": {
+   "x": 53.37931034482759,
+   "y": 15.189655172413794,
+   "panel": 30.620689655172413,
+   "code": 24,
+   "module": 0.8275862068965517,
+   "path_sha": "e36e9c367b1efc1f350e81402c431eef582ce20322f0681ba7fd9a203dcc2163"
+  },
+  "safe": [
+   7,
+   7,
+   84,
+   54
+  ]
+ }
+}
