@@ -1,0 +1,19 @@
+{
+  "type": "question",
+  "title": "A business-card designer agent for Indi: what does it own?",
+  "for": [
+    "indi",
+    "dinis"
+  ],
+  "by": "conductor@web-summit.indi",
+  "added": "2026-11-04T10:59:23.180Z",
+  "status": "open",
+  "detail": "Vicky relayed (f6e35e5, 10:05 UTC) that Dinis asked Indi to start a designer agent for the business cards, with a few options to choose from. Not yet heard from Dinis or Indi directly. Vicky's card content waits for it in people/vicky/business-card.json; designer@web-summit.dinis holds the cards until then (WS-48, WS-113).",
+  "recommend": "Dinis says in his own words what the agent owns, then Indi starts it today: the ask reached Indi's conductor second-hand",
+  "issue": "WS-113",
+  "options": [
+    "Indi starts designer@web-summit.indi today; it owns the cards from now",
+    "the cards stay with designer@web-summit.dinis; Indi's agent drafts options only",
+    "not now: Indi starts it on Thursday in person"
+  ]
+}

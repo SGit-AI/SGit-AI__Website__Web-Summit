@@ -1,0 +1,84 @@
+{
+  "number": 4,
+  "date": "4 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "You now have two conductor sessions: please choose one",
+  "when": "4 November 2026, 11:05 UTC (since brief 3, 07:25 UTC)",
+  "by": "conductor@web-summit.indi (the second session, started about 10:57 UTC)",
+  "headline": "This brief comes from a new conductor session. Your first conductor session is still alive: it holds your site key and its scheduled task wakes it at 12:20. Two sessions with one name will step on each other, so I changed nothing of the first one's. I made my own key and published it beside the first one's, added one item for you to the 13:00 stand-up, and wrote this brief. Nothing is decided here.",
+  "stats": [
+    {"n": "2", "label": "conductor sessions running as conductor@web-summit.indi"},
+    {"n": "12:20", "label": "the first session's next scheduled wake"},
+    {"n": "4 of 7", "label": "site keys added on WS-136 (1abe5d7, 10:43 UTC); yours not yet"},
+    {"n": "18:00", "label": "WS-136 due: your key added and one signed message"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Which conductor session carries on?",
+      "detail": "The first session (started 3 November, 22:57 UTC) issued your site key at 07:21 and sent you its link and a QR at 08:37; only it holds the private half. Its scheduled task fires into it at 07:20, 12:20 and 17:20. It is also waiting on your answer to its last question (the brand assets, and whether to make it part of WS-69). This session has none of that.",
+      "options": [
+        "keep the first session; this one stops after this brief",
+        "move to this session: I move the schedule here, issue you a new site key and mark the old one replaced",
+        "keep both, with different jobs (tell me which)"
+      ],
+      "recommend": "Keep the first session: it holds your site key and its schedule, and WS-136 is due at 18:00. If you choose it, I add a note to data/keys.json that this session's key is unused."
+    },
+    {
+      "id": "2",
+      "ask": "Add your site key (WS-136, due 18:00)",
+      "detail": "Still open for you on the board. Use the link or the QR the first session gave you in its chat (not in this brief: they carry your key), or press 'Paste my key' on any page. Then send one message from the Feedback pane. Vicky's went to conductor@web-summit.dinis's lane and verified (10:35 UTC); the pane has no lane yet for the person conductors.",
+      "options": ["now, from the first session's link", "on the phone, from its QR", "later today, before 18:00"],
+      "recommend": "Now, from the link: two minutes, and it unblocks the vault step."
+    },
+    {
+      "id": "3",
+      "ask": "A business-card designer agent (13:00 stand-up)",
+      "detail": "Vicky's agent relayed at 10:05 UTC that Dinis asked you to start a designer agent for the business cards, with a few options to choose from (f6e35e5). Vicky's card content waits for it (people/vicky/business-card.json). I have not heard this from Dinis or you directly, so I put it on the 13:00 agenda for you and Dinis.",
+      "options": [
+        "start designer@web-summit.indi today; it owns the cards",
+        "the cards stay with designer@web-summit.dinis; yours drafts options only",
+        "Thursday, in person"
+      ],
+      "recommend": "Ask Dinis at 13:00 what it owns, then start it today. I can draft its prompt as soon as you say go."
+    }
+  ],
+  "you_asked": [
+    {"at": "4 Nov, about 10:57 UTC (this session's first message)", "said": "Make your own key (node pki-agent.mjs keygen --session ...) and commit only its public half as an entry in data/keys.json.", "done": "Key made in this session (sha256:6af242af55ef7980, signing sha256:10ede272aaccf89e), linked to the operator's key; the public half added as a second entry, so the first session's key stays published", "where": "data/keys.json, entry conductor-indi-2", "status": "done"},
+    {"at": "4 Nov, 10:16 UTC (in the first session)", "said": "Can you find the brand assets page (or similar) page somewhere in the repo and send me link to paste into the browser??", "done": "Answered in that session, not here. It found the design page and the print files page, and is waiting on your reply about WS-69.", "where": "the first session's chat; /design/ and /print/ on the site", "status": "waiting"}
+  ],
+  "sections": [
+    {
+      "title": "1. What happened since brief 3",
+      "items": [
+        "WS-136: Angelo (about 10:15 UTC) and Vicky (about 10:20 UTC) added their site keys and saw Unlocked. Four of seven have now (mentor@web-summit.dinis, 1abe5d7).",
+        "Vicky's signed message reached conductor@web-summit.dinis's lane and verified (10:35 UTC, recorded on WS-136). Angelo's and Vicky's conductors have no lane of their own in the Feedback pane yet.",
+        "dev@web-summit.angelo fixed WS-140: Give feedback now opens the pane, with no second click (20c3a39).",
+        "Vicky's card content for the new designs: \"Vicky Wang\", with \"Project Manager\" under it, addressed to your conductor (f6e35e5).",
+        "No commit by your own agents since 07:21 UTC (brief 3's run)."
+      ]
+    },
+    {
+      "title": "2. From your mentor (08:41 UTC)",
+      "items": [
+        "Add your site key first, read the message that unlocks, then send one signed message from the Feedback pane.",
+        "After that, the vaults step with a vault agent.",
+        "If your agents keep running on their own, your mentor could hand over from 6 November.",
+        "Worth adopting: all three. The first two are WS-136; the vault agent is your L6."
+      ]
+    }
+  ],
+  "next": [
+    "Your answer to ask 1. Until then I change nothing of the first session's: its key, its schedule, your site key.",
+    "13:00 stand-up: the card designer agent (added by me), the first worked ABP (from abp@web-summit.dinis, for you and Nimay), WS-25's first five companies.",
+    "Tell me or the first session 'acknowledge' when you have read briefs 1 to 4."
+  ],
+  "sources": [
+    "git log on dev at 10:57 UTC: 1abe5d7, 20c3a39, f6e35e5, 3803e9f",
+    "board/WS-136 at 10:57 UTC",
+    "the scheduled task 'conductor@web-summit.indi wake' (cron 20 7,12,17 * * *, next 12:20 UTC) and the first session's record, read at 10:58 UTC",
+    "data/keys.json (conductor-indi, conductor-indi-2); data/person-keys.json (indi, sha256:504685dc2b1cd9af, active)",
+    "data/meetings/2026-11-04-1300/20261104T1059-a-business-card-designer-agent-for-indi-.json",
+    "people/indi/mentor/2026-11-04-0841.md; people/vicky/business-card.json"
+  ]
+}

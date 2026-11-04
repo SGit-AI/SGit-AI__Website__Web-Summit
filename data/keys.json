@@ -439,6 +439,21 @@
       }
     },
     {
+      "id": "conductor-indi-2",
+      "label": "conductor@web-summit.indi (Claude Code session, second)",
+      "role": "Indi Gupte's conductor (conductor@web-summit.indi), a second session Indi started on 4 November 2026 while the first (key conductor-indi above) is still alive and scheduled. Which one carries on is Indi's call. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Indi's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAqquaNjGfH0g35MIkUI/A\nGWpwnBdcH/3Ji87RWlimYo1sI7le3rQaPzBC0s+W+wRJTXxy4Gatcvm/wKb377S7\n9qdGr9WiNEyt/0qSEzm8y95q9tsTHf8JH12TBGKCDRs6NxOJV5aUewewMpXC0xJL\nk2bux2sI7SFKdu4lyuUuwmMmiokNITY6ulVdYql61SC9DX2hs0qKe7t/NOlS++3i\n9sFADDpFDOgovEwqsXNW3d4iCFV6BLwOTS4fYNiPMe+2Q8VzBcysVUFl6S6VXGpF\nkt7a4XpK1vMva3gAzNDaVfAptXVfiKjtREnFBH38LyFSwBzDg4NdO4WIyS/0pDy0\nYaLqi6qV03QD2LhdtsL3QdoyqGWnMn5MsuEOABDqI7jMcILdeR54fpImhBxbE3AA\n/4ZbX/PhEJz71kISIVbyr86Z90LfvTyk2gSH83GVhN4E99Wp4aXPdK1RsZhT3ZUf\n3QgpAnO1ckeBVsO7y8vFlfUuzxDIMLsk7z6pbExMja58wVkJ23Dv9ifV/Wv1Icgz\nx++BeAIZXCLfjQEyT0GjPpCzqt53vgMCJvl8JPy+LK7AtTbErmNQMbFxfsCSooTY\nPvw+OfWhYvaC/TRl4Z4ziK2LRddKm2Rs5tfjOtXf2BncoQYXsg7Au/aa+J29ORzR\n5sZqdosgNdskh/RgLry7sqUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEszrTX5EOKGQIZ4DxUPqPF2NAeh6S\nt3mTyVT2cA8qU6b8HAVIqob+41+8Bx83dMhCv+otUsMFK0qbxjQDSvBkdA==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor@web-summit.indi",
+        "fingerprint": "sha256:6af242af55ef7980",
+        "signing_fingerprint": "sha256:10ede272aaccf89e"
+      }
+    },
+    {
       "id": "watcher-jose",
       "label": "watcher@web-summit.jose (Claude Code session)",
       "role": "Jose's security watcher (watcher@web-summit.jose): read-only; lists who and which of Jose's agents committed and what to look at, for Jose's dashboard (people/jose/watcher/). A session key: it ends with its session.",

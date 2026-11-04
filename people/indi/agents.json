@@ -4,7 +4,8 @@
   "job": "conducts Indi's agents, keeps people/indi/, feeds the stand-ups and briefs Indi",
   "session": "Claude Code cloud session in Indi's account",
   "status": "running",
-  "schedule": "07:20, 12:20 and 17:20 GMT (cron 20 7,12,17 * * *), a scheduled task firing into its own session, from 3 November"
+  "schedule": "07:20, 12:20 and 17:20 GMT (cron 20 7,12,17 * * *), a scheduled task firing into its own session, from 3 November",
+  "note": "4 November, about 10:57 UTC: Indi started a second session under this name (key conductor-indi-2 in data/keys.json). The first session keeps the schedule and Indi's site key until Indi chooses which one carries on (brief 4)."
  },
  {
   "name": "dev@web-summit.indi",
