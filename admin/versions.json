@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.287",
+    "date": "2026-11-04",
+    "what": "WS-142: cards run 1 in vault nnsikio4, audited, read key published",
+    "by": "synthetic@web-summit.indi",
+    "from": "fbcbc6258"
+  },
+  {
     "version": "v0.2.286",
     "date": "2026-11-04",
     "what": "new session key synthetic-indi-2; synthetic-indi marked ended and replaced",
