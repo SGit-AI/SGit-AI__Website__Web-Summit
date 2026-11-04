@@ -41,4 +41,4 @@ The captions above were read from frames of the video; a full transcript is on t
 
 ## Give feedback {#feedback}
 
-No account needed: [open the feedback pane on this page](https://web-summit.sgit.ai/videos/fifty-new-agents/index.html?feedback=on&to=vault@web-summit.jose#feedback), press **Feedback** at the bottom right, write what you think, **Add** it and **Submit**. It is encrypted in your browser, and only Jose's vault agent can open it. Please leave out your name, email and phone number. The team's own votes are on [the videos page](../index.html#feedback).
+No account needed: [open the feedback pane on this page](https://web-summit.sgit.ai/videos/fifty-new-agents/index.html?feedback=on&to=vault@web-summit.jose#feedback): five short questions (only the first is required), then **Add** and **Submit**. It is encrypted in your browser, and only Jose's vault agent can open it. Please leave out your name, email and phone number. The team's own votes are on [the videos page](../index.html#feedback).

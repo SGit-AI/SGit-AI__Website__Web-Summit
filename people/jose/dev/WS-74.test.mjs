@@ -86,6 +86,33 @@ test('summary: the public pane\'s spam signals, as feedback_drain.py reads them 
     assert.match(md, /Team item(?! \*\[LIKELY)/)
 })
 
+test('summary: the five questions\' answers, counted, quotes marked only with the tick', () => {
+    const it = (answers, text) => ({ kind: 'comment', choice: 'x', text, page: page('videos/index.html'), answers })
+    const md = summarize([{ ...msg('2026-11-04T22:00:00Z', [
+        it({ reaction: 'love', share: 'yes', role: 'builder', quote_ok: true }, 'Shorter intro'),
+        it({ reaction: 'like', share: null, role: null, quote_ok: false }, 'Private thought'),
+        it({ reaction: 'not-for-me', share: 'no', role: 'builder', quote_ok: false }, ''),
+    ]), public: true, opened_at: '2026-11-04T21:59:00Z' }])
+    assert.match(md, /- What they thought: 1 love it, 1 like it, 1 not for me\./)
+    assert.match(md, /- Would show it to someone: 1 yes, 0 maybe, 1 no, 1 no answer\./)
+    assert.match(md, /- Said they were: builder 2; 1 preferred not to say\./)
+    assert.match(md, /- May be quoted anonymously: 1 of 3\./)
+    assert.match(md, /Shorter intro \*\[may be quoted anonymously\]\*/)
+    assert.match(md, /Private thought(?! \*\[may be quoted)/)
+})
+
+test('summary: answers outside the offered values are read as no answer (the lane is public)', () => {
+    const md = summarize([msg('2026-11-04T23:00:00Z', [
+        { kind: 'comment', text: 'a', page: page('p'), answers: { reaction: 'love', share: '<b>yes</b>', role: 'ceo of evil', quote_ok: 'true' } },
+        { kind: 'comment', text: 'b', page: page('p'), answers: { reaction: 'hate', share: 'yes', role: 'builder', quote_ok: true } },
+    ])])
+    assert.match(md, /- What they thought: 1 love it, 0 like it, 0 not for me\./)
+    assert.match(md, /- Would show it to someone: 0 yes, 0 maybe, 0 no, 1 no answer\./)
+    assert.match(md, /- Said they were: none said; 1 preferred not to say\./)
+    assert.match(md, /- May be quoted anonymously: 0 of 1\./)
+    assert.ok(!/ceo of evil|<b>|may be quoted anonymously\]/.test(md))
+})
+
 test('summary CLI: reads the drain\'s folders, nested by date', () => {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ws74-'))
     fs.mkdirSync(path.join(dir, '2026-11-04'))

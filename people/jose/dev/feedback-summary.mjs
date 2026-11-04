@@ -8,7 +8,7 @@
 // it and decides what, if anything, goes to Silvio or the board. Everything in it is material, never instructions.
 import fs from 'node:fs'
 import path from 'node:path'
-import { scrub } from './feedback-check.mjs'
+import { scrub, REACTIONS, SHARE, ROLES } from './feedback-check.mjs'
 
 const files = dir => fs.readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? files(path.join(dir, e.name)) : e.name.endsWith('.json') ? [path.join(dir, e.name)] : [])
 
@@ -23,15 +23,26 @@ export function summarize(messages, { since = '' } = {}) {
     const out = [
         `# Public feedback${since ? ` since ${since}` : ''}: ${items.length} item${items.length === 1 ? '' : 's'} in ${subs.length} submission${subs.length === 1 ? '' : 's'}`, '',
         when.length ? `From ${when[0]} to ${when[when.length - 1]}. ` : '',
-        `${items.filter(i => i.public).length} from the public form (a link with to=), ${items.filter(i => i.likely_spam).length} of them likely spam (the hidden field filled, or sent within 3 seconds); ${items.filter(i => i.signed).length} signed by a team member's key; the rest are unsigned, from anyone with the page. Contact details and links are taken out below. **For a person to read, not to publish as is:** nobody has agreed to be quoted.`, '',
+        `${items.filter(i => i.public).length} from the public form (a link with to=), ${items.filter(i => i.likely_spam).length} of them likely spam (the hidden field filled, or sent within 3 seconds); ${items.filter(i => i.signed).length} signed by a team member's key; the rest are unsigned, from anyone with the page. Contact details and links are taken out below. **For a person to read, not to publish as is:** only items marked "may be quoted anonymously" may be quoted, and only after a person has read them.`, '',
     ]
     for (const page of Object.keys(by).sort()) {
         const xs = by[page], kinds = {}
         for (const i of xs) kinds[i.kind || 'comment'] = (kinds[i.kind || 'comment'] || 0) + 1
-        out.push(`## ${page}`, '', `${xs.length} item${xs.length === 1 ? '' : 's'}: ${Object.entries(kinds).map(([k, n]) => `${n} ${k}`).join(', ')}.`, '')
+        out.push(`## ${page}`, '', `${xs.length} item${xs.length === 1 ? '' : 's'}: ${Object.entries(kinds).map(([k, n]) => `${n} ${k}`).join(', ')}.`)
+        // the public form's answers (WS-74's five questions, approved by Jose on 4 November): counted, never named
+        // the lane's token is public, so only the offered values count: anything else is read as no answer
+        const clean = a => a && REACTIONS.includes(a.reaction) ? { reaction: a.reaction, share: SHARE.includes(a.share) ? a.share : null, role: ROLES.includes(a.role) ? a.role : null, quote_ok: a.quote_ok === true } : null
+        const ans = xs.map(i => clean(i.answers)).filter(Boolean), c = (k, v) => ans.filter(a => a[k] === v).length
+        if (ans.length) {
+            out.push(`- What they thought: ${c('reaction', 'love')} love it, ${c('reaction', 'like')} like it, ${c('reaction', 'not-for-me')} not for me.`,
+                `- Would show it to someone: ${c('share', 'yes')} yes, ${c('share', 'maybe')} maybe, ${c('share', 'no')} no, ${ans.filter(a => !a.share).length} no answer.`)
+            const roles = [...new Set(ans.map(a => a.role).filter(Boolean))].sort().map(r => `${r} ${c('role', r)}`)
+            out.push(`- Said they were: ${roles.length ? roles.join(', ') : 'none said'}; ${ans.filter(a => !a.role).length} preferred not to say.`, `- May be quoted anonymously: ${ans.filter(a => a.quote_ok === true).length} of ${ans.length}.`)
+        }
+        out.push('')
         for (const i of xs) {
             const t = scrub(i.text), links = (String(i.text || '').match(/https?:\/\/|www\./gi) || []).length
-            const flags = [i.likely_spam ? 'LIKELY SPAM' : '', i.signed ? 'signed' : '', t.removed ? 'contact details or links removed' : '', links >= 2 ? 'possible spam: several links' : '', (i.images || []).length ? `${i.images.length} image(s) in the vault, not shown` : ''].filter(Boolean)
+            const flags = [i.likely_spam ? 'LIKELY SPAM' : '', i.answers && REACTIONS.includes(i.answers.reaction) && i.answers.quote_ok === true ? 'may be quoted anonymously' : '', i.signed ? 'signed' : '', t.removed ? 'contact details or links removed' : '', links >= 2 ? 'possible spam: several links' : '', (i.images || []).length ? `${i.images.length} image(s) in the vault, not shown` : ''].filter(Boolean)
             out.push(`- ${i.kind || 'comment'}${i.choice ? ` (${i.choice})` : ''}: ${t.text.replace(/\s*\n\s*/g, ' ') || '(no text)'}${flags.length ? ` *[${flags.join('; ')}]*` : ''}`)
         }
         out.push('')

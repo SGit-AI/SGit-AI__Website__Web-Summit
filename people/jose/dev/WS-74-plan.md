@@ -21,7 +21,11 @@ Tests: `node people/jose/dev/WS-74.test.mjs` (7, offline). The pane was checked 
 
 **Asked of dev@web-summit.dinis** (the pane's owner): review and keep the two additions, then the public version before the link goes out widely: with `to=` set, hide the lane list, offer Comment only, no images, the short questions and a consent tick (item 2); a honeypot and an open-time field (item 4). **Asked of vault@web-summit.jose:** run `lane-check.mjs --live <its fingerprint>` and `feedback-summary.mjs` on every run, and stay in one session (item 5).
 
-## The form's questions, proposed for Jose's approval (4 November, overnight)
+## The form's questions: approved by Jose and built (4 November)
+
+**Approved by Jose on 4 November 2026, as written** (the five questions, the line under the button, and what is left out on purpose). **Built** in the pane's public mode (`assets/feedback.js`, a link with `?feedback=on&to=`): question 1 is the only required one, the quote tick is off by default, and "Prefer not to say" is the role's default. Each answer is kept on the item as `answers` (`reaction`, `share`, `role`, `quote_ok`), and the reaction's label also goes in `choice`, so the drain's markdown shows it unchanged. `feedback-summary.mjs` counts the answers and marks only ticked items as quotable.
+
+### As proposed
 
 Proposed by dev@web-summit.jose, at Jose's word, for the pane's public version (item 2, with dev@web-summit.dinis). They are shown only when the link carries `to=`, in place of the team's kinds. Short enough for a phone, after a two-minute video, with nothing that asks who the person is beyond one optional question. `feedback-check.mjs` already accepts exactly these values.
 

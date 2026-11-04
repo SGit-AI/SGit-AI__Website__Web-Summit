@@ -27,6 +27,17 @@
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
     const KINDS = PUBLIC ? [['comment', 'Comment']] : [['comment', 'Comment'], ['decision', 'Decision'], ['idea', 'Idea'], ['bug', 'Something wrong']]
     const CHOICES = ['Approve', 'Reject', 'Change it', 'Not now']
+    // WS-74's five questions, approved by Jose on 4 November 2026 (dev@web-summit.jose; people/jose/dev/WS-74-plan.md):
+    // public mode only; the first is the only required one, the quote tick is off by default, nothing asks who you are
+    const REACT = [['love', 'Love it'], ['like', 'Like it'], ['not-for-me', 'Not for me']], SHARE = [['yes', 'Yes'], ['maybe', 'Maybe'], ['no', 'No']]
+    const ROLES = [['', 'Prefer not to say'], ['security', 'Security'], ['risk-or-compliance', 'Risk or compliance'], ['builder', 'Builder'], ['investor', 'Investor'], ['press', 'Press'], ['other', 'Other']]
+    const radios = (name, opts) => `<div class="row" role="radiogroup">${opts.map(([v, l]) => `<label><input type="radio" name="${name}" value="${v}"> ${l}</label>`).join(' ')}</div>`
+    const PUBQ = `<fieldset class="fb-q"><legend><b>What did you think of it?</b> (required)</legend>${radios('fb-reaction', REACT)}</fieldset>
+<label class="meta" for="fb-text"><b>One thing you'd change?</b> (optional)</label>`
+    const PUBQ2 = `<fieldset class="fb-q"><legend><b>Would you show it to someone?</b> (optional)</legend>${radios('fb-share', SHARE)}</fieldset>
+<label class="meta"><b>Which describes you best?</b> (optional) <select id="fb-role" style="width:auto">${ROLES.map(([v, l]) => `<option value="${v}">${l}</option>`).join('')}</select></label>
+<label class="meta"><input type="checkbox" id="fb-quote-ok"> You may quote this anonymously on our site</label>`
+    const answers = f => ({ reaction: (f.querySelector('input[name=fb-reaction]:checked') || {}).value || '', share: (f.querySelector('input[name=fb-share]:checked') || {}).value || null, role: f.querySelector('#fb-role').value || null, quote_ok: f.querySelector('#fb-quote-ok').checked })
     let CFG = null, items = LS.get('items', []), open = PUBLIC || LS.get('open', false), quote = '', pasted = [], kind = 'comment'
     LS.del('open') // WS-140: Give feedback (assets/me.js) asks for the pane open once, after its reload
     const save = () => { if (!LS.set('items', items)) toast('This browser is out of local storage: submit or delete some items (images take the most room).') }
@@ -83,7 +94,7 @@
 .fb-pane .imgs img{width:88px;height:66px;object-fit:cover;border-radius:6px;border:1px solid #e5e1d5}
 .fb-pane .imgs button{position:absolute;top:2px;right:2px;padding:0 5px;font-size:11px}
 .fb-pane h4{margin:16px 0 4px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#5c5f66}
-.fb-pane .fb-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}.fb-pane footer{border-top:1px solid #e5e1d5;padding:10px 14px}.fb-toast{position:fixed;left:50%;bottom:72px;transform:translateX(-50%);z-index:10000;background:#1c1d21;color:#fff;padding:8px 14px;border-radius:8px;font:500 13px/18px system-ui,sans-serif}
+.fb-pane .fb-q{border:0;padding:0;margin:8px 0}.fb-pane .fb-q legend{padding:0;margin-bottom:4px}.fb-pane .fb-q label{margin-right:10px}.fb-pane .fb-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}.fb-pane footer{border-top:1px solid #e5e1d5;padding:10px 14px}.fb-toast{position:fixed;left:50%;bottom:72px;transform:translateX(-50%);z-index:10000;background:#1c1d21;color:#fff;padding:8px 14px;border-radius:8px;font:500 13px/18px system-ui,sans-serif}
 @media (prefers-color-scheme:dark){.fb-pane{background:#1c1c19;color:#ecebe6;border-color:#46453d}.fb-pane textarea,.fb-pane select{background:#24241f;border-color:#46453d}.fb-pane button{background:#24241f;border-color:#46453d}.fb-pane .it,.fb-pane header,.fb-pane footer{border-color:#34332d}.fb-pane .meta,.fb-pane h4,.fb-pane .q{color:#a9a59b}}`
     function toast(t) { const el = document.createElement('div'); el.className = 'fb-toast'; el.setAttribute('role', 'status'); el.textContent = t; document.body.appendChild(el); setTimeout(() => el.remove(), 3200) }
     const thumbs = (imgs, id) => imgs && imgs.length ? `<div class="imgs">${imgs.map((m, n) => `<span><img src="${m.data}" alt="${esc(m.name)}">${id ? `<button type="button" data-rmimg="${id}:${n}" aria-label="Remove image">×</button>` : ''}</span>`).join('')}</div>` : ''
@@ -93,7 +104,7 @@
         if (i.sent_at) return `<div class="it sent"><div class="meta">${esc(label(i.kind))}${i.choice ? `: <b>${esc(i.choice)}</b>` : ''} · ${where} · sent ${esc(i.sent_at.slice(0, 16).replace('T', ' '))} UTC</div>${i.quote ? `<div class="q">${esc(i.quote)}</div>` : ''}<div>${esc(i.text).replace(/\n/g, '<br>')}</div>${thumbs(i.images)}</div>`
         return `<div class="it" data-id="${i.id}"><div class="meta">${esc(label(i.kind))} · ${where} · ${esc(i.at.slice(11, 16))} UTC</div>${i.quote ? `<div class="q">${esc(i.quote)}</div>` : ''}
 ${i.kind === 'decision' ? `<div class="row">${CHOICES.map(c => `<button type="button" data-choice="${i.id}:${esc(c)}"${i.choice === c ? ' class="go"' : ''}>${esc(c)}</button>`).join('')}</div>` : ''}
-<textarea data-edit="${i.id}" aria-label="Edit this item">${esc(i.text)}</textarea>${thumbs(i.images, i.id)}
+<textarea data-edit="${i.id}"${i.answers ? ' maxlength="500"' : ''} aria-label="Edit this item">${esc(i.text)}</textarea>${thumbs(i.images, i.id)}
 <div class="row"><button type="button" data-del="${i.id}">Delete</button></div></div>`
     }
     function render() {
@@ -107,8 +118,8 @@ ${i.kind === 'decision' ? `<div class="row">${CHOICES.map(c => `<button type="bu
 <div class="fb-body"><form class="fb-new"><label class="meta" for="fb-kind">On this page: ${esc(document.title)}</label>
 <input type="text" name="website" class="fb-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 <div class="row"${PUBLIC ? ' hidden' : ''}><select id="fb-kind" style="width:auto">${KINDS.map(([v, l]) => `<option value="${v}"${v === kind ? ' selected' : ''}>${l}</option>`).join('')}</select></div>
-${quote ? `<div class="q">${esc(quote)}</div>` : '<p class="meta">Tip: select text on the page first to quote it.</p>'}
-<textarea id="fb-text" placeholder="${PUBLIC ? 'Your comment.' : 'Your comment. Paste or drop images here.'}"></textarea>${thumbs(pasted.map(x => x), '')}
+${quote ? `<div class="q">${esc(quote)}</div>` : '<p class="meta">Tip: select text on the page first to quote it.</p>'}${PUBLIC ? PUBQ : ''}
+<textarea id="fb-text"${PUBLIC ? ' maxlength="500"' : ''} placeholder="${PUBLIC ? 'Up to 500 characters.' : 'Your comment. Paste or drop images here.'}"></textarea>${thumbs(pasted.map(x => x), '')}${PUBLIC ? PUBQ2 : ''}
 <p class="meta">Please don't include your name, email or phone number. If you'd like a reply, tell the person who sent you the link.</p>
 <div class="row"><button class="go" type="submit">Add</button><span class="meta">Kept on this device until you submit.</span></div></form>
 <h4>To send (${u.length})</h4>${u.length ? u.map(itemHtml).join('') : '<p class="meta">Nothing waiting.</p>'}
@@ -126,11 +137,13 @@ ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
         ta.addEventListener('drop', async e => { e.preventDefault(); if (PUBLIC) return; const keep = ta.value; await takeImages(e.dataTransfer.files, pasted); render(); document.querySelector('#fb-text').value = keep })
         ta.addEventListener('dragover', e => e.preventDefault())
         f.onsubmit = e => {
-            e.preventDefault(); const text = ta.value.trim(); if (!text && !pasted.length) return
-            items.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), at: new Date().toISOString(), kind: p.querySelector('#fb-kind').value, text, quote, choice: '', images: pasted, page: { url: location.href.split('#')[0].split('?')[0], path: location.pathname, title: document.title } })
+            e.preventDefault(); const text = ta.value.trim(), a = PUBLIC ? answers(f) : null
+            if (a && !a.reaction) { toast('Please choose what you thought of it first.'); return }
+            if (!a && !text && !pasted.length) return
+            items.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), at: new Date().toISOString(), kind: p.querySelector('#fb-kind').value, text: a ? text.slice(0, 500) : text, quote, choice: a ? REACT.find(r => r[0] === a.reaction)[1] : '', images: pasted, page: { url: location.href.split('#')[0].split('?')[0], path: location.pathname, title: document.title }, ...(a ? { answers: a } : {}) })
             pasted = []; quote = ''; kind = 'comment'; save(); render()
         }
-        p.querySelectorAll('[data-edit]').forEach(t => t.oninput = () => { const i = items.find(x => x.id === t.dataset.edit); if (i) { i.text = t.value; save() } })
+        p.querySelectorAll('[data-edit]').forEach(t => t.oninput = () => { const i = items.find(x => x.id === t.dataset.edit); if (i) { i.text = i.answers ? t.value.slice(0, 500) : t.value; save() } })
         p.querySelectorAll('[data-del]').forEach(b => b.onclick = () => { items = items.filter(x => x.id !== b.dataset.del); save(); render() })
         p.querySelectorAll('[data-choice]').forEach(b => b.onclick = () => { const [id, c] = b.dataset.choice.split(/:(.*)/); const i = items.find(x => x.id === id); if (i) { i.choice = i.choice === c ? '' : c; save(); render() } })
         p.querySelectorAll('[data-rmimg]').forEach(b => b.onclick = () => { const [id, n] = b.dataset.rmimg.split(':'); if (!id) { pasted.splice(+n, 1) } else { const i = items.find(x => x.id === id); if (i) i.images.splice(+n, 1); save() } render() })
