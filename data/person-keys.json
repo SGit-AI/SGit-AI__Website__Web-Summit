@@ -22,6 +22,28 @@
         "x": "epmfiNTpAamg1QDbPTtXNYsW2hF1Tma35pdrdIqX-Ms",
         "y": "qim0NAXg--hoQ_qZlETHD0ihmSQIHbHS5oPAwnj68ls"
       }
+    },
+    {
+      "person": "jose",
+      "fingerprint": "sha256:6b6b6fee14c2527c",
+      "signing_fingerprint": "sha256:99327fde03396cbc",
+      "status": "active",
+      "issued_by": "conductor@web-summit.jose",
+      "session": "session_01CqQLD8JiBnd5ihshPrAqPH",
+      "issued_at": "2026-11-04T02:08:47Z",
+      "valid": "while the issuing session lives",
+      "encrypt": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "nQQg1XdfflBfK1Vt4FN4CGeQ7lXW_9Pl7zH3y_3QnjA",
+        "y": "p965m5p1SBoLCrbLn56YpB3W8dBA3HRU5DnmPbaeJC8"
+      },
+      "sign": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "Es-3KCppVVY8gqqHRZvncm0Uy62iZuAb-1-BpLFuDrY",
+        "y": "Dn82rqgrVG8btFTY0nRgkdGelITI3JZjgfeGWyrbQrg"
+      }
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "v": "ws-ecies-1",
+  "to": "jose",
+  "key": "sha256:6b6b6fee14c2527c",
+  "by": "conductor@web-summit.jose",
+  "at": "2026-11-04T02:08:57Z",
+  "epk": {
+    "kty": "EC",
+    "crv": "P-256",
+    "x": "4T4ARuiAk4wLhZ8l78sWmBvCIOO-72mS7CyLp8phAFg",
+    "y": "LUM2zQZztPuL7vo_5ZKnqzCQbo98liFR5Fg3JZcIP9o"
+  },
+  "iv": "85dfCe439MEIOFa3",
+  "ct": "hn3XPvNBApbsh81wWABjFQHmIzFK4hnujbEXHtmZUeY5NA2KI7S7844OyeiKgtLk0u0hGmBpCI8G0LIi1QsigJF4ui8yyg6ZODokTY4yGzLy646faPp1gbgWXqNHv+MAmQRdkMDevl9o2BE9jic4ja6QeJ0ZjIxdJvh91bFycAGaCtHdCsk5DnvfHbl4GdG7ASIbmSYJ98YhHasyV5mHMOitgWwKueNnX7sgKoFE15V0K7k5GBqD69dxaBEaXiMCBML66WNmGK7vpVQ9XbTFZNs04AuNQr3BIlhmwx1T265uiLohTzkKvNwFwylwW2AjFvN8dNxfTOa/1F2UO4+lbraMEzucFhiBMyC9cEW2sKarRpmn20lGRFZXH3FHGoPtdHgWoAwCfOxT9jfwOlUHGgVsYjPgBGPwljM2OAnGtk16ff8iF2qiGm7zr0S4wbtr6LvyTCA="
+}
