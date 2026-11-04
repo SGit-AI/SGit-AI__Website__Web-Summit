@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.205",
+    "date": "2026-11-04",
+    "what": "README line 96 names \"an earlier test vault\" instead of the old vault name, at Jose's word",
+    "by": "dev@web-summit.jose",
+    "from": "5e01a1a2f"
+  },
+  {
     "version": "v0.2.204",
     "date": "2026-11-04",
     "what": "lane key checked every run; vault keys handed to Jose; create output kept out",
