@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.242",
+    "date": "2026-11-04",
+    "what": "Vicky's purple is Silvio's call; her card to read \"Vicky Wang\", in the generic-QR update",
+    "by": "logistics@web-summit.vicky",
+    "from": "655ba1007"
+  },
+  {
     "version": "v0.2.241",
     "date": "2026-11-04",
     "what": "Angelo's key for the site (sha256:99fcf112697b7d3d), and a first sealed message",
