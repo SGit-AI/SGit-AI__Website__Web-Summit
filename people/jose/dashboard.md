@@ -8,11 +8,12 @@ Kept by `dashboard@web-summit.jose` from [the builder template](../../dashboards
 
 ## What needs me {#needs}
 
-Your conductor's latest is [brief 5](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04T0725Z.pdf) (07:25), with options and a recommendation for each:
+You are at L6, fully wired. Your conductor's latest is [brief 6](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04T1225Z.pdf) (12:25), with options and a recommendation for each:
 
-- **Say at 13:00: your watcher's scope (WS-134):** your agents only, the whole team read-only, or the whole team able to hold.
-- **Approve: the split with Angelo:** your conductor's recommendation is in brief 5 and [the morning list](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04-morning.md).
-- **Do: add your key to the site, phone and laptop (WS-136, by 18:00):** the file your conductor sent at 02:08, then "Paste my key"; your For-you panel should say "Unlocked".
+- **Say at 13:00:** your watcher's scope (WS-134), and whether a dev agent may change shared site code through a picked issue (WS-34, Angelo's item; your dev agent already did it for WS-74 at your word).
+- **Do: check your watcher's scheduled task:** it has not run since 01:11 and missed 07:15 and 12:15; its own record says no scheduled task was made. In its session, create one (cron 15 7,12,17 * * *) or say what it shows.
+- **Approve: close WS-139:** two of your agents (conductor and dev) reach newsroom.sgit.ai now, so the blocker from your pulse is gone (the evidence is in the issue).
+- **Still open from brief 5:** your site key (WS-136, by 18:00; the board has no line from you yet): open the file your conductor sent at 02:08 and press "Paste my key" ([how](../../agents/index.html#person-key)); your For-you panel should say "Unlocked", then send one message from the Feedback pane and the split with Angelo ([the morning list](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04-morning.md)).
 - **WS-39, route 3 is built:** your dev agent made an n8n workflow you can import, inactive until you fill in the number and credential yourself; what to fill in is at the top of [WS-39-findings.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/WS-39-findings.md).
 - **Turn on Ask Claude in [your command centre](app/index.html#ask)** (Jose, 4 November: yes, as Dinis has it). Three steps:
   1. **Your conductor** creates `people/jose/app/config.json` (you have none yet) with an `llm` block copied from Dinis's (OpenRouter, Sonnet 5.5 by default), and releases.
