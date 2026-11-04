@@ -15,3 +15,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - WS-100 moved to "To follow up": picked by pm@, draft on /onboarding-guide/ with Vicky's review (a03bb69, 1b67147).
 - WS-57 overdue since 12:00, designer silent since 09:17; printer may slip to Mon 9 Nov (reports/logistics.md, 7bca9e6).
 - Question for Vicky: has your dev agent's first tool been decided (brief 3, item 1)? If yes, I drop it from "Needs me".
+
+## Wed 4 Nov 2026, 17:50 UTC (wake)
+
+- Dashboard refreshed. Dropped as done: WS-23 (e7ff186) and Vicky's site key (WS-136; vicky in data/person-keys.json).
+- Added to "Needs me": is the WS-100 guide finished (reports/pm.md, 17:40) and the pending meeting follow-ups (people/vicky/outreach-2026-11-04.md, 6d22fa7).
+- The four owners (WS-25, WS-29, WS-41, WS-53) stay at the top for the 18:00; pm@ already marked them URGENT (5a30a53), so I do not repeat it.
+- Still open from my 12:55 report: has the dev agent's first tool been decided (brief 3, item 1)?
