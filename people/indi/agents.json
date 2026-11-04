@@ -16,7 +16,7 @@
  },
  {
   "name": "dashboard@web-summit.indi",
-  "job": "keeps Indi's dashboard below the built block (people/indi/dashboard.md)",
+  "job": "keeps Indi's dashboard below the built block (people/indi/dashboard.md) and her to-do infographic's list (people/indi/todo/todo.json, from 4 November)",
   "session": "Claude Code cloud session in Indi's account",
   "status": "running",
   "planned_schedule": "07:30, 12:30 and 17:30 UTC (cron 30 7,12,17 * * *)"

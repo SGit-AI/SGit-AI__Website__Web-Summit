@@ -1,5 +1,5 @@
 {
- "about": "Indi's list of everything left to do, drawn as the infographic at /people/indi/todo/. The Command Centre half is rebuilt from the board and the stand-up items at every release; this file adds a next step per issue and the tasks that are not on the board. Kept by Indi's agents (first written by synthetic@web-summit.indi, 4 November 2026, from the board, Indi's briefs 1 to 8 and today's git log).",
+ "about": "Indi's list of everything left to do, drawn as the infographic at /people/indi/todo/. The Command Centre half is rebuilt from the board and the stand-up items at every release; this file adds a next step per issue and the tasks that are not on the board. Kept by dashboard@web-summit.indi at each run, from 4 November at Indi's word (first written by synthetic@web-summit.indi from the board, Indi's briefs 1 to 8 and that day's git log).",
  "written": "2026-11-04T17:40Z",
  "done_for_indi": {
   "WS-01": "Done: you are at L4 (people/indi/onboarding.json).",
@@ -44,17 +44,77 @@
   "WS-137": "Dinis's lab: your part, by Mon 9 Nov."
  },
  "other": [
-  {"group": "Your agents", "title": "Give your dev agent its scheduled task", "detail": "dev@web-summit.indi has not committed since 3 Nov, 23:14 UTC. Planned: 09:30 and 15:30 UTC.", "source": "git log; people/indi/agents.json"},
-  {"group": "Your agents", "title": "Give your dashboard agent its scheduled task", "detail": "dashboard@web-summit.indi has not committed since 3 Nov, 23:00 UTC. Planned: 07:30, 12:30 and 17:30 UTC.", "source": "git log; people/indi/agents.json"},
-  {"group": "Your agents", "title": "Start the accountant agent", "detail": "Prompt ready in people/indi/accountant/PROMPT.md; brief to you and Dinis at 17:30 UTC daily.", "source": "WS-148"},
-  {"group": "Your agents", "title": "Add the token-measuring line to each agent's wake", "detail": "One line at the end of each wake prompt (end of PROMPT.md), or let the accountant ask.", "source": "WS-148"},
-  {"group": "Your agents", "title": "Start the messaging, factory, builder and vault agents", "detail": "All four are listed as planned, not started.", "source": "people/indi/agents.json"},
-  {"group": "Waiting on you", "title": "Accept the newsroom repository invitation", "detail": "Push is still refused (checked about 16:40 UTC). Accept it on GitHub as riskmandate-indi.", "source": "WS-145"},
-  {"group": "Waiting on you", "title": "Store the run-2 vault key, then say 'delete it'", "detail": "It sits in a private scratchpad file of the synthetic session.", "source": "brief 8"},
-  {"group": "Waiting on you", "title": "Answer the six card decisions", "detail": "One description line, seven job titles, the stand number, one contact, a framework, Record alone or with Terminal.", "source": "the card revamp handover doc"},
-  {"group": "Waiting on you", "title": "Acknowledge briefs 1 to 8", "detail": "Tell your conductor 'acknowledge'.", "source": "brief 8"},
-  {"group": "Waiting on others", "title": "Dinis: fix the /meet/ pages before printing", "detail": "Key box first, 'coming this week' links, no contact (WS-146, re-measured 16:00 UTC).", "source": "WS-146"},
-  {"group": "Waiting on others", "title": "Dinis: apply the newsroom patch, or let your conductor", "detail": "Applies cleanly to the newsroom's v0.1.2.", "source": "WS-141"},
-  {"group": "Waiting on others", "title": "Dinis: confirm the newsroom desks for your agents", "detail": "Desk, journalist and fact-checker, per brief 4 of the newsroom pack.", "source": "WS-141"}
+  {
+   "group": "Your agents",
+   "title": "Give your dev agent its scheduled task",
+   "detail": "dev@web-summit.indi has not committed since 3 Nov, 23:14 UTC. Planned: 09:30 and 15:30 UTC.",
+   "source": "git log; people/indi/agents.json"
+  },
+  {
+   "group": "Your agents",
+   "title": "Give your dashboard agent its scheduled task",
+   "detail": "dashboard@web-summit.indi has not committed since 3 Nov, 23:00 UTC. Planned: 07:30, 12:30 and 17:30 UTC.",
+   "source": "git log; people/indi/agents.json"
+  },
+  {
+   "group": "Your agents",
+   "title": "Start the accountant agent",
+   "detail": "Prompt ready in people/indi/accountant/PROMPT.md; brief to you and Dinis at 17:30 UTC daily.",
+   "source": "WS-148"
+  },
+  {
+   "group": "Your agents",
+   "title": "Add the token-measuring line to each agent's wake",
+   "detail": "One line at the end of each wake prompt (end of PROMPT.md), or let the accountant ask.",
+   "source": "WS-148"
+  },
+  {
+   "group": "Your agents",
+   "title": "Start the messaging, factory, builder and vault agents",
+   "detail": "All four are listed as planned, not started.",
+   "source": "people/indi/agents.json"
+  },
+  {
+   "group": "Waiting on you",
+   "title": "Accept the newsroom repository invitation",
+   "detail": "Push is still refused (checked about 16:40 UTC). Accept it on GitHub as riskmandate-indi.",
+   "source": "WS-145"
+  },
+  {
+   "group": "Waiting on you",
+   "title": "Store the run-2 vault key, then say 'delete it'",
+   "detail": "It sits in a private scratchpad file of the synthetic session.",
+   "source": "brief 8"
+  },
+  {
+   "group": "Waiting on you",
+   "title": "Answer the six card decisions",
+   "detail": "One description line, seven job titles, the stand number, one contact, a framework, Record alone or with Terminal.",
+   "source": "the card revamp handover doc"
+  },
+  {
+   "group": "Waiting on you",
+   "title": "Acknowledge briefs 1 to 8",
+   "detail": "Tell your conductor 'acknowledge'.",
+   "source": "brief 8"
+  },
+  {
+   "group": "Waiting on others",
+   "title": "Dinis: fix the /meet/ pages before printing",
+   "detail": "Key box first, 'coming this week' links, no contact (WS-146, re-measured 16:00 UTC).",
+   "source": "WS-146"
+  },
+  {
+   "group": "Waiting on others",
+   "title": "Dinis: apply the newsroom patch, or let your conductor",
+   "detail": "Applies cleanly to the newsroom's v0.1.2.",
+   "source": "WS-141"
+  },
+  {
+   "group": "Waiting on others",
+   "title": "Dinis: confirm the newsroom desks for your agents",
+   "detail": "Desk, journalist and fact-checker, per brief 4 of the newsroom pack.",
+   "source": "WS-141"
+  }
  ]
 }
