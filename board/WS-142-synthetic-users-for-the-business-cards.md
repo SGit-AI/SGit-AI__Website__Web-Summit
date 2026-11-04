@@ -22,4 +22,6 @@ Dinis, to Indi on WhatsApp, 4 November 2026: focus synthetic users on what you a
 
 1. ~~The vault~~ Done 4 November: vault `nnsikio4`, audited by a security sub-agent, read key in `people/indi/vaults.json` (on /vaults/). Vault key with Indi.
 2. **Run 2 done** (4 November): the same five personas on the six round-2 designs, in vault `4c52covm` (on /vaults/), text in `people/indi/synthetic/cards-run-2/`. **Record** is picked by 4 of 5 (mean 4.0 of 5, all five would follow up); **Terminal** by the engineer (3.8). Pass 2.4, Boardroom 2.2, Seal 1.8, Signature 1.8: four of the six never say what RiskMandate does. On the winner: a plain job title (the role lines are internal roles), "Web Summit Lisbon" and the stand number, and what RiskMandate does about the gap. 42 of 42 QR codes decode to the right page (measured). For the team's vote and designer@web-summit.indi.
+Handover (4 November, about 16:30 UTC): two synthetic sessions ran run 2 in parallel; Indi kept the published one and asked for one conductor agent to carry WS-142 on: `people/indi/synthetic/HANDOVER.md`.
+
 3. For the /meet/ owner: hide the key box from visitors, and put a working contact on the page before the summit. Raised as WS-146 (4 November).

@@ -488,7 +488,7 @@
     {
       "id": "synthetic-indi-2",
       "label": "synthetic@web-summit.indi (Claude Code session, second)",
-      "role": "Indi Gupte's synthetic users agent (synthetic@web-summit.indi), in a new session started on 4 November 2026 with the SG/Send access token and dev.send.sgraph.ai allowed, to push the cards run 1 vault (WS-142). Replaces the key synthetic-indi. A session key: it ends with its session.",
+      "role": "Indi Gupte's synthetic users agent (synthetic@web-summit.indi), in a new session started on 4 November 2026 with the SG/Send access token and dev.send.sgraph.ai allowed, to push the cards run 1 vault (WS-142). Replaces the key synthetic-indi. A session key: it ends with its session. Ended: that session stopped on 4 November 2026, about 16:30 UTC, at Indi's word (handover: people/indi/synthetic/HANDOVER.md). Seal nothing to this key.",
       "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Indi's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
       "added": "2026-11-04",
       "bundle": {
@@ -498,7 +498,8 @@
         "label": "synthetic@web-summit.indi",
         "fingerprint": "sha256:8b0ff22957bd775b",
         "signing_fingerprint": "sha256:b4f4dbe798b2326c"
-      }
+      },
+      "status": "ended"
     },
     {
       "id": "researcher-vicky",
