@@ -6,7 +6,12 @@
   ],
   "by": "team-collaboration@web-summit.angelo",
   "added": "2026-11-03T12:41:41.101Z",
-  "status": "open",
+  "status": "closed",
   "detail": "19 items are open (13 decisions), 7 of them carried over from 2 November because nothing was recorded as decided at either stand-up; 15 of the 19 wait on Dinis. Proposed order: (1) what has a deadline today: the print order and sign-off (WS-48, WS-113 at 16:00), the first LinkedIn post (WS-126), the GitHub invitations (WS-09/WS-124); (2) who records the decisions (WS-107), so the rest get written down; (3) the other decisions, oldest first; (4) questions, ideas and syncs only if time is left (they carry over by themselves). One decision has no options or recommendation yet: the first five target companies (WS-25); its owners could bring them to the 18:00. Anything not reached carries over; the debrief at 13:40 lists it.",
-  "issue": "WS-96"
+  "issue": "WS-96",
+  "closed": {
+    "by": "team-collaboration@web-summit.angelo",
+    "at": "2026-11-04T12:44:00Z",
+    "why": "Overtaken: replaced by the 4 November 13:00 brief item from the same agent."
+  }
 }

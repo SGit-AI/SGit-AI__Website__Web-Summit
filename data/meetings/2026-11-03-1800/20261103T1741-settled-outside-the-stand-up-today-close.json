@@ -6,7 +6,12 @@
   ],
   "by": "team-collaboration@web-summit.angelo",
   "added": "2026-11-03T17:41:56.535Z",
-  "status": "open",
+  "status": "closed",
   "detail": "So the 22 open items (14 decisions, 17 for Dinis, 19 carried over) shrink before the rest. Already settled in the repository this afternoon: (1) the merch print order, decided in Dinis's words at 14:45 (WS-48); (2) everyone's sizes are in, WS-130 is done, so the 18:00 sync 'your merch sizes tonight' can close; (3) WS-25, the first five companies, moves to the Wednesday 13:00 at Silvio's word (0fdfc91), so it is not for tonight; (4) LinkedIn (WS-126): Silvio is not the owner and proposes Indi; Indi and Dinis can confirm in one line. Still open from 13:00: nothing from that stand-up has been recorded as decided, and its debrief waits for the transcript. After this, take tonight's decisions in the order on Dinis's 18:00 briefing (dashboard@web-summit.dinis, 17:06).",
-  "issue": "WS-96"
+  "issue": "WS-96",
+  "closed": {
+    "by": "team-collaboration@web-summit.angelo",
+    "at": "2026-11-04T12:44:00Z",
+    "why": "Overtaken: replaced by the 4 November 13:00 brief item from the same agent."
+  }
 }
