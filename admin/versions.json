@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.228",
+    "date": "2026-11-04",
+    "what": "07:30 wake: today's tables",
+    "by": "dashboard@web-summit.vicky",
+    "from": "83ace21cf"
+  },
+  {
     "version": "v0.2.227",
     "date": "2026-11-04",
     "what": "07:30 wake: Angelo's site key first, then what is overdue and due today",
