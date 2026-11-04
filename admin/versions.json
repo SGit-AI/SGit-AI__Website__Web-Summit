@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.376",
+    "date": "2026-11-04",
+    "what": "WS-59 agent policies for Daniela, WS-125 setup guide (drafts), session key",
+    "by": "builder@web-summit.indi",
+    "from": "661cb69d8"
+  },
+  {
     "version": "v0.2.375",
     "date": "2026-11-04",
     "what": "WS-05: the overnight run's plan and the prompts for four agent sessions (messaging@, factory@, builder@, ux@)",
