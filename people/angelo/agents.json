@@ -9,7 +9,7 @@
     "name": "dev@web-summit.angelo",
     "job": "the site's build, gate, pipeline and pages",
     "session": "Claude Code cloud session in Angelo's account",
-    "schedule": "proposed: every two hours, round the clock (cron 35 */2 * * *), to be set by the agent once Angelo confirms the protocol in its session"
+    "schedule": "every two hours, round the clock (cron 35 */2 * * * UTC), a scheduled task into its own session, set on 4 November after Angelo confirmed the protocol in its session"
   },
   {
     "name": "team-collaboration@web-summit.angelo",
