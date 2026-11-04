@@ -87,9 +87,9 @@ No number, token, group id or invite link goes in this repository: they stay in 
 
 `WS-39-route3.n8n.json`: the n8n workflow to import, made by `WS-39-route3.build.mjs` and tested by `WS-39-route3.test.mjs`. What to fill in inside n8n is at the top of `WS-39-findings.md`.
 
-## WS-74, prepared only (not picked up)
+## WS-74, picked up (4 November): the public feedback form
 
-`WS-74-plan.md`: Jose chose the vault option on 4 November; the plan now says what the live pane and vault@web-summit.jose's lane cover and what is missing. Earlier: three options for a public feedback form (A: the site's sealed lane with a public form mode; B: Jose's n8n form sealing into the same lane; C: a hosted Google Form as a stopgap), the fields, the spam and contact-detail checks, and a recommendation (A). The prototype check is `feedback-check.mjs` (`node people/jose/dev/feedback-check.test.mjs`, offline): whitelisted fields, spam signals, contact details scrubbed before storing, and a board-ready summary that quotes only with consent.
+Jose chose the vault option. Answers go through the site's feedback pane, sealed in the browser, to vault@web-summit.jose's lane. The link `?feedback=on&to=vault@web-summit.jose` (on `/videos/` and each video page) opens the pane on that lane. `lane-check.mjs` checks the lane is sealed to the vault agent's live key; `feedback-summary.mjs` makes the summary a person reads; `node people/jose/dev/WS-74.test.mjs` tests both. The plan, what is built and what is still missing: `WS-74-plan.md`. The earlier prototype `feedback-check.mjs` provides the scrubbing.
 
 ## Vaults are not this agent's job (WS-120, WS-129)
 

@@ -11,6 +11,10 @@
     const LS = { get(k, d) { try { const v = localStorage.getItem('fb.' + k); return v === null ? d : JSON.parse(v) } catch { return d } }, set(k, v) { try { localStorage.setItem('fb.' + k, JSON.stringify(v)); return true } catch { return false } }, del(k) { try { localStorage.removeItem('fb.' + k) } catch { } } }
     const q = new URLSearchParams(location.search).get('feedback')
     if (q === 'on') LS.set('on', true)
+    // WS-74 (dev@web-summit.jose, 4 November 2026, at Jose's word): ?feedback=on&to=<agent> opens on that agent's lane,
+    // so a link can send an outsider to the right inbox; an agent not in lanes[] falls back as before
+    const qto = new URLSearchParams(location.search).get('to')
+    if (q === 'on' && qto && /^[a-z0-9-]+@web-summit\.[a-z0-9-]+$/.test(qto)) LS.set('to', qto)
     if (q === 'off') LS.del('on')
     if (!LS.get('on', false)) return
     const script = document.currentScript, base = script ? script.src.replace(/feedback\.js(\?.*)?$/, '') : '/assets/'
@@ -97,6 +101,7 @@ ${i.kind === 'decision' ? `<div class="row">${CHOICES.map(c => `<button type="bu
 <div class="row"><select id="fb-kind" style="width:auto">${KINDS.map(([v, l]) => `<option value="${v}"${v === kind ? ' selected' : ''}>${l}</option>`).join('')}</select></div>
 ${quote ? `<div class="q">${esc(quote)}</div>` : '<p class="meta">Tip: select text on the page first to quote it.</p>'}
 <textarea id="fb-text" placeholder="Your comment. Paste or drop images here."></textarea>${thumbs(pasted.map(x => x), '')}
+<p class="meta">Please don't include your name, email or phone number. If you'd like a reply, tell the person who sent you the link.</p>
 <div class="row"><button class="go" type="submit">Add</button><span class="meta">Kept on this device until you submit.</span></div></form>
 <h4>To send (${u.length})</h4>${u.length ? u.map(itemHtml).join('') : '<p class="meta">Nothing waiting.</p>'}
 ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>

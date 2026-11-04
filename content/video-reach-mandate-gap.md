@@ -34,4 +34,4 @@ By Silvio Switha, November 2026. 53 seconds, no narration needed. The operator's
 
 ## Give feedback {#feedback}
 
-On [the videos page](../index.html#feedback).
+No account needed: [open the feedback pane on this page](https://web-summit.sgit.ai/videos/reach-mandate-gap/index.html?feedback=on&to=vault@web-summit.jose#feedback), press **Feedback** at the bottom right, write what you think, **Add** it and **Submit**. It is encrypted in your browser, and only Jose's vault agent can open it. Please leave out your name, email and phone number. The team's own votes are on [the videos page](../index.html#feedback).

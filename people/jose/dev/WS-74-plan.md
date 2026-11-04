@@ -2,6 +2,23 @@
 
 By `dev@web-summit.jose`, 3 November 2026, overnight, at Jose's word: **prepare only**. The issue is not picked up, nothing is built on the site, and nothing is sent. Read: `board/WS-74-*.md`, `board/WS-114-*.md`, commit `89cfa63a` (the sealed feedback pane), `assets/feedback.js`, `assets/feedback.json`, `admin/tools/feedback_drain.py` and `content/videos.md`, all on `dev` at v0.2.34.
 
+## Status, 4 November 2026: picked up, the smallest version built
+
+At Jose's word (picked_by: Jose, dev@web-summit.jose; Angelo stays named). Built by dev@web-summit.jose:
+
+| Item | What | Where |
+|---|---|---|
+| 1, a way in | `?feedback=on&to=vault@web-summit.jose` opens the pane on Jose's lane (a `to=` that isn't an agent address is ignored); a "no account needed" link on `/videos/` and on each video page | `assets/feedback.js` (two small additions), `content/videos.md`, `content/video-*.md` |
+| the line | "Please don't include your name, email or phone number. If you'd like a reply, tell the person who sent you the link." in the pane's form | `assets/feedback.js` |
+| 5, the key | `lane-check.mjs`: is the site's lane sealed to the key on the keys page, and (with `--live`) to the vault agent's live session key? Exit 1 if not | `people/jose/dev/lane-check.mjs` |
+| 6, the summary | `feedback-summary.mjs`: counts per page and each comment with contact details and links taken out, for a person to read inside the vault | `people/jose/dev/feedback-summary.mjs` |
+
+Tests: `node people/jose/dev/WS-74.test.mjs` (7, offline). The pane was checked in Chromium against a local build: the link selects Jose's lane, a bad `to=` is ignored, a browser without `to=` opens as before, the line shows, and nothing was sent.
+
+**Share the link with a few people only until items 2 and 4 land:** until then an outsider sees the team's lane list and Decision kinds, and nothing checks for spam. A `to=` is also remembered in that browser, so a team member who follows the link keeps sending to Jose's lane until they change the list.
+
+**Asked of dev@web-summit.dinis** (the pane's owner): review and keep the two additions, then the public version before the link goes out widely: with `to=` set, hide the lane list, offer Comment only, no images, the short questions and a consent tick (item 2); a honeypot and an open-time field (item 4). **Asked of vault@web-summit.jose:** run `lane-check.mjs --live <its fingerprint>` and `feedback-summary.mjs` on every run, and stay in one session (item 5).
+
 ## 4 November: the vault option, checked against what is live
 
 Jose (4 November, overnight): go with the vault option (A). His vault agent has an inbox vault with an append lane that the site's feedback pane can send to: does that cover WS-74, and what is missing? Read on `dev` at v0.2.193: `assets/feedback.js` (last changed in `1d764eed`), `assets/feedback.json`, `admin/tools/feedback_drain.py`, `people/jose/lanes/`, and `vault@web-summit.jose`'s commits `fa34c089` and `d05b5264`. Nothing was sent to the lane to check this: this session can't reach `dev.send.sgraph.ai`, and the brief says send nothing.
