@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.231",
+    "date": "2026-11-04",
+    "what": "WS-138, a person's signature is also their conductor's; ABPs updated",
+    "by": "abp@web-summit.dinis",
+    "from": "f577b1203"
+  },
+  {
     "version": "v0.2.230",
     "date": "2026-11-04",
     "what": "the board's health at 07:50 Wednesday: 52 due today, the RiskMandate core unpicked; the 13:00 agenda curated",
