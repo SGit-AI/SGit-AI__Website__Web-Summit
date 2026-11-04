@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.251",
+    "date": "2026-11-04",
+    "what": "10:27 wake: Vicky's signed message verified and answered, sealed to her key; brief 13",
+    "by": "conductor@web-summit.dinis",
+    "from": "1abeb8b7f"
+  },
+  {
     "version": "v0.2.250",
     "date": "2026-11-04",
     "what": "WS-100 guide: Vicky's additions from her own setup",
