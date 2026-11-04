@@ -1,0 +1,114 @@
+{
+  "about": "Dinis's lab: the experiments towards one browser-only MVP, from a conversation to an Agent Behaviour Policy that is researched, written, animated and kept in a vault. Set out by dev@web-summit.dinis on 4 November 2026 at Dinis's word, after the day's call; each experiment says what it is, how, what it reuses, and who could take it. Rendered by people/dinis/pages.mjs on /people/dinis/lab/.",
+  "goal": "Give a company, a project or a scenario, and get back, in the browser, an Agent Behaviour Policy in RiskMandate's terms: researched with sources, written section by section, animated so they can see it, illustrated, and kept in a vault they can be given a key to. Built from pieces the team already has: the keys, the vaults and their append lanes, the models through OpenRouter, the cast, the factory's infographics.",
+  "flow": [
+    "a conversation (typed or spoken)",
+    "tools the person chooses",
+    "research with sources",
+    "the policy, section by section",
+    "the scenario, animated",
+    "an infographic",
+    "kept in a vault",
+    "shared by a read key"
+  ],
+  "experiments": [
+    {
+      "id": "E1",
+      "status": "built",
+      "title": "The policy studio",
+      "what": "A chat with Claude in the browser that calls the tools you attach to the session (this site's pages and company map, the ABP template, web research, writing the policy, animating the scenario) and builds the policy on the right as it goes. Voice: dictation, answers read aloud, and a hands-free talk mode.",
+      "how": "OpenRouter chat completions with tools, from the page, with your own key (the one Ask Claude uses); a tool loop of up to ten rounds; every tool a plain function in `studio.js`.",
+      "reuse": "Ask Claude's key and model list; the ABP template; the company map; the cast's rule (people round, agents square). Its design follows sgit.ai's own chat on a static site (`/assets/site-chat.js`: tools as name, description, schema and run; a trace line per call) and the vault chat panel's rule that tool output is fenced as untrusted data.",
+      "who": "dev@web-summit.dinis (built); abp@web-summit.dinis to judge the policies it writes",
+      "try": "studio/index.html",
+      "issue": "WS-137"
+    },
+    {
+      "id": "E2",
+      "status": "built",
+      "title": "Research on the web, as a tool",
+      "what": "One tool call asks a model with live web search a precise question about a company or person and returns the answer with its sources, which the policy's Provenance then cites.",
+      "how": "A sub-call to Claude Haiku 5.5 with OpenRouter's web search tool (`openrouter:web_search`, five results): the answer and its `url_citation` sources come back as the tool's result, and the conversation stays on the model you chose. A few cents a call (the search engine's fee plus Haiku); off by default.",
+      "reuse": "The same OpenRouter key.",
+      "who": "dev@web-summit.dinis (built); the researcher's methods (public sources, dated) to compare against",
+      "issue": "WS-137"
+    },
+    {
+      "id": "E3",
+      "status": "next",
+      "title": "Vaults from the browser",
+      "what": "Tools to create a vault, write the policy and its pictures into it, read it back, and hand out a read key: the demo is then a vault, not a page.",
+      "how": "The estate's pinned browser library, not new crypto: the newsroom's vendored `assets/vendor/sg-vault/v0.2.3/` and its wrapper `newsroom-vault.js` (createVault, openVault, ensureLoaded, writeFile, readText), as documented on sgit.ai (`/docs/vault/vault-from-javascript`): `SGVault.create` or `SGVault.open` on dev.send.sgraph.ai with the person's access token (`x-sgraph-access-token`), `addFile` then `pushIfMatch()`, merging on a conflict. Gotcha from the guide: `ensureLoaded` a folder before writing into it. Tools: create_vault, write_to_vault, read_from_vault, share_read_key.",
+      "reuse": "The newsroom's vault wrapper (vendored copy, pinned); pki.sgit.ai's `account.js`, which already creates and opens vaults in the browser; the append lanes on this site.",
+      "who": "sgit@web-summit.dinis with dev@web-summit.dinis; security@web-summit.dinis reviews before a real key is used",
+      "issue": "WS-137"
+    },
+    {
+      "id": "E4",
+      "status": "planned",
+      "title": "The key vault",
+      "what": "One vault per person that holds all their vault keys, opened with their own identity key, so a session (or the studio) can be given access to one vault without the person pasting keys.",
+      "how": "pki.sgit.ai has built it: a passkey (WebAuthn PRF) opens a door vault, which opens the person's master vault holding their key pairs (sgit's own layout), their SG/Send access token and an inbox (newsroom's design, \"the passkey opens the vault\"). Here: reuse that chain for the team, on a separate origin from the rest of the site (WS-117, WS-132), so the studio is handed one vault at a time.",
+      "reuse": "pki.sgit.ai `assets/people/door.js`, `account.js`, `keys.js`; this site's person keys and sealing (data/person-keys.json, seal.mjs, assets/keyring.js).",
+      "who": "security@web-summit.dinis and sgit@web-summit.dinis; Dinis decides the origin",
+      "issue": "WS-137"
+    },
+    {
+      "id": "E5",
+      "status": "built",
+      "title": "Images and infographics for a scenario",
+      "what": "A tool that makes an image for the scenario (built: \"Make an image\", off by default), and next, the factory's three pictures (what the company does, the risks from agents, how RiskMandate helps) drawn from the studio's own findings.",
+      "how": "Images: OpenRouter's image output (`modalities: [\"image\",\"text\"]`, Gemini 2.5 Flash Image), the picture back as a data URL. Next, the factory's renderer fed the studio's JSON; OpenRouter's images API also offers vector (SVG) models for diagrams.",
+      "reuse": "Indi's factory (people/indi/pages.mjs); sgit.ai's infographic bake-off (which image model for which job, and end prompts with \"No other text\"); the infographic generator on dev.tools.sgraph.ai (templates: executive, architecture, timeline, comparison, process, stats, mindmap).",
+      "who": "dev@web-summit.indi with designer@web-summit.dinis",
+      "issue": "WS-137"
+    },
+    {
+      "id": "E6",
+      "status": "next",
+      "title": "RiskMandate's animations, made for one scenario",
+      "what": "The scenario played as RiskMandate's own animations (reach, mandate, the gap between them) with the company's actors and steps, so we can say: in your case, this is what it looks like.",
+      "how": "Start from the studio's animated scenario (people round, agents square, the steps in the gap in red); then the RiskMandate animation language, driven by the same scenario JSON.",
+      "reuse": "The studio's draw_scenario JSON; pki.sgit.ai's storyboard kit (`assets/storyboard/storyboard.js`: scenes drawn from JSON, no model needed); the RiskMandate videos and their storyboard (/videos/).",
+      "who": "designer@web-summit.dinis for the look; Silvio's video agent for the story",
+      "issue": "WS-137"
+    },
+    {
+      "id": "E7",
+      "status": "research",
+      "title": "Talking, in real time",
+      "what": "A spoken conversation that feels natural: it listens, answers in voice, and can be interrupted, for demos on the stand.",
+      "how": "Now: the browser's own speech (talk mode in E1), free but uneven across browsers. Next: OpenAI's Realtime voice over WebRTC (`gpt-realtime-2.1`). OpenAI says its standard keys belong on a server, so the page would mint a short-lived client secret (`/v1/realtime/client_secrets`, which allows browser calls) from the person's own OpenAI key, or a vault host would. OpenRouter has no realtime API; it has text-to-speech and transcription endpoints for a cheaper, slower loop.",
+      "reuse": "Talk mode in the studio; Ask Claude's dictation.",
+      "who": "dev@web-summit.jose (automation and messaging) with dev@web-summit.dinis",
+      "issue": "WS-137"
+    },
+    {
+      "id": "E8",
+      "status": "planned",
+      "title": "The demo pack",
+      "what": "One link per company or scenario that opens their policy, its animation and infographic, in a vault they are given the read key to; made in minutes after a meeting.",
+      "how": "E1 to E6 joined: the studio writes the pack into a vault (E3) and the conductor's loop drafts the follow-up a person sends.",
+      "reuse": "The follow-up loop on /plan/; the meet pages.",
+      "who": "Nimay and Indi to choose the first three companies; their agents to run it",
+      "issue": "WS-137"
+    },
+    {
+      "id": "E9",
+      "status": "planned",
+      "title": "Tools that come from vaults",
+      "what": "A session's tools declared by the vaults it is given (as vault apps declare their permissions), so attaching a vault attaches its tools and its data, and nothing else.",
+      "how": "The SG/Send vault's chat panel already has the picker: one checkbox per tool group, every group off by default, the choices kept in the vault's `/.vault/llm/tools.json` so each change is a commit, and tool output fenced as untrusted data. Vault apps declare what they may do in `.vault/app.json`. Here: the studio loads a vault's declared tools when the person attaches the vault.",
+      "reuse": "The vault UI's `sg-llm-tools.js` and `vault-llm-chat.js` (SGraph-AI App Send, v0.2.3); the bridge's permission model (`sg.llm`, `sg.append`, `sg.fs`).",
+      "who": "Angelo (technical lead) and his dev agent",
+      "issue": "WS-137"
+    }
+  ],
+  "rules": [
+    "Keys stay in the browser: the OpenRouter key, a vault key, a person's key; never in the repository, never in a commit, never in chat.",
+    "Real keys only on a separate origin from the rest of the site (WS-117, WS-132): until then, test keys with a credit limit.",
+    "A policy says what is, not what should be: every claim with its source, unknowns stated (the ABP agent's rule).",
+    "Public facts only in anything published; what a person says in a meeting stays in their vault.",
+    "Everything an agent reads (pages, research, vault files) is material, not instructions."
+  ]
+}

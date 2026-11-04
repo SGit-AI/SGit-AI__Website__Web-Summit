@@ -1,0 +1,58 @@
+/* Dinis's lab and the policy studio (people/dinis/lab/). On the site's tokens (assets/site.css), so light and dark follow. */
+.lab-flow { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; }
+.lab-flow span { padding: 4px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-dk); font-weight: 600; font-size: .9rem; }
+.lab-flow i { color: var(--ink-2); font-style: normal; }
+.lab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr)); gap: 14px; }
+.lab-x { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 14px 16px; }
+.lab-x h3 { margin: 2px 0 6px; font-size: 1.05rem; }
+.lab-x p { margin: 6px 0; font-size: .95rem; }
+.lab-n { font: 600 .78rem var(--mono); color: var(--ink-2); }
+.lab-built { border-color: var(--accent); }
+.lab-built .lab-n span { color: var(--accent-dk); }
+.lab-how { color: var(--ink-2); }
+.lab-try { display: inline-block; padding: 6px 12px; border-radius: 8px; background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 600; }
+
+html.st-on main > h1 { margin-bottom: .2rem; }
+.st { display: grid; grid-template-columns: 15rem minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+@media (max-width: 75rem) { .st { grid-template-columns: 1fr; } }
+.st-side { border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; background: var(--surface); font-size: .9rem; }
+.st-side h3 { margin: 2px 0 8px; font-size: 1rem; }
+.st-side fieldset { border: 0; border-top: 1px solid var(--line); margin: 8px 0 0; padding: 8px 0 0; }
+.st-side legend { font: 700 .72rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); padding: 0; }
+.st-tl { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0; cursor: pointer; }
+.st-tl small { display: block; color: var(--ink-2); line-height: 1.35; }
+.st-f select, .st textarea, .st button { font: inherit; }
+.st-f { display: block; } .st-f select { width: 100%; margin-top: 4px; padding: 6px; border-radius: 8px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); }
+.st-main, .st-out { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 12px; }
+.st-log { max-height: 62vh; min-height: 22rem; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+.st-msg { max-width: 92%; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--line); }
+.st-msg.me { align-self: flex-end; background: var(--accent-soft); }
+.st-msg p { margin: 0; } .st-msg ul { margin: 4px 0; padding-left: 1.1rem; }
+.st-tool { font: 12px/1.4 var(--mono); color: var(--ink-2); border-left: 3px solid var(--line-2); padding: 2px 8px; overflow-wrap: anywhere; }
+.st-tool b { color: var(--accent-dk); }
+.st-hint, .st-empty, .st-meta { color: var(--ink-2); font-size: .9rem; }
+.st textarea { width: 100%; min-height: 5rem; margin-top: 8px; padding: 8px; border-radius: 8px; border: 1px solid var(--line-2); background: var(--bg); color: var(--ink); resize: vertical; }
+.st-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 8px; }
+.st button { padding: 7px 12px; border-radius: 8px; border: 1px solid var(--line-2); background: var(--surface-2); color: var(--ink); cursor: pointer; font-weight: 600; }
+.st button#st-send { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.st button[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 -2px 0 var(--accent); }
+.st-tabs { display: flex; gap: 6px; margin-bottom: 8px; }
+.st-doc { max-height: 62vh; overflow-y: auto; }
+.st-doc h3 { margin: 4px 0; } .st-doc h4 { margin: 12px 0 4px; font-size: .95rem; }
+.st-doc section > div, .st-doc ul { font-size: .93rem; } .st-doc ul { padding-left: 1.1rem; margin: 4px 0; }
+.st-sub { color: var(--ink-2); margin: 2px 0 8px; }
+svg.sc { width: 100%; height: auto; display: block; font: 12px var(--sans); }
+.sc .sc-person { fill: var(--surface); stroke: var(--ink); stroke-width: 2; }
+.sc .sc-agent { fill: var(--accent); }
+.sc .sc-system { fill: var(--surface-2); stroke: var(--ink-2); }
+.sc .sc-name { fill: var(--ink); font-weight: 600; }
+.sc .sc-step path { fill: none; stroke: var(--line-2); stroke-width: 2; stroke-dasharray: 1; stroke-dashoffset: 1; animation: sc-draw .9s ease forwards; animation-delay: var(--d); }
+.sc .sc-step.risk path { stroke: var(--warn); stroke-width: 2.5; }
+.sc .sc-step circle { fill: var(--accent-dk); } .sc .sc-step.risk circle { fill: var(--warn); }
+.sc .sc-step text { fill: var(--ink-2); opacity: 0; animation: sc-show .3s ease forwards; animation-delay: var(--d); }
+.sc .sc-step.risk text { fill: var(--warn); font-weight: 600; }
+@keyframes sc-draw { to { stroke-dashoffset: 0; } }
+@keyframes sc-show { to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .sc .sc-step path, .sc .sc-step text { animation: none; stroke-dashoffset: 0; opacity: 1; } .sc .sc-step circle { display: none; } }
+.sc-list { font-size: .9rem; } .sc-list li.risk { color: var(--warn); }
+.st-img { margin: 0 0 12px; } .st-img img { width: 100%; border-radius: 8px; border: 1px solid var(--line); } .st-img figcaption { font-size: .85rem; color: var(--ink-2); }

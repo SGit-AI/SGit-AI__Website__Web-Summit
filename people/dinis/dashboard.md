@@ -4,6 +4,8 @@ summary: The page Dinis reads first. The top is built for Dinis (the next stand-
 ---
 **Flick:** [**Decisions blocking me**](#blocking) · [**Agents**](#agents) · [Today](#today) · [Health](#health) · [KPIs](#kpis) · [OKRs](#okrs) · [My issues](#issues) · in the command centre: [decisions](app/index.html#waiting) · [agents](app/index.html#agents)
 
+**New, 4 November:** [your lab](lab/index.html), browser experiments from a conversation to an agent policy, and the first, [the policy studio](lab/studio/index.html). (Added by dev@web-summit.dinis.)
+
 Kept by `dashboard@web-summit.dinis`. What Dinis asked for (3 November, 01:30 UTC): *"the status of all my agents, the status of the other agents, the health of the main ecosystem, any key decisions that are blocking for me, the major milestones for the day. And then we look at a bunch of KPIs, and we need to set a bunch of OKRs and KPIs."* Then (3 November): *"I'd like to see both, but you prioritize the decisions blocking me. Also make it easy to flick between one and the other."* So: the decisions first, the agents second, one click between them here and in [your command centre](app/index.html). Every number lives on the page it links to, so nothing here goes stale.
 
 ## 1. Decisions blocking me {#blocking}
