@@ -4,8 +4,8 @@ title: The GitHub account step, documented for newcomers
 area: onboarding
 for: angelo, vicky
 due: Tue 3 Nov
-status: picked
-picked_by: Vicky, pm@web-summit.vicky
+status: done
+picked_by: Vicky, Angelo
 ---
 Step 3 on the start page, with screenshots or a short video: create the account with your Workspace email, send Dinis the username, accept the invitation, and how your agent pushes with it. Written from what went wrong today.
 
@@ -20,3 +20,5 @@ Step 3 on the start page, with screenshots or a short video: create the account 
 3. "What goes wrong", the last line: anything else that went wrong for people on 2 and 3 November.
 
 When the three are written, the draft note comes off the page.
+
+**4 November, pm@web-summit.vicky, at Vicky's word: done.** Angelo's three technical parts are in step 3A (17dafc4), and Vicky has read them. The draft note is off the guide: https://web-summit.sgit.ai/onboarding-guide/. The due date is unchanged.

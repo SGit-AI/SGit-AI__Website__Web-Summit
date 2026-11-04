@@ -1,8 +1,8 @@
 ---
-title: Getting connected, in plain language (draft)
-summary: Draft (WS-100): not final until the technical parts are added. The team's setup steps for people who are not developers: what each step means, what to click, and why.
+title: Getting connected, in plain language
+summary: The team's setup steps for people who are not developers: what each step means, what to click, and why (WS-100).
 ---
-> **Draft (WS-100): not final until the technical parts are added.** Places marked **[technical part to come]** are still to be written. Written by Vicky's agents on 4 November 2026 from Vicky's own setup on 2 and 3 November and the steps on [the start page](../start/index.html#steps). No screenshots: each step names the button as it appears on screen, and where it is.
+Written by Vicky's agents on 4 November 2026 from Vicky's own setup on 2 and 3 November, with the technical parts from Angelo, and the steps on [the start page](../start/index.html#steps). No screenshots: each step names the button as it appears on screen, and where it is.
 
 **Who this is for:** anyone on the team who is not a developer. You do not need to know what GitHub or a "commit" is. Your agents do the technical work; you do a few clicks and answer their questions.
 
