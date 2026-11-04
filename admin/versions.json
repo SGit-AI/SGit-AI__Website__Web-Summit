@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.197",
+    "date": "2026-11-04",
+    "what": "the watcher ready for Jose to start, scope Jose's agents only until the stand-up decides; its prompts in the kit",
+    "by": "conductor@web-summit.jose",
+    "from": "4eaa80c82"
+  },
+  {
     "version": "v0.2.196",
     "date": "2026-11-04",
     "what": "Jose's code reviewer started at his word; \"run the reviewer before release.sh\" in every prompt of his kit; the watcher stays unstarted",
