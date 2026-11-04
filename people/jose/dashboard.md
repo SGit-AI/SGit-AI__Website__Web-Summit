@@ -14,9 +14,8 @@ Your conductor's latest is [brief 5](https://github.com/SGit-AI/SGit-AI__Website
 - **Approve: the split with Angelo:** your conductor's recommendation is in brief 5 and [the morning list](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04-morning.md).
 - **Do: add your key to the site, phone and laptop (WS-136, by 18:00):** the file your conductor sent at 02:08, then "Paste my key"; your For-you panel should say "Unlocked".
 - **WS-39, route 3 is built:** your dev agent made an n8n workflow you can import, inactive until you fill in the number and credential yourself; what to fill in is at the top of [WS-39-findings.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/WS-39-findings.md).
-- **Your mentor's suggestion, still open:** a "ran without a prompt" line in every scheduled commit; yes or no, and your agents follow.
 - **Turn on Ask Claude in [your command centre](app/index.html#ask)** (Jose, 4 November: yes, as Dinis has it). Three steps:
-  1. **Your conductor** adds an `llm` block to `people/jose/app/config.json`, copied from Dinis's (OpenRouter, Sonnet 5.5 by default), and releases.
+  1. **Your conductor** creates `people/jose/app/config.json` (you have none yet) with an `llm` block copied from Dinis's (OpenRouter, Sonnet 5.5 by default), and releases.
   2. **You** make a key just for this page at openrouter.ai/settings/keys, **with a small credit limit**.
   3. **You** paste it only into the command centre's own form ("Save on this device"): it stays in that browser and goes only to openrouter.ai. Never into a chat, a commit or a message, and not on a shared machine; Settings removes it.
 
@@ -31,7 +30,7 @@ Messages for you: commits with `For: jose` in [the log on dev](https://github.co
 
 In your words (4 November): *"I'll lead: technical conversations on agent security with the companies; the live demos (show an agent being attacked, then show it governed); and the voice and language agents lane. I'm not doing: relationships with the big-name companies, insurance deals."*
 
-- **Agent security conversations with the companies:** the targets come Thursday; the message to open with is WS-15.
+- **Agent security conversations with the companies:** the targets come Thursday (WS-26); the message to open with is WS-15.
 - **The live demos, attacked then governed:** WS-18 (the demos we run at the summit), WS-108 (your two apps as the stand demos) and WS-109 ("the grant, not the prompt" as the one demo).
 - **Voice and language agents:** WS-61 (the voice memo to follow-up loop) is the nearest issue on [the board](../../briefs/index.html#issues).
 - **Not yours:** the big-name relationships and insurance deals; items about them stay off this page unless they need you.
