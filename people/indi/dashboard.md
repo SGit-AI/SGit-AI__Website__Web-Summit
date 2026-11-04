@@ -6,6 +6,8 @@ Kept by `dashboard@web-summit.indi` from [the outreach and business template](..
 
 ## What needs me {#needs-me}
 
+**[Everything left to do, in one picture](todo/index.html)**: your Command Centre tasks by when they are due, the decisions waiting on you, and the other tasks (your agents, what waits on you, what waits on others). Rebuilt at every release.
+
 ### Get connected {#connect}
 
 Remote until Thursday 5 November. Where you are, and the next step ([how](../../start/index.html#levels), [the leaderboard](../../team/setup/index.html)):
