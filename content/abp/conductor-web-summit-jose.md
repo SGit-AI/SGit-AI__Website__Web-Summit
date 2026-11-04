@@ -28,6 +28,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 
 - **Code in its person's folder runs in CI** (WS-133, 4 November): `admin/build/build.mjs` runs `people/<id>/pages.mjs` and a person's own `app/data.mjs` in the release job, which holds a token that can push and deploy. Writing only in its own folder no longer bounds what it can do.
 
+- **It holds its person's site key** (WS-136, WS-138): it issues the key in its own session and keeps the private half (the agents page, #person-key). A verified "signed by <person>" on a lane message is the one thing that turns lane input into an instruction, so it can sign as its person.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -57,4 +59,4 @@ Open questions: its connectors; who reviews its output each day; whether Jose ha
 
 ## Provenance {#provenance}
 
-Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 3, 4 November 2026 (04:10 wake: Jose's reviewer; 00:10 wake: WS-133), in `content/abp/` with its history in git.
+Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 4, 4 November 2026 (08:10 wake: the person key, WS-138; 04:10 wake: Jose's reviewer; 00:10 wake: WS-133), in `content/abp/` with its history in git.

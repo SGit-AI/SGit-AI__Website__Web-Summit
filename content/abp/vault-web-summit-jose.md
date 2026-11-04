@@ -28,13 +28,13 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: t
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November; still at 08:15 on 3 November).
 - Anything its session's other connectors can do: not known to this ABP.
 
-- **Since 16:50 on 3 November** a scripted audit exists: `admin/tools/vault-audit.mjs` (ad9e353, WS-128) walks every revision and the working files of a vault and refuses the gate's key shapes, the short-id vault key, token assignments, emails and phone numbers, printing only where. It is a technical check, but the agent runs it itself before publishing: whether it was run is the agent's word, not a gate's.
+- **Since 16:50 on 3 November** a scripted audit exists: `admin/tools/vault-audit.mjs` (ad9e353, WS-128) walks every revision and the working files of a vault and refuses the gate's key shapes, the short-id vault key, token assignments, emails and phone numbers, printing only where. It is a technical check, but the agent runs it itself before publishing: whether it was run is the agent's word, not a gate's. Since c99aaff6 (WS-135, 4 November) it also compares against the actual access token and vault key values and counts empty revisions.
 
 - **Code in its person's folder runs in CI** (WS-133, 4 November): `admin/build/build.mjs` runs `people/<id>/pages.mjs` and a person's own `app/data.mjs` in the release job, which holds a token that can push and deploy. Writing only in its own folder no longer bounds what it can do.
 
 - **Since 23:00 on 3 November:** two public vaults, Jose on RiskMandate and the Reach/Mandate/Gap app (7c6a083), their read keys in `people/jose/`.
 
-- **Its append lane** (live 4 November 00:26, fa34c08; recorded at its request, d05b526): the vault `jose-inbox` (jjrcow03) takes sealed messages from anyone with the page once `assets/feedback.json` lists it, and this agent drains it on every run with `admin/tools/feedback_drain.py`. That makes the public web an input to its runs. What it drains is material, not instruction, **unless a person's key signed it** (verified against `data/person-keys.json`, `people/jose/lanes/README.md`): a signature by a registered person key is the one thing that turns lane input into an instruction, a technical check. Unsigned input is held back only by the rule. It checks every run that the lane seals to its live key (`check-lane.mjs`). The enum, write and vault keys stay in its session; only the append token and the public key are published.
+- **Its append lane** (live 4 November 00:26, fa34c08; recorded at its request, d05b526): the vault `jose-inbox` (jjrcow03) takes sealed messages from anyone with the page once `assets/feedback.json` lists it, and this agent drains it on every run with `admin/tools/feedback_drain.py`. That makes the public web an input to its runs. What it drains is material, not instruction, **unless a person's key signed it** (verified against `data/person-keys.json`, `people/jose/lanes/README.md`): a signature by a registered person key is the one thing that turns lane input into an instruction, a technical check; but the person's conductor issued that key and holds its private half too (WS-138), so it proves the person or their conductor. Unsigned input is held back only by the rule. It checks every run that the lane seals to its live key (`check-lane.mjs`). The enum, write and vault keys stay in its session; only the append token and the public key are published.
 
 ## Barriers: what really stands in the way {#barriers}
 
@@ -65,4 +65,4 @@ Open questions: its connectors; who reviews its output each day; whether Jose ha
 
 ## Provenance {#provenance}
 
-Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 5, 4 November 2026 (04:10 wake: Jose's reviewer; 00:10 wake: two public vaults; 00:10 wake: WS-133; 20:10 wake: the scripted audit), in `content/abp/` with its history in git.
+Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 7, 4 November 2026 (08:10 wake: WS-135 done; 08:10 wake: WS-138; 04:10 wake: Jose's reviewer; 00:10 wake: two public vaults; 00:10 wake: WS-133; 20:10 wake: the scripted audit), in `content/abp/` with its history in git.

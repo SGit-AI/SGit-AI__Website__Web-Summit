@@ -8,7 +8,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 ## Reach: what it can actually access or affect {#reach}
 
 - **Systems:** the repository SGit-AI/SGit-AI__Website__Web-Summit, with push to `dev` (measured: its commits are on `dev`). Push gives every file, the gate and the CI workflow; `main` is not protected.
-- **Network (measured by the agent):** its session's network policy refuses pki.sgit.ai and web-summit.sgit.ai (5eac229, 799d37c). The policy is set in Indi's environment, above the agent: a real boundary on what it can reach.
+- **Network (measured by the agent):** its session's network policy refused pki.sgit.ai and web-summit.sgit.ai on its first run (5eac229); pki.sgit.ai has been allowed since about 23:00 on 3 November (its key published, 1d6d844c). The policy is set in Indi's environment, above the agent: a real boundary, now narrower.
 - **Connectors and tools:** not known. The session is in Indi's account; Indi or the agent can list them.
 - **How known:** from its commits and its person's pages, read 4 November 2026 00:15 UTC. Nothing here was measured in its own session.
 
@@ -55,4 +55,4 @@ Open questions: its connectors; who reviews its output each day; whether Indi ha
 
 ## Provenance {#provenance}
 
-Owner: Indi. Drafted by abp@web-summit.dinis from the repository; Indi and the agent correct it. Version 1, 4 November 2026, in `content/abp/` with its history in git.
+Owner: Indi. Drafted by abp@web-summit.dinis from the repository; Indi and the agent correct it. Version 2, 4 November 2026 (08:10 wake: pki.sgit.ai allowed), in `content/abp/` with its history in git.

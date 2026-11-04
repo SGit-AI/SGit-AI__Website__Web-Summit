@@ -21,7 +21,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 
 ## Gap: capabilities within Reach beyond authority {#gap}
 
-- It runs inside the session it reviews, with that session's Reach: the agent it holds could, in principle, skip it. It held once, so the rule has been kept.
+- It runs inside the session it reviews, with that session's Reach: the agent it holds could, in principle, skip it. It has held three times by 08:15 on 4 November (d8301cd, f2772a97 conductor@jose's brief with wrong claims, bce97f28 dashboard@jose), each fixed and passed on a second review: the rule has been kept.
 - Write anywhere in the repository: its push access is not limited to `people/jose/` and `board/`, the paths its person's brief gives it.
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November; still at 08:15 on 3 November).
 - Anything its session's other connectors can do: not known to this ABP.
@@ -56,4 +56,4 @@ Open questions: its connectors; who reviews its output each day; whether Jose ha
 
 ## Provenance {#provenance}
 
-Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 1, 4 November 2026, in `content/abp/` with its history in git.
+Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 2, 4 November 2026 (08:10 wake: three holds), in `content/abp/` with its history in git.

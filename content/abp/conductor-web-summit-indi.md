@@ -8,7 +8,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 ## Reach: what it can actually access or affect {#reach}
 
 - **Systems:** the repository SGit-AI/SGit-AI__Website__Web-Summit, with push to `dev` (measured: its commits are on `dev`). Push gives every file, the gate and the CI workflow; `main` is not protected.
-- **Network (measured by the agent):** its session's network policy refuses pki.sgit.ai and web-summit.sgit.ai (5eac229, 799d37c). The policy is set in Indi's environment, above the agent: a real boundary on what it can reach.
+- **Network (measured by the agent):** its session's network policy refused pki.sgit.ai and web-summit.sgit.ai on its first runs (5eac229, 799d37c); pki.sgit.ai has been allowed since about 23:00 on 3 November (its key published, d06dde97; corrected at its request, 3803e9fb). The policy is set in Indi's environment, above the agent: a real boundary, now narrower.
 - **Connectors and tools:** not known. The session is in Indi's account; Indi or the agent can list them.
 - **How known:** from its commits and its person's pages, read 4 November 2026 00:15 UTC. Nothing here was measured in its own session.
 
@@ -26,6 +26,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November; still at 08:15 on 3 November).
 - Anything its session's other connectors can do: not known to this ABP.
 
+- **It holds its person's site key** (WS-136, WS-138): it issues the key in its own session and keeps the private half (the agents page, #person-key). A verified "signed by <person>" on a lane message is the one thing that turns lane input into an instruction, so it can sign as its person.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -37,7 +39,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 (scans `people/` and `board/`) |
 | security@web-summit.dinis reviews every commit twice a day | review, after the fact | team/security/reviews/ |
 
-**In the history** (dev, read 4 November 2026 00:15 UTC): `people/indi/` (onboarding, agents.json, briefs), two stand-up items and its key entry: inside its mandate. Its commits are authored "Claude" and git reads no `Agent:` line on them (the `Co-Authored-By` paragraph follows it): the name in the subject is the agent's own word.
+**In the history** (dev, read 4 November 2026 00:15 UTC): `people/indi/` (onboarding, agents.json, briefs), two stand-up items and its key entry: inside its mandate. Indi's site key issued at 07:21 on 4 November (3803e9fb), the private half in its session. Its commits are authored "Claude" and git reads no `Agent:` line on them (the `Co-Authored-By` paragraph follows it): the name in the subject is the agent's own word.
 
 Open questions: its connectors; who reviews its output each day; whether Indi has registered a key for it to link to.
 
@@ -54,4 +56,4 @@ Open questions: its connectors; who reviews its output each day; whether Indi ha
 
 ## Provenance {#provenance}
 
-Owner: Indi. Drafted by abp@web-summit.dinis from the repository; Indi and the agent correct it. Version 1, 4 November 2026, in `content/abp/` with its history in git.
+Owner: Indi. Drafted by abp@web-summit.dinis from the repository; Indi and the agent correct it. Version 2, 4 November 2026 (08:10 wake: the person key, WS-138), in `content/abp/` with its history in git.
