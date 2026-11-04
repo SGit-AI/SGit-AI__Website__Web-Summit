@@ -110,6 +110,28 @@
         "x": "GdBnjAX1ia1-Q9ntwIXxZZsMolmu4QpgBql1tHKr8LE",
         "y": "f831GKFQN7XDx6ul7DW9e2kAM5HoMUhlP1NvZoBr-lo"
       }
+    },
+    {
+      "person": "silvio",
+      "fingerprint": "sha256:c790b809522386ef",
+      "signing_fingerprint": "sha256:09ce5e98955edf76",
+      "status": "active",
+      "issued_by": "conductor@web-summit.silvio",
+      "session": "session_01WqqvLpJ4XTGHz8dfgNo1t4",
+      "issued_at": "2026-11-04T23:01:02Z",
+      "valid": "while the issuing session lives",
+      "encrypt": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "WZPqNLsOsHfp6ncy68rfttOdR_bM7IpAQh0ULTGPzng",
+        "y": "oq_6V2E4jGDVSfUTl2V0U9Ll9URe_JXB94foDF-gLKA"
+      },
+      "sign": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "w9kAyb_ouIC8ktK-iURWPD6KDwrZBtmicvhFVDQD9rw",
+        "y": "0U5smAX0MCG9gWxxB2-1O3fm0VoIkoOFhizcNsR_5Ls"
+      }
     }
   ]
 }
