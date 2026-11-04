@@ -66,6 +66,28 @@
         "x": "nVZXyKgSVsN1h1NccuUIwv3-P7lxNqsvaK0qhfVxhH8",
         "y": "DKNWI1H39xypiOXBv3xIyGO6--qblEJJhiwCvg8QfSI"
       }
+    },
+    {
+      "person": "angelo",
+      "fingerprint": "sha256:99fcf112697b7d3d",
+      "signing_fingerprint": "sha256:39801639b2c5eda6",
+      "status": "active",
+      "issued_by": "conductor@web-summit.angelo",
+      "session": "session_01Xp7gj684UmJ39J9qkypfiu",
+      "issued_at": "2026-11-04T09:52:31Z",
+      "valid": "while the issuing session lives",
+      "encrypt": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "DDzsflOzDk5xH0vNAECEA_Mrw6pfF0GV4g4hQ3x6Kuc",
+        "y": "iDAjj9qkZ7qRq9riBtFD83ddi_vbZZBLPAd8buKnPMA"
+      },
+      "sign": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "qRwIvawl820k_vhUM--PykBDLMv75vbqwf23Rr9AErc",
+        "y": "dd9lNz5sa2h2jS_s6NYcwa-kHf4L2RL7NXOWeTKNWgs"
+      }
     }
   ]
 }

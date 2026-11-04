@@ -1,0 +1,15 @@
+{
+  "v": "ws-ecies-1",
+  "to": "angelo",
+  "key": "sha256:99fcf112697b7d3d",
+  "by": "conductor@web-summit.angelo",
+  "at": "2026-11-04T09:52:44Z",
+  "epk": {
+    "kty": "EC",
+    "crv": "P-256",
+    "x": "x091weyI4rrkiGDSAtv5tV0kwGGC5T9A3pBOvGHUycA",
+    "y": "wvUvn6fvzs6m_08X_i2LjljubRgePN4e6kaNvTNzAng"
+  },
+  "iv": "2sMB3W8Dfjc85tWP",
+  "ct": "KgQbcDMU/HnfejG9oxmhOE0FwtWrD4QCG+9nfGjsMTpXoVhCWSdFTDxV+q/caDYuuXq0KIYPbjNPJO4Fz+SIHZvwJSsn+oJ0v/UqXCNQHwMJzRAKD2KzVmoWZIYGpoUlh+N/JT3ojB1h7sC5+fbiQDGbnMlKADDUeHDBMoUoAK3KgtAfYLAyJeV0qeTHXtQo0XCMqvyYHEmSU+PVqYfLMdLzUL/2dPCOXVcUNqUwVOOHQmOfAy0fmsIiQsuGgPvnmpNnBxgvJ85iIeY5gtaSus98E4h7PW4bgtdXvnAAFY8E/FC2XsXQHWThoRQMebVufpuVcFGV8F8TEYVE82Sss57uKNkHyVTm2rO11LyjFE7ZjfVS2W8="
+}
