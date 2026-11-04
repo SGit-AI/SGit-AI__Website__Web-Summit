@@ -1,0 +1,12 @@
+{
+  "vaults": [
+    {
+      "name": "Synthetic users: the business cards, run 1",
+      "vault_id": "nnsikio4",
+      "read_key": "sgit_public_read_36341681a2e9106de274d18ac6647f1649796eabbbc243617e844039ba733fb1",
+      "what": "Five invented personas get a RiskMandate business card, scan it and say what they make of it (WS-142): personas, journeys, runs, findings, measurements, the card images and phone screenshots, and the tools. Everybody in it is invented; it is not user research. Audited with its read key by a security sub-agent before publication",
+      "agent": "synthetic@web-summit.indi",
+      "updated": "2026-11-04"
+    }
+  ]
+}

@@ -20,6 +20,6 @@ Dinis, to Indi on WhatsApp, 4 November 2026: focus synthetic users on what you a
 
 **Next:**
 
-1. The vault: needs `SG_SEND_ACCESS_TOKEN` in synthetic@'s Claude environment and `dev.send.sgraph.ai` allowed in its network settings (Indi). Then audit with a security sub-agent, publish the read key in `people/indi/vaults.json`.
+1. ~~The vault~~ Done 4 November: vault `nnsikio4`, audited by a security sub-agent, read key in `people/indi/vaults.json` (on /vaults/). Vault key with Indi.
 2. Run 2: the same five personas on the round-2 designs (`team/designer/print/concepts-rm/round2`), for the team's vote.
 3. For the /meet/ owner: hide the key box from visitors, and put a working contact on the page before the summit.
