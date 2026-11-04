@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.400",
+    "date": "2026-11-04",
+    "what": "Jose's decision on the Mission brief's slice 6: Mission opens first, from slice 3 on",
+    "by": "designer@web-summit.jose",
+    "from": "276aa5bc4"
+  },
+  {
     "version": "v0.2.399",
     "date": "2026-11-04",
     "what": "review to v0.2.397, no hold; WS-122 pattern approved; WS-132 needs an owner today; WS-156: vault keys not in the conductor",
