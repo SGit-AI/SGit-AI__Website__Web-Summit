@@ -11,5 +11,20 @@
     "ends": "2026-11-13"
   },
   "notes": "At L1: the next step is push access; pair him with Angelo on the technical pool.",
-  "source": "Drafted by conductor@web-summit.dinis on 2 November 2026 from Dinis's words (explorer and settler developers, the briefs); Jose corrects it, and the mentor reads it every run."
+  "source": "Drafted by conductor@web-summit.dinis on 2 November 2026 from Dinis's words (explorer and settler developers, the briefs); Jose corrects it, and the mentor reads it every run.",
+  "apps": [
+    {
+      "name": "Hack the Agent",
+      "what": "a live, multiplayer game that teaches prompt injection: a host opens a session, the audience joins by QR code, five fictional agents each better defended",
+      "url": "https://agent-defense-arena.lovable.app/",
+      "stand_demo": "offered, at Jose's word, 4 November 2026 (WS-108)"
+    },
+    {
+      "name": "ReachCheck",
+      "what": "a review tool that runs entirely in the browser: an agent's configuration against its owner's mandate, flagged red, yellow or green, with evidence",
+      "url": "https://reach-check-agent.lovable.app/",
+      "stand_demo": "offered, at Jose's word, 4 November 2026 (WS-108)"
+    }
+  ],
+  "apps_source": "The newsroom article \"Two apps about what an agent can reach, built in a day\" (Dinis Cruz, 31 October 2026), https://newsroom.sgit.ai/articles/jose-botas-two-agent-apps.html, read 4 November 2026"
 }
