@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.392",
+    "date": "2026-11-04",
+    "what": "publish the Agent policy explorer (rius8gwy), a vault app",
+    "by": "vault@web-summit.jose",
+    "from": "3b3458f87"
+  },
+  {
     "version": "v0.2.391",
     "date": "2026-11-04",
     "what": "my schedule, 10:10 and 16:10 UTC, into my own session",
