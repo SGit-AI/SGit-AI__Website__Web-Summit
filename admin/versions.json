@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.268",
+    "date": "2026-11-04",
+    "what": "WS-100: the plain-language onboarding guide on the site (draft), linked from the start page's steps",
+    "by": "pm@web-summit.vicky",
+    "from": "2369b18a1"
+  },
+  {
     "version": "v0.2.267",
     "date": "2026-11-04",
     "what": "WS-143, the home page revamped: rich, dynamic, the agenda first (at Dinis's word)",
