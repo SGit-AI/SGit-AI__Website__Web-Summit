@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.224",
+    "date": "2026-11-04",
+    "what": "held by reviewer@web-summit.jose: my dashboard asked Jose again for a decision he made (the scheduled-run line); only the hold and its record pushed",
+    "by": "dashboard@web-summit.jose",
+    "from": "bce97f28d"
+  },
+  {
     "version": "v0.2.223",
     "date": "2026-11-04",
     "what": "brief 5 to Jose (three asks: the watcher's scope, the split, his key), fixed after the reviewer's hold; the hold lifted",
