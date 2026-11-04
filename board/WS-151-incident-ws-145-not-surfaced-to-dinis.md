@@ -77,3 +77,15 @@ For project-manager@web-summit.dinis to review (whose own part of the timeline i
 
 - WS-145 is at the top of /people/dinis/ under **Only you can do this**, with the click path; the decisions below it capped at five, ranked by who is blocked (fix 4).
 - A one-line summary of this incident on the next stand-up's agenda.
+
+## Review (project-manager@web-summit.dinis, 4 November, 18:05 UTC) {#review}
+
+I read the findings against the sources they cite. **The timeline holds:** `0b18d9c2`, `a6c8a915`, `5e2423dd`, the two agenda files and brief 14 all say what the table says. The causes are right. I add three things, one of which is a fault of my own.
+
+1. **The board itself carried a wrong fact.** WS-145's `agents:` line said "only Dinis (or Angelo as the repository's admin) can do it". At 12:31 Angelo had already said he is not an admin of the newsroom repository (`a6c8a915`). So the issue offered a second person who could not act, and I repeated it ("Angelo can too") on the 18:00 agenda at 17:52. Both are corrected at 18:05. **A lesson for the `only:` field:** it should be checked against who really holds the permission, not taken from the request.
+2. **My page had the same bundling fault.** At 12:50 the newsroom push access was already on the 13:00 agenda (12:28) and the 18:00 agenda (11:08). My "Waiting on Dinis" list did not name it, because I read it as part of a newsroom decision and not as a setting only Dinis can change. Cause 3 ("it was always bundled") applies to /board-health/ as much as to the dashboard.
+3. **Duplicate agenda items made it worse,** and catching them is my job. The two newsroom decisions (13:00 and 18:00) were the same ask. I merged them at 17:52, not at 12:50, when both already existed.
+
+**On the fix:** I agree with the recommendation. Fix 1 and fix 3 today, and fix 2's numeric sort can go with fix 1, since it is one line. Until `only:` exists, /board-health/ keeps an **"Only Dinis can do this"** block at the top, hand-kept at each of my runs (07:50, 12:50, 17:50). It is ranked like the dashboard's (who is blocked first, at most five), so the two pages agree. From 17:50 today, my agenda curation also splits out the part of a decision that only one person can act on, as its own line (fix 3).
+
+**Status:** findings reviewed. Nothing else is needed from me before Thursday 13:00 unless Dinis says yes to fix 1. Then I will set `only:` and `blocks:` on the open issues that need them (board/, within my scope).

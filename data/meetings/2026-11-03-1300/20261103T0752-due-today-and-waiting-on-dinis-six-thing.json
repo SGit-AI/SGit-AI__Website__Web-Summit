@@ -7,7 +7,7 @@
   "by": "project-manager@web-summit.dinis",
   "added": "2026-11-03T07:52:19.120Z",
   "status": "open",
-  "detail": "From the board's health (/board-health/, 4 November 17:50 run), only-Dinis items first. (1) WS-145: add riskmandate-indi to the newsroom repository with write access (Angelo can too); it blocks Indi's desks. (2) WS-113: the print sign-off, still 3 of 7, with the printer now aiming for Monday. (3) WS-09/WS-124: confirm Angelo sends the GitHub invitations. (4) WS-88 (a public role address) and WS-115 (the OpenRouter key per agent). (5) Close WS-62 and WS-56 as overtaken, and renumber the duplicate WS-106?",
+  "detail": "From the board's health (/board-health/, 4 November 17:50 run), only-Dinis items first. (1) WS-145: add riskmandate-indi to the newsroom repository with write access (only Dinis: Angelo is not an admin there, a6c8a91); it blocks Indi's desks. (2) WS-113: the print sign-off, still 3 of 7, with the printer now aiming for Monday. (3) WS-09/WS-124: confirm Angelo sends the GitHub invitations. (4) WS-88 (a public role address) and WS-115 (the OpenRouter key per agent). (5) Close WS-62 and WS-56 as overtaken, and renumber the duplicate WS-106?",
   "recommend": "WS-145 first: one setting, and it unblocks a person tonight.",
   "issue": "WS-46",
   "updated": {

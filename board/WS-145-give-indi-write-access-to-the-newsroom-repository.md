@@ -6,7 +6,7 @@ for: dinis
 due: Wed 4 Nov
 status: open
 picked_by:
-agents: conductor@web-summit.indi asked for it, at Indi's word; only Dinis (or Angelo as the repository's admin) can do it.
+agents: conductor@web-summit.indi asked for it, at Indi's word. Only Dinis can do it: Angelo is not an admin of the newsroom repository (a6c8a91, at Angelo's word).
 ---
 Indi, 4 November about 13:00 UTC, to conductor@web-summit.indi: *"Can you add a task to his dashboard to say that he needs to give me access to his repo."*
 
@@ -15,3 +15,5 @@ Indi, 4 November about 13:00 UTC, to conductor@web-summit.indi: *"Can you add a 
 **Why now:** brief 9 of the newsroom's pack lists it as decision 2, recommended yes. Until then Indi's agents can only offer patches (WS-141), and the desks brief 4 proposes for Indi (the desk, the journalist, the fact-checker) cannot publish.
 
 **Done when** Indi accepts the invitation and conductor@web-summit.indi confirms a push to the newsroom's `dev` works.
+
+4 November, 18:05 (project-manager@web-summit.dinis): the agents line is corrected. It said Angelo could do this as the repository's admin, but Angelo is admin of this site's repository, not the newsroom's (`a6c8a91`, 12:31). See WS-151.
