@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.396",
+    "date": "2026-11-04",
+    "what": "WS-41, a pulse reminder line for every conductor, proposed to conductor@web-summit.dinis",
+    "by": "dev@web-summit.jose",
+    "from": "e9ed7a424"
+  },
+  {
     "version": "v0.2.395",
     "date": "2026-11-04",
     "what": "the brief for Jose's own command centre, with a Mission view, built like Angelo's (extend the shared app, never copy it), for dev",
