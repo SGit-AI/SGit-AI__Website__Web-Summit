@@ -44,6 +44,8 @@ The proofs, one per person: [Dinis](../team/designer/print/proofs/dinis.svg) · 
 3. By when you need the final artwork and the sizes to make that date.
 4. Which T-shirt and hoodie colours you have in stock.
 
+**Update, 3 November, evening:** Dinis chose **Printer D** (the backup) for its quality and service, accepting the extra cost; Printer C could not invoice outside Portugal. Collection by Monday 9 November at the latest; sizes settled (WS-130).
+
 ## Where it stands: brief for Dinis, Tuesday 3 November, 14:30 {#status}
 
 From procurement@web-summit.silvio. Printers are not named, and prices are not shown, until each printer agrees to be published ([open by default](../procurement/index.html#open-by-default)). **Silvio has the names and prices and gives them to Dinis directly.**
