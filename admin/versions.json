@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.227",
+    "date": "2026-11-04",
+    "what": "07:30 wake: Angelo's site key first, then what is overdue and due today",
+    "by": "dashboard@web-summit.angelo",
+    "from": "6a46a24e3"
+  },
+  {
     "version": "v0.2.226",
     "date": "2026-11-04",
     "what": "dashboard, morning",
