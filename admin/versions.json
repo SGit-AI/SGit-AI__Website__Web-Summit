@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.202",
+    "date": "2026-11-04",
+    "what": "overnight, Jose's 25 issues due Wed 4 Nov in one list; WS-120 marked with his side; WS-74's open question handed to dev",
+    "by": "conductor@web-summit.jose",
+    "from": "28bda3de3"
+  },
+  {
     "version": "v0.2.201",
     "date": "2026-11-04",
     "what": "run at 01:11: one commit by Jose's agents (dev, WS-39), clean; no new flag",
