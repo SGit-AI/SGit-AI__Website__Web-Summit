@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.189",
+    "date": "2026-11-04",
+    "what": "vault's lane task revised at Jose's word: the session key, as CLAUDE.md says; no held key; republish and update the lane when a session ends",
+    "by": "conductor@web-summit.jose",
+    "from": "81a77d777"
+  },
+  {
     "version": "v0.2.188",
     "date": "2026-11-04",
     "what": "two tasks for vault: unlist \"Jose on RiskMandate\" (keep the vault), and an append lane sealed to a key that outlives the session",
