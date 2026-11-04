@@ -17,6 +17,7 @@
 //  14. the company map: every company has a source with a URL and the date read
 //  15. public forever: no email, phone number or key shape in comms/, data/ or team/
 //  16. every closed wake record has its five steps
+//  18. briefs (WS-112): warnings only, never a failure: more than three asks, or next / sources / wide not a list
 'use strict'
 const fs = require('fs')
 const path = require('path')
@@ -227,6 +228,19 @@ catch (e) { errors.push(`wake check: ${(e.stderr || '').toString()}`.trim()) }
 // 17. every print sign-off verifies: signature, key exactly the signing agent's, agent bound to its person (WS-116)
 try { execFileSync('node', [path.join(__dirname, '..', 'tools', 'signoff.mjs'), 'verify'], { cwd: ROOT, stdio: 'pipe' }) }
 catch (e) { errors.push(`sign-off check: ${(e.stdout || '').toString().split('\n').filter(l => /bad signature/.test(l)).join('; ')}`.trim()) }
+
+// 18. the briefs' shape (WS-112): printed as warnings, never a failure, so a brief is never held back by its form
+const warnings = []
+try {
+    const dirs = [path.join(ROOT, 'team/conductor/editor-briefs'), ...fs.readdirSync(path.join(ROOT, 'people')).map(id => path.join(ROOT, 'people', id, 'briefs'))]
+    for (const d of dirs.filter(d => fs.existsSync(d) && fs.statSync(d).isDirectory())) for (const f of fs.readdirSync(d).filter(f => f.endsWith('.json'))) {
+        let b; try { b = JSON.parse(fs.readFileSync(path.join(d, f), 'utf8')) } catch { warnings.push(`brief ${path.relative(ROOT, path.join(d, f))}: not valid JSON`); continue }
+        const rel = path.relative(ROOT, path.join(d, f)), asks = (b.for_you || []).filter(a => a && a.ask)
+        if (asks.length > 3) warnings.push(`brief ${rel}: ${asks.length} asks (at most three)`)
+        for (const k of ['next', 'sources', 'wide']) if (k in b && !Array.isArray(b[k])) warnings.push(`brief ${rel}: "${k}" is a ${typeof b[k]}, not a list`)
+    }
+} catch (e) { warnings.push(`briefs: ${e.message}`) }
+if (warnings.length) console.log(warnings.map(w => 'WARN ' + w).join('\n'))
 
 if (errors.length) { console.error(errors.map(e => 'FAIL ' + e).join('\n')); process.exit(1) }
 console.log(`OK ${VERSION}: ${htmlFiles.length} pages`)
