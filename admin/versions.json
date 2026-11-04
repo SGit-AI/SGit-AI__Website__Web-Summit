@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.375",
+    "date": "2026-11-04",
+    "what": "WS-05: the overnight run's plan and the prompts for four agent sessions (messaging@, factory@, builder@, ux@)",
+    "by": "synthetic@web-summit.indi",
+    "from": "8d89fdffb"
+  },
+  {
     "version": "v0.2.374",
     "date": "2026-11-04",
     "what": "review of the round-4 cards and the stickers before tonight's order (print risks, brand rules, facts to source)",
