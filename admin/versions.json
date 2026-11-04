@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.317",
+    "date": "2026-11-04",
+    "what": "pack vaults listed without a web link; a public vault with more than one writer audits at every writer (vault@web-summit.vicky's notes 21 and 22)",
+    "by": "sgit@web-summit.dinis",
+    "from": "c277945b4"
+  },
+  {
     "version": "v0.2.316",
     "date": "2026-11-04",
     "what": "16:41 wake: short notes for Angelo (one signed message before 18:00) and Vicky (her watch, nothing open)",
