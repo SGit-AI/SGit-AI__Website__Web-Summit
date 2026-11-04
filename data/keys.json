@@ -626,6 +626,22 @@
         "signing_fingerprint": "sha256:2d1801d4d6b81aef"
       },
       "status": "active"
+    },
+    {
+      "id": "builder-indi",
+      "label": "builder@web-summit.indi (Claude Code session)",
+      "role": "Indi's overnight builder (builder@web-summit.indi): drafts the agent policies for Daniela's team (WS-59) and the setup guide for everybody else (WS-125). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs), linked to the operator's key sha256:db7f79fdd87e030a. Only the public half is here; the private half stays in the session.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAmeZBcXiWqGAt3+nkY3p0\nkazH1VRjDgtklUyzugSj2jianZaazh+XN7Mri6a3cNHUaGbuyefBPuE1WibDaE+l\ndvcrpQz5rz5HZGu3hlnsWFq5zbDV7S3tGB9EpocKdB0czTL2v2TfOaQMEVFQS5z+\nalgHsS4YGcleJ+zSVb3psARNFU1+P8X9LBWpfhKEZ/r2H2eoi7pTX84jyJxceTR3\nRIG/p+awM3ANpINa6wCeZpO/aBMzffDIWIS696zrScGRhep/pr5mA1pVSWAbGZfD\n5G1RKnRoaodVEkCYkKchHdSSkrrTiHTUxX0EyBllE68VpHNStZzOWB1TbpTrKPh3\nj7l1BV7/nZDjsEradE9lX4DYWwyDMzXI/P+7w3VKyK2+Gf3CtpsogfQSaVl5YBF5\nKsUHntJ8f+/I6Oi7WzBEnY4vBWEAyA2F3D9qt5YjdpZcxyHDU3p1/8BjMjFwSvj3\nnrjKFTDNAqVqhl3z+X9gSIZ9+/sJHzTG5NNew6aiHCEPgaVdVC5d+QWVfVv/W53O\n97MhRFyuIkX0siAAWkNZMOsQvihwNxQEYYyR9UYgxEQAlyWjMBRZ1WGcgeS3mure\np3xwp1sWXG2CkFNIfpX0fzcVTe14JBey8a2X2n8hFRWj6ZscXB/eKhz7kKQVc+/5\nsAlhwqYWr0I7siuN8Xh1AfcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE+SPWyfpI+mL6FwjSnJm7Jdo6ztSI\nLX8jJUzqT/EORDr4tKBmmLWzJG3S/23klK7vwze8SPOVhSfKpAXANMIWCw==\n-----END PUBLIC KEY-----\n",
+        "label": "builder@web-summit.indi",
+        "fingerprint": "sha256:c1659bd16c6140fb",
+        "signing_fingerprint": "sha256:4349db4ce4d7b73d"
+      },
+      "status": "active"
     }
   ]
 }
