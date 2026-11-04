@@ -674,6 +674,22 @@
         "signing_fingerprint": "sha256:190ff12833eba771"
       },
       "status": "active"
+    },
+    {
+      "id": "ux-indi",
+      "label": "ux@web-summit.indi (Claude Code session)",
+      "role": "Indi's overnight UX agent (ux@web-summit.indi): evaluates and improves Indi's dashboard, command centre and to-do page (WS-06). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs), linked to the operator's key sha256:db7f79fdd87e030a. Only the public half is here; the private half stays in the session.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAycHr6jlfYskLo+PN846t\nLrdC5Kfr6KubduBpgWnHZtdStHQzTtuHM48tNSZkn7YaXAyEzV7jRfJVXcj8gvhw\nV+Vul9R4SDj5lbXFILfZ5DOWD2w7vx8hqVBKiCYNBv65o4pF7WYlQrGz1Lm6cVQ/\nYdBryHqiJ58bcuBl/wIMGuk/kpVALpqYCCSOb3Eqg5uHPguxvpKvp1JVhy+LK4mN\nPL/4O0Vw6DlI+tm+Sp6x0L/i/8B2HRxnjBiB6llwE6wczGrs536Y1TYMnJn9ugkM\nSx5uXuzasXn17CVlvOS8hzZyFoq6aUlOXropMfQRCnydjfoxpD6oJ2q5wnVymwXZ\nLv9dfXUTJP0nZA+OtTEeS+0ffuvenEtOxm+pSP2L0D2oca6mWnAwqibRYTbVSFCf\ng39qAbnQbwdftwGdNLzuIoLw82KjxFSCCxxDo7lE2Suo49bjkUxmeB25XfZHVsRN\n0jjs3rSGO5JpuOv9OMEHgaBAuC2X6uJqUGAKQCJuMVW2rOe6CGB3Qq3Ax5QQQt0d\nxcOaAqDr6D9kgpzcjDwNxWmM5Yn7slJ6IcIMdOYL0X5Kx68Uu/8Gy2hUu4AyMEGP\nJWkZUHaRNYVtbCu5cxNRtN7fD+qI0FMlVM71AUYxmDVztHW61mVIcvG1PZxSp9at\nRFjT77tTrpSREtqGMP9JKAUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEE4NIaf3HdI9lxQ2BDhpI6YcXN/pS\nK0U0bT5KjMajQ2W4YPQGuN0fW0SQ+DUPXp7kq8UbNgCA2LcyYKLDRGXbFw==\n-----END PUBLIC KEY-----\n",
+        "label": "ux@web-summit.indi",
+        "fingerprint": "sha256:442d01783a42e7ce",
+        "signing_fingerprint": "sha256:b0c3139e9a9e6701"
+      },
+      "status": "active"
     }
   ]
 }

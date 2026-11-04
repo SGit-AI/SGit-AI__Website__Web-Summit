@@ -6,14 +6,16 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { execFileSync } from 'node:child_process'
+import { nav, timeEl, FONTS } from '../today/today.mjs'   // the pill bar and "3 hours ago" shared with the Today page (WS-06)
 
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
-const HEAD = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&family=Nunito:wght@700;800&display=swap"><link rel="stylesheet" href="todo.css">'
+const HEAD = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&family=Nunito:wght@700;800&display=swap"><link rel="stylesheet" href="todo.css"><link rel="stylesheet" href="../ui/ui.css"><script src="../ui/ui.js" defer></script>'
 const fm = raw => { const m = raw.match(/^---\n([\s\S]*?)\n---/); const o = {}; if (m) for (const l of m[1].split('\n')) { const i = l.indexOf(':'); if (i > 0) o[l.slice(0, i).trim()] = l.slice(i + 1).trim().replace(/^"(.*)"$/, '$1') } return o }
 const dueDate = due => { const m = String(due).match(/(\d{1,2}) Nov(?:,? (\d{1,2}):(\d{2}))?/); return m ? new Date(Date.UTC(2026, 10, +m[1], m[2] ? +m[2] : 23, m[3] ? +m[3] : 59)) : null }
 const day = d => d.toISOString().slice(0, 10)
 
-export function build(ROOT) {
+// the data, shared with Indi's Today page (people/indi/today/today.mjs, WS-06)
+export function collect(ROOT) {
     const T = JSON.parse(fs.readFileSync(path.join(ROOT, 'people/indi/todo/todo.json'), 'utf8'))
     const now = new Date(process.env.BUILD_NOW || Date.now()), today = day(now), tomorrow = day(new Date(now.getTime() + 864e5))
     // the board: open and named for Indi (or everyone / anyone)
@@ -39,22 +41,28 @@ export function build(ROOT) {
         let last = ''; try { last = execFileSync('git', ['log', '-1', '--format=%cI', `--grep=^${a}@web-summit.indi:`], { cwd: ROOT }).toString().trim() } catch { }
         return { a, n: log.length, last }
     })
+    return { T, now, lanes, decisions, act }
+}
+
+export function build(ROOT) {
+    const { T, now, lanes, decisions, act } = collect(ROOT)
     const when = s => s ? `${+s.slice(8, 10)} Nov, ${s.slice(11, 16)} UTC` : 'never'
 
     // the picture
-    const LANES = [['overdue', 'Overdue', 'rose'], ['today', 'Due today', 'peach'], ['tomorrow', 'Due tomorrow', 'butter'], ['later', 'Later this week', 'sky'], ['daily', 'Every day', 'mint']]
+    const LANES = [['overdue', 'Late', 'rose'], ['today', 'Due today', 'peach'], ['tomorrow', 'Due tomorrow', 'butter'], ['later', 'Later this week', 'sky'], ['daily', 'Every day', 'mint']]
     const card = i => `<li class="t"><a class="id" href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/${esc(i._f)}">${esc(i.id)}</a> <b>${esc(i.title.replace(/^"|"$/g, ''))}</b>${i.due ? `<span class="due">${esc(i.due)}</span>` : ''}${T.next[i.id] ? `<span class="nx">${esc(T.next[i.id])}</span>` : ''}</li>`
     const total = LANES.reduce((s, [k]) => s + lanes[k].length, 0)
-    const tiles = [[total, 'Command Centre tasks open', 'lav'], [lanes.overdue.length + lanes.today.length, 'overdue or due today', 'rose'], [decisions.length, 'decisions waiting on you', 'butter'], [T.other.length, 'other tasks', 'mint']]
+    const tiles = [[total, 'tasks open', 'lav'], [lanes.overdue.length + lanes.today.length, 'late or due today', 'rose'], [decisions.length, 'decisions waiting on you', 'butter'], [T.other.length, 'other tasks', 'mint']]
     const groups = [...new Set(T.other.map(o => o.group))]
     const gcol = { 'Your agents': 'lav', 'Waiting on you': 'peach', 'Waiting on others': 'sky' }
     const body = `<div class="td">
-<p class="lead">Everything left for you, in one picture. The Command Centre half rebuilds from the board at every release, so it stays current. Built ${esc(when(now.toISOString()))}.</p>
+<div class="ux">${nav('../', 'todo', { todo: lanes.overdue.length + lanes.today.length })}</div>
+<p class="lead">Everything left for you, in one picture. Late things are pink, today's are orange. Updated ${timeEl(now.toISOString(), now.getTime())}.</p>
 <div class="tiles">${tiles.map(([n, l, c]) => `<div class="tile ${c}"><b>${n}</b><span>${esc(l)}</span></div>`).join('')}</div>
-<section class="agents"><h2>Your agents today</h2><div class="ag">${act.map(x => `<div class="a ${x.n ? 'on' : 'off'}"><b>${x.a}</b><span class="n">${x.n}</span><span>${x.n ? 'commits today' : 'no commits today'}</span><span class="last">last: ${esc(when(x.last))}</span></div>`).join('')}</div></section>
+<section class="agents"><h2>Your agents today</h2><div class="ag">${act.map(x => `<div class="a ${x.n ? 'on' : 'off'}"><b>${x.a}</b><span class="n">${x.n}</span><span>${x.n ? (x.n === 1 ? 'piece of work saved today' : 'pieces of work saved today') : 'nothing saved today'}</span><span class="last">${x.last ? `last saved work ${timeEl(x.last, now.getTime())}` : 'no work saved yet'}</span></div>`).join('')}</div></section>
 <section><h2><span class="pill lav">1</span> Command Centre tasks</h2>
-<div class="lanes">${LANES.filter(([k]) => lanes[k].length).map(([k, t, c]) => `<div class="lane ${c}"><h3>${t} <span class="cnt">${lanes[k].length}</span></h3><ul>${lanes[k].map(card).join('')}</ul></div>`).join('')}</div>
-${decisions.length ? `<div class="lane butter wide"><h3>Decisions and questions waiting on you <span class="cnt">${decisions.length}</span></h3><ul>${decisions.map(d => `<li class="t"><span class="id">${esc(d.issue || '')}</span> <b>${esc(d.title)}</b>${d.recommend ? `<span class="nx">Recommended: ${esc(d.recommend)}</span>` : ''}</li>`).join('')}</ul></div>` : ''}
+<div class="lanes" id="lanes">${LANES.filter(([k]) => lanes[k].length).map(([k, t, c]) => `<div class="lane ${c}"><h3>${t} <span class="cnt">${lanes[k].length}</span></h3><ul>${lanes[k].map(card).join('')}</ul></div>`).join('')}</div>
+${decisions.length ? `<div class="lane butter wide" id="decisions"><h3>Decisions and questions waiting on you <span class="cnt">${decisions.length}</span></h3><ul>${decisions.map(d => `<li class="t"><span class="id">${esc(d.issue || '')}</span> <b>${esc(d.title)}</b>${d.recommend ? `<span class="nx">Recommended: ${esc(d.recommend)}</span>` : ''}</li>`).join('')}</ul></div>` : ''}
 ${lanes.done.length ? `<p class="done">Done for you, still open for the team: ${lanes.done.map(i => `${esc(i.id)} (${esc(T.done_for_indi[i.id])})`).join(' · ')}</p>` : ''}
 </section>
 <section><h2><span class="pill peach">2</span> Other tasks</h2>

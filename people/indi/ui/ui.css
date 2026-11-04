@@ -1,0 +1,74 @@
+/* Indi's pages (WS-06, ux@web-summit.indi): the pastel model of the to-do page (Lexend and Nunito, soft colours,
+   pills), shared by Indi's Today page and the to-do page. Dark ink on light pastel, in both themes. */
+.ux { --ink: #33324a; --soft: #5f5d78; --rose: #f9dbe4; --peach: #ffe3d3; --butter: #fff2c6; --sky: #d9ecfa; --mint: #d3f0e4; --lav: #e6e0f8; --grey: #eeedf3;
+  --rose-e: #e59bb3; --peach-e: #efa784; --butter-e: #e2c35c; --sky-e: #86bde6; --mint-e: #7cc9ad; --lav-e: #a99be0; --grey-e: #c4c2d2;
+  font-family: 'Lexend', system-ui, sans-serif; line-height: 1.5; }
+.ux h2, .ux h3, .ux .big, .ux .nav a { font-family: 'Nunito', 'Lexend', system-ui, sans-serif; }
+.ux .rose { --c: var(--rose); --e: var(--rose-e); } .ux .peach { --c: var(--peach); --e: var(--peach-e); }
+.ux .butter { --c: var(--butter); --e: var(--butter-e); } .ux .sky { --c: var(--sky); --e: var(--sky-e); }
+.ux .mint { --c: var(--mint); --e: var(--mint-e); } .ux .lav { --c: var(--lav); --e: var(--lav-e); }
+.ux .grey { --c: var(--grey); --e: var(--grey-e); }
+
+/* the pill bar: every page Indi uses, one tap away, on every one of Indi's pages */
+.ux .nav { display: flex; flex-wrap: wrap; gap: .5rem; margin: .2rem 0 1.2rem; padding: 0; list-style: none; }
+.ux .nav a { display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; padding: .35rem 1rem; border-radius: 999px; text-decoration: none;
+  background: var(--c); border: 2px solid var(--e); color: var(--ink); font-weight: 800; font-size: 1rem; }
+.ux .nav a:hover, .ux .nav a:focus-visible { filter: brightness(.96); outline: 3px solid var(--e); outline-offset: 2px; }
+.ux .nav a[aria-current="page"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.ux .nav .n { background: #fff; border-radius: 999px; padding: 0 .5rem; font-size: .85rem; color: var(--ink); }
+
+.ux .hello { font-size: 1.2rem; margin: 0 0 .3rem; }
+.ux .small { color: var(--soft); font-size: .88rem; }
+.ux h2 { display: flex; align-items: center; gap: .6rem; margin: 2rem 0 .8rem; font-size: 1.4rem; }
+.ux h2 .pill { font-size: .9rem; }
+
+/* the three things to do first */
+.ux .first { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .8rem; }
+.ux .first a { display: grid; gap: .2rem; align-content: start; background: var(--c); border: 2px solid var(--e); border-radius: 22px; padding: .9rem 1.1rem;
+  color: var(--ink); text-decoration: none; box-shadow: 0 6px 20px rgba(80, 70, 140, .07); }
+.ux .first a:hover, .ux .first a:focus-visible { transform: translateY(-2px); outline: 3px solid var(--e); outline-offset: 2px; }
+.ux .first .big { font-size: 2.3rem; font-weight: 800; line-height: 1.05; }
+.ux .first .what { font-weight: 600; font-size: 1.05rem; }
+.ux .first .go { color: var(--soft); font-size: .92rem; }
+.ux .first .go::after { content: " \2192"; }
+
+/* pills */
+.ux .pill { display: inline-flex; align-items: center; gap: .3rem; border-radius: 999px; padding: .05rem .65rem; font-size: .8rem; font-weight: 600;
+  background: var(--c); border: 1.5px solid var(--e); color: var(--ink); white-space: nowrap; }
+.ux .dot { width: .6rem; height: .6rem; border-radius: 50%; background: var(--e); display: inline-block; }
+
+/* what changed: a feed */
+.ux .feed { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
+.ux .feed li { display: grid; grid-template-columns: 8rem 1fr; gap: .2rem .8rem; align-items: start; background: #fdfcf8; border: 1px solid #ece8f6;
+  border-left: 6px solid var(--e); border-radius: 16px; padding: .6rem .9rem; color: var(--ink); }
+.ux .feed .when { color: var(--soft); font-size: .88rem; padding-top: .1rem; }
+.ux .feed .tags { display: flex; flex-wrap: wrap; gap: .3rem; grid-column: 2; }
+.ux .feed .said { font-weight: 600; }
+.ux .feed .src { grid-column: 2; font-size: .8rem; color: var(--soft); }
+.ux .feed .src a { color: var(--soft); }
+.ux details.more { margin-top: .6rem; }
+.ux details.more > summary { cursor: pointer; display: inline-flex; min-height: 44px; align-items: center; padding: 0 1rem; border-radius: 999px;
+  background: var(--lav); border: 2px solid var(--lav-e); color: var(--ink); font-weight: 600; list-style: none; }
+.ux details.more > summary::-webkit-details-marker { display: none; }
+.ux details.more[open] > summary { margin-bottom: .6rem; }
+.ux .filters { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 .7rem; }
+.ux .filters button { min-height: 36px; border-radius: 999px; padding: 0 .8rem; background: var(--c); border: 2px solid var(--e); color: var(--ink);
+  font: 600 .88rem 'Lexend', system-ui, sans-serif; cursor: pointer; }
+.ux .filters button[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+/* your agents */
+.ux .agents { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: .7rem; }
+.ux .agent { background: var(--c); border: 2px solid var(--e); border-radius: 20px; padding: .7rem .9rem; color: var(--ink); display: grid; gap: .2rem; align-content: start; }
+.ux .agent.quiet { background: #fdfcf8; border-style: dashed; }
+.ux .agent .top { display: flex; justify-content: space-between; gap: .4rem; align-items: center; flex-wrap: wrap; }
+.ux .agent b { font-family: 'Nunito', 'Lexend', system-ui, sans-serif; font-size: 1.08rem; }
+.ux .agent .job { font-size: .93rem; }
+.ux .agent .last { color: var(--soft); font-size: .85rem; }
+.ux .key { display: flex; flex-wrap: wrap; gap: .4rem; margin: .7rem 0 0; }
+
+.ux .standup { display: flex; flex-wrap: wrap; gap: .6rem 1rem; align-items: center; background: var(--sky); border: 2px solid var(--sky-e); border-radius: 22px; padding: .8rem 1.1rem; color: var(--ink); }
+.ux .standup .big { font-size: 1.5rem; font-weight: 800; }
+.ux .standup a { font-weight: 600; color: var(--ink); }
+.ux .meta { color: var(--soft); font-size: .82rem; margin-top: 1.8rem; }
+@media (max-width: 520px) { .ux .first a { grid-template-columns: auto 1fr; column-gap: .8rem; padding: .6rem .9rem; } .ux .first .big { grid-row: span 2; font-size: 2rem; } .ux .first .go { grid-column: 2; } .ux .feed li { grid-template-columns: 1fr; } .ux .feed .tags, .ux .feed .src { grid-column: 1; } .ux .nav a { padding: .3rem .8rem; font-size: .95rem; } }
+@media (prefers-color-scheme: dark) { .ux .hello, .ux h2, .ux .meta, .ux .small { color: inherit; } }

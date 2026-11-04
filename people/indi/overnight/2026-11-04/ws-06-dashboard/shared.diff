@@ -1,0 +1,44 @@
+diff --git a/admin/build/build.mjs b/admin/build/build.mjs
+index c55b4f36..264dfd61 100644
+--- a/admin/build/build.mjs
++++ b/admin/build/build.mjs
+@@ -545,9 +545,10 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
+     const f = path.join(ROOT, 'people', m.id, 'dashboard.md')
+     if (!fs.existsSync(f)) continue
+     const { meta, body: rawBody } = parse(fs.readFileSync(f, 'utf8'))
+-    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n\`\`\`chart agents-map ${m.id}\n\`\`\`\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
++    const nxm = MEET.next(), own = meta.start ? `**[${meta.start.split('|')[0].trim()}](${meta.start.split('|')[1].trim()})**: start here.\n\n` : '', body = own + `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} at ${nxm.time} Lisbon time](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../', fs.existsSync(path.join(ROOT, 'people', m.id, 'today')) ? 'today/index.html#changed' : '')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n\`\`\`chart agents-map ${m.id}\n\`\`\`\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
+     const rel = `people/${m.id}/index.html`
+-    write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel) }))
++    const css = fs.existsSync(path.join(ROOT, 'people', m.id, 'dashboard.css')) ? '<link rel="stylesheet" href="dashboard.css">' : ''   // a person's own look for their page (WS-06)
++    write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel), head: css }))
+     pages.push({ rel, title: meta.title, description: meta.summary })
+     twin(rel, meta.title, meta.summary, body)
+ }
+diff --git a/admin/build/meetings.mjs b/admin/build/meetings.mjs
+index 68a3b282..680b1040 100644
+--- a/admin/build/meetings.mjs
++++ b/admin/build/meetings.mjs
+@@ -32,14 +32,14 @@ const forMe = (x, id) => (x.for || ['everyone']).some(f => f === id || f === 'ev
+ const when = iso => iso ? iso.replace('T', ' ').slice(0, 16) + ' UTC' : 'never'
+ const dueSoon = (due, today) => { const m = String(due || '').match(/(\d{1,2}) Nov/); if (!m) return /now|today/i.test(due || ''); const d = Number(m[1]); return d <= Number(today.slice(8, 10)) + 1 }
+ 
+-// "since you last looked": today, the last 24 hours, and since the person's last acknowledgement
+-export function sinceMd(C, id, up) {
+-    const now = NOW(), a = C.ack(id), day = now.toISOString().slice(0, 10)
+-    const span = from => { const l = C.log(from); return { rel: l.filter(x => x.release), work: l.filter(x => !x.release) } }
+-    const ackFrom = a?.acknowledged_at || new Date(now - 864e5).toISOString()
+-    const t = span(day + 'T00:00:00Z'), d = span(new Date(now - 864e5).toISOString()), s = span(ackFrom)
+-    const lines = s.rel.slice(0, 8).map(x => `- ${when(x.at).slice(11)} ${x.s.replace(/^site (v[0-9.]+): /, '**$1** ')}`).join('\n')
+-    return `| | Releases | Agent and people commits |\n|---|---|---|\n| Today (since 00:00 UTC) | ${t.rel.length} | ${t.work.length} |\n| The last 24 hours | ${d.rel.length} | ${d.work.length} |\n| Since you last acknowledged (${a ? when(a.acknowledged_at) : 'never: showing the last 24 hours'}) | ${s.rel.length} | ${s.work.length} |\n\n${lines ? `Newest releases since then:\n\n${lines}\n\n` : ''}Seen it? Tell your agent *"acknowledge"*: it writes \`people/${id}/ack.json\` with the time, and your next briefing starts from there.`
++// "since you last looked": in plain words, newest first, "3 hours ago" (WS-06 proposal, ux@web-summit.indi)
++const ago = (iso, now) => { const a = Math.max(0, Math.round((now - Date.parse(iso)) / 6e4)); return a < 1 ? 'just now' : a < 60 ? `${a} minute${a === 1 ? '' : 's'} ago` : a < 1440 ? `${Math.round(a / 60)} hour${Math.round(a / 60) === 1 ? '' : 's'} ago` : `${Math.round(a / 1440)} day${Math.round(a / 1440) === 1 ? '' : 's'} ago` }
++const plainSubject = s => s.replace(/\s*\([^()]*[\/@][^()]*\)/g, '').replace(/\bWS-(\d+)/g, 'task $1').replace(/\b([a-z0-9-]+)@web-summit\.([a-z]+)/g, "$2's $1").replace(/(^|\s)\/([a-z0-9-/]+?)\/?(?=[\s:,.]|$)/g, (_, a, p) => `${a}the ${p.split('/').join(' ')} page`).replace(/\b[\w.-]+\/[\w./-]+\.\w+\b/g, 'a file').replace(/\s{2,}/g, ' ').trim()
++export function sinceMd(C, id, up, more = '') {   // more: a page with the full list, if the person has one
++    const now = NOW(), a = C.ack(id)
++    const from = a?.acknowledged_at || new Date(now - 864e5).toISOString(), l = C.log(from), rel = l.filter(x => x.release)
++    const lines = rel.slice(0, 5).map(x => `- **${ago(x.at, now)}:** ${plainSubject(x.s.replace(/^site v[0-9.]+: /, ''))}`).join('\n')
++    return `${a ? `Since you last looked (${ago(a.acknowledged_at, now)})` : 'In the last day'}, the site changed **${rel.length} times** and the team saved **${l.length - rel.length} pieces of work**.\n\n${lines ? `The newest:\n\n${lines}\n\n` : ''}${rel.length > 5 && more ? `[See all ${rel.length}, with colours and filters](${more}). ` : ''}Seen it? Tell your agent *"acknowledge"* and this starts again from now.`
+ }
+ 
+ export function buildMeetings({ ROOT, C, PEOPLE, ISSUES, write, page, render, twin, pages }) {
