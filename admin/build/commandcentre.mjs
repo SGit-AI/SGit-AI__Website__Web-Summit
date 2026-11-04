@@ -103,6 +103,7 @@ export function build(root, person, now = new Date()) {
         summit: config.summit, standups: config.standups, workstreams: config.workstreams, decisions, funnels: config.funnels, prompts: config.prompts, mail_searches: config.mail_searches, connectors: config.connectors, ideas: config.ideas || '',
         // chat in the page (assets/cc/app.js): only where the person's config.json sets it; the key is never here
         llm: config.llm || null,
+        links: config.links || [],
         onboarding: { level: onboarding.level ?? null, steps: onboarding.steps || {}, updated: onboarding.updated || '' },
         issues, agents, activity, messages,
         repo: 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit', branch: 'dev',

@@ -600,3 +600,62 @@ html.cc-on[data-theme="light"] .cc-ask .wave::after { background: radial-gradien
 .cc-msg .txt pre { white-space: pre-wrap; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--rm-border); font-size: 13px; }
 .cc-msg .meta { margin-top: 6px; font: 400 12px/16px var(--rm-font); color: var(--rm-text-muted); }
 .cc-orform input[type="password"] { min-height: 44px; border-radius: var(--rm-radius-control); border: 1px solid var(--rm-border); background: var(--rm-surface-raised); padding: 0 12px; font-size: 16px; color: var(--rm-text); }
+
+/* done tasks folded at the end of a list (Silvio's review, 4 November) */
+.cc-donefold { margin-top: 10px; border-top: 1px dashed var(--rm-card-line, var(--rm-border)); padding-top: 8px; }
+.cc-donefold > summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 10px; border-radius: 999px; font: 600 13px/18px var(--rm-font); color: var(--c-green); background: color-mix(in srgb, var(--rm-green) 12%, transparent); border: 1px solid color-mix(in srgb, var(--rm-green) 30%, transparent); }
+.cc-donefold > summary::-webkit-details-marker { display: none; }
+.cc-donefold[open] > summary { margin-bottom: 8px; }
+.cc-donefold .cc-task { opacity: .72; }
+.cc-more-done { width: 100%; justify-content: center; min-height: 40px; }
+
+/* the Links folder: every site we work with, in one place (Silvio, 4 November) */
+.cc-linkpanel { gap: 10px; }
+.cc-linkpanel #lk-q { width: 100%; min-height: 48px; border-radius: 12px; border: 1px solid var(--rm-card-line, var(--rm-border)); background: var(--rm-surface-raised); padding: 0 14px; font-size: 16px; color: var(--rm-text); }
+.cc-linkgrp h3 { font: 600 12px/17px var(--rm-font); letter-spacing: .08em; text-transform: uppercase; color: var(--rm-gold); margin: 8px 0 6px; }
+.cc-linklist { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 6px; }
+.cc-link { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 48px; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--rm-card-line, var(--rm-border)); background: color-mix(in srgb, var(--rm-surface-raised) 50%, transparent); color: var(--rm-text) !important; text-decoration: none !important; transition: background .15s, border-color .15s; }
+.cc-link:hover { background: var(--rm-surface-hover); border-color: color-mix(in srgb, var(--rm-gold) 45%, var(--rm-card-line, var(--rm-border))); }
+.cc-link span { min-width: 0; }
+.cc-link b { display: block; font: 600 14px/20px var(--rm-font); overflow-wrap: anywhere; }
+.cc-link small { display: block; font: 400 12px/17px var(--rm-font); color: var(--rm-text-muted); }
+.cc-link svg { width: 16px; height: 16px; flex: none; color: var(--rm-text-muted); }
+.cc-link[hidden], .cc-linkgrp[hidden] { display: none; }
+
+/* ===== Calm mode (Silvio, 4 November): colour only where it asks for action; everything else quiet ===== */
+/* task cards: flat, more air, the bar is the only urgency colour besides the date */
+.cc-task { background: transparent !important; border-color: var(--rm-card-line) !important; padding: 12px 14px 12px 0; }
+html.cc-on[data-theme="light"] .cc-task { background: #fff !important; }
+.cc-task:hover { background: var(--rm-surface-hover) !important; transform: none; }
+.cc-task .bar { width: 3px; box-shadow: none !important; background: transparent; }
+.cc-task.t-red .bar { background: var(--rm-red); }
+.cc-task.t-orange .bar { background: var(--rm-orange); }
+.cc-task .t { font-weight: 600; }
+.cc-task .t .id { background: none; padding: 0; color: var(--rm-text-muted); font-weight: 500; }
+.cc-task .meta { gap: 4px 12px; margin-top: 4px; }
+/* the workstream: a small dot and quiet text, no box */
+.cc-task .ws { display: inline-flex; align-items: center; gap: 6px; font: 500 12px/17px var(--rm-font); color: var(--rm-text-secondary); }
+.cc-task .ws::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--tone); opacity: .85; }
+.cc-task .who { font: 400 12px/17px var(--rm-font); color: var(--rm-text-muted); }
+/* the few chips left (In progress, Waiting, Done) stay, but softer */
+.cc-task .chip { height: 22px; font-weight: 500; background: transparent; box-shadow: none; }
+.cc-task .chip::before { box-shadow: none; }
+/* the date: red or orange only when it is urgent; otherwise quiet */
+.cc-task .due b { color: var(--rm-text-secondary); font-weight: 600; }
+.cc-task.t-red .due b { color: var(--c-red); }
+.cc-task.t-orange .due b { color: var(--c-orange); }
+/* group titles say when, so the colour does not have to */
+.cc-when { display: flex; align-items: center; gap: 8px; margin: 14px 0 6px; font: 600 12px/17px var(--rm-font); letter-spacing: .08em; text-transform: uppercase; color: var(--rm-text-muted); }
+.cc-when:first-child { margin-top: 0; }
+.cc-when span { font-weight: 500; letter-spacing: 0; color: var(--rm-text-muted); opacity: .8; }
+.cc-when.late { color: var(--c-red); }
+/* workstreams: one brand colour for progress, neutral initials */
+.cc-prog .dot-ic { background: var(--rm-chip-bg) !important; color: var(--rm-text-secondary) !important; box-shadow: none !important; }
+.cc-prog .cc-track i { background: var(--rm-gild) !important; box-shadow: none !important; }
+/* KPI tiles: no coloured glow behind the numbers */
+.cc-kpi::after { display: none; }
+.cc-kpi::before { opacity: .5; }
+/* hero: one gold call to action; the others quiet */
+.cc-hero .cc-btn.tint, html.cc-on[data-theme="light"] .cc-hero .cc-btn.tint { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.18); color: var(--rm-hero-text); }
+html.cc-on[data-theme="light"] .cc-hero .cc-btn.tint { background: #fff; border-color: var(--rm-card-line); }
+.cc-hero .cc-btn.tint svg { color: inherit; }

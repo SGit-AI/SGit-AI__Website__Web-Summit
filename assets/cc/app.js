@@ -56,6 +56,7 @@
         speak: 'M11 5L6 9H2v6h4l5 4zM15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14',
         github: 'M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3.1-.4 6.4-1.5 6.4-6.9a5.4 5.4 0 0 0-1.5-3.7 5 5 0 0 0-.1-3.8s-1.2-.4-3.9 1.5a13.4 13.4 0 0 0-7 0C6.3 1.6 5.1 2 5.1 2a5 5 0 0 0-.1 3.8 5.4 5.4 0 0 0-1.5 3.7c0 5.4 3.3 6.5 6.4 6.9a3.4 3.4 0 0 0-.9 2.6V22',
         back: 'M15 18l-6-6 6-6',
+        links: 'M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7',
         down: 'M6 9l6 6 6-6',
     }
     const ico = (n, cls = 'ico') => `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${P[n]}"/></svg>`
@@ -82,8 +83,8 @@
         if (!i.due_at) return { k: 'none', label: 'No date', tone: 'slate' }
         const h = (new Date(i.due_at) - Date.now()) / 36e5
         if (h < 0) return { k: 'overdue', label: 'Overdue', tone: 'red' }
-        if (h <= 24) return { k: 'p1', label: 'Due in 24 h', tone: 'red' }
-        if (h <= 72) return { k: 'soon', label: 'Due soon', tone: 'orange' }
+        if (h <= 24) return { k: 'p1', label: 'Due in 24 h', tone: 'orange' }
+        if (h <= 72) return { k: 'soon', label: 'Due soon', tone: 'slate' }
         return { k: 'later', label: 'Later', tone: 'slate' }
     }
     const STATUS = { open: ['To do', 'slate'], picked: ['In progress', 'blue'], blocked: ['Waiting', 'yellow'], done: ['Done', 'green'] }
@@ -103,9 +104,16 @@
     const URANK = { overdue: 0, p1: 1, soon: 2, ongoing: 3, later: 4, none: 5 }
     const urgentTop = () => openNamed().slice().sort((a, b) => URANK[urgency(a).k] - URANK[urgency(b).k] || (a.due_at || '9').localeCompare(b.due_at || '9')).slice(0, 3)
     const openNamed = () => named().filter(i => i.status !== 'done')
+    // urgency first (overdue, due in 24 h, due soon, daily, later, no date), then the earliest due
+    const byUrgency = l => l.slice().sort((a, b) => URANK[urgency(a).k] - URANK[urgency(b).k] || (a.due_at || '9').localeCompare(b.due_at || '9'))
+    // done tasks never sit between the open ones: one folded line at the end
+    const doneFold = (done, compact) => done.length ? `<details class="cc-donefold"><summary>✓ ${done.length} done</summary><div class="cc-list">${done.map(i => taskRow(i, true)).join('')}</div></details>` : ''
+    const WHEN = [['Overdue', ['overdue']], ['Today', ['p1']], ['This week', ['soon']], ['Later', ['ongoing', 'later', 'none']]]
+    const grouped = (o, compact) => WHEN.map(([title, ks]) => { const g = o.filter(i => ks.includes(urgency(i).k)); return g.length ? `<h3 class="cc-when${title === 'Overdue' ? ' late' : ''}">${title}<span>${g.length}</span></h3><div class="cc-list">${g.map(i => taskRow(i, compact)).join('')}</div>` : '' }).join('')
+    const openThenDone = (l, compact) => { const o = byUrgency(l.filter(i => i.status !== 'done')), d = l.filter(i => i.status === 'done'); return (o.length ? grouped(o, compact) : empty('Nothing left to do here.')) + doneFold(d, compact) }
 
     // ---------- state ----------
-    const S = { view: 'home', scope: store.get('scope', 'named'), stream: 'all', status: 'all', window: 'all', q: '', boardScope: 'mine', boardCol: 'open', voiceLang: store.get('lang', 'en-GB') }
+    const S = { view: 'home', scope: store.get('scope', 'named'), stream: 'all', status: 'active', window: 'all', q: '', boardScope: 'mine', boardCol: 'open', voiceLang: store.get('lang', 'en-GB') }
     const VIEWS = [
         ['home', 'Command centre', 'home'], ['tasks', 'My tasks', 'tasks'], ['streams', 'Workstreams', 'streams'], ['board', 'Team board', 'board'],
         ['waiting', 'Waiting and decisions', 'wait'], ['agents', 'My agents', 'agents'], ['inbox', 'Inbox and email', 'inbox'], ['calendar', 'Calendar', 'cal'],
@@ -149,6 +157,7 @@
     <header class="cc-top">
       <span class="cc-mark sm" aria-hidden="true">R</span><div class="title" id="cc-title"></div><div class="grow"></div>
       <form class="cc-search" role="search" id="cc-search"><label class="sr" for="cc-q">Search the board</label>${ico('search', '')}<input id="cc-q" type="search" placeholder="Search issues, WS-NN, people…" value="${esc(S.q)}"></form>
+      <button class="cc-iconbtn" id="cc-links" type="button" aria-label="Links: every site we work with" title="Links">${ico('links', '')}</button>
       <button class="cc-iconbtn" id="cc-theme" type="button" aria-label="Switch to ${html.dataset.theme === 'dark' ? 'light' : 'dark'} mode">${ico(html.dataset.theme === 'dark' ? 'sun' : 'moon', '')}</button>
       <div class="cc-today"><time id="cc-clock"></time><br><span>${esc(TZ)}</span></div>
     </header>
@@ -169,6 +178,7 @@
   <button type="button" id="cc-more"${['streams', 'waiting', 'agents', 'calendar', 'ask', 'reports', 'settings'].includes(S.view) ? ' aria-current="page"' : ''}>${ico('more', '')}More</button>
 </nav>
 </div>`
+        $('#cc-links').onclick = linksPanel
         $('#cc-theme').onclick = () => { store.set('theme', html.dataset.theme === 'dark' ? 'light' : 'dark'); applyTheme(); render() }
         $('#cc-search').onsubmit = e => { e.preventDefault(); S.q = $('#cc-q').value.trim(); S.scope = 'board'; go('tasks') }
         $('#cc-askform').onsubmit = e => { e.preventDefault(); S.askDraft = $('#cc-askq').value.trim(); S.askOpen = false; go('ask') }
@@ -204,7 +214,7 @@
         return `<button class="cc-task t-${u.tone}${compact ? ' compact' : ''}" type="button" data-issue="${esc(i.id)}">
 <span class="bar"></span>
 <span><span class="t"><span class="id">${esc(i.id)}</span>${esc(i.title)}</span>
-<span class="meta">${streamChip(i.stream)}${chip(sl, st)}${u.k !== 'done' && u.k !== 'later' && u.k !== 'none' ? chip(u.label, u.tone) : ''}${i.picked_by ? `<span class="chip t-slate plain">Picked: ${esc(i.picked_by.slice(0, 40))}</span>` : `<span class="chip t-slate plain">Nobody picked</span>`}${w ? chip('Waiting on ' + w.slice(0, 30), 'yellow') : ''}</span>
+<span class="meta">${i.stream ? `<span class="ws t-${(streamOf(i.stream) || {}).colour || STREAM_TONE[i.stream] || 'slate'}">${esc(streamName(i.stream))}</span>` : ''}${i.status !== 'open' ? chip(sl, st) : ''}${w ? chip('Waiting on ' + w.slice(0, 30), 'yellow') : ''}<span class="who">${i.picked_by ? 'Picked: ' + esc(i.picked_by.slice(0, 40)) : 'Nobody picked'}</span></span>
 <span class="dw">Done when: ${esc(firstPara(i.body))}</span></span>
 <span class="due"><b>${esc(i.due ? i.due.replace(/^daily from /, 'daily · ') : 'no date')}</b>${i.due_at && !i.recurring && i.status !== 'done' ? esc(rel(i.due_at)) : ''}</span>
 </button>`
@@ -216,7 +226,7 @@
     // ---------- views ----------
     const V = {}
     V.home = () => {
-        const c = counts(), o = openNamed().slice(0, 6)
+        const c = counts(), o = byUrgency(openNamed()).slice(0, 6)
         const greet = greeting()
         const toSummit = Math.max(0, Math.ceil((new Date(D.summit.opening) - Date.now()) / 864e5))
         const kpi = (key, label, val, sub, tone, icon) => `<button class="cc-kpi" type="button" data-kpi="${key}"><span class="ic t-${tone}">${ico(icon, '')}</span><span><span class="lbl">${label}</span><span class="val num">${val}</span><span class="sub">${sub}</span></span></button>`
@@ -235,7 +245,7 @@ ${kpi('waiting', 'Waiting / decisions', c.waiting, 'on others or on me', 'yellow
 ${kpi('done', 'Completed', c.done, 'status: done', 'green', 'check')}
 </div>
 <div class="cc-grid">
-${card("Today's priority tasks", o.length ? `<div class="cc-list">${o.map(i => taskRow(i, true)).join('')}</div>` : empty('Nothing open is named for you.'), { cls: 'cc-span-5', more: 'tasks', id: 'prio', icon: 'flag' })}
+${card("Today's priority tasks", o.length ? grouped(byUrgency(o), true) : empty('Nothing open is named for you.'), { cls: 'cc-span-5', more: 'tasks', id: 'prio', icon: 'flag' })}
 ${card('Workstreams', streamsProgress(), { cls: 'cc-span-4', more: 'streams', id: 'ws', icon: 'streams' })}
 ${card('Inbox', inboxMini(), { cls: 'cc-span-3', more: 'inbox', id: 'inb', icon: 'inbox' })}
 ${card("Today's agenda", agendaRows(Date.now(), true), { cls: 'cc-span-4', more: 'calendar', id: 'ag', icon: 'cal' })}
@@ -247,7 +257,7 @@ ${card('Decisions I need', decisionRows(4), { cls: 'cc-span-3', more: 'waiting',
     const filtered = () => {
         let l = S.scope === 'board' ? D.issues.slice() : S.scope === 'team' ? D.issues.filter(i => i.mine) : named()
         if (S.stream !== 'all') l = l.filter(i => i.stream === S.stream)
-        if (S.status === 'active') l = l.filter(i => i.status !== 'done'); else if (S.status !== 'all') l = l.filter(i => i.status === S.status)
+        if (S.status === 'active') { /* split in V.tasks: open first, done folded */ } else if (S.status !== 'all') l = l.filter(i => i.status === S.status)
         if (S.window !== 'all') {
             const end = new Date(); end.setHours(23, 59, 59, 999)
             const lim = S.window === 'today' ? end : S.window === 'week' ? new Date(end.getTime() + 6 * 864e5) : null
@@ -266,8 +276,8 @@ ${seg('scope', [['named', 'Named for me'], ['team', '+ team-wide'], ['board', 'W
 <label class="sr" for="f-status">Status</label><select id="f-status" data-sel="status">${[['all', 'Any status'], ['active', 'Not done'], ['open', 'To do'], ['picked', 'In progress'], ['blocked', 'Waiting'], ['done', 'Done']].map(([v, t]) => `<option value="${v}"${S.status === v ? ' selected' : ''}>${t}</option>`).join('')}</select>
 ${S.q ? `<button class="cc-btn ghost" type="button" data-clearq>${ico('x', '')}“${esc(S.q)}”</button>` : ''}
 <span style="flex:1"></span><button class="cc-btn primary" type="button" data-new>${ico('plus', '')}New task</button></div>
-<p class="note" aria-live="polite">${l.length} issue${l.length === 1 ? '' : 's'} · sorted by due date</p>
-${l.length ? `<div class="cc-list">${l.map(i => taskRow(i)).join('')}</div>` : empty('No issue matches these filters. <button class="cc-btn ghost" type="button" data-reset>Reset filters</button>')}${srcLine()}`
+<p class="note" aria-live="polite">${S.status === 'active' ? `${l.filter(i => i.status !== 'done').length} to do · most urgent first` : `${l.length} issue${l.length === 1 ? '' : 's'} · most urgent first`}</p>
+${S.status === 'active' ? openThenDone(l, false) : l.length ? `<div class="cc-list">${byUrgency(l).map(i => taskRow(i)).join('')}</div>` : empty('No issue matches these filters. <button class="cc-btn ghost" type="button" data-reset>Reset filters</button>')}${srcLine()}`
     }
 
     const streamsProgress = () => `<div class="cc-prog">${D.workstreams.map(w => {
@@ -279,7 +289,7 @@ ${l.length ? `<div class="cc-list">${l.map(i => taskRow(i)).join('')}</div>` : e
         const l = D.issues.filter(i => i.stream === w.id), ag = D.agents.find(a => a.name === w.agent)
         return card(w.name, `<p class="note" style="margin-bottom:10px">${esc(w.goal)}</p>
 <div class="cc-filters" style="margin-bottom:12px">${w.agent ? chip('Agent: ' + w.agent.split('@')[0] + (ag ? ` (${ag.status})` : ''), ag && ag.status === 'active' ? 'green' : ag && ag.status === 'joined' ? 'blue' : 'slate') : ''}${w.with ? chip('With: ' + w.with, 'slate', true) : ''}</div>
-${l.length ? `<div class="cc-list">${l.map(i => taskRow(i, true)).join('')}</div>` : empty('No issues on the board yet.')}`, { cls: 'cc-span-6', id: 'w-' + w.id })
+${l.length ? openThenDone(l, true) : empty('No issues on the board yet.')}`, { cls: 'cc-span-6', id: 'w-' + w.id })
     }).join('')}</div>
 ${card('Ideas (no issues yet)', `<p class="note">${esc(D.ideas || 'What should the team do that it is not doing?')} One idea a day to the stand-up: <button class="cc-btn" type="button" data-prompt="idea">${ico('claude', '')}Draft an idea with Claude</button></p>`, { id: 'ideas' })}${srcLine()}`
 
@@ -288,7 +298,7 @@ ${card('Ideas (no issues yet)', `<p class="note">${esc(D.ideas || 'What should t
         const cols = [['open', 'To do', 'slate'], ['picked', 'In progress', 'blue'], ['blocked', 'Waiting on someone', 'yellow'], ['done', 'Done', 'green']]
         return `<div class="cc-filters">${seg('boardScope', [['mine', 'Mine and team-wide'], ['all', 'Everyone (' + D.issues.length + ')']])}<span class="note">Status changes are made in the issue's file (edit on GitHub, or ask your agent): the board files stay the only source of truth.</span></div>
 <div class="cc-seg cc-boardtabs" role="tablist" aria-label="Board column">${cols.map(([k, l]) => `<button type="button" role="tab" data-set="boardCol" data-val="${k}" aria-pressed="${S.boardCol === k}">${l} (${base.filter(i => i.status === k).length})</button>`).join('')}</div>
-<div class="cc-board">${cols.map(([k, l, t]) => { const items = base.filter(i => i.status === k); return `<section class="cc-col${S.boardCol === k ? ' on' : ''}" aria-label="${l}"><h3>${chip(l, t)}<span class="n">${items.length}</span></h3>${items.length ? items.map(i => taskRow(i, true)).join('') : empty('Empty')}</section>` }).join('')}</div>${srcLine()}`
+<div class="cc-board">${cols.map(([k, l, t]) => { const all = base.filter(i => i.status === k), items = k === 'done' && !S.doneAll ? all.slice(-3).reverse() : k === 'done' ? all : byUrgency(all); return `<section class="cc-col${S.boardCol === k ? ' on' : ''}" aria-label="${l}"><h3>${chip(l, t)}<span class="n">${all.length}</span></h3>${items.length ? items.map(i => taskRow(i, true)).join('') : empty('Empty')}${k === 'done' && all.length > 3 ? `<button class="cc-btn ghost cc-more-done" type="button" data-set="doneAll" data-val="${S.doneAll ? '' : '1'}">${S.doneAll ? 'Show fewer' : `Show all ${all.length} done`}</button>` : ''}</section>` }).join('')}</div>${srcLine()}`
     }
 
     const decisionRows = n => `<div class="cc-rows">${D.decisions.slice(0, n || 99).map(x => `<div class="cc-row wide"><div class="what"><b>${esc(x.who)}:</b> ${esc(x.what)}<small>${x.issue ? esc(x.issue) + ' · ' : ''}<a href="../../../${esc(x.source.startsWith('board/') ? 'briefs/index.html#issues' : x.source)}">source</a> · waiting ${esc(ago(x.since).replace(' ago', ''))}</small></div><span class="chip t-${x.who === FIRST ? 'orange' : 'yellow'}">${x.who === FIRST ? 'On me' : 'On ' + esc(x.who)}</span></div>`).join('')}</div>`
@@ -299,7 +309,7 @@ ${card('Ideas (no issues yet)', `<p class="note">${esc(D.ideas || 'What should t
 ${card('Decisions I need', decisionRows() + `<p class="note" style="margin-top:10px">From the open decision items for you on the stand-up agenda (data/meetings/), plus any your agents keep in people/${esc(ME)}/app/config.json. Waiting time is counted from when each was raised; take this list to the 13:00 and 18:00 UTC stand-ups.</p>`, { cls: 'cc-span-6', id: 'dec2' })}
 ${card('Waiting on others', w.length ? `<div class="cc-list">${w.map(i => taskRow(i, true)).join('')}</div>` : empty('None of your issues is blocked or held by someone else right now.'), { cls: 'cc-span-6', id: 'won' })}
 ${card('Due soon and nobody has picked them', unpicked.length ? `<div class="cc-list">${unpicked.map(i => taskRow(i, true)).join('')}</div>` : empty('Every urgent issue has someone on it.'), { cls: 'cc-span-12', id: 'unp' })}
-${card('Messages for me and my agents (48 h)', D.messages.length ? `<div class="cc-rows">${D.messages.map(m => `<div class="cc-row"><span class="when">${esc(fmtTime(m.at))}</span><span class="what">${esc(m.subject)}<small>${esc(m.agent)} · <a href="${D.repo}/commit/${esc(m.hash)}" target="_blank" rel="noopener">${esc(m.hash)}</a></small></span><span class="side">${esc(ago(m.at))}</span></div>`).join('')}</div>` : empty('No commit is addressed to you (For:) in the last 48 hours.'), { cls: 'cc-span-12', id: 'msg' })}
+${card('Messages for me and my agents (48 h)', D.messages.length ? `<div class="cc-rows">${(S.msgAll ? D.messages : D.messages.slice(0, 8)).map(m => `<div class="cc-row"><span class="when">${esc(fmtTime(m.at))}</span><span class="what">${esc(m.subject)}<small>${esc(m.agent)} · <a href="${D.repo}/commit/${esc(m.hash)}" target="_blank" rel="noopener">${esc(m.hash)}</a></small></span><span class="side">${esc(ago(m.at))}</span></div>`).join('')}</div>${D.messages.length > 8 ? `<button class="cc-btn ghost" type="button" data-set="msgAll" data-val="${S.msgAll ? '' : '1'}" style="margin-top:10px">${S.msgAll ? 'Show the 8 most recent' : `Show all ${D.messages.length} messages`}</button>` : ''}` : empty('No commit is addressed to you (For:) in the last 48 hours.'), { cls: 'cc-span-12', id: 'msg' })}
 </div>${srcLine()}`
     }
 
@@ -541,9 +551,39 @@ ${card('Privacy', `<p class="note">This page is public on GitHub Pages, like the
         $('#nt-copy').onclick = () => { if (!f.reportValidity()) return; const x = file(); copy(`Add this issue to the board as ${x.name}, commit with the convention (Issue: ${next}), and release:\n\n${x.text}`) }
     }
     function moreSheet() {
-        overlay(`<div class="cc-sheet" role="dialog" aria-modal="true" aria-label="More views">${VIEWS.filter(([id]) => !['home', 'tasks', 'board', 'inbox'].includes(id)).map(([id, l, i]) => `<a href="#${id}" data-close>${ico(i, '')}${esc(l)}</a>`).join('')}</div>`)
+        overlay(`<div class="cc-sheet" role="dialog" aria-modal="true" aria-label="More views"><a href="#" data-links>${ico('links', '')}Links</a>${VIEWS.filter(([id]) => !['home', 'tasks', 'board', 'inbox'].includes(id)).map(([id, l, i]) => `<a href="#${id}" data-close>${ico(i, '')}${esc(l)}</a>`).join('')}</div>`)
+    }
+    // Links: every site we work with, in one folder. The team's links are here; a person's own (a private page,
+    // a supplier portal) come from people/<id>/app/config.json "links": [[group, label, url, note], ...]
+    const SITE = '../../../'
+    const LINK_GROUPS = () => {
+        const g = [
+            ['Our work', [['The board: every issue', SITE + 'briefs/index.html#issues', 'pick up, update, close'], ['Stand-ups: agenda and debriefs', SITE + 'meetings/index.html', '13:00 and 18:00 UTC'], ['The plan', SITE + 'plan/index.html'], ['Updates from Dinis\'s agents', SITE + 'updates/index.html'], ['Reports (every two hours)', SITE + 'reports/index.html'], ['Videos', SITE + 'videos/index.html']]],
+            ['Merch and procurement', [['Print files and sign-off', SITE + 'print/index.html'], ['The print order', SITE + 'print-order/index.html'], ['Procurement', SITE + 'procurement/index.html']]],
+            ['The team', [['My classic dashboard', SITE + 'people/' + ME + '/index.html'], ['The team', SITE + 'team/index.html'], ['The team map', SITE + 'team/map/index.html'], ['Start here', SITE + 'start/index.html', 'getting connected'], ...(D.team || []).filter(p => p.id !== ME).map(p => [p.name.split(' ')[0] + '\'s command centre', SITE + 'people/' + p.id + '/app/index.html'])]],
+            ['Web Summit', [['Our summit page', SITE + 'summit/index.html', 'dates, sessions, side events'], ['The company map', SITE + 'companies/index.html'], ['websummit.com', 'https://websummit.com/'], ['The official schedule', 'https://websummit.com/schedule/']]],
+            ['Tools', [['Gmail', 'https://mail.google.com/mail/u/0/#inbox'], ['Google Calendar', 'https://calendar.google.com/calendar/r/week'], ['Claude', 'https://claude.ai/new'], ['GitHub: the site\'s repository', D.repo || 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'], ['OpenRouter keys', 'https://openrouter.ai/settings/keys', 'for Ask Claude']]],
+            ['RiskMandate and SGit', [['riskmandate.ai', 'https://riskmandate.ai/', 'Give agents access. Not free rein.'], ['Licence to Operate', 'https://riskmandate.ai/licence-to-operate.html'], ['Agent Behaviour Policy (ABP)', 'https://riskmandate.ai/agent-behaviour-policy.html'], ['Acceptance', 'https://riskmandate.ai/acceptance.html'], ['Brand: logos and colours', 'https://riskmandate.ai/brand'], ['sgit.ai: vault docs', 'https://sgit.ai/'], ['newsroom.sgit.ai: our articles', 'https://newsroom.sgit.ai/'], ['send.sgraph.ai: the vault server', 'https://send.sgraph.ai/']]],
+            ['Vaults and keys', [['Vaults', SITE + 'vaults/index.html'], ['Your vault agent, step by step', SITE + 'vault-agent/index.html'], ['PKI', SITE + 'pki/index.html'], ['Keys and QR codes', SITE + 'keys/index.html'], ['pki.sgit.ai', 'https://pki.sgit.ai/'], ['sgit docs', 'https://sgit.ai/']]],
+        ]
+        const mine = {}; for (const [grp, label, url, note] of (D.links || [])) (mine[grp] = mine[grp] || []).push([label, url, note || ''])
+        return [...Object.entries(mine), ...g]
+    }
+    function linksPanel() {
+        const groups = LINK_GROUPS(), total = groups.reduce((n, [, l]) => n + l.length, 0)
+        const row = ([label, url, note]) => `<a class="cc-link" href="${esc(url)}" target="_blank" rel="noopener" data-q="${esc((label + ' ' + (note || '') + ' ' + url).toLowerCase())}"><span><b>${esc(label)}</b>${note ? `<small>${esc(note)}</small>` : ''}</span>${ico('ext', '')}</a>`
+        overlay(`<div class="cc-drawer cc-linkpanel" role="dialog" aria-modal="true" aria-labelledby="lk-h">
+<button class="cc-iconbtn close" type="button" data-close aria-label="Close">${ico('x', '')}</button>
+<h2 id="lk-h">Links</h2><p class="note">Every site we work with, ${total} in one place. Each opens in a new tab.</p>
+<label class="sr" for="lk-q">Find a link</label><input id="lk-q" type="search" placeholder="Find… e.g. gmail, print, stand-up" autocomplete="off">
+${groups.map(([g, l]) => `<section class="cc-linkgrp"><h3>${esc(g)}</h3><div class="cc-linklist">${l.map(row).join('')}</div></section>`).join('')}
+<p class="note cc-linknone" hidden>No link matches.</p></div>`)
+        const q = $('#lk-q'), panel = $('.cc-linkpanel')
+        q.oninput = () => { const v = q.value.trim().toLowerCase(); let any = 0; $$('.cc-link', panel).forEach(a => { const ok = !v || a.dataset.q.includes(v); a.hidden = !ok; any += ok }); $$('.cc-linkgrp', panel).forEach(s => { s.hidden = !$$('.cc-link', s).some(a => !a.hidden) }); $('.cc-linknone', panel).hidden = !!any }
+        q.focus()
     }
     let lastFocus = null
+    document.addEventListener('click', e => { const a = e.target.closest && e.target.closest('[data-links]'); if (a) { e.preventDefault(); setTimeout(linksPanel) } })
     function overlay(inner) {
         closeOverlay(); lastFocus = document.activeElement
         const w = document.createElement('div'); w.id = 'cc-ov'; w.className = 'cc'; w.innerHTML = `<div class="cc-scrim" data-close></div>${inner}`
@@ -596,7 +636,7 @@ ${card('Privacy', `<p class="note">This page is public on GitHub Pages, like the
         $$('[data-set]', scope).forEach(b => b.onclick = () => { S[b.dataset.set] = b.dataset.val; if (b.dataset.set === 'scope') store.set('scope', S.scope); render() })
         $$('[data-sel]', scope).forEach(s => s.onchange = () => { S[s.dataset.sel] = s.value; render() })
         $$('[data-kpi]', scope).forEach(b => b.onclick = () => { const k = b.dataset.kpi; Object.assign(S, { scope: 'named', stream: 'all', q: '', status: { picked: 'picked', done: 'done' }[k] || 'active', window: { soon: 'week', overdue: 'today' }[k] || 'all' }); go(k === 'waiting' ? 'waiting' : 'tasks') })
-        $$('[data-reset]', scope).forEach(b => b.onclick = () => { Object.assign(S, { stream: 'all', status: 'all', window: 'all', q: '' }); render() })
+        $$('[data-reset]', scope).forEach(b => b.onclick = () => { Object.assign(S, { stream: 'all', status: 'active', window: 'all', q: '' }); render() })
         $$('[data-clearq]', scope).forEach(b => b.onclick = () => { S.q = ''; render() })
         $$('[data-theme-set]', scope).forEach(b => b.onclick = () => { store.set('theme', b.dataset.themeSet); applyTheme(); render() })
         const cf = $('#cal-form', scope); if (cf) cf.onsubmit = e => { e.preventDefault(); store.set('calId', $('#cal-id').value.trim()); render() }
@@ -638,6 +678,6 @@ ${card('Privacy', `<p class="note">This page is public on GitHub Pages, like the
     window.addEventListener('hashchange', () => { closeOverlay(); render() })
     matchMedia('(prefers-color-scheme: light)').addEventListener?.('change', () => { if (store.get('theme', 'dark') === 'system') { applyTheme(); render() } })
 
-    fetch(root.dataset.src || 'data.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json() }).then(d => { D = d; ME = d.person.id; FIRST = (d.person.name || ME).split(' ')[0]; D.connectors = d.connectors || {}; Object.assign(PROMPTS, d.prompts || {}); render() })
+    fetch(root.dataset.src || 'data.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json() }).then(d => { (d.issues || []).forEach(i => { if (/^in.progress$/i.test(i.status)) i.status = 'picked' }); D = d; ME = d.person.id; FIRST = (d.person.name || ME).split(' ')[0]; D.connectors = d.connectors || {}; Object.assign(PROMPTS, d.prompts || {}); render() })
         .catch(e => { html.classList.remove('cc-on'); root.innerHTML = `<p class="note">The command centre could not load its data (${esc(e.message)}); the summary below is the same data as text.</p>` })
 })()
