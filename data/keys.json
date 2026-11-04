@@ -580,6 +580,22 @@
       "status": "active"
     },
     {
+      "id": "journalist-indi",
+      "label": "journalist@web-summit.indi (Claude Code session)",
+      "role": "Indi Gupte's journalist (journalist@web-summit.indi): reads what changed since its last report and writes Indi's reports in people/indi/reports/. A session key: it ends with its session. Seal nothing to it but what the journalist needs.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Indi's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlShBF03k/Q1lxYADlAlq\nZu42ti8WlJPvcM+qjej2aZshyVBP3lzcMqyAJGHl+pC7/NYBxjOFgEi1i4aW5kwv\nayA9KMyW/ay8R/aR+FhUA2UBbHqqri+4D/3IlDuU1SLdvspUtkyYfdOBSLMfd7Zs\nHW/ZIQxZgm0hlJhK05f+d54TQXaPehoDJGKo3dnXObEk5gs+U07CXie5stnJfzdM\njAdqz97p+46sncuikOiJSlswFpjrTFfRWyderp1SmcpxHFBfWeMOSeI4OJRPmqCm\n65TWHVnL7kjjqSoz70v3dQS0h8TpZ5NsWPUpq6KiVsX5Zm2OU62V8HwafOV1Oe1q\nBkuSWbQV04VFpQD9UDUddxkvAEuT9zRaw3m+fPjsYqDpiGTpfKqjmMbYPeIBghh/\nQJscbUre8Lpmn1XgeExaNiJLHt9lbXRDLP+HIxGTCNX0UfX/xgy7Mn0tU7fUvwn7\nESka/Orqfwv808X0lDqV7vdDl1XC92+2ZBU6kvaR13b5GCLH0GI9UOWDiQ/rz4Eu\nQI0QefL+OpFcnaod+gnwehyN5DhnkdqzuEeTBt8wBcwhIKvhJVwonugp2kwEF04M\nEEJt+7wwtxxSAdFhic1iMCAYIc2nWMnSW4LGEy0hRo+GmLyd3tHrJuugY5M5noaO\nnMQAtlpz2l6MqJFHXAUh578CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEAv85F9vl9liONJlZokXenHB3QOjJ\nWPxD7kHDsQEiQJaLIAzbXCziNPfs/F9qsiqO/53kcfVaLC8af/qwshW4bQ==\n-----END PUBLIC KEY-----\n",
+        "label": "journalist@web-summit.indi",
+        "fingerprint": "sha256:20bf92b2b68c794f",
+        "signing_fingerprint": "sha256:a4f7213b5710057c"
+      },
+      "status": "active"
+    },
+    {
       "id": "curator-vicky",
       "label": "curator@web-summit.vicky (Claude Code session)",
       "role": "Vicky's curator desk for the Web Summit 2026 newsroom (curator@web-summit.vicky): maps what researcher@web-summit.vicky found (beat, company or organisation, what is new, whether it is a story) and proposes story candidates for the journalist, in desks/curator/ of the newsroom repository. A session key: it ends with its session.",
