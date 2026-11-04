@@ -8,14 +8,14 @@ summary: The page Angelo reads first. The top is built for Angelo; the rest is k
 
 ## 1. What's pending for me {#needs}
 
-In the order to do it (18:30 run, Wednesday 4 November). Your app has this as a filter: [Kanban, Needs me now](app/index.html#kanban). Your conductor's digest (about 08:00, 13:00 and 18:00 UTC) carries the questions only you can answer.
+In the order to do it (21:30 run, Wednesday 4 November). Your app has this as a filter: [Kanban, Needs me now](app/index.html#kanban). Your conductor's digest (about 08:00, 13:00 and 18:00 UTC) carries the questions only you can answer.
 
 - **Waiting on your go (tier 3), in your conductor's digest:** the lane to your conductor (it unblocks the app's sealed messages, slice 3, and your vault agent's next step), the signature rule for your conductor, and the presence agent proposed for team-collaboration (everyone's locations).
-- **The 18:00 stand-up** ([agenda](../../meetings/2026-11-04-1800/index.html)): WS-34 (may your dev agent change shared site code) and WS-64 (Vicky's inbox) carried from the moved 13:00; team-collaboration debriefs it at 19:15.
+- **Still open from today's stand-ups** ([13:00 agenda](../../meetings/2026-11-04-1300/index.html)): WS-34 (may your dev agent change shared site code) and WS-64 (Vicky's inbox).
 - **Overdue and due today:** in [My issues](#issues) and the app's Needs me now: WS-105 (protect main), WS-33, WS-98, WS-129 and your part of WS-120.
 - **Settled today:** WS-124 (you send the GitHub invitations, from the-neuronin; WS-100, the long form, is done with Vicky) and WS-136 (your key and signed messages).
 
-**What your agents are on (from your conductor, by priority before Lisbon):** dev: summit days in your app (slice 7), then drafts for WS-64 (booking and "talk to my agent" on the meet pages) and WS-84 (offline pages at the summit); team-collaboration: the stand-up show (WS-150), debriefs and the daily note; helper: the help page (/help/, linked here once it is on the site); vault: waiting on the lane. Jose's agents keep WS-37 and WS-74.
+**What your agents are on (from your conductor, by priority before Lisbon):** dev: summit days are in your app (slice 7, done this evening); next, drafts for WS-64 (booking and "talk to my agent" on the meet pages) and WS-84 (offline pages at the summit); team-collaboration: the stand-up show (WS-150), debriefs and the daily note; helper: the help page (/help/, linked here once it is on the site); vault: waiting on the lane. Jose's agents keep WS-37 and WS-74.
 
 ## My own app: the brief {#wishlist}
 
@@ -27,7 +27,7 @@ Angelo's command centre of his own, in `people/angelo/app/`, so nobody else's vi
 - **Summit days:** the public schedule, then sealed summaries of people's own calendars.
 - **A map each person shares on their own terms,** with a time on every location; the presence agent central, proposed to be `team-collaboration@web-summit.angelo`, once the team agrees.
 
-**Built on 4 November by `dev@web-summit.angelo`:** slice 0 (your own app, the shared one extended), slices 1 and 2 ([the kanban](app/index.html#kanban): cards, My tasks and Needs me now, filters, columns and swim-lanes, sort, bookmarkable views; read-only, no drag on the phone) and slice 5 (the collaboration board, read-only). Next: slice 3, sealed sending, which waits on the lane to your conductor that your vault agent is setting up. The brief is [BRIEF.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/app/BRIEF.md).
+**Built on 4 November by `dev@web-summit.angelo`:** slice 0 (your own app, the shared one extended), slices 1 and 2 ([the kanban](app/index.html#kanban): cards, My tasks and Needs me now, filters, columns and swim-lanes, sort, bookmarkable views; read-only, no drag on the phone) slice 5 (the collaboration board, read-only) and slice 7 ([Summit days](app/index.html#summit): one tab per day, the stand-ups, the team's picked sessions and side events, now and next; Web Summit publishes no API, so it reads the sourced data/events.json). Next: slice 3, sealed sending, which waits on the lane to your conductor that your vault agent is setting up. The brief is [BRIEF.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/app/BRIEF.md).
 
 ## 2. Is everyone connected? {#connected}
 
