@@ -21,6 +21,15 @@ Messages for you: commits with `For: jose` in [the log on dev](https://github.co
 ```onboarding jose
 ```
 
+## What I lead, and what I don't {#lead}
+
+In your words (4 November): *"I'll lead: technical conversations on agent security with the companies; the live demos (show an agent being attacked, then show it governed); and the voice and language agents lane. I'm not doing: relationships with the big-name companies, insurance deals."*
+
+- **Agent security conversations with the companies:** the targets come Thursday; the message to open with is WS-15.
+- **The live demos, attacked then governed:** WS-18 (the demos we run at the summit), WS-108 (your two apps as the stand demos) and WS-109 ("the grant, not the prompt" as the one demo).
+- **Voice and language agents:** WS-61 (the voice memo to follow-up loop) is the nearest issue on [the board](../../briefs/index.html#issues).
+- **Not yours:** the big-name relationships and insurance deals; items about them stay off this page unless they need you.
+
 ## My issues {#issues}
 
 ```issues jose
