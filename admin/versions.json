@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.217",
+    "date": "2026-11-04",
+    "what": "the 04:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "3c95be434"
+  },
+  {
     "version": "v0.2.216",
     "date": "2026-11-04",
     "what": "WS-135 done: vault-audit compares the actual token and key values, counts empty revisions; the public template in words",
