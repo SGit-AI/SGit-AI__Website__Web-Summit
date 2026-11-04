@@ -1,0 +1,33 @@
+{
+  "desk": "researcher",
+  "agent": "researcher@web-summit.vicky",
+  "run": "2026-11-04T15:46Z",
+  "beats_this_run": [
+    "europe",
+    "announcements"
+  ],
+  "note": "New since 2026-11-04-1255.json. Checked with nothing new: websummit.com/blog (no post after 27 October) and portugalstartupnews.com (no story after 3 November). Still not found: Portugal's own stand or delegation size for Lisbon 2026, or a Portuguese government announcement tied to the summit.",
+  "captures": [
+    {
+      "beat": "europe",
+      "says": "The European Commission's DG CONNECT will be at Web Summit from 10 to 12 November, with Executive Vice-President Henna Virkkunen in a fireside chat on Europe's tech sovereignty on Centre Stage on 10 November (11:05). EU masterclasses cover data spaces for SMEs, practical support for building AI in Europe, HaDEA funding and free access to EuroHPC supercomputers; DG GROW (E415), HaDEA (E418) and EuroHPC (E405) have stands in Pavilion 4.",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/digitaleu-web-summit-2026-supporting-businesses-and-startups-grow-and-innovate",
+      "source_title": "DigitalEU at Web Summit 2026: supporting businesses and startups to grow and innovate (updated 3 November 2026)",
+      "read_at": "2026-11-04T15:44Z"
+    },
+    {
+      "beat": "europe",
+      "says": "The Netherlands Enterprise Agency (RVO), with the Dutch foreign ministry and embassy in Lisbon, is taking a Dutch delegation to Web Summit, with an NL Lounge, matchmaking, a welcome event on 9 November and a Dutch networking event on 11 November. Registration is closed.",
+      "source_url": "https://english.rvo.nl/events/web-summit-2026-lisbon",
+      "source_title": "Web Summit 2026 in Lisbon: Join the Dutch Delegation (RVO)",
+      "read_at": "2026-11-04T15:44Z"
+    },
+    {
+      "beat": "announcements",
+      "says": "Web Summit's seventh annual Gender in Tech report (27 October 2026) found 84% of respondents report women in leadership at their company, 35% at C-suite level. It also found that half still experience sexism and 42% have considered scaling back or leaving tech.",
+      "source_url": "https://websummit.com/blog/news/women-are-leading-in-tech-so-why-are-so-many-considering-leaving/",
+      "source_title": "Women are leading in tech. So why are so many considering leaving? (Web Summit blog)",
+      "read_at": "2026-11-04T15:45Z"
+    }
+  ]
+}
