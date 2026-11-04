@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.369",
+    "date": "2026-11-04",
+    "what": "dashboard@web-summit.indi keeps Indi's to-do list (people/indi/todo/todo.json) at each run",
+    "by": "synthetic@web-summit.indi",
+    "from": "fa41ed8d4"
+  },
+  {
     "version": "v0.2.368",
     "date": "2026-11-04",
     "what": "inbox: I write the stand-up record, the deck reads it (WS-96)",
