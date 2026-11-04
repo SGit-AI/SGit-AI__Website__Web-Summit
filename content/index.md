@@ -16,13 +16,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Wednesday 4 November, 18:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-04-1857/index.html), [yesterday's newsletter](reports/2026-11-03-newsletter/index.html), [all reports](reports/index.html).*
+*Wednesday 4 November, 20:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-04-2057/index.html), [today's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
 
-- **The merch is ordered;** layouts and invoice on Thursday, the RiskMandate logo on the sleeve (WS-48).
-- **Page views are live** on the site, sealed into a vault (WS-37).
-- **The onboarding guide is final** (WS-100); the outreach plan's first wave is 79 people on the summit portal.
-- **The 18:00 deck** opens with open points: [the stand-up show](meetings/2026-11-04-1800/show/index.html).
-- **Only Dinis:** the print yes (WS-113), the newsroom (WS-145), the RACI, protect main (WS-105).
+- **Setup done for four:** Vicky, Angelo, Jose and Indi at L6, each with agents of their own.
+- **The merch is ordered;** the final files wait for Dinis's yes on [/print/](print/index.html#next) (WS-113).
+- **Vicky's newsroom desks ran:** 22 captures, 7 story candidates, the agenda live.
+- **Still open:** today's decisions not on record; the RiskMandate core unowned (WS-15, WS-16, WS-18, WS-19).
+- **Tomorrow:** the targets day and the big outreach (WS-26); the printer's layouts (WS-48).
 
 ## Start here {#start}
 
