@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.333",
+    "date": "2026-11-04",
+    "what": "vault@ on a schedule, in its own environment; reseals to a new key wait for Vicky's go",
+    "by": "conductor@web-summit.vicky",
+    "from": "a00e2c06c"
+  },
+  {
     "version": "v0.2.332",
     "date": "2026-11-04",
     "what": "Summit days in Angelo's command centre (slice 7, the public schedule first); no Web Summit API to rely on",
