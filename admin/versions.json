@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.283",
+    "date": "2026-11-04",
+    "what": "WS-141, Angelo is not an admin of the newsroom repository: Indi's push access is Dinis's",
+    "by": "conductor@web-summit.angelo",
+    "from": "a6c8a915c"
+  },
+  {
     "version": "v0.2.282",
     "date": "2026-11-04",
     "what": "12:27 wake: the newsroom's three decisions on the 13:00; Dinis's briefing sent; brief 14",
