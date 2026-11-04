@@ -514,6 +514,21 @@
         "fingerprint": "sha256:538d72626ffe8014",
         "signing_fingerprint": "sha256:49fe50d2a5e63d67"
       }
+    },
+    {
+      "id": "conductor-silvio",
+      "label": "conductor@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's conductor (conductor@web-summit.silvio): conducts Silvio's agents and keeps people/silvio/. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Silvio's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA2CnJezE4mDV46EVfcwHH\nj1nSXGz2FGfa2s4GHn+iojOyfpiklabDDjCqViayxPCZSYxwE/buAD6NQcxrCRFo\nk1q9t865opM5O7YS3RWKn+cUs8POIXVg81vAS2astHmKiTogi8b1r3Hp+eNENtkj\nHi0efqHmRoVrMcDEckiO3720yQD9BAnUmyYxuiE4T3sHT9hCu8rNtAowW1pPxYcs\nx6YdlbV/wsojVtwFqNRjQRMCNISuIfiSU+nmp7iTciCHGHF9Z/uublBu0wyyPMWm\nNr7w5CcBMIpPUGXYjWW7+34qhqohuu5qC8NGUmLiDLUMXljoAk0Hr+IKBxAbeDLY\n/pJBjX68YeIILrTR2/rkbtd9hS1OtG8Hw4uza1UZl+jjcUqF8lp6RuGgU9rvIbLW\nlam2bj+no9bzW1VhXhSmaCg6DFkEoNMVrSFaAK/xMaEJ7k/+iR4xUdd+Ewxz2oSh\nJR13LzokC22WNetQuHFySoLyHAp/zCT/qS+okbLTO8DtslU9rgRx4vGw7cNND9lZ\n6+LId87IMmqnFS5tphBqEMGeZWPsC+YqMvgs80j7Gs8Kqz9zuYSBDcqx11EojpDj\nmp4FcXn5SnbUQ9GVZmfTSvonWWzUBRGZTI/uF4Owh452hwFYQY8rwkw5AlykPFzL\n6ItNh51wgIw/6ta8h4EY0P8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEKJuj/7Dj+wfSjECCekmxnd795dM4\nnuTAGZMGZ7GU7gH5ABtKknVduABdUpoOdEBF8S2pbqpovXiFSwgOnfPmlw==\n-----END PUBLIC KEY-----\n",
+        "label": "conductor@web-summit.silvio",
+        "fingerprint": "sha256:f12068b5da2806b7",
+        "signing_fingerprint": "sha256:481879224fc0fbd1"
+      }
     }
   ]
 }
