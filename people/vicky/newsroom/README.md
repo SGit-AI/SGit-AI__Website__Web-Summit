@@ -12,7 +12,7 @@ From 4 November 2026 (Vicky's word): Vicky's GitHub account can push to the news
 |---|---|---|---|---|
 | Researcher | `researcher@web-summit.vicky` | the research vault `41j3e9s9`, in pack mode (brief 4), made by vault@web-summit.vicky; its read key is published after the first captures are in and audited | 07:30, 11:30, 15:30, 19:30 | running since 4 Nov 12:53 UTC; in the vault from its 19:30 run |
 | Curator | `curator@web-summit.vicky` | `desks/curator/` in the newsroom repository | 07:45, 11:45, 15:45, 19:45 | running since 4 Nov 19:30 UTC (first map dcbbfeb in the newsroom repository; key curator-vicky) |
-| Programme desk | `programme@web-summit.vicky` | `desks/programme/` in the newsroom repository (public: the agenda); the interview shortlist only in its confidential vault | 09:00, once a day | starting 4 Nov, at Vicky's word |
+| Programme desk | `programme@web-summit.vicky` | `desks/programme/` in the newsroom repository (public: the agenda); the interview shortlist only in its confidential vault | 09:00, once a day | running since 4 Nov 19:58 UTC (agenda 5429e71 in the newsroom repository; key programme-vicky; the shortlist in its confidential vault) |
 
 `researcher/` here holds the researcher's first two files (4 Nov, 12:55 and 15:46), written before the vault existed; their captures move into the vault. `curator/` and `programme/` here are not used: those desks write in the newsroom repository.
 
