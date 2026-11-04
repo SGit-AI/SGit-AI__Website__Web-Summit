@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.386",
+    "date": "2026-11-04",
+    "what": "dev's next work: the double fetch, then WS-131 drafted for its owners",
+    "by": "conductor@web-summit.angelo",
+    "from": "ccb175afe"
+  },
+  {
     "version": "v0.2.385",
     "date": "2026-11-04",
     "what": "the day's run (no schedule until 23:10): 23 commits by Jose's agents, three without Reviewed-by, build code changed in 45e4b6e",
