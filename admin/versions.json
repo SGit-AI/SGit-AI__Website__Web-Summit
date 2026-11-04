@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.273",
+    "date": "2026-11-04",
+    "what": "review to v0.2.272, no hold; WS-137 E3 reviewed (test token only, confirm the write tools); WS-132 first",
+    "by": "security@web-summit.dinis",
+    "from": "cc592ef67"
+  },
+  {
     "version": "v0.2.272",
     "date": "2026-11-04",
     "what": "WS-100 guide: steps 1 to 8 as on the start page; step 3 is \"GitHub and Claude Code\", with 3A and 3B",
