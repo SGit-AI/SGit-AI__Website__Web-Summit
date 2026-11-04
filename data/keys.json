@@ -642,6 +642,22 @@
         "signing_fingerprint": "sha256:4349db4ce4d7b73d"
       },
       "status": "active"
+    },
+    {
+      "id": "factory-indi",
+      "label": "factory@web-summit.indi (Claude Code session)",
+      "role": "Indi's factory desk (factory@web-summit.indi): the card-to-analysis loop, the factory pipeline and review queue, and the outreach target list, written as drafts under people/indi/overnight/. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA4MoWk3u32ejweSmdKzDB\nOASOxCkBdxyPgneca122KoIIvSIza8mE+dZ4iRjlPqy1Cb08ak5URqIe89xFixB5\ncGVVOG/CWU5EYQwilAp6LlF0n98yuM5rmRtLF3jsNy9b2pw2gZ0ETVAAVQqnFxT9\nEst5WlgLB2Apg6fyT8d9GTxnbb2Ewsqh+VOtMAPNAeLn/zvHxV0p1k7+9zG2Z4Br\nUjq6mFc2CxzlTzJ/lxrggD8t2PS6YO8mX+7LvaQSdoUfKISJR/2f+VWOnmPXHO0T\nG3F+xG163Lze+ekq8KZnhzQdNDouvjDE6HNxIeHbJnhUB/+WJgEcXqGc/K2XXPdp\ngFwNJEK3euTyU/SFRwgBs1bsk3Nxa0zu2RpHkg9enMMyWclfdx4UFWELG/AbOaD1\nmjDz7zr4O+0LII8d2PBF3X1lkrtW8Yr3SuiLNf/aUiHU304ysNhLCJ6Xg3K0PRGX\nAfCRvY7TbtQU0LADQl+B1oOctviOxj1dnHL4+ee61swZYfgsNp3oLp/Jn8i4GlqF\nnT9QlLEDB5hoEcQ1S6NzWPUuFeb+6xcrLSg+eR+olT4cN9u/qqvWoWXwGK2WOU5C\nMBGBltvxlnrEBDydHs/yPLAkEiP/7beKL41QTI8iGuC1SrdVXk6aWFrgBkAolUm8\nCK1ZVR04rjNs2Un3P4bbH60CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEHnbrpiFLLg60AwJh82FmkxQNX4gA\nqTCiaQnW+5XB+ERFXr49MDUSm2MFknwqosONAVzhZxTHa4Jp1uz8lyRjdg==\n-----END PUBLIC KEY-----\n",
+        "label": "factory@web-summit.indi",
+        "fingerprint": "sha256:56e882309061875f",
+        "signing_fingerprint": "sha256:0f3f3e000900927f"
+      },
+      "status": "active"
     }
   ]
 }
