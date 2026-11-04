@@ -34,7 +34,9 @@ DESIGN_MD = open(os.path.join(ROOT, 'content/design.md')).read()
 MEET_MD = open(os.path.join(ROOT, 'content/meet.md')).read() + open(os.path.join(ROOT, 'content/meet-indi.md')).read()
 SOURCED = {
     'headline': ['Your customer will ask. Have an answer.', 'Would your agent pass an audit?', 'Same agent. Different reach.', 'Building is not authorising.'],
-    'event': ['Web Summit Lisbon, 9 to 12 November 2026', 'find us at our stand on Thursday 12 November'],
+    'event': ['Web Summit Lisbon, 9 to 12 November 2026', 'find us at our stand on Thursday 12 November',
+              # Indi, 4 November, evening: "'WebSummit Edition' ... and Meet us between Booths A1-30 on Thursday (12th)"
+              'Web Summit Edition', 'Meet us between Booths A1-30 on Thursday (12th)'],
 }
 for h in SOURCED['headline']: assert h in DESIGN_MD, h
 assert 'Web Summit Lisbon, 9 to 12 November 2026' in MEET_MD and 'find us at our stand on **Thursday 12 November**' in MEET_MD

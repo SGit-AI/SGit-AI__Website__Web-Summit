@@ -155,6 +155,21 @@
       28.5,
       52.0
      ]
+    },
+    {
+     "role": "event",
+     "text": "WEB SUMMIT EDITION",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#F7F6F2",
+     "bg": "#161615",
+     "box": [
+      57.33,
+      50.2,
+      84.0,
+      52.0
+     ]
     }
    ],
    "accent": {
@@ -306,17 +321,17 @@
      ]
     },
     {
-     "role": "tbc",
-     "text": "Stand number to confirm",
+     "role": "event",
+     "text": "Meet us between Booths A1-30",
      "font": "Geist",
-     "weight": 500,
+     "weight": 600,
      "pt": 7.0,
-     "fill": "#4A4845",
+     "fill": "#0D0D0C",
      "bg": "#FFFFFF",
      "box": [
       8,
       48.85,
-      37.35,
+      45.59,
       50.6
      ]
     },

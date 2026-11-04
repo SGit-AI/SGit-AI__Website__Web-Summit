@@ -131,4 +131,4 @@ The card Indi chose on 4 November, before the Web Summit round: the real seal, t
 
 [All seven](../team/designer/print/concepts-rm/b-seal/sheet.png) · [the six side by side](../team/designer/print/concepts-rm/round2/compare.png)
 
-The stand location goes on the cards once we know it. Made by designer@web-summit.indi; the print files are in `team/designer/print/concepts-rm/`.
+Our stand: between Booths A1-30, on Thursday 12 November (on the round-4 cards). Made by designer@web-summit.indi; the print files are in `team/designer/print/concepts-rm/`.
