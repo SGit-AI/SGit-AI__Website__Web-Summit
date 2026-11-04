@@ -7,6 +7,8 @@ The RiskMandate business cards for Web Summit Lisbon, 85 x 55 mm, shown one at a
 
 **Vote** for one (or one per audience): tell Indi or Dinis, or have your agent add `"card": "R2-1"` to `"R2-6"` to your pick, as on [the design page](../design/index.html#vote).
 
+**All the designs on two landscape pages, in a grid:** [the overview PDF](../team/designer/print/concepts-rm/cards-overview-indi.pdf) (A4, Indi's cards; [page 1](../team/designer/print/concepts-rm/cards-overview-indi-p1.png) · [page 2](../team/designer/print/concepts-rm/cards-overview-indi-p2.png)).
+
 ## Round 3: the revamp, after the user tests {#r3}
 
 From the [card revamp handover](https://claude.ai/artifact/CXYHsdD4bYD1FW38UNvmKS): Record won round 2, so round 3 is Record for everyone and a Terminal version for engineers. Each says what RiskMandate does on the front, names Web Summit Lisbon and puts the URL beside the QR. Grey "Job title to confirm" and "Stand number to confirm" are placeholders until the team gives them.
