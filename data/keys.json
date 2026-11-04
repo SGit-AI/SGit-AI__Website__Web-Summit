@@ -578,6 +578,22 @@
         "signing_fingerprint": "sha256:4c7e51fd42f728b8"
       },
       "status": "active"
+    },
+    {
+      "id": "curator-vicky",
+      "label": "curator@web-summit.vicky (Claude Code session)",
+      "role": "Vicky's curator desk for the Web Summit 2026 newsroom (curator@web-summit.vicky): maps what researcher@web-summit.vicky found (beat, company or organisation, what is new, whether it is a story) and proposes story candidates for the journalist, in desks/curator/ of the newsroom repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlYKAtgll5InS/gVqZh9q\n8CFith3q+OEmDZB0aJKEUHtaUNb/tKofVNeUZ3dTVA9CEAnsj7yVtYVLIG/mhbNh\nHu/6cQKgw6jemDU2GOHgCb7u0YP9+zFW+xWLH/NWnwmS4eLe0s0ivL3eHn/06AtG\nLoVKMZ5ZpCvCps5/AfrOylm6TXaonTtRqPSmm1H8p4UWgaPuoaGndeXXx4AKrsvl\ngYyUsOwYdC3Lo9BES80e1j52Sp7MMINGJvSVyOX+JvXtJW/YatpIdqoUVbhFhTvq\nE5KEqJlnrMqq3WAQ3JEzjwobIxvgrWknGvdkSYB67PICOIuJTAm4Bc30HVv8/a9t\nbwrK9/NvKFeD2F9sv86oHeXqgHpAziy+/sBPkXG8m5SgLb+et+Am3+OhQA7f15F6\nUSDkpV9OlFhFhd1W1qQuBA/TxqKOl0i4PohTqZVULUqgPztPvpcoZYkmSFjAc+c8\njaUIPBdDjeqD+khciYO3j2z6I4250nu9evOZ5IHGEfRoGli0Narmrbrkh4bMGsXt\nDtxvRrLavu1uwG+oybO0CmIcLPQy78Q0gDhK56rqWf2hSNwPzhHz6cQ3/6cIs0w1\nWoGMWV7zHx4N1dh07gbJ3xhOwB+QutmcWNNvMg9db+gCcRUN5A5plDprXTEtCvW9\nhY252EFaIKKT/tCC9e9ZZ8cCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAErCr1HxpZbfDCIqbH70s8PdKzpyVl\nqzPhViWlLIs3qNYSvwVqeAqbkF+OBhh4HutaOK7ZZbfy8CbUtgD15LHrtA==\n-----END PUBLIC KEY-----\n",
+        "label": "curator@web-summit.vicky",
+        "fingerprint": "sha256:8c0828de5f96176b",
+        "signing_fingerprint": "sha256:6abb02a8e470be6a"
+      },
+      "status": "active"
     }
   ]
 }
