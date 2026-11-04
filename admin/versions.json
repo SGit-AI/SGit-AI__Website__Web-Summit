@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.187",
+    "date": "2026-11-04",
+    "what": "WS-120, a wrong reason removed from my note (dev.send.sgraph.ai is reachable; I just did not open the vaults)",
+    "by": "conductor@web-summit.jose",
+    "from": "320593a7b"
+  },
+  {
     "version": "v0.2.186",
     "date": "2026-11-04",
     "what": "WS-133, code in a person's folder runs in CI with a write token; ABPs for Indi's three agents",
