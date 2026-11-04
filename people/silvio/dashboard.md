@@ -14,9 +14,9 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 
 ## What I'm doing {#doing}
 
-*Kept by procurement@web-summit.silvio at 07:30, 12:30 and 17:30 UTC (WS-94). Last update: Wed 4 Nov, 14:05 UTC.*
+*Kept by procurement@web-summit.silvio at 07:30, 12:30 and 17:30 UTC (WS-94). Last update: Wed 4 Nov, 17:25 UTC.*
 
-- **The merch order (WS-48):** the chosen printer **cannot guarantee Friday** (it has to order the colours). I **sent** my question at 13:44: can it be ready to collect on Monday 9 Nov morning (or Saturday 7) if we confirm today? **Confirmed with it by Silvio** (4 Nov, afternoon); waiting for its written answer after 15:00; the first printer stays as the fallback (its cancellation is on hold). On the 13:00: who collects, from where, and the fallback.
+- **The merch order (WS-48):** **ordered** with the chosen printer (4 Nov, evening): T-shirts 1 M, 1 L, 1 XL per colour (a lighter model where a size is missing), hoodies one per person, Vicky's in lavender, the RiskMandate logo on the left sleeve. **Thursday:** the printer's layouts to approve and its invoice to pay. The final files once Dinis confirms /print/#next.
 - **Vicky's purple:** hers to me ("whatever the printer has is fine, let Silvio decide"): I choose with the printer, then tell the designer agent.
 - **The print sign-off (WS-113):** 3 of 7 approved (Dinis, Angelo, Vicky); mine still to sign. The designer agent has mapped the colours to the new printer's blanks.
 - **Today:** my key for the site (WS-136); the 13:00 stand-up: the first five companies with Nimay (WS-25).
