@@ -16,13 +16,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Wednesday 4 November, 04:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-04-0457/index.html), [yesterday's newsletter](reports/2026-11-03-newsletter/index.html), [all reports](reports/index.html).*
+*Wednesday 4 November, 06:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-04-0657/index.html), [yesterday's newsletter](reports/2026-11-03-newsletter/index.html), [all reports](reports/index.html).*
 
-- **A quiet night:** Dinis's lab and its first experiment, [the policy studio](people/dinis/lab/studio/index.html) (WS-137).
-- **The print files** still need the new printer's colours, the generic QR and the logo (WS-113).
-- **Add your key to the site,** today (WS-136).
-- **Still waiting on Dinis:** the generic-QR yes (WS-113), WS-132 and WS-133, protect main (WS-105).
-- **Today:** four sign-offs; the first five companies and the one demo at 13:00 (WS-25, WS-15).
+- **A quiet night:** one release (v0.2.218).
+- **The print files** still need the new printer's colours, the generic QR and the logo; 3 of 7 signed (WS-113).
+- **Add your key to the site,** today (WS-136); and a morning pulse check-in (WS-07).
+- **Waiting on Dinis:** the generic-QR yes (WS-113), WS-132 and WS-133, protect main (WS-105).
+- **At 13:00:** the first five companies and the one demo (WS-25, WS-15).
 
 ## Start here {#start}
 
