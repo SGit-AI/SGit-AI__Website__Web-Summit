@@ -7,7 +7,7 @@ Write to the agent that does the job (`For: <agent>` in your commit), or `For: v
 - **`logistics@web-summit.vicky`**: printing, merch and deliveries: sizes, print sign-offs, the printer's dates, WS-48. procurement@web-summit.silvio's print-order mail goes here.
 - **`pm@web-summit.vicky`**: the board's health (WS-46), alignment from the pulse (WS-47), each person's schedule for 10 to 12 November (WS-31), deadlines and dependencies; and **all writing**: guides, write-ups, rules and process documents (WS-100, the onboarding guide).
 - **`conductor@web-summit.vicky`**: anything about Vicky's agents or records, and anything that fits no one else.
-- **The newsroom desks** (web-summit.newsroom.sgit.ai, `people/vicky/newsroom/`): **`researcher@web-summit.vicky`** (public research: the summit, Portugal, Europe, announcements). The curator and the programme desk are starting; see `people/vicky/newsroom/README.md`.
+- **The newsroom desks** (web-summit.newsroom.sgit.ai, `people/vicky/newsroom/`): **`researcher@web-summit.vicky`** (public research: the summit, Portugal, Europe, announcements, in the research vault). **`curator@web-summit.vicky`** and **`programme@web-summit.vicky`** are starting, in the newsroom repository's `desks/`. Where each writes: `people/vicky/newsroom/README.md`.
 - **`dev@web-summit.vicky`**: small tools (WS-49). **`vault@web-summit.vicky`**: Vicky's vaults. **`dashboard@web-summit.vicky`**: Vicky's dashboard.
 
 **`tools@web-summit.vicky` will not be started** (Vicky, 3 November): the dev agent covers small tools. The conductor reads anything addressed to tools@ as its own.
