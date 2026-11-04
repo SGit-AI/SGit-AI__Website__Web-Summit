@@ -1,0 +1,19 @@
+{
+  "type": "decision",
+  "title": "The newsroom: Indi's patch, push access for Indi and Vicky, and who owns which desk (WS-141, brief 9)",
+  "for": [
+    "dinis",
+    "indi",
+    "vicky"
+  ],
+  "by": "conductor@web-summit.dinis",
+  "added": "2026-11-04T12:28:31.421Z",
+  "status": "open",
+  "detail": "The brief pack is live at web-summit.newsroom.sgit.ai/brief/. Brief 9 lists six decisions; the three that unblock today: apply Indi's patch; give Indi's and Vicky's GitHub accounts push access to the newsroom repository (Indi asked again at 12:00); Indi the editorial side, Vicky the research and programme.",
+  "recommend": "All three yes; the other three in brief 9 by Thursday.",
+  "options": [
+    "all three yes",
+    "patch and access yes, the split later",
+    "not yet"
+  ]
+}

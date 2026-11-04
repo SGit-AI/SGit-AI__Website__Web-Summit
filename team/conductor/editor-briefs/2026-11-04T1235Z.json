@@ -1,0 +1,32 @@
+{
+  "number": 14,
+  "date": "2026-11-04",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "The newsroom has its brief; three decisions at 13:00 unblock Indi and Vicky",
+  "when": "Wednesday 4 November 2026, 12:35 UTC",
+  "by": "conductor@web-summit.dinis",
+  "headline": "Since brief 13, 37 agent commits. Your vision memo is now the newsroom's brief pack, live at web-summit.newsroom.sgit.ai/brief/ (ten pages, your words first). Indi asked again for push access to the newsroom, and her designer agent put RiskMandate business cards on /cards/. Vicky's agents moved to one report a day and published a plain-language onboarding guide (WS-100). Vicky's logistics agent warns the printer may slip to Monday 9 November. Your 13:00 briefing PDF is sent.",
+  "stats": [
+    {"n": "10", "label": "pages in the newsroom's brief pack"},
+    {"n": "5", "label": "site keys issued; 3 added"},
+    {"n": "16", "label": "decisions for you at 13:00 (your dashboard agent)"},
+    {"n": "Mon 9", "label": "the printer's possible new date"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "The newsroom, at 13:00: Indi's patch, push access for Indi and Vicky, the split (on the agenda)", "detail": "Brief 9 of the pack. Indi asked again at 12:00 for push access; until then her agents can only offer patches.", "options": ["all three yes", "patch and access yes, the split later", "not yet"], "recommend": "All three yes."},
+    {"id": "2", "ask": "The print date: if the printer slips to Monday 9 November, who collects in Lisbon?", "detail": "Vicky's logistics agent, 12:10; on the 13:00.", "options": ["accept Monday, name who collects", "push for Friday", "another printer"], "recommend": "Accept Monday if it is the morning, and name who collects."},
+    {"id": "3", "ask": "The generic QR: yes in the designer's session (repeated)", "detail": "Still waiting there; the print cannot go final without it.", "options": ["yes there", "keep the personal QR"], "recommend": "Yes now."}
+  ],
+  "you_asked": [
+    {"at": "4 Nov, ~12:07", "said": "a very solid ... brief packs ... and then we need to basically empower and basically give guidance to both Vicky and Indy's agents to continue this", "done": "The pack is live at web-summit.newsroom.sgit.ai/brief/ (your memos verbatim as brief 1, nine pages from them, a prompt for their conductors in brief 10); the newsroom agent, Indi's and Vicky's conductors told.", "where": "WS-14", "status": "done"},
+    {"at": "4 Nov, ~11:00", "said": "brief the team to revamp the home page ... the agenda ... should be very visible", "done": "WS-143; the journalist, designer and dev agents briefed; a proposal by tomorrow 13:00.", "where": "WS-143", "status": "in progress"}
+  ],
+  "team": [
+    {"id": "Indi's agents", "status": "active", "doing": "business cards on /cards/ (designer, synthetic users), the newsroom patch rebased, a second conductor session"},
+    {"id": "Vicky's agents", "status": "active", "doing": "one report a day to her conductor; the onboarding guide (WS-100); the print date"},
+    {"id": "Jose's conductor", "status": "active", "doing": "brief 6 to Jose: he is at L6"},
+    {"id": "security@web-summit.dinis", "status": "active", "doing": "review to v0.2.272, no hold"}
+  ],
+  "next": ["13:00: decisions recorded in your words.", "14:27 wake: the newsroom's next steps on your answers."],
+  "sources": ["git log since 2026-11-04T10:41Z (dev)", "web-summit.newsroom.sgit.ai/brief/ (v0.1.2)", "data/meetings/2026-11-04-1300/", "data/person-keys.json"]
+}
