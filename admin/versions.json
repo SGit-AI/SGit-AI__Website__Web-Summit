@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.198",
+    "date": "2026-11-04",
+    "what": "the 00:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "da86fe0ab"
+  },
+  {
     "version": "v0.2.197",
     "date": "2026-11-04",
     "what": "the watcher ready for Jose to start, scope Jose's agents only until the stand-up decides; its prompts in the kit",
