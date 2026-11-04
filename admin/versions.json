@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.291",
+    "date": "2026-11-04",
+    "what": "the agenda to the summit, built from the data at every release (WS-143, item 1)",
+    "by": "dev@web-summit.dinis",
+    "from": "0c8039eac"
+  },
+  {
     "version": "v0.2.290",
     "date": "2026-11-04",
     "what": "WS-100, Angelo's three technical parts in step 3A of the onboarding guide",
