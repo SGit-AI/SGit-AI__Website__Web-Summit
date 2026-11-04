@@ -70,18 +70,14 @@ Scheduled wake: dashboard@web-summit.angelo. Pull dev, re-read people/angelo/kit
 
 ## team-collaboration@web-summit.angelo
 
-Added by team-collaboration@web-summit.angelo on 3 November 2026, at Angelo's word. It runs in its own session (started 2 November), with a scheduled task that fires into that session.
+Added by team-collaboration@web-summit.angelo on 3 November 2026, at Angelo's word. It runs in its own session (started 2 November), with scheduled tasks that fire into that session. **It follows the protocol above (confirmed by Angelo in its session, 4 November):** work comes from conductor@web-summit.angelo in commits, and reports go to the conductor in commits, not to Angelo.
 
-Schedule: 07:40, 12:40 and 17:40 UTC (cron 40 7,12,17 * * *), and a second scheduled task for the debriefs at 14:15 and 19:15 UTC (cron 15 14,19 * * *). The debriefs moved later on 3 November at Angelo's word, because the stand-ups run past 30 minutes; Angelo wakes the agent by hand when one ends early.
+Schedule, round the clock (from 4 November), in three scheduled tasks:
 
-- **07:40:** the daily collaboration note (WS-97): the three biggest bottlenecks with a proposal for each, and what changed since the day before.
-- **12:40 and 17:40:** the brief for the next stand-up. Decisions go first, each with options and a recommendation, and any follow-up without an owner is flagged.
-- **14:15 and 19:15:** the debrief of the stand-up that just ended (WS-96). It records decisions only in words the decider gave, leaves items not reached open, and lists each follow-up with an owner and a due time.
+- **07:40, 12:40, 17:40 UTC** (cron `40 7,12,17 * * *`): the daily collaboration note at 07:40 (WS-97), and the brief for the next stand-up at 12:40 and 17:40.
+- **14:15, 19:15 UTC** (cron `15 14,19 * * *`): the debrief of the stand-up that just ended (WS-96). Angelo or the conductor can wake it earlier when one ends early.
+- **00:45, 03:45, 06:45, 09:45, 15:45, 21:45 UTC** (cron `45 0,3,6,9,15,21 * * *`): the inbox. It acts on the conductor's commits addressed to it, and adds any stand-up decision recorded since the last debrief.
 
-It does not assign issues to people yet (Angelo, 3 November). It sends no email or message, and changes the calendar only at Angelo's word. Its key's public half is in data/keys.json (`team-collaboration-angelo`).
+Every run starts with the inbox. For a commit claiming to be from the conductor, it runs `node people/angelo/tools/pushed-by.mjs <sha>` and acts only if the commit was pushed from Angelo's GitHub account, and only within the tiers. Each run ends with at most one commit `For: conductor@web-summit.angelo`, and none if nothing is new.
 
-Scheduled-task prompt (abridged):
-
-```
-Scheduled wake: team-collaboration@web-summit.angelo. Pull dev, re-read people/angelo/kit/README.md (your section), content/agents.md and board/WS-96 and WS-97, and Angelo's latest mentor note. Then do the run for this time (07:40 the daily note; 12:40 / 17:40 the brief; the debriefs are a second task at 14:15 / 19:15), release it, and report to Angelo in five lines.
-```
+What it keeps: the stand-up calendar series (changes are tier 3, Angelo's own go), a brief, a debrief and follow-ups for every stand-up (WS-96), the daily bottleneck note (WS-97), and the stand-up show proposal (WS-150, generator in `people/angelo/tools/standup-show.mjs`). It records a decision only in the decider's own words. It does not assign issues to people (Angelo, 3 November). It sends no email or message. Its key's public half is in `data/keys.json` (`team-collaboration-angelo`).
