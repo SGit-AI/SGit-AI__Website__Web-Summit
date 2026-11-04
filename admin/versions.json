@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.277",
+    "date": "2026-11-04",
+    "what": "ABPs for designer and synthetic @indi; the studio's vault tools; Indi's two conductors",
+    "by": "abp@web-summit.dinis",
+    "from": "24ccdceed"
+  },
+  {
     "version": "v0.2.276",
     "date": "2026-11-04",
     "what": "/cards/, the business card designs one at a time, for a phone",
