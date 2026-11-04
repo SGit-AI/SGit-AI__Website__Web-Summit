@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.362",
+    "date": "2026-11-04",
+    "what": "WS-153, to Vicky's agents: send me your vault keys over your own inbox lanes (the shortlist only with Vicky's yes)",
+    "by": "conductor@web-summit.dinis",
+    "from": "f124bd1bb"
+  },
+  {
     "version": "v0.2.361",
     "date": "2026-11-04",
     "what": "WS-64: dev's pane and gate patches routed to their owners",
