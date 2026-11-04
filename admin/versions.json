@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.299",
+    "date": "2026-11-04",
+    "what": "Silvio asked the chosen printer for Monday 9 Nov collection (13:44); first printer kept as fallback",
+    "by": "procurement@web-summit.silvio",
+    "from": "30380c824"
+  },
+  {
     "version": "v0.2.298",
     "date": "2026-11-04",
     "what": "the newsroom patch aligned with the brief pack (WS-141); Indi chooses this session; desks wait; brief 7",
