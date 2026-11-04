@@ -1,6 +1,6 @@
 # Getting connected, in plain language (draft, WS-100)
 
-**Draft for Vicky to check.** Written by conductor@web-summit.vicky on 4 November 2026 from Vicky's own setup on 2 and 3 November (with her additions of 4 November) and the steps on the start page (/start/, the section "The steps"). Angelo adds the technical parts; places marked **[Angelo]** need him. Nothing here is final until Vicky and Angelo say so.
+**Draft for Vicky to check.** Written by conductor@web-summit.vicky on 4 November 2026 from Vicky's own setup on 2 and 3 November (with her additions of 4 November) and the steps on the start page (/start/, the section "The steps"). Angelo adds the technical parts, where it says **[Angelo]**; where it says **[Vicky]**, Vicky gives the exact label on screen. No screenshots: each step names the button as it appears on screen, and where it is. Nothing here is final until Vicky and Angelo say so.
 
 **Who this is for:** anyone on the team who is not a developer. You do not need to know what GitHub or a "commit" is. Your agents do the technical work; you do a few clicks and answer their questions.
 
@@ -32,18 +32,18 @@
 
 **What to do:**
 
-1. Go to github.com and choose **Sign up**. Use your **Workspace email** from step 1, not a personal one.
-2. Pick a username. A good pattern is `riskmandate-<yourname>` (that is what several of us used).
-3. GitHub sends a code to your Workspace email to check it is yours. Open the email and type the code in.
+1. Go to **github.com**. Press **Sign up**, at the **top right** of the page.
+2. Type your **Workspace email** from step 1 (not a personal one), then a password, then a username. A good pattern is `riskmandate-<yourname>`: that is what several of us used.
+3. GitHub emails a code to your Workspace email to check it is yours. Open that email, and type the code into the box GitHub shows you.
 4. Send Dinis your **username** (not your password). A message in the team group is fine.
-5. Dinis or Angelo invites you to the team's repository (`SGit-AI/SGit-AI__Website__Web-Summit`). The invitation arrives **in your Workspace email** and in GitHub's notifications (the bell, top right on github.com). Open it and choose **Accept invitation**.
-6. **[Angelo]** How your agents use your account to save work (what Claude asks for the first time, and what to click), with a screenshot.
+5. Dinis or Angelo invites you to the team's repository (`SGit-AI/SGit-AI__Website__Web-Summit`). The invitation arrives **in your Workspace email**: press **View invitation** in the email. On the page that opens, press the green **Accept invitation** button. (It is also under **Notifications**, the icon at the **top right** of github.com.)
+6. **[Angelo]** How your agents use your account to save their work: what Claude asks for the first time, and what to answer.
 
 **You're done when:** you have accepted the invitation. Tell your conductor agent (step 4): *"I've accepted the GitHub invitation."*
 
 **What goes wrong:**
 
-- *The invitation never arrived.* Check the Workspace inbox's spam folder, then the bell on github.com. Invitations expire: if it has, ask Dinis or Angelo to send it again.
+- *The invitation never arrived.* Check the Workspace inbox's spam folder, then **Notifications** at the top right of github.com. Invitations expire: if it has, ask Dinis or Angelo to send it again.
 - *I signed up with my personal email.* **[Angelo]** what to do (add the Workspace email to the account, or start again).
 - **[Angelo]** anything else that went wrong for people on 2 and 3 November.
 
@@ -54,12 +54,11 @@
 **What to do:**
 
 1. Go to **claude.ai/code**, logged in with your Workspace email (step 2).
-2. **Create the cloud environment.** Give it a name you'll recognise (for example `web-summit`), and for network access choose **Limited**. You will add the team's websites to it in step 6a.
-3. **Connect GitHub.** Sign in with the GitHub account from step 3 when it asks, and allow access.
-4. **Pick the repository** `SGit-AI/SGit-AI__Website__Web-Summit`.
-5. **Change the branch to `dev`.** The team only works on `dev`; never on `main`.
-6. **The permission mode.** Claude asks how much your agent may do without checking with you. **Auto** means the agent goes ahead with ordinary steps on its own (reading files, saving its work) and still stops to ask you before anything risky. Most of us use Auto, so the agent doesn't ask you about every small step.
-7. **[Angelo]** a screenshot of each of these screens.
+2. **Connect GitHub.** If Claude Code asks you to connect GitHub, follow it; if not, go to **claude.ai/connect-github**. Sign in with the GitHub account from step 3 and allow access.
+3. **Create the cloud environment.** Give it a name you'll recognise (for example `web-summit`). Under **Network access**, choose **Limited**, and leave **Allow package managers** ticked. You add the team's websites to it in step 6a. **[Vicky: the exact name of the button that creates the environment]**
+4. **Pick the repository** `SGit-AI/SGit-AI__Website__Web-Summit`. **[Vicky: where the repository picker is]**
+5. **Change the branch to `dev`.** The team only works on `dev`, never on `main`. **[Vicky: where the branch picker is]**
+6. **Choose the permission mode** in the **mode dropdown next to the prompt box** (where you type): **Accept edits**, **Plan** or **Auto**. Choose **Auto**: the agent goes ahead with ordinary steps on its own and still stops to ask you before anything risky. You can change it at any time from the same dropdown.
 
 **You're done when:** you can open a new session on the repository, on the `dev` branch.
 
@@ -89,11 +88,10 @@
 
 **What to do:**
 
-1. In your Claude session, find the **cloud environment** menu in the session's title bar, and choose **Edit**.
-2. Open **Network access** and add these to the allowed domains: `web-summit.sgit.ai`, `pki.sgit.ai`, `sgit.ai`, `*.sgit.ai`, `sgraph.ai`, `*.sgraph.ai`.
+1. In your Claude Code session, open the **cloud environment** menu in the **title bar at the top** of the session, and press **Edit**.
+2. Open **Network access**. With **Limited** chosen, add each of these under **Allowed domains**, and leave **Allow package managers** ticked: `web-summit.sgit.ai`, `pki.sgit.ai`, `sgit.ai`, `*.sgit.ai`, `sgraph.ai`, `*.sgraph.ai`.
 3. Save. **Domain changes work straight away**, even in a session that is already open.
-4. **Environment variables are different** (for example the vault token in step 8): they are **not** on the Network access page. Go **back one level with the arrow** at the top to find them. A change to an environment variable only reaches a **new** session, so start one after adding it.
-5. **[Angelo]** a screenshot of the menu.
+4. **Environment variables are different** (for example the vault token in step 8): they are **not** on the Network access page. Go **back one level with the back arrow at the top left** of the settings to find them. A change to an environment variable only reaches a **new** session, so start one after adding it.
 
 **You're done when:** your agent says it can reach those sites.
 
@@ -110,7 +108,7 @@
 **What to do:**
 
 1. Dinis sends you an **access token**. Never paste it into a chat.
-2. Put it in the same environment settings as step 6a (Edit, then back one level with the arrow to the environment variables), as a variable named `SG_SEND_ACCESS_TOKEN`, and start a **new** session: an open session does not see a new variable.
+2. Put it in the same environment settings as step 6a (the **cloud environment** menu in the title bar, **Edit**, then the back arrow at the top to the environment variables), as a variable named `SG_SEND_ACCESS_TOKEN`, and start a **new** session: an open session does not see a new variable.
 3. Start your vault agent with the prompt your conductor gives you (it is on /vault-agent/).
 4. When your vault agent shows you a **vault key** once, save it in your password manager. Never paste it anywhere else.
 5. **Keys from the team arrive sealed**, as a QR image or a link, and only your agent can open them. If your agent can't read the QR image, ask the sender for the **sealed link as text** instead.
