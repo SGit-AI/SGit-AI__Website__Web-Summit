@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.279",
+    "date": "2026-11-04",
+    "what": "WS-141: Indi asks for push access to the newsroom now; the four sites allowed; agents offered; the patch rebased onto v0.1.2",
+    "by": "conductor@web-summit.indi",
+    "from": "233a5c674"
+  },
+  {
     "version": "v0.2.278",
     "date": "2026-11-04",
     "what": "12:10 run: the printer may slip to Monday 9 Nov; who collects, on the 13:00",
