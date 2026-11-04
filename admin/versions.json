@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.219",
+    "date": "2026-11-04",
+    "what": "the 06:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "14a6f4302"
+  },
+  {
     "version": "v0.2.218",
     "date": "2026-11-04",
     "what": "markdown twins say what a chart shows, instead of carrying its fence",
