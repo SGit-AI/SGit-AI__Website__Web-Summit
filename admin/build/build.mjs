@@ -15,6 +15,7 @@ import { orgchartSvg } from './orgchart.mjs'
 import { homeBlocks, expandHome } from './home.mjs'
 import { expandSignoff } from './signoff-ui.mjs'
 import { keysPage as pkiKeysPage } from './pki.mjs'
+import { highlights, highlightsHtml, highlightsMd, withHighlights } from './highlights.mjs'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
@@ -504,10 +505,12 @@ CHARTS.agenda = Object.assign(() => agendaHtml(AGENDA, '@@/'), { text: () => age
 buildMeetings({ ROOT, C: MEET, PEOPLE, ISSUES, write, page, render, twin, pages })
 // a stand-up's presentation (Dinis, 4 November: "a nice presentation for our meeting ... the more visual, the better"):
 // team/conductor/shows/<meeting id>.show is an HTML fragment the conductor makes from the repository before the stand-up
+const HIGHLIGHTS = highlights(ROOT, teamData)
 for (const f of (fs.existsSync(path.join(ROOT, 'team/conductor/shows')) ? fs.readdirSync(path.join(ROOT, 'team/conductor/shows')) : []).filter(f => f.endsWith('.show'))) {
     const id = f.replace(/\.show$/, ''), rel = `meetings/${id}/show/index.html`, title = `The stand-up of ${id.slice(0, 10)}: what happened, shown`
-    const frag = fs.readFileSync(path.join(ROOT, 'team/conductor/shows', f), 'utf8')
-    const md = frag.replace(/<style>[\s\S]*?<\/style>/, '').replace(/<h[12][^>]*>/g, '\n## ').replace(/<li>/g, '\n- ').replace(/<[^>]+>/g, ' ').replace(/[ \t]+/g, ' ').replace(/\n\s+/g, '\n').trim()
+    const raw = fs.readFileSync(path.join(ROOT, 'team/conductor/shows', f), 'utf8')
+    const md = raw.replace(/<style>[\s\S]*?<\/style>/, '').replace(/<h[12][^>]*>/g, '\n## ').replace(/<li>/g, '\n- ').replace(/<[^>]+>/g, ' ').replace(/[ \t]+/g, ' ').replace(/\n\s+/g, '\n').trim() + '\n\n' + highlightsMd(HIGHLIGHTS)
+    const frag = withHighlights(raw, highlightsHtml(HIGHLIGHTS, REPO))   // the most important thing each person did (admin/build/highlights.mjs)
     write(rel, page({ rel, title, description: 'The presentation for this stand-up, built from the repository.', body: frag, mdTwin: twinPath(rel) }))
     pages.push({ rel, title, description: 'The presentation for this stand-up.' }); twin(rel, title, 'The presentation for this stand-up, built from the repository.', md)
 }
