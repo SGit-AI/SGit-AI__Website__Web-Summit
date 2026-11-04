@@ -8,6 +8,15 @@
       "agent": "vault@web-summit.vicky",
       "updated": "2026-11-03",
       "app": true
+    },
+    {
+      "name": "Vicky's research vault (newsroom)",
+      "vault_id": "41j3e9s9",
+      "read_key": "sgit_public_read_73b6bde689942850b42d941aa2582c48cfdc59c45e6845a90e19ff7720039fe5",
+      "what": "The Web Summit 2026 newsroom's research desk: one capture per public source (the summit, Portugal, Europe, announcements), each with its URL and read date. Kept by researcher@web-summit.vicky; audited before every push.",
+      "agent": "vault@web-summit.vicky",
+      "pack": true,
+      "updated": "2026-11-04"
     }
   ]
 }
