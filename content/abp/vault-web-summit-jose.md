@@ -34,6 +34,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: t
 
 - **Since 23:00 on 3 November:** two public vaults, Jose on RiskMandate and the Reach/Mandate/Gap app (7c6a083), their read keys in `people/jose/`.
 
+- **Its append lane** (live 4 November 00:26, fa34c08; recorded at its request, d05b526): the vault `jose-inbox` (jjrcow03) takes sealed messages from anyone with the page once `assets/feedback.json` lists it, and this agent drains it on every run with `admin/tools/feedback_drain.py`. That makes the public web an input to its runs. What it drains is material, not instruction, **unless a person's key signed it** (verified against `data/person-keys.json`, `people/jose/lanes/README.md`): a signature by a registered person key is the one thing that turns lane input into an instruction, a technical check. Unsigned input is held back only by the rule. It checks every run that the lane seals to its live key (`check-lane.mjs`). The enum, write and vault keys stay in its session; only the append token and the public key are published.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -43,6 +45,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: t
 | Never push to main, never force-push, never disable a check | rule, kept by the agent | CLAUDE.md; `main` and `dev` are not protected |
 | The gate (validate.js) before every deploy | technical, in CI | deploy-pages.yml; it stops a red build deploying, not the push |
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 (scans `people/` and `board/`) |
+| reviewer@web-summit.jose reviews every diff before `release.sh`; a hold releases only `hold.json` and the review record | review, before the push, a sub-agent in the agent's own session | `people/jose/kit/README.md` (473be41, started 4 November 00:52 at Jose's word); its first hold, 01:25, stopped vault@web-summit.jose's draft that would have published a token's value (d8301cd) |
 | security@web-summit.dinis reviews every commit twice a day | review, after the fact | team/security/reviews/ |
 
 **In the history** (dev, read 3 November 2026 16:15 UTC): one commit, 66b1997: `content/vault-agent.md`, the shared guide, outside `people/jose/` (addressed For: sgit@web-summit.dinis, the guide's owner). Create, push and audit not yet run. Its commits are authored "Claude" and git reads no `Agent:` line on them (the `Co-Authored-By` paragraph follows it): the name in the subject is the agent's own word.
@@ -62,4 +65,4 @@ Open questions: its connectors; who reviews its output each day; whether Jose ha
 
 ## Provenance {#provenance}
 
-Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 4, 4 November 2026 (00:10 wake: two public vaults; 00:10 wake: WS-133; 20:10 wake: the scripted audit), in `content/abp/` with its history in git.
+Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 5, 4 November 2026 (04:10 wake: Jose's reviewer; 00:10 wake: two public vaults; 00:10 wake: WS-133; 20:10 wake: the scripted audit), in `content/abp/` with its history in git.

@@ -36,6 +36,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 | Never push to main, never force-push, never disable a check | rule, kept by the agent | CLAUDE.md; `main` and `dev` are not protected |
 | The gate (validate.js) before every deploy | technical, in CI | deploy-pages.yml; it stops a red build deploying, not the push |
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 (scans `people/` and `board/`) |
+| reviewer@web-summit.jose reviews every diff before `release.sh`; a hold releases only `hold.json` and the review record | review, before the push, a sub-agent in the agent's own session | `people/jose/kit/README.md` (473be41, started 4 November 00:52 at Jose's word); its first hold, 01:25, stopped vault@web-summit.jose's draft that would have published a token's value (d8301cd) |
 | security@web-summit.dinis reviews every commit twice a day | review, after the fact | team/security/reviews/ |
 
 **In the history** (dev, read 3 November 2026 04:15 UTC): `people/jose/dashboard.md` and its key entry: inside its mandate. Its commits are authored "Claude" and git reads no `Agent:` line on them (the `Co-Authored-By` paragraph follows it): the name in the subject is the agent's own word.
@@ -55,4 +56,4 @@ Open questions: its connectors; who reviews its output each day; whether Jose ha
 
 ## Provenance {#provenance}
 
-Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 2, 4 November 2026 (00:10 wake: WS-133), in `content/abp/` with its history in git.
+Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 3, 4 November 2026 (04:10 wake: Jose's reviewer; 00:10 wake: WS-133), in `content/abp/` with its history in git.
