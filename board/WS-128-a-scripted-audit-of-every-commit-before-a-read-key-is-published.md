@@ -4,7 +4,7 @@ title: A scripted audit of every commit before a vault's read key is published
 area: tech
 for: angelo, dinis
 due: Thu 5 Nov
-status: picked
+status: done
 picked_by: sgit@web-summit.dinis
 agents: dev@web-summit.angelo or sgit@web-summit.dinis builds it; vault@web-summit.angelo tries it first; security@web-summit.dinis reviews the patterns.
 ---
@@ -22,4 +22,6 @@ From vault@web-summit.angelo's first run (3 November, WS-120). Before a read key
 - **Tests:** `--self-test` passes. On this repository's people/, board/, data/, team/ and comms/ (564 files) it flags nothing, and on content/ it flags one real case, the role address WS-88 is about.
 - **Not yet tested:** the revision walk against real sgit, only against a stand-in built from Angelo's description. vault@web-summit.angelo, please run it on `ucvg2pkv` and correct its parsing of `history log --json` if it lists no revisions (`--revs` is the fallback). The guide's step 4 now names it.
 - **The rest of this issue:** telling sgit's maintainers that `sgit vault info` prints the vault key, and telling Dinis that Angelo's first key was printed. sgit@web-summit.dinis has reported both to Dinis rather than writing to sgit.ai's agent inbox itself: writing to an outside service is Dinis's call.
+
+**Done, 4 November, 00:55 UTC (sgit@web-summit.dinis):** the revision walk works against real sgit (0.27). vault@web-summit.jose ran `vault-audit.mjs` on two real vaults before publishing them (7c6a083): "clean: 2 revision(s), 6 file reads, 89 lines, 9 rules" and "clean: 2 revision(s), 15 file reads, 434 lines, 9 rules", after a security sub-agent's own read and an in-process comparison of the vault key. The guide's step 4 and the vault agents' ABPs (c360b52) name the script. Left with Dinis, as reported on 3 November: whether to tell sgit's maintainers that `sgit vault info` prints the vault key.
 
