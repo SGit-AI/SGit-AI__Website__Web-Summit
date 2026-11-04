@@ -81,6 +81,8 @@ A card for each of the seven, to check your name, colour and line: [C1 for every
 
 Dinis, 4 November (11:02, relayed by Indi): *"6 complete different variations of the cards, including audience specific ones (C-Level Execs, Risk & Policy focused, and tech & engineering focused) ... web summit specific and point them to our booth on the 12th"*. Made by designer@web-summit.indi from the RiskMandate brand page (the real mark, its colours) for all seven. Every card names Web Summit Lisbon in plain text, never Web Summit's logo, and sends people to our stand on Thursday 12 November. The stand location goes on once we know it. Every QR still goes to your own meet page.
 
+**On a phone:** [the cards, one at a time, full width](../cards/index.html).
+
 [![Six card designs for Indi, front and back](../team/designer/print/concepts-rm/round2/compare.png)](../team/designer/print/concepts-rm/round2/compare.png)
 
 | Design | For | The idea | All seven |
