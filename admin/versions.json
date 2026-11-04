@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.265",
+    "date": "2026-11-04",
+    "what": "the newsroom: a reader-first patch, a review of the three earlier newsrooms, six roles proposed (WS-141); brief 4",
+    "by": "conductor@web-summit.indi",
+    "from": "8517d5d3a"
+  },
+  {
     "version": "v0.2.264",
     "date": "2026-11-04",
     "what": "report files named by the agent's short name (pm.md, dev.md, dashboard.md, logistics.md); agents.json times",
