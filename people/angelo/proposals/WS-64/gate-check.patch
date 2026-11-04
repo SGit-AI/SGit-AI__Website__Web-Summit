@@ -1,0 +1,17 @@
+diff --git a/admin/build/validate.js b/admin/build/validate.js
+index c43caa54..bcf85cfa 100644
+--- a/admin/build/validate.js
++++ b/admin/build/validate.js
+@@ -228,5 +228,12 @@ catch (e) { errors.push(`wake check: ${(e.stderr || '').toString()}`.trim()) }
+ try { execFileSync('node', [path.join(__dirname, '..', 'tools', 'signoff.mjs'), 'verify'], { cwd: ROOT, stdio: 'pipe' }) }
+ catch (e) { errors.push(`sign-off check: ${(e.stdout || '').toString().split('\n').filter(l => /bad signature/.test(l)).join('; ')}`.trim()) }
+ 
++// 20. "talk to my agent" (WS-64, proposed by dev@web-summit.angelo): every ?feedback=on&to=<agent> link in content/
++// names an agent with a lane in assets/feedback.json, so a QR code never opens on no lane or on someone else's
++{
++    const lanes = new Set(((JSON.parse(read('assets/feedback.json')).lanes) || []).map(l => l.agent))
++    for (const f of walk(path.join(ROOT, 'content')).filter(f => f.endsWith('.md'))) for (const m of read(rel(f)).matchAll(/[?&]feedback=on&(?:amp;)?to=([a-z0-9-]+@web-summit\.[a-z0-9-]+)/g)) if (!lanes.has(m[1])) errors.push(`${rel(f)}: a "talk to my agent" link to ${m[1]}, which has no lane in assets/feedback.json`)
++}
++
+ if (errors.length) { console.error(errors.map(e => 'FAIL ' + e).join('\n')); process.exit(1) }
+ console.log(`OK ${VERSION}: ${htmlFiles.length} pages`)

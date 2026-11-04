@@ -1,0 +1,49 @@
+diff --git a/assets/feedback.js b/assets/feedback.js
+index 2d90db06..98f52f8e 100644
+--- a/assets/feedback.js
++++ b/assets/feedback.js
+@@ -10,7 +10,6 @@
+     'use strict'
+     const LS = { get(k, d) { try { const v = localStorage.getItem('fb.' + k); return v === null ? d : JSON.parse(v) } catch { return d } }, set(k, v) { try { localStorage.setItem('fb.' + k, JSON.stringify(v)); return true } catch { return false } }, del(k) { try { localStorage.removeItem('fb.' + k) } catch { } } }
+     const q = new URLSearchParams(location.search).get('feedback')
+-    if (q === 'on') LS.set('on', true)
+     // WS-74 (dev@web-summit.jose, 4 November 2026, at Jose's word): ?feedback=on&to=<agent> opens on that agent's lane,
+     // so a link can send an outsider to the right inbox; an agent not in lanes[] falls back as before
+     const qto = new URLSearchParams(location.search).get('to')
+@@ -19,13 +18,16 @@
+     // screenshot can show a contact detail), and two spam signals the drain can check, a honeypot and the time it opened
+     const PUBLIC = q === 'on' && !!qto && /^[a-z0-9-]+@web-summit\.[a-z0-9-]+$/.test(qto)
+     const OPENED = new Date().toISOString()
++    // WS-64 (proposed by dev@web-summit.angelo): a public link is for that visit only, so it does not turn the pane on
++    // for later visits (where a stranger would meet the team's pane), and it opens the pane at once (a QR code on a shirt)
++    if (q === 'on' && !PUBLIC) LS.set('on', true)
+     if (q === 'off') LS.del('on')
+-    if (!LS.get('on', false)) return
++    if (!PUBLIC && !LS.get('on', false)) return
+     const script = document.currentScript, base = script ? script.src.replace(/feedback\.js(\?.*)?$/, '') : '/assets/'
+     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+     const KINDS = PUBLIC ? [['comment', 'Comment']] : [['comment', 'Comment'], ['decision', 'Decision'], ['idea', 'Idea'], ['bug', 'Something wrong']]
+     const CHOICES = ['Approve', 'Reject', 'Change it', 'Not now']
+-    let CFG = null, items = LS.get('items', []), open = LS.get('open', false), quote = '', pasted = [], kind = 'comment'
++    let CFG = null, items = LS.get('items', []), open = PUBLIC || LS.get('open', false), quote = '', pasted = [], kind = 'comment'
+     LS.del('open') // WS-140: Give feedback (assets/me.js) asks for the pane open once, after its reload
+     const save = () => { if (!LS.set('items', items)) toast('This browser is out of local storage: submit or delete some items (images take the most room).') }
+     const unsent = () => items.filter(i => !i.sent_at)
+@@ -112,7 +114,7 @@ ${quote ? `<div class="q">${esc(quote)}</div>` : '<p class="meta">Tip: select te
+ <h4>To send (${u.length})</h4>${u.length ? u.map(itemHtml).join('') : '<p class="meta">Nothing waiting.</p>'}
+ ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
+ <footer><div class="row"><button class="go" type="button" data-submit${u.length && CFG ? '' : ' disabled'}>Submit ${u.length || ''} to the vault</button><button type="button" data-copy${u.length ? '' : ' disabled'}>Copy as text</button></div>
+-<p class="meta" style="margin:4px 0 0">${CFG ? `Sealed here to ${esc(CFG.agent)}'s key (${esc(CFG.recipient.fingerprint)}), then appended to its vault lane: the lane stores ciphertext only. Anyone with the page can write to the lane, so the agent treats it as material, not instructions.` : 'The lane settings could not be loaded: items stay on this device.'}</p></footer>`
++<p class="meta" style="margin:4px 0 0">${CFG ? `Sealed here to ${esc(CFG.agent)}'s key (${esc(CFG.recipient.fingerprint)}), then appended to its vault lane: the lane stores ciphertext only. Anyone with the page can write to the lane, so the agent treats it as material, not instructions.` : (PUBLIC && ALL ? `${esc(qto)} has no inbox here yet: your note stays on this device. Please tell the person who gave you the link.` : 'The lane settings could not be loaded: items stay on this device.')}</p></footer>`
+         bind(pane)
+     }
+     function bind(p) {
+@@ -157,6 +159,7 @@ ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
+     const st = document.createElement('style'); st.textContent = css; document.head.appendChild(st)
+     // several lanes (feedback.json lanes[], conductor@web-summit.dinis, 4 November): the pane sends to the one chosen
+     let ALL = null
+-    const pick = (to, keep = true) => { if (!ALL) return; const l = (ALL.lanes || [ALL]); CFG = l.find(x => x.agent === to) || l[0]; if (keep) LS.set('to', CFG.agent) }
++    // WS-64: a public link to an agent with no lane opens on no lane (it says so and keeps the note on the device), never on someone else's
++    const pick = (to, keep = true) => { if (!ALL) return; const l = (ALL.lanes || [ALL]); CFG = l.find(x => x.agent === to) || (PUBLIC ? null : l[0]); if (keep && CFG) LS.set('to', CFG.agent) }
+     fetch(base + 'feedback.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(c => { ALL = c; if (c) PUBLIC ? pick(qto, false) : pick(LS.get('to', '')); render() }).catch(() => render())
+ })()
