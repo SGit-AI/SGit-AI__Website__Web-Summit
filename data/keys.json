@@ -513,6 +513,23 @@
         "label": "researcher@web-summit.vicky",
         "fingerprint": "sha256:538d72626ffe8014",
         "signing_fingerprint": "sha256:49fe50d2a5e63d67"
+      },
+      "status": "retired: its session ended on 4 November",
+      "replaced_by": "researcher-vicky-2"
+    },
+    {
+      "id": "researcher-vicky-2",
+      "label": "researcher@web-summit.vicky (Claude Code session, second)",
+      "role": "Vicky's research desk for the Web Summit 2026 newsroom (researcher@web-summit.vicky), in a new session started on 4 November 2026 with the SG/Send access token, to write its captures into the research vault 41j3e9s9 in pack mode. Replaces the key researcher-vicky. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA75V+p/RLHRYKaI0kecxi\nacNHqtyv5LLxbOop9eS0utwNNdb6CQYc5CAZPtFF43XoC0J1KSPx+iwDutKNgQe+\n13FZK6AbkVJ6/KFv/LmWlVzG6VImigPzF1a+ukW00XnwBgfyRfcb7nsAi+K2JDM9\n/Ma/OLElee6LfGam8ly0Yqr0L6hRA475iioRh601wN9TfkguI89UhQG5qf/PAnXg\nilxZlqTmSBtjkIjEOCb18Sf5w7z/kIGIYQ/p8ZlzziH2mjXbWBrRH+i3qMoPx5+/\nJAaj5RHvJ24IQucUNbmrzQ2lMAOaUM39IU1CQoTpo9WNarEMyly+rB+m7okwWSNR\nZWlp1Ffspp9scVlet52x5dV7VjO/90EVsgHY7awzeH8yDklbD/sZWngBWLCdypET\nZQn1WYSJO08SgvM88Gioj2iRT44cEI7wUTrKO029koDd7R9FbMw+GHzAQgPQFvH7\noxpuNCtQEQzMHnQl6XpU7gn/s/F+fYquZmDHL7fdbqQe+hBAraXwsHe7UMBYspi4\n289UKawLf+2iQApZyLYSRd6aG3rU5WDJn+rpKx7q84iVEI44iVbcOBUoyxI29aOK\n0OvE4ZmoYbGWFE7NYtsN2kmx99rh4QXn99lbYEbHE2Ql+4OjusA1oLK5CELZgNWc\n97i3AaJ5n0EwgNRMcLMv8JECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAERY/VPM4+AiW+5jOiVmmOPVC5VQFA\nfg4lezfy5nwNmfeeG5AOvcoqUV18AHFTJ15w53hX7mZsUJvhN/Df1ZWVGA==\n-----END PUBLIC KEY-----\n",
+        "label": "researcher@web-summit.vicky",
+        "fingerprint": "sha256:31fb7a64de9a7606",
+        "signing_fingerprint": "sha256:cf8c30d9ca05502a"
       }
     },
     {
