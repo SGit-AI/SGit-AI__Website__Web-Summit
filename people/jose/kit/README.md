@@ -6,6 +6,10 @@ Prepared by conductor@web-summit.dinis on 2 November 2026, at Dinis's word, so t
 
 From 2026-11-04 00:52 UTC, at Jose's word, the code reviewer (`reviewer@web-summit.jose`, [its role](../reviewer/ROLE.md)) is started: **every agent of Jose's runs it before `admin/tools/release.sh`**, including the agents with no section in this kit (`designer@web-summit.jose`, `vault@web-summit.jose`, and the watcher once it starts). It runs as a sub-agent on `git diff origin/dev...HEAD`; first check `people/jose/reviewer/hold.json`; on pass, commit its record with the trailer `Reviewed-by: reviewer@web-summit.jose (pass)`; on a hold, release only `hold.json` and the review record, none of the work, and tell Jose. The prompts below carry the same step.
 
+## Every agent of Jose's: measure your tokens (the accountant)
+
+From 4 November 2026, at Jose's word: at the end of every wake, before the reviewer, each agent of Jose's measures **its own session only** into its ledger: `node people/jose/accountant/measure.mjs --agent <you>@web-summit.jose --task "..." --since <wake start> --quality pass|fail|n/a --append`, and commits that one line with its wake ([the accountant](../accountant/ROLE.md), step 1). The accountant, a sub-agent of the conductor's 07:20 wake, reads the ledgers only and recommends a model per agent in Jose's brief; it changes nothing itself (WS-148, WS-129). The scheduled-task prompts below carry the same step.
+
 ## conductor@web-summit.jose
 
 Schedule: 07:20, 12:20 and 17:20 UTC (cron 20 7,12,17 * * *).
@@ -19,7 +23,7 @@ You are conductor@web-summit.jose, Jose Bota's conductor. Your job: run Jose's o
 Scheduled-task prompt:
 
 ```
-Scheduled wake: conductor@web-summit.jose. Pull dev, re-read people/jose/kit/README.md and your sections of content/agents.md (they may have changed), read Jose's latest mentor note, do one run, ask Jose for the slot's pulse if people/jose/pulse/ has none yet (WS-41), run the reviewer (people/jose/reviewer/ROLE.md) before release.sh, release it, and report in five lines.
+Scheduled wake: conductor@web-summit.jose. Pull dev, re-read people/jose/kit/README.md and your sections of content/agents.md (they may have changed), read Jose's latest mentor note, do one run, ask Jose for the slot's pulse if people/jose/pulse/ has none yet (WS-41), at the 07:20 wake run the accountant as a sub-agent (people/jose/accountant/ROLE.md, step 2) and put its recommendations in the brief, measure this wake (step 1), run the reviewer (people/jose/reviewer/ROLE.md) before release.sh, release it, and report in five lines.
 ```
 
 ## dev@web-summit.jose
@@ -33,7 +37,7 @@ You are dev@web-summit.jose, Jose Bota's developer: a builder developer for auto
 Scheduled-task prompt:
 
 ```
-Scheduled wake: dev@web-summit.jose. Pull dev, re-read people/jose/kit/README.md and your sections of content/agents.md (they may have changed), read Jose's latest mentor note, do one run, run the reviewer (people/jose/reviewer/ROLE.md) before release.sh, release it, and report in five lines.
+Scheduled wake: dev@web-summit.jose. Pull dev, re-read people/jose/kit/README.md and your sections of content/agents.md (they may have changed), read Jose's latest mentor note, do one run, measure this wake (people/jose/accountant/ROLE.md, step 1), run the reviewer (people/jose/reviewer/ROLE.md) before release.sh, release it, and report in five lines.
 ```
 
 ## dashboard@web-summit.jose
@@ -47,7 +51,7 @@ You are dashboard@web-summit.jose, Jose Bota's dashboard agent. Your job: Jose's
 Scheduled-task prompt:
 
 ```
-Scheduled wake: dashboard@web-summit.jose. Pull dev, re-read people/jose/kit/README.md and your sections of content/agents.md (they may have changed), read Jose's latest mentor note, do one run, run the reviewer (people/jose/reviewer/ROLE.md) before release.sh, release it, and report in five lines.
+Scheduled wake: dashboard@web-summit.jose. Pull dev, re-read people/jose/kit/README.md and your sections of content/agents.md (they may have changed), read Jose's latest mentor note, do one run, measure this wake (people/jose/accountant/ROLE.md, step 1), run the reviewer (people/jose/reviewer/ROLE.md) before release.sh, release it, and report in five lines.
 ```
 
 ## watcher@web-summit.jose
@@ -61,7 +65,7 @@ You are watcher@web-summit.jose, Jose Bota's security watcher, read-only. Attach
 Scheduled-task prompt:
 
 ```
-Scheduled wake: watcher@web-summit.jose. Pull dev, re-read people/jose/kit/README.md, people/jose/watcher/ROLE.md and policy.json (they may have changed; the scope may have been decided), do one run, and if it found something new run the reviewer before release.sh and release it; report in five lines.
+Scheduled wake: watcher@web-summit.jose. Pull dev, re-read people/jose/kit/README.md, people/jose/watcher/ROLE.md and policy.json (they may have changed; the scope may have been decided), do one run, and if it found something new measure this wake (people/jose/accountant/ROLE.md, step 1), run the reviewer before release.sh and release it; report in five lines.
 ```
 
 ## automation@web-summit.jose
@@ -75,7 +79,7 @@ You are automation@web-summit.jose, Jose Bota's automation agent: the n8n flows 
 Scheduled-task prompt:
 
 ```
-Scheduled wake: automation@web-summit.jose. Pull dev, re-read people/jose/kit/README.md and your sections of content/agents.md (they may have changed), read Jose's latest mentor note, do one run, run the reviewer (people/jose/reviewer/ROLE.md) before release.sh, release it, and report in five lines. If nothing changed, commit nothing.
+Scheduled wake: automation@web-summit.jose. Pull dev, re-read people/jose/kit/README.md and your sections of content/agents.md (they may have changed), read Jose's latest mentor note, do one run, measure this wake (people/jose/accountant/ROLE.md, step 1), run the reviewer (people/jose/reviewer/ROLE.md) before release.sh, release it, and report in five lines. If nothing changed, commit nothing.
 ```
 
 ## helper@web-summit.jose
@@ -89,5 +93,5 @@ You are helper@web-summit.jose, Jose Bota's helper: you help anyone on the team 
 Scheduled-task prompt:
 
 ```
-Scheduled wake: helper@web-summit.jose. Pull dev, re-read people/jose/kit/README.md (it may have changed), check the leaderboard, do one run, run the reviewer (people/jose/reviewer/ROLE.md) before release.sh, release it, and report in five lines. If nobody is stuck and nothing changed, commit nothing.
+Scheduled wake: helper@web-summit.jose. Pull dev, re-read people/jose/kit/README.md (it may have changed), check the leaderboard, do one run, measure this wake (people/jose/accountant/ROLE.md, step 1), run the reviewer (people/jose/reviewer/ROLE.md) before release.sh, release it, and report in five lines. If nobody is stuck and nothing changed, commit nothing.
 ```

@@ -1,0 +1,133 @@
+{
+  "about": "Jose's command centre settings, at Jose's word (4 November 2026), as his dashboard agent asked: his lanes as workstreams (his own words, people/jose/card.md), his agents' jobs, and chat in the page (llm, copied from Dinis's config). Kept by conductor@web-summit.jose and dashboard@web-summit.jose (people/jose/ only); admin/build/commandcentre.mjs reads this and takes the rest from its defaults. Decisions come from the stand-up agenda by themselves. No key or secret ever goes in this file: the OpenRouter key, if Jose adds one, stays in his browser only.",
+  "person": "jose",
+  "workstreams": [
+    {
+      "id": "security-talks",
+      "name": "Agent security conversations",
+      "colour": "outreach",
+      "agent": "conductor@web-summit.jose",
+      "issues": [
+        "WS-15",
+        "WS-26"
+      ],
+      "with": "Nimay, Indi, Dinis, Silvio",
+      "goal": "Technical conversations on agent security with the companies Jose owns (Descope, Polygraf AI, Emergence, Mastra)."
+    },
+    {
+      "id": "demos",
+      "name": "The live demos: attacked, then governed",
+      "colour": "yellow",
+      "agent": "conductor@web-summit.jose",
+      "issues": [
+        "WS-18",
+        "WS-108",
+        "WS-109"
+      ],
+      "with": "Dinis, Nimay, Angelo",
+      "goal": "Hack the Agent and ReachCheck on the stand: show an agent being attacked, then governed."
+    },
+    {
+      "id": "voice",
+      "name": "Voice and language agents",
+      "colour": "video",
+      "agent": "",
+      "issues": [
+        "WS-61"
+      ],
+      "with": "anyone",
+      "goal": "A lane for companies building voice or multilingual agents (Jose's card)."
+    },
+    {
+      "id": "machine",
+      "name": "Automation and the machine",
+      "colour": "dev",
+      "agent": "dev@web-summit.jose",
+      "issues": [
+        "WS-39",
+        "WS-74",
+        "WS-37",
+        "WS-134",
+        "WS-154",
+        "WS-41"
+      ],
+      "with": "Angelo, Dinis",
+      "goal": "The broadcasts, the feedback form, the page views, the watcher and the reviewer: carried by Jose's agents."
+    }
+  ],
+  "agents": {
+    "conductor": {
+      "colour": "conductor",
+      "job": "conducts Jose's agents and keeps people/jose/ with Jose: onboarding, agents.json, ack.json, stand-up items, the mentor's notes, and a numbered PDF brief to Jose",
+      "schedule": "cron 20 7,12,17 * * * (UTC), the wake; and cron 7 * * * * (UTC), the hourly telemetry drain (WS-37); both scheduled tasks fire into its own session, set at Jose's word on 3 and 4 November 2026"
+    },
+    "dashboard": {
+      "colour": "blue",
+      "job": "keeps Jose's dashboard, people/jose/dashboard.md, the page Jose reads first",
+      "schedule": "cron 30 7,12,17 * * * (UTC), a scheduled task firing into its own session ('dashboard@web-summit.jose wake'), recorded at Jose's word on 3 November 2026"
+    },
+    "dev": {
+      "colour": "dev",
+      "job": "a builder developer for automations and integrations (n8n, WhatsApp, the site)",
+      "schedule": "cron 30 9,15 * * * (UTC), a scheduled task firing into its own session ('dev@web-summit.jose wake'), set at Jose's word on 3 November 2026"
+    },
+    "designer": {
+      "colour": "yellow",
+      "job": "designs for Jose: the command centre directions and the WS-39 broadcast looks (people/jose/design/)",
+      "schedule": "on demand (no schedule), at Jose's word"
+    },
+    "vault": {
+      "colour": "slate",
+      "job": "creates and manages Jose's SGit vaults (WS-120, /vault-agent/)",
+      "schedule": "on demand"
+    },
+    "automation": {
+      "colour": "dev",
+      "job": "started 4 November 2026 at Jose's word (first commit 998e857, 23:22): the n8n flows as tested code, WS-39 route 3 and the n8n side of WS-74",
+      "schedule": "cron 10 10,16 * * * (UTC); not yet confirmed as scheduled"
+    },
+    "helper": {
+      "colour": "blue",
+      "job": "started 4 November 2026 at Jose's word (first commit 11884fc, 23:22): helps anyone stuck on setup (WS-35), drafts their next step for Jose to send, writes down what went wrong",
+      "schedule": "cron 50 8,14 * * * (UTC); not yet confirmed as scheduled"
+    },
+    "watcher": {
+      "colour": "slate",
+      "job": "Jose's security watcher, read-only",
+      "schedule": "cron 15 7,12,17 * * * (UTC); not yet confirmed as scheduled"
+    },
+    "reviewer": {
+      "colour": "slate",
+      "job": "Jose's code reviewer, a sub-agent in each of Jose's agents' sessions that reviews every diff before it is pushed and may hold Jose's agents only (people/jose/reviewer/ROLE.md)",
+      "schedule": "on demand, once per push"
+    },
+    "accountant": {
+      "colour": "slate",
+      "job": "started at Jose's word (4 November 2026): a sub-agent of the conductor's 07:20 wake, not a chat",
+      "schedule": "in the conductor's 07:20 wake, once a day"
+    }
+  },
+  "decisions": [],
+  "llm": {
+    "provider": "openrouter",
+    "default_model": "anthropic/claude-sonnet-5.5",
+    "models": [
+      [
+        "anthropic/claude-sonnet-5.5",
+        "Claude Sonnet 5.5"
+      ],
+      [
+        "anthropic/claude-opus-5.5",
+        "Claude Opus 5.5"
+      ],
+      [
+        "anthropic/claude-haiku-5.5",
+        "Claude Haiku 5.5"
+      ],
+      [
+        "anthropic/claude-fable-5.1",
+        "Claude Fable 5.1"
+      ]
+    ]
+  }
+}
