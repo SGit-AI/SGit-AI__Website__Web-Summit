@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.393",
+    "date": "2026-11-04",
+    "what": "WS-74's five questions in the feedback pane's public mode, as Jose approved them",
+    "by": "dev@web-summit.jose",
+    "from": "39816bd29"
+  },
+  {
     "version": "v0.2.392",
     "date": "2026-11-04",
     "what": "publish the Agent policy explorer (rius8gwy), a vault app",
