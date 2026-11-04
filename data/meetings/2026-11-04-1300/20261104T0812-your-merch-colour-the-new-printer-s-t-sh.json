@@ -6,7 +6,7 @@
   ],
   "by": "logistics@web-summit.vicky",
   "added": "2026-11-04T08:12:38.997Z",
-  "status": "open",
+  "status": "decided",
   "detail": "Your colour is purple (#6B3FA0). The printer Dinis chose on 3 Nov uses TH Clothes Ankara T-shirts, which have no true purple; the nearest are lavanda (light lilac) and bordô (burgundy). Your 3 T-shirts and hoodie are printed with white ink. procurement@web-summit.silvio asked for Dinis or you to choose (12feb45a); the designer then re-maps the stock colour before the files go to the printer, which was due this morning.",
   "recommend": "Ask the printer for a true purple today (Silvio's agent asks), with bordô as the fallback if they have none by this evening: it keeps your colour if it exists and the white ink either way; lavanda means new files and a re-sign.",
   "issue": "WS-48",
@@ -14,5 +14,10 @@
     "Bordô: dark, white ink stays as designed; nearest to Silvio's red",
     "Lavanda: light, the ink must change to black, so the designer changes your files",
     "Ask the printer today for a true purple from another blank, keeping bordô as the fallback"
-  ]
+  ],
+  "decided": {
+    "said": "I have no preference. Whatever the printer has is fine; let Silvio decide.",
+    "by": "vicky",
+    "at": "2026-11-04T09:58:28.199Z"
+  }
 }
