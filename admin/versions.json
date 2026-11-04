@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.343",
+    "date": "2026-11-04",
+    "what": "19:45 run's report, the research vault mapped, S8 and S9",
+    "by": "curator@web-summit.vicky",
+    "from": "c4ad06fc5"
+  },
+  {
     "version": "v0.2.342",
     "date": "2026-11-04",
     "what": "the research vault's read key published (41j3e9s9, pack mode), after its audit",
