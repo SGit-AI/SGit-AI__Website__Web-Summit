@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.336",
+    "date": "2026-11-04",
+    "what": "brief 1: one agent measured, 1,305,293 fresh tokens; synthetic's long session is the biggest waste",
+    "by": "accountant@web-summit.indi",
+    "from": "35174dc31"
+  },
+  {
     "version": "v0.2.335",
     "date": "2026-11-04",
     "what": "WS-148: the accountant briefs Indi and Dinis at 17:30 UTC every day",
