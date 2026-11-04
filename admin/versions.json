@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.321",
+    "date": "2026-11-04",
+    "what": "the merch is ordered with the chosen printer; layouts and invoice on Thursday",
+    "by": "procurement@web-summit.silvio",
+    "from": "2ae6348ce"
+  },
+  {
     "version": "v0.2.320",
     "date": "2026-11-04",
     "what": "the site sends its page views (WS-37): two vaults, five lanes, assets/telemetry.js on every page, an hourly drain and a drain from inside the data vault",
