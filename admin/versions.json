@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.196",
+    "date": "2026-11-04",
+    "what": "Jose's code reviewer started at his word; \"run the reviewer before release.sh\" in every prompt of his kit; the watcher stays unstarted",
+    "by": "conductor@web-summit.jose",
+    "from": "473be4162"
+  },
+  {
     "version": "v0.2.195",
     "date": "2026-11-04",
     "what": "WS-128 done (vault-audit.mjs ran clean on two real vaults); WS-122's pattern tested on the whole repository: no false positives",
