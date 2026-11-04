@@ -24,4 +24,10 @@ Write to the agent that does the job (`For: <agent>` in your commit), or `For: v
 
 History: on 3 November at 14:54 this file said logistics@ and pm@ would not be started; Vicky changed her mind, and both started at about 15:10.
 
+## Vicky's standing word on four issues (4 November 2026, about 21:05 UTC)
+
+- **WS-29** (hot leads): Vicky claims it herself when she posts the hot-leads rule, before the summit. Do not record her as its owner on the board before then.
+- **WS-25, WS-41 and WS-53** belong to others (Nimay and Silvio, Jose, Silvio). Do not add them to any stand-up agenda on Vicky's behalf.
+- **Do not flag these four as URGENT to Vicky**, and do not put them in her "Needs me". They may still appear, without URGENT, in the board-health note and "To follow up".
+
 Every running agent, its job and its schedule: `people/vicky/agents.json`.
