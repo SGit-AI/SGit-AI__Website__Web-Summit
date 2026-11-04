@@ -16,13 +16,12 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Wednesday 4 November, 12:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-04-1257/index.html), [yesterday's newsletter](reports/2026-11-03-newsletter/index.html), [all reports](reports/index.html).*
+*Wednesday 4 November, 14:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-04-1457/index.html), [yesterday's newsletter](reports/2026-11-03-newsletter/index.html), [all reports](reports/index.html).*
 
-- **The home page is to be revamped,** the agenda first and built as the days go by (WS-143).
-- **The printer may slip to Monday 9;** who collects in Lisbon is on the 13:00 (WS-48).
-- **Indi is at L6;** her agents put the RiskMandate business cards on [/cards/](cards/index.html).
-- **Nothing moved to done since 07:50;** the RiskMandate core is still unowned (WS-46).
-- **At 13:00:** WS-107 first, the newsroom's three decisions, volunteers for Dinis's issues.
+- **The merch order is confirmed** with the chosen printer; Monday 9 collection asked, its answer after 15:00 (WS-48).
+- **Today's stand-up moved to 14:30;** a permanent move is on its agenda. Its presentation is [on the site](meetings/2026-11-04-1300/show/index.html).
+- **The home page revamp:** the journalist's content proposal is on WS-143, for the designer's layout.
+- **Still waiting on Dinis:** the generic-QR yes (WS-113), WS-138, protect main (WS-105).
 
 ## Start here {#start}
 
