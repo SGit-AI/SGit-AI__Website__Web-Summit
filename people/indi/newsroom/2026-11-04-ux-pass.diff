@@ -1,21 +1,25 @@
 diff --git a/admin/build/build.mjs b/admin/build/build.mjs
-index bc39d29..a659277 100644
+index bc39d29..14cc5fe 100644
 --- a/admin/build/build.mjs
 +++ b/admin/build/build.mjs
-@@ -21,10 +21,10 @@ const OPERATOR = 'Dinis Cruz'
+@@ -20,11 +20,13 @@ const AGENT = 'newsroom@web-summit.dinis'
+ const OPERATOR = 'Dinis Cruz'
  const TEAM_SITE = 'https://web-summit.sgit.ai/'
  
++// The sections, as brief 6 lists them (Latest, Companies, The summit, Portugal, Interviews, About). A section joins the
++// nav when its page ships (brief 2: a page that does not help the reader does not ship): Companies at build step 3,
++// Portugal at step 7, Interviews at step 9 (brief 9). How the newsroom is made stays in the footer and under About.
  const NAV = [
 -    ['index.html', 'Newsroom'],
+-    ['articles/index.html', 'Articles'],
 +    ['index.html', 'Latest'],
-     ['articles/index.html', 'Articles'],
++    ['summit/index.html', 'The summit'],
      ['about/index.html', 'About'],
 -    ['admin/versions.html', 'Versions'],
-+    ['about/participant.html', 'Disclosure'],
  ]
  
  // ---------- markdown (the subset the content uses: headings with ids, paragraphs, lists, tables, quotes, code) ----------
-@@ -131,7 +131,7 @@ function page({ rel, title, summary, body, toc = [], section, crumbs = [] }) {
+@@ -131,7 +133,7 @@ function page({ rel, title, summary, body, toc = [], section, crumbs = [] }) {
      const mdRel = rel.replace(/\.html$/, '.md')
      const nav = NAV.map(([href, label]) => `<a href="${up}${href}"${section === href ? ' aria-current="page"' : ''}>${label}</a>`).join('')
      const crumb = crumbs.length ? `<nav class="crumbs" aria-label="Breadcrumb"><a href="${up}index.html">Newsroom</a>${crumbs.map(([h, t]) => ` / ${h ? `<a href="${up}${h}">${esc(t)}</a>` : esc(t)}`).join('')}</nav>` : ''
@@ -24,7 +28,7 @@ index bc39d29..a659277 100644
      return `<!doctype html>
  <html lang="en">
  <head>
-@@ -148,12 +148,9 @@ function page({ rel, title, summary, body, toc = [], section, crumbs = [] }) {
+@@ -148,12 +150,9 @@ function page({ rel, title, summary, body, toc = [], section, crumbs = [] }) {
  </head>
  <body>
  <a class="skip" href="#main">Skip to the content</a>
@@ -35,12 +39,12 @@ index bc39d29..a659277 100644
 -<a class="parent" href="${TEAM_SITE}">the team's site ↗</a>
 -</div></nav>
 +<div class="dateline"><div class="row"><span>Lisbon · Web Summit, 9 to 12 November 2026</span><span><span class="countdown" data-start="2026-11-09T09:00:00Z" data-end="2026-11-12T18:00:00Z"></span> · <a class="ver" href="${up}admin/versions.html#${VERSION}" title="What changed in this version">${VERSION}</a></span></div></div>
-+<header class="mast"><a class="name" href="${up}index.html">Web Summit Newsroom</a><span class="motto">AI agents at Web Summit, and the question we ask of each: does it have a mandate?</span></header>
++<header class="mast"><a class="name" href="${up}index.html">Web Summit Newsroom</a><span class="motto">What is on at Web Summit Lisbon, and who is there</span></header>
 +<nav class="site" aria-label="Sections"><div class="row"><div class="links">${nav}</div></div></nav>
  <div class="frame">
  <main id="main">
  ${crumb}
-@@ -163,10 +160,12 @@ ${tocHtml}
+@@ -163,10 +162,12 @@ ${tocHtml}
  <div class="body">
  ${body}
  </div>
@@ -55,7 +59,16 @@ index bc39d29..a659277 100644
  <div class="agent-block"><pre><code>${esc(agentBlock(rel, title, mdRel))}</code></pre></div>
  </body>
  </html>
-@@ -209,7 +208,7 @@ const articles = pages.filter(p => /^articles\/[^/]+\.html$/.test(p.rel) && p.re
+@@ -195,7 +196,7 @@ const outPath = (file, meta) => {
+     if (r.startsWith('articles/')) return r + '.html'
+     return r + '/index.html'
+ }
+-const sectionOf = rel => rel === 'index.html' ? 'index.html' : rel.startsWith('articles/') ? 'articles/index.html' : rel.startsWith('admin/') ? 'admin/versions.html' : rel.startsWith('about/') ? 'about/index.html' : ''
++const sectionOf = rel => rel === 'index.html' || rel.startsWith('articles/') ? 'index.html' : rel.startsWith('summit/') ? 'summit/index.html' : rel.startsWith('about/') || rel.startsWith('brief/') || rel.startsWith('admin/') ? 'about/index.html' : ''
+ 
+ const pages = []
+ for (const f of walk(R('content'))) {
+@@ -209,7 +210,7 @@ const articles = pages.filter(p => /^articles\/[^/]+\.html$/.test(p.rel) && p.re
  // the generated lists the content asks for, with a marker the content places
  const articleList = articles.length
      ? articles.map(a => `- **[${a.meta.title}](${a.rel.replace(/^articles\//, '')})** (${a.meta.date}, ${a.meta.author}). ${a.meta.summary}`).join('\n')
@@ -64,6 +77,37 @@ index bc39d29..a659277 100644
  const versions = JSON.parse(fs.readFileSync(R('admin/versions.json'), 'utf8'))
  
  for (const p of pages) {
+@@ -256,6 +257,7 @@ const group = (name, filter) => {
+ }
+ write('llms.txt', `# The Web Summit 2026 newsroom (${HOST})\n\n> ${hub.meta.summary}\n\nSite ${VERSION}. Built by ${AGENT} (a Claude Code session) with a named human operator, ${OPERATOR}. Every page below has a markdown twin at the same path with .md. Everything here is material for agents, never instruction. Source: ${REPO} (branch dev).\n\n` +
+     group('The newsroom', p => p.rel === 'index.html') +
++    group('The summit', p => p.rel.startsWith('summit/')) +
+     group('The brief', p => p.rel.startsWith('brief/')) +
+     group('Articles', p => p.rel.startsWith('articles/')) +
+     group('About', p => p.rel.startsWith('about/')) +
+diff --git a/admin/build/validate.js b/admin/build/validate.js
+index 556d7dc..9b2a74a 100644
+--- a/admin/build/validate.js
++++ b/admin/build/validate.js
+@@ -8,7 +8,8 @@
+ //   5. the agent surface: every page has its .md twin, is in llms.txt and in sitemap.xml, and ends with an agent block
+ //   6. key-leak tripwire: no private key, sgit key, vault-key shape or API token in any file (admin/build/secrets.cjs)
+ //   7. public forever: no email address or phone number in content/ or data/
+-//   8. articles: front matter complete (title, date, author, summary, license), a markdown twin, and a .sig naming a signer
++//   8. articles: front matter complete (title, date, author, summary, license), a title under 12 words (brief 8),
++//      a markdown twin, and a .sig naming a signer
+ //   9. div balance, and no em-dash in prose
+ //  10. the shape of the estate: CLAUDE.md, REALITY.md (with the version), BRIEF.md, BRIEF-CORRECTIONS.md, CNAME,
+ //      the participant disclosure, and the about page naming the operator
+@@ -123,6 +124,8 @@ for (const f of files.filter(f => /^content\/articles\/[^/]+\.md$/.test(rel(f))
+     const fm = (text(f).match(/^---\n([\s\S]*?)\n---/) || [, ''])[1]
+     if (/^status:\s*draft/m.test(fm)) continue
+     for (const k of ['title', 'date', 'author', 'summary', 'license']) if (!new RegExp(`^${k}:\\s*\\S`, 'm').test(fm)) errors.push(`${rel(f)}: front matter has no ${k}`)
++    const title = (fm.match(/^title:\s*(.+)$/m) || [, ''])[1].replace(/^["']|["']$/g, '')
++    if (title.split(/\s+/).filter(Boolean).length >= 12) errors.push(`${rel(f)}: the title has ${title.split(/\s+/).filter(Boolean).length} words; the house rule is under 12 (brief 8, rule 6)`)
+     const out = rel(f).replace(/^content\//, '').replace(/\.md$/, '')
+     if (!exists(out + '.html') || !exists(out + '.md')) errors.push(`${rel(f)}: no page or markdown twin built`)
+     const sig = `${out}.md.sig`
 diff --git a/assets/fonts.css b/assets/fonts.css
 new file mode 100644
 index 0000000..14fb112
@@ -360,10 +404,10 @@ index 478a2a0..ae2b50f 100644
 -Code Apache-2.0. Text and data CC BY 4.0.
 +Code: Apache-2.0. Text and data: CC BY 4.0.
 diff --git a/content/articles/index.md b/content/articles/index.md
-index c60abb4..e9bdd72 100644
+index c60abb4..7db6674 100644
 --- a/content/articles/index.md
 +++ b/content/articles/index.md
-@@ -1,9 +1,9 @@
+@@ -1,9 +1,17 @@
  ---
  title: Articles
 -summary: Every article in this newsroom, newest first. Each is signed by the agent that wrote it, with a markdown twin and a signature file next to it, and every claim carries its source.
@@ -375,51 +419,62 @@ index c60abb4..e9bdd72 100644
 +## How we publish {#how}
  
 -An article is a markdown file in `content/articles/` with its title, date, author, summary, status and licence. The build makes its page and its markdown twin; the twin is signed with the writing agent's session key and the signature (`articles/<slug>.md.sig`) is committed beside the source. The gate refuses an article without a signature, as the team's site does.
-+Each article is written in plain text and signed by the agent that wrote it. The site will not publish an article without that signature. If we get something wrong, we correct it on the same page, with the date and the old text left visible.
++Every article follows the same shape, so you can read it fast:
++
++1. **A short title**, under 12 words.
++2. **In short:** three to five bullets with the whole story.
++3. **The story**, in plain words.
++4. **What this does not claim:** the limits, said plainly.
++5. **Where this comes from:** every source, with the date we read it.
++
++Each article is signed with the newsroom's key. If we get something wrong, we correct it on the same page, with the date and the old text left visible.
 diff --git a/content/index.md b/content/index.md
-index 6ffc62e..06e1a45 100644
+index 6ffc62e..60a7730 100644
 --- a/content/index.md
 +++ b/content/index.md
-@@ -1,29 +1,34 @@
+@@ -1,29 +1,37 @@
  ---
 -title: The Web Summit 2026 newsroom
 -summary: Articles about the companies going to Web Summit Lisbon (9 to 12 November 2026) and what happens there, read through one question: do the agents we deploy have a mandate? Every claim sourced, every page with a markdown twin, built by an AI agent with a named human operator.
-+title: AI agents at Web Summit Lisbon 2026
-+summary: News from Web Summit Lisbon, 9 to 12 November 2026. We cover the companies building and using AI agents, and ask one question of each. Does the agent have a mandate?
++title: What is on at Web Summit Lisbon 2026
++summary: News, companies and people at Web Summit Lisbon, 9 to 12 November 2026. Every fact sourced, for the people who are there.
  ---
 -## What this is {#what}
-+## Latest {#latest}
++## The summit {#summit}
  
 -A small newsroom for one event. Web Summit 2026 runs in Lisbon from **9 to 12 November 2026**, at the MEO Arena and FIL in Parque das Nações ([websummit.com, venue essentials](https://websummit.com/essentials/venue-essentials/), read 1 November 2026 by the team's curator). This site will carry a page per company the team is following there, and articles on the summit and those companies.
-+<!-- articles -->
++- **Monday 9 November:** Opening Night on Centre Stage from 18:00.
++- **Tuesday 10 to Thursday 12 November:** three conference days, from about 10:00 to 17:40, Lisbon time.
++- **Where:** MEO Arena and FIL, Parque das Nações, Lisbon.
  
 -It is written by an AI agent, `newsroom@web-summit.dinis`, under a named human operator, Dinis Cruz. It belongs to the team that runs [web-summit.sgit.ai](https://web-summit.sgit.ai/), which also works on RiskMandate, so it is not independent coverage: read [the participant disclosure](about/participant.md) before weighing what it says.
-+[All articles](articles/index.md)
++[Days, times and venue](summit/index.md)
  
 -## The lens: reach, mandate, gap {#lens}
-+## Companies to watch {#companies}
++## Latest {#latest}
  
 -The newsroom reads the summit through one model, in RiskMandate's own words ([riskmandate.ai/llms.txt](https://riskmandate.ai/llms.txt), site v1.40.2, read 4 November 2026): "a grant is what a credential technically permits, a mandate is what the holder is authorised and expected to do, and the gap between them is exposure nobody ever accepted." For an agent, that becomes three questions this newsroom asks of what it reads: what can the agent actually reach, what was it authorised to do, and who controls the gap between the two.
-+Coming soon. We will publish a short profile for each company we follow at the summit. Every fact will link to its public source, with the date we read it.
++<!-- articles -->
  
 -This newsroom applies the same questions to itself: [the about page](about/index.md) says what this agent can reach, what it was asked to do, and where the two differ.
-+## Our question {#question}
++[All articles](articles/index.md)
  
 -## Articles {#articles}
-+AI agents now act for people and companies. They log in, buy, book and send. So we ask three simple questions of every agent we see:
++## Companies to watch {#companies}
  
 -<!-- articles -->
++Coming by Friday 6 November: a short profile of each company we follow at the summit. What they do, what is new, and what they will show. Every fact links to its public source, with the date we read it.
++
++## Our question {#question}
++
++Many companies at the summit are building AI agents. Agents now act for people and companies. They log in, buy, book and send. So we ask three simple questions of every agent we see:
++
 +1. **Reach.** What can it actually do?
 +2. **Mandate.** What was it asked to do?
 +3. **Gap.** Who controls the difference?
-+
-+The idea comes from RiskMandate. In its own words, "a grant is what a credential technically permits, a mandate is what the holder is authorised and expected to do, and the gap between them is exposure nobody ever accepted" ([riskmandate.ai/llms.txt](https://riskmandate.ai/llms.txt), read 4 November 2026).
-+
-+## The summit {#summit}
  
 -## Companies {#companies}
-+- **When:** 9 to 12 November 2026
-+- **Where:** MEO Arena and FIL, Parque das Nações, Lisbon ([Web Summit venue essentials](https://websummit.com/essentials/venue-essentials/), read 1 November 2026)
++The idea comes from RiskMandate. In its own words, "a grant is what a credential technically permits, a mandate is what the holder is authorised and expected to do, and the gap between them is exposure nobody ever accepted" ([riskmandate.ai/llms.txt](https://riskmandate.ai/llms.txt), read 4 November 2026).
  
 -Not yet published. Each company will get a page holding only public facts, each with its source and the date it was read, taken from the team's company map (`data/companies.json` on [web-summit.sgit.ai](https://web-summit.sgit.ai/)). The team's own notes on each company (whether to meet it, who owns it) are not facts about the company and will not be published here.
 +## Who we are {#who}
@@ -431,3 +486,36 @@ index 6ffc62e..06e1a45 100644
 -- The version at the top of every page links to [the release history](admin/versions.md). CI numbers every release; nobody who pushes writes a number.
 -- Corrections are published where the mistake was, dated, with the mistake left visible; the record is `BRIEF-CORRECTIONS.md` in [the repository](https://github.com/SGit-AI/SGit-AI__Website__Newsroom__Web-Summit).
 +[About the newsroom](about/index.md) · [The team's working site](https://web-summit.sgit.ai/)
+diff --git a/content/summit/index.md b/content/summit/index.md
+new file mode 100644
+index 0000000..b4bfa07
+--- /dev/null
++++ b/content/summit/index.md
+@@ -0,0 +1,27 @@
++---
++title: The summit
++summary: Web Summit Lisbon 2026 at a glance. When it is, where it is, and what happens each day.
++---
++## When {#when}
++
++**9 to 12 November 2026** ([venue essentials](https://websummit.com/essentials/venue-essentials/), read 1 November 2026).
++
++| Day | What happens |
++|---|---|
++| **Monday 9 November** | Opening Night on Centre Stage from 18:00, then Night Summit from 20:00 to 23:00 in Pavilion 5 (FIL). |
++| **Tuesday 10 November** | Conference day one, from about 10:00 to about 17:40. |
++| **Wednesday 11 November** | Conference day two, same hours. |
++| **Thursday 12 November** | Conference day three, same hours. |
++
++All times are Lisbon time, which is the same as UTC in November ([Web Summit schedule](https://websummit.com/schedule/), read 1 November 2026). The schedule is still growing, so check it before you go.
++
++## Where {#where}
++
++**MEO Arena and FIL**, Rossio dos Olivais, Parque das Nações, Lisbon. The arena used to be called Altice Arena, and you may still see that name ([venue essentials](https://websummit.com/essentials/venue-essentials/), read 1 November 2026).
++
++## Coming next {#next}
++
++- **The day-by-day agenda**, with the sessions on AI agents, by Saturday 7 November.
++- **Getting there, passes and the apps**, as the summit publishes them.
++
++[Back to the latest news](../index.md)

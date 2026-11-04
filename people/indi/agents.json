@@ -5,7 +5,7 @@
   "session": "Claude Code cloud session in Indi's account",
   "status": "running",
   "schedule": "07:20, 12:20 and 17:20 GMT (cron 20 7,12,17 * * *), a scheduled task firing into its own session, from 3 November",
-  "note": "Two sessions run under this name since about 10:57 UTC on 4 November: the first (scheduled 07:20, 12:20, 17:20 GMT; holds Indi's site key; key conductor-indi) and a second (key conductor-indi-2). Indi chooses which carries on (brief 4)."
+  "note": "Indi chose this session (session_01SZXKKDQTJGMSzf6sx7JMJG: scheduled 07:20, 12:20, 17:20 GMT; holds Indi's site key; key conductor-indi) on 4 November, about 12:40 UTC. The second session (key conductor-indi-2), started about 10:57 UTC, stops."
  },
  {
   "name": "dev@web-summit.indi",

@@ -2,6 +2,8 @@
 
 By conductor@web-summit.indi, at Indi's word, on 4 November 2026. Indi passed on Dinis's message of the same day: the newsroom at [web-summit.newsroom.sgit.ai](https://web-summit.newsroom.sgit.ai/) should become a full publication, learn from the three earlier newsrooms, and be clear, efficient and easy to use.
 
+**Updated at 12:45 UTC** to follow the newsroom's brief pack ([web-summit.newsroom.sgit.ai/brief/](https://web-summit.newsroom.sgit.ai/brief/)), at Indi's word after Dinis pointed to it. Where this page and the pack differ, the pack wins, and brief 1 (Dinis's own words) wins over both.
+
 **What is here:**
 
 - This review.
@@ -9,7 +11,7 @@ By conductor@web-summit.indi, at Indi's word, on 4 November 2026. Indi passed on
 
 **How it was made:**
 
-- The four sites could not be loaded from this session, because its network policy refuses them. So the review was made from their source code on GitHub, read on 4 November 2026.
+- At first the four sites could not be loaded from this session, because its network policy refused them. So the review was made from their source code on GitHub, read on 4 November 2026. Indi has since allowed them.
 - Indi's account cannot push to the newsroom's repository, so the change is offered here as a patch.
 
 ## The patch: what it changes {#patch}
@@ -24,7 +26,11 @@ To apply it on the newsroom's `dev` branch:
   - Paper and ink colours, with a dark mode.
   - One serif face for reading (Newsreader) and one mono face for dates (IBM Plex Mono). Both fonts are self-hosted under the SIL Open Font License and copied from pt.newsroom.sgit.ai.
   - A masthead between rules, and a dateline with a countdown to the summit.
-- **The navigation is short.** Latest, Articles, About, Disclosure. The version sits small in the dateline, as brief 6 asks, and the release history is linked from the footer.
+- **The navigation follows brief 6.** Latest, The summit, About for now. Companies, Portugal and Interviews join as their pages ship (brief 9, steps 3, 7 and 9), because a page that does not help the reader does not ship (brief 2). Articles, the disclosure and the release history sit in the footer. The version sits small in the dateline, as brief 6 asks.
+- **A summit page.** Dates, Opening Night, the three conference days and the venue, each sourced from the team's `data/events.json` (read 1 November). The day-by-day agenda is left to the programme desk (brief 4).
+- **The front page follows brief 6.** The summit first, then Latest, then Companies (by Friday 6 November, as brief 9 plans). The purpose line is brief 2's: what is on, for the people who are there.
+- **The articles page describes brief 3's shape.** A title under 12 words, In short, the story, What this does not claim, Where this comes from.
+- **The gate enforces brief 8's title rule.** An article title of 12 words or more is refused. The em-dash rule was already enforced.
 - **The words are plain.**
   - Every page is rewritten in short sentences.
   - The home page leads with the news, the companies and the question.
@@ -101,6 +107,8 @@ The patch copies most of this.
 
 ## Proposed publishing roles {#roles}
 
+**Superseded by brief 4** ([the desks and the run](https://web-summit.newsroom.sgit.ai/brief/04-the-desks-and-the-run/index.html)). Brief 4 maps these six roles onto Dinis's pipeline: researcher, curator, journalist, fact-checker, correspondent and the desk, with security and a conductor. It proposes, for Dinis to decide, that Indi owns the editorial side: **the desk, the journalist and the fact-checker**. Indi's agents will start those desks when Indi says go and Dinis has decided the split. Kept below as first proposed.
+
 Six roles for a four-day event, adapted from the PHP newsroom's agent cards. Each is one agent, or one person with an agent.
 
 | Role | Job | When |
@@ -121,10 +129,11 @@ Six roles for a four-day event, adapted from the PHP newsroom's agent cards. Eac
 5. Live.
 6. Dated corrections when needed.
 
-**What Indi's agents can take on:**
+**What Indi's agents can take on (now as brief 4 proposes):**
 
-- The Reporter role for company profiles, which builds on the factory pages dev@web-summit.indi already made for 28 companies.
-- The Reader's advocate role, with messaging@web-summit.indi checking the plain-English rules.
+- **The journalist** (`journalist@web-summit.indi`): company profiles and articles in brief 3's shape, building on the factory pages dev@web-summit.indi made for 28 companies.
+- **The fact-checker** (`factcheck@web-summit.indi`): every claim, number and quote against its source, before the correspondent publishes.
+- **The desk** (`desk@web-summit.indi`): the front page's order and the reader's-advocate check (useful, positive, plain).
 
 ## What is needed {#needs}
 
@@ -134,4 +143,4 @@ Six roles for a four-day event, adapted from the PHP newsroom's agent cards. Eac
    - newsroom.sgit.ai
    - pt.newsroom.sgit.ai
    - php.oct.2026.newsroom.sgit.ai
-3. **A decision from Dinis on the roles above**, and who takes which.
+3. **Dinis's decisions in brief 9:** the patch (step 1), push access, and the split between Indi and Vicky in brief 4.

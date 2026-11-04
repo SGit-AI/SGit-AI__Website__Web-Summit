@@ -1,0 +1,62 @@
+{
+  "number": 7,
+  "date": "4 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "The newsroom patch now follows Dinis's brief pack",
+  "when": "4 November 2026, 12:45 UTC (since brief 6, 12:25 UTC)",
+  "by": "conductor@web-summit.indi",
+  "headline": "I read all ten pages of the newsroom's brief pack and changed the patch to match it. The menu and front page follow brief 6, there is a sourced summit page, and the gate now refuses long titles. My six roles give way to brief 4's desks, which proposes you run the desk, the journalist and the fact-checker. Nothing starts until you say go.",
+  "stats": [
+    {"n": "10", "label": "brief pages read"},
+    {"n": "18", "label": "newsroom pages pass the gate with the patch"},
+    {"n": "3", "label": "desks brief 4 proposes for you (desk, journalist, fact-checker)"},
+    {"n": "0", "label": "desks started (you said not yet)"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Send Dinis the push-access message, if you have not",
+      "detail": "The draft is in our chat. Brief 9 lists push access as decision 2, recommended yes.",
+      "options": ["sent", "send now", "leave it to 18:00"],
+      "recommend": "Send now: it lets your desks publish directly once Dinis decides."
+    },
+    {
+      "id": "2",
+      "ask": "Add your site key and send one signed message (WS-136, due 18:00)",
+      "detail": "Unchanged from brief 6.",
+      "options": ["now", "before 18:00"],
+      "recommend": "Now."
+    }
+  ],
+  "you_asked": [
+    {"at": "4 Nov, about 12:40 UTC", "said": "1. this one.", "done": "This session carries on. Recorded in agents.json; the second session is told in the commit.", "where": "people/indi/agents.json", "status": "done"},
+    {"at": "4 Nov, about 12:40 UTC", "said": "2. not yet.", "done": "No desk started. Recorded on WS-141.", "where": "board/WS-141", "status": "done"},
+    {"at": "4 Nov, about 12:40 UTC", "said": "Dinis says to refer to https://web-summit.newsroom.sgit.ai/brief/ . read the page, analyse it then action any changes to ensure that what you've created is in line with it.", "done": "Read briefs 1 to 10. Patch changed: brief 6's menu and front page, a sourced summit page, brief 3's article shape, brief 8's title rule in the gate. Review changed: roles superseded by brief 4.", "where": "people/indi/newsroom/, board/WS-141", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "1. What changed to match the brief",
+      "items": [
+        "Menu (brief 6): Latest, The summit, About. Companies, Portugal and Interviews join as their pages are built, since brief 2 says a page that does not help the reader does not ship.",
+        "Front page (brief 6): the summit first, then Latest, then Companies. The purpose line is brief 2's: what is on, for the people who are there.",
+        "A summit page: dates, Opening Night, the conference days and the venue, each sourced. The full agenda is the programme desk's job (Vicky's, in brief 4).",
+        "Articles page (brief 3): the article shape, so readers know what to expect.",
+        "The gate (brief 8): a title of 12 words or more is refused. Tested."
+      ]
+    },
+    {
+      "title": "2. Where I followed brief 2 over brief 6",
+      "items": ["Brief 6 lists six menu items, but three pages do not exist yet. I show only the three that do, and the rest join as they ship. Dinis can say otherwise at 18:00."]
+    }
+  ],
+  "next": [
+    "18:00 stand-up: Dinis on the patch, push access and the split in brief 4.",
+    "17:20: my next wake.",
+    "Tell me 'acknowledge' when you have read briefs 1 to 7."
+  ],
+  "sources": [
+    "https://web-summit.newsroom.sgit.ai/brief/ (v0.1.2), briefs 1 to 10, read 4 November 2026",
+    "people/indi/newsroom/README.md and the diff beside it",
+    "board/WS-141"
+  ]
+}
