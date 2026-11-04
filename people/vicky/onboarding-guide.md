@@ -63,28 +63,30 @@
    - In the **Name** box, type a name you'll recognise (for example `web-summit`).
    - Under **Network access** there are three choices, **None**, **Limited** and **Full**: choose **Limited**.
    - Press **Create & finish**, at the **bottom right**.
-4. **Allow the team's websites.** The creation page has no box for them, so right after **Create & finish**:
-   - Open the **cloud environment** menu and press **Edit**.
-   - Open **Network access**. Under **Allowed domains**, paste these six, and leave **Allow package managers** ticked if you see it:
+4. **Find the row below the prompt box.** The prompt box is where you type; it says *"Describe a task or ask a question"*. Just below it is a row that reads, from left to right: the **environment**, the **repository**, the **branch**, and at its right end the **model** and the **mode dropdown**.
+5. **Pick the repository.** In that row, right after the environment's name, is the repository picker; it shows the repository's name. Click it and choose `SGit-AI/SGit-AI__Website__Web-Summit`.
+6. **Change the branch to `dev`.** Right after the repository, in the same row, is the branch picker, with a branch icon. Click it and choose **dev**. The team only works on `dev`, never on `main`.
+7. **Choose the permission mode.** At the right end of the same row, the **mode dropdown** offers **Accept edits**, **Plan** and **Auto**. Choose **Auto**: the agent goes ahead with ordinary steps on its own and still stops to ask you before anything risky. You can change it at any time from the same dropdown.
+8. **Open a new session, but don't paste any prompt yet.**
+9. **Allow the team's websites first**, from that session (the creation page has no box for them):
+   - Open the **cloud environment** menu in the session's **title bar at the top**, and press **Edit**.
+   - Open **Network access**, and paste all six at once under **Allowed domains** (leave **Allow package managers** ticked if you see it):
      - `web-summit.sgit.ai`
      - `pki.sgit.ai`
      - `sgit.ai`
      - `*.sgit.ai`
      - `sgraph.ai`
      - `*.sgraph.ai`
-   - Save. The environment is now set up, once, for all your agents. Domain changes work straight away, even in a session that is already open.
-5. **Find the row below the prompt box.** The prompt box is where you type; it says *"Describe a task or ask a question"*. Just below it is a row that reads, from left to right: the **environment**, the **repository**, the **branch**, and at its right end the **model** and the **mode dropdown**.
-6. **Pick the repository.** In that row, right after the environment's name, is the repository picker; it shows the repository's name. Click it and choose `SGit-AI/SGit-AI__Website__Web-Summit`.
-7. **Change the branch to `dev`.** Right after the repository, in the same row, is the branch picker, with a branch icon. Click it and choose **dev**. The team only works on `dev`, never on `main`.
-8. **Choose the permission mode.** At the right end of the same row, the **mode dropdown** offers **Accept edits**, **Plan** and **Auto**. Choose **Auto**: the agent goes ahead with ordinary steps on its own and still stops to ask you before anything risky. You can change it at any time from the same dropdown.
+   - **Save.** Domain changes work in the open session, so nothing needs restarting. The environment is now fully set up, before any agent starts.
+10. Then go on to step 4, and paste the conductor prompt into this session.
 
-**You're done when:** you can open a new session on the repository, on the `dev` branch.
+**You're done when:** a session is open on the repository, on the `dev` branch, and the six domains are saved, with no prompt pasted yet.
 
 ## Step 4. Your conductor agent
 
 **What it is:** your main agent, `conductor@web-summit.<your-id>`. It runs your other agents and keeps your records. From here on, it does the technical work and walks you through the rest.
 
-**What to do:** in Claude Code (step 3a), open a **new session** and paste the prompt from your brief, at https://web-summit.sgit.ai/brief-<your-id>/ (the section "A prompt to start with"). Then answer its questions. Tell it: *"I've accepted the GitHub invitation."*
+**What to do:** in the session you opened in step 3a, paste the prompt from your brief, at https://web-summit.sgit.ai/brief-<your-id>/ (the section "A prompt to start with"). Then answer its questions. Tell it: *"I've accepted the GitHub invitation."*
 
 **You're done when:** it tells you it has made its first commit. You are now at level 3.
 
