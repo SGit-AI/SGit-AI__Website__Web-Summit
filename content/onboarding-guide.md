@@ -43,7 +43,12 @@ summary: Draft (WS-100): not final until the technical parts are added. The team
 3. GitHub emails a code to your Workspace email to check it is yours. Open that email, and type the code into the box GitHub shows you.
 4. Send Dinis or Angelo your **username** (not your password). A message in the team group is fine.
 5. Dinis or Angelo invites you to the team's repository (`SGit-AI/SGit-AI__Website__Web-Summit`). The invitation arrives **in your Workspace email**: press **View invitation** in the email. On the page that opens, press the green **Accept invitation** button. (It is also under **Notifications**, the icon at the **top right** of github.com.)
-6. **[technical part to come]** How your agents use your account to save their work: what Claude asks for the first time, and what to answer.
+6. **How your agents save their work with your account.** You don't type any commands. When an agent in Claude Code saves its work, it uses the GitHub account you connect in step 3B, and GitHub records the work as yours. That's why it must be this account, and why the invitation must be accepted first. The first time an agent saves, Claude may show you a card asking to let the session use the repository, or to push to it: allow it. If an agent says it **can't push**, **can't see the repository**, or gets **"permission denied"**, it is almost always one of three things:
+   - you haven't accepted the invitation yet (item 5 above);
+   - Claude Code is connected to a different GitHub account, often a personal one (check at **https://claude.ai/connect-github**);
+   - the session was opened before you accepted. Open a new session.
+
+   Your agents only ever save to the **`dev`** branch, never to `main`.
 
 **Stop here until you've accepted the invitation.** Don't start step 3B before you have received **and accepted** the repository invitation: until then, the repository won't show up in Claude Code.
 
@@ -52,8 +57,11 @@ summary: Draft (WS-100): not final until the technical parts are added. The team
 **What goes wrong:**
 
 - *The invitation never arrived.* Check the Workspace inbox's spam folder, then **Notifications** at the top right of github.com. Invitations expire: if it has, ask Dinis or Angelo to send it again.
-- *I signed up with my personal email.* **[technical part to come]** what to do (add the Workspace email to the account, or start again).
-- **[technical part to come]** anything else that went wrong for people on 2 and 3 November.
+- *I signed up with my personal email.* You don't need to start again. On github.com, press your **profile picture** at the **top right**, then **Settings**. In the menu on the left, press **Emails**. Under **Add email address**, type your Workspace email and press **Add**, then open the email GitHub sends to it and confirm. If your username isn't `riskmandate-<your-id>`, you can change it in the same Settings, under **Account**, then **Change username**. Tell Dinis or Angelo the new name before they invite you: an invitation goes to a username, not an email. Only start again with a new account if you'd rather keep your personal account completely separate. If you do, say so, so the old one isn't invited.
+- *"I made an account" but nobody had my username.* Two people were recorded as having a GitHub account that nobody could find. Always send your exact username in writing (item 4). Saying "done" isn't enough.
+- *The invitation came from someone who couldn't send it.* Only an **admin** of the repository can invite. If the person you asked can't find **Settings** on the repository, they're signed in with an account that can only write. Ask Angelo or Dinis.
+- *An agent couldn't reach a website it needed* (for example `pki.sgit.ai`): the domain wasn't allowed yet. Step 3B, item 9 fixes it for good.
+- *An agent saved to `main`.* It happened once, on 2 November, and the rule is now absolute: agents save to **`dev`** only. If you see any mention of pushing to `main`, stop the agent and tell Dinis.
 
 ### 3B. Claude Code, the first time
 
