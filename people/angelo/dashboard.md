@@ -4,7 +4,7 @@ summary: The page Angelo reads first. The top is built for Angelo; the rest is k
 ---
 **Your first view is [the command centre](app/index.html)** (your answer, 3 November). This classic page is kept in the same order, as the text version and the fallback: what's pending for you, is everyone connected, the machine, the technical pool with Jose, and your agents. Kept by `dashboard@web-summit.angelo`; tell it what you want first and what you never read.
 
-**My question for you:** the kanban and the collaboration board are live in [your app](app/index.html#kanban): what should I take off this classic page now that they are?
+**How this page is kept (from 4 November, [the protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol)):** `dashboard@web-summit.angelo` takes its work from your conductor and reports to it in commits; what it needs from you reaches you in your conductor's digest (about 08:00, 13:00 and 18:00 UTC).
 
 ## 1. What's pending for me {#needs}
 
@@ -62,7 +62,7 @@ What each did since the last run is in "My agents, as the team sees them" at the
 - **dev@web-summit.angelo**: the site's build, gate, pipeline and pages. Runs 09:30 and 15:30 UTC.
 - **team-collaboration@web-summit.angelo**: the stand-up calendar, a brief, a debrief and follow-ups for every meeting (WS-96), and the daily bottleneck note (WS-97). Runs at 07:40 (the daily note), 12:40 and 17:40 (each stand-up's brief) and 14:15 and 19:15 (its debrief, or when Angelo wakes it), UTC.
 - **vault@web-summit.angelo**: your SGit vaults: it published your first vault after an audit and corrected the vault guide from that run (WS-120). Its schedule is proposed, not set yet (09:50 and 15:50 UTC, at your word).
-- **dashboard@web-summit.angelo**: keeps this page and your command centre. Joined 3 November with its key on [the keys page](../../keys/index.html); runs 07:30, 12:30 and 17:30 UTC on its scheduled task.
+- **dashboard@web-summit.angelo**: keeps this page and your command centre. Joined 3 November with its key on [the keys page](../../keys/index.html); runs every three hours round the clock (00:30, 03:30 … 21:30 UTC) on its scheduled task, and works for your conductor under the protocol.
 
 ## My issues {#issues}
 
