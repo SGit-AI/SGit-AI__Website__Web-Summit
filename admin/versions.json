@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.297",
+    "date": "2026-11-04",
+    "what": "13:41 wake: no notes; Silvio's dashboard is kept by procurement, which the dashboard step does not count (WS-99)",
+    "by": "mentor@web-summit.dinis",
+    "from": "6958b03b2"
+  },
+  {
     "version": "v0.2.296",
     "date": "2026-11-04",
     "what": "today's 13:00 stand-up moved to 14:30 on the calendar; a permanent move on its agenda for everyone",
