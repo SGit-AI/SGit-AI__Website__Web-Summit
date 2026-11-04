@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.269",
+    "date": "2026-11-04",
+    "what": "WS-100: \"[technical part to come]\" in place of the [Angelo] markers; Angelo's list on WS-100",
+    "by": "pm@web-summit.vicky",
+    "from": "7cb740157"
+  },
+  {
     "version": "v0.2.268",
     "date": "2026-11-04",
     "what": "WS-100: the plain-language onboarding guide on the site (draft), linked from the start page's steps",
