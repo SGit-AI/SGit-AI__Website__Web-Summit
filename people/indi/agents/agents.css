@@ -1,0 +1,55 @@
+/* The design system for "what do the different agents do?" (people/indi/agents/, documented at design-system/).
+   Pastel fills, a deeper edge of the same colour, dark ink on light in both themes; Lexend to read, Nunito for headings. */
+.ae {
+  --ae-ink: #34334a; --ae-soft: #6b6984; --ae-paper: #fdfcf8; --ae-line: #ece8f6; --ae-canvas: #f7f5fc;
+  --ae-mint: #cdefe3; --ae-mint-e: #6fbf9f; --ae-lavender: #e3ddf7; --ae-lavender-e: #9d8fdb;
+  --ae-peach: #ffe1d0; --ae-peach-e: #ec9a74; --ae-butter: #fff3c4; --ae-butter-e: #d9b84a;
+  --ae-sky: #d6ecfa; --ae-sky-e: #7fb6e0; --ae-rose: #f9d9e3; --ae-rose-e: #e08fab; --ae-sage: #e4eedc; --ae-sage-e: #98b884;
+  --ae-r: 28px; --ae-r-in: 18px;
+  font-family: 'Lexend', system-ui, sans-serif; line-height: 1.6;
+}
+.ae h2, .ae h3, .ae-num, .ae-expand, .ae-type-h { font-family: 'Nunito', 'Lexend', system-ui, sans-serif; }
+.ae-lead { font-size: 1.15rem; background: var(--ae-lavender); color: var(--ae-ink); border-radius: var(--ae-r-in); padding: .9rem 1.1rem; }
+.ae-toc { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1rem 0; }
+.ae-toc a { background: var(--ae-sky); color: var(--ae-ink); border-radius: 999px; padding: .25rem .85rem; text-decoration: none; font-size: .9rem; }
+.ae-toc a:hover, .ae-toc a:focus-visible { background: var(--ae-mint); }
+.ae-panel { position: relative; background: var(--ae-paper); color: var(--ae-ink); border: 1px solid var(--ae-line); border-radius: var(--ae-r); padding: 1.1rem 1.25rem 1.25rem; margin: 1.4rem 0; box-shadow: 0 2px 0 var(--ae-line), 0 6px 22px rgba(80, 70, 140, .08); }
+.ae-panel a { color: #4f5fa8; }
+.ae-panel header { display: flex; align-items: center; gap: .75rem; }
+.ae-panel h2 { margin: 0; font-size: 1.3rem; color: var(--ae-ink); flex: 1; }
+.ae-panel h3 { color: var(--ae-ink); }
+.ae-num { display: inline-grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--ae-lavender); font-weight: 800; flex: none; }
+.ae-expand { border: 0; border-radius: 999px; background: var(--ae-sky); color: var(--ae-ink); padding: .35rem .9rem; font-weight: 700; cursor: pointer; }
+.ae-expand:hover, .ae-expand:focus-visible { background: var(--ae-mint); }
+.ae-graphic { margin: .9rem 0; overflow-x: auto; border-radius: var(--ae-r); }
+.ae-svg { width: 100%; height: auto; display: block; min-width: 760px; aspect-ratio: 16 / 9; }
+.ae-svg text { fill: var(--ae-ink); }
+.ae-svg .ae-t { font: 400 19px 'Lexend', system-ui, sans-serif; }
+.ae-svg .ae-s { font: 400 16px 'Lexend', system-ui, sans-serif; }
+.ae-svg .ae-b { font: 800 19px 'Nunito', system-ui, sans-serif; }
+.ae-svg .ae-s.ae-b { font-size: 16px; }
+.ae-svg .ae-h { font: 800 26px 'Nunito', system-ui, sans-serif; }
+.ae-svg .ae-h2 { font-size: 22px; }
+.ae-svg .ae-k { font: 600 15px 'Lexend', system-ui, sans-serif; letter-spacing: .12em; fill: var(--ae-soft); }
+.ae-svg .ae-i { font-style: italic; }
+.ae-svg .ae-who { fill: var(--ae-soft); }
+.ae-words { background: #fff6ec; border-radius: var(--ae-r-in); padding: .6rem 1rem; }
+.ae-words p { margin: .35rem 0; }
+.ae-meta { color: var(--ae-soft); font-size: .9rem; }
+.ae-chip { display: inline-block; background: var(--c); border: 2px solid var(--e); color: var(--ae-ink); border-radius: 999px; padding: .15rem .8rem; font-size: .9rem; }
+.ae-chip-dash { border-style: dashed; }
+/* the design-system page */
+.ae-sws, .ae-icons { list-style: none; padding: 0; display: grid; gap: .7rem; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.ae-sw { display: flex; flex-direction: column; gap: .15rem; font-size: .85rem; }
+.ae-sw span { height: 64px; border-radius: var(--ae-r-in); border: 3px solid var(--ae-line); }
+.ae-sw b { font-size: 1rem; }
+.ae-icons { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); text-align: center; }
+.ae-icons li { display: flex; flex-direction: column; align-items: center; font-size: .85rem; }
+.ae-type-h { font-weight: 800; font-size: 1.6rem; margin: .3rem 0; }
+.ae-type-b { font-size: 1.05rem; }
+.ae-type-k { font-weight: 600; letter-spacing: .12em; color: var(--ae-soft); font-size: .9rem; }
+/* expanded: the panel fills the screen, the picture keeps its landscape shape */
+.ae-panel.ae-full { position: fixed; inset: 0; z-index: 1000; margin: 0; border-radius: 0; overflow: auto; padding: 1.5rem max(1.5rem, 4vw); font-size: 1.1rem; }
+.ae-panel.ae-full .ae-svg { min-width: 0; max-height: 78vh; width: auto; max-width: 100%; margin: 0 auto; }
+body.ae-lock { overflow: hidden; }
+@media (max-width: 720px) { .ae-panel { padding: 1rem .8rem; } .ae-panel h2 { font-size: 1.1rem; } }

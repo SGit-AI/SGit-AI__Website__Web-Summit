@@ -3,6 +3,7 @@
 //   node admin/tools/agenda.mjs add --by <agent or person> --type decision|question|idea|sync --title "..." \
 //        [--meeting next|after-next|<YYYY-MM-DD-HHMM>] [--for dinis,nimay|everyone] [--detail "..."] \
 //        [--options "a|b"] [--recommend "..."] [--issue WS-NN]
+//        [--link <site path, e.g. people/indi/agents/index.html>] [--link-text "..."]
 //   node admin/tools/agenda.mjs decide --item <meeting id>/<file> --said "the decider's own words" --by dinis
 //   node admin/tools/agenda.mjs next          (prints the next stand-up's id)
 // Then commit data/meetings/ with the convention and release. Times are UTC (= Lisbon in November).
@@ -31,6 +32,7 @@ else if (cmd === 'add') {
     if (!slots().some(s => s.id === meeting)) { console.error(`agenda: no stand-up ${meeting} in data/meetings/schedule.json`); process.exit(2) }
     const now = new Date().toISOString(), item = { type, title, for: (arg('for', 'everyone')).split(',').map(x => x.trim()), by, added: now, status: 'open' }
     for (const k of ['detail', 'recommend', 'issue']) if (arg(k)) item[k] = arg(k)
+    if (arg('link')) { item.link = arg('link').replace(/^\/+/, ''); if (arg('link-text')) item.link_text = arg('link-text') }
     if (arg('options')) item.options = arg('options').split('|').map(x => x.trim())
     const f = path.join(DIR, meeting, `${now.slice(0, 16).replace(/[-:]/g, '')}-${slug(title)}.json`)
     fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, JSON.stringify(item, null, 2) + '\n')

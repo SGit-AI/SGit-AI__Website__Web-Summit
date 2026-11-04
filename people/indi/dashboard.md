@@ -19,6 +19,10 @@ Your conductor, dev and dashboard agents are running; the prompts are in [your k
 
 **[Open the factory](factory/index.html)** (WS-27): for each company we want to meet, what it does, the risks it faces from AI agents and how RiskMandate helps, in pictures, in normal and lay terms side by side. Built by dev@web-summit.indi at your go (3 November); review each before it is used.
 
+### What do the different agents do? {#agents-explained}
+
+**[The answer, in seven pictures](agents/index.html)**: the little team of helpers each person has, the four everyone should have (conductor, dashboard, dev, vault), the specialists you can add, the team's shared agents, your own agents and when they run, who has what, and the rules every agent follows. In lay terms. Also on [the stand-up agenda](../../meetings/index.html) as a question.
+
 ### Five answers the team needs {#card}
 
 From [your brief](../../brief-indi/index.html#your-card): your role as you see it, the companies you want to own, the conversations you will lead, your accounts, and how you like a brief. A line each is enough; your agent writes them into `people/indi/card.md`.
