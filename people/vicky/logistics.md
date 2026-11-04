@@ -11,16 +11,16 @@ Vicky's logistics agent: printing, merch and deliveries (WS-48), with procuremen
 - **The printer's dates, collection and delivery**, from procurement@web-summit.silvio, who buys; no supplier name, price or contact here until Silvio's agent says the supplier agreed.
 - **Drafts only:** Vicky sends.
 
-## Where it stands, Wednesday 4 November, 12:20 UTC
+## Where it stands, Wednesday 4 November, 17:15 UTC
 
-From the repository at site v0.2.277.
+From the repository at site v0.2.321.
 
 | | |
 |---|---|
-| **Sizes** | Settled (WS-130 done, Dinis's words relayed at 17:10, 3 Nov): T-shirts 1 M + 1 L + 1 XL in each of the seven colours (21), worn by whoever they fit; hoodies Dinis XL, Vicky M, the other five L. In `merch.json`: Dinis, Angelo, Jose, Silvio, Vicky; Nimay and Indi only in WS-130 (not needed now the T-shirts are a mix). |
-| **Sign-offs** (`signoff.mjs verify`) | 3 of 7 approved: Dinis (with the shared hoodie and card), Angelo, Vicky. Awaiting: Silvio, Nimay, Indi, Jose. All three approvals are of the **personal-QR** set. |
-| **The generic QR** | Dinis confirmed it at about 17:05 on 3 Nov ("switch to generic QR", conductor@web-summit.dinis, 8107e61b). The generic set is made and checked ([/print/#generic-qr](../../print/index.html#generic-qr)), but not yet swapped in: designer@web-summit.dinis has not committed since 15:21 on 3 Nov. Once it is, every sign-off shows superseded and is signed again. |
-| **Still with the designer** | The generic swap; the stock colours re-mapped to the new printer's blanks (TH Clothes Ankara T-shirts, TH Clothes hoodies); the RiskMandate logo (Dinis's ask, d7bda01f); a sleeve file only on Dinis's own word. |
-| **Purple** | Vicky's colour (#6B3FA0). Ankara has no true purple: lavanda or bordô are nearest. **Decided by Vicky, 4 Nov, about 09:58 UTC:** *"I have no preference. Whatever the printer has is fine; let Silvio decide."* Silvio chooses. |
-| **Vicky's card** | The cards are being redesigned by designer@web-summit.indi ([/cards/](../../cards/index.html), round 2 on [/design/](../../design/index.html)). Every concept already reads **Vicky Wang** / **Project Manager**, from `people/vicky/business-card.json` (its README, d40ace1a). Vicky is happy with whichever design is chosen. |
-| **The printer** | The second printer (Dinis's call, 3 Nov evening); it declined publication, so it stays unnamed. **It cannot guarantee Friday 6 Nov** (the colours are ordered in); procurement@web-summit.silvio asked whether **Monday 9 Nov morning** works (7bca9e67, 10:40). Who collects, where, and the fallback: a question for Silvio and Dinis at the 13:00. |
+| **The order** | **Ordered** with the second printer (procurement@web-summit.silvio, 2ae6348c, 17:09); the first printer released. On **Thursday 5 Nov** the printer sends the layouts for approval and the invoice. Unnamed: it declined publication. |
+| **Collection** | Silvio asked for **Monday 9 Nov morning** (or Saturday 7) at 13:44 (30380c82); the printer's written answer on the date is not yet recorded. Who collects and how it reaches Lisbon: still open on the 13:00 item (not decided). |
+| **Sizes** | Settled (WS-130): T-shirts 1 M + 1 L + 1 XL in each of the seven colours; hoodies Dinis XL, Vicky M, the other five L. |
+| **Vicky's colours** | T-shirts **purple**: the printer has a purple blank from another range. Hoodie **lavender**, Vicky's own choice to Silvio, black ink if white does not read (procurement__005, 0fbf7b6c). Her order of preference is in `people/vicky/merch.json` (conductor@web-summit.vicky, d042d475). |
+| **The files** | The proposed next set on [/print/#next](../../print/index.html#next) (designer@web-summit.dinis, 4b291ed4): one QR for everyone on the garment backs, the RiskMandate mark, "Vicky Wang" on her card. Waiting for Dinis to confirm it in the designer's session; then every set is signed again. Also to the designer: the sleeves carry the RiskMandate logo (Dinis, in person, 9c09e7ca) and Vicky's lavender hoodie. |
+| **Sign-offs** (`signoff.mjs verify`) | 3 of 7 approved (Dinis with the shared designs, Angelo, Vicky), all of the current signed set; they supersede when the next set becomes the main one. Awaiting: Silvio, Nimay, Indi, Jose. |
+| **Vicky's card** | Vicky voted **R2-6 Signature** (`people/vicky/feedback/design.json`, 89eb53b6) among designer@web-summit.indi's designs ([/cards/](../../cards/index.html)); her content is "Vicky Wang" / "Project Manager" (`people/vicky/business-card.json`). Whether the cards move to Indi's designs is still open. |

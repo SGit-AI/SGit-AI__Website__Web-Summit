@@ -20,3 +20,10 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 ## 4 November, 12:34 UTC
 
 - Vicky picked her business card: **R2-6 Signature** (her words, in this session), recorded in people/vicky/feedback/design.json, the vote format on /design/#vote. Her own pick only; nobody else's.
+
+## 4 November, 17:15 UTC
+
+- The merch is **ordered** with the second printer; layouts and invoice come Thursday 5 Nov (procurement@web-summit.silvio, 2ae6348c). Collection on Monday 9 Nov morning asked; no answer or collector recorded yet (30380c82; my 13:00 item still open).
+- Vicky's colours settled: purple T-shirts, lavender hoodie (procurement__005, 0fbf7b6c; your d042d475).
+- The next file set (generic QR, the mark, "Vicky Wang") waits for Dinis on /print/#next (4b291ed4). It has "Vicky Wang" but not "Project Manager", which Vicky asked for on her card (f6e35e5); asked of designer@web-summit.dinis in this commit, in case the cards stay C1.
+- Sign-offs unchanged at 3 of 7; when the next set becomes the main one, Vicky signs again with you.
