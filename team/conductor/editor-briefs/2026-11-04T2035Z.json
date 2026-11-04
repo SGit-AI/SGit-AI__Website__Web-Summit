@@ -1,0 +1,31 @@
+{
+  "number": 16,
+  "date": "2026-11-04",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "After the 18:00: Vicky's newsroom desks are running, and a keys-page hole needs a rule",
+  "when": "Wednesday 4 November 2026, 20:35 UTC",
+  "by": "conductor@web-summit.dinis",
+  "headline": "The evening belonged to the newsroom and to Indi: Vicky's researcher, curator and programme desk all ran (22 captures in the research vault, 7 story candidates, the agenda live), Indi's accountant agent measured tokens and her designer made audience cards and laptop stickers. Angelo's agents adopted a protocol (the conductor as hub, wakes round the clock). The abp agent found that any agent can rewrite another's entry on the keys page (WS-152): it happened once today, by mistake, and was put right. Today's decisions are still not on record.",
+  "stats": [
+    {"n": "3", "label": "newsroom desks of Vicky's running"},
+    {"n": "22", "label": "captures in the research vault"},
+    {"n": "5 of 7", "label": "people with a site key (Silvio, Nimay to go)"},
+    {"n": "0", "label": "decisions from today on record"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "Today's decisions from the 18:00, in a line each", "detail": "Or the notes or transcript to team-collaboration@web-summit.angelo, which now writes the record (I answered its question: the deck shows what to decide, it records what was decided).", "options": ["send me the lines", "the notes to Angelo's agent"], "recommend": "The lines to me tonight; I record them in your words."},
+    {"id": "2", "ask": "WS-152: who may change an entry on the keys page", "detail": "Keys are what vault keys are sealed to. Options: a gate check that a commit changes only its own agent's entry; or one file per key.", "options": ["the gate check", "one file per key", "both"], "recommend": "The gate check now (dev, Thursday); one file per key after the summit."},
+    {"id": "3", "ask": "WS-145: Indi's write access to the newsroom (still first in what only you can do)", "detail": "Vicky's desks write to their vaults; Indi's wait on this to publish.", "options": ["do it now", "tomorrow"], "recommend": "Now: one minute in GitHub."}
+  ],
+  "you_asked": [
+    {"at": "4 Nov, ~17:40", "said": "make like a normal slide deck, with play controls ... and ability to download the pdf", "done": "One slide at a time, back and forward, swipe, fullscreen, all slides, and the PDF; fixed on the iPhone.", "where": "/meetings/2026-11-04-1800/show/", "status": "done"}
+  ],
+  "team": [
+    {"id": "Vicky's newsroom desks", "status": "running", "doing": "researcher (21 captures, audited), curator (22 mapped, 7 story candidates), programme (the agenda live, the shortlist started)"},
+    {"id": "Indi's agents", "status": "active", "doing": "the accountant (tokens measured, a daily brief at 17:30), audience cards and stickers, her to-do as an infographic"},
+    {"id": "Angelo's agents", "status": "active", "doing": "a protocol for his agents, a helper agent, summit days in his command centre"},
+    {"id": "Silvio's agents", "status": "active", "doing": "/impressao/: the print files in Portuguese for the printer"}
+  ],
+  "next": ["22:27 wake: the decisions recorded if you send them; the 5 November 13:00 agenda.", "Thursday: the deck before each stand-up, with its PDF."],
+  "sources": ["git log since 2026-11-04T17:41Z (dev)", "board/WS-150, WS-152", "data/person-keys.json", "the conductor's inbox lane (empty at 20:28)"]
+}
