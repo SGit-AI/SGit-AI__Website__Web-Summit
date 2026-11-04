@@ -658,6 +658,22 @@
         "signing_fingerprint": "sha256:0f3f3e000900927f"
       },
       "status": "active"
+    },
+    {
+      "id": "messaging-indi",
+      "label": "messaging@web-summit.indi (Claude Code session)",
+      "role": "Indi's messaging agent for Web Summit 2026: drafts and checks the RiskMandate message, the demo script, the messaging review and one technical article, in people/indi/overnight/. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Indi's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwY5RcecX2MM7CzZUV53R\nKNqqJQofxTrfG2jxFw6eVKukwh4o8Oh/oBKxqm+4ngK5E4xxYfvqUXrL4czKRMJI\n+rFZh/Mr4o+VK2fRxilQYFyE5MrX2XCalwJhNcuMTnJnD0P+5eiafxrd8V170Ds+\nYkymVhYXRu6ifzHlFt2llP2ODlEw9QLlU2NH1DiIpe/fnmUzUc6WUfInGoDQRg5h\nQ4RJgjZDAdRLpbdBkTWEkI8QgFgjT31YWJSkzOFZKl6I4ZqX9tYs/IdymWJzcStt\nJJ1UaL/heewmWL72hgfgXHpw6eg0fdL1zTF77vjhyiIqnC9g1SM72x7rXrAwAVN1\nfccTktWOlTlbSpIgKia8qgZFZrFC+fy0uvEL32AFgNTNthctFamlrs9xnGP3i29P\nhvjax46tpLi38RaNatG1rkJ31avby0it4+ubvV+c8QU4etFR8iiPUk7rJwPCrcgc\nnCMollvt/8kEd6th6gYkmvfsabqOrRTnJy2M667JHOscDozZH+MZ0CQC/QrAaqfK\n9+yWlPB1gqfG9ALYkGz/3admBEGCOokPH8dXWC8qlDj5aHo8EcdPJAnVA9bHiQ/e\nqH27o9bkEhUPtOYgCVHGoCH4KuMD9NuisK8IdvZT4WsaTn3rkjWLTexE0eJZM2wc\nJuAQ/dcdqFTp6nq8wccQ9OkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE00u6+SAyhFDxqiRRbhRH+6ecfMtk\nRqPr9Vc07B2cdH7ZLxjrbyXhL6MDn83yYMxVn914guccpp7MbfvEwe5xcA==\n-----END PUBLIC KEY-----\n",
+        "label": "messaging@web-summit.indi",
+        "fingerprint": "sha256:dddc515414898da7",
+        "signing_fingerprint": "sha256:190ff12833eba771"
+      },
+      "status": "active"
     }
   ]
 }
