@@ -174,6 +174,8 @@ function page({ rel, title, description, body, meta = '', mdTwin = '', lead = ''
 <link rel="canonical" href="${url}">
 <meta property="og:url" content="${url}">
 <meta property="og:title" content="${esc(title)}">
+<link rel="icon" href="${up}assets/brand/riskmandate-favicon-32.png" sizes="32x32">
+<link rel="icon" href="${up}assets/brand/riskmandate-mark.svg" type="image/svg+xml">
 <link rel="stylesheet" href="${up}assets/site.css">${head}
 </head>
 <body data-section="${home ? 'home' : (sectionOf(rel)?.t || 'other').toLowerCase()}" data-up="${up}">
