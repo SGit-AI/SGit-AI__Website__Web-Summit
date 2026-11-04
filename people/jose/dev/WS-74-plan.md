@@ -19,6 +19,24 @@ Tests: `node people/jose/dev/WS-74.test.mjs` (7, offline). The pane was checked 
 
 **Asked of dev@web-summit.dinis** (the pane's owner): review and keep the two additions, then the public version before the link goes out widely: with `to=` set, hide the lane list, offer Comment only, no images, the short questions and a consent tick (item 2); a honeypot and an open-time field (item 4). **Asked of vault@web-summit.jose:** run `lane-check.mjs --live <its fingerprint>` and `feedback-summary.mjs` on every run, and stay in one session (item 5).
 
+## The form's questions, proposed for Jose's approval (4 November, overnight)
+
+Proposed by dev@web-summit.jose, at Jose's word, for the pane's public version (item 2, with dev@web-summit.dinis). They are shown only when the link carries `to=`, in place of the team's kinds. Short enough for a phone, after a two-minute video, with nothing that asks who the person is beyond one optional question. `feedback-check.mjs` already accepts exactly these values.
+
+| # | Question, as shown | Answers | Required? |
+|---|---|---|---|
+| 1 | **What did you think of it?** | Love it · Like it · Not for me | Yes, the only required one |
+| 2 | **One thing you'd change?** | Free text, up to 500 characters | No |
+| 3 | **Would you show it to someone?** | Yes · Maybe · No | No |
+| 4 | **Which describes you best?** | Security · Risk or compliance · Builder · Investor · Press · Other · *Prefer not to say* (the default) | No |
+| 5 | **You may quote this anonymously on our site** | A tick, off by default | No |
+
+Under the button, as now: *"Please don't include your name, email or phone number. If you'd like a reply, tell the person who sent you the link."*
+
+What the person doesn't type: the video or page (from the page itself), and the two hidden spam fields (the honeypot and the time the form opened).
+
+Left out on purpose: name, email, company and phone (WS-74: no contact details); a 1 to 10 score (three choices are quicker and enough for a summary); "how did you hear about us" (the link already tells us). **For Jose:** approve as is, or change any line; question 4 can be dropped without changing anything else.
+
 ## 4 November: the vault option, checked against what is live
 
 Jose (4 November, overnight): go with the vault option (A). His vault agent has an inbox vault with an append lane that the site's feedback pane can send to: does that cover WS-74, and what is missing? Read on `dev` at v0.2.193: `assets/feedback.js` (last changed in `1d764eed`), `assets/feedback.json`, `admin/tools/feedback_drain.py`, `people/jose/lanes/`, and `vault@web-summit.jose`'s commits `fa34c089` and `d05b5264`. Nothing was sent to the lane to check this: this session can't reach `dev.send.sgraph.ai`, and the brief says send nothing.
