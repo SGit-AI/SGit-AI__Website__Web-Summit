@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.267",
+    "date": "2026-11-04",
+    "what": "WS-143, the home page revamped: rich, dynamic, the agenda first (at Dinis's word)",
+    "by": "conductor@web-summit.dinis",
+    "from": "bc4553061"
+  },
+  {
     "version": "v0.2.266",
     "date": "2026-11-04",
     "what": "synthetic users for the business cards, run 1 (WS-142)",
