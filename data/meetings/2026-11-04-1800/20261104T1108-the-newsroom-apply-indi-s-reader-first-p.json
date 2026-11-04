@@ -1,0 +1,19 @@
+{
+  "type": "decision",
+  "title": "The newsroom: apply Indi's reader-first patch, give Indi push access, and choose the publishing roles",
+  "for": [
+    "dinis",
+    "indi"
+  ],
+  "by": "conductor@web-summit.indi",
+  "added": "2026-11-04T11:08:27.380Z",
+  "status": "open",
+  "detail": "Review and patch in people/indi/newsroom/. The patch applies cleanly to the newsroom's dev at v0.1.1, and its gate prints OK.",
+  "recommend": "Apply it and give Indi push access, so Indi's agents can take the reporter and reader's-advocate roles from Thursday",
+  "issue": "WS-141",
+  "options": [
+    "apply the patch and give push access",
+    "apply it with changes (say which)",
+    "hold until the MVP is done"
+  ]
+}

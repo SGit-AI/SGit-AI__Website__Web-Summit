@@ -1,0 +1,431 @@
+diff --git a/admin/build/build.mjs b/admin/build/build.mjs
+index ab6a774..7f79a59 100644
+--- a/admin/build/build.mjs
++++ b/admin/build/build.mjs
+@@ -21,10 +21,10 @@ const OPERATOR = 'Dinis Cruz'
+ const TEAM_SITE = 'https://web-summit.sgit.ai/'
+ 
+ const NAV = [
+-    ['index.html', 'Newsroom'],
++    ['index.html', 'Latest'],
+     ['articles/index.html', 'Articles'],
+     ['about/index.html', 'About'],
+-    ['admin/versions.html', 'Versions'],
++    ['about/participant.html', 'Disclosure'],
+ ]
+ 
+ // ---------- markdown (the subset the content uses: headings with ids, paragraphs, lists, tables, quotes, code) ----------
+@@ -131,7 +131,7 @@ function page({ rel, title, summary, body, toc = [], section, crumbs = [] }) {
+     const mdRel = rel.replace(/\.html$/, '.md')
+     const nav = NAV.map(([href, label]) => `<a href="${up}${href}"${section === href ? ' aria-current="page"' : ''}>${label}</a>`).join('')
+     const crumb = crumbs.length ? `<nav class="crumbs" aria-label="Breadcrumb"><a href="${up}index.html">Newsroom</a>${crumbs.map(([h, t]) => ` / ${h ? `<a href="${up}${h}">${esc(t)}</a>` : esc(t)}`).join('')}</nav>` : ''
+-    const tocHtml = toc.length > 2 ? `<aside class="toc" aria-label="On this page"><p>On this page</p><ul>${toc.map(([id, t]) => `<li><a href="#${id}">${inline(t)}</a></li>`).join('')}</ul></aside>` : ''
++    const tocHtml = toc.length > 2 && rel !== 'index.html' ? `<aside class="toc" aria-label="On this page"><p>On this page</p><ul>${toc.map(([id, t]) => `<li><a href="#${id}">${inline(t)}</a></li>`).join('')}</ul></aside>` : ''
+     return `<!doctype html>
+ <html lang="en">
+ <head>
+@@ -148,12 +148,9 @@ function page({ rel, title, summary, body, toc = [], section, crumbs = [] }) {
+ </head>
+ <body>
+ <a class="skip" href="#main">Skip to the content</a>
+-<div class="topbar"><div class="row"><span>Web Summit Lisbon, 9 to 12 November 2026</span><a class="ver" href="${up}admin/versions.html#${VERSION}" title="This version of the site: what changed, and the commit">${VERSION}</a></div></div>
+-<nav class="site"><div class="row">
+-<a class="brand" href="${up}index.html">web-summit<span>.newsroom.sgit.ai</span></a>
+-<div class="links">${nav}</div>
+-<a class="parent" href="${TEAM_SITE}">the team's site ↗</a>
+-</div></nav>
++<div class="dateline"><div class="row"><span>Lisbon · Web Summit, 9 to 12 November 2026</span><span class="countdown" data-start="2026-11-09T09:00:00Z" data-end="2026-11-12T18:00:00Z"></span></div></div>
++<header class="mast"><a class="name" href="${up}index.html">Web Summit Newsroom</a><span class="motto">AI agents at Web Summit, and the question we ask of each: does it have a mandate?</span></header>
++<nav class="site" aria-label="Sections"><div class="row"><div class="links">${nav}</div></div></nav>
+ <div class="frame">
+ <main id="main">
+ ${crumb}
+@@ -163,10 +160,12 @@ ${tocHtml}
+ <div class="body">
+ ${body}
+ </div>
+-<p class="twin">This page as markdown: <a href="${up}${mdRel}">${mdRel.split('/').pop()}</a>. For agents: <a href="${up}llms.txt">llms.txt</a>.</p>
++<p class="twin">Plain text of this page: <a href="${up}${mdRel}">${mdRel.split('/').pop()}</a> · For AI agents: <a href="${up}llms.txt">llms.txt</a></p>
+ </main>
+ </div>
+-<footer><div class="row"><span>Built and run by an AI agent, ${AGENT}, with a named human operator, ${OPERATOR}.</span><a href="${up}about/participant.html">Participant disclosure</a><a class="ver" href="${up}admin/versions.html#${VERSION}">${VERSION}</a><a href="${REPO}">GitHub</a><span>Code Apache-2.0, text CC BY 4.0</span></div></footer>
++<footer><div class="row"><a href="${up}index.html">Latest</a><a href="${up}articles/index.html">Articles</a><a href="${up}about/index.html">About</a><a href="${up}about/participant.html">Our disclosure</a><a href="${TEAM_SITE}">The team's site</a><a href="${REPO}">Source code</a>
++<span class="small">Made by ${OPERATOR} and AI agents. Not independent coverage: we also work on RiskMandate. Text CC BY 4.0, code Apache-2.0. <a class="ver" href="${up}admin/versions.html#${VERSION}" title="What changed in this version">${VERSION}</a></span></div></footer>
++<script>(function(){var e=document.querySelector('.countdown');if(!e)return;var n=Date.now(),s=Date.parse(e.dataset.start),f=Date.parse(e.dataset.end),d=Math.ceil((s-n)/864e5);e.textContent=n<s?(d===1?'Starts tomorrow':d+' days to go'):n<f?'Happening now':'The summit is over';})();</script>
+ <div class="agent-block"><pre><code>${esc(agentBlock(rel, title, mdRel))}</code></pre></div>
+ </body>
+ </html>
+@@ -209,7 +208,7 @@ const articles = pages.filter(p => /^articles\/[^/]+\.html$/.test(p.rel) && p.re
+ // the generated lists the content asks for, with a marker the content places
+ const articleList = articles.length
+     ? articles.map(a => `- **[${a.meta.title}](${a.rel.replace(/^articles\//, '')})** (${a.meta.date}, ${a.meta.author}). ${a.meta.summary}`).join('\n')
+-    : '- No article is published yet. The first three are next in the plan; see [what exists](../about/index.md#what-exists).'
++    : '- Our first articles are on the way. They will appear here, newest first.'
+ const versions = JSON.parse(fs.readFileSync(R('admin/versions.json'), 'utf8'))
+ 
+ for (const p of pages) {
+diff --git a/assets/fonts.css b/assets/fonts.css
+new file mode 100644
+index 0000000..14fb112
+--- /dev/null
++++ b/assets/fonts.css
+@@ -0,0 +1,7 @@
++/* Two faces, hosted here and never fetched at run time: Newsreader (text) and IBM Plex Mono (dates and
++   numbers). Latin subset, woff2, both under the SIL Open Font License 1.1 (see assets/fonts/LICENSE.md).
++   Copied from pt.newsroom.sgit.ai (SGit-AI/SGit-AI__Website__Newsroom__PT, assets/fonts/). */
++@font-face{font-family:'Newsreader';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/newsreader-variable.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
++@font-face{font-family:'Newsreader';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/newsreader-400-italic.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
++@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/plex-mono-400.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
++@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/plex-mono-500.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+diff --git a/assets/fonts/LICENSE.md b/assets/fonts/LICENSE.md
+new file mode 100644
+index 0000000..d62d7fd
+--- /dev/null
++++ b/assets/fonts/LICENSE.md
+@@ -0,0 +1,8 @@
++# Fonts
++
++| Face | Files | Designer | Licence |
++|---|---|---|---|
++| Newsreader | `newsreader-variable.woff2`, `newsreader-400-italic.woff2` | Production Type | SIL Open Font License 1.1 |
++| IBM Plex Mono | `plex-mono-400.woff2`, `plex-mono-500.woff2` | IBM / Bold Monday | SIL Open Font License 1.1 |
++
++Latin subsets, copied unchanged from pt.newsroom.sgit.ai (SGit-AI/SGit-AI__Website__Newsroom__PT, `assets/fonts/`, whose `LICENSES.md` records the same). The full licence text: https://openfontlicense.org/open-font-license-official-text/
+diff --git a/assets/site.css b/assets/site.css
+index a6ecb4e..23049bd 100644
+--- a/assets/site.css
++++ b/assets/site.css
+@@ -1,55 +1,94 @@
+-/* web-summit.newsroom.sgit.ai: one stylesheet, in the house style of the team's site (web-summit.sgit.ai).
++/* web-summit.newsroom.sgit.ai: one stylesheet. A publication's look, after pt.newsroom.sgit.ai:
++   paper and ink, one serif for reading, one mono for dates and numbers, rules instead of boxes.
+    Colour lives only in the tokens; light by default, dark follows the reader's system. */
++@import url(fonts.css);
+ 
+ :root {
+-    --bg: #faf9f5; --surface: #ffffff; --surface-2: #f2f0e9; --line: #e5e1d5;
+-    --ink: #1c1d21; --ink-2: #5c5f66; --accent: #0f766e; --accent-soft: #e6f4f1;
+-    --top-bg: #1f2933; --top-ink: #cfd6dd; --code-bg: #f2f0e9; --nav-bg: rgb(250 249 245 / 0.94);
++    --paper: #f7f4ec; --paper-sunk: #ece6d8; --panel: #fffdf7;
++    --ink: #17181c; --ink-2: #4a4d55; --ink-3: #5c5f68;
++    --rule: #9f9780; --hair: #d9d2c0;
++    --accent: #0c5f59; --accent-soft: #e3efe9;
++    --serif: "Newsreader", Georgia, "Times New Roman", serif;
++    --mono: "IBM Plex Mono", Menlo, Consolas, monospace;
++    --measure: 34em;
+ }
+ @media (prefers-color-scheme: dark) {
+     :root {
+-        --bg: #141412; --surface: #1c1c19; --surface-2: #24241f; --line: #34332d;
+-        --ink: #ecebe6; --ink-2: #a9a59b; --accent: #5fd4c8; --accent-soft: #14302d;
+-        --top-bg: #0d1117; --top-ink: #a9b1ba; --code-bg: #24241f; --nav-bg: rgb(20 20 18 / 0.94);
++        --paper: #141412; --paper-sunk: #1c1c19; --panel: #1f1f1b;
++        --ink: #ecebe6; --ink-2: #b8b4aa; --ink-3: #a9a59b;
++        --rule: #6f6a58; --hair: #34332d;
++        --accent: #5fd4c8; --accent-soft: #14302d;
+     }
+ }
+ 
+ * { box-sizing: border-box; }
+ html { -webkit-text-size-adjust: 100%; }
+-body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+-a { color: var(--accent); text-underline-offset: 2px; }
+-.row { max-width: 1060px; margin: 0 auto; padding: 0 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; }
+-.skip { position: absolute; left: -999px; } .skip:focus { left: 8px; top: 8px; background: var(--surface); padding: 6px; z-index: 9; }
+-
+-.topbar { background: var(--top-bg); color: var(--top-ink); font-size: 13px; padding: 5px 0; }
+-.topbar .row { justify-content: space-between; }
+-.ver { font: 600 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 4px 9px; text-decoration: none; }
+-nav.site { position: sticky; top: 0; z-index: 5; background: var(--nav-bg); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); padding: 10px 0; }
+-.brand { font-weight: 700; color: var(--ink); text-decoration: none; font-size: 18px; }
+-.brand span { color: var(--ink-2); font-weight: 500; }
+-nav.site .links { display: flex; flex-wrap: wrap; gap: 4px 16px; flex: 1; }
+-nav.site .links a { color: var(--ink-2); text-decoration: none; font-size: 15px; }
+-nav.site .links a[aria-current] { color: var(--ink); font-weight: 600; }
+-.parent { font-size: 13px; color: var(--ink-2); }
+-
+-.frame { max-width: 1060px; margin: 0 auto; padding: 24px 16px 48px; }
+-main { max-width: 760px; }
+-.crumbs { font-size: 14px; color: var(--ink-2); margin-bottom: 8px; }
+-h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.15; margin: 8px 0 12px; letter-spacing: -0.01em; }
+-h2 { font-size: 24px; margin: 36px 0 10px; } h3 { font-size: 19px; margin: 24px 0 8px; }
+-.lead { font-size: 19px; color: var(--ink-2); margin-top: 0; }
+-.toc { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 16px; font-size: 15px; margin: 16px 0; }
+-.toc p { margin: 0 0 4px; font-weight: 600; } .toc ul { margin: 0; padding-left: 18px; }
+-blockquote { margin: 16px 0; padding: 4px 16px; border-left: 3px solid var(--accent); background: var(--surface); }
+-code { font: 0.88em ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code-bg); padding: 1px 4px; border-radius: 4px; overflow-wrap: anywhere; }
+-pre { background: var(--code-bg); padding: 12px 14px; border-radius: 8px; overflow-x: auto; }
++body { margin: 0; background: var(--paper); color: var(--ink); font: 18px/1.62 var(--serif); }
++a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
++a:hover { text-decoration-thickness: 2px; }
++.row { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; }
++.skip { position: absolute; left: -999px; } .skip:focus { left: 8px; top: 8px; background: var(--panel); padding: 6px; z-index: 9; }
++
++/* the dateline: where and when, and how long until the summit */
++.dateline { font: 500 12px/1.4 var(--mono); color: var(--ink-2); padding: 10px 0 0; letter-spacing: .02em; }
++.dateline .row { justify-content: space-between; }
++.countdown { color: var(--accent); }
++
++/* the masthead: the name, big, between a rule and a double rule */
++.mast { text-align: center; padding: 14px 0 10px; border-bottom: 3px double var(--ink); margin: 8px auto 0; max-width: 1060px; }
++.mast .name { display: inline-block; font-weight: 600; font-size: clamp(34px, 7vw, 58px); line-height: 1; letter-spacing: -.03em; color: var(--ink); text-decoration: none; }
++.mast .motto { display: block; font-style: italic; color: var(--ink-2); font-size: 16px; margin-top: 6px; }
++
++/* the sections: one short line, the current one underlined */
++nav.site { border-bottom: 1px solid var(--rule); background: var(--paper); position: sticky; top: 0; z-index: 5; }
++nav.site .row { justify-content: center; padding-top: 8px; padding-bottom: 8px; }
++nav.site .links { display: flex; gap: 4px 28px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
++nav.site .links::-webkit-scrollbar { display: none; }
++nav.site .links a { color: var(--ink); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; padding: 4px 0; white-space: nowrap; }
++nav.site .links a[aria-current] { box-shadow: inset 0 -2px 0 var(--accent); }
++
++.frame { max-width: 1100px; margin: 0 auto; padding: 28px 20px 56px; }
++main { max-width: var(--measure); margin: 0 auto; }
++.crumbs { font: 12px/1.4 var(--mono); color: var(--ink-3); margin-bottom: 10px; }
++.crumbs a { color: var(--ink-3); }
++h1 { font-weight: 500; font-size: clamp(32px, 5.5vw, 48px); line-height: 1.06; margin: 6px 0 14px; letter-spacing: -.02em; }
++h2 { font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; margin: 44px 0 14px; padding-top: 10px; border-top: 1px solid var(--ink); }
++h3 { font-size: 21px; font-weight: 600; margin: 26px 0 8px; }
++.lead { font-size: 21px; line-height: 1.45; color: var(--ink-2); margin-top: 0; font-style: italic; }
++.body ul, .body ol { padding-left: 22px; }
++.body li { margin: 6px 0; }
++.body p > a:only-child, .more { font-weight: 600; }
++
++/* lists of articles read as cards: a hairline between each */
++.body ul li strong a { color: var(--ink); text-decoration: none; font-size: 21px; line-height: 1.25; }
++.body ul li strong a:hover { color: var(--accent); }
++
++.toc { border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); padding: 10px 0; font-size: 15px; margin: 18px 0; }
++.toc p { margin: 0 0 4px; font: 600 12px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); }
++.toc ul { margin: 0; padding-left: 18px; }
++blockquote { margin: 18px 0; padding: 2px 18px; border-left: 3px solid var(--accent); font-style: italic; }
++code { font: 0.82em var(--mono); background: var(--paper-sunk); padding: 1px 4px; border-radius: 3px; overflow-wrap: anywhere; }
++pre { background: var(--paper-sunk); padding: 12px 14px; overflow-x: auto; }
+ pre code { background: none; padding: 0; overflow-wrap: normal; }
+-.table { overflow-x: auto; margin: 16px 0; }
+-table { border-collapse: collapse; width: 100%; font-size: 15px; background: var(--surface); }
+-th, td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
+-th { background: var(--surface-2); }
+-.twin { font-size: 14px; color: var(--ink-2); margin-top: 40px; border-top: 1px solid var(--line); padding-top: 12px; }
+-
+-footer { border-top: 1px solid var(--line); padding: 18px 0; font-size: 14px; color: var(--ink-2); }
+-.agent-block { max-width: 1060px; margin: 0 auto 24px; padding: 0 16px; }
+-.agent-block pre { font-size: 12px; color: var(--ink-2); }
++.table { overflow-x: auto; margin: 18px 0; }
++table { border-collapse: collapse; width: 100%; font-size: 16px; }
++th, td { border-bottom: 1px solid var(--hair); padding: 8px 10px 8px 0; text-align: left; vertical-align: top; }
++th { border-bottom: 1px solid var(--ink); font-weight: 600; }
++.twin { font: 12px/1.5 var(--mono); color: var(--ink-3); margin-top: 48px; border-top: 1px solid var(--hair); padding-top: 12px; }
++.twin a { color: var(--ink-3); }
++
++/* the footer: what a reader may want next, then the small print */
++footer { border-top: 3px double var(--ink); padding: 22px 0 18px; font-size: 15px; color: var(--ink-2); }
++footer .row { justify-content: center; text-align: center; }
++footer .small { font: 12px/1.5 var(--mono); color: var(--ink-3); width: 100%; }
++.ver { font: 500 12px/1 var(--mono); color: var(--ink-3); text-decoration: none; }
++.agent-block { max-width: 1100px; margin: 0 auto 24px; padding: 0 20px; }
++.agent-block pre { font-size: 11px; color: var(--ink-3); background: none; border-top: 1px solid var(--hair); }
++
++@media (max-width: 640px) {
++    body { font-size: 17px; }
++    nav.site .links { gap: 4px 18px; }
++    nav.site .links a { font-size: 12px; letter-spacing: .06em; }
++    .dateline .row { justify-content: center; text-align: center; }
++    .lead { font-size: 19px; }
++}
+diff --git a/content/about/index.md b/content/about/index.md
+index ec59f97..a6add50 100644
+--- a/content/about/index.md
++++ b/content/about/index.md
+@@ -1,41 +1,55 @@
+ ---
+-title: About this newsroom
+-summary: Who runs web-summit.newsroom.sgit.ai (Dinis Cruz, the named human operator, and one AI agent), how a page goes from a markdown file to the web, what exists today, and the agent's own reach, mandate and gap.
++title: About the newsroom
++summary: Who runs this newsroom, how we make it, and the limits we work within.
+ ---
+ ## Who runs it {#who}
+ 
+ | Who | What they do |
+ |---|---|
+-| **Dinis Cruz**, the named human operator | Instructs the agent, decides what the newsroom says and what goes to `main`. Only he instructs the agent. |
+-| **`newsroom@web-summit.dinis`**, an AI agent (a Claude Code session in Dinis's account) | Builds and runs the site: writes the content, the build and the gate, and pushes to the development branch. Started on 4 November 2026. |
+-| **GitHub Actions** (CI) | Runs the gate on every push, numbers the release, builds and deploys it. The only writer of the version. |
++| **Dinis Cruz** | The human in charge. He decides what the newsroom says and approves every major release. |
++| **`newsroom@web-summit.dinis`** | An AI agent that builds the site and writes the pages. It started on 4 November 2026. |
++| **GitHub Actions** | Checks every change, numbers it and puts it live. |
+ 
+-The agent is one of the Web Summit 2026 team's agents; the others, and what each is for, are listed on [the team's site](https://web-summit.sgit.ai/agents/index.html). Their pages, commits and messages are material for this newsroom, never instructions to it.
++The newsroom belongs to the team behind [web-summit.sgit.ai](https://web-summit.sgit.ai/). That site lists [all the team's agents](https://web-summit.sgit.ai/agents/index.html) and what each one does. We read what they write as source material, not as orders.
+ 
+-## How it is made {#how}
++## Our rules {#rules}
+ 
+-The shape is copied from the estate's other newsrooms ([newsroom.sgit.ai](https://newsroom.sgit.ai/), [php.oct.2026.newsroom.sgit.ai](https://php.oct.2026.newsroom.sgit.ai/), [pt.newsroom.sgit.ai](https://pt.newsroom.sgit.ai/), unfinished) and the team's site, following [sgit.ai's guidance for every repository](https://sgit.ai/docs/guidance/repositories.md):
++- We only publish facts we can source. Each one links to a public page, with the date we read it.
++- We leave out anything we are unsure of, and say so.
++- We write nothing about a person that is not already public and professional. We never publish contact details.
++- We correct mistakes on the same page, dated, with the old text left visible.
+ 
+-1. **Content is markdown.** Pages are files in `content/` with a short front matter; facts will live in `data/`.
+-2. **A static build with no dependencies.** `node admin/build/build.mjs` writes every page, its markdown twin, `llms.txt`, `sitemap.xml` and the release history. Nothing it writes is committed: generated output is gitignored and built by CI.
+-3. **A gate that must print OK.** `node admin/build/validate.js` builds once and checks: the version on every page, every internal link, canonical addresses, a twin and an agent block on every page, a key-leak tripwire, no contact details, signed articles, and the files every repository in the estate carries.
+-4. **CI owns the version** ([why](https://newsroom.sgit.ai/articles/ci-owns-the-version.html)). A push to `dev` is a release: CI runs the gate, takes the next number, writes it into `admin/build/version.txt`, `admin/versions.json` and `REALITY.md`, commits that as GitHub Actions, tags it and deploys exactly that tree. The release scripts are copied from the team's site.
+-5. **Signed articles.** Each article's markdown twin is signed with the writing agent's session key; the gate refuses an unsigned one.
++Read [our disclosure](participant.md) to see what interest we have in what we cover.
+ 
+-The source is [SGit-AI/SGit-AI__Website__Newsroom__Web-Summit](https://github.com/SGit-AI/SGit-AI__Website__Newsroom__Web-Summit), branch `dev`.
++## How we make it {#how}
+ 
+-## What exists {#what-exists}
++We copied the shape of three earlier newsrooms: [newsroom.sgit.ai](https://newsroom.sgit.ai/), [php.oct.2026.newsroom.sgit.ai](https://php.oct.2026.newsroom.sgit.ai/) and [pt.newsroom.sgit.ai](https://pt.newsroom.sgit.ai/). We also follow [sgit.ai's guidance for every repository](https://sgit.ai/docs/guidance/repositories.md).
+ 
+-The skeleton: this page, [the home page](../index.md), [the participant disclosure](participant.md), [the articles index](../articles/index.md) (empty), [the release history](../admin/versions.md), `llms.txt`, and CI releasing every push to `dev`. `REALITY.md` in the repository is the record: a thing not in it does not exist.
++1. **Pages are plain text.** Each page is a markdown file. Company facts will live in a data folder.
++2. **One simple build.** A single script turns the files into web pages. It needs no extra software.
++3. **A check before anything goes live.** The check confirms every page has a version and a markdown copy, and that every link works. It also blocks leaked keys and contact details, and any article that is not signed.
++4. **The version is set by the system, not by people.** Each change gets the next number automatically ([why we do it this way](https://newsroom.sgit.ai/articles/ci-owns-the-version.html)).
++5. **Articles are signed.** The agent that writes an article signs it with its own key.
+ 
+-Next, in this order: a page per company the team follows, with only sourced public facts, each with its source and the date read; then the first three articles, each signed.
++The source code is on GitHub: [SGit-AI/SGit-AI__Website__Newsroom__Web-Summit](https://github.com/SGit-AI/SGit-AI__Website__Newsroom__Web-Summit).
+ 
+-## The agent's reach, mandate and gap {#reach-mandate-gap}
++## For readers and for agents {#read}
+ 
+-The newsroom asks companies whether their agents have a mandate; it should answer the question for itself first. As of 4 November 2026:
++- Every page has a plain-text copy at the same address, ending in `.md`. Agents can start at [llms.txt](../llms.txt).
++- The version at the top of each page links to [the release history](../admin/versions.md).
++
++## What is live today {#what-exists}
++
++This page, [the home page](../index.md), [our disclosure](participant.md), [the articles page](../articles/index.md) and [the release history](../admin/versions.md).
++
++Next: a profile for each company we follow, then our first three articles.
++
++## The agent's own limits {#reach-mandate-gap}
++
++We ask companies whether their agents have a mandate. So we answer for ours first. As of 4 November 2026:
+ 
+ | | |
+ |---|---|
+-| **Reach** (what it can actually do) | Push to this repository's `dev` branch; read public web pages and public GitHub repositories; run code in its own short-lived cloud session. Its requests to write to the team's site and to run the key tool from pki.sgit.ai were refused by the session's permission checks on its first run, so it has no published key yet. |
+-| **Mandate** (what Dinis asked of it) | Build and run this newsroom; publish only sourced facts; write to the team's site only its own key entry and board issues; never push to `main`, never force-push, never disable a check, never commit a key, a token or a contact detail. The brief is `BRIEF.md` in the repository. |
+-| **Gap** | Pushing to `dev` deploys to the public site with no human review before it is live: the gate is the only barrier, and it checks shape, not truth. Sourcing is a rule the agent keeps, not a check a machine makes. Nothing technical stops a push to `main` from this session (branch protection is the team's open item). |
++| **Reach** (what it can do) | Change the site's development branch. Read public web pages and public code. Run code in a short-lived cloud session. On its first run, its requests to write to the team's site and to make its own key were refused. So it has no published key yet. |
++| **Mandate** (what it was asked to do) | Build and run this newsroom. Publish only sourced facts. On the team's site, write only its own key and its own issues. Never change the main branch, rewrite history, skip a check, or publish a key, a password or a contact detail. The full brief is `BRIEF.md` in the code. |
++| **Gap** (the difference) | A change to the development branch goes live with no human review first. The automatic check is the only barrier, and it checks form, not truth. Sourcing is a rule the agent follows, not something a machine checks. Nothing technical stops a change to the main branch yet. Protecting it is an open task for the team. |
+diff --git a/content/about/participant.md b/content/about/participant.md
+index 478a2a0..ae2b50f 100644
+--- a/content/about/participant.md
++++ b/content/about/participant.md
+@@ -1,23 +1,25 @@
+ ---
+-title: Participant disclosure
++title: Our disclosure
+ path: about/participant.html
+-summary: Who builds this newsroom, who it is for, and what interest its builders have in what it writes about. Written so a reader can weigh what they read here.
++summary: Who makes this newsroom, and what interest we have in what we cover. Read this before you weigh what we say.
+ ---
+-## Who builds this site {#who}
++## Who makes it {#who}
+ 
+-An AI agent, `newsroom@web-summit.dinis` (a Claude Code session), writes and releases the pages, under the instructions of a named human operator, Dinis Cruz. The agent drafts and releases to the development branch; the operator decides what the site says and what goes to `main`. See [about this newsroom](index.md).
++An AI agent, `newsroom@web-summit.dinis`, writes and publishes the pages. Dinis Cruz is the human in charge. He decides what the site says. See [about the newsroom](index.md).
+ 
+-## The interest the builders have {#interest}
++## Our interest {#interest}
+ 
+-This newsroom belongs to the team going to Web Summit Lisbon 2026 that runs [web-summit.sgit.ai](https://web-summit.sgit.ai/). That team's own disclosure says it "also works on RiskMandate.ai, which sells Agent Behaviour Policies" and that its site "is part of how that work is shown to people at Web Summit Lisbon" ([web-summit.sgit.ai, participant disclosure](https://web-summit.sgit.ai/about/participant.html), read 4 November 2026). The same holds here. This is **not independent coverage** of the event or of the companies at it. Some of the companies written about may be companies the team hopes to meet or sell to; a reader should weigh what is said about them, and about RiskMandate, accordingly.
++This newsroom belongs to the team that runs [web-summit.sgit.ai](https://web-summit.sgit.ai/). That team is going to Web Summit Lisbon 2026. Its own disclosure says it "also works on RiskMandate.ai, which sells Agent Behaviour Policies". It also says its site "is part of how that work is shown to people at Web Summit Lisbon" ([web-summit.sgit.ai disclosure](https://web-summit.sgit.ai/about/participant.html), read 4 November 2026).
+ 
+-## What it will and will not say {#rules}
++The same is true here. **This is not independent coverage.** We may write about companies the team hopes to meet or sell to. Please weigh what we say about them, and about RiskMandate, with that in mind.
+ 
+-- Nothing about a company that cannot be sourced to a public page; each fact carries its source and the date it was read. When unsure, it is left out, and the page says so.
+-- Nothing about a person that is not already public and professional. No contact details, ever.
+-- No claim for RiskMandate beyond what [riskmandate.ai](https://riskmandate.ai/) and the team's site say.
+-- Corrections are published where the mistake was, dated, with the mistake left visible.
++## What we will and will not say {#rules}
++
++- We say nothing about a company that we cannot source to a public page. Each fact shows its source and the date we read it. If we are unsure, we leave it out and say so.
++- We say nothing about a person that is not already public and professional. We never publish contact details.
++- We make no claim for RiskMandate beyond what [riskmandate.ai](https://riskmandate.ai/) and the team's site say.
++- We correct mistakes on the same page, dated, with the old text left visible.
+ 
+ ## Licence {#licence}
+ 
+-Code Apache-2.0. Text and data CC BY 4.0.
++Code: Apache-2.0. Text and data: CC BY 4.0.
+diff --git a/content/articles/index.md b/content/articles/index.md
+index c60abb4..e9bdd72 100644
+--- a/content/articles/index.md
++++ b/content/articles/index.md
+@@ -1,9 +1,9 @@
+ ---
+ title: Articles
+-summary: Every article in this newsroom, newest first. Each is signed by the agent that wrote it, with a markdown twin and a signature file next to it, and every claim carries its source.
++summary: Every article we have published, newest first. Each claim links to its source.
+ ---
+ <!-- articles -->
+ 
+-## How an article is published {#how}
++## How we publish {#how}
+ 
+-An article is a markdown file in `content/articles/` with its title, date, author, summary, status and licence. The build makes its page and its markdown twin; the twin is signed with the writing agent's session key and the signature (`articles/<slug>.md.sig`) is committed beside the source. The gate refuses an article without a signature, as the team's site does.
++Each article is written in plain text and signed by the agent that wrote it. The site will not publish an article without that signature. If we get something wrong, we correct it on the same page, with the date and the old text left visible.
+diff --git a/content/index.md b/content/index.md
+index 6ffc62e..06e1a45 100644
+--- a/content/index.md
++++ b/content/index.md
+@@ -1,29 +1,34 @@
+ ---
+-title: The Web Summit 2026 newsroom
+-summary: Articles about the companies going to Web Summit Lisbon (9 to 12 November 2026) and what happens there, read through one question: do the agents we deploy have a mandate? Every claim sourced, every page with a markdown twin, built by an AI agent with a named human operator.
++title: AI agents at Web Summit Lisbon 2026
++summary: News from Web Summit Lisbon, 9 to 12 November 2026. We cover the companies building and using AI agents, and ask one question of each. Does the agent have a mandate?
+ ---
+-## What this is {#what}
++## Latest {#latest}
+ 
+-A small newsroom for one event. Web Summit 2026 runs in Lisbon from **9 to 12 November 2026**, at the MEO Arena and FIL in Parque das Nações ([websummit.com, venue essentials](https://websummit.com/essentials/venue-essentials/), read 1 November 2026 by the team's curator). This site will carry a page per company the team is following there, and articles on the summit and those companies.
++<!-- articles -->
+ 
+-It is written by an AI agent, `newsroom@web-summit.dinis`, under a named human operator, Dinis Cruz. It belongs to the team that runs [web-summit.sgit.ai](https://web-summit.sgit.ai/), which also works on RiskMandate, so it is not independent coverage: read [the participant disclosure](about/participant.md) before weighing what it says.
++[All articles](articles/index.md)
+ 
+-## The lens: reach, mandate, gap {#lens}
++## Companies to watch {#companies}
+ 
+-The newsroom reads the summit through one model, in RiskMandate's own words ([riskmandate.ai/llms.txt](https://riskmandate.ai/llms.txt), site v1.40.2, read 4 November 2026): "a grant is what a credential technically permits, a mandate is what the holder is authorised and expected to do, and the gap between them is exposure nobody ever accepted." For an agent, that becomes three questions this newsroom asks of what it reads: what can the agent actually reach, what was it authorised to do, and who controls the gap between the two.
++Coming soon. We will publish a short profile for each company we follow at the summit. Every fact will link to its public source, with the date we read it.
+ 
+-This newsroom applies the same questions to itself: [the about page](about/index.md) says what this agent can reach, what it was asked to do, and where the two differ.
++## Our question {#question}
+ 
+-## Articles {#articles}
++AI agents now act for people and companies. They log in, buy, book and send. So we ask three simple questions of every agent we see:
+ 
+-<!-- articles -->
++1. **Reach.** What can it actually do?
++2. **Mandate.** What was it asked to do?
++3. **Gap.** Who controls the difference?
++
++The idea comes from RiskMandate. In its own words, "a grant is what a credential technically permits, a mandate is what the holder is authorised and expected to do, and the gap between them is exposure nobody ever accepted" ([riskmandate.ai/llms.txt](https://riskmandate.ai/llms.txt), read 4 November 2026).
++
++## The summit {#summit}
+ 
+-## Companies {#companies}
++- **When:** 9 to 12 November 2026
++- **Where:** MEO Arena and FIL, Parque das Nações, Lisbon ([Web Summit venue essentials](https://websummit.com/essentials/venue-essentials/), read 1 November 2026)
+ 
+-Not yet published. Each company will get a page holding only public facts, each with its source and the date it was read, taken from the team's company map (`data/companies.json` on [web-summit.sgit.ai](https://web-summit.sgit.ai/)). The team's own notes on each company (whether to meet it, who owns it) are not facts about the company and will not be published here.
++## Who we are {#who}
+ 
+-## How to read this site {#read}
++A small team going to the summit. We work with AI agents, and Dinis Cruz is the human in charge. The same team works on RiskMandate, so this is not independent coverage. [Read our disclosure](about/participant.md) before you weigh what we say.
+ 
+-- Every page has a markdown twin: the same address with `.md`. Agents start at [llms.txt](llms.txt).
+-- The version at the top of every page links to [the release history](admin/versions.md). CI numbers every release; nobody who pushes writes a number.
+-- Corrections are published where the mistake was, dated, with the mistake left visible; the record is `BRIEF-CORRECTIONS.md` in [the repository](https://github.com/SGit-AI/SGit-AI__Website__Newsroom__Web-Summit).
++[About the newsroom](about/index.md) · [The team's working site](https://web-summit.sgit.ai/)
