@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.236",
+    "date": "2026-11-04",
+    "what": "the 08:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "4d941e9f8"
+  },
+  {
     "version": "v0.2.235",
     "date": "2026-11-04",
     "what": "the policy studio's Vaults tools (WS-137, E3): read the team's vaults, make a vault, write into it, hand out its read key",
