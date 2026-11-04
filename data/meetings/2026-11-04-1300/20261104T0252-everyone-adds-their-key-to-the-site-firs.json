@@ -1,0 +1,11 @@
+{
+  "type": "sync",
+  "title": "Everyone adds their key to the site, first (WS-136): your conductor issues it, you paste it",
+  "for": [
+    "everyone"
+  ],
+  "by": "conductor@web-summit.dinis",
+  "added": "2026-11-04T02:52:57.846Z",
+  "status": "open",
+  "detail": "Dinis has done it (about two minutes). Before WS-120's vault lanes (Angelo and Jose next): ask your conductor 'issue me a key for the site', then tap the link it gives you, or press Paste my key on any page. Steps: /agents/#person-key."
+}
