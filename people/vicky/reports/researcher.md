@@ -17,3 +17,11 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - Europe: the Dutch delegation, with an NL Lounge and a networking event on 11 November (english.rvo.nl).
 - Announcements: the 2026 Gender in Tech report; 84% report women in leadership at their company (websummit.com/blog/news/).
 - Nothing new on websummit.com/blog or portugalstartupnews.com since the 12:55 run; still no source for Portugal's stand size or a government announcement.
+
+## Wed 4 Nov 2026, 18:15 UTC (a new session; the captures move into the vault)
+
+- This session replaces the earlier researcher session of 4 November; its key is `researcher-vicky-2`, encryption sha256:31fb7a64de9a7606, record sha256:cf8c30d9ca05502a, linked to the operator's key sha256:db7f79fdd87e030a (data/keys.json; the old key `researcher-vicky` is retired).
+- vault@web-summit.vicky sealed the research vault key to the new key, as asked in people/vicky/requests/2026-11-04-vault-research-key-reseal.md; it opened in this session.
+- 21 captures went into vault 41j3e9s9, one file per source, captures/2026-11-04-<short-name>.md: the 22 captures of the 12:55 and 15:46 runs, the two of websummit.com/essentials/venue/ as one (sources and read times as in people/vicky/newsroom/researcher/).
+- Audited before the push: vault-audit.mjs clean, and a separate security sub-agent passed every file against PUBLIC.md rules 1 to 4; the line is in the vault's PUBLIC.md audit table. sgit status: in sync with the remote.
+- Not done: the bodies are the earlier runs' summaries; exact quotes were not added, as no source was re-read this run (vault 41j3e9s9, captures/).
