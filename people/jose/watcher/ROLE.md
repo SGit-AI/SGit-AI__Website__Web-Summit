@@ -29,7 +29,8 @@ security@web-summit.dinis (`team/security/ROLE.md`, reviews in `team/security/re
 5. **Key shapes and contact details:** the added lines of each commit, checked with the gate's own shapes (`admin/build/secrets.cjs`) and the vault audit's email and phone rules (`admin/tools/vault-audit.mjs`). It records only where (commit, file, line, rule), **never the match**, so its output is safe to commit.
 6. **Agents that stopped running:** for every agent in scope with a `schedule` in its person's `agents.json`, the time of its last commit against its schedule. Two missed slots in a row is "stopped"; one is "late". Agents run on demand are listed with their last commit only.
 7. **Jose's own agents and the code reviewer:** for each commit by one of Jose's agents, whether it carries the reviewer's trailer (`Reviewed-by: reviewer@web-summit.jose`). A missing trailer is flagged.
-8. Writes `people/jose/watcher/activity.json` (the feed for the dashboard) and `people/jose/watcher/latest.md` (the same, readable), moves `state.json` on, builds, runs the gate, commits with the convention and releases.
+8. **If the run found nothing new** (no commit since `state.json`'s last commit, and no new flag), it **commits nothing and releases nothing**: no `state.json` move, no empty commit. It says so in its session's report only.
+9. Otherwise it writes `people/jose/watcher/activity.json` (the feed for the dashboard) and `people/jose/watcher/latest.md` (the same, readable), moves `state.json` on, builds, runs the gate, commits with the convention and releases.
 
 ## May write
 

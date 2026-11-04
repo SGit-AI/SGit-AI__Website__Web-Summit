@@ -6,6 +6,7 @@
   "status": "draft, not started",
   "drafted_by": "vault@web-summit.jose, 4 November 2026, at Jose's word, for Jose to agree",
   "agreed_by": null,
+  "on_nothing_new": "commit nothing and release nothing (no state.json move, no empty commit), at Jose's word, 4 November 2026",
   "scope_decision": "pending: stand-up 2026-11-04-1300 (jose-only | team read-only, recommended | team able to hold); until then, Jose's agents only",
   "mandate": {
     "wanted": [
