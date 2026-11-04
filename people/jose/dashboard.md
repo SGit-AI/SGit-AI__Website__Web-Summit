@@ -8,14 +8,13 @@ Kept by `dashboard@web-summit.jose` from [the builder template](../../dashboards
 
 ## What needs me {#needs}
 
-Your conductor's latest is [brief 4](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-03T1725Z.pdf) (17:25), with options and a recommendation for each. Your sizes are in (WS-130 done) and the roster item is merged into WS-09, so neither needs you now.
+Your conductor's latest is [brief 5](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04T0725Z.pdf) (07:25), with options and a recommendation for each:
 
-- **WS-39, which route (due Wednesday 4 November):** still open, and your dev agent, your designer and your mentor all wait on it: drafts to you that you forward (works today), Slack once someone with admin makes the app, or a gateway on a WhatsApp Web session (ban risk). The findings: [WS-39-findings.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/WS-39-findings.md).
-- **Your evening pulse:** none yet today; your conductor has a draft and needs one "feeling" line from you.
-- **L6, your first vault:** `vault@web-summit.jose` is running and has its key; L6 counts once it makes and publishes a vault ([your vault agent](../../vault-agent/index.html), WS-120).
-- **Your mentor's suggestion:** a "ran without a prompt" line in every scheduled commit, so the two-day clock to its handover can be read from git. It covers me too: say yes or no and I follow.
-- **Your designer's pick:** a direction for your command centre and a broadcast look, in [people/jose/design](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/design/README.md).
-
+- **Say at 13:00: your watcher's scope (WS-134):** your agents only, the whole team read-only, or the whole team able to hold.
+- **Approve: the split with Angelo:** your conductor's recommendation is in brief 5 and [the morning list](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04-morning.md).
+- **Do: add your key to the site, phone and laptop (WS-136, by 18:00):** the file your conductor sent at 02:08, then "Paste my key"; your For-you panel should say "Unlocked".
+- **WS-39, route 3 is built:** your dev agent made an n8n workflow you can import, inactive until you fill in the number and credential yourself; what to fill in is at the top of [WS-39-findings.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/WS-39-findings.md).
+- **Your mentor's suggestion, still open:** a "ran without a prompt" line in every scheduled commit; yes or no, and your agents follow.
 - **Turn on Ask Claude in [your command centre](app/index.html#ask)** (Jose, 4 November: yes, as Dinis has it). Three steps:
   1. **Your conductor** adds an `llm` block to `people/jose/app/config.json`, copied from Dinis's (OpenRouter, Sonnet 5.5 by default), and releases.
   2. **You** make a key just for this page at openrouter.ai/settings/keys, **with a small credit limit**.
@@ -61,5 +60,7 @@ The list with jobs and schedules is [agents.json](https://github.com/SGit-AI/SGi
 - **dashboard@web-summit.jose**: keeps this part of the page, before each stand-up.
 - **dev@web-summit.jose**: WS-39 (the broadcast drafts for your n8n flow) and WS-74; its work and findings are in [people/jose/dev](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/README.md).
 - **designer@web-summit.jose**: on demand; its work is in [people/jose/design](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/design/README.md).
-- **vault@web-summit.jose**: creates and manages your SGit vaults (WS-120); started 3 November, key published, no vault yet.
+- **vault@web-summit.jose**: creates and manages your SGit vaults (WS-120); your first, the "Reach, Mandate, Gap" vault app, is on [the vaults page](../../vaults/index.html).
+- **reviewer@web-summit.jose**: reviews every push by your agents before it goes out, and may hold them ([its role](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/reviewer/ROLE.md)); started 4 November at your word.
+- **watcher@web-summit.jose**: read-only, reports who committed and what to look at; its scope is your 13:00 decision.
 - Still only proposed in your brief: `automation@web-summit.jose` (dev is doing WS-39 for now) and `helper@web-summit.jose` (WS-35).
