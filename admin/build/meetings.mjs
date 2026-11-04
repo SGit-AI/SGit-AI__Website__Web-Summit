@@ -58,9 +58,16 @@ export function buildMeetings({ ROOT, C, PEOPLE, ISSUES, write, page, render, tw
     const upcoming = s => s.day >= today
     for (const s of show) {
         const list = C.agenda(s.id), people = PEOPLE()
-        const md = `${s.day} at ${s.time} UTC (Lisbon). Decisions first, then questions, ideas and quick syncs. Read your briefing before.\n\n## Agenda {#agenda}\n\n${agendaMd(list)}\n\n## Everyone's briefing {#briefings}\n\n${upcoming(s) ? people.map(p => `- [${p.name}](${p.id}/index.html): ${list.filter(x => x.status === 'open' && forMe(x, p.id)).length} items for them`).join('\n') : 'This stand-up has passed. Briefings are built for the stand-ups still to come; the agenda above is the record.'}`
+        const md = `${s.day} at ${s.time} UTC (Lisbon). Decisions first, then questions, ideas and quick syncs. Read your briefing before.\n\n## Agenda {#agenda}\n\n${agendaMd(list)}\n\n## Everyone's briefing {#briefings}\n\n${upcoming(s) ? people.map(p => `- [${p.name}](${p.id}/index.html): ${list.filter(x => x.status === 'open' && forMe(x, p.id)).length} items for them`).join('\n') : `This stand-up has passed: the agenda above is the record. Briefings are built for the stand-ups still to come; these addresses now point there: ${people.map(p => `[${p.name.split(' ')[0]}](${p.id}/index.html)`).join(' · ')}.`}`
         const r = `meetings/${s.id}/index.html`, t = `Stand-up, ${s.day} ${s.time}`
         write(r, page({ rel: r, title: t, description: `The agenda for the ${s.day} ${s.time} stand-up.`, body: render(md), mdTwin: r.replace(/\.html$/, '.md') })); pages.push({ rel: r, title: t, description: `The agenda for the ${s.day} ${s.time} stand-up.` }); twin(r, t, `The agenda for the ${s.day} ${s.time} stand-up.`, md)
+        // a past day's briefing addresses still resolve, to a short page with no numbers on it: links to them in anyone's
+        // text must not turn the gate red at midnight (they did on 4 November, until the conductor fixed one by hand)
+        if (!upcoming(s)) for (const p of people) {
+            const pr = `meetings/${s.id}/${p.id}/index.html`, pt = `${p.name.split(' ')[0]}'s briefing: stand-up ${s.day} ${s.time} (passed)`
+            const bmd = `This briefing was for the stand-up on ${s.day} at ${s.time} UTC, which has passed. Briefings are built only for the stand-ups still to come, because their numbers are worked out when the site is built.\n\n- [What was on that stand-up's agenda](../index.html)\n- [${p.name.split(' ')[0]}'s briefing for the next stand-up, ${nx.day} ${nx.time}](../../${nx.id}/${p.id}/index.html)`
+            write(pr, page({ rel: pr, title: pt, description: `A briefing for a stand-up that has passed.`, body: render(bmd), mdTwin: pr.replace(/\.html$/, '.md') })); pages.push({ rel: pr, title: pt, description: 'A briefing for a stand-up that has passed.' }); twin(pr, pt, 'A briefing for a stand-up that has passed.', bmd)
+        }
         for (const p of upcoming(s) ? people : []) {
             const mine = list.filter(x => x.status === 'open' && forMe(x, p.id)), first = p.name.split(' ')[0]
             const iss = ISSUES.issues.filter(x => x.status !== 'done' && (x.for.includes(p.id) || (p.core && x.for.includes('everyone'))) && dueSoon(x.due, s.day))

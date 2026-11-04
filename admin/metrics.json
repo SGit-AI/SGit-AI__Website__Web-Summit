@@ -172,6 +172,15 @@
       "generated_files": 1003,
       "repo_pack_mib": 58,
       "validate_seconds": 3.02
+    },
+    {
+      "date": "2026-11-04",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass 14: fixes pass 13's time bomb. Dropping past briefings at midnight broke a dashboard link and turned the gate red for every push until the conductor fixed the link. A past briefing's address now resolves to a short page (no numbers), linked from its stand-up's page; checked green as of 5 Nov 00:30 and 6 Nov 09:00 (BUILD_NOW). Pass 13's file saving is mostly given back: 18 small files per past stand-up instead of 27.",
+      "pages": 391,
+      "generated_files": 1172,
+      "validate_seconds": 3.05
     }
   ]
 }
