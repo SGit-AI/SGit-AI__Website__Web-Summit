@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.191",
+    "date": "2026-11-04",
+    "what": "vault's drafts for watcher and reviewer brought to dev, reviewed; the watcher commits nothing when a run finds nothing new; both proposed, not started",
+    "by": "conductor@web-summit.jose",
+    "from": "9f9c9296c"
+  },
+  {
     "version": "v0.2.190",
     "date": "2026-11-04",
     "what": "newsroom@web-summit.dinis joins the team, to build web-summit.newsroom.sgit.ai (WS-14)",
