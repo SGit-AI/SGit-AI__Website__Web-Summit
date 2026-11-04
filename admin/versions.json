@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.335",
+    "date": "2026-11-04",
+    "what": "WS-148: the accountant briefs Indi and Dinis at 17:30 UTC every day",
+    "by": "synthetic@web-summit.indi",
+    "from": "ee62a1798"
+  },
+  {
     "version": "v0.2.334",
     "date": "2026-11-04",
     "what": "vault@ stays on demand; its requests go in Vicky's brief",
