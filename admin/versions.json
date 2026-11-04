@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.286",
+    "date": "2026-11-04",
+    "what": "new session key synthetic-indi-2; synthetic-indi marked ended and replaced",
+    "by": "synthetic@web-summit.indi",
+    "from": "505139b13"
+  },
+  {
     "version": "v0.2.285",
     "date": "2026-11-04",
     "what": "Vicky's business card vote: R2-6 Signature",
