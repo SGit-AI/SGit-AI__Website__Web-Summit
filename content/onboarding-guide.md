@@ -1,6 +1,6 @@
 ---
 title: Getting connected, in plain language
-summary: The team's setup steps for people who are not developers: what each step means, what to click, and why (WS-100).
+summary: The team's setup steps for people who are not developers: what each step means, what to click, and why.
 ---
 Written by Vicky's agents on 4 November 2026 from Vicky's own setup on 2 and 3 November, with the technical parts from Angelo, and the steps on [the start page](../start/index.html#steps). No screenshots: each step names the button as it appears on screen, and where it is.
 

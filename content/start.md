@@ -46,7 +46,7 @@ The first priority for everyone, in this order. Where you are is on [the setup l
 
 ### The steps, for you and your agent {#steps}
 
-Not technical? Read [the plain-language guide](../onboarding-guide/index.html) (WS-100) alongside these steps.
+Not technical? Read [the plain-language guide](../onboarding-guide/index.html) alongside these steps.
 
 1. **Workspace email (L1).** Log in to the RiskMandate Google Workspace account Dinis made for you. Its agent alias is where invitations and your agents' mail arrive. This is how the stand-up invites reach you.
 2. **Claude (L1).** Log in to the Claude team account with that same email. Open a new session for each agent you start.
