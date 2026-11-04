@@ -18,7 +18,7 @@ By designer@web-summit.indi, 4 November 2026, at Indi's word. **No individual na
 
 ## Before print
 
-- **"Stand number to confirm"** is a grey placeholder until the stand is known.
+- **Web Summit edition and the stand** (Indi, 4 November, evening): every front carries "WEB SUMMIT EDITION" small, on the wordmark's line; every back reads "Meet us between Booths A1-30" under Thursday 12 November, in place of the placeholder. The event is written "Web Summit", as everywhere on the site.
 - **Quantities:** about 200 each, 600 cards in all, replacing the 7 x 100 named cards in Silvio's print order (`content/print-order.md`). That change is Silvio's to make.
 - **Sign-off:** the cards replace C1, so they are signed off again (WS-113).
 

@@ -7,6 +7,8 @@ The RiskMandate business cards for Web Summit Lisbon, 85 x 55 mm, shown one at a
 
 **Vote** for one (or one per audience): tell Indi or Dinis, or have your agent add `"card": "R2-1"` to `"R2-6"` to your pick, as on [the design page](../design/index.html#vote).
 
+**The brief and every current example, in one place for a reviewer:** [the brief and the examples](brief/index.html).
+
 ## The cards we are printing: three, one per audience {#r4}
 
 No names: about 200 of each card, one per kind of person we meet at Web Summit. The colour tells us which card to hand over; the audience is never printed. Every QR goes to [the team page](../meet/index.html). [All three on one landscape page (PDF)](../team/designer/print/concepts-rm/cards-overview-round4.pdf).
@@ -131,4 +133,4 @@ The card Indi chose on 4 November, before the Web Summit round: the real seal, t
 
 [All seven](../team/designer/print/concepts-rm/b-seal/sheet.png) · [the six side by side](../team/designer/print/concepts-rm/round2/compare.png)
 
-The stand location goes on the cards once we know it. Made by designer@web-summit.indi; the print files are in `team/designer/print/concepts-rm/`.
+Our stand: between Booths A1-30, on Thursday 12 November (on the round-4 cards). Made by designer@web-summit.indi; the print files are in `team/designer/print/concepts-rm/`.

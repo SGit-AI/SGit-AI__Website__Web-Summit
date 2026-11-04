@@ -26,6 +26,10 @@ CONTAINER, INK, TEXT, FG, WHITE, MUTED = r2.CONTAINER, r2.INK, r2.TEXT, r2.FG, r
 GREEN, BLUE = r2.GREEN, r2.BLUE
 COPY = r3.COPY
 TEAM_URL = 'https://web-summit.sgit.ai/meet/'
+# Indi, 4 November, evening: "add 'WebSummit Edition' small font to the front and Meet us between Booths A1-30 on Thursday
+# (12th)". The event's name is written as the rest of the site has it (Web Summit, two words); the day is already on the card.
+EDITION = 'WEB SUMMIT EDITION'
+STAND = 'Meet us between Booths A1-30'
 FINAL = {p['id']: p for p in json.load(open(os.path.join(mc.ROOT, 'team/designer/print/final.json')))['people']}
 
 # the three cards: the chosen pairs, read from the shirt fronts they come from; the main line set in three card-width lines
@@ -59,6 +63,7 @@ def front(a):
     for i, l in enumerate(ls): s.text(l, fam, wt, size, x, 9 + ch + i * size * 0.98, FG, 'headline')
     s.text(a['tagline'], G, 500, 9 * PT, x, 44, FG, 'tagline')
     s.wordmark(x, 50.6, 2.8, FG)
+    s.text(EDITION, JB, 500, 7 * PT, 84, 50.6 + 2.8 / 2, FG, 'event', 'end')   # small, on the wordmark's baseline, right
     return s, size
 
 def back(a):
@@ -71,7 +76,7 @@ def back(a):
     lines(s, wrap(COPY['badge_tail'], G, 400, 7.5 * PT, 38), G, 400, 7.5 * PT, x, 27.8, 3.5, TEXT, 'register')
     s.text('WEB SUMMIT LISBON', JB, 500, 7 * PT, x, 41.4, MUTED, 'event')
     s.text('Thursday 12 November', BC, 700, 11 * PT, x, 46.6, INK, 'event')
-    s.text(r3.STAND_TBC, G, 500, 7 * PT, x, 50.6, MUTED, 'tbc')
+    s.text(STAND, G, 600, 7 * PT, x, 50.6, INK, 'event')
     team_qr(s, SAFE[2] - QR_PANEL, (61 - QR_PANEL) / 2 - 2.5)                     # its own white panel on the colour
     s.text('web-summit.sgit.ai/meet/', G, 500, 7 * PT, SAFE[2], (61 + QR_PANEL) / 2 + 3.6, FG, 'url', 'end', on=a['colour'])   # right edge on the QR's
     return s
