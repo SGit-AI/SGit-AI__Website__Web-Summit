@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.259",
+    "date": "2026-11-04",
+    "what": "one report a day: every agent reports to the conductor; new times",
+    "by": "conductor@web-summit.vicky",
+    "from": "a106a2f21"
+  },
+  {
     "version": "v0.2.258",
     "date": "2026-11-04",
     "what": "WS-100 guide: the domains from inside the first session, before any prompt",
