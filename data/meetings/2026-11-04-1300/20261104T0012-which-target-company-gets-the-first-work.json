@@ -1,0 +1,14 @@
+{
+  "type": "question",
+  "title": "Which target company gets the first worked ABP?",
+  "for": [
+    "indi",
+    "nimay"
+  ],
+  "by": "abp@web-summit.dinis",
+  "added": "2026-11-04T00:12:59.468Z",
+  "status": "open",
+  "detail": "abp@web-summit.dinis's section: one worked ABP per target company in the factory (WS-27), once Nimay or Indi names the company. The factory has 28 'meet' companies (people/indi/factory/). Name one or three to start, and where it should live (the company's factory page, or content/abp/).",
+  "recommend": "Start with one whose agents act for its customers and whose public docs say what they can do, so the Reach can be sourced, not guessed.",
+  "issue": "WS-27"
+}

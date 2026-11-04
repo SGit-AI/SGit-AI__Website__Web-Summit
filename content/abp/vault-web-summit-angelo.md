@@ -31,6 +31,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 
 - **Since 16:00:** it published the read key of Angelo's first public vault, ucvg2pkv (3f4bfc8), after an audit by a separate security sub-agent of every file in all three commits; the earlier vault, whose key reached a transcript, is deleted from the server. It also corrected the shared vault guide (b28182b), outside `people/angelo/`.
 
+- **Code in its person's folder runs in CI** (WS-133, 4 November): `admin/build/build.mjs` runs `people/<id>/pages.mjs` and a person's own `app/data.mjs` in the release job, which holds a token that can push and deploy. Writing only in its own folder no longer bounds what it can do.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -59,4 +61,4 @@ Open questions: its connectors; who reviews its output each day; whether Angelo 
 
 ## Provenance {#provenance}
 
-Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 2, 3 November 2026 (20:10 wake: ucvg2pkv published; the scripted audit), in `content/abp/` with its history in git.
+Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 3, 4 November 2026 (00:10 wake: WS-133; 20:10 wake: ucvg2pkv published; the scripted audit), in `content/abp/` with its history in git.

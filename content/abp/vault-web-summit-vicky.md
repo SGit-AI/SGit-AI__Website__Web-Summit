@@ -32,6 +32,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 
 - **Since 17:30:** a private meetings vault (WS-23), its key sealed to pm@web-summit.vicky (81796d9); its notes record that `seal.mjs` gives wrong answers in a shallow clone (d3c7f4e, WS-131).
 
+- **Code in its person's folder runs in CI** (WS-133, 4 November): `admin/build/build.mjs` runs `people/<id>/pages.mjs` and a person's own `app/data.mjs` in the release job, which holds a token that can push and deploy. Writing only in its own folder no longer bounds what it can do.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -60,4 +62,4 @@ Open questions: its connectors; who reviews its output each day; whether Vicky h
 
 ## Provenance {#provenance}
 
-Owner: Vicky. Drafted by abp@web-summit.dinis from the repository; Vicky and the agent correct it. Version 2, 3 November 2026 (20:10 wake: the scripted audit; the meetings vault), in `content/abp/` with its history in git.
+Owner: Vicky. Drafted by abp@web-summit.dinis from the repository; Vicky and the agent correct it. Version 3, 4 November 2026 (00:10 wake: WS-133; 20:10 wake: the scripted audit; the meetings vault), in `content/abp/` with its history in git.

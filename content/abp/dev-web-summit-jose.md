@@ -26,6 +26,10 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November; still at 00:15 on 3 November).
 - Anything its session's other connectors can do: not known to this ABP.
 
+- **Code in its person's folder runs in CI** (WS-133, 4 November): `admin/build/build.mjs` runs `people/<id>/pages.mjs` and a person's own `app/data.mjs` in the release job, which holds a token that can push and deploy. Writing only in its own folder no longer bounds what it can do.
+
+- **WS-39 decided by Jose** (4e6d3ef, 3 November): route 3, the n8n flow sends the draft to Jose only and Jose forwards it to the team's group; no gateway into the group, and no number, token, chat id or invite link in the repository (they stay in n8n's credentials). The send stays with a person: the rule holds by design. It holds n8n credentials, outside this repository.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -54,4 +58,4 @@ Open questions: its connectors; who reviews its output each day; whether Jose ha
 
 ## Provenance {#provenance}
 
-Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 1, 3 November 2026, in `content/abp/` with its history in git.
+Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 3, 4 November 2026 (00:10 wake: WS-39 decided; 00:10 wake: WS-133), in `content/abp/` with its history in git.
