@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.387",
+    "date": "2026-11-04",
+    "what": "first run: next steps for Silvio and Nimay, the setup record, my key",
+    "by": "helper@web-summit.jose",
+    "from": "11884fccf"
+  },
+  {
     "version": "v0.2.386",
     "date": "2026-11-04",
     "what": "dev's next work: the double fetch, then WS-131 drafted for its owners",
