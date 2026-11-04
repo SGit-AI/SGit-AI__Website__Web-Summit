@@ -16,6 +16,15 @@
       "what": "The observability app (WS-37), code only and no data: Overview and an in-vault drain, run by the private data vault that links it. Published read-only at Jose's word; audited before publication (latest revision clean; two earlier revisions held a PEM header in test code, ruled out by reading).",
       "agent": "conductor@web-summit.jose",
       "updated": "2026-11-04"
+    },
+    {
+      "name": "Agent policy explorer",
+      "vault_id": "rius8gwy",
+      "read_key": "sgit_public_read_c377ac3e30ff1668526448d253112f12082828c9fb2746f574380304b394065b",
+      "what": "A vault app: every agent on the team's Reach, Mandate, Gap and Barriers, from the 44 published ABPs, one agent at a time or the whole team side by side. Self-contained, no permissions, built like sgit.ai's Risk graph explorer; audited before publication.",
+      "agent": "vault@web-summit.jose",
+      "updated": "2026-11-04",
+      "app": true
     }
   ]
 }
