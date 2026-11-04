@@ -14,11 +14,12 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 
 ## What I'm doing {#doing}
 
-*Kept by procurement@web-summit.silvio at 07:30, 12:30 and 17:30 UTC (WS-94). Last update: Wed 4 Nov, 07:40 UTC.*
+*Kept by procurement@web-summit.silvio at 07:30, 12:30 and 17:30 UTC (WS-94). Last update: Wed 4 Nov, 12:45 UTC.*
 
-- **The merch order (WS-48):** Dinis chose the second printer on the evening of 3 Nov (quality and service; he accepted the extra cost). My confirmation to it, with the sizes, and the cancellation to the first printer are drafted, **for me to send this morning**. Then: the invoice question, the purple, and collection by Monday 9 Nov at the latest.
-- **The print sign-off (WS-113):** 3 of 7 sets approved and verified (Dinis, Angelo, Vicky); mine still to sign. The designer agent is re-mapping the colours to the new printer's blanks.
-- **Today:** my key for the site (WS-136, asked of every conductor); the 13:00 stand-up: the first five companies with Nimay (WS-25).
+- **The merch order (WS-48):** the chosen printer **cannot guarantee Friday** (it has to order the colours). My question, whether Monday 9 Nov morning works if we confirm today, is drafted **for me to send now**; the first printer stays as the fallback (its cancellation is on hold). On the 13:00: who collects, from where, and the fallback.
+- **Vicky's purple:** hers to me ("whatever the printer has is fine, let Silvio decide"): I choose with the printer, then tell the designer agent.
+- **The print sign-off (WS-113):** 3 of 7 approved (Dinis, Angelo, Vicky); mine still to sign. The designer agent has mapped the colours to the new printer's blanks.
+- **Today:** my key for the site (WS-136); the 13:00 stand-up: the first five companies with Nimay (WS-25).
 
 ## What my agents are doing {#agents-doing}
 
@@ -60,7 +61,7 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-04, from the boar
 | Due in 48 hours | **11** | WS-24, WS-25, WS-40, WS-48, WS-52, WS-53, WS-71, WS-120, WS-26, WS-75, WS-80 |
 | Nobody picked yet | **14** | WS-54, WS-126, WS-24, WS-25, WS-40, WS-52, WS-53, WS-71, WS-120, WS-26, WS-75, WS-80, WS-28, WS-72 |
 | Agents active (7 days) | **3 of 7** | ████░░░░░░ |
-| Messages for me (24 h) | **19** | `git log --since=yesterday --grep "For: .*web-summit.silvio"` |
+| Messages for me (24 h) | **20** | `git log --since=yesterday --grep "For: .*web-summit.silvio"` |
 | Pulse today | **0 of 3** | ░░░ |
 | Onboarding level | **L1** of L4 | █░░░ |
 
@@ -92,7 +93,7 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-04, from the boar
 | ● dev@web-summit.silvio | Builds what Silvio and the conductor ask for: this command centre, tools | 0 | 9 | 11-03 02:15 UTC |
 | ○ local@web-summit.silvio | Algarve options: printers, ads, prices, lead times | 0 | 0 | never |
 | ○ outreach@web-summit.silvio | Targets, messages and follow-ups; drafts in Silvio's account, Silvio sends | 0 | 0 | never |
-| ● procurement@web-summit.silvio | Quotes, orders and deliveries for what the team buys (WS-48); drafts only, Silvio approves | 13 | 29 | 11-04 02:01 UTC |
+| ● procurement@web-summit.silvio | Quotes, orders and deliveries for what the team buys (WS-48); drafts only, Silvio approves | 16 | 33 | 11-04 10:40 UTC |
 | ○ video@web-summit.silvio | The pipeline to YouTube, Instagram and this site | 0 | 0 | never |
 | ○ dashboard@web-summit.silvio | Keeps Silvio's dashboard and asks one question a run | 0 | 0 | never |
 
@@ -150,10 +151,11 @@ Counts only, never names: the people and companies stay in my own CRM (my brief'
 
 **Still open,** what my agents cannot decide. Take this list to the stand-up.
 
-1. **Me:** send the printer my confirmation and the sizes this morning, and the first printer its cancellation.
-2. **Dinis:** the sleeves: the new printer prints them free, but the rule is still "nothing on the sleeves"; a sleeve file only on his word to the designer agent.
-3. **Me:** which agents to start next: outreach, local and video are planned, not started.
-4. **Me, with Nimay (Wed 13:00):** the first five companies and the first message (WS-25).
+1. **Me:** send the chosen printer the Monday question now; keep the first printer as the fallback until it answers.
+2. **Me:** Vicky's purple, with the printer (she left it to me).
+3. **Dinis:** the sleeves: the new printer prints them free, but the rule is still "nothing on the sleeves"; a sleeve file only on his word to the designer agent.
+4. **Me:** which agents to start next: outreach, local and video are planned, not started.
+5. **Me, with Nimay (Wed 13:00):** the first five companies and the first message (WS-25).
 
 **Decided** (3 November 2026, recorded by procurement@web-summit.silvio):
 
@@ -211,5 +213,5 @@ Next: an email to send from (L2), then my PKI key (L3), then a conductor on a sc
 
 ## The merch order {#printers}
 
-**Printer chosen by Dinis on 3 November** (the second option, near Lisbon; collection by Monday 9 November at the latest). 21 T-shirts (each colour 1 M, 1 L, 1 XL) and 7 hoodies (one per person, in their colour), RiskMandate only, one generic QR on the backs; sleeves to decide. The printer's name and price stay private until it agrees to publication. The story: [the print order](../../print-order/index.html) and [procurement](../../procurement/index.html).
+**Printer chosen by Dinis on 3 November** (the second option, near Lisbon). It cannot guarantee Friday; Monday 9 November morning asked, the first printer as fallback. 21 T-shirts (each colour 1 M, 1 L, 1 XL) and 7 hoodies (one per person, in their colour), RiskMandate only, one generic QR on the backs; sleeves to decide. The printer's name and price stay private until it agrees to publication. The story: [the print order](../../print-order/index.html) and [procurement](../../procurement/index.html).
 
