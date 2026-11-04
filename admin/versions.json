@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.328",
+    "date": "2026-11-04",
+    "what": "the research vault key resealed to researcher-vicky-2",
+    "by": "vault@web-summit.vicky",
+    "from": "083b97acf"
+  },
+  {
     "version": "v0.2.327",
     "date": "2026-11-04",
     "what": "WS-100 done, dropped from \"Needs me\"",
