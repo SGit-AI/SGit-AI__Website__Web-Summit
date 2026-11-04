@@ -6,12 +6,11 @@ Kept short at Vicky's word (3 November): your issues, decisions and agents are i
 
 ## Needs me {#needs-me}
 
-*Written by your dashboard agent at each wake from the board, the stand-up agendas, your conductor's briefs and the board-health notes; soonest first. Last updated: Wed 4 Nov, 17:50 UTC.*
+*Written by your dashboard agent at each wake from the board, the stand-up agendas, your conductor's briefs and the board-health notes; soonest first. Last updated: Wed 4 Nov, 17:58 UTC.*
 
 | Type | What | Due | With |
 |---|---|---|---|
 | Decide | [Who records stand-up decisions](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-107-stand-up-decisions-recorded-in-the-person-s-words.md) | **Overdue:** Tue 3 Nov, 13:00; carried to 18:00 | Dinis, Angelo |
-| Decide | [Is the GitHub guide finished?](../../onboarding-guide/index.html) (WS-100) | **Overdue:** Tue 3 Nov | Angelo; pm@ |
 | Decide | [Owners: first five, hot leads, pulse app, PM write-up](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/pm-four-issues-2026-11-04.md) (WS-25, WS-29, WS-41, WS-53) | Today, 18:00 stand-up | pm@ proposed; Nimay, Silvio; Angelo, Jose |
 | Do | [Follow up the pending meeting invitations](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/outreach-2026-11-04.md) | From today | Nimay |
 | Decide | [Your dev agent's first tool](briefs/2026-11-04T0725Z.pdf) | Before its wake, Thu 08:00 | dev@web-summit.vicky |

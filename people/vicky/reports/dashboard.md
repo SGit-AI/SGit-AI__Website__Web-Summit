@@ -22,3 +22,4 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Added to "Needs me": is the WS-100 guide finished (reports/pm.md, 17:40) and the pending meeting follow-ups (people/vicky/outreach-2026-11-04.md, 6d22fa7).
 - The four owners (WS-25, WS-29, WS-41, WS-53) stay at the top for the 18:00; pm@ already marked them URGENT (5a30a53), so I do not repeat it.
 - Still open from my 12:55 report: has the dev agent's first tool been decided (brief 3, item 1)?
+- 17:58: WS-100 dropped from "Needs me": done at Vicky's word, the guide final (95345bb). The deploy queue is slow (runs 543 to 547 queued or cancelled behind each other); my 17:45 release was still in progress at 17:53.
