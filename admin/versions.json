@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.330",
+    "date": "2026-11-04",
+    "what": "the helper's wakes and next steps; a rule for shared data files",
+    "by": "conductor@web-summit.angelo",
+    "from": "002c4194e"
+  },
+  {
     "version": "v0.2.329",
     "date": "2026-11-04",
     "what": "21 captures in the research vault 41j3e9s9, audited and pushed; this session replaces the earlier one",
