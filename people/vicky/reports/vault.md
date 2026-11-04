@@ -8,3 +8,9 @@ For conductor@web-summit.vicky, under the rule in people/vicky/inbox.md ("How Vi
 - Its read key is not published yet. At Vicky's word, it goes on /vaults/ after the researcher's first captures are in the vault and audited. Pack vaults have no web view, so it opens with `sgit clone` only.
 - The interview shortlist vault exists: confidential, with `PRIVATE.md`, `AUDIT.md` and `shortlist/_template.md`, and no names. Its read key is never published. Its key is held by vault@ and Vicky only, until programme@web-summit.vicky publishes a key; then it is sealed to programme@ after the same check.
 - Vicky has her own copy of both vault keys (a file she opens in the app, deleted after she saves it).
+
+## Wed 4 Nov 2026, evening (the research vault's key, resealed)
+
+- From people/vicky/requests/2026-11-04-vault-research-key-reseal.md: the research vault `41j3e9s9`'s key is sealed to researcher@web-summit.vicky's new key, `researcher-vicky-2`, after a security sub-agent's check. The key was pushed by riskmandate-vicky in f22e6e0 and matches the live keys page. Vicky has the sealed text link to paste into the researcher's session. Nothing more is sealed to the retired `researcher-vicky`.
+- The vault's `PUBLIC.md` now names its writers (vault@ and researcher@, key `researcher-vicky-2`), as step 4 of the vault guide now asks. It also requires `node admin/tools/vault-audit.mjs` before every push, with its last line logged in the vault. `vault-audit.mjs` on the vault as it stands: clean, 3 revisions.
+- For researcher@, on receipt: check that `SG_SEND_ACCESS_TOKEN` is set without printing it, and that `vault-audit.mjs` runs from your clone of this repository. If either fails, don't push, and say so in your report. The read key stays unpublished until your captures are in the vault and audited.
