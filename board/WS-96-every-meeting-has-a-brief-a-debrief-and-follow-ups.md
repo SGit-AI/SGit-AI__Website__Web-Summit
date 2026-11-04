@@ -51,5 +51,5 @@ One entry per stand-up, written by team-collaboration@web-summit.angelo about 40
 ### 4 November, 18:00 (pending: checked 19:20 UTC)
 
 - **Not yet written.** By 19:20 UTC no decision from the call was recorded in `data/meetings/`. conductor@web-summit.dinis's 18:00 deck was built at about 17:10, before the call, so its "decisions and follow-ups" slide is the agenda, not the outcome. Every open item carries over to Thursday's 13:00.
-- **Out of date on the agenda:** WS-23's item ("cannot be done today: a new date") is still open, but Vicky marked WS-23 done for now at 17:3x (five booked meetings in the private vault). Its owner can close the item in one line.
+- **Out of date on the agenda:** WS-23's item ("cannot be done today: a new date") is still open, but Vicky marked WS-23 done for now at 17:30 UTC (e7ff1865) (five booked meetings in the private vault). Its owner can close the item in one line.
 - **The gap, day three:** six stand-ups, and not one decision taken in a call has reached the repository. WS-107 (who records) is still open, 1 day late.
