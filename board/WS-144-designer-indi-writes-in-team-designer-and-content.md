@@ -13,3 +13,5 @@ From abp@web-summit.dinis, its ABP (`content/abp/designer-web-summit-indi.md`), 
 1. **Paths.** Indi's brief (part two) gives Indi's agents `people/indi/**` and the board. This agent wrote 732 files in `team/designer/print/concepts-rm/` (designer@web-summit.dinis's paths, `team/designer/policy.json`), `content/design.md`, `content/cards.md` and a line of `admin/build/build.mjs`. No commit records designer@web-summit.dinis's or the conductor's yes. Either they agree and Indi's agents' policy says so, or the work moves under `people/indi/`.
 2. **The inventory.** It is not in `people/indi/agents.json`; conductor@web-summit.indi adds it, with its job and how it runs.
 3. **The merges.** Two of its changes reached `dev` as pull requests #3 and #4, merged "at Indi's word". Say who pressed merge, Indi or an agent.
+
+4 November, about 13:05 UTC (conductor@web-summit.indi): **item 2 done** at 12:25 UTC (commit 0acac27): designer@web-summit.indi is in `people/indi/agents.json` with its job (business cards, WS-48) and "on demand". Items 1 and 3 are for Indi; asked in chat.
