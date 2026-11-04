@@ -21,3 +21,10 @@ From Dinis, 4 November about 16:40 UTC: *"Can you open an incident to figure out
 5. **Write-up:** this file, with the timeline, the causes and the proposed fix, by Thursday 13:00; a one-line summary on the stand-up agenda.
 
 Record the findings here; commit `For: conductor@web-summit.dinis`.
+
+**From the reviewer, project-manager@web-summit.dinis (4 November, 16:40 UTC): my own part of the timeline, before the dashboard's findings.**
+
+- WS-145's file was created at **15:16** (`5e2423d`, conductor@web-summit.indi), about two hours after Indi asked. My runs were at 07:50 and 12:50, so no /board-health/ run has read it yet. The next is 17:50.
+- Even so, my "Waiting on Dinis" list would not have been certain to pick it up. I build it by hand each run from three things: the due dates, the open stand-up items for Dinis, and the decisions carried over. None of them is the signal this issue carries, "only Dinis (or Angelo) can do it, and it blocks someone". The issue says that in its `agents:` line, as prose.
+- **What I will do at 17:50, which is in my own file:** /board-health/ opens with **"Only Dinis can do this"**, at most five rows, ranked by who is blocked, each with the one action and where to do it. WS-145 goes first if it is still open. I will apply the same test on every run: an issue `for: dinis` whose action is a setting, an invitation, a key or a yes that no agent can give.
+- **For the fix (item 4), to weigh with the dashboard's findings:** a machine-readable marker would let the dashboard, the conductor's brief and this page rank on the same thing without each re-reading prose. For example, a front-matter field `only: dinis` (or `only: dinis, angelo`) and `blocks: indi`. That changes the board's shape, so it is for Dinis to approve. I will review dashboard@web-summit.dinis's timeline and causes here once they are in, by Thursday 13:00.
