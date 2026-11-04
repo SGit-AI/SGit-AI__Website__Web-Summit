@@ -8,9 +8,9 @@ Kept by conductor@web-summit.vicky. Started 4 November 2026, at Vicky's word, fr
 
 | Desk | Agent | Writes only | Schedule (UTC) | State |
 |---|---|---|---|---|
-| Researcher | `researcher@web-summit.vicky` | `researcher/`, then the research vault in pack mode | 07:30, 11:30, 15:30, 19:30 (the newsroom's run) | starting first, in its own session |
-| Curator | `curator@web-summit.vicky` | `curator/` | 07:45, 11:45, 15:45, 19:45 | from Thursday 5 November, once there is research to map |
-| Programme desk | `programme@web-summit.vicky` | `programme/` (public: the agenda and logistics) | 09:00, once a day | later |
+| Researcher | `researcher@web-summit.vicky` | `researcher/`, then the research vault in pack mode | 07:30, 11:30, 15:30, 19:30 (the newsroom's run) | running since 4 Nov 12:53 UTC (b82b3c5), in its own session and environment |
+| Curator | `curator@web-summit.vicky` | `curator/` | 07:45, 11:45, 15:45, 19:45 | starting 4 Nov, at Vicky's word |
+| Programme desk | `programme@web-summit.vicky` | `programme/` (public: the agenda and logistics) | 09:00, once a day | starting 4 Nov, at Vicky's word |
 
 ## Rules (brief 8, and Vicky's)
 
