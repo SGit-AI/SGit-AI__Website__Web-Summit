@@ -1,0 +1,140 @@
+{
+  "type": "sync",
+  "title": "Captured: the 14:30 stand-up's direction and action items (4 November)",
+  "for": [
+    "everyone"
+  ],
+  "by": "conductor@web-summit.jose",
+  "added": "2026-11-04T23:38:53Z",
+  "status": "closed",
+  "detail": "Captured by conductor@web-summit.jose at Dinis's ask, from Jose's notes (4 November, the 13:00 stand-up moved to 14:30). Jose's words, not a transcript: each decider's own words still close their items (WS-107).\n\nDirection (Dinis):\n1. Before each meeting, agents build a 'best of' briefing (infographics, each person's highlights, updates such as the merch, blockers), so the meeting is spent on decisions. Every conductor adds its person's highlights to the team briefing page. Owner (suggested by the conductor): every person's conductor; the stand-up show: team-collaboration@web-summit.angelo and conductor@web-summit.dinis (WS-96, WS-150).\n2. Dashboards are about action: blockers and decisions first, done items removed, no walls of text. Blockers are escalated so they reach Dinis or Angelo first. Owner (suggested by the conductor): every person's dashboard agent and conductor (WS-94, WS-06).\n3. Everyone adds an accountant agent that measures token use across their agents' sessions, so Sonnet is picked wherever it is good enough. Opus stays for the conductor. Owner (suggested by the conductor): every person (Indi's first) (WS-148).\n4. Keys are an experiment for now. Agents need literal instructions: the key is temporary, made by the conductor, and later the browser makes its own. Ephemeral vaults, which live only in one session and are cloned to continue, are fine. Owner (suggested by the conductor): every person's conductor (WS-136).\n5. The goal for the next few days is the pipeline: edit the site and the company pages, make materials for each company, find who we know there, and set up summit meetings that lead to design partners or customers. Any market, with Portugal mapped first, by Friday or Monday at the latest. Owner (suggested by the conductor): everyone (WS-26, WS-27, WS-30).\n6. Next milestone: 50 active agents across the team. Owner (suggested by the conductor): everyone (WS-95).\n\nAction items:\n- Write access to the newsroom repository for Indi. Owner: Dinis or Angelo (WS-145, WS-151).\n- Vault-to-vault lanes. Owner: Silvio and Angelo (WS-120, WS-114).\n- Business cards: each person prompts their agent with Indi's prompt from the team chat, so the card carries their own name; Indi collects them Thursday. Owner: everyone; Indi collects (WS-155, WS-113).\n- For the companies Indi made infographics for, map which ones should meet each other, and who we know at each (Web Summit app contacts, LinkedIn connections). Owner: Indi, with the team (WS-27, WS-69).\n- Share access to our contacts (Web Summit app and LinkedIn), so each target company gets a 'who do we know there' map. Owner: everyone (WS-24).\n- Capture this stand-up. Owner: Jose (conductor@web-summit.jose) (WS-96); done: this record.\n- The accountant: propose accountant@web-summit.jose as a sub-agent of the conductor's daily scheduled wake, like the reviewer; it reads token use per session for each of Jose's agents and recommends a model for each; not started until Jose says yes. Owner: Jose (conductor@web-summit.jose) (WS-148); proposed in people/jose/agents.json.",
+  "issue": "WS-96",
+  "held": {
+    "booked": "2026-11-04T13:00Z",
+    "at": "2026-11-04T14:30Z"
+  },
+  "source": "Jose Bota's notes, given to conductor@web-summit.jose; captured at Dinis's ask. Not verbatim.",
+  "directions": [
+    {
+      "n": 1,
+      "what": "Before each meeting, agents build a 'best of' briefing (infographics, each person's highlights, updates such as the merch, blockers), so the meeting is spent on decisions. Every conductor adds its person's highlights to the team briefing page.",
+      "owner": "every person's conductor; the stand-up show: team-collaboration@web-summit.angelo and conductor@web-summit.dinis",
+      "issues": [
+        "WS-96",
+        "WS-150"
+      ],
+      "owner_suggested_by": "conductor@web-summit.jose (Jose gave owners for the action items, not the directions)"
+    },
+    {
+      "n": 2,
+      "what": "Dashboards are about action: blockers and decisions first, done items removed, no walls of text. Blockers are escalated so they reach Dinis or Angelo first.",
+      "owner": "every person's dashboard agent and conductor",
+      "issues": [
+        "WS-94",
+        "WS-06"
+      ],
+      "owner_suggested_by": "conductor@web-summit.jose (Jose gave owners for the action items, not the directions)"
+    },
+    {
+      "n": 3,
+      "what": "Everyone adds an accountant agent that measures token use across their agents' sessions, so Sonnet is picked wherever it is good enough. Opus stays for the conductor.",
+      "owner": "every person (Indi's first)",
+      "issues": [
+        "WS-148"
+      ],
+      "owner_suggested_by": "conductor@web-summit.jose (Jose gave owners for the action items, not the directions)"
+    },
+    {
+      "n": 4,
+      "what": "Keys are an experiment for now. Agents need literal instructions: the key is temporary, made by the conductor, and later the browser makes its own. Ephemeral vaults, which live only in one session and are cloned to continue, are fine.",
+      "owner": "every person's conductor",
+      "issues": [
+        "WS-136"
+      ],
+      "owner_suggested_by": "conductor@web-summit.jose (Jose gave owners for the action items, not the directions)"
+    },
+    {
+      "n": 5,
+      "what": "The goal for the next few days is the pipeline: edit the site and the company pages, make materials for each company, find who we know there, and set up summit meetings that lead to design partners or customers. Any market, with Portugal mapped first, by Friday or Monday at the latest.",
+      "owner": "everyone",
+      "issues": [
+        "WS-26",
+        "WS-27",
+        "WS-30"
+      ],
+      "owner_suggested_by": "conductor@web-summit.jose (Jose gave owners for the action items, not the directions)"
+    },
+    {
+      "n": 6,
+      "what": "Next milestone: 50 active agents across the team.",
+      "owner": "everyone",
+      "issues": [
+        "WS-95"
+      ],
+      "owner_suggested_by": "conductor@web-summit.jose (Jose gave owners for the action items, not the directions)"
+    }
+  ],
+  "actions": [
+    {
+      "what": "Write access to the newsroom repository for Indi",
+      "owner": "Dinis or Angelo",
+      "issues": [
+        "WS-145",
+        "WS-151"
+      ]
+    },
+    {
+      "what": "Vault-to-vault lanes",
+      "owner": "Silvio and Angelo",
+      "issues": [
+        "WS-120",
+        "WS-114"
+      ]
+    },
+    {
+      "what": "Business cards: each person prompts their agent with Indi's prompt from the team chat, so the card carries their own name; Indi collects them Thursday",
+      "owner": "everyone; Indi collects",
+      "issues": [
+        "WS-155",
+        "WS-113"
+      ]
+    },
+    {
+      "what": "For the companies Indi made infographics for, map which ones should meet each other, and who we know at each (Web Summit app contacts, LinkedIn connections)",
+      "owner": "Indi, with the team",
+      "issues": [
+        "WS-27",
+        "WS-69"
+      ]
+    },
+    {
+      "what": "Share access to our contacts (Web Summit app and LinkedIn), so each target company gets a 'who do we know there' map",
+      "owner": "everyone",
+      "issues": [
+        "WS-24"
+      ],
+      "note": "no issue for the map itself yet; WS-24 is the nearest"
+    },
+    {
+      "what": "Capture this stand-up",
+      "owner": "Jose (conductor@web-summit.jose)",
+      "issues": [
+        "WS-96"
+      ],
+      "status": "done: this record"
+    },
+    {
+      "what": "The accountant: propose accountant@web-summit.jose as a sub-agent of the conductor's daily scheduled wake, like the reviewer; it reads token use per session for each of Jose's agents and recommends a model for each; not started until Jose says yes",
+      "owner": "Jose (conductor@web-summit.jose)",
+      "issues": [
+        "WS-148"
+      ],
+      "status": "proposed in people/jose/agents.json"
+    }
+  ],
+  "closed": {
+    "by": "conductor@web-summit.jose",
+    "at": "2026-11-04T23:38:53Z",
+    "why": "A record, not an item to decide: the stand-up's outcome, for everyone."
+  }
+}
