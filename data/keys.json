@@ -471,7 +471,7 @@
     {
       "id": "synthetic-indi",
       "label": "synthetic@web-summit.indi (Claude Code session)",
-      "role": "Indi Gupte's synthetic users agent (synthetic@web-summit.indi): invented personas, played by sub-agents in its session, test the RiskMandate business cards, after the method of sgit.ai's synthetic-users vaults. A session key: it ends with its session.",
+      "role": "Indi Gupte's synthetic users agent (synthetic@web-summit.indi): invented personas, played by sub-agents in its session, test the RiskMandate business cards, after the method of sgit.ai's synthetic-users vaults. A session key: it ends with its session. Ended: replaced on 4 November 2026 by synthetic-indi-2, the key of a new session of the same agent. Seal nothing to this key.",
       "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Indi's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
       "added": "2026-11-04",
       "bundle": {
@@ -481,6 +481,23 @@
         "label": "synthetic@web-summit.indi",
         "fingerprint": "sha256:699505a895af8563",
         "signing_fingerprint": "sha256:2ede21e7769559fa"
+      },
+      "status": "ended",
+      "replaced_by": "synthetic-indi-2"
+    },
+    {
+      "id": "synthetic-indi-2",
+      "label": "synthetic@web-summit.indi (Claude Code session, second)",
+      "role": "Indi Gupte's synthetic users agent (synthetic@web-summit.indi), in a new session started on 4 November 2026 with the SG/Send access token and dev.send.sgraph.ai allowed, to push the cards run 1 vault (WS-142). Replaces the key synthetic-indi. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Indi's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAthomDN3kPqou6JucoFGM\niWf8M0twc3cVPi1rPUskTM7LI98QAscDveHZMcm4x9h5YTjOtbVZfPwpFKEqI9DT\neq2zl9tmU0RU/ArXjW2l1Fd9M71vya4LH2+cCVX6+nVT85Wb6glNPyskIfDNPlsy\nQHfbzZWJYqBGwWG/SeJ2+sJJoxQ+1neIj1KsnDxfVrgqlIBZBsebV7mbT3KFNvP/\npbzgmaK0OK8rIkMr8xE0YXH4NI3x4kR4/8bKKbh00ynhJOagztCc2fWK7g/VopSk\n3ihJjCFPr9FypgejxLoqszPZU7GTiuIw4dSJ32Jrgy7flMgIKX3OpeTNUsUlKEly\nPSsMkV0uvUoBE57oMKG52xLSVm4+RwNw3UJ5cZlgtmPn6R2Uybk3nkeqBt7AFnj6\nHjMYfdfq+2LaT8Cs6AfUtHYtLZD3eeTby/FN872kPfLEFhB+rUyDNowOyUky2GDl\nekKPDxIpcpZleg57vLoIWyEku9/G/0l/EtJPlk21M1B8cvWVYcnKFOvmRwZFnv0S\nab7nucbWMw8FsfS2djQ4Gm38qFQfCC85/TLhnKnsFiLm2cpBU1jHSZrw7apIZBnS\n4p/xUJteFMqORlz3f71G+99JI0B9t8oCoowdr6N9Jca6eakTHw9oLZy1/vdCEhsI\nBYU3PQSh52/Vtq/YXwvElaECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEh9A/zu49BtZYqUdgTkSuwHZo/PXI\nTMvG/SKDYIonNemcG/YhUlwnHeyTjIHI3MQhYl5+q1DNTpTTA+PrnqIxVw==\n-----END PUBLIC KEY-----\n",
+        "label": "synthetic@web-summit.indi",
+        "fingerprint": "sha256:8b0ff22957bd775b",
+        "signing_fingerprint": "sha256:b4f4dbe798b2326c"
       }
     }
   ]
