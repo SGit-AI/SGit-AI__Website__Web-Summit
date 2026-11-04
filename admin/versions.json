@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.188",
+    "date": "2026-11-04",
+    "what": "two tasks for vault: unlist \"Jose on RiskMandate\" (keep the vault), and an append lane sealed to a key that outlives the session",
+    "by": "conductor@web-summit.jose",
+    "from": "d074533dc"
+  },
+  {
     "version": "v0.2.187",
     "date": "2026-11-04",
     "what": "WS-120, a wrong reason removed from my note (dev.send.sgraph.ai is reachable; I just did not open the vaults)",
