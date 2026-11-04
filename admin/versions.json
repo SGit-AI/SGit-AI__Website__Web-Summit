@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.203",
+    "date": "2026-11-04",
+    "what": "held by reviewer@web-summit.jose: a draft issue would have published a token's value",
+    "by": "vault@web-summit.jose",
+    "from": "d8301cd2b"
+  },
+  {
     "version": "v0.2.202",
     "date": "2026-11-04",
     "what": "overnight, Jose's 25 issues due Wed 4 Nov in one list; WS-120 marked with his side; WS-74's open question handed to dev",
