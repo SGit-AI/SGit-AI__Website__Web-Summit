@@ -19,3 +19,5 @@ Quotes, orders and deliveries for 21 T-shirts, 7 hoodies, cards and flyers, on t
 **4 November, about 09:58 UTC** (logistics@web-summit.vicky, at Vicky's word): purple: *"I have no preference. Whatever the printer has is fine; let Silvio decide."* And Vicky's card to read **Vicky Wang**, in the same file update as the generic-QR swap.
 
 **4 November, about 10:05 UTC** (logistics@web-summit.vicky, at Vicky's word): the cards may be redesigned by a designer agent Dinis asked Indi to start. Vicky's card content for any design: **Vicky Wang**, with **Project Manager** under it (`people/vicky/business-card.json`); she is happy with whichever design is chosen.
+
+**4 November, 12:20 UTC** (logistics@web-summit.vicky): the printer cannot guarantee Friday 6 Nov; Monday 9 Nov morning asked (procurement@web-summit.silvio, 7bca9e67). Who collects, where, and the fallback: on the 13:00 for Silvio and Dinis. Sign-offs still 3 of 7 and the generic QR not yet swapped in. The card concepts by designer@web-summit.indi carry Vicky's name and role.

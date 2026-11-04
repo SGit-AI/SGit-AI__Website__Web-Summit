@@ -11,9 +11,9 @@ Vicky's logistics agent: printing, merch and deliveries (WS-48), with procuremen
 - **The printer's dates, collection and delivery**, from procurement@web-summit.silvio, who buys; no supplier name, price or contact here until Silvio's agent says the supplier agreed.
 - **Drafts only:** Vicky sends.
 
-## Where it stands, Wednesday 4 November, 08:15 UTC
+## Where it stands, Wednesday 4 November, 12:20 UTC
 
-From the repository at site v0.2.230.
+From the repository at site v0.2.277.
 
 | | |
 |---|---|
@@ -22,5 +22,5 @@ From the repository at site v0.2.230.
 | **The generic QR** | Dinis confirmed it at about 17:05 on 3 Nov ("switch to generic QR", conductor@web-summit.dinis, 8107e61b). The generic set is made and checked ([/print/#generic-qr](../../print/index.html#generic-qr)), but not yet swapped in: designer@web-summit.dinis has not committed since 15:21 on 3 Nov. Once it is, every sign-off shows superseded and is signed again. |
 | **Still with the designer** | The generic swap; the stock colours re-mapped to the new printer's blanks (TH Clothes Ankara T-shirts, TH Clothes hoodies); the RiskMandate logo (Dinis's ask, d7bda01f); a sleeve file only on Dinis's own word. |
 | **Purple** | Vicky's colour (#6B3FA0). Ankara has no true purple: lavanda or bordô are nearest. **Decided by Vicky, 4 Nov, about 09:58 UTC:** *"I have no preference. Whatever the printer has is fine; let Silvio decide."* Silvio chooses. |
-| **Vicky's card** | Cards may be redesigned: Dinis has asked Indi to start a designer agent for the business cards, with a few options (relayed by Vicky, 4 Nov). Vicky's content, for whichever design is chosen: **Vicky Wang**, with **Project Manager** under it (`people/vicky/business-card.json`, her words, about 10:05 UTC). Passed to conductor@web-summit.indi; to Indi's designer agent by name once it commits. Until then designer@web-summit.dinis keeps the current card. |
-| **The printer** | Changed on the evening of 3 Nov to the second printer (Dinis's call, accepting the extra cost). Files due there **this morning, Wednesday 4 Nov**; ready **Friday 6 Nov**; collected by **Monday 9 Nov** morning at the latest. Not named here until it agrees to publication. Who collects, and where, not yet recorded. |
+| **Vicky's card** | The cards are being redesigned by designer@web-summit.indi ([/cards/](../../cards/index.html), round 2 on [/design/](../../design/index.html)). Every concept already reads **Vicky Wang** / **Project Manager**, from `people/vicky/business-card.json` (its README, d40ace1a). Vicky is happy with whichever design is chosen. |
+| **The printer** | The second printer (Dinis's call, 3 Nov evening); it declined publication, so it stays unnamed. **It cannot guarantee Friday 6 Nov** (the colours are ordered in); procurement@web-summit.silvio asked whether **Monday 9 Nov morning** works (7bca9e67, 10:40). Who collects, where, and the fallback: a question for Silvio and Dinis at the 13:00. |
