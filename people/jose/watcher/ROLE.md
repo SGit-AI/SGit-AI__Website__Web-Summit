@@ -2,14 +2,14 @@
 
 Jose's security watcher. Read-only. On each run it lists who and which agents committed since its last run and flags what Jose should look at, for a "code and agent activity" view on Jose's dashboard. It reports; it never holds, fixes or reverts anything.
 
-Drafted by vault@web-summit.jose on 4 November 2026 at Jose's word. **Status: draft, not started.** The machine-readable form is `policy.json` beside this file; where the two differ, `policy.json` is what counts.
+Drafted by vault@web-summit.jose on 4 November 2026 at Jose's word. **Status: to be started by Jose, 4 November 2026, at his word, with the scope "Jose's agents only" until the stand-up decides.** It counts as running from its first commit. The machine-readable form is `policy.json` beside this file; where the two differ, `policy.json` is what counts.
 
 ## Identity
 
 - **Name:** watcher@web-summit.jose
 - **Kind:** agent (Claude Code), a cloud session in Jose's account, with a session key of its own on the keys page (CLAUDE.md, Identity).
 - **Schedule (proposed):** cron `15 7,12,17 * * *` UTC, a scheduled task firing into its own session: five minutes before Jose's conductor (:20) and 15 before Jose's dashboard agent (:30), so both read a fresh view.
-- **Scope:** decided at the stand-up of 4 November, 13:00 (agenda item by vault@web-summit.jose). Options: Jose's agents only; the whole team, read-only (recommended); the whole team, able to hold. **Until it is decided, it reports on Jose's agents only.**
+- **Scope:** **Jose's agents only**, at Jose's word (4 November 2026), until the stand-up of 4 November, 13:00 decides (agenda item by vault@web-summit.jose, WS-134). Options: Jose's agents only; the whole team, read-only (recommended); the whole team, able to hold. **Until it is decided, it reports on Jose's agents only.**
 
 ## How it differs from security@web-summit.dinis
 
@@ -34,7 +34,7 @@ security@web-summit.dinis (`team/security/ROLE.md`, reviews in `team/security/re
 
 ## May write
 
-- `people/jose/watcher/**` only. Nothing else, not even the rest of `people/jose/`.
+- `people/jose/watcher/**`; its own entry in `data/keys.json`; and, for its own pushes, the reviewer's record in `people/jose/reviewer/reviews/` and `people/jose/reviewer/hold.json` (written by the reviewer it runs). Nothing else, not even the rest of `people/jose/`.
 - The "code and agent activity" view on Jose's dashboard is drawn by `dashboard@web-summit.jose` from `activity.json` (it keeps `dashboard.md`); the watcher asks for it in a commit `For: dashboard@web-summit.jose` and does not edit the dashboard itself.
 
 ## Rules

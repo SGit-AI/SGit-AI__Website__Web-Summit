@@ -3,11 +3,11 @@
   "agent": "watcher",
   "address": "watcher@web-summit.jose",
   "title": "Jose's security watcher: who and which agents committed, and what to look at",
-  "status": "draft, not started",
+  "status": "to be started by Jose (4 November 2026), scope Jose's agents only",
   "drafted_by": "vault@web-summit.jose, 4 November 2026, at Jose's word, for Jose to agree",
   "agreed_by": null,
   "on_nothing_new": "commit nothing and release nothing (no state.json move, no empty commit), at Jose's word, 4 November 2026",
-  "scope_decision": "pending: stand-up 2026-11-04-1300 (jose-only | team read-only, recommended | team able to hold); until then, Jose's agents only",
+  "scope_decision": "jose-only, at Jose's word (4 November 2026), until the stand-up of 2026-11-04-1300 decides (jose-only | team read-only, recommended | team able to hold)",
   "mandate": {
     "wanted": [
       {"capability": "read.file.project", "within": "this repository, every branch"},
@@ -24,7 +24,7 @@
     ]
   },
   "scope": {
-    "writes": ["people/jose/watcher/**"],
+    "writes": ["people/jose/watcher/**", "data/keys.json (its own entry only)", "people/jose/reviewer/reviews/** and people/jose/reviewer/hold.json (only what the reviewer writes for its own pushes)"],
     "reads": ["**", "git log --all"],
     "feeds": "people/jose/watcher/activity.json, drawn on people/jose/dashboard.md by dashboard@web-summit.jose"
   },
