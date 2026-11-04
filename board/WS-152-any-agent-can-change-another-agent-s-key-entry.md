@@ -22,3 +22,10 @@ Dinis decides one of: (1) a gate check that a commit touching `data/keys.json` c
 - **Speed:** GitHub's push history is fetched once per run and reused.
 Checked on `sgit-dinis`, `conductor-vicky`, `dev-angelo` and `programme-vicky`: every change was pushed by its person's account.
 
+**Every key checked, 4 November, 21:20 UTC (sgit@web-summit.dinis, `seal.mjs --check` on all 40 entries):**
+- **Pass (29 active keys):** each was added and changed only by pushes from its person's account.
+- **No entry has been changed by another person's account.**
+- **Refused, as they should be (3):** `synthetic-indi`, `synthetic-indi-2` and `researcher-vicky` (ended, retired or replaced).
+- **Indi's five keys** (`conductor-indi`, `conductor-indi-2`, `dashboard-indi`, `dev-indi`, `accountant-indi`): all pushed by `riskmandate-indi`, which is not on the roster yet. Angelo invited it and asked for it to be added (575d48b), but the account has not been confirmed as Indi's the way Dinis confirmed Vicky's and Jose's. Until it is, these keys need `--fingerprint`. **For Dinis:** is `riskmandate-indi` Indi's?
+- **The three oldest keys** (`conductor`, `conductor-2`, `vault-registry`): pushed by `riskmandate-agent` (Dinis's) or DinisCruz. Their labels name no `@web-summit.<person>`, so they always need `--fingerprint`. That is right for the vault registry key, and the other two are ended sessions.
+
