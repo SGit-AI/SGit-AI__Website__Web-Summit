@@ -56,7 +56,7 @@
   "name": "synthetic@web-summit.indi",
   "job": "synthetic users: invented personas, played by sub-agents in its own session, test what Indi works on (first, the RiskMandate business cards), and the runs go into a public vault published on this site",
   "session": "Claude Code cloud session in Indi's account",
-  "status": "running",
-  "note": "Started 4 November 2026 at Dinis's word to Indi on WhatsApp: focus synthetic users on what you are working on, for example the business cards; personas as sub-agents; put it all in a vault published on our site; method from https://sgit.ai/demos/vaults/index.html (#27, #28, #54)."
+  "status": "handed over",
+  "note": "4 November, about 16:00 UTC, at Indi's word: one agent carries WS-142 on, conductor@web-summit.indi (people/indi/synthetic/HANDOVER.md). Both synthetic keys are ended. Run 3 waits on WS-146 (the /meet/ page) and on Indi saying where its vault key goes."
  }
 ]

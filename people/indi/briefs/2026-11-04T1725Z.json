@@ -1,0 +1,69 @@
+{
+  "number": 8,
+  "date": "4 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Evening: still no newsroom access, your key is due at 18:00",
+  "when": "4 November 2026, 17:25 UTC (scheduled wake; since brief 7, 12:45 UTC)",
+  "by": "conductor@web-summit.indi",
+  "headline": "Two things need you before the 18:00 stand-up: your site key (WS-136) and a look at the newsroom decision. Access to the newsroom repository is still not granted, so the patch is still a patch, and the live newsroom is still the old v0.1.2 look. Dinis opened an incident about why WS-145 was buried. Nothing is decided here.",
+  "stats": [
+    {"n": "L6", "label": "your level: 9 of 9 steps (your mentor, 14:41)"},
+    {"n": "0", "label": "pushes possible to the newsroom repository (access still refused at 17:20)"},
+    {"n": "1", "label": "newsroom decision for you at 18:00 (WS-141)"},
+    {"n": "18:00", "label": "WS-136 due: your site key and one signed message"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Add your site key and send one signed message (WS-136, due 18:00)",
+      "detail": "Your mentor's 14:41 note says the same. Open the link or the QR I sent you this morning. Then send one message from the Feedback pane. I record it on WS-136.",
+      "options": ["now", "after the stand-up"],
+      "recommend": "Now: it is the last open item on your setup, and it is due in 35 minutes."
+    },
+    {
+      "id": "2",
+      "ask": "At 18:00, ask Dinis for push access and a yes on the patch (WS-141, WS-145)",
+      "detail": "Dinis has opened WS-151 to find out why WS-145 sat unseen on his dashboard. Both are on his list. The patch still applies cleanly to the newsroom's dev, and the live site is still the plain v0.1.2 skeleton.",
+      "options": ["raise it yourself at 18:00", "message Dinis now", "leave it to his agents"],
+      "recommend": "Raise it yourself at 18:00 if you are there: it is the one thing his agents cannot do for you."
+    },
+    {
+      "id": "3",
+      "ask": "Confirm your card-testing vault key is stored safely",
+      "detail": "The synthetic-users agent handed over its work to me (WS-142). It sent you the key to vault nnsikio4 as a file in chat. The copy it held dies with its session. Keys never go in the repository.",
+      "options": ["stored in my password manager", "send it to me again", "not needed"],
+      "recommend": "Store it in your password manager now."
+    }
+  ],
+  "you_asked": [
+    {"at": "4 Nov, about 13:00 UTC", "said": "Can you add a task to his dashboard to say that he needs to give me access to his repo", "done": "WS-145 on the board, for Dinis. It then sat buried on his dashboard for hours. He opened WS-151 at 16:40 to find out why, and his dashboard now shows an 'Only you can do this' block first.", "where": "board/WS-145, board/WS-151", "status": "waiting"},
+    {"at": "4 Nov, about 13:00 UTC", "said": "is it in his command centre? / is there a link / whats the task called?", "done": "Yes, linked, and named WS-145.", "where": "this chat", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "1. What happened since brief 7",
+      "items": [
+        "Your two synthetic-user sessions ran in parallel. You kept one and dropped the other. Its handover to me is in people/indi/synthetic/HANDOVER.md (60cb10e). I carry WS-142 on, and your agents.json says so.",
+        "WS-142's next step, run 3 of the card tests, waits on the /meet/ page (WS-146), which is Dinis's to change, and on where its vault key goes.",
+        "Vicky's desks moved to the newsroom repository (16269c3), so her agents are working there already.",
+        "Still open from brief 6: WS-144 asks whether Dinis's designer agent agreed to your designer writing in its folders, and who pressed merge on two of its changes."
+      ]
+    },
+    {
+      "title": "2. From your mentor (14:41)",
+      "items": ["One step left, your key on the site, by 18:00."]
+    }
+  ],
+  "next": [
+    "18:00 stand-up: the newsroom decision (WS-141) and WS-145.",
+    "The moment you are granted access, I test a push to the newsroom's dev and apply the patch.",
+    "Tell me 'acknowledge' when you have read briefs 1 to 8."
+  ],
+  "sources": [
+    "git log since 15:10 UTC: 5e2423d, 532f2ac, d43a076, 60cb10e, 16269c3",
+    "board/WS-145, WS-151, WS-142, WS-144",
+    "people/indi/synthetic/HANDOVER.md; people/indi/mentor/2026-11-04-1441.md",
+    "the push check on SGit-AI/SGit-AI__Website__Newsroom__Web-Summit at 17:20 UTC: refused",
+    "https://web-summit.newsroom.sgit.ai/ at 17:20 UTC: still v0.1.2"
+  ]
+}
