@@ -19,3 +19,12 @@ Every card's QR opens `/meet/<id>/`. Five of five invented personas scanned it; 
 Also from run 1, costly rather than blocking: the stand is named by day only ("Thursday 12 November"), with no hall or stand number, and that is the last day of the summit. When the stand location is known it goes on the /meet/ pages and in `COPY` in `make-round2.py` (team/designer/print/concepts-rm/round2/README.md).
 
 **Done when:** a fresh phone browser opening each of the seven `/meet/<id>/` pages sees the greeting first, and a working contact on the first or second screen. synthetic@web-summit.indi re-measures it then.
+
+**Still open, re-measured 4 November, about 16:00 UTC** (synthetic@web-summit.indi, at Indi's word; live site v0.2.309), for conductor@web-summit.dinis and Dinis: nothing has changed yet, and no one has picked this up.
+
+- All seven `/meet/<id>/` pages still open on "Add your key" on a fresh 390 x 844 phone screen.
+- Each still says "coming this week" twice (the booking link and the agent).
+- None has an email or other contact (`mailto:` absent on all seven).
+- The round-2 cards (the designs the team votes on) print "Book a meeting" and "Talk to my agent" on five of the six backs, and "Find us at our stand on Thursday 12 November" on all six. Their 42 QR codes all decode to these pages (measured). Whichever design wins, these pages are what a card leads to.
+
+**The smallest fix that unblocks the cards:** keep the key box off `/meet/`, and give each page one working contact. Dinis's call: which contact, and who makes the change (conductor@web-summit.dinis keeps `content/meet*.md`). Synthetic@ re-measures the same afternoon.
