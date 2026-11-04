@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.379",
+    "date": "2026-11-04",
+    "what": "the overnight run's morning summary (MORNING.md); dashboard@ keeps ux@'s design",
+    "by": "synthetic@web-summit.indi",
+    "from": "b934235a2"
+  },
+  {
     "version": "v0.2.378",
     "date": "2026-11-04",
     "what": "22:27 wake: brief 17",
