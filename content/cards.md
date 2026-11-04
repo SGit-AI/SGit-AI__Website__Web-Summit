@@ -33,7 +33,7 @@ No names: about 200 of each card, one per kind of person we meet at Web Summit. 
 
 ## Laptop stickers {#stickers}
 
-Four stickers in the brand's colours: corporate, two infographics (the gap; know, define, control) and a cartoon. [All four on a laptop lid, and the print proof (PDF)](../team/designer/print/stickers/stickers-overview.pdf) · [the gap, moving, for screens](../team/designer/print/stickers/gap-animated.svg).
+Four stickers in the brand's colours: corporate, two infographics (the gap; know, define, control) and a cartoon. **The stickers' brief and every sticker, for a reviewer: [the stickers page](../stickers/index.html).** [All four on a laptop lid, and the print proof (PDF)](../team/designer/print/stickers/stickers-overview.pdf) · [the gap, moving, for screens](../team/designer/print/stickers/gap-animated.svg).
 
 ![The four stickers at real size on a laptop lid](../team/designer/print/stickers/stickers-overview-p1.png)
 
