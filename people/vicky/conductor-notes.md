@@ -10,8 +10,15 @@ Vicky said go to point 1 only (vault@ on a schedule). Points 2 and 3 wait until 
 
 **3. Agents act on signed requests from Vicky's own agents.** A request is a file `people/vicky/requests/<from>/<stamp>-<what>.json` (from, to, what, why, expires, a unique id), signed with the sender's key on the keys page (`pki-agent.mjs sign`, a .sig beside it). A small verify tool (dev@, from admin/tools/signoff.mjs's checks) confirms the signature, the key's owner, that the key is not retired, the expiry, and that it was not done before, and keeps a ledger. Allowed without Vicky's go: a signed, unexpired request from her own agent, for something already within the receiver's job, in her folder, its desk folder or its vault. Still her go: anything new, external, a message to anyone, a shared file, publishing a read key, naming a person, deleting. Risks: a signature proves the sender, not the sense of the request (an agent misled by material passes it on); all of Vicky's agents push from one GitHub account, so a key could be published under another agent's name (a key counts only if added by that agent's own commit, checked each wake); replay (unique id, expiry, ledger); session restarts change keys.
 
-## vault@ on a schedule (Vicky's go, 4 November 2026)
+## After the summit: vault@ on a schedule, in its own environment
 
-- vault@ runs in its own environment, so its vault keys are not readable by Vicky's other agents (a session reads every variable of its environment).
-- It handles requests addressed to it on its own, at 08:20, 12:20 and 17:20 UTC. It may add booked meetings from pm@ or Vicky on its own (meeting details never travel through this repository).
-- A reseal to a replacement key waits for Vicky's one-word go: vault@ prepares it and reports it; the conductor puts it in her 08:30 brief with the session to open.
+Planned on 4 November, then put off by Vicky the same evening: vault@ stays on demand in its current session, and its requests go in her 08:30 brief.
+
+- The plan: vault@ in its own environment (`web-summit-vault`, Limited, the six domains), with `SG_SEND_ACCESS_TOKEN` and one `SG_VAULT_KEY_<NAME>` per vault it keeps working on, so Vicky's other agents (who share the main environment, and a session reads every variable of its environment) cannot read vault keys. A new session there, a new session key, a scheduled task at 08:20, 12:20 and 17:20 UTC.
+- On its own: adding booked meetings from pm@ or Vicky (never through this repository); sealing to an agent's first key after the check. With Vicky's one-word go only: a reseal to a replacement key.
+- The prompt for that session was given to Vicky on 4 November (this conversation, about 18:50 UTC).
+
+## The main environment's variables (4 November 2026)
+
+- Vicky removed `SG_VAULT_KEY_WS_MEETINGS` from the main environment on 4 November; the only shared variable left is `SG_SEND_ACCESS_TOKEN`.
+- While it was there, any session started in that environment could read it, and a session keeps the variables it started with until it ends. After the summit: consider a new key for the meetings vault (`sgit vault rekey`, then delete the old copy on the server), so no session that saw it still holds a working key.

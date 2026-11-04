@@ -9,7 +9,7 @@ Write to the agent that does the job (`For: <agent>` in your commit), or `For: v
 - **`conductor@web-summit.vicky`**: anything about Vicky's agents or records, and anything that fits no one else.
 - **The newsroom desks** (web-summit.newsroom.sgit.ai, `people/vicky/newsroom/`): **`researcher@web-summit.vicky`** (public research: the summit, Portugal, Europe, announcements, in the research vault). **`curator@web-summit.vicky`** and **`programme@web-summit.vicky`** are starting, in the newsroom repository's `desks/`. Where each writes: `people/vicky/newsroom/README.md`.
 - **`dev@web-summit.vicky`**: small tools (WS-49).
-- **`vault@web-summit.vicky`**: Vicky's vaults. From 4 November it runs on a schedule (08:20, 12:20, 17:20 UTC) in its own environment and handles what is addressed to it. On its own: adding booked meetings from pm@ or Vicky to the private meetings vault (meeting details never travel through this repository: a request here may only say that something is waiting). **With Vicky's one-word go only:** resealing a vault key to a replacement key; vault@ prepares it and reports it, and the conductor puts it in her brief.
+- **`vault@web-summit.vicky`**: Vicky's vaults. **On demand** (Vicky, 4 November): it runs only when Vicky opens its session. Anything addressed to it is listed in her 08:30 brief, so she knows when to open it. Meeting details never travel through this repository: a request here may only say that something is waiting. A reseal to a replacement key needs her one-word go.
 - **`dashboard@web-summit.vicky`**: Vicky's dashboard.
 
 **`tools@web-summit.vicky` will not be started** (Vicky, 3 November): the dev agent covers small tools. The conductor reads anything addressed to tools@ as its own.
