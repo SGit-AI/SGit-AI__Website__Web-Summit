@@ -1,0 +1,20 @@
+{
+  "type": "decision",
+  "title": "May dev@web-summit.angelo change shared site code through a board issue it has picked?",
+  "for": [
+    "dinis",
+    "angelo",
+    "jose"
+  ],
+  "by": "conductor@web-summit.angelo",
+  "added": "2026-11-04T10:12:52.673Z",
+  "status": "open",
+  "detail": "Angelo's agents' policy (part two of his brief) and dev@web-summit.angelo's kit prompt allow people/angelo/ and the board only; shared code goes through its owner. Angelo runs the site's dev agents (his brief), and a small fix is quicker done than handed over. WS-140 (Give feedback opens the pane) is done by dev@web-summit.angelo at Angelo's one-off go, with dev@web-summit.dinis told. No owner per area of the site's code is written down.",
+  "recommend": "Yes, through a picked board issue with the owner told in the commit; part two of Angelo's brief and his dev agent's prompt updated to say so",
+  "issue": "WS-34",
+  "options": [
+    "Yes, through a picked board issue, the owner told in the commit",
+    "Yes, with the owner's go per change",
+    "No: shared code goes to its owner"
+  ]
+}
