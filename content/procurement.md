@@ -41,4 +41,4 @@ Every email from now on carries this note:
 | A printer (name withheld until they answer) | 2 Nov: cannot make Friday 6 Nov; asked about Monday 9 Nov, they asked Silvio to call | asked 2 Nov |
 | A second printer (name withheld until they answer) | 2 Nov: quoted, but white, black or grey only | asked 2 Nov |
 | A third printer (name withheld until they answer) | 2 Nov, 23:00: quoted; can make Friday in our colours (made to order) if files and confirmation by end of Tue 3 Nov | to ask 3 Nov |
-| A fourth printer (name withheld until they answer) | 3 Nov, 10:00: quoted; ready to collect Friday if confirmed today | asked 3 Nov |
+| A fourth printer (name withheld: publication declined) | replied | **no** (4 Nov): nothing of theirs is published |

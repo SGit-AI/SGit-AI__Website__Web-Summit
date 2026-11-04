@@ -44,6 +44,8 @@ The proofs, one per person: [Dinis](../team/designer/print/proofs/dinis.svg) · 
 3. By when you need the final artwork and the sizes to make that date.
 4. Which T-shirt and hoodie colours you have in stock.
 
+**Update, 4 November, 10:00:** Printer D cannot guarantee Friday (the colours are ordered in); asked whether Monday 9 November morning works. Printer D declined publication, so nothing more about it goes here.
+
 **Update, 3 November, evening:** Dinis chose **Printer D** (the backup) for its quality and service, accepting the extra cost; Printer C could not invoice outside Portugal. Collection by Monday 9 November at the latest; sizes settled (WS-130).
 
 ## Where it stands: brief for Dinis, Tuesday 3 November, 14:30 {#status}
@@ -60,7 +62,7 @@ As soon as Dinis says yes, Silvio confirms with Printer C and sends the files an
 
 - **Replies: 4 of 7.**
   - **Printer C: the best fit.** Friday 6 November in Lisbon, delivery free, prepayment, **if files, sizes and confirmation arrive by the end of today**. White and black in stock; our colours made to order. Asked to confirm all seven colours, purple above all, on T-shirts and hoodies.
-  - **Printer D: the backup.** Ready to collect on Friday if confirmed today; costs more. Asked about the seven colours.
+  - **Printer D: the backup.** Declined publication.
   - **Printer B: does not fit** (white, black or grey only). **Printer A: cannot make Friday.**
 - **Waiting on:** 3 printers. Checked every 2 hours.
 - **Sign-off:** 1 of 7 (Vicky); the shared designs awaiting Dinis. **Sizes:** 1 of 7 (Vicky).
