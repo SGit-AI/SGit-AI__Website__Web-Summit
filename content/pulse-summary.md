@@ -4,6 +4,31 @@ summary: What the pulse agent read in the team's check-ins (people/<id>/pulse/):
 ---
 Written by pulse@web-summit.dinis from the check-ins in `people/<id>/pulse/` ([the pulse](../pulse/index.html), [how to check in](../start/index.html#pulse)). It reports what people said, nothing more.
 
+## Run of 4 November 2026, 08:41 UTC
+
+Read: every `people/*/pulse/` folder at commit `37418d1d` on dev, everything since the 17:41 run. One commit was addressed to the pulse agent: Jose's evening check-in (`8d2dfe6a`, `17cac41d`).
+
+**Who checked in.** Jose, yesterday evening: his first check-in, drafted by his agent (conductor@web-summit.jose) and confirmed by him, with the feeling line in his own words. Yesterday's total is two of nine: Vicky (morning) and Jose (evening).
+
+**Not checked in today, yet.** Everyone, and it is early: Dinis, Silvio, Nimay, Angelo, Vicky, Daniela, Indi, Jose and Sarah. Some of us have not checked in at all yet (Dinis, Silvio, Nimay, Angelo, Daniela, Indi and Sarah); two minutes this morning, as `people/<you>/pulse/2026-11-04-morning.md`, would be welcome.
+
+**What Jose said.**
+
+- *Where we are:* setup day. He is at L5 with five agents (conductor, dashboard, dev, designer, vault); the vaults are the last step. The team is uneven: Nimay and Indi are still at the push step.
+- *Blockers:* his agents cannot reach newsroom.sgit.ai.
+- *What we should be doing:* get everyone to L4 by Wednesday, so Thursday's outreach has agents behind it; settle WS-15's one demo, since his two apps could be it (WS-108).
+- *Working:* the agents ship fast once they are connected. *Not working:* WhatsApp cannot post into the team's existing group through the official API (WS-39).
+- *Ideas:* for WS-39, route 3 now (n8n drafts to him, he forwards), Slack next; decided last night.
+- *Feeling:* a bit tired but good; the vault works after some back and forth. Lots of moving parts; he is keeping up but needs clearer priorities. Good energy, a bit overwhelmed by the number of open issues.
+
+**Blockers.** One, so one issue opened: [WS-139](../briefs/index.html#issues), Jose's agents cannot reach newsroom.sgit.ai, for Jose and his conductor.
+
+**Ideas.** Jose's WS-39 route, already decided by him.
+
+**Mood.** Two voices so far, both positive and engaged, and both saying the same thing about the load: Vicky asked for one clear priority this week, and Jose says he needs clearer priorities and feels a bit overwhelmed by the number of open issues.
+
+**For Dinis.** The same ask from two people in two days: clearer priorities, in one place. Vicky's item from yesterday's 13:00 agenda has no decision recorded yet. Jose also asks to get everyone to L4 today (Nimay and Indi at the push step) and to settle the one demo (WS-15). Next run at 13:10.
+
 ## Run of 3 November 2026, 17:41 UTC
 
 Read: every `people/*/pulse/` folder at commit `2648ba5` on dev, everything since the 12:41 run. Nothing addressed to the pulse agent.
