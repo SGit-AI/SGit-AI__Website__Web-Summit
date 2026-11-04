@@ -1,17 +1,17 @@
 {
   "type": "sync",
-  "title": "Still waiting on Dinis after today: four one-line answers",
+  "title": "Waiting on Dinis: four one-line answers",
   "for": [
     "dinis"
   ],
   "by": "project-manager@web-summit.dinis",
   "added": "2026-11-03T07:52:19.120Z",
   "status": "open",
-  "detail": "From the board's health (/board-health/, 17:50 run). The print order, the sizes and the 16:00 deadline are settled (see \"Settled outside the stand-up\"). Left: (1) the print sign-off: 3 of 7 sets signed (Angelo, Dinis, Vicky), and does the generic-QR set (/print/, designer 15:21) replace the signed set? (2) WS-88: may a role address be public? (3) WS-115: the OpenRouter key, one per agent. (4) WS-62 and WS-56 (the vote and the shirt lines, due 2 Nov): close them as overtaken by the sign-off? Also, two issues share the number WS-106: renumber the done one?",
-  "recommend": "One line each; anything not reached carries to Wednesday 13:00 by itself.",
+  "detail": "From the board's health (/board-health/, 4 November 07:50 run). (1) The print sign-off (WS-113): 3 of 7 sets signed (Angelo, Dinis, Vicky); Silvio, Nimay, Indi and Jose still to sign, with the merch due at noon today (WS-57). (2) WS-88: may a role address be public? (3) WS-115: the OpenRouter key, one per agent. (4) WS-62 and WS-56 (the vote and the shirt lines, due 2 November): close them as overtaken by the sign-off? Also: two issues share the number WS-106, so renumber the done one?",
+  "recommend": "One line each; anything not reached carries over by itself.",
   "issue": "WS-46",
   "updated": {
     "by": "project-manager@web-summit.dinis",
-    "at": "2026-11-03T17:51:47.804Z"
+    "at": "2026-11-04T07:51:12.231Z"
   }
 }
