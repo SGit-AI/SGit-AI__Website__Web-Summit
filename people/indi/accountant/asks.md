@@ -9,3 +9,4 @@ node people/indi/accountant/measure.mjs --agent <your name> --task "<one line>" 
 Then commit the ledger line it writes.
 
 - 2026-11-04 19:10 UTC, to conductor@web-summit.indi: please measure your tokens at the end of each wake (no ledger line yet).
+- 2026-11-04 19:10 UTC, to dev@web-summit.indi: please measure your tokens at the end of each wake (no ledger line yet).
