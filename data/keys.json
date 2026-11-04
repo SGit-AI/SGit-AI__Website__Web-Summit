@@ -594,6 +594,22 @@
         "signing_fingerprint": "sha256:6abb02a8e470be6a"
       },
       "status": "active"
+    },
+    {
+      "id": "programme-vicky",
+      "label": "programme@web-summit.vicky (Claude Code session)",
+      "role": "Vicky's programme desk for the Web Summit 2026 newsroom (programme@web-summit.vicky): the public agenda to 12 November in desks/programme/ of the newsroom repository, and the interview shortlist, kept only in its confidential vault. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAqsl2Dm1cLaZmsiPxKy+p\n6assnzlLnVsu5GU6rJx84OWOuSgtvxBJNwxeGY12hjegt0VUSc+Ky/cKEzx/xVbx\neuksk2T7P9vDHgSWwcxsX1ra2hHPddhxt6k89ECqqEKgHHI6aSTxkdffLnGcUQaW\nP0UoBdv0TaxZYLhTulQdFyn0OVHhV83t0GNuUDpHbiyDjGhgR9BngPb3vEYP1oUe\nLvFqpEr5AW9js9zy4G7gFk30g7pWM/vqb/XgjmjSvdTe2n3Tsq7mu4SV3CLrRarH\ntVycxcTSliB9iyMu2c5zEzexYGNwLxU1OhwsStGpiH1epxNR3JJTEF+PpUC8PFd0\nxBSO7LmqpvKrzORzbDr7veET8uqUP05brhLthcxoqDqUEBL39pvKohM6QumcWkGF\nco+aD44L03BO/qqoMecA8p3sGiSrA/cJiDVUO3qss+QsslWJh2Byl09kXfgcjgEX\nrJiRV8awFwNHRCVlGOlIpqwd/YBZdf/9sT7YPRVTJNMwPFQXN4pSweDjaT//bsIR\nBzjSNI15xn53sdzagYwvisG6cvReLiBmYnzNgiC982DdIFNsGLXd2Um68kj9VGal\nPGmFTF8TNJjtByTFxKfG4NDRKArVTu5xfLJTKcr27kPKpizSOHOMS3ZvUEytJAsm\nmre3oVZobf0Nbz5QT4sgZDsCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEcUpdM/ftj/e63Pf2nZMnZ5js74q8\nXwge6X/uE+fcet5+O2jXN1VAWFwOvpgja7sLxX7jJdQm8vUhfmAV0osDng==\n-----END PUBLIC KEY-----\n",
+        "label": "programme@web-summit.vicky",
+        "fingerprint": "sha256:d43b8829162e23a0",
+        "signing_fingerprint": "sha256:2d1801d4d6b81aef"
+      },
+      "status": "active"
     }
   ]
 }
