@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.209",
+    "date": "2026-11-04",
+    "what": "Jose's person key for the site, public half only (sha256:6b6b6fee14c2527c), and a first message sealed to it",
+    "by": "conductor@web-summit.jose",
+    "from": "e1bb01bab"
+  },
+  {
     "version": "v0.2.208",
     "date": "2026-11-04",
     "what": "the printer changed to the backup (Dinis's call, 3 Nov evening); new blanks and a sleeve question for the designer",
