@@ -15,13 +15,14 @@
     const ago = d => { const m = Math.round((Date.now() - new Date(d)) / 6e4); return m < 1 ? 'just now' : m < 60 ? `${m} min ago` : m < 1440 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} d ago` }
     const ico = p => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${p}"/></svg>`
     const KANBAN_ICON = 'M4 4h4v16H4zM10 4h4v10h-4zM16 4h4v13h-4z'
+    const SUMMIT_ICON = 'M4 6h16v14H4zM4 10h16M8 3v4M16 3v4M8 14h3v3H8z'
     const TEAM_ICON = 'M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21v-1a6 6 0 0 1 12 0v1M16 3.1a4 4 0 0 1 0 7.8M22 21v-1a6 6 0 0 0-4-5.6'
     const PHONE = matchMedia('(max-width: 767px)')
 
     function start() {
         const K = window.AngeloKanban
         let D = null, failed = ''
-        const route = () => (location.hash.match(/^#(kanban|collab)(\?|$)/) || [])[1] || ''
+        const route = () => (location.hash.match(/^#(kanban|collab|summit)(\?|$)/) || [])[1] || ''
         const mine = () => !!route()
         fetch(root.dataset.src || 'data.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : Promise.reject(new Error(r.status))).then(d => { D = d; if (mine()) draw() }).catch(e => { failed = e.message; if (mine()) draw() })
 
@@ -31,13 +32,13 @@
 
         function nav() {
             const side = root.querySelector('.cc-nav [data-view="board"]')
-            if (side && !root.querySelector('.cc-nav [data-view="kanban"]')) side.insertAdjacentHTML('afterend', `<a href="#kanban" data-view="kanban" title="Kanban">${ico(KANBAN_ICON)}<span class="lbl">Kanban</span></a><a href="#collab" data-view="collab" title="Team and the machine">${ico(TEAM_ICON)}<span class="lbl">Team and the machine</span></a>`)
+            if (side && !root.querySelector('.cc-nav [data-view="kanban"]')) side.insertAdjacentHTML('afterend', `<a href="#kanban" data-view="kanban" title="Kanban">${ico(KANBAN_ICON)}<span class="lbl">Kanban</span></a><a href="#collab" data-view="collab" title="Team and the machine">${ico(TEAM_ICON)}<span class="lbl">Team and the machine</span></a><a href="#summit" data-view="summit" title="Summit days">${ico(SUMMIT_ICON)}<span class="lbl">Summit days</span></a>`)
             // phones: the Board tab opens the kanban (with My tasks off it is the whole team's board)
             const tab = root.querySelector('.cc-tabs a[href="#board"]')
             if (tab) { tab.setAttribute('href', '#kanban'); tab.lastChild.textContent = 'Kanban' }
             if (mine()) {
                 root.querySelectorAll('.cc-nav [aria-current], .cc-tabs [aria-current]').forEach(a => a.removeAttribute('aria-current'))
-                root.querySelectorAll(route() === 'kanban' ? '.cc-nav [data-view="kanban"], .cc-tabs a[href="#kanban"]' : '.cc-nav [data-view="collab"]').forEach(a => a.setAttribute('aria-current', 'page'))
+                root.querySelectorAll(route() === 'kanban' ? '.cc-nav [data-view="kanban"], .cc-tabs a[href="#kanban"]' : `.cc-nav [data-view="${route()}"]`).forEach(a => a.setAttribute('aria-current', 'page'))
             }
         }
 
@@ -53,6 +54,7 @@
         // ---------- drawing ----------
         function draw() {
             if (route() === 'collab') return drawCollab()
+            if (route() === 'summit') return drawSummit()
             const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
             if (!view) return
             const first = D ? (D.person.name || D.person.id).split(' ')[0] : ''
@@ -63,7 +65,7 @@
             const shown = K.filter(D.issues, s, ctx, now)
             const needN = D.issues.filter(i => K.needsMe(i, ctx, now)).length
             view.innerHTML = `<div class="ak">
-<a class="ak-switch" href="#collab">Team and the machine →</a>
+<nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine →</a><a href="#summit">Summit days →</a></nav>
 ${toolbar(s, shown.length, needN)}
 ${chips(s)}
 ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No cards match this view.</p><button class="cc-btn" type="button" data-ak-reset>Back to my open tasks</button></div>`}
@@ -224,7 +226,7 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             const C = D.collab, M = C.machine, name = id => (C.people.find(p => p.id === id) || { name: id }).name
             const max = Math.max(1, ...C.links.map(l => l.messages + l.shared))
             view.innerHTML = `<div class="ak">
-<a class="ak-switch" href="#kanban">← Kanban</a>
+<nav class="ak-switch" aria-label="More views"><a href="#kanban">← Kanban</a><a href="#summit">Summit days →</a></nav>
 <section class="ak-machine" aria-label="The machine">
   <div class="cc-card"><h3>Last release</h3>${M.release ? `<p class="ak-big">${esc(M.release.version)}</p><p class="note">${esc(M.release.date)}: ${esc(M.release.what)}</p><p class="note">A release exists only when the gate passed.</p>` : '<p class="note">No release recorded.</p>'}</div>
   <div class="cc-card"><h3>CI</h3><p class="note">This page cannot see CI runs or their failures; GitHub can.</p><p><a href="${esc(M.ci)}">The deploy runs on GitHub</a></p></div>
@@ -256,6 +258,54 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
 <section><h3>Works with</h3>${links.length ? `<ul>${links.map(l => `<li>${esc(name(l.a === id ? l.b : l.a))} <span class="note">${l.messages} messages, ${l.shared} shared issues</span></li>`).join('')}</ul>` : '<p class="note">No messages or shared issues recorded.</p>'}</section>
 <section><h3>Send a message</h3><p class="note">Sealed messages to anyone come with slice 6, once sealed sending (slice 3) works.</p></section>
 </aside>`
+        }
+
+        // ---------- summit days (slice 7): the public schedule the team sourced, and the stand-ups ----------
+        const DAYNAME = d => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' })
+        const startMin = t => { const m = String(t || '').match(/\b([01]?\d|2[0-3])[:.]([0-5]\d)\b/); return m ? +m[1] * 60 + +m[2] : -1 }
+        const endMin = t => { const m = String(t || '').match(/\b(?:[01]?\d|2[0-3])[:.][0-5]\d\s*[-–]\s*([01]?\d|2[0-3])[:.]([0-5]\d)\b/); return m ? +m[1] * 60 + +m[2] : -1 }
+        const hhmm = m => `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`
+        const sstate = () => { const i = location.hash.indexOf('?'); return { day: new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)).get('day') || '' } }
+        const dayList = (S, today) => {
+            const set = new Set(S.sessions.map(x => x.day))
+            for (const x of S.side) for (let d = x.range.from; d <= x.range.to && d <= '2026-11-30'; d = new Date(Date.parse(d + 'T00:00:00Z') + 864e5).toISOString().slice(0, 10)) set.add(d)
+            if (S.standups.from) for (let d = S.standups.from; d <= S.standups.until; d = new Date(Date.parse(d + 'T00:00:00Z') + 864e5).toISOString().slice(0, 10)) set.add(d)
+            return [...set].filter(d => d >= today).sort()
+        }
+        function itemsOn(S, day) {
+            const out = []
+            if (S.standups.from && day >= S.standups.from && day <= S.standups.until) for (const t of S.standups.slots) {
+                const id = `${day}-${t.replace(':', '')}`
+                out.push({ kind: 'standup', title: 'Stand-up', start: startMin(t), end: startMin(t) + 30, time: `${t}`, place: 'the team call', what: 'Decisions first, then questions, ideas and syncs. Read your briefing before.', link: S.standups.meetings.includes(id) ? `../../../meetings/${id}/index.html` : '' })
+            }
+            for (const x of S.sessions.filter(x => x.day === day)) out.push({ kind: 'session', title: x.title, start: startMin(x.time), end: endMin(x.time), time: x.time.replace(/\s*\(Lisbon.*\)$/, ''), place: x.stage, who: x.speakers.join('; '), what: x.why, source: x.source })
+            for (const x of S.side.filter(x => day >= x.range.from && day <= x.range.to)) { const multi = x.range.from !== x.range.to; out.push({ kind: 'side', title: x.title, start: multi ? -1 : startMin(x.when), end: multi ? -1 : endMin(x.when), time: multi ? `${DAYNAME(x.range.from)} to ${DAYNAME(x.range.to)}` : (x.when.split(',').slice(1).join(',').trim() || 'all day'), place: x.place, what: x.what, source: x.source }) }
+            return out.sort((a, b) => a.start - b.start || a.title.localeCompare(b.title))
+        }
+        function drawSummit() {
+            const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
+            if (!view) return
+            const first = D ? (D.person.name || D.person.id).split(' ')[0] : ''
+            if (title) title.innerHTML = `Summit days<small>${esc(first)}'s command centre</small>`
+            document.title = `Summit days · ${first}'s command centre`
+            if (!D || !D.summit_days) { view.innerHTML = failed ? `<p class="note">The schedule could not load (${esc(failed)}).</p>` : '<p class="note">Loading the schedule…</p>'; return }
+            const S = D.summit_days, now = new Date(), today = now.toISOString().slice(0, 10), mins = now.getUTCHours() * 60 + now.getUTCMinutes()
+            const days = dayList(S, today), day = days.includes(sstate().day) ? sstate().day : days[0]
+            const items = day ? itemsOn(S, day) : []
+            const live = day === today ? items.filter(x => x.start >= 0 && x.start <= mins && (x.end < 0 ? mins - x.start < 60 : mins < x.end)) : []
+            const next = day === today ? items.find(x => x.start > mins) : null
+            const tag = { standup: ['Stand-up', 't-conductor'], session: ['Session', 't-blue'], side: ['Side event', 't-orange'] }
+            const row = x => `<article class="ak-card ak-ev${live.includes(x) ? ' ak-live' : ''}${next === x ? ' ak-next' : ''}"><div class="ak-evt"><b>${esc(x.start >= 0 ? hhmm(x.start) : '')}</b><small>${esc(x.start >= 0 ? x.time.replace(/^\d\d?[:.]\d\d\s*/, '') : x.time)}</small></div><div class="ak-evb"><span class="ak-meta"><span class="chip ${tag[x.kind][1]}">${tag[x.kind][0]}</span>${live.includes(x) ? '<span class="chip t-green">now</span>' : next === x ? '<span class="chip t-yellow">next</span>' : ''}</span><span class="ak-title">${x.link ? `<a href="${esc(x.link)}">${esc(x.title)}</a>` : esc(x.title)}</span>${x.place ? `<span class="note">${esc(x.place)}</span>` : ''}${x.who ? `<span class="note">${esc(x.who)}</span>` : ''}${x.what ? `<span>${esc(x.what)}</span>` : ''}${x.source ? `<a class="note" href="${esc(x.source)}">Source</a>` : ''}</div></article>`
+            view.innerHTML = `<div class="ak">
+<nav class="ak-switch" aria-label="More views"><a href="#kanban">← Kanban</a><a href="#collab">Team and the machine →</a></nav>
+${days.length ? `<div class="ak-tabs" role="tablist" aria-label="Days">${days.map(d => `<button type="button" role="tab" data-ak-day="${d}" aria-selected="${d === day}">${d === today ? 'Today' : esc(DAYNAME(d))}</button>`).join('')}</div>` : ''}
+${day ? `<h3 class="ak-lane">${esc(DAYNAME(day))}${day === today ? ' (today)' : ''} <b>${items.length}</b></h3><p class="note">Times are Lisbon time, which is UTC in November.</p><div class="ak-list">${items.map(row).join('') || '<p class="note">Nothing on this day.</p>'}</div>` : '<p class="note">Nothing left on the schedule.</p>'}
+<details class="cc-card ak-ess"><summary>Essentials: dates, venue, Night Summit, badges, getting there, wifi</summary><dl class="ak-dl">${S.essentials.map(([k, v]) => `<div><dt>${esc(k.replace(/_/g, ' '))}</dt><dd>${esc(v.value)} <a href="${esc(v.source)}">Source</a></dd></div>`).join('')}</dl></details>
+<div class="cc-card"><h3 class="ak-h3">What this view knows</h3><p class="note">${esc(S.api)} Read on ${esc(S.read_on)}; the schedule is still growing.</p>${S.gaps.length ? `<ul class="note">${S.gaps.map(g => `<li>${esc(g)}</li>`).join('')}</ul>` : ''}<p class="note">Your own meetings come later: each person's agent publishes a sealed summary of their calendar, with their consent (the brief, section 5).</p></div>
+<p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}.</p>
+</div>`
+            view.querySelectorAll('[data-ak-day]').forEach(b => b.onclick = () => { history.replaceState(history.state, '', location.pathname + location.search + '#summit?day=' + b.dataset.akDay); drawSummit() })
+            const sel = view.querySelector('[data-ak-day][aria-selected="true"]'); if (sel && sel.scrollIntoView) sel.scrollIntoView({ block: 'nearest', inline: 'center' })
         }
         window.addEventListener('popstate', () => { if (mine()) draw() })
         PHONE.addEventListener?.('change', () => { if (mine()) draw() })

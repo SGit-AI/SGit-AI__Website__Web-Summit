@@ -110,10 +110,32 @@ function collab(root, person, d, now) {
     }
 }
 
+// summit days (slice 7): the event's public schedule as the team sourced it (data/events.json: the sessions picked as
+// relevant, side events and the essentials, each with its source) and the stand-ups (data/meetings/schedule.json).
+// No Web Summit API is used: none is published (checked 4 November: the schedule pages call an undocumented internal
+// GraphQL service, and robots.txt disallows /api/). Personal calendars come later, sealed and with consent.
+function summitDays(root) {
+    const ev = readJson(root, 'data/events.json') || {}, sch = readJson(root, 'data/meetings/schedule.json') || {}
+    const mdir = path.join(root, 'data/meetings')
+    const meetings = fs.existsSync(mdir) ? fs.readdirSync(mdir).filter(x => /^\d{4}-\d\d-\d\d-\d{4}$/.test(x)) : []
+    const range = t => { const d = [...String(t || '').matchAll(/\d{4}-\d\d-\d\d/g)].map(m => m[0]); return d.length ? { from: d[0], to: /\bto\b/.test(t) && d[1] ? d[1] : d[0] } : null }
+    const pick = k => ev.summit && ev.summit[k] ? { value: ev.summit[k].value, source: ev.summit[k].source } : null
+    return {
+        read_on: ev.read_on || '', note: ev.note || '',
+        api: 'No public Web Summit API: the schedule pages use an undocumented internal service and robots.txt disallows /api/ (checked 4 November 2026). The sessions here are the ones the team picked, each with its source.',
+        essentials: ['dates', 'opening_night', 'conference_days', 'venue', 'night_summit', 'badge_pickup', 'opening_hours', 'getting_there', 'wifi', 'app'].map(k => [k, pick(k)]).filter(([, v]) => v),
+        sessions: (ev.sessions || []).map(x => ({ id: x.id, title: x.title, day: x.day, time: x.time, stage: x.stage, speakers: (x.speakers || []).map(sp => [sp.name, sp.org].filter(Boolean).join(', ')), why: x.why_relevant || '', source: x.source })),
+        side: (ev.side_events || []).map(x => ({ id: x.id, title: x.title, range: range(x.date), when: x.date, place: x.place || '', what: x.what || '', source: x.source || '' })).filter(x => x.range),
+        standups: { slots: sch.slots || [], from: sch.from || '', until: sch.until || '', meetings },
+        gaps: (ev.gaps || []).slice(0, 3),
+    }
+}
+
 export function build(root, person, now = new Date()) {
     const d = CC.build(root, person, now)
     d.kanban = kanban(root, person, d)
     d.collab = collab(root, person, d, now)
+    d.summit_days = summitDays(root)
     return d
 }
 

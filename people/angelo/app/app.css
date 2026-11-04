@@ -97,4 +97,21 @@
     .ak-links li { grid-template-columns: 1fr auto; }
     .ak-links li .ak-barw { grid-column: 1 / -1; grid-row: 2; }
 }
-@media (min-width: 768px) { .ak-switch { display: none; } }
+@media (min-width: 768px) { .ak-switch { display: none !important; } }
+
+/* ---------- summit days (slice 7) ---------- */
+nav.ak-switch { display: flex; gap: 16px; flex-wrap: wrap; }
+nav.ak-switch a { font: 600 14px/20px var(--rm-font); color: var(--rm-action); text-decoration: none; min-height: 32px; display: inline-flex; align-items: center; }
+.ak-ev { grid-template-columns: 64px 1fr; align-items: start; gap: 12px; }
+.ak-evt { display: grid; gap: 2px; }
+.ak-evt b { font: 700 16px/22px var(--rm-font); }
+.ak-evt small { font: 400 12px/16px var(--rm-font); color: var(--rm-text-muted); overflow-wrap: anywhere; }
+.ak-evb { display: grid; gap: 4px; min-width: 0; }
+.ak-evb .ak-title a { color: var(--rm-text); }
+.ak-evb a.note { color: var(--rm-action); }
+.ak-live { border-left: 4px solid var(--rm-green); }
+.ak-next { border-left: 4px solid var(--rm-yellow); }
+.ak-ess summary { cursor: pointer; font: 600 15px/22px var(--rm-font); min-height: 32px; }
+.ak-ess .ak-dl { margin-top: 12px; grid-template-columns: 1fr; }
+.ak-ess a, .cc-card .ak-h3 + .note a { color: var(--rm-action); }
+.ak-h3 { font: 600 12px/18px var(--rm-font); letter-spacing: .06em; text-transform: uppercase; color: var(--rm-text-muted); margin: 0 0 6px; }

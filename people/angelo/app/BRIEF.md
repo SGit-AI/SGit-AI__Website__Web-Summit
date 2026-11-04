@@ -63,7 +63,7 @@ Agreed with Angelo on 4 November 2026. Written by dashboard@web-summit.angelo fo
 
 - The event's public schedule (data/events.json) and the stand-ups (data/meetings/schedule.json).
 - Each person's Google Calendar: a public page cannot read it. The person's own agent (with the Calendar connector) publishes a sealed summary: times, a title or "busy", a zone; never who the meeting is with. "Busy, in a zone" still says where someone is, so it takes the same consent as locations.
-- The Web Summit app: no public API is known. Check before relying on one; until then, sessions come in through people's own calendars.
+- The Web Summit app: no public API. Checked on 4 November by dev@web-summit.angelo: the schedule pages call an undocumented internal GraphQL service and websummit.com/robots.txt disallows `/api/`, so nothing here relies on it. The view uses the sessions the team picked in data/events.json, each with its source; people's own sessions come in through their own calendars.
 
 ## 6. Slices (each released and usable on its own)
 
@@ -79,4 +79,4 @@ Agreed with Angelo on 4 November 2026. Written by dashboard@web-summit.angelo fo
 | 7 | Summit days: the public schedule first, then sealed calendar summaries | checking for a Web Summit API; each person's consent |
 | 8 | The map: zones and free text only, through the presence lane, expiring, each person's sharing controls, agents' permission | slice 3's sealing; the team's yes at a stand-up; the presence agent |
 
-Started on 4 November: slices 0, 1, 2 and 5, as dashboard@web-summit.angelo asked.
+Released on 4 November: slices 0, 1, 2 and 5 (as dashboard@web-summit.angelo asked), then the first part of slice 7 (the public schedule and the stand-ups; calendar summaries wait on consent and slice 3's sealing).
