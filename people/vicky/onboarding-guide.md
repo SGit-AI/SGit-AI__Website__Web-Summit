@@ -1,8 +1,10 @@
 # Getting connected, in plain language (draft, WS-100)
 
-**Draft for Vicky to check.** Written by conductor@web-summit.vicky on 4 November 2026 from Vicky's own setup on 2 and 3 November (with her additions of 4 November) and the steps on the start page (/start/, the section "The steps"). Angelo adds the technical parts, where it says **[Angelo]**; No screenshots: each step names the button as it appears on screen, and where it is. Nothing here is final until Vicky and Angelo say so.
+**Draft for Vicky to check.** Written by conductor@web-summit.vicky on 4 November 2026 from Vicky's own setup on 2 and 3 November (with her additions and review of 4 November) and the steps on the start page (https://web-summit.sgit.ai/start/, the section "The steps"). Angelo adds the technical parts, where it says **[Angelo]**. No screenshots: each step names the button as it appears on screen, and where it is. Nothing here is final until Vicky and Angelo say so.
 
 **Who this is for:** anyone on the team who is not a developer. You do not need to know what GitHub or a "commit" is. Your agents do the technical work; you do a few clicks and answer their questions.
+
+**Your id:** some links and names below contain `<your-id>`. Replace it with your id from the table on the start page (https://web-summit.sgit.ai/start/), in lowercase: for example `vicky`.
 
 **How long:** about an hour in total, spread over a day. You can stop after any step.
 
@@ -22,9 +24,9 @@
 
 **What it is:** the Claude team account, where your agents run. Each agent lives in its own "session" (one conversation).
 
-**What to do:** log in to Claude with the **same Workspace email** from step 1.
+**What to do:** log in to Claude (https://claude.ai) with the **same Workspace email** from step 1.
 
-**You're done when:** you can start a new session.
+**You're done when:** you are logged in to Claude (don't start a regular chat; you'll open Claude Code in step 3a).
 
 ## Step 3. GitHub (the step most people get stuck on)
 
@@ -32,14 +34,16 @@
 
 **What to do:**
 
-1. Go to **github.com**. Press **Sign up**, at the **top right** of the page.
-2. Type your **Workspace email** from step 1 (not a personal one), then a password, then a username. A good pattern is `riskmandate-<yourname>`: that is what several of us used.
+1. Go to **https://github.com**. Press **Sign up**, at the **top right** of the page.
+2. Type your **Workspace email** from step 1 (not a personal one), then a password, then a username. A good pattern is `riskmandate-<your-id>`: that is what several of us used.
 3. GitHub emails a code to your Workspace email to check it is yours. Open that email, and type the code into the box GitHub shows you.
-4. Send Dinis your **username** (not your password). A message in the team group is fine.
+4. Send Dinis or Angelo your **username** (not your password). A message in the team group is fine.
 5. Dinis or Angelo invites you to the team's repository (`SGit-AI/SGit-AI__Website__Web-Summit`). The invitation arrives **in your Workspace email**: press **View invitation** in the email. On the page that opens, press the green **Accept invitation** button. (It is also under **Notifications**, the icon at the **top right** of github.com.)
 6. **[Angelo]** How your agents use your account to save their work: what Claude asks for the first time, and what to answer.
 
-**You're done when:** you have accepted the invitation. Tell your conductor agent (step 4): *"I've accepted the GitHub invitation."*
+**Stop here until you've accepted the invitation.** Don't start step 3a before you have received **and accepted** the repository invitation: until then, the repository won't show up in Claude Code.
+
+**You're done when:** you have accepted the invitation.
 
 **What goes wrong:**
 
@@ -47,30 +51,40 @@
 - *I signed up with my personal email.* **[Angelo]** what to do (add the Workspace email to the account, or start again).
 - **[Angelo]** anything else that went wrong for people on 2 and 3 November.
 
-## Step 3a. Claude Code, the first time (claude.ai/code)
+## Step 3a. Claude Code, the first time
 
-**What it is:** your agents run in **Claude Code** on the web, at claude.ai/code. The first time you open it, you set up a place for them to work (a "cloud environment") and connect it to GitHub. You do this once.
+**What it is:** your agents run in **Claude Code** on the web, at https://claude.ai/code. The first time you open it, you set up a place for them to work (a "cloud environment") and connect it to GitHub. You do this once.
 
 **What to do:**
 
-1. Go to **claude.ai/code**, logged in with your Workspace email (step 2).
-2. **Connect GitHub.** If Claude Code asks you to connect GitHub, follow it; if not, go to **claude.ai/connect-github**. Sign in with the GitHub account from step 3 and allow access.
+1. Go to **https://claude.ai/code**, logged in with your Workspace email (step 2).
+2. **Connect GitHub.** If Claude Code asks you to connect GitHub, follow it; if not, go to **https://claude.ai/connect-github**. Sign in with the GitHub account from step 3 and allow access.
 3. **Create the cloud environment.** The first time, the page is titled **"Create your first cloud environment"**:
    - In the **Name** box, type a name you'll recognise (for example `web-summit`).
-   - Under **Network access** there are three choices, **None**, **Limited** and **Full**: choose **Limited**. (If you see **Allow package managers**, leave it ticked.) You add the team's websites to it in step 6a.
+   - Under **Network access** there are three choices, **None**, **Limited** and **Full**: choose **Limited**.
    - Press **Create & finish**, at the **bottom right**.
-4. **Find the row below the prompt box.** The prompt box is where you type; it says *"Describe a task or ask a question"*. Just below it is a row that reads, from left to right: the **environment**, the **repository**, the **branch**, and at its right end the **model** and the **mode dropdown**.
-5. **Pick the repository.** In that row, right after the environment's name, is the repository picker; it shows the repository's name. Click it and choose `SGit-AI/SGit-AI__Website__Web-Summit`.
-6. **Change the branch to `dev`.** Right after the repository, in the same row, is the branch picker, with a branch icon. Click it and choose **dev**. The team only works on `dev`, never on `main`.
-7. **Choose the permission mode.** At the right end of the same row, the **mode dropdown** offers **Accept edits**, **Plan** and **Auto**. Choose **Auto**: the agent goes ahead with ordinary steps on its own and still stops to ask you before anything risky. You can change it at any time from the same dropdown.
+4. **Allow the team's websites.** The creation page has no box for them, so right after **Create & finish**:
+   - Open the **cloud environment** menu and press **Edit**.
+   - Open **Network access**. Under **Allowed domains**, paste these six, and leave **Allow package managers** ticked if you see it:
+     - `web-summit.sgit.ai`
+     - `pki.sgit.ai`
+     - `sgit.ai`
+     - `*.sgit.ai`
+     - `sgraph.ai`
+     - `*.sgraph.ai`
+   - Save. The environment is now set up, once, for all your agents. Domain changes work straight away, even in a session that is already open.
+5. **Find the row below the prompt box.** The prompt box is where you type; it says *"Describe a task or ask a question"*. Just below it is a row that reads, from left to right: the **environment**, the **repository**, the **branch**, and at its right end the **model** and the **mode dropdown**.
+6. **Pick the repository.** In that row, right after the environment's name, is the repository picker; it shows the repository's name. Click it and choose `SGit-AI/SGit-AI__Website__Web-Summit`.
+7. **Change the branch to `dev`.** Right after the repository, in the same row, is the branch picker, with a branch icon. Click it and choose **dev**. The team only works on `dev`, never on `main`.
+8. **Choose the permission mode.** At the right end of the same row, the **mode dropdown** offers **Accept edits**, **Plan** and **Auto**. Choose **Auto**: the agent goes ahead with ordinary steps on its own and still stops to ask you before anything risky. You can change it at any time from the same dropdown.
 
 **You're done when:** you can open a new session on the repository, on the `dev` branch.
 
 ## Step 4. Your conductor agent
 
-**What it is:** your main agent, `conductor@web-summit.<you>`. It runs your other agents and keeps your records. From here on, it does the technical work and walks you through the rest.
+**What it is:** your main agent, `conductor@web-summit.<your-id>`. It runs your other agents and keeps your records. From here on, it does the technical work and walks you through the rest.
 
-**What to do:** in Claude Code (step 3a), open a **new session** and paste the prompt from your brief (/brief-<you>/, the section "A prompt to start with"). Then answer its questions.
+**What to do:** in Claude Code (step 3a), open a **new session** and paste the prompt from your brief, at https://web-summit.sgit.ai/brief-<your-id>/ (the section "A prompt to start with"). Then answer its questions. Tell it: *"I've accepted the GitHub invitation."*
 
 **You're done when:** it tells you it has made its first commit. You are now at level 3.
 
@@ -78,26 +92,15 @@
 
 **What it is:** a second agent that keeps your dashboard, the page you read first each morning.
 
-**What to do:** open **another new session** and paste the dashboard prompt your conductor gives you (it is also on /agents/).
+**What to do:** open **another new session** and paste the dashboard prompt your conductor gives you (it is also on https://web-summit.sgit.ai/agents/).
 
 ## Step 6. Agent keys
 
 **What it is:** each agent makes its own key, a digital signature, so the team knows its work really comes from it.
 
-**What to do:** nothing by hand. Your agents do this themselves. Some agents first need the **network settings** in step 6a.
+**What to do:** nothing by hand. Your agents do this themselves, using the websites you allowed in step 3a.
 
-### Step 6a. The network settings (the other step people get stuck on)
-
-**What it is:** your Claude sessions can only reach the websites you allow. Agents need a few of ours.
-
-**What to do:**
-
-1. In your Claude Code session, open the **cloud environment** menu in the **title bar at the top** of the session, and press **Edit**.
-2. Open **Network access**. With **Limited** chosen, add each of these under **Allowed domains**, and leave **Allow package managers** ticked: `web-summit.sgit.ai`, `pki.sgit.ai`, `sgit.ai`, `*.sgit.ai`, `sgraph.ai`, `*.sgraph.ai`.
-3. Save. **Domain changes work straight away**, even in a session that is already open.
-4. **Environment variables are different** (for example the vault token in step 8): they are **not** on the Network access page. Go **back one level with the back arrow at the top** of the settings to find them. A change to an environment variable only reaches a **new** session, so start one after adding it.
-
-**You're done when:** your agent says it can reach those sites.
+**You're done when:** your agents tell you their keys are on the keys page.
 
 ## Step 7. A schedule
 
@@ -112,8 +115,12 @@
 **What to do:**
 
 1. Dinis sends you an **access token**. Never paste it into a chat.
-2. Put it in the same environment settings as step 6a (the **cloud environment** menu in the title bar, **Edit**, then the back arrow at the top to the environment variables), as a variable named `SG_SEND_ACCESS_TOKEN`, and start a **new** session: an open session does not see a new variable.
-3. Start your vault agent with the prompt your conductor gives you (it is on /vault-agent/).
+2. Put it in your environment's settings as an **environment variable**:
+   - Open the **cloud environment** menu in the **title bar at the top** of your session, and press **Edit**.
+   - Environment variables are **not** on the Network access page: go **back one level with the back arrow at the top** to find them.
+   - They are all in **one text box**. Type `SG_SEND_ACCESS_TOKEN=`, then paste the token from Dinis right after the `=` sign, on one line with no spaces.
+   - Save, and start a **new** session: a session that is already open does not see a new variable.
+3. Start your vault agent with the prompt your conductor gives you (it is on https://web-summit.sgit.ai/vault-agent/).
 4. When your vault agent shows you a **vault key** once, save it in your password manager. Never paste it anywhere else.
 5. **Keys from the team arrive sealed**, as a QR image or a link, and only your agent can open them. If your agent can't read the QR image, ask the sender for the **sealed link as text** instead.
 6. When your agent opens a sealed key, ask it only to **confirm the key opened and where it saved it**. Never ask it to show you the key or to check what it says: that would put the key in the chat.
@@ -140,4 +147,4 @@
 
 ## Where you are
 
-The setup leaderboard (/team/setup/) shows your level and your next step, worked out from what you and your agents have done.
+The setup leaderboard (https://web-summit.sgit.ai/team/setup/) shows your level and your next step, worked out from what you and your agents have done.
