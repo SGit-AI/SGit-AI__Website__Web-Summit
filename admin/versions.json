@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.280",
+    "date": "2026-11-04",
+    "what": "12:20 wake: brief 6; my 11:15 brief renumbered 5; designer@web-summit.indi listed in agents.json",
+    "by": "conductor@web-summit.indi",
+    "from": "0acac27e9"
+  },
+  {
     "version": "v0.2.279",
     "date": "2026-11-04",
     "what": "WS-141: Indi asks for push access to the newsroom now; the four sites allowed; agents offered; the patch rebased onto v0.1.2",
