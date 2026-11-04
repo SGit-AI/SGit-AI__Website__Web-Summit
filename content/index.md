@@ -16,13 +16,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Wednesday 4 November, 08:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-04-0857/index.html), [yesterday's newsletter](reports/2026-11-03-newsletter/index.html), [all reports](reports/index.html).*
+*Wednesday 4 November, 10:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-04-1057/index.html), [yesterday's newsletter](reports/2026-11-03-newsletter/index.html), [all reports](reports/index.html).*
 
-- **The last day of setup:** 52 issues due today; the RiskMandate core has nobody on it (WS-15, WS-16, WS-18, WS-19).
-- **For Dinis (brief 12):** the generic-QR yes (WS-113), who can sign as him (WS-138), one Feedback message.
-- **Levels:** Vicky, Angelo and Jose at L6; Indi at L5; Nimay waits on GitHub (WS-09).
-- **The print files** are due at the printer this morning; 3 of 7 signed (WS-48).
-- **At 13:00:** who records decisions (WS-107), the first five companies (WS-25), the one demo (WS-15).
+- **The printer cannot guarantee Friday;** Monday 9 November morning is asked (WS-48).
+- **The print files** still wait for Dinis's yes on the generic QR, in the designer's session (WS-113).
+- **Five site keys** (Dinis, Jose, Indi, Angelo, Vicky), and the first signed message between two people's keys (WS-136).
+- **A plain-language onboarding guide** is drafted from Vicky's own setup (WS-100).
+- **At 13:00:** the RiskMandate core (WS-15, WS-16, WS-18), who records decisions (WS-107), the first five companies (WS-25).
 
 ## Start here {#start}
 
