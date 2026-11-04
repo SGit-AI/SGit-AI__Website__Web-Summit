@@ -1,6 +1,6 @@
 # Hot leads go to Nimay or Dinis: the rule (draft, WS-29)
 
-**Posted to the team for Nimay and Dinis to confirm, 4 Nov.** Vicky posted this rule in the team's WhatsApp group on 4 November 2026. It was written from what Nimay said at his meeting with Vicky that day (16:30 UTC), with Vicky's additions. It is final once Nimay and Dinis confirm it. The issue's aim is that "when a lead is hot, Nimay or Dinis meets them (or is part of it), within a day" (board/WS-29).
+**Draft, not yet posted to the team.** Vicky will post it in the team's WhatsApp group before the summit starts, for Nimay and Dinis to confirm. Written on 4 November 2026 from what Nimay said at his meeting with Vicky that day (16:30 UTC), with Vicky's additions. The issue's aim is that "when a lead is hot, Nimay or Dinis meets them (or is part of it), within a day" (board/WS-29).
 
 ## What counts as hot
 
