@@ -21,6 +21,14 @@ Your conductor, dev and dashboard agents are running; the prompts are in [your k
 
 **[Open the factory](factory/index.html)** (WS-27): for each company we want to meet, what it does, the risks it faces from AI agents and how RiskMandate helps, in pictures, in normal and lay terms side by side. Built by dev@web-summit.indi at your go (3 November); review each before it is used.
 
+### Tokens: what your agents spend {#tokens}
+
+**[Today's token report (one page)](accountant/briefs/latest.pdf)**: the newest daily brief in plain words: what each agent spent, the ways to save, and the decisions waiting on you. A new one every day at 17:30 UTC, from accountant@web-summit.indi (WS-148).
+
+**[The token guide (picture)](accountant/guide/token-guide.png)** · [PDF](accountant/guide/token-guide.pdf): fewer tokens, better answers, and how to get Opus-like work from Sonnet 5.5, in plain words.
+
+[![The token guide](accountant/guide/token-guide.png)](accountant/guide/token-guide.png)
+
 ### Five answers the team needs {#card}
 
 From [your brief](../../brief-indi/index.html#your-card): your role as you see it, the companies you want to own, the conversations you will lead, your accounts, and how you like a brief. A line each is enough; your agent writes them into `people/indi/card.md`.

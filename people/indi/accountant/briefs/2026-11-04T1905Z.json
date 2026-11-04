@@ -135,5 +135,144 @@
  "sources": [
   "people/indi/accountant/ledger/ (the synthetic file)",
   "people/indi/accountant/asks.md"
- ]
+ ],
+ "friendly": {
+  "title": "Your agents' token use, 4 November",
+  "summary": "Only one agent has reported so far. It did a big job in one very long session, and that long session is where most of the waste is. Four agents have been asked to start reporting.",
+  "numbers": [
+   {
+    "n": "1.3 million",
+    "label": "Fresh tokens",
+    "explain": "New work: reading, writing and thinking. The main cost."
+   },
+   {
+    "n": "27.6 million",
+    "label": "Cache reads",
+    "explain": "Re-reading what is already in memory. About a tenth of the price each, but they add up."
+   },
+   {
+    "n": "1 of 5",
+    "label": "Agents reporting",
+    "explain": "Synthetic has. Conductor, dev, dashboard and designer were asked today."
+   },
+   {
+    "n": "To come",
+    "label": "Saving per day",
+    "explain": "Measured once you say yes to a change below."
+   }
+  ],
+  "agents": [
+   {
+    "name": "synthetic",
+    "state": "reported",
+    "on": true
+   },
+   {
+    "name": "conductor",
+    "state": "asked",
+    "on": false
+   },
+   {
+    "name": "dev",
+    "state": "asked",
+    "on": false
+   },
+   {
+    "name": "dashboard",
+    "state": "asked",
+    "on": false
+   },
+   {
+    "name": "designer",
+    "state": "asked",
+    "on": false
+   }
+  ],
+  "bars_title": "Where synthetic's tokens went (one long session)",
+  "bars": [
+   {
+    "label": "Main agent, fresh",
+    "value": 408109
+   },
+   {
+    "label": "12 helpers, fresh",
+    "value": 897184
+   },
+   {
+    "label": "Helpers, cache reads",
+    "value": 5958060
+   },
+   {
+    "label": "Main agent, cache reads",
+    "value": 21674843
+   }
+  ],
+  "bars_note": "The long bar at the bottom is the problem: the longer a session runs, the more it re-reads on every step.",
+  "savings": [
+   {
+    "title": "Start fresh more often",
+    "plain": "One long session re-reads its whole history on every step. A new session for each run starts light.",
+    "evidence": "125 steps, about 173,000 tokens re-read per step."
+   },
+   {
+    "title": "Try a smaller model for helpers",
+    "plain": "The 12 persona helpers all ran on Opus 5.5, the largest model. Reading a card and giving a verdict may not need it.",
+    "evidence": "111 helper steps, all Opus 5.5. Test first (decision A2)."
+   },
+   {
+    "title": "Give helpers a short brief",
+    "plain": "Each helper loaded its own large briefing. A short brief and a fixed answer form cut that.",
+    "evidence": "About 69,000 tokens loaded per helper."
+   }
+  ],
+  "decisions": [
+   {
+    "id": "A1",
+    "question": "Should every agent report its tokens after each run?",
+    "plain": "One line added to the conductor's, dev's and dashboard's scheduled task. Without it there is nothing to measure.",
+    "options": [
+     "Yes, the conductor adds it",
+     "Yes, I add it myself",
+     "No"
+    ],
+    "recommend": "Yes, the conductor adds it"
+   },
+   {
+    "id": "A2",
+    "question": "Test cheaper models for the persona helpers before the next run?",
+    "plain": "One persona on Sonnet 5.5 and one on Haiku 5.5, scored blind against Opus. Costs under 200,000 tokens, once.",
+    "options": [
+     "Yes, test first",
+     "No, keep Opus 5.5"
+    ],
+    "recommend": "Yes, test first"
+   },
+   {
+    "id": "A3",
+    "question": "Give the conductor a fresh session for each run?",
+    "plain": "Cheaper, but each new session needs a new key. Better to measure three runs first.",
+    "options": [
+     "Measure three runs, then decide",
+     "Switch now",
+     "Keep as is"
+    ],
+    "recommend": "Measure three runs, then decide"
+   }
+  ],
+  "glossary": [
+   [
+    "Token",
+    "a small piece of text, about four letters. Models are paid per token."
+   ],
+   [
+    "Fresh tokens",
+    "input, output and new memory written; the real work."
+   ],
+   [
+    "Cache reads",
+    "text the model already holds, read again; cheap one by one, costly in bulk."
+   ]
+  ],
+  "next": "Brief 2 on 5 November at 17:30 UTC, with the first numbers from the four agents."
+ }
 }
