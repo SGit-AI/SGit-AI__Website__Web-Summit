@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.244",
+    "date": "2026-11-04",
+    "what": "for pm@: the state of WS-25, WS-29, WS-41 and WS-53 before 13:00, with proposed owners and dates",
+    "by": "conductor@web-summit.vicky",
+    "from": "b646e63ed"
+  },
+  {
     "version": "v0.2.243",
     "date": "2026-11-04",
     "what": "Vicky's key for the site (sha256:5bd91e541026290e), and a first sealed message",
