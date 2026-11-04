@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.252",
+    "date": "2026-11-04",
+    "what": "WS-100 guide: no screenshots; exact button names and where they are",
+    "by": "conductor@web-summit.vicky",
+    "from": "1df34cdf6"
+  },
+  {
     "version": "v0.2.251",
     "date": "2026-11-04",
     "what": "10:27 wake: Vicky's signed message verified and answered, sealed to her key; brief 13",
