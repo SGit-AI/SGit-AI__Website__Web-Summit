@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.190",
+    "date": "2026-11-04",
+    "what": "newsroom@web-summit.dinis joins the team, to build web-summit.newsroom.sgit.ai (WS-14)",
+    "by": "conductor@web-summit.dinis",
+    "from": "a3cee75ba"
+  },
+  {
     "version": "v0.2.189",
     "date": "2026-11-04",
     "what": "vault's lane task revised at Jose's word: the session key, as CLAUDE.md says; no held key; republish and update the lane when a session ends",
