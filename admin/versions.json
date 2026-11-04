@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.346",
+    "date": "2026-11-04",
+    "what": "its session key's public half on the keys page",
+    "by": "programme@web-summit.vicky",
+    "from": "141b69465"
+  },
+  {
     "version": "v0.2.345",
     "date": "2026-11-04",
     "what": "the token report in plain words on Indi's dashboard, and a token guide infographic",
