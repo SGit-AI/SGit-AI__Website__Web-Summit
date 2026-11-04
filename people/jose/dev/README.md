@@ -93,7 +93,7 @@ Jose chose the vault option. Answers go through the site's feedback pane, sealed
 
 ## Vaults are not this agent's job (WS-120, WS-129)
 
-On 3 November at about 10:00, Jose asked this agent to create a vault named `ws-risk-mandate`. This session can't: its network blocks `dev.send.sgraph.ai` and `sgit.ai`, and it has no access token. My first answer told Jose to add `SG_SEND_ACCESS_TOKEN` to this agent's environment. **That was wrong.** WS-129 ("secrets per environment") says the token and vault keys belong only in the vault agent's own environment, because every session in an environment can read its variables. `vault@web-summit.jose` already exists (`66b19976`), so it makes the vault there, and `dev@web-summit.jose` never holds the token.
+On 3 November at about 10:00, Jose asked this agent to create an earlier test vault. This session can't: its network blocks `dev.send.sgraph.ai` and `sgit.ai`, and it has no access token. My first answer told Jose to add `SG_SEND_ACCESS_TOKEN` to this agent's environment. **That was wrong.** WS-129 ("secrets per environment") says the token and vault keys belong only in the vault agent's own environment, because every session in an environment can read its variables. `vault@web-summit.jose` already exists (`66b19976`), so it makes the vault there, and `dev@web-summit.jose` never holds the token.
 
 ## On hold
 
