@@ -4,16 +4,17 @@ summary: The page Angelo reads first. The top is built for Angelo; the rest is k
 ---
 **Your first view is [the command centre](app/index.html)** (your answer, 3 November). This classic page is kept in the same order, as the text version and the fallback: what's pending for you, is everyone connected, the machine, the technical pool with Jose, and your agents. Kept by `dashboard@web-summit.angelo`; tell it what you want first and what you never read.
 
-**My question for you (still open from 12:30):** what do you never read on this page or in the command centre? I'll take it off.
+**My question for you (from last night, still open):** should priority and tags be fields every issue on the board gets, or only something for your own view?
 
 ## 1. What's pending for me {#needs}
 
-In the order to do it (17:30 run).
+In the order to do it (07:30 run, Wednesday 4 November).
 
-- **The 18:00 stand-up**, on [its agenda](../../meetings/2026-11-03-1800/index.html) and in your briefing at the top: the decision on WS-129 (agents talk through commits only, as a rule in CLAUDE.md for every agent; your conductor raised it), and a sync on WS-121 (Vicky goes first through the vault guide).
-- **Still open from 13:00**, on [that agenda](../../meetings/2026-11-03-1300/index.html): who sends the GitHub invitations (WS-09 or WS-124, the question your mentor keeps asking), Daniela's accounts (WS-125), who records the decisions (WS-107), and LinkedIn (WS-126). On WS-96, team-collaboration answered in its own words (it sent the invitations after you gave it the addresses); whether that counts as sending, and whether its calendar access should be draft-only, is your call.
-- **Due today and named for you:** at the top of [My issues](#issues), sorted by due date. WS-105, protecting main, is the one only an admin can do.
-- **From your mentor (16:40):** you are at L6, every setup step done; what is left is your agents running on their own until 5 November. It suggests closing WS-128: the vault guide's publish step should use a command that never prints the vault key. The latest note is in [people/angelo/mentor](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/angelo/mentor).
+- **Your key for the site:** Dinis asked this morning that every person adds a key to their browser; until you have one, every page shows a big **Add your key** box. Your conductor issues it in its session and gives you the link ([how](../../agents/index.html#person-key)); Dinis, Jose and Indi have theirs. It is also what lets the dashboard sign what you send (your wish 3, below).
+- **Overdue since yesterday:** WS-105 (protect main: only an admin can), WS-33 (repository safe for everyone, with Jose), WS-98 (Meet recording, with Dinis) and WS-100 (the GitHub step for newcomers, with Vicky). They lead [My issues](#issues).
+- **Due today:** WS-129 (agents talk through commits only: you and your conductor picked it; Jose's view is in, the rule in CLAUDE.md now), your part of WS-120 (the vaults: Jose's part is done), WS-125's first outline, and most of the technical pool (below), which is due today too: worth splitting with Jose at the 13:00 stand-up.
+- **Still open on the agendas** ([13:00 yesterday](../../meetings/2026-11-03-1300/index.html), [18:00 yesterday](../../meetings/2026-11-03-1800/index.html)): WS-09 or WS-124 (you invited Indi, so the GitHub invitations now come from you in practice), WS-125, WS-107, WS-126, WS-129, and your call on WS-96 (whether team-collaboration's invitations count as sending). The 18:00 debrief is waiting for the transcript.
+- **From your mentor:** no new note since 16:40 yesterday ([people/angelo/mentor](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/angelo/mentor)).
 
 ## What I want from my dashboard {#wishlist}
 
@@ -21,7 +22,7 @@ Angelo's ideas, in his words of 3 November (evening), recorded before anything i
 
 1. **A kanban board of cards.** Each task is a card showing its owners, priority, tags, dates and status, and more. *Today:* the command centre's [Team board](app/index.html#board) has status columns with owners and due dates. The board files have no priority or tags yet (urgency is worked out from the due date), so those need new front-matter fields agreed for every issue.
 2. **Organise by planned day or by status, and move cards by hand.** *Today:* columns by status only, and no dragging: a status change is an edit to the issue's file. "Planned day" is a new field too, separate from the due date.
-3. **Messages and tasks to agents or people, sent securely from the dashboard,** through a vault's append lane. *Today:* the site's feedback pane already seals a message in the browser and appends it to one agent's lane (WS-114). The lane is open to anyone holding the page (WS-119), so a message that asks for an action needs the sender's signature (WS-117) before an agent acts on it.
+3. **Messages and tasks to agents or people, sent securely from the dashboard,** through a vault's append lane. *Today:* the site's feedback pane already seals a message in the browser and appends it to one agent's lane (WS-114). The lane is open to anyone holding the page (WS-119), so a message that asks for an action needs the sender's signature before an agent acts on it. Since 4 November the site gives each person a key in their browser, and the feedback pane signs with it ([the person key](../../agents/index.html#person-key)): the signing half is arriving.
 
 Related ideas to weigh with these: where everyone is at the summit, and card moves sent through the same lane. Both are drafts in this agent's session and not on the board yet.
 
