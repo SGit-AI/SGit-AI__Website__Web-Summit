@@ -1,0 +1,2410 @@
+{
+ "concept": "1-record",
+ "name": "R3-1 Record",
+ "rationale": "The test winner, fixed: RiskMandate and what it does on the front, a plain title, Web Summit Lisbon and the stand beside the QR.",
+ "type": "Geist + JetBrains Mono (labels); Barlow Condensed for the name, the day and the wordmark",
+ "notes": [
+  "The front is all product: the seal and RISK MANDATE, the category, the question, and the brand's own line as the three rows.",
+  "Grey \"Job title to confirm\" and \"Stand number to confirm\" are placeholders that cannot be mistaken for copy; nothing prints until they are filled.",
+  "The three asks are gone: the URL sits beside the QR, which the tests said a careful reader checks first."
+ ],
+ "audience": "everyone",
+ "palette": [
+  {
+   "name": "Warm background",
+   "hex": "#F7F6F2",
+   "cmyk": [
+    0,
+    0,
+    2,
+    3
+   ]
+  },
+  {
+   "name": "Ink",
+   "hex": "#0D0D0C",
+   "cmyk": [
+    0,
+    0,
+    8,
+    95
+   ]
+  },
+  {
+   "name": "Text",
+   "hex": "#1A1917",
+   "cmyk": [
+    0,
+    4,
+    12,
+    90
+   ]
+  },
+  {
+   "name": "Muted (labels, to-confirm)",
+   "hex": "#4A4845",
+   "cmyk": [
+    0,
+    3,
+    7,
+    71
+   ]
+  },
+  {
+   "name": "Border",
+   "hex": "#E2DFD8",
+   "cmyk": [
+    0,
+    1,
+    4,
+    11
+   ]
+  },
+  {
+   "name": "Green",
+   "hex": "#1A7F5A",
+   "cmyk": [
+    80,
+    0,
+    29,
+    50
+   ]
+  },
+  {
+   "name": "Gold (the gap)",
+   "hex": "#B45309",
+   "cmyk": [
+    0,
+    54,
+    95,
+    29
+   ]
+  }
+ ],
+ "files": {
+  "dinis-card-front.svg": {
+   "person": "dinis",
+   "side": "front",
+   "bg": "#F7F6F2",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 8,
+     "box": [
+      8.0,
+      8.0,
+      16.0,
+      16.0
+     ],
+     "clear": 4.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 11.34,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      20,
+      10.6,
+      25.99,
+      13.4
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 11.34,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      26.87,
+      10.6,
+      40.5,
+      13.4
+     ]
+    },
+    {
+     "role": "label",
+     "text": "AGENT BEHAVIOUR POLICIES",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      20.6,
+      43.56,
+      22.4
+     ]
+    },
+    {
+     "role": "headline",
+     "text": "Would your agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 11.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      25.24,
+      41.29,
+      28.0
+     ]
+    },
+    {
+     "role": "headline",
+     "text": "pass an audit?",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 11.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      30.04,
+      35.3,
+      32.8
+     ]
+    },
+    {
+     "role": "register",
+     "text": "REACH",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      37.6,
+      15.41,
+      39.4
+     ]
+    },
+    {
+     "role": "register",
+     "text": "what one agent can reach",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      37.52,
+      60.84,
+      39.4
+     ]
+    },
+    {
+     "role": "register",
+     "text": "AUTHORISED",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      42.8,
+      22.82,
+      44.6
+     ]
+    },
+    {
+     "role": "register",
+     "text": "what you authorised it to do",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      42.72,
+      63.44,
+      44.6
+     ]
+    },
+    {
+     "role": "register",
+     "text": "GAP",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#B45309",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      48.0,
+      12.45,
+      49.8
+     ]
+    },
+    {
+     "role": "register",
+     "text": "the gap between the two",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      47.92,
+      59.86,
+      49.8
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Dinis’s colour",
+    "hex": "#111111",
+    "cmyk": [
+     0,
+     0,
+     0,
+     93
+    ]
+   }
+  },
+  "dinis-card-back.svg": {
+   "person": "dinis",
+   "side": "back",
+   "bg": "#F7F6F2",
+   "items": [
+    {
+     "role": "name",
+     "text": "Dinis Cruz",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 17.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      10.8,
+      29.48,
+      15
+     ]
+    },
+    {
+     "role": "tbc",
+     "text": "Job title to confirm",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      18.52,
+      32.22,
+      20.4
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      23.38,
+      84.0,
+      54.0
+     ],
+     "modules": [
+      56.69,
+      26.69,
+      80.69,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      30.49,
+      33.19,
+      32.29
+     ]
+    },
+    {
+     "role": "event",
+     "text": "Thursday 12 November",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      34.93,
+      42.89,
+      37.89
+     ]
+    },
+    {
+     "role": "tbc",
+     "text": "Stand number to confirm",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      39.94,
+      37.35,
+      41.69
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      45.54,
+      29.8,
+      47.29
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/dinis/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      48.94,
+      22.85,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Dinis’s colour",
+    "hex": "#111111",
+    "cmyk": [
+     0,
+     0,
+     0,
+     93
+    ]
+   }
+  },
+  "nimay-card-front.svg": {
+   "person": "nimay",
+   "side": "front",
+   "bg": "#F7F6F2",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 8,
+     "box": [
+      8.0,
+      8.0,
+      16.0,
+      16.0
+     ],
+     "clear": 4.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 11.34,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      20,
+      10.6,
+      25.99,
+      13.4
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 11.34,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      26.87,
+      10.6,
+      40.5,
+      13.4
+     ]
+    },
+    {
+     "role": "label",
+     "text": "AGENT BEHAVIOUR POLICIES",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      20.6,
+      43.56,
+      22.4
+     ]
+    },
+    {
+     "role": "headline",
+     "text": "Would your agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 11.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      25.24,
+      41.29,
+      28.0
+     ]
+    },
+    {
+     "role": "headline",
+     "text": "pass an audit?",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 11.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      30.04,
+      35.3,
+      32.8
+     ]
+    },
+    {
+     "role": "register",
+     "text": "REACH",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      37.6,
+      15.41,
+      39.4
+     ]
+    },
+    {
+     "role": "register",
+     "text": "what one agent can reach",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      37.52,
+      60.84,
+      39.4
+     ]
+    },
+    {
+     "role": "register",
+     "text": "AUTHORISED",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      42.8,
+      22.82,
+      44.6
+     ]
+    },
+    {
+     "role": "register",
+     "text": "what you authorised it to do",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      42.72,
+      63.44,
+      44.6
+     ]
+    },
+    {
+     "role": "register",
+     "text": "GAP",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#B45309",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      48.0,
+      12.45,
+      49.8
+     ]
+    },
+    {
+     "role": "register",
+     "text": "the gap between the two",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      47.92,
+      59.86,
+      49.8
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Nimay’s colour",
+    "hex": "#1f3a93",
+    "cmyk": [
+     79,
+     61,
+     0,
+     42
+    ]
+   }
+  },
+  "nimay-card-back.svg": {
+   "person": "nimay",
+   "side": "back",
+   "bg": "#F7F6F2",
+   "items": [
+    {
+     "role": "name",
+     "text": "Nimay Parekh",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 17.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      10.8,
+      38.25,
+      15
+     ]
+    },
+    {
+     "role": "tbc",
+     "text": "Job title to confirm",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      18.52,
+      32.22,
+      20.4
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      23.38,
+      84.0,
+      54.0
+     ],
+     "modules": [
+      56.69,
+      26.69,
+      80.69,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      30.49,
+      33.19,
+      32.29
+     ]
+    },
+    {
+     "role": "event",
+     "text": "Thursday 12 November",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      34.93,
+      42.89,
+      37.89
+     ]
+    },
+    {
+     "role": "tbc",
+     "text": "Stand number to confirm",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      39.94,
+      37.35,
+      41.69
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      45.54,
+      29.8,
+      47.29
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/nimay/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      48.94,
+      24.35,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Nimay’s colour",
+    "hex": "#1f3a93",
+    "cmyk": [
+     79,
+     61,
+     0,
+     42
+    ]
+   }
+  },
+  "angelo-card-front.svg": {
+   "person": "angelo",
+   "side": "front",
+   "bg": "#F7F6F2",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 8,
+     "box": [
+      8.0,
+      8.0,
+      16.0,
+      16.0
+     ],
+     "clear": 4.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 11.34,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      20,
+      10.6,
+      25.99,
+      13.4
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 11.34,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      26.87,
+      10.6,
+      40.5,
+      13.4
+     ]
+    },
+    {
+     "role": "label",
+     "text": "AGENT BEHAVIOUR POLICIES",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      20.6,
+      43.56,
+      22.4
+     ]
+    },
+    {
+     "role": "headline",
+     "text": "Would your agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 11.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      25.24,
+      41.29,
+      28.0
+     ]
+    },
+    {
+     "role": "headline",
+     "text": "pass an audit?",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 11.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      30.04,
+      35.3,
+      32.8
+     ]
+    },
+    {
+     "role": "register",
+     "text": "REACH",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      37.6,
+      15.41,
+      39.4
+     ]
+    },
+    {
+     "role": "register",
+     "text": "what one agent can reach",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      37.52,
+      60.84,
+      39.4
+     ]
+    },
+    {
+     "role": "register",
+     "text": "AUTHORISED",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      42.8,
+      22.82,
+      44.6
+     ]
+    },
+    {
+     "role": "register",
+     "text": "what you authorised it to do",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      42.72,
+      63.44,
+      44.6
+     ]
+    },
+    {
+     "role": "register",
+     "text": "GAP",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#B45309",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      48.0,
+      12.45,
+      49.8
+     ]
+    },
+    {
+     "role": "register",
+     "text": "the gap between the two",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      47.92,
+      59.86,
+      49.8
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Angelo’s colour",
+    "hex": "#1e7b4f",
+    "cmyk": [
+     76,
+     0,
+     36,
+     52
+    ]
+   }
+  },
+  "angelo-card-back.svg": {
+   "person": "angelo",
+   "side": "back",
+   "bg": "#F7F6F2",
+   "items": [
+    {
+     "role": "name",
+     "text": "Angelo",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 17.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      10.8,
+      22.74,
+      15
+     ]
+    },
+    {
+     "role": "tbc",
+     "text": "Job title to confirm",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      18.52,
+      32.22,
+      20.4
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      23.38,
+      84.0,
+      54.0
+     ],
+     "modules": [
+      56.69,
+      26.69,
+      80.69,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      30.49,
+      33.19,
+      32.29
+     ]
+    },
+    {
+     "role": "event",
+     "text": "Thursday 12 November",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      34.93,
+      42.89,
+      37.89
+     ]
+    },
+    {
+     "role": "tbc",
+     "text": "Stand number to confirm",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      39.94,
+      37.35,
+      41.69
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      45.54,
+      29.8,
+      47.29
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/angelo/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      48.94,
+      25.18,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Angelo’s colour",
+    "hex": "#1e7b4f",
+    "cmyk": [
+     76,
+     0,
+     36,
+     52
+    ]
+   }
+  },
+  "jose-card-front.svg": {
+   "person": "jose",
+   "side": "front",
+   "bg": "#F7F6F2",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 8,
+     "box": [
+      8.0,
+      8.0,
+      16.0,
+      16.0
+     ],
+     "clear": 4.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 11.34,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      20,
+      10.6,
+      25.99,
+      13.4
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 11.34,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      26.87,
+      10.6,
+      40.5,
+      13.4
+     ]
+    },
+    {
+     "role": "label",
+     "text": "AGENT BEHAVIOUR POLICIES",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      20.6,
+      43.56,
+      22.4
+     ]
+    },
+    {
+     "role": "headline",
+     "text": "Would your agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 11.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      25.24,
+      41.29,
+      28.0
+     ]
+    },
+    {
+     "role": "headline",
+     "text": "pass an audit?",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 11.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      30.04,
+      35.3,
+      32.8
+     ]
+    },
+    {
+     "role": "register",
+     "text": "REACH",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      37.6,
+      15.41,
+      39.4
+     ]
+    },
+    {
+     "role": "register",
+     "text": "what one agent can reach",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      37.52,
+      60.84,
+      39.4
+     ]
+    },
+    {
+     "role": "register",
+     "text": "AUTHORISED",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      42.8,
+      22.82,
+      44.6
+     ]
+    },
+    {
+     "role": "register",
+     "text": "what you authorised it to do",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      42.72,
+      63.44,
+      44.6
+     ]
+    },
+    {
+     "role": "register",
+     "text": "GAP",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#B45309",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      48.0,
+      12.45,
+      49.8
+     ]
+    },
+    {
+     "role": "register",
+     "text": "the gap between the two",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      47.92,
+      59.86,
+      49.8
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Jose’s colour",
+    "hex": "#e86a1c",
+    "cmyk": [
+     0,
+     54,
+     88,
+     9
+    ]
+   }
+  },
+  "jose-card-back.svg": {
+   "person": "jose",
+   "side": "back",
+   "bg": "#F7F6F2",
+   "items": [
+    {
+     "role": "name",
+     "text": "Jose Bota",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 17.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      10.8,
+      29.54,
+      15
+     ]
+    },
+    {
+     "role": "tbc",
+     "text": "Job title to confirm",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      18.52,
+      32.22,
+      20.4
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      23.38,
+      84.0,
+      54.0
+     ],
+     "modules": [
+      56.69,
+      26.69,
+      80.69,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      30.49,
+      33.19,
+      32.29
+     ]
+    },
+    {
+     "role": "event",
+     "text": "Thursday 12 November",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      34.93,
+      42.89,
+      37.89
+     ]
+    },
+    {
+     "role": "tbc",
+     "text": "Stand number to confirm",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      39.94,
+      37.35,
+      41.69
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      45.54,
+      29.8,
+      47.29
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/jose/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      48.94,
+      22.19,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Jose’s colour",
+    "hex": "#e86a1c",
+    "cmyk": [
+     0,
+     54,
+     88,
+     9
+    ]
+   }
+  },
+  "vicky-card-front.svg": {
+   "person": "vicky",
+   "side": "front",
+   "bg": "#F7F6F2",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 8,
+     "box": [
+      8.0,
+      8.0,
+      16.0,
+      16.0
+     ],
+     "clear": 4.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 11.34,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      20,
+      10.6,
+      25.99,
+      13.4
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 11.34,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      26.87,
+      10.6,
+      40.5,
+      13.4
+     ]
+    },
+    {
+     "role": "label",
+     "text": "AGENT BEHAVIOUR POLICIES",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      20.6,
+      43.56,
+      22.4
+     ]
+    },
+    {
+     "role": "headline",
+     "text": "Would your agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 11.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      25.24,
+      41.29,
+      28.0
+     ]
+    },
+    {
+     "role": "headline",
+     "text": "pass an audit?",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 11.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      30.04,
+      35.3,
+      32.8
+     ]
+    },
+    {
+     "role": "register",
+     "text": "REACH",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      37.6,
+      15.41,
+      39.4
+     ]
+    },
+    {
+     "role": "register",
+     "text": "what one agent can reach",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      37.52,
+      60.84,
+      39.4
+     ]
+    },
+    {
+     "role": "register",
+     "text": "AUTHORISED",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      42.8,
+      22.82,
+      44.6
+     ]
+    },
+    {
+     "role": "register",
+     "text": "what you authorised it to do",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      42.72,
+      63.44,
+      44.6
+     ]
+    },
+    {
+     "role": "register",
+     "text": "GAP",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#B45309",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      48.0,
+      12.45,
+      49.8
+     ]
+    },
+    {
+     "role": "register",
+     "text": "the gap between the two",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      47.92,
+      59.86,
+      49.8
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Vicky’s colour",
+    "hex": "#6b3fa0",
+    "cmyk": [
+     33,
+     61,
+     0,
+     37
+    ]
+   }
+  },
+  "vicky-card-back.svg": {
+   "person": "vicky",
+   "side": "back",
+   "bg": "#F7F6F2",
+   "items": [
+    {
+     "role": "name",
+     "text": "Vicky Wang",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 17.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      10.8,
+      33.4,
+      15
+     ]
+    },
+    {
+     "role": "role",
+     "text": "Project Manager",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#1A7F5A",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      18.52,
+      28.91,
+      20.4
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      23.38,
+      84.0,
+      54.0
+     ],
+     "modules": [
+      56.69,
+      26.69,
+      80.69,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      30.49,
+      33.19,
+      32.29
+     ]
+    },
+    {
+     "role": "event",
+     "text": "Thursday 12 November",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      34.93,
+      42.89,
+      37.89
+     ]
+    },
+    {
+     "role": "tbc",
+     "text": "Stand number to confirm",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      39.94,
+      37.35,
+      41.69
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      45.54,
+      29.8,
+      47.29
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/vicky/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      48.94,
+      23.52,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Vicky’s colour",
+    "hex": "#6b3fa0",
+    "cmyk": [
+     33,
+     61,
+     0,
+     37
+    ]
+   }
+  },
+  "silvio-card-front.svg": {
+   "person": "silvio",
+   "side": "front",
+   "bg": "#F7F6F2",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 8,
+     "box": [
+      8.0,
+      8.0,
+      16.0,
+      16.0
+     ],
+     "clear": 4.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 11.34,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      20,
+      10.6,
+      25.99,
+      13.4
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 11.34,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      26.87,
+      10.6,
+      40.5,
+      13.4
+     ]
+    },
+    {
+     "role": "label",
+     "text": "AGENT BEHAVIOUR POLICIES",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      20.6,
+      43.56,
+      22.4
+     ]
+    },
+    {
+     "role": "headline",
+     "text": "Would your agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 11.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      25.24,
+      41.29,
+      28.0
+     ]
+    },
+    {
+     "role": "headline",
+     "text": "pass an audit?",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 11.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      30.04,
+      35.3,
+      32.8
+     ]
+    },
+    {
+     "role": "register",
+     "text": "REACH",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      37.6,
+      15.41,
+      39.4
+     ]
+    },
+    {
+     "role": "register",
+     "text": "what one agent can reach",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      37.52,
+      60.84,
+      39.4
+     ]
+    },
+    {
+     "role": "register",
+     "text": "AUTHORISED",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      42.8,
+      22.82,
+      44.6
+     ]
+    },
+    {
+     "role": "register",
+     "text": "what you authorised it to do",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      42.72,
+      63.44,
+      44.6
+     ]
+    },
+    {
+     "role": "register",
+     "text": "GAP",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#B45309",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      48.0,
+      12.45,
+      49.8
+     ]
+    },
+    {
+     "role": "register",
+     "text": "the gap between the two",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      47.92,
+      59.86,
+      49.8
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Silvio’s colour",
+    "hex": "#c62828",
+    "cmyk": [
+     0,
+     80,
+     80,
+     22
+    ]
+   }
+  },
+  "silvio-card-back.svg": {
+   "person": "silvio",
+   "side": "back",
+   "bg": "#F7F6F2",
+   "items": [
+    {
+     "role": "name",
+     "text": "Silvio Switha",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 17.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      10.8,
+      35.76,
+      15
+     ]
+    },
+    {
+     "role": "tbc",
+     "text": "Job title to confirm",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      18.52,
+      32.22,
+      20.4
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      23.38,
+      84.0,
+      54.0
+     ],
+     "modules": [
+      56.69,
+      26.69,
+      80.69,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      30.49,
+      33.19,
+      32.29
+     ]
+    },
+    {
+     "role": "event",
+     "text": "Thursday 12 November",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      34.93,
+      42.89,
+      37.89
+     ]
+    },
+    {
+     "role": "tbc",
+     "text": "Stand number to confirm",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      39.94,
+      37.35,
+      41.69
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      45.54,
+      29.8,
+      47.29
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/silvio/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      48.94,
+      23.35,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Silvio’s colour",
+    "hex": "#c62828",
+    "cmyk": [
+     0,
+     80,
+     80,
+     22
+    ]
+   }
+  },
+  "indi-card-front.svg": {
+   "person": "indi",
+   "side": "front",
+   "bg": "#F7F6F2",
+   "items": [
+    {
+     "role": "logo",
+     "cut": "containered",
+     "d": 8,
+     "box": [
+      8.0,
+      8.0,
+      16.0,
+      16.0
+     ],
+     "clear": 4.0
+    },
+    {
+     "role": "wordmark",
+     "text": "RISK",
+     "font": "Barlow Condensed",
+     "weight": 300,
+     "pt": 11.34,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      20,
+      10.6,
+      25.99,
+      13.4
+     ]
+    },
+    {
+     "role": "wordmark",
+     "text": "MANDATE",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 11.34,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      26.87,
+      10.6,
+      40.5,
+      13.4
+     ]
+    },
+    {
+     "role": "label",
+     "text": "AGENT BEHAVIOUR POLICIES",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      20.6,
+      43.56,
+      22.4
+     ]
+    },
+    {
+     "role": "headline",
+     "text": "Would your agent",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 11.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      25.24,
+      41.29,
+      28.0
+     ]
+    },
+    {
+     "role": "headline",
+     "text": "pass an audit?",
+     "font": "Geist",
+     "weight": 600,
+     "pt": 11.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      30.04,
+      35.3,
+      32.8
+     ]
+    },
+    {
+     "role": "register",
+     "text": "REACH",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      37.6,
+      15.41,
+      39.4
+     ]
+    },
+    {
+     "role": "register",
+     "text": "what one agent can reach",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      37.52,
+      60.84,
+      39.4
+     ]
+    },
+    {
+     "role": "register",
+     "text": "AUTHORISED",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      42.8,
+      22.82,
+      44.6
+     ]
+    },
+    {
+     "role": "register",
+     "text": "what you authorised it to do",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      42.72,
+      63.44,
+      44.6
+     ]
+    },
+    {
+     "role": "register",
+     "text": "GAP",
+     "font": "JetBrains Mono",
+     "weight": 700,
+     "pt": 7.0,
+     "fill": "#B45309",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      48.0,
+      12.45,
+      49.8
+     ]
+    },
+    {
+     "role": "register",
+     "text": "the gap between the two",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.5,
+     "fill": "#1A1917",
+     "bg": "#F7F6F2",
+     "box": [
+      29,
+      47.92,
+      59.86,
+      49.8
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Indi’s colour",
+    "hex": "#f2b705",
+    "cmyk": [
+     0,
+     24,
+     98,
+     5
+    ]
+   }
+  },
+  "indi-card-back.svg": {
+   "person": "indi",
+   "side": "back",
+   "bg": "#F7F6F2",
+   "items": [
+    {
+     "role": "name",
+     "text": "Indi Gupte",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 17.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      10.8,
+      29.77,
+      15
+     ]
+    },
+    {
+     "role": "tbc",
+     "text": "Job title to confirm",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.5,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      18.52,
+      32.22,
+      20.4
+     ]
+    },
+    {
+     "role": "qr",
+     "box": [
+      53.38,
+      23.38,
+      84.0,
+      54.0
+     ],
+     "modules": [
+      56.69,
+      26.69,
+      80.69,
+      50.69
+     ],
+     "mm": 24.0
+    },
+    {
+     "role": "event",
+     "text": "WEB SUMMIT LISBON",
+     "font": "JetBrains Mono",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      30.49,
+      33.19,
+      32.29
+     ]
+    },
+    {
+     "role": "event",
+     "text": "Thursday 12 November",
+     "font": "Barlow Condensed",
+     "weight": 700,
+     "pt": 12.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      34.93,
+      42.89,
+      37.89
+     ]
+    },
+    {
+     "role": "tbc",
+     "text": "Stand number to confirm",
+     "font": "Geist",
+     "weight": 500,
+     "pt": 7.0,
+     "fill": "#4A4845",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      39.94,
+      37.35,
+      41.69
+     ]
+    },
+    {
+     "role": "url",
+     "text": "web-summit.sgit.ai",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      45.54,
+      29.8,
+      47.29
+     ]
+    },
+    {
+     "role": "url",
+     "text": "/meet/indi/",
+     "font": "Geist",
+     "weight": 400,
+     "pt": 7.0,
+     "fill": "#0D0D0C",
+     "bg": "#F7F6F2",
+     "box": [
+      8,
+      48.94,
+      21.57,
+      50.69
+     ]
+    }
+   ],
+   "accent": {
+    "name": "Indi’s colour",
+    "hex": "#f2b705",
+    "cmyk": [
+     0,
+     24,
+     98,
+     5
+    ]
+   }
+  }
+ }
+}

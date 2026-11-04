@@ -20,7 +20,8 @@ SCR = sys.argv[1]
 SUB = sys.argv[2] if len(sys.argv) > 2 else ''          # round2: the six Web Summit designs
 BASE = os.path.join(HERE, SUB)
 CONCEPTS = sorted(d for d in os.listdir(BASE) if os.path.exists(os.path.join(BASE, d, 'spec.json')))
-ROUND2 = SUB == 'round2'
+ROUND2 = SUB in ('round2', 'round3')   # both name Web Summit and carry sourced headlines
+ROUND3 = SUB == 'round3'
 def norm_txt(t): return re.sub(r'[^a-z0-9]+', ' ', t.replace('\u2019', "'").lower()).strip()
 # round 2's copy, each checked against its source file (Dinis, 4 November: Web Summit by name, for these cards)
 DESIGN_MD = open(os.path.join(ROOT, 'content/design.md')).read()
@@ -31,6 +32,8 @@ SOURCED = {
 }
 for h in SOURCED['headline']: assert h in DESIGN_MD, h
 assert 'Web Summit Lisbon, 9 to 12 November 2026' in MEET_MD and 'find us at our stand on **Thursday 12 November**' in MEET_MD
+BRAND_HOOK = 'Open source, and sixteen are published free.'   # riskmandate.ai/brand, "Profile"
+TBC = {'Job title to confirm', 'Stand number to confirm'}   # round 3's visible placeholders
 BRAND_BADGE = 'Agent Behaviour Policies: what one agent can reach, what you authorised it to do, and the gap between the two.'   # riskmandate.ai/brand, "Badge"
 MEAS = json.load(open(os.path.join(SCR, 'measure.json')))
 DESIGN = {p['id']: p for p in json.load(open(os.path.join(ROOT, 'data/design.json')))['people']}
@@ -136,7 +139,12 @@ for concept in CONCEPTS:
                 ok_hl = [norm_txt(h) for h in SOURCED['headline']]
                 if hl and not (hl in ok_hl or hl in [a + ' ' + b for a in ok_hl for b in ok_hl]): fail(rel, f'headline not from content/design.md: "{hl}"')
                 ev = norm_txt(' '.join(by('event'))); evs = [norm_txt(e) for e in SOURCED['event']]
-                if ev and ev not in evs + [evs[0] + ' ' + evs[1], evs[1] + ' ' + evs[0]]: fail(rel, f'event line not from content/meet*.md: "{ev}"')
+                if ev and ev not in evs + [evs[0] + ' ' + evs[1], evs[1] + ' ' + evs[0]] and not all(norm_txt(t['text']) in ' '.join(evs) for t in texts if t['role'] == 'event'):
+                    fail(rel, f'event line not from content/meet*.md: "{ev}"')
+                for t in [t for t in texts if t['role'] == 'hook']:
+                    if t['text'] != BRAND_HOOK: fail(rel, f'hook not the brand\'s line: "{t["text"]}"')
+                for t in [t for t in texts if t['role'] == 'tbc']:
+                    if t['text'] not in TBC: fail(rel, f'unknown placeholder: "{t["text"]}"')
                 for t in [t for t in texts if t['role'] in ('register', 'label')]:
                     if norm_txt(t['text']) not in norm_txt(BRAND_BADGE): fail(rel, f'{t["role"]} not from the brand badge line: "{t["text"]}"')
             # nothing collides: text, QR panel and seal boxes (as measured, shrunk 0.4 mm for ascenders and descenders)
@@ -154,6 +162,7 @@ for concept in CONCEPTS:
         both = open(os.path.join(BASE, concept, 'live', f'{pid}-card-front.svg')).read() + open(os.path.join(BASE, concept, 'live', f'{pid}-card-back.svg')).read()
         needs = ['data-role="name"', 'data-role="role"', 'data-role="url"', 'id="qr"', 'id="rm-logo"', 'data-role="wordmark"']
         needs += ['data-role="event"'] if ROUND2 else ['data-role="line"']
+        if ROUND3 and 'data-role="role"' not in both and 'Job title to confirm' in both: needs.remove('data-role="role"')
         for need in needs:
             if need not in both: fail(f'{concept}/{pid}', f'no {need} on either side')
 
