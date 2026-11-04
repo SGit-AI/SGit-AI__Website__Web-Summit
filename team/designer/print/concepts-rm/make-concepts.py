@@ -162,23 +162,36 @@ def a_back(p, pid):
     return s
 
 # ---------------- Concept B: Seal (leads with the RiskMandate seal) ----------------
+# the spectrum: the team's colours (data/design.json) with RiskMandate green as the green; Dinis's near-black is left out,
+# since it vanishes on the container black. A full-bleed strip, 4 mm on the trimmed card, never near the seal.
+SPECTRUM = [('Nimay blue', '#1f3a93'), ('Vicky purple', '#6b3fa0'), ('Silvio red', '#c62828'), ('Jose orange', '#e86a1c'),
+            ('Indi yellow', '#f2b705'), ('RiskMandate green', GREEN)]
+def spectrum(s, y, h):
+    """Equal segments across the trimmed width (85 mm); the end ones run on into the 3 mm bleed."""
+    w = TRIM_W / len(SPECTRUM); last = len(SPECTRUM) - 1
+    for i, (_, c) in enumerate(SPECTRUM):
+        x0 = 0 if i == 0 else B + i * w; x1 = 91 if i == last else B + (i + 1) * w + 0.05   # 0.05 mm overlap: no hairline gaps
+        s.raw(f'<rect x="{n(x0)}" y="{n(y)}" width="{n(x1 - x0)}" height="{n(h)}" fill="{c}"/>')
+
 def b_front(p):
     s = Side(INK)
-    s.logo(45.5, 24, 16, 'knockout')
-    s.wordmark(45.5, 42, 3.2, WHITE, 'middle')
-    s.text(p['line'], 'Inter', 500, 7.5 * PT, 45.5, 51, WHITE, 'line', 'middle')
+    s.logo(45.5, 20, 22, 'knockout')                       # 22 mm: clear space 11 mm, so nothing from y 42 up
+    s.wordmark(45.5, 43.9, 3.4, WHITE, 'middle')
+    s.text(p['line'], 'Inter', 500, 7.5 * PT, 45.5, 50.8, WHITE, 'line', 'middle')
+    spectrum(s, 54, 7)                                      # bottom edge: 4 mm visible after trim, 3 mm bleed
     return s
 
 def b_back(p, pid):
     s = Side(WHITE)
+    spectrum(s, 0, 7)                                       # top edge: 3 mm bleed, 4 mm visible
     x, room = 8, SAFE[2] - 8
-    s.text(p['name'], 'Barlow Condensed', 700, fit(p['name'], 'Barlow Condensed', 700, 17 * PT, room, 10 * PT), x, 15, INK, 'name')
-    s.text(p['role'], 'Inter', 500, fit(p['role'], 'Inter', 500, 7.5 * PT, room, 7 * PT), x, 20.5, GREEN, 'role')
+    s.text(p['name'], 'Barlow Condensed', 700, fit(p['name'], 'Barlow Condensed', 700, 17 * PT, room, 10 * PT), x, 16, INK, 'name')
+    s.text(p['role'], 'Inter', 500, fit(p['role'], 'Inter', 500, 7.5 * PT, room, 7 * PT), x, 21.3, GREEN, 'role')
     s.qr(pid, SAFE[0], SAFE[3] - QR_PANEL)
     tx = SAFE[0] + QR_PANEL + 5
     mtop, mbot = SAFE[3] - QR_PANEL + 4 * 24 / 29, SAFE[3] - 4 * 24 / 29                # the QR's module edges
-    s.raw(f'<rect x="{n(tx)}" y="{n(mtop)}" width="10" height="1.2" fill="{p["colour"]}"/>')
-    for i, a in enumerate(ASKS): s.text(a, 'Inter', 600, 7.5 * PT, tx, mtop + 8 + i * 4.2, INK, 'asks')
+    s.raw(f'<rect x="{n(tx)}" y="{n(mtop)}" width="16" height="2" fill="{p["colour"]}"/>')   # the person's own colour
+    for i, a in enumerate(ASKS): s.text(a, 'Inter', 600, 7.5 * PT, tx, mtop + 8.6 + i * 4.2, INK, 'asks')
     url = f'web-summit.sgit.ai/meet/{pid}/'
     s.text(url, 'Inter', 400, fit(url, 'Inter', 400, 7 * PT, SAFE[2] - tx, 7 * PT), tx, mbot, INK, 'url')
     return s
@@ -222,13 +235,13 @@ CONCEPTS = {
         ]},
     'b-seal': {
         'name': 'B. Seal', 'build': lambda p, pid: (b_front(p), b_back(p, pid)),
-        'rationale': 'The seal leads: a calm, dark brand face, and a white working face where the name and the QR sit together.',
-        'palette': [('Container black', INK), ('White', WHITE), ('RiskMandate green', GREEN)],
+        'rationale': 'The seal leads, big, on a calm dark face; a strip of the team\'s colours makes it pop; the white side puts the name and the QR together.',
+        'palette': [('Container black', INK), ('White', WHITE), ('RiskMandate green', GREEN)] + SPECTRUM[:-1],
         'type': 'Barlow Condensed (name, wordmark) + Inter (role, line, asks, URL)',
         'notes': [
-            'The front is a full-bleed container black (#161615) with the knockout seal, the cut the brand keeps for dark surfaces. Ask the printer for a rich black so it does not print grey on matt stock.',
-            'The person\'s colour appears only as a short rule on the white side, so it never comes near the mark. Dinis\'s colour is near black, so his rule reads as black.',
-            'The name and the QR share the white side, so one look gives both. The person\'s line moves to the brand side, under the wordmark; it could move back under the role if the team wants it with the name.',
+            'The seal is 22 mm across (it was 16 mm), the knockout cut on full-bleed container black (#161615), with 11 mm clear on every side. Ask the printer for a rich black so it does not print grey on matt stock.',
+            'The spectrum strip uses the team\'s own colours with RiskMandate green, the same strip on every card, at the bottom of the front and the top of the back. It is 4 mm deep on the trimmed card and bleeds 3 mm, so a 1 mm trim drift cannot leave a sliver. It can swap for the official accent palette once the brand page is read.',
+            'The person\'s own colour is the 16 x 2 mm bar above the asks, so every card is still personal. The line sits under the wordmark on the dark side; it could move under the role if the team wants it beside the name.',
         ]},
     'c-poster': {
         'name': 'C. Poster', 'build': lambda p, pid: (c_front(p, pid), c_back(p)),

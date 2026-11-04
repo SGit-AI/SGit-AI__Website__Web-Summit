@@ -1,6 +1,6 @@
 # RiskMandate business card: three concepts, all seven people
 
-By designer@web-summit.indi, 4 November 2026, for the team to choose one. **Not for print yet**: the seal is a placeholder (see Assumptions), and the chosen concept needs signing off again (WS-113), since it replaces C1.
+By designer@web-summit.indi, 4 November 2026. **Chosen: B. Seal** (Indi, 4 November), with a bigger seal and the team's colours added. A and C are kept for the record. **Not for print yet**: the seal is a placeholder (see Assumptions), and the chosen concept needs signing off again (WS-113), since it replaces C1.
 
 - `compare.png`: the three concepts side by side, front and back, for Indi.
 - `<concept>/sheet.png`: one concept, all seven people, both sides.
@@ -29,23 +29,34 @@ By designer@web-summit.indi, 4 November 2026, for the team to choose one. **Not 
 - The role is set in RiskMandate green, so the brand colour is on every card whatever the person's colour. For one ink only, set it in container black.
 - The QR is on the back only, as on C1. Putting it on the front means dropping the line or the seal.
 
-## B. Seal
+## B. Seal (chosen)
 
-**Rationale:** The seal leads. A calm, dark brand face, and a white working face where the name and the QR sit together.
+**Rationale:** The seal leads, big, on a calm dark face. A strip of the team's colours makes it pop. The white side puts the name and the QR together.
 
-| Colour | Hex | CMYK (naive, for reference) |
-|---|---|---|
-| Container black | #161615 | C0 M0 Y5 K91 |
-| White | #FFFFFF | C0 M0 Y0 K0 |
-| RiskMandate green | #1A7F5A | C80 M0 Y29 K50 |
-| Accent | the person's colour (table below) | |
+**Changed on 4 November, at Indi's word:** the seal from 16 to 22 mm, and the spectrum strip added on both sides.
+
+| Colour | Hex | CMYK (naive, for reference) | Where |
+|---|---|---|---|
+| Container black | #161615 | C0 M0 Y5 K91 | front field (ask for rich black) |
+| White | #FFFFFF | C0 M0 Y0 K0 | back field, front text |
+| RiskMandate green | #1A7F5A | C80 M0 Y29 K50 | role, strip |
+| Nimay blue | #1f3a93 | C79 M61 Y0 K42 | strip |
+| Vicky purple | #6b3fa0 | C33 M61 Y0 K37 | strip |
+| Silvio red | #c62828 | C0 M80 Y80 K22 | strip |
+| Jose orange | #e86a1c | C0 M54 Y88 K9 | strip |
+| Indi yellow | #f2b705 | C0 M24 Y98 K5 | strip |
+| Accent | the person's colour (table below) | | 16 x 2 mm bar above the asks |
 
 **Type:** Barlow Condensed (name, wordmark) + Inter (role, line, asks, URL).
 
+**Layout:**
+- **Front:** the knockout seal, 22 mm, centred, 11 mm clear on every side. RISK MANDATE below it, then the person's line. The strip runs along the bottom edge.
+- **Back:** the strip along the top edge, then the name and role. Below them, the QR (24 mm) on the left, with the person's colour bar, the three asks and the URL beside it.
+
 **Design notes:**
-- The front is full-bleed container black with the knockout seal, the cut the brand keeps for dark surfaces. Ask the printer for a rich black (for example C60 M40 Y40 K100), or it prints grey on matt stock.
-- The person's colour is only a short rule on the white side, far from the mark. Dinis's colour is near black, so his rule reads as black.
-- Name and QR share the white side, so one look gives both. The line moves to the brand side under the wordmark. It could go back under the role if the team wants it beside the name.
+- The strip is 4 mm deep on the trimmed card and bleeds 3 mm, so a 1 mm trim drift cannot leave a sliver. The six segments are equal on the trimmed card. It is the same strip on every card, so the seven read as one team.
+- The strip uses the team's own colours with RiskMandate green. Dinis's near-black is left out because it disappears on the dark front. When the brand page can be read, the strip can switch to the official accent palette in one line (`SPECTRUM` in `make-concepts.py`).
+- This goes past the brief's "3 colours plus the accent" on purpose, as asked. No text is set on the strip, and the strip never comes within the seal's clear space.
 
 ## C. Poster
 
@@ -63,7 +74,7 @@ By designer@web-summit.indi, 4 November 2026, for the team to choose one. **Not 
 **Design notes:**
 - The back is the person's colour with their line in Barlow Condensed ExtraBold, the same voice as their T-shirt, so card and shirt read as one set.
 - The seal sits on white with half its width clear on every side. The mark never sits on a coloured field and the colour never touches it.
-- Jose's white line on orange is 3.2:1. That passes AA only as large text, which it is (31 pt). Setting Jose's ink to container black gives 5.6:1, but breaks the match with his shirt (white ink).
+- Jose's white line on orange is 3.2:1 (C only; B sets no text on colour). That passes AA only as large text, which it is (31 pt). Setting Jose's ink to container black gives 5.6:1, but breaks the match with his shirt (white ink).
 
 ## The seven
 
@@ -90,7 +101,7 @@ URLs are `https://web-summit.sgit.ai/meet/<id>/`, from `team/designer/qr/qr-meet
 
 ## Assumptions
 
-- **Logo:** no seal file is in the repository, and riskmandate.ai is blocked by this session's network policy. Every file has a placeholder group `id="rm-logo"` at the seal's size and position: a thin grey ring, labelled "RM LOGO". `data-cut` says which cut goes there (containered on white, knockout on black). RISK MANDATE is set as the wordmark beside it, in the merch's style (Barlow Condensed, RISK light, MANDATE bold). Seal sizes: A 11 mm, B 16 mm, C 8.5 mm, all above the 24 px small-cut threshold.
+- **Logo:** no seal file is in the repository, and riskmandate.ai is blocked by this session's network policy. Every file has a placeholder group `id="rm-logo"` at the seal's size and position: a thin grey ring, labelled "RM LOGO". `data-cut` says which cut goes there (containered on white, knockout on black). RISK MANDATE is set as the wordmark beside it, in the merch's style (Barlow Condensed, RISK light, MANDATE bold). Seal sizes: A 11 mm, B 22 mm, C 8.5 mm, all above the 24 px small-cut threshold.
 - **Vicky's name and role:** "Vicky Wang", "Project Manager", from `people/vicky/business-card.json` (her words, 4 November). `data/team.json`, `data/design.json` and the live site still say "Vicky".
 - **Roles:** from `data/team.json`, kept whole where they fit one line at 7 pt or more. Dinis's drops "RiskMandate, " because the card already carries the name.
 - **Asks:** "Meet me / Book a meeting / Talk to my agent", kept from C1 and the shirt backs.
@@ -99,5 +110,6 @@ URLs are `https://web-summit.sgit.ai/meet/<id>/`, from `team/designer/qr/qr-meet
 - **QR size:** 24 mm is read as the symbol (as on C1), so the white panel with its quiet zone is 30.62 mm.
 - **Colour:** the files are RGB hex, as the existing print files are. The CMYK values are a naive conversion for reference; the printer converts and proofs.
 - **No crop marks** in the print files, as on C1. Most online printers place their own. The PDFs carry the 3 mm bleed.
+- **Brand accents:** riskmandate.ai is blocked by this session's network policy, so the brand's own accent colours (such as its blue) are not known here. B's strip uses the team's colours from `data/design.json` instead.
 - **Fonts:** Barlow, Barlow Condensed, Inter and JetBrains Mono, all SIL OFL 1.1. Outlined in the print files, so the printer needs none.
 - **Sign-off:** C1 is signed off by Dinis for everyone. Any concept chosen here supersedes it, and the seven sets are signed again.

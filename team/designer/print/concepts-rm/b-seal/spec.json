@@ -1,12 +1,12 @@
 {
  "concept": "b-seal",
  "name": "B. Seal",
- "rationale": "The seal leads: a calm, dark brand face, and a white working face where the name and the QR sit together.",
+ "rationale": "The seal leads, big, on a calm dark face; a strip of the team's colours makes it pop; the white side puts the name and the QR together.",
  "type": "Barlow Condensed (name, wordmark) + Inter (role, line, asks, URL)",
  "notes": [
-  "The front is a full-bleed container black (#161615) with the knockout seal, the cut the brand keeps for dark surfaces. Ask the printer for a rich black so it does not print grey on matt stock.",
-  "The person's colour appears only as a short rule on the white side, so it never comes near the mark. Dinis's colour is near black, so his rule reads as black.",
-  "The name and the QR share the white side, so one look gives both. The person's line moves to the brand side, under the wordmark; it could move back under the role if the team wants it with the name."
+  "The seal is 22 mm across (it was 16 mm), the knockout cut on full-bleed container black (#161615), with 11 mm clear on every side. Ask the printer for a rich black so it does not print grey on matt stock.",
+  "The spectrum strip uses the team's own colours with RiskMandate green, the same strip on every card, at the bottom of the front and the top of the back. It is 4 mm deep on the trimmed card and bleeds 3 mm, so a 1 mm trim drift cannot leave a sliver. It can swap for the official accent palette once the brand page is read.",
+  "The person's own colour is the 16 x 2 mm bar above the asks, so every card is still personal. The line sits under the wordmark on the dark side; it could move under the role if the team wants it beside the name."
  ],
  "palette": [
   {
@@ -38,6 +38,56 @@
     29,
     50
    ]
+  },
+  {
+   "name": "Nimay blue",
+   "hex": "#1f3a93",
+   "cmyk": [
+    79,
+    61,
+    0,
+    42
+   ]
+  },
+  {
+   "name": "Vicky purple",
+   "hex": "#6b3fa0",
+   "cmyk": [
+    33,
+    61,
+    0,
+    37
+   ]
+  },
+  {
+   "name": "Silvio red",
+   "hex": "#c62828",
+   "cmyk": [
+    0,
+    80,
+    80,
+    22
+   ]
+  },
+  {
+   "name": "Jose orange",
+   "hex": "#e86a1c",
+   "cmyk": [
+    0,
+    54,
+    88,
+    9
+   ]
+  },
+  {
+   "name": "Indi yellow",
+   "hex": "#f2b705",
+   "cmyk": [
+    0,
+    24,
+    98,
+    5
+   ]
   }
  ],
  "files": {
@@ -49,28 +99,28 @@
     {
      "role": "logo",
      "cut": "knockout",
-     "d": 16,
+     "d": 22,
      "box": [
-      37.5,
-      16.0,
-      53.5,
-      32.0
+      34.5,
+      9.0,
+      56.5,
+      31.0
      ],
-     "clear": 8.0
+     "clear": 11.0
     },
     {
      "role": "wordmark",
      "text": "RISK",
      "font": "Barlow Condensed",
      "weight": 300,
-     "pt": 12.96,
+     "pt": 13.77,
      "fill": "#FFFFFF",
      "bg": "#161615",
      "box": [
-      33.78,
-      40.4,
-      40.63,
-      43.6
+      33.05,
+      42.2,
+      40.33,
+      45.6
      ]
     },
     {
@@ -78,14 +128,14 @@
      "text": "MANDATE",
      "font": "Barlow Condensed",
      "weight": 700,
-     "pt": 12.96,
+     "pt": 13.77,
      "fill": "#FFFFFF",
      "bg": "#161615",
      "box": [
-      41.64,
-      40.4,
-      57.22,
-      43.6
+      41.4,
+      42.2,
+      57.95,
+      45.6
      ]
     },
     {
@@ -98,9 +148,9 @@
      "bg": "#161615",
      "box": [
       23.76,
-      49.08,
+      48.88,
       67.24,
-      51
+      50.8
      ]
     }
    ],
@@ -130,9 +180,9 @@
      "bg": "#FFFFFF",
      "box": [
       8,
-      10.8,
+      11.8,
       29.48,
-      15
+      16
      ]
     },
     {
@@ -145,9 +195,9 @@
      "bg": "#FFFFFF",
      "box": [
       8,
-      18.58,
+      19.38,
       62.5,
-      20.5
+      21.3
      ]
     },
     {
@@ -176,9 +226,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      32.76,
+      33.36,
       53.74,
-      34.69
+      35.29
      ]
     },
     {
@@ -191,9 +241,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      36.96,
+      37.56,
       62.36,
-      38.89
+      39.49
      ]
     },
     {
@@ -206,9 +256,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      41.16,
+      41.76,
       63.86,
-      43.09
+      43.69
      ]
     },
     {
@@ -246,28 +296,28 @@
     {
      "role": "logo",
      "cut": "knockout",
-     "d": 16,
+     "d": 22,
      "box": [
-      37.5,
-      16.0,
-      53.5,
-      32.0
+      34.5,
+      9.0,
+      56.5,
+      31.0
      ],
-     "clear": 8.0
+     "clear": 11.0
     },
     {
      "role": "wordmark",
      "text": "RISK",
      "font": "Barlow Condensed",
      "weight": 300,
-     "pt": 12.96,
+     "pt": 13.77,
      "fill": "#FFFFFF",
      "bg": "#161615",
      "box": [
-      33.78,
-      40.4,
-      40.63,
-      43.6
+      33.05,
+      42.2,
+      40.33,
+      45.6
      ]
     },
     {
@@ -275,14 +325,14 @@
      "text": "MANDATE",
      "font": "Barlow Condensed",
      "weight": 700,
-     "pt": 12.96,
+     "pt": 13.77,
      "fill": "#FFFFFF",
      "bg": "#161615",
      "box": [
-      41.64,
-      40.4,
-      57.22,
-      43.6
+      41.4,
+      42.2,
+      57.95,
+      45.6
      ]
     },
     {
@@ -295,9 +345,9 @@
      "bg": "#161615",
      "box": [
       23.03,
-      49.08,
+      48.88,
       67.97,
-      51
+      50.8
      ]
     }
    ],
@@ -327,9 +377,9 @@
      "bg": "#FFFFFF",
      "box": [
       8,
-      10.8,
+      11.8,
       38.25,
-      15
+      16
      ]
     },
     {
@@ -342,9 +392,9 @@
      "bg": "#FFFFFF",
      "box": [
       8,
-      18.58,
+      19.38,
       65.55,
-      20.5
+      21.3
      ]
     },
     {
@@ -373,9 +423,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      32.76,
+      33.36,
       53.74,
-      34.69
+      35.29
      ]
     },
     {
@@ -388,9 +438,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      36.96,
+      37.56,
       62.36,
-      38.89
+      39.49
      ]
     },
     {
@@ -403,9 +453,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      41.16,
+      41.76,
       63.86,
-      43.09
+      43.69
      ]
     },
     {
@@ -443,28 +493,28 @@
     {
      "role": "logo",
      "cut": "knockout",
-     "d": 16,
+     "d": 22,
      "box": [
-      37.5,
-      16.0,
-      53.5,
-      32.0
+      34.5,
+      9.0,
+      56.5,
+      31.0
      ],
-     "clear": 8.0
+     "clear": 11.0
     },
     {
      "role": "wordmark",
      "text": "RISK",
      "font": "Barlow Condensed",
      "weight": 300,
-     "pt": 12.96,
+     "pt": 13.77,
      "fill": "#FFFFFF",
      "bg": "#161615",
      "box": [
-      33.78,
-      40.4,
-      40.63,
-      43.6
+      33.05,
+      42.2,
+      40.33,
+      45.6
      ]
     },
     {
@@ -472,14 +522,14 @@
      "text": "MANDATE",
      "font": "Barlow Condensed",
      "weight": 700,
-     "pt": 12.96,
+     "pt": 13.77,
      "fill": "#FFFFFF",
      "bg": "#161615",
      "box": [
-      41.64,
-      40.4,
-      57.22,
-      43.6
+      41.4,
+      42.2,
+      57.95,
+      45.6
      ]
     },
     {
@@ -492,9 +542,9 @@
      "bg": "#161615",
      "box": [
       24.89,
-      49.08,
+      48.88,
       66.11,
-      51
+      50.8
      ]
     }
    ],
@@ -524,9 +574,9 @@
      "bg": "#FFFFFF",
      "box": [
       8,
-      10.8,
+      11.8,
       22.74,
-      15
+      16
      ]
     },
     {
@@ -539,9 +589,9 @@
      "bg": "#FFFFFF",
      "box": [
       8,
-      18.58,
+      19.38,
       81.49,
-      20.5
+      21.3
      ]
     },
     {
@@ -570,9 +620,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      32.76,
+      33.36,
       53.74,
-      34.69
+      35.29
      ]
     },
     {
@@ -585,9 +635,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      36.96,
+      37.56,
       62.36,
-      38.89
+      39.49
      ]
     },
     {
@@ -600,9 +650,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      41.16,
+      41.76,
       63.86,
-      43.09
+      43.69
      ]
     },
     {
@@ -640,28 +690,28 @@
     {
      "role": "logo",
      "cut": "knockout",
-     "d": 16,
+     "d": 22,
      "box": [
-      37.5,
-      16.0,
-      53.5,
-      32.0
+      34.5,
+      9.0,
+      56.5,
+      31.0
      ],
-     "clear": 8.0
+     "clear": 11.0
     },
     {
      "role": "wordmark",
      "text": "RISK",
      "font": "Barlow Condensed",
      "weight": 300,
-     "pt": 12.96,
+     "pt": 13.77,
      "fill": "#FFFFFF",
      "bg": "#161615",
      "box": [
-      33.78,
-      40.4,
-      40.63,
-      43.6
+      33.05,
+      42.2,
+      40.33,
+      45.6
      ]
     },
     {
@@ -669,14 +719,14 @@
      "text": "MANDATE",
      "font": "Barlow Condensed",
      "weight": 700,
-     "pt": 12.96,
+     "pt": 13.77,
      "fill": "#FFFFFF",
      "bg": "#161615",
      "box": [
-      41.64,
-      40.4,
-      57.22,
-      43.6
+      41.4,
+      42.2,
+      57.95,
+      45.6
      ]
     },
     {
@@ -689,9 +739,9 @@
      "bg": "#161615",
      "box": [
       25.1,
-      49.08,
+      48.88,
       65.9,
-      51
+      50.8
      ]
     }
    ],
@@ -721,9 +771,9 @@
      "bg": "#FFFFFF",
      "box": [
       8,
-      10.8,
+      11.8,
       29.54,
-      15
+      16
      ]
     },
     {
@@ -736,9 +786,9 @@
      "bg": "#FFFFFF",
      "box": [
       8,
-      18.58,
+      19.38,
       66.24,
-      20.5
+      21.3
      ]
     },
     {
@@ -767,9 +817,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      32.76,
+      33.36,
       53.74,
-      34.69
+      35.29
      ]
     },
     {
@@ -782,9 +832,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      36.96,
+      37.56,
       62.36,
-      38.89
+      39.49
      ]
     },
     {
@@ -797,9 +847,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      41.16,
+      41.76,
       63.86,
-      43.09
+      43.69
      ]
     },
     {
@@ -837,28 +887,28 @@
     {
      "role": "logo",
      "cut": "knockout",
-     "d": 16,
+     "d": 22,
      "box": [
-      37.5,
-      16.0,
-      53.5,
-      32.0
+      34.5,
+      9.0,
+      56.5,
+      31.0
      ],
-     "clear": 8.0
+     "clear": 11.0
     },
     {
      "role": "wordmark",
      "text": "RISK",
      "font": "Barlow Condensed",
      "weight": 300,
-     "pt": 12.96,
+     "pt": 13.77,
      "fill": "#FFFFFF",
      "bg": "#161615",
      "box": [
-      33.78,
-      40.4,
-      40.63,
-      43.6
+      33.05,
+      42.2,
+      40.33,
+      45.6
      ]
     },
     {
@@ -866,14 +916,14 @@
      "text": "MANDATE",
      "font": "Barlow Condensed",
      "weight": 700,
-     "pt": 12.96,
+     "pt": 13.77,
      "fill": "#FFFFFF",
      "bg": "#161615",
      "box": [
-      41.64,
-      40.4,
-      57.22,
-      43.6
+      41.4,
+      42.2,
+      57.95,
+      45.6
      ]
     },
     {
@@ -886,9 +936,9 @@
      "bg": "#161615",
      "box": [
       20.98,
-      49.08,
+      48.88,
       70.02,
-      51
+      50.8
      ]
     }
    ],
@@ -918,9 +968,9 @@
      "bg": "#FFFFFF",
      "box": [
       8,
-      10.8,
+      11.8,
       33.4,
-      15
+      16
      ]
     },
     {
@@ -933,9 +983,9 @@
      "bg": "#FFFFFF",
      "box": [
       8,
-      18.58,
+      19.38,
       28.9,
-      20.5
+      21.3
      ]
     },
     {
@@ -964,9 +1014,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      32.76,
+      33.36,
       53.74,
-      34.69
+      35.29
      ]
     },
     {
@@ -979,9 +1029,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      36.96,
+      37.56,
       62.36,
-      38.89
+      39.49
      ]
     },
     {
@@ -994,9 +1044,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      41.16,
+      41.76,
       63.86,
-      43.09
+      43.69
      ]
     },
     {
@@ -1034,28 +1084,28 @@
     {
      "role": "logo",
      "cut": "knockout",
-     "d": 16,
+     "d": 22,
      "box": [
-      37.5,
-      16.0,
-      53.5,
-      32.0
+      34.5,
+      9.0,
+      56.5,
+      31.0
      ],
-     "clear": 8.0
+     "clear": 11.0
     },
     {
      "role": "wordmark",
      "text": "RISK",
      "font": "Barlow Condensed",
      "weight": 300,
-     "pt": 12.96,
+     "pt": 13.77,
      "fill": "#FFFFFF",
      "bg": "#161615",
      "box": [
-      33.78,
-      40.4,
-      40.63,
-      43.6
+      33.05,
+      42.2,
+      40.33,
+      45.6
      ]
     },
     {
@@ -1063,14 +1113,14 @@
      "text": "MANDATE",
      "font": "Barlow Condensed",
      "weight": 700,
-     "pt": 12.96,
+     "pt": 13.77,
      "fill": "#FFFFFF",
      "bg": "#161615",
      "box": [
-      41.64,
-      40.4,
-      57.22,
-      43.6
+      41.4,
+      42.2,
+      57.95,
+      45.6
      ]
     },
     {
@@ -1083,9 +1133,9 @@
      "bg": "#161615",
      "box": [
       30.6,
-      49.08,
+      48.88,
       60.4,
-      51
+      50.8
      ]
     }
    ],
@@ -1115,9 +1165,9 @@
      "bg": "#FFFFFF",
      "box": [
       8,
-      10.8,
+      11.8,
       35.76,
-      15
+      16
      ]
     },
     {
@@ -1130,9 +1180,9 @@
      "bg": "#FFFFFF",
      "box": [
       8,
-      18.58,
+      19.38,
       49.02,
-      20.5
+      21.3
      ]
     },
     {
@@ -1161,9 +1211,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      32.76,
+      33.36,
       53.74,
-      34.69
+      35.29
      ]
     },
     {
@@ -1176,9 +1226,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      36.96,
+      37.56,
       62.36,
-      38.89
+      39.49
      ]
     },
     {
@@ -1191,9 +1241,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      41.16,
+      41.76,
       63.86,
-      43.09
+      43.69
      ]
     },
     {
@@ -1231,28 +1281,28 @@
     {
      "role": "logo",
      "cut": "knockout",
-     "d": 16,
+     "d": 22,
      "box": [
-      37.5,
-      16.0,
-      53.5,
-      32.0
+      34.5,
+      9.0,
+      56.5,
+      31.0
      ],
-     "clear": 8.0
+     "clear": 11.0
     },
     {
      "role": "wordmark",
      "text": "RISK",
      "font": "Barlow Condensed",
      "weight": 300,
-     "pt": 12.96,
+     "pt": 13.77,
      "fill": "#FFFFFF",
      "bg": "#161615",
      "box": [
-      33.78,
-      40.4,
-      40.63,
-      43.6
+      33.05,
+      42.2,
+      40.33,
+      45.6
      ]
     },
     {
@@ -1260,14 +1310,14 @@
      "text": "MANDATE",
      "font": "Barlow Condensed",
      "weight": 700,
-     "pt": 12.96,
+     "pt": 13.77,
      "fill": "#FFFFFF",
      "bg": "#161615",
      "box": [
-      41.64,
-      40.4,
-      57.22,
-      43.6
+      41.4,
+      42.2,
+      57.95,
+      45.6
      ]
     },
     {
@@ -1280,9 +1330,9 @@
      "bg": "#161615",
      "box": [
       30.15,
-      49.08,
+      48.88,
       60.85,
-      51
+      50.8
      ]
     }
    ],
@@ -1312,9 +1362,9 @@
      "bg": "#FFFFFF",
      "box": [
       8,
-      10.8,
+      11.8,
       29.77,
-      15
+      16
      ]
     },
     {
@@ -1327,9 +1377,9 @@
      "bg": "#FFFFFF",
      "box": [
       8,
-      18.58,
+      19.38,
       74.77,
-      20.5
+      21.3
      ]
     },
     {
@@ -1358,9 +1408,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      32.76,
+      33.36,
       53.74,
-      34.69
+      35.29
      ]
     },
     {
@@ -1373,9 +1423,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      36.96,
+      37.56,
       62.36,
-      38.89
+      39.49
      ]
     },
     {
@@ -1388,9 +1438,9 @@
      "bg": "#FFFFFF",
      "box": [
       42.62,
-      41.16,
+      41.76,
       63.86,
-      43.09
+      43.69
      ]
     },
     {
