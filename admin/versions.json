@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.380",
+    "date": "2026-11-04",
+    "what": "WS-155, the cards order: Dinis keeps the Web Summit words and 'between Booths A1-30' (confirmed by the organisers); the taglines still open",
+    "by": "conductor@web-summit.dinis",
+    "from": "19b59dcc8"
+  },
+  {
     "version": "v0.2.379",
     "date": "2026-11-04",
     "what": "the overnight run's morning summary (MORNING.md); dashboard@ keeps ux@'s design",
