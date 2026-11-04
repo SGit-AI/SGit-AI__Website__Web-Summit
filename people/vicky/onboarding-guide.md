@@ -1,6 +1,6 @@
 # Getting connected, in plain language (draft, WS-100)
 
-**Draft for Vicky to check.** Written by conductor@web-summit.vicky on 4 November 2026 from Vicky's own setup on 2 and 3 November (with her additions of 4 November) and the steps on the start page (/start/, the section "The steps"). Angelo adds the technical parts, where it says **[Angelo]**; where it says **[Vicky]**, Vicky gives the exact label on screen. No screenshots: each step names the button as it appears on screen, and where it is. Nothing here is final until Vicky and Angelo say so.
+**Draft for Vicky to check.** Written by conductor@web-summit.vicky on 4 November 2026 from Vicky's own setup on 2 and 3 November (with her additions of 4 November) and the steps on the start page (/start/, the section "The steps"). Angelo adds the technical parts, where it says **[Angelo]**; No screenshots: each step names the button as it appears on screen, and where it is. Nothing here is final until Vicky and Angelo say so.
 
 **Who this is for:** anyone on the team who is not a developer. You do not need to know what GitHub or a "commit" is. Your agents do the technical work; you do a few clicks and answer their questions.
 
@@ -55,10 +55,14 @@
 
 1. Go to **claude.ai/code**, logged in with your Workspace email (step 2).
 2. **Connect GitHub.** If Claude Code asks you to connect GitHub, follow it; if not, go to **claude.ai/connect-github**. Sign in with the GitHub account from step 3 and allow access.
-3. **Create the cloud environment.** Give it a name you'll recognise (for example `web-summit`). Under **Network access**, choose **Limited**, and leave **Allow package managers** ticked. You add the team's websites to it in step 6a. **[Vicky: the exact name of the button that creates the environment]**
-4. **Pick the repository** `SGit-AI/SGit-AI__Website__Web-Summit`. **[Vicky: where the repository picker is]**
-5. **Change the branch to `dev`.** The team only works on `dev`, never on `main`. **[Vicky: where the branch picker is]**
-6. **Choose the permission mode** in the **mode dropdown next to the prompt box** (where you type): **Accept edits**, **Plan** or **Auto**. Choose **Auto**: the agent goes ahead with ordinary steps on its own and still stops to ask you before anything risky. You can change it at any time from the same dropdown.
+3. **Create the cloud environment.** The first time, the page is titled **"Create your first cloud environment"**:
+   - In the **Name** box, type a name you'll recognise (for example `web-summit`).
+   - Under **Network access** there are three choices, **None**, **Limited** and **Full**: choose **Limited**. (If you see **Allow package managers**, leave it ticked.) You add the team's websites to it in step 6a.
+   - Press **Create & finish**, at the **bottom right**.
+4. **Find the row below the prompt box.** The prompt box is where you type; it says *"Describe a task or ask a question"*. Just below it is a row that reads, from left to right: the **environment**, the **repository**, the **branch**, and at its right end the **model** and the **mode dropdown**.
+5. **Pick the repository.** In that row, right after the environment's name, is the repository picker; it shows the repository's name. Click it and choose `SGit-AI/SGit-AI__Website__Web-Summit`.
+6. **Change the branch to `dev`.** Right after the repository, in the same row, is the branch picker, with a branch icon. Click it and choose **dev**. The team only works on `dev`, never on `main`.
+7. **Choose the permission mode.** At the right end of the same row, the **mode dropdown** offers **Accept edits**, **Plan** and **Auto**. Choose **Auto**: the agent goes ahead with ordinary steps on its own and still stops to ask you before anything risky. You can change it at any time from the same dropdown.
 
 **You're done when:** you can open a new session on the repository, on the `dev` branch.
 
