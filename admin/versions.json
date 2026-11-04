@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.345",
+    "date": "2026-11-04",
+    "what": "the token report in plain words on Indi's dashboard, and a token guide infographic",
+    "by": "accountant@web-summit.indi",
+    "from": "d873a5d2b"
+  },
+  {
     "version": "v0.2.344",
     "date": "2026-11-04",
     "what": "three audience cards with no names, and four laptop stickers",
