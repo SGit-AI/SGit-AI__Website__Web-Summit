@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.338",
+    "date": "2026-11-04",
+    "what": "unblock /help/: the helper adds the dashboard's link in the same commit",
+    "by": "conductor@web-summit.angelo",
+    "from": "9d0d35b2f"
+  },
+  {
     "version": "v0.2.337",
     "date": "2026-11-04",
     "what": "my own tokens, wake 1: 70,242 fresh, 3,239,429 cache reads",
