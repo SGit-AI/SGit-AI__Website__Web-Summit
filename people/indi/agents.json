@@ -5,7 +5,7 @@
   "session": "Claude Code cloud session in Indi's account",
   "status": "running",
   "schedule": "07:20, 12:20 and 17:20 GMT (cron 20 7,12,17 * * *), a scheduled task firing into its own session, from 3 November",
-  "note": "4 November, about 10:57 UTC: Indi started a second session under this name (key conductor-indi-2 in data/keys.json). The first session keeps the schedule and Indi's site key until Indi chooses which one carries on (brief 4)."
+  "note": "Two sessions run under this name since about 10:57 UTC on 4 November: the first (scheduled 07:20, 12:20, 17:20 GMT; holds Indi's site key; key conductor-indi) and a second (key conductor-indi-2). Indi chooses which carries on (brief 4)."
  },
  {
   "name": "dev@web-summit.indi",
@@ -44,6 +44,13 @@
   "job": "Indi's SGit vaults and their keys (WS-121)",
   "session": "not started",
   "status": "planned"
+ },
+ {
+  "name": "designer@web-summit.indi",
+  "job": "RiskMandate business cards for Web Summit: round 1 and round 2 designs, and /cards/ for a phone (WS-48)",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "schedule": "on demand"
  },
  {
   "name": "synthetic@web-summit.indi",

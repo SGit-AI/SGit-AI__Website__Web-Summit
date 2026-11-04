@@ -1,0 +1,68 @@
+{
+  "number": 6,
+  "date": "4 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Midday: two conductors, one choice; your key by 18:00; the newsroom waits on Dinis",
+  "when": "4 November 2026, 12:25 UTC (scheduled wake; since brief 5, 11:15 UTC)",
+  "by": "conductor@web-summit.indi (the first session)",
+  "headline": "Two sessions now run as your conductor. The second one wrote brief 4 at 11:05 and asks you to pick one; my 11:15 brief is renumbered 5. Your site key is still not added (WS-136, due 18:00). The newsroom patch and your push-access request wait on Dinis. Nothing is decided here.",
+  "stats": [
+    {"n": "2", "label": "conductor sessions running under one name"},
+    {"n": "3 of 7", "label": "people with a site key added (WS-136); not yet you"},
+    {"n": "5", "label": "agents of yours committing (conductor, dev, dashboard, designer, synthetic)"},
+    {"n": "18:00", "label": "WS-136 due; the newsroom decision is on the same stand-up"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Which conductor session carries on",
+      "detail": "This one (the first) holds your site key and the 07:20, 12:20 and 17:20 schedule. The second has its own key and no schedule. Both say they will change nothing of the other's.",
+      "options": ["keep this first session", "keep the second session", "keep both, with different jobs"],
+      "recommend": "Keep this first session: it holds your key and the schedule. The second session's own brief recommends the same."
+    },
+    {
+      "id": "2",
+      "ask": "Add your site key and send one signed message (WS-136, due 18:00)",
+      "detail": "Open the link or the QR I sent you this morning. Then send one message from the Feedback pane. There is no lane for me yet, so it goes to conductor@web-summit.dinis, which is how Vicky's arrived and was verified.",
+      "options": ["now", "before 18:00"],
+      "recommend": "Now: two minutes, and it is the only step left for WS-136."
+    },
+    {
+      "id": "3",
+      "ask": "Start the journalist desk now, or wait for Dinis at 18:00",
+      "detail": "Brief 10 of the newsroom's pack says your conductor starts your desks when you say go. The journalist desk would write three company profiles by 13:00 tomorrow, in people/indi/newsroom/.",
+      "options": ["start now", "wait for 18:00"],
+      "recommend": "Wait for 18:00: brief 4 of the pack says the split between you and Vicky is Dinis's to decide."
+    }
+  ],
+  "you_asked": [
+    {"at": "4 Nov, about 11:20 UTC", "said": "1. now. 2. done 3 yes", "done": "Push access asked on WS-141 (For: Dinis and Angelo's conductor), with a draft for you to send. The four newsroom sites load. Your agents offered for the newsroom roles. The patch rebased onto v0.1.2.", "where": "board/WS-141, commit 233a5c6", "status": "waiting"}
+  ],
+  "sections": [
+    {
+      "title": "1. What happened since brief 5",
+      "items": [
+        "conductor@web-summit.dinis published the newsroom's brief pack. Brief 10 is a handover to me and Vicky's conductor, and it builds your patch in as step 1 (6b3a250).",
+        "designer@web-summit.indi made round 2 of the business cards and a /cards/ page for phones (d40ace1, 8e6e9f8, efe8e8e). It is now listed in agents.json.",
+        "synthetic@web-summit.indi tested the cards with synthetic users, run 1 (a88e8c6, WS-142).",
+        "abp@web-summit.dinis wrote policies for your designer and synthetic agents, and recorded your two conductors (24ccdce)."
+      ]
+    },
+    {
+      "title": "2. From your mentor (11:41)",
+      "items": ["Choose one conductor session first, so your agents do not double up. Then add your key and send one signed message."]
+    }
+  ],
+  "next": [
+    "13:00 stand-up: the card designer agent, the printer date (Vicky's logistics agent).",
+    "18:00 stand-up: the newsroom patch, your push access, the roles; WS-136 due.",
+    "17:20: my next wake.",
+    "Tell me 'acknowledge' when you have read briefs 1 to 6."
+  ],
+  "sources": [
+    "git log since 11:15 UTC: 2a0ce5f, 6b3a250, d40ace1, 8e6e9f8, efe8e8e, a88e8c6, 24ccdce",
+    "board/WS-136, board/WS-141 at 12:20 UTC",
+    "people/indi/briefs/2026-11-04T1105Z.json (the second session's brief 4)",
+    "people/indi/mentor/2026-11-04-1141.md"
+  ]
+}

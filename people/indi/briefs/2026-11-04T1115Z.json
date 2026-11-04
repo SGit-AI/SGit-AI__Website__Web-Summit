@@ -1,43 +1,78 @@
 {
-  "number": 4,
+  "number": 5,
   "date": "4 November 2026",
   "kicker": "Web Summit 2026 · Indi's conductor brief",
   "title": "The newsroom: a reader-first patch is ready, and Dinis decides at 18:00",
-  "when": "4 November 2026, 11:15 UTC (since brief 3, 07:25 UTC)",
+  "when": "4 November 2026, 11:15 UTC (since brief 3, 07:25 UTC). Renumbered 5 at 12:25: the second conductor session's 11:05 brief is number 4.",
   "by": "conductor@web-summit.indi",
   "headline": "You passed on Dinis's call to make the Web Summit newsroom a full publication. I studied the three earlier newsrooms from their code, rewrote the new site in plain English with a newspaper look, and checked it on a phone. I cannot push to the newsroom's repository, so the work is a patch for Dinis to approve. It is on the 18:00 stand-up.",
   "stats": [
-    {"n": "4", "label": "pages rewritten in short, plain sentences"},
-    {"n": "24 to 1", "label": "sentences over 25 words, before and after (the 1 is a quote)"},
-    {"n": "0", "label": "facts added; every source kept"},
-    {"n": "6", "label": "publishing roles proposed"}
+    {
+      "n": "4",
+      "label": "pages rewritten in short, plain sentences"
+    },
+    {
+      "n": "24 to 1",
+      "label": "sentences over 25 words, before and after (the 1 is a quote)"
+    },
+    {
+      "n": "0",
+      "label": "facts added; every source kept"
+    },
+    {
+      "n": "6",
+      "label": "publishing roles proposed"
+    }
   ],
   "for_you": [
     {
       "id": "1",
       "ask": "Ask Dinis for push access to the newsroom repository",
       "detail": "Your GitHub account cannot push to SGit-AI__Website__Newsroom__Web-Summit. Without it, your agents can only send patches.",
-      "options": ["ask at 18:00 (it is on the agenda)", "ask Dinis or Angelo now", "patches are fine for now"],
+      "options": [
+        "ask at 18:00 (it is on the agenda)",
+        "ask Dinis or Angelo now",
+        "patches are fine for now"
+      ],
       "recommend": "Ask at 18:00: it is part of the same decision."
     },
     {
       "id": "2",
       "ask": "Allow the four newsroom sites in your Claude environment",
       "detail": "This session cannot load web-summit.newsroom.sgit.ai, newsroom.sgit.ai, pt.newsroom.sgit.ai or php.oct.2026.newsroom.sgit.ai, so I worked from their code. Same place as before: Network access, Allowed domains.",
-      "options": ["allow all four", "not now"],
+      "options": [
+        "allow all four",
+        "not now"
+      ],
       "recommend": "Allow all four, so your agents can check the live site after each change."
     },
     {
       "id": "3",
       "ask": "Which newsroom roles your agents take",
       "detail": "The review proposes six roles. Your agents fit two: reporter (company profiles, building on dev's 28 factory pages) and reader's advocate (checking the site on a phone and the plain-English rules).",
-      "options": ["reporter and reader's advocate", "one of them", "wait for Dinis"],
+      "options": [
+        "reporter and reader's advocate",
+        "one of them",
+        "wait for Dinis"
+      ],
       "recommend": "Offer both at 18:00, and let Dinis decide."
     }
   ],
   "you_asked": [
-    {"at": "4 Nov, about 11:00 UTC", "said": "start to edit the https://web-summit.newsroom.sgit.ai/ site to make it better", "done": "A patch: newspaper look, short navigation, every page in plain English, checked on a phone. A review of the three earlier newsrooms with six proposed roles.", "where": "people/indi/newsroom/, board/WS-141", "status": "waiting"},
-    {"at": "4 Nov, about 08:35 UTC", "said": "yes (a QR code for your key)", "done": "Sent in chat, then my copy deleted. The temporary permission rule is now removed too.", "where": "this chat", "status": "done"}
+    {
+      "at": "4 Nov, about 11:00 UTC",
+      "said": "start to edit the https://web-summit.newsroom.sgit.ai/ site to make it better",
+      "done": "A patch: newspaper look, short navigation, every page in plain English, checked on a phone. A review of the three earlier newsrooms with six proposed roles.",
+      "where": "people/indi/newsroom/, board/WS-141",
+      "status": "waiting"
+    },
+    {
+      "at": "4 Nov, about 08:35 UTC",
+      "said": "yes (a QR code for your key)",
+      "done": "Sent in chat, then my copy deleted. The temporary permission rule is now removed too.",
+      "where": "this chat",
+      "status": "done"
+    }
   ],
   "sections": [
     {
