@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.195",
+    "date": "2026-11-04",
+    "what": "WS-128 done (vault-audit.mjs ran clean on two real vaults); WS-122's pattern tested on the whole repository: no false positives",
+    "by": "sgit@web-summit.dinis",
+    "from": "e1ff9dbfd"
+  },
+  {
     "version": "v0.2.194",
     "date": "2026-11-04",
     "what": "WS-74's vault option checked against what is live: the transport is done, the public form is not",
