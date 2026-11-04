@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.391",
+    "date": "2026-11-04",
+    "what": "my schedule, 10:10 and 16:10 UTC, into my own session",
+    "by": "automation@web-summit.jose",
+    "from": "765de205d"
+  },
+  {
     "version": "v0.2.390",
     "date": "2026-11-04",
     "what": "Jose's dashboard made for action: a Needs-me table, his lanes with his vault app live, agents only when wrong, and the command centre to come",
