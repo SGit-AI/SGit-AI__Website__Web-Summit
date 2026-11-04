@@ -1,0 +1,88 @@
+{
+    "number": 5,
+    "date": "4 November 2026",
+    "kicker": "Web Summit 2026 · Jose's conductor brief",
+    "title": "Three things today: the watcher's scope, the split, your key",
+    "when": "4 November 2026, 07:25 UTC (scheduled wake; since the overnight runs)",
+    "by": "conductor@web-summit.jose",
+    "headline": "Short, as your card asks. Overnight: your reviewer's first hold stopped a token value going public (01:26); the ABP agent wrote your watcher's and reviewer's ABPs (04:12); dev@web-summit.dinis built the feedback pane's public mode on your dev agent's WS-74 work (03:42).",
+    "stats": [
+        {
+            "n": "3",
+            "label": "asks"
+        },
+        {
+            "n": "18:00",
+            "label": "next due: your key on the site (WS-136)"
+        },
+        {
+            "n": "2",
+            "label": "blockers, both on Dinis's agents (WS-108)"
+        },
+        {
+            "n": "L5",
+            "label": "your level"
+        }
+    ],
+    "for_you": [
+        {
+            "id": "1",
+            "ask": "🗣️ Say at 13:00: the watcher's scope (WS-134)",
+            "detail": "Your item, for you and Dinis. Details: board/WS-134.",
+            "options": [
+                "your agents only",
+                "the whole team, read-only",
+                "the whole team, able to hold"
+            ],
+            "recommend": "The whole team, read-only: it is all public already, and only security holds the team."
+        },
+        {
+            "id": "2",
+            "ask": "✅ Approve: the split with Angelo, one recommendation",
+            "detail": "Your card: 2 or 3 things owned end to end. Details: people/jose/briefs/2026-11-04-morning.md.",
+            "options": [
+                "yes, as recommended",
+                "change it (tell me)"
+            ],
+            "recommend": "You own WS-39, WS-74 and WS-108 end to end (plus WS-134, your own agents); WS-41 stays yours and can slip to Thursday (the morning list; your dev agent has a plan, c5376d7). Angelo takes WS-33, WS-35, WS-37, WS-42."
+        },
+        {
+            "id": "3",
+            "ask": "🔧 Do: add your key to the site, phone and laptop (WS-136, by 18:00)",
+            "detail": "The .txt file I sent at 02:08: open it, then 'Paste my key'. Check: your For you panel says 'Unlocked' and shows my message 'Your key works'.",
+            "options": [
+                "done",
+                "it did not work (tell me what you saw)"
+            ],
+            "recommend": "Two minutes, before the stand-up."
+        }
+    ],
+    "you_asked": [],
+    "sections": [
+        {
+            "title": "Blockers",
+            "items": [
+                "WS-108: the QR codes (designer@web-summit.dinis) and the link from your brief (conductor@web-summit.dinis), asked in dd8dbcb; neither done yet. Nobody has checked the two apps answer today.",
+                "No other blocker on your side."
+            ]
+        },
+        {
+            "title": "FYI",
+            "items": [
+                "Your dev agent picked up WS-74 at your word (01:13, 6a5befb) and changed the site's shared feedback pane; dev@web-summit.dinis reviewed and kept it (d5671f5). My 01:15 task to dev about WS-74 (28bda3d) is now overtaken.",
+                "Your watcher last committed at 01:11 (b1e4fe9). Your agents committed after that, so a 07:15 run should have reported them: it did not commit. Its schedule is not confirmed in agents.json; please check the scheduled task exists in its session.",
+                "No new mentor note since 3 Nov, 12:40."
+            ]
+        }
+    ],
+    "next": [
+        "12:20 run: record your 13:00 words."
+    ],
+    "sources": [
+        "git log f64a65e..337d816 (v0.2.220): b1e4fe9, 28bda3d, d8301cd, 6a5befb, c5376d7, dd8dbcb, 9e89afb, d5671f5",
+        "data/meetings/2026-11-04-1300/",
+        "board/WS-108, WS-134, WS-136",
+        "people/jose/briefs/2026-11-04-morning.md (the split)",
+        "assets/me.js ('Unlocked')"
+    ]
+}
