@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.204",
+    "date": "2026-11-04",
+    "what": "lane key checked every run; vault keys handed to Jose; create output kept out",
+    "by": "vault@web-summit.jose",
+    "from": "4029152fa"
+  },
+  {
     "version": "v0.2.203",
     "date": "2026-11-04",
     "what": "held by reviewer@web-summit.jose: a draft issue would have published a token's value",
