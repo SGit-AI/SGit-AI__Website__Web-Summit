@@ -383,7 +383,8 @@ const feedbackMd = topic => {
     const said = fb.filter(x => x.comments).map(x => `- **${x.m.name.split(' ')[0]}** (${x.updated || 'undated'}): ${String(x.comments).replace(/\n/g, ' ')}`).join('\n')
     return `${fb.length} of ${PEOPLE().filter(m => m.core).length} have voted so far.\n\n${table}${said ? '\n\n' + said : ''}`
 }
-// the team's vaults: people/<id>/vaults.json {vaults: [{name, vault_id, read_key, what, agent, app?, updated}]}, written by
+// the team's vaults: people/<id>/vaults.json {vaults: [{name, vault_id, read_key, what, agent, app?, pack?, updated}]}; pack: true
+// (sgit create --packs) shows only the sgit clone line, since a pack vault has no web view (vault@web-summit.vicky), written by
 // each person's vault agent; ```vaults <id | all>``` renders them. Only a published read key (sgit_public_read_ + 64 hex)
 // may appear: anything else (a vault key, a private read key) stops the build, so it can never reach a page.
 const VAULTS = () => PEOPLE().flatMap(m => { const f = path.join(ROOT, 'people', m.id, 'vaults.json'); return fs.existsSync(f) ? (JSON.parse(fs.readFileSync(f, 'utf8')).vaults || []).map(v => ({ ...v, person: m.id, pname: m.name })) : [] })
@@ -392,7 +393,7 @@ const vaultsMd = who => {
     for (const v of vs) if (!/^sgit_public_read_[0-9a-f]{64}$/.test(String(v.read_key || '')) || !/^[a-z0-9]{8,12}$/.test(String(v.vault_id || ''))) throw new Error(`people/${v.person}/vaults.json: "${v.name}" needs vault_id and a read_key of the form sgit_public_read_<64 hex> (never a vault key)`)
     if (!vs.length) return 'No published vaults yet.'
     const cell = s => String(s || '').replace(/\|/g, '/').replace(/\n/g, ' ')
-    return ['| Vault | Whose | What it holds | Open it (read only) |', '|---|---|---|---|', ...vs.map(v => `| **${cell(v.name)}** (\`${v.vault_id}\`) | ${cell(v.pname)}${v.agent ? `, ${cell(v.agent)}` : ''} | ${cell(v.what)} | [in SG/Vault](https://dev.vault.sgraph.ai/#${v.read_key}%3A${v.vault_id}) · \`sgit clone ${v.read_key}:${v.vault_id}\` |`)].join('\n')
+    return ['| Vault | Whose | What it holds | Open it (read only) |', '|---|---|---|---|', ...vs.map(v => `| **${cell(v.name)}** (\`${v.vault_id}\`) | ${cell(v.pname)}${v.agent ? `, ${cell(v.agent)}` : ''} | ${cell(v.what)} | ${v.pack ? 'with sgit only (a pack vault has no web view): ' : `[in SG/Vault](https://dev.vault.sgraph.ai/#${v.read_key}%3A${v.vault_id}) · `}\`sgit clone ${v.read_key}:${v.vault_id}\` |`)].join('\n')
 }
 // a published vault opened live in the page: ```vault-app <person> <vault id>``` (added by conductor@web-summit.vicky,
 // 3 November 2026, at Vicky's word). The official SG/Vault embed, as on https://sgit.ai/demos/vault-app-embed.html:

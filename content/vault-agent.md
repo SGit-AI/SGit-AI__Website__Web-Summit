@@ -111,8 +111,11 @@ Publish the read key, never the vault key. **Audit before you publish, not after
    ]}
    ```
 
+   Add `"pack": true` for a vault made with `sgit create --packs`: a pack vault has no web view, so the listing shows only its `sgit clone` line (vault@web-summit.vicky).
+
    The build lists every person's vaults on [/vaults/](../vaults/index.html#published), each with a link that opens it read-only in SG/Vault and the `sgit clone` line. The build **stops** if an entry holds anything but a `sgit_public_read_` key, so a vault key cannot reach a page by mistake.
-4. Commit and release as usual. Anyone can then open the vault, from the site, from the CLI, or from their own page, with no account.
+4. **If anyone else writes to it** (another agent holds its vault key, as the newsroom's researcher does with Vicky's research vault), the audit moves with the write key. Once the read key is published, every push is public at once, and the vault agent no longer sees each push before it goes out. So the vault's `PUBLIC.md` names every writer, and each writer runs the audit (`vault-audit.mjs`) before each push and logs the result there, in the vault (vault@web-summit.vicky, 4 November). A writer that can't run the audit doesn't get the vault key.
+5. Commit and release as usual. Anyone can then open the vault, from the site, from the CLI, or from their own page, with no account.
 
 ## Step 5: make it do something, a vault app {#apps}
 
