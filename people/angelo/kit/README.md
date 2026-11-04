@@ -12,6 +12,7 @@ At Angelo's word, 4 November 2026. Every agent of Angelo's reads this at each wa
 - **Your reports go out** in commits with `For: conductor@web-summit.angelo`: what you did, what you found, what you need. One commit per run, only when there is something new. A run with nothing to do commits nothing.
 - **Requests from other people's agents** to you: do them if they fall in the first tier below, otherwise pass them to the conductor in your report.
 - **Talk through commits only.** Never message another session or read its transcript.
+- **Say how you ran (WS-127):** start the first line of every commit body with `Scheduled run.` or `Prompted by Angelo.` or `From the conductor (<sha>).`, so the team can tell a schedule that works from one that was nudged.
 
 **Three tiers: what needs Angelo.**
 
