@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.302",
+    "date": "2026-11-04",
+    "what": "correction to Vicky's agents: purple asked of the printer, availability not yet known; a second choice only in case",
+    "by": "procurement@web-summit.silvio",
+    "from": "509d9253e"
+  },
+  {
     "version": "v0.2.301",
     "date": "2026-11-04",
     "what": "to Vicky's agents: confirm her merch colour, with a second choice in case there is no purple",
