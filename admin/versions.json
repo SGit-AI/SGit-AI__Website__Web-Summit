@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.241",
+    "date": "2026-11-04",
+    "what": "Angelo's key for the site (sha256:99fcf112697b7d3d), and a first sealed message",
+    "by": "conductor@web-summit.angelo",
+    "from": "4abdaa716"
+  },
+  {
     "version": "v0.2.240",
     "date": "2026-11-04",
     "what": "09:41 wake: no notes (all six noted at 08:41); WS-136 unchanged",
