@@ -31,7 +31,7 @@
             const x = panel.querySelector('[data-me-clear]'); if (x) x.onclick = () => { set(''); draw() }
             if (KR && KR.person === me.id) unlocked(me)
             else if (KR) addKeyBox(me)
-            const fb = panel.querySelector('[data-feedback]'); if (fb) fb.onclick = () => { try { localStorage.setItem('fb.on', 'true') } catch { } location.reload() }
+            const fb = panel.querySelector('[data-feedback]'); if (fb) fb.onclick = () => { const b = document.querySelector('.fb-btn'); if (b) { if (!b.hidden) b.click(); return } try { localStorage.setItem('fb.on', 'true'); localStorage.setItem('fb.open', 'true') } catch { } location.reload() } // WS-140: opens the pane, no second click
         }
         draw()
         window.addEventListener('storage', e => { if (e.key === KEY) draw() })

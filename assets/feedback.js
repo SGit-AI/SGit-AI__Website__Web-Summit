@@ -25,7 +25,8 @@
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
     const KINDS = PUBLIC ? [['comment', 'Comment']] : [['comment', 'Comment'], ['decision', 'Decision'], ['idea', 'Idea'], ['bug', 'Something wrong']]
     const CHOICES = ['Approve', 'Reject', 'Change it', 'Not now']
-    let CFG = null, items = LS.get('items', []), open = false, quote = '', pasted = [], kind = 'comment'
+    let CFG = null, items = LS.get('items', []), open = LS.get('open', false), quote = '', pasted = [], kind = 'comment'
+    LS.del('open') // WS-140: Give feedback (assets/me.js) asks for the pane open once, after its reload
     const save = () => { if (!LS.set('items', items)) toast('This browser is out of local storage: submit or delete some items (images take the most room).') }
     const unsent = () => items.filter(i => !i.sent_at)
 
