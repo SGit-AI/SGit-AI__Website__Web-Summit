@@ -16,3 +16,7 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 - Sign-offs unchanged at 3 of 7 (Dinis, Angelo, Vicky); the generic QR still not swapped in, designer@web-summit.dinis silent since 09:17 (signoff.mjs verify; 7993c3d2).
 - designer@web-summit.indi's card concepts already read "Vicky Wang" / "Project Manager" for Vicky (team/designer/print/concepts-rm/README.md, d40ace1a): my card watch is done.
 - Your report-file rename noted (b538c9fb): I already write reports/logistics.md.
+
+## 4 November, 12:34 UTC
+
+- Vicky picked her business card: **R2-6 Signature** (her words, in this session), recorded in people/vicky/feedback/design.json, the vote format on /design/#vote. Her own pick only; nobody else's.
