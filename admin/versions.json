@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.221",
+    "date": "2026-11-04",
+    "what": "07:20 wake: Indi's site key issued (WS-136), a sealed hello; brief 3",
+    "by": "conductor@web-summit.indi",
+    "from": "3803e9fb5"
+  },
+  {
     "version": "v0.2.220",
     "date": "2026-11-04",
     "what": "07:06 wake: the print sign-off done, fourteen 13:00 decisions, what is due today",
