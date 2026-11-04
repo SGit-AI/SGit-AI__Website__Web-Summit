@@ -1,0 +1,101 @@
+{
+ "persona": "hannah",
+ "card": "nimay",
+ "synthetic": true,
+ "outcome": "pocketed",
+ "scanned_qr": true,
+ "steps": [
+  {
+   "n": 1,
+   "screen": "card-nimay-front.png",
+   "saw": "A name, \"Nimay Parekh\", a quote, \"My agents have a policy. Do yours?\", and a wordmark \"RISK MANDATE\". Blue stripe on the left. No title, no email, no one-line description of the company.",
+   "thought": "I do not remember this person. The quote suggests something in AI agent governance or policy, which is a category I am actively looking at, but it is a provocation, not a description. I cannot tell if RiskMandate is a company, a product, a consultancy or a slogan. No role either, so I do not know if he is a founder or a salesperson.",
+   "question": "What does RiskMandate actually sell, and who is Nimay in it?",
+   "confusion": "I had to guess the category from a rhetorical question. \"Policy\" could mean insurance, compliance or access control.",
+   "action": "Turned the card over.",
+   "reason": "The front gives me a category hint but no category line. I give each card one turn before deciding."
+  },
+  {
+   "n": 2,
+   "screen": "card-nimay-back.png",
+   "saw": "A QR code, three lines: \"Meet me\", \"Book a meeting\", \"Talk to my agent\", and a URL \"web-summit.sgit.ai /meet/nimay/\".",
+   "thought": "Three calls to action and still no sentence about the company. The domain is sgit.ai, not riskmandate-anything, which makes me wonder whether RiskMandate is a company or a project inside something called SGit. \"Talk to my agent\" is on theme. Scanning costs me five seconds, and AI agent governance is relevant to my thesis, so I will give it one look.",
+   "question": "Why is the URL on a web-summit.sgit.ai domain and not a RiskMandate domain?",
+   "confusion": "Unclear relationship between SGit and RiskMandate. I could not tell which one is the company.",
+   "action": "Scanned the QR with my iPhone camera.",
+   "reason": "Relevant category, and the scan is cheaper than deciding without information. I would not have typed the URL."
+  },
+  {
+   "n": 3,
+   "screen": "meet-nimay-phone-s1.png",
+   "saw": "A site header \"web-summit.sgit.ai\", a version badge \"v0.2.265\", two rows of navigation (Start, Team, Work, Summit, PKI, About, then People, The map, Setup, Everything, The cast, Briefs, Pulse, Agents, At work, ABPs, Meet us), a \"Who are you?\" dropdown, and a large box: \"Add your key. Your conductor agent gives you a key... Paste my key / Choose the file\". At the very bottom, a breadcrumb ending \"Meet Nimay Parekh\".",
+   "thought": "This looks like an internal team tool, not a page for someone who received a card. I do not have a conductor agent and I do not have a key. My first instinct was that the QR was wrong. Only the breadcrumb told me I was on the right page.",
+   "question": "Am I supposed to have a key? Is this page meant for me at all?",
+   "confusion": "The whole first screen is addressed to team members. \"Conductor agent\", \"sealed to you\", \"ABPs\" mean nothing to me. A version number on a sales page is odd.",
+   "action": "Scrolled once, reluctantly.",
+   "reason": "The breadcrumb said \"Meet Nimay Parekh\", so I gave it one swipe. Had the breadcrumb not been there I would have closed the tab."
+  },
+  {
+   "n": 4,
+   "screen": "meet-nimay-phone-s2.png",
+   "saw": "\"Meet Nimay Parekh. Hello, and thanks for scanning. You met Nimay Parekh, from the RiskMandate team at Web Summit Lisbon, 9 to 12 November 2026.\" Then \"RiskMandate, in short. Know their reach. Define their mandate. Control the gap. AI agents now act for companies. RiskMandate gives each one a factual record teams can check: its Reach..., its Mandate..., the Gap between them, and the real Barriers, with a Licence to Operate...\" and three questions about agents.",
+   "thought": "Now I have it. Agent governance: inventory what an AI agent can touch versus what it was authorised to do, and record accountability. That is a real category and a timely one; I can see buyers in security and risk teams. This paragraph should have been the first thing I saw, and a shorter version of it should be on the card. Still missing: is this a company, what stage, who are the founders, is there a product or only a framework, is it raising.",
+   "question": "Is there a product with customers, or is this a framework? Is RiskMandate a company that is raising?",
+   "confusion": "\"Licence to Operate\" and \"Barriers\" read like framework vocabulary. I could not tell if this is software, a standard or a consulting method.",
+   "action": "Scrolled to see how to reach him.",
+   "reason": "The category passed my first filter. Now I need a contact route and some sign of a company behind it."
+  },
+  {
+   "n": 5,
+   "screen": "meet-nimay-phone-s3.png",
+   "saw": "\"Talk to us. Book a meeting with Nimay: the booking link is coming this week. Until then, find us at our stand on Thursday 12 November. Talk to Nimay's agent: coming this week. See how we work: this whole site is run in the open by seven people and their agents.\" Footer: \"Built and run by an AI agent with a named human operator.\", \"v0.2.265\", \"GitHub\", license lines, and a grey block \"For an agent: this page is...\".",
+   "thought": "Two of the three promises on the back of the card are \"coming this week\". There is no email address, no LinkedIn, no company site. The only route is a stand on the last day, and I may not be there. \"Seven people and their agents\" and a GitHub link suggest something closer to an open project than a funded startup. Interesting, honestly, but I cannot see a company I could invest in from this page.",
+   "question": "How do I contact Nimay tonight, by email, without waiting for a booking link?",
+   "confusion": "The card says \"Book a meeting\" and the page says the booking link does not exist yet. The stand location is not given, only the day.",
+   "action": "Glanced at the last screen.",
+   "reason": "Checking whether there is an email or anything else at the bottom."
+  },
+  {
+   "n": 6,
+   "screen": "meet-nimay-phone-s4.png",
+   "saw": "The end of the grey agent block, \"summit.sgit.ai/agent/index.html.\", and blank space.",
+   "thought": "Nothing else. No contact details. The page ends with instructions for a machine, not for me.",
+   "question": null,
+   "confusion": "I do not know why a meet page ends with text addressed to an agent.",
+   "action": "Closed the tab and put the card in my \"maybe, category interesting\" pile rather than \"follow up\".",
+   "reason": "Good category, but no stage, no founder signal and no way to write to him. I will not hunt for the person."
+  },
+  {
+   "n": 7,
+   "screen": "stack-all-fronts.png",
+   "saw": "Seven cards with identical layout: Dinis Cruz \"Ask me what my agents did today.\", Nimay Parekh \"My agents have a policy. Do yours?\", Angelo \"Ask me how I control my agents.\", Jose Bota \"I brought 6 agents. Ask me why.\", Vicky \"Who's on the other side of your agent?\", Silvio Switha \"Agents with a mandate.\", Indi Gupte \"Your agents. Your rules.\" Each in a different colour, all \"RISK MANDATE\".",
+   "thought": "Seven cards, one company. That is actually the strongest signal of the evening: there is a team, at least seven people, working the event in a coordinated way. Read together the quotes add up to the category, which no single card did. But none of them says what RiskMandate is, and none names a founder or a role. I still cannot tell who to email.",
+   "question": "Who is the CEO or founder among these seven?",
+   "confusion": "Two cards have first names only (Angelo, Vicky). I could not tell which person is senior.",
+   "action": "Clipped the seven together and kept them in the maybe pile, with a note: agent governance, Lisbon, check stand Thursday.",
+   "reason": "The team signal moved it up slightly, but without a contact or a stage I will not chase it."
+  }
+ ],
+ "interview": {
+  "q1": "It gives companies a checkable record of what each AI agent can reach versus what it was authorised to do, and who is accountable for the gap, though I only learned that on the second phone screen.",
+  "q2": "Nothing tonight. If I pass the stand on Thursday I will stop; otherwise the cards stay in the maybe pile and I will likely not follow up, because there is no email to write to.",
+  "q3": "A one-line category on the card itself, Nimay's role, a company website or email, and any signal of stage: founded when, customers, raising or not. The booking link and the agent were both missing too.",
+  "q4": "Partly. The category explanation is precise and sober, and seven coordinated cards suggest a real team. But the page opens with an internal key login, shows a version number, says it is run by an AI agent, and two of three promised actions are not live yet. That reads as a project in progress, not a company I can diligence.",
+  "q5": "Jose Bota's, \"I brought 6 agents. Ask me why.\", because it has a number and a reason to talk. Silvio's \"Agents with a mandate.\" is the closest to a category line. Nimay's I remember only because I scanned it.",
+  "q6": "Put one plain sentence on the back, such as \"RiskMandate: governance records for AI agents\", and make the QR page open on that sentence with Nimay's email, not on a key box."
+ },
+ "findings": [
+  {"what": "The front has no category line; the company's purpose must be inferred from a rhetorical question.", "where": "card-front", "cost": "costly"},
+  {"what": "Nimay's role is not stated on the card, so an investor cannot tell founder from staff.", "where": "card-front", "cost": "costly"},
+  {"what": "The back offers three actions but still no sentence saying what RiskMandate does.", "where": "card-back", "cost": "costly"},
+  {"what": "The URL is on web-summit.sgit.ai, which blurs whether RiskMandate or SGit is the company.", "where": "card-back", "cost": "minor"},
+  {"what": "The QR scans cleanly to the right page and the scan is cheap enough to try.", "where": "qr", "cost": "held"},
+  {"what": "The first phone screen is an internal \"Add your key\" box and two rows of team navigation; a card recipient nearly closed the tab. Only the breadcrumb \"Meet Nimay Parekh\" kept her.", "where": "meet-page", "cost": "blocking"},
+  {"what": "The \"RiskMandate, in short\" paragraph is a clear, credible category explanation, but it sits below the fold.", "where": "meet-page", "cost": "held"},
+  {"what": "\"Book a meeting\" and \"Talk to my agent\" are both \"coming this week\"; there is no email or other contact route, and the stand location is not given.", "where": "meet-page", "cost": "blocking"},
+  {"what": "No stage, funding, customer or founder signal anywhere on the page, which is what an investor needs to decide on a follow-up.", "where": "meet-page", "cost": "costly"},
+  {"what": "The footer \"Built and run by an AI agent\", the version number and the agent block read as an open project rather than a company.", "where": "meet-page", "cost": "minor"},
+  {"what": "Seven matching cards signal a real, coordinated team, and together the quotes explain the category better than any one card.", "where": "stack", "cost": "held"},
+  {"what": "In the stack no card names a founder or senior person, and two carry first names only, so she cannot tell whom to contact.", "where": "stack", "cost": "minor"}
+ ]
+}

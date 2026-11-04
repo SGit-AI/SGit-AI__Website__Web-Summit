@@ -307,7 +307,8 @@
       "agents": [
         "messaging@web-summit.indi",
         "factory@web-summit.indi",
-        "builder@web-summit.indi"
+        "builder@web-summit.indi",
+        "synthetic@web-summit.indi"
       ]
     },
     {

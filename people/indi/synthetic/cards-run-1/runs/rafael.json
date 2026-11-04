@@ -1,0 +1,99 @@
+{
+  "persona": "rafael",
+  "card": "silvio",
+  "synthetic": true,
+  "outcome": "will-follow-up",
+  "scanned_qr": true,
+  "steps": [
+    {
+      "n": 1,
+      "screen": "card-silvio-front.png",
+      "saw": "A red bar down the left, the name \"Silvio Switha\", a quote \"Agents with a mandate.\" and the logo \"RISK MANDATE\". Nothing else: no title, no email, no phone.",
+      "thought": "Nice clean card, but who is he? Founder, sales, engineer? I cannot print \"Silvio Switha, of RiskMandate\" and nothing more. \"Agents with a mandate\" sounds like a slogan, not a claim. Mandate from whom, to do what? In my head the headline is already \"La startup que quiere dar permiso a los agentes de IA\", but I am guessing.",
+      "question": "What is Silvio's role, and what exactly does RiskMandate sell?",
+      "confusion": "The quote marks make \"Agents with a mandate.\" look like something he said, but it reads as a tagline. I cannot tell if it is a product, a policy idea or a campaign.",
+      "action": "Turn the card over.",
+      "reason": "He walked off before I could ask anything. The front gives me a name and a slogan, which is not a story. Maybe the back has the rest."
+    },
+    {
+      "n": 2,
+      "screen": "card-silvio-back.png",
+      "saw": "A QR code and three lines: \"Meet me\", \"Book a meeting\", \"Talk to my agent\". Under it the URL \"web-summit.sgit.ai /meet/silvio/\".",
+      "thought": "\"Talk to my agent\" is the only interesting line here. If a person at Web Summit really has an AI agent that answers for him, that is a colour piece. \"Book a meeting\" is for buyers, not for me. No press contact. The domain is sgit.ai, not riskmandate-something, which is odd.",
+      "question": "Is \"my agent\" an AI agent or a human PR agent? And why is the company's link on a domain called sgit.ai?",
+      "confusion": "The URL brand does not match the card brand. I am not sure if RiskMandate is a company or a project of something called SGit.",
+      "action": "Scan the QR with the Galaxy camera.",
+      "reason": "It takes three seconds and \"Talk to my agent\" might be the angle I need for today's piece."
+    },
+    {
+      "n": 3,
+      "screen": "meet-silvio-phone-s1.png",
+      "saw": "A site header \"web-summit.sgit.ai\", a version badge \"v0.2.265\", two rows of menus (Start, Team, Work, Summit, PKI, About, People, The map, Setup, The cast, ABPs...) and then a big green box: \"Add your key\", \"Your conductor agent gives you a key\", buttons \"Paste my key\" and \"Choose the file\". At the very bottom a breadcrumb \"Meet Silvio Switha\".",
+      "thought": "This is not for me. It looks like I landed on an internal tool. Conductor agent? Key? I do not have a key, I have a card. For a second I think the QR is wrong. Then I see the breadcrumb says \"Meet Silvio Switha\", so I am on the right page, just behind a wall of their own plumbing.",
+      "question": "Do I need a key to see anything? What is a \"conductor agent\"?",
+      "confusion": "The first screen asks a stranger to paste a key. I could not tell if the page was locked or if I should scroll. Fifteen menu items and none says \"Press\".",
+      "action": "Scroll down once.",
+      "reason": "The breadcrumb with his name is the only sign of life. I give it one more thumb before I close the tab."
+    },
+    {
+      "n": 4,
+      "screen": "meet-silvio-phone-s2.png",
+      "saw": "\"Meet Silvio Switha\". \"Hello, and thanks for scanning. You met Silvio Switha, from the RiskMandate team at Web Summit Lisbon, 9 to 12 November 2026.\" Then \"RiskMandate, in short\": \"Know their reach. Define their mandate. Control the gap.\" A paragraph about Reach, Mandate, Gap, Barriers and a \"Licence to Operate saying who authorised it and who is accountable\". Three questions: \"Do you know what your agents can reach?\" and two more.",
+      "thought": "Now there is something. \"AI agents now act for companies\" and a \"Licence to Operate\" for each agent, saying who is accountable. That is quotable, and it is a real topic after this year's agent mess. \"Know their reach. Define their mandate. Control the gap.\" is a good pull quote. But still no title for Silvio: \"from the RiskMandate team\" is all I get. Is it a startup, a product of a bigger company, an open project?",
+      "question": "Who is behind RiskMandate, how big is it, does anybody use it yet, and is Silvio the one I should quote?",
+      "confusion": "Three marketing questions with no answer on the page. I still do not know if this is a company with customers or a team with an idea.",
+      "action": "Keep scrolling.",
+      "reason": "I now have a possible angle (a licence for AI agents). I need a person and a contact to make it printable."
+    },
+    {
+      "n": 5,
+      "screen": "meet-silvio-phone-s3.png",
+      "saw": "Links \"Watch it in 53 seconds\" and \"fifty new agents\". \"Talk to us\": \"Book a meeting with Silvio: the booking link is coming this week. Until then, find us at our stand on Thursday 12 November.\" \"Talk to Silvio's agent: coming this week.\" \"See how we work: this whole site is run in the open by seven people and their agents\". Then a footer \"Built and run by an AI agent with a named human operator\" and a grey code box \"For an agent: this page is...\" with URLs and a GitHub link.",
+      "thought": "So \"Talk to my agent\" from the card is not real yet: \"coming this week\". It is day 3 of a four-day event. The week is nearly over. The booking link is also not there. That is the kind of detail I would put in the last paragraph, and not kindly. On the other hand, \"this whole site is run in the open by seven people and their agents\" and \"built and run by an AI agent with a named human operator\" is a better story than the product. A team selling agent accountability that lets its own agents run its website in public. That I can write.",
+      "question": "Who is the \"named human operator\", and can I talk to him or her? Is there a press contact at all?",
+      "confusion": "The card promised three things and two of them say \"coming this week\". I am not sure if the stand on Thursday is the only real way to reach a human. The grey box for agents is noise to me.",
+      "action": "Screenshot the \"in short\" paragraph and the \"run in the open by seven people and their agents\" line, put Thursday 12 at the stand in my calendar as a maybe.",
+      "reason": "There is a possible angle and a pull quote, but no person I can name with a title and no press contact. The stand is the only door that is open."
+    },
+    {
+      "n": 6,
+      "screen": "meet-silvio-phone-s4.png",
+      "saw": "The end of the grey box and empty page. Nothing more.",
+      "thought": "That is it. No email, no phone, no LinkedIn, no press kit, no founder name.",
+      "question": "Where is the contact for a journalist?",
+      "confusion": null,
+      "action": "Close the tab.",
+      "reason": "Nothing more to get here. One minute is gone."
+    },
+    {
+      "n": 7,
+      "screen": "stack-all-fronts.png",
+      "saw": "Seven cards, same layout, different colour bars. \"Ask me what my agents did today.\" (Dinis Cruz), \"My agents have a policy. Do yours?\" (Nimay Parekh), \"Ask me how I control my agents.\" (Angelo), \"I brought 6 agents. Ask me why.\" (Jose Bota), \"Who's on the other side of your agent?\" (Vicky), \"Agents with a mandate.\" (Silvio Switha), \"Your agents. Your rules.\" (Indi Gupte).",
+      "thought": "Together they are better than alone. It looks like a campaign, which is itself a small story: seven people, seven lines, all about agents. The one I remember is Jose Bota, \"I brought 6 agents. Ask me why.\" That is a headline. Silvio's is the flattest of the seven: it is the company slogan, not a hook. Still no titles on any card. I do not know which of these seven is the boss.",
+      "question": "Which of these seven is the founder or the spokesperson?",
+      "confusion": "Two cards have only first names (Angelo, Vicky). I cannot tell roles or who to call for a quote.",
+      "action": "Keep Jose Bota's and Silvio's cards together in my notebook, bin nothing yet.",
+      "reason": "If I write the agents piece, the stand on Thursday is where I go, and Jose's line is the one I would open with."
+    }
+  ],
+  "interview": {
+    "q1": "As far as I understood, RiskMandate gives each AI agent a company uses a kind of licence that says what it can reach, what it is allowed to do and who is accountable for it.",
+    "q2": "Maybe go to their stand on Thursday 12 to find a person with a title, and only if my editor wants an agents story this week; otherwise the card stays in my notebook.",
+    "q3": "A title for Silvio, a press contact, one line saying what kind of company this is, and any proof that someone uses it. Also the agent and the booking link, which the card promised and the page says are \"coming this week\".",
+    "q4": "Half. The idea is serious and the \"in short\" paragraph is clear, but the first screen asked me to paste a key, the domain is not the brand, and two of the three things on the back of the card do not exist yet on day 3.",
+    "q5": "Jose Bota, \"I brought 6 agents. Ask me why.\" It is a question I actually want to ask, so it works like a headline. Silvio's \"Agents with a mandate.\" sounds like the company slogan and I forgot it first.",
+    "q6": "Put the person's role and a press email on the card, and make the QR open straight onto \"Meet Silvio Switha\" with one quotable claim and a real contact, not a key box."
+  },
+  "findings": [
+    {"what": "The front has no job title and no line saying what RiskMandate is, so a journalist cannot print the name or the company.", "where": "card-front", "cost": "costly"},
+    {"what": "\"Agents with a mandate.\" reads as the brand slogan, not a personal hook, and was the least memorable line of the seven.", "where": "card-front", "cost": "minor"},
+    {"what": "\"Talk to my agent\" on the back is the strongest hook for press and it scanned, but the page says it is \"coming this week\".", "where": "card-back", "cost": "costly"},
+    {"what": "The URL domain sgit.ai does not match the RiskMandate brand, which raises the question of who the company is.", "where": "card-back", "cost": "minor"},
+    {"what": "The QR worked and opened the right page for Silvio.", "where": "qr", "cost": "held"},
+    {"what": "The first phone screen is site navigation and an \"Add your key\" box for team members; a stranger nearly closed the page before reaching Silvio.", "where": "meet-page", "cost": "costly"},
+    {"what": "The \"RiskMandate, in short\" paragraph and \"Know their reach. Define their mandate. Control the gap.\" gave a clear, quotable claim.", "where": "meet-page", "cost": "held"},
+    {"what": "\"Run in the open by seven people and their agents\" and \"Built and run by an AI agent with a named human operator\" is the real press angle, but it is buried and there is no human to contact about it.", "where": "meet-page", "cost": "minor"},
+    {"what": "No press contact, no email, no role and no booking link on the page; the stand on Thursday 12 November is the only way to reach a person.", "where": "meet-page", "cost": "blocking"},
+    {"what": "Together the seven cards read as a campaign and Jose Bota's question line stood out; no card says who the spokesperson is.", "where": "stack", "cost": "minor"}
+  ]
+}

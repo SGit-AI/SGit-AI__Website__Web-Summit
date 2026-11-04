@@ -1,0 +1,139 @@
+{
+  "persona": "aiko",
+  "card": "indi",
+  "synthetic": true,
+  "outcome": "will-follow-up",
+  "scanned_qr": true,
+  "steps": [
+    {
+      "n": 1,
+      "screen": "card-indi-front.png",
+      "saw": "A name, \"Indi Gupte\", a line in quotation marks, \"Your agents. Your rules.\", and the wordmark \"RISK MANDATE\" with a yellow bar on the left. No job title, no company address, no email, no telephone.",
+      "thought": "The slogan is short but it is not a definition. \"Rules\" could mean policies, technical permissions or legal rules. \"Mandate\" in governance means a formal authorisation, so the name suggests authorisation of AI agents. That fits my work, but I am guessing. I also do not know what Ms or Mr Gupte's role is, so I do not know whether this person can answer a governance question or only a sales question.",
+      "question": "What does \"mandate\" mean here exactly: a legal mandate, a policy document, or a technical permission set? And what is Indi Gupte's position in the company?",
+      "confusion": "The card has no title or role, so I cannot judge the seniority of the person I spoke to. \"Your rules\" is ambiguous: whose rules, written where?",
+      "action": "Turns the card over.",
+      "reason": "The front does not tell me what the company does. I expect the back to give a definition or a contact."
+    },
+    {
+      "n": 2,
+      "screen": "card-indi-back.png",
+      "saw": "A QR code and three lines: \"Meet me\", \"Book a meeting\", \"Talk to my agent\". Under them, in grey: \"web-summit.sgit.ai /meet/indi/\".",
+      "thought": "Good that the address is printed, so I can check where the QR goes before I scan. But the domain is \"sgit.ai\", not \"riskmandate\" something. Who is sgit.ai? Is it the parent company, a supplier, an event service? \"Meet me\" and \"Book a meeting\" seem to say the same thing twice. \"Talk to my agent\": in English \"my agent\" can mean a sales agent or a talent agent; here I think it means an AI agent, which is an unusual thing to offer on a business card. I would want to know what data I give to it.",
+      "question": "What is the relationship between sgit.ai and RiskMandate? And what is the difference between \"Meet me\" and \"Book a meeting\"?",
+      "confusion": "The printed domain does not match the company name on the front, so I cannot confirm the QR is safe from the card alone. The three actions overlap and I am not sure which one is the formal route.",
+      "action": "Types nothing; scans the QR with the iPhone camera, after checking that the preview URL matches the printed \"web-summit.sgit.ai/meet/indi/\".",
+      "reason": "The printed address and the QR preview match, and the path contains her name, so the risk is acceptable. I want a definition and a formal meeting route before I can mention this to my committee."
+    },
+    {
+      "n": 3,
+      "screen": "meet-indi-phone-s1.png",
+      "saw": "The page opens with a site header \"web-summit.sgit.ai\", a version \"v0.2.265\", many menu items (\"Start\", \"Team\", \"Work\", \"Summit\", \"PKI\", \"About\", \"Who are you?\", \"People\", \"The map\", \"Setup\", \"Everything\", \"The cast\", \"Briefs\", \"Pulse\", \"Agents\", \"At work\", \"ABPs\", \"Meet us\"). Then a large box with a key icon: \"Add your key\". \"Your conductor agent gives you a key (a link, a text file or a QR code)... Paste my key\", \"Choose the file\", \"No key yet? Ask your conductor: \"issue me a key for the site\"\". At the bottom, a breadcrumb \"Home > Team > Indi Gupte > Meet Indi Gupte\".",
+      "thought": "This is alarming. I scanned a business card and the first thing the page asks is for a key, which I do not have. I do not have a \"conductor agent\". The word \"conductor\" means a person who leads an orchestra or a train official; I do not know its meaning here. A page that asks a stranger to paste a key looks like a phishing pattern, even if it is not. I will not press any button. The breadcrumb says \"Meet Indi Gupte\", so perhaps the real content is below.",
+      "question": "Why is a visitor asked for a key? What is a \"conductor agent\", and what does \"sealed to you\" mean? Is this page meant for me or for their internal team?",
+      "confusion": "I could not tell if I had arrived at the right page. The key box is written for team members, not for a visitor, and the menu (\"ABPs\", \"Pulse\", \"The cast\") uses words I cannot map to anything. I am being asked for something I do not have, which is exactly what makes me close a page.",
+      "action": "Does not touch the key box; scrolls down once, carefully.",
+      "reason": "The breadcrumb promised a page about Indi. I have three minutes and I read everything, so I give it one scroll before I close it."
+    },
+    {
+      "n": 4,
+      "screen": "meet-indi-phone-s2.png",
+      "saw": "\"Meet Indi Gupte\". \"Hello, and thanks for scanning. You met Indi Gupte, from the RiskMandate team at Web Summit Lisbon, 9 to 12 November 2026.\" Then \"RiskMandate, in short\": \"Know their reach. Define their mandate. Control the gap.\" and definitions: \"Reach (what it can actually access or affect)\", \"Mandate (what the business authorised it to do)\", \"the Gap between them\", \"Barriers\", \"a Licence to Operate saying who authorised it and who is accountable\". Three questions: \"Do you know what your agents can reach?\", \"If you buy an agent, do you know what's on the other side?\", \"If you sell one, what do you say when your customer asks?\"",
+      "thought": "This is what I needed. These are definitions, in parentheses, and they map well to my framework: Reach is like a system access inventory, Mandate is the authorisation scope, the Gap is the residual risk, and \"who authorised it and who is accountable\" is an accountability matrix. The \"Licence to Operate\" is interesting for our procurement process. This paragraph should be on top of the page, not below a key box. One small point: the slogan \"Control the gap\" is clear, but \"Barriers\" is not defined like the others; I assume it means controls.",
+      "question": "Is \"Barriers\" the same as controls in the ISO 42001 or NIST sense? Is the \"Licence to Operate\" a document format I could share with auditors, and is it aligned with the EU AI Act?",
+      "confusion": "\"Barriers\" and \"Licence to Operate\" are written with capitals as defined terms, but only Reach and Mandate get a definition in brackets. I guess Barriers means controls.",
+      "action": "Scrolls down to find the formal next step.",
+      "reason": "The definition is good enough to mention to my committee. Now I need a meeting route with a date."
+    },
+    {
+      "n": 5,
+      "screen": "meet-indi-phone-s3.png",
+      "saw": "\"Talk to us\": \"Book a meeting with Indi: the booking link is coming this week. Until then, find us at our stand on Thursday 12 November.\" \"Talk to Indi's agent: coming this week.\" \"See how we work: this whole site is run in the open by seven people and their agents\". Then \"Indi's line: Your agents. Your rules.\" A footer: \"Built and run by an AI agent with a named human operator.\" and a grey box beginning \"For an agent: this page is https://web-summit.sgit.ai/meet/indi/index.html ...\" with a GitHub address.",
+      "thought": "Disappointing. The card printed \"Book a meeting\" and \"Talk to my agent\" as if they exist, but both are \"coming this week\". There is no email, no telephone, no company address, no stand number. \"Find us at our stand on Thursday 12 November\" is the last day, and which stand? Also the page says it was built by an AI agent; that is honest, and for a governance product it is consistent, but my committee will ask who the legal entity is. The grey box for an agent is not for me.",
+      "question": "Where is the stand? What is the legal company behind RiskMandate, and is there an email address I can write to now?",
+      "confusion": "The card promised two actions that the page says do not exist yet. I am not sure whether to wait for the link or to go to a stand that is not located. \"Run in the open by seven people and their agents\" is unusual and I do not know if this is a product company or an experiment.",
+      "action": "Takes a screenshot of the \"RiskMandate, in short\" section and notes \"Thursday 12 November, stand?\" in her calendar.",
+      "reason": "The definition is useful and I want to keep it. The meeting route is not formal yet, so I will return when the booking link exists."
+    },
+    {
+      "n": 6,
+      "screen": "meet-indi-phone-s4.png",
+      "saw": "The end of the grey box and an empty page. Nothing else.",
+      "thought": "The page ends. No contact form, no email, no privacy statement. I have what I can get today.",
+      "question": "Is there a privacy notice for the agent I am invited to talk to?",
+      "confusion": null,
+      "action": "Closes the browser tab and puts the card in the business card holder for follow-up.",
+      "reason": "There is nothing more to read and nothing I can book today."
+    },
+    {
+      "n": 7,
+      "screen": "stack-all-fronts.png",
+      "saw": "Seven cards from the same team, each with a colour bar and a quoted line: Dinis Cruz \"Ask me what my agents did today.\", Nimay Parekh \"My agents have a policy. Do yours?\", Angelo \"Ask me how I control my agents.\", Jose Bota \"I brought 6 agents. Ask me why.\", Vicky \"Who's on the other side of your agent?\", Silvio Switha \"Agents with a mandate.\", Indi Gupte \"Your agents. Your rules.\" All say \"RISK MANDATE\".",
+      "thought": "I only met Indi, so I remember Indi's card because I scanned it and read the definition. Of the other lines, \"My agents have a policy. Do yours?\" and \"Agents with a mandate.\" are the most precise for me, because \"policy\" and \"mandate\" are governance words. \"Ask me why\" and \"Ask me what my agents did today\" invite a conversation but say nothing. Two cards have only a first name, \"Angelo\" and \"Vicky\", which looks informal. The colours make it easy to tell them apart, but not one card says what the company does.",
+      "question": "Which of these seven people is responsible for governance or compliance customers?",
+      "confusion": "Indi's yellow card and Dinis's black card both have a black \"RISK MANDATE\", while the others match their colour bar. I wondered if the black ones are a different version or a different rank.",
+      "action": "Keeps Indi's card; files the others behind it.",
+      "reason": "Indi's card led me to the only clear definition I received today."
+    }
+  ],
+  "interview": {
+    "q1": "RiskMandate keeps a factual record for each AI agent of what it can access (its reach), what the business authorised it to do (its mandate), and the gap between the two, with a statement of who authorised it and who is accountable.",
+    "q2": "I will wait for the booking link that is promised \"this week\" and check the page again on Monday; if there is still no link, I will try to find the stand on Thursday 12 November, but I need a stand number first.",
+    "q3": "A role on the card, an email address, the legal company name, a stand number, a working booking link, and a definition of \"Barriers\" and \"Licence to Operate\"; also an explanation of why the domain is sgit.ai and not RiskMandate.",
+    "q4": "Partly: the definitions in brackets are precise and I trust that; but the page first asked me for a key I do not have, the domain did not match the company name, and two of the three actions printed on the card were \"coming this week\", which makes the card feel ahead of the company.",
+    "q5": "Indi Gupte's yellow card, because it is the only one I scanned and it led me to the definition of Reach, Mandate and Gap; of the slogans, \"My agents have a policy. Do yours?\" is the one I would repeat to my committee.",
+    "q6": "Put the one-sentence definition and a working booking link with a date at the top of the page, and do not show the \"Add your key\" box to a visitor who scanned a card."
+  },
+  "findings": [
+    {
+      "what": "The first screen after scanning is an \"Add your key\" box addressed to team members (\"Your conductor agent gives you a key\"). A careful visitor reads it as a request for something she does not have, and as a phishing pattern; the actual content starts only on the second screen.",
+      "where": "meet-page",
+      "cost": "costly"
+    },
+    {
+      "what": "The card back prints \"Book a meeting\" and \"Talk to my agent\", but the page says both are \"coming this week\". The only route is \"our stand on Thursday 12 November\", with no stand number.",
+      "where": "meet-page",
+      "cost": "costly"
+    },
+    {
+      "what": "The printed domain \"web-summit.sgit.ai\" does not match the brand \"RISK MANDATE\" on the front, and nothing explains the relationship, so the QR cannot be confirmed as safe from the card alone.",
+      "where": "card-back",
+      "cost": "minor"
+    },
+    {
+      "what": "The card front has no role, no email and no definition; \"Your agents. Your rules.\" is ambiguous (whose rules, written where?).",
+      "where": "card-front",
+      "cost": "minor"
+    },
+    {
+      "what": "The definitions in \"RiskMandate, in short\" (Reach, Mandate, Gap, \"who authorised it and who is accountable\") map directly onto a governance framework and were the reason she kept the card.",
+      "where": "meet-page",
+      "cost": "held"
+    },
+    {
+      "what": "\"Barriers\" and \"Licence to Operate\" are capitalised as defined terms but not defined, unlike Reach and Mandate.",
+      "where": "meet-page",
+      "cost": "minor"
+    },
+    {
+      "what": "There is no email, legal entity or privacy notice on the page, which a procurement committee will ask for, especially before talking to an AI agent.",
+      "where": "meet-page",
+      "cost": "costly"
+    },
+    {
+      "what": "\"Meet me\" and \"Book a meeting\" read as the same action; the three lines overlap and none reads as the formal route.",
+      "where": "card-back",
+      "cost": "minor"
+    },
+    {
+      "what": "In the stack, no card says what the company does; Indi's and Dinis's cards use a black wordmark while the others match their colour bar, and two cards carry only a first name.",
+      "where": "stack",
+      "cost": "minor"
+    },
+    {
+      "what": "The QR is backed by a printed, readable URL containing the giver's name, which let her check the destination before scanning.",
+      "where": "qr",
+      "cost": "held"
+    }
+  ]
+}

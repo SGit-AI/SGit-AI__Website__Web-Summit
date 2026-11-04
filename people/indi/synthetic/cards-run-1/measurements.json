@@ -1,0 +1,30 @@
+{
+ "run": "1",
+ "date": "2026-11-04",
+ "cards": "C1, the set on /print/ (team/designer/print/files/<id>/), site v0.2.265",
+ "qr_decodes": {
+  "dinis": "https://web-summit.sgit.ai/meet/dinis/",
+  "nimay": "https://web-summit.sgit.ai/meet/nimay/",
+  "angelo": "https://web-summit.sgit.ai/meet/angelo/",
+  "jose": "https://web-summit.sgit.ai/meet/jose/",
+  "vicky": "https://web-summit.sgit.ai/meet/vicky/",
+  "silvio": "https://web-summit.sgit.ai/meet/silvio/",
+  "indi": "https://web-summit.sgit.ai/meet/indi/"
+ },
+ "qr_decoded_with": "OpenCV QRCodeDetector on the card backs rendered at 12 px/mm (tools/qr.py): 7 of 7 decode to the person's own page",
+ "meet_page_phone": "390 x 844, Chromium (Playwright), a fresh browser with no key: the first screen is the 'Add your key' box on all 7 pages",
+ "meet_page_text_checked": "'the booking link is coming this week', 'Talk to <name>'s agent: coming this week', 'find us at our stand on Thursday 12 November' (from /meet/indi/index.md, read 2026-11-04)",
+ "totals": {
+  "personas": 5,
+  "steps": 34,
+  "questions": 32,
+  "confusions": 32,
+  "findings": 51,
+  "by_cost": {
+   "costly": 16,
+   "minor": 19,
+   "held": 10,
+   "blocking": 6
+  }
+ }
+}

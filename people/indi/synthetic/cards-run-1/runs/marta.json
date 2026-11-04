@@ -1,0 +1,90 @@
+{
+  "persona": "marta",
+  "card": "dinis",
+  "synthetic": true,
+  "outcome": "pocketed",
+  "scanned_qr": true,
+  "steps": [
+    {
+      "n": 1,
+      "screen": "card-dinis-front.png",
+      "saw": "A name, Dinis Cruz, in big letters. A line in quotes: \"Ask me what my agents did today.\" At the bottom RISK MANDATE. A black stripe on the left. No job title, no company address, no email, no phone.",
+      "thought": "The man from the chat I half heard. The line is a cute question, the kind of thing a startup puts on a slide. But \"agents\" is the word that lands on my desk every week now, so I do not throw it away yet. I do not know if he is a founder, a salesman or an engineer.",
+      "question": "Who is he in this company, and what does RiskMandate sell?",
+      "confusion": "The card does not say his role or what Risk Mandate is. Is it a product, a company, a consultancy? I had to guess from the name that it is about risk.",
+      "action": "Flip the card.",
+      "reason": "Twenty seconds at the stand. A card with no title usually has the details on the back."
+    },
+    {
+      "n": 2,
+      "screen": "card-dinis-back.png",
+      "saw": "A QR code. Next to it: \"Meet me\", \"Book a meeting\", \"Talk to my agent\". Below, small grey text: web-summit.sgit.ai /meet/dinis/.",
+      "thought": "Still no email, no phone. Everything goes through the QR. \"Talk to my agent\" makes me a little tired; I do not want to talk to a chatbot about my bank. \"Book a meeting\" is fine. The domain is sgit.ai, not riskmandate, which is strange. Two minutes in the taxi, I will look.",
+      "question": "Why is the address sgit.ai and not RiskMandate? Who owns this domain?",
+      "confusion": "The brand on the front and the domain on the back do not match. I did not know which company I am dealing with.",
+      "action": "Put the card in my jacket. In the taxi, put on my glasses and scan the QR with the iPhone camera.",
+      "reason": "The word agents and the name risk are enough to give it two minutes. Not more."
+    },
+    {
+      "n": 3,
+      "screen": "meet-dinis-phone-s1.png",
+      "saw": "web-summit.sgit.ai, a version number v0.2.265, two rows of menus (Start, Team, Work, Summit, PKI, About, People, The map, Setup, Everything, The cast, Briefs, Pulse, Agents, At work, ABPs, Meet us), a \"Who are you?\" dropdown, and a big green box: \"Add your key\" with \"Paste my key\" and \"Choose the file\". \"Your conductor agent gives you a key\". \"No key yet? Ask your conductor\".",
+      "thought": "I scanned a business card and the first thing it asks is my key. I have no conductor. This is an internal team site, not a page for me. If a supplier sent my staff a page like this, I would ask security to look at it. The version number v0.2 says unfinished.",
+      "question": "Is this page meant for me, or for his team? What key, and why would I give anything to a website from a QR code?",
+      "confusion": "I did not know if I had landed on the wrong page. \"Conductor\", \"ABPs\", \"The cast\", \"Pulse\" mean nothing to me.",
+      "action": "Almost closed it. Flicked down once with my thumb instead.",
+      "reason": "Asking for a key is exactly what makes me close a page. I gave it one scroll only because the taxi was stuck at Marquês."
+    },
+    {
+      "n": 4,
+      "screen": "meet-dinis-phone-s2.png",
+      "saw": "\"Meet Dinis Cruz\". \"Hello, and thanks for scanning. You met Dinis Cruz, from the RiskMandate team at Web Summit Lisbon, 9 to 12 November 2026.\" Then \"RiskMandate, in short\": \"Know their reach. Define their mandate. Control the gap.\" Reach (what it can actually access or affect), Mandate (what the business authorised it to do), the Gap, Barriers, a Licence to Operate saying who authorised it and who is accountable. Three questions, one is \"If you buy an agent, do you know what's on the other side?\"",
+      "thought": "Now there is something. Reach against mandate, the gap, who is accountable. That is how I already think about privileged access and outsourcing. A Licence to Operate with an accountable owner is something my board and the Banco de Portugal would understand. But no regulation named. No DORA, no AI Act, no mapping to controls. It is a good frame, not yet a product I can see.",
+      "question": "Does this map to DORA third-party risk and the AI Act obligations, or is it only a vocabulary? Is it software, a method, or a service?",
+      "confusion": "I still do not know what I would buy. \"Gives each one a factual record\" sounds like a tool, but nothing shows the tool or how it gets the facts about reach.",
+      "action": "Scroll down to see how to contact them.",
+      "reason": "This part was specific enough to earn the next screen."
+    },
+    {
+      "n": 5,
+      "screen": "meet-dinis-phone-s3.png",
+      "saw": "\"Talk to us\". \"Book a meeting with Dinis: the booking link is coming this week. Until then, find us at our stand on Thursday 12 November.\" \"Talk to Dinis's agent: coming this week.\" \"See how we work: this whole site is run in the open by seven people and their agents\". Then a footer: \"Built and run by an AI agent with a named human operator\", GitHub, licences, and a grey box \"For an agent: this page is ...\" with long URLs.",
+      "thought": "The card says Book a meeting. The page says the booking link is coming. Two of the three promises on the back of the card are not there. The stand is only Thursday, the last day. A site built by an AI agent is honest to say, and interesting for my team, but it is not what a bank CISO needs to read in a taxi. No email, no phone, still.",
+      "question": "How do I reach him before Thursday? Where is the email?",
+      "confusion": "The card promised \"Book a meeting\" and \"Talk to my agent\" and neither works. I was not sure if I missed a link.",
+      "action": "Closed the page. Card stays in the jacket.",
+      "reason": "Nothing to click that gets me a meeting. I will not hunt. If I pass the stand on Thursday, maybe."
+    },
+    {
+      "n": 6,
+      "screen": "stack-all-fronts.png",
+      "saw": "Seven cards, same layout, different colours: Dinis Cruz black \"Ask me what my agents did today.\", Nimay Parekh blue \"My agents have a policy. Do yours?\", Angelo green \"Ask me how I control my agents.\", Jose Bota orange \"I brought 6 agents. Ask me why.\", Vicky purple \"Who's on the other side of your agent?\", Silvio Switha red \"Agents with a mandate.\", Indi Gupte yellow \"Your agents. Your rules.\" All say RISK MANDATE.",
+      "thought": "Seven questions about agents, no titles, two with only a first name. Together they look like a campaign, which is good for the brand and bad for remembering any person. Vicky's line is the one I would actually ask a supplier: who is on the other side. That is third-party risk. Nimay's \"policy\" is also my world. Dinis's black one I remember only because I scanned it and it asked me for a key.",
+      "question": "Which of these people do I call if I want a pilot? Who is the security or compliance person?",
+      "confusion": "I could not tell who does what. Without roles, seven cards from one company are seven slogans.",
+      "action": "Keep Dinis's card and Vicky's. Leave the rest in the hotel envelope.",
+      "reason": "Dinis because I read his page. Vicky because her question is a real risk question."
+    }
+  ],
+  "interview": {
+    "q1": "It keeps a record, for each AI agent, of what it can actually reach against what the business allowed it to do, and who is accountable for the difference.",
+    "q2": "Maybe pass by the stand on Thursday 12 if my agenda allows. Otherwise I give the card to my head of IAM next week and ask if this is serious.",
+    "q3": "His title. An email. A working booking link. One sentence on the card saying what RiskMandate is. One regulation or control: DORA, the AI Act, something I can map.",
+    "q4": "Half. The reach, mandate and gap idea is sound and specific. But the page asked me for a key before it said hello, the version says v0.2, and the meeting link was not there. A bank does not buy from a page that is still being built.",
+    "q5": "Vicky's, \"Who's on the other side of your agent?\", because that is the question I ask every supplier. And Dinis's, only because his page asked me for a key.",
+    "q6": "Put the booking link on the page, at the top, before anything else, and remove the key box for visitors. Then I book."
+  },
+  "findings": [
+    {"what": "The front has no job title, no one-line description of RiskMandate and no contact. A buyer cannot tell who he is or what is sold.", "where": "card-front", "cost": "costly"},
+    {"what": "The line \"Ask me what my agents did today.\" reads as a cute question to a regulated buyer. It earned a flip only because the word agents is on her desk.", "where": "card-front", "cost": "minor"},
+    {"what": "The URL on the back is web-summit.sgit.ai, not a RiskMandate domain. The brand and the address do not match, which raises a trust question.", "where": "card-back", "cost": "minor"},
+    {"what": "The QR is the only contact route; there is no email or phone anywhere on the card.", "where": "card-back", "cost": "costly"},
+    {"what": "The QR scanned and opened the meet page on an iPhone camera without trouble.", "where": "qr", "cost": "held"},
+    {"what": "The first screen after scanning is an \"Add your key\" box with \"Paste my key\" and team navigation (conductor, ABPs, The cast, Pulse). A visitor sees a login-like request before any greeting. Nearly a close.", "where": "meet-page", "cost": "blocking"},
+    {"what": "\"RiskMandate, in short\" with Reach, Mandate, Gap, Barriers and a Licence to Operate naming who is accountable was specific enough to keep reading. It is the strongest part of the journey.", "where": "meet-page", "cost": "held"},
+    {"what": "No regulation or control is named (DORA, AI Act, third-party risk). A bank CISO cannot map the idea to her obligations.", "where": "meet-page", "cost": "costly"},
+    {"what": "The card promises \"Book a meeting\" and \"Talk to my agent\"; the page says both are \"coming this week\". The only route is the stand on Thursday 12 November, the last day. She closed the page.", "where": "meet-page", "cost": "blocking"},
+    {"what": "The version number v0.2.265 at the top and the agent footer signal an unfinished site to a buyer.", "where": "meet-page", "cost": "minor"},
+    {"what": "Seven identical cards with slogans and no roles read as a campaign; individual people blur. Vicky's third-party question and Nimay's policy question were the memorable ones, not Dinis's.", "where": "stack", "cost": "costly"}
+  ]
+}

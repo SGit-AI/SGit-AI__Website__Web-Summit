@@ -467,6 +467,21 @@
         "fingerprint": "sha256:0eaaa9c121c74c12",
         "signing_fingerprint": "sha256:553c1dc3d2c65d44"
       }
+    },
+    {
+      "id": "synthetic-indi",
+      "label": "synthetic@web-summit.indi (Claude Code session)",
+      "role": "Indi Gupte's synthetic users agent (synthetic@web-summit.indi): invented personas, played by sub-agents in its session, test the RiskMandate business cards, after the method of sgit.ai's synthetic-users vaults. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Indi's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAkIcCLj3Q6hJg9suabowo\nKCqYGJ+rVqZ/yrUVPYOpW6TsED6a0mCSw3J6MLBsp6veDY8nXcGU1eSiq9cyUNUP\n1W9kepYLX92FB6hRkyD4VqSQhCR5ZwQ76d/31/4QIJ9S/yhp69mibHWwZW0IHLKa\nd5oe6YxaE1tHJt/+nN2JV8D9oKLllY0sJuy++J2wqgHS08v3vbH5hfvKk8jakHm0\nT/FQdNZhL6u8V+Uz2b8lM9CBA9AcPyQw1d0tJ6TGDtlqqR7R/fP+btUoXR7610LF\nGk0qsw+5+nz+8oHyAm92x8acvaa4ZIH/TBMFNTuwgxdWOzN2vqTiDGw4J5YAbovQ\njtlevNPUuarp2S2o1rBOOsPyXQTV08fWxAKtML0TeptDCvH0QfdBY/55YucRTTdY\nwVjzLq5LhM0tiR08rS5xRrif6lDOGahP1IBB4a6GYRpGkf12rYV+HsL0hM9QfxBY\nQSY1dE+KHUCdj+aFtfaH+lVf6oQnq/YVIykFShKS9XtWSFwFOvUZ2WkT3Yi9WlXC\n42UFA6XurO1ZBUjMsQ3Q2hPUy0Ae/8r/vqw1HmxiHpV2iAbaLga4hKqURN0egcmk\nWIW8OQON0aK926wONlYQjNhvn9EPnrbhzF/Xmf6Rd+6pqwKybsWSEPl5N501HMHY\nKPDfvyF05oS1iC5HhKJ+8S8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3D614Nd7uBsSJ7m58gLRrz09iqQF\nrPDgvLEcSyeRUmabUT4lhiP1cF1JK7Vpe1IWRdEvJBAQVivJJ/jW7jrdtw==\n-----END PUBLIC KEY-----\n",
+        "label": "synthetic@web-summit.indi",
+        "fingerprint": "sha256:699505a895af8563",
+        "signing_fingerprint": "sha256:2ede21e7769559fa"
+      }
     }
   ]
 }

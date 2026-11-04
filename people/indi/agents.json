@@ -44,5 +44,12 @@
   "job": "Indi's SGit vaults and their keys (WS-121)",
   "session": "not started",
   "status": "planned"
+ },
+ {
+  "name": "synthetic@web-summit.indi",
+  "job": "synthetic users: invented personas, played by sub-agents in its own session, test what Indi works on (first, the RiskMandate business cards), and the runs go into a public vault published on this site",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "note": "Started 4 November 2026 at Dinis's word to Indi on WhatsApp: focus synthetic users on what you are working on, for example the business cards; personas as sub-agents; put it all in a vault published on our site; method from https://sgit.ai/demos/vaults/index.html (#27, #28, #54)."
  }
 ]

@@ -1,0 +1,129 @@
+{
+  "persona": "kwame",
+  "card": "jose",
+  "synthetic": true,
+  "outcome": "will-follow-up",
+  "scanned_qr": true,
+  "steps": [
+    {
+      "n": 1,
+      "screen": "card-jose-front.png",
+      "saw": "Big name \"Jose Bota\", the line \"I brought 6 agents. Ask me why.\", orange bar on the left, \"RISK MANDATE\" at the bottom. No title, no email, no URL.",
+      "thought": "Ha, decent hook. Six agents, so he is either building agents like us or managing them. Risk plus mandate sounds like compliance-for-agents, which is literally what my enterprise buyers keep asking me about. Could be a competitor, could be a partner. Can't tell in 5 seconds.",
+      "question": "Does RiskMandate build agents, or govern other people's agents?",
+      "confusion": "No job title or one-liner about the company, so I'm guessing the category from the word \"Risk\".",
+      "action": "Flip it over while the coffee queue moves.",
+      "reason": "Front is a teaser. I want to know if there's a link I can hit later."
+    },
+    {
+      "n": 2,
+      "screen": "card-jose-back.png",
+      "saw": "QR code, then \"Meet me\", \"Book a meeting\", \"Talk to my agent\", and the URL \"web-summit.sgit.ai /meet/jose/\".",
+      "thought": "\"Talk to my agent\" is the bit I care about. If I can ping his agent tonight without a calendar dance, that's sick. URL is a sgit.ai subdomain, not riskmandate dot something, which is a bit weird but fine. Pocket it, scan tonight.",
+      "question": "Why is the URL sgit.ai and not a RiskMandate domain? Is RiskMandate a product of sgit or a separate company?",
+      "confusion": "Three lines read like three buttons, but it's one QR. Not sure which of the three I land on.",
+      "action": "Pocket the card, scan the QR at the hotel tonight.",
+      "reason": "5 seconds are up, barista calling my name, and the agent option is worth 30 seconds later."
+    },
+    {
+      "n": 3,
+      "screen": "meet-jose-phone-s1.png",
+      "saw": "Header \"web-summit.sgit.ai\", a version badge \"v0.2.265\", a two-row menu (People, The map, Setup, Everything, The cast, Briefs, Pulse, Agents, At work, ABPs, Meet us) and then a big box \"Add your key\" with \"Paste my key\", \"Choose the file\" and \"No key yet? Ask your conductor\".",
+      "thought": "Wait, what. I scanned a business card and I'm being asked to paste a key from my \"conductor\"? This looks like an internal team portal. I don't have a conductor. Breadcrumb at the bottom says \"Meet Jose Bota\" so maybe the real stuff is below. As a dev I'll give it one scroll; a normal buyer would close this.",
+      "question": "Is this page meant for me or for Jose's team? What is a conductor?",
+      "confusion": "The whole first screen is a login-ish key prompt for insiders. Nothing about Jose or RiskMandate above the fold. I nearly closed it.",
+      "action": "Scroll down once.",
+      "reason": "Battery at 20 percent, but the breadcrumb hints the meet page is underneath."
+    },
+    {
+      "n": 4,
+      "screen": "meet-jose-phone-s2.png",
+      "saw": "\"Meet Jose Bota\", \"Hello, and thanks for scanning\", Web Summit Lisbon 9 to 12 November 2026. \"RiskMandate, in short: Know their reach. Define their mandate. Control the gap.\" Reach, Mandate, Gap, Barriers, a \"Licence to Operate\". Bullets, including \"If you sell one, what do you say when your customer asks?\"",
+      "thought": "OK now we're talking. That last bullet is literally my week. Enterprise procurement asks what our sales agent can touch and who signed off on it, and I answer with a Notion doc. A factual record per agent with a Licence to Operate is something I'd want to plug into, or point buyers at. So: partner, not competitor. Probably.",
+      "question": "Is there an API or a format I can integrate, or is this a consulting service? Who pays?",
+      "confusion": "\"Barriers\" and \"Licence to Operate\" are named but not explained in practice. Is it software, a standard, or a service?",
+      "action": "Keep scrolling for the contact bit.",
+      "reason": "This could actually unblock a deal. I want a way to reach Jose or his agent right now."
+    },
+    {
+      "n": 5,
+      "screen": "meet-jose-phone-s3.png",
+      "saw": "\"Talk to us\": \"Book a meeting with Jose: the booking link is coming this week. Until then, find us at our stand on Thursday 12 November.\" \"Talk to Jose's agent: coming this week.\" \"See how we work\" with links to the team and the plan. Then a footer and a grey box \"For an agent: this page is ...\" with llms.txt, a GitHub repo and an agent identity page.",
+      "thought": "Bruh. The card says \"Book a meeting\" and \"Talk to my agent\" and both are \"coming this week\". No email, no LinkedIn, no phone. The only way to reach him is to physically find a stand on Thursday. Kinda funny that the agent-to-agent block exists for crawlers but there's no way for a human to message him. The GitHub link is a nice trust signal though, it's run in the open.",
+      "question": "Where is the stand? Which hall, what number? How do I reach Jose before Thursday?",
+      "confusion": "The card promised two actions that the page says don't exist yet. Also no stand location given.",
+      "action": "Screenshot the page, set a reminder for Thursday to find the stand.",
+      "reason": "Real enough to chase, but there's literally no other channel. If I can't find the stand, this dies."
+    },
+    {
+      "n": 6,
+      "screen": "meet-jose-phone-s4.png",
+      "saw": "Bottom of the grey box and empty space. Nothing else.",
+      "thought": "That's it. No contact form, no email at the very bottom either.",
+      "question": null,
+      "confusion": "I expected a contact line at the bottom like every site has. Nothing.",
+      "action": "Close the tab.",
+      "reason": "Nothing left to do on the page, phone is dying."
+    },
+    {
+      "n": 7,
+      "screen": "stack-all-fronts.png",
+      "saw": "Seven cards, same layout, different colour bars: Dinis Cruz (black), Nimay Parekh (blue), Angelo (green), Jose Bota (orange), Vicky (purple), Silvio Switha (red), Indi Gupte (yellow). All say RISK MANDATE. Lines like \"My agents have a policy. Do yours?\", \"Who's on the other side of your agent?\", \"Agents with a mandate.\"",
+      "thought": "Oh, they're all the same company, seven of them. Pretty cool as a set, it's a campaign. Jose's still the one I remember because I met him and \"I brought 6 agents\" is the only one with a number, it's concrete. Vicky's line hits my use case too, that's the buyer question. But seven people and none of them has an email on the card.",
+      "question": "Which of these seven is the right person for a partnership or integration chat?",
+      "confusion": "Same design for everyone means I can't tell roles apart. Who is sales, who is tech, who is founder?",
+      "action": "Keep Jose's card, put the rest in the hotel drawer.",
+      "reason": "Jose is my contact; I'll hunt the stand Thursday."
+    }
+  ],
+  "interview": {
+    "q1": "They give each AI agent a record of what it can actually reach versus what the business allowed it to do, plus who signed off, so enterprises can trust agents.",
+    "q2": "Go find their stand on Thursday 12 Nov, if I can figure out where it is, and ask Jose about integrating it with our sales agent so I've got an answer for procurement.",
+    "q3": "Any way to reach Jose today. Booking link and agent are both \"coming this week\", no email, no LinkedIn, no stand number. Also the first screen after scanning is a key prompt for their own team, which nearly made me bounce.",
+    "q4": "Kinda. The pitch is sharp and the GitHub plus open-site thing says they're not hiding stuff. But a card that promises \"Talk to my agent\" and a page that says \"coming this week\" makes it feel a bit early-stage, like us honestly.",
+    "q5": "Jose's. I met him, orange, and \"I brought 6 agents. Ask me why.\" is the only line with a concrete number. Vicky's \"Who's on the other side of your agent?\" is the one that hits my problem though.",
+    "q6": "Put one working contact on the meet page, right at the top: an email or a live chat with his agent. If I could have sent one message that night, I would have."
+  },
+  "findings": [
+    {
+      "what": "The first screen after scanning is an \"Add your key\" box for team members (\"Ask your conductor\"), plus a two-row internal menu. Nothing about Jose or RiskMandate is above the fold; a less patient visitor would close the page.",
+      "where": "meet-page",
+      "cost": "blocking"
+    },
+    {
+      "what": "The card back promises \"Book a meeting\" and \"Talk to my agent\", but the page says both are \"coming this week\". The two actions the card sells do not exist yet.",
+      "where": "meet-page",
+      "cost": "costly"
+    },
+    {
+      "what": "There is no email, phone, LinkedIn or contact form anywhere on the card or the page. The only route is \"find us at our stand on Thursday 12 November\", with no hall or stand number.",
+      "where": "meet-page",
+      "cost": "costly"
+    },
+    {
+      "what": "The \"RiskMandate, in short\" section and the bullet \"If you sell one, what do you say when your customer asks?\" landed exactly on his problem and turned him from noise to likely partner.",
+      "where": "meet-page",
+      "cost": "held"
+    },
+    {
+      "what": "The front line \"I brought 6 agents. Ask me why.\" works as a hook and is the most memorable in the stack, but the front gives no hint of what RiskMandate does, so in 5 seconds he cannot tell customer, partner or competitor.",
+      "where": "card-front",
+      "cost": "minor"
+    },
+    {
+      "what": "The URL is a sgit.ai subdomain, not a RiskMandate domain, which raised a question about who the company actually is.",
+      "where": "card-back",
+      "cost": "minor"
+    },
+    {
+      "what": "Three action lines next to one QR read like three separate buttons; it is unclear which one the QR opens.",
+      "where": "card-back",
+      "cost": "minor"
+    },
+    {
+      "what": "Seven cards share one design and give no role, so he cannot tell who to approach for a partnership or integration.",
+      "where": "stack",
+      "cost": "minor"
+    }
+  ]
+}
