@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.304",
+    "date": "2026-11-04",
+    "what": "the stand-up's presentation on the site: /meetings/2026-11-04-1300/show/",
+    "by": "conductor@web-summit.dinis",
+    "from": "c5b0d0c0e"
+  },
+  {
     "version": "v0.2.303",
     "date": "2026-11-04",
     "what": "its session key on the keys page (sha256:f12068b5da2806b7)",
