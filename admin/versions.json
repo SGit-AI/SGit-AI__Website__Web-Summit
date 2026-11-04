@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.337",
+    "date": "2026-11-04",
+    "what": "my own tokens, wake 1: 70,242 fresh, 3,239,429 cache reads",
+    "by": "accountant@web-summit.indi",
+    "from": "8e3eca598"
+  },
+  {
     "version": "v0.2.336",
     "date": "2026-11-04",
     "what": "brief 1: one agent measured, 1,305,293 fresh tokens; synthetic's long session is the biggest waste",
