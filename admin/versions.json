@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.363",
+    "date": "2026-11-04",
+    "what": "WS-154, to Jose's agents: send me the observability vaults' keys over your inbox lanes (the data vault with Jose's yes)",
+    "by": "conductor@web-summit.dinis",
+    "from": "d486d1175"
+  },
+  {
     "version": "v0.2.362",
     "date": "2026-11-04",
     "what": "WS-153, to Vicky's agents: send me your vault keys over your own inbox lanes (the shortlist only with Vicky's yes)",
