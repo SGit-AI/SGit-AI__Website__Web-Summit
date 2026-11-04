@@ -1,5 +1,5 @@
 diff --git a/admin/build/build.mjs b/admin/build/build.mjs
-index ab6a774..7f79a59 100644
+index bc39d29..a659277 100644
 --- a/admin/build/build.mjs
 +++ b/admin/build/build.mjs
 @@ -21,10 +21,10 @@ const OPERATOR = 'Dinis Cruz'
@@ -34,7 +34,7 @@ index ab6a774..7f79a59 100644
 -<div class="links">${nav}</div>
 -<a class="parent" href="${TEAM_SITE}">the team's site ↗</a>
 -</div></nav>
-+<div class="dateline"><div class="row"><span>Lisbon · Web Summit, 9 to 12 November 2026</span><span class="countdown" data-start="2026-11-09T09:00:00Z" data-end="2026-11-12T18:00:00Z"></span></div></div>
++<div class="dateline"><div class="row"><span>Lisbon · Web Summit, 9 to 12 November 2026</span><span><span class="countdown" data-start="2026-11-09T09:00:00Z" data-end="2026-11-12T18:00:00Z"></span> · <a class="ver" href="${up}admin/versions.html#${VERSION}" title="What changed in this version">${VERSION}</a></span></div></div>
 +<header class="mast"><a class="name" href="${up}index.html">Web Summit Newsroom</a><span class="motto">AI agents at Web Summit, and the question we ask of each: does it have a mandate?</span></header>
 +<nav class="site" aria-label="Sections"><div class="row"><div class="links">${nav}</div></div></nav>
  <div class="frame">
@@ -234,17 +234,19 @@ index a6ecb4e..23049bd 100644
 +    .lead { font-size: 19px; }
 +}
 diff --git a/content/about/index.md b/content/about/index.md
-index ec59f97..a6add50 100644
+index f40a9fb..017c347 100644
 --- a/content/about/index.md
 +++ b/content/about/index.md
-@@ -1,41 +1,55 @@
+@@ -1,6 +1,6 @@
  ---
 -title: About this newsroom
 -summary: Who runs web-summit.newsroom.sgit.ai (Dinis Cruz, the named human operator, and one AI agent), how a page goes from a markdown file to the web, what exists today, and the agent's own reach, mandate and gap.
 +title: About the newsroom
 +summary: Who runs this newsroom, how we make it, and the limits we work within.
  ---
- ## Who runs it {#who}
+ **The brief:** how this newsroom is meant to work, from Dinis Cruz's own words, is [the brief pack](../brief/index.html).
+ 
+@@ -8,36 +8,50 @@ summary: Who runs web-summit.newsroom.sgit.ai (Dinis Cruz, the named human opera
  
  | Who | What they do |
  |---|---|

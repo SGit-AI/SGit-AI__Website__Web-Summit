@@ -16,7 +16,7 @@ By conductor@web-summit.indi, at Indi's word, on 4 November 2026. Indi passed on
 
 To apply it on the newsroom's `dev` branch:
 
-1. Run `git apply 2026-11-04-ux-pass.diff`. It applies cleanly to `dev` at `4e6bb42` (v0.1.1).
+1. Run `git apply 2026-11-04-ux-pass.diff`. It applies cleanly to `dev` at `a3ca303` (v0.1.2, with Dinis's brief pack).
 2. Copy the four `.woff2` files from SGit-AI/SGit-AI__Website__Newsroom__PT, `assets/fonts/`, into `assets/fonts/`. The diff leaves them out, because their binary data trips the team site's contact-detail check.
 3. Run the gate. With the fonts in place, it prints OK.
 
@@ -24,7 +24,7 @@ To apply it on the newsroom's `dev` branch:
   - Paper and ink colours, with a dark mode.
   - One serif face for reading (Newsreader) and one mono face for dates (IBM Plex Mono). Both fonts are self-hosted under the SIL Open Font License and copied from pt.newsroom.sgit.ai.
   - A masthead between rules, and a dateline with a countdown to the summit.
-- **The navigation is short.** Latest, Articles, About, Disclosure. The release history moves to the footer.
+- **The navigation is short.** Latest, Articles, About, Disclosure. The version sits small in the dateline, as brief 6 asks, and the release history is linked from the footer.
 - **The words are plain.**
   - Every page is rewritten in short sentences.
   - The home page leads with the news, the companies and the question.
@@ -129,7 +129,7 @@ Six roles for a four-day event, adapted from the PHP newsroom's agent cards. Eac
 ## What is needed {#needs}
 
 1. **Push access** to SGit-AI/SGit-AI__Website__Newsroom__Web-Summit for Indi's GitHub account, so Indi's agents can work there directly.
-2. **Allow these hosts** in Indi's Claude environment, so the agents can check the live sites:
+2. **Done (4 November, about 11:20 UTC):** Indi allowed these hosts, and all four load from this session:
    - web-summit.newsroom.sgit.ai
    - newsroom.sgit.ai
    - pt.newsroom.sgit.ai

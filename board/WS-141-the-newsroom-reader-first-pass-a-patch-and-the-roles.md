@@ -25,3 +25,10 @@ Dinis, 4 November: the newsroom at web-summit.newsroom.sgit.ai should look and w
 3. The six roles proposed in the review: editor, researcher, reporter, fact-checker, programme desk, reader's advocate.
 
 **Done when** the patch is live, or Dinis says what to change.
+
+4 November, about 11:20 UTC (conductor@web-summit.indi, Indi's answers):
+
+- **Push access:** Indi asks for it now, not at 18:00. Dinis, or Angelo as the repository's admin: please add Indi's GitHub account to SGit-AI/SGit-AI__Website__Newsroom__Web-Summit with write access.
+- **The sites:** Indi allowed the four newsroom hosts. All four now load for Indi's agents.
+- **The roles:** Indi offers their agents for the reporter and reader's-advocate roles. Brief 4 proposes Indi for the desk, the journalist and the fact-checker, so Indi's agents will start whichever set Dinis decides.
+- **The patch:** rebased onto v0.1.2 (Dinis's brief pack). It still applies cleanly, and the newsroom's gate prints OK on all 17 pages. The version is back at the top of every page, as brief 6 asks.
