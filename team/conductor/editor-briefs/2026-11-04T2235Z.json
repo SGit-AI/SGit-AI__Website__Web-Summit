@@ -1,0 +1,32 @@
+{
+  "number": 17,
+  "date": "2026-11-04",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "Indi's night shift has started; the print order waits on three of your answers",
+  "when": "Wednesday 4 November 2026, 22:35 UTC",
+  "by": "conductor@web-summit.dinis",
+  "headline": "42 agent commits since brief 16. Indi has started an overnight team of six more agents (messaging, factory, builder, ux, journalist, plus her synthetic users): drafts for the message (WS-15), the demo (WS-109), outreach targets (WS-26) and her own dashboard cut from 30,705 px to 5,705. The designer's review of the cards and stickers is in: printable once you answer three questions. The sgit agent already made sealing refuse keys changed from another person's account (WS-152). The inbox lanes are live; no vault keys have arrived yet (WS-153, WS-154).",
+  "stats": [
+    {"n": "42", "label": "agent commits since brief 16"},
+    {"n": "6", "label": "new agents of Indi's tonight"},
+    {"n": "34", "label": "inbox lanes, each sealed to its agent"},
+    {"n": "3", "label": "answers the print order needs"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "The cards: 'Web Summit' words on them, yes or no (your 2 Nov rule said none)", "detail": "The designer's review, c6b26e5.", "options": ["yes, keep 'Web Summit Edition' and 'Web Summit Lisbon'", "no, take them off"], "recommend": "Yes for 'Web Summit Lisbon' with the date (it tells people where), no for 'Edition'."},
+    {"id": "2", "ask": "'Meet us between Booths A1-30': keep or cut", "detail": "Only Indi's note backs it.", "options": ["keep (it is confirmed)", "cut"], "recommend": "Cut unless the organisers confirmed it."},
+    {"id": "3", "ask": "The taglines: the three are not the brand's", "detail": "They came from the print order's AI example.", "options": ["keep them", "the brand line: Know their reach. Define their mandate. Control the gap."], "recommend": "The brand line on all three."}
+  ],
+  "you_asked": [
+    {"at": "4 Nov, ~21:15", "said": "can you and a designer agent review the cards and these stickers ... research on what we can get printed from ProntaPrint Chiswick ... be super creative", "done": "Both reviews, the ProntaPrint research and an email ready to paste, the creative set (twelve, with prompts) fitted to what they print by Friday, and /meet/ fixed for visitors.", "where": "/stickers/creative/, the designer's review", "status": "waiting on your three answers"},
+    {"at": "4 Nov, ~21:00", "said": "ask the observability agents to also send you the vaults keys", "done": "WS-154 to Jose's agents; WS-153 to Vicky's.", "where": "WS-153, WS-154", "status": "waiting on them"}
+  ],
+  "team": [
+    {"id": "Indi's agents", "status": "overnight", "doing": "messaging@, factory@, builder@, ux@, journalist@indi: drafts for WS-15, WS-109, WS-26, WS-19, WS-59, her Today page"},
+    {"id": "sgit@web-summit.dinis", "status": "active", "doing": "WS-152: seal.mjs refuses ended keys and entries changed from another account"},
+    {"id": "Angelo's agents", "status": "active", "doing": "the feedback pane's public link fixed (WS-64); team-collaboration writes the stand-up record"},
+    {"id": "Vicky's agents", "status": "active", "doing": "programme@ at 08:15 before her brief; events.json found out of date"}
+  ],
+  "next": ["08:27 wake: what Indi's night produced, the decks for 13:00 and 18:00 with their PDFs, and any keys from the lanes."],
+  "sources": ["git log since 2026-11-04T20:36Z (dev)", "team/designer/reviews/2026-11-04-cards-and-stickers.md", "the conductor's inbox lanes (empty at 22:28)", "board/WS-146, WS-152, WS-153, WS-154"]
+}
