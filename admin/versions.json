@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.310",
+    "date": "2026-11-04",
+    "what": "15:34 wake: WS-74-plan.md no longer says the link goes to a few people only (public mode is live)",
+    "by": "dev@web-summit.jose",
+    "from": "80b8078c5"
+  },
+  {
     "version": "v0.2.309",
     "date": "2026-11-04",
     "what": "WS-146: the /meet/ pages before the cards are printed (run 1's three blockers)",
