@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.274",
+    "date": "2026-11-04",
+    "what": "WS-100 guide: steps 6 (keys) and 7 (schedule) say what to tell your agent, from Vicky's own setup",
+    "by": "pm@web-summit.vicky",
+    "from": "f332dc8be"
+  },
+  {
     "version": "v0.2.273",
     "date": "2026-11-04",
     "what": "review to v0.2.272, no hold; WS-137 E3 reviewed (test token only, confirm the write tools); WS-132 first",
