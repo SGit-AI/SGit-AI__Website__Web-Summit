@@ -21,4 +21,4 @@ Done looks like: each of the three has a vault listed on [/vaults/](../vaults/in
 - `vault@web-summit.jose` started, its session key on [the keys page](../keys/index.html) (1611789, 3 November 17:01).
 - Two vaults listed on [/vaults/](../vaults/index.html#published) from `people/jose/vaults.json` (7c6a083, 3 November 23:41): **Jose on RiskMandate** (`tt7orxlk`, a README) and **Reach, Mandate, Gap** (`3b9y9n9t`, a vault app), both public read keys, audited before publication.
 - The fix to the vault guide from the first run (66b1997, 3 November 13:31): a pre-flight check (token set, dev.send.sgraph.ai reachable), the agent-key steps, `doctor --base-url`, sgit 0.27 and `vault derive-keys`, the `vaults.json` read-key form, and asking the person how to receive the vault key before creating it.
-- Not checked by the conductor: that each vault opens read-only in a browser (dev.send.sgraph.ai is not reachable from its session).
+- Not checked by the conductor: that each vault opens read-only in a browser.
