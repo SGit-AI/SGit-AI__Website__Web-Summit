@@ -412,3 +412,19 @@ svg.ch-map { min-width: 620px; max-width: 900px; }
 .fy-unlocked button { font: inherit; font-size: 0.8rem; border: 1px solid var(--line-2); border-radius: 999px; background: var(--surface-2); padding: 0.1rem 0.6rem; cursor: pointer; }
 .fy-unlocked dl { display: grid; grid-template-columns: auto 1fr; gap: 0.1rem 0.8rem; margin: 0.3rem 0 0; font-size: 0.88rem; }
 .fy-unlocked dt { color: var(--ink-2); }
+/* "Add your key", big, on every page until this browser holds one (assets/addkey.js) */
+.addkey { color: var(--ink); border: 2px solid var(--accent); background: var(--accent-soft); border-radius: 14px; padding: 1rem 1.1rem; margin: 0.8rem 0 1.4rem; }
+.addkey .ak-head { display: flex; gap: 0.8rem; align-items: flex-start; }
+.addkey .ak-icon { font-size: 2rem; line-height: 1; }
+.addkey h2, .addkey summary { color: var(--ink); }
+.addkey h2 { margin: 0 0 0.2rem; font-size: 1.35rem; border: 0; padding: 0; }
+.addkey p { margin: 0.2rem 0; }
+.addkey .ak-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0.8rem 0 0.4rem; }
+.addkey .ak-big, .addkey .ak-file { font: inherit; font-size: 1.15rem; font-weight: 700; padding: 0.85rem 1.4rem; border-radius: 12px; cursor: pointer; text-align: center; flex: 1 1 12rem; }
+.addkey .ak-big { background: var(--accent); color: var(--accent-ink); border: 0; }
+.addkey .ak-file { background: var(--surface); color: var(--accent-dk); border: 2px solid var(--accent); }
+.addkey textarea { width: 100%; box-sizing: border-box; font: inherit; font-size: 0.9rem; margin: 0.4rem 0; }
+.addkey form button { font: inherit; padding: 0.4rem 1rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--surface); cursor: pointer; }
+.addkey .ak-msg { font-weight: 600; }
+.addkey .ak-msg.bad { color: var(--warm); }
+.addkey .ak-help { font-size: 0.85rem; color: var(--ink-2); }

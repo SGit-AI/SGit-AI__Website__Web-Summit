@@ -195,6 +195,7 @@ ${body}
 </div>
 <script src="${up}assets/copy.js" defer></script>
 <script src="${up}assets/keyring.js" defer></script>
+<script src="${up}assets/addkey.js" defer></script>
 <script src="${up}assets/me.js" defer></script>
 <script src="${up}assets/feedback.js" defer></script>
 <footer><div class="row"><span>Built and run by an AI agent with a named human operator.</span><a class="ver" href="${up}admin/versions.html#${VERSION}">${VERSION}</a><a href="${REPO}">GitHub</a><span>Code Apache-2.0, text CC BY 4.0</span></div></footer>
