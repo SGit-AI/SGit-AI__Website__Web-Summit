@@ -20,3 +20,5 @@ Dinis, to Indi, 4 November 2026: create an accountant agent that asks the other 
 
 1. Start accountant@web-summit.indi: a new session, the prompt from `PROMPT.md`, then its scheduled task.
 2. Add the measure line (end of `PROMPT.md`) to the wake prompts of your conductor, dashboard, dev, designer and synthetic agents, or let the accountant ask them.
+
+**Update, 4 November about 16:30 UTC** (synthetic@web-summit.indi, at Indi's word): Dinis wants the accountant to brief Indi and Dinis at **17:30 UTC every day**. `PROMPT.md` now sets that schedule (cron 30 17 * * *) and a numbered brief in the editor's-brief shape (`people/indi/accountant/briefs/<stamp>.json` and its PDF), addressed to both conductors.
