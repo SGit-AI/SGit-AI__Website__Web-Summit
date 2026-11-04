@@ -30,9 +30,9 @@ F = json.load(open(os.path.join(HERE, 'final.json')))
 # its creation time, so it would supersede every sign-off).
 VARIANT = sys.argv[sys.argv.index('--variant') + 1] if '--variant' in sys.argv else None
 PAGE_ONLY = '--page-only' in sys.argv
-assert VARIANT in (None, 'generic'), VARIANT
+assert VARIANT in (None, 'generic', 'next'), VARIANT
 DEST = os.path.join(HERE, 'variants', VARIANT) if VARIANT else HERE
-GENERIC_QR = VARIANT == 'generic'
+GENERIC_QR = VARIANT in ('generic', 'next') or F.get('garment_qr') == 'generic'   # one code on the garments (Dinis, 3 Nov, to confirm in this session)
 PEOPLE = {p['id']: p for p in D['people']}
 TEES = {t['id']: t for t in D['tees']}
 HOODIES = {h['id']: h for h in D['hoodies']}
@@ -104,6 +104,8 @@ def stack(blocks, width):
             g, panel = qr(b[1], (width - b[2] * 37 / 29) / 2, y, b[2]); body += g; y += panel; continue
         if b[0] == 'rule':  # a short divider: ('rule', width, thickness, fill)
             body += f'<rect x="{(width - b[1]) / 2:.2f}" y="{y:.2f}" width="{b[1]:.2f}" height="{b[2]:.2f}" fill="{b[3]}"/>'; y += b[2]; continue
+        if b[0] == 'rm':  # the RiskMandate mark: ('rm', width)
+            body += rm_mark(width / 2, y, b[1]); y += b[1]; continue
         if b[0] == 'mark':  # the wordmark, RISK light and MANDATE bold: ('mark', width, fill)
             g, h = mark(width / 2, y, b[1], b[2]); body += g; y += h; continue
         _, ls, w, size, fill, lead = b
@@ -121,6 +123,39 @@ def mark(cx, top, width, fill):
     total = width1('RISK', lw) + gap + width1('MANDATE', 'Bold'); size = width / total
     ch = cap_height('Bold') * size; x0 = cx - width / 2
     return (text('RISK', lw, size, x0, top + ch, fill, 'start') + text('MANDATE', 'Bold', size, x0 + (width1('RISK', lw) + gap) * size, top + ch, fill, 'start')), ch
+
+# the RiskMandate mark, the supplied file (team/designer/print/concepts-rm/brand/, from riskmandate.ai/brand, by
+# designer@web-summit.indi): copied as it is, with the RM lettering as the brand's EPS outlines it and the faint inner ring in
+# the EPS's flattened colour, so the print file needs no font and has no transparency (as brand/SOURCE.md). The containered
+# mark is the brand's default and holds on every garment colour without recolouring. Its thinnest stroke, the inner ring, is
+# 1/64 of its width: 64 mm or more keeps the 1 mm rule. Clear space: half its width on every side (the brand's rule).
+WITH_MARK = VARIANT == 'next' or bool(F.get('mark_on_garments'))
+BRAND = os.path.join(HERE, 'concepts-rm', 'brand')
+def _eps_rm():
+    e = open(os.path.join(BRAND, 'riskmandate-mark.eps')).read()
+    body = e[e.index('% RM, as outlines'):]; body = body[:body.index('\nfill')]; d = []
+    for ln in body.splitlines():
+        t = ln.split()
+        if not t: continue
+        if t[-1] == 'moveto': d.append('M' + ' '.join(t[:2]))
+        elif t[-1] == 'lineto': d.append('L' + ' '.join(t[:2]))
+        elif t[-1] == 'curveto': d.append('C' + ' '.join(t[:6]))
+        elif t[-1] == 'closepath': d.append('Z')
+    return ''.join(d)
+def _eps_inner_ring():
+    e = open(os.path.join(BRAND, 'riskmandate-mark.eps')).read(); seg = e[e.index('% the faint inner ring'):]
+    rgb = [float(v) for v in re.search(r'\n([\d.]+) ([\d.]+) ([\d.]+) setrgbcolor', seg).groups()]
+    return '#' + ''.join(f'{round(v * 255):02X}' for v in rgb)
+def rm_mark(cx, top, d):
+    """The containered mark, d mm wide (the 64-unit tile), centred on cx, its top at top."""
+    src = open(os.path.join(BRAND, 'riskmandate-mark.svg')).read()
+    body = re.search(r'</title>(.*)</svg>', src, re.S).group(1).replace('stroke="rgba(247,246,242,.22)"', f'stroke="{_eps_inner_ring()}"')
+    fill = re.search(r'<text[^>]*fill="(#[0-9A-Fa-f]{6})"', body).group(1)
+    body = re.sub(r'<text[^>]*>RM</text>', f'<path d="{_eps_rm()}" fill="{fill}"/>', body)
+    assert '<text' not in body and 'rgba' not in body
+    if MIN_STROKE[0]: assert d / 64 >= MIN_STROKE[0] - 1e-9, f'the mark at {d} mm has a {d / 64:.2f} mm ring'
+    k = d / 64
+    return f'<g transform="translate({cx - d / 2:.2f},{top:.2f}) scale({k:.4f})">' + re.sub(r'\s*\n\s*', '', body) + '</g>'
 
 def ink(p): return WHITE if p['ink'].lower() in ('#fff', '#ffffff') else BLACK
 
@@ -150,12 +185,15 @@ def back_blocks(pid, W, lines, code, c, big_cap):
 
 def tee_back(pid):
     p = PEOPLE[pid]; W = F['garments']['tee']['back']['width_mm']
-    body, h = stack(back_blocks(pid, W, None, F['garments']['tee']['qr_code_mm'], ink(p), 40), W)
+    blocks = back_blocks(pid, W, None, F['garments']['tee']['qr_code_mm'], ink(p), 40)
+    if WITH_MARK: blocks = [('rm', 70), ('gap', 35)] + blocks
+    body, h = stack(blocks, W)
     return svg(W, h + 2, body, f"{p['first']}: T-shirt back, print {W} mm wide"), W, h + 2
 
 def hoodie_chest(pid):
-    p = PEOPLE[pid]; W = F['garments']['hoodie']['chest']['width_mm']
-    g, h = mark(W / 2, 0, W, ink(p))
+    p = PEOPLE[pid]; W = 70 if WITH_MARK else F['garments']['hoodie']['chest']['width_mm']
+    if WITH_MARK: g, h = rm_mark(W / 2, 0, W), W
+    else: g, h = mark(W / 2, 0, W, ink(p))
     return svg(W, h + 0.5, g, f"{p['first']}: hoodie chest, print {W} mm wide"), W, h + 0.5
 
 def hoodie_back(pid):
@@ -174,7 +212,8 @@ def card(pid, side):
     if side == 'front':
         body = f'<rect x="0" y="0" width="{b + 9}" height="{H}" fill="{p["colour"]}"/>'
         x = b + 15; room = tw - 18
-        body += text(p['name'], 'Bold', min(7.2, room / width1(p['name'], 'Bold')), x, b + 16, '#111111', 'start')
+        nm = next(x for x in F['people'] if x['id'] == pid).get('card_name', p['name']) if VARIANT == 'next' or F.get('card_names_live') else p['name']
+        body += text(nm, 'Bold', min(7.2, room / width1(nm, 'Bold')), x, b + 16, '#111111', 'start')
         line = f"“{p['line']}”"; ls = [line]
         if width1(line, 'SemiBold') * 4.2 > room:  # two lines, split near the middle at a space
             words = line.split(' '); k = max(range(1, len(words)), key=lambda i: -abs(len(' '.join(words[:i])) - len(line) / 2)); ls = [' '.join(words[:k]), ' '.join(words[k:])]
@@ -271,15 +310,19 @@ if VARIANT: sys.exit(0)   # a variant is shown on the main page (--page-only), n
 # ---- the page: content/print.md ----
 def mmx(s): return f'{s[0]} x {s[1]} mm'
 U = '../team/designer/print'
-GZ = os.path.join(HERE, 'variants', 'generic', 'riskmandate-print-files-generic.zip')
-generic_section = '' if not os.path.exists(GZ) else f"""
-## Proposed: one QR code for everyone (waiting for Dinis to confirm) {{#generic-qr}}
+NZ = os.path.join(HERE, 'variants', 'next', 'riskmandate-print-files-next.zip')
+generic_section = '' if not os.path.exists(NZ) else f"""
+## Proposed: the next update, waiting for Dinis to confirm {{#next}}
 
-Relayed to the designer agent by procurement@web-summit.silvio: Dinis, 14:54 UTC on 3 November, to Silvio, *"can the QR be generic so that we don't tie it to a name"*. Ready as a complete second set: **every T-shirt and hoodie back carries one code, to [{SITE}/meet/](../meet/index.html)** (the team page, listing all seven); the business cards keep each person's own code, since a card carries the person's name. Everything else is unchanged.
+Everything asked for since the sets above were signed, made once, as one complete set, so everyone signs again only once:
 
-**Not yet the files to print.** The sets above are the ones being signed (Vicky's approval stands on them). When Dinis confirms this change, the generic set becomes the main set, and every set is signed again.
+1. **One QR code for everyone on the garments**, to [{SITE}/meet/](../meet/index.html) (the team page): Dinis, as relayed by his conductor and by Silvio's procurement agent (3 November). The cards keep each person's own code.
+2. **The RiskMandate mark** (the supplied containered mark, from riskmandate.ai/brand, never recoloured): 70 mm at the top of every T-shirt back, with the brand's clear space, and as the hoodie's chest logo (relayed from Dinis, 3 November). 70 mm keeps its thinnest ring at 1.1 mm.
+3. **Vicky's card reads "Vicky Wang"** (Vicky's own word through her agent, 4 November).
 
-[Download the generic set (zip, {os.path.getsize(GZ) // 1024} KB)]({U}/variants/generic/riskmandate-print-files-generic.zip) · proofs: {' · '.join(f"[{PEOPLE[x['id']]['first']}]({U}/variants/generic/proofs/{x['id']}.svg)" for x in F['people'])}
+Not in it, waiting for a decision: the **sleeves** (still "nothing on the sleeves" until Dinis says otherwise), the **purple** blank (Silvio's call with the printer), and whether the cards move to Indi's new design (B. Seal, `team/designer/print/concepts-rm/`). **Not yet the files to print:** the sets above stand until Dinis confirms this update in the designer's session; then it becomes the main set and every set is signed again. Checked as printed: 14 garment backs to /meet/, 7 cards to their own pages.
+
+[Download the proposed set (zip, {os.path.getsize(NZ) // 1024} KB)]({U}/variants/next/riskmandate-print-files-next.zip) · proofs: {' · '.join(f"[{PEOPLE[x['id']]['first']}]({U}/variants/next/proofs/{x['id']}.svg)" for x in F['people'])}
 """
 rows = []
 for fp in F['people']:

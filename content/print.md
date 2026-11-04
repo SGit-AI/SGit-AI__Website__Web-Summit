@@ -8,13 +8,17 @@ For the printers, through Silvio Switha ([the print order](../print-order/index.
 
 {{signoff-download:5713}}
 
-## Proposed: one QR code for everyone (waiting for Dinis to confirm) {#generic-qr}
+## Proposed: the next update, waiting for Dinis to confirm {#next}
 
-Relayed to the designer agent by procurement@web-summit.silvio: Dinis, 14:54 UTC on 3 November, to Silvio, *"can the QR be generic so that we don't tie it to a name"*. Ready as a complete second set: **every T-shirt and hoodie back carries one code, to [https://web-summit.sgit.ai/meet/](../meet/index.html)** (the team page, listing all seven); the business cards keep each person's own code, since a card carries the person's name. Everything else is unchanged.
+Everything asked for since the sets above were signed, made once, as one complete set, so everyone signs again only once:
 
-**Not yet the files to print.** The sets above are the ones being signed (Vicky's approval stands on them). When Dinis confirms this change, the generic set becomes the main set, and every set is signed again.
+1. **One QR code for everyone on the garments**, to [https://web-summit.sgit.ai/meet/](../meet/index.html) (the team page): Dinis, as relayed by his conductor and by Silvio's procurement agent (3 November). The cards keep each person's own code.
+2. **The RiskMandate mark** (the supplied containered mark, from riskmandate.ai/brand, never recoloured): 70 mm at the top of every T-shirt back, with the brand's clear space, and as the hoodie's chest logo (relayed from Dinis, 3 November). 70 mm keeps its thinnest ring at 1.1 mm.
+3. **Vicky's card reads "Vicky Wang"** (Vicky's own word through her agent, 4 November).
 
-[Download the generic set (zip, 5715 KB)](../team/designer/print/variants/generic/riskmandate-print-files-generic.zip) · proofs: [Dinis](../team/designer/print/variants/generic/proofs/dinis.svg) · [Nimay](../team/designer/print/variants/generic/proofs/nimay.svg) · [Angelo](../team/designer/print/variants/generic/proofs/angelo.svg) · [Jose](../team/designer/print/variants/generic/proofs/jose.svg) · [Vicky](../team/designer/print/variants/generic/proofs/vicky.svg) · [Silvio](../team/designer/print/variants/generic/proofs/silvio.svg) · [Indi](../team/designer/print/variants/generic/proofs/indi.svg)
+Not in it, waiting for a decision: the **sleeves** (still "nothing on the sleeves" until Dinis says otherwise), the **purple** blank (Silvio's call with the printer), and whether the cards move to Indi's new design (B. Seal, `team/designer/print/concepts-rm/`). **Not yet the files to print:** the sets above stand until Dinis confirms this update in the designer's session; then it becomes the main set and every set is signed again. Checked as printed: 14 garment backs to /meet/, 7 cards to their own pages.
+
+[Download the proposed set (zip, 6338 KB)](../team/designer/print/variants/next/riskmandate-print-files-next.zip) · proofs: [Dinis](../team/designer/print/variants/next/proofs/dinis.svg) · [Nimay](../team/designer/print/variants/next/proofs/nimay.svg) · [Angelo](../team/designer/print/variants/next/proofs/angelo.svg) · [Jose](../team/designer/print/variants/next/proofs/jose.svg) · [Vicky](../team/designer/print/variants/next/proofs/vicky.svg) · [Silvio](../team/designer/print/variants/next/proofs/silvio.svg) · [Indi](../team/designer/print/variants/next/proofs/indi.svg)
 
 
 ## The order {#order}

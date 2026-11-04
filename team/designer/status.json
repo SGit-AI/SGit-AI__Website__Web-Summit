@@ -1,9 +1,10 @@
 {
   "agent": "designer",
   "address": "designer@web-summit.dinis",
-  "state": "waiting for Dinis on four changes to the files (generic QR, logo, sleeves, purple); stock colours mapped to TH Clothes Ankara; 3 of 7 sets approved",
-  "last_wake": "2026-11-04T09:30Z",
+  "state": "the next update (generic QR, the RiskMandate mark, Vicky Wang) ready on /print/#next, waiting for Dinis; 3 of 7 sets approved",
+  "last_wake": "2026-11-04T15:45Z",
   "done": [
+    "The next update as one set in team/designer/print/variants/next/: generic QR, the supplied mark on the T-shirt backs and the hoodie chest, Vicky Wang; read back",
     "Stock colours re-mapped to TH Clothes Ankara on /print/ (page only, no file changed: the sign-offs stand)",
     "The generic-QR variant (garment backs to /meet/, cards personal) in team/designer/print/variants/generic/, read back; make-print.py --variant and --page-only, so the signed files are never re-rendered by accident",
     "WS-113: hoodie back 300 x 380 mm, fronts 250 and 220 mm, every stroke at least 1 mm, B&C #E190 stock colours; the Official Sign-off on /print/ from signoff.mjs",
@@ -23,7 +24,7 @@
     "the vote status on the design page"
   ],
   "next": [
-    "On Dinis's word in this session: the generic QR, the RiskMandate logo (needs the SVG or EPS from the vault), sleeves, purple; then regenerate once and everyone signs again",
+    "On Dinis's yes in this session: promote variants/next/ to the main set (copy the files as previewed, so the signed bytes are the ones shown), then everyone signs again",
     "Record Dinis's sign-off person by person in team/designer/print/final.json and regenerate",
     "Sizes per person: still to collect (WS-48)",
     "09:15: read people/*/feedback/design.json and comments; add the variants asked for",
