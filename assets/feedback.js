@@ -92,7 +92,7 @@ ${i.kind === 'decision' ? `<div class="row">${CHOICES.map(c => `<button type="bu
         if (!open) { if (pane) pane.remove(); return }
         if (!pane) { pane = document.createElement('aside'); pane.className = 'fb-pane'; pane.setAttribute('aria-label', 'Your feedback'); document.body.appendChild(pane) }
         const u = unsent(), s = items.filter(i => i.sent_at).slice(-20).reverse()
-        pane.innerHTML = `<header><b>Feedback${CFG ? ` to ${esc(CFG.agent)}` : ''}</b><button type="button" data-close aria-label="Close">Close</button></header>
+        pane.innerHTML = `<header><b>Feedback${CFG ? ` to ${ALL && ALL.lanes ? `<select data-to aria-label="Send to">${ALL.lanes.map(l => `<option${l.agent === CFG.agent ? ' selected' : ''}>${esc(l.agent)}</option>`).join('')}</select>` : esc(CFG.agent)}` : ''}</b><button type="button" data-close aria-label="Close">Close</button></header>
 <div class="fb-body"><form class="fb-new"><label class="meta" for="fb-kind">On this page: ${esc(document.title)}</label>
 <div class="row"><select id="fb-kind" style="width:auto">${KINDS.map(([v, l]) => `<option value="${v}"${v === kind ? ' selected' : ''}>${l}</option>`).join('')}</select></div>
 ${quote ? `<div class="q">${esc(quote)}</div>` : '<p class="meta">Tip: select text on the page first to quote it.</p>'}
@@ -106,6 +106,7 @@ ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
     }
     function bind(p) {
         p.querySelector('[data-close]').onclick = () => { open = false; render() }
+        { const t = p.querySelector('[data-to]'); if (t) t.onchange = () => { pick(t.value); render() } }
         const f = p.querySelector('.fb-new'), ta = p.querySelector('#fb-text')
         p.querySelector('#fb-kind').onchange = e => { kind = e.target.value }
         ta.addEventListener('paste', async e => { const fs = [...(e.clipboardData || {}).files || []]; if (fs.length) { e.preventDefault(); const keep = ta.value; await takeImages(fs, pasted); render(); document.querySelector('#fb-text').value = keep } })
@@ -132,7 +133,10 @@ ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
         let sent = 0
         try {
             for (const b of batches) {
-                await append(JSON.stringify({ type: 'web-summit.feedback/v1', to: CFG.agent, site: location.origin, sent_at: new Date().toISOString(), from: 'the feedback pane on this device (unauthenticated)', items: b }))
+                // signed when the person's key is in this browser (assets/keyring.js): the signature is over items_json, byte for byte
+                const KR = window.WSKeyring, me = KR && KR.person, items_json = JSON.stringify(b)
+                const signed = me ? { person: me, key: KR.fingerprint, alg: 'ECDSA-P256-SHA256-P1363', sig: await KR.sign(items_json) } : null
+                await append(JSON.stringify({ type: 'web-summit.feedback/v1', to: CFG.agent, site: location.origin, sent_at: new Date().toISOString(), from: me ? `${me} (signed with their key in this browser)` : 'the feedback pane on this device (unauthenticated)', ...(signed ? { signed, items_json } : {}), items: b }))
                 const at = new Date().toISOString(); b.forEach(i => { i.sent_at = at }); sent += b.length; save()
             }
             toast(`Sent ${sent} to ${CFG.agent}'s vault`)
@@ -140,5 +144,8 @@ ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
         render()
     }
     const st = document.createElement('style'); st.textContent = css; document.head.appendChild(st)
-    fetch(base + 'feedback.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(c => { CFG = c; render() }).catch(() => render())
+    // several lanes (feedback.json lanes[], conductor@web-summit.dinis, 4 November): the pane sends to the one chosen
+    let ALL = null
+    const pick = to => { if (!ALL) return; const l = (ALL.lanes || [ALL]); CFG = l.find(x => x.agent === to) || l[0]; LS.set('to', CFG.agent) }
+    fetch(base + 'feedback.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(c => { ALL = c; if (c) pick(LS.get('to', '')); render() }).catch(() => render())
 })()

@@ -1,5 +1,5 @@
 {
-  "about": "Where the feedback pane (assets/feedback.js) sends what you submit: dev@web-summit.dinis's vault, over its append lane. Public on purpose: the append token can write to the lane and nothing else (it cannot list, read or delete; sgit.ai/api/append-lanes), and the key is the agent's PUBLIC encryption key, which the page seals each submission to. The vault key, the write key and the enum key are never here. A session key: when this agent's session ends, a new key and lane replace these (3 November 2026, temporary until the team's vault).",
+  "about": "Where the feedback pane (assets/feedback.js) sends what you submit: dev@web-summit.dinis's vault, over its append lane. Public on purpose: the append token can write to the lane and nothing else (it cannot list, read or delete; sgit.ai/api/append-lanes), and the key is the agent's PUBLIC encryption key, which the page seals each submission to. The vault key, the write key and the enum key are never here. A session key: when this agent's session ends, a new key and lane replace these (3 November 2026, temporary until the team's vault). Several lanes (lanes[]): the pane lets you choose who it goes to. A person whose key is in this browser (assets/keyring.js) signs what they send, so the agent knows it is theirs; without a key, it is material, not instruction.",
   "agent": "dev@web-summit.dinis",
   "host": "https://dev.send.sgraph.ai",
   "vault_id": "rx5uxdyu",
@@ -9,5 +9,31 @@
     "signing_fingerprint": "sha256:923ad1ba99178970",
     "keys_page_id": "dev-dinis",
     "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlJIfczZ/SQbTCT/CAxtC\nL2FhW3b6N9kkuQyXHstxnBwlSpA3hTSVf4FWiHEuZP8JxfhWV2bKAKWxIU+jwyUO\nht3sqriLOHNKWSoKbbvPhCdKi+t9hMD40g4jMl8gtIdVwRwhapKDd+QsagM3JQNo\naI8UOu0onMzAPO0C2F3lT4tMLrs3IkJkyK73w3M/TPP9M3bi1G4KKRDv0n/SkrNu\nbvh+aHh5SK2DdcH2ZHRi9PFNyfAii9hNHZyUF1hzRX0e6j9NAT6v9P+st5aiVZog\nhLTZn+LvWohqOukTvpz1POqQEb1VowG+pzr6nqyxouvF4lAr/wuGRmq7D7BoFHOJ\nYcaIn5Y1jlNeHIKRqI9HehEeAcGs1QKQgWtmCUhgZWDqL4uwUrUBYDbc0M7MzNVZ\nk87ZYopv6cTOJkrSbz+eXdN/BhJdRZrO+ADtqOje2leq8CNluAXEdqS4VNcdpY41\njRDUMmsLjv6woYawtFPaOsJcIWaNk2EvTGCEdybZJClAQZlEu3PXsxzQgfpKQXXF\noZ6U+Z4T2PimjiQhH8ckeMdC0D0R/F70Ru3IM0IS94NRd3BHPz+djD9sZawOznNa\nQkVCMYpkHN0OC6YOIv7rW4otD3viAfxtGIlK3LX0xWYdxGdQ6vhjxWT5qjH1yiPb\n1OJkxgDE+Twx2P5iBC5S3bkCAwEAAQ==\n-----END PUBLIC KEY-----\n"
-  }
+  },
+  "lanes": [
+    {
+      "agent": "conductor@web-summit.dinis",
+      "host": "https://dev.send.sgraph.ai",
+      "vault_id": "ossoywbm",
+      "append_token": "82c4320ce12eae08c13921cc033faf58dc64d528f7997e56227d9f8208581320",
+      "recipient": {
+        "fingerprint": "sha256:ecbb2756634ba022",
+        "signing_fingerprint": "sha256:62eb11234d3237d5",
+        "keys_page_id": "conductor-3",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsVzx75p5YshajeyqnRDc\ndryLD+Gp+TTg/pNXbYGV4fG84P+ltzjst1V4th/UcKgpIIt7qOCEY9VG4JMghp+h\ngoq2a2rIzdX6j1wnrXL/1O5TwsML9FSfTJlY6hJ130feNFrKs+JXXhKygjhkdNun\nj8uX2FDF0qxpyyZcwOi5DH1h+ZLLcHMmTFJVQhUgDw3dS/jzlMvjHd31YOq+L0L6\nNSlC4Hyzo6s39IH6dDgchWc0mBqquXvIML0Vs7Ij6y7yQlI0ftOpTT33zJV9Cznu\nAfq+98dvNTKOgQAnwUESPlgsbuMRZ8l7E6FSAz5JaMqQsHGqoEdg0piz6Z+thhvD\nnpiGABvv06iYz7A4Ok0Gx2v1lIQLwUUyupqj7ErnRywg572tT/3fLc8Bt5Rrqid2\nJcBbT33bnoK8sAegNaES3WxrLh2exKDfOGgnO9Kz2kikXZYuSxAsa54Rwcl10WJP\ndDYy6J52ZoGE5R6GUCR1ZAlVW/P23uGM7kkYvqAZnkursMLu0xvbgS1Br3BIxkAa\nqktTiT5znN/kOvzRMmMhlSGCj8i/U6MljE3PB5bJ0PXN0Xq1dQ/ztDOfRd7exNle\nuvtezsuWbscZhuKTvMWca64iGlUXiGYjQT+cw7ww01P8d8HKfHKyiD8Bl4B820ZO\nUWoztqwCs84lp7O0TpNXRHcCAwEAAQ==\n-----END PUBLIC KEY-----\n"
+      }
+    },
+    {
+      "agent": "dev@web-summit.dinis",
+      "host": "https://dev.send.sgraph.ai",
+      "vault_id": "rx5uxdyu",
+      "append_token": "00caf63537ae17da142ad0b6655a70666747fa10d463a199ffc600fb63e5067a",
+      "recipient": {
+        "fingerprint": "sha256:05637df0b8a91e5b",
+        "signing_fingerprint": "sha256:923ad1ba99178970",
+        "keys_page_id": "dev-dinis",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlJIfczZ/SQbTCT/CAxtC\nL2FhW3b6N9kkuQyXHstxnBwlSpA3hTSVf4FWiHEuZP8JxfhWV2bKAKWxIU+jwyUO\nht3sqriLOHNKWSoKbbvPhCdKi+t9hMD40g4jMl8gtIdVwRwhapKDd+QsagM3JQNo\naI8UOu0onMzAPO0C2F3lT4tMLrs3IkJkyK73w3M/TPP9M3bi1G4KKRDv0n/SkrNu\nbvh+aHh5SK2DdcH2ZHRi9PFNyfAii9hNHZyUF1hzRX0e6j9NAT6v9P+st5aiVZog\nhLTZn+LvWohqOukTvpz1POqQEb1VowG+pzr6nqyxouvF4lAr/wuGRmq7D7BoFHOJ\nYcaIn5Y1jlNeHIKRqI9HehEeAcGs1QKQgWtmCUhgZWDqL4uwUrUBYDbc0M7MzNVZ\nk87ZYopv6cTOJkrSbz+eXdN/BhJdRZrO+ADtqOje2leq8CNluAXEdqS4VNcdpY41\njRDUMmsLjv6woYawtFPaOsJcIWaNk2EvTGCEdybZJClAQZlEu3PXsxzQgfpKQXXF\noZ6U+Z4T2PimjiQhH8ckeMdC0D0R/F70Ru3IM0IS94NRd3BHPz+djD9sZawOznNa\nQkVCMYpkHN0OC6YOIv7rW4otD3viAfxtGIlK3LX0xWYdxGdQ6vhjxWT5qjH1yiPb\n1OJkxgDE+Twx2P5iBC5S3bkCAwEAAQ==\n-----END PUBLIC KEY-----\n"
+      }
+    }
+  ]
 }
