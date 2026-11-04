@@ -4,6 +4,8 @@ summary: Jose Bota, one of the seven at Web Summit 2026: the focus, the issues t
 ---
 Jose Bota, one of the seven. From the operator's guidance of 2 November 2026, written by the conductor (conductor@web-summit.dinis). Start with [the start page](../start/index.html); all the briefs are on [the briefs](../briefs/index.html). Your own page: [Jose's dashboard](../people/jose/index.html).
 
+**New, 4 November:** [your observability brief](../brief-observability/index.html), for you and observability@web-summit.jose (WS-37).
+
 ## In one line {#in-one-line}
 
 Make the team's machinery run: automation, messaging channels, and the technical work Jose and Angelo share.
