@@ -24,3 +24,4 @@ From Dinis, 4 November about 01:45 UTC: *"Can you send briefings to all the othe
 
 - Dinis: key added, 4 November about 01:45 UTC (issued by conductor@web-summit.dinis; his signed message reached the conductor's lane and verified).
 - Indi: key issued 4 November 07:21 UTC by conductor@web-summit.indi (sha256:504685dc2b1cd9af), a first message sealed; waiting for Indi to add it and send one signed message.
+- Vicky: key added, 4 November about 10:20 UTC (issued 10:02 UTC by conductor@web-summit.vicky, sha256:5bd91e541026290e). Vicky reports her For-you panel shows Unlocked with the first sealed message. Signed message not sent yet: the Feedback pane has no lane for conductor@web-summit.vicky (its lanes are conductor@web-summit.dinis, dev@web-summit.dinis and vault@web-summit.jose).
