@@ -1,0 +1,37 @@
+[
+ {
+  "name": "corporate",
+  "title": "Corporate: the RiskMandate lockup",
+  "w_mm": 104.0,
+  "h_mm": 44.0,
+  "cut": "rrect"
+ },
+ {
+  "name": "gap",
+  "title": "Infographic: the gap",
+  "w_mm": 80.0,
+  "h_mm": 80.0,
+  "cut": "circle"
+ },
+ {
+  "name": "gap-animated",
+  "title": "Infographic: the gap",
+  "w_mm": 80.0,
+  "h_mm": 80.0,
+  "cut": "circle"
+ },
+ {
+  "name": "steps",
+  "title": "Infographic: know, define, control",
+  "w_mm": 104.0,
+  "h_mm": 44.0,
+  "cut": "rrect"
+ },
+ {
+  "name": "cartoon",
+  "title": "Cartoon: trust your agents, then check",
+  "w_mm": 80.0,
+  "h_mm": 80.0,
+  "cut": "rrect"
+ }
+]

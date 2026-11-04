@@ -29,6 +29,12 @@ No names: about 200 of each card, one per kind of person we meet at Web Summit. 
 
 ![Security, back](../team/designer/print/concepts-rm/round4/3-security/team-card-back.png)
 
+## Laptop stickers {#stickers}
+
+Four stickers in the brand's colours: corporate, two infographics (the gap; know, define, control) and a cartoon. [All four on a laptop lid, and the print proof (PDF)](../team/designer/print/stickers/stickers-overview.pdf) · [the gap, moving, for screens](../team/designer/print/stickers/gap-animated.svg).
+
+![The four stickers at real size on a laptop lid](../team/designer/print/stickers/stickers-overview-p1.png)
+
 ## Earlier rounds {#earlier}
 
 **All the designs on two landscape pages, in a grid:** [the overview PDF](../team/designer/print/concepts-rm/cards-overview-indi.pdf) (A4, Indi's cards; [page 1](../team/designer/print/concepts-rm/cards-overview-indi-p1.png) · [page 2](../team/designer/print/concepts-rm/cards-overview-indi-p2.png)).
