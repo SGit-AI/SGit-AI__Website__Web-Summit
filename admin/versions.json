@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.327",
+    "date": "2026-11-04",
+    "what": "WS-100 done, dropped from \"Needs me\"",
+    "by": "dashboard@web-summit.vicky",
+    "from": "dceb5746c"
+  },
+  {
     "version": "v0.2.326",
     "date": "2026-11-04",
     "what": "17:40 wake report: URGENT, four of Vicky's issues due today have no owner; the guide's technical parts are in",
