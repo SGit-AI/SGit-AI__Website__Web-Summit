@@ -64,6 +64,19 @@ for concept in ['a-band', 'b-seal', 'c-poster']:
                 bg = re.search(r'<rect x="0" y="0" width="91" height="61" fill="(#[0-9a-fA-F]{6})"', s).group(1)
                 if bg.lower() == DESIGN[pid]['colour'].lower():
                     fail(rel, 'the seal on the person\'s colour')
+            # the seal is the supplied file: its ring and ticks verbatim, its RM the EPS's outline numbers in order
+            for lg in re.findall(r'<g id="rm-logo"[^>]*data-src="([^"]+)"[^>]*>(.*?)</g></g>|<g id="rm-logo"[^>]*data-src="([^"]+)"[^>]*>(.*?)</g>(?=<)', s, re.S):
+                srcf, body = (lg[0], lg[1]) if lg[0] else (lg[2], lg[3])
+                sup = open(os.path.join(HERE, srcf)).read()
+                for el in re.findall(r'<(?:circle|line|rect)[^>]*/>', sup):
+                    el = el.replace('stroke="rgba(247,246,242,.22)"', 'stroke="#484746"')
+                    if el not in s: fail(rel, f'seal element not as supplied: {el[:50]}')
+                eps = open(os.path.join(HERE, 'brand/riskmandate-mark.eps')).read()
+                rm = eps[eps.index('% RM, as outlines'):]; rm = rm[:rm.index('\nfill')]
+                nums = re.findall(r'-?\d+\.\d+', rm.split('newpath', 1)[1])
+                path = re.search(r'<path d="([^"]+)" fill="#F7F6F2"', s)
+                if not path or re.findall(r'-?\d+\.\d+', path.group(1)) != nums: fail(rel, 'the RM lettering is not the EPS outline')
+            if 'RM LOGO' in live or 'data-role="placeholder"' in s: fail(rel, 'a logo placeholder is left')
             # the QR
             if 'id="qr"' in s:
                 src = open(os.path.join(ROOT, f'team/designer/qr/qr-meet-{pid}.svg')).read()

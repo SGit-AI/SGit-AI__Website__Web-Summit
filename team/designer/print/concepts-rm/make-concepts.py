@@ -59,6 +59,7 @@ FONTS = {
     ('Barlow Condensed', 600): f'{FD}/BarlowCondensed-SemiBold.ttf', ('Barlow Condensed', 700): f'{FD}/BarlowCondensed-Bold.ttf',
     ('Barlow Condensed', 800): f'{FD}/BarlowCondensed-ExtraBold.ttf',
     ('Barlow', 500): f'{FD}/Barlow-Medium.ttf', ('Barlow', 600): f'{FD}/Barlow-SemiBold.ttf',
+    ('Geist', 400): f'{FD}/Geist-Regular.ttf', ('Geist', 500): f'{FD}/Geist-Medium.ttf', ('Geist', 600): f'{FD}/Geist-SemiBold.ttf',
     ('Inter', 400): f'{SYS}/opentype/inter/Inter-Regular.otf', ('Inter', 500): f'{SYS}/opentype/inter/Inter-Medium.otf',
     ('Inter', 600): f'{SYS}/opentype/inter/Inter-SemiBold.otf',
     ('JetBrains Mono', 400): f'{SYS}/truetype/jetbrains-mono/JetBrainsMono-Regular.ttf',
@@ -76,6 +77,37 @@ def width(txt, fam, wt, size):
     return sum(hm[cm.get(ord(c), '.notdef')][0] for c in txt) / upm(f) * size
 PT = 25.4 / 72   # mm per point
 def n(v): return f'{v:.2f}'.rstrip('0').rstrip('.')
+
+# ---- the RiskMandate mark, from the brand's own files (brand/SOURCE.md) ----
+BRAND = os.path.join(HERE, 'brand')
+MARK_FILE = {'containered': 'riskmandate-mark.svg', 'knockout': 'riskmandate-mark-knockout.svg'}
+MARK_UNITS = {'containered': 64, 'knockout': 46}   # drawn width in the 64-unit grid: the tile, or the ticks 9 to 55
+def eps_rm():
+    """The RM lettering as the brand's EPS outlines it, as an SVG path (the EPS draws in the SVG's coordinates)."""
+    e = open(os.path.join(BRAND, 'riskmandate-mark.eps')).read()
+    body = e[e.index('% RM, as outlines'):]; body = body[:body.index('\nfill')]
+    d = []
+    for ln in body.splitlines():
+        t = ln.split()
+        if not t: continue
+        if t[-1] == 'moveto': d.append('M' + ' '.join(t[:2]))
+        elif t[-1] == 'lineto': d.append('L' + ' '.join(t[:2]))
+        elif t[-1] == 'curveto': d.append('C' + ' '.join(t[:6]))
+        elif t[-1] == 'closepath': d.append('Z')
+    return ''.join(d)
+def eps_inner_ring():
+    e = open(os.path.join(BRAND, 'riskmandate-mark.eps')).read()
+    seg = e[e.index('% the faint inner ring'):]
+    rgb = [float(v) for v in re.search(r'\n([\d.]+) ([\d.]+) ([\d.]+) setrgbcolor', seg).groups()]
+    return '#' + ''.join(f'{round(v * 255):02X}' for v in rgb)
+def mark_body(cut):
+    src = open(os.path.join(BRAND, MARK_FILE[cut])).read()
+    body = re.search(r'</title>(.*)</svg>', src, re.S).group(1)
+    body = body.replace('stroke="rgba(247,246,242,.22)"', f'stroke="{eps_inner_ring()}"')
+    fill = re.search(r'<text[^>]*fill="(#[0-9A-Fa-f]{6})"', body).group(1)
+    body = re.sub(r'<text[^>]*>RM</text>', f'<path d="{eps_rm()}" fill="{fill}"/>', body)
+    assert '<text' not in body and 'rgba' not in body
+    return re.sub(r'\s*\n\s*', '', body)
 
 class Side:
     """One side of a card, built twice: outlined (for print) and live text (for editing)."""
@@ -104,14 +136,11 @@ class Side:
         self.text('MANDATE', 'Barlow Condensed', 700, size, x0 + w - width('MANDATE', 'Barlow Condensed', 700, size), yb, fill, 'wordmark')
         return x0, w
     def logo(self, cx, cy, d, cut):
-        """The placeholder for the supplied seal: its exact size and position, a thin grey outline, labelled."""
-        f = ('Barlow Condensed', 600); size = min(d * 0.72 / (width('RM LOGO', *f, 1)), d * 0.25)
-        r = d / 2; inner = []
-        lab = Side(self.bg)
-        lab.text('RM LOGO', *f, size, cx, cy + cap(*f) * size / 2, GREY, 'placeholder', 'middle')
-        g = (f'<g id="rm-logo" class="safe" data-role="logo" data-cut="{cut}" data-d="{n(d)}">'
-             f'<circle cx="{n(cx)}" cy="{n(cy)}" r="{n(r - 0.1)}" fill="none" stroke="{GREY}" stroke-width="0.2"/>')
-        self.out.append(g + lab.out[0] + '</g>'); self.live.append(g + lab.live[0] + '</g>')
+        """The supplied RiskMandate mark (brand/), centred on (cx, cy), d mm wide as drawn. See brand/SOURCE.md."""
+        k = d / MARK_UNITS[cut]
+        g = (f'<g id="rm-logo" class="safe" data-role="logo" data-cut="{cut}" data-d="{n(d)}" data-src="brand/{MARK_FILE[cut]}" '
+             f'transform="translate({n(cx - 32 * k)},{n(cy - 32 * k)}) scale({k:.6f})">{mark_body(cut)}</g>')
+        self.raw(g); r = d / 2
         self.items.append({'role': 'logo', 'cut': cut, 'd': d, 'box': [round(cx - r, 2), round(cy - r, 2), round(cx + r, 2), round(cy + r, 2)],
                            'clear': d / 2})
     def qr(self, pid, x, y, mm=24.0):
@@ -162,38 +191,41 @@ def a_back(p, pid):
     return s
 
 # ---------------- Concept B: Seal (leads with the RiskMandate seal) ----------------
-# the spectrum: the team's colours (data/design.json) with RiskMandate green as the green; Dinis's near-black is left out,
-# since it vanishes on the container black. A full-bleed strip, 4 mm on the trimmed card, never near the seal.
-SPECTRUM = [('Nimay blue', '#1f3a93'), ('Vicky purple', '#6b3fa0'), ('Silvio red', '#c62828'), ('Jose orange', '#e86a1c'),
-            ('Indi yellow', '#f2b705'), ('RiskMandate green', GREEN)]
-def spectrum(s, y, h):
-    """Equal segments across the trimmed width (85 mm); the end ones run on into the 3 mm bleed."""
-    w = TRIM_W / len(SPECTRUM); last = len(SPECTRUM) - 1
-    for i, (_, c) in enumerate(SPECTRUM):
-        x0 = 0 if i == 0 else B + i * w; x1 = 91 if i == last else B + (i + 1) * w + 0.05   # 0.05 mm overlap: no hairline gaps
-        s.raw(f'<rect x="{n(x0)}" y="{n(y)}" width="{n(x1 - x0)}" height="{n(h)}" fill="{c}"/>')
+# The brand's accents (riskmandate.ai/brand, read 4 November): green, the lighter green (on dark only), blue, gold
+# ("caution, used sparingly") and red ("risk, used very sparingly"); the shares keep gold and red small.
+ACCENT = {'green': ('RiskMandate green', '#1A7F5A'), 'green-2': ('Lighter green, dark only', '#22C55E'),
+          'blue': ('RiskMandate blue', '#1D4ED8'), 'gold': ('Gold, sparingly', '#B45309'), 'red': ('Red, very sparingly', '#C0392B')}
+STRIP_DARK = [('green', .34), ('green-2', .18), ('blue', .26), ('gold', .14), ('red', .08)]
+STRIP_LIGHT = [('green', .42), ('blue', .32), ('gold', .16), ('red', .10)]
+CONTAINER, FG, INK_LIGHT = '#161615', '#F7F6F2', '#0D0D0C'   # the mark's container; text on dark; ink on light
+def spectrum(s, y, h, strip):
+    """Segments across the trimmed width (85 mm) by share; the end ones run on into the 3 mm bleed."""
+    x = B
+    for i, (key, share) in enumerate(strip):
+        w = TRIM_W * share; x0 = 0 if i == 0 else x; x1 = 91 if i == len(strip) - 1 else x + w + 0.05   # overlap: no hairline gaps
+        s.raw(f'<rect x="{n(x0)}" y="{n(y)}" width="{n(x1 - x0)}" height="{n(h)}" fill="{ACCENT[key][1]}"/>'); x += w
 
 def b_front(p):
-    s = Side(INK)
-    s.logo(45.5, 20, 22, 'knockout')                       # 22 mm: clear space 11 mm, so nothing from y 42 up
-    s.wordmark(45.5, 43.9, 3.4, WHITE, 'middle')
-    s.text(p['line'], 'Inter', 500, 7.5 * PT, 45.5, 50.8, WHITE, 'line', 'middle')
-    spectrum(s, 54, 7)                                      # bottom edge: 4 mm visible after trim, 3 mm bleed
+    s = Side(CONTAINER)                                     # the container colour, so the mark's flattened inner ring is exact
+    s.logo(45.5, 20, 22, 'knockout')                        # 22 mm as drawn: clear space 11 mm, so nothing from y 42 up
+    s.wordmark(45.5, 43.9, 3.4, FG, 'middle')
+    s.text(p['line'], 'Geist', 500, 7.5 * PT, 45.5, 50.8, FG, 'line', 'middle')
+    spectrum(s, 54, 7, STRIP_DARK)                          # bottom edge: 4 mm visible after trim, 3 mm bleed
     return s
 
 def b_back(p, pid):
     s = Side(WHITE)
-    spectrum(s, 0, 7)                                       # top edge: 3 mm bleed, 4 mm visible
+    spectrum(s, 0, 7, STRIP_LIGHT)                          # top edge: 3 mm bleed, 4 mm visible; no light green on white
     x, room = 8, SAFE[2] - 8
-    s.text(p['name'], 'Barlow Condensed', 700, fit(p['name'], 'Barlow Condensed', 700, 17 * PT, room, 10 * PT), x, 16, INK, 'name')
-    s.text(p['role'], 'Inter', 500, fit(p['role'], 'Inter', 500, 7.5 * PT, room, 7 * PT), x, 21.3, GREEN, 'role')
+    s.text(p['name'], 'Barlow Condensed', 700, fit(p['name'], 'Barlow Condensed', 700, 17 * PT, room, 10 * PT), x, 16, INK_LIGHT, 'name')
+    s.text(p['role'], 'Geist', 500, fit(p['role'], 'Geist', 500, 7.5 * PT, room, 7 * PT), x, 21.3, GREEN, 'role')
     s.qr(pid, SAFE[0], SAFE[3] - QR_PANEL)
     tx = SAFE[0] + QR_PANEL + 5
     mtop, mbot = SAFE[3] - QR_PANEL + 4 * 24 / 29, SAFE[3] - 4 * 24 / 29                # the QR's module edges
     s.raw(f'<rect x="{n(tx)}" y="{n(mtop)}" width="16" height="2" fill="{p["colour"]}"/>')   # the person's own colour
-    for i, a in enumerate(ASKS): s.text(a, 'Inter', 600, 7.5 * PT, tx, mtop + 8.6 + i * 4.2, INK, 'asks')
+    for i, a in enumerate(ASKS): s.text(a, 'Geist', 600, 7.5 * PT, tx, mtop + 8.6 + i * 4.2, INK_LIGHT, 'asks')
     url = f'web-summit.sgit.ai/meet/{pid}/'
-    s.text(url, 'Inter', 400, fit(url, 'Inter', 400, 7 * PT, SAFE[2] - tx, 7 * PT), tx, mbot, INK, 'url')
+    s.text(url, 'Geist', 400, fit(url, 'Geist', 400, 7 * PT, SAFE[2] - tx, 7 * PT), tx, mbot, INK_LIGHT, 'url')
     return s
 
 # ---------------- Concept C: Poster (the card as a small version of the shirt) ----------------
@@ -235,13 +267,14 @@ CONCEPTS = {
         ]},
     'b-seal': {
         'name': 'B. Seal', 'build': lambda p, pid: (b_front(p), b_back(p, pid)),
-        'rationale': 'The seal leads, big, on a calm dark face; a strip of the team\'s colours makes it pop; the white side puts the name and the QR together.',
-        'palette': [('Container black', INK), ('White', WHITE), ('RiskMandate green', GREEN)] + SPECTRUM[:-1],
-        'type': 'Barlow Condensed (name, wordmark) + Inter (role, line, asks, URL)',
+        'rationale': 'The seal leads, big, on the container black; a strip of the brand\'s own accents makes it pop; the white side puts the name and the QR together.',
+        'palette': [('Container', CONTAINER), ('Warm white (text on dark)', FG), ('Ink (text on light)', INK_LIGHT), ('White', WHITE)]
+                   + [ACCENT[k] for k in ['green', 'green-2', 'blue', 'gold', 'red']],
+        'type': 'Barlow Condensed (name, wordmark) + Geist (role, line, asks, URL), the face the brand\'s print files are lettered in',
         'notes': [
-            'The seal is 22 mm across (it was 16 mm), the knockout cut on full-bleed container black (#161615), with 11 mm clear on every side. Ask the printer for a rich black so it does not print grey on matt stock.',
-            'The spectrum strip uses the team\'s own colours with RiskMandate green, the same strip on every card, at the bottom of the front and the top of the back. It is 4 mm deep on the trimmed card and bleeds 3 mm, so a 1 mm trim drift cannot leave a sliver. It can swap for the official accent palette once the brand page is read.',
-            'The person\'s own colour is the 16 x 2 mm bar above the asks, so every card is still personal. The line sits under the wordmark on the dark side; it could move under the role if the team wants it beside the name.',
+            'The seal is the supplied knockout mark, 22 mm across as drawn, on the container colour (#161615) with 11 mm clear on every side. Ask the printer for a rich black so the field does not print grey on matt stock.',
+            'The strip is the brand\'s accent set: green, the lighter green (front only, as the brand keeps it for dark surfaces), blue, and small shares of gold and red, which the brand says to use sparingly. 4 mm deep after trim, 3 mm bleed.',
+            'The person\'s own colour is the 16 x 2 mm bar above the asks (Dinis\'s near-black included), so every card stays personal while the strip stays the brand\'s.',
         ]},
     'c-poster': {
         'name': 'C. Poster', 'build': lambda p, pid: (c_front(p, pid), c_back(p)),

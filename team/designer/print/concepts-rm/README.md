@@ -1,14 +1,15 @@
 # RiskMandate business card: three concepts, all seven people
 
-By designer@web-summit.indi, 4 November 2026. **Chosen: B. Seal** (Indi, 4 November), with a bigger seal and the team's colours added. A and C are kept for the record. **Not for print yet**: the seal is a placeholder (see Assumptions), and the chosen concept needs signing off again (WS-113), since it replaces C1.
+By designer@web-summit.indi, 4 November 2026. **Chosen: B. Seal** (Indi, 4 November), with a bigger seal and the brand's accent colours. A and C are kept for the record. Every card now carries the supplied RiskMandate mark (`brand/`, from https://riskmandate.ai/brand). **Not for print yet**: the chosen card needs signing off again (WS-113), since it replaces C1.
 
 - `compare.png`: the three concepts side by side, front and back, for Indi.
 - `<concept>/sheet.png`: one concept, all seven people, both sides.
 - `<concept>/<id>-card-front.svg`, `-back.svg`: print files. 91 x 61 mm (85 x 55 trim, 3 mm bleed), `viewBox="0 0 91 61"`, every letter outlined, QR and seal vector.
 - `<concept>/<id>-card.pdf`: both sides in one PDF, 91 x 61 mm, vector, as most card printers ask for.
 - `<concept>/<id>-card-front.png`, `-back.png`: previews at trim size (85 x 55 mm at 300 dpi), no bleed, no marks.
-- `<concept>/live/`: the same files with live text, for editing (needs Barlow, Barlow Condensed, Inter and JetBrains Mono installed).
+- `<concept>/live/`: the same files with live text, for editing (needs Barlow, Barlow Condensed, Geist, Inter and JetBrains Mono installed).
 - `<concept>/spec.json`: every text item with its font, size in pt, colour and box.
+- `brand/`: the RiskMandate mark files as supplied, and `SOURCE.md` on how the cards use them.
 - Remake: `make-concepts.py`, then `render-concepts.mjs <scratch>`, then `check-concepts.py <scratch>` (the header of each says how).
 
 ## A. Band
@@ -31,32 +32,33 @@ By designer@web-summit.indi, 4 November 2026. **Chosen: B. Seal** (Indi, 4 Novem
 
 ## B. Seal (chosen)
 
-**Rationale:** The seal leads, big, on a calm dark face. A strip of the team's colours makes it pop. The white side puts the name and the QR together.
+**Rationale:** The seal leads, big, on the container black. A strip of the brand's own accents makes it pop. The white side puts the name and the QR together.
 
-**Changed on 4 November, at Indi's word:** the seal from 16 to 22 mm, and the spectrum strip added on both sides.
+**Changed on 4 November, at Indi's word:** the seal is bigger (22 mm, was 16 mm), now the real supplied mark; the strip uses the brand's accent colours from riskmandate.ai/brand; the type is Geist, the face the brand's print files are lettered in.
 
-| Colour | Hex | CMYK (naive, for reference) | Where |
-|---|---|---|---|
-| Container black | #161615 | C0 M0 Y5 K91 | front field (ask for rich black) |
-| White | #FFFFFF | C0 M0 Y0 K0 | back field, front text |
-| RiskMandate green | #1A7F5A | C80 M0 Y29 K50 | role, strip |
-| Nimay blue | #1f3a93 | C79 M61 Y0 K42 | strip |
-| Vicky purple | #6b3fa0 | C33 M61 Y0 K37 | strip |
-| Silvio red | #c62828 | C0 M80 Y80 K22 | strip |
-| Jose orange | #e86a1c | C0 M54 Y88 K9 | strip |
-| Indi yellow | #f2b705 | C0 M24 Y98 K5 | strip |
-| Accent | the person's colour (table below) | | 16 x 2 mm bar above the asks |
+| Colour | Brand token | Hex | CMYK (naive, for reference) | Where |
+|---|---|---|---|---|
+| Container | the mark's container | #161615 | C0 M0 Y5 K91 | front field (ask for rich black) |
+| Warm white | `--fg` | #F7F6F2 | C0 M0 Y2 K3 | text on the front |
+| Ink | `--ink` | #0D0D0C | C0 M0 Y8 K95 | text on the back |
+| White | `--card` | #FFFFFF | C0 M0 Y0 K0 | back field |
+| RiskMandate green | `--green` | #1A7F5A | C80 M0 Y29 K50 | role, both strips (the largest share) |
+| Lighter green | `--green-2`, "accents on dark only" | #22C55E | C83 M0 Y52 K23 | front strip only |
+| Blue | `--blue` | #1D4ED8 | C87 M64 Y0 K15 | both strips |
+| Gold | `--gold`, "used sparingly" | #B45309 | C0 M54 Y95 K29 | both strips, 14 to 16% |
+| Red | `--red`, "used very sparingly" | #C0392B | C0 M70 Y78 K25 | both strips, 8 to 10% |
+| Accent | | the person's colour (table below) | | 16 x 2 mm bar above the asks |
 
-**Type:** Barlow Condensed (name, wordmark) + Inter (role, line, asks, URL).
+**Type:** Barlow Condensed (name, wordmark) + Geist (role, line, asks, URL).
 
 **Layout:**
-- **Front:** the knockout seal, 22 mm, centred, 11 mm clear on every side. RISK MANDATE below it, then the person's line. The strip runs along the bottom edge.
-- **Back:** the strip along the top edge, then the name and role. Below them, the QR (24 mm) on the left, with the person's colour bar, the three asks and the URL beside it.
+- **Front:** the knockout mark, 22 mm across as drawn, centred, 11 mm clear on every side. RISK MANDATE below it, then the person's line. The brand strip runs along the bottom edge: green, lighter green, blue, gold, red.
+- **Back:** the brand strip along the top edge (green, blue, gold, red), then the name and role. Below them, the QR (24 mm) on the left, with the person's colour bar, the three asks and the URL beside it.
 
 **Design notes:**
-- The strip is 4 mm deep on the trimmed card and bleeds 3 mm, so a 1 mm trim drift cannot leave a sliver. The six segments are equal on the trimmed card. It is the same strip on every card, so the seven read as one team.
-- The strip uses the team's own colours with RiskMandate green. Dinis's near-black is left out because it disappears on the dark front. When the brand page can be read, the strip can switch to the official accent palette in one line (`SPECTRUM` in `make-concepts.py`).
-- This goes past the brief's "3 colours plus the accent" on purpose, as asked. No text is set on the strip, and the strip never comes within the seal's clear space.
+- The strip is 4 mm deep on the trimmed card and bleeds 3 mm, so a 1 mm trim drift cannot leave a sliver. Gold and red get the smallest shares, as the brand asks. The lighter green appears on the dark front only, as the brand keeps it for dark surfaces.
+- The person's own colour is the bar above the asks, Dinis's near-black included, so each card stays personal while the strip stays the brand's. The share of each accent can change in one line (`STRIP_DARK`, `STRIP_LIGHT` in `make-concepts.py`).
+- This goes past the brief's "3 colours plus the accent" on purpose, as asked. No text is set on the strip, and the strip never comes within the seal's clear space. Blue is `--blue` in the brand site's own colour tokens, though the page's swatch list does not show it.
 
 ## C. Poster
 
@@ -94,14 +96,14 @@ URLs are `https://web-summit.sgit.ai/meet/<id>/`, from `team/designer/qr/qr-meet
 
 - Every print file is 91 x 61 mm with `viewBox="0 0 91 61"`, has no live text and no raster image.
 - Every text item, the seal and the QR panel with its quiet zone sit at least 4 mm inside the trim, as measured by the browser.
-- One `rm-logo` per file, with half its width clear of every other element and of the person's colour.
+- One `rm-logo` per file, with half its width clear of every other element and of the person's colour. The seal is the supplied file: every ring and tick verbatim, the RM lettering the EPS's own outline, number for number; no placeholder left.
 - Every QR is the person's own file, byte for byte, scaled only (symbol 24.00 mm, panel 30.62 mm). The 600 dpi render of every file decodes to its own URL (zxing-cpp). `verify-qr.py` passes for all seven source codes.
 - Names, roles, lines and URLs match the sources character for character. Text is 7 pt or more, names 14 to 20 pt. Every text pair passes WCAG AA (the lowest is Jose's poster line, 3.2:1, as large text).
 - No email, phone, address, handle, Web Summit name or other brand anywhere.
 
 ## Assumptions
 
-- **Logo:** no seal file is in the repository, and riskmandate.ai is blocked by this session's network policy. Every file has a placeholder group `id="rm-logo"` at the seal's size and position: a thin grey ring, labelled "RM LOGO". `data-cut` says which cut goes there (containered on white, knockout on black). RISK MANDATE is set as the wordmark beside it, in the merch's style (Barlow Condensed, RISK light, MANDATE bold). Seal sizes: A 11 mm, B 22 mm, C 8.5 mm, all above the 24 px small-cut threshold.
+- **Logo:** the supplied mark from https://riskmandate.ai/brand (read 4 November), in `brand/`. Knockout on B's dark front; the containered default on white (A, C). Two substitutions, both from the brand's own EPS: the outlined RM (the SVG names a system font) and the flattened inner-ring colour #484746 (no transparency in print). Drawn widths: A 11 mm, B 22 mm, C 8.5 mm, all far above the 24 px small-cut threshold. The wordmark stays RISK MANDATE in condensed capitals, Dinis's choice for the merch (3 November), not the brand lockup's "RiskMandate".
 - **Vicky's name and role:** "Vicky Wang", "Project Manager", from `people/vicky/business-card.json` (her words, 4 November). `data/team.json`, `data/design.json` and the live site still say "Vicky".
 - **Roles:** from `data/team.json`, kept whole where they fit one line at 7 pt or more. Dinis's drops "RiskMandate, " because the card already carries the name.
 - **Asks:** "Meet me / Book a meeting / Talk to my agent", kept from C1 and the shirt backs.
@@ -110,6 +112,6 @@ URLs are `https://web-summit.sgit.ai/meet/<id>/`, from `team/designer/qr/qr-meet
 - **QR size:** 24 mm is read as the symbol (as on C1), so the white panel with its quiet zone is 30.62 mm.
 - **Colour:** the files are RGB hex, as the existing print files are. The CMYK values are a naive conversion for reference; the printer converts and proofs.
 - **No crop marks** in the print files, as on C1. Most online printers place their own. The PDFs carry the 3 mm bleed.
-- **Brand accents:** riskmandate.ai is blocked by this session's network policy, so the brand's own accent colours (such as its blue) are not known here. B's strip uses the team's colours from `data/design.json` instead.
-- **Fonts:** Barlow, Barlow Condensed, Inter and JetBrains Mono, all SIL OFL 1.1. Outlined in the print files, so the printer needs none.
+- **Fonts:** Barlow, Barlow Condensed, Geist (static instances of the variable font), Inter and JetBrains Mono, all SIL OFL 1.1. Outlined in the print files, so the printer needs none.
+- **Brand surfaces:** the brand page asks for a warm page background (#F7F6F2), but lists #FFFFFF for card surfaces; the back is white, which also keeps the QR panel seamless.
 - **Sign-off:** C1 is signed off by Dinis for everyone. Any concept chosen here supersedes it, and the seven sets are signed again.

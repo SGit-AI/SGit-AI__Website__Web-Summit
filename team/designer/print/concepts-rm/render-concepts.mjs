@@ -62,12 +62,12 @@ for (const c of CONCEPTS) {
     const grid = PEOPLE.map(id => { const a = S.files[`${id}-card-front.svg`].accent; return SIDES.map(side => `<div><div class="card"><img src="${img(path.join(HERE, c, `${id}-card-${side}.png`))}"></div><p class="lab"><i style="display:inline-block;width:12px;height:12px;background:${a.hex};border:1px solid #0003;margin-right:6px"></i>${id}, ${side} &middot; accent ${a.hex} (C${a.cmyk[0]} M${a.cmyk[1]} Y${a.cmyk[2]} K${a.cmyk[3]})</p></div>`).join('') }).join('')
     await shot(`<style>${base}</style><div style="padding:56px 64px;width:2400px">
 <h1>RiskMandate card, concept ${S.name}</h1><p style="font-size:20px;margin:8px 0 22px;max-width:1300px">${S.rationale}</p>
-<div>${sw}</div><p style="font-size:16px;margin:6px 0 30px"><b>Type:</b> ${S.type}. 85 x 55 mm trim, shown at the same scale. Seal: placeholder until the supplied file is dropped in.</p>
+<div>${sw}</div><p style="font-size:16px;margin:6px 0 30px"><b>Type:</b> ${S.type}. 85 x 55 mm trim, shown at the same scale. Seal: the supplied RiskMandate mark (riskmandate.ai/brand).</p>
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:30px 34px">${grid}</div></div>`, 2400, 1200, path.join(HERE, c, 'sheet.png'), { full: true })
 }
 const cols = CONCEPTS.map(c => { const S = spec(c); return `<div><h2>${S.name}</h2>${SIDES.map(side => `<div class="card" style="margin-bottom:8px"><img src="${img(path.join(HERE, c, `indi-card-${side}.png`))}"></div><p class="lab" style="margin:0 0 22px">${side}</p>`).join('')}<p style="font-size:15px;margin:0">${S.rationale}</p></div>` }).join('')
 await shot(`<style>${base}</style><div style="padding:52px 56px;width:1800px"><h1>Three concepts, Indi Gupte, front and back</h1>
-<p style="font-size:18px;margin:8px 0 30px">RiskMandate business card, 85 x 55 mm. Same scale throughout. The seal is a labelled placeholder.</p>
+<p style="font-size:18px;margin:8px 0 30px">RiskMandate business card, 85 x 55 mm. Same scale throughout. The seal is the supplied RiskMandate mark.</p>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:44px">${cols}</div></div>`, 1800, 1000, path.join(HERE, 'compare.png'), { full: true })
 await b.close()
 console.log('rendered')
