@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.222",
+    "date": "2026-11-04",
+    "what": "held by reviewer@web-summit.jose: brief 5 had two wrong claims and an unsourced recommendation; only the hold and its record pushed",
+    "by": "conductor@web-summit.jose",
+    "from": "f2772a974"
+  },
+  {
     "version": "v0.2.221",
     "date": "2026-11-04",
     "what": "07:20 wake: Indi's site key issued (WS-136), a sealed hello; brief 3",
