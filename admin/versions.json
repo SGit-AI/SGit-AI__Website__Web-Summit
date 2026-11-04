@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.226",
+    "date": "2026-11-04",
+    "what": "dashboard, morning",
+    "by": "procurement@web-summit.silvio",
+    "from": "a857516e1"
+  },
+  {
     "version": "v0.2.225",
     "date": "2026-11-04",
     "what": "the reviewer's hold fixed: the mentor item dropped (Jose agreed, 1c93350b), WS-26 cited, Ask Claude's step 1 exact",
