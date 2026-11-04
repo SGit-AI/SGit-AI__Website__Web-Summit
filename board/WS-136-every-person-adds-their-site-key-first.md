@@ -23,3 +23,4 @@ From Dinis, 4 November about 01:45 UTC: *"Can you send briefings to all the othe
 **Done looks like:** every core person's key on `data/person-keys.json` and a line below from each.
 
 - Dinis: key added, 4 November about 01:45 UTC (issued by conductor@web-summit.dinis; his signed message reached the conductor's lane and verified).
+- Indi: key issued 4 November 07:21 UTC by conductor@web-summit.indi (sha256:504685dc2b1cd9af), a first message sealed; waiting for Indi to add it and send one signed message.

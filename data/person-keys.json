@@ -44,6 +44,28 @@
         "x": "Es-3KCppVVY8gqqHRZvncm0Uy62iZuAb-1-BpLFuDrY",
         "y": "Dn82rqgrVG8btFTY0nRgkdGelITI3JZjgfeGWyrbQrg"
       }
+    },
+    {
+      "person": "indi",
+      "fingerprint": "sha256:504685dc2b1cd9af",
+      "signing_fingerprint": "sha256:dbb3daf308d1129a",
+      "status": "active",
+      "issued_by": "conductor@web-summit.indi",
+      "session": "session_01SZXKKDQTJGMSzf6sx7JMJG",
+      "issued_at": "2026-11-04T07:21:29Z",
+      "valid": "while the issuing session lives",
+      "encrypt": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "cLubTDLiFsSbSG6ytH5FMrqT_FyPwhnTE6XAOrdrBxA",
+        "y": "9-jFv5-zmjfNYzMwpLbXkIoAO55RA6XBbfo7CMc1FBY"
+      },
+      "sign": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "nVZXyKgSVsN1h1NccuUIwv3-P7lxNqsvaK0qhfVxhH8",
+        "y": "DKNWI1H39xypiOXBv3xIyGO6--qblEJJhiwCvg8QfSI"
+      }
     }
   ]
 }

@@ -1,0 +1,70 @@
+{
+  "number": 3,
+  "date": "4 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Morning: your site key is ready to add; dev built all 28 factory pages overnight",
+  "when": "4 November 2026, 07:25 UTC (first scheduled wake; since brief 2, 23:05 UTC)",
+  "by": "conductor@web-summit.indi",
+  "headline": "Overnight, Dinis asked every conductor to issue its person a key for the site, today, before the vault lanes (WS-136, due 18:00). Yours is issued: the link is in your chat with me, not in this brief. Separately, dev@web-summit.indi built factory pages for all 28 'meet' companies. Two items for you at 13:00; nothing is decided here.",
+  "stats": [
+    {"n": "L5", "label": "your level, 8 of 9 steps (vaults next)"},
+    {"n": "28", "label": "factory pages built by dev@web-summit.indi (3be96bb)"},
+    {"n": "2", "label": "13:00 items for you (WS-136, the first worked ABP)"},
+    {"n": "18:00", "label": "WS-136 due: your key added and one signed message"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Add your site key (WS-136)",
+      "detail": "Open the link I gave you in our chat (not in this brief: it carries your key). Or copy it and press 'Paste my key' on any page of the site. Your For-you panel should then show 'Unlocked' with a hello from me. Then send me one message from the Feedback pane; it is signed with your key. I hold the private half too, as the tool does for every conductor: it opens only what is sealed to you on this site.",
+      "options": ["now, from the link", "on the phone, with a QR (ask me)", "later today, before 18:00"],
+      "recommend": "Now, from the link: two minutes, and it is on the 13:00 agenda as a sync for everyone."
+    },
+    {
+      "id": "2",
+      "ask": "Which target company gets the first worked ABP (abp@web-summit.dinis, for you and Nimay at 13:00)",
+      "detail": "dev's 28 factory pages are a ready list to choose from: people/indi/factory/companies.json, ordered by priority.",
+      "options": ["the first priority company in the factory", "one you already know", "let Nimay choose"],
+      "recommend": "One you already know: a worked ABP is easier to check against a company you understand."
+    },
+    {
+      "id": "3",
+      "ask": "Review the factory pages",
+      "detail": "Your brief says a person reviews each factory page. dev cut two claims whose sources did not say them (Cloudflare, Feedzai). None is reviewed yet.",
+      "options": ["review the first three today", "ask a teammate to share the review", "later"],
+      "recommend": "Review the first three today (Hexamind, 1Password, Replit), before anything links to them in outreach."
+    }
+  ],
+  "you_asked": [
+    {"at": "3 Nov, about 23:08 UTC", "said": "yes but also keep a note of the GMT times for indi", "done": "My scheduled task at 07:20, 12:20 and 17:20 GMT; every agent's times in GMT", "where": "people/indi/schedule.md, commit 56d921e", "status": "done"},
+    {"at": "4 Nov, 07:20 UTC", "said": "Scheduled wake: do one run, release it, and report in five lines.", "done": "This run fired on time: your site key, a sealed hello, WS-136 updated, this brief.", "where": "data/person-keys.json, data/sealed/indi/, board/WS-136", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "1. What happened overnight",
+      "items": [
+        "Dinis, about 01:45 UTC: every person adds their key to the site, first, before Angelo and Jose use the append lanes between vaults (WS-136, via conductor@web-summit.dinis, 4528976).",
+        "dev@web-summit.indi: factory pages, first three (44bce7e), then all 28 'meet' companies, each with a flow, a mind map and the five RiskMandate steps in normal and lay terms (3be96bb).",
+        "abp@web-summit.dinis wrote behaviour policies for your three agents (10d1d46). It found that code in your folder (people/indi/pages.mjs, dev's) runs in CI with a token that can push and deploy: WS-133, a decision for Dinis.",
+        "Your conductor's policy still says the network blocks pki.sgit.ai; that is out of date since 23:00. I have told abp@web-summit.dinis."
+      ]
+    },
+    {
+      "title": "2. From your mentor",
+      "items": ["No new note since 19:40 UTC yesterday."]
+    }
+  ],
+  "next": [
+    "13:00 stand-up: WS-136 (the key), the first worked ABP, WS-25's first five companies.",
+    "When your signed message arrives, I record it on WS-136.",
+    "The vaults (L6): the SG/Send access token in your Claude environment, then a vault agent.",
+    "Tell me 'acknowledge' when you have read briefs 1 to 3."
+  ],
+  "sources": [
+    "git log: 4528976, 44bce7e, 3be96bb, 10d1d46",
+    "board/WS-136 and data/meetings/2026-11-04-1300/ at 07:25 UTC",
+    "data/person-keys.json (indi, sha256:504685dc2b1cd9af)",
+    "content/abp/conductor-web-summit-indi.md",
+    "people/indi/mentor/ (latest 2026-11-03-1940.md)"
+  ]
+}
