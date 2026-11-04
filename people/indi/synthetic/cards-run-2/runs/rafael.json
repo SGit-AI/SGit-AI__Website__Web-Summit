@@ -1,0 +1,99 @@
+{
+ "persona": "rafael",
+ "card_of": "silvio",
+ "synthetic": true,
+ "designs": [
+  {
+   "design": "6-signature",
+   "front_glance": "A big name, \"Silvio Switha\", a red rule, then \"Ideas, outreach, local, and video\" and \"Agents with a mandate.\" Bottom line: \"FIND US AT OUR STAND ON THURSDAY 12 NOVEMBER\". The name I can print. The rest reads like a slogan with no company attached on this side.",
+   "back": "Dark side with the RM crosshair logo, \"RISK MANDATE\", a QR and \"web-summit.sgit.ai /meet/silvio/\". Now I know the company name. I still do not know what Risk Mandate does, and nothing says which event or which stand.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "What is Silvio's actual title, and what does Risk Mandate sell? \"Agents with a mandate\" could mean anything.",
+   "confusion": "\"Ideas, outreach, local, and video\" is not a job title. Is he marketing, a founder, a video producer? And \"our stand\" with no stand number and no event name on the front.",
+   "act": "keep",
+   "reason": "The name is clean enough to spell in print, but there is no angle. I would keep it in the pile and probably never open the link.",
+   "score": 2
+  },
+  {
+   "design": "1-seal",
+   "front_glance": "Just a logo. A green crosshair with \"RM\", \"RISK MANDATE\", \"Agents with a mandate.\" and \"Find us at our stand on Thursday 12 November\". No person on the front at all.",
+   "back": "\"Silvio Switha\", \"Ideas, outreach, local, and video\", a QR and three lines: \"Meet me\", \"Book a meeting\", \"Talk to my agent\". \"Talk to my agent\" is the only thing that makes me look twice. Is that a press joke or a literal AI agent?",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "Does \"Talk to my agent\" mean an AI agent answers on his behalf? That might be a story in itself, but the card does not say.",
+   "confusion": "The front is a brand badge with a crosshair, which reads more like a security or defence firm than anything about AI agents. Thursday 12 November is the last day and I am standing here on Day 3; no stand number.",
+   "act": "keep",
+   "reason": "It looks like every other startup card in the bowl. The \"Talk to my agent\" line is the only hook and it is unexplained.",
+   "score": 2
+  },
+  {
+   "design": "2-pass",
+   "front_glance": "Laid out like a badge or ticket: \"WEB SUMMIT LISBON 9 TO 12 NOVEMBER 2026\", the name big, \"Ideas, outreach, local, and video\", then \"Thursday 12 November\" in bold. Clear who and when, at a glance.",
+   "back": "QR, \"RISK MANDATE\", \"Meet me / Book a meeting / Talk to my agent\", the URL and the event again. Tidy, but nothing about what the company does. The event dates appear twice, which is wasted space I would have used for one sentence of what they do.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "partly",
+   "says_where_when": "yes",
+   "question": "Which stand? And what does Risk Mandate do?",
+   "confusion": "\"Find us at our stand on\" but no stand number or hall. Event dates repeated on both sides while the company gets no description.",
+   "act": "keep",
+   "reason": "Best for remembering where and when I got it, so it survives the hotel-room sort. But no claim to quote, so no story yet.",
+   "score": 3
+  },
+  {
+   "design": "5-terminal",
+   "front_glance": "Terminal look. \"AGENT BEHAVIOUR POLICIES\", then in green \"Same agent. Different reach.\" and \"Building is not authorising.\" Now that is a line. Risk Mandate, Web Summit Lisbon, 9 to 12 November 2026.",
+   "back": "\"Silvio Switha\", \"Ideas, outreach, local, and video\", the three meet options with prompt arrows, \"Find us at our stand on Thursday 12 November\", URL and QR. Everything is there except a title I can print.",
+   "says_what_riskmandate_does": "partly",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "Is \"Building is not authorising\" aimed at companies whose AI agents do more than they were allowed to? Who is the customer?",
+   "confusion": "\"Same agent. Different reach.\" is quotable but cryptic; I need a second sentence to know it is about limiting what AI agents can do. Stand number missing again.",
+   "act": "follow-up",
+   "reason": "\"Building is not authorising\" is close to a headline. I would scan the QR to see if there is a press page and a spokesperson.",
+   "score": 4
+  },
+  {
+   "design": "4-boardroom",
+   "front_glance": "\"Your customer will ask. Have an answer.\" with the Risk Mandate logo and the event line. Sounds like an ad for a consultancy. Ask what? Answer what?",
+   "back": "Name, \"Ideas, outreach, local, and video\", \"Find us at our stand on Thursday 12 November\", URL and QR. Clean. Still no idea what the question or the answer is.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "What will my customer ask? The card sets up a question and never names it.",
+   "confusion": "The headline is pure marketing with no subject. Without \"agents\" anywhere on the card I would not even know it is an AI company.",
+   "act": "bin",
+   "reason": "This is exactly the marketing question with no answer that I bin. Nothing to quote, nothing to report.",
+   "score": 2
+  },
+  {
+   "design": "3-record",
+   "front_glance": "\"AGENT BEHAVIOUR POLICIES\" and a real question: \"Would your agent pass an audit?\" Then a little table: REACH \"what one agent can reach\", AUTHORISED \"what you authorised it to do\", GAP \"the gap between the two\". I get the pitch in five seconds. That is a story frame.",
+   "back": "\"RISK MANDATE\", \"Silvio Switha\", \"Ideas, outreach, local, and video\", \"FIND US AT OUR STAND ON Thursday 12 November\", URL and QR. Good, but no Web Summit name or year on either side.",
+   "says_what_riskmandate_does": "yes",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "Who measures the gap, and do they have a customer or a number I can cite? And what is Silvio's title so I can attribute a quote?",
+   "confusion": "No event name on the card, so in a week \"Thursday 12 November\" means nothing. Still no stand number. The role line does not tell me if he can speak for the company.",
+   "act": "follow-up",
+   "reason": "\"Would your agent pass an audit?\" plus the reach versus authorised gap is an angle I can pitch to my editor: AI agents doing more than anyone signed off. I scan it.",
+   "score": 4
+  }
+ ],
+ "ranking": ["3-record", "5-terminal", "2-pass", "6-signature", "1-seal", "4-boardroom"],
+ "pick": "3-record",
+ "one_change": "Replace \"Ideas, outreach, local, and video\" with a printable title and company (for example \"Head of Outreach, Risk Mandate\") and add a press contact line, plus the stand number and \"Web Summit Lisbon\" next to Thursday 12 November.",
+ "findings": [
+  {"what": "\"Ideas, outreach, local, and video\" is not a title a journalist can print; I cannot tell if Silvio can be quoted on behalf of the company.", "design": "all", "cost": "costly"},
+  {"what": "\"Find us at our stand\" never gives a stand number or hall, and Thursday 12 November is the last day, after the Day 3 handover.", "design": "all", "cost": "costly"},
+  {"what": "No press contact or press line on any design; the only route is a QR to a meet page.", "design": "all", "cost": "minor"},
+  {"what": "Only 3-record says what Risk Mandate does in plain terms; 5-terminal hints at it with a strong but cryptic line.", "design": "3-record", "cost": "held"},
+  {"what": "\"Your customer will ask. Have an answer.\" names no subject, and the card never mentions agents, so it reads as generic consultancy marketing.", "design": "4-boardroom", "cost": "blocking"},
+  {"what": "\"Agents with a mandate.\" is the only product statement and explains nothing.", "design": "6-signature", "cost": "costly"},
+  {"what": "The front carries no person, only a crosshair logo that reads like a security firm.", "design": "1-seal", "cost": "minor"},
+  {"what": "No Web Summit name or year anywhere, so the date loses meaning after the event.", "design": "3-record", "cost": "minor"},
+  {"what": "\"Talk to my agent\" is intriguing but unexplained; a journalist cannot tell if it is a human assistant or an AI agent.", "design": "all", "cost": "minor"}
+ ]
+}

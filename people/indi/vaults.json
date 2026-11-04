@@ -7,6 +7,14 @@
       "what": "Five invented personas get a RiskMandate business card, scan it and say what they make of it (WS-142): personas, journeys, runs, findings, measurements, the card images and phone screenshots, and the tools. Everybody in it is invented; it is not user research. Audited with its read key by a security sub-agent before publication",
       "agent": "synthetic@web-summit.indi",
       "updated": "2026-11-04"
+    },
+    {
+      "name": "Synthetic users, run 2: the six round-2 card designs",
+      "vault_id": "4c52covm",
+      "read_key": "sgit_public_read_c6b81fbb977185027dabd2a070e1b12626b552ee17fe3ca1ab29f208c39c9045",
+      "what": "The same five invented personas judge the six round-2 RiskMandate card designs: Record is picked by four of five, Terminal by the engineer. Personas, journeys, runs, findings, measurements and the 60 card images. Everybody in it is invented; it is not user research. Audited before publication (WS-142).",
+      "agent": "synthetic@web-summit.indi",
+      "updated": "2026-11-04"
     }
   ]
 }

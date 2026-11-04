@@ -1,0 +1,103 @@
+{
+ "persona": "aiko",
+ "card_of": "indi",
+ "synthetic": true,
+ "designs": [
+  {
+   "design": "2-pass",
+   "front_glance": "A name, Indi Gupte, the event and dates 'WEB SUMMIT LISBON 9 TO 12 NOVEMBER 2026', and 'FIND US AT OUR STAND ON Thursday 12 November'. A small RM icon and a large yellow block with nothing on it. I do not see the company name or what the company does on this side.",
+   "back": "'RISK MANDATE' with three choices, 'Meet me', 'Book a meeting', 'Talk to my agent', a QR code and the address 'web-summit.sgit.ai /meet/indi/'. I am glad the address is printed, because I can type it myself and compare it with the QR before I scan. Still, nowhere does it say what Risk Mandate is.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "Which stand? There is no stand number or hall, so 'our stand on Thursday 12 November' does not tell me where to go. Also, what is the difference between 'Meet me' and 'Book a meeting'?",
+   "confusion": "'The message, outreach, and the factory of examples' is under her name as if it is a job title. I do not know what 'factory of examples' means. Is it a product, a department, or a metaphor? 'Talk to my agent' could mean a human representative or a software agent.",
+   "act": "keep",
+   "reason": "It has a name, dates and a URL I can verify, so I keep it in my card holder. But I cannot explain to my procurement committee what this company sells, so I would not write a follow-up yet.",
+   "score": 2
+  },
+  {
+   "design": "5-terminal",
+   "front_glance": "'AGENT BEHAVIOUR POLICIES' at the top, then 'Same agent. Different reach.' and 'Building is not authorising.' Then RISK MANDATE and 'WEB SUMMIT LISBON 9 TO 12 NOVEMBER 2026'. The heading tells me the field: policies for agent behaviour. That is my field.",
+   "back": "Name, the same green line about 'the factory of examples', three options with arrows, 'Find us at our stand on Thursday 12 November', the URL and a QR. Everything is present on the two sides.",
+   "says_what_riskmandate_does": "partly",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "What does 'reach' mean exactly here? The data and systems an agent can access, or its effect on the world? And does Risk Mandate write the policies, enforce them, or check them?",
+   "confusion": "'Same agent. Different reach.' reads like a slogan and I cannot map it to a control. 'Building is not authorising' is closer to my language (separation of development and approval), but it is a statement, not a description of a service. The dark background with grey small text is hard to read on a conference floor.",
+   "act": "keep",
+   "reason": "The topic 'agent behaviour policies' matches my work, and the card is complete. But the phrases are slogans and I must translate them in my head; I want a definition.",
+   "score": 3
+  },
+  {
+   "design": "3-record",
+   "front_glance": "'AGENT BEHAVIOUR POLICIES' and the question 'Would your agent pass an audit?' Then a small table: 'REACH what one agent can reach', 'AUTHORISED what you authorised it to do', 'GAP the gap between the two'. This is a definition table. I read it twice and I understand it: the risk is the gap between capability and authorisation. This maps to my framework directly.",
+   "back": "Name, RISK MANDATE, 'FIND US AT OUR STAND ON Thursday 12 November', the URL and the QR. Clean and quiet. There are no 'Meet me / Book a meeting' choices here, which I do not miss, but the event name and year are not on either side.",
+   "says_what_riskmandate_does": "partly",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "Which audit? Against which standard: the EU AI Act, ISO/IEC 42001, or an internal audit? And does Risk Mandate measure the gap, or close it? The card defines the problem but not the service.",
+   "confusion": "'what one agent can reach' defines REACH using the word 'reach', so it is a little circular. The green line 'The message, outreach, and the factory of examples' is still unclear to me as a role. Also the card does not say 'Web Summit' anywhere, so in one month I may not remember where 'our stand' was.",
+   "act": "follow-up",
+   "reason": "It uses governance vocabulary (audit, authorised, gap) and gives a definition, not an idiom. I can show this front to my committee and they will understand the problem in ten seconds. I would type the URL and ask for a formal meeting.",
+   "score": 4
+  },
+  {
+   "design": "6-signature",
+   "front_glance": "A very large 'Indi Gupte', a yellow band, the green line about 'the factory of examples', 'Your agents. Your rules.' and 'FIND US AT OUR STAND ON THURSDAY 12 NOVEMBER'. Mostly a name.",
+   "back": "The RM logo, RISK MANDATE, the URL and the QR. Nothing more. No event name, no year, no description.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "What does Risk Mandate do? 'Your agents. Your rules.' could be any agent platform. And where is the stand, and at which event?",
+   "confusion": "'Your agents. Your rules.' is a slogan with no definition. Without 'Web Summit' printed, 'our stand on Thursday 12 November' has no place.",
+   "act": "bin",
+   "reason": "Very elegant, but after the event it will tell me only a name. I cannot use it in a procurement note.",
+   "score": 2
+  },
+  {
+   "design": "4-boardroom",
+   "front_glance": "'Your customer will ask. Have an answer.' Then RISK MANDATE and 'WEB SUMMIT LISBON 9 TO 12 NOVEMBER 2026'. I do not know what the customer will ask. It sounds like an advertisement.",
+   "back": "Name, the green line, 'Find us at our stand on Thursday 12 November', the URL and the QR. Readable, with good contrast.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "Ask what? About our AI agents, our data, our compliance? The front leaves the object of the question out.",
+   "confusion": "'Your customer will ask' assumes context from the pitch. In my company the customer is another manufacturer; I do not know if this is about them, or about regulators.",
+   "act": "keep",
+   "reason": "The back is clear and has the event and dates on the front, so it is useful as a reminder. But the message is indirect and I would need Indi to explain it again.",
+   "score": 2
+  },
+  {
+   "design": "1-seal",
+   "front_glance": "A large RM seal, RISK MANDATE, 'Your agents. Your rules.' and 'Find us at our stand on Thursday 12 November' in green. A row of colour blocks at the bottom. No person on the front.",
+   "back": "Name, the green line, the QR, 'Meet me', 'Book a meeting', 'Talk to my agent', and the URL on one line. No event name or year on either side.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "What do the colour blocks mean? Are they categories or levels of risk? And where is the stand?",
+   "confusion": "The colour bars look like they carry information, like a risk scale, but there is no legend. 'Your agents. Your rules.' again does not say what the product does.",
+   "act": "keep",
+   "reason": "It looks official, like a seal, which I respect. But it gives me a logo and a slogan, not a definition.",
+   "score": 2
+  }
+ ],
+ "ranking": ["3-record", "5-terminal", "4-boardroom", "2-pass", "1-seal", "6-signature"],
+ "pick": "3-record",
+ "one_change": "On the front, add one line that says what Risk Mandate does about the gap (for example, whether it measures it, documents it, or enforces it), and on the back add 'Web Summit Lisbon' with the stand number, and replace 'the factory of examples' with a plain job title.",
+ "findings": [
+  {"what": "The line under the name, 'The message, outreach, and the factory of examples', is read as a job title but its meaning is unclear to a careful second-language reader; 'factory of examples' is a metaphor.", "design": "all", "cost": "costly"},
+  {"what": "'Find us at our stand on Thursday 12 November' gives no stand number or hall, so it does not say where.", "design": "all", "cost": "costly"},
+  {"what": "The event name and year are missing from both sides, so 'our stand' has no place after the event.", "design": "3-record", "cost": "costly"},
+  {"what": "The event name and year are missing from both sides.", "design": "6-signature", "cost": "costly"},
+  {"what": "The event name and year are missing from both sides.", "design": "1-seal", "cost": "costly"},
+  {"what": "The REACH / AUTHORISED / GAP table is a definition in governance language and is the only front that explains the problem without idioms.", "design": "3-record", "cost": "held"},
+  {"what": "No design says what Risk Mandate does about the problem: measure, document, or enforce.", "design": "all", "cost": "costly"},
+  {"what": "'Would your agent pass an audit?' does not say which audit or standard.", "design": "3-record", "cost": "minor"},
+  {"what": "Slogans 'Your agents. Your rules.', 'Your customer will ask. Have an answer.' and 'Same agent. Different reach.' need the pitch to be understood.", "design": "all", "cost": "costly"},
+  {"what": "'Talk to my agent' is ambiguous: a human representative or a software agent.", "design": "2-pass", "cost": "minor"},
+  {"what": "The printed URL next to the QR lets a cautious reader type it and check the QR before scanning.", "design": "all", "cost": "held"},
+  {"what": "The colour bars look like a risk scale but have no legend.", "design": "1-seal", "cost": "minor"},
+  {"what": "Small grey text on black is hard to read.", "design": "5-terminal", "cost": "minor"}
+ ]
+}

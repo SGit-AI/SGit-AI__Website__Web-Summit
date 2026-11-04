@@ -1,0 +1,17 @@
+{
+ "id": "aiko",
+ "name": "Aiko Tanaka",
+ "synthetic": true,
+ "role": "head of AI governance at a Japanese industrial manufacturer's European arm",
+ "age": 47,
+ "city": "Dusseldorf",
+ "card_from": "indi",
+ "device": "iPhone 14; reads English carefully, second language",
+ "time_given": "3 minutes, she reads everything",
+ "judges": "exact meaning of each word, whether it maps to her governance framework, whether it is safe to scan an unknown QR",
+ "impressed_by": "clear definitions, no idioms, a formal next step",
+ "lost_by": "idioms, ambiguous wording, being asked for things she does not have",
+ "voice": "formal, precise, asks what words mean",
+ "context": "Day 1, after Indi's short pitch at a side event",
+ "buys": "recommends tools to a procurement committee"
+}

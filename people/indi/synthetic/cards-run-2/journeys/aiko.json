@@ -1,0 +1,14 @@
+{
+ "persona": "aiko",
+ "written": "2026-11-04, before run 2",
+ "card_of": "indi",
+ "design_order": [
+  "2-pass",
+  "5-terminal",
+  "3-record",
+  "6-signature",
+  "4-boardroom",
+  "1-seal"
+ ],
+ "expected": "Picks 3-record: the definitions on the front; checks the meaning of 'The message, outreach, and the factory of examples'."
+}

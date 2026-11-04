@@ -1,0 +1,14 @@
+{
+ "persona": "hannah",
+ "written": "2026-11-04, before run 2",
+ "card_of": "nimay",
+ "design_order": [
+  "3-record",
+  "2-pass",
+  "6-signature",
+  "1-seal",
+  "5-terminal",
+  "4-boardroom"
+ ],
+ "expected": "Picks 4-boardroom or 3-record: the category is finally on the card; still misses a company line and stage."
+}

@@ -1,0 +1,99 @@
+{
+ "persona": "kwame",
+ "card_of": "jose",
+ "synthetic": true,
+ "designs": [
+  {
+   "design": "6-signature",
+   "front_glance": "Big name, Jose Bota. Then \"I brought 6 agents. Ask me why.\" Ha, ok, fun hook. \"Technical: automation, messaging, the agents\" tells me he's a builder like me. No company name on the front at all, so for 5 seconds I have no clue who he's with.",
+   "back": "Dark back, RM target logo, \"RISK MANDATE\", a QR and web-summit.sgit.ai/meet/jose/. So the company is Risk Mandate but the URL says sgit. Nothing here says what Risk Mandate actually does.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "yes",
+   "says_where_when": "partly",
+   "question": "Why did he bring 6 agents, and what does Risk Mandate sell? Is this a competitor running agents or a tooling company?",
+   "confusion": "\"FIND US AT OUR STAND ON THURSDAY 12 NOVEMBER\" but no stand number, no hall, and no Web Summit or Lisbon anywhere. Also the URL is sgit.ai, not riskmandate, so which brand am I googling tonight?",
+   "act": "keep",
+   "reason": "The 6 agents line is a good convo opener and he's technical, so maybe a partner, but I can't tell if it's customer, partner or competitor. It goes in the pocket, not the follow-up list.",
+   "score": 2
+  },
+  {
+   "design": "5-terminal",
+   "front_glance": "Terminal vibes, instantly my people. \"AGENT BEHAVIOUR POLICIES\" then \"Same agent. Different reach.\" and \"Building is not authorising.\" Ok, that's agent controls. That's literally what my enterprise buyers keep asking me about.",
+   "back": "Jose Bota, technical, automation and agents. \"› Meet me › Book a meeting › Talk to my agent\", stand on Thursday 12 November, URL plus QR. Talk to my agent is a nice touch, I can ping without booking a call.",
+   "says_what_riskmandate_does": "partly",
+   "says_who_and_role": "yes",
+   "says_where_when": "partly",
+   "question": "Is this a policy layer I can integrate into my sales agents, like an SDK or API, or is it a consulting audit thing?",
+   "confusion": "Front says \"9 TO 12 NOVEMBER 2026\", back says stand only on Thursday 12. So is the stand just the last day? I'm here day 2. Still no stand number. And \"Different reach\" took me a second read to parse.",
+   "act": "follow-up",
+   "reason": "Agent behaviour policies plus a technical guy plus a talk-to-my-agent link. Could unblock the security questionnaire on my biggest deal. Scanning tonight.",
+   "score": 5
+  },
+  {
+   "design": "4-boardroom",
+   "front_glance": "\"Your customer will ask. Have an answer.\" Honestly that hits, my customers do ask. But ask what? Could be pricing, GDPR, anything. Risk Mandate logo, Web Summit Lisbon 9 to 12 November. No name on the front.",
+   "back": "Jose Bota, technical, automation and agents. Stand on Thursday 12 November, URL, QR. No menu of options like the others.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "yes",
+   "says_where_when": "partly",
+   "question": "Ask what? The word agent is not on the front at all. If I hadn't been talking to Jose I would not connect this to agent controls.",
+   "confusion": "The headline is a hook with nothing behind it on the card. Reads like a generic compliance SaaS slogan. Stand with no number again.",
+   "act": "keep",
+   "reason": "The line pokes the right nerve but is too vague to triage in 5 seconds. Only the technical role on the back saves it from the bin.",
+   "score": 3
+  },
+  {
+   "design": "2-pass",
+   "front_glance": "Looks like a conference pass. Web Summit Lisbon, 9 to 12 November 2026, Jose Bota, technical, and the big \"Thursday 12 November\". Clean, but I already know I'm at Web Summit.",
+   "back": "QR, \"RISK MANDATE\", \"Meet me / Book a meeting / Talk to my agent\", URL, event dates again. That's the whole thing.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "yes",
+   "says_where_when": "yes",
+   "question": "What is Risk Mandate? Nothing on either side says.",
+   "confusion": "The when is very clear but the what is missing, so the card is mostly about the event, which I'm standing in. The orange block on the front looks like a mistake or a tear-off stub.",
+   "act": "keep",
+   "reason": "Best for remembering when to show up, worst for knowing why I would. Without the convo in my head it's noise by tonight.",
+   "score": 3
+  },
+  {
+   "design": "3-record",
+   "front_glance": "\"AGENT BEHAVIOUR POLICIES\", \"Would your agent pass an audit?\" Oof, no, probably not, and my buyers know it. Then a little table: REACH, AUTHORISED, GAP, \"the gap between the two\". Gets the idea across fast.",
+   "back": "Jose Bota, technical, Risk Mandate top right, stand Thursday 12 November, URL and QR. Tidy, light.",
+   "says_what_riskmandate_does": "partly",
+   "says_who_and_role": "yes",
+   "says_where_when": "partly",
+   "question": "Do they measure the gap or close it? Is the output a report for my buyer's security team or a runtime guardrail?",
+   "confusion": "No Web Summit or dates on either side, just Thursday 12 November and \"our stand\" with no number. No \"Talk to my agent\" option here so it reads like I have to meet him.",
+   "act": "follow-up",
+   "reason": "Audit is the exact word enterprise procurement throws at me. This is the clearest on what problem they solve. Loses a bit for no async contact option.",
+   "score": 4
+  },
+  {
+   "design": "1-seal",
+   "front_glance": "Huge RM logo, \"RISK MANDATE\", \"I brought 6 agents. Ask me why.\" and the stand Thursday in green. Rainbow bar at the bottom. Looks like a brand card, not a person card.",
+   "back": "Jose Bota, technical, QR, \"Meet me / Book a meeting / Talk to my agent\", web-summit.sgit.ai/meet/jose/ on one line. Clean back.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "yes",
+   "says_where_when": "partly",
+   "question": "Same as signature: why 6 agents and what does the company do?",
+   "confusion": "The colour bar means nothing to me, maybe one colour per agent? No event name or dates. Stand with no location. Logo eats half the front for zero info.",
+   "act": "keep",
+   "reason": "Back is good because of the talk-to-my-agent route, but the front spends my 5 seconds on a logo. Not sure if customer, partner or competitor.",
+   "score": 2
+  }
+ ],
+ "ranking": ["5-terminal", "3-record", "4-boardroom", "2-pass", "1-seal", "6-signature"],
+ "pick": "5-terminal",
+ "one_change": "Add one line that says what I can actually plug in, like \"policy layer for your agents, API and SDK\", and put the stand number and hall next to Thursday 12 November.",
+ "findings": [
+  {"what": "No card says what Risk Mandate is as a product (API, tool, audit, service). Only terminal and record even name agent behaviour policies.", "design": "all", "cost": "costly"},
+  {"what": "\"Our stand\" never has a stand number or hall, so I cannot find it on Thursday without the site.", "design": "all", "cost": "costly"},
+  {"what": "The stand is only Thursday 12 November while the event runs 9 to 12; met on day 2 it looks like a two day wait with no explanation.", "design": "all", "cost": "minor"},
+  {"what": "The URL is web-summit.sgit.ai, not a Risk Mandate domain, so I am unsure which brand to search tonight.", "design": "all", "cost": "minor"},
+  {"what": "\"Your customer will ask. Have an answer.\" never says ask about what; the word agent is missing from the front.", "design": "4-boardroom", "cost": "costly"},
+  {"what": "\"I brought 6 agents. Ask me why.\" is a good opener in person but leaves no answer on the card once he walks away.", "design": "6-signature", "cost": "minor"},
+  {"what": "Signature, record and seal have no event name or dates; 2-pass spends its front on the event I am already at.", "design": "all", "cost": "minor"},
+  {"what": "\"Talk to my agent\" is the async route I want, but it is missing on signature, boardroom and record.", "design": "3-record", "cost": "minor"},
+  {"what": "No email or phone anywhere; everything goes through one URL, fine only if the page works on a phone at 20% battery.", "design": "all", "cost": "held"}
+ ]
+}

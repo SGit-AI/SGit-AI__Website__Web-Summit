@@ -1,0 +1,101 @@
+{
+ "persona": "marta",
+ "card_of": "dinis",
+ "synthetic": true,
+ "designs": [
+  {
+   "design": "4-boardroom",
+   "front_glance": "Black card. Big white line: \"Your customer will ask. Have an answer.\" Then the RM target logo and RISK MANDATE. Web Summit Lisbon, 9 to 12 November 2026. Nothing more in three seconds.",
+   "back": "Dinis Cruz. \"Operator: the strategy, the senior meetings\". \"Find us at our stand on Thursday 12 November\". A URL on sgit.ai and a QR code. I know his name and that there is a stand on the last day. I still do not know what they sell.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "Ask what? My customer is a bank customer. My regulator asks. Which question is this about?",
+   "confusion": "\"Operator\" reads like a telecom or a machine operator, not a job title. And which stand? No hall, no number. Thursday is three days after I met him.",
+   "act": "keep",
+   "reason": "It looks serious and adult. But it is a slogan. I keep it in the bag because I talked to him, not because the card told me anything.",
+   "score": 2
+  },
+  {
+   "design": "2-pass",
+   "front_glance": "Looks like a conference pass. Web Summit Lisbon dates, Dinis Cruz in large type, the operator line, \"FIND US AT OUR STAND ON Thursday 12 November\". Small RM logo on a tear-off strip.",
+   "back": "QR, RISK MANDATE, then \"Meet me\", \"Book a meeting\", \"Talk to my agent\", the URL and the dates again. Three ways to contact him, zero words on the product.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "What is RiskMandate? A risk consultancy? A mandate register? Nothing tells me.",
+   "confusion": "\"Talk to my agent\". His sales agent, or an AI agent? If it is a bot, I will not talk to it. Also the black block on the front looks like a printing error.",
+   "act": "keep",
+   "reason": "Clear who and when. It is a calendar reminder, not a reason to call. Dates printed twice, product never.",
+   "score": 2
+  },
+  {
+   "design": "3-record",
+   "front_glance": "\"AGENT BEHAVIOUR POLICIES\". \"Would your agent pass an audit?\" Then three rows: REACH, what one agent can reach; AUTHORISED, what you authorised it to do; GAP, the gap between the two. I read all of it without glasses. That is a control statement.",
+   "back": "Dinis Cruz, operator line, RISK MANDATE, \"FIND US AT OUR STAND ON Thursday 12 November\", the meet URL and QR. Clean.",
+   "says_what_riskmandate_does": "partly",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "Audit against what? DORA, the AI Act, EBA outsourcing guidelines, our internal policy? Say one and I believe the rest. And how do you measure the reach: from logs, from config, from a proxy?",
+   "confusion": "Front has no name of the company in words, only the RM logo; the name RISK MANDATE is on the back only. The URL says sgit.ai, which is a different name again. Which company is this?",
+   "act": "follow-up",
+   "reason": "Reach versus authorised is least privilege for agents. That is my problem this year; agents from three business lines are landing on my desk. This vendor speaks in controls, not in magic.",
+   "score": 4
+  },
+  {
+   "design": "5-terminal",
+   "front_glance": "Black, green monospace, looks like a hacker screen. \"AGENT BEHAVIOUR POLICIES\". \"Same agent. Different reach.\" \"Building is not authorising.\" RISK MANDATE and the dates.",
+   "back": "Same terminal style. Name, operator line in green, then \"> Meet me > Book a meeting > Talk to my agent\", stand on Thursday 12 November, URL, QR.",
+   "says_what_riskmandate_does": "partly",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "Same agent, different reach where? In different environments, for different users? It is a good line but I need the second sentence.",
+   "confusion": "Green on black in a hall with bad light, on a card I read in a taxi. The style says developer tool. I am not the buyer of developer tools. \"Talk to my agent\" again.",
+   "act": "keep",
+   "reason": "\"Building is not authorising\" is true and I would quote it to my board. But the card dresses it as a terminal, and my CFO would ask why I kept a hacker card.",
+   "score": 3
+  },
+  {
+   "design": "1-seal",
+   "front_glance": "Huge RM target logo. RISK MANDATE. \"Ask me what my agents did today.\" Green line with the Thursday stand. A stripe of colours at the bottom.",
+   "back": "Same colour stripe. Name, operator line, QR, \"Meet me\", \"Book a meeting\", \"Talk to my agent\", the URL. No event dates at all on the back.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "Why would I ask a stranger what his agents did today? What are his agents? What does that have to do with my bank?",
+   "confusion": "The target logo looks like a rifle sight. The colour stripe means nothing to me. \"Ask me what my agents did today\" is a cute question, the kind that loses me.",
+   "act": "bin",
+   "reason": "Logo, slogan, colours. No risk, no control, no regulation. This is the AI hype card.",
+   "score": 1
+  },
+  {
+   "design": "6-signature",
+   "front_glance": "Name very large: Dinis Cruz. Operator line. \"Ask me what my agents did today.\" Stand on Thursday 12 November. No company on the front.",
+   "back": "Black, logo, RISK MANDATE, URL, QR. Nothing else.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "Who is Dinis Cruz to be printed this big? I half heard him. I need the company and what it does, not his name in poster size.",
+   "confusion": "Front without a company, back without a sentence. I have to turn it twice to connect the man to RiskMandate. The same cute question as the seal.",
+   "act": "bin",
+   "reason": "A card about the person, for people who already know him. I do not. Nothing I can forward to my team.",
+   "score": 1
+  }
+ ],
+ "ranking": ["3-record", "5-terminal", "4-boardroom", "2-pass", "6-signature", "1-seal"],
+ "pick": "3-record",
+ "one_change": "Name the audit. Put one regulation or control framework under the question, for example \"mapped to DORA and the EU AI Act\", and print the company name RiskMandate on the front in words.",
+ "findings": [
+  {"what": "The role line \"Operator: the strategy, the senior meetings\" does not read as a job title. Founder, CEO or partner I understand; operator I do not.", "design": "all", "cost": "costly"},
+  {"what": "\"Find us at our stand on Thursday 12 November\" gives a day but no hall and no stand number, and it is three days after Day 1 when I was handed the card. I would not find the stand.", "design": "all", "cost": "costly"},
+  {"what": "The URL is on sgit.ai while the brand is RiskMandate. Two names for one company makes me check whether this is a reseller or a side project.", "design": "all", "cost": "minor"},
+  {"what": "\"Talk to my agent\" is ambiguous and, if it means an AI bot, a reason for me to not scan. I do not talk to vendor bots.", "design": "2-pass", "cost": "costly"},
+  {"what": "Only the record front names a control: reach, authorised, gap. It is the only card that tells me what the product checks.", "design": "3-record", "cost": "held"},
+  {"what": "The record card still names no regulation or standard behind \"audit\", so it is a good question with no proof.", "design": "3-record", "cost": "minor"},
+  {"what": "\"Ask me what my agents did today\" is a cute question with no product in it. It is what makes seal and signature read as hype.", "design": "1-seal", "cost": "blocking"},
+  {"what": "Signature puts no company on the front and no sentence on the back, so the card never says what RiskMandate does.", "design": "6-signature", "cost": "blocking"},
+  {"what": "Boardroom's \"Your customer will ask\" does not say what will be asked. For a bank the asker is the regulator, not the customer.", "design": "4-boardroom", "cost": "costly"},
+  {"what": "Terminal's green monospace style signals developer tooling and is hard to read in low light without glasses, even though its line \"Building is not authorising\" is the best sentence in the set.", "design": "5-terminal", "cost": "minor"},
+  {"what": "The card never says to scan the QR or what I land on. I will not scan anything that might ask me to log in.", "design": "all", "cost": "minor"}
+ ]
+}

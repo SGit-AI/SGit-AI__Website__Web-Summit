@@ -1,0 +1,99 @@
+{
+ "persona": "hannah",
+ "card_of": "nimay",
+ "synthetic": true,
+ "designs": [
+  {
+   "design": "3-record",
+   "front_glance": "In three seconds I get a category, \"AGENT BEHAVIOUR POLICIES\", and a question, \"Would your agent pass an audit?\". The three rows REACH, AUTHORISED and GAP take a second look, but they are the clearest statement of a problem in this pile tonight. I see no name and no company word yet, only the RM mark.",
+   "back": "Nimay Parekh, RISK MANDATE, \"Business, positioning, outreach and investors\". \"Find us at our stand on Thursday 12 November\" and a meet URL with a QR. The word investors tells me this is likely a company that is raising, or will be. I do not know where the stand is, and the card never says Web Summit or Lisbon.",
+   "says_what_riskmandate_does": "yes",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "Is this a product with customers, or a thesis? There is no stage, no product name beyond the brand, and nothing that tells me whether this is pre-seed or Series A.",
+   "confusion": "The role line reads like a job description, not a title. Is Nimay a founder, or someone hired for outreach? And \"our stand\" with no hall or stand number means I would have to scan the QR to find him.",
+   "act": "follow-up",
+   "reason": "It is the only card that gives me a category and a reason to believe in one face: the gap between what an agent can reach and what it is authorised to do is a real enterprise problem. With investors in the role line, a short follow-up costs me nothing.",
+   "score": 4
+  },
+  {
+   "design": "2-pass",
+   "front_glance": "\"WEB SUMMIT LISBON 9 TO 12 NOVEMBER 2026\", a large name, the role line and \"Find us at our stand on Thursday 12 November\". It looks like an event pass. I know who and when, not what.",
+   "back": "\"RISK MANDATE\", then \"Meet me\", \"Book a meeting\", \"Talk to my agent\", the URL and the event again. Nothing says what RiskMandate is or who it is for.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "What does RiskMandate actually do? Risk management, insurance, compliance software? I cannot place the category.",
+   "confusion": "\"Talk to my agent\" reads to me first as a talent agent or a sales rep, not software. Three calls to action that all seem to go to one QR feel redundant.",
+   "act": "keep",
+   "reason": "Well organised and I can find him on Thursday, but I will not Google a company to learn what it does. It goes in the maybe pile only because investors is in his role.",
+   "score": 2
+  },
+  {
+   "design": "6-signature",
+   "front_glance": "A very large \"Nimay Parekh\", the role line and \"My agents have a policy. Do yours?\". The stand on Thursday. No company name on the front at all.",
+   "back": "Dark side with the RM mark, \"RISK MANDATE\", the URL and a QR. That is all.",
+   "says_what_riskmandate_does": "partly",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "Policy for what agents, made by whom? Is RiskMandate the product that writes the policy, or is this a personal slogan?",
+   "confusion": "The front is about the person and the back is about the brand, and neither joins them. \"My agents\" makes it sound like Nimay personally runs agents. No event or city on either side.",
+   "act": "keep",
+   "reason": "The tagline hints at AI agent governance, but it is a teaser, not a category line. Handsome card, thin on substance for someone sorting at night.",
+   "score": 2
+  },
+  {
+   "design": "1-seal",
+   "front_glance": "A big logo, \"RISK MANDATE\", \"My agents have a policy. Do yours?\" and a green \"Find us at our stand on Thursday 12 November\". A row of coloured bars along the bottom.",
+   "back": "Name, the same role line, the QR, \"Meet me\", \"Book a meeting\", \"Talk to my agent\" and the URL.",
+   "says_what_riskmandate_does": "partly",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "What is the product? A logo this large usually means a brand I should already know, and I do not.",
+   "confusion": "The front spends most of its space on a mark that tells me nothing. The colour bars look decorative and I cannot read any meaning into them. No Web Summit or Lisbon anywhere.",
+   "act": "keep",
+   "reason": "Same hint as the signature card, with the company name more visible, but the logo is doing the work a category line should do.",
+   "score": 2
+  },
+  {
+   "design": "5-terminal",
+   "front_glance": "\"AGENT BEHAVIOUR POLICIES\", then in green \"Same agent. Different reach.\" and \"Building is not authorising.\", the RISK MANDATE logo and \"WEB SUMMIT LISBON 9 TO 12 NOVEMBER 2026\". Category, brand and event in one face.",
+   "back": "Name, role line, the three calls to action as terminal prompts, \"Find us at our stand on Thursday 12 November\", the URL and a QR.",
+   "says_what_riskmandate_does": "yes",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "Who is the buyer? It reads like a developer tool, which changes how I would value it, but it does not say.",
+   "confusion": "\"Same agent. Different reach.\" is clever but took me a second read; I am not sure whether it means one agent in two environments or two customers. The monospace styling suggests a developer audience, which may or may not be the market.",
+   "act": "follow-up",
+   "reason": "The category is plain and the card is complete: what, who, which event, which day. The record design explains the problem a little better, which is why this is second.",
+   "score": 4
+  },
+  {
+   "design": "4-boardroom",
+   "front_glance": "\"Your customer will ask. Have an answer.\", the RISK MANDATE logo, \"WEB SUMMIT LISBON 9 TO 12 NOVEMBER 2026\". Polished and confident.",
+   "back": "Name, role line, \"Find us at our stand on Thursday 12 November\", the URL and a QR. Clean and readable.",
+   "says_what_riskmandate_does": "no",
+   "says_who_and_role": "partly",
+   "says_where_when": "partly",
+   "question": "Ask what? The headline promises an answer to a question it never names. Is this about security, compliance, AI, pricing?",
+   "confusion": "This could be any B2B company in the building. Nothing on either side mentions agents, policies or audits, so the category is entirely missing.",
+   "act": "keep",
+   "reason": "It looks the most like a serious company, which I appreciate, but looking serious is not saying what you do. I would keep it only because investors is in the role line.",
+   "score": 2
+  }
+ ],
+ "ranking": ["3-record", "5-terminal", "2-pass", "4-boardroom", "1-seal", "6-signature"],
+ "pick": "3-record",
+ "one_change": "Add one company line under the headline that names the buyer and the stage, for example who it is for and whether it is live with customers, and print the stand number and \"Web Summit Lisbon\" next to Thursday 12 November.",
+ "findings": [
+  {"what": "Only 3-record and 5-terminal state a category (\"AGENT BEHAVIOUR POLICIES\"). The other four leave an investor guessing what RiskMandate does, and I will not Google.", "design": "all", "cost": "blocking"},
+  {"what": "The boardroom headline \"Your customer will ask. Have an answer.\" never says what the question is, so the most professional looking card says the least.", "design": "4-boardroom", "cost": "blocking"},
+  {"what": "The role line \"Business, positioning, outreach and investors\" is a list of duties, not a title. I cannot tell whether Nimay is a founder. Its saving grace is the word investors, which is the only hint the company is raising.", "design": "all", "cost": "costly"},
+  {"what": "No card says the stage, the product status or who buys it. For a fund this is the second thing I need after the category.", "design": "all", "cost": "costly"},
+  {"what": "\"Find us at our stand\" never gives a hall or stand number, so the card cannot be acted on without the QR.", "design": "all", "cost": "costly"},
+  {"what": "3-record, 6-signature and 1-seal never mention Web Summit or Lisbon; in a pile from several events the card loses its context.", "design": "3-record", "cost": "minor"},
+  {"what": "\"Talk to my agent\" reads first as a human agent or sales rep; only after the category is known does it read as an AI agent.", "design": "2-pass", "cost": "minor"},
+  {"what": "The large logo and colour bars on the seal front take space that a category line needs.", "design": "1-seal", "cost": "minor"},
+  {"what": "The REACH, AUTHORISED, GAP table is the clearest reason to believe in the whole set and should be kept in whatever design wins.", "design": "3-record", "cost": "held"}
+ ]
+}

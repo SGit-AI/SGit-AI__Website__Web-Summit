@@ -1,0 +1,134 @@
+{
+ "designs": [
+  {
+   "design": "1-seal",
+   "mean_score": 1.8,
+   "scores": [
+    2,
+    2,
+    2,
+    1,
+    2
+   ],
+   "mean_rank": 5.2,
+   "picks": 0,
+   "acts": {
+    "keep": 4,
+    "bin": 1
+   },
+   "says_what_rm_does": {
+    "no": 4,
+    "partly": 1
+   }
+  },
+  {
+   "design": "2-pass",
+   "mean_score": 2.4,
+   "scores": [
+    2,
+    2,
+    3,
+    2,
+    3
+   ],
+   "mean_rank": 3.6,
+   "picks": 0,
+   "acts": {
+    "keep": 5
+   },
+   "says_what_rm_does": {
+    "no": 5
+   }
+  },
+  {
+   "design": "3-record",
+   "mean_score": 4.0,
+   "scores": [
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "mean_rank": 1.2,
+   "picks": 4,
+   "acts": {
+    "follow-up": 5
+   },
+   "says_what_rm_does": {
+    "partly": 3,
+    "yes": 2
+   }
+  },
+  {
+   "design": "4-boardroom",
+   "mean_score": 2.2,
+   "scores": [
+    2,
+    2,
+    3,
+    2,
+    2
+   ],
+   "mean_rank": 3.8,
+   "picks": 0,
+   "acts": {
+    "keep": 4,
+    "bin": 1
+   },
+   "says_what_rm_does": {
+    "no": 5
+   }
+  },
+  {
+   "design": "5-terminal",
+   "mean_score": 3.8,
+   "scores": [
+    3,
+    4,
+    5,
+    3,
+    4
+   ],
+   "mean_rank": 1.8,
+   "picks": 1,
+   "acts": {
+    "keep": 2,
+    "follow-up": 3
+   },
+   "says_what_rm_does": {
+    "partly": 4,
+    "yes": 1
+   }
+  },
+  {
+   "design": "6-signature",
+   "mean_score": 1.8,
+   "scores": [
+    2,
+    2,
+    2,
+    1,
+    2
+   ],
+   "mean_rank": 5.4,
+   "picks": 0,
+   "acts": {
+    "bin": 2,
+    "keep": 3
+   },
+   "says_what_rm_does": {
+    "no": 4,
+    "partly": 1
+   }
+  }
+ ],
+ "findings_total": 51,
+ "by_cost": {
+  "costly": 20,
+  "held": 6,
+  "minor": 20,
+  "blocking": 5
+ },
+ "qr": "42 of 42 round-2 backs decode to https://web-summit.sgit.ai/meet/<id>/ (OpenCV, the designer's trim-size previews)"
+}

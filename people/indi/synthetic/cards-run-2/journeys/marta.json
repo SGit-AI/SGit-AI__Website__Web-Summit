@@ -1,0 +1,14 @@
+{
+ "persona": "marta",
+ "written": "2026-11-04, before run 2",
+ "card_of": "dinis",
+ "design_order": [
+  "4-boardroom",
+  "2-pass",
+  "3-record",
+  "5-terminal",
+  "1-seal",
+  "6-signature"
+ ],
+ "expected": "Picks 3-record: it names an audit and reach, authorised, gap, which maps to her controls; finds 5-terminal too techy."
+}

@@ -1,0 +1,14 @@
+{
+ "persona": "rafael",
+ "written": "2026-11-04, before run 2",
+ "card_of": "silvio",
+ "design_order": [
+  "6-signature",
+  "1-seal",
+  "2-pass",
+  "5-terminal",
+  "4-boardroom",
+  "3-record"
+ ],
+ "expected": "Picks 6-signature or 2-pass: the name big enough to print, and Web Summit and the day as a hook."
+}

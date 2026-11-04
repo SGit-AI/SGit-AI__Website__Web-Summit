@@ -1,0 +1,14 @@
+{
+ "persona": "kwame",
+ "written": "2026-11-04, before run 2",
+ "card_of": "jose",
+ "design_order": [
+  "6-signature",
+  "5-terminal",
+  "4-boardroom",
+  "2-pass",
+  "3-record",
+  "1-seal"
+ ],
+ "expected": "Picks 5-terminal or 2-pass: the engineering line and the stand day; finds 4-boardroom empty."
+}
