@@ -4,7 +4,7 @@ summary: The page Angelo reads first. The top is built for Angelo; the rest is k
 ---
 **Your first view is [the command centre](app/index.html)** (your answer, 3 November). This classic page is kept in the same order, as the text version and the fallback: what's pending for you, is everyone connected, the machine, the technical pool with Jose, and your agents. Kept by `dashboard@web-summit.angelo`; tell it what you want first and what you never read.
 
-**My questions for you (the app brief, below):** what "My tasks" means (picked by you and your agents, or naming you), who may see locations, which extra panes go in, and whether to take the map's freshness question to Dinis.
+**My question for you:** when your dev agent shows you slice 1, what do you want me to take off this classic page, now that the app is where you work?
 
 ## 1. What's pending for me {#needs}
 
@@ -16,17 +16,17 @@ In the order to do it (12:30 run, Wednesday 4 November).
 - **Still open on yesterday's agendas** ([13:00](../../meetings/2026-11-03-1300/index.html), [18:00](../../meetings/2026-11-03-1800/index.html)): WS-09 or WS-124, WS-125, WS-107, WS-126, WS-129, and your call on WS-96.
 - **From your mentor (11:41):** no question today ([people/angelo/mentor](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/angelo/mentor)).
 
-## My own app: the brief in progress {#wishlist}
+## My own app: the brief {#wishlist}
 
-Angelo is shaping, with this agent, a command centre of his own in `people/angelo/app/` (its own `data.mjs`, `app.js` and `app.css`, which the build uses in place of the shared ones), so nobody else's view or data changes; others take what they like. Agreed so far (4 November):
+Angelo's command centre of his own, in `people/angelo/app/`, so nobody else's view or data changes; others take what they like. The brief was agreed with Angelo on 4 November and handed to `dev@web-summit.angelo`, which keeps it as `people/angelo/app/BRIEF.md` with the code.
 
-- **A kanban of every task**, "My tasks" selected by default; filters and columns or swim-lanes by status, due date, picked-by and workstream. The target owner (`for`) is shown but never filtered on or changed.
-- **Moving a card is a message to the conductor**, which makes the change as usual; no new process. Each message carries the old value, so a conflict is asked about, not overwritten.
-- **Every message is sealed from the start**: to the recipient's public key, signed with Angelo's person key, through the recipient's append lane. When a key or a lane is missing, the app says which and how to get it.
-- **A collaboration board** of everyone, people and agents, with links, roles and work in progress, and messages to anyone from it.
-- **A map that follows what people declare**: a world map outside the venue, a Web Summit zones map inside, nothing when nobody shares. Each person chooses on the map, touch first: off, free text, a zone (picked or from GPS), or precise GPS, and changes it any time.
+- **A kanban of every task:** "My tasks" on by default, "Needs me now" as a filter, filters by picked-by, due, workstream, status and keyword, columns and swim-lanes by any of those, sort by any field. Moving a card is a sealed message to the conductor.
+- **Messages sealed from the start,** with their status as icons on the card (red on a possible conflict) and a Messages pane for all of them.
+- **A collaboration board** of people and agents, with schedules and the machine.
+- **Summit days:** the public schedule, then sealed summaries of people's own calendars.
+- **A map each person shares on their own terms,** with a time on every location; the presence agent central, proposed to be `team-collaboration@web-summit.angelo`, once the team agrees.
 
-Open: what "My tasks" means; how locations stay fresh when an append lane is read only on an agent's run (a question for Dinis); who may see locations; and whether the brief adds the panes "Needs me now", "Sent and inbox", "Summit days" and "The machine". The brief goes to `dev@web-summit.angelo` once Angelo has answered.
+Slices 0, 1, 2 and 5 can start now; sealed messages wait on the lane to your conductor that your vault agent is setting up.
 
 ## 2. Is everyone connected? {#connected}
 
