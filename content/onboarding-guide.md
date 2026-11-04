@@ -28,7 +28,7 @@ summary: Draft (WS-100): not final until the technical parts are added. The team
 
 **What to do:** log in to Claude (https://claude.ai) with the **same Workspace email** from step 1.
 
-**You're done when:** you are logged in to Claude (don't start a regular chat; you'll open Claude Code in step 3a).
+**You're done when:** you are logged in to Claude (don't start a regular chat; you'll open Claude Code in step 4).
 
 ## Step 3. GitHub (the step most people get stuck on)
 
@@ -43,7 +43,7 @@ summary: Draft (WS-100): not final until the technical parts are added. The team
 5. Dinis or Angelo invites you to the team's repository (`SGit-AI/SGit-AI__Website__Web-Summit`). The invitation arrives **in your Workspace email**: press **View invitation** in the email. On the page that opens, press the green **Accept invitation** button. (It is also under **Notifications**, the icon at the **top right** of github.com.)
 6. **[technical part to come]** How your agents use your account to save their work: what Claude asks for the first time, and what to answer.
 
-**Stop here until you've accepted the invitation.** Don't start step 3a before you have received **and accepted** the repository invitation: until then, the repository won't show up in Claude Code.
+**Stop here until you've accepted the invitation.** Don't start step 4 before you have received **and accepted** the repository invitation: until then, the repository won't show up in Claude Code.
 
 **You're done when:** you have accepted the invitation.
 
@@ -53,7 +53,7 @@ summary: Draft (WS-100): not final until the technical parts are added. The team
 - *I signed up with my personal email.* **[technical part to come]** what to do (add the Workspace email to the account, or start again).
 - **[technical part to come]** anything else that went wrong for people on 2 and 3 November.
 
-## Step 3a. Claude Code, the first time
+## Step 4. Claude Code, the first time
 
 **What it is:** your agents run in **Claude Code** on the web, at https://claude.ai/code. The first time you open it, you set up a place for them to work (a "cloud environment") and connect it to GitHub. You do this once.
 
@@ -80,39 +80,39 @@ summary: Draft (WS-100): not final until the technical parts are added. The team
      - `sgraph.ai`
      - `*.sgraph.ai`
    - **Save.** Domain changes work in the open session, so nothing needs restarting. The environment is now fully set up, before any agent starts.
-10. Then go on to step 4, and paste the conductor prompt into this session.
+10. Then go on to step 5, and paste the conductor prompt into this session.
 
 **You're done when:** a session is open on the repository, on the `dev` branch, and the six domains are saved, with no prompt pasted yet.
 
-## Step 4. Your conductor agent
+## Step 5. Your conductor agent
 
 **What it is:** your main agent, `conductor@web-summit.<your-id>`. It runs your other agents and keeps your records. From here on, it does the technical work and walks you through the rest.
 
-**What to do:** in the session you opened in step 3a, paste the prompt from your brief, at https://web-summit.sgit.ai/brief-<your-id>/ (the section "A prompt to start with"). Then answer its questions. Tell it: *"I've accepted the GitHub invitation."*
+**What to do:** in the session you opened in step 4, paste the prompt from your brief, at https://web-summit.sgit.ai/brief-<your-id>/ (the section "A prompt to start with"). Then answer its questions. Tell it: *"I've accepted the GitHub invitation."*
 
 **You're done when:** it tells you it has made its first commit. You are now at level 3.
 
-## Step 5. Your dashboard agent
+## Step 6. Your dashboard agent
 
 **What it is:** a second agent that keeps your dashboard, the page you read first each morning.
 
 **What to do:** open **another new session** and paste the dashboard prompt your conductor gives you (it is also on https://web-summit.sgit.ai/agents/).
 
-## Step 6. Agent keys
+## Step 7. Agent keys
 
 **What it is:** each agent makes its own key, a digital signature, so the team knows its work really comes from it.
 
-**What to do:** nothing by hand. Your agents do this themselves, using the websites you allowed in step 3a.
+**What to do:** nothing by hand. Your agents do this themselves, using the websites you allowed in step 4.
 
 **You're done when:** your agents tell you their keys are on the keys page.
 
-## Step 7. A schedule
+## Step 8. A schedule
 
 **What it is:** your agents wake up on their own at set times (for example before each stand-up), so you don't have to start them.
 
 **What to do:** say *"yes"* when your agent proposes times, or give it the times you want. It sets them up.
 
-## Step 8. The vaults
+## Step 9. The vaults
 
 **What it is:** encrypted storage for the team. Public vaults are for sharing; the private vault holds what must not be public (meetings, contacts).
 
