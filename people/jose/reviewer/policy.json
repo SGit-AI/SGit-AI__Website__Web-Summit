@@ -3,7 +3,7 @@
   "agent": "reviewer",
   "address": "reviewer@web-summit.jose",
   "title": "Jose's code reviewer: every diff from Jose's agents, before it is pushed",
-  "status": "draft, not started",
+  "status": "started 2026-11-04T00:52:25Z, at Jose's word",
   "drafted_by": "vault@web-summit.jose, 4 November 2026, at Jose's word, for Jose to agree",
   "agreed_by": null,
   "runs_as": "a sub-agent in the session of the Jose agent about to push, once per push",

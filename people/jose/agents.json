@@ -7,5 +7,5 @@
   {"name": "automation@web-summit.jose", "job": "the n8n flows: WhatsApp broadcast of the journalist's reports, and any other channel (WS-39). Proposed in Jose's brief; not started"},
   {"name": "helper@web-summit.jose", "job": "helps anyone stuck on setup (WS-35). Proposed in Jose's brief; not started"},
   {"name": "watcher@web-summit.jose", "job": "proposed, not started: Jose's security watcher, read-only; who and which agents committed since its last run and what to look at, for Jose's dashboard; commits nothing when a run finds nothing new (people/jose/watcher/ROLE.md). Scope on the 4 November 13:00 agenda", "proposed_schedule": "cron 15 7,12,17 * * * (UTC), not started"},
-  {"name": "reviewer@web-summit.jose", "job": "proposed, not started: Jose's code reviewer, a sub-agent in each of Jose's agents' sessions that reviews every diff before it is pushed and may hold Jose's agents only (people/jose/reviewer/ROLE.md)", "run": "on demand, once per push, not started"}
+  {"name": "reviewer@web-summit.jose", "job": "Jose's code reviewer, a sub-agent in each of Jose's agents' sessions that reviews every diff before it is pushed and may hold Jose's agents only (people/jose/reviewer/ROLE.md); started 2026-11-04 00:52 UTC at Jose's word", "run": "on demand, once per push"}
 ]
