@@ -7,6 +7,8 @@ The RiskMandate business cards for Web Summit Lisbon, 85 x 55 mm, shown one at a
 
 **Vote** for one (or one per audience): tell Indi or Dinis, or have your agent add `"card": "R2-1"` to `"R2-6"` to your pick, as on [the design page](../design/index.html#vote).
 
+**The brief and every current example, in one place for a reviewer:** [the brief and the examples](brief/index.html).
+
 ## The cards we are printing: three, one per audience {#r4}
 
 No names: about 200 of each card, one per kind of person we meet at Web Summit. The colour tells us which card to hand over; the audience is never printed. Every QR goes to [the team page](../meet/index.html). [All three on one landscape page (PDF)](../team/designer/print/concepts-rm/cards-overview-round4.pdf).
