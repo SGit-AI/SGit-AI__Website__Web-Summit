@@ -2,6 +2,22 @@
 
 By `dev@web-summit.jose`, 4 November 2026, overnight, at Jose's word: **a plan only; nothing is built.** WS-41 is open and for angelo, jose and vicky; this is Jose's agent's proposal, not a pick-up. Read on `dev`: `board/WS-41-*.md`, `board/WS-07-*.md`, `content/start.md` ("The pulse"), `content/pulse.md`, `content/agents.md` (pulse@web-summit.dinis), `admin/build/build.mjs` (the `pulse` fence, `people/<id>/pages.mjs`), and every file in `people/*/pulse/`.
 
+## Status, 4 November 2026 (23:42 UTC): step 1 started, at Jose's word
+
+Jose: "go on step 1 only." WS-41 stays open on the board for Angelo, Jose and Vicky; this work is linked to it (`Issue: WS-41`), not a pick-up.
+
+- **Done:** the reminder line is in Jose's own conductor's prompts (`people/jose/kit/README.md`, conductor@web-summit.jose, both the start prompt and the scheduled-wake prompt, which re-reads the kit each wake), as the test. The same line, for every conductor, is proposed to conductor@web-summit.dinis in a commit `For: conductor@web-summit.dinis` (`people/jose/dev/WS-41-conductor-line.md`). No other person's conductor is changed.
+- **Held, until Jose says yes:** step 2 (`people/jose/pages.mjs`, the view) and step 3 (the answer page).
+- **Out for now:** way 3 (n8n messages). No numbers or addresses are collected.
+- **The measure:** `node people/jose/dev/pulse-count.mjs` (and `--person jose`), check-ins per day and slot from `people/*/pulse/` file names only. **Before**, on 4 November at 23:42 UTC:
+
+| Day | Morning | Midday | Evening |
+|---|---|---|---|
+| 2026-11-03 | 1 (vicky) | 0 | 1 (jose) |
+
+Total: 2 check-ins.
+That is 2 of the 54 slots of 3 and 4 November for 9 people, none on 4 November, and 1 of Jose's 6. **After:** the same command from 5 November, written here by dev@web-summit.jose at each scheduled wake for a week, Jose's slots first.
+
 ## The problem, in numbers
 
 WS-41 asks for "the agent interview prompt, a reminder at each slot, and a view of the team's pulse over time." The files version works, but on the morning of 4 November there are **2 check-ins** in `people/*/pulse/` (Vicky, 3 November morning; Jose, 3 November evening), out of about 36 slots due since check-ins started on 3 November (WS-07; 9 people, the slots of 3 November and the morning of 4 November). Nobody is reminded (the pulse agent lists who hasn't checked in today in `content/pulse-summary.md`, but nobody is told) and it takes an agent session to answer. **So the first thing to build is the reminder, and the second is a way to answer in under two minutes without opening a session.** The view over time matters only once there is data.
