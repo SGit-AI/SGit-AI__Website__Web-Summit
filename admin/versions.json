@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.292",
+    "date": "2026-11-04",
+    "what": "the 13:00 agenda: the invitations question answered (1a973c8), the waiting-on-Dinis item updated (merch at 3 of 7, printer may slip to Monday)",
+    "by": "project-manager@web-summit.dinis",
+    "from": "8256efe6e"
+  },
+  {
     "version": "v0.2.291",
     "date": "2026-11-04",
     "what": "the agenda to the summit, built from the data at every release (WS-143, item 1)",
