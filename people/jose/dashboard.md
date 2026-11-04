@@ -2,68 +2,70 @@
 title: Jose's dashboard
 summary: The page Jose reads first. The top is built for Jose; the rest, from the builder template, is kept by Jose's dashboard agent (dashboard@web-summit.jose) and answers what needs Jose, what happened, and what Jose and Jose's agents are doing.
 ---
-Kept by `dashboard@web-summit.jose` from [the builder template](../../dashboards/index.html#builder): what needs you, what is broken or being built, and whether the machine is healthy. Tell your dashboard agent what you want first and what you never read; it changes this part every run.
+**Updated Wed 4 Nov, 23:30 UTC by `dashboard@web-summit.jose`; next update Thu 07:30 UTC.** Built for action, at your word (4 November): what needs you as a list to work down, your lanes, and your agents only when something is wrong. [Your command centre](app/index.html) is becoming your first view (below).
 
-**Asked on 3 November, not answered yet:** *what do you want to see first when you open this page, and what do you never read?* Until you answer, the order is: what needs you, your issues, the technical board, the machine. You also have [a command centre](app/index.html), the same things as an app; say if you want it as your first view.
+## Needs me {#needs}
 
-## What needs me {#needs}
+Soonest first. Each line is one action; done ones drop off at the next update. From your conductor's [brief 7](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04T1725Z.pdf) and the board.
 
-You are at L6, fully wired. Your conductor's latest is [brief 7](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04T1725Z.pdf) (17:25), with options and a recommendation for each:
+| Do | What | Due | Takes | Who waits |
+|---|---|---|---|---|
+| **Do** | **Add your site key** (WS-136): open the file your conductor sent at 02:08, press "Paste my key" ([how](../../agents/index.html#person-key)), check "Unlocked", send one Feedback message | **Overdue:** Wed 18:00 | 2 min | Dinis; WS-120's lanes with Angelo |
+| **Say** | **At the 13:00 stand-up:** your watcher's scope (WS-134) and whether a dev agent may change shared site code through a picked issue (WS-34); no decision recorded on Wednesday ([the stand-ups](../../meetings/index.html)) | Thu 13:00 (14:30 if WS-96 moves it) | 1 min | Dinis, Angelo |
+| **Approve** | **The observability data vault's key to Dinis's conductor** (WS-154): yes or no, or only its read key | Thu 5 Nov | 1 min | conductor@web-summit.dinis |
+| **Approve** | **Three yes or no to your conductor:** drop its 7 test page views; close WS-139 (newsroom.sgit.ai reached); the split with Angelo ([the morning list](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04-morning.md)) | No deadline given | 5 min | conductor@web-summit.jose, Angelo |
+| **Do** | **WS-39, route 3:** import the n8n workflow your dev agent built and fill in the credential, your number and the phone number id yourself ([what to fill in](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/WS-39-findings.md)) | Overdue: Wed 4 Nov | 10 min | dev@web-summit.jose |
 
-- **Say at 18:00:** your watcher's scope (WS-134) and whether a dev agent may change shared site code through a picked issue (WS-34). Neither was reached at 13:00.
-- **Do, by 18:00: your site key (WS-136):** open the file your conductor sent at 02:08 and press "Paste my key" ([how](../../agents/index.html#person-key)); your For-you panel should say "Unlocked". Then send one message from the Feedback pane. Your mentor (15:41) asks the same: it opens WS-120's lanes with Angelo.
-- **Approve: drop your conductor's 7 test page views** from the data vault, so "Jose read X" only ever means you did.
-- **Still open from brief 6:** your watcher has not committed since 01:11, so check its scheduled task (cron 15 7,12,17 * * *) in its session; and WS-139 (newsroom.sgit.ai, reached by two of your agents) is still open, waiting for your word to close it. The split with Angelo also still waits for your word ([the morning list](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04-morning.md)).
+**Settled since you last looked:** your watcher has its schedule (since 23:10 UTC, 07:15, 12:15 and 17:15) and reported the day ([its latest](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/latest.md)); the site's page views are live (WS-37).
 
-**What happened:** the site's page views are live (WS-37): every page sends its view, sealed, to the append lanes of your data vault (not with Do Not Track, Global Privacy Control or Pause on); the other vault holds the app's code. Your conductor drains the lanes on an hourly scheduled task, the first at 18:07. How it works: [people/jose/observability](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/observability/README.md).
+## My lanes {#lanes}
 
-- **WS-39, route 3 is built:** your dev agent made an n8n workflow you can import, inactive until you fill in the number and credential yourself; what to fill in is at the top of [WS-39-findings.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/WS-39-findings.md).
-- **Turn on Ask Claude in [your command centre](app/index.html#ask)** (Jose, 4 November: yes, as Dinis has it). Three steps:
-  1. **Your conductor** creates `people/jose/app/config.json` (you have none yet) with an `llm` block copied from Dinis's (OpenRouter, Sonnet 5.5 by default), and releases.
-  2. **You** make a key just for this page at openrouter.ai/settings/keys, **with a small credit limit**.
-  3. **You** paste it only into the command centre's own form ("Save on this device"): it stays in that browser and goes only to openrouter.ai. Never into a chat, a commit or a message, and not on a shared machine; Settings removes it.
+What you lead, in your words (4 November): *"technical conversations on agent security with the companies; the live demos (show an agent being attacked, then show it governed); and the voice and language agents lane."* Not yours: the big-name relationships and insurance deals.
 
-  Until WS-117 moves the key to an origin of its own, any script on this site could read it (WS-132), so keep the limit small and disable the key if in doubt.
+| Lane | Issues | Carried by | With |
+|---|---|---|---|
+| **Agent security conversations** | WS-15 (the message), WS-26 (the targets, Thursday and Friday) | you | Nimay, Indi, Dinis, Silvio |
+| **The live demos: attacked, then governed** | WS-18, WS-108 (your two apps, picked), WS-109 | you, conductor@web-summit.jose | Dinis, Nimay, Angelo |
+| **Voice and language agents** | WS-61 (the voice memo loop, Sat 7 Nov) | nobody yet | anyone |
+| **Automation and the machine** (your agents carry it for you) | WS-39, WS-74 (both picked), WS-37 (page views), WS-134, WS-154 | dev@, conductor@, watcher@web-summit.jose | Angelo, Dinis |
 
-Messages for you: commits with `For: jose` in [the log on dev](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commits/dev); every brief is in [people/jose/briefs](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/jose/briefs).
+Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault@web-summit.jose`.
 
-```onboarding jose
+```vault-app jose 3b9y9n9t
 ```
 
-## What I lead, and what I don't {#lead}
+## My agents: only what is wrong {#agents}
 
-In your words (4 November): *"I'll lead: technical conversations on agent security with the companies; the live demos (show an agent being attacked, then show it governed); and the voice and language agents lane. I'm not doing: relationships with the big-name companies, insurance deals."*
+On schedule: conductor, dashboard and dev; the watcher's first scheduled run is Thu 07:15 UTC. The reviewer runs on every push. Needing a look:
 
-- **Agent security conversations with the companies:** the targets come Thursday (WS-26); the message to open with is WS-15.
-- **The live demos, attacked then governed:** WS-18 (the demos we run at the summit), WS-108 (your two apps as the stand demos) and WS-109 ("the grant, not the prompt" as the one demo).
-- **Voice and language agents:** WS-61 (the voice memo to follow-up loop) is the nearest issue on [the board](../../briefs/index.html#issues).
-- **Not yours:** the big-name relationships and insurance deals; items about them stay off this page unless they need you.
+- **Your watcher's flags** ([its latest](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/latest.md)): three pushes without the reviewer's line (one of them mine, from Wednesday morning), one change to build code (45e4b6e) not yet reviewed by security, and three writes outside an agent's folder, each with its record.
+
+- **vault@web-summit.jose:** no schedule; last commit Wed 01:31 UTC. Fine if it runs on demand; say if it should wake on its own.
+- **automation@ and helper@web-summit.jose:** ready in [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/kit/README.md), not started; start them when you choose (WS-39, WS-35).
+- **observability@web-summit.jose:** named on WS-37 and WS-154, not started.
+
+The full list with jobs and schedules: [agents.json](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/agents.json). The prompts: [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/kit/README.md).
+
+## Your command centre first: in progress {#cc}
+
+Your app at [app/](app/index.html) is the interactive view: filters, Today and This week, Kanban, and Ask Claude. Making it your first view, with your designer's pick ([A's layout with B's three counts, Overdue, Quiet and Decide, and run-history ticks per agent](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/design/README.md)), needs your conductor:
+
+1. **Your conductor** creates `people/jose/app/config.json` (you have none yet) with your decisions list, your lanes as workstreams, and the `llm` block copied from Dinis's, which turns on Ask Claude.
+2. **The improvements to the shared engine** (your designer's [proposal](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/design/proposal-shared-cc.md)) go to its owner as a board issue, so nobody else's app changes without them.
+3. **Ask Claude, your part:** a key just for this page at openrouter.ai/settings/keys **with a small credit limit**, pasted only into the command centre's own form ("Save on this device"); never into a chat, a commit or a message, and not on a shared machine. Until WS-117 moves the key to an origin of its own, any script on this site could read it (WS-132), so keep the limit small.
+
+Then this page becomes the short text version.
 
 ## My issues {#issues}
+
+The pool you share with Angelo: [the technical board](../../briefs/index.html#issues) (area tech).
 
 ```issues jose
 ```
 
-## The technical board {#tech}
-
-Shared with Angelo: one pool, you two choose who takes what.
-
-```issues area:tech
-```
-
 ## The machine {#machine}
 
-[The agents at work](../../wakes/index.html) · [the ABPs](../../abp/index.html) · [everything on the team](../../team/everything/index.html) · [the setup leaderboard](../../team/setup/index.html) · [the CI runs](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/actions)
+[The agents at work](../../wakes/index.html) · [the ABPs](../../abp/index.html) · [everything on the team](../../team/everything/index.html) · [the setup leaderboard](../../team/setup/index.html) · [the CI runs](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/actions) · every brief: [people/jose/briefs](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/jose/briefs) · messages for you: commits with `For: jose` in [the log on dev](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commits/dev)
 
-## My agents {#agents}
-
-The list with jobs and schedules is [agents.json](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/agents.json), kept by your conductor; the prompts are in [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/kit/README.md). What they did is in "My agents, as the team sees them" at the top.
-
-- **conductor@web-summit.jose**: runs your other agents, keeps `people/jose/` with you, and writes your numbered briefs.
-- **dashboard@web-summit.jose**: keeps this part of the page, before each stand-up.
-- **dev@web-summit.jose**: WS-39 (the broadcast drafts for your n8n flow) and WS-74; its work and findings are in [people/jose/dev](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/README.md).
-- **designer@web-summit.jose**: on demand; its work is in [people/jose/design](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/design/README.md).
-- **vault@web-summit.jose**: creates and manages your SGit vaults (WS-120); your first, the "Reach, Mandate, Gap" vault app, is on [the vaults page](../../vaults/index.html).
-- **reviewer@web-summit.jose**: reviews every push by your agents before it goes out, and may hold them ([its role](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/reviewer/ROLE.md)); started 4 November at your word.
-- **watcher@web-summit.jose**: read-only, reports who committed and what to look at; its scope is your 18:00 decision.
-- Still only proposed in your brief: `automation@web-summit.jose` (dev is doing WS-39 for now) and `helper@web-summit.jose` (WS-35).
+```onboarding jose
+```
