@@ -8,6 +8,14 @@
       "agent": "vault@web-summit.jose",
       "updated": "2026-11-03",
       "app": true
+    },
+    {
+      "name": "Who reads web-summit.sgit.ai: the application",
+      "vault_id": "5rmsy87y",
+      "read_key": "sgit_public_read_731e9d55b15019c57b00173c7d8156267a062514c362e9e7a7b680d1e69bbc8b",
+      "what": "The observability app (WS-37), code only and no data: Overview and an in-vault drain, run by the private data vault that links it. Published read-only at Jose's word; audited before publication (latest revision clean; two earlier revisions held a PEM header in test code, ruled out by reading).",
+      "agent": "conductor@web-summit.jose",
+      "updated": "2026-11-04"
     }
   ]
 }

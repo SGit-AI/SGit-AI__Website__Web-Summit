@@ -1,0 +1,25 @@
+{
+  "about": "The team site's page views (WS-37, built by conductor@web-summit.jose at Jose Bota's word, 4 November 2026, from /observability-pack/). Public on purpose: each append token can only write to its lane, and the key can only encrypt. Events are sealed in the browser to the drain key, so the vault host sees ciphertext only.",
+  "enabled": true,
+  "endpoint": "https://dev.send.sgraph.ai",
+  "vault_id": "1ssnjy23",
+  "lanes": [
+    "72db5dc9bcf21eea80094799d5b8f13b4630bdfed02a0f798e355dc546ac4f64",
+    "6d86f3eea62a80ace4761bae6e29af99056d4dd8c32b559dcd19b531ba9f0f1a",
+    "d9be288c3585fae3ea8652b5ceec9cc2c7d02075ac7af9aaa1f63245f9e8079a",
+    "ac7af512e7c79250b683e46ca5c622942c7970e3162c9ad592efbc8bd8678776",
+    "6ba1ff42e4f375b479c28744e25c7ea58cd81ecfb9405b20334d470899f448e5"
+  ],
+  "recipient": {
+    "fingerprint": "sha256:56944b84f62202cb",
+    "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArcYLVVWQeMasvwyBrggR\nEQxmHg4s7HVshzNp1QZZZ/LlJOPILcJW5dXT9Hj4U+RSoiofPHsqrNb8vm1m1dIK\nfL4V9OLb+vEPkh5m6P2zVbh52E24Ue45gF3eJNz3vpnD9ULi2WtdxTaGbp78drpb\n1TVYrOMe/bp0XY1qnj8HFotCbEyCB5jMKgA2/fvmEMAE2/VuJwS14J31e+vypoRb\np6xAIsibmNdEgA9/YurotBnK5UvlSaaC39l0aVLz6NnVZG+yhgBJd2BF8K4aM1lK\nbOH26wsTPlS/FI1a+hjh4w4OYGNUlq2q1BS9EvK5LKH97Vo6OeCilolrCY4r88Jq\n489r03LHiN19Wl6PlrZjnsJBhBPgVqn9E0u6L0KgNpRikgB9KcwxjQEzk6HUH+I4\n+WBwLbXA8BqdCO113HEe/ZGMkjMs2smX3wkLCE/mOhCLW0qzYBUjNBRtr8F4jWE2\nUhaUX7yxxKEoyMGoSYtZj038xt4Fcrj8Thqje/IrxHxyTTig4ggGBLSCKIDfpeAs\nQSY7hn/MZVPXs3asTUS0QxSnAM3pdpls27y3ZFrcN3Z4Aw1n8Twpv5zbofykMUOl\nIi/wppH6j9oE4MkozsM+Z55+28GFLkc1UPK5ytvNGCLhKQpyKGoIz4USRxwwRFip\nRLQ/o+tZil2eh4waz4hzz7UCAwEAAQ==\n-----END PUBLIC KEY-----\n"
+  },
+  "what": "This site counts page views to learn what the team and its agents read. Each event says: the page, the referring site (host only), the time to the minute, the site version, a random id that ends with the tab, the screen size class, the browser's language and time zone, and an automation class if a bot declares itself. No IP address, no cookie, no user-agent string. Do Not Track and Global Privacy Control turn it off, and so does Pause in the footer. A team member whose browser holds their site key is named, so the team can see who has read what.",
+  "policy": [
+    "no IP address, cookie or user-agent string is collected; the language and time zone are",
+    "one event per page per tab; the id dies with the tab",
+    "Do Not Track and Global Privacy Control send nothing",
+    "team members with a site key are named in the event, signed by their key; everyone else is anonymous",
+    "sealed in the browser; the private drain vault holds the rows"
+  ]
+}
