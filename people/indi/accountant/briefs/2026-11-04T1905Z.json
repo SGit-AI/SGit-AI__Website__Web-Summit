@@ -1,0 +1,139 @@
+{
+ "number": 1,
+ "date": "2026-11-04",
+ "kicker": "Web Summit 2026 · token accountant",
+ "title": "Brief 1: one agent measured, four asked",
+ "when": "4 November 2026, 19:05 UTC (first brief; window: all ledger lines to date)",
+ "by": "accountant@web-summit.indi",
+ "headline": "One wake measured today, 1,305,293 fresh tokens, and the biggest saving lies in synthetic's long session: 21.7 million cache reads, 53 for every fresh token.",
+ "stats": [
+  {
+   "n": "1,305,293",
+   "label": "tokens today (fresh input + output + cache writes, session and sub-agents)"
+  },
+  {
+   "n": "27,632,903",
+   "label": "cache reads today"
+  },
+  {
+   "n": "1 of 5",
+   "label": "agents measured of agents running or ran today"
+  },
+  {
+   "n": "not yet",
+   "label": "saving per day: proposals below, measured after Indi's yes"
+  }
+ ],
+ "for_you": [
+  {
+   "id": "A1",
+   "ask": "Add the measure step to the scheduled-task prompts of conductor, dev and dashboard @indi?",
+   "detail": "Old: '... do one run, release it, and report in five lines.' New: '... do one run, release it, run node people/indi/accountant/measure.mjs --agent <name> --task \"<one line>\" --since <wake start> --quality pass|fail|n/a --append and commit the line, and report in five lines.'",
+   "options": [
+    "Yes, the conductor applies it to all three",
+    "Yes, Indi edits the tasks herself",
+    "No"
+   ],
+   "recommend": "Yes, the conductor applies it to all three"
+  },
+  {
+   "id": "A2",
+   "ask": "Synthetic users run 3 (WS-142): test persona sub-agents on Sonnet 5.5 and Haiku 5.5 before the run?",
+   "detail": "Runs 1 and 2: 12 Opus 5.5 sub-agents, 897,184 fresh tokens, 5,958,060 cache reads. One persona per model in a scratch folder, scored blind. Under 200,000 tokens.",
+   "options": [
+    "Yes, test before run 3",
+    "No, keep Opus 5.5"
+   ],
+   "recommend": "Yes, test before run 3"
+  },
+  {
+   "id": "A3",
+   "ask": "Long sessions: one fresh session per wake for the conductor?",
+   "detail": "Its task fires into one standing session, so cache reads grow each wake. A fresh session per wake resets that, but needs a new key each time.",
+   "options": [
+    "Measure three wakes, then decide",
+    "Switch now",
+    "Keep one session"
+   ],
+   "recommend": "Measure three wakes, then decide"
+  }
+ ],
+ "you_asked": [
+  {
+   "at": "4 November 2026 (Dinis, to Indi)",
+   "said": "an accountant agent that asks the other agents to measure their token usage, and a brief to Indi and Dinis at 17:30 UTC every day",
+   "done": "Key, roster, four asks, this brief.",
+   "where": "people/indi/accountant/",
+   "status": "in progress"
+  }
+ ],
+ "sections": [
+  {
+   "title": "1. Ledger",
+   "table": {
+    "head": [
+     "Agent",
+     "Wakes",
+     "Fresh input",
+     "Output",
+     "Cache write",
+     "Cache read",
+     "Sub-agent tokens",
+     "Per wake (trend)",
+     "Pass rate"
+    ],
+    "rows": [
+     [
+      "synthetic@indi",
+      "1",
+      "263",
+      "74,232",
+      "333,614",
+      "21,674,843",
+      "897,184 fresh; 5,958,060 cache read",
+      "1,305,293 (no trend yet)",
+      "1/1"
+     ],
+     [
+      "conductor, dev, dashboard, designer",
+      "0",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "2. Biggest three savings",
+   "items": [
+    "Long session. Synthetic: 125 calls, 21,674,843 cache reads, 173,399 per call. Proposal A3. Saving: measured on run 3.",
+    "Model fit. 111 persona calls, all Opus 5.5. Proposal A2: test smaller models first.",
+    "Sub-agent briefs. 12 sub-agents, 69,357 cache writes each. Proposal: a short persona brief, fixed output (persona, verdict, three reasons)."
+   ]
+  },
+  {
+   "title": "3. Model tests run",
+   "text": "None yet. First: the persona run (A2)."
+  },
+  {
+   "title": "4. Agents not yet measuring",
+   "text": "Asked once each (asks.md): conductor 182b061, dev 933d826, dashboard 7826444, designer f7ca61d."
+  },
+  {
+   "title": "5. Data notes and 6. My own use",
+   "text": "One line, 15:58 UTC, synthetic's whole session (since: null). No estimates. My own line: brief 2."
+  }
+ ],
+ "next": [
+  "5 November, 17:30 UTC: brief 2. On a yes to A2: the persona model test."
+ ],
+ "sources": [
+  "people/indi/accountant/ledger/ (the synthetic file)",
+  "people/indi/accountant/asks.md"
+ ]
+}
