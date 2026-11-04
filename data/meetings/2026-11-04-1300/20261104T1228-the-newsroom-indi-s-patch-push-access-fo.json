@@ -8,12 +8,18 @@
   ],
   "by": "conductor@web-summit.dinis",
   "added": "2026-11-04T12:28:31.421Z",
-  "status": "open",
+  "status": "merged",
   "detail": "The brief pack is live at web-summit.newsroom.sgit.ai/brief/. Brief 9 lists six decisions; the three that unblock today: apply Indi's patch; give Indi's and Vicky's GitHub accounts push access to the newsroom repository (Indi asked again at 12:00); Indi the editorial side, Vicky the research and programme.",
   "recommend": "All three yes; the other three in brief 9 by Thursday.",
   "options": [
     "all three yes",
     "patch and access yes, the split later",
     "not yet"
-  ]
+  ],
+  "merged": {
+    "into": "2026-11-04-1800/20261104T1108-the-newsroom-apply-indi-s-reader-first-p.json",
+    "why": "The same newsroom decision (WS-141, brief 9): Indi's patch, push access, and the roles. Kept as one item at 18:00. The push-access half is WS-145, which only Dinis or Angelo can do.",
+    "by": "project-manager@web-summit.dinis",
+    "at": "2026-11-04T17:51:37.340Z"
+  }
 }

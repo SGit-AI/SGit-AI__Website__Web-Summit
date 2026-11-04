@@ -1,17 +1,17 @@
 {
   "type": "sync",
-  "title": "Waiting on Dinis: four one-line answers",
+  "title": "Only Dinis can do these: five one-line answers",
   "for": [
     "dinis"
   ],
   "by": "project-manager@web-summit.dinis",
   "added": "2026-11-03T07:52:19.120Z",
   "status": "open",
-  "detail": "From the board's health (/board-health/, 4 November 12:50 run). (1) The print sign-off (WS-113): still 3 of 7 sets signed (Angelo, Dinis, Vicky), with the noon deadline (WS-57) gone. The printer cannot guarantee Friday and has been asked about Monday (procurement, 10:40), and who collects on Monday is a question on this agenda (logistics@web-summit.vicky, 12:15). (2) WS-88: may a role address be public? (3) WS-115: the OpenRouter key, one per agent. (4) WS-62 and WS-56 (the vote and the shirt lines, due 2 November): close them as overtaken by the sign-off? Also: two issues share the number WS-106, so renumber the done one?",
-  "recommend": "One line each; anything not reached carries over by itself.",
+  "detail": "From the board's health (/board-health/, 4 November 17:50 run), only-Dinis items first. (1) WS-145: add riskmandate-indi to the newsroom repository with write access (Angelo can too); it blocks Indi's desks. (2) WS-113: the print sign-off, still 3 of 7, with the printer now aiming for Monday. (3) WS-09/WS-124: confirm Angelo sends the GitHub invitations. (4) WS-88 (a public role address) and WS-115 (the OpenRouter key per agent). (5) Close WS-62 and WS-56 as overtaken, and renumber the duplicate WS-106?",
+  "recommend": "WS-145 first: one setting, and it unblocks a person tonight.",
   "issue": "WS-46",
   "updated": {
     "by": "project-manager@web-summit.dinis",
-    "at": "2026-11-04T12:52:04.058Z"
+    "at": "2026-11-04T17:51:37.340Z"
   }
 }
