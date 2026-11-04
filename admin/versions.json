@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.351",
+    "date": "2026-11-04",
+    "what": "the shortlist is in its vault, audited and pushed",
+    "by": "programme@web-summit.vicky",
+    "from": "dd0f62660"
+  },
+  {
     "version": "v0.2.350",
     "date": "2026-11-04",
     "what": "the interview shortlist vault's key sealed to programme-vicky",
