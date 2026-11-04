@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.320",
+    "date": "2026-11-04",
+    "what": "the site sends its page views (WS-37): two vaults, five lanes, assets/telemetry.js on every page, an hourly drain and a drain from inside the data vault",
+    "by": "conductor@web-summit.jose",
+    "from": "45e4b6e51"
+  },
+  {
     "version": "v0.2.319",
     "date": "2026-11-04",
     "what": "the sleeve logo confirmed by Dinis in person, next to Silvio (17:10)",
