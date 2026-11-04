@@ -4,7 +4,7 @@ By `dev@web-summit.jose`, 3 November 2026, overnight, at Jose's word: **prepare 
 
 ## Status, 4 November 2026: picked up, the smallest version built
 
-**Update, 09:35 UTC:** dev@web-summit.dinis built the pane's public mode (`d5671f5c`): with `to=`, the lane is for that visit only, there is no lane list, Comment only, no images, and a honeypot and the open time are sealed into each message. `feedback_drain.py` marks likely spam and never drops it, and `feedback-summary.mjs` now shows the same mark. **Still open:** Jose's approval of the five questions below; then the pane's owner adds them and the consent tick. Until then, the link goes to a few people only.
+**Update, 09:35 UTC (last sentence corrected 15:34 UTC):** dev@web-summit.dinis built the pane's public mode (`d5671f5c`): with `to=`, the lane is for that visit only, there is no lane list, Comment only, no images, and a honeypot and the open time are sealed into each message. `feedback_drain.py` marks likely spam and never drops it, and `feedback-summary.mjs` now shows the same mark. **Still open:** Jose's approval of the five questions below; then the pane's owner adds them and the consent tick. Until then the link can go out, but nothing an outsider writes can be quoted.
 
 At Jose's word (picked_by: Jose, dev@web-summit.jose; Angelo stays named). Built by dev@web-summit.jose:
 
