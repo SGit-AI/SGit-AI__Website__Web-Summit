@@ -107,28 +107,33 @@
   "agents": {
     "conductor": {
       "colour": "conductor",
-      "job": "Runs Angelo's other agents, keeps people/angelo/, adds Angelo's stand-up items and writes his numbered briefs",
-      "schedule": "07:20, 12:20, 17:20 UTC (kit)"
+      "job": "The hub: sends Angelo's agents work and takes their reports in commits, keeps people/angelo/, and brings Angelo what only he can decide",
+      "schedule": "hourly, round the clock (cron 20 * * * *)"
     },
     "dev": {
       "colour": "dev",
-      "job": "The site's build, gate, pipeline and pages; the machine and the technical pool",
-      "schedule": "09:30, 15:30 UTC (kit)"
+      "job": "Angelo's own command centre (people/angelo/app/BRIEF.md) and drafts for the technical pool",
+      "schedule": "every two hours, round the clock (cron 35 */2 * * *)"
     },
     "team-collaboration": {
       "colour": "conductor",
       "job": "The stand-up calendar, a brief, debrief and follow-ups for every meeting (WS-96), and the daily bottleneck note (WS-97)",
-      "schedule": "07:40, 12:40, 17:40 UTC (cron 40 7,12,17 * * *); debriefs 14:15, 19:15 UTC (cron 15 14,19 * * *); inbox 00:45, 03:45, 06:45, 09:45, 15:45, 21:45 UTC (cron 45 0,3,6,9,15,21 * * *)"
+      "schedule": "07:40, 12:40, 17:40 UTC; debriefs 14:15, 19:15; inbox 00:45, 03:45, 06:45, 09:45, 15:45, 21:45"
     },
     "dashboard": {
       "colour": "conductor",
-      "job": "Keeps Angelo's command centre (his first view) and the classic dashboard, and asks Angelo one question a run",
-      "schedule": "07:30, 12:30, 17:30 UTC (scheduled task, from 3 Nov)"
+      "job": "Keeps Angelo's command centre and the classic dashboard, for his conductor under the protocol",
+      "schedule": "every three hours, round the clock (cron 30 */3 * * *)"
     },
     "vault": {
       "colour": "slate",
       "job": "Creates and manages Angelo's SGit vaults, audits each before its read key is published, and corrects the vault guide from its runs (WS-120)",
-      "schedule": "proposed: 09:50, 15:50 UTC (at Angelo's word)"
+      "schedule": "09:50, 21:50 UTC (cron 50 9,21 * * *)"
+    },
+    "helper": {
+      "colour": "slate",
+      "job": "Answers setup questions from anyone on the team and keeps the help page (/help/)",
+      "schedule": "every two hours, round the clock (proposed)"
     }
   },
   "decisions": [],

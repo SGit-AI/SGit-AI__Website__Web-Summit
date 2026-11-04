@@ -8,13 +8,14 @@ summary: The page Angelo reads first. The top is built for Angelo; the rest is k
 
 ## 1. What's pending for me {#needs}
 
-In the order to do it (17:30 run, Wednesday 4 November). Your app now has this as a filter: [Kanban, Needs me now](app/index.html#kanban).
+In the order to do it (18:30 run, Wednesday 4 November). Your app has this as a filter: [Kanban, Needs me now](app/index.html#kanban). Your conductor's digest (about 08:00, 13:00 and 18:00 UTC) carries the questions only you can answer.
 
-- **The 18:00 stand-up** ([agenda](../../meetings/2026-11-04-1800/index.html)): today's 13:00 moved to 14:30, and its two items for you carry over: may `dev@web-summit.angelo` change shared site code through a board issue it has picked (WS-34), and may Vicky's agents have an inbox in the Feedback pane (WS-64). Dinis's conductor opens the 18:00 deck with open points (urgent, late, logistics), at your signed ask.
-- **WS-136 closes at 18:00:** your signed messages have reached Dinis's conductor and Jose's page views, so the step looks done; the issue is still open on the board for the conductors to close.
-- **Overdue and due today:** in [My issues](#issues) and the app's Needs me now: WS-105 (protect main), WS-33, WS-98, WS-129, your part of WS-120 and the technical pool.
-- **Still open on yesterday's agendas** ([13:00](../../meetings/2026-11-03-1300/index.html), [18:00](../../meetings/2026-11-03-1800/index.html)): WS-09 or WS-124, WS-125, WS-107, WS-126, WS-129, and your call on WS-96.
-- **Your conductor's proposal for your profiles** (meet pages, team profiles, LinkedIn): [people/angelo/profiles-proposal.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/profiles-proposal.md).
+- **Waiting on your go (tier 3), in your conductor's digest:** the lane to your conductor (it unblocks the app's sealed messages, slice 3, and your vault agent's next step), the signature rule for your conductor, and the presence agent proposed for team-collaboration (everyone's locations).
+- **The 18:00 stand-up** ([agenda](../../meetings/2026-11-04-1800/index.html)): WS-34 (may your dev agent change shared site code) and WS-64 (Vicky's inbox) carried from the moved 13:00; team-collaboration debriefs it at 19:15.
+- **Overdue and due today:** in [My issues](#issues) and the app's Needs me now: WS-105 (protect main), WS-33, WS-98, WS-129 and your part of WS-120.
+- **Settled today:** WS-124 (you send the GitHub invitations, from the-neuronin; WS-100, the long form, is done with Vicky) and WS-136 (your key and signed messages).
+
+**What your agents are on (from your conductor, by priority before Lisbon):** dev: summit days in your app (slice 7), then drafts for WS-64 (booking and "talk to my agent" on the meet pages) and WS-84 (offline pages at the summit); team-collaboration: the stand-up show (WS-150), debriefs and the daily note; helper: the help page (/help/, linked here once it is on the site); vault: waiting on the lane. Jose's agents keep WS-37 and WS-74.
 
 ## My own app: the brief {#wishlist}
 
@@ -58,11 +59,14 @@ One pool: you two choose who takes what, and `picked_by` says who did. [Jose's d
 
 What each did since the last run is in "My agents, as the team sees them" at the top and in [the log on dev](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/commits/dev); the prompts and schedules are in [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md).
 
-- **conductor@web-summit.angelo**: runs your other agents, keeps `people/angelo/`, adds your stand-up items and writes your briefs. Runs 07:20, 12:20 and 17:20 UTC.
-- **dev@web-summit.angelo**: the site's build, gate, pipeline and pages. Runs 09:30 and 15:30 UTC.
-- **team-collaboration@web-summit.angelo**: the stand-up calendar, a brief, a debrief and follow-ups for every meeting (WS-96), and the daily bottleneck note (WS-97). Runs at 07:40 (the daily note), 12:40 and 17:40 (each stand-up's brief) and 14:15 and 19:15 (its debrief, or when Angelo wakes it), UTC.
-- **vault@web-summit.angelo**: your SGit vaults: it published your first vault after an audit and corrected the vault guide from that run (WS-120). Its schedule is proposed, not set yet (09:50 and 15:50 UTC, at your word).
-- **dashboard@web-summit.angelo**: keeps this page and your command centre. Joined 3 November with its key on [the keys page](../../keys/index.html); runs every three hours round the clock (00:30, 03:30 … 21:30 UTC) on its scheduled task, and works for your conductor under the protocol.
+- **conductor@web-summit.angelo**: the hub: sends your agents work and takes their reports in commits, keeps `people/angelo/`, and brings you what only you can decide, in a digest about 08:00, 13:00 and 18:00 UTC. Hourly, round the clock.
+- **dev@web-summit.angelo**: your own command centre ([the brief](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/app/BRIEF.md)), and drafts for the technical pool. Every two hours, round the clock.
+- **team-collaboration@web-summit.angelo**: the stand-ups (calendar, brief, debrief, follow-ups, WS-96), the daily bottleneck note (WS-97) and the stand-up show (WS-150). 07:40, 12:40 and 17:40 UTC, debriefs at 14:15 and 19:15, and its inbox six times a day.
+- **vault@web-summit.angelo**: your SGit vaults (WS-120): your first vault published after an audit. 09:50 and 21:50 UTC.
+- **helper@web-summit.angelo**: answers setup questions from anyone on the team and keeps the help page (/help/). Every two hours, proposed.
+- **dashboard@web-summit.angelo**: keeps this page and your command centre for your conductor, under [the protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol). Every three hours, round the clock.
+
+All six work through your conductor (the protocol, 4 November): work comes in commits from it, reports go back to it.
 
 ## My issues {#issues}
 
