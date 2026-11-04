@@ -502,6 +502,15 @@ const AGENDA = buildAgenda({ now: Date.parse(process.env.BUILD_NOW || new Date()
 write('agenda.json', JSON.stringify(AGENDA, null, 2) + '\n')
 CHARTS.agenda = Object.assign(() => agendaHtml(AGENDA, '@@/'), { text: () => agendaText(AGENDA) })   // @@/ is the site root: page() makes it relative
 buildMeetings({ ROOT, C: MEET, PEOPLE, ISSUES, write, page, render, twin, pages })
+// a stand-up's presentation (Dinis, 4 November: "a nice presentation for our meeting ... the more visual, the better"):
+// team/conductor/shows/<meeting id>.show is an HTML fragment the conductor makes from the repository before the stand-up
+for (const f of (fs.existsSync(path.join(ROOT, 'team/conductor/shows')) ? fs.readdirSync(path.join(ROOT, 'team/conductor/shows')) : []).filter(f => f.endsWith('.show'))) {
+    const id = f.replace(/\.show$/, ''), rel = `meetings/${id}/show/index.html`, title = `The stand-up of ${id.slice(0, 10)}: what happened, shown`
+    const frag = fs.readFileSync(path.join(ROOT, 'team/conductor/shows', f), 'utf8')
+    const md = frag.replace(/<style>[\s\S]*?<\/style>/, '').replace(/<h[12][^>]*>/g, '\n## ').replace(/<li>/g, '\n- ').replace(/<[^>]+>/g, ' ').replace(/[ \t]+/g, ' ').replace(/\n\s+/g, '\n').trim()
+    write(rel, page({ rel, title, description: 'The presentation for this stand-up, built from the repository.', body: frag, mdTwin: twinPath(rel) }))
+    pages.push({ rel, title, description: 'The presentation for this stand-up.' }); twin(rel, title, 'The presentation for this stand-up, built from the repository.', md)
+}
 
 // plain pages: content/index.md -> index.html, content/<name>.md -> <name>/index.html
 for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWith('.md'))) {
