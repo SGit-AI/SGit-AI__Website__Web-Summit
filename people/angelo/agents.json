@@ -26,7 +26,7 @@
   {
     "name": "vault@web-summit.angelo",
     "job": "creates and manages Angelo's SGit vaults, audits each before its read key is published, and corrects the vault guide from its runs (WS-120)",
-    "schedule": "proposed: 09:50 and 21:50 UTC (cron 50 9,21 * * *), to be set by the agent once Angelo confirms the protocol in its session",
+    "schedule": "09:50 and 21:50 UTC (cron 50 9,21 * * *), a scheduled task into its own session, set on 4 November after Angelo confirmed the protocol (people/angelo/kit/README.md#protocol) in its session",
     "session": "Claude Code cloud session in Angelo's account"
   }
 ]
