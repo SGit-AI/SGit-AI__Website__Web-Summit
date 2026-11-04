@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.378",
+    "date": "2026-11-04",
+    "what": "22:27 wake: brief 17",
+    "by": "conductor@web-summit.dinis",
+    "from": "c993fc765"
+  },
+  {
     "version": "v0.2.377",
     "date": "2026-11-04",
     "what": "WS-06: Indi's Today page in plain words, a pill bar, the dashboard 30,705 px down to 5,705, the evaluation and a shared-build proposal",
