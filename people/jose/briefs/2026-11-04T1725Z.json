@@ -1,0 +1,87 @@
+{
+    "number": 7,
+    "date": "4 November 2026",
+    "kicker": "Web Summit 2026 · Jose's conductor brief",
+    "title": "The site's page views are live: 32 drained, Angelo's view signed and verified",
+    "when": "4 November 2026, 17:25 UTC (scheduled wake; since brief 6, 12:25 UTC)",
+    "by": "conductor@web-summit.jose",
+    "headline": "WS-37 runs: every page sends its view; Angelo's signed view was verified as his. Neither 13:00 decision was taken; both carry to 18:00.",
+    "stats": [
+        {
+            "n": "32",
+            "label": "page views drained (27 sessions)"
+        },
+        {
+            "n": "28",
+            "label": "from automated browsers (7 are my tests)"
+        },
+        {
+            "n": "1",
+            "label": "signed by a team member (Angelo); not Jose"
+        },
+        {
+            "n": "18:00",
+            "label": "next due: your key (WS-136); the stand-up"
+        }
+    ],
+    "for_you": [
+        {
+            "id": "1",
+            "ask": "🗣️ Say at 18:00: the watcher's scope (WS-134) and shared code (WS-34)",
+            "detail": "Not reached at 13:00; they carry over. Same options as brief 6.",
+            "options": [
+                "watcher: the whole team, read-only",
+                "shared code: yes, through a picked issue, the owner told",
+                "other (say it)"
+            ],
+            "recommend": "Both as the first two options."
+        },
+        {
+            "id": "2",
+            "ask": "🔧 Do: add your key by 18:00 (WS-136), then one signed feedback message",
+            "detail": "Your mentor's suggestion (15:41). Your two signed page views in the data are my test, not you; a view from your own phone would be the first real one.",
+            "options": [
+                "done",
+                "it did not work (tell me what you saw)"
+            ],
+            "recommend": "The .txt from 02:08, then Paste my key on any page."
+        },
+        {
+            "id": "3",
+            "ask": "✅ Approve: drop my 7 test rows from the data vault?",
+            "detail": "Seven page views from my headless tests (16:58 to 17:07 UTC), two signed with your key. They are marked agent: webdriver.",
+            "options": [
+                "drop them",
+                "keep them, marked"
+            ],
+            "recommend": "Drop them, so 'Jose read X' only ever means you did."
+        }
+    ],
+    "you_asked": [],
+    "sections": [
+        {
+            "title": "Blockers",
+            "items": [
+                "WS-37: the security review of the sender, lanes and drains (asked of security@web-summit.dinis in 45e4b6e).",
+                "WS-108: the QR codes and the brief link, still with Dinis's agents.",
+                "WS-139: still open, waiting on your 'close it' (brief 6)."
+            ]
+        },
+        {
+            "title": "FYI",
+            "items": [
+                "Hourly drain: at :07 UTC from this session; first scheduled run 18:07.",
+                "Top pages: Angelo's app (4), the 18:00 stand-up show (3), the start page (2), your brief (2). Screens: 30 desktop, 2 phone."
+            ]
+        }
+    ],
+    "next": [
+        "Hourly drains from 18:07; my next wake is tomorrow 07:20 UTC: brief 8 with the 18:00 decisions in your words."
+    ],
+    "sources": [
+        "ws-observability-data reports/latest.json (17:23 UTC)",
+        "data/meetings/2026-11-04-1300/",
+        "people/jose/mentor/2026-11-04-1541.md",
+        "commit 45e4b6e"
+    ]
+}
