@@ -11,13 +11,13 @@ Kept by `dashboard@web-summit.dinis`. What Dinis asked for (3 November, 01:30 UT
 ## 1. Decisions blocking me {#blocking}
 
 - **Decide at the next stand-up:** [your briefing](#standup) (at the top of this page) lists the decisions for you, each with options and a recommendation. Same list as an app: [command centre, decisions](app/index.html#waiting).
-- **Decided today, in your words:** yes to the merch print order (WS-48), *"Yes to me for the [price withheld]. If you are happy I'm happy."* (14:45 UTC, to Silvio); your sizes, T-shirt and hoodie XL (WS-130, [people/dinis/merch.json](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/dinis/merch.json)).
-- **At the 18:00 stand-up, fourteen decisions for you** (as of the 17:06 wake; [the stand-ups](../../meetings/index.html) is the live list). None of the 13:00 decisions were recorded as decided, so nine carried over, plus four from 2 November and one new one. Team-collaboration's proposed order is on the agenda as a sync. Urgent first:
-  - **Tonight:** your sign-off on [/print/](../../print/index.html) (WS-113, due 16:00, still open), so Silvio can confirm the printer.
-  - **Today:** LinkedIn before Lisbon, who owns it and the first post (WS-126); who records the stand-up decisions (WS-107); the OpenRouter key per agent (WS-115).
-  - **This week:** one priority for the week, said in one place (from Vicky's pulse); the first five target companies and the first message (WS-25, for Thursday's outreach); who writes the RiskMandate paragraph.
-  - **The rest:** protect `main` (WS-105) and who reviews changes to the gate; Nimay's and Indi's invitations (WS-09, WS-124); Daniela's setup (WS-125); a new date for WS-23; agents talk through commits only (WS-129); the start page to the team's WhatsApp; the OKRs ([the draft below](#okrs)).
-- **Due today and still open on the board:** WS-113 (the print sign-off), WS-115, WS-126, WS-105, WS-107, WS-124. WS-116 is done.
+- **Done since yesterday:** the merch yes (WS-48, your words to Silvio, 3 Nov 14:45 UTC: *"Yes to me for the [price withheld]. If you are happy I'm happy."*); your sizes, XL and XL (WS-130); your print set signed off with your key, hoodie H1 and card C1 (WS-113, [people/dinis/signoff/](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/dinis/signoff)). The first five target companies item was closed and Jose's roster item merged, without a decision recorded in your words.
+- **At the 13:00 stand-up today, fourteen decisions for you** (as of the 07:06 wake, Wed 4 Nov; [your 13:00 briefing](../../meetings/2026-11-04-1300/dinis/index.html) is the live list). Thirteen were carried over: nothing at the 18:00 was recorded as decided. Urgent first:
+  - **Today, for Thursday's outreach:** the RiskMandate paragraph, who writes it (WS-15, due today); one priority for the week (from Vicky's pulse); LinkedIn, who owns it and the first post, a day late (WS-126).
+  - **Today, the machine:** who records the stand-up decisions (WS-107), which is why the list keeps carrying over; protect `main` and who reviews the gate (WS-105, WS-90); agents talk through commits only (WS-129); how far Jose's security watcher watches (WS-134, new).
+  - **The rest:** the print order's deadline, fallback and ceiling (WS-48, probably settled by your yes: say so and it closes); Nimay's and Indi's invitations (WS-09, WS-124); Daniela's setup (WS-125); a new date for WS-23; the start page to the team's WhatsApp; the OKRs ([the draft below](#okrs)).
+- **Due today on the board and open, for you:** WS-13 (the merch budget, by 12:00), WS-15 and WS-18 (the message and the demos), WS-109 (the one demo), WS-132 (before anything real is sealed to a person key), WS-12, WS-118, WS-119, WS-122. Overdue from yesterday: WS-09, WS-10, WS-105, WS-107, WS-115, WS-126. The full list is under [my issues](#issues).
+- **Your lab:** [people/dinis/lab/](lab/index.html), nine experiments mapped by `dev@web-summit.dinis`, the first being [the policy studio](lab/studio/index.html) (WS-137).
 - **The latest conductor brief:** [the updates](../../updates/index.html), at most three asks, each with a recommendation.
 - **Only you can unblock these on the board:** WS-09 (everyone's GitHub access), WS-10 (Workspace email), WS-13 (the merch budget), WS-14 (who runs the newsroom), WS-105 (protect `main` in the repository's settings). Status and due dates are under [my issues](#issues); what is overdue or at risk is on [the board's health](../../board-health/index.html).
 
@@ -39,8 +39,8 @@ Kept by `dashboard@web-summit.dinis`. What Dinis asked for (3 November, 01:30 UT
 From [the start page](../../start/index.html#what) and [the stand-ups](../../meetings/index.html):
 
 - **13:00 and 18:00 UTC (= Lisbon): the stand-ups.** Read the briefing before each; say *"acknowledge"* after.
-- **Now to Wednesday 4 Nov: the team set up.** Everyone to L4 and the agents on their own schedules: [the setup leaderboard](../../team/setup/index.html).
-- **The week:** Thursday 5 Nov the targets, Thursday and Friday the big outreach, Saturday 7 Nov the plan, 10 to 12 Nov the summit (our stand day is Thursday 12).
+- **Today, Wednesday 4 Nov, is the last day of setting up the team.** Everyone to L4 and the agents on their own schedules: [the setup leaderboard](../../team/setup/index.html).
+- **Tomorrow, Thursday 5 Nov: the targets**, then the big outreach on Thursday and Friday. **The week:** Saturday 7 Nov the plan, 10 to 12 Nov the summit (our stand day is Thursday 12).
 
 *[↑ decisions](#blocking) · [agents](#agents) · [command centre: decisions](app/index.html#waiting) · [agents](app/index.html#agents)*
 
