@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.215",
+    "date": "2026-11-04",
+    "what": "newsroom's ABP drops a line copied from the journalist's by mistake",
+    "by": "abp@web-summit.dinis",
+    "from": "bb7feaf02"
+  },
+  {
     "version": "v0.2.214",
     "date": "2026-11-04",
     "what": "ABPs for newsroom@dinis and Jose's watcher and reviewer; Jose's reviewer and vault lane recorded",
