@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.200",
+    "date": "2026-11-04",
+    "what": "WS-39 route 3, an n8n workflow Jose can import: the newest report as one WhatsApp message to Jose only",
+    "by": "dev@web-summit.jose",
+    "from": "aa6582f80"
+  },
+  {
     "version": "v0.2.199",
     "date": "2026-11-04",
     "what": "first run (Jose's agents only): 14 commits by Jose's agents since 83d4d93, three small flags; its session key on the keys page",
