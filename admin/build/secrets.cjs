@@ -7,7 +7,9 @@ const KEY_RULES = [
     [/-----BEGIN [A-Z ]*PRIVATE KEY-----/, 'a private key'],
     [/sgit_private_(vault|read)_[A-Za-z0-9]/, 'an sgit private key (vault or private read)'],
     // anchored at the start of a run: the same matches as unanchored, but linear on long runs
-    [/(?<![A-Za-z0-9_-])[A-Za-z0-9_-]{20,}:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/, 'a vault-key-shaped string'],
+    // the third element is a prefilter: a necessary part of every match that starts with a literal, so the engine skips
+    // to it at once; the full pattern runs only where it is found (36 MB scanned in 33 ms instead of 421, same answers)
+    [/(?<![A-Za-z0-9_-])[A-Za-z0-9_-]{20,}:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/, 'a vault-key-shaped string', /:[0-9a-f]{8}-[0-9a-f]{4}-/],
     [/\b(sk-(ant-)?[A-Za-z0-9_-]{20,}|gh[pos]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[0-9A-Z]{16}|xox[abprs]-[A-Za-z0-9-]{10,}|AIza[0-9A-Za-z_-]{35})/, 'an API key or token'],
     // a JWK with a private member: "d" in the same object as "kty", either order
     [/"kty"\s*:[^{}]*"d"\s*:\s*"|"d"\s*:\s*"[^"]+"[^{}]*"kty"\s*:/, 'a private JWK'],
@@ -16,7 +18,7 @@ const KEY_RULES = [
 // files no one pastes a key into as text; the two videos alone were 14 MB of the gate's reading
 const BINARY = /\.(png|jpg|jpeg|gif|webp|ico|woff2?|zip|pdf|mp4|webm|mov|mp3|m4a)$/
 
-const keyHits = text => KEY_RULES.filter(([re]) => re.test(text)).map(([, what]) => what)
+const keyHits = text => KEY_RULES.filter(([re, , pre]) => (!pre || pre.test(text)) && re.test(text)).map(([, what]) => what)
 
 const r = (c, n) => c.repeat(n)
 const FIXTURES = {

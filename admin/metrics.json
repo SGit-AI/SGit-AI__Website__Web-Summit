@@ -197,6 +197,14 @@
       "note": "dev pass 16: chart fences in markdown twins become the chart's own title and description; no twin carries a raw fence now (it was the dashboards and the site review). Gate 3.33 s at 399 pages.",
       "pages": 399,
       "validate_seconds": 3.33
+    },
+    {
+      "date": "2026-11-04",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass 18: the key-shape check scans 36.6 MB (2,726 files; /pki/keys/ alone 2.7 MB of QR paths) and took 421 ms; a literal-led prefilter (a necessary part of every match) runs first: 33 ms, same answer for every file; a planted key still fails the gate, and a broken prefilter fails the self-test. Gate 4.4 -> 4.0 s.",
+      "pages": 423,
+      "validate_seconds": 3.97
     }
   ]
 }
