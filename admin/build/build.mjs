@@ -78,6 +78,19 @@ function parse(src) {
     return { meta, body: m[2] }
 }
 
+// a list starting at lines[i], at indent `ind` (spaces); returns [html, the index after it]
+function listHtml(lines, i, ind) {
+    const at = j => { const m = (lines[j] || '').match(/^( *)(\d+\.|-) (.*)$/); return m && m[1].length === ind ? m : null }
+    const tag = /\d/.test(at(i)[2]) ? 'ol' : 'ul', items = []
+    while (i < lines.length && at(i) && (/\d/.test(at(i)[2]) ? 'ol' : 'ul') === tag) {
+        let li = inline(at(i)[3]); i++
+        const sub = (lines[i] || '').match(/^( +)(\d+\.|-) /)
+        if (sub && sub[1].length > ind) { const [h, n] = listHtml(lines, i, sub[1].length); li += h; i = n }
+        items.push(`<li>${li}</li>`)
+    }
+    return [`<${tag}>${items.join('')}</${tag}>`, i]
+}
+
 function render(md) {
     const lines = md.split('\n'), out = []
     let i = 0
@@ -114,14 +127,10 @@ function render(md) {
         } else if (/^#{2,3} /.test(l)) {
             const n = l.match(/^#+/)[0].length, raw = l.replace(/^#+ /, ''), anchor = raw.match(/\s*\{#([a-z0-9-]+)\}\s*$/), t = raw.replace(/\s*\{#[a-z0-9-]+\}\s*$/, '')
             out.push(`<h${n} id="${anchor ? anchor[1] : slug(t)}">${inline(t)}</h${n}>`); i++
-        } else if (/^\d+\. /.test(l)) {
-            const items = []
-            for (; i < lines.length && /^\d+\. /.test(lines[i]); i++) items.push(`<li>${inline(lines[i].replace(/^\d+\. /, ''))}</li>`)
-            out.push(`<ol>${items.join('')}</ol>`)
-        } else if (/^- /.test(l)) {
-            const items = []
-            for (; i < lines.length && /^- /.test(lines[i]); i++) items.push(`<li>${inline(lines[i].slice(2))}</li>`)
-            out.push(`<ul>${items.join('')}</ul>`)
+        } else if (/^(\d+\.|-) /.test(l)) {
+            // a list; a line indented under an item ("   - " or "   1. ") is a nested list inside that item, so the
+            // numbering carries on after it (WS-100, pm@web-summit.vicky, 4 November)
+            const [html, next] = listHtml(lines, i, 0); out.push(html); i = next
         } else if (/^\|/.test(l)) {
             const rows = []
             for (; i < lines.length && /^\|/.test(lines[i]); i++) rows.push(lines[i].replace(/^\||\|$/g, '').split('|').map(c => c.trim()))
