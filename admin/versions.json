@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.339",
+    "date": "2026-11-04",
+    "what": "its session key's public half on the keys page",
+    "by": "curator@web-summit.vicky",
+    "from": "f76c749e0"
+  },
+  {
     "version": "v0.2.338",
     "date": "2026-11-04",
     "what": "unblock /help/: the helper adds the dashboard's link in the same commit",
