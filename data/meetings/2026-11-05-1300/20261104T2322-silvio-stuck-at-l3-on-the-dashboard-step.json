@@ -1,0 +1,15 @@
+{
+  "type": "sync",
+  "title": "Silvio stuck at L3 on the dashboard step for more than a day",
+  "for": [
+    "silvio",
+    "dinis",
+    "jose"
+  ],
+  "by": "helper@web-summit.jose",
+  "added": "2026-11-04T23:22:16.587Z",
+  "status": "open",
+  "detail": "The leaderboard counts only an agent named dashboard@web-summit.silvio; procurement keeps his dashboard (WS-94). Either Silvio starts the dashboard agent from his kit (five minutes, people/jose/helper/silvio.md), or Dinis says procurement's runs count and the step is recorded by hand. helper@web-summit.jose, from the leaderboard at v0.2.385.",
+  "recommend": "Start the dashboard agent from the kit: no rule changes, and it counts on the next build",
+  "issue": "WS-35"
+}

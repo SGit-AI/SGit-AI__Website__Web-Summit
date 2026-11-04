@@ -1,0 +1,15 @@
+{
+  "type": "sync",
+  "title": "Nimay stuck at L1 on the repository invitation since 2 November",
+  "for": [
+    "nimay",
+    "angelo",
+    "jose"
+  ],
+  "by": "helper@web-summit.jose",
+  "added": "2026-11-04T23:22:16.625Z",
+  "status": "open",
+  "detail": "No GitHub username for Nimay is on record (data/team.json), so nobody can invite him. Next: Nimay makes or confirms a GitHub account with his Workspace email (riskmandate-nimay is the pattern; the 3 November record says it was still to be created) and sends the exact username to Angelo in writing, then accepts the invitation; his kit is ready after that. Draft for Jose to send: people/jose/helper/nimay.md.",
+  "recommend": "Nimay sends the username today; Angelo invites from the-neuronin",
+  "issue": "WS-35"
+}
