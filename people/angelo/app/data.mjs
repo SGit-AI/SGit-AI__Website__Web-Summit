@@ -65,9 +65,55 @@ function kanban(root, person, d) {
     return { me: person, people, streams, changed, history, agenda }
 }
 
+// the collaboration board (slice 5): everyone, people and agents, who works with whom, and the machine. Built on
+// admin/build/inventory.mjs (imported, not copied) and the same public sources as /team/map/.
+async function loadInventory() { return import(path.join(ROOT, 'admin/build/inventory.mjs')) }
+const INV = await loadInventory()
+
+function collab(root, person, d, now) {
+    const team = readJson(root, 'data/team.json') || { members: [] }
+    const inv = INV.inventory(root, team)
+    const humans = team.members.filter(m => m.kind === 'human')
+    const keys = (readJson(root, 'data/keys.json') || { keys: [] }).keys.map(k => String(k.label || '').split(' ')[0])
+    const level = id => (readJson(root, `people/${id}/onboarding.json`) || {}).level ?? 0
+    const work = id => d.issues.filter(i => (i.status === 'picked' || i.status === 'in progress') && KANBAN.pickers(i, { people: Object.fromEntries(humans.map(m => [m.id, m.name])) }).includes(id)).map(i => ({ id: i.id, title: i.title, status: i.status }))
+    const agentsOf = id => inv.agents.filter(a => a.person === id).map(a => ({ name: a.name, job: a.job || '', schedule: a.schedule || '', declared: a.declared, commits: a.commits, last: a.last, key: keys.includes(a.name) }))
+
+    // who works with whom: For: trailers over the last 7 days (agent or person to agent or person), counted per pair of people
+    const pairs = {}
+    const personOf = n => { const m = String(n).match(/@web-summit\.([a-z0-9-]+)$/); return m ? m[1] : humans.some(h => h.id === n) ? n : null }
+    for (const c of git(root, ['log', '--since=7 days ago', '--format=%s%x1f%b%x1e']).split('\x1e')) {
+        const [s, b] = c.trim().split('\x1f'); if (!s || /^site v\d/.test(s)) continue
+        const from = personOf((s.match(/^([a-z0-9-]+@web-summit\.[a-z0-9-]+):/) || [])[1] || '')
+        if (!from) continue
+        for (const m of (b || '').matchAll(/^For: (\S+)/gm)) { const to = personOf(m[1]); if (to && to !== from) { const k = [from, to].sort().join('|'); pairs[k] = (pairs[k] || 0) + 1 } }
+    }
+    // and issues they share as owners
+    for (const i of d.issues) { const f = (i.for || []).filter(x => humans.some(h => h.id === x)); for (let x = 0; x < f.length; x++) for (let y = x + 1; y < f.length; y++) { const k = [f[x], f[y]].sort().join('|'); pairs[k] = pairs[k] || 0 } }
+    const shared = {}
+    for (const i of d.issues.filter(i => i.status !== 'done')) { const f = (i.for || []).filter(x => humans.some(h => h.id === x)); for (let x = 0; x < f.length; x++) for (let y = x + 1; y < f.length; y++) { const k = [f[x], f[y]].sort().join('|'); shared[k] = (shared[k] || 0) + 1 } }
+
+    // the machine: the newest release CI recorded (a release exists only when the gate passed), and keys against agents at work
+    const vers = (readJson(root, 'admin/versions.json') || []).filter(v => /^v\d+\.\d+\.\d+$/.test(v.version))
+    const vnum = v => v.version.slice(1).split('.').map(Number).reduce((a, x) => a * 1e4 + x, 0)
+    const last = vers.sort((a, b) => vnum(b) - vnum(a))[0] || null
+    const active = inv.agents.filter(a => a.last && (now - Date.parse(a.last.replace(' ', 'T') + ':00Z')) < 2 * 864e5)
+    return {
+        people: humans.map(m => ({ id: m.id, name: m.name, role: m.role || '', level: level(m.id), status: m.status || '', agents: agentsOf(m.id), work: work(m.id) })),
+        links: Object.entries(pairs).map(([k, n]) => { const [a, b] = k.split('|'); return { a, b, messages: n, shared: shared[k] || 0 } }).filter(l => l.messages || l.shared).sort((x, y) => (y.messages + y.shared) - (x.messages + x.shared)),
+        machine: {
+            release: last ? { version: last.version, date: last.date, what: String(last.what || '').slice(0, 240) } : null,
+            agents: inv.agents.length, active48h: active.length, activeWithKey: active.filter(a => keys.includes(a.name)).length,
+            activeWithoutKey: active.filter(a => !keys.includes(a.name)).map(a => a.name),
+            ci: `${d.repo}/actions/workflows/deploy-pages.yml`,
+        },
+    }
+}
+
 export function build(root, person, now = new Date()) {
     const d = CC.build(root, person, now)
     d.kanban = kanban(root, person, d)
+    d.collab = collab(root, person, d, now)
     return d
 }
 

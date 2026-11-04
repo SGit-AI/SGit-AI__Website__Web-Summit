@@ -15,27 +15,29 @@
     const ago = d => { const m = Math.round((Date.now() - new Date(d)) / 6e4); return m < 1 ? 'just now' : m < 60 ? `${m} min ago` : m < 1440 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} d ago` }
     const ico = p => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${p}"/></svg>`
     const KANBAN_ICON = 'M4 4h4v16H4zM10 4h4v10h-4zM16 4h4v13h-4z'
+    const TEAM_ICON = 'M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21v-1a6 6 0 0 1 12 0v1M16 3.1a4 4 0 0 1 0 7.8M22 21v-1a6 6 0 0 0-4-5.6'
     const PHONE = matchMedia('(max-width: 767px)')
 
     function start() {
         const K = window.AngeloKanban
         let D = null, failed = ''
-        const mine = () => /^#kanban(\?|$)/.test(location.hash)
+        const route = () => (location.hash.match(/^#(kanban|collab)(\?|$)/) || [])[1] || ''
+        const mine = () => !!route()
         fetch(root.dataset.src || 'data.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : Promise.reject(new Error(r.status))).then(d => { D = d; if (mine()) draw() }).catch(e => { failed = e.message; if (mine()) draw() })
 
         // after every shared render (it rebuilds the shell): add the Kanban entry, and draw the kanban when it is asked for
         new MutationObserver(() => { nav(); if (mine()) draw() }).observe(root, { childList: true })
-        window.addEventListener('keydown', e => { if (e.key === 'Escape' && mine() && K.parseState(location.hash).open) closeCard() })
+        window.addEventListener('keydown', e => { if (e.key !== 'Escape') return; if (route() === 'kanban' && K.parseState(location.hash).open) closeCard(); if (route() === 'collab' && cstate().p) closePerson() })
 
         function nav() {
             const side = root.querySelector('.cc-nav [data-view="board"]')
-            if (side && !root.querySelector('.cc-nav [data-view="kanban"]')) side.insertAdjacentHTML('afterend', `<a href="#kanban" data-view="kanban" title="Kanban">${ico(KANBAN_ICON)}<span class="lbl">Kanban</span></a>`)
+            if (side && !root.querySelector('.cc-nav [data-view="kanban"]')) side.insertAdjacentHTML('afterend', `<a href="#kanban" data-view="kanban" title="Kanban">${ico(KANBAN_ICON)}<span class="lbl">Kanban</span></a><a href="#collab" data-view="collab" title="Team and the machine">${ico(TEAM_ICON)}<span class="lbl">Team and the machine</span></a>`)
             // phones: the Board tab opens the kanban (with My tasks off it is the whole team's board)
             const tab = root.querySelector('.cc-tabs a[href="#board"]')
             if (tab) { tab.setAttribute('href', '#kanban'); tab.lastChild.textContent = 'Kanban' }
             if (mine()) {
                 root.querySelectorAll('.cc-nav [aria-current], .cc-tabs [aria-current]').forEach(a => a.removeAttribute('aria-current'))
-                root.querySelectorAll('.cc-nav [data-view="kanban"], .cc-tabs a[href="#kanban"]').forEach(a => a.setAttribute('aria-current', 'page'))
+                root.querySelectorAll(route() === 'kanban' ? '.cc-nav [data-view="kanban"], .cc-tabs a[href="#kanban"]' : '.cc-nav [data-view="collab"]').forEach(a => a.setAttribute('aria-current', 'page'))
             }
         }
 
@@ -50,6 +52,7 @@
 
         // ---------- drawing ----------
         function draw() {
+            if (route() === 'collab') return drawCollab()
             const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
             if (!view) return
             const first = D ? (D.person.name || D.person.id).split(' ')[0] : ''
@@ -60,6 +63,7 @@
             const shown = K.filter(D.issues, s, ctx, now)
             const needN = D.issues.filter(i => K.needsMe(i, ctx, now)).length
             view.innerHTML = `<div class="ak">
+<a class="ak-switch" href="#collab">Team and the machine →</a>
 ${toolbar(s, shown.length, needN)}
 ${chips(s)}
 ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No cards match this view.</p><button class="cc-btn" type="button" data-ak-reset>Back to my open tasks</button></div>`}
@@ -141,7 +145,7 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
         function details(id, now) {
             const i = D.issues.find(x => x.id === id)
             if (!i) return ''
-            const ctx = D.kanban, p = K.pickers(i, ctx), gh = `https://github.com/${D.repo}/blob/${D.branch}/${i.file}`
+            const ctx = D.kanban, p = K.pickers(i, ctx), gh = `${D.repo}/blob/${D.branch}/${i.file}`
             const row = (k, v) => v ? `<div><dt>${k}</dt><dd>${v}</dd></div>` : ''
             const hist = ctx.history[id] || [], ag = ctx.agenda[id] || []
             return `<div class="ak-scrim" data-ak-close></div><aside class="ak-sheet" role="dialog" aria-modal="true" aria-labelledby="ak-h" tabindex="-1">
@@ -149,7 +153,7 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
 <dl class="ak-dl">${row('Status', esc(i.status))}${row('Owners', esc((i.for || []).join(', ')))}${row('Picked by', esc(i.picked_by || 'nobody yet'))}${row('Due', `${esc(i.due || 'no date')} (${esc(K.DUE_LABEL[K.dueBucket(i, now)].toLowerCase())})`)}${row('Workstream', esc(i.stream && ctx.streams[i.stream] ? ctx.streams[i.stream].name : 'none'))}${row('Area', esc(i.area))}${row('Last changed', ctx.changed[id] ? esc(ago(ctx.changed[id])) : '')}${row('Agents', esc(i.agents))}</dl>
 <section><h3>The issue</h3><div class="ak-body" id="ak-body"><p class="note">Loading the full text…</p></div></section>
 <section><h3>At the stand-ups</h3>${ag.length ? `<ul>${ag.map(a => `<li><a href="../../../${esc(a.page)}">${esc(a.title)}</a> <span class="note">${esc(a.type)}, ${esc(a.status)}${a.forMe ? ', for you' : ''} (${esc(a.meeting)})</span></li>`).join('')}</ul>` : '<p class="note">No stand-up item names this issue.</p>'}</section>
-<section><h3>History</h3>${hist.length ? `<ul>${hist.map(c => `<li><a href="https://github.com/${esc(D.repo)}/commit/${esc(c.h)}">${esc(c.h)}</a> ${esc(c.s)} <span class="note">${esc(ago(c.at))}</span></li>`).join('')}</ul>` : '<p class="note">No commit in the last 30 days names this issue.</p>'}</section>
+<section><h3>History</h3>${hist.length ? `<ul>${hist.map(c => `<li><a href="${esc(D.repo)}/commit/${esc(c.h)}">${esc(c.h)}</a> ${esc(c.s)} <span class="note">${esc(ago(c.at))}</span></li>`).join('')}</ul>` : '<p class="note">No commit in the last 30 days names this issue.</p>'}</section>
 <section><h3>Messages</h3><p class="note">Messages about this task, and moving it, come with sealed sending (slices 3 and 4).</p></section>
 <p><a class="cc-btn" href="${esc(gh)}">The file on GitHub</a></p>
 </aside>`
@@ -191,6 +195,67 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             const d = [...root.querySelectorAll('#cc-view .ak-panel')].find(x => x.querySelector('summary').textContent.startsWith(name))
             if (d) d.open = true
             if (focusQ) { const q = root.querySelector('#cc-view input[data-ak="q"]'); if (q) { q.focus(); q.setSelectionRange(q.value.length, q.value.length) } }
+        }
+
+        // ---------- the collaboration board (slice 5): everyone, people and agents, and the machine ----------
+        const cstate = () => { const i = location.hash.indexOf('?'); const p = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)); return { p: p.get('p') || '' } }
+        const openPerson = id => { history.pushState({ akCard: true }, ''); history.replaceState(history.state, '', location.pathname + location.search + '#collab?p=' + encodeURIComponent(id)); drawCollab() }
+        const closePerson = () => { if (history.state && history.state.akCard) history.back(); else { history.replaceState(history.state, '', location.pathname + location.search + '#collab'); drawCollab() } }
+        const initials = n => String(n).split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase()
+        // the next run, from the times a schedule names ("07:20, 12:20 and 17:20 UTC"): the next of them, today or tomorrow
+        function nextRun(schedule, now = new Date()) {
+            const times = [...String(schedule || '').matchAll(/\b([01]?\d|2[0-3]):([0-5]\d)\b/g)].map(m => +m[1] * 60 + +m[2])
+            if (!times.length) return null
+            const mins = now.getUTCHours() * 60 + now.getUTCMinutes(), later = times.filter(t => t > mins).sort((a, b) => a - b)
+            const t = later.length ? later[0] : Math.min(...times), wait = later.length ? t - mins : t + 1440 - mins
+            const hm = `${String(Math.floor(t / 60)).padStart(2, '0')}:${String(t % 60).padStart(2, '0')} UTC`
+            return { label: hm, wait: wait < 60 ? `in ${wait} min` : `in ${Math.round(wait / 60)} h` }
+        }
+        const lastAgo = l => l ? ago(l.replace(' ', 'T') + ':00Z') : 'no commit yet'
+        const kanbanLink = id => `#kanban?m=0&t=open,picked,in%20progress,done&o=${encodeURIComponent(id)}`
+
+        function drawCollab() {
+            const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
+            if (!view) return
+            const first = D ? (D.person.name || D.person.id).split(' ')[0] : ''
+            if (title) title.innerHTML = `Team and the machine<small>${esc(first)}'s command centre</small>`
+            document.title = `Team and the machine · ${first}'s command centre`
+            if (!D || !D.collab) { view.innerHTML = failed ? `<p class="note">The board could not load its data (${esc(failed)}).</p>` : '<p class="note">Loading the team…</p>'; return }
+            const C = D.collab, M = C.machine, name = id => (C.people.find(p => p.id === id) || { name: id }).name
+            const max = Math.max(1, ...C.links.map(l => l.messages + l.shared))
+            view.innerHTML = `<div class="ak">
+<a class="ak-switch" href="#kanban">← Kanban</a>
+<section class="ak-machine" aria-label="The machine">
+  <div class="cc-card"><h3>Last release</h3>${M.release ? `<p class="ak-big">${esc(M.release.version)}</p><p class="note">${esc(M.release.date)}: ${esc(M.release.what)}</p><p class="note">A release exists only when the gate passed.</p>` : '<p class="note">No release recorded.</p>'}</div>
+  <div class="cc-card"><h3>CI</h3><p class="note">This page cannot see CI runs or their failures; GitHub can.</p><p><a href="${esc(M.ci)}">The deploy runs on GitHub</a></p></div>
+  <div class="cc-card"><h3>Agents and keys</h3><p class="ak-big">${M.active48h} <small>at work in 48 h, of ${M.agents}</small></p><p class="note">${M.activeWithKey} of them have a key on the keys page.</p>${M.activeWithoutKey.length ? `<details><summary>${M.activeWithoutKey.length} at work without a published key</summary><ul>${M.activeWithoutKey.map(n => `<li>${esc(n)}</li>`).join('')}</ul></details>` : ''}</div>
+</section>
+<section aria-label="People"><h3 class="ak-lane">People and their agents</h3><div class="ak-people">${C.people.map(p => {
+                const runs = p.agents.map(a => nextRun(a.schedule)).filter(Boolean)
+                const next = p.agents.map(a => ({ a, r: nextRun(a.schedule) })).filter(x => x.r).sort((x, y) => parseInt(x.r.wait) * (/h$/.test(x.r.wait) ? 60 : 1) - parseInt(y.r.wait) * (/h$/.test(y.r.wait) ? 60 : 1))[0]
+                return `<button type="button" class="ak-person" data-ak-person="${esc(p.id)}"><span class="ak-av">${esc(initials(p.name))}</span><span class="ak-pn"><b>${esc(p.name)}</b><small>${esc(p.role)}</small></span><span class="ak-meta"><span class="chip ${p.level >= 4 ? 't-green' : p.level >= 2 ? 't-blue' : 't-slate'}">L${esc(p.level)}</span><span class="chip plain">${p.agents.length} agent${p.agents.length === 1 ? '' : 's'}</span>${p.work.length ? `<span class="chip t-yellow">${p.work.length} picked</span>` : ''}</span>${next ? `<small class="note">Next run: ${esc(next.a.name.split('@')[0])} ${esc(next.r.wait)}</small>` : runs.length ? '' : '<small class="note">No schedule recorded</small>'}</button>`
+            }).join('')}</div></section>
+<section aria-label="Who works with whom"><h3 class="ak-lane">Who works with whom</h3><p class="note">Messages: commits from one person's agents to another's (For: lines, last 7 days). Shared: open issues they both own.</p>
+<ul class="ak-links">${C.links.slice(0, 14).map(l => `<li><span>${esc(name(l.a))} and ${esc(name(l.b))}</span><span class="ak-barw"><span class="ak-barf" style="width:${Math.round((l.messages + l.shared) / max * 100)}%"></span></span><small class="note">${l.messages} messages, ${l.shared} shared</small></li>`).join('')}</ul></section>
+<p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}. Next runs are worked out in this browser from each agent's recorded schedule.</p>
+</div>${cstate().p ? personSheet(cstate().p) : ''}`
+            view.querySelectorAll('[data-ak-person]').forEach(b => b.onclick = () => openPerson(b.dataset.akPerson))
+            view.querySelectorAll('[data-ak-close]').forEach(b => b.onclick = closePerson)
+            const sh = view.querySelector('.ak-sheet'); if (sh) sh.focus()
+        }
+
+        function personSheet(id) {
+            const C = D.collab, p = C.people.find(x => x.id === id)
+            if (!p) return ''
+            const name = x => (C.people.find(q => q.id === x) || { name: x }).name
+            const links = C.links.filter(l => l.a === id || l.b === id)
+            return `<div class="ak-scrim" data-ak-close></div><aside class="ak-sheet" role="dialog" aria-modal="true" aria-labelledby="ak-h" tabindex="-1">
+<header><div><span class="ak-id">Level L${esc(p.level)}</span><h2 id="ak-h">${esc(p.name)}</h2><p class="note">${esc(p.role)}</p></div><button type="button" class="cc-btn" data-ak-close>Close</button></header>
+<section><h3>Agents</h3>${p.agents.length ? `<ul class="ak-agents">${p.agents.map(a => { const r = nextRun(a.schedule); return `<li><b>${esc(a.name)}</b>${a.key ? ' <span class="chip t-green">key</span>' : ' <span class="chip t-slate">no key</span>'}<br>${a.job ? `<span>${esc(a.job)}</span><br>` : ''}<span class="note">Last commit ${esc(lastAgo(a.last))}, ${a.commits} in all${r ? `; next run ${esc(r.label)}, ${esc(r.wait)}` : a.schedule ? '' : '; no schedule recorded'}</span></li>` }).join('')}</ul>` : '<p class="note">No agent yet.</p>'}</section>
+<section><h3>Picked and in progress</h3>${p.work.length ? `<ul>${p.work.map(w => `<li><a href="${kanbanLink(w.id)}">${esc(w.id)}</a> ${esc(clean(w.title))} <span class="note">${esc(w.status)}</span></li>`).join('')}</ul>` : '<p class="note">Nothing picked right now.</p>'}</section>
+<section><h3>Works with</h3>${links.length ? `<ul>${links.map(l => `<li>${esc(name(l.a === id ? l.b : l.a))} <span class="note">${l.messages} messages, ${l.shared} shared issues</span></li>`).join('')}</ul>` : '<p class="note">No messages or shared issues recorded.</p>'}</section>
+<section><h3>Send a message</h3><p class="note">Sealed messages to anyone come with slice 6, once sealed sending (slice 3) works.</p></section>
+</aside>`
         }
         window.addEventListener('popstate', () => { if (mine()) draw() })
         PHONE.addEventListener?.('change', () => { if (mine()) draw() })

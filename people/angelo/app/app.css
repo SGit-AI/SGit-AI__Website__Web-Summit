@@ -68,3 +68,33 @@
     .ak-sheet { width: 100vw; padding: 16px; padding-bottom: calc(24px + env(safe-area-inset-bottom)); }
     .ak-dl { grid-template-columns: 1fr; }
 }
+
+/* ---------- the collaboration board (slice 5) ---------- */
+.ak-switch { justify-self: start; font: 600 14px/20px var(--rm-font); color: var(--rm-action); text-decoration: none; min-height: 32px; display: inline-flex; align-items: center; }
+.ak-machine { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.ak-machine h3 { font: 600 12px/18px var(--rm-font); letter-spacing: .06em; text-transform: uppercase; color: var(--rm-text-muted); margin: 0 0 6px; }
+.ak-machine p { margin: 0 0 6px; }
+.ak-machine a { color: var(--rm-action); }
+.ak-big { font: 700 26px/32px var(--rm-font); }
+.ak-big small { font: 500 13px/19px var(--rm-font); color: var(--rm-text-muted); }
+.ak-people { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.ak-person { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 44px 1fr; gap: 8px 12px; align-items: center; padding: 14px; border-radius: var(--rm-radius-card); border: 1px solid var(--rm-border); background: var(--rm-surface); box-shadow: var(--rm-shadow); }
+.ak-person:hover { background: var(--rm-surface-hover); }
+.ak-person:focus-visible { outline: 2px solid var(--rm-focus); outline-offset: 2px; }
+.ak-person .ak-meta, .ak-person > small { grid-column: 1 / -1; }
+.ak-av { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--rm-surface-raised); border: 1px solid var(--rm-border); font: 700 15px/1 var(--rm-font); }
+.ak-pn { display: grid; min-width: 0; }
+.ak-pn b { font: 600 16px/22px var(--rm-font); }
+.ak-pn small { font: 400 13px/18px var(--rm-font); color: var(--rm-text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ak-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ak-links li { display: grid; grid-template-columns: minmax(0, 220px) 1fr auto; gap: 10px; align-items: center; font: 400 14px/20px var(--rm-font); }
+.ak-barw { height: 8px; border-radius: 999px; background: var(--rm-surface-raised); overflow: hidden; }
+.ak-barf { display: block; height: 100%; border-radius: 999px; background: var(--rm-action); }
+.ak-agents li { line-height: 21px; }
+@media (max-width: 767px) {
+    .ak-machine { grid-template-columns: 1fr; }
+    .ak-people { grid-template-columns: 1fr; }
+    .ak-links li { grid-template-columns: 1fr auto; }
+    .ak-links li .ak-barw { grid-column: 1 / -1; grid-row: 2; }
+}
+@media (min-width: 768px) { .ak-switch { display: none; } }
