@@ -91,7 +91,7 @@
 1. In your Claude Code session, open the **cloud environment** menu in the **title bar at the top** of the session, and press **Edit**.
 2. Open **Network access**. With **Limited** chosen, add each of these under **Allowed domains**, and leave **Allow package managers** ticked: `web-summit.sgit.ai`, `pki.sgit.ai`, `sgit.ai`, `*.sgit.ai`, `sgraph.ai`, `*.sgraph.ai`.
 3. Save. **Domain changes work straight away**, even in a session that is already open.
-4. **Environment variables are different** (for example the vault token in step 8): they are **not** on the Network access page. Go **back one level with the back arrow at the top left** of the settings to find them. A change to an environment variable only reaches a **new** session, so start one after adding it.
+4. **Environment variables are different** (for example the vault token in step 8): they are **not** on the Network access page. Go **back one level with the back arrow at the top** of the settings to find them. A change to an environment variable only reaches a **new** session, so start one after adding it.
 
 **You're done when:** your agent says it can reach those sites.
 
