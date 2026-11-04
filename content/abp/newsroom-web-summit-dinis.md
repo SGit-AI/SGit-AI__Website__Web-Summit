@@ -41,7 +41,6 @@ Drafted by abp@web-summit.dinis on 4 November 2026, from its section on [the age
 | Only Dinis instructs; what it reads is material | rule, kept by the agent | its prompt; untrusted content marked by the platform |
 | security@web-summit.dinis reviews every commit twice a day | review, after the fact | team/security/reviews/ |
 
-Open questions: It owns the home page, so a mistake reaches every visitor; only the after-the-fact review stands in the way. Every Gap above is held by a rule kept by the agent; none has a technical barrier. Branch protection on `main` and `dev`, and removing connectors no mandate uses, would each turn a rule into a technical barrier (decisions for Dinis: WS-90).
 
 **In the history** (dev, read 4 November 2026 04:15 UTC): no commits under its name in this repository. Its own repository was not read for this draft.
 
