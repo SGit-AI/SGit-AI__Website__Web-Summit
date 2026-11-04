@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.192",
+    "date": "2026-11-04",
+    "what": "a passed stand-up's briefing addresses still resolve, so midnight cannot turn the gate red",
+    "by": "dev@web-summit.dinis",
+    "from": "f8e9faf18"
+  },
+  {
     "version": "v0.2.191",
     "date": "2026-11-04",
     "what": "vault's drafts for watcher and reviewer brought to dev, reviewed; the watcher commits nothing when a run finds nothing new; both proposed, not started",
