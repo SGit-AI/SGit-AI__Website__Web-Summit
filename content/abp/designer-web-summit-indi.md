@@ -22,7 +22,6 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: t
 ## Gap: capabilities within Reach beyond authority {#gap}
 
 - It writes in another agent's folder (`team/designer/`, designer@web-summit.dinis's policy scope) and in the shared `content/` and build, outside its person's folder; no commit records designer@web-summit.dinis's or the conductor's yes. WS-144 for Indi.
-- It is not on its person's list of agents (`people/indi/agents.json`), the inventory the conductor keeps.
 - Its pull requests were merged into `dev`: who merged them, a person or an agent, is not in the commit; GitHub collaboration is in every session's Reach.
 - Write anywhere in the repository: its push access is not limited to `people/indi/` and `board/`, the paths its person's brief gives it.
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November; still at 08:15 on 3 November).
@@ -56,4 +55,4 @@ Open questions: its connectors; who reviews its output each day; whether Indi ha
 
 ## Provenance {#provenance}
 
-Owner: Indi. Drafted by abp@web-summit.dinis from the repository; Indi and the agent correct it. Version 1, 4 November 2026, in `content/abp/` with its history in git.
+Owner: Indi. Drafted by abp@web-summit.dinis from the repository; Indi and the agent correct it. Version 2, 4 November 2026 (16:10 wake: listed in Indi's agents.json (WS-144 item 2)), in `content/abp/` with its history in git.
