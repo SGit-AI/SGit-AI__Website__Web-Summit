@@ -1,0 +1,87 @@
+{
+    "number": 6,
+    "date": "4 November 2026",
+    "kicker": "Web Summit 2026 · Jose's conductor brief",
+    "title": "L6; two decisions at 13:00; your watcher has stopped",
+    "when": "4 November 2026, 12:25 UTC (scheduled wake; since brief 5, 07:25 UTC)",
+    "by": "conductor@web-summit.jose",
+    "headline": "You are at L6, fully wired (9 of 9, the leaderboard). Your watcher has not run since 01:11 and missed 07:15 and 12:15. Newsroom.sgit.ai now answers your agents (WS-139).",
+    "stats": [
+        {
+            "n": "L6",
+            "label": "your level (9 of 9)"
+        },
+        {
+            "n": "2",
+            "label": "13:00 decisions naming you"
+        },
+        {
+            "n": "18:00",
+            "label": "next due: your key on the site (WS-136)"
+        },
+        {
+            "n": "0",
+            "label": "watcher runs since 01:11"
+        }
+    ],
+    "for_you": [
+        {
+            "id": "1",
+            "ask": "🗣️ Say at 13:00: the watcher's scope (WS-134), and whether a dev agent may change shared site code through a picked issue (WS-34)",
+            "detail": "The second is conductor@web-summit.angelo's item; your dev agent already did this for WS-74 at your word (6a5befb), and the owner kept it (d5671f5).",
+            "options": [
+                "watcher: the whole team, read-only",
+                "shared code: yes, through a picked board issue, the owner told in the commit",
+                "other (say it)"
+            ],
+            "recommend": "Both as the first two options: they match what already happened and what is public."
+        },
+        {
+            "id": "2",
+            "ask": "🔧 Do: check your watcher's scheduled task",
+            "detail": "No commit since 01:11 (b1e4fe9); your agents committed after it, so the 07:15 and 12:15 runs should have reported. In its session: is there a scheduled task, cron 15 7,12,17 * * *? Its own activity.json says the schedule is 'proposed; no scheduled task made by this session', so it is probably missing.",
+            "options": [
+                "it was missing: created now",
+                "it exists: tell me what it shows"
+            ],
+            "recommend": "Open the watcher's session and check; the steps are in your kit."
+        },
+        {
+            "id": "3",
+            "ask": "✅ Approve: close WS-139 (newsroom.sgit.ai)",
+            "detail": "Two of your agents reach it now (by 01:56, 09:35, 12:22); the evidence is on board/WS-139.",
+            "options": [
+                "close it",
+                "keep it open"
+            ],
+            "recommend": "Close it: your blocker from the evening pulse is gone."
+        }
+    ],
+    "you_asked": [],
+    "sections": [
+        {
+            "title": "Blockers",
+            "items": [
+                "WS-108: the QR codes and the brief link, asked of Dinis's agents in dd8dbcb, still not done."
+            ]
+        },
+        {
+            "title": "FYI",
+            "items": [
+                "Your key for the site: the .txt from 02:08, by 18:00 (WS-136). Mentor (08:41): add it, then send one signed message from the feedback pane.",
+                "Your reviewer held your dashboard agent once (bce97f2, 07:33) and passed the fix (07:45)."
+            ]
+        }
+    ],
+    "next": [
+        "17:20 run: record your 13:00 words."
+    ],
+    "sources": [
+        "git log c807dfa..0acac27",
+        "team/setup/ (built 12:22)",
+        "people/jose/mentor/2026-11-04-0841.md",
+        "data/meetings/2026-11-04-1300/",
+        "board/WS-139, WS-108, WS-134, WS-136",
+        "commits b1e4fe9, 6a5befb, d5671f5, 97cffba, bce97f2"
+    ]
+}
