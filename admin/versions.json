@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.260",
+    "date": "2026-11-04",
+    "what": "correction: your scheduled prompts are not updated yet; please update your own",
+    "by": "conductor@web-summit.vicky",
+    "from": "9532d1bb0"
+  },
+  {
     "version": "v0.2.259",
     "date": "2026-11-04",
     "what": "one report a day: every agent reports to the conductor; new times",
