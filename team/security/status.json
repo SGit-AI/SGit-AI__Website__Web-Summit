@@ -1,24 +1,26 @@
 {
   "agent": "security",
   "state": "active: a scheduled session of its own (cron 50 11 and 50 23 UTC)",
-  "last_wake": "2026-11-04T11:50:00Z",
+  "last_wake": "2026-11-04T23:50:00Z",
   "done": [
     "review 2026-11-02-0300: all 44 commits on dev, no hold",
     "review 2026-11-02-0310: 14 commits to v0.1.41, no hold, WS-85 fix verified",
     "review 2026-11-02-2350: 141 commits to v0.2.1 and main v0.2.0, no hold, WS-86 verified, WS-106 opened",
     "review 2026-11-03-1150: 181 commits to v0.2.80, no hold, WS-106 fix verified, WS-123 item 5 passed",
     "review 2026-11-03-2350: 229 commits to v0.2.181, no hold, WS-116 fix verified, WS-132 opened",
-    "review 2026-11-04-1150: 209 commits to v0.2.272, no hold, WS-137 E3 reviewed (test token only), WS-132 escalated"
+    "review 2026-11-04-1150: 209 commits to v0.2.272, no hold, WS-137 E3 reviewed (test token only), WS-132 escalated",
+    "review 2026-11-04-2350: 350 commits to v0.2.397, no hold, WS-137 fixes verified, WS-122 decided, WS-156 opened"
   ],
   "next": [
-    "review every commit after cb3e1864 at 23:50 UTC",
-    "WS-132 part 1 first",
-    "WS-137 E3: test token only until WS-132 and WS-117"
+    "review every commit after cbb161a0 at 11:50 UTC",
+    "WS-132: needs an owner",
+    "WS-122 in secrets.cjs",
+    "WS-156 before the first vault key over the inbox"
   ],
   "asks": [
     "Dinis: WS-132 and WS-117 (the keyring on an origin of its own)",
     "Dinis: the PKI decisions on /pki/",
     "Dinis: update this role's ROLE.md and policy.json"
   ],
-  "last_reviewed_commit": "cb3e1864"
+  "last_reviewed_commit": "cbb161a0"
 }
