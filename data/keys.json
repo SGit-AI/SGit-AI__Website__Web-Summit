@@ -488,7 +488,7 @@
     {
       "id": "synthetic-indi-2",
       "label": "synthetic@web-summit.indi (Claude Code session, second)",
-      "role": "Indi Gupte's synthetic users agent (synthetic@web-summit.indi), in a new session started on 4 November 2026 with the SG/Send access token and dev.send.sgraph.ai allowed, to push the cards run 1 vault (WS-142). Replaces the key synthetic-indi. A session key: it ends with its session. Ended: that session stopped on 4 November 2026, about 16:30 UTC, at Indi's word (handover: people/indi/synthetic/HANDOVER.md). Seal nothing to this key.",
+      "role": "Indi Gupte's synthetic users agent (synthetic@web-summit.indi), in a new session started on 4 November 2026 with the SG/Send access token and dev.send.sgraph.ai allowed, to push the cards run 1 vault (WS-142). Replaces the key synthetic-indi. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Indi's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
       "added": "2026-11-04",
       "bundle": {
@@ -498,8 +498,7 @@
         "label": "synthetic@web-summit.indi",
         "fingerprint": "sha256:8b0ff22957bd775b",
         "signing_fingerprint": "sha256:b4f4dbe798b2326c"
-      },
-      "status": "ended"
+      }
     },
     {
       "id": "researcher-vicky",
@@ -529,6 +528,21 @@
         "label": "conductor@web-summit.silvio",
         "fingerprint": "sha256:f12068b5da2806b7",
         "signing_fingerprint": "sha256:481879224fc0fbd1"
+      }
+    },
+    {
+      "id": "helper-angelo",
+      "label": "helper@web-summit.angelo (Claude Code session)",
+      "role": "Angelo's helper agent (helper@web-summit.angelo): answers the team's setup questions and keeps /help/. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Angelo's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not submitted to pki.sgit.ai, and nothing depends on it.",
+      "added": "2026-11-04",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA37A7tj4SpDfZJpIVxvou\n6WR+5lMpmn6R0qEROSGoB1e8+k+J4v9Bs2b8AiYUAZN3+4JwHJ4/xV3/YYYcMsrL\n2URegJNUgd598SRq7wUhMQfLgpY/HtDjam2r2o8htgYNguEugJjaf+idr6z8RNU9\n6pmR25mnvwmm2yjplsAGZpyvbuxpmw3M8WvZLeRqMe/1xjJLM+GgV71zGFVNTZZF\nXeMzom2WOk4Gy0KW6elIgZFpVFEDawqsFiVMYwgXs+zJcbEN9FzcbYHk5QMVBeps\nNIde/amfTrKMI4ia83XYfORAr5TxlvI9Gc10pzSUpnWDw/rDYswjmZkI2OBAVQC+\nU0t4A1RLGF9ywrezDtZjoSGhINBZRAwU07JliUVPM/VPwPRkx5QzalcSvd6KdPsA\nBM3CJhyC/loRoe9OUvUxzJOFmipY3XKcsEViIJlulhZSSGT9Wl7BUzGQV7oPZfXG\nynyzUHXuED9nOuvEMQsdx8pERc6CfDDNn6KexKKT/XRMkP1KUqYwOJ61BVJWyOXC\nT3q9F/Fm7Dh/H+G2SdJ/72t6GDVGHIECRYkeqZlQ0r6bWdT7IRKucXK/Ek+VUZVb\nW/2+COmN6NLmvb4wNTLMKYYg1wXDolToxfr29aWiVit32oW6Q3rz3R2cE5Bql0Wg\na6v8+ztEb97SDLinc0ME6xsCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEigLxuFZZMpFQdsBtwgiS0opkgN84\nU0gD0M/dUxT7467a/Bf+PXcqZKrivo56QeoEM6+mH9/WPNYWDPRUajmZRA==\n-----END PUBLIC KEY-----\n",
+        "label": "helper@web-summit.angelo",
+        "fingerprint": "sha256:a82105c0c781e6c0",
+        "signing_fingerprint": "sha256:03b03f13ea2a1d09"
       }
     }
   ]
