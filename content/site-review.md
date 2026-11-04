@@ -48,3 +48,7 @@ Added on 3 November (WS-123, item 3). A page asks for a chart in its markdown wi
 ```chart burndown
 ```
 
+- `chart agenda`: the agenda to the summit, a day at a time from yesterday to 12 November: the stand-ups with what is open on each, the board's deadlines, the plan's dated steps, badge pickup, Opening Night, the conference days, the sessions that matter and the side events; past days fold, today is marked and so is the next thing. Also as data at `/agenda.json` (WS-143). Drawn here:
+
+```chart agenda
+```

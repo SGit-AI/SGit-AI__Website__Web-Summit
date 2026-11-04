@@ -6,6 +6,7 @@ import fs from 'fs'
 import path from 'path'
 import * as CAST from './cast.mjs'
 import { dayTimeline, burndown, agentsMap } from './charts.mjs'
+import { buildAgenda, agendaHtml, agendaText } from './agenda.mjs'
 import { execFileSync } from 'child_process'
 import { meetingsContext, buildMeetings, sinceMd } from './meetings.mjs'
 import { inventory, inventoryMd, myAgentsMd } from './inventory.mjs'
@@ -157,6 +158,7 @@ function rail(rel, up, body) {
 
 function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false, head = '' }) {
     const up = '../'.repeat(rel.split('/').length - 1)
+    body = String(body).replaceAll('href="@@/', `href="${up}`)   // links from build-time blocks (the agenda) written from the site root
     const side = home ? '' : rail(rel, up, body)
     const heroed = home && body.includes('class="hm-hero"')   // the home page's hero band (WS-103) is its title
     const url = `https://${HOST}/${rel}`
@@ -218,6 +220,7 @@ const twinPath = rel => rel.replace(/\.html$/, '.md')
 // a chart fence in a twin becomes the chart's own words (its SVG <title> and <desc>, what a screen reader hears), so an
 // agent reading the markdown gets what the picture says, not a fence it cannot draw (dev@web-summit.dinis, 4 November)
 const chartWords = md => md.replace(/^```chart ([a-z-]+)(?: ([a-z0-9-]+))?\s*\n```\s*$/gm, (_, name, arg) => {
+    if (CHARTS[name] && CHARTS[name].text) return CHARTS[name].text(arg)
     const svg = CHARTS[name] ? CHARTS[name](arg) : ''
     const t = (svg.match(/<title[^>]*>([^<]*)<\/title>/) || [])[1], d = (svg.match(/<desc[^>]*>([^<]*)<\/desc>/) || [])[1]
     const un = x => String(x || '').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&')
@@ -492,6 +495,12 @@ CHARTS['agents-map'] = (() => {
 
 // the stand-ups: data/meetings/ -> meetings/ (admin/build/meetings.mjs)
 const MEET = meetingsContext(ROOT)
+// the agenda to the summit (WS-143, item 1): /agenda.json, and ```chart agenda``` wherever a page wants it; built from
+// the stand-ups, the board, the plan and the summit at every release. BUILD_NOW pins "now", as for the stand-ups.
+// hasPage is meetings.mjs's own rule for which stand-ups get a page (today to two days on, or any with items)
+const AGENDA = buildAgenda({ now: Date.parse(process.env.BUILD_NOW || new Date().toISOString()), slots: MEET.all, agendaOf: id => MEET.agenda(id), hasPage: sl => { const n = Date.parse(process.env.BUILD_NOW || new Date().toISOString()), d = x => new Date(x).toISOString().slice(0, 10); return (sl.day >= d(n) && sl.day <= d(n + 2 * 864e5)) || MEET.items(sl.id).length > 0 }, issues: ISSUES.issues, plan, events })
+write('agenda.json', JSON.stringify(AGENDA, null, 2) + '\n')
+CHARTS.agenda = Object.assign(() => agendaHtml(AGENDA, '@@/'), { text: () => agendaText(AGENDA) })   // @@/ is the site root: page() makes it relative
 buildMeetings({ ROOT, C: MEET, PEOPLE, ISSUES, write, page, render, twin, pages })
 
 // plain pages: content/index.md -> index.html, content/<name>.md -> <name>/index.html

@@ -428,3 +428,20 @@ svg.ch-map { min-width: 620px; max-width: 900px; }
 .addkey .ak-msg { font-weight: 600; }
 .addkey .ak-msg.bad { color: var(--warm); }
 .addkey .ak-help { font-size: 0.85rem; color: var(--ink-2); }
+
+/* the agenda (admin/build/agenda.mjs, WS-143): a plain readable default on tokens, for the designer's layout to replace */
+.ag { display: grid; gap: 10px; }
+.ag-d { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 8px 14px; }
+.ag-d h3, .ag-d summary { margin: 2px 0 6px; font-size: 1rem; cursor: default; }
+.ag-past { opacity: .75; } .ag-past summary { cursor: pointer; }
+.ag-today { border-color: var(--accent); box-shadow: inset 4px 0 0 var(--accent); }
+.ag-d ul { list-style: none; padding: 0; margin: 0; }
+.ag-item { display: grid; grid-template-columns: 3.4rem 1fr; gap: 0 8px; padding: 3px 0; }
+.ag-item > .ag-detail, .ag-item > .ag-issues { grid-column: 2; }
+.ag-time { font: 600 .85rem var(--mono); color: var(--ink-2); }
+.ag-detail { color: var(--ink-2); font-size: .88rem; }
+.ag-issues { font-size: .88rem; color: var(--ink-2); }
+.ag-flag { font-size: .75rem; padding: 0 6px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); }
+.ag-next > a { font-weight: 700; }
+.ag-togo { color: var(--ink-2); font-size: .85rem; font-weight: 400; }
+.ag-summit > a { font-weight: 600; } .ag-none, .ag-missing { color: var(--ink-2); font-size: .88rem; }
