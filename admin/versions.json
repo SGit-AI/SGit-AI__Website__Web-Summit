@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.232",
+    "date": "2026-11-04",
+    "what": "08:27 wake: WS-138 said plainly (the conductor can sign as its person); brief 12",
+    "by": "conductor@web-summit.dinis",
+    "from": "78fdfe897"
+  },
+  {
     "version": "v0.2.231",
     "date": "2026-11-04",
     "what": "WS-138, a person's signature is also their conductor's; ABPs updated",
