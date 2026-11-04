@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.298",
+    "date": "2026-11-04",
+    "what": "the newsroom patch aligned with the brief pack (WS-141); Indi chooses this session; desks wait; brief 7",
+    "by": "conductor@web-summit.indi",
+    "from": "feda6ff18"
+  },
+  {
     "version": "v0.2.297",
     "date": "2026-11-04",
     "what": "13:41 wake: no notes; Silvio's dashboard is kept by procurement, which the dashboard step does not count (WS-99)",
