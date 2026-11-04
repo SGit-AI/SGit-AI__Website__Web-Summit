@@ -86,35 +86,32 @@ def _doc(W, H, s, cut, title):
 def corporate():
     w, h, r = 100, 40, 8; W, H = w + 2 * BLEED, h + 2 * BLEED
     s = Side(CONTAINER)
-    lw = 60; lh, mw = lockup(s, (W - lw) / 2, 8.4, lw, dark=True)           # mark 13.4 mm as drawn: 6.7 mm clear
-    s.text('AGENT BEHAVIOUR POLICIES', JB, 500, 7.5 * PT, W / 2, 34.6, FAINT, 'label', 'middle')
+    lw = 84; lh, mw = lockup(s, (W - lw) / 2, 4.6, lw, dark=True)           # 84 mm: the mark 15.7 mm as drawn, 7.9 mm clear
+    s.text('AGENT BEHAVIOUR POLICIES', JB, 500, 9 * PT, W / 2, 34.6, FG, 'label', 'middle')   # warm white, 9 pt: brighter, larger
     return 'corporate', 'Corporate: the RiskMandate lockup', W, H, s, rrect(BLEED, BLEED, w, h, r), ('rrect', BLEED, BLEED, w, h, r)
 
-# ---------- 2. The gap: reach, mandate, and the gap between them ----------
+# ---------- 2. The gap: one bar, read at a glance (redrawn after Indi's feedback: "too difficult to understand") ----------
 def gap(animated=False):
     D = 76; W = H = D + 2 * BLEED; c = W / 2
     s = Side(CONTAINER)
-    R_reach, R_mand = 23, 14.5
-    # the gap: the ring between mandate and reach, striped in gold (the brand's caution colour, used as stripes, not a fill)
-    ring = circle(c, c, R_reach) + circle(c, c, R_mand)
-    stripes = ''.join(f'<line x1="{n(c - 40 + i * 3.2)}" y1="{n(c - 40)}" x2="{n(c - 40 + i * 3.2 + 80)}" y2="{n(c + 40)}" stroke="{GOLD}" stroke-width="1.1"/>' for i in range(-26, 27))
-    spin = (f'<animateTransform attributeName="transform" type="rotate" from="0 {n(c)} {n(c)}" to="360 {n(c)} {n(c)}" dur="40s" repeatCount="indefinite"/>' if animated else '')
-    s.raw(f'<clipPath id="gapring"><path d="{ring}" clip-rule="evenodd"/></clipPath><g clip-path="url(#gapring)"><g>{stripes}{spin}</g></g>')
-    pulse = (f'<animate attributeName="stroke-dashoffset" from="0" to="-12" dur="3s" repeatCount="indefinite"/>' if animated else '')
-    s.raw(f'<circle cx="{n(c)}" cy="{n(c)}" r="{R_reach}" fill="none" stroke="{FG}" stroke-width="0.7" stroke-dasharray="2.2 1.8">{pulse}</circle>')
-    grow = (f'<animate attributeName="r" values="{R_mand};{R_mand - 1.2};{R_mand}" dur="4s" repeatCount="indefinite"/>' if animated else '')
-    s.raw(f'<circle cx="{n(c)}" cy="{n(c)}" r="{R_mand}" fill="{GREEN}">{grow}</circle>')
-    # labels: the gap on its own pill so the stripes never sit under the words
-    gw = width('THE GAP', BC, 700, 4.6) + 3.2
-    gy = c - (R_reach + R_mand) / 2                                   # the middle of the ring
-    s.raw(f'<rect x="{n(c - gw / 2)}" y="{n(gy - 2.6)}" width="{n(gw)}" height="5.2" rx="2.6" fill="{CONTAINER}" stroke="{GOLD}" stroke-width="0.35"/>')
-    s.text('THE GAP', BC, 700, 4.6, c, gy + cap(BC, 700) * 4.6 / 2, FG, 'label', 'middle', on=CONTAINER)
-    s.text('MANDATE', BC, 700, 5.2, c, c + 0.2, FG, 'label', 'middle', on=GREEN)
-    s.text('what you authorised', G, 500, 7 * PT, c, c + 4.8, FG, 'label', 'middle', on=GREEN)
-    s.text('REACH', BC, 700, 4.4, c, c + R_reach + 4, GREEN2, 'label', 'middle')
-    s.text('everything it can', G, 500, 7 * PT, c, c + R_reach + 7.6, FG, 'label', 'middle')
-    s.text('actually reach', G, 500, 7 * PT, c, c + R_reach + 10.6, FG, 'label', 'middle')
-    s.wordmark(c, c - R_reach - 4.4, 2.6, FG, 'middle')
+    x0, x1, split, y0, bh = c - 30, c + 30, c + 4, c - 8, 9.5          # the bar: all it can reach; green to split = authorised
+    s.wordmark(c, c - 25.6, 2.6, FG, 'middle')
+    s.text('WHAT IT CAN REACH', JB, 700, 7.5 * PT, c, y0 - 4.2, FG, 'label', 'middle')
+    s.raw(f'<path d="M{n(x0)} {n(y0 - 1.4)}V{n(y0 - 2.8)}H{n(x1)}V{n(y0 - 1.4)}" fill="none" stroke="{FG}" stroke-width="0.45" stroke-linejoin="round"/>')
+    s.raw(f'<clipPath id="gapbar"><rect x="{n(split)}" y="{n(y0)}" width="{n(x1 - split)}" height="{n(bh)}"/></clipPath>')
+    move = (f'<animateTransform attributeName="transform" type="translate" from="0 0" to="4.53 0" dur="1.6s" repeatCount="indefinite"/>' if animated else '')
+    stripes = ''.join(f'<line x1="{n(split - 12 + i * 2.265)}" y1="{n(y0 + bh)}" x2="{n(split - 12 + i * 2.265 + bh)}" y2="{n(y0)}" stroke="{GOLD}" stroke-width="0.95"/>' for i in range(0, 22))
+    s.raw(f'<g clip-path="url(#gapbar)"><g>{stripes}{move}</g></g>')
+    grow = (f'<animate attributeName="width" values="{n(split - x0)};{n(split - x0 - 3)};{n(split - x0)}" dur="3.2s" repeatCount="indefinite"/>' if animated else '')
+    s.raw(f'<rect x="{n(x0)}" y="{n(y0)}" width="{n(split - x0)}" height="{n(bh)}" fill="{GREEN}">{grow}</rect>')
+    s.raw(f'<rect x="{n(x0)}" y="{n(y0)}" width="{n(x1 - x0)}" height="{n(bh)}" rx="1" fill="none" stroke="{FG}" stroke-width="0.5"/>')
+    s.text('AUTHORISED', BC, 700, 4.6, (x0 + split) / 2, y0 + bh / 2 + cap(BC, 700) * 4.6 / 2, FG, 'label', 'middle', on=GREEN)
+    # the gap's label under its part of the bar, with a caution triangle in the brand's gold
+    gx = (split + x1) / 2; ty = y0 + bh + 2.2
+    s.raw(f'<path d="M{n(gx)} {n(ty)}l-2 3.4h4z" fill="{GOLD}"/><path d="M{n(gx)} {n(ty + 1.2)}v1.1" stroke="{CONTAINER}" stroke-width="0.45" stroke-linecap="round"/><circle cx="{n(gx)}" cy="{n(ty + 2.85)}" r="0.25" fill="{CONTAINER}"/>')
+    s.text('THE GAP', BC, 700, 4.8, gx, ty + 8.4, FG, 'label', 'middle')
+    size = fit('CONTROL THE GAP.', BC, 800, 6.6, 54, 4)
+    s.text('CONTROL THE GAP.', BC, 800, size, c, c + 22.5, FG, 'line', 'middle')
     return ('gap-animated' if animated else 'gap'), 'Infographic: the gap', W, H, s, circle(c, c, D / 2), ('circle', c, c, D / 2)
 
 # ---------- 3. Know, define, control: the three steps ----------
@@ -123,13 +120,28 @@ def steps():
     s = Side(CONTAINER)
     xs = [BLEED + 17, BLEED + 50, BLEED + 83]; cy = 17.4
     # icons, drawn here (plain geometry, not the mark): reach as a radar sweep, the mandate as a page with a tick, the gap closed
-    s.raw(f'<circle cx="{xs[0]}" cy="{cy}" r="7" fill="none" stroke="{GREEN2}" stroke-width="1"/><circle cx="{xs[0]}" cy="{cy}" r="4" fill="none" stroke="{GREEN2}" stroke-width="0.7"/>'
-          f'<path d="M{xs[0]} {cy}L{xs[0] + 6.2} {cy - 3.3}" stroke="{GREEN2}" stroke-width="1" stroke-linecap="round"/><circle cx="{xs[0] + 3.6}" cy="{cy + 2.6}" r="0.9" fill="{FG}"/><circle cx="{xs[0] - 4.8}" cy="{cy - 2.2}" r="0.9" fill="{FG}"/>')
+    # KNOW: a radar, as Indi asked: rings, a crosshair, the sweep line and its shadow trailing behind it, two blips
+    rx, R = xs[0], 7
+    pt = lambda a, r: (rx + r * math.cos(math.radians(a)), cy + r * math.sin(math.radians(a)))
+    (ax, ay), (bx, by) = pt(-100, R - 0.5), pt(-30, R - 0.5)
+    s.raw(f'<circle cx="{rx}" cy="{cy}" r="{R}" fill="{CONTAINER}" stroke="{GREEN2}" stroke-width="1"/>'
+          f'<path d="M{rx} {cy}L{n(ax)} {n(ay)}A{R - 0.5} {R - 0.5} 0 0 1 {n(bx)} {n(by)}Z" fill="{GREEN}"/>'            # the sweep's shadow
+          + ''.join(f'<circle cx="{rx}" cy="{cy}" r="{r}" fill="none" stroke="{GREEN2}" stroke-width="0.35"/>' for r in (2.4, 4.7))
+          + f'<path d="M{rx - R + 0.6} {cy}H{rx + R - 0.6}M{rx} {cy - R + 0.6}V{cy + R - 0.6}" stroke="{GREEN2}" stroke-width="0.3"/>'
+          f'<path d="M{rx} {cy}L{n(bx)} {n(by)}" stroke="{GREEN2}" stroke-width="1.1" stroke-linecap="round"/>'               # the sweep line
+          f'<circle cx="{n(pt(-55, 4.2)[0])}" cy="{n(pt(-55, 4.2)[1])}" r="0.85" fill="{FG}"/><circle cx="{n(pt(150, 5.4)[0])}" cy="{n(pt(150, 5.4)[1])}" r="0.7" fill="{GREEN2}"/>')
     s.raw(f'<path d="{rrect(xs[1] - 5.2, cy - 7, 10.4, 14, 1.4)}" fill="none" stroke="{GREEN2}" stroke-width="1"/>'
           + ''.join(f'<line x1="{xs[1] - 3}" y1="{n(cy - 3.6 + i * 2.4)}" x2="{xs[1] + 3}" y2="{n(cy - 3.6 + i * 2.4)}" stroke="{FG}" stroke-width="0.6" stroke-linecap="round"/>' for i in range(3))
           + f'<path d="M{xs[1] - 2.2} {cy + 4.1}l1.5 1.5l3-3" fill="none" stroke="{GREEN2}" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>')
-    s.raw(f'<circle cx="{xs[2]}" cy="{cy}" r="7" fill="none" stroke="{FG}" stroke-width="0.7" stroke-dasharray="1.6 1.2"/><circle cx="{xs[2]}" cy="{cy}" r="4.6" fill="{GREEN}"/>'
-          f'<path d="M{xs[2] - 2} {cy}l1.4 1.4l2.8-2.8" fill="none" stroke="{FG}" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>')
+    # CONTROL: a control dial (Indi: "make it clearer that something is being controlled"): a knob, its pointer, and a
+    # scale lit up to where it is set
+    kx = xs[2]; ticks = ''
+    for i, a in enumerate(range(135, 406, 27)):
+        (tx0, ty0), (tx1, ty1) = [(kx + r * math.cos(math.radians(a)), cy + r * math.sin(math.radians(a))) for r in (5.9, 7.4)]
+        ticks += f'<line x1="{n(tx0)}" y1="{n(ty0)}" x2="{n(tx1)}" y2="{n(ty1)}" stroke="{GREEN2 if a <= 270 else FAINT}" stroke-width="{0.8 if a <= 270 else 0.5}" stroke-linecap="round"/>'
+    px, py = kx + 3.4 * math.cos(math.radians(270)), cy + 3.4 * math.sin(math.radians(270))
+    s.raw(ticks + f'<circle cx="{kx}" cy="{cy}" r="4.6" fill="{GREEN}" stroke="{FG}" stroke-width="0.5"/>'
+          f'<path d="M{kx} {cy}L{n(px)} {n(py)}" stroke="{FG}" stroke-width="1.1" stroke-linecap="round"/><circle cx="{kx}" cy="{cy}" r="0.8" fill="{FG}"/>')
     for a, b in ((xs[0], xs[1]), (xs[1], xs[2])):
         x0, x1 = a + 9.6, b - 9.6
         s.raw(f'<path d="M{n(x0)} {cy}H{n(x1)}M{n(x1 - 1.6)} {n(cy - 1.4)}L{n(x1)} {cy}L{n(x1 - 1.6)} {n(cy + 1.4)}" fill="none" stroke="{FAINT}" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>')
@@ -138,40 +150,45 @@ def steps():
         s.text(v, G, 500, 7 * PT, x, 35.4, FAINT, 'label', 'middle')
     return 'steps', 'Infographic: know, define, control', W, H, s, rrect(BLEED, BLEED, w, h, r), ('rrect', BLEED, BLEED, w, h, r)
 
-# ---------- 4. Cartoon: the agent with long arms ----------
+# ---------- 4. Cartoon: the agent with all the keys (simplified after Indi's feedback: "no idea what this means") ----------
+def key(x, y, a, fill):
+    """One cartoon key: its bow at (x, y), the shaft hanging away from the ring at a degrees from straight down."""
+    return (f'<g transform="translate({n(x)},{n(y)}) rotate({n(-a)})"><path d="M-0.9 2h1.8v9.6h-1.8z" fill="{fill}" stroke="{INK}" stroke-width="0.5" stroke-linejoin="round"/>'
+            f'<path d="M0.9 8.4h1.9v1.2h-1.9zM0.9 10.4h1.3v1.2h-1.3z" fill="{fill}" stroke="{INK}" stroke-width="0.45" stroke-linejoin="round"/>'
+            f'<circle cx="0" cy="0" r="2.3" fill="{fill}" stroke="{INK}" stroke-width="0.55"/><circle cx="0" cy="0" r="0.8" fill="{FG}" stroke="{INK}" stroke-width="0.4"/></g>')
 def cartoon():
     w = h = 76; r = 12; W, H = w + 2 * BLEED, h + 2 * BLEED
     s = Side(FG)
     o = BLEED; ol = 0.9
-    def P(d, fill, sw=ol, extra=''): s.raw(f'<path d="{d}" fill="{fill}" stroke="{INK}" stroke-width="{sw}" stroke-linejoin="round" stroke-linecap="round" {extra}/>')
-    # the jar of PROD, lid off
-    P(rrect(o + 50, o + 30, 19, 24, 4), WHITE)
-    for cx, cy in ((o + 55, o + 40.5), (o + 62, o + 42), (o + 58.5, o + 35.5)):
-        s.raw(f'<circle cx="{cx}" cy="{cy}" r="2.6" fill="{GOLD}" stroke="{INK}" stroke-width="0.5"/><circle cx="{cx - 0.8}" cy="{cy - 0.6}" r="0.35" fill="{INK}"/><circle cx="{cx + 0.9}" cy="{cy + 0.5}" r="0.35" fill="{INK}"/>')
-    s.raw(f'<g transform="rotate(-24 {o + 66} {o + 24})">'); P(rrect(o + 57, o + 22, 18, 4.2, 1.6), GOLD); s.raw('</g>')
-    s.raw(f'<path d="{rrect(o + 53, o + 46.4, 13, 5.2, 1)}" fill="{FG}" stroke="{INK}" stroke-width="0.4"/>')   # the label, below the hand
-    s.text('PROD', JB, 700, 7 * PT, o + 59.5, o + 50.2, INK, 'label', 'middle', on=FG)
-    # the agent
-    for x in (o + 13, o + 21.5):
-        P(rrect(x, o + 55, 4.5, 7, 1.5), INK)
-    P(rrect(o + 9, o + 37, 21, 19, 4), GREEN)                                          # body
-    s.raw(f'<line x1="{o + 19.5}" y1="{o + 14}" x2="{o + 19.5}" y2="{o + 9}" stroke="{INK}" stroke-width="{ol}" stroke-linecap="round"/>')
-    s.raw(f'<circle cx="{o + 19.5}" cy="{o + 8}" r="1.7" fill="{GOLD}" stroke="{INK}" stroke-width="{ol}"/>')
-    P(rrect(o + 7, o + 14, 25, 20, 5), GREEN)                                          # head
-    s.raw(f'<path d="{rrect(o + 10, o + 17, 19, 13.5, 3)}" fill="{INK}"/>')             # the screen: dark, so the lighter green may sit on it
-    for ex in (o + 16.4, o + 23.6):
-        s.raw(f'<circle cx="{ex}" cy="{o + 22.6}" r="1.9" fill="{GREEN2}"/><circle cx="{ex + 0.8}" cy="{o + 22.4}" r="0.8" fill="{INK}"/>')   # eyes, on the jar
-    s.raw(f'<path d="M{o + 16} {o + 26.4}q3.6 2.4 7.6 -0.4" fill="none" stroke="{GREEN2}" stroke-width="0.8" stroke-linecap="round"/>')   # a guilty grin
-    s.raw(f'<path d="M{o + 9} {o + 44}q-4 2 -3 6" fill="none" stroke="{INK}" stroke-width="2.8" stroke-linecap="round"/><path d="M{o + 9} {o + 44}q-4 2 -3 6" fill="none" stroke="{GREEN}" stroke-width="1.4" stroke-linecap="round"/>')
-    arm = f'M{o + 30} {o + 43}C{o + 38} {o + 44} {o + 34} {o + 31} {o + 41} {o + 28}S{o + 49} {o + 23} {o + 53} {o + 27}S{o + 55} {o + 36} {o + 57} {o + 39}'
+    def P(d, fill, sw=ol): s.raw(f'<path d="{d}" fill="{fill}" stroke="{INK}" stroke-width="{sw}" stroke-linejoin="round" stroke-linecap="round"/>')
+    top = 'Your AI has access.'; bottom = 'Does it have permission?'
+    size = fit(bottom, BC, 800, 6.4, w - 2 * INSET - 8, 3.6)
+    s.text(top, BC, 800, size, W / 2, o + 10.6, INK, 'line', 'middle')
+    # the agent, pleased with itself
+    for x in (o + 15, o + 23.5):
+        P(rrect(x, o + 58, 4.5, 6.5, 1.5), INK)
+    P(rrect(o + 11, o + 40, 21, 19, 4), GREEN)                                         # body
+    s.raw(f'<line x1="{o + 21.5}" y1="{o + 18}" x2="{o + 21.5}" y2="{o + 14.4}" stroke="{INK}" stroke-width="{ol}" stroke-linecap="round"/>')
+    s.raw(f'<circle cx="{o + 21.5}" cy="{o + 13.6}" r="1.6" fill="{GOLD}" stroke="{INK}" stroke-width="{ol}"/>')
+    P(rrect(o + 9, o + 18, 25, 20, 5), GREEN)                                          # head
+    s.raw(f'<path d="{rrect(o + 12, o + 21, 19, 13.5, 3)}" fill="{INK}"/>')             # the screen: dark, so the lighter green may sit on it
+    for ex in (o + 18, o + 25):                                                          # happy, closed eyes
+        s.raw(f'<path d="M{ex - 1.8} {o + 27}q1.8 -2.4 3.6 0" fill="none" stroke="{GREEN2}" stroke-width="0.9" stroke-linecap="round"/>')
+    s.raw(f'<path d="M{o + 17.4} {o + 29.6}q4.1 3 8.2 0" fill="none" stroke="{GREEN2}" stroke-width="0.9" stroke-linecap="round"/>')
+    s.raw(f'<path d="M{o + 11} {o + 47}q-4 2 -3 6" fill="none" stroke="{INK}" stroke-width="2.8" stroke-linecap="round"/><path d="M{o + 11} {o + 47}q-4 2 -3 6" fill="none" stroke="{GREEN}" stroke-width="1.4" stroke-linecap="round"/>')
+    # the key ring, held up high, and a neat fan of keys hanging from it: access, at a glance
+    rcx, rcy, rr = o + 50, o + 27.5, 4.2
+    arm = f'M{o + 32} {o + 46}C{o + 39} {o + 45} {o + 44} {o + 36} {n(rcx - 1.2)} {n(rcy - rr - 0.6)}'
     s.raw(f'<path d="{arm}" fill="none" stroke="{INK}" stroke-width="3.2" stroke-linecap="round"/><path d="{arm}" fill="none" stroke="{GREEN}" stroke-width="1.6" stroke-linecap="round"/>')
-    s.raw(f'<circle cx="{o + 57.4}" cy="{o + 40}" r="2.1" fill="{GREEN}" stroke="{INK}" stroke-width="0.7"/>')
-    for x1, y1, x2, y2 in ((o + 40, o + 21.8, o + 42, o + 19.6), (o + 44.6, o + 20.2, o + 45.6, o + 17.6), (o + 49.4, o + 20.4, o + 50, o + 17.8)):
-        s.raw(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{INK}" stroke-width="0.6" stroke-linecap="round"/>')   # the arm's "boing"
-    size = fit('Trust your agents. Then check.', BC, 800, 6.2, w - 2 * INSET - 6, 3.6)
-    s.text('Trust your agents. Then check.', BC, 800, size, W / 2, o + 70.6, INK, 'line', 'middle')
-    s.wordmark(o + w - INSET - 6, o + 8.5, 2.4, INK, 'end')
-    return 'cartoon', 'Cartoon: trust your agents, then check', W, H, s, rrect(o, o, w, h, r), ('rrect', o, o, w, h, r)
+    for a, fill in ((-54, WHITE), (-18, GOLD), (18, WHITE), (54, WHITE)):
+        d = rr + 2.6
+        s.raw(key(rcx + d * math.sin(math.radians(a)), rcy + d * math.cos(math.radians(a)), a, fill))
+    s.raw(f'<circle cx="{rcx}" cy="{rcy}" r="{rr}" fill="none" stroke="{INK}" stroke-width="1.1"/>')
+    s.raw(f'<circle cx="{n(rcx - 1.2)}" cy="{n(rcy - rr - 0.6)}" r="2.1" fill="{GREEN}" stroke="{INK}" stroke-width="0.7"/>')   # the hand on the ring
+    for x1, y1, x2, y2 in ((rcx + 5.6, rcy - 5.4, rcx + 7.6, rcy - 7.2), (rcx + 7.2, rcy - 1.6, rcx + 9.8, rcy - 2.2), (rcx + 2.2, rcy - 7.6, rcx + 2.8, rcy - 10.2)):
+        s.raw(f'<line x1="{n(x1)}" y1="{n(y1)}" x2="{n(x2)}" y2="{n(y2)}" stroke="{INK}" stroke-width="0.6" stroke-linecap="round"/>')   # jingle
+    s.text(bottom, BC, 800, size, W / 2, o + 71.2, INK, 'line', 'middle')
+    return 'cartoon', 'Cartoon: your AI has access. Does it have permission?', W, H, s, rrect(o, o, w, h, r), ('rrect', o, o, w, h, r)
 
 def inside_cut(box, shape):
     """Every corner of a box at least INSET inside the cut (a rounded rectangle is checked as its inset rectangle and corners)."""

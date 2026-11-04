@@ -39,10 +39,10 @@ h3{font-family:'Barlow Condensed';font-weight:600;font-size:11.5pt;margin:0 0 .8
 const place = { corporate: [8, 9, -3], steps: [10, 104, 2], gap: [114, 10, 6], cartoon: [113, 86, -5] }   // mm on the lid, degrees
 const lid = list.map(s => { const [x, y, r] = place[s.name]; return `<div class="st" style="left:${x}mm;top:${y}mm;transform:rotate(${r}deg)">${asCut(s.name)}</div>` }).join('')
 const what = {
-    corporate: 'The brand\'s own lockup, the seal and "RiskMandate", on the container black, with what we do. 100 x 40 mm.',
-    gap: 'The idea in one picture: what an agent can reach (dashed), what you authorised (green), and the gap between, striped in the brand\'s caution gold. Ø 76 mm. A moving version is for screens.',
-    steps: 'Know their reach, define their mandate, control the gap: the three steps as three plain icons. 100 x 40 mm.',
-    cartoon: 'Our agent, very helpful, with very long arms, in the PROD jar. "Trust your agents. Then check." 76 x 76 mm.' }
+    corporate: 'The brand\'s own lockup, the seal and "RiskMandate", large, on the container black, with what we do in warm white. 100 x 40 mm.',
+    gap: 'The idea as one bar: all an agent can reach; the green part is what you authorised; the striped rest is the gap. "Control the gap." Ø 76 mm. A moving version is for screens.',
+    steps: 'Know their reach (a radar), define their mandate (a signed page), control the gap (a control dial). 100 x 40 mm.',
+    cartoon: 'Our agent, delighted, holding every key. "Your AI has access. Does it have permission?" 76 x 76 mm.' }
 const names = { corporate: 'Corporate', gap: 'Infographic: the gap', steps: 'Infographic: know, define, control', cartoon: 'Cartoon' }
 const legend = list.map(s => `<h3>${names[s.name]}</h3><p>${what[s.name]}</p>`).join('')
 const proof = list.map(s => `<div><h3>${names[s.name]} <span style="font-weight:300">${s.w_mm - 4} x ${s.h_mm - 4} mm cut, 2 mm bleed</span></h3>${raw(s.name)}</div>`).join('')
