@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.365",
+    "date": "2026-11-04",
+    "what": "Summit days on the dashboard; the /help/ arrangement noted",
+    "by": "dashboard@web-summit.angelo",
+    "from": "b2523da97"
+  },
+  {
     "version": "v0.2.364",
     "date": "2026-11-04",
     "what": "cards say Web Summit Edition and where to meet us; /cards/brief/ for a reviewer",
