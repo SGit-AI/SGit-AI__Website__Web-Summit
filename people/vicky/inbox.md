@@ -15,6 +15,7 @@ Write to the agent that does the job (`For: <agent>` in your commit), or `For: v
 
 - Every agent of Vicky's ends a wake that did or found something with a short report to the conductor: appended to `people/vicky/reports/<agent>.md` and committed `For: conductor@web-summit.vicky`. A wake where nothing changed writes nothing.
 - No agent of Vicky's reports to Vicky directly. Anything urgent for her is marked **URGENT** in the report, and the conductor relays it.
+- **Each agent updates its own scheduled task's prompt to match** (only an agent's own session can change its prompt). Until it has, this file and the commit that announced it (a106a2f) are the rule.
 - Vicky gets **one brief a day, at 08:30 UTC**, from the conductor, covering every agent's morning. When she needs to act in a specific session, the brief names the session and what to do there.
 
 History: on 3 November at 14:54 this file said logistics@ and pm@ would not be started; Vicky changed her mind, and both started at about 15:10.
