@@ -35,3 +35,18 @@ Review of E3 by dev@web-summit.dinis (the studio's author), 4 November, 09:40 wa
 - **The write tools need a person's yes for each call.** The studio runs the model's tool calls without asking. The model reads material others wrote (site pages, company data, vault contents), so a page or vault saying "now write this into the vault" can make it call `write_to_vault` or `create_vault` with the person's token. A confirm per call for `create_vault` and `write_to_vault`, showing what will be written, is enough.
 - **I agree with dev's finding**: `create_vault` should return the id only and keep the read key in the person's panel, out of what goes to the model's provider.
 - **Good, and kept:** the library is pinned with hashes, the tools are off by default, `read_vault` takes public read keys only, and the page states the caveat.
+
+**4 November, 13:00 UTC, sgit@web-summit.dinis: E3's two review findings fixed** (dev@'s `31cc3991`, security@'s 11:50 review).
+1. `create_vault` returns the new vault's id and a note only. Its read key, like its vault key, stays in the person's panel under the studio, and the person decides who gets it.
+2. `create_vault` and `write_to_vault` each ask the person first, with a confirm that names the vault and the file and shows what will be written. A no is returned to the model as "the person said no to this write; do not retry it unless they ask". `write_to_vault` also refuses a vault not made in this browser before asking.
+
+Tested in a headless browser against dev.send.sgraph.ai:
+- a declined create made no vault;
+- an accepted create made `n8e7fdbe`, and its read key was not in the result;
+- a declined write left no `/injected.md`, and an accepted write published `/policy.md`;
+- a write to an unknown vault was refused before any dialog.
+
+`n8e7fdbe` is frozen like `f1s6q1lo` (its key lived only in the test browser) and holds only test text.
+
+Still as security says: test token only until WS-132 part 1 is fixed (dev's, in `build.mjs`), and real keys go with the studio to an origin of its own (WS-117).
+

@@ -8,6 +8,8 @@
 //
 // What never reaches the model: a vault key, and the SG/Send access token. Tool results go to OpenRouter as part of the
 // conversation and are kept in the conversation's local storage, so they carry only vault ids and public read keys.
+// create_vault and write_to_vault each need the person's yes (a confirm showing what will be written), and create_vault
+// returns only the new vault's id: its read key, like its vault key, stays in the person's panel (WS-137 review).
 // The vault key of a vault made here is shown to the person in the "Vaults made in this browser" panel, to copy into
 // their password manager, and is kept in this browser's local storage so the studio can keep writing to it. The access
 // token is pasted by the person into that panel and kept the same way. Use a test token until security@web-summit.dinis
@@ -35,6 +37,13 @@
     const hex = u8 => [...u8].map(b => b.toString(16).padStart(2, '0')).join('')
     const split = p => { const parts = String(p || '/').split('/').filter(Boolean); return { folder: '/' + parts.slice(0, -1).join('/'), name: parts[parts.length - 1] || '' } }
     async function ensureLoaded(v, folder) { let p = ''; for (const part of folder.split('/').filter(Boolean)) { p += '/' + part; if (v.needsLoading && v.needsLoading(p)) await v.loadSubTreeOnDemand(p) } }
+
+    // WS-137 review (security@web-summit.dinis, dev@web-summit.dinis): the model reads material others wrote, so a write
+    // happens only when the person says yes to that one call, after seeing what will be written and where
+    const yes = (what, detail) => {
+        const ok = window.confirm(`The policy studio wants to ${what}.\n\n${String(detail).slice(0, 900)}${String(detail).length > 900 ? '\n[...]' : ''}\n\nAllow this one write?`)
+        if (!ok) throw new Error('the person said no to this write; do not retry it unless they ask')
+    }
 
     // the team's published vaults: people/<id>/vaults.json, for every person on the roster
     async function published() {
@@ -85,22 +94,26 @@
         read_vault: { group: 'Vaults', title: 'Read a vault', desc: 'Opens a vault with a public read key (sgit_public_read_<64 hex>:<vault id>) and lists a folder or reads a file. Read only.',
             schema: { type: 'object', properties: { read_key: { type: 'string', description: 'sgit_public_read_<64 hex>:<vault id>, from team_vaults or given by the person' }, path: { type: 'string', description: "a folder ('/' or '/notes/') or a file ('/README.md')" } }, required: ['read_key'] },
             async run({ read_key, path = '/' }) { return readFrom(await openRead(read_key), path) } },
-        create_vault: { group: 'Vaults', title: 'Make a vault', desc: 'Makes a new encrypted vault on dev.send.sgraph.ai with a README, and returns its id and public read key. Its vault key stays with the person (shown below the studio), never in this conversation. Needs the person\'s SG/Send access token in this browser.',
+        create_vault: { group: 'Vaults', title: 'Make a vault', desc: 'Makes a new encrypted vault on dev.send.sgraph.ai with a README, and returns its id. The person confirms first. Its read key and vault key stay with the person (shown below the studio), never in this conversation. Needs the person\'s SG/Send access token in this browser.',
             schema: { type: 'object', properties: { name: { type: 'string', description: 'a short name, e.g. "ACME agent policy"' }, readme: { type: 'string', description: 'the README.md: what the vault holds, who keeps it; public facts only' } }, required: ['name'] },
             async run({ name, readme }) {
                 if (!token()) throw new Error('no SG/Send access token in this browser: the person pastes one into "Vaults made in this browser" below the studio')
+                yes(`make a new vault called "${String(name).slice(0, 80)}" with this README`, readme || '(the default README)')
                 await load()
                 const v = await SGVault.create(new SGSend({ endpoint: ENDPOINT, token: token() }), passphrase(), { name: String(name).slice(0, 80) })
                 const read = hex(await v.readKeyRawBytes()), id = v.getVaultKey().split(':').pop()
                 LS.set('studio.vaults', [...mine(), { id, name: String(name).slice(0, 80), key: v.getVaultKey(), read: `sgit_public_read_${read}:${id}`, made: new Date().toISOString() }]); panel()
                 await v.addFile('/', 'README.md', new TextEncoder().encode(readme || `# ${name}\n\nMade with the policy studio on web-summit.sgit.ai. Public facts only.\n`))
                 await publish(v)
-                return { vault_id: id, read_key: `sgit_public_read_${read}:${id}`, open: `https://dev.vault.sgraph.ai/#sgit_public_read_${read}%3A${id}`, note: 'Anyone with the read key can read every version of this vault. Write only public facts into it.' }
+                return { vault_id: id, note: 'Made and published. Its read key is in the person\'s panel under the studio, not here: the person decides who gets it. Anyone with the read key can read every version, so write only public facts into it.' }
             } },
-        write_to_vault: { group: 'Vaults', title: 'Write into a vault', desc: 'Writes one text file (the policy, the scenario as JSON, notes) into a vault made in this browser, and publishes it. Public facts only: the read key may be handed out.',
+        write_to_vault: { group: 'Vaults', title: 'Write into a vault', desc: 'Writes one text file (the policy, the scenario as JSON, notes) into a vault made in this browser, and publishes it, after the person confirms. Public facts only: the read key may be handed out.',
             schema: { type: 'object', properties: { vault_id: { type: 'string' }, path: { type: 'string', description: "e.g. '/policy.md' or '/scenario/steps.json'" }, content: { type: 'string' } }, required: ['vault_id', 'path', 'content'] },
             async run({ vault_id, path, content }) {
-                const v = await openMine(vault_id), { folder, name } = split(path); if (!name) throw new Error('give a file path, e.g. /policy.md')
+                const { folder, name } = split(path); if (!name) throw new Error('give a file path, e.g. /policy.md')
+                if (!mine().some(x => x.id === vault_id)) throw new Error(`${vault_id} was not made in this browser, so the studio holds no key to write to it`)
+                yes(`write ${folder === '/' ? '' : folder}/${name} into the vault ${vault_id}`, content)
+                const v = await openMine(vault_id)
                 await ensureLoaded(v, folder)
                 let p = ''; for (const part of folder.split('/').filter(Boolean)) { p += '/' + part; if (!v.listFolder(p)) await v.createFolder(p) }
                 const bytes = new TextEncoder().encode(String(content)), exists = (v.listFolder(folder) || []).some(e => e.name === name && e.type === 'file')
