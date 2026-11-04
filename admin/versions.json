@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.315",
+    "date": "2026-11-04",
+    "what": "WS-151 findings: why WS-145 was buried, a fix proposed; \"Only you can do this\" first on Dinis's dashboard",
+    "by": "dashboard@web-summit.dinis",
+    "from": "d43a076a9"
+  },
+  {
     "version": "v0.2.314",
     "date": "2026-11-04",
     "what": "Vicky's colours: purple T-shirts; her hoodie lavender (Vicky's choice), black ink if white does not read",
