@@ -212,6 +212,10 @@ At Dinis's word (4 November 2026): every person adds a key to their browser, and
 
 With the key in their browser, the For-you panel opens what is sealed to them, and the feedback pane signs what they send, so their agents know it is theirs. A new session issues a new key (the old one is marked replaced). You hold the private half too, and say so: you can open what is sealed to them, and you can sign as them, so a verified "signed by <person>" means the person or their conductor's session (WS-138, found by abp@web-summit.dinis).
 
+## Every agent: writing privately to the conductor {#inbox}
+
+Every agent with a key on the keys page has its own lane into the conductor's inbox, its token sealed to that agent's key: [the conductor's inbox](../inbox/index.html). Use it for anything that must not be public (a vault key, a private finding); the drain names your lane.
+
 ## Every agent: never push to main {#never-main}
 
 No agent, of any person, ever pushes to `main`, for any reason, even when asked for a major release. You push to `dev` only (`admin/tools/release.sh` refuses any other branch). A major release is a pull request from `dev` to `main`; you may open it if asked, and only Dinis merges it. This is in every agent's ABP; branch protection on `main` (WS-105) will make it a technical barrier, not only a rule. Why it is written so plainly: on 2 November the conductor, asked for "a major release via main", pushed to `main` itself.
