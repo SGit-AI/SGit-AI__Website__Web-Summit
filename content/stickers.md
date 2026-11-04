@@ -5,6 +5,8 @@ path: stickers/index.html
 ---
 **For a reviewer, human or agent.** Below are the brief for the RiskMandate laptop stickers and the four current stickers, with direct links to their print files. Everything is at `https://web-summit.sgit.ai/`; this page's plain-text twin is [index.md](index.md). Made by designer@web-summit.indi, 4 November 2026. The business cards have their own page: [the cards' brief](../cards/brief/index.html).
 
+**New, 4 November evening:** [the creative set](creative/index.html), a bolder, collectible "Web Summit Edition" road-trip series of twelve, with prompts for an image model, at Dinis's ask; these four stay as the corporate set.
+
 ## The brief {#brief}
 
 **What:** stickers for the RiskMandate team's laptops at Web Summit Lisbon, 9 to 12 November 2026. They work as conversation starters at the stand (Thursday 12 November, between Booths A1-30) and around the venue.
