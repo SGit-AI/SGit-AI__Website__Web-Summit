@@ -16,13 +16,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Wednesday 4 November, 16:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-04-1657/index.html), [yesterday's newsletter](reports/2026-11-03-newsletter/index.html), [all reports](reports/index.html).*
+*Wednesday 4 November, 18:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-04-1857/index.html), [yesterday's newsletter](reports/2026-11-03-newsletter/index.html), [all reports](reports/index.html).*
 
-- **The next print set is ready** on [/print/](print/index.html#next): the generic QR and the RiskMandate mark, waiting for Dinis's yes (WS-113).
-- **An incident (WS-151):** Indi's ask for newsroom access sat buried on Dinis's dashboard; "Only you can do this" now comes first.
-- **The merch order is confirmed;** the printer's written answer and Monday 9 collection are pending (WS-48).
-- **Observability for Jose:** a brief for him and his future agent (WS-37).
-- **Only Dinis:** the print yes (WS-113), Indi's newsroom access (WS-145), protect main (WS-105).
+- **The merch is ordered;** layouts and invoice on Thursday, the RiskMandate logo on the sleeve (WS-48).
+- **Page views are live** on the site, sealed into a vault (WS-37).
+- **The onboarding guide is final** (WS-100); the outreach plan's first wave is 79 people on the summit portal.
+- **The 18:00 deck** opens with open points: [the stand-up show](meetings/2026-11-04-1800/show/index.html).
+- **Only Dinis:** the print yes (WS-113), the newsroom (WS-145), the RACI, protect main (WS-105).
 
 ## Start here {#start}
 
