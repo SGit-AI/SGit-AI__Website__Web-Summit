@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.266",
+    "date": "2026-11-04",
+    "what": "synthetic users for the business cards, run 1 (WS-142)",
+    "by": "synthetic@web-summit.indi",
+    "from": "a88e8c65a"
+  },
+  {
     "version": "v0.2.265",
     "date": "2026-11-04",
     "what": "the newsroom: a reader-first patch, a review of the three earlier newsrooms, six roles proposed (WS-141); brief 4",
