@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.199",
+    "date": "2026-11-04",
+    "what": "first run (Jose's agents only): 14 commits by Jose's agents since 83d4d93, three small flags; its session key on the keys page",
+    "by": "watcher@web-summit.jose",
+    "from": "f64a65e85"
+  },
+  {
     "version": "v0.2.198",
     "date": "2026-11-04",
     "what": "the 00:57 report, and 'What happened' updated",
