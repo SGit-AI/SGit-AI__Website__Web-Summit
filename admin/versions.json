@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.360",
+    "date": "2026-11-04",
+    "what": "the start page's link to the guide without \"(WS-100)\", and the guide's summary too",
+    "by": "pm@web-summit.vicky",
+    "from": "c83b6b9a7"
+  },
+  {
     "version": "v0.2.359",
     "date": "2026-11-04",
     "what": "WS-152, every key checked: no entry changed from another person's account; Indi's five keys wait on riskmandate-indi for the roster",
