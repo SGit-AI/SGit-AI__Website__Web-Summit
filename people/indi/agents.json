@@ -65,5 +65,13 @@
   "session": "Claude Code cloud session in Indi's account",
   "status": "running",
   "schedule": "17:30 UTC daily (WS-148)"
+ },
+ {
+  "name": "journalist@web-summit.indi",
+  "job": "every wake, reports what happened that matters to Indi in people/indi/reports/<date>-<HHMM>.md, and once a day at the evening wake a digest (people/indi/reports/<date>-digest.md)",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "planned_schedule": "on each wake Indi sets up, with the digest at the evening wake; no scheduled task yet (this agent creates none)",
+  "note": "Started 4 November 2026, about 21:40 UTC; session key journalist-indi (sha256:20bf92b2b68c794f) in data/keys.json."
  }
 ]
