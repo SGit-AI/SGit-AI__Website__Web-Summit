@@ -8,12 +8,15 @@ Kept by `dashboard@web-summit.jose` from [the builder template](../../dashboards
 
 ## What needs me {#needs}
 
-You are at L6, fully wired. Your conductor's latest is [brief 6](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04T1225Z.pdf) (12:25), with options and a recommendation for each:
+You are at L6, fully wired. Your conductor's latest is [brief 7](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04T1725Z.pdf) (17:25), with options and a recommendation for each:
 
-- **Say at 13:00:** your watcher's scope (WS-134), and whether a dev agent may change shared site code through a picked issue (WS-34, Angelo's item; your dev agent already did it for WS-74 at your word).
-- **Do: check your watcher's scheduled task:** it has not run since 01:11 and missed 07:15 and 12:15; its own record says no scheduled task was made. In its session, create one (cron 15 7,12,17 * * *) or say what it shows.
-- **Approve: close WS-139:** two of your agents (conductor and dev) reach newsroom.sgit.ai now, so the blocker from your pulse is gone (the evidence is in the issue).
-- **Still open from brief 5:** your site key (WS-136, by 18:00; the board has no line from you yet): open the file your conductor sent at 02:08 and press "Paste my key" ([how](../../agents/index.html#person-key)); your For-you panel should say "Unlocked", then send one message from the Feedback pane and the split with Angelo ([the morning list](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04-morning.md)).
+- **Say at 18:00:** your watcher's scope (WS-134) and whether a dev agent may change shared site code through a picked issue (WS-34). Neither was reached at 13:00.
+- **Do, by 18:00: your site key (WS-136):** open the file your conductor sent at 02:08 and press "Paste my key" ([how](../../agents/index.html#person-key)); your For-you panel should say "Unlocked". Then send one message from the Feedback pane. Your mentor (15:41) asks the same: it opens WS-120's lanes with Angelo.
+- **Approve: drop your conductor's 7 test page views** from the data vault, so "Jose read X" only ever means you did.
+- **Still open from brief 6:** your watcher has not committed since 01:11, so check its scheduled task (cron 15 7,12,17 * * *) in its session; and WS-139 (newsroom.sgit.ai, reached by two of your agents) is still open, waiting for your word to close it. The split with Angelo also still waits for your word ([the morning list](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04-morning.md)).
+
+**What happened:** the site's page views are live (WS-37): every page sends its view, sealed, to the append lanes of your data vault (not with Do Not Track, Global Privacy Control or Pause on); the other vault holds the app's code. Your conductor drains the lanes on an hourly scheduled task, the first at 18:07. How it works: [people/jose/observability](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/observability/README.md).
+
 - **WS-39, route 3 is built:** your dev agent made an n8n workflow you can import, inactive until you fill in the number and credential yourself; what to fill in is at the top of [WS-39-findings.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/WS-39-findings.md).
 - **Turn on Ask Claude in [your command centre](app/index.html#ask)** (Jose, 4 November: yes, as Dinis has it). Three steps:
   1. **Your conductor** creates `people/jose/app/config.json` (you have none yet) with an `llm` block copied from Dinis's (OpenRouter, Sonnet 5.5 by default), and releases.
@@ -62,5 +65,5 @@ The list with jobs and schedules is [agents.json](https://github.com/SGit-AI/SGi
 - **designer@web-summit.jose**: on demand; its work is in [people/jose/design](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/design/README.md).
 - **vault@web-summit.jose**: creates and manages your SGit vaults (WS-120); your first, the "Reach, Mandate, Gap" vault app, is on [the vaults page](../../vaults/index.html).
 - **reviewer@web-summit.jose**: reviews every push by your agents before it goes out, and may hold them ([its role](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/reviewer/ROLE.md)); started 4 November at your word.
-- **watcher@web-summit.jose**: read-only, reports who committed and what to look at; its scope is your 13:00 decision.
+- **watcher@web-summit.jose**: read-only, reports who committed and what to look at; its scope is your 18:00 decision.
 - Still only proposed in your brief: `automation@web-summit.jose` (dev is doing WS-39 for now) and `helper@web-summit.jose` (WS-35).
