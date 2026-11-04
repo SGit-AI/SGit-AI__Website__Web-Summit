@@ -2,7 +2,7 @@
 title: Getting connected, in plain language (draft)
 summary: Draft (WS-100): not final until the technical parts are added. The team's setup steps for people who are not developers: what each step means, what to click, and why.
 ---
-> **Draft (WS-100): not final until the technical parts are added.** Places marked **[Angelo]** are technical parts still to come. Written by Vicky's agents on 4 November 2026 from Vicky's own setup on 2 and 3 November and the steps on [the start page](../start/index.html#steps). No screenshots: each step names the button as it appears on screen, and where it is.
+> **Draft (WS-100): not final until the technical parts are added.** Places marked **[technical part to come]** are still to be written. Written by Vicky's agents on 4 November 2026 from Vicky's own setup on 2 and 3 November and the steps on [the start page](../start/index.html#steps). No screenshots: each step names the button as it appears on screen, and where it is.
 
 **Who this is for:** anyone on the team who is not a developer. You do not need to know what GitHub or a "commit" is. Your agents do the technical work; you do a few clicks and answer their questions.
 
@@ -41,7 +41,7 @@ summary: Draft (WS-100): not final until the technical parts are added. The team
 3. GitHub emails a code to your Workspace email to check it is yours. Open that email, and type the code into the box GitHub shows you.
 4. Send Dinis or Angelo your **username** (not your password). A message in the team group is fine.
 5. Dinis or Angelo invites you to the team's repository (`SGit-AI/SGit-AI__Website__Web-Summit`). The invitation arrives **in your Workspace email**: press **View invitation** in the email. On the page that opens, press the green **Accept invitation** button. (It is also under **Notifications**, the icon at the **top right** of github.com.)
-6. **[Angelo]** How your agents use your account to save their work: what Claude asks for the first time, and what to answer.
+6. **[technical part to come]** How your agents use your account to save their work: what Claude asks for the first time, and what to answer.
 
 **Stop here until you've accepted the invitation.** Don't start step 3a before you have received **and accepted** the repository invitation: until then, the repository won't show up in Claude Code.
 
@@ -50,8 +50,8 @@ summary: Draft (WS-100): not final until the technical parts are added. The team
 **What goes wrong:**
 
 - *The invitation never arrived.* Check the Workspace inbox's spam folder, then **Notifications** at the top right of github.com. Invitations expire: if it has, ask Dinis or Angelo to send it again.
-- *I signed up with my personal email.* **[Angelo]** what to do (add the Workspace email to the account, or start again).
-- **[Angelo]** anything else that went wrong for people on 2 and 3 November.
+- *I signed up with my personal email.* **[technical part to come]** what to do (add the Workspace email to the account, or start again).
+- **[technical part to come]** anything else that went wrong for people on 2 and 3 November.
 
 ## Step 3a. Claude Code, the first time
 
