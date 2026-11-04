@@ -1,0 +1,15 @@
+{
+  "v": "ws-ecies-1",
+  "to": "vicky",
+  "key": "sha256:5bd91e541026290e",
+  "by": "conductor@web-summit.vicky",
+  "at": "2026-11-04T10:02:30Z",
+  "epk": {
+    "kty": "EC",
+    "crv": "P-256",
+    "x": "8xiwB_JSOrNNzRzqNRTC5F_6lijcgDhh0LrSg27Pe1c",
+    "y": "aE8eRbkofKy12QBreKOdZQ5TGlW8g2iL4KnXgH49ZH4"
+  },
+  "iv": "FeRo6DvmxG5/5bHl",
+  "ct": "x2D37W6Cr36rgE5QHpIAyOU7ZYfpF+0XHy+av8ycN0eSex6tKiUfrEAgv7w3VQpA0jW8CfqzXzoUM7QXBc5xkV0PatN9v9PK3rPKK1R7KMAK/xbzVhzXHXSTpfrDYSAE2myGrIa1qRyhPzidMnyjbeXMFLNbEH0tJaKdxM/x9GSdvbvxiYjACdLaYs6ixVFpwgcLiQw6BYLUkE04lKJ1RcX6LONngthbyXNE13rmgOHPv8I0FciHOX+BtTo1asaCwKdSHHRBbutdrsWdIh16I+z2bhM25455O7F6LSugaiYmRiD3TYvLFbbf8jXm23ijX4KAtlB4ghRm2m17lYReGYSBkidW5RT7/Mjnb8IAKzES6hHyHaqQDcAr/myFwYDQEB19yUovUT2g5wwI6BD4jKipvmrldQvQh41e4b0nQF7ZlxIdBlxDk0NqyY7u/SXYTc9mNZJ8mQ=="
+}

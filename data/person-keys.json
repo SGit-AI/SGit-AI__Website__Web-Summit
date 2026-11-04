@@ -88,6 +88,28 @@
         "x": "qRwIvawl820k_vhUM--PykBDLMv75vbqwf23Rr9AErc",
         "y": "dd9lNz5sa2h2jS_s6NYcwa-kHf4L2RL7NXOWeTKNWgs"
       }
+    },
+    {
+      "person": "vicky",
+      "fingerprint": "sha256:5bd91e541026290e",
+      "signing_fingerprint": "sha256:388c0cd3a286ffda",
+      "status": "active",
+      "issued_by": "conductor@web-summit.vicky",
+      "session": "session_015JeffGY5zdSubg8W1NDpSW",
+      "issued_at": "2026-11-04T10:02:30Z",
+      "valid": "while the issuing session lives",
+      "encrypt": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "W-z9FV4e9MbxN52a2Y6JOPfuDMjxlf3K1KXKIvdAqDc",
+        "y": "K-CmpSvPC3ThbEgxOOJmgfAg1uLFO_WsJnFOlvJGWTY"
+      },
+      "sign": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "GdBnjAX1ia1-Q9ntwIXxZZsMolmu4QpgBql1tHKr8LE",
+        "y": "f831GKFQN7XDx6ul7DW9e2kAM5HoMUhlP1NvZoBr-lo"
+      }
     }
   ]
 }
