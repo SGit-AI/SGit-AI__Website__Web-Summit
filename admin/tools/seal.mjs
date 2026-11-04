@@ -61,39 +61,63 @@ async function recipient(keys, ref) {
     const k = keys.find(k => k.id === ref || k.bundle.signing_fingerprint === ref || k.bundle.fingerprint === ref)
     if (!k) die(`${ref}: not on the keys page as pushed to dev (origin/dev:data/keys.json)`)
     if (JSON.stringify(k.bundle).includes('PRIVATE')) die(`${k.id}: the entry holds a private key; refusing`)
+    const status = String(k.status || 'active')
+    if (!/^active\b/.test(status) || k.replaced_by) die(`${k.id}: its entry says "${status}"${k.replaced_by ? `, replaced by ${k.replaced_by}` : ''}: an ended, retired or replaced key is never sealed to. Nothing sealed.`)
     const commit = execFileSync('git', ['log', '--format=%H %ad %s', '--date=short', '-S', k.bundle.signing_fingerprint, '--reverse', 'origin/dev', '--', 'data/keys.json'], { encoding: 'utf8' }).split('\n')[0]
     const sha = commit.split(' ')[0], person = (/@web-summit\.([a-z0-9-]+)/.exec(k.label) || [])[1] || null
     const by = sha ? await pushedBy(sha) : null, accounts = person ? rosterAccounts(person) : []
+    const changes = []
+    for (const c of entryChanges(k.id)) { const who = await pushedBy(c.sha); changes.push({ commit: c.sha.slice(0, 7), subject: c.subject.slice(0, 90), pushed_by: who || 'unknown', matches: !!(who && accounts.includes(who)) }) }
     const url = `${SITE}keys/sha256-${k.bundle.signing_fingerprint.split(':')[1]}.json`
     let live = 'not checked'
     try { const r = await fetch(url, { cache: 'no-store' }); live = r.ok && JSON.stringify((await r.json()).bundle) === JSON.stringify(k.bundle) ? 'matches' : `differs or missing (${r.status})` } catch (e) { live = `unreachable (${e.message})` }
     if (live.startsWith('differs')) die(`${k.id}: the live site's copy ${live}: ${url}`)
-    return { k, commit: commit ? commit.slice(0, 7) + commit.slice(40) : '(not found in the fetched history)', url, live, person, pushed_by: by, roster: accounts, pusher_matches: !!(by && accounts.includes(by)) }
+    return { k, commit: commit ? commit.slice(0, 7) + commit.slice(40) : '(not found in the fetched history)', url, live, person, pushed_by: by, roster: accounts, pusher_matches: !!(by && accounts.includes(by)), changes, changes_match: changes.length > 0 && changes.every(c => c.matches) }
 }
 // the account behind the push that brought a commit to dev, from GitHub (git only ever says "Claude")
 const isAncestor = (a, b) => { try { execFileSync('git', ['merge-base', '--is-ancestor', a, b], { stdio: 'ignore' }); return true } catch { return false } }
-async function pushedBy(sha) {
-    // the one push whose "after" holds the commit and whose "before" does not; the API pages by cursor (the Link header)
-    let url = `https://api.github.com/repos/${REPO}/activity?ref=refs/heads/dev&per_page=100`
-    // curl, not fetch: curl honours HTTPS_PROXY (a cloud session's authenticated proxy); GITHUB_TOKEN is used if set
-    for (let n = 0; url && n < 20; n++) {
+const ACTIVITY = { pages: [], next: `https://api.github.com/repos/${REPO}/activity?ref=refs/heads/dev&per_page=100`, failed: false }
+async function activityPage(i) {   // GitHub's push activity on dev, newest first, fetched once per run and kept
+    while (ACTIVITY.pages.length <= i && ACTIVITY.next && !ACTIVITY.failed && ACTIVITY.pages.length < 20) {
         let head = '', list
+        // curl, not fetch: curl honours HTTPS_PROXY (a cloud session's authenticated proxy); GITHUB_TOKEN is used if set
         try {
-            const args = ['-sS', '-m', '30', '-D', '-', '-H', 'accept: application/vnd.github+json', '-H', 'user-agent: web-summit-seal', ...(process.env.GITHUB_TOKEN ? ['-H', `authorization: Bearer ${process.env.GITHUB_TOKEN}`] : []), url]
+            const args = ['-sS', '-m', '30', '-D', '-', '-H', 'accept: application/vnd.github+json', '-H', 'user-agent: web-summit-seal', ...(process.env.GITHUB_TOKEN ? ['-H', `authorization: Bearer ${process.env.GITHUB_TOKEN}`] : []), ACTIVITY.next]
             let out = execFileSync('curl', args, { encoding: 'utf8', maxBuffer: 64 << 20 })
             while (out.startsWith('HTTP/')) { const cut = out.indexOf('\r\n\r\n'); head = out.slice(0, cut); out = out.slice(cut + 4) }   // a proxy's CONNECT block comes first
             list = JSON.parse(out)
-        } catch (e) { console.error(`seal: GitHub's activity API did not answer: ${e.message.split('\n')[0]}`); return null }
-        if (!Array.isArray(list)) { console.error(`seal: GitHub's activity API: ${list.message || 'not a list'}`); return null }
+        } catch (e) { console.error(`seal: GitHub's activity API did not answer: ${e.message.split('\n')[0]}`); ACTIVITY.failed = true; break }
+        if (!Array.isArray(list)) { console.error(`seal: GitHub's activity API: ${list.message || 'not a list'}`); ACTIVITY.failed = true; break }
+        ACTIVITY.pages.push(list)
+        let url = ((/^link:(.*)$/im.exec(head) || [])[1] || '').match(/<([^>]+)>;\s*rel="next"/)?.[1] || null
+        if (url) url = url.replace(/\/repositories\/\d+\//, `/repos/${REPO}/`)   // a session proxy refuses numeric-id paths
+        ACTIVITY.next = url
+    }
+    return ACTIVITY.pages[i] || null
+}
+async function pushedBy(sha) {
+    // the one push whose "after" holds the commit and whose "before" does not
+    for (let i = 0; ; i++) {
+        const list = await activityPage(i); if (!list) return null
         for (const a of list) {
             if (!/^[0-9a-f]{40}$/.test(a.after || '') || !isAncestor(sha, a.after)) continue
             if (/^[0-9a-f]{40}$/.test(a.before || '') && !/^0+$/.test(a.before) && isAncestor(sha, a.before)) continue
             return (a.actor && a.actor.login) || null
         }
-        url = ((/^link:(.*)$/im.exec(head) || [])[1] || '').match(/<([^>]+)>;\s*rel="next"/)?.[1] || null
-        if (url) url = url.replace(/\/repositories\/\d+\//, `/repos/${REPO}/`)   // a session proxy refuses numeric-id paths
     }
-    return null
+}
+// WS-152: every commit on dev that changed this key's entry (added it, or altered any field since), oldest first.
+// The first push only proves who added the key; a later commit by another agent can revive an ended key or swap it.
+function entryChanges(id) {
+    const shas = execFileSync('git', ['log', '--format=%H', '--reverse', 'origin/dev', '--', 'data/keys.json'], { encoding: 'utf8' }).split('\n').filter(Boolean)
+    const out = []; let prev = null
+    for (const sha of shas) {
+        let cur = null
+        try { cur = JSON.stringify((JSON.parse(execFileSync('git', ['show', `${sha}:data/keys.json`], { encoding: 'utf8', maxBuffer: 64 << 20 })).keys || []).find(k => k.id === id) || null) } catch { continue }
+        if (cur !== prev && cur !== 'null' && cur !== null) out.push({ sha, subject: execFileSync('git', ['log', '-1', '--format=%s', sha], { encoding: 'utf8' }).trim() })
+        prev = cur
+    }
+    return out
 }
 // the GitHub accounts the roster (data/team.json on dev) lists for a person: the first word of each entry
 function rosterAccounts(person) {
@@ -103,7 +127,7 @@ function rosterAccounts(person) {
 const keys = published()
 if (flags.check) {
     const r = await recipient(keys, String(flags.check))
-    console.log(JSON.stringify({ id: r.k.id, label: r.k.label, signing_fingerprint: r.k.bundle.signing_fingerprint, encryption_fingerprint: r.k.bundle.fingerprint, pushed_in: r.commit, pushed_by: r.pushed_by || 'unknown (GitHub did not say)', person: r.person, roster_accounts: r.roster, pusher_matches_roster: r.pusher_matches, live: r.live, url: r.url }, null, 2))
+    console.log(JSON.stringify({ id: r.k.id, label: r.k.label, signing_fingerprint: r.k.bundle.signing_fingerprint, encryption_fingerprint: r.k.bundle.fingerprint, pushed_in: r.commit, pushed_by: r.pushed_by || 'unknown (GitHub did not say)', person: r.person, roster_accounts: r.roster, pusher_matches_roster: r.pusher_matches, entry_changes: r.changes, every_change_by_its_person: r.changes_match, live: r.live, url: r.url }, null, 2))
     process.exit(0)
 }
 if (!flags.to || flags.to === true) die('--to <key id | fingerprint>[,...] (see the header of this file)')
@@ -139,6 +163,7 @@ for (const ref of tos) {
     const r = await recipient(keys, ref), to = r.k.bundle
     console.error(`seal: to ${r.k.id} (${to.signing_fingerprint}), pushed in ${r.commit} by ${r.pushed_by || 'an account GitHub did not name'}; live copy ${r.live}`)
     const oob = flags.fingerprint && flags.fingerprint !== true && String(flags.fingerprint).split(',').includes(to.signing_fingerprint)
+    if (r.pusher_matches && !r.changes_match && !oob) die(`${r.k.id}: its entry was changed since it was added by a push from another account (${r.changes.filter(c => !c.matches).map(c => `${c.commit} by ${c.pushed_by}`).join(', ')}). It may have been revived or swapped (WS-152). Ask ${r.person || 'its person'} to confirm its signing fingerprint and pass --fingerprint <it>. Nothing sealed.`)
     if (!r.pusher_matches && !oob) die(`${r.k.id}: pushed by ${r.pushed_by || 'an unknown account'}, which is not one of ${r.person || 'its person'}'s accounts on the roster (${r.roster.join(', ') || 'none listed'}). Ask ${r.person || 'its person'} to read you its signing fingerprint (or show its QR code), then pass --fingerprint <that fingerprint>; this tool will not print it for you. Nothing sealed.`)
     console.error(`seal: trusted because ${[r.pusher_matches && `the pusher ${r.pushed_by} is ${r.person}'s account on the roster`, oob && 'the fingerprint was confirmed out of band (--fingerprint)'].filter(Boolean).join(' and ')}`)
     const msg = await M.compose({ to, from: id, subject: `A secret: ${name || 'unnamed'}`, text: `Sealed to ${to.signing_fingerprint} (${r.k.id} on ${SITE}keys/) by ${id.bundle.signing_fingerprint}. Open it with your key; the secret is the file inside.`, files: [{ name: name || 'secret', data }], expires })
