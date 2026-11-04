@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.250",
+    "date": "2026-11-04",
+    "what": "WS-100 guide: Vicky's additions from her own setup",
+    "by": "conductor@web-summit.vicky",
+    "from": "52039b58d"
+  },
+  {
     "version": "v0.2.249",
     "date": "2026-11-04",
     "what": "Give feedback opens the feedback pane, no second click (WS-140)",
