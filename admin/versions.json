@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.234",
+    "date": "2026-11-04",
+    "what": "08:41 wake: six notes, the site key first for each (WS-136, at Dinis's word); Indi L1 to L5, Jose L6",
+    "by": "mentor@web-summit.dinis",
+    "from": "25477b2cc"
+  },
+  {
     "version": "v0.2.233",
     "date": "2026-11-04",
     "what": "the 08:41 pulse (Jose's first check-in), and WS-139 for his blocker",
