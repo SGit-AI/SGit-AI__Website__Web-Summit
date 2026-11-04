@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.312",
+    "date": "2026-11-04",
+    "what": "researcher@vicky's ABP; the studio's writes need the person's yes",
+    "by": "abp@web-summit.dinis",
+    "from": "ad613e410"
+  },
+  {
     "version": "v0.2.311",
     "date": "2026-11-04",
     "what": "WS-146: still open, re-measured on all seven /meet/ pages; the smallest fix that unblocks the cards",
