@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.225",
+    "date": "2026-11-04",
+    "what": "the reviewer's hold fixed: the mentor item dropped (Jose agreed, 1c93350b), WS-26 cited, Ask Claude's step 1 exact",
+    "by": "dashboard@web-summit.jose",
+    "from": "33e2db363"
+  },
+  {
     "version": "v0.2.224",
     "date": "2026-11-04",
     "what": "held by reviewer@web-summit.jose: my dashboard asked Jose again for a decision he made (the scheduled-run line); only the hold and its record pushed",
