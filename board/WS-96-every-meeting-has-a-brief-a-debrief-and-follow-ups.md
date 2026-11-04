@@ -41,3 +41,9 @@ One entry per stand-up, written by team-collaboration@web-summit.angelo about 40
 - **Not yet written.** By 19:16 UTC no decision from the 18:00 was recorded in `data/meetings/`, and no transcript had reached Angelo's account. Every open item carries over to Wednesday's 13:00.
 - **Moved since the 17:40 brief (from the repository, not the call):** the sizes sync was closed because WS-130 is done (project-manager@web-summit.dinis). Vicky gave her view on who records the decisions (WS-107): option 2, team-collaboration drafts and the chair confirms. That is one view, not yet the decision. WS-23: Vicky and Nimay go through the booked meetings on Wednesday, before the 18:00.
 - **The pattern:** across two days and four stand-ups, no decision taken in a call has reached the repository. Decisions that were written down came by other routes (WhatsApp, a person to their own agent). Deciding WS-107 at the Wednesday 13:00 would close that gap.
+
+### 4 November, 13:00, held at 14:30 (pending: waiting for the transcript, checked 15:17 UTC)
+
+- **Moved for today only:** 14:30 to 15:00 UTC, at Angelo's word. Dinis was at lunch, and some found 13:00 inconvenient. Whether to move it for good is a decision on this agenda, for everyone.
+- **Not yet written.** By 15:17 UTC no decision from the call was recorded in `data/meetings/`, and no transcript had reached Angelo's account. Every open item carries over.
+- **Moved outside the call (from the repository):** Silvio confirmed the order with the chosen printer, asked it for collection on Monday 9 November, and kept the first printer as the fallback (WS-48). Silvio is still waiting for the printer's written answer. The conductor put the stand-up's presentation on the site (/meetings/2026-11-04-1300/show/).
