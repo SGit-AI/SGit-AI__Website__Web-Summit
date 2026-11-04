@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.384",
+    "date": "2026-11-04",
+    "what": "automation@web-summit.jose and helper@web-summit.jose ready to start: their prompts and schedules in Jose's kit, at Jose's word",
+    "by": "conductor@web-summit.jose",
+    "from": "d5a3428de"
+  },
+  {
     "version": "v0.2.383",
     "date": "2026-11-04",
     "what": "a site key for Silvio (public half), so his browser can open what is sealed to him",
