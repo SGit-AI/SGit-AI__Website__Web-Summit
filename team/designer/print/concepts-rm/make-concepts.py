@@ -198,24 +198,28 @@ ACCENT = {'green': ('RiskMandate green', '#1A7F5A'), 'green-2': ('Lighter green,
 STRIP_DARK = [('green', .34), ('green-2', .18), ('blue', .26), ('gold', .14), ('red', .08)]
 STRIP_LIGHT = [('green', .42), ('blue', .32), ('gold', .16), ('red', .10)]
 CONTAINER, FG, INK_LIGHT = '#161615', '#F7F6F2', '#0D0D0C'   # the mark's container; text on dark; ink on light
-def spectrum(s, y, h, strip):
-    """Segments across the trimmed width (85 mm) by share; the end ones run on into the 3 mm bleed."""
-    x = B
+PERSON_SHARE, PERSON_GAP = 0.12, 0.8   # the person's own block at the strip's right end, and the gap before it (mm)
+def spectrum(s, y, h, strip, person):
+    """The brand accents by share across the trimmed width (85 mm), then a gap, then the person's own colour.
+    The first and last blocks run on into the 3 mm bleed."""
+    brand_w = TRIM_W * (1 - PERSON_SHARE) - PERSON_GAP; x = B
     for i, (key, share) in enumerate(strip):
-        w = TRIM_W * share; x0 = 0 if i == 0 else x; x1 = 91 if i == len(strip) - 1 else x + w + 0.05   # overlap: no hairline gaps
+        w = brand_w * share; x0 = 0 if i == 0 else x; x1 = x + w + (0.05 if i < len(strip) - 1 else 0)   # overlap: no hairline gaps
         s.raw(f'<rect x="{n(x0)}" y="{n(y)}" width="{n(x1 - x0)}" height="{n(h)}" fill="{ACCENT[key][1]}"/>'); x += w
+    x += PERSON_GAP
+    s.raw(f'<rect x="{n(x)}" y="{n(y)}" width="{n(91 - x)}" height="{n(h)}" fill="{person}"/>')
 
 def b_front(p):
     s = Side(CONTAINER)                                     # the container colour, so the mark's flattened inner ring is exact
     s.logo(45.5, 20, 22, 'knockout')                        # 22 mm as drawn: clear space 11 mm, so nothing from y 42 up
     s.wordmark(45.5, 43.9, 3.4, FG, 'middle')
     s.text(p['line'], 'Geist', 500, 7.5 * PT, 45.5, 50.8, FG, 'line', 'middle')
-    spectrum(s, 54, 7, STRIP_DARK)                          # bottom edge: 4 mm visible after trim, 3 mm bleed
+    spectrum(s, 54, 7, STRIP_DARK, p['colour'])                          # bottom edge: 4 mm visible after trim, 3 mm bleed
     return s
 
 def b_back(p, pid):
     s = Side(WHITE)
-    spectrum(s, 0, 7, STRIP_LIGHT)                          # top edge: 3 mm bleed, 4 mm visible; no light green on white
+    spectrum(s, 0, 7, STRIP_LIGHT, p['colour'])                          # top edge: 3 mm bleed, 4 mm visible; no light green on white
     x, room = 8, SAFE[2] - 8
     s.text(p['name'], 'Barlow Condensed', 700, fit(p['name'], 'Barlow Condensed', 700, 17 * PT, room, 10 * PT), x, 16, INK_LIGHT, 'name')
     s.text(p['role'], 'Geist', 500, fit(p['role'], 'Geist', 500, 7.5 * PT, room, 7 * PT), x, 21.3, GREEN, 'role')
@@ -274,7 +278,7 @@ CONCEPTS = {
         'notes': [
             'The seal is the supplied knockout mark, 22 mm across as drawn, on the container colour (#161615) with 11 mm clear on every side. Ask the printer for a rich black so the field does not print grey on matt stock.',
             'The strip is the brand\'s accent set: green, the lighter green (front only, as the brand keeps it for dark surfaces), blue, and small shares of gold and red, which the brand says to use sparingly. 4 mm deep after trim, 3 mm bleed.',
-            'The person\'s own colour is the 16 x 2 mm bar above the asks (Dinis\'s near-black included), so every card stays personal while the strip stays the brand\'s.',
+            'The person\'s own colour closes each strip (the last 12%, after a 0.8 mm gap) and is the 16 x 2 mm bar above the asks. On the dark front Dinis\'s near-black block barely shows, so his front strip reads as ending early; his back shows it clearly.',
         ]},
     'c-poster': {
         'name': 'C. Poster', 'build': lambda p, pid: (c_front(p, pid), c_back(p)),

@@ -47,17 +47,17 @@ By designer@web-summit.indi, 4 November 2026. **Chosen: B. Seal** (Indi, 4 Novem
 | Blue | `--blue` | #1D4ED8 | C87 M64 Y0 K15 | both strips |
 | Gold | `--gold`, "used sparingly" | #B45309 | C0 M54 Y95 K29 | both strips, 14 to 16% |
 | Red | `--red`, "used very sparingly" | #C0392B | C0 M70 Y78 K25 | both strips, 8 to 10% |
-| Accent | | the person's colour (table below) | | 16 x 2 mm bar above the asks |
+| Accent | | the person's colour (table below) | | the end of each strip, and the 16 x 2 mm bar above the asks |
 
 **Type:** Barlow Condensed (name, wordmark) + Geist (role, line, asks, URL).
 
 **Layout:**
-- **Front:** the knockout mark, 22 mm across as drawn, centred, 11 mm clear on every side. RISK MANDATE below it, then the person's line. The brand strip runs along the bottom edge: green, lighter green, blue, gold, red.
-- **Back:** the brand strip along the top edge (green, blue, gold, red), then the name and role. Below them, the QR (24 mm) on the left, with the person's colour bar, the three asks and the URL beside it.
+- **Front:** the knockout mark, 22 mm across as drawn, centred, 11 mm clear on every side. RISK MANDATE below it, then the person's line. The strip runs along the bottom edge: green, lighter green, blue, gold, red, then the person's colour.
+- **Back:** the strip along the top edge (green, blue, gold, red, then the person's colour), then the name and role. Below them, the QR (24 mm) on the left, with the person's colour bar, the three asks and the URL beside it.
 
 **Design notes:**
 - The strip is 4 mm deep on the trimmed card and bleeds 3 mm, so a 1 mm trim drift cannot leave a sliver. Gold and red get the smallest shares, as the brand asks. The lighter green appears on the dark front only, as the brand keeps it for dark surfaces.
-- The person's own colour is the bar above the asks, Dinis's near-black included, so each card stays personal while the strip stays the brand's. The share of each accent can change in one line (`STRIP_DARK`, `STRIP_LIGHT` in `make-concepts.py`).
+- Each strip ends in the person's own colour: the last 12% of the card's width, after a 0.8 mm gap, so it reads as theirs (added 4 November, at Indi's word). The same colour is the bar above the asks. On the dark front, Dinis's near-black block barely shows, so his front strip reads as ending early; his back shows it clearly. The shares can change in one line (`STRIP_DARK`, `STRIP_LIGHT`, `PERSON_SHARE` in `make-concepts.py`).
 - This goes past the brief's "3 colours plus the accent" on purpose, as asked. No text is set on the strip, and the strip never comes within the seal's clear space. Blue is `--blue` in the brand site's own colour tokens, though the page's swatch list does not show it.
 
 ## C. Poster
