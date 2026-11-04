@@ -22,6 +22,12 @@ BASE = os.path.join(HERE, SUB)
 CONCEPTS = sorted(d for d in os.listdir(BASE) if os.path.exists(os.path.join(BASE, d, 'spec.json')))
 ROUND2 = SUB in ('round2', 'round3')   # both name Web Summit and carry sourced headlines
 ROUND3 = SUB == 'round3'
+ROUND4 = SUB == 'round4'   # three unnamed audience cards (Indi, 4 November): no names, the team QR, a colour per audience
+if ROUND4: ROUND2 = True   # Web Summit by name, sourced lines, placeholders: as rounds 2 and 3
+TEAM_URL = 'https://web-summit.sgit.ai/meet/'
+FINAL = {p['id']: p for p in json.load(open(os.path.join(ROOT, 'team/designer/print/final.json')))['people']}
+PAIRS = [(re.sub(r'[^a-z0-9]+', ' ', ' '.join(FINAL[i]['front']).replace('\u2019', "'").lower()).strip(), FINAL[i]['tagline']) for i in ('dinis', 'silvio', 'indi')]   # the three chosen shirt pairs
+NAMES = [m['name'] for m in json.load(open(os.path.join(ROOT, 'data/team.json')))['members'] if m.get('kind') == 'human'] + ['Vicky Wang']
 def norm_txt(t): return re.sub(r'[^a-z0-9]+', ' ', t.replace('\u2019', "'").lower()).strip()
 # round 2's copy, each checked against its source file (Dinis, 4 November: Web Summit by name, for these cards)
 DESIGN_MD = open(os.path.join(ROOT, 'content/design.md')).read()
@@ -54,9 +60,12 @@ def own_card(pid):
     f = os.path.join(ROOT, f'people/{pid}/business-card.json'); return json.load(open(f)) if os.path.exists(f) else {}
 
 for concept in CONCEPTS:
-    for pid in DESIGN:
-        url = f'https://web-summit.sgit.ai/meet/{pid}/'
-        name = own_card(pid).get('name', DESIGN[pid]['name']); line = DESIGN[pid]['line']
+    SPEC = json.load(open(os.path.join(BASE, concept, 'spec.json')))
+    for pid in (['team'] if ROUND4 else DESIGN):
+        team = pid == 'team'
+        url = TEAM_URL if team else f'https://web-summit.sgit.ai/meet/{pid}/'
+        name, line = (None, None) if team else (own_card(pid).get('name', DESIGN[pid]['name']), DESIGN[pid]['line'])
+        colour = SPEC['files']['team-card-front.svg']['accent']['hex'] if team else DESIGN[pid]['colour']
         for side in ['front', 'back']:
             rel = f'{concept}/{pid}-card-{side}.svg'; f = os.path.join(BASE, rel)
             if not os.path.exists(f): fail(rel, 'missing'); continue
@@ -77,10 +86,10 @@ for concept in CONCEPTS:
                 for it in items:
                     if it['role'] not in ('logo', 'placeholder') and overlap(zone, it['box']): fail(rel, f'{it["role"]} inside the seal\'s clear space')
                 for x, y, w, h, fill in re.findall(r'<rect x="([\d.]+)" y="([\d.]+)" width="([\d.]+)" height="([\d.]+)" fill="(#[0-9a-fA-F]{6})"/>', s):
-                    if fill.lower() == DESIGN[pid]['colour'].lower() and overlap(zone, (float(x), float(y), float(x) + float(w), float(y) + float(h))):
+                    if fill.lower() == colour.lower() and overlap(zone, (float(x), float(y), float(x) + float(w), float(y) + float(h))):
                         fail(rel, 'the person\'s colour inside the seal\'s clear space')
                 bg = re.search(r'<rect x="0" y="0" width="91" height="61" fill="(#[0-9a-fA-F]{6})"', s).group(1)
-                if bg.lower() == DESIGN[pid]['colour'].lower():
+                if bg.lower() == colour.lower():
                     fail(rel, 'the seal on the person\'s colour')
             # the seal is the supplied file: its ring and ticks verbatim, its RM the EPS's outline numbers in order
             for lg in re.findall(r'<g id="rm-logo"[^>]*data-src="([^"]+)"[^>]*>(.*?)</g></g>|<g id="rm-logo"[^>]*data-src="([^"]+)"[^>]*>(.*?)</g>(?=<)', s, re.S):
@@ -97,7 +106,7 @@ for concept in CONCEPTS:
             if 'RM LOGO' in live or 'data-role="placeholder"' in s: fail(rel, 'a logo placeholder is left')
             # the QR
             if 'id="qr"' in s:
-                src = open(os.path.join(ROOT, f'team/designer/qr/qr-meet-{pid}.svg')).read()
+                src = open(os.path.join(ROOT, 'team/designer/qr/qr-meet.svg' if team else f'team/designer/qr/qr-meet-{pid}.svg')).read()
                 body = re.search(r'</desc>(.*)</svg>', src, re.S).group(1)
                 emb = re.search(r'<g id="qr"[^>]*data-url="([^"]+)"[^>]*scale\(([\d.]+)\)">(.*?)</g>', s, re.S)
                 if not emb or emb.group(3) != body: fail(rel, 'the QR is not the person\'s file, byte for byte')
@@ -127,7 +136,16 @@ for concept in CONCEPTS:
                 if re.search(r'@|\+\d|\d{3}[ .-]\d{3}|www\.|linkedin|twitter|instagram|\.com', low): fail(rel, f'contact or other brand: "{t["text"]}"')
             by = lambda r: [t['text'] for t in texts if t['role'] == r]
             norm = lambda x: x.replace('’', "'").strip('“”')
-            if 'name' in by('name') or by('name'):
+            if team:   # no individual names, anywhere on the card; the chosen pair, word for word
+                for nm in NAMES:
+                    if nm.lower() in ' '.join(t['text'].lower() for t in texts): fail(rel, f'a person\'s name on a team card: {nm}')
+                if by('headline') or by('tagline'):
+                    pair = (norm_txt(' '.join(by('headline'))), ' '.join(by('tagline')))
+                    if pair not in PAIRS: fail(rel, f'main line and tagline not one of the chosen pairs: {pair}')
+                    if by('headline'):
+                        hs = min(t['size'] for t in texts if t['role'] == 'headline'); ts = max(t['size'] for t in texts if t['role'] == 'tagline')
+                        if hs < 2.5 * ts: fail(rel, f'main line only {hs / ts:.1f} times the tagline')
+            elif 'name' in by('name') or by('name'):
                 if by('name') != [name]: fail(rel, f'name {by("name")} != {name}')
             if by('role'):
                 role = ' '.join(by('role')); ok_role = own_card(pid).get('title') == role or role in TEAM[pid]['role'].replace('RiskMandate, ', '')
@@ -137,7 +155,7 @@ for concept in CONCEPTS:
             if ROUND2:
                 hl = norm_txt(' '.join(by('headline')))
                 ok_hl = [norm_txt(h) for h in SOURCED['headline']]
-                if hl and not (hl in ok_hl or hl in [a + ' ' + b for a in ok_hl for b in ok_hl]): fail(rel, f'headline not from content/design.md: "{hl}"')
+                if hl and not team and not (hl in ok_hl or hl in [a + ' ' + b for a in ok_hl for b in ok_hl]): fail(rel, f'headline not from content/design.md: "{hl}"')
                 ev = norm_txt(' '.join(by('event'))); evs = [norm_txt(e) for e in SOURCED['event']]
                 if ev and ev not in evs + [evs[0] + ' ' + evs[1], evs[1] + ' ' + evs[0]] and not all(norm_txt(t['text']) in ' '.join(evs) for t in texts if t['role'] == 'event'):
                     fail(rel, f'event line not from content/meet*.md: "{ev}"')
@@ -161,7 +179,9 @@ for concept in CONCEPTS:
         # each person's card carries name, line, QR and URL across its two sides
         both = open(os.path.join(BASE, concept, 'live', f'{pid}-card-front.svg')).read() + open(os.path.join(BASE, concept, 'live', f'{pid}-card-back.svg')).read()
         needs = ['data-role="name"', 'data-role="role"', 'data-role="url"', 'id="qr"', 'id="rm-logo"', 'data-role="wordmark"']
+        if team: needs = ['data-role="headline"', 'data-role="tagline"', 'data-role="url"', 'id="qr"', 'id="rm-logo"', 'data-role="wordmark"', 'data-role="register"']
         needs += ['data-role="event"'] if ROUND2 else ['data-role="line"']
+        if team and 'data-role="name"' in both: fail(f'{concept}/{pid}', 'a name on a team card')
         if ROUND3 and 'data-role="role"' not in both and 'Job title to confirm' in both: needs.remove('data-role="role"')
         for need in needs:
             if need not in both: fail(f'{concept}/{pid}', f'no {need} on either side')
