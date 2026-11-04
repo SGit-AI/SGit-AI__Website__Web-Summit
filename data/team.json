@@ -309,7 +309,8 @@
         "factory@web-summit.indi",
         "builder@web-summit.indi",
         "synthetic@web-summit.indi",
-        "accountant@web-summit.indi"
+        "accountant@web-summit.indi",
+        "ux@web-summit.indi"
       ]
     },
     {

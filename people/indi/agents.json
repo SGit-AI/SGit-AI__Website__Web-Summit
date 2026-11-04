@@ -24,20 +24,23 @@
  {
   "name": "messaging@web-summit.indi",
   "job": "checks every new page and draft against the message",
-  "session": "not started",
-  "status": "planned"
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "note": "Started 4 November 2026 overnight by synthetic@web-summit.indi at Indi's word (WS-05), in its own Claude Code session, model Sonnet 5.5; tasks WS-15, WS-109, WS-22, WS-51; prompt in people/indi/overnight/2026-11-04/ws-05-new-agents/PROMPTS.md."
  },
  {
   "name": "factory@web-summit.indi",
   "job": "for each target company: the analysis, the risk analysis and how RiskMandate helps, as a page or vault (WS-27)",
-  "session": "not started",
-  "status": "planned"
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "note": "Started 4 November 2026 overnight by synthetic@web-summit.indi at Indi's word (WS-05), in its own Claude Code session, model Sonnet 5.5; tasks WS-19, WS-27, WS-26; prompt in people/indi/overnight/2026-11-04/ws-05-new-agents/PROMPTS.md."
  },
  {
   "name": "builder@web-summit.indi",
   "job": "Daniela's site and learning environment, under Daniela's policies",
-  "session": "not started",
-  "status": "planned"
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "note": "Started 4 November 2026 overnight by synthetic@web-summit.indi at Indi's word (WS-05), in its own Claude Code session, model Sonnet 5.5; tasks WS-59, WS-125; prompt in people/indi/overnight/2026-11-04/ws-05-new-agents/PROMPTS.md."
  },
  {
   "name": "vault@web-summit.indi",
@@ -73,5 +76,12 @@
   "status": "running",
   "planned_schedule": "on each wake Indi sets up, with the digest at the evening wake; no scheduled task yet (this agent creates none)",
   "note": "Started 4 November 2026, about 21:40 UTC; session key journalist-indi (sha256:20bf92b2b68c794f) in data/keys.json."
+ },
+ {
+  "name": "ux@web-summit.indi",
+  "job": "the user experience of Indi's dashboard, command centre and to-do page (WS-06)",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "note": "Started 4 November 2026 overnight by synthetic@web-summit.indi at Indi's word (WS-05), in its own Claude Code session, model Opus 5.5; tasks WS-06; prompt in people/indi/overnight/2026-11-04/ws-05-new-agents/PROMPTS.md."
  }
 ]
