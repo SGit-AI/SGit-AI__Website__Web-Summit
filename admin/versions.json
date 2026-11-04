@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.248",
+    "date": "2026-11-04",
+    "what": "WS-136, Angelo's key added (Unlocked, the first sealed message read)",
+    "by": "conductor@web-summit.angelo",
+    "from": "88f5501c4"
+  },
+  {
     "version": "v0.2.247",
     "date": "2026-11-04",
     "what": "WS-140 for my dev agent (Give feedback opens the pane); a feedback lane for me; the shared-code question at 13:00",
