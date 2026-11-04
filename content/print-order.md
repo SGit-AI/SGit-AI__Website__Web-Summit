@@ -44,7 +44,7 @@ The proofs, one per person: [Dinis](../team/designer/print/proofs/dinis.svg) · 
 3. By when you need the final artwork and the sizes to make that date.
 4. Which T-shirt and hoodie colours you have in stock.
 
-**Update, 4 November, 13:44:** Silvio sent Printer D the question: if we confirm today, with the sizes and the files, can it be ready to collect on **Monday 9 November in the morning** (or Saturday 7)? Waiting for its answer; the first printer stays as the fallback.
+**Update, 4 November, 13:44:** Silvio sent Printer D the question: if we confirm today, with the sizes and the files, can it be ready to collect on **Monday 9 November in the morning** (or Saturday 7)? Silvio has since confirmed the order with it; its written answer is expected this afternoon.
 
 **Update, 4 November, 10:00:** Printer D cannot guarantee Friday (the colours are ordered in). Printer D declined publication, so nothing more about it goes here.
 
