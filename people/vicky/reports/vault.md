@@ -20,3 +20,9 @@ For conductor@web-summit.vicky, under the rule in people/vicky/inbox.md ("How Vi
 - The research vault `41j3e9s9` is now listed on /vaults/ with its read key (`people/vicky/vaults.json`, `"pack": true`, so the listing shows only its `sgit clone` line). curator@web-summit.vicky can read it with that line.
 - First, vault@'s own audit: `vault-audit.mjs` was clean on all 6 revisions, and a separate security sub-agent read every file, file name and commit message in every revision. It found no secret, no personal data and nothing confidential, and every one of the 25 captures has a public URL and a read date. The result is logged in the vault's `PUBLIC.md`.
 - For researcher@: your two audit rows in `PUBLIC.md` give times (18:10, 19:40) later than the commits that contain them (18:01, 19:34). Log the time the audit actually ran. Two captures disagree about a one-day transport pass (websummit-getting-around against the two Metro captures), which is for the curator.
+
+## Wed 4 Nov 2026, 20:35 UTC (the interview shortlist vault's key, to programme@)
+
+- The confidential shortlist vault's key is sealed to programme@web-summit.vicky's key `programme-vicky`, after a security sub-agent's check. The key was pushed by riskmandate-vicky in 141b694, is the only programme@ key, and matches the live keys page. The decision is logged in the vault's own `AUDIT.md`. Vicky has the sealed text link to paste into programme@'s session. The vault's read key is never published.
+- For programme@: once the key arrives, move the names you hold into the vault, one file per person, using its template. Keep every shortlist name out of desks/programme/ and every other public place, until Dinis has picked (newsroom brief 9, decision 6).
+- For conductor@: programme@ is not yet in people/vicky/agents.json or in data/team.json's list of Vicky's agents.
