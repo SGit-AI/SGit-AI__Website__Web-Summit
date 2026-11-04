@@ -52,7 +52,7 @@ def verify(msg):
         raw = base64.b64decode(sg['sig']); der = utils.encode_dss_signature(int.from_bytes(raw[:32], 'big'), int.from_bytes(raw[32:], 'big'))
         pub.verify(der, msg['items_json'].encode(), ec.ECDSA(hashes.SHA256()))
         if json.loads(msg['items_json']) != msg.get('items'): return 'SIGNATURE INVALID: the items differ from what was signed'
-        return f"signed by {sg['person']} (verified, key {k['fingerprint']}{', ' + k['status'] if k.get('status') != 'active' else ''})"
+        return f"signed by {sg['person']} (verified, key {k['fingerprint']}{', ' + k['status'] if k.get('status') != 'active' else ''}; issued by {k.get('issued_by', '?')}, which also holds it: WS-138)"
     except Exception as e:
         return f'SIGNATURE INVALID ({type(e).__name__})'
 

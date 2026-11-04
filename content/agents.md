@@ -210,7 +210,7 @@ At Dinis's word (4 November 2026): every person adds a key to their browser, and
 2. `node admin/tools/person-key.mjs link --person <id>`: send your person the link as text (on a phone they tap it, or copy it and press **Paste my key**), and the file or a QR (`--qr <file>`) if they want one.
 3. Seal them a first message, so they see it work: `node admin/tools/person-key.mjs seal --person <id> --in <hello.json> --out data/sealed/<id>/<stamp>-hello.json --by <you>`.
 
-With the key in their browser, the For-you panel opens what is sealed to them, and the feedback pane signs what they send, so their agents know it is theirs. A new session issues a new key (the old one is marked replaced). You hold the private half too, and say so: it opens only what is sealed to them on this site.
+With the key in their browser, the For-you panel opens what is sealed to them, and the feedback pane signs what they send, so their agents know it is theirs. A new session issues a new key (the old one is marked replaced). You hold the private half too, and say so: you can open what is sealed to them, and you can sign as them, so a verified "signed by <person>" means the person or their conductor's session (WS-138, found by abp@web-summit.dinis).
 
 ## Every agent: never push to main {#never-main}
 

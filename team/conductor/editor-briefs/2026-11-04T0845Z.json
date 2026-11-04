@@ -1,0 +1,33 @@
+{
+  "number": 12,
+  "date": "2026-11-04",
+  "kicker": "Web Summit 2026 · the conductor brief",
+  "title": "Keys are flying: three issued overnight, the newsroom is live, and one choice about who can sign as you",
+  "when": "Wednesday 4 November 2026, 08:45 UTC",
+  "by": "conductor@web-summit.dinis",
+  "headline": "27 agent commits since brief 11. Site keys: yours, Indi's (issued by her conductor at 07:21) and Jose's are on the keys list; Indi still has to add hers. The newsroom agent put web-summit.newsroom.sgit.ai live (v0.1.1, the skeleton); company pages next. The abp agent found that a key your conductor issues lets the conductor sign as you (WS-138): true, now said plainly, and yours to choose. The generic QR still waits for your yes in the designer's session, so the print stays at 3 of 7.",
+  "stats": [
+    {"n": "3", "label": "site keys issued (Dinis, Jose, Indi)"},
+    {"n": "200", "label": "web-summit.newsroom.sgit.ai answers (v0.1.1)"},
+    {"n": "52", "label": "issues due today (project manager)"},
+    {"n": "0", "label": "messages in my lane this morning"}
+  ],
+  "for_you": [
+    {"id": "1", "ask": "Yes in the designer's session: the generic QR", "detail": "Still stashed at 08:40; Vicky's logistics agent flags it too. Until it lands, the print order cannot go final.", "options": ["yes in the designer session", "keep the personal QR"], "recommend": "Yes now: it takes one word there."},
+    {"id": "2", "ask": "WS-138: who can sign as you", "detail": "A key your conductor issues can be used by the conductor too. Options: (1) the key is made in your own browser and only the public half comes back; (2) the conductor deletes its copy once you have added yours; (3) keep both, and say so everywhere (done now).", "options": ["(3) now, (1) next", "(2) now", "(1) now"], "recommend": "(3) now, as you wanted ('you could also decrypt messages sent to me'), and (1) for everyone else from Thursday."},
+    {"id": "3", "ask": "Send me one message from the Feedback pane", "detail": "My lane was empty at 08:30. One line from your phone proves the whole loop for you, as WS-136 asks of everyone.", "options": ["send one", "later"], "recommend": "Send one now."}
+  ],
+  "you_asked": [
+    {"at": "4 Nov, ~00:25", "said": "add the newsroom@web-summit.dinis agent to the team (and a new session) ... the first MVP of our web-summit focused newsroom", "done": "On the roster and /agents/#newsroom; its session put the skeleton live at web-summit.newsroom.sgit.ai (v0.1.1). Company pages next; the signed articles wait on its key.", "where": "WS-14", "status": "in progress"},
+    {"at": "4 Nov, ~01:45", "said": "send briefings to all the other agents for the other team members ... brief the mentor agent to help", "done": "WS-136, a commit to each conductor, the 13:00 sync, the mentors briefed. Indi's conductor issued her key at 07:21; Jose's key is listed.", "where": "WS-136", "status": "in progress"}
+  ],
+  "team": [
+    {"id": "Jose's agents", "status": "active", "doing": "a reviewer agent now holds his conductor's and dashboard's work until it is right; a watcher; his key"},
+    {"id": "conductor@web-summit.indi", "status": "active", "doing": "Indi's site key and a sealed hello (WS-136)"},
+    {"id": "dev@web-summit.dinis", "status": "active", "doing": "your lab, nine experiments mapped, the first a policy studio (WS-137); the feedback pane's public mode"},
+    {"id": "newsroom@web-summit.dinis", "status": "waiting", "doing": "the skeleton live; company pages next"},
+    {"id": "project-manager@web-summit.dinis", "status": "active", "doing": "52 due today; the RiskMandate core unpicked"}
+  ],
+  "next": ["12:27 wake: your 13:00 briefing PDF.", "13:00: everyone adds their key (the sync item), and the decisions recorded."],
+  "sources": ["git log since 2026-11-04T02:55Z (dev)", "data/person-keys.json", "board/WS-136, WS-138", "the designer and newsroom sessions' status at 08:40", "web-summit.newsroom.sgit.ai at 08:40"]
+}
