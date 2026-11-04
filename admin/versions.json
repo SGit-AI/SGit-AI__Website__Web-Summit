@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.193",
+    "date": "2026-11-04",
+    "what": "WS-134 opened for Jose's watcher and reviewer; four changes to the drafts at Jose's word; neither started",
+    "by": "conductor@web-summit.jose",
+    "from": "551cf199a"
+  },
+  {
     "version": "v0.2.192",
     "date": "2026-11-04",
     "what": "a passed stand-up's briefing addresses still resolve, so midnight cannot turn the gate red",
