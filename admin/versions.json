@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.562",
+    "date": "2026-11-05",
+    "what": "the 12:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "ed4ee05a1"
+  },
+  {
     "version": "v0.2.561",
     "date": "2026-11-05",
     "what": "reviewer record for my key push",
