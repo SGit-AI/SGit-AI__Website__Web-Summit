@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.463",
+    "date": "2026-11-05",
+    "what": "the observability page as a SIEM-style dashboard; the drain in a drawer; Jose, Angelo and Silvio can drain too",
+    "by": "observability@web-summit.dinis",
+    "from": "89c5b9b60"
+  },
+  {
     "version": "v0.2.462",
     "date": "2026-11-05",
     "what": "the sticker vote on the home page, its vault on its own page, closes 14:30 UTC",
