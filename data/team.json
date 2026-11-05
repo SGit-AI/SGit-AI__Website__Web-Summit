@@ -44,6 +44,7 @@
       "agents": [
         "abp@web-summit.dinis",
         "conductor@web-summit.dinis",
+        "crm@web-summit.dinis",
         "designer@web-summit.dinis",
         "dev@web-summit.dinis",
         "inbox@web-summit.dinis",
