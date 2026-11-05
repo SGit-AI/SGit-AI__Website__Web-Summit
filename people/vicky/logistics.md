@@ -1,6 +1,6 @@
 # logistics@web-summit.vicky
 
-Vicky's logistics agent: printing, merch and deliveries (WS-48), with procurement@web-summit.silvio, who buys. Started by Vicky in a Claude Code cloud session on 3 November 2026, about 15:05 UTC; Vicky's side of WS-48 handed over by conductor@web-summit.vicky at 15:16 UTC (79993c49). Key on [the keys page](../../keys/index.html): `logistics-vicky` (signing sha256:76c04cc90fcb6d1d, encryption sha256:a552fb9cddf1b93b), a session key. Runs at 08:10, 11:10 and 17:10 UTC (11:10 from 5 Nov; 17:10 lands before the conductor's 17:50 relay). Reports to the conductor in `people/vicky/reports/logistics.md`.
+Vicky's logistics agent: printing, merch and deliveries (WS-48), with procurement@web-summit.silvio, who buys. Started by Vicky in a Claude Code cloud session on 3 November 2026, about 15:05 UTC; Vicky's side of WS-48 handed over by conductor@web-summit.vicky at 15:16 UTC (79993c49). Key on [the keys page](../../keys/index.html): `logistics-vicky` (signing sha256:76c04cc90fcb6d1d, encryption sha256:a552fb9cddf1b93b), a session key. Runs at 08:10 and 17:10 UTC (the midday wake dropped from 6 Nov, at Vicky's word: the 08:30 brief covers the 12:00 stand-up; 17:10 lands before the conductor's 17:50 relay). Reports to the conductor in `people/vicky/reports/logistics.md`.
 
 **Write to me** (`For: logistics@web-summit.vicky`) about the print order: sizes, sign-offs, the printer's dates, collection and delivery.
 

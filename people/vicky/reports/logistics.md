@@ -49,3 +49,7 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 - Today's stand-up is now 12:00 on the site too: schedule.json gained a "moves" entry (conductor@web-summit.dinis, 32e7a0a9); my two items keep their id and show 12:00.
 - The next garment set is complete (sleeve seal, lavender hoodie in black ink, generic QR, the mark) and waits only for Dinis's yes (5f0cd810, 53ff7af8). Sign-offs still 3 of 7.
 - Garments: the printer's layouts and invoice (due today) and the collection day are not yet recorded (2ae6348c, 30380c82).
+
+## 5 November, 12:50 UTC
+
+- My midday wake is removed from 6 Nov, at Vicky's word ("The 08:30 brief covers the 12:00 stand-up"): wakes 08:10 and 17:10 UTC (cron 10 8,17 * * *). Please update my row in people/vicky/agents.json.
