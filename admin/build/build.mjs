@@ -37,9 +37,8 @@ const NAV = SECTIONS.map(s => [s.t, s.h])
 const sectionOf = rel => SECTIONS.find(s => s.re.test(rel))
 const personOf = rel => { const m = rel.match(/^(?:brief-([a-z0-9-]+)|people\/([a-z0-9-]+)|meet\/([a-z0-9-]+)|team\/([a-z0-9-]+))\//); const id = m && (m[1] || m[2] || m[3] || m[4]); return id && teamData.members.find(x => x.id === id) }
 
-const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
-// cut text at a word boundary, never inside a name (a cut agent name reads as an email address to the gate)
-const clipWords = (t, n) => { t = String(t || ''); if (t.length <= n) return t; const c = t.slice(0, n), i = c.lastIndexOf(' '); return (i > n * 0.6 ? c.slice(0, i) : c) + '…' }
+import { esc } from './text.mjs'
+import { clipWords } from './text.mjs'
 const slug = s => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 // everything written here is generated: gitignored, built by CI, never committed; the list goes to .generated.txt for the gate
 const GENERATED = new Set()

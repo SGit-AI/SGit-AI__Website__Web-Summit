@@ -9,9 +9,7 @@
 import fs from 'fs'
 import path from 'path'
 import { execFileSync } from 'child_process'
-// cut a subject at a word boundary, never inside one: a name cut mid-word (vault@web-summit.ange) reads as an email
-// address and fails the gate's contact check (sgit@web-summit.dinis, 5 November)
-const clip = (t, n) => { t = String(t || ''); if (t.length <= n) return t; const c = t.slice(0, n), i = c.lastIndexOf(' '); return (i > n * 0.6 ? c.slice(0, i) : c) + '…' }
+import { clipWords as clip } from './text.mjs'
 
 
 export const frontMatter = t => {

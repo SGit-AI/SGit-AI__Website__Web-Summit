@@ -10,7 +10,7 @@ import * as CAST from './cast.mjs'
 
 const NOW = () => new Date(process.env.BUILD_NOW || Date.now())
 const SUMMIT = '2026-11-09'
-const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+import { esc } from './text.mjs'
 const plain = s => String(s || '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/`([^`]+)`/g, '$1').replace(/\*\*?([^*]+)\*\*?/g, '$1').trim()
 const names = list => list.length <= 1 ? list.join('') : `${list.slice(0, -1).join(', ')} and ${list[list.length - 1]}`
 const fig = (body, label) => `<svg class="fig" viewBox="0 0 40 50" role="img" aria-label="${esc(label)}">${body}</svg>`

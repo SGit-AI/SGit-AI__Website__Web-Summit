@@ -232,6 +232,14 @@
       "pages": 492,
       "validate_seconds": 5.04,
       "build_seconds": 3.47
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: one set of text helpers (admin/build/text.mjs: esc, escAttr, clipWords) for ten build modules; eight private copies of esc and two of the word-boundary clip removed. Output identical (built old and new with BUILD_NOW pinned) except the one intended change: cockpit.mjs cut commit subjects at 160 characters mid-word, the same bug sgit@ fixed in two other places (a cut agent name reads as an email address to the gate); now cut at a word. Gate 6.1 s at 500 pages, unchanged within noise (this machine read 6.0 s before the change; it was 5.0 s at 492 pages this morning, so the machine is slower now).",
+      "pages": 500,
+      "validate_seconds": 6.08
     }
   ]
 }
