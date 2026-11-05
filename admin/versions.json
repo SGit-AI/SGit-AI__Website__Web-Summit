@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.509",
+    "date": "2026-11-05",
+    "what": "the 08:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "332e6dbe9"
+  },
+  {
     "version": "v0.2.508",
     "date": "2026-11-05",
     "what": "subjects are cut at a word boundary, so a name is never cut into an email-shaped string",
