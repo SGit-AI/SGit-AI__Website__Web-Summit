@@ -812,6 +812,21 @@
         "fingerprint": "sha256:c474ecbcfaeb2d93",
         "signing_fingerprint": "sha256:a0d5df4bf74335f7"
       }
+    },
+    {
+      "id": "dev-silvio",
+      "label": "dev@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's dev agent (dev@web-summit.silvio): builds and maintains the team CRM's features (WS-170, WS-172) with the other dev agents; never sends. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 2 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session on 5 November; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAnhzjbBnDFIhVb+CPiyC6\nVT5kv9K9rUEsMCglwyhg78TGUdsV8jrExkrcydmI1y1TfAOnfuELUhT/g2xVVDI1\n/6GQFb4fXYwbS5biFvo3BVM1jDS8vB9klYGXGm0EGTV3Ac2LszPLs/mttgH9DBxJ\nrqeaQUmG1dwY36zN+4FcES/Q5ba6Tf5LOqKPabCkul3yrogcqwEoB/D7nQIkYmEf\n0sFr9OViehvhcJ3QDK4WzMSJGRPFOEAoDz1F7UrmGwhUT8/WLAIL7236UWW6VE2c\nhgKZsEgV4GnhFezhsqZT7ZvZmmaBSbQ1dZf+AVrszA0pNpau1nhbM2FJfk2YVeVs\nfX2P+ECo+Uhf4NUB68vUx3pHHHkhW4qkPadRxe5+wRbAXnSWsJlylHgM0AXqOIxt\nWhMcVxeVdm9tndPChmtNylRn2V+e3nxBj9du1sY4isXnPEs263hqL0CvZJUn43pn\nEd1FDQAzITKTk8L5XHTV79969XK/cLAUijCA/U6tSpglifLHjqpxXv9WQ42IJg+l\nlDjD/sT3gzU4MDacAbMhU0ZnrtlpsJI1WyFp4SJVbkhx/MrgX0+RQ94de556bPeP\n/oVn3qj/T4Z9Tzf2eZmRc8DC8RcwtDjB/kl3jhtsMcXa4iEplen5fKuEXRWuRm7D\nhnDQtKPX5TefU9QAzblQxqMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEcCovkghyU3sUdiiNfebNv4cOxDsX\nglGglmzSaG/Xu0AtXW8zOQOwxXLh6LOhYw1P5RO6VFiJA/rdLQtXwJMHww==\n-----END PUBLIC KEY-----\n",
+        "label": "dev@web-summit.silvio",
+        "fingerprint": "sha256:15422e0d420c4683",
+        "signing_fingerprint": "sha256:a7a1c86520bc850e"
+      }
     }
   ]
 }
