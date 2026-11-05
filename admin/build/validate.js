@@ -73,7 +73,8 @@ if (new Set(rows).size !== rows.length) errors.push('admin/versions.html lists a
 for (const f of htmlFiles) {
     for (const m of text(f).matchAll(/(?:href|src)="([^"#]+)(?:#[^"]*)?"/g)) {
         if (/^(https?:|mailto:|data:|\/\/)/.test(m[1])) continue
-        if (!fs.existsSync(path.resolve(path.dirname(f), m[1]))) errors.push(`${rel(f)}: broken link -> ${m[1]}`)
+        // a query string (assets' ?v=<version>, for cache-busting) is not part of the file: the file itself must exist
+        if (!fs.existsSync(path.resolve(path.dirname(f), m[1].replace(/\?.*$/, '')))) errors.push(`${rel(f)}: broken link -> ${m[1]}`)
     }
 }
 

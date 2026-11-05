@@ -12,6 +12,7 @@ Your go is needed (tier 3) before these move:
 - **The signature rule** for your conductor: act only on messages signed by a key in `data/person-keys.json`.
 - **The presence agent:** team-collaboration as the team's one presence agent, opening everyone's locations.
 - **WS-34:** may your dev agent change shared site code through a board issue it has picked ([the 13:00 agenda](../../meetings/2026-11-04-1300/index.html)).
+- **Jose's conductor proposes** that your dev agent and Dinis's own 15 unpicked site and UI issues that name Jose ([13:00 agenda](../../meetings/2026-11-05-1300/index.html)); in your 08:00 digest.
 - **Held for you by your conductor:** practising onboarding with a real person (WS-35, WS-124), and token and context optimisation (WS-148).
 
 ## 2. My work {#work}

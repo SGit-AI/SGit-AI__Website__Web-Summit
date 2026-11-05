@@ -78,3 +78,8 @@ One entry per stand-up, written by team-collaboration@web-summit.angelo about 40
 | The newsroom researcher, the pipeline running | Vicky | Fri 6 Nov | WS-14, WS-141 |
 
 **Still open (to decide):** tagline and sticker approval (WS-155); who manages the LinkedIn page (WS-126); how vault entries are never left unprocessed (WS-114); two people still without a key (WS-136); easier briefs with one-way and two-way decisions (WS-112). **No issue yet:** the urgent notification (WS-37's note), and the "who do we know there" map.
+
+### Recorded since the last debrief (5 November, 03:50 UTC)
+
+- **WS-134, Jose's security watcher: how far does it watch?** Decided by Jose, 00:54 UTC, in his words: "WS-134, my security watcher: the whole team, read-only, as recommended. It reads what is already public in the repository and writes only to its own folder." (On the 4 November 13:00 agenda.) Follow-up: none named.
+

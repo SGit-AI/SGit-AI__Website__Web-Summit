@@ -24,7 +24,9 @@ for (const st of all) {
     await p.screenshot({ path: path.join(HERE, st.name + '.png'), omitBackground: true }); await p.close()
     if (st.name === 'gap-animated') continue
     const q = await b.newPage()
-    await q.setContent(`<!doctype html><style>@page{size:${st.w_mm}mm ${st.h_mm}mm;margin:0}body{margin:0}svg{display:block}</style>${raw(st.name)}`)
+    // the print PDF carries no cut line (Dinis, 4 November: "the stickers' magenta outline dropped"): a plain RGB stroke is not a
+    // spot colour a cutter reads, and a shop printing the PDF as it is would print it. The shop cuts to the size and shape given.
+    await q.setContent(`<!doctype html><style>@page{size:${st.w_mm}mm ${st.h_mm}mm;margin:0}body{margin:0}svg{display:block}</style>${raw(st.name).replace(/<g id="cutline".*?<\/g>/s, '')}`)
     await q.pdf({ path: path.join(HERE, st.name + '.pdf'), width: `${st.w_mm}mm`, height: `${st.h_mm}mm`, printBackground: true }); await q.close()
 }
 const font = `@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;700&family=Barlow:wght@400;500&display=swap');`
@@ -48,9 +50,9 @@ const legend = list.map(s => `<h3>${names[s.name]}</h3><p>${what[s.name]}</p>`).
 const proof = list.map(s => `<div><h3>${names[s.name]} <span style="font-weight:300">${s.w_mm - 4} x ${s.h_mm - 4} mm cut, 2 mm bleed</span></h3>${raw(s.name)}</div>`).join('')
 const html = `<!doctype html><style>${css}</style>
 <div class="page"><h1>RiskMandate laptop stickers</h1><h2>Four stickers, at real size on a laptop lid. Brand colours and rules from riskmandate.ai/brand; the seal and the lockup are the supplied files.</h2>
-<div class="lid">${lid}</div><div class="legend">${legend}<p style="margin-top:5mm">Print: die-cut vinyl, matt, the cut on the magenta line (CutContour). Every letter outlined.</p></div>
+<div class="lid">${lid}</div><div class="legend">${legend}<p style="margin-top:5mm">Print: kiss-cut on white vinyl, cut to the size and shape given; the print files carry no cut line. Every letter outlined.</p></div>
 <div class="foot">designer@web-summit.indi, 4 November 2026. Page 1 of 2.</div></div>
-<div class="page"><h1>Print proof</h1><h2>The print files at real size, with the bleed and the magenta cut line the printer cuts on (not printed).</h2>
+<div class="page"><h1>Print proof</h1><h2>The print files at real size, with the bleed; the magenta line shows where the cut falls (it is not in the print PDFs).</h2>
 <div class="proof">${proof}</div><div class="foot">designer@web-summit.indi, 4 November 2026. Page 2 of 2.</div></div>`
 const p = await b.newPage()
 await p.setContent(html, { waitUntil: 'networkidle' }); await p.evaluate(() => document.fonts.ready)

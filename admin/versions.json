@@ -1,5 +1,201 @@
 [
   {
+    "version": "v0.2.479",
+    "date": "2026-11-05",
+    "what": "event mode made clean on phones and iPads, What's new for everyone, and a page of what changed in the command centres",
+    "by": "dev@web-summit.silvio",
+    "from": "33198eaf5"
+  },
+  {
+    "version": "v0.2.478",
+    "date": "2026-11-05",
+    "what": "my session key on the keys page; my row in Silvio's agents set to running",
+    "by": "video@web-summit.silvio",
+    "from": "5defccd31"
+  },
+  {
+    "version": "v0.2.477",
+    "date": "2026-11-05",
+    "what": "the 04:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "3fc077630"
+  },
+  {
+    "version": "v0.2.476",
+    "date": "2026-11-05",
+    "what": "vault keys can also go to the conductor over an agent's own inbox lane; the guide, the prompt and WS-121 say so",
+    "by": "sgit@web-summit.dinis",
+    "from": "bf81a9001"
+  },
+  {
+    "version": "v0.2.475",
+    "date": "2026-11-05",
+    "what": "the morning notes from Dinis's night, one per person, on one page (/nights/2026-11-05/notes/)",
+    "by": "conductor@web-summit.dinis",
+    "from": "97b33eb41"
+  },
+  {
+    "version": "v0.2.474",
+    "date": "2026-11-05",
+    "what": "/cards/print/ is the business cards only; the stickers come off it",
+    "by": "designer@web-summit.dinis",
+    "from": "36bc00de3"
+  },
+  {
+    "version": "v0.2.473",
+    "date": "2026-11-05",
+    "what": "my session key on the keys page (WS-120)",
+    "by": "vault@web-summit.silvio",
+    "from": "69b3c5e78"
+  },
+  {
+    "version": "v0.2.472",
+    "date": "2026-11-05",
+    "what": "/cards/print/ shows the three cards and the four stickers as pictures, for the shop to see what to expect",
+    "by": "designer@web-summit.dinis",
+    "from": "897807ae1"
+  },
+  {
+    "version": "v0.2.471",
+    "date": "2026-11-05",
+    "what": "last night in pictures becomes Dinis's own update: only his agents' work and numbers",
+    "by": "conductor@web-summit.dinis",
+    "from": "708468b4b"
+  },
+  {
+    "version": "v0.2.470",
+    "date": "2026-11-05",
+    "what": "last night in pictures: the numbers are Dinis's agents' own, the rest of the team's apart",
+    "by": "conductor@web-summit.dinis",
+    "from": "da0d8deec"
+  },
+  {
+    "version": "v0.2.469",
+    "date": "2026-11-05",
+    "what": "the cards redesigned (design A, Dinis's choice), the lockup and .ai added; the sticker PDFs without the magenta line",
+    "by": "designer@web-summit.dinis",
+    "from": "ab88207f4"
+  },
+  {
+    "version": "v0.2.468",
+    "date": "2026-11-05",
+    "what": "last night in pictures (/nights/2026-11-05/): both repositories' work, 21:00 to 04:10 UTC, and who needs to look at what",
+    "by": "conductor@web-summit.dinis",
+    "from": "4c6838745"
+  },
+  {
+    "version": "v0.2.467",
+    "date": "2026-11-05",
+    "what": "my session key on the keys page; ABPs for observability@dinis and outreach@silvio",
+    "by": "abp@web-summit.dinis",
+    "from": "68ce31e63"
+  },
+  {
+    "version": "v0.2.466",
+    "date": "2026-11-05",
+    "what": "the sticker vote data refreshed with the vault app",
+    "by": "conductor@web-summit.dinis",
+    "from": "fa371a2ac"
+  },
+  {
+    "version": "v0.2.465",
+    "date": "2026-11-05",
+    "what": "38 companies not at Web Summit, invited to 30 minutes online with Dinis (week of 16 November)",
+    "by": "conductor@web-summit.silvio",
+    "from": "339b7d190"
+  },
+  {
+    "version": "v0.2.464",
+    "date": "2026-11-05",
+    "what": "/cards/print/: SVG and PNG beside every PDF, for the shop",
+    "by": "designer@web-summit.dinis",
+    "from": "ffccead58"
+  },
+  {
+    "version": "v0.2.463",
+    "date": "2026-11-05",
+    "what": "the observability page as a SIEM-style dashboard; the drain in a drawer; Jose, Angelo and Silvio can drain too",
+    "by": "observability@web-summit.dinis",
+    "from": "89c5b9b60"
+  },
+  {
+    "version": "v0.2.462",
+    "date": "2026-11-05",
+    "what": "the sticker vote on the home page, its vault on its own page, closes 14:30 UTC",
+    "by": "conductor@web-summit.dinis",
+    "from": "827f5438b"
+  },
+  {
+    "version": "v0.2.461",
+    "date": "2026-11-05",
+    "what": "special review, every key and sealed secret on the site (/pki/published-secrets/); WS-164: secrets opened beside other people's scripts",
+    "by": "security@web-summit.dinis",
+    "from": "1c6f30a2f"
+  },
+  {
+    "version": "v0.2.460",
+    "date": "2026-11-05",
+    "what": "WS-160: logging my runs from 03:50 UTC, signed",
+    "by": "dev@web-summit.dinis",
+    "from": "2d093fc0f"
+  },
+  {
+    "version": "v0.2.459",
+    "date": "2026-11-05",
+    "what": "Jose's WS-134 decision in the record; logging my runs from now (WS-160)",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "011b13f50"
+  },
+  {
+    "version": "v0.2.458",
+    "date": "2026-11-05",
+    "what": "review to v0.2.456, no hold; WS-132 part 1 verified; WS-163: each person confirms their own photo",
+    "by": "security@web-summit.dinis",
+    "from": "b8bbeac6e"
+  },
+  {
+    "version": "v0.2.457",
+    "date": "2026-11-05",
+    "what": "/people/silvio/outreach/: the campaign in one picture, the buyers by sector, a mock buyer card, and the table",
+    "by": "conductor@web-summit.silvio",
+    "from": "fbae8c6b5"
+  },
+  {
+    "version": "v0.2.456",
+    "date": "2026-11-05",
+    "what": "the sticker vote, round 3: the real art, 23 stickers in three sets, four variations each for the road trip",
+    "by": "conductor@web-summit.dinis",
+    "from": "1a8ff3a32"
+  },
+  {
+    "version": "v0.2.455",
+    "date": "2026-11-05",
+    "what": "logging my runs (WS-160); Jose's conductor's proposal on Angelo's dashboard",
+    "by": "dashboard@web-summit.angelo",
+    "from": "eefc2a3b5"
+  },
+  {
+    "version": "v0.2.454",
+    "date": "2026-11-05",
+    "what": "Drain now no longer opens Behind the scenes; only its handle does",
+    "by": "observability@web-summit.dinis",
+    "from": "01a155f56"
+  },
+  {
+    "version": "v0.2.453",
+    "date": "2026-11-05",
+    "what": "every page load counts (a refresh shows), and reads cut short by leaving a page are sent from the next one",
+    "by": "observability@web-summit.dinis",
+    "from": "bbf0c007e"
+  },
+  {
+    "version": "v0.2.452",
+    "date": "2026-11-05",
+    "what": "the observability pages use the full width; Behind the scenes docks (the page moves left) and resizes",
+    "by": "observability@web-summit.dinis",
+    "from": "20c5d524c"
+  },
+  {
     "version": "v0.2.451",
     "date": "2026-11-05",
     "what": "sticker vote: small corner rank badge; full access shows the vault key and why the host says Read-only",

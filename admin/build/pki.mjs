@@ -15,7 +15,7 @@
 // and, from git history, when its agent last committed ("last seen"). Quiet for more than 48 hours before the newest
 // commit is flagged: a session key may be gone even when nobody marked it ended. Deterministic: no clock is read.
 import crypto from 'node:crypto'
-import { execFileSync } from 'node:child_process'
+import { history } from './gitlog.mjs'
 import { qrcode } from './vendor/qrcode-generator-2.0.4.mjs'
 
 const b64url = buf => Buffer.from(buf).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
@@ -43,7 +43,7 @@ const personOfAgent = a => (a.match(/@web-summit\.([a-z0-9-]+)$/) || [])[1] || '
 /** the cards' data: one row per key, with its status, its agent, its person and when it was last seen in git */
 export function keyRows(ROOT, keyData) {
     let log = []
-    try { log = execFileSync('git', ['log', '--format=%ct%x09%s', 'HEAD'], { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 << 20 }).split('\n').filter(Boolean).map(l => { const [t, ...s] = l.split('\t'); return { t: +t, s: s.join('\t') } }) } catch {}
+    log = history(ROOT).map(c => ({ t: c.t / 1000, s: c.s }))
     const newest = log.length ? log[0].t : 0
     return keyData.keys.map(k => {
         const agent = agentOf(k), b = k.bundle

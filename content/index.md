@@ -6,6 +6,8 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 {{hero}}
 
+{{vote}}
+
 {{needs}}
 
 {{now}}
@@ -21,13 +23,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Thursday 5 November, 02:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-0257/index.html), [yesterday's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
+*Thursday 5 November, 04:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-0457/index.html), [yesterday's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
 
-- **Dinis's cockpit** is live: its first signed action gave Indi newsroom access (WS-145, done).
-- **The big outreach started:** 28 of 50 emails drafted for Silvio (WS-26).
-- **Every agent now logs its runs** (WS-160); the [Observability](observability/index.html) section shows them.
-- **The sticker vote** is open: [/stickers/vote/](stickers/vote/index.html).
-- **On Dinis's cockpit:** Nimay's invitation (WS-09), protect main (WS-105), the garments' yes (WS-113).
+- **What Dinis did last night, in pictures:** [his update, and who needs to look at what](nights/2026-11-05/index.html), before 13:00.
+- **The sticker vote closes at 14:30:** [/stickers/vote/](stickers/vote/index.html).
+- **The cards redesigned** (design A); [/cards/print/](cards/print/index.html) is the page for the shop (WS-155).
+- **Security reviewed every key and secret on the site;** one high finding (WS-164).
+- **Outreach:** 38 more companies invited to meet Dinis online, the week of 16 November.
 
 ## Start here {#start}
 

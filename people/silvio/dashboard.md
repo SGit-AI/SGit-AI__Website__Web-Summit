@@ -7,6 +7,7 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 ## Today {#today}
 
 - **My command centre:** [the full view](app/index.html): tasks from the board, workstreams, agents, decisions, Claude and voice, dark and light, phone and desktop.
+- **My outreach (WS-26):** [the campaign and the buyers](outreach/index.html): 100 companies confirmed at Web Summit, the emails and dates, and a card per buyer.
 - **My focus:** Get things done: the outreach, the local Algarve work, and the videos that carry RiskMandate further.
 - **This week's one rule:** every day ends with one thing shipped per workstream, or a named blocker on the board.
 - **My brief:** [Brief for Silvio](../../brief-silvio/index.html) · **The board:** [all issues](../../briefs/index.html#issues) · **The team's pulse:** [pulse](../../pulse/index.html) · **What happened:** [home](../../index.html)

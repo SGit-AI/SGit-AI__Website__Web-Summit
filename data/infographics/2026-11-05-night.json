@@ -1,0 +1,256 @@
+{
+ "stats": [
+  [
+   "82",
+   "commits by Dinis's agents, 21:00 to 04:10 UTC"
+  ],
+  [
+   "55",
+   "of them on the team site"
+  ],
+  [
+   "27",
+   "on the newsroom"
+  ],
+  [
+   "16",
+   "of Dinis's agents at work"
+  ],
+  [
+   "7",
+   "newsroom releases (v0.1.6 to v0.1.12)"
+  ],
+  [
+   "23",
+   "stickers in the team vote"
+  ]
+ ],
+ "sections": [
+  {
+   "id": "newsroom",
+   "title": "The Lisbon Wire: the newsroom, redesigned and live",
+   "lead": "newsroom@web-summit.dinis and six specialist agents (dev, designer, interact, admin, graph, billing) turned web-summit.newsroom.sgit.ai into The Lisbon Wire: a publication look, the agenda and 109 company profiles, pages for events, people, organisations, topics and places, all data as JSON with a public API, a graph explorer, search and an Ask the newsroom chat, a control centre showing every run and agent, and a reading meter with top-ups and a vault login.",
+   "tiles": [
+    {
+     "img": "assets/shows/night-2026-11-05/nr-front.jpg",
+     "href": "https://web-summit.newsroom.sgit.ai/",
+     "title": "The front page",
+     "text": "The Lisbon Wire: the agenda by day, the latest, independence said plainly."
+    },
+    {
+     "img": "assets/shows/night-2026-11-05/nr-graph.jpg",
+     "href": "https://web-summit.newsroom.sgit.ai/graph/index.html",
+     "title": "The graph",
+     "text": "Companies, sessions, people and places, explorable; the chat can drive it."
+    },
+    {
+     "img": "assets/shows/night-2026-11-05/nr-admin.jpg",
+     "href": "https://web-summit.newsroom.sgit.ai/admin/index.html",
+     "title": "The control centre",
+     "text": "Every run, every agent, the timeline, the data and the workflows."
+    },
+    {
+     "img": "assets/shows/night-2026-11-05/nr-article.jpg",
+     "href": "https://web-summit.newsroom.sgit.ai/articles/newsroom-status-four-days-out.html",
+     "title": "The first article",
+     "text": "The newsroom four days out, in pictures; signed."
+    }
+   ],
+   "check": "Indi (you now have write access, WS-145) and Vicky (the agenda comes from your programme data): read the front page and a company profile, and say what is wrong or missing."
+  },
+  {
+   "id": "vote",
+   "title": "The sticker vote: an encrypted vault, a lane per person",
+   "lead": "Twenty-three funny stickers in three sets (the road trip in four variations each, creative takes, the gap) live in an encrypted vault. Each of us ranks a top 10 (gaps allowed, drag to order, thumbs-down for not for me). The ballot is signed with your site key, sealed, and written to your own append lane; only the team has lanes. Now on the home page too.",
+   "tiles": [
+    {
+     "img": "assets/shows/night-2026-11-05/ws-vote.jpg",
+     "href": "stickers/vote/index.html",
+     "title": "Vote now",
+     "text": "Your top 10, closes today at 14:30 UTC. The newest ballot counts."
+    },
+    {
+     "img": "assets/shows/night-2026-11-05/ws-home.jpg",
+     "href": "index.html",
+     "title": "On the home page",
+     "text": "Pick our stickers: the real art and a big Vote now button."
+    }
+   ],
+   "check": "Everyone with a site key: vote before 14:30 UTC. Angelo, Jose, Indi: drain the votes from the vault page."
+  },
+  {
+   "id": "observability",
+   "title": "Observability: who reads what, what the agents do",
+   "lead": "An Observability section read straight out of an encrypted vault in your browser: live stats on the home page, a SIEM-style dashboard, the explorer, and a drain from the site. Every agent now logs each run (WS-160); Jose's and Angelo's agents already do.",
+   "tiles": [
+    {
+     "img": "assets/shows/night-2026-11-05/ws-obs.jpg",
+     "href": "observability/index.html",
+     "title": "The dashboard",
+     "text": "Readers, team reads, agent runs and security findings, by hour and day."
+    }
+   ],
+   "check": "Jose: compare it with your own observability, and decide on the vault keys (WS-154). Every agent: log your runs (WS-160)."
+  },
+  {
+   "id": "cockpit",
+   "title": "Dinis's cockpit: decide in one click, signed",
+   "lead": "Dinis's first dashboard: what only he can do, ranked, with decide or delegate in one click. Each answer is signed with his key and sent to the dashboard's lane; the first one (Indi's newsroom access, WS-145) was drained, verified and done. Focus pages show one card at a time.",
+   "tiles": [
+    {
+     "img": "assets/shows/night-2026-11-05/ws-cockpit.jpg",
+     "href": "people/dinis/index.html",
+     "title": "The cockpit",
+     "text": "Only you can do this, ranked; your actions on the right; Submit."
+    }
+   ],
+   "check": "Every person's dashboard agent: this is the pattern to copy for your human."
+  },
+  {
+   "id": "keys",
+   "title": "Keys and secrets: an inbox per agent, a security review",
+   "lead": "The conductor's inbox has a lane per agent (34), each token sealed to that agent's own key, so a vault key can be sent without touching a chat or the repository. security@ reviewed every key and sealed secret published on the site, and markdown can no longer make a javascript: link (WS-132 part 1).",
+   "tiles": [
+    {
+     "img": "assets/shows/night-2026-11-05/ws-inbox.jpg",
+     "href": "inbox/index.html",
+     "title": "The conductor's inbox",
+     "text": "How any agent sends a private message or a vault key."
+    },
+    {
+     "img": "assets/shows/night-2026-11-05/ws-secrets.jpg",
+     "href": "pki/published-secrets/index.html",
+     "title": "What we publish encrypted",
+     "text": "Every key and sealed secret, and who can open it (WS-164)."
+    }
+   ],
+   "check": "Vicky's agents (WS-153) and Jose's (WS-154): send the vault keys over your inbox lane."
+  },
+  {
+   "id": "merch",
+   "title": "Cards, stickers and the print order",
+   "lead": "The cards redesigned (design A, Dinis's choice, at 04:18): one card per audience, executives, GRC and security, on the brand's dark ground, Web Summit Edition on the front and the meeting point on the back. Also a creative sticker brief (the Web Summit Edition road trip), a page to give ChatGPT the twelve prompts, and the page to send ProntaPrint Chiswick, with SVG and PNG beside every PDF, for collection on Friday.",
+   "tiles": [
+    {
+     "img": "assets/shows/night-2026-11-05/ws-cards.jpg",
+     "href": "cards/index.html#r4",
+     "title": "The cards we are printing",
+     "text": "Three audiences, colour-coded: Do you know what your agents are doing? Control the gap. Does it have permission?",
+     "wide": true
+    },
+    {
+     "img": "assets/shows/night-2026-11-05/ws-print.jpg",
+     "href": "cards/print/index.html",
+     "title": "For ProntaPrint Chiswick",
+     "text": "The order, the files and the specification, collection Friday 6 November."
+    }
+   ],
+   "check": "designer@web-summit.indi: the WS-155 fixes by Thursday 09:00 UK time. Dinis: approve the order."
+  }
+ ],
+ "callouts": [
+  {
+   "who": "Angelo",
+   "items": [
+    [
+     "Vote, then drain the votes",
+     "stickers/vote/vault/index.html"
+    ],
+    [
+     "The cockpit, a pattern for your dashboard",
+     "people/dinis/index.html"
+    ]
+   ]
+  },
+  {
+   "who": "Jose",
+   "items": [
+    [
+     "Vote, then drain the votes",
+     "stickers/vote/vault/index.html"
+    ],
+    [
+     "Observability, beside yours (WS-154)",
+     "observability/index.html"
+    ]
+   ]
+  },
+  {
+   "who": "Indi",
+   "items": [
+    [
+     "Review The Lisbon Wire (WS-145)",
+     "https://web-summit.newsroom.sgit.ai/"
+    ],
+    [
+     "Vote, then drain the votes",
+     "stickers/vote/vault/index.html"
+    ],
+    [
+     "designer@indi: the WS-155 fixes",
+     "cards/print/index.html"
+    ]
+   ]
+  },
+  {
+   "who": "Vicky",
+   "items": [
+    [
+     "Vote",
+     "stickers/vote/index.html"
+    ],
+    [
+     "Your agents: the vault keys (WS-153)",
+     "inbox/index.html"
+    ],
+    [
+     "The newsroom's agenda, from your data",
+     "https://web-summit.newsroom.sgit.ai/"
+    ]
+   ]
+  },
+  {
+   "who": "Silvio",
+   "items": [
+    [
+     "Vote",
+     "stickers/vote/index.html"
+    ],
+    [
+     "Drain the observability vault, if you want to",
+     "observability/index.html"
+    ]
+   ]
+  },
+  {
+   "who": "Nimay",
+   "items": [
+    [
+     "Accept the repository invitation (WS-09)",
+     "start/index.html"
+    ],
+    [
+     "Ask your conductor for a site key, to vote",
+     "agents/index.html#person-key"
+    ]
+   ]
+  },
+  {
+   "who": "Every agent",
+   "items": [
+    [
+     "Log your runs (WS-160)",
+     "observability/index.html"
+    ],
+    [
+     "Your inbox lane to the conductor",
+     "inbox/index.html"
+    ],
+    [
+     "What we publish encrypted (WS-164)",
+     "pki/published-secrets/index.html"
+    ]
+   ]
+  }
+ ]
+}

@@ -32,6 +32,12 @@ h1 span{display:inline-block;color:var(--gold);transform:rotate(-4deg);animation
 .num{position:absolute;top:22px;left:22px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:20px;background:var(--gold);color:#161615;border:3px solid #161615;z-index:2}
 .card h3{margin:12px 2px 2px;font-size:19px}
 .card p{margin:2px;color:var(--ink2);font-size:14px}
+.grp{grid-column:1/-1;margin:18px 0 0;font-size:28px;color:var(--gold)}
+.grp:first-child{margin-top:0}
+.dots{position:absolute;left:0;right:0;bottom:8px;display:flex;justify-content:center;gap:7px}
+.dot{width:12px;height:12px;padding:0;border-radius:50%;border:2px solid #161615;background:rgba(247,246,242,.7);cursor:pointer}
+.dot.on{background:var(--gold);transform:scale(1.25)}
+.card .img{position:relative}
 .card .votes{position:absolute;top:10px;right:10px;background:#161615;color:var(--gold);border-radius:999px;padding:4px 10px;font-weight:800;font-size:14px;z-index:2;display:none}
 .card .votes.on{display:block;animation:pop .5s cubic-bezier(.2,1.8,.4,1)}
 .card.lead{border-color:var(--gold);box-shadow:0 0 0 3px rgba(242,194,48,.35)}
@@ -127,12 +133,15 @@ const FALLBACK = /*__DATA__*/{};
   const readText = async p => { if (!sg || !sg.vfs) throw new Error('no vault bridge'); return sg.vfs.readText(p) }
   const readJson = async p => JSON.parse(await readText(p))
   let DATA = FALLBACK, idx = 0, RESULTS = null
+  const FACE = {}
 
   // ---------- the gallery ----------
   function build() {
     $('tagline').textContent = DATA.tagline || ''
     const g = $('grid'); g.textContent = ''
+    let grp = null
     DATA.stickers.forEach((s, i) => {
+      if (s.group_title && s.group !== grp) { grp = s.group; g.appendChild(el('h2', 'grp', s.group_title)) }
       const c = el('article', 'card'); c.tabIndex = 0; c.style.setProperty('--c', s.colour); c.dataset.id = s.id
       c.setAttribute('aria-label', s.id + '. ' + s.name)
       const n = el('span', 'num', String(s.id)), v = el('span', 'votes'), box = el('div', 'img'), img = el('img')
@@ -140,30 +149,43 @@ const FALLBACK = /*__DATA__*/{};
       box.appendChild(img)
       const h = el('h3', null, s.name); if (s.placeholder) h.appendChild(el('span', 'ph', 'placeholder'))
       c.append(n, v, box, h, el('p', null, s.joke))
-      c.addEventListener('click', () => show(i))
+      if (s.variants && s.variants.length > 1) {                      // variants: dots flip the face; the lightbox opens on it
+        const dots = el('div', 'dots'); dots.setAttribute('role', 'group'); dots.setAttribute('aria-label', 'Variants of ' + s.name)
+        s.variants.forEach((vr, k) => {
+          const d = el('button', 'dot' + (k ? '' : ' on')); d.type = 'button'; d.setAttribute('aria-label', 'Variant ' + vr.v)
+          d.addEventListener('click', e => { e.stopPropagation(); FACE[s.id] = k; img.src = vr.thumb; dots.querySelectorAll('.dot').forEach((x, j) => x.classList.toggle('on', j === k)) })
+          dots.appendChild(d)
+        })
+        box.appendChild(dots)
+      }
+      c.addEventListener('click', () => show(i, FACE[s.id] || 0))
       c.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(i) } })
       g.appendChild(c)
       setTimeout(() => c.classList.add('in'), 60 + i * 70)
     })
   }
-  function show(i) {
-    idx = (i + DATA.stickers.length) % DATA.stickers.length
-    const s = DATA.stickers[idx]
-    $('lbimg').src = s.web; $('lbimg').alt = s.name
-    $('lbt').textContent = s.id + '. ' + s.name; $('lbw').textContent = s.words; $('lbj').textContent = s.joke
+  // the lightbox steps through every face: a sticker's variants first, then the next sticker
+  const faces = () => DATA.stickers.flatMap((s, i) => (s.variants && s.variants.length > 1 ? s.variants : [null]).map((v, k) => [i, k]))
+  let vidx = 0
+  function show(i, k) {
+    idx = (i + DATA.stickers.length) % DATA.stickers.length; vidx = k || 0
+    const s = DATA.stickers[idx], vs = s.variants && s.variants.length > 1 ? s.variants : null, v = vs ? vs[vidx] : null
+    $('lbimg').src = v ? v.web : s.web; $('lbimg').alt = s.name + (v ? ', variant ' + v.v : '')
+    $('lbt').textContent = s.id + '. ' + s.name + (v ? '  (variant ' + v.v + ' of ' + vs.length + ')' : ''); $('lbw').textContent = s.words; $('lbj').textContent = s.joke
     $('lb').classList.add('open')
   }
+  function step(d) { const f = faces(), at = f.findIndex(([i, k]) => i === idx && k === vidx), [i, k] = f[(at + d + f.length) % f.length]; show(i, k) }
   const hide = () => $('lb').classList.remove('open')
-  $('lbx').onclick = hide; $('lbp').onclick = () => show(idx - 1); $('lbn').onclick = () => show(idx + 1)
+  $('lbx').onclick = hide; $('lbp').onclick = () => step(-1); $('lbn').onclick = () => step(1)
   $('lb').addEventListener('click', e => { if (e.target === $('lb')) hide() })
-  $('lbo').onclick = () => { const s = DATA.stickers[idx]; try { sg.ui.preview(s.full) } catch (e) { } }
+  $('lbo').onclick = () => { const s = DATA.stickers[idx], v = s.variants && s.variants.length > 1 ? s.variants[vidx] : null; try { sg.ui.preview(v ? v.full : s.full) } catch (e) { } }
   document.addEventListener('keydown', e => {
     if (!$('lb').classList.contains('open')) return
-    if (e.key === 'Escape') hide(); else if (e.key === 'ArrowLeft') show(idx - 1); else if (e.key === 'ArrowRight') show(idx + 1)
+    if (e.key === 'Escape') hide(); else if (e.key === 'ArrowLeft') step(-1); else if (e.key === 'ArrowRight') step(1)
   })
   let tx = null
   $('lb').addEventListener('touchstart', e => { tx = e.touches[0].clientX }, { passive: true })
-  $('lb').addEventListener('touchend', e => { if (tx == null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1)); tx = null })
+  $('lb').addEventListener('touchend', e => { if (tx == null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); tx = null })
 
   // ---------- the countdown ----------
   function tick() {
@@ -174,11 +196,17 @@ const FALLBACK = /*__DATA__*/{};
   }
 
   // ---------- the count ----------
+  // the variant most hearted, as "favourite: v2 (3)"
+  function favourite(x) {
+    const h = x && x.variant_hearts; if (!h) return ''
+    const [v, n] = Object.entries(h).sort((a, b) => b[1] - a[1] || a[0] - b[0])[0] || []
+    return v ? '  ·  favourite: v' + v + ' (' + n + ')' : ''
+  }
   function showResults(r) {
     RESULTS = r
     const bars = $('bars'), chips = $('voters'); bars.textContent = ''; chips.textContent = ''
     const n = r && r.voters_count || 0
-    $('rnote').textContent = n ? n + ' of the team ' + (n === 1 ? 'has' : 'have') + ' voted (counted ' + String(r.as_of || '').replace('T', ' ').slice(0, 16) + ' UTC' + (r.changed_votes ? ', ' + r.changed_votes + ' replaced ballot' + (r.changed_votes === 1 ? '' : 's') : '') + '). Each person ranks a top 6: 1st = 6 points, 6th = 1. The newest ballot counts.' : 'No ballots counted yet. They arrive sealed in the lanes and are counted when someone drains them.'
+    $('rnote').textContent = n ? n + ' of the team ' + (n === 1 ? 'has' : 'have') + ' voted (counted ' + String(r.as_of || '').replace('T', ' ').slice(0, 16) + ' UTC' + (r.changed_votes ? ', ' + r.changed_votes + ' replaced ballot' + (r.changed_votes === 1 ? '' : 's') : '') + '). Each person ranks a top ' + MAXR() + ': 1st = ' + MAXR() + ' points, the last 1. The newest ballot counts.' : 'No ballots counted yet. They arrive sealed in the lanes and are counted when someone drains them.'
     const by = {}; (r.ranking || []).forEach(x => { by[x.id] = x })
     const pts = id => (by[id] && by[id].points != null ? by[id].points : ((r.counts || {})[id] || 0))
     const max = Math.max(1, ...DATA.stickers.map(s => pts(s.id)))
@@ -187,7 +215,7 @@ const FALLBACK = /*__DATA__*/{};
       const v = pts(s.id), x = by[s.id] || {}, row = el('div', 'bar'), img = el('img'), t = el('div', 't'), i = el('i')
       img.src = s.thumb; img.alt = ''
       row.style.animationDelay = (k * 70) + 'ms'
-      t.append(i, el('span', null, (v ? '#' + (k + 1) + '  ' : '') + s.id + '. ' + s.name + (x.top6 ? '  ·  in ' + x.top6 + ' top 6' + (x.top6 === 1 ? '' : 's') : '') + (x.not_for_me ? '  ·  ' + x.not_for_me + ' not for me' : '')))
+      t.append(i, el('span', null, (v ? '#' + (k + 1) + '  ' : '') + s.id + '. ' + s.name + ((x.in_top || x.top6) ? '  ·  in ' + (x.in_top || x.top6) + ' top ' + MAXR() + ((x.in_top || x.top6) === 1 ? '' : 's') : '') + (x.not_for_me ? '  ·  ' + x.not_for_me + ' not for me' : '') + favourite(x)))
       row.append(img, t, el('b', null, String(v))); bars.appendChild(row)
       requestAnimationFrame(() => setTimeout(() => { i.style.width = (100 * v / max) + '%' }, 150 + k * 90))
       const card = document.querySelector('.card[data-id="' + s.id + '"]')
@@ -218,20 +246,26 @@ const FALLBACK = /*__DATA__*/{};
     const aes = await crypto.subtle.importKey('raw', await crypto.subtle.decrypt({ name: 'RSA-OAEP' }, key, b64d(env.w)), { name: 'AES-GCM' }, false, ['decrypt'])
     return JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64d(env.i), tagLength: 128 }, aes, b64d(env.c))))
   }
-  // a ballot's [ranking, not_for_me]: v2 (a top 6, ranked) or v1 (one choice, a top 6 of one); the same rules as the CLI
+  // a ballot's [ranking, not_for_me]: v2 (a ranked top N, N = content.json max_ranking) or v1 (one choice); the same rules as the CLI
+  const MAXR = () => DATA.max_ranking || 10
   function ballot(v) {
-    const ok = x => Number.isInteger(x) && x >= 1 && x <= 12, uniq = a => new Set(a).size === a.length
-    if (v.type === 'web-summit.sticker-vote/v1') { if (!ok(v.choice)) throw new Error('choice is not 1 to 12'); return [[v.choice], []] }
+    const ok = x => Number.isInteger(x) && x >= 1 && x <= 24, uniq = a => new Set(a).size === a.length
+    if (v.type === 'web-summit.sticker-vote/v1') { if (!ok(v.choice)) throw new Error('choice is not a sticker'); return [[v.choice], []] }
     if (v.type !== 'web-summit.sticker-vote/v2') throw new Error('not a sticker vote')
     const rk = v.ranking, nf = v.not_for_me || []
-    if (!Array.isArray(rk) || rk.length < 1 || rk.length > 6 || !rk.every(ok) || !uniq(rk)) throw new Error('ranking is not 1 to 6 distinct stickers')
-    if (!Array.isArray(nf) || !nf.every(ok) || !uniq(nf) || nf.some(x => rk.includes(x))) throw new Error('not_for_me is not a list of other stickers')
+    // round 5: fixed slots, so a ranking may hold gaps (null) between picks; a dense list from earlier is still valid
+    const picks = Array.isArray(rk) ? rk.filter(x => x != null) : []
+    if (!Array.isArray(rk) || rk.length < 1 || rk.length > MAXR() || !picks.length || !rk.every(x => x === null || ok(x)) || !uniq(picks)) throw new Error('ranking is not up to ' + MAXR() + ' slots of distinct stickers (empty slots null)')
+    if (!Array.isArray(nf) || !nf.every(ok) || !uniq(nf) || nf.some(x => picks.includes(x))) throw new Error('not_for_me is not a list of other stickers')
+    const vp = v.variant_pick || {}
+    if (typeof vp !== 'object' || Array.isArray(vp) || !Object.entries(vp).every(([k, x]) => /^([1-9]|1\d|2[0-4])$/.test(k) && Number.isInteger(x) && x >= 1 && x <= 20)) throw new Error('variant_pick is not a map of sticker to variant')
     return [rk, nf]
   }
-  function tally(ballots) {
-    const t = {}; DATA.stickers.forEach(s => { t[s.id] = { id: s.id, name: s.name, points: 0, top6: 0, firsts: 0, not_for_me: 0 } })
-    for (const [rk, nf] of ballots) { rk.forEach((n, i) => { t[n].points += 6 - i; t[n].top6++; if (!i) t[n].firsts++ }); nf.forEach(n => { t[n].not_for_me++ }) }
-    return Object.values(t).sort((a, b) => b.points - a.points || b.top6 - a.top6 || a.not_for_me - b.not_for_me || a.id - b.id)
+  function tally(ballots, picks) {
+    const t = {}; DATA.stickers.forEach(s => { t[s.id] = { id: s.id, name: s.name, points: 0, in_top: 0, firsts: 0, not_for_me: 0 } })
+    for (const [rk, nf] of ballots) { rk.forEach((n, i) => { if (n != null && t[n]) { t[n].points += MAXR() - i; t[n].in_top++; if (!i) t[n].firsts++ } }); nf.forEach(n => { if (t[n]) t[n].not_for_me++ }) }
+    for (const vp of picks || []) for (const k in vp) if (t[+k]) { const h = t[+k].variant_hearts = t[+k].variant_hearts || {}; h[String(vp[k])] = (h[String(vp[k])] || 0) + 1 }
+    return Object.values(t).sort((a, b) => b.points - a.points || b.in_top - a.in_top || a.not_for_me - b.not_for_me || a.id - b.id)
   }
   async function verify(p, lanePerson, keys) {
     const vote = JSON.parse(p.signed)
@@ -259,14 +293,14 @@ const FALLBACK = /*__DATA__*/{};
       if (r.received > close) { late++; continue }
       if (!best[r.person] || r.received > best[r.person].received) best[r.person] = r
     }
-    const ballots = []
-    for (const r of Object.values(best)) ballots.push(ballot(JSON.parse((await openEnv(r.envelope, key)).signed)))
-    const ranking = tally(ballots), counts = {}; ranking.forEach(x => { counts[String(x.id)] = x.points })
+    const ballots = [], picks = []
+    for (const r of Object.values(best)) { const v = JSON.parse((await openEnv(r.envelope, key)).signed); ballots.push(ballot(v)); picks.push(v.variant_pick || {}) }
+    const ranking = tally(ballots, picks), counts = {}; ranking.forEach(x => { counts[String(x.id)] = x.points })
     const okRows = rows.filter(r => r.verified && r.received <= close).length
-    return { v: 2, method: 'Borda: 1st = 6 points, 2nd = 5 ... 6th = 1; a v1 ballot is a top 6 of one', as_of: now, closes_at: close, closed: now >= close, voters_count: Object.keys(best).length, counts, ranking,
+    return { v: 2, method: 'Borda: 1st = ' + MAXR() + ' points, 2nd = ' + (MAXR() - 1) + ' ... by position, for every ballot (an older top 6 scores ' + MAXR() + ' to ' + (MAXR() - 5) + '; a v1 pick ' + MAXR() + ')', max_ranking: MAXR(), as_of: now, closes_at: close, closed: now >= close, voters_count: Object.keys(best).length, counts, ranking,
       leader: ranking[0].points ? ranking[0] : null, voters: Object.entries(best).map(([p, r]) => ({ person: p, at: r.received })).sort((a, b) => a.at < b.at ? -1 : 1),
       ballots: rows.length, changed_votes: okRows - Object.keys(best).length, late, rejected: bad, drained_by: 'the vault app (in the browser)',
-      note: 'A top 6 per team person, ranked; a new ballot replaces the earlier one (the newest counts). Ballots stay sealed in votes/: who voted is public, what each person chose is not.' }
+      note: 'A top ' + MAXR() + ' per team person, ranked; a new ballot replaces the earlier one (the newest counts). Ballots stay sealed in votes/: who voted is public, what each person chose is not.' }
   }
   async function drain(say) {
     const key = await drainKey($('pass').value.trim())

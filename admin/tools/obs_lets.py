@@ -84,6 +84,8 @@ def migrate(vault):
             os.rmdir(p)
     return touched
 
+DRAINS = []                                                              # this run's drains, for state/drains.json
+
 def fold_inbox(vault, extract):
     """Records a browser drained (inbox/*.jsonl: {file_id, lane, content}, still sealed) are opened and verified here by
     extract(content), exactly as the lanes' are, go into events/, and the inbox file is removed."""
@@ -101,6 +103,11 @@ def fold_inbox(vault, extract):
                       _received=int(x['file_id'][:13]) if str(x['file_id'])[:13].isdigit() else None)
             rows.append(ev)
         touched |= save_raw(vault, rows); n += len(rows)
+        parts = name[:-6].split('-')                                       # browser-<person>-<ISO stamp>.jsonl
+        who = parts[1] if len(parts) > 2 and parts[1].isalpha() else 'browser'
+        stamp = name[len('browser-' + (who + '-' if who != 'browser' else '')):-6]
+        at = (stamp[:10] + 'T' + stamp[11:13] + ':' + stamp[14:16] + 'Z') if len(stamp) >= 16 else ''
+        DRAINS.append({'at': at, 'by': who, 'records': len(rows), 'via': 'browser'})
         os.remove(os.path.join(p, name))
     return touched, n
 
@@ -134,7 +141,12 @@ def update_sessions(vault, rows):
 def zero(): return {g: 0 for g in GROUPS}
 
 def hour_stats(day, hh, rows, groups):
-    pages = [r for r in rows if r.get('type') in ('view', 'read') and r.get('path')]
+    pages, seen = [], set()
+    for r in rows:                                                       # a read re-sent from the next page can arrive twice
+        if r.get('type') not in ('view', 'read') or not r.get('path'): continue
+        k = (r.get('sid'), r.get('type'), r.get('path'), r.get('ts'), r.get('visible_s'), r.get('scroll'), r.get('src'))
+        if r.get('type') == 'read' and k in seen: continue
+        seen.add(k); pages.append(r)
     runs = sorted([r for r in rows if r.get('type') == 'web-summit.agent-run/v1'], key=lambda r: r.get('run', ''))
     totals = {g: {'views': 0, 'reads': 0, 'tabs': 0} for g in GROUPS}
     tabs = collections.defaultdict(set)
@@ -155,12 +167,16 @@ def hour_stats(day, hh, rows, groups):
             if r['type'] == 'view': t['views'] += 1
             else: t['reads'] += 1; t['visible_s'] += r.get('visible_s', 0); t['max_scroll'] = max(t['max_scroll'], r.get('scroll', 0))
     for g in GROUPS: totals[g]['tabs'] = len(tabs[g])
+    M = collections.defaultdict(zero)
+    for r in pages:
+        if r['type'] == 'view': M[str(r.get('ts', ''))[14:16]][groups.get(r.get('sid'), 'readers')] += 1
     keep = ('agent', 'run', 'trigger', 'repo', 'read', 'did', 'tokens', 'notes', 'signed', 'key_id', 'sig_finding')
     return {'v': 1, 'day': day, 'hour': hh, 'computed': time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime()),
             'totals': totals,
             'pages': [{'path': k, **v} for k, v in sorted(P.items())],
             'team': [{'person': p, 'path': path, **v} for (p, path), v in sorted(T.items())],
             'referrers': refs.most_common(), 'screens': screens.most_common(),
+            'minutes': sorted([m, v] for m, v in M.items() if m),
             'runs': [{k: r[k] for k in keep if k in r} for r in runs],
             'findings': {'page_signatures': sum(1 for r in pages if r.get('sig_finding')), 'agent_signatures': sum(1 for r in runs if r.get('sig_finding'))}}
 
@@ -233,7 +249,12 @@ def transform(data_vault, pub_vault, dirty, now_hour, roster=()):
         hs = [jload(os.path.join(pub_vault, day, h, 'hour.json'), None) for h in sorted(os.listdir(os.path.join(pub_vault, day))) if h.isdigit()]
         hs = [h for h in hs if h]
         series = [[h['hour'], {g: h['totals'][g]['views'] for g in GROUPS}] for h in hs]
-        jsave(os.path.join(pub_vault, day, 'day.json'), merge(hs, {'v': 1, 'day': day, 'hours': series, 'computed': time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime())}))
+        th = collections.defaultdict(dict)                                  # the heatmap: person -> hour -> [views, reads, pages]
+        for hr in hs:
+            for t in hr['team']:
+                c = th[t['person']].setdefault(hr['hour'], [0, 0, []]); c[0] += t['views']; c[1] += t['reads']
+                if t['path'] not in c[2] and len(c[2]) < 6: c[2].append(t['path'])
+        jsave(os.path.join(pub_vault, day, 'day.json'), merge(hs, {'v': 1, 'day': day, 'hours': series, 'team_hours': th, 'computed': time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime())}))
     D = [jload(os.path.join(pub_vault, d, 'day.json'), None) for d in days]; D = [d for d in D if d]
     allstats = merge(D)
     last48 = []
@@ -298,6 +319,50 @@ def transform(data_vault, pub_vault, dirty, now_hour, roster=()):
         'entries': [[p, g, n] for (p, g), n in entries.most_common()],
         'about': 'Page to next page within one tab, counted per group. Only counts are published.'})
     jsave(os.path.join(L, 'runs.json'), {'v': 1, 'generated': gen, 'runs': allstats['runs'][:200]})
+    # timeline: every hour so far
+    tl = []
+    for day, hh in hours:
+        h = jload(os.path.join(pub_vault, day, hh, 'hour.json'), None)
+        if h: tl.append([f'{day}T{hh}', {g: h['totals'][g]['views'] for g in GROUPS}, sum(h['totals'][g]['reads'] for g in GROUPS), len(h['runs']), len({t['person'] for t in h['team']})])
+    jsave(os.path.join(L, 'timeline.json'), {'v': 1, 'generated': gen, 'hours': tl})
+    # feed: the newest events of the last 12 hours; anonymous traffic only as per-minute counts per page and group
+    feed = []
+    for day, hh in hours[-12:]:
+        traffic = collections.Counter()
+        for r in hour_rows(data_vault, day, hh):
+            t = r.get('type')
+            if t == 'web-summit.agent-run/v1':
+                feed.append({'ts': r.get('run', ''), 'kind': 'agent', 'agent': r.get('agent'), 'trigger': r.get('trigger', ''), 'read': len(r.get('read', [])),
+                             'did': len(r.get('did', [])), 'signed': bool(r.get('signed')), 'notes': (r.get('notes') or '')[:160]})
+            elif t in ('view', 'read') and r.get('path'):
+                g = groups.get(r.get('sid'), 'readers')
+                if r.get('verified') and r.get('person'):
+                    feed.append({'ts': r.get('ts', ''), 'kind': 'team', 'person': r['person'], 'type': t, 'path': norm(r['path']),
+                                 **({'visible_s': r.get('visible_s', 0), 'scroll': r.get('scroll', 0)} if t == 'read' else {})})
+                elif t == 'view': traffic[(str(r.get('ts', ''))[:16], norm(r['path']), g)] += 1
+            if r.get('sig_finding'): pass
+        feed += [{'ts': ts + ('Z' if not ts.endswith('Z') else ''), 'kind': 'traffic', 'path': p, 'group': g, 'n': n} for (ts, p, g), n in traffic.items()]
+    feed.sort(key=lambda e: e['ts'], reverse=True)
+    jsave(os.path.join(L, 'feed.json'), {'v': 1, 'generated': gen, 'events': feed[:300]})
+    # findings: every signature that failed (a claimed key that is not published, or not active, or a bad signature)
+    import re
+    fnd = []
+    for day, hh in hours:
+        for r in hour_rows(data_vault, day, hh):
+            f = r.get('sig_finding')
+            if not f: continue
+            m = re.search(r'(sha256:[0-9a-f]{16}|key [^ ]+)', f)
+            reason = 'unknown key' if 'no published key' in f else 'not active' if 'not active' in f or 'is ' in f and 'not' in f else 'signature or content mismatch' if 'differs' in f or 'Invalid' in f else f.split(':')[0]
+            fnd.append({'ts': r.get('ts') or r.get('run', ''), 'kind': 'agent' if r.get('type') == 'web-summit.agent-run/v1' else 'page', 'reason': reason,
+                        'claimed_key': (m.group(1).replace('key ', '') if m else '')[:40], 'path': norm(r.get('path', '')) if r.get('path') else ''})
+    fnd.sort(key=lambda e: e['ts'], reverse=True)
+    jsave(os.path.join(L, 'findings.json'), {'v': 1, 'generated': gen, 'count': len(fnd), 'by_reason': collections.Counter(f['reason'] for f in fnd).most_common(),
+                                             'by_key': collections.Counter(f['claimed_key'] for f in fnd).most_common(20), 'recent': fnd[:200]})
+    # drains: every drain, the hourly one and the ones run from a browser
+    dl = jload(os.path.join(data_vault, 'state', 'drains.json'), [])
+    dl += DRAINS; DRAINS.clear()
+    jsave(os.path.join(data_vault, 'state', 'drains.json'), dl[-1000:])
+    jsave(os.path.join(L, 'drains.json'), {'v': 1, 'generated': gen, 'drains': dl[-200:][::-1]})
     idx.update(v=1, generated=gen, days=days)
     jsave(os.path.join(L, 'index.json'), idx)
     return {'hours': len(todo), 'days': len(dirty_days), 'agents': len(agents), 'pages': len(pages)}

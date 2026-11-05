@@ -3,8 +3,8 @@
 // vault in a frame, to list the vote lanes (who has a ballot waiting: a lane with a pending file, no ballot opened) and
 // to read results.json from the vault (the leaderboard, written by the drain).
 // Round 2 (Dinis: "pick the top 6 ... I can reorder them ... on the right hand side, you show me the top 6, and that's
-// what I click submit"): a team person whose browser holds their site key (assets/keyring.js) ranks up to six of the
-// twelve in the panel on the right (a bottom sheet on a phone), reorders them by drag (pointer events) or by the up and
+// what I click submit"): a team person whose browser holds their site key (assets/keyring.js) ranks up to ten (round 4: "can you allow 10 votes?"; CFG.max_ranking) of the
+// stickers in the panel on the right (a bottom sheet on a phone), reorders them by drag (pointer events) or by the up and
 // down buttons, marks any "not for me", and submits. The browser opens their sealed lane token, signs
 // {type: v2, person, ranking, not_for_me, at} with their key, seals {vote, signed, sig, key} to the vault's drain key
 // (sgit hybrid v2, as assets/feedback.js does) and writes it to their lane. The newest ballot counts (Borda points).
@@ -27,9 +27,14 @@
     const sha256 = async bytes => hex(await crypto.subtle.digest('SHA-256', typeof bytes === 'string' ? te.encode(bytes) : bytes))
     const first = n => String(n || '').split(' ')[0]
     const $ = sel => mount.querySelector(sel)
-    const MAX = 6
+    let MAX = 10                                    // CFG.max_ranking (data/stickers-vote.json), read at start
     let CFG = null, ME = null, PENDING = {}, RESULTS = null
-    let RANK = [], NFM = []                         // the ballot being built: ids in order, and "not for me"
+    // round 5 (Dinis: "allow the drag to occur in empty spaces ... I could leave a couple gaps"): RANK is MAX fixed slots,
+    // each an id or null; a tap fills the first empty one; full means no empty slot
+    let RANK = [], NFM = []                         // the ballot being built: the slots, and "not for me"
+    const filled = () => RANK.filter(x => x != null)
+    const firstEmpty = () => RANK.indexOf(null)
+    let VPICK = {}, FACE = {}                       // round 3: the favourite variant per sticker (a heart), the variant showing
 
     // ---------- sealing, as sgit pki encrypt does (byte-compatible with PKI__Crypto.hybrid_decrypt; from assets/feedback.js) ----------
     const b64 = bytes => { let s = ''; for (const b of new Uint8Array(bytes)) s += String.fromCharCode(b); return btoa(s) }
@@ -83,21 +88,26 @@
     const voted = () => { const v = new Set(Object.keys(PENDING)); for (const x of (RESULTS && RESULTS.voters) || []) v.add(x.person); return v }
     function layout() {
         mount.innerHTML = `
-<div class="sv-top">
-  <div class="sv-clock"><span class="sv-l">Voting closes in</span><b data-cd>--</b><span class="sv-l">Thursday 5 November, 18:00 UTC</span></div>
-  <div class="sv-team"><span class="sv-l">The team <b data-count></b></span><ul class="sv-people" data-people></ul></div>
+<div class="sv-band">
+  <div class="sv-intro" data-intro></div>
+  <div class="sv-side">
+    <div class="sv-clock"><span class="sv-l">Closes in</span><b data-cd>--</b><span class="sv-l">${esc(new Date(CFG.closes_at).toISOString().slice(11, 16))} UTC today</span></div>
+    <div class="sv-team"><span class="sv-l">The team <b data-count></b></span><ul class="sv-people" data-people></ul></div>
+    <div class="sv-chip" data-me role="status" aria-live="polite"></div>
+  </div>
 </div>
-<div class="sv-me" data-me role="status" aria-live="polite"></div>
+<p class="sv-msg" data-msg role="status" aria-live="polite" hidden></p>
 <div class="sv-main">
   <ol class="sv-grid" data-grid></ol>
-  <aside class="sv-panel" data-panel aria-label="My top 6">
-    <button type="button" class="sv-ph" data-sheet aria-expanded="false"><b>My top 6</b><span data-filled>0 of 6</span><span class="sv-chev" aria-hidden="true"></span></button>
+  <aside class="sv-panel" data-panel aria-label="My top ${MAX}">
+    <button type="button" class="sv-ph" data-sheet aria-expanded="false"><b>My top ${MAX}</b><span data-filled>0 of ${MAX}</span><span class="sv-chev" aria-hidden="true"></span></button>
     <div class="sv-pbody">
-      <p class="sv-hint">Tap a sticker to add it. Drag the handle, or use the arrows, to put them in order: 1st gets 6 points, 6th gets 1.</p>
+      <p class="sv-hint">Tap a sticker to put it in the first empty slot, or drag it onto a slot. Drag a row (or its ⋮⋮ handle on a phone) onto an empty slot to move it, onto another to swap; gaps are fine. Slot 1 gets ${MAX} points, slot ${MAX} gets 1, an empty slot nothing. Keyboard: focus a slot, Space to pick up, arrows to move, Space to drop.</p>
+      <p class="sr" aria-live="assertive" data-live></p>
       <ol class="sv-slots" data-slots></ol>
       <div class="sv-nfm"><b>Not for me</b><ul data-nfm></ul></div>
     </div>
-    <button type="button" class="sv-go" data-submit disabled>Submit my top 6</button>
+    <button type="button" class="sv-go" data-submit disabled>Submit my top ${MAX}</button>
     <p class="sv-last" data-last></p>
   </aside>
 </div>
@@ -106,23 +116,34 @@
 <ol class="sv-bars" data-bars></ol>
 <section class="sv-full" data-full hidden aria-label="The vault, full access"></section>
 <h2 id="the-vault">The vault, full size</h2>
-<p>The same twelve, at full resolution, rendered from the encrypted vault by SG/Vault with this page's read key: a full-screen gallery (arrow keys, swipe, a lightbox) and the leaderboard. <a data-vaultlink target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+<p>The same stickers, at full resolution, rendered from the encrypted vault by SG/Vault with this page's read key: a full-screen gallery (arrow keys, swipe, a lightbox) and the leaderboard. <a data-vaultlink target="_blank" rel="noopener">Open it in a new tab</a>.</p>
 <div class="sv-vault" data-vault><button type="button" class="sv-open" data-openvault>Open the vault here</button></div>`
-        $('[data-grid]').innerHTML = CFG.stickers.map((s, i) => `<li class="sv-card" style="--i:${i}" data-id="${s.id}"><div class="sv-cin">
-<button type="button" class="sv-face" data-add aria-label="${esc(s.id + '. ' + s.name)}: add to my top 6"><span class="sv-img"><img src="${esc(up + s.thumb)}" alt="" width="480" height="480" loading="lazy"><span class="sv-num">${s.id}</span><span class="sv-rank" data-rank></span><span class="sv-pts" data-n></span></span>
+        // round 5 (Dinis: "somebody arriving for the first time needs to be told what to do"): the page title and the
+        // four steps from the markdown ("How to vote") move into the band's left column; the twin keeps them as text
+        const intro = $('[data-intro]'), h1 = document.querySelector('main > h1'), hv = document.getElementById('how-to-vote')
+        if (h1) intro.appendChild(h1)
+        if (hv) { const ol = hv.nextElementSibling; hv.remove(); if (ol && ol.tagName === 'OL') { ol.classList.add('sv-steps'); intro.appendChild(ol) } }
+        intro.appendChild($('[data-me]'))                             // you, under the steps (the band's left column)
+        let grp = null
+        $('[data-grid]').innerHTML = CFG.stickers.map((s, i) => `${s.group_title && s.group !== grp && (grp = s.group) ? `<li class="sv-group"><h3>${esc(s.group_title)}</h3></li>` : ''}<li class="sv-card" style="--i:${i}" data-id="${s.id}"><div class="sv-cin">
+<button type="button" class="sv-face" data-add aria-label="${esc(s.id + '. ' + s.name)}: add to my top ${MAX}"><span class="sv-img"><img src="${esc(up + s.thumb)}" alt="" width="480" height="480" loading="lazy"><span class="sv-num">${s.id}</span><span class="sv-rank" data-rank></span><span class="sv-pts" data-n></span></span>
 <b>${esc(s.name)}</b><span class="sv-words">${esc(s.words)}</span><span class="sv-joke">${esc(s.joke)}</span></button>
-<span class="sv-acts"><button type="button" class="sv-add" data-add>Add to my top 6</button><button type="button" class="sv-no" data-no aria-pressed="false" title="Not for me"><span aria-hidden="true">👎</span><span class="sr">Not for me</span></button></span></div></li>`).join('')
+${s.variants && s.variants.length > 1 ? `<span class="sv-vars" role="group" aria-label="Variants of ${esc(s.name)}"><button type="button" class="sv-vstep" data-vstep="-1" aria-label="Previous variant">‹</button>${s.variants.map((v, k) => `<button type="button" class="sv-dot" data-v="${k}" aria-label="Variant ${v.v}"${k ? '' : ' aria-current="true"'}></button>`).join('')}<button type="button" class="sv-vstep" data-vstep="1" aria-label="Next variant">›</button><button type="button" class="sv-heart" data-heart aria-pressed="false" title="This one: my favourite variant"><span aria-hidden="true">♡</span> this one</button></span>` : ''}
+<span class="sv-acts"><button type="button" class="sv-add" data-add>Add to my top ${MAX}</button><button type="button" class="sv-no" data-no aria-pressed="false" title="Not for me"><span aria-hidden="true">👎</span><span class="sr">Not for me</span></button></span></div></li>`).join('')
         $('[data-grid]').addEventListener('click', e => {
-            const li = e.target.closest('.sv-card'); if (!li) return
+            const li = e.target.closest('.sv-card'); if (!li || NOCLICK) return
             const id = +li.dataset.id
+            const dot = e.target.closest('[data-v]'), stp = e.target.closest('[data-vstep]')
+            if (dot || stp) { const n = sticker(id).variants.length; flip(id, dot ? +dot.dataset.v : ((FACE[id] || 0) + +stp.dataset.vstep + n) % n); return }
+            if (e.target.closest('[data-heart]')) return heart(id)
             if (e.target.closest('[data-no]')) toggleNfm(id); else if (e.target.closest('[data-add]')) toggleRank(id)
         })
         $('[data-slots]').addEventListener('click', e => {
             const b = e.target.closest('button[data-act]'); if (!b) return
             const id = +b.closest('[data-sid]').dataset.sid, i = RANK.indexOf(id), act = b.dataset.act
-            if (act === 'up' && i > 0) [RANK[i - 1], RANK[i]] = [RANK[i], RANK[i - 1]]
-            else if (act === 'down' && i < RANK.length - 1) [RANK[i + 1], RANK[i]] = [RANK[i], RANK[i + 1]]
-            else if (act === 'rm') RANK.splice(i, 1)
+            if (act === 'up' && i > 0) swap(i, i - 1)                       // with the neighbour, empty or not
+            else if (act === 'down' && i < MAX - 1) swap(i, i + 1)
+            else if (act === 'rm') RANK[i] = null
             else return
             draw(); const again = $(`[data-sid="${id}"] [data-act="${act}"]`); if (again && !again.disabled) again.focus()
         })
@@ -131,89 +152,206 @@
         $('[data-submit]').onclick = submit
         $('[data-vaultlink]').href = CFG.vault_url
         $('[data-openvault]').onclick = openVault
-        dragging()
+        dragging(); keyboard()
         requestAnimationFrame(() => mount.classList.add('sv-in'))
     }
     function toggleRank(id) {
         if (!canVote()) return refuse(id)
         const i = RANK.indexOf(id)
-        if (i >= 0) RANK.splice(i, 1)
-        else if (RANK.length >= MAX) { refuse(id); say(`Your top 6 is full: remove one in the panel first.`, 'warn'); return }
-        else { RANK.push(id); NFM = NFM.filter(x => x !== id); bump() }
+        if (i >= 0) RANK[i] = null
+        else if (firstEmpty() < 0) { refuse(id); say(`Your top ${MAX} is full: remove one in the panel first, or drag this sticker onto a slot to replace it.`, 'warn'); return }
+        else { RANK[firstEmpty()] = id; NFM = NFM.filter(x => x !== id); bump() }
+        draw()
+    }
+    function swap(a, b) { [RANK[a], RANK[b]] = [RANK[b], RANK[a]] }
+    function place(id, k) {                                          // a sticker onto slot k: moves within the panel, or replaces
+        const from = RANK.indexOf(id)
+        if (from === k) return
+        if (from >= 0) swap(from, k); else { RANK[k] = id; NFM = NFM.filter(x => x !== id); bump() }
+    }
+    // variants (round 3): the dots and arrows flip the face; the heart marks the one showing as the favourite
+    function flip(id, k) {
+        FACE[id] = k
+        const li = $(`.sv-card[data-id="${id}"]`), v = sticker(id).variants[k]
+        li.querySelector('.sv-img img').src = up + v.thumb
+        li.querySelectorAll('[data-v]').forEach((d, j) => d.toggleAttribute('aria-current', j === k))
+        draw()
+    }
+    function heart(id) {
+        if (!canVote()) return refuse(id)
+        const v = sticker(id).variants[FACE[id] || 0].v
+        if (VPICK[id] === v) delete VPICK[id]; else VPICK[id] = v
         draw()
     }
     function toggleNfm(id) {
         if (!canVote()) return refuse(id)
-        if (NFM.includes(id)) NFM = NFM.filter(x => x !== id); else { NFM.push(id); RANK = RANK.filter(x => x !== id) }
+        if (NFM.includes(id)) NFM = NFM.filter(x => x !== id); else { NFM.push(id); RANK = RANK.map(x => x === id ? null : x) }
         draw()
     }
     function refuse(id) {
         const li = $(`.sv-card[data-id="${id}"]`); li.classList.remove('nope'); void li.offsetWidth; li.classList.add('nope')
-        if (!ME) { const m = $('[data-me]'); m.classList.remove('sv-flash'); void m.offsetWidth; m.classList.add('sv-flash') }
+        if (!ME) { const m = $('[data-me]'); m.classList.remove('sv-flash'); void m.offsetWidth; m.classList.add('sv-flash'); say('The vote is for the team: add your key first (the Add your key box at the top of the page).', 'warn') }
     }
     function bump() { const p = $('[data-filled]'); p.classList.remove('bump'); void p.offsetWidth; p.classList.add('bump') }
-    function say(t, kind) { const m = $('[data-me]'); m.className = 'sv-me' + (kind === 'bad' ? ' sv-bad' : kind === 'warn' ? ' sv-nokey' : ''); m.textContent = t }
+    function say(t, kind) { const m = $('[data-msg]'); m.className = 'sv-msg' + (kind === 'bad' ? ' sv-bad' : kind === 'warn' ? ' sv-warn' : ''); m.textContent = t; m.hidden = !t; clearTimeout(say.t); if (kind !== 'bad') say.t = setTimeout(() => { m.hidden = true }, 6000) }
     function draw() {                                            // the cards and the panel, from RANK and NFM
         for (const li of mount.querySelectorAll('.sv-card')) {
             const id = +li.dataset.id, r = RANK.indexOf(id), no = NFM.includes(id)
+            const hb = li.querySelector('[data-heart]')
+            if (hb) { const s = sticker(id), showing = s.variants[FACE[id] || 0].v, on = VPICK[id] === showing; hb.setAttribute('aria-pressed', String(on)); hb.innerHTML = `<span aria-hidden="true">${on ? '♥' : '♡'}</span> ${VPICK[id] && !on ? `v${VPICK[id]} is my favourite` : on ? 'my favourite' : 'this one'}` }
             li.classList.toggle('ranked', r >= 0); li.classList.toggle('nfm', no)
             li.querySelector('[data-rank]').textContent = r >= 0 ? '#' + (r + 1) : ''
-            li.querySelector('.sv-add').textContent = r >= 0 ? `#${r + 1} in my top 6 · remove` : RANK.length >= MAX ? 'Top 6 is full' : 'Add to my top 6'
+            li.querySelector('.sv-add').textContent = r >= 0 ? `#${r + 1} in my top ${MAX} · remove` : firstEmpty() < 0 ? `Top ${MAX} is full` : `Add to my top ${MAX}`
             li.querySelector('[data-no]').setAttribute('aria-pressed', String(no))
-            li.querySelector('.sv-face').setAttribute('aria-label', `${id}. ${sticker(id).name}: ${r >= 0 ? `number ${r + 1} in my top 6, press to remove` : 'add to my top 6'}`)
+            li.querySelector('.sv-face').setAttribute('aria-label', `${id}. ${sticker(id).name}: ${r >= 0 ? `number ${r + 1} in my top ${MAX}, press to remove` : `add to my top ${MAX}`}`)
         }
         const slots = []
         for (let k = 0; k < MAX; k++) {
             const id = RANK[k]
-            if (!id) { slots.push(`<li class="sv-slot empty"><span class="sv-pos">${k + 1}</span><span class="sv-sname">${k === RANK.length ? 'Tap a sticker to add it' : ''}</span></li>`); continue }
+            if (!id) { slots.push(`<li class="sv-slot empty" data-k="${k}" tabindex="0" aria-label="Slot ${k + 1}, empty"><span class="sv-pos">${k + 1}</span><span class="sv-sname">${k === firstEmpty() ? 'Empty: the next tap goes here' : 'Empty'}</span></li>`); continue }
             const s = sticker(id)
-            slots.push(`<li class="sv-slot" data-sid="${id}"><span class="sv-handle" data-drag title="Drag to reorder" aria-hidden="true">⋮⋮</span><span class="sv-pos">${k + 1}</span><img src="${esc(up + s.thumb)}" alt="" width="40" height="40"><span class="sv-sname">${esc(s.name)}<small>${6 - k} pt${k === 5 ? '' : 's'}</small></span>
-<span class="sv-sb"><button type="button" data-act="up" aria-label="Move ${esc(s.name)} up"${k === 0 ? ' disabled' : ''}>▲</button><button type="button" data-act="down" aria-label="Move ${esc(s.name)} down"${k === RANK.length - 1 ? ' disabled' : ''}>▼</button><button type="button" data-act="rm" aria-label="Remove ${esc(s.name)}">✕</button></span></li>`)
+            slots.push(`<li class="sv-slot" data-sid="${id}" data-k="${k}" tabindex="0" aria-label="Slot ${k + 1}: ${esc(s.name)}, ${MAX - k} points"><span class="sv-handle" data-drag title="Drag to move or swap" aria-hidden="true">⋮⋮</span><span class="sv-pos">${k + 1}</span><img src="${esc(up + s.thumb)}" alt="" width="40" height="40"><span class="sv-sname"><span class="sv-sn">${esc(s.name)}</span><small>${MAX - k} pt${k === MAX - 1 ? '' : 's'}</small></span>
+<span class="sv-sb"><button type="button" data-act="up" aria-label="Move ${esc(s.name)} up"${k === 0 ? ' disabled' : ''}>▲</button><button type="button" data-act="down" aria-label="Move ${esc(s.name)} down"${k === MAX - 1 ? ' disabled' : ''}>▼</button><button type="button" data-act="rm" aria-label="Remove ${esc(s.name)}">✕</button></span></li>`)
         }
         $('[data-slots]').innerHTML = slots.join('')
         $('[data-nfm]').innerHTML = NFM.length ? NFM.map(id => `<li><button type="button" data-unno="${id}" title="Undo: not for me">${esc(id + '. ' + sticker(id).name)} <span aria-hidden="true">✕</span></button></li>`).join('') : '<li class="sv-none">None yet: press 👎 on a sticker you would not put on your laptop.</li>'
-        $('[data-filled]').textContent = `${RANK.length} of ${MAX}`
-        const b = $('[data-submit]'); b.disabled = !RANK.length || !canVote(); b.textContent = RANK.length ? `Submit my top ${RANK.length}` : 'Submit my top 6'
-        mount.classList.toggle('sv-has', RANK.length > 0)
+        const n = filled().length
+        $('[data-filled]').textContent = `${n} of ${MAX}`
+        const b = $('[data-submit]'); b.disabled = !n || !canVote(); b.textContent = n ? `Submit my top ${MAX} (${n} picked)` : `Submit my top ${MAX}`
+        mount.classList.toggle('sv-has', n > 0)
     }
-    // drag to reorder, with pointer events (mouse, pen and touch alike); the arrows do the same for keyboards and iPhones
+    // ---------- drag and drop (round 5): a floating copy follows the pointer, the row it left is a dashed placeholder, the
+    // slot under the pointer lights up ("drop here" when empty, "swap" when filled). An empty slot takes it (a move), a
+    // filled one swaps. Mouse: drag the row or a sticker card; touch: the row's handle (a card is tap-to-add on touch).
+    // Escape, or dropping outside the slots, puts it back. The list scrolls itself near its top and bottom edges.
+    const live = t => { const l = $('[data-live]'); if (l) { l.textContent = ''; setTimeout(() => { l.textContent = t }, 30) } }
+    let DRAG = null, NOCLICK = false
     function dragging() {
-        const list = $('[data-slots]')
-        let id = null, pid = null
+        const list = $('[data-slots]'), grid = $('[data-grid]'), body = $('.sv-pbody')
+        const begin = (e, kind, id, from, srcEl) => {
+            if (!canVote() || (e.pointerType === 'mouse' && e.button !== 0)) return
+            DRAG = { kind, id, from, srcEl, touch: e.pointerType !== 'mouse', x0: e.clientX, y0: e.clientY, x: e.clientX, y: e.clientY, pid: e.pointerId, on: false, ghost: null, target: null, raf: 0 }
+        }
         list.addEventListener('pointerdown', e => {
-            const h = e.target.closest('[data-drag]'); if (!h || !canVote()) return
-            id = +h.closest('[data-sid]').dataset.sid; pid = e.pointerId
-            list.setPointerCapture(pid); e.preventDefault()
-            list.classList.add('dragging'); mark()
+            const row = e.target.closest('.sv-slot[data-sid]'); if (!row || e.target.closest('button')) return
+            if (e.pointerType !== 'mouse' && !e.target.closest('[data-drag]')) return     // touch: the handle only, so the list still scrolls
+            begin(e, 'slot', +row.dataset.sid, +row.dataset.k, row); if (DRAG && e.pointerType === 'mouse') e.preventDefault()
         })
-        list.addEventListener('pointermove', e => {
-            if (id === null || e.pointerId !== pid) return
-            const rows = [...list.querySelectorAll('.sv-slot:not(.empty)')]
-            let to = rows.findIndex(r => { const b = r.getBoundingClientRect(); return e.clientY < b.top + b.height / 2 })
-            if (to < 0) to = rows.length - 1
-            const from = RANK.indexOf(id)
-            if (to !== from && to >= 0) { RANK.splice(from, 1); RANK.splice(to, 0, id); draw(); mark() }
+        grid.addEventListener('pointerdown', e => {
+            const face = e.target.closest('.sv-face'); if (!face || e.pointerType !== 'mouse') return
+            const li = face.closest('.sv-card'); begin(e, 'card', +li.dataset.id, RANK.indexOf(+li.dataset.id), li.querySelector('.sv-img') || li)
         })
-        const end = e => { if (id === null || e.pointerId !== pid) return; id = null; try { list.releasePointerCapture(pid) } catch { } list.classList.remove('dragging'); draw() }
-        list.addEventListener('pointerup', end); list.addEventListener('pointercancel', end)
-        function mark() { const r = list.querySelector(`[data-sid="${id}"]`); if (r) r.classList.add('lifted') }
+        grid.addEventListener('dragstart', e => e.preventDefault())
+        addEventListener('pointermove', e => {
+            if (!DRAG || e.pointerId !== DRAG.pid) return
+            DRAG.x = e.clientX; DRAG.y = e.clientY
+            if (!DRAG.on) {
+                if (Math.hypot(DRAG.x - DRAG.x0, DRAG.y - DRAG.y0) < 6) return            // a tap stays a tap
+                start()
+            }
+            e.preventDefault(); follow(); hover(); edges()
+        }, { passive: false })
+        addEventListener('pointerup', e => { if (DRAG && e.pointerId === DRAG.pid) finish(true) })
+        addEventListener('pointercancel', e => { if (DRAG && e.pointerId === DRAG.pid) finish(false) })
+        addEventListener('keydown', e => { if (DRAG && DRAG.on && e.key === 'Escape') { e.preventDefault(); finish(false) } })
+        function start() {
+            const d = DRAG, r = d.srcEl.getBoundingClientRect(), s = sticker(d.id)
+            d.on = true; d.rect = r
+            const g = document.createElement('div')
+            g.className = d.kind === 'card' ? 'sv-ghost card' : 'sv-slot sv-ghost'
+            if (d.kind === 'slot') { g.innerHTML = d.srcEl.innerHTML; g.style.width = r.width + 'px' }
+            else g.innerHTML = `<img src="${esc(up + s.thumb)}" alt="" width="44" height="44"><b>${esc(s.name)}</b>`
+            document.body.appendChild(g); d.ghost = g
+            d.dx = d.kind === 'slot' ? d.x0 - r.left : 30; d.dy = d.kind === 'slot' ? d.y0 - r.top : 26
+            if (d.touch) d.dy = r.height + 14                         // on touch the row floats above the finger, so the slot below stays visible
+            if (d.kind === 'slot') d.srcEl.classList.add('placeholder')
+            mount.classList.add('sv-dragging')
+            if (matchMedia('(max-width: 56rem)').matches && !mount.classList.contains('sv-sheet-open')) $('[data-sheet]').click()
+            live(`Picked up ${s.name}. Drop it on a slot.`)
+        }
+        function follow() { DRAG.ghost.style.transform = `translate(${DRAG.x - DRAG.dx}px, ${DRAG.y - DRAG.dy}px) rotate(-2deg) scale(1.04)` }
+        function hover() {
+            const el = document.elementFromPoint(DRAG.x, DRAG.y), slot = el && el.closest && el.closest('.sv-slot')
+            const t = slot && list.contains(slot) ? +slot.dataset.k : null
+            if (t === DRAG.target) return
+            list.querySelectorAll('.drop-empty, .drop-swap').forEach(x => x.classList.remove('drop-empty', 'drop-swap'))
+            DRAG.target = t
+            if (t !== null && t !== DRAG.from) slot.classList.add(RANK[t] == null ? 'drop-empty' : 'drop-swap')
+        }
+        function edges() {                                            // auto-scroll the slot list near its edges
+            cancelAnimationFrame(DRAG.raf)
+            const r = body.getBoundingClientRect(), y = DRAG.y, zone = 44
+            const v = y < r.top + zone && y > r.top - 60 ? -Math.ceil((r.top + zone - y) / 4) : y > r.bottom - zone && y < r.bottom + 60 ? Math.ceil((y - r.bottom + zone) / 4) : 0
+            if (!v) return
+            const step = () => { if (!DRAG || !DRAG.on) return; body.scrollTop += v; DRAG.target = undefined; hover(); DRAG.raf = requestAnimationFrame(step) }
+            DRAG.raf = requestAnimationFrame(step)
+        }
+        function finish(drop) {
+            const d = DRAG; DRAG = null
+            if (!d || !d.on) return
+            cancelAnimationFrame(d.raf); mount.classList.remove('sv-dragging'); NOCLICK = d.kind === 'card'
+            setTimeout(() => { NOCLICK = false }, 50)
+            const t = drop ? d.target : null, s = sticker(d.id)
+            if (t != null && t !== d.from) {
+                const was = RANK[t]
+                if (d.kind === 'slot') swap(d.from, t); else place(d.id, t)
+                d.ghost.remove(); draw()
+                const row = list.querySelector(`[data-k="${t}"]`); if (row) { row.classList.add('landed'); row.scrollIntoView({ block: 'nearest' }) }
+                live(`${s.name} is now in slot ${t + 1}` + (was != null && was !== d.id ? (d.kind === 'slot' ? `, swapped with ${sticker(was).name}.` : `; ${sticker(was).name} went back to the stickers.`) : '.'))
+                return
+            }
+            const back = d.kind === 'slot' ? d.srcEl.getBoundingClientRect() : d.rect      // cancel: glide back, then vanish
+            d.ghost.classList.add('back'); d.ghost.style.transform = `translate(${back.left}px, ${back.top}px) rotate(0) scale(${d.kind === 'slot' ? 1 : 0.6})`
+            setTimeout(() => { d.ghost.remove(); draw() }, 260)
+            live(`${s.name}: not moved.`)
+        }
+    }
+    // keyboard: Space picks up the focused slot, the arrows move it (a swap with the neighbour, empty or not), Space drops,
+    // Escape puts everything back
+    function keyboard() {
+        const list = $('[data-slots]')
+        let held = null, before = null
+        const focus = k => { const r = list.querySelector(`[data-k="${k}"]`); if (r) { r.focus(); r.classList.toggle('held', held !== null) } }
+        list.addEventListener('keydown', e => {
+            const row = e.target.closest('.sv-slot'); if (!row || e.target !== row || !canVote()) return
+            const k = +row.dataset.k
+            if (e.key === ' ' || e.key === 'Enter') {
+                e.preventDefault()
+                if (held === null) { if (RANK[k] == null) return; held = k; before = RANK.slice(); draw(); focus(k); live(`Picked up ${sticker(RANK[k]).name} in slot ${k + 1}. Arrows to move, Space to drop, Escape to cancel.`) }
+                else { const id = RANK[held]; held = null; draw(); focus(k); live(`Dropped ${sticker(id).name} in slot ${k + 1}.`) }
+            } else if (held !== null && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) {
+                e.preventDefault()
+                const to = held + (e.key === 'ArrowUp' ? -1 : 1); if (to < 0 || to >= MAX) return
+                const other = RANK[to]; swap(held, to); held = to; draw(); focus(to)
+                live(`${sticker(RANK[to]).name}: slot ${to + 1}${other != null ? `, swapped with ${sticker(other).name}` : ''}.`)
+            } else if (held !== null && e.key === 'Escape') { e.preventDefault(); RANK = before; held = null; draw(); focus(k); live('Cancelled: nothing moved.') }
+        })
     }
     function people() {
         const v = voted()
         $('[data-people]').innerHTML = CFG.lanes.map(l => `<li class="${v.has(l.person) ? 'yes' : ''}${ME && ME.person === l.person ? ' me' : ''}" title="${esc(l.name)}${v.has(l.person) ? ': has voted' : ': not yet'}"><span>${esc(first(l.name).slice(0, 1))}</span>${esc(first(l.name))}</li>`).join('')
         $('[data-count]').textContent = `${v.size} of ${CFG.lanes.length} voted`
+        me()
     }
+    // the person, compact, in the band: "You are Dinis · voted 10:42 · ballot of 7", or for a visitor "Team only: add your key"
     function me() {
         const box = $('[data-me]'), last = LS.get('last', null), mine = last && ME && last.person === ME.person ? last : null
-        if (!ME) { box.className = 'sv-me sv-nokey'; box.innerHTML = `<b>Add your key to vote (team only).</b> Your browser needs the site key your conductor gave you: use the <b>Add your key</b> box at the top of this page, then rank your top 6. Anyone can look; only the team votes.`; return }
-        if (!ME.lane) { box.className = 'sv-me sv-nokey'; box.innerHTML = `<b>${esc(first(ME.name || ME.person))}, you have no lane yet.</b> Lanes are issued to the team's site keys; ask conductor@web-summit.dinis to re-issue them (<code>stickers_vote.py lanes</code>).`; return }
-        box.className = 'sv-me'
-        box.innerHTML = Date.now() >= Date.parse(CFG.closes_at) ? `<b>Voting has closed.</b>`
-            : mine ? `<b>Hello ${esc(first(ME.name))}: your ballot is in.</b> Change it in the panel and submit again: your newest ballot counts.`
-                : `<b>Hello ${esc(first(ME.name))}: rank your top 6.</b> Tap a sticker to add it, put them in order in the panel, press 👎 on any that are not for you, then Submit. Your ballot is signed by your key and sealed before it leaves this browser.`
-        $('[data-last]').textContent = mine ? `Last submitted ${String(mine.at).slice(11, 16)} UTC: ${mine.ranking.map((id, k) => `${k + 1}. ${sticker(id).name}`).join(', ')}${mine.not_for_me && mine.not_for_me.length ? `; not for me: ${mine.not_for_me.map(id => sticker(id).name).join(', ')}` : ''}.` : ''
+        box.style.removeProperty('--c')
+        if (!ME) { box.className = 'sv-chip visitor'; box.innerHTML = `<button type="button" data-addkey><span aria-hidden="true">🔑</span> <b>Team only:</b> add your key to vote</button>`; box.querySelector('[data-addkey]').onclick = () => { const a = document.querySelector('.addkey'); if (a) { a.scrollIntoView({ behavior: 'smooth' }); const t = a.querySelector('[data-paste], textarea'); if (t) t.focus() } }; return }
+        if (ME.colour) box.style.setProperty('--c', ME.colour)
+        const who = `<span class="av" aria-hidden="true">${esc(first(ME.name).slice(0, 1))}</span><span>You are <b>${esc(first(ME.name))}</b>`
+        if (!ME.lane) { box.className = 'sv-chip'; box.innerHTML = `${who} · no lane yet (ask conductor@web-summit.dinis)</span>`; return }
+        const shut = Date.now() >= Date.parse(CFG.closes_at), n = mine ? mine.ranking.filter(x => x != null).length : 0
+        box.className = 'sv-chip' + (mine || voted().has(ME.person) ? ' done' : '')
+        box.innerHTML = who + ' · ' + (shut ? 'voting has closed' : mine ? `voted ${esc(String(mine.at).slice(11, 16))} UTC · ballot of ${n}` : voted().has(ME.person) ? 'voted' : '<b>not voted yet</b>') + '</span>'
+        $('[data-last]').textContent = mine ? `Last submitted ${String(mine.at).slice(11, 16)} UTC: ${mine.ranking.map((id, k) => `${k + 1}. ${id != null && sticker(id) ? sticker(id).name : '(empty)'}`).join(', ')}${mine.not_for_me && mine.not_for_me.length ? `; not for me: ${mine.not_for_me.map(id => sticker(id).name).join(', ')}` : ''}${Object.keys(mine.variant_pick || {}).length ? `; favourite variant: ${Object.entries(mine.variant_pick).map(([k, v]) => `${sticker(+k).name} v${v}`).join(', ')}` : ''}.` : ''
     }
     // the leaderboard as a bar race: rows enter in sticker order, then slide into their places while the bars grow
+    function favourite(x) {                                      // the most hearted variant: "favourite: v2 (3)"
+        const h = x && x.variant_hearts; if (!h) return ''
+        const [v, n] = Object.entries(h).sort((a, b) => b[1] - a[1] || a[0] - b[0])[0] || []
+        return v ? ` · ♥ favourite: v${esc(v)} (${n})` : ''
+    }
     function results() {
         const note = $('[data-rnote]'), ol = $('[data-bars]')
         if (!RESULTS) return
@@ -221,10 +359,10 @@
         for (const x of RESULTS.ranking || []) by[x.id] = x
         const pts = id => (by[id] && by[id].points != null ? by[id].points : ((RESULTS.counts || {})[id] || 0))
         const max = Math.max(1, ...CFG.stickers.map(s => pts(s.id)))
-        note.textContent = n ? `${n} ballot${n === 1 ? '' : 's'} counted (drained ${String(RESULTS.as_of || '').replace('T', ' ').slice(0, 16)} UTC). Borda points: 1st = 6, 6th = 1. Ballots waiting in a lane are counted at the next drain.`
+        note.textContent = n ? `${n} ballot${n === 1 ? '' : 's'} counted (drained ${String(RESULTS.as_of || '').replace('T', ' ').slice(0, 16)} UTC). Points by slot: slot 1 = ${MAX} ... slot ${MAX} = 1, an empty slot nothing (an earlier top 6 counts by position too). Ballots waiting in a lane are counted at the next drain.`
             : 'No ballots counted yet: they wait, sealed, in the lanes until Angelo, Jose, Indi or Dinis drain them.'
-        ol.innerHTML = CFG.stickers.map(s => { const x = by[s.id] || {}; return `<li data-bid="${s.id}"><span class="sv-place"></span><img src="${esc(up + s.thumb)}" alt="" width="40" height="40" loading="lazy"><span class="sv-t"><i style="--w:${(100 * pts(s.id) / max).toFixed(1)}%"></i><span>${esc(s.id + '. ' + s.name)}${x.top6 ? ` · in ${x.top6} top 6${x.top6 === 1 ? '' : 's'}` : ''}${x.not_for_me ? ` · 👎 ${x.not_for_me}` : ''}</span></span><b>${pts(s.id)}</b></li>` }).join('')
-        const order = CFG.stickers.slice().sort((a, b) => pts(b.id) - pts(a.id) || ((by[b.id] || {}).top6 || 0) - ((by[a.id] || {}).top6 || 0) || a.id - b.id)
+        ol.innerHTML = CFG.stickers.map(s => { const x = by[s.id] || {}; return `<li data-bid="${s.id}"><span class="sv-place"></span><img src="${esc(up + s.thumb)}" alt="" width="40" height="40" loading="lazy"><span class="sv-t"><i style="--w:${(100 * pts(s.id) / max).toFixed(1)}%"></i><span>${esc(s.id + '. ' + s.name)}${(x.in_top || x.top6) ? ` · in ${x.in_top || x.top6} top ${MAX}${(x.in_top || x.top6) === 1 ? '' : 's'}` : ''}${x.not_for_me ? ` · 👎 ${x.not_for_me}` : ''}${favourite(x)}</span></span><b>${pts(s.id)}</b></li>` }).join('')
+        const order = CFG.stickers.slice().sort((a, b) => pts(b.id) - pts(a.id) || ((by[b.id] || {}).in_top || (by[b.id] || {}).top6 || 0) - ((by[a.id] || {}).in_top || (by[a.id] || {}).top6 || 0) || a.id - b.id)
         setTimeout(() => {
             const rows = [...ol.children], before = new Map(rows.map(r => [r, r.getBoundingClientRect().top]))
             order.forEach((s, k) => { const r = ol.querySelector(`[data-bid="${s.id}"]`); r.querySelector('.sv-place').textContent = pts(s.id) ? k + 1 : ''; ol.appendChild(r) })
@@ -247,38 +385,15 @@
         $('[data-vault]').innerHTML = `<iframe title="The ws-stickers-vote vault, rendered read-only by SG/Vault" src="${esc(CFG.vault_url)}" allow="fullscreen" allowfullscreen loading="lazy"></iframe>`
     }
 
-    // ---------- the vault with full access, for a person who holds the vault key sealed to them ----------
+    // ---------- for a person who holds the vault key sealed to them: a link to the full-access page ----------
+    // (Dinis, 5 November 2026: "move that 'open vault' to a new page/section where the main voting page just has a link to it")
     async function fullAccess() {
         if (!ME) return
         let files = []
         try { const j = await (await fetch(up + 'me.json', { cache: 'no-cache' })).json(); files = ((j.people || {})[ME.person] || {}).sealed || [] } catch { return }
-        const f = files.filter(x => /-stickers-vault-key\.json$/.test(x)).sort().pop()
-        if (!f) return
-        let env
-        try { env = await (await fetch(up + f, { cache: 'no-cache' })).json() } catch { return }
+        if (!files.some(x => /-stickers-vault-key\.json$/.test(x))) return
         const box = $('[data-full]'); box.hidden = false
-        if (env.key !== KR.fingerprint) { box.innerHTML = `<h2 id="full-access">Open the vault (full access)</h2><p>The vault key is sealed to your key ${esc(env.key)}, but this browser holds a different key (${esc(KR.fingerprint || 'none')}). Add your current key (the latest link your conductor gave you) and reload.</p>`; return }
-        box.innerHTML = `<h2 id="full-access">Open the vault (full access)</h2><p>The vault key is sealed to your key${env.at ? ` (${esc(String(env.at).slice(0, 10))})` : ''}. It opens here, in this browser's memory only, when you press the button: never stored, never in the page. It gives write access, so use it to drain the votes: in the vault host add the SG/Send access token (the lock button), then Drain the votes with the passphrase below.</p>
-<p class="sv-fbtns"><button type="button" class="sv-open" data-fopen>Open the vault (full access)</button></p><div data-fbody></div>`
-        box.querySelector('[data-fopen]').onclick = async () => {
-            const body = box.querySelector('[data-fbody]')
-            let m
-            try { m = await KR.open(env) } catch (e) { body.textContent = 'Your key could not open it: ' + (e.message || e); return }
-            const fields = m.fields || {}, vk = fields['Vault key'], pass = fields['Drain passphrase']
-            if (!vk) { body.textContent = 'The sealed message has no vault key.'; return }
-            const url = 'https://dev.vault.sgraph.ai/#' + encodeURIComponent(vk)
-            body.innerHTML = `<p class="sv-fbtns"><button type="button" data-fwin>Open in a new window</button>${pass ? ' <button type="button" data-fpass>Copy the drain passphrase</button>' : ''} <span class="meta" data-fmsg></span></p><p>This is the <b>full vault key</b> (it ends in <code>:${esc(vk.split(':').pop())}</code>; the public read key on this page does not). The vault host still says <b>Read-only</b> until you press its 🔒 button and paste the SG/Send access token: only then can it write, and the Drain panel appears.</p><p class="sv-vk"><code data-fkey>${esc(vk.slice(0, 10))}…${esc(vk.slice(-9))}</code><button type="button" data-fshow>Show</button><button type="button" data-fcopy>Copy the vault key</button></p><div class="sv-vault"></div>`
-            body.querySelector('[data-fshow]').onclick = e => { const k = body.querySelector('[data-fkey]'), on = e.target.textContent === 'Show'; k.textContent = on ? vk : vk.slice(0, 10) + '…' + vk.slice(-9); e.target.textContent = on ? 'Hide' : 'Show' }
-            body.querySelector('[data-fcopy]').onclick = async () => { try { await navigator.clipboard.writeText(vk); body.querySelector('[data-fmsg]').textContent = 'Vault key copied.' } catch { body.querySelector('[data-fmsg]').textContent = 'This browser did not allow copying: press Show and copy it by hand.' } }
-            const frame = document.createElement('iframe')
-            frame.title = 'The ws-stickers-vote vault, opened with full access'; frame.allow = 'fullscreen; clipboard-write'; frame.allowFullscreen = true
-            frame.src = url
-            body.querySelector('.sv-vault').appendChild(frame)
-            body.querySelector('[data-fwin]').onclick = () => window.open(url, '_blank', 'noopener')
-            const pb = body.querySelector('[data-fpass]')
-            if (pb) pb.onclick = async () => { try { await navigator.clipboard.writeText(pass); body.querySelector('[data-fmsg]').textContent = 'Copied.' } catch { body.querySelector('[data-fmsg]').textContent = 'This browser did not allow copying; the passphrase is in your sealed message (For you panel).' } }
-            box.querySelector('[data-fopen]').hidden = true
-        }
+        box.innerHTML = `<p><b>You can drain the votes.</b> The vault key is sealed to you: <a href="vault/index.html">open the vault with full access</a> on its own page.</p>`
     }
 
     // ---------- confetti, in the site's own colours ----------
@@ -300,12 +415,13 @@
     // ---------- submitting ----------
     async function submit() {
         const btn = $('[data-submit]')
-        if (!RANK.length || !canVote()) return
+        if (!filled().length || !canVote()) return
         btn.disabled = true; btn.textContent = 'Sealing...'
         try {
             const lane = await KR.open(ME.lane.sealed_token)
             if (!lane || lane.person !== ME.person || !/^[0-9a-f]{16,128}$/.test(lane.append_token || '')) throw new Error('the lane token did not open for you')
-            const v = { type: 'web-summit.sticker-vote/v2', person: ME.person, ranking: RANK.slice(0, MAX), not_for_me: NFM.filter(x => !RANK.includes(x)), at: new Date().toISOString() }
+            const v = { type: 'web-summit.sticker-vote/v2', person: ME.person, ranking: (() => { const r = RANK.slice(0, MAX); while (r.length && r[r.length - 1] == null) r.pop(); return r })(), not_for_me: NFM.filter(x => !RANK.includes(x)), at: new Date().toISOString() }
+            if (Object.keys(VPICK).length) v.variant_pick = Object.fromEntries(Object.entries(VPICK).map(([k, x]) => [String(k), x]))
             const signed = JSON.stringify(v)
             const sig = await KR.sign(signed)
             const enc = await seal(CFG.drain_public_key, JSON.stringify({ vote: v, signed, sig, key: KR.fingerprint }))
@@ -319,7 +435,7 @@
                 if (r.status !== 404) break
             }
             if (!r.ok) throw new Error(r.status === 404 ? 'the lane refused the token (404): ask for the lanes to be re-issued' : r.status === 507 ? 'your lane is full (507): it needs a drain' : `the lane said ${r.status}`)
-            LS.set('last', { person: ME.person, ranking: v.ranking, not_for_me: v.not_for_me, at: v.at })
+            LS.set('last', { person: ME.person, ranking: v.ranking, not_for_me: v.not_for_me, variant_pick: v.variant_pick || {}, at: v.at })
             btn.textContent = 'Submitted!'; confetti()
             PENDING[ME.person] = (PENDING[ME.person] || 0) + 1
             me(); people()
@@ -340,11 +456,13 @@
         KR = window.WSKeyring || null
         try { CFG = await (await fetch(up + 'data/stickers-vote.json', { cache: 'no-cache' })).json() }
         catch (e) { mount.innerHTML = '<p class="meta">The vote could not load data/stickers-vote.json.</p>'; return }
+        MAX = Math.max(1, Math.min(24, +CFG.max_ranking || 10)); RANK = Array(MAX).fill(null)
         layout(); tick(); setInterval(tick, 1000)
         if (KR) { try { await KR.ready } catch { } }
         if (KR && KR.person) { const l = CFG.lanes.find(x => x.person === KR.person); ME = { person: KR.person, name: l ? l.name : KR.person, lane: l || null } }
+        if (ME) fetch(up + 'me.json', { cache: 'no-cache' }).then(r => r.json()).then(j => { const p = (j.people || {})[ME.person]; if (p) { ME.colour = p.colour; if (p.name) ME.name = p.name; me() } }).catch(() => { })
         const last = LS.get('last', null)
-        if (last && ME && last.person === ME.person) { RANK = (last.ranking || []).filter(id => sticker(id)); NFM = (last.not_for_me || []).filter(id => sticker(id) && !RANK.includes(id)) }
+        if (last && ME && last.person === ME.person) { (last.ranking || []).slice(0, MAX).forEach((id, k) => { if (id != null && sticker(id) && !RANK.includes(id)) RANK[k] = id }); NFM = (last.not_for_me || []).filter(id => sticker(id) && !RANK.includes(id)); for (const [k, x] of Object.entries(last.variant_pick || {})) { const st = sticker(+k); if (st && st.variants && st.variants.some(y => y.v === x)) VPICK[+k] = x } }
         mount.classList.toggle('sv-can', canVote())
         me(); draw(); people()
         refresh(); setInterval(refresh, 30000)

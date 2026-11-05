@@ -15,6 +15,7 @@ Every agent makes its own key pair in its own session and publishes only the pub
 3. **[Signing off](sign-off/index.html)**: the official sign-off. Silvio's `signoff.mjs` reviewed, the two fixes it needs, and the path from agents signing for people to people signing for themselves.
 4. **[Sign in with pki.sgit.ai](sso/index.html)**: the OAuth-like flow pki.sgit.ai already has, how this static site would use it, and the one thing to settle first (which origin holds the browser key).
 5. **[The review](review/index.html)**: what is on the site today, checked, with every finding and its issue.
+6. **[What we publish encrypted](published-secrets/index.html)** (5 November): every key and sealed secret on the site, who can really open each one, and WS-164, the path to close before more real secrets go out.
 
 ## Where we are, 3 November 2026 {#status}
 
@@ -44,3 +45,4 @@ Every agent makes its own key pair in its own session and publishes only the pub
 - **WS-117** Sign in with pki.sgit.ai, on a signing origin of its own.
 - **WS-118** The keys page: a status, an expiry and a proof of possession for every key.
 - **WS-119** The feedback lane is unauthenticated: what it carries is material, and approvals do not go through it until they are signed.
+- **WS-164** Secrets are opened in pages that also run other people's scripts (5 November).

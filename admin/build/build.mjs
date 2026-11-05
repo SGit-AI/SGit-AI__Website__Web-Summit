@@ -2,6 +2,7 @@
 // Renders the site from content/ (markdown with a front-matter header) into HTML, plus the machine surfaces:
 // llms.txt, sitemap.xml, index.md, the articles index, markdown twins and admin/versions.html.
 // No dependencies. Never hand-edit a generated page; edit content/ and run: node admin/build/build.mjs
+import { expandInfographic } from './infographic.mjs'
 import fs from 'fs'
 import path from 'path'
 import * as CAST from './cast.mjs'
@@ -15,6 +16,7 @@ import { orgchartSvg } from './orgchart.mjs'
 import { homeBlocks, expandHome } from './home.mjs'
 import { expandSignoff } from './signoff-ui.mjs'
 import { keysPage as pkiKeysPage } from './pki.mjs'
+import * as GIT from './gitlog.mjs'
 import { highlights, highlightsHtml, highlightsMd, withHighlights } from './highlights.mjs'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
@@ -28,7 +30,7 @@ const SECTIONS = [
     { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|cards|log|print|print-order|procurement|videos|research|reports|board-health|site-review|updates|meetings)\b/, sub: [['Stand-ups', 'meetings/index.html'], ['Updates', 'updates/index.html'], ['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Cards', 'cards/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Print files', 'print/index.html'], ['Procurement', 'procurement/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
     { t: 'Observability', h: 'observability/index.html', re: /^observability\b/, sub: [['Explore', 'observability/index.html'], ['Dashboard', 'observability/dashboard/index.html'], ['Graph', 'observability/graph/index.html'], ['Agents', 'observability/agents/index.html'], ['Pages', 'observability/pages/index.html'], ['People', 'observability/team/index.html'], ['The vault', 'observability/vault/index.html'], ['How it works', 'observability/how-it-works/index.html'], ['The brief', 'brief-observability/index.html'], ['The pack', 'observability-pack/index.html']] },
-    { t: 'PKI', h: 'pki/index.html', re: /^(pki|keys|vaults)\b/, sub: [['PKI', 'pki/index.html'], ['Keys and QR codes', 'pki/keys/index.html'], ['Giving out secrets', 'pki/secrets/index.html'], ['Signing off', 'pki/sign-off/index.html'], ['Sign in with pki.sgit.ai', 'pki/sso/index.html'], ['Review', 'pki/review/index.html'], ['Public keys', 'keys/index.html'], ['Vaults', 'vaults/index.html']] },
+    { t: 'PKI', h: 'pki/index.html', re: /^(pki|keys|vaults)\b/, sub: [['PKI', 'pki/index.html'], ['Keys and QR codes', 'pki/keys/index.html'], ['Giving out secrets', 'pki/secrets/index.html'], ['Signing off', 'pki/sign-off/index.html'], ['Sign in with pki.sgit.ai', 'pki/sso/index.html'], ['Review', 'pki/review/index.html'], ['Published secrets', 'pki/published-secrets/index.html'], ['Public keys', 'keys/index.html'], ['Vaults', 'vaults/index.html']] },
     { t: 'About', h: 'about/index.html', re: /^(about|articles|keys|admin|agent\/|briefing)\b/, sub: [['About', 'about/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['Versions', 'admin/versions.html'], ['The site agent', 'agent/index.html'], ['Inbox briefing', 'briefing/index.html']] },
 ]
 const NAV = SECTIONS.map(s => [s.t, s.h])
@@ -129,6 +131,11 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
             out.push(obsViewHtml(view, person, id))
+        } else if (/^```sticker-vault\s*$/.test(l)) {
+            // the sticker vote's vault with full access, its own page (assets/stickers-vault.js)
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push('<div class="sv" id="sticker-vault"><p class="meta">This page needs JavaScript: it opens the vault key sealed to you, in this browser only.</p></div>')
         } else if (/^```sticker-vote\s*$/.test(l)) {
             // the team's sticker vote (WS-159, conductor@web-summit.dinis): a mount for assets/stickers-vote.js, which the
             // page loads through its front matter (script: stickers-vote); without JavaScript it says so
@@ -196,7 +203,7 @@ function page({ rel, title, description, body, meta = '', mdTwin = '', lead = ''
 <link rel="canonical" href="${url}">
 <meta property="og:url" content="${url}">
 <meta property="og:title" content="${esc(title)}">
-<link rel="stylesheet" href="${up}assets/site.css">${head}
+<link rel="stylesheet" href="${up}assets/site.css?v=${VERSION}">${head}
 </head>
 <body data-section="${home ? 'home' : (sectionOf(rel)?.t || 'other').toLowerCase()}" data-up="${up}"${focus ? ' data-focus' : ''}>
 <a class="skip" href="#main">Skip to the content</a>
@@ -227,13 +234,13 @@ ${body}
 ${wide && !focus ? '<section class="for-you" id="for-you" hidden aria-label="For you: your key and what is sealed to you"></section>' : ''}
 </main>
 </div>
-<script src="${up}assets/copy.js" defer></script>
-<script src="${up}assets/keyring.js" defer></script>
-<script src="${up}assets/addkey.js" defer></script>
-<script src="${up}assets/me.js" defer></script>
-<script src="${up}assets/feedback.js" defer></script>
-<script src="${up}assets/telemetry.js" defer></script>
-<script src="${up}assets/obs-dinis.js" defer></script>
+<script src="${up}assets/copy.js?v=${VERSION}" defer></script>
+<script src="${up}assets/keyring.js?v=${VERSION}" defer></script>
+<script src="${up}assets/addkey.js?v=${VERSION}" defer></script>
+<script src="${up}assets/me.js?v=${VERSION}" defer></script>
+<script src="${up}assets/feedback.js?v=${VERSION}" defer></script>
+<script src="${up}assets/telemetry.js?v=${VERSION}" defer></script>
+<script src="${up}assets/obs-dinis.js?v=${VERSION}" defer></script>
 <footer><div class="row"><span>Built and run by an AI agent with a named human operator.</span><a class="ver" href="${up}admin/versions.html#${VERSION}">${VERSION}</a><a href="${REPO}">GitHub</a><span>Code Apache-2.0, text CC BY 4.0</span></div></footer>
 <div class="agent-block"><pre><code>${esc(agent)}</code></pre></div>
 </body>
@@ -513,7 +520,7 @@ const INV = getINV()
 // whole history, read once; a recipient is an agent name or a person's id
 CHARTS['agents-map'] = (() => {
     let talks = null
-    const read = () => { const m = new Map(); try { for (const b of execFileSync('git', ['log', '--format=%b%x1e'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString().split('\x1e')) {
+    const read = () => { const m = new Map(); try { for (const { b } of GIT.history(ROOT)) {
         const from = (b.match(/^Agent: *([a-z0-9-]+@web-summit\.[a-z0-9-]+)/m) || [])[1]; if (!from) continue
         for (const line of b.match(/^For: *(.+)$/gm) || []) for (const to of line.slice(4).split(/,\s*/).map(x => x.trim()).filter(x => /^[a-z0-9-]+(@web-summit\.[a-z0-9-]+)?$/.test(x))) { const k = `${from}|${to}`; m.set(k, (m.get(k) || 0) + 1) }
     } } catch { } return [...m].map(([k, n]) => { const [from, to] = k.split('|'); return { from, to, n } }) }
@@ -570,10 +577,12 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
     const name = f.replace(/\.md$/, ''), body = expandIssues(rawBody, name === 'index' ? '' : '../'), rel = meta.path || (name === 'index' ? 'index.html' : `${name}/index.html`)
     let html = render(body), md = body
     if (name === 'index') ({ html, md } = expandHome(html, md, homeBlocks({ ROOT, teamData, onboard, LEVELS, INV, MEET, ISSUES, plan, castData, merch })))
-    if (name === 'print') ({ html, md } = expandSignoff(html, md, ROOT))   // the Official Sign-off, from the signatures (WS-113)
+    if (name === 'print') ({ html, md } = expandSignoff(html, md, ROOT))
+    if (meta.infographic) ({ html, md } = expandInfographic(html, md, ROOT, meta.infographic, rel))   // a night's summary in pictures (Dinis, 5 Nov)   // the Official Sign-off, from the signatures (WS-113)
     // a page's own script, named in its front matter (script: <name> loads assets/<name>.js; WS-159)
     if (meta.script && !/^[a-z0-9-]+$/.test(meta.script)) throw new Error(`content/${f}: script must name a file in assets/ ([a-z0-9-])`)
-    const head = meta.script ? `<script src="${'../'.repeat(rel.split('/').length - 1)}assets/${meta.script}.js" defer></script>` : ''
+    const head = meta.script ? `<script src="${'../'.repeat(rel.split('/').length - 1)}assets/${meta.script}.js?v=${VERSION}" defer></script>` : ''
+    md = md.replace(/^```sticker-vault\s*\n```\s*$/m, '*The vault with full access is opened on the HTML page by assets/stickers-vault.js, for a person the vault key is sealed to.*')
     md = md.replace(/^```sticker-vote\s*\n```\s*$/m, '*The vote: the twelve stickers, the Vote button, the vault and who has voted are drawn on the HTML page by assets/stickers-vote.js, from data/stickers-vote.json.*')
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + html.replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index', head }))
     pages.push({ rel, title: meta.title, description: meta.summary })
@@ -644,7 +653,7 @@ const CC = await import(path.join(ROOT, 'admin/build/commandcentre.mjs'))
 // dashboard@web-summit.dinis (the panels' content) and designer@web-summit.dinis (the look).
 const ME = { built_at: new Date().toISOString(), version: VERSION, people: {} }
 const DAYS14 = [...Array(10)].map((_, k) => new Date(Date.now() - (9 - k) * 864e5).toISOString().slice(0, 10))
-const daily = (() => { const by = {}; try { for (const l of execFileSync('git', ['log', '--since=10 days ago', '--format=%cI%x1f%s%x1f%b%x1e'], { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 << 20 }).split('\x1e')) { const [at, sub, body] = l.trim().split('\x1f'); if (!at || /^site v\d/.test(sub)) continue; const d = at.slice(0, 10); for (const p of new Set([...`${sub}\n${body || ''}`.matchAll(/@web-summit\.([a-z0-9-]+)/g)].map(x => x[1]))) { by[p] ??= {}; by[p][d] = (by[p][d] || 0) + 1 } } } catch {} return id => DAYS14.map(d => (by[id] || {})[d] || 0) })()
+const daily = (() => { const by = {}; try { for (const { at, s: sub, b: body } of GIT.since(ROOT, Date.now() - 10 * 864e5)) { if (/^site v\d/.test(sub)) continue; const d = at.slice(0, 10); for (const p of new Set([...`${sub}\n${body || ''}`.matchAll(/@web-summit\.([a-z0-9-]+)/g)].map(x => x[1]))) { by[p] ??= {}; by[p][d] = (by[p][d] || 0) + 1 } } } catch {} return id => DAYS14.map(d => (by[id] || {})[d] || 0) })()
 for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const dir = path.join(ROOT, 'people', m.id, 'app')
     if (!fs.existsSync(path.join(ROOT, 'people', m.id))) continue
@@ -848,9 +857,7 @@ ${(events.gaps || []).length ? `<h2 id="gaps">What we could not confirm</h2>${li
     const GH = `${REPO}/commit/`
     let commits = [], note = ''
     try {
-        const raw = execFileSync('git', ['log', '--since=2026-10-25', '--format=%H%x1f%cI%x1f%s%x1f%b%x1e'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()
-        commits = raw.split('\x1e').map(r => r.trim()).filter(Boolean).map(r => {
-            const [sha, at, subject, body = ''] = r.split('\x1f')
+        commits = GIT.since(ROOT, '2026-10-25T00:00:00').map(({ sha, at, s: subject, b: body }) => {
             const agent = (body.match(/^Agent: *(\S+)/m) || [])[1] || (subject.match(/^([a-z0-9-]+@web-summit\.[a-z0-9-]+):/) || [])[1] || ''
             const session = (body.match(/^Claude-Session: *(https:\/\/claude\.ai\/code\/session_[A-Za-z0-9]+)/m) || [])[1] || ''
             const release = (subject.match(/^site (v\d+\.\d+\.\d+): (.*)$/) || []).slice(1)

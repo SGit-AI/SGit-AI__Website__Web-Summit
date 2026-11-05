@@ -27,6 +27,8 @@ node admin/tools/agent-log.mjs --agent <you> --read <every URL you read, comma-s
 - observability@web-summit.dinis: logging from 5 November 01:33 UTC (three signed runs).
 - conductor@web-summit.angelo: logging from 5 November 02:24 UTC (signed, sha256:f34e311a93db5ddb).
 - dev@web-summit.angelo: logging from 5 November 02:45 UTC (signed with its session key, sha256:b478b82a3a9995eb).
+- team-collaboration@web-summit.angelo: logging from 5 November 03:50 UTC (signed with its session key, sha256:c1cb85a164aa1852).
 - conductor@web-summit.jose: logging from 5 November 02:50 UTC (signed, sha256:006ceb9a9e3febbe). Its finding: in a Claude Code cloud session the line needs NODE_USE_ENV_PROXY=1 (WS-162).
 - dev@, dashboard@, watcher@, automation@, helper@, vault@web-summit.jose: the line is at the end of each of their scheduled-task prompts from 5 November 02:51 UTC (people/jose/kit/README.md); each logs from its next run (watcher 07:15, dashboard 07:30, helper 08:50, dev 09:30, automation 10:10, vault 11:40 UTC). conductor@web-summit.jose records "logging from" for each once its first signed run shows. designer@web-summit.jose runs only when Jose opens it, and logs then (--trigger person). conductor@web-summit.jose's hourly telemetry drain (WS-37) logs each run too, from its next run (its scheduled-task prompt updated).
-
+- dashboard@web-summit.angelo: logging from 5 November 03:45 UTC (signed with its session key, sha256:c525afa927190f36).
+- dev@web-summit.dinis: logging from 5 November 03:50 UTC (signed, sha256:923ad1ba99178970).

@@ -752,6 +752,51 @@
         "signing_fingerprint": "sha256:2cbb6cfafdcbbce7"
       },
       "status": "active"
+    },
+    {
+      "id": "abp-dinis",
+      "label": "abp@web-summit.dinis (Claude Code session)",
+      "role": "The team's Agent Behaviour Policy agent (abp@web-summit.dinis): keeps an ABP for every agent in content/abp/, and signs its run records on the agents' lane (WS-160). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the copy matching seal.mjs's pinned sha256) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzJVpuYUg1/iD3bDtQV0l\nujruEl7ntA3p1NGwqnX07PRwRSGK3m1JpGIaEEqopMqC91PYKwelD4YwXCnvT0uY\niftZqBkatICqGoGzwKftqH2BwuoNKse61XLq/i4UE4R8Xdb0TpLH7WgINeE9lyXX\nsLqNxK9vqgAUT8CX/yapOcBwfx7TAfQEWa68ozRW2vZMpIJG4xzrP5jAMRf7Pskt\np3qz7qd6UmevzCqCp9p0DIHSHAaCS03xv4sk3WRfpFleO9IJ3XAo9iieqKAb4KF7\n4hB2RgYKg160ATZTioads3NxPxdShIxlyoIgbkrFz+l+6ac5h2omrQ5BY7LGyE/O\ngRMadGnK3y3h5a3hRfyCUBxMwfKyHwBpg+wR+SSll7Q5Hih/kjcV1Mfe5jywN8HU\n1vKHyyiv5UaHjPfgutTYnpLOIdg7yWh3WkdkQ9exDEm/5ijyh0hNCNOaVjiZJto8\nqXkq5XR13wWPtGNMtpcVTmHYM6vw7HW3mQvzmN4m7zqf7IrO4+DF7OuNOkQhb8Tf\nFwKscdpnvM9yuNOn+VIUvB4ZgAP5FwkBF/kmdhiV5jYXC83GYobskPHfVBhcvEOV\na1eZUUSRcObLD85a/IX+oUqz/wn8OF14rgye/c/VCRVi4kZp9avWwb/ExCAmUunD\nprm+nUPPz7g+iOutVb0QSx8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEVYJJN4WqGsi5/jHl4wxiV41Gdp+g\npxEPrEMLT90mx277RAJPWnr2N7LtutpAtEvQTDOZMGNF7JmolUliOZ/Ucg==\n-----END PUBLIC KEY-----\n",
+        "label": "abp@web-summit.dinis",
+        "fingerprint": "sha256:f13d909497a9e6bb",
+        "signing_fingerprint": "sha256:d6f7531990619daf"
+      }
+    },
+    {
+      "id": "vault-silvio",
+      "label": "vault@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's vault agent (vault@web-summit.silvio): creates and manages Silvio's SGit vaults, audits them before a read key is published, and receives vault keys only sealed to this key. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Silvio's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": "1",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEApiashf6yUXWYh83uHpXL\nFchefoL+pRFiIXQDwpBEJkvAp4Qw26I+lo5F1W2zz7bSWc8ssJUK6hObZfJTg3GA\n7ufp3DONaiAU7HolMzo6JiBANgUdLjVF16ETNFxZOYVjwRx4JskxrIJIr3Nu47bQ\nxqgyiGK9GQyEjb+emg7WJF1uJHicCJxSurZLfOCcsX8R1vES4yeU1PDzZDQ4OWh5\nEfhqCZ/ttfaJAz2cBFYsc/wSDnWoDsWxwPxZO3dSZg6rZOo/xv2+WCE3nXhWdqab\nwA4/0t4bwth0E134vvs/UemJPmMQVR6XYZL8fE+Yq8tD5Ki2tNcZIXc+P5rUjCpq\nb2a7i1ML/hyojAynEv6L3rifpYcEnfw95BE3WpZ3IHqid0vDlrFmYu9WCR1/f/H2\nl+vsBVwoMz02yYxYslJzGwfkJnVdk+0TJ2z5OHhxuLr1UjExtepv9WwR60TVvm/C\niS38NQFGv9s47w3d3A2KcbiairszC+MHjskae5ccWqEvsJa8kDMPUOJg2VrtwAMR\n2cnrGWkDnrxyprpfZPoOkiViYMOoW6rqgbTtrXD0LgLUr/vJCgyYAtPrjHO3rVb8\nDWH4OlEKqsIvnPM2cGzYAbdGzp5uhyeb25Ub4dL7e6vZDXwpwRusV+9QsAv73Irc\nsox1L3ziDHBtO2vwakqBjE8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESzG9WLnJ7EiV5qdNYRv5FwHxpuHs\nUNZtZS9qeO6nHSk79k+4Iw766v33V+FNxD9c7MEdek6G6fI51+AHjNqYvA==\n-----END PUBLIC KEY-----\n",
+        "label": "vault@web-summit.silvio",
+        "fingerprint": "sha256:0a2dcdad64868fa3",
+        "signing_fingerprint": "sha256:e07d1cb1ea85a980"
+      }
+    },
+    {
+      "id": "video-silvio",
+      "label": "video@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's video agent (video@web-summit.silvio): the video pipeline from Silvio's videos to this site, YouTube, Instagram and LinkedIn (WS-40, WS-52, WS-71, WS-72, WS-75); drafts only, Silvio publishes. Signs its run records on the agents' lane (WS-160). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Silvio's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAn7gLFgqye5pWY13buAaW\nWcwKwIsfsUNySK5o8giEvP3Ef54ZiJaFGBY6tyKXIDohodLsYB9ery4KjenHjFEv\n3o+WTHKVF0d9h1B/Muf7XD0R1fJw7RmiN22ZEfx/t2e25CL8jcxfgcmpK/xURRG3\nXkIgzRIwemAaZUL/HZz29kS94x75Wh/oO/ut0MJ9XIV8SNjy4HwuooXILWRFzv/q\neQCqK5h8P1AC6borRj3AJsotLl2iD+PuU+vKAJFo579+3OLna/Lv1mQZPjrMHUIG\no6EShmXnC/OK/PR3g6B/mbm+D5dr1ya/UZawTv0HYfaQ28+a9eEKBjTnIeWyhNiL\nNBtUfuClwTReVmbjPUfAkH2u3sMvoVVdQqiE2LIWCrRNNeGWLh/A/4pcriYcTl6W\nHh5Y7zH9eYYIhhXPMSPZhOtdc3+zaCW3Au7X7VU5eBGNh0kTX5fws9f4CmE8IdJ2\ngVvYPVcd8Ib0K02VW43WGpAmrqkH3vZtTEP3WDaFzlZkRF9H6f/YT7Rd2qnvLHC2\nV4RQ7VeVjFQmGGPpfbHi8ozsqs/qVCz4/c0bhywQ/yHz/LRLJrkLjbqD3wLeuFDu\n4feamwBcj4yg+Nm5ZXLfz1N026CqxCe7Cd0dU1FatlF36xdZEg/a2K4I4il2GD4l\nZIVNSAnu9leLXfE7yQ1HKecCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE3wnggm7nQ2tRpsIygp8yIMKKAIHL\nvpiVzVgKBey5u4sHnPHabIq+WcB9SSbGdVwS39YHiiYY5Bqb9NKd8Q0Jkw==\n-----END PUBLIC KEY-----\n",
+        "label": "video@web-summit.silvio",
+        "fingerprint": "sha256:67abac02b4755e14",
+        "signing_fingerprint": "sha256:c963fa81145aa6eb"
+      }
     }
   ]
 }
