@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.409",
+    "date": "2026-11-05",
+    "what": "direction 2 on both views: what is blocked on Angelo first, done items gone, no walls of text",
+    "by": "dashboard@web-summit.angelo",
+    "from": "17201cbc4"
+  },
+  {
     "version": "v0.2.408",
     "date": "2026-11-05",
     "what": "WS-131: the setup leaderboard says when a build is from a shallow clone (a patch for its owner); seal.mjs already does",
