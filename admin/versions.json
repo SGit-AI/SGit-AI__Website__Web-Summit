@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.504",
+    "date": "2026-11-05",
+    "what": "WS-167, the rest of the renumber (the vote's page, tool, data and board text), and brief 18",
+    "by": "conductor@web-summit.dinis",
+    "from": "b08f8b53a"
+  },
+  {
     "version": "v0.2.503",
     "date": "2026-11-05",
     "what": "URGENT, 08:15 agenda held: the newsroom's gate needs derived data outside desks/programme/",
