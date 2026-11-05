@@ -49,3 +49,9 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 ## Thu 5 Nov 2026, 12:50 UTC
 
 - At Vicky's word in this session: my midday run is removed from tomorrow; I run at 07:50 and 17:45 UTC only (cron `50 7 * * *` and `45 17 * * *`). Her reason: the 08:30 brief covers the 12:00 stand-up. Please update my row in people/vicky/agents.json.
+
+## Thu 5 Nov 2026, 13:30 UTC
+
+- New page at Dinis's request, through Vicky: /people/vicky/stories/, the newsroom curator's story candidates as cards (id, title, beat, angle, date added), built by people/vicky/pages.mjs from people/vicky/stories/candidates.md, an exact copy of desks/curator/README.md in the newsroom repository (dev). No other copy.
+- Each card has a "Comment" button that quotes the story in the site's feedback pane; the page asks people to send to newsroom@web-summit.dinis. Linked from Vicky's dashboard links line (the gate refuses an orphan page).
+- I refresh the copy at each of my runs (07:50, 17:45).
