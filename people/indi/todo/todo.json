@@ -1,6 +1,6 @@
 {
  "about": "Indi's list of everything left to do, drawn as the infographic at /people/indi/todo/. The Command Centre half is rebuilt from the board and the stand-up items at every release; this file adds a next step per issue and the tasks that are not on the board. Kept by dashboard@web-summit.indi at each run, from 4 November at Indi's word (first written by synthetic@web-summit.indi from the board, Indi's briefs 1 to 8 and that day's git log).",
- "written": "2026-11-05T07:40Z",
+ "written": "2026-11-05T12:40Z",
  "done_for_indi": {
   "WS-01": "Done: you are at L4 (people/indi/onboarding.json).",
   "WS-02": "Done: you are at L4.",
@@ -11,7 +11,7 @@
   "WS-94": "Done: the same scheduled task keeps your dashboard fresh."
  },
  "next": {
-  "WS-136": "Add your site key first (the link or QR your conductor sent on 4 Nov): the sticker vote is signed with it.",
+  "WS-136": "Add your site key now: the link or QR your conductor sent on 4 Nov. The sticker vote needs it.",
   "WS-62": "Superseded by the round-2 vote: vote on /design/ (synthetic users favour Record).",
   "WS-56": "Agree the shirt openers with Sarah and Nimay, or close it if the round-2 lines replace them.",
   "WS-08": "Give your agent the five answers: your role, your companies, your conversations, your accounts, how you like a brief.",
@@ -20,13 +20,13 @@
   "WS-113": "Sign your print set when the generic-QR update lands on /print/.",
   "WS-07": "Two-minute check-in, morning, midday and evening.",
   "WS-126": "Post today's LinkedIn update.",
-  "WS-15": "messaging@ drafted the paragraph overnight: review it, then agree it with Nimay.",
+  "WS-15": "Start here with the overnight drafts: messaging@'s paragraph, then agree it with Nimay. Today's outreach depends on it.",
   "WS-19": "factory@ drafted the card-to-analysis loop overnight: review it.",
   "WS-22": "messaging@ has started the review: read its first drafts.",
   "WS-59": "builder@ drafted a policy for each of Daniela's agents: review them, then agree them with Daniela and Angelo.",
   "WS-125": "builder@ drafted the setup guide overnight: review it, then send Angelo the outline.",
   "WS-06": "Tell your dashboard agent what you want first and what you never read.",
-  "WS-112": "Tell your conductor 'acknowledge' for briefs 1 to 9.",
+  "WS-112": "Tell your conductor 'acknowledge' for briefs 1 to 10.",
   "WS-109": "Give your lines for the demo; the script was checked against the newsroom article overnight.",
   "WS-20": "Agree the landing page with Nimay and Angelo.",
   "WS-26": "factory@ drafted outreach targets overnight: review them, then agree your share with Silvio.",
@@ -43,15 +43,16 @@
   "WS-121": "Start your vault agent; the SG/Send access token is in your environment already.",
   "WS-148": "Your accountant is running: read its daily token report (5:30 pm) and answer the decisions it asks of you.",
   "WS-137": "Dinis's lab: your part, by Mon 9 Nov.",
-  "WS-159": "Vote on the stickers before 1 pm (your top 10 of 23), then drain the votes once, around 1:30 pm. Voting closes at 2:30 pm.",
-  "WS-155": "Check the cards (round 4) first: Dinis's designer redesigned them at 4:18 am. Say if that covers your designer's fixes; Friday's printer order depends on them."
+  "WS-155": "Check the cards (round 4) first: Dinis's designer redesigned them at 4:18 am. Say if that covers your designer's fixes; Friday's printer order depends on them.",
+  "WS-167": "Vote on the stickers: your top picks, then Submit. Closes at 2:30 pm today. The drain is covered: Angelo asked Dinis's conductor to do it.",
+  "WS-166": "Add the same key link on each of your phones and iPads, by Sunday 8 Nov."
  },
  "other": [
   {
-   "group": "Your agents",
-   "title": "Give your dev agent its scheduled task",
-   "detail": "dev@web-summit.indi has still not run since 3 Nov, 11:14 pm. Planned: 9:30 am and 3:30 pm.",
-   "source": "git log, checked 5 Nov 7:40 am; people/indi/agents.json"
+   "group": "Waiting on you",
+   "title": "An hour with your agents' seven drafts, while you are in person",
+   "detail": "WS-15 first, then WS-19, WS-22, WS-26, WS-27, WS-59 and WS-125. Your mentor suggests it; your conductor agrees.",
+   "source": "mentor note, 5 Nov 8:41 am; brief 10"
   },
   {
    "group": "Your agents",
@@ -79,9 +80,9 @@
   },
   {
    "group": "Waiting on you",
-   "title": "Acknowledge briefs 1 to 9",
+   "title": "Acknowledge briefs 1 to 10",
    "detail": "Tell your conductor 'acknowledge'.",
-   "source": "brief 9"
+   "source": "brief 10"
   },
   {
    "group": "Waiting on others",
@@ -90,10 +91,10 @@
    "source": "WS-146"
   },
   {
-   "group": "Waiting on others",
-   "title": "Dinis: confirm the newsroom desks for your agents",
-   "detail": "Which desks start is yours to say once Dinis confirms the split.",
-   "source": "WS-141; brief 9"
+   "group": "Waiting on you",
+   "title": "Say which newsroom desks your agents start, if any",
+   "detail": "Your conductor starts none until you say. Dinis's 6 pm sync on 4 Nov named Vicky and Dinis's newsroom agent for desks, none for you.",
+   "source": "brief 10; the 4 Nov 6 pm stand-up"
   }
  ]
 }
