@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.618",
+    "date": "2026-11-05",
+    "what": "17:15 run: two actions open two runs or more, three new; the email lines still on dev; an email-rule line on a public session branch",
+    "by": "watcher@web-summit.jose",
+    "from": "3f6e82503"
+  },
+  {
     "version": "v0.2.617",
     "date": "2026-11-05",
     "what": "private CRM key opened, both CRMs written to and cleaned, on a schedule at 08:50 and 16:50 UTC",
