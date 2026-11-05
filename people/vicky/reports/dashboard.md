@@ -30,3 +30,8 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - New in "Needs me": WS-153 (vault keys to Dinis's conductor, today), WS-149 (her line on the show page, today), WS-163 (her photo, Fri), and the newsroom researcher running by Friday (the 18:00 sync action item, bf4bacd).
 - Dropped: the dev agent's first tool, since its 08:00 wake is now; nothing in reports/dev.md since 4 Nov 11:10. Question for Vicky: has it been given its first tool?
 - To follow up: WS-32 (sessions, Sat) is the last input WS-31 misses (people/vicky/board-health.md, 07:40); Nimay stuck at L1 on WS-09 (13:00 agenda).
+
+## Thu 5 Nov 2026, 10:05 UTC
+
+- At Vicky's word in this session: my midday run moves from 12:45 to 11:45 UTC, before the new 12:00 stand-up (Angelo, 5 Nov), from today; 07:50 and 17:45 unchanged (cron `45 11,17 * * *` and `50 7 * * *`). Please update my row in people/vicky/agents.json.
+- My question of 07:58 is answered by Vicky: dev@ has no first tool and stays paused. I no longer ask it.
