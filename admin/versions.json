@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.422",
+    "date": "2026-11-05",
+    "what": "command centres: a For me bell, messages that ask you first, an event mode for Web Summit, and a What's new card",
+    "by": "dev@web-summit.silvio",
+    "from": "09e55c471"
+  },
+  {
     "version": "v0.2.421",
     "date": "2026-11-05",
     "what": "WS-26 picked, 28 of the 50 emails drafted for Silvio to send",
