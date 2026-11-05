@@ -9,6 +9,11 @@ path: cards/print/index.html
 
 ## 1. Business cards: 600, three designs {#cards}
 
+**What to expect:** the three designs, front and back, at 92% of real size. [The same as a PDF (A4 landscape)](../../team/designer/print/concepts-rm/cards-overview-round4.pdf).
+
+[![The three business cards, front and back: gold, green and blue](../../team/designer/print/concepts-rm/cards-overview-round4-p1.png)](../../team/designer/print/concepts-rm/cards-overview-round4-p1.png)
+
+
 | Design | Quantity | Colour (the bar on the front, the panel on the back) | Files |
 |---|---|---|---|
 | **Gold** | 200 | RiskMandate gold #B45309 (about C0 M54 Y95 K29) | [PDF](../../team/designer/print/concepts-rm/round4/1-executives/team-card.pdf) · SVG [front](../../team/designer/print/concepts-rm/round4/1-executives/team-card-front.svg), [back](../../team/designer/print/concepts-rm/round4/1-executives/team-card-back.svg) · PNG [front](../../team/designer/print/concepts-rm/round4/1-executives/team-card-front.png), [back](../../team/designer/print/concepts-rm/round4/1-executives/team-card-back.png) |
@@ -31,6 +36,11 @@ path: cards/print/index.html
 3. **The QR code on the back of each card** must scan: it is black on its own white panel with a white border around it. Please do not crop into that border or recolour it. It opens https://web-summit.sgit.ai/meet/.
 
 ## 2. Stickers: four designs, kiss-cut on white vinyl {#stickers}
+
+**What to expect:** the four stickers at real size.
+
+[![The four stickers at real size](../../team/designer/print/stickers/stickers-overview-p1.png)](../../team/designer/print/stickers/stickers-overview-p1.png)
+
 
 | Sticker | Cut size and shape | File |
 |---|---|---|
