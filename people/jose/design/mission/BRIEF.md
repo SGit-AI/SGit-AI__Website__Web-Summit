@@ -25,8 +25,8 @@ The rules are already written and tested, next to this brief. Copy, import or re
 
 | File | What it is |
 |---|---|
-| [`model.js`](model.js) | The rules as pure functions: `parseDue`, `cronTimes`, `slots`, `health`, `model` (the whole view's state against `now`). A classic script: runs in a browser (`window.JoseCC`) and in node. |
-| [`check.mjs`](check.mjs) | 80 golden checks: every `due:` form on the board, the crons, health edge cases, and the four states of the screenshots. `node people/jose/design/mission/check.mjs` must print `OK`. |
+| [`model.js`](model.js) | The rules as pure functions: `parseDue`, `cronTimes`, `slots`, `health`, `model` (the whole view's state against `now`), `openBoard` (slice 7). A classic script: runs in a browser (`window.JoseCC`) and in node. |
+| [`check.mjs`](check.mjs) | 88 golden checks: every `due:` form on the board, the crons, health edge cases, and the four states of the screenshots. `node people/jose/design/mission/check.mjs` must print `OK`. |
 | [`fixture.json`](fixture.json), [`scenarios.js`](scenarios.js) | The real data at 3 November 02:00 UTC, and the four states built from it, each change named. |
 | [Phone, all clear](preview-all-clear-phone.jpg) · [phone, overdue and quiet](preview-overdue-quiet-phone.jpg) · [desktop, overdue and quiet](preview-overdue-quiet-desktop.jpg) | The layout and the rules as Jose picked them. **The colours here are the preview's, not the build's:** the view uses the shared tokens (see "The look"). |
 
@@ -41,6 +41,7 @@ The rules are already written and tested, next to this brief. Copy, import or re
 | 4 | New since I last looked | 2 |
 | 5 | Decisions in `config.json`, with a status | 2 |
 | 6 | Mission as the first view (Jose's decision: from slice 3 on) | 3 |
+| 7 | Open issues: the whole board, only what is not done, grouped by when, on a phone | 0 |
 
 ### 0. Jose's own app, working the same as today
 
@@ -143,6 +144,36 @@ Jose's decision: **Mission opens first, from slice 3 on.** Until agent health is
 - The page opens on `#mission` when the address names no other view. A link to another view (`…/app/#tasks`) still opens that view.
 - The shared Home stays one tap away in the menu and the tab bar; the switcher row is unchanged.
 - One rule in `app.js`, so it is easy to undo if Jose changes his mind.
+
+### 7. Open issues (Jose's ask, 5 November)
+
+Jose finds the issue list on [the briefs page](https://web-summit.sgit.ai/briefs/index.html#issues) too long: all 157 issues, the 22 done ones included, in one five-column table with each issue's full text, about 250 KB. He wants only the open ones, easy to read, **in his own app only**: the team page stays as it is.
+
+- **One more view in the shared menu and the phone's tab bar: Open issues** (`#open`; the shared app already uses `#board` for the Team board).
+- **What it shows:** every issue on the board that is not done (status `done` or `dropped`, or `picked_by` starting "dropped", are left out), from the shared `data.json`'s `issues`, which already has the whole board. A line at the bottom says how many are done and hidden, with "show them" opening them in a group of their own.
+- **Grouped by when, most urgent first,** each group a card with its count and how many nobody has picked:
+  - Overdue;
+  - Due today (by 23:59 UTC today);
+  - This week (within 7 days);
+  - Later;
+  - Ongoing (recurring);
+  - No date.
+
+  Within a group, earliest due first, then by number. Overdue carries the triangle and the accent; nothing else does.
+- **One row per issue:**
+  - number (mono) and title, up to two lines;
+  - who picked it, on one line, or **"nobody yet"** in bold (not in the accent: it is a fact, not an alarm);
+  - on the right, "N h late" or "N days late" for overdue, otherwise the due text.
+
+  A tap opens the issue's details: its full text (the shared `body`, cut at 1500 characters, with "the rest on GitHub"), who it is for, and the link to the file.
+- **Three filters,** buttons 44 px tall, each with its count, kept in the address (`#open?f=unpicked`):
+  - **All open** (the default);
+  - **Nobody yet** (not picked: the issues anyone can pick up);
+  - **Mine** (for Jose, or picked by Jose or one of his agents).
+- **On a phone, a list, never the table.** Each group shows its first 4 rows and "Show all N"; on a wide screen, each group shows up to 10 rows.
+- **The rule is `openBoard(issues, now, filter)` in `model.js`,** checked in `check.mjs`. It keys rows by file, because two board files share WS-106.
+- **Previews from the real board on 5 November:** [all open, phone](preview-open-issues-phone.jpg) (135 open: 72 overdue, 32 due today, 18 this week, 11 ongoing, 2 with no date) and [mine, phone](preview-open-issues-mine-phone.jpg) (35). They use the shared dark colours, as the build will.
+- **Done when** the counts on Jose's page match `openBoard` on the same `data.json`, and the view works at 390 px and 1280 px.
 
 ## The look
 

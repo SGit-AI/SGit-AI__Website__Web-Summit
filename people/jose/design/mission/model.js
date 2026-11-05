@@ -151,7 +151,32 @@
             counts: { overdue: overdue.length, quiet: quiet.length, decide: decide.length } }
     }
 
-    const api = { parseDue, cronTimes, slots, health, model, DEFAULTS }
+    // ---------- the Open issues view: every issue on the board that is not done, grouped by when ----------
+    // issues: the shared data.json's `issues` (all of the board). filter: 'all' | 'unpicked' | 'mine'.
+    // Groups, most urgent first: overdue, today (due before 23:59 UTC today), week (within 7 days), later, ongoing
+    // (recurring), nodate. Within a group: earliest due first, then by number. Keyed by file: two issues share WS-106.
+    const GROUPS = [['overdue', 'Overdue'], ['today', 'Due today'], ['week', 'This week'], ['later', 'Later'], ['ongoing', 'Ongoing'], ['nodate', 'No date']]
+    function openBoard(issues, now, filter) {
+        const endOfToday = Date.UTC(new Date(now).getUTCFullYear(), new Date(now).getUTCMonth(), new Date(now).getUTCDate(), 23, 59, 59)
+        const isDone = i => /^(done|dropped)\b/i.test(i.status || '') || /^dropped\b/i.test(i.picked_by || '')
+        const mine = i => (i.for || []).includes('jose') || ME.test(i.picked_by || '')
+        const all = (issues || []).filter(i => i && i.id)
+        const open = all.filter(i => !isDone(i))
+        const shown = open.filter(i => filter === 'unpicked' ? !(i.picked_by || '').trim() : filter === 'mine' ? mine(i) : true)
+        const rows = shown.map(i => {
+            const p = parseDue(i.due)
+            const group = p.kind === 'recurring' ? 'ongoing' : p.kind !== 'date' ? 'nodate' : p.at < now ? 'overdue' : p.at <= endOfToday ? 'today' : p.at - now <= 7 * DAY ? 'week' : 'later'
+            return Object.assign({}, i, { key: i.file || i.id, due_at: p.at, group, late_by: p.kind === 'date' && p.at < now ? now - p.at : 0, unpicked: !(i.picked_by || '').trim() })
+        })
+        const num = id => +(String(id).match(/\d+/) || [0])[0]
+        const groups = GROUPS.map(([id, label]) => {
+            const items = rows.filter(r => r.group === id).sort((a, b) => (a.due_at || 0) - (b.due_at || 0) || num(a.id) - num(b.id))
+            return { id, label, count: items.length, unpicked: items.filter(r => r.unpicked).length, items }
+        }).filter(g => g.count)
+        return { groups, shown: rows.length, open: open.length, done: all.length - open.length, unpicked: open.filter(i => !(i.picked_by || '').trim()).length, mine: open.filter(mine).length }
+    }
+
+    const api = { parseDue, cronTimes, slots, health, model, openBoard, DEFAULTS }
     if (typeof module !== 'undefined' && module.exports) module.exports = api
     else root.JoseCC = api
 })(typeof window !== 'undefined' ? window : this)

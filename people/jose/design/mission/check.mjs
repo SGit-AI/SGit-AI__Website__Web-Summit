@@ -48,7 +48,23 @@ eq('across midnight', R.health({ schedule_utc: ['23:50'], runs: ['2026-11-03T20:
 eq('on demand is never judged', R.health({ schedule_utc: [], runs: ['2026-11-01T10:00:00Z'] }, T('2026-11-04T10:00:00Z'), T('2026-11-04T10:00:00Z')).state, 'on-demand')
 eq('stale flag', R.health(ag(['2026-11-03T06:00:00Z']), T('2026-11-03T10:00:00Z'), T('2026-11-03T06:30:00Z')).stale, true)
 
-// 4. the whole view, in the four states of the screenshots
+// 4. the Open issues view (slice 7): done and dropped left out, grouped by when, filters, two files with one number
+{
+    const I = (id, due, status = 'open', picked_by = '', f = ['angelo', 'jose'], file) => ({ id, title: id, due, status, picked_by, for: f, file: file || id + '.md' })
+    const issues = [I('WS-1', 'Mon 2 Nov'), I('WS-2', 'Wed 4 Nov, 12:00', 'picked', 'Angelo'), I('WS-3', 'Wed 4 Nov'), I('WS-4', 'Fri 6 Nov'), I('WS-5', 'Fri 20 Nov'),
+        I('WS-6', 'daily from Tue 3 Nov'), I('WS-7', 'later'), I('WS-8', 'Wed 4 Nov', 'done'), I('WS-9', 'Thu 5 Nov', 'open', 'dropped by Dinis'),
+        I('WS-10', 'Tue 3 Nov', 'open', '', ['dinis']), I('WS-10', 'Tue 3 Nov', 'open', 'dev@web-summit.jose', ['dinis'], 'WS-10-other.md')]
+    const now = T('2026-11-04T10:00:00Z'), b = R.openBoard(issues, now, 'all')
+    eq('open board: groups and counts', b.groups.map(g => [g.id, g.count]), [['overdue', 3], ['today', 2], ['week', 1], ['later', 1], ['ongoing', 1], ['nodate', 1]])
+    eq('open board: done and dropped left out', [b.open, b.done], [9, 2])
+    eq('open board: overdue, earliest first, then by number', b.groups[0].items.map(r => r.key), ['WS-1.md', 'WS-10.md', 'WS-10-other.md'])
+    eq('open board: two files with one number both kept', b.groups[0].items.filter(r => r.id === 'WS-10').length, 2)
+    eq('open board: a time on the due date counts', b.groups[1].items.map(r => r.id), ['WS-2', 'WS-3'])
+    eq('open board: nobody picked', R.openBoard(issues, now, 'unpicked').shown, 7)
+    eq('open board: mine (for: jose, or picked by Jose or his agents)', R.openBoard(issues, now, 'mine').shown, 8)
+}
+
+// 5. the whole view, in the four states of the screenshots
 const want = {
     clear: { level: 'watch', starts: 'WS-33 is due in 22 h', counts: { overdue: 0, quiet: 0, decide: 0 }, agents: ['ok', 'ok', 'ok', 'on-demand'], stale: false, newCount: 10 },
     alert: { level: 'act', starts: 'WS-33 is 9 h overdue', counts: { overdue: 1, quiet: 1, decide: 1 }, agents: ['ok', 'ok', 'quiet', 'on-demand'], stale: false, newCount: 2 },
