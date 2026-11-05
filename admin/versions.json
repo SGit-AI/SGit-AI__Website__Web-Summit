@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.450",
+    "date": "2026-11-05",
+    "what": "team photos in the command centres (switcher chips and profile card)",
+    "by": "dev@web-summit.silvio",
+    "from": "5fe349749"
+  },
+  {
     "version": "v0.2.449",
     "date": "2026-11-05",
     "what": "the drain from the site, visible: a Drain now panel with its steps, a timer and the records just drained",
