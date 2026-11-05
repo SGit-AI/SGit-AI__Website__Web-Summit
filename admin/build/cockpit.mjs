@@ -81,6 +81,8 @@ export function cockpit({ ROOT, id, teamData, ISSUES, MEET, INV, OB, VERSION, no
             security_review: reviews.length ? reviews[reviews.length - 1].replace(/\.md$/, '') : null,
         },
         setup: levels,
+        // what the dashboard agent did with each action sent from the cockpit, by id (admin/tools/cockpit_apply.mjs)
+        processed: (() => { const f = path.join(ROOT, 'people', id, 'cockpit-log.json'); return fs.existsSync(f) ? (JSON.parse(fs.readFileSync(f, 'utf8')).entries || []).filter(e => e.uid && Date.parse(e.applied_at) > now - 7 * DAY) : [] })(),
         milestones: cfg.milestones || [],
         links: cfg.links || [],
     }
