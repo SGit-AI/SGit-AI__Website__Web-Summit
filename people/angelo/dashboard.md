@@ -8,6 +8,7 @@ summary: The page Angelo reads first, about action: what is blocked on Angelo, t
 
 Your go is needed (tier 3) before these move:
 
+- **Drain the sticker votes before 14:30** (you are one of four drainers): the steps are in [Dinis's notes for you](../../nights/2026-11-05/notes/index.html#angelo).
 - **The lane to your conductor:** unblocks your app's sealed messages (slice 3), and your vault agent's vault-to-vault lanes with Silvio (WS-120).
 - **The signature rule** for your conductor: act only on messages signed by a key in `data/person-keys.json`.
 - **The presence agent:** team-collaboration as the team's one presence agent, opening everyone's locations.
