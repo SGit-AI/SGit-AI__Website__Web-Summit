@@ -27,6 +27,7 @@ const SECTIONS = [
     { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet|abp|cast|wakes)\b/, sub: [['People', 'team/index.html'], ['The map', 'team/map/index.html'], ['Setup', 'team/setup/index.html'], ['Everything', 'team/everything/index.html'], ['The cast', 'cast/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['At work', 'wakes/index.html'], ['ABPs', 'abp/index.html'], ['Meet us', 'meet/index.html']] },
     { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|cards|log|print|print-order|procurement|videos|research|reports|board-health|site-review|updates|meetings)\b/, sub: [['Stand-ups', 'meetings/index.html'], ['Updates', 'updates/index.html'], ['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Cards', 'cards/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Print files', 'print/index.html'], ['Procurement', 'procurement/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
+    { t: 'Observability', h: 'observability/index.html', re: /^observability\b/, sub: [['Overview and live', 'observability/index.html'], ['Agents', 'observability/agents/index.html'], ['Pages', 'observability/pages/index.html'], ['Team reads', 'observability/team/index.html'], ['The brief', 'brief-observability/index.html'], ['The pack', 'observability-pack/index.html']] },
     { t: 'PKI', h: 'pki/index.html', re: /^(pki|keys|vaults)\b/, sub: [['PKI', 'pki/index.html'], ['Keys and QR codes', 'pki/keys/index.html'], ['Giving out secrets', 'pki/secrets/index.html'], ['Signing off', 'pki/sign-off/index.html'], ['Sign in with pki.sgit.ai', 'pki/sso/index.html'], ['Review', 'pki/review/index.html'], ['Public keys', 'keys/index.html'], ['Vaults', 'vaults/index.html']] },
     { t: 'About', h: 'about/index.html', re: /^(about|articles|keys|admin|agent\/|briefing)\b/, sub: [['About', 'about/index.html'], ['Articles', 'articles/index.html'], ['Keys', 'keys/index.html'], ['Versions', 'admin/versions.html'], ['The site agent', 'agent/index.html'], ['Inbox briefing', 'briefing/index.html']] },
 ]
@@ -123,6 +124,11 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
             out.push(obsLiveHtml(person, id))
+        } else if (/^```obs-view [a-z]+ [a-z0-9-]+ [a-z0-9]{8,12}\s*$/.test(l)) {
+            const [view, person, id] = l.slice(12).trim().split(' ')
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push(obsViewHtml(view, person, id))
         } else if (l.startsWith('```')) {
             const buf = []
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) buf.push(lines[i])
@@ -441,6 +447,16 @@ const obsLiveHtml = (person, id) => {
     return `<div class="obs-live" data-endpoint="https://dev.send.sgraph.ai" data-vault="${v.vault_id}" data-key="${v.read_key}" data-title="${esc(v.name)}">` +
         `<p data-head></p><p class="meta" data-note>Opening vault <code>${v.vault_id}</code> with its published read key…</p><div data-app></div></div>` +
         `<script src="${UP}assets/vendor/sgit-ai/2026-11-05/vault-embed.js" defer></script><script src="${UP}assets/obs-live.js" defer></script>`
+}
+// an observability view drawn by this site from the public vault's data/public.json: ```obs-view <stats|agents|pages|team>
+// <person> <vault id>``` (observability@web-summit.dinis, 5 November 2026); assets/obs-view.js reads and draws it.
+const obsViewHtml = (view, person, id) => {
+    const v = VAULTS().find(x => x.person === person && x.vault_id === id)
+    if (!v) throw new Error(`obs-view ${person} ${id}: no such vault in people/${person}/vaults.json`)
+    if (!/^sgit_public_read_[0-9a-f]{64}$/.test(String(v.read_key || ''))) throw new Error(`people/${person}/vaults.json: "${v.name}" needs a read_key of the form sgit_public_read_<64 hex> (never a vault key)`)
+    return `<div class="obs-view" data-view="${view}" data-base="${UP}" data-endpoint="https://dev.send.sgraph.ai" data-vault="${v.vault_id}" data-key="${v.read_key}">` +
+        `<p class="meta" data-note>Opening vault <code>${v.vault_id}</code> with its published read key, decrypting in your browser…</p><div data-out></div></div>` +
+        `<script src="${UP}assets/vendor/sgit-ai/2026-11-05/vault-embed.js" defer></script><script src="${UP}assets/obs-view.js" defer></script>`
 }
 let UP = '../'
 const expandIssues =(body, up = '../') => { UP = up; return body

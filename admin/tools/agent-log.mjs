@@ -61,6 +61,7 @@ if (opt.commits === 'auto') {
         const out = execFileSync('git', ['log', `--since=${since}`, '--format=%h%x09%s', '-E', `--grep=^Agent: *${esc} *$`, `--grep=^${esc}:`], { encoding: 'utf8' })
         for (const line of out.split('\n').filter(Boolean)) {
             const [h, subj] = line.split('\t')
+            if (/^site v\d/.test(subj)) continue                                // CI's release commit quotes your trailer
             if (!did.some(d => d.commit === h)) did.push({ commit: h, subject: subj.slice(0, 160) })
         }
     } catch { }

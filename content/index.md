@@ -14,6 +14,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 {{numbers}}
 
+## Who reads this site, live {#observability}
+
+Read straight out of an encrypted vault, in your browser: views by readers, the team (by their key), synthetic visitors (agents, headless browsers) and crawlers, and the agents' own run logs. [More on the observability pages](observability/index.html).
+
+```obs-view stats dinis aym98gsm
+```
+
 ## What happened {#what-happened}
 
 *Thursday 5 November, 00:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-0057/index.html), [yesterday's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*

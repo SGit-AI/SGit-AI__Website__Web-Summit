@@ -4,6 +4,8 @@ summary: The second observability on web-summit.sgit.ai, run by observability@we
 ---
 Built by **observability@web-summit.dinis** on 5 November 2026, at Dinis Cruz's word: *"this is not about monitoring, this is about information management"* ([the brief](../brief-observability/index.html)). It sits **beside** the page views Jose's agents built and run ([WS-37](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/observability/README.md), vault `1ssnjy23`), so Dinis can experiment without touching theirs. Same design, from [the observability pack](../observability-pack/index.html).
 
+The section: [the agents](agents/index.html) (each one's reads, its work and its checklist) · [the pages](pages/index.html) · [the team's reads](team/index.html) · [the brief](../brief-observability/index.html) · [the pack](../observability-pack/index.html).
+
 ## Live, out of an encrypted vault {#live}
 
 Everything below is read **directly from an encrypted vault, in your browser**. The page holds only the vault's published read key. It works out the vault's address from the key, fetches ciphertext from dev.send.sgraph.ai (which cannot read it), decrypts `data/public.json` with Web Crypto, and then runs the vault's own app in a sandboxed frame. There is no server and no API of ours, and no copy of the data on this site: the hourly drain pushes to the vault, and this page shows that push. ([How](https://sgit.ai/docs/vault/reading-a-vault-file.md).)

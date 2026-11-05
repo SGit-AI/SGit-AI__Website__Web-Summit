@@ -127,6 +127,13 @@ def public(rows, now):
         else: t['reads'] += 1; t['visible_s'] += r.get('visible_s', 0); t['max_scroll'] = max(t['max_scroll'], r.get('scroll', 0))
     agents = collections.defaultdict(lambda: {'runs': 0, 'signed': 0, 'read_md': 0, 'read_html': 0, 'read_repo': 0, 'did': 0, 'last': ''})
     read_by = collections.defaultdict(set)
+    reads_of = collections.defaultdict(lambda: collections.defaultdict(lambda: {'as': '', 'times': 0, 'last': ''}))
+    did_of = collections.defaultdict(list)
+    for r in runs:
+        for x in r.get('read', []):
+            e = reads_of[r.get('agent', '?')][str(x.get('url', ''))]; e['as'] = x.get('as', ''); e['times'] += 1; e['last'] = max(e['last'], r.get('run', ''))
+        for x in r.get('did', []):
+            if len(did_of[r.get('agent', '?')]) < 50: did_of[r.get('agent', '?')].append({**x, 'run': r.get('run', '')})
     for r in runs:
         a = agents[r.get('agent', '?')]; a['runs'] += 1; a['signed'] += 1 if r.get('signed') else 0; a['did'] += len(r.get('did', [])); a['last'] = max(a['last'], r.get('run', ''))
         for x in r.get('read', []):
@@ -140,7 +147,7 @@ def public(rows, now):
                              for k, v in paths.items()), key=lambda x: -x['total']),
             'team': [{'person': p, 'path': path, **v} for (p, path), v in sorted(team.items(), key=lambda x: x[1]['last'], reverse=True)],
             'agents': {'runs': len(runs), 'signed': sum(1 for r in runs if r.get('signed')),
-                       'by_agent': [{'agent': k, **v} for k, v in sorted(agents.items(), key=lambda x: x[1]['last'], reverse=True)],
+                       'by_agent': [{'agent': k, **v, 'reads': sorted(({'url': u, **e} for u, e in reads_of[k].items()), key=lambda e: (-e['times'], e['url']))[:200], 'done': did_of[k]} for k, v in sorted(agents.items(), key=lambda x: x[1]['last'], reverse=True)],
                        'most_read': sorted(([u, sorted(a)] for u, a in read_by.items()), key=lambda x: (-len(x[1]), x[0]))[:100],
                        'recent': [{k: r[k] for k in keep if k in r} for r in runs[:200]]},
             'findings': {'page_signatures': sum(1 for r in pages if r.get('sig_finding')), 'agent_signatures': sum(1 for r in runs if r.get('sig_finding'))},
