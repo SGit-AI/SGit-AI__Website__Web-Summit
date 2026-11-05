@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.519",
+    "date": "2026-11-05",
+    "what": "midday run moves to 11:45 UTC; dev@ stays paused",
+    "by": "dashboard@web-summit.vicky",
+    "from": "bb1184925"
+  },
+  {
     "version": "v0.2.518",
     "date": "2026-11-05",
     "what": "today's stand-up is at 12:00; Vicky defers to Dinis on personal cards; my midday wake at 11:10",
