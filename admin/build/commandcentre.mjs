@@ -106,6 +106,8 @@ export function build(root, person, now = new Date()) {
         // chat in the page (assets/cc/app.js): only where the person's config.json sets it; the key is never here
         llm: config.llm || null,
         links: config.links || [],
+        // event mode (Silvio, 5 November): the summit's sessions and side events, already public on /summit/
+        event: (() => { const E = readJson(root, 'data/events.json') || {}; return { read_on: E.read_on || '', sessions: E.sessions || [], side_events: E.side_events || [] } })(),
         onboarding: { level: onboarding.level ?? null, steps: onboarding.steps || {}, updated: onboarding.updated || '' },
         issues, agents, activity, messages,
         repo: 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit', branch: 'dev',

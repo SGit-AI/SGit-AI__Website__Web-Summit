@@ -659,3 +659,25 @@ html.cc-on[data-theme="light"] .cc-task { background: #fff !important; }
 .cc-hero .cc-btn.tint, html.cc-on[data-theme="light"] .cc-hero .cc-btn.tint { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.18); color: var(--rm-hero-text); }
 html.cc-on[data-theme="light"] .cc-hero .cc-btn.tint { background: #fff; border-color: var(--rm-card-line); }
 .cc-hero .cc-btn.tint svg { color: inherit; }
+
+/* For me: the bell in the top bar, with how many things need you */
+.cc-forme { position: relative; }
+.cc-forme .cc-count { position: absolute; top: -6px; right: -6px; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 999px; display: grid; place-items: center; font: 700 11px/1 var(--rm-font); color: #fff; background: var(--rm-red); box-shadow: 0 0 0 2px var(--rm-bg); }
+.cc-formepanel { gap: 8px; }
+/* messages: the folded groups */
+.cc-msgfold > summary { color: var(--rm-text-secondary); background: var(--rm-chip-bg); border-color: var(--rm-card-line, var(--rm-border)); }
+.cc-msgfold .cc-rows { margin-top: 4px; }
+/* Event mode: the day at Web Summit */
+.cc-event .cc-seg { margin-bottom: 8px; }
+.cc-sess { grid-template-columns: 52px 1fr auto; align-items: center; }
+.cc-sess .what b { font-weight: 600; }
+.cc-sess .why { color: var(--rm-text-muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.cc-star { width: 44px; height: 44px; color: var(--rm-text-muted); }
+.cc-star.on { color: var(--rm-gold); }
+.cc-star.on svg { fill: currentColor; }
+@media (max-width: 767px) { .cc-sess { grid-template-columns: 44px 1fr auto; } }
+
+/* What's new: one card until the person closes it */
+.cc-news { border-color: color-mix(in srgb, var(--rm-gold) 40%, var(--rm-card-line, var(--rm-border))); }
+.cc-newslist { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font: 400 14px/21px var(--rm-font); color: var(--rm-text-secondary); }
+.cc-newslist b { color: var(--rm-text); font-weight: 600; }

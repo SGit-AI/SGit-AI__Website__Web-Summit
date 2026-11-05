@@ -56,6 +56,8 @@
         speak: 'M11 5L6 9H2v6h4l5 4zM15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14',
         github: 'M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3.1-.4 6.4-1.5 6.4-6.9a5.4 5.4 0 0 0-1.5-3.7 5 5 0 0 0-.1-3.8s-1.2-.4-3.9 1.5a13.4 13.4 0 0 0-7 0C6.3 1.6 5.1 2 5.1 2a5 5 0 0 0-.1 3.8 5.4 5.4 0 0 0-1.5 3.7c0 5.4 3.3 6.5 6.4 6.9a3.4 3.4 0 0 0-.9 2.6V22',
         back: 'M15 18l-6-6 6-6',
+        bell: 'M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0',
+        star: 'M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z',
         links: 'M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7',
         down: 'M6 9l6 6 6-6',
     }
@@ -157,6 +159,7 @@
     <header class="cc-top">
       <span class="cc-mark sm" aria-hidden="true">R</span><div class="title" id="cc-title"></div><div class="grow"></div>
       <form class="cc-search" role="search" id="cc-search"><label class="sr" for="cc-q">Search the board</label>${ico('search', '')}<input id="cc-q" type="search" placeholder="Search issues, WS-NN, people…" value="${esc(S.q)}"></form>
+      <button class="cc-iconbtn cc-forme" id="cc-forme" type="button" aria-label="For me: ${forMeCount()} items need you" title="For me">${ico('bell', '')}${forMeCount() ? `<span class="cc-count">${forMeCount()}</span>` : ''}</button>
       <button class="cc-iconbtn" id="cc-links" type="button" aria-label="Links: every site we work with" title="Links">${ico('links', '')}</button>
       <button class="cc-iconbtn" id="cc-theme" type="button" aria-label="Switch to ${html.dataset.theme === 'dark' ? 'light' : 'dark'} mode">${ico(html.dataset.theme === 'dark' ? 'sun' : 'moon', '')}</button>
       <div class="cc-today"><time id="cc-clock"></time><br><span>${esc(TZ)}</span></div>
@@ -179,6 +182,7 @@
 </nav>
 </div>`
         $('#cc-links').onclick = linksPanel
+        $('#cc-forme').onclick = forMePanel
         $('#cc-theme').onclick = () => { store.set('theme', html.dataset.theme === 'dark' ? 'light' : 'dark'); applyTheme(); render() }
         $('#cc-search').onsubmit = e => { e.preventDefault(); S.q = $('#cc-q').value.trim(); S.scope = 'board'; go('tasks') }
         $('#cc-askform').onsubmit = e => { e.preventDefault(); S.askDraft = $('#cc-askq').value.trim(); S.askOpen = false; go('ask') }
@@ -236,7 +240,7 @@
 <div class="cc-actions"><button class="cc-btn gold" type="button" data-go="ask">${ico('claude', '')}Ask Claude</button><button class="cc-btn tint t-green" type="button" data-new>${ico('plus', '')}New task</button><button class="cc-btn tint t-conductor" type="button" data-go="board">${ico('board', '')}Team board</button><button class="cc-btn tint t-blue" type="button" data-go="waiting">${ico('wait', '')}Decisions</button></div></section>
 <section class="cc-urgent" aria-labelledby="h-urgent"><header><h2 id="h-urgent">${ico('flag', '')}Most urgent</h2><button class="more" type="button" data-go="tasks">All ${c.open} →</button></header>
 ${urgentTop().length ? `<div class="cc-list">${urgentTop().map(i => taskRow(i, true)).join('')}</div>` : empty('Nothing open is named for you.')}</section>
-<div class="cc-kpis">
+${newsCard()}${eventMode() ? eventCard() : ''}<div class="cc-kpis">
 ${kpi('open', 'My tasks', c.open, `of ${c.total} named for me`, 'blue', 'tasks')}
 ${kpi('soon', 'Due in 72 h', c.soon, 'derived from due dates', 'orange', 'flag')}
 ${kpi('overdue', 'Overdue', c.overdue, c.overdue ? 'act today' : 'none late', 'red', 'alert')}
@@ -301,6 +305,7 @@ ${card('Ideas (no issues yet)', `<p class="note">${esc(D.ideas || 'What should t
 <div class="cc-board">${cols.map(([k, l, t]) => { const all = base.filter(i => i.status === k), items = k === 'done' && !S.doneAll ? all.slice(-3).reverse() : k === 'done' ? all : byUrgency(all); return `<section class="cc-col${S.boardCol === k ? ' on' : ''}" aria-label="${l}"><h3>${chip(l, t)}<span class="n">${all.length}</span></h3>${items.length ? items.map(i => taskRow(i, true)).join('') : empty('Empty')}${k === 'done' && all.length > 3 ? `<button class="cc-btn ghost cc-more-done" type="button" data-set="doneAll" data-val="${S.doneAll ? '' : '1'}">${S.doneAll ? 'Show fewer' : `Show all ${all.length} done`}</button>` : ''}</section>` }).join('')}</div>${srcLine()}`
     }
 
+    const decisionRowsFor = l => `<div class="cc-rows">${l.map(x => `<div class="cc-row wide"><div class="what">${esc(x.what)}<small>${x.issue ? esc(x.issue) : ''}</small></div><span class="chip t-orange">On you</span></div>`).join('')}</div>`
     const decisionRows = n => `<div class="cc-rows">${D.decisions.slice(0, n || 99).map(x => `<div class="cc-row wide"><div class="what"><b>${esc(x.who)}:</b> ${esc(x.what)}<small>${x.issue ? esc(x.issue) + ' · ' : ''}<a href="../../../${esc(x.source.startsWith('board/') ? 'briefs/index.html#issues' : x.source)}">source</a> · waiting ${esc(ago(x.since).replace(' ago', ''))}</small></div><span class="chip t-${x.who === FIRST ? 'orange' : 'yellow'}">${x.who === FIRST ? 'On me' : 'On ' + esc(x.who)}</span></div>`).join('')}</div>`
     V.waiting = () => {
         const w = D.issues.filter(i => i.mine && waitingOn(i))
@@ -309,7 +314,7 @@ ${card('Ideas (no issues yet)', `<p class="note">${esc(D.ideas || 'What should t
 ${card('Decisions I need', decisionRows() + `<p class="note" style="margin-top:10px">From the open decision items for you on the stand-up agenda (data/meetings/), plus any your agents keep in people/${esc(ME)}/app/config.json. Waiting time is counted from when each was raised; take this list to the 13:00 and 18:00 UTC stand-ups.</p>`, { cls: 'cc-span-6', id: 'dec2' })}
 ${card('Waiting on others', w.length ? `<div class="cc-list">${w.map(i => taskRow(i, true)).join('')}</div>` : empty('None of your issues is blocked or held by someone else right now.'), { cls: 'cc-span-6', id: 'won' })}
 ${card('Due soon and nobody has picked them', unpicked.length ? `<div class="cc-list">${unpicked.map(i => taskRow(i, true)).join('')}</div>` : empty('Every urgent issue has someone on it.'), { cls: 'cc-span-12', id: 'unp' })}
-${card('Messages for me and my agents (48 h)', D.messages.length ? `<div class="cc-rows">${(S.msgAll ? D.messages : D.messages.slice(0, 8)).map(m => `<div class="cc-row"><span class="when">${esc(fmtTime(m.at))}</span><span class="what">${esc(m.subject)}<small>${esc(m.agent)} · <a href="${D.repo}/commit/${esc(m.hash)}" target="_blank" rel="noopener">${esc(m.hash)}</a></small></span><span class="side">${esc(ago(m.at))}</span></div>`).join('')}</div>${D.messages.length > 8 ? `<button class="cc-btn ghost" type="button" data-set="msgAll" data-val="${S.msgAll ? '' : '1'}" style="margin-top:10px">${S.msgAll ? 'Show the 8 most recent' : `Show all ${D.messages.length} messages`}</button>` : ''}` : empty('No commit is addressed to you (For:) in the last 48 hours.'), { cls: 'cc-span-12', id: 'msg' })}
+${card('Messages for me and my agents (48 h)', D.messages.length ? messagesSorted() : empty('No commit is addressed to you (For:) in the last 48 hours.'), { cls: 'cc-span-12', id: 'msg' })}
 </div>${srcLine()}`
     }
 
@@ -504,6 +509,7 @@ ${card('Team commits in 48 h, by person', bars(Object.entries(people).sort((a, b
     }
 
     V.settings = () => `<div class="cc-grid">
+${card('Event mode', `<div class="cc-filters">${[['auto', 'Automatic (9 to 12 Nov)'], ['on', 'On now'], ['off', 'Off']].map(([v, l]) => `<button class="cc-btn${store.get('eventMode', 'auto') === v ? ' primary' : ''}" type="button" data-evmode="${v}">${l}</button>`).join('')}</div><p class="note" style="margin-top:10px">During Web Summit the home page starts with your day there: stand-ups, the sessions you star, side events and what is due. Saved on this device.</p>`, { cls: 'cc-span-12', id: 's-ev' })}
 ${LLM() ? card('Model provider: OpenRouter', chat.key() ? `<div class="cc-rows"><div class="cc-row wide"><span class="what">Key on this device<small>Local storage only; sent only to openrouter.ai</small></span><span class="side">${esc(keyHint(chat.key()))}</span></div><div class="cc-row wide"><span class="what">Model<small>For Ask Claude</small></span><span class="side">${esc((MODELS().find(x => x[0] === chat.model()) || [, chat.model()])[1])}</span></div></div><div class="cc-filters" style="margin-top:10px"><button class="cc-btn" type="button" id="or-replace">Replace the key</button><button class="cc-btn" type="button" id="or-remove">Remove the key and the conversation</button></div><div id="or-replace-box" hidden>${keyForm()}</div>` : keyForm(), { cls: 'cc-span-12', id: 'or' }) : ''}
 ${card('Appearance', `<div class="cc-filters">${['dark', 'light', 'system'].map(t => `<button class="cc-btn${store.get('theme', 'dark') === t ? ' primary' : ''}" type="button" data-theme-set="${t}">${t[0].toUpperCase() + t.slice(1)}</button>`).join('')}</div><p class="note" style="margin-top:10px">Dark is the default. Your choice is saved in this browser only.</p>`, { cls: 'cc-span-6', id: 's1' })}
 ${card('This device', `<div class="cc-rows"><div class="cc-row wide"><span class="what">Time zone<small>From your device</small></span><span class="side">${esc(TZ)}</span></div><div class="cc-row wide"><span class="what">Speech language<small>For dictation</small></span><span class="side">${esc(S.voiceLang)}</span></div><div class="cc-row wide"><span class="what">Calendar ID<small>Saved only here</small></span><span class="side">${store.get('calId', '') ? 'set' : 'not set'}</span></div></div>`, { cls: 'cc-span-6', id: 's2' })}
@@ -582,7 +588,78 @@ ${groups.map(([g, l]) => `<section class="cc-linkgrp"><h3>${esc(g)}</h3><div cla
         q.oninput = () => { const v = q.value.trim().toLowerCase(); let any = 0; $$('.cc-link', panel).forEach(a => { const ok = !v || a.dataset.q.includes(v); a.hidden = !ok; any += ok }); $$('.cc-linkgrp', panel).forEach(s => { s.hidden = !$$('.cc-link', s).some(a => !a.hidden) }); $('.cc-linknone', panel).hidden = !!any }
         q.focus()
     }
+    // 2. messages: the ones that ask this person something first; their own agents' reports and others' updates folded
+    const ASKS = () => new RegExp(`(${FIRST}'?s (call|pick|word|go|yes|decision)|for ${FIRST}\\b|notes? for [^;:]*\\b${FIRST}\\b|to every person|issue your person|\\bplease\\b|who collects|waiting (on|for) (you|${FIRST})|your (call|word|go|pick)|\\?)`, 'i')
+    const mineAgent = m => (m.agent || '').endsWith('.' + ME)
+    const msgKind = m => mineAgent(m) ? 'mine' : ASKS().test(m.subject) ? 'ask' : 'fyi'
+    const msgRow = m => `<div class="cc-row"><span class="when">${esc(fmtTime(m.at))}</span><span class="what">${esc(m.subject.replace(/^[a-z0-9-]+@web-summit\.[a-z0-9-]+: /, ''))}<small>${esc(m.agent)} · <a href="${D.repo}/commit/${esc(m.hash)}" target="_blank" rel="noopener">${esc(m.hash)}</a></small></span><span class="side">${esc(ago(m.at))}</span></div>`
+    const messagesSorted = () => {
+        const asks = D.messages.filter(m => msgKind(m) === 'ask'), mine = D.messages.filter(m => msgKind(m) === 'mine'), fyi = D.messages.filter(m => msgKind(m) === 'fyi')
+        const fold = (title, l) => l.length ? `<details class="cc-donefold cc-msgfold"><summary>${title} (${l.length})</summary><div class="cc-rows">${l.map(msgRow).join('')}</div></details>` : ''
+        return `<h3 class="cc-when${asks.length ? ' late' : ''}">Asks you<span>${asks.length}</span></h3>${asks.length ? `<div class="cc-rows">${asks.map(msgRow).join('')}</div>` : empty('Nothing addressed to you asks for anything right now.')}${fold('Updates from the team', fyi)}${fold('Reports from your own agents', mine)}<p class="note" style="margin-top:8px">"Asks you" is picked by the wording (your call, a note for you, a question…); check the folded ones now and then.</p>`
+    }
+    // 1. For me: everything that needs this person, in one place, with a count
+    const forMe = () => ({
+        decisions: D.decisions.filter(x => (x.who || '').toLowerCase() === FIRST.toLowerCase()),
+        tasks: byUrgency(openNamed().filter(i => ['overdue', 'p1'].includes(urgency(i).k))),
+        asks: D.messages.filter(m => msgKind(m) === 'ask'),
+    })
+    // 6. Event mode: from opening night to the last day, the home starts with the day at Web Summit
+    const EV_DAYS = [['2026-11-09', 'Mon 9'], ['2026-11-10', 'Tue 10'], ['2026-11-11', 'Wed 11'], ['2026-11-12', 'Thu 12']]
+    const localDay = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+    const eventMode = () => { const pref = store.get('eventMode', 'auto'); return pref === 'on' || (pref === 'auto' && EV_DAYS.some(([d]) => d === localDay())) }
+    const stars = () => store.get('stars', [])
+    const toggleStar = id => { const s = stars(); store.set('stars', s.includes(id) ? s.filter(x => x !== id) : [...s, id]) }
+    const hhmm = s => { const m = String(s || '').match(/(\d{1,2}):(\d{2})/); return m ? m[1].padStart(2, '0') + ':' + m[2] : '' }
+    const NEWS = '2026-11-05'
+    const newsCard = () => store.get('news', '') === NEWS ? '' : `<section class="cc-card cc-news" aria-labelledby="h-news"><header><span class="hic" aria-hidden="true">${ico('bell', '')}</span><h2 id="h-news">What's new in your command centre</h2><button class="more" type="button" data-news-close>Got it ✕</button></header>
+<ul class="cc-newslist">
+<li><b>🔔 For me</b>: the bell at the top counts what needs you (tasks due now or late, decisions only you can make, messages that ask you something). Tap it for the list.</li>
+<li><b>📩 Messages</b>: the ones that ask you something come first; the team's updates and your own agents' reports are folded.</li>
+<li><b>📅 Event mode</b>: from 9 to 12 November your home page starts with your day at Web Summit. Tap ☆ on a session to add it to your day. Try it now in Settings → Event mode.</li>
+<li><b>✅ Calmer lists</b>: done tasks fold away, the most urgent come first (Overdue, Today, This week, Later); red means late, orange means today.</li>
+<li><b>🔗 Links</b>: every site we use in one place (the chain button at the top). Add your own in <code>people/&lt;you&gt;/app/config.json</code>, public links only.</li>
+</ul></section>`
+    function eventCard() {
+        const E = D.event || { sessions: [], side_events: [] }
+        const day = S.evDay || (EV_DAYS.find(([d]) => d === localDay()) || EV_DAYS[1])[0]
+        const sess = (E.sessions || []).filter(s => s.day === day).sort((a, b) => hhmm(a.time).localeCompare(hhmm(b.time)))
+        const side = (E.side_events || []).filter(s => String(s.date || '').startsWith(day))
+        const mine = stars(), starred = sess.filter(s => mine.includes(s.id))
+        const due = openNamed().filter(i => i.due_at && localDay(new Date(i.due_at)) === day)
+        const plan = [
+            ...(D.standups ? D.standups.times_utc : ['13:00', '18:00']).map(t => [t, 'Team stand-up', 'conductor', '']),
+            ...(day === '2026-11-09' ? [['18:00', 'Opening night, Centre Stage', 'local', 'then Night Summit 20:00 to 23:00']] : []),
+            ...starred.map(s => [hhmm(s.time), '★ ' + s.title, 'local', s.stage || '']),
+            ...side.map(s => [hhmm(s.date) || '—', s.title, 'video', s.place || '']),
+            ...due.map(i => [/T23:59/.test(i.due_at) ? 'EOD' : fmtTime(i.due_at), i.id + ' due: ' + i.title, 'red', '']),
+        ].sort((a, b) => a[0].localeCompare(b[0]))
+        const onlyMine = S.evMine && starred.length
+        const list = onlyMine ? starred : sess
+        const sessRow = s => `<div class="cc-row cc-sess"><span class="when">${esc(hhmm(s.time))}</span><span class="what"><b>${esc(s.title)}</b><small>${esc(s.stage || '')}${s.speakers && s.speakers.length ? ' · ' + esc(s.speakers.slice(0, 2).map(x => x.name + (x.org ? ' (' + x.org + ')' : '')).join(', ')) : ''}</small>${s.why_relevant ? `<small class="why">${esc(s.why_relevant)}</small>` : ''}</span><button class="cc-iconbtn cc-star${mine.includes(s.id) ? ' on' : ''}" type="button" data-star="${esc(s.id)}" aria-pressed="${mine.includes(s.id)}" aria-label="${mine.includes(s.id) ? 'Remove from my day' : 'Add to my day'}">${ico('star', '')}</button></div>`
+        return `<section class="cc-card cc-event" aria-labelledby="h-ev"><header><span class="hic" aria-hidden="true">${ico('cal', '')}</span><h2 id="h-ev">Web Summit · ${esc(EV_DAYS.find(([d]) => d === day)[1])} Nov</h2></header>
+<div class="cc-seg" role="group" aria-label="Day">${EV_DAYS.map(([d, l]) => `<button type="button" data-set="evDay" data-val="${d}" aria-pressed="${d === day}">${l}</button>`).join('')}</div>
+<h3 class="cc-when">My day<span>${plan.length}</span></h3>${plan.length ? `<div class="cc-rows">${plan.map(([w, what, tone, sub]) => `<div class="cc-row"><span class="when">${esc(w)}</span><span class="what">${esc(what)}${sub ? `<small>${esc(sub)}</small>` : ''}</span><span class="side"><span class="cc-dot t-${tone}"></span></span></div>`).join('')}</div>` : empty('Nothing planned yet.')}
+<h3 class="cc-when">Sessions<span>${sess.length}</span></h3>
+<div class="cc-filters" style="margin-bottom:6px"><button class="cc-btn ghost" type="button" data-set="evMine" data-val="${S.evMine ? '' : '1'}"${starred.length ? '' : ' disabled'}>${S.evMine ? 'Show all sessions' : `Only my ★ (${starred.length})`}</button><span class="note">Tap ☆ to add a session to your day; kept on this device.</span></div>
+${list.length ? `<div class="cc-rows">${list.map(sessRow).join('')}</div>` : empty('No session listed for this day.')}
+<p class="note" style="margin-top:8px">From data/events.json (websummit.com, read ${esc(E.read_on || '')}); times are Lisbon (UTC+0).</p></section>`
+    }
+    const forMeCount = () => { const f = forMe(); return f.decisions.length + f.tasks.length + f.asks.length }
+    function forMePanel() {
+        const f = forMe()
+        overlay(`<div class="cc-drawer cc-formepanel" role="dialog" aria-modal="true" aria-labelledby="fm-h">
+<button class="cc-iconbtn close" type="button" data-close aria-label="Close">${ico('x', '')}</button>
+<h2 id="fm-h">For me</h2><p class="note">Everything that needs you now: ${forMeCount()} item${forMeCount() === 1 ? '' : 's'}.</p>
+<h3 class="cc-when${f.tasks.length ? ' late' : ''}">Due now or late<span>${f.tasks.length}</span></h3>${f.tasks.length ? `<div class="cc-list">${f.tasks.map(i => taskRow(i, true)).join('')}</div>` : empty('Nothing due today.')}
+<h3 class="cc-when">Decisions only you can make<span>${f.decisions.length}</span></h3>${f.decisions.length ? decisionRowsFor(f.decisions) : empty('No decision waits on you.')}
+<h3 class="cc-when">Asks you<span>${f.asks.length}</span></h3>${f.asks.length ? `<div class="cc-rows">${f.asks.map(msgRow).join('')}</div>` : empty('No message asks you anything.')}
+</div>`)
+    }
     let lastFocus = null
+    document.addEventListener('click', e => { const n = e.target.closest && e.target.closest('[data-news-close]'); if (n) { store.set('news', NEWS); render() } })
+    document.addEventListener('click', e => { const v = e.target.closest && e.target.closest('[data-evmode]'); if (v) { store.set('eventMode', v.dataset.evmode); render() } })
+    document.addEventListener('click', e => { const s = e.target.closest && e.target.closest('[data-star]'); if (s) { toggleStar(s.dataset.star); render() } })
     document.addEventListener('click', e => { const a = e.target.closest && e.target.closest('[data-links]'); if (a) { e.preventDefault(); setTimeout(linksPanel) } })
     function overlay(inner) {
         closeOverlay(); lastFocus = document.activeElement
