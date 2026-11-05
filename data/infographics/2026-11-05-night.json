@@ -29,29 +29,29 @@
   {
    "id": "newsroom",
    "title": "The Lisbon Wire: the newsroom, redesigned and live",
-   "lead": "newsroom@web-summit.dinis and six specialist agents (dev, designer, interact, admin, graph, billing) turned web-summit.newsroom.sgit.ai into The Lisbon Wire: a publication look, the agenda and 109 company profiles, pages for events, people, organisations, topics and places, all data as JSON with a public API, a graph explorer, search and an Ask the newsroom chat, a control centre showing every run and agent, and a reading meter with top-ups and a vault login.",
+   "lead": "newsroom@web-summit.dinis and six specialist agents (dev, designer, interact, admin, graph, billing) turned promptugal.news into The Lisbon Wire: a publication look, the agenda and 109 company profiles, pages for events, people, organisations, topics and places, all data as JSON with a public API, a graph explorer, search and an Ask the newsroom chat, a control centre showing every run and agent, and a reading meter with top-ups and a vault login.",
    "tiles": [
     {
      "img": "assets/shows/night-2026-11-05/nr-front.jpg",
-     "href": "https://web-summit.newsroom.sgit.ai/",
+     "href": "https://promptugal.news/",
      "title": "The front page",
      "text": "The Lisbon Wire: the agenda by day, the latest, independence said plainly."
     },
     {
      "img": "assets/shows/night-2026-11-05/nr-graph.jpg",
-     "href": "https://web-summit.newsroom.sgit.ai/graph/index.html",
+     "href": "https://promptugal.news/graph/index.html",
      "title": "The graph",
      "text": "Companies, sessions, people and places, explorable; the chat can drive it."
     },
     {
      "img": "assets/shows/night-2026-11-05/nr-admin.jpg",
-     "href": "https://web-summit.newsroom.sgit.ai/admin/index.html",
+     "href": "https://promptugal.news/admin/index.html",
      "title": "The control centre",
      "text": "Every run, every agent, the timeline, the data and the workflows."
     },
     {
      "img": "assets/shows/night-2026-11-05/nr-article.jpg",
-     "href": "https://web-summit.newsroom.sgit.ai/articles/newsroom-status-four-days-out.html",
+     "href": "https://promptugal.news/articles/newsroom-status-four-days-out.html",
      "title": "The first article",
      "text": "The newsroom four days out, in pictures; signed."
     }
@@ -180,7 +180,7 @@
    "items": [
     [
      "Review The Lisbon Wire (WS-145)",
-     "https://web-summit.newsroom.sgit.ai/"
+     "https://promptugal.news/"
     ],
     [
      "Vote, then drain the votes",
@@ -205,7 +205,7 @@
     ],
     [
      "The newsroom's agenda, from your data",
-     "https://web-summit.newsroom.sgit.ai/"
+     "https://promptugal.news/"
     ]
    ]
   },

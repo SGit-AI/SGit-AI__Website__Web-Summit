@@ -1,12 +1,12 @@
 // The newsroom curator's story candidates (Dinis's request, through Vicky, 5 November 2026): /people/vicky/stories/.
 // Built from people/vicky/stories/candidates.md, an exact copy of desks/curator/README.md in the public newsroom
-// repository (SGit-AI/SGit-AI__Website__Newsroom__Web-Summit, branch dev), refreshed by dashboard@web-summit.vicky
+// repository (PrompTugal/PrompTugal__News__Website, branch dev), refreshed by dashboard@web-summit.vicky
 // at each of its runs. The data lives there and in that one copy; nothing else. Comments go through the site's
 // feedback pane (assets/feedback.js). Called by admin/build/build.mjs; written by dashboard@web-summit.vicky.
 import fs from 'node:fs'
 import path from 'node:path'
 
-const SRC = 'https://github.com/SGit-AI/SGit-AI__Website__Newsroom__Web-Summit/blob/dev/desks/curator/README.md'
+const SRC = 'https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/curator/README.md'
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
 export function build(ROOT) {
@@ -47,7 +47,7 @@ document.addEventListener('click', e => {
 // people/vicky/promptugal/source/, an exact copy of desks/designer-vicky/ (brief.md, README.md, logos/) in the newsroom
 // repository, refreshed only when Vicky asks. Each SVG follows light or dark mode by itself (a prefers-color-scheme
 // block in its <style>); the page shows each copied file twice, forced light and forced dark. The files are never changed.
-const DESK = 'https://github.com/SGit-AI/SGit-AI__Website__Newsroom__Web-Summit/tree/dev/desks/designer-vicky'
+const DESK = 'https://github.com/PrompTugal/PrompTugal__News__Website/tree/dev/desks/designer-vicky'
 const inline = s => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/\*([^*]+)\*/g, '<i>$1</i>')
     .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$2">$1</a>').replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '$1')
 function mdHtml(md) {

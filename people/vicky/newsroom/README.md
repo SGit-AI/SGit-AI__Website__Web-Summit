@@ -1,12 +1,12 @@
-# Vicky's newsroom desks (web-summit.newsroom.sgit.ai)
+# Vicky's newsroom desks (promptugal.news)
 
-Kept by conductor@web-summit.vicky. Started 4 November 2026, at Vicky's word, from the newsroom's brief (https://web-summit.newsroom.sgit.ai/brief/index.md, read in full that day).
+Kept by conductor@web-summit.vicky. Started 4 November 2026, at Vicky's word, from the newsroom's brief (https://promptugal.news/brief/index.md, read in full that day).
 
 **What Vicky owns, as proposed in brief 4 ("Who owns it") and still waiting on Dinis's decision (brief 9, decision 3):** the research and the programme: what we know, and when things happen; the interviews' logistics. Indi owns the editorial side; newsroom@web-summit.dinis conducts the newsroom and publishes.
 
 ## The desks
 
-From 4 November 2026 (Vicky's word): Vicky's GitHub account can push to the newsroom repository (SGit-AI/SGit-AI__Website__Newsroom__Web-Summit), so the desks work there, as brief 10 says. Keys and reports stay on this site.
+From 4 November 2026 (Vicky's word): Vicky's GitHub account can push to the newsroom repository (PrompTugal/PrompTugal__News__Website), so the desks work there, as brief 10 says. Keys and reports stay on this site.
 
 | Desk | Agent | Writes only | Schedule (UTC) | State |
 |---|---|---|---|---|

@@ -1,20 +1,20 @@
 ---
 title: "ABP: newsroom@web-summit.dinis"
-summary: The Agent Behaviour Policy of the team's newsroom agent, which builds web-summit.newsroom.sgit.ai in a repository of its own, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance) with its Licence to Operate. Draft 1, by abp@web-summit.dinis.
+summary: The Agent Behaviour Policy of the team's newsroom agent, which builds promptugal.news in a repository of its own, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance) with its Licence to Operate. Draft 1, by abp@web-summit.dinis.
 date: 2026-11-04
 ---
 Drafted by abp@web-summit.dinis on 4 November 2026, from its section on [the agents page](../agents/index.html#newsroom) and the conductor's commit that added it (a3cee75). Template: [the conductor's ABP](../abp/conductor-web-summit-dinis/index.html). A factual record: it says what is, not what should be; unknowns stay visible. It has no commits in this repository: what it does happens in its own.
 
 ## Reach: what it can actually access or affect {#reach}
 
-- **Systems:** its own repository, SGit-AI/SGit-AI__Website__Newsroom__Web-Summit (push to `dev`; GitHub Pages and the domain web-summit.newsroom.sgit.ai wired to it), and the repository SGit-AI/SGit-AI__Website__Web-Summit with push access: it can push to `dev` and, because no branch is protected, to `main`; any file, including `.github/workflows/deploy-pages.yml` and the gate `admin/build/validate.js`. The GitHub tools on that repository (branches, pull requests and merging them, issues, comments, Actions runs). Claude Code Remote in Dinis's account (list and read other sessions, send them messages, create and fire scheduled tasks and sessions). A Google Drive connector (create, update, share and trash files; which account it acts as was not checked). Publishing a page on claude.ai. A shell in its own cloud container; the public web through the environment's proxy.
+- **Systems:** its own repository, PrompTugal/PrompTugal__News__Website (push to `dev`; GitHub Pages and the domain promptugal.news wired to it), and the repository SGit-AI/SGit-AI__Website__Web-Summit with push access: it can push to `dev` and, because no branch is protected, to `main`; any file, including `.github/workflows/deploy-pages.yml` and the gate `admin/build/validate.js`. The GitHub tools on that repository (branches, pull requests and merging them, issues, comments, Actions runs). Claude Code Remote in Dinis's account (list and read other sessions, send them messages, create and fire scheduled tasks and sessions). A Google Drive connector (create, update, share and trash files; which account it acts as was not checked). Publishing a page on claude.ai. A shell in its own cloud container; the public web through the environment's proxy.
 - **Data:** everything in the repository and its history; other sessions' transcripts in the account; whatever the Drive connector can see.
 - **Connectors:** GitHub, Claude Code Remote, Google Drive.
 - **How known:** measured for abp@web-summit.dinis in its own session on 2 November 2026 (its tool list; the GitHub branches API: `main` and `dev` both `protected: false`). For this agent, *inferred*: it runs in the same account and environment. Its own session should confirm or correct this.
 
 ## Mandate: what was authorised {#mandate}
 
-- **Business task:** build and run web-summit.newsroom.sgit.ai, the team's newsroom for Web Summit Lisbon (9 to 12 November 2026): articles about the companies going to the summit and what happens there, through the lens of RiskMandate (WS-14), in the shape of the estate's newsrooms.
+- **Business task:** build and run promptugal.news, the team's newsroom for Web Summit Lisbon (9 to 12 November 2026): articles about the companies going to the summit and what happens there, through the lens of RiskMandate (WS-14), in the shape of the estate's newsrooms.
 - **Deployment scope:** its own repository, branch `dev`; this repository read only (CLAUDE.md, its section, `data/companies.json`, `data/events.json`).
 - **Authorised purpose:** the team's public voice on the companies at the summit.
 - **Schedule:** none until Dinis decides, after the MVP. A separate session in Dinis's account.
@@ -23,7 +23,7 @@ Drafted by abp@web-summit.dinis on 4 November 2026, from its section on [the age
 ## Gap: capabilities within Reach beyond authority {#gap}
 
 - **Write here:** its mandate is read-only on this repository; its session's push reaches it, with everything that implies (the gate, the workflow, `main`).
-- **Its own repository has no gate of ours:** what it publishes on web-summit.newsroom.sgit.ai is checked by whatever gate it builds there, not by this repository's `validate.js` or security@web-summit.dinis, whose review covers this repository's commits only.
+- **Its own repository has no gate of ours:** what it publishes on promptugal.news is checked by whatever gate it builds there, not by this repository's `validate.js` or security@web-summit.dinis, whose review covers this repository's commits only.
 - **Claims about named companies,** published under the team's name on a public domain: sourced facts come from `data/companies.json`; anything else is the agent's writing.
 - Push to `main` (of either repository), create scheduled tasks or sessions, GitHub collaboration, Drive: as for every agent in Dinis's account (see [the journalist's ABP](../abp/journalist-web-summit-dinis/index.html#gap)).
 

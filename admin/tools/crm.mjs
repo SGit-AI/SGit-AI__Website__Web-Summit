@@ -42,7 +42,7 @@ const pos = args.filter((a, i) => !a.startsWith('--') && !(i > 0 && args[i - 1].
 const opt = k => { const i = args.indexOf('--' + k); return i >= 0 ? args[i + 1] : undefined }
 const ROOT = path.resolve(opt('root') || path.join(HERE, '../..'))
 const CRM = path.resolve(opt('crm') || path.join(os.homedir(), '.sg-send/crm'))
-const NEWSROOM = path.resolve(opt('newsroom') || '/home/user/sgit-ai__website__newsroom__web-summit')
+const NEWSROOM = path.resolve(opt('newsroom') || '/home/user/PrompTugal__News__Website')
 const AGENT = 'conductor@web-summit.dinis'
 const HOST = 'https://dev.send.sgraph.ai'
 const VAULTS = { public: 'ws-team-crm-public', private: 'ws-team-crm-private' }
