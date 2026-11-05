@@ -681,6 +681,9 @@ svg.ch-map { min-width: 620px; max-width: 900px; }
 .crm-g .t-event circle { fill: var(--st-terra); }
 .crm-g .me circle { stroke: var(--st-gold); stroke-width: 3; }
 .crm-private { border-color: var(--warm-line); }
+.crm-allow { margin: 0.6rem 0; padding: 0.6rem 0.8rem; border: 1px solid var(--line-2); border-radius: 12px; background: var(--surface-2); }
+.crm-allow.ask { border-color: var(--warm); background: var(--warm-soft); animation: sv-shake 0.5s; }
+.crm-frame iframe { height: min(80vh, 46rem); }
 .crm-plist { list-style: none; padding: 0; margin: 0.6rem 0 0; display: grid; gap: 0.5rem; }
 .crm-plist li { margin: 0; padding: 0.6rem 0.8rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); }
 .crm-plist li.opened { border-color: var(--ok); background: var(--ok-soft); }

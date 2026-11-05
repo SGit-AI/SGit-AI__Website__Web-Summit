@@ -159,7 +159,9 @@ const SCHEMAS = {
 function appFiles(which) {
     const dir = vdir(which)
     const tpl = fs.readFileSync(path.join(HERE, 'crm_app.html.tpl'), 'utf8')
-    fs.writeFileSync(path.join(dir, 'index.html'), tpl.replace("const WHICH = /*__WHICH__*/''", `const WHICH = /*__WHICH__*/${JSON.stringify(which)}`))
+    // the origins whose /crm/ page may answer the app's unseal requests; CRM_APP_ORIGINS adds one for a test (then rebuild without it)
+    const origins = ['https://web-summit.sgit.ai', ...(process.env.CRM_APP_ORIGINS || '').split(',').filter(o => /^https?:\/\/[a-z0-9.-]+(:\d+)?$/.test(o))]
+    fs.writeFileSync(path.join(dir, 'index.html'), tpl.replace("const WHICH = /*__WHICH__*/''", `const WHICH = /*__WHICH__*/${JSON.stringify(which)}`).replace("const BRIDGE_ORIGINS = /*__ORIGINS__*/['https://web-summit.sgit.ai']", `const BRIDGE_ORIGINS = /*__ORIGINS__*/${JSON.stringify(origins)}`))
     const manifest = { entry: 'index.html', present: true, auto_open: true, title: which === 'public' ? 'The team CRM (public)' : 'The team CRM (private)', hud: { mode: 'minimal' }, permissions: { fs: { read: true } } }
     wj(path.join(dir, 'app.json'), manifest); wj(path.join(dir, '.vault/app.json'), manifest)
     for (const [f, s] of Object.entries(SCHEMAS)) wj(path.join(dir, 'schemas', f), { $schema: 'https://json-schema.org/draft/2020-12/schema', ...s })

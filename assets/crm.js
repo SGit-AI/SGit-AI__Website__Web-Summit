@@ -162,6 +162,11 @@
             win.innerHTML = '<button type="button">Open the private CRM in a new window</button> <span class="meta">(SG/Vault, with full access: the key stays in the address fragment of that window)</span>'
             win.querySelector('button').onclick = () => window.open('https://dev.vault.sgraph.ai/#' + vk, '_blank', 'noopener')
             out.before(win)
+            // the third way: the private CRM's own app embedded here, with unsealing through this page (the dance)
+            const here = document.createElement('div'); here.className = 'crm-here'
+            here.innerHTML = '<p class="crm-win"><button type="button" data-here>Open the CRM app here, with unsealing</button> <span class="meta">(SG/Vault in this page; when the app asks for a sealed record, this page opens it with your key and hands back only that record)</span></p>'
+            here.querySelector('[data-here]').onclick = () => { here.querySelector('.crm-win').hidden = true; bridge(here, v, vk) }
+            out.before(here)
             out.innerHTML = `<p class="meta">${nodes.length} record${nodes.length === 1 ? '' : 's'} in ${esc(CFG.private.name)} (${esc(CFG.private.vault_id)}). Layer 2: each sealed record opens only if you are in its audience.</p><ol class="crm-plist">${nodes.map(n => `<li data-f="${esc(n.file)}"><b>${esc(n.sealed ? '🔒 ' + n.type : label(n))}</b> <span class="meta">${esc(n.file)}</span><div class="crm-pbody meta">${n.sealed ? 'Opening...' : esc(sub(n))}</div></li>`).join('')}</ol>`
             for (const n of nodes.filter(n => n.sealed)) {
                 const li = out.querySelector(`[data-f="${CSS.escape(n.file)}"]`), body = li.querySelector('.crm-pbody')
@@ -177,6 +182,59 @@
                 } catch (err) { body.textContent = 'Could not open it: ' + (err.message || err) }
             }
         } catch (e) { btn.disabled = false; btn.textContent = 'Try again'; out.innerHTML = `<p class="meta">Could not open the private CRM: ${esc(e.message || e)}</p>` }
+    }
+    // ---------- the bridge (WS-170, "the dance") ----------
+    // The private CRM's app runs at dev.vault.sgraph.ai, in a sandboxed frame with an opaque origin, inside the vault
+    // host's frame, inside this page. It cannot reach this site's storage, where the person's key lives. So it asks this
+    // page, by postMessage, to open one sealed record by its path. This page answers only:
+    //   - messages from inside the frame it embedded (e.source is that iframe's window or a descendant of it),
+    //   - for a path that names a sealed record in the private vault (a strict pattern, no ".."),
+    //   - after the person said yes once on this page, at most 30 a minute,
+    //   - when the person is in that record's audience; never for a key record.
+    // It reads the envelope itself, from the vault it holds open (it never trusts bytes from the app), opens it with the
+    // person's key, and sends back only the record. The vault key, the record's key (CEK) and the person's key never cross.
+    const SEALED_PATH = /^(actions|contacts|companies|schedules|keys)\/[a-z0-9][a-z0-9_-]*(\/[a-z0-9][a-z0-9_-]*)?\.sealed\.json$/
+    function bridge(box, v, vk) {
+        let allowed = false, served = 0
+        const times = []
+        box.insertAdjacentHTML('beforeend', `<div class="crm-allow" data-allow><p><b>Allow the CRM app to open the records sealed to you?</b> It asks this page; this page opens each record with your key, here, and hands back only that record (not your key, not the vault key).</p><p><button type="button" class="crm-go" data-yes>Yes, for this visit</button> <span class="meta" data-log>Unsealed for the app: 0 records.</span></p></div><div class="sv-vault crm-frame"></div>`)
+        const frame = document.createElement('iframe')
+        frame.title = 'The private CRM\'s app (SG/Vault, full access), with unsealing through this page'
+        frame.allow = 'fullscreen; clipboard-write'; frame.allowFullscreen = true
+        frame.src = 'https://dev.vault.sgraph.ai/#' + encodeURIComponent(vk)
+        box.querySelector('.crm-frame').appendChild(frame)
+        box.querySelector('[data-yes]').onclick = e => { allowed = true; e.target.disabled = true; e.target.textContent = 'Allowed for this visit' }
+        const log = () => { box.querySelector('[data-log]').textContent = `Unsealed for the app: ${served} record${served === 1 ? '' : 's'}.` }
+        const fromFrame = src => {                                       // the embedded frame or a frame nested inside it
+            for (let w = src, i = 0; w && i < 6; i++) { if (w === frame.contentWindow) return true; let p; try { p = w.parent } catch { return false } if (p === w) return false; w = p }
+            return false
+        }
+        // replies go to the exact window that asked, with targetOrigin '*': the app's frame is sandboxed without
+        // allow-same-origin, so its origin is opaque ("null") and cannot be named as a target; e.source pins the receiver
+        const reply = (e, msg) => { try { e.source.postMessage(msg, '*') } catch { } }
+        addEventListener('message', async e => {
+            const d = e.data
+            if (!d || typeof d !== 'object' || d.v !== 1 || typeof d.nonce !== 'string' || !/^ws-crm-unseal-(ping|request)$/.test(d.type)) return
+            if (!fromFrame(e.source)) return                               // anything else on the page: ignored, no answer
+            if (d.type === 'ws-crm-unseal-ping') return reply(e, { type: 'ws-crm-unseal-pong', nonce: d.nonce, allowed })
+            const no = reason => reply(e, { type: 'ws-crm-unseal-result', nonce: d.nonce, ok: false, reason })
+            const path = String(d.path || '')
+            if (path.includes('..') || !SEALED_PATH.test(path)) return no('not a sealed record path')
+            if (!allowed) { box.querySelector('[data-allow]').classList.add('ask'); return no('say yes on the page first: "Allow the CRM app to open the records sealed to you?"') }
+            const t = Date.now(); while (times.length && t - times[0] > 60000) times.shift()
+            if (times.length >= 30) return no('too many requests: at most 30 a minute')
+            times.push(t)
+            try {
+                const env = await readJson(v, path)                          // read by this page, from the vault it holds open
+                if (env.v !== 'ws-crm-env-1') return no('not a sealed record')
+                if (env.kind === 'vault-key') return no('a key record opens only on the page itself')
+                const r = (env.recipients || []).find(x => x.to === KR.person && x.key === KR.fingerprint)
+                if (!r) return no(`sealed to ${(env.audience || []).join(', ')}: not to ${KR.person}`)
+                const record = await openRecord(env, r)
+                served++; log()
+                reply(e, { type: 'ws-crm-unseal-result', nonce: d.nonce, ok: true, record })
+            } catch (err) { no('could not open it: ' + String(err.message || err).slice(0, 120)) }
+        })
     }
     async function openRecord(env, r) {
         const { cek } = await KR.open(r.env)                                     // ws-ecies-1 to your site key
