@@ -8,15 +8,14 @@
 // The person's agents choose: they set a Highlight whenever something they did becomes the most important thing.
 import fs from 'fs'
 import path from 'path'
-import { execFileSync } from 'child_process'
+import { since } from './gitlog.mjs'
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
 
 export function highlights(ROOT, teamData) {
     let log = []
     try {
-        const raw = execFileSync('git', ['log', '--since=14 days ago', '--format=%H%x1f%cI%x1f%s%x1f%b%x1e'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()
-        log = raw.split('\x1e').map(r => r.trim()).filter(Boolean).map(r => { const [h, at, s, b] = r.split('\x1f'); return { h, at, s, b: b || '' } })
+        log = since(ROOT, Date.now() - 14 * 864e5).map(({ sha: h, at, s, b }) => ({ h, at, s, b }))
     } catch { /* no git: only the files count */ }
     const ownerOf = c => { const m = (c.b.match(/^Agent:\s*\S+@web-summit\.([a-z0-9-]+)\s*$/m) || c.s.match(/^\S+@web-summit\.([a-z0-9-]+):/) || [])[1]; return m }
     const out = []

@@ -15,6 +15,7 @@ import { orgchartSvg } from './orgchart.mjs'
 import { homeBlocks, expandHome } from './home.mjs'
 import { expandSignoff } from './signoff-ui.mjs'
 import { keysPage as pkiKeysPage } from './pki.mjs'
+import * as GIT from './gitlog.mjs'
 import { highlights, highlightsHtml, highlightsMd, withHighlights } from './highlights.mjs'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
@@ -513,7 +514,7 @@ const INV = getINV()
 // whole history, read once; a recipient is an agent name or a person's id
 CHARTS['agents-map'] = (() => {
     let talks = null
-    const read = () => { const m = new Map(); try { for (const b of execFileSync('git', ['log', '--format=%b%x1e'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString().split('\x1e')) {
+    const read = () => { const m = new Map(); try { for (const { b } of GIT.history(ROOT)) {
         const from = (b.match(/^Agent: *([a-z0-9-]+@web-summit\.[a-z0-9-]+)/m) || [])[1]; if (!from) continue
         for (const line of b.match(/^For: *(.+)$/gm) || []) for (const to of line.slice(4).split(/,\s*/).map(x => x.trim()).filter(x => /^[a-z0-9-]+(@web-summit\.[a-z0-9-]+)?$/.test(x))) { const k = `${from}|${to}`; m.set(k, (m.get(k) || 0) + 1) }
     } } catch { } return [...m].map(([k, n]) => { const [from, to] = k.split('|'); return { from, to, n } }) }
@@ -644,7 +645,7 @@ const CC = await import(path.join(ROOT, 'admin/build/commandcentre.mjs'))
 // dashboard@web-summit.dinis (the panels' content) and designer@web-summit.dinis (the look).
 const ME = { built_at: new Date().toISOString(), version: VERSION, people: {} }
 const DAYS14 = [...Array(10)].map((_, k) => new Date(Date.now() - (9 - k) * 864e5).toISOString().slice(0, 10))
-const daily = (() => { const by = {}; try { for (const l of execFileSync('git', ['log', '--since=10 days ago', '--format=%cI%x1f%s%x1f%b%x1e'], { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 << 20 }).split('\x1e')) { const [at, sub, body] = l.trim().split('\x1f'); if (!at || /^site v\d/.test(sub)) continue; const d = at.slice(0, 10); for (const p of new Set([...`${sub}\n${body || ''}`.matchAll(/@web-summit\.([a-z0-9-]+)/g)].map(x => x[1]))) { by[p] ??= {}; by[p][d] = (by[p][d] || 0) + 1 } } } catch {} return id => DAYS14.map(d => (by[id] || {})[d] || 0) })()
+const daily = (() => { const by = {}; try { for (const { at, s: sub, b: body } of GIT.since(ROOT, Date.now() - 10 * 864e5)) { if (/^site v\d/.test(sub)) continue; const d = at.slice(0, 10); for (const p of new Set([...`${sub}\n${body || ''}`.matchAll(/@web-summit\.([a-z0-9-]+)/g)].map(x => x[1]))) { by[p] ??= {}; by[p][d] = (by[p][d] || 0) + 1 } } } catch {} return id => DAYS14.map(d => (by[id] || {})[d] || 0) })()
 for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const dir = path.join(ROOT, 'people', m.id, 'app')
     if (!fs.existsSync(path.join(ROOT, 'people', m.id))) continue
@@ -848,9 +849,7 @@ ${(events.gaps || []).length ? `<h2 id="gaps">What we could not confirm</h2>${li
     const GH = `${REPO}/commit/`
     let commits = [], note = ''
     try {
-        const raw = execFileSync('git', ['log', '--since=2026-10-25', '--format=%H%x1f%cI%x1f%s%x1f%b%x1e'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()
-        commits = raw.split('\x1e').map(r => r.trim()).filter(Boolean).map(r => {
-            const [sha, at, subject, body = ''] = r.split('\x1f')
+        commits = GIT.since(ROOT, '2026-10-25T00:00:00').map(({ sha, at, s: subject, b: body }) => {
             const agent = (body.match(/^Agent: *(\S+)/m) || [])[1] || (subject.match(/^([a-z0-9-]+@web-summit\.[a-z0-9-]+):/) || [])[1] || ''
             const session = (body.match(/^Claude-Session: *(https:\/\/claude\.ai\/code\/session_[A-Za-z0-9]+)/m) || [])[1] || ''
             const release = (subject.match(/^site (v\d+\.\d+\.\d+): (.*)$/) || []).slice(1)

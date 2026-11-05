@@ -3,7 +3,7 @@
 // across. Built from the inventory (admin/build/inventory.mjs) and the git log: deterministic, an inline SVG, no assets.
 import fs from 'fs'
 import path from 'path'
-import { execFileSync } from 'child_process'
+import { history } from './gitlog.mjs'
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
@@ -18,8 +18,7 @@ export function orgchartSvg(ROOT, INV) {
     // messages between agents: "For: <names>" in a commit whose Agent: is another agent
     const edges = new Map()
     try {
-        const raw = execFileSync('git', ['log', '--format=%b%x1e'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()
-        for (const b of raw.split('\x1e')) {
+        for (const { b } of history(ROOT)) {
             const from = (b.match(/^Agent: ([a-z0-9-]+@web-summit\.[a-z0-9-]+)/m) || [])[1], to = (b.match(/^For: (.+)$/m) || [])[1]
             if (!from || !to) continue
             for (const t of to.split(/,\s*/).map(x => x.trim()).filter(x => /@web-summit\./.test(x))) { const k = `${from}|${t}`; edges.set(k, (edges.get(k) || 0) + 1) }

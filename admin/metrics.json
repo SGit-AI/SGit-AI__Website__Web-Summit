@@ -214,6 +214,15 @@
       "pages": 465,
       "validate_seconds": 5.21,
       "build_seconds": 3.59
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: the history read once per build. Profiled the build: 1.5 s in git processes, eight modules each reading the whole history for the same commits (build.mjs three times, orgchart, inventory, pki, meetings, highlights). admin/build/gitlog.mjs reads it once, memoized; each filters its own window. Output byte-identical (old and new code built back to back with BUILD_NOW pinned: only built_at differs). Build 3.87 -> 3.45 s, gate 5.27 -> 4.92 s (medians of three, 478 pages). Next: QR codes for the 49 keys are 1.2 s of the rest (pki.mjs, security's).",
+      "pages": 478,
+      "validate_seconds": 4.92,
+      "build_seconds": 3.45
     }
   ]
 }

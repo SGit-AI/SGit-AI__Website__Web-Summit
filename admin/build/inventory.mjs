@@ -4,7 +4,7 @@
 // that ever committed, with its first and last commit and how many). Nobody has to remember to register.
 import fs from 'fs'
 import path from 'path'
-import { execFileSync } from 'child_process'
+import { history } from './gitlog.mjs'
 
 export function inventory(ROOT, teamData) {
     const people = teamData.members.filter(m => m.kind === 'human')
@@ -13,9 +13,7 @@ export function inventory(ROOT, teamData) {
     for (const m of people) for (const n of m.agents || []) add(n, { declared: true })
     for (const m of people) { const f = path.join(ROOT, 'people', m.id, 'agents.json'); if (fs.existsSync(f)) for (const a of JSON.parse(fs.readFileSync(f, 'utf8'))) add(a.name, { declared: true, job: a.job, schedule: a.schedule, session: a.session }) }
     try {
-        const raw = execFileSync('git', ['log', '--format=%cI%x1f%s%x1f%b%x1e'], { cwd: ROOT, maxBuffer: 64 << 20 }).toString()
-        for (const rec of raw.split('\x1e').map(r => r.trim()).filter(Boolean).reverse()) {
-            const [at, s, b] = rec.split('\x1f')
+        for (const { at, s, b } of [...history(ROOT)].reverse()) {
             if (/^site v[0-9]/.test(s)) continue                                   // CI's release commits repeat the subject
             const names = new Set([...(`${s}\n${b || ''}`).matchAll(/(?:^|\n|Agent: )([a-z0-9-]+@web-summit\.[a-z0-9-]+)(?=:|\s|$)/g)].map(x => x[1]))
             for (const n of names) { const cur = agents.get(n); add(n, { commits: (cur?.commits || 0) + 1, first: cur?.first || at.slice(0, 16).replace('T', ' '), last: at.slice(0, 16).replace('T', ' ') }) }
