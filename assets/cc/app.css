@@ -681,6 +681,7 @@ html.cc-on[data-theme="light"] .cc-hero .cc-btn.tint { background: #fff; border-
 .cc-news { border-color: color-mix(in srgb, var(--rm-gold) 40%, var(--rm-card-line, var(--rm-border))); }
 .cc-newslist { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font: 400 14px/21px var(--rm-font); color: var(--rm-text-secondary); }
 .cc-newslist b { color: var(--rm-text); font-weight: 600; }
+.cc-newslist code { font-size: 12.5px; padding: 1px 6px; border-radius: 6px; background: var(--rm-chip-bg); color: var(--rm-text); overflow-wrap: anywhere; }
 /* photos: over the initials, round, cropped to the face */
 .cc-avatar, .cc-switch .av { position: relative; overflow: hidden; }
 .cc-avatar img, .cc-switch .av img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
