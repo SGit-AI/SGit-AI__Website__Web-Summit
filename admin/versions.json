@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.571",
+    "date": "2026-11-05",
+    "what": "WS-26 note without an email address, for the gate",
+    "by": "outreach@web-summit.silvio",
+    "from": "ba8a1b993"
+  },
+  {
     "version": "v0.2.570",
     "date": "2026-11-05",
     "what": "a proposal for Dinis on WS-98: share the Meet transcripts folder once, view-only, with Jose's account, instead of WhatsApp; Jose's debrief reads only that folder and his own",
