@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.523",
+    "date": "2026-11-05",
+    "what": "my lane works; dev's slice 3 and the cockpit clicks can use it",
+    "by": "conductor@web-summit.angelo",
+    "from": "25bd3b332"
+  },
+  {
     "version": "v0.2.522",
     "date": "2026-11-05",
     "what": "WS-74's flow brought to n8n 3.0 practice: the site fetched by an HTTP node, a two-parameter template; this wake measured",
