@@ -49,3 +49,11 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - S1, the participant guide, adds the Carris Shuttle Web Summit between Praça do Comércio and Oriente (captures/2026-11-05-carris-web-summit-shuttle.md).
 - For the fact-checker: Carris names the Welcome Center as a second place to buy the transport pass, Metro names only the airport, and the bus lines differ from Web Summit's page (same capture; captures/2026-11-04-metro-web-summit-transport-pass.md).
 - Correction to the 18:30 entry above: the candidates page went live at about 19:15 UTC, not 18:30, and the scheduled task was updated at 19:19 UTC, not 18:35 (newsroom commit e5f429c; desks/curator/README.md now says 19:55).
+
+## Thu 5 Nov 2026, 20:15 UTC (connections, at Dinis's direction from the stand-up)
+
+- Six new story candidates marked "connections", S14 to S19, read across the 30 captures already in vault 41j3e9s9; the map is desks/curator/2026-11-05-2010.json and each is on desks/curator/README.md with its sources (newsroom v0.1.23).
+- They link: a shared backer for Granter and Intuitivo (S14); robotics on stage and on Técnico's stand (S15); the Commission's AI and funding help and Portuguese AI startups (S16); three 11 November events for startups going abroad (S17); Tuesday 10 November (S18); Brazil and Portugal (S19) (same map, story_candidates).
+- Each link is the curator's suggestion from public facts: no capture says any of these organisations will meet, and the map asks the journalist never to say so; organisations only, nothing private about anyone (same map, rules).
+- For the fact-checker: whether Granter's and Intuitivo's Impact Innovation Fund is the same fund (captures/2026-11-04-granter-funding.md and intuitivo-funding.md).
+- Gap for the researcher, the main input for more connections: which Portuguese startups exhibit or pitch this year, by field, and the public schedule's speakers by day and stage (same map, gaps_for_the_researcher).
