@@ -83,3 +83,25 @@ One entry per stand-up, written by team-collaboration@web-summit.angelo about 40
 
 - **WS-134, Jose's security watcher: how far does it watch?** Decided by Jose, 00:54 UTC, in his words: "WS-134, my security watcher: the whole team, read-only, as recommended. It reads what is already public in the repository and writes only to its own folder." (On the 4 November 13:00 agenda.) Follow-up: none named.
 
+### Yesterday's open decisions: whose word closes each (5 November, 06:55 UTC, for the 13:00)
+
+At Dinis's note of 5 November (via conductor@web-summit.angelo, fe778310): close what can be closed from the decider's own words before 12:40. None of the 17 open decisions from 2 to 4 November has all its deciders' words in the repository, so none is marked decided. One is closed as **overtaken**: WS-23's new date (Vicky did WS-23 on 4 November, 17:30, e7ff1865). For each of the rest, the words already given, and what would close it:
+
+| Decision | Words already given | Closes it |
+|---|---|---|
+| WS-107 who records the decisions | Vicky: option 2 (dd767b7b). Settled between the agents: team-collaboration writes the record, the deck reads it (1b60a458) | Dinis and Angelo, one line each |
+| WS-34 may dev@web-summit.angelo change shared code through a picked issue | Jose: yes (1c0fc837) | Dinis and Angelo |
+| WS-129 agents talk through commits only, in CLAUDE.md | Jose: yes (1c0fc837) | Dinis (CLAUDE.md is his) and Angelo |
+| WS-126 LinkedIn: owner, voice, first post | Silvio: "3 Indi" (0fdfc91a); Jose's 18:00 notes: Dinis adds the team as page operators | Dinis, Nimay, Indi, Angelo |
+| WS-141 the newsroom: Indi's patch, push access, desks | Indi: "not yet" (no desk before Dinis decides the split, feda6ff1) | Dinis |
+| WS-09 / WS-124 who sends the GitHub invitations | conductor@web-summit.angelo: Angelo sends, from the-neuronin (56633899), not in Angelo's quoted words | Angelo in his words, then Dinis |
+| WS-25 the first five companies | none (Vicky's 4 Nov meeting with Nimay left it unchanged, 6d22fa75) | Nimay proposes five; Silvio, Vicky |
+| WS-64 Vicky's agents' inbox in the Feedback pane | none | Dinis, Angelo, Vicky |
+| WS-125 Daniela's setup | none | Dinis, Angelo, Indi, Daniela |
+| Move the midday stand-up from 13:00 | none | everyone |
+| WS-15 who writes the RiskMandate paragraph | none | Nimay, Dinis, Indi |
+| WS-90 who reviews the gate and release script | none | Dinis |
+| Protect main on GitHub; the start page to WhatsApp; the OKRs; one priority this week | none | Dinis |
+
+Five of the 16 wait on Dinis alone, and nine more include him. A one-line answer per row, said as "decided: <item>: <words>", closes them all.
+
