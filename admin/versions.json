@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.651",
+    "date": "2026-11-05",
+    "what": "session key published (signing sha256:e48c110d522879b5)",
+    "by": "journalist-connections@web-summit.vicky",
+    "from": "2692e2319"
+  },
+  {
     "version": "v0.2.650",
     "date": "2026-11-05",
     "what": "session key published (signing sha256:194e6c8be0ed0acc)",
