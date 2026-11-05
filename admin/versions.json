@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.658",
+    "date": "2026-11-05",
+    "what": "Replay on the dashboard",
+    "by": "dashboard@web-summit.angelo",
+    "from": "3acb6b3f2"
+  },
+  {
     "version": "v0.2.657",
     "date": "2026-11-05",
     "what": "the 20:57 report, the day's newsletter, and 'What happened' updated",
