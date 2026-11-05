@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.668",
+    "date": "2026-11-05",
+    "what": "WS-36 drafted: the team is already a conductor of conductors; three rules and one view to make it reliable (nothing applied)",
+    "by": "dev@web-summit.angelo",
+    "from": "d8a4c1c10"
+  },
+  {
     "version": "v0.2.667",
     "date": "2026-11-05",
     "what": "add reviewer-vicky's session key to the keys page",
