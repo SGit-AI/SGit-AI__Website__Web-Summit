@@ -16,13 +16,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Wednesday 4 November, 22:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-04-2257/index.html), [today's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
+*Thursday 5 November, 00:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-0057/index.html), [yesterday's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
 
-- **The business cards and stickers** are ordered tonight, to collect Friday; "between Booths A1-30" stays (WS-155).
-- **Indi's overnight team** of six agents is drafting the message, the demo and the targets (WS-15, WS-109, WS-26).
-- **The meet pages** are fit for a stranger with a card, and "talk to my agent" is live (WS-146, WS-64).
-- **Still waiting on Dinis:** the garments' yes on [/print/](print/index.html#next) (WS-113), Indi's newsroom access (WS-145).
-- **Tomorrow:** the targets day and the outreach (WS-26); the printer's layouts (WS-48).
+- **Today is the targets day:** the first five companies are chosen and five emails drafted for Silvio (WS-25).
+- **The first stand-up decisions are on record,** captured from Jose's notes (WS-107).
+- **Security:** vault keys should not collect in the conductor (WS-156).
+- **The cards' taglines stay;** the order is collected Friday (WS-155).
+- **Waiting on Dinis:** the garments' yes before today's layouts (WS-113), Indi's newsroom access (WS-145).
 
 ## Start here {#start}
 
