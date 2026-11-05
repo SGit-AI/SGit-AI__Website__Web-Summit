@@ -228,6 +228,7 @@ def main():
                     rows.append(ev); done[token].append(f['file_id'])
         # S (raw): by the hour each record happened in
         touched |= lets.save_raw(o.vault, rows)
+    if rows: lets.DRAINS.append({'at': time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime()), 'by': os.environ.get('OBS_BY', 'hourly'), 'records': len(rows), 'via': 'drain'})
     now_hour = (time.strftime('%Y-%m-%d', time.gmtime()), time.strftime('%H', time.gmtime()))
     stamp = time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime())
     if touched or rows or from_browser:

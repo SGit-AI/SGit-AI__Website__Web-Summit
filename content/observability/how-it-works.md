@@ -35,9 +35,13 @@ The drain does the analysis **when it drains**, not when someone looks: a page l
 | `latest/agents.json` | every agent (and every key on the keys page that never logged): runs, reads by kind, what it read, what it did, its checklist | Agents, an agent's view |
 | `latest/team.json` | each person: pages read, views, reads, time, scroll | People, a person's view |
 | `latest/widgets.json` | the dashboard, already evaluated: silent agents, checklists, acted without the board, md or html, the read index for "has X read Y" | the dashboard |
+| `latest/timeline.json` | every hour so far: views per group, reads, agent runs, team members seen | the timeline |
+| `latest/feed.json` | the newest 300 events of the last 12 hours: the team's views and reads (by key), agents' runs, and anonymous traffic **only as per-minute counts** per page and group | the live feed |
+| `latest/findings.json` | every signature that failed: when, page or agent, the reason, the key claimed | security events |
+| `latest/drains.json` | every drain: when, by whom (the hourly drain, or a person from their browser), how many records | the drains log |
 | `latest/runs.json`, `latest/index.json` | the latest 200 runs; which days and hours exist and when each was computed | |
 | `<day>/day.json` | the day: totals, its 24 hours per group, pages, the team, the agents' runs | a day's view |
-| `<day>/<hh>/hour.json` | one hour: the same | an hour's view |
+| `<day>/<hh>/hour.json` | one hour: the same, plus its minutes per group | an hour's view |
 
 `latest/` is the cache: replaced on every drain, so the first file a page reads is always small and current; the dated folders below it are the history, and do not change once their hour is over.
 
@@ -49,7 +53,7 @@ The drain does the analysis **when it drains**, not when someone looks: a page l
 | `aym98gsm` | **public**: the transformed files above, and the app | published on [the vaults page](../../vaults/index.html) |
 | `p96tiql4` | the app, code only (`people/dinis/observability/app/index.htm`) | published |
 
-The three vault keys and the SG/Send access token are sealed to **Dinis's site key** (`people/dinis/observability/sealed-keys.json`, ws-ecies-1), so only a browser holding his key opens them. Note (WS-138): the conductor that issued his key holds its private half too.
+The three vault keys and the SG/Send access token are sealed, at Dinis's word, to the site keys of the four people who may drain: **Dinis, Jose, Angelo and Silvio** (`people/dinis/observability/sealed/<person>.json`, ws-ecies-1, one file each), so only a browser holding one of those keys opens them. Note (WS-138): the conductor that issued his key holds its private half too.
 
 ## The explorer, and Behind the scenes {#explorer}
 
@@ -57,7 +61,7 @@ The pages of this section are one explorer (`assets/obs-view.js`), its state in 
 
 It reads the public vault **lazily**: it computes the HEAD's id from the read key, decrypts the commit, and walks only the folders on the path it needs (`latest/`, then a day or an hour), so a view costs a handful of objects. **Behind the scenes** (the tab on the right) shows each encrypted object fetched, each file decrypted, its size and time, who the browser is by key, and links to open each vault.
 
-**For Dinis only:** when the browser holds his site key, it opens the sealed vault keys, links each vault opened with its **vault key**, and offers **Drain the lanes now**: it opens the data vault with the SG/Vault library (pinned copy), derives the enum key, lists and fetches the lanes, opens each record with the drain key to show it (your own page views appear), writes them **still sealed** to the data vault's `inbox/`, pushes, and marks them processed. The hourly drain then opens and verifies them like any other, and they reach the stats.
+**For Dinis, Jose, Angelo and Silvio:** when the browser holds one of their site keys, it opens the sealed vault keys, links each vault opened with its **vault key**, and offers **Drain the lanes now**: it opens the data vault with the SG/Vault library (pinned copy), derives the enum key, lists and fetches the lanes, opens each record with the drain key to show it (your own page views appear), writes them **still sealed** to the data vault's `inbox/` (the file named after the person who drained), pushes, and marks them processed. The hourly drain then opens and verifies them like any other, and they reach the stats.
 
 ## What runs {#runs}
 
