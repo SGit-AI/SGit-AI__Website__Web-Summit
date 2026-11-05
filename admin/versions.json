@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.436",
+    "date": "2026-11-05",
+    "what": "a two-row top bar with your strip on every page, the For-you panel only on your dashboard, and the left menu as a menu of pages",
+    "by": "dashboard@web-summit.dinis",
+    "from": "aff9d3040"
+  },
+  {
     "version": "v0.2.435",
     "date": "2026-11-05",
     "what": "the cockpit's actions on the right: one entry per click, kept in the browser, Submit at the top, to send / sent / processed",
