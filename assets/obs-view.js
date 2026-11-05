@@ -37,17 +37,26 @@
     const t0 = performance.now()
     const log = (kind, msg, extra) => { const e = { t: ((performance.now() - t0) / 1000).toFixed(2), kind, msg, extra }; LOG.push(e); listeners.forEach(f => f(e)) }
     const pane = h('aside', { class: 'obsd-pane', hidden: '' })
-    const toggle = h('button', { type: 'button', class: 'obsd-toggle', title: 'What happens behind the scenes', text: 'Behind the scenes', onclick: () => { pane.hidden = !pane.hidden; toggle.classList.toggle('on', !pane.hidden); try { localStorage.setItem('ws.obsd.pane', pane.hidden ? '0' : '1') } catch { } } })
+    // a side panel like the feedback pane: the page moves left to make room (html.obsd-docked), the left edge drags to resize
+    const setOpen = open => { pane.hidden = !open; toggle.classList.toggle('on', open); document.documentElement.classList.toggle('obsd-docked', open); try { localStorage.setItem('ws.obsd.pane', open ? '1' : '0') } catch { } }
+    const toggle = h('button', { type: 'button', class: 'obsd-toggle', title: 'What happens behind the scenes', text: 'Behind the scenes', onclick: () => setOpen(pane.hidden) })
+    const setW = w => { w = Math.round(Math.max(300, Math.min(w, innerWidth * 0.7, 1100))); document.documentElement.style.setProperty('--obsd-w', w + 'px'); return w }
+    try { const w = +localStorage.getItem('ws.obsd.w'); if (w) setW(w) } catch { }
+    const grip = h('div', { class: 'obsd-grip', role: 'separator', 'aria-orientation': 'vertical', 'aria-label': 'Drag to resize', tabindex: '0' })
+    grip.onpointerdown = e => { e.preventDefault(); grip.setPointerCapture(e.pointerId); grip.classList.add('on') }
+    grip.onpointermove = e => { if (grip.classList.contains('on')) setW(innerWidth - e.clientX) }
+    grip.onpointerup = e => { grip.classList.remove('on'); try { localStorage.setItem('ws.obsd.w', parseInt(getComputedStyle(document.documentElement).getPropertyValue('--obsd-w'))) } catch { } }
+    grip.onkeydown = e => { const d = { ArrowLeft: 40, ArrowRight: -40 }[e.key]; if (d) { e.preventDefault(); const w = setW((parseInt(getComputedStyle(document.documentElement).getPropertyValue('--obsd-w')) || 440) + d); try { localStorage.setItem('ws.obsd.w', w) } catch { } } }
     const sec = (title, body) => h('section', {}, [h('h4', { text: title }), body])
     const whoBox = h('div'), vaultBox = h('div'), actBox = h('div'), filesBox = h('div'), logBox = h('ol', { class: 'obsd-log' })
-    pane.append(h('header', {}, [h('b', { text: 'Behind the scenes' }), h('button', { type: 'button', text: '×', onclick: () => toggle.click() })]),
+    pane.append(grip, h('header', {}, [h('b', { text: 'Behind the scenes' }), h('button', { type: 'button', text: '×', onclick: () => setOpen(false) })]),
         sec('Who this browser is', whoBox), sec('The vaults', vaultBox), sec('Actions', actBox), sec('Encrypted files read', filesBox), sec('Log', logBox))
     listeners.push(e => { logBox.append(h('li', { class: 'k-' + e.kind }, [h('span', { text: e.t + 's' }), ' ', h('b', { text: e.kind }), ' ', e.msg])); logBox.scrollTop = logBox.scrollHeight })
     const drawFiles = () => { filesBox.textContent = ''; filesBox.append(h('table', {}, [h('tr', {}, ['File', 'Objects', 'Bytes', 'ms'].map(x => h('th', { text: x }))),
         ...FILES.map(f => h('tr', {}, [h('td', {}, [code(f.path)]), h('td', { text: f.objects }), h('td', { text: fmt(f.bytes) }), h('td', { text: f.ms })]))]),
         h('p', { class: 'obsd-m', text: `${FILES.length} files, ${fmt(FILES.reduce((a, f) => a + f.bytes, 0))} bytes of ciphertext, all decrypted here with Web Crypto.` })) }
     document.body.append(toggle, pane)
-    try { if (localStorage.getItem('ws.obsd.pane') === '1') { pane.hidden = false; toggle.classList.add('on') } } catch { }
+    try { if (localStorage.getItem('ws.obsd.pane') === '1') setOpen(true) } catch { }
 
     // ------------------------------------------------------------------ a lazy reader: walks only the path it needs
     const cfg = { endpoint: boxes[0].dataset.endpoint, vault_id: boxes[0].dataset.vault, read_key: boxes[0].dataset.key.replace(/^sgit_public_read_/, '') }
@@ -312,7 +321,7 @@
         running = true; runBtn.disabled = true; runBtn.textContent = 'Draining…'; justBox.textContent = ''
         stepList.textContent = ''; STEPS.forEach(t => stepList.append(h('li', {}, [t, ' ', h('small')])))
         started = performance.now(); timer = setInterval(() => { status.textContent = `${((performance.now() - started) / 1000).toFixed(1)} s` }, 100)
-        if (pane.hidden) toggle.click()
+        if (pane.hidden) setOpen(true)
         drain().then(n => { status.textContent = `done in ${((performance.now() - started) / 1000).toFixed(1)} s: ${n} records` })
             .catch(x => { status.textContent = 'stopped: ' + (x && x.message || x); log('error', String(x && x.message || x)); const cur = stepList.querySelector('.run'); if (cur) cur.className = 'err' })
             .finally(() => { clearInterval(timer); running = false; runBtn.disabled = false; runBtn.textContent = 'Drain again' })
@@ -402,10 +411,14 @@
 .obsv-bars{width:100%;height:auto}.obsv-bars text{fill:currentColor;opacity:.6;font-size:10px}.obsv-bars a:hover rect{opacity:.8}.obsv-chips{display:flex;flex-wrap:wrap;gap:6px}.obsv-chips .chip{border:1px solid #8885;border-radius:14px;padding:2px 10px;font-size:13px;text-decoration:none}.obsv-chips .chip.sel{background:#1f9d6b;color:#fff;border-color:#1f9d6b}.obsv-chips .chip.f{background:#8881}
 .obsv-graph{width:100%;height:auto;border:1px solid #8883;border-radius:8px}.obsv-graph text{fill:currentColor;font:11px ui-monospace,monospace}.obsv-graph a:hover circle{fill-opacity:1;stroke:currentColor}.obsv-open{text-decoration:none;opacity:.55;font-size:12px}.obsv-open:hover{opacity:1}
 .obsv-card{border:1px solid #8884;border-radius:8px;padding:4px 12px 10px;margin:10px 0}.obsv-card input{min-width:240px}
-.obsd-toggle{position:fixed;right:0;top:45%;z-index:60;writing-mode:vertical-rl;transform:rotate(180deg);border:1px solid #8886;border-right:0;border-radius:0 8px 8px 0;background:#1d1d1b;color:#fff;padding:10px 6px;font:12px system-ui;cursor:pointer}.obsd-toggle.on{right:min(440px,92vw)}
-.obsd-pane{position:fixed;top:0;right:0;bottom:0;width:min(440px,92vw);z-index:59;overflow:auto;background:#16171a;color:#e8e6e1;font:12px/1.45 ui-monospace,monospace;padding:10px 12px;box-shadow:-4px 0 18px #0005}.obsd-pane header{display:flex;justify-content:space-between;align-items:center;font:14px system-ui;margin-bottom:6px}.obsd-pane header button{background:none;border:0;color:inherit;font-size:20px;cursor:pointer}
+.obsd-toggle{position:fixed;right:0;top:45%;z-index:60;writing-mode:vertical-rl;transform:rotate(180deg);border:1px solid #8886;border-right:0;border-radius:0 8px 8px 0;background:#1d1d1b;color:#fff;padding:10px 6px;font:12px system-ui;cursor:pointer}.obsd-toggle.on{right:min(var(--obsd-w,440px),92vw)}
+.obsd-pane{position:fixed;top:0;right:0;bottom:0;width:min(var(--obsd-w,440px),92vw);z-index:59;overflow:auto;background:#16171a;color:#e8e6e1;font:12px/1.45 ui-monospace,monospace;padding:10px 12px;box-shadow:-4px 0 18px #0005}.obsd-pane header{display:flex;justify-content:space-between;align-items:center;font:14px system-ui;margin-bottom:6px}.obsd-pane header button{background:none;border:0;color:inherit;font-size:20px;cursor:pointer}
 .obsd-pane h4{font:600 12px system-ui;margin:12px 0 4px;color:#9fd3b9;text-transform:uppercase;letter-spacing:.04em}.obsd-pane a{color:#8fb8ff}.obsd-pane code{color:#ffd28a;background:none;padding:0;border:0;word-break:break-all;font-size:11px}.obsd-pane table{width:100%;border-collapse:collapse}.obsd-pane td,.obsd-pane th{padding:2px 4px;border-bottom:1px solid #fff1;text-align:left;background:none;color:inherit}.obsd-pane th{opacity:.6;font-weight:600}
 .obsd-pane button{font:12px system-ui;padding:5px 10px;border-radius:6px;border:1px solid #9fd3b9;background:#1f3a2e;color:#fff;cursor:pointer}.obsd-drain{border:2px solid #1f9d6b;border-radius:10px;padding:10px 14px;margin:10px 0}.obsd-drain .obsd-run{font:600 14px system-ui;padding:6px 16px;border-radius:8px;border:0;background:#1f9d6b;color:#fff;cursor:pointer}.obsd-drain .obsd-run:disabled{opacity:.6}.obsd-status{font:600 13px ui-monospace,monospace;margin:0 8px}.obsd-steps{margin:8px 0 0 18px;padding:0;font-size:13px}.obsd-steps li{opacity:.45;padding:1px 0}.obsd-steps li small{margin-left:6px;opacity:.8;font-family:ui-monospace,monospace}.obsd-steps li.run{opacity:1;font-weight:600}.obsd-steps li.run::after{content:' ⏳'}.obsd-steps li.done{opacity:.9}.obsd-steps li.done::after{content:' ✓';color:#1f9d6b}.obsd-steps li.skip{opacity:.5}.obsd-steps li.err{opacity:1;color:#c0392b}.obsd-steps li.err::after{content:' ✗'}
+html.obsd-docked body{margin-right:var(--obsd-w,440px)}html.obsd-docked .fb-btn{right:calc(var(--obsd-w,440px) + 16px)}
+.obsd-grip{position:fixed;top:0;bottom:0;right:calc(min(var(--obsd-w,440px),92vw) - 4px);width:8px;cursor:col-resize;touch-action:none;z-index:1}.obsd-grip:hover,.obsd-grip.on{background:#9fd3b955}
+@media (max-width:760px){html.obsd-docked body{margin-right:0}.obsd-grip{display:none}}
+body[data-section="observability"] .frame{max-width:none}body[data-section="observability"] nav.site .row,body[data-section="observability"] footer .row{max-width:none}
 .obsd-log{list-style:none;padding:0;margin:0;max-height:40vh;overflow:auto}.obsd-log li{padding:1px 0;border-bottom:1px solid #fff1}.obsd-log li span{opacity:.5}.obsd-log b{color:#9fd3b9}.obsd-log .k-error b{color:#ff8a8a}.obsd-log .k-record b{color:#ffd28a}` })
     document.head.append(style)
     const render = async () => {
