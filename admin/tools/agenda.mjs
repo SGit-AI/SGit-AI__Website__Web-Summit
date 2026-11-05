@@ -13,7 +13,9 @@ const DIR = path.join(ROOT, 'data/meetings')
 const S = JSON.parse(fs.readFileSync(path.join(DIR, 'schedule.json'), 'utf8'))
 export function slots() {
     const out = [], d = new Date(S.from + 'T00:00:00Z'), end = new Date(S.until + 'T23:59:59Z')
-    for (; d <= end; d.setUTCDate(d.getUTCDate() + 1)) for (const t of S.slots) {
+    // the slots can change from a date on (schedule.json "slots_from": {"YYYY-MM-DD": ["HH:MM", ...]}); earlier days keep theirs
+    const slotsOn = day => { const k = Object.keys(S.slots_from || {}).filter(x => x <= day).sort().pop(); return k ? S.slots_from[k] : S.slots }
+    for (; d <= end; d.setUTCDate(d.getUTCDate() + 1)) for (const t of slotsOn(d.toISOString().slice(0, 10))) {
         // a stand-up moved on one day (schedule.json "moves": {"<id>": "HH:MM"}) keeps its id, so its items stay put
         const day = d.toISOString().slice(0, 10), id = `${day}-${t.replace(':', '')}`, time = (S.moves || {})[id] || t
         out.push({ id, at: new Date(`${day}T${time}:00Z`).toISOString(), day, time })

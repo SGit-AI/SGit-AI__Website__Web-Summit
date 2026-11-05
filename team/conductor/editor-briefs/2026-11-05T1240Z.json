@@ -1,0 +1,55 @@
+{
+ "number": 20,
+ "date": "2026-11-05",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "The vote drained (2 ballots, both verified); the midday stand-up is 12:00 from now on",
+ "when": "Thursday 5 November 2026, 12:40 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "At Angelo's word (his conductor, 28c6f32: \"ok for Dinis's conductor to drain\"; he will not paste an access token into a page), I drained the sticker vote from the command line: Silvio's and Angelo's ballots, both signatures verified, none rejected, counted in the vault and marked processed. The vote closes at 14:30. The team voted to hold the midday stand-up at 12:00 from today (c44d8c5): the schedule now has 12:00 from tomorrow on, today's stays under its id, and the start and agents pages say 12:00.",
+ "stats": [
+  {"n": "2", "label": "ballots drained and counted (Silvio, Angelo); 0 rejected"},
+  {"n": "14:30", "label": "the vote closes"},
+  {"n": "12:00", "label": "the midday stand-up, every day from now"},
+  {"n": "0", "label": "messages in the inbox lanes"}
+ ],
+ "for_you": [
+  {
+   "id": "1",
+   "ask": "What did the 12:00 decide? (personal cards, the outreach claims, the garments)",
+   "detail": "team-collaboration@angelo's debrief is at 13:15; nothing from the 12:00 is on the record yet. Say it here in a line each and I record it in your words.",
+   "options": ["tell me now", "leave it to the 13:15 debrief"],
+   "recommend": "One line each now, so the debrief only confirms."
+  },
+  {
+   "id": "2",
+   "ask": "Jose's wish: navy garments instead of orange (WS-48)",
+   "detail": "designer@jose 11:53, in his words, on the 12:00 for you; the next garment set waits only on you (logistics@vicky 11:12).",
+   "options": ["navy for Jose's", "keep orange", "navy for everyone"],
+   "recommend": "Navy for Jose's own pieces if the printer can split the order; say yes or no today."
+  },
+  {
+   "id": "3",
+   "ask": "Angelo's vault key (ucvg2pkv), handed to you as a QR on 4 November",
+   "detail": "Sealed to the DC Vault Registry key; Angelo asks for a confirmation when the registry has opened it, so his vault agent's session is not the only copy (28c6f32).",
+   "options": ["opened: I tell Angelo's conductor", "not yet"],
+   "recommend": "Open it in the registry today and tell me; I confirm to his conductor."
+  },
+  {
+   "id": "4",
+   "ask": "Vote before 14:30",
+   "detail": "/stickers/vote/; I drain again after it closes.",
+   "options": ["vote now", "skip"],
+   "recommend": "Vote now."
+  }
+ ],
+ "you_asked": [],
+ "team": [
+  {"id": "Angelo", "status": "voted", "doing": "the 12:00 by the team's vote; asked me to drain; a public visitor inbox no agent reads (WS-64, WS-119); his command centre offline"},
+  {"id": "Jose", "status": "briefed", "doing": "his eight answers recorded (WS-154, WS-74, the helper on Sonnet); navy garments asked"},
+  {"id": "Indi", "status": "in person", "doing": "her conductor's brief 10: her key still the blocker"},
+  {"id": "Vicky", "status": "waiting on you", "doing": "the next garment set; collection not recorded"},
+  {"id": "Silvio", "status": "voted", "doing": "/impressao/: the sleeve logo files and the lavender hoodie, from the designer's next set"}
+ ],
+ "next": ["14:30: the vote closes; I drain at the 14:27 wake and again after 14:30.", "16:27 wake: the 18:00 deck and your briefing PDF."],
+ "sources": ["git log since 2026-11-05T10:40Z (dev)", "stickers_vote.py drain at 12:28 UTC", "conductor@web-summit.angelo c44d8c5 and 28c6f32"]
+}

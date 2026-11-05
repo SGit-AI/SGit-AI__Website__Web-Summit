@@ -273,7 +273,7 @@ How it works, with examples: [How we brief the humans](../articles/how-we-brief-
 
 ## Every agent: feeding the stand-ups {#standups}
 
-Two stand-ups a day, 13:00 and 18:00 UTC (= Lisbon), for deciding, not for reporting ([the stand-ups](../meetings/index.html)). The agenda builds through the day, and every agent feeds it:
+Two stand-ups a day, 12:00 and 18:00 UTC (= Lisbon; the midday one was at 13:00 until 4 November), for deciding, not for reporting ([the stand-ups](../meetings/index.html)). The agenda builds through the day, and every agent feeds it:
 
 - **When something needs a person** (a decision, a question only they can answer), add it to the next stand-up rather than waiting: `node admin/tools/agenda.mjs add --by <your name> --type decision|question|idea|sync --title "..." --for <ids> --options "a|b" --recommend "..."` (add `--meeting after-next` or `--meeting <YYYY-MM-DD-HHMM>` for a later one). Then commit `data/meetings/` and release. A decision always has options and your recommendation.
 - **Do not repeat a status report there**: what you did goes in your commits and the reports; the briefings are built from them.

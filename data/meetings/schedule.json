@@ -1,5 +1,5 @@
 {
- "about": "The team's stand-ups (the operator, 2 November 2026): two a day, at 13:00 and 18:00 Lisbon time (UTC in November), from 2 November to 13 November. Not a status round: decisions first, then questions, ideas and quick syncs, with everyone's pre-meeting briefing read before. The agenda builds through the day: any person or agent adds an item, to the next stand-up or to one further out, with admin/tools/agenda.mjs. Each item is one file in data/meetings/<meeting id>/, so many can add at once without colliding.",
+ "about": "The team's stand-ups (the operator, 2 November 2026): two a day, at 13:00 and 18:00 Lisbon time (12:00 and 18:00 from 5 November, by the team's vote) (UTC in November), from 2 November to 13 November. Not a status round: decisions first, then questions, ideas and quick syncs, with everyone's pre-meeting briefing read before. The agenda builds through the day: any person or agent adds an item, to the next stand-up or to one further out, with admin/tools/agenda.mjs. Each item is one file in data/meetings/<meeting id>/, so many can add at once without colliding.",
  "title": "Stand-up",
  "slots": [
   "13:00",
@@ -18,5 +18,12 @@
  "moves": {
   "2026-11-05-1300": "12:00"
  },
- "moves_note": "5 November: today's first stand-up moved to 12:00 (Angelo, relayed by Vicky, logistics@web-summit.vicky 03fe0c5); it keeps the id 2026-11-05-1300, so its items stay where they are."
+ "moves_note": "5 November: today's first stand-up moved to 12:00 (Angelo, relayed by Vicky, logistics@web-summit.vicky 03fe0c5); it keeps the id 2026-11-05-1300, so its items stay where they are.",
+ "slots_from": {
+  "2026-11-06": [
+   "12:00",
+   "18:00"
+  ]
+ },
+ "slots_note": "From 6 November the midday stand-up is at 12:00 (the team's vote, Angelo, 5 November; conductor@web-summit.angelo c44d8c5). Today, 5 November, it was already held at 12:00 under the id 2026-11-05-1300 (see moves)."
 }
