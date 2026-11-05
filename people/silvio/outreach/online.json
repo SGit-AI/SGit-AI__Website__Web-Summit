@@ -1,0 +1,809 @@
+{
+  "about": "Companies NOT at Web Summit 2026 (checked against every lis26 event-partner and speaker page on 5 November 2026), invited to a 30-minute ONLINE meeting with Dinis in the week of 16 November, at Silvio's word: Dinis does not travel for these. Portuguese first, English as well. Drafts only: Silvio sends; Dinis agrees the idea and his slots before the first is sent. The AI facts are from each company's own site (ai_fact_source). Companies only: the channels are in Silvio's sealed tracker. By conductor@web-summit.silvio.",
+  "schedule": {
+    "send": "from Fri 6 November, priority 1 first",
+    "meetings": "online, week of 16 November",
+    "followup": "Mon 16 November, to those who did not reply",
+    "then": "stop"
+  },
+  "companies": [
+    {
+      "id": "edp",
+      "company": "EDP",
+      "sector": "Energy & utilities",
+      "country": "Portugal",
+      "priority": 1,
+      "ai_fact": "Group-wide GenAI tools (Microsoft 365 Copilot, ChatGPT Enterprise, internal Mind4EDP); AI initiatives classified into four risk levels aligned with the EU AI Act; Responsible AI policy.",
+      "ai_fact_source": "https://edp.com/en/investors/corporate-governance/edp-responsible-ai-policy",
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "EDP e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa EDP,\n\nA EDP já classifica os seus projetos de IA em quatro níveis de risco, alinhados com o AI Act. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa EDP,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "EDP and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello EDP team,\n\nEDP already sorts its AI projects into four risk levels aligned with the EU AI Act. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again EDP team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "edp-renovaveis",
+      "company": "EDP Renováveis",
+      "sector": "Energy & utilities (renewables)",
+      "country": "Spain/Portugal (EDP group; HQ Madrid, parent HQ Lisbon)",
+      "priority": 1,
+      "ai_fact": "Covered by EDP Group Responsible AI policy (GenAI only through approved models in controlled environments).",
+      "ai_fact_source": "https://edp.com/en/investors/corporate-governance/edp-responsible-ai-policy",
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "EDP Renováveis e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa EDP Renováveis,\n\nA política de IA responsável do grupo EDP só permite IA generativa em ambientes controlados. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa EDP Renováveis,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "EDP Renováveis and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello EDP Renováveis team,\n\nThe EDP group's responsible-AI policy allows generative AI only in controlled environments. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again EDP Renováveis team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "ren",
+      "company": "REN - Redes Energéticas Nacionais",
+      "sector": "Energy grid operator (critical infrastructure)",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "REN - Redes Energéticas Nacionais e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa REN - Redes Energéticas Nacionais,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa REN - Redes Energéticas Nacionais,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "REN - Redes Energéticas Nacionais and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello REN - Redes Energéticas Nacionais team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again REN - Redes Energéticas Nacionais team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "jeronimo-martins",
+      "company": "Jerónimo Martins",
+      "sector": "Food retail",
+      "country": "Portugal",
+      "priority": 1,
+      "ai_fact": "2025 report: internal guidebook on responsible generative AI use; Copilot Chat adopted by 3,100 active employees; HR chatbot/voicebot at Biedronka.",
+      "ai_fact_source": "https://reports.jeronimomartins.com/relatorio-contas/2025/sustentabilidade/social/como-gerimos-os-topicos-sociais/mao-de-obra-propria/tecnologias-inovadoras.html",
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Jerónimo Martins e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Jerónimo Martins,\n\nCom o Copilot nas mãos de mais de 3.000 colaboradores e chatbots de RH na Biedronka, a Jerónimo Martins já tem agentes a trabalhar. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Jerónimo Martins,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Jerónimo Martins and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Jerónimo Martins team,\n\nWith Copilot used by over 3,000 employees and HR chatbots at Biedronka, Jerónimo Martins already has agents at work. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Jerónimo Martins team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "cgd",
+      "company": "Caixa Geral de Depósitos",
+      "sector": "Banking",
+      "country": "Portugal",
+      "priority": 1,
+      "ai_fact": "Runs the 'Assistente CAIXA' AI virtual assistant (site and app) that can carry out banking operations; published AI-in-banking guidance.",
+      "ai_fact_source": "https://www.cgd.pt/Site/Saldo-Positivo/formacao-e-tecnologia/Pages/inteligencia-artificial-na-banca.aspx",
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Caixa Geral de Depósitos e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Caixa Geral de Depósitos,\n\nO Assistente CAIXA já executa operações bancárias para os clientes. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Caixa Geral de Depósitos,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Caixa Geral de Depósitos and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Caixa Geral de Depósitos team,\n\nAssistente CAIXA already carries out banking operations for customers. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Caixa Geral de Depósitos team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "novo-banco",
+      "company": "Novo Banco",
+      "sector": "Banking",
+      "country": "Portugal",
+      "priority": 1,
+      "ai_fact": "mIA virtual assistant answers customers 24/7, checks balances, activates cards and hands off to specialists.",
+      "ai_fact_source": "https://www.novobanco.pt/ajuda-contactos/mia-assistente-virtual",
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Novo Banco e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Novo Banco,\n\nA mIA já responde a clientes 24 horas por dia, consulta saldos e ativa cartões. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Novo Banco,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Novo Banco and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Novo Banco team,\n\nmIA already answers customers 24/7, checks balances and activates cards. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Novo Banco team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "bpi",
+      "company": "Banco BPI",
+      "sector": "Banking (CaixaBank group)",
+      "country": "Portugal",
+      "priority": 1,
+      "ai_fact": "Training all ~4,500 employees in AI (AI Dive programme with 42 Portugal, focus on generative AI); AI voice assistant from AgentifAI that executes payments and transfers.",
+      "ai_fact_source": "https://www.bancobpi.pt/particulares/bpi-vai-formar-colaboradores-em-inteligencia-artificial",
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Banco BPI e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Banco BPI,\n\nO BPI está a formar 4.500 colaboradores em IA e já tem um assistente de voz que faz pagamentos e transferências. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Banco BPI,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Banco BPI and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Banco BPI team,\n\nBPI is training 4,500 employees in AI and already has a voice assistant that makes payments and transfers. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Banco BPI team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "santander-portugal",
+      "company": "Santander Portugal",
+      "sector": "Banking",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Santander Portugal e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Santander Portugal,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Santander Portugal,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Santander Portugal and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Santander Portugal team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Santander Portugal team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "banco-montepio",
+      "company": "Banco Montepio",
+      "sector": "Banking",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Banco Montepio e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Banco Montepio,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Banco Montepio,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Banco Montepio and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Banco Montepio team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Banco Montepio team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "credito-agricola",
+      "company": "Crédito Agrícola",
+      "sector": "Banking & insurance",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Crédito Agrícola e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Crédito Agrícola,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Crédito Agrícola,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Crédito Agrícola and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Crédito Agrícola team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Crédito Agrícola team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "banco-ctt",
+      "company": "Banco CTT",
+      "sector": "Banking",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Banco CTT e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Banco CTT,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Banco CTT,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Banco CTT and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Banco CTT team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Banco CTT team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "sibs",
+      "company": "SIBS",
+      "sector": "Payments infrastructure (MB WAY, Multibanco)",
+      "country": "Portugal",
+      "priority": 1,
+      "ai_fact": "PAYWATCH fraud prevention monitors transactions 24x7 with machine-learning models; AENVO conversational AI with voice biometrics.",
+      "ai_fact_source": "https://www.sibs.com/en/solucoes/security/",
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "SIBS e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa SIBS,\n\nO PAYWATCH e a AENVO mostram que a SIBS já confia decisões críticas a modelos de IA. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa SIBS,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "SIBS and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello SIBS team,\n\nPAYWATCH and AENVO show SIBS already trusts critical decisions to AI models. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again SIBS team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "ageas-portugal",
+      "company": "Ageas Portugal",
+      "sector": "Insurance",
+      "country": "Portugal",
+      "priority": 1,
+      "ai_fact": "Appointed a Head of Artificial Intelligence (policies, regulation, AI ethics code); group cites 300+ AI initiatives in five years.",
+      "ai_fact_source": "https://www.grupoageas.pt/sobre-o-grupo-ageas/noticias-do-grupo/grupo-ageas-portugal-anuncia-nova-responsavel-de-inteligencia-artificial/",
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Ageas Portugal e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Ageas Portugal,\n\nCom uma responsável de IA nomeada e mais de 300 iniciativas de IA no grupo, a Ageas já está a governar a IA. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Ageas Portugal,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Ageas Portugal and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Ageas Portugal team,\n\nWith a Head of AI appointed and 300+ AI initiatives in the group, Ageas is already governing AI. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Ageas Portugal team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "generali-tranquilidade",
+      "company": "Generali Tranquilidade",
+      "sector": "Insurance",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Generali Tranquilidade e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Generali Tranquilidade,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Generali Tranquilidade,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Generali Tranquilidade and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Generali Tranquilidade team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Generali Tranquilidade team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "allianz-portugal",
+      "company": "Allianz Portugal",
+      "sector": "Insurance",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Allianz Portugal e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Allianz Portugal,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Allianz Portugal,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Allianz Portugal and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Allianz Portugal team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Allianz Portugal team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "mota-engil",
+      "company": "Mota-Engil",
+      "sector": "Engineering & construction",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Mota-Engil e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Mota-Engil,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Mota-Engil,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Mota-Engil and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Mota-Engil team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Mota-Engil team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "brisa",
+      "company": "Brisa",
+      "sector": "Motorway infrastructure & mobility (Via Verde)",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Brisa e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Brisa,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Brisa,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Brisa and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Brisa team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Brisa team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "navigator",
+      "company": "The Navigator Company",
+      "sector": "Pulp & paper (industrial)",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "The Navigator Company e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa The Navigator Company,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa The Navigator Company,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "The Navigator Company and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello The Navigator Company team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again The Navigator Company team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "ana-aeroportos",
+      "company": "ANA Aeroportos de Portugal (VINCI Airports)",
+      "sector": "Airports (critical infrastructure)",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "ANA Aeroportos de Portugal (VINCI Airports) e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa ANA Aeroportos de Portugal (VINCI Airports),\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa ANA Aeroportos de Portugal (VINCI Airports),\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "ANA Aeroportos de Portugal (VINCI Airports) and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello ANA Aeroportos de Portugal (VINCI Airports) team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again ANA Aeroportos de Portugal (VINCI Airports) team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "ctt",
+      "company": "CTT - Correios de Portugal",
+      "sector": "Postal, logistics & financial services",
+      "country": "Portugal",
+      "priority": 1,
+      "ai_fact": "Launched 'Helena', a generative-AI customer-service chatbot built on Microsoft Azure OpenAI.",
+      "ai_fact_source": "https://www.ctt.pt/grupo-ctt/media/noticias/ctt-lancam-primeiro-chatbot-com-inteligencia-artificial-generativa-para-atendimento-ao-cliente",
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "CTT - Correios de Portugal e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa CTT - Correios de Portugal,\n\nA Helena, o assistente de IA generativa dos CTT, já fala com os vossos clientes. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa CTT - Correios de Portugal,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "CTT - Correios de Portugal and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello CTT - Correios de Portugal team,\n\nHelena, CTT's generative-AI assistant, already talks to your customers. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again CTT - Correios de Portugal team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "millennium-bcp",
+      "company": "Millennium bcp",
+      "sector": "Banking",
+      "country": "Portugal",
+      "priority": 1,
+      "ai_fact": "With Nova SBE launched an AI Academy ('AI Together') to train ~6,500 employees, mainly in generative AI (Nov 2025); created a Data & AI Transformation Office in May 2025.",
+      "ai_fact_source": "https://ind.millenniumbcp.pt/pt/Institucional/imprensa/Documents/2025/20251112_Millenniumbcp_Nova_SBE_AIAcademy_PT.pdf",
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Millennium bcp e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Millennium bcp,\n\nCom a AI Academy para 6.500 colaboradores e um Data & AI Transformation Office, o Millennium bcp está a pôr a IA em todo o banco. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Millennium bcp,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Millennium bcp and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Millennium bcp team,\n\nWith an AI Academy for 6,500 employees and a Data & AI Transformation Office, Millennium bcp is putting AI across the bank. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Millennium bcp team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "sonae",
+      "company": "Sonae",
+      "sector": "Retail & diversified group (MC/Continente, Worten)",
+      "country": "Portugal",
+      "priority": 1,
+      "ai_fact": "Published a Policy for the Responsible Adoption of AI, referencing the EU AI Act (Regulation 2024/1689).",
+      "ai_fact_source": "https://www.sonae.pt/fotos/governo_sociedade/politica_ia_sonae_5025581226a75bb2532089.pdf",
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Sonae e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Sonae,\n\nA Sonae já tem uma Política de Adoção Responsável de IA que cita o AI Act. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Sonae,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Sonae and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Sonae team,\n\nSonae already has a Policy for the Responsible Adoption of AI that cites the EU AI Act. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Sonae team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "vodafone-portugal",
+      "company": "Vodafone Portugal",
+      "sector": "Telecommunications",
+      "country": "Portugal",
+      "priority": 1,
+      "ai_fact": "Vodafone chose Portugal for its new Global Cyber Centre, focused on emerging cyber risks including AI (2026).",
+      "ai_fact_source": "https://www.vodafone.pt/press-releases/2026/7/vodafone-escolhe-portugal-para-acolher-novo-global-cyber-centre.html",
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Vodafone Portugal e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Vodafone Portugal,\n\nO novo Global Cyber Centre da Vodafone em Portugal vai olhar para os riscos da IA. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Vodafone Portugal,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Vodafone Portugal and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Vodafone Portugal team,\n\nVodafone's new Global Cyber Centre in Portugal will look at the risks of AI. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Vodafone Portugal team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "tap",
+      "company": "TAP Air Portugal",
+      "sector": "Airline",
+      "country": "Portugal",
+      "priority": 1,
+      "ai_fact": "Runs an AI flight-finder agent for customers on flytap.com.",
+      "ai_fact_source": "https://www.flytap.com/en_us/flight-finder-agent",
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "TAP Air Portugal e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa TAP Air Portugal,\n\nO flight-finder agent da TAP já é um agente de IA a falar com os vossos clientes. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa TAP Air Portugal,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "TAP Air Portugal and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello TAP Air Portugal team,\n\nTAP's flight-finder agent is already an AI agent talking to your customers. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again TAP Air Portugal team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "deloitte-portugal",
+      "company": "Deloitte Portugal",
+      "sector": "Professional services (audit, risk, consulting)",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Deloitte Portugal e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Deloitte Portugal,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Deloitte Portugal,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Deloitte Portugal and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Deloitte Portugal team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Deloitte Portugal team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "pwc-portugal",
+      "company": "PwC Portugal",
+      "sector": "Professional services (audit, risk, consulting)",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "PwC Portugal e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa PwC Portugal,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa PwC Portugal,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "PwC Portugal and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello PwC Portugal team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again PwC Portugal team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "ey-portugal",
+      "company": "EY Portugal",
+      "sector": "Professional services (audit, risk, consulting)",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "EY Portugal e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa EY Portugal,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa EY Portugal,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "EY Portugal and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello EY Portugal team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again EY Portugal team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "accenture-portugal",
+      "company": "Accenture Portugal",
+      "sector": "Professional services (technology consulting)",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Accenture Portugal e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Accenture Portugal,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Accenture Portugal,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Accenture Portugal and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Accenture Portugal team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Accenture Portugal team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "banco-de-portugal",
+      "company": "Banco de Portugal",
+      "sector": "Central bank / banking supervisor",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Banco de Portugal e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Banco de Portugal,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Banco de Portugal,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Banco de Portugal and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Banco de Portugal team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Banco de Portugal team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "asf",
+      "company": "ASF - Autoridade de Supervisão de Seguros e Fundos de Pensões",
+      "sector": "Insurance & pensions supervisor",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "ASF - Autoridade de Supervisão de Seguros e Fundos de Pensões e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa ASF - Autoridade de Supervisão de Seguros e Fundos de Pensões,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa ASF - Autoridade de Supervisão de Seguros e Fundos de Pensões,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "ASF - Autoridade de Supervisão de Seguros e Fundos de Pensões and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello ASF - Autoridade de Supervisão de Seguros e Fundos de Pensões team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again ASF - Autoridade de Supervisão de Seguros e Fundos de Pensões team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "cmvm",
+      "company": "CMVM - Comissão do Mercado de Valores Mobiliários",
+      "sector": "Securities market supervisor",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "CMVM - Comissão do Mercado de Valores Mobiliários e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa CMVM - Comissão do Mercado de Valores Mobiliários,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa CMVM - Comissão do Mercado de Valores Mobiliários,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "CMVM - Comissão do Mercado de Valores Mobiliários and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello CMVM - Comissão do Mercado de Valores Mobiliários team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again CMVM - Comissão do Mercado de Valores Mobiliários team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "bnp-paribas-portugal",
+      "company": "BNP Paribas Portugal",
+      "sector": "Banking (large Lisbon operations hub)",
+      "country": "France (Portugal operations)",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "BNP Paribas Portugal e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa BNP Paribas Portugal,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa BNP Paribas Portugal,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "BNP Paribas Portugal and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello BNP Paribas Portugal team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again BNP Paribas Portugal team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "mapfre-portugal",
+      "company": "Mapfre Portugal",
+      "sector": "Insurance",
+      "country": "Spain (Portugal operations)",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Mapfre Portugal e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Mapfre Portugal,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Mapfre Portugal,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Mapfre Portugal and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Mapfre Portugal team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Mapfre Portugal team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "lusitania",
+      "company": "Lusitania Seguros",
+      "sector": "Insurance",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Lusitania Seguros e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Lusitania Seguros,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Lusitania Seguros,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Lusitania Seguros and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Lusitania Seguros team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Lusitania Seguros team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "zurich-portugal",
+      "company": "Zurich Portugal",
+      "sector": "Insurance",
+      "country": "Switzerland (Portugal operations)",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Zurich Portugal e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Zurich Portugal,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Zurich Portugal,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Zurich Portugal and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Zurich Portugal team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Zurich Portugal team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "infraestruturas-de-portugal",
+      "company": "Infraestruturas de Portugal",
+      "sector": "Rail & road infrastructure (state-owned)",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Infraestruturas de Portugal e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Infraestruturas de Portugal,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Infraestruturas de Portugal,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Infraestruturas de Portugal and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Infraestruturas de Portugal team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Infraestruturas de Portugal team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "cuf",
+      "company": "CUF (José de Mello Saúde)",
+      "sector": "Private healthcare",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "CUF (José de Mello Saúde) e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa CUF (José de Mello Saúde),\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa CUF (José de Mello Saúde),\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "CUF (José de Mello Saúde) and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello CUF (José de Mello Saúde) team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again CUF (José de Mello Saúde) team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "id": "hovione",
+      "company": "Hovione",
+      "sector": "Pharmaceutical manufacturing (CDMO, regulated)",
+      "country": "Portugal",
+      "priority": 2,
+      "ai_fact": "sector fit",
+      "ai_fact_source": null,
+      "not_at_ws": "not on lis26 event partners (websummit.com/partners/event-partners-2026/ pages 1-8) or speakers (websummit.com/speakers/ pages 1-47) lists, nor in data/companies.json or people/silvio/outreach/buyers.json; checked 2026-11-05",
+      "read_on": "2026-11-05",
+      "pt": {
+        "subject": "Hovione e RiskMandate: 30 minutos online sobre os vossos agentes de IA",
+        "body": "Olá equipa Hovione,\n\nOs agentes de IA estão a chegar a empresas como a vossa: leem dados, falam com clientes, executam tarefas. A pergunta que vem a seguir é sempre a mesma: o que é que cada agente consegue alcançar, e o que é que foi autorizado a fazer?\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o alcance do agente, o mandato que a empresa lhe deu, e a diferença entre os dois. Uma só página que a gestão, a segurança, os auditores e as seguradoras conseguem ler.\n\nGostávamos de vos mostrar, numa reunião online de 30 minutos com o Dinis Cruz, fundador da RiskMandate, na semana de 16 de novembro, a seguir à Web Summit. Que dia e hora vos dá jeito?\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup": "Olá novamente, equipa Hovione,\n\nVoltamos só para lembrar o convite: 30 minutos online com o Dinis Cruz, fundador da RiskMandate, para mostrar o registo de um dos vossos agentes de IA. Esta ou a próxima semana, à vossa escolha.\n\nCumprimentos,\nSilvio Switha, RiskMandate"
+      },
+      "en": {
+        "subject": "Hovione and RiskMandate: 30 minutes online on your AI agents",
+        "body": "Hello Hovione team,\n\nAI agents are arriving at companies like yours: reading data, talking to customers, carrying out tasks. The next question is always the same: what can each agent reach, and what was it authorised to do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: the agent's reach, the mandate the business gave it, and the gap between the two. One page that leadership, security, auditors and insurers can all read.\n\nWe would like to show you in a 30-minute online meeting with Dinis Cruz, RiskMandate's founder, in the week of 16 November, after Web Summit. Which day and time suits you?\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup": "Hello again Hovione team,\n\nJust a reminder of our invitation: 30 minutes online with Dinis Cruz, RiskMandate's founder, to show the record for one of your AI agents. This week or next, as you prefer.\n\nBest regards,\nSilvio Switha, RiskMandate"
+      }
+    }
+  ]
+}
