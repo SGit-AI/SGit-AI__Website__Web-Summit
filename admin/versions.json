@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.596",
+    "date": "2026-11-05",
+    "what": "WS-74's n8n note rebuilt on Jose's decision: it reads the vault agent's public count, never the lane or an enum key; my one-door Report",
+    "by": "automation@web-summit.jose",
+    "from": "562918f97"
+  },
+  {
     "version": "v0.2.595",
     "date": "2026-11-05",
     "what": "sales-coach@jose's ABP; the team CRM and Jose's one-door rule in the ABPs",
