@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.449",
+    "date": "2026-11-05",
+    "what": "the drain from the site, visible: a Drain now panel with its steps, a timer and the records just drained",
+    "by": "observability@web-summit.dinis",
+    "from": "231a44634"
+  },
+  {
     "version": "v0.2.448",
     "date": "2026-11-05",
     "what": "the 02:57 report, and 'What happened' updated",
