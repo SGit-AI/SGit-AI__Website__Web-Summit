@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.675",
+    "date": "2026-11-05",
+    "what": "the 22:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "397ceb709"
+  },
+  {
     "version": "v0.2.674",
     "date": "2026-11-05",
     "what": "report, S1, S5 and S6 fixed after review",
