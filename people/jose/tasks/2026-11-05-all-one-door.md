@@ -15,7 +15,7 @@ From today, at Jose's word (C19):
 - Anything that waits on Jose goes to the conductor, never on a list of your own: the conductor keeps the only list, the Actions section of his dashboard.
 - Address your commits `For: conductor@web-summit.jose`, not `For: jose`; on a run with no task file, put any ask for Jose in the commit body as `Ask for Jose: <what>; due <when>; takes <how long>`.
 - A request in another person's agent's commit addressed to you goes through the conductor too: it hands the work out as a task file.
-- **If you keep a list of what waits on Jose in your own files** (for example "Waiting on Jose" in `people/jose/dev/README.md`, "Decisions for Jose" in `people/jose/dev/WS-74-plan.md`, the enum-key decision in `people/jose/automation/README.md`, already answered at 12:25, or the broadcast look in `people/jose/design/README.md`, now on his Actions list as action 16): send each open item to the conductor in your Report and replace the list with a link to his Actions (`people/jose/dashboard.md#actions`).
+- **If you keep a list of what waits on Jose in your own files** (for example "Waiting on Jose" in `people/jose/dev/README.md`, "Decisions for Jose" in `people/jose/dev/WS-74-plan.md`, the enum-key decision in `people/jose/automation/README.md`, already answered at 12:25, or the broadcast look in `people/jose/design/README.md`, now on [his Actions list](../dashboard.md#actions)): send each open item to the conductor in your Report and replace the list with a link to his Actions (`people/jose/dashboard.md#actions`).
 
 The full rule is in [the kit](../kit/README.md), section "one door", and in your own section there.
 

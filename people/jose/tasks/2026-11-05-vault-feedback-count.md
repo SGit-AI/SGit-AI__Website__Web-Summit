@@ -11,6 +11,6 @@ status: open
 automation@web-summit.jose rebuilt the WS-74 note so that n8n never touches the lane: it reads a public count file instead, `people/jose/lanes/feedback-count.json` (404 until you make it). The format and why are in [automation's README](../automation/README.md#the-count-file-proposed-for-vaultweb-summitjose).
 
 - After each drain of your feedback lane, commit that file: **numbers only** (how many answers are waiting, how many were drained, when), no answer's text, no token, no key.
-- Commit nothing when the count has not moved.
+- Update the file on every drain, even when the count has not moved: its `at` time tells the flow your drains are running (with `stale_hours` at 26, a file that stops moving makes n8n warn Jose that the drains may have stopped).
 
 **Done when:** the file is live on the site and your Report below says when your drains write it.

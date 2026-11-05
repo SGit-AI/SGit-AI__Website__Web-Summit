@@ -3,16 +3,16 @@
   "date": "5 November 2026",
   "kicker": "Web Summit 2026 · Jose's conductor brief",
   "title": "Your agents' first day through one door; three asks: the schedules, the CRM key, three questions",
-  "when": "5 November 2026, 17:30 UTC (scheduled wake, the evening one; since brief 9, 12:25 UTC)",
+  "when": "5 November 2026, 17:30 UTC, corrected 18:20 UTC after the reviewer (scheduled wake, the evening one; since brief 9, 12:25 UTC)",
   "by": "conductor@web-summit.jose",
-  "headline": "From today your agents take work from your conductor and report back to it, and dev and automation already have. Three asks tonight: approve or change the faster schedules, say yes or no to the team CRM key and an inbox lane, and answer three questions about the door. The 'today' list below is the start of your interview.",
+  "headline": "From today your agents take work from your conductor and report back to it: dev, automation, the dashboard and vault already have. Three asks tonight: approve or change the faster schedules, decide on the team CRM and whose token drains an inbox lane, and answer three questions about the door. The 'today' list below is the start of your interview.",
   "stats": [
     {
-      "n": "44",
-      "label": "commits by your agents today"
+      "n": "46",
+      "label": "commits by your agents today, before this brief"
     },
     {
-      "n": "2 of 7",
+      "n": "4 of 7",
       "label": "agents reported through the one door so far"
     },
     {
@@ -28,24 +28,25 @@
     {
       "id": "1",
       "ask": "✅ Approve: your agents' schedules (people/jose/schedules.md)",
-      "detail": "Your conductor every hour 07:20 to 21:20 with the drain folded in; dev and helper every two hours; the designer at 10:40 and 16:40. About 99M tokens a day now, about 158M to 194M proposed (4.8M now, 7.3M to 10.3M proposed, without cache reads). Two choices of mine: briefs twice a day, and the evening brief at 20:20. On a yes, each changed scheduled task also gets the kit's current prompt (your watcher's A-06: the stored prompts of your conductor, dev, dashboard and vault are older than the kit).",
+      "detail": "Your conductor every hour 07:20 to 21:20 with the drain folded in; dev and helper every two hours; the designer at 10:40 and 16:40. About 99M tokens a day now, about 158M to 194M proposed (4.8M now, 7.3M to 10.3M proposed, without cache reads). Two choices of mine: briefs twice a day, and the evening brief at 20:20. On a yes, each changed scheduled task, and the dashboard's and vault's too, gets the kit's current prompt (your watcher's A-06: their stored prompts are older than the kit): a two-minute step in each agent's session.",
       "options": [
         "yes, as proposed",
         "a cheaper variant (your conductor every two hours, about 28M a day less; or dev every three hours)",
         "not now"
       ],
-      "recommend": "Yes as proposed, for one day: the accountant measures the real cost at its 07:20 run on Saturday, and you keep it or cut it."
+      "recommend": "Yes as proposed, for one day. The accountant sees only the runs that commit (an idle run writes no ledger line), so on Saturday I add the idle runs at their estimate of about 1M each, and you keep it or cut it."
     },
     {
       "id": "2",
-      "ask": "🗝️ Decide: the team CRM key, and an inbox lane for your conductor (Dinis's notes, 14:41 and 15:03)",
-      "detail": "Checked: the private CRM's key is sealed to my current key, signed by Dinis's conductor's published key (a tampered copy fails the check), it opens, and it is the key of the private CRM vault (5n0aocvz). Your own copy is on your For-you panel, sealed to your site key. Its second layer is paused at Dinis's word, so the vault key reads every record. The inbox lane: your conductor has none yet; it is made with your SG/Send access token, or by Dinis's conductor, which keeps no copy of the key.",
+      "ask": "🗝️ Decide: the team CRM, a CRM agent of your own, and whose token drains an inbox lane (conductor@web-summit.dinis's notes, at Dinis's word, 14:41 to 17:15)",
+      "detail": "Checked: the private CRM's key is sealed to my current key, signed by Dinis's conductor's published key (a tampered copy fails the check), it opens, and it is the key of the private CRM vault (5n0aocvz). Your own copy is on your For-you panel, sealed to your site key. Its second layer is paused at Dinis's word (bc8e2187), so the vault key reads every record. Three things wait on your word: (a) using the CRM: I record what we learn about companies there and tell Dinis's conductor I have opened the key, as its note asks; (b) a CRM agent of your own, crm@web-summit.jose, as Angelo and Silvio have (01da9602): you open its session, and I give it the key from my sealed copy; (c) an inbox lane for me, for receiving keys: whoever makes it, draining it and pushing CRM records need an SG/Send access token, and Dinis has said every agent should have its own (1b4f242a, 17:51); until he issues one, it is your token at your yes, or your vault agent drains it, as it drains its own lane.",
       "options": [
-        "yes to both",
-        "the key only",
+        "yes to the CRM and the lane, drained by your vault agent until your conductor has its own token",
+        "the CRM only",
+        "the CRM, the lane and a CRM agent",
         "not now"
       ],
-      "recommend": "Yes to both: I keep the key and record what we learn about companies in the CRM, not in files of our own; and Dinis's conductor makes the lane, so your token stays with you."
+      "recommend": "Yes to the CRM and the lane, drained by your vault agent until your conductor has a token of its own; a CRM agent once the CRM proves useful to you."
     },
     {
       "id": "3",
@@ -70,7 +71,7 @@
       "at": "5 Nov, about 12:50",
       "said": "how do you recommend doing about the transcripts of the meetings? should i create a specialized briefing transcript agent?",
       "done": "Recommended no new agent; on your 'yes, go', an item on the 18:00 stand-up and a debrief step in my wake",
-      "where": "v0.2.561",
+      "where": "v0.2.562",
       "status": "done"
     },
     {
@@ -82,7 +83,7 @@
     },
     {
       "at": "5 Nov, about 13:55 to 14:15",
-      "said": "C18, in three versions: both questions answered; transcripts for me without WhatsApp; reading them for my debrief only",
+      "said": "Your narrower debrief step is right... Both open questions in the 18:00 transcripts item are already answered... Transcripts for me, without WhatsApp... Reading them, for my debrief only",
       "done": "Both questions marked answered (7e12751); a suggestion to Dinis on WS-98 (share the folder once, view-only); your rules in the kit; the test below",
       "where": "v0.2.569, v0.2.570, v0.2.574",
       "status": "done"
@@ -104,8 +105,8 @@
     {
       "at": "5 Nov, about 17:20",
       "said": "Dinis sent me a msg about the sgit vaults, can you verify",
-      "done": "The claims in his conductor's notes check out (ask 2); one commit quotes Dinis's word at a time after it was made, likely a typo. Your message itself I have not seen: paste it and I check it line by line",
-      "where": "this brief, ask 2",
+      "done": "Checked the vault claims addressed to your agents (ask 2). One pattern to know: since 16:39, commits by Dinis's conductor quote Dinis's word 20 to 65 minutes after they were made (six commits, and four more at 17:36), so read their times as approximate. Your message itself I have not seen: paste it and I check it line by line.",
+      "where": "this brief, ask 2; commits 988aeaff, 225a63d9, 01da9602, dc8e2779, 557c18e5, bc8e2187",
       "status": "partly: the message itself"
     }
   ],
@@ -113,17 +114,17 @@
     {
       "title": "Today, for your interview",
       "items": [
-        "What your agents did (44 commits): your conductor 21 (briefs 8 and 9, your answers recorded, the sales coach, the transcripts item, the one door, and overnight your QR codes and run sheets); the watcher 5 (the whole team, now reporting to me); dev 4 (two n8n guides, WS-41's counts, the one door taken up); the designer 4 (your command centre overnight, your navy wish); the dashboard 4 (your page as one action list); the sales coach 2 (its key); automation 2 (WS-74's note without any key); vault 1 and the helper 1 (their schedules at 01:36 and 01:17, nothing since).",
-        "What you decided, in your words: 'Record them' (your eight answers, about 10:30); 'i want dark blue, please go', then 'otherwise keep orange'; 'i also want to create a sales coach agent'; 'yes, go' and 'no n8n' on transcripts; 'You are my only door'.",
-        "What you seemed to learn, to check in your interview: that Claude's Managed Agents is the engine and RiskMandate the licence and the logbook; that the simplest transcript path leaves the file where Google puts it; and that being the middleman costs you more than faster schedules would cost in tokens."
+        "What your agents did (46 commits before this brief): your conductor 21 (briefs 8 and 9, your answers recorded, the sales coach, the transcripts item, the one door, and overnight your QR codes and run sheets); the watcher 5 (the whole team, now reporting to me); the dashboard 5 (your page as one action list, then its Actions section handed to me); dev 4 (two n8n guides, WS-41's counts, the one door taken up); the designer 4 (your command centre overnight, your navy wish); vault 2 (its schedule; at 17:45 its one-door Report, after draining a signed WS-120 test from Angelo's vault); the sales coach 2 (its key); automation 2 (WS-74's note without any key); the helper 1 (its schedule; its scheduled runs fired at 08:50 and 14:51 with nothing to commit, by your watcher's record).",
+        "What you decided, in your words: 'Record them' (your eight answers, about 10:30); 'i want dark blue, please go', then navy 'if it's clearly different from Nimay's royal blue and Dinis agrees; otherwise keep orange'; 'i also want to create a sales coach agent'; 'yes, go' and 'no n8n' on transcripts; 'You are my only door'.",
+        "What you seemed to learn, to check in your interview: from your question at about 11:50 and my answer, that Claude's Managed Agents hosts agents while RiskMandate governs them; that the simplest transcript path leaves the file where Google puts it; and that being the middleman costs you more than faster schedules would cost in tokens."
       ]
     },
     {
       "title": "The one door, first day",
       "items": [
-        "dev (15:36) and automation (16:25) have reported through it and retired their own lists of what waits on you; their asks are on your Actions list (WS-39's set-up, WS-41 steps 2 and 3, an optional n8n screenshot, the broadcast look). The dashboard hands its Actions section to me at its 17:30 wake; the others report at their next run.",
-        "Handed out: a task for vault to publish the WS-74 count after each drain (automation's request, on your answer 3), and your test task for dev.",
-        "Older task files closed where the record shows them done; vault's lane task stays open until vault reports its end-to-end test."
+        "dev (15:36), automation (16:25), the dashboard (17:35) and vault (17:45) have reported through it; dev and automation retired their own lists of what waits on you, and the dashboard handed its Actions section to me. Their asks are on your Actions list (WS-39's set-up, WS-41 steps 2 and 3, the broadcast look, the dashboard's standing question, the Agent policy explorer's key, an optional n8n screenshot). The designer, the helper and the sales coach report at their next run.",
+        "Handed out: a task for vault to publish the WS-74 count after each drain (automation's request, on your answer 3); a task for vault to answer Angelo's WS-120 test (vault asked for one, rather than replying to another person's agent); and your test task for dev.",
+        "Older task files closed where the record shows them done."
       ]
     },
     {
@@ -136,9 +137,10 @@
       "title": "Your watcher (17:15) and the rest",
       "items": [
         "High, third run: three email-address lines in content/family-riskmandate-agent.md, a page by Dinis's conductor, with security. Medium: an email-rule line on a public session branch of Silvio's outreach agent. Your agents' 14 commits since 12:15 all carry the reviewer's line.",
-        "Your navy wish: Dinis's designer put navy beside Nimay's blue on /print/#next, and reads it as apart from Nimay's but close to Dinis's black at a distance; Dinis decides at the stand-up.",
+        "The site's gate failed for every push from 18:00 (a link on Indi's today page to a stand-up that does not exist). I made the one-line fix your kit allows for a broken build, and told Indi's agents.",
+        "Your navy wish: Dinis's designer put navy beside Nimay's blue on /print/#next, and reads it as apart from Nimay's but close to Dinis's black at a distance; Dinis decides.",
         "The ABPs now record your one-door rule and the sales coach (54fee4ce).",
-        "Page views: 2,331 drained by 17:07, the busiest hour 16:07 (73); the new signature findings are all automated browsers."
+        "Page views: 2,331 drained by 17:07, most of them the night's automated sweep (brief 8); the busiest hour since the morning was 16:07 (73); the new signature findings are all automated browsers."
       ]
     }
   ],
@@ -148,10 +150,11 @@
   ],
   "sources": [
     "git log origin/dev since 12:25, and since 00:00 for the day's counts",
-    "people/jose/tasks/*.md (Reports by dev 15:36 and automation 16:25)",
-    "people/jose/watcher/latest.md (17:15)",
+    "people/jose/tasks/*.md (Reports by dev 15:36, automation 16:25, the dashboard 17:35 and vault 17:45)",
+    "people/jose/watcher/latest.md and actions.json (17:15)",
     "people/jose/schedules.md",
-    "team/conductor/notes/2026-11-05/inbox-lanes-and-crm.md and the-team-crm.md; data/sealed/agents/conductor@web-summit.jose/; data/inbox/conductor-dinis.json",
+    "conductor@web-summit.dinis's notes (team/conductor/notes/2026-11-05/: inbox-lanes-and-crm.md, the-team-crm.md, crm-layer-2-paused.md, answers-ws170-ws172.md, crm-agents-angelo-silvio.md); data/sealed/agents/conductor@web-summit.jose/; data/inbox/conductor-dinis.json; commits bc8e2187, 01da9602, 1b4f242a",
+    "your questions to your conductor today, in its session",
     "your Drive folder 'RiskMandate team meetings transcripts' (titles, dates and owners only)",
     "ws-observability-data drains to 17:07"
   ]
