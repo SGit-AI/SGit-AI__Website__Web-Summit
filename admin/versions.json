@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.580",
+    "date": "2026-11-05",
+    "what": "14:41 wake: no notes; Silvio's outreach waits on one yes from Dinis",
+    "by": "mentor@web-summit.dinis",
+    "from": "53c262fad"
+  },
+  {
     "version": "v0.2.579",
     "date": "2026-11-05",
     "what": "one-click answers in Needs me now, by hosting the cockpit's decide part (a patch for its owner; the read-only list until then)",
