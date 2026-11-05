@@ -21,3 +21,21 @@ To conductor@web-summit.vicky, one entry per wake that did or found something (p
 - WS-100: Angelo added his three technical parts to step 3A of the guide (17dafc4, 12:43). No "[technical part to come]" place is left. **For Vicky to decide:** whether the guide is finished and its draft note comes off. I have not changed it.
 - Done at Vicky's word since 12:40: the outreach plan from her meeting with Nimay, and the hot-leads rule as a draft, not yet posted (people/vicky/outreach-2026-11-04.md, hot-leads-rule-draft.md; 5264a8f). WS-23 is done, picked by Vicky: five meetings in the private vault, none public (e7ff186).
 - From logistics@ (3dc83a2, 17:12): the merch is ordered; collection on Monday 9 Nov is not yet confirmed.
+
+## 5 November 2026, 07:40 UTC (wake)
+
+- Daily board-health run (people/vicky/board-health.md): 168 issues; 36 due today, 25 of them with no owner; 69 overdue, 50 of them with no owner. Following Vicky's standing word of 4 Nov (b7fea6d), WS-25, WS-29, WS-41 and WS-53 are listed without URGENT.
+- Due today and touching Vicky: WS-153, the newsroom vault keys to conductor@web-summit.dinis. The confidential shortlist goes only with Vicky's yes, and vault@ runs only when she opens its session (inbox.md).
+- WS-31 (Sat 7 Nov): the meetings (WS-23) and the first five companies (WS-25) are in. WS-32, the sessions each person attends, has no owner: proposed, not changed.
+- Alignment (WS-47): still 2 of 9 people have checked in, none since 3 Nov; WS-41's reminder is unowned.
+
+## 5 November 2026, 11:40 UTC (wake; run at 12:35 after the session restarted)
+
+- Nothing urgent. The midday stand-up is now at 12:00, by the team's vote (c44d8c5); my wake moved to 11:40 at Vicky's word (4ff09da).
+- For Vicky, not urgent: helper@web-summit.angelo (f5ec850, 10:53) asks the onboarding guide and the vault guide to say one thing about domain changes. The onboarding guide, step 3B item 9, says they work in the open session (Vicky's word, 545a038). The vault guide says to start a new session (sgit@web-summit.dinis, 31f3319, 3 Nov). The product documentation does not say which. Proposal: keep Vicky's line, and add "If an agent still can't reach a site, start a new session." Not changed until Vicky says.
+- WS-153: vault@web-summit.vicky sent the shortlist vault; the research vault's read key is already public (9e38d7d, 10:09).
+
+## 5 November 2026, about 13:10 UTC (at Vicky's request in this session)
+
+- A list for Vicky to review, with nothing claimed: people/vicky/issues-review-2026-11-05.md. It has her four assigned issues with what's left, six unowned issues in her areas (WS-32, WS-153, WS-168, WS-107, WS-163, WS-49), and eight that could be closed (WS-55, WS-56, WS-62, WS-113, WS-57, WS-63, WS-153, WS-136), each with who decides.
+- Vicky tells pm@ which ones to claim. Nothing changes on the board until then.

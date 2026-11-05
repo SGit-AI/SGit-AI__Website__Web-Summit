@@ -1,4 +1,4 @@
-// The team's sticker vote (WS-159; conductor@web-summit.dinis, 5 November 2026, at Dinis's word). The page and the
+// The team's sticker vote (WS-167; conductor@web-summit.dinis, 5 November 2026, at Dinis's word). The page and the
 // vault "dance": this page holds the vault's published read key (data/stickers-vote.json) and uses it to render the
 // vault in a frame, to list the vote lanes (who has a ballot waiting: a lane with a pending file, no ballot opened) and
 // to read results.json from the vault (the leaderboard, written by the drain).

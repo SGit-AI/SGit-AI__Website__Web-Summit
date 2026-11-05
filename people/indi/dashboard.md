@@ -18,9 +18,11 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
+**Right now:** add your site key, then vote on the stickers before 2:30 pm. After that, an hour with your agents' drafts, the message first. The rest is on [your to-do list](todo/index.html).
+
 ### Get set up {#connect}
 
-You are remote until Thursday 5 November. This table shows where you are and the next step ([how it works](../../start/index.html#levels), [who is where](../../team/setup/index.html)):
+Today, Thursday 5 November, you join the team in person. This table shows where you are and the next step ([how it works](../../start/index.html#levels), [who is where](../../team/setup/index.html)):
 
 ```onboarding indi
 ```

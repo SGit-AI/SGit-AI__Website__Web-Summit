@@ -12,7 +12,7 @@ import crypto from 'crypto'
 import { execFileSync } from 'child_process'
 import { check } from '../tools/signoff.mjs'
 
-const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+import { esc } from './text.mjs'
 const BADGE = {
     approved: ['ok', 'APPROVED'], 'changes requested': ['warn', 'CHANGES REQUESTED'], superseded: ['warn', 'SUPERSEDED: RE-SIGN'],
     unsigned: ['warn', 'NOT YET SIGNED WITH A KEY'], 'bad signature': ['bad', 'BAD SIGNATURE'], awaiting: ['wait', 'AWAITING SIGN-OFF'],

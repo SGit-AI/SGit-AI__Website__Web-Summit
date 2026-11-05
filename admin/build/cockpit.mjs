@@ -10,6 +10,7 @@
 import fs from 'fs'
 import path from 'path'
 import { execFileSync } from 'child_process'
+import { clipWords } from './text.mjs'
 
 const split = v => String(v || '').split(',').map(x => x.trim()).filter(Boolean)
 const DAY = 864e5
@@ -64,7 +65,7 @@ export function cockpit({ ROOT, id, teamData, ISSUES, MEET, INV, OB, VERSION, no
     const K = kinds(ROOT), log = gitLog(ROOT), agendaOf = new Map()
     for (const s of MEET.all) for (const it of MEET.items(s.id)) for (const w of new Set([it.issue, ...(`${it.title} ${it.detail || ''}`.match(/WS-\d+/g) || [])].filter(Boolean))) { if (!agendaOf.has(w)) agendaOf.set(w, []); agendaOf.get(w).push({ meeting: s.id, title: it.title, type: it.type, status: it.status, by: it.by || '', ref: it.file }) }
     const issueBox = x => x && { id: x.id, title: x.title, status: x.status || 'open', due: x.due || '', for: x.for, picked_by: x.picked_by || '', area: x.area || '', body: (x.done || '').slice(0, 900), agents: x.agents || '', url: `${REPO}/blob/dev/board/${x.file}` }
-    const commitsOf = w => w ? log.filter(c => new RegExp(`\\b${w}\\b`).test(c.s + ' ' + c.b)).slice(0, 6).map(c => ({ h: c.h, at: c.at, s: c.s.slice(0, 160), url: `${REPO}/commit/${c.h}` })) : []
+    const commitsOf = w => w ? log.filter(c => new RegExp(`\\b${w}\\b`).test(c.s + ' ' + c.b)).slice(0, 6).map(c => ({ h: c.h, at: c.at, s: clipWords(c.s, 160), url: `${REPO}/commit/${c.h}` })) : []
     const params = x => Object.fromEntries(Object.entries(x || {}).filter(([k]) => k.startsWith('card_')).map(([k, v]) => [k.slice(5), String(v).replace(/^"|"$/g, '')]))
     function enrich(item, iss, kindName, extra = {}) {
         const w = iss ? iss.id : item.issue || '', text = `${item.title} ${item.detail || ''} ${iss ? iss.done || '' : ''}`

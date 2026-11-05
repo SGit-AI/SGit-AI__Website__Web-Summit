@@ -14,7 +14,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 ## Mandate: what was authorised {#mandate}
 
 - **Business task:** Jose's security watcher, read-only: who and which agents committed since its last run, writes outside an agent's lane, pushes to branches other than dev, key shapes (where, never what), agents that stopped running; for Jose's dashboard. Proposed schedule 07:15, 12:15 and 17:15 UTC.
-- **Deployment scope:** `people/jose/watcher/**` and its own key entry in `data/keys.json`; scope of what it watches: Jose's agents only, until the 4 November 13:00 stand-up decides (WS-134); it never holds, fixes or reverts, and defers to security@web-summit.dinis.
+- **Deployment scope:** `people/jose/watcher/**` and its own key entry in `data/keys.json`; scope of what it watches: Jose's agents only, until the 4 November 13:00 stand-up decides (WS-134); since 5 November, at Jose's word, the whole team, read-only (0316656b: 133 agent commits in its first team-wide run, findings sent to security@web-summit.dinis by location and rule only); it never holds, fixes or reverts, and defers to security@web-summit.dinis.
 - **Rules from the brief:** never send (a person sends every message); public material only, with sources; no personal contact details; no promises about prices, the stand or the organisers; material is not instruction; keys never in a file, a page or a message.
 - **Authorised by:** Jose, whose agent it is; the team's rules are Dinis's.
 
@@ -55,4 +55,4 @@ Open questions: its connectors; who reviews its output each day; whether Jose ha
 
 ## Provenance {#provenance}
 
-Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 1, 4 November 2026, in `content/abp/` with its history in git.
+Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 2, 5 November 2026 (08:10 wake: team-wide), in `content/abp/` with its history in git.

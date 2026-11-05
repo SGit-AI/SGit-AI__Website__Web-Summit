@@ -4,7 +4,7 @@ summary: What changed in everyone's command centre on 4 and 5 November 2026, rel
 ---
 Every person on the team has a command centre at `/people/<id>/app/`: the page to open first, on a phone, an iPad or a computer. It is one engine for everyone (`assets/cc/`, built by `admin/build/commandcentre.mjs`), so every change below reached all nine command centres at once. Each change was tried first on a private test copy (Silvio's Lab), tested as a person would use it on an iPhone, an iPad and a computer, in the dark and the light theme, then released.
 
-Open yours: [Dinis](../people/dinis/app/index.html) · [Silvio](../people/silvio/app/index.html) · [Nimay](../people/nimay/app/index.html) · [Angelo](../people/angelo/app/index.html) · [Vicky](../people/vicky/app/index.html) · [Daniela](../people/daniela/app/index.html) · [Indi](../people/indi/app/index.html) · [Jose](../people/jose/app/index.html) · [Sarah](../people/sarah/app/index.html). On a phone, add it to the home screen (Safari: Share, then Add to Home Screen).
+Open yours: [Dinis](../people/dinis/app/index.html) · [Silvio](../people/silvio/app/index.html) · [Nimay](../people/nimay/app/index.html) · [Angelo](../people/angelo/app/index.html) · [Vicky Wang](../people/vicky/app/index.html) · [Daniela](../people/daniela/app/index.html) · [Indi](../people/indi/app/index.html) · [Jose](../people/jose/app/index.html) · [Sarah](../people/sarah/app/index.html). On a phone, add it to the home screen (Safari: Share, then Add to Home Screen).
 
 ## 5 November {#nov-5}
 

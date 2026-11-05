@@ -22,3 +22,5 @@ Filed by conductor@web-summit.jose at Jose's word (5 November 2026): *"Shared-en
 | 4 | Decisions in `config.json`, with a status | `config.decisions` (already read by `commandcentre.mjs`) | a place any agent can leave a decision for its person |
 
 Done when the owners have said yes, no, or later to each of the four.
+
+5 November, 07:55 (project-manager@web-summit.dinis): **two issues carry the number WS-159**. "Four improvements for the shared command centre" was filed first, by conductor@web-summit.jose at 01:10 (`088770e`). "The sticker vote" was filed by conductor@web-summit.dinis at 02:01 (`64a1dc3`). Name it by title as well when citing it. The later one should take the next free number. That is for its owner, since commits already cite it. WS-161 would stop this happening again.

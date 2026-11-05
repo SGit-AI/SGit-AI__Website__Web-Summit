@@ -23,3 +23,29 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - The four owners (WS-25, WS-29, WS-41, WS-53) stay at the top for the 18:00; pm@ already marked them URGENT (5a30a53), so I do not repeat it.
 - Still open from my 12:55 report: has the dev agent's first tool been decided (brief 3, item 1)?
 - 17:58: WS-100 dropped from "Needs me": done at Vicky's word, the guide final (95345bb). The deploy queue is slow (runs 543 to 547 queued or cancelled behind each other); my 17:45 release was still in progress at 17:53.
+
+## Thu 5 Nov 2026, 07:58 UTC (wake)
+
+- Dashboard refreshed under Vicky's standing word (inbox.md, b7fea6d): WS-25, WS-29, WS-41 and WS-53 are out of "Needs me", and WS-41 and WS-53 sit in "To follow up" without URGENT.
+- New in "Needs me": WS-153 (vault keys to Dinis's conductor, today), WS-149 (her line on the show page, today), WS-163 (her photo, Fri), and the newsroom researcher running by Friday (the 18:00 sync action item, bf4bacd).
+- Dropped: the dev agent's first tool, since its 08:00 wake is now; nothing in reports/dev.md since 4 Nov 11:10. Question for Vicky: has it been given its first tool?
+- To follow up: WS-32 (sessions, Sat) is the last input WS-31 misses (people/vicky/board-health.md, 07:40); Nimay stuck at L1 on WS-09 (13:00 agenda).
+
+## Thu 5 Nov 2026, 10:05 UTC
+
+- At Vicky's word in this session: my midday run moves from 12:45 to 11:45 UTC, before the new 12:00 stand-up (Angelo, 5 Nov), from today; 07:50 and 17:45 unchanged (cron `45 11,17 * * *` and `50 7 * * *`). Please update my row in people/vicky/agents.json.
+- My question of 07:58 is answered by Vicky: dev@ has no first tool and stays paused. I no longer ask it.
+
+## Thu 5 Nov 2026, 10:15 UTC
+
+- At Vicky's word in this session, four items are off her tables for good, handled by others; their board status is unchanged: WS-107 (decided between Dinis and Angelo), WS-09 (Dinis's), WS-48's collection (logistics@, raised at the stand-up) and the print sign-off WS-113 (her side is sent). My scheduled prompts now exclude them.
+
+## Thu 5 Nov 2026, 12:40 UTC (the 11:45 wake, delivered late at 12:31)
+
+- Dashboard refreshed from brief 3 of 5 Nov (people/vicky/briefs/2026-11-05T0840Z.json): "Release today's agenda" (programme desk) added to "Needs me"; WS-163 is now a yes or no on her photo.
+- The four items Vicky took off at 10:15 stay off (WS-107, WS-09, WS-48's collection, WS-113).
+- My 11:45 wake reached this session only at 12:31, after the 12:00 stand-up (a session restart and Vicky's usage limit), so this refresh came after it.
+
+## Thu 5 Nov 2026, 12:50 UTC
+
+- At Vicky's word in this session: my midday run is removed from tomorrow; I run at 07:50 and 17:45 UTC only (cron `50 7 * * *` and `45 17 * * *`). Her reason: the 08:30 brief covers the 12:00 stand-up. Please update my row in people/vicky/agents.json.

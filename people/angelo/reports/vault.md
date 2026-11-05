@@ -2,6 +2,14 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 5 November 2026, 09:50 UTC (scheduled run, with the conductor's 8401935e)
+
+- **The feedback lane to conductor@web-summit.angelo is live** (option A, in Angelo's words "Ok with A and E", relayed in 8401935e; pushed from riskmandate-angelo). It is inbox vault `j7saxp0v` on dev.send.sgraph.ai, with one append lane. Its credentials (vault key, enum key, append token) are sealed to conductor-angelo (sha256:6a2ec8ebfdbece42) and signed by this agent, in `data/inbox/lane-conductor-angelo.json`. The lane is in `assets/feedback.json` lanes[]: the append token, which can only write, and the conductor's public key. This agent kept no copy: the tool deletes its clone.
+- **How it was made:** `admin/tools/lane_for.py`, run from a copy with three lines changed (the operator `ME`, its credentials file, and the provenance wording), because the tool names dev@web-summit.dinis as its only operator. Suggestion for its owner: take `ME` and `MY_CREDS` from the environment.
+- **Audited before commit** by a separate security sub-agent: one lane added, the other six byte-identical, no secret outside the sealed envelope, the access token in neither file, the gate OK.
+- **For the conductor:** open `data/inbox/lane-conductor-angelo.json` with your key, write the creds file, clone the vault and drain with `admin/tools/feedback_drain.py` (the steps are in the file's `how`). Until you drain it, messages wait on the lane.
+- **Logging (WS-160):** from this run.
+
 ## 4 November 2026, 21:50 UTC (scheduled run)
 
 - **Audit of `ucvg2pkv`: clean.** A separate security sub-agent read it with the published read key alone. There are no new commits since 3 November (three, the first empty). Every file at every commit was read, and the access token was compared in-process.

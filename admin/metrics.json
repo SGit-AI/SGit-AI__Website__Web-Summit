@@ -223,6 +223,31 @@
       "pages": 478,
       "validate_seconds": 4.92,
       "build_seconds": 3.45
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: WS-164 items 1 and 3. page() leaves keyring.js off any page that runs a script from people/ (resolved from its src) or a script a person's pages.mjs put on it: 34 of 492 pages (Indi's factory and today, the lab studio, the command centres with their own app.js). Gate check 22: no built page has both; no .js under people/ uses WSKeyring, ws-keyring, indexedDB, document.links or data/sealed/. Proved: with the filter off the gate fails on all 34; a planted people/ script calling WSKeyring fails. Gate 5.04 s at 492 pages (4.92 s at 478); build 3.47 s.",
+      "pages": 492,
+      "validate_seconds": 5.04,
+      "build_seconds": 3.47
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: one set of text helpers (admin/build/text.mjs: esc, escAttr, clipWords) for ten build modules; eight private copies of esc and two of the word-boundary clip removed. Output identical (built old and new with BUILD_NOW pinned) except the one intended change: cockpit.mjs cut commit subjects at 160 characters mid-word, the same bug sgit@ fixed in two other places (a cut agent name reads as an email address to the gate); now cut at a word. Gate 6.1 s at 500 pages, unchanged within noise (this machine read 6.0 s before the change; it was 5.0 s at 492 pages this morning, so the machine is slower now).",
+      "pages": 500,
+      "validate_seconds": 6.08
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: admin/tools/lane_for.py runs as any agent (vault@web-summit.angelo ran it from an edited copy, 11884c6e): --as/LANE_AS, --creds/LANE_CREDS, --why for the record, today's date; and it signs with the published key that matches the creds file, not the first key with the agent's name (an ended session's key would have signed). No copy to keep in step; the site and the gate unchanged.",
+      "pages": 503,
+      "validate_seconds": 6.37
     }
   ]
 }

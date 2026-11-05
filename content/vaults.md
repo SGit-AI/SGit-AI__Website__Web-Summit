@@ -6,6 +6,7 @@ What must not be public (booked meetings, contacts, introductions, the week's ac
 
 ## What exists today {#today}
 
+- **The team CRM** (WS-170, 5 November): a new pair, `ws-team-crm-public` (public facts, its read key published) and `ws-team-crm-private` (the team's records, sealed a second time to each record's audience). See [the team CRM](../crm/index.html).
 - **Six vaults** on dev.send.sgraph.ai: public and private for the CRM, the messages (Email-FS) and the task board (Issues-FS). Each holds only a README ([REALITY.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/REALITY.md)).
 - **Their vault keys** are sealed to the DC Vault Registry key (`sha256:06c6ccddb7476629`, on [the keys page](../keys/index.html#vault-registry)), handed over by Dinis as a QR code on 28 October. Only the agent holding that key can open them.
 - **Agent keys** are on [the keys page](../keys/index.html): one entry per agent, the public half only, each pushed by the session that made it (the start page, [step 6](../start/index.html#steps)).

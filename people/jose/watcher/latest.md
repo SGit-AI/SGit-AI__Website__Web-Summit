@@ -1,41 +1,54 @@
 # Watcher: latest run
 
-**Run:** 2026-11-04 23:20 UTC, by watcher@web-summit.jose. **Scope:** Jose's agents only (the 13:00 agenda item on the scope is still open). The feed for the dashboard is `activity.json` beside this file.
+**Run:** 2026-11-05 12:15 UTC (scheduled), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed for the dashboard is `activity.json` beside this file.
 
-**Range:** `dev` from `aa6582f` to `3759445`. The watcher had no scheduled task until 23:10 UTC, so the 07:15, 12:15 and 17:15 runs did not happen; this run covers the whole day. (The schedule is not in git: this session created the scheduled task `watcher@web-summit.jose wake` at 23:10 UTC.) It is scheduled now (cron `15 7,12,17 * * *` UTC).
+**Range:** `dev` from `849c4be` to `5677759`.
+
+**Addressed to:** Jose and conductor@web-summit.jose, which is asked (at Jose's word, 5 November 2026) to read it at its :20 wake, five minutes after the watcher. Every watcher release is addressed `For: jose, conductor@web-summit.jose`, with medium and high flags at the top of its commit body (`routes_to` in `activity.json`). The 11:25 request (`0292242`) has no answer yet.
 
 ## Who committed
 
-487 commits: 184 CI releases (counted), 279 by other people's agents (out of scope, not listed), 1 by the watcher itself (not counted as new), none without an agent name, and 23 by Jose's agents:
+120 commits: 51 CI releases (counted), 2 by the watcher itself (not counted as new), none without an agent name, and 67 by agents:
 
-| Agent | Commits | Last |
-|---|---|---|
-| conductor@web-summit.jose | 8 | 17:22 |
-| dashboard@web-summit.jose | 7 | 17:33 |
-| dev@web-summit.jose | 5 | 15:35 |
-| vault@web-summit.jose | 3 | 01:31 |
+| Person | Commits by their agents |
+|---|---|
+| Angelo | 19 |
+| Dinis | 18 |
+| Vicky | 17 |
+| Jose | 8 |
+| Indi | 3 |
+| Silvio | 2 |
 
-Security's 11:50 review (`cb3e186`) covers 17 of them; the 6 after it (`c129574`, `ad5996f`, `80b8078`, `45e4b6e`, `d41a456`, `9b9ded9`) wait for its 23:50 review.
+Security's 11:50 review (`a45be68`) covers 62 of the 67; the other 5 wait for its 23:50 review.
 
 ## What to look at
 
-1. **Medium: no `Reviewed-by` trailer** on `22d73f0`, `ec753e9` and `db7ea40` (dashboard@web-summit.jose, 07:34 UTC). They were committed while the dashboard was held (since 07:31) and pushed with `33e2db3`, which carries the pass that lifted the hold.
-2. **Medium: code the build runs (WS-133)** changed in `45e4b6e` (conductor, 17:08): `admin/build/build.mjs`, `admin/tools/telemetry_drain.py`, `assets/telemetry.js`, `assets/telemetry.json` (WS-37). Its review record (`people/jose/reviewer/reviews/2026-11-04-1705-conductor.md`, line 12) cites Jose's agreement. Not yet reviewed by security.
-3. **Note: writes outside the lane** in `6a5befb` (dev, 01:15): `assets/feedback.js`, `content/videos.md` and the two video pages (WS-74). Its review record (`2026-11-04-0114-dev.md`, line 8) says Jose's instruction covers them.
-4. **Note: writes outside the lane** in `e1bb01b` (conductor, 02:09): `data/person-keys.json` and `data/sealed/jose/`. Its review record (`2026-11-04-0210-conductor.md`, lines 8 and 18) calls it a documented exception and records that the conductor's session also holds the private half of Jose's person key. Security raised person keys under WS-132.
-5. **Note:** `dd8dbcb` (conductor, 01:56) wrote `board/WS-15-*` and `board/WS-18-*`; its `Issue:` trailer names WS-108 and WS-134.
-6. **Info:** three reviewer holds today, all lifted: `d8301cd` (vault, 01:26), `f2772a9` (conductor, 07:23), `bce97f2` (dashboard, 07:33). In `f2772a9`, `hold.json`'s `since` (07:35) is later than the commit (07:23).
+1. **High, still open:** the three lines in `content/family-riskmandate-agent.md` (lines 6, 18 and 32, added in `f20d264` by conductor@web-summit.dinis) that match the rule "an email address" (vault-audit.mjs) are still on `dev`. Security's 11:50 review read this file for another reason (its item 3) and does not mention them. Sent to security again. Location and rule only.
+2. **Medium: agents that look stopped** (two or more slots with no commit): dashboard@web-summit.dinis (hourly from 07:06, last 02:54) and outreach@web-summit.silvio (mail check every 2 hours at :15, last 02:28). A mail check with nothing to send looks the same.
+3. **Note: late by one slot:** vault@web-summit.jose (11:40 slot, last commit 01:36), helper@web-summit.jose (08:50 slot, last 01:19) and curator@web-summit.vicky (11:45 slot, last 07:49). A run with nothing to commit looks the same.
+4. **Note:** `11884c6` (vault@web-summit.angelo) wrote the shared `assets/feedback.json`; line 91 matches "a token assignment": a feedback lane's append token, public by design, as with the earlier lanes.
+5. **Note:** `0e80f5e` (conductor@web-summit.angelo) edited five board files not named in its `Issue:` trailer (WS-106, WS-36, WS-45, WS-76, WS-78), recording Angelo's words.
+6. **Note:** content pages written by person agents: `content/help.md` (`f5ec850`, helper@web-summit.angelo) and `content/impressao.md` (`53ff7af`, procurement@web-summit.silvio). Listed, not judged.
 
-The first run's three items stay open (`open_from_earlier_runs` in `activity.json`).
+Recovered since the morning: dev@web-summit.angelo, procurement@web-summit.silvio, conductor@web-summit.angelo and pulse@web-summit.dinis all committed again.
+
+Still open from earlier runs: dev@web-summit.silvio's changes to shared build code and five people's photos (`0316656`), and the first run's three items (`open_from_earlier_runs` in `activity.json`).
+
+## Actions (14:22 UTC, `actions.json`)
+
+At Jose's word, every stopped or late agent now becomes an action, re-checked on every run until it closes.
+
+- **Open, A-01: dashboard@web-summit.dinis.** No commit since 02:54, with 8 hourly slots passed. Likely idle, not broken: it applies Dinis's signed cockpit answers, and its last commit says none had been submitted. Not confirmed, because its task is in Dinis's account. For conductor@web-summit.dinis or Dinis: check that the task fired, and have the agent log every run (WS-160) so quiet runs show.
+- **Open, A-06: the stored prompts of Jose's scheduled tasks are out of date.** Conductor, dev and dashboard still have their 3 November text (no reviewer step for conductor and dev, no WS-160 log), and vault has no log step. For conductor@web-summit.jose, with Jose: update them to the kit's text.
+- **Closed:** vault@web-summit.jose and helper@web-summit.jose were not stopped (their tasks fired at 11:40 and 08:50, succeeded, and had nothing to commit); outreach@web-summit.silvio (14:06) and curator@web-summit.vicky (12:38) committed again.
 
 ## The checks
 
-- **Key shapes and contact details:** no rule matched in any added line of the 23 commits.
-- **Other branches:** nothing new on `main`. `claude/conductor-jose-setup-ogxaka` is at `d5a3428` (conductor, 23:11), on `dev` and after this run's range. The other `claude/*` branches are other people's agents.
-- **Agents that stopped:** none of the scheduled ones (conductor, dashboard, dev all made their last slot). The watcher itself had no schedule; fixed at 23:10.
+- **Jose's agents:** 8 commits, every one with `Reviewed-by`; vault and helper late by one slot (item 3), the others on time.
+- **Key shapes and contact details:** only the note in item 4.
+- **Other branches:** nothing new on `main`; three session branches moved (Jose's conductor and two of Angelo's), all on `dev`; no new branch.
 
-## Could not check
+## Not done, could not check
 
-- Whether the other agents' scheduled tasks fired when they made no commit (only commits are visible).
-- Other people's agents: out of scope until the stand-up decides.
-- Commits after `3759445`: the next run starts there.
+- The accountant's ledger line: Jose's answer (`fecb8f0`, item 5) is not yet in the watcher's `policy.json` writes.
+- Whether scheduled tasks fired when they made no commit; anything not public in the repository.

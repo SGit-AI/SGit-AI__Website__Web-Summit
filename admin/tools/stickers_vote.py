@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The team's sticker vote (WS-159): twelve funny laptop stickers in an encrypted vault, one append lane per team
+"""The team's sticker vote (WS-167): twelve funny laptop stickers in an encrypted vault, one append lane per team
 person, a ranked top 10 each (Borda), plus "not for me". Built by conductor@web-summit.dinis on 5 November 2026, at Dinis's word ("put the
 sticker images in a vault ... a UI to vote ... an append lane that receives the votes, with each lane's token
 published encrypted to each participant's public key ... only the team votes ... Angelo, Jose and Indi can drain").
@@ -345,7 +345,7 @@ def lanes(ctx):
     listed = ctx.enum('list', {'include_content': False, 'limit': 1})          # proves the enum key is the one the server holds
     say(f"{len(anchors)} lanes configured on {ctx.vid} ({', '.join(p for p, _, _ in people)}); listing with the enum key works ({len(listed.get('entries', []))} pending shown)")
     bundle = json.load(open(os.path.join(ctx.vault, 'identity/public-bundle.json')))
-    out = {'about': 'The team sticker vote (WS-159, admin/tools/stickers_vote.py). One append lane per team person with a site key; each lane token is sealed to that person (ws-ecies-1, data/person-keys.json), so only their browser opens it. Votes are signed by the person, sealed to drain_public_key (sgit hybrid v2) and written to their lane. The read key is published on purpose (Dinis): it renders the vault and lets anyone list who has a vote waiting, never what they chose.',
+    out = {'about': 'The team sticker vote (WS-167, admin/tools/stickers_vote.py). One append lane per team person with a site key; each lane token is sealed to that person (ws-ecies-1, data/person-keys.json), so only their browser opens it. Votes are signed by the person, sealed to drain_public_key (sgit hybrid v2) and written to their lane. The read key is published on purpose (Dinis): it renders the vault and lets anyone list who has a vote waiting, never what they chose.',
            'agent': AGENT, 'updated': now(), 'closes_at': CLOSES_AT, 'max_ranking': MAX_RANKING,
            'endpoint': ctx.host, 'vault_id': ctx.vid, 'read_key': ctx.c['read_key_public'],
            'vault_url': f"{VIEWER}#{ctx.c['read_key_public']}:{ctx.vid}",
@@ -629,7 +629,7 @@ def cmd_seal_drainers(ctx, o):
     for pid in (o.person or DRAINERS):
         out = os.path.join(ctx.root, f'data/sealed/{pid}/{stamp}-stickers-vault-key.json')
         seal_to(ctx, pid, {'title': 'The sticker vote: the vault key, so you can drain the votes',
-                           'text': f'This is the vault key of {VAULT_NAME} ({ctx.vid}), the team sticker vote (WS-159), and the passphrase of its drain key. It lets you drain the votes inside the vault: open https://dev.vault.sgraph.ai/#<the vault key below>, add the SG/Send access token in the vault host (the lock button) so the vault is writable, scroll to Drain the votes, paste the drain passphrase and press Drain. It also gives full write access to the vault, so use it only for that, and keep it in your password manager. Votes close Thursday 5 November, 18:00 UTC. From {AGENT}.',
+                           'text': f'This is the vault key of {VAULT_NAME} ({ctx.vid}), the team sticker vote (WS-167), and the passphrase of its drain key. It lets you drain the votes inside the vault: open https://dev.vault.sgraph.ai/#<the vault key below>, add the SG/Send access token in the vault host (the lock button) so the vault is writable, scroll to Drain the votes, paste the drain passphrase and press Drain. It also gives full write access to the vault, so use it only for that, and keep it in your password manager. Votes close Thursday 5 November, 18:00 UTC. From {AGENT}.',
                            'fields': {'Vault key': ctx.vault_key(), 'Drain passphrase': ctx.c['drain_passphrase'], 'Vault id': ctx.vid}}, out)
         say(f'sealed to {pid}: {os.path.relpath(out, ctx.root)}')
 

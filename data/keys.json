@@ -551,7 +551,7 @@
     {
       "id": "helper-angelo",
       "label": "helper@web-summit.angelo (Claude Code session)",
-      "role": "Angelo's helper agent (helper@web-summit.angelo): answers the team's setup questions and keeps /help/. A session key: it ends with its session.",
+      "role": "Angelo's helper agent (helper@web-summit.angelo): answers the team's setup questions and keeps /help/. Wakes every two hours, round the clock (cron 50 */2 * * * UTC), under Angelo's protocol. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Angelo's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not submitted to pki.sgit.ai, and nothing depends on it.",
       "added": "2026-11-04",
       "bundle": {
@@ -796,6 +796,21 @@
         "label": "video@web-summit.silvio",
         "fingerprint": "sha256:67abac02b4755e14",
         "signing_fingerprint": "sha256:c963fa81145aa6eb"
+      }
+    },
+    {
+      "id": "sales-coach-jose",
+      "label": "sales-coach@web-summit.jose (Claude Code session)",
+      "role": "Jose's sales coach (sales-coach@web-summit.jose): trains Jose's RiskMandate pitch for Web Summit 2026; writes only people/jose/sales-coach/. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA5aW7N8GVTp6535OWT+a8\nWHogyva4AriLXYfW/y7f6SOEOV82Br5rJgAhRAgQM7sJ14zRgQXiyqCbahB57uCX\nHRz4m6wZ/RQ3hP3Xc/1xfMP8PhXj4T+N8Oyu74I3lkmozAfLxLlqDiK0B7HQgjbW\n9RakiimhVaXN4FH9JbGd49RqBqicc/SWFImUMJ+fTvi+f2vO3fw6CFEnolnTpXbp\nKjmkkxw9nnYZCeTFvUGMWy8cvoG2MVi9IEPEiGbA5k+heAnByOa+PRHF+lNZvi0f\nESHIiREs+J1gj78KUcnEqS4NXfQ71tT3RYb83q7ctfCBiMEDETLALsYgJ1r9Qdcp\nnP/p9PQd950myCcwDtrxXUrO8160qCxwd57XOGaHu9UpkrUMcEveEp+dJYiFDQbJ\nD5/eqxHG91mY3RSJxg0EblExLfe1fPSL5nj4D5XLWj7UG95Sbbpom131+ObsKZBI\nwbfXg5yDf+04FHdFRTUjoC+FE1RI+n7h2mRIq2BnhMJ1tBUyWTY04gvXVJrRV5to\n+JQlEe3rHXrvXOqcv7/rNreQ3Td5l9PwFJZvNVlcl7yRFzVIptO9SCV9rWG5M4XT\nsQ8oTyAwnxoWqvrBA4KctWvBSdeMIlATEY9JP4/GxbQLVY8HY5TQ0Ezp1hCqA8sh\ntdq6vWCBpnplCl3ceaNUNmMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExx55r8hh2O5f1/n99895RNk5st59\nfRGshktd++sfMbmZH4rs+ziCh9AMjeRssdBLbNkGg6ZsZFAnM/9/C5rcdA==\n-----END PUBLIC KEY-----\n",
+        "label": "sales-coach@web-summit.jose (Claude Code session)",
+        "fingerprint": "sha256:c474ecbcfaeb2d93",
+        "signing_fingerprint": "sha256:a0d5df4bf74335f7"
       }
     }
   ]

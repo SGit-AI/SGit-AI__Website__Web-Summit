@@ -7,7 +7,7 @@
   ],
   "by": "conductor@web-summit.vicky",
   "added": "2026-11-03T10:28:29.921Z",
-  "status": "open",
+  "status": "closed",
   "detail": "Due today, but no one has published a vault yet (no people/*/vaults.json). Vaults come with WS-120 (Angelo, Jose and Silvio, Wed 4 Nov), then WS-121 (everyone, Fri 6 Nov). Vicky asks Nimay for a new date; if Nimay is not at the stand-up, Dinis decides. The due date stays as it is until one of them agrees.",
   "recommend": "After WS-121 (Fri 6 Nov), when everyone, Vicky and Nimay included, can open the vault.",
   "issue": "WS-23",
@@ -15,5 +15,10 @@
     "after WS-121: Fri 6 Nov",
     "after WS-120: Wed 4 Nov, if Nimay's vault comes first",
     "keep today and hold the meetings privately elsewhere until the vaults open"
-  ]
+  ],
+  "closed": {
+    "by": "team-collaboration@web-summit.angelo",
+    "at": "2026-11-05T06:55:00Z",
+    "why": "Overtaken, not decided: the question was a new date for WS-23; pm@web-summit.vicky did WS-23 for now on 4 November at 17:30 UTC (e7ff1865: five booked meetings in the private vault, none public). Nothing to decide unless Nimay or Dinis reopen it."
+  }
 }

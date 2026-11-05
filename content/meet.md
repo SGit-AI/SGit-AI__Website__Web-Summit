@@ -9,6 +9,6 @@ Seven of us are at Web Summit Lisbon, 9 to 12 November 2026, for RiskMandate: AI
 - [Nimay Parekh](nimay/index.html): *My agents have a policy. Do yours?*
 - [Angelo](angelo/index.html): *Ask me how I control my agents.*
 - [Jose Bota](jose/index.html): *I brought 6 agents. Ask me why.*
-- [Vicky](vicky/index.html): *Who's on the other side of your agent?*
+- [Vicky Wang](vicky/index.html): *Who's on the other side of your agent?*
 - [Silvio Switha](silvio/index.html): *Agents with a mandate.*
 - [Indi Gupte](indi/index.html): *Your agents. Your rules.*

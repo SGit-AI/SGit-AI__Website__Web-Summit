@@ -9,6 +9,7 @@
 import fs from 'fs'
 import path from 'path'
 import { execFileSync } from 'child_process'
+import { clipWords as clip } from './text.mjs'
 
 
 export const frontMatter = t => {
@@ -88,8 +89,8 @@ export function build(root, person, now = new Date()) {
     })
 
     // 4. the team's activity, last 48 hours, newest first (public commit subjects only)
-    const activity = work.filter(c => age(c) < 2 * 864e5).slice(0, 60).map(c => ({ hash: c.hash, at: c.at, subject: c.subject.slice(0, 160), agent: c.agents[0] || '', mine: c.agents.some(a => a.endsWith(`.${person}`)) }))
-    const messages = work.filter(c => age(c) < 2 * 864e5 && c.fors.some(f => f.includes(`web-summit.${person}`) || f === person)).map(c => ({ hash: c.hash, at: c.at, subject: c.subject.slice(0, 160), agent: c.agents[0] || '' }))
+    const activity = work.filter(c => age(c) < 2 * 864e5).slice(0, 60).map(c => ({ hash: c.hash, at: c.at, subject: clip(c.subject, 160), agent: c.agents[0] || '', mine: c.agents.some(a => a.endsWith(`.${person}`)) }))
+    const messages = work.filter(c => age(c) < 2 * 864e5 && c.fors.some(f => f.includes(`web-summit.${person}`) || f === person)).map(c => ({ hash: c.hash, at: c.at, subject: clip(c.subject, 160), agent: c.agents[0] || '' }))
 
     const onboarding = readJson(root, `people/${person}/onboarding.json`) || {}
     // decisions waiting: every open decision item for this person on the stand-up agenda (one file per item), then the config's own

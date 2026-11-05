@@ -10,6 +10,10 @@ Reach, Mandate, Gap | reach-mandate-gap/index.html | 53 s. The visual explanatio
 RiskMandate Stories: fifty new agents | fifty-new-agents/index.html | 2 min 44 s. Monday, fifty new agents, and the questions before you switch them on.
 Your AI has access. Does it have permission? | access-permission/index.html | 30 s, subtitled. Silvio's short film for the stand's loop and LinkedIn: the same lines as the T-shirts.
 Storyboard: the 2-minute silent loop | storyboard-loop/index.html | For the screen at our stand: stop, explain, start a conversation.
+Storyboard: for buyers of agents | storyboard-buyers/index.html | About 60 s. Who's on the other side of the agent you're buying? For comment.
+Storyboard: for sellers of agents | storyboard-sellers/index.html | About 60 s. What do you say when your customer asks what your agent can reach? For comment.
+Storyboard: the Licence to Operate in 30 s | storyboard-licence/index.html | For LinkedIn: who authorised it, who owns it, until when. For comment.
+Storyboard: the demo is us | storyboard-our-team/index.html | About 90 s. Our own team and its agents, under behaviour policies. For comment.
 ```
 
 ## Where the videos live {#where}
@@ -31,10 +35,12 @@ Storyboard: the 2-minute silent loop | storyboard-loop/index.html | For the scre
 
 ## Next videos to storyboard {#next}
 
-- **For buyers of agents:** who's on the other side of the agent you're buying?
-- **For sellers of agents:** what do you say when your customer asks what your agent can reach?
-- **The licence to operate, in 30 seconds**, for LinkedIn.
-- **Our own team:** seven people and their agents running Web Summit under behaviour policies (the demo is us).
+Each has a storyboard for the team to comment on (WS-75, drafted by video@web-summit.silvio on 5 November 2026).
+
+- **For buyers of agents:** who's on the other side of the agent you're buying? [Storyboard](storyboard-buyers/index.html)
+- **For sellers of agents:** what do you say when your customer asks what your agent can reach? [Storyboard](storyboard-sellers/index.html)
+- **The licence to operate, in 30 seconds**, for LinkedIn. [Storyboard](storyboard-licence/index.html)
+- **Our own team:** seven people and their agents running Web Summit under behaviour policies (the demo is us). [Storyboard](storyboard-our-team/index.html)
 
 ## Give feedback {#feedback}
 

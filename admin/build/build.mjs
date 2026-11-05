@@ -37,7 +37,8 @@ const NAV = SECTIONS.map(s => [s.t, s.h])
 const sectionOf = rel => SECTIONS.find(s => s.re.test(rel))
 const personOf = rel => { const m = rel.match(/^(?:brief-([a-z0-9-]+)|people\/([a-z0-9-]+)|meet\/([a-z0-9-]+)|team\/([a-z0-9-]+))\//); const id = m && (m[1] || m[2] || m[3] || m[4]); return id && teamData.members.find(x => x.id === id) }
 
-const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+import { esc } from './text.mjs'
+import { clipWords } from './text.mjs'
 const slug = s => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 // everything written here is generated: gitignored, built by CI, never committed; the list goes to .generated.txt for the gate
 const GENERATED = new Set()
@@ -136,8 +137,13 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
             out.push('<div class="sv" id="sticker-vault"><p class="meta">This page needs JavaScript: it opens the vault key sealed to you, in this browser only.</p></div>')
+        } else if (/^```crm\s*$/.test(l)) {
+            // the team CRM (WS-170, conductor@web-summit.dinis): a mount for assets/crm.js (front matter script: crm)
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push('<div class="crm" id="crm"><p class="meta">The diagram and the live CRM need JavaScript: they are drawn here by the page.</p></div>')
         } else if (/^```sticker-vote\s*$/.test(l)) {
-            // the team's sticker vote (WS-159, conductor@web-summit.dinis): a mount for assets/stickers-vote.js, which the
+            // the team's sticker vote (WS-167, conductor@web-summit.dinis): a mount for assets/stickers-vote.js, which the
             // page loads through its front matter (script: stickers-vote); without JavaScript it says so
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
@@ -186,8 +192,12 @@ function rail(rel, up, body) {
     return pages ? `<aside class="rail" aria-label="${esc(sec.t)}: its pages">${pages}</aside>` : ''
 }
 
-function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false, head = '', wide = false, focus = false }) {
+function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false, head = '', wide = false, focus = false, personScripts = false }) {
     const up = '../'.repeat(rel.split('/').length - 1)
+    // WS-164 item 1 (security@web-summit.dinis): a page that runs a person's own script (any script whose file is under
+    // people/, or a script a person's pages.mjs put on the page) gets no keyring.js, so no script but the site's own sits
+    // beside a person's key. The site's scripts that use the keyring (me, feedback, telemetry, obs) do without it there
+    const foreign = personScripts || [...`${head}${body}`.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].some(([, src]) => !/^https?:/.test(src) && path.posix.normalize(path.posix.join(path.posix.dirname(rel), src)).startsWith('people/'))
     body = String(body).replaceAll('href="@@/', `href="${up}`)   // links from build-time blocks (the agenda) written from the site root
     const side = home || wide ? '' : rail(rel, up, body)   // wide: a cockpit (people/<id>/dashboard.md, layout: cockpit) uses the whole screen
     const heroed = home && body.includes('class="hm-hero"')   // the home page's hero band (WS-103) is its title
@@ -235,8 +245,7 @@ ${wide && !focus ? '<section class="for-you" id="for-you" hidden aria-label="For
 </main>
 </div>
 <script src="${up}assets/copy.js?v=${VERSION}" defer></script>
-<script src="${up}assets/keyring.js?v=${VERSION}" defer></script>
-<script src="${up}assets/addkey.js?v=${VERSION}" defer></script>
+${foreign ? '' : `<script src="${up}assets/keyring.js?v=${VERSION}" defer></script>\n`}<script src="${up}assets/addkey.js?v=${VERSION}" defer></script>
 <script src="${up}assets/me.js?v=${VERSION}" defer></script>
 <script src="${up}assets/feedback.js?v=${VERSION}" defer></script>
 <script src="${up}assets/telemetry.js?v=${VERSION}" defer></script>
@@ -459,7 +468,7 @@ const obsLiveHtml = (person, id) => {
     if (!/^sgit_public_read_[0-9a-f]{64}$/.test(String(v.read_key || ''))) throw new Error(`people/${person}/vaults.json: "${v.name}" needs a read_key of the form sgit_public_read_<64 hex> (never a vault key)`)
     return `<div class="obs-live" data-endpoint="https://dev.send.sgraph.ai" data-vault="${v.vault_id}" data-key="${v.read_key}" data-title="${esc(v.name)}">` +
         `<p data-head></p><p class="meta" data-note>Opening vault <code>${v.vault_id}</code> with its published read key…</p><div data-app></div></div>` +
-        `<script src="${UP}assets/vendor/sgit-ai/2026-11-05/vault-embed.js" defer></script><script src="${UP}assets/obs-live.js" defer></script>`
+        `<script src="${UP}assets/vendor/sgit-ai/2026-11-05/vault-embed.js" defer></script><script src="${UP}assets/obs-live.js?v=${VERSION}" defer></script>`
 }
 // an observability view drawn by this site from the public vault's data/public.json: ```obs-view <stats|agents|pages|team>
 // <person> <vault id>``` (observability@web-summit.dinis, 5 November 2026); assets/obs-view.js reads and draws it.
@@ -469,7 +478,7 @@ const obsViewHtml = (view, person, id) => {
     if (!/^sgit_public_read_[0-9a-f]{64}$/.test(String(v.read_key || ''))) throw new Error(`people/${person}/vaults.json: "${v.name}" needs a read_key of the form sgit_public_read_<64 hex> (never a vault key)`)
     return `<div class="obs-view" data-view="${view}" data-base="${UP}" data-endpoint="https://dev.send.sgraph.ai" data-vault="${v.vault_id}" data-key="${v.read_key}">` +
         `<p class="meta" data-note>Opening vault <code>${v.vault_id}</code> with its published read key, decrypting in your browser…</p><div data-out></div></div>` +
-        `<script src="${UP}assets/vendor/sgit-ai/2026-11-05/vault-embed.js" defer></script><script src="${UP}assets/obs-view.js" defer></script>`
+        `<script src="${UP}assets/vendor/sgit-ai/2026-11-05/vault-embed.js" defer></script><script src="${UP}assets/obs-view.js?v=${VERSION}" defer></script>`
 }
 let UP = '../'
 const expandIssues =(body, up = '../') => { UP = up; return body
@@ -579,10 +588,11 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
     if (name === 'index') ({ html, md } = expandHome(html, md, homeBlocks({ ROOT, teamData, onboard, LEVELS, INV, MEET, ISSUES, plan, castData, merch })))
     if (name === 'print') ({ html, md } = expandSignoff(html, md, ROOT))
     if (meta.infographic) ({ html, md } = expandInfographic(html, md, ROOT, meta.infographic, rel))   // a night's summary in pictures (Dinis, 5 Nov)   // the Official Sign-off, from the signatures (WS-113)
-    // a page's own script, named in its front matter (script: <name> loads assets/<name>.js; WS-159)
+    // a page's own script, named in its front matter (script: <name> loads assets/<name>.js; WS-167)
     if (meta.script && !/^[a-z0-9-]+$/.test(meta.script)) throw new Error(`content/${f}: script must name a file in assets/ ([a-z0-9-])`)
     const head = meta.script ? `<script src="${'../'.repeat(rel.split('/').length - 1)}assets/${meta.script}.js?v=${VERSION}" defer></script>` : ''
     md = md.replace(/^```sticker-vault\s*\n```\s*$/m, '*The vault with full access is opened on the HTML page by assets/stickers-vault.js, for a person the vault key is sealed to.*')
+    md = md.replace(/^```crm\s*\n```\s*$/m, '*On the HTML page: a diagram of the two layers, the public CRM browsed live with its published read key, and, for a person whose browser holds their key, Open the private CRM (assets/crm.js, from data/crm.json).*')
     md = md.replace(/^```sticker-vote\s*\n```\s*$/m, '*The vote: the twelve stickers, the Vote button, the vault and who has voted are drawn on the HTML page by assets/stickers-vote.js, from data/stickers-vote.json.*')
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + html.replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index', head }))
     pages.push({ rel, title: meta.title, description: meta.summary })
@@ -637,7 +647,7 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     if (!fs.existsSync(f)) continue
     for (const p of (await import(f)).build(ROOT)) {
         if (!p.rel.startsWith(`people/${m.id}/`) || !p.rel.endsWith('.html')) throw new Error(`people/${m.id}/pages.mjs: ${p.rel} is outside people/${m.id}/`)
-        write(p.rel, page({ rel: p.rel, title: p.title, description: p.description, body: p.body, head: p.head || '', mdTwin: twinPath(p.rel) }))
+        write(p.rel, page({ rel: p.rel, title: p.title, description: p.description, body: p.body, head: p.head || '', mdTwin: twinPath(p.rel), personScripts: /<script\b/i.test(`${p.head || ''}${p.body || ''}`) }))
         pages.push({ rel: p.rel, title: p.title, description: p.description }); twin(p.rel, p.title, p.description, p.md)
     }
 }
@@ -675,8 +685,8 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
             open: open.length, overdue: open.filter(i => h(i) < 0 && !i.recurring).length, soon: open.filter(i => h(i) >= 0 && h(i) <= 72).length,
             urgent: open.filter(i => !i.recurring).sort((x, y) => h(x) - h(y)).slice(0, 5).map(i => ({ id: i.id, title: i.title, due: i.due, status: i.status, late: h(i) < 0 })),
             decisions: data.decisions.slice(0, 6).map(d => ({ what: d.what, issue: d.issue, source: d.source })),
-            agents: data.agents.map(g => ({ name: g.name, status: g.status, last_at: g.last_at, last: (g.last_subject || '').replace(/^[^:]+: /, '').slice(0, 120) })),
-            messages: data.messages.slice(0, 5).map(x => ({ at: x.at, from: x.agent, subject: x.subject.replace(/^[^:]+: /, '').slice(0, 140) })),
+            agents: data.agents.map(g => ({ name: g.name, status: g.status, last_at: g.last_at, last: clipWords((g.last_subject || '').replace(/^[^:]+: /, ''), 120) })),
+            messages: data.messages.slice(0, 5).map(x => ({ at: x.at, from: x.agent, subject: clipWords(x.subject.replace(/^[^:]+: /, ''), 140) })),
             daily: daily(m.id), days: DAYS14,
             acked: a?.acknowledged_at || null, since: { releases: since.filter(x => x.release).length, commits: since.filter(x => !x.release).length },
             briefing: `meetings/${nx.id}/${m.id}/index.html`, standup: `${nx.day} ${nx.time}`,

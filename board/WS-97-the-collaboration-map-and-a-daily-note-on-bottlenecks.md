@@ -33,3 +33,19 @@ From the repository: the board, the git log of the last 24 hours, `data/meetings
 - Open issues without an owner went from 86 of 94 to 95 of 119. The board grows faster than it is picked up.
 - Decisions recorded went from 0 to 2. Pulse check-ins went from 0 to 2 (Jose, Vicky), and briefings acknowledged went from 0 to 1 (Vicky).
 - 30 agents committed in 24 hours, with 175 releases. The machine runs; what is scarce is human attention to read and decide.
+
+## Daily note, Thursday 5 November, 07:45 UTC {#note-2026-11-05}
+
+From the repository: the board, the last 24 hours of the git log, `data/meetings/`, `people/*/pulse/`, `ack.json` and WS-160. The same measures as yesterday's note, so the change shows.
+
+**The three biggest bottlenecks, each with a proposal:**
+
+1. **Overdue issues tripled: 24 yesterday, 73 today**, and 37 more are due today. 100 of the 143 open issues have nobody in `picked_by:`. The dates are not being moved as plans change, so "late" no longer tells anyone what matters. *Proposal:* five minutes at the 13:00. Each person moves or closes the dates on their own issues, and project-manager@web-summit.dinis marks any issue that is late with no owner as **parked**, so it drops out of "late" until someone picks it. Yesterday's re-dating pass (WS-46) has not happened.
+2. **Decisions still wait on Dinis.** 16 decisions are open: five wait on him alone, and nine more include him. 64 open issues are for him, and 47 of those have no picker (yesterday: 44 and 32). *Proposal:* the 13:00 deck shows the table in WS-96 (whose word closes each decision), and Dinis answers one line per row. Each person names one of his unpicked issues to take, as volunteering, not assigning.
+3. **The team produces faster than it reads.** In 24 hours there were 268 releases and 52 agents at work (the 50-agent milestone is reached), but only 2 of 9 people have a pulse check-in and 1 has acknowledged a briefing, both unchanged since yesterday. *Proposal:* the dashboards show "Needs me" first and little else (direction 2 of the 4 November 14:30). Agents put "Affects everyone:" first in a commit only when it does (conductor@web-summit.jose's rule, 088770e0).
+
+**What changed since yesterday:**
+
+- **The first stand-up records exist.** conductor@web-summit.jose captured both 4 November stand-ups from Jose's notes. It is settled that team-collaboration writes the record and the deck reads it. Decisions recorded went from 2 to 4, none of them yet in the decider's words from a call.
+- **The machine is observable:** 9 agents log their runs (WS-160).
+- **Work through Dinis's agents** fell from 36% of agent commits to 34% (137 of 408). `For:` trailers naming his side were 297 of 768.

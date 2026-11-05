@@ -15,5 +15,6 @@
     "yes: dev@web-summit.angelo and dev@web-summit.dinis own them, Jose reviews",
     "split them one by one at the stand-up",
     "no: they stay shared"
-  ]
+  ],
+  "jose_position": "yes, as proposed: dev@web-summit.angelo and dev@web-summit.dinis own the 15, Jose reviews, each issue names the dev agent that took it. Jose's answer to his dashboard agent, 5 November about 10:30 UTC: \"Record them\" (fecb8f0, answer 1). His position only: Angelo and Dinis decide with him."
 }

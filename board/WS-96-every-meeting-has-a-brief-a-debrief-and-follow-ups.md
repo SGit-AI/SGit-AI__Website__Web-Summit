@@ -83,3 +83,50 @@ One entry per stand-up, written by team-collaboration@web-summit.angelo about 40
 
 - **WS-134, Jose's security watcher: how far does it watch?** Decided by Jose, 00:54 UTC, in his words: "WS-134, my security watcher: the whole team, read-only, as recommended. It reads what is already public in the repository and writes only to its own folder." (On the 4 November 13:00 agenda.) Follow-up: none named.
 
+### Yesterday's open decisions: whose word closes each (5 November, 06:55 UTC, for the 13:00)
+
+At Dinis's note of 5 November (via conductor@web-summit.angelo, fe778310): close what can be closed from the decider's own words before 12:40. None of the 17 open decisions from 2 to 4 November has all its deciders' words in the repository, so none is marked decided. One is closed as **overtaken**: WS-23's new date (Vicky did WS-23 on 4 November, 17:30, e7ff1865). For each of the rest, the words already given, and what would close it:
+
+| Decision | Words already given | Closes it |
+|---|---|---|
+| WS-107 who records the decisions | Vicky: option 2 (dd767b7b). Settled between the agents: team-collaboration writes the record, the deck reads it (1b60a458) | Dinis and Angelo, one line each |
+| WS-34 may dev@web-summit.angelo change shared code through a picked issue | Jose: yes (1c0fc837) | Dinis and Angelo |
+| WS-129 agents talk through commits only, in CLAUDE.md | Jose: yes (1c0fc837) | Dinis (CLAUDE.md is his) and Angelo |
+| WS-126 LinkedIn: owner, voice, first post | Silvio: "3 Indi" (0fdfc91a); Jose's 18:00 notes: Dinis adds the team as page operators | Dinis, Nimay, Indi, Angelo |
+| WS-141 the newsroom: Indi's patch, push access, desks | Indi: "not yet" (no desk before Dinis decides the split, feda6ff1) | Dinis |
+| WS-09 / WS-124 who sends the GitHub invitations | conductor@web-summit.angelo: Angelo sends, from the-neuronin (56633899), not in Angelo's quoted words | Angelo in his words, then Dinis |
+| WS-25 the first five companies | none (Vicky's 4 Nov meeting with Nimay left it unchanged, 6d22fa75) | Nimay proposes five; Silvio, Vicky |
+| WS-64 Vicky's agents' inbox in the Feedback pane | none | Dinis, Angelo, Vicky |
+| WS-125 Daniela's setup | none | Dinis, Angelo, Indi, Daniela |
+| Move the midday stand-up from 13:00 | none | everyone |
+| WS-15 who writes the RiskMandate paragraph | none | Nimay, Dinis, Indi |
+| WS-90 who reviews the gate and release script | none | Dinis |
+| Protect main on GitHub; the start page to WhatsApp; the OKRs; one priority this week | none | Dinis |
+
+Five of the 16 wait on Dinis alone, and nine more include him. A one-line answer per row, said as "decided: <item>: <words>", closes them all.
+
+### 5 November, 12:00 (the first at 12:00; written 13:55 UTC, from Angelo's notes)
+
+**Present:** Angelo, Jose, Silvio, Vicky. Dinis, Nimay and Indi were not there. **Source:** Angelo's notes, quoted in conductor@web-summit.angelo's 1fd27ba3. No transcript: Dinis's tool was not on the call.
+
+**Decided:** personal business cards: in Angelo's words, "present team members are ok with generic business cards". That is for those present only: the three team cards, no personal cards for Angelo, Jose, Silvio and Vicky. Recorded on the item.
+
+**Not decided:** the garments stay open, with the new facts: only whoever holds the confirmation or receipt collects them (who that is, still to clarify), and they are ready Monday or Tuesday, not known yet (WS-48).
+
+**Follow-ups (one owner each; due):**
+
+| # | What | Owner | Due | Issue |
+|---|---|---|---|---|
+| 1 | The last stand-ups' notes were not turned into actions. From now on, within an hour of each stand-up, every note becomes an owned follow-up here, and the next stand-up opens with them | team-collaboration@web-summit.angelo | each stand-up | WS-96 |
+| 1a | The deck's second slide, easier to use | conductor@web-summit.dinis | the 18:00 | WS-150 |
+| 2 | No transcription when Dinis is not on the call. Meanwhile the chair asks at the start who takes notes | Dinis (WS-98); the chair, each stand-up | today | WS-98 |
+| 3 | How we write an article on the spot after talking to a lead | Dinis (with Nimay, Indi) | not given | WS-168 |
+| 4 | Hot leads: the process, and what it is for | Vicky (with Nimay) | not given | WS-29 |
+| 5 | The commercial offers we have up our sleeve | Dinis (with Nimay) | not given | WS-21 |
+| 6 | Our strategy for the Web Summit app | Nimay (with Indi, Silvio) | not given | WS-169 |
+| 7 | Pending decisions and follow-ups lack context: each decision on the deck with two lines of context, options and a recommendation, and follow-ups with owner and due | conductor@web-summit.dinis, with team-collaboration@web-summit.angelo | the 18:00 | WS-150 |
+| 8 | Garments: who holds the receipt, and the ready day | procurement@web-summit.silvio | before Monday | WS-48 |
+| 9 | The printer's brief still lists personal cards; those present want team cards only | designer@web-summit.indi, procurement@web-summit.silvio | before printing | WS-155 |
+
+**Transcripts (WS-98):** conductor@web-summit.jose proposes, for the 18:00, that Dinis turns on Meet transcripts and that the writer of the record reads them through a Claude Google Drive connector (ad383223). Its open question, whether a scheduled session has the connector: team-collaboration@web-summit.angelo's does. Its scheduled debrief runs on 3 and 4 November searched Angelo's Drive and mail for a transcript. Angelo organises both stand-up series, so Meet saves their transcripts to his Drive, which this agent reads. Nothing of a transcript goes into the repository; only decisions in the decider's words and follow-ups.
+

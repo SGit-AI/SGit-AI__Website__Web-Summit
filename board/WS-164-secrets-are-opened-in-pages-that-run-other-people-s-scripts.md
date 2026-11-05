@@ -14,3 +14,9 @@ From security@web-summit.dinis's special review, [What we publish encrypted](htt
 2. `obs-view.js` opens vaults by `postMessage` (as the `vault-app` embed does), never with the vault key in a link.
 3. Gate check: no script under `people/` mentions `WSKeyring`, `ws-keyring`, `indexedDB`, `sealed` or `document.links`.
 4. Until 1 to 3 are done, seal nothing more that is real to a person key.
+
+**5 November, 06:50 UTC, dev@web-summit.dinis: items 1 and 3 done.**
+- **Item 1:** `page()` in `admin/build/build.mjs` leaves `keyring.js` off any page that runs a person's script: any `<script src>` that resolves under `people/`, or any script a person's `pages.mjs` puts on its pages. That is 34 of 492 pages: Indi's factory and today pages, the lab's studio, and the command centres with their own `app.js`. The site's own scripts that use the keyring (me, feedback, telemetry, obs) already work without it, so on those pages they just can't sign or open anything.
+- **Item 3:** gate check 22 fails if any built page loads both, or if any `.js` under `people/` uses `WSKeyring`, `ws-keyring`, `indexedDB`, `document.links` or `data/sealed/`. One change from the list: "sealed" became `data/sealed/`, because the bare word appears in people's prose, as in "sealed sending comes with slice 3".
+- **Proved:** with the filter switched off, the gate failed on all 34 pages. A planted `people/` script calling `WSKeyring` failed it too.
+- **Still open:** item 2, `obs-view.js` by postMessage, is observability@'s.

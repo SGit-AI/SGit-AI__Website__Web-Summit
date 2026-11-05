@@ -133,9 +133,30 @@ function summitDays(root) {
     }
 }
 
+// the cockpit's ranking (from the conductor, 8401935e item 3): what only Angelo can do and the decisions waiting on him,
+// each scored with why it is where it is, by admin/build/cockpit.mjs itself (imported, not copied). Its inputs are the
+// build's own modules (meetings, inventory, onboarding); the board is read the way build.mjs reads it.
+const CK = await import(path.join(ROOT, 'admin/build/cockpit.mjs'))
+const MEETMOD = await import(path.join(ROOT, 'admin/build/meetings.mjs'))
+const OBMOD = await import(path.join(ROOT, 'admin/build/onboarding.mjs'))
+function cockpitRanking(root, person, now) {
+    try {
+        const teamData = readJson(root, 'data/team.json') || { members: [] }
+        const dir = path.join(root, 'board')
+        const ISSUES = { issues: fs.readdirSync(dir).filter(f => /^WS-\d+.*\.md$/.test(f)).sort().map(f => { const { meta, body } = CC.frontMatter(fs.readFileSync(path.join(dir, f), 'utf8')); return { ...meta, file: f, for: (meta.for || '').split(',').map(x => x.trim()).filter(Boolean), done: body.trim().replace(/\n+/g, ' ') } }) }
+        let inv = null; const getINV = () => inv || (inv = INV.inventory(root, teamData))
+        const VERSION = fs.readFileSync(path.join(root, 'admin/build/version.txt'), 'utf8').trim()
+        const D = CK.cockpit({ ROOT: root, id: person, teamData, ISSUES, MEET: MEETMOD.meetingsContext(root), INV: getINV(), OB: OBMOD.onboarding(root, getINV), VERSION, now: now.getTime() })
+        // what the cockpit's decide part draws (assets/cockpit.js): the cards without their evidence and graph (not drawn here)
+        const card = x => { const { evidence, graph, params, score_parts, ...r } = x; return { ...r, type: r.type || 'only-you', ref: r.ref || r.file, issue: r.issue || r.id || '', meeting: r.first_meeting || '', with: r.with || [], options: r.options || [], recommend: r.recommend || '', detail: String(r.detail || r.action || '').slice(0, 600) } }
+        return { person: D.person, only_you: D.only_you.map(card), decisions: D.decisions.map(card), delegates: D.delegates, lane: D.lane, processed: D.processed }
+    } catch (e) { return { error: String(e.message || e).slice(0, 200), only_you: [], decisions: [], delegates: [] } }
+}
+
 export function build(root, person, now = new Date()) {
     const d = CC.build(root, person, now)
     d.kanban = kanban(root, person, d)
+    d.cockpit = cockpitRanking(root, person, now)
     d.collab = collab(root, person, d, now)
     d.summit_days = summitDays(root)
     return d

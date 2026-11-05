@@ -1,6 +1,14 @@
 {
   "tee_size": "L",
   "hoodie_size": "L",
-  "updated": "2026-11-03",
-  "said": "WS-130: Jose merch sizes L (Jose, to conductor@web-summit.jose, 3 November 2026). Fit (unisex or women's) not stated."
+  "updated": "2026-11-05",
+  "said": "WS-130: Jose merch sizes L (Jose, to conductor@web-summit.jose, 3 November 2026). Fit (unisex or women's) not stated.",
+  "colour": {
+    "first": "dark blue (navy), instead of orange, for the T-shirts and the hoodie",
+    "said": "Jose, to designer@web-summit.jose, 5 November 2026, about 11:50 UTC: \"i want dark blue, please go\". Asked after being told it is close to Nimay's royal blue, that the printer's options for Nimay include azul eclipse (a dark blue), and that the files wait only for Dinis's final confirmation.",
+    "if_not_possible": "keep orange (laranja)",
+    "condition": "only if clearly different from Nimay's royal blue and Dinis agrees",
+    "said_conductor": "Jose, to conductor@web-summit.jose, 5 November 2026, about 11:52 UTC: \"I'd like dark blue (navy) for my shirts and hoodie instead of orange, if it's clearly different from Nimay's royal blue and Dinis agrees; otherwise keep orange\"",
+    "status": "asked: on today's stand-up (12:00, id 2026-11-05-1300) for Dinis, with Silvio's printer charts; orange stands until Dinis says yes"
+  }
 }

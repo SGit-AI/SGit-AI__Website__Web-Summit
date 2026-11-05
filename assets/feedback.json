@@ -83,6 +83,18 @@
         "keys_page_id": "newsroom-dinis",
         "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAt7E/fI1b+F/Bbj+y5XkP\nhSry/LyyW3nCFJKY5aQNOYKN+SgVo3yr7+TgQpxnh69NDopm7kXvaDSB2vBzge/x\ngkdfnr64nxdBsd35ww1/UsjfvzBEKV+i82xm694b8RKU2dXfnBp3ddJ/G/0F6dRG\n1rYnJ3EVgj2hBgUpFkmwenftD0cOUhgmnUYs+L4KAeevCRMura6yqox+rA+p/X+z\nIjImR5sc3DQ0cPPu4SsuA/tvsJTd/2VeB8oDWOciHhZuh7iZErwx28v1uEggCYk1\nj6a3PaYuHULhxqfJmdVRDYfF9XuheEp37K13YXFphrHUyVu9JaOMrgNnaexKTuJS\nctwp86bc/T8eHGOZdxBIjrGkGsQk1TtSgJcOSiKKYpG922FvqsbBGuIwlpNGAVU8\nmWAsLqz8qt5GF0dgTQ7YFThisZzciTTL2rDjwKCbYDHiQZpLz2Kn4Ro1S7iUNL9Q\nZs1bUNre2BTSxyUQOn4i8NJM3uc3d0xkFRVBAvEWPCBH+U8pweK5/cYchdH7KHGk\nRoiOoIdad2LmeoO/CEFS7BvjTf8+MCUQek3+CbUCrMHkha9zo/1LQeTFvcoj/7bV\nY6CLByD/tQUNXHQ5+Jx1uzG6GkYTWLO6+GtmQxUIvdgizKGjBz1ZgjhUSLcCQSC0\nJZ/W4vQ+IblCygK0oQ7CSkUCAwEAAQ==\n-----END PUBLIC KEY-----\n"
       }
+    },
+    {
+      "agent": "conductor@web-summit.angelo",
+      "host": "https://dev.send.sgraph.ai",
+      "vault_id": "j7saxp0v",
+      "append_token": "fb2d0d001d0def088cd2fc517108a00117b331f0a05e83034bee4e3a70719e27",
+      "recipient": {
+        "fingerprint": "sha256:6a2ec8ebfdbece42",
+        "signing_fingerprint": "sha256:f34e311a93db5ddb",
+        "keys_page_id": "conductor-angelo",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEApvPBWtt4Z5wAeRtTGY5u\nDlqBVdCP8pNQcPAd0dKCEzi9aJFIU/t0tBvEztgHHmyaNdQBa7tjjnKHULbDHT+W\nEHbres16sMt/NN+DrAxXn1VHHrLnuWv/QhqQtcjje8nly13ri40UmYn/5hf15xun\n09tRzvI70yfhQG37hHXLLiW5Yz52ycCiKmF1L+fJ1I1RVofD9n7R/ei2xHvuuZ8U\nAsgELSXUxvWSLvKaJaHurJ1g63FmOzYwLpPGrIG3rAI9gAFxCpTBjqZzja4Rwkjk\nIBN7vxE4V7kx85WgyHDOyrLw26sz9rTwsrfrFxUmT/ezsbCM8BGog3/SHj8fTEzU\nfF2WcFXjuqV5ipEtm7BZY3dirtL9vB02j1es+v7mPO/C0QIgaB4eEBRcCHoNuaEP\nUTZ+pK31HZEH4JfqJ4wQ5/4lkt2d5ORmfl7YhRuS2NwC/TE12/oVjdcWtK77lRPh\nNAKCuLgXLGJX6Sp+sUC+ehdB9+YAHJIViG9mq5AInGWBthI/duC78+BlxjSy2nX2\nh5Pn1pqhF0HAZxNnP/Cn9qF4RuMdBoeGfGZ6Xe5M5cQ9g94EajqDmzB44+Gn6yRB\nnqBOIIOUDvzbEsHGJ+bzKiS57xUflmlaAYVcdp1HYFpKMF+8O4dxTBWUiz1nklyy\nzLX9dI9Pb6XVgOPUeyPwrRcCAwEAAQ==\n-----END PUBLIC KEY-----\n"
+      }
     }
   ]
 }

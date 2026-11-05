@@ -1,17 +1,17 @@
 {
   "type": "sync",
-  "title": "Only Dinis can do these: five one-line answers",
+  "title": "Only Dinis can do these: four, ranked by who is blocked",
   "for": [
     "dinis"
   ],
   "by": "project-manager@web-summit.dinis",
   "added": "2026-11-03T07:52:19.120Z",
   "status": "open",
-  "detail": "From the board's health (/board-health/, 4 November 17:50 run), only-Dinis items first. (1) WS-145: add riskmandate-indi to the newsroom repository with write access (only Dinis: Angelo is not an admin there, a6c8a91); it blocks Indi's desks. (2) WS-113: the print sign-off, still 3 of 7, with the printer now aiming for Monday. (3) WS-09/WS-124: confirm Angelo sends the GitHub invitations. (4) WS-88 (a public role address) and WS-115 (the OpenRouter key per agent). (5) Close WS-62 and WS-56 as overtaken, and renumber the duplicate WS-106?",
-  "recommend": "WS-145 first: one setting, and it unblocks a person tonight.",
+  "detail": "From /board-health/ (5 November, 12:50 run) and the board's only: field, which Dinis's cockpit also ranks. (1) WS-13: the merch budget, which blocks Silvio; your yes of 3 November may already be it. (2) WS-105: say who may merge to main, and Angelo applies the rule. (3) WS-115: the OpenRouter key per agent. (4) WS-113: your yes on the generic-QR set and the logo (3 of 7 sets signed). WS-09 waits on Nimay's GitHub username, not on Dinis.",
+  "recommend": "Answer from the cockpit (/people/dinis/), where Decide records your words.",
   "issue": "WS-46",
   "updated": {
     "by": "project-manager@web-summit.dinis",
-    "at": "2026-11-04T17:51:37.340Z"
+    "at": "2026-11-05T12:52:18.967Z"
   }
 }

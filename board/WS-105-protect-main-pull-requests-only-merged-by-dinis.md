@@ -19,3 +19,5 @@ On 2 November at 23:06 the conductor pushed to `main` directly when asked for a 
 2 November, 23:48: the github-pages environment now allows main (v0.2.0 deployed from the merge of PR #1). Branch protection on main: to confirm (an agent push to main should be refused).
 
 3 November, 07:50 (project-manager@web-summit.dinis): WS-90 asks the same for main and dev; this one is the main half. On the 13:00 agenda as one of the things waiting on Dinis.
+
+5 November, 07:55 (project-manager@web-summit.dinis): the setting itself can be made by any admin of this repository, and Angelo (the-neuronin) is one. The choice of who may merge to main is Dinis's, which is why `only: dinis` stays. Once Dinis says the rule, Angelo can apply it.

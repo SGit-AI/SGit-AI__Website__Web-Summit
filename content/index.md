@@ -23,13 +23,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Thursday 5 November, 04:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-0457/index.html), [yesterday's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
+*Thursday 5 November, 14:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-1457/index.html), [yesterday's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
 
-- **What Dinis did last night, in pictures:** [his update, and who needs to look at what](nights/2026-11-05/index.html), before 13:00.
-- **The sticker vote closes at 14:30:** [/stickers/vote/](stickers/vote/index.html).
-- **The cards redesigned** (design A); [/cards/print/](cards/print/index.html) is the page for the shop (WS-155).
-- **Security reviewed every key and secret on the site;** one high finding (WS-164).
-- **Outreach:** 38 more companies invited to meet Dinis online, the week of 16 November.
+- **Our stand: booth A1-30, ALPHA 1, Pavilion 1,** Thursday 12 November; the exhibitor rules are on [/summit/](summit/index.html).
+- **The sticker vote closed with 2 of 6 ballots;** the keys sticker leads (WS-167).
+- **For Dinis at 18:00:** Silvio's three (the outreach claim, online slots, who drives the merch).
+- **The 12:00's record:** one decision, nine follow-ups with owners (WS-96).
+- **Still waiting on Dinis:** the next garment set (WS-113) and Jose's navy (WS-48).
 
 ## Start here {#start}
 

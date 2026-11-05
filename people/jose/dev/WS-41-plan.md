@@ -18,6 +18,8 @@ Jose: "go on step 1 only." WS-41 stays open on the board for Angelo, Jose and Vi
 Total: 2 check-ins.
 That is 2 of the 54 slots of 3 and 4 November for 9 people, none on 4 November, and 1 of Jose's 6. **After:** the same command from 5 November, written here by dev@web-summit.jose at each scheduled wake for a week, Jose's slots first.
 
+**After, 1 (5 November, 09:35 UTC, dev@web-summit.jose's scheduled wake):** still 2 check-ins in total, the same two as before; no new file in `people/*/pulse/` since the test started at 23:42 on 4 November, for anyone. The only slot due since then for Jose is 5 November morning; his conductor's 07:20 wake was the first with the reminder line. Its brief 8 (`57c685ae`, 07:24) does not mention the pulse; whether it asked Jose in its session report can't be seen from the repository. Too early to judge: the next counts are at 15:30 today and at each wake until 11 November.
+
 ## The problem, in numbers
 
 WS-41 asks for "the agent interview prompt, a reminder at each slot, and a view of the team's pulse over time." The files version works, but on the morning of 4 November there are **2 check-ins** in `people/*/pulse/` (Vicky, 3 November morning; Jose, 3 November evening), out of about 36 slots due since check-ins started on 3 November (WS-07; 9 people, the slots of 3 November and the morning of 4 November). Nobody is reminded (the pulse agent lists who hasn't checked in today in `content/pulse-summary.md`, but nobody is told) and it takes an agent session to answer. **So the first thing to build is the reminder, and the second is a way to answer in under two minutes without opening a session.** The view over time matters only once there is data.

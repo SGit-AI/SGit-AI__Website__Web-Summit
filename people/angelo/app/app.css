@@ -115,3 +115,38 @@ nav.ak-switch a { font: 600 14px/20px var(--rm-font); color: var(--rm-action); t
 .ak-ess .ak-dl { margin-top: 12px; grid-template-columns: 1fr; }
 .ak-ess a, .cc-card .ak-h3 + .note a { color: var(--rm-action); }
 .ak-h3 { font: 600 12px/18px var(--rm-font); letter-spacing: .06em; text-transform: uppercase; color: var(--rm-text-muted); margin: 0 0 6px; }
+
+/* ---------- "Angelo's own": one mark for the views only in this command centre ---------- */
+.ak-own { display: inline-block; vertical-align: middle; margin-left: 8px; padding: 0 8px; border-radius: 999px; font: 600 11px/20px var(--rm-font); letter-spacing: .02em; color: var(--rm-gold); background: color-mix(in srgb, var(--rm-gold) 14%, transparent); border: 1px solid color-mix(in srgb, var(--rm-gold) 40%, transparent); white-space: nowrap; }
+.cc-nav .ak-grp { color: var(--rm-gold); }
+.cc-nav a .ak-mk { order: 3; margin-left: auto; color: var(--rm-gold); font-size: 11px; }
+.ak-ownnote { display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 10px 14px; border-radius: var(--rm-radius-card); border: 1px solid color-mix(in srgb, var(--rm-gold) 40%, transparent); background: color-mix(in srgb, var(--rm-gold) 8%, var(--rm-surface)); font: 400 14px/20px var(--rm-font); }
+.ak-ownnote b { color: var(--rm-gold); }
+@media (max-width: 1100px) { .cc-nav a .ak-mk { position: absolute; margin: 0; transform: translate(14px, -10px); } .cc-nav a { position: relative; } }
+nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px; }
+@media (max-width: 767px) { .ak-own .ak-own-t { display: none; } .ak-own { padding: 0 6px; margin-left: 6px; } }
+
+/* ---------- offline (WS-84 step 1) ---------- */
+.ak-offbar { position: sticky; top: 0; z-index: 70; padding: 8px 16px; background: var(--rm-gold, #F5B942); color: #17243A; font: 600 14px/20px var(--rm-font, system-ui, sans-serif); text-align: center; }
+.ak-vrow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 10px 0; }
+.ak-vrow video { width: 100%; border-radius: 10px; background: #000; aspect-ratio: 16 / 9; }
+@media (max-width: 767px) { .ak-vrow { grid-template-columns: 1fr; } }
+
+/* ---------- Decide first: the cockpit's ranking in Needs me now ---------- */
+.ak-decide ol { list-style: none; margin: 8px 0; padding: 0; display: grid; gap: 10px; }
+.ak-dec { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: start; padding: 10px 0; border-top: 1px solid var(--rm-border); }
+.ak-dec:first-child { border-top: 0; }
+.ak-dec > div { display: grid; gap: 4px; min-width: 0; }
+.ak-score { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--rm-surface-raised); border: 1px solid var(--rm-border); font: 700 16px/1 var(--rm-font); }
+.ak-dt { font: 600 15px/22px var(--rm-font); overflow-wrap: anywhere; }
+.ak-why { font: 500 13px/19px var(--rm-font); color: var(--rm-text-secondary); }
+.ak-decide a.note, .ak-decide a.chip { color: var(--rm-action); text-decoration: none; }
+.ak-decide .ak-h3 b { margin-left: 6px; font: 600 12px/20px var(--rm-font); padding: 0 6px; border-radius: 999px; background: var(--rm-chip-bg); }
+
+/* ---------- the cockpit's decide part, hosted in Needs me now: its colours in the command centre's theme ----------
+   assets/cockpit.css is written for the site's own tokens; here, inside .ak-decide-live, they point at the command
+   centre's, so the cards follow its dark and light themes. Nothing in the cockpit's files changes. */
+.ak-decide-live { --bg: var(--rm-bg); --surface: var(--rm-surface); --surface-2: var(--rm-surface-raised); --ink: var(--rm-text); --ink-2: var(--rm-text-secondary); --line: var(--rm-border); --line-2: var(--rm-border); --accent: var(--rm-action); --accent-ink: var(--rm-action-ink); --focus: var(--rm-focus); --shadow: var(--rm-shadow); --hero-ink: var(--rm-text); --ok: var(--rm-green); --ok-soft: color-mix(in srgb, var(--rm-green) 16%, transparent); --warn: var(--rm-yellow); --warn-soft: color-mix(in srgb, var(--rm-yellow) 16%, transparent); --bad: var(--rm-red); --bad-soft: color-mix(in srgb, var(--rm-red) 16%, transparent); --sent: var(--rm-blue); --sent-soft: color-mix(in srgb, var(--rm-blue) 16%, transparent); --wait: var(--rm-blue); --accent-dk: var(--rm-action); --accent-soft: color-mix(in srgb, var(--rm-action) 16%, transparent); --hero-bg: var(--rm-surface); --hero-ink-2: var(--rm-text-secondary); --hero-tile: var(--rm-surface-raised); color: var(--rm-text); display: grid; gap: 10px; }
+.ak-decide-live textarea, .ak-decide-live select { background: var(--rm-surface-raised); color: var(--rm-text); border: 1px solid var(--rm-border); border-radius: 8px; font: 400 14px/20px var(--rm-font); }
+.ak-decide-live .ck-grid { gap: 14px; }
+@media (max-width: 1100px) { .ak-decide-live .ck-grid { grid-template-columns: 1fr; } }

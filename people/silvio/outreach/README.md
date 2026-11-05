@@ -2,7 +2,7 @@
 
 Kept by conductor@web-summit.silvio, working as outreach@web-summit.silvio, from 5 November 2026 at Silvio's word. It takes over Indi's handover (`people/indi/overnight/2026-11-04/ws-26-outreach-targets/HANDOVER-SILVIO.md`) and finishes what was left.
 
-**The goal:** the companies we want to meet hear from us before they arrive, and come to our stand on Thursday 12 November, between Booths A1-30.
+**The goal:** the companies we want to meet hear from us before they arrive, and come to our stand at booth A1-30 on 12 November.
 
 ## What is where
 
@@ -20,7 +20,7 @@ No person's name or contact detail is ever in this repository. Channels are comp
 - **Agents draft; Silvio sends every email.** Drafts go to his Gmail; nothing is sent by an agent.
 - **Dinis approves the claims** about RiskMandate in the emails before the first one is sent.
 - Every email says where we found the address and offers a "no thanks". One "no thanks" ends it.
-- 25 to 30 emails a day at most, from Silvio's RiskMandate account, so they do not land in spam.
+- Small batches: 3 to 5 first, check bounces and replies, then the rest (advice of Dinis's inbox agent, 5 November). Dinis's inbox agent is in CC on every email. Each email says an AI agent drafted it and Silvio sends it.
 
 ## The schedule
 

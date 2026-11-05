@@ -20,3 +20,6 @@ From Dinis, 4 November about 20:45 UTC: *"Can you ask Vicky's agents to send you
 4. Record here: `<agent>: sent <which vault>, <time>` (no key, no id beyond the vault id).
 
 The conductor drains at each wake and confirms here which vaults it can open.
+
+- vault@web-summit.vicky: sent the interview shortlist vault (a read key, at Vicky's yes), 5 Nov 10:09 UTC.
+- vault@web-summit.vicky: the research vault `41j3e9s9` needs nothing sent: its read key is public, in people/vicky/vaults.json.

@@ -22,6 +22,32 @@
     }
     load('kanban-core.js').catch(() => null).then(() => load('../../../assets/cc/app.js')).then(() => { if (root && window.AngeloKanban) start() })
 
+    // ---------- offline (WS-84 step 1, at Angelo's go): sw.js stores this page and what it loads ----------
+    // ?offline=off unregisters the worker and deletes its store (remembered in this browser); ?offline=on turns it back on
+    const OFF_KEY = 'ak.offline', q = new URLSearchParams(location.search).get('offline')
+    const lsGet = k => { try { return localStorage.getItem(k) } catch { return null } }, lsSet = (k, v) => { try { v === null ? localStorage.removeItem(k) : localStorage.setItem(k, v) } catch { } }
+    if (q === 'off') lsSet(OFF_KEY, 'off'); if (q === 'on') lsSet(OFF_KEY, null)
+    const SW = 'serviceWorker' in navigator ? navigator.serviceWorker : null
+    const scope = new URL('./', here).href
+    if (SW && lsGet(OFF_KEY) === 'off') {
+        // the worker still serving this page is told first (it stops storing and deletes its store), then removed
+        if (SW.controller) SW.controller.postMessage({ type: 'forget' })
+        SW.getRegistrations().then(rs => Promise.all(rs.filter(r => r.scope === scope).map(r => r.unregister())))
+            .then(() => self.caches ? caches.keys() : []).then(ks => Promise.all(ks.filter(k => k.startsWith('ak-offline-')).map(k => caches.delete(k)))).catch(() => null)
+    } else if (SW) {
+        SW.register(new URL('sw.js', here).href, { scope }).then(() => SW.ready).then(reg => {
+            // store everything this first visit loaded, so the page opens next time without a connection
+            const urls = [location.href, DATA, ...performance.getEntriesByType('resource').map(e => e.name)]
+            ;(reg.active || reg.waiting || reg.installing).postMessage({ type: 'keep', urls })
+        }).catch(() => null)
+    }
+    // the copy this page shows: when the data came from the store, say so above every view
+    if (once) once.then(r => {
+        const at = r.headers.get('x-ak-stored'); if (!at || !root) return
+        const when = new Date(at), t = when.toLocaleString([], { weekday: 'short', hour: '2-digit', minute: '2-digit' })
+        root.insertAdjacentHTML('beforebegin', `<div class="ak-offbar" role="status">Offline: the copy from ${t} (${Math.max(1, Math.round((Date.now() - when) / 6e4))} min ago). It refreshes when you are back online.</div>`)
+    }).catch(() => null)
+
     const clean = t => String(t ?? '').replace(/^"(.*)"$/, '$1')
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
     const ago = d => { const m = Math.round((Date.now() - new Date(d)) / 6e4); return m < 1 ? 'just now' : m < 60 ? `${m} min ago` : m < 1440 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} d ago` }
@@ -36,18 +62,26 @@
         let D = null, failed = ''
         const route = () => (location.hash.match(/^#(kanban|collab|summit)(\?|$)/) || [])[1] || ''
         const mine = () => !!route()
-        once.then(r => r.ok ? r.clone().json() : Promise.reject(new Error(r.status))).then(d => { D = d; if (mine()) draw() }).catch(e => { failed = e.message; if (mine()) draw() })
+        once.then(r => r.ok ? r.clone().json() : Promise.reject(new Error(r.status))).then(d => { D = d; nav(); loadCockpit(); if (mine()) draw() }).catch(e => { failed = e.message; if (mine()) draw() })
 
         // after every shared render (it rebuilds the shell): add the Kanban entry, and draw the kanban when it is asked for
         new MutationObserver(() => { nav(); if (mine()) draw() }).observe(root, { childList: true })
         window.addEventListener('keydown', e => { if (e.key !== 'Escape') return; if (route() === 'kanban' && K.parseState(location.hash).open) closeCard(); if (route() === 'collab' && cstate().p) closePerson() })
 
+        const ownName = () => D ? `${(D.person.name || D.person.id).split(' ')[0]}'s own` : 'Your own'
+        const OWN_TIP = 'Only in this command centre: the team\'s shared command centre does not have it'
+        // the mark by a view's title, and its explanation, shown once until dismissed
+        const ownTitle = t => `${esc(t)} <span class="ak-own" title="${esc(OWN_TIP)}">✦<span class="ak-own-t"> ${esc(ownName())}</span></span>`
+        const ownNote = () => { let seen = false; try { seen = localStorage.getItem('ak.ownSeen') === '1' } catch { } return seen ? '' : `<div class="ak-ownnote" role="note"><span><b>✦ ${esc(ownName())}</b> marks the views only in this command centre: Kanban, Team and the machine, Summit days. The rest are the team's shared views.</span><button type="button" class="cc-btn" data-ak-ownok>Got it</button></div>` }
+        root.addEventListener('click', e => { if (e.target.closest('[data-ak-ownok]')) { try { localStorage.setItem('ak.ownSeen', '1') } catch { } const n = root.querySelector('.ak-ownnote'); if (n) n.remove() } })
         function nav() {
             const side = root.querySelector('.cc-nav [data-view="board"]')
-            if (side && !root.querySelector('.cc-nav [data-view="kanban"]')) side.insertAdjacentHTML('afterend', `<a href="#kanban" data-view="kanban" title="Kanban">${ico(KANBAN_ICON)}<span class="lbl">Kanban</span></a><a href="#collab" data-view="collab" title="Team and the machine">${ico(TEAM_ICON)}<span class="lbl">Team and the machine</span></a><a href="#summit" data-view="summit" title="Summit days">${ico(SUMMIT_ICON)}<span class="lbl">Summit days</span></a>`)
+            // the views only in this command centre, in a group of their own, each with the same mark (Angelo, 5 November)
+            if (side && !root.querySelector('.cc-nav [data-view="kanban"]')) { const grp = [...root.querySelectorAll('.cc-nav .grp')].find(g => /connect/i.test(g.textContent)); (grp || side).insertAdjacentHTML(grp ? 'beforebegin' : 'afterend', `<span class="grp ak-grp" title="${esc(OWN_TIP)}">✦ ${esc(ownName())}</span><a href="#kanban" data-view="kanban" title="Kanban">${ico(KANBAN_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Kanban</span></a><a href="#collab" data-view="collab" title="Team and the machine">${ico(TEAM_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Team and the machine</span></a><a href="#summit" data-view="summit" title="Summit days">${ico(SUMMIT_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Summit days</span></a>`) }
+            const g = root.querySelector('.cc-nav .ak-grp'); if (g) g.textContent = `✦ ${ownName()}`
             // phones: the Board tab opens the kanban (with My tasks off it is the whole team's board)
             const tab = root.querySelector('.cc-tabs a[href="#board"]')
-            if (tab) { tab.setAttribute('href', '#kanban'); tab.lastChild.textContent = 'Kanban' }
+            if (tab) { tab.setAttribute('href', '#kanban'); tab.lastChild.textContent = 'Kanban ✦'; tab.title = OWN_TIP }
             if (mine()) {
                 root.querySelectorAll('.cc-nav [aria-current], .cc-tabs [aria-current]').forEach(a => a.removeAttribute('aria-current'))
                 root.querySelectorAll(route() === 'kanban' ? '.cc-nav [data-view="kanban"], .cc-tabs a[href="#kanban"]' : `.cc-nav [data-view="${route()}"]`).forEach(a => a.setAttribute('aria-current', 'page'))
@@ -70,20 +104,22 @@
             const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
             if (!view) return
             const first = D ? (D.person.name || D.person.id).split(' ')[0] : ''
-            if (title) title.innerHTML = `Kanban<small>${esc(first)}'s command centre</small>`
+            if (title) title.innerHTML = `${ownTitle('Kanban')}<small>${esc(first)}'s command centre</small>`
             document.title = `Kanban · ${first}'s command centre`
             if (!D) { view.innerHTML = failed ? `<p class="note">The kanban could not load its data (${esc(failed)}); the summary below the page is the same data as text.</p>` : '<p class="note">Loading the board…</p>'; return }
             const s = state(), now = new Date(), ctx = D.kanban
             const shown = K.filter(D.issues, s, ctx, now)
             const needN = D.issues.filter(i => K.needsMe(i, ctx, now)).length
-            view.innerHTML = `<div class="ak">
-<nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine →</a><a href="#summit">Summit days →</a></nav>
+            view.innerHTML = `<div class="ak">${ownNote()}
+<nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
 ${toolbar(s, shown.length, needN)}
 ${chips(s)}
+${s.now ? decideFirst() : ''}
 ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No cards match this view.</p><button class="cc-btn" type="button" data-ak-reset>Back to my open tasks</button></div>`}
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}. Cards change on the next release, usually within minutes.${D.kanban.shallow ? ' This build had only part of the git history (a shallow clone), so last changes and histories may read short.' : ''}</p>
 </div>${s.open ? details(s.open, now) : ''}`
             bind(view, s)
+            if (s.now) mountCockpit()
             if (s.open) loadBody(s.open)
         }
 
@@ -143,6 +179,27 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             }).join('')
         }
 
+        // one-click answers: the cockpit's own front end (assets/cockpit.js) draws its decide part here and signs, seals and
+        // sends what Angelo clicks to his conductor's lane; this file only hosts it (window.WSCockpit.mount). Until the
+        // cockpit offers that, the read-only list below stands in.
+        let ckLoaded = false
+        function loadCockpit() {
+            if (ckLoaded || !D || !D.cockpit || D.cockpit.error) return; ckLoaded = true
+            const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = new URL('../../../assets/cockpit.css', here).href; document.head.appendChild(css)
+            window.WSCockpitConfig = { src: URL.createObjectURL(new Blob([JSON.stringify(D.cockpit)], { type: 'application/json' })), lanes: new URL('../../../assets/feedback.json', here).href, only: 'decide' }
+            import(new URL('../../../assets/cockpit.js', here).href).then(() => { if (route() === 'kanban' && state().now) draw() }).catch(() => null)
+        }
+        const mountCockpit = () => { const el = root.querySelector('#ak-ck'); if (el && window.WSCockpit) window.WSCockpit.mount(el) }
+
+        // the cockpit's ranking (admin/build/cockpit.mjs): what waits on Angelo's word, highest first, each with why
+        function decideFirst() {
+            const C = D.cockpit; if (!C) return ''
+            if (window.WSCockpit && !C.error) return `<section class="ak-decide-live" aria-label="Decide first"><h3 class="ak-h3">Decide first</h3><div id="ak-ck"></div><p class="note">Your answers are signed with your key in this browser and sent to ${esc(C.lane.agent)}, which acts on them for tier 1 and 2 only.</p></section>`
+            const list = [...(C.only_you || []), ...(C.decisions || [])].sort((a, b) => b.score - a.score)
+            if (!list.length) return C.error ? `<p class="note">The ranking could not be built (${esc(C.error)}).</p>` : ''
+            const item = x => `<li class="ak-dec"><span class="ak-score" title="The cockpit's score: higher is more urgent">${esc(x.score)}</span><div><span class="ak-meta"><span class="chip ${x.type === 'question' ? 't-blue' : x.type === 'decision' ? 't-orange' : 't-red'}">${esc(x.type === 'only-you' ? 'only you' : x.type)}</span>${x.issue ? `<a class="chip plain" href="#kanban?n=1&o=${esc(x.issue)}">${esc(x.issue)}</a>` : ''}</span><b class="ak-dt">${esc(clean(x.title))}</b>${x.why ? `<span class="ak-why">Why here: ${esc(x.why)}</span>` : ''}${x.recommend ? `<span class="note">Recommended: ${esc(x.recommend)}</span>` : ''}${x.meeting ? `<a class="note" href="../../../meetings/${esc(x.meeting)}/index.html">On the agenda since ${esc(x.meeting)}</a>` : ''}</div></li>`
+            return `<section class="cc-card ak-decide" aria-label="Decide first"><h3 class="ak-h3">Decide first <b>${list.length}</b></h3><ol>${list.slice(0, 8).map(item).join('')}</ol>${list.length > 8 ? `<p class="note">and ${list.length - 8} more, lower down.</p>` : ''}<p class="note">Ranked by the cockpit (only you can do it, who it blocks, overdue, how long it has waited). One-click decide, delegate, now and later come next: signed with your key, sent to ${esc(C.lane.agent)}.</p></section>`
+        }
         function card(i, s, now) {
             const ctx = D.kanban, due = K.dueBucket(i, now), p = K.pickers(i, ctx)
             const tone = { overdue: 't-red', today: 't-yellow', week: 't-blue' }[due] || 't-slate'
@@ -232,13 +289,13 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
             if (!view) return
             const first = D ? (D.person.name || D.person.id).split(' ')[0] : ''
-            if (title) title.innerHTML = `Team and the machine<small>${esc(first)}'s command centre</small>`
+            if (title) title.innerHTML = `${ownTitle('Team and the machine')}<small>${esc(first)}'s command centre</small>`
             document.title = `Team and the machine · ${first}'s command centre`
             if (!D || !D.collab) { view.innerHTML = failed ? `<p class="note">The board could not load its data (${esc(failed)}).</p>` : '<p class="note">Loading the team…</p>'; return }
             const C = D.collab, M = C.machine, name = id => (C.people.find(p => p.id === id) || { name: id }).name
             const max = Math.max(1, ...C.links.map(l => l.messages + l.shared))
-            view.innerHTML = `<div class="ak">
-<nav class="ak-switch" aria-label="More views"><a href="#kanban">← Kanban</a><a href="#summit">Summit days →</a></nav>
+            view.innerHTML = `<div class="ak">${ownNote()}
+<nav class="ak-switch" aria-label="More views"><a href="#kanban">← Kanban <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
 <section class="ak-machine" aria-label="The machine">
   <div class="cc-card"><h3>Last release</h3>${M.release ? `<p class="ak-big">${esc(M.release.version)}</p><p class="note">${esc(M.release.date)}: ${esc(M.release.what)}</p><p class="note">A release exists only when the gate passed.</p>` : '<p class="note">No release recorded.</p>'}</div>
   <div class="cc-card"><h3>CI</h3><p class="note">This page cannot see CI runs or their failures; GitHub can.</p><p><a href="${esc(M.ci)}">The deploy runs on GitHub</a></p></div>
@@ -273,6 +330,7 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
         }
 
         // ---------- summit days (slice 7): the public schedule the team sourced, and the stand-ups ----------
+        const VIDEOS = [['Your AI has access. Does it have permission? (30 s)', 'riskmandate-access-permission-30s.mp4', 'access-21.jpg'], ['Reach, Mandate, Gap (53 s)', 'riskmandate-reach-mandate-gap.mp4', 'reach-14.jpg'], ['RiskMandate Stories: fifty new agents (2 min 44 s)', 'riskmandate-stories-fifty-new-agents.mp4', 'stories-6.jpg']]
         const DAYNAME = d => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' })
         const startMin = t => { const m = String(t || '').match(/\b([01]?\d|2[0-3])[:.]([0-5]\d)\b/); return m ? +m[1] * 60 + +m[2] : -1 }
         const endMin = t => { const m = String(t || '').match(/\b(?:[01]?\d|2[0-3])[:.][0-5]\d\s*[-–]\s*([01]?\d|2[0-3])[:.]([0-5]\d)\b/); return m ? +m[1] * 60 + +m[2] : -1 }
@@ -298,7 +356,7 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
             if (!view) return
             const first = D ? (D.person.name || D.person.id).split(' ')[0] : ''
-            if (title) title.innerHTML = `Summit days<small>${esc(first)}'s command centre</small>`
+            if (title) title.innerHTML = `${ownTitle('Summit days')}<small>${esc(first)}'s command centre</small>`
             document.title = `Summit days · ${first}'s command centre`
             if (!D || !D.summit_days) { view.innerHTML = failed ? `<p class="note">The schedule could not load (${esc(failed)}).</p>` : '<p class="note">Loading the schedule…</p>'; return }
             const S = D.summit_days, now = new Date(), today = now.toISOString().slice(0, 10), mins = now.getUTCHours() * 60 + now.getUTCMinutes()
@@ -308,14 +366,24 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             const next = day === today ? items.find(x => x.start > mins) : null
             const tag = { standup: ['Stand-up', 't-conductor'], session: ['Session', 't-blue'], side: ['Side event', 't-orange'] }
             const row = x => `<article class="ak-card ak-ev${live.includes(x) ? ' ak-live' : ''}${next === x ? ' ak-next' : ''}"><div class="ak-evt"><b>${esc(x.start >= 0 ? hhmm(x.start) : '')}</b><small>${esc(x.start >= 0 ? x.time.replace(/^\d\d?[:.]\d\d\s*/, '') : x.time)}</small></div><div class="ak-evb"><span class="ak-meta"><span class="chip ${tag[x.kind][1]}">${tag[x.kind][0]}</span>${live.includes(x) ? '<span class="chip t-green">now</span>' : next === x ? '<span class="chip t-yellow">next</span>' : ''}</span><span class="ak-title">${x.link ? `<a href="${esc(x.link)}">${esc(x.title)}</a>` : esc(x.title)}</span>${x.place ? `<span class="note">${esc(x.place)}</span>` : ''}${x.who ? `<span class="note">${esc(x.who)}</span>` : ''}${x.what ? `<span>${esc(x.what)}</span>` : ''}${x.source ? `<a class="note" href="${esc(x.source)}">Source</a>` : ''}</div></article>`
-            view.innerHTML = `<div class="ak">
-<nav class="ak-switch" aria-label="More views"><a href="#kanban">← Kanban</a><a href="#collab">Team and the machine →</a></nav>
+            view.innerHTML = `<div class="ak">${ownNote()}
+<nav class="ak-switch" aria-label="More views"><a href="#kanban">← Kanban <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
 ${days.length ? `<div class="ak-tabs" role="tablist" aria-label="Days">${days.map(d => `<button type="button" role="tab" data-ak-day="${d}" aria-selected="${d === day}">${d === today ? 'Today' : esc(DAYNAME(d))}</button>`).join('')}</div>` : ''}
 ${day ? `<h3 class="ak-lane">${esc(DAYNAME(day))}${day === today ? ' (today)' : ''} <b>${items.length}</b></h3><p class="note">Times are Lisbon time, which is UTC in November.</p><div class="ak-list">${items.map(row).join('') || '<p class="note">Nothing on this day.</p>'}</div>` : '<p class="note">Nothing left on the schedule.</p>'}
+<section class="cc-card ak-vids"><h3 class="ak-h3">The videos, for the stand</h3><p class="note">${VIDEOS.map(v => esc(v[0])).join(' · ')}. Keep them on this device to play them without wifi (about 21 MB).</p><div class="ak-vrow">${VIDEOS.map(([t, f, poster]) => `<video controls preload="none" playsinline src="../../../assets/video/${esc(f)}" poster="../../../assets/video/${esc(poster)}" aria-label="${esc(t)}"></video>`).join('')}</div><p><button type="button" class="cc-btn" data-ak-keepvids${navigator.serviceWorker ? '' : ' disabled'}>Keep the videos for offline</button> <span class="note" data-ak-vidnote>${navigator.serviceWorker ? '' : 'This browser cannot keep pages offline.'}</span></p></section>
 <details class="cc-card ak-ess"><summary>Essentials: dates, venue, Night Summit, badges, getting there, wifi</summary><dl class="ak-dl">${S.essentials.map(([k, v]) => `<div><dt>${esc(k.replace(/_/g, ' '))}</dt><dd>${esc(v.value)} <a href="${esc(v.source)}">Source</a></dd></div>`).join('')}</dl></details>
 <div class="cc-card"><h3 class="ak-h3">What this view knows</h3><p class="note">${esc(S.api)} Read on ${esc(S.read_on)}; the schedule is still growing.</p>${S.gaps.length ? `<ul class="note">${S.gaps.map(g => `<li>${esc(g)}</li>`).join('')}</ul>` : ''}<p class="note">Your own meetings come later: each person's agent publishes a sealed summary of their calendar, with their consent (the brief, section 5).</p></div>
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}.</p>
 </div>`
+            const kv = view.querySelector('[data-ak-keepvids]')
+            if (kv) kv.onclick = async () => {
+                const note = view.querySelector('[data-ak-vidnote]'); kv.disabled = true; note.textContent = 'Keeping them…'
+                try {
+                    const reg = await navigator.serviceWorker.ready
+                    navigator.serviceWorker.addEventListener('message', e => { if (e.data && e.data.type === 'kept') { note.textContent = 'Kept: they play here without wifi.'; kv.disabled = false } }, { once: true })
+                    reg.active.postMessage({ type: 'keep', urls: VIDEOS.flatMap(([, f, p]) => [new URL('../../../assets/video/' + f, location.href).href, new URL('../../../assets/video/' + p, location.href).href]) })
+                } catch { note.textContent = 'Could not keep them here.'; kv.disabled = false }
+            }
             view.querySelectorAll('[data-ak-day]').forEach(b => b.onclick = () => { history.replaceState(history.state, '', location.pathname + location.search + '#summit?day=' + b.dataset.akDay); drawSummit() })
             const sel = view.querySelector('[data-ak-day][aria-selected="true"]'); if (sel && sel.scrollIntoView) sel.scrollIntoView({ block: 'nearest', inline: 'center' })
         }

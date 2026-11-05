@@ -33,3 +33,16 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - Portugal: Técnico (ULisboa) at stand E272, Pavilion 2, 10 to 12 November, with robots, a VR demo and six spin-offs (tecnico.ulisboa.pt, 29 Oct).
 - Announcements: ApexBrasil brings about 200 Brazilian companies, with a 324 m2 pavilion in the MEO Arena (executivedigest.sapo.pt, 4 Nov).
 - Nothing new since the earlier runs on websummit.com/blog or portugalstartupnews.com; no exact quotes added yet to the 21 earlier captures.
+
+## Thu 5 Nov 2026, 07:30 UTC run (Portugal, Europe)
+
+- 2 captures went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- Portugal: ULisboa at Web Summit for the second year, stand in Pavilion 1, 10 to 12 November, and UniVerse with nine Portuguese universities on 10 November at the Portugal Pavilion Congress Centre (ulisboa.pt, 19 Oct).
+- Europe: European Tech Champions, Italy and Portugal, on 11 November at Unicorn Stage, Beato, by Unicorn Factory Lisboa, the Embassy of Italy and the Italian Trade Agency (portugalglobal.pt).
+- Could not: coe.int refused automated reads (a Council of Europe media advisory on Web Summit 2026); nothing new on websummit.com/blog or portugalstartupnews.com since 3 November.
+
+## Thu 5 Nov 2026, 11:30 UTC run (the summit)
+
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- The summit: the 2026 speakers page says 800 speakers; its first page leads with Chinese technology and robotics companies (AgiBot, Unitree, Galbot, Pony.ai, Xiaomi, Tencent, MiniMax), and lists a robot, Galbot's G1, as a speaker (websummit.com/speakers/).
+- Not captured: news since 07:30 repeats stories already in the vault (the Brazilian delegation, Metro's extra service); robotics previews by PanAsiaBiz and Portugal.fr only in so far as the speakers page confirms them.

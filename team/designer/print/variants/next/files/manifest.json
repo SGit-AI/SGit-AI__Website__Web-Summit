@@ -49,6 +49,13 @@
   "h": 61
  },
  {
+  "svg": "files/dinis/dinis-sleeve.svg",
+  "pdf": "files/dinis/dinis-sleeve.pdf",
+  "png": "files/dinis/dinis-sleeve.png",
+  "w": 75,
+  "h": 75
+ },
+ {
   "svg": "files/nimay/nimay-tee-front.svg",
   "pdf": "files/nimay/nimay-tee-front.pdf",
   "png": "files/nimay/nimay-tee-front.png",
@@ -96,6 +103,13 @@
   "png": null,
   "w": 91,
   "h": 61
+ },
+ {
+  "svg": "files/nimay/nimay-sleeve.svg",
+  "pdf": "files/nimay/nimay-sleeve.pdf",
+  "png": "files/nimay/nimay-sleeve.png",
+  "w": 75,
+  "h": 75
  },
  {
   "svg": "files/angelo/angelo-tee-front.svg",
@@ -147,6 +161,13 @@
   "h": 61
  },
  {
+  "svg": "files/angelo/angelo-sleeve.svg",
+  "pdf": "files/angelo/angelo-sleeve.pdf",
+  "png": "files/angelo/angelo-sleeve.png",
+  "w": 75,
+  "h": 75
+ },
+ {
   "svg": "files/jose/jose-tee-front.svg",
   "pdf": "files/jose/jose-tee-front.pdf",
   "png": "files/jose/jose-tee-front.png",
@@ -194,6 +215,13 @@
   "png": null,
   "w": 91,
   "h": 61
+ },
+ {
+  "svg": "files/jose/jose-sleeve.svg",
+  "pdf": "files/jose/jose-sleeve.pdf",
+  "png": "files/jose/jose-sleeve.png",
+  "w": 75,
+  "h": 75
  },
  {
   "svg": "files/vicky/vicky-tee-front.svg",
@@ -245,6 +273,13 @@
   "h": 61
  },
  {
+  "svg": "files/vicky/vicky-sleeve.svg",
+  "pdf": "files/vicky/vicky-sleeve.pdf",
+  "png": "files/vicky/vicky-sleeve.png",
+  "w": 75,
+  "h": 75
+ },
+ {
   "svg": "files/silvio/silvio-tee-front.svg",
   "pdf": "files/silvio/silvio-tee-front.pdf",
   "png": "files/silvio/silvio-tee-front.png",
@@ -294,6 +329,13 @@
   "h": 61
  },
  {
+  "svg": "files/silvio/silvio-sleeve.svg",
+  "pdf": "files/silvio/silvio-sleeve.pdf",
+  "png": "files/silvio/silvio-sleeve.png",
+  "w": 75,
+  "h": 75
+ },
+ {
   "svg": "files/indi/indi-tee-front.svg",
   "pdf": "files/indi/indi-tee-front.pdf",
   "png": "files/indi/indi-tee-front.png",
@@ -341,5 +383,12 @@
   "png": null,
   "w": 91,
   "h": 61
+ },
+ {
+  "svg": "files/indi/indi-sleeve.svg",
+  "pdf": "files/indi/indi-sleeve.pdf",
+  "png": "files/indi/indi-sleeve.png",
+  "w": 75,
+  "h": 75
  }
 ]

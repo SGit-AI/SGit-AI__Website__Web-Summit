@@ -89,7 +89,7 @@ Written by Vicky's agents on 4 November 2026 from Vicky's own setup on 2 and 3 N
      - `*.sgit.ai`
      - `sgraph.ai`
      - `*.sgraph.ai`
-   - **Save.** Domain changes work in the open session, so nothing needs restarting. The environment is now fully set up, before any agent starts.
+   - **Save.** Domain changes work in the open session, so nothing needs restarting. If an agent still can't reach a site, start a new session. The environment is now fully set up, before any agent starts.
 10. Then go on to step 4, and paste the conductor prompt into this session.
 
 **You're done when:** a session is open on the repository, on the `dev` branch, and the six domains are saved, with no prompt pasted yet.

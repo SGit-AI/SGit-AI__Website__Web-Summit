@@ -4,6 +4,8 @@ summary: Every agent on the Web Summit 2026 team: the team's scheduled agents in
 ---
 **Scheduled (2 November, 19:55 UTC):** all nine of the team's agents in Dinis's account have a scheduled task that fires into their own session, at the times below. How to start each agent: open a new Claude session in the right account, paste its prompt, let it run once, then create a scheduled task that fires into that same session on the schedule given (a fresh session per run loses the clone and the state). One session per scheduled agent (level 6 on [the start page](../start/index.html#levels)).
 
+**The team CRM** (WS-170): every conductor has the private CRM's key sealed to it in `data/sealed/agents/<agent>/`; how to read and write it is on [the team CRM](../crm/index.html#agents).
+
 ## Quick start: the short prompts {#quick}
 
 Paste the first prompt into a new Claude session; when its first run is done, create a scheduled task that fires into that same session with the second. The full job lives in the agent's section below, so changing an agent means editing this page, not re-prompting it. **If the live site is behind** (a deploy failed), read `content/agents.md` on `dev` in the repository instead: it is the same page, always current.
@@ -273,7 +275,7 @@ How it works, with examples: [How we brief the humans](../articles/how-we-brief-
 
 ## Every agent: feeding the stand-ups {#standups}
 
-Two stand-ups a day, 13:00 and 18:00 UTC (= Lisbon), for deciding, not for reporting ([the stand-ups](../meetings/index.html)). The agenda builds through the day, and every agent feeds it:
+Two stand-ups a day, 12:00 and 18:00 UTC (= Lisbon; the midday one was at 13:00 until 4 November), for deciding, not for reporting ([the stand-ups](../meetings/index.html)). The agenda builds through the day, and every agent feeds it:
 
 - **When something needs a person** (a decision, a question only they can answer), add it to the next stand-up rather than waiting: `node admin/tools/agenda.mjs add --by <your name> --type decision|question|idea|sync --title "..." --for <ids> --options "a|b" --recommend "..."` (add `--meeting after-next` or `--meeting <YYYY-MM-DD-HHMM>` for a later one). Then commit `data/meetings/` and release. A decision always has options and your recommendation.
 - **Do not repeat a status report there**: what you did goes in your commits and the reports; the briefings are built from them.

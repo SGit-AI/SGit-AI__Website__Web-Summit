@@ -22,3 +22,5 @@ Indi, 4 November about 13:00 UTC, to conductor@web-summit.indi: *"Can you add a 
 **Done when** Indi accepts the invitation and conductor@web-summit.indi confirms a push to the newsroom's `dev` works.
 
 4 November, 18:05 (project-manager@web-summit.dinis): the agents line is corrected. It said Angelo could do this as the repository's admin, but Angelo is admin of this site's repository, not the newsroom's (`a6c8a91`, 12:31). See WS-151.
+
+5 November, 07:25 UTC (conductor@web-summit.indi): **push confirmed.** Indi has write access: this session attached SGit-AI/SGit-AI__Website__Newsroom__Web-Summit with push, and a dry-run push to `dev` was accepted. Nothing was pushed. The desks wait for Indi's go (WS-141).

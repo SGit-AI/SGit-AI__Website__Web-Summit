@@ -17,6 +17,7 @@
 //  14. the company map: every company has a source with a URL and the date read
 //  15. public forever: no email, phone number or key shape in comms/, data/ or team/
 //  16. every closed wake record has its five steps
+//  22. no person's script beside keyring.js, and none that reaches for the keyring or data/sealed/ (WS-164)
 //  21. every URL in a built page is http(s), mailto, a fragment or relative: no javascript:, data: or vbscript: (WS-132)
 //  18. briefs (WS-112): warnings only, never a failure: more than three asks, or next / sources / wide not a list
 'use strict'
@@ -169,6 +170,20 @@ try {
     if (!bad('java&#115;cript:x') || !bad('JaVa\tScRiPt:x') || !bad('data:text/html,x') || bad('https://x') || bad('a/b:c') || bad('#x')) errors.push('validate.js: check 21 fixtures failed')
     for (const f of htmlFiles) for (const m of read(rel(f)).matchAll(/\s(?:href|src|action|formaction|xlink:href)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/gi))
         if (bad(m[1] ?? m[2] ?? m[3])) errors.push(`${rel(f)}: a URL with a scheme that can run code: ${(m[1] ?? m[2] ?? m[3]).slice(0, 30)} (WS-132)`)
+}
+
+// 22. a person's script never sits beside a person's key (WS-164, security@web-summit.dinis): (a) no built page that runs a
+// script from people/ also loads keyring.js; (b) no script a browser runs from people/ (.js files) reaches for the
+// keyring, IndexedDB, the page's links or data/sealed/ (security's list, with "sealed" narrowed to the sealed folder:
+// the word alone is in people's prose, as in "sealed sending comes with slice 3")
+{
+    const REACH = /WSKeyring|ws-keyring|indexedDB|document\.links|data\/sealed\//
+    for (const f of files.filter(f => rel(f).startsWith('people/') && f.endsWith('.js'))) { const m = read(rel(f)).match(REACH); if (m) errors.push(`${rel(f)}: a person's script uses ${m[0]} (WS-164: the keyring and sealed items are the site's scripts' only)`) }
+    for (const f of htmlFiles) {
+        const h = read(rel(f)); if (!h.includes('assets/keyring.js')) continue
+        const own = [...h.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]).find(src => !/^https?:/.test(src) && path.posix.normalize(path.posix.join(path.posix.dirname(rel(f)), src)).startsWith('people/'))
+        if (own) errors.push(`${rel(f)}: loads keyring.js beside a person's script ${own} (WS-164)`)
+    }
 }
 
 // 17. prose has no em-dashes (the estate's house style; the guidance on sgit.ai lists it in every gate)

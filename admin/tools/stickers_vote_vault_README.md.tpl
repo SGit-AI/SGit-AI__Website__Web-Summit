@@ -1,4 +1,4 @@
-# ws-stickers-vote: the team's sticker vote (WS-159)
+# ws-stickers-vote: the team's sticker vote (WS-167)
 
 Funny laptop stickers for RiskMandate at Web Summit Lisbon, in three sets (the road trip, 1 to 12, four variations
 each; creative takes, 13 to 18; the gap, 19 to 24), and a vote: each person on the Web Summit team

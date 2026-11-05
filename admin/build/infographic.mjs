@@ -5,7 +5,7 @@
 import fs from 'fs'
 import path from 'path'
 
-const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+import { escAttr as esc } from './text.mjs'
 const COLS = ['green', 'blue', 'terra', 'gold']
 
 export const expandInfographic = (html, md, ROOT, file, rel) => {

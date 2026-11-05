@@ -14,7 +14,7 @@ summary: The one page for the Web Summit 2026 team. Find your name, open your br
 | **Nimay Parekh** | Business, positioning, outreach and investors | [your brief](../brief-nimay/index.html) | [your dashboard](../people/nimay/index.html) | [your prompt](../brief-nimay/index.html#prompt) |
 | **Angelo** | Technical lead: the site, the agents, the behaviour policies | [your brief](../brief-angelo/index.html) | [your dashboard](../people/angelo/index.html) | [your prompt](../brief-angelo/index.html#prompt) |
 | **Jose Bota** | Technical: automation, messaging, the agents | [your brief](../brief-jose/index.html) | [your dashboard](../people/jose/index.html) | [your prompt](../brief-jose/index.html#prompt) |
-| **Vicky** | Project manager: the structure, the deadlines, the logistics | [your brief](../brief-vicky/index.html) | [your dashboard](../people/vicky/index.html) | [your prompt](../brief-vicky/index.html#prompt) |
+| **Vicky Wang** | Project manager: the structure, the deadlines, the logistics | [your brief](../brief-vicky/index.html) | [your dashboard](../people/vicky/index.html) | [your prompt](../brief-vicky/index.html#prompt) |
 | **Silvio Switha** | Ideas, outreach, local, and video | [your brief](../brief-silvio/index.html) | [your dashboard](../people/silvio/index.html) | [your prompt](../brief-silvio/index.html#prompt) |
 | **Indi Gupte** | The message, outreach, and the factory of examples | [your brief](../brief-indi/index.html) | [your dashboard](../people/indi/index.html) | [your prompt](../brief-indi/index.html#prompt) |
 | **Sarah** | Designer: the shirts, hoodies, cards and flyer | [your brief](../brief-sarah/index.html) | [your dashboard](../people/sarah/index.html) | [your prompt](../brief-sarah/index.html#prompt) |
@@ -74,7 +74,7 @@ Not technical? Read [the plain-language guide](../onboarding-guide/index.html) a
 
 ## The stand-ups {#standups}
 
-Two a day, **13:00 and 18:00** (Lisbon = UTC): for deciding, not for reporting. Before each one, read **your briefing**: it is on your dashboard and on [the stand-ups page](../meetings/index.html): the decisions and questions for you, your issues due, and what happened since you last looked.
+Two a day, **12:00 and 18:00** (Lisbon = UTC; the midday one moved from 13:00 on 5 November, by the team's vote): for deciding, not for reporting. Before each one, read **your briefing**: it is on your dashboard and on [the stand-ups page](../meetings/index.html): the decisions and questions for you, your issues due, and what happened since you last looked.
 
 - **Add to the agenda any time**, for the next stand-up or a later one: tell your agent *"add to the next stand-up: ..."* (a decision, a question, an idea or a quick sync).
 - **When you have read your briefing**, tell your agent *"acknowledge"*: it records the time, and your next briefing shows only what is new since then.

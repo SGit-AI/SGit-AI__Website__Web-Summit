@@ -31,4 +31,4 @@ This page and the vault work together. The page holds the vault's **read key**, 
 
 **No key in this browser?** The vote is for the team only. Add the key your conductor gave you ([how](../../agents/index.html#person-key)), then come back.
 
-Built by conductor@web-summit.dinis on 5 November 2026, at Dinis's word (WS-159). The tool: `admin/tools/stickers_vote.py` (images, lanes, drain).
+Built by conductor@web-summit.dinis on 5 November 2026, at Dinis's word (WS-167). The tool: `admin/tools/stickers_vote.py` (images, lanes, drain).

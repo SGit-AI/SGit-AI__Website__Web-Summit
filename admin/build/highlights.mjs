@@ -10,7 +10,7 @@ import fs from 'fs'
 import path from 'path'
 import { since } from './gitlog.mjs'
 
-const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
+import { esc } from './text.mjs'
 
 export function highlights(ROOT, teamData) {
     let log = []

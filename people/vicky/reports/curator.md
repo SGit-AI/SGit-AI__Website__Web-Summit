@@ -17,3 +17,19 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - For the fact-checker: Metro's page mentions a one-day online pass that Executive Digest says does not exist this year, and Web Summit's page lists one too; S1 gives only the 3 and 5 day passes until checked (captures/2026-11-04-metro-web-summit-transport-pass.md and metro-web-summit-service.md).
 - Revised: S5 now uses the survey's own wording with both its 55% and 60%, as conductor@web-summit.vicky noted (team site commit 6227e330); S7 can say RTBEAMTECH is at the summit with Técnico (same map, revisions_to_the_first_map).
 - Gaps for the researcher: the one-day pass, what Técnico's six spin-offs do, and the first map's open gaps (same map, gaps_for_the_researcher).
+
+## Thu 5 Nov 2026, 07:45 UTC run (2 new captures; the map is not released)
+
+- URGENT: the 07:45 map (desks/curator/2026-11-05-0745.json) is written and committed locally but not pushed: the newsroom's gate now needs every desk to run admin/tools/derive.mjs and commit the derived entities in data/ (newsroom CLAUDE.md, "After a desk's file in desks/ changes"), and the curator writes only desks/curator/; it needs Vicky's or Dinis's word to write those derived files, or someone else to derive after each map.
+- Mapped the researcher's 2 captures of 07:30 in vault 41j3e9s9 (commit ebfc284b741d): ULisboa at Web Summit with UniVerse on 10 November (captures/2026-11-05-ulisboa-web-summit-2026.md), and European Tech Champions, Italy and Portugal, 11 November in Beato (captures/2026-11-05-aicep-italy-portugal-tech-champions.md).
+- New candidates once released: S10 Lisbon's universities at Web Summit: two stands and a pitch day (with captures/2026-11-04-tecnico-web-summit-2026.md), and S11 Italy and Portugal meet in Beato on how European tech scales.
+- For the fact-checker: ULisboa's ranking, Dealroom figures and four unicorns are its own claims and must be attributed (captures/2026-11-05-ulisboa-web-summit-2026.md).
+- WS-153 (team site commit f124bd1b) asks Vicky's agents for their vault keys: the curator holds only the research vault's published read key (people/vicky/vaults.json), so it has nothing to send.
+
+## Thu 5 Nov 2026, 11:45 UTC run (1 new capture; the 07:45 map released)
+
+- Resolved, no longer urgent: the 07:45 map is live (desks/curator/2026-11-05-0745.json, newsroom v0.1.15), now that release.sh derives the data itself (newsroom commit 24a9aba); S10 and S11 are in data/stories/.
+- Mapped the researcher's 11:30 capture in vault 41j3e9s9 (commit f9d8757b5a26): Web Summit's 2026 speakers page, 800 speakers, a first page led by robotics and AI companies, a robot (Galbot's G1) listed as a speaker (captures/2026-11-05-websummit-speakers.md); the map is desks/curator/2026-11-05-1145.json (newsroom v0.1.16).
+- New candidate S12: A robot among 800 speakers: Web Summit 2026 turns to robotics, grouped with Técnico's robots (captures/2026-11-04-tecnico-web-summit-2026.md).
+- For the fact-checker: only the lineup's first page was read; the AgiBot A3 robot reported by PanAsiaBiz is not confirmed (same capture).
+- Gaps for the researcher: the rest of the lineup, Portuguese and European speakers' companies, and when Galbot's G1 is on stage (desks/curator/2026-11-05-1145.json, gaps_for_the_researcher).

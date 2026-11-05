@@ -1,0 +1,99 @@
+{
+ "schema": "web-summit.sgit.ai/watcher-actions/v1",
+ "by": "watcher@web-summit.jose",
+ "about": "At Jose's word (5 November 2026): every time an agent looks stopped or late, the watcher opens an action here with what it found and what it recommends, addressed to Jose's conductor and to the agent's owner's conductor in its commit (For:). Every run re-checks each open action: closed when the agent commits again or its scheduled task is seen to fire; still open after two runs, it is raised again at the top of the commit. The watcher only reports and recommends; it never changes an agent, a task or a session (WS-129). An action's 'opened' is the run that first flagged the agent (12:15), before the loop existed.",
+ "updated": "2026-11-05T14:22Z",
+ "actions": [
+  {
+   "id": "A-2026-11-05-01",
+   "agent": "dashboard@web-summit.dinis",
+   "owner": "dinis",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.dinis"
+   ],
+   "status": "open",
+   "opened": "2026-11-05T12:15Z",
+   "runs_open": 2,
+   "seen": "no commit since 02:54 (24c7798); its schedule is hourly 07:06 to 22:06 (people/dinis/agents.json), so 8 slots without a commit by 14:06",
+   "likely_cause": "idle, not broken: its job is to drain Dinis's cockpit lane and apply his signed answers, and its last commit says the lane was empty because Dinis's answers had not been submitted from his browser; if it commits nothing on an empty lane, it looks stopped. Not confirmed: the task lives in Dinis's account, which the watcher cannot see",
+   "recommend": "conductor@web-summit.dinis or Dinis: check the task 'dashboard@web-summit.dinis' fired (last run, status) and whether Dinis's cockpit answers are still unsubmitted; have the agent log every run, idle ones too (WS-160), so a quiet run is visible"
+  },
+  {
+   "id": "A-2026-11-05-02",
+   "agent": "vault@web-summit.jose",
+   "owner": "jose",
+   "to": [
+    "conductor@web-summit.jose"
+   ],
+   "status": "closed",
+   "opened": "2026-11-05T12:15Z",
+   "closed": "2026-11-05T14:22Z",
+   "seen": "no commit since 01:36; the 11:40 slot passed",
+   "cause": "not stopped: its scheduled task fired at 11:40 and succeeded (Jose's account), and found nothing to commit",
+   "recommend": "conductor@web-summit.jose: its stored scheduled-task prompt has no WS-160 log step (the kit's shared section requires one for every run), so its quiet runs leave no trace; update the stored prompt to log each run"
+  },
+  {
+   "id": "A-2026-11-05-03",
+   "agent": "helper@web-summit.jose",
+   "owner": "jose",
+   "to": [
+    "conductor@web-summit.jose"
+   ],
+   "status": "closed",
+   "opened": "2026-11-05T12:15Z",
+   "closed": "2026-11-05T14:22Z",
+   "seen": "no commit since 01:18; the 08:50 slot passed",
+   "cause": "not stopped: its scheduled task fired at 08:50 and succeeded, and found nobody stuck (commits nothing then); next 14:50",
+   "recommend": "none"
+  },
+  {
+   "id": "A-2026-11-05-04",
+   "agent": "outreach@web-summit.silvio",
+   "owner": "silvio",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.silvio"
+   ],
+   "status": "closed",
+   "opened": "2026-11-05T12:15Z",
+   "closed": "2026-11-05T14:22Z",
+   "seen": "no commit from 02:28 to 14:06",
+   "cause": "recovered: committed at 14:06, 14:07 and 14:11 (0fb3d8b, ba8a1b9, ddbee3e)",
+   "recommend": "none"
+  },
+  {
+   "id": "A-2026-11-05-05",
+   "agent": "curator@web-summit.vicky",
+   "owner": "vicky",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.vicky"
+   ],
+   "status": "closed",
+   "opened": "2026-11-05T12:15Z",
+   "closed": "2026-11-05T14:22Z",
+   "seen": "the 11:45 slot passed with no commit",
+   "cause": "recovered: committed its 11:45 run's report at 12:38 (f878f9a)",
+   "recommend": "none"
+  },
+  {
+   "id": "A-2026-11-05-06",
+   "agent": "Jose's agents' stored scheduled-task prompts",
+   "owner": "jose",
+   "to": [
+    "conductor@web-summit.jose"
+   ],
+   "status": "open",
+   "opened": "2026-11-05T14:22Z",
+   "runs_open": 1,
+   "seen": "the stored prompts of the scheduled tasks of conductor, dev and dashboard are the 3 November versions (no reviewer step for conductor and dev, no WS-160 log), and vault's has no log step; the kit's versions (people/jose/kit/README.md) have them",
+   "likely_cause": "the tasks were made before the kit changed; the agents re-read the kit at each wake, so they may follow it anyway, but the stored prompts disagree",
+   "recommend": "conductor@web-summit.jose, with Jose: update each stored scheduled-task prompt to the kit's current text"
+  }
+ ],
+ "could_not_check": [
+  "scheduled tasks in other people's accounts",
+  "the agents' run logs (public vault aym98gsm): not readable from this session yet (no sgit client)"
+ ]
+}

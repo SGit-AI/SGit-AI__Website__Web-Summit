@@ -157,6 +157,18 @@ def rm_mark(cx, top, d):
     k = d / 64
     return f'<g transform="translate({cx - d / 2:.2f},{top:.2f}) scale({k:.4f})">' + re.sub(r'\s*\n\s*', '', body) + '</g>'
 
+WITH_SLEEVE = VARIANT == 'next' or bool(F.get('sleeve_mark'))   # the seal on the left sleeve (Silvio, Dinis in person, 4 Nov)
+NEXT_OVERRIDES = VARIANT == 'next' or bool(F.get('next_live'))  # a person's hoodie colour and ink (Vicky: lavender, black ink)
+def fpers(pid): return next(x for x in F['people'] if x['id'] == pid)
+def hoodie_ink(pid):
+    o = fpers(pid).get('hoodie_ink') if NEXT_OVERRIDES else None
+    return BLACK if o == 'black' else WHITE if o == 'white' else ink(PEOPLE[pid])
+def hoodie_colour(pid): return (fpers(pid).get('hoodie_colour') if NEXT_OVERRIDES else None) or PEOPLE[pid]['colour']
+def sleeve(pid):
+    """The containered seal for the left sleeve, as supplied: the same file on every garment and colour."""
+    p = PEOPLE[pid]; W = F['garments']['sleeve']['width_mm']
+    return svg(W, W, rm_mark(W / 2, 0, W), f"{p['first']}: the sleeve seal, print {W} mm wide, left sleeve"), W, W
+
 def ink(p): return WHITE if p['ink'].lower() in ('#fff', '#ffffff') else BLACK
 
 def person_parts(pid):
@@ -200,7 +212,7 @@ def hoodie_back(pid):
     p = PEOPLE[pid]; hd = HOODIES[F['garments']['hoodie']['design']]; W = F['garments']['hoodie']['back']['width_mm']
     cap, mh = 80, F['garments']['hoodie']['back'].get('max_height_mm', 9999)
     while True:
-        body, h = stack(back_blocks(pid, W, hd['back'], F['garments']['hoodie']['qr_code_mm'], ink(p), cap), W)
+        body, h = stack(back_blocks(pid, W, hd['back'], F['garments']['hoodie']['qr_code_mm'], hoodie_ink(pid), cap), W)
         if h + 2 <= mh or cap <= 20: break
         cap -= 1
     return svg(W, h + 2, body, f"{p['first']}: hoodie back ({hd['id']}), print {W} x {h + 2:.0f} mm"), W, h + 2
@@ -235,14 +247,18 @@ def place(svgtext, x, y, w):  # a print file inside a proof, scaled to w proof u
 
 def proof(pid, files):
     """What Dinis signs off: the files as printed, on the garment colour, about to scale (a chest 500 mm wide)."""
-    p = PEOPLE[pid]; col = p['colour']; k = 210 / 500  # proof units per mm on the garment
-    def garment(shape, x, label): return f'<g transform="translate({x},0)"><path d="{shape}" fill="{col}" stroke="#00000033"/></g><text x="{x + 200}" y="505" font-family="Inter, Arial" font-size="14" text-anchor="middle" fill="#333">{label}</text>'
+    p = PEOPLE[pid]; col = p['colour']; hcol = hoodie_colour(pid); k = 210 / 500  # proof units per mm on the garment
+    def garment(shape, x, label, c=None): return f'<g transform="translate({x},0)"><path d="{shape}" fill="{c or col}" stroke="#00000033"/></g><text x="{x + 200}" y="505" font-family="Inter, Arial" font-size="14" text-anchor="middle" fill="#333">{label}</text>'
     tf, tb, hc, hb = (files[n][0] for n in ['tee-front', 'tee-back', 'hoodie-chest', 'hoodie-back'])
     tw = F['garments']['tee']; hw = F['garments']['hoodie']
     body = garment(TEE, 0, 'T-shirt front') + place(tf, 200 - tw['front']['width_mm'] * k / 2, 40 + tw['front']['from_collar_mm'] * k, tw['front']['width_mm'] * k)
     body += garment(TEE, 400, 'T-shirt back') + place(tb, 600 - tw['back']['width_mm'] * k / 2, 40 + tw['back']['from_collar_mm'] * k, tw['back']['width_mm'] * k)
-    body += garment(HOOD, 800, 'Hoodie front') + f'<rect x="940" y="360" width="120" height="70" rx="12" fill="#00000014"/>' + place(hc, 1030, 175, hw['chest']['width_mm'] * k)
-    body += garment(HOOD, 1200, 'Hoodie back') + place(hb, 1400 - hw['back']['width_mm'] * k / 2, 60 + hw['back']['from_collar_mm'] * k * 0.6, hw['back']['width_mm'] * k)
+    if WITH_SLEEVE:   # the seal on the wearer's left sleeve: on the right of a front view
+        sw = F['garments']['sleeve']['width_mm'] * k; body += place(files['sleeve'][0], 330 - sw / 2, 72, sw)
+    body += garment(HOOD, 800, 'Hoodie front', hcol) + f'<rect x="940" y="360" width="120" height="70" rx="12" fill="#00000014"/>' + place(hc, 1030, 175, hw['chest']['width_mm'] * k)
+    if WITH_SLEEVE:
+        sw = F['garments']['sleeve']['width_mm'] * k; body += place(files['sleeve'][0], 1138 - sw / 2, 120, sw)
+    body += garment(HOOD, 1200, 'Hoodie back', hcol) + place(hb, 1400 - hw['back']['width_mm'] * k / 2, 60 + hw['back']['from_collar_mm'] * k * 0.6, hw['back']['width_mm'] * k)
     cf, cb = files['card-front'][0], files['card-back'][0]
     body += f'<g transform="translate(1630,30)">{place(cf, 0, 0, 260)}<text x="130" y="194" font-family="Inter, Arial" font-size="14" text-anchor="middle" fill="#333">Card front</text></g>'
     body += f'<g transform="translate(1630,280)">{place(cb, 0, 0, 260)}<text x="130" y="194" font-family="Inter, Arial" font-size="14" text-anchor="middle" fill="#333">Card back</text></g>'
@@ -260,7 +276,7 @@ for fp in F['people']:
     pid = fp['id']; os.makedirs(os.path.join(OUT, pid), exist_ok=True); files = {}
     small = F['garments']['tee']['front_small']['width_mm']
     for name, fn in [('tee-front', tee_front), ('tee-front-small', lambda i: tee_front(i, small, " for XS, S and women's")), ('tee-back', tee_back), ('hoodie-chest', hoodie_chest), ('hoodie-back', hoodie_back),
-                     ('card-front', lambda i: card(i, 'front')), ('card-back', lambda i: card(i, 'back'))]:
+                     ('card-front', lambda i: card(i, 'front')), ('card-back', lambda i: card(i, 'back'))] + ([('sleeve', sleeve)] if WITH_SLEEVE else []):
         MIN_STROKE[0] = 0.0 if name.startswith('card') else F['min_stroke_mm']; THINNEST[0] = 99.0
         s, w, h = fn(pid); files[name] = (s, w, h)
         if not name.startswith('card'):
@@ -319,8 +335,14 @@ Everything asked for since the sets above were signed, made once, as one complet
 1. **One QR code for everyone on the garments**, to [{SITE}/meet/](../meet/index.html) (the team page): Dinis, as relayed by his conductor and by Silvio's procurement agent (3 November). The cards keep each person's own code.
 2. **The RiskMandate mark** (the supplied containered mark, from riskmandate.ai/brand, never recoloured): 70 mm at the top of every T-shirt back, with the brand's clear space, and as the hoodie's chest logo (relayed from Dinis, 3 November). 70 mm keeps its thinnest ring at 1.1 mm.
 3. **Vicky's card reads "Vicky Wang"** (Vicky's own word through her agent, 4 November).
+4. **The RiskMandate seal on the left sleeve** of every T-shirt and hoodie, 75 mm, as supplied (Silvio's choice, which Dinis confirmed in person on 4 November, as relayed): a file of its own per person, `<id>-sleeve`.
+5. **Vicky's hoodie in lavender with black ink** (the printer has no purple hoodie; Vicky's own word, through Silvio): white would not read on lavender.
 
-Not in it, waiting for a decision: the **sleeves** (still "nothing on the sleeves" until Dinis says otherwise), the **purple** blank (Silvio's call with the printer), and whether the cards move to Indi's new design (B. Seal, `team/designer/print/concepts-rm/`). **Not yet the files to print:** the sets above stand until Dinis confirms this update in the designer's session; then it becomes the main set and every set is signed again. Checked as printed: 14 garment backs to /meet/, 7 cards to their own pages.
+**🇵🇹 [Em português](../impressao/index.html)** (procurement@web-summit.silvio).
+
+**Open, for Dinis: Jose in navy instead of orange?** Jose asked for dark blue (navy) for his T-shirts and hoodie, *"if it's clearly different from Nimay's royal blue and Dinis agrees; otherwise keep orange"* (5 November, on the 12:00 stand-up, still open). His files do not change either way (white ink reads on both); only the blank's colour does. Side by side: [Nimay in royal blue, Jose in navy, Jose as now]({U}/variants/next/compare/jose-navy-vs-nimay.svg). The designer's read: navy is clearly apart from Nimay's royal blue, but from a distance it is close to Dinis's black, and the seven were chosen to be very different colours; orange keeps a warm colour in the set.
+
+Not in it: the **business cards** in this set are the personal C1 cards; the team now orders the three unnamed team cards instead ([the cards' order page](../cards/print/index.html)). **Not yet the files to print:** the sets above stand until Dinis confirms this update in the designer's session; then it becomes the main set and every set is signed again. Checked as printed: 14 garment backs to /meet/, 7 cards to their own pages.
 
 [Download the proposed set (zip, {os.path.getsize(NZ) // 1024} KB)]({U}/variants/next/riskmandate-print-files-next.zip) · proofs: {' · '.join(f"[{PEOPLE[x['id']]['first']}]({U}/variants/next/proofs/{x['id']}.svg)" for x in F['people'])}
 """
@@ -350,6 +372,8 @@ page = f"""---
 title: Print files: the RiskMandate merch
 summary: The Official Sign-off of the RiskMandate merch, and everything a printer needs for the Web Summit 2026 team's RiskMandate merch (7 x 3 T-shirts, 7 hoodies, 7 x 100 business cards), as vector files at their real size with a zip of the lot, and the final set for Dinis to sign off person by person. RiskMandate only.
 ---
+**🇵🇹 [Português](../impressao/index.html)**: a versão desta página para a gráfica (procurement@web-summit.silvio).
+
 {{{{signoff-summary}}}}
 
 For the printers, through Silvio Switha ([the print order](../print-order/index.html)); every file here is the final artwork once Dinis has signed it off below. Made by **designer@web-summit.dinis** from `data/design.json` and `team/designer/print/final.json` (`team/designer/print/make-print.py`).

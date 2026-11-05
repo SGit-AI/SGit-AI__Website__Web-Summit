@@ -1,0 +1,405 @@
+{
+ "about": "The one sentence about each company in outreach@web-summit.silvio's 28 drafts (in Silvio's mailbox, not sent), with where each fact came from and when it was read, as Dinis's inbox agent asked on 5 November 2026. 'channel' says whether the company publishes an address on its own site (checked 5 November), has only a web form, or neither. No address or person's contact is kept here.",
+ "drafts": [
+  {
+   "id": "aicep",
+   "name": "AICEP - Portugal Trade & Invest",
+   "sentence": "A AICEP ajuda as empresas portuguesas a expandir-se para fora, com escritórios em cerca de 50 países.",
+   "sources": [
+    {
+     "url": "https://www.portugalglobal.pt",
+     "read_on": "2026-11-01"
+    },
+    {
+     "url": "https://websummit.com/appearances/lis26/617cd55a-686f-432b-b05d-169e0aa3d846/aicep---portugal-trade-%26-invest/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "startup-portugal",
+   "name": "Startup Portugal",
+   "sentence": "A Startup Portugal e a Web Summit selecionam até 125 startups portuguesas para a edição deste ano, no Road 2 Web Summit.",
+   "sources": [
+    {
+     "url": "https://executivedigest.sapo.pt/?p=800859",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "chatplace",
+   "name": "ChatPlace",
+   "sentence": "O gestor de IA da ChatPlace responde a mensagens e comentários 24 horas por dia em nome dos criadores.",
+   "sources": [
+    {
+     "url": "https://websummit.com/startups/featured-startups/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "kpmg-portugal",
+   "name": "KPMG",
+   "sentence": "A KPMG é parceira da Web Summit, e a final global do KPMG Private Enterprise Global Tech Innovator é em Lisboa durante o evento.",
+   "sources": [
+    {
+     "url": "https://websummit.com/partners/event-partners-2026/",
+     "read_on": "2026-11-01"
+    },
+    {
+     "url": "https://co.ibtimes.com/kiggu-global-cybersecurity-final-1810",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "web form only",
+   "attending": "confirmed"
+  },
+  {
+   "id": "feedzai",
+   "name": "Feedzai",
+   "sentence": "Feedzai's CTO is speaking at Web Summit on \"Who let the agent in?\".",
+   "sources": [
+    {
+     "url": "https://websummit.com/sessions/lis26/1de6a591-ec17-4399-8f28-13f4bff1cae1/who-let-the-agent-in/",
+     "read_on": "2026-11-01"
+    },
+    {
+     "url": "https://websummit.com/attendees/lis26/5c67ec4d-69ac-487e-aeac-153f6e7b0d42/diogo-guerra/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "web form only",
+   "attending": "confirmed"
+  },
+  {
+   "id": "cisco-outshift",
+   "name": "Cisco (Outshift by Cisco)",
+   "sentence": "Cisco brings Outshift and DevNet to Web Summit, with open-source projects for agentic AI.",
+   "sources": [
+    {
+     "url": "https://websummit.com/partners/event-partners-2026/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "web form only",
+   "attending": "confirmed"
+  },
+  {
+   "id": "hexamind",
+   "name": "Hexamind",
+   "sentence": "Hexamind publishes Hexgate, an open-source layer that checks every tool call an AI agent makes against a policy. (Attendance unconfirmed: the email says 'If you're at Web Summit'.)",
+   "sources": [
+    {
+     "url": "https://github.com/HexamindOrganisation",
+     "read_on": "2026-11-01"
+    },
+    {
+     "url": "https://pypi.org/project/hexgate/0.3.2/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "unconfirmed"
+  },
+  {
+   "id": "primitive",
+   "name": "Primitive",
+   "sentence": "Primitive gives AI agents their own email address.",
+   "sources": [
+    {
+     "url": "https://websummit.com/startups/featured-startups/",
+     "read_on": "2026-11-01"
+    },
+    {
+     "url": "https://websummit.com/appearances/lis26/bd878c73-f795-4ed0-b16a-2e029d608813/primitive-makes-enterprise-email-ai-ready.",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "mastra",
+   "name": "Mastra",
+   "sentence": "Mastra is an open-source TypeScript framework for building production agents.",
+   "sources": [
+    {
+     "url": "https://websummit.com/startups/featured-startups/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "qase",
+   "name": "Qase",
+   "sentence": "Qase is launching Tiden, which records what was asked and checks every change a coding agent makes against it.",
+   "sources": [
+    {
+     "url": "https://websummit.com/startups/featured-startups/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "replit",
+   "name": "Replit",
+   "sentence": "Replit lets anyone build applications in natural language, and has more than 500,000 business users.",
+   "sources": [
+    {
+     "url": "https://websummit.com/partners/event-partners-2026/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "1password",
+   "name": "1Password",
+   "sentence": "1Password is building a security layer for how AI agents authenticate and connect.",
+   "sources": [
+    {
+     "url": "https://websummit.com/partners/event-partners-2026/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "cloudflare",
+   "name": "Cloudflare",
+   "sentence": "Cloudflare's homepage now leads with \"Build for the agent era\".",
+   "sources": [
+    {
+     "url": "https://www.cloudflare.com/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "delinea",
+   "name": "Delinea",
+   "sentence": "Delinea governs what people, machines and AI agents do once they have access, with just-in-time authorisation.",
+   "sources": [
+    {
+     "url": "https://websummit.com/partners/event-partners-2026/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "polygraf-ai",
+   "name": "Polygraf AI",
+   "sentence": "Polygraf's AI Behavioral Control Plane enforces governance across human and agent interactions in real time.",
+   "sources": [
+    {
+     "url": "https://websummit.com/startups/featured-startups/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "no usable address",
+   "attending": "confirmed"
+  },
+  {
+   "id": "descope",
+   "name": "Descope",
+   "sentence": "Descope gives AI agents and MCP servers scoped access, and is running a session at Web Summit on securing AI agents.",
+   "sources": [
+    {
+     "url": "https://websummit.com/sessions/lis26/2701a938-524f-4c24-b0da-cb8fdd4e030b/a-identity-auth-tips-to-secure-ai-agents-and-mcp-servers/",
+     "read_on": "2026-11-01"
+    },
+    {
+     "url": "https://websummit.com/appearances/lis26/9617c798-35a4-46d0-9165-8f30f47f61e5/descope/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "airia",
+   "name": "Airia",
+   "sentence": "Airia gives enterprises one control layer for agents, models, tools and data, with runtime policy and audit evidence.",
+   "sources": [
+    {
+     "url": "https://airia.com/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "web form only",
+   "attending": "confirmed"
+  },
+  {
+   "id": "emergence-ai",
+   "name": "Emergence",
+   "sentence": "Emergence's co-founder is speaking at Web Summit on \"When AI agents go rogue\".",
+   "sources": [
+    {
+     "url": "https://websummit.com/sessions/lis26/afe1fd71-2a98-41e4-8707-9101353797b3/when-ai-agents-go-rogue/",
+     "read_on": "2026-11-01"
+    },
+    {
+     "url": "https://websummit.com/attendees/lis26/5ebb61f7-b45c-4491-98a1-74d548d1e4d9/satya-nitta/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "no usable address",
+   "attending": "confirmed"
+  },
+  {
+   "id": "linux-foundation-aaif",
+   "name": "Linux Foundation (Agentic AI Foundation)",
+   "sentence": "The Agentic AI Foundation, at the Linux Foundation, is a neutral home for open standards in agentic AI, and its Executive Director is speaking at Web Summit.",
+   "sources": [
+    {
+     "url": "https://aaif.io/",
+     "read_on": "2026-11-01"
+    },
+    {
+     "url": "https://websummit.com/sessions/lis26/1520fda2-92bb-4e9c-8843-1582aa04c031/why-ai-agents-stall-at-the-production-line/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "web form only",
+   "attending": "confirmed"
+  },
+  {
+   "id": "conscium",
+   "name": "Conscium",
+   "sentence": "Conscium tests and verifies AI agents in simulation before they are deployed.",
+   "sources": [
+    {
+     "url": "https://conscium.com/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "scrut-automation",
+   "name": "Scrut Automation",
+   "sentence": "Scrut runs AI agents to collect compliance evidence for SOC 2, ISO 27001 and more than 60 frameworks.",
+   "sources": [
+    {
+     "url": "https://www.scrut.io/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "cnext",
+   "name": "Cnext",
+   "sentence": "Cnext builds secure, compliant agents for European businesses on its Kairos platform.",
+   "sources": [
+    {
+     "url": "https://websummit.com/startups/featured-startups/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "risiq",
+   "name": "Risiq GmbH",
+   "sentence": "Risiq helps banks meet regulatory requirements and build risk management, with its Ribeca platform.",
+   "sources": [
+    {
+     "url": "https://websummit.com/startups/featured-startups/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "melious-ai",
+   "name": "Melious AI GmbH",
+   "sentence": "Melious serves open-weight models from European infrastructure, through OpenAI- and Anthropic-compatible APIs.",
+   "sources": [
+    {
+     "url": "https://websummit.com/startups/featured-startups/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "firefox-enterprise-mozilla",
+   "name": "Firefox Enterprise by Mozilla",
+   "sentence": "Firefox Enterprise gives European organisations a browser platform they control.",
+   "sources": [
+    {
+     "url": "https://websummit.com/partners/event-partners-2026/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "web form only",
+   "attending": "confirmed"
+  },
+  {
+   "id": "spacecomputer",
+   "name": "SpaceComputer",
+   "sentence": "SpaceComputer builds confidential computing, key management and attestation for cloud and AI workloads.",
+   "sources": [
+    {
+     "url": "https://websummit.com/startups/featured-startups/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "trent-ai",
+   "name": "Trent AI",
+   "sentence": "Trent AI works like an AI security engineer, finding the real risk in code, cloud and AI agents and verifying every fix.",
+   "sources": [
+    {
+     "url": "https://trent.ai/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "published on its own site",
+   "attending": "confirmed"
+  },
+  {
+   "id": "trustscale",
+   "name": "TrustScale",
+   "sentence": "TrustScale's CEO is speaking at Web Summit on \"Whose AI is it anyway?\", and its platform measures AI against each customer's own criteria.",
+   "sources": [
+    {
+     "url": "https://websummit.com/sessions/lis26/4a442f4c-c3da-4c62-89ad-b65cc22f988b/whose-ai-is-it-anyway/",
+     "read_on": "2026-11-01"
+    },
+    {
+     "url": "https://trustscale.ai/",
+     "read_on": "2026-11-01"
+    }
+   ],
+   "channel": "web form only",
+   "attending": "confirmed"
+  }
+ ]
+}

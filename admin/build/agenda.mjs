@@ -10,7 +10,7 @@ const DAY = 864e5
 const MONTHS = { Oct: 9, Nov: 10 }
 const WD = /\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w* (\d{1,2})(?: (Oct|Nov))?(?:,? (\d{1,2}):(\d{2}))?/
 const iso = d => new Date(d).toISOString().slice(0, 10)
-const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+import { esc } from './text.mjs'
 
 // "Wed 4 Nov", "Tue 3 Nov, 16:00", "Thu 12" (November 2026 unless it says October); a range or "daily" is not one day
 export function parseDue(s, year = 2026) {

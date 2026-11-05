@@ -1,14 +1,17 @@
 {
  "about": "Indi's list of everything left to do, drawn as the infographic at /people/indi/todo/. The Command Centre half is rebuilt from the board and the stand-up items at every release; this file adds a next step per issue and the tasks that are not on the board. Kept by dashboard@web-summit.indi at each run, from 4 November at Indi's word (first written by synthetic@web-summit.indi from the board, Indi's briefs 1 to 8 and that day's git log).",
- "written": "2026-11-04T17:40Z",
+ "written": "2026-11-05T12:40Z",
  "done_for_indi": {
   "WS-01": "Done: you are at L4 (people/indi/onboarding.json).",
   "WS-02": "Done: you are at L4.",
   "WS-03": "Done: your agents' keys are on the keys page, and a dashboard agent exists.",
-  "WS-04": "Done: your conductor runs on a schedule (07:20, 12:20, 17:20 UTC)."
+  "WS-04": "Done: your conductor runs on a schedule (07:20, 12:20, 17:20 UTC).",
+  "WS-145": "Done: you have push access to the newsroom repository (brief 9, checked at 7:25 am).",
+  "WS-99": "Done: your dashboard agent runs on a schedule; its morning run fired at 7:33 am on 5 Nov.",
+  "WS-94": "Done: the same scheduled task keeps your dashboard fresh."
  },
  "next": {
-  "WS-136": "Paste the site key your conductor gave you (its 07:21 link or QR), then send one signed message from the Feedback pane.",
+  "WS-136": "Add your site key now: the link or QR your conductor sent on 4 Nov. The sticker vote needs it.",
   "WS-62": "Superseded by the round-2 vote: vote on /design/ (synthetic users favour Record).",
   "WS-56": "Agree the shirt openers with Sarah and Nimay, or close it if the round-2 lines replace them.",
   "WS-08": "Give your agent the five answers: your role, your companies, your conversations, your accounts, how you like a brief.",
@@ -17,50 +20,39 @@
   "WS-113": "Sign your print set when the generic-QR update lands on /print/.",
   "WS-07": "Two-minute check-in, morning, midday and evening.",
   "WS-126": "Post today's LinkedIn update.",
-  "WS-15": "Draft the one-paragraph RiskMandate message (stand-up said Indi drafts, Nimay approves).",
-  "WS-19": "Try the card-to-analysis loop on three companies, with the factory pages.",
-  "WS-22": "Start the messaging review: the messaging agent is still planned, not started.",
-  "WS-59": "Agree with Daniela and Angelo what her agents run, then a policy for each.",
-  "WS-125": "Send Angelo and Daniela the first outline of the setup guide.",
+  "WS-15": "Start here with the overnight drafts: messaging@'s paragraph, then agree it with Nimay. Today's outreach depends on it.",
+  "WS-19": "factory@ drafted the card-to-analysis loop overnight: review it.",
+  "WS-22": "messaging@ has started the review: read its first drafts.",
+  "WS-59": "builder@ drafted a policy for each of Daniela's agents: review them, then agree them with Daniela and Angelo.",
+  "WS-125": "builder@ drafted the setup guide overnight: review it, then send Angelo the outline.",
   "WS-06": "Tell your dashboard agent what you want first and what you never read.",
-  "WS-99": "Your dashboard agent exists; give it its scheduled task (07:30, 12:30, 17:30 UTC).",
-  "WS-94": "Same as WS-99: the scheduled task keeps the dashboard fresh.",
-  "WS-112": "Tell your conductor 'acknowledge' for briefs 1 to 8.",
-  "WS-109": "Give your lines for 'the grant, not the prompt' demo.",
+  "WS-112": "Tell your conductor 'acknowledge' for briefs 1 to 10.",
+  "WS-109": "Give your lines for the demo; the script was checked against the newsroom article overnight.",
   "WS-20": "Agree the landing page with Nimay and Angelo.",
-  "WS-26": "Pick your share of the 50 outreach targets with Silvio.",
-  "WS-27": "Review the 28 factory pages before they are used; your dev agent has not run since 3 Nov.",
+  "WS-26": "factory@ drafted outreach targets overnight: review them, then agree your share with Silvio.",
+  "WS-27": "factory@ set up the pipeline and a review queue overnight: check each company page before it is used.",
   "WS-69": "Agree the visual language with Sarah, Angelo and Jose.",
   "WS-75": "Storyboards for the next videos, with Silvio and Nimay.",
   "WS-79": "The home page as a hero and bands, with Sarah.",
-  "WS-141": "Accept the newsroom invitation, then your conductor applies the patch.",
+  "WS-141": "Your patch is live and you can push. Now review the newsroom: the front page, one company profile, the agenda and the graph, and tell Dinis what is wrong or missing.",
   "WS-142": "Answer the six decisions in the card revamp handover, then run 3.",
   "WS-144": "Decide where designer@web-summit.indi may write.",
   "WS-149": "Check your highlight on the stand-up show page.",
-  "WS-05": "L5 and L6: several agents on schedules; start the vault and accountant agents.",
+  "WS-05": "Messaging, factory and builder agents started overnight; the vault agent is the one left.",
   "WS-60": "Daniela's website and learning environment, with Angelo.",
   "WS-121": "Start your vault agent; the SG/Send access token is in your environment already.",
-  "WS-148": "Start the accountant: paste its prompt, then its 17:30 UTC scheduled task.",
-  "WS-137": "Dinis's lab: your part, by Mon 9 Nov."
+  "WS-148": "Your accountant is running: read its daily token report (5:30 pm) and answer the decisions it asks of you.",
+  "WS-137": "Dinis's lab: your part, by Mon 9 Nov.",
+  "WS-155": "Check the cards (round 4) first: Dinis's designer redesigned them at 4:18 am. Say if that covers your designer's fixes; Friday's printer order depends on them.",
+  "WS-167": "Vote on the stickers: your top picks, then Submit. Closes at 2:30 pm today. The drain is covered: Angelo asked Dinis's conductor to do it.",
+  "WS-166": "Add the same key link on each of your phones and iPads, by Sunday 8 Nov."
  },
  "other": [
   {
-   "group": "Your agents",
-   "title": "Give your dev agent its scheduled task",
-   "detail": "dev@web-summit.indi has not committed since 3 Nov, 23:14 UTC. Planned: 09:30 and 15:30 UTC.",
-   "source": "git log; people/indi/agents.json"
-  },
-  {
-   "group": "Your agents",
-   "title": "Give your dashboard agent its scheduled task",
-   "detail": "dashboard@web-summit.indi has not committed since 3 Nov, 23:00 UTC. Planned: 07:30, 12:30 and 17:30 UTC.",
-   "source": "git log; people/indi/agents.json"
-  },
-  {
-   "group": "Your agents",
-   "title": "Start the accountant agent",
-   "detail": "Prompt ready in people/indi/accountant/PROMPT.md; brief to you and Dinis at 17:30 UTC daily.",
-   "source": "WS-148"
+   "group": "Waiting on you",
+   "title": "An hour with your agents' seven drafts, while you are in person",
+   "detail": "WS-15 first, then WS-19, WS-22, WS-26, WS-27, WS-59 and WS-125. Your mentor suggests it; your conductor agrees.",
+   "source": "mentor note, 5 Nov 8:41 am; brief 10"
   },
   {
    "group": "Your agents",
@@ -70,15 +62,9 @@
   },
   {
    "group": "Your agents",
-   "title": "Start the messaging, factory, builder and vault agents",
-   "detail": "All four are listed as planned, not started.",
-   "source": "people/indi/agents.json"
-  },
-  {
-   "group": "Waiting on you",
-   "title": "Accept the newsroom repository invitation",
-   "detail": "Push is still refused (checked about 16:40 UTC). Accept it on GitHub as riskmandate-indi.",
-   "source": "WS-145"
+   "title": "Start the vault agent",
+   "detail": "Messaging, factory and builder started overnight; the vault agent is still planned.",
+   "source": "people/indi/agents.json; WS-05 (dd483dc)"
   },
   {
    "group": "Waiting on you",
@@ -94,9 +80,9 @@
   },
   {
    "group": "Waiting on you",
-   "title": "Acknowledge briefs 1 to 8",
+   "title": "Acknowledge briefs 1 to 10",
    "detail": "Tell your conductor 'acknowledge'.",
-   "source": "brief 8"
+   "source": "brief 10"
   },
   {
    "group": "Waiting on others",
@@ -105,16 +91,10 @@
    "source": "WS-146"
   },
   {
-   "group": "Waiting on others",
-   "title": "Dinis: apply the newsroom patch, or let your conductor",
-   "detail": "Applies cleanly to the newsroom's v0.1.2.",
-   "source": "WS-141"
-  },
-  {
-   "group": "Waiting on others",
-   "title": "Dinis: confirm the newsroom desks for your agents",
-   "detail": "Desk, journalist and fact-checker, per brief 4 of the newsroom pack.",
-   "source": "WS-141"
+   "group": "Waiting on you",
+   "title": "Say which newsroom desks your agents start, if any",
+   "detail": "Your conductor starts none until you say. Dinis's 6 pm sync on 4 Nov named Vicky and Dinis's newsroom agent for desks, none for you.",
+   "source": "brief 10; the 4 Nov 6 pm stand-up"
   }
  ]
 }

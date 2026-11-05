@@ -5,7 +5,7 @@ import fs from 'fs'
 import path from 'path'
 import { history } from './gitlog.mjs'
 
-const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+import { esc } from './text.mjs'
 
 export function orgchartSvg(ROOT, INV) {
     const colours = {}; try { for (const p of JSON.parse(fs.readFileSync(path.join(ROOT, 'data/design.json'), 'utf8')).people) colours[p.id] = p.colour } catch { }

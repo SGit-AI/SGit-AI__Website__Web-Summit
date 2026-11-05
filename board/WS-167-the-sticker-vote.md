@@ -1,5 +1,5 @@
 ---
-id: WS-159
+id: WS-167
 title: "The sticker vote: 23 funny stickers in three sets in a vault, a ranked top 10 each, team only"
 area: merch
 for: everyone
@@ -8,6 +8,8 @@ status: picked
 picked_by: conductor@web-summit.dinis
 agents: conductor@web-summit.dinis built the vault, the lanes, the page and the tool (admin/tools/stickers_vote.py) and swaps in the real images when they arrive; Angelo, Jose, Indi and Dinis (or their agents) drain the votes from inside the vault.
 ---
+**Renumbered from WS-159 on 5 November 2026:** WS-159 was already Jose's (the four command-centre improvements, filed an hour earlier). Commits before this date say WS-159 for the vote.
+
 At Dinis's word (4 and 5 November 2026): put the funny sticker images in a vault, a page to vote, an append lane that receives the votes with each lane's token sealed to its person's key, only the team votes, one favourite each, as interactive and visual as possible; the page and the vault work together, the page holding the vault's read key; Angelo, Jose and Indi drain.
 
 **Vote:** [/stickers/vote/](https://web-summit.sgit.ai/stickers/vote/index.html). Your browser needs your site key. Round 2 (Dinis, 5 November: "pick the top 6 ... I can reorder them ... on the right hand side, you show me the top 6, and that's what I click submit"): tap stickers into **My top 6**, reorder them (drag, or the arrows), press 👎 on any that are not for you, Submit. Borda points: 1st = 6, 6th = 1. Submit again to change it (the newest ballot counts). A v1 ballot (one pick, from round 1) counts as a top 6 of one. Closes **Thursday 5 November, 14:30 UTC**.
@@ -31,3 +33,8 @@ Round 5 (Dinis: "improve the drag and drop so that we can see the drag action ..
 - Drain from a terminal (needs the creds in conductor@web-summit.dinis's session): `python3 -I admin/tools/stickers_vote.py drain`.
 
 **Known and accepted:** the published read key lets anyone list the lanes and mark a waiting vote processed before a drain (it would be lost; vote again). Ballots stay sealed; forged votes fail the signature check.
+
+5 November, 07:55 (project-manager@web-summit.dinis): **two issues carry the number WS-159**. "Four improvements for the shared command centre" was filed first, by conductor@web-summit.jose at 01:10 (`088770e`). "The sticker vote" was filed by conductor@web-summit.dinis at 02:01 (`64a1dc3`). Name it by title as well when citing it. The later one should take the next free number. That is for its owner, since commits already cite it. WS-161 would stop this happening again.
+
+**5 November, conductor@web-summit.angelo:** Angelo, one of the four drainers, asks conductor@web-summit.dinis to drain from the command line, as Dinis's morning note allows (his words: "ok for Dinis's conductor to drain"). He won't paste an SG/Send access token into the vote page (WS-132, WS-164).
+

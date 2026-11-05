@@ -16,8 +16,8 @@ const CFG = { lanes: [
     { agent: 'vault@web-summit.jose', host: 'https://dev.send.sgraph.ai', vault_id: 'bbbb2222', append_token: TOK },
 ] }
 let siteCfg = CFG
-const realFetch = globalThis.fetch
-globalThis.fetch = async url => url === SITE + 'assets/feedback.json' ? { ok: true, status: 200, json: async () => siteCfg } : { ok: false, status: 404 }
+// what "Get the site's lanes" (an HTTP Request node, response as text) hands on
+const got = () => [{ json: { data: JSON.stringify(siteCfg) } }]
 const AsyncFunction = (async () => {}).constructor
 let passed = 0
 const test = async (name, fn) => { await fn(); passed++; console.log('ok  ' + name) }
@@ -25,13 +25,13 @@ const test = async (name, fn) => { await fn(); passed++; console.log('ok  ' + na
 const wf = JSON.parse(fs.readFileSync(path.join(here, 'WS-74-pending.n8n.json'), 'utf8'))
 const byName = Object.fromEntries(wf.nodes.map(n => [n.name, n]))
 
-// a stand-in n8n: static data, $(name).first(), $input, and (optionally) this.helpers
+// a stand-in n8n: static data, $(name).first(), $input; no this.helpers and no fetch, as on a task runner
 function n8n(statics = {}) {
     const outputs = {}
-    const run = async (name, input, override, self = {}) => {
+    const run = async (name, input, override) => {
         const src = override ? override(byName[name].parameters.jsCode) : byName[name].parameters.jsCode
-        const out = await new AsyncFunction('$input', '$', '$getWorkflowStaticData', src).call(self,
-            { first: () => input[0], all: () => input }, n => ({ first: () => outputs[n][0] }), () => statics)
+        const out = await new AsyncFunction('$input', '$', '$getWorkflowStaticData', 'fetch', src).call({},
+            { first: () => input[0], all: () => input }, n => ({ first: () => outputs[n][0] }), () => statics, () => { throw new Error('a Code node fetched') })
         outputs[name] = out
         return out
     }
@@ -45,7 +45,7 @@ const page = (entries, truncated = false, statusCode = 200) => ({ json: { status
 // Settings, Find the lane, then the pages the HTTP node would have fetched, then Draft the note
 async function upToNote(w, pages, override = filled) {
     await w.run('Settings', [{ json: {} }], override)
-    await w.run('Find the lane', w.outputs.Settings)
+    await w.run('Find the lane', got())
     return w.run('Draft the note', pages)
 }
 
@@ -53,8 +53,8 @@ await test('the committed JSON is what the build script makes', async () => {
     assert.equal(fs.readFileSync(path.join(here, 'WS-74-pending.n8n.json'), 'utf8'), render())
 })
 
-await test('a straight chain of seven nodes, inactive on import, UTC, the documented schedule, no saved content', async () => {
-    assert.equal(wf.nodes.length, 7)
+await test('a straight chain of eight nodes, inactive on import, UTC, the documented schedule, no saved content', async () => {
+    assert.equal(wf.nodes.length, 8)
     assert.equal(wf.active, false)
     assert.equal(wf.settings.timezone, 'UTC')
     assert.equal(wf.settings.saveDataSuccessExecution, 'none')
@@ -65,6 +65,10 @@ await test('a straight chain of seven nodes, inactive on import, UTC, the docume
     assert.equal(list.options.pagination.pagination.maxRequests, MAX_PAGES)
     assert.ok(MAX_PAGES * 50 > 1000, 'enough pages of 50 for the lane\'s 1000 pending')
     assert.deepEqual(list.options.response.response, { fullResponse: true, neverError: true })
+    const site = byName["Get the site's lanes"]
+    assert.equal(site.type, 'n8n-nodes-base.httpRequest', 'the site is fetched by an HTTP node, not a Code node')
+    assert.equal(site.parameters.method, 'GET'); assert.equal(site.credentials, undefined, 'no credential on the public fetch')
+    for (const n of wf.nodes.filter(n => n.type === 'n8n-nodes-base.code')) assert.ok(!/fetch\(|helpers/.test(n.parameters.jsCode), n.name + ' does its own network call')
 })
 
 await test('no number, token, enum key, chat id or credential in the file', async () => {
@@ -74,21 +78,19 @@ await test('no number, token, enum key, chat id or credential in the file', asyn
     assert.ok(!/chat\.whatsapp\.com|EAA[A-Za-z0-9]{10}|Bearer\s+\S{10}|\+?\d[\d ]{9,}\d|[0-9a-f]{32,}|x-sgraph-vault-enum-key"\s*:/.test(raw), 'a secret, token or number shape is in the file')
 })
 
-await test('find the lane: the agent\'s entry from the site, by fetch and by n8n\'s helper; a missing or odd lane stops the run', async () => {
+await test('find the lane: the agent\'s entry from the site\'s text, or already parsed; a missing, foreign or odd lane stops the run', async () => {
     const w = n8n()
     await w.run('Settings', [{ json: {} }])
-    const [{ json: l }] = await w.run('Find the lane', w.outputs.Settings)
+    const [{ json: l }] = await w.run('Find the lane', got())
     assert.deepEqual(l, { agent: 'vault@web-summit.jose', vault_id: 'bbbb2222', append_token: TOK, url: 'https://dev.send.sgraph.ai/api/vault/append/list/bbbb2222' })
-    const asked = []
-    const helpers = { httpRequest: async o => { asked.push(o.url); return JSON.stringify(CFG) } }
-    const [{ json: l2 }] = await w.run('Find the lane', w.outputs.Settings, null, { helpers })
-    assert.deepEqual(l2, l); assert.deepEqual(asked, [SITE + 'assets/feedback.json'])
+    assert.deepEqual((await w.run('Find the lane', [{ json: CFG }]))[0].json, l)
+    assert.deepEqual((await w.run('Find the lane', [{ json: { data: CFG } }]))[0].json, l)
     siteCfg = { lanes: [CFG.lanes[0]] }
-    await assert.rejects(w.run('Find the lane', w.outputs.Settings), /no lane for vault@web-summit.jose/)
+    await assert.rejects(w.run('Find the lane', got()), /no lane for vault@web-summit.jose/)
     siteCfg = { lanes: [{ ...CFG.lanes[1], host: 'https://evil.example' }] }
-    await assert.rejects(w.run('Find the lane', w.outputs.Settings), /is on https:\/\/evil\.example, not https:\/\/dev\.send\.sgraph\.ai: the enum key goes nowhere else/)
+    await assert.rejects(w.run('Find the lane', got()), /is on https:\/\/evil\.example, not https:\/\/dev\.send\.sgraph\.ai: the enum key goes nowhere else/)
     siteCfg = { lanes: [{ ...CFG.lanes[1], append_token: 'not-hex' }] }
-    await assert.rejects(w.run('Find the lane', w.outputs.Settings), /does not look right/)
+    await assert.rejects(w.run('Find the lane', got()), /does not look right/)
     siteCfg = CFG
 })
 
@@ -153,21 +155,25 @@ await test('a change with empty settings stops the run with the names of the mis
     await assert.rejects(upToNote(n8n(), [page([entry(1)])], src => src), /fill in the Settings node first: to, phone_number_id, graph_version/)
 })
 
-await test('mode template: one body parameter, no new lines, tabs or runs of spaces', async () => {
+await test('mode template: two body parameters, the headline and the rest, no new lines, tabs or runs of spaces', async () => {
     const w = n8n()
     const [{ json: m }] = await upToNote(w, Array.from({ length: 17 }, (_, p) => page(Array.from({ length: 50 }, (_, i) => entry(p * 50 + i)), p < 16)),
         src => filled(src).replace("mode: 'text',", "mode: 'template',").replace("template_name: '',", "template_name: 'ws_note',").replace("template_language: '',", "template_language: 'en',"))
     assert.equal(m.body.type, 'template')
-    const p = m.body.template.components[0].parameters[0].text
-    assert.ok(!/[\n\t]| {5}/.test(p) && p.length <= 1000 && /Warning/.test(p), p)
+    const [p1, p2] = m.body.template.components[0].parameters.map(x => x.text)
+    assert.equal(m.body.template.components[0].parameters.length, 2)
+    assert.equal(p1, "850 answers are waiting on vault@web-summit.jose's vault")
+    for (const p of [p1, p2]) assert.ok(!/[\n\t]| {5}/.test(p) && p.length <= 400, p)
+    assert.match(p2, /^vault@web-summit\.jose drains them .* Warning: at 1000 pending the lane refuses new answers \(507\)/)
 })
 
 if (process.argv.includes('--live')) {
     await test('live: the site\'s assets/feedback.json has a lane for vault@web-summit.jose that "Find the lane" accepts', async () => {
-        globalThis.fetch = realFetch
+        const r = await fetch(SITE + 'assets/feedback.json')
+        assert.ok(r.ok, 'the site answered ' + r.status)
         const w = n8n()
         await w.run('Settings', [{ json: {} }])
-        const [{ json: l }] = await w.run('Find the lane', w.outputs.Settings)
+        const [{ json: l }] = await w.run('Find the lane', [{ json: { data: await r.text() } }])
         assert.equal(l.agent, 'vault@web-summit.jose')
         console.log('    vault ' + l.vault_id + ', list url ' + l.url)
     })

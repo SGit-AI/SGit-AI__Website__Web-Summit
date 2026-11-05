@@ -1,5 +1,726 @@
 [
   {
+    "version": "v0.2.588",
+    "date": "2026-11-05",
+    "what": "Links: web-summit.sgit.ai itself, and what changed in the command centre",
+    "by": "dev@web-summit.silvio",
+    "from": "cb2089aac"
+  },
+  {
+    "version": "v0.2.587",
+    "date": "2026-11-05",
+    "what": "the observability scripts carry ?v=<version>, so a browser never runs a cached old copy; the vault opens once per page",
+    "by": "observability@web-summit.dinis",
+    "from": "04965520f"
+  },
+  {
+    "version": "v0.2.586",
+    "date": "2026-11-05",
+    "what": "one door: Jose's agents take work only from the conductor's task files and report back to it; the Actions list is the conductor's; a schedules proposal with its token cost, nothing switched",
+    "by": "conductor@web-summit.jose",
+    "from": "2191c0b2f"
+  },
+  {
+    "version": "v0.2.585",
+    "date": "2026-11-05",
+    "what": "Jose in navy or orange: a side-by-side on /print/#next for Dinis to decide",
+    "by": "designer@web-summit.dinis",
+    "from": "30b4bce79"
+  },
+  {
+    "version": "v0.2.584",
+    "date": "2026-11-05",
+    "what": "for every conductor: the team CRM is live (WS-170): your key, and how to use it",
+    "by": "conductor@web-summit.dinis",
+    "from": "b65a217b3"
+  },
+  {
+    "version": "v0.2.583",
+    "date": "2026-11-05",
+    "what": "the team CRM, a public and a private vault with records sealed to their readers (WS-170)",
+    "by": "conductor@web-summit.dinis",
+    "from": "237ee015b"
+  },
+  {
+    "version": "v0.2.582",
+    "date": "2026-11-05",
+    "what": "the 14:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "d8debc2b2"
+  },
+  {
+    "version": "v0.2.581",
+    "date": "2026-11-05",
+    "what": "our stand on /summit/: booth A1-30 in ALPHA 1, Pavilion 1, and the exhibitor rules (no hotspots)",
+    "by": "conductor@web-summit.silvio",
+    "from": "10cbe567f"
+  },
+  {
+    "version": "v0.2.580",
+    "date": "2026-11-05",
+    "what": "14:41 wake: no notes; Silvio's outreach waits on one yes from Dinis",
+    "by": "mentor@web-summit.dinis",
+    "from": "53c262fad"
+  },
+  {
+    "version": "v0.2.579",
+    "date": "2026-11-05",
+    "what": "one-click answers in Needs me now, by hosting the cockpit's decide part (a patch for its owner; the read-only list until then)",
+    "by": "dev@web-summit.angelo",
+    "from": "33425563e"
+  },
+  {
+    "version": "v0.2.578",
+    "date": "2026-11-05",
+    "what": "WS-98, the team asks for Dinis's transcript extension, so stand-ups are transcribed without him",
+    "by": "conductor@web-summit.angelo",
+    "from": "194b4d200"
+  },
+  {
+    "version": "v0.2.577",
+    "date": "2026-11-05",
+    "what": "14:27 wake: brief 21 (the vote closed with 2 of 6; extend it?; Silvio's three; the shortlist pick)",
+    "by": "conductor@web-summit.dinis",
+    "from": "662ff9d24"
+  },
+  {
+    "version": "v0.2.576",
+    "date": "2026-11-05",
+    "what": "why agents stopped, as actions re-checked every run; two open",
+    "by": "watcher@web-summit.jose",
+    "from": "9cd6b0f87"
+  },
+  {
+    "version": "v0.2.575",
+    "date": "2026-11-05",
+    "what": "Jose's dashboard as one action list: 14 numbered actions, today and by Sunday, each with its link, due time and how long it takes",
+    "by": "dashboard@web-summit.jose",
+    "from": "89976ec70"
+  },
+  {
+    "version": "v0.2.574",
+    "date": "2026-11-05",
+    "what": "WS-98 proposal without a folder name; Jose's own transcripts folder is \"RiskMandate team meetings transcripts\", .zip files skipped",
+    "by": "conductor@web-summit.jose",
+    "from": "eae9a989a"
+  },
+  {
+    "version": "v0.2.573",
+    "date": "2026-11-05",
+    "what": "all 28 drafts follow Dinis's inbox agent's points; the source of each sentence recorded",
+    "by": "outreach@web-summit.silvio",
+    "from": "ddbee3e4e"
+  },
+  {
+    "version": "v0.2.572",
+    "date": "2026-11-05",
+    "what": "no email address in the outreach files: \"Dinis's inbox agent\" instead",
+    "by": "conductor@web-summit.silvio",
+    "from": "a8b52a96e"
+  },
+  {
+    "version": "v0.2.571",
+    "date": "2026-11-05",
+    "what": "WS-26 note without an email address, for the gate",
+    "by": "outreach@web-summit.silvio",
+    "from": "ba8a1b993"
+  },
+  {
+    "version": "v0.2.570",
+    "date": "2026-11-05",
+    "what": "a proposal for Dinis on WS-98: share the Meet transcripts folder once, view-only, with Jose's account, instead of WhatsApp; Jose's debrief reads only that folder and his own",
+    "by": "conductor@web-summit.jose",
+    "from": "1970ae28f"
+  },
+  {
+    "version": "v0.2.569",
+    "date": "2026-11-05",
+    "what": "the 18:00 transcripts item: both questions answered by Angelo's team-collaboration (7e12751); Jose's debrief from transcripts Dinis shares, under Jose's rules; one Drive test at 17:20",
+    "by": "conductor@web-summit.jose",
+    "from": "b767dd071"
+  },
+  {
+    "version": "v0.2.568",
+    "date": "2026-11-05",
+    "what": "WS-150, one decision slide, not two: Angelo's brief for the deck",
+    "by": "conductor@web-summit.angelo",
+    "from": "9cc475507"
+  },
+  {
+    "version": "v0.2.567",
+    "date": "2026-11-05",
+    "what": "the record of the 5 November 12:00: one decision, nine follow-ups with owners; the Drive connector works from a scheduled session",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "7e12751ca"
+  },
+  {
+    "version": "v0.2.566",
+    "date": "2026-11-05",
+    "what": "13:41 wake: no notes; three mentors retired, three active",
+    "by": "mentor@web-summit.dinis",
+    "from": "4c561e537"
+  },
+  {
+    "version": "v0.2.565",
+    "date": "2026-11-05",
+    "what": "the 18:00 transcripts item changed at Jose's word: no n8n; the record's writer reads the Meet transcript in Drive through its Claude connector (WS-96, WS-98)",
+    "by": "conductor@web-summit.jose",
+    "from": "ad3832234"
+  },
+  {
+    "version": "v0.2.564",
+    "date": "2026-11-05",
+    "what": "Vicky's issues to review: assigned, unowned in her areas, and closable; nothing claimed",
+    "by": "pm@web-summit.vicky",
+    "from": "34531de25"
+  },
+  {
+    "version": "v0.2.563",
+    "date": "2026-11-05",
+    "what": "three things only Dinis can answer, on the 18:00 agenda (Dinis missed the 13:00)",
+    "by": "conductor@web-summit.silvio",
+    "from": "b2faff023"
+  },
+  {
+    "version": "v0.2.562",
+    "date": "2026-11-05",
+    "what": "the 12:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "ed4ee05a1"
+  },
+  {
+    "version": "v0.2.561",
+    "date": "2026-11-05",
+    "what": "reviewer record for my key push",
+    "by": "sales-coach@web-summit.jose",
+    "from": "a6871496f"
+  },
+  {
+    "version": "v0.2.560",
+    "date": "2026-11-05",
+    "what": "WS-120 and WS-121, where the vaults stand: five people have published vaults; Silvio is the one left on WS-120",
+    "by": "sgit@web-summit.dinis",
+    "from": "d91033580"
+  },
+  {
+    "version": "v0.2.559",
+    "date": "2026-11-05",
+    "what": "Vicky's display name is \"Vicky Wang\"; asks for the shared files and the newsroom; two corrections to the status article",
+    "by": "conductor@web-summit.vicky",
+    "from": "7f16f4a85"
+  },
+  {
+    "version": "v0.2.558",
+    "date": "2026-11-05",
+    "what": "12:41 wake: Angelo's and Vicky's mentors hand over and retire (L6, two days on schedule)",
+    "by": "mentor@web-summit.dinis",
+    "from": "ea7e14584"
+  },
+  {
+    "version": "v0.2.557",
+    "date": "2026-11-05",
+    "what": "midday run removed; 07:50 and 17:45 UTC only",
+    "by": "dashboard@web-summit.vicky",
+    "from": "61a34c581"
+  },
+  {
+    "version": "v0.2.556",
+    "date": "2026-11-05",
+    "what": "the 5 November 12:00 stand-up, from Angelo's notes: one decision, the actions with owners, WS-168 and WS-169",
+    "by": "conductor@web-summit.angelo",
+    "from": "1fd27ba39"
+  },
+  {
+    "version": "v0.2.555",
+    "date": "2026-11-05",
+    "what": "dashboard, midday",
+    "by": "procurement@web-summit.silvio",
+    "from": "12ad45138"
+  },
+  {
+    "version": "v0.2.554",
+    "date": "2026-11-05",
+    "what": "onboarding guide, step 3B item 9: \"If an agent still can't reach a site, start a new session.\"",
+    "by": "pm@web-summit.vicky",
+    "from": "6c5f80cdd"
+  },
+  {
+    "version": "v0.2.553",
+    "date": "2026-11-05",
+    "what": "stand-ups at 12:00 and 18:00, five decisions settled, the classic page short with no cockpit",
+    "by": "dashboard@web-summit.angelo",
+    "from": "96fc64d0a"
+  },
+  {
+    "version": "v0.2.552",
+    "date": "2026-11-05",
+    "what": "Needs me now gets the cockpit's ranking, \"Decide first\", with why each item is there (imported from cockpit.mjs, read-only for now)",
+    "by": "dev@web-summit.angelo",
+    "from": "d171b59a5"
+  },
+  {
+    "version": "v0.2.551",
+    "date": "2026-11-05",
+    "what": "sales-coach@web-summit.jose set up for Jose (his RiskMandate pitch, by role-play); Jose opens it",
+    "by": "conductor@web-summit.jose",
+    "from": "7cdb05b81"
+  },
+  {
+    "version": "v0.2.550",
+    "date": "2026-11-05",
+    "what": "12:30 wake: brief 9's two asks, the vote before 14:30, the stand-up items still open; Jose's eight answers moved to settled",
+    "by": "dashboard@web-summit.jose",
+    "from": "02faf677d"
+  },
+  {
+    "version": "v0.2.549",
+    "date": "2026-11-05",
+    "what": "12:30 wake: the to-do list from brief 10 (the vote is WS-167, keys on every device WS-166); a \"right now\" line",
+    "by": "dashboard@web-summit.indi",
+    "from": "ce899b9e6"
+  },
+  {
+    "version": "v0.2.548",
+    "date": "2026-11-05",
+    "what": "11:45 wake (late): tables refreshed from brief 3, and a report",
+    "by": "dashboard@web-summit.vicky",
+    "from": "a141b3464"
+  },
+  {
+    "version": "v0.2.547",
+    "date": "2026-11-05",
+    "what": "12:27 wake: the vote drained (2 ballots, verified); the midday stand-up at 12:00 from 6 November; brief 20",
+    "by": "conductor@web-summit.dinis",
+    "from": "2a2174121"
+  },
+  {
+    "version": "v0.2.546",
+    "date": "2026-11-05",
+    "what": "brief 9 to Jose; his eight answers recorded (WS-154, WS-74, the helper on Sonnet, the watcher's ledger file); the watcher's reports routed to the conductor",
+    "by": "conductor@web-summit.jose",
+    "from": "23bc4fbbb"
+  },
+  {
+    "version": "v0.2.545",
+    "date": "2026-11-05",
+    "what": "12:15 run: 67 agent commits; the email-address lines still on dev; two agents look stopped",
+    "by": "watcher@web-summit.jose",
+    "from": "0905935ab"
+  },
+  {
+    "version": "v0.2.544",
+    "date": "2026-11-05",
+    "what": "12:20 wake: brief 10; the sticker vote is WS-167 (my brief 9 said WS-159); Indi's key still the blocker",
+    "by": "conductor@web-summit.indi",
+    "from": "c33ae8323"
+  },
+  {
+    "version": "v0.2.543",
+    "date": "2026-11-05",
+    "what": "Angelo's protocol in his six agents' ABPs; dev@indi's WS-133 measurement noted",
+    "by": "abp@web-summit.dinis",
+    "from": "43b7b6256"
+  },
+  {
+    "version": "v0.2.542",
+    "date": "2026-11-05",
+    "what": "Angelo asks Dinis's conductor to drain the sticker vote; his vault's QR is with Dinis",
+    "by": "conductor@web-summit.angelo",
+    "from": "28c6f32bf"
+  },
+  {
+    "version": "v0.2.541",
+    "date": "2026-11-05",
+    "what": "Jose's wish for navy garments instead of orange, on today's 12:00 stand-up for Dinis (WS-48)",
+    "by": "conductor@web-summit.jose",
+    "from": "f3aadb438"
+  },
+  {
+    "version": "v0.2.540",
+    "date": "2026-11-05",
+    "what": "Jose's merch colour: dark blue (navy) instead of orange, for the T-shirts and the hoodie, in his words",
+    "by": "designer@web-summit.jose",
+    "from": "1fa1d6fe3"
+  },
+  {
+    "version": "v0.2.539",
+    "date": "2026-11-05",
+    "what": "the 12:00 recorded in Angelo's words; my wakes moved; the brief for today's 12:00",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "31ee5e93e"
+  },
+  {
+    "version": "v0.2.538",
+    "date": "2026-11-05",
+    "what": "11:41 wake: no notes; Angelo's helper ran on schedule (12:41 handovers)",
+    "by": "mentor@web-summit.dinis",
+    "from": "32d9d1829"
+  },
+  {
+    "version": "v0.2.537",
+    "date": "2026-11-05",
+    "what": "the midday stand-up at 12:00 from today, by the team's vote: Angelo's agents' times, and a request to the schedule's keeper",
+    "by": "conductor@web-summit.angelo",
+    "from": "c44d8c538"
+  },
+  {
+    "version": "v0.2.536",
+    "date": "2026-11-05",
+    "what": "11:30 run, 1 capture in the research vault 41j3e9s9",
+    "by": "researcher@web-summit.vicky",
+    "from": "a34f54a70"
+  },
+  {
+    "version": "v0.2.535",
+    "date": "2026-11-05",
+    "what": "the watcher's reports go to Jose's conductor; a request to read them each wake",
+    "by": "watcher@web-summit.jose",
+    "from": "029224207"
+  },
+  {
+    "version": "v0.2.534",
+    "date": "2026-11-05",
+    "what": "Jose's answers to his open questions, for his conductor to record",
+    "by": "dashboard@web-summit.jose",
+    "from": "fecb8f00a"
+  },
+  {
+    "version": "v0.2.533",
+    "date": "2026-11-05",
+    "what": "Angelo's words for the record (G, H, F); five of Jose's issues for his dev agent; Dinis's five first",
+    "by": "conductor@web-summit.angelo",
+    "from": "0e80f5e8f"
+  },
+  {
+    "version": "v0.2.532",
+    "date": "2026-11-05",
+    "what": "11:10 run: the next garment set waits only for Dinis; collection still not recorded",
+    "by": "logistics@web-summit.vicky",
+    "from": "ea91cea93"
+  },
+  {
+    "version": "v0.2.531",
+    "date": "2026-11-05",
+    "what": "/impressao/: the sleeve logo files and the lavender hoodie in black ink, from the designer's next set; waiting only for Dinis",
+    "by": "procurement@web-summit.silvio",
+    "from": "53ff7af85"
+  },
+  {
+    "version": "v0.2.530",
+    "date": "2026-11-05",
+    "what": "the 10:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "84a52d9a4"
+  },
+  {
+    "version": "v0.2.529",
+    "date": "2026-11-05",
+    "what": "shared code stays with its owners (WS-34): Angelo's word, and the lead time measured",
+    "by": "conductor@web-summit.angelo",
+    "from": "9e94d0c35"
+  },
+  {
+    "version": "v0.2.528",
+    "date": "2026-11-05",
+    "what": "logging from 5 November (WS-160)",
+    "by": "helper@web-summit.angelo",
+    "from": "14ff82e1e"
+  },
+  {
+    "version": "v0.2.527",
+    "date": "2026-11-05",
+    "what": "a browser's clock is a claim: records more than 6 hours from their receipt are filed by when they arrived",
+    "by": "observability@web-summit.dinis",
+    "from": "098d275ff"
+  },
+  {
+    "version": "v0.2.526",
+    "date": "2026-11-05",
+    "what": "Angelo's sticker ideas as two briefs, for ChatGPT and for Claude, at Dinis's ask",
+    "by": "conductor@web-summit.angelo",
+    "from": "6b2019181"
+  },
+  {
+    "version": "v0.2.525",
+    "date": "2026-11-05",
+    "what": "10:41 wake: no notes; evidence for the 12:41 handovers",
+    "by": "mentor@web-summit.dinis",
+    "from": "edc44aaf9"
+  },
+  {
+    "version": "v0.2.524",
+    "date": "2026-11-05",
+    "what": "10:27 wake: today's stand-up at 12:00 (moved by Angelo), its deck and PDF, brief 19",
+    "by": "conductor@web-summit.dinis",
+    "from": "32e7a0a90"
+  },
+  {
+    "version": "v0.2.523",
+    "date": "2026-11-05",
+    "what": "my lane works; dev's slice 3 and the cockpit clicks can use it",
+    "by": "conductor@web-summit.angelo",
+    "from": "25bd3b332"
+  },
+  {
+    "version": "v0.2.522",
+    "date": "2026-11-05",
+    "what": "WS-74's flow brought to n8n 3.0 practice: the site fetched by an HTTP node, a two-parameter template; this wake measured",
+    "by": "automation@web-summit.jose",
+    "from": "be00846ba"
+  },
+  {
+    "version": "v0.2.521",
+    "date": "2026-11-05",
+    "what": "four items off Vicky's tables, handled by others",
+    "by": "dashboard@web-summit.vicky",
+    "from": "f18d2d1f1"
+  },
+  {
+    "version": "v0.2.520",
+    "date": "2026-11-05",
+    "what": "WS-153: the shortlist vault sent; the research vault's read key is already public",
+    "by": "vault@web-summit.vicky",
+    "from": "9e38d7df9"
+  },
+  {
+    "version": "v0.2.519",
+    "date": "2026-11-05",
+    "what": "midday run moves to 11:45 UTC; dev@ stays paused",
+    "by": "dashboard@web-summit.vicky",
+    "from": "bb1184925"
+  },
+  {
+    "version": "v0.2.518",
+    "date": "2026-11-05",
+    "what": "today's stand-up is at 12:00; Vicky defers to Dinis on personal cards; my midday wake at 11:10",
+    "by": "logistics@web-summit.vicky",
+    "from": "03fe0c5ee"
+  },
+  {
+    "version": "v0.2.517",
+    "date": "2026-11-05",
+    "what": "the feedback lane to conductor@web-summit.angelo (A, at Angelo's word); logging from this run",
+    "by": "vault@web-summit.angelo",
+    "from": "11884c6ee"
+  },
+  {
+    "version": "v0.2.516",
+    "date": "2026-11-05",
+    "what": "the 08:15 agenda released; the URGENT hold resolved",
+    "by": "programme@web-summit.vicky",
+    "from": "65ec451e9"
+  },
+  {
+    "version": "v0.2.515",
+    "date": "2026-11-05",
+    "what": "09:41 wake: no notes; Angelo's and Vicky's handovers at 12:41",
+    "by": "mentor@web-summit.dinis",
+    "from": "b8a974c19"
+  },
+  {
+    "version": "v0.2.514",
+    "date": "2026-11-05",
+    "what": "one text-helpers module for the build: eight copies of esc and two of clipWords become admin/build/text.mjs",
+    "by": "dev@web-summit.dinis",
+    "from": "2e1d7c192"
+  },
+  {
+    "version": "v0.2.513",
+    "date": "2026-11-05",
+    "what": "the signature rule settled, off both views",
+    "by": "dashboard@web-summit.angelo",
+    "from": "b803201ab"
+  },
+  {
+    "version": "v0.2.512",
+    "date": "2026-11-05",
+    "what": "WS-133 measured: option 2 alone leaves a hook and OIDC path; option 1 needs the version known early",
+    "by": "dev@web-summit.indi",
+    "from": "4efe078a2"
+  },
+  {
+    "version": "v0.2.511",
+    "date": "2026-11-05",
+    "what": "the signature rule: Angelo's signed messages count for tier 1 and 2 only",
+    "by": "conductor@web-summit.angelo",
+    "from": "70aa65fa1"
+  },
+  {
+    "version": "v0.2.510",
+    "date": "2026-11-05",
+    "what": "the sleeve seal and Vicky's lavender hoodie in the garments' next set; a Portuguese link on /print/",
+    "by": "designer@web-summit.dinis",
+    "from": "5f0cd8106"
+  },
+  {
+    "version": "v0.2.509",
+    "date": "2026-11-05",
+    "what": "the 08:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "332e6dbe9"
+  },
+  {
+    "version": "v0.2.508",
+    "date": "2026-11-05",
+    "what": "subjects are cut at a word boundary, so a name is never cut into an email-shaped string",
+    "by": "sgit@web-summit.dinis",
+    "from": "9abcbb3c6"
+  },
+  {
+    "version": "v0.2.507",
+    "date": "2026-11-05",
+    "what": "08:41 wake: Jose's mentor hands over and retires (L6, two days on schedule); notes for Indi and Silvio",
+    "by": "mentor@web-summit.dinis",
+    "from": "94ad95840"
+  },
+  {
+    "version": "v0.2.506",
+    "date": "2026-11-05",
+    "what": "the 08:40 pulse (no check-ins since 3 November; WS-139 closed at Jose's word)",
+    "by": "pulse@web-summit.dinis",
+    "from": "509d37452"
+  },
+  {
+    "version": "v0.2.505",
+    "date": "2026-11-05",
+    "what": "brief 4 to Vicky (the daily brief, 5 Nov)",
+    "by": "conductor@web-summit.vicky",
+    "from": "949937153"
+  },
+  {
+    "version": "v0.2.504",
+    "date": "2026-11-05",
+    "what": "WS-167, the rest of the renumber (the vote's page, tool, data and board text), and brief 18",
+    "by": "conductor@web-summit.dinis",
+    "from": "b08f8b53a"
+  },
+  {
+    "version": "v0.2.503",
+    "date": "2026-11-05",
+    "what": "URGENT, 08:15 agenda held: the newsroom's gate needs derived data outside desks/programme/",
+    "by": "programme@web-summit.vicky",
+    "from": "124c5aeab"
+  },
+  {
+    "version": "v0.2.502",
+    "date": "2026-11-05",
+    "what": "WS-128, vault-audit.mjs's default mode fails with sgit 0.27, for its owner",
+    "by": "conductor@web-summit.angelo",
+    "from": "17c136348"
+  },
+  {
+    "version": "v0.2.501",
+    "date": "2026-11-05",
+    "what": "ABPs for video and vault @silvio; gate check 22 recorded; Jose's watcher team-wide",
+    "by": "abp@web-summit.dinis",
+    "from": "edb4417be"
+  },
+  {
+    "version": "v0.2.500",
+    "date": "2026-11-05",
+    "what": "08:10 run: the cards are now 600 team cards with no names; personal cards and the garments' collection on the 13:00",
+    "by": "logistics@web-summit.vicky",
+    "from": "70dd268ff"
+  },
+  {
+    "version": "v0.2.499",
+    "date": "2026-11-05",
+    "what": "08:00 wake report: the agent-log rule needs Vicky's word for me; the kit's dev prompt is out of date",
+    "by": "dev@web-summit.vicky",
+    "from": "ff8687380"
+  },
+  {
+    "version": "v0.2.498",
+    "date": "2026-11-05",
+    "what": "the board's health at 07:50 Thursday: only-Dinis from the board's field; only: off WS-09; WS-159 used twice; the 13:00 agenda curated",
+    "by": "project-manager@web-summit.dinis",
+    "from": "1f3a410c3"
+  },
+  {
+    "version": "v0.2.497",
+    "date": "2026-11-05",
+    "what": "URGENT, 07:45 map held: the newsroom's gate now needs derived data outside desks/curator/",
+    "by": "curator@web-summit.vicky",
+    "from": "5d2f0c997"
+  },
+  {
+    "version": "v0.2.496",
+    "date": "2026-11-05",
+    "what": "dashboard, morning",
+    "by": "procurement@web-summit.silvio",
+    "from": "46e77717e"
+  },
+  {
+    "version": "v0.2.495",
+    "date": "2026-11-05",
+    "what": "07:30 run, 2 captures in the research vault 41j3e9s9",
+    "by": "researcher@web-summit.vicky",
+    "from": "b0aeb9beb"
+  },
+  {
+    "version": "v0.2.494",
+    "date": "2026-11-05",
+    "what": "07:30 wake: the to-do list from brief 9 and the overnight runs; Indi in person today",
+    "by": "dashboard@web-summit.indi",
+    "from": "b4a703e76"
+  },
+  {
+    "version": "v0.2.493",
+    "date": "2026-11-05",
+    "what": "first team-wide run: 133 agent commits since 3759445; email-address rule hits in a public page; Jose's designer released four times without the reviewer",
+    "by": "watcher@web-summit.jose",
+    "from": "0316656b0"
+  },
+  {
+    "version": "v0.2.492",
+    "date": "2026-11-05",
+    "what": "07:20 wake: brief 9; newsroom push access confirmed (WS-145); the patch is live (WS-141)",
+    "by": "conductor@web-summit.indi",
+    "from": "4998aab48"
+  },
+  {
+    "version": "v0.2.491",
+    "date": "2026-11-05",
+    "what": "the 06:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "e1237a4f4"
+  },
+  {
+    "version": "v0.2.490",
+    "date": "2026-11-05",
+    "what": "yesterday's open decisions: whose word closes each; WS-23's date closed as overtaken",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "0451c2468"
+  },
+  {
+    "version": "v0.2.489",
+    "date": "2026-11-05",
+    "what": "WS-164 items 1 and 3: no keyring on a page that runs a person's script; gate check 22",
+    "by": "dev@web-summit.dinis",
+    "from": "90e73e395"
+  },
+  {
+    "version": "v0.2.488",
+    "date": "2026-11-05",
+    "what": "WS-75 four storyboards for the next videos, each a page for the team to comment on",
+    "by": "video@web-summit.silvio",
+    "from": "4db46c09e"
+  },
+  {
+    "version": "v0.2.487",
+    "date": "2026-11-05",
+    "what": "WS-72 the stand loop's shot list and captions in English and Portuguese, for Silvio to edit",
+    "by": "video@web-summit.silvio",
+    "from": "c57c2ac3c"
+  },
+  {
+    "version": "v0.2.486",
+    "date": "2026-11-05",
+    "what": "WS-52 and WS-40 the video pipeline as the repository shows it, with Silvio's own steps still to ask",
+    "by": "video@web-summit.silvio",
+    "from": "765b4c135"
+  },
+  {
     "version": "v0.2.485",
     "date": "2026-11-05",
     "what": "WS-166 every person's key on every phone and iPad before Monday 9 November; three keys still to issue",

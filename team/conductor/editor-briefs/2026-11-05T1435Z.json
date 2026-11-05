@@ -1,0 +1,50 @@
+{
+ "number": 21,
+ "date": "2026-11-05",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "The sticker vote closed with 2 of 6 ballots: extend it to 18:00?",
+ "when": "Thursday 5 November 2026, 14:35 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "The vote closed at 14:30 with two ballots, Silvio's and Angelo's, both verified and counted: The keys leads (19 points), then the road-trip patch and Least privilege (16 each), the tram ticket (15). You, Jose, Indi and Vicky did not vote, so the flow has been tested by two people only. The 12:00 was held without you (Angelo, Jose, Silvio, Vicky): one decision, in Angelo's words, \"present team members are ok with generic business cards\", and nine follow-ups with owners. Silvio's conductor put three questions only you can answer on the 18:00. Vicky's display name is now \"Vicky Wang\" on the roster and my pages.",
+ "stats": [
+  {"n": "2 of 6", "label": "voted (Silvio, Angelo); the vote closed at 14:30"},
+  {"n": "19", "label": "points for The keys, in the lead"},
+  {"n": "1", "label": "decision at the 12:00: generic business cards (those present)"},
+  {"n": "3", "label": "questions for you from Silvio, on the 18:00"}
+ ],
+ "for_you": [
+  {
+   "id": "1",
+   "ask": "Extend the sticker vote to 18:00 (or tomorrow 12:00)?",
+   "detail": "Four of six have not voted, you among them; the point was also to test the flow for everyone. The close time is one setting (data and vault), a few minutes' work.",
+   "options": ["extend to 18:00 today", "extend to Friday 12:00", "keep it closed: The keys wins"],
+   "recommend": "Extend to 18:00 and say so at the 18:00's start; drain at 18:00 and show the result there."
+  },
+  {
+   "id": "2",
+   "ask": "Silvio's three, one word each (on the 18:00)",
+   "detail": "(a) the outreach emails' claim: yes, so he sends from Friday (one example for you, Primitive, with your inbox agent's points applied); (b) four to six 30-minute online slots in the week of 16 November for 38 large companies not at Web Summit; (c) the merch on Monday 9 November: you collect by car from the printer near Lisbon, or the printer delivers.",
+   "options": ["answer here", "answer at 18:00"],
+   "recommend": "Answer here; the 18:00 then only confirms."
+  },
+  {
+   "id": "3",
+   "ask": "The interview shortlist: your pick, by number",
+   "detail": "The 14 you saw at 13:50 (10 main, 4 reserves). Your pick goes to Vicky's programme desk by number only; an AUDIT line for showing it to you is asked of the desk.",
+   "options": ["numbers now", "at the 18:00", "later"],
+   "recommend": "Pick before the 18:00, so the desk can start asking this week."
+  }
+ ],
+ "you_asked": [
+  {"at": "5 Nov, ~13:45", "said": "can you show that here? (the interview shortlist)", "done": "Shown from the vault with the read key; the desk asked to record it in the vault's AUDIT.md (rule 1).", "where": "this session", "status": "waiting on your pick"}
+ ],
+ "team": [
+  {"id": "Angelo", "status": "chaired", "doing": "the 12:00 recorded (one decision, nine follow-ups); WS-150: one decision slide in the deck, a patch coming for tomorrow's 12:00"},
+  {"id": "Jose", "status": "proposing", "doing": "WS-98: share the Meet transcripts folder once, view-only, instead of WhatsApp; his dashboard as one list of 14 actions"},
+  {"id": "Silvio", "status": "waiting on you", "doing": "28 outreach drafts revised with your inbox agent's advice; three questions for you"},
+  {"id": "Vicky", "status": "two runs a day from tomorrow", "doing": "display name Vicky Wang; two corrections to the newsroom's status article (209 items, the Portugal dates)"},
+  {"id": "Indi", "status": "in person", "doing": "not at the 12:00"}
+ ],
+ "next": ["16:27 wake: the 18:00 deck and your briefing PDF.", "18:00: the vote result, or the drain if you extend it."],
+ "sources": ["git log since 2026-11-05T12:40Z (dev)", "the vault's results.json at 14:30", "team-collaboration@web-summit.angelo 7e12751c; conductor@web-summit.silvio b2faff02; conductor@web-summit.vicky 7f16f4a8"]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "decision",
+  "title": "The merch on Monday 9 November: Dinis collects it by car from the printer near Lisbon, or the printer delivers?",
+  "for": [
+    "dinis",
+    "silvio",
+    "vicky"
+  ],
+  "by": "conductor@web-summit.silvio",
+  "added": "2026-11-05T13:04:03.095Z",
+  "status": "open",
+  "detail": "Silvio has no car, in the Algarve or at Web Summit; Dinis is probably the only one of us with a car in Lisbon. The printer (near Lisbon) is asked for Monday 9 November morning; the first printer is the fallback. Also waiting on Dinis: the /impressao/ files (sleeve logo, lavender hoodie in black ink).",
+  "issue": "WS-48",
+  "options": [
+    "Dinis collects Monday morning",
+    "the printer delivers (ask the price)"
+  ]
+}

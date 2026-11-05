@@ -54,10 +54,24 @@ def jsave(p, obj):
     with open(p, 'w') as f: json.dump(obj, f, indent=1, sort_keys=True)
 
 # ---------------------------------------------------------------- save (raw, private)
+def fix_clock(r):
+    """A browser's clock is a claim: a test can set it to another day (5 November: a headless test of a command centre
+    ran at 2026-11-10). When the claimed time is more than 6 hours from when the lane received the record, the record
+    is filed by the time it was received, and the claim is kept as ts_claimed."""
+    t, rcv = r.get('ts') or r.get('run'), r.get('_received')
+    if not t or not rcv or len(str(t)) < 16: return r
+    try: claimed = time.mktime(time.strptime(str(t)[:16], '%Y-%m-%dT%H:%M')) - time.mktime(time.gmtime(0))
+    except ValueError: return r
+    if abs(claimed - rcv / 1000) > 6 * 3600:
+        key = 'ts' if r.get('ts') else 'run'
+        r[key + '_claimed'] = r[key]; r[key] = time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime(rcv / 1000))
+    return r
+
 def save_raw(vault, rows):
     """Append rows to events/<day>/<hour>/events.jsonl, once each (by _file). Returns the set of hours touched."""
     touched, by = set(), collections.defaultdict(list)
     for r in rows:
+        fix_clock(r)
         if r.get('test') or r.get('v') != 1: continue
         h = hour_of(r)
         if h: by[h].append(r)
