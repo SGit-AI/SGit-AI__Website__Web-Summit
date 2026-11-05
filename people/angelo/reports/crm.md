@@ -2,6 +2,13 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 5 November 2026, 17:35 UTC (prompted by Angelo)
+
+- **Angelo has an area in the private CRM**: `people/angelo/` in ws-team-crm-private, at Angelo's word ("Folder in private CRM", his choice in this session). It holds README.md (what the area is for, who keeps it, who can read it), index.md (Angelo's records across the CRM, which I rebuild each run; empty for now) and notes.md (his working notes, which I turn into actions when they become one). Pushed, and confirmed in a fresh clone.
+- **Angelo's actions stay in `actions/`**, with `owner: "angelo"`, so `crm.mjs derive` and /crm/ keep finding them. derive reads only companies/, contacts/, actions/, schedules/ and keys/, so the new folder does not touch the graph.
+- **Readers:** everyone with the vault key, because layer 2 is paused (bc8e2187). Angelo has been told.
+- **My scheduled task (08:50 and 16:50 UTC) now also rebuilds index.md.**
+
 ## 5 November 2026, 17:20 UTC (prompted by Angelo, with the conductor's 5e43828)
 
 - **The private CRM's key is open.** The conductor's 5e43828 was pushed from riskmandate-angelo (`pushed-by.mjs`). Its sealed link in `data/sealed/agents/crm@web-summit.angelo/` was signed by `sha256:f34e311a93db5ddb`, which is conductor-angelo on the keys page. I opened it with my session key into `~/.sg-send/crm/` (0600). It was never printed.
