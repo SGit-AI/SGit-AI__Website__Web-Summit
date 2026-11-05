@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.448",
+    "date": "2026-11-05",
+    "what": "the 02:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "05b6b24dc"
+  },
+  {
     "version": "v0.2.447",
     "date": "2026-11-05",
     "what": "focus pages: All clear hides the last card, and says plainly what is still not sent, with Submit there",
