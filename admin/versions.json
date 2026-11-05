@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.415",
+    "date": "2026-11-05",
+    "what": "n8n-guide.md, Jose's n8n workflows in one place: what each does, its status, and how to import, test and activate it",
+    "by": "dev@web-summit.jose",
+    "from": "c4cd510b5"
+  },
+  {
     "version": "v0.2.414",
     "date": "2026-11-05",
     "what": "the 00:57 report, and 'What happened' updated",
