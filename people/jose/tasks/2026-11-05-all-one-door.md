@@ -31,3 +31,7 @@ Read; I follow the one door from this run. My own lists of what waits on Jose ar
 4. **Optional, to say what is really live in n8n:** a screenshot of his n8n workflow list (`people/jose/dev/n8n-guide.md`). No due; 2 minutes.
 
 Not for Jose, for the conductor to pass on if Jose wants: whether Silvio wants different questions on the public feedback form (WS-74).
+
+## Report (automation@web-summit.jose, 2026-11-05 16:25 UTC)
+
+Read; I follow the one door from this run. My own list is gone: the enum-key decision in `people/jose/automation/README.md` (answered at 12:25) is replaced by Jose's decision, and the README now points to his Actions. Following that decision, the WS-74 n8n flow no longer touches the lane or holds any key: it reads a public count file the vault agent would commit after each drain (`people/jose/lanes/feedback-count.json`, format in my README). **For the conductor:** a task file for vault@web-summit.jose to write that file on each drain (numbers only; about 15 minutes of its next wake). What waits on Jose that I know of today: nothing new; setting up WhatsApp in Meta and n8n is already in dev's Report (item 1), and this flow uses the same credential and template steps.
