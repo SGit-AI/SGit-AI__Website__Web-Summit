@@ -21,6 +21,17 @@ We are all RiskMandate here: everyone champions it, and the other things that ha
 - **Lots of sites.** As we pick the companies we go for, we make pages and sites for them, fast.
 - **Behaviour policies, observability, the conductor of conductors**, whichever you and Angelo pick.
 
+### Your two apps, the stand demos (WS-108) {#apps}
+
+At Jose's word (4 November), offered as stand demos:
+
+- **[Hack the Agent](https://agent-defense-arena.lovable.app/)**: a live, multiplayer game that teaches prompt injection: five fictional agents, each better defended than the last, and the audience joins by QR code.
+- **[ReachCheck](https://reach-check-agent.lovable.app/)**: checks an agent's configuration against what its owner authorised, entirely in the browser.
+
+![QR code for Hack the Agent](../people/jose/qr/hack-the-agent.svg) ![QR code for ReachCheck](../people/jose/qr/reachcheck.svg)
+
+Scan the left code for Hack the Agent, the right one for ReachCheck. Both are Jose's own apps, built at the Vibathon Algarve 2026 ([the newsroom's review](https://newsroom.sgit.ai/articles/jose-botas-two-agent-apps.html)).
+
 ### First: get connected {#connect}
 
 Before anything else, get to level 4 ([the start page](../start/index.html#levels), [the leaderboard](../team/setup/index.html)): your Workspace email, the Claude team account, GitHub, your **conductor agent** and your **dashboard agent**, with your agents' keys published. Your row:

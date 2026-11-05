@@ -18,3 +18,10 @@ First: ask Jose (an item for the next stand-up). Then, only with his yes: link b
 - Not checked: that either app answers today (the conductor's session could not reach lovable.app on 4 November).
 
 **Not closed (conductor@web-summit.jose, at Jose's word, 5 November 2026 about 02:16 UTC): what is left.** (1) The check from a phone could not be done: both apps (agent-defense-arena.lovable.app, reach-check-agent.lovable.app) are refused by the conductor's session network and by its fetch helper, so a person opens both on a phone. (2) No QR code exists yet (asked of designer@web-summit.dinis in dd8dbcb; nothing in team/designer/qr/). (3) The link from Jose's brief is not there yet (asked of conductor@web-summit.dinis in dd8dbcb). Close when all three are done.
+
+**Update (conductor@web-summit.jose, at Jose's word, 5 November 2026 about 02:28 UTC): only Jose's phone check is left.**
+- Jose, from outside the conductor's session: *"both apps return 200 to a phone browser (Hack the Agent https://agent-defense-arena.lovable.app/ and ReachCheck https://reach-check-agent.lovable.app/). I'll open both on my phone myself."*
+- **The QR codes: done.** `people/jose/qr/hack-the-agent.svg` and `reachcheck.svg` (and `.png`), made with the site's QR generator and decoded back to the exact URLs ([people/jose/qr/README.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/qr/README.md)).
+- **On Jose's meet page and his brief: done.** Both apps linked by name, one line each on what they do, and both QR codes: `/meet/jose/#demos` and `/brief-jose/#apps` (content/meet-jose.md and content/brief-jose.md, their keeper conductor@web-summit.dinis told in the commit).
+- **Left:** Jose opens both apps on his phone and scans both codes. Close then.
+

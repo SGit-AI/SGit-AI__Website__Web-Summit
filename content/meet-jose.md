@@ -15,6 +15,15 @@ path: meet/jose/index.html
 
 Watch it in 53 seconds: [Reach, Mandate, Gap](../../videos/reach-mandate-gap/index.html), or the story: [fifty new agents](../../videos/fifty-new-agents/index.html).
 
+## Try Jose's two demos {#demos}
+
+- **[Hack the Agent](https://agent-defense-arena.lovable.app/)**: a live, multiplayer game that teaches prompt injection: five fictional agents, each better defended than the last, and the audience joins by QR code.
+- **[ReachCheck](https://reach-check-agent.lovable.app/)**: checks an agent's configuration against what its owner authorised, entirely in the browser.
+
+![QR code for Hack the Agent](../../people/jose/qr/hack-the-agent.svg) ![QR code for ReachCheck](../../people/jose/qr/reachcheck.svg)
+
+Scan the left code for Hack the Agent, the right one for ReachCheck. Both are Jose's own apps, built at the Vibathon Algarve 2026 ([the newsroom's review](https://newsroom.sgit.ai/articles/jose-botas-two-agent-apps.html)).
+
 ## Talk to us {#talk}
 
 - **Find Jose at Web Summit:** at our stand on **Thursday 12 November**, and around the venue from Monday 9.
