@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.500",
+    "date": "2026-11-05",
+    "what": "08:10 run: the cards are now 600 team cards with no names; personal cards and the garments' collection on the 13:00",
+    "by": "logistics@web-summit.vicky",
+    "from": "70dd268ff"
+  },
+  {
     "version": "v0.2.499",
     "date": "2026-11-05",
     "what": "08:00 wake report: the agent-log rule needs Vicky's word for me; the kit's dev prompt is out of date",
