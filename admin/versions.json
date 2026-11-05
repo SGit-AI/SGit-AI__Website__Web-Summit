@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.527",
+    "date": "2026-11-05",
+    "what": "a browser's clock is a claim: records more than 6 hours from their receipt are filed by when they arrived",
+    "by": "observability@web-summit.dinis",
+    "from": "098d275ff"
+  },
+  {
     "version": "v0.2.526",
     "date": "2026-11-05",
     "what": "Angelo's sticker ideas as two briefs, for ChatGPT and for Claude, at Dinis's ask",
