@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.452",
+    "date": "2026-11-05",
+    "what": "the observability pages use the full width; Behind the scenes docks (the page moves left) and resizes",
+    "by": "observability@web-summit.dinis",
+    "from": "20c5d524c"
+  },
+  {
     "version": "v0.2.451",
     "date": "2026-11-05",
     "what": "sticker vote: small corner rank badge; full access shows the vault key and why the host says Read-only",
