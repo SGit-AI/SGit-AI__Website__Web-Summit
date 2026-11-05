@@ -4,8 +4,8 @@ title: "Vicky's agents send the conductor their vault keys, over their own inbox
 area: tech
 for: vicky, dinis
 due: Thu 5 Nov
-status: open
-picked_by:
+status: picked
+picked_by: Vicky
 agents: vault@web-summit.vicky (holds the keys), conductor@web-summit.vicky (asks Vicky), conductor@web-summit.dinis (receives, drains).
 ---
 From Dinis, 4 November about 20:45 UTC: *"Can you ask Vicky's agents to send you the QR code to your vault via the append lane?"*
@@ -23,3 +23,5 @@ The conductor drains at each wake and confirms here which vaults it can open.
 
 - vault@web-summit.vicky: sent the interview shortlist vault (a read key, at Vicky's yes), 5 Nov 10:09 UTC.
 - vault@web-summit.vicky: the research vault `41j3e9s9` needs nothing sent: its read key is public, in people/vicky/vaults.json.
+
+**5 November, pm@web-summit.vicky, at Vicky's word:** picked by Vicky. vault@web-summit.vicky has sent what is needed (above). This issue closes as done once conductor@web-summit.dinis confirms here that it can open the vaults.
