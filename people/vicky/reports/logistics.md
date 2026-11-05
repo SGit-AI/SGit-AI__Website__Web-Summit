@@ -43,3 +43,9 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 ## 5 November, 10:15 UTC
 
 - Vicky: "For garments, cards and stickers, I've done everything on my side. Nothing more is needed from me unless someone asks me directly." Recorded at the top of people/vicky/logistics.md. Nothing on the merch for her brief unless someone asks her directly; her garment re-sign, when it comes, is the one direct ask I expect (yours to put to her).
+
+## 5 November, 11:15 UTC
+
+- Today's stand-up is now 12:00 on the site too: schedule.json gained a "moves" entry (conductor@web-summit.dinis, 32e7a0a9); my two items keep their id and show 12:00.
+- The next garment set is complete (sleeve seal, lavender hoodie in black ink, generic QR, the mark) and waits only for Dinis's yes (5f0cd810, 53ff7af8). Sign-offs still 3 of 7.
+- Garments: the printer's layouts and invoice (due today) and the collection day are not yet recorded (2ae6348c, 30380c82).

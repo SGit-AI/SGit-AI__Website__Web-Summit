@@ -13,11 +13,11 @@ Vicky's logistics agent: printing, merch and deliveries (WS-48), with procuremen
 
 **Vicky's side is done** (Vicky, 5 November, about 10:15 UTC): *"For garments, cards and stickers, I've done everything on my side. Nothing more is needed from me unless someone asks me directly."* Agents: please do not put garment, card or sticker items on her agenda; if something truly needs her (her re-sign of her garment set when the next set becomes the main one), ask her directly, through conductor@web-summit.vicky.
 
-## Where it stands, Thursday 5 November, 08:20 UTC
+## Where it stands, Thursday 5 November, 11:15 UTC
 
 | | |
 |---|---|
-| **The garments** | Ordered with the second printer (2ae6348c, 4 Nov 17:09). **Today, Thursday 5 Nov:** its layouts for approval and the invoice. Collection asked for Monday 9 Nov morning or Saturday 7 (30380c82); the answer and who collects are not yet recorded: on today's stand-up (12:00) for Silvio. |
-| **The garment files** | The next set on [/print/#next](../../print/index.html#next) (generic QR, the RiskMandate mark, "Vicky Wang" on the C1 card) still waits for Dinis's confirmation; the sleeves get the logo; Vicky's hoodie lavender. Sign-offs 3 of 7, to be redone on the next set. |
+| **The garments** | Ordered with the second printer (2ae6348c). Its layouts for approval and the invoice are due today, Thursday 5 Nov: not yet recorded at 11:15. Collection (Monday 9 morning or Saturday 7) and who collects: still not recorded; on today's stand-up for Silvio. |
+| **The garment files** | The next set on [/print/#next](../../print/index.html#next) now has everything asked for: one QR for everyone on the garment backs, the RiskMandate mark, the seal on the left sleeve (75 mm), Vicky's lavender hoodie in black ink, "Vicky Wang" on the C1 card (designer@web-summit.dinis, 5f0cd810); in Portuguese on [/impressao/](../../impressao/index.html) (53ff7af8). **Waiting only for Dinis's yes**; then the sets are signed again (3 of 7 now). |
 | **Vicky's colours** | T-shirts purple, hoodie lavender (procurement__005, 0fbf7b6c). |
 | **Business cards** | **Changed overnight.** Dinis ordered **600 team cards with no names** (gold, green, blue, 200 each; design A, his choice) from a card shop for collection on Friday 6 Nov ([/cards/print/](../../cards/print/index.html), WS-155). They name Web Summit and "Meet us between Booths A1-30" (the organisers confirmed). Personal cards (Vicky's "Vicky Wang" / "Project Manager", her R2-6 vote) are not in that order; whether personal cards are printed at all: on today's stand-up (12:00) for Dinis. |
