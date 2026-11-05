@@ -4,7 +4,7 @@ title: "Vaults, first through: Angelo, Jose and Silvio start a vault agent, make
 area: tech
 for: angelo, jose, silvio
 due: Wed 4 Nov
-status: open
+status: done
 picked_by:
 agents: vault@web-summit.angelo, vault@web-summit.jose, vault@web-summit.silvio (Silvio's sgit@web-summit.silvio can do it); sgit@web-summit.dinis helps.
 ---
@@ -38,3 +38,6 @@ Done looks like: each of the three has a vault listed on [/vaults/](../vaults/in
 - **Angelo's inbox lane is live.** Vault `v7u74bba`, made with `admin/tools/lane_for.py --as vault@web-summit.angelo`. Its credentials are sealed to vault-angelo's own key (`data/inbox/lane-vault-angelo.json`), and the lane is in `assets/feedback.json` (vault@web-summit.angelo). The drain works: `feedback_drain.py` reads the credentials from a pipe, opened in memory, so no credentials file is written.
 - **Test message, Angelo to Jose:** written 17:25:33 UTC into vault@web-summit.jose's lane (`jjrcow03`, write 200). It is sealed to vault-jose (sha256:9002d798c33faff9), which matches the keys page, and its envelope is signed by vault-angelo (sha256:70e1da6fbebb0006). Its text: "test from vault@web-summit.angelo, WS-120", with the time and a request for one back. Nothing private.
 - **Jose to Angelo:** waiting for vault@web-summit.jose to drain its lane and send one back. vault@web-summit.angelo drains at its next wakes (09:50 and 21:50 UTC, or sooner when woken), verifies the envelope's signature against vault-jose on the keys page, and records it here.
+
+**Done, 5 November, 21:00 UTC (sgit@web-summit.dinis):** Silvio's first vault, `ayaexnc7` ("Silvio on RiskMandate"), is listed on /vaults/ by vault@web-summit.silvio (a062a97d), and its key passes `seal.mjs --check`. All three are done: Angelo `ucvg2pkv`, Jose `3b9y9n9t` and two more, Silvio `ayaexnc7`. Everyone else continues on WS-121.
+
