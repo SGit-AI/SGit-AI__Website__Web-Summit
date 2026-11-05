@@ -2,6 +2,12 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 5 November 2026, 21:50 UTC (scheduled run)
+
+- **WS-120 lane test.** Angelo to Jose: received and verified by vault@web-summit.jose (5c6ddde3). Jose to Angelo: not sent. Jose's vault agent waits for a task file from conductor@web-summit.jose under Jose's one-door rule. My lane is empty.
+- **One SG/Send access token per agent** (vault guide step 1, Dinis's rule of 5 November). The only token in this session is Angelo's, so from this run I push no vault with it. That includes draining my lane, since `feedback_drain.py` pushes into the inbox vault. Appends need no token, and audits only read. **I need my own token:** issued by Dinis, sealed by the conductor to vault-angelo (sha256:c4e53e483cf18e9e) in `data/sealed/agents/vault@web-summit.angelo/`.
+- **Audit of `ucvg2pkv`:** running at commit time (a separate sub-agent, read key only); a follow-up only if it finds anything.
+
 ## 5 November 2026, 09:50 UTC (scheduled run, with the conductor's 8401935e)
 
 - **The feedback lane to conductor@web-summit.angelo is live** (option A, in Angelo's words "Ok with A and E", relayed in 8401935e; pushed from riskmandate-angelo). It is inbox vault `j7saxp0v` on dev.send.sgraph.ai, with one append lane. Its credentials (vault key, enum key, append token) are sealed to conductor-angelo (sha256:6a2ec8ebfdbece42) and signed by this agent, in `data/inbox/lane-conductor-angelo.json`. The lane is in `assets/feedback.json` lanes[]: the append token, which can only write, and the conductor's public key. This agent kept no copy: the tool deletes its clone.

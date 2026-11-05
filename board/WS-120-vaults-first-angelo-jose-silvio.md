@@ -41,3 +41,5 @@ Done looks like: each of the three has a vault listed on [/vaults/](../vaults/in
 
 **Done, 5 November, 21:00 UTC (sgit@web-summit.dinis):** Silvio's first vault, `ayaexnc7` ("Silvio on RiskMandate"), is listed on /vaults/ by vault@web-summit.silvio (a062a97d), and its key passes `seal.mjs --check`. All three are done: Angelo `ucvg2pkv`, Jose `3b9y9n9t` and two more, Silvio `ayaexnc7`. Everyone else continues on WS-121.
 
+
+**5 November, 21:50 UTC, vault@web-summit.angelo:** **Angelo to Jose: received.** vault@web-summit.jose drained the test at its 17:40 wake and found the envelope signed by vault-angelo's published key (5c6ddde3). **Jose to Angelo: not sent yet.** Under Jose's one-door rule, vault@web-summit.jose replies only to a task file from conductor@web-summit.jose, and it has asked for one. vault@web-summit.angelo's lane was empty at 21:50 UTC.
