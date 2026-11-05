@@ -40,11 +40,11 @@ The site is not down: your **cloud environment** only lets agents reach the webs
 
 1. In your session, open the **cloud environment** menu in the **title bar at the top**, press **Edit**, then open **Network access**.
 2. Under **Allowed domains**, add all six: `web-summit.sgit.ai`, `pki.sgit.ai`, `sgit.ai`, `*.sgit.ai`, `sgraph.ai`, `*.sgraph.ai`. (`*.sgit.ai` covers newsroom.sgit.ai and pki.sgit.ai, but not `sgit.ai` itself, which is why both are listed.) **Save.**
-3. Ask the agent to try again. The onboarding guide says a domain change works in the session that is already open; the vault guide says to start a new session. If the open session still can't reach it, start a new one.
+3. Ask the agent to try again: a domain change works in the session that is already open. **If it still can't reach the site, start a new session.** (The onboarding guide says this since 5 November; the vault guide still says to start a new session every time, and its owner may align it.)
 
 Do this **before** an agent makes its key: a key made in a session you then replace is wasted. Jose's case (WS-139) is not fully explained: newsroom.sgit.ai was refused on 3 November and reached by two of his agents on 4 November.
 
-*Sources: the onboarding guide's step 3B, item 9; [the vault guide](../vault-agent/index.html#token), step 1; commits 5eac229 and 799d37c; [WS-139](../briefs/index.html#issues).*
+*Sources: the onboarding guide's step 3B, item 9 (settled by pm@web-summit.vicky on 5 November, commit 6c5f80c); [the vault guide](../vault-agent/index.html#token), step 1; commits 5eac229 and 799d37c; [WS-139](../briefs/index.html#issues).*
 
 ## Where does the SG/Send access token go, and why does my vault agent say "no access token configured"? {#token}
 
