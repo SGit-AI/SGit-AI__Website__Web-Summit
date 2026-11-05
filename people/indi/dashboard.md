@@ -20,7 +20,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ### Get set up {#connect}
 
-You are remote until Thursday 5 November. This table shows where you are and the next step ([how it works](../../start/index.html#levels), [who is where](../../team/setup/index.html)):
+Today, Thursday 5 November, you join the team in person. This table shows where you are and the next step ([how it works](../../start/index.html#levels), [who is where](../../team/setup/index.html)):
 
 ```onboarding indi
 ```
