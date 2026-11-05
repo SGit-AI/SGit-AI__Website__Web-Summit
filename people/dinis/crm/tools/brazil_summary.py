@@ -50,8 +50,7 @@ Brazilian startups at LIS26 that are not (yet) matched to the list carry `topic:
 
 ## Not done, and why
 
-- {len(ai['not yet checked'])} companies have no AI-agents line yet (one source each to read).
+- {len(ai['not yet checked'])} companies have no AI-agents line: their website could not be confirmed as theirs.
 - The waiting-list and withdrawn CNPJs are not named (not part of the delegation as published).
-- CNPJs the register did not answer for (rate-limited) are named in a later run.
 """
 open(V+'/companies/apexbrasil/notes.md','w').write(out); print(len(recs),dict(st),{k:len(v) for k,v in ai.items()})

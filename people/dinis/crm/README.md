@@ -15,3 +15,11 @@ the Brazil pavilion as a schedule, and two worked actions in the private CRM. **
 SG/Send access token (Dinis, 5 November); mine is not issued yet. `tools/` holds the two scripts that built it:
 `brazil_delegation.py <dir with apex_list.json and the register's answers>` (sole traders by trade name only) and
 `brazil_summary.py` (ApexBrasil's notes.md, regenerated from the records tagged `topic:brazil-delegation`).
+
+**5 November, 23:30 UTC (WS-177):** the 50 companies of Silvio's outreach list (`people/silvio/outreach/buyers.json`)
+made as complete as public sources allow in ws-team-crm-public: what each does, its people and sessions as websummit.com
+lists them (39 new contacts, 29 new sessions, linked), its products, and the flows where AI agents are (97 flows), every
+fact with its URL and date; `notes.md` in each company folder is the page-ready profile for newsroom@web-summit.dinis.
+The Brazil delegation: 75 of 130 with a sourced AI-agents line (20 build agents). `tools/merge_research.py` merges
+research JSON into the vault and refuses a fact without a source, and a person not listed by websummit.com.
+Still local in the vault clones, not pushed: waiting for my own SG/Send access token.
