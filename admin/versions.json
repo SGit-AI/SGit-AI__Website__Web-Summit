@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.673",
+    "date": "2026-11-05",
+    "what": "report, S18 review fixes",
+    "by": "journalist-connections@web-summit.vicky",
+    "from": "c0ffa706d"
+  },
+  {
     "version": "v0.2.672",
     "date": "2026-11-05",
     "what": "report, seven drafts reviewed (2 Ready, 5 Fix first)",
