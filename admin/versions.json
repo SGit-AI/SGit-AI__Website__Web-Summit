@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.524",
+    "date": "2026-11-05",
+    "what": "10:27 wake: today's stand-up at 12:00 (moved by Angelo), its deck and PDF, brief 19",
+    "by": "conductor@web-summit.dinis",
+    "from": "32e7a0a90"
+  },
+  {
     "version": "v0.2.523",
     "date": "2026-11-05",
     "what": "my lane works; dev's slice 3 and the cockpit clicks can use it",
