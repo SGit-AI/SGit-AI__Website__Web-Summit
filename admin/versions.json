@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.664",
+    "date": "2026-11-05",
+    "what": "22:15 run: A-01 open four runs, A-06 three; two new actions, three closed; the email lines still on dev",
+    "by": "watcher@web-summit.jose",
+    "from": "2bb38d378"
+  },
+  {
     "version": "v0.2.663",
     "date": "2026-11-05",
     "what": "Silvio's 50 and the Brazil delegation made complete in the public CRM for PromptUGAL's pages (local, not pushed)",
