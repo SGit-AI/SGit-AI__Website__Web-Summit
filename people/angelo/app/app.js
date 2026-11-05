@@ -8,6 +8,18 @@
     const load = rel => new Promise((ok, no) => { const s = document.createElement('script'); s.src = new URL(rel, here).href; s.onload = ok; s.onerror = no; document.head.appendChild(s) })
     const root = document.getElementById('cc')
     // the kanban's rules first, then the shared app; if the rules fail to load, the shared app still runs
+    // the data file is fetched once (WS-84: 385 KB on the venue's wifi): this file starts the request, and the shared
+    // front end's own fetch of the same file is handed a copy of that one response instead of a second download
+    const DATA = root ? new URL(root.dataset.src || 'data.json', location.href).href : ''
+    const once = DATA ? fetch(DATA, { cache: 'no-cache' }) : null
+    if (once) {
+        const orig = window.fetch
+        window.fetch = function (u, o) {
+            let url = ''; try { url = new URL(typeof u === 'string' ? u : u.url, location.href).href } catch { }
+            if (url === DATA) { window.fetch = orig; return once.then(r => r.clone()) }
+            return orig.apply(this, arguments)
+        }
+    }
     load('kanban-core.js').catch(() => null).then(() => load('../../../assets/cc/app.js')).then(() => { if (root && window.AngeloKanban) start() })
 
     const clean = t => String(t ?? '').replace(/^"(.*)"$/, '$1')
@@ -24,7 +36,7 @@
         let D = null, failed = ''
         const route = () => (location.hash.match(/^#(kanban|collab|summit)(\?|$)/) || [])[1] || ''
         const mine = () => !!route()
-        fetch(root.dataset.src || 'data.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : Promise.reject(new Error(r.status))).then(d => { D = d; if (mine()) draw() }).catch(e => { failed = e.message; if (mine()) draw() })
+        once.then(r => r.ok ? r.clone().json() : Promise.reject(new Error(r.status))).then(d => { D = d; if (mine()) draw() }).catch(e => { failed = e.message; if (mine()) draw() })
 
         // after every shared render (it rebuilds the shell): add the Kanban entry, and draw the kanban when it is asked for
         new MutationObserver(() => { nav(); if (mine()) draw() }).observe(root, { childList: true })
