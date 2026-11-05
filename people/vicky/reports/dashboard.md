@@ -55,3 +55,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - New page at Dinis's request, through Vicky: /people/vicky/stories/, the newsroom curator's story candidates as cards (id, title, beat, angle, date added), built by people/vicky/pages.mjs from people/vicky/stories/candidates.md, an exact copy of desks/curator/README.md in the newsroom repository (dev). No other copy.
 - Each card has a "Comment" button that quotes the story in the site's feedback pane; the page asks people to send to newsroom@web-summit.dinis. Linked from Vicky's dashboard links line (the gate refuses an orphan page).
 - I refresh the copy at each of my runs (07:50, 17:45).
+
+## Thu 5 Nov 2026, 17:55 UTC (wake)
+
+- Tables refreshed. New in "Needs me": which issues to claim (people/vicky/issues-review-2026-11-05.md, 34531de) and WS-31's smaller scope to confirm (reports/pm.md, 17:40). Dropped: today's agenda release, done at 08:15 (65ec451).
+- WS-153 stays: picked by Vicky, waiting on conductor@web-summit.dinis (reports/pm.md, 17:40).
+- Story candidates: the curator's file is unchanged since 12:55 UTC, so no refresh was needed (raw desks/curator/README.md, compared at 17:46).
+- The 18:00 merch item for Vicky (the Monday collection) is left off, at her word of 10:15.
