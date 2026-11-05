@@ -12,7 +12,7 @@
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
     const ago = d => { if (!d) return 'never'; const m = Math.round((Date.now() - new Date(d)) / 6e4); return m < 60 ? `${Math.max(1, m)} min ago` : m < 1440 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} d ago` }
     const ini = n => n.split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase()
-    const pick = document.getElementById('me-pick'), panel = document.getElementById('for-you')
+    const pick = document.getElementById('me-pick'), panel = document.getElementById('for-you'), strip = document.getElementById('me-strip')
     if (!pick) return
 
     const KR = window.WSKeyring, krReady = KR ? KR.ready.catch(() => null) : Promise.resolve(null)
@@ -24,6 +24,7 @@
             pick.querySelector('select').onchange = e => { set(e.target.value); draw() }
             document.documentElement.dataset.me = me ? me.id : ''
             document.querySelectorAll('[data-for]').forEach(el => el.classList.toggle('is-me', !!me && el.dataset.for.split(/\s+/).includes(me.id)))
+            drawStrip(me)
             if (!panel) return
             if (!me) { panel.hidden = true; panel.innerHTML = ''; return }
             panel.hidden = false; panel.style.setProperty('--c', me.colour || '')
@@ -35,7 +36,28 @@
         }
         draw()
         window.addEventListener('storage', e => { if (e.key === KEY) draw() })
+        window.addEventListener('ck-changed', draw)   // the cockpit changed your actions (assets/cockpit.js)
     }).catch(() => { pick.hidden = true })
+
+    // the top bar's second row (Dinis, 5 November: "not on every page ... two rows on the top bar ... what's missing, what's
+    // action, all visible"): one line for the chosen person, the same counts as their cockpit, and their actions still
+    // to send or not yet processed (kept by assets/cockpit.js in this browser). The details are on their dashboard.
+    function drawStrip(p) {
+        if (!strip) return
+        if (!p) { strip.hidden = true; strip.innerHTML = ''; return }
+        let q = []; try { q = JSON.parse(localStorage.getItem('ck.q') || '[]') } catch { }
+        const draft = q.filter(e => e.state === 'draft').length, sent = q.filter(e => e.state === 'sent').length
+        const mins = Math.round((Date.parse(p.standup_at) - Date.now()) / 6e4), su = mins <= 0 ? 'now' : mins < 60 ? `in ${mins} min` : `in ${Math.floor(mins / 60)} h ${mins % 60} min`
+        const dash = up + p.links.dashboard, here = location.pathname.endsWith('/' + p.links.dashboard) || location.pathname.endsWith('/' + p.links.dashboard.replace(/index\.html$/, ''))
+        const chip = (n, t, cls, h) => `<a class="ms-c${n ? ' ' + cls : ''}" href="${h}"><b>${n}</b> ${t}</a>`
+        strip.hidden = false
+        strip.innerHTML = `<div class="row"><span class="ms-who"><span class="av" style="--c:${esc(p.colour)}">${esc(ini(p.name))}</span>${esc(p.first)}</span>
+${p.only_you != null ? chip(p.only_you, 'only you', 'hot', dash + '#only-you') : ''}${chip(p.decide ?? p.decisions.length, 'to decide', 'warn', dash + '#decide')}${chip(p.overdue, 'overdue', 'warn', up + p.links.centre)}
+<a class="ms-c" href="${up}${esc(p.briefing)}">stand-up <b>${esc(su)}</b></a>
+${draft ? `<a class="ms-c act" href="${dash}"><b>${draft}</b> action${draft > 1 ? 's' : ''} to send</a>` : ''}${sent ? `<a class="ms-c sent" href="${dash}"><b>${sent}</b> sent, not processed</a>` : ''}
+${p.next ? `<a class="ms-c warn" href="${up}start/index.html#steps">next step: ${esc(p.next.step)}</a>` : ''}
+<span class="ms-go">${here ? '' : `<a class="ms-b go" href="${dash}">My dashboard</a>`}<a class="ms-b" href="${up}${esc(p.links.centre)}">Command centre</a></span></div>`
+    }
 
     // a 10-day bar chart of the person's agents' commits (CI's releases left out), drawn inline
     function spark(p) {

@@ -35,6 +35,9 @@
     --bad-soft    : #fde7e4;
     --wait        : #5c5f66;
     --wait-soft   : #eeede8;
+    --sent        : #2f6fb3;   /* the cockpit's sent-not-processed actions (Dinis, 5 Nov) */
+    --sent-soft   : #e3eef9;
+    --sent-line   : #b9d1ec;
     --st-green    : #1a7f5a;   /* the sticker vote (WS-159): the stickers' own palette, for its confetti and its clock */
     --st-gold     : #f2c230;
     --st-blue     : #1d4ed8;
@@ -77,6 +80,9 @@
         --bad-soft    : #3a1714;
         --wait        : #a9a59b;
         --wait-soft   : #24241f;
+        --sent        : #6ea8e6;
+        --sent-soft   : #1d2c3d;
+        --sent-line   : #2c4560;
     }
 }
 /* tokens:end */
@@ -530,3 +536,40 @@ svg.ch-map { min-width: 620px; max-width: 900px; }
     .sv-bar { border-radius: 18px; }
 }
 @media (prefers-reduced-motion: reduce) { .sv-card { opacity: 1; transform: none; } .sv-in .sv-card, .sv-people li span, .sv-bar, .sv-card.lead button::before { animation: none; } }
+
+/* ---- the top bar's second row: the chosen person's strip (assets/me.js; Dinis, 5 November) ---- */
+nav.site .parent { font-size: 0.78rem; }
+nav.site .me-pick { margin-left: auto; }
+nav.site .gh { margin-left: 0; }
+.me-strip { border-top: 1px solid var(--line); background: var(--surface-2); }
+.me-strip .row { max-width: var(--wide); margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem 0.45rem; padding: 0.32rem var(--gutter); font-size: 0.86rem; }
+.ms-who { display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 700; margin-right: 0.3rem; }
+.ms-who .av { width: 1.4rem; height: 1.4rem; font-size: 0.62rem; }
+.ms-c { padding: 0.12rem 0.55rem; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-2); text-decoration: none; white-space: nowrap; }
+.ms-c b { color: var(--ink); }
+.ms-c:hover { border-color: var(--accent); color: var(--ink); }
+.ms-c.hot { background: var(--bad-soft); border-color: var(--bad-soft); }
+.ms-c.warn { background: var(--warn-soft); border-color: var(--warn-soft); }
+.ms-c.act { background: var(--warn-soft); border-color: var(--warn); }
+.ms-c.sent { background: var(--sent-soft); border-color: var(--sent-line); }
+.ms-go { margin-left: auto; display: inline-flex; gap: 0.35rem; }
+.ms-b { padding: 0.18rem 0.7rem; border-radius: 8px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); text-decoration: none; font-weight: 600; white-space: nowrap; }
+.ms-b.go { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+@media (max-width: 640px) { .ms-go { margin-left: 0; } }
+
+/* ---- the left menu: a section's own pages, as a menu (Dinis, 5 November) ---- */
+@media (min-width: 64rem) {
+    .rail { padding-top: 1.6rem; }
+    .rail nav.menu { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 0.5rem; box-shadow: var(--shadow); }
+    .rail .menu-h { display: block; padding: 0.45rem 0.6rem 0.55rem; margin-bottom: 0.25rem; border-bottom: 1px solid var(--line); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); text-decoration: none; }
+    .rail .menu-h:hover { color: var(--ink); }
+    .rail nav.menu ul { border-left: 0; margin: 0; }
+    .rail nav.menu li a { margin: 1px 0; padding: 0.42rem 0.6rem; border-left: 0; border-radius: 8px; color: var(--ink); }
+    .rail nav.menu li a:hover { background: var(--surface-2); }
+    .rail nav.menu li a[aria-current="page"] { background: var(--accent-soft); color: var(--accent-dk); font-weight: 600; box-shadow: inset 3px 0 0 var(--accent); }
+}
+@media (max-width: 640px) {
+    nav.site .ver, nav.site .parent { display: none; }
+    nav.site .links { order: 5; width: 100%; margin-left: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+    nav.site .links a { padding: 0.35rem 0.5rem; white-space: nowrap; }
+}

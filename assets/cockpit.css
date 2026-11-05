@@ -30,7 +30,7 @@ main.cockpit > p, main.cockpit > ul, main.cockpit > ol, main.cockpit > h2, main.
 .ck-card.only { border-left-color: var(--bad); }
 .ck-card.dec { border-left-color: var(--accent); }
 .ck-card.st-draft { border-left-color: var(--warn); background: var(--warn-soft); }
-.ck-card.st-sent { border-left-color: #2f6fb3; }
+.ck-card.st-sent { border-left-color: var(--sent); }
 .ck-card.st-done { border-left-color: var(--ok); opacity: 0.7; }
 .ck-card.st-refused { border-left-color: var(--bad); }
 .ck-card.flash { box-shadow: 0 0 0 3px var(--focus); }
@@ -117,11 +117,11 @@ main.cockpit > p, main.cockpit > ul, main.cockpit > ol, main.cockpit > h2, main.
 .ck-btn.big { width: 100%; padding: 0.7rem; font-size: 1.02rem; }
 .ck-g { margin: 0.9rem 0 0.2rem; font-size: 0.82rem; letter-spacing: 0.05em; text-transform: uppercase; display: flex; gap: 0.4rem; align-items: center; }
 .ck-g::before { content: ""; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--wait); }
-.ck-g.draft::before { background: var(--warn); } .ck-g.sent::before { background: #2f6fb3; } .ck-g.done::before { background: var(--ok); } .ck-g.refused::before { background: var(--bad); }
+.ck-g.draft::before { background: var(--warn); } .ck-g.sent::before { background: var(--sent); } .ck-g.done::before { background: var(--ok); } .ck-g.refused::before { background: var(--bad); }
 .ck-g span { color: var(--ink-2); }
 .ck-es { list-style: none; margin: 0; padding: 0; }
 .ck-e { border: 1px solid var(--line); border-left: 4px solid var(--line-2); border-radius: 8px; margin: 0.35rem 0; background: var(--bg); }
-.ck-e.draft { border-left-color: var(--warn); } .ck-e.sent { border-left-color: #2f6fb3; } .ck-e.done { border-left-color: var(--ok); } .ck-e.refused { border-left-color: var(--bad); }
+.ck-e.draft { border-left-color: var(--warn); } .ck-e.sent { border-left-color: var(--sent); } .ck-e.done { border-left-color: var(--ok); } .ck-e.refused { border-left-color: var(--bad); }
 .ck-e-h { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 1.3rem minmax(0, 1fr) auto; gap: 0.4rem; align-items: baseline; width: 100%; padding: 0.45rem 0.6rem; font-size: 0.88rem; }
 .ck-e-h:focus-visible { outline: 2px solid var(--focus); }
 .ck-e-i { font-weight: 700; text-align: center; }
@@ -133,5 +133,4 @@ main.cockpit > p, main.cockpit > ul, main.cockpit > ol, main.cockpit > h2, main.
 .ck-e-d dt { color: var(--ink-2); }
 .ck-e-d dd { margin: 0; overflow-wrap: anywhere; }
 .ck-badge { all: unset; cursor: pointer; display: inline-block; margin: 0.35rem 0; font-size: 0.86rem; padding: 0.25rem 0.6rem; border-radius: 6px; background: var(--surface-2); }
-.ck-badge.draft { background: var(--warn-soft); } .ck-badge.sent { background: #e3eef9; } .ck-badge.done { background: var(--ok-soft); } .ck-badge.refused { background: var(--bad-soft); }
-@media (prefers-color-scheme: dark) { .ck-badge.sent { background: #1d2c3d; } }
+.ck-badge.draft { background: var(--warn-soft); } .ck-badge.sent { background: var(--sent-soft); } .ck-badge.done { background: var(--ok-soft); } .ck-badge.refused { background: var(--bad-soft); }

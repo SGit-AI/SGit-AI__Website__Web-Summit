@@ -25,12 +25,12 @@
 
     // the actions: [{uid, ref, title, issue, action, option, words, delegate..., at, state: 'draft'|'sent', sent_at}]
     let D = null, LANE = null, Q = LS.get('q', []), openEntry = LS.get('openEntry', ''), openCard = LS.get('open', {}), showAll = false, busy = false
-    const save = () => { LS.set('q', Q); LS.set('openEntry', openEntry); LS.set('open', openCard) }
+    const save = () => { LS.set('q', Q); LS.set('openEntry', openEntry); LS.set('open', openCard); window.dispatchEvent(new Event('ck-changed')) }
     const KR = () => window.WSKeyring
     const signer = () => KR() && KR().person
     const mine = () => signer() && D && signer() === D.person.id
     const P = () => Object.fromEntries((D.processed || []).map(p => [p.uid, p]))
-    const layer = e => { const p = P()[e.uid]; return p ? (p.status === 'applied' ? 'done' : 'refused') : e.state === 'sent' ? 'sent' : 'draft' }
+    const layer = e => { const p = P()[e.uid]; return p ? (p.status === 'applied' ? 'done' : 'refused') : e.state === 'sent' || e.state === 'processed' ? 'sent' : 'draft' }
     const latest = ref => Q.filter(e => e.ref === ref).slice(-1)[0]
 
     // ---------- sealing and the lane: the same envelope as assets/feedback.js (sgit's hybrid v2) ----------
@@ -207,7 +207,7 @@ ${D.decisions.length > 7 ? `<button type="button" class="ck-btn ghost wide" data
             // the first version kept one answer per card ('out', 'sent'): carry any over as entries
             const old = LS.get('out', null); if (old) { for (const a of Object.values(old)) Q.push({ ...a, uid: uid(), state: 'draft' }); try { localStorage.removeItem('ck.out'); localStorage.removeItem('ck.sent') } catch { } }
             // processed entries older than a week leave on their own
-            const P0 = P(), wk = Date.now() - 7 * 864e5; Q = Q.filter(e => !P0[e.uid] || Date.parse(P0[e.uid].applied_at) > wk); save()
+            const P0 = P(), wk = Date.now() - 7 * 864e5; Q = Q.filter(e => !P0[e.uid] || Date.parse(P0[e.uid].applied_at) > wk); for (const e of Q) if (P0[e.uid]) e.state = 'processed'; save()
             document.documentElement.classList.add('ck-on'); draw()
         })
         .catch(e => { root.innerHTML = `<p class="ck-note">The cockpit could not load (${esc(e.message)}); the same data is below as text.</p>` })

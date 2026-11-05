@@ -173,10 +173,10 @@ function render(md) {
 // the left rail on wide screens: the section's pages, then this page's own headings (WS-77, WS-91)
 function rail(rel, up, body) {
     const sec = sectionOf(rel)
-    const toc = [...body.matchAll(/<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g)].map(m => [m[1], m[2].replace(/<[^>]+>/g, '')])
-    const pages = sec && sec.sub.length ? `<p class="rail-h">${esc(sec.t)}</p><ul>${sec.sub.map(([t, h]) => `<li><a href="${up}${h}"${rel === h ? ' aria-current="page"' : ''}>${t}</a></li>`).join('')}</ul>` : ''
-    const on = toc.length > 1 ? `<p class="rail-h">On this page</p><ul class="toc">${toc.map(([id, t]) => `<li><a href="#${id}">${t}</a></li>`).join('')}</ul>` : ''
-    return pages || on ? `<aside class="rail" aria-label="Section and page contents">${pages}${on}</aside>` : ''
+    // Dinis, 5 November: a left menu only where a section has pages of its own, and it lists pages, never links
+    // inside the same page ("On this page" is gone); it should look like a menu
+    const pages = sec && sec.sub.length > 1 ? `<nav class="menu" aria-label="${esc(sec.t)}"><a class="menu-h" href="${up}${sec.h}">${esc(sec.t)}</a><ul>${sec.sub.map(([t, h]) => `<li><a href="${up}${h}"${rel === h ? ' aria-current="page"' : ''}>${t}</a></li>`).join('')}</ul></nav>` : ''
+    return pages ? `<aside class="rail" aria-label="${esc(sec.t)}: its pages">${pages}</aside>` : ''
 }
 
 function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false, head = '', wide = false }) {
@@ -202,16 +202,15 @@ function page({ rel, title, description, body, meta = '', mdTwin = '', lead = ''
 <a class="skip" href="#main">Skip to the content</a>
 <nav class="site"><div class="row">
 <a class="brand" href="${up}index.html">web-summit<span>.sgit.ai</span></a>
-<a class="parent" href="https://sgit.ai" title="sgit.ai: the parent project">↗ part of <b>sgit.ai</b></a>
-<a class="ver" href="${up}admin/versions.html#${VERSION}" title="This version of the site: what changed, and the commit">${VERSION}</a>
 <div class="links">${SECTIONS.map(x => `<a href="${up}${x.h}"${sectionOf(rel) === x ? ' aria-current="page"' : ''}>${x.t}</a>`).join('')}</div>
 <div class="me-pick" id="me-pick"></div>
+<a class="ver" href="${up}admin/versions.html#${VERSION}" title="This version of the site: what changed, and the commit">${VERSION}</a>
+<a class="parent" href="https://sgit.ai" title="sgit.ai: the parent project">↗ <b>sgit.ai</b></a>
 <a class="gh" href="${REPO}">★ GitHub</a>
-</div></nav>
+</div><div class="me-strip" id="me-strip" hidden></div></nav>
 ${wide ? '' : (() => { const sec = sectionOf(rel); return sec && sec.sub.length ? `<nav class="subnav" aria-label="${sec.t}"><div class="row">${sec.sub.map(([t, h]) => `<a href="${up}${h}"${rel === h ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</div></nav>` : '' })()}
 <div class="frame${side ? ' with-rail' : ''}${wide ? ' wide' : ''}">${side}
 <main id="main"${home ? ' class="home"' : wide ? ' class="cockpit"' : ''}>
-${wide ? '' : '<section class="for-you" id="for-you" hidden aria-label="For you"></section>'}
 ${home || wide ? '' : (() => {
     const sec = sectionOf(rel), who = personOf(rel), c = [`<a href="${up}index.html">Home</a>`]
     if (sec) c.push(`<a href="${up}${sec.h}">${sec.t}</a>`)
@@ -225,6 +224,7 @@ ${lead ? `<p class="lead">${inline(lead)}</p>` : ''}
 ${home ? `<p class="countdown" data-countdown="2026-11-09">Web Summit Lisbon: 9 to 12 November 2026</p><script src="assets/countdown.js" defer></script>` : ''}`}
 ${meta}
 ${body}
+${wide ? '<section class="for-you" id="for-you" hidden aria-label="For you: your key and what is sealed to you"></section>' : ''}
 </main>
 </div>
 <script src="${up}assets/copy.js" defer></script>
@@ -648,7 +648,9 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     {   // this person's slice of me.json
         const o = onboard(m.id), nx = MEET.next(), a = MEET.ack(m.id), since = MEET.log(a?.acknowledged_at || new Date(Date.now() - 864e5).toISOString())
         const open = data.issues.filter(i => i.named && i.status !== 'done'), h = i => i.due_at ? (Date.parse(i.due_at) - Date.now()) / 36e5 : 1e9
+        const ck = CK.cockpit({ ROOT, id: m.id, teamData, ISSUES, MEET, INV, OB, VERSION })   // the same counts as the cockpit, for the top bar's strip
         ME.people[m.id] = {
+            only_you: ck.only_you.length, decide: ck.decisions.length, standup_at: nx.at,
             id: m.id, name: m.name, first: m.name.split(' ')[0], role: m.role || '', colour: CAST_PEOPLE[m.id]?.colour || merch[m.id] || '',
             level: o.level, level_name: LEVELS[o.level], next: o.next,
             open: open.length, overdue: open.filter(i => h(i) < 0 && !i.recurring).length, soon: open.filter(i => h(i) >= 0 && h(i) <= 72).length,
