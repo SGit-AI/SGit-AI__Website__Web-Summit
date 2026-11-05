@@ -5,7 +5,7 @@ path: impressao/index.html
 ---
 **Versão em português** de [/print/ (inglês)](../print/index.html#next), para a gráfica. Mantida por procurement@web-summit.silvio, o agente de IA de Silvio Switha. Em caso de diferença, vale a página em inglês, e o Silvio confirma pessoalmente.
 
-**Estado:** versão quase final, à espera da confirmação final do Dinis. Ainda vão mudar duas coisas: **o logótipo da RiskMandate na manga esquerda** (cerca de 7 a 8 cm) e **a tinta preta na sweat lavanda**. Quando os ficheiros finais estiverem prontos, o Silvio avisa e esta página é atualizada.
+**Estado (5 de novembro, 11:00):** os ficheiros estão completos, já com **o logótipo da RiskMandate na manga esquerda** (75 mm) e **a tinta preta na sweat lavanda**. Falta só a confirmação final do Dinis; o Silvio avisa quando forem os definitivos.
 
 [**Descarregar todos os ficheiros (zip)**](../team/designer/print/variants/next/riskmandate-print-files-next.zip): uma pasta por pessoa/cor, com um README em inglês. Os cartões de visita (card) não são para a gráfica das t-shirts.
 
@@ -24,7 +24,7 @@ path: impressao/index.html
 | **T-shirt, costas** | o logótipo RiskMandate (selo RM), RISK MANDATE, "Agents with a Mandate", o código QR e "Meet me / Book a meeting / Talk to my agent" | 220 mm de largura, topo a 70 mm abaixo da gola |
 | **Sweat, peito** | o logótipo RiskMandate, lado esquerdo de quem veste | 110 mm de largura, topo a 180 mm abaixo da costura do ombro |
 | **Sweat, costas** | "AGENTS UNDER POLICY", RISK MANDATE e o código QR | 300 mm de largura (máx. 380 mm de altura), topo a 120 mm abaixo da gola |
-| **Manga esquerda** (t-shirts e sweats) | o logótipo RiskMandate | cerca de 70 a 80 mm (ficheiro a seguir) |
+| **Manga esquerda** (t-shirts e sweats) | o logótipo RiskMandate (selo RM) | 75 mm de largura, topo a cerca de 100 mm abaixo da costura do ombro |
 
 ## As regras {#regras}
 
@@ -48,6 +48,7 @@ path: impressao/index.html
 | **Sweat** | 1: Vermelho, tamanho L |
 | **Ficheiros da t-shirt** | frente [PDF](../team/designer/print/variants/next/files/silvio/silvio-tee-front.pdf) · [SVG](../team/designer/print/variants/next/files/silvio/silvio-tee-front.svg) · [PNG](../team/designer/print/variants/next/files/silvio/silvio-tee-front.png); frente mais pequena (XS, S, mulher) [PDF](../team/designer/print/variants/next/files/silvio/silvio-tee-front-small.pdf); costas [PDF](../team/designer/print/variants/next/files/silvio/silvio-tee-back.pdf) · [SVG](../team/designer/print/variants/next/files/silvio/silvio-tee-back.svg) · [PNG](../team/designer/print/variants/next/files/silvio/silvio-tee-back.png) |
 | **Ficheiros da sweat** | peito [PDF](../team/designer/print/variants/next/files/silvio/silvio-hoodie-chest.pdf) · [SVG](../team/designer/print/variants/next/files/silvio/silvio-hoodie-chest.svg) · [PNG](../team/designer/print/variants/next/files/silvio/silvio-hoodie-chest.png); costas [PDF](../team/designer/print/variants/next/files/silvio/silvio-hoodie-back.pdf) · [SVG](../team/designer/print/variants/next/files/silvio/silvio-hoodie-back.svg) · [PNG](../team/designer/print/variants/next/files/silvio/silvio-hoodie-back.png) |
+| **Ficheiro da manga** | [PDF](../team/designer/print/variants/next/files/silvio/silvio-sleeve.pdf) · [SVG](../team/designer/print/variants/next/files/silvio/silvio-sleeve.svg) · [PNG](../team/designer/print/variants/next/files/silvio/silvio-sleeve.png) |
 
 ### ⚫ Preto {#dinis}
 
@@ -61,6 +62,7 @@ path: impressao/index.html
 | **Sweat** | 1: Preto, tamanho XL |
 | **Ficheiros da t-shirt** | frente [PDF](../team/designer/print/variants/next/files/dinis/dinis-tee-front.pdf) · [SVG](../team/designer/print/variants/next/files/dinis/dinis-tee-front.svg) · [PNG](../team/designer/print/variants/next/files/dinis/dinis-tee-front.png); frente mais pequena (XS, S, mulher) [PDF](../team/designer/print/variants/next/files/dinis/dinis-tee-front-small.pdf); costas [PDF](../team/designer/print/variants/next/files/dinis/dinis-tee-back.pdf) · [SVG](../team/designer/print/variants/next/files/dinis/dinis-tee-back.svg) · [PNG](../team/designer/print/variants/next/files/dinis/dinis-tee-back.png) |
 | **Ficheiros da sweat** | peito [PDF](../team/designer/print/variants/next/files/dinis/dinis-hoodie-chest.pdf) · [SVG](../team/designer/print/variants/next/files/dinis/dinis-hoodie-chest.svg) · [PNG](../team/designer/print/variants/next/files/dinis/dinis-hoodie-chest.png); costas [PDF](../team/designer/print/variants/next/files/dinis/dinis-hoodie-back.pdf) · [SVG](../team/designer/print/variants/next/files/dinis/dinis-hoodie-back.svg) · [PNG](../team/designer/print/variants/next/files/dinis/dinis-hoodie-back.png) |
+| **Ficheiro da manga** | [PDF](../team/designer/print/variants/next/files/dinis/dinis-sleeve.pdf) · [SVG](../team/designer/print/variants/next/files/dinis/dinis-sleeve.svg) · [PNG](../team/designer/print/variants/next/files/dinis/dinis-sleeve.png) |
 
 ### 🔵 Azul royal {#nimay}
 
@@ -74,6 +76,7 @@ path: impressao/index.html
 | **Sweat** | 1: Azul royal, tamanho L |
 | **Ficheiros da t-shirt** | frente [PDF](../team/designer/print/variants/next/files/nimay/nimay-tee-front.pdf) · [SVG](../team/designer/print/variants/next/files/nimay/nimay-tee-front.svg) · [PNG](../team/designer/print/variants/next/files/nimay/nimay-tee-front.png); frente mais pequena (XS, S, mulher) [PDF](../team/designer/print/variants/next/files/nimay/nimay-tee-front-small.pdf); costas [PDF](../team/designer/print/variants/next/files/nimay/nimay-tee-back.pdf) · [SVG](../team/designer/print/variants/next/files/nimay/nimay-tee-back.svg) · [PNG](../team/designer/print/variants/next/files/nimay/nimay-tee-back.png) |
 | **Ficheiros da sweat** | peito [PDF](../team/designer/print/variants/next/files/nimay/nimay-hoodie-chest.pdf) · [SVG](../team/designer/print/variants/next/files/nimay/nimay-hoodie-chest.svg) · [PNG](../team/designer/print/variants/next/files/nimay/nimay-hoodie-chest.png); costas [PDF](../team/designer/print/variants/next/files/nimay/nimay-hoodie-back.pdf) · [SVG](../team/designer/print/variants/next/files/nimay/nimay-hoodie-back.svg) · [PNG](../team/designer/print/variants/next/files/nimay/nimay-hoodie-back.png) |
+| **Ficheiro da manga** | [PDF](../team/designer/print/variants/next/files/nimay/nimay-sleeve.pdf) · [SVG](../team/designer/print/variants/next/files/nimay/nimay-sleeve.svg) · [PNG](../team/designer/print/variants/next/files/nimay/nimay-sleeve.png) |
 
 ### 🟢 Verde {#angelo}
 
@@ -87,6 +90,7 @@ path: impressao/index.html
 | **Sweat** | 1: Verde, tamanho L |
 | **Ficheiros da t-shirt** | frente [PDF](../team/designer/print/variants/next/files/angelo/angelo-tee-front.pdf) · [SVG](../team/designer/print/variants/next/files/angelo/angelo-tee-front.svg) · [PNG](../team/designer/print/variants/next/files/angelo/angelo-tee-front.png); frente mais pequena (XS, S, mulher) [PDF](../team/designer/print/variants/next/files/angelo/angelo-tee-front-small.pdf); costas [PDF](../team/designer/print/variants/next/files/angelo/angelo-tee-back.pdf) · [SVG](../team/designer/print/variants/next/files/angelo/angelo-tee-back.svg) · [PNG](../team/designer/print/variants/next/files/angelo/angelo-tee-back.png) |
 | **Ficheiros da sweat** | peito [PDF](../team/designer/print/variants/next/files/angelo/angelo-hoodie-chest.pdf) · [SVG](../team/designer/print/variants/next/files/angelo/angelo-hoodie-chest.svg) · [PNG](../team/designer/print/variants/next/files/angelo/angelo-hoodie-chest.png); costas [PDF](../team/designer/print/variants/next/files/angelo/angelo-hoodie-back.pdf) · [SVG](../team/designer/print/variants/next/files/angelo/angelo-hoodie-back.svg) · [PNG](../team/designer/print/variants/next/files/angelo/angelo-hoodie-back.png) |
+| **Ficheiro da manga** | [PDF](../team/designer/print/variants/next/files/angelo/angelo-sleeve.pdf) · [SVG](../team/designer/print/variants/next/files/angelo/angelo-sleeve.svg) · [PNG](../team/designer/print/variants/next/files/angelo/angelo-sleeve.png) |
 
 ### 🟠 Laranja {#jose}
 
@@ -100,6 +104,7 @@ path: impressao/index.html
 | **Sweat** | 1: Laranja, tamanho L |
 | **Ficheiros da t-shirt** | frente [PDF](../team/designer/print/variants/next/files/jose/jose-tee-front.pdf) · [SVG](../team/designer/print/variants/next/files/jose/jose-tee-front.svg) · [PNG](../team/designer/print/variants/next/files/jose/jose-tee-front.png); frente mais pequena (XS, S, mulher) [PDF](../team/designer/print/variants/next/files/jose/jose-tee-front-small.pdf); costas [PDF](../team/designer/print/variants/next/files/jose/jose-tee-back.pdf) · [SVG](../team/designer/print/variants/next/files/jose/jose-tee-back.svg) · [PNG](../team/designer/print/variants/next/files/jose/jose-tee-back.png) |
 | **Ficheiros da sweat** | peito [PDF](../team/designer/print/variants/next/files/jose/jose-hoodie-chest.pdf) · [SVG](../team/designer/print/variants/next/files/jose/jose-hoodie-chest.svg) · [PNG](../team/designer/print/variants/next/files/jose/jose-hoodie-chest.png); costas [PDF](../team/designer/print/variants/next/files/jose/jose-hoodie-back.pdf) · [SVG](../team/designer/print/variants/next/files/jose/jose-hoodie-back.svg) · [PNG](../team/designer/print/variants/next/files/jose/jose-hoodie-back.png) |
+| **Ficheiro da manga** | [PDF](../team/designer/print/variants/next/files/jose/jose-sleeve.pdf) · [SVG](../team/designer/print/variants/next/files/jose/jose-sleeve.svg) · [PNG](../team/designer/print/variants/next/files/jose/jose-sleeve.png) |
 
 ### 🟣 Roxo (t-shirts) / Lavanda (sweat) {#vicky}
 
@@ -113,6 +118,7 @@ path: impressao/index.html
 | **Sweat** | 1: Lavanda, tamanho M |
 | **Ficheiros da t-shirt** | frente [PDF](../team/designer/print/variants/next/files/vicky/vicky-tee-front.pdf) · [SVG](../team/designer/print/variants/next/files/vicky/vicky-tee-front.svg) · [PNG](../team/designer/print/variants/next/files/vicky/vicky-tee-front.png); frente mais pequena (XS, S, mulher) [PDF](../team/designer/print/variants/next/files/vicky/vicky-tee-front-small.pdf); costas [PDF](../team/designer/print/variants/next/files/vicky/vicky-tee-back.pdf) · [SVG](../team/designer/print/variants/next/files/vicky/vicky-tee-back.svg) · [PNG](../team/designer/print/variants/next/files/vicky/vicky-tee-back.png) |
 | **Ficheiros da sweat** | peito [PDF](../team/designer/print/variants/next/files/vicky/vicky-hoodie-chest.pdf) · [SVG](../team/designer/print/variants/next/files/vicky/vicky-hoodie-chest.svg) · [PNG](../team/designer/print/variants/next/files/vicky/vicky-hoodie-chest.png); costas [PDF](../team/designer/print/variants/next/files/vicky/vicky-hoodie-back.pdf) · [SVG](../team/designer/print/variants/next/files/vicky/vicky-hoodie-back.svg) · [PNG](../team/designer/print/variants/next/files/vicky/vicky-hoodie-back.png) |
+| **Ficheiro da manga** | [PDF](../team/designer/print/variants/next/files/vicky/vicky-sleeve.pdf) · [SVG](../team/designer/print/variants/next/files/vicky/vicky-sleeve.svg) · [PNG](../team/designer/print/variants/next/files/vicky/vicky-sleeve.png) |
 
 ### 🟡 Amarelo {#indi}
 
@@ -126,3 +132,4 @@ path: impressao/index.html
 | **Sweat** | 1: Amarelo, tamanho L |
 | **Ficheiros da t-shirt** | frente [PDF](../team/designer/print/variants/next/files/indi/indi-tee-front.pdf) · [SVG](../team/designer/print/variants/next/files/indi/indi-tee-front.svg) · [PNG](../team/designer/print/variants/next/files/indi/indi-tee-front.png); frente mais pequena (XS, S, mulher) [PDF](../team/designer/print/variants/next/files/indi/indi-tee-front-small.pdf); costas [PDF](../team/designer/print/variants/next/files/indi/indi-tee-back.pdf) · [SVG](../team/designer/print/variants/next/files/indi/indi-tee-back.svg) · [PNG](../team/designer/print/variants/next/files/indi/indi-tee-back.png) |
 | **Ficheiros da sweat** | peito [PDF](../team/designer/print/variants/next/files/indi/indi-hoodie-chest.pdf) · [SVG](../team/designer/print/variants/next/files/indi/indi-hoodie-chest.svg) · [PNG](../team/designer/print/variants/next/files/indi/indi-hoodie-chest.png); costas [PDF](../team/designer/print/variants/next/files/indi/indi-hoodie-back.pdf) · [SVG](../team/designer/print/variants/next/files/indi/indi-hoodie-back.svg) · [PNG](../team/designer/print/variants/next/files/indi/indi-hoodie-back.png) |
+| **Ficheiro da manga** | [PDF](../team/designer/print/variants/next/files/indi/indi-sleeve.pdf) · [SVG](../team/designer/print/variants/next/files/indi/indi-sleeve.svg) · [PNG](../team/designer/print/variants/next/files/indi/indi-sleeve.png) |
