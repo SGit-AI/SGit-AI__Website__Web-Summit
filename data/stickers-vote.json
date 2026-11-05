@@ -1,7 +1,7 @@
 {
   "about": "The team sticker vote (WS-159, admin/tools/stickers_vote.py). One append lane per team person with a site key; each lane token is sealed to that person (ws-ecies-1, data/person-keys.json), so only their browser opens it. Votes are signed by the person, sealed to drain_public_key (sgit hybrid v2) and written to their lane. The read key is published on purpose (Dinis): it renders the vault and lets anyone list who has a vote waiting, never what they chose.",
   "agent": "conductor@web-summit.dinis",
-  "updated": "2026-11-05T03:45:56Z",
+  "updated": "2026-11-05T03:57:22Z",
   "closes_at": "2026-11-05T14:30:00Z",
   "endpoint": "https://dev.send.sgraph.ai",
   "vault_id": "uy67e2lt",
