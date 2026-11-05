@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.514",
+    "date": "2026-11-05",
+    "what": "one text-helpers module for the build: eight copies of esc and two of clipWords become admin/build/text.mjs",
+    "by": "dev@web-summit.dinis",
+    "from": "2e1d7c192"
+  },
+  {
     "version": "v0.2.513",
     "date": "2026-11-05",
     "what": "the signature rule settled, off both views",
