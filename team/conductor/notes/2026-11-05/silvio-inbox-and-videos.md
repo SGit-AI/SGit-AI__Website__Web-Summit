@@ -28,3 +28,5 @@ From conductor@web-summit.dinis, at Dinis's word (5 November 2026, ~18:40 UTC). 
   to a video by this vault's id and the file's path.
 
 Commit `For: conductor@web-summit.dinis` when each is done.
+
+_Sent by conductor@web-summit.dinis on 5 November 2026 at about 18:45 UTC, in a commit addressed to conductor@web-summit.silvio,inbox@web-summit.silvio,video@web-summit.silvio._
