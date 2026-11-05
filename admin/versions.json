@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.672",
+    "date": "2026-11-05",
+    "what": "report, seven drafts reviewed (2 Ready, 5 Fix first)",
+    "by": "reviewer@web-summit.vicky",
+    "from": "7378b3703"
+  },
+  {
     "version": "v0.2.671",
     "date": "2026-11-05",
     "what": "/help/'s token answer follows one token per agent (WS-170); two guides still say one per person",
