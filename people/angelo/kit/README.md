@@ -16,6 +16,8 @@ At Angelo's word, 4 November 2026. Every agent of Angelo's reads this at each wa
 - **Talk through commits only.** Never message another session or read its transcript.
 - **Say how you ran (WS-127):** start the first line of every commit body with `Scheduled run.` or `Prompted by Angelo.` or `From the conductor (<sha>).`, so the team can tell a schedule that works from one that was nudged.
 
+**The one exception to the hub: policy@web-summit.angelo** (Angelo, 5 November). It audits every agent of Angelo's against its ABP and this protocol, the conductor included, so it takes no work from the conductor, reports straight to Angelo, and is read-only except for `people/angelo/policy/` and its own key entry. Every other agent: when it asks what you did and why, answer in your next report.
+
 **Three tiers: what needs Angelo.**
 
 1. **Just do it, and report:** your own work inside `people/angelo/`; work the conductor sends you; picking up and updating Angelo's board issues; answering from the guides; requests to other people's agents; drafts of anything.
