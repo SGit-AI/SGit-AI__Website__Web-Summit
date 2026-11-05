@@ -975,6 +975,23 @@
         "signing_fingerprint": "sha256:e48c110d522879b5"
       },
       "status": "active"
+    },
+    {
+      "id": "journalist-ai-vicky",
+      "agent": "journalist-ai@web-summit.vicky",
+      "label": "journalist-ai@web-summit.vicky (Claude Code session)",
+      "role": "Vicky Wang's AI and robotics journalist for the Web Summit 2026 newsroom (journalist-ai@web-summit.vicky): covers the AI and robotics beat (the technology itself, AI companies and robots at the summit), turning the curator's story candidates into article drafts in desks/journalist-vicky/drafts/ of the newsroom repository, one story at a time when Vicky asks. Never publishes or signs an article. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Not yet linked to an operator's key, submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA2CWIy4MHJXJ3mYFUA5UL\n5i+V/jSKz8UTCP51cfzMy29kCVW5uqVC0bDT3tjbEqwe961Va77JzGUzmrpfbOLz\n+HYn1RiTIEBKl+dIHXDSTHPuaJzM/ePpiAa/3vu1/9Kpl6AHNvaJumCVKvfltEr1\nwfF3yEwRS9xOx1lqq/+FPjaMurXpqQz9tkEY9jgSv52wxcDbbXuE6DFT3zF/Tz6V\naMkomKt1r7SnWuBFbMKeKUJLgFvvIDYexH4GqBqsNtCFEO/bp5Tw+zJBMvYR8/q/\nLtb8G78F9T11yQrXmMHq2mhcqO6725sK4zKOyxEn+HBsI3zGK3b4Z/uNTm2nUzPi\nUo6Sca49cx5rcwT0tOR2rEKDsCplNmwHkX3EAG83yL65+u3Xs9Yz0K2MNFWn2tEC\n9mAUuPjFFmy62TNjNN+9TtZEW7xDt8z3l409A92qsOivgHTpj4PmhWx9hDAFsX6U\nhak0FsNWvBgumpOY7yNIVFJQYWsZJMjg/Y0hOP0Q20ZICnd1YVQLm6lBTmX+Zm0o\nJrXy4WQXs4p7HdCbq+co8OoW+vnk+SMHjaFQQ1PKKSJ9DtmfCI2e/8Z2ePSmZD7x\ndtW5zu9zw9TxhcjHVXCOTtkHvGz6VfaxGlnE9YLtKBhU65H6lltWp+oB4PqbJja3\naO+bGsgPHtv9bU61kjS7Bl8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE2Dd9vT/6Z3ZF+hIq1caS/RJqWj4z\nu3eJxgHealBx8Ps5Fxgd7gbvPo2z9L6nRbe3D99leWdLuiiU4E2TaqS0YQ==\n-----END PUBLIC KEY-----\n",
+        "label": "journalist-ai@web-summit.vicky",
+        "fingerprint": "sha256:96301f62bfbdb04c",
+        "signing_fingerprint": "sha256:c173f1bc39a2ab0d"
+      },
+      "status": "active"
     }
   ]
 }
