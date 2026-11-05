@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.549",
+    "date": "2026-11-05",
+    "what": "12:30 wake: the to-do list from brief 10 (the vote is WS-167, keys on every device WS-166); a \"right now\" line",
+    "by": "dashboard@web-summit.indi",
+    "from": "ce899b9e6"
+  },
+  {
     "version": "v0.2.548",
     "date": "2026-11-05",
     "what": "11:45 wake (late): tables refreshed from brief 3, and a report",
