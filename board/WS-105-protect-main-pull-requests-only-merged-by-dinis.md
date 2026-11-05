@@ -9,6 +9,10 @@ picked_by:
 only: dinis
 action: "Add a rule for main: pull requests only, merged by you (Settings, Rules)."
 link: https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/settings/rules
+card: repo-setting
+card_repo: SGit-AI/SGit-AI__Website__Web-Summit
+card_branch: main
+card_rule: "pull requests only, merged by Dinis"
 ---
 On 2 November at 23:06 the conductor pushed to `main` directly when asked for a major release. A rule did not stop it; a setting would. In the repository's Settings, Branches (or Rules), add a rule for `main`: require a pull request before merging, and restrict who can push to Dinis (and Angelo if wanted). Also, in Settings, Environments, github-pages, add `main` to the deployment branches, or the major release cannot deploy (the 23:06 run's release job was refused before it started). Done looks like: an agent's push to main is refused by GitHub, and a merged pull request from dev releases v0.2.0.
 

@@ -1,0 +1,23 @@
+{
+  "kind": "repo-setting",
+  "label": "A repository setting",
+  "think": [
+    "What does the setting protect against? The issue says what went wrong without it.",
+    "Who is slowed down by it? A rule on main means every major release becomes a pull request that you merge.",
+    "Is it reversible? A ruleset can be switched off in one click; do it, and watch the first release.",
+    "Only an admin can change it."
+  ],
+  "evidence": ["ask", "why", "issue", "agenda", "commits"],
+  "links": [
+    ["Rules and rulesets: {repo}", "https://github.com/{repo}/settings/rules"],
+    ["Branches: {repo}", "https://github.com/{repo}/settings/branches"],
+    ["Recent pushes to {branch}", "https://github.com/{repo}/commits/{branch}"]
+  ],
+  "answers": [
+    { "id": "done", "label": "Done: the rule is on", "action": "done", "option": "The rule for {branch} is on: {rule}", "primary": true },
+    { "id": "done-other", "label": "Done, differently", "action": "done", "input": { "type": "text", "placeholder": "What you set instead" } },
+    { "id": "no", "label": "No: not now", "action": "drop", "input": { "type": "text", "placeholder": "Why not" } },
+    { "id": "later", "label": "Later", "action": "later" }
+  ],
+  "chat": "This card asks Dinis to change a GitHub repository setting. Help him weigh the protection against the friction, and find the exact setting."
+}

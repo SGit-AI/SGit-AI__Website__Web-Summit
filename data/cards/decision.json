@@ -1,0 +1,24 @@
+{
+  "kind": "decision",
+  "label": "A decision",
+  "think": [
+    "What is actually being asked? One sentence.",
+    "Who is blocked until you answer, and since when?",
+    "Is the recommendation good enough? If yes, take it and move on.",
+    "Is it yours at all? If someone else can decide, delegate it, with a line on what you want."
+  ],
+  "evidence": ["ask", "recommend", "why", "issue", "agenda", "commits", "people"],
+  "links": [
+    ["On the agenda: {meeting}", "../../../../meetings/{meeting}/index.html"],
+    ["The issue's file", "{issue_url}"]
+  ],
+  "answers": [
+    { "id": "yes", "label": "Yes", "action": "decide", "option": "Yes" },
+    { "id": "no", "label": "No", "action": "decide", "option": "No" },
+    { "id": "details", "label": "Need more details", "action": "details", "input": { "type": "text", "placeholder": "What you need to know" } },
+    { "id": "mine", "label": "It's mine: I'll do it", "action": "mine" },
+    { "id": "later", "label": "Later", "action": "later" },
+    { "id": "drop", "label": "No decision needed", "action": "drop" }
+  ],
+  "chat": "This card is a decision Dinis has to make for the Web Summit team. Help him understand it, weigh the options and the recommendation, and decide quickly."
+}

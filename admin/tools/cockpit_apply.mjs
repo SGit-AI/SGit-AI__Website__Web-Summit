@@ -55,17 +55,23 @@ for (const f of files.sort()) {
             if (a.action === 'done') setFront(file, { status: 'done', done_said: JSON.stringify(`Done. ${words}`) })
             else if (a.action === 'delegate') { setFront(file, { picked_by: `${a.delegate_name}, ${a.delegate_agent} (delegated by ${nameOf(person)})`, delegated: JSON.stringify(`To ${a.delegate_name}. ${words}`) }); forTo.add(a.delegate_agent) }
             else if (a.action === 'later') setFront(file, { later: JSON.stringify(words) })
+            else if (a.action === 'decide' || a.action === 'drop') setFront(file, { status: 'done', decided: JSON.stringify(`${a.action === 'drop' ? 'No decision needed. ' : ''}${words}`) })
+            else if (a.action === 'mine') setFront(file, { picked_by: `${nameOf(person)} (said on the cockpit)`, status: 'picked' })
+            else if (a.action === 'details' || a.action === 'note') { if (!dry) fs.appendFileSync(file, `\n\n**${a.action === 'details' ? `${nameOf(person)} needs more details` : `A note from ${nameOf(person)}`}:** ${words}\n`); const asker = (fs.readFileSync(file, 'utf8').match(/^agents:.*?([a-z0-9-]+@web-summit\.[a-z0-9-]+)/m) || [])[1]; if (asker && a.action === 'details') forTo.add(asker) }
             done.push(`${a.ref}: ${a.action}${a.delegate_name ? ' to ' + a.delegate_name : ''}`)
-            log(it, 'applied', a.action === 'done' ? `${a.issue || a.ref} marked done on the board` : a.action === 'delegate' ? `${a.issue || a.ref} picked by ${a.delegate_name}; their conductor told` : `${a.issue || a.ref}: later, recorded on the issue`)
+            log(it, 'applied', { done: `${a.issue || a.ref} marked done on the board`, delegate: `${a.issue || a.ref} picked by ${a.delegate_name}; told by a commit For:`, later: `${a.issue || a.ref}: later, recorded on the issue`, decide: `${a.issue || a.ref}: decided, in your words, and closed`, drop: `${a.issue || a.ref}: closed, no decision needed`, mine: `${a.issue || a.ref}: picked by you`, details: `${a.issue || a.ref}: your question is on the issue; whoever raised it is asked`, note: `${a.issue || a.ref}: your note is on the issue` }[a.action] || `${a.action}: recorded`)
         } else {
             const file = path.join(ROOT, 'data/meetings', a.ref); if (!fs.existsSync(file)) { skipped.push(`${a.ref}: no such agenda item`); log(it, 'refused', 'no such agenda item'); continue }
             const item = JSON.parse(fs.readFileSync(file, 'utf8')), at = new Date().toISOString()
             if (a.action === 'decide' || a.action === 'drop') { item.status = 'decided'; item.decided = { said: a.action === 'drop' ? `No decision needed. ${words}` : words, by: person, at, via: 'cockpit' } }
             else if (a.action === 'delegate') { item.status = 'delegated'; item.delegated = { to: a.delegate, agent: a.delegate_agent, said: words, by: person, at }; forTo.add(a.delegate_agent) }
             else if (a.action === 'now' || a.action === 'later') item.priority = { set: a.action, said: words, by: person, at }
+            else if (a.action === 'mine') { item.priority = { set: 'now', said: `Mine. ${words}`, by: person, at }; item.owner = person }
+            else if (a.action === 'details') { (item.details_requested ??= []).push({ said: words, by: person, at }); if (item.by) forTo.add(item.by) }
+            else if (a.action === 'note') (item.notes ??= []).push({ said: words, by: person, at })
             if (!dry) fs.writeFileSync(file, JSON.stringify(item, null, 2) + '\n')
             done.push(`${a.ref}: ${a.action}${a.delegate_name ? ' to ' + a.delegate_name : ''}`)
-            log(it, 'applied', a.action === 'decide' || a.action === 'drop' ? 'recorded as decided on the agenda, in your words' : a.action === 'delegate' ? `delegated to ${a.delegate_name} on the agenda; their conductor told` : `priority set: ${a.action === 'now' ? 'do this first' : 'later'}`)
+            log(it, 'applied', { decide: 'recorded as decided on the agenda, in your words', drop: 'closed on the agenda: no decision needed', delegate: `delegated to ${a.delegate_name} on the agenda; told by a commit For:`, now: 'priority set: do this first', later: 'priority set: later', mine: 'yours, at the top of your list', details: `your question is on the item; ${item.by || 'whoever raised it'} is asked`, note: 'your note is on the item' }[a.action] || `${a.action}: recorded`)
         }
     }
     applied.files.push(id)

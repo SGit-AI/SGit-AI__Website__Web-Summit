@@ -52,7 +52,7 @@
         const chip = (n, t, cls, h) => `<a class="ms-c${n ? ' ' + cls : ''}" href="${h}"><b>${n}</b> ${t}</a>`
         strip.hidden = false
         strip.innerHTML = `<div class="row"><span class="ms-who"><span class="av" style="--c:${esc(p.colour)}">${esc(ini(p.name))}</span>${esc(p.first)}</span>
-${p.only_you != null ? chip(p.only_you, 'only you', 'hot', dash + '#only-you') : ''}${chip(p.decide ?? p.decisions.length, 'to decide', 'warn', dash + '#decide')}${chip(p.overdue, 'overdue', 'warn', up + p.links.centre)}
+${p.only_you != null ? chip(p.only_you, 'only you', 'hot', p.focus ? up + 'people/' + p.id + '/focus/only-you/index.html' : dash) : ''}${chip(p.decide ?? p.decisions.length, 'to decide', 'warn', p.focus ? up + 'people/' + p.id + '/focus/decide/index.html' : dash)}${chip(p.overdue, 'overdue', 'warn', up + p.links.centre)}
 <a class="ms-c" href="${up}${esc(p.briefing)}">stand-up <b>${esc(su)}</b></a>
 ${draft ? `<a class="ms-c act" href="${dash}"><b>${draft}</b> action${draft > 1 ? 's' : ''} to send</a>` : ''}${sent ? `<a class="ms-c sent" href="${dash}"><b>${sent}</b> sent, not processed</a>` : ''}
 ${p.next ? `<a class="ms-c warn" href="${up}start/index.html#steps">next step: ${esc(p.next.step)}</a>` : ''}

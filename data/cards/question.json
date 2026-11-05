@@ -1,0 +1,19 @@
+{
+  "kind": "question",
+  "label": "A question",
+  "think": [
+    "Can you answer in one line? Then do.",
+    "Is it really for you, or for someone who knows more?"
+  ],
+  "evidence": ["ask", "recommend", "why", "issue", "agenda", "people"],
+  "links": [
+    ["On the agenda: {meeting}", "../../../../meetings/{meeting}/index.html"]
+  ],
+  "answers": [
+    { "id": "answer", "label": "Answer", "action": "decide", "input": { "type": "text", "placeholder": "Your answer" }, "primary": true },
+    { "id": "details", "label": "Need more details", "action": "details", "input": { "type": "text", "placeholder": "What you need to know" } },
+    { "id": "later", "label": "Later", "action": "later" },
+    { "id": "drop", "label": "Not a question for me", "action": "drop" }
+  ],
+  "chat": "This card is a question for Dinis from the team. Help him answer it well, in a line or two."
+}

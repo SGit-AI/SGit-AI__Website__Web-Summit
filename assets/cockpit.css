@@ -136,3 +136,8 @@ main.cockpit > p, main.cockpit > ul, main.cockpit > ol, main.cockpit > h2, main.
 .ck-badge.draft { background: var(--warn-soft); } .ck-badge.sent { background: var(--sent-soft); } .ck-badge.done { background: var(--ok-soft); } .ck-badge.refused { background: var(--bad-soft); }
 
 .ck-notice { margin: 0.5rem 0 0.2rem; padding: 0.45rem 0.6rem; border-radius: 8px; background: var(--ok-soft); font-size: 0.9rem; }
+
+.ck-focus { margin-left: auto; font-size: 0.9rem; font-weight: 600; padding: 0.35rem 0.8rem; border-radius: 999px; background: var(--accent); color: var(--accent-ink); text-decoration: none; }
+.ck-acts .ws-link { display: inline-flex; align-items: center; gap: 0.35rem; }
+.ck-acts .ws-link small { color: var(--ink-2); font-size: 0.75rem; }
+.ck-acts .ws-github { background: var(--surface-2); }

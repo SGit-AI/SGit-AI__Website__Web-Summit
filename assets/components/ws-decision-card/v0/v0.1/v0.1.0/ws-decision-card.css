@@ -1,0 +1,64 @@
+/* ws-decision-card: the site's tokens (assets/site.css) reach into the shadow root as custom properties */
+:host            { display: block; color: var(--ink); font: inherit; }
+*                { box-sizing: border-box; }
+.card            { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 1.4rem 1.6rem; }
+header           { border-bottom: 1px solid var(--line); padding-bottom: 0.8rem; margin-bottom: 1rem; }
+.kicker          { margin: 0; font-size: 0.78rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-2); }
+h2               { margin: 0.2rem 0 0.5rem; font-size: clamp(1.35rem, 2.2vw, 1.8rem); line-height: 1.25; }
+h3               { margin: 0 0 0.35rem; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); display: flex; gap: 0.5rem; align-items: center; }
+section          { margin: 0 0 1.1rem; }
+p                { margin: 0.2rem 0; line-height: 1.5; }
+ul, ol           { margin: 0.2rem 0; padding-left: 1.2rem; }
+li               { margin: 0.2rem 0; line-height: 1.45; }
+small, .meta     { color: var(--ink-2); font-size: 0.86rem; }
+code             { font-family: var(--mono, monospace); font-size: 0.86em; background: var(--code-bg); padding: 0.05rem 0.3rem; border-radius: 4px; }
+.prio            { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; margin: 0; font-size: 0.84rem; color: var(--ink-2); }
+.prio > b        { font-size: 1.05rem; color: var(--ink); margin-right: 0.3rem; }
+.prio span       { padding: 0.1rem 0.5rem; border-radius: 999px; background: var(--surface-2); }
+.prio span.neg   { background: var(--wait-soft); }
+.cols            { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.6rem; }
+@media (min-width: 900px) { .cols { grid-template-columns: minmax(0, 1.35fr) minmax(300px, 1fr); } .right { position: sticky; top: 1rem; align-self: start; } }
+.ask p           { font-size: 1.12rem; }
+.rec             { background: var(--accent-soft); border-radius: 10px; padding: 0.6rem 0.8rem; }
+.think ol        { padding-left: 1.3rem; }
+.think li        { color: var(--ink); }
+.issue .body     { font-size: 0.93rem; max-height: 9.5em; overflow: auto; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 0.5rem 0.7rem; }
+.commits li      { font-size: 0.9rem; list-style: none; margin-left: -1.2rem; }
+.tag             { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; padding: 0.02rem 0.35rem; border-radius: 4px; background: var(--surface-2); }
+.tag.open        { background: var(--warn-soft); } .tag.decided, .tag.done, .tag.merged, .tag.closed { background: var(--ok-soft); }
+.links p         { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.ws-link         { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.65rem; border-radius: 8px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); text-decoration: none; font-size: 0.9rem; }
+.ws-link:hover   { border-color: var(--accent); }
+.ws-link small   { color: var(--ink-2); font-size: 0.75rem; }
+.ws-github       { background: var(--surface-2); }
+h3 .ws-link     { padding: 0.05rem 0.4rem; font-size: 0.82rem; text-transform: none; letter-spacing: 0; }
+li .ws-link     { display: inline; padding: 0; border: 0; background: none; color: var(--accent-dk); text-decoration: underline; }
+li .ws-link svg { vertical-align: -1px; margin-right: 0.2rem; color: var(--ink-2); }
+.ask details summary { cursor: pointer; font-size: 1.05rem; line-height: 1.5; list-style: none; }
+.ask details summary span { color: var(--accent); font-size: 0.86rem; text-decoration: underline; }
+.ask details[open] summary { display: none; }
+.graph           { margin: 0; }
+.graph svg       { width: 100%; max-width: 460px; height: auto; display: block; }
+.graph .e        { stroke: var(--line-2); stroke-width: 1.2; }
+.graph .el       { font-size: 8px; fill: var(--ink-2); text-anchor: middle; }
+.graph .cl       { font-size: 9px; fill: var(--accent-ink); text-anchor: middle; font-weight: 700; }
+.graph .nl       { font-size: 9px; fill: var(--ink); text-anchor: middle; }
+.graph figcaption { display: flex; flex-wrap: wrap; gap: 0.7rem; font-size: 0.78rem; color: var(--ink-2); }
+.graph figcaption i { display: inline-block; width: 0.6rem; height: 0.6rem; border-radius: 50%; margin-right: 0.25rem; vertical-align: -1px; }
+.right           { background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 1rem; }
+.answers         { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.6rem; }
+button, select, input, textarea { font: inherit; color: var(--ink); }
+.ans             { text-align: left; padding: 0.6rem 0.75rem; border-radius: 10px; border: 1px solid var(--line-2); background: var(--surface); cursor: pointer; font-size: 0.98rem; display: flex; gap: 0.55rem; align-items: baseline; }
+.ans:hover, .ans:focus-visible { border-color: var(--accent); outline: none; }
+.ans.primary     { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
+.ans.on          { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+kbd              { font-family: var(--mono, monospace); font-size: 0.72rem; padding: 0 0.3rem; border-radius: 4px; border: 1px solid var(--line-2); background: var(--surface-2); color: var(--ink-2); }
+.ans.on kbd      { background: transparent; color: inherit; }
+.fx              { font-size: 0.88rem; color: var(--ink-2); background: var(--surface-2); border-radius: 8px; padding: 0.45rem 0.6rem; min-height: 2.6rem; }
+.fx b            { color: var(--ink); }
+.in              { display: block; margin: 0.6rem 0; font-size: 0.86rem; color: var(--ink-2); }
+.in input, .in textarea { display: block; width: 100%; margin-top: 0.25rem; padding: 0.5rem 0.6rem; border-radius: 8px; border: 1px solid var(--line-2); background: var(--surface); }
+.row             { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.4rem 0; }
+.row button, .row select { padding: 0.42rem 0.7rem; border-radius: 8px; border: 1px solid var(--line-2); background: var(--surface); cursor: pointer; font-size: 0.88rem; }
+.row .go         { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; flex: 1; }
+.row .ghost      { background: transparent; }

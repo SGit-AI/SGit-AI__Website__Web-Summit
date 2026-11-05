@@ -179,7 +179,7 @@ function rail(rel, up, body) {
     return pages ? `<aside class="rail" aria-label="${esc(sec.t)}: its pages">${pages}</aside>` : ''
 }
 
-function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false, head = '', wide = false }) {
+function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false, head = '', wide = false, focus = false }) {
     const up = '../'.repeat(rel.split('/').length - 1)
     body = String(body).replaceAll('href="@@/', `href="${up}`)   // links from build-time blocks (the agenda) written from the site root
     const side = home || wide ? '' : rail(rel, up, body)   // wide: a cockpit (people/<id>/dashboard.md, layout: cockpit) uses the whole screen
@@ -198,7 +198,7 @@ function page({ rel, title, description, body, meta = '', mdTwin = '', lead = ''
 <meta property="og:title" content="${esc(title)}">
 <link rel="stylesheet" href="${up}assets/site.css">${head}
 </head>
-<body data-section="${home ? 'home' : (sectionOf(rel)?.t || 'other').toLowerCase()}" data-up="${up}">
+<body data-section="${home ? 'home' : (sectionOf(rel)?.t || 'other').toLowerCase()}" data-up="${up}"${focus ? ' data-focus' : ''}>
 <a class="skip" href="#main">Skip to the content</a>
 <nav class="site"><div class="row">
 <a class="brand" href="${up}index.html">web-summit<span>.sgit.ai</span></a>
@@ -600,9 +600,18 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
         write(`people/${m.id}/dashboard.json`, JSON.stringify(D))
         const rel = `people/${m.id}/index.html`, more = expandIssues(rawBody, '../../'), md = CK.cockpitMd(D) + '\n\n' + more
         write(rel, page({ rel, title: meta.title, description: meta.summary, wide: true, mdTwin: twinPath(rel),
-            head: '<link rel="stylesheet" href="../../assets/cockpit.css"><script src="../../assets/cockpit.js" defer></script>',
+            head: '<link rel="stylesheet" href="../../assets/cockpit.css"><script type="module" src="../../assets/cockpit.js"></script>',
             body: `<div id="ck" data-src="dashboard.json" data-lanes="../../assets/feedback.json"></div><div id="ck-fallback">${render(CK.cockpitMd(D))}</div><section class="ck-more" id="more">${render(more)}</section>` }))
         pages.push({ rel, title: meta.title, description: meta.summary }); twin(rel, meta.title, meta.summary, md)
+        // the focus pages (Dinis, 5 November): one queue, one card at a time, nothing else on the screen
+        for (const [slug, q, t] of [['only-you', 'only_you', 'Only you can do this'], ['decide', 'decisions', 'Decide']]) {
+            const frel = `people/${m.id}/focus/${slug}/index.html`, ftitle = `${t}: ${m.name.split(' ')[0]}'s focus`, items = D[q]
+            const fmd = `${items.length} cards, highest priority first. Each one is drawn from its kind (data/cards/), with its evidence, links, relationships and answers; this list is the same data as text.\n\n${items.map((x, i) => `${i + 1}. **${(x.issue || x.id) ? (x.issue || x.id) + ': ' : ''}${x.title.replace(/\|/g, '/')}** (${x.kind}, priority ${x.score}). ${x.why}.`).join('\n')}`
+            write(frel, page({ rel: frel, title: ftitle, description: `${t}: ${m.name}'s cards, one at a time, each with its evidence and the answers that fit it.`, wide: true, focus: true, mdTwin: twinPath(frel),
+                head: '<script type="module" src="../../../../assets/components/ws-focus-queue/v0/v0.1/v0.1.0/ws-focus-queue.js"></script>',
+                body: `<ws-focus-queue data-src="../../dashboard.json" data-lanes="../../../../assets/feedback.json" data-queue="${q}" data-person="${m.id}" data-back="../../index.html"></ws-focus-queue><noscript>${render(fmd)}</noscript>` }))
+            pages.push({ rel: frel, title: ftitle, description: t }); twin(frel, ftitle, t, fmd)
+        }
         continue
     }
     const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n\`\`\`chart agents-map ${m.id}\n\`\`\`\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
@@ -651,6 +660,7 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
         const ck = CK.cockpit({ ROOT, id: m.id, teamData, ISSUES, MEET, INV, OB, VERSION })   // the same counts as the cockpit, for the top bar's strip
         ME.people[m.id] = {
             only_you: ck.only_you.length, decide: ck.decisions.length, standup_at: nx.at,
+            focus: /^layout: cockpit$/m.test((d => fs.existsSync(d) ? fs.readFileSync(d, 'utf8') : '')(path.join(ROOT, 'people', m.id, 'dashboard.md'))),
             id: m.id, name: m.name, first: m.name.split(' ')[0], role: m.role || '', colour: CAST_PEOPLE[m.id]?.colour || merch[m.id] || '',
             level: o.level, level_name: LEVELS[o.level], next: o.next,
             open: open.length, overdue: open.filter(i => h(i) < 0 && !i.recurring).length, soon: open.filter(i => h(i) >= 0 && h(i) <= 72).length,

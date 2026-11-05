@@ -8,6 +8,7 @@
 // applies what you signed (admin/tools/cockpit_apply.mjs), and writes each entry's outcome, by its id, to
 // people/<id>/cockpit-log.json; the next release carries it here as `processed`, and the entry turns green. Unsigned
 // answers are never acted on. Written by dashboard@web-summit.dinis.
+import { linkTo } from './components/ws-shared/v0/v0.1/v0.1.0/ws-shared.js'
 (() => {
     'use strict'
     const root = document.getElementById('ck')
@@ -97,7 +98,7 @@
     const onlyCard = (x, i) => `<article class="ck-card only${cardCls(x.file)}" data-ref="${esc(x.file)}">
 <div class="ck-h"><span class="ck-n">${i + 1}</span><div><h3>${esc(x.id)}: ${esc(x.title)}</h3><p class="ck-why">${esc(x.why)}${x.due ? ` · due ${esc(x.due)}` : ''}</p></div></div>
 <p>${esc(x.action)}</p>${badge(x.file)}
-<div class="ck-acts">${x.link ? `<a class="ck-btn go" href="${esc(x.link)}" target="_blank" rel="noopener">Do it now ↗</a>` : ''}<button type="button" class="ck-btn" data-act="done" data-ref="${esc(x.file)}">Done</button>${delegateSel(x.file)}<button type="button" class="ck-btn ghost" data-act="later" data-ref="${esc(x.file)}">Later</button><a class="ck-btn ghost" href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/${esc(x.file)}" title="the issue's file">${esc(x.id)}</a></div>
+<div class="ck-acts"><a class="ck-btn go" href="focus/only-you/index.html#${encodeURIComponent(x.file)}">Open the card</a>${x.link ? linkTo(x.link, 'Do it now', 'ck-btn') : ''}<button type="button" class="ck-btn" data-act="done" data-ref="${esc(x.file)}">Done</button>${delegateSel(x.file)}<button type="button" class="ck-btn ghost" data-act="later" data-ref="${esc(x.file)}">Later</button>${linkTo('https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/' + x.file, x.id, 'ck-btn ghost')}</div>
 </article>`
 
     const decCard = (x, i) => {
@@ -112,7 +113,7 @@ ${isOpen ? `<div class="ck-body">${x.detail ? `<p class="ck-detail${x.detail.len
 ${x.recommend ? `<p class="ck-rec"><b>Recommended:</b> ${esc(x.recommend)}</p>` : ''}
 ${opts.length ? `<div class="ck-opts" role="group" aria-label="Options">${opts.map(o => `<button type="button" class="ck-opt${chosen === o ? ' on' : ''}${rec && rec.includes(o.toLowerCase().slice(0, 24)) ? ' rec' : ''}" data-opt="${esc(o)}" data-ref="${esc(x.ref)}">${esc(o)}</button>`).join('')}</div>` : ''}
 <textarea data-words="${esc(x.ref)}" rows="2" placeholder="In your words (optional; for a question, your answer)">${esc(pick['w:' + x.ref] || '')}</textarea>
-<div class="ck-acts"><button type="button" class="ck-btn go" data-act="decide" data-ref="${esc(x.ref)}">Decide</button>${delegateSel(x.ref)}<button type="button" class="ck-btn ghost" data-act="now" data-ref="${esc(x.ref)}">Do this first</button><button type="button" class="ck-btn ghost" data-act="later" data-ref="${esc(x.ref)}">Later</button><button type="button" class="ck-btn ghost" data-act="drop" data-ref="${esc(x.ref)}">No decision needed</button><a class="ck-btn ghost" href="../../meetings/${esc(x.first_meeting)}/index.html">on the agenda since ${esc(meetLabel(x.first_meeting))}</a></div></div>` : ''}
+<div class="ck-acts"><a class="ck-btn" href="focus/decide/index.html#${encodeURIComponent(x.ref)}">Open the card</a><button type="button" class="ck-btn go" data-act="decide" data-ref="${esc(x.ref)}">Decide</button>${delegateSel(x.ref)}<button type="button" class="ck-btn ghost" data-act="now" data-ref="${esc(x.ref)}">Do this first</button><button type="button" class="ck-btn ghost" data-act="later" data-ref="${esc(x.ref)}">Later</button><button type="button" class="ck-btn ghost" data-act="drop" data-ref="${esc(x.ref)}">No decision needed</button><a class="ck-btn ghost" href="../../meetings/${esc(x.first_meeting)}/index.html">on the agenda since ${esc(meetLabel(x.first_meeting))}</a></div></div>` : ''}
 </article>`
     }
     const agentRow = a => `<li class="ck-ag"><span class="ck-dot ${dot(a.idle_h)}" title="${a.idle_h == null ? 'no commit in a week' : 'last commit ' + ago(a.last_at)}"></span><b title="${esc(a.name)}">${esc(a.short)}${a.person !== D.person.id ? `<i>.${esc(a.person)}</i>` : ''}</b><span class="ck-ago">${esc(a.last_at ? ago(a.last_at) : 'quiet')}</span><span class="ck-last" title="${esc(a.last)}">${esc(a.last || a.job)}</span></li>`
@@ -157,9 +158,9 @@ ${by.done.length + by.refused.length ? `<button type="button" class="ck-btn ghos
 </header>
 <div class="ck-grid">
 <div class="ck-main">
-${inPanel ? `<p class="ck-sub">${inPanel} you have acted on ${inPanel > 1 ? 'are' : 'is'} in <b>Your actions</b>, on the right, until processed.</p>` : ''}<section id="only-you" class="ck-sec"><h2>Only you can do this <span>${onlyLeft.length}</span></h2><p class="ck-sub">Ranked by who is blocked, then how late. One click each.</p>
+${inPanel ? `<p class="ck-sub">${inPanel} you have acted on ${inPanel > 1 ? 'are' : 'is'} in <b>Your actions</b>, on the right, until processed.</p>` : ''}<section id="only-you" class="ck-sec"><h2>Only you can do this <span>${onlyLeft.length}</span>${onlyLeft.length ? '<a class="ck-focus" href="focus/only-you/index.html">Focus: one at a time →</a>' : ''}</h2><p class="ck-sub">Ranked by who is blocked, then how late. One click each.</p>
 ${onlyLeft.length ? onlyLeft.map(onlyCard).join('') : '<p class="ck-empty">Nothing waits on you alone.</p>'}</section>
-<section id="decide" class="ck-sec"><h2>Decide <span>${decLeft.length}</span></h2><p class="ck-sub">Ranked by: blocks someone, overdue, urgent, waiting longest. Choose an option (★ is the recommendation), add your words, then <b>Decide</b>, or <b>Delegate</b> it to someone who can.</p>
+<section id="decide" class="ck-sec"><h2>Decide <span>${decLeft.length}</span>${decLeft.length ? '<a class="ck-focus" href="focus/decide/index.html">Focus: one at a time →</a>' : ''}</h2><p class="ck-sub">Ranked by: blocks someone, overdue, urgent, waiting longest. Choose an option (★ is the recommendation), add your words, then <b>Decide</b>, or <b>Delegate</b> it to someone who can.</p>
 ${decs.map(decCard).join('')}
 ${decLeft.length > 7 ? `<button type="button" class="ck-btn ghost wide" data-all>${showAll ? 'Show the top seven' : `Show all ${decLeft.length}`}</button>` : ''}</section>
 <section id="happening" class="ck-sec"><h2>What is happening</h2><div class="ck-info">
