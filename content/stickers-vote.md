@@ -1,6 +1,6 @@
 ---
 title: "Pick the sticker: the team vote"
-summary: Twenty-three funny laptop stickers for Web Summit Lisbon in three sets, a ranked top 10 each, team only. The images live in an encrypted vault rendered on this page from its published read key; each ballot is signed by the person's site key, sealed, and written to their own append lane. Closes Thursday 5 November, 18:00 UTC.
+summary: Twenty-three funny laptop stickers for Web Summit Lisbon in three sets, a ranked top 10 each, team only. The images live in an encrypted vault rendered on this page from its published read key; each ballot is signed by the person's site key, sealed, and written to their own append lane. Closes Thursday 5 November, 14:30 UTC.
 path: stickers/vote/index.html
 script: stickers-vote
 ---
@@ -15,7 +15,7 @@ This page and the vault work together. The page holds the vault's **read key**, 
 
 1. **One lane per team person.** Everyone on the team with a site key ([data/person-keys.json](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/data/person-keys.json)) has an append lane on the vault. Its token is sealed to that person's key in [data/stickers-vote.json](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/data/stickers-vote.json), so only their browser can open it.
 2. **Your ballot is yours.** Your browser opens your token, signs `{type, person, ranking, not_for_me, at}` (your top 10 in order, and the ones not for you) with your site key, seals it to the vault's drain key (sgit's hybrid envelope: AES-256-GCM, the key wrapped with RSA-OAEP-4096) and writes it to your lane. The lane server sees ciphertext only.
-3. **Angelo, Jose, Indi or Dinis drain.** They hold the vault key (sealed to them on this site; this page opens it for them, in memory, under "Open the vault (full access)") and press **Drain** inside the vault: each ballot is opened, its signature checked against your published key and checked to have come on your own lane, counted, and kept sealed in the vault.
+3. **Angelo, Jose, Indi or Dinis drain.** They hold the vault key (sealed to them on this site; opened for them, in memory, on [the vault page](vault/index.html)) and press **Drain** inside the vault: each ballot is opened, its signature checked against your published key and checked to have come on your own lane, counted, and kept sealed in the vault.
 4. **The leaderboard is shown here and in the vault.** The page reads `results.json` from the vault with the same read key: each sticker's Borda points, how many people put it in their top 10, how many said not for me, and who has voted, never who ranked what.
 
 **What the published read key also allows**, accepted for a short team vote: anyone who reads this page can list the lanes and fetch the sealed votes (unreadable without the drain key), and could mark a waiting ballot as processed before a drain, which would lose it. A forged ballot is rejected, because it needs your signing key. If yours does not show as counted after a drain, submit again.

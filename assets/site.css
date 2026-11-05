@@ -653,3 +653,14 @@ body[data-focus] main { padding-top: 0.8rem; }
 
 .sv-vk { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 0.5rem 0; }
 .sv-vk code { padding: 0.3rem 0.5rem; border-radius: 6px; background: var(--st-shade); word-break: break-all; font-size: 0.85rem; }
+
+/* the sticker vote on the home page (WS-159) */
+.hm-vote { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 1rem; align-items: center; margin: 0 0 1.4rem; padding: 1.1rem; border-radius: var(--radius); border: 2px solid var(--st-green); background: var(--bg); }
+.hm-vote h2 { margin: 0 0 0.35rem; font-size: 1.5rem; }
+.hm-vote p { margin: 0 0 0.8rem; }
+.hm-vote-btn { display: inline-block; padding: 0.65rem 1.4rem; border-radius: 999px; background: var(--st-green); color: var(--st-paper); font-weight: 800; font-size: 1.1rem; text-decoration: none; }
+.hm-vote-btn:hover { filter: brightness(1.1); }
+.hm-vote-strip { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.45rem; }
+.hm-vote-strip img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 10px; transition: transform 0.2s; }
+.hm-vote-strip img:hover { transform: scale(1.06); }
+@media (max-width: 720px) { .hm-vote { grid-template-columns: 1fr; } .hm-vote-strip { grid-template-columns: repeat(5, minmax(0, 1fr)); } }

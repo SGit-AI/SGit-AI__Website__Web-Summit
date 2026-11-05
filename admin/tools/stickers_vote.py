@@ -36,7 +36,7 @@ import argparse, base64, collections, datetime, glob, hashlib, json, os, re, sec
 HERE = os.path.dirname(os.path.abspath(__file__))
 AGENT = 'conductor@web-summit.dinis'
 VAULT_NAME = 'ws-stickers-vote'
-CLOSES_AT = '2026-11-05T18:00:00Z'
+CLOSES_AT = '2026-11-05T14:30:00Z'
 MAX_RANKING = 10                    # the one number: a ballot ranks up to this many (Dinis, 5 November: "can you allow 10 votes?")
 TAGLINE = f'Funny laptop stickers for Web Summit Lisbon, in three sets. The team ranks a top {MAX_RANKING} each: 1st = {MAX_RANKING} points, {MAX_RANKING}th = 1.'
 DRAINERS = ['angelo', 'jose', 'indi', 'dinis']

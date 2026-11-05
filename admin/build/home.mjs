@@ -114,12 +114,22 @@ export function homeBlocks({ ROOT, teamData, onboard, LEVELS, INV, MEET, ISSUES,
         html: `<section class="hm-numbers"><h2 id="numbers">The numbers</h2><div class="hm-nums">${nums.map(([n, t, h]) => `<a href="${h}"><b>${esc(n)}</b><span>${esc(t)}</span></a>`).join('')}</div><p class="meta">Everything counted: <a href="team/everything/index.html">every person, agent and channel</a>.</p></section>`,
         md: `## The numbers\n\n${nums.map(([n, t]) => `- **${n}** ${t}`).join('\n')}`
     }
-    return { hero, needs, now: now_, people, numbers, today }
+    // 7. the sticker vote (WS-159), at Dinis's word, 5 November 2026: "can you also put the voting on the main page".
+    //    A strip of the real art and a big button; open until 14:30 UTC on 5 November, then it points at the results.
+    const SV_CLOSE = '2026-11-05T14:30:00Z', svOpen = now < new Date(SV_CLOSE)
+    const svDir = path.join(ROOT, 'assets', 'stickers', 'vote')
+    const svImgs = fs.existsSync(svDir) ? fs.readdirSync(svDir).filter(f => /\.(webp|jpe?g|png)$/.test(f) && !/-v[2-9]\./.test(f)).sort() : []
+    const svPick = [0, 13, 3, 17, 11, 20, 4, 14, 8, 22].map(i => svImgs[i]).filter(Boolean)
+    const vote = {
+        html: svImgs.length ? `<section class="hm-vote"><div class="hm-vote-txt"><h2 id="sticker-vote">${svOpen ? 'Pick our stickers' : 'The sticker vote is closed'}</h2><p>${svImgs.length} funny laptop stickers for Lisbon in three sets: the road trip, creative takes and the gap. ${svOpen ? 'Rank your top 10, team only, signed with your key. Closes <b>today, 14:30 UTC</b>.' : 'See which ones won.'}</p><a class="hm-vote-btn" href="stickers/vote/index.html">${svOpen ? 'Vote now' : 'See the results'}</a></div><a class="hm-vote-strip" href="stickers/vote/index.html" aria-label="The stickers">${svPick.map(f => `<img src="assets/stickers/vote/${f}" alt="" width="120" height="120" loading="lazy">`).join('')}</a></section>` : '',
+        md: svImgs.length ? `## ${svOpen ? 'Pick our stickers' : 'The sticker vote is closed'}\n\n${svImgs.length} laptop stickers in three sets; ${svOpen ? 'rank your top 10 (team only), closes 5 November 14:30 UTC' : 'see the results'}: https://web-summit.sgit.ai/stickers/vote/` : ''
+    }
+    return { hero, needs, now: now_, people, numbers, today, vote }
 }
 
 // content/index.md's placeholders, each alone on its line: {{hero}} and the others
 export const expandHome = (html, md, B) => {
-    for (const k of ['hero', 'needs', 'now', 'people', 'numbers']) {
+    for (const k of ['hero', 'vote', 'needs', 'now', 'people', 'numbers']) {
         html = html.replace(`<p>{{${k}}}</p>`, B[k].html)
         md = md.replace(`{{${k}}}`, B[k].md)
     }

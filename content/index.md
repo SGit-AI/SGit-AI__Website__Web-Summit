@@ -6,6 +6,8 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 {{hero}}
 
+{{vote}}
+
 {{needs}}
 
 {{now}}

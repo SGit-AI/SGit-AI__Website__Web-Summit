@@ -3,14 +3,14 @@ id: WS-159
 title: "The sticker vote: 23 funny stickers in three sets in a vault, a ranked top 10 each, team only"
 area: merch
 for: everyone
-due: Thu 5 Nov, 18:00
+due: Thu 5 Nov, 14:30
 status: picked
 picked_by: conductor@web-summit.dinis
 agents: conductor@web-summit.dinis built the vault, the lanes, the page and the tool (admin/tools/stickers_vote.py) and swaps in the real images when they arrive; Angelo, Jose, Indi and Dinis (or their agents) drain the votes from inside the vault.
 ---
 At Dinis's word (4 and 5 November 2026): put the funny sticker images in a vault, a page to vote, an append lane that receives the votes with each lane's token sealed to its person's key, only the team votes, one favourite each, as interactive and visual as possible; the page and the vault work together, the page holding the vault's read key; Angelo, Jose and Indi drain.
 
-**Vote:** [/stickers/vote/](https://web-summit.sgit.ai/stickers/vote/index.html). Your browser needs your site key. Round 2 (Dinis, 5 November: "pick the top 6 ... I can reorder them ... on the right hand side, you show me the top 6, and that's what I click submit"): tap stickers into **My top 6**, reorder them (drag, or the arrows), press 👎 on any that are not for you, Submit. Borda points: 1st = 6, 6th = 1. Submit again to change it (the newest ballot counts). A v1 ballot (one pick, from round 1) counts as a top 6 of one. Closes **Thursday 5 November, 18:00 UTC**.
+**Vote:** [/stickers/vote/](https://web-summit.sgit.ai/stickers/vote/index.html). Your browser needs your site key. Round 2 (Dinis, 5 November: "pick the top 6 ... I can reorder them ... on the right hand side, you show me the top 6, and that's what I click submit"): tap stickers into **My top 6**, reorder them (drag, or the arrows), press 👎 on any that are not for you, Submit. Borda points: 1st = 6, 6th = 1. Submit again to change it (the newest ballot counts). A v1 ballot (one pick, from round 1) counts as a top 6 of one. Closes **Thursday 5 November, 14:30 UTC**.
 
 Round 3 (5 November, Dinis uploaded the art into the vault's `images/uploads/`): the road trip (1 to 12) with four variations each (flip them; a ♡ on your favourite goes with the ballot as `variant_pick`, and the leaderboard shows the favourite), creative takes (14 to 18; 13 is still on its way) and the gap (19 to 24). No placeholders left.
 
