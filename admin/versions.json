@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.586",
+    "date": "2026-11-05",
+    "what": "one door: Jose's agents take work only from the conductor's task files and report back to it; the Actions list is the conductor's; a schedules proposal with its token cost, nothing switched",
+    "by": "conductor@web-summit.jose",
+    "from": "2191c0b2f"
+  },
+  {
     "version": "v0.2.585",
     "date": "2026-11-05",
     "what": "Jose in navy or orange: a side-by-side on /print/#next for Dinis to decide",
