@@ -60,9 +60,9 @@
 
     // ------------------------------------------------------------------ a lazy reader: walks only the path it needs
     const cfg = { endpoint: boxes[0].dataset.endpoint, vault_id: boxes[0].dataset.vault, read_key: boxes[0].dataset.key.replace(/^sgit_public_read_/, '') }
-    let R = null, root = null; const trees = new Map(), jsons = new Map(); let objs = 0, bytes = 0
-    async function openVault() {
-        if (R) return
+    let R = null, root = null, opening = null; const trees = new Map(), jsons = new Map(); let objs = 0, bytes = 0
+    function openVault() { return opening || (opening = openOnce().catch(e => { opening = null; R = null; throw e })) }   // once, however many files ask
+    async function openOnce() {
         log('vault', `importing the read key of ${cfg.vault_id} (AES-GCM to decrypt, HMAC-SHA256 to derive ids)`)
         R = await new window.SGVaultEmbed.Reader(cfg).init()
         const raw = R.raw.bind(R)
@@ -317,7 +317,7 @@
     }
     let refreshTimer = null
     const refreshSecs = () => { try { return +(localStorage.getItem('ws.obsx.refresh') || 0) } catch { return 0 } }
-    function armRefresh() { clearInterval(refreshTimer); const n = refreshSecs(); if (n) refreshTimer = setInterval(() => { jsons.clear(); trees.clear(); R = null; log('view', 'auto-refresh: reading the vault again'); render() }, n * 1000) }
+    function armRefresh() { clearInterval(refreshTimer); const n = refreshSecs(); if (n) refreshTimer = setInterval(() => { jsons.clear(); trees.clear(); R = null; opening = null; log('view', 'auto-refresh: reading the vault again'); render() }, n * 1000) }
 
     function timeline(p, s, F, D) {
         const W = 1000, H = 190, L = 34, n = p.series.length || 1, step = (W - L) / n, bw = Math.max(2, step - (n > 60 ? 1 : 3))

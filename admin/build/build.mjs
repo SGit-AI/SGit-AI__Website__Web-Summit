@@ -468,7 +468,7 @@ const obsLiveHtml = (person, id) => {
     if (!/^sgit_public_read_[0-9a-f]{64}$/.test(String(v.read_key || ''))) throw new Error(`people/${person}/vaults.json: "${v.name}" needs a read_key of the form sgit_public_read_<64 hex> (never a vault key)`)
     return `<div class="obs-live" data-endpoint="https://dev.send.sgraph.ai" data-vault="${v.vault_id}" data-key="${v.read_key}" data-title="${esc(v.name)}">` +
         `<p data-head></p><p class="meta" data-note>Opening vault <code>${v.vault_id}</code> with its published read key…</p><div data-app></div></div>` +
-        `<script src="${UP}assets/vendor/sgit-ai/2026-11-05/vault-embed.js" defer></script><script src="${UP}assets/obs-live.js" defer></script>`
+        `<script src="${UP}assets/vendor/sgit-ai/2026-11-05/vault-embed.js" defer></script><script src="${UP}assets/obs-live.js?v=${VERSION}" defer></script>`
 }
 // an observability view drawn by this site from the public vault's data/public.json: ```obs-view <stats|agents|pages|team>
 // <person> <vault id>``` (observability@web-summit.dinis, 5 November 2026); assets/obs-view.js reads and draws it.
@@ -478,7 +478,7 @@ const obsViewHtml = (view, person, id) => {
     if (!/^sgit_public_read_[0-9a-f]{64}$/.test(String(v.read_key || ''))) throw new Error(`people/${person}/vaults.json: "${v.name}" needs a read_key of the form sgit_public_read_<64 hex> (never a vault key)`)
     return `<div class="obs-view" data-view="${view}" data-base="${UP}" data-endpoint="https://dev.send.sgraph.ai" data-vault="${v.vault_id}" data-key="${v.read_key}">` +
         `<p class="meta" data-note>Opening vault <code>${v.vault_id}</code> with its published read key, decrypting in your browser…</p><div data-out></div></div>` +
-        `<script src="${UP}assets/vendor/sgit-ai/2026-11-05/vault-embed.js" defer></script><script src="${UP}assets/obs-view.js" defer></script>`
+        `<script src="${UP}assets/vendor/sgit-ai/2026-11-05/vault-embed.js" defer></script><script src="${UP}assets/obs-view.js?v=${VERSION}" defer></script>`
 }
 let UP = '../'
 const expandIssues =(body, up = '../') => { UP = up; return body
