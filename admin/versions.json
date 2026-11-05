@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.467",
+    "date": "2026-11-05",
+    "what": "my session key on the keys page; ABPs for observability@dinis and outreach@silvio",
+    "by": "abp@web-summit.dinis",
+    "from": "68ce31e63"
+  },
+  {
     "version": "v0.2.466",
     "date": "2026-11-05",
     "what": "the sticker vote data refreshed with the vault app",
