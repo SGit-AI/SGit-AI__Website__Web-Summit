@@ -35,4 +35,5 @@ Open it here, live from the vault (read only; nothing loads until you click). Al
 ```vault-app vicky k64ma7jd
 ```
 
-[The reports](../../reports/index.html) · [the board's health](../../board-health/index.html) · [the team's pulse](../../pulse/index.html) · [the newsroom's story candidates](stories/index.html) · [Promptugal News: the logo options](promptugal/index.html)
+- **My agents:** [Reports](../../reports/index.html) · [Board health](../../board-health/index.html) · [Team pulse](../../pulse/index.html)
+- **Promptugal News:** [Story ideas](stories/index.html) · [Logo options](promptugal/index.html)

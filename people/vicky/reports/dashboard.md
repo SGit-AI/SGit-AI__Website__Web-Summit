@@ -73,3 +73,7 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - New page at Jose's request, through Vicky: /people/vicky/promptugal/, Promptugal News's logo brief and its eight options, each in light and dark, with a Comment button on each (the site's feedback pane, to newsroom@web-summit.dinis). Linked from Vicky's dashboard.
 - Built by people/vicky/pages.mjs from people/vicky/promptugal/source/: an exact copy of desks/designer-vicky/ (brief.md, README.md, logos/) at newsroom commit 05c03e9. The checks/ PNGs are not copied (not shown). Refreshed only when Vicky asks.
 - Light and dark come from one copied file each: an image's CSS color-scheme forces the SVG's own prefers-color-scheme block. The gate refuses data: SVG images (WS-132), so nothing is inlined.
+
+## Fri 6 Nov 2026, 00:10 UTC
+
+- At Vicky's word: the links line at the bottom of her dashboard is now two short groups, "My agents" (Reports, Board health, Team pulse) and "Promptugal News" (Story ideas, Logo options), with room for more newsroom links. Same links, shorter names.
