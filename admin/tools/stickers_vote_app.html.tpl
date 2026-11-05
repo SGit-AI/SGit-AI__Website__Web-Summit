@@ -25,12 +25,11 @@ h1 span{display:inline-block;color:var(--gold);transform:rotate(-4deg);animation
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
 .card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:14px 14px 16px;cursor:pointer;transform:translateY(30px) scale(.92);opacity:0;transition:transform .35s cubic-bezier(.2,1.4,.4,1),box-shadow .3s,border-color .3s;outline:none}
 .card.in{opacity:1;transform:none;transition:opacity .5s,transform .6s cubic-bezier(.2,1.5,.4,1),box-shadow .3s,border-color .3s}
-.card:hover,.card:focus-visible{transform:translateY(-6px) rotate(-1.2deg) scale(1.03);box-shadow:0 18px 40px rgba(0,0,0,.45);border-color:var(--c,var(--gold))}
-.card:nth-child(even):hover{transform:translateY(-6px) rotate(1.2deg) scale(1.03)}
+.card:hover,.card:focus-visible{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.45);border-color:var(--c,var(--gold))}
 .card .img{aspect-ratio:1;border-radius:16px;overflow:hidden;background:var(--c,#333);display:grid;place-items:center}
 .card img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .5s}
-.card:hover img{transform:scale(1.06) rotate(2deg)}
-.num{position:absolute;top:6px;left:6px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:20px;background:var(--gold);color:#161615;border:3px solid #161615;transform:rotate(-10deg);z-index:2}
+.card:hover img{transform:scale(1.05)}
+.num{position:absolute;top:22px;left:22px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:20px;background:var(--gold);color:#161615;border:3px solid #161615;z-index:2}
 .card h3{margin:12px 2px 2px;font-size:19px}
 .card p{margin:2px;color:var(--ink2);font-size:14px}
 .card .votes{position:absolute;top:10px;right:10px;background:#161615;color:var(--gold);border-radius:999px;padding:4px 10px;font-weight:800;font-size:14px;z-index:2;display:none}
@@ -42,7 +41,8 @@ section.panel{margin-top:42px;background:var(--bg2);border:1px solid var(--line)
 section.panel h2{margin:0 0 6px;font-size:26px}
 .muted{color:var(--ink2)}
 .bars{display:grid;gap:10px;margin-top:14px}
-.bar{display:grid;grid-template-columns:44px 1fr 46px;gap:12px;align-items:center}
+.bar{display:grid;grid-template-columns:44px 1fr 46px;gap:12px;align-items:center;animation:race .6s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes race{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
 .bar img{width:44px;height:44px;object-fit:cover;border-radius:10px;background:#333}
 .bar .t{position:relative;height:34px;background:var(--card);border-radius:10px;overflow:hidden}
 .bar .t i{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,var(--green),var(--mint));border-radius:10px;transition:width 1.2s cubic-bezier(.2,1,.3,1)}
@@ -90,7 +90,7 @@ footer{margin-top:40px;color:var(--ink2);font-size:14px}
   <main class="grid" id="grid"></main>
 
   <section class="panel" id="results">
-    <h2>The count so far</h2>
+    <h2>The leaderboard so far</h2>
     <p class="muted" id="rnote">Reading results.json...</p>
     <div class="bars" id="bars"></div>
     <div class="chips" id="voters"></div>
@@ -178,16 +178,20 @@ const FALLBACK = /*__DATA__*/{};
     RESULTS = r
     const bars = $('bars'), chips = $('voters'); bars.textContent = ''; chips.textContent = ''
     const n = r && r.voters_count || 0
-    $('rnote').textContent = n ? n + ' of the team ' + (n === 1 ? 'has' : 'have') + ' voted (counted ' + String(r.as_of || '').replace('T', ' ').slice(0, 16) + ' UTC' + (r.changed_votes ? ', ' + r.changed_votes + ' changed vote' + (r.changed_votes === 1 ? '' : 's') : '') + '). The newest vote of each person counts.' : 'No votes counted yet. Votes arrive sealed in the lanes and are counted when someone drains them.'
-    const max = Math.max(1, ...Object.values(r && r.counts || { a: 0 }))
-    const order = DATA.stickers.slice().sort((a, b) => ((r.counts || {})[b.id] || 0) - ((r.counts || {})[a.id] || 0) || a.id - b.id)
-    order.forEach(s => {
-      const v = (r.counts || {})[s.id] || 0, row = el('div', 'bar'), img = el('img'), t = el('div', 't'), i = el('i')
+    $('rnote').textContent = n ? n + ' of the team ' + (n === 1 ? 'has' : 'have') + ' voted (counted ' + String(r.as_of || '').replace('T', ' ').slice(0, 16) + ' UTC' + (r.changed_votes ? ', ' + r.changed_votes + ' replaced ballot' + (r.changed_votes === 1 ? '' : 's') : '') + '). Each person ranks a top 6: 1st = 6 points, 6th = 1. The newest ballot counts.' : 'No ballots counted yet. They arrive sealed in the lanes and are counted when someone drains them.'
+    const by = {}; (r.ranking || []).forEach(x => { by[x.id] = x })
+    const pts = id => (by[id] && by[id].points != null ? by[id].points : ((r.counts || {})[id] || 0))
+    const max = Math.max(1, ...DATA.stickers.map(s => pts(s.id)))
+    const order = DATA.stickers.slice().sort((a, b) => pts(b.id) - pts(a.id) || a.id - b.id)
+    order.forEach((s, k) => {
+      const v = pts(s.id), x = by[s.id] || {}, row = el('div', 'bar'), img = el('img'), t = el('div', 't'), i = el('i')
       img.src = s.thumb; img.alt = ''
-      t.append(i, el('span', null, s.id + '. ' + s.name)); row.append(img, t, el('b', null, String(v))); bars.appendChild(row)
-      requestAnimationFrame(() => setTimeout(() => { i.style.width = (100 * v / max) + '%' }, 100))
+      row.style.animationDelay = (k * 70) + 'ms'
+      t.append(i, el('span', null, (v ? '#' + (k + 1) + '  ' : '') + s.id + '. ' + s.name + (x.top6 ? '  ·  in ' + x.top6 + ' top 6' + (x.top6 === 1 ? '' : 's') : '') + (x.not_for_me ? '  ·  ' + x.not_for_me + ' not for me' : '')))
+      row.append(img, t, el('b', null, String(v))); bars.appendChild(row)
+      requestAnimationFrame(() => setTimeout(() => { i.style.width = (100 * v / max) + '%' }, 150 + k * 90))
       const card = document.querySelector('.card[data-id="' + s.id + '"]')
-      if (card) { const b = card.querySelector('.votes'); b.textContent = v + (v === 1 ? ' vote' : ' votes'); b.classList.toggle('on', v > 0); card.classList.toggle('lead', !!(r.leader && r.leader.id === s.id && v > 0)) }
+      if (card) { const b = card.querySelector('.votes'); b.textContent = v + (v === 1 ? ' pt' : ' pts'); b.classList.toggle('on', v > 0); card.classList.toggle('lead', !!(r.leader && r.leader.id === s.id && v > 0)) }
     })
     ;(r.voters || []).forEach(x => chips.appendChild(el('span', 'chip', x.person)))
   }
@@ -214,10 +218,24 @@ const FALLBACK = /*__DATA__*/{};
     const aes = await crypto.subtle.importKey('raw', await crypto.subtle.decrypt({ name: 'RSA-OAEP' }, key, b64d(env.w)), { name: 'AES-GCM' }, false, ['decrypt'])
     return JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64d(env.i), tagLength: 128 }, aes, b64d(env.c))))
   }
+  // a ballot's [ranking, not_for_me]: v2 (a top 6, ranked) or v1 (one choice, a top 6 of one); the same rules as the CLI
+  function ballot(v) {
+    const ok = x => Number.isInteger(x) && x >= 1 && x <= 12, uniq = a => new Set(a).size === a.length
+    if (v.type === 'web-summit.sticker-vote/v1') { if (!ok(v.choice)) throw new Error('choice is not 1 to 12'); return [[v.choice], []] }
+    if (v.type !== 'web-summit.sticker-vote/v2') throw new Error('not a sticker vote')
+    const rk = v.ranking, nf = v.not_for_me || []
+    if (!Array.isArray(rk) || rk.length < 1 || rk.length > 6 || !rk.every(ok) || !uniq(rk)) throw new Error('ranking is not 1 to 6 distinct stickers')
+    if (!Array.isArray(nf) || !nf.every(ok) || !uniq(nf) || nf.some(x => rk.includes(x))) throw new Error('not_for_me is not a list of other stickers')
+    return [rk, nf]
+  }
+  function tally(ballots) {
+    const t = {}; DATA.stickers.forEach(s => { t[s.id] = { id: s.id, name: s.name, points: 0, top6: 0, firsts: 0, not_for_me: 0 } })
+    for (const [rk, nf] of ballots) { rk.forEach((n, i) => { t[n].points += 6 - i; t[n].top6++; if (!i) t[n].firsts++ }); nf.forEach(n => { t[n].not_for_me++ }) }
+    return Object.values(t).sort((a, b) => b.points - a.points || b.top6 - a.top6 || a.not_for_me - b.not_for_me || a.id - b.id)
+  }
   async function verify(p, lanePerson, keys) {
     const vote = JSON.parse(p.signed)
-    if (vote.type !== 'web-summit.sticker-vote/v1') throw new Error('not a sticker vote')
-    if (!Number.isInteger(vote.choice) || vote.choice < 1 || vote.choice > 12) throw new Error('choice is not 1 to 12')
+    ballot(vote)
     const k = keys.find(k => k.person === vote.person && k.fingerprint === p.key)
     if (!k) throw new Error('no published key ' + p.key + ' for ' + vote.person)
     if (k.status !== 'active') throw new Error('key ' + k.fingerprint + ' is ' + k.status)
@@ -241,14 +259,14 @@ const FALLBACK = /*__DATA__*/{};
       if (r.received > close) { late++; continue }
       if (!best[r.person] || r.received > best[r.person].received) best[r.person] = r
     }
-    const counts = {}; DATA.stickers.forEach(s => { counts[String(s.id)] = 0 })
-    for (const r of Object.values(best)) counts[String((await openEnv(r.envelope, key)).vote.choice)]++
-    const ranking = DATA.stickers.map(s => ({ id: s.id, name: s.name, votes: counts[String(s.id)] })).sort((a, b) => b.votes - a.votes || a.id - b.id)
+    const ballots = []
+    for (const r of Object.values(best)) ballots.push(ballot(JSON.parse((await openEnv(r.envelope, key)).signed)))
+    const ranking = tally(ballots), counts = {}; ranking.forEach(x => { counts[String(x.id)] = x.points })
     const okRows = rows.filter(r => r.verified && r.received <= close).length
-    return { v: 1, as_of: now, closes_at: close, closed: now >= close, voters_count: Object.keys(best).length, counts, ranking,
-      leader: ranking[0].votes ? ranking[0] : null, voters: Object.entries(best).map(([p, r]) => ({ person: p, at: r.received })).sort((a, b) => a.at < b.at ? -1 : 1),
+    return { v: 2, method: 'Borda: 1st = 6 points, 2nd = 5 ... 6th = 1; a v1 ballot is a top 6 of one', as_of: now, closes_at: close, closed: now >= close, voters_count: Object.keys(best).length, counts, ranking,
+      leader: ranking[0].points ? ranking[0] : null, voters: Object.entries(best).map(([p, r]) => ({ person: p, at: r.received })).sort((a, b) => a.at < b.at ? -1 : 1),
       ballots: rows.length, changed_votes: okRows - Object.keys(best).length, late, rejected: bad, drained_by: 'the vault app (in the browser)',
-      note: 'One favourite per team person; a changed vote replaces the earlier one (the newest counts). Ballots stay sealed in votes/: who voted is public, what each person chose is not.' }
+      note: 'A top 6 per team person, ranked; a new ballot replaces the earlier one (the newest counts). Ballots stay sealed in votes/: who voted is public, what each person chose is not.' }
   }
   async function drain(say) {
     const key = await drainKey($('pass').value.trim())

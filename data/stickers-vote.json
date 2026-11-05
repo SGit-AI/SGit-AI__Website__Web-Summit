@@ -1,7 +1,7 @@
 {
   "about": "The team sticker vote (WS-159, admin/tools/stickers_vote.py). One append lane per team person with a site key; each lane token is sealed to that person (ws-ecies-1, data/person-keys.json), so only their browser opens it. Votes are signed by the person, sealed to drain_public_key (sgit hybrid v2) and written to their lane. The read key is published on purpose (Dinis): it renders the vault and lets anyone list who has a vote waiting, never what they chose.",
   "agent": "conductor@web-summit.dinis",
-  "updated": "2026-11-05T02:00:52Z",
+  "updated": "2026-11-05T02:51:59Z",
   "closes_at": "2026-11-05T18:00:00Z",
   "endpoint": "https://dev.send.sgraph.ai",
   "vault_id": "uy67e2lt",
@@ -130,15 +130,15 @@
         "to": "dinis",
         "key": "sha256:c7ec751484fbf03d",
         "by": "conductor@web-summit.dinis",
-        "at": "2026-11-05T02:00:52Z",
+        "at": "2026-11-05T02:51:59Z",
         "epk": {
           "kty": "EC",
           "crv": "P-256",
-          "x": "kvvX8kOVVq1kP6gzBZRfsvx5zoG-6niWPcCdMFCnezM",
-          "y": "EY4ma75X3RIuC1_N8MGlQUgLCCCTm3qzii0OCZtWqX8"
+          "x": "eQKC0DThbt1MNSi-tR5Icsqhn0qrK_y6FblQZMxvrMc",
+          "y": "Aqe_YGEbqtIV0iu9plt74dNZVGprNqtAij5o8sVMJdk"
         },
-        "iv": "SoTCCir88p+NBgmw",
-        "ct": "29qeZEIV12qagQ05/hmJQItjdVTYI/qmfw7EMhDFgmOUpDeG6MlocEl50lDSWKovhDGLOoCD3Z/mYjCmbPPK5rbInaQZbsIemObzMq0yARIDPP4Eivg84m1mOvqTCycH27mkfkzfRBVjNtgu6qf871Tu+kFsFkO391L5UVk4BNZV4SAycmhIVXJp+UWEV5hN6N/ndXyel58VCQ70J9ZoEnar3r7IyJDbwy1AZt7rhnA="
+        "iv": "t9yCLWX6OHCJB+dz",
+        "ct": "JKzRaq3//LgW9LFtPgO4sLOyJ4cDDbmbSiZHwItZdq6fCjpD+OKoFp2zObWjwCom6yzYfdGKysPvcOk40TQen8p92C0Fwk8ujVbuHlbKWkVRl7Y504sy9g1Yws2fKc8J6UiWzb1zHCcA6iwyXEpMrZWT+nec1R9aLff+J7km7yIHjdnlZ/04R8fDFv8aNmj0WilYD1peti+cESZDxvpZBcD13F4LtoztBvy0VLgXfJ0="
       }
     },
     {
@@ -151,15 +151,15 @@
         "to": "silvio",
         "key": "sha256:c790b809522386ef",
         "by": "conductor@web-summit.dinis",
-        "at": "2026-11-05T02:00:52Z",
+        "at": "2026-11-05T02:51:59Z",
         "epk": {
           "kty": "EC",
           "crv": "P-256",
-          "x": "0_hy24whaOzpLwVI-lNsu_GXDXFjtVonCnvA4vSVp34",
-          "y": "-VyfTNGe2poIrzVaVW1v45PivJpTlI-DsPxLsOQUUZ8"
+          "x": "Y2mxZ0gf_AHEwmGqdoLYTPW1wlfvrDwcBXEaXBUhcRs",
+          "y": "k0S2HatvcPXpE50KmvuQidCZoLjI8sjHsFuKGeHapiY"
         },
-        "iv": "rdGQ/NydbSg7hfMV",
-        "ct": "6q6eBzNqnlAwgmalxB1PKjY2em1auFBWXICz6juk/tzuu7i1Ji1LUNlWiBqQdtEToeRJDjJUGoEddpmIt13sYpacnPl/9vfkYEMfeIga0bEWx+vDbv8BvT32USGV+nY4S+mEn02znak20JW66h7CRhzIRqRsOy+XTHKCxrWF8nwPZFMtFJWUsQmgozyTE0bPZWF0Qor9WCAOZqAXz44wBWCRoSKdxXdsjjTVtmZxPCfc"
+        "iv": "H6JP+fBZ2rYKp/iZ",
+        "ct": "ajdb/doYIDH6cw19iIqHE0QrQbCF0ZmvoXv1dq1yllBSHmY0cTsa/v/kx27T9en1XXaFqtZuKrrVTWuWJBbpZr5GJ9wTdtc07vmKFLR8/4bjOOvuRSeBd5NXESzhTh2WNKxyZJLPe2kvtqjP4qDtE2z11CVzjuDvXRiNKMTWzUAhgnDJDhronHc6CNwtk83PBrtVhj9oAGYZmKuiFPcwvHCj1lFTF2FC/KFRVzT/gEMr"
       }
     },
     {
@@ -172,15 +172,15 @@
         "to": "angelo",
         "key": "sha256:99fcf112697b7d3d",
         "by": "conductor@web-summit.dinis",
-        "at": "2026-11-05T02:00:52Z",
+        "at": "2026-11-05T02:51:59Z",
         "epk": {
           "kty": "EC",
           "crv": "P-256",
-          "x": "2lrzbwU2cA_C04TxyDmO1qQk1tztywDLIVGSAexlOGw",
-          "y": "LzPxO8guho0los5MT-L9v_Igk8-qffbR1RdjdBvZquM"
+          "x": "xSl8jsz9GOqVEN1GSky-QYHjn1eSh2lkJrYgNCdq7e0",
+          "y": "E8jCgJZTWhYfVysjaAn0VYOmx_Oextl87lFCq1DFz8E"
         },
-        "iv": "/ss9ULt+9Yfbf/5o",
-        "ct": "Dw1AnkY5alG6bdiI5Vl8VPSce5sWwGMsgEnJ0NBq9OcBedbeMTEykKKecIAr4lQXVHfv1551FwxbZSb58Nq1M3R20ybohTBNflj6RFSXKyXZEC8x8p3g2iZgjttZmP1CRVF8GAFkOv/mYdP2NjcFZRtNu0eXyUjmm75QeYNBZ+4t7Kr0149WGvX2eP7eEOSQnnS+TADKrnwb91iwQOLHNZSV+i7mHSkLTGVXb0RN4//U"
+        "iv": "cZ50dct1eZp/Dvg1",
+        "ct": "HOnRx2cChx8WMqKjCg9uMqjcOflKTFpeOYUqm4aDO5Fe84LtuIHd776WCMVOSlnRviUCV+MMfDz2J8byTJAn1U/ePHDur0t6bSmS5IzwBlPba9BdzosD26Wv41ArinsAaYl9B/km2mEhp1FjLK57hO0CQNfLIH4jzfit4HaM5bhionPdcqscMqERXxZtzIxuFOFbSYOpTFargZB9I28trQqBzzVBm6bi0ruPE86a8azZ"
       }
     },
     {
@@ -193,15 +193,15 @@
         "to": "vicky",
         "key": "sha256:5bd91e541026290e",
         "by": "conductor@web-summit.dinis",
-        "at": "2026-11-05T02:00:52Z",
+        "at": "2026-11-05T02:51:59Z",
         "epk": {
           "kty": "EC",
           "crv": "P-256",
-          "x": "F7Czn1CBBLJPi3rvX1jV3akgRyf-yXEBp-50GokGeu8",
-          "y": "oUWsEyCkGU0b3KawUyGZ4h2XmPdhENaQlvCaWfquB_8"
+          "x": "-F0qWrEwlZK_caoUZrFQO-i_U2nPqPP6M2F5dpur_TI",
+          "y": "S6kMS01BbaOzMC_C3jvH0lu_3-j5AJOvdQ0dVHxWq8E"
         },
-        "iv": "Gq8vC6Nr5geRivmP",
-        "ct": "jmlWSblK68WLgVtjCJ9BRF+9kES8jqvg4uZnR5zUA4xhwsz60yl2AQLNZFATy6soansyFjQgPSiHlgqmXXz/CxYSQ92D6tzTDy3ePhSozsqrW3Js/qYCvhuJ279PZXgjRLaQwPrAsfYX1XfZxOjRAPeR1b4F5ta9HWQxf3sELgixOmTJmbtx0qHakNYVt2GwFIX3y5TSsYHUvHjQ28s8ksZ7upq1EuOf0UcEz5oExUc="
+        "iv": "u+0K9UPFpOpDBvid",
+        "ct": "eoFIRfAVpLaIM9JZ2fnfZ+m0CFManOOVqtxFlf9et4xrYOXDno0hrYpYbtSJW7SSdXEwVYiL0xXQCubSCLPKGXNwTdw9qfhXcz/mlcBkCzoqgP7PV11pW5ykKpKrA1XT+GUsLPy8sbR0xBfCi/ZSdNqBjzrju9GojqX6Hdc2V7I0ru7QC0bECSK4UGG3ZlSrFp8hc9AcTTgRVUYkHdG4HNugRgaskTDtwxu0Aq/CHLY="
       }
     },
     {
@@ -214,15 +214,15 @@
         "to": "indi",
         "key": "sha256:504685dc2b1cd9af",
         "by": "conductor@web-summit.dinis",
-        "at": "2026-11-05T02:00:52Z",
+        "at": "2026-11-05T02:51:59Z",
         "epk": {
           "kty": "EC",
           "crv": "P-256",
-          "x": "P-RvzgtiyKg-EBsoxVQdv7cxqXP_XIQimhIfycNItVA",
-          "y": "8R-H1_8K5psne6ZiG4oNfscwEd9DK09xd1H5QZA61GA"
+          "x": "qL9RJUA5FKzigkWp2ovLgPIXqumOnT2oslCjFvxQIsM",
+          "y": "P9WcIt8f654vJyjejcCd93-3um92S3-M-XFpBXbbkOc"
         },
-        "iv": "onmWwxdYW43sjqt4",
-        "ct": "UK359oBgwGfCoAc3JZPk2P/v85acPOxn5WVMgvFZ15+O4SzgJuPOaI3Tl/hNArblmAYD2kMcKxBuXSagNsuLkIQQLKVZsuvVnL4rSTjo/89Wl+52+wdE6rOIx8p211iKarziSLMn7+HIpjWE3oB+p1ToFZNkW38TmeK1MO66nGAbnKNH51Cd6YNdKIpJr0fUrXavCcMzUKzYQbWXqNI2CaG8TLQCK3NHVn/DF1MB3w=="
+        "iv": "BwO5h+pJNTYTGPF8",
+        "ct": "EbJVDlXl/i1Da/IsiqgNIiIU+gtdaPDESkaUcDHnRQzMLA70CWXODMRantQs4RBnEruATjoTg8CqCD36Kne3VIyyzJQ+CapBanv7kiRA2p17LWf9cPCNltq8g4xA6vfJtB/+FLOCSfYOIPiOnsQWX0kt0VXsKmHE7gNCrVCLNypbR9wMek8yFr6ecVSm1HczgmHnl4fLuNyWo6xGHiitrvVTpTQVo+rWT7nKoFvblA=="
       }
     },
     {
@@ -235,15 +235,15 @@
         "to": "jose",
         "key": "sha256:6b6b6fee14c2527c",
         "by": "conductor@web-summit.dinis",
-        "at": "2026-11-05T02:00:52Z",
+        "at": "2026-11-05T02:51:59Z",
         "epk": {
           "kty": "EC",
           "crv": "P-256",
-          "x": "FwPBJYPNOFrKKt3sWwQ0hDbqg0M2XdfkrpinYVPhgeE",
-          "y": "2RFxOoz_5MreP3VFd8oY6TgDPoIfwb7wOfTcmiOnwOY"
+          "x": "xffBuzfHQba2WnIMvRKHBL467m3mBqOPfsttbQ1eVD8",
+          "y": "nJz_sl9dNX25qdKvCibyQC1WOvJhqyC0AdjgF-SXyJE"
         },
-        "iv": "iK4hjnV7yGndBOcb",
-        "ct": "yFSNE0f5c2DmRydoxLEinFuHYpcoiz/KbeT+ogmHNMsA0An6/g19a6aonXSm8yMC5muPcd+75o61EEKt5Z5huZGGWuEfeNOFhVAk/aqe6oFZhiY4ODzo9RQs8g4bPaY0ZZfwrvPn6rQzFWg7vCnCEQyEOaM7Q9sA39+SguxbnGO5cTDY+27bidqShnDoFF4JAqiaShRQ8dVfuTyX7SKUcxxyE9Gw3pfxtlKEoywxbg=="
+        "iv": "baYpTaNAvJcmHlbL",
+        "ct": "1hasJrUb1Dr6d7F+UpJKXd4vrPWtzfnIiDN/B6yQjXdrj6n0JoM6PWx1v1AnqqKpyx3X6M/L8qZ+qAJoC6zbpGGRx6MdPn3lddtB3rKj9wH6LRLykiBFud0bt0YuU4sIVtEl0Si7N8krDx2oIsZJvFV4dzvbCwdyHk+gl5Cf/GZ0JvxD+60PuMUkUCLP/3d8PBLiPxSGmL0mEPS/9YaORNRuxCLB0tCjfC60CvX0DA=="
       }
     }
   ]

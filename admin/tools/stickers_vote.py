@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """The team's sticker vote (WS-159): twelve funny laptop stickers in an encrypted vault, one append lane per team
-person, one favourite each. Built by conductor@web-summit.dinis on 5 November 2026, at Dinis's word ("put the
+person, a ranked top 6 each (Borda), plus "not for me". Built by conductor@web-summit.dinis on 5 November 2026, at Dinis's word ("put the
 sticker images in a vault ... a UI to vote ... an append lane that receives the votes, with each lane's token
 published encrypted to each participant's public key ... only the team votes ... Angelo, Jose and Indi can drain").
 
@@ -11,13 +11,14 @@ published encrypted to each participant's public key ... only the team votes ...
     python3 -I admin/tools/stickers_vote.py drain                 the CLI drain: the same steps as the vault app's Drain panel
     python3 -I admin/tools/stickers_vote.py status                pending votes per lane (counts only)
     python3 -I admin/tools/stickers_vote.py app                   rebuild the vault's index.html, app.json and README, push
-    python3 -I admin/tools/stickers_vote.py seal-drainers         seal the vault key and the drain passphrase to angelo, jose, indi
+    python3 -I admin/tools/stickers_vote.py seal-drainers [--person <id>]   seal the vault key and the drain passphrase (angelo, jose, indi, dinis)
     python3 -I admin/tools/stickers_vote.py purge --person <id>   delete a lane's files (pending and processed): test clean-up
     python3 -I admin/tools/stickers_vote.py placeholders          redraw the twelve placeholder images (before the real ones)
 
 Options: --root <repo> (default: this repository; a scratch copy for tests), --creds (default
 ~/.sg-send/lanes/stickers-vote.json, mode 0600: the tokens, the enum key, the drain passphrase; never committed).
-Images are matched to stickers by the number at the start of the file name (1-, 01_, 12.png) or by the slug.
+`images` takes any file names: a file whose name holds one sticker number (1 to 12) or a slug goes to that sticker,
+the rest fill the numbers left in natural order; the mapping is printed for checking. PNG, JPEG or WebP, any size.
 
 The keys. The vault key (in the clone's .sg_vault/local/, never printed) is the master key: it derives the write key
 (configure, purge) and the read key. The read key is PUBLISHED on purpose (Dinis's choice), in data/stickers-vote.json,
@@ -33,7 +34,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 AGENT = 'conductor@web-summit.dinis'
 VAULT_NAME = 'ws-stickers-vote'
 CLOSES_AT = '2026-11-05T18:00:00Z'
-DRAINERS = ['angelo', 'jose', 'indi']
+TAGLINE = 'Twelve funny laptop stickers for Web Summit Lisbon. The team ranks a top 6 each: 1st = 6 points, 6th = 1.'
+DRAINERS = ['angelo', 'jose', 'indi', 'dinis']
 SITE_PAGE = 'https://web-summit.sgit.ai/stickers/vote/index.html'
 VIEWER = 'https://dev.vault.sgraph.ai/'
 PBKDF2_ITER = 310000
@@ -213,6 +215,7 @@ def placeholder(s, out):
 def process(ctx, s, src):
     """One sticker: the original kept as given (renamed), a 1600 px WebP for the lightbox, a 480 px WebP for the grid."""
     from PIL import Image, ImageOps
+    Image.MAX_IMAGE_PIXELS = None                                     # the originals may be large (about 60 MB for twelve)
     n, slug = s[0], s[1]
     nn = f'{n:02d}'
     ext = os.path.splitext(src)[1].lower().replace('.jpeg', '.jpg')
@@ -220,7 +223,8 @@ def process(ctx, s, src):
     full = f'images/full/{nn}-{slug}{ext}'
     os.makedirs(os.path.join(ctx.vault, 'images/full'), exist_ok=True)
     shutil.copyfile(src, os.path.join(ctx.vault, full))
-    im = ImageOps.exif_transpose(Image.open(src)).convert('RGB')
+    im = ImageOps.exif_transpose(Image.open(src))
+    im = im.convert('RGBA' if im.mode in ('RGBA', 'LA', 'P') and ('A' in im.mode or 'transparency' in im.info) else 'RGB')
     w, h = im.size
     out = {}
     for kind, px, q in (('web', 1600, 82), ('thumbs', 480, 80)):
@@ -244,7 +248,7 @@ def content(ctx, files, placeholder_ids):
         ph = (n in placeholder_ids) if n in files else old.get(n, {}).get('placeholder', True)
         items.append({'id': n, 'nn': f'{n:02d}', 'slug': slug, 'name': name, 'joke': joke, 'words': words, 'shape': shape,
                       'colour': bg, 'ink': fg, 'accent': acc, 'placeholder': ph, **f})
-    c = {'title': 'Pick the sticker', 'tagline': 'Twelve funny laptop stickers for Web Summit Lisbon. The team picks one favourite each.',
+    c = {'title': 'Pick the sticker', 'tagline': TAGLINE,
          'closes_at': CLOSES_AT, 'vote_page': SITE_PAGE, 'stickers': items}
     wjson(p, c)
     return c
@@ -253,6 +257,7 @@ def content(ctx, files, placeholder_ids):
 # ---------- the vault app ----------
 def build_app(ctx, c=None):
     c = c or json.load(open(os.path.join(ctx.vault, 'content.json')))
+    if c.get('tagline') != TAGLINE: c['tagline'] = TAGLINE; wjson(os.path.join(ctx.vault, 'content.json'), c)
     tpl = open(os.path.join(HERE, 'stickers_vote_app.html.tpl')).read()
     compact = json.dumps(c, ensure_ascii=False)
     assert '\n' not in compact
@@ -317,8 +322,7 @@ def verify_vote(payload, lane_person, keys):
     from cryptography.hazmat.primitives.asymmetric import ec, utils
     from cryptography.hazmat.primitives import hashes
     vote = json.loads(payload['signed'])
-    if vote.get('type') != 'web-summit.sticker-vote/v1': raise ValueError('not a sticker vote')
-    if not isinstance(vote.get('choice'), int) or not 1 <= vote['choice'] <= 12: raise ValueError('choice is not 1 to 12')
+    ballot(vote)                                                        # the shape first: v1 (one choice) or v2 (a top 6)
     k = next((k for k in keys if k['person'] == vote.get('person') and k['fingerprint'] == payload.get('key')), None)
     if not k: raise ValueError(f"no published key {payload.get('key')} for {vote.get('person')}")
     if k.get('status') != 'active': raise ValueError(f"key {k['fingerprint']} is {k.get('status')}")
@@ -328,6 +332,27 @@ def verify_vote(payload, lane_person, keys):
     pub.verify(utils.encode_dss_signature(int.from_bytes(raw[:32], 'big'), int.from_bytes(raw[32:], 'big')), payload['signed'].encode(), ec.ECDSA(hashes.SHA256()))
     if vote['person'] != lane_person: raise ValueError(f"signed by {vote['person']} but written on {lane_person}'s lane")
     return vote
+
+def ballot(vote):
+    """A ballot's ranking and its "not for me" list, from v2 (ranking, up to 6, and not_for_me) or v1 (one choice)."""
+    ok = lambda x: isinstance(x, int) and not isinstance(x, bool) and 1 <= x <= 12
+    t = vote.get('type')
+    if t == 'web-summit.sticker-vote/v1':
+        if not ok(vote.get('choice')): raise ValueError('choice is not 1 to 12')
+        return [vote['choice']], []
+    if t != 'web-summit.sticker-vote/v2': raise ValueError('not a sticker vote')
+    rk, nf = vote.get('ranking'), vote.get('not_for_me', [])
+    if not isinstance(rk, list) or not 1 <= len(rk) <= 6 or not all(map(ok, rk)) or len(set(rk)) != len(rk): raise ValueError('ranking is not 1 to 6 distinct stickers')
+    if not isinstance(nf, list) or not all(map(ok, nf)) or len(set(nf)) != len(nf) or set(nf) & set(rk): raise ValueError('not_for_me is not a list of other stickers')
+    return rk, nf
+
+def tally(ballots):
+    """Borda: 1st = 6 points ... 6th = 1; plus how many put each in their top 6, first, and not for me."""
+    t = {s[0]: {'id': s[0], 'name': s[2], 'points': 0, 'top6': 0, 'firsts': 0, 'not_for_me': 0} for s in STICKERS}
+    for rk, nf in ballots:
+        for i, n in enumerate(rk): t[n]['points'] += 6 - i; t[n]['top6'] += 1; t[n]['firsts'] += (i == 0)
+        for n in nf: t[n]['not_for_me'] += 1
+    return sorted(t.values(), key=lambda x: (-x['points'], -x['top6'], x['not_for_me'], x['id']))
 
 def open_envelope(key, content):
     from sgit_ai.crypto.PKI__Crypto import PKI__Crypto
@@ -341,16 +366,13 @@ def recount(rows, key):
         if not r.get('verified'): bad += 1; continue
         if r['received'] > close: late += 1; continue
         if r['person'] not in best or r['received'] > best[r['person']]['received']: best[r['person']] = r
-    counts = {str(s[0]): 0 for s in STICKERS}
-    for r in best.values():
-        counts[str(open_envelope(key, r['envelope'])['vote']['choice'])] += 1
-    ranking = sorted(({'id': s[0], 'name': s[2], 'votes': counts[str(s[0])]} for s in STICKERS), key=lambda x: (-x['votes'], x['id']))
-    return {'v': 1, 'as_of': now(), 'closes_at': close, 'closed': now() >= close, 'voters_count': len(best),
-            'counts': counts, 'ranking': ranking, 'leader': ranking[0] if ranking[0]['votes'] else None,
+    ranking = tally([ballot(json.loads(open_envelope(key, r['envelope'])['signed'])) for r in best.values()])
+    return {'v': 2, 'method': 'Borda: 1st = 6 points, 2nd = 5 ... 6th = 1; a v1 ballot is a top 6 of one', 'as_of': now(), 'closes_at': close, 'closed': now() >= close, 'voters_count': len(best),
+            'counts': {str(x['id']): x['points'] for x in ranking}, 'ranking': ranking, 'leader': ranking[0] if ranking[0]['points'] else None,
             'voters': sorted(({'person': p, 'at': r['received']} for p, r in best.items()), key=lambda x: x['at']),
             'ballots': len(rows), 'changed_votes': sum(1 for r in rows if r.get('verified') and r['received'] <= close) - len(best),
             'late': late, 'rejected': bad, 'drained_by': AGENT + ' (CLI)',
-            'note': 'One favourite per team person; a changed vote replaces the earlier one (the newest counts). Ballots stay sealed in votes/: who voted is public, what each person chose is not.'}
+            'note': 'A top 6 per team person, ranked; a new ballot replaces the earlier one (the newest counts). Ballots stay sealed in votes/: who voted is public, what each person chose is not.'}
 
 def load_rows(ctx):
     rows = []
@@ -426,17 +448,36 @@ def cmd_setup(ctx, o):
     lanes(ctx)
     ctx.commit_push('the lanes: identity/lanes.json and identity/person-keys.json')
 
+KEYWORDS = {1: r'road-?trip|patch', 2: r'tram|ticket', 3: r'azulejo|tile', 4: r'nata|pastel', 5: r'passport|stamp', 6: r'road-?sign|crossing',
+            7: r'(?<![a-z])keys?(?![a-z])', 8: r'(?<![a-z])seal(?![a-z])', 9: r'surf', 10: r'hello|name-?is|name-?tag', 11: r'privilege', 12: r'sardine'}
+
+def map_images(names):
+    """{sticker id: file name} and the names placed by order. A word of the sticker's name in the file name places it
+    first (keys, sardine, surf ...); then a name holding exactly one number from 1 to 12; the rest fill the numbers
+    left, in natural order (2 before 10)."""
+    files = sorted((f for f in names if f.lower().endswith(('.png', '.jpg', '.jpeg', '.webp')) and not f.startswith('.')),
+                   key=lambda f: [int(x) if x.isdigit() else x.lower() for x in re.split(r'(\d+)', f)])
+    stem = lambda f: re.sub(r'[\s_]+', '-', os.path.splitext(f)[0].lower())
+    got, placed = {}, set()
+    for f in files:                                                   # 1. a word of the sticker's name
+        kw = [s[0] for s in STICKERS if re.search(KEYWORDS[s[0]], stem(f))]
+        if len(kw) == 1 and kw[0] not in got: got[kw[0]] = f; placed.add(f)
+    for f in files:                                                   # 2. exactly one sticker number
+        if f in placed: continue
+        nums = {int(x) for x in re.findall(r'(?<!\d)0*(\d{1,2})(?!\d)', stem(f)) if 1 <= int(x) <= 12}
+        if len(nums) == 1 and (n := nums.pop()) not in got: got[n] = f; placed.add(f)
+    rest = [f for f in files if f not in placed]
+    free = [s[0] for s in STICKERS if s[0] not in got]                # 3. by order, into the numbers left
+    for n, f in zip(free, rest): got[n] = f
+    for f in rest[len(free):]: say(f'skipped {f}: all twelve already have a file')
+    return got, set(rest)
+
 def cmd_images(ctx, o):
     src = os.path.abspath(o.folder)
-    files = [f for f in sorted(os.listdir(src)) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.webp'))]
-    got = {}
-    for f in files:
-        m = re.match(r'^0*(\d{1,2})(?!\d)', f)
-        s = next((s for s in STICKERS if m and s[0] == int(m.group(1))), None) or next((s for s in STICKERS if s[1] in f.lower().replace('_', '-')), None)
-        if not s: say(f'skipped {f}: no sticker number or slug in its name'); continue
-        if s[0] in got: say(f'skipped {f}: sticker {s[0]} already has {got[s[0]]}'); continue
-        got[s[0]] = f
-    if not got: die('no images matched (name them 01-<anything>.png ... 12-<anything>.png)')
+    got, rest = map_images(os.listdir(src))
+    if not got: die(f'no images in {src}')
+    say('the mapping (check it):')
+    for n in sorted(got): say(f'  {n:2d} {STICKERS[n - 1][2]:<22} <- {got[n]}' + ('' if got[n] not in rest else '   (by order)'))
     processed = {n: process(ctx, next(s for s in STICKERS if s[0] == n), os.path.join(src, f)) for n, f in got.items()}
     c = content(ctx, processed, set())
     build_app(ctx, c)
@@ -452,7 +493,7 @@ def cmd_status(ctx, o): drain(ctx, dry=True)
 
 def cmd_seal_drainers(ctx, o):
     stamp = time.strftime('%Y-%m-%dT%H%MZ', time.gmtime())
-    for pid in DRAINERS:
+    for pid in (o.person or DRAINERS):
         out = os.path.join(ctx.root, f'data/sealed/{pid}/{stamp}-stickers-vault-key.json')
         seal_to(ctx, pid, {'title': 'The sticker vote: the vault key, so you can drain the votes',
                            'text': f'This is the vault key of {VAULT_NAME} ({ctx.vid}), the team sticker vote (WS-159), and the passphrase of its drain key. It lets you drain the votes inside the vault: open https://dev.vault.sgraph.ai/#<the vault key below>, add the SG/Send access token in the vault host (the lock button) so the vault is writable, scroll to Drain the votes, paste the drain passphrase and press Drain. It also gives full write access to the vault, so use it only for that, and keep it in your password manager. Votes close Thursday 5 November, 18:00 UTC. From {AGENT}.',
@@ -469,7 +510,8 @@ def main():
     a.add_argument('--root', default=os.path.dirname(os.path.dirname(HERE)))
     a.add_argument('--creds', default='~/.sg-send/lanes/stickers-vote.json')
     sub = a.add_subparsers(dest='cmd', required=True)
-    for n in ('setup', 'app', 'lanes', 'status', 'seal-drainers', 'placeholders'): sub.add_parser(n)
+    for n in ('setup', 'app', 'lanes', 'status', 'placeholders'): sub.add_parser(n)
+    p = sub.add_parser('seal-drainers'); p.add_argument('--person', action='append', help='only these (repeatable); default: ' + ', '.join(DRAINERS))
     p = sub.add_parser('images'); p.add_argument('folder')
     p = sub.add_parser('drain'); p.add_argument('--dry', action='store_true')
     p = sub.add_parser('purge'); p.add_argument('--person', required=True)
