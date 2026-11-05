@@ -95,6 +95,18 @@
         "keys_page_id": "conductor-angelo",
         "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEApvPBWtt4Z5wAeRtTGY5u\nDlqBVdCP8pNQcPAd0dKCEzi9aJFIU/t0tBvEztgHHmyaNdQBa7tjjnKHULbDHT+W\nEHbres16sMt/NN+DrAxXn1VHHrLnuWv/QhqQtcjje8nly13ri40UmYn/5hf15xun\n09tRzvI70yfhQG37hHXLLiW5Yz52ycCiKmF1L+fJ1I1RVofD9n7R/ei2xHvuuZ8U\nAsgELSXUxvWSLvKaJaHurJ1g63FmOzYwLpPGrIG3rAI9gAFxCpTBjqZzja4Rwkjk\nIBN7vxE4V7kx85WgyHDOyrLw26sz9rTwsrfrFxUmT/ezsbCM8BGog3/SHj8fTEzU\nfF2WcFXjuqV5ipEtm7BZY3dirtL9vB02j1es+v7mPO/C0QIgaB4eEBRcCHoNuaEP\nUTZ+pK31HZEH4JfqJ4wQ5/4lkt2d5ORmfl7YhRuS2NwC/TE12/oVjdcWtK77lRPh\nNAKCuLgXLGJX6Sp+sUC+ehdB9+YAHJIViG9mq5AInGWBthI/duC78+BlxjSy2nX2\nh5Pn1pqhF0HAZxNnP/Cn9qF4RuMdBoeGfGZ6Xe5M5cQ9g94EajqDmzB44+Gn6yRB\nnqBOIIOUDvzbEsHGJ+bzKiS57xUflmlaAYVcdp1HYFpKMF+8O4dxTBWUiz1nklyy\nzLX9dI9Pb6XVgOPUeyPwrRcCAwEAAQ==\n-----END PUBLIC KEY-----\n"
       }
+    },
+    {
+      "agent": "vault@web-summit.angelo",
+      "host": "https://dev.send.sgraph.ai",
+      "vault_id": "v7u74bba",
+      "append_token": "b85554e0972c4d166d62288c6955b37ad3cc1e518ed898458bb6cdfe440b2e02",
+      "recipient": {
+        "fingerprint": "sha256:c4e53e483cf18e9e",
+        "signing_fingerprint": "sha256:70e1da6fbebb0006",
+        "keys_page_id": "vault-angelo",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAvL2CCx6I9NBPZ9vzqwia\nL4bVWoxwDU18laWBiOd8g5iE76rIdNPi5VYHBJTxavuEExybRRkqZTRqyJpmf235\nvGSqkAj1tO6s1id1o24G9P2Q+aQep+BtyVEd7AEkChxrotExgedJUc3kWuD+nfTT\nlUljriLHOUCF8CiaaIzQrX0/hTWKUBYo2ogYV5c7xld5oGy1jVK643nEogJN5sxa\n+T1T0HHMYEGNYpWgRugjn2U6piSGoyXlhvMo772moQ5TiuY2+z76XcF6dC19hXRv\nXOMWX5009bPJTTbW4hFX+3l7YF7nbtZne7a6GFmVIna+FKdPU0xrNMM04k9g0j9U\noO0VejBxBjtCjW1pZ5v8hNhLVkLNZ7WcbAS7iGyq8uCyTqZIdfcxczF70uyvolBt\nQe8z2iPRspmavtwscsyFA6aH6/pt4HeosD/EIVs1lT3If6rKojTQiwNMZOAq8IiZ\nxpAChrMQ9KQjhj/4l0+G3BSA1MGrKfYj8HaMKu8AJ/fXXq8f8loh2Dsgj3/HmXFH\nONH1yRDdIinP0uE3RvimeTSv7IHShAj+e1+o0cfYkJifo4wzAAAL4rN/opAB9E+A\nDtXXLIO+Afi6TMtA9ZIhVxcco5PT5fgqxceTec43MtG1tEAcD+zRegBwrTbB/724\n38bP1gvSVmJo+/7CkJfneUUCAwEAAQ==\n-----END PUBLIC KEY-----\n"
+      }
     }
   ]
 }
