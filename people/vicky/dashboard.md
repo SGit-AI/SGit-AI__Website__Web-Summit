@@ -36,4 +36,4 @@ Open it here, live from the vault (read only; nothing loads until you click). Al
 ```
 
 - **My agents:** [Reports](../../reports/index.html) · [Board health](../../board-health/index.html) · [Team pulse](../../pulse/index.html)
-- **Promptugal News:** [Story ideas](stories/index.html) · [Logo options](promptugal/index.html)
+- **PrompTugal.news:** [Story ideas](stories/index.html) · [Logo options](promptugal/index.html)

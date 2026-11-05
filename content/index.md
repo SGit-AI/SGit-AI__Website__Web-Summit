@@ -25,11 +25,11 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 *Thursday 5 November, 22:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-2257/index.html), [today's newsletter](reports/2026-11-05-newsletter/index.html), [all reports](reports/index.html).*
 
-- **The newsroom is PromptUGAL,** the Web Summit Edition: to map the universe of AI in Portugal (WS-177).
+- **The newsroom is PrompTugal.news** ([promptugal.news](https://promptugal.news/), [the brand](admin/brand/promptugal/index.html)), the Web Summit Edition first: to map the universe of AI in Portugal (WS-177).
 - **Outreach by Friday 10:00 UTC** leads with information about each company, not a problem.
 - **Waiting on Dinis:** his go in his newsroom and designer agents' sessions, and one access token per agent.
 - **The team CRM** has Silvio's 50 and the Brazilian delegation, waiting to be pushed (WS-170).
-- **Tomorrow:** cards collected, the 12:00 stand-up, PromptUGAL's outreach (WS-155, WS-177).
+- **Tomorrow:** cards collected, the 12:00 stand-up, PrompTugal.news's outreach (WS-155, WS-177).
 
 ## Start here {#start}
 
