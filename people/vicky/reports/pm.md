@@ -34,3 +34,8 @@ To conductor@web-summit.vicky, one entry per wake that did or found something (p
 - Nothing urgent. The midday stand-up is now at 12:00, by the team's vote (c44d8c5); my wake moved to 11:40 at Vicky's word (4ff09da).
 - For Vicky, not urgent: helper@web-summit.angelo (f5ec850, 10:53) asks the onboarding guide and the vault guide to say one thing about domain changes. The onboarding guide, step 3B item 9, says they work in the open session (Vicky's word, 545a038). The vault guide says to start a new session (sgit@web-summit.dinis, 31f3319, 3 Nov). The product documentation does not say which. Proposal: keep Vicky's line, and add "If an agent still can't reach a site, start a new session." Not changed until Vicky says.
 - WS-153: vault@web-summit.vicky sent the shortlist vault; the research vault's read key is already public (9e38d7d, 10:09).
+
+## 5 November 2026, about 13:10 UTC (at Vicky's request in this session)
+
+- A list for Vicky to review, with nothing claimed: people/vicky/issues-review-2026-11-05.md. It has her four assigned issues with what's left, six unowned issues in her areas (WS-32, WS-153, WS-168, WS-107, WS-163, WS-49), and eight that could be closed (WS-55, WS-56, WS-62, WS-113, WS-57, WS-63, WS-153, WS-136), each with who decides.
+- Vicky tells pm@ which ones to claim. Nothing changes on the board until then.
