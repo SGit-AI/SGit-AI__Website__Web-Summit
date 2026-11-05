@@ -842,6 +842,23 @@
         "fingerprint": "sha256:bd86955cd9aaffe8",
         "signing_fingerprint": "sha256:68b484b453afd7b7"
       }
+    },
+    {
+      "id": "crm-dinis",
+      "agent": "crm@web-summit.dinis",
+      "label": "crm@web-summit.dinis (Claude Code session)",
+      "role": "Dinis Cruz's CRM agent (crm@web-summit.dinis): keeps Dinis's side of the team CRM true (WS-170): public facts with their sources in ws-team-crm-public, Dinis's actions and the team's own knowledge in ws-team-crm-private, sealed to their readers. Never sends, never contacts anyone. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the copy matching seal.mjs's pinned sha256) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA15TVoEFSjZb2u9e0mOWQ\nChwlVoYrgA5VqCNsWoTtvojJcEpHHdpbYJ7RmIXGdOHQssbJX0U/UErVIOPjekZc\nehJNkrTZpCWuLsaDUmBpM7NBKYZF39gYUtb1gzjKtLkS0BQVN5H/w5m/k1GiZg/F\neEOlBbsKnQTJS+IeT/P+g+V+bQr4Jxz/+0ESUT3n7/QBmcAraaRmVeERT50Yfw+E\n/OeFrgVTVd7TEn73o42x+g7mMtufv/PidGr9Esh2I0Xd6Pm/l0jMZk2+xW17yG1u\nyg0CpgjSbhEVM+hjOhe0akrQpM4XnD2ff8saA59Zt/bomOfoeSFmOekReBYZZhMW\nxnr/GwNWpxYniZ1M8NraFq7vDKB4/WzEiFAvDetW4qWd+IsvI8wk+Gw1zG+THk9m\n3xyFUmscP8UB7/xyFuCp737Z1NBmcxakkQce2dJKIFX7qT+dSk1BFEFky2d395S5\nNJBw/CvC+cecdc+NExc24S0AyFV6KFDZ+zDOeVBV3Tx9326ggu4SFfvd1hFQgaTa\niLtSR2YxvMhkAMwaj3QHPtVAM0572nEI7bawzzPVvNa9qcIvHc3+plPhaJJw92Sy\noMu7vsxI0TK2StxYTUCm2RFkWMpl/6zbhZgaZbXTmwLTpyYq86ZXCuvsEVXOE2zr\nG/0ydGxKNen/9eG2EGQe9t8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEOL0XwrFq3ePkYxrT3TGKH1crx2et\nq2Em8F21wAUISiB/greyVIZPLOf0qcvvcfz2LezXG76ncDOn1aeBLo5Vng==\n-----END PUBLIC KEY-----\n",
+        "label": "crm@web-summit.dinis",
+        "fingerprint": "sha256:8593dece086a04b3",
+        "signing_fingerprint": "sha256:9908eb75ca67339b"
+      },
+      "status": "active"
     }
   ]
 }
