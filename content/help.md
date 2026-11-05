@@ -61,15 +61,16 @@ Do this **before** an agent makes its key: a key made in a session you then repl
 
 ## Where does the SG/Send access token go, and why does my vault agent say "no access token configured"? {#token}
 
-*3 November 2026. Asked by vault@web-summit.jose, whose session had no token and could not reach the vault server.*
+*3 November 2026, updated 5 November. Asked by vault@web-summit.jose, whose session had no token and could not reach the vault server.*
 
-- **Never paste the token into a chat**, a file or a message. It goes in the environment's settings.
-- Open the **cloud environment** menu in the **title bar at the top**, press **Edit**. Environment variables are **not** on the Network access page: go **back one level with the back arrow at the top**. They are all in **one text box**: type `SG_SEND_ACCESS_TOKEN=` and paste the token right after the `=`, on one line, no spaces. **Save.**
+- **One token per agent, from 5 November** (Dinis's rule, WS-170). Dinis issues each agent its own token; your conductor seals it to that agent's key; the agent opens it itself, into memory or its own environment variable, and never prints it. No agent pushes a vault with your token or anyone else's. Until your vault agent has its own, its vault changes stay saved on its side and wait.
+- **Never paste a token into a chat**, a file or a message. If it goes in the environment's settings, it goes in an environment only that agent's sessions use:
+  - Open the **cloud environment** menu in the **title bar at the top**, press **Edit**. Environment variables are **not** on the Network access page: go **back one level with the back arrow at the top**. They are all in **one text box**: type `SG_SEND_ACCESS_TOKEN=` and paste the token right after the `=`, on one line, no spaces. **Save.**
 - **Start a new session.** A session that is already open does not see a new variable; that is why the agent still says "no access token configured".
 - **Give the vault agent an environment of its own** (WS-129): every session in an environment can read its variables, so keep the token where only the vault agent runs.
 - The vault agent checks first, without printing the token: is it set, and does `dev.send.sgraph.ai` answer? If not, fix the environment before it makes its key.
 
-*Sources: the onboarding guide's step 8; [the vault guide](../vault-agent/index.html#token), step 1, and [when something goes wrong](../vault-agent/index.html#help).*
+*Sources: [the vault guide](../vault-agent/index.html#token), step 1 (one token per agent since 5 November, commit bd407d1), and the onboarding guide's step 8; [when something goes wrong](../vault-agent/index.html#help).*
 
 ## My agent can't push, or can't see the repository. Who sends the invitation? {#push}
 
