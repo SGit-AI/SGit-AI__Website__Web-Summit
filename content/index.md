@@ -23,13 +23,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Thursday 5 November, 04:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-0457/index.html), [yesterday's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
+*Thursday 5 November, 06:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-0657/index.html), [yesterday's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
 
 - **What Dinis did last night, in pictures:** [his update, and who needs to look at what](nights/2026-11-05/index.html), before 13:00.
 - **The sticker vote closes at 14:30:** [/stickers/vote/](stickers/vote/index.html).
-- **The cards redesigned** (design A); [/cards/print/](cards/print/index.html) is the page for the shop (WS-155).
-- **Security reviewed every key and secret on the site;** one high finding (WS-164).
-- **Outreach:** 38 more companies invited to meet Dinis online, the week of 16 November.
+- **A 30-second film for the stand:** [Your AI has access. Does it have permission?](videos/access-permission/index.html)
+- **Put your key on every device** you take to Lisbon, before Monday (WS-166).
+- **Today:** the targets and the outreach (WS-26); the printer's layouts (WS-48).
 
 ## Start here {#start}
 
