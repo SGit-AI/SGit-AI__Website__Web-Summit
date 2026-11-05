@@ -33,3 +33,11 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - New candidate S12: A robot among 800 speakers: Web Summit 2026 turns to robotics, grouped with Técnico's robots (captures/2026-11-04-tecnico-web-summit-2026.md).
 - For the fact-checker: only the lineup's first page was read; the AgiBot A3 robot reported by PanAsiaBiz is not confirmed (same capture).
 - Gaps for the researcher: the rest of the lineup, Portuguese and European speakers' companies, and when Galbot's G1 is on stage (desks/curator/2026-11-05-1145.json, gaps_for_the_researcher).
+
+## Thu 5 Nov 2026, 18:30 UTC (sources under every storyline, from the 18:00 stand-up)
+
+- At Vicky's word from the 18:00 stand-up: desks/curator/README.md in the newsroom repository (v0.1.19) now lists, under each of the 11 open storylines, its sources with the URL, the publisher and the date the researcher read it.
+- The 33 source lines are copied from the researcher's captures in vault 41j3e9s9 (captures/*.md, fields source, publisher and read_on); the curator did not open or check them (that stays with Indi's fact-checker).
+- All are public pages from the captures, which vault@ audited before publishing the read key and which list only public URLs (vault 41j3e9s9, PUBLIC.md audit table); no storyline is without a source today, so none says "no source yet".
+- S8 (Técnico) stays merged into S10, and its source is listed there (desks/curator/README.md).
+- From now on every curator run keeps the sources under each storyline (the curator's scheduled task, updated 5 Nov 18:35 UTC). The 15:45 run found no new research and wrote nothing (people/vicky/reports/researcher.md has no entry after 11:30).
