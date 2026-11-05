@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.678",
+    "date": "2026-11-05",
+    "what": "Links: the pages the team will use most (CRM, my brief, cards, sticker vote, setup help)",
+    "by": "dev@web-summit.silvio",
+    "from": "f5459a512"
+  },
+  {
     "version": "v0.2.677",
     "date": "2026-11-05",
     "what": "report times corrected to the commit times",
