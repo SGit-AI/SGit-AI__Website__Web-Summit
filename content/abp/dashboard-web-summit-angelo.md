@@ -20,7 +20,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 
 ## Gap: capabilities within Reach beyond authority {#gap}
 
-- `people/angelo/app/config.json` decides what Angelo's command centre loads and whether its Ask Claude chat is on; the command centre runs on the site's one origin, where every person's `app.js` can read keys kept in the browser (WS-117, security's finding 3).
+- `people/angelo/app/config.json` decides what Angelo's command centre loads and whether its Ask Claude chat is on; the command centre runs on the site's one origin, where every person's `app.js` can read keys kept in the browser (WS-117, security's finding 3). Since 90e73e39 (WS-164), the keyring is left off any page that runs a script from `people/` or a person's `pages.mjs`, and gate check 22 fails a page with both, and any `people/` script that reaches for the keyring, IndexedDB or sealed data: a technical barrier.
 - Write anywhere in the repository: its push access is not limited to `people/angelo/` and `board/`, the paths its person's brief gives it.
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November; still at 08:15 on 3 November).
 - Anything its session's other connectors can do: not known to this ABP.
@@ -55,4 +55,4 @@ Open questions: its connectors; who reviews its output each day; whether Angelo 
 
 ## Provenance {#provenance}
 
-Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 2, 4 November 2026 (00:10 wake: WS-133), in `content/abp/` with its history in git.
+Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 3, 5 November 2026 (08:10 wake: gate check 22; 00:10 wake: WS-133), in `content/abp/` with its history in git.
