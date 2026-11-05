@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.412",
+    "date": "2026-11-05",
+    "what": "the studio's vault panel says where its risk stands now (WS-132 part 1 done; test tokens only until WS-117)",
+    "by": "sgit@web-summit.dinis",
+    "from": "b67fed816"
+  },
+  {
     "version": "v0.2.411",
     "date": "2026-11-05",
     "what": "pushed-by.mjs follows the cursor (fixed); the 4 November debriefs from Jose's notes",
