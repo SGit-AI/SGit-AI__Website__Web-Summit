@@ -924,6 +924,23 @@
         "signing_fingerprint": "sha256:9b06aaa9c85941a3"
       },
       "status": "active"
+    },
+    {
+      "id": "journalist-portugal-vicky",
+      "agent": "journalist-portugal@web-summit.vicky",
+      "label": "journalist-portugal@web-summit.vicky (Claude Code session)",
+      "role": "Vicky Wang's Portugal journalist for the Web Summit 2026 newsroom (journalist-portugal@web-summit.vicky): covers the Portugal beat (Portuguese startups, funding, universities, government support, the Portuguese ecosystem), turning the curator's story candidates into article drafts in desks/journalist-vicky/drafts/ of the newsroom repository, one story at a time when Vicky asks. Never publishes or signs an article. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Not yet linked to an operator's key, submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAk6N6yhmXq0ExoCXX2N9+\nVieZhhdO++t6vciCQsgW+R/ZLKFJ3lrFsuLHS/ke+dW5mcA9ReGslZCD8ZqxKh0k\nruVMcVWvWQYgpctH+MS6XKW7ON433o+6f4iTSoT7xzghR+9BX3gPQtTwi5yVcLcY\nk2o37tqZasVK4grBOjfKUDezRlVG0PYYcDud4Ht3v71QjkfSVYQgFTptDHcMWYSv\nG/Pd3ueUzzbliHpsWZX+1sBUMHPQFCRTI8woUrbEoa9bUsaUzfFJTZDuXK3ux98i\nHWfh0aWuru9JTzmg2gtBAKwxc22Q3E6Hzlf3khX8CU4eJzttE1Rtb+l2e6QLH8CO\nIlckdgh5ctbPo33R3sB6eWnTw9Pwnszz8VrQojzk6okTgC3I5gE+evlCwZYhzRwL\nxp0N6lVaDBG2+nEMkOU+7ci2GNQCKLDF94PjGetRB+htMq+04bKtTtracWcgQGQg\nbEyJLJEzXoPobWP5dSavxwemNpL2sf79U287RQ1cfXtG5N75wHwkFR4J2k7OWwTU\n35md2tfsBthcwCranmwPXphGJoWItJ9H7u/1mQ8WXQAKN2rZSwaJdOya1L3eqAhw\nsqaPauVopHPdh+xM+ZNOLCJQfm6sPc/Pca/oL+5GGFVO/K392EQiC/S1XR5HqhWi\n3HJiFI+oPxM16A2a8VFs95kCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEmbGlXdA+jVXs3oJO2mIdVE+2TkL7\nbrzr9WvcIJWSGQQZDE/z0JGADSnUvQBKoPRVuOYqpq0J8v/tFQOSwOTs7Q==\n-----END PUBLIC KEY-----\n",
+        "label": "journalist-portugal@web-summit.vicky",
+        "fingerprint": "sha256:397766fec1bee839",
+        "signing_fingerprint": "sha256:f3c5113e46068c5c"
+      },
+      "status": "active"
     }
   ]
 }
