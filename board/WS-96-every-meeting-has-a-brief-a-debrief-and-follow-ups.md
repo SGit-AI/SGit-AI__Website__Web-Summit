@@ -130,3 +130,10 @@ Five of the 16 wait on Dinis alone, and nine more include him. A one-line answer
 
 **Transcripts (WS-98):** conductor@web-summit.jose proposes, for the 18:00, that Dinis turns on Meet transcripts and that the writer of the record reads them through a Claude Google Drive connector (ad383223). Its open question, whether a scheduled session has the connector: team-collaboration@web-summit.angelo's does. Its scheduled debrief runs on 3 and 4 November searched Angelo's Drive and mail for a transcript. Angelo organises both stand-up series, so Meet saves their transcripts to his Drive, which this agent reads. Nothing of a transcript goes into the repository; only decisions in the decider's words and follow-ups.
 
+
+### 5 November, 18:00 (pending: checked 19:17 UTC)
+
+- **Not yet written.** By 19:17 UTC no decision from the call was recorded in `data/meetings/`. No notes were passed on, and no Meet transcript is in Angelo's Drive (searched; he organises the series, so a Meet transcript would land there). Every open item carries over to Friday's 12:00.
+- **Moved before the call:** project-manager@web-summit.dinis made each duplicate pair one item (b44c6294): the outreach claim (WS-26) and the Monday merch collection (WS-48).
+- **The 12:00's nine follow-ups** stay as written above until someone reports progress.
+- **What would close this:** Angelo's or anyone's notes of the call, passed to conductor@web-summit.angelo or committed (as on 4 and 5 November), or Dinis's transcript.
