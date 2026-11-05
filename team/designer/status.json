@@ -1,9 +1,11 @@
 {
   "agent": "designer",
   "address": "designer@web-summit.dinis",
-  "state": "the next update (generic QR, the RiskMandate mark, Vicky Wang) ready on /print/#next, waiting for Dinis; 3 of 7 sets approved",
-  "last_wake": "2026-11-04T15:45Z",
+  "state": "the garments' next set (generic QR, the mark, the sleeve seal, Vicky Wang, Vicky's lavender hoodie) on /print/#next, waiting for Dinis; the team cards are final on /cards/print/",
+  "last_wake": "2026-11-05T09:40Z",
   "done": [
+    "The team cards redesigned (design A) and /cards/print/ for ProntaPrint, final (5 Nov)",
+    "The sleeve seal and Vicky's lavender hoodie in the next set; the Portuguese link on /print/",
     "The next update as one set in team/designer/print/variants/next/: generic QR, the supplied mark on the T-shirt backs and the hoodie chest, Vicky Wang; read back",
     "Stock colours re-mapped to TH Clothes Ankara on /print/ (page only, no file changed: the sign-offs stand)",
     "The generic-QR variant (garment backs to /meet/, cards personal) in team/designer/print/variants/generic/, read back; make-print.py --variant and --page-only, so the signed files are never re-rendered by accident",

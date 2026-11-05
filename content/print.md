@@ -2,6 +2,8 @@
 title: Print files: the RiskMandate merch
 summary: The Official Sign-off of the RiskMandate merch, and everything a printer needs for the Web Summit 2026 team's RiskMandate merch (7 x 3 T-shirts, 7 hoodies, 7 x 100 business cards), as vector files at their real size with a zip of the lot, and the final set for Dinis to sign off person by person. RiskMandate only.
 ---
+**🇵🇹 [Português](../impressao/index.html)**: a versão desta página para a gráfica (procurement@web-summit.silvio).
+
 {{signoff-summary}}
 
 For the printers, through Silvio Switha ([the print order](../print-order/index.html)); every file here is the final artwork once Dinis has signed it off below. Made by **designer@web-summit.dinis** from `data/design.json` and `team/designer/print/final.json` (`team/designer/print/make-print.py`).
@@ -15,10 +17,14 @@ Everything asked for since the sets above were signed, made once, as one complet
 1. **One QR code for everyone on the garments**, to [https://web-summit.sgit.ai/meet/](../meet/index.html) (the team page): Dinis, as relayed by his conductor and by Silvio's procurement agent (3 November). The cards keep each person's own code.
 2. **The RiskMandate mark** (the supplied containered mark, from riskmandate.ai/brand, never recoloured): 70 mm at the top of every T-shirt back, with the brand's clear space, and as the hoodie's chest logo (relayed from Dinis, 3 November). 70 mm keeps its thinnest ring at 1.1 mm.
 3. **Vicky's card reads "Vicky Wang"** (Vicky's own word through her agent, 4 November).
+4. **The RiskMandate seal on the left sleeve** of every T-shirt and hoodie, 75 mm, as supplied (Silvio's choice, which Dinis confirmed in person on 4 November, as relayed): a file of its own per person, `<id>-sleeve`.
+5. **Vicky's hoodie in lavender with black ink** (the printer has no purple hoodie; Vicky's own word, through Silvio): white would not read on lavender.
 
-Not in it, waiting for a decision: the **sleeves** (still "nothing on the sleeves" until Dinis says otherwise), the **purple** blank (Silvio's call with the printer), and whether the cards move to Indi's new design (B. Seal, `team/designer/print/concepts-rm/`). **Not yet the files to print:** the sets above stand until Dinis confirms this update in the designer's session; then it becomes the main set and every set is signed again. Checked as printed: 14 garment backs to /meet/, 7 cards to their own pages.
+**🇵🇹 [Em português](../impressao/index.html)** (procurement@web-summit.silvio).
 
-[Download the proposed set (zip, 6338 KB)](../team/designer/print/variants/next/riskmandate-print-files-next.zip) · proofs: [Dinis](../team/designer/print/variants/next/proofs/dinis.svg) · [Nimay](../team/designer/print/variants/next/proofs/nimay.svg) · [Angelo](../team/designer/print/variants/next/proofs/angelo.svg) · [Jose](../team/designer/print/variants/next/proofs/jose.svg) · [Vicky](../team/designer/print/variants/next/proofs/vicky.svg) · [Silvio](../team/designer/print/variants/next/proofs/silvio.svg) · [Indi](../team/designer/print/variants/next/proofs/indi.svg)
+Not in it: the **business cards** in this set are the personal C1 cards; the team now orders the three unnamed team cards instead ([the cards' order page](../cards/print/index.html)). **Not yet the files to print:** the sets above stand until Dinis confirms this update in the designer's session; then it becomes the main set and every set is signed again. Checked as printed: 14 garment backs to /meet/, 7 cards to their own pages.
+
+[Download the proposed set (zip, 6725 KB)](../team/designer/print/variants/next/riskmandate-print-files-next.zip) · proofs: [Dinis](../team/designer/print/variants/next/proofs/dinis.svg) · [Nimay](../team/designer/print/variants/next/proofs/nimay.svg) · [Angelo](../team/designer/print/variants/next/proofs/angelo.svg) · [Jose](../team/designer/print/variants/next/proofs/jose.svg) · [Vicky](../team/designer/print/variants/next/proofs/vicky.svg) · [Silvio](../team/designer/print/variants/next/proofs/silvio.svg) · [Indi](../team/designer/print/variants/next/proofs/indi.svg)
 
 
 ## The order {#order}
