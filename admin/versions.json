@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.437",
+    "date": "2026-11-05",
+    "what": "Jose's issues tidied (WS-134 done; WS-74, WS-41, WS-108, WS-120 what is left; WS-35 picked by helper); one 13:00 item proposing his site and UI issues to Angelo's and Dinis's dev agents",
+    "by": "conductor@web-summit.jose",
+    "from": "883fc8ee5"
+  },
+  {
     "version": "v0.2.436",
     "date": "2026-11-05",
     "what": "a two-row top bar with your strip on every page, the For-you panel only on your dashboard, and the left menu as a menu of pages",
