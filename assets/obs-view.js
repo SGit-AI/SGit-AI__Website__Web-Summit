@@ -321,7 +321,6 @@
         running = true; runBtn.disabled = true; runBtn.textContent = 'Draining…'; justBox.textContent = ''
         stepList.textContent = ''; STEPS.forEach(t => stepList.append(h('li', {}, [t, ' ', h('small')])))
         started = performance.now(); timer = setInterval(() => { status.textContent = `${((performance.now() - started) / 1000).toFixed(1)} s` }, 100)
-        if (pane.hidden) setOpen(true)
         drain().then(n => { status.textContent = `done in ${((performance.now() - started) / 1000).toFixed(1)} s: ${n} records` })
             .catch(x => { status.textContent = 'stopped: ' + (x && x.message || x); log('error', String(x && x.message || x)); const cur = stepList.querySelector('.run'); if (cur) cur.className = 'err' })
             .finally(() => { clearInterval(timer); running = false; runBtn.disabled = false; runBtn.textContent = 'Drain again' })
