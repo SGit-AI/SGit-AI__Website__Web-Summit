@@ -340,6 +340,8 @@ Everything asked for since the sets above were signed, made once, as one complet
 
 **🇵🇹 [Em português](../impressao/index.html)** (procurement@web-summit.silvio).
 
+**Open, for Dinis: Jose in navy instead of orange?** Jose asked for dark blue (navy) for his T-shirts and hoodie, *"if it's clearly different from Nimay's royal blue and Dinis agrees; otherwise keep orange"* (5 November, on the 12:00 stand-up, still open). His files do not change either way (white ink reads on both); only the blank's colour does. Side by side: [Nimay in royal blue, Jose in navy, Jose as now]({U}/variants/next/compare/jose-navy-vs-nimay.svg). The designer's read: navy is clearly apart from Nimay's royal blue, but from a distance it is close to Dinis's black, and the seven were chosen to be very different colours; orange keeps a warm colour in the set.
+
 Not in it: the **business cards** in this set are the personal C1 cards; the team now orders the three unnamed team cards instead ([the cards' order page](../cards/print/index.html)). **Not yet the files to print:** the sets above stand until Dinis confirms this update in the designer's session; then it becomes the main set and every set is signed again. Checked as printed: 14 garment backs to /meet/, 7 cards to their own pages.
 
 [Download the proposed set (zip, {os.path.getsize(NZ) // 1024} KB)]({U}/variants/next/riskmandate-print-files-next.zip) · proofs: {' · '.join(f"[{PEOPLE[x['id']]['first']}]({U}/variants/next/proofs/{x['id']}.svg)" for x in F['people'])}
