@@ -3,7 +3,7 @@
 // vault in a frame, to list the vote lanes (who has a ballot waiting: a lane with a pending file, no ballot opened) and
 // to read results.json from the vault (the leaderboard, written by the drain).
 // Round 2 (Dinis: "pick the top 6 ... I can reorder them ... on the right hand side, you show me the top 6, and that's
-// what I click submit"): a team person whose browser holds their site key (assets/keyring.js) ranks up to six of the
+// what I click submit"): a team person whose browser holds their site key (assets/keyring.js) ranks up to ten (round 4: "can you allow 10 votes?"; CFG.max_ranking) of the
 // stickers in the panel on the right (a bottom sheet on a phone), reorders them by drag (pointer events) or by the up and
 // down buttons, marks any "not for me", and submits. The browser opens their sealed lane token, signs
 // {type: v2, person, ranking, not_for_me, at} with their key, seals {vote, signed, sig, key} to the vault's drain key
@@ -27,7 +27,7 @@
     const sha256 = async bytes => hex(await crypto.subtle.digest('SHA-256', typeof bytes === 'string' ? te.encode(bytes) : bytes))
     const first = n => String(n || '').split(' ')[0]
     const $ = sel => mount.querySelector(sel)
-    const MAX = 6
+    let MAX = 10                                    // CFG.max_ranking (data/stickers-vote.json), read at start
     let CFG = null, ME = null, PENDING = {}, RESULTS = null
     let RANK = [], NFM = []                         // the ballot being built: ids in order, and "not for me"
     let VPICK = {}, FACE = {}                       // round 3: the favourite variant per sticker (a heart), the variant showing
@@ -91,14 +91,14 @@
 <div class="sv-me" data-me role="status" aria-live="polite"></div>
 <div class="sv-main">
   <ol class="sv-grid" data-grid></ol>
-  <aside class="sv-panel" data-panel aria-label="My top 6">
-    <button type="button" class="sv-ph" data-sheet aria-expanded="false"><b>My top 6</b><span data-filled>0 of 6</span><span class="sv-chev" aria-hidden="true"></span></button>
+  <aside class="sv-panel" data-panel aria-label="My top ${MAX}">
+    <button type="button" class="sv-ph" data-sheet aria-expanded="false"><b>My top ${MAX}</b><span data-filled>0 of ${MAX}</span><span class="sv-chev" aria-hidden="true"></span></button>
     <div class="sv-pbody">
-      <p class="sv-hint">Tap a sticker to add it. Drag the handle, or use the arrows, to put them in order: 1st gets 6 points, 6th gets 1.</p>
+      <p class="sv-hint">Tap a sticker to add it. Drag the handle, or use the arrows, to put them in order: 1st gets ${MAX} points, ${MAX}th gets 1.</p>
       <ol class="sv-slots" data-slots></ol>
       <div class="sv-nfm"><b>Not for me</b><ul data-nfm></ul></div>
     </div>
-    <button type="button" class="sv-go" data-submit disabled>Submit my top 6</button>
+    <button type="button" class="sv-go" data-submit disabled>Submit my top ${MAX}</button>
     <p class="sv-last" data-last></p>
   </aside>
 </div>
@@ -111,10 +111,10 @@
 <div class="sv-vault" data-vault><button type="button" class="sv-open" data-openvault>Open the vault here</button></div>`
         let grp = null
         $('[data-grid]').innerHTML = CFG.stickers.map((s, i) => `${s.group_title && s.group !== grp && (grp = s.group) ? `<li class="sv-group"><h3>${esc(s.group_title)}</h3></li>` : ''}<li class="sv-card" style="--i:${i}" data-id="${s.id}"><div class="sv-cin">
-<button type="button" class="sv-face" data-add aria-label="${esc(s.id + '. ' + s.name)}: add to my top 6"><span class="sv-img"><img src="${esc(up + s.thumb)}" alt="" width="480" height="480" loading="lazy"><span class="sv-num">${s.id}</span><span class="sv-rank" data-rank></span><span class="sv-pts" data-n></span></span>
+<button type="button" class="sv-face" data-add aria-label="${esc(s.id + '. ' + s.name)}: add to my top ${MAX}"><span class="sv-img"><img src="${esc(up + s.thumb)}" alt="" width="480" height="480" loading="lazy"><span class="sv-num">${s.id}</span><span class="sv-rank" data-rank></span><span class="sv-pts" data-n></span></span>
 <b>${esc(s.name)}</b><span class="sv-words">${esc(s.words)}</span><span class="sv-joke">${esc(s.joke)}</span></button>
 ${s.variants && s.variants.length > 1 ? `<span class="sv-vars" role="group" aria-label="Variants of ${esc(s.name)}"><button type="button" class="sv-vstep" data-vstep="-1" aria-label="Previous variant">‹</button>${s.variants.map((v, k) => `<button type="button" class="sv-dot" data-v="${k}" aria-label="Variant ${v.v}"${k ? '' : ' aria-current="true"'}></button>`).join('')}<button type="button" class="sv-vstep" data-vstep="1" aria-label="Next variant">›</button><button type="button" class="sv-heart" data-heart aria-pressed="false" title="This one: my favourite variant"><span aria-hidden="true">♡</span> this one</button></span>` : ''}
-<span class="sv-acts"><button type="button" class="sv-add" data-add>Add to my top 6</button><button type="button" class="sv-no" data-no aria-pressed="false" title="Not for me"><span aria-hidden="true">👎</span><span class="sr">Not for me</span></button></span></div></li>`).join('')
+<span class="sv-acts"><button type="button" class="sv-add" data-add>Add to my top ${MAX}</button><button type="button" class="sv-no" data-no aria-pressed="false" title="Not for me"><span aria-hidden="true">👎</span><span class="sr">Not for me</span></button></span></div></li>`).join('')
         $('[data-grid]').addEventListener('click', e => {
             const li = e.target.closest('.sv-card'); if (!li) return
             const id = +li.dataset.id
@@ -144,7 +144,7 @@ ${s.variants && s.variants.length > 1 ? `<span class="sv-vars" role="group" aria
         if (!canVote()) return refuse(id)
         const i = RANK.indexOf(id)
         if (i >= 0) RANK.splice(i, 1)
-        else if (RANK.length >= MAX) { refuse(id); say(`Your top 6 is full: remove one in the panel first.`, 'warn'); return }
+        else if (RANK.length >= MAX) { refuse(id); say(`Your top ${MAX} is full: remove one in the panel first.`, 'warn'); return }
         else { RANK.push(id); NFM = NFM.filter(x => x !== id); bump() }
         draw()
     }
@@ -180,22 +180,22 @@ ${s.variants && s.variants.length > 1 ? `<span class="sv-vars" role="group" aria
             if (hb) { const s = sticker(id), showing = s.variants[FACE[id] || 0].v, on = VPICK[id] === showing; hb.setAttribute('aria-pressed', String(on)); hb.innerHTML = `<span aria-hidden="true">${on ? '♥' : '♡'}</span> ${VPICK[id] && !on ? `v${VPICK[id]} is my favourite` : on ? 'my favourite' : 'this one'}` }
             li.classList.toggle('ranked', r >= 0); li.classList.toggle('nfm', no)
             li.querySelector('[data-rank]').textContent = r >= 0 ? '#' + (r + 1) : ''
-            li.querySelector('.sv-add').textContent = r >= 0 ? `#${r + 1} in my top 6 · remove` : RANK.length >= MAX ? 'Top 6 is full' : 'Add to my top 6'
+            li.querySelector('.sv-add').textContent = r >= 0 ? `#${r + 1} in my top ${MAX} · remove` : RANK.length >= MAX ? `Top ${MAX} is full` : `Add to my top ${MAX}`
             li.querySelector('[data-no]').setAttribute('aria-pressed', String(no))
-            li.querySelector('.sv-face').setAttribute('aria-label', `${id}. ${sticker(id).name}: ${r >= 0 ? `number ${r + 1} in my top 6, press to remove` : 'add to my top 6'}`)
+            li.querySelector('.sv-face').setAttribute('aria-label', `${id}. ${sticker(id).name}: ${r >= 0 ? `number ${r + 1} in my top ${MAX}, press to remove` : `add to my top ${MAX}`}`)
         }
         const slots = []
         for (let k = 0; k < MAX; k++) {
             const id = RANK[k]
             if (!id) { slots.push(`<li class="sv-slot empty"><span class="sv-pos">${k + 1}</span><span class="sv-sname">${k === RANK.length ? 'Tap a sticker to add it' : ''}</span></li>`); continue }
             const s = sticker(id)
-            slots.push(`<li class="sv-slot" data-sid="${id}"><span class="sv-handle" data-drag title="Drag to reorder" aria-hidden="true">⋮⋮</span><span class="sv-pos">${k + 1}</span><img src="${esc(up + s.thumb)}" alt="" width="40" height="40"><span class="sv-sname">${esc(s.name)}<small>${6 - k} pt${k === 5 ? '' : 's'}</small></span>
+            slots.push(`<li class="sv-slot" data-sid="${id}"><span class="sv-handle" data-drag title="Drag to reorder" aria-hidden="true">⋮⋮</span><span class="sv-pos">${k + 1}</span><img src="${esc(up + s.thumb)}" alt="" width="40" height="40"><span class="sv-sname"><span class="sv-sn">${esc(s.name)}</span><small>${MAX - k} pt${k === MAX - 1 ? '' : 's'}</small></span>
 <span class="sv-sb"><button type="button" data-act="up" aria-label="Move ${esc(s.name)} up"${k === 0 ? ' disabled' : ''}>▲</button><button type="button" data-act="down" aria-label="Move ${esc(s.name)} down"${k === RANK.length - 1 ? ' disabled' : ''}>▼</button><button type="button" data-act="rm" aria-label="Remove ${esc(s.name)}">✕</button></span></li>`)
         }
         $('[data-slots]').innerHTML = slots.join('')
         $('[data-nfm]').innerHTML = NFM.length ? NFM.map(id => `<li><button type="button" data-unno="${id}" title="Undo: not for me">${esc(id + '. ' + sticker(id).name)} <span aria-hidden="true">✕</span></button></li>`).join('') : '<li class="sv-none">None yet: press 👎 on a sticker you would not put on your laptop.</li>'
         $('[data-filled]').textContent = `${RANK.length} of ${MAX}`
-        const b = $('[data-submit]'); b.disabled = !RANK.length || !canVote(); b.textContent = RANK.length ? `Submit my top ${RANK.length}` : 'Submit my top 6'
+        const b = $('[data-submit]'); b.disabled = !RANK.length || !canVote(); b.textContent = RANK.length ? `Submit my top ${RANK.length}` : `Submit my top ${MAX}`
         mount.classList.toggle('sv-has', RANK.length > 0)
     }
     // drag to reorder, with pointer events (mouse, pen and touch alike); the arrows do the same for keyboards and iPhones
@@ -227,12 +227,12 @@ ${s.variants && s.variants.length > 1 ? `<span class="sv-vars" role="group" aria
     }
     function me() {
         const box = $('[data-me]'), last = LS.get('last', null), mine = last && ME && last.person === ME.person ? last : null
-        if (!ME) { box.className = 'sv-me sv-nokey'; box.innerHTML = `<b>Add your key to vote (team only).</b> Your browser needs the site key your conductor gave you: use the <b>Add your key</b> box at the top of this page, then rank your top 6. Anyone can look; only the team votes.`; return }
+        if (!ME) { box.className = 'sv-me sv-nokey'; box.innerHTML = `<b>Add your key to vote (team only).</b> Your browser needs the site key your conductor gave you: use the <b>Add your key</b> box at the top of this page, then rank your top ${MAX}. Anyone can look; only the team votes.`; return }
         if (!ME.lane) { box.className = 'sv-me sv-nokey'; box.innerHTML = `<b>${esc(first(ME.name || ME.person))}, you have no lane yet.</b> Lanes are issued to the team's site keys; ask conductor@web-summit.dinis to re-issue them (<code>stickers_vote.py lanes</code>).`; return }
         box.className = 'sv-me'
         box.innerHTML = Date.now() >= Date.parse(CFG.closes_at) ? `<b>Voting has closed.</b>`
             : mine ? `<b>Hello ${esc(first(ME.name))}: your ballot is in.</b> Change it in the panel and submit again: your newest ballot counts.`
-                : `<b>Hello ${esc(first(ME.name))}: rank your top 6.</b> Tap a sticker to add it, put them in order in the panel, press 👎 on any that are not for you, then Submit. Your ballot is signed by your key and sealed before it leaves this browser.`
+                : `<b>Hello ${esc(first(ME.name))}: rank your top ${MAX}.</b> Tap a sticker to add it, put them in order in the panel, press 👎 on any that are not for you, then Submit. Your ballot is signed by your key and sealed before it leaves this browser.`
         $('[data-last]').textContent = mine ? `Last submitted ${String(mine.at).slice(11, 16)} UTC: ${mine.ranking.map((id, k) => `${k + 1}. ${sticker(id).name}`).join(', ')}${mine.not_for_me && mine.not_for_me.length ? `; not for me: ${mine.not_for_me.map(id => sticker(id).name).join(', ')}` : ''}${Object.keys(mine.variant_pick || {}).length ? `; favourite variant: ${Object.entries(mine.variant_pick).map(([k, v]) => `${sticker(+k).name} v${v}`).join(', ')}` : ''}.` : ''
     }
     // the leaderboard as a bar race: rows enter in sticker order, then slide into their places while the bars grow
@@ -248,10 +248,10 @@ ${s.variants && s.variants.length > 1 ? `<span class="sv-vars" role="group" aria
         for (const x of RESULTS.ranking || []) by[x.id] = x
         const pts = id => (by[id] && by[id].points != null ? by[id].points : ((RESULTS.counts || {})[id] || 0))
         const max = Math.max(1, ...CFG.stickers.map(s => pts(s.id)))
-        note.textContent = n ? `${n} ballot${n === 1 ? '' : 's'} counted (drained ${String(RESULTS.as_of || '').replace('T', ' ').slice(0, 16)} UTC). Borda points: 1st = 6, 6th = 1. Ballots waiting in a lane are counted at the next drain.`
+        note.textContent = n ? `${n} ballot${n === 1 ? '' : 's'} counted (drained ${String(RESULTS.as_of || '').replace('T', ' ').slice(0, 16)} UTC). Borda points: 1st = ${MAX}, ${MAX}th = 1 (an earlier top 6 counts by position too). Ballots waiting in a lane are counted at the next drain.`
             : 'No ballots counted yet: they wait, sealed, in the lanes until Angelo, Jose, Indi or Dinis drain them.'
-        ol.innerHTML = CFG.stickers.map(s => { const x = by[s.id] || {}; return `<li data-bid="${s.id}"><span class="sv-place"></span><img src="${esc(up + s.thumb)}" alt="" width="40" height="40" loading="lazy"><span class="sv-t"><i style="--w:${(100 * pts(s.id) / max).toFixed(1)}%"></i><span>${esc(s.id + '. ' + s.name)}${x.top6 ? ` · in ${x.top6} top 6${x.top6 === 1 ? '' : 's'}` : ''}${x.not_for_me ? ` · 👎 ${x.not_for_me}` : ''}${favourite(x)}</span></span><b>${pts(s.id)}</b></li>` }).join('')
-        const order = CFG.stickers.slice().sort((a, b) => pts(b.id) - pts(a.id) || ((by[b.id] || {}).top6 || 0) - ((by[a.id] || {}).top6 || 0) || a.id - b.id)
+        ol.innerHTML = CFG.stickers.map(s => { const x = by[s.id] || {}; return `<li data-bid="${s.id}"><span class="sv-place"></span><img src="${esc(up + s.thumb)}" alt="" width="40" height="40" loading="lazy"><span class="sv-t"><i style="--w:${(100 * pts(s.id) / max).toFixed(1)}%"></i><span>${esc(s.id + '. ' + s.name)}${(x.in_top || x.top6) ? ` · in ${x.in_top || x.top6} top ${MAX}${(x.in_top || x.top6) === 1 ? '' : 's'}` : ''}${x.not_for_me ? ` · 👎 ${x.not_for_me}` : ''}${favourite(x)}</span></span><b>${pts(s.id)}</b></li>` }).join('')
+        const order = CFG.stickers.slice().sort((a, b) => pts(b.id) - pts(a.id) || ((by[b.id] || {}).in_top || (by[b.id] || {}).top6 || 0) - ((by[a.id] || {}).in_top || (by[a.id] || {}).top6 || 0) || a.id - b.id)
         setTimeout(() => {
             const rows = [...ol.children], before = new Map(rows.map(r => [r, r.getBoundingClientRect().top]))
             order.forEach((s, k) => { const r = ol.querySelector(`[data-bid="${s.id}"]`); r.querySelector('.sv-place').textContent = pts(s.id) ? k + 1 : ''; ol.appendChild(r) })
@@ -368,6 +368,7 @@ ${s.variants && s.variants.length > 1 ? `<span class="sv-vars" role="group" aria
         KR = window.WSKeyring || null
         try { CFG = await (await fetch(up + 'data/stickers-vote.json', { cache: 'no-cache' })).json() }
         catch (e) { mount.innerHTML = '<p class="meta">The vote could not load data/stickers-vote.json.</p>'; return }
+        MAX = Math.max(1, Math.min(24, +CFG.max_ranking || 10))
         layout(); tick(); setInterval(tick, 1000)
         if (KR) { try { await KR.ready } catch { } }
         if (KR && KR.person) { const l = CFG.lanes.find(x => x.person === KR.person); ME = { person: KR.person, name: l ? l.name : KR.person, lane: l || null } }

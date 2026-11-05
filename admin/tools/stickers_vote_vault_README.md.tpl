@@ -2,7 +2,7 @@
 
 Funny laptop stickers for RiskMandate at Web Summit Lisbon, in three sets (the road trip, 1 to 12, four variations
 each; creative takes, 13 to 18; the gap, 19 to 24), and a vote: each person on the Web Summit team
-ranks a top 6 (Borda: 1st = 6 points, 6th = 1) and may mark any sticker "not for me". Built by conductor@web-summit.dinis on 5 November 2026, at Dinis Cruz's word, as a showcase of
+ranks a top 10 (Borda: 1st = 10 points, 10th = 1; `max_ranking` in content.json is the one number to change) and may mark any sticker "not for me". Built by conductor@web-summit.dinis on 5 November 2026, at Dinis Cruz's word, as a showcase of
 encrypted vaults and append lanes. Voting closes Thursday 5 November 2026, 18:00 UTC.
 
 - **Vote:** https://web-summit.sgit.ai/stickers/vote/ (team only: your browser needs your site key).
@@ -24,20 +24,20 @@ encrypted vaults and append lanes. Voting closes Thursday 5 November 2026, 18:00
 | `identity/lanes.json` | each lane by the SHA-256 of its token, and whose it is |
 | `identity/person-keys.json` | a copy of the site's person keys, to verify each vote's signature |
 | `votes/<date>.jsonl` | the drained ballots, one line each, **still sealed** |
-| `results.json` | the leaderboard: per sticker, Borda points, how many top 6s, firsts, "not for me"; who voted (not what); replaced, late and rejected ballots |
+| `results.json` | the leaderboard: per sticker, Borda points, how many top 10s (`in_top`), firsts, "not for me"; who voted (not what); replaced, late and rejected ballots |
 
 ## How a vote travels
 
 1. Each team person with a site key has one lane. Its token is sealed to their key (ws-ecies-1) in the site's
    `data/stickers-vote.json`, so only their browser opens it.
 2. On the vote page their browser opens the token, signs `{type: web-summit.sticker-vote/v2, person, ranking, not_for_me, at}`
-   (`ranking`: up to 6 sticker ids in order) with their site key, seals
+   (`ranking`: up to 10 sticker ids in order) with their site key, seals
    `{vote, signed, sig, key}` to this vault's drain key (sgit hybrid v2) and writes it to their lane.
 3. A drainer opens this vault with the vault key, writable, and presses **Drain**: each ballot is opened, its
    signature checked against `identity/person-keys.json` and checked to have come on the signer's own lane, kept
    sealed in `votes/`, and counted into `results.json`; the vault is pushed, and only then are the lane files marked
    processed. The newest ballot of each person counts; a v1 ballot (one `choice`, from the first version of the page) counts
-   as a top 6 of one. `stickers_vote.py drain` does the same from a terminal.
+   as a ranking of one; every ballot is scored by position with the same rule, so an older top 6 scores 10 to 5. `stickers_vote.py drain` does the same from a terminal.
 
 ## Who holds what
 

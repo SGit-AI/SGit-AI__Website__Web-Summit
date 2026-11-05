@@ -1,6 +1,6 @@
 ---
 id: WS-159
-title: "The sticker vote: 23 funny stickers in three sets in a vault, a ranked top 6 each, team only"
+title: "The sticker vote: 23 funny stickers in three sets in a vault, a ranked top 10 each, team only"
 area: merch
 for: everyone
 due: Thu 5 Nov, 18:00
@@ -13,6 +13,8 @@ At Dinis's word (4 and 5 November 2026): put the funny sticker images in a vault
 **Vote:** [/stickers/vote/](https://web-summit.sgit.ai/stickers/vote/index.html). Your browser needs your site key. Round 2 (Dinis, 5 November: "pick the top 6 ... I can reorder them ... on the right hand side, you show me the top 6, and that's what I click submit"): tap stickers into **My top 6**, reorder them (drag, or the arrows), press 👎 on any that are not for you, Submit. Borda points: 1st = 6, 6th = 1. Submit again to change it (the newest ballot counts). A v1 ballot (one pick, from round 1) counts as a top 6 of one. Closes **Thursday 5 November, 18:00 UTC**.
 
 Round 3 (5 November, Dinis uploaded the art into the vault's `images/uploads/`): the road trip (1 to 12) with four variations each (flip them; a ♡ on your favourite goes with the ballot as `variant_pick`, and the leaderboard shows the favourite), creative takes (14 to 18; 13 is still on its way) and the gap (19 to 24). No placeholders left.
+
+Round 4 (Dinis, 5 November: "can you allow 10 votes?"): a ranked **top 10**, 1st = 10 points ... 10th = 1. Ballots sent earlier (a top 6, or one pick) stay valid and are scored by position with the same rule. `max_ranking` in the vault's content.json is the one number.
 
 **What exists:**
 

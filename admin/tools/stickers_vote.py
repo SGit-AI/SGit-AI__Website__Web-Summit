@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """The team's sticker vote (WS-159): twelve funny laptop stickers in an encrypted vault, one append lane per team
-person, a ranked top 6 each (Borda), plus "not for me". Built by conductor@web-summit.dinis on 5 November 2026, at Dinis's word ("put the
+person, a ranked top 10 each (Borda), plus "not for me". Built by conductor@web-summit.dinis on 5 November 2026, at Dinis's word ("put the
 sticker images in a vault ... a UI to vote ... an append lane that receives the votes, with each lane's token
 published encrypted to each participant's public key ... only the team votes ... Angelo, Jose and Indi can drain").
 
@@ -37,7 +37,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 AGENT = 'conductor@web-summit.dinis'
 VAULT_NAME = 'ws-stickers-vote'
 CLOSES_AT = '2026-11-05T18:00:00Z'
-TAGLINE = 'Funny laptop stickers for Web Summit Lisbon, in three sets. The team ranks a top 6 each: 1st = 6 points, 6th = 1.'
+MAX_RANKING = 10                    # the one number: a ballot ranks up to this many (Dinis, 5 November: "can you allow 10 votes?")
+TAGLINE = f'Funny laptop stickers for Web Summit Lisbon, in three sets. The team ranks a top {MAX_RANKING} each: 1st = {MAX_RANKING} points, {MAX_RANKING}th = 1.'
 DRAINERS = ['angelo', 'jose', 'indi', 'dinis']
 SITE_PAGE = 'https://web-summit.sgit.ai/stickers/vote/index.html'
 VIEWER = 'https://dev.vault.sgraph.ai/'
@@ -275,7 +276,7 @@ def content(ctx, files, placeholder_ids, variants=None):
                 'colour': bg, 'ink': fg, 'accent': acc, 'placeholder': ph, **{k: f.get(k) for k in ('full', 'web', 'thumb', 'w', 'h', 'bytes')}}
         if vs: item['variants'] = vs
         items.append(item)
-    c = {'title': 'Pick the sticker', 'tagline': TAGLINE, 'closes_at': CLOSES_AT, 'vote_page': SITE_PAGE,
+    c = {'title': 'Pick the sticker', 'tagline': TAGLINE, 'closes_at': CLOSES_AT, 'vote_page': SITE_PAGE, 'max_ranking': MAX_RANKING,
          'groups': [{'id': g[2], 'title': g[3], 'from': g[0], 'to': g[1]} for g in GROUPS], 'stickers': items}
     wjson(p, c)
     return c
@@ -284,7 +285,7 @@ def content(ctx, files, placeholder_ids, variants=None):
 # ---------- the vault app ----------
 def build_app(ctx, c=None):
     c = c or json.load(open(os.path.join(ctx.vault, 'content.json')))
-    if c.get('tagline') != TAGLINE: c['tagline'] = TAGLINE; wjson(os.path.join(ctx.vault, 'content.json'), c)
+    if c.get('tagline') != TAGLINE or c.get('max_ranking') != MAX_RANKING: c['tagline'] = TAGLINE; c['max_ranking'] = MAX_RANKING; wjson(os.path.join(ctx.vault, 'content.json'), c)
     tpl = open(os.path.join(HERE, 'stickers_vote_app.html.tpl')).read()
     compact = json.dumps(c, ensure_ascii=False)
     assert '\n' not in compact
@@ -317,7 +318,7 @@ def site_stickers(ctx):
 def write_site_data(ctx):
     """Refresh the stickers in data/stickers-vote.json without touching the lanes (re-issuing lanes makes writes 404 for minutes)."""
     p = os.path.join(ctx.root, 'data/stickers-vote.json')
-    d = json.load(open(p)); d['stickers'] = site_stickers(ctx); d['updated'] = now()
+    d = json.load(open(p)); d['stickers'] = site_stickers(ctx); d['max_ranking'] = MAX_RANKING; d['updated'] = now()
     wjson(p, d)
 
 
@@ -345,7 +346,7 @@ def lanes(ctx):
     say(f"{len(anchors)} lanes configured on {ctx.vid} ({', '.join(p for p, _, _ in people)}); listing with the enum key works ({len(listed.get('entries', []))} pending shown)")
     bundle = json.load(open(os.path.join(ctx.vault, 'identity/public-bundle.json')))
     out = {'about': 'The team sticker vote (WS-159, admin/tools/stickers_vote.py). One append lane per team person with a site key; each lane token is sealed to that person (ws-ecies-1, data/person-keys.json), so only their browser opens it. Votes are signed by the person, sealed to drain_public_key (sgit hybrid v2) and written to their lane. The read key is published on purpose (Dinis): it renders the vault and lets anyone list who has a vote waiting, never what they chose.',
-           'agent': AGENT, 'updated': now(), 'closes_at': CLOSES_AT,
+           'agent': AGENT, 'updated': now(), 'closes_at': CLOSES_AT, 'max_ranking': MAX_RANKING,
            'endpoint': ctx.host, 'vault_id': ctx.vid, 'read_key': ctx.c['read_key_public'],
            'vault_url': f"{VIEWER}#{ctx.c['read_key_public']}:{ctx.vid}",
            'drain_public_key': bundle['encrypt'], 'drain_fingerprint': bundle['fingerprint'],
@@ -370,7 +371,7 @@ def verify_vote(payload, lane_person, keys):
     from cryptography.hazmat.primitives.asymmetric import ec, utils
     from cryptography.hazmat.primitives import hashes
     vote = json.loads(payload['signed'])
-    ballot(vote)                                                        # the shape first: v1 (one choice) or v2 (a top 6)
+    ballot(vote)                                                        # the shape first: v1 (one choice) or v2 (a ranked top 10)
     k = next((k for k in keys if k['person'] == vote.get('person') and k['fingerprint'] == payload.get('key')), None)
     if not k: raise ValueError(f"no published key {payload.get('key')} for {vote.get('person')}")
     if k.get('status') != 'active': raise ValueError(f"key {k['fingerprint']} is {k.get('status')}")
@@ -390,7 +391,7 @@ def ballot(vote):
         return [vote['choice']], []
     if t != 'web-summit.sticker-vote/v2': raise ValueError('not a sticker vote')
     rk, nf = vote.get('ranking'), vote.get('not_for_me', [])
-    if not isinstance(rk, list) or not 1 <= len(rk) <= 6 or not all(map(ok, rk)) or len(set(rk)) != len(rk): raise ValueError('ranking is not 1 to 6 distinct stickers')
+    if not isinstance(rk, list) or not 1 <= len(rk) <= MAX_RANKING or not all(map(ok, rk)) or len(set(rk)) != len(rk): raise ValueError(f'ranking is not 1 to {MAX_RANKING} distinct stickers')
     if not isinstance(nf, list) or not all(map(ok, nf)) or len(set(nf)) != len(nf) or set(nf) & set(rk): raise ValueError('not_for_me is not a list of other stickers')
     vp = vote.get('variant_pick', {})                                  # optional: {"12": 2}, the voter's favourite variant of a sticker
     if not isinstance(vp, dict) or not all(re.fullmatch(r'[1-9]\d?', str(k)) and int(k) <= MAX_ID and isinstance(v, int) and not isinstance(v, bool) and 1 <= v <= 20 for k, v in vp.items()):
@@ -398,16 +399,18 @@ def ballot(vote):
     return rk, nf
 
 def tally(ballots, picks=(), present=None):
-    """Borda: 1st = 6 points ... 6th = 1; plus how many put each in their top 6, first, and not for me; and the hearts
+    """Borda: 1st = MAX_RANKING points, 2nd one less ... (a top 10: 10 down to 1). Every ballot is scored by position with
+    the same rule, so an older top 6 scores 10 to 5 and a v1 pick 10. Plus how many put each in their top (in_top), firsts,
+    not for me; and the hearts
     each variant of a sticker got (variant_hearts: {"2": 3})."""
-    t = {s[0]: {'id': s[0], 'name': s[2], 'points': 0, 'top6': 0, 'firsts': 0, 'not_for_me': 0} for s in STICKERS}
+    t = {s[0]: {'id': s[0], 'name': s[2], 'points': 0, 'in_top': 0, 'firsts': 0, 'not_for_me': 0} for s in STICKERS}
     for rk, nf in ballots:
-        for i, n in enumerate(rk): t[n]['points'] += 6 - i; t[n]['top6'] += 1; t[n]['firsts'] += (i == 0)
+        for i, n in enumerate(rk): t[n]['points'] += MAX_RANKING - i; t[n]['in_top'] += 1; t[n]['firsts'] += (i == 0)
         for n in nf: t[n]['not_for_me'] += 1
     for vp in picks:
         for k, v in vp.items(): h = t[int(k)].setdefault('variant_hearts', {}); h[str(v)] = h.get(str(v), 0) + 1
     t = {n: x for n, x in t.items() if n in present} if present else t   # only the stickers in the vote
-    return sorted(t.values(), key=lambda x: (-x['points'], -x['top6'], x['not_for_me'], x['id']))
+    return sorted(t.values(), key=lambda x: (-x['points'], -x['in_top'], x['not_for_me'], x['id']))
 
 def open_envelope(key, content):
     from sgit_ai.crypto.PKI__Crypto import PKI__Crypto
@@ -423,12 +426,12 @@ def recount(rows, key, present=None):
         if r['person'] not in best or r['received'] > best[r['person']]['received']: best[r['person']] = r
     votes = [json.loads(open_envelope(key, r['envelope'])['signed']) for r in best.values()]
     ranking = tally([ballot(v) for v in votes], [v.get('variant_pick') or {} for v in votes], present)
-    return {'v': 2, 'method': 'Borda: 1st = 6 points, 2nd = 5 ... 6th = 1; a v1 ballot is a top 6 of one', 'as_of': now(), 'closes_at': close, 'closed': now() >= close, 'voters_count': len(best),
+    return {'v': 2, 'method': f'Borda: 1st = {MAX_RANKING} points, 2nd = {MAX_RANKING - 1} ... by position, for every ballot (an older top 6 scores {MAX_RANKING} to {MAX_RANKING - 5}; a v1 pick {MAX_RANKING})', 'max_ranking': MAX_RANKING, 'as_of': now(), 'closes_at': close, 'closed': now() >= close, 'voters_count': len(best),
             'counts': {str(x['id']): x['points'] for x in ranking}, 'ranking': ranking, 'leader': ranking[0] if ranking[0]['points'] else None,
             'voters': sorted(({'person': p, 'at': r['received']} for p, r in best.items()), key=lambda x: x['at']),
             'ballots': len(rows), 'changed_votes': sum(1 for r in rows if r.get('verified') and r['received'] <= close) - len(best),
             'late': late, 'rejected': bad, 'drained_by': AGENT + ' (CLI)',
-            'note': 'A top 6 per team person, ranked; a new ballot replaces the earlier one (the newest counts). Ballots stay sealed in votes/: who voted is public, what each person chose is not.'}
+            'note': f'A top {MAX_RANKING} per team person, ranked; a new ballot replaces the earlier one (the newest counts). Ballots stay sealed in votes/: who voted is public, what each person chose is not.'}
 
 def load_rows(ctx):
     rows = []
@@ -611,7 +614,7 @@ def cmd_images(ctx, o):
         shutil.rmtree(tmp, ignore_errors=True)
     say(f"Done. Now commit assets/stickers/vote/ and data/stickers-vote.json in the site repository and release (AGENT={AGENT} admin/tools/release.sh).")
 
-def cmd_app(ctx, o): build_app(ctx); ctx.commit_push('the app rebuilt')
+def cmd_app(ctx, o): build_app(ctx); write_site_data(ctx); ctx.commit_push('the app rebuilt')
 def cmd_lanes(ctx, o): lanes(ctx); ctx.commit_push('the lanes re-issued')
 def cmd_drain(ctx, o): drain(ctx, dry=o.dry)
 def cmd_status(ctx, o): drain(ctx, dry=True)

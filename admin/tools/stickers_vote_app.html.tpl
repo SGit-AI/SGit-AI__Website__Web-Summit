@@ -206,7 +206,7 @@ const FALLBACK = /*__DATA__*/{};
     RESULTS = r
     const bars = $('bars'), chips = $('voters'); bars.textContent = ''; chips.textContent = ''
     const n = r && r.voters_count || 0
-    $('rnote').textContent = n ? n + ' of the team ' + (n === 1 ? 'has' : 'have') + ' voted (counted ' + String(r.as_of || '').replace('T', ' ').slice(0, 16) + ' UTC' + (r.changed_votes ? ', ' + r.changed_votes + ' replaced ballot' + (r.changed_votes === 1 ? '' : 's') : '') + '). Each person ranks a top 6: 1st = 6 points, 6th = 1. The newest ballot counts.' : 'No ballots counted yet. They arrive sealed in the lanes and are counted when someone drains them.'
+    $('rnote').textContent = n ? n + ' of the team ' + (n === 1 ? 'has' : 'have') + ' voted (counted ' + String(r.as_of || '').replace('T', ' ').slice(0, 16) + ' UTC' + (r.changed_votes ? ', ' + r.changed_votes + ' replaced ballot' + (r.changed_votes === 1 ? '' : 's') : '') + '). Each person ranks a top ' + MAXR() + ': 1st = ' + MAXR() + ' points, the last 1. The newest ballot counts.' : 'No ballots counted yet. They arrive sealed in the lanes and are counted when someone drains them.'
     const by = {}; (r.ranking || []).forEach(x => { by[x.id] = x })
     const pts = id => (by[id] && by[id].points != null ? by[id].points : ((r.counts || {})[id] || 0))
     const max = Math.max(1, ...DATA.stickers.map(s => pts(s.id)))
@@ -215,7 +215,7 @@ const FALLBACK = /*__DATA__*/{};
       const v = pts(s.id), x = by[s.id] || {}, row = el('div', 'bar'), img = el('img'), t = el('div', 't'), i = el('i')
       img.src = s.thumb; img.alt = ''
       row.style.animationDelay = (k * 70) + 'ms'
-      t.append(i, el('span', null, (v ? '#' + (k + 1) + '  ' : '') + s.id + '. ' + s.name + (x.top6 ? '  ·  in ' + x.top6 + ' top 6' + (x.top6 === 1 ? '' : 's') : '') + (x.not_for_me ? '  ·  ' + x.not_for_me + ' not for me' : '') + favourite(x)))
+      t.append(i, el('span', null, (v ? '#' + (k + 1) + '  ' : '') + s.id + '. ' + s.name + ((x.in_top || x.top6) ? '  ·  in ' + (x.in_top || x.top6) + ' top ' + MAXR() + ((x.in_top || x.top6) === 1 ? '' : 's') : '') + (x.not_for_me ? '  ·  ' + x.not_for_me + ' not for me' : '') + favourite(x)))
       row.append(img, t, el('b', null, String(v))); bars.appendChild(row)
       requestAnimationFrame(() => setTimeout(() => { i.style.width = (100 * v / max) + '%' }, 150 + k * 90))
       const card = document.querySelector('.card[data-id="' + s.id + '"]')
@@ -246,23 +246,24 @@ const FALLBACK = /*__DATA__*/{};
     const aes = await crypto.subtle.importKey('raw', await crypto.subtle.decrypt({ name: 'RSA-OAEP' }, key, b64d(env.w)), { name: 'AES-GCM' }, false, ['decrypt'])
     return JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64d(env.i), tagLength: 128 }, aes, b64d(env.c))))
   }
-  // a ballot's [ranking, not_for_me]: v2 (a top 6, ranked) or v1 (one choice, a top 6 of one); the same rules as the CLI
+  // a ballot's [ranking, not_for_me]: v2 (a ranked top N, N = content.json max_ranking) or v1 (one choice); the same rules as the CLI
+  const MAXR = () => DATA.max_ranking || 10
   function ballot(v) {
     const ok = x => Number.isInteger(x) && x >= 1 && x <= 24, uniq = a => new Set(a).size === a.length
     if (v.type === 'web-summit.sticker-vote/v1') { if (!ok(v.choice)) throw new Error('choice is not a sticker'); return [[v.choice], []] }
     if (v.type !== 'web-summit.sticker-vote/v2') throw new Error('not a sticker vote')
     const rk = v.ranking, nf = v.not_for_me || []
-    if (!Array.isArray(rk) || rk.length < 1 || rk.length > 6 || !rk.every(ok) || !uniq(rk)) throw new Error('ranking is not 1 to 6 distinct stickers')
+    if (!Array.isArray(rk) || rk.length < 1 || rk.length > MAXR() || !rk.every(ok) || !uniq(rk)) throw new Error('ranking is not 1 to ' + MAXR() + ' distinct stickers')
     if (!Array.isArray(nf) || !nf.every(ok) || !uniq(nf) || nf.some(x => rk.includes(x))) throw new Error('not_for_me is not a list of other stickers')
     const vp = v.variant_pick || {}
     if (typeof vp !== 'object' || Array.isArray(vp) || !Object.entries(vp).every(([k, x]) => /^([1-9]|1\d|2[0-4])$/.test(k) && Number.isInteger(x) && x >= 1 && x <= 20)) throw new Error('variant_pick is not a map of sticker to variant')
     return [rk, nf]
   }
   function tally(ballots, picks) {
-    const t = {}; DATA.stickers.forEach(s => { t[s.id] = { id: s.id, name: s.name, points: 0, top6: 0, firsts: 0, not_for_me: 0 } })
-    for (const [rk, nf] of ballots) { rk.forEach((n, i) => { if (t[n]) { t[n].points += 6 - i; t[n].top6++; if (!i) t[n].firsts++ } }); nf.forEach(n => { if (t[n]) t[n].not_for_me++ }) }
+    const t = {}; DATA.stickers.forEach(s => { t[s.id] = { id: s.id, name: s.name, points: 0, in_top: 0, firsts: 0, not_for_me: 0 } })
+    for (const [rk, nf] of ballots) { rk.forEach((n, i) => { if (t[n]) { t[n].points += MAXR() - i; t[n].in_top++; if (!i) t[n].firsts++ } }); nf.forEach(n => { if (t[n]) t[n].not_for_me++ }) }
     for (const vp of picks || []) for (const k in vp) if (t[+k]) { const h = t[+k].variant_hearts = t[+k].variant_hearts || {}; h[String(vp[k])] = (h[String(vp[k])] || 0) + 1 }
-    return Object.values(t).sort((a, b) => b.points - a.points || b.top6 - a.top6 || a.not_for_me - b.not_for_me || a.id - b.id)
+    return Object.values(t).sort((a, b) => b.points - a.points || b.in_top - a.in_top || a.not_for_me - b.not_for_me || a.id - b.id)
   }
   async function verify(p, lanePerson, keys) {
     const vote = JSON.parse(p.signed)
@@ -294,10 +295,10 @@ const FALLBACK = /*__DATA__*/{};
     for (const r of Object.values(best)) { const v = JSON.parse((await openEnv(r.envelope, key)).signed); ballots.push(ballot(v)); picks.push(v.variant_pick || {}) }
     const ranking = tally(ballots, picks), counts = {}; ranking.forEach(x => { counts[String(x.id)] = x.points })
     const okRows = rows.filter(r => r.verified && r.received <= close).length
-    return { v: 2, method: 'Borda: 1st = 6 points, 2nd = 5 ... 6th = 1; a v1 ballot is a top 6 of one', as_of: now, closes_at: close, closed: now >= close, voters_count: Object.keys(best).length, counts, ranking,
+    return { v: 2, method: 'Borda: 1st = ' + MAXR() + ' points, 2nd = ' + (MAXR() - 1) + ' ... by position, for every ballot (an older top 6 scores ' + MAXR() + ' to ' + (MAXR() - 5) + '; a v1 pick ' + MAXR() + ')', max_ranking: MAXR(), as_of: now, closes_at: close, closed: now >= close, voters_count: Object.keys(best).length, counts, ranking,
       leader: ranking[0].points ? ranking[0] : null, voters: Object.entries(best).map(([p, r]) => ({ person: p, at: r.received })).sort((a, b) => a.at < b.at ? -1 : 1),
       ballots: rows.length, changed_votes: okRows - Object.keys(best).length, late, rejected: bad, drained_by: 'the vault app (in the browser)',
-      note: 'A top 6 per team person, ranked; a new ballot replaces the earlier one (the newest counts). Ballots stay sealed in votes/: who voted is public, what each person chose is not.' }
+      note: 'A top ' + MAXR() + ' per team person, ranked; a new ballot replaces the earlier one (the newest counts). Ballots stay sealed in votes/: who voted is public, what each person chose is not.' }
   }
   async function drain(say) {
     const key = await drainKey($('pass').value.trim())
