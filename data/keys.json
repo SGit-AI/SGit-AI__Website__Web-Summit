@@ -891,6 +891,22 @@
         "fingerprint": "sha256:e374ba62fb5a5c36",
         "signing_fingerprint": "sha256:8e776a0fff078540"
       }
+    },
+    {
+      "id": "designer-vicky",
+      "label": "designer@web-summit.vicky (Claude Code session)",
+      "role": "Vicky's designer for Promptugal News, the Web Summit newsroom's new name (designer@web-summit.vicky): the brief for the publication and its logo options, in desks/designer-vicky/ of the newsroom repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAovsAnDaDk2nfGi2YaIfX\nHwE/zhlxZ8jXJqsCGoR+JJteTZUvzbPPlc8PhDaycTfs+rcjH4vodWIij0XM6PnP\nFctE/30mim/vAozM477/HJ7mYHdHQ1gwBP2r35OgmT2eG6W/oygg50sFyd+wDfWw\nbXD8rjyqI/SxV//cdycCXptVBQdjzS8IyhL7RDTQVBDd0dXNd8SEBGc380MSmF/A\nSFLUkoPK0CBneUJw3ivbvlrGU94FLSVpmkAgH8hoeh5HPmNNa4jcfMdpPGcVB1pR\nDWMFKERrfiFrMsYCdnTXCx0mEZZDXH7A5UryfQRRuoo+WNYR9OboGBiiHqYc+Q4H\nb8z97Re2geP89AtooV03fDkCTlYS+Hx6h2+T0i4CghWQKjRaR3TY3/JwyEXh8gFG\nF9M1nBwgFZuA1ZySIlwZDJ83CFud/V8v+LW8Znle9QA9wAzBch+W142a9USq5bWV\nlGZndYP5iPXaIYEj5f4BJZTIx++TJB+5oyjpLff3CQ4XTqhpmHfbym/t6v2/X5Pd\nICNE/5BMGUP9VrDhEDA6sHBCoTx3wiHzi6ZBF4UFdftHSeMhoKgVQnkkxJxmMveW\nhAnVq6CEbfn3JYpo/znOgBZTcyyRXYnCvp9JUJAybxxNX+pdc7O++xIEtkMIZXKP\nr6LUdYqlgvLc03EuzT9aoasCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEochczxf/Jw0C1WBwxJMbyNTqPHUT\nxoGEUxZQFMhkEZLQ3gPt7tvnKlFOYwqc52lAlaeds+3Y9CBwiInqDVZY0w==\n-----END PUBLIC KEY-----\n",
+        "label": "designer@web-summit.vicky",
+        "fingerprint": "sha256:ed165814e5e50a13",
+        "signing_fingerprint": "sha256:228de9dce8c49784"
+      },
+      "status": "active"
     }
   ]
 }
