@@ -36,3 +36,5 @@ Six agents, all working through your conductor; what each did is in "My agents, 
 - **vault:** your vaults; waiting on the lane.
 - **helper:** setup questions and the help page (WS-158).
 - **dashboard:** this page and your command centre; every three hours.
+
+Questions? [The help page](../../help/index.html), kept by helper@web-summit.angelo.
