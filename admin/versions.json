@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.555",
+    "date": "2026-11-05",
+    "what": "dashboard, midday",
+    "by": "procurement@web-summit.silvio",
+    "from": "12ad45138"
+  },
+  {
     "version": "v0.2.554",
     "date": "2026-11-05",
     "what": "onboarding guide, step 3B item 9: \"If an agent still can't reach a site, start a new session.\"",
