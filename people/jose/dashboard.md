@@ -2,31 +2,25 @@
 title: Jose's dashboard
 summary: The page Jose reads first. The top is built for Jose; the rest, from the builder template, is kept by Jose's dashboard agent (dashboard@web-summit.jose) and answers what needs Jose, what happened, and what Jose and Jose's agents are doing.
 ---
-**Updated Wed 4 Nov, 23:30 UTC by `dashboard@web-summit.jose`; next update Thu 07:30 UTC.** Built for action, at your word (4 November): what needs you as a list to work down, your lanes, and your agents only when something is wrong. [Your command centre](app/index.html) is becoming your first view (below).
+**Updated Thu 5 Nov, 07:30 UTC by `dashboard@web-summit.jose`; next update 12:30 UTC.** Built for action, at your word (4 November): what needs you as a list to work down, your lanes, and your agents only when something is wrong. [Your command centre](app/index.html) is becoming your first view (below).
 
 ## Needs me {#needs}
 
-**From the stand-up of 4 Nov, 14:30** ([the record](../../meetings/2026-11-04-1300/index.html), added by conductor@web-summit.jose):
-- ✅ **Approve:** start the accountant? Proposed in [agents.json](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/agents.json) as a sub-agent of your conductor's daily wake (WS-148's design).
-- 🔧 **Do, by Thursday:** your business card: prompt your agent with Indi's prompt from the team chat, so the card carries your name (WS-155).
-- 🔧 **Do:** share your contacts (Web Summit app, LinkedIn) for the "who do we know there" maps (WS-24).
-- 🔧 **Do, with Angelo:** build and test the observability workflow end to end (WS-37; [the 18:00 sync](../../meetings/2026-11-04-1800/index.html)).
-- 🔧 **Do, daily:** your interview with me, in Claude voice mode (what you learned, how your work changed, how it felt), written up as markdown (WS-41).
-- ⛔ **Blocked:** WS-37's page views: announcing them waits on the security review by security@web-summit.dinis (asked in 45e4b6e).
-- ⛔ **Blocked:** WS-108's QR codes wait on designer@web-summit.dinis, and the link from your brief on conductor@web-summit.dinis (asked in dd8dbcb).
-- 🗣️ **Goal:** the pipeline, Portugal mapped first, by Friday or Monday (WS-26, WS-27); 50 active agents across the team.
-
-Soonest first. Each line is one action; done ones drop off at the next update. From your conductor's [brief 7](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04T1725Z.pdf) and the board.
+Soonest first, one action per line; done ones drop off at the next update. From your conductor's [brief 8](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-05T0725Z.pdf) (07:25), Dinis's conductor's morning note (f47e088), the stand-up of 4 November (captured by your conductor, 5b4ddc1) and the board.
 
 | Do | What | Due | Takes | Who waits |
 |---|---|---|---|---|
-| **Do** | **Add your site key** (WS-136): open the file your conductor sent at 02:08, press "Paste my key" ([how](../../agents/index.html#person-key)), check "Unlocked", send one Feedback message | **Overdue:** Wed 18:00 | 2 min | Dinis; WS-120's lanes with Angelo |
-| **Say** | **At the 13:00 stand-up:** your watcher's scope (WS-134) and whether a dev agent may change shared site code through a picked issue (WS-34); no decision recorded on Wednesday ([the stand-ups](../../meetings/index.html)) | Thu 13:00 (14:30 if WS-96 moves it) | 1 min | Dinis, Angelo |
-| **Approve** | **The observability data vault's key to Dinis's conductor** (WS-154): yes or no, or only its read key | Thu 5 Nov | 1 min | conductor@web-summit.dinis |
-| **Approve** | **Three yes or no to your conductor:** drop its 7 test page views; close WS-139 (newsroom.sgit.ai reached); the split with Angelo ([the morning list](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/briefs/2026-11-04-morning.md)) | No deadline given | 5 min | conductor@web-summit.jose, Angelo |
-| **Do** | **WS-39, route 3:** import the n8n workflow your dev agent built and fill in the credential, your number and the phone number id yourself ([what to fill in](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/WS-39-findings.md)) | Overdue: Wed 4 Nov | 10 min | dev@web-summit.jose |
+| **Do** | **Vote on the stickers** in the browser that holds your site key: [the vote](../../stickers/vote/index.html), rank your top 10 of 23, Submit, check your initial says "voted". If the "Add your key" box shows, first add the key your conductor sent at 02:08. It also tests the signed-ballot flow, so say exactly what fails | **Before 13:00** (closes 14:30) | 5 min | conductor@web-summit.dinis, the team |
+| **Do** | **Drain the votes** (you are one of four drainers, with Angelo, Indi and Dinis): [the vote's vault](../../stickers/vote/vault/index.html), "Open the vault (full access)", the lock with your SG/Send access token, Drain, the passphrase; once, after a few votes | Before 14:30 | 5 min | conductor@web-summit.dinis |
+| **Say** | **At the 13:00 stand-up, your item:** your 15 site and UI issues go to Angelo's and Dinis's dev agents, and you review (your conductor recommends yes; the other options are to split them one by one, or keep them shared). This is the split with Angelo | 13:00 | 1 min | Angelo, Dinis |
+| **Decide** | **How the observability vault keys travel** (WS-154, with WS-156): keep them held; seal to Dinis's person key (held by his conductor too, WS-138); or seal to the custodian WS-156 names. Your conductor recommends: keep them held until WS-156 names the custodian | Thu 5 Nov | 1 min | conductor@web-summit.dinis |
+| **Approve** | **Two yes or no to your conductor:** the WS-74 pending count, counted by your vault agent (recommended) or with the lane's enum key given to n8n; and the helper to Sonnet now (recommended) or after more runs | Today | 2 min | automation@, helper@web-summit.jose |
 
-**Settled since you last looked:** your watcher has its schedule (since 23:10 UTC, 07:15, 12:15 and 17:15) and reported the day ([its latest](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/latest.md)); the site's page views are live (WS-37).
+**Due today:** test the observability workflow end to end with Angelo (WS-37) and compare [the second observability page](../../observability/index.html) with yours. **Also on your list, no deadline today:** import the WS-39 n8n workflow and fill in your credential and number ([how](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/n8n-guide.md); it is not known to be imported); share your contacts for the "who do we know there" maps (WS-24); your daily interview with your conductor in Claude voice mode (WS-41); a line from you on WS-136; and whether a business card with your name is still wanted (the 4 November sync decided cards with no names; ask Indi, WS-155) (your site key is issued; the board has no line saying you added it).
+
+**Goal (4 November stand-up):** the pipeline, Portugal mapped first, by Friday or Monday (WS-26, WS-27); 50 active agents across the team.
+
+**Settled since you last looked:** WS-134 decided in your words (the watcher watches the whole team, read-only); your yes on WS-34 and WS-129 recorded (they stay open for Dinis and Angelo); WS-139 closed and the 7 test rows dropped; Ask Claude switched on in your command centre (it needs only your own key); automation, helper and vault on their schedules; run sheets and QR codes for your two demos (WS-108, down to your phone check); security found the page views well made (45e4b6e, review of 23:50; it asks that the start page say page views are named and signed); your agents log each run from today (WS-160; your conductor's first record is in).
 
 ## My lanes {#lanes}
 
@@ -35,9 +29,9 @@ What you lead, in your words (4 November): *"technical conversations on agent se
 | Lane | Issues | Carried by | With |
 |---|---|---|---|
 | **Agent security conversations** | WS-15 (the message), WS-26 (the targets, Thursday and Friday) | you | Nimay, Indi, Dinis, Silvio |
-| **The live demos: attacked, then governed** | WS-18, WS-108 (your two apps, picked), WS-109 | you, conductor@web-summit.jose | Dinis, Nimay, Angelo |
+| **The live demos: attacked, then governed** | WS-18, WS-108 (your two apps: run sheets and QR codes ready, your phone check left), WS-109 | you, conductor@web-summit.jose | Dinis, Nimay, Angelo |
 | **Voice and language agents** | WS-61 (the voice memo loop, Sat 7 Nov) | nobody yet | anyone |
-| **Automation and the machine** (your agents carry it for you) | WS-39, WS-74 (both picked), WS-37 (page views), WS-134, WS-154 | dev@, conductor@, watcher@web-summit.jose | Angelo, Dinis |
+| **Automation and the machine** (your agents carry it for you) | WS-39, WS-74 (both picked), WS-37 (page views), WS-154, WS-160 | dev@, automation@, vault@, conductor@, watcher@web-summit.jose | Angelo, Dinis |
 
 Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault@web-summit.jose`.
 
@@ -46,25 +40,22 @@ Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault
 
 ## My agents: only what is wrong {#agents}
 
-On schedule: conductor, dashboard and dev; the watcher's first scheduled run is Thu 07:15 UTC. The reviewer runs on every push. Needing a look:
+On schedule: conductor, dashboard, dev, watcher, vault, automation and helper; the reviewer runs on every push, and each run is logged from today (WS-160). Needing a look:
 
-- **Your watcher's flags** ([its latest](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/latest.md)): three pushes without the reviewer's line (one of them mine, from Wednesday morning), one change to build code (45e4b6e) not yet reviewed by security, and three writes outside an agent's folder, each with its record.
-
-- **vault@web-summit.jose:** no schedule; last commit Wed 01:31 UTC. Fine if it runs on demand; say if it should wake on its own.
-- **automation@ and helper@web-summit.jose:** ready in [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/kit/README.md), not started; start them when you choose (WS-39, WS-35).
+- **designer@web-summit.jose released four times without the reviewer** (23:42 to 01:34), its own releases with no review record; your watcher flagged it ([its latest](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/latest.md), which also has the team-wide flags, now that it watches everyone).
+- **Your conductor changed shared build code** (`admin/build/commandcentre.mjs`, 1c0fc83) 14 minutes before your rule that shared code goes to its owner first; it carries the reviewer's line and told the owner.
+- **Your watcher asks you:** its measure step writes to `people/jose/accountant/ledger/`, outside what its policy lets it write; add that path to its policy, or drop the step for the watcher.
 - **observability@web-summit.jose:** named on WS-37 and WS-154, not started.
 
 The full list with jobs and schedules: [agents.json](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/agents.json). The prompts: [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/kit/README.md).
 
 ## Your command centre first: in progress {#cc}
 
-Your app at [app/](app/index.html) is the interactive view: filters, Today and This week, Kanban, and Ask Claude. Making it your first view, with your designer's pick ([A's layout with B's three counts, Overdue, Quiet and Decide, and run-history ticks per agent](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/design/README.md)), needs your conductor:
+[Your command centre](app/index.html) is now your own: your designer extended the team's app for you (629a586: slice 0 and slices 7 to 9, Angelo's Kanban, Team and the machine, and Summit days), from [its mission brief](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/design/README.md). Your lanes are its workstreams and Ask Claude is on (your conductor's config, d2105fa). Left:
 
-1. **Your conductor** creates `people/jose/app/config.json` (you have none yet) with your decisions list, your lanes as workstreams, and the `llm` block copied from Dinis's, which turns on Ask Claude.
-2. **The improvements to the shared engine** (your designer's [proposal](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/design/proposal-shared-cc.md)) go to its owner as a board issue, so nobody else's app changes without them.
-3. **Ask Claude, your part:** a key just for this page at openrouter.ai/settings/keys **with a small credit limit**, pasted only into the command centre's own form ("Save on this device"); never into a chat, a commit or a message, and not on a shared machine. Until WS-117 moves the key to an origin of its own, any script on this site could read it (WS-132), so keep the limit small.
-
-Then this page becomes the short text version.
+1. **Ask Claude, your part:** a key just for this page at openrouter.ai/settings/keys **with a small credit limit**, pasted only into the command centre's own form ("Save on this device"); never into a chat, a commit or a message, and not on a shared machine. Until WS-117 moves the key to an origin of its own, any script on this site could read it (WS-132), so keep the limit small.
+2. **The improvements for everyone's app** are WS-159, "four improvements for the shared command centre" (a second board file, the sticker vote, also uses the number WS-159; WS-161 proposes a gate check on duplicate numbers), a proposal for the engine's owners; nobody else's app changes unless they take it.
+3. **Your call:** tell me when the command centre is your first view, and this page becomes its short text version.
 
 ## My issues {#issues}
 
