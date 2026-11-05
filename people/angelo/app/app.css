@@ -115,3 +115,13 @@ nav.ak-switch a { font: 600 14px/20px var(--rm-font); color: var(--rm-action); t
 .ak-ess .ak-dl { margin-top: 12px; grid-template-columns: 1fr; }
 .ak-ess a, .cc-card .ak-h3 + .note a { color: var(--rm-action); }
 .ak-h3 { font: 600 12px/18px var(--rm-font); letter-spacing: .06em; text-transform: uppercase; color: var(--rm-text-muted); margin: 0 0 6px; }
+
+/* ---------- "Angelo's own": one mark for the views only in this command centre ---------- */
+.ak-own { display: inline-block; vertical-align: middle; margin-left: 8px; padding: 0 8px; border-radius: 999px; font: 600 11px/20px var(--rm-font); letter-spacing: .02em; color: var(--rm-gold); background: color-mix(in srgb, var(--rm-gold) 14%, transparent); border: 1px solid color-mix(in srgb, var(--rm-gold) 40%, transparent); white-space: nowrap; }
+.cc-nav .ak-grp { color: var(--rm-gold); }
+.cc-nav a .ak-mk { order: 3; margin-left: auto; color: var(--rm-gold); font-size: 11px; }
+.ak-ownnote { display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 10px 14px; border-radius: var(--rm-radius-card); border: 1px solid color-mix(in srgb, var(--rm-gold) 40%, transparent); background: color-mix(in srgb, var(--rm-gold) 8%, var(--rm-surface)); font: 400 14px/20px var(--rm-font); }
+.ak-ownnote b { color: var(--rm-gold); }
+@media (max-width: 1100px) { .cc-nav a .ak-mk { position: absolute; margin: 0; transform: translate(14px, -10px); } .cc-nav a { position: relative; } }
+nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px; }
+@media (max-width: 767px) { .ak-own .ak-own-t { display: none; } .ak-own { padding: 0 6px; margin-left: 6px; } }

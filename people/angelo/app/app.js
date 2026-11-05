@@ -36,18 +36,26 @@
         let D = null, failed = ''
         const route = () => (location.hash.match(/^#(kanban|collab|summit)(\?|$)/) || [])[1] || ''
         const mine = () => !!route()
-        once.then(r => r.ok ? r.clone().json() : Promise.reject(new Error(r.status))).then(d => { D = d; if (mine()) draw() }).catch(e => { failed = e.message; if (mine()) draw() })
+        once.then(r => r.ok ? r.clone().json() : Promise.reject(new Error(r.status))).then(d => { D = d; nav(); if (mine()) draw() }).catch(e => { failed = e.message; if (mine()) draw() })
 
         // after every shared render (it rebuilds the shell): add the Kanban entry, and draw the kanban when it is asked for
         new MutationObserver(() => { nav(); if (mine()) draw() }).observe(root, { childList: true })
         window.addEventListener('keydown', e => { if (e.key !== 'Escape') return; if (route() === 'kanban' && K.parseState(location.hash).open) closeCard(); if (route() === 'collab' && cstate().p) closePerson() })
 
+        const ownName = () => D ? `${(D.person.name || D.person.id).split(' ')[0]}'s own` : 'Your own'
+        const OWN_TIP = 'Only in this command centre: the team\'s shared command centre does not have it'
+        // the mark by a view's title, and its explanation, shown once until dismissed
+        const ownTitle = t => `${esc(t)} <span class="ak-own" title="${esc(OWN_TIP)}">✦<span class="ak-own-t"> ${esc(ownName())}</span></span>`
+        const ownNote = () => { let seen = false; try { seen = localStorage.getItem('ak.ownSeen') === '1' } catch { } return seen ? '' : `<div class="ak-ownnote" role="note"><span><b>✦ ${esc(ownName())}</b> marks the views only in this command centre: Kanban, Team and the machine, Summit days. The rest are the team's shared views.</span><button type="button" class="cc-btn" data-ak-ownok>Got it</button></div>` }
+        root.addEventListener('click', e => { if (e.target.closest('[data-ak-ownok]')) { try { localStorage.setItem('ak.ownSeen', '1') } catch { } const n = root.querySelector('.ak-ownnote'); if (n) n.remove() } })
         function nav() {
             const side = root.querySelector('.cc-nav [data-view="board"]')
-            if (side && !root.querySelector('.cc-nav [data-view="kanban"]')) side.insertAdjacentHTML('afterend', `<a href="#kanban" data-view="kanban" title="Kanban">${ico(KANBAN_ICON)}<span class="lbl">Kanban</span></a><a href="#collab" data-view="collab" title="Team and the machine">${ico(TEAM_ICON)}<span class="lbl">Team and the machine</span></a><a href="#summit" data-view="summit" title="Summit days">${ico(SUMMIT_ICON)}<span class="lbl">Summit days</span></a>`)
+            // the views only in this command centre, in a group of their own, each with the same mark (Angelo, 5 November)
+            if (side && !root.querySelector('.cc-nav [data-view="kanban"]')) { const grp = [...root.querySelectorAll('.cc-nav .grp')].find(g => /connect/i.test(g.textContent)); (grp || side).insertAdjacentHTML(grp ? 'beforebegin' : 'afterend', `<span class="grp ak-grp" title="${esc(OWN_TIP)}">✦ ${esc(ownName())}</span><a href="#kanban" data-view="kanban" title="Kanban">${ico(KANBAN_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Kanban</span></a><a href="#collab" data-view="collab" title="Team and the machine">${ico(TEAM_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Team and the machine</span></a><a href="#summit" data-view="summit" title="Summit days">${ico(SUMMIT_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Summit days</span></a>`) }
+            const g = root.querySelector('.cc-nav .ak-grp'); if (g) g.textContent = `✦ ${ownName()}`
             // phones: the Board tab opens the kanban (with My tasks off it is the whole team's board)
             const tab = root.querySelector('.cc-tabs a[href="#board"]')
-            if (tab) { tab.setAttribute('href', '#kanban'); tab.lastChild.textContent = 'Kanban' }
+            if (tab) { tab.setAttribute('href', '#kanban'); tab.lastChild.textContent = 'Kanban ✦'; tab.title = OWN_TIP }
             if (mine()) {
                 root.querySelectorAll('.cc-nav [aria-current], .cc-tabs [aria-current]').forEach(a => a.removeAttribute('aria-current'))
                 root.querySelectorAll(route() === 'kanban' ? '.cc-nav [data-view="kanban"], .cc-tabs a[href="#kanban"]' : `.cc-nav [data-view="${route()}"]`).forEach(a => a.setAttribute('aria-current', 'page'))
@@ -70,14 +78,14 @@
             const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
             if (!view) return
             const first = D ? (D.person.name || D.person.id).split(' ')[0] : ''
-            if (title) title.innerHTML = `Kanban<small>${esc(first)}'s command centre</small>`
+            if (title) title.innerHTML = `${ownTitle('Kanban')}<small>${esc(first)}'s command centre</small>`
             document.title = `Kanban · ${first}'s command centre`
             if (!D) { view.innerHTML = failed ? `<p class="note">The kanban could not load its data (${esc(failed)}); the summary below the page is the same data as text.</p>` : '<p class="note">Loading the board…</p>'; return }
             const s = state(), now = new Date(), ctx = D.kanban
             const shown = K.filter(D.issues, s, ctx, now)
             const needN = D.issues.filter(i => K.needsMe(i, ctx, now)).length
-            view.innerHTML = `<div class="ak">
-<nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine →</a><a href="#summit">Summit days →</a></nav>
+            view.innerHTML = `<div class="ak">${ownNote()}
+<nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
 ${toolbar(s, shown.length, needN)}
 ${chips(s)}
 ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No cards match this view.</p><button class="cc-btn" type="button" data-ak-reset>Back to my open tasks</button></div>`}
@@ -232,13 +240,13 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
             if (!view) return
             const first = D ? (D.person.name || D.person.id).split(' ')[0] : ''
-            if (title) title.innerHTML = `Team and the machine<small>${esc(first)}'s command centre</small>`
+            if (title) title.innerHTML = `${ownTitle('Team and the machine')}<small>${esc(first)}'s command centre</small>`
             document.title = `Team and the machine · ${first}'s command centre`
             if (!D || !D.collab) { view.innerHTML = failed ? `<p class="note">The board could not load its data (${esc(failed)}).</p>` : '<p class="note">Loading the team…</p>'; return }
             const C = D.collab, M = C.machine, name = id => (C.people.find(p => p.id === id) || { name: id }).name
             const max = Math.max(1, ...C.links.map(l => l.messages + l.shared))
-            view.innerHTML = `<div class="ak">
-<nav class="ak-switch" aria-label="More views"><a href="#kanban">← Kanban</a><a href="#summit">Summit days →</a></nav>
+            view.innerHTML = `<div class="ak">${ownNote()}
+<nav class="ak-switch" aria-label="More views"><a href="#kanban">← Kanban <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
 <section class="ak-machine" aria-label="The machine">
   <div class="cc-card"><h3>Last release</h3>${M.release ? `<p class="ak-big">${esc(M.release.version)}</p><p class="note">${esc(M.release.date)}: ${esc(M.release.what)}</p><p class="note">A release exists only when the gate passed.</p>` : '<p class="note">No release recorded.</p>'}</div>
   <div class="cc-card"><h3>CI</h3><p class="note">This page cannot see CI runs or their failures; GitHub can.</p><p><a href="${esc(M.ci)}">The deploy runs on GitHub</a></p></div>
@@ -298,7 +306,7 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
             if (!view) return
             const first = D ? (D.person.name || D.person.id).split(' ')[0] : ''
-            if (title) title.innerHTML = `Summit days<small>${esc(first)}'s command centre</small>`
+            if (title) title.innerHTML = `${ownTitle('Summit days')}<small>${esc(first)}'s command centre</small>`
             document.title = `Summit days · ${first}'s command centre`
             if (!D || !D.summit_days) { view.innerHTML = failed ? `<p class="note">The schedule could not load (${esc(failed)}).</p>` : '<p class="note">Loading the schedule…</p>'; return }
             const S = D.summit_days, now = new Date(), today = now.toISOString().slice(0, 10), mins = now.getUTCHours() * 60 + now.getUTCMinutes()
@@ -308,8 +316,8 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             const next = day === today ? items.find(x => x.start > mins) : null
             const tag = { standup: ['Stand-up', 't-conductor'], session: ['Session', 't-blue'], side: ['Side event', 't-orange'] }
             const row = x => `<article class="ak-card ak-ev${live.includes(x) ? ' ak-live' : ''}${next === x ? ' ak-next' : ''}"><div class="ak-evt"><b>${esc(x.start >= 0 ? hhmm(x.start) : '')}</b><small>${esc(x.start >= 0 ? x.time.replace(/^\d\d?[:.]\d\d\s*/, '') : x.time)}</small></div><div class="ak-evb"><span class="ak-meta"><span class="chip ${tag[x.kind][1]}">${tag[x.kind][0]}</span>${live.includes(x) ? '<span class="chip t-green">now</span>' : next === x ? '<span class="chip t-yellow">next</span>' : ''}</span><span class="ak-title">${x.link ? `<a href="${esc(x.link)}">${esc(x.title)}</a>` : esc(x.title)}</span>${x.place ? `<span class="note">${esc(x.place)}</span>` : ''}${x.who ? `<span class="note">${esc(x.who)}</span>` : ''}${x.what ? `<span>${esc(x.what)}</span>` : ''}${x.source ? `<a class="note" href="${esc(x.source)}">Source</a>` : ''}</div></article>`
-            view.innerHTML = `<div class="ak">
-<nav class="ak-switch" aria-label="More views"><a href="#kanban">← Kanban</a><a href="#collab">Team and the machine →</a></nav>
+            view.innerHTML = `<div class="ak">${ownNote()}
+<nav class="ak-switch" aria-label="More views"><a href="#kanban">← Kanban <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
 ${days.length ? `<div class="ak-tabs" role="tablist" aria-label="Days">${days.map(d => `<button type="button" role="tab" data-ak-day="${d}" aria-selected="${d === day}">${d === today ? 'Today' : esc(DAYNAME(d))}</button>`).join('')}</div>` : ''}
 ${day ? `<h3 class="ak-lane">${esc(DAYNAME(day))}${day === today ? ' (today)' : ''} <b>${items.length}</b></h3><p class="note">Times are Lisbon time, which is UTC in November.</p><div class="ak-list">${items.map(row).join('') || '<p class="note">Nothing on this day.</p>'}</div>` : '<p class="note">Nothing left on the schedule.</p>'}
 <details class="cc-card ak-ess"><summary>Essentials: dates, venue, Night Summit, badges, getting there, wifi</summary><dl class="ak-dl">${S.essentials.map(([k, v]) => `<div><dt>${esc(k.replace(/_/g, ' '))}</dt><dd>${esc(v.value)} <a href="${esc(v.source)}">Source</a></dd></div>`).join('')}</dl></details>
