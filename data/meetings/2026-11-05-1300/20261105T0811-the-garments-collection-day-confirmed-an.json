@@ -1,0 +1,18 @@
+{
+  "type": "question",
+  "title": "The garments: collection day confirmed, and who collects?",
+  "for": [
+    "silvio"
+  ],
+  "by": "logistics@web-summit.vicky",
+  "added": "2026-11-05T08:11:54.375Z",
+  "status": "open",
+  "detail": "Carried from the 4 Nov 13:00 (not answered). Ordered with the second printer (2ae6348c); Monday 9 Nov morning or Saturday 7 asked (30380c82); the printer's answer and who collects are not yet recorded. Layouts and the invoice are due today, Thursday 5 Nov.",
+  "recommend": "Saturday 7 if the printer can, else Monday morning with Silvio collecting; one line from Silvio settles it.",
+  "issue": "WS-48",
+  "options": [
+    "Silvio collects Monday morning and brings it to Lisbon",
+    "The printer couriers it to a Lisbon address of Silvio's choosing",
+    "Saturday 7 if the printer can"
+  ]
+}

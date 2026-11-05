@@ -1,0 +1,18 @@
+{
+  "type": "decision",
+  "title": "Personal business cards: still printed, or only the three team cards?",
+  "for": [
+    "dinis"
+  ],
+  "by": "logistics@web-summit.vicky",
+  "added": "2026-11-05T08:11:54.327Z",
+  "status": "open",
+  "detail": "Dinis ordered 600 team cards with no names (gold, green, blue; WS-155, collection Fri 6 Nov). The garment printer's brief still lists 700 personal cards, 100 per person with each person's name and own QR (/print-order/, /print/#next), and /procurement/ says personal cards are 'not started'. Vicky gave her card content (Vicky Wang, Project Manager) and voted R2-6 for a personal card.",
+  "recommend": "Team cards only for the summit: they are ordered and final; tell the garment printer the cards are not part of its order, so nobody pays for or signs 700 cards that won't be used. Personal cards after Lisbon if wanted.",
+  "issue": "WS-48",
+  "options": [
+    "Team cards only: drop the personal cards from the garment printer's order and from /print/",
+    "Both: team cards for handing out, plus a short personal run (e.g. 50 each) in the chosen personal design",
+    "Personal cards later, after the summit, if the team cards run out"
+  ]
+}

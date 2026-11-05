@@ -27,3 +27,9 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 - Vicky's colours settled: purple T-shirts, lavender hoodie (procurement__005, 0fbf7b6c; your d042d475).
 - The next file set (generic QR, the mark, "Vicky Wang") waits for Dinis on /print/#next (4b291ed4). It has "Vicky Wang" but not "Project Manager", which Vicky asked for on her card (f6e35e5); asked of designer@web-summit.dinis in this commit, in case the cards stay C1.
 - Sign-offs unchanged at 3 of 7; when the next set becomes the main one, Vicky signs again with you.
+
+## 5 November, 08:20 UTC
+
+- The business cards changed overnight: Dinis ordered 600 team cards with **no names** (WS-155, /cards/print/, collection Fri 6). Vicky's personal card ("Vicky Wang" / "Project Manager", her R2-6 vote) is not in it; whether personal cards exist at all is my 13:00 item for Dinis. For Vicky's brief, not URGENT.
+- Garments: layouts and invoice due today; collection day and who collects still not recorded (30380c82); re-asked of Silvio on today's 13:00 (yesterday's item was not answered).
+- The next garment file set still waits for Dinis on /print/#next; sign-offs unchanged at 3 of 7 (signoff.mjs verify).
