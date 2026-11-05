@@ -23,13 +23,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Thursday 5 November, 12:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-1257/index.html), [yesterday's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
+*Thursday 5 November, 14:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-1457/index.html), [yesterday's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
 
-- **The 12:00 stand-up:** the team cards only, for those present; five questions open, among them the Web Summit app (WS-169).
-- **The midday stand-up is at 12:00** from now on.
-- **Vote on the stickers before 14:30:** [/stickers/vote/](stickers/vote/index.html); two ballots so far (WS-167).
-- **Waiting on Dinis:** the next garment set (WS-113) and Jose's navy (WS-48).
-- **Nothing done on the board since 07:50;** the RiskMandate core is unowned.
+- **Our stand: booth A1-30, ALPHA 1, Pavilion 1,** Thursday 12 November; the exhibitor rules are on [/summit/](summit/index.html).
+- **The sticker vote closed with 2 of 6 ballots;** the keys sticker leads (WS-167).
+- **For Dinis at 18:00:** Silvio's three (the outreach claim, online slots, who drives the merch).
+- **The 12:00's record:** one decision, nine follow-ups with owners (WS-96).
+- **Still waiting on Dinis:** the next garment set (WS-113) and Jose's navy (WS-48).
 
 ## Start here {#start}
 
