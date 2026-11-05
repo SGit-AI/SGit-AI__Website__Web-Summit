@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.490",
+    "date": "2026-11-05",
+    "what": "yesterday's open decisions: whose word closes each; WS-23's date closed as overtaken",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "0451c2468"
+  },
+  {
     "version": "v0.2.489",
     "date": "2026-11-05",
     "what": "WS-164 items 1 and 3: no keyring on a page that runs a person's script; gate check 22",
