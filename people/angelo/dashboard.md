@@ -6,11 +6,10 @@ summary: The page Angelo reads first, about action: what is blocked on Angelo, t
 
 ## 1. Blocked on you {#needs}
 
-Your go is needed (tier 3) before these move:
+Your go is needed (tier 3) before these move. Settled on 5 November: the signature rule (your signed messages count for tier 1 and 2 only, [the protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol)).
 
 - **Drain the sticker votes before 14:30** (you are one of four drainers): the steps are in [Dinis's notes for you](../../nights/2026-11-05/notes/index.html#angelo).
 - **The lane to your conductor:** unblocks your app's sealed messages (slice 3), and your vault agent's vault-to-vault lanes with Silvio (WS-120).
-- **The signature rule** for your conductor: act only on messages signed by a key in `data/person-keys.json`.
 - **The presence agent:** team-collaboration as the team's one presence agent, opening everyone's locations.
 - **WS-34:** may your dev agent change shared site code through a board issue it has picked ([the 13:00 agenda](../../meetings/2026-11-04-1300/index.html)).
 - **Jose's conductor proposes** that your dev agent and Dinis's own 15 unpicked site and UI issues that name Jose ([13:00 agenda](../../meetings/2026-11-05-1300/index.html)); in your 08:00 digest.

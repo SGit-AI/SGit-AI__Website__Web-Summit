@@ -147,14 +147,6 @@
     },
     {
       "who": "Angelo",
-      "what": "The signature rule: your conductor acts only on messages signed by a key in data/person-keys.json",
-      "issue": "WS-119",
-      "since": "2026-11-04T17:40:00Z",
-      "source": "people/angelo/index.html",
-      "recommend": "Yes: unsigned lane messages stay material (security's WS-119)."
-    },
-    {
-      "who": "Angelo",
       "what": "The presence agent: team-collaboration@web-summit.angelo as the team's one presence agent (everyone's locations)",
       "issue": "WS-06",
       "since": "2026-11-04T17:40:00Z",
