@@ -1,6 +1,6 @@
 {
   "type": "decision",
-  "title": "Meet transcripts to the record? Turn them on (WS-98), and Jose's automation agent delivers them to the private vault (WS-96)",
+  "title": "Meet transcripts to the record? Dinis turns them on (WS-98); the record's writer reads them in Drive through its Claude connector (WS-96)",
   "for": [
     "dinis",
     "angelo",
@@ -9,12 +9,12 @@
   "by": "conductor@web-summit.jose",
   "added": "2026-11-05T12:58:04.826Z",
   "status": "open",
-  "detail": "Affects everyone: every stand-up's record. Proposed by conductor@web-summit.jose, agreed by Jose (5 November: \"yes, go\"). WS-96's debriefs keep waiting for a transcript, and the 12:00 stand-up said \"if Dinis is not on the call we don't have the tool to transcribe the meeting\" (WS-98). Proposal: (1) Dinis turns on Meet transcripts or Gemini notes for the organisation, so whoever organises the call gets a transcript in their Drive (WS-98); (2) automation@web-summit.jose builds an n8n flow that takes each new transcript into a private vault lane, never the public repository, for team-collaboration@web-summit.angelo to draft the record from, as the agents settled on 4 November (one writer for the agenda, one for the record; WS-107, who confirms, is still open); no new transcript agent. Raw transcripts stay in the private vault; only decisions in the decider's own words (WS-107) and follow-ups come to data/meetings/. Everyone on the call is told it is transcribed.",
-  "recommend": "Yes: Dinis turns on transcripts (WS-98); Angelo says which vault lane team-collaboration reads; automation@web-summit.jose builds the flow",
+  "detail": "Affects everyone: every stand-up's record. Proposed by Jose (5 November, his words to his conductor, C17: \"no n8n\"), replacing his earlier proposal on this item. WS-96's debriefs keep waiting for a transcript, and the 12:00 stand-up said \"if Dinis is not on the call we don't have the tool to transcribe the meeting\" (WS-98). Proposal: (1) Dinis turns on Meet transcripts (WS-98). (2) The transcript stays where Google puts it, in the organiser's Drive, shared with the team. (3) The agent that writes the record (team-collaboration@web-summit.angelo, as the agents settled on 4 November; or Jose's conductor for Jose's own debrief) reads it through its Claude Google Drive connector and writes only decisions, in the decider's own words (WS-107, still open on who confirms), and follow-ups to data/meetings/. No copy of the raw transcript anywhere else, no vault lane, no keys to hand out. Everyone on the call is told it is transcribed. Open questions: (a) does a scheduled Claude session have the Drive connector, or only a session a person opens? Angelo and Jose each test once before 18:00. (b) Whose Drive holds the transcript, and is it shared with the account the agent uses? Fallback only, if (a) fails: an n8n flow (automation@web-summit.jose) brings each transcript to the record's writer.",
+  "recommend": "Yes, the first: Dinis turns on transcripts and shares them with the team; Angelo and Jose report their connector tests at 18:00",
   "issue": "WS-96",
   "options": [
-    "yes: transcripts on, and Jose's automation agent delivers them",
-    "transcripts on; Angelo's team-collaboration fetches them itself",
+    "yes: transcripts on; the record's writer reads them in Drive through its connector",
+    "yes, with the n8n fallback if a scheduled session cannot use the connector",
     "not now: a named note-taker each stand-up"
   ]
 }
