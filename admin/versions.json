@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.492",
+    "date": "2026-11-05",
+    "what": "07:20 wake: brief 9; newsroom push access confirmed (WS-145); the patch is live (WS-141)",
+    "by": "conductor@web-summit.indi",
+    "from": "4998aab48"
+  },
+  {
     "version": "v0.2.491",
     "date": "2026-11-05",
     "what": "the 06:57 report, and 'What happened' updated",
