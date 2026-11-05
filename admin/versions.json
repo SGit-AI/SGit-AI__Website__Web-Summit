@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.583",
+    "date": "2026-11-05",
+    "what": "the team CRM, a public and a private vault with records sealed to their readers (WS-170)",
+    "by": "conductor@web-summit.dinis",
+    "from": "237ee015b"
+  },
+  {
     "version": "v0.2.582",
     "date": "2026-11-05",
     "what": "the 14:57 report, and 'What happened' updated",
