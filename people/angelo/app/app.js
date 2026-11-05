@@ -114,6 +114,7 @@
 <nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
 ${toolbar(s, shown.length, needN)}
 ${chips(s)}
+${s.now ? decideFirst() : ''}
 ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No cards match this view.</p><button class="cc-btn" type="button" data-ak-reset>Back to my open tasks</button></div>`}
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}. Cards change on the next release, usually within minutes.${D.kanban.shallow ? ' This build had only part of the git history (a shallow clone), so last changes and histories may read short.' : ''}</p>
 </div>${s.open ? details(s.open, now) : ''}`
@@ -177,6 +178,14 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             }).join('')
         }
 
+        // the cockpit's ranking (admin/build/cockpit.mjs): what waits on Angelo's word, highest first, each with why
+        function decideFirst() {
+            const C = D.cockpit; if (!C) return ''
+            const list = [...(C.only_you || []), ...(C.decisions || [])].sort((a, b) => b.score - a.score)
+            if (!list.length) return C.error ? `<p class="note">The ranking could not be built (${esc(C.error)}).</p>` : ''
+            const item = x => `<li class="ak-dec"><span class="ak-score" title="The cockpit's score: higher is more urgent">${esc(x.score)}</span><div><span class="ak-meta"><span class="chip ${x.type === 'question' ? 't-blue' : x.type === 'decision' ? 't-orange' : 't-red'}">${esc(x.type === 'only-you' ? 'only you' : x.type)}</span>${x.issue ? `<a class="chip plain" href="#kanban?n=1&o=${esc(x.issue)}">${esc(x.issue)}</a>` : ''}</span><b class="ak-dt">${esc(clean(x.title))}</b>${x.why ? `<span class="ak-why">Why here: ${esc(x.why)}</span>` : ''}${x.recommend ? `<span class="note">Recommended: ${esc(x.recommend)}</span>` : ''}${x.meeting ? `<a class="note" href="../../../meetings/${esc(x.meeting)}/index.html">On the agenda since ${esc(x.meeting)}</a>` : ''}</div></li>`
+            return `<section class="cc-card ak-decide" aria-label="Decide first"><h3 class="ak-h3">Decide first <b>${list.length}</b></h3><ol>${list.slice(0, 8).map(item).join('')}</ol>${list.length > 8 ? `<p class="note">and ${list.length - 8} more, lower down.</p>` : ''}<p class="note">Ranked by the cockpit (only you can do it, who it blocks, overdue, how long it has waited). One-click decide, delegate, now and later come next: signed with your key, sent to ${esc(C.lane.agent)}.</p></section>`
+        }
         function card(i, s, now) {
             const ctx = D.kanban, due = K.dueBucket(i, now), p = K.pickers(i, ctx)
             const tone = { overdue: 't-red', today: 't-yellow', week: 't-blue' }[due] || 't-slate'
