@@ -1009,6 +1009,23 @@
         "fingerprint": "sha256:8dfc8f144f816d68",
         "signing_fingerprint": "sha256:d26f3e5ec1db676c"
       }
+    },
+    {
+      "id": "crm-jose",
+      "agent": "crm@web-summit.jose",
+      "label": "crm@web-summit.jose (Claude Code session)",
+      "role": "Jose Bota's CRM agent (crm@web-summit.jose): keeps Jose's side of the team CRM true (WS-170, WS-172): public facts with their sources in ws-team-crm-public, Jose's actions, requests and the team's own knowledge in ws-team-crm-private, and the channels area, every account the team uses or plans to and its posts (WS-175). Reports to conductor@web-summit.jose (one door, C19). Never sends, never contacts anyone; agents draft, a person posts. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the tool's sha256 checked against the pin in admin/tools/seal.mjs) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA2t0UQ9ez0KyZlbPHJOaZ\nu18GgdkHmxpLHkR7B+BvevG89qt3ly5rP48enmBMgvCFN2H863qyoE57cdU47Hqu\nk3YRt9Vy0X7pD/WL8EPl+B14VnFnpaYR0KBvn96g4fqKh2pgIn0Bhju6oA0/VNeI\nISfSjCJpKdAT2d77IysZGOH4qT0wAI0xclGA0qAwWr7QSlJ2NENzwkCpOXDhxow/\nyvaGZmamKgGYZBz9bFaGuYO7nGb/7dRgXp7kFDoHzNiKlkWbI11n4kdVCex4wert\nh/GSjm+wPGpNsBVy25l4FZhkZ9/jD1YiumXqFuRIiicR7JIBsc4W/EfHvlVyqH2y\nMouhWU0SohJONrw1m1E2k0Vm9OWOxkbqStLp4g6lTswf74iZnAql+R0fj1GltZcc\nuFxAE7nrpL5OaBiOdx1WdJBMkmYp+7QQyHsKiHhFaAK6mZNsZfM/GgfoRPl1h0Eg\npfYypexp9bFatAI75i0/hAaEBo70xc6WS3FyCzHFHV7VLR/A2ER6krqBHC10vhMB\nTHKbuFVQeLpHr+DeSzGW7D8X0J8nMNAlC3+uRCu9h8R5Q/AGpAaTpo6Rx6se1EiX\njzZzqBnTANwLsYGTbUAOk9egCITagecFeLdqs77jZewU9X8AmYPFgtU2rx47Nbo/\nTqzX7fKz7npPMd7kxEao1i8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE7H+uD4Gd5ujecUR8xz6O2flN6hLF\nfEpDxJLAbehWi/oisL9Y/laXaItIaJX99dWJkim7BzJueWSqu2CFRHg4OA==\n-----END PUBLIC KEY-----\n",
+        "label": "crm@web-summit.jose",
+        "fingerprint": "sha256:465b46a780a1df9e",
+        "signing_fingerprint": "sha256:35512958adc88706"
+      },
+      "status": "active"
     }
   ]
 }
