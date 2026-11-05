@@ -1,0 +1,123 @@
+/* Jose's command centre. Copied from Angelo's own command centre (people/angelo/app/, by dev@web-summit.angelo, commit 17201cb, 5 November 2026) at Jose's word; Jose's copy, so Angelo's changes do not change it.
+   The brief: people/jose/design/mission/BRIEF.md. The shared
+   stylesheet, imported, never copied, and what this app adds below it. */
+@import url('../../../assets/cc/app.css');
+
+/* ---------- the kanban (slices 1 and 2): the shared tokens, so it follows the theme ---------- */
+.ak { display: grid; gap: 14px; min-width: 0; }
+.ak-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-start; justify-content: space-between; }
+.ak-quick { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.ak-tog { min-height: 44px; padding: 0 14px; border-radius: var(--rm-radius-control); border: 1px solid var(--rm-border); background: var(--rm-surface); color: var(--rm-text); font: 600 14px/20px var(--rm-font); cursor: pointer; }
+.ak-tog[aria-pressed="true"] { background: var(--rm-action); border-color: var(--rm-action); color: var(--rm-action-ink); }
+.ak-tog b, .ak-panel summary b, .ak-tabs b, .ak-col header b, .ak-lane b { display: inline-block; min-width: 20px; padding: 0 6px; margin-left: 4px; border-radius: 999px; background: var(--rm-chip-bg); font: 600 12px/20px var(--rm-font); text-align: center; color: inherit; }
+.ak-count { font: 500 13px/19px var(--rm-font); color: var(--rm-text-muted); }
+.ak-panels { display: flex; gap: 8px; flex-wrap: wrap; }
+.ak-panel { position: relative; }
+.ak-panel summary { list-style: none; min-height: 44px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: var(--rm-radius-control); border: 1px solid var(--rm-border); background: var(--rm-surface-raised); font: 600 14px/20px var(--rm-font); cursor: pointer; }
+.ak-panel summary::-webkit-details-marker { display: none; }
+.ak-panel[open] summary { border-color: var(--rm-action); }
+.ak-pop { position: absolute; right: 0; top: calc(100% + 6px); z-index: 20; width: min(560px, calc(100vw - 32px)); max-height: 70vh; overflow: auto; display: grid; gap: 12px; padding: 16px; border-radius: var(--rm-radius-card); border: 1px solid var(--rm-border); background: var(--rm-surface); box-shadow: var(--rm-shadow); }
+.ak-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); width: min(420px, calc(100vw - 32px)); }
+.ak-sel, .ak-q { display: grid; gap: 4px; font: 500 13px/19px var(--rm-font); color: var(--rm-text-secondary); }
+.ak-sel select, .ak-q input { min-height: 44px; padding: 0 10px; border-radius: var(--rm-radius-control); border: 1px solid var(--rm-border); background: var(--rm-surface-raised); color: var(--rm-text); font: 400 15px/22px var(--rm-font); }
+.ak-checks { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.ak-checks legend { font: 600 12px/18px var(--rm-font); letter-spacing: .06em; text-transform: uppercase; color: var(--rm-text-muted); margin-bottom: 4px; }
+.ak-checks label { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; font: 400 14px/20px var(--rm-font); }
+.ak-checks input { width: 18px; height: 18px; accent-color: var(--rm-action); }
+.ak-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.ak-chip { min-height: 32px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--rm-border); background: var(--rm-chip-bg); color: var(--rm-text); font: 500 13px/19px var(--rm-font); cursor: pointer; }
+.ak-grid { display: grid; grid-template-columns: repeat(var(--n), minmax(260px, 1fr)); gap: 12px; overflow-x: auto; padding-bottom: 6px; align-items: start; }
+.ak-col { display: grid; gap: 10px; align-content: start; padding: 10px; border-radius: var(--rm-radius-module); background: var(--rm-surface-raised); border: 1px solid var(--rm-border); min-width: 0; }
+.ak-col header { font: 600 14px/20px var(--rm-font); padding: 2px 4px; }
+.ak-lane { font: 600 15px/22px var(--rm-font); margin: 6px 0 0; }
+.ak-card { display: grid; gap: 8px; padding: 12px; border-radius: var(--rm-radius-card); border: 1px solid var(--rm-border); background: var(--rm-surface); box-shadow: var(--rm-shadow); min-width: 0; }
+.ak-card.ak-need { border-left: 4px solid var(--rm-red); }
+.ak-open { all: unset; cursor: pointer; display: grid; gap: 2px; border-radius: 6px; }
+.ak-open:focus-visible { outline: 2px solid var(--rm-focus); outline-offset: 3px; }
+.ak-id { font: 600 12px/18px var(--rm-font); color: var(--rm-text-muted); }
+.ak-title { font: 600 15px/22px var(--rm-font); color: var(--rm-text); overflow-wrap: anywhere; }
+.ak-meta { display: flex; flex-wrap: wrap; gap: 6px; }
+.ak-meta a.chip { text-decoration: none; }
+.ak-for { margin: 0; font: 400 12px/18px var(--rm-font); color: var(--rm-text-muted); overflow-wrap: anywhere; }
+.ak-fresh, .ak .note { font: 400 13px/19px var(--rm-font); color: var(--rm-text-muted); }
+.ak-empty { display: grid; gap: 10px; justify-items: start; }
+.ak-tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+.ak-tabs button { flex: none; min-height: 44px; padding: 0 12px; border-radius: var(--rm-radius-control); border: 1px solid var(--rm-border); background: var(--rm-surface); color: var(--rm-text); font: 600 14px/20px var(--rm-font); cursor: pointer; }
+.ak-tabs button[aria-selected="true"] { background: var(--rm-action); border-color: var(--rm-action); color: var(--rm-action-ink); }
+.ak-list { display: grid; gap: 10px; }
+/* card details: a side panel on a wide screen, the whole screen on a phone */
+.ak-scrim { position: fixed; inset: 0; z-index: 60; background: rgb(0 0 0 / .45); }
+.ak-sheet { position: fixed; z-index: 61; top: 0; right: 0; bottom: 0; width: min(560px, 100vw); overflow-y: auto; padding: 20px; display: grid; gap: 16px; align-content: start; background: var(--rm-surface); color: var(--rm-text); border-left: 1px solid var(--rm-border); box-shadow: var(--rm-shadow); }
+.ak-sheet:focus { outline: none; }
+.ak-sheet > header { display: flex; gap: 12px; align-items: flex-start; justify-content: space-between; }
+.ak-sheet > header .cc-btn { flex: none; white-space: nowrap; }
+.ak-sheet h2 { font: 600 20px/28px var(--rm-font); margin: 2px 0 0; overflow-wrap: anywhere; }
+.ak-sheet h3 { font: 600 12px/18px var(--rm-font); letter-spacing: .06em; text-transform: uppercase; color: var(--rm-text-muted); margin: 0 0 6px; }
+.ak-sheet ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+.ak-sheet a { color: var(--rm-action); overflow-wrap: anywhere; }
+.ak-dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 16px; margin: 0; }
+.ak-dl dt { font: 500 12px/18px var(--rm-font); color: var(--rm-text-muted); }
+.ak-dl dd { margin: 0; font: 400 14px/20px var(--rm-font); overflow-wrap: anywhere; }
+.ak-body p { margin: 0 0 10px; }
+.ak-body code { font-size: 13px; background: var(--rm-chip-bg); padding: 1px 4px; border-radius: 4px; overflow-wrap: anywhere; }
+@media (max-width: 767px) {
+    .ak-bar { flex-direction: column; align-items: stretch; }
+    .ak-panels { display: grid; grid-template-columns: 1fr 1fr; }
+    .ak-panel summary { width: 100%; justify-content: center; }
+    .ak-pop { position: fixed; left: 16px; right: 16px; top: auto; bottom: calc(var(--rm-tabbar) + 16px + env(safe-area-inset-bottom)); width: auto; max-height: 65vh; }
+    .ak-layout { grid-template-columns: 1fr 1fr; }
+    .ak-sheet { width: 100vw; padding: 16px; padding-bottom: calc(24px + env(safe-area-inset-bottom)); }
+    .ak-dl { grid-template-columns: 1fr; }
+}
+
+/* ---------- the collaboration board (slice 5) ---------- */
+.ak-switch { justify-self: start; font: 600 14px/20px var(--rm-font); color: var(--rm-action); text-decoration: none; min-height: 32px; display: inline-flex; align-items: center; }
+.ak-machine { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.ak-machine h3 { font: 600 12px/18px var(--rm-font); letter-spacing: .06em; text-transform: uppercase; color: var(--rm-text-muted); margin: 0 0 6px; }
+.ak-machine p { margin: 0 0 6px; }
+.ak-machine a { color: var(--rm-action); }
+.ak-big { font: 700 26px/32px var(--rm-font); }
+.ak-big small { font: 500 13px/19px var(--rm-font); color: var(--rm-text-muted); }
+.ak-people { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.ak-person { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 44px 1fr; gap: 8px 12px; align-items: center; padding: 14px; border-radius: var(--rm-radius-card); border: 1px solid var(--rm-border); background: var(--rm-surface); box-shadow: var(--rm-shadow); }
+.ak-person:hover { background: var(--rm-surface-hover); }
+.ak-person:focus-visible { outline: 2px solid var(--rm-focus); outline-offset: 2px; }
+.ak-person .ak-meta, .ak-person > small { grid-column: 1 / -1; }
+.ak-av { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--rm-surface-raised); border: 1px solid var(--rm-border); font: 700 15px/1 var(--rm-font); }
+.ak-pn { display: grid; min-width: 0; }
+.ak-pn b { font: 600 16px/22px var(--rm-font); }
+.ak-pn small { font: 400 13px/18px var(--rm-font); color: var(--rm-text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ak-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ak-links li { display: grid; grid-template-columns: minmax(0, 220px) 1fr auto; gap: 10px; align-items: center; font: 400 14px/20px var(--rm-font); }
+.ak-barw { height: 8px; border-radius: 999px; background: var(--rm-surface-raised); overflow: hidden; }
+.ak-barf { display: block; height: 100%; border-radius: 999px; background: var(--rm-action); }
+.ak-agents li { line-height: 21px; }
+@media (max-width: 767px) {
+    .ak-machine { grid-template-columns: 1fr; }
+    .ak-people { grid-template-columns: 1fr; }
+    .ak-links li { grid-template-columns: 1fr auto; }
+    .ak-links li .ak-barw { grid-column: 1 / -1; grid-row: 2; }
+}
+@media (min-width: 768px) { .ak-switch { display: none !important; } }
+
+/* ---------- summit days (slice 7) ---------- */
+nav.ak-switch { display: flex; gap: 16px; flex-wrap: wrap; }
+nav.ak-switch a { font: 600 14px/20px var(--rm-font); color: var(--rm-action); text-decoration: none; min-height: 32px; display: inline-flex; align-items: center; }
+.ak-ev { grid-template-columns: 64px 1fr; align-items: start; gap: 12px; }
+.ak-evt { display: grid; gap: 2px; }
+.ak-evt b { font: 700 16px/22px var(--rm-font); }
+.ak-evt small { font: 400 12px/16px var(--rm-font); color: var(--rm-text-muted); overflow-wrap: anywhere; }
+.ak-evb { display: grid; gap: 4px; min-width: 0; }
+.ak-evb .ak-title a { color: var(--rm-text); }
+.ak-evb a.note { color: var(--rm-action); }
+.ak-live { border-left: 4px solid var(--rm-green); }
+.ak-next { border-left: 4px solid var(--rm-yellow); }
+.ak-ess summary { cursor: pointer; font: 600 15px/22px var(--rm-font); min-height: 32px; }
+.ak-ess .ak-dl { margin-top: 12px; grid-template-columns: 1fr; }
+.ak-ess a, .cc-card .ak-h3 + .note a { color: var(--rm-action); }
+.ak-h3 { font: 600 12px/18px var(--rm-font); letter-spacing: .06em; text-transform: uppercase; color: var(--rm-text-muted); margin: 0 0 6px; }
+
+/* ---------- Jose's copy: fixes on top of Angelo's ---------- */
+/* a long due text ("after the summit (Fri 13 Nov), unless ...") wraps inside its card instead of widening the page */
+.ak-card .chip { white-space: normal; height: auto; min-height: 24px; max-width: 100%; }
+.ak-open { min-width: 0; }
