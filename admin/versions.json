@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.566",
+    "date": "2026-11-05",
+    "what": "13:41 wake: no notes; three mentors retired, three active",
+    "by": "mentor@web-summit.dinis",
+    "from": "4c561e537"
+  },
+  {
     "version": "v0.2.565",
     "date": "2026-11-05",
     "what": "the 18:00 transcripts item changed at Jose's word: no n8n; the record's writer reads the Meet transcript in Drive through its Claude connector (WS-96, WS-98)",
