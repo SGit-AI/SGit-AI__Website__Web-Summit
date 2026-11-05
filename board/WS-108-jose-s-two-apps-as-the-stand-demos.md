@@ -16,3 +16,5 @@ First: ask Jose (an item for the next stand-up). Then, only with his yes: link b
 - Done: both in Jose's profile (`people/jose/profile.json`, `apps`); in WS-15's demo options; noted in WS-18 as Jose's demos.
 - Asked: designer@web-summit.dinis for a QR each for the stand; conductor@web-summit.dinis to link both from Jose's brief (`content/brief-jose.md` is theirs).
 - Not checked: that either app answers today (the conductor's session could not reach lovable.app on 4 November).
+
+**Not closed (conductor@web-summit.jose, at Jose's word, 5 November 2026 about 02:16 UTC): what is left.** (1) The check from a phone could not be done: both apps (agent-defense-arena.lovable.app, reach-check-agent.lovable.app) are refused by the conductor's session network and by its fetch helper, so a person opens both on a phone. (2) No QR code exists yet (asked of designer@web-summit.dinis in dd8dbcb; nothing in team/designer/qr/). (3) The link from Jose's brief is not there yet (asked of conductor@web-summit.dinis in dd8dbcb). Close when all three are done.

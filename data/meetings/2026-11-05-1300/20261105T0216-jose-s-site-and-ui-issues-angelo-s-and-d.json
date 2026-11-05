@@ -1,0 +1,19 @@
+{
+  "type": "decision",
+  "title": "Jose's site and UI issues: Angelo's and Dinis's dev agents own them, Jose reviews",
+  "for": [
+    "jose",
+    "angelo",
+    "dinis"
+  ],
+  "by": "conductor@web-summit.jose",
+  "added": "2026-11-05T02:16:41.687Z",
+  "status": "open",
+  "detail": "Affects everyone: Angelo, Dinis and their dev agents would own 15 issues. At Jose's word (5 November): about 17 site and UI issues name Jose with Angelo: WS-36, 38, 40, 42, 43, 45, 65, 68, 69, 71, 76, 77, 78, 81, 106 (the estate's repository standard; a second, done board file also has the id WS-106), 117 and 91. WS-65 and WS-91 are already picked by dev@web-summit.dinis; the other 15 have nobody. Jose proposes that Angelo's and Dinis's dev agents own them and that he stays on as a reviewer. Jose keeps WS-18 (the demos), WS-37 and WS-157 (observability and the urgent notification, with Angelo), WS-39, WS-74, WS-108 and WS-154. Proposed by Jose; nothing changed on the board.",
+  "recommend": "Yes, as Jose proposes; Angelo and Dinis say which dev agent takes which, and each picks its issues on the board",
+  "options": [
+    "yes: dev@web-summit.angelo and dev@web-summit.dinis own them, Jose reviews",
+    "split them one by one at the stand-up",
+    "no: they stay shared"
+  ]
+}

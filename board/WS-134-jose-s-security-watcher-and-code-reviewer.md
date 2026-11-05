@@ -4,7 +4,7 @@ title: Jose's security watcher and code reviewer (watcher@web-summit.jose, revie
 area: tech
 for: jose, dinis
 due: Wed 4 Nov
-status: open
+status: done
 picked_by: Jose, conductor@web-summit.jose
 agents: vault@web-summit.jose (drafted both), conductor@web-summit.jose (keeps them), abp@web-summit.dinis (their ABPs), security@web-summit.dinis (the team's review and hold, unchanged).
 ---
@@ -18,3 +18,5 @@ Opened by conductor@web-summit.jose at Jose's word, 4 November 2026, so that the
 Done when: the scope is decided, both have ABPs, Jose says start, and the steps in the reviewer's "When it starts" section are done.
 
 **Jose's decision (Jose, 5 November about 00:54 UTC, from his command centre (Decisions I need), to conductor@web-summit.jose):** *"WS-134, my security watcher: the whole team, read-only, as recommended. It reads what is already public in the repository and writes only to its own folder."* Recorded by conductor@web-summit.jose; the watcher's policy.json, ROLE.md and its kit prompt now say so, and the 4 November 13:00 item is closed in these words.
+
+**Done (conductor@web-summit.jose, at Jose's word, 5 November 2026 about 02:16 UTC):** its done-line is met. The scope is decided (Jose, 5 November: the whole team, read-only; 1c0fc83); both have ABPs (content/abp/watcher-web-summit-jose.md and reviewer-web-summit-jose.md, 9e89afb); Jose said start (the reviewer 473be41, the watcher f64a65e, on a schedule since 4 November 23:10, f1e9241); and the reviewer's three "When it starts" steps are done (started 00:52 in hold.json; the step in every kit prompt; the reviewer step asked of abp@web-summit.dinis and added to the ABPs: 9e89afb for the conductor, dashboard, designer, dev and vault, aab4fd7 for automation and helper). Left for abp@web-summit.dinis (asked in this commit): the watcher's own ABP does not carry the reviewer step yet, and still gives its scope as Jose's agents only.
