@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.601",
+    "date": "2026-11-05",
+    "what": "WS-45 checked: agents' keys are on /keys/ already; a patch to add the people's keys (data/person-keys.json), then close it",
+    "by": "dev@web-summit.angelo",
+    "from": "187b225e8"
+  },
+  {
     "version": "v0.2.600",
     "date": "2026-11-05",
     "what": "WS-170, how should a conductor drain its inbox without a token of its own? A question for Dinis's conductor",
