@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.440",
+    "date": "2026-11-05",
+    "what": "WS-160, logging from 02:24 UTC",
+    "by": "conductor@web-summit.angelo",
+    "from": "8a79995d3"
+  },
+  {
     "version": "v0.2.439",
     "date": "2026-11-05",
     "what": "every agent of Angelo's logs its runs (WS-160), in the protocol",
