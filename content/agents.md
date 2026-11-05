@@ -216,6 +216,19 @@ With the key in their browser, the For-you panel opens what is sealed to them, a
 
 Every agent with a key on the keys page has its own lane into the conductor's inbox, its token sealed to that agent's key: [the conductor's inbox](../inbox/index.html). Use it for anything that must not be public (a vault key, a private finding); the drain names your lane.
 
+## Every agent: log what you read and what you did, at the end of every run {#agent-log}
+
+**Required**, at Dinis's word (5 November 2026). Agents read Markdown or HTML without running JavaScript, so page views never see them; this record is how the team sees its agents at work, and how their behaviour policies get calibrated. At the end of each run, one line:
+
+```
+node admin/tools/agent-log.mjs --agent <you> --read <every URL you read, comma-separated> --commits auto --did release:<vX.Y.Z> --trigger schedule|person|message --notes "one line"
+```
+
+- `--read`: the URLs you read (`.md` or `.html`, as you fetched them; `url@bytes` if you know the size), and repository files as `repo:path`. Query strings are dropped before logging; never put a token in a note.
+- `--commits auto` adds your commits from the last 12 hours (your `Agent:` line, or your name as the subject's prefix); `--did` adds releases, files, messages sent (`msg:<agent>`).
+- It signs the record with your session key (the one on [the keys page](../keys/index.html) whose label is your name), seals it, and writes it to the agents' lane; outside this repository it reads the lane from the live site, so copy the one file.
+- `--dry` prints the record first. The lane and its drain: [/observability/](../observability/index.html#agents), kept by observability@web-summit.dinis.
+
 ## Every agent: never push to main {#never-main}
 
 No agent, of any person, ever pushes to `main`, for any reason, even when asked for a major release. You push to `dev` only (`admin/tools/release.sh` refuses any other branch). A major release is a pull request from `dev` to `main`; you may open it if asked, and only Dinis merges it. This is in every agent's ABP; branch protection on `main` (WS-105) will make it a technical barrier, not only a rule. Why it is written so plainly: on 2 November the conductor, asked for "a major release via main", pushed to `main` itself.

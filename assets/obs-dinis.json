@@ -1,0 +1,24 @@
+{
+  "about": "observability@web-summit.dinis's experiment lanes (5 November 2026, at Dinis Cruz's word), beside Jose's assets/telemetry.json (WS-37). Public on purpose: each append token can only write to its lane, and the key can only encrypt. 'site' is used by assets/obs-dinis.js on every page; 'agents' by admin/tools/agent-log.mjs, which every agent runs at the end of each run; 'newsroom' is reserved. The vault (kuuqr3do) is private; its drain is observability@web-summit.dinis's.",
+  "enabled": true,
+  "endpoint": "https://dev.send.sgraph.ai",
+  "vault_id": "kuuqr3do",
+  "lanes": {
+    "site": [
+      "21ac8072b3f5f429fe212a5120c5ba58e38276ee6bb14fc19008cde954be26a6",
+      "61d318f27d4168d981ed41333c5d9c1fa22edeafceae1ba543bd71ca14465459"
+    ],
+    "agents": [
+      "5866127f65afad1b47c7d38894d6a8f34b3aa56a6c4ce0ac06c2812b8b3ba0c5",
+      "13cd01cf61f9a45650f4280b0e0d221205f52b2e40a01b6532bbf84fee15fa41"
+    ],
+    "newsroom": [
+      "fd6d896c8124c1c884d75b2722e9f06852034f93937add639e7f8ada7abc244f"
+    ]
+  },
+  "recipient": {
+    "fingerprint": "sha256:cc7f76a9ad468d03",
+    "signing_fingerprint": "sha256:a646bcd89c94a6b2",
+    "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAhDBCG8bNn0pJNghtOkD3\n68/3MQXY8M94PCEnJeWuSN0EQFTcWwSXVFyLnuBin3bGiafiMv7ZMYaVgk5WUmcr\nIQwkzqmO4QnNqiKZU5Jap7hy08GuoEQpMvMZXNm6sPzzEp7jsDp0CJ520z4Y8IzA\nVoJ5hRZIoPpHzDcIrNp1ZwWmdvRA6/hGJVUmYRqgyloRJO8M9+EVqdQWIUHMFWIp\nbuu3DpVzmxoae5l8T+4Xv5YekG58RYuByHKMdkc5JWqULxeNnLsnjT1Ny9L1IwHI\nYZjrYtIEhamU1Qa7aQFnIsiuT3SiUtqf2inl95lyR6hrXMPeSxT7MvDO6Q/dMHu4\ngsn1/iwE2vxYL0bCU7re5tzsWODVsywnKLuGmH2EaoArwcP02q1h4ozGnAR2lztH\nEqGXJUXoQQhZhdUDDqd/xxPBQm4IHD8+yNChkyUKKVg4Qbkq8Z9YUsPuwZWNPls5\ndY4QqfP8M5tYWav5NIKrRhVZh8RVHCLKyqKhM447k36CGU/WA+50SEUNwSWCDEd1\nnoBrjDiIu/dvQFZ6GzqBHl+VarnCi77nqVEKPtZgiCQhNIHHgDshjDnxjNPmy4Pn\ngJQE6yJgei1E+Lqe9sK1HjEgWOydWKk8uKRMh1Tae/wf5SsmtwAVvxDXBBI5p1pw\nH8aGQ1llSj63iDKstt8cdcUCAwEAAQ==\n-----END PUBLIC KEY-----\n"
+  }
+}
