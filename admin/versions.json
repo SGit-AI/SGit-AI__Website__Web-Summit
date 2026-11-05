@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.641",
+    "date": "2026-11-05",
+    "what": "session key on the keys page, and a reports file for Vicky's conductor",
+    "by": "journalist@web-summit.vicky",
+    "from": "930476a64"
+  },
+  {
     "version": "v0.2.640",
     "date": "2026-11-05",
     "what": "my session key's public half on the keys page",
