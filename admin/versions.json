@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.414",
+    "date": "2026-11-05",
+    "what": "the 00:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "893637d76"
+  },
+  {
     "version": "v0.2.413",
     "date": "2026-11-05",
     "what": "Jose's three decisions recorded in his words (WS-129, WS-134, WS-34); the watcher watches the whole team, read-only; command centres list every declared agent",
