@@ -17,6 +17,7 @@
 //  14. the company map: every company has a source with a URL and the date read
 //  15. public forever: no email, phone number or key shape in comms/, data/ or team/
 //  16. every closed wake record has its five steps
+//  21. every URL in a built page is http(s), mailto, a fragment or relative: no javascript:, data: or vbscript: (WS-132)
 //  18. briefs (WS-112): warnings only, never a failure: more than three asks, or next / sources / wide not a list
 'use strict'
 const fs = require('fs')
@@ -157,6 +158,17 @@ try {
     const ignored = execFileSync('git', ['check-ignore', '--no-index', ...sources], { cwd: ROOT }).toString().split('\n').filter(Boolean)
     for (const f of ignored) errors.push(`${f}: is gitignored, so CI will not have it`)
 } catch (e) { if (e.status !== 1) errors.push(`git check-ignore failed: ${e.message}`) }
+
+// 21. no live code in a URL (WS-132 part 1): every href, src, action and formaction in every built page is http(s), mailto,
+// a fragment or relative. Entities are decoded and control characters dropped first, as a browser does, so
+// java&#115;cript: or a tab inside the scheme is caught too. build.mjs's safeUrl() keeps markdown from making one
+{
+    const ent = s => s.replace(/&#x([0-9a-f]+);?/gi, (_, h) => String.fromCodePoint(parseInt(h, 16))).replace(/&#(\d+);?/g, (_, d) => String.fromCodePoint(+d)).replace(/&colon;/gi, ':').replace(/&tab;|&newline;/gi, '').replace(/&amp;/gi, '&')
+    const bad = v => { const m = ent(v).replace(/[\u0000-\u0020]/g, '').match(/^([a-z][a-z0-9+.-]*):/i); return m && !/^(https?|mailto)$/i.test(m[1]) }
+    if (!bad('java&#115;cript:x') || !bad('JaVa\tScRiPt:x') || !bad('data:text/html,x') || bad('https://x') || bad('a/b:c') || bad('#x')) errors.push('validate.js: check 21 fixtures failed')
+    for (const f of htmlFiles) for (const m of read(rel(f)).matchAll(/\s(?:href|src|action|formaction|xlink:href)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/gi))
+        if (bad(m[1] ?? m[2] ?? m[3])) errors.push(`${rel(f)}: a URL with a scheme that can run code: ${(m[1] ?? m[2] ?? m[3]).slice(0, 30)} (WS-132)`)
+}
 
 // 17. prose has no em-dashes (the estate's house style; the guidance on sgit.ai lists it in every gate)
 for (const dir of ['content', 'board', 'people']) for (const f of walk(path.join(ROOT, dir)).filter(f => f.endsWith('.md'))) if (read(rel(f)).includes('\u2014')) errors.push(`${rel(f)}: an em-dash in prose (use a colon, a comma or a full stop)`)

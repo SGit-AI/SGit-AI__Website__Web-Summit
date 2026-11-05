@@ -205,6 +205,15 @@
       "note": "dev pass 18: the key-shape check scans 36.6 MB (2,726 files; /pki/keys/ alone 2.7 MB of QR paths) and took 421 ms; a literal-led prefilter (a necessary part of every match) runs first: 33 ms, same answer for every file; a planted key still fails the gate, and a broken prefilter fails the self-test. Gate 4.4 -> 4.0 s.",
       "pages": 423,
       "validate_seconds": 3.97
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: WS-132 part 1. Markdown links and images keep their URL only if http(s), mailto, a fragment or relative (safeUrl in build.mjs; also the cards fence); javascript:, data: and vbscript: render as plain text. Gate check 21 scans every href, src, action and formaction in the 465 built pages, entities decoded and control characters dropped as a browser does, with its own fixtures. Probed: nine hostile links rendered inert; with safeUrl disabled the gate fails on all five. Gate 5.2 s at 465 pages (4.7 s at 433 last pass: the growth is pages); build 3.6 s.",
+      "pages": 465,
+      "validate_seconds": 5.21,
+      "build_seconds": 3.59
     }
   ]
 }

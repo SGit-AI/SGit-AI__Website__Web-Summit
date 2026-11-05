@@ -59,6 +59,11 @@ process.on('exit', code => {
     fs.writeFileSync(list, [...GENERATED].sort().join('\n') + '\n')
 })
 
+// a link or image from markdown keeps its URL only if it is http(s), mailto, a fragment or relative (WS-132 part 1):
+// javascript:, data:, vbscript: and any other scheme render as plain text, so no page text can carry live code.
+// Browsers ignore control characters and whitespace in a scheme, so they are stripped before the test
+const safeUrl = u => { const m = String(u).replace(/[\u0000-\u0020]/g, '').match(/^([a-z][a-z0-9+.-]*):/i); return !m || /^(https?|mailto)$/i.test(m[1]) }
+
 // code spans are set aside first, so nothing inside them is read as markup; emphasis follows markdown's flanking
 // rule (no space just inside the stars), so a cron line like 27 */2 * * * stays as written
 function inline(s) {
@@ -67,8 +72,8 @@ function inline(s) {
         .replace(/`([^`]+)`/g, (_, c) => `\u0000${codes.push(c) - 1}\u0000`)
         .replace(/\*\*(?=\S)([^*]+?)(?<=\S)\*\*/g, '<b>$1</b>')
         .replace(/\*(?=[^\s*])([^*]+?)(?<=[^\s*])\*/g, '<i>$1</i>')
-        .replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, '<img src="$2" alt="$1" loading="lazy">')
-        .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>')
+        .replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_, a, u) => safeUrl(u) ? `<img src="${u}" alt="${a}" loading="lazy">` : a)
+        .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, t, u) => safeUrl(u) ? `<a href="${u}">${t}</a>` : t)
         .replace(/\u0000(\d+)\u0000/g, (_, n) => `<code>${codes[n]}</code>`)
 }
 
@@ -102,7 +107,7 @@ function render(md) {
             const rows = []
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) rows.push(lines[i].split('|').map(c => c.trim()))
             i++
-            out.push(`<div class="cards">${rows.map(([t, h, d]) => `<a class="card" href="${h}"><b>${inline(t)}</b><span>${inline(d)}</span></a>`).join('')}</div>`)
+            out.push(`<div class="cards">${rows.map(([t, h, d]) => `<a class="card" href="${safeUrl(h) ? esc(h) : '#'}"><b>${inline(t)}</b><span>${inline(d)}</span></a>`).join('')}</div>`)
         } else if (/^```chart [a-z-]+( [a-z0-9-]+)?\s*$/.test(l)) {
             const [name, arg] = l.slice(9).trim().split(' ')
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
