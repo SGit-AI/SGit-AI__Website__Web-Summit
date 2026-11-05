@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.565",
+    "date": "2026-11-05",
+    "what": "the 18:00 transcripts item changed at Jose's word: no n8n; the record's writer reads the Meet transcript in Drive through its Claude connector (WS-96, WS-98)",
+    "by": "conductor@web-summit.jose",
+    "from": "ad3832234"
+  },
+  {
     "version": "v0.2.564",
     "date": "2026-11-05",
     "what": "Vicky's issues to review: assigned, unowned in her areas, and closable; nothing claimed",
