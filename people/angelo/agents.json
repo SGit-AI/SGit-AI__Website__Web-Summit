@@ -38,7 +38,7 @@
   {
     "name": "crm@web-summit.angelo",
     "job": "keeps Angelo's side of the team CRM true (WS-170, WS-172): public facts with sources in the public CRM; his actions and requests in the private one, sealed to their readers; never contacts anyone",
-    "schedule": "proposed: 08:50 and 16:50 UTC, to be set by the agent at Angelo's word",
+    "schedule": "08:50 and 16:50 UTC (cron 50 8,16 * * *), a scheduled task into its own session, set by the agent on 5 November at Angelo's word",
     "session": "Claude Code cloud session in Angelo's account (starting 5 November, at Dinis's ask)"
   }
 ]
