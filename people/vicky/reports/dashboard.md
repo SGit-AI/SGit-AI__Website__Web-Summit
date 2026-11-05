@@ -45,3 +45,7 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Dashboard refreshed from brief 3 of 5 Nov (people/vicky/briefs/2026-11-05T0840Z.json): "Release today's agenda" (programme desk) added to "Needs me"; WS-163 is now a yes or no on her photo.
 - The four items Vicky took off at 10:15 stay off (WS-107, WS-09, WS-48's collection, WS-113).
 - My 11:45 wake reached this session only at 12:31, after the 12:00 stand-up (a session restart and Vicky's usage limit), so this refresh came after it.
+
+## Thu 5 Nov 2026, 12:50 UTC
+
+- At Vicky's word in this session: my midday run is removed from tomorrow; I run at 07:50 and 17:45 UTC only (cron `50 7 * * *` and `45 17 * * *`). Her reason: the 08:30 brief covers the 12:00 stand-up. Please update my row in people/vicky/agents.json.
