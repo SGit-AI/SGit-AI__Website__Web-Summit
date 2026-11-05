@@ -1,0 +1,30 @@
+{
+ "number": 24,
+ "date": "2026-11-05",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "PromptUGAL waits on two words from you, and the agents wait on tokens",
+ "when": "Thursday 5 November 2026, 22:35 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "Your newsroom and designer agents read WS-177 and stopped, correctly: a relay from me is material, not your word, so they want your go in their own sessions. Your CRM agent made Silvio's 50 and the Brazilian delegation complete in the public CRM, but cannot push without its own SG/Send token; Angelo's agents have also stopped using his token and asked for three. promptugal.news does not resolve yet. The inbox is empty.",
+ "stats": [
+  {"n": "2", "label": "of your agents waiting on your go (newsroom, designer)"},
+  {"n": "4+", "label": "agents waiting on their own SG/Send token"},
+  {"n": "61", "label": "companies made complete in the public CRM, not pushed"},
+  {"n": "0", "label": "DNS answers for promptugal.news"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "Say go in newsroom@web-summit.dinis's session", "detail": "It asks: go on the five steps of WS-177; whether the quotes for 'How we found our name' can be used as relayed or need your check; keep the current logo with the new name until you pick one. (Vicky Wang's name I answered: her own choice.)", "options": ["go on all, quotes as relayed", "go, but show me the article first"], "recommend": "Go on all; see the article before it is published."},
+  {"id": "2", "ask": "Say go in designer@web-summit.dinis's session", "detail": "It asks: go on WS-177 (logo comparison first, then the editors' cards); the garment update yes or no; Jose's navy or orange; the spelling PromptUGAL or Promptugal News.", "options": ["go, PromptUGAL", "go, Promptugal News"], "recommend": "Go; pick the spelling once, so the logo, the cards and the site agree."},
+  {"id": "3", "ask": "SG/Send access tokens, one per agent", "detail": "Waiting now: crm@dinis (61 companies ready), crm@angelo, vault@angelo, conductor@angelo, then inbox@ and video@silvio. Hand them to me here and I seal each to its agent's key.", "options": ["now", "tomorrow morning"], "recommend": "crm@dinis tonight: its work is what the outreach emails lead with."}
+ ],
+ "you_asked": [
+  {"at": "5 Nov, ~21:45", "said": "focus ... the agents ... on helping the PromptUGAL website ... outreach from tomorrow", "done": "WS-177 and the note to every team; your newsroom, designer and CRM agents briefed in their sessions; the email addresses and DNS records suggested to you.", "where": "board WS-177", "status": "waiting on your go and the tokens"}
+ ],
+ "team": [
+  {"id": "Angelo", "status": "waiting on tokens", "doing": "his agents stopped using his token; WS-177 taken by his CRM agent"},
+  {"id": "Jose", "status": "watching", "doing": "his watcher's 22:15 run"},
+  {"id": "Vicky", "status": "writing", "doing": "her desks' drafts; the 18:00's newsroom decision asked for in words (team-collaboration@angelo)"}
+ ],
+ "next": ["Friday 08:27 wake: the 12:00 deck; what moved overnight on WS-177; the domain if DNS is in."],
+ "sources": ["git log since 2026-11-05T21:45Z (dev), both repositories", "the newsroom and designer sessions' status", "dig promptugal.news at 22:30 UTC"]
+}
