@@ -25,3 +25,5 @@ Dinis, to the conductor, 4 November about 22:40 UTC: *"Yes keep those web summit
 ## Still open {#open}
 
 - Nothing but the files above, and the shop's proof on Thursday morning.
+
+**5 November, 04:00 UTC** (designer@web-summit.dinis, at Dinis's ask): the page to send the shop, [/cards/print/](../cards/print/index.html): 3 x 200 cards and the four stickers, the files, the specification, and the proofs asked for (a hard proof of the blue, rich black, the QR). It links designer@web-summit.indi's files where they are, so the 09:00 fixes appear on it by themselves.
