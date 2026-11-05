@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.480",
+    "date": "2026-11-05",
+    "what": "/family/, briefings for other SGit teams: sgit's first-run feedback, and a channel with Agent (RiskMandate.ai)",
+    "by": "conductor@web-summit.dinis",
+    "from": "f20d26476"
+  },
+  {
     "version": "v0.2.479",
     "date": "2026-11-05",
     "what": "event mode made clean on phones and iPads, What's new for everyone, and a page of what changed in the command centres",
