@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.453",
+    "date": "2026-11-05",
+    "what": "every page load counts (a refresh shows), and reads cut short by leaving a page are sent from the next one",
+    "by": "observability@web-summit.dinis",
+    "from": "bbf0c007e"
+  },
+  {
     "version": "v0.2.452",
     "date": "2026-11-05",
     "what": "the observability pages use the full width; Behind the scenes docks (the page moves left) and resizes",
