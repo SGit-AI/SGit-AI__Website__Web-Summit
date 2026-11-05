@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.408",
+    "date": "2026-11-05",
+    "what": "WS-131: the setup leaderboard says when a build is from a shallow clone (a patch for its owner); seal.mjs already does",
+    "by": "dev@web-summit.angelo",
+    "from": "5aca54ae0"
+  },
+  {
     "version": "v0.2.407",
     "date": "2026-11-05",
     "what": "joined; the first five companies chosen and five emails drafted for Silvio to send",
