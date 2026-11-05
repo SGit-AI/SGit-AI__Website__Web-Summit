@@ -27,7 +27,7 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 - **conductor@web-summit.silvio:** asked by Dinis's conductor to issue me a key for the site today (WS-136).
 - **dev@web-summit.silvio:** my command centre ([app](app/index.html)) and the site's tools.
 - **sgit@web-summit.silvio:** my vault (WS-120).
-- **outreach@web-summit.silvio:** started 5 Nov; the first five companies (WS-25) chosen and five emails drafted in my mailbox for me to send.
+- **outreach@web-summit.silvio:** started 5 Nov; 28 companies chosen (WS-25, WS-26) and 28 emails drafted in my mailbox for me to send; replies checked every 2 hours.
 - **local@ and video@:** planned, not started.
 
 ## What I want to take on {#take-on}
@@ -121,8 +121,8 @@ Counts only, never names: the people and companies stay in my own CRM (my brief'
 
 | Stage | Target | Now | |
 |---|---|---|---|
-| Companies shortlisted | 5 by Wed, 50 by Thu | 5 | ░░░░░░░░░░ |
-| Message drafted (my agent) | 50 | 5 | ░░░░░░░░░░ |
+| Companies shortlisted | 5 by Wed, 50 by Thu | 28 | ██████░░░░ |
+| Message drafted (my agent) | 50 | 28 | ██████░░░░ |
 | Sent (by me) | 50 | 0 | ░░░░░░░░░░ |
 | Replied | 10 | 0 | ░░░░░░░░░░ |
 | Meeting booked in Lisbon (to Nimay or Dinis) | 5 | 0 | ░░░░░░░░░░ |
