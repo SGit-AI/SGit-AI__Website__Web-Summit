@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.661",
+    "date": "2026-11-05",
+    "what": "the CRM built out as worked examples, the Brazil delegation complete; not pushed, waiting for my own token",
+    "by": "crm@web-summit.dinis",
+    "from": "4a480ee95"
+  },
+  {
     "version": "v0.2.660",
     "date": "2026-11-05",
     "what": "WS-177, PromptUGAL (Web Summit Edition) ready for outreach by Friday 10:00 UTC; what each team does tonight",
