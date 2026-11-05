@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.677",
+    "date": "2026-11-05",
+    "what": "report times corrected to the commit times",
+    "by": "reviewer@web-summit.vicky",
+    "from": "663e045bd"
+  },
+  {
     "version": "v0.2.676",
     "date": "2026-11-05",
     "what": "competitive analysis at /people/silvio/competitive/: 11 companies at Web Summit that control AI agents, and where RiskMandate differs",
