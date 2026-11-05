@@ -18,6 +18,7 @@ From 4 November 2026 (Vicky's word): Vicky's GitHub account can push to the news
 | Journalist (Europe beat) | `journalist-europe@web-summit.vicky` | `desks/journalist-vicky/drafts/` in the newsroom repository (drafts only) | on demand, in the web-summit-research environment | set up 5 Nov, evening (Vicky's word) |
 | Journalist (AI beat) | `journalist-ai@web-summit.vicky` | `desks/journalist-vicky/drafts/` in the newsroom repository (drafts only) | on demand, in the web-summit-research environment | set up 5 Nov, evening (Vicky's word) |
 | Journalist (connections beat) | `journalist-connections@web-summit.vicky` | `desks/journalist-vicky/drafts/` in the newsroom repository (drafts only) | on demand, in the web-summit-research environment | set up 5 Nov, evening (Vicky's word) |
+| Reviewer | `reviewer@web-summit.vicky` | `desks/reviewer-vicky/reviews/` in the newsroom repository (reviews of the journalists' drafts against their sources, and style) | on demand, in the web-summit-research environment | set up 5 Nov, night (Vicky's word) |
 | Designer | `designer@web-summit.vicky` | `desks/designer-vicky/` in the newsroom repository | on demand, in the main environment | since 5 Nov 19:22 UTC (key designer-vicky) |
 
 `researcher/` here holds the researcher's first two files (4 Nov, 12:55 and 15:46), written before the vault existed; their captures move into the vault. `curator/` and `programme/` here are not used: those desks write in the newsroom repository.
