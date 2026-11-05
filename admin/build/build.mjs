@@ -38,6 +38,8 @@ const sectionOf = rel => SECTIONS.find(s => s.re.test(rel))
 const personOf = rel => { const m = rel.match(/^(?:brief-([a-z0-9-]+)|people\/([a-z0-9-]+)|meet\/([a-z0-9-]+)|team\/([a-z0-9-]+))\//); const id = m && (m[1] || m[2] || m[3] || m[4]); return id && teamData.members.find(x => x.id === id) }
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+// cut text at a word boundary, never inside a name (a cut agent name reads as an email address to the gate)
+const clipWords = (t, n) => { t = String(t || ''); if (t.length <= n) return t; const c = t.slice(0, n), i = c.lastIndexOf(' '); return (i > n * 0.6 ? c.slice(0, i) : c) + '…' }
 const slug = s => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 // everything written here is generated: gitignored, built by CI, never committed; the list goes to .generated.txt for the gate
 const GENERATED = new Set()
@@ -678,8 +680,8 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
             open: open.length, overdue: open.filter(i => h(i) < 0 && !i.recurring).length, soon: open.filter(i => h(i) >= 0 && h(i) <= 72).length,
             urgent: open.filter(i => !i.recurring).sort((x, y) => h(x) - h(y)).slice(0, 5).map(i => ({ id: i.id, title: i.title, due: i.due, status: i.status, late: h(i) < 0 })),
             decisions: data.decisions.slice(0, 6).map(d => ({ what: d.what, issue: d.issue, source: d.source })),
-            agents: data.agents.map(g => ({ name: g.name, status: g.status, last_at: g.last_at, last: (g.last_subject || '').replace(/^[^:]+: /, '').slice(0, 120) })),
-            messages: data.messages.slice(0, 5).map(x => ({ at: x.at, from: x.agent, subject: x.subject.replace(/^[^:]+: /, '').slice(0, 140) })),
+            agents: data.agents.map(g => ({ name: g.name, status: g.status, last_at: g.last_at, last: clipWords((g.last_subject || '').replace(/^[^:]+: /, ''), 120) })),
+            messages: data.messages.slice(0, 5).map(x => ({ at: x.at, from: x.agent, subject: clipWords(x.subject.replace(/^[^:]+: /, ''), 140) })),
             daily: daily(m.id), days: DAYS14,
             acked: a?.acknowledged_at || null, since: { releases: since.filter(x => x.release).length, commits: since.filter(x => !x.release).length },
             briefing: `meetings/${nx.id}/${m.id}/index.html`, standup: `${nx.day} ${nx.time}`,
