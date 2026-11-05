@@ -1,41 +1,48 @@
 # Watcher: latest run
 
-**Run:** 2026-11-04 23:20 UTC, by watcher@web-summit.jose. **Scope:** Jose's agents only (the 13:00 agenda item on the scope is still open). The feed for the dashboard is `activity.json` beside this file.
+**Run:** 2026-11-05 07:15 UTC (scheduled), by watcher@web-summit.jose. **Scope:** the whole team, read-only, decided by Jose on 5 November 2026 (WS-134). This is the first team-wide run. The feed for the dashboard is `activity.json` beside this file.
 
-**Range:** `dev` from `aa6582f` to `3759445`. The watcher had no scheduled task until 23:10 UTC, so the 07:15, 12:15 and 17:15 runs did not happen; this run covers the whole day. (The schedule is not in git: this session created the scheduled task `watcher@web-summit.jose wake` at 23:10 UTC.) It is scheduled now (cron `15 7,12,17 * * *` UTC).
+**Range:** `dev` from `3759445` to `849c4be`.
 
 ## Who committed
 
-487 commits: 184 CI releases (counted), 279 by other people's agents (out of scope, not listed), 1 by the watcher itself (not counted as new), none without an agent name, and 23 by Jose's agents:
+242 commits: 108 CI releases (counted), 1 by the watcher itself (not counted as new), none without an agent name, and 133 by agents:
 
-| Agent | Commits | Last |
-|---|---|---|
-| conductor@web-summit.jose | 8 | 17:22 |
-| dashboard@web-summit.jose | 7 | 17:33 |
-| dev@web-summit.jose | 5 | 15:35 |
-| vault@web-summit.jose | 3 | 01:31 |
+| Person | Commits by their agents |
+|---|---|
+| Dinis | 65 |
+| Jose | 31 |
+| Silvio | 23 |
+| Angelo | 14 |
 
-Security's 11:50 review (`cb3e186`) covers 17 of them; the 6 after it (`c129574`, `ad5996f`, `80b8078`, `45e4b6e`, `d41a456`, `9b9ded9`) wait for its 23:50 review.
+Security's last review (`fbae8c6`, 03:42 UTC) covers 87 of the 133; the other 46 wait for its 11:50 review.
 
 ## What to look at
 
-1. **Medium: no `Reviewed-by` trailer** on `22d73f0`, `ec753e9` and `db7ea40` (dashboard@web-summit.jose, 07:34 UTC). They were committed while the dashboard was held (since 07:31) and pushed with `33e2db3`, which carries the pass that lifted the hold.
-2. **Medium: code the build runs (WS-133)** changed in `45e4b6e` (conductor, 17:08): `admin/build/build.mjs`, `admin/tools/telemetry_drain.py`, `assets/telemetry.js`, `assets/telemetry.json` (WS-37). Its review record (`people/jose/reviewer/reviews/2026-11-04-1705-conductor.md`, line 12) cites Jose's agreement. Not yet reviewed by security.
-3. **Note: writes outside the lane** in `6a5befb` (dev, 01:15): `assets/feedback.js`, `content/videos.md` and the two video pages (WS-74). Its review record (`2026-11-04-0114-dev.md`, line 8) says Jose's instruction covers them.
-4. **Note: writes outside the lane** in `e1bb01b` (conductor, 02:09): `data/person-keys.json` and `data/sealed/jose/`. Its review record (`2026-11-04-0210-conductor.md`, lines 8 and 18) calls it a documented exception and records that the conductor's session also holds the private half of Jose's person key. Security raised person keys under WS-132.
-5. **Note:** `dd8dbcb` (conductor, 01:56) wrote `board/WS-15-*` and `board/WS-18-*`; its `Issue:` trailer names WS-108 and WS-134.
-6. **Info:** three reviewer holds today, all lifted: `d8301cd` (vault, 01:26), `f2772a9` (conductor, 07:23), `bce97f2` (dashboard, 07:33). In `f2772a9`, `hold.json`'s `since` (07:35) is later than the commit (07:23).
+1. **High: contact-detail rule hits in a public page.** `f20d264` (conductor@web-summit.dinis, 05:04 UTC), `content/family-riskmandate-agent.md` lines 6, 18 and 32, rule "an email address" (vault-audit.mjs). The three lines are still on `dev`. The gate's contact check does not cover `content/`, so the gate passed. Sent to security in this commit. Location and rule only.
+2. **Medium: designer@web-summit.jose released without the reviewer** four times: `329a56a` (23:42), `276aa5b` (23:55), `ba597ad` (00:12) and `fab23be` (01:34), each its own release with no `Reviewed-by` and no review record naming it. Its next push, `629a586` (01:42), carries the trailer and its record.
+3. **Medium: shared build code and other people's folders changed by dev@web-summit.silvio:** `admin/build/build.mjs` (`5fe3497`); `admin/build/commandcentre.mjs` and `assets/cc/app.js`, `app.css` (`f56e72f`, `09e55c4`, `5fe3497`, `f6b12bc`, `33198ea`); and the `photo.jpg` of Angelo, Dinis, Indi, Jose and Vicky (`5fe3497`). Listed, not judged.
+4. **Note:** your conductor changed `admin/build/commandcentre.mjs` in `1c0fc83` (00:56), 14 minutes before your rule that shared build code goes to its owner first (`088770e`, 01:10). It carries `Reviewed-by`.
+5. **Note:** "a token assignment" rule hits in `3e5b5a3` (dev@web-summit.dinis), `assets/feedback.json` lines 55, 67 and 79: the feedback lanes' append tokens, public by design, as before.
+6. **Note: writes outside the author's lane:** conductor@web-summit.silvio (`9b3dbde`: a video and its page; `7d4a08d`, `339b7d1`: `data/sealed/silvio/`), video@web-summit.silvio (`4db46c0`: four storyboard pages), dev@web-summit.jose (`39816bd`: `assets/feedback.js` and video pages), conductor@web-summit.jose (`dc54dd3`: `content/brief-jose.md`, `content/meet-jose.md`). Dinis's agents keep the site and wrote outside their folders in 61 commits (counted, not listed).
+7. **Info:** `claude/nifty-bell-f1rkca` (dev@web-summit.silvio) holds 11 merge and pre-rebase commits that are not on `dev`, with no file difference.
 
 The first run's three items stay open (`open_from_earlier_runs` in `activity.json`).
 
+## Agents that may have stopped
+
+Only commits are visible, so an agent that ran and had nothing to commit looks the same as one that did not run.
+
+- **Stopped (two slots with no commit):** dev@web-summit.angelo (every 2 hours at :35, last 02:37); outreach@web-summit.silvio (mail check every 2 hours at :15, last 02:28); procurement@web-summit.silvio (mail check every 2 hours at :39, last 4 November 17:50).
+- **Late (one slot):** conductor@web-summit.angelo (hourly at :20, last 05:21); dashboard@web-summit.dinis (hourly from 07:06, last 02:54); pulse@web-summit.dinis (19:40 slot, last 4 November 17:41).
+- **Jose's agents:** all on time.
+
 ## The checks
 
-- **Key shapes and contact details:** no rule matched in any added line of the 23 commits.
-- **Other branches:** nothing new on `main`. `claude/conductor-jose-setup-ogxaka` is at `d5a3428` (conductor, 23:11), on `dev` and after this run's range. The other `claude/*` branches are other people's agents.
-- **Agents that stopped:** none of the scheduled ones (conductor, dashboard, dev all made their last slot). The watcher itself had no schedule; fixed at 23:10.
+- **Other branches:** nothing new on `main`. Moved and on `dev`: `claude/conductor-jose-setup-ogxaka`, `claude/modest-brahmagupta-37bfva` (Angelo's conductor), `claude/modest-lamport-v1ejmm` (Angelo's team-collaboration). New and on `dev`: `claude/optimistic-feynman-7pkot9` (Silvio's outreach).
+- **Reviewer trailer:** 31 commits by Jose's agents; 4 without it (item 2).
 
-## Could not check
+## Not done, could not check
 
-- Whether the other agents' scheduled tasks fired when they made no commit (only commits are visible).
-- Other people's agents: out of scope until the stand-up decides.
-- Commits after `3759445`: the next run starts there.
+- The accountant's ledger line for this wake: `people/jose/accountant/ledger/` is outside the watcher's `policy.json` writes. For Jose to add the path or drop the step.
+- Whether scheduled tasks fired when they made no commit; anything not public in the repository.
