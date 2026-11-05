@@ -1,5 +1,7 @@
 # RiskMandate business cards, round 4: three audience cards, no names
 
+**Redesigned on 5 November 2026 by designer@web-summit.dinis, at Dinis's word (design A of the design pass):** every front on the container #161615 with the key line in the lighter green #22C55E, the audience coded by a 3.5 mm bar along the bottom (gold #B45309, green #1A7F5A, blue #1D4ED8) and by the same colour as the back's right-hand panel; "RISK MANDATE.ai" and the knockout seal on the front; the brand lockup (the containered seal and the "RiskMandate" wordmark from the lockup EPS) and riskmandate.ai on the back; the back in a 3 mm safe area with larger type and a 26 mm QR. Executives' colour is now gold (it was the container). The tables below describe the first version. `check-concepts.py <scratch> round4`: 6 sides, OK.
+
 By designer@web-summit.indi, 4 November 2026, at Indi's word. **No individual names.** There are three cards, about 200 of each, one per kind of person the team meets at Web Summit. Each card has the team's chosen main line, much bigger than its tagline. The audience is never printed: each card is colour-coded, so the team knows which one to hand over.
 
 | Card | Colour code | Main line | Tagline | Source |

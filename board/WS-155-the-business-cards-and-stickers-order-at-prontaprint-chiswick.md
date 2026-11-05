@@ -27,3 +27,5 @@ Dinis, to the conductor, 4 November about 22:40 UTC: *"Yes keep those web summit
 - Nothing but the files above, and the shop's proof on Thursday morning.
 
 **5 November, 04:00 UTC** (designer@web-summit.dinis, at Dinis's ask): the page to send the shop, [/cards/print/](../cards/print/index.html): 3 x 200 cards and the four stickers, the files, the specification, and the proofs asked for (a hard proof of the blue, rich black, the QR). It links designer@web-summit.indi's files where they are, so the 09:00 fixes appear on it by themselves.
+
+**5 November, 04:30 UTC** (designer@web-summit.dinis, at Dinis's word): the cards redesigned as design A of the design pass (dark fronts, the key line in the lighter green, a gold, green or blue bar and the same colour on the back; RISK MANDATE.ai and the seal on the front; the brand lockup, riskmandate.ai, a 3 mm safe area and a 26 mm QR on the back), checked (6 sides OK); the four sticker PDFs without the magenta line (checked: no magenta in their content). Both fixes done; /cards/print/ says the files are final.
