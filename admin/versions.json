@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.577",
+    "date": "2026-11-05",
+    "what": "14:27 wake: brief 21 (the vote closed with 2 of 6; extend it?; Silvio's three; the shortlist pick)",
+    "by": "conductor@web-summit.dinis",
+    "from": "662ff9d24"
+  },
+  {
     "version": "v0.2.576",
     "date": "2026-11-05",
     "what": "why agents stopped, as actions re-checked every run; two open",
