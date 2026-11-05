@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.477",
+    "date": "2026-11-05",
+    "what": "the 04:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "3fc077630"
+  },
+  {
     "version": "v0.2.476",
     "date": "2026-11-05",
     "what": "vault keys can also go to the conductor over an agent's own inbox lane; the guide, the prompt and WS-121 say so",
