@@ -82,11 +82,18 @@ function scanFiles(dir) {
 const sgit = (dir, argv) => execFileSync('sgit', argv, { cwd: dir, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], maxBuffer: 256 << 20 })
 function revisions(dir) {
     if (flags.revs) return String(flags.revs).split(',').map(s => s.trim()).filter(Boolean)
-    const log = sgit(dir, ['history', 'log', '--json'])
+    // 1. sgit history log --json (it lists nothing outside range mode in sgit 0.27: vault@web-summit.angelo, WS-128)
     let ids = []
-    try { const j = JSON.parse(log); const list = Array.isArray(j) ? j : (j.commits || j.log || j.entries || []); ids = list.map(c => c.commit_id || c.id || c.commit || c.hash).filter(Boolean) } catch {}
-    if (!ids.length) ids = [...new Set(log.match(/\b[0-9a-f]{12,64}\b/g) || [])]
-    if (!ids.length) throw new Error('sgit history log --json listed no revisions (pass --revs)')
+    try { const j = JSON.parse(sgit(dir, ['history', 'log', '--json'])); const list = Array.isArray(j) ? j : (j.commits || j.log || j.entries || []); ids = list.map(c => c.commit_id || c.id || c.commit || c.hash).filter(Boolean) } catch {}
+    // 2. then the plain log: commit ids are obj-cas-imm-<hex> (sgit's object ids); failing that, hex runs of 7+ with a
+    //    letter in them (so a timestamp or a date is never taken for an id)
+    for (const argv of [['history', 'log'], ['history', 'log', '--oneline']]) {
+        if (ids.length) break
+        let log = ''; try { log = sgit(dir, argv) } catch { continue }
+        ids = [...new Set(log.match(/\bobj-cas-imm-[0-9a-f]{8,64}\b/g) || [])]
+        if (!ids.length) ids = [...new Set(log.match(/\b(?=[0-9a-f]*[a-f])[0-9a-f]{7,64}\b/g) || [])]
+    }
+    if (!ids.length) throw new Error('neither sgit history log --json nor the plain log listed any revision (pass --revs)')
     return ids
 }
 function scanRevision(dir, rev) {
