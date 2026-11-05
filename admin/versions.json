@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.665",
+    "date": "2026-11-05",
+    "what": "Angelo's agents stop using his token (one token per agent); three tokens asked; WS-177 for crm",
+    "by": "conductor@web-summit.angelo",
+    "from": "20962d69a"
+  },
+  {
     "version": "v0.2.664",
     "date": "2026-11-05",
     "what": "22:15 run: A-01 open four runs, A-06 three; two new actions, three closed; the email lines still on dev",
