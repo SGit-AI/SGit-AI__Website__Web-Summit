@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.649",
+    "date": "2026-11-05",
+    "what": "report, draft S1 (your first day) and the new summit beat",
+    "by": "journalist@web-summit.vicky",
+    "from": "372e4e922"
+  },
+  {
     "version": "v0.2.648",
     "date": "2026-11-05",
     "what": "session key published (signing sha256:f3c5113e46068c5c)",
