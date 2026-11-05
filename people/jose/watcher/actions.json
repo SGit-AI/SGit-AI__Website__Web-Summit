@@ -2,7 +2,7 @@
  "schema": "web-summit.sgit.ai/watcher-actions/v1",
  "by": "watcher@web-summit.jose",
  "about": "At Jose's word (5 November 2026): every time an agent looks stopped or late, the watcher opens an action here with what it found and what it recommends, addressed to Jose's conductor and to the agent's owner's conductor in its commit (For:). Every run re-checks each open action: closed when the agent commits again or its scheduled task is seen to fire; still open after two runs, it is raised again at the top of the commit. The watcher only reports and recommends; it never changes an agent, a task or a session (WS-129). An action's 'opened' is the run that first flagged the agent (12:15), before the loop existed.",
- "updated": "2026-11-05T17:15Z",
+ "updated": "2026-11-05T22:15Z",
  "actions": [
   {
    "id": "A-2026-11-05-01",
@@ -14,11 +14,11 @@
    ],
    "status": "open",
    "opened": "2026-11-05T12:15Z",
-   "runs_open": 3,
-   "seen": "no commit since 02:54 (24c7798); hourly 07:06 to 22:06, so 11 slots without a commit by 17:06",
+   "runs_open": 4,
+   "seen": "no commit since 02:54 (24c7798); hourly 07:06 to 22:06, so all 16 slots today without a commit",
    "likely_cause": "idle, not broken: its job is to drain Dinis's cockpit lane and apply his signed answers, and its last commit says the lane was empty because Dinis's answers had not been submitted from his browser; if it commits nothing on an empty lane, it looks stopped. Not confirmed: the task lives in Dinis's account, which the watcher cannot see",
    "recommend": "conductor@web-summit.dinis or Dinis: check the task 'dashboard@web-summit.dinis' fired (last run, status) and whether Dinis's cockpit answers are still unsubmitted; have the agent log every run, idle ones too (WS-160), so a quiet run is visible",
-   "raised": "open three runs: raised at the top of the 17:15 commit"
+   "raised": "open four runs: raised at the top of the 22:15 commit"
   },
   {
    "id": "A-2026-11-05-02",
@@ -88,11 +88,11 @@
    ],
    "status": "open",
    "opened": "2026-11-05T14:22Z",
-   "runs_open": 2,
-   "seen": "the stored prompts of the scheduled tasks of conductor, dev and dashboard are the 3 November versions (no reviewer step for conductor and dev, no WS-160 log), and vault's has no log step; the kit's versions (people/jose/kit/README.md) have them; at 17:15 the stored prompts are unchanged, and since 15:22 the kit also adds the one-door step (C19) to every agent's wake, which no stored prompt has",
+   "runs_open": 3,
+   "seen": "the stored prompts of the scheduled tasks of conductor, dev and dashboard are the 3 November versions (no reviewer step for conductor and dev, no WS-160 log), and vault's has no log step; the kit's versions (people/jose/kit/README.md) have them; at 17:15 the stored prompts are unchanged, and since 15:22 the kit also adds the one-door step (C19) to every agent's wake, which no stored prompt has; unchanged again at 22:15",
    "likely_cause": "the tasks were made before the kit changed; the agents re-read the kit at each wake, so they may follow it anyway, but the stored prompts disagree",
    "recommend": "conductor@web-summit.jose, with Jose: update each stored scheduled-task prompt to the kit's current text",
-   "raised": "open two runs: raised at the top of the 17:15 commit"
+   "raised": "open three runs: raised at the top of the 22:15 commit"
   },
   {
    "id": "A-2026-11-05-07",
@@ -102,12 +102,14 @@
     "conductor@web-summit.jose",
     "conductor@web-summit.angelo"
    ],
-   "status": "open",
+   "status": "closed",
    "opened": "2026-11-05T17:15Z",
    "runs_open": 1,
    "seen": "no commit since 12:52 (fa6f43d); schedule every two hours at :50 (people/angelo/agents.json), so the 14:50 and 16:50 slots passed",
    "likely_cause": "probably idle: it answers setup questions and keeps /help/, so a run with no question commits nothing; not confirmed (its task is in Angelo's account)",
-   "recommend": "conductor@web-summit.angelo: check its task fired; have it log every run (WS-160) so quiet runs show"
+   "recommend": "conductor@web-summit.angelo: check its task fired; have it log every run (WS-160) so quiet runs show",
+   "closed": "2026-11-05T22:15Z",
+   "cause": "recovered: committed at 18:51 (helper@web-summit.angelo); one slot (20:50) since without a commit, within 'late'"
   },
   {
    "id": "A-2026-11-05-08",
@@ -117,12 +119,14 @@
     "conductor@web-summit.jose",
     "conductor@web-summit.vicky"
    ],
-   "status": "open",
+   "status": "closed",
    "opened": "2026-11-05T17:15Z",
    "runs_open": 1,
    "seen": "no commit since 11:37 (a34f54a, its 11:30 run); schedule 07:30, 11:30, 15:30, 19:30, so the 15:30 slot passed",
    "likely_cause": "late by one slot; its captures go to the research vault (41j3e9s9), and a run with no new capture may commit nothing here",
-   "recommend": "conductor@web-summit.vicky: check the 15:30 run happened"
+   "recommend": "conductor@web-summit.vicky: check the 15:30 run happened",
+   "closed": "2026-11-05T22:15Z",
+   "cause": "recovered: committed its 19:30 run at 19:36"
   },
   {
    "id": "A-2026-11-05-09",
@@ -132,12 +136,14 @@
     "conductor@web-summit.jose",
     "conductor@web-summit.vicky"
    ],
-   "status": "open",
+   "status": "closed",
    "opened": "2026-11-05T17:15Z",
    "runs_open": 1,
    "seen": "no commit since 12:38 (f878f9a, its 11:45 run); schedule 07:45, 11:45, 15:45, 19:45, so the 15:45 slot passed",
    "likely_cause": "late by one slot; it writes its map in the newsroom repository (desks/curator/), so its work may not show here at all",
-   "recommend": "conductor@web-summit.vicky: check the 15:45 run; the watcher sees only this repository"
+   "recommend": "conductor@web-summit.vicky: check the 15:45 run; the watcher sees only this repository",
+   "closed": "2026-11-05T22:15Z",
+   "cause": "recovered: three commits, last 20:07"
   },
   {
    "id": "A-2026-11-05-10",
@@ -153,6 +159,36 @@
    "seen": "people/dinis/agents.json says 08:40, 13:10 and 19:40, but its commits say 'the 12:40 pulse' (7e4b690, 12:41)",
    "cause": "not late: it ran at 12:40; its schedule in agents.json is out of date",
    "recommend": "conductor@web-summit.dinis: update pulse's schedule in people/dinis/agents.json"
+  },
+  {
+   "id": "A-2026-11-05-11",
+   "agent": "conductor@web-summit.angelo",
+   "owner": "angelo",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.angelo"
+   ],
+   "status": "open",
+   "opened": "2026-11-05T22:15Z",
+   "runs_open": 1,
+   "seen": "no commit since 19:20 (3492b02); hourly at :20 round the clock (people/angelo/agents.json), so the 20:20 and 21:20 slots passed",
+   "likely_cause": "probably quiet hourly wakes: its digests to Angelo are at about 08:00, 11:20 and 17:20, and an hourly wake with nothing new may commit nothing; not confirmed (its task is in Angelo's account)",
+   "recommend": "Angelo or policy@web-summit.angelo: check the task fired; have it log every run (WS-160)"
+  },
+  {
+   "id": "A-2026-11-05-12",
+   "agent": "inbox@web-summit.silvio",
+   "owner": "silvio",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.silvio"
+   ],
+   "status": "open",
+   "opened": "2026-11-05T22:15Z",
+   "runs_open": 1,
+   "seen": "joined at 16:33 (5acb60d) and no commit since; mail check every 2 hours at :15 (people/silvio/agents.json), so 18:15 and 20:15 passed",
+   "likely_cause": "probably idle here: its work is drafts in Silvio's mailbox and actions in the CRM, which a mail check need not commit to this repository",
+   "recommend": "conductor@web-summit.silvio: check the mail checks run; have it log every run (WS-160) so the watcher can see them"
   }
  ],
  "could_not_check": [
