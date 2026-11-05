@@ -720,3 +720,26 @@ body[data-focus] main { padding-top: 0.8rem; }
 .hm-vote-strip img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 10px; transition: transform 0.2s; }
 .hm-vote-strip img:hover { transform: scale(1.06); }
 @media (max-width: 720px) { .hm-vote { grid-template-columns: 1fr; } .hm-vote-strip { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+
+/* an infographic page (admin/build/infographic.mjs; Dinis's night summary, 5 November) */
+.ig { --c: var(--st-green); }
+.ig-green { --c: var(--st-green); } .ig-blue { --c: var(--st-blue); } .ig-terra { --c: var(--st-terra); } .ig-gold { --c: var(--warn); }
+.ig-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.6rem; margin: 0 0 1.6rem; }
+.ig-stat { background: var(--c); color: var(--st-paper); border-radius: var(--radius); padding: 0.9rem 1rem; }
+.ig-stat b { display: block; font-size: 2.2rem; line-height: 1; font-weight: 900; }
+.ig-stat span { font-size: 0.9rem; opacity: 0.92; }
+.ig-sec { border-left: 6px solid var(--c); padding: 0.2rem 0 0.4rem 1rem; margin: 0 0 1.8rem; }
+.ig-sec h2 { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 0.3rem; }
+.ig-n { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--c); color: var(--st-paper); font-size: 1rem; flex: none; }
+.ig-lead { margin: 0 0 0.8rem; max-width: 60rem; }
+.ig-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.8rem; }
+.ig-tile { display: flex; flex-direction: column; border: 1px solid var(--line, var(--wait-soft)); border-radius: var(--radius); overflow: hidden; background: var(--bg); color: inherit; text-decoration: none; transition: transform 0.15s, box-shadow 0.15s; }
+.ig-tile:hover { transform: translateY(-3px); box-shadow: 0 8px 22px var(--st-shade); }
+.ig-tile img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-bottom: 3px solid var(--c); }
+.ig-tt { padding: 0.6rem 0.75rem 0.75rem; font-size: 0.92rem; }
+.ig-tt b { display: block; font-size: 1rem; margin-bottom: 0.15rem; }
+.ig-check { margin: 0.8rem 0 0; padding: 0.55rem 0.8rem; border-radius: 10px; background: var(--wait-soft); }
+.ig-people { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.8rem; }
+.ig-person { border: 2px solid var(--st-green); border-radius: var(--radius); padding: 0.7rem 0.9rem; }
+.ig-person h3 { margin: 0 0 0.3rem; }
+.ig-person ul { margin: 0; padding-left: 1.1rem; }

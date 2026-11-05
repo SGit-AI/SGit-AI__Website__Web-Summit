@@ -2,6 +2,7 @@
 // Renders the site from content/ (markdown with a front-matter header) into HTML, plus the machine surfaces:
 // llms.txt, sitemap.xml, index.md, the articles index, markdown twins and admin/versions.html.
 // No dependencies. Never hand-edit a generated page; edit content/ and run: node admin/build/build.mjs
+import { expandInfographic } from './infographic.mjs'
 import fs from 'fs'
 import path from 'path'
 import * as CAST from './cast.mjs'
@@ -576,7 +577,8 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
     const name = f.replace(/\.md$/, ''), body = expandIssues(rawBody, name === 'index' ? '' : '../'), rel = meta.path || (name === 'index' ? 'index.html' : `${name}/index.html`)
     let html = render(body), md = body
     if (name === 'index') ({ html, md } = expandHome(html, md, homeBlocks({ ROOT, teamData, onboard, LEVELS, INV, MEET, ISSUES, plan, castData, merch })))
-    if (name === 'print') ({ html, md } = expandSignoff(html, md, ROOT))   // the Official Sign-off, from the signatures (WS-113)
+    if (name === 'print') ({ html, md } = expandSignoff(html, md, ROOT))
+    if (meta.infographic) ({ html, md } = expandInfographic(html, md, ROOT, meta.infographic, rel))   // a night's summary in pictures (Dinis, 5 Nov)   // the Official Sign-off, from the signatures (WS-113)
     // a page's own script, named in its front matter (script: <name> loads assets/<name>.js; WS-159)
     if (meta.script && !/^[a-z0-9-]+$/.test(meta.script)) throw new Error(`content/${f}: script must name a file in assets/ ([a-z0-9-])`)
     const head = meta.script ? `<script src="${'../'.repeat(rel.split('/').length - 1)}assets/${meta.script}.js" defer></script>` : ''
