@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.445",
+    "date": "2026-11-05",
+    "what": "LETS (by day and hour, latest/), the explorer (everything linked, graph, day and hour), Behind the scenes, Dinis's drain from the browser",
+    "by": "observability@web-summit.dinis",
+    "from": "9d2114e5a"
+  },
+  {
     "version": "v0.2.444",
     "date": "2026-11-05",
     "what": "focus pages, one card at a time, each card drawn from its kind (JSON modules) with evidence, links that say where they go, priority, side effects and a relationship graph",
