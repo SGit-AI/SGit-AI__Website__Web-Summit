@@ -44,14 +44,37 @@ One entry per stand-up, written by team-collaboration@web-summit.angelo about 40
 - **Moved since the 17:40 brief (from the repository, not the call):** the sizes sync was closed because WS-130 is done (project-manager@web-summit.dinis). Vicky gave her view on who records the decisions (WS-107): option 2, team-collaboration drafts and the chair confirms. That is one view, not yet the decision. WS-23: Vicky and Nimay go through the booked meetings on Wednesday, before the 18:00.
 - **The pattern:** across two days and four stand-ups, no decision taken in a call has reached the repository. Decisions that were written down came by other routes (WhatsApp, a person to their own agent). Deciding WS-107 at the Wednesday 13:00 would close that gap.
 
-### 4 November, 13:00, held at 14:30 (pending: waiting for the transcript, checked 15:17 UTC)
+### 4 November, 13:00, held at 14:30 (from Jose's notes; written 5 November, 01:00 UTC)
 
-- **Moved for today only:** 14:30 to 15:00 UTC, at Angelo's word. Dinis was at lunch, and some found 13:00 inconvenient. Whether to move it for good is a decision on this agenda, for everyone.
-- **Not yet written.** By 15:17 UTC no decision from the call was recorded in `data/meetings/`, and no transcript had reached Angelo's account. Every open item carries over.
-- **Moved outside the call (from the repository):** Silvio confirmed the order with the chosen printer, asked it for collection on Monday 9 November, and kept the first printer as the fallback (WS-48). Silvio is still waiting for the printer's written answer. The conductor put the stand-up's presentation on the site (/meetings/2026-11-04-1300/show/).
+**The record:** `data/meetings/2026-11-04-1300/20261104T2338-captured-the-14-30-stand-up-s-direction-a.json`, captured by conductor@web-summit.jose at Dinis's ask, from Jose's notes. These are Jose's words, not a transcript. They give **directions** (Dinis) and **action items** (owners named by Jose). No agenda decision is closed by them: each still needs its decider's own words (WS-107).
 
-### 4 November, 18:00 (pending: checked 19:20 UTC)
+**Directions:** a 'best of' briefing before each meeting, so the meeting is for decisions (WS-96, WS-150); dashboards about action, with blockers and decisions first (WS-94, WS-06); an accountant agent per person for token use (WS-148); keys are an experiment for now (WS-136); the pipeline to design partners and customers, Portugal mapped first, by Friday or Monday (WS-26, WS-27, WS-30); 50 active agents (WS-95).
 
-- **Not yet written.** By 19:20 UTC no decision from the call was recorded in `data/meetings/`. conductor@web-summit.dinis's 18:00 deck was built at about 17:10, before the call, so its "decisions and follow-ups" slide is the agenda, not the outcome. Every open item carries over to Thursday's 13:00.
-- **Out of date on the agenda:** WS-23's item ("cannot be done today: a new date") is still open, but Vicky marked WS-23 done for now at 17:30 UTC (e7ff1865) (five booked meetings in the private vault). Its owner can close the item in one line.
-- **The gap, day three:** six stand-ups, and not one decision taken in a call has reached the repository. WS-107 (who records) is still open, 1 day late.
+**Follow-ups (owner; due):**
+
+| What | Owner | Due | Issue |
+|---|---|---|---|
+| Write access to the newsroom repository for Indi | Dinis or Angelo | not given | WS-145, WS-151 |
+| Vault-to-vault lanes | Silvio and Angelo | not given | WS-120, WS-114 |
+| Business cards: each person's agent makes theirs from Indi's prompt | everyone; Indi collects | Thu 5 Nov | WS-155, WS-113 |
+| Which target companies should meet, and who we know at each | Indi, with the team | not given | WS-27, WS-69 |
+| Share contacts (Web Summit app, LinkedIn) for a "who do we know there" map | everyone | not given | WS-24 (no issue for the map itself) |
+| The accountant agent, proposed | Jose | until Jose says yes | WS-148 |
+
+### 4 November, 18:00 (from Jose's notes; written 5 November, 01:00 UTC)
+
+**The record:** `data/meetings/2026-11-04-1800/20261104T2359-captured-the-18-00-daily-sync-s-direction.json`, captured by conductor@web-summit.jose at Jose's word, from Jose's notes. These are Jose's words, not a transcript, and no agenda decision is closed by them (WS-107).
+
+**Directions:** a daily interview of each person by their conductor, by voice, written up (WS-41, WS-47, WS-07); business cards: three summit designs with no names, about 200 each, one per audience (WS-155, WS-142, WS-146); routine observability through scheduled agents, with a real notification for urgent work (WS-37); the newsroom pipeline: researcher, curator, journalist, correspondent (WS-14, WS-141).
+
+**Follow-ups (owner; due):**
+
+| What | Owner | Due | Issue |
+|---|---|---|---|
+| The observability workflow, end to end | Jose with Angelo | not given | WS-37 |
+| Public slides on LinkedIn; the team as operators of the page | Dinis | not given | WS-126 |
+| Taglines for approval; print the cards; QR stickers, three concepts | Indi | not given | WS-155 |
+| Token and context optimisation; practise onboarding someone; help/FAQ on the site | Angelo | not given | WS-148, WS-35, WS-124 (the help page: helper@web-summit.angelo's /help/) |
+| The newsroom researcher, the pipeline running | Vicky | Fri 6 Nov | WS-14, WS-141 |
+
+**Still open (to decide):** tagline and sticker approval (WS-155); who manages the LinkedIn page (WS-126); how vault entries are never left unprocessed (WS-114); two people still without a key (WS-136); easier briefs with one-way and two-way decisions (WS-112). **No issue yet:** the urgent notification (WS-37's note), and the "who do we know there" map.
