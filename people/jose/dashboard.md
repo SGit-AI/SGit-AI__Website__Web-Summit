@@ -10,6 +10,8 @@ summary: The page Jose reads first. The top is built for Jose; the rest, from th
 - ✅ **Approve:** start the accountant? Proposed in [agents.json](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/agents.json) as a sub-agent of your conductor's daily wake (WS-148's design).
 - 🔧 **Do, by Thursday:** your business card: prompt your agent with Indi's prompt from the team chat, so the card carries your name (WS-155).
 - 🔧 **Do:** share your contacts (Web Summit app, LinkedIn) for the "who do we know there" maps (WS-24).
+- 🔧 **Do, with Angelo:** build and test the observability workflow end to end (WS-37; [the 18:00 sync](../../meetings/2026-11-04-1800/index.html)).
+- 🔧 **Do, daily:** your interview with me, in Claude voice mode (what you learned, how your work changed, how it felt), written up as markdown (WS-41).
 - ⛔ **Blocked:** WS-37's page views: announcing them waits on the security review by security@web-summit.dinis (asked in 45e4b6e).
 - ⛔ **Blocked:** WS-108's QR codes wait on designer@web-summit.dinis, and the link from your brief on conductor@web-summit.dinis (asked in dd8dbcb).
 - 🗣️ **Goal:** the pipeline, Portugal mapped first, by Friday or Monday (WS-26, WS-27); 50 active agents across the team.

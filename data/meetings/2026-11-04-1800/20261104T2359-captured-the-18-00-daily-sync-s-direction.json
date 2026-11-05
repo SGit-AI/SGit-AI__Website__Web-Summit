@@ -1,0 +1,134 @@
+{
+  "type": "sync",
+  "title": "Captured: the 18:00 daily sync's direction, action items and open questions (4 November)",
+  "for": [
+    "everyone"
+  ],
+  "by": "conductor@web-summit.jose",
+  "added": "2026-11-04T23:59:52Z",
+  "status": "closed",
+  "detail": "Captured by conductor@web-summit.jose at Jose's word, from Jose's notes (4 November, the 18:00 daily sync). Jose's words, not a transcript: each decider's own words still close their items (WS-107). Nothing filed: existing issues linked; where none exists, it says so.\n\nDirections:\n1. Everyone does a daily interview led by their conductor: what I learned, how my work changed, how it felt. Done in Claude voice mode, written up as markdown. Owner: every person, with their conductor (WS-41, WS-47, WS-07).\n2. Business cards: three summit-branded designs with the same message and no names, about 200 of each, one per audience, taglines from the /print page. Exec: \"Do you know what your agents are doing?\" GRC: \"My agents have a policy. Do yours?\" Security: \"Your AI has access. Does it have permission?\" Owner (suggested by the conductor): Indi (print), Dinis (approval) (WS-155, WS-142, WS-146).\n3. Routine observability data goes through scheduled agents. Urgent work needs a real notification. Owner (suggested by the conductor): Jose and Angelo (the observability workflow) (WS-37); no issue yet for the urgent notification.\n4. Newsroom pipeline: researcher, curator, journalist, correspondent. Owner (suggested by the conductor): Vicky (the researcher first), newsroom@web-summit.dinis (WS-14, WS-141).\n\nAction items:\n- Build and test the observability workflow end to end. Owner: Jose with Angelo (WS-37).\n- Public slides on LinkedIn; add the team as operators of the LinkedIn page. Owner: Dinis (WS-126).\n- Taglines for approval; print the cards; check QR-code stickers, three concepts. Owner: Indi (WS-155).\n- Token and context optimisation; practise onboarding someone with a real example; help/FAQ on the site. Owner: Angelo (WS-148, WS-35, WS-124); WS-148 is Indi's accountant, the nearest issue for token use; no issue yet for the help/FAQ.\n- Newsroom researcher, pipeline running by Friday. Owner: Vicky (WS-14, WS-141).\n\nOpen:\n- Tagline and sticker approval (WS-155).\n- Who manages the LinkedIn page (WS-126).\n- How vault entries are never left unprocessed (WS-114).\n- Two people still without a key (WS-136).\n- Briefs that are easier to read (show one-way and two-way decisions) (WS-112).",
+  "issue": "WS-96",
+  "source": "Jose Bota's notes, given to conductor@web-summit.jose. Not verbatim.",
+  "directions": [
+    {
+      "n": 1,
+      "what": "Everyone does a daily interview led by their conductor: what I learned, how my work changed, how it felt. Done in Claude voice mode, written up as markdown.",
+      "owner": "every person, with their conductor",
+      "issues": [
+        "WS-41",
+        "WS-47",
+        "WS-07"
+      ]
+    },
+    {
+      "n": 2,
+      "what": "Business cards: three summit-branded designs with the same message and no names, about 200 of each, one per audience, taglines from the /print page. Exec: \"Do you know what your agents are doing?\" GRC: \"My agents have a policy. Do yours?\" Security: \"Your AI has access. Does it have permission?\"",
+      "owner": "Indi (print), Dinis (approval)",
+      "owner_suggested_by": "conductor@web-summit.jose (Jose gave owners for the action items, not the directions)",
+      "issues": [
+        "WS-155",
+        "WS-142",
+        "WS-146"
+      ]
+    },
+    {
+      "n": 3,
+      "what": "Routine observability data goes through scheduled agents. Urgent work needs a real notification.",
+      "owner": "Jose and Angelo (the observability workflow)",
+      "owner_suggested_by": "conductor@web-summit.jose (Jose gave owners for the action items, not the directions)",
+      "issues": [
+        "WS-37"
+      ],
+      "note": "no issue yet for the urgent notification"
+    },
+    {
+      "n": 4,
+      "what": "Newsroom pipeline: researcher, curator, journalist, correspondent.",
+      "owner": "Vicky (the researcher first), newsroom@web-summit.dinis",
+      "owner_suggested_by": "conductor@web-summit.jose (Jose gave owners for the action items, not the directions)",
+      "issues": [
+        "WS-14",
+        "WS-141"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "what": "Build and test the observability workflow end to end",
+      "owner": "Jose with Angelo",
+      "issues": [
+        "WS-37"
+      ]
+    },
+    {
+      "what": "Public slides on LinkedIn; add the team as operators of the LinkedIn page",
+      "owner": "Dinis",
+      "issues": [
+        "WS-126"
+      ]
+    },
+    {
+      "what": "Taglines for approval; print the cards; check QR-code stickers, three concepts",
+      "owner": "Indi",
+      "issues": [
+        "WS-155"
+      ]
+    },
+    {
+      "what": "Token and context optimisation; practise onboarding someone with a real example; help/FAQ on the site",
+      "owner": "Angelo",
+      "issues": [
+        "WS-148",
+        "WS-35",
+        "WS-124"
+      ],
+      "note": "WS-148 is Indi's accountant, the nearest issue for token use; no issue yet for the help/FAQ"
+    },
+    {
+      "what": "Newsroom researcher, pipeline running by Friday",
+      "owner": "Vicky",
+      "issues": [
+        "WS-14",
+        "WS-141"
+      ]
+    }
+  ],
+  "open": [
+    {
+      "what": "Tagline and sticker approval",
+      "issues": [
+        "WS-155"
+      ]
+    },
+    {
+      "what": "Who manages the LinkedIn page",
+      "issues": [
+        "WS-126"
+      ]
+    },
+    {
+      "what": "How vault entries are never left unprocessed",
+      "issues": [
+        "WS-114"
+      ]
+    },
+    {
+      "what": "Two people still without a key",
+      "issues": [
+        "WS-136"
+      ]
+    },
+    {
+      "what": "Briefs that are easier to read (show one-way and two-way decisions)",
+      "issues": [
+        "WS-112"
+      ]
+    }
+  ],
+  "closed": {
+    "by": "conductor@web-summit.jose",
+    "at": "2026-11-04T23:59:52Z",
+    "why": "A record, not an item to decide: the sync's outcome, for everyone."
+  }
+}
