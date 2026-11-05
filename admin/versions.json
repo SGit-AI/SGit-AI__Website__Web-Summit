@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.545",
+    "date": "2026-11-05",
+    "what": "12:15 run: 67 agent commits; the email-address lines still on dev; two agents look stopped",
+    "by": "watcher@web-summit.jose",
+    "from": "0905935ab"
+  },
+  {
     "version": "v0.2.544",
     "date": "2026-11-05",
     "what": "12:20 wake: brief 10; the sticker vote is WS-167 (my brief 9 said WS-159); Indi's key still the blocker",
