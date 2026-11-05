@@ -159,8 +159,8 @@ def publish(rows, app_src, pub_vault, app_vault):
     now = time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime())
     html = open(app_src).read()
     manifest = {'entry': 'index.html', 'present': True, 'auto_open': True, 'title': 'Who reads web-summit.sgit.ai', 'hud': {'mode': 'minimal'}, 'permissions': {'fs': {'read': True}}}
-    for v, data in ((pub_vault, True), (app_vault, False)):
-        if not v or not os.path.isdir(v): continue
+    def one(v, data):                                                     # the two vaults are pushed in parallel
+        if not v or not os.path.isdir(v): return
         __import__('subprocess').run(['sgit', 'pull'], cwd=v, capture_output=True, text=True)   # a new vault has nothing to pull
         os.makedirs(os.path.join(v, '.vault'), exist_ok=True)
         open(os.path.join(v, 'index.html'), 'w').write(html)
@@ -169,8 +169,11 @@ def publish(rows, app_src, pub_vault, app_vault):
             os.makedirs(os.path.join(v, 'data'), exist_ok=True)
             with open(os.path.join(v, 'data', 'public.json'), 'w') as f: json.dump(public(rows, now), f, indent=1)
         r = __import__('subprocess').run(['sgit', 'commit', f'publish {now}'], cwd=v, capture_output=True, text=True)
+        if 'nothing' in (r.stdout + r.stderr).lower() or 'no changes' in (r.stdout + r.stderr).lower(): return   # unchanged: no push
         p = __import__('subprocess').run(['sgit', 'push'], cwd=v, capture_output=True, text=True)
         if p.returncode: print(f'obs_drain: push of {os.path.basename(v)} failed (exit {p.returncode}): ' + (p.stderr or p.stdout).strip().splitlines()[-1][:200])
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(2) as ex: list(ex.map(lambda a: one(*a), ((pub_vault, True), (app_vault, False))))
     print(f'obs_drain: published {now} to the public vault and the app vault')
 
 def roster():
@@ -195,6 +198,12 @@ def main():
     c = json.load(open(o.creds))
     from sgit_ai.crypto.PKI__Crypto import PKI__Crypto
     pki = PKI__Crypto()
+    from concurrent.futures import ThreadPoolExecutor
+    pool = ThreadPoolExecutor(max_workers=8)                             # fetch, open and mark in parallel (5 November)
+    T = {}; tick = [time.time()]
+    def phase(name):
+        now = time.time(); T[name] = round(now - tick[0], 2); tick[0] = now
+    t_start = time.time()
     # L: load the lanes
     entries, after = [], None
     while True:
@@ -204,13 +213,13 @@ def main():
         after = page[-1]['file_id']
     lanes = collections.OrderedDict()
     for e in entries: lanes.setdefault(e['inbox'], []).append(e['file_id'])
-    print(f"obs_drain: {len(entries)} pending in {len(lanes)} lane(s)" + ''.join(f"; lane {c['tokens'].index(t) + 1 if t in c['tokens'] else '?'}: {len(ids)}" for t, ids in lanes.items()))
     by_lane = {c['tokens'].index(t) + 1: len(ids) for t, ids in lanes.items() if t in c['tokens']}
-    t_start = time.time()
     inbox = os.path.join(o.vault, 'inbox')
-    names = json.load(open(os.path.join(o.vault, 'identity', 'lanes.json')))['lanes'] if os.path.exists(os.path.join(o.vault, 'identity', 'lanes.json')) else []
-    print(banner.start(by_lane, ['site page views', 'site (overflow)', 'agent runs', 'agents (overflow)', 'newsroom (reserved)'][:max(len(names), 5)],
+    lf = os.path.join(o.vault, 'identity', 'lanes.json')
+    lane_names = [l['name'] for l in json.load(open(lf))['lanes']] if os.path.exists(lf) else []
+    print(banner.start(by_lane, lane_names or [f'lane {i}' for i in range(1, len(c['tokens']) + 1)],
                        len([n for n in os.listdir(inbox) if n.endswith('.jsonl')]) if os.path.isdir(inbox) else 0))
+    phase('list')
     if o.dry: return
     td.sgit(o.vault, 'pull')
     touched = lets.migrate(o.vault)
@@ -223,26 +232,30 @@ def main():
             return verify_agent(ev, keys) if ev.get('type') == 'web-summit.agent-run/v1' else td.verify(ev, people)
         except Exception as e: return {'v': 0, 'undecryptable': True, 'error': type(e).__name__}
     t2, from_browser = lets.fold_inbox(o.vault, extract); touched |= t2
+    phase('pull_and_inbox')
     rows, done, bad = [], collections.defaultdict(list), 0
     if not o.publish_only and entries:
-        for token, ids in lanes.items():
-            lane = c['tokens'].index(token) + 1 if token in c['tokens'] else 0
-            for i in range(0, len(ids), 50):
-                for f in td.post(c, 'fetch', {'inbox': token, 'file_ids': ids[i:i + 50]}).get('files', []):
-                    ev = extract(f['content']); bad += 1 if ev.get('undecryptable') else 0
-                    ev['_file'] = f['file_id']; ev['_lane'] = lane
-                    ev['_received'] = int(f['file_id'][:13]) if f['file_id'][:13].isdigit() else None
-                    rows.append(ev); done[token].append(f['file_id'])
-        # S (raw): by the hour each record happened in
-        touched |= lets.save_raw(o.vault, rows)
-    if rows: lets.DRAINS.append({'at': time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime()), 'by': os.environ.get('OBS_BY', 'hourly'), 'records': len(rows), 'via': 'drain'})
+        batches = [(token, ids[i:i + 50]) for token, ids in lanes.items() for i in range(0, len(ids), 50)]
+        fetched = list(pool.map(lambda tb: (tb[0], td.post(c, 'fetch', {'inbox': tb[0], 'file_ids': tb[1]}).get('files', [])), batches))
+        phase('fetch')
+        items = [(token, f) for token, files in fetched for f in files]
+        opened = list(pool.map(lambda tf: extract(tf[1]['content']), items))
+        for (token, f), ev in zip(items, opened):
+            bad += 1 if ev.get('undecryptable') else 0
+            ev['_file'] = f['file_id']; ev['_lane'] = c['tokens'].index(token) + 1 if token in c['tokens'] else 0
+            ev['_received'] = int(f['file_id'][:13]) if f['file_id'][:13].isdigit() else None
+            rows.append(ev); done[token].append(f['file_id'])
+        phase('open_and_verify')
+        touched |= lets.save_raw(o.vault, rows)                           # S (raw): by the hour each record happened in
     now_hour = (time.strftime('%Y-%m-%d', time.gmtime()), time.strftime('%H', time.gmtime()))
     stamp = time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime())
     if touched or rows or from_browser:
         td.sgit(o.vault, 'commit', '-m', f'drain {stamp}: {len(rows)} record(s), {from_browser} from a browser, {len(touched)} hour(s)')
         td.sgit(o.vault, 'push')
-    for token, ids in done.items():                                       # only after the push
-        for i in range(0, len(ids), 100): td.post(c, 'mark-processed', {'inbox': token, 'file_ids': ids[i:i + 100]})
+    phase('save_and_push')
+    marks = [(token, ids[i:i + 100]) for token, ids in done.items() for i in range(0, len(ids), 100)]
+    list(pool.map(lambda m: td.post(c, 'mark-processed', {'inbox': m[0], 'file_ids': m[1]}), marks))   # only after the push
+    phase('mark_processed')
     # T + S (public): the dirty hours, their days, latest/
     run(['sgit', 'pull'], o.public)
     dirty = set(lets.all_hours(o.vault)) if o.all else touched
@@ -252,11 +265,14 @@ def main():
             if d[:2] == '20' and os.path.isdir(os.path.join(o.public, d)): shutil.rmtree(os.path.join(o.public, d))
         if os.path.exists(os.path.join(o.public, 'latest', 'index.json')): os.remove(os.path.join(o.public, 'latest', 'index.json'))
     got = lets.transform(o.vault, o.public, dirty, now_hour, roster())
+    phase('transform')
+    lets.save_drains(o.vault, o.public, {'at': stamp, 'by': os.environ.get('OBS_BY', 'hourly'), 'records': len(rows), 'via': 'drain',
+                                         'secs': round(time.time() - t_start, 1), 'phases': dict(T), 'lanes': {str(k): v for k, v in by_lane.items()}, 'lane_count': len(c['tokens'])})
     allrows = [r for d, h in lets.all_hours(o.vault) for r in lets.hour_rows(o.vault, d, h)]
     publish(allrows, APP_SRC, o.public, o.app)
-    print(banner.end(o.public, len(rows), from_browser, bad, got, time.time() - t_start, by_lane if not o.publish_only else {}))
-    print(f"obs_drain: drained {len(rows)} ({bad} undecryptable), {from_browser} folded in from a browser; transformed {got['hours']} hour(s), "
-          f"{got['days']} day(s); {got['pages']} pages, {got['agents']} agents (with the roster)")
+    phase('publish')
+    print(banner.end(o.public, len(rows), from_browser, bad, got, time.time() - t_start, by_lane if not o.publish_only else {}, T))
+    print(f"obs_drain: drained {len(rows)} ({bad} undecryptable), {from_browser} folded in from a browser; {round(time.time() - t_start, 1)} s " + str(T))
 
 if __name__ == '__main__':
     main()

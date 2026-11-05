@@ -1,19 +1,24 @@
 {
-  "about": "observability@web-summit.dinis's experiment lanes (5 November 2026, at Dinis Cruz's word), beside Jose's assets/telemetry.json (WS-37). Public on purpose: each append token can only write to its lane, and the key can only encrypt. 'site' is used by assets/obs-dinis.js on every page; 'agents' by admin/tools/agent-log.mjs, which every agent runs at the end of each run; 'newsroom' is reserved. The vault (kuuqr3do) is private; its drain is observability@web-summit.dinis's.",
+  "about": "observability@web-summit.dinis's experiment lanes (5 November 2026, at Dinis Cruz's word), beside Jose's assets/telemetry.json (WS-37). Public on purpose: each append token can only write to its lane, and the key can only encrypt. Ten lanes of at most 1,000 pending records each (5 November: traffic rising): 'site' (six) is used by assets/obs-dinis.js on every page; 'agents' by admin/tools/agent-log.mjs, which every agent runs at the end of each run; 'newsroom' is reserved. The vault (kuuqr3do) is private; its drain is observability@web-summit.dinis's.",
   "enabled": true,
   "endpoint": "https://dev.send.sgraph.ai",
   "vault_id": "kuuqr3do",
   "lanes": {
     "site": [
       "21ac8072b3f5f429fe212a5120c5ba58e38276ee6bb14fc19008cde954be26a6",
-      "61d318f27d4168d981ed41333c5d9c1fa22edeafceae1ba543bd71ca14465459"
+      "61d318f27d4168d981ed41333c5d9c1fa22edeafceae1ba543bd71ca14465459",
+      "dc370b26ec72106beaec5d06c327547ad89e6fac1c411a658a013876b7136db4",
+      "2bcfbf053c16a36c270f4f6bec33c3e0fd9d3ff214047f2b3b97ed26c79025d0",
+      "1d6418184ab8cff584435bcdcdf1285e554e949764a4353ae3b4b739b7d22150",
+      "19400624d031641123d7165129b7446b2da5cb4aded883049a54a1992a4a5e99"
     ],
     "agents": [
       "5866127f65afad1b47c7d38894d6a8f34b3aa56a6c4ce0ac06c2812b8b3ba0c5",
       "13cd01cf61f9a45650f4280b0e0d221205f52b2e40a01b6532bbf84fee15fa41"
     ],
     "newsroom": [
-      "fd6d896c8124c1c884d75b2722e9f06852034f93937add639e7f8ada7abc244f"
+      "fd6d896c8124c1c884d75b2722e9f06852034f93937add639e7f8ada7abc244f",
+      "a9de3e3c9c1fc43ac5604ec90a021787a91b9c2e7bd95e38d920d45a23c7c86c"
     ]
   },
   "recipient": {

@@ -108,7 +108,8 @@ function seal(pem, text) {                                              // sgit 
     return Buffer.from(Buffer.from(JSON.stringify({ v: 2, w: w.toString('base64'), i: iv.toString('base64'), c: ct.toString('base64') })).toString('base64')).toString('base64')
 }
 const payload = seal(cfg.recipient.encrypt, JSON.stringify(rec))
-for (const token of cfg.lanes.agents) {
+const LA = cfg.lanes.agents, st = Math.floor(Math.random() * LA.length)            // a random first lane; on 507 the next
+for (const token of LA.map((_, i) => LA[(st + i) % LA.length])) {
     const r = await fetch(`${cfg.endpoint}/api/vault/append/write/${cfg.vault_id}`, { method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ append_token: token, payload }) })
     if (r.status === 507) continue

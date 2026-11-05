@@ -35,7 +35,8 @@ def start(pending_by_lane, lanes_named, inbox_files=0):
     for i, name in enumerate(lanes_named, 1):
         n = pending_by_lane.get(i, 0)
         full = '  FULL (507)' if n >= 1000 else '  near full' if n >= 800 else ''
-        lines.append(f'lane {i}  {name[:18].ljust(18)} {str(n).rjust(5)}  {bar(n, mx, 30)}{full}')
+        short = name.replace('site page views', 'site').replace('newsroom page views', 'newsroom').replace('agent runs', 'agents')
+        lines.append(f'lane {str(i).rjust(2)}  {short[:14].ljust(14)} {str(n).rjust(5)}  {bar(n, mx, 34)}{full}')
     lines += ['', 'plan     L load    list + fetch every lane (enum key)',
               '         E extract open (drain key), verify (site and agent keys)',
               '         T transform  new hours once -> their day -> latest/',
@@ -43,13 +44,15 @@ def start(pending_by_lane, lanes_named, inbox_files=0):
               '         then     push, mark processed, log this run']
     return box('OBSERVABILITY DRAIN · starting', lines)
 
-def end(pub, drained, from_browser, bad, got, took_s, by_lane):
+def end(pub, drained, from_browser, bad, got, took_s, by_lane, phases=None):
     L = os.path.join(pub, 'latest')
     j = lambda n: json.load(open(os.path.join(L, n)))
     S, TL, A, F, D = j('summary.json'), j('timeline.json'), j('agents.json'), j('findings.json'), j('drains.json')
     lines = [f'this run  {drained} from the lanes · {from_browser} from browser drains · {bad} unreadable · {took_s:.1f} s',
              '          ' + ('  '.join(f'lane {k}: {v}' for k, v in sorted(by_lane.items())) or 'the lanes were empty'),
-             f'          {got["hours"]} hour(s) and {got["days"]} day(s) transformed; {got["pages"]} pages, {got["agents"]} agents known', '',
+             f'          {got["hours"]} hour(s) and {got["days"]} day(s) transformed; {got["pages"]} pages, {got["agents"]} agents known']
+    if phases: lines.append('          ' + ' · '.join(f'{k.replace("_", " ")} {v}s' for k, v in phases.items()))
+    lines += ['',
              'ALL TIME, views by group']
     mx = max(S['totals'][g]['views'] for g in GROUPS)
     for g in GROUPS:
@@ -77,7 +80,14 @@ def end(pub, drained, from_browser, bad, got, took_s, by_lane):
         lines.append(f'  {a["agent"][:34].ljust(34)} {str(a["runs"]).rjust(3)} runs · last {a["last"][11:16]} · read-list {ok}/5')
     lines += ['', f'SECURITY  {F["count"]} signature findings: ' + ', '.join(f'{r} {n}' for r, n in F['by_reason'])]
     for k, n in F['by_key'][:3]: lines.append(f'  claimed key {k[:24].ljust(24)} {n}x')
-    lines += ['', 'DRAINS  ' + '  '.join(f'{d["at"][11:16]} {d["by"]} {d["records"]}' for d in D['drains'][:4]),
+    lines += ['', 'DRAINS  (when · by · records · seconds)']
+    for d in D['drains'][:4]: lines.append(f'  {d["at"][5:16].replace("T", " ")}  {d["by"][:12].ljust(12)} {str(d["records"]).rjust(5)} rec  ' + (f'{d["secs"]} s' if 'secs' in d else '(not timed)'))
+    last = next((d for d in D['drains'] if d.get('lanes') is not None), None)
+    if last:
+        n = last.get('lane_count', 10); cap = [int(last['lanes'].get(str(i), 0)) for i in range(1, n + 1)]
+        lines.append('  lanes waiting at the last drain (each holds 1,000)' + ('  ⚠ one is near full' if max(cap) >= 800 else ''))
+        for k in range(0, n, 5): lines.append('    ' + ' '.join(f'{str(i).rjust(2)}:{str(c).rjust(4)} {"█" * min(5, round(5 * c / 1000))}'.ljust(13) for i, c in list(enumerate(cap, 1))[k:k + 5]))
+    lines += [
               '', f'live      web-summit.sgit.ai/observability/ · data as of {S["generated"][11:16]} UTC']
     return box('OBSERVABILITY DRAIN · done', lines)
 
