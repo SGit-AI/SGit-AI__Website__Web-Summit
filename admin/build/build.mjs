@@ -186,8 +186,12 @@ function rail(rel, up, body) {
     return pages ? `<aside class="rail" aria-label="${esc(sec.t)}: its pages">${pages}</aside>` : ''
 }
 
-function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false, head = '', wide = false, focus = false }) {
+function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false, head = '', wide = false, focus = false, personScripts = false }) {
     const up = '../'.repeat(rel.split('/').length - 1)
+    // WS-164 item 1 (security@web-summit.dinis): a page that runs a person's own script (any script whose file is under
+    // people/, or a script a person's pages.mjs put on the page) gets no keyring.js, so no script but the site's own sits
+    // beside a person's key. The site's scripts that use the keyring (me, feedback, telemetry, obs) do without it there
+    const foreign = personScripts || [...`${head}${body}`.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].some(([, src]) => !/^https?:/.test(src) && path.posix.normalize(path.posix.join(path.posix.dirname(rel), src)).startsWith('people/'))
     body = String(body).replaceAll('href="@@/', `href="${up}`)   // links from build-time blocks (the agenda) written from the site root
     const side = home || wide ? '' : rail(rel, up, body)   // wide: a cockpit (people/<id>/dashboard.md, layout: cockpit) uses the whole screen
     const heroed = home && body.includes('class="hm-hero"')   // the home page's hero band (WS-103) is its title
@@ -235,8 +239,7 @@ ${wide && !focus ? '<section class="for-you" id="for-you" hidden aria-label="For
 </main>
 </div>
 <script src="${up}assets/copy.js?v=${VERSION}" defer></script>
-<script src="${up}assets/keyring.js?v=${VERSION}" defer></script>
-<script src="${up}assets/addkey.js?v=${VERSION}" defer></script>
+${foreign ? '' : `<script src="${up}assets/keyring.js?v=${VERSION}" defer></script>\n`}<script src="${up}assets/addkey.js?v=${VERSION}" defer></script>
 <script src="${up}assets/me.js?v=${VERSION}" defer></script>
 <script src="${up}assets/feedback.js?v=${VERSION}" defer></script>
 <script src="${up}assets/telemetry.js?v=${VERSION}" defer></script>
@@ -637,7 +640,7 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     if (!fs.existsSync(f)) continue
     for (const p of (await import(f)).build(ROOT)) {
         if (!p.rel.startsWith(`people/${m.id}/`) || !p.rel.endsWith('.html')) throw new Error(`people/${m.id}/pages.mjs: ${p.rel} is outside people/${m.id}/`)
-        write(p.rel, page({ rel: p.rel, title: p.title, description: p.description, body: p.body, head: p.head || '', mdTwin: twinPath(p.rel) }))
+        write(p.rel, page({ rel: p.rel, title: p.title, description: p.description, body: p.body, head: p.head || '', mdTwin: twinPath(p.rel), personScripts: /<script\b/i.test(`${p.head || ''}${p.body || ''}`) }))
         pages.push({ rel: p.rel, title: p.title, description: p.description }); twin(p.rel, p.title, p.description, p.md)
     }
 }

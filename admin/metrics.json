@@ -223,6 +223,15 @@
       "pages": 478,
       "validate_seconds": 4.92,
       "build_seconds": 3.45
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: WS-164 items 1 and 3. page() leaves keyring.js off any page that runs a script from people/ (resolved from its src) or a script a person's pages.mjs put on it: 34 of 492 pages (Indi's factory and today, the lab studio, the command centres with their own app.js). Gate check 22: no built page has both; no .js under people/ uses WSKeyring, ws-keyring, indexedDB, document.links or data/sealed/. Proved: with the filter off the gate fails on all 34; a planted people/ script calling WSKeyring fails. Gate 5.04 s at 492 pages (4.92 s at 478); build 3.47 s.",
+      "pages": 492,
+      "validate_seconds": 5.04,
+      "build_seconds": 3.47
     }
   ]
 }
