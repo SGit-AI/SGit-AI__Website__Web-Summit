@@ -767,6 +767,21 @@
         "fingerprint": "sha256:f13d909497a9e6bb",
         "signing_fingerprint": "sha256:d6f7531990619daf"
       }
+    },
+    {
+      "id": "vault-silvio",
+      "label": "vault@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's vault agent (vault@web-summit.silvio): creates and manages Silvio's SGit vaults, audits them before a read key is published, and receives vault keys only sealed to this key. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Silvio's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": "1",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEApiashf6yUXWYh83uHpXL\nFchefoL+pRFiIXQDwpBEJkvAp4Qw26I+lo5F1W2zz7bSWc8ssJUK6hObZfJTg3GA\n7ufp3DONaiAU7HolMzo6JiBANgUdLjVF16ETNFxZOYVjwRx4JskxrIJIr3Nu47bQ\nxqgyiGK9GQyEjb+emg7WJF1uJHicCJxSurZLfOCcsX8R1vES4yeU1PDzZDQ4OWh5\nEfhqCZ/ttfaJAz2cBFYsc/wSDnWoDsWxwPxZO3dSZg6rZOo/xv2+WCE3nXhWdqab\nwA4/0t4bwth0E134vvs/UemJPmMQVR6XYZL8fE+Yq8tD5Ki2tNcZIXc+P5rUjCpq\nb2a7i1ML/hyojAynEv6L3rifpYcEnfw95BE3WpZ3IHqid0vDlrFmYu9WCR1/f/H2\nl+vsBVwoMz02yYxYslJzGwfkJnVdk+0TJ2z5OHhxuLr1UjExtepv9WwR60TVvm/C\niS38NQFGv9s47w3d3A2KcbiairszC+MHjskae5ccWqEvsJa8kDMPUOJg2VrtwAMR\n2cnrGWkDnrxyprpfZPoOkiViYMOoW6rqgbTtrXD0LgLUr/vJCgyYAtPrjHO3rVb8\nDWH4OlEKqsIvnPM2cGzYAbdGzp5uhyeb25Ub4dL7e6vZDXwpwRusV+9QsAv73Irc\nsox1L3ziDHBtO2vwakqBjE8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESzG9WLnJ7EiV5qdNYRv5FwHxpuHs\nUNZtZS9qeO6nHSk79k+4Iw766v33V+FNxD9c7MEdek6G6fI51+AHjNqYvA==\n-----END PUBLIC KEY-----\n",
+        "label": "vault@web-summit.silvio",
+        "fingerprint": "sha256:0a2dcdad64868fa3",
+        "signing_fingerprint": "sha256:e07d1cb1ea85a980"
+      }
     }
   ]
 }
