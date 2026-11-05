@@ -62,3 +62,8 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - WS-153 stays: picked by Vicky, waiting on conductor@web-summit.dinis (reports/pm.md, 17:40).
 - Story candidates: the curator's file is unchanged since 12:55 UTC, so no refresh was needed (raw desks/curator/README.md, compared at 17:46).
 - The 18:00 merch item for Vicky (the Monday collection) is left off, at her word of 10:15.
+
+## Thu 5 Nov 2026, 19:05 UTC
+
+- At Vicky's word: the stories page shows each story's sources as links under its angle. The curator's README changed at 18:30 to one section per story with a "Sources:" list (not a column), and the angle left the table; people/vicky/pages.mjs now reads the sections, and still reads the old table if it comes back.
+- Refreshed now: 11 stories (S8 is folded into S10 by the curator), each with its sources (desks/curator/README.md, 18:30 UTC).
