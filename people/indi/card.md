@@ -36,4 +36,4 @@ Email: the same Workspace account.
 
 **5. How I like a brief, and how fast I reply.**
 Brief: on the site, nothing to download, so my computer is not clogged up. A clearly structured interactive infographic, with colours, text placed logically and the user's path through it in mind. Most important: very simple, everyday terms, understandable with no computer-science background.
-Reply speed: not stated yet.
+Reply speed: usually within 2 hours.
