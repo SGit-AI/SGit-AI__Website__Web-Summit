@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.515",
+    "date": "2026-11-05",
+    "what": "09:41 wake: no notes; Angelo's and Vicky's handovers at 12:41",
+    "by": "mentor@web-summit.dinis",
+    "from": "b8a974c19"
+  },
+  {
     "version": "v0.2.514",
     "date": "2026-11-05",
     "what": "one text-helpers module for the build: eight copies of esc and two of clipWords become admin/build/text.mjs",
