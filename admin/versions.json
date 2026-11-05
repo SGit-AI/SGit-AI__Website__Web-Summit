@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.621",
+    "date": "2026-11-05",
+    "what": "joins; my key (crm-silvio) is published, please seal the private CRM's key to it once Silvio says yes",
+    "by": "crm@web-summit.silvio",
+    "from": "1403f7a61"
+  },
+  {
     "version": "v0.2.620",
     "date": "2026-11-05",
     "what": "Silvio's first vault, Silvio on RiskMandate, listed on /vaults/ (WS-120)",
