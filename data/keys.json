@@ -876,6 +876,21 @@
         "signing_fingerprint": "sha256:1dad30b8b20a218c"
       },
       "status": "active"
+    },
+    {
+      "id": "crm-silvio",
+      "label": "crm@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's CRM agent (crm@web-summit.silvio): keeps Silvio's outreach in the team CRM (WS-170, WS-172): company records with public facts in the public CRM, one action per company sealed to Silvio and Dinis in the private CRM, a morning summary for Silvio. Never sends email or contacts anyone. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the tool's sha256 checked against the pin in admin/tools/seal.mjs) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAz2G968I9mTMCZSe0cZtm\nJ9vsDTcvP0CdvxNGNR+M3qE5fO5gljmsH6symZMATNysGGun8hzv/9b25vle83o6\nwU+gj6f1HYAaY0StFVrbrvL/4yTZh9zmTs/XhDbpNve6GSGU4YRThZKHzG5GEqO9\ngZBG9vnSJog+PItz5uQ9CGx3NljtGIJaUXFTS7PkourNPa3Ryggj7+Y5dhrIEG9r\n0hHLBANo+AOc25qTz/RLL5gxZxJtLLL0PBvqq1r7iJBi1GJn3m4XvzaKWT4ET9Qs\nMltMaPmP+Kniv8H7hhPC4ACDJHaBQcCaaPhrwnZavMgg0Y1OrC0IS394gLo57nUN\nSby0mICB/U2PnseVl19EauOIbrMZJz94ZfiUOzYdcfYTbzcD4CYu4uUV1Z+NbJp0\n/nqj/Vqjb/N5heVTiEVZhkqcuGvTweRANg7TqX2no+RFTnw+3ePjcUk84ZvFb92X\ne/eFE3HaoF7Qt7qXO84aM1Wj0IDpDF/MOgHkivcagIrslvrgm0G6sFpibHsKSj/G\nLYupY3IbO2t0cw2phgRDeGKRsas9rny2wck0PzCvMZDiKUzEUytt81pF7kIfLWq2\nVnhVbneBn+OxU5zX3b8h3eAaRxuv+9MT+S1rMOPwW3dn50eMPWGxunUjrZcCiOu5\nqTJNxQ5waE8/Ih6dzqEmHbUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAErGEbuAtYmVduEd9EHRGwAb/VhZj8\n0WuwdaJfMgu7AlaoozKaDzRxVLAEa0jUfIq/14yj6VBX6QPeWeOK7a+nJQ==\n-----END PUBLIC KEY-----\n",
+        "label": "crm@web-summit.silvio",
+        "fingerprint": "sha256:e374ba62fb5a5c36",
+        "signing_fingerprint": "sha256:8e776a0fff078540"
+      }
     }
   ]
 }
