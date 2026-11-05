@@ -78,7 +78,9 @@ export function build(root, person, now = new Date()) {
     // "joined" = the onboarding notes record it joining, but it has not committed under its own name yet
     const notes = (readJson(root, `people/${person}/onboarding.json`) || {}).notes || ''
     const joined = name => new RegExp(`${name.replace(/[.@-]/g, '\\$&')}, joined`).test(notes)
-    const declared = [...new Set([...(me.agents || []), `dashboard@web-summit.${person}`])]
+    // ...and every agent the person's own people/<id>/agents.json declares (conductor@web-summit.jose, 5 November, at Jose's word)
+    const own = (readJson(root, `people/${person}/agents.json`) || []).map(a => a && a.name).filter(n => typeof n === 'string' && n.endsWith(`@web-summit.${person}`))
+    const declared = [...new Set([...(me.agents || []), ...own, `dashboard@web-summit.${person}`])]
     const agents = declared.map(name => {
         const short = name.split('@')[0], cfg = config.agents[short] || { colour: { conductor: 'conductor', dev: 'dev', dashboard: 'conductor', outreach: 'outreach', video: 'video', procurement: 'procurement' }[short] }, mine = work.filter(c => c.agents.includes(name))
         const status = mine.length ? 'active' : joined(name) ? 'joined' : 'proposed'

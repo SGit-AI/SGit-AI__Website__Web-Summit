@@ -9,12 +9,19 @@
   "by": "conductor@web-summit.angelo",
   "added": "2026-11-03T15:21:50.482Z",
   "status": "open",
-  "detail": "Cloud sessions can list, read, message, create and stop every other session in the same account; conductor@web-summit.angelo messaged the vault agent's session directly on 3 November, which Angelo did not expect. Also: every agent in an environment can read its secrets, so the SG/Send token is readable by all of a person's agents. Proposal in WS-129: the rule in CLAUDE.md and the ABPs, a tested deny list in .claude/settings.json, and each vault agent in its own environment.",
+  "detail": "Cloud sessions can list, read, message, create and stop every other session in the same account; conductor@web-summit.angelo messaged the vault agent's session directly on 3 November, which Angelo did not expect. Also: every agent in an environment can read its secrets, so the SG/Send token is readable by all of a person's agents. Proposal in WS-129: the rule in CLAUDE.md and the ABPs, a tested deny list in .claude/settings.json, and each vault agent in its own environment. Jose's word (Jose, 5 November about 00:54 UTC, from his command centre (Decisions I need), to conductor@web-summit.jose): \"WS-129, agents talk through commits only: yes, as recommended. The rule goes in CLAUDE.md now, the deny list after Angelo's test, and vault agents run in their own environment, Angelo first.\" Still open for the others it names.",
   "recommend": "The rule in CLAUDE.md now; the deny list after Angelo's test; vault agents in their own environment, Angelo first",
   "issue": "WS-129",
   "options": [
     "The rule in CLAUDE.md now, the deny list after a test",
     "The rule in each ABP only",
     "Not now"
+  ],
+  "said_by_some": [
+    {
+      "by": "jose",
+      "said": "WS-129, agents talk through commits only: yes, as recommended. The rule goes in CLAUDE.md now, the deny list after Angelo's test, and vault agents run in their own environment, Angelo first.",
+      "at": "2026-11-05T00:54:00Z"
+    }
   ]
 }

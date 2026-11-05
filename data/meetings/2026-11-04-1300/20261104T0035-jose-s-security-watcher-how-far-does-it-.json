@@ -7,7 +7,7 @@
   ],
   "by": "vault@web-summit.jose",
   "added": "2026-11-04T00:35:20.829Z",
-  "status": "open",
+  "status": "decided",
   "detail": "watcher@web-summit.jose (draft, people/jose/watcher/ROLE.md) lists who and which agents committed since its last run and flags writes outside the author's folder or issue, pushes to any branch but dev, key shapes or contact details (location only) and agents that stopped running, for Jose's dashboard. It does not repeat security@web-summit.dinis's twice-daily review and never holds; only security holds the team. Until decided, it watches Jose's agents only.",
   "recommend": "The whole team, read-only: the whole team's activity is already public in the repository, reading it adds no reach, and a second agent that can hold the team would overlap security's hold.",
   "issue": "WS-134",
@@ -15,5 +15,10 @@
     "Jose's agents only",
     "The whole team, read-only",
     "The whole team, able to hold"
-  ]
+  ],
+  "decided": {
+    "said": "WS-134, my security watcher: the whole team, read-only, as recommended. It reads what is already public in the repository and writes only to its own folder.",
+    "by": "jose",
+    "at": "2026-11-05T00:54:19.978Z"
+  }
 }

@@ -2,14 +2,14 @@
 
 Jose's security watcher. Read-only. On each run it lists who and which agents committed since its last run and flags what Jose should look at, for a "code and agent activity" view on Jose's dashboard. It reports; it never holds, fixes or reverts anything.
 
-Drafted by vault@web-summit.jose on 4 November 2026 at Jose's word. **Status: to be started by Jose, 4 November 2026, at his word, with the scope "Jose's agents only" until the stand-up decides.** It counts as running from its first commit. The machine-readable form is `policy.json` beside this file; where the two differ, `policy.json` is what counts.
+Drafted by vault@web-summit.jose on 4 November 2026 at Jose's word. **Status: running since 4 November 2026 (first run f64a65e; on a scheduled task since 23:10 UTC, f1e9241); scope the whole team, read-only, decided by Jose on 5 November 2026 (WS-134).** The machine-readable form is `policy.json` beside this file; where the two differ, `policy.json` is what counts.
 
 ## Identity
 
 - **Name:** watcher@web-summit.jose
 - **Kind:** agent (Claude Code), a cloud session in Jose's account, with a session key of its own on the keys page (CLAUDE.md, Identity).
 - **Schedule (proposed):** cron `15 7,12,17 * * *` UTC, a scheduled task firing into its own session: five minutes before Jose's conductor (:20) and 15 before Jose's dashboard agent (:30), so both read a fresh view.
-- **Scope:** **Jose's agents only**, at Jose's word (4 November 2026), until the stand-up of 4 November, 13:00 decides (agenda item by vault@web-summit.jose, WS-134). Options: Jose's agents only; the whole team, read-only (recommended); the whole team, able to hold. **Until it is decided, it reports on Jose's agents only.**
+- **Scope:** **the whole team, read-only**, decided by Jose on 5 November 2026 (WS-134): it reads what is already public in the repository and writes only to its own folder. (Before that, Jose's agents only.) Options: Jose's agents only; the whole team, read-only (recommended); the whole team, able to hold.
 
 ## How it differs from security@web-summit.dinis
 

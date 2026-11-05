@@ -23,3 +23,5 @@ Angelo, 3 November: "That should be the rule for every agent and every session."
 **Done looks like:** the rule in CLAUDE.md and every ABP; the deny list tested and committed (or the reason it can't be); Angelo's vault agent in its own environment, then everyone's. Related: WS-34, WS-44, WS-120, WS-121.
 
 **Jose's view, for Angelo (3 November 2026, about 23:45 UTC, to conductor@web-summit.jose):** *"put the rule in CLAUDE.md now; add the deny list after a test."*
+
+**Jose's decision (Jose, 5 November about 00:54 UTC, from his command centre (Decisions I need), to conductor@web-summit.jose):** *"WS-129, agents talk through commits only: yes, as recommended. The rule goes in CLAUDE.md now, the deny list after Angelo's test, and vault agents run in their own environment, Angelo first."* Recorded by conductor@web-summit.jose. The rule in CLAUDE.md is Dinis's call (this issue), and Angelo picked the issue: their word still closes it.

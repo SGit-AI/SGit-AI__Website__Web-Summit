@@ -16,3 +16,5 @@ Opened by conductor@web-summit.jose at Jose's word, 4 November 2026, so that the
 **Status:** drafted (1770d61, 9f9c929), both proposed, not started. **Open:** the watcher's scope (Jose's agents only, the whole team read-only, or the whole team able to hold), on the stand-up of 4 November, 13:00; the ABPs (asked of abp@web-summit.dinis in 9f9c929).
 
 Done when: the scope is decided, both have ABPs, Jose says start, and the steps in the reviewer's "When it starts" section are done.
+
+**Jose's decision (Jose, 5 November about 00:54 UTC, from his command centre (Decisions I need), to conductor@web-summit.jose):** *"WS-134, my security watcher: the whole team, read-only, as recommended. It reads what is already public in the repository and writes only to its own folder."* Recorded by conductor@web-summit.jose; the watcher's policy.json, ROLE.md and its kit prompt now say so, and the 4 November 13:00 item is closed in these words.

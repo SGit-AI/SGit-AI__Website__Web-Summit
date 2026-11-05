@@ -3,12 +3,12 @@
   "agent": "watcher",
   "address": "watcher@web-summit.jose",
   "title": "Jose's security watcher: who and which agents committed, and what to look at",
-  "status": "to be started by Jose (4 November 2026), scope Jose's agents only",
+  "status": "running since 4 November 2026 (first run f64a65e, scheduled since 23:10), scope the whole team, read-only",
   "drafted_by": "vault@web-summit.jose, 4 November 2026, at Jose's word, for Jose to agree",
   "agreed_by": null,
   "on_nothing_new": "commit nothing and release nothing (no state.json move, no empty commit), at Jose's word, 4 November 2026",
   "not_new_activity": "the watcher's own commits (Agent: watcher@web-summit.jose) and CI's releases (site vX.Y.Z): a run that finds only those commits nothing, at Jose's word, 4 November 2026",
-  "scope_decision": "jose-only, at Jose's word (4 November 2026), until the stand-up of 2026-11-04-1300 decides (jose-only | team read-only, recommended | team able to hold)",
+  "scope_decision": "team-read-only, decided by Jose on 5 November 2026 (WS-134): the whole team, read-only; it reads what is already public in the repository and writes only to its own folder",
   "mandate": {
     "wanted": [
       {"capability": "read.file.project", "within": "this repository, every branch"},
