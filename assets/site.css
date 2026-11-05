@@ -38,7 +38,7 @@
     --sent        : #2f6fb3;   /* the cockpit's sent-not-processed actions (Dinis, 5 Nov) */
     --sent-soft   : #e3eef9;
     --sent-line   : #b9d1ec;
-    --st-green    : #1a7f5a;   /* the sticker vote (WS-159): the stickers' own palette, for its confetti and its clock */
+    --st-green    : #1a7f5a;   /* the sticker vote (WS-167): the stickers' own palette, for its confetti and its clock */
     --st-gold     : #f2c230;
     --st-blue     : #1d4ed8;
     --st-terra    : #c8553d;
@@ -459,7 +459,7 @@ svg.ch-map { min-width: 620px; max-width: 900px; }
 .ag-togo { color: var(--ink-2); font-size: .85rem; font-weight: 400; }
 .ag-summit > a { font-weight: 600; } .ag-none, .ag-missing { color: var(--ink-2); font-size: .88rem; }
 
-/* ---------- the sticker vote (WS-159, conductor@web-summit.dinis): assets/stickers-vote.js ----------
+/* ---------- the sticker vote (WS-167, conductor@web-summit.dinis): assets/stickers-vote.js ----------
    Round 2: no rotation or scale in the layout (a hover lifts the shadow only), every card in a row the same height,
    the ranked top 6 in a sticky panel on the right, a bottom sheet on a phone kept clear of the Feedback button. */
 .sv { margin: 1.2rem 0 2rem; }
@@ -710,7 +710,7 @@ body[data-focus] main { padding-top: 0.8rem; }
 .sv-vk { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 0.5rem 0; }
 .sv-vk code { padding: 0.3rem 0.5rem; border-radius: 6px; background: var(--st-shade); word-break: break-all; font-size: 0.85rem; }
 
-/* the sticker vote on the home page (WS-159) */
+/* the sticker vote on the home page (WS-167) */
 .hm-vote { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 1rem; align-items: center; margin: 0 0 1.4rem; padding: 1.1rem; border-radius: var(--radius); border: 2px solid var(--st-green); background: var(--bg); }
 .hm-vote h2 { margin: 0 0 0.35rem; font-size: 1.5rem; }
 .hm-vote p { margin: 0 0 0.8rem; }

@@ -114,7 +114,7 @@ export function homeBlocks({ ROOT, teamData, onboard, LEVELS, INV, MEET, ISSUES,
         html: `<section class="hm-numbers"><h2 id="numbers">The numbers</h2><div class="hm-nums">${nums.map(([n, t, h]) => `<a href="${h}"><b>${esc(n)}</b><span>${esc(t)}</span></a>`).join('')}</div><p class="meta">Everything counted: <a href="team/everything/index.html">every person, agent and channel</a>.</p></section>`,
         md: `## The numbers\n\n${nums.map(([n, t]) => `- **${n}** ${t}`).join('\n')}`
     }
-    // 7. the sticker vote (WS-159), at Dinis's word, 5 November 2026: "can you also put the voting on the main page".
+    // 7. the sticker vote (WS-167), at Dinis's word, 5 November 2026: "can you also put the voting on the main page".
     //    A strip of the real art and a big button; open until 14:30 UTC on 5 November, then it points at the results.
     const SV_CLOSE = '2026-11-05T14:30:00Z', svOpen = now < new Date(SV_CLOSE)
     const svDir = path.join(ROOT, 'assets', 'stickers', 'vote')

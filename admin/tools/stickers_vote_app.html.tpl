@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pick the sticker: the team vote</title>
-<!-- The vault app of ws-stickers-vote (WS-159), built by conductor@web-summit.dinis from
+<!-- The vault app of ws-stickers-vote (WS-167), built by conductor@web-summit.dinis from
      admin/tools/stickers_vote_app.html.tpl in SGit-AI/SGit-AI__Website__Web-Summit (admin/tools/stickers_vote.py app).
      Everything is inline (the vault-app contract); images are set from JS; data comes from sg.vfs, with an inlined
      fallback. Every string from a ballot or a file reaches the page as text, never as HTML. -->

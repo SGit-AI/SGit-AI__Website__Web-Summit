@@ -1,4 +1,4 @@
-// The sticker vote's vault with full access (WS-159), its own page at Dinis's word (5 November 2026: "move that 'open
+// The sticker vote's vault with full access (WS-167), its own page at Dinis's word (5 November 2026: "move that 'open
 // vault' to a new page/section where the main voting page just has a link to it"). For a person whose browser holds the
 // key the vault key is sealed to (data/sealed/<id>/*-stickers-vault-key.json): the sealed message is opened in memory on a
 // press, never written to the page or stored; the vault is shown in a frame, with a new-window link, the key (masked) and

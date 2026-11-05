@@ -17,4 +17,4 @@ Back to [the vote](../index.html). Moved to its own page at Dinis's word, 5 Nove
 
 The vault key gives write access to the whole vault: use it only to drain. From a terminal, the same drain is `python3 -I admin/tools/stickers_vote.py drain`.
 
-Built by conductor@web-summit.dinis (WS-159).
+Built by conductor@web-summit.dinis (WS-167).

@@ -137,7 +137,7 @@ function render(md) {
             i++
             out.push('<div class="sv" id="sticker-vault"><p class="meta">This page needs JavaScript: it opens the vault key sealed to you, in this browser only.</p></div>')
         } else if (/^```sticker-vote\s*$/.test(l)) {
-            // the team's sticker vote (WS-159, conductor@web-summit.dinis): a mount for assets/stickers-vote.js, which the
+            // the team's sticker vote (WS-167, conductor@web-summit.dinis): a mount for assets/stickers-vote.js, which the
             // page loads through its front matter (script: stickers-vote); without JavaScript it says so
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
@@ -582,7 +582,7 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
     if (name === 'index') ({ html, md } = expandHome(html, md, homeBlocks({ ROOT, teamData, onboard, LEVELS, INV, MEET, ISSUES, plan, castData, merch })))
     if (name === 'print') ({ html, md } = expandSignoff(html, md, ROOT))
     if (meta.infographic) ({ html, md } = expandInfographic(html, md, ROOT, meta.infographic, rel))   // a night's summary in pictures (Dinis, 5 Nov)   // the Official Sign-off, from the signatures (WS-113)
-    // a page's own script, named in its front matter (script: <name> loads assets/<name>.js; WS-159)
+    // a page's own script, named in its front matter (script: <name> loads assets/<name>.js; WS-167)
     if (meta.script && !/^[a-z0-9-]+$/.test(meta.script)) throw new Error(`content/${f}: script must name a file in assets/ ([a-z0-9-])`)
     const head = meta.script ? `<script src="${'../'.repeat(rel.split('/').length - 1)}assets/${meta.script}.js?v=${VERSION}" defer></script>` : ''
     md = md.replace(/^```sticker-vault\s*\n```\s*$/m, '*The vault with full access is opened on the HTML page by assets/stickers-vault.js, for a person the vault key is sealed to.*')
