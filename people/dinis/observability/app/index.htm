@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who reads web-summit.sgit.ai</title>
+<!-- observability@web-summit.dinis, 5 November 2026. A vault app: self-contained, no external resources. It reads one
+     file, data/public.json, through the vault bridge (sg.vfs.readText) and renders it. Its source is in the team site's
+     repository, people/dinis/observability/app/index.htm; the drain copies it into the vaults. Every string from the
+     data reaches the page as text, never as HTML. -->
+<style>
+  :root { --bg:#fbfaf7; --fg:#1d1d1b; --muted:#6b6862; --line:#e4e1da; --card:#fff;
+          --readers:#2f6fdb; --team:#1f9d6b; --synthetic:#c47a12; --crawlers:#8a6bd1; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#16171a; --fg:#ecebe7; --muted:#a19e97; --line:#2c2e33; --card:#1e2024;
+          --readers:#6e9cf0; --team:#46c08e; --synthetic:#e2a24a; --crawlers:#a991e6; } }
+  * { box-sizing: border-box }
+  body { margin:0; font:14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; background:var(--bg); color:var(--fg) }
+  main { max-width:1080px; margin:0 auto; padding:20px 16px 40px }
+  h1 { font-size:20px; margin:0 0 2px } h2 { font-size:15px; margin:26px 0 8px }
+  .sub { color:var(--muted); margin:0 0 16px }
+  .tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px }
+  .tile { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:10px 12px }
+  .tile b { display:block; font-size:22px; font-variant-numeric:tabular-nums } .tile span { color:var(--muted); font-size:12px }
+  .dot { display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:5px; vertical-align:baseline }
+  table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:8px; overflow:hidden }
+  th, td { text-align:left; padding:6px 9px; border-bottom:1px solid var(--line); vertical-align:top }
+  th { font-weight:600; font-size:12px; color:var(--muted) } td.n, th.n { text-align:right; font-variant-numeric:tabular-nums }
+  tr:last-child td { border-bottom:0 } code { font-size:12px; word-break:break-all }
+  .bar { height:8px; border-radius:2px; background:var(--readers); display:inline-block; vertical-align:middle }
+  .scroll { overflow-x:auto } .muted { color:var(--muted) } .tag { font-size:11px; padding:1px 6px; border-radius:9px; border:1px solid var(--line) }
+  .ok { color:var(--team) } .warn { color:var(--synthetic) }
+  svg text { fill:var(--muted); font-size:10px }
+  footer { margin-top:28px; color:var(--muted); font-size:12px }
+</style>
+</head>
+<body>
+<main id="app"><p class="muted">Opening the vault, decrypting data/public.json…</p></main>
+<script>
+(function () {
+  'use strict'
+  var GROUPS = ['readers', 'team', 'synthetic', 'crawlers']
+  var LABEL = { readers: 'Readers', team: 'The team (by key)', synthetic: 'Synthetic (agents, headless browsers)', crawlers: 'Crawlers' }
+  var app = document.getElementById('app')
+  function el(tag, attrs, kids) {
+    var e = document.createElement(tag)
+    for (var k in (attrs || {})) { if (k === 'text') e.textContent = attrs[k]; else if (k === 'style') e.style.cssText = attrs[k]; else e.setAttribute(k, attrs[k]) }
+    ;(kids || []).forEach(function (c) { if (c != null) e.appendChild(typeof c === 'string' ? document.createTextNode(c) : c) })
+    return e
+  }
+  function dot(g) { return el('span', { 'class': 'dot', style: 'background:var(--' + g + ')' }) }
+  function num(n) { return (n || 0).toLocaleString('en-GB') }
+  function secs(s) { s = Math.round(s || 0); return s < 60 ? s + 's' : Math.floor(s / 60) + 'm ' + (s % 60) + 's' }
+  function table(head, rows) {
+    var t = el('table'), tr = el('tr')
+    head.forEach(function (h) { tr.appendChild(el('th', { 'class': h.n ? 'n' : '', text: h.t || h })) })
+    t.appendChild(el('thead', {}, [tr])); var tb = el('tbody')
+    rows.forEach(function (r) { var row = el('tr'); r.forEach(function (c, i) { var td = el('td', { 'class': head[i].n ? 'n' : '' }); if (c && c.nodeType) td.appendChild(c); else td.textContent = c == null ? '' : String(c); row.appendChild(td) }); tb.appendChild(row) })
+    t.appendChild(tb); return el('div', { 'class': 'scroll' }, [t])
+  }
+  function daily(days) {                                              // stacked bars per day, inline SVG
+    var W = 1000, H = 140, pad = 22, n = Math.max(1, days.length), bw = Math.min(46, (W - pad) / n - 6)
+    var max = Math.max.apply(null, days.map(function (d) { return GROUPS.reduce(function (a, g) { return a + (d[1][g] || 0) }, 0) }).concat([1]))
+    var NS = 'http://www.w3.org/2000/svg', svg = document.createElementNS(NS, 'svg')
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + (H + 18)); svg.setAttribute('width', '100%'); svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', 'Page views per day, by group')
+    days.forEach(function (d, i) {
+      var x = pad + i * ((W - pad) / n), y = H
+      GROUPS.forEach(function (g) {
+        var v = d[1][g] || 0; if (!v) return; var h = (H - 8) * v / max; y -= h
+        var r = document.createElementNS(NS, 'rect'); r.setAttribute('x', x); r.setAttribute('y', y); r.setAttribute('width', bw); r.setAttribute('height', h)
+        r.setAttribute('fill', 'var(--' + g + ')'); var tt = document.createElementNS(NS, 'title'); tt.textContent = d[0] + ': ' + v + ' ' + g; r.appendChild(tt); svg.appendChild(r)
+      })
+      var t = document.createElementNS(NS, 'text'); t.setAttribute('x', x); t.setAttribute('y', H + 13); t.textContent = d[0].slice(5); svg.appendChild(t)
+    })
+    var m = document.createElementNS(NS, 'text'); m.setAttribute('x', 0); m.setAttribute('y', 10); m.textContent = String(max); svg.appendChild(m)
+    return svg
+  }
+  function render(d) {
+    app.innerHTML = ''
+    app.appendChild(el('h1', { text: 'Who reads web-summit.sgit.ai, and what the agents read' }))
+    app.appendChild(el('p', { 'class': 'sub', text: 'As of ' + d.generated + ' UTC · ' + num(d.records) + ' records drained from encrypted append lanes · read from this vault, decrypted in your browser' }))
+    var tiles = el('div', { 'class': 'tiles' })
+    GROUPS.forEach(function (g) { var t = d.totals[g] || {}; tiles.appendChild(el('div', { 'class': 'tile' }, [el('b', { text: num(t.views) }), el('span', {}, [dot(g), LABEL[g] + ' · ' + num(t.sessions) + ' tabs · ' + num(t.reads) + ' reads'])])) })
+    tiles.appendChild(el('div', { 'class': 'tile' }, [el('b', { text: num(d.agents.runs) }), el('span', { text: 'Agent runs logged · ' + num(d.agents.signed) + ' signed by the agent\'s key' })]))
+    app.appendChild(tiles)
+
+    app.appendChild(el('h2', { text: 'Page views per day' }))
+    app.appendChild(daily(d.daily || []))
+    var leg = el('p', { 'class': 'muted' }); GROUPS.forEach(function (g) { leg.appendChild(dot(g)); leg.appendChild(document.createTextNode(LABEL[g] + '   ')) }); app.appendChild(leg)
+
+    app.appendChild(el('h2', { text: 'The team: who read what (people known by their site key)' }))
+    app.appendChild((d.team || []).length ? table([{ t: 'Person' }, { t: 'Page' }, { t: 'Views', n: 1 }, { t: 'Reads', n: 1 }, { t: 'Time visible', n: 1 }, { t: 'Deepest scroll', n: 1 }, { t: 'Last' }],
+      d.team.map(function (r) { return [r.person, el('code', { text: r.path }), r.views, r.reads, secs(r.visible_s), (r.max_scroll || 0) + '%', r.last || ''] }))
+      : el('p', { 'class': 'muted', text: 'No signed page views yet: a team member is named only when their browser holds their site key.' }))
+
+    app.appendChild(el('h2', { text: 'Pages' }))
+    var maxv = Math.max.apply(null, (d.pages || []).map(function (p) { return p.total }).concat([1]))
+    app.appendChild(table([{ t: 'Page' }, { t: 'Views', n: 1 }, { t: '' }, { t: 'Readers', n: 1 }, { t: 'Team', n: 1 }, { t: 'Synthetic', n: 1 }, { t: 'Crawlers', n: 1 }, { t: 'Avg time', n: 1 }, { t: 'Avg scroll', n: 1 }],
+      (d.pages || []).slice(0, 40).map(function (p) { return [el('code', { text: p.path }), p.total, el('span', { 'class': 'bar', style: 'width:' + Math.max(2, Math.round(90 * p.total / maxv)) + 'px' }), p.views.readers || 0, p.views.team || 0, p.views.synthetic || 0, p.views.crawlers || 0, p.reads ? secs(p.read_s_avg) : '', p.reads ? p.scroll_avg + '%' : ''] })))
+
+    app.appendChild(el('h2', { text: 'Agents: their own run logs' }))
+    app.appendChild((d.agents.by_agent || []).length ? table([{ t: 'Agent' }, { t: 'Runs', n: 1 }, { t: 'Signed', n: 1 }, { t: 'Read as md', n: 1 }, { t: 'Read as html', n: 1 }, { t: 'Repo files', n: 1 }, { t: 'Did', n: 1 }, { t: 'Last run' }],
+      d.agents.by_agent.map(function (a) { return [a.agent, a.runs, el('span', { 'class': a.signed === a.runs ? 'ok' : 'warn', text: a.signed + '/' + a.runs }), a.read_md, a.read_html, a.read_repo, a.did, a.last] }))
+      : el('p', { 'class': 'muted', text: 'No agent has logged a run yet.' }))
+    if ((d.agents.most_read || []).length) {
+      app.appendChild(el('h2', { text: 'What the agents read most' }))
+      app.appendChild(table([{ t: 'URL or file' }, { t: 'Agents', n: 1 }, { t: 'Which' }], d.agents.most_read.slice(0, 25).map(function (m) { return [el('code', { text: m[0] }), m[1].length, m[1].join(', ')] })))
+    }
+    if ((d.agents.recent || []).length) {
+      app.appendChild(el('h2', { text: 'Latest agent runs' }))
+      app.appendChild(table([{ t: 'Run (UTC)' }, { t: 'Agent' }, { t: 'Trigger' }, { t: 'Read', n: 1 }, { t: 'Did', n: 1 }, { t: 'Signed' }, { t: 'Note' }],
+        d.agents.recent.slice(0, 30).map(function (r) { return [r.run, r.agent, r.trigger || '', (r.read || []).length, (r.did || []).length, el('span', { 'class': r.signed ? 'ok' : 'warn', text: r.signed ? 'yes' : 'no' }), r.notes || ''] })))
+    }
+    app.appendChild(el('footer', { text: d.about }))
+    try { parent.postMessage({ type: 'sg-app-ready' }, '*') } catch (e) { }
+  }
+  function fail(e) { app.innerHTML = ''; app.appendChild(el('p', { 'class': 'warn', text: 'Could not read data/public.json: ' + (e && e.message || e) })); try { parent.postMessage({ type: 'sg-app-ready' }, '*') } catch (x) { } }
+  function load() {
+    if (window.sg && window.sg.vfs && window.sg.vfs.readText) return window.sg.vfs.readText('data/public.json')
+    return fetch('data/public.json').then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text() })   // static hosting
+  }
+  function go() { load().then(function (t) { render(JSON.parse(t)) }).catch(fail) }
+  if (window.sg && window.sg.ready && window.sg.ready.then) window.sg.ready.then(go, go); else setTimeout(go, 0)
+})()
+</script>
+</body>
+</html>

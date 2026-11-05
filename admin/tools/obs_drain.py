@@ -74,11 +74,104 @@ def report(rows, drained_now, today):
                        'signature_findings': sum(1 for r in runs if r.get('sig_finding'))},
             'note': 'Counts over records received in the lanes. Every record is an untrusted claim: the tokens and the key are public, so rows can be forged or flooded; a signed one names a key on this site.'}
 
+APP_SRC = os.path.join(ROOT, 'people', 'dinis', 'observability', 'app', 'index.htm')
+
+def load_rows(vault):
+    rows = []
+    for name in sorted(os.listdir(os.path.join(vault, 'drain'))):
+        if name.endswith('.jsonl'): rows += [json.loads(l) for l in open(os.path.join(vault, 'drain', name)) if l.strip()]
+    return list({r.get('_file') or id(r): r for r in rows}.values())
+
+CRAWLERS = ('googlebot', 'bingbot', 'bot')
+GROUPS = ['readers', 'team', 'synthetic', 'crawlers']
+
+def classes(pages):
+    """Each tab (sid) gets one group, declared signals first, then inferred (the PHP newsroom's rules, observability pack 4)."""
+    by = collections.defaultdict(list)
+    for r in pages: by[r.get('sid')].append(r)
+    out = {}
+    for sid, rs in by.items():
+        agents = {r.get('agent') for r in rs if r.get('agent')}
+        first = min(rs, key=lambda r: str(r.get('ts', '')))
+        if agents & set(CRAWLERS): g = 'crawlers'
+        elif agents & {'webdriver', 'headless'}: g = 'synthetic'
+        elif any(r.get('verified') for r in rs): g = 'team'
+        elif sum(1 for r in rs if r.get('type') == 'view') > 40: g = 'crawlers'
+        elif first.get('tz') in ('UTC', 'Etc/UTC', '') or str(first.get('lang', '')).endswith('@posix'): g = 'synthetic'
+        else: g = 'readers'
+        out[sid] = g
+    return out
+
+def public(rows, now):
+    """What the public vault holds: counts per group, the team's named reads, the agents' runs. No anonymous row, no tab id,
+    no time zone, no language, no referrer: an anonymous reader is only ever a count."""
+    good = [r for r in rows if r.get('v') == 1 and not r.get('test')]
+    pages = [r for r in good if r.get('type') in ('view', 'read') and r.get('path')]
+    runs = sorted([r for r in good if r.get('type') == 'web-summit.agent-run/v1'], key=lambda r: r.get('run', ''), reverse=True)
+    cls = classes(pages)
+    totals = {g: {'views': 0, 'reads': 0, 'sessions': 0} for g in GROUPS}
+    for sid, g in cls.items(): totals[g]['sessions'] += 1
+    daily = collections.defaultdict(lambda: {g: 0 for g in GROUPS})
+    paths = collections.defaultdict(lambda: {'views': {g: 0 for g in GROUPS}, 'reads': 0, 's': 0, 'scroll': 0})
+    for r in pages:
+        g = cls[r.get('sid')]
+        if r['type'] == 'view':
+            totals[g]['views'] += 1; daily[str(r.get('ts', ''))[:10]][g] += 1; paths[r['path']]['views'][g] += 1
+        else:
+            totals[g]['reads'] += 1; p = paths[r['path']]; p['reads'] += 1; p['s'] += r.get('visible_s', 0); p['scroll'] += r.get('scroll', 0)
+    team = collections.defaultdict(lambda: {'views': 0, 'reads': 0, 'visible_s': 0, 'max_scroll': 0, 'last': ''})
+    for r in pages:
+        if not r.get('verified'): continue
+        t = team[(r['person'], r['path'])]; t['last'] = max(t['last'], str(r.get('ts', '')))
+        if r['type'] == 'view': t['views'] += 1
+        else: t['reads'] += 1; t['visible_s'] += r.get('visible_s', 0); t['max_scroll'] = max(t['max_scroll'], r.get('scroll', 0))
+    agents = collections.defaultdict(lambda: {'runs': 0, 'signed': 0, 'read_md': 0, 'read_html': 0, 'read_repo': 0, 'did': 0, 'last': ''})
+    read_by = collections.defaultdict(set)
+    for r in runs:
+        a = agents[r.get('agent', '?')]; a['runs'] += 1; a['signed'] += 1 if r.get('signed') else 0; a['did'] += len(r.get('did', [])); a['last'] = max(a['last'], r.get('run', ''))
+        for x in r.get('read', []):
+            u = str(x.get('url', '')); read_by[u].add(r.get('agent'))
+            a['read_repo' if u.startswith('repo:') else 'read_md' if x.get('as') == 'md' else 'read_html'] += 1
+    keep = ('agent', 'run', 'trigger', 'repo', 'read', 'did', 'tokens', 'notes', 'signed', 'key_id', 'sig_finding')
+    return {'v': 1, 'generated': now, 'records': len(good), 'groups': GROUPS,
+            'totals': totals, 'daily': sorted(daily.items()),
+            'pages': sorted(({'path': k, 'views': v['views'], 'total': sum(v['views'].values()), 'reads': v['reads'],
+                              'read_s_avg': round(v['s'] / v['reads']) if v['reads'] else 0, 'scroll_avg': round(v['scroll'] / v['reads']) if v['reads'] else 0}
+                             for k, v in paths.items()), key=lambda x: -x['total']),
+            'team': [{'person': p, 'path': path, **v} for (p, path), v in sorted(team.items(), key=lambda x: x[1]['last'], reverse=True)],
+            'agents': {'runs': len(runs), 'signed': sum(1 for r in runs if r.get('signed')),
+                       'by_agent': [{'agent': k, **v} for k, v in sorted(agents.items(), key=lambda x: x[1]['last'], reverse=True)],
+                       'most_read': sorted(([u, sorted(a)] for u, a in read_by.items()), key=lambda x: (-len(x[1]), x[0]))[:100],
+                       'recent': [{k: r[k] for k in keep if k in r} for r in runs[:200]]},
+            'findings': {'page_signatures': sum(1 for r in pages if r.get('sig_finding')), 'agent_signatures': sum(1 for r in runs if r.get('sig_finding'))},
+            'about': 'Published by observability@web-summit.dinis (admin/tools/obs_drain.py) from the private vault kuuqr3do. Groups: declared signals first (a crawler or automation flag; a verified site key), then inferred (more than 40 pages in one tab: crawler; a UTC time zone or a POSIX language: synthetic). The team is named only when the browser holds their site key; everyone else is a count. Every record is an untrusted claim: the lanes\' tokens are public.'}
+
+def publish(rows, app_src, pub_vault, app_vault):
+    now = time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime())
+    html = open(app_src).read()
+    manifest = {'entry': 'index.html', 'present': True, 'auto_open': True, 'title': 'Who reads web-summit.sgit.ai', 'hud': {'mode': 'minimal'}, 'permissions': {'fs': {'read': True}}}
+    for v, data in ((pub_vault, True), (app_vault, False)):
+        if not v or not os.path.isdir(v): continue
+        __import__('subprocess').run(['sgit', 'pull'], cwd=v, capture_output=True, text=True)   # a new vault has nothing to pull
+        os.makedirs(os.path.join(v, '.vault'), exist_ok=True)
+        open(os.path.join(v, 'index.html'), 'w').write(html)
+        open(os.path.join(v, '.vault', 'app.json'), 'w').write(json.dumps(manifest, indent=2) + '\n')
+        if data:
+            os.makedirs(os.path.join(v, 'data'), exist_ok=True)
+            with open(os.path.join(v, 'data', 'public.json'), 'w') as f: json.dump(public(rows, now), f, indent=1)
+        r = __import__('subprocess').run(['sgit', 'commit', f'publish {now}'], cwd=v, capture_output=True, text=True)
+        p = __import__('subprocess').run(['sgit', 'push'], cwd=v, capture_output=True, text=True)
+        if p.returncode: print(f'obs_drain: push of {os.path.basename(v)} failed (exit {p.returncode}): ' + (p.stderr or p.stdout).strip().splitlines()[-1][:200])
+    print(f'obs_drain: published {now} to the public vault and the app vault')
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--creds', default=os.path.expanduser('~/.sg-send/obs-dinis/creds.json'))
     ap.add_argument('--vault', default=os.path.expanduser('~/vaults/obs-dinis-data'))
     ap.add_argument('--dry', action='store_true')
+    ap.add_argument('--public', default=os.path.expanduser('~/vaults/obs-dinis-public'), help='the public vault (read key published)')
+    ap.add_argument('--app', default=os.path.expanduser('~/vaults/obs-dinis-ux'), help='the app vault (code only)')
+    ap.add_argument('--publish-only', action='store_true', help='republish from the drained rows without draining')
     o = ap.parse_args()
     c = json.load(open(o.creds))
     from sgit_ai.crypto.PKI__Crypto import PKI__Crypto
@@ -93,7 +186,9 @@ def main():
     lanes = collections.OrderedDict()
     for e in entries: lanes.setdefault(e['inbox'], []).append(e['file_id'])
     print(f"obs_drain: {len(entries)} pending in {len(lanes)} lane(s)" + ''.join(f"; lane {c['tokens'].index(t) + 1 if t in c['tokens'] else '?'}: {len(ids)}" for t, ids in lanes.items()))
-    if o.dry or not entries: return
+    if o.dry: return
+    if not entries or o.publish_only:
+        publish(load_rows(o.vault), APP_SRC, o.public, o.app); return
     key = pki.import_private_key_pem(open(os.path.join(o.vault, 'identity/private/private_key.pem')).read())
     people = json.load(open(os.path.join(ROOT, 'data/person-keys.json')))['keys']
     keys = json.load(open(os.path.join(ROOT, 'data/keys.json')))['keys']
@@ -128,6 +223,7 @@ def main():
     td.sgit(o.vault, 'push')
     for token, ids in done.items():
         for i in range(0, len(ids), 100): td.post(c, 'mark-processed', {'inbox': token, 'file_ids': ids[i:i + 100]})
+    publish(allrows, APP_SRC, o.public, o.app)
     print(f"obs_drain: drained {len(rows)} ({bad} undecryptable), pushed, marked processed; totals {rep['pages']['views']} views, "
           f"{rep['pages']['reads']} reads, {rep['agents']['runs']} agent runs ({rep['agents']['signed']} signed), "
           f"{rep['pages']['signature_findings'] + rep['agents']['signature_findings']} signature finding(s)")

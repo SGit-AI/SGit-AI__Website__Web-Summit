@@ -118,6 +118,11 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
             out.push(vaultAppHtml(person, id))
+        } else if (/^```obs-live [a-z0-9-]+ [a-z0-9]{8,12}\s*$/.test(l)) {
+            const [person, id] = l.slice(12).trim().split(' ')
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push(obsLiveHtml(person, id))
         } else if (l.startsWith('```')) {
             const buf = []
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) buf.push(lines[i])
@@ -424,6 +429,18 @@ const vaultAppHtml = (person, id) => {
         `T=setTimeout(function(){if(m==='app'){f.src=O+'/#'+encodeURIComponent(C);t.textContent='The handshake timed out; opened by the link instead.';}else{t.textContent='The handshake timed out. Reload and try again.';}},12000);}` +
         `b.querySelectorAll('[data-mode]').forEach(function(x){x.addEventListener('click',function(){mount(x.getAttribute('data-mode'));});});` +
         `fs.addEventListener('click',function(){try{if(f.requestFullscreen)f.requestFullscreen();}catch(e){}});}());</script>`
+}
+// the live observability panel: ```obs-live <person> <vault id>``` (observability@web-summit.dinis, 5 November 2026). The
+// page reads the vault itself, in the browser, with sgit.ai's reader (assets/vendor/sgit-ai/2026-11-05/vault-embed.js):
+// headline numbers from data/public.json, then the vault's own app in a sandboxed frame. The key comes only from the
+// person's vaults.json and must be a published read key (sgit_public_read_), as for vault-app.
+const obsLiveHtml = (person, id) => {
+    const v = VAULTS().find(x => x.person === person && x.vault_id === id)
+    if (!v) throw new Error(`obs-live ${person} ${id}: no such vault in people/${person}/vaults.json`)
+    if (!/^sgit_public_read_[0-9a-f]{64}$/.test(String(v.read_key || ''))) throw new Error(`people/${person}/vaults.json: "${v.name}" needs a read_key of the form sgit_public_read_<64 hex> (never a vault key)`)
+    return `<div class="obs-live" data-endpoint="https://dev.send.sgraph.ai" data-vault="${v.vault_id}" data-key="${v.read_key}" data-title="${esc(v.name)}">` +
+        `<p data-head></p><p class="meta" data-note>Opening vault <code>${v.vault_id}</code> with its published read key…</p><div data-app></div></div>` +
+        `<script src="${UP}assets/vendor/sgit-ai/2026-11-05/vault-embed.js" defer></script><script src="${UP}assets/obs-live.js" defer></script>`
 }
 let UP = '../'
 const expandIssues =(body, up = '../') => { UP = up; return body

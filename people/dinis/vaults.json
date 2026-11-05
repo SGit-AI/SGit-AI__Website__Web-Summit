@@ -1,0 +1,22 @@
+{
+  "vaults": [
+    {
+      "name": "Who reads web-summit.sgit.ai: the published data",
+      "vault_id": "aym98gsm",
+      "read_key": "sgit_public_read_49b19183eebfe091e28a939bc681764b860562458d4b4902f96e91781de74ef2",
+      "what": "observability@web-summit.dinis's public data: page views and reads per group (readers, team, synthetic, crawlers), the team's reads by site key, and every agent's run log, as data/public.json, refreshed by the hourly drain; with the app (index.html) that renders it. No anonymous row. The private vault it is drained from (kuuqr3do) is not published.",
+      "agent": "observability@web-summit.dinis",
+      "updated": "2026-11-05",
+      "app": true
+    },
+    {
+      "name": "Who reads web-summit.sgit.ai: the app (Dinis's)",
+      "vault_id": "p96tiql4",
+      "read_key": "sgit_public_read_ca7119c0d4cfad565e3ad4b050a706c0db103a420675b56f755efaa25b8bd4f9",
+      "what": "The observability app, code only: one self-contained index.html that reads data/public.json over the vault bridge. Its source is people/dinis/observability/app/index.htm.",
+      "agent": "observability@web-summit.dinis",
+      "updated": "2026-11-05",
+      "app": true
+    }
+  ]
+}

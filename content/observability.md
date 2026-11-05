@@ -4,15 +4,28 @@ summary: The second observability on web-summit.sgit.ai, run by observability@we
 ---
 Built by **observability@web-summit.dinis** on 5 November 2026, at Dinis Cruz's word: *"this is not about monitoring, this is about information management"* ([the brief](../brief-observability/index.html)). It sits **beside** the page views Jose's agents built and run ([WS-37](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/observability/README.md), vault `1ssnjy23`), so Dinis can experiment without touching theirs. Same design, from [the observability pack](../observability-pack/index.html).
 
+## Live, out of an encrypted vault {#live}
+
+Everything below is read **directly from an encrypted vault, in your browser**. The page holds only the vault's published read key. It works out the vault's address from the key, fetches ciphertext from dev.send.sgraph.ai (which cannot read it), decrypts `data/public.json` with Web Crypto, and then runs the vault's own app in a sandboxed frame. There is no server and no API of ours, and no copy of the data on this site: the hourly drain pushes to the vault, and this page shows that push. ([How](https://sgit.ai/docs/vault/reading-a-vault-file.md).)
+
+```obs-live dinis aym98gsm
+```
+
+The vaults, read only, with no account:
+
+```vaults dinis
+```
+
 ## What runs {#runs}
 
 | Part | Where | What it does |
 |---|---|---|
-| **The data vault** | `kuuqr3do` on dev.send.sgraph.ai, **private** | the drain key (`identity/private/`), five lanes, `drain/<date>.jsonl`, `reports/latest.json` |
-| **The app vault** | `p96tiql4`, code only | the view over the data vault (next) |
+| **The data vault** | `kuuqr3do` on dev.send.sgraph.ai, **private** ([why](#groups)) | the drain key (`identity/private/`), five lanes, `drain/<date>.jsonl`, `reports/latest.json` |
+| **The public vault** | `aym98gsm`, **read key published** | `data/public.json` (counts per group, the team's named reads, the agents' runs) and the app; written by the drain, read by [the live panel](#live) |
+| **The app vault** | `p96tiql4`, code only, **read key published** | the app (`index.html`), from `people/dinis/observability/app/` |
 | **The page sender** | `assets/obs-dinis.js`, `assets/obs-dinis.json`, on every page | a **view** when a page loads, and a **read** the first time the tab is hidden or closed: seconds the page was visible and the deepest scroll, in percent |
 | **The agent lane** | `admin/tools/agent-log.mjs` | one record per agent run: what it read (Markdown or HTML), what it did; signed with the agent's own key |
-| **The drain** | `admin/tools/obs_drain.py`, run by observability@web-summit.dinis | list, fetch, open, verify, append, report, push, then mark processed |
+| **The drain** | `admin/tools/obs_drain.py`, hourly, run by observability@web-summit.dinis | list, fetch, open, verify, append, report, push, mark processed; then publish `data/public.json` and the app to the public vault |
 
 ## The lanes {#lanes}
 
@@ -50,10 +63,23 @@ The drain accepts the signature only from an active key on [the keys page](../ke
 
 No IP address, no cookie, no user-agent string (automation is recorded by class: `webdriver`, `headless`, a crawler's name). Do Not Track, Global Privacy Control and the footer's **Pause** switch stop this sender too. Time visible and scroll depth are measured in the browser and sent once per page per tab. An agent record carries URLs without their query strings, commit ids and counts: nothing private. Per-person reads are for the team only, for people with a key; nobody outside the team is ever named.
 
+## Who is who: the four groups {#groups}
+
+Each tab is put in one group, from **declared** signals first, then **inferred** ones (the PHP newsroom's rules):
+
+| Group | Declared | Inferred |
+|---|---|---|
+| **Crawlers** | the browser names a crawler (`googlebot`, `bingbot`, `bot`) | more than 40 pages in one tab |
+| **Synthetic** | `navigator.webdriver` or a headless browser: our own agents' checks, and this agent's test traffic | a `UTC` time zone or a POSIX language: browsers in cloud containers |
+| **The team** | a signature from a site key on `data/person-keys.json` | (never inferred) |
+| **Readers** | | everyone else |
+
+**Why the private vault stays private:** its read key would also give out the lanes' enum key (derived from it) and the drain key kept inside it, so anyone could empty the lanes or read raw rows of anonymous readers. So the drain publishes what is meant to be public into a second vault, and only that vault's read key is on this page.
+
 ## Next {#next}
 
-1. `/stats/`: per page, per person, per agent, from a public copy of the report (counts and the team's named reads; no anonymous rows).
-2. The app in vault `p96tiql4`, linked read-only by the data vault.
+1. Where and how to present it (a section on the home page, the stand-up show, each person's dashboard): Dinis to decide.
+2. A page per agent: its runs, what it read, what it never read.
 3. The newsroom's sender (lane 5), as a patch for newsroom@web-summit.dinis.
 4. The calibration loop: from the agent runs, findings per agent for Dinis and the mentors.
 5. The security review by security@web-summit.dinis of the sender, the lane and the drain.
