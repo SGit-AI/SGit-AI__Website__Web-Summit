@@ -1,103 +1,120 @@
 {
  "schema": "web-summit.sgit.ai/watcher-activity/v1",
  "by": "watcher@web-summit.jose",
- "run": "2026-11-05T07:25Z",
+ "run": "2026-11-05T12:15Z",
  "scope": "the whole team, read-only (decided by Jose on 5 November 2026, WS-134; policy.json scope_decision)",
+ "routes_to": {
+  "reader": "conductor@web-summit.jose",
+  "how": "every watcher release carries For: jose, conductor@web-summit.jose (and security@web-summit.dinis for anything serious), with medium and high flags at the top of the commit body; the watcher runs at :15, five minutes before the conductor's :20 wake",
+  "since": "2026-11-05, at Jose's word",
+  "asked_of_conductor": "at Jose's word: read this file and latest.md at each wake",
+  "proposed_by_watcher": "for the conductor and Jose to decide: put high and medium flags in Jose's brief with a recommendation; add those needing a decision to the next stand-up; tell Jose's own agents about flags on them in a commit For: <agent>; add the step to its prompts in people/jose/kit/README.md and record the routing in people/jose/watcher/policy.json; record in that policy.json Jose's answer on the ledger (fecb8f0, item 5: the watcher may write its own ledger file only)"
+ },
  "range": {
-  "from": "3759445",
-  "to": "849c4be",
+  "from": "849c4be",
+  "to": "5677759",
   "branch": "dev",
   "why_from": "state.json's last commit"
  },
  "counts": {
-  "commits": 242,
-  "ci_releases": 108,
-  "watcher_own": 1,
-  "agents": 133,
+  "commits": 120,
+  "ci_releases": 51,
+  "watcher_own": 2,
+  "agents": 67,
   "no_agent_name": 0,
-  "reviewed_by_security": 87,
-  "not_yet_reviewed_by_security": 46,
-  "security_last_reviewed_commit": "fbae8c6"
+  "reviewed_by_security": 62,
+  "not_yet_reviewed_by_security": 5,
+  "security_last_reviewed_commit": "a45be68"
  },
  "by_person": {
-  "jose": 31,
-  "angelo": 14,
-  "silvio": 23,
-  "dinis": 65
+  "angelo": 19,
+  "dinis": 18,
+  "vicky": 17,
+  "jose": 8,
+  "indi": 3,
+  "silvio": 2
  },
  "by_agent": {
-  "conductor@web-summit.dinis": 23,
-  "conductor@web-summit.jose": 14,
-  "observability@web-summit.dinis": 12,
-  "dev@web-summit.silvio": 7,
-  "dashboard@web-summit.dinis": 7,
-  "dev@web-summit.dinis": 6,
-  "conductor@web-summit.silvio": 6,
-  "conductor@web-summit.angelo": 5,
-  "dev@web-summit.jose": 5,
-  "designer@web-summit.jose": 5,
-  "designer@web-summit.dinis": 5,
-  "video@web-summit.silvio": 5,
-  "outreach@web-summit.silvio": 4,
-  "journalist@web-summit.dinis": 4,
-  "security@web-summit.dinis": 3,
-  "dev@web-summit.angelo": 3,
-  "dashboard@web-summit.angelo": 3,
-  "team-collaboration@web-summit.angelo": 3,
-  "helper@web-summit.jose": 2,
-  "automation@web-summit.jose": 2,
-  "vault@web-summit.jose": 2,
-  "abp@web-summit.dinis": 2,
+  "conductor@web-summit.angelo": 10,
+  "logistics@web-summit.vicky": 4,
+  "mentor@web-summit.dinis": 4,
+  "conductor@web-summit.jose": 3,
+  "dashboard@web-summit.vicky": 3,
+  "conductor@web-summit.dinis": 3,
+  "helper@web-summit.angelo": 3,
+  "dashboard@web-summit.jose": 2,
+  "researcher@web-summit.vicky": 2,
+  "team-collaboration@web-summit.angelo": 2,
+  "pm@web-summit.vicky": 2,
+  "procurement@web-summit.silvio": 2,
+  "programme@web-summit.vicky": 2,
   "sgit@web-summit.dinis": 2,
-  "dashboard@web-summit.jose": 1,
-  "newsroom@web-summit.dinis": 1,
-  "vault@web-summit.silvio": 1
+  "journalist@web-summit.dinis": 2,
+  "dev@web-summit.angelo": 2,
+  "conductor@web-summit.indi": 1,
+  "dashboard@web-summit.indi": 1,
+  "curator@web-summit.vicky": 1,
+  "project-manager@web-summit.dinis": 1,
+  "dev@web-summit.vicky": 1,
+  "abp@web-summit.dinis": 1,
+  "conductor@web-summit.vicky": 1,
+  "pulse@web-summit.dinis": 1,
+  "designer@web-summit.dinis": 1,
+  "dev@web-summit.indi": 1,
+  "dev@web-summit.jose": 1,
+  "dashboard@web-summit.angelo": 1,
+  "dev@web-summit.dinis": 1,
+  "vault@web-summit.angelo": 1,
+  "vault@web-summit.vicky": 1,
+  "automation@web-summit.jose": 1,
+  "observability@web-summit.dinis": 1,
+  "security@web-summit.dinis": 1,
+  "designer@web-summit.jose": 1
  },
  "flags": [
   {
    "level": "high",
-   "what": "contact-detail rule hits in a public page",
-   "where": "f20d264 (conductor@web-summit.dinis, 2026-11-05) content/family-riskmandate-agent.md lines 6, 18 and 32",
+   "what": "still open: contact-detail rule hits in a public page",
+   "where": "f20d264 (conductor@web-summit.dinis) content/family-riskmandate-agent.md lines 6, 18 and 32",
    "rule": "an email address (vault-audit.mjs)",
-   "context": "the three lines are still on dev; the gate's contact check (check 15) does not cover content/, so the gate passed; sent to security in this commit (For: security@web-summit.dinis); location and rule only"
+   "context": "the three lines are still on dev at 5677759; security's 11:50 review (team/security/reviews/2026-11-05-1150.md) reviewed this file for another reason (item 3) and does not mention these lines; sent to security again"
   },
   {
    "level": "medium",
-   "what": "designer@web-summit.jose released without the reviewer",
-   "where": "329a56a (23:42), 276aa5b (23:55), ba597ad (00:12), fab23be (01:34): each its own release, no Reviewed-by and no review record naming it",
-   "context": "the kit says every agent of Jose's runs the reviewer; its next push, 629a586 (01:42), carries Reviewed-by with record 2026-11-05-0145-designer.md"
-  },
-  {
-   "level": "medium",
-   "what": "shared build code and other people's folders changed",
-   "where": "dev@web-summit.silvio: admin/build/build.mjs (5fe3497), admin/build/commandcentre.mjs and assets/cc/app.js, app.css (f56e72f, 09e55c4, 5fe3497, f6b12bc, 33198ea); people/angelo, dinis, indi, jose and vicky photo.jpg (5fe3497)",
-   "context": "listed, not judged; for security's review"
+   "what": "agents that look stopped (two or more slots with no commit)",
+   "where": "dashboard@web-summit.dinis (hourly from 07:06, last 02:54); outreach@web-summit.silvio (mail check every 2 h at :15, last 02:28)",
+   "context": "only commits are visible; a mail check with nothing to send looks the same"
   },
   {
    "level": "note",
-   "what": "shared build code changed by Jose's conductor",
-   "where": "1c0fc83 (00:56) admin/build/commandcentre.mjs",
-   "context": "carries Reviewed-by; made 14 minutes before Jose's rule that shared build code goes to its owner first (088770e, 01:10)"
+   "what": "agents late by one slot",
+   "where": "vault@web-summit.jose (11:40 slot, last 01:36); helper@web-summit.jose (08:50 slot, last 01:19); curator@web-summit.vicky (11:45 slot, last 07:49)",
+   "context": "only commits are visible; vault's lane drain and helper's run commit nothing when there is nothing new"
   },
   {
    "level": "note",
-   "what": "key-shape rule hits",
-   "where": "3e5b5a3 (dev@web-summit.dinis) assets/feedback.json lines 55, 67, 79",
-   "rule": "a token assignment",
-   "context": "the feedback lanes' append tokens, public by design as before; location and rule only"
+   "what": "a shared site file and a key-shape rule hit",
+   "where": "11884c6 (vault@web-summit.angelo): assets/feedback.json line 91, rule a token assignment; also data/inbox/lane-conductor-angelo.json",
+   "context": "a feedback lane's append token, public by design, as with the earlier lanes; location and rule only"
   },
   {
    "level": "note",
-   "what": "writes outside the author's lane (other people's agents, not the site's keepers)",
-   "where": "conductor@web-summit.silvio 9b3dbde: assets/video/* and content/video-access-permission.md, content/videos.md; 7d4a08d, 339b7d1: data/sealed/silvio/; video@web-summit.silvio 4db46c0: four content/video-storyboard-*.md and content/videos.md; dev@web-summit.jose 39816bd: assets/feedback.js and three content/video pages; conductor@web-summit.jose dc54dd3: content/brief-jose.md, content/meet-jose.md",
-   "context": "listed, not judged. Dinis's agents keep the site and wrote outside their folders in 61 commits (counted, not listed)"
+   "what": "board files not named in the commit's Issue: trailer",
+   "where": "0e80f5e (conductor@web-summit.angelo): board/WS-106, WS-36, WS-45, WS-76, WS-78",
+   "context": "a record of Angelo's words on several issues, per its message; listed, not judged"
   },
   {
-   "level": "info",
-   "what": "session branch with commits not on dev",
-   "where": "claude/nifty-bell-f1rkca (dev@web-summit.silvio): 11 merge and pre-rebase commits, no file difference from dev",
-   "context": "unsigned merges named only 'Claude'"
+   "level": "note",
+   "what": "content pages written by person agents",
+   "where": "f5ec850 (helper@web-summit.angelo) content/help.md; 53ff7af (procurement@web-summit.silvio) content/impressao.md",
+   "context": "listed, not judged. Dinis's agents keep the site and wrote outside their folders (counted, not listed)"
   }
+ ],
+ "recovered": [
+  "dev@web-summit.angelo (10:42)",
+  "procurement@web-summit.silvio (11:05)",
+  "conductor@web-summit.angelo (12:00)",
+  "pulse@web-summit.dinis (08:42)"
  ],
  "open_from_earlier_runs": [
   {
@@ -116,246 +133,81 @@
    "level": "info",
    "what": "session branch is a pre-rebase copy",
    "where": "claude/relaxed-hypatia-eo624i at 63e25ec (vault@web-summit.jose), the same patch as 1770d61 on dev"
+  },
+  {
+   "from": "0316656",
+   "what": "dev@web-summit.silvio changed shared build code and five people's photos; for security"
   }
  ],
  "reviewer_trailer": {
-  "rule": "from 5 November every commit of a push carries Reviewed-by (people/jose/reviewer/ROLE.md step 5)",
-  "jose_commits_checked": 31,
-  "missing": [
-   "329a56a",
-   "276aa5b",
-   "ba597ad",
-   "fab23be"
-  ]
+  "jose_commits_checked": 8,
+  "missing": []
  },
  "branches": {
-  "main": "no new commit (last 81353d4, site v0.2.0, 2 November)",
-  "moved, on dev": [
-   "claude/conductor-jose-setup-ogxaka (a5267fc, conductor@web-summit.jose)",
-   "claude/modest-brahmagupta-37bfva (fe77831, conductor@web-summit.angelo)",
-   "claude/modest-lamport-v1ejmm (0451c24, team-collaboration@web-summit.angelo)"
+  "main": "no new commit (last 81353d4)",
+  "moved, all on dev": [
+   "claude/conductor-jose-setup-ogxaka (ccfecef)",
+   "claude/modest-brahmagupta-37bfva (28c6f32)",
+   "claude/modest-lamport-v1ejmm (31ee5e9)"
   ],
-  "new, on dev": [
-   "claude/optimistic-feynman-7pkot9 (03c3b62, outreach@web-summit.silvio)"
-  ],
-  "not on dev": [
-   "claude/nifty-bell-f1rkca (bc67b3c, merges only)"
-  ]
+  "new": []
  },
- "agents_schedule": {
-  "stopped (two slots with no commit)": [
-   "dev@web-summit.angelo (every 2 h at :35; last 02:37)",
-   "outreach@web-summit.silvio (mail check every 2 h at :15; last 02:28)",
-   "procurement@web-summit.silvio (mail check every 2 h at :39; last 4 Nov 17:50)"
-  ],
-  "late (one slot)": [
-   "conductor@web-summit.angelo (hourly at :20; last 05:21)",
-   "dashboard@web-summit.dinis (hourly 07:06 to 22:06; last 02:54)",
-   "pulse@web-summit.dinis (19:40 slot; last 4 Nov 17:41)"
-  ],
-  "caveat": "only commits are visible: an agent that runs and finds nothing to commit looks the same as one that did not run (the mail checks most of all)",
-  "jose": "all on time; the watcher ran at 07:15 (this run)"
- },
+ "conductor_request": "the 11:25 request (0292242) has no answer yet; the conductor's next wake is 12:20",
  "commits_jose": [
   {
-   "sha": "d5a3428",
-   "time": "2026-11-04T23:11:53Z",
+   "sha": "57c685a",
+   "time": "2026-11-05T07:24:49Z",
    "agent": "conductor@web-summit.jose",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
   },
   {
-   "sha": "11884fc",
-   "time": "2026-11-04T23:24:35Z",
-   "agent": "helper@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "998e857",
-   "time": "2026-11-04T23:26:32Z",
-   "agent": "automation@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass)"
-  },
-  {
-   "sha": "f56e33c",
-   "time": "2026-11-04T23:29:15Z",
+   "sha": "4a947dd",
+   "time": "2026-11-05T07:37:22Z",
    "agent": "dashboard@web-summit.jose",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
   },
   {
-   "sha": "765de20",
-   "time": "2026-11-04T23:35:55Z",
+   "sha": "70f04c1",
+   "time": "2026-11-05T09:38:49Z",
+   "agent": "dev@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+  },
+  {
+   "sha": "be00846",
+   "time": "2026-11-05T10:15:02Z",
    "agent": "automation@web-summit.jose",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
   },
   {
-   "sha": "3b3458f",
-   "time": "2026-11-04T23:37:58Z",
-   "agent": "vault@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "39816bd",
-   "time": "2026-11-04T23:40:28Z",
-   "agent": "dev@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "5b4ddc1",
-   "time": "2026-11-04T23:41:12Z",
+   "sha": "ccfecef",
+   "time": "2026-11-05T11:21:34Z",
    "agent": "conductor@web-summit.jose",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
   },
   {
-   "sha": "329a56a",
-   "time": "2026-11-04T23:42:42Z",
-   "agent": "designer@web-summit.jose",
-   "reviewed_by": null
-  },
-  {
-   "sha": "cceed3c",
-   "time": "2026-11-04T23:44:32Z",
-   "agent": "conductor@web-summit.jose",
+   "sha": "fecb8f0",
+   "time": "2026-11-05T11:23:19Z",
+   "agent": "dashboard@web-summit.jose",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
   },
   {
-   "sha": "81ee5d7",
-   "time": "2026-11-04T23:44:51Z",
-   "agent": "dev@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "e9ed7a4",
-   "time": "2026-11-04T23:44:51Z",
-   "agent": "dev@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "d2105fa",
-   "time": "2026-11-04T23:48:29Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "276aa5b",
-   "time": "2026-11-04T23:55:50Z",
-   "agent": "designer@web-summit.jose",
-   "reviewed_by": null
-  },
-  {
-   "sha": "bf4bacd",
-   "time": "2026-11-05T00:01:21Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "ba597ad",
-   "time": "2026-11-05T00:12:30Z",
-   "agent": "designer@web-summit.jose",
-   "reviewed_by": null
-  },
-  {
-   "sha": "86bb2ec",
-   "time": "2026-11-05T00:17:17Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "efcb4b0",
-   "time": "2026-11-05T00:22:37Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass)"
-  },
-  {
-   "sha": "1c0fc83",
-   "time": "2026-11-05T00:56:21Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "c4cd510",
-   "time": "2026-11-05T01:05:43Z",
-   "agent": "dev@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "088770e",
-   "time": "2026-11-05T01:10:00Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "c3342b2",
-   "time": "2026-11-05T01:18:27Z",
-   "agent": "helper@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "3b0b465",
-   "time": "2026-11-05T01:19:23Z",
-   "agent": "dev@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "f15c3f9",
-   "time": "2026-11-05T01:23:43Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "fab23be",
-   "time": "2026-11-05T01:34:06Z",
-   "agent": "designer@web-summit.jose",
-   "reviewed_by": null
-  },
-  {
-   "sha": "47b7021",
-   "time": "2026-11-05T01:36:01Z",
-   "agent": "vault@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass)"
-  },
-  {
-   "sha": "629a586",
-   "time": "2026-11-05T01:42:47Z",
+   "sha": "1fa1d6f",
+   "time": "2026-11-05T11:55:07Z",
    "agent": "designer@web-summit.jose",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
   },
   {
-   "sha": "ea9bcdf",
-   "time": "2026-11-05T01:45:16Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass)"
-  },
-  {
-   "sha": "883fc8e",
-   "time": "2026-11-05T02:19:02Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "dc54dd3",
-   "time": "2026-11-05T02:30:20Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "a5267fc",
-   "time": "2026-11-05T02:53:48Z",
+   "sha": "f3aadb4",
+   "time": "2026-11-05T11:56:26Z",
    "agent": "conductor@web-summit.jose",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
   }
  ],
  "not_done_this_run": [
-  "the accountant's ledger line (people/jose/accountant/ledger/): outside the watcher's policy.json writes, for Jose to add or drop"
+  "the accountant's ledger line: Jose's answer (fecb8f0, item 5) is not yet in the watcher's policy.json writes"
  ],
  "could_not_check": [
   "whether scheduled tasks fired when they made no commit",
   "anything not public in the repository"
- ],
- "routes_to": {
-  "reader": "conductor@web-summit.jose",
-  "how": "every watcher release carries For: jose, conductor@web-summit.jose (and security@web-summit.dinis for anything serious), with medium and high flags at the top of the commit body; the watcher runs at :15, five minutes before the conductor's :20 wake",
-  "since": "2026-11-05, at Jose's word",
-  "asked_of_conductor": "at Jose's word: read this file and latest.md at each wake",
-  "proposed_by_watcher": "for the conductor and Jose to decide: put high and medium flags in Jose's brief with a recommendation; add those needing a decision to the next stand-up; tell Jose's own agents about flags on them in a commit For: <agent>; add the step to its prompts in people/jose/kit/README.md and record the routing in people/jose/watcher/policy.json; record in that policy.json Jose's answer on the ledger (fecb8f0, item 5: the watcher may write its own ledger file only)"
- }
+ ]
 }
