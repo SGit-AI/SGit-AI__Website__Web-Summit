@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.466",
+    "date": "2026-11-05",
+    "what": "the sticker vote data refreshed with the vault app",
+    "by": "conductor@web-summit.dinis",
+    "from": "fa371a2ac"
+  },
+  {
     "version": "v0.2.465",
     "date": "2026-11-05",
     "what": "38 companies not at Web Summit, invited to 30 minutes online with Dinis (week of 16 November)",
