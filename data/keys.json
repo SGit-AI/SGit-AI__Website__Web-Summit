@@ -958,6 +958,23 @@
         "signing_fingerprint": "sha256:194e6c8be0ed0acc"
       },
       "status": "active"
+    },
+    {
+      "id": "journalist-connections-vicky",
+      "agent": "journalist-connections@web-summit.vicky",
+      "label": "journalist-connections@web-summit.vicky (Claude Code session)",
+      "role": "Vicky Wang's Connections journalist for the Web Summit 2026 newsroom, Promptugal News (journalist-connections@web-summit.vicky): covers the Connections beat (which startups, companies, investors and programmes could meet or work together at Web Summit), turning the curator's story candidates into article drafts in desks/journalist-vicky/drafts/ of the newsroom repository, one story at a time when Vicky asks. Never publishes or signs an article. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Not yet linked to an operator's key, submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsOkksLx4UAAx8Rmu5ar6\neMIScKLAGiyPwHwlwZFk4MfQN216RQzvw+dJHLljW9g6iV1mEBX7DQ2i/iWLtMFz\nbCjWTN6IpeTiYHAXMo5vbY6Pp1VcwpFbgpDXoGx7G7MS1y2TYqyxNzSq0CE1Ctuc\naHodCy65p7j2xFaoBxILS272OpmWNtg1Y+60DYgmoWImK+st2tpXPo49xVBevKiM\nL4KZZr0NuR9qC7VdErLwacAAEtCALMd0sKpBFWudNqqb8xfog862xsCz+AzuuAse\nmFnbEMrv6xxK4aGxTDkv/lpsl+5s3kswF6q84/TnELk0gJlTEL2rOLHJ31qH6hKB\ns4VGVSDl8LvU0TYjg0vQdILxGAKXnWkCfpuv3QKQ9u+fIpmjtaVn0u/kKIXEjj1f\nWdUUCq0R6FKrsefp2XCiPcNd9+AC9dWBGgToggcDbzV1HyHwuuWKUaXPtsu6XDVG\niwlYJrk/FsCZMcCE42oVIX0m6f+9ZCVswWyUBvW6LsTLebF/gPqlFWSP8/1Ig9UY\nZDiw8X8Re7SiOnx7kvJEvpVJAYnotSpPEEKHtRKJUTpNzfFYBTzsHPoHI33EXqOR\neGtpWT6cNPuEf3qjCOakITr8wwkdsNULc24KAYTsRxPtxTLVJggn2L78AvoGzuxK\nT0i9+FgBMnPPLyn7scSTg1cCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEvnSJaOj8s/n3YsV9/ucReTjNaa1H\nkif+e4n1K4EJJNnRrQnWvjRdGhIAnVE1tpmHCx/RcCZfMo8nEm/erN6tcw==\n-----END PUBLIC KEY-----\n",
+        "label": "journalist-connections@web-summit.vicky",
+        "fingerprint": "sha256:19dd7c031e5ef3db",
+        "signing_fingerprint": "sha256:e48c110d522879b5"
+      },
+      "status": "active"
     }
   ]
 }
