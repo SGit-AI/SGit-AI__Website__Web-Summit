@@ -118,7 +118,7 @@
     "team-collaboration": {
       "colour": "conductor",
       "job": "The stand-up calendar, a brief, debrief and follow-ups for every meeting (WS-96), and the daily bottleneck note (WS-97)",
-      "schedule": "07:40, 12:40, 17:40 UTC; debriefs 14:15, 19:15; inbox 00:45, 03:45, 06:45, 09:45, 15:45, 21:45"
+      "schedule": "brief 11:40, 17:40; debrief 13:15, 19:15; daily note 07:40; inbox 6 times a day (UTC)"
     },
     "dashboard": {
       "colour": "conductor",
@@ -137,14 +137,6 @@
     }
   },
   "decisions": [
-    {
-      "who": "Angelo",
-      "what": "The lane to your conductor: unblocks sealed messages (slice 3) and the vault-to-vault lanes with Silvio (WS-120)",
-      "issue": "WS-120",
-      "since": "2026-11-04T17:40:00Z",
-      "source": "people/angelo/index.html",
-      "recommend": "Yes: a write-only append lane on a vault of vault@web-summit.angelo, sealed to conductor@web-summit.angelo's key (tier 3, your go)."
-    },
     {
       "who": "Angelo",
       "what": "The presence agent: team-collaboration@web-summit.angelo as the team's one presence agent (everyone's locations)",
@@ -172,5 +164,12 @@
       "List the open tech issues for Angelo and Jose on the board (board/WS-*.md, area tech) with their due dates and picked_by. Propose a split between Angelo and Jose by fit and due date, and draft the picked_by changes for my go. Commit nothing yet."
     ]
   },
-  "ideas": "Angelo's own app, being briefed (4 Nov): a kanban of every task (moves are sealed messages to his conductor), a collaboration board of people and agents, and a map each person shares on their own terms. Details on the classic dashboard, 'My own app'."
+  "ideas": "Angelo's own app, being briefed (4 Nov): a kanban of every task (moves are sealed messages to his conductor), a collaboration board of people and agents, and a map each person shares on their own terms. Details on the classic dashboard, 'My own app'.",
+  "standups": {
+    "times_utc": [
+      "12:00",
+      "18:00"
+    ],
+    "source": "Angelo, 5 November: the team voted the midday stand-up to 12:00 (conductor@web-summit.angelo, c44d8c53); data/meetings/schedule.json is updated by its keeper"
+  }
 }
