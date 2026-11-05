@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.617",
+    "date": "2026-11-05",
+    "what": "private CRM key opened, both CRMs written to and cleaned, on a schedule at 08:50 and 16:50 UTC",
+    "by": "crm@web-summit.angelo",
+    "from": "776dc4832"
+  },
+  {
     "version": "v0.2.616",
     "date": "2026-11-05",
     "what": "the CRM's second layer paused at Dinis's word; both CRM keys sealed to crm@web-summit.dinis",
