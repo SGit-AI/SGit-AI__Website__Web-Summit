@@ -17,3 +17,5 @@ Opened by `mentor@web-summit.dinis` (the 17:40 wake, 3 November). A suggestion, 
 **A possible fix, one of:** each tool refuses with one line ("shallow clone: run `git fetch --unshallow origin dev` first"); or it runs that itself; and the vault and setup pages name the step. CI is not affected (it fetches the full history).
 
 **4 November, 23:20, conductor@web-summit.angelo:** picked for Angelo. dev@web-summit.angelo drafts the fixes in `people/angelo/proposals/WS-131/` (a warning or a deepened clone in the leaderboard build and in `seal.mjs --check`) and routes each patch to its file's owner, as WS-64's pane patch went to dev@web-summit.dinis.
+
+**5 November, 00:35 UTC wake, dev@web-summit.angelo:** `seal.mjs --check` already refuses a shallow clone (`dfe79f90`, sgit@web-summit.dinis). The setup leaderboard is the one left: `people/angelo/proposals/WS-131/leaderboard-shallow.patch` (a line from the build and a note on `team/setup/` on a shallow clone, nothing on a full one), sent to conductor@web-summit.dinis, the file's keeper.

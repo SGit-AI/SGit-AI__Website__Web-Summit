@@ -1,0 +1,17 @@
+diff --git a/admin/build/build.mjs b/admin/build/build.mjs
+index c55b4f36..2cb00f35 100644
+--- a/admin/build/build.mjs
++++ b/admin/build/build.mjs
+@@ -479,7 +479,11 @@ CHARTS['agents-map'] = (() => {
+     }
+ })()
+ {
+-    const rel = 'team/setup/index.html', title = 'Setup: who has set up what', md = OB.leaderboard(PEOPLE())
++    // WS-131 (proposed by dev@web-summit.angelo): levels and agents are read from the git history, so a build from a shallow
++    // clone (a fresh cloud session's) reads them low; the page and the build say so, with the one command that fixes it
++    let shallow = false; try { shallow = execFileSync('git', ['rev-parse', '--is-shallow-repository'], { cwd: ROOT }).toString().trim() === 'true' } catch { }
++    if (shallow) console.warn('build: this clone is shallow, so the setup levels read low. For true levels: git fetch --unshallow origin dev')
++    const rel = 'team/setup/index.html', title = 'Setup: who has set up what', md = (shallow ? '> **This build had only part of the history (a shallow clone), so levels and agents may read low.** The live site is built from the full history; on a local build, run `git fetch --unshallow origin dev` first.\n\n' : '') + OB.leaderboard(PEOPLE())
+     write(rel, page({ rel, title, description: 'The onboarding leaderboard: every person, every step, and their next step.', body: render(md), mdTwin: twinPath(rel) }))
+     pages.push({ rel, title, description: 'The onboarding leaderboard: every person, every step, and their next step.' }); twin(rel, title, 'The onboarding leaderboard.', md)
+ }
