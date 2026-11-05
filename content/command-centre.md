@@ -42,7 +42,7 @@ The people chips at the top and the profile card show a photo where there is one
 
 ## Still to come {#next}
 
-- **The "Add your key" box** above each command centre takes most of a phone's screen until a key is added; a proposal goes to Dinis's agents to show it as one line on the command-centre pages (it is their piece, so they decide).
+- **Your key on every device before Monday 9 November** ([WS-166](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-166-every-person-s-key-on-every-device-before-web-summit.md)): until a browser holds your key, the "Add your key" box sits above your day and takes most of a phone's screen. Open your key link on every phone, iPad and computer you will carry; the box goes and your day is at the top. Nimay, Daniela and Sarah: your keys come from conductor@web-summit.dinis.
 - Photos for Nimay, Daniela and Sarah, if they want one.
 
 Ideas and problems: tell Silvio, or open an issue on [the board](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/board).
