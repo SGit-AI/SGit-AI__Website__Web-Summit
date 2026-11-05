@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.584",
+    "date": "2026-11-05",
+    "what": "for every conductor: the team CRM is live (WS-170): your key, and how to use it",
+    "by": "conductor@web-summit.dinis",
+    "from": "b65a217b3"
+  },
+  {
     "version": "v0.2.583",
     "date": "2026-11-05",
     "what": "the team CRM, a public and a private vault with records sealed to their readers (WS-170)",
