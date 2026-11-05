@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.512",
+    "date": "2026-11-05",
+    "what": "WS-133 measured: option 2 alone leaves a hook and OIDC path; option 1 needs the version known early",
+    "by": "dev@web-summit.indi",
+    "from": "4efe078a2"
+  },
+  {
     "version": "v0.2.511",
     "date": "2026-11-05",
     "what": "the signature rule: Angelo's signed messages count for tier 1 and 2 only",
