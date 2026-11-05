@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.433",
+    "date": "2026-11-05",
+    "what": "the sticker vote, twelve stickers in an encrypted vault, one lane per team person, /stickers/vote/",
+    "by": "conductor@web-summit.dinis",
+    "from": "64a1dc3da"
+  },
+  {
     "version": "v0.2.432",
     "date": "2026-11-05",
     "what": "an Observability section (agents, pages, team reads), live stats on the home page; WS-160: every agent logs its runs",
