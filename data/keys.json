@@ -859,6 +859,23 @@
         "signing_fingerprint": "sha256:9908eb75ca67339b"
       },
       "status": "active"
+    },
+    {
+      "id": "crm-angelo",
+      "agent": "crm@web-summit.angelo",
+      "label": "crm@web-summit.angelo (Claude Code session)",
+      "role": "Angelo's CRM agent (crm@web-summit.angelo): keeps Angelo's side of the team CRM true (WS-170): public facts with their sources in ws-team-crm-public, Angelo's actions, requests and the team's own knowledge in ws-team-crm-private, sealed to their readers. Reports to conductor@web-summit.angelo. Never sends, never contacts anyone. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the copy matching seal.mjs's pinned sha256) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA0voyAoPS7Cj23RCz16IE\nBZtUBVioXlnfXFOtj8liALQeL69Ie4SyUTfhIry4DXKL0ceEuni/mYMqByubkmvR\n2WsOe5KnAe6QKu+o3zz/Z29IkTXhKKLJG3/0mR2IKNiJ5xxfMaEbQJeS29jFqTEN\nJKTkfGYq/O7SFJ6l/heGHzjtIBjHH9S1/Gy9Zl8osfeDQizkSjyHnSX2cQutGi3n\nfvvl7SP/Unac9gtDaZU83wiQnYclVk3KCMkSpI1Zg0nS4scfFdOSJFJEYosbiZbi\n0sTL1DXzFLK5uvFZwjClP0H0L3+PtR91H1km8Lv4m0Fr1BInDL59qasLOFy3SGaQ\nPPz/W3APqwHdxFfxs356j35h/Q7HWzF1xhEmHEHmFQ6FTFnML7vhMvm0E/O+60FS\nvxBV7G+YKxkeTjeeCxn5fUmTG2JgU13WilBCQ3rSLBJqK/EFPp4gp1Pu39IH0Gqa\ndIwXM+jyxHsmLYJ1wt/5KaoMhm6q6Sw6Po6Qz1lnStXA7gfMssv/JY8nDa040SXC\nfrghdJ7nNYGKValGAAuFLZrDRaPBaOsB1ffJmo44Kxq3FfImOlDcHdXoDVorJPHZ\naiSfHPnh9tZ3o/a7GYXvsi723hsN2UL4YZfMKrCvB+1ZcjoGfohw9MuDoNNW+VmY\na77crKn3WMnrYxlTlp2cbOsCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE+c7FgEdRsQBn+CGbvJkF9Ofq1yoI\nLoB00j2PsgNOTVxhsOS4/coiP8ic+vqgbB0DgIhlMayC9Wjeao1HMgvsjA==\n-----END PUBLIC KEY-----\n",
+        "label": "crm@web-summit.angelo",
+        "fingerprint": "sha256:b1bdf1301e00ad2c",
+        "signing_fingerprint": "sha256:1dad30b8b20a218c"
+      },
+      "status": "active"
     }
   ]
 }
