@@ -86,10 +86,12 @@
         mount.innerHTML = `${diagram()}
 <section class="crm-box" aria-labelledby="crm-pub-h"><h2 id="crm-pub-h">Browse the public CRM</h2>
 <p class="meta" data-pubnote>Opening the public CRM with its published read key...</p>
+<p class="crm-win"><button type="button" data-pubwin>Open the public CRM in a new window</button> <span class="meta">(the vault itself in SG/Vault; it holds about 900 files, so it can take a while to open)</span></p>
 <div class="crm-bar"><div class="crm-tabs" data-tabs></div><input type="search" data-q placeholder="Search names, roles, sessions..." aria-label="Search the public CRM"></div>
 <div class="crm-cols"><ol class="crm-list" data-list></ol><div class="crm-detail" data-detail><p class="meta">Pick a record: its facts, its sources, and a graph of what it is linked to.</p></div></div></section>
 <section class="crm-box crm-private" aria-labelledby="crm-priv-h"><h2 id="crm-priv-h">The private CRM</h2><div data-priv><p class="meta">Checking whether this browser holds a key...</p></div></section>`
         $('[data-q]').addEventListener('input', list)
+        $('[data-pubwin]').onclick = () => window.open(CFG.public.vault_url, '_blank', 'noopener')
     }
     function tabs() {
         $('[data-tabs]').innerHTML = TYPES.map(([k, n]) => `<button type="button" data-t="${k}" aria-pressed="${k === TAB}">${n} (${PUB.nodes.filter(x => x.type === k && x.file).length})</button>`).join('')
@@ -155,6 +157,11 @@
             const v = await openWithVaultKey(vk)                              // layer 1
             const nodes = (await readJson(v, 'graph/nodes.json')).nodes.filter(n => n.file)
             btn.hidden = true
+            // the private vault in a new window: the key goes only into that window's address fragment (never sent to a server)
+            const win = document.createElement('p'); win.className = 'crm-win'
+            win.innerHTML = '<button type="button">Open the private CRM in a new window</button> <span class="meta">(SG/Vault, with full access: the key stays in the address fragment of that window)</span>'
+            win.querySelector('button').onclick = () => window.open('https://dev.vault.sgraph.ai/#' + vk, '_blank', 'noopener')
+            out.before(win)
             out.innerHTML = `<p class="meta">${nodes.length} record${nodes.length === 1 ? '' : 's'} in ${esc(CFG.private.name)} (${esc(CFG.private.vault_id)}). Layer 2: each sealed record opens only if you are in its audience.</p><ol class="crm-plist">${nodes.map(n => `<li data-f="${esc(n.file)}"><b>${esc(n.sealed ? '🔒 ' + n.type : label(n))}</b> <span class="meta">${esc(n.file)}</span><div class="crm-pbody meta">${n.sealed ? 'Opening...' : esc(sub(n))}</div></li>`).join('')}</ol>`
             for (const n of nodes.filter(n => n.sealed)) {
                 const li = out.querySelector(`[data-f="${CSS.escape(n.file)}"]`), body = li.querySelector('.crm-pbody')

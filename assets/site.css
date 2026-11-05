@@ -804,3 +804,5 @@ body[data-focus] main { padding-top: 0.8rem; }
 .ig-person ul { margin: 0; padding-left: 1.1rem; }
 .ig-wide { grid-column: 1 / -1; }
 .ig-wide img { aspect-ratio: auto; object-fit: contain; background: var(--wait-soft); }
+
+.crm-win { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 0.4rem 0 0.8rem; }
