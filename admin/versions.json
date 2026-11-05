@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.427",
+    "date": "2026-11-05",
+    "what": "the feedback pane sends what you typed in one click, keeps your draft, and docks as a resizable side panel",
+    "by": "dev@web-summit.dinis",
+    "from": "bed62ccff"
+  },
+  {
     "version": "v0.2.426",
     "date": "2026-11-05",
     "what": "a second observability beside Jose's, the read event, and the agent lane every agent must log to",
