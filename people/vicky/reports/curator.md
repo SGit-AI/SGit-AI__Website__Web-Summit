@@ -41,3 +41,11 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - All are public pages from the captures, which vault@ audited before publishing the read key and which list only public URLs (vault 41j3e9s9, PUBLIC.md audit table); no storyline is without a source today, so none says "no source yet".
 - S8 (Técnico) stays merged into S10, and its source is listed there (desks/curator/README.md).
 - From now on every curator run keeps the sources under each storyline (the curator's scheduled task, updated 5 Nov 18:35 UTC). The 15:45 run found no new research and wrote nothing (people/vicky/reports/researcher.md has no entry after 11:30).
+
+## Thu 5 Nov 2026, 19:45 UTC run (2 new captures)
+
+- Mapped the researcher's 2 captures of 19:30 in vault 41j3e9s9 (commit 74c72dd8aaf8); the map is desks/curator/2026-11-05-1945.json and the candidates page desks/curator/README.md now has 12 storylines and 36 source lines (newsroom v0.1.22).
+- New candidate S13, Web Summit's ten Lisbon years: 2.5 billion euros, says EY, every figure attributed to EY as Executive Digest reports it (captures/2026-11-05-ey-web-summit-economic-impact.md).
+- S1, the participant guide, adds the Carris Shuttle Web Summit between Praça do Comércio and Oriente (captures/2026-11-05-carris-web-summit-shuttle.md).
+- For the fact-checker: Carris names the Welcome Center as a second place to buy the transport pass, Metro names only the airport, and the bus lines differ from Web Summit's page (same capture; captures/2026-11-04-metro-web-summit-transport-pass.md).
+- Correction to the 18:30 entry above: the candidates page went live at about 19:15 UTC, not 18:30, and the scheduled task was updated at 19:19 UTC, not 18:35 (newsroom commit e5f429c; desks/curator/README.md now says 19:55).
