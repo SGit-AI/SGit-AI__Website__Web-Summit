@@ -85,15 +85,18 @@ await test('the next poll with the same newest report sends nothing', async () =
     assert.deepEqual(await w.run('Build the WhatsApp message', d), [])
 })
 
-await test('mode template: one body parameter, no new lines, tabs or runs of spaces', async () => {
+await test('mode template: two body parameters (day and time; points and link), no new lines, tabs or runs of spaces', async () => {
     const w = n8n()
     const s = await w.run('Settings', [{ json: {} }], src => filled(src).replace("mode: 'text',", "mode: 'template',").replace("template_name: '',", "template_name: 'ws_report',").replace("template_language: '',", "template_language: 'en',"))
     const d = await w.run('Draft the report', s)
     const [{ json: m }] = await w.run('Build the WhatsApp message', d)
     assert.equal(m.body.type, 'template')
     assert.deepEqual(m.body.template.language, { code: 'en' })
-    const p = m.body.template.components[0].parameters[0].text
-    assert.ok(!/[\n\t]| {5}/.test(p) && p.length <= 1000 && p.includes(`${SITE}reports/${slug}/`), p)
+    const [p1, p2] = m.body.template.components[0].parameters.map(x => x.text)
+    assert.equal(m.body.template.components[0].parameters.length, 2)
+    assert.equal(p1, 'Wed 4 Nov, 08:57')
+    assert.equal(p2, `One; Two; Three; and 1 more. Read it at ${SITE}reports/${slug}/`)
+    for (const p of [p1, p2]) assert.ok(!/[\n\t]| {5}/.test(p) && p.length <= 900, p)
 })
 
 console.log(`${passed} passed`)

@@ -26,7 +26,7 @@ return [{ json: {
   to: '',                     // FILL IN: Jose's own WhatsApp number, digits with country code, only Jose
   phone_number_id: '',        // FILL IN: the business number's Phone number ID (Meta app, WhatsApp, API setup)
   graph_version: '',          // FILL IN: the Graph API version your Meta app uses, e.g. v23.0
-  template_name: '',          // FILL IN for mode 'template': an approved template with one body parameter {{1}}
+  template_name: '',          // FILL IN for mode 'template': an approved template whose body has two parameters, {{1}} the report's day and time and {{2}} its points and link, with fixed text before and after (people/jose/dev/n8n-build-guide.md)
   template_language: '',      // FILL IN for mode 'template': its language code, e.g. en
 } }]`
 
@@ -38,11 +38,17 @@ const missing = need.filter(k => !String(s[k] || '').trim())
 if (missing.length) throw new Error('route 3: fill in the Settings node first: ' + missing.join(', '))
 if (!['text', 'template'].includes(s.mode)) throw new Error('route 3: mode is text or template')
 const to = String(s.to).replace(/[^0-9]/g, '')
-// a template parameter may not hold new lines, tabs or more than four spaces in a row
-const flat = d.text_whatsapp.replace(/\\s*\\n+\\s*/g, ' · ').replace(/\\t/g, ' ').replace(/ {2,}/g, ' ').slice(0, 1000)
+// the template's two parameters (a parameter may not hold new lines, tabs or more than four spaces in a row):
+// {{1}} the report's day and time, {{2}} its points and link; Meta rejects a template that starts or ends with a parameter
+const flat = t => t.replace(/\\s+/g, ' ').trim()
+const [, y, mo, dd, hh, mi] = d.id.match(/^(\\d{4})-(\\d{2})-(\\d{2})-(\\d{2})(\\d{2})$/)
+const when = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][new Date(Date.UTC(+y, +mo - 1, +dd)).getUTCDay()] + ' ' + (+dd) + ' ' + ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][+mo - 1] + ', ' + hh + ':' + mi
+const pts = d.text_whatsapp.split('\\n').filter(l => /^[▸•] /.test(l)).map(l => l.replace(/^[▸•] /, '').replace(/\\*/g, '').replace(/[.:;,]+$/, ''))
+const more = (d.text_whatsapp.match(/^\\+(\\d+) more:/m) || [])[1]
+const points = flat((pts.length ? pts.join('; ') + (more ? '; and ' + more + ' more' : '') : flat(d.text_whatsapp.replace(d.link, ''))) + '. Read it at ' + d.link).slice(0, 900)
 const body = s.mode === 'text'
   ? { messaging_product: 'whatsapp', recipient_type: 'individual', to, type: 'text', text: { preview_url: true, body: d.text_whatsapp } }
-  : { messaging_product: 'whatsapp', recipient_type: 'individual', to, type: 'template', template: { name: s.template_name, language: { code: s.template_language }, components: [{ type: 'body', parameters: [{ type: 'text', text: flat }] }] } }
+  : { messaging_product: 'whatsapp', recipient_type: 'individual', to, type: 'template', template: { name: s.template_name, language: { code: s.template_language }, components: [{ type: 'body', parameters: [{ type: 'text', text: when }, { type: 'text', text: points }] }] } }
 return [{ json: { id: d.id, mode: s.mode, url: 'https://graph.facebook.com/' + s.graph_version + '/' + s.phone_number_id + '/messages', body } }]`
 
 export const REMEMBER = `// Remember the report: only after Meta accepted the message, so a failed send is retried at the next poll.

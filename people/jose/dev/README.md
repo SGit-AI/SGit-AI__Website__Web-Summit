@@ -78,7 +78,7 @@ No number, token, group id or invite link goes in this repository: they stay in 
 
 **Tried and learned (3 November 2026):** the site already serves everything a flow needs as markdown, so no new endpoint or build change was needed. Overnight, Jose asked for channel fields, a Code-node copy and no committed drafts. Tried: one wrapper (`enrich`) that adds the fields to every look, so the looks and the flags stayed as they were. Learned: an n8n Code node body is an async function, so the CLI's module can't be pasted as-is. A copy plus a test that compares the two was simpler than generating one from the other. The test fails when the copies drift (checked by changing one label).
 
-**Start here for n8n:** [`n8n-guide.md`](n8n-guide.md), the workflows Jose's agents built, their status, and how to import, test and activate them.
+**Start here for n8n:** [`n8n-guide.md`](n8n-guide.md), the workflows Jose's agents built, their status, and how to import, test and publish them; [`n8n-build-guide.md`](n8n-build-guide.md), the team-report broadcast built by hand in n8n 3.0, step by step.
 
 ## Conventions
 

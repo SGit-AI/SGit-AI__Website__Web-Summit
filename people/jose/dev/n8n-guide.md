@@ -1,6 +1,6 @@
 # Jose's n8n workflows: what they do and how to use them
 
-By `dev@web-summit.jose`, 5 November 2026, for Jose. Written from the repository as it is on `dev` (the workflow files, their tests and their READMEs). **This agent cannot see Jose's n8n instance**, so "active" below means only what the repository shows: nothing in it says either workflow has been imported or activated.
+By `dev@web-summit.jose`, 5 November 2026, for Jose. Written from the repository as it is on `dev` (the workflow files, their tests and their READMEs). **To build the workflow by hand with the current n8n (3.0), with every step, see [`n8n-build-guide.md`](n8n-build-guide.md).** **This agent cannot see Jose's n8n instance**, so "active" below means only what the repository shows: nothing in it says either workflow has been imported or activated.
 
 ## Summary
 
@@ -83,14 +83,14 @@ No number, token or credential is ever written in the repository: they stay in n
 3. Open **Settings** and fill in `to`, `phone_number_id` and `graph_version`. Leave `look: 'three'`, or change it to `'line'` (one line) or `'full'`.
 4. Send any message from your phone to the business number. That opens WhatsApp's 24-hour window for text messages.
 5. Click **Execute workflow** once. The newest report should arrive on WhatsApp. A manual run always sends it, because n8n doesn't keep the "last sent" memory in test runs.
-6. **Activate** the workflow. From then on it sends each new report once.
+6. **Publish** the workflow (n8n 2.x and 3.x call it Publish; older versions say Activate). From then on it sends each new report once.
 
 ### Limitations
 
 - **The 24-hour rule, the important one.** In text mode (the default), a message reaches Jose only if he has messaged the business number in the last 24 hours. `automation@web-summit.jose` found a worse effect: Meta can accept the message and report the failure later (error 131047, on a webhook this workflow doesn't have). The workflow will already have marked that report as sent, so that day's reports are lost with no sign. **The fix is template mode:**
-  1. In Meta's WhatsApp Manager, create a Utility template whose body is just `{{1}}`, and get it approved.
+  1. In Meta's WhatsApp Manager, create a Utility template with two parameters and fixed text around them, for example *"RiskMandate team update, {{1}} report: {{2}}. Forward it to the team group if it is useful."*, and get it approved. Not a body of just `{{1}}`: Meta rejects a template that starts or ends with a parameter (third-party sources, listed in `n8n-build-guide.md` section 13) (corrected on 5 November).
   2. In **Settings**, set `mode: 'template'`, `template_name` and `template_language` (for example `en`).
-  3. In template mode the draft is sent as one line, since a template parameter can't hold new lines.
+  3. The workflow fills {{1}} with the report's day and time and {{2}} with its points and link, each as one line, since a template parameter can't hold new lines.
 
   Until the template is approved, message the business number once a day.
 - The send uses an HTTP Request node, because the field names of n8n's own WhatsApp node couldn't be checked from the agent's session. You may swap it for the native node: the message body to copy is in **Build the WhatsApp message**.
@@ -140,7 +140,7 @@ For example: *"WS-74 feedback lane: 4 answers are waiting on vault@web-summit.jo
 2. Get the enum key from `vault@web-summit.jose` in its own session. Never paste it into the repository, a commit or a chat.
 3. Create a *Header Auth* credential: name `x-sgraph-vault-enum-key`, value the key. Call it "WS-74 lane enum key" and pick it on **List the lane**.
 4. Pick the WhatsApp credential on **Send to Jose**, and fill in **Settings** as for route 3.
-5. Click **Execute workflow** once to test, then **Activate**.
+5. Click **Execute workflow** once to test, then **Publish**.
 
 ### Limitations
 
@@ -164,6 +164,6 @@ And, if Jose wants it reviewed, an export of the WhatsApp flow he built before t
 
 It is the most useful: a team update every couple of hours, with no new work for anyone else. It is also the readiest: complete, tested, and all its decisions already made. It needs only Jose's WhatsApp details and the 24-hour fix.
 
-Set it up in template mode (or message the number daily until the template is approved), run it once by hand, then activate it.
+Set it up in template mode (or message the number daily until the template is approved), run it once by hand, then publish it.
 
 Leave WS-74 pending until Jose has decided about the enum key and the first answers start arriving.
