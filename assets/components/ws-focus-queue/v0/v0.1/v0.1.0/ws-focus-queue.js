@@ -30,8 +30,7 @@ class WsFocusQueue extends WsComponent {
     <aside class="list" id="list" aria-label="The queue"></aside>
     <main class="main">
       <div id="empty" class="empty" hidden></div>
-      <ws-decision-card id="card"></ws-decision-card>
-      <ws-card-chat id="chat"></ws-card-chat>
+      <ws-decision-card id="card"><ws-card-chat id="chat"></ws-card-chat></ws-decision-card>
     </main>
   </div>
 </div>`
@@ -48,7 +47,10 @@ class WsFocusQueue extends WsComponent {
         } catch (e) { this.shadowRoot.getElementById('empty').hidden = false; this.shadowRoot.getElementById('empty').textContent = `The cards could not load (${e.message}).`; return }
         if (window.WSKeyring) await window.WSKeyring.ready.catch(() => null)
         document.addEventListener('ws-card:answer', e => this._answer(e.detail.entry))
-        document.addEventListener('ws-actions:changed', () => this._drawBar())
+        document.addEventListener('ws-actions:changed', () => { this._drawBar(); this._pending() })
+        document.addEventListener('ws-focus:submit', () => this._send())
+        // the answer bar sticks just under the site's top bar (both rows), so the answers stay in reach while you read
+        const nav = document.querySelector('nav.site'), fit = () => this.style.setProperty('--ws-top', (nav ? nav.offsetHeight : 0) + 'px'); fit(); addEventListener('resize', fit)
         document.addEventListener('keydown', e => this._key(e))
         const want = (location.hash || '').slice(1)
         this._cur = want || ''
@@ -79,11 +81,13 @@ class WsFocusQueue extends WsComponent {
 
     _answer(entry) {
         const e = A.add(entry), xs = this._items(), next = xs[0]
-        this._notice = `Recorded: ${A.sentence(e)}. It waits in your actions until you submit.`
+        this._undo = { uid: e.uid, ref: e.ref }
+        this._notice = `Recorded: ${A.sentence(e)}. It waits until you submit.`
         this._cur = next ? next.ref : ''
         this._draw()
     }
     async _send() {
+        this._undo = null
         try { const n = await A.send(this._lane); this._notice = n ? `Sent ${n}, signed and sealed to ${this._lane.agent}. Processed at the next drain, about ${hhmm(this._nextDrain())} UTC.` : 'Nothing to send.' }
         catch (e) { this._notice = `Not sent: ${e.message}. Your answers are still here.` }
         this._draw()
@@ -113,10 +117,11 @@ class WsFocusQueue extends WsComponent {
 <span class="pos">${xs.length ? `${i + 1} of ${xs.length}` : '0'}${xs.length < this._all().length ? ` <small>(${this._all().length - xs.length} filtered out)</small>` : ''}</span>
 <span class="nav"><button type="button" id="prev" title="Previous (←)"${i <= 0 ? ' disabled' : ''}>←</button><button type="button" id="next" title="Next (→)"${i < 0 || i >= xs.length - 1 ? ' disabled' : ''}>→</button></span>
 <span class="out">${sent ? `<span class="sent">${sent} sent, not processed</span>` : ''}<button type="button" class="go" id="send"${draft && can ? '' : ' disabled'} title="${can ? 'Send your actions, signed with your key (s)' : 'Add your key to this browser to send'}">${draft ? `Submit ${draft} signed` : 'Nothing to submit'}</button></span>
-${this._notice ? `<p class="notice" role="status">${esc(this._notice)}</p>` : ''}`
+${this._notice ? `<p class="notice" role="status">${esc(this._notice)}${this._undo ? ' <button type="button" id="undo">Undo</button>' : ''}</p>` : ''}`
         r.getElementById('prev').onclick = () => this._go(-1)
         r.getElementById('next').onclick = () => this._go(1)
         r.getElementById('send').onclick = () => this._send()
+        const u = r.getElementById('undo'); if (u) u.onclick = () => { A.remove(this._undo.uid); this._cur = this._undo.ref; this._undo = null; this._notice = 'Undone: the card is back.'; this._draw() }
     }
     _drawTools() {
         const r = this.shadowRoot, f = this._f, all = this._all(), K = this._D.kinds || {}
@@ -163,7 +168,9 @@ ${this._notice ? `<p class="notice" role="status">${esc(this._notice)}</p>` : ''
         if (history.replaceState) history.replaceState(null, '', '#' + encodeURIComponent(c.ref))
         card.kind = (this._D.kinds || {})[c.kind]; card.delegates = this._D.delegates; card.person = this._D.person; card.card = c
         chat.kind = (this._D.kinds || {})[c.kind]; chat.card = c
+        this._pending()
     }
+    _pending() { const card = this.shadowRoot.getElementById('card'); if (card) card.pending = A.load().filter(e => e.state === 'draft').length }
     _draw() { this._cur = this._cur && decodeURIComponent(this._cur); this._drawTools(); this._drawList(); this._drawBar(); this._drawCard() }
 }
 customElements.define('ws-focus-queue', WsFocusQueue)

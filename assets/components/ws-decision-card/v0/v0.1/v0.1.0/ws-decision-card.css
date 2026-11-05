@@ -17,7 +17,7 @@ code             { font-family: var(--mono, monospace); font-size: 0.86em; backg
 .prio span       { padding: 0.1rem 0.5rem; border-radius: 999px; background: var(--surface-2); }
 .prio span.neg   { background: var(--wait-soft); }
 .cols            { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.6rem; }
-@media (min-width: 900px) { .cols { grid-template-columns: minmax(0, 1.35fr) minmax(300px, 1fr); } .right { position: sticky; top: 1rem; align-self: start; } }
+@media (min-width: 900px) { .cols { grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr); } }
 .ask p           { font-size: 1.12rem; }
 .rec             { background: var(--accent-soft); border-radius: 10px; padding: 0.6rem 0.8rem; }
 .think ol        { padding-left: 1.3rem; }
@@ -45,16 +45,27 @@ li .ws-link svg { vertical-align: -1px; margin-right: 0.2rem; color: var(--ink-2
 .graph .nl       { font-size: 9px; fill: var(--ink); text-anchor: middle; }
 .graph figcaption { display: flex; flex-wrap: wrap; gap: 0.7rem; font-size: 0.78rem; color: var(--ink-2); }
 .graph figcaption i { display: inline-block; width: 0.6rem; height: 0.6rem; border-radius: 50%; margin-right: 0.25rem; vertical-align: -1px; }
-.right           { background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 1rem; }
-.answers         { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.6rem; }
+.right           { min-width: 0; }
+.abar            { position: sticky; top: var(--ws-top, 0px); z-index: 3; margin: 0 -1.6rem 1.2rem; padding: 0.8rem 1.6rem; background: var(--surface); border-bottom: 1px solid var(--line); box-shadow: 0 6px 12px -10px rgb(0 0 0 / 0.25); }
+.answers         { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.need            { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin-top: 0.55rem; }
+.need label      { font-weight: 600; }
+.need input      { flex: 1; min-width: 14rem; padding: 0.5rem 0.6rem; border-radius: 8px; border: 1px solid var(--accent); background: var(--bg); }
+.need button, .more button, .more select { padding: 0.42rem 0.7rem; border-radius: 8px; border: 1px solid var(--line-2); background: var(--surface); cursor: pointer; font-size: 0.88rem; }
+.need .go        { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.more            { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin-top: 0.55rem; }
+.more input      { flex: 1; min-width: 12rem; padding: 0.42rem 0.6rem; border-radius: 8px; border: 1px solid var(--line-2); background: var(--bg); }
+.more .ghost     { background: transparent; }
+.more .submit    { margin-left: auto; background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 700; padding: 0.45rem 1rem; }
+.more .submit[disabled] { opacity: 0.45; cursor: default; }
 button, select, input, textarea { font: inherit; color: var(--ink); }
-.ans             { text-align: left; padding: 0.6rem 0.75rem; border-radius: 10px; border: 1px solid var(--line-2); background: var(--surface); cursor: pointer; font-size: 0.98rem; display: flex; gap: 0.55rem; align-items: baseline; }
+.ans             { text-align: left; padding: 0.55rem 0.8rem; border-radius: 10px; border: 1px solid var(--line-2); background: var(--surface); cursor: pointer; font-size: 0.98rem; display: flex; gap: 0.55rem; align-items: baseline; }
 .ans:hover, .ans:focus-visible { border-color: var(--accent); outline: none; }
 .ans.primary     { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
 .ans.on          { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 kbd              { font-family: var(--mono, monospace); font-size: 0.72rem; padding: 0 0.3rem; border-radius: 4px; border: 1px solid var(--line-2); background: var(--surface-2); color: var(--ink-2); }
 .ans.on kbd      { background: transparent; color: inherit; }
-.fx              { font-size: 0.88rem; color: var(--ink-2); background: var(--surface-2); border-radius: 8px; padding: 0.45rem 0.6rem; min-height: 2.6rem; }
+.fx              { font-size: 0.86rem; color: var(--ink-2); margin: 0.5rem 0 0; }
 .fx b            { color: var(--ink); }
 .in              { display: block; margin: 0.6rem 0; font-size: 0.86rem; color: var(--ink-2); }
 .in input, .in textarea { display: block; width: 100%; margin-top: 0.25rem; padding: 0.5rem 0.6rem; border-radius: 8px; border: 1px solid var(--line-2); background: var(--surface); }

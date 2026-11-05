@@ -575,5 +575,5 @@ nav.site .gh { margin-left: 0; }
 }
 
 /* a focus page (people/<id>/focus/...): only the queue on the screen */
-body[data-focus] .me-strip, body[data-focus] > footer, body[data-focus] .agent-block, body[data-focus] .fb-btn { display: none !important; }
+body[data-focus] > footer, body[data-focus] .agent-block, body[data-focus] .fb-btn { display: none !important; }
 body[data-focus] main { padding-top: 0.8rem; }

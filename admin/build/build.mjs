@@ -224,7 +224,7 @@ ${lead ? `<p class="lead">${inline(lead)}</p>` : ''}
 ${home ? `<p class="countdown" data-countdown="2026-11-09">Web Summit Lisbon: 9 to 12 November 2026</p><script src="assets/countdown.js" defer></script>` : ''}`}
 ${meta}
 ${body}
-${wide ? '<section class="for-you" id="for-you" hidden aria-label="For you: your key and what is sealed to you"></section>' : ''}
+${wide && !focus ? '<section class="for-you" id="for-you" hidden aria-label="For you: your key and what is sealed to you"></section>' : ''}
 </main>
 </div>
 <script src="${up}assets/copy.js" defer></script>

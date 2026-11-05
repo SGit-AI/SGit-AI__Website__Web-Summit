@@ -92,30 +92,25 @@ ${pos.map(p => `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="6" fill
 <h2>${esc(c.title)}</h2>
 <p class="prio" title="The priority score and what makes it">priority <b>${esc(c.score)}</b>${(c.score_parts || []).map(([t, n]) => `<span class="${n < 0 ? 'neg' : ''}">${esc(t)} <b>${n > 0 ? '+' : ''}${esc(n)}</b></span>`).join('')}</p>
 </header>
+<section class="abar" aria-label="Your answer: one click records it">
+<div class="answers">${answers.map((a, i) => `<button type="button" class="ans${a.primary || a.rec ? ' primary' : ''}${ch && ch.id === a.id ? ' on' : ''}" data-i="${i}"><kbd>${i + 1}</kbd>${a.rec ? '★ ' : ''}${esc(a.label)}</button>`).join('')}</div>
+${ch && ch.input ? `<div class="need"><label for="val">${esc(ch.label)}:</label><input id="val" type="${ch.input.type === 'number' ? 'number' : 'text'}" autocomplete="off" placeholder="${esc(ch.input.placeholder || 'Your answer')}"><button type="button" class="go" id="confirm">Record <kbd>↵</kbd></button><button type="button" class="ghost" id="cancel">Back</button></div>` : ''}
+<div class="more">
+<input id="words" type="text" placeholder="In your words (optional): sent with whichever answer you click" autocomplete="off">
+<select id="dg" aria-label="Send it to someone else"><option value="">Send to…</option>${(this._delegates || []).map(p => `<option value="${esc(p.id)}">${esc(p.first)}</option>`).join('')}</select>
+${[['details', 'd', 'More details'], ['mine', 'm', 'Mine'], ['later', 'l', 'Later'], ['note', 'n', 'Note']].filter(([q]) => !answers.some(x => x.action === q)).map(([q, kk, t]) => `<button type="button" class="ghost" data-q="${q}"><kbd>${kk}</kbd> ${t}</button>`).join('')}
+<button type="button" class="submit" id="submit"${this._pending ? '' : ' disabled'} title="Send your answers, signed (s)">${this._pending ? `Submit ${this._pending} signed →` : 'Submit'}</button>
+</div>
+<p class="fx" id="fx">${ch ? `<b>If you choose this:</b> ${this._effects(ch).map(esc).join('; ')}.` : 'Hover an answer to see what it will do; one click records it, and you can undo.'}</p>
+</section>
 <div class="cols">
 <div class="left">
 ${(k.evidence || []).filter(b => b === 'ask' || b === 'recommend').map(b => this._evidence(b)).join('')}
 ${k.think && k.think.length ? `<section class="think"><h3>How to think about it</h3><ol>${k.think.map(t => `<li>${esc(fill(t, c.params))}</li>`).join('')}</ol></section>` : ''}
 ${links.length ? `<section class="links"><h3>What you need</h3><p>${links.map(([t, u]) => linkTo(u, t)).join('')}</p></section>` : ''}
 ${(k.evidence || []).filter(b => b !== 'ask' && b !== 'recommend').map(b => this._evidence(b)).join('')}
-${this._graph() ? `<section><h3>How it connects</h3>${this._graph()}</section>` : ''}
 </div>
-<div class="right">
-<h3>Your answer</h3>
-<div class="answers">${answers.map((a, i) => `<button type="button" class="ans${a.primary || a.rec ? ' primary' : ''}${ch && ch.id === a.id ? ' on' : ''}" data-i="${i}"><kbd>${i + 1}</kbd>${a.rec ? '★ ' : ''}${esc(a.label)}</button>`).join('')}</div>
-<p class="fx" id="fx">${ch ? `<b>If you choose this:</b> ${this._effects(ch).map(esc).join('; ')}.` : 'Hover or focus an answer to see what it will do.'}</p>
-${ch && ch.input ? `<label class="in"><span>${esc(ch.input.placeholder || 'Your answer')}</span><input id="val" type="${ch.input.type === 'number' ? 'number' : 'text'}" autocomplete="off"></label>` : ''}
-<label class="in"><span>In your words (optional)</span><textarea id="words" rows="2" placeholder="Anything they should know"></textarea></label>
-<div class="row">${ch ? `<button type="button" class="go" id="confirm">Record: ${esc(ch.label)} <kbd>↵</kbd></button><button type="button" class="ghost" id="cancel">Back</button>` : ''}</div>
-<h3>Or</h3>
-<div class="row">
-<select id="dg" aria-label="Send it to someone else"><option value="">For someone else: send to…</option>${(this._delegates || []).map(p => `<option value="${esc(p.id)}">${esc(p.first)}${p.role ? ' · ' + esc(p.role.slice(0, 40)) : ''}</option>`).join('')}</select>
-<button type="button" class="ghost" data-q="details"><kbd>d</kbd> Need more details</button>
-<button type="button" class="ghost" data-q="mine"><kbd>m</kbd> It's mine</button>
-<button type="button" class="ghost" data-q="later"><kbd>l</kbd> Later</button>
-<button type="button" class="ghost" data-q="note"><kbd>n</kbd> Just a note</button>
-</div>
-</div>
+<div class="right">${this._graph() ? `<section><h3>How it connects</h3>${this._graph()}</section>` : ''}<slot></slot></div>
 </div>`
         this._wire(root, answers)
     }
@@ -136,6 +131,7 @@ ${ch && ch.input ? `<label class="in"><span>${esc(ch.input.placeholder || 'Your 
         const dg = root.querySelector('#dg')
         if (dg) dg.onchange = () => { const p = (this._delegates || []).find(d => d.id === dg.value); if (p) this.choose({ id: 'dg:' + p.id, action: 'delegate', label: `Send to ${p.first}`, delegate: p.id, delegate_name: p.first, delegate_agent: p.agent }) }
         const ok = root.querySelector('#confirm'); if (ok) ok.onclick = () => this.confirm()
+        const sub = root.querySelector('#submit'); if (sub) sub.onclick = () => document.dispatchEvent(new CustomEvent('ws-focus:submit', { bubbles: true, composed: true }))
         const no = root.querySelector('#cancel'); if (no) no.onclick = () => { this._chosen = null; this._render() }
         const v = root.querySelector('#val'); if (v) { v.focus(); v.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); this.confirm() } } }
     }
@@ -145,16 +141,18 @@ ${ch && ch.input ? `<label class="in"><span>${esc(ch.input.placeholder || 'Your 
         const answers = this._answers()
         if (/^[1-9]$/.test(k) && answers[+k - 1]) { this.choose(answers[+k - 1]); return true }
         const q = { d: 'details', m: 'mine', l: 'later', n: 'note' }[k]
-        if (q) { const b = this.shadowRoot.querySelector(`[data-q="${q}"]`); if (b) b.click(); return true }
+        if (q) { const b = this.shadowRoot.querySelector(`[data-q="${q}"]`); if (b) b.click(); else { const own = answers.find(x => x.action === q); if (own) this.choose(own) } return true }
         if (k === 'Enter' && this._chosen) { this.confirm(); return true }
         if (k === 'Escape' && this._chosen) { this._chosen = null; this._render(); return true }
         return false
     }
+    // one click records an answer; only an answer that needs a value asks for it first (Dinis: "minimize clicks")
     choose(a) {
         this._chosen = a
-        if (!a.input && ['later', 'mine', 'drop'].includes(a.action) && !a.primary) { this.confirm(); return }
+        if (!a.input) { this.confirm(); return }
         this._render()
     }
+    set pending(n) { this._pending = n; const b = this.shadowRoot && this.shadowRoot.getElementById('submit'); if (b) { b.disabled = !n; b.textContent = n ? `Submit ${n} signed →` : 'Submit' } }
     confirm() {
         const a = this._chosen, c = this._card, r = this.shadowRoot
         if (!a) return
