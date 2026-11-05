@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.493",
+    "date": "2026-11-05",
+    "what": "first team-wide run: 133 agent commits since 3759445; email-address rule hits in a public page; Jose's designer released four times without the reviewer",
+    "by": "watcher@web-summit.jose",
+    "from": "0316656b0"
+  },
+  {
     "version": "v0.2.492",
     "date": "2026-11-05",
     "what": "07:20 wake: brief 9; newsroom push access confirmed (WS-145); the patch is live (WS-141)",
