@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.421",
+    "date": "2026-11-05",
+    "what": "WS-26 picked, 28 of the 50 emails drafted for Silvio to send",
+    "by": "outreach@web-summit.silvio",
+    "from": "43bb1bcbd"
+  },
+  {
     "version": "v0.2.420",
     "date": "2026-11-05",
     "what": "n8n-build-guide.md, the team-report broadcast built by hand in n8n 3.0, step by step; the template rule corrected",
