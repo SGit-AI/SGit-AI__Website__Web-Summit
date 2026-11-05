@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.432",
+    "date": "2026-11-05",
+    "what": "an Observability section (agents, pages, team reads), live stats on the home page; WS-160: every agent logs its runs",
+    "by": "observability@web-summit.dinis",
+    "from": "56578c239"
+  },
+  {
     "version": "v0.2.431",
     "date": "2026-11-05",
     "what": "feedback lanes for observability@, dashboard@ and newsroom@; one-click agent chips; only the team's keys can send",
