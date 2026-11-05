@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.429",
+    "date": "2026-11-05",
+    "what": "automation, helper and vault confirmed on their schedules (their own commits 765de20, c3342b2, 47b7021)",
+    "by": "conductor@web-summit.jose",
+    "from": "ea9bcdf8d"
+  },
+  {
     "version": "v0.2.428",
     "date": "2026-11-05",
     "what": "Jose's own command centre, slice 0 and slices 7 to 9: the shared app extended, with Angelo's Kanban, Team and the machine, and Summit days copied in",
