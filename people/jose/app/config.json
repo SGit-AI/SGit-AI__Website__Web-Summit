@@ -94,7 +94,7 @@
     "watcher": {
       "colour": "slate",
       "job": "Jose's security watcher, read-only",
-      "schedule": "cron 15 7,12,17 * * * (UTC); not yet confirmed as scheduled"
+      "schedule": "cron 15 7,12,17 * * * (UTC), a scheduled task firing into its own session since 4 November 2026, 23:10 UTC (its commit f1e9241)"
     },
     "reviewer": {
       "colour": "slate",
