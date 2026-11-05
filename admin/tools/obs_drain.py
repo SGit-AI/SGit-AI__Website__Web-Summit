@@ -16,7 +16,8 @@ import argparse, base64, collections, json, os, sys, time
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.dont_write_bytecode = True                                           # no __pycache__ in the clone (the gate refuses it)
 sys.path.insert(0, os.path.join(ROOT, 'admin', 'tools'))
-import telemetry_drain as td                                          # post(), sgit(), verify() for page events
+import telemetry_drain as td
+import obs_lets as lets
 
 def agent_of(k):
     return ((k.get('bundle') or {}).get('label') or k.get('label') or '').split()[0]
@@ -106,7 +107,7 @@ def public(rows, now):
     """What the public vault holds: counts per group, the team's named reads, the agents' runs. No anonymous row, no tab id,
     no time zone, no language, no referrer: an anonymous reader is only ever a count."""
     good = [r for r in rows if r.get('v') == 1 and not r.get('test')]
-    pages = [r for r in good if r.get('type') in ('view', 'read') and r.get('path')]
+    pages = [{**r, 'path': lets.norm(r['path'])} for r in good if r.get('type') in ('view', 'read') and r.get('path')]
     runs = sorted([r for r in good if r.get('type') == 'web-summit.agent-run/v1'], key=lambda r: r.get('run', ''), reverse=True)
     cls = classes(pages)
     totals = {g: {'views': 0, 'reads': 0, 'sessions': 0} for g in GROUPS}
@@ -171,6 +172,15 @@ def publish(rows, app_src, pub_vault, app_vault):
         if p.returncode: print(f'obs_drain: push of {os.path.basename(v)} failed (exit {p.returncode}): ' + (p.stderr or p.stdout).strip().splitlines()[-1][:200])
     print(f'obs_drain: published {now} to the public vault and the app vault')
 
+def roster():
+    """Every agent with an active key on the keys page: the agents expected to log."""
+    keys = json.load(open(os.path.join(ROOT, 'data/keys.json')))['keys']
+    return sorted({agent_of(k) for k in keys if k.get('status') in (None, '', 'active') and not k.get('replaced_by') and '@web-summit.' in agent_of(k)})
+
+def run(cmd, cwd):
+    import subprocess
+    return subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--creds', default=os.path.expanduser('~/.sg-send/obs-dinis/creds.json'))
@@ -178,12 +188,13 @@ def main():
     ap.add_argument('--dry', action='store_true')
     ap.add_argument('--public', default=os.path.expanduser('~/vaults/obs-dinis-public'), help='the public vault (read key published)')
     ap.add_argument('--app', default=os.path.expanduser('~/vaults/obs-dinis-ux'), help='the app vault (code only)')
-    ap.add_argument('--publish-only', action='store_true', help='republish from the drained rows without draining')
+    ap.add_argument('--publish-only', action='store_true', help='transform and publish without draining the lanes')
+    ap.add_argument('--all', action='store_true', help='transform every hour again, not only the new ones')
     o = ap.parse_args()
     c = json.load(open(o.creds))
     from sgit_ai.crypto.PKI__Crypto import PKI__Crypto
     pki = PKI__Crypto()
-    if not o.dry: td.sgit(o.vault, 'pull')
+    # L: load the lanes
     entries, after = [], None
     while True:
         r = td.post(c, 'list', {'include_content': False, 'limit': 200, **({'after_file_id': after} if after else {})})
@@ -194,46 +205,49 @@ def main():
     for e in entries: lanes.setdefault(e['inbox'], []).append(e['file_id'])
     print(f"obs_drain: {len(entries)} pending in {len(lanes)} lane(s)" + ''.join(f"; lane {c['tokens'].index(t) + 1 if t in c['tokens'] else '?'}: {len(ids)}" for t, ids in lanes.items()))
     if o.dry: return
-    if not entries or o.publish_only:
-        publish(load_rows(o.vault), APP_SRC, o.public, o.app); return
+    td.sgit(o.vault, 'pull')
+    touched = lets.migrate(o.vault)
     key = pki.import_private_key_pem(open(os.path.join(o.vault, 'identity/private/private_key.pem')).read())
     people = json.load(open(os.path.join(ROOT, 'data/person-keys.json')))['keys']
     keys = json.load(open(os.path.join(ROOT, 'data/keys.json')))['keys']
+    def extract(content):                                                 # E: open and verify one sealed record
+        try:
+            ev = json.loads(pki.hybrid_decrypt(key, base64.b64decode(content).decode())['plaintext'])
+            return verify_agent(ev, keys) if ev.get('type') == 'web-summit.agent-run/v1' else td.verify(ev, people)
+        except Exception as e: return {'v': 0, 'undecryptable': True, 'error': type(e).__name__}
+    t2, from_browser = lets.fold_inbox(o.vault, extract); touched |= t2
     rows, done, bad = [], collections.defaultdict(list), 0
-    for token, ids in lanes.items():
-        lane = c['tokens'].index(token) + 1 if token in c['tokens'] else 0
-        for i in range(0, len(ids), 50):
-            for f in td.post(c, 'fetch', {'inbox': token, 'file_ids': ids[i:i + 50]}).get('files', []):
-                try:
-                    ev = json.loads(pki.hybrid_decrypt(key, base64.b64decode(f['content']).decode())['plaintext'])
-                    ev = verify_agent(ev, keys) if ev.get('type') == 'web-summit.agent-run/v1' else td.verify(ev, people)
-                except Exception as e: ev = {'v': 0, 'undecryptable': True, 'error': type(e).__name__}; bad += 1
-                ev['_file'] = f['file_id']; ev['_lane'] = lane
-                ev['_received'] = int(f['file_id'][:13]) if f['file_id'][:13].isdigit() else None
-                rows.append(ev); done[token].append(f['file_id'])
-    today = time.strftime('%Y-%m-%d', time.gmtime())
-    for d in ('drain', 'reports'): os.makedirs(os.path.join(o.vault, d), exist_ok=True)
-    seen = set()
-    for name in os.listdir(os.path.join(o.vault, 'drain')):
-        if name.endswith('.jsonl'): seen |= {json.loads(l).get('_file') for l in open(os.path.join(o.vault, 'drain', name)) if l.strip()}
-    with open(os.path.join(o.vault, f'drain/{today}.jsonl'), 'a') as out:
-        for ev in rows:
-            if ev['_file'] not in seen: out.write(json.dumps(ev, sort_keys=True) + '\n'); seen.add(ev['_file'])
-    allrows = []
-    for name in sorted(os.listdir(os.path.join(o.vault, 'drain'))):
-        if name.endswith('.jsonl'): allrows += [json.loads(l) for l in open(os.path.join(o.vault, 'drain', name)) if l.strip()]
-    allrows = list({r.get('_file') or id(r): r for r in allrows}.values())
-    rep = report(allrows, len(rows), today)
-    for name in ('latest.json', f'{today}.json'):
-        with open(os.path.join(o.vault, 'reports', name), 'w') as out: json.dump(rep, out, indent=2)
-    td.sgit(o.vault, 'commit', '-m', f'drain {time.strftime("%Y-%m-%dT%H:%MZ", time.gmtime())}: {len(rows)} record(s)')
-    td.sgit(o.vault, 'push')
-    for token, ids in done.items():
+    if not o.publish_only and entries:
+        for token, ids in lanes.items():
+            lane = c['tokens'].index(token) + 1 if token in c['tokens'] else 0
+            for i in range(0, len(ids), 50):
+                for f in td.post(c, 'fetch', {'inbox': token, 'file_ids': ids[i:i + 50]}).get('files', []):
+                    ev = extract(f['content']); bad += 1 if ev.get('undecryptable') else 0
+                    ev['_file'] = f['file_id']; ev['_lane'] = lane
+                    ev['_received'] = int(f['file_id'][:13]) if f['file_id'][:13].isdigit() else None
+                    rows.append(ev); done[token].append(f['file_id'])
+        # S (raw): by the hour each record happened in
+        touched |= lets.save_raw(o.vault, rows)
+    now_hour = (time.strftime('%Y-%m-%d', time.gmtime()), time.strftime('%H', time.gmtime()))
+    stamp = time.strftime('%Y-%m-%dT%H:%MZ', time.gmtime())
+    if touched or rows or from_browser:
+        td.sgit(o.vault, 'commit', '-m', f'drain {stamp}: {len(rows)} record(s), {from_browser} from a browser, {len(touched)} hour(s)')
+        td.sgit(o.vault, 'push')
+    for token, ids in done.items():                                       # only after the push
         for i in range(0, len(ids), 100): td.post(c, 'mark-processed', {'inbox': token, 'file_ids': ids[i:i + 100]})
+    # T + S (public): the dirty hours, their days, latest/
+    run(['sgit', 'pull'], o.public)
+    dirty = set(lets.all_hours(o.vault)) if o.all else touched
+    if o.all:
+        import shutil
+        for d in os.listdir(o.public):
+            if d[:2] == '20' and os.path.isdir(os.path.join(o.public, d)): shutil.rmtree(os.path.join(o.public, d))
+        if os.path.exists(os.path.join(o.public, 'latest', 'index.json')): os.remove(os.path.join(o.public, 'latest', 'index.json'))
+    got = lets.transform(o.vault, o.public, dirty, now_hour, roster())
+    allrows = [r for d, h in lets.all_hours(o.vault) for r in lets.hour_rows(o.vault, d, h)]
     publish(allrows, APP_SRC, o.public, o.app)
-    print(f"obs_drain: drained {len(rows)} ({bad} undecryptable), pushed, marked processed; totals {rep['pages']['views']} views, "
-          f"{rep['pages']['reads']} reads, {rep['agents']['runs']} agent runs ({rep['agents']['signed']} signed), "
-          f"{rep['pages']['signature_findings'] + rep['agents']['signature_findings']} signature finding(s)")
+    print(f"obs_drain: drained {len(rows)} ({bad} undecryptable), {from_browser} folded in from a browser; transformed {got['hours']} hour(s), "
+          f"{got['days']} day(s); {got['pages']} pages, {got['agents']} agents (with the roster)")
 
 if __name__ == '__main__':
     main()

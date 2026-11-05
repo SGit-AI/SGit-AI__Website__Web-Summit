@@ -22,6 +22,15 @@
         head.textContent = `From data/public.json alone: ${fmt(T.readers.views)} views by readers, ${fmt(T.team.views)} by the team (by key), ${fmt(T.synthetic.views)} synthetic, ${fmt(T.crawlers.views)} by crawlers; ${fmt(d.agents.runs)} agent runs logged.`
         say(`Read from vault ${cfg.vault_id}: ${Object.keys(reader.files).length} files, data/public.json decrypted in your browser in ${ms} ms. As of ${d.generated} UTC; the drain runs hourly.`)
         await window.SGVaultEmbed.mount(frame, cfg)
-        const f = frame.querySelector('iframe'); if (f) f.style.cssText = 'width:100%;height:80vh;border:1px solid var(--line,#ddd);border-radius:6px;background:#fff'
+        const f = frame.querySelector('iframe'); if (!f) return
+        const normal = 'width:100%;height:80vh;border:1px solid var(--line,#ddd);border-radius:6px;background:#fff'
+        const big = 'position:fixed;inset:0;width:100vw;height:100vh;z-index:70;border:0;background:#fff'
+        f.style.cssText = normal
+        const b = document.createElement('button'); b.type = 'button'; b.textContent = 'Maximise'
+        b.style.cssText = 'margin:0 0 8px;padding:5px 12px;border-radius:6px;cursor:pointer'
+        let max = false
+        const flip = () => { max = !max; f.style.cssText = max ? big : normal; b.textContent = max ? 'Restore (Esc)' : 'Maximise'; b.style.position = max ? 'fixed' : ''; b.style.top = max ? '10px' : ''; b.style.right = max ? '16px' : ''; b.style.zIndex = max ? '71' : '' }
+        b.addEventListener('click', flip); document.addEventListener('keydown', e => { if (e.key === 'Escape' && max) flip() })
+        frame.insertBefore(b, f)
     })().catch(e => say('Could not read the vault: ' + (e && e.message || e)))
 })()

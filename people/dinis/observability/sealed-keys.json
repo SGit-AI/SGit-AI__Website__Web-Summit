@@ -1,0 +1,15 @@
+{
+  "v": "ws-ecies-1",
+  "to": "dinis",
+  "key": "sha256:c7ec751484fbf03d",
+  "by": "observability@web-summit.dinis",
+  "at": "2026-11-05T02:33:30Z",
+  "epk": {
+    "kty": "EC",
+    "crv": "P-256",
+    "x": "qQyOi2hekJv5-Bqy8qwBa2zCxXgW92hnPq1h6L2xsqw",
+    "y": "cySBdLCH__ZphdiQscDWjJCQuS36tKpOwTCCtBMngtc"
+  },
+  "iv": "7nPFG7DSzdWesURD",
+  "ct": "Bf+0b4Sj6SB6HN1yJiil3cyiIOz4e1Mp/5XIC6Y1vD7cYULbda/Hvbg4MQ02rpEBHMc0VLWaobK3cqwko/91YNgJJUrfPnG/ba3fOedKwU7CqcX3AIkMoxDWbPIfQdfNhRXAFcjfJzaIEDyqiKxwaOTAAvn3UGZVxsHL4qElB8LWj8xc90YLTaMswc3YglfCvC5T0lyyXyzZIZWF+Y4/tNnOgrFbqF2pLnZWfwmh8QDN2KjU4bWIBO+vQlXEusZtseOmb6TdNLxvYhHjBJ+8aHdgFrgrcf6V4Uy1whQFrEyS2slXt1MFCB0ZvlJsM6dmUWxzQ+nFFufQE2eNsm5unQQfZOt+Zn7E/bPwD73+bM20SzSsG05+rTuMh/xbEQjdr7BsyymLe4uwh03UXn0SRol3eymiZ7k8BchD2M5iK53z23qJVQJJVefAOtboCx7fYmClSUEmRFWlyDDEj00Fbbx5PefIn7F9EcS7wOseSy1+46f+CYIwgjzM/kLSRfcku+ThNWmoIqK7m837Em/bt0MvQnU8M1i0kShisbSBBjbYEV1JARV9r8SFVpFvtocLzGSgCy2JKzu1mt4+EIjnUlbjQ84jNX9Wulgd+hxnVZFBKlIVgcFuDGJcOiu5cEahYw6FXs1CHaW8puy31s4512r9zrvocpavKQWz3oxF0QulByr47jiASl/iyyCVtWLxa8WJEkjsy4PekGWRy/5L0uCjfb9LFuxfZ2sGwPoqgainLB7ePA+FyV+DNMUHA4enMJZ6SeSGetj9"
+}

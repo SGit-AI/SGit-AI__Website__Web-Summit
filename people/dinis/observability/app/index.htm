@@ -52,7 +52,7 @@
   function secs(s) { s = Math.round(s || 0); return s < 60 ? s + 's' : Math.floor(s / 60) + 'm ' + (s % 60) + 's' }
   function table(head, rows) {
     var t = el('table'), tr = el('tr')
-    head.forEach(function (h) { tr.appendChild(el('th', { 'class': h.n ? 'n' : '', text: h.t || h })) })
+    head.forEach(function (h) { tr.appendChild(el('th', { 'class': h.n ? 'n' : '', text: typeof h === 'string' ? h : (h.t || '') })) })
     t.appendChild(el('thead', {}, [tr])); var tb = el('tbody')
     rows.forEach(function (r) { var row = el('tr'); r.forEach(function (c, i) { var td = el('td', { 'class': head[i].n ? 'n' : '' }); if (c && c.nodeType) td.appendChild(c); else td.textContent = c == null ? '' : String(c); row.appendChild(td) }); tb.appendChild(row) })
     t.appendChild(tb); return el('div', { 'class': 'scroll' }, [t])
