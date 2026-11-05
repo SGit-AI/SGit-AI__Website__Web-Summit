@@ -136,7 +136,32 @@
       "schedule": "every two hours, round the clock (proposed)"
     }
   },
-  "decisions": [],
+  "decisions": [
+    {
+      "who": "Angelo",
+      "what": "The lane to your conductor: unblocks sealed messages (slice 3) and the vault-to-vault lanes with Silvio (WS-120)",
+      "issue": "WS-120",
+      "since": "2026-11-04T17:40:00Z",
+      "source": "people/angelo/index.html",
+      "recommend": "Yes: a write-only append lane on a vault of vault@web-summit.angelo, sealed to conductor@web-summit.angelo's key (tier 3, your go)."
+    },
+    {
+      "who": "Angelo",
+      "what": "The signature rule: your conductor acts only on messages signed by a key in data/person-keys.json",
+      "issue": "WS-119",
+      "since": "2026-11-04T17:40:00Z",
+      "source": "people/angelo/index.html",
+      "recommend": "Yes: unsigned lane messages stay material (security's WS-119)."
+    },
+    {
+      "who": "Angelo",
+      "what": "The presence agent: team-collaboration@web-summit.angelo as the team's one presence agent (everyone's locations)",
+      "issue": "WS-06",
+      "since": "2026-11-04T17:40:00Z",
+      "source": "people/angelo/index.html",
+      "recommend": "Propose it at a stand-up first: everyone's locations would be opened by an agent in your account."
+    }
+  ],
   "prompts": {
     "pending": [
       "What's pending for me?",
