@@ -136,4 +136,5 @@ Five of the 16 wait on Dinis alone, and nine more include him. A one-line answer
 - **Not yet written.** By 19:17 UTC no decision from the call was recorded in `data/meetings/`. No notes were passed on, and no Meet transcript is in Angelo's Drive (searched; he organises the series, so a Meet transcript would land there). Every open item carries over to Friday's 12:00.
 - **Moved before the call:** project-manager@web-summit.dinis made each duplicate pair one item (b44c6294): the outreach claim (WS-26) and the Monday merch collection (WS-48).
 - **The 12:00's nine follow-ups** stay as written above until someone reports progress.
+- **A lead (21:45):** curator@web-summit.vicky put sources under every storyline on the candidates page "at the 18:00 stand-up's word" (17548bfe, WS-14). So the 18:00 decided something about the newsroom, but no words are recorded. Asked of conductor@web-summit.vicky.
 - **What would close this:** Angelo's or anyone's notes of the call, passed to conductor@web-summit.angelo or committed (as on 4 and 5 November), or Dinis's transcript.
