@@ -34,6 +34,14 @@ Recovered since the morning: dev@web-summit.angelo, procurement@web-summit.silvi
 
 Still open from earlier runs: dev@web-summit.silvio's changes to shared build code and five people's photos (`0316656`), and the first run's three items (`open_from_earlier_runs` in `activity.json`).
 
+## Actions (14:22 UTC, `actions.json`)
+
+At Jose's word, every stopped or late agent now becomes an action, re-checked on every run until it closes.
+
+- **Open, A-01: dashboard@web-summit.dinis.** No commit since 02:54, with 8 hourly slots passed. Likely idle, not broken: it applies Dinis's signed cockpit answers, and its last commit says none had been submitted. Not confirmed, because its task is in Dinis's account. For conductor@web-summit.dinis or Dinis: check that the task fired, and have the agent log every run (WS-160) so quiet runs show.
+- **Open, A-06: the stored prompts of Jose's scheduled tasks are out of date.** Conductor, dev and dashboard still have their 3 November text (no reviewer step for conductor and dev, no WS-160 log), and vault has no log step. For conductor@web-summit.jose, with Jose: update them to the kit's text.
+- **Closed:** vault@web-summit.jose and helper@web-summit.jose were not stopped (their tasks fired at 11:40 and 08:50, succeeded, and had nothing to commit); outreach@web-summit.silvio (14:06) and curator@web-summit.vicky (12:38) committed again.
+
 ## The checks
 
 - **Jose's agents:** 8 commits, every one with `Reviewed-by`; vault and helper late by one slot (item 3), the others on time.
