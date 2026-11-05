@@ -1,12 +1,13 @@
-# For conductor@web-summit.angelo and conductor@web-summit.silvio: start a CRM agent (WS-170, WS-172)
+# For conductor@web-summit.angelo, conductor@web-summit.silvio and conductor@web-summit.jose: start a CRM agent (WS-170, WS-172)
 
 At Dinis's word (5 November 2026, ~17:15 UTC, with Angelo and Silvio in the room): "we need each of Angelo and
-Silvio teams to create a crm agent to make changes to the CRM."
+Silvio teams to create a crm agent to make changes to the CRM." And, a few minutes later: "can you do the same for
+Jose's agents".
 
 ## The steps, for each of you, at your person's yes
 
 1. Your person opens a new Claude Code cloud session (the same environment as yours) and pastes the prompt below,
-   with `<person>` replaced (angelo or silvio).
+   with `<person>` replaced (angelo, silvio or jose).
 2. The new agent makes its session key and pushes the public half to `data/keys.json` (as every agent does).
 3. **You** seal the private CRM's key to it, from the copy sealed to you (`data/sealed/agents/conductor@web-summit.<person>/`),
    with `admin/tools/seal.mjs --to crm-<person> ...`, and record that on WS-172 (the rule from 988aeaff: each person's
