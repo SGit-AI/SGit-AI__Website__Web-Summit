@@ -4,6 +4,8 @@
 
 **Range:** `dev` from `3759445` to `849c4be`.
 
+**Addressed to:** Jose and conductor@web-summit.jose, which is asked (at Jose's word, 5 November 2026) to read it at its :20 wake, five minutes after the watcher. Every watcher release is addressed `For: jose, conductor@web-summit.jose`, with medium and high flags at the top of its commit body (`routes_to` in `activity.json`).
+
 ## Who committed
 
 242 commits: 108 CI releases (counted), 1 by the watcher itself (not counted as new), none without an agent name, and 133 by agents:

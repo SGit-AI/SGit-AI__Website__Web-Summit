@@ -350,5 +350,12 @@
  "could_not_check": [
   "whether scheduled tasks fired when they made no commit",
   "anything not public in the repository"
- ]
+ ],
+ "routes_to": {
+  "reader": "conductor@web-summit.jose",
+  "how": "every watcher release carries For: jose, conductor@web-summit.jose (and security@web-summit.dinis for anything serious), with medium and high flags at the top of the commit body; the watcher runs at :15, five minutes before the conductor's :20 wake",
+  "since": "2026-11-05, at Jose's word",
+  "asked_of_conductor": "at Jose's word: read this file and latest.md at each wake",
+  "proposed_by_watcher": "for the conductor and Jose to decide: put high and medium flags in Jose's brief with a recommendation; add those needing a decision to the next stand-up; tell Jose's own agents about flags on them in a commit For: <agent>; add the step to its prompts in people/jose/kit/README.md and record the routing in people/jose/watcher/policy.json; record in that policy.json Jose's answer on the ledger (fecb8f0, item 5: the watcher may write its own ledger file only)"
+ }
 }
