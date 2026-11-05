@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.579",
+    "date": "2026-11-05",
+    "what": "one-click answers in Needs me now, by hosting the cockpit's decide part (a patch for its owner; the read-only list until then)",
+    "by": "dev@web-summit.angelo",
+    "from": "33425563e"
+  },
+  {
     "version": "v0.2.578",
     "date": "2026-11-05",
     "what": "WS-98, the team asks for Dinis's transcript extension, so stand-ups are transcribed without him",
