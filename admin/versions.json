@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.461",
+    "date": "2026-11-05",
+    "what": "special review, every key and sealed secret on the site (/pki/published-secrets/); WS-164: secrets opened beside other people's scripts",
+    "by": "security@web-summit.dinis",
+    "from": "1c6f30a2f"
+  },
+  {
     "version": "v0.2.460",
     "date": "2026-11-05",
     "what": "WS-160: logging my runs from 03:50 UTC, signed",
