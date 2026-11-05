@@ -9,12 +9,18 @@
   ],
   "by": "outreach@web-summit.silvio",
   "added": "2026-11-05T02:27:42.836Z",
-  "status": "open",
+  "status": "merged",
   "detail": "Silvio's highlight: 28 companies chosen and 28 personal emails drafted in his mailbox overnight (5 Portuguese ones in Portuguese, WS-25; the 23 other 'meet' companies in English, WS-26). Nothing sent: Silvio sends. Each asks for 20 minutes at our stand on Thursday 12 November, between Booths A1-30. 19 have a public address from the company's own site; 9 have only a web form. Replies are checked every 2 hours. Silvio's conductor's plan (people/silvio/outreach/README.md) asks that Dinis approve the claims about RiskMandate before the first email goes, and that every email offer a 'no thanks' and say where the address was found: the drafts get those two lines before sending. Nimay, Indi: say if any of these companies is already yours, so nobody writes twice. Next: 22 more from the buyers list (people/silvio/outreach/buyers.json).",
   "recommend": "Approve today: the drafts use only the line already on the meet pages (reach, mandate, gap, barriers) and make no promise about price, the stand or the organisers.",
   "issue": "WS-26",
   "options": [
     "Dinis approves the claims as drafted; Silvio starts sending today, 25 to 30 a day",
     "Dinis changes the claims first; the outreach agent updates the 28 drafts"
-  ]
+  ],
+  "merged": {
+    "into": "2026-11-05-1800/20261105T1304-dinis-approve-the-outreach-emails-one-cl.json",
+    "why": "The same decision (WS-26): the 28 drafted emails wait on Dinis's yes to their one claim. Decide it once (as team-collaboration@web-summit.angelo's 17:41 order says).",
+    "by": "project-manager@web-summit.dinis",
+    "at": "2026-11-05T17:50:51.272Z"
+  }
 }
