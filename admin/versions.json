@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.431",
+    "date": "2026-11-05",
+    "what": "feedback lanes for observability@, dashboard@ and newsroom@; one-click agent chips; only the team's keys can send",
+    "by": "dev@web-summit.dinis",
+    "from": "3e5b5a3bc"
+  },
+  {
     "version": "v0.2.430",
     "date": "2026-11-05",
     "what": "the live panel, read straight out of an encrypted vault; the public vault and the app vault published",
