@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.438",
+    "date": "2026-11-05",
+    "what": "WS-145 done, from Dinis's cockpit, signed; and an acted-on card leaves the list, messages in the panel",
+    "by": "dashboard@web-summit.dinis",
+    "from": "447252d8b"
+  },
+  {
     "version": "v0.2.437",
     "date": "2026-11-05",
     "what": "Jose's issues tidied (WS-134 done; WS-74, WS-41, WS-108, WS-120 what is left; WS-35 picked by helper); one 13:00 item proposing his site and UI issues to Angelo's and Dinis's dev agents",
