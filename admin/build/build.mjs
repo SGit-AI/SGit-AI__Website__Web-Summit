@@ -129,6 +129,12 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
             out.push(obsViewHtml(view, person, id))
+        } else if (/^```sticker-vote\s*$/.test(l)) {
+            // the team's sticker vote (WS-159, conductor@web-summit.dinis): a mount for assets/stickers-vote.js, which the
+            // page loads through its front matter (script: stickers-vote); without JavaScript it says so
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push('<div class="sv" id="sticker-vote"><p class="meta">The vote needs JavaScript: the twelve stickers, the Vote button and who has voted are drawn here by the page.</p></div>')
         } else if (l.startsWith('```')) {
             const buf = []
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) buf.push(lines[i])
@@ -564,7 +570,11 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
     let html = render(body), md = body
     if (name === 'index') ({ html, md } = expandHome(html, md, homeBlocks({ ROOT, teamData, onboard, LEVELS, INV, MEET, ISSUES, plan, castData, merch })))
     if (name === 'print') ({ html, md } = expandSignoff(html, md, ROOT))   // the Official Sign-off, from the signatures (WS-113)
-    write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + html.replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index' }))
+    // a page's own script, named in its front matter (script: <name> loads assets/<name>.js; WS-159)
+    if (meta.script && !/^[a-z0-9-]+$/.test(meta.script)) throw new Error(`content/${f}: script must name a file in assets/ ([a-z0-9-])`)
+    const head = meta.script ? `<script src="${'../'.repeat(rel.split('/').length - 1)}assets/${meta.script}.js" defer></script>` : ''
+    md = md.replace(/^```sticker-vote\s*\n```\s*$/m, '*The vote: the twelve stickers, the Vote button, the vault and who has voted are drawn on the HTML page by assets/stickers-vote.js, from data/stickers-vote.json.*')
+    write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + html.replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index', head }))
     pages.push({ rel, title: meta.title, description: meta.summary })
     if (name !== 'index') twin(rel, meta.title, meta.summary, md)
     if (name === 'index') write('index.md', `# ${meta.title}\n\n${meta.summary}\n\nSite version: ${VERSION}\n\n${md.trim().replace('{{numbers}}', NUMBERS_MD)}\n`)

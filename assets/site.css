@@ -35,6 +35,13 @@
     --bad-soft    : #fde7e4;
     --wait        : #5c5f66;
     --wait-soft   : #eeede8;
+    --st-green    : #1a7f5a;   /* the sticker vote (WS-159): the stickers' own palette, for its confetti and its clock */
+    --st-gold     : #f2c230;
+    --st-blue     : #1d4ed8;
+    --st-terra    : #c8553d;
+    --st-ink      : #161615;
+    --st-paper    : #f7f6f2;
+    --st-shade    : rgb(22 22 21 / 0.28);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -445,3 +452,81 @@ svg.ch-map { min-width: 620px; max-width: 900px; }
 .ag-next > a { font-weight: 700; }
 .ag-togo { color: var(--ink-2); font-size: .85rem; font-weight: 400; }
 .ag-summit > a { font-weight: 600; } .ag-none, .ag-missing { color: var(--ink-2); font-size: .88rem; }
+
+/* ---------- the sticker vote (WS-159, conductor@web-summit.dinis): assets/stickers-vote.js ---------- */
+.sv { margin: 1.2rem 0 2rem; }
+.sv .sv-l { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85; }
+.sv-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 0.9rem; margin-bottom: 0.9rem; }
+.sv-clock { background: linear-gradient(135deg, var(--st-green), var(--st-blue)); color: var(--st-paper); border-radius: 18px; padding: 1rem 1.2rem; box-shadow: var(--shadow); }
+.sv-clock b { display: block; font: 800 clamp(2.2rem, 6vw, 3.4rem)/1.05 var(--mono); letter-spacing: -0.02em; margin: 0.2rem 0; font-variant-numeric: tabular-nums; }
+.sv-closed .sv-clock { background: var(--surface-2); color: var(--ink-2); }
+.sv-team { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 1rem 1.2rem; box-shadow: var(--shadow); }
+.sv-team .sv-l b { color: var(--accent-dk); text-transform: none; letter-spacing: 0; font-size: 0.9rem; margin-left: 0.4rem; }
+.sv-people { list-style: none; padding: 0; margin: 0.6rem 0 0; display: flex; flex-wrap: wrap; gap: 0.6rem 0.9rem; }
+.sv-people li { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 0.2rem; font-size: 0.85rem; color: var(--ink-2); }
+.sv-people li span { position: relative; width: 3rem; height: 3rem; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 1.2rem; background: var(--surface-2); color: var(--ink-2); border: 2px dashed var(--line-2); transition: transform 0.4s cubic-bezier(.2, 1.6, .4, 1); }
+.sv-people li.yes span { background: var(--st-green); color: var(--st-paper); border: 2px solid var(--st-green); animation: sv-pop 0.5s cubic-bezier(.2, 1.8, .4, 1); }
+.sv-people li.yes span::after { content: "✓"; position: absolute; right: -0.35rem; bottom: -0.25rem; width: 1.3rem; height: 1.3rem; border-radius: 50%; background: var(--st-gold); color: var(--st-ink); font-size: 0.8rem; display: grid; place-items: center; border: 2px solid var(--surface); }
+.sv-people li.yes { color: var(--ink); font-weight: 600; }
+.sv-people li.me span { outline: 3px solid var(--st-gold); outline-offset: 2px; }
+.sv-me { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 14px; padding: 0.8rem 1rem; margin: 0 0 1.2rem; }
+.sv-me.sv-nokey { background: var(--warm-soft); border-color: var(--warm-line); }
+.sv-me.sv-bad { background: var(--bad-soft); border-color: var(--bad); }
+.sv-me.sv-flash { animation: sv-shake 0.5s; }
+.sv-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr)); gap: 1rem; }
+.sv-card { margin: 0; opacity: 0; transform: translateY(24px) scale(0.9) rotate(-2deg); }
+.sv-in .sv-card { animation: sv-enter 0.6s cubic-bezier(.2, 1.5, .4, 1) forwards; animation-delay: calc(var(--i) * 55ms); }
+.sv-card button { position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; gap: 0.25rem; text-align: left; font: inherit; color: var(--ink); background: var(--surface); border: 2px solid var(--line); border-radius: 20px; padding: 0.6rem 0.6rem 0.8rem; cursor: pointer; box-shadow: var(--shadow); transition: transform 0.3s cubic-bezier(.2, 1.6, .4, 1), border-color 0.2s, opacity 0.3s, box-shadow 0.3s; }
+.sv-card button:hover { transform: translateY(-6px) rotate(-1.5deg) scale(1.03); border-color: var(--st-gold); box-shadow: 0 14px 30px var(--st-shade); }
+.sv-card:nth-child(even) button:hover { transform: translateY(-6px) rotate(1.5deg) scale(1.03); }
+.sv-card img { width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; border-radius: 14px; background: var(--surface-2); transition: transform 0.5s; }
+.sv-card button:hover img { transform: scale(1.05) rotate(2deg); }
+.sv-card b { font-size: 1.05rem; line-height: 1.2; margin-top: 0.2rem; }
+.sv-card .sv-words { font: 700 0.72rem/1.3 var(--mono); color: var(--accent-dk); letter-spacing: 0.02em; }
+.sv-card .sv-joke { font-size: 0.85rem; line-height: 1.35; color: var(--ink-2); }
+.sv-num { position: absolute; top: -0.5rem; left: -0.5rem; z-index: 2; width: 2.5rem; height: 2.5rem; border-radius: 50%; display: grid; place-items: center; font-weight: 900; background: var(--st-gold); color: var(--st-ink); border: 3px solid var(--st-ink); transform: rotate(-10deg); }
+.sv-n:not(:empty) { position: absolute; top: 0.9rem; right: 0.9rem; z-index: 2; padding: 0.1rem 0.55rem; border-radius: 999px; font-size: 0.8rem; font-weight: 800; background: var(--st-ink); color: var(--st-gold); animation: sv-pop 0.5s cubic-bezier(.2, 1.8, .4, 1); }
+.sv-tick { position: absolute; inset: 0; display: grid; place-items: center; font-size: 5rem; font-weight: 900; color: var(--st-paper); text-shadow: 0 4px 18px var(--st-shade); opacity: 0; transform: scale(0.3); transition: opacity 0.25s, transform 0.4s cubic-bezier(.2, 1.8, .4, 1); pointer-events: none; }
+.sv-picking .sv-card:not(.picked) button { opacity: 0.55; }
+.sv-card.picked button { border-color: var(--st-green); box-shadow: 0 0 0 4px var(--st-green), 0 16px 34px var(--st-shade); transform: scale(1.04) rotate(-1deg); opacity: 1; }
+.sv-card.picked .sv-tick { opacity: 1; transform: scale(1); }
+.sv-card.picked .sv-tick, .sv-card.picked img { filter: none; }
+.sv-card.picked img { box-shadow: inset 0 0 0 999px var(--st-shade); }
+.sv-card.mine button::after { content: "your vote"; position: absolute; bottom: -0.6rem; right: 0.8rem; padding: 0.05rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 800; background: var(--st-green); color: var(--st-paper); }
+.sv-card.lead button { border-color: var(--st-gold); }
+.sv-card.lead button::before { content: ""; position: absolute; top: -1.1rem; left: 50%; width: 2.6rem; height: 1.6rem; transform: translateX(-50%); background: var(--st-gold); clip-path: polygon(0 100%, 0 30%, 25% 60%, 50% 0, 75% 60%, 100% 30%, 100% 100%); z-index: 3; animation: sv-wob 2.4s ease-in-out infinite; }
+.sv-card.nope button { animation: sv-shake 0.45s; }
+.sv-bar { position: sticky; bottom: 0.8rem; z-index: 40; display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; margin: 1rem 0; padding: 0.7rem 0.8rem 0.7rem 1.1rem; background: var(--st-ink); color: var(--st-paper); border-radius: 999px; box-shadow: 0 10px 30px var(--st-shade); animation: sv-up 0.4s cubic-bezier(.2, 1.5, .4, 1); }
+.sv-bar[hidden] { display: none; }
+.sv-go { font: 800 1.05rem/1 var(--sans); padding: 0.75rem 1.6rem; border: 0; border-radius: 999px; background: var(--st-gold); color: var(--st-ink); cursor: pointer; transition: transform 0.2s; }
+.sv-go:hover:not(:disabled) { transform: scale(1.06) rotate(-2deg); }
+.sv-go:disabled { opacity: 0.7; cursor: default; }
+.sv-bars { list-style: none; padding: 0; margin: 0.6rem 0 0; display: grid; gap: 0.45rem; max-width: 46rem; }
+.sv-bars li { margin: 0; display: grid; grid-template-columns: 2.5rem minmax(0, 1fr) 2.2rem; gap: 0.6rem; align-items: center; }
+.sv-bars img { width: 2.5rem; height: 2.5rem; border-radius: 8px; object-fit: cover; background: var(--surface-2); }
+.sv-t { position: relative; height: 2rem; border-radius: 8px; background: var(--surface-2); overflow: hidden; }
+.sv-t i { position: absolute; inset: 0 auto 0 0; width: 0; background: linear-gradient(90deg, var(--st-green), var(--accent)); border-radius: 8px; transition: width 1.2s cubic-bezier(.2, 1, .3, 1); }
+.sv-bars.go .sv-t i { width: var(--w); }
+.sv-t span { position: absolute; left: 0.6rem; top: 0.25rem; font-size: 0.88rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: calc(100% - 1rem); }
+.sv-bars b { text-align: right; font-size: 1.2rem; font-variant-numeric: tabular-nums; }
+.sv-vault { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--st-ink); min-height: 12rem; display: grid; place-items: center; }
+.sv-vault iframe { width: 100%; height: min(85vh, 56rem); border: 0; display: block; }
+.sv-open { font: 800 1rem/1 var(--sans); padding: 0.9rem 1.6rem; border: 0; border-radius: 999px; background: var(--st-gold); color: var(--st-ink); cursor: pointer; }
+.sv-confetti { position: fixed; inset: 0; z-index: 9990; pointer-events: none; }
+@keyframes sv-enter { to { opacity: 1; transform: none; } }
+@keyframes sv-pop { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+@keyframes sv-up { from { transform: translateY(120%); } to { transform: none; } }
+@keyframes sv-wob { 0%, 100% { transform: translateX(-50%) rotate(-6deg); } 50% { transform: translateX(-50%) rotate(6deg) scale(1.08); } }
+@keyframes sv-shake { 0%, 100% { transform: none; } 20% { transform: translateX(-8px) rotate(-2deg); } 40% { transform: translateX(8px) rotate(2deg); } 60% { transform: translateX(-5px); } 80% { transform: translateX(5px); } }
+@media (max-width: 40rem) {
+    .sv-top { grid-template-columns: 1fr; }
+    .sv-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; }
+    .sv-card .sv-joke { display: none; }
+    .sv-card b { font-size: 0.95rem; }
+    .sv-tick { font-size: 3.4rem; }
+    .sv-people { gap: 0.5rem; }
+    .sv-people li { font-size: 0.75rem; }
+    .sv-people li span { width: 2.4rem; height: 2.4rem; font-size: 1rem; }
+    .sv-bar { border-radius: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .sv-card { opacity: 1; transform: none; } .sv-in .sv-card, .sv-people li span, .sv-bar, .sv-card.lead button::before { animation: none; } }

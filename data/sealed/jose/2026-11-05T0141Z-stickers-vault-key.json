@@ -1,0 +1,15 @@
+{
+  "v": "ws-ecies-1",
+  "to": "jose",
+  "key": "sha256:6b6b6fee14c2527c",
+  "by": "conductor@web-summit.dinis",
+  "at": "2026-11-05T01:41:12Z",
+  "epk": {
+    "kty": "EC",
+    "crv": "P-256",
+    "x": "mcMTEzhDe4nU2ufxZidCtboBUVNXLrVp0RMMUyq4JcM",
+    "y": "u3KpVveuYvjLmmnIE06YjpG-F4ZxpzCigEDoq8q3gyk"
+  },
+  "iv": "hhGhBZNglCz9HQ8s",
+  "ct": "qMuMArWziiHnzMhFtyS7YtlmEaOjVv7HfGb5d+9IhBYHJOtiirMY4HBuS3pKlP7SQ2b+Sk+p+F2UvW8/zwMLxKOXNC75jBCtpmcpR5sql8ktVYsq8ABpCtEjafyZvN1XhZVB8/szSvQTWMArQrNxcQnuueVkWaruEHgkRLA5004dTNPMfrBaD7VTYsjqHGehzy1MCKquWExM5LSoj1jjMl78Wz7wbaps5FePyna/60ewgSGMnufz9BsTFbc/Wvb+rXA6qNK+YEanrrnRUF9BveQjWD/oCMQ7dgmmPaJi1bNGCmLG/SMGB2EhEDbdSqRRATOG4uYO104abd11aeZhLua2gBuM/tQVfpa/ibtn2ZW8tQw3Zd6NxCW9sgYEY06aEGlHJWk5GaF6ndV8inE4ZtgyFxTk8qsMaJMq+ZtJVWHifs6Rgq/Atd5HclKLM5T1ZmOtbU7oRv5Lq+AFpwUzL9ckckbu5aJ17rvCbsInuU0amHp6HKCRxZxYnmNI0DJzd2nGLI5WWfxSY+B9ZDlknscBuuBKOwfylpFWUUP532onlLebh+idAnGjN/gpLiZE/mnK3s81YmnpRVLPk3pgBAPM5M+xg6Evr7Wo1J1r3wo0FefLoY/gjgGgL51CEw8Pbr3rzG1zleqh3L03Jd0grOfrGL1ecdAZ0haquIsOO4SOKc26RODbfYkgrtvDE3sAky4e+gSfAYjN21cpSV7XtbvIMnLDAQL1N6t9B8pG05MwyqK6YYASJ2VwK/Qcf4RMwazo6BjQS4logbD4C9+cauoo3e1MGzuQTssJUsb6seihlMhDOKDZ7kNoc4yEqV2Fw7kHNfjGm+wZAp0s4D4pjadafmyNMhOtJhGi4MN2w5QgyMOK5D12At5cxuvwjjHjHCzPiqjJP7Na4SgVNKBYCD5iVnjYu5/ns/iS84KNsJ/O98Rb9DxgV6gn9syhZLtHvhABxemXqSrV11i3vcTDsXdFHQ0+MsSy2fvjzI54/1497UIX1QzH41UQQm1OaxC4oPmT8KBTOtkc8crUnxnA+fxAm78TRUcJCyKtW/UU1SL2uThU1XafhvUmmuWOl3x+H+Nu8/UkvII="
+}

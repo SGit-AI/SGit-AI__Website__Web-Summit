@@ -1,0 +1,250 @@
+{
+  "about": "The team sticker vote (WS-159, admin/tools/stickers_vote.py). One append lane per team person with a site key; each lane token is sealed to that person (ws-ecies-1, data/person-keys.json), so only their browser opens it. Votes are signed by the person, sealed to drain_public_key (sgit hybrid v2) and written to their lane. The read key is published on purpose (Dinis): it renders the vault and lets anyone list who has a vote waiting, never what they chose.",
+  "agent": "conductor@web-summit.dinis",
+  "updated": "2026-11-05T02:00:52Z",
+  "closes_at": "2026-11-05T18:00:00Z",
+  "endpoint": "https://dev.send.sgraph.ai",
+  "vault_id": "uy67e2lt",
+  "read_key": "sgit_public_read_41e7a18261d8450fbd79ea4ee21d1585437886ba790e9541b9a042d3814f88bf",
+  "vault_url": "https://dev.vault.sgraph.ai/#sgit_public_read_41e7a18261d8450fbd79ea4ee21d1585437886ba790e9541b9a042d3814f88bf:uy67e2lt",
+  "drain_public_key": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlZaZ/PtFJw1qpe7TxsNP\nhaiZn6DZh4Ogal7PzNsK2lSrX6r/6/1d27LEts/+2jXxfXycEeFMz2IKx5PY/eDL\nCWhWdFFbCMSH5rO3vAeabzJ0FOgiTxA30JcZy8JzmXkvYu9UNskbz2N+kL6w+w40\npkrOO80hlvmuhgbkpSS2LVxkxBsRFL1fz4ptS+qCqCzlcHA5djeWU9BBs5P/AN+f\n1eFO2scEYVX7RiOUpheQhRpFQBMmWouk5g9mSFZM6mqYwgxrWiUnrki72KuhrjtV\nAMi0UoAL7Scpe3u4mK9OBcrw2owKy5H+EjkdS2NUW3fpvQdMvLNpV3Yf8WUWHQZL\nfefLD9+J/YQfphEYc4kSc08c2DmnPfAigsNGiRfE+KX1Bsp82B104H+tcNSUTtp2\nKqWdB75U7aBxm12Cwa5rCfCAvNOOfCfn+86dDK+U85+HPajxa6SeeZrTOVjyjCWf\nwFoWUCdXoR/HiOLGv7ANk5f8lG3j1pJxqE+Coz3c1v4/nvZVdiluG+kqsMhr+i5W\nHOmE36+i6tVtp1CTQ4foFatC6mhyADzxnMkl+M3fnqcfYtrml34uz6HOKLf7/xhp\nMXs8Sp4+gYLrsMHpRpKeKynJGdpT/bpNFP6nvg195pff8iLLUqioRUbGQOMYfNZd\n65MXqd2+OuZbImUvqfQAQkcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+  "drain_fingerprint": "sha256:18ea9086eb282293",
+  "stickers": [
+    {
+      "id": 1,
+      "nn": "01",
+      "slug": "road-trip-patch",
+      "name": "The road-trip patch",
+      "joke": "A retro travel patch: the bridge at sunset, a little green robot in a convertible holding a map labelled MANDATE.",
+      "words": "RISKMANDATE · WEB SUMMIT EDITION · LISBON 2026",
+      "thumb": "assets/stickers/vote/01-road-trip-patch.webp"
+    },
+    {
+      "id": 2,
+      "nn": "02",
+      "slug": "tram-ticket",
+      "name": "The tram ticket",
+      "joke": "A yellow Lisbon tram 28 ticket for agents, with the small print that matters.",
+      "words": "AGENT PASS · VALID WITHIN MANDATE ONLY",
+      "thumb": "assets/stickers/vote/02-tram-ticket.webp"
+    },
+    {
+      "id": 3,
+      "nn": "03",
+      "slug": "azulejo-tile",
+      "name": "The azulejo tile",
+      "joke": "A blue-and-white Portuguese tile whose pattern is the gap bar: authorised, then the gap.",
+      "words": "CONTROL THE GAP",
+      "thumb": "assets/stickers/vote/03-azulejo-tile.webp"
+    },
+    {
+      "id": 4,
+      "nn": "04",
+      "slug": "pastel-de-nata",
+      "name": "The pastel de nata",
+      "joke": "A golden custard tart wearing a tiny green tick like a medal, looking smug.",
+      "words": "FULLY AUTHORISED",
+      "thumb": "assets/stickers/vote/04-pastel-de-nata.webp"
+    },
+    {
+      "id": 5,
+      "nn": "05",
+      "slug": "passport-stamp",
+      "name": "The passport stamp",
+      "joke": "An entry stamp in green ink: the agent has landed, with paperwork.",
+      "words": "MANDATE APPROVED · LIS · 09-12 NOV 2026",
+      "thumb": "assets/stickers/vote/05-passport-stamp.webp"
+    },
+    {
+      "id": 6,
+      "nn": "06",
+      "slug": "road-sign",
+      "name": "The road sign",
+      "joke": "A warning sign: a small robot striding confidently towards a cliff edge.",
+      "words": "AGENT CROSSING: KNOW THEIR REACH",
+      "thumb": "assets/stickers/vote/06-road-sign.webp"
+    },
+    {
+      "id": 7,
+      "nn": "07",
+      "slug": "the-keys",
+      "name": "The keys",
+      "joke": "Our robot, visibly sweating, holding an enormous ring of keys of every size.",
+      "words": "WITH GREAT ACCESS COMES GREAT RESPONSIBILITY",
+      "thumb": "assets/stickers/vote/07-the-keys.webp"
+    },
+    {
+      "id": 8,
+      "nn": "08",
+      "slug": "the-seal",
+      "name": "The seal",
+      "joke": "An official starburst seal in gold and green, a big tick in the middle.",
+      "words": "VERIFIED MANDATE",
+      "thumb": "assets/stickers/vote/08-the-seal.webp"
+    },
+    {
+      "id": 9,
+      "nn": "09",
+      "slug": "surfs-up",
+      "name": "Surf's up",
+      "joke": "The robot surfing a giant Nazare wave made of data, perfectly calm.",
+      "words": "RIDING THE WAVE, WITHIN MANDATE",
+      "thumb": "assets/stickers/vote/09-surfs-up.webp"
+    },
+    {
+      "id": 10,
+      "nn": "10",
+      "slug": "hello-my-name-is",
+      "name": "Hello, my name is",
+      "joke": "The name-tag classic, with a blank to fill in at the stand.",
+      "words": "HELLO, MY AGENT'S MANDATE IS ____",
+      "thumb": "assets/stickers/vote/10-hello-my-name-is.webp"
+    },
+    {
+      "id": 11,
+      "nn": "11",
+      "slug": "least-privilege",
+      "name": "Least privilege",
+      "joke": "A 1970s souvenir bumper sticker, with a big red heart.",
+      "words": "I LOVE LEAST PRIVILEGE",
+      "thumb": "assets/stickers/vote/11-least-privilege.webp"
+    },
+    {
+      "id": 12,
+      "nn": "12",
+      "slug": "sardine-tin",
+      "name": "The sardine tin",
+      "joke": "A Portuguese sardine tin: every sardine is an agent, and one of them wears a green tag.",
+      "words": "ONE OF THESE HAS A MANDATE",
+      "thumb": "assets/stickers/vote/12-sardine-tin.webp"
+    }
+  ],
+  "lanes": [
+    {
+      "person": "dinis",
+      "name": "Dinis Cruz",
+      "lane": "baad248c791cb378cfbfebc96b72e7767a5ece7fcd1a0b35cb9d8484000a264f",
+      "key": "sha256:c7ec751484fbf03d",
+      "sealed_token": {
+        "v": "ws-ecies-1",
+        "to": "dinis",
+        "key": "sha256:c7ec751484fbf03d",
+        "by": "conductor@web-summit.dinis",
+        "at": "2026-11-05T02:00:52Z",
+        "epk": {
+          "kty": "EC",
+          "crv": "P-256",
+          "x": "kvvX8kOVVq1kP6gzBZRfsvx5zoG-6niWPcCdMFCnezM",
+          "y": "EY4ma75X3RIuC1_N8MGlQUgLCCCTm3qzii0OCZtWqX8"
+        },
+        "iv": "SoTCCir88p+NBgmw",
+        "ct": "29qeZEIV12qagQ05/hmJQItjdVTYI/qmfw7EMhDFgmOUpDeG6MlocEl50lDSWKovhDGLOoCD3Z/mYjCmbPPK5rbInaQZbsIemObzMq0yARIDPP4Eivg84m1mOvqTCycH27mkfkzfRBVjNtgu6qf871Tu+kFsFkO391L5UVk4BNZV4SAycmhIVXJp+UWEV5hN6N/ndXyel58VCQ70J9ZoEnar3r7IyJDbwy1AZt7rhnA="
+      }
+    },
+    {
+      "person": "silvio",
+      "name": "Silvio Switha",
+      "lane": "a235bbf77a2d11c2340c30d1b45b9a0adb4dfe5d92d57e936759020ce31daf25",
+      "key": "sha256:c790b809522386ef",
+      "sealed_token": {
+        "v": "ws-ecies-1",
+        "to": "silvio",
+        "key": "sha256:c790b809522386ef",
+        "by": "conductor@web-summit.dinis",
+        "at": "2026-11-05T02:00:52Z",
+        "epk": {
+          "kty": "EC",
+          "crv": "P-256",
+          "x": "0_hy24whaOzpLwVI-lNsu_GXDXFjtVonCnvA4vSVp34",
+          "y": "-VyfTNGe2poIrzVaVW1v45PivJpTlI-DsPxLsOQUUZ8"
+        },
+        "iv": "rdGQ/NydbSg7hfMV",
+        "ct": "6q6eBzNqnlAwgmalxB1PKjY2em1auFBWXICz6juk/tzuu7i1Ji1LUNlWiBqQdtEToeRJDjJUGoEddpmIt13sYpacnPl/9vfkYEMfeIga0bEWx+vDbv8BvT32USGV+nY4S+mEn02znak20JW66h7CRhzIRqRsOy+XTHKCxrWF8nwPZFMtFJWUsQmgozyTE0bPZWF0Qor9WCAOZqAXz44wBWCRoSKdxXdsjjTVtmZxPCfc"
+      }
+    },
+    {
+      "person": "angelo",
+      "name": "Angelo",
+      "lane": "35d3679f2c442d393c43321c2a7e952738b2551dbe04c519c7e7d4b1933a503e",
+      "key": "sha256:99fcf112697b7d3d",
+      "sealed_token": {
+        "v": "ws-ecies-1",
+        "to": "angelo",
+        "key": "sha256:99fcf112697b7d3d",
+        "by": "conductor@web-summit.dinis",
+        "at": "2026-11-05T02:00:52Z",
+        "epk": {
+          "kty": "EC",
+          "crv": "P-256",
+          "x": "2lrzbwU2cA_C04TxyDmO1qQk1tztywDLIVGSAexlOGw",
+          "y": "LzPxO8guho0los5MT-L9v_Igk8-qffbR1RdjdBvZquM"
+        },
+        "iv": "/ss9ULt+9Yfbf/5o",
+        "ct": "Dw1AnkY5alG6bdiI5Vl8VPSce5sWwGMsgEnJ0NBq9OcBedbeMTEykKKecIAr4lQXVHfv1551FwxbZSb58Nq1M3R20ybohTBNflj6RFSXKyXZEC8x8p3g2iZgjttZmP1CRVF8GAFkOv/mYdP2NjcFZRtNu0eXyUjmm75QeYNBZ+4t7Kr0149WGvX2eP7eEOSQnnS+TADKrnwb91iwQOLHNZSV+i7mHSkLTGVXb0RN4//U"
+      }
+    },
+    {
+      "person": "vicky",
+      "name": "Vicky",
+      "lane": "9a3a8ff3b0c14513bc186abfa7db08e84adef98e3554202347cc9de328329b27",
+      "key": "sha256:5bd91e541026290e",
+      "sealed_token": {
+        "v": "ws-ecies-1",
+        "to": "vicky",
+        "key": "sha256:5bd91e541026290e",
+        "by": "conductor@web-summit.dinis",
+        "at": "2026-11-05T02:00:52Z",
+        "epk": {
+          "kty": "EC",
+          "crv": "P-256",
+          "x": "F7Czn1CBBLJPi3rvX1jV3akgRyf-yXEBp-50GokGeu8",
+          "y": "oUWsEyCkGU0b3KawUyGZ4h2XmPdhENaQlvCaWfquB_8"
+        },
+        "iv": "Gq8vC6Nr5geRivmP",
+        "ct": "jmlWSblK68WLgVtjCJ9BRF+9kES8jqvg4uZnR5zUA4xhwsz60yl2AQLNZFATy6soansyFjQgPSiHlgqmXXz/CxYSQ92D6tzTDy3ePhSozsqrW3Js/qYCvhuJ279PZXgjRLaQwPrAsfYX1XfZxOjRAPeR1b4F5ta9HWQxf3sELgixOmTJmbtx0qHakNYVt2GwFIX3y5TSsYHUvHjQ28s8ksZ7upq1EuOf0UcEz5oExUc="
+      }
+    },
+    {
+      "person": "indi",
+      "name": "Indi Gupte",
+      "lane": "d1d5e690f70d8a7fae4a62f70b39f37c14ec2256bc63d3ada8e7aa2ff679fdc1",
+      "key": "sha256:504685dc2b1cd9af",
+      "sealed_token": {
+        "v": "ws-ecies-1",
+        "to": "indi",
+        "key": "sha256:504685dc2b1cd9af",
+        "by": "conductor@web-summit.dinis",
+        "at": "2026-11-05T02:00:52Z",
+        "epk": {
+          "kty": "EC",
+          "crv": "P-256",
+          "x": "P-RvzgtiyKg-EBsoxVQdv7cxqXP_XIQimhIfycNItVA",
+          "y": "8R-H1_8K5psne6ZiG4oNfscwEd9DK09xd1H5QZA61GA"
+        },
+        "iv": "onmWwxdYW43sjqt4",
+        "ct": "UK359oBgwGfCoAc3JZPk2P/v85acPOxn5WVMgvFZ15+O4SzgJuPOaI3Tl/hNArblmAYD2kMcKxBuXSagNsuLkIQQLKVZsuvVnL4rSTjo/89Wl+52+wdE6rOIx8p211iKarziSLMn7+HIpjWE3oB+p1ToFZNkW38TmeK1MO66nGAbnKNH51Cd6YNdKIpJr0fUrXavCcMzUKzYQbWXqNI2CaG8TLQCK3NHVn/DF1MB3w=="
+      }
+    },
+    {
+      "person": "jose",
+      "name": "Jose Bota",
+      "lane": "0aeaadb025e64fb0a8cb62087867ed1460274a5f1677d6b9905623263298222a",
+      "key": "sha256:6b6b6fee14c2527c",
+      "sealed_token": {
+        "v": "ws-ecies-1",
+        "to": "jose",
+        "key": "sha256:6b6b6fee14c2527c",
+        "by": "conductor@web-summit.dinis",
+        "at": "2026-11-05T02:00:52Z",
+        "epk": {
+          "kty": "EC",
+          "crv": "P-256",
+          "x": "FwPBJYPNOFrKKt3sWwQ0hDbqg0M2XdfkrpinYVPhgeE",
+          "y": "2RFxOoz_5MreP3VFd8oY6TgDPoIfwb7wOfTcmiOnwOY"
+        },
+        "iv": "iK4hjnV7yGndBOcb",
+        "ct": "yFSNE0f5c2DmRydoxLEinFuHYpcoiz/KbeT+ogmHNMsA0An6/g19a6aonXSm8yMC5muPcd+75o61EEKt5Z5huZGGWuEfeNOFhVAk/aqe6oFZhiY4ODzo9RQs8g4bPaY0ZZfwrvPn6rQzFWg7vCnCEQyEOaM7Q9sA39+SguxbnGO5cTDY+27bidqShnDoFF4JAqiaShRQ8dVfuTyX7SKUcxxyE9Gw3pfxtlKEoywxbg=="
+      }
+    }
+  ]
+}

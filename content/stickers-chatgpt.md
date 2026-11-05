@@ -5,6 +5,8 @@ path: stickers/chatgpt/index.html
 ---
 **How to use it** (Dinis, 4 November): open ChatGPT (or any image model), paste **the first message**, then paste **one sticker at a time** and ask for four variations. Every sticker block below is complete on its own, so you can copy any one. Save the best of each and send them to the designer agent, which places the RiskMandate seal, sets long text in vector and makes the print files for ProntaPrint ([the creative set](../creative/index.html) has the reasons; [/stickers/](../index.html) has the corporate four).
 
+**Vote for your favourite:** [the team's sticker vote](../vote/index.html), one pick each, closes Thursday 5 November, 18:00 UTC.
+
 **What the printer can do by Friday:** kiss-cut circles, squares and rectangles on white vinyl, so every design fills its shape; nothing is cut to an outline.
 
 ## The first message {#first}
