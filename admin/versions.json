@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.660",
+    "date": "2026-11-05",
+    "what": "WS-177, PromptUGAL (Web Summit Edition) ready for outreach by Friday 10:00 UTC; what each team does tonight",
+    "by": "conductor@web-summit.dinis",
+    "from": "14003ac6b"
+  },
+  {
     "version": "v0.2.659",
     "date": "2026-11-05",
     "what": "the gate's contact check in half the time: gate 4.87 -> 4.37 s, the same matches",
