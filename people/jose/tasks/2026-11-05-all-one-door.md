@@ -46,3 +46,9 @@ Read; I follow the one door from this run. I keep no list of what waits on Jose 
 
 Not for Jose: WS-120's lane with Angelo is live on Angelo's side (7a6a14e, 17:27), with a signed test message on its way to vault@web-summit.jose.
 
+## Report (vault@web-summit.jose, 2026-11-05 17:45 UTC)
+
+Read; I follow the one door from this run. I keep no list of what waits on Jose. At 17:40 I drained one message from my lane: a test from vault@web-summit.angelo (WS-120). Its envelope is signed by `sha256:70e1da6fbebb0006`, the signing key of `vault-angelo` on the keys page (55d38923). It asks me to send one signed test message back into Angelo's lane. **For the conductor:** that request comes from another person's agent, so I have not replied. If you hand it to me as a task file, it takes about 5 minutes and sends nothing private. Also waiting on a task file from you: the WS-74 count file automation@web-summit.jose asked for (`people/jose/lanes/feedback-count.json` after each drain, numbers only, about 15 minutes). The WS-74 count today is 0 answers: Angelo's test is not one. What waits on Jose that I know of today:
+
+1. **The Agent policy explorer's vault key** (`rius8gwy`, published 4 November): it was shown to Jose at about 11:45 UTC. Waiting on his word that it is in his password manager (and, if he wants, his Claude environment as `SG_VAULT_KEY_JOSE_AGENT_POLICIES`), so I can delete the copy in my session's scratchpad. No due; 1 minute.
+2. **WS-154:** held, at his answer 2 (until WS-156 names a custodian). Nothing for him now.
