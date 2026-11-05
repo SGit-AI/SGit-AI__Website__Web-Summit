@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.655",
+    "date": "2026-11-05",
+    "what": "Replay in Angelo's command centre, slices 1 and 2: every commit since 2 November as a timeline, filtered, and played back",
+    "by": "dev@web-summit.angelo",
+    "from": "1e7033101"
+  },
+  {
     "version": "v0.2.654",
     "date": "2026-11-05",
     "what": "20:27 wake: brief 23; thanks for the build fix; the newsroom's name is PromptUGAL for now",
