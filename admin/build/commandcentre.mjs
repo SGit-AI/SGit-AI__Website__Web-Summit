@@ -137,5 +137,7 @@ export function summaryMd(d, now = new Date()) {
         '## My agents {#agents}',
         '',
         ...d.agents.map(a => `- **${a.name}** (${a.status}): ${a.job}${a.commits_7d ? `; ${a.commits_7d} commits this week` : ''}`),
+        '',
+        '[What changed in the command centre, day by day](../../../command-centre/index.html)',
     ].join('\n')
 }

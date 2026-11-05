@@ -136,7 +136,7 @@
         const c = counts()
         const badge = { tasks: c.overdue ? [c.overdue, 'red'] : [c.open, ''], waiting: [c.waiting, 'yellow'] }
         const navItem = ([id, label, icon]) => `<a href="#${id}" data-view="${id}"${S.view === id ? ' aria-current="page"' : ''} title="${esc(label)}">${ico(icon)}<span class="lbl">${esc(label)}</span>${badge[id] && badge[id][0] ? `<span class="badge ${badge[id][1]}">${badge[id][0]}</span>` : ''}</a>`
-        root.innerHTML = `<div class="cc" data-ask="${S.askOpen ? 'open' : 'closed'}">
+        root.innerHTML = `<div class="cc" data-ask="${S.askOpen ? 'open' : 'closed'}" data-ev="${eventMode() ? 'on' : 'off'}">
 <div class="cc-layout">
   <aside class="cc-side" aria-label="Command centre">
     <div class="cc-brand"><span class="cc-mark" aria-hidden="true">R</span><div><b>RiskMandate</b><span>${esc(FIRST)}'s command centre</span></div></div>
@@ -190,20 +190,21 @@
         // phones: the bar collapses to a floating microphone; desktop keeps the bar (the button and the collapse control are hidden there)
         $('#cc-askfab').onclick = () => setAsk(true)
         $('#cc-askclose').onclick = () => setAsk(false)
-        $('#cc-askbar').addEventListener('keydown', e => { if (e.key === 'Escape' && PHONE.matches) { e.stopPropagation(); setAsk(false) } })
+        $('#cc-askbar').addEventListener('keydown', e => { if (e.key === 'Escape' && fabMode()) { e.stopPropagation(); setAsk(false) } })
         $('#cc-more').onclick = moreSheet
         bindMics(root)
         tick()
     }
     // the greeting follows the viewer's own clock (the device's local time zone): 05-11 morning, 12-17 afternoon, else evening
     const greeting = (d = new Date()) => { const h = d.getHours(); return h >= 5 && h < 12 ? 'Good morning' : h >= 12 && h < 18 ? 'Good afternoon' : 'Good evening' }
-    const PHONE = matchMedia('(max-width: 767px)')
+    const PHONE = matchMedia('(max-width: 767px)'), TOUCH = matchMedia('(min-width: 768px) and (pointer: coarse)')
+    const fabMode = () => PHONE.matches || (TOUCH.matches && eventMode())
     function setAsk(open) {
         S.askOpen = open
         const c = $('.cc', root); if (!c) return
         c.dataset.ask = open ? 'open' : 'closed'; $('#cc-askfab').setAttribute('aria-expanded', String(open))
         if (!open && rec) rec.stop()
-        if (PHONE.matches) (open ? $('#cc-askq') : $('#cc-askfab')).focus()
+        if (fabMode()) (open ? $('#cc-askq') : $('#cc-askfab')).focus()
     }
     const tick = () => {
         const el = $('#cc-clock'); if (el) el.textContent = new Date().toLocaleDateString([], { weekday: 'long', day: 'numeric', month: 'long' }) + ' · ' + fmtTime(Date.now())
@@ -236,12 +237,12 @@
         const toSummit = Math.max(0, Math.ceil((new Date(D.summit.opening) - Date.now()) / 864e5))
         const kpi = (key, label, val, sub, tone, icon) => `<button class="cc-kpi" type="button" data-kpi="${key}"><span class="ic t-${tone}">${ico(icon, '')}</span><span><span class="lbl">${label}</span><span class="val num">${val}</span><span class="sub">${sub}</span></span></button>`
         return `
-<section class="cc-hero"><div class="grow"><p class="eyebrow">${esc(new Date().toLocaleDateString([], { weekday: 'short', day: 'numeric', month: 'short' }))} · Web Summit Lisbon</p><h1><span id="cc-greet">${greet}</span>, <span class="gild">${esc(FIRST)}</span>.</h1><p>${c.open} open issues named for you · ${c.soon} due within 72 hours · ${D.decisions.length} decisions waiting.</p></div>
+<section class="cc-hero${eventMode() ? ' compact' : ''}"><div class="grow"><p class="eyebrow">${esc(new Date().toLocaleDateString([], { weekday: 'short', day: 'numeric', month: 'short' }))} · Web Summit Lisbon</p><h1><span id="cc-greet">${greet}</span>, <span class="gild">${esc(FIRST)}</span>.</h1><p>${c.open} open issues named for you · ${c.soon} due within 72 hours · ${D.decisions.length} decisions waiting.</p></div>
 <div class="cc-count" role="img" aria-label="${toSummit} days to Web Summit opening night"><b class="num">${toSummit}</b><span>days to<br>opening night</span></div>
 <div class="cc-actions"><button class="cc-btn gold" type="button" data-go="ask">${ico('claude', '')}Ask Claude</button><button class="cc-btn tint t-green" type="button" data-new>${ico('plus', '')}New task</button><button class="cc-btn tint t-conductor" type="button" data-go="board">${ico('board', '')}Team board</button><button class="cc-btn tint t-blue" type="button" data-go="waiting">${ico('wait', '')}Decisions</button></div></section>
-<section class="cc-urgent" aria-labelledby="h-urgent"><header><h2 id="h-urgent">${ico('flag', '')}Most urgent</h2><button class="more" type="button" data-go="tasks">All ${c.open} →</button></header>
+${eventMode() ? eventCard() + newsCard() : ''}<section class="cc-urgent" aria-labelledby="h-urgent"><header><h2 id="h-urgent">${ico('flag', '')}Most urgent</h2><button class="more" type="button" data-go="tasks">All ${c.open} →</button></header>
 ${urgentTop().length ? `<div class="cc-list">${urgentTop().map(i => taskRow(i, true)).join('')}</div>` : empty('Nothing open is named for you.')}</section>
-${newsCard()}${eventMode() ? eventCard() : ''}<div class="cc-kpis">
+${eventMode() ? '' : newsCard()}<div class="cc-kpis">
 ${kpi('open', 'My tasks', c.open, `of ${c.total} named for me`, 'blue', 'tasks')}
 ${kpi('soon', 'Due in 72 h', c.soon, 'derived from due dates', 'orange', 'flag')}
 ${kpi('overdue', 'Overdue', c.overdue, c.overdue ? 'act today' : 'none late', 'red', 'alert')}
@@ -612,16 +613,16 @@ ${groups.map(([g, l]) => `<section class="cc-linkgrp"><h3>${esc(g)}</h3><div cla
     const stars = () => store.get('stars', [])
     const toggleStar = id => { const s = stars(); store.set('stars', s.includes(id) ? s.filter(x => x !== id) : [...s, id]) }
     const hhmm = s => { const m = String(s || '').match(/(\d{1,2}):(\d{2})/); return m ? m[1].padStart(2, '0') + ':' + m[2] : '' }
-    const NEWS = '2026-11-05-photos'
+    const NEWS = '2026-11-05-event'
     const newsCard = () => store.get('news', '') === NEWS ? '' : `<section class="cc-card cc-news" aria-labelledby="h-news"><header><span class="hic" aria-hidden="true">${ico('bell', '')}</span><h2 id="h-news">What's new in your command centre</h2><button class="more" type="button" data-news-close>Got it ✕</button></header>
 <ul class="cc-newslist">
-<li><b>🧑 Photos</b>: the team's faces are now on the buttons at the top and on your profile card. No photo yet? Send a square one to Silvio, or add <code>people/&lt;you&gt;/photo.jpg</code> yourself (a face, about 256px). Want yours taken down? Ask Silvio and your initials come back.</li>
+<li><b>🧑 Photos</b>: the team's faces are on the buttons at the top and on your profile card. <b>If yours is up, confirm it through your own agent by Friday 6 November</b> (WS-163), or it comes down and your initials come back. No photo yet? Send a square one to Silvio, or add <code>people/&lt;you&gt;/photo.jpg</code>.</li>
 <li><b>🔔 For me</b>: the bell at the top counts what needs you (tasks due now or late, decisions only you can make, messages that ask you something). Tap it for the list.</li>
 <li><b>📩 Messages</b>: the ones that ask you something come first; the team's updates and your own agents' reports are folded.</li>
-<li><b>📅 Event mode</b>: from 9 to 12 November your home page starts with your day at Web Summit. Tap ☆ on a session to add it to your day. Try it now in Settings → Event mode.</li>
+<li><b>📅 Event mode</b>: from 9 to 12 November your home page starts with your day at Web Summit, right under a one-line greeting; on an iPad your day and the sessions sit side by side. Tap ☆ on a session to add it to your day. Try it now in Settings → Event mode.</li>
 <li><b>✅ Calmer lists</b>: done tasks fold away, the most urgent come first (Overdue, Today, This week, Later); red means late, orange means today.</li>
 <li><b>🔗 Links</b>: every site we use in one place (the chain button at the top). Add your own in <code>people/&lt;you&gt;/app/config.json</code>, public links only.</li>
-</ul></section>`
+</ul><p class="note" style="margin-top:8px"><a href="../../../command-centre/index.html">Everything that changed, day by day →</a></p></section>`
     function eventCard() {
         const E = D.event || { sessions: [], side_events: [] }
         const day = S.evDay || (EV_DAYS.find(([d]) => d === localDay()) || EV_DAYS[1])[0]
@@ -641,10 +642,10 @@ ${groups.map(([g, l]) => `<section class="cc-linkgrp"><h3>${esc(g)}</h3><div cla
         const sessRow = s => `<div class="cc-row cc-sess"><span class="when">${esc(hhmm(s.time))}</span><span class="what"><b>${esc(s.title)}</b><small>${esc(s.stage || '')}${s.speakers && s.speakers.length ? ' · ' + esc(s.speakers.slice(0, 2).map(x => x.name + (x.org ? ' (' + x.org + ')' : '')).join(', ')) : ''}</small>${s.why_relevant ? `<small class="why">${esc(s.why_relevant)}</small>` : ''}</span><button class="cc-iconbtn cc-star${mine.includes(s.id) ? ' on' : ''}" type="button" data-star="${esc(s.id)}" aria-pressed="${mine.includes(s.id)}" aria-label="${mine.includes(s.id) ? 'Remove from my day' : 'Add to my day'}">${ico('star', '')}</button></div>`
         return `<section class="cc-card cc-event" aria-labelledby="h-ev"><header><span class="hic" aria-hidden="true">${ico('cal', '')}</span><h2 id="h-ev">Web Summit · ${esc(EV_DAYS.find(([d]) => d === day)[1])} Nov</h2></header>
 <div class="cc-seg" role="group" aria-label="Day">${EV_DAYS.map(([d, l]) => `<button type="button" data-set="evDay" data-val="${d}" aria-pressed="${d === day}">${l}</button>`).join('')}</div>
-<h3 class="cc-when">My day<span>${plan.length}</span></h3>${plan.length ? `<div class="cc-rows">${plan.map(([w, what, tone, sub]) => `<div class="cc-row"><span class="when">${esc(w)}</span><span class="what">${esc(what)}${sub ? `<small>${esc(sub)}</small>` : ''}</span><span class="side"><span class="cc-dot t-${tone}"></span></span></div>`).join('')}</div>` : empty('Nothing planned yet.')}
-<h3 class="cc-when">Sessions<span>${sess.length}</span></h3>
+<div class="ev-grid"><div class="ev-col"><h3 class="cc-when">My day<span>${plan.length}</span></h3>${plan.length ? `<div class="cc-rows">${plan.map(([w, what, tone, sub]) => `<div class="cc-row"><span class="when">${esc(w)}</span><span class="what">${esc(what)}${sub ? `<small>${esc(sub)}</small>` : ''}</span><span class="side"><span class="cc-dot t-${tone}"></span></span></div>`).join('')}</div>` : empty('Nothing planned yet.')}
+</div><div class="ev-col"><h3 class="cc-when">Sessions<span>${sess.length}</span></h3>
 <div class="cc-filters" style="margin-bottom:6px"><button class="cc-btn ghost" type="button" data-set="evMine" data-val="${S.evMine ? '' : '1'}"${starred.length ? '' : ' disabled'}>${S.evMine ? 'Show all sessions' : `Only my ★ (${starred.length})`}</button><span class="note">Tap ☆ to add a session to your day; kept on this device.</span></div>
-${list.length ? `<div class="cc-rows">${list.map(sessRow).join('')}</div>` : empty('No session listed for this day.')}
+${list.length ? `<div class="cc-rows">${list.map(sessRow).join('')}</div>` : empty('No session listed for this day.')}</div></div>
 <p class="note" style="margin-top:8px">From data/events.json (websummit.com, read ${esc(E.read_on || '')}); times are Lisbon (UTC+0).</p></section>`
     }
     const forMeCount = () => { const f = forMe(); return f.decisions.length + f.tasks.length + f.asks.length }

@@ -685,3 +685,38 @@ html.cc-on[data-theme="light"] .cc-hero .cc-btn.tint { background: #fff; border-
 /* photos: over the initials, round, cropped to the face */
 .cc-avatar, .cc-switch .av { position: relative; overflow: hidden; }
 .cc-avatar img, .cc-switch .av img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+/* ===== Event mode, clean (5 November 2026): my day first on phones and tablets ===== */
+/* the greeting shrinks to one line: no date line, no summary, no countdown; New task stays */
+.cc-hero.compact { min-height: 0; padding: 12px 16px; gap: 10px 14px; flex-wrap: nowrap; }
+.cc-hero.compact .eyebrow, .cc-hero.compact .grow > p:not(.eyebrow), .cc-hero.compact .cc-count { display: none; }
+.cc-hero.compact .grow { min-width: 0; flex: 1 1 auto !important; width: auto !important; }
+.cc-hero.compact h1 { font-size: 20px; line-height: 28px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cc-hero.compact .cc-actions { flex: none; width: auto !important; display: flex !important; margin: 0 0 0 auto; }
+.cc-hero.compact .cc-actions > :not([data-new]) { display: none; }
+.cc-hero.compact .cc-actions .cc-btn { min-height: 44px; padding: 0 14px; }
+.cc-hero.compact + .cc-event { margin-top: 0; }
+/* narrow phones: New task becomes a round "+"; the narrowest let the greeting take two short lines rather than cut the name */
+@media (max-width: 419px) { .cc-hero.compact .cc-actions .cc-btn { font-size: 0; gap: 0; width: 44px; padding: 0; justify-content: center; } .cc-hero.compact .cc-actions .cc-btn svg { width: 20px; height: 20px; } }
+@media (max-width: 359px) { .cc-hero.compact { padding: 12px 12px 12px 14px; } .cc-hero.compact h1 { font-size: 17px; line-height: 22px; white-space: normal; } }
+/* day buttons big enough to tap standing up, and across the full width */
+.cc-event .cc-seg { display: flex; width: 100%; }
+.cc-event .cc-seg button { flex: 1; min-height: 44px; font-size: 14px; padding: 0 4px; white-space: nowrap; }
+/* my day and the sessions side by side when there is room (tablets, desktops) */
+.cc-event .ev-grid { display: grid; gap: 4px 24px; }
+@media (min-width: 768px) { .cc-event .ev-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); align-items: start; } .cc-event .ev-col > .cc-when:first-child { margin-top: 4px; } }
+/* on a touch tablet in event mode the Claude bar folds to the microphone, as on the phone */
+@media (min-width: 768px) and (pointer: coarse) {
+    .cc[data-ev="on"][data-ask="closed"] .cc-ask { display: none; }
+    .cc[data-ev="on"] .cc-askclose { display: grid; width: 44px; height: 44px; flex: none; }
+    .cc[data-ev="on"] .cc-askfab { display: grid; place-items: center; position: fixed; right: 24px; bottom: calc(24px + env(safe-area-inset-bottom)); z-index: 41;
+        width: 60px; height: 60px; padding: 0; border-radius: 50%; border: 0; cursor: pointer; color: #fff;
+        background: conic-gradient(from 210deg, #A855F7, #05BFE9, #F5B942, #A855F7);
+        box-shadow: 0 0 0 1px rgba(255,255,255,.12), 0 10px 26px -8px rgba(168,85,247,.65), 0 4px 12px rgba(0,0,0,.35); }
+    .cc[data-ev="on"] .cc-askfab::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.22), rgba(7,17,31,.92) 70%); }
+    html.cc-on[data-theme="light"] .cc[data-ev="on"] .cc-askfab { color: #4C1D95; box-shadow: 0 0 0 1px rgba(76,29,149,.12), 0 10px 24px -10px rgba(126,34,206,.55), 0 3px 10px rgba(23,36,58,.18); }
+    html.cc-on[data-theme="light"] .cc[data-ev="on"] .cc-askfab::after { background: radial-gradient(circle at 35% 30%, #fff, #F1ECFB 70%); }
+    .cc[data-ev="on"] .cc-askfab svg { position: relative; z-index: 1; width: 24px; height: 24px; }
+    .cc[data-ev="on"][data-ask="open"] .cc-askfab, .cc[data-ev="on"] .cc-askfab[hidden] { display: none; }
+    .cc[data-ev="on"] .cc-content { padding-bottom: 100px; }
+}
