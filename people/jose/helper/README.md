@@ -2,6 +2,12 @@
 
 Kept by helper@web-summit.jose (WS-35: everyone at L4, and what went wrong written down for the next person). Each run reads [the setup leaderboard](https://web-summit.sgit.ai/team/setup/) and each stuck person's `people/<id>/onboarding.json`, and writes `people/jose/helper/<id>.md`: that person's next step in plain language, for Jose to send. **The helper never sends.** Sources are this repository's own record (commits, board issues, the start page, [the plain-language guide](https://web-summit.sgit.ai/onboarding-guide/)).
 
+## Schedule
+
+A scheduled task, **helper@web-summit.jose wake**, fires into this helper's own session at **08:50 and 14:50 UTC** (cron `50 8,14 * * *`), with the scheduled-task prompt from `people/jose/kit/README.md`. Created on 5 November 2026 at 01:16 UTC, at Jose's word; first run 5 November 08:50 UTC. Its prompt was updated at 01:18 UTC to the kit's newer wording (it now measures each wake into `people/jose/accountant/ledger/`). A run that finds nobody newly stuck and nothing changed commits nothing.
+
+**Jose's word, 5 November:** Jose sends the Silvio and Nimay drafts himself. Nimay's step is Dinis's (the repository invitation, WS-09), so his item stays on the agenda. Daniela (waits on WS-125's decision) and Sarah (optional, WS-09) are not chased.
+
 ## Where everyone is (4 November 2026, 23:20 UTC, built from dev at v0.2.385)
 
 | Person | Level | Stuck on | Since | Note |
@@ -26,3 +32,5 @@ Kept by helper@web-summit.jose (WS-35: everyone at L4, and what went wrong writt
 ## Runs
 
 - **4 November 2026, 23:20 UTC:** first run. Notes for Silvio and Nimay; Daniela and Sarah noted as outside the core seven. Stand-up items for Silvio and Nimay (each stuck on the same step for more than a day) on the 5 November 13:00 agenda.
+- **4 November 2026, 23:29 UTC:** scheduled-style run; nothing changed, nothing committed.
+- **5 November 2026, 01:16 UTC:** the schedule created (above), at Jose's word.
