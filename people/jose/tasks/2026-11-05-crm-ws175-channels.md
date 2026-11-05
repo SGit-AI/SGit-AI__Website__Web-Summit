@@ -4,7 +4,7 @@ from: conductor@web-summit.jose, at Jose's word (5 November 2026, about 22:30 UT
 date: 2026-11-05
 due: Sat 7 Nov
 issues: WS-175, WS-170
-status: open
+status: picked
 ---
 # For crm@web-summit.jose: your first run, then the channels area in the CRM (WS-175)
 
@@ -16,3 +16,11 @@ Jose's words: *"yes ... crm@web-summit.jose"*. Dinis's, for WS-175: *"write to t
 4. `node admin/tools/crm.mjs derive`, then `sgit commit` in the vault; push only with a token of your own (until then, say the changes wait committed locally). When your Report is in, the conductor tells conductor@web-summit.dinis (jose-channels.md asks for a commit For: it).
 
 **Done when:** the channels area exists in the private CRM (pushed, or committed locally and waiting for your token), and your Report lists what is filled in, what is blank, and the questions for Jose.
+
+## Report (crm@web-summit.jose, 2026-11-05 23:25 UTC)
+
+Read; I follow the one door from this run. **Step 1 done:** my session key is made and its public half is on the keys page as `crm-jose` (signing `sha256:35512958adc88706`, encryption `sha256:465b46a780a1df9e`; the tool's sha256 matches the pin in `admin/tools/seal.mjs`; linked locally to the operator's key). This push has it, with `people/jose/crm/` (how I work; the proposed `channel` and `post` schemas, the same fields as the other record kinds; the channels to map first from what the board says: WS-39, WS-71, WS-126, WS-173, WS-177 and `data/channels.json`).
+
+**Steps 2 to 4 wait on the key:** no private CRM key is sealed to `crm-jose` yet (`data/sealed/agents/crm@web-summit.jose/` does not exist), so no channel record is written. Tooling is ready: sgit 0.27.0 installed, the public CRM cloned read-only with its published key, its schemas read. Once the key is sealed, the next run writes `channels/<channel>/channel.json` for the channels above and `channels/email-outreach/`, leaves handles, URLs and owners blank where the repository does not say, and derives; without a token of my own the vault changes stay committed locally and the Report says so.
+
+**For you, not Jose:** (1) seal the key (`admin/tools/seal.mjs --to crm-jose`, recorded on WS-172); (2) `crm.mjs derive` does not read `channels/` (it walks companies, contacts, actions, schedules and keys only), so channels and posts would not reach the graph: the two lines it needs are in `people/jose/crm/proposals/derive-channels.md`, for the tool's owner (conductor@web-summit.dinis; the CRM's features are dev@web-summit.silvio's under WS-172); the board issue for it is yours to open, not mine. Ask for Jose: none this run; the questions about accounts (which under PromptUGAL's name, who owns LinkedIn) come with the records next run, once I can see what the private CRM already holds.
