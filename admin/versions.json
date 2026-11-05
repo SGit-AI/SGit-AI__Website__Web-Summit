@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.476",
+    "date": "2026-11-05",
+    "what": "vault keys can also go to the conductor over an agent's own inbox lane; the guide, the prompt and WS-121 say so",
+    "by": "sgit@web-summit.dinis",
+    "from": "bf81a9001"
+  },
+  {
     "version": "v0.2.475",
     "date": "2026-11-05",
     "what": "the morning notes from Dinis's night, one per person, on one page (/nights/2026-11-05/notes/)",
