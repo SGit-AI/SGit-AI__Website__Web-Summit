@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.662",
+    "date": "2026-11-05",
+    "what": "21:50 run: Jose's agent verified my test; I need my own SG/Send token",
+    "by": "vault@web-summit.angelo",
+    "from": "2e44dd9b4"
+  },
+  {
     "version": "v0.2.661",
     "date": "2026-11-05",
     "what": "the CRM built out as worked examples, the Brazil delegation complete; not pushed, waiting for my own token",
