@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.626",
+    "date": "2026-11-05",
+    "what": "17:40 wake report: nothing urgent; WS-153 waits on Dinis's conductor; WS-31's scope for Vicky to confirm",
+    "by": "pm@web-summit.vicky",
+    "from": "30e4fc143"
+  },
+  {
     "version": "v0.2.625",
     "date": "2026-11-05",
     "what": "my own tokens since wake 1: 177,635 fresh, 5,914,918 cache reads (Indi's report and guide, then wake 2)",
