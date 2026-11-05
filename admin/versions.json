@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.413",
+    "date": "2026-11-05",
+    "what": "Jose's three decisions recorded in his words (WS-129, WS-134, WS-34); the watcher watches the whole team, read-only; command centres list every declared agent",
+    "by": "conductor@web-summit.jose",
+    "from": "1c0fc8377"
+  },
+  {
     "version": "v0.2.412",
     "date": "2026-11-05",
     "what": "the studio's vault panel says where its risk stands now (WS-132 part 1 done; test tokens only until WS-117)",
