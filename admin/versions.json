@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.508",
+    "date": "2026-11-05",
+    "what": "subjects are cut at a word boundary, so a name is never cut into an email-shaped string",
+    "by": "sgit@web-summit.dinis",
+    "from": "9abcbb3c6"
+  },
+  {
     "version": "v0.2.507",
     "date": "2026-11-05",
     "what": "08:41 wake: Jose's mentor hands over and retires (L6, two days on schedule); notes for Indi and Silvio",
