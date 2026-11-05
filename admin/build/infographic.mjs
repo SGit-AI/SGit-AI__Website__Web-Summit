@@ -12,7 +12,7 @@ export const expandInfographic = (html, md, ROOT, file, rel) => {
     const d = JSON.parse(fs.readFileSync(path.join(ROOT, file), 'utf8'))
     const up = '../'.repeat(rel.split('/').length - 1)
     const href = h => /^https?:/.test(h) ? h : up + h
-    const tile = t => `<a class="ig-tile" href="${esc(href(t.href))}">${t.img ? `<img src="${esc(up + t.img)}" alt="" loading="lazy" width="640" height="400">` : ''}<span class="ig-tt"><b>${esc(t.title)}</b>${esc(t.text)}</span></a>`
+    const tile = t => `<a class="ig-tile${t.wide ? ' ig-wide' : ''}" href="${esc(href(t.href))}">${t.img ? `<img src="${esc(up + t.img)}" alt="" loading="lazy">` : ''}<span class="ig-tt"><b>${esc(t.title)}</b>${esc(t.text)}</span></a>`
     const out = `<div class="ig">
 <div class="ig-stats">${d.stats.map(([n, t], i) => `<div class="ig-stat ig-${COLS[i % 4]}"><b>${esc(n)}</b><span>${esc(t)}</span></div>`).join('')}</div>
 ${d.sections.map((s, i) => `<section class="ig-sec ig-${COLS[i % 4]}"><h2 id="${esc(s.id)}"><span class="ig-n">${i + 1}</span>${esc(s.title)}</h2><p class="ig-lead">${esc(s.lead)}</p><div class="ig-tiles">${s.tiles.map(tile).join('')}</div>${s.check ? `<p class="ig-check"><b>Check it:</b> ${esc(s.check)}</p>` : ''}</section>`).join('\n')}
