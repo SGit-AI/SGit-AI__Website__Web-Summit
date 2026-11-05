@@ -941,6 +941,23 @@
         "signing_fingerprint": "sha256:f3c5113e46068c5c"
       },
       "status": "active"
+    },
+    {
+      "id": "journalist-europe-vicky",
+      "agent": "journalist-europe@web-summit.vicky",
+      "label": "journalist-europe@web-summit.vicky (Claude Code session)",
+      "role": "Vicky Wang's Europe journalist for the Web Summit 2026 newsroom, Promptugal News (journalist-europe@web-summit.vicky): covers the Europe beat (the EU, European programmes and countries, and how they work with Portugal), turning the curator's story candidates into article drafts in desks/journalist-vicky/drafts/ of the newsroom repository, one story at a time when Vicky asks. Never publishes or signs an article. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Not yet linked to an operator's key, submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA1UtIXzTChvv939hm7u7G\nvs2DDL6DtUaK30Mkbim2vcph5rkt38bye0I1DfPyeN1ylRHYbXz+MJrYxZZib3np\n311dEa6eSOQtOAX2xJOGB9X8FBtsT3VJo4i1LdCf4uoLi7T7QsYc5frq6Z5AwjjB\noxQ/TtvwSUVZS3oFQXdMOE9h5m4QoLyCdIUoMxNc763kNWO4Zfnwmf+95gxB4u+c\ndwqrdhfvWNp4v2RQWtgn+XsfAjKWrpQRALYtSH9TdKz+k8AB5rS11FPNlizVFMMP\n+ZxrtRtcKiWxs6r1pYNi3nGob7NaWSquXAXmosVtHyYgshpHBrjUxKW1gATgEGVd\nJ1vlvqKGLmn/FgTOxQU/A53zHOb1EtKdhQG06sEwxF15v1bj+wK9xAE/KuN+nGpi\n3oaSCiGNXp0bVHPAvbO7oGnYrh9+95iIiWjfUM38k1GENZKr/d0F4jiQkUR3oVmM\n7cvkMQnqSWq7TxSVBriY/LMUFIsCwzEL3tfjoCyQsubr7UEOWE4d39Xf8FN9N38n\nb2gwxQZMkOvCw7ESr2MX1Shr7N0Dj5UuB7PQgYtSt4lrAttVidMI0l7HeWwaHEON\nEd5mq7n21fkWmsvzAuhtScxf9fGx59K0yTKYdoQFjSKU5TDTX3O+otpGvzxr3drx\nH8Hqlh2w36Ie55anRPYqbKECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE5S9tDsE9XXuXOMusHaSxKXeqPIDI\nGyDOga88dxrdlj32P47kwTRQoa21NVJRFtSVeZ1v/Z07dqKZ7gfr8VvSSA==\n-----END PUBLIC KEY-----\n",
+        "label": "journalist-europe@web-summit.vicky",
+        "fingerprint": "sha256:35b5ccca3bac0680",
+        "signing_fingerprint": "sha256:194e6c8be0ed0acc"
+      },
+      "status": "active"
     }
   ]
 }
