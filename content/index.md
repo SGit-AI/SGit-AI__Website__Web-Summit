@@ -23,12 +23,12 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Thursday 5 November, 16:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-1657/index.html), [yesterday's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
+*Thursday 5 November, 18:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-1857/index.html), [yesterday's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
 
-- **The team CRM is live:** 109 companies, 249 people and 210 agenda items, each sourced, at [/crm/](crm/index.html) (WS-170).
-- **Silvio's mailbox has one agent,** drafts only, never sends (WS-172).
-- **Jose in navy or orange:** side by side on [/print/](print/index.html#next) for Dinis.
-- **For Dinis at 18:00:** Silvio's three, the next garment set (WS-113), the shortlist pick.
+- **The CRM is the single place for every conversation** with a company (WS-170, WS-173 to WS-176).
+- **For Dinis from the 18:00:** the outreach claim, the merch on Monday, the Meet transcripts, online slots.
+- **104 issues are past due;** the RiskMandate core has not moved for two days.
+- **No pulse check-in for two days:** two minutes each (WS-07).
 - **Our stand:** booth A1-30, ALPHA 1, Pavilion 1, Thursday 12 November.
 
 ## Start here {#start}
