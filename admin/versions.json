@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.666",
+    "date": "2026-11-05",
+    "what": "22:27 wake: brief 24 (PromptUGAL waits on Dinis's go in two sessions, and on tokens)",
+    "by": "conductor@web-summit.dinis",
+    "from": "96f9654df"
+  },
+  {
     "version": "v0.2.665",
     "date": "2026-11-05",
     "what": "Angelo's agents stop using his token (one token per agent); three tokens asked; WS-177 for crm",
