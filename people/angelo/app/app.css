@@ -142,3 +142,11 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .ak-why { font: 500 13px/19px var(--rm-font); color: var(--rm-text-secondary); }
 .ak-decide a.note, .ak-decide a.chip { color: var(--rm-action); text-decoration: none; }
 .ak-decide .ak-h3 b { margin-left: 6px; font: 600 12px/20px var(--rm-font); padding: 0 6px; border-radius: 999px; background: var(--rm-chip-bg); }
+
+/* ---------- the cockpit's decide part, hosted in Needs me now: its colours in the command centre's theme ----------
+   assets/cockpit.css is written for the site's own tokens; here, inside .ak-decide-live, they point at the command
+   centre's, so the cards follow its dark and light themes. Nothing in the cockpit's files changes. */
+.ak-decide-live { --bg: var(--rm-bg); --surface: var(--rm-surface); --surface-2: var(--rm-surface-raised); --ink: var(--rm-text); --ink-2: var(--rm-text-secondary); --line: var(--rm-border); --line-2: var(--rm-border); --accent: var(--rm-action); --accent-ink: var(--rm-action-ink); --focus: var(--rm-focus); --shadow: var(--rm-shadow); --hero-ink: var(--rm-text); --ok: var(--rm-green); --ok-soft: color-mix(in srgb, var(--rm-green) 16%, transparent); --warn: var(--rm-yellow); --warn-soft: color-mix(in srgb, var(--rm-yellow) 16%, transparent); --bad: var(--rm-red); --bad-soft: color-mix(in srgb, var(--rm-red) 16%, transparent); --sent: var(--rm-blue); --sent-soft: color-mix(in srgb, var(--rm-blue) 16%, transparent); --wait: var(--rm-blue); --accent-dk: var(--rm-action); --accent-soft: color-mix(in srgb, var(--rm-action) 16%, transparent); --hero-bg: var(--rm-surface); --hero-ink-2: var(--rm-text-secondary); --hero-tile: var(--rm-surface-raised); color: var(--rm-text); display: grid; gap: 10px; }
+.ak-decide-live textarea, .ak-decide-live select { background: var(--rm-surface-raised); color: var(--rm-text); border: 1px solid var(--rm-border); border-radius: 8px; font: 400 14px/20px var(--rm-font); }
+.ak-decide-live .ck-grid { gap: 14px; }
+@media (max-width: 1100px) { .ak-decide-live .ck-grid { grid-template-columns: 1fr; } }

@@ -62,7 +62,7 @@
         let D = null, failed = ''
         const route = () => (location.hash.match(/^#(kanban|collab|summit)(\?|$)/) || [])[1] || ''
         const mine = () => !!route()
-        once.then(r => r.ok ? r.clone().json() : Promise.reject(new Error(r.status))).then(d => { D = d; nav(); if (mine()) draw() }).catch(e => { failed = e.message; if (mine()) draw() })
+        once.then(r => r.ok ? r.clone().json() : Promise.reject(new Error(r.status))).then(d => { D = d; nav(); loadCockpit(); if (mine()) draw() }).catch(e => { failed = e.message; if (mine()) draw() })
 
         // after every shared render (it rebuilds the shell): add the Kanban entry, and draw the kanban when it is asked for
         new MutationObserver(() => { nav(); if (mine()) draw() }).observe(root, { childList: true })
@@ -119,6 +119,7 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}. Cards change on the next release, usually within minutes.${D.kanban.shallow ? ' This build had only part of the git history (a shallow clone), so last changes and histories may read short.' : ''}</p>
 </div>${s.open ? details(s.open, now) : ''}`
             bind(view, s)
+            if (s.now) mountCockpit()
             if (s.open) loadBody(s.open)
         }
 
@@ -178,9 +179,22 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             }).join('')
         }
 
+        // one-click answers: the cockpit's own front end (assets/cockpit.js) draws its decide part here and signs, seals and
+        // sends what Angelo clicks to his conductor's lane; this file only hosts it (window.WSCockpit.mount). Until the
+        // cockpit offers that, the read-only list below stands in.
+        let ckLoaded = false
+        function loadCockpit() {
+            if (ckLoaded || !D || !D.cockpit || D.cockpit.error) return; ckLoaded = true
+            const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = new URL('../../../assets/cockpit.css', here).href; document.head.appendChild(css)
+            window.WSCockpitConfig = { src: URL.createObjectURL(new Blob([JSON.stringify(D.cockpit)], { type: 'application/json' })), lanes: new URL('../../../assets/feedback.json', here).href, only: 'decide' }
+            import(new URL('../../../assets/cockpit.js', here).href).then(() => { if (route() === 'kanban' && state().now) draw() }).catch(() => null)
+        }
+        const mountCockpit = () => { const el = root.querySelector('#ak-ck'); if (el && window.WSCockpit) window.WSCockpit.mount(el) }
+
         // the cockpit's ranking (admin/build/cockpit.mjs): what waits on Angelo's word, highest first, each with why
         function decideFirst() {
             const C = D.cockpit; if (!C) return ''
+            if (window.WSCockpit && !C.error) return `<section class="ak-decide-live" aria-label="Decide first"><h3 class="ak-h3">Decide first</h3><div id="ak-ck"></div><p class="note">Your answers are signed with your key in this browser and sent to ${esc(C.lane.agent)}, which acts on them for tier 1 and 2 only.</p></section>`
             const list = [...(C.only_you || []), ...(C.decisions || [])].sort((a, b) => b.score - a.score)
             if (!list.length) return C.error ? `<p class="note">The ranking could not be built (${esc(C.error)}).</p>` : ''
             const item = x => `<li class="ak-dec"><span class="ak-score" title="The cockpit's score: higher is more urgent">${esc(x.score)}</span><div><span class="ak-meta"><span class="chip ${x.type === 'question' ? 't-blue' : x.type === 'decision' ? 't-orange' : 't-red'}">${esc(x.type === 'only-you' ? 'only you' : x.type)}</span>${x.issue ? `<a class="chip plain" href="#kanban?n=1&o=${esc(x.issue)}">${esc(x.issue)}</a>` : ''}</span><b class="ak-dt">${esc(clean(x.title))}</b>${x.why ? `<span class="ak-why">Why here: ${esc(x.why)}</span>` : ''}${x.recommend ? `<span class="note">Recommended: ${esc(x.recommend)}</span>` : ''}${x.meeting ? `<a class="note" href="../../../meetings/${esc(x.meeting)}/index.html">On the agenda since ${esc(x.meeting)}</a>` : ''}</div></li>`
