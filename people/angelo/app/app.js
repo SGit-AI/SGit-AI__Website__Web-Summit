@@ -22,6 +22,32 @@
     }
     load('kanban-core.js').catch(() => null).then(() => load('../../../assets/cc/app.js')).then(() => { if (root && window.AngeloKanban) start() })
 
+    // ---------- offline (WS-84 step 1, at Angelo's go): sw.js stores this page and what it loads ----------
+    // ?offline=off unregisters the worker and deletes its store (remembered in this browser); ?offline=on turns it back on
+    const OFF_KEY = 'ak.offline', q = new URLSearchParams(location.search).get('offline')
+    const lsGet = k => { try { return localStorage.getItem(k) } catch { return null } }, lsSet = (k, v) => { try { v === null ? localStorage.removeItem(k) : localStorage.setItem(k, v) } catch { } }
+    if (q === 'off') lsSet(OFF_KEY, 'off'); if (q === 'on') lsSet(OFF_KEY, null)
+    const SW = 'serviceWorker' in navigator ? navigator.serviceWorker : null
+    const scope = new URL('./', here).href
+    if (SW && lsGet(OFF_KEY) === 'off') {
+        // the worker still serving this page is told first (it stops storing and deletes its store), then removed
+        if (SW.controller) SW.controller.postMessage({ type: 'forget' })
+        SW.getRegistrations().then(rs => Promise.all(rs.filter(r => r.scope === scope).map(r => r.unregister())))
+            .then(() => self.caches ? caches.keys() : []).then(ks => Promise.all(ks.filter(k => k.startsWith('ak-offline-')).map(k => caches.delete(k)))).catch(() => null)
+    } else if (SW) {
+        SW.register(new URL('sw.js', here).href, { scope }).then(() => SW.ready).then(reg => {
+            // store everything this first visit loaded, so the page opens next time without a connection
+            const urls = [location.href, DATA, ...performance.getEntriesByType('resource').map(e => e.name)]
+            ;(reg.active || reg.waiting || reg.installing).postMessage({ type: 'keep', urls })
+        }).catch(() => null)
+    }
+    // the copy this page shows: when the data came from the store, say so above every view
+    if (once) once.then(r => {
+        const at = r.headers.get('x-ak-stored'); if (!at || !root) return
+        const when = new Date(at), t = when.toLocaleString([], { weekday: 'short', hour: '2-digit', minute: '2-digit' })
+        root.insertAdjacentHTML('beforebegin', `<div class="ak-offbar" role="status">Offline: the copy from ${t} (${Math.max(1, Math.round((Date.now() - when) / 6e4))} min ago). It refreshes when you are back online.</div>`)
+    }).catch(() => null)
+
     const clean = t => String(t ?? '').replace(/^"(.*)"$/, '$1')
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
     const ago = d => { const m = Math.round((Date.now() - new Date(d)) / 6e4); return m < 1 ? 'just now' : m < 60 ? `${m} min ago` : m < 1440 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} d ago` }
@@ -281,6 +307,7 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
         }
 
         // ---------- summit days (slice 7): the public schedule the team sourced, and the stand-ups ----------
+        const VIDEOS = [['Your AI has access. Does it have permission? (30 s)', 'riskmandate-access-permission-30s.mp4', 'access-21.jpg'], ['Reach, Mandate, Gap (53 s)', 'riskmandate-reach-mandate-gap.mp4', 'reach-14.jpg'], ['RiskMandate Stories: fifty new agents (2 min 44 s)', 'riskmandate-stories-fifty-new-agents.mp4', 'stories-6.jpg']]
         const DAYNAME = d => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' })
         const startMin = t => { const m = String(t || '').match(/\b([01]?\d|2[0-3])[:.]([0-5]\d)\b/); return m ? +m[1] * 60 + +m[2] : -1 }
         const endMin = t => { const m = String(t || '').match(/\b(?:[01]?\d|2[0-3])[:.][0-5]\d\s*[-–]\s*([01]?\d|2[0-3])[:.]([0-5]\d)\b/); return m ? +m[1] * 60 + +m[2] : -1 }
@@ -320,10 +347,20 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
 <nav class="ak-switch" aria-label="More views"><a href="#kanban">← Kanban <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
 ${days.length ? `<div class="ak-tabs" role="tablist" aria-label="Days">${days.map(d => `<button type="button" role="tab" data-ak-day="${d}" aria-selected="${d === day}">${d === today ? 'Today' : esc(DAYNAME(d))}</button>`).join('')}</div>` : ''}
 ${day ? `<h3 class="ak-lane">${esc(DAYNAME(day))}${day === today ? ' (today)' : ''} <b>${items.length}</b></h3><p class="note">Times are Lisbon time, which is UTC in November.</p><div class="ak-list">${items.map(row).join('') || '<p class="note">Nothing on this day.</p>'}</div>` : '<p class="note">Nothing left on the schedule.</p>'}
+<section class="cc-card ak-vids"><h3 class="ak-h3">The videos, for the stand</h3><p class="note">${VIDEOS.map(v => esc(v[0])).join(' · ')}. Keep them on this device to play them without wifi (about 21 MB).</p><div class="ak-vrow">${VIDEOS.map(([t, f, poster]) => `<video controls preload="none" playsinline src="../../../assets/video/${esc(f)}" poster="../../../assets/video/${esc(poster)}" aria-label="${esc(t)}"></video>`).join('')}</div><p><button type="button" class="cc-btn" data-ak-keepvids${navigator.serviceWorker ? '' : ' disabled'}>Keep the videos for offline</button> <span class="note" data-ak-vidnote>${navigator.serviceWorker ? '' : 'This browser cannot keep pages offline.'}</span></p></section>
 <details class="cc-card ak-ess"><summary>Essentials: dates, venue, Night Summit, badges, getting there, wifi</summary><dl class="ak-dl">${S.essentials.map(([k, v]) => `<div><dt>${esc(k.replace(/_/g, ' '))}</dt><dd>${esc(v.value)} <a href="${esc(v.source)}">Source</a></dd></div>`).join('')}</dl></details>
 <div class="cc-card"><h3 class="ak-h3">What this view knows</h3><p class="note">${esc(S.api)} Read on ${esc(S.read_on)}; the schedule is still growing.</p>${S.gaps.length ? `<ul class="note">${S.gaps.map(g => `<li>${esc(g)}</li>`).join('')}</ul>` : ''}<p class="note">Your own meetings come later: each person's agent publishes a sealed summary of their calendar, with their consent (the brief, section 5).</p></div>
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}.</p>
 </div>`
+            const kv = view.querySelector('[data-ak-keepvids]')
+            if (kv) kv.onclick = async () => {
+                const note = view.querySelector('[data-ak-vidnote]'); kv.disabled = true; note.textContent = 'Keeping them…'
+                try {
+                    const reg = await navigator.serviceWorker.ready
+                    navigator.serviceWorker.addEventListener('message', e => { if (e.data && e.data.type === 'kept') { note.textContent = 'Kept: they play here without wifi.'; kv.disabled = false } }, { once: true })
+                    reg.active.postMessage({ type: 'keep', urls: VIDEOS.flatMap(([, f, p]) => [new URL('../../../assets/video/' + f, location.href).href, new URL('../../../assets/video/' + p, location.href).href]) })
+                } catch { note.textContent = 'Could not keep them here.'; kv.disabled = false }
+            }
             view.querySelectorAll('[data-ak-day]').forEach(b => b.onclick = () => { history.replaceState(history.state, '', location.pathname + location.search + '#summit?day=' + b.dataset.akDay); drawSummit() })
             const sel = view.querySelector('[data-ak-day][aria-selected="true"]'); if (sel && sel.scrollIntoView) sel.scrollIntoView({ block: 'nearest', inline: 'center' })
         }
