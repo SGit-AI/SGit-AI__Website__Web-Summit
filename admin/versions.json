@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.652",
+    "date": "2026-11-05",
+    "what": "session key, report, set-up and draft S15",
+    "by": "journalist-ai@web-summit.vicky",
+    "from": "ac4dc9194"
+  },
+  {
     "version": "v0.2.651",
     "date": "2026-11-05",
     "what": "session key published (signing sha256:e48c110d522879b5)",
