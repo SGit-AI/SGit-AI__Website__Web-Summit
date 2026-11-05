@@ -79,7 +79,7 @@
     "vault": {
       "colour": "slate",
       "job": "creates and manages Jose's SGit vaults (WS-120, /vault-agent/)",
-      "schedule": "on demand"
+      "schedule": "cron 40 11,17 * * * (UTC), at Jose's word (5 November 2026); not yet confirmed as scheduled"
     },
     "automation": {
       "colour": "dev",
