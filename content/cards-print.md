@@ -9,14 +9,14 @@ path: cards/print/index.html
 
 ## 1. Business cards: 600, three designs {#cards}
 
-| Design | Quantity | Front colour | File (front then back) |
+| Design | Quantity | Front colour | Files |
 |---|---|---|---|
-| **Black** | 200 | container black #161615: please print as **rich black** (for example C60 M40 Y40 K100) | [Black card, PDF](../../team/designer/print/concepts-rm/round4/1-executives/team-card.pdf) |
-| **Green** | 200 | RiskMandate green #1A7F5A (about C80 M0 Y29 K50) | [Green card, PDF](../../team/designer/print/concepts-rm/round4/2-grc/team-card.pdf) |
-| **Blue** | 200 | blue #1D4ED8 (about C87 M64 Y0 K15) | [Blue card, PDF](../../team/designer/print/concepts-rm/round4/3-security/team-card.pdf) |
+| **Black** | 200 | container black #161615: please print as **rich black** (for example C60 M40 Y40 K100) | [PDF](../../team/designer/print/concepts-rm/round4/1-executives/team-card.pdf) · SVG [front](../../team/designer/print/concepts-rm/round4/1-executives/team-card-front.svg), [back](../../team/designer/print/concepts-rm/round4/1-executives/team-card-back.svg) · PNG [front](../../team/designer/print/concepts-rm/round4/1-executives/team-card-front.png), [back](../../team/designer/print/concepts-rm/round4/1-executives/team-card-back.png) |
+| **Green** | 200 | RiskMandate green #1A7F5A (about C80 M0 Y29 K50) | [PDF](../../team/designer/print/concepts-rm/round4/2-grc/team-card.pdf) · SVG [front](../../team/designer/print/concepts-rm/round4/2-grc/team-card-front.svg), [back](../../team/designer/print/concepts-rm/round4/2-grc/team-card-back.svg) · PNG [front](../../team/designer/print/concepts-rm/round4/2-grc/team-card-front.png), [back](../../team/designer/print/concepts-rm/round4/2-grc/team-card-back.png) |
+| **Blue** | 200 | blue #1D4ED8 (about C87 M64 Y0 K15) | [PDF](../../team/designer/print/concepts-rm/round4/3-security/team-card.pdf) · SVG [front](../../team/designer/print/concepts-rm/round4/3-security/team-card-front.svg), [back](../../team/designer/print/concepts-rm/round4/3-security/team-card-back.svg) · PNG [front](../../team/designer/print/concepts-rm/round4/3-security/team-card-front.png), [back](../../team/designer/print/concepts-rm/round4/3-security/team-card-back.png) |
 
 **Specification:**
-- **The files:** each of the three downloads is named `team-card.pdf`; please keep them apart by colour (the front of each is the colour in the table).
+- **The files:** for each design, a **PDF** (both sides, page 1 front, page 2 back, with bleed), an **SVG** of each side (vector, with bleed, every letter outlined) and a **PNG** of each side (300 dpi, trimmed to 85 x 55 mm with no bleed: for checking, or if you prefer it). The files of the three designs share their names (`team-card.pdf`, `team-card-front.svg`, ...): please keep them apart by colour.
 - **Size:** 85 x 55 mm trimmed. Each PDF is 91 x 61 mm, with **3 mm bleed** on every side, and all text is at least 4 mm inside the trim.
 - **Pages:** two pages per PDF, page 1 the front, page 2 the back. Printed both sides.
 - **Stock:** 350 gsm or heavier, matt, square corners (your standard business card is fine; tell us if you suggest better).
@@ -32,14 +32,14 @@ path: cards/print/index.html
 
 | Sticker | Cut size and shape | File |
 |---|---|---|
-| **Corporate** (the logo on black) | 100 x 40 mm, rounded corners | [corporate.pdf](../../team/designer/print/stickers/corporate.pdf) |
-| **The gap** (a bar diagram) | 76 mm circle | [gap.pdf](../../team/designer/print/stickers/gap.pdf) |
-| **Know, define, control** (three icons) | 100 x 40 mm, rounded corners | [steps.pdf](../../team/designer/print/stickers/steps.pdf) |
-| **The robot** (a cartoon) | 76 x 76 mm, rounded corners | [cartoon.pdf](../../team/designer/print/stickers/cartoon.pdf) |
+| **Corporate** (the logo on black) | 100 x 40 mm, rounded corners | [PDF](../../team/designer/print/stickers/corporate.pdf) · [SVG](../../team/designer/print/stickers/corporate.svg) · [PNG](../../team/designer/print/stickers/corporate.png) |
+| **The gap** (a bar diagram) | 76 mm circle | [PDF](../../team/designer/print/stickers/gap.pdf) · [SVG](../../team/designer/print/stickers/gap.svg) · [PNG](../../team/designer/print/stickers/gap.png) |
+| **Know, define, control** (three icons) | 100 x 40 mm, rounded corners | [PDF](../../team/designer/print/stickers/steps.pdf) · [SVG](../../team/designer/print/stickers/steps.svg) · [PNG](../../team/designer/print/stickers/steps.png) |
+| **The robot** (a cartoon) | 76 x 76 mm, rounded corners | [PDF](../../team/designer/print/stickers/cartoon.pdf) · [SVG](../../team/designer/print/stickers/cartoon.svg) · [PNG](../../team/designer/print/stickers/cartoon.png) |
 
 **Specification:**
 - **Product:** your "Stickers on a Sheet", kiss-cut, white vinyl, matt if you have it.
-- **Bleed:** each file has 2 mm of artwork beyond the cut line on every side (the PDFs are 104 x 44 mm and 80 x 80 mm).
+- **Files:** PDF and SVG at print size with 2 mm bleed on every side (104 x 44 mm and 80 x 80 mm); the PNG shows each sticker as cut (300 dpi, transparent outside the shape). The SVG carries the cut shape as a thin magenta line on its own layer named `cutline`: it is a guide for the cut, **not to be printed**.
 - **The cut:** follows the shape in the table (rounded rectangles and a circle). We will not supply a separate cut line: please set the cut to the size and shape above, as your sheet templates do.
 - **Quantities:** to be confirmed by Dinis with the order.
 - [All four at real size on one page (PDF)](../../team/designer/print/stickers/stickers-overview.pdf), for reference only, not for print.
