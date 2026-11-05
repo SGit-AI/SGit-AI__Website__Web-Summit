@@ -134,7 +134,12 @@ def update_sessions(vault, rows):
 def zero(): return {g: 0 for g in GROUPS}
 
 def hour_stats(day, hh, rows, groups):
-    pages = [r for r in rows if r.get('type') in ('view', 'read') and r.get('path')]
+    pages, seen = [], set()
+    for r in rows:                                                       # a read re-sent from the next page can arrive twice
+        if r.get('type') not in ('view', 'read') or not r.get('path'): continue
+        k = (r.get('sid'), r.get('type'), r.get('path'), r.get('ts'), r.get('visible_s'), r.get('scroll'), r.get('src'))
+        if r.get('type') == 'read' and k in seen: continue
+        seen.add(k); pages.append(r)
     runs = sorted([r for r in rows if r.get('type') == 'web-summit.agent-run/v1'], key=lambda r: r.get('run', ''))
     totals = {g: {'views': 0, 'reads': 0, 'tabs': 0} for g in GROUPS}
     tabs = collections.defaultdict(set)

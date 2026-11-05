@@ -1,5 +1,6 @@
 // observability@web-summit.dinis's experiment sender (5 November 2026, at Dinis Cruz's word), beside Jose's
-// assets/telemetry.js (WS-37), into its own vault (assets/obs-dinis.json). Two events per page per tab:
+// assets/telemetry.js (WS-37), into its own vault (assets/obs-dinis.json). Two events per page LOAD (a refresh, or
+// coming back to a page, is counted again: Dinis, 5 November, "I just refresh that page, it should show there"):
 //   view  when the page loads (the same fields as telemetry.js);
 //   read  the first time the tab is hidden or closed: seconds the page was visible and the deepest scroll (percent),
 //         so "Vicky opened the brief" can be told from "Vicky read the brief".
@@ -26,9 +27,9 @@
         if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', note); else note()
         let sid = SS.get('sid'); if (!sid) { sid = [...crypto.getRandomValues(new Uint8Array(4))].map(x => x.toString(16).padStart(2, '0')).join(''); SS.set('sid', sid) }
         const path = location.pathname
-        const done = JSON.parse(SS.get('done') || '{}')                  // {path: ['view', 'read']}
-        const has = t => (done[path] || []).includes(t)
-        const mark = t => { (done[path] = done[path] || []).push(t); SS.set('done', JSON.stringify(done)) }
+        const done = new Set()                                            // per page LOAD: a refresh or a return is counted again
+        const has = t => done.has(t)
+        const mark = t => done.add(t)
 
         const b64 = bytes => { let s = ''; for (const x of new Uint8Array(bytes)) s += String.fromCharCode(x); return btoa(s) }
         const unpem = pem => Uint8Array.from(atob(pem.replace(/-----[^-]+-----/g, '').replace(/\s/g, '')), c => c.charCodeAt(0))
@@ -79,12 +80,25 @@
             }
             return false
         }
-        const view = () => { if (has('view')) return; send(Object.assign(common(), { type: 'view' })).then(ok => ok && mark('view')).catch(() => { }) }
+        const view = () => { resend(); if (has('view')) return; send(Object.assign(common(), { type: 'view' })).then(ok => ok && mark('view')).catch(() => { }) }
         const finish = () => {
             if (since !== null) { visibleMs += performance.now() - since; since = null }
             if (has('read')) return
-            scrolled(); mark('read')                                          // once, even if the write is cut off
-            send(Object.assign(common(), { type: 'read', visible_s: Math.min(3600, Math.round(visibleMs / 1000)), scroll: maxScroll })).catch(() => { })
+            scrolled(); mark('read')                                          // once per load
+            // leaving the page can cut the (asynchronous) seal-and-send short, so the read is kept in this tab first and
+            // removed once it is written; the next page loaded in this tab sends any that did not make it
+            const ev = Object.assign(common(), { type: 'read', visible_s: Math.min(3600, Math.round(visibleMs / 1000)), scroll: maxScroll })
+            const key = 'pending.' + ev.path + '.' + Date.now()
+            SS.set(key, JSON.stringify(ev))
+            send(ev).then(ok => { if (ok) try { sessionStorage.removeItem('ws.obsd.' + key) } catch { } }).catch(() => { })
+        }
+        const resend = () => {                                                // reads a previous page in this tab could not finish sending
+            try {
+                for (const k of Object.keys(sessionStorage).filter(k => k.startsWith('ws.obsd.pending.'))) {
+                    const ev = JSON.parse(sessionStorage.getItem(k)); sessionStorage.removeItem(k)
+                    send(ev).catch(() => { })
+                }
+            } catch { }
         }
         document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') since = performance.now(); else finish() })
         window.addEventListener('pagehide', finish)
