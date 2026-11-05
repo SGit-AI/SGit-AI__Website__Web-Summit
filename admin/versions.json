@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.572",
+    "date": "2026-11-05",
+    "what": "no email address in the outreach files: \"Dinis's inbox agent\" instead",
+    "by": "conductor@web-summit.silvio",
+    "from": "a8b52a96e"
+  },
+  {
     "version": "v0.2.571",
     "date": "2026-11-05",
     "what": "WS-26 note without an email address, for the gate",
