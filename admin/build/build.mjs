@@ -203,7 +203,7 @@ function page({ rel, title, description, body, meta = '', mdTwin = '', lead = ''
 <link rel="canonical" href="${url}">
 <meta property="og:url" content="${url}">
 <meta property="og:title" content="${esc(title)}">
-<link rel="stylesheet" href="${up}assets/site.css">${head}
+<link rel="stylesheet" href="${up}assets/site.css?v=${VERSION}">${head}
 </head>
 <body data-section="${home ? 'home' : (sectionOf(rel)?.t || 'other').toLowerCase()}" data-up="${up}"${focus ? ' data-focus' : ''}>
 <a class="skip" href="#main">Skip to the content</a>
@@ -234,13 +234,13 @@ ${body}
 ${wide && !focus ? '<section class="for-you" id="for-you" hidden aria-label="For you: your key and what is sealed to you"></section>' : ''}
 </main>
 </div>
-<script src="${up}assets/copy.js" defer></script>
-<script src="${up}assets/keyring.js" defer></script>
-<script src="${up}assets/addkey.js" defer></script>
-<script src="${up}assets/me.js" defer></script>
-<script src="${up}assets/feedback.js" defer></script>
-<script src="${up}assets/telemetry.js" defer></script>
-<script src="${up}assets/obs-dinis.js" defer></script>
+<script src="${up}assets/copy.js?v=${VERSION}" defer></script>
+<script src="${up}assets/keyring.js?v=${VERSION}" defer></script>
+<script src="${up}assets/addkey.js?v=${VERSION}" defer></script>
+<script src="${up}assets/me.js?v=${VERSION}" defer></script>
+<script src="${up}assets/feedback.js?v=${VERSION}" defer></script>
+<script src="${up}assets/telemetry.js?v=${VERSION}" defer></script>
+<script src="${up}assets/obs-dinis.js?v=${VERSION}" defer></script>
 <footer><div class="row"><span>Built and run by an AI agent with a named human operator.</span><a class="ver" href="${up}admin/versions.html#${VERSION}">${VERSION}</a><a href="${REPO}">GitHub</a><span>Code Apache-2.0, text CC BY 4.0</span></div></footer>
 <div class="agent-block"><pre><code>${esc(agent)}</code></pre></div>
 </body>
@@ -581,7 +581,7 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
     if (meta.infographic) ({ html, md } = expandInfographic(html, md, ROOT, meta.infographic, rel))   // a night's summary in pictures (Dinis, 5 Nov)   // the Official Sign-off, from the signatures (WS-113)
     // a page's own script, named in its front matter (script: <name> loads assets/<name>.js; WS-159)
     if (meta.script && !/^[a-z0-9-]+$/.test(meta.script)) throw new Error(`content/${f}: script must name a file in assets/ ([a-z0-9-])`)
-    const head = meta.script ? `<script src="${'../'.repeat(rel.split('/').length - 1)}assets/${meta.script}.js" defer></script>` : ''
+    const head = meta.script ? `<script src="${'../'.repeat(rel.split('/').length - 1)}assets/${meta.script}.js?v=${VERSION}" defer></script>` : ''
     md = md.replace(/^```sticker-vault\s*\n```\s*$/m, '*The vault with full access is opened on the HTML page by assets/stickers-vault.js, for a person the vault key is sealed to.*')
     md = md.replace(/^```sticker-vote\s*\n```\s*$/m, '*The vote: the twelve stickers, the Vote button, the vault and who has voted are drawn on the HTML page by assets/stickers-vote.js, from data/stickers-vote.json.*')
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + html.replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index', head }))
