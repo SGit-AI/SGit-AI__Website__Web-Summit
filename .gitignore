@@ -43,3 +43,6 @@ index.md
 # sgit: a vault working folder keeps its vault key and access token in .sg_vault/local/; never commit one (vaults belong outside this clone)
 .sg_vault/
 /agenda.json
+
+# build caches (deterministic, rebuilt when missing; never published)
+.cache/

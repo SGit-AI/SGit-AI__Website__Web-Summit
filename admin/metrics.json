@@ -256,6 +256,15 @@
       "note": "dev pass: WS-77 on phones: the section sub-menu is one sideways-scrolling row (Work: 40 px tall, was about 155: three rows of 16 links above the content), starting at the current page, both rows fading at the right edge. Six CSS rules and four lines in copy.js; no new script, no colour literal; desktop unchanged.",
       "pages": 506,
       "validate_seconds": 5.6
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: QR codes cached in .cache/qr/ (gitignored, by sha256 of the text; the same text always makes the same code). Interleaved medians of five, old against new: build 3.99 -> 2.84 s, gate 5.75 -> 4.59 s warm (5.74 s cold, as before). Output identical (built from the cache with BUILD_NOW pinned). Gate check 10's walk skips .cache. CI starts empty, so its build is unchanged unless the workflow caches .cache/ (a suggestion for the workflow's owner). Tried first and dropped: one mkdir per folder in write() and one git log for the print sign-offs: no difference in five interleaved runs, though the profiler showed them; not shipped.",
+      "pages": 511,
+      "validate_seconds": 4.59,
+      "build_seconds": 2.84
     }
   ]
 }

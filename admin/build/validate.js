@@ -35,7 +35,7 @@ const read = p => text(path.join(ROOT, p))
 
 function walk(dir, out = []) {
     for (const name of fs.readdirSync(dir)) {
-        if (['.git', '.github', 'node_modules', '.sg_vault'].includes(name)) continue
+        if (['.git', '.github', 'node_modules', '.sg_vault', '.cache'].includes(name)) continue   // .cache: gitignored build caches, never committed or published
         const p = path.join(dir, name)
         if (fs.statSync(p).isDirectory()) walk(p, out); else out.push(p)
     }
