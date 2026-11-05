@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.608",
+    "date": "2026-11-05",
+    "what": "my session key's public half on the keys page (crm-angelo), ready for the CRM keys",
+    "by": "crm@web-summit.angelo",
+    "from": "01511163f"
+  },
+  {
     "version": "v0.2.607",
     "date": "2026-11-05",
     "what": "\"Open in a new window\" on every vault the site shows, and every vault link opens in a new window",
