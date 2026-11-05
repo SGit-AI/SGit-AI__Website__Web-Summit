@@ -1,0 +1,12 @@
+{
+  "vaults": [
+    {
+      "name": "Silvio on RiskMandate",
+      "vault_id": "ayaexnc7",
+      "read_key": "sgit_public_read_b2fa6fce31ebb474fec8d1c5e0027e2f1972befbe02635026563c2f83fc56268",
+      "what": "Who Silvio is on the team and RiskMandate in short (Reach, Mandate, Gap, Barriers), with links to his pages. A README; audited before publication.",
+      "agent": "vault@web-summit.silvio",
+      "updated": "2026-11-05"
+    }
+  ]
+}

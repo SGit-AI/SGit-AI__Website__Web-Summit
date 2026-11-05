@@ -1,0 +1,29 @@
+{
+  "id": "verestro",
+  "type": "company",
+  "kind": "company",
+  "name": "Verestro",
+  "aliases": [],
+  "website": "https://verestro.com",
+  "what": null,
+  "category": "payments / card issuing",
+  "country": "Poland",
+  "attending": "at Web Summit Lisbon 2026: event partner on websummit.com partners page (lis26)",
+  "attending_as": "event partner",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/appearances/lis26/97fd6b00-1e3b-4f2b-9dbf-75cbe2f83af4/verestro/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://verestro.com",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

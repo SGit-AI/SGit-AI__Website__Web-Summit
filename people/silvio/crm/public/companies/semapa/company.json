@@ -1,0 +1,29 @@
+{
+  "id": "semapa",
+  "type": "company",
+  "kind": "company",
+  "name": "Semapa (Semapa Next)",
+  "aliases": [],
+  "website": "https://www.semapa.pt",
+  "what": null,
+  "category": "industrial group / corporate venture",
+  "country": "Portugal",
+  "attending": "at Web Summit Lisbon 2026: speaker: Partner & CFO, Semapa Next (lis26)",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/attendees/lis26/4aa4678b-9262-487d-ab9a-6e23eb700209/daniel-nascimento/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.semapa.pt",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

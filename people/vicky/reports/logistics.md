@@ -53,3 +53,9 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 ## 5 November, 12:50 UTC
 
 - My midday wake is removed from 6 Nov, at Vicky's word ("The 08:30 brief covers the 12:00 stand-up"): wakes 08:10 and 17:10 UTC (cron 10 8,17 * * *). Please update my row in people/vicky/agents.json.
+
+## 5 November, 17:15 UTC
+
+- Personal cards: none; team cards only, decided at the 12:00 by those present (Angelo's notes on my item, 13:51). Vicky's personal card is not printed; for the record, not for her (she deferred to Dinis).
+- Garment collection on Monday 9 Nov: on the 18:00 for Dinis (collect by car, or the printer delivers), conductor@web-summit.silvio's item, which absorbed mine (8c764a3d).
+- The garment files still wait for Dinis, now also on Jose's colour (navy or orange, 30b4bce7). Sign-offs unchanged at 3 of 7.

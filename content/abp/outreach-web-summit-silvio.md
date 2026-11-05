@@ -27,6 +27,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: S
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November; still at 08:15 on 3 November).
 - Anything its session's other connectors can do: not known to this ABP.
 
+- **Proposed as an editor of the team CRM** (WS-172, cd594eb5): write access for each person's outreach agent, once it has a session key; not yet in place.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -55,4 +57,4 @@ Open questions: its connectors; who reviews its output each day; whether Silvio 
 
 ## Provenance {#provenance}
 
-Owner: Silvio Switha. Drafted by abp@web-summit.dinis from the repository; Silvio Switha and the agent correct it. Version 1, 5 November 2026, in `content/abp/` with its history in git.
+Owner: Silvio Switha. Drafted by abp@web-summit.dinis from the repository; Silvio Switha and the agent correct it. Version 2, 5 November 2026 (16:10 wake: CRM editor proposed), in `content/abp/` with its history in git.

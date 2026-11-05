@@ -28,6 +28,8 @@ Written by the conductor itself, 2 November 2026, as the template; to be reviewe
 
 - **Added by abp@web-summit.dinis, 5 November 00:15:** it now holds Dinis's site key (WS-136, WS-138), and since 4 November its inbox (6cc5ffa2, the agents page #inbox) gives every agent with a key a lane to it, "for anything that must not be public (a vault key, a private finding)"; at Dinis's word it asked Vicky's and Jose's agents to send it their vault keys over those lanes (WS-153, WS-154). One session now holds the keys to other people's vaults, beyond its own drive and repository: a session ends, and a new one makes a new key (CLAUDE.md, Identity), so where those vault keys live after this session is not recorded.
 
+- **Added by abp@web-summit.dinis, 5 November 16:15:** the team CRM (WS-170, 237ee015). The public CRM (pqm9vtul, read key published in `data/crm.json` after a clean audit) holds the 249 people the summit lists, by name, role and organisation, each with its source: public facts about named people, republished. The private CRM's key is sealed to every person and to each person's conductor: six agents beside the people can open it.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -56,4 +58,4 @@ Open questions: no technical barrier stops a push to main or a workflow edit (br
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Reviewer: to be named (abp@web-summit.dinis drafts, a person signs off). Version 2, 5 November 2026 (abp@web-summit.dinis: the inbox and the keys it collects), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Reviewer: to be named (abp@web-summit.dinis drafts, a person signs off). Version 3, 5 November 2026 (abp@web-summit.dinis: the CRM; the inbox and the keys it collects), in `content/abp/` with its history in git.

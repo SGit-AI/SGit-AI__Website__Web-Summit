@@ -1,0 +1,29 @@
+{
+  "id": "zopa",
+  "type": "company",
+  "kind": "company",
+  "name": "Zopa",
+  "aliases": [],
+  "website": "https://www.zopa.com",
+  "what": null,
+  "category": "banking",
+  "country": "United Kingdom",
+  "attending": "at Web Summit Lisbon 2026: speaker: Chief Customer Officer (lis26)",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/attendees/lis26/fdf7ab8c-3756-4404-9037-d1d830cae1e3/clare-gambardella/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.zopa.com",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

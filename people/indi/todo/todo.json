@@ -1,6 +1,6 @@
 {
  "about": "Indi's list of everything left to do, drawn as the infographic at /people/indi/todo/. The Command Centre half is rebuilt from the board and the stand-up items at every release; this file adds a next step per issue and the tasks that are not on the board. Kept by dashboard@web-summit.indi at each run, from 4 November at Indi's word (first written by synthetic@web-summit.indi from the board, Indi's briefs 1 to 8 and that day's git log).",
- "written": "2026-11-05T12:40Z",
+ "written": "2026-11-05T17:40Z",
  "done_for_indi": {
   "WS-01": "Done: you are at L4 (people/indi/onboarding.json).",
   "WS-02": "Done: you are at L4.",
@@ -8,26 +8,26 @@
   "WS-04": "Done: your conductor runs on a schedule (07:20, 12:20, 17:20 UTC).",
   "WS-145": "Done: you have push access to the newsroom repository (brief 9, checked at 7:25 am).",
   "WS-99": "Done: your dashboard agent runs on a schedule; its morning run fired at 7:33 am on 5 Nov.",
-  "WS-94": "Done: the same scheduled task keeps your dashboard fresh."
+  "WS-94": "Done: the same scheduled task keeps your dashboard fresh.",
+  "WS-08": "Done: your card is written, in your own words (5 Nov afternoon)."
  },
  "next": {
-  "WS-136": "Add your site key now: the link or QR your conductor sent on 4 Nov. The sticker vote needs it.",
+  "WS-136": "Add your personal key to the website: open the link your conductor posted again at lunchtime. The key is how the site knows a vote or a message really comes from you.",
   "WS-62": "Superseded by the round-2 vote: vote on /design/ (synthetic users favour Record).",
   "WS-56": "Agree the shirt openers with Sarah and Nimay, or close it if the round-2 lines replace them.",
-  "WS-08": "Give your agent the five answers: your role, your companies, your conversations, your accounts, how you like a brief.",
-  "WS-30": "Say which of the 20 priority-1 companies you own.",
+  "WS-30": "Read the company pages in the factory, then say which companies you want to own.",
   "WS-73": "Watch the videos and leave one line of feedback each.",
   "WS-113": "Sign your print set when the generic-QR update lands on /print/.",
   "WS-07": "Two-minute check-in, morning, midday and evening.",
   "WS-126": "Post today's LinkedIn update.",
-  "WS-15": "Start here with the overnight drafts: messaging@'s paragraph, then agree it with Nimay. Today's outreach depends on it.",
+  "WS-15": "Start with your helpers' drafts here: read the one-paragraph message, then agree it with Nimay.",
   "WS-19": "factory@ drafted the card-to-analysis loop overnight: review it.",
   "WS-22": "messaging@ has started the review: read its first drafts.",
   "WS-59": "builder@ drafted a policy for each of Daniela's agents: review them, then agree them with Daniela and Angelo.",
   "WS-125": "builder@ drafted the setup guide overnight: review it, then send Angelo the outline.",
   "WS-06": "Tell your dashboard agent what you want first and what you never read.",
-  "WS-112": "Tell your conductor 'acknowledge' for briefs 1 to 10.",
-  "WS-109": "Give your lines for the demo; the script was checked against the newsroom article overnight.",
+  "WS-112": "Tell your conductor 'acknowledge' for briefs 1 to 11. It means 'I have read them'.",
+  "WS-109": "Plan the demo for no wifi: the venue does not allow phone hotspots. Ask your helpers for a copy that runs on the laptop, or a recording.",
   "WS-20": "Agree the landing page with Nimay and Angelo.",
   "WS-26": "factory@ drafted outreach targets overnight: review them, then agree your share with Silvio.",
   "WS-27": "factory@ set up the pipeline and a review queue overnight: check each company page before it is used.",
@@ -44,10 +44,17 @@
   "WS-148": "Your accountant is running: read its daily token report (5:30 pm) and answer the decisions it asks of you.",
   "WS-137": "Dinis's lab: your part, by Mon 9 Nov.",
   "WS-155": "Check the cards (round 4) first: Dinis's designer redesigned them at 4:18 am. Say if that covers your designer's fixes; Friday's printer order depends on them.",
-  "WS-167": "Vote on the stickers: your top picks, then Submit. Closes at 2:30 pm today. The drain is covered: Angelo asked Dinis's conductor to do it.",
-  "WS-166": "Add the same key link on each of your phones and iPads, by Sunday 8 Nov."
+  "WS-166": "Open that same key link once on each of your phones and iPads, by Sunday.",
+  "WS-170": "Tell Dinis, in your own words, that 'riskmandate-indi' is your GitHub name. Until then your helpers cannot receive the team's private company list.",
+  "WS-171": "Your two picture pages on how RiskMandate works are due Friday. Read the first one and say if it makes sense."
  },
  "other": [
+  {
+   "group": "Waiting on you",
+   "title": "Two conductors with the same name: keep one",
+   "detail": "A second conductor session wrote your card this afternoon. Two with one name can undo each other's work. Your conductor suggests keeping the one that wakes at 7:20, 12:20 and 5:20, and stopping the other.",
+   "source": "brief 11"
+  },
   {
    "group": "Waiting on you",
    "title": "An hour with your agents' seven drafts, while you are in person",
@@ -80,9 +87,9 @@
   },
   {
    "group": "Waiting on you",
-   "title": "Acknowledge briefs 1 to 10",
-   "detail": "Tell your conductor 'acknowledge'.",
-   "source": "brief 10"
+   "title": "Say 'acknowledge' for briefs 1 to 11",
+   "detail": "Tell your conductor. It means you have read them, so the next brief starts from what is new.",
+   "source": "brief 11"
   },
   {
    "group": "Waiting on others",
@@ -92,9 +99,9 @@
   },
   {
    "group": "Waiting on you",
-   "title": "Say which newsroom desks your agents start, if any",
-   "detail": "Your conductor starts none until you say. Dinis's 6 pm sync on 4 Nov named Vicky and Dinis's newsroom agent for desks, none for you.",
-   "source": "brief 10; the 4 Nov 6 pm stand-up"
+   "title": "Say which newsroom jobs your helpers start, if any",
+   "detail": "Your conductor starts none until you say. Dinis named Vicky and his own newsroom helper for jobs; none for you yet.",
+   "source": "briefs 10 and 11"
   }
  ]
 }

@@ -46,3 +46,10 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
 - The summit: the 2026 speakers page says 800 speakers; its first page leads with Chinese technology and robotics companies (AgiBot, Unitree, Galbot, Pony.ai, Xiaomi, Tencent, MiniMax), and lists a robot, Galbot's G1, as a speaker (websummit.com/speakers/).
 - Not captured: news since 07:30 repeats stories already in the vault (the Brazilian delegation, Metro's extra service); robotics previews by PanAsiaBiz and Portugal.fr only in so far as the speakers page confirms them.
+
+## Thu 5 Nov 2026, 19:30 UTC run (the summit, Portugal)
+
+- 2 captures went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- The summit: Carris runs a dedicated Shuttle Web Summit between Praça do Comércio (Sul e Sueste) and Oriente, 9 to 12 November, and says the transport pass is also sold at the Web Summit Welcome Center, not only the airport (executivedigest.sapo.pt, 5 Nov). Differs from Metro's page; flagged for the curator.
+- Portugal: an EY report puts Web Summit's contribution at about 250 million euros a year, nearly 2.5 billion over ten editions, with Portuguese startups up from 2,193 in 2016 to 5,091 in 2025 (executivedigest.sapo.pt, 5 Nov; the EY report itself not read).
+- Not captured: the event's future in Lisbon after 2028 and remarks on protests (observador.pt, expresso.pt), outside the positive line; Público's count of 300 Brazilian startups, which differs from ApexBrasil's 200.

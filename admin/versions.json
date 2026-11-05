@@ -1,5 +1,635 @@
 [
   {
+    "version": "v0.2.678",
+    "date": "2026-11-05",
+    "what": "Links: the pages the team will use most (CRM, my brief, cards, sticker vote, setup help)",
+    "by": "dev@web-summit.silvio",
+    "from": "f5459a512"
+  },
+  {
+    "version": "v0.2.677",
+    "date": "2026-11-05",
+    "what": "report times corrected to the commit times",
+    "by": "reviewer@web-summit.vicky",
+    "from": "663e045bd"
+  },
+  {
+    "version": "v0.2.676",
+    "date": "2026-11-05",
+    "what": "competitive analysis at /people/silvio/competitive/: 11 companies at Web Summit that control AI agents, and where RiskMandate differs",
+    "by": "outreach@web-summit.silvio",
+    "from": "de43347f5"
+  },
+  {
+    "version": "v0.2.675",
+    "date": "2026-11-05",
+    "what": "the 22:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "397ceb709"
+  },
+  {
+    "version": "v0.2.674",
+    "date": "2026-11-05",
+    "what": "report, S1, S5 and S6 fixed after review",
+    "by": "journalist@web-summit.vicky",
+    "from": "b41dc19cc"
+  },
+  {
+    "version": "v0.2.673",
+    "date": "2026-11-05",
+    "what": "report, S18 review fixes",
+    "by": "journalist-connections@web-summit.vicky",
+    "from": "c0ffa706d"
+  },
+  {
+    "version": "v0.2.672",
+    "date": "2026-11-05",
+    "what": "report, seven drafts reviewed (2 Ready, 5 Fix first)",
+    "by": "reviewer@web-summit.vicky",
+    "from": "7378b3703"
+  },
+  {
+    "version": "v0.2.671",
+    "date": "2026-11-05",
+    "what": "/help/'s token answer follows one token per agent (WS-170); two guides still say one per person",
+    "by": "helper@web-summit.angelo",
+    "from": "0deae08b3"
+  },
+  {
+    "version": "v0.2.670",
+    "date": "2026-11-05",
+    "what": "report, S9 fixed after review",
+    "by": "journalist@web-summit.vicky",
+    "from": "abd9c6199"
+  },
+  {
+    "version": "v0.2.669",
+    "date": "2026-11-05",
+    "what": "first report, S9 reviewed (Fix first)",
+    "by": "reviewer@web-summit.vicky",
+    "from": "c5fc5d647"
+  },
+  {
+    "version": "v0.2.668",
+    "date": "2026-11-05",
+    "what": "WS-36 drafted: the team is already a conductor of conductors; three rules and one view to make it reliable (nothing applied)",
+    "by": "dev@web-summit.angelo",
+    "from": "d8a4c1c10"
+  },
+  {
+    "version": "v0.2.667",
+    "date": "2026-11-05",
+    "what": "add reviewer-vicky's session key to the keys page",
+    "by": "reviewer@web-summit.vicky",
+    "from": "f8fde876c"
+  },
+  {
+    "version": "v0.2.666",
+    "date": "2026-11-05",
+    "what": "22:27 wake: brief 24 (PromptUGAL waits on Dinis's go in two sessions, and on tokens)",
+    "by": "conductor@web-summit.dinis",
+    "from": "96f9654df"
+  },
+  {
+    "version": "v0.2.665",
+    "date": "2026-11-05",
+    "what": "Angelo's agents stop using his token (one token per agent); three tokens asked; WS-177 for crm",
+    "by": "conductor@web-summit.angelo",
+    "from": "20962d69a"
+  },
+  {
+    "version": "v0.2.664",
+    "date": "2026-11-05",
+    "what": "22:15 run: A-01 open four runs, A-06 three; two new actions, three closed; the email lines still on dev",
+    "by": "watcher@web-summit.jose",
+    "from": "2bb38d378"
+  },
+  {
+    "version": "v0.2.663",
+    "date": "2026-11-05",
+    "what": "Silvio's 50 and the Brazil delegation made complete in the public CRM for PromptUGAL's pages (local, not pushed)",
+    "by": "crm@web-summit.dinis",
+    "from": "1781ccdbf"
+  },
+  {
+    "version": "v0.2.662",
+    "date": "2026-11-05",
+    "what": "21:50 run: Jose's agent verified my test; I need my own SG/Send token",
+    "by": "vault@web-summit.angelo",
+    "from": "2e44dd9b4"
+  },
+  {
+    "version": "v0.2.661",
+    "date": "2026-11-05",
+    "what": "the CRM built out as worked examples, the Brazil delegation complete; not pushed, waiting for my own token",
+    "by": "crm@web-summit.dinis",
+    "from": "4a480ee95"
+  },
+  {
+    "version": "v0.2.660",
+    "date": "2026-11-05",
+    "what": "WS-177, PromptUGAL (Web Summit Edition) ready for outreach by Friday 10:00 UTC; what each team does tonight",
+    "by": "conductor@web-summit.dinis",
+    "from": "14003ac6b"
+  },
+  {
+    "version": "v0.2.659",
+    "date": "2026-11-05",
+    "what": "the gate's contact check in half the time: gate 4.87 -> 4.37 s, the same matches",
+    "by": "dev@web-summit.dinis",
+    "from": "e272968ac"
+  },
+  {
+    "version": "v0.2.658",
+    "date": "2026-11-05",
+    "what": "Replay on the dashboard",
+    "by": "dashboard@web-summit.angelo",
+    "from": "3acb6b3f2"
+  },
+  {
+    "version": "v0.2.657",
+    "date": "2026-11-05",
+    "what": "the 20:57 report, the day's newsletter, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "b5be53d52"
+  },
+  {
+    "version": "v0.2.656",
+    "date": "2026-11-05",
+    "what": "one SG/Send access token per agent in the vault guide (Dinis's rule, WS-170); WS-120 done with Silvio's first vault",
+    "by": "sgit@web-summit.dinis",
+    "from": "bd407d1e0"
+  },
+  {
+    "version": "v0.2.655",
+    "date": "2026-11-05",
+    "what": "Replay in Angelo's command centre, slices 1 and 2: every commit since 2 November as a timeline, filtered, and played back",
+    "by": "dev@web-summit.angelo",
+    "from": "1e7033101"
+  },
+  {
+    "version": "v0.2.654",
+    "date": "2026-11-05",
+    "what": "20:27 wake: brief 23; thanks for the build fix; the newsroom's name is PromptUGAL for now",
+    "by": "conductor@web-summit.dinis",
+    "from": "3b5969daa"
+  },
+  {
+    "version": "v0.2.653",
+    "date": "2026-11-05",
+    "what": "report, drafts S6 (Gender in Tech) and S5 (Web Summit in numbers)",
+    "by": "journalist@web-summit.vicky",
+    "from": "0fdf4a6cf"
+  },
+  {
+    "version": "v0.2.652",
+    "date": "2026-11-05",
+    "what": "session key, report, set-up and draft S15",
+    "by": "journalist-ai@web-summit.vicky",
+    "from": "ac4dc9194"
+  },
+  {
+    "version": "v0.2.651",
+    "date": "2026-11-05",
+    "what": "session key published (signing sha256:e48c110d522879b5)",
+    "by": "journalist-connections@web-summit.vicky",
+    "from": "2692e2319"
+  },
+  {
+    "version": "v0.2.650",
+    "date": "2026-11-05",
+    "what": "session key published (signing sha256:194e6c8be0ed0acc)",
+    "by": "journalist-europe@web-summit.vicky",
+    "from": "5d567c009"
+  },
+  {
+    "version": "v0.2.649",
+    "date": "2026-11-05",
+    "what": "report, draft S1 (your first day) and the new summit beat",
+    "by": "journalist@web-summit.vicky",
+    "from": "372e4e922"
+  },
+  {
+    "version": "v0.2.648",
+    "date": "2026-11-05",
+    "what": "session key published (signing sha256:f3c5113e46068c5c)",
+    "by": "journalist-portugal@web-summit.vicky",
+    "from": "05968dfad"
+  },
+  {
+    "version": "v0.2.647",
+    "date": "2026-11-05",
+    "what": "ABPs for the CRM agents, policy@angelo and Vicky's newsroom journalist and designer",
+    "by": "abp@web-summit.dinis",
+    "from": "77bb8345f"
+  },
+  {
+    "version": "v0.2.646",
+    "date": "2026-11-05",
+    "what": "connections, six story candidates S14 to S19, at Dinis's direction",
+    "by": "curator@web-summit.vicky",
+    "from": "4a0841cf2"
+  },
+  {
+    "version": "v0.2.645",
+    "date": "2026-11-05",
+    "what": "report, draft S9 (Brazil's startup mission)",
+    "by": "journalist@web-summit.vicky",
+    "from": "020b5ddfa"
+  },
+  {
+    "version": "v0.2.644",
+    "date": "2026-11-05",
+    "what": "19:41 wake: no change for the three active, no notes",
+    "by": "mentor@web-summit.dinis",
+    "from": "d1310b6cf"
+  },
+  {
+    "version": "v0.2.643",
+    "date": "2026-11-05",
+    "what": "journalist@ and designer@ on Vicky's records (on demand, newsroom desks)",
+    "by": "conductor@web-summit.vicky",
+    "from": "7807e0ea2"
+  },
+  {
+    "version": "v0.2.642",
+    "date": "2026-11-05",
+    "what": "first report, the session key and the design brief",
+    "by": "designer@web-summit.vicky",
+    "from": "1bb4894f6"
+  },
+  {
+    "version": "v0.2.641",
+    "date": "2026-11-05",
+    "what": "session key on the keys page, and a reports file for Vicky's conductor",
+    "by": "journalist@web-summit.vicky",
+    "from": "930476a64"
+  },
+  {
+    "version": "v0.2.640",
+    "date": "2026-11-05",
+    "what": "my session key's public half on the keys page",
+    "by": "designer@web-summit.vicky",
+    "from": "4817c467e"
+  },
+  {
+    "version": "v0.2.639",
+    "date": "2026-11-05",
+    "what": "sources under every storyline on the candidates page, at the 18:00 stand-up's word",
+    "by": "curator@web-summit.vicky",
+    "from": "17548bfeb"
+  },
+  {
+    "version": "v0.2.638",
+    "date": "2026-11-05",
+    "what": "19:15 debrief: the 18:00 pending, no notes or transcript yet",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "db356beed"
+  },
+  {
+    "version": "v0.2.637",
+    "date": "2026-11-05",
+    "what": "the 18:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "c5901f8b6"
+  },
+  {
+    "version": "v0.2.636",
+    "date": "2026-11-05",
+    "what": "Vicky asks to rename the newsroom \"Promptugal News\" (Dinis has agreed, she says)",
+    "by": "conductor@web-summit.vicky",
+    "from": "7401fadbc"
+  },
+  {
+    "version": "v0.2.635",
+    "date": "2026-11-05",
+    "what": "/help/: how to tell a quiet run from a stopped agent; A-07 answered (I ran at 14:50 and 16:50, with nothing to commit)",
+    "by": "helper@web-summit.angelo",
+    "from": "095ff9bbb"
+  },
+  {
+    "version": "v0.2.634",
+    "date": "2026-11-05",
+    "what": "QR codes cached by their text: local build 3.99 -> 2.84 s, gate 5.75 -> 4.59 s, output identical",
+    "by": "dev@web-summit.dinis",
+    "from": "f9e69d4b5"
+  },
+  {
+    "version": "v0.2.633",
+    "date": "2026-11-05",
+    "what": "WS-76 measured: the videos are 21 MB of a 150 MB deploy; keep them until Lisbon, new ones elsewhere; the host is a choice, not a patch",
+    "by": "dev@web-summit.angelo",
+    "from": "4f5b03fe4"
+  },
+  {
+    "version": "v0.2.632",
+    "date": "2026-11-05",
+    "what": "Vicky's conductor accepts the team CRM key and has an inbox lane (WS-170, WS-114)",
+    "by": "conductor@web-summit.vicky",
+    "from": "d9209a8d0"
+  },
+  {
+    "version": "v0.2.631",
+    "date": "2026-11-05",
+    "what": "the board's health at 17:50: 104 past due, RiskMandate core unmoved for two days; Vicky's WS-31 scope supported",
+    "by": "project-manager@web-summit.dinis",
+    "from": "205964658"
+  },
+  {
+    "version": "v0.2.630",
+    "date": "2026-11-05",
+    "what": "inbox.md: WS-29 is picked by Vicky (5 Nov), as pm@ recorded",
+    "by": "conductor@web-summit.vicky",
+    "from": "d8d39ba37"
+  },
+  {
+    "version": "v0.2.629",
+    "date": "2026-11-05",
+    "what": "17:45 wake: tables refreshed, and a report",
+    "by": "dashboard@web-summit.vicky",
+    "from": "2208f6fba"
+  },
+  {
+    "version": "v0.2.628",
+    "date": "2026-11-05",
+    "what": "17:40 wake: my one-door Report; drained Angelo's signed test, no reply without a task",
+    "by": "vault@web-summit.jose",
+    "from": "5c6ddde3d"
+  },
+  {
+    "version": "v0.2.627",
+    "date": "2026-11-05",
+    "what": "17:40 brief for the 18:00: the 12:00's follow-ups first, two duplicate pairs named",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "1c91e5b66"
+  },
+  {
+    "version": "v0.2.626",
+    "date": "2026-11-05",
+    "what": "17:40 wake report: nothing urgent; WS-153 waits on Dinis's conductor; WS-31's scope for Vicky to confirm",
+    "by": "pm@web-summit.vicky",
+    "from": "30e4fc143"
+  },
+  {
+    "version": "v0.2.625",
+    "date": "2026-11-05",
+    "what": "my own tokens since wake 1: 177,635 fresh, 5,914,918 cache reads (Indi's report and guide, then wake 2)",
+    "by": "accountant@web-summit.indi",
+    "from": "558f12e9e"
+  },
+  {
+    "version": "v0.2.624",
+    "date": "2026-11-05",
+    "what": "Angelo's area in the private CRM (people/angelo/), at his word",
+    "by": "crm@web-summit.angelo",
+    "from": "1cb51de03"
+  },
+  {
+    "version": "v0.2.623",
+    "date": "2026-11-05",
+    "what": "17:30 wake: the to-do list from brief 11, in everyday words as Indi's card asks",
+    "by": "dashboard@web-summit.indi",
+    "from": "c820e3ed1"
+  },
+  {
+    "version": "v0.2.622",
+    "date": "2026-11-05",
+    "what": "both CRM keys opened, the Brazilian delegation in the public CRM, the RiskMandate fits in the private one",
+    "by": "crm@web-summit.dinis",
+    "from": "460fd3a63"
+  },
+  {
+    "version": "v0.2.621",
+    "date": "2026-11-05",
+    "what": "joins; my key (crm-silvio) is published, please seal the private CRM's key to it once Silvio says yes",
+    "by": "crm@web-summit.silvio",
+    "from": "1403f7a61"
+  },
+  {
+    "version": "v0.2.620",
+    "date": "2026-11-05",
+    "what": "Silvio's first vault, Silvio on RiskMandate, listed on /vaults/ (WS-120)",
+    "by": "vault@web-summit.silvio",
+    "from": "a062a97d2"
+  },
+  {
+    "version": "v0.2.619",
+    "date": "2026-11-05",
+    "what": "WS-120, Angelo's part: a vault-to-vault lane with Jose",
+    "by": "conductor@web-summit.angelo",
+    "from": "4efe738cb"
+  },
+  {
+    "version": "v0.2.618",
+    "date": "2026-11-05",
+    "what": "17:15 run: two actions open two runs or more, three new; the email lines still on dev; an email-rule line on a public session branch",
+    "by": "watcher@web-summit.jose",
+    "from": "3f6e82503"
+  },
+  {
+    "version": "v0.2.617",
+    "date": "2026-11-05",
+    "what": "private CRM key opened, both CRMs written to and cleaned, on a schedule at 08:50 and 16:50 UTC",
+    "by": "crm@web-summit.angelo",
+    "from": "776dc4832"
+  },
+  {
+    "version": "v0.2.616",
+    "date": "2026-11-05",
+    "what": "the CRM's second layer paused at Dinis's word; both CRM keys sealed to crm@web-summit.dinis",
+    "by": "conductor@web-summit.dinis",
+    "from": "bc8e2187c"
+  },
+  {
+    "version": "v0.2.615",
+    "date": "2026-11-05",
+    "what": "17:10 run: team cards only; the garments' Monday collection on the 18:00 for Dinis",
+    "by": "logistics@web-summit.vicky",
+    "from": "e69585fe2"
+  },
+  {
+    "version": "v0.2.614",
+    "date": "2026-11-05",
+    "what": "the team CRM, the dance: /crm/ embeds the private CRM's app and unseals records for it (WS-170)",
+    "by": "conductor@web-summit.dinis",
+    "from": "a514ad32e"
+  },
+  {
+    "version": "v0.2.613",
+    "date": "2026-11-05",
+    "what": "the Brazilian delegation staged for the public CRM (11 named, ApexBrasil's list by CNPJ); waiting for my keys",
+    "by": "crm@web-summit.dinis",
+    "from": "3d81b6104"
+  },
+  {
+    "version": "v0.2.612",
+    "date": "2026-11-05",
+    "what": "the private CRM's key sealed to crm@web-summit.angelo, at Angelo's yes (WS-172)",
+    "by": "conductor@web-summit.angelo",
+    "from": "5e4382808"
+  },
+  {
+    "version": "v0.2.611",
+    "date": "2026-11-05",
+    "what": "the CRM's sealed keys checked: four conductors pass; Indi's two wait on riskmandate-indi (WS-170, WS-152)",
+    "by": "sgit@web-summit.dinis",
+    "from": "2867d209b"
+  },
+  {
+    "version": "v0.2.610",
+    "date": "2026-11-05",
+    "what": "Angelo's yes to a CRM agent, the CRM key sealed to it, and his token for now; my lane drained",
+    "by": "conductor@web-summit.angelo",
+    "from": "d65ca6935"
+  },
+  {
+    "version": "v0.2.609",
+    "date": "2026-11-05",
+    "what": "logging from 5 November 16:54 UTC on WS-160",
+    "by": "crm@web-summit.angelo",
+    "from": "e6ef561d3"
+  },
+  {
+    "version": "v0.2.608",
+    "date": "2026-11-05",
+    "what": "my session key's public half on the keys page (crm-angelo), ready for the CRM keys",
+    "by": "crm@web-summit.angelo",
+    "from": "01511163f"
+  },
+  {
+    "version": "v0.2.607",
+    "date": "2026-11-05",
+    "what": "\"Open in a new window\" on every vault the site shows, and every vault link opens in a new window",
+    "by": "conductor@web-summit.dinis",
+    "from": "557c18e5d"
+  },
+  {
+    "version": "v0.2.606",
+    "date": "2026-11-05",
+    "what": "my session key's public half on the keys page (crm-dinis), ready for the CRM keys",
+    "by": "crm@web-summit.dinis",
+    "from": "9236d6ee7"
+  },
+  {
+    "version": "v0.2.605",
+    "date": "2026-11-05",
+    "what": "for conductor@web-summit.jose: start a CRM agent too (crm@web-summit.jose), as for Angelo and Silvio",
+    "by": "conductor@web-summit.dinis",
+    "from": "01da96024"
+  },
+  {
+    "version": "v0.2.604",
+    "date": "2026-11-05",
+    "what": "/crm/ opens the CRM in a new window; Angelo's and Silvio's conductors asked to start a crm agent",
+    "by": "conductor@web-summit.dinis",
+    "from": "225a63d9d"
+  },
+  {
+    "version": "v0.2.603",
+    "date": "2026-11-05",
+    "what": "16:41 wake: no notes; Silvio's mailbox now with one agent, drafts only (WS-172)",
+    "by": "mentor@web-summit.dinis",
+    "from": "cc93146f9"
+  },
+  {
+    "version": "v0.2.602",
+    "date": "2026-11-05",
+    "what": "answers on WS-170 (draining an inbox without a token) and WS-172 (CRM editors beyond the conductors)",
+    "by": "conductor@web-summit.dinis",
+    "from": "988aeaff4"
+  },
+  {
+    "version": "v0.2.601",
+    "date": "2026-11-05",
+    "what": "WS-45 checked: agents' keys are on /keys/ already; a patch to add the people's keys (data/person-keys.json), then close it",
+    "by": "dev@web-summit.angelo",
+    "from": "187b225e8"
+  },
+  {
+    "version": "v0.2.600",
+    "date": "2026-11-05",
+    "what": "WS-170, how should a conductor drain its inbox without a token of its own? A question for Dinis's conductor",
+    "by": "conductor@web-summit.angelo",
+    "from": "af45ad378"
+  },
+  {
+    "version": "v0.2.599",
+    "date": "2026-11-05",
+    "what": "the conductor's inbox: lanes for the 15 agents whose keys came after 4 November (49 in all)",
+    "by": "conductor@web-summit.dinis",
+    "from": "d087afb10"
+  },
+  {
+    "version": "v0.2.598",
+    "date": "2026-11-05",
+    "what": "outreach and procurement end their mailbox mandate; inbox@web-summit.silvio takes it over",
+    "by": "dev@web-summit.silvio",
+    "from": "dc5a4da21"
+  },
+  {
+    "version": "v0.2.597",
+    "date": "2026-11-05",
+    "what": "Vicky's proposal for WS-168",
+    "by": "pm@web-summit.vicky",
+    "from": "ff2ffc4b9"
+  },
+  {
+    "version": "v0.2.596",
+    "date": "2026-11-05",
+    "what": "WS-74's n8n note rebuilt on Jose's decision: it reads the vault agent's public count, never the lane or an enum key; my one-door Report",
+    "by": "automation@web-summit.jose",
+    "from": "562918f97"
+  },
+  {
+    "version": "v0.2.595",
+    "date": "2026-11-05",
+    "what": "sales-coach@jose's ABP; the team CRM and Jose's one-door rule in the ABPs",
+    "by": "abp@web-summit.dinis",
+    "from": "54fee4ce7"
+  },
+  {
+    "version": "v0.2.594",
+    "date": "2026-11-05",
+    "what": "Indi's card, reply speed; WS-08 done; WS-171 opened for the two infographics",
+    "by": "conductor@web-summit.indi",
+    "from": "3c97833e3"
+  },
+  {
+    "version": "v0.2.593",
+    "date": "2026-11-05",
+    "what": "/people/vicky/stories/, the newsroom curator's story candidates, with comments",
+    "by": "dashboard@web-summit.vicky",
+    "from": "eb43dde18"
+  },
+  {
+    "version": "v0.2.592",
+    "date": "2026-11-05",
+    "what": "15:41 wake: a short note for Indi (no hotspots at the venue: an offline fallback for the demo)",
+    "by": "mentor@web-summit.dinis",
+    "from": "0988df8ed"
+  },
+  {
+    "version": "v0.2.591",
+    "date": "2026-11-05",
+    "what": "WS-77: on a phone, a section's sub-menu is one scrolling row, not three rows above the content",
+    "by": "dev@web-summit.dinis",
+    "from": "b0700d046"
+  },
+  {
+    "version": "v0.2.590",
+    "date": "2026-11-05",
+    "what": "the afternoon's state: Decide first in Needs me now, the mentor retired, the sticker deadline past",
+    "by": "dashboard@web-summit.angelo",
+    "from": "9c29617b1"
+  },
+  {
+    "version": "v0.2.589",
+    "date": "2026-11-05",
+    "what": "15:34 wake: one door taken up (three task Reports; my own lists of what waits on Jose retired); WS-41 after C19",
+    "by": "dev@web-summit.jose",
+    "from": "7b73d2416"
+  },
+  {
     "version": "v0.2.588",
     "date": "2026-11-05",
     "what": "Links: web-summit.sgit.ai itself, and what changed in the command centre",

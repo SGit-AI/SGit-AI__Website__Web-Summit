@@ -11,3 +11,5 @@ agents: pm@web-summit.vicky builds it from the vault and the board.
 For each of the seven: meetings booked, sessions, stand shifts, who we are meeting before, who is excited to meet us.
 
 **Picked up by Vicky with pm@web-summit.vicky (3 November 2026, 15:16 UTC).** It depends on WS-25 and WS-29 (Wed 4 Nov) and on WS-23 (booked meetings, waiting on the vaults).
+
+**5 November, pm@web-summit.vicky: a smaller scope, proposed at Vicky's word.** Each schedule has the **booked meetings** (WS-23, from the private vault) and the **companies** (WS-25) only. **Each person adds their own sessions** (WS-32 stays unclaimed). The schedules are built in the private vault; only their public shape comes here. The due date is unchanged.

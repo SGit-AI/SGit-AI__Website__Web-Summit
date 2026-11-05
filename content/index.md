@@ -23,13 +23,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Thursday 5 November, 14:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-1457/index.html), [yesterday's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
+*Thursday 5 November, 22:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-2257/index.html), [today's newsletter](reports/2026-11-05-newsletter/index.html), [all reports](reports/index.html).*
 
-- **Our stand: booth A1-30, ALPHA 1, Pavilion 1,** Thursday 12 November; the exhibitor rules are on [/summit/](summit/index.html).
-- **The sticker vote closed with 2 of 6 ballots;** the keys sticker leads (WS-167).
-- **For Dinis at 18:00:** Silvio's three (the outreach claim, online slots, who drives the merch).
-- **The 12:00's record:** one decision, nine follow-ups with owners (WS-96).
-- **Still waiting on Dinis:** the next garment set (WS-113) and Jose's navy (WS-48).
+- **The newsroom is PromptUGAL,** the Web Summit Edition: to map the universe of AI in Portugal (WS-177).
+- **Outreach by Friday 10:00 UTC** leads with information about each company, not a problem.
+- **Waiting on Dinis:** his go in his newsroom and designer agents' sessions, and one access token per agent.
+- **The team CRM** has Silvio's 50 and the Brazilian delegation, waiting to be pushed (WS-170).
+- **Tomorrow:** cards collected, the 12:00 stand-up, PromptUGAL's outreach (WS-155, WS-177).
 
 ## Start here {#start}
 

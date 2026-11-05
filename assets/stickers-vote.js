@@ -382,7 +382,8 @@ ${s.variants && s.variants.length > 1 ? `<span class="sv-vars" role="group" aria
         el.textContent = `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
     }
     function openVault() {
-        $('[data-vault]').innerHTML = `<iframe title="The ws-stickers-vote vault, rendered read-only by SG/Vault" src="${esc(CFG.vault_url)}" allow="fullscreen" allowfullscreen loading="lazy"></iframe>`
+        $('[data-vault]').innerHTML = `<p class="sv-fbtns"><button type="button" data-vwin>Open the vault in a new window</button></p><iframe title="The ws-stickers-vote vault, rendered read-only by SG/Vault" src="${esc(CFG.vault_url)}" allow="fullscreen" allowfullscreen loading="lazy"></iframe>`
+        $('[data-vwin]').onclick = () => window.open(CFG.vault_url, '_blank', 'noopener')
     }
 
     // ---------- for a person who holds the vault key sealed to them: a link to the full-access page ----------

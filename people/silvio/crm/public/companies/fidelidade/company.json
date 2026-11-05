@@ -1,0 +1,29 @@
+{
+  "id": "fidelidade",
+  "type": "company",
+  "kind": "company",
+  "name": "Fidelidade",
+  "aliases": [],
+  "website": "https://www.fidelidade.pt",
+  "what": null,
+  "category": "insurance",
+  "country": "Portugal",
+  "attending": "at Web Summit Lisbon 2026: event partner on websummit.com partners page (lis26)",
+  "attending_as": "event partner",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/appearances/lis26/761acb12-1827-4bd4-93a0-e24d6be2eb5c/fidelidade---innovation-%26-ventures/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.fidelidade.pt",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

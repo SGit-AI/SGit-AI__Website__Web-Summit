@@ -2,6 +2,8 @@
 
 Kept by `automation@web-summit.jose` (started 4 November 2026, at Jose's word; its prompt is in `people/jose/kit/README.md`). The n8n flows that carry the team's information to people, as code with tests. **It never sends:** every flow here is inactive on import, sends only to Jose, and Jose decides what goes further. No number, token, enum key, chat id, webhook URL or invite link goes in this folder: they stay in n8n's credentials.
 
+**One door (C19, 5 November 2026):** work reaches this agent only as task files in `people/jose/tasks/` addressed to it, and it reports to conductor@web-summit.jose. What waits on Jose is on one list, his Actions: [`people/jose/dashboard.md#actions`](../dashboard.md#actions). This folder keeps none.
+
 ## Schedule
 
 A scheduled task fires into this agent's own session at **10:10 and 16:10 UTC** (cron `10 10,16 * * *`), with the scheduled-task prompt in `people/jose/kit/README.md`. Created on 4 November 2026 at 23:34 UTC, at Jose's word; the first wake is 5 November at 10:10. Each wake pulls dev, re-reads the kit and its sections of `content/agents.md` (it has none yet; the kit is where its prompt lives), reads Jose's latest mentor note, does one run, runs the reviewer before `release.sh`, releases, and reports in five lines; if nothing changed, it commits nothing. Commits from a wake carry the body line `Ran without a prompt (scheduled wake, <HH:MM> UTC).` (the convention in `people/jose/dev/README.md`).
@@ -9,27 +11,42 @@ A scheduled task fires into this agent's own session at **10:10 and 16:10 UTC** 
 | Flow | What it does | Files | Tests |
 |---|---|---|---|
 | WS-39 route 3 | The journalist's newest report, drafted, to Jose on WhatsApp; Jose forwards it to the group | kept by dev@web-summit.jose in `people/jose/dev/` (`WS-39-route3.*`, `WS-39-findings.md`) | `node people/jose/dev/WS-39-route3.test.mjs` |
-| WS-74 pending | How many answers are waiting on vault@web-summit.jose's feedback lane, as a note to Jose, only when the number changes | `WS-74-pending.build.mjs` makes `WS-74-pending.n8n.json` | `node people/jose/automation/WS-74-pending.test.mjs` (11, offline; `--live` adds a check of the live site) |
+| WS-74 pending | New answers on the public feedback form, from the vault agent's published count, as a note to Jose, only when the count moves | `WS-74-pending.build.mjs` makes `WS-74-pending.n8n.json` | `node people/jose/automation/WS-74-pending.test.mjs` (12, offline; `--live` reads the live count file) |
 
 All the tests: `for t in people/jose/dev/*.test.mjs people/jose/automation/*.test.mjs; do node "$t" || break; done`
 
-## WS-74 pending: the n8n side of the feedback lane
+## WS-74 pending: the n8n side of the feedback form
 
-Eight nodes in a line: a schedule (07:20, 12:20 and 17:20 UTC, 40 minutes before each stand-up and once in the morning) → **Settings** → **Get the site's lanes** (an HTTP Request node, the public `assets/feedback.json` as text, no credential) → **Find the lane** (pure logic: vault@web-summit.jose's entry in the live site's `assets/feedback.json`: host, vault id and append token, all public, so a new lane is followed without editing the flow; the host must be the one in Settings, `https://dev.send.sgraph.ai`, so the enum key is never sent anywhere else) → **List the lane** (`POST <host>/api/vault/append/list/<vault>`, metadata only, `include_content: false`, page by page) → **Draft the note** → **Send to Jose** (WhatsApp Cloud API, as route 3) → **Remember the note** (only after Meta accepted it).
+**Jose's decision** (5 November 2026, recorded on board WS-74 by conductor@web-summit.jose at 12:25 UTC): *the pending count is counted by vault@web-summit.jose on its drains; n8n never holds the lane's enum key.* So the flow no longer touches the lane at all.
 
-What Jose gets, for example: *"WS-74 feedback lane: 4 answers are waiting on vault@web-summit.jose's vault (was 3 at the last note). vault@web-summit.jose drains them into jose-inbox; feedback-summary.mjs makes the summary a person reads, and nothing is quoted without the person's tick."* It counts every pending file on the vault, whatever its lane, since answers sent under an earlier token (before a new vault session) are drained too; when some are, it adds how many are on the site's current lane. From 800 pending on that lane it adds a warning: at 1000 the lane refuses new answers (507). Nothing is sent when the count is unchanged, or when the lane is empty after a drain (that is remembered, so the next answers are still reported).
+Six nodes in a line: a schedule (every 30 minutes, 07:15 to 22:45 UTC) → **Settings** → **Get the vault agent's count** (an HTTP Request node, a GET of the public `https://web-summit.sgit.ai/people/jose/lanes/feedback-count.json`, no credential) → **Draft the note** (pure logic) → **Send to Jose** (WhatsApp Cloud API, as route 3) → **Remember the note** (only after Meta accepted it).
 
-**It counts, it never reads.** The listing asks for no content, and the answers are sealed to the vault agent's key anyway; execution data of successful runs is not saved (`saveDataSuccessExecution: none`).
+What Jose gets, for example: *"WS-74 feedback: 3 new answers on the public feedback form (3 in all). Drained into jose-inbox by vault@web-summit.jose at 2026-11-05 17:41 UTC. Ask it for the summary (feedback-summary.mjs); nothing is quoted without the person's tick."* Also said: answers that could not be opened (sealed to an earlier session key), 800 or more still pending on the lane (it refuses new ones at 1000, 507), and a count older than 26 hours (the vault agent's drains may have stopped). A note goes when any of these changes, so each is said once, even with no new answers; a stale count with new answers in it reports both. When there is nothing left to say (the lane drained), that is remembered without a note, so a later warning is said again. Nothing is sent while nothing changed, or while the file doesn't exist yet (404).
+
+### The count file, proposed for vault@web-summit.jose
+
+The flow reads `people/jose/lanes/feedback-count.json`, which does not exist yet (checked live on 5 November, 16:20 UTC: 404). The site serves the JSON files in that folder as they are (`vault-jose.json` answers 200). Proposed: the vault agent commits it after each drain, with numbers only, never content:
+
+```json
+{
+  "agent": "vault@web-summit.jose",
+  "vault": "jose-inbox",
+  "at": "2026-11-05T17:41:00Z",
+  "received_total": 3,
+  "drained_this_run": 3,
+  "pending_left": 0,
+  "could_not_open": 0
+}
+```
+
+- `at`: when it drained (ISO 8601, UTC), **updated on every drain, even one that found nothing**: that is how the flow tells a quiet day from a stopped vault agent. This means one small commit per drain, an exception to the vault agent's "if nothing changed, commit nothing"; if the conductor prefers not, set `stale_hours: 0` in Settings and the stale note is off. `received_total`: every answer drained from the feedback lanes so far, never going down within a counter (the flow notes the difference; if it goes down, the flow starts again from it without a note). `drained_this_run`: from `feedback_drain.py`'s summary line. `pending_left`: what was still pending after the drain. `could_not_open`: what the drain left because it could not open it.
+- Under one door this is the conductor's to hand out as a task file to vault@web-summit.jose; asked in this commit's Report.
 
 ### WS-74: to fill in n8n
 
-1. **A decision for Jose first: the enum key.** Listing a lane needs the vault's **enum key** (`x-sgraph-vault-enum-key`); the public append token can only write ([sgit.ai: append lanes](https://sgit.ai/api/append-lanes.md), read 4 November 2026). The enum key can list, fetch (ciphertext only, sealed to the vault agent) and mark processed; it cannot write, purge or open anything. Today it exists only in vault@web-summit.jose's session (`people/jose/lanes/README.md`). Putting it in n8n puts a second copy of a vault credential outside that session, which WS-129 asks us to think about: it is Jose's call. If yes, vault@web-summit.jose hands it to Jose (never in the repository or a commit), and:
-2. **The credential** on "List the lane": a new *Header Auth* credential, name `x-sgraph-vault-enum-key`, value the enum key; call it "WS-74 lane enum key".
-3. **The credential** on "Send to Jose", and **`to`**, **`phone_number_id`**, **`graph_version`** (and for `mode: 'template'`, `template_name` and `template_language`) in "Settings": the same as route 3, `people/jose/dev/WS-39-findings.md`, "To fill in n8n" (the same WhatsApp credential can be reused).
-4. **Template mode (recommended, as for route 3):** a Utility template in Meta's WhatsApp Manager with **two** body parameters and fixed text before and after, for example *"RiskMandate feedback inbox (WS-74): {{1}}. {{2}} This note goes to Jose only."* `{{1}}` is the headline ("4 answers are waiting on vault@web-summit.jose's vault", or "n8n could not list ... (404)"), `{{2}}` the rest, with the 507 warning when there is one. Not a body of just `{{1}}`: Meta rejects a template that starts or ends with a parameter (`people/jose/dev/n8n-build-guide.md`, section 4; its third-party sources in section 13). Then `mode: 'template'`, `template_name`, `template_language` in Settings.
-5. **Publish** the workflow (n8n 2.x and 3.0; "Activate" in older versions): schedules run only on the published version, and n8n keeps static data (the last note) only for those runs, not for test runs.
-
-**When the vault session changes,** it makes a new enum key, and the old one in n8n gets 404. The flow then tells Jose once: *"n8n could not list vault@web-summit.jose's lane (404): ... Ask vault@web-summit.jose for the new key and update the n8n credential."* Nothing is lost; the answers stay pending.
+1. **The credential** on "Send to Jose", and **`to`**, **`phone_number_id`**, **`graph_version`** in "Settings": the same as route 3, `people/jose/dev/WS-39-findings.md`, "To fill in n8n" (the same WhatsApp credential can be reused). No other credential: the count is public.
+2. **Template mode (recommended, as for route 3):** a Utility template in Meta's WhatsApp Manager with **two** body parameters and fixed text before and after, for example *"RiskMandate feedback inbox (WS-74): {{1}}. {{2}} This note goes to Jose only."* `{{1}}` is the headline ("3 new answers on the public feedback form (3 in all)"), `{{2}}` the rest. Not a body of just `{{1}}`: Meta rejects a template that starts or ends with a parameter (`people/jose/dev/n8n-build-guide.md`, section 4; its third-party sources in section 13). Then `mode: 'template'`, `template_name`, `template_language` in Settings.
+3. **Publish** the workflow (n8n 2.x and 3.0; "Activate" in older versions): schedules run only on the published version, and n8n keeps static data (the last note) only for those runs, not for test runs.
 
 ## Proposed to dev@web-summit.jose: route 3 can mark a report sent that Jose never got
 
@@ -53,7 +70,9 @@ In `mode: 'text'`, "Send to Jose" succeeds when Meta *accepts* the message and r
 - **Learned from dev:** since n8n 2.0 Code nodes run on task runners and are kept to pure logic. My "Find the lane" Code node fetched the site itself (`this.helpers.httpRequest` or `fetch`), which may not be there on a runner. **Changed:** a new HTTP Request node, "Get the site's lanes", fetches `assets/feedback.json` as text, and "Find the lane" only parses and checks it. The test now runs the Code nodes with no `this.helpers` and a `fetch` that throws, so a Code node that reaches the network fails the test.
 - **Not changed:** static data. n8n's docs call it experimental and recommend data tables (dev's build guide uses one). Static data still works for a published workflow, and a data table needs a manual step in n8n before import works; worth switching if Jose builds route 3 with data tables, so both flows keep state the same way.
 
+**5 November 2026, 16:10 UTC wake (scheduled).** Jose decided that n8n never holds the enum key and that the vault agent counts. **Changed:** the flow now reads a public count file the vault agent would commit after each drain, so the lane listing, its untested pagination and the enum-key credential are gone, and the only credential left is the WhatsApp one. Jose's reviewer then found two bugs in my first version, both reproduced: after a counter went down, a climb back to the old total was dropped, and new answers inside a stale count were never reported. Also, the "said once" warnings were not part of what the flow remembered, so a full lane with no new answers sent nothing. **Changed:** one state holds everything a note can say (the total, stale, could not open, full), and a note goes when it changes; the three cases are tests now. **Learned:** the site already serves `people/jose/lanes/*.json`, so a count needs no new endpoint, no token and no change to shared code; and it is only as fresh as the vault agent's drains (11:40 and 17:40 UTC), which is also why a stale count is now worth a note on its own. The earlier notes above about the listing and the enum key stay as the record of what was tried.
+
 ## Next
 
-- Jose's word on the enum key (above). Until then the WS-74 flow is ready but can't count anything.
+- The count file, from vault@web-summit.jose (above), handed out by the conductor. Until it exists the flow is ready and stays quiet.
 - Slack for route 3 (route 4), once someone with Slack admin makes the app and the channel: a Slack node or HTTP call with `text_slack`, which `report-draft.mjs` already makes.

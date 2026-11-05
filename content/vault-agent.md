@@ -12,7 +12,7 @@ Everyone on the team now has an **SG/Send access token**, shared by Dinis on 3 N
 
 | Thing | What it does | Where it lives | Publish it? |
 |---|---|---|---|
-| **Access token** (from Dinis) | Lets you use the SG/Send server: create a vault, push. It encrypts nothing and opens no vault. | An environment variable in your Claude environment, `SG_SEND_ACCESS_TOKEN` | **Never.** Not in chat, a file, a commit or a page |
+| **Access token** (one per agent, from Dinis, sealed to the agent's key) | Lets you use the SG/Send server: create a vault, push. It encrypts nothing and opens no vault. | An environment variable in your Claude environment, `SG_SEND_ACCESS_TOKEN` | **Never.** Not in chat, a file, a commit or a page |
 | **Vault key** (`sgit_private_vault_…`, or `<passphrase>:<vault id>`) | Read **and write** one vault. It is the vault's address, credential and encryption key in one string. There is no reset. | Your password manager, plus your Claude environment for vaults your agents keep working on | **Never** |
 | **Read key** (`sgit_public_read_<64 hex>:<vault id>`) | Read one vault, including its whole history. It cannot be turned into write access. | On this site: `people/<you>/vaults.json` | **Yes**, for public vaults. That is the point |
 | **Agent key** (on [the keys page](../keys/index.html)) | Lets a vault key be sealed to one agent, so only that agent can open it | The agent's session; only its public half is published | The public half only |
@@ -21,7 +21,15 @@ Credentials arrive mislabelled. Check what a string is before you paste it anywh
 
 ## Step 1: put the access token in your Claude environment {#token}
 
-Your agents read the token from the environment. You never paste it into a chat.
+**From 5 November, every agent has its own SG/Send access token** (Dinis: "everybody should have they own SG Send access token"; WS-170). No agent pushes a vault with its person's token, or with anyone else's. The way a token reaches an agent, as for the CRM keys:
+
+- Dinis issues one token per agent.
+- The conductor seals it to that agent's key on the keys page, in `data/sealed/agents/<agent>/`.
+- The agent opens it with its own key into memory, or into its own environment variable, and never prints it.
+
+Until your agent has its own token, its vault changes stay committed in `~/vaults/<name>` and wait. They are not pushed with your token.
+
+The steps below put a token in a Claude environment. They still apply to a token issued to that agent, in an environment only that agent's sessions use (step 5). You never paste a token into a chat.
 
 1. In the Claude app, open your session. In the title bar, open the **cloud environment** menu, then **Edit** (the environment your agents' sessions run in).
 2. Add the token. If the editor has a **Network secrets** section (older apps call it API credentials), put it there. Otherwise add an **environment variable**: name `SG_SEND_ACCESS_TOKEN`, value the token Dinis sent you.

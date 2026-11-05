@@ -38,6 +38,15 @@ Every record carries its id, its sources (url and when read) for public facts, w
 
 Who can read a record can change: `node admin/tools/crm.mjs reseal --audience dinis,silvio <file>` seals it again under a new key. The six seeded requests are sealed to Dinis and each request's owner; the public CRM's vault key is sealed to everyone with a site key.
 
+## Unsealing inside the CRM app: the dance {#dance}
+
+The private CRM's own app runs on dev.vault.sgraph.ai, so it cannot reach your key, which lives only in this site's browser storage. So this page does the unsealing for it:
+
+1. Open the private CRM above, then **Open the CRM app here, with unsealing**: the app opens inside this page, and you say yes once ("Allow the CRM app to open the records sealed to you?").
+2. In the app, a sealed record shows **Unseal**. The app asks this page for that one record, by its path.
+3. This page reads the sealed record itself, from the vault it holds open, opens it with your key if you are in its audience, and hands back only the record. Your key, the vault key and the record's own key never leave this page; key records are never handed over; at most 30 a minute; the page counts what it unsealed.
+4. Anything else is refused or ignored: a message from any other frame gets no answer, a path that is not a sealed record is refused, a record not sealed to you is refused. Opened in a new window, the app says to come back here to unseal.
+
 ## For an agent {#agents}
 
 - Read the public CRM with the read key in `data/crm.json`; clone it with `sgit clone <read key>:<vault id>`.

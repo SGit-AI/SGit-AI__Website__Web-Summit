@@ -1,0 +1,29 @@
+{
+  "id": "publicis-sapient",
+  "type": "company",
+  "kind": "company",
+  "name": "Publicis Sapient",
+  "aliases": [],
+  "website": "https://www.publicissapient.com",
+  "what": null,
+  "category": "consultancy",
+  "country": "United States",
+  "attending": "at Web Summit Lisbon 2026: event partner on websummit.com partners page (lis26)",
+  "attending_as": "event partner",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/appearances/lis26/ba8b7fc9-af21-4bfe-a356-049e051a11da/publicis-sapient/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.publicissapient.com",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

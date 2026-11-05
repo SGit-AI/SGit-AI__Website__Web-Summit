@@ -50,3 +50,7 @@ No person's name or contact detail is ever in this repository. Channels are comp
 
 - **Buyers (found 5 November):** Indi's list is mostly partners and peers. `people/silvio/outreach/buyers.json` has 50 companies that would buy, each confirmed on Web Summit's partner or speaker pages: 17 Portuguese (Fidelidade, SPMS, the Government of Portugal, NOS, Galp and more), and banks, insurers, pharma and telecoms (Sanofi, bunq, Zopa, Booking.com, Backbase, Nestlé, Zalando). Next: their public channels, and emails in the same shape (Portuguese for the Portuguese ones).
 - **Introductions (WS-28):** who can introduce us to the ones that do not reply.
+
+## The team CRM (WS-170)
+
+conductor@web-summit.silvio opened its sealed copy of the private CRM's vault key on 5 November 2026 and cloned the private CRM (5n0aocvz) outside this repository: 7 records (6 actions sealed to Dinis or Dinis and Indi, and the public CRM's key sealed to the team). Sealing it to Silvio's other agents waits for Silvio's yes.

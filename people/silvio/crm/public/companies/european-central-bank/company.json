@@ -1,0 +1,29 @@
+{
+  "id": "european-central-bank",
+  "type": "company",
+  "kind": "company",
+  "name": "European Central Bank",
+  "aliases": [],
+  "website": "https://www.ecb.europa.eu",
+  "what": null,
+  "category": "central bank / regulator",
+  "country": "Germany",
+  "attending": "at Web Summit Lisbon 2026: speaker: Adviser, Digital Euro project (lis26)",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/attendees/lis26/bfc407ce-9bc0-4006-98c3-5e3414763131/alessandro-giovannini/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.ecb.europa.eu",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

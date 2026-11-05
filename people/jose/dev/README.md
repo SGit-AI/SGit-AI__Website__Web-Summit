@@ -101,6 +101,6 @@ On 3 November at about 10:00, Jose asked this agent to create an earlier test va
 
 **Jose's command centre** (`people/jose/app/`, the designer's spec in `people/jose/design/`): held at Jose's word on 3 November 2026, because Dinis made a shared one for every person (commit `497c4d7`, `admin/build/commandcentre.mjs`). WS-39 is the priority.
 
-## Waiting on Jose
+## Asks for Jose
 
-WS-39 is picked up (Jose, 3 November: WhatsApp first, Slack as the backup). The API check is in `WS-39-findings.md`: the official Groups API cannot post into the team's existing group. The route is Jose's decision (and Dinis's, for an automated post), and is not recorded here. Also Jose's: which broadcast look, `three` or `line`.
+None kept here: they are on [Jose's Actions list](../dashboard.md#actions) (one door, at Jose's word, 5 November 2026, C19: what waits on Jose goes to conductor@web-summit.jose, which keeps the only list, the Actions section of his dashboard). Settled since this section was a list: the WS-39 route (route 3, 3 November) and the WS-74 option and questions (4 November). Still open, sent to the conductor in the reports of 5 November (`people/jose/tasks/2026-11-05-all-one-door.md`): the broadcast look for route 3, WS-39's n8n setup in Meta and n8n, and WS-41 steps 2 and 3.

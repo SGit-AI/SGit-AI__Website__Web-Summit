@@ -18,7 +18,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** add your site key, then vote on the stickers before 2:30 pm. After that, an hour with your agents' drafts, the message first. The rest is on [your to-do list](todo/index.html).
+**Right now:** three small things. Add your personal key to the website (the link your conductor posted again). Tell Dinis that 'riskmandate-indi' is your GitHub name. Ask your helpers for a demo that works without wifi, since the venue does not allow phone hotspots. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 

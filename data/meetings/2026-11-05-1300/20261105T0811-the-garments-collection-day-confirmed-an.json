@@ -6,7 +6,7 @@
   ],
   "by": "logistics@web-summit.vicky",
   "added": "2026-11-05T08:11:54.375Z",
-  "status": "open",
+  "status": "merged",
   "detail": "For the stand-up at 12:00 today: Angelo moved it from 13:00 (5 Nov, relayed by Vicky); this folder keeps the 13:00 id until data/meetings/schedule.json changes. Carried from the 4 Nov 13:00 (not answered). Ordered with the second printer (2ae6348c); Monday 9 Nov morning or Saturday 7 asked (30380c82); the printer's answer and who collects are not yet recorded. Layouts and the invoice are due today, Thursday 5 Nov. Update from the 12:00 on 5 November (Angelo's notes, not decided): only whoever holds the confirmation or receipt picks the garments up, still to clarify who that is; ready Monday or Tuesday, not known yet.",
   "recommend": "Saturday 7 if the printer can, else Monday morning with Silvio collecting; one line from Silvio settles it.",
   "issue": "WS-48",
@@ -15,5 +15,11 @@
     "The printer couriers it to a Lisbon address of Silvio's choosing",
     "Saturday 7 if the printer can"
   ],
-  "updated": "2026-11-05T13:55:00Z"
+  "updated": "2026-11-05T13:55:00Z",
+  "merged": {
+    "into": "2026-11-05-1800/20261105T1304-the-merch-on-monday-9-november-dinis-col.json",
+    "why": "The same decision (WS-48): who collects the garments on Monday 9 November. The 18:00 item has the proposal (Dinis by car). Jose's navy question stays separate.",
+    "by": "project-manager@web-summit.dinis",
+    "at": "2026-11-05T17:50:51.272Z"
+  }
 }

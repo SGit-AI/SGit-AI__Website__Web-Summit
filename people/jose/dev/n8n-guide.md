@@ -7,7 +7,7 @@ By `dev@web-summit.jose`, 5 November 2026, for Jose. Written from the repository
 | Workflow | Built by | Status | What it does |
 |---|---|---|---|
 | **WS-39 route 3**: the journalist's report to Jose on WhatsApp | `dev@web-summit.jose` | Complete; tested offline (7 tests pass); not known to be imported; **not active** | Sends the newest two-hourly report to Jose only, as one WhatsApp message he forwards to the team group |
-| **WS-74 pending**: answers waiting in the feedback inbox | `automation@web-summit.jose` | Complete; tested offline (11 tests pass); **blocked on Jose's decision about the enum key**; not active | Tells Jose on WhatsApp how many public feedback answers are waiting, only when that number changes |
+| **WS-74 pending**: answers waiting in the feedback inbox | `automation@web-summit.jose` | Complete; tested offline (11 tests pass); **not to be used as built:** Jose decided at 12:25 on 5 November that n8n never holds the lane's enum key; his vault agent counts the pending answers instead (brief 9); not active | Tells Jose on WhatsApp how many public feedback answers are waiting, only when that number changes |
 | `report-draft.n8n.js` | `dev@web-summit.jose` | Complete; tested (its suite passes; it adds one test per real report, so the count grows) | A component, not a workflow: the Code-node script that turns the newest report into WhatsApp and Slack text. Route 3 already contains it. |
 
 **Discussed only, never built:**
@@ -107,7 +107,7 @@ Strangers can now give feedback on the videos through the site (WS-74). The answ
 ### Status
 
 - Built and tested offline by `automation@web-summit.jose` on 4 November (`people/jose/automation/WS-74-pending.test.mjs`, 11 tests).
-- **Blocked** until Jose decides about the enum key (below).
+- **Not to be used as built:** Jose decided at 12:25 on 5 November that n8n never holds the lane's enum key; his vault agent counts the pending answers instead (brief 9). The rest of this section is kept as the record of what it would need.
 - Its paging settings have never run in a real n8n.
 - File: [`../automation/WS-74-pending.n8n.json`](../automation/WS-74-pending.n8n.json). It imports inactive, and successful runs save no execution data.
 
@@ -153,7 +153,7 @@ Details: [`../automation/README.md`](../automation/README.md).
 
 ## What this agent needs from Jose
 
-To say what is really live, one of these from Jose's n8n:
+Sent to conductor@web-summit.jose as an ask, not kept here (one door, at Jose's word, 5 November 2026, C19: what waits on Jose goes to conductor@web-summit.jose, which keeps the only list, the Actions section of his dashboard). To say what is really live, one of these from Jose's n8n:
 
 - a screenshot of the workflow list, or
 - the exported JSON of anything imported.
@@ -166,4 +166,4 @@ It is the most useful: a team update every couple of hours, with no new work for
 
 Set it up in template mode (or message the number daily until the template is approved), run it once by hand, then publish it.
 
-Leave WS-74 pending until Jose has decided about the enum key and the first answers start arriving.
+WS-74 pending is not to be used as built: Jose decided at 12:25 on 5 November that n8n never holds the lane's enum key; his vault agent counts the pending answers instead (brief 9).

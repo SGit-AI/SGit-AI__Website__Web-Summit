@@ -681,6 +681,9 @@ svg.ch-map { min-width: 620px; max-width: 900px; }
 .crm-g .t-event circle { fill: var(--st-terra); }
 .crm-g .me circle { stroke: var(--st-gold); stroke-width: 3; }
 .crm-private { border-color: var(--warm-line); }
+.crm-allow { margin: 0.6rem 0; padding: 0.6rem 0.8rem; border: 1px solid var(--line-2); border-radius: 12px; background: var(--surface-2); }
+.crm-allow.ask { border-color: var(--warm); background: var(--warm-soft); animation: sv-shake 0.5s; }
+.crm-frame iframe { height: min(80vh, 46rem); }
 .crm-plist { list-style: none; padding: 0; margin: 0.6rem 0 0; display: grid; gap: 0.5rem; }
 .crm-plist li { margin: 0; padding: 0.6rem 0.8rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); }
 .crm-plist li.opened { border-color: var(--ok); background: var(--ok-soft); }
@@ -754,6 +757,12 @@ nav.site .gh { margin-left: 0; }
     nav.site .ver, nav.site .parent { display: none; }
     nav.site .links { order: 5; width: 100%; margin-left: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
     nav.site .links a { padding: 0.35rem 0.5rem; white-space: nowrap; }
+    /* WS-77: on a phone the section's sub-menu is one row that scrolls sideways, like the top row, instead of three
+       rows of links above the content; both rows fade at the right edge, so it shows there is more */
+    nav.subnav .row { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 0 1rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    nav.subnav a { white-space: nowrap; }
+    nav.site .links, nav.subnav .row { -webkit-mask-image: linear-gradient(to right, black calc(100% - 2rem), transparent); mask-image: linear-gradient(to right, black calc(100% - 2rem), transparent); }
+    nav.site .links::-webkit-scrollbar, nav.subnav .row::-webkit-scrollbar { display: none; }
 }
 
 /* a focus page (people/<id>/focus/...): only the queue on the screen */
@@ -798,3 +807,5 @@ body[data-focus] main { padding-top: 0.8rem; }
 .ig-person ul { margin: 0; padding-left: 1.1rem; }
 .ig-wide { grid-column: 1 / -1; }
 .ig-wide img { aspect-ratio: auto; object-fit: contain; background: var(--wait-soft); }
+
+.crm-win { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 0.4rem 0 0.8rem; }

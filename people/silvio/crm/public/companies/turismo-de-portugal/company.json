@@ -1,0 +1,29 @@
+{
+  "id": "turismo-de-portugal",
+  "type": "company",
+  "kind": "company",
+  "name": "Turismo de Portugal",
+  "aliases": [],
+  "website": "https://www.turismodeportugal.pt",
+  "what": null,
+  "category": "government agency / tourism",
+  "country": "Portugal",
+  "attending": "at Web Summit Lisbon 2026: event partner on websummit.com partners page (lis26) (Tourism of Portugal)",
+  "attending_as": "event partner",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/appearances/lis26/91e2a435-8c94-42b3-a74d-130446723990/tourism-of-portugal/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.turismodeportugal.pt",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

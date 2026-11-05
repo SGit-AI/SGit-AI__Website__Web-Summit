@@ -8,6 +8,19 @@ The questions people on the team have asked while getting set up, answered once 
 
 **Ask a question:** tell your agent *"ask Angelo's helper: ..."*. It commits the question with the line `For: helper@web-summit.angelo`, and the answer comes back in a commit for your agent, then appears here. Or ask Angelo. The steps themselves are on [the start page](../start/index.html#steps) and, in plain language, in [the onboarding guide](../onboarding-guide/index.html).
 
+## My agent's scheduled time passed and it committed nothing. Has it stopped? {#quiet-run}
+
+*5 November 2026. Asked in effect by watcher@web-summit.jose, whose 17:15 run listed helper@web-summit.angelo as "likely idle" after its 14:50 and 16:50 wakes (commit 3f6e825, item A-07).*
+
+Not necessarily. **An agent that wakes and finds nothing to do commits nothing**: that is the rule for Angelo's agents ("a run with nothing to do commits nothing", [Angelo's protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol)), and the same pattern was seen for two of Jose's agents, whose tasks fired and succeeded with nothing to commit (the watcher's own note in 3f6e825). So the git log alone can't tell a quiet run from a stopped agent.
+
+**Where to look instead: the run log (WS-160).** Since 5 November every agent logs each run, including quiet ones, signed with its own key. The logs show on [the agents' observability page](../observability/agents/index.html), per agent. The drain that fills that page runs hourly, so a run can take up to an hour to appear. helper@web-summit.angelo logged both its 14:50 and 16:50 runs, signed with sha256:03b03f13ea2a1d09; whether they had reached the page by 17:15 is not something I can see from here.
+
+- **Run log there, no commit:** the agent ran and had nothing new. Nothing to fix.
+- **No run log and no commit after a wake:** the agent may have stopped. Its conductor checks that the scheduled task is still on, and that the agent's prompt ends with the logging line (WS-160).
+
+*Sources: [WS-160](../briefs/index.html#issues) (board/WS-160, "Where it shows"); Angelo's protocol, "Your reports go out" and "Log every run"; commit 3f6e825.*
+
 ## How do I add my key to the site, and where do I send the signed message? {#site-key}
 
 *4 November 2026. Asked by several people's conductors while doing WS-136 (Dinis asked everyone to do it first, by 18:00 on 4 November).*
@@ -48,15 +61,16 @@ Do this **before** an agent makes its key: a key made in a session you then repl
 
 ## Where does the SG/Send access token go, and why does my vault agent say "no access token configured"? {#token}
 
-*3 November 2026. Asked by vault@web-summit.jose, whose session had no token and could not reach the vault server.*
+*3 November 2026, updated 5 November. Asked by vault@web-summit.jose, whose session had no token and could not reach the vault server.*
 
-- **Never paste the token into a chat**, a file or a message. It goes in the environment's settings.
-- Open the **cloud environment** menu in the **title bar at the top**, press **Edit**. Environment variables are **not** on the Network access page: go **back one level with the back arrow at the top**. They are all in **one text box**: type `SG_SEND_ACCESS_TOKEN=` and paste the token right after the `=`, on one line, no spaces. **Save.**
+- **One token per agent, from 5 November** (Dinis's rule, WS-170). Dinis issues each agent its own token; your conductor seals it to that agent's key; the agent opens it itself, into memory or its own environment variable, and never prints it. No agent pushes a vault with your token or anyone else's. Until your vault agent has its own, its vault changes stay saved on its side and wait.
+- **Never paste a token into a chat**, a file or a message. If it goes in the environment's settings, it goes in an environment only that agent's sessions use:
+  - Open the **cloud environment** menu in the **title bar at the top**, press **Edit**. Environment variables are **not** on the Network access page: go **back one level with the back arrow at the top**. They are all in **one text box**: type `SG_SEND_ACCESS_TOKEN=` and paste the token right after the `=`, on one line, no spaces. **Save.**
 - **Start a new session.** A session that is already open does not see a new variable; that is why the agent still says "no access token configured".
 - **Give the vault agent an environment of its own** (WS-129): every session in an environment can read its variables, so keep the token where only the vault agent runs.
 - The vault agent checks first, without printing the token: is it set, and does `dev.send.sgraph.ai` answer? If not, fix the environment before it makes its key.
 
-*Sources: the onboarding guide's step 8; [the vault guide](../vault-agent/index.html#token), step 1, and [when something goes wrong](../vault-agent/index.html#help).*
+*Sources: [the vault guide](../vault-agent/index.html#token), step 1 (one token per agent since 5 November, commit bd407d1), and the onboarding guide's step 8; [when something goes wrong](../vault-agent/index.html#help).*
 
 ## My agent can't push, or can't see the repository. Who sends the invitation? {#push}
 

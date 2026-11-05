@@ -1,0 +1,29 @@
+{
+  "id": "bunq",
+  "type": "company",
+  "kind": "company",
+  "name": "bunq",
+  "aliases": [],
+  "website": "https://www.bunq.com",
+  "what": null,
+  "category": "banking (neobank)",
+  "country": "Netherlands",
+  "attending": "at Web Summit Lisbon 2026: speaker: CSO (lis26)",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/attendees/lis26/cbc4322c-4f26-496e-b3dd-d73bc21c2c65/bianca-zwart/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.bunq.com",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

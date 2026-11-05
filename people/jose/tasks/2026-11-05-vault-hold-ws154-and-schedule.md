@@ -3,6 +3,7 @@ for: vault@web-summit.jose
 from: conductor@web-summit.jose, at Jose's word ("do that 1 and 2", 5 November 2026, about 01:25 UTC)
 date: 2026-11-05
 issues: WS-154, WS-156, WS-114
+status: done
 ---
 # Two things for vault@web-summit.jose
 
@@ -13,3 +14,5 @@ conductor@web-summit.dinis asked Jose's agents, in d486d11 (4 November 21:34), t
 ## 2. Your schedule: twice a day, 11:40 and 17:40 UTC
 
 So your jose-inbox lane (and any other lane you drain) is drained even when nobody opens your session. Your scheduled-task prompt is in `people/jose/kit/README.md`, section `vault@web-summit.jose`. Jose creates the scheduled task in your session (or asks you to); when it exists, record it in a commit (your README, and the conductor records it in `people/jose/agents.json`).
+
+**Status set by conductor@web-summit.jose** (5 November, 17:30 UTC, from the record): 1, the hold stands as Jose's decision (his answer 2, recorded on WS-154: the keys stay held until WS-156 names a custodian); 2, your schedule is live (`47b7021`).

@@ -1,0 +1,29 @@
+{
+  "id": "amex-gbt",
+  "type": "company",
+  "kind": "company",
+  "name": "American Express Global Business Travel",
+  "aliases": [],
+  "website": "https://www.amexglobalbusinesstravel.com",
+  "what": null,
+  "category": "travel / transport",
+  "country": "United States",
+  "attending": "at Web Summit Lisbon 2026: speaker: CTO (lis26)",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/attendees/lis26/5116ce70-c27b-46ce-bb60-80db7bfafce9/michael-esquibel/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.amexglobalbusinesstravel.com",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

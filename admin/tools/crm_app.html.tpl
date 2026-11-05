@@ -28,12 +28,14 @@ main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:14px;p
 .detail a{color:var(--blue)}svg{width:100%;height:320px;border:1px solid var(--line);border-radius:10px;background:var(--bg);margin-top:8px}
 svg text{font:11px system-ui;fill:var(--ink)}svg line{stroke:var(--line);stroke-width:1.4}
 .meta{color:var(--ink2);font-size:13px}
+.unseal{margin:10px 0;padding:10px;border:1px dashed var(--terra);border-radius:10px}.opened{color:var(--green);font-weight:700;margin:0 0 6px}
 @media (max-width:760px){main{grid-template-columns:1fr}.list{max-height:45vh}}
 </style>
 </head>
 <body>
 <header>
   <h1>The team CRM <span id="which"></span></h1>
+  <span class="meta" id="bridge"></span>
   <div class="tabs" id="tabs"></div>
   <input type="search" id="q" placeholder="Search names, roles, titles..." aria-label="Search">
 </header>
@@ -43,6 +45,7 @@ svg text{font:11px system-ui;fill:var(--ink)}svg line{stroke:var(--line);stroke-
 </main>
 <script>
 const WHICH = /*__WHICH__*/''
+const BRIDGE_ORIGINS = /*__ORIGINS__*/['https://web-summit.sgit.ai']
 ;(function () {
   'use strict'
   const sg = window.sg || null, $ = id => document.getElementById(id)
@@ -65,7 +68,7 @@ const WHICH = /*__WHICH__*/''
   }
   function list() {
     const q = $('q').value.trim().toLowerCase(), box = $('list'); box.textContent = ''
-    const rows = NODES.filter(n => n.file && (q ? JSON.stringify([label(n), sub(n)]).toLowerCase().includes(q) : n.type === TYPE))
+    const rows = NODES.filter(n => n.file && (q ? JSON.stringify([label(n), sub(n), n.file]).toLowerCase().includes(q) : n.type === TYPE))
       .sort((a, b) => (a.type === 'schedule' ? (a.date + a.start).localeCompare(b.date + b.start) : label(a).localeCompare(label(b)))).slice(0, 400)
     for (const n of rows) {
       const r = el('button', 'row'); r.type = 'button'; r.setAttribute('role', 'listitem')
@@ -81,23 +84,62 @@ const WHICH = /*__WHICH__*/''
     d.appendChild(el('h2', null, label(n)))
     d.appendChild(el('p', 'meta', n.type + (n.file ? ' · ' + n.file : '')))
     if (n.sealed) {
-      d.appendChild(el('p', null, 'Sealed (layer 2, ws-crm-env-1) to: ' + (n.audience || []).join(', ') + '. It opens only in the browser of someone in that list, with their own key: web-summit.sgit.ai/crm/, Open the private CRM.'))
+      d.appendChild(el('p', null, 'Sealed (layer 2, ws-crm-env-1) to: ' + (n.audience || []).join(', ') + '.'))
+      const box = el('div', 'unseal'); d.appendChild(box)
+      if (BRIDGE) {
+        const b = el('button', 'chip', 'Unseal'); b.type = 'button'; box.appendChild(b)
+        box.appendChild(el('span', 'meta', '  web-summit.sgit.ai opens it with your own key and hands back only this record.'))
+        b.onclick = async () => {
+          b.disabled = true; b.textContent = 'Asking web-summit.sgit.ai...'
+          const r = await unseal(n.file)
+          if (CUR !== id) return
+          if (!r.ok) { b.disabled = false; b.textContent = 'Unseal'; box.appendChild(el('p', 'meta', 'Not opened: ' + String(r.reason || 'refused'))); return }
+          box.textContent = ''; box.appendChild(el('p', 'opened', '🔓 Unsealed by web-summit.sgit.ai for you'))
+          box.appendChild(recordView(r.record))
+        }
+      } else box.appendChild(el('p', 'meta', 'To unseal it, open this app from web-summit.sgit.ai/crm/ (Open the private CRM, then Open the CRM app here, with unsealing): your key lives in that site\'s browser storage, which this window cannot reach.'))
     } else if (n.file) {
-      try {
-        const r = await readJson(n.file), dl = el('dl')
+      try { d.appendChild(recordView(await readJson(n.file))) } catch (e) { d.appendChild(el('p', 'meta', 'Could not read ' + n.file)) }
+    }
+    graph(id)
+  }
+  function recordView(r) {                                   // untrusted: every value reaches the page as text
+    const dl = el('dl')
+    if (!r || typeof r !== 'object') { dl.appendChild(el('dd', null, String(r))); return dl }
         for (const [k, v] of Object.entries(r)) {
           if (['id', 'type', 'topic_names', 'updated_by'].includes(k) || v == null || (Array.isArray(v) && !v.length)) continue
           dl.appendChild(el('dt', null, k))
           const dd = el('dd')
-          if (k === 'sources') v.forEach(s => { const a = el('a', null, s.url); a.href = s.url; dd.appendChild(a); dd.appendChild(el('span', 'meta', ' read ' + (s.read_at || '') + ' ')); dd.appendChild(el('br')) })
+          if (k === 'sources' && Array.isArray(v)) v.forEach(s => { const a = el('a', null, String(s && s.url)); a.href = /^https?:\/\//.test(String(s && s.url)) ? s.url : '#'; dd.appendChild(a); dd.appendChild(el('span', 'meta', ' read ' + (s.read_at || '') + ' ')); dd.appendChild(el('br')) })
           else if (k === 'website' && /^https?:/.test(v)) { const a = el('a', null, v); a.href = v; dd.appendChild(a) }
           else dd.textContent = typeof v === 'string' ? v : JSON.stringify(v)
           dl.appendChild(dd)
         }
-        d.appendChild(dl)
-      } catch (e) { d.appendChild(el('p', 'meta', 'Could not read ' + n.file)) }
-    }
-    graph(id)
+    return dl
+  }
+  // ---------- the bridge to web-summit.sgit.ai/crm/ (WS-170, "the dance") ----------
+  // The person's key lives only in web-summit.sgit.ai's storage. When that page embeds this app, it answers a ping; then
+  // Unseal asks it for one record by path. The page reads the sealed envelope itself, with the vault key it holds, and
+  // sends back only that record's fields. Replies are taken only from window.top, from an allowed origin, with our nonce.
+  let BRIDGE = false
+  const nonce = () => Array.from(crypto.getRandomValues(new Uint8Array(12)), b => b.toString(16).padStart(2, '0')).join('')
+  function ask(msg, ms) {
+    return new Promise(done => {
+      const n = nonce(), t = setTimeout(() => { removeEventListener('message', on); done(null) }, ms)
+      function on(e) {
+        const d = e.data || {}
+        if (e.source !== window.top || !BRIDGE_ORIGINS.includes(e.origin) || d.nonce !== n) return
+        clearTimeout(t); removeEventListener('message', on); done(d)
+      }
+      addEventListener('message', on)
+      try { window.top.postMessage({ ...msg, v: 1, nonce: n }, '*') } catch (e) { clearTimeout(t); done(null) }   // the page answers by nonce
+    })
+  }
+  async function ping() { const r = await ask({ type: 'ws-crm-unseal-ping' }, 1500); BRIDGE = !!(r && r.type === 'ws-crm-unseal-pong'); return BRIDGE }
+  async function unseal(path) {
+    const r = await ask({ type: 'ws-crm-unseal-request', path }, 30000)
+    if (!r) return { ok: false, reason: 'no answer from web-summit.sgit.ai' }
+    return r.type === 'ws-crm-unseal-result' ? r : { ok: false, reason: 'unexpected answer' }
   }
   // a small force graph: the record and what it links to (one hop), laid out by a few hundred steps of a spring model
   function graph(id) {
@@ -130,6 +172,7 @@ const WHICH = /*__WHICH__*/''
     BY = Object.fromEntries(NODES.map(n => [n.id, n]))
     if (!NODES.some(n => n.type === TYPE && n.file)) TYPE = (TYPES.find(([k]) => NODES.some(n => n.type === k && n.file)) || ['company'])[0]
     tabs(); list(); $('q').addEventListener('input', list)
+    if (WHICH === 'private' && window.top !== window) ping().then(ok => { $('bridge').textContent = ok ? '🔑 Unsealing through web-summit.sgit.ai' : 'No unsealing here: open from web-summit.sgit.ai/crm/'; if (CUR) show(CUR) })
     try { window.parent && window.parent.postMessage({ type: 'sg-app-ready' }, '*') } catch (e) { }
   }
   start().catch(e => { console.error(e); try { window.parent.postMessage({ type: 'sg-app-ready' }, '*') } catch (x) { } })

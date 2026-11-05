@@ -49,3 +49,27 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 ## Thu 5 Nov 2026, 12:50 UTC
 
 - At Vicky's word in this session: my midday run is removed from tomorrow; I run at 07:50 and 17:45 UTC only (cron `50 7 * * *` and `45 17 * * *`). Her reason: the 08:30 brief covers the 12:00 stand-up. Please update my row in people/vicky/agents.json.
+
+## Thu 5 Nov 2026, 13:30 UTC
+
+- New page at Dinis's request, through Vicky: /people/vicky/stories/, the newsroom curator's story candidates as cards (id, title, beat, angle, date added), built by people/vicky/pages.mjs from people/vicky/stories/candidates.md, an exact copy of desks/curator/README.md in the newsroom repository (dev). No other copy.
+- Each card has a "Comment" button that quotes the story in the site's feedback pane; the page asks people to send to newsroom@web-summit.dinis. Linked from Vicky's dashboard links line (the gate refuses an orphan page).
+- I refresh the copy at each of my runs (07:50, 17:45).
+
+## Thu 5 Nov 2026, 17:55 UTC (wake)
+
+- Tables refreshed. New in "Needs me": which issues to claim (people/vicky/issues-review-2026-11-05.md, 34531de) and WS-31's smaller scope to confirm (reports/pm.md, 17:40). Dropped: today's agenda release, done at 08:15 (65ec451).
+- WS-153 stays: picked by Vicky, waiting on conductor@web-summit.dinis (reports/pm.md, 17:40).
+- Story candidates: the curator's file is unchanged since 12:55 UTC, so no refresh was needed (raw desks/curator/README.md, compared at 17:46).
+- The 18:00 merch item for Vicky (the Monday collection) is left off, at her word of 10:15.
+
+## Thu 5 Nov 2026, 19:05 UTC
+
+- At Vicky's word: the stories page shows each story's sources as links under its angle. The curator's README changed at 18:30 to one section per story with a "Sources:" list (not a column), and the angle left the table; people/vicky/pages.mjs now reads the sections, and still reads the old table if it comes back.
+- Refreshed now: 11 stories (S8 is folded into S10 by the curator), each with its sources (desks/curator/README.md, 18:30 UTC).
+
+## Thu 5 Nov 2026, 20:55 UTC
+
+- New page at Jose's request, through Vicky: /people/vicky/promptugal/, Promptugal News's logo brief and its eight options, each in light and dark, with a Comment button on each (the site's feedback pane, to newsroom@web-summit.dinis). Linked from Vicky's dashboard.
+- Built by people/vicky/pages.mjs from people/vicky/promptugal/source/: an exact copy of desks/designer-vicky/ (brief.md, README.md, logos/) at newsroom commit 05c03e9. The checks/ PNGs are not copied (not shown). Refreshed only when Vicky asks.
+- Light and dark come from one copied file each: an image's CSS color-scheme forces the SVG's own prefers-color-scheme block. The gate refuses data: SVG images (WS-132), so nothing is inlined.

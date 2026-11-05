@@ -35,6 +35,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: A
 
 - **Angelo's protocol, 5 November** (`people/angelo/kit/README.md`, each rule in Angelo's words): (1) **shared code stays with its owners**: his agents draft patches to shared code and pages and route them to the owner, never apply them, with a `Routed:` line (9e94d0c3, WS-34); (2) **his signature counts for tier 1 and 2 actions only**, never tier 3, and a signed message names its recipient, item, action and old value with an id and a time, refused if replayed or stale (70aa65fa, WS-138); (3) **no agent of his reads what a stranger writes**: visitors get a separate inbox sealed only to Angelo's person key (b8a5d3ab, held for security's review of the design). Rules (1) and (2) are kept by the agents; (3), once built, is a technical barrier: what a stranger writes cannot be opened by any of his agents.
 
+- **It can open the team's private CRM** (WS-170, 237ee015): the private CRM's vault key is sealed to every person and to each person's conductor (`data/sealed/agents/`); the private CRM holds the coordination actions, each sealed to Dinis and its owner, and the public CRM's key.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -63,4 +65,4 @@ Open questions: its connectors; who reviews its output each day; whether Angelo 
 
 ## Provenance {#provenance}
 
-Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 8, 5 November 2026 (12:10 wake: Angelo's protocol; 08:10 wake: the person key, WS-138; 00:10 wake: WS-133; 12:10 wake: its schedule, its key, two edits to others' agenda items; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 20:10 wake: the standard conductor prompt), in `content/abp/` with its history in git.
+Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 9, 5 November 2026 (16:10 wake: the private CRM; 12:10 wake: Angelo's protocol; 08:10 wake: the person key, WS-138; 00:10 wake: WS-133; 12:10 wake: its schedule, its key, two edits to others' agenda items; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 20:10 wake: the standard conductor prompt), in `content/abp/` with its history in git.

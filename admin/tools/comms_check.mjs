@@ -11,9 +11,12 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../.
 const PEOPLE = new Set(JSON.parse(fs.readFileSync(path.join(ROOT, 'data/team.json'), 'utf8')).members.map(m => m.id))
 const agentName = m => { const d = m.match(/@web-summit\.([a-z0-9-]+)$/); return !!d && PEOPLE.has(d[1]) }
 const RULES = [
-    [/[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}(?:\.[A-Za-z]{2,})?/g, 'an email address', m => agentName(m) || /@web-summit$|noreply@|example\.(com|org)$/.test(m)],
+    // anchored at the start of a run (dev@web-summit.dinis, 5 November): the same matches on all 2,101 tracked text
+    // files, but no retry from every character of a long base64 run (465 ms -> 182 ms)
+    [/(?<![A-Za-z0-9._%+-])[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}(?:\.[A-Za-z]{2,})?/g, 'an email address', m => agentName(m) || /@web-summit$|noreply@|example\.(com|org)$/.test(m)],
     [/(?:\+|00)\d{1,3}[\s.-]?\(?\d{2,4}\)?[\s.-]?\d{3,4}[\s.-]?\d{3,4}/g, 'a phone number', () => false],
-    ...secrets.KEY_RULES.map(([re, what]) => [new RegExp(re.source, 'g'), what, () => false]),
+    // with each key shape's prefilter (secrets.cjs): the full pattern runs only on a text that has its literal part
+    ...secrets.KEY_RULES.map(([re, what, pre]) => [new RegExp(re.source, 'g'), what, () => false, pre]),
 ]
 function walk(d, out = []) { if (!fs.existsSync(d)) return out; for (const n of fs.readdirSync(d)) { const p = path.join(d, n); fs.statSync(p).isDirectory() ? walk(p, out) : out.push(p) } return out }
 // what the build wrote (.generated.txt) is checked through its sources; every other non-binary file is read
@@ -25,14 +28,14 @@ export function check(dirs = ['comms', 'data', 'team', 'people', 'board']) {
     for (const f of dirs.flatMap(d => walk(path.join(ROOT, d)))) {
         if (secrets.BINARY.test(f) || gen.has(path.relative(ROOT, f))) continue
         const t = fs.readFileSync(f, 'utf8')
-        for (const [re, what, allowed] of RULES) for (const m of t.matchAll(re)) if (!allowed(m[0])) errors.push(`${path.relative(ROOT, f)}: looks like ${what}: ${m[0].slice(0, 12)}…`)
+        for (const [re, what, allowed, pre] of RULES) if (!pre || pre.test(t)) for (const m of t.matchAll(re)) if (!allowed(m[0])) errors.push(`${path.relative(ROOT, f)}: looks like ${what}: ${m[0].slice(0, 12)}…`)
     }
     // the generated public JSON that pages read in the browser (WS-123): built from the sources above, but assembled,
     // so it is checked as it ships too. me.json is every person's For-you slice; data.json each command centre's
     const published = ['me.json', ...(fs.existsSync(path.join(ROOT, 'people')) ? fs.readdirSync(path.join(ROOT, 'people')).map(id => `people/${id}/app/data.json`) : [])]
     for (const rel of published.filter(r => fs.existsSync(path.join(ROOT, r)))) {
         const t = fs.readFileSync(path.join(ROOT, rel), 'utf8')
-        for (const [re, what, allowed] of RULES) for (const m of t.matchAll(re)) if (!allowed(m[0])) errors.push(`${rel} (generated): looks like ${what}: ${m[0].slice(0, 12)}…`)
+        for (const [re, what, allowed, pre] of RULES) if (!pre || pre.test(t)) for (const m of t.matchAll(re)) if (!allowed(m[0])) errors.push(`${rel} (generated): looks like ${what}: ${m[0].slice(0, 12)}…`)
     }
     return errors
 }

@@ -1,54 +1,36 @@
 # Watcher: latest run
 
-**Run:** 2026-11-05 12:15 UTC (scheduled), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed for the dashboard is `activity.json` beside this file.
+**Run:** 2026-11-05 22:15 UTC (scheduled), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed is `activity.json`; the actions are `actions.json`, both beside this file. **Addressed to:** Jose and conductor@web-summit.jose, which reads it at every wake.
 
-**Range:** `dev` from `849c4be` to `5677759`.
-
-**Addressed to:** Jose and conductor@web-summit.jose, which is asked (at Jose's word, 5 November 2026) to read it at its :20 wake, five minutes after the watcher. Every watcher release is addressed `For: jose, conductor@web-summit.jose`, with medium and high flags at the top of its commit body (`routes_to` in `activity.json`). The 11:25 request (`0292242`) has no answer yet.
+**Range:** `dev` from `bc8e218` to `4dbeb40`.
 
 ## Who committed
 
-120 commits: 51 CI releases (counted), 2 by the watcher itself (not counted as new), none without an agent name, and 67 by agents:
+136 commits: 48 CI releases (counted), 1 by the watcher itself, none without an agent name, and 87 by agents: Vicky 27, Dinis 24, Angelo 16, Indi 10, Jose 6, Silvio 4. None is reviewed by security yet (last review `a45be68`, 11:50; next 23:50).
 
-| Person | Commits by their agents |
-|---|---|
-| Angelo | 19 |
-| Dinis | 18 |
-| Vicky | 17 |
-| Jose | 8 |
-| Indi | 3 |
-| Silvio | 2 |
+## Open actions (re-checked every run)
 
-Security's 11:50 review (`a45be68`) covers 62 of the 67; the other 5 wait for its 23:50 review.
+1. **A-01, open for the fourth run: dashboard@web-summit.dinis.** No commit since 02:54: all 16 of today's hourly slots. Likely idle, not confirmed. For conductor@web-summit.dinis: check its task fired; have it log every run (WS-160).
+2. **A-06, open for the third run: the stored prompts of Jose's scheduled tasks.** Unchanged at 22:15: conductor and dev have no reviewer step, and none of conductor, dev, dashboard and vault has the run log or the one-door step (C19). For conductor@web-summit.jose, with Jose: copy the kit's text into each task.
+3. **A-11, new: conductor@web-summit.angelo.** Hourly at :20; no commit since 19:20, so 20:20 and 21:20 passed. Probably quiet hourly wakes (its digests to Angelo are at about 08:00, 11:20 and 17:20). For Angelo or policy@web-summit.angelo.
+4. **A-12, new: inbox@web-summit.silvio.** Joined 16:33; mail checks every 2 hours at :15 since, with no commit. Probably idle here: its work is drafts in Silvio's mailbox and CRM actions. For conductor@web-summit.silvio: have it log every run so its checks show.
+
+Closed this run: A-07 helper@web-summit.angelo (18:51), A-08 researcher@web-summit.vicky (19:36), A-09 curator@web-summit.vicky (20:07): all committed again.
 
 ## What to look at
 
-1. **High, still open:** the three lines in `content/family-riskmandate-agent.md` (lines 6, 18 and 32, added in `f20d264` by conductor@web-summit.dinis) that match the rule "an email address" (vault-audit.mjs) are still on `dev`. Security's 11:50 review read this file for another reason (its item 3) and does not mention them. Sent to security again. Location and rule only.
-2. **Medium: agents that look stopped** (two or more slots with no commit): dashboard@web-summit.dinis (hourly from 07:06, last 02:54) and outreach@web-summit.silvio (mail check every 2 hours at :15, last 02:28). A mail check with nothing to send looks the same.
-3. **Note: late by one slot:** vault@web-summit.jose (11:40 slot, last commit 01:36), helper@web-summit.jose (08:50 slot, last 01:19) and curator@web-summit.vicky (11:45 slot, last 07:49). A run with nothing to commit looks the same.
-4. **Note:** `11884c6` (vault@web-summit.angelo) wrote the shared `assets/feedback.json`; line 91 matches "a token assignment": a feedback lane's append token, public by design, as with the earlier lanes.
-5. **Note:** `0e80f5e` (conductor@web-summit.angelo) edited five board files not named in its `Issue:` trailer (WS-106, WS-36, WS-45, WS-76, WS-78), recording Angelo's words.
-6. **Note:** content pages written by person agents: `content/help.md` (`f5ec850`, helper@web-summit.angelo) and `content/impressao.md` (`53ff7af`, procurement@web-summit.silvio). Listed, not judged.
-
-Recovered since the morning: dev@web-summit.angelo, procurement@web-summit.silvio, conductor@web-summit.angelo and pulse@web-summit.dinis all committed again.
-
-Still open from earlier runs: dev@web-summit.silvio's changes to shared build code and five people's photos (`0316656`), and the first run's three items (`open_from_earlier_runs` in `activity.json`).
-
-## Actions (14:22 UTC, `actions.json`)
-
-At Jose's word, every stopped or late agent now becomes an action, re-checked on every run until it closes.
-
-- **Open, A-01: dashboard@web-summit.dinis.** No commit since 02:54, with 8 hourly slots passed. Likely idle, not broken: it applies Dinis's signed cockpit answers, and its last commit says none had been submitted. Not confirmed, because its task is in Dinis's account. For conductor@web-summit.dinis or Dinis: check that the task fired, and have the agent log every run (WS-160) so quiet runs show.
-- **Open, A-06: the stored prompts of Jose's scheduled tasks are out of date.** Conductor, dev and dashboard still have their 3 November text (no reviewer step for conductor and dev, no WS-160 log), and vault has no log step. For conductor@web-summit.jose, with Jose: update them to the kit's text.
-- **Closed:** vault@web-summit.jose and helper@web-summit.jose were not stopped (their tasks fired at 11:40 and 08:50, succeeded, and had nothing to commit); outreach@web-summit.silvio (14:06) and curator@web-summit.vicky (12:38) committed again.
+1. **High, open for the fourth run:** `content/family-riskmandate-agent.md` lines 6, 18 and 32 (from `f20d264`) still match the rule "an email address". Security has not reviewed since 11:50.
+2. **Medium, still open:** the public session branch `claude/optimistic-feynman-7pkot9` (`dc306d7`) still carries an email-rule line in `board/WS-26-*` line 16.
+3. **Note:** your conductor fixed one line in Indi's folder (`fa36c6e`, `people/indi/today/today.mjs`) because the gate had failed for everyone since 18:00. It used the kit's one-line-fix exception: an `Affects everyone:` line, Indi's agents told, `Reviewed-by` carried.
+4. **Note:** two more append tokens in the shared `assets/feedback.json` (lines 103 and 115, `7a6a14e` and `d9209a8`), public by design, as before.
+5. **Info:** new agents declared: policy@web-summit.angelo (an auditor of Angelo's agents), crm@web-summit.silvio, and six newsroom agents of Vicky's that write only in the newsroom repository, which the watcher cannot see.
 
 ## The checks
 
-- **Jose's agents:** 8 commits, every one with `Reviewed-by`; vault and helper late by one slot (item 3), the others on time.
-- **Key shapes and contact details:** only the note in item 4.
-- **Other branches:** nothing new on `main`; three session branches moved (Jose's conductor and two of Angelo's), all on `dev`; no new branch.
+- **Jose's agents:** 6 commits (conductor 4, dashboard 1, vault 1), every one with `Reviewed-by`. Their scheduled tasks all fired on time; helper and automation ran with nothing to commit.
+- **Other branches:** nothing new on `main`. `claude/modest-brahmagupta-37bfva` holds a pre-rebase copy of Angelo's conductor's WS-176 commit (no rule hit).
 
-## Not done, could not check
+## Could not check
 
-- The accountant's ledger line: Jose's answer (`fecb8f0`, item 5) is not yet in the watcher's `policy.json` writes.
-- Whether scheduled tasks fired when they made no commit; anything not public in the repository.
+- Scheduled tasks in other people's accounts; work in other repositories (the newsroom).
+- The agents' run logs in the public vault `aym98gsm`: no `sgit` client yet (Jose to install it).

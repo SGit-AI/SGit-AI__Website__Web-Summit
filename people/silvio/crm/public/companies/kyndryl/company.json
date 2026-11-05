@@ -1,0 +1,29 @@
+{
+  "id": "kyndryl",
+  "type": "company",
+  "kind": "company",
+  "name": "Kyndryl",
+  "aliases": [],
+  "website": "https://www.kyndryl.com",
+  "what": null,
+  "category": "IT services",
+  "country": "United States",
+  "attending": "at Web Summit Lisbon 2026: speaker: CEO (lis26)",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/attendees/lis26/e7417936-de28-418d-ac34-120dd4250d44/martin-schroeter/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.kyndryl.com",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

@@ -4,12 +4,14 @@
 //   node people/angelo/tools/standup-show.mjs . <meeting id> [now ISO]          one-page fragment (.show)
 //   node people/angelo/tools/standup-show.mjs --deck . <meeting id> [now ISO]   JSON [[title, slide body], ...] for
 //     team/conductor/tools/show_deck.py's S list (deck.js, 16:9): S += json.load(...); the first pair's body carries the CSS
+//   node people/angelo/tools/standup-show.mjs --rank . <meeting id> [now ISO]   JSON: the five things that need us today
+//     (WS-150, Angelo's brief of 5 November) and the counts strip, for show_deck.py's "What needs us today" slide
 // Read-only: it writes to stdout and changes nothing. Proposal and options: board/WS-150.
 import fs from 'node:fs'
 import path from 'node:path'
 
-const DECK = process.argv.includes('--deck')
-const [ROOT, MEETING, NOW_ARG] = process.argv.slice(2).filter(a => a !== '--deck')
+const DECK = process.argv.includes('--deck'), RANK = process.argv.includes('--rank')
+const [ROOT, MEETING, NOW_ARG] = process.argv.slice(2).filter(a => a !== '--deck' && a !== '--rank')
 const NOW = new Date(NOW_ARG || Date.now())
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
 const MDIR = path.join(ROOT, 'data/meetings')
@@ -62,6 +64,38 @@ const css = `<style>.show .cards{display:grid;grid-template-columns:repeat(auto-
 .show .recline{font-size:14px;color:var(--ink-2);margin:4px 0 0}.show .miss{color:#b91c1c;font-size:15px;margin:4px 0}
 .show .big{font:800 clamp(48px,9vw,96px)/1 Georgia,serif;color:var(--accent)}</style>`
 
+
+if (RANK) {
+  // "What needs us today" (WS-150, Angelo's brief, 5 November): at most five, decisions and urgent actions together, ranked by
+  // what blocks Lisbon: needs a decision, summit-critical, no owner, due soon, carried. One owner (or two) each, what is
+  // needed (Decide, Write, Needs owner) and by when. Deterministic: same repository and time, same list.
+  const LISBON = 9, CRIT = /print|merch|garment|card|collect|travel|hotel|badge|ticket|booth|stand(?![-\w])|lisbon|offer|lead|\bapp\b|outreach|meeting|pitch|demo/i
+  const day = d => d === null ? null : d
+  const byWhen = d => d === null || d <= today ? 'Today' : `${['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][new Date(Date.UTC(2026, 10, d)).getUTCDay()]} ${d}`
+  const ownersOf = list => { const ps = list.filter(p => p !== 'everyone').map(p => NAMES[p] || p); return ps.length ? ps.slice(0, 2).join(', ') : 'everyone' }
+  const cand = []
+  for (const x of open.filter(x => x.type === 'decision')) {
+    const iss = issueOf(x), d = dueDay(iss?.due), c = carried(x)
+    const score = 30 + (CRIT.test(x.title) ? 20 : 0) + (d !== null && d <= today + 2 ? 15 : 0) + Math.min(c, 4) * 4 + (d !== null && d < today ? 5 : 0)
+    const why = [c ? `carried ${c}×` : 'new', d !== null && d < today ? `${today - d}d late` : null, who(x).length === 1 && who(x)[0] === 'dinis' ? 'only Dinis can close it' : null].filter(Boolean).join(' · ')
+    cand.push({ score, key: x.issue || x.title, title: x.title.replace(/\s*\((WS-\d+[^)]*)\)\s*$/, ''), sub: `${why}${x.issue ? ' · ' + x.issue : ''}`, owner: ownersOf(who(x)), need: 'Decide', by: byWhen(d === null ? null : Math.max(d, today)), tone: score >= 50 ? 'hot' : 'warm' })
+  }
+  for (const b of Object.values(board)) {
+    if (b.status === 'done') continue
+    const d = dueDay(b.due); if (d === null || d > Math.min(today + 2, LISBON)) continue
+    const crit = CRIT.test(b.title || ''), owned = !!b.picked_by
+    if (!crit && owned) continue                                    // the owned, non-critical ones stay on the board
+    const score = (crit ? 25 : 0) + (owned ? 10 : 20) + (d <= today ? 10 : 0)
+    if (score < 30) continue
+    cand.push({ score, key: b.id, title: (b.title || '').replace(/^"|"$/g, ''), sub: `${d < today ? `${today - d}d late` : d === today ? 'due today' : 'due soon'}${crit ? ' · before Lisbon' : ''} · ${b.id}`, owner: owned ? b.picked_by.split(',')[0].trim() : 'nobody yet', need: owned ? 'Do' : 'Needs owner', by: byWhen(d), tone: score >= 50 ? 'hot' : 'warm' })
+  }
+  const seen = new Set(), top = []
+  for (const c of cand.sort((a, b) => b.score - a.score || a.key.localeCompare(b.key))) { const k = (c.key.match(/WS-\d+/) || [c.key])[0]; if (seen.has(k)) continue; seen.add(k); top.push(c); if (top.length === 5) break }
+  const lateAll = Object.values(board).filter(b => b.status !== 'done' && dueDay(b.due) !== null && dueDay(b.due) < today)
+  const strip = { late: lateAll.length, late_unowned: lateAll.filter(b => !b.picked_by).length, due_today: Object.values(board).filter(b => b.status !== 'done' && dueDay(b.due) === today).length, decisions_open: decisions.length }
+  process.stdout.write(JSON.stringify({ meeting: MEETING, built: NOW.toISOString(), top, strip }, null, 1) + '\n')
+  process.exit(0)
+}
 
 if (DECK) {
   // slides for conductor@web-summit.dinis's deck: the parts its deck does not have yet (WS-150). Its slide 2

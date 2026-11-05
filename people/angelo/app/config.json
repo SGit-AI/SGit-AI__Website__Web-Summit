@@ -112,7 +112,7 @@
     },
     "dev": {
       "colour": "dev",
-      "job": "Angelo's own command centre (people/angelo/app/BRIEF.md) and drafts for the technical pool",
+      "job": "Angelo's own command centre (BRIEF.md), then Replay (proposals/replay/BRIEF.md), and patches for the technical pool routed to their owners",
       "schedule": "every two hours, round the clock (cron 35 */2 * * *)"
     },
     "team-collaboration": {
@@ -134,6 +134,16 @@
       "colour": "slate",
       "job": "Answers setup questions from anyone on the team and keeps the help page (/help/)",
       "schedule": "every two hours, round the clock (proposed)"
+    },
+    "crm": {
+      "colour": "outreach",
+      "job": "Angelo's area in the team's private CRM (people/angelo/ in the CRM vault)",
+      "schedule": "08:50, 16:50 UTC"
+    },
+    "policy": {
+      "colour": "slate",
+      "job": "Audits Angelo's agents, the conductor included, against their ABPs and his protocol; read-only; reports to Angelo directly",
+      "schedule": "proposed: daily 07:10 UTC"
     }
   },
   "decisions": [

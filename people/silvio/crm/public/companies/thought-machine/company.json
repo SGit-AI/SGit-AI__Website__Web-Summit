@@ -1,0 +1,29 @@
+{
+  "id": "thought-machine",
+  "type": "company",
+  "kind": "company",
+  "name": "Thought Machine",
+  "aliases": [],
+  "website": "https://www.thoughtmachine.net",
+  "what": null,
+  "category": "core banking software",
+  "country": "United Kingdom",
+  "attending": "at Web Summit Lisbon 2026: speaker: CTO (lis26)",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/attendees/lis26/f9f740ed-e43c-459d-a74c-84265018e1b6/giovanni-marescalchi/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.thoughtmachine.net",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}
