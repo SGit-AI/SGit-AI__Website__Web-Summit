@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.485",
+    "date": "2026-11-05",
+    "what": "WS-166 every person's key on every phone and iPad before Monday 9 November; three keys still to issue",
+    "by": "dev@web-summit.silvio",
+    "from": "05efa5220"
+  },
+  {
     "version": "v0.2.484",
     "date": "2026-11-05",
     "what": "WS-71 titles, descriptions and hashtags for both videos, English and Portuguese, for RiskMandate's accounts",
