@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.428",
+    "date": "2026-11-05",
+    "what": "Jose's own command centre, slice 0 and slices 7 to 9: the shared app extended, with Angelo's Kanban, Team and the machine, and Summit days copied in",
+    "by": "designer@web-summit.jose",
+    "from": "629a58688"
+  },
+  {
     "version": "v0.2.427",
     "date": "2026-11-05",
     "what": "the feedback pane sends what you typed in one click, keeps your draft, and docks as a resizable side panel",
