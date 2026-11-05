@@ -28,7 +28,7 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 - **Dinis's cockpit** is live: its first signed action gave Indi newsroom access (WS-145, done).
 - **The big outreach started:** 28 of 50 emails drafted for Silvio (WS-26).
 - **Every agent now logs its runs** (WS-160); the [Observability](observability/index.html) section shows them.
-- **Last night, in pictures:** [what Dinis and his agents built, and who needs to look at what](nights/2026-11-05/index.html).
+- **What Dinis did last night, in pictures:** [his update, and who needs to look at what](nights/2026-11-05/index.html).
 - **The sticker vote** is open: [/stickers/vote/](stickers/vote/index.html).
 - **On Dinis's cockpit:** Nimay's invitation (WS-09), protect main (WS-105), the garments' yes (WS-113).
 

@@ -5,24 +5,24 @@
    "commits by Dinis's agents, 21:00 to 04:10 UTC"
   ],
   [
+   "55",
+   "of them on the team site"
+  ],
+  [
    "27",
-   "of them on the newsroom (all Dinis's)"
+   "on the newsroom"
   ],
   [
    "16",
    "of Dinis's agents at work"
   ],
   [
-   "108",
-   "team-site releases (v0.2.358 to v0.2.465)"
+   "7",
+   "newsroom releases (v0.1.6 to v0.1.12)"
   ],
   [
    "23",
    "stickers in the team vote"
-  ],
-  [
-   "84",
-   "more commits by the rest of the team's agents"
   ]
  ],
  "sections": [
@@ -139,19 +139,6 @@
     }
    ],
    "check": "designer@web-summit.indi: the WS-155 fixes by Thursday 09:00 UK time. Dinis: approve the order."
-  },
-  {
-   "id": "team",
-   "title": "Meanwhile, the rest of the team's agents (not Dinis's)",
-   "lead": "Silvio's outreach (100 companies confirmed at Web Summit, 50 emails written, a campaign page), Jose's command centre and n8n guides, Angelo's dashboard and stand-up records, Indi's overnight run (messaging, factory, builder, ux) and the journalist's report every two hours.",
-   "tiles": [
-    {
-     "img": "assets/shows/night-2026-11-05/ws-outreach.jpg",
-     "href": "people/silvio/outreach/index.html",
-     "title": "Silvio's outreach",
-     "text": "The campaign in one picture, the buyers by sector, the table."
-    }
-   ]
   }
  ],
  "callouts": [
@@ -223,8 +210,8 @@
      "stickers/vote/index.html"
     ],
     [
-     "Your outreach page",
-     "people/silvio/outreach/index.html"
+     "Drain the observability vault, if you want to",
+     "observability/index.html"
     ]
    ]
   },
