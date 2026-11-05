@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.685",
+    "date": "2026-11-05",
+    "what": "review to v0.2.684, no hold; WS-178: the CRM's key sealing skips the WS-106 checks; the CRM's key circle recorded",
+    "by": "security@web-summit.dinis",
+    "from": "7f5fe17db"
+  },
+  {
     "version": "v0.2.684",
     "date": "2026-11-05",
     "what": "the links at the bottom in two short groups: My agents, Promptugal News",
