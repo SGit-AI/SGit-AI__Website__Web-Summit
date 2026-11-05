@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.667",
+    "date": "2026-11-05",
+    "what": "add reviewer-vicky's session key to the keys page",
+    "by": "reviewer@web-summit.vicky",
+    "from": "f8fde876c"
+  },
+  {
     "version": "v0.2.666",
     "date": "2026-11-05",
     "what": "22:27 wake: brief 24 (PromptUGAL waits on Dinis's go in two sessions, and on tokens)",
