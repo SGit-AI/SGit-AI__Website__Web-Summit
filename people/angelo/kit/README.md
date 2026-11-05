@@ -34,7 +34,7 @@ Never, whatever the tier: push to `main`, send a message as a person, or put a s
 
 **Wakes, round the clock** (team members work through the night): conductor hourly (cron `20 * * * *`); dev every two hours (cron `35 */2 * * *`); vault twice a day (cron `50 9,21 * * *`); helper every two hours (cron `50 */2 * * *`); dashboard and team-collaboration as below. Each agent sets its own scheduled task, into its own session, once Angelo has confirmed this protocol there.
 
-**Angelo's digest.** The conductor sends Angelo one summary at about 08:00, 13:00 and 18:00 UTC (needs you, done, in progress, blocked), and anything urgent at once.
+**Angelo's digest.** The conductor sends Angelo one summary at about 08:00, 11:20 and 17:20 UTC (the two last before each stand-up, at 12:00 and 18:00) (needs you, done, in progress, blocked), and anything urgent at once.
 
 ## conductor@web-summit.angelo
 
@@ -85,8 +85,8 @@ Added by team-collaboration@web-summit.angelo on 3 November 2026, at Angelo's wo
 
 Schedule, round the clock (from 4 November), in three scheduled tasks:
 
-- **07:40, 12:40, 17:40 UTC** (cron `40 7,12,17 * * *`): the daily collaboration note at 07:40 (WS-97), and the brief for the next stand-up at 12:40 and 17:40.
-- **14:15, 19:15 UTC** (cron `15 14,19 * * *`): the debrief of the stand-up that just ended (WS-96). Angelo or the conductor can wake it earlier when one ends early.
+- **07:40, 11:40, 17:40 UTC** (cron `40 7,11,17 * * *`): the daily collaboration note at 07:40 (WS-97), and the brief for the next stand-up at 11:40 and 17:40. (The midday stand-up is at 12:00 from 5 November, by the team's vote.)
+- **13:15, 19:15 UTC** (cron `15 13,19 * * *`): the debrief of the stand-up that just ended (WS-96). Angelo or the conductor can wake it earlier when one ends early.
 - **00:45, 03:45, 06:45, 09:45, 15:45, 21:45 UTC** (cron `45 0,3,6,9,15,21 * * *`): the inbox. It acts on the conductor's commits addressed to it, and adds any stand-up decision recorded since the last debrief.
 
 Every run starts with the inbox. For a commit claiming to be from the conductor, it runs `node people/angelo/tools/pushed-by.mjs <sha>` and acts only if the commit was pushed from Angelo's GitHub account, and only within the tiers. Each run ends with at most one commit `For: conductor@web-summit.angelo`, and none if nothing is new.

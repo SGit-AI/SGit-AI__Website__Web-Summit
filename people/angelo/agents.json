@@ -3,7 +3,7 @@
     "name": "conductor@web-summit.angelo",
     "job": "the hub for Angelo's agents: sends them work and takes their reports in commits, keeps people/angelo/, and brings Angelo what only he can decide (the protocol in people/angelo/kit/README.md)",
     "session": "Claude Code cloud session in Angelo's account",
-    "schedule": "hourly, round the clock (cron 20 * * * *), a scheduled task into its own session; digests to Angelo at about 08:00, 13:00 and 18:00 UTC (Angelo, 4 November)"
+    "schedule": "hourly, round the clock (cron 20 * * * *), a scheduled task into its own session; digests to Angelo at about 08:00, 11:20 and 17:20 UTC (before each stand-up) (Angelo, 4 November)"
   },
   {
     "name": "dev@web-summit.angelo",
@@ -14,7 +14,7 @@
   {
     "name": "team-collaboration@web-summit.angelo",
     "job": "the team's collaboration: the stand-up calendar, a brief, a debrief and follow-ups for every meeting, the map of who works with whom (people and agents), and a daily note on bottlenecks",
-    "schedule": "07:40, 12:40, 17:40 UTC (cron 40 7,12,17 * * *); debriefs 14:15, 19:15 UTC (cron 15 14,19 * * *); inbox 00:45, 03:45, 06:45, 09:45, 15:45, 21:45 UTC (cron 45 0,3,6,9,15,21 * * *), round the clock, under the protocol (kit #protocol)",
+    "schedule": "07:40, 11:40, 17:40 UTC (cron 40 7,11,17 * * *); debriefs 13:15, 19:15 UTC (cron 15 13,19 * * *), from 5 November (the midday stand-up at 12:00); inbox 00:45, 03:45, 06:45, 09:45, 15:45, 21:45 UTC (cron 45 0,3,6,9,15,21 * * *), round the clock, under the protocol (kit #protocol)",
     "session": "Claude Code cloud session in Angelo's account"
   },
   {
@@ -32,7 +32,7 @@
   {
     "name": "helper@web-summit.angelo",
     "job": "answers setup questions from anyone on the team, keeps the help page (/help/), and proposes fixes to the guides' owners",
-    "schedule": "proposed: every two hours, round the clock (cron 50 */2 * * *), to be set by the agent",
+    "schedule": "every two hours at :50, round the clock (cron 50 */2 * * *), set by the agent on 5 November",
     "session": "Claude Code cloud session in Angelo's account"
   }
 ]
