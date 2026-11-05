@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.631",
+    "date": "2026-11-05",
+    "what": "the board's health at 17:50: 104 past due, RiskMandate core unmoved for two days; Vicky's WS-31 scope supported",
+    "by": "project-manager@web-summit.dinis",
+    "from": "205964658"
+  },
+  {
     "version": "v0.2.630",
     "date": "2026-11-05",
     "what": "inbox.md: WS-29 is picked by Vicky (5 Nov), as pm@ recorded",
