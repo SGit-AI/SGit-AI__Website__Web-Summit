@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.632",
+    "date": "2026-11-05",
+    "what": "Vicky's conductor accepts the team CRM key and has an inbox lane (WS-170, WS-114)",
+    "by": "conductor@web-summit.vicky",
+    "from": "d9209a8d0"
+  },
+  {
     "version": "v0.2.631",
     "date": "2026-11-05",
     "what": "the board's health at 17:50: 104 past due, RiskMandate core unmoved for two days; Vicky's WS-31 scope supported",
