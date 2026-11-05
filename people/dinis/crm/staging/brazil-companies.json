@@ -1,0 +1,411 @@
+[
+  {
+    "id": "ai-infinity",
+    "type": "company",
+    "kind": "company",
+    "name": "AI Infinity",
+    "website": null,
+    "what": "As an AI-Enabled Service, we become your dedicated AI department, designing and implementing tailor-made solutions around your business, processes and goals. We work as an extension of your team, integrating AI into your operation with strategy, execution and ongoing support. You own all intellectual property.",
+    "category": "AI & machine learning",
+    "country": "Brazil",
+    "attending": "confirmed: a LIS26 Startup-track appearance on websummit.com",
+    "attending_as": "startup",
+    "topics": [
+      "topic:brazil"
+    ],
+    "ai_agents": {
+      "answer": "uses",
+      "why": "Its Web Summit pitch: an \"AI-Enabled Service\" that designs and implements tailor-made AI solutions for clients; it does not say agents.",
+      "source": "https://websummit.com/startups/featured-startups/",
+      "read_at": "2026-11-05"
+    },
+    "delegation": "a Brazilian startup at LIS26; not (yet) matched to ApexBrasil's list, which publishes CNPJs only",
+    "sources": [
+      {
+        "url": "https://websummit.com/appearances/lis26/bb1ea8a4-b831-4875-8d07-dfae3296cef1/ai-infinity",
+        "read_at": "2026-11-05",
+        "supports": "LIS26 appearance: name, country Brazil, track Startup, industry"
+      },
+      {
+        "url": "https://websummit.com/startups/featured-startups/",
+        "read_at": "2026-11-05",
+        "supports": "listed among Web Summit's featured startups for LIS26, with its elevator pitch (the \"what\" field and the AI line)"
+      }
+    ],
+    "updated_at": "2026-11-05T17:30:00Z",
+    "updated_by": "crm@web-summit.dinis"
+  },
+  {
+    "id": "fido",
+    "type": "company",
+    "kind": "company",
+    "name": "FIDO",
+    "website": null,
+    "what": "Infrastructure for credit, built to scale. BaaS and CaaS connecting brands, borrowers and investors.",
+    "category": "Fintech & financial services",
+    "country": "Brazil",
+    "attending": "confirmed: a LIS26 Startup-track appearance on websummit.com",
+    "attending_as": "startup",
+    "topics": [
+      "topic:brazil"
+    ],
+    "ai_agents": {
+      "answer": "not stated",
+      "why": "Its Web Summit pitch (credit infrastructure, BaaS and CaaS) does not mention AI or agents.",
+      "source": "https://websummit.com/startups/featured-startups/",
+      "read_at": "2026-11-05"
+    },
+    "delegation": "a Brazilian startup at LIS26; not (yet) matched to ApexBrasil's list, which publishes CNPJs only",
+    "sources": [
+      {
+        "url": "https://websummit.com/appearances/lis26/c0a7d7f7-26b0-41ba-816b-8560a0ec93e2/fido",
+        "read_at": "2026-11-05",
+        "supports": "LIS26 appearance: name, country Brazil, track Startup, industry"
+      },
+      {
+        "url": "https://websummit.com/startups/featured-startups/",
+        "read_at": "2026-11-05",
+        "supports": "listed among Web Summit's featured startups for LIS26, with its elevator pitch (the \"what\" field and the AI line)"
+      }
+    ],
+    "updated_at": "2026-11-05T17:30:00Z",
+    "updated_by": "crm@web-summit.dinis"
+  },
+  {
+    "id": "fretefy",
+    "type": "company",
+    "kind": "company",
+    "name": "Fretefy",
+    "website": null,
+    "what": "Logtech SaaS que conecta embarcadores e transportadoras com gestão, cotação automatizada e rastreamento de fretes em tempo real.",
+    "category": "SaaS",
+    "country": "Brazil",
+    "attending": "confirmed: a LIS26 Startup-track appearance on websummit.com",
+    "attending_as": "startup",
+    "topics": [
+      "topic:brazil"
+    ],
+    "ai_agents": {
+      "answer": "not stated",
+      "why": "Its Web Summit pitch (logtech SaaS with automated freight quotes and tracking) mentions automation, not AI or agents.",
+      "source": "https://websummit.com/startups/featured-startups/",
+      "read_at": "2026-11-05"
+    },
+    "delegation": "a Brazilian startup at LIS26; not (yet) matched to ApexBrasil's list, which publishes CNPJs only",
+    "sources": [
+      {
+        "url": "https://websummit.com/appearances/lis26/c8356c12-968b-49a3-b910-a599c7b6658c/fretefy-tecnologia-s.a.",
+        "read_at": "2026-11-05",
+        "supports": "LIS26 appearance: name, country Brazil, track Startup, industry"
+      },
+      {
+        "url": "https://websummit.com/startups/featured-startups/",
+        "read_at": "2026-11-05",
+        "supports": "listed among Web Summit's featured startups for LIS26, with its elevator pitch (the \"what\" field and the AI line)"
+      }
+    ],
+    "updated_at": "2026-11-05T17:30:00Z",
+    "updated_by": "crm@web-summit.dinis"
+  },
+  {
+    "id": "hablla",
+    "type": "company",
+    "kind": "company",
+    "name": "Hablla",
+    "website": null,
+    "what": "Hablla One is a self-service platform that automates customer conversations with AI across WhatsApp, Instagram, Messenger, email and phone. Built for creators, SMBs and agencies, it is free to start. As an official Meta BSP, it also lets companies connect to the WhatsApp Business API quickly. Hablla One is built by Hablla, which handles over 2 million WhatsApp conversations a day.",
+    "category": "Advertising, content & marketing",
+    "country": "Brazil",
+    "attending": "confirmed: a LIS26 Startup-track appearance on websummit.com",
+    "attending_as": "startup",
+    "topics": [
+      "topic:brazil",
+      "topic:brazil-delegation",
+      "topic:ai-agents"
+    ],
+    "ai_agents": {
+      "answer": "builds",
+      "why": "Its Web Summit pitch: Hablla One \"automates customer conversations with AI across WhatsApp, Instagram, Messenger, email and phone\", which is conversational AI agents in practice; the word \"agent\" is not used.",
+      "source": "https://websummit.com/startups/featured-startups/",
+      "read_at": "2026-11-05"
+    },
+    "delegation": "on ApexBrasil's approved list, \"Confirmado\" at 28/8/2026",
+    "sources": [
+      {
+        "url": "https://websummit.com/appearances/lis26/77006d8a-9361-4846-9f4b-2773290d495c/hablla",
+        "read_at": "2026-11-05",
+        "supports": "LIS26 appearance: name, country Brazil, track Startup, industry"
+      },
+      {
+        "url": "https://websummit.com/startups/featured-startups/",
+        "read_at": "2026-11-05",
+        "supports": "listed among Web Summit's featured startups for LIS26, with its elevator pitch (the \"what\" field and the AI line)"
+      },
+      {
+        "url": "https://crm-apps.apexbrasil.com.br/orgbdeab873/inscricao-eventos/evento/web-summit-lisboa-2026/0714952e-98da-f011-8543-7ced8db0f987",
+        "read_at": "2026-11-05",
+        "supports": "ApexBrasil's approved list for its Web Summit Lisboa 2026 mission (status at 28/8/2026): CNPJ 07.145.678/0001-01, \"Confirmado\""
+      },
+      {
+        "url": "https://brasilapi.com.br/api/cnpj/v1/07145678000101",
+        "read_at": "2026-11-05",
+        "supports": "the public CNPJ register names that CNPJ HABLLA SERVICOS DIGITAIS LTDA (trade name HABLLA), São Paulo SP: the match to the ApexBrasil list"
+      }
+    ],
+    "updated_at": "2026-11-05T17:30:00Z",
+    "updated_by": "crm@web-summit.dinis"
+  },
+  {
+    "id": "just-travel",
+    "type": "company",
+    "kind": "company",
+    "name": "Just Travel",
+    "website": null,
+    "what": "Just Travel is a B2B travel technology platform that enables travel agencies, creators, and businesses to launch and scale their own digital travel operations. Through white-label e-commerce, global travel inventory, payments, automation, and AI, we provide the infrastructure to sell travel products under each partner’s own brand.",
+    "category": "Travel & hospitality",
+    "country": "Brazil",
+    "attending": "confirmed: a LIS26 Startup-track appearance on websummit.com",
+    "attending_as": "startup",
+    "topics": [
+      "topic:brazil"
+    ],
+    "ai_agents": {
+      "answer": "uses",
+      "why": "Its Web Summit pitch lists \"automation, and AI\" among the platform's parts; it does not say agents.",
+      "source": "https://websummit.com/startups/featured-startups/",
+      "read_at": "2026-11-05"
+    },
+    "delegation": "a Brazilian startup at LIS26; not (yet) matched to ApexBrasil's list, which publishes CNPJs only",
+    "sources": [
+      {
+        "url": "https://websummit.com/appearances/lis26/1c3a556f-ae2c-4d1e-9ac3-4e41936761a7/just-travel",
+        "read_at": "2026-11-05",
+        "supports": "LIS26 appearance: name, country Brazil, track Startup, industry"
+      },
+      {
+        "url": "https://websummit.com/startups/featured-startups/",
+        "read_at": "2026-11-05",
+        "supports": "listed among Web Summit's featured startups for LIS26, with its elevator pitch (the \"what\" field and the AI line)"
+      }
+    ],
+    "updated_at": "2026-11-05T17:30:00Z",
+    "updated_by": "crm@web-summit.dinis"
+  },
+  {
+    "id": "mobile-brain",
+    "type": "company",
+    "kind": "company",
+    "name": "Mobile Brain",
+    "website": null,
+    "what": "Mobile Brain is an AI deep tech in computational neuroscience democratizing access to cognitive assessments by turning spontaneous speech into objective metrics. Using graph theory and NLP, we enable early screening and longitudinal monitoring for cognitive and emotional health across schools, healthcare, and enterprises—bridging the gap between the first signs and timely clinical care.",
+    "category": "Healthtech & wellness",
+    "country": "Brazil",
+    "attending": "confirmed: a LIS26 Startup-track appearance on websummit.com",
+    "attending_as": "startup",
+    "topics": [
+      "topic:brazil"
+    ],
+    "ai_agents": {
+      "answer": "uses",
+      "why": "Its Web Summit pitch: an AI deep tech using NLP and graph theory on speech for cognitive assessment; no agents stated.",
+      "source": "https://websummit.com/startups/featured-startups/",
+      "read_at": "2026-11-05"
+    },
+    "delegation": "a Brazilian startup at LIS26; not (yet) matched to ApexBrasil's list, which publishes CNPJs only",
+    "sources": [
+      {
+        "url": "https://websummit.com/appearances/lis26/91093bb6-fa22-477c-9a74-7bd74cd93ae8/mobile-brain",
+        "read_at": "2026-11-05",
+        "supports": "LIS26 appearance: name, country Brazil, track Startup, industry"
+      },
+      {
+        "url": "https://websummit.com/startups/featured-startups/",
+        "read_at": "2026-11-05",
+        "supports": "listed among Web Summit's featured startups for LIS26, with its elevator pitch (the \"what\" field and the AI line)"
+      }
+    ],
+    "updated_at": "2026-11-05T17:30:00Z",
+    "updated_by": "crm@web-summit.dinis"
+  },
+  {
+    "id": "naporta",
+    "type": "company",
+    "kind": "company",
+    "name": "naPorta",
+    "website": null,
+    "what": "We go where GPS gives up. naPorta is Brazil’s first social-impact logtech, connecting e-commerce to underserved communities where traditional delivery networks fall short. Combining technology, local delivery partners and our own operations, we make last-mile logistics more efficient, inclusive and reliable—ensuring every package reaches the customer’s door.",
+    "category": "Mobility, transportation & logistics",
+    "country": "Brazil",
+    "attending": "confirmed: a LIS26 Startup-track appearance on websummit.com",
+    "attending_as": "startup",
+    "topics": [
+      "topic:brazil"
+    ],
+    "ai_agents": {
+      "answer": "not stated",
+      "why": "Its Web Summit pitch (last-mile logistics for underserved communities) does not mention AI or agents.",
+      "source": "https://websummit.com/startups/featured-startups/",
+      "read_at": "2026-11-05"
+    },
+    "delegation": "a Brazilian startup at LIS26; not (yet) matched to ApexBrasil's list, which publishes CNPJs only",
+    "sources": [
+      {
+        "url": "https://websummit.com/appearances/lis26/3751780f-874a-4893-8fd1-41d6a155f4fa/naporta",
+        "read_at": "2026-11-05",
+        "supports": "LIS26 appearance: name, country Brazil, track Startup, industry"
+      },
+      {
+        "url": "https://websummit.com/startups/featured-startups/",
+        "read_at": "2026-11-05",
+        "supports": "listed among Web Summit's featured startups for LIS26, with its elevator pitch (the \"what\" field and the AI line)"
+      }
+    ],
+    "updated_at": "2026-11-05T17:30:00Z",
+    "updated_by": "crm@web-summit.dinis"
+  },
+  {
+    "id": "ola-doutor",
+    "type": "company",
+    "kind": "company",
+    "name": "Olá Doutor",
+    "website": null,
+    "what": "Olá Doutor is a healthcare app that connects patients with licensed doctors through instant chat consultations, eliminating the need for appointments. The platform combines accessibility, speed, and affordability, allowing patients to receive medical guidance, prescriptions, and follow-up care directly from their phone.",
+    "category": "Healthtech & wellness",
+    "country": "Brazil",
+    "attending": "confirmed: a LIS26 Startup-track appearance on websummit.com",
+    "attending_as": "startup",
+    "topics": [
+      "topic:brazil"
+    ],
+    "ai_agents": {
+      "answer": "not stated",
+      "why": "Its Web Summit pitch (chat consultations with licensed doctors) does not mention AI or agents.",
+      "source": "https://websummit.com/startups/featured-startups/",
+      "read_at": "2026-11-05"
+    },
+    "delegation": "a Brazilian startup at LIS26; not (yet) matched to ApexBrasil's list, which publishes CNPJs only",
+    "sources": [
+      {
+        "url": "https://websummit.com/appearances/lis26/2709a39c-3dfa-427e-ad7c-aebbdc052024/ol%C3%A1-doutor",
+        "read_at": "2026-11-05",
+        "supports": "LIS26 appearance: name, country Brazil, track Startup, industry"
+      },
+      {
+        "url": "https://websummit.com/startups/featured-startups/",
+        "read_at": "2026-11-05",
+        "supports": "listed among Web Summit's featured startups for LIS26, with its elevator pitch (the \"what\" field and the AI line)"
+      }
+    ],
+    "updated_at": "2026-11-05T17:30:00Z",
+    "updated_by": "crm@web-summit.dinis"
+  },
+  {
+    "id": "prohound",
+    "type": "company",
+    "kind": "company",
+    "name": "ProHound",
+    "website": null,
+    "what": "ProHound transforms how businesses manage HVAC and refrigeration. By integrating our plug-and-play modular IoT into existing setups, we deliver real-time data and smart diagnostics. We empower you to manage your climate control from anywhere, slash energy waste, and predict equipment failures before they cause expensive downtime. Upgrade your efficiency and sustainability today.",
+    "category": "Hardware, robotics & IoT",
+    "country": "Brazil",
+    "attending": "confirmed: a LIS26 Startup-track appearance on websummit.com",
+    "attending_as": "startup",
+    "topics": [
+      "topic:brazil"
+    ],
+    "ai_agents": {
+      "answer": "not stated",
+      "why": "Its Web Summit pitch (modular IoT for HVAC with smart diagnostics and failure prediction) does not mention AI or agents by name.",
+      "source": "https://websummit.com/startups/featured-startups/",
+      "read_at": "2026-11-05"
+    },
+    "delegation": "a Brazilian startup at LIS26; not (yet) matched to ApexBrasil's list, which publishes CNPJs only",
+    "sources": [
+      {
+        "url": "https://websummit.com/appearances/lis26/9baf44c9-b8a2-42db-8bb2-25c1c9e8f16f/prohound",
+        "read_at": "2026-11-05",
+        "supports": "LIS26 appearance: name, country Brazil, track Startup, industry"
+      },
+      {
+        "url": "https://websummit.com/startups/featured-startups/",
+        "read_at": "2026-11-05",
+        "supports": "listed among Web Summit's featured startups for LIS26, with its elevator pitch (the \"what\" field and the AI line)"
+      }
+    ],
+    "updated_at": "2026-11-05T17:30:00Z",
+    "updated_by": "crm@web-summit.dinis"
+  },
+  {
+    "id": "rapidoc",
+    "type": "company",
+    "kind": "company",
+    "name": "Rapidoc",
+    "website": null,
+    "what": "Launch telemedicine in your country with your brand. Rapidoc provides the technology, 24/7 medical services and dedicated medical teams, with operations in Brazil, the US and Angola. Our white-label model enables partners to launch and scale healthcare services without building their own medical infrastructure. We are expanding globally and looking for strategic partners in new markets.",
+    "category": "Healthtech & wellness",
+    "country": "Brazil",
+    "attending": "confirmed: a LIS26 Startup-track appearance on websummit.com",
+    "attending_as": "startup",
+    "topics": [
+      "topic:brazil"
+    ],
+    "ai_agents": {
+      "answer": "not stated",
+      "why": "Its Web Summit pitch (white-label telemedicine) does not mention AI or agents.",
+      "source": "https://websummit.com/startups/featured-startups/",
+      "read_at": "2026-11-05"
+    },
+    "delegation": "a Brazilian startup at LIS26; not (yet) matched to ApexBrasil's list, which publishes CNPJs only",
+    "sources": [
+      {
+        "url": "https://websummit.com/appearances/lis26/f8b1c16b-ba5d-40d8-883b-2f14ed61fb4e/rapidoc",
+        "read_at": "2026-11-05",
+        "supports": "LIS26 appearance: name, country Brazil, track Startup, industry"
+      },
+      {
+        "url": "https://websummit.com/startups/featured-startups/",
+        "read_at": "2026-11-05",
+        "supports": "listed among Web Summit's featured startups for LIS26, with its elevator pitch (the \"what\" field and the AI line)"
+      }
+    ],
+    "updated_at": "2026-11-05T17:30:00Z",
+    "updated_by": "crm@web-summit.dinis"
+  },
+  {
+    "id": "raras-health",
+    "type": "company",
+    "kind": "company",
+    "name": "Raras Health",
+    "website": null,
+    "what": "More than 300 million people live with a rare disease, and most wait years for a diagnosis. Raras Health uses AI and genomics to turn those years into days: we find undiagnosed patients, confirm the diagnosis in our own genomics lab and follow each patient through treatment and lifelong care. Our AI assistant, Rara, already talks to 300+ families a week on WhatsApp.",
+    "category": "Healthtech & wellness",
+    "country": "Brazil",
+    "attending": "confirmed: a LIS26 Startup-track appearance on websummit.com",
+    "attending_as": "startup",
+    "topics": [
+      "topic:brazil",
+      "topic:ai-agents"
+    ],
+    "ai_agents": {
+      "answer": "builds",
+      "why": "Its Web Summit pitch: \"Our AI assistant, Rara, already talks to 300+ families a week on WhatsApp\": a conversational AI agent in production, with AI and genomics for diagnosis.",
+      "source": "https://websummit.com/startups/featured-startups/",
+      "read_at": "2026-11-05"
+    },
+    "delegation": "a Brazilian startup at LIS26; not (yet) matched to ApexBrasil's list, which publishes CNPJs only",
+    "sources": [
+      {
+        "url": "https://websummit.com/appearances/lis26/71dafd73-9686-4b97-8d4f-db80e085725a/raras-health",
+        "read_at": "2026-11-05",
+        "supports": "LIS26 appearance: name, country Brazil, track Startup, industry"
+      },
+      {
+        "url": "https://websummit.com/startups/featured-startups/",
+        "read_at": "2026-11-05",
+        "supports": "listed among Web Summit's featured startups for LIS26, with its elevator pitch (the \"what\" field and the AI line)"
+      }
+    ],
+    "updated_at": "2026-11-05T17:30:00Z",
+    "updated_by": "crm@web-summit.dinis"
+  }
+]

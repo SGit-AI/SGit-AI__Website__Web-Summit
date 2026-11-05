@@ -1,0 +1,766 @@
+{
+ "source": "https://crm-apps.apexbrasil.com.br/orgbdeab873/inscricao-eventos/evento/web-summit-lisboa-2026/0714952e-98da-f011-8543-7ced8db0f987",
+ "read_at": "2026-11-05",
+ "status_as_of": "2026-08-28",
+ "about": "ApexBrasil's published result of the selection for its Web Summit Lisboa 2026 mission (EE-003616): company registration numbers (CNPJ, a public company identifier) and status only; it names no company.",
+ "counts": {
+  "Confirmado": 105,
+  "Aguardando confirmação": 26,
+  "Lista de espera": 33,
+  "Desistência": 24
+ },
+ "rows": [
+  {
+   "cnpj": "07.145.678/0001-01",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "09.643.482/0001-72",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "11.308.736/0001-48",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "13.779.722/0001-38",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "17.900.294/0001-00",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "18.852.746/0001-99",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "18.923.211/0001-61",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "19.094.124/0001-01",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "19.321.277/0001-44",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "20.192.262/0001-02",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "22.080.376/0001-96",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "24.461.432/0001-68",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "25.307.676/0001-53",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "26.785.989/0001-80",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "27.314.290/0001-02",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "28.343.364/0001-93",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "30.117.190/0001-92",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "31.502.009/0001-24",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "32.079.265/0001-13",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "32.292.787/0001-07",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "32.704.332/0001-43",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "34.259.701/0001-61",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "34.464.393/0001-06",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "34.741.829/0001-67",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "35.027.867/0001-15",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "35.483.808/0001-51",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "35.858.429/0001-07",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "36.191.600/0001-21",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "37.072.926/0001-00",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "37.089.816/0001-43",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "37.374.172/0001-35",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "37.471.977/0001-05",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "38.176.450/0001-02",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "38.254.083/0001-18",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "38.276.476/0001-22",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "38.456.094/0001-80",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "39.148.600/0001-37",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "39.445.743/0001-00",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "39.940.057/0001-06",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "40.407.423/0001-45",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "40.454.131/0001-63",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "40.651.244/0001-59",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "40.843.123/0001-09",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "41.300.720/0001-50",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "41.350.359/0001-76",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "41.429.692/0001-75",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "41.631.996/0001-10",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "41.938.466/0001-10",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "42.319.795/0001-45",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "42.437.138/0001-00",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "42.543.929/0001-07",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "43.125.007/0001-42",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "43.624.341/0001-40",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "43.705.054/0001-65",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "43.740.298/0001-89",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "43.820.162/0001-89",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "43.999.691/0001-91",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "44.052.321/0001-05",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "44.154.784/0001-88",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "44.427.651/0001-38",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "44.581.762/0001-02",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "44.688.671/0001-62",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "44.783.988/0001-88",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "44.864.339/0001-01",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "45.331.166/0001-29",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "45.561.799/0001-23",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "45.588.965/0001-85",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "45.824.890/0001-94",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "45.838.636/0001-45",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "45.840.740/0001-74",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "45.842.576/0001-34",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "45.889.630/0001-05",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "46.248.212/0001-93",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "46.309.034/0001-63",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "46.324.288/0001-50",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "46.433.065/0001-21",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "46.773.092/0001-43",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "46.793.103/0001-57",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "46.921.259/0001-76",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "47.068.601/0001-08",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "47.351.253/0001-73",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "47.492.267/0001-07",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "47.566.115/0001-01",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "47.681.875/0001-60",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "47.725.385/0001-18",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "47.975.498/0001-71",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "48.110.226/0001-71",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "48.146.204/0001-61",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "48.176.415/0001-47",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "48.222.359/0001-30",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "48.501.871/0001-15",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "48.760.021/0001-31",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "49.121.664/0001-06",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "49.560.080/0001-29",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "49.718.664/0001-80",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "49.924.074/0001-03",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "49.927.375/0001-90",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "49.933.843/0001-30",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "50.118.212/0001-46",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "50.146.967/0001-54",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "50.256.000/0001-25",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "50.351.305/0001-16",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "50.530.950/0001-04",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "50.689.034/0001-03",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "50.961.360/0001-28",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "51.023.501/0001-24",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "51.066.584/0001-39",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "51.406.656/0001-40",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "51.477.970/0001-13",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "51.543.214/0001-45",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "51.841.522/0001-57",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "51.981.233/0001-53",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "52.011.411/0001-86",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "52.159.518/0001-76",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "52.179.675/0001-43",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "52.254.750/0001-93",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "52.269.135/0001-50",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "52.305.294/0001-63",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "52.495.780/0001-91",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "52.496.187/0001-60",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "52.782.848/0001-13",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "52.836.983/0001-02",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "52.944.821/0001-80",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "53.177.890/0001-78",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "53.457.117/0001-65",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "53.532.749/0001-46",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "53.536.341/0001-42",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "53.562.199/0001-08",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "53.618.785/0001-27",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "53.629.040/0001-63",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "53.862.472/0001-10",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "54.013.930/0001-09",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "54.278.190/0001-32",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "54.428.470/0001-80",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "55.050.308/0001-33",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "55.662.048/0001-57",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "55.750.535/0001-71",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "55.820.459/0001-23",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "55.967.399/0001-76",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "55.982.816/0001-50",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "56.701.968/0001-08",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "57.364.318/0001-79",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "57.843.855/0001-00",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "58.004.465/0001-09",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "58.248.148/0001-20",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "58.915.181/0001-66",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "59.499.415/0001-02",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "59.537.835/0001-28",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "59.727.019/0001-87",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "60.043.032/0001-04",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "60.107.731/0001-62",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "60.130.193/0001-27",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "60.170.361/0001-08",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "60.196.310/0001-55",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "60.348.853/0001-40",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "61.365.481/0001-23",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "61.575.117/0001-98",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "61.624.382/0001-19",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "61.655.630/0001-99",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "61.890.427/0001-05",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "62.209.725/0001-41",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "62.210.140/0001-41",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "62.363.549/0001-06",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "62.570.576/0001-41",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "62.784.781/0001-00",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "62.791.890/0001-54",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "62.856.185/0001-98",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "62.935.369/0001-43",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "63.032.951/0001-62",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "63.033.232/0001-66",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "63.132.055/0001-75",
+   "status": "Desistência"
+  },
+  {
+   "cnpj": "63.263.276/0001-82",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "63.570.513/0001-58",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "63.939.100/0001-06",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "64.184.215/0001-92",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "64.190.005/0001-07",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "64.198.902/0001-67",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "64.469.153/0001-65",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "64.683.471/0001-24",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "65.443.055/0001-11",
+   "status": "Aguardando confirmação"
+  },
+  {
+   "cnpj": "65.644.521/0001-27",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "65.756.639/0001-47",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "65.839.977/0001-42",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "65.889.169/0001-90",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "66.769.658/0001-70",
+   "status": "Confirmado"
+  },
+  {
+   "cnpj": "66.881.204/0001-97",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "67.036.617/0001-38",
+   "status": "Lista de espera"
+  },
+  {
+   "cnpj": "67.581.920/0001-11",
+   "status": "Confirmado"
+  }
+ ]
+}
