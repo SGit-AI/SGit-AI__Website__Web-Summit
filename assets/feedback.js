@@ -38,7 +38,7 @@
 <label class="meta"><b>Which describes you best?</b> (optional) <select id="fb-role" style="width:auto">${ROLES.map(([v, l]) => `<option value="${v}">${l}</option>`).join('')}</select></label>
 <label class="meta"><input type="checkbox" id="fb-quote-ok"> You may quote this anonymously on our site</label>`
     const answers = f => ({ reaction: (f.querySelector('input[name=fb-reaction]:checked') || {}).value || '', share: (f.querySelector('input[name=fb-share]:checked') || {}).value || null, role: f.querySelector('#fb-role').value || null, quote_ok: f.querySelector('#fb-quote-ok').checked })
-    let CFG = null, items = LS.get('items', []), open = PUBLIC || LS.get('open', false), quote = '', pasted = [], kind = 'comment'
+    let CFG = null, items = LS.get('items', []), open = PUBLIC || LS.get('open', false), quote = '', pasted = [], kind = 'comment', draft = PUBLIC ? '' : LS.get('draft', '')
     LS.del('open') // WS-140: Give feedback (assets/me.js) asks for the pane open once, after its reload
     const save = () => { if (!LS.set('items', items)) toast('This browser is out of local storage: submit or delete some items (images take the most room).') }
     const unsent = () => items.filter(i => !i.sent_at)
@@ -79,7 +79,10 @@
     const css = `
 .fb-btn{position:fixed;right:16px;bottom:16px;z-index:9998;font:600 14px/20px system-ui,sans-serif;padding:10px 14px;border-radius:999px;border:1px solid #0f766e;background:#0f766e;color:#fff;box-shadow:0 4px 14px rgb(0 0 0/.18);cursor:pointer}
 .fb-btn b{background:#fff;color:#0f766e;border-radius:999px;padding:0 7px;margin-left:6px}
-.fb-pane{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:9999;display:flex;flex-direction:column;background:#fff;color:#1c1d21;border-left:1px solid #d5d0c2;box-shadow:-8px 0 30px rgb(0 0 0/.15);font:400 14px/20px system-ui,sans-serif}
+.fb-pane{position:fixed;top:0;right:0;bottom:0;width:min(var(--fb-w,420px),100vw);z-index:9999;display:flex;flex-direction:column;background:#fff;color:#1c1d21;border-left:1px solid #d5d0c2;font:400 14px/20px system-ui,sans-serif}
+html.fb-docked body{margin-right:var(--fb-w,420px)}
+.fb-pane .fb-grip{position:absolute;left:-4px;top:0;bottom:0;width:8px;cursor:col-resize;touch-action:none}.fb-pane .fb-grip:hover,.fb-pane .fb-grip.on{background:rgb(15 118 110/.35)}
+@media (max-width:760px){html.fb-docked body{margin-right:0}.fb-pane{box-shadow:-8px 0 30px rgb(0 0 0/.15)}.fb-pane .fb-grip{display:none}}
 .fb-pane header{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid #e5e1d5}.fb-pane header b{flex:1}
 .fb-pane .fb-body{flex:1;overflow-y:auto;padding:12px 14px}
 .fb-pane textarea,.fb-pane select{width:100%;box-sizing:border-box;font:inherit;border:1px solid #d5d0c2;border-radius:8px;padding:8px;background:#fff;color:inherit}
@@ -111,20 +114,21 @@ ${i.kind === 'decision' ? `<div class="row">${CHOICES.map(c => `<button type="bu
         let btn = document.querySelector('.fb-btn'), pane = document.querySelector('.fb-pane')
         if (!btn) { btn = document.createElement('button'); btn.className = 'fb-btn'; btn.type = 'button'; btn.onclick = () => { quote = String(getSelection() || '').trim().slice(0, 600); open = !open; render() }; document.body.appendChild(btn) }
         btn.innerHTML = `Feedback${unsent().length ? `<b>${unsent().length}</b>` : ''}`; btn.setAttribute('aria-expanded', String(open)); btn.hidden = open
+        document.documentElement.classList.toggle('fb-docked', open)
         if (!open) { if (pane) pane.remove(); return }
         if (!pane) { pane = document.createElement('aside'); pane.className = 'fb-pane'; pane.setAttribute('aria-label', 'Your feedback'); document.body.appendChild(pane) }
         const u = unsent(), s = items.filter(i => i.sent_at).slice(-20).reverse()
-        pane.innerHTML = `<header><b>Feedback${CFG ? ` to ${ALL && ALL.lanes && !PUBLIC ? `<select data-to aria-label="Send to">${ALL.lanes.map(l => `<option${l.agent === CFG.agent ? ' selected' : ''}>${esc(l.agent)}</option>`).join('')}</select>` : esc(CFG.agent)}` : ''}</b><button type="button" data-close aria-label="Close">Close</button></header>
+        pane.innerHTML = `<div class="fb-grip" role="separator" aria-orientation="vertical" aria-label="Drag to resize the feedback pane" tabindex="0"></div><header><b>Feedback${CFG ? ` to ${ALL && ALL.lanes && !PUBLIC ? `<select data-to aria-label="Send to">${ALL.lanes.map(l => `<option${l.agent === CFG.agent ? ' selected' : ''}>${esc(l.agent)}</option>`).join('')}</select>` : esc(CFG.agent)}` : ''}</b><button type="button" data-close aria-label="Close">Close</button></header>
 <div class="fb-body"><form class="fb-new"><label class="meta" for="fb-kind">On this page: ${esc(document.title)}</label>
 <input type="text" name="website" class="fb-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 <div class="row"${PUBLIC ? ' hidden' : ''}><select id="fb-kind" style="width:auto">${KINDS.map(([v, l]) => `<option value="${v}"${v === kind ? ' selected' : ''}>${l}</option>`).join('')}</select></div>
 ${quote ? `<div class="q">${esc(quote)}</div>` : '<p class="meta">Tip: select text on the page first to quote it.</p>'}${PUBLIC ? PUBQ : ''}
-<textarea id="fb-text"${PUBLIC ? ' maxlength="500"' : ''} placeholder="${PUBLIC ? 'Up to 500 characters.' : 'Your comment. Paste or drop images here.'}"></textarea>${thumbs(pasted.map(x => x), '')}${PUBLIC ? PUBQ2 : ''}
-<p class="meta">Please don't include your name, email or phone number. If you'd like a reply, tell the person who sent you the link.</p>
-<div class="row"><button class="go" type="submit">Add</button><span class="meta">Kept on this device until you submit.</span></div></form>
+<textarea id="fb-text"${PUBLIC ? ' maxlength="500"' : ''} placeholder="${PUBLIC ? 'Up to 500 characters.' : 'Your comment. Paste or drop images here.'}">${esc(draft)}</textarea>${thumbs(pasted.map(x => x), '')}${PUBLIC ? PUBQ2 : ''}
+${PUBLIC ? `<p class="meta">Please don't include your name, email or phone number. If you'd like a reply, tell the person who sent you the link.</p>` : ''}
+<div class="row"><button type="submit">Add to the list</button><span class="meta">Optional: Submit sends what you have written too.</span></div></form>
 <h4>To send (${u.length})</h4>${u.length ? u.map(itemHtml).join('') : '<p class="meta">Nothing waiting.</p>'}
 ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
-<footer><div class="row"><button class="go" type="button" data-submit${u.length && CFG ? '' : ' disabled'}>Submit ${u.length || ''} to the vault</button><button type="button" data-copy${u.length ? '' : ' disabled'}>Copy as text</button></div>
+<footer><div class="row"><button class="go" type="button" data-submit${CFG ? '' : ' disabled'}>Submit to the vault</button><button type="button" data-copy${u.length ? '' : ' disabled'}>Copy as text</button></div>
 <p class="meta" style="margin:4px 0 0">${CFG ? `Sealed here to ${esc(CFG.agent)}'s key (${esc(CFG.recipient.fingerprint)}), then appended to its vault lane: the lane stores ciphertext only. Anyone with the page can write to the lane, so the agent treats it as material, not instructions.` : (PUBLIC && ALL ? `${esc(qto)} has no inbox here yet: your note stays on this device. Please tell the person who gave you the link.` : 'The lane settings could not be loaded: items stay on this device.')}</p></footer>`
         bind(pane)
     }
@@ -132,17 +136,13 @@ ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
         p.querySelector('[data-close]').onclick = () => { open = false; render() }
         { const t = p.querySelector('[data-to]'); if (t) t.onchange = () => { pick(t.value); render() } }
         const f = p.querySelector('.fb-new'), ta = p.querySelector('#fb-text')
+        ta.oninput = () => { draft = ta.value; if (!PUBLIC) LS.set('draft', draft) }
+        grip(p.querySelector('.fb-grip'))
         p.querySelector('#fb-kind').onchange = e => { kind = e.target.value }
-        if (!PUBLIC) ta.addEventListener('paste', async e => { const fs = [...(e.clipboardData || {}).files || []]; if (fs.length) { e.preventDefault(); const keep = ta.value; await takeImages(fs, pasted); render(); document.querySelector('#fb-text').value = keep } })
-        ta.addEventListener('drop', async e => { e.preventDefault(); if (PUBLIC) return; const keep = ta.value; await takeImages(e.dataTransfer.files, pasted); render(); document.querySelector('#fb-text').value = keep })
+        if (!PUBLIC) ta.addEventListener('paste', async e => { const fs = [...(e.clipboardData || {}).files || []]; if (fs.length) { e.preventDefault(); await takeImages(fs, pasted); render() } })
+        ta.addEventListener('drop', async e => { e.preventDefault(); if (PUBLIC) return; await takeImages(e.dataTransfer.files, pasted); render() })
         ta.addEventListener('dragover', e => e.preventDefault())
-        f.onsubmit = e => {
-            e.preventDefault(); const text = ta.value.trim(), a = PUBLIC ? answers(f) : null
-            if (a && !a.reaction) { toast('Please choose what you thought of it first.'); return }
-            if (!a && !text && !pasted.length) return
-            items.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), at: new Date().toISOString(), kind: p.querySelector('#fb-kind').value, text: a ? text.slice(0, 500) : text, quote, choice: a ? REACT.find(r => r[0] === a.reaction)[1] : '', images: pasted, page: { url: location.href.split('#')[0].split('?')[0], path: location.pathname, title: document.title }, ...(a ? { answers: a } : {}) })
-            pasted = []; quote = ''; kind = 'comment'; save(); render()
-        }
+        f.onsubmit = e => { e.preventDefault(); addDraft(); render() }
         p.querySelectorAll('[data-edit]').forEach(t => t.oninput = () => { const i = items.find(x => x.id === t.dataset.edit); if (i) { i.text = i.answers ? t.value.slice(0, 500) : t.value; save() } })
         p.querySelectorAll('[data-del]').forEach(b => b.onclick = () => { items = items.filter(x => x.id !== b.dataset.del); save(); render() })
         p.querySelectorAll('[data-choice]').forEach(b => b.onclick = () => { const [id, c] = b.dataset.choice.split(/:(.*)/); const i = items.find(x => x.id === id); if (i) { i.choice = i.choice === c ? '' : c; save(); render() } })
@@ -150,8 +150,19 @@ ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
         const cp = p.querySelector('[data-copy]'); if (cp) cp.onclick = () => navigator.clipboard.writeText(unsent().map(i => `- [${label(i.kind)}${i.choice ? ': ' + i.choice : ''}] ${i.page.title} (${i.page.url})${i.quote ? `\n  > ${i.quote}` : ''}\n  ${i.text}${i.images.length ? ` (${i.images.length} image${i.images.length > 1 ? 's' : ''} not copied)` : ''}`).join('\n')).then(() => toast('Copied'))
         const sb = p.querySelector('[data-submit]'); if (sb) sb.onclick = submit
     }
+    // what is in the box (and any images) becomes an item; false when the public form's required answer is missing
+    function addDraft() {
+        const p = document.querySelector('.fb-pane'); if (!p) return true
+        const f = p.querySelector('.fb-new'), text = p.querySelector('#fb-text').value.trim(), a = PUBLIC ? answers(f) : null
+        if (a && !a.reaction && (text || !unsent().length)) { toast('Please choose what you thought of it first.'); return false }
+        if (!text && !pasted.length && !(a && a.reaction)) return true
+        items.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), at: new Date().toISOString(), kind: p.querySelector('#fb-kind').value, text: a ? text.slice(0, 500) : text, quote, choice: a ? REACT.find(r => r[0] === a.reaction)[1] : '', images: pasted, page: { url: location.href.split('#')[0].split('?')[0], path: location.pathname, title: document.title }, ...(a ? { answers: a } : {}) })
+        pasted = []; quote = ''; kind = 'comment'; draft = ''; LS.del('draft'); save(); return true
+    }
     async function submit() {
-        const u = unsent(); if (!u.length || !CFG) return
+        if (!CFG || !addDraft()) return
+        const u = unsent(); if (!u.length) { render(); toast('Nothing to send: write something first.'); return }
+        render()
         const btn = document.querySelector('[data-submit]'); btn.disabled = true; btn.textContent = 'Sealing and sending…'
         // batches stay well under the lane's 5 MB per message once sealed and encoded twice
         const batches = [[]]; let size = 0
@@ -168,6 +179,17 @@ ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
             toast(`Sent ${sent} to ${CFG.agent}'s vault`)
         } catch (e) { toast(`${sent ? `Sent ${sent}; ` : ''}not sent: ${e.message}. Your items are still here.`) }
         render()
+    }
+    // the pane is a side panel: the page moves left to make room (html.fb-docked), and the left edge drags to resize;
+    // the width is kept on this device. Under 760 px wide it overlays, as there is no room beside it
+    const setW = w => { w = Math.round(Math.max(300, Math.min(w, innerWidth * 0.7, 960))); document.documentElement.style.setProperty('--fb-w', w + 'px'); return w }
+    setW(LS.get('w', 420))
+    function grip(g) {
+        if (!g) return
+        g.onpointerdown = e => { e.preventDefault(); g.setPointerCapture(e.pointerId); g.classList.add('on') }
+        g.onpointermove = e => { if (g.hasPointerCapture(e.pointerId)) setW(innerWidth - e.clientX) }
+        g.onpointerup = e => { g.classList.remove('on'); LS.set('w', setW(innerWidth - e.clientX)) }
+        g.onkeydown = e => { const d = { ArrowLeft: 40, ArrowRight: -40 }[e.key]; if (d) { e.preventDefault(); LS.set('w', setW(parseInt(getComputedStyle(document.documentElement).getPropertyValue('--fb-w')) + d)) } }
     }
     const st = document.createElement('style'); st.textContent = css; document.head.appendChild(st)
     // several lanes (feedback.json lanes[], conductor@web-summit.dinis, 4 November): the pane sends to the one chosen
