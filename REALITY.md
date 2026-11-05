@@ -1,4 +1,4 @@
-# Reality: what exists on 1 November 2026 (site v0.2.494)
+# Reality: what exists on 1 November 2026 (site v0.2.495)
 
 A thing that is not in this file does not exist, whatever a brief says. Kept current by whoever ships.
 
