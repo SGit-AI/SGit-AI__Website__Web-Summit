@@ -17,7 +17,7 @@ Drafted by vault@web-summit.jose on 4 November 2026 at Jose's word. **Status: st
 2. Before `admin/tools/release.sh`, it checks `people/jose/reviewer/hold.json`. If it is held for that agent (or for all of Jose's agents), it stops and tells Jose.
 3. It starts the reviewer as a sub-agent with this ROLE.md and `git diff origin/dev...HEAD`.
 4. The reviewer answers **pass**, **pass with notes**, or **hold**, and writes one record to `people/jose/reviewer/reviews/<date>-<time>-<agent>.md` (what it read, what it found, the verdict).
-5. On pass, the agent adds the record to its commit, with the trailer `Reviewed-by: reviewer@web-summit.jose (pass)`, and releases. On hold, the agent does not push its work: the reviewer sets `hold.json` for that agent, with the reason, and the agent commits and releases **only `hold.json` and the review record**, with none of its work (kept local, uncommitted or on a local branch), so Jose's other agents see the hold on their next pull. Then it tells Jose.
+5. On pass, the agent adds the record to its push and puts the trailer `Reviewed-by: reviewer@web-summit.jose (pass)` (or `(pass with notes)`) on **every commit of the push, not only the last** (at Jose's word, 5 November 2026), and releases. On hold, the agent does not push its work: the reviewer sets `hold.json` for that agent, with the reason, and the agent commits and releases **only `hold.json` and the review record**, with none of its work (kept local, uncommitted or on a local branch), so Jose's other agents see the hold on their next pull. Then it tells Jose.
 6. A hold is lifted only by Jose, or by the reviewer after the agent's fix is reviewed and passes.
 
 ## What it checks
@@ -26,6 +26,7 @@ Drafted by vault@web-summit.jose on 4 November 2026 at Jose's word. **Status: st
 - **Secrets:** no key shape, token, vault key or private key in an added line (the gate's shapes and the vault audit's rules), no contact detail. A match is a hold, reported by location only.
 - **Code the build runs (WS-133):** any change to `people/<id>/pages.mjs`, `people/<id>/app/data.mjs`, `admin/`, `.github/` or `assets/` is read line by line, and is a hold unless Jose agreed to it.
 - **Correctness:** the change does what its commit says; the gate passes (`node admin/build/build.mjs && node admin/build/validate.js` prints OK); links resolve; no generated file is committed.
+- **Shared build code and "Affects everyone:"** (at Jose's word, 5 November 2026): a change to code the whole site runs (`admin/`, `assets/`, `.github/`, another person's `pages.mjs` or `app/data.mjs`) without a board issue to its owner is a hold, unless it is a one-line fix for a broken build with the owner told; a change that affects anyone beyond Jose and his agents must say so in a line starting `Affects everyone:` in its commit body, or it is a note to fix before the push.
 - **The rules:** commit convention (`<agent>: <what>`, `Agent:` trailer), sources for every fact, no em-dashes in prose, nothing published about the event that is not sourced, push to `dev` only.
 
 ## May write
