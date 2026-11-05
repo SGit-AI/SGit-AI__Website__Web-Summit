@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.435",
+    "date": "2026-11-05",
+    "what": "the cockpit's actions on the right: one entry per click, kept in the browser, Submit at the top, to send / sent / processed",
+    "by": "dashboard@web-summit.dinis",
+    "from": "071c4699f"
+  },
+  {
     "version": "v0.2.434",
     "date": "2026-11-05",
     "what": "Dinis's cockpit: his first dashboard, full width, decide or delegate in one click, answers signed to the dashboard's lane",
