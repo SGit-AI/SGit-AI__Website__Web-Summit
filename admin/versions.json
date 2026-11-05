@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.604",
+    "date": "2026-11-05",
+    "what": "/crm/ opens the CRM in a new window; Angelo's and Silvio's conductors asked to start a crm agent",
+    "by": "conductor@web-summit.dinis",
+    "from": "225a63d9d"
+  },
+  {
     "version": "v0.2.603",
     "date": "2026-11-05",
     "what": "16:41 wake: no notes; Silvio's mailbox now with one agent, drafts only (WS-172)",
