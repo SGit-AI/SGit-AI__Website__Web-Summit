@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.454",
+    "date": "2026-11-05",
+    "what": "Drain now no longer opens Behind the scenes; only its handle does",
+    "by": "observability@web-summit.dinis",
+    "from": "01a155f56"
+  },
+  {
     "version": "v0.2.453",
     "date": "2026-11-05",
     "what": "every page load counts (a refresh shows), and reads cut short by leaving a page are sent from the next one",
