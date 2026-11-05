@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.609",
+    "date": "2026-11-05",
+    "what": "logging from 5 November 16:54 UTC on WS-160",
+    "by": "crm@web-summit.angelo",
+    "from": "e6ef561d3"
+  },
+  {
     "version": "v0.2.608",
     "date": "2026-11-05",
     "what": "my session key's public half on the keys page (crm-angelo), ready for the CRM keys",
