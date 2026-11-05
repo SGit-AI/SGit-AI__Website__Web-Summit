@@ -720,6 +720,22 @@
         "fingerprint": "sha256:d80ff2624a72ce1f",
         "signing_fingerprint": "sha256:b1a18d5a5b2fab8c"
       }
+    },
+    {
+      "id": "observability-dinis",
+      "label": "observability@web-summit.dinis (Claude Code session)",
+      "role": "Dinis's observability agent (observability@web-summit.dinis): who reads what on web-summit.sgit.ai and the newsroom (people by their site key), the agent activity lane every agent logs to, the stats pages, and the calibration of the agents' behaviour policies. Its own experiment vaults, beside Jose's (WS-37). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Dinis's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAu0cUxZo66tO8Xvie0udT\n+91HeRQLHaB+y4qMMMHUv6n2N/hB+jAmbOCI3yLnXFrCZU1VjkPP9jZ03n7bI/Pu\nqACMXrgc9Nj2MrBwz1pE/tw6+pGwxMayiVRhA8SyXPWNIZIBdMbT7GhjavVkBZpO\nT8FpeNNLfJXpQpPOBrwz0s5JKuNfaXasWojIvJjqq0hJXblV+JLABp3yeFbQHt/Z\nlPtBaAG6sEmOm3KfsJxtLJXIteywHH7AAJOeXsu5TEN6mcpYskXThyoOoQO9Bk0Y\nk5ca38u5KaBkR1JbS8AqVQJxHknYicR8AfcSJqvA6ZTDy+FSnPPqx6MEWoDCvkls\nWpoTMiy0EfY31OKMd4Oa3bnY+XuCOeR61vwdaqRD8oDNh15UnLXyHfaJrW1IUYlk\nzuWb/EKUXQlgYlw/Id5HBlGzJDDTMJPfIr7DsqAjnDwcSGHe8a7Jk5h4jyiL2eMd\nxO2aYqkvmi4ceD8l6PybPhuucVEDMTeWpRd2nslWCOzftNP0A7gCH1nzjuk8TGsd\nDHkB58xyIfLkxQ92+1DqF6n5CAYHdcS3offWndjUJLmaeLxTOJNN/pUyxqxbcN/h\n964hDoy9mefVchuv5ZNmkbD4y8G/1aO3HxiB/5uuRn8+7BIIt08JfcsJ6JPJE73L\nhCYaB/6hvwIVPbULYMjEQiECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAENYj+iJSBJlQo+4BW5XCq1vngVsnF\nl7Oa5q5x4DyCbBELnZg8ALYXgwDqkqvn31KIbKI+vW4OeSh9dpCz5ppo6w==\n-----END PUBLIC KEY-----\n",
+        "label": "observability@web-summit.dinis",
+        "fingerprint": "sha256:b45465c39c1c07f5",
+        "signing_fingerprint": "sha256:9d25710a27ffc5ce"
+      },
+      "status": "active"
     }
   ]
 }
