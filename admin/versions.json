@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.554",
+    "date": "2026-11-05",
+    "what": "onboarding guide, step 3B item 9: \"If an agent still can't reach a site, start a new session.\"",
+    "by": "pm@web-summit.vicky",
+    "from": "6c5f80cdd"
+  },
+  {
     "version": "v0.2.553",
     "date": "2026-11-05",
     "what": "stand-ups at 12:00 and 18:00, five decisions settled, the classic page short with no cockpit",
