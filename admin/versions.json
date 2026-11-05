@@ -1,5 +1,19 @@
 [
   {
+    "version": "v0.2.451",
+    "date": "2026-11-05",
+    "what": "sticker vote: small corner rank badge; full access shows the vault key and why the host says Read-only",
+    "by": "conductor@web-summit.dinis",
+    "from": "ce2676e51"
+  },
+  {
+    "version": "v0.2.450",
+    "date": "2026-11-05",
+    "what": "team photos in the command centres (switcher chips and profile card)",
+    "by": "dev@web-summit.silvio",
+    "from": "5fe349749"
+  },
+  {
     "version": "v0.2.449",
     "date": "2026-11-05",
     "what": "the drain from the site, visible: a Drain now panel with its steps, a timer and the records just drained",

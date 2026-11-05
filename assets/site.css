@@ -493,7 +493,7 @@ svg.ch-map { min-width: 620px; max-width: 900px; }
 .sv-img img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; transition: transform 0.4s; }
 .sv-card:hover .sv-img img { transform: scale(1.05); }
 .sv-num { position: absolute; top: 0.4rem; left: 0.4rem; width: 2.2rem; height: 2.2rem; border-radius: 50%; display: grid; place-items: center; font-weight: 900; background: var(--st-gold); color: var(--st-ink); border: 3px solid var(--st-ink); }
-.sv-rank:not(:empty) { position: absolute; inset: 0; display: grid; place-items: center; font: 900 3.6rem/1 var(--sans); color: var(--st-paper); background: var(--st-shade); text-shadow: 0 3px 14px var(--st-ink); animation: sv-pop 0.35s cubic-bezier(.2, 1.8, .4, 1); }
+.sv-rank:not(:empty) { position: absolute; top: 0.5rem; right: 0.5rem; padding: 0.2rem 0.55rem; border-radius: 999px; font: 800 0.95rem/1.2 var(--sans); color: var(--st-paper); background: var(--st-green); box-shadow: 0 2px 6px var(--st-shade); animation: sv-pop 0.35s cubic-bezier(.2, 1.8, .4, 1); }
 .sv-pts:not(:empty) { position: absolute; top: 0.5rem; right: 0.5rem; padding: 0.1rem 0.55rem; border-radius: 999px; font-size: 0.78rem; font-weight: 800; background: var(--st-ink); color: var(--st-gold); }
 .sv-face b { font-size: 1.02rem; line-height: 1.2; margin-top: 0.2rem; }
 .sv-words { font: 700 0.7rem/1.3 var(--mono); color: var(--accent-dk); letter-spacing: 0.02em; }
@@ -588,7 +588,7 @@ svg.ch-map { min-width: 620px; max-width: 900px; }
     .sv-words { font-size: 0.64rem; }
     .sv-acts { padding: 0 0.45rem 0.5rem; gap: 0.3rem; }
     .sv-acts button { font-size: 0.76rem; padding: 0.45rem 0.5rem; }
-    .sv-rank:not(:empty) { font-size: 2.8rem; }
+    .sv-rank:not(:empty) { font-size: 0.85rem; }
     .sv-people { gap: 0.5rem; }
     .sv-people li { font-size: 0.75rem; }
     .sv-people li span { width: 2.4rem; height: 2.4rem; font-size: 1rem; }
@@ -637,3 +637,6 @@ nav.site .gh { margin-left: 0; }
 /* a focus page (people/<id>/focus/...): only the queue on the screen */
 body[data-focus] > footer, body[data-focus] .agent-block, body[data-focus] .fb-btn { display: none !important; }
 body[data-focus] main { padding-top: 0.8rem; }
+
+.sv-vk { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 0.5rem 0; }
+.sv-vk code { padding: 0.3rem 0.5rem; border-radius: 6px; background: var(--st-shade); word-break: break-all; font-size: 0.85rem; }

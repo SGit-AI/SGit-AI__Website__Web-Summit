@@ -612,9 +612,10 @@ ${groups.map(([g, l]) => `<section class="cc-linkgrp"><h3>${esc(g)}</h3><div cla
     const stars = () => store.get('stars', [])
     const toggleStar = id => { const s = stars(); store.set('stars', s.includes(id) ? s.filter(x => x !== id) : [...s, id]) }
     const hhmm = s => { const m = String(s || '').match(/(\d{1,2}):(\d{2})/); return m ? m[1].padStart(2, '0') + ':' + m[2] : '' }
-    const NEWS = '2026-11-05'
+    const NEWS = '2026-11-05-photos'
     const newsCard = () => store.get('news', '') === NEWS ? '' : `<section class="cc-card cc-news" aria-labelledby="h-news"><header><span class="hic" aria-hidden="true">${ico('bell', '')}</span><h2 id="h-news">What's new in your command centre</h2><button class="more" type="button" data-news-close>Got it ✕</button></header>
 <ul class="cc-newslist">
+<li><b>🧑 Photos</b>: the team's faces are now on the buttons at the top and on your profile card. No photo yet? Send a square one to Silvio, or add <code>people/&lt;you&gt;/photo.jpg</code> yourself (a face, about 256px). Want yours taken down? Ask Silvio and your initials come back.</li>
 <li><b>🔔 For me</b>: the bell at the top counts what needs you (tasks due now or late, decisions only you can make, messages that ask you something). Tap it for the list.</li>
 <li><b>📩 Messages</b>: the ones that ask you something come first; the team's updates and your own agents' reports are folded.</li>
 <li><b>📅 Event mode</b>: from 9 to 12 November your home page starts with your day at Web Summit. Tap ☆ on a session to add it to your day. Try it now in Settings → Event mode.</li>
