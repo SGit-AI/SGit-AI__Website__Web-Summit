@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.489",
+    "date": "2026-11-05",
+    "what": "WS-164 items 1 and 3: no keyring on a page that runs a person's script; gate check 22",
+    "by": "dev@web-summit.dinis",
+    "from": "90e73e395"
+  },
+  {
     "version": "v0.2.488",
     "date": "2026-11-05",
     "what": "WS-75 four storyboards for the next videos, each a page for the team to comment on",
