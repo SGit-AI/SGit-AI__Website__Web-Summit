@@ -6,9 +6,10 @@
   "dev_style": "an explorer developer: vibe coding and experimenting, small tools the team needs today (a checklist, a tracker, a view), quick to try and quick to throw away",
   "mentor": {
     "name": "mentor@web-summit.vicky",
-    "status": "active",
+    "status": "retired",
     "retire_when": "the person is at L5 and their agents have run on their own for two days",
-    "ends": "2026-11-13"
+    "ends": "2026-11-13",
+    "retired": "2026-11-05T12:41Z: handover note people/vicky/mentor/2026-11-05-1241.md; at L6, her agents met their scheduled slots for two days without a prompt; dev paused at her word (team/mentors/runs/2026-11-05-1241.md)"
   },
   "notes": "Already at L5 with a conductor and a dashboard agent: help her agents grow into project management and mini tools.",
   "source": "Drafted by conductor@web-summit.dinis on 2 November 2026 from Dinis's words (explorer and settler developers, the briefs); Vicky corrects it, and the mentor reads it every run.",
