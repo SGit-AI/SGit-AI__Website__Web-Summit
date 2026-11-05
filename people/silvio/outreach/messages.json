@@ -1,0 +1,847 @@
+{
+  "about": "Outreach emails for WS-26, by conductor@web-summit.silvio on 5 November 2026, built from Indi's 50 targets (people/indi/overnight/2026-11-04/ws-26-outreach-targets/) and the factory openers. Drafts only: a person sends every message, and Dinis approves what they claim about RiskMandate before the first is sent. Companies only: no person's name or contact detail here; the channels are in Silvio's sealed tracker (data/sealed/silvio/).",
+  "schedule": {
+    "first": "Fri 6 to Sun 8 Nov, priority 1 first, 25 to 30 a day",
+    "followup_1": "Mon 9 Nov morning (opening night), to those who did not reply",
+    "followup_2": "Wed 11 Nov, the day before the stand",
+    "then": "stop"
+  },
+  "messages": [
+    {
+      "rank": 1,
+      "id": "1password",
+      "company": "1Password",
+      "priority": 1,
+      "decision": "meet",
+      "country": "Canada",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "1Password and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello 1Password team,\n\nYou hand agents their keys. We write down which keys each agent should have, and show the gap. Could we map one of yours?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again 1Password team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello 1Password team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from 1Password is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 2,
+      "id": "airia",
+      "company": "Airia",
+      "priority": 1,
+      "decision": "meet",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Airia and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Airia team,\n\nYou govern AI at runtime. We give each agent a licence an insurer can read. Where do we meet?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Airia team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Airia team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Airia is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 3,
+      "id": "cisco-outshift",
+      "company": "Cisco (Outshift by Cisco)",
+      "priority": 1,
+      "decision": "meet",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Cisco (Outshift by Cisco) and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Cisco (Outshift by Cisco) team,\n\nYou are building the roads for agents. Could every agent on them carry a licence that says where it may go?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Cisco (Outshift by Cisco) team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Cisco (Outshift by Cisco) team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Cisco (Outshift by Cisco) is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 4,
+      "id": "cloudflare",
+      "company": "Cloudflare",
+      "priority": 1,
+      "decision": "meet",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Cloudflare and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Cloudflare team,\n\nYou decide which agents get through. What if each agent carried a policy that says what it may do?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Cloudflare team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Cloudflare team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Cloudflare is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 5,
+      "id": "conscium",
+      "company": "Conscium",
+      "priority": 1,
+      "decision": "meet",
+      "country": "United Kingdom",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Conscium and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Conscium team,\n\nA policy says what an agent may do; your verification shows it does. Shall we join them up?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Conscium team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Conscium team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Conscium is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 6,
+      "id": "delinea",
+      "company": "Delinea",
+      "priority": 1,
+      "decision": "meet",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Delinea and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Delinea team,\n\nYou enforce what agents may access. We write down why, in a record the board and insurer can read.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Delinea team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Delinea team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Delinea is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 7,
+      "id": "descope",
+      "company": "Descope",
+      "priority": 1,
+      "decision": "meet",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Descope and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Descope team,\n\nYou issue agents scoped tokens. We write down which scopes each agent should have, and why.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Descope team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Descope team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Descope is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 8,
+      "id": "emergence-ai",
+      "company": "Emergence",
+      "priority": 1,
+      "decision": "meet",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Emergence and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Emergence team,\n\nYour talk is 'When AI agents go rogue'. Rogue is the gap between reach and mandate. We measure it.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Emergence team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Emergence team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Emergence is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 9,
+      "id": "feedzai",
+      "company": "Feedzai",
+      "priority": 1,
+      "decision": "meet",
+      "country": "Portugal",
+      "language": "pt",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Feedzai and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Feedzai team,\n\n'Who let the agent in?' Our answer: the agent's own policy, saying what it was allowed to do.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Feedzai team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Feedzai team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Feedzai is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      },
+      "pt": {
+        "subject": "Feedzai e RiskMandate na Web Summit: a vossa IA tem permissão?",
+        "body": "Olá equipa Feedzai,\n\n\"Who let the agent in?\" A nossa resposta: a política do próprio agente, que diz o que ele tem autorização para fazer.\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o que o agente consegue alcançar, o que a empresa o autorizou a fazer, e a diferença entre as duas coisas. Conhecer o alcance, definir o mandato, controlar a diferença.\n\nVamos estar na Web Summit Lisboa (9 a 12 de novembro), e na nossa banca na quinta-feira, 12 de novembro, entre os Booths A1-30. Podemos mostrar-vos em 15 minutos, mapeando ao vivo um dos vossos agentes? Respondam com uma hora que vos dê jeito, ou passem pela banca.\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup_1": "Olá novamente, equipa Feedzai,\n\nUm lembrete rápido: a Web Summit abre hoje à noite. Continuamos a gostar de vos ver 15 minutos, na nossa banca na quinta-feira, 12 de novembro (entre os Booths A1-30), ou onde vos der mais jeito durante a semana.\n\nCumprimentos,\nSilvio Switha, RiskMandate",
+        "followup_2": "Olá equipa Feedzai,\n\nAmanhã, quinta-feira 12 de novembro, estamos o dia todo na nossa banca, entre os Booths A1-30. Se alguém da Feedzai estiver por perto, passem por lá: mapeamos um agente de IA ao vivo em 15 minutos.\n\nÉ a nossa última mensagem. Cumprimentos,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 10,
+      "id": "kpmg-portugal",
+      "company": "KPMG",
+      "priority": 1,
+      "decision": "meet",
+      "country": "Portugal",
+      "language": "pt",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "KPMG and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello KPMG team,\n\nYour clients will ask you whether their agents are under control. Here is a record you can audit.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again KPMG team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello KPMG team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from KPMG is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      },
+      "pt": {
+        "subject": "KPMG e RiskMandate na Web Summit: a vossa IA tem permissão?",
+        "body": "Olá equipa KPMG,\n\nOs vossos clientes vão perguntar-vos se os agentes de IA deles estão sob controlo. Nós damos-lhes um registo que pode ser auditado.\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o que o agente consegue alcançar, o que a empresa o autorizou a fazer, e a diferença entre as duas coisas. Conhecer o alcance, definir o mandato, controlar a diferença.\n\nVamos estar na Web Summit Lisboa (9 a 12 de novembro), e na nossa banca na quinta-feira, 12 de novembro, entre os Booths A1-30. Podemos mostrar-vos em 15 minutos, mapeando ao vivo um dos vossos agentes? Respondam com uma hora que vos dê jeito, ou passem pela banca.\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup_1": "Olá novamente, equipa KPMG,\n\nUm lembrete rápido: a Web Summit abre hoje à noite. Continuamos a gostar de vos ver 15 minutos, na nossa banca na quinta-feira, 12 de novembro (entre os Booths A1-30), ou onde vos der mais jeito durante a semana.\n\nCumprimentos,\nSilvio Switha, RiskMandate",
+        "followup_2": "Olá equipa KPMG,\n\nAmanhã, quinta-feira 12 de novembro, estamos o dia todo na nossa banca, entre os Booths A1-30. Se alguém da KPMG estiver por perto, passem por lá: mapeamos um agente de IA ao vivo em 15 minutos.\n\nÉ a nossa última mensagem. Cumprimentos,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 11,
+      "id": "linux-foundation-aaif",
+      "company": "Linux Foundation (Agentic AI Foundation)",
+      "priority": 1,
+      "decision": "meet",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Linux Foundation (Agentic AI Foundation) and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Linux Foundation (Agentic AI Foundation) team,\n\nAgents need a common way to say what they may do. Could a behaviour policy format become an open spec?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Linux Foundation (Agentic AI Foundation) team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Linux Foundation (Agentic AI Foundation) team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Linux Foundation (Agentic AI Foundation) is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 12,
+      "id": "mastra",
+      "company": "Mastra",
+      "priority": 1,
+      "decision": "meet",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Mastra and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Mastra team,\n\nEvery Mastra agent already declares its tools. We could turn that into a behaviour policy automatically. Worth a try?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Mastra team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Mastra team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Mastra is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 13,
+      "id": "polygraf-ai",
+      "company": "Polygraf AI",
+      "priority": 1,
+      "decision": "meet",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Polygraf AI and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Polygraf AI team,\n\nYou enforce behaviour live. We write the behaviour policy. Could one feed the other?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Polygraf AI team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Polygraf AI team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Polygraf AI is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 14,
+      "id": "primitive",
+      "company": "Primitive",
+      "priority": 1,
+      "decision": "meet",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Primitive and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Primitive team,\n\nYour agents have their own mailboxes. We write down what each may say and to whom. We do it for our own email agents.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Primitive team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Primitive team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Primitive is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 15,
+      "id": "qase",
+      "company": "Qase",
+      "priority": 1,
+      "decision": "meet",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Qase and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Qase team,\n\nTiden records what was asked. We record what the agent could do. Together that is the full picture.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Qase team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Qase team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Qase is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 16,
+      "id": "replit",
+      "company": "Replit",
+      "priority": 1,
+      "decision": "meet",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Replit and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Replit team,\n\nYour users build with agents. Their security teams will ask what those agents may touch. We answer that, per agent.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Replit team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Replit team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Replit is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 17,
+      "id": "scrut-automation",
+      "company": "Scrut Automation",
+      "priority": 1,
+      "decision": "meet",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Scrut Automation and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Scrut Automation team,\n\nYour platform runs agents and audits controls. An agent policy is both. Shall we write one for yours?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Scrut Automation team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Scrut Automation team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Scrut Automation is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 18,
+      "id": "startup-portugal",
+      "company": "Startup Portugal",
+      "priority": 1,
+      "decision": "meet",
+      "country": "Portugal",
+      "language": "pt",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Startup Portugal and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Startup Portugal team,\n\nYour 125 startups will be asked how they control their AI. We can give each one a one-page answer.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Startup Portugal team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Startup Portugal team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Startup Portugal is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      },
+      "pt": {
+        "subject": "Startup Portugal e RiskMandate na Web Summit: a vossa IA tem permissão?",
+        "body": "Olá equipa Startup Portugal,\n\nAs vossas startups vão ter de explicar como controlam a sua IA. Podemos dar a cada uma uma resposta numa página.\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o que o agente consegue alcançar, o que a empresa o autorizou a fazer, e a diferença entre as duas coisas. Conhecer o alcance, definir o mandato, controlar a diferença.\n\nVamos estar na Web Summit Lisboa (9 a 12 de novembro), e na nossa banca na quinta-feira, 12 de novembro, entre os Booths A1-30. Podemos mostrar-vos em 15 minutos, mapeando ao vivo um dos vossos agentes? Respondam com uma hora que vos dê jeito, ou passem pela banca.\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup_1": "Olá novamente, equipa Startup Portugal,\n\nUm lembrete rápido: a Web Summit abre hoje à noite. Continuamos a gostar de vos ver 15 minutos, na nossa banca na quinta-feira, 12 de novembro (entre os Booths A1-30), ou onde vos der mais jeito durante a semana.\n\nCumprimentos,\nSilvio Switha, RiskMandate",
+        "followup_2": "Olá equipa Startup Portugal,\n\nAmanhã, quinta-feira 12 de novembro, estamos o dia todo na nossa banca, entre os Booths A1-30. Se alguém da Startup Portugal estiver por perto, passem por lá: mapeamos um agente de IA ao vivo em 15 minutos.\n\nÉ a nossa última mensagem. Cumprimentos,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 19,
+      "id": "hexamind",
+      "company": "Hexamind",
+      "priority": 1,
+      "decision": "meet",
+      "country": "France",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Hexamind and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Hexamind team,\n\nYour gate enforces the policy; we write down what the policy should be and prove it holds. Shall we try one agent together?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Hexamind team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Hexamind team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Hexamind is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 20,
+      "id": "crowdstrike",
+      "company": "CrowdStrike",
+      "priority": 1,
+      "decision": "write-about",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "CrowdStrike and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello CrowdStrike team,\n\nYour agent-security work is the reference point for the field. Could we compare notes on how each agent's reach is recorded?\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again CrowdStrike team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello CrowdStrike team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from CrowdStrike is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 21,
+      "id": "aicep",
+      "company": "AICEP - Portugal Trade & Invest",
+      "priority": 2,
+      "decision": "meet",
+      "country": "Portugal",
+      "language": "pt",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "AICEP - Portugal Trade & Invest and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello AICEP - Portugal Trade & Invest team,\n\nPortuguese companies selling AI abroad will be asked how they control it. We can give them the answer.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again AICEP - Portugal Trade & Invest team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello AICEP - Portugal Trade & Invest team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from AICEP - Portugal Trade & Invest is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      },
+      "pt": {
+        "subject": "AICEP - Portugal Trade & Invest e RiskMandate na Web Summit: a vossa IA tem permissão?",
+        "body": "Olá equipa AICEP - Portugal Trade & Invest,\n\nAs empresas portuguesas que vendem IA lá fora vão ter de mostrar como a controlam. Nós damos-lhes essa resposta.\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o que o agente consegue alcançar, o que a empresa o autorizou a fazer, e a diferença entre as duas coisas. Conhecer o alcance, definir o mandato, controlar a diferença.\n\nVamos estar na Web Summit Lisboa (9 a 12 de novembro), e na nossa banca na quinta-feira, 12 de novembro, entre os Booths A1-30. Podemos mostrar-vos em 15 minutos, mapeando ao vivo um dos vossos agentes? Respondam com uma hora que vos dê jeito, ou passem pela banca.\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup_1": "Olá novamente, equipa AICEP - Portugal Trade & Invest,\n\nUm lembrete rápido: a Web Summit abre hoje à noite. Continuamos a gostar de vos ver 15 minutos, na nossa banca na quinta-feira, 12 de novembro (entre os Booths A1-30), ou onde vos der mais jeito durante a semana.\n\nCumprimentos,\nSilvio Switha, RiskMandate",
+        "followup_2": "Olá equipa AICEP - Portugal Trade & Invest,\n\nAmanhã, quinta-feira 12 de novembro, estamos o dia todo na nossa banca, entre os Booths A1-30. Se alguém da AICEP - Portugal Trade & Invest estiver por perto, passem por lá: mapeamos um agente de IA ao vivo em 15 minutos.\n\nÉ a nossa última mensagem. Cumprimentos,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 22,
+      "id": "chatplace",
+      "company": "ChatPlace",
+      "priority": 2,
+      "decision": "meet",
+      "country": "Portugal",
+      "language": "pt",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "ChatPlace and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello ChatPlace team,\n\nYour agents speak in creators' names. A one-page policy per agent protects them, and sells.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again ChatPlace team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello ChatPlace team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from ChatPlace is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      },
+      "pt": {
+        "subject": "ChatPlace e RiskMandate na Web Summit: a vossa IA tem permissão?",
+        "body": "Olá equipa ChatPlace,\n\nOs vossos agentes falam em nome dos criadores. Uma política de uma página por agente protege-os, e ajuda a vender.\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o que o agente consegue alcançar, o que a empresa o autorizou a fazer, e a diferença entre as duas coisas. Conhecer o alcance, definir o mandato, controlar a diferença.\n\nVamos estar na Web Summit Lisboa (9 a 12 de novembro), e na nossa banca na quinta-feira, 12 de novembro, entre os Booths A1-30. Podemos mostrar-vos em 15 minutos, mapeando ao vivo um dos vossos agentes? Respondam com uma hora que vos dê jeito, ou passem pela banca.\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup_1": "Olá novamente, equipa ChatPlace,\n\nUm lembrete rápido: a Web Summit abre hoje à noite. Continuamos a gostar de vos ver 15 minutos, na nossa banca na quinta-feira, 12 de novembro (entre os Booths A1-30), ou onde vos der mais jeito durante a semana.\n\nCumprimentos,\nSilvio Switha, RiskMandate",
+        "followup_2": "Olá equipa ChatPlace,\n\nAmanhã, quinta-feira 12 de novembro, estamos o dia todo na nossa banca, entre os Booths A1-30. Se alguém da ChatPlace estiver por perto, passem por lá: mapeamos um agente de IA ao vivo em 15 minutos.\n\nÉ a nossa última mensagem. Cumprimentos,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 23,
+      "id": "cnext",
+      "company": "Cnext",
+      "priority": 2,
+      "decision": "meet",
+      "country": "Belgium",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Cnext and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Cnext team,\n\nEach agent you deliver could come with a behaviour policy. It answers the client's compliance question.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Cnext team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Cnext team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Cnext is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 24,
+      "id": "firefox-enterprise-mozilla",
+      "company": "Firefox Enterprise by Mozilla",
+      "priority": 2,
+      "decision": "meet",
+      "country": "Netherlands",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Firefox Enterprise by Mozilla and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Firefox Enterprise by Mozilla team,\n\nYour customers want control. Agents in the browser are next. We write down what each may do.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Firefox Enterprise by Mozilla team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Firefox Enterprise by Mozilla team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Firefox Enterprise by Mozilla is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 25,
+      "id": "melious-ai",
+      "company": "Melious AI GmbH",
+      "priority": 2,
+      "decision": "meet",
+      "country": "Germany",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Melious AI GmbH and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Melious AI GmbH team,\n\nYour hosting is one barrier. We show the whole agent's reach, so customers can prove sovereignty end to end.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Melious AI GmbH team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Melious AI GmbH team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Melious AI GmbH is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 26,
+      "id": "risiq",
+      "company": "Risiq GmbH",
+      "priority": 2,
+      "decision": "meet",
+      "country": "Germany",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Risiq GmbH and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Risiq GmbH team,\n\nYour banks will need to report agent risk to regulators. We give each agent an evidenced record.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Risiq GmbH team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Risiq GmbH team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Risiq GmbH is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 27,
+      "id": "spacecomputer",
+      "company": "SpaceComputer",
+      "priority": 2,
+      "decision": "meet",
+      "country": "Singapore",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "SpaceComputer and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello SpaceComputer team,\n\nYou prove which code is running. We say what it may do. Together: a verifiable agent.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again SpaceComputer team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello SpaceComputer team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from SpaceComputer is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 28,
+      "id": "trent-ai",
+      "company": "Trent AI",
+      "priority": 2,
+      "decision": "meet",
+      "country": "United Kingdom",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "Trent AI and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Trent AI team,\n\nYour platform finds agent risk. A behaviour policy tells it what each agent is meant to do.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Trent AI team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Trent AI team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Trent AI is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 29,
+      "id": "trustscale",
+      "company": "TrustScale",
+      "priority": 2,
+      "decision": "meet",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "factory (people/indi/factory/companies.json)",
+      "en": {
+        "subject": "TrustScale and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello TrustScale team,\n\nYou measure AI against the customer's criteria. A behaviour policy is those criteria for an agent.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we show you, in 15 minutes, by mapping one of your agents live? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again TrustScale team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello TrustScale team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from TrustScale is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 30,
+      "id": "aisle",
+      "company": "AISLE",
+      "priority": 2,
+      "decision": "interview",
+      "country": "Czechia",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "AISLE and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello AISLE team,\n\nAgents that fix security bugs act on critical software. What each one is allowed to touch is exactly what a mandate states.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we have 15 minutes with you during the summit? We would like to learn from your work. Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again AISLE team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello AISLE team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from AISLE is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 31,
+      "id": "kiggu",
+      "company": "Kiggu",
+      "priority": 2,
+      "decision": "interview",
+      "country": "Colombia",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "Kiggu and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Kiggu team,\n\nSecurity teams using AI need to show what their agents may do. A stated mandate helps with that.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we have 15 minutes with you during the summit? We would like to learn from your work. Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Kiggu team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Kiggu team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Kiggu is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 32,
+      "id": "temporal",
+      "company": "Temporal",
+      "priority": 2,
+      "decision": "interview",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "Temporal and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Temporal team,\n\nDurable execution runs long-lived agents. Each run could carry a record of what it was allowed to do.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we have 15 minutes with you during the summit? We would like to learn from your work. Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Temporal team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Temporal team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Temporal is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 33,
+      "id": "air-apps",
+      "company": "Air Apps",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "United States",
+      "language": "pt",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "Air Apps and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Air Apps team,\n\nWe would like to hear how a Portuguese app builder is using agents, and how they are kept in bounds.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Air Apps team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Air Apps team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Air Apps is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      },
+      "pt": {
+        "subject": "Air Apps e RiskMandate na Web Summit: a vossa IA tem permissão?",
+        "body": "Olá equipa Air Apps,\n\nGostávamos de saber como uma empresa portuguesa de apps está a usar agentes de IA, e como os mantém dentro dos limites.\n\nA RiskMandate dá a cada agente de IA um registo factual, uma Agent Behaviour Policy: o que o agente consegue alcançar, o que a empresa o autorizou a fazer, e a diferença entre as duas coisas. Conhecer o alcance, definir o mandato, controlar a diferença.\n\nVamos estar na Web Summit Lisboa (9 a 12 de novembro), e na nossa banca na quinta-feira, 12 de novembro, entre os Booths A1-30. Podemos trocar ideias 15 minutos durante a cimeira? Respondam com uma hora que vos dê jeito, ou passem pela banca.\n\nCumprimentos,\nSilvio Switha\nRiskMandate\n\nEncontrámos este endereço no vosso site. Se não for relevante, respondam \"não, obrigado\" e não voltamos a escrever.",
+        "followup_1": "Olá novamente, equipa Air Apps,\n\nUm lembrete rápido: a Web Summit abre hoje à noite. Continuamos a gostar de vos ver 15 minutos, na nossa banca na quinta-feira, 12 de novembro (entre os Booths A1-30), ou onde vos der mais jeito durante a semana.\n\nCumprimentos,\nSilvio Switha, RiskMandate",
+        "followup_2": "Olá equipa Air Apps,\n\nAmanhã, quinta-feira 12 de novembro, estamos o dia todo na nossa banca, entre os Booths A1-30. Se alguém da Air Apps estiver por perto, passem por lá: mapeamos um agente de IA ao vivo em 15 minutos.\n\nÉ a nossa última mensagem. Cumprimentos,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 34,
+      "id": "european-commission",
+      "company": "European Commission",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "Belgium (EU)",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "European Commission and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello European Commission team,\n\nEU rules on AI make a factual record of each agent's mandate useful. We would like to hear what the field needs.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again European Commission team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello European Commission team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from European Commission is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 35,
+      "id": "exa",
+      "company": "Exa",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "Exa and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Exa team,\n\nSearch built for agents is read by many of them. We publish pages for agent readers and would like to compare notes.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Exa team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Exa team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Exa is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 36,
+      "id": "exein",
+      "company": "Exein",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "Italy",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "Exein and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Exein team,\n\nRuntime security now names AI agents. A stated mandate is the rule that runtime controls can enforce.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Exein team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Exein team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Exein is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 37,
+      "id": "getvocal-ai",
+      "company": "GetVocal AI",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "France",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "GetVocal AI and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello GetVocal AI team,\n\nContact-centre agents are sold on control. A record of each agent's reach could back that claim up for buyers.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again GetVocal AI team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello GetVocal AI team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from GetVocal AI is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 38,
+      "id": "jetbrains",
+      "company": "JetBrains",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "Czechia",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "JetBrains and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello JetBrains team,\n\nMany coding agents work at once. Each one needs a stated mandate that developers can read.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again JetBrains team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello JetBrains team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from JetBrains is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 39,
+      "id": "keewano",
+      "company": "Keewano",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "Israel",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "Keewano and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Keewano team,\n\nA database built for agents holds their history. That history is the evidence a mandate needs.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Keewano team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Keewano team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Keewano is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 40,
+      "id": "launchdarkly",
+      "company": "LaunchDarkly",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "LaunchDarkly and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello LaunchDarkly team,\n\nA kill switch is one control among several. A policy can name it as a barrier, with evidence.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again LaunchDarkly team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello LaunchDarkly team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from LaunchDarkly is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 41,
+      "id": "lawvu",
+      "company": "LawVu",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "New Zealand",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "LawVu and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello LawVu team,\n\nWhen an autonomous agent acts, someone is liable. A record of its mandate answers who authorised what.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again LawVu team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello LawVu team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from LawVu is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 42,
+      "id": "ledger",
+      "company": "Ledger",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "France",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "Ledger and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Ledger team,\n\nHardware keys keep people in control of money. We think agents need the same clarity about what they may do.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Ledger team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Ledger team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Ledger is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 43,
+      "id": "legalfly",
+      "company": "LEGALFLY",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "Belgium",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "LEGALFLY and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello LEGALFLY team,\n\nLegal teams write the rules agents must follow. We would like to learn how those rules reach the agents.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again LEGALFLY team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello LEGALFLY team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from LEGALFLY is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 44,
+      "id": "manus-ai",
+      "company": "Manus AI",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "China",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "Manus AI and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Manus AI team,\n\nAgents that execute tasks need a stated mandate. We would like to compare how you set one.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Manus AI team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Manus AI team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Manus AI is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 45,
+      "id": "ncsc-uk",
+      "company": "National Cyber Security Centre (UK)",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "United Kingdom",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "National Cyber Security Centre (UK) and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello National Cyber Security Centre (UK) team,\n\nPublic-private security needs shared records. We would like to hear how guidance reaches agent builders.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again National Cyber Security Centre (UK) team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello National Cyber Security Centre (UK) team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from National Cyber Security Centre (UK) is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 46,
+      "id": "open-vsx",
+      "company": "Open VSX (Eclipse Foundation)",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "Canada",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "Open VSX (Eclipse Foundation) and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Open VSX (Eclipse Foundation) team,\n\nWhich extensions an agent's editor may load is a policy question. We would like to compare notes.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Open VSX (Eclipse Foundation) team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Open VSX (Eclipse Foundation) team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Open VSX (Eclipse Foundation) is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 47,
+      "id": "persona",
+      "company": "Persona",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "Persona and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Persona team,\n\nKnowing who is behind an agent starts identity. We would like to link identity to what the agent may do.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Persona team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Persona team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Persona is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 48,
+      "id": "proton",
+      "company": "Proton",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "France (the speaker's Web Summit listing; headquarters not sourced)",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "Proton and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello Proton team,\n\nEuropean privacy by default matters for agents too. Our vaults make the same argument for files.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again Proton team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello Proton team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from Proton is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 49,
+      "id": "roost",
+      "company": "ROOST (Robust Open Online Safety Tools)",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "United States",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "ROOST (Robust Open Online Safety Tools) and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello ROOST (Robust Open Online Safety Tools) team,\n\nOpen safety tooling and an open, git-based approach to agent policy could fit together.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again ROOST (Robust Open Online Safety Tools) team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello ROOST (Robust Open Online Safety Tools) team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from ROOST (Robust Open Online Safety Tools) is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    },
+    {
+      "rank": 50,
+      "id": "rws",
+      "company": "RWS Group",
+      "priority": 2,
+      "decision": "write-about",
+      "country": "United Kingdom",
+      "language": "en",
+      "opener_source": "Indi's hook (ws-26 targets.json)",
+      "en": {
+        "subject": "RWS Group and RiskMandate at Web Summit: does your AI have permission?",
+        "body": "Hello RWS Group team,\n\nAgent identity is a growing theme. We would like to hear how you think about a passport for agents.\n\nRiskMandate gives every AI agent one factual record, an Agent Behaviour Policy: what the agent can reach, what the business authorised it to do, and the gap between the two. Know their reach, define their mandate, control the gap.\n\nWe will be at Web Summit Lisbon (9 to 12 November), and on our stand on Thursday 12 November, between Booths A1-30. Could we compare notes for 15 minutes during the summit? Reply with a time that suits you, or just come by the stand.\n\nBest regards,\nSilvio Switha\nRiskMandate\n\nWe found this address on your website. If this is not relevant, reply \"no thanks\" and we will not write again.",
+        "followup_1": "Hello again RWS Group team,\n\nA short follow-up: Web Summit opens tonight. We would still like 15 minutes with you, at our stand on Thursday 12 November (between Booths A1-30) or wherever suits you during the week.\n\nBest regards,\nSilvio Switha, RiskMandate",
+        "followup_2": "Hello RWS Group team,\n\nTomorrow, Thursday 12 November, we are on our stand between Booths A1-30 all day. If someone from RWS Group is around, come and say hello: we will map one AI agent live in 15 minutes.\n\nThis is our last note. Best regards,\nSilvio Switha, RiskMandate"
+      }
+    }
+  ]
+}
