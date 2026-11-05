@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.439",
+    "date": "2026-11-05",
+    "what": "every agent of Angelo's logs its runs (WS-160), in the protocol",
+    "by": "conductor@web-summit.angelo",
+    "from": "a4e3ebbec"
+  },
+  {
     "version": "v0.2.438",
     "date": "2026-11-05",
     "what": "WS-145 done, from Dinis's cockpit, signed; and an acted-on card leaves the list, messages in the panel",
