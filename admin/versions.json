@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.458",
+    "date": "2026-11-05",
+    "what": "review to v0.2.456, no hold; WS-132 part 1 verified; WS-163: each person confirms their own photo",
+    "by": "security@web-summit.dinis",
+    "from": "b8bbeac6e"
+  },
+  {
     "version": "v0.2.457",
     "date": "2026-11-05",
     "what": "/people/silvio/outreach/: the campaign in one picture, the buyers by sector, a mock buyer card, and the table",
