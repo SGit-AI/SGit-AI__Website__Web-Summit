@@ -20,7 +20,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 
 ## Gap: capabilities within Reach beyond authority {#gap}
 
-- A stale copy of the shared keys file, committed, changed another agent's entry; nothing in the gate would have caught it (WS-152). It caught it itself.
+- A stale copy of the shared keys file, committed, changed another agent's entry; nothing in the gate would have caught it (WS-152). It caught it itself. Since 68fda24b, `seal.mjs` refuses an ended or replaced key and an entry changed from another person's account; a change from the same person's account, or in the gate, is still not checked.
 - It answers anyone on the team: its answers are what people follow when setting up their agents, so a wrong answer reaches every person at once.
 - Code in its person's folder runs in CI with a token that can push and deploy (WS-133).
 - Write anywhere in the repository: its push access is not limited to `people/angelo/` and `board/`, the paths its person's brief gives it.
@@ -55,4 +55,4 @@ Open questions: its connectors; who reviews its output each day; whether Angelo 
 
 ## Provenance {#provenance}
 
-Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 1, 4 November 2026, in `content/abp/` with its history in git.
+Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 2, 5 November 2026 (00:10 wake: seal.mjs's WS-152 fix), in `content/abp/` with its history in git.

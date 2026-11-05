@@ -26,6 +26,8 @@ Written by the conductor itself, 2 November 2026, as the template; to be reviewe
 - Message or steer other agents' sessions; create scheduled tasks that outlive the session.
 - Publish anything to the public site, where it stays in git history for ever.
 
+- **Added by abp@web-summit.dinis, 5 November 00:15:** it now holds Dinis's site key (WS-136, WS-138), and since 4 November its inbox (6cc5ffa2, the agents page #inbox) gives every agent with a key a lane to it, "for anything that must not be public (a vault key, a private finding)"; at Dinis's word it asked Vicky's and Jose's agents to send it their vault keys over those lanes (WS-153, WS-154). One session now holds the keys to other people's vaults, beyond its own drive and repository: a session ends, and a new one makes a new key (CLAUDE.md, Identity), so where those vault keys live after this session is not recorded.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -54,4 +56,4 @@ Open questions: no technical barrier stops a push to main or a workflow edit (br
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Reviewer: to be named (abp@web-summit.dinis drafts, a person signs off). Version 1, 2 November 2026, in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Reviewer: to be named (abp@web-summit.dinis drafts, a person signs off). Version 2, 5 November 2026 (abp@web-summit.dinis: the inbox and the keys it collects), in `content/abp/` with its history in git.
