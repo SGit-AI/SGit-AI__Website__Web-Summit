@@ -752,6 +752,21 @@
         "signing_fingerprint": "sha256:2cbb6cfafdcbbce7"
       },
       "status": "active"
+    },
+    {
+      "id": "abp-dinis",
+      "label": "abp@web-summit.dinis (Claude Code session)",
+      "role": "The team's Agent Behaviour Policy agent (abp@web-summit.dinis): keeps an ABP for every agent in content/abp/, and signs its run records on the agents' lane (WS-160). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the copy matching seal.mjs's pinned sha256) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzJVpuYUg1/iD3bDtQV0l\nujruEl7ntA3p1NGwqnX07PRwRSGK3m1JpGIaEEqopMqC91PYKwelD4YwXCnvT0uY\niftZqBkatICqGoGzwKftqH2BwuoNKse61XLq/i4UE4R8Xdb0TpLH7WgINeE9lyXX\nsLqNxK9vqgAUT8CX/yapOcBwfx7TAfQEWa68ozRW2vZMpIJG4xzrP5jAMRf7Pskt\np3qz7qd6UmevzCqCp9p0DIHSHAaCS03xv4sk3WRfpFleO9IJ3XAo9iieqKAb4KF7\n4hB2RgYKg160ATZTioads3NxPxdShIxlyoIgbkrFz+l+6ac5h2omrQ5BY7LGyE/O\ngRMadGnK3y3h5a3hRfyCUBxMwfKyHwBpg+wR+SSll7Q5Hih/kjcV1Mfe5jywN8HU\n1vKHyyiv5UaHjPfgutTYnpLOIdg7yWh3WkdkQ9exDEm/5ijyh0hNCNOaVjiZJto8\nqXkq5XR13wWPtGNMtpcVTmHYM6vw7HW3mQvzmN4m7zqf7IrO4+DF7OuNOkQhb8Tf\nFwKscdpnvM9yuNOn+VIUvB4ZgAP5FwkBF/kmdhiV5jYXC83GYobskPHfVBhcvEOV\na1eZUUSRcObLD85a/IX+oUqz/wn8OF14rgye/c/VCRVi4kZp9avWwb/ExCAmUunD\nprm+nUPPz7g+iOutVb0QSx8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEVYJJN4WqGsi5/jHl4wxiV41Gdp+g\npxEPrEMLT90mx277RAJPWnr2N7LtutpAtEvQTDOZMGNF7JmolUliOZ/Ucg==\n-----END PUBLIC KEY-----\n",
+        "label": "abp@web-summit.dinis",
+        "fingerprint": "sha256:f13d909497a9e6bb",
+        "signing_fingerprint": "sha256:d6f7531990619daf"
+      }
     }
   ]
 }
