@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.625",
+    "date": "2026-11-05",
+    "what": "my own tokens since wake 1: 177,635 fresh, 5,914,918 cache reads (Indi's report and guide, then wake 2)",
+    "by": "accountant@web-summit.indi",
+    "from": "558f12e9e"
+  },
+  {
     "version": "v0.2.624",
     "date": "2026-11-05",
     "what": "Angelo's area in the private CRM (people/angelo/), at his word",
