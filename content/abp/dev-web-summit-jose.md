@@ -30,6 +30,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 
 - **WS-39 decided by Jose** (4e6d3ef, 3 November): route 3, the n8n flow sends the draft to Jose only and Jose forwards it to the team's group; no gateway into the group, and no number, token, chat id or invite link in the repository (they stay in n8n's credentials). The send stays with a person: the rule holds by design. It holds n8n credentials, outside this repository.
 
+- **One door** (2191c0b2, at Jose's word, 5 November): Jose's agents take work only from conductor@web-summit.jose's task files (`people/jose/tasks/`), not from a commit addressed to them by anyone else; every ask for Jose goes through the conductor. A rule kept by each agent, which narrows who can give it work.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -59,4 +61,4 @@ Open questions: its connectors; who reviews its output each day; whether Jose ha
 
 ## Provenance {#provenance}
 
-Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 4, 4 November 2026 (04:10 wake: Jose's reviewer; 00:10 wake: WS-39 decided; 00:10 wake: WS-133), in `content/abp/` with its history in git.
+Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 5, 5 November 2026 (16:10 wake: one door; 04:10 wake: Jose's reviewer; 00:10 wake: WS-39 decided; 00:10 wake: WS-133), in `content/abp/` with its history in git.

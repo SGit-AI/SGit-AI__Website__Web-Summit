@@ -26,6 +26,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: t
 
 - **Code in its person's folder runs in CI** (WS-133, 4 November): `admin/build/build.mjs` runs `people/<id>/pages.mjs` and a person's own `app/data.mjs` in the release job, which holds a token that can push and deploy. Writing only in its own folder no longer bounds what it can do.
 
+- **One door** (2191c0b2, at Jose's word, 5 November): Jose's agents take work only from conductor@web-summit.jose's task files (`people/jose/tasks/`), not from a commit addressed to them by anyone else; every ask for Jose goes through the conductor. A rule kept by each agent, which narrows who can give it work.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -55,4 +57,4 @@ Open questions: its connectors; who reviews its output each day; whether Jose ha
 
 ## Provenance {#provenance}
 
-Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 4, 4 November 2026 (04:10 wake: Jose's reviewer; 00:10 wake: WS-133; 08:10 wake: main still unprotected), in `content/abp/` with its history in git.
+Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 5, 5 November 2026 (16:10 wake: one door; 04:10 wake: Jose's reviewer; 00:10 wake: WS-133; 08:10 wake: main still unprotected), in `content/abp/` with its history in git.

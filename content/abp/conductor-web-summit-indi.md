@@ -30,6 +30,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 
 - **Two conductor sessions** (2a0ce5f0, 4 November 10:57): Indi started a second while the first still runs and holds Indi's site key; the second published its own key beside the first (`conductor-indi-2`). Two sessions with the same name and the same mandate until Indi chooses one.
 
+- **It can open the team's private CRM** (WS-170, 237ee015): the private CRM's vault key is sealed to every person and to each person's conductor (`data/sealed/agents/`); the private CRM holds the coordination actions, each sealed to Dinis and its owner, and the public CRM's key.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -58,4 +60,4 @@ Open questions: its connectors; who reviews its output each day; whether Indi ha
 
 ## Provenance {#provenance}
 
-Owner: Indi. Drafted by abp@web-summit.dinis from the repository; Indi and the agent correct it. Version 3, 4 November 2026 (12:10 wake: two sessions; 08:10 wake: the person key, WS-138), in `content/abp/` with its history in git.
+Owner: Indi. Drafted by abp@web-summit.dinis from the repository; Indi and the agent correct it. Version 4, 5 November 2026 (16:10 wake: the private CRM; 12:10 wake: two sessions; 08:10 wake: the person key, WS-138), in `content/abp/` with its history in git.

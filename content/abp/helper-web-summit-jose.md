@@ -26,6 +26,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November; still at 08:15 on 3 November).
 - Anything its session's other connectors can do: not known to this ABP.
 
+- **One door** (2191c0b2, at Jose's word, 5 November): Jose's agents take work only from conductor@web-summit.jose's task files (`people/jose/tasks/`), not from a commit addressed to them by anyone else; every ask for Jose goes through the conductor. A rule kept by each agent, which narrows who can give it work.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -54,4 +56,4 @@ Open questions: its connectors; who reviews its output each day; whether Jose ha
 
 ## Provenance {#provenance}
 
-Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 1, 5 November 2026, in `content/abp/` with its history in git.
+Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 2, 5 November 2026 (16:10 wake: one door), in `content/abp/` with its history in git.

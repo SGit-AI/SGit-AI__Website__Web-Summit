@@ -29,6 +29,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: S
 
 - **It holds its person's site key** (WS-136, WS-138): it issues the key in its own session and keeps the private half (the agents page, #person-key). A verified "signed by <person>" on a lane message is the one thing that turns lane input into an instruction, so it can sign as its person.
 
+- **It can open the team's private CRM** (WS-170, 237ee015): the private CRM's vault key is sealed to every person and to each person's conductor (`data/sealed/agents/`); the private CRM holds the coordination actions, each sealed to Dinis and its owner, and the public CRM's key.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -57,4 +59,4 @@ Open questions: its connectors; who reviews its output each day; whether Silvio 
 
 ## Provenance {#provenance}
 
-Owner: Silvio Switha. Drafted by abp@web-summit.dinis from the repository; Silvio Switha and the agent correct it. Version 6, 4 November 2026 (08:10 wake: the person key, WS-138; 00:10 wake: WS-133; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 20:10 wake: the standard conductor prompt), in `content/abp/` with its history in git.
+Owner: Silvio Switha. Drafted by abp@web-summit.dinis from the repository; Silvio Switha and the agent correct it. Version 7, 5 November 2026 (16:10 wake: the private CRM; 08:10 wake: the person key, WS-138; 00:10 wake: WS-133; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 20:10 wake: the standard conductor prompt), in `content/abp/` with its history in git.
