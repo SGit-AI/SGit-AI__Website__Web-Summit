@@ -15,9 +15,9 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 
 ## What I'm doing {#doing}
 
-*Kept by procurement@web-summit.silvio at 07:30, 12:30 and 17:30 UTC (WS-94). Last update: Thu 5 Nov, 07:45 UTC.*
+*Kept by procurement@web-summit.silvio at 07:30, 12:30 and 17:30 UTC (WS-94). Last update: Thu 5 Nov, 12:45 UTC.*
 
-- **The merch order (WS-48):** **ordered** with the chosen printer. **Today:** its layouts to approve and its invoice (to Dinis to pay). Still waiting: Dinis's word to his designer agent for the final files (the next set on /print/#next, the logo on the left sleeve, black ink on the lavender hoodie); the printer has the Portuguese version, [/impressao/](../../impressao/index.html).
+- **The merch order (WS-48):** **ordered** with the chosen printer. **Today:** its layouts to approve and its invoice (to Dinis to pay). The designer agent's next set is complete (the logo on the left sleeve, black ink on the lavender hoodie, a Portuguese button on /print/); **only Dinis's yes** makes it final. The printer has it in Portuguese: [/impressao/](../../impressao/index.html).
 - **The print sign-off (WS-113):** 3 of 7; everyone signs again once the final set is out.
 - **The videos (WS-52, WS-71, WS-72):** my video agent has drafted the stand loop's shot list and captions, the titles and hashtags for both videos (English and Portuguese), and the pipeline as the repository shows it, for me to edit.
 
@@ -62,7 +62,7 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-05, from the boar
 | Due in 48 hours | **5** | WS-26, WS-75, WS-80, WS-149, WS-28 |
 | Nobody picked yet | **9** | WS-54, WS-126, WS-24, WS-40, WS-53, WS-120, WS-80, WS-28, WS-159 |
 | Agents active (7 days) | **6 of 8** | ████████░░ |
-| Messages for me (24 h) | **29** | `git log --since=yesterday --grep "For: .*web-summit.silvio"` |
+| Messages for me (24 h) | **30** | `git log --since=yesterday --grep "For: .*web-summit.silvio"` |
 | Pulse today | **0 of 3** | ░░░ |
 | Onboarding level | **L1** of L4 | █░░░ |
 
@@ -93,8 +93,8 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-05, from the boar
 | ● conductor@web-summit.silvio | Runs Silvio's other agents and keeps people/silvio/ | 9 | 11 | 11-05 05:08 UTC |
 | ● dev@web-summit.silvio | Builds what Silvio and the conductor ask for: this command centre, tools | 7 | 16 | 11-05 06:18 UTC |
 | ○ local@web-summit.silvio | Algarve options: printers, ads, prices, lead times | 0 | 0 | never |
-| ● outreach@web-summit.silvio | Targets, messages and follow-ups; drafts in Silvio's account, Silvio sends | 4 | 4 | 11-05 02:27 UTC |
-| ● procurement@web-summit.silvio | Quotes, orders and deliveries for what the team buys (WS-48); drafts only, Silvio approves | 16 | 46 | 11-04 17:50 UTC |
+| ● outreach@web-summit.silvio | Targets, messages and follow-ups; drafts in Silvio's account, Silvio sends | 5 | 5 | 11-05 12:22 UTC |
+| ● procurement@web-summit.silvio | Quotes, orders and deliveries for what the team buys (WS-48); drafts only, Silvio approves | 15 | 49 | 11-05 11:55 UTC |
 | ● video@web-summit.silvio | The pipeline to YouTube, Instagram and this site | 5 | 5 | 11-05 06:43 UTC |
 | ● sgit@web-summit.silvio |  | 0 | 4 | 11-03 04:13 UTC |
 | ○ dashboard@web-summit.silvio | Keeps Silvio's dashboard and asks one question a run | 0 | 0 | never |
