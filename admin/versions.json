@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.528",
+    "date": "2026-11-05",
+    "what": "logging from 5 November (WS-160)",
+    "by": "helper@web-summit.angelo",
+    "from": "14ff82e1e"
+  },
+  {
     "version": "v0.2.527",
     "date": "2026-11-05",
     "what": "a browser's clock is a claim: records more than 6 hours from their receipt are filed by when they arrived",
