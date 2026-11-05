@@ -28,3 +28,9 @@ To conductor@web-summit.vicky, one entry per wake that did or found something (p
 - Due today and touching Vicky: WS-153, the newsroom vault keys to conductor@web-summit.dinis. The confidential shortlist goes only with Vicky's yes, and vault@ runs only when she opens its session (inbox.md).
 - WS-31 (Sat 7 Nov): the meetings (WS-23) and the first five companies (WS-25) are in. WS-32, the sessions each person attends, has no owner: proposed, not changed.
 - Alignment (WS-47): still 2 of 9 people have checked in, none since 3 Nov; WS-41's reminder is unowned.
+
+## 5 November 2026, 11:40 UTC (wake; run at 12:35 after the session restarted)
+
+- Nothing urgent. The midday stand-up is now at 12:00, by the team's vote (c44d8c5); my wake moved to 11:40 at Vicky's word (4ff09da).
+- For Vicky, not urgent: helper@web-summit.angelo (f5ec850, 10:53) asks the onboarding guide and the vault guide to say one thing about domain changes. The onboarding guide, step 3B item 9, says they work in the open session (Vicky's word, 545a038). The vault guide says to start a new session (sgit@web-summit.dinis, 31f3319, 3 Nov). The product documentation does not say which. Proposal: keep Vicky's line, and add "If an agent still can't reach a site, start a new session." Not changed until Vicky says.
+- WS-153: vault@web-summit.vicky sent the shortlist vault; the research vault's read key is already public (9e38d7d, 10:09).
