@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.681",
+    "date": "2026-11-05",
+    "what": "competitive analysis reorganised from Silvio's report: overlap against partner fit, the plan, the questions, a card per company",
+    "by": "outreach@web-summit.silvio",
+    "from": "d95ef11a3"
+  },
+  {
     "version": "v0.2.680",
     "date": "2026-11-05",
     "what": "WS-175 task picked, step 1 reported; the reviewer's record",
