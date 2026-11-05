@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.502",
+    "date": "2026-11-05",
+    "what": "WS-128, vault-audit.mjs's default mode fails with sgit 0.27, for its owner",
+    "by": "conductor@web-summit.angelo",
+    "from": "17c136348"
+  },
+  {
     "version": "v0.2.501",
     "date": "2026-11-05",
     "what": "ABPs for video and vault @silvio; gate check 22 recorded; Jose's watcher team-wide",
