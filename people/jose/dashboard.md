@@ -2,7 +2,7 @@
 title: Jose's dashboard
 summary: The page Jose reads first. The top is built for Jose; the Actions section, the only list of what waits on him, is kept by his conductor (conductor@web-summit.jose); the rest, from the builder template, by his dashboard agent (dashboard@web-summit.jose): what happened, and what Jose and Jose's agents are doing.
 ---
-**Updated Thu 5 Nov, 14:25 UTC by `dashboard@web-summit.jose`; next update 17:30 UTC.** Everything on this page is an action, at your word (5 November: "transform it into actions"). Work down the list; each one has its link, and done ones drop off at the next update. [Your command centre](app/index.html) is becoming your first view (action 9).
+**Updated Thu 5 Nov, 17:35 UTC by `dashboard@web-summit.jose`; next update Fri 07:30 UTC.** Since 5 November (your rule, C19: "You are my only door"), [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest of the page (your lanes, your agents, your issues) by your dashboard agent. [Your command centre](app/index.html) is becoming your first view (it is on your Actions).
 
 ## Actions {#actions}
 
@@ -49,7 +49,7 @@ What you lead, in your words (4 November): *"technical conversations on agent se
 | **Agent security conversations** | WS-15 (the message), WS-26 (the targets, Thursday and Friday) | you | Nimay, Indi, Dinis, Silvio |
 | **The live demos: attacked, then governed** | WS-18, WS-108 (your two apps: run sheets and QR codes ready, your phone check left), WS-109 | you, conductor@web-summit.jose | Dinis, Nimay, Angelo |
 | **Voice and language agents** | WS-61 (the voice memo loop, Sat 7 Nov) | nobody yet | anyone |
-| **Automation and the machine** (your agents carry it for you) | WS-39, WS-74 (both picked), WS-37 (page views), WS-154, WS-160 | dev@, automation@, vault@, conductor@, watcher@web-summit.jose | Angelo, Dinis |
+| **Automation and the machine** (your agents carry it for you) | WS-39, WS-74 (both picked), WS-37 (page views), WS-120 (a vault-to-vault lane with Angelo, his side live since 17:27), WS-154, WS-160 | dev@, automation@, vault@, conductor@, watcher@web-summit.jose | Angelo, Dinis |
 
 Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault@web-summit.jose`.
 
@@ -58,7 +58,14 @@ Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault
 
 ## My agents {#agents}
 
-On schedule: conductor, dashboard, dev, watcher and automation; on demand: designer, sales-coach, and the reviewer on every push; every run is logged (WS-160). What is wrong with them is in the actions above (4 and 14). The full list: [agents.json](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/agents.json); the prompts: [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/kit/README.md). The improvements your designer proposed for everyone's command centre are WS-159 ("four improvements for the shared command centre"), for the engine's owners: nobody else's app changes unless they take it.
+**One door (C19):** your agents take new work only from your conductor's task files ([people/jose/tasks](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/jose/tasks)) and report back to it, not to you; anything that needs you reaches [Actions](#actions) through the conductor.
+
+- **On schedule:** conductor, dashboard, dev, watcher, automation, helper, and vault (11:40 and 17:40 UTC, draining its lanes).
+- **On demand:** designer, sales-coach (started 5 November for your RiskMandate pitch, its key published), the reviewer as a sub-agent on every push, and the accountant once a day in your conductor's 07:20 wake (each agent measures its own run).
+- **Proposed, waiting on you through your conductor:** new schedules with their token cost ([schedules.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/schedules.md), nothing switched yet), and a CRM agent, `crm@web-summit.jose`, as Angelo and Silvio have (asked of your conductor by Dinis's, 01da960).
+- **Anything wrong with them** (late runs, missing reviews) is on [Actions](#actions); your watcher's latest run is [here](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/latest.md).
+
+The full list: [agents.json](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/agents.json); the prompts: [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/kit/README.md). The improvements your designer proposed for everyone's command centre are WS-159 ("four improvements for the shared command centre"), for the engine's owners: nobody else's app changes unless they take it.
 
 ## My issues {#issues}
 

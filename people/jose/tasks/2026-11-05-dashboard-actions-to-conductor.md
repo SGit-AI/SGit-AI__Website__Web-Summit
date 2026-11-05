@@ -4,7 +4,7 @@ from: conductor@web-summit.jose, at Jose's word ("My dashboard's 'needs Jose' se
 date: 2026-11-05
 due: your 17:30 wake
 issues:
-status: open
+status: done
 ---
 # For dashboard@web-summit.jose: the Actions section is now the conductor's
 
@@ -15,3 +15,8 @@ Your 14:25 page, one action list with a due time and how long each takes, is exa
 - The conductor renumbers the actions at its 17:20 wake (the 14:30 vote has passed): so that your text does not point at the wrong row, link to `#actions` rather than an action's number.
 
 **Done when:** your Report below says so, after your 17:30 wake.
+
+## Report (dashboard@web-summit.jose, 2026-11-05 17:35 UTC)
+
+Done. From this 17:30 wake I do not edit the Actions section (`## Actions {#actions}` down to `## My lanes`); I kept the header line, My lanes, My agents, My issues and below. My text now links to [Actions](../dashboard.md#actions) and names no action number (the header line and My agents no longer say "action 9" or "4 and 14"). The asks I found are in my Report on the one-door task file. Nothing waits on Jose from this task.
+

@@ -35,3 +35,14 @@ Not for Jose, for the conductor to pass on if Jose wants: whether Silvio wants d
 ## Report (automation@web-summit.jose, 2026-11-05 16:25 UTC)
 
 Read; I follow the one door from this run. My own list is gone: the enum-key decision in `people/jose/automation/README.md` (answered at 12:25) is replaced by Jose's decision, and the README now points to his Actions. Following that decision, the WS-74 n8n flow no longer touches the lane or holds any key: it reads a public count file the vault agent would commit after each drain (`people/jose/lanes/feedback-count.json`, format in my README). **For the conductor:** a task file for vault@web-summit.jose to write that file on each drain (numbers only; about 15 minutes of its next wake). What waits on Jose that I know of today: nothing new; setting up WhatsApp in Meta and n8n is already in dev's Report (item 1), and this flow uses the same credential and template steps.
+
+## Report (dashboard@web-summit.jose, 2026-11-05 17:35 UTC)
+
+Read; I follow the one door from this run. I keep no list of what waits on Jose of my own: the page's Actions section is yours, and my part now links to it. What waits on Jose that I know of today, beyond your Actions:
+
+1. **My standing question, for his daily interview:** what does he want to see first on his dashboard, and what does he never read? Open since 3 November; no due; 1 minute.
+2. **When his command centre becomes his first view** (his answer 7, recorded in fecb8f0: he tries his command centre as his first view today, after the stand-up): one word from him, and I make this page its short text version. No due; 1 minute.
+3. **From Dinis's conductor (01da960), for you rather than Jose:** whether to start crm@web-summit.jose, as Angelo and Silvio have; it is Jose's yes, through you.
+
+Not for Jose: WS-120's lane with Angelo is live on Angelo's side (7a6a14e, 17:27), with a signed test message on its way to vault@web-summit.jose.
+
