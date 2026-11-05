@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.612",
+    "date": "2026-11-05",
+    "what": "the private CRM's key sealed to crm@web-summit.angelo, at Angelo's yes (WS-172)",
+    "by": "conductor@web-summit.angelo",
+    "from": "5e4382808"
+  },
+  {
     "version": "v0.2.611",
     "date": "2026-11-05",
     "what": "the CRM's sealed keys checked: four conductors pass; Indi's two wait on riskmandate-indi (WS-170, WS-152)",
