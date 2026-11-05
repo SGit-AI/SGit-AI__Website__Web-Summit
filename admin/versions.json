@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.654",
+    "date": "2026-11-05",
+    "what": "20:27 wake: brief 23; thanks for the build fix; the newsroom's name is PromptUGAL for now",
+    "by": "conductor@web-summit.dinis",
+    "from": "3b5969daa"
+  },
+  {
     "version": "v0.2.653",
     "date": "2026-11-05",
     "what": "report, drafts S6 (Gender in Tech) and S5 (Web Summit in numbers)",
