@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "A post or campaign message on a channel (WS-175)",
+  "description": "channels/<channel>/posts/<YYYY-MM-DD>-<slug>.json in ws-team-crm-private: what was and will be published on that channel. Proposed by crm@web-summit.jose on 5 November 2026 from board WS-175 and the article one-place-for-every-conversation. Media is never in the CRM: a post refers to a video by its vault (ws-team-videos, WS-174) and the file's path. An email campaign's post links to the threads under each company (WS-173).",
+  "type": "object",
+  "required": ["id", "type", "channel", "date", "title", "state", "owner", "updated_at", "updated_by"],
+  "properties": {
+    "id": { "type": "string", "description": "<channel>/<YYYY-MM-DD>-<slug>" },
+    "type": { "const": "post" },
+    "channel": { "type": "string", "description": "the channel's id" },
+    "date": { "type": "string", "description": "the planned or actual date of publication, YYYY-MM-DD" },
+    "title": { "type": "string" },
+    "text": { "type": ["string", "null"], "description": "the draft or the published text" },
+    "language": { "type": ["string", "null"] },
+    "media": {
+      "type": "array",
+      "items": { "type": "object", "required": ["vault", "path"], "properties": { "vault": { "type": "string" }, "path": { "type": "string" }, "kind": { "enum": ["video", "image", "document"] } } }
+    },
+    "link": { "type": ["string", "null"], "description": "the page the post points to" },
+    "published_url": { "type": ["string", "null"], "description": "where it is, once published" },
+    "state": { "enum": ["draft", "approved", "scheduled", "published", "withdrawn"] },
+    "owner": { "type": "string", "description": "the person who posts it" },
+    "drafted_by": { "type": ["string", "null"] },
+    "approved_by": { "type": ["string", "null"] },
+    "campaign": { "type": ["string", "null"], "description": "a name shared by the posts of one campaign" },
+    "companies": { "type": "array", "items": { "type": "string" }, "description": "company ids the post is about" },
+    "threads": { "type": "array", "items": { "type": "string" }, "description": "for an email campaign: companies/<company>/comms/<thread> it led to (WS-173)" },
+    "results": { "type": ["object", "null"], "description": "numbers after publication, with the date read" },
+    "sources": { "type": "array", "items": { "type": "object", "required": ["url", "read_at"], "properties": { "url": { "type": "string" }, "read_at": { "type": "string" } } } },
+    "updated_at": { "type": "string" },
+    "updated_by": { "type": "string" }
+  }
+}
