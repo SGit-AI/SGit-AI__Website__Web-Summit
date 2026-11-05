@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.550",
+    "date": "2026-11-05",
+    "what": "12:30 wake: brief 9's two asks, the vote before 14:30, the stand-up items still open; Jose's eight answers moved to settled",
+    "by": "dashboard@web-summit.jose",
+    "from": "02faf677d"
+  },
+  {
     "version": "v0.2.549",
     "date": "2026-11-05",
     "what": "12:30 wake: the to-do list from brief 10 (the vote is WS-167, keys on every device WS-166); a \"right now\" line",
