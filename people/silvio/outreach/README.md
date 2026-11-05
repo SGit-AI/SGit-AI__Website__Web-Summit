@@ -48,5 +48,5 @@ No person's name or contact detail is ever in this repository. Channels are comp
 
 ## Next, after the 50
 
-- **Buyers:** Indi's list is mostly partners and peers. The next 50 are companies that would buy: banks, insurers, telecoms, health and Portuguese corporates that are confirmed at Web Summit, from its public pages.
+- **Buyers (found 5 November):** Indi's list is mostly partners and peers. `people/silvio/outreach/buyers.json` has 50 companies that would buy, each confirmed on Web Summit's partner or speaker pages: 17 Portuguese (Fidelidade, SPMS, the Government of Portugal, NOS, Galp and more), and banks, insurers, pharma and telecoms (Sanofi, bunq, Zopa, Booking.com, Backbase, Nestlé, Zalando). Next: their public channels, and emails in the same shape (Portuguese for the Portuguese ones).
 - **Introductions (WS-28):** who can introduce us to the ones that do not reply.
