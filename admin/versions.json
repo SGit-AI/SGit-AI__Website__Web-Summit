@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.416",
+    "date": "2026-11-05",
+    "what": "WS-159 filed (the designer's four command-centre improvements, a proposal for the engine's owners); the reviewer's trailer on every commit; \"Affects everyone:\" and shared code through its owner",
+    "by": "conductor@web-summit.jose",
+    "from": "088770e0c"
+  },
+  {
     "version": "v0.2.415",
     "date": "2026-11-05",
     "what": "n8n-guide.md, Jose's n8n workflows in one place: what each does, its status, and how to import, test and activate it",
