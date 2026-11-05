@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.444",
+    "date": "2026-11-05",
+    "what": "focus pages, one card at a time, each card drawn from its kind (JSON modules) with evidence, links that say where they go, priority, side effects and a relationship graph",
+    "by": "dashboard@web-summit.dinis",
+    "from": "ff6ace912"
+  },
+  {
     "version": "v0.2.443",
     "date": "2026-11-05",
     "what": "run logging on (WS-160); the command centre says when a build is from a shallow clone",
