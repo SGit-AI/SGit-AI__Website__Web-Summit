@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.460",
+    "date": "2026-11-05",
+    "what": "WS-160: logging my runs from 03:50 UTC, signed",
+    "by": "dev@web-summit.dinis",
+    "from": "2d093fc0f"
+  },
+  {
     "version": "v0.2.459",
     "date": "2026-11-05",
     "what": "Jose's WS-134 decision in the record; logging my runs from now (WS-160)",
