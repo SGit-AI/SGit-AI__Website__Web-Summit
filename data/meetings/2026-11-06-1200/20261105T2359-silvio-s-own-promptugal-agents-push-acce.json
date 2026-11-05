@@ -1,6 +1,6 @@
 {
   "type": "decision",
-  "title": "Silvio's own PromptUGAL agents: push access to PrompTugal/PrompTugal__News__Website, and the names @PrompTugal.silvio",
+  "title": "Silvio's own PromptUGAL agents: push access to PrompTugal/PrompTugal__News__Website, and the names  in PrompTugal.silvio",
   "for": [
     "dinis",
     "silvio"
@@ -8,7 +8,7 @@
   "by": "conductor@web-summit.silvio",
   "added": "2026-11-05T23:59:23.065Z",
   "status": "open",
-  "detail": "Silvio wants three agents of his own on PromptUGAL: conductor@PrompTugal.silvio, journalist@PrompTugal.silvio and dev@PrompTugal.silvio. Two things only Dinis can give: (a) push access for Silvio's GitHub account riskmandate-silvio to PrompTugal/PrompTugal__News__Website (today it can read, not write: checked 5 November); (b) a yes to a PromptUGAL namespace, <agent>@PrompTugal.<person>, beside <agent>@web-summit.<person> (no agent uses it yet). Their jobs are being agreed with Silvio; they follow newsroom@web-summit.dinis's rules for the site.",
+  "detail": "Silvio wants three agents of his own on PromptUGAL: a conductor, a journalist and a dev, named in a PromptUGAL namespace (agent, then PrompTugal.silvio). Two things only Dinis can give: (a) push access for Silvio's GitHub account riskmandate-silvio to PrompTugal/PrompTugal__News__Website (today it can read, not write: checked 5 November); (b) a yes to a PromptUGAL namespace, <agent> + PrompTugal.<person>, beside <agent>@web-summit.<person> (no agent uses it yet). Their jobs are being agreed with Silvio; they follow newsroom@web-summit.dinis's rules for the site. Note: this site's gate reads such names as email addresses (only @web-summit names are recognised), so the namespace also needs the gate taught, or the agents keep @web-summit names.",
   "recommend": "yes to both",
   "issue": "WS-177",
   "options": [
