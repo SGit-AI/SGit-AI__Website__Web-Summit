@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.447",
+    "date": "2026-11-05",
+    "what": "focus pages: All clear hides the last card, and says plainly what is still not sent, with Submit there",
+    "by": "dashboard@web-summit.dinis",
+    "from": "24c77981a"
+  },
+  {
     "version": "v0.2.446",
     "date": "2026-11-05",
     "what": "focus pages: the answers at the top and in reach, one click records (with Undo), Submit in the same row, and the top bar kept",
