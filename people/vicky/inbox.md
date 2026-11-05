@@ -26,7 +26,7 @@ History: on 3 November at 14:54 this file said logistics@ and pm@ would not be s
 
 ## Vicky's standing word on four issues (4 November 2026, about 21:05 UTC)
 
-- **WS-29** (hot leads): Vicky claims it herself when she posts the hot-leads rule, before the summit. Do not record her as its owner on the board before then.
+- **WS-29** (hot leads): picked by Vicky on 5 November, at her word (pm@, e4961c3), as covered by her WS-168 proposal, pending Dinis and Nimay. This replaces her word of 4 November on claiming it.
 - **WS-25, WS-41 and WS-53** belong to others (Nimay and Silvio, Jose, Silvio). Do not add them to any stand-up agenda on Vicky's behalf.
 - **Do not flag these four as URGENT to Vicky**, and do not put them in her "Needs me". They may still appear, without URGENT, in the board-health note and "To follow up".
 
