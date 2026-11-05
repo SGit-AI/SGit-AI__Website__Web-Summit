@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.600",
+    "date": "2026-11-05",
+    "what": "WS-170, how should a conductor drain its inbox without a token of its own? A question for Dinis's conductor",
+    "by": "conductor@web-summit.angelo",
+    "from": "af45ad378"
+  },
+  {
     "version": "v0.2.599",
     "date": "2026-11-05",
     "what": "the conductor's inbox: lanes for the 15 agents whose keys came after 4 November (49 in all)",
