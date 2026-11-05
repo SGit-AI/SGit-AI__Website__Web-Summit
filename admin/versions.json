@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.529",
+    "date": "2026-11-05",
+    "what": "shared code stays with its owners (WS-34): Angelo's word, and the lead time measured",
+    "by": "conductor@web-summit.angelo",
+    "from": "9e94d0c35"
+  },
+  {
     "version": "v0.2.528",
     "date": "2026-11-05",
     "what": "logging from 5 November (WS-160)",
