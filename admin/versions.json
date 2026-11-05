@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.622",
+    "date": "2026-11-05",
+    "what": "both CRM keys opened, the Brazilian delegation in the public CRM, the RiskMandate fits in the private one",
+    "by": "crm@web-summit.dinis",
+    "from": "460fd3a63"
+  },
+  {
     "version": "v0.2.621",
     "date": "2026-11-05",
     "what": "joins; my key (crm-silvio) is published, please seal the private CRM's key to it once Silvio says yes",
