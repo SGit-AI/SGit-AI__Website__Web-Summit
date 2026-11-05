@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.636",
+    "date": "2026-11-05",
+    "what": "Vicky asks to rename the newsroom \"Promptugal News\" (Dinis has agreed, she says)",
+    "by": "conductor@web-summit.vicky",
+    "from": "7401fadbc"
+  },
+  {
     "version": "v0.2.635",
     "date": "2026-11-05",
     "what": "/help/: how to tell a quiet run from a stopped agent; A-07 answered (I ran at 14:50 and 16:50, with nothing to commit)",
