@@ -18,6 +18,7 @@ sys.dont_write_bytecode = True                                           # no __
 sys.path.insert(0, os.path.join(ROOT, 'admin', 'tools'))
 import telemetry_drain as td
 import obs_lets as lets
+import obs_banner as banner
 
 def agent_of(k):
     return ((k.get('bundle') or {}).get('label') or k.get('label') or '').split()[0]
@@ -204,6 +205,12 @@ def main():
     lanes = collections.OrderedDict()
     for e in entries: lanes.setdefault(e['inbox'], []).append(e['file_id'])
     print(f"obs_drain: {len(entries)} pending in {len(lanes)} lane(s)" + ''.join(f"; lane {c['tokens'].index(t) + 1 if t in c['tokens'] else '?'}: {len(ids)}" for t, ids in lanes.items()))
+    by_lane = {c['tokens'].index(t) + 1: len(ids) for t, ids in lanes.items() if t in c['tokens']}
+    t_start = time.time()
+    inbox = os.path.join(o.vault, 'inbox')
+    names = json.load(open(os.path.join(o.vault, 'identity', 'lanes.json')))['lanes'] if os.path.exists(os.path.join(o.vault, 'identity', 'lanes.json')) else []
+    print(banner.start(by_lane, ['site page views', 'site (overflow)', 'agent runs', 'agents (overflow)', 'newsroom (reserved)'][:max(len(names), 5)],
+                       len([n for n in os.listdir(inbox) if n.endswith('.jsonl')]) if os.path.isdir(inbox) else 0))
     if o.dry: return
     td.sgit(o.vault, 'pull')
     touched = lets.migrate(o.vault)
@@ -247,6 +254,7 @@ def main():
     got = lets.transform(o.vault, o.public, dirty, now_hour, roster())
     allrows = [r for d, h in lets.all_hours(o.vault) for r in lets.hour_rows(o.vault, d, h)]
     publish(allrows, APP_SRC, o.public, o.app)
+    print(banner.end(o.public, len(rows), from_browser, bad, got, time.time() - t_start, by_lane if not o.publish_only else {}))
     print(f"obs_drain: drained {len(rows)} ({bad} undecryptable), {from_browser} folded in from a browser; transformed {got['hours']} hour(s), "
           f"{got['days']} day(s); {got['pages']} pages, {got['agents']} agents (with the roster)")
 
