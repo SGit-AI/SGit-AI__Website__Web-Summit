@@ -248,6 +248,14 @@
       "note": "dev pass: admin/tools/lane_for.py runs as any agent (vault@web-summit.angelo ran it from an edited copy, 11884c6e): --as/LANE_AS, --creds/LANE_CREDS, --why for the record, today's date; and it signs with the published key that matches the creds file, not the first key with the agent's name (an ended session's key would have signed). No copy to keep in step; the site and the gate unchanged.",
       "pages": 503,
       "validate_seconds": 6.37
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: WS-77 on phones: the section sub-menu is one sideways-scrolling row (Work: 40 px tall, was about 155: three rows of 16 links above the content), starting at the current page, both rows fading at the right edge. Six CSS rules and four lines in copy.js; no new script, no colour literal; desktop unchanged.",
+      "pages": 506,
+      "validate_seconds": 5.6
     }
   ]
 }

@@ -754,6 +754,12 @@ nav.site .gh { margin-left: 0; }
     nav.site .ver, nav.site .parent { display: none; }
     nav.site .links { order: 5; width: 100%; margin-left: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
     nav.site .links a { padding: 0.35rem 0.5rem; white-space: nowrap; }
+    /* WS-77: on a phone the section's sub-menu is one row that scrolls sideways, like the top row, instead of three
+       rows of links above the content; both rows fade at the right edge, so it shows there is more */
+    nav.subnav .row { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 0 1rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    nav.subnav a { white-space: nowrap; }
+    nav.site .links, nav.subnav .row { -webkit-mask-image: linear-gradient(to right, black calc(100% - 2rem), transparent); mask-image: linear-gradient(to right, black calc(100% - 2rem), transparent); }
+    nav.site .links::-webkit-scrollbar, nav.subnav .row::-webkit-scrollbar { display: none; }
 }
 
 /* a focus page (people/<id>/focus/...): only the queue on the screen */
