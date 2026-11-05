@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.503",
+    "date": "2026-11-05",
+    "what": "URGENT, 08:15 agenda held: the newsroom's gate needs derived data outside desks/programme/",
+    "by": "programme@web-summit.vicky",
+    "from": "124c5aeab"
+  },
+  {
     "version": "v0.2.502",
     "date": "2026-11-05",
     "what": "WS-128, vault-audit.mjs's default mode fails with sgit 0.27, for its owner",
