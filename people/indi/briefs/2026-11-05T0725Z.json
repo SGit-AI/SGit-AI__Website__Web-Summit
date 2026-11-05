@@ -1,0 +1,77 @@
+{
+  "number": 9,
+  "date": "5 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Morning: the newsroom is live with your look; vote and review before 13:00",
+  "when": "5 November 2026, 07:25 UTC (scheduled wake; since brief 8, 17:25 UTC)",
+  "by": "conductor@web-summit.indi",
+  "headline": "You now have write access to the newsroom repository, and your patch is live: the newsroom is The Lisbon Wire, v0.1.12. Dinis's conductor asks you to vote on the stickers before 13:00 as a test of the whole key flow, and to review the newsroom. Your site key (WS-136) is the first step. Nothing is decided here.",
+  "stats": [
+    {"n": "live", "label": "your newsroom patch, applied at 01:45 UTC (dcdac37)"},
+    {"n": "yes", "label": "push access to the newsroom repository (checked 07:25, nothing pushed)"},
+    {"n": "12", "label": "agents of yours on the roster, 11 running"},
+    {"n": "14:30", "label": "sticker voting closes; Dinis asks for your vote before 13:00"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Add your site key, then vote on the stickers (WS-136, WS-159)",
+      "detail": "You need your key first: the vote is signed with it. Open the link or QR I sent on 4 November. Then open https://web-summit.sgit.ai/stickers/vote/ in the same browser, rank your top 10 of 23, and press Submit. Your initial should turn to 'voted' within a minute. If anything fails, say exactly what you saw. Dinis wants this before 13:00 so there is time to fix what breaks.",
+      "options": ["now, from this morning", "before 13:00", "ask me for a fresh key link"],
+      "recommend": "Now: it also closes your WS-136, which was due at 18:00 yesterday."
+    },
+    {
+      "id": "2",
+      "ask": "Review the newsroom and the cards, and tell Dinis what is wrong or missing",
+      "detail": "Newsroom: the front page, one company profile, the agenda and the graph at https://web-summit.newsroom.sgit.ai/graph/. Cards: https://web-summit.sgit.ai/cards/#r4. Dinis's designer redesigned them at 04:18, so check first whether that already covers the fixes your designer agent owed by 09:00 UK time (WS-155).",
+      "options": ["review both this morning", "newsroom first", "cards first"],
+      "recommend": "Cards first: the order for the printer on Friday depends on them."
+    },
+    {
+      "id": "3",
+      "ask": "Drain the sticker votes once, before 14:30",
+      "detail": "You are one of four drainers (with Angelo, Jose and Dinis). The vault key and the drain passphrase are sealed to your site key at https://web-summit.sgit.ai/stickers/vote/vault/. You need your SG/Send access token for the lock. I hold the private half of your site key, but I will not open it for you: this is yours to do.",
+      "options": ["drain once after a few votes", "ask another drainer to", "skip"],
+      "recommend": "Drain once around 13:30, after most votes are in."
+    }
+  ],
+  "you_asked": [
+    {"at": "4 Nov, 13:00 UTC", "said": "Can you add a task to his dashboard to say that he needs to give me access to his repo", "done": "WS-145. Dinis completed it from his cockpit at 02:06 UTC. Push access to the newsroom repository is confirmed.", "where": "board/WS-145", "status": "done"},
+    {"at": "4 Nov, 12:40 UTC", "said": "Dinis says to refer to https://web-summit.newsroom.sgit.ai/brief/ ... action any changes", "done": "The patch followed the pack, and newsroom@web-summit.dinis applied it.", "where": "dcdac37 in the newsroom repository", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "1. What happened overnight",
+      "items": [
+        "newsroom@web-summit.dinis applied your patch (dcdac37) and then released v0.1.12: the reading meter, top-ups, the account and the vault login.",
+        "Dinis's conductor wrote to me at 04:38 (WS-159): vote, review, drain. That is the three asks above.",
+        "Your other agents worked through the night: messaging, factory and builder drafts (WS-15, WS-19, WS-22, WS-26, WS-27, WS-59, WS-109), a UX page in plain words for you (WS-06), a stickers page and the cards brief from your designer, your first journalist report, and an accountant agent that measures what your agents cost (WS-148).",
+        "dashboard@web-summit.indi keeps a to-do list for you at people/indi/todo/todo.json."
+      ]
+    },
+    {
+      "title": "2. Checked on the live newsroom at 07:25 UTC",
+      "items": [
+        "The front page loads as The Lisbon Wire, v0.1.12, with no em-dashes, and says it is independent of Web Summit and that the same team works on RiskMandate.",
+        "The brief pack's own page titles run 12 to 15 words, while brief 8 sets a limit of under 12 for article titles. The gate enforces it only on articles, so nothing is broken, but it is one for Dinis to know."
+      ]
+    },
+    {
+      "title": "3. From your mentor (19:41, yesterday)",
+      "items": ["Your key is still waiting. Try the accountant's daily brief to see which agents are worth their run."]
+    }
+  ],
+  "next": [
+    "13:00 stand-up (the moved one may run later: the schedule is on the stand-ups page).",
+    "Your agents are on the roster, and which desks start for the newsroom is yours to say once Dinis confirms the split.",
+    "12:20: my next wake.",
+    "Tell me 'acknowledge' when you have read briefs 1 to 9."
+  ],
+  "sources": [
+    "git log since 17:20 UTC on 4 November: 44fc99a, 447252d, dcdac37 (newsroom), 0167632, 0a5b013, 661cb69, fa41ed8",
+    "board/WS-145, WS-141, WS-136, WS-159 (in the commit 44fc99a)",
+    "the push check on the newsroom repository at 07:25 UTC: dry run accepted",
+    "https://web-summit.newsroom.sgit.ai/ at 07:25 UTC: v0.1.12",
+    "people/indi/mentor/2026-11-04-1941.md"
+  ]
+}
