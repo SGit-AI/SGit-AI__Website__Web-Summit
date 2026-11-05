@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.648",
+    "date": "2026-11-05",
+    "what": "session key published (signing sha256:f3c5113e46068c5c)",
+    "by": "journalist-portugal@web-summit.vicky",
+    "from": "05968dfad"
+  },
+  {
     "version": "v0.2.647",
     "date": "2026-11-05",
     "what": "ABPs for the CRM agents, policy@angelo and Vicky's newsroom journalist and designer",
