@@ -23,3 +23,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - The four owners (WS-25, WS-29, WS-41, WS-53) stay at the top for the 18:00; pm@ already marked them URGENT (5a30a53), so I do not repeat it.
 - Still open from my 12:55 report: has the dev agent's first tool been decided (brief 3, item 1)?
 - 17:58: WS-100 dropped from "Needs me": done at Vicky's word, the guide final (95345bb). The deploy queue is slow (runs 543 to 547 queued or cancelled behind each other); my 17:45 release was still in progress at 17:53.
+
+## Thu 5 Nov 2026, 07:58 UTC (wake)
+
+- Dashboard refreshed under Vicky's standing word (inbox.md, b7fea6d): WS-25, WS-29, WS-41 and WS-53 are out of "Needs me", and WS-41 and WS-53 sit in "To follow up" without URGENT.
+- New in "Needs me": WS-153 (vault keys to Dinis's conductor, today), WS-149 (her line on the show page, today), WS-163 (her photo, Fri), and the newsroom researcher running by Friday (the 18:00 sync action item, bf4bacd).
+- Dropped: the dev agent's first tool, since its 08:00 wake is now; nothing in reports/dev.md since 4 Nov 11:10. Question for Vicky: has it been given its first tool?
+- To follow up: WS-32 (sessions, Sat) is the last input WS-31 misses (people/vicky/board-health.md, 07:40); Nimay stuck at L1 on WS-09 (13:00 agenda).
