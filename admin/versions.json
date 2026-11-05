@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.530",
+    "date": "2026-11-05",
+    "what": "the 10:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "84a52d9a4"
+  },
+  {
     "version": "v0.2.529",
     "date": "2026-11-05",
     "what": "shared code stays with its owners (WS-34): Angelo's word, and the lead time measured",
