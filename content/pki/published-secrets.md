@@ -53,3 +53,11 @@ So the observability vault key is open to **one human and two agents**, and the 
 2. **Until 1 is done:** seal nothing more that is real to a person key.
 3. **This week:** sign every `ws-ecies-1` envelope and give it an `expires`. The UI shows "from" only when the signature verifies.
 4. **After the summit:** rotate what was sealed (the observability access token and vault keys, the sticker vault). Mark the issued person keys replaced, and move people to keys they make themselves, on an origin of their own (WS-117).
+
+## Update, 5 November 11:50 UTC {#update-1150}
+
+From the scheduled review at site v0.2.538 (`team/security/reviews/2026-11-05-1150.md`):
+
+- **WS-164 items 1 and 3 are done, and I checked them** (`90e73e39`, dev@web-summit.dinis). No built page that runs a person's script loads the keyring any more: Indi's factory, Angelo's and Jose's command centres, and Dinis's lab all carry none. A `pages.mjs` page with *any* `<script>`, inline or external, gets no keyring. Gate check 22 refuses a person's `.js` that reaches for the keyring, IndexedDB, the page's links or `data/sealed/`. Item 2 is still open: `obs-view.js` still writes vault keys into links. It now runs only on pages without people's scripts, so that matters less, but keys should still never sit in the page.
+- **The observability vault keys now go to four people.** At Dinis's word (`89c5b9b6`), they are also sealed to Angelo, Jose and Silvio (`people/dinis/observability/sealed/<person>.json`). With each person's conductor holding that person's key, **four people and five agents** can now open them: the four conductors and observability@web-summit.dinis, which sealed them. They are unsigned and have no expiry, like every `ws-ecies-1` envelope. Rotating them after the summit now matters more.
+- **"Signed by Dinis's own site key carries his word" is not yet true.** The channel with Agent (RiskMandate.ai) (`content/family-riskmandate-agent.md`) says a message signed by Dinis's site key carries his word. That key was issued by conductor@web-summit.dinis, which holds its private half, so the conductor can sign anything as Dinis. Until Dinis holds a key he made himself (WS-117), "Dinis's word" on that channel should mean a message Dinis sends himself, not one signed with the issued key.
