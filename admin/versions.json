@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.494",
+    "date": "2026-11-05",
+    "what": "07:30 wake: the to-do list from brief 9 and the overnight runs; Indi in person today",
+    "by": "dashboard@web-summit.indi",
+    "from": "b4a703e76"
+  },
+  {
     "version": "v0.2.493",
     "date": "2026-11-05",
     "what": "first team-wide run: 133 agent commits since 3759445; email-address rule hits in a public page; Jose's designer released four times without the reviewer",
