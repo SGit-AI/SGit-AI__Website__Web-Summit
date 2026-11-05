@@ -446,7 +446,7 @@ const vaultAppHtml = (person, id) => {
     if (!v) throw new Error(`vault-app ${person} ${id}: no such vault in people/${person}/vaults.json`)
     if (!/^sgit_public_read_[0-9a-f]{64}$/.test(String(v.read_key || ''))) throw new Error(`people/${person}/vaults.json: "${v.name}" needs a read_key of the form sgit_public_read_<64 hex> (never a vault key)`)
     const n = ++VAULT_APPS, k = `va${n}`
-    return `<div class="vault-app" id="${k}"><p><button type="button" data-mode="app">Open the app</button> <button type="button" data-mode="vault">Browse its files</button> <button type="button" data-fs hidden>Full screen</button></p>` +
+    return `<div class="vault-app" id="${k}"><p><button type="button" data-mode="app">Open the app</button> <button type="button" data-mode="vault">Browse its files</button> <button type="button" data-fs hidden>Full screen</button> <button type="button" data-newwin>Open in a new window</button></p>` +
         `<p class="meta" data-note>${esc(v.name)} (<code>${v.vault_id}</code>), read only. Opens <code>dev.vault.sgraph.ai</code> in a frame and hands it this page's published read key.</p>` +
         `<iframe title="${esc(v.name)}, the vault opened read-only" allow="fullscreen" allowfullscreen hidden style="width:100%;height:70vh;border:1px solid #ccc;border-radius:6px"></iframe></div>` +
         `<script>(function(){var O='https://dev.vault.sgraph.ai',C=${JSON.stringify(v.read_key + ':' + v.vault_id)},b=document.getElementById('${k}'),f=b.querySelector('iframe'),t=b.querySelector('[data-note]'),fs=b.querySelector('[data-fs]'),armed=null,T=null;` +
@@ -456,7 +456,7 @@ const vaultAppHtml = (person, id) => {
         `function mount(m){armed=m;f.hidden=false;fs.hidden=false;t.textContent='Connecting to the vault...';f.src=O+(m==='vault'?'/en-gb/vault/':'/en-gb/app/')+'?embed=1&parent='+encodeURIComponent(location.origin);clearTimeout(T);` +
         `T=setTimeout(function(){if(m==='app'){f.src=O+'/#'+encodeURIComponent(C);t.textContent='The handshake timed out; opened by the link instead.';}else{t.textContent='The handshake timed out. Reload and try again.';}},12000);}` +
         `b.querySelectorAll('[data-mode]').forEach(function(x){x.addEventListener('click',function(){mount(x.getAttribute('data-mode'));});});` +
-        `fs.addEventListener('click',function(){try{if(f.requestFullscreen)f.requestFullscreen();}catch(e){}});}());</script>`
+        `fs.addEventListener('click',function(){try{if(f.requestFullscreen)f.requestFullscreen();}catch(e){}});b.querySelector('[data-newwin]').addEventListener('click',function(){window.open(O+'/#'+encodeURIComponent(C),'_blank','noopener');});}());</script>`
 }
 // the live observability panel: ```obs-live <person> <vault id>``` (observability@web-summit.dinis, 5 November 2026). The
 // page reads the vault itself, in the browser, with sgit.ai's reader (assets/vendor/sgit-ai/2026-11-05/vault-embed.js):

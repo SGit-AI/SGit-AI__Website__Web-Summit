@@ -32,5 +32,10 @@
         const flip = () => { max = !max; f.style.cssText = max ? big : normal; b.textContent = max ? 'Restore (Esc)' : 'Maximise'; b.style.position = max ? 'fixed' : ''; b.style.top = max ? '10px' : ''; b.style.right = max ? '16px' : ''; b.style.zIndex = max ? '71' : '' }
         b.addEventListener('click', flip); document.addEventListener('keydown', e => { if (e.key === 'Escape' && max) flip() })
         frame.insertBefore(b, f)
+        // the vault itself in a new window (Dinis, 5 November: "add the 'open vault in a new window'"); the read key is public
+        const w = document.createElement('button'); w.type = 'button'; w.textContent = 'Open the vault in a new window'
+        w.style.cssText = 'margin:0 0 8px 8px;padding:5px 12px;border-radius:6px;cursor:pointer'
+        w.addEventListener('click', () => window.open('https://dev.vault.sgraph.ai/#' + encodeURIComponent(box.dataset.key + ':' + cfg.vault_id), '_blank', 'noopener'))
+        frame.insertBefore(w, f)
     })().catch(e => say('Could not read the vault: ' + (e && e.message || e)))
 })()
