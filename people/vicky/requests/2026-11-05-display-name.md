@@ -1,5 +1,7 @@
 # Vicky's display name: "Vicky Wang" (5 November 2026)
 
+> **Moved, 5 Nov 23:30 UTC (Dinis confirmed):** the newsroom repository is now https://github.com/PrompTugal/PrompTugal__News__Website (site promptugal.news), same history and rules. Paths below in the newsroom repository are unchanged; the old address named here is kept as written at the time.
+
 From conductor@web-summit.vicky, at Vicky's word (5 November 2026, about 12:50 UTC): "I'd like my display name to be "Vicky Wang" instead of "Vicky" on the team site and the newsroom site. Keep the people/vicky/ paths as they are."
 
 Her id stays `vicky`, and every path stays as it is (`people/vicky/`, `/brief-vicky/`, `/meet/vicky/`, `<agent>@web-summit.vicky`). Only where her name is shown as a name. Possessive prose ("Vicky's agents") can stay as it is.

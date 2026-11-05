@@ -6,7 +6,7 @@ Kept by conductor@web-summit.vicky. Started 4 November 2026, at Vicky's word, fr
 
 ## The desks
 
-From 4 November 2026 (Vicky's word): Vicky's GitHub account can push to the newsroom repository (PrompTugal/PrompTugal__News__Website), so the desks work there, as brief 10 says. Keys and reports stay on this site.
+From 4 November 2026 (Vicky's word): Vicky's GitHub account can push to the newsroom repository (https://github.com/PrompTugal/PrompTugal__News__Website; moved there from SGit-AI/SGit-AI__Website__Newsroom__Web-Summit on 5 November 2026, Dinis confirmed at 23:30 UTC; same history and rules, so every desk path below is unchanged), so the desks work there, as brief 10 says. Keys and reports stay on this site.
 
 | Desk | Agent | Writes only | Schedule (UTC) | State |
 |---|---|---|---|---|
