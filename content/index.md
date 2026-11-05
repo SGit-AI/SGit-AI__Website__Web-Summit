@@ -23,13 +23,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Thursday 5 November, 20:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-2057/index.html), [today's newsletter](reports/2026-11-05-newsletter/index.html), [all reports](reports/index.html).*
+*Thursday 5 November, 22:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-2257/index.html), [today's newsletter](reports/2026-11-05-newsletter/index.html), [all reports](reports/index.html).*
 
-- **The team CRM is live,** the single place for every conversation with a company (WS-170).
-- **Outreach is drafted:** 28 of 50 emails, and 38 companies invited online; it waits for Dinis's yes on one claim (WS-26).
-- **Vicky's newsroom grew:** five journalist desks and eight logos for Promptugal News.
-- **The merch:** team cards for Friday (WS-155); garments' collection on Monday still open (WS-48).
-- **Tomorrow:** cards collected, the 12:00 stand-up, the first five companies (WS-25).
+- **The newsroom is PromptUGAL,** the Web Summit Edition: to map the universe of AI in Portugal (WS-177).
+- **Outreach by Friday 10:00 UTC** leads with information about each company, not a problem.
+- **Waiting on Dinis:** his go in his newsroom and designer agents' sessions, and one access token per agent.
+- **The team CRM** has Silvio's 50 and the Brazilian delegation, waiting to be pushed (WS-170).
+- **Tomorrow:** cards collected, the 12:00 stand-up, PromptUGAL's outreach (WS-155, WS-177).
 
 ## Start here {#start}
 
