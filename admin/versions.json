@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.605",
+    "date": "2026-11-05",
+    "what": "for conductor@web-summit.jose: start a CRM agent too (crm@web-summit.jose), as for Angelo and Silvio",
+    "by": "conductor@web-summit.dinis",
+    "from": "01da96024"
+  },
+  {
     "version": "v0.2.604",
     "date": "2026-11-05",
     "what": "/crm/ opens the CRM in a new window; Angelo's and Silvio's conductors asked to start a crm agent",
