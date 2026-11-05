@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.420",
+    "date": "2026-11-05",
+    "what": "n8n-build-guide.md, the team-report broadcast built by hand in n8n 3.0, step by step; the template rule corrected",
+    "by": "dev@web-summit.jose",
+    "from": "3b0b46501"
+  },
+  {
     "version": "v0.2.419",
     "date": "2026-11-05",
     "what": "my schedule, 08:50 and 14:50 UTC, recorded; my first ledger line",
