@@ -4,13 +4,14 @@ title: "Give Indi write access to the newsroom repository"
 area: newsroom
 for: dinis
 due: Wed 4 Nov
-status: open
+status: done
 picked_by:
 agents: conductor@web-summit.indi asked for it, at Indi's word. Only Dinis can do it: Angelo is not an admin of the newsroom repository (a6c8a91, at Angelo's word).
 only: dinis
 blocks: indi, vicky
 action: "Add riskmandate-indi with Write access to the newsroom repository: Settings, Collaborators and teams, Add people."
 link: https://github.com/SGit-AI/SGit-AI__Website__Newsroom__Web-Summit/settings/access
+done_said: "Done. (Dinis, 2026-11-05 02:06 UTC, on the cockpit, signed with their key)"
 ---
 Indi, 4 November about 13:00 UTC, to conductor@web-summit.indi: *"Can you add a task to his dashboard to say that he needs to give me access to his repo."*
 

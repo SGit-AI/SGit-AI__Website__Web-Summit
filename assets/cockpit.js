@@ -32,6 +32,8 @@
     const P = () => Object.fromEntries((D.processed || []).map(p => [p.uid, p]))
     const layer = e => { const p = P()[e.uid]; return p ? (p.status === 'applied' ? 'done' : 'refused') : e.state === 'sent' || e.state === 'processed' ? 'sent' : 'draft' }
     const latest = ref => Q.filter(e => e.ref === ref).slice(-1)[0]
+    const acted = ref => { const e = latest(ref); return !!e && layer(e) !== 'refused' }
+    let pick = {}   // the option chosen on a decision card, before Decide
 
     // ---------- sealing and the lane: the same envelope as assets/feedback.js (sgit's hybrid v2) ----------
     const b64 = bytes => { let s = ''; for (const b of new Uint8Array(bytes)) s += String.fromCharCode(b); return btoa(s) }
@@ -63,6 +65,7 @@
         const d = Q.findIndex(e => e.ref === ref && e.state === 'draft')
         const e = { ...a, ref, uid: d >= 0 ? Q[d].uid : uid(), at: new Date().toISOString(), state: 'draft' }
         if (d >= 0) Q[d] = e; else Q.push(e)
+        delete pick[ref]; delete pick['w:' + ref]
         openEntry = e.uid; save(); draw()
     }
 
@@ -81,7 +84,9 @@
         } catch (e) { toast(`Not sent: ${e.message}. Your actions are still here.`) }
         busy = false; draw()
     }
-    function toast(t) { const el = document.createElement('div'); el.className = 'ck-toast'; el.textContent = t; document.body.appendChild(el); setTimeout(() => el.remove(), 5000) }
+    // a message about your actions shows in the panel, under Submit (Dinis: not at the bottom of the screen)
+    let notice = '', noticeT = null
+    function toast(t) { notice = t; clearTimeout(noticeT); noticeT = setTimeout(() => { notice = ''; if (D) draw() }, 9000); if (D) draw() }
     const nextDrain = () => { const d = new Date(); d.setUTCMinutes(6, 0, 0); if (d <= new Date()) d.setUTCHours(d.getUTCHours() + 1); if (d.getUTCHours() < 7) d.setUTCHours(7); if (d.getUTCHours() > 22) { d.setUTCDate(d.getUTCDate() + 1); d.setUTCHours(7) } return d }
 
     // ---------- the cards (left) ----------
@@ -98,15 +103,15 @@
     const decCard = (x, i) => {
         const isOpen = openCard[x.ref] ?? i < 3, rec = (x.recommend || '').toLowerCase()
         const opts = x.options.length ? x.options : (x.type === 'question' ? [] : ['Yes', 'No'])
-        const e = latest(x.ref), pick = e && e.state === 'draft' ? e.option : ''
+        const e = latest(x.ref), chosen = pick[x.ref] || ''
         return `<article class="ck-card dec${cardCls(x.ref)}" data-ref="${esc(x.ref)}">
 <div class="ck-h"><span class="ck-n">${i + 1}</span><div><h3><button type="button" class="ck-tgl" data-tgl="${esc(x.ref)}" aria-expanded="${isOpen}">${esc(x.title)}</button></h3>
 <p class="ck-why"><span class="ck-tag ${esc(x.type)}">${esc(x.type)}</span>${x.issue ? `<span class="ck-tag">${esc(x.issue)}</span>` : ''} ${esc(x.why)} · from ${esc(x.by)}${x.with.length ? ` · with ${esc(x.with.join(', '))}` : ''}</p></div></div>
 ${badge(x.ref)}
 ${isOpen ? `<div class="ck-body">${x.detail ? `<p class="ck-detail${x.detail.length > 320 ? ' clamp' : ''}" tabindex="0" title="click to read it all">${esc(x.detail)}</p>` : ''}
 ${x.recommend ? `<p class="ck-rec"><b>Recommended:</b> ${esc(x.recommend)}</p>` : ''}
-${opts.length ? `<div class="ck-opts" role="group" aria-label="Options">${opts.map(o => `<button type="button" class="ck-opt${pick === o ? ' on' : ''}${rec && rec.includes(o.toLowerCase().slice(0, 24)) ? ' rec' : ''}" data-opt="${esc(o)}" data-ref="${esc(x.ref)}">${esc(o)}</button>`).join('')}</div>` : ''}
-<textarea data-words="${esc(x.ref)}" rows="2" placeholder="In your words (optional; for a question, your answer)">${esc(e && e.state === 'draft' ? e.words || '' : '')}</textarea>
+${opts.length ? `<div class="ck-opts" role="group" aria-label="Options">${opts.map(o => `<button type="button" class="ck-opt${chosen === o ? ' on' : ''}${rec && rec.includes(o.toLowerCase().slice(0, 24)) ? ' rec' : ''}" data-opt="${esc(o)}" data-ref="${esc(x.ref)}">${esc(o)}</button>`).join('')}</div>` : ''}
+<textarea data-words="${esc(x.ref)}" rows="2" placeholder="In your words (optional; for a question, your answer)">${esc(pick['w:' + x.ref] || '')}</textarea>
 <div class="ck-acts"><button type="button" class="ck-btn go" data-act="decide" data-ref="${esc(x.ref)}">Decide</button>${delegateSel(x.ref)}<button type="button" class="ck-btn ghost" data-act="now" data-ref="${esc(x.ref)}">Do this first</button><button type="button" class="ck-btn ghost" data-act="later" data-ref="${esc(x.ref)}">Later</button><button type="button" class="ck-btn ghost" data-act="drop" data-ref="${esc(x.ref)}">No decision needed</button><a class="ck-btn ghost" href="../../meetings/${esc(x.first_meeting)}/index.html">on the agenda since ${esc(meetLabel(x.first_meeting))}</a></div></div>` : ''}
 </article>`
     }
@@ -125,7 +130,7 @@ ${e.sent_at ? `<dt>Sent</dt><dd>${esc(hhmm(e.sent_at))} UTC, signed, to <code>${
 ${l === 'sent' ? `<dt>Next</dt><dd>picked up at the next drain, ${esc(hhmm(nextDrain()))} UTC, then shown here after the release that follows</dd>` : ''}
 ${p ? `<dt>${l === 'done' ? 'Processed' : 'Refused'}</dt><dd>${esc(hhmm(p.applied_at))} UTC: ${esc(p.result)}${p.commit ? ` (<code>${esc(p.commit)}</code>)` : ''}</dd>` : ''}
 <dt>Id</dt><dd><code>${esc(e.uid)}</code></dd></dl>
-<div class="ck-acts">${l === 'draft' ? `<button type="button" class="ck-btn ghost" data-del="${esc(e.uid)}">Remove</button>` : ''}${l === 'done' || l === 'refused' ? `<button type="button" class="ck-btn ghost" data-del="${esc(e.uid)}">Clear</button>` : ''}<button type="button" class="ck-btn ghost" data-goto="${esc(e.ref)}">Show the card</button></div></div>` : ''}</li>`
+<div class="ck-acts">${l === 'draft' ? `<button type="button" class="ck-btn ghost" data-del="${esc(e.uid)}">Undo: back to the list</button>` : ''}${l === 'done' || l === 'refused' ? `<button type="button" class="ck-btn ghost" data-del="${esc(e.uid)}">Clear</button>` : ''}${l === 'refused' ? `<button type="button" class="ck-btn ghost" data-goto="${esc(e.ref)}">Show the card</button>` : ''}</div></div>` : ''}</li>`
     }
     function panel() {
         const by = { draft: [], sent: [], done: [], refused: [] }; for (const e of Q) by[layer(e)].push(e)
@@ -134,7 +139,7 @@ ${p ? `<dt>${l === 'done' ? 'Processed' : 'Refused'}</dt><dd>${esc(hhmm(p.applie
         return `<div class="ck-panel" aria-label="Your actions">
 <div class="ck-p-top"><h2>Your actions</h2>
 <button type="button" class="ck-btn go big" data-send${n && canAct && LANE && !busy ? '' : ' disabled'}>${busy ? 'Sending…' : n ? `Submit ${n} signed` : 'Nothing to submit'}</button>
-<p class="ck-sub">${canAct ? `To <code>${esc(D.lane.agent)}</code>, signed with your key and sealed to its key. It is processed ${esc(D.lane.drained)}.` : signer() ? `Signed in as <b>${esc(signer())}</b>: only ${esc(D.person.first)}'s signed actions are acted on.` : `<b>Add your key to this browser to submit</b> (<a href="../../start/index.html">the start page</a>). Your actions are kept here meanwhile.`}</p></div>
+${notice ? `<p class="ck-notice" role="status">${esc(notice)}</p>` : ''}<p class="ck-sub">${canAct ? `To <code>${esc(D.lane.agent)}</code>, signed with your key and sealed to its key. It is processed ${esc(D.lane.drained)}.` : signer() ? `Signed in as <b>${esc(signer())}</b>: only ${esc(D.person.first)}'s signed actions are acted on.` : `<b>Add your key to this browser to submit</b> (<a href="../../start/index.html">the start page</a>). Your actions are kept here meanwhile.`}</p></div>
 <div class="ck-p-list">${Q.length ? group('draft', 'To send', 'Kept in this browser until you submit. Click one for the details.') + group('sent', 'Sent, not processed yet', 'Waiting for the dashboard agent to record them.') + group('refused', 'Refused', 'Not applied: see why, and send again.') + group('done', 'Processed', 'Recorded on the site. Clear them when you have seen them.') : '<p class="ck-empty">Nothing yet. Every click on a card (Decide, Delegate, Done, Later...) adds an entry here; you can check them, then submit them together.</p>'}
 ${by.done.length + by.refused.length ? `<button type="button" class="ck-btn ghost wide" data-clear>Clear the processed</button>` : ''}</div>
 </div>`
@@ -142,7 +147,8 @@ ${by.done.length + by.refused.length ? `<button type="button" class="ck-btn ghos
 
     function draw() {
         const H = D.health, today = new Date().toISOString().slice(0, 10), ms = D.milestones.filter(m => m.at >= today).slice(0, 4)
-        const decs = showAll ? D.decisions : D.decisions.slice(0, 7)
+        const onlyLeft = D.only_you.filter(x => !acted(x.file)), decLeft = D.decisions.filter(x => !acted(x.ref))
+        const decs = showAll ? decLeft : decLeft.slice(0, 7), inPanel = (D.only_you.length - onlyLeft.length) + (D.decisions.length - decLeft.length)
         const sx = root.querySelector('.ck-p-list') ? root.querySelector('.ck-p-list').scrollTop : 0
         root.innerHTML = `<header class="ck-top">
 <div><p class="ck-kick">${esc(new Date().toUTCString().slice(0, 22))} UTC · ${esc(D.version)}</p><h1>${greet()}, ${esc(D.person.first)}.</h1>
@@ -151,11 +157,11 @@ ${by.done.length + by.refused.length ? `<button type="button" class="ck-btn ghos
 </header>
 <div class="ck-grid">
 <div class="ck-main">
-<section id="only-you" class="ck-sec"><h2>Only you can do this <span>${D.only_you.length}</span></h2><p class="ck-sub">Ranked by who is blocked, then how late. One click each.</p>
-${D.only_you.length ? D.only_you.map(onlyCard).join('') : '<p class="ck-empty">Nothing waits on you alone.</p>'}</section>
-<section id="decide" class="ck-sec"><h2>Decide <span>${D.decisions.length}</span></h2><p class="ck-sub">Ranked by: blocks someone, overdue, urgent, waiting longest. Choose an option (★ is the recommendation), add your words, then <b>Decide</b>, or <b>Delegate</b> it to someone who can.</p>
+${inPanel ? `<p class="ck-sub">${inPanel} you have acted on ${inPanel > 1 ? 'are' : 'is'} in <b>Your actions</b>, on the right, until processed.</p>` : ''}<section id="only-you" class="ck-sec"><h2>Only you can do this <span>${onlyLeft.length}</span></h2><p class="ck-sub">Ranked by who is blocked, then how late. One click each.</p>
+${onlyLeft.length ? onlyLeft.map(onlyCard).join('') : '<p class="ck-empty">Nothing waits on you alone.</p>'}</section>
+<section id="decide" class="ck-sec"><h2>Decide <span>${decLeft.length}</span></h2><p class="ck-sub">Ranked by: blocks someone, overdue, urgent, waiting longest. Choose an option (★ is the recommendation), add your words, then <b>Decide</b>, or <b>Delegate</b> it to someone who can.</p>
 ${decs.map(decCard).join('')}
-${D.decisions.length > 7 ? `<button type="button" class="ck-btn ghost wide" data-all>${showAll ? 'Show the top seven' : `Show all ${D.decisions.length}`}</button>` : ''}</section>
+${decLeft.length > 7 ? `<button type="button" class="ck-btn ghost wide" data-all>${showAll ? 'Show the top seven' : `Show all ${decLeft.length}`}</button>` : ''}</section>
 <section id="happening" class="ck-sec"><h2>What is happening</h2><div class="ck-info">
 <div class="ck-box"><h3>Today and next</h3><ul class="ck-ms"><li><b>${esc(hhmm(D.standup.at))}</b> <a href="${esc(D.standup.briefing)}">stand-up, your briefing</a></li>${ms.map(m => `<li><b>${esc(new Date(m.at + 'T12:00:00Z').toUTCString().slice(0, 11))}</b> <a href="${esc(m.link)}">${esc(m.what)}</a></li>`).join('')}</ul></div>
 <div class="ck-box" id="health"><h3>The machine</h3><div class="ck-tiles">
@@ -183,18 +189,18 @@ ${D.decisions.length > 7 ? `<button type="button" class="ck-btn ghost wide" data
     const words = ref => { const t = root.querySelector(`textarea[data-words="${CSS.escape(ref)}"]`); return t ? t.value.trim() : '' }
     function wire() {
         root.querySelectorAll('[data-tgl]').forEach(b => b.onclick = () => { const r = b.dataset.tgl; openCard[r] = b.getAttribute('aria-expanded') !== 'true'; save(); draw() })
-        root.querySelectorAll('[data-opt]').forEach(b => b.onclick = () => { const r = b.dataset.ref, x = find(r); add(r, { action: 'decide', title: x.title, issue: x.issue || x.id || '', option: b.dataset.opt, words: words(r) }) })
+        root.querySelectorAll('[data-opt]').forEach(b => b.onclick = () => { const r = b.dataset.ref; pick['w:' + r] = words(r); pick[r] = pick[r] === b.dataset.opt ? '' : b.dataset.opt; draw() })
         root.querySelectorAll('[data-act]').forEach(b => b.onclick = () => {
             const r = b.dataset.ref, x = find(r), a = b.dataset.act, w = words(r), cur = latest(r)
-            const option = a === 'decide' && cur && cur.state === 'draft' ? cur.option || '' : ''
+            const option = a === 'decide' ? pick[r] || '' : ''
             if (a === 'decide' && !option && !w) { toast('Choose an option or write your answer first.'); return }
             add(r, { action: a, title: x.title, issue: x.issue || x.id || '', option, words: w })
         })
         root.querySelectorAll('[data-dg]').forEach(s => s.onchange = () => { const r = s.dataset.dg, x = find(r), p = D.delegates.find(d => d.id === s.value); if (p) add(r, { action: 'delegate', title: x.title, issue: x.issue || x.id || '', delegate: p.id, delegate_name: p.first, delegate_agent: p.agent, words: words(r) }) })
-        root.querySelectorAll('textarea[data-words]').forEach(t => t.oninput = () => { const e = latest(t.dataset.words); if (e && e.state === 'draft') { e.words = t.value.trim(); save() } })
+        root.querySelectorAll('textarea[data-words]').forEach(t => t.oninput = () => { pick['w:' + t.dataset.words] = t.value })
         root.querySelectorAll('[data-entry]').forEach(b => b.onclick = () => { openEntry = openEntry === b.dataset.entry ? '' : b.dataset.entry; save(); draw() })
         root.querySelectorAll('[data-del]').forEach(b => b.onclick = () => { Q = Q.filter(e => e.uid !== b.dataset.del); save(); draw() })
-        root.querySelectorAll('[data-goto]').forEach(b => b.onclick = () => { const c = root.querySelector(`.ck-card[data-ref="${CSS.escape(b.dataset.goto)}"]`); if (c) { c.scrollIntoView({ behavior: 'smooth', block: 'center' }); c.classList.add('flash'); setTimeout(() => c.classList.remove('flash'), 1500) } else toast('That card is no longer on the page: it was recorded.') })
+        root.querySelectorAll('[data-goto]').forEach(b => b.onclick = () => { const c = root.querySelector(`.ck-card[data-ref="${CSS.escape(b.dataset.goto)}"]`); if (c) { c.scrollIntoView({ behavior: 'smooth', block: 'center' }); c.classList.add('flash'); setTimeout(() => c.classList.remove('flash'), 1500) } else toast('That card is in your actions, not on the list: remove the action to bring it back.') })
         root.querySelectorAll('.ck-detail.clamp').forEach(p => p.onclick = () => p.classList.toggle('full'))
         const cl = root.querySelector('[data-clear]'); if (cl) cl.onclick = () => { Q = Q.filter(e => ['draft', 'sent'].includes(layer(e))); save(); draw() }
         const all = root.querySelector('[data-all]'); if (all) all.onclick = () => { showAll = !showAll; draw() }

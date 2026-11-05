@@ -134,3 +134,5 @@ main.cockpit > p, main.cockpit > ul, main.cockpit > ol, main.cockpit > h2, main.
 .ck-e-d dd { margin: 0; overflow-wrap: anywhere; }
 .ck-badge { all: unset; cursor: pointer; display: inline-block; margin: 0.35rem 0; font-size: 0.86rem; padding: 0.25rem 0.6rem; border-radius: 6px; background: var(--surface-2); }
 .ck-badge.draft { background: var(--warn-soft); } .ck-badge.sent { background: var(--sent-soft); } .ck-badge.done { background: var(--ok-soft); } .ck-badge.refused { background: var(--bad-soft); }
+
+.ck-notice { margin: 0.5rem 0 0.2rem; padding: 0.45rem 0.6rem; border-radius: 8px; background: var(--ok-soft); font-size: 0.9rem; }
