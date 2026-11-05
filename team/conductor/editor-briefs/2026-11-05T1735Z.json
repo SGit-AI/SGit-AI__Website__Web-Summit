@@ -1,0 +1,32 @@
+{
+ "number": 22,
+ "date": "2026-11-05",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "The 18:00: four decisions wait on you; the CRM is live and agents are writing to it",
+ "when": "Thursday 5 November 2026, 17:35 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "108 agent commits since the 12:00. The team CRM is live (a public vault with 313 companies, 249 people and 210 sessions; a private one with the team's actions), its second layer paused at your word; Silvio's conductor has opened its key, Angelo's CRM agent has written to the public CRM, and your crm@web-summit.dinis has both keys and the Brazilian delegation staged. Every agent has an inbox lane to me (49). The 18:00 deck is 9 slides; four of its decisions are yours.",
+ "stats": [
+  {"n": "108", "label": "agent commits since the 12:00"},
+  {"n": "4", "label": "decisions on the 18:00 that are yours"},
+  {"n": "2", "label": "CRM agents running (Angelo's, yours)"},
+  {"n": "49", "label": "agents with a lane to the conductor"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "Outreach: approve the emails' one claim", "detail": "So Silvio sends from Friday; one example (Primitive) is in his outreach folder.", "options": ["yes", "with changes", "hold"], "recommend": "Decide at the 18:00 after reading the example."},
+  {"id": "2", "ask": "The merch on Monday 9 November: you collect by car, or the printer delivers", "detail": "Silvio has no car in Lisbon.", "options": ["Dinis collects", "the printer delivers"], "recommend": "Ask the printer to deliver to the venue if it is free; else collect."},
+  {"id": "3", "ask": "Meet transcripts to the record (WS-98), and online slots for the week of 16 November", "detail": "Transcripts on so the record writes itself; 4 to 6 half-hours for 38 large companies not at Web Summit.", "options": ["yes to both", "one", "later"], "recommend": "Yes to both."}
+ ],
+ "you_asked": [
+  {"at": "5 Nov, ~14:45 to 18:20", "said": "the CRM (two vaults, double encryption, keys to agents, CRM agents, open in a new window, unseal inside the app; then pause the second layer)", "done": "All built; the second layer paused; the vault key is the access.", "where": "/crm/, WS-170, WS-172", "status": "live"}
+ ],
+ "team": [
+  {"id": "Angelo", "status": "writing", "doing": "crm@angelo running; the 12:00 recorded; WS-150 deck patch routed to me"},
+  {"id": "Silvio", "status": "waiting on you", "doing": "the CRM key opened; the stand is booth A1-30 (ALPHA 1, Pavilion 1); three questions on the 18:00"},
+  {"id": "Jose", "status": "asked", "doing": "a CRM agent; the transcripts proposal (WS-98)"},
+  {"id": "Vicky", "status": "picked", "doing": "WS-153 and WS-163 picked"},
+  {"id": "Indi", "status": "waiting", "doing": "her conductor's CRM key waits on her account confirming its keys (WS-152)"}
+ ],
+ "next": ["18:00: the deck at /meetings/2026-11-05-1800/show/.", "19:27 wake: record the 18:00 with team-collaboration@angelo; WS-150's deck patch for tomorrow's 12:00."],
+ "sources": ["git log since 2026-11-05T12:00Z (dev)", "the CRM vaults' histories", "data/meetings/2026-11-05-1800/"]
+}
