@@ -1,6 +1,7 @@
 # ws-stickers-vote: the team's sticker vote (WS-159)
 
-Twelve funny laptop stickers for RiskMandate at Web Summit Lisbon, and a vote: each person on the Web Summit team
+Funny laptop stickers for RiskMandate at Web Summit Lisbon, in three sets (the road trip, 1 to 12, four variations
+each; creative takes, 13 to 18; the gap, 19 to 24), and a vote: each person on the Web Summit team
 ranks a top 6 (Borda: 1st = 6 points, 6th = 1) and may mark any sticker "not for me". Built by conductor@web-summit.dinis on 5 November 2026, at Dinis Cruz's word, as a showcase of
 encrypted vaults and append lanes. Voting closes Thursday 5 November 2026, 18:00 UTC.
 
@@ -12,9 +13,10 @@ encrypted vaults and append lanes. Voting closes Thursday 5 November 2026, 18:00
 
 | Path | What |
 |---|---|
-| `images/full/` | the originals, renamed `<nn>-<slug>` (placeholders until the real files arrive) |
+| `images/uploads/` | **upload new sticker images here** (PNG, JPEG or a zip); the conductor processes them and empties it |
+| `images/full/` | the originals, renamed `<nn>-<slug>` (and `-v1` to `-v4` for variations) |
 | `images/web/`, `images/thumbs/` | 1600 px and 480 px WebP, for the lightbox and the grid |
-| `content.json` | the twelve: names, jokes, words, files |
+| `content.json` | every sticker in the vote: names, jokes, words, group, files, variants; it drives the app and the page |
 | `index.html` | the app (everything inline) |
 | `app.json`, `.vault/app.json` | the manifest: read everything, write `votes/` and `results.json`, list, read and mark the lanes |
 | `identity/public-bundle.json` | the drain key's public half: RSA-4096 (votes are sealed to it), ECDSA P-256 |
@@ -51,6 +53,8 @@ encrypted vaults and append lanes. Voting closes Thursday 5 November 2026, 18:00
 
 ## Changing it
 
+- **Sticker 13** (the first of the creative takes, "<Title>-1.png") has not arrived; upload it to `images/uploads/`,
+  run `stickers_vote.py images`, and give it its name and joke in the tool's catalogue.
 - **The real images:** `python3 -I admin/tools/stickers_vote.py images <folder>` (any file names: a sticker number or
   slug in the name places a file, the rest go by order; the mapping is printed).
 - **A new team key:** `python3 -I admin/tools/stickers_vote.py lanes` (all anchors in one call; configure replaces the list).

@@ -1,10 +1,10 @@
 ---
 title: "Pick the sticker: the team vote"
-summary: Twelve funny laptop stickers for Web Summit Lisbon, a ranked top 6 each, team only. The images live in an encrypted vault rendered on this page from its published read key; each ballot is signed by the person's site key, sealed, and written to their own append lane. Closes Thursday 5 November, 18:00 UTC.
+summary: Twenty-three funny laptop stickers for Web Summit Lisbon in three sets, a ranked top 6 each, team only. The images live in an encrypted vault rendered on this page from its published read key; each ballot is signed by the person's site key, sealed, and written to their own append lane. Closes Thursday 5 November, 18:00 UTC.
 path: stickers/vote/index.html
 script: stickers-vote
 ---
-**Twelve stickers, your top 6, team only.** Tap the stickers you would put on your own laptop in Lisbon: they go into **My top 6** (on the right, or at the bottom of a phone). Put them in order by dragging the handle or with the arrows, press 👎 on any that are not for you, and **Submit**. The 1st gets 6 points, the 6th gets 1. You can submit again until the vote closes: your newest ballot counts. The twelve are the [funny set](../chatgpt/index.html) from [the creative brief](../creative/index.html); until the real images arrive these are placeholders, drawn with each sticker's words and colours.
+**Twenty-three stickers in three sets, your top 6, team only.** Tap the stickers you would put on your own laptop in Lisbon: they go into **My top 6** (on the right, or at the bottom of a phone). Put them in order by dragging the handle or with the arrows, press 👎 on any that are not for you, and **Submit**. The 1st gets 6 points, the 6th gets 1. You can submit again until the vote closes: your newest ballot counts. **The road trip** (1 to 12) is the [funny set](../chatgpt/index.html) from [the creative brief](../creative/index.html), each in four variations: flip them with the dots or arrows, and press ♡ on the one you like best (it goes with your ballot). **Creative takes** (13 to 18) are new views on the originals; 13 is still on its way. **The gap** (19 to 24) is about the RiskMandate gap between what an agent can reach and what it is allowed to do.
 
 ```sticker-vote
 ```

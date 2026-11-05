@@ -526,7 +526,7 @@ svg.ch-map { min-width: 620px; max-width: 900px; }
 .sv-slots.dragging, .sv-slots.dragging * { cursor: grabbing; user-select: none; }
 .sv-pos { font: 900 1.05rem var(--mono); color: var(--accent-dk); text-align: center; }
 .sv-slot img { width: 2.5rem; height: 2.5rem; border-radius: 8px; object-fit: cover; background: var(--surface); }
-.sv-sname { font-size: 0.86rem; font-weight: 600; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; }
+.sv-sname { font-size: 0.8rem; font-weight: 600; line-height: 1.2; overflow: hidden; overflow-wrap: normal; word-break: normal; hyphens: auto; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 .sv-sname small { display: block; font-weight: 500; color: var(--ink-2); }
 .sv-sb { display: flex; gap: 0.15rem; }
 .sv-sb button { width: 1.9rem; height: 1.9rem; padding: 0; border-radius: 8px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); cursor: pointer; font-size: 0.72rem; }
@@ -565,6 +565,16 @@ svg.ch-map { min-width: 620px; max-width: 900px; }
 @keyframes sv-shake { 0%, 100% { transform: none; } 20% { transform: translateX(-6px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(4px); } }
 
 @media (min-width: 56.01rem) { body:has(.me-strip) .sv-panel { top: 6.4rem; max-height: calc(100vh - 7.4rem); } }   /* the top bar's person strip (assets/me.js) */
+/* round 3: a sticker with variants flips between them (dots and arrows) and takes a heart for the favourite */
+.sv-group { grid-column: 1 / -1; margin: 0.6rem 0 -0.3rem; list-style: none; }
+.sv-group:first-child { margin-top: 0; }
+.sv-group h3 { margin: 0; font-size: 1.3rem; color: var(--accent-dk); border-bottom: 2px solid var(--line); padding-bottom: 0.3rem; }
+.sv-vars { display: flex; align-items: center; justify-content: center; gap: 0.3rem; flex-wrap: wrap; padding: 0 0.6rem 0.5rem; }
+.sv-dot { width: 0.8rem; height: 0.8rem; padding: 0; border-radius: 50%; border: 2px solid var(--st-ink); background: var(--surface); cursor: pointer; }
+.sv-dot[aria-current] { background: var(--st-gold); }
+.sv-vstep { width: 1.6rem; height: 1.6rem; padding: 0; border-radius: 50%; border: 1px solid var(--line-2); background: var(--surface-2); color: var(--ink); font-weight: 800; cursor: pointer; line-height: 1; }
+.sv-heart { margin-left: 0.3rem; font: 700 0.76rem/1 var(--sans); padding: 0.35rem 0.6rem; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); cursor: pointer; }
+.sv-heart[aria-pressed="true"] { background: var(--bad-soft); border-color: var(--bad); color: var(--bad); }
 /* below 56rem the panel is a bottom sheet: its header (count and Submit) always shows; a tap opens the slots */
 @media (max-width: 56rem) {
     .sv-main { grid-template-columns: 1fr; }
