@@ -153,12 +153,49 @@ function cockpitRanking(root, person, now) {
     } catch (e) { return { error: String(e.message || e).slice(0, 200), only_you: [], decisions: [], delegates: [] } }
 }
 
+// Replay (people/angelo/proposals/replay/BRIEF.md, Angelo's go 5 November): every commit on dev since 2 November as an
+// event, compactly: [minute since 2 Nov 00:00 UTC, agent index, kind, [For: target indexes], [issue numbers], subject].
+// Kinds are read from the commit, not declared: r a release by CI, d a decision recorded, q a request (a conductor's
+// commit to other agents), p a report (an agent's commit to its own conductor), w other work. Public data only.
+const REPLAY_FROM = Date.UTC(2026, 10, 2)
+// a subject cut at a word boundary, never inside a name (a cut agent name reads like an email address to the gate)
+const clip = (t, n) => { if (t.length <= n) return t; const c = t.slice(0, n).replace(/\s+\S*$/, ''); return c + '…' }
+function replay(root) {
+    const team = readJson(root, 'data/team.json') || { members: [] }
+    const people = team.members.filter(m => m.kind === 'human').map(m => ({ id: m.id, name: m.name }))
+    const agents = [], aIdx = new Map(), targets = [], tIdx = new Map(), events = []
+    const agentOf = n => { if (!aIdx.has(n)) { aIdx.set(n, agents.length); const [a, p] = n.split('@web-summit.'); agents.push({ name: n, short: a, person: p }) } return aIdx.get(n) }
+    const targetOf = n => { if (!tIdx.has(n)) { tIdx.set(n, targets.length); targets.push(n) } return tIdx.get(n) }
+    const raw = git(root, ['log', '--since=2026-11-02T00:00:00Z', '--format=%h%x1f%cI%x1f%s%x1f%b%x1e'])
+    for (const c of raw.split('\x1e')) {
+        const [h, at, s = '', b = ''] = c.trim().split('\x1f'); if (!h) continue
+        const t = Math.round((Date.parse(at) - REPLAY_FROM) / 6e4); if (t < 0) continue
+        const rel = s.match(/^site (v\d+\.\d+\.\d+):/)
+        if (rel) { events.push([t, -1, 'r', [], [], rel[1]]); continue }
+        const who = (s.match(/^([a-z0-9-]+@web-summit\.[a-z0-9-]+):/) || b.match(/^Agent: *([a-z0-9-]+@web-summit\.[a-z0-9-]+)/m) || [])[1]
+        if (!who || !people.some(p => who.endsWith('.' + p.id))) continue
+        const fors = [...new Set([...b.matchAll(/^For: *(.+)$/gm)].flatMap(m => m[1].split(/,\s*/)).map(x => x.trim()).filter(x => /^[a-z0-9-]+(@web-summit\.[a-z0-9-]+)?$/.test(x)))]
+        const issues = [...new Set([...`${s}\n${b}`.matchAll(/\bWS-(\d+)\b/g)].map(m => +m[1]))].slice(0, 6)
+        const from = who.split('@web-summit.')[1], short = who.split('@')[0]
+        const kind = /\b(decided|decision recorded|settled|his words|her words|in (?:his|her) words)\b/i.test(s) ? 'd'
+            : short === 'conductor' && fors.some(f => f !== who && f.endsWith('.' + from)) ? 'q'
+            : fors.includes(`conductor@web-summit.${from}`) && short !== 'conductor' ? 'p' : 'w'
+        events.push([t, agentOf(who), kind, fors.map(targetOf), issues, clip(s.replace(/^[^:]+: /, ''), 70), h])
+    }
+    events.sort((x, y) => x[0] - y[0])
+    // the stand-ups, from the schedule (each slot's minute) and the meetings that have a folder
+    const sch = readJson(root, 'data/meetings/schedule.json') || {}, mdir = path.join(root, 'data/meetings')
+    const standups = fs.existsSync(mdir) ? fs.readdirSync(mdir).filter(x => /^\d{4}-\d\d-\d\d-\d{4}$/.test(x)).map(id => [Math.round((Date.UTC(+id.slice(0, 4), +id.slice(5, 7) - 1, +id.slice(8, 10), +id.slice(11, 13), +id.slice(13, 15)) - REPLAY_FROM) / 6e4), id]) : []
+    return { from: new Date(REPLAY_FROM).toISOString(), people, agents, targets, events, standups, repo: 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit' }
+}
+
 export function build(root, person, now = new Date()) {
     const d = CC.build(root, person, now)
     d.kanban = kanban(root, person, d)
     d.cockpit = cockpitRanking(root, person, now)
     d.collab = collab(root, person, d, now)
     d.summit_days = summitDays(root)
+    d.replay = replay(root)
     return d
 }
 
