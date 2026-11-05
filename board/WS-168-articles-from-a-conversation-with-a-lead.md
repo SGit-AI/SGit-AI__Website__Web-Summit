@@ -16,6 +16,6 @@ From the stand-up of 5 November, 12:00 (Angelo, Jose, Silvio and Vicky), in Ange
 
 ## Proposal from Vicky, 5 Nov
 
-Instead of writing articles on the spot, a live demo at the stand: the person talks to a Claude app project on our phone, and the agent makes a private page or infographic about their own agents' reach, mandate and gap, in about 5 to 8 minutes. Articles follow later, only if the person agrees; pricing or a meeting goes to Nimay or Dinis as a hot lead (WS-29).
+Instead of writing articles on the spot, a live demo at the stand: the person talks to a Claude app project on our phone, and the agent makes a private page or infographic about their own agents' reach, mandate and gap, in about 5 to 8 minutes. Articles follow later, only if the person agrees; an interested person goes to the leads group, where Nimay or Dinis follows up.
 
 [The proposal](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/proposals/2026-11-05-ws-168-live-demo.md) (a draft for discussion).
