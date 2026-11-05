@@ -1,0 +1,63 @@
+{
+  "number": 11,
+  "date": "5 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Evening: three small things, one of them a duplicate helper",
+  "when": "5 November 2026, 17:25 UTC (scheduled wake; since brief 10, 12:25 UTC)",
+  "by": "conductor@web-summit.indi",
+  "headline": "Your card is done (WS-08) and the sticker vote has closed. Three small things need you. First, another helper of mine wrote your card this afternoon, so there may be two of me running again. Second, Dinis needs you to confirm your GitHub name. Third, your demo needs a plan for no wifi. Nothing is decided here.",
+  "stats": [
+    {"n": "done", "label": "your card (WS-08), written at 15:57 UTC"},
+    {"n": "2 of 6", "label": "votes in when the sticker vote closed (Dinis's conductor, 14:27)"},
+    {"n": "2", "label": "helpers writing as 'your conductor' today"},
+    {"n": "0", "label": "newsroom jobs started for your helpers"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Is the other conductor helper yours?",
+      "detail": "At 15:57 and 16:03 a conductor helper wrote your card and opened WS-171 (your two infographics). It is not me: it is a different session. Having two helpers with the same name can make them overwrite each other. This morning you chose me, so I have left its work alone.",
+      "options": ["keep me, stop the other", "keep the other, stop me", "keep both for now"],
+      "recommend": "Keep me, and stop the other: I hold your key and the 07:20, 12:20 and 17:20 wake-ups. I will not touch your card."
+    },
+    {
+      "id": "2",
+      "ask": "Tell Dinis that 'riskmandate-indi' is your GitHub name",
+      "detail": "Dinis's security helper cannot yet lock secrets to your helpers' keys, because your GitHub name is not on the team list as yours (WS-170, WS-152). Dinis confirmed Vicky's and Jose's. You only need to say yes, in your own words, to Dinis. If the name is wrong, tell me the right one.",
+      "options": ["yes, it is mine", "no, my name is different"],
+      "recommend": "Say yes to Dinis today, so your helpers can receive the team's private files."
+    },
+    {
+      "id": "3",
+      "ask": "Plan the demo for no wifi",
+      "detail": "The venue's rules ban phone hotspots (see the summit page). Your demo's backup was a hotspot. Your mentor suggests keeping a copy of the demo on the laptop, so it works with no network. A recording would also do.",
+      "options": ["my helpers make an offline copy", "I will record it myself", "later"],
+      "recommend": "Ask your helpers for an offline copy: it is small, and the demo is only days away (WS-109)."
+    }
+  ],
+  "you_asked": [
+    {"at": "5 Nov, about 12:40 UTC", "said": "1. yes (post my key link again)", "done": "Posted in chat. I cannot see whether you added it: your key is still not recorded as added on WS-136.", "where": "this chat", "status": "waiting"},
+    {"at": "5 Nov, 12:40 UTC", "said": "Which newsroom jobs should your helpers start?", "done": "You did not say, so none started.", "where": "-", "status": "waiting"}
+  ],
+  "sections": [
+    {
+      "title": "1. What happened this afternoon",
+      "items": [
+        "Your card is written (WS-08), in your own words. It says you want simple language, so this brief uses it.",
+        "The sticker vote closed with 2 of 6 votes. Dinis's conductor asked whether to extend it. Dinis decides.",
+        "Your developer helper's log works in a cloud session now (60fce89).",
+        "Your mentor says the venue bans hotspots, which is why ask 3 is there."
+      ]
+    }
+  ],
+  "next": [
+    "Tomorrow 07:20: my next wake.",
+    "Your mentor hands over at 08:41 tomorrow if your helpers keep running on their own.",
+    "Tell me 'acknowledge' when you have read briefs 1 to 11. It also closes a to-do on your list."
+  ],
+  "sources": [
+    "git log since 12:20 UTC on 5 November: 2dfce70, 3c97833, 2867d20, 662ff9d, 60fce89, 0988df8",
+    "board/WS-152, WS-170, WS-136 and WS-171",
+    "people/indi/mentor/2026-11-05-1541.md and people/indi/card.md"
+  ]
+}
