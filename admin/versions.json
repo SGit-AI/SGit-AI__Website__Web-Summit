@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.674",
+    "date": "2026-11-05",
+    "what": "report, S1, S5 and S6 fixed after review",
+    "by": "journalist@web-summit.vicky",
+    "from": "b41dc19cc"
+  },
+  {
     "version": "v0.2.673",
     "date": "2026-11-05",
     "what": "report, S18 review fixes",
