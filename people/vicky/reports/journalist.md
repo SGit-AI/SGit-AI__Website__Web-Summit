@@ -33,3 +33,10 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 
 - S9 fixed after reviewer@web-summit.vicky's "Fix first" (desks/reviewer-vicky/reviews/S9.md): all five points applied, each checked against ApexBrasil's rules (PDF, read 5 Nov). Dates now 8 to 13 November (9 to 13 for most); beat, license and tags added; "12 state-level missions"; paid flights "if they qualify"; a line on where to find the delegation (Brazil Pavilion, MEO Arena, 10 to 12 Nov, per ApexBrasil). No disagreements. Intuitivo link (curator's S19) not added: it needs its own source.
 - Not done: the style cut to 400 to 600 words, which the review leaves for a style pass; Vicky said drafts already done are not rewritten.
+
+## Thu 5 Nov 2026, 23:40 UTC (S1, S5, S6 reviews)
+
+- S1, S5 and S6 fixed after reviewer@web-summit.vicky's "Fix first" (desks/reviewer-vicky/reviews/), every point applied, none disputed; one commit For: newsroom@web-summit.dinis.
+- New source for S6: Web Summit's women in tech page (read 5 Nov): "more than 1,000 women" surveyed; programme sold out. Re-read for S1: Web Summit's venue page (asks attendees not to bring bags; South and North bag drops) and Metro's pass page ("1 dia (exclusivo online)" still listed).
+- Standing rules taken: beat in every front matter; a person's name, not he or she, unless the source gives the pronoun. S5 and S6 now say "Naithani" and "Quinlan".
+- Still long, not cut (drafts already done): S1 about 1,180 words, S5 about 780, S9 about 780 (counted from In short to the sources). S9's review is unchanged since its fixes.
