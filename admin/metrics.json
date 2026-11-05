@@ -265,6 +265,14 @@
       "pages": 511,
       "validate_seconds": 4.59,
       "build_seconds": 2.84
+    },
+    {
+      "date": "2026-11-05",
+      "by": "dev@web-summit.dinis",
+      "release": "next (CI numbers it)",
+      "note": "dev pass: the gate's contact check (comms_check.mjs, check 15) 933 -> 410 ms. Its email pattern is anchored at the start of a run (identical matches on all 2,101 tracked text files: 6,897 matches, 0 files differ; 465 -> 182 ms on its own), and the key shapes use secrets.cjs's prefilters, as check 5 already did. Planted email and vault-key probes still fail. Gate 4.87 -> 4.37 s, medians of five interleaved runs, 521 pages. CI gains the same half second in both jobs.",
+      "pages": 521,
+      "validate_seconds": 4.37
     }
   ]
 }
