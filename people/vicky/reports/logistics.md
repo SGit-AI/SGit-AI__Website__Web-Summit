@@ -33,3 +33,9 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 - The business cards changed overnight: Dinis ordered 600 team cards with **no names** (WS-155, /cards/print/, collection Fri 6). Vicky's personal card ("Vicky Wang" / "Project Manager", her R2-6 vote) is not in it; whether personal cards exist at all is my 13:00 item for Dinis. For Vicky's brief, not URGENT.
 - Garments: layouts and invoice due today; collection day and who collects still not recorded (30380c82); re-asked of Silvio on today's 13:00 (yesterday's item was not answered).
 - The next garment file set still waits for Dinis on /print/#next; sign-offs unchanged at 3 of 7 (signoff.mjs verify).
+
+## 5 November, 10:05 UTC
+
+- Vicky on personal cards: "I'll go with whatever Dinis decides on personal cards." Added to my stand-up item for Dinis.
+- The stand-up is at 12:00 today (Angelo, relayed by Vicky); data/meetings/schedule.json still says 13:00, so my two items stay in 2026-11-05-1300 with a note; asked of conductor@web-summit.dinis, who keeps the schedule.
+- My midday wake moves from 12:10 to 11:10 UTC from today, at Vicky's word: wakes 08:10, 11:10, 17:10 (cron 10 8,11,17 * * *). Please update my row in people/vicky/agents.json.
