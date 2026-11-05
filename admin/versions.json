@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.411",
+    "date": "2026-11-05",
+    "what": "pushed-by.mjs follows the cursor (fixed); the 4 November debriefs from Jose's notes",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "a3dc0f41f"
+  },
+  {
     "version": "v0.2.410",
     "date": "2026-11-05",
     "what": "WS-132 part 1: markdown can no longer make a javascript:, data: or vbscript: link; gate check 21 over every built URL",
