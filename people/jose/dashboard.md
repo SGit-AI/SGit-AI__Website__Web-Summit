@@ -2,7 +2,7 @@
 title: Jose's dashboard
 summary: The page Jose reads first. The top is built for Jose; the rest, from the builder template, is kept by Jose's dashboard agent (dashboard@web-summit.jose) and answers what needs Jose, what happened, and what Jose and Jose's agents are doing.
 ---
-**Updated Thu 5 Nov, 07:30 UTC by `dashboard@web-summit.jose`; next update 12:30 UTC.** Built for action, at your word (4 November): what needs you as a list to work down, your lanes, and your agents only when something is wrong. [Your command centre](app/index.html) is becoming your first view (below).
+**Updated Thu 5 Nov, 11:25 UTC by `dashboard@web-summit.jose`; next update 12:30 UTC.** Built for action, at your word (4 November): what needs you as a list to work down, your lanes, and your agents only when something is wrong. [Your command centre](app/index.html) is becoming your first view (below).
 
 ## Needs me {#needs}
 
@@ -10,13 +10,13 @@ Soonest first, one action per line; done ones drop off at the next update. From 
 
 | Do | What | Due | Takes | Who waits |
 |---|---|---|---|---|
-| **Do** | **Vote on the stickers** in the browser that holds your site key: [the vote](../../stickers/vote/index.html), rank your top 10 of 23, Submit, check your initial says "voted". If the "Add your key" box shows, first add the key your conductor sent at 02:08. It also tests the signed-ballot flow, so say exactly what fails | **Before 13:00** (closes 14:30) | 5 min | conductor@web-summit.dinis, the team |
+| **Do** | **Vote on the stickers** in the browser that holds your site key: [the vote](../../stickers/vote/index.html), rank your top 10 of 23, Submit, check your initial says "voted". If the "Add your key" box shows, first add the key your conductor sent at 02:08. It also tests the signed-ballot flow, so say exactly what fails | **Before 12:00** (closes 14:30) | 5 min | conductor@web-summit.dinis, the team |
 | **Do** | **Drain the votes** (you are one of four drainers, with Angelo, Indi and Dinis): [the vote's vault](../../stickers/vote/vault/index.html), "Open the vault (full access)", the lock with your SG/Send access token, Drain, the passphrase; once, after a few votes | Before 14:30 | 5 min | conductor@web-summit.dinis |
-| **Say** | **At the 13:00 stand-up, your item:** your 15 site and UI issues go to Angelo's and Dinis's dev agents, and you review (your conductor recommends yes; the other options are to split them one by one, or keep them shared). This is the split with Angelo | 13:00 | 1 min | Angelo, Dinis |
-| **Decide** | **How the observability vault keys travel** (WS-154, with WS-156): keep them held; seal to Dinis's person key (held by his conductor too, WS-138); or seal to the custodian WS-156 names. Your conductor recommends: keep them held until WS-156 names the custodian | Thu 5 Nov | 1 min | conductor@web-summit.dinis |
-| **Approve** | **Two yes or no to your conductor:** the WS-74 pending count, counted by your vault agent (recommended) or with the lane's enum key given to n8n; and the helper to Sonnet now (recommended) or after more runs | Today | 2 min | automation@, helper@web-summit.jose |
+| **Say** | **At today's stand-up (moved to 12:00), your item:** say your yes, your 15 site and UI issues go to Angelo's and Dinis's dev agents and you review; it is decided when Angelo and Dinis say theirs | 12:00 | 1 min | Angelo, Dinis |
 
-**Due today:** test the observability workflow end to end with Angelo (WS-37) and compare [the second observability page](../../observability/index.html) with yours. **Also on your list, no deadline today:** import the WS-39 n8n workflow and fill in your credential and number ([how](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/n8n-guide.md); it is not known to be imported); share your contacts for the "who do we know there" maps (WS-24); your daily interview with your conductor in Claude voice mode (WS-41); a line from you on WS-136; and whether a business card with your name is still wanted (the 4 November sync decided cards with no names; ask Indi, WS-155) (your site key is issued; the board has no line saying you added it).
+**Your answers, sent to your conductor to record (Thu 5 Nov, 11:25 UTC):** you took my recommendations ("Record them"): (1) your yes on the 15 site and UI issues going to Angelo's and Dinis's dev agents, you reviewing, each issue naming the agent that took it (your position at 12:00; Angelo and Dinis decide with you); (2) the observability vault keys stay held until WS-156 names a custodian (WS-154); (3) your vault agent counts the WS-74 answers, and n8n never holds the lane's key; (4) the helper on Sonnet now, checked again on Saturday; (5) the watcher may write its own ledger file only, not the ledger folder; (6) the designer runs the reviewer before every release; (7) you try your command centre as your first view today, after the stand-up; (8) you ask Indi whether a named business card is still wanted, though today's stand-up already has an item on personal cards (from logistics@web-summit.vicky), so it may be settled there. They drop off here once your conductor records them.
+
+**Due today:** test the observability workflow end to end with Angelo (WS-37) and compare [the second observability page](../../observability/index.html) with yours. **Also on your list, no deadline today:** import the WS-39 n8n workflow and fill in your credential and number ([how](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/dev/n8n-guide.md); it is not known to be imported); share your contacts for the "who do we know there" maps (WS-24); your daily interview with your conductor in Claude voice mode (WS-41); a line from you on WS-136 (your site key is issued; the board has no line saying you added it).
 
 **Goal (4 November stand-up):** the pipeline, Portugal mapped first, by Friday or Monday (WS-26, WS-27); 50 active agents across the team.
 
@@ -42,9 +42,8 @@ Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault
 
 On schedule: conductor, dashboard, dev, watcher, vault, automation and helper; the reviewer runs on every push, and each run is logged from today (WS-160). Needing a look:
 
-- **designer@web-summit.jose released four times without the reviewer** (23:42 to 01:34), its own releases with no review record; your watcher flagged it ([its latest](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/latest.md), which also has the team-wide flags, now that it watches everyone).
+- **designer@web-summit.jose released four times without the reviewer** (23:42 to 01:34), its own releases with no review record (your answer 6 above); your watcher flagged it ([its latest](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/latest.md), which also has the team-wide flags, now that it watches everyone).
 - **Your conductor changed shared build code** (`admin/build/commandcentre.mjs`, 1c0fc83) 14 minutes before your rule that shared code goes to its owner first; it carries the reviewer's line and told the owner.
-- **Your watcher asks you:** its measure step writes to `people/jose/accountant/ledger/`, outside what its policy lets it write; add that path to its policy, or drop the step for the watcher.
 - **observability@web-summit.jose:** named on WS-37 and WS-154, not started.
 
 The full list with jobs and schedules: [agents.json](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/agents.json). The prompts: [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/kit/README.md).
