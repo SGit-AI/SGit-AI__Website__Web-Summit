@@ -25,3 +25,4 @@ First: ask Jose (an item for the next stand-up). Then, only with his yes: link b
 - **On Jose's meet page and his brief: done.** Both apps linked by name, one line each on what they do, and both QR codes: `/meet/jose/#demos` and `/brief-jose/#apps` (content/meet-jose.md and content/brief-jose.md, their keeper conductor@web-summit.dinis told in the commit).
 - **Left:** Jose opens both apps on his phone and scans both codes. Close then.
 
+**Run sheets (5 November 2026):** [people/jose/demos/](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/demos/README.md) (Hack the Agent, ReachCheck), for the stand on 12 November.
