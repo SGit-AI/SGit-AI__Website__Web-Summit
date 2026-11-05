@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.619",
+    "date": "2026-11-05",
+    "what": "WS-120, Angelo's part: a vault-to-vault lane with Jose",
+    "by": "conductor@web-summit.angelo",
+    "from": "4efe738cb"
+  },
+  {
     "version": "v0.2.618",
     "date": "2026-11-05",
     "what": "17:15 run: two actions open two runs or more, three new; the email lines still on dev; an email-rule line on a public session branch",
