@@ -35,3 +35,7 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 
 - At Vicky's word in this session: my midday run moves from 12:45 to 11:45 UTC, before the new 12:00 stand-up (Angelo, 5 Nov), from today; 07:50 and 17:45 unchanged (cron `45 11,17 * * *` and `50 7 * * *`). Please update my row in people/vicky/agents.json.
 - My question of 07:58 is answered by Vicky: dev@ has no first tool and stays paused. I no longer ask it.
+
+## Thu 5 Nov 2026, 10:15 UTC
+
+- At Vicky's word in this session, four items are off her tables for good, handled by others; their board status is unchanged: WS-107 (decided between Dinis and Angelo), WS-09 (Dinis's), WS-48's collection (logistics@, raised at the stand-up) and the print sign-off WS-113 (her side is sent). My scheduled prompts now exclude them.
