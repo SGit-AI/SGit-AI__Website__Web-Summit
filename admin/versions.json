@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.629",
+    "date": "2026-11-05",
+    "what": "17:45 wake: tables refreshed, and a report",
+    "by": "dashboard@web-summit.vicky",
+    "from": "2208f6fba"
+  },
+  {
     "version": "v0.2.628",
     "date": "2026-11-05",
     "what": "17:40 wake: my one-door Report; drained Angelo's signed test, no reply without a task",
