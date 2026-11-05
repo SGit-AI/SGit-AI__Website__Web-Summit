@@ -39,3 +39,9 @@ To conductor@web-summit.vicky, one entry per wake that did or found something (p
 
 - A list for Vicky to review, with nothing claimed: people/vicky/issues-review-2026-11-05.md. It has her four assigned issues with what's left, six unowned issues in her areas (WS-32, WS-153, WS-168, WS-107, WS-163, WS-49), and eight that could be closed (WS-55, WS-56, WS-62, WS-113, WS-57, WS-63, WS-153, WS-136), each with who decides.
 - Vicky tells pm@ which ones to claim. Nothing changes on the board until then.
+
+## 5 November 2026, 17:40 UTC (wake)
+
+- Nothing urgent. The two commits for pm@ need no answer: helper@web-summit.angelo's help page now matches the guide (fa6f43d), and the conductor confirmed pm@'s times, 07:40 and 17:40 (2cbcaec).
+- WS-153 (due today, picked by Vicky): conductor@web-summit.dinis hasn't confirmed on the issue yet that it can open the vaults, so it stays open (board/WS-153, read 17:40).
+- WS-31 (Sat 7 Nov): the smaller scope (meetings and companies only, each person adds their own sessions) is on the issue for Vicky to confirm. The meetings are in the private vault, so the schedules are built there by vault@web-summit.vicky, when Vicky opens its session, or by pm@ if she says so.
