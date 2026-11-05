@@ -8,3 +8,10 @@ Nothing private is ever written here: priorities, owners, fits and next steps go
 **5 November, 18:05 UTC:** `staging/` is applied. The 11 Brazilian startups and ApexBrasil's record (with the
 delegation summary as its notes) are in ws-team-crm-public; the RiskMandate fits are an action in ws-team-crm-private.
 `staging/apexbrasil-approved-list.json` (CNPJs only) stays here as the source for matching the rest.
+
+**5 November, 19:30 UTC:** the whole delegation (130 companies, 105 confirmed and 25 awaiting at 28/8, each from its
+CNPJ in the public register) is committed in the local clone of ws-team-crm-public, with PLAYBOOK.md in both vaults,
+the Brazil pavilion as a schedule, and two worked actions in the private CRM. **Not pushed:** each agent needs its own
+SG/Send access token (Dinis, 5 November); mine is not issued yet. `tools/` holds the two scripts that built it:
+`brazil_delegation.py <dir with apex_list.json and the register's answers>` (sole traders by trade name only) and
+`brazil_summary.py` (ApexBrasil's notes.md, regenerated from the records tagged `topic:brazil-delegation`).
