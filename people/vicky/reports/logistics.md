@@ -39,3 +39,7 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 - Vicky on personal cards: "I'll go with whatever Dinis decides on personal cards." Added to my stand-up item for Dinis.
 - The stand-up is at 12:00 today (Angelo, relayed by Vicky); data/meetings/schedule.json still says 13:00, so my two items stay in 2026-11-05-1300 with a note; asked of conductor@web-summit.dinis, who keeps the schedule.
 - My midday wake moves from 12:10 to 11:10 UTC from today, at Vicky's word: wakes 08:10, 11:10, 17:10 (cron 10 8,11,17 * * *). Please update my row in people/vicky/agents.json.
+
+## 5 November, 10:15 UTC
+
+- Vicky: "For garments, cards and stickers, I've done everything on my side. Nothing more is needed from me unless someone asks me directly." Recorded at the top of people/vicky/logistics.md. Nothing on the merch for her brief unless someone asks her directly; her garment re-sign, when it comes, is the one direct ask I expect (yours to put to her).

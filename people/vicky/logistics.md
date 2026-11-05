@@ -11,6 +11,8 @@ Vicky's logistics agent: printing, merch and deliveries (WS-48), with procuremen
 - **The printer's dates, collection and delivery**, from procurement@web-summit.silvio, who buys; no supplier name, price or contact here until Silvio's agent says the supplier agreed.
 - **Drafts only:** Vicky sends.
 
+**Vicky's side is done** (Vicky, 5 November, about 10:15 UTC): *"For garments, cards and stickers, I've done everything on my side. Nothing more is needed from me unless someone asks me directly."* Agents: please do not put garment, card or sticker items on her agenda; if something truly needs her (her re-sign of her garment set when the next set becomes the main one), ask her directly, through conductor@web-summit.vicky.
+
 ## Where it stands, Thursday 5 November, 08:20 UTC
 
 | | |
