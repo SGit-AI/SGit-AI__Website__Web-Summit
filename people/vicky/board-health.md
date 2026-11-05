@@ -2,39 +2,50 @@
 
 Kept by pm@web-summit.vicky for Vicky (from 3 November 2026, 15:16 UTC; before that by conductor@web-summit.vicky). Written once a day at 07:40 UTC (at Vicky's word, 3 Nov). Each run replaces the last; earlier runs are in this file's git history. It adds Vicky's view (her deadlines, what has no owner, what blocks what) to the team-wide page that project-manager@web-summit.dinis writes at 07:50, 12:50 and 17:50 UTC (`content/board-health.md`, the site's /board-health/). It does not repeat that page.
 
-## Run of 4 November 2026, 07:40 UTC
+## Run of 5 November 2026, 07:40 UTC
 
-The daily run (one a day at 07:40, at Vicky's word). I read the issue files in `board/` at commit `4a115a6` on dev (site v0.2.227), with each issue's front matter parsed field by field. I also read `admin/tools/signoff.mjs verify` at 07:42 UTC, `people/*/pulse/`, `data/meetings/2026-11-03-1800/` and `2026-11-04-1300/`, and the git log since yesterday's 15:25 run.
+The daily run. I read the issue files in `board/` at commit `f1b2925b` on dev, with each issue's front matter parsed field by field. I also read `signoff.mjs verify` at 07:45 UTC, `people/*/pulse/`, `people/vicky/inbox.md` (Vicky's standing word of 4 Nov, about 21:05 UTC, `b7fea6d`) and the git log since yesterday's 07:40 run.
 
-**The board in one line.** 138 issue files: 98 open, 16 picked, 5 in progress, 19 done. Nine are new since 15:25 yesterday: WS-130 to WS-137 (WS-130 is already done). WS-138 is not yet in use.
+**The board in one line.** 168 issue files: 108 open, 30 picked, 5 in progress, 25 done. 28 issues are new since yesterday (WS-139 to WS-166). Two files share the number WS-159 (the command-centre improvements and the sticker vote).
 
-### Due today, Wednesday 4 November
+### Due today, Thursday 5 November
 
-48 issues are due today and not done; 36 of them have nobody in `picked_by:`. The ones that touch Vicky:
+36 issues are due today and not done; 25 of them have no owner. The ones that touch Vicky:
 
-1. **Hers, no owner:** WS-25 (the first five companies), WS-29 (hot leads to Nimay or Dinis), WS-41 (the pulse app, with Angelo and Jose), WS-53 (Silvio's workflow written up, with Silvio). WS-25 is on the 13:00 agenda (procurement@web-summit.silvio: Nimay proposes five, Silvio adds the Algarve and Portugal).
-2. **WS-48, printing (logistics@web-summit.vicky with procurement@web-summit.silvio).** The order was confirmed with the printer at 16:40 yesterday (`01feb4c`), and every size is in (WS-130 done, `7079899`). Sign-offs are at **3 of 7** (Vicky, Angelo, Dinis); Silvio, Nimay, Indi and Jose are awaiting (`signoff.mjs verify`, 07:42). WS-57 (final artwork) and WS-13 (the merch budget) are both due at noon.
-3. **WS-136, everyone adds their key to the site, by 18:00.** This includes Vicky (on the 13:00 agenda, conductor@web-summit.dinis).
-4. **WS-23**, overdue since yesterday: Vicky and Nimay go through the booked meetings today, before the 18:00 stand-up (the note on WS-23). The private vault exists and is empty.
+- **WS-153**, Vicky's agents send conductor@web-summit.dinis the newsroom vault keys over their own lanes (Vicky, Dinis). No owner. The confidential shortlist vault goes only with Vicky's yes. vault@web-summit.vicky runs only when Vicky opens its session (inbox.md).
+- **WS-149**, each person's most important thing on the stand-up's show page (everyone; picked by Indi with synthetic@web-summit.indi). Each person's conductor or dashboard agent sets its person's line.
 
-### Overdue (due 2 or 3 November, not done)
+### Overdue (due 2 to 4 November, not done)
 
-24 issues, 20 of them with no owner. Vicky's are WS-23 and WS-100 (the GitHub step for newcomers, with Angelo). The rest: WS-01, WS-02, WS-08, WS-09, WS-10, WS-30, WS-33, WS-54, WS-55, WS-56, WS-62, WS-73, WS-88, WS-98, WS-105, WS-107, WS-113, WS-115 and WS-126. WS-35 (3 to 4 Nov) has no owner either. WS-105 still says `picked` with an empty `picked_by:`.
+69 issues, 50 of them with no owner. The ones that touch Vicky, without URGENT, at her standing word:
 
-### Without an owner later this week
+- **WS-25**, the first five companies: picked by outreach@web-summit.silvio. The five are the Portuguese companies marked "meet" (WS-25 note, 5 Nov).
+- **WS-29**, hot leads: Vicky claims it herself when she posts the rule, before the summit. The rule is a draft (`people/vicky/hot-leads-rule-draft.md`).
+- **WS-41** (Jose) and **WS-53** (Silvio): no owner on the board.
+- **WS-48**, printing: the merch is ordered. Collection on Monday 9 Nov is not yet confirmed (logistics@web-summit.vicky, `3dc83a2`, 4 Nov 17:12). Sign-offs are still 3 of 7 (`signoff.mjs verify`, 07:45).
 
-Thursday 5 November: all 21. Friday: 6 of 7. Saturday: 3 of 4, among them WS-32 (the sessions each person attends), which WS-31 needs.
+WS-105 still says `picked` with an empty `picked_by:`.
 
-### Dependencies, from Vicky's side
+### Later this week
 
-- **WS-31, the schedules for 10 to 12 November (Sat 7 Nov):** these need WS-25 (decided at 13:00 today, or it slips), WS-29 (no owner), WS-23 (meetings into the vault, from today's session with Nimay) and WS-32 (no owner). The schedules are built in the private vault; only their public shape comes here.
-- **The vault, for Nimay:** Nimay's agents need a published key before vault@web-summit.vicky can seal the vault key to them (WS-23 note, 17:40 yesterday; WS-136 asks everyone for a key today).
-- **The stand-ups:** no decision from the 13:00 or 18:00 stand-ups yesterday reached the repository (team-collaboration@web-summit.angelo, `dbb8a40`, 19:16), except Dinis's yes to the print order. Everything carries to today's 13:00. WS-107 (who records the decisions) is still open.
+- **Friday 6 November:** 15 not done, 12 without an owner, among them **WS-163** (each person confirms their own photo on the site, Vicky among five) and WS-121 (everyone runs a vault agent).
+- **Saturday 7 November:** WS-31 (Vicky with pm@), and WS-32, WS-61 and WS-157 with no owner.
+
+### WS-31, the schedules for 10 to 12 November (Sat 7 Nov)
+
+What it needs, and where each stands:
+
+- **Booked meetings (WS-23):** done. Five are in the private vault, none public; more are added as they are accepted (`e7ff186`).
+- **The first five companies (WS-25):** chosen (outreach@web-summit.silvio, 5 Nov).
+- **Hot leads (WS-29):** the rule is drafted, and Vicky posts it before the summit.
+- **The sessions each person attends (WS-32, Sat 7 Nov):** no owner. This is the input still missing.
+
+The schedules themselves are built in the private vault, from the meetings there; only their public shape comes here. vault@web-summit.vicky adds to that vault when Vicky opens its session (`a00e2c0`, `f793dc0`).
 
 ### Proposed (not changed: each needs its owner's or Dinis's word)
 
-- **WS-29:** Vicky picks it with Nimay today, so WS-31 has its input by Saturday.
-- **WS-23's due date:** a new date of Wednesday 4 November, after today's session, for Nimay or Dinis to agree.
+- **WS-32:** an owner by Friday, or each person's schedule on Saturday has meetings but no sessions.
+- **WS-159:** one of the two files gets a new number (their authors, or Dinis).
 - **WS-105:** a name in `picked_by:`, or the status back to `open` (Dinis or Angelo).
 
-Sources: `board/WS-*.md` front matter at `4a115a6`; `signoff.mjs verify` at 07:42 UTC; `data/meetings/`; `git log` (`01feb4c`, `7079899`, `dbb8a40`).
+Sources: `board/WS-*.md` front matter at `f1b2925b`; `signoff.mjs verify` at 07:45 UTC; `people/vicky/inbox.md`; `git log` (`3dc83a2`, `e7ff186`, `a00e2c0`, `f793dc0`, `b7fea6d`).
