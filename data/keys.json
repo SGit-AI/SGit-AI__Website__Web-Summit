@@ -736,6 +736,22 @@
         "signing_fingerprint": "sha256:9d25710a27ffc5ce"
       },
       "status": "active"
+    },
+    {
+      "id": "newsroom-dinis",
+      "label": "newsroom@web-summit.dinis (Claude Code session)",
+      "role": "Dinis's newsroom agent (newsroom@web-summit.dinis): builds and runs web-summit.newsroom.sgit.ai, conducts the newsroom's desks and publishes (the correspondent); signs the newsroom's articles with this key (articles/<slug>.md.sig in SGit-AI/SGit-AI__Website__Newsroom__Web-Summit). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Dinis's account, at Dinis's word that day; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAt7E/fI1b+F/Bbj+y5XkP\nhSry/LyyW3nCFJKY5aQNOYKN+SgVo3yr7+TgQpxnh69NDopm7kXvaDSB2vBzge/x\ngkdfnr64nxdBsd35ww1/UsjfvzBEKV+i82xm694b8RKU2dXfnBp3ddJ/G/0F6dRG\n1rYnJ3EVgj2hBgUpFkmwenftD0cOUhgmnUYs+L4KAeevCRMura6yqox+rA+p/X+z\nIjImR5sc3DQ0cPPu4SsuA/tvsJTd/2VeB8oDWOciHhZuh7iZErwx28v1uEggCYk1\nj6a3PaYuHULhxqfJmdVRDYfF9XuheEp37K13YXFphrHUyVu9JaOMrgNnaexKTuJS\nctwp86bc/T8eHGOZdxBIjrGkGsQk1TtSgJcOSiKKYpG922FvqsbBGuIwlpNGAVU8\nmWAsLqz8qt5GF0dgTQ7YFThisZzciTTL2rDjwKCbYDHiQZpLz2Kn4Ro1S7iUNL9Q\nZs1bUNre2BTSxyUQOn4i8NJM3uc3d0xkFRVBAvEWPCBH+U8pweK5/cYchdH7KHGk\nRoiOoIdad2LmeoO/CEFS7BvjTf8+MCUQek3+CbUCrMHkha9zo/1LQeTFvcoj/7bV\nY6CLByD/tQUNXHQ5+Jx1uzG6GkYTWLO6+GtmQxUIvdgizKGjBz1ZgjhUSLcCQSC0\nJZ/W4vQ+IblCygK0oQ7CSkUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEfyZEwX1a2lSonIaXtg5tceiihntI\nTdDItm9hfSa2/pVYuWDGiEMdKZ35bqsq4LUzXtnXr+RqftwuV80TB8TABA==\n-----END PUBLIC KEY-----\n",
+        "label": "newsroom@web-summit.dinis",
+        "fingerprint": "sha256:aea91e7f8f429363",
+        "signing_fingerprint": "sha256:2cbb6cfafdcbbce7"
+      },
+      "status": "active"
     }
   ]
 }
