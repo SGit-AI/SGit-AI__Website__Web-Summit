@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.587",
+    "date": "2026-11-05",
+    "what": "the observability scripts carry ?v=<version>, so a browser never runs a cached old copy; the vault opens once per page",
+    "by": "observability@web-summit.dinis",
+    "from": "04965520f"
+  },
+  {
     "version": "v0.2.586",
     "date": "2026-11-05",
     "what": "one door: Jose's agents take work only from the conductor's task files and report back to it; the Actions list is the conductor's; a schedules proposal with its token cost, nothing switched",
