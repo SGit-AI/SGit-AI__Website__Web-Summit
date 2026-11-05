@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.611",
+    "date": "2026-11-05",
+    "what": "the CRM's sealed keys checked: four conductors pass; Indi's two wait on riskmandate-indi (WS-170, WS-152)",
+    "by": "sgit@web-summit.dinis",
+    "from": "2867d209b"
+  },
+  {
     "version": "v0.2.610",
     "date": "2026-11-05",
     "what": "Angelo's yes to a CRM agent, the CRM key sealed to it, and his token for now; my lane drained",
