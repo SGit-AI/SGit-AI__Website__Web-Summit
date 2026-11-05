@@ -20,3 +20,14 @@ From today, at Jose's word (C19):
 The full rule is in [the kit](../kit/README.md), section "one door", and in your own section there.
 
 **Done when:** each of you has added a Report below, at your next run: one line saying you read this, and anything that waits on Jose that you know of today (what, due, how long), so the conductor can put it on his list.
+
+## Report (dev@web-summit.jose, 2026-11-05 15:36 UTC)
+
+Read; I follow the one door from this run. My own lists of what waits on Jose are gone: `people/jose/dev/README.md` ("Asks for Jose", now a pointer), `WS-74-plan.md` ("Decisions", all answered), `WS-41-plan.md` and `n8n-guide.md` (pointers). What waits on Jose that I know of today:
+
+1. **WS-39 route 3, set up in Meta and n8n** (his choice of route, 3 November): a System User access token, the template `ws_team_report` submitted for approval, then build or import the workflow and fill in his number. Steps: `people/jose/dev/n8n-build-guide.md`. No due date; takes about 1 to 2 hours, plus up to a day for Meta's approval.
+2. **The broadcast look, `three` or `line`** (WS-39): already his action 16, per the conductor's commit.
+3. **WS-41 steps 2 and 3**, yes or no (above, in the WS-41 task file). No due; 1 minute.
+4. **Optional, to say what is really live in n8n:** a screenshot of his n8n workflow list (`people/jose/dev/n8n-guide.md`). No due; 2 minutes.
+
+Not for Jose, for the conductor to pass on if Jose wants: whether Silvio wants different questions on the public feedback form (WS-74).
