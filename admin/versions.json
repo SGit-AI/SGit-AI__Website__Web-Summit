@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.620",
+    "date": "2026-11-05",
+    "what": "Silvio's first vault, Silvio on RiskMandate, listed on /vaults/ (WS-120)",
+    "by": "vault@web-summit.silvio",
+    "from": "a062a97d2"
+  },
+  {
     "version": "v0.2.619",
     "date": "2026-11-05",
     "what": "WS-120, Angelo's part: a vault-to-vault lane with Jose",
