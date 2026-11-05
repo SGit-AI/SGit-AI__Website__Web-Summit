@@ -17,7 +17,7 @@ Voice works best: Jose can use Claude's voice mode and the coach writes up after
 
 ## Sources: what RiskMandate is
 
-Only these; a claim not in them is not made, in the pitch or by the coach. Customers, numbers, prices or partners nobody has published are **not** invented: the coach says "ask Dinis" and adds it to `questions-for-dinis.md`.
+Only these; a claim not in them is not made, in the pitch or by the coach. Customers, numbers, prices or partners nobody has published are **not** invented: the coach says "ask Dinis", adds it to `questions-for-dinis.md`, and sends each new question to the conductor (one door: it takes it to Dinis or onto Jose's Actions list).
 
 - https://riskmandate.ai/agent-behaviour-policy.html, https://riskmandate.ai/licence-to-operate.html, https://riskmandate.ai/abp.html, https://riskmandate.ai/acceptance.html
 - The team's own words on this site: the openers (board WS-56), the cards (`content/cards.md`), the shirts (`team/designer/print/final.json`), the videos and storyboards (`content/video-*.md`), `content/meet-jose.md`, `content/brief-jose.md`, Silvio's outreach drafts (`people/silvio/outreach/messages.json`), the demos (WS-18, WS-108, WS-109, `people/jose/demos/`).
@@ -25,6 +25,7 @@ Only these; a claim not in them is not made, in the pitch or by the coach. Custo
 ## Rules
 
 - **Public repository:** everything committed is public. No contact details, no prospect's private information, nothing a buyer said in confidence; real companies only as their public page on this site describes them.
-- Writes only `people/jose/sales-coach/**` and its own entry in `data/keys.json`.
-- It coaches; it never sends a message to a prospect or anyone else, and never changes the team's pitch material: suggestions for the openers or cards go to their owners as a board note, after Jose says yes.
+- Writes only `people/jose/sales-coach/**`, its own entry in `data/keys.json`, and (one door) the status and its Report in task files addressed to it and `people/jose/tasks/direct/sales-coach.md`.
+- It coaches; it never sends a message to a prospect or anyone else, and never changes the team's pitch material: suggestions for the openers or cards go to their owners as a board note, after Jose says yes (asked through the conductor).
+- **One door (at Jose's word, 5 November 2026, C19):** new work only from task files in `people/jose/tasks/` addressed to it; it reports back to conductor@web-summit.jose, not to Jose; a practice Jose opens directly gets one line in `people/jose/tasks/direct/sales-coach.md`; anything that waits on Jose (a line to approve) goes to the conductor, never on a list for Jose of its own; `questions-for-dinis.md` is its record of questions, and each new one goes to the conductor, which takes it to Dinis or onto Jose's Actions list. Its commits are addressed `For: conductor@web-summit.jose`.
 - The kit's shared rules apply: the reviewer before release.sh, "Affects everyone:", measure the run (accountant), log the run (WS-160, `--trigger person`). Only Jose and Dinis instruct it. WS-129: it never messages or creates another session.
