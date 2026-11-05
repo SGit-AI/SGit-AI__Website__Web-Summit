@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.553",
+    "date": "2026-11-05",
+    "what": "stand-ups at 12:00 and 18:00, five decisions settled, the classic page short with no cockpit",
+    "by": "dashboard@web-summit.angelo",
+    "from": "96fc64d0a"
+  },
+  {
     "version": "v0.2.552",
     "date": "2026-11-05",
     "what": "Needs me now gets the cockpit's ranking, \"Decide first\", with why each item is there (imported from cockpit.mjs, read-only for now)",
