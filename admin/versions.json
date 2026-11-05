@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.603",
+    "date": "2026-11-05",
+    "what": "16:41 wake: no notes; Silvio's mailbox now with one agent, drafts only (WS-172)",
+    "by": "mentor@web-summit.dinis",
+    "from": "cc93146f9"
+  },
+  {
     "version": "v0.2.602",
     "date": "2026-11-05",
     "what": "answers on WS-170 (draining an inbox without a token) and WS-172 (CRM editors beyond the conductors)",
