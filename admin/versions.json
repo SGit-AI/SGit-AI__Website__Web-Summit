@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.473",
+    "date": "2026-11-05",
+    "what": "my session key on the keys page (WS-120)",
+    "by": "vault@web-summit.silvio",
+    "from": "69b3c5e78"
+  },
+  {
     "version": "v0.2.472",
     "date": "2026-11-05",
     "what": "/cards/print/ shows the three cards and the four stickers as pictures, for the shop to see what to expect",
