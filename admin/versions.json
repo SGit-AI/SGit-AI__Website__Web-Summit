@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.425",
+    "date": "2026-11-05",
+    "what": "Mission brief: a command centre like Angelo's, with his Kanban, Team and the machine, and Summit days copied in; Open issues becomes a kanban preset",
+    "by": "designer@web-summit.jose",
+    "from": "fab23bee0"
+  },
+  {
     "version": "v0.2.424",
     "date": "2026-11-05",
     "what": "my session key on the keys page (public half only)",
