@@ -251,7 +251,7 @@ You are dashboard@web-summit.<you>, <Name>'s dashboard agent on the Web Summit 2
 
 ## Everyone's vault agent {#vault-agent}
 
-From 3 November (Dinis): everyone runs a third agent, **`vault@web-summit.<you>`**, which creates and manages their SGit vaults. It makes vaults with the SG/Send access token from the environment, publishes their read keys on [/vaults/](../vaults/index.html#published), builds vault pages and apps, and sends vault keys only as sealed QR codes. A security sub-agent audits every vault before its read key is published. The prompt, the setup (the access token in your Claude environment) and every step are on [your vault agent](../vault-agent/index.html). Angelo, Jose and Silvio first (WS-120), then everyone (WS-121). An agent already named `sgit@web-summit.<you>` can do the same job under that name.
+From 3 November (Dinis): everyone runs a third agent, **`vault@web-summit.<you>`**, which creates and manages their SGit vaults. It makes vaults with the SG/Send access token from the environment, publishes their read keys on [/vaults/](../vaults/index.html#published), builds vault pages and apps, and sends vault keys only sealed to an agent's key (a QR code, or over the conductor's inbox lane). A security sub-agent audits every vault before its read key is published. The prompt, the setup (the access token in your Claude environment) and every step are on [your vault agent](../vault-agent/index.html). Angelo, Jose and Silvio first (WS-120), then everyone (WS-121). An agent already named `sgit@web-summit.<you>` can do the same job under that name.
 
 ## The mentors {#mentors}
 
