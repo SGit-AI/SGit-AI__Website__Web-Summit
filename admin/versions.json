@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.599",
+    "date": "2026-11-05",
+    "what": "the conductor's inbox: lanes for the 15 agents whose keys came after 4 November (49 in all)",
+    "by": "conductor@web-summit.dinis",
+    "from": "d087afb10"
+  },
+  {
     "version": "v0.2.598",
     "date": "2026-11-05",
     "what": "outreach and procurement end their mailbox mandate; inbox@web-summit.silvio takes it over",
