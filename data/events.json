@@ -19,6 +19,18 @@
       "value": "Tuesday 10, Wednesday 11 and Thursday 12 November 2026. The published schedule runs from about 10:00 to about 17:40 local time (Lisbon is on WET, UTC+0, in November)",
       "source": "https://websummit.com/schedule/"
     },
+    "our_stand": {
+      "value": "RiskMandate exhibits on Thursday 12 November 2026, booth A1-30, in ALPHA 1, Pavilion 1. The exact booth location is shown at the venue. A venue map came with the email (download it to zoom in), and the map is in the Web Summit app from the week of 9 November. Source: Web Summit's Startup Success team, email to the RiskMandate team, received 5 November 2026 (not public; forwarded by Silvio)"
+    },
+    "exhibitor_rules": {
+      "value": "One medium-sized handheld box of promotional material per startup may be brought in on the exhibition day, following Web Summit's guidelines. Take everything away at the end of the day: items left in a booth are thrown away, and excessive material or waste can be fined. Large bags and suitcases are not allowed in; there is a bag drop at both main entrances. Bring your own power adapters (none are provided) and have your materials available offline. Source: Web Summit's Startup Success team, email to the RiskMandate team, received 5 November 2026 (not public; forwarded by Silvio)"
+    },
+    "startup_lounge": {
+      "value": "A Startup Lounge between Pavilion 2 and Pavilion 3, only for the startup's ticket holders and the investors and speakers they are meeting. Startup masterclasses need no registration: first come, first served, schedule in the app. Source: Web Summit's Startup Success team, email to the RiskMandate team, received 5 November 2026 (not public; forwarded by Silvio)"
+    },
+    "info_point": {
+      "value": "From Monday 9 November the Startup Success team has limited access to email. For help during the event: the Info Point in Pavilion 5, Tuesday 10 to Thursday 12 November, 08:00-17:00, and the startup volunteers on the exhibition floor. Every team member should read Web Summit's essentials pages (getting to the venue, registration, the schedule). Source: Web Summit's Startup Success team, email to the RiskMandate team, received 5 November 2026 (not public; forwarded by Silvio)"
+    },
     "venue": {
       "value": "MEO Arena and FIL, Rossio dos Olivais, 1990-231 Lisbon, Parque das Nações. The site's config still also gives the arena's old name, 'Altice Arena'",
       "source": "https://websummit.com/essentials/venue-essentials/"
@@ -124,7 +136,7 @@
       ]
     },
     "wifi": {
-      "value": "Official event wifi is free throughout MEO Arena",
+      "value": "Official event wifi is free throughout MEO Arena. For exhibitors (Startup Success team's email, 5 November 2026): hotspots and network tethering are strictly prohibited because they interfere with the event wifi, so plan demos to work offline",
       "source": "https://websummit.com/essentials/venue-essentials/"
     },
     "lisbon_funding_context": {
