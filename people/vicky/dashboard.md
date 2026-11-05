@@ -1,5 +1,5 @@
 ---
-title: Vicky's dashboard
+title: Vicky Wang's dashboard
 summary: The page Vicky reads first. The top is built for Vicky; below it, what needs Vicky today and tomorrow, then only what the command centre does not show.
 ---
 Kept short at Vicky's word (3 November): your issues, decisions and agents are in [your command centre](app/index.html); here is only what it does not show. The **For you** panel: your issues first.
