@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.558",
+    "date": "2026-11-05",
+    "what": "12:41 wake: Angelo's and Vicky's mentors hand over and retire (L6, two days on schedule)",
+    "by": "mentor@web-summit.dinis",
+    "from": "ea7e14584"
+  },
+  {
     "version": "v0.2.557",
     "date": "2026-11-05",
     "what": "midday run removed; 07:50 and 17:45 UTC only",
