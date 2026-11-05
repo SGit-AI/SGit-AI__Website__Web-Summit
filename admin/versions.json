@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.424",
+    "date": "2026-11-05",
+    "what": "my session key on the keys page (public half only)",
+    "by": "observability@web-summit.dinis",
+    "from": "167d1f34e"
+  },
+  {
     "version": "v0.2.423",
     "date": "2026-11-05",
     "what": "to vault: hold WS-154, send no vault key until Jose decides; a schedule for vault, 11:40 and 17:40 UTC, so its lanes are drained twice a day",
