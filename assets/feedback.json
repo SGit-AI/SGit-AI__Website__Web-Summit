@@ -1,5 +1,6 @@
 {
   "about": "Where the feedback pane (assets/feedback.js) sends what you submit: dev@web-summit.dinis's vault, over its append lane. Public on purpose: the append token can write to the lane and nothing else (it cannot list, read or delete; sgit.ai/api/append-lanes), and the key is the agent's PUBLIC encryption key, which the page seals each submission to. The vault key, the write key and the enum key are never here. A session key: when this agent's session ends, a new key and lane replace these (3 November 2026, temporary until the team's vault). Several lanes (lanes[]): the pane lets you choose who it goes to. A person whose key is in this browser (assets/keyring.js) signs what they send, so the agent knows it is theirs; without a key, it is material, not instruction.",
+  "open_to_public": false,
   "agent": "dev@web-summit.dinis",
   "host": "https://dev.send.sgraph.ai",
   "vault_id": "rx5uxdyu",
@@ -45,6 +46,42 @@
         "signing_fingerprint": "sha256:78c26eb7222c087c",
         "keys_page_id": "vault-jose",
         "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAw6Q9p5GGSmk1ZNzg4FNa\n8wRdwyzu3zHF1GYddZT8+U7LDBobdWSGc5bG97QNGzhD8jT8toCNXQgY7Lp1RGff\n9n9M2t/WD1crDRi0yQcikAyWTvZbBe2IYpp+EsI5TcLgnP7HtuXAw35s2R0GY4Z2\nGElxjTCKe2gcGtW7Q2afV4E6xw10cHV1sZ4Jr6wHI6ISjuM6zzZv0rylR4v+H/iD\nzTD8dMNJvvIaPt6+0YRfJtYv/aG7F8w8M1HBXY0wz8jplLcD41QEEJyGlrr6czxl\nXNOjeR683+bIo8qw7z3yJk6sC/IFDbYUgEaeVGZsyC9IaopcGnF7RDJziQQ6aImM\nZyh44BZDqFsrjTxmyZ9QLqbXaVoqqbDYomaR9XReUWWxURFaGxcQal1I6eBAR4rh\nPbu/Sn6Kr7FL4lVe9qxNnHI/Dd9ci7E3HkKSDhn2NsjF5ZyDYm82u47zc1mLuFQb\nwb+GpJb2X1YR4pvIAV+STrjRWlkosZIcrmIyIfyksY0jrLSmJN1rAiZhPT0BR1+m\nkr13XCHqATbrvI0Tbcf30uw7E9RKMFdPBMPud5kb6Uusl4eaf4C7U9KjaHhdLwKH\n9z3La2gG/TZ3DR6rcfLG3sYtWnyL1/iDW9Hw36AM3Tdauqq6Q1gPS0xSx1WuMw+5\neD7E3zUF1lh4zKAYOR+4SDcCAwEAAQ==\n-----END PUBLIC KEY-----\n"
+      }
+    },
+    {
+      "agent": "observability@web-summit.dinis",
+      "host": "https://dev.send.sgraph.ai",
+      "vault_id": "06pttbq5",
+      "append_token": "52341ed2a9fd9c26e868eb4a12b6ee76b263a5b0b18e37c388636ffbd06dc85f",
+      "recipient": {
+        "fingerprint": "sha256:b45465c39c1c07f5",
+        "signing_fingerprint": "sha256:9d25710a27ffc5ce",
+        "keys_page_id": "observability-dinis",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAu0cUxZo66tO8Xvie0udT\n+91HeRQLHaB+y4qMMMHUv6n2N/hB+jAmbOCI3yLnXFrCZU1VjkPP9jZ03n7bI/Pu\nqACMXrgc9Nj2MrBwz1pE/tw6+pGwxMayiVRhA8SyXPWNIZIBdMbT7GhjavVkBZpO\nT8FpeNNLfJXpQpPOBrwz0s5JKuNfaXasWojIvJjqq0hJXblV+JLABp3yeFbQHt/Z\nlPtBaAG6sEmOm3KfsJxtLJXIteywHH7AAJOeXsu5TEN6mcpYskXThyoOoQO9Bk0Y\nk5ca38u5KaBkR1JbS8AqVQJxHknYicR8AfcSJqvA6ZTDy+FSnPPqx6MEWoDCvkls\nWpoTMiy0EfY31OKMd4Oa3bnY+XuCOeR61vwdaqRD8oDNh15UnLXyHfaJrW1IUYlk\nzuWb/EKUXQlgYlw/Id5HBlGzJDDTMJPfIr7DsqAjnDwcSGHe8a7Jk5h4jyiL2eMd\nxO2aYqkvmi4ceD8l6PybPhuucVEDMTeWpRd2nslWCOzftNP0A7gCH1nzjuk8TGsd\nDHkB58xyIfLkxQ92+1DqF6n5CAYHdcS3offWndjUJLmaeLxTOJNN/pUyxqxbcN/h\n964hDoy9mefVchuv5ZNmkbD4y8G/1aO3HxiB/5uuRn8+7BIIt08JfcsJ6JPJE73L\nhCYaB/6hvwIVPbULYMjEQiECAwEAAQ==\n-----END PUBLIC KEY-----\n"
+      }
+    },
+    {
+      "agent": "dashboard@web-summit.dinis",
+      "host": "https://dev.send.sgraph.ai",
+      "vault_id": "egfvjqh2",
+      "append_token": "2994ce2c9ed2b790b94be7c40f3084805c75cdc4eb855c81cc8368d4d34fe45c",
+      "recipient": {
+        "fingerprint": "sha256:ab29677c9756bfb6",
+        "signing_fingerprint": "sha256:28b8d056bfb8e4ce",
+        "keys_page_id": "dashboard-dinis",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAvS6bAguTh7Hk/0BOookW\npdKzOuRfhFdHA2iQ1sqkIivSpgmKkrvmTpLK4gagX/OMgzZqBK0kxvda1ZAahjRE\nVq6IaRvEsu8rOgz2cISQPhBWmcN1j7iOFcpCFzsLsLapy8pFycAy0ywjRxPLQQF+\n8ATU033OH3ACvMyezbHgbN2Qb7bA1zMwzQ+1dJvrMNbdTLydlc/YAe9A/+0Bkr19\nrIq7N87snnKah+7GkDywcFvhXVcEsU/02vvl90qCceA802PlOLf/Pn4S7ytMH4gq\nferBVw4Ue9YvyV/riDeTGW+KQXV6R2ojhDZfTLBwWV/s7iQVweBx+oV4VE0OcYZS\ncE9MkX+CMrglSEctXimGeoQiXNa86bu/MZnCjBxryFoYqdO/RcXrcL4MIMMY2o33\n4HIaQXI42yu7MS88NA0TnmkqxwPpw+uz4yvmp+/jOnNwOK4FtUWWklm/wjnn1+mH\neCQjgMLglW9mqO16iHwCmoc+hfZZUZwBytCeaJVZBjs8e8H36Ttq5r4gU0Oo9EzS\ngHWbtJvzIlIH3WaZzKafRqIWBw2rZ3FS2UYx3XQ7EPgjnk7J2M2u9bD9yxB+zKd0\n+YRREb+Iq5GaWzYQY33ACos75hrBlUFCm+BWFgQUKWEoWj2XJXnh5ItaA/GzXDFG\nS5gF0ooufOHdVRteOSmYGCUCAwEAAQ==\n-----END PUBLIC KEY-----\n"
+      }
+    },
+    {
+      "agent": "newsroom@web-summit.dinis",
+      "host": "https://dev.send.sgraph.ai",
+      "vault_id": "e4irbs0e",
+      "append_token": "0d3060f5b96a158c3bc72d675dee7c759dfe9528c98d9d12b562b4a35af92193",
+      "recipient": {
+        "fingerprint": "sha256:aea91e7f8f429363",
+        "signing_fingerprint": "sha256:2cbb6cfafdcbbce7",
+        "keys_page_id": "newsroom-dinis",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAt7E/fI1b+F/Bbj+y5XkP\nhSry/LyyW3nCFJKY5aQNOYKN+SgVo3yr7+TgQpxnh69NDopm7kXvaDSB2vBzge/x\ngkdfnr64nxdBsd35ww1/UsjfvzBEKV+i82xm694b8RKU2dXfnBp3ddJ/G/0F6dRG\n1rYnJ3EVgj2hBgUpFkmwenftD0cOUhgmnUYs+L4KAeevCRMura6yqox+rA+p/X+z\nIjImR5sc3DQ0cPPu4SsuA/tvsJTd/2VeB8oDWOciHhZuh7iZErwx28v1uEggCYk1\nj6a3PaYuHULhxqfJmdVRDYfF9XuheEp37K13YXFphrHUyVu9JaOMrgNnaexKTuJS\nctwp86bc/T8eHGOZdxBIjrGkGsQk1TtSgJcOSiKKYpG922FvqsbBGuIwlpNGAVU8\nmWAsLqz8qt5GF0dgTQ7YFThisZzciTTL2rDjwKCbYDHiQZpLz2Kn4Ro1S7iUNL9Q\nZs1bUNre2BTSxyUQOn4i8NJM3uc3d0xkFRVBAvEWPCBH+U8pweK5/cYchdH7KHGk\nRoiOoIdad2LmeoO/CEFS7BvjTf8+MCUQek3+CbUCrMHkha9zo/1LQeTFvcoj/7bV\nY6CLByD/tQUNXHQ5+Jx1uzG6GkYTWLO6+GtmQxUIvdgizKGjBz1ZgjhUSLcCQSC0\nJZ/W4vQ+IblCygK0oQ7CSkUCAwEAAQ==\n-----END PUBLIC KEY-----\n"
       }
     }
   ]

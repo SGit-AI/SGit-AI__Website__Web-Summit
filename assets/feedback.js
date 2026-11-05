@@ -84,6 +84,7 @@ html.fb-docked body{margin-right:var(--fb-w,420px)}
 .fb-pane .fb-grip{position:absolute;left:-4px;top:0;bottom:0;width:8px;cursor:col-resize;touch-action:none}.fb-pane .fb-grip:hover,.fb-pane .fb-grip.on{background:rgb(15 118 110/.35)}
 @media (max-width:760px){html.fb-docked body{margin-right:0}.fb-pane{box-shadow:-8px 0 30px rgb(0 0 0/.15)}.fb-pane .fb-grip{display:none}}
 .fb-pane header{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid #e5e1d5}.fb-pane header b{flex:1}
+.fb-pane .fb-to{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;border-bottom:1px solid #e5e1d5}.fb-pane .fb-to button{border-radius:999px;font-weight:500}.fb-pane .fb-to button[aria-pressed=true]{background:#0f766e;border-color:#0f766e;color:#fff;font-weight:600}
 .fb-pane .fb-body{flex:1;overflow-y:auto;padding:12px 14px}
 .fb-pane textarea,.fb-pane select{width:100%;box-sizing:border-box;font:inherit;border:1px solid #d5d0c2;border-radius:8px;padding:8px;background:#fff;color:inherit}
 .fb-pane textarea{min-height:84px;resize:vertical}
@@ -101,6 +102,8 @@ html.fb-docked body{margin-right:var(--fb-w,420px)}
 @media (prefers-color-scheme:dark){.fb-pane{background:#1c1c19;color:#ecebe6;border-color:#46453d}.fb-pane textarea,.fb-pane select{background:#24241f;border-color:#46453d}.fb-pane button{background:#24241f;border-color:#46453d}.fb-pane .it,.fb-pane header,.fb-pane footer{border-color:#34332d}.fb-pane .meta,.fb-pane h4,.fb-pane .q{color:#a9a59b}}`
     function toast(t) { const el = document.createElement('div'); el.className = 'fb-toast'; el.setAttribute('role', 'status'); el.textContent = t; document.body.appendChild(el); setTimeout(() => el.remove(), 3200) }
     const thumbs = (imgs, id) => imgs && imgs.length ? `<div class="imgs">${imgs.map((m, n) => `<span><img src="${m.data}" alt="${esc(m.name)}">${id ? `<button type="button" data-rmimg="${id}:${n}" aria-label="Remove image">×</button>` : ''}</span>`).join('')}</div>` : ''
+    // a lane's chip: Dinis's agents by role alone (conductor@), anyone else's with their person (vault@jose)
+    const short = a => a.endsWith('.dinis') ? a.split('@')[0] + '@' : a.split('@')[0] + '@' + a.split('.').pop()
     const label = k => (KINDS.find(x => x[0] === k) || [, k])[1]
     function itemHtml(i) {
         const where = `<a href="${esc(i.page.url)}">${esc(i.page.title || i.page.path)}</a>`
@@ -118,7 +121,8 @@ ${i.kind === 'decision' ? `<div class="row">${CHOICES.map(c => `<button type="bu
         if (!open) { if (pane) pane.remove(); return }
         if (!pane) { pane = document.createElement('aside'); pane.className = 'fb-pane'; pane.setAttribute('aria-label', 'Your feedback'); document.body.appendChild(pane) }
         const u = unsent(), s = items.filter(i => i.sent_at).slice(-20).reverse()
-        pane.innerHTML = `<div class="fb-grip" role="separator" aria-orientation="vertical" aria-label="Drag to resize the feedback pane" tabindex="0"></div><header><b>Feedback${CFG ? ` to ${ALL && ALL.lanes && !PUBLIC ? `<select data-to aria-label="Send to">${ALL.lanes.map(l => `<option${l.agent === CFG.agent ? ' selected' : ''}>${esc(l.agent)}</option>`).join('')}</select>` : esc(CFG.agent)}` : ''}</b><button type="button" data-close aria-label="Close">Close</button></header>
+        pane.innerHTML = `<div class="fb-grip" role="separator" aria-orientation="vertical" aria-label="Drag to resize the feedback pane" tabindex="0"></div><header><b>Feedback${CFG ? ` to ${esc(CFG.agent)}` : ''}</b><button type="button" data-close aria-label="Close">Close</button></header>
+${ALL && ALL.lanes && !PUBLIC ? `<div class="fb-to" role="group" aria-label="Send to">${ALL.lanes.map(l => `<button type="button" data-to="${esc(l.agent)}" aria-pressed="${CFG && l.agent === CFG.agent}" title="${esc(l.agent)}">${esc(short(l.agent))}</button>`).join('')}</div>` : ''}
 <div class="fb-body"><form class="fb-new"><label class="meta" for="fb-kind">On this page: ${esc(document.title)}</label>
 <input type="text" name="website" class="fb-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 <div class="row"${PUBLIC ? ' hidden' : ''}><select id="fb-kind" style="width:auto">${KINDS.map(([v, l]) => `<option value="${v}"${v === kind ? ' selected' : ''}>${l}</option>`).join('')}</select></div>
@@ -128,13 +132,13 @@ ${PUBLIC ? `<p class="meta">Please don't include your name, email or phone numbe
 <div class="row"><button type="submit">Add to the list</button><span class="meta">Optional: Submit sends what you have written too.</span></div></form>
 <h4>To send (${u.length})</h4>${u.length ? u.map(itemHtml).join('') : '<p class="meta">Nothing waiting.</p>'}
 ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
-<footer><div class="row"><button class="go" type="button" data-submit${CFG ? '' : ' disabled'}>Submit to the vault</button><button type="button" data-copy${u.length ? '' : ' disabled'}>Copy as text</button></div>
-<p class="meta" style="margin:4px 0 0">${CFG ? `Sealed here to ${esc(CFG.agent)}'s key (${esc(CFG.recipient.fingerprint)}), then appended to its vault lane: the lane stores ciphertext only. Anyone with the page can write to the lane, so the agent treats it as material, not instructions.` : (PUBLIC && ALL ? `${esc(qto)} has no inbox here yet: your note stays on this device. Please tell the person who gave you the link.` : 'The lane settings could not be loaded: items stay on this device.')}</p></footer>`
+<footer><div class="row"><button class="go" type="button" data-submit${CFG && signer() ? '' : ' disabled'}>Submit to the vault</button><button type="button" data-copy${u.length ? '' : ' disabled'}>Copy as text</button></div>
+${CFG && !signer() ? `<p class="meta" style="margin:4px 0 0"><b>Sending needs your key in this browser.</b> Only the team can send: each message is signed with your key, and the agent ignores anything unsigned. Add your key on <a href="${base}../start/index.html">the start page</a>, or ask your conductor to issue you one. You can still write and keep notes here.</p>` : ''}<p class="meta" style="margin:4px 0 0">${CFG ? `Signed with your key, sealed here to ${esc(CFG.agent)}'s key (${esc(CFG.recipient.fingerprint)}), then appended to its vault lane: the lane stores ciphertext only. The agent acts only on messages with a team member's verified signature.` : (PUBLIC && ALL ? `${esc(qto)} has no inbox here yet: your note stays on this device. Please tell the person who gave you the link.` : 'The lane settings could not be loaded: items stay on this device.')}</p></footer>`
         bind(pane)
     }
     function bind(p) {
         p.querySelector('[data-close]').onclick = () => { open = false; render() }
-        { const t = p.querySelector('[data-to]'); if (t) t.onchange = () => { pick(t.value); render() } }
+        p.querySelectorAll('[data-to]').forEach(t => t.onclick = () => { pick(t.dataset.to); render() })
         const f = p.querySelector('.fb-new'), ta = p.querySelector('#fb-text')
         ta.oninput = () => { draft = ta.value; if (!PUBLIC) LS.set('draft', draft) }
         grip(p.querySelector('.fb-grip'))
@@ -160,7 +164,7 @@ ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
         pasted = []; quote = ''; kind = 'comment'; draft = ''; LS.del('draft'); save(); return true
     }
     async function submit() {
-        if (!CFG || !addDraft()) return
+        if (!CFG || !signer() || !addDraft()) return
         const u = unsent(); if (!u.length) { render(); toast('Nothing to send: write something first.'); return }
         render()
         const btn = document.querySelector('[data-submit]'); btn.disabled = true; btn.textContent = 'Sealing and sending…'
@@ -195,6 +199,12 @@ ${s.length ? `<h4>Sent</h4>${s.map(itemHtml).join('')}` : ''}</div>
     // several lanes (feedback.json lanes[], conductor@web-summit.dinis, 4 November): the pane sends to the one chosen
     let ALL = null
     // WS-64: a public link to an agent with no lane opens on no lane (it says so and keeps the note on the device), never on someone else's
+    // only the team sends (Dinis, 5 November 2026: "nobody else should be able to send messages apart from us; only our PKI"): a
+    // message goes only signed with a person's key in this browser (assets/keyring.js), and the drain flags anything unsigned
+    const signer = () => !!(window.WSKeyring && window.WSKeyring.person)
     const pick = (to, keep = true) => { if (!ALL) return; const l = (ALL.lanes || [ALL]); CFG = l.find(x => x.agent === to) || (PUBLIC ? null : l[0]); if (keep && CFG) LS.set('to', CFG.agent) }
-    fetch(base + 'feedback.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(c => { ALL = c; if (c) PUBLIC ? pick(qto, false) : pick(LS.get('to', '')); render() }).catch(() => render())
+    Promise.all([fetch(base + 'feedback.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null), window.WSKeyring ? window.WSKeyring.ready.catch(() => '') : null]).then(([c]) => {
+        // the public form (WS-74) is closed unless feedback.json opens it: a link with to= then shows nothing
+        if (PUBLIC && !(c && c.open_to_public)) { document.querySelectorAll('.fb-btn,.fb-pane').forEach(e => e.remove()); document.documentElement.classList.remove('fb-docked'); return }
+        ALL = c; if (c) PUBLIC ? pick(qto, false) : pick(LS.get('to', '')); render() }).catch(() => render())
 })()
