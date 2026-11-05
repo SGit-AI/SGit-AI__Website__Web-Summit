@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.410",
+    "date": "2026-11-05",
+    "what": "WS-132 part 1: markdown can no longer make a javascript:, data: or vbscript: link; gate check 21 over every built URL",
+    "by": "dev@web-summit.dinis",
+    "from": "ce1bfcfdf"
+  },
+  {
     "version": "v0.2.409",
     "date": "2026-11-05",
     "what": "direction 2 on both views: what is blocked on Angelo first, done items gone, no walls of text",
