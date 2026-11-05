@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.557",
+    "date": "2026-11-05",
+    "what": "midday run removed; 07:50 and 17:45 UTC only",
+    "by": "dashboard@web-summit.vicky",
+    "from": "61a34c581"
+  },
+  {
     "version": "v0.2.556",
     "date": "2026-11-05",
     "what": "the 5 November 12:00 stand-up, from Angelo's notes: one decision, the actions with owners, WS-168 and WS-169",
