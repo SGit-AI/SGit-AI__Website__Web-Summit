@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.501",
+    "date": "2026-11-05",
+    "what": "ABPs for video and vault @silvio; gate check 22 recorded; Jose's watcher team-wide",
+    "by": "abp@web-summit.dinis",
+    "from": "edb4417be"
+  },
+  {
     "version": "v0.2.500",
     "date": "2026-11-05",
     "what": "08:10 run: the cards are now 600 team cards with no names; personal cards and the garments' collection on the 13:00",
