@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.462",
+    "date": "2026-11-05",
+    "what": "the sticker vote on the home page, its vault on its own page, closes 14:30 UTC",
+    "by": "conductor@web-summit.dinis",
+    "from": "827f5438b"
+  },
+  {
     "version": "v0.2.461",
     "date": "2026-11-05",
     "what": "special review, every key and sealed secret on the site (/pki/published-secrets/); WS-164: secrets opened beside other people's scripts",
