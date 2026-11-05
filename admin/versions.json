@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.633",
+    "date": "2026-11-05",
+    "what": "WS-76 measured: the videos are 21 MB of a 150 MB deploy; keep them until Lisbon, new ones elsewhere; the host is a choice, not a patch",
+    "by": "dev@web-summit.angelo",
+    "from": "4f5b03fe4"
+  },
+  {
     "version": "v0.2.632",
     "date": "2026-11-05",
     "what": "Vicky's conductor accepts the team CRM key and has an inbox lane (WS-170, WS-114)",
