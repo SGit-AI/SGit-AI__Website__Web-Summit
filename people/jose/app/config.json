@@ -79,17 +79,17 @@
     "vault": {
       "colour": "slate",
       "job": "creates and manages Jose's SGit vaults (WS-120, /vault-agent/)",
-      "schedule": "cron 40 11,17 * * * (UTC), at Jose's word (5 November 2026); not yet confirmed as scheduled"
+      "schedule": "cron 40 11,17 * * * (UTC), a scheduled task firing into its own session since 5 November 2026 (its commit 47b7021)"
     },
     "automation": {
       "colour": "dev",
       "job": "started 4 November 2026 at Jose's word (first commit 998e857, 23:22): the n8n flows as tested code, WS-39 route 3 and the n8n side of WS-74",
-      "schedule": "cron 10 10,16 * * * (UTC); not yet confirmed as scheduled"
+      "schedule": "cron 10 10,16 * * * (UTC), a scheduled task firing into its own session since 4 November 2026 (its commit 765de20)"
     },
     "helper": {
       "colour": "blue",
       "job": "started 4 November 2026 at Jose's word (first commit 11884fc, 23:22): helps anyone stuck on setup (WS-35), drafts their next step for Jose to send, writes down what went wrong",
-      "schedule": "cron 50 8,14 * * * (UTC); not yet confirmed as scheduled"
+      "schedule": "cron 50 8,14 * * * (UTC), a scheduled task firing into its own session since 5 November 2026 (its commit c3342b2)"
     },
     "watcher": {
       "colour": "slate",
