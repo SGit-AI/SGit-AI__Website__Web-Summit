@@ -29,13 +29,15 @@ Your go is needed before these move:
 
 ## 4. My agents {#agents}
 
-Six agents, all working through your conductor; what each did is in "My agents, as the team sees them" at the top, and on [the collaboration board](app/index.html#collab).
+Eight agents. All but one work through your conductor; the policy agent audits them all, the conductor included, and reports to you directly. What each did is in "My agents, as the team sees them" at the top, and on [the collaboration board](app/index.html#collab).
 
 - **conductor:** the hub; hourly.
-- **dev:** your command centre: offline, the "✦ Angelo's own" mark, and a "Decide first" list in Needs me now (read-only; one-click decide and delegate once Dinis's dashboard agent takes its cockpit patch). Next: sealed messages on the new lane (slices 3 and 4). Every two hours.
+- **dev:** your command centre: offline, the "✦ Angelo's own" mark, a "Decide first" list in Needs me now (one-click once Dinis's dashboard agent takes the cockpit patch). Queue: WS-76 (the videos' hosting, measured), WS-45's close, then **Replay**, a playback of the team's work in your command centre ([its brief](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/proposals/replay/BRIEF.md)), then WS-36, WS-78, WS-106. Every two hours.
 - **team-collaboration:** stand-ups, debriefs, the daily note, the stand-up show; brief at 11:40 and 17:40, debrief at 13:15 and 19:15.
 - **vault:** your vaults; the lane to your conductor is made; a visitors' inbox waits on security's review.
+- **crm:** your area in the team's private CRM; 08:50 and 16:50 UTC.
 - **helper:** setup questions and the help page (WS-158).
+- **policy:** new, the auditor of your agents against their ABPs and your protocol; read-only, reports to you; schedule proposed (daily 07:10 UTC).
 - **dashboard:** this page and your command centre; every three hours.
 
 Questions? [The help page](../../help/index.html), kept by helper@web-summit.angelo.
