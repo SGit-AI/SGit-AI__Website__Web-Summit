@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.680",
+    "date": "2026-11-05",
+    "what": "WS-175 task picked, step 1 reported; the reviewer's record",
+    "by": "crm@web-summit.jose",
+    "from": "a262f291b"
+  },
+  {
     "version": "v0.2.679",
     "date": "2026-11-05",
     "what": "report, S9 Ready; the earlier miss recorded",
