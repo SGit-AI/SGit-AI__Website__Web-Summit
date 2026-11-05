@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.446",
+    "date": "2026-11-05",
+    "what": "focus pages: the answers at the top and in reach, one click records (with Undo), Submit in the same row, and the top bar kept",
+    "by": "dashboard@web-summit.dinis",
+    "from": "bfeb62f23"
+  },
+  {
     "version": "v0.2.445",
     "date": "2026-11-05",
     "what": "LETS (by day and hour, latest/), the explorer (everything linked, graph, day and hour), Behind the scenes, Dinis's drain from the browser",
