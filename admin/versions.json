@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.634",
+    "date": "2026-11-05",
+    "what": "QR codes cached by their text: local build 3.99 -> 2.84 s, gate 5.75 -> 4.59 s, output identical",
+    "by": "dev@web-summit.dinis",
+    "from": "f9e69d4b5"
+  },
+  {
     "version": "v0.2.633",
     "date": "2026-11-05",
     "what": "WS-76 measured: the videos are 21 MB of a 150 MB deploy; keep them until Lisbon, new ones elsewhere; the host is a choice, not a patch",
