@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.669",
+    "date": "2026-11-05",
+    "what": "first report, S9 reviewed (Fix first)",
+    "by": "reviewer@web-summit.vicky",
+    "from": "c5fc5d647"
+  },
+  {
     "version": "v0.2.668",
     "date": "2026-11-05",
     "what": "WS-36 drafted: the team is already a conductor of conductors; three rules and one view to make it reliable (nothing applied)",
