@@ -1,0 +1,23 @@
+{
+  "about": "The settings of Dinis's cockpit (people/dinis/index.html, admin/build/cockpit.mjs, assets/cockpit.js), kept by dashboard@web-summit.dinis. The milestones are from the start page (content/start.md#what) and the stand-up schedule (data/meetings/schedule.json).",
+  "lane": "dashboard@web-summit.dinis",
+  "drained": "every hour at :06 from 07:06 to 22:06 UTC, by dashboard@web-summit.dinis",
+  "milestones": [
+    { "at": "2026-11-05", "what": "The targets: who we should be talking to, then the big outreach", "link": "../../start/index.html#what" },
+    { "at": "2026-11-06", "what": "The big outreach, day two; the merch delivered in Lisbon (WS-48)", "link": "../../print-order/index.html" },
+    { "at": "2026-11-07", "what": "The plan: who we meet, who is booked, a schedule for each of us", "link": "../../start/index.html#what" },
+    { "at": "2026-11-09", "what": "Opening night, Lisbon", "link": "../../summit/index.html" },
+    { "at": "2026-11-10", "what": "Web Summit, day one", "link": "../../summit/index.html" },
+    { "at": "2026-11-12", "what": "Our stand day", "link": "../../summit/index.html" }
+  ],
+  "links": [
+    ["Command centre", "app/index.html"],
+    ["The board", "../../briefs/index.html#issues"],
+    ["Board health", "../../board-health/index.html"],
+    ["Conductor briefs", "../../updates/index.html"],
+    ["Agents at work", "../../wakes/index.html"],
+    ["Setup", "../../team/setup/index.html"],
+    ["Pulse", "../../pulse/index.html"],
+    ["Your lab", "lab/index.html"]
+  ]
+}

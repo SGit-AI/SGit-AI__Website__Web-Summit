@@ -7,6 +7,8 @@ due: Tue 3 Nov
 status: open
 picked_by:
 agents: security@web-summit.dinis (the protocol, the review), sgit@web-summit.dinis (sealing), every receiving agent.
+only: dinis
+action: "Issue the OpenRouter key per agent, sealed to each agent's key and signed by you (the issue says how)."
 ---
 From Dinis, 3 November: distribute secrets to agents via QR codes, the OpenRouter key first. The protocol is on [Giving out secrets](https://web-summit.sgit.ai/pki/secrets/index.html) (security@web-summit.dinis).
 

@@ -179,10 +179,10 @@ function rail(rel, up, body) {
     return pages || on ? `<aside class="rail" aria-label="Section and page contents">${pages}${on}</aside>` : ''
 }
 
-function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false, head = '' }) {
+function page({ rel, title, description, body, meta = '', mdTwin = '', lead = '', home = false, head = '', wide = false }) {
     const up = '../'.repeat(rel.split('/').length - 1)
     body = String(body).replaceAll('href="@@/', `href="${up}`)   // links from build-time blocks (the agenda) written from the site root
-    const side = home ? '' : rail(rel, up, body)
+    const side = home || wide ? '' : rail(rel, up, body)   // wide: a cockpit (people/<id>/dashboard.md, layout: cockpit) uses the whole screen
     const heroed = home && body.includes('class="hm-hero"')   // the home page's hero band (WS-103) is its title
     const url = `https://${HOST}/${rel}`
     const agent = `For an agent: this page is ${url}${mdTwin ? ` (markdown: https://${HOST}/${mdTwin})` : ''}. Site index for agents: https://${HOST}/llms.txt. Source: ${REPO} (release branch dev). Identity of the agent that runs this site: https://${HOST}/agent/index.html.`
@@ -208,11 +208,11 @@ function page({ rel, title, description, body, meta = '', mdTwin = '', lead = ''
 <div class="me-pick" id="me-pick"></div>
 <a class="gh" href="${REPO}">★ GitHub</a>
 </div></nav>
-${(() => { const sec = sectionOf(rel); return sec && sec.sub.length ? `<nav class="subnav" aria-label="${sec.t}"><div class="row">${sec.sub.map(([t, h]) => `<a href="${up}${h}"${rel === h ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</div></nav>` : '' })()}
-<div class="frame${side ? ' with-rail' : ''}">${side}
-<main id="main"${home ? ' class="home"' : ''}>
-<section class="for-you" id="for-you" hidden aria-label="For you"></section>
-${home ? '' : (() => {
+${wide ? '' : (() => { const sec = sectionOf(rel); return sec && sec.sub.length ? `<nav class="subnav" aria-label="${sec.t}"><div class="row">${sec.sub.map(([t, h]) => `<a href="${up}${h}"${rel === h ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</div></nav>` : '' })()}
+<div class="frame${side ? ' with-rail' : ''}${wide ? ' wide' : ''}">${side}
+<main id="main"${home ? ' class="home"' : wide ? ' class="cockpit"' : ''}>
+${wide ? '' : '<section class="for-you" id="for-you" hidden aria-label="For you"></section>'}
+${home || wide ? '' : (() => {
     const sec = sectionOf(rel), who = personOf(rel), c = [`<a href="${up}index.html">Home</a>`]
     if (sec) c.push(`<a href="${up}${sec.h}">${sec.t}</a>`)
     if (who && who.kind === 'human' && !rel.startsWith('team/')) c.push(`<a href="${up}team/${who.id}/index.html">${esc(who.name)}</a>`)
@@ -220,7 +220,7 @@ ${home ? '' : (() => {
     const bar = who && who.kind === 'human' ? `<p class="personbar">${castIcon(who.id, 'icon')}<b>${esc(who.name)}</b>${[['Profile', `team/${who.id}/index.html`], ['Brief', `brief-${who.id}/index.html`], ['Dashboard', `people/${who.id}/index.html`], who.core ? ['Meet page', `meet/${who.id}/index.html`] : null].filter(Boolean).filter(([, h]) => fs.existsSync(path.join(ROOT, h)) || h.startsWith('brief-') || h.startsWith('people/') || h.startsWith('meet/') || h.startsWith('team/')).map(([t, h]) => rel === h ? `<span aria-current="page">${t}</span>` : `<a href="${up}${h}">${t}</a>`).join('')}</p>` : ''
     return `<nav class="crumbs" aria-label="Breadcrumbs">${c.join('<span>›</span>')}<span>›</span><span aria-current="page">${esc(title)}</span></nav>${bar}`
 })()}
-${heroed ? '' : `<h1>${inline(title)}</h1>
+${heroed || wide ? '' : `<h1>${inline(title)}</h1>
 ${lead ? `<p class="lead">${inline(lead)}</p>` : ''}
 ${home ? `<p class="countdown" data-countdown="2026-11-09">Web Summit Lisbon: 9 to 12 November 2026</p><script src="assets/countdown.js" defer></script>` : ''}`}
 ${meta}
@@ -543,6 +543,7 @@ CHARTS['agents-map'] = (() => {
 
 // the stand-ups: data/meetings/ -> meetings/ (admin/build/meetings.mjs)
 const MEET = meetingsContext(ROOT)
+const CK = await import(path.join(ROOT, 'admin/build/cockpit.mjs'))
 // the agenda to the summit (WS-143, item 1): /agenda.json, and ```chart agenda``` wherever a page wants it; built from
 // the stand-ups, the board, the plan and the summit at every release. BUILD_NOW pins "now", as for the stand-ups.
 // hasPage is meetings.mjs's own rule for which stand-ups get a page (today to two days on, or any with items)
@@ -594,6 +595,16 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const f = path.join(ROOT, 'people', m.id, 'dashboard.md')
     if (!fs.existsSync(f)) continue
     const { meta, body: rawBody } = parse(fs.readFileSync(f, 'utf8'))
+    if (meta.layout === 'cockpit') {   // Dinis, 5 November: the first dashboard, full width, built from data (admin/build/cockpit.mjs)
+        const D = CK.cockpit({ ROOT, id: m.id, teamData, ISSUES, MEET, INV, OB, VERSION })
+        write(`people/${m.id}/dashboard.json`, JSON.stringify(D))
+        const rel = `people/${m.id}/index.html`, more = expandIssues(rawBody, '../../'), md = CK.cockpitMd(D) + '\n\n' + more
+        write(rel, page({ rel, title: meta.title, description: meta.summary, wide: true, mdTwin: twinPath(rel),
+            head: '<link rel="stylesheet" href="../../assets/cockpit.css"><script src="../../assets/cockpit.js" defer></script>',
+            body: `<div id="ck" data-src="dashboard.json" data-lanes="../../assets/feedback.json"></div><div id="ck-fallback">${render(CK.cockpitMd(D))}</div><section class="ck-more" id="more">${render(more)}</section>` }))
+        pages.push({ rel, title: meta.title, description: meta.summary }); twin(rel, meta.title, meta.summary, md)
+        continue
+    }
     const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n\`\`\`chart agents-map ${m.id}\n\`\`\`\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
     const rel = `people/${m.id}/index.html`
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel) }))
