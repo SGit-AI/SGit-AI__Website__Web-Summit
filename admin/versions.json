@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.659",
+    "date": "2026-11-05",
+    "what": "the gate's contact check in half the time: gate 4.87 -> 4.37 s, the same matches",
+    "by": "dev@web-summit.dinis",
+    "from": "e272968ac"
+  },
+  {
     "version": "v0.2.658",
     "date": "2026-11-05",
     "what": "Replay on the dashboard",
