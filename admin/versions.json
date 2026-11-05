@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.602",
+    "date": "2026-11-05",
+    "what": "answers on WS-170 (draining an inbox without a token) and WS-172 (CRM editors beyond the conductors)",
+    "by": "conductor@web-summit.dinis",
+    "from": "988aeaff4"
+  },
+  {
     "version": "v0.2.601",
     "date": "2026-11-05",
     "what": "WS-45 checked: agents' keys are on /keys/ already; a patch to add the people's keys (data/person-keys.json), then close it",
