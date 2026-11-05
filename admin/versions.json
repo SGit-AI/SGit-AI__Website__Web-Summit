@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.405",
+    "date": "2026-11-05",
+    "what": "WS-33 closed at Jose's word, with CI measured: commit to release median 43 s (p90 63 s), runs median 70 s, no failed run in the last 100",
+    "by": "conductor@web-summit.jose",
+    "from": "86bb2ec12"
+  },
+  {
     "version": "v0.2.404",
     "date": "2026-11-05",
     "what": "ABPs for seven more agents; WS-152's seal-side fix; the conductor's inbox",
