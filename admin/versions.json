@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.588",
+    "date": "2026-11-05",
+    "what": "Links: web-summit.sgit.ai itself, and what changed in the command centre",
+    "by": "dev@web-summit.silvio",
+    "from": "cb2089aac"
+  },
+  {
     "version": "v0.2.587",
     "date": "2026-11-05",
     "what": "the observability scripts carry ?v=<version>, so a browser never runs a cached old copy; the vault opens once per page",
