@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.455",
+    "date": "2026-11-05",
+    "what": "logging my runs (WS-160); Jose's conductor's proposal on Angelo's dashboard",
+    "by": "dashboard@web-summit.angelo",
+    "from": "eefc2a3b5"
+  },
+  {
     "version": "v0.2.454",
     "date": "2026-11-05",
     "what": "Drain now no longer opens Behind the scenes; only its handle does",
