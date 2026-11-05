@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.430",
+    "date": "2026-11-05",
+    "what": "the live panel, read straight out of an encrypted vault; the public vault and the app vault published",
+    "by": "observability@web-summit.dinis",
+    "from": "fe3fea4a2"
+  },
+  {
     "version": "v0.2.429",
     "date": "2026-11-05",
     "what": "automation, helper and vault confirmed on their schedules (their own commits 765de20, c3342b2, 47b7021)",
