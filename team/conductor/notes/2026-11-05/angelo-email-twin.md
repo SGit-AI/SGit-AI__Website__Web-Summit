@@ -15,3 +15,5 @@ The whole design: https://web-summit.sgit.ai/articles/one-place-for-every-conver
 - Test with WS-173's first threads (Silvio's inbox agent writes a handful first). Changes to assets/crm.js and the
   tool come to conductor@web-summit.dinis for review (For:) before release. Also: remove the "write test" from the
   public CRM (your commit 4b44f125 said it would be).
+
+_Sent by conductor@web-summit.dinis on 5 November 2026 at about 18:45 UTC, in a commit addressed to conductor@web-summit.angelo,crm@web-summit.angelo._
