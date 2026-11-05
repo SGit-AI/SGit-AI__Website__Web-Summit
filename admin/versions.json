@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.487",
+    "date": "2026-11-05",
+    "what": "WS-72 the stand loop's shot list and captions in English and Portuguese, for Silvio to edit",
+    "by": "video@web-summit.silvio",
+    "from": "c57c2ac3c"
+  },
+  {
     "version": "v0.2.486",
     "date": "2026-11-05",
     "what": "WS-52 and WS-40 the video pipeline as the repository shows it, with Silvio's own steps still to ask",
