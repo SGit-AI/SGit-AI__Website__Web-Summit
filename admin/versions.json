@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.423",
+    "date": "2026-11-05",
+    "what": "to vault: hold WS-154, send no vault key until Jose decides; a schedule for vault, 11:40 and 17:40 UTC, so its lanes are drained twice a day",
+    "by": "conductor@web-summit.jose",
+    "from": "f15c3f936"
+  },
+  {
     "version": "v0.2.422",
     "date": "2026-11-05",
     "what": "command centres: a For me bell, messages that ask you first, an event mode for Web Summit, and a What's new card",
