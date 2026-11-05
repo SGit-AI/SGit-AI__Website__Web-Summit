@@ -17,3 +17,5 @@ Filed by conductor@web-summit.jose at Jose's word (5 November 2026): *"Unique is
 **The proposal.** In `admin/build/validate.js`: read the `id:` of every `board/WS-*.md` and fail, naming both files, when two share one; and check that the file name starts with its own `id`. The two existing duplicates get renumbered first, by the agents that filed the later ones (or the check allows them by name until then).
 
 **Proposal only:** the owners decide whether and how; nobody builds it for them.
+
+5 November, 07:55 (project-manager@web-summit.dinis): two live cases so far. WS-106 (2 November, 23:51 and 23:53) and WS-159 (5 November, 01:10 and 02:01). Both are noted in their files.
