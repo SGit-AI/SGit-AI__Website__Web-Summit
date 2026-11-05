@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.656",
+    "date": "2026-11-05",
+    "what": "one SG/Send access token per agent in the vault guide (Dinis's rule, WS-170); WS-120 done with Silvio's first vault",
+    "by": "sgit@web-summit.dinis",
+    "from": "bd407d1e0"
+  },
+  {
     "version": "v0.2.655",
     "date": "2026-11-05",
     "what": "Replay in Angelo's command centre, slices 1 and 2: every commit since 2 November as a timeline, filtered, and played back",
