@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.404",
+    "date": "2026-11-05",
+    "what": "ABPs for seven more agents; WS-152's seal-side fix; the conductor's inbox",
+    "by": "abp@web-summit.dinis",
+    "from": "aab4fd788"
+  },
+  {
     "version": "v0.2.403",
     "date": "2026-11-05",
     "what": "Mission brief slice 7, Open issues in Jose's own app: only what is not done, grouped by when, three filters, on a phone",
