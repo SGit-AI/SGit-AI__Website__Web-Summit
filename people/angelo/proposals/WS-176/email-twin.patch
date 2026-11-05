@@ -1,0 +1,420 @@
+diff --git a/admin/tools/crm.mjs b/admin/tools/crm.mjs
+index f49db2dd..0bda8e38 100644
+--- a/admin/tools/crm.mjs
++++ b/admin/tools/crm.mjs
+@@ -115,12 +115,34 @@ const openAny = env => {                                          // reseal: ope
+ 
+ // ---------- the graph, derived from the records ----------
+ function walk(dir) { const out = []; if (!fs.existsSync(dir)) return out; for (const e of fs.readdirSync(dir, { withFileTypes: true })) { if (e.name.startsWith('.')) continue; const f = path.join(dir, e.name); if (e.isDirectory()) out.push(...walk(f)); else out.push(f) } return out }
++const COMMS = /^companies\/([^/]+)\/comms\/([^/]+)\/([^/]+\.json)$/
+ function derive(dir) {
+     const nodes = new Map(), edges = []
+     const node = (id, type, label, extra = {}) => { if (!nodes.has(id)) nodes.set(id, { id, type, label, ...extra }); else { const n = nodes.get(id); if (extra.file) { n.label = label; n.type = type } Object.assign(n, extra) } return id }
+     const edge = (from, verb, to) => { if (from && to) edges.push({ from, verb, to }) }
++    // the comms (WS-173, WS-176): companies/<company>/comms/<thread>/thread.json and a card .json per message, beside its
++    // .eml; a thread is about its company, a message is part_of its thread. A file that is not JSON is skipped, not fatal.
++    const comms = (rel, f) => {
++        const [, co, th, name] = COMMS.exec(rel), tid = `thread:${co}/${th}`, cid = `company:${co}`
++        if (/\.sealed\.json$/.test(name)) { node(`message:${co}/${th}/${name}`, 'message', 'message (sealed)', { file: rel, sealed: true, thread: tid }); edge(`message:${co}/${th}/${name}`, 'part_of', tid); return }
++        let r; try { r = rj(f) } catch (e) { say(`skipped ${rel}: not JSON`); return }
++        const s = v => v == null ? null : Array.isArray(v) ? v.map(x => typeof x === 'object' && x ? (x.name || x.email || '') : String(x)).filter(Boolean).join(', ') : typeof v === 'object' ? (v.name || v.email || null) : String(v)
++        if (name === 'thread.json') {
++            node(tid, 'thread', r.subject || r.title || th, { file: rel, company: cid, channel: r.channel || 'email', owner: r.owner || null, state: r.state || null, next_step: r.next_step || null, date: th.slice(0, 10) })
++            edge(tid, 'about', cid)
++            if (r.owner) edge(node(`person:${r.owner}`, 'person', r.owner), 'owns', tid)
++            for (const c of [].concat(r.their_contacts || r.contacts || [])) if (typeof c === 'string' && /^contact:/.test(c)) edge(tid, 'with', c)
++        } else {
++            const eml = rel.replace(/\.json$/, '.eml'), id = `message:${co}/${th}/${name.replace(/\.json$/, '')}`
++            node(id, 'message', r.subject || name, { file: rel, eml: fs.existsSync(path.join(dir, eml)) ? eml : null, thread: tid, company: cid, date: r.date || null, direction: r.direction || (/-(in|out|draft)-/.exec(name) || [])[1] || null, from: s(r.from), to: s(r.to), summary: r.summary || null, sha256: r.sha256 || r.eml_sha256 || null, reconstructed: !!r.reconstructed, attachments: (r.attachments || []).length })
++            edge(id, 'part_of', tid)
++            if (!nodes.get(tid)) node(tid, 'thread', th, { company: cid })
++        }
++    }
+     for (const f of walk(dir).filter(f => /^(companies|contacts|actions|schedules|keys)\//.test(path.relative(dir, f)) && f.endsWith('.json'))) {
+-        const rel = path.relative(dir, f), r = rj(f)
++        const rel = path.relative(dir, f)
++        if (COMMS.test(rel)) { comms(rel, f); continue }                 // a thread or a message card (WS-176)
++        const r = rj(f)
+         if (r.v === 'ws-crm-env-1') { node(`${r.kind}:${r.id}`, r.kind, `${r.kind} (sealed)`, { file: rel, sealed: true, audience: r.audience }); continue }
+         if (r.type === 'company') {
+             const id = node(`company:${r.id}`, 'company', r.name, { file: rel, kind: r.kind, country: r.country, category: r.category, what: r.what, website: r.website, attending_as: r.attending_as })
+@@ -154,6 +176,8 @@ const SCHEMAS = {
+     'contact.schema.json': { title: 'A contact: in the public CRM only what the summit lists (name, role, organisation)', type: 'object', required: ['id', 'type', 'name', 'sources', 'updated_at', 'updated_by'], properties: { id: { type: 'string' }, type: { const: 'contact' }, kind: { enum: ['person'] }, name: { type: 'string' }, role: { type: ['string', 'null'] }, organisation: { type: ['string', 'null'] }, company: { type: ['string', 'null'] }, sessions: { type: 'array', items: { type: 'string' } }, sources: { type: 'array' }, updated_at: { type: 'string' }, updated_by: { type: 'string' } } },
+     'action.schema.json': { title: 'An action or request', type: 'object', required: ['id', 'type', 'title', 'kind', 'owner', 'state', 'updated_at', 'updated_by'], properties: { id: { type: 'string' }, type: { const: 'action' }, title: { type: 'string' }, kind: { enum: ['meeting', 'invitation', 'supplier', 'idea', 'request', 'follow-up'] }, owner: { type: 'string' }, due: { type: ['string', 'null'] }, state: { enum: ['new', 'acknowledged', 'proposed', 'booked', 'done', 'followed-up', 'closed', 'declined'] }, company: { type: ['string', 'null'] }, contact: { type: ['string', 'null'] }, next_step: { type: ['string', 'null'] }, links: { type: 'array', items: { type: 'string' } }, sources: { type: 'array' }, updated_at: { type: 'string' }, updated_by: { type: 'string' } } },
+     'schedule.schema.json': { title: 'A schedule item: a session, a meeting, stand time', type: 'object', required: ['id', 'type', 'title', 'date', 'sources', 'updated_at', 'updated_by'], properties: { id: { type: 'string' }, type: { const: 'schedule' }, kind: { type: 'string' }, title: { type: 'string' }, date: { type: 'string' }, start: { type: ['string', 'null'] }, end: { type: ['string', 'null'] }, where: { type: ['string', 'null'] }, track: { type: ['string', 'null'] }, part_of: { type: ['string', 'null'] }, speakers: { type: 'array' }, hosted_by: { type: 'array' }, sources: { type: 'array' }, updated_at: { type: 'string' }, updated_by: { type: 'string' } } },
++    'thread.schema.json': { title: 'A conversation with a company: companies/<company>/comms/<YYYY-MM-DD>-<thread>/thread.json (WS-173)', type: 'object', required: ['subject', 'owner', 'state'], properties: { subject: { type: 'string' }, channel: { type: 'string' }, our_people: { type: 'array', items: { type: 'string' } }, their_contacts: { type: 'array', items: { type: 'string' } }, owner: { type: 'string' }, state: { type: 'string' }, next_step: { type: ['string', 'null'] }, updated_at: { type: 'string' }, updated_by: { type: 'string' } } },
++    'message.schema.json': { title: 'A message card, beside its .eml of the same name: <YYYY-MM-DDTHHMMZ>-<in|out|draft>-<id>.json (WS-173)', type: 'object', required: ['date', 'direction', 'subject'], properties: { from: { type: 'string' }, to: { type: ['string', 'array'] }, cc: { type: ['string', 'array'] }, date: { type: 'string' }, subject: { type: 'string' }, direction: { enum: ['in', 'out', 'draft'] }, message_id: { type: ['string', 'null'] }, in_reply_to: { type: ['string', 'null'] }, sha256: { type: 'string', description: 'of the .eml file' }, reconstructed: { type: 'boolean' }, attachments: { type: 'array', items: { type: 'object', properties: { name: { type: 'string' }, sha256: { type: 'string' } } } }, summary: { type: 'string' } } },
+     'sealed.schema.json': { title: 'ws-crm-env-1: a record sealed to an audience (layer 2)', type: 'object', required: ['v', 'id', 'kind', 'audience', 'recipients', 'iv', 'ct', 'sealed_by', 'at'], properties: { v: { const: 'ws-crm-env-1' }, id: { type: 'string' }, kind: { type: 'string' }, audience: { type: 'array', items: { type: 'string' } }, agents: { type: 'array', items: { type: 'string' } }, recipients: { type: 'array', items: { type: 'object', required: ['to', 'key', 'env'] } }, iv: { type: 'string' }, ct: { type: 'string' }, sealed_by: { type: 'string' }, at: { type: 'string' } } },
+ }
+ function appFiles(which) {
+@@ -161,7 +185,9 @@ function appFiles(which) {
+     const tpl = fs.readFileSync(path.join(HERE, 'crm_app.html.tpl'), 'utf8')
+     // the origins whose /crm/ page may answer the app's unseal requests; CRM_APP_ORIGINS adds one for a test (then rebuild without it)
+     const origins = ['https://web-summit.sgit.ai', ...(process.env.CRM_APP_ORIGINS || '').split(',').filter(o => /^https?:\/\/[a-z0-9.-]+(:\d+)?$/.test(o))]
+-    fs.writeFileSync(path.join(dir, 'index.html'), tpl.replace("const WHICH = /*__WHICH__*/''", `const WHICH = /*__WHICH__*/${JSON.stringify(which)}`).replace("const BRIDGE_ORIGINS = /*__ORIGINS__*/['https://web-summit.sgit.ai']", `const BRIDGE_ORIGINS = /*__ORIGINS__*/${JSON.stringify(origins)}`))
++    const mail = fs.readFileSync(path.join(ROOT, 'assets/crm-mail.js'), 'utf8')     // the email twin (WS-176), inlined
++    if (/<\/script/i.test(mail)) fail('assets/crm-mail.js must not contain a closing script tag')
++    fs.writeFileSync(path.join(dir, 'index.html'), tpl.replace('/*__MAIL__*/', () => mail).replace("const WHICH = /*__WHICH__*/''", `const WHICH = /*__WHICH__*/${JSON.stringify(which)}`).replace("const BRIDGE_ORIGINS = /*__ORIGINS__*/['https://web-summit.sgit.ai']", `const BRIDGE_ORIGINS = /*__ORIGINS__*/${JSON.stringify(origins)}`))
+     const manifest = { entry: 'index.html', present: true, auto_open: true, title: which === 'public' ? 'The team CRM (public)' : 'The team CRM (private)', hud: { mode: 'minimal' }, permissions: { fs: { read: true } } }
+     wj(path.join(dir, 'app.json'), manifest); wj(path.join(dir, '.vault/app.json'), manifest)
+     for (const [f, s] of Object.entries(SCHEMAS)) wj(path.join(dir, 'schemas', f), { $schema: 'https://json-schema.org/draft/2020-12/schema', ...s })
+diff --git a/admin/tools/crm_app.html.tpl b/admin/tools/crm_app.html.tpl
+index ec7eeb76..437734f2 100644
+--- a/admin/tools/crm_app.html.tpl
++++ b/admin/tools/crm_app.html.tpl
+@@ -12,7 +12,7 @@
+ <style>
+ :root{--bg:#f7f6f2;--card:#fff;--line:#e5e1d5;--ink:#161615;--ink2:#5c5f66;--green:#1a7f5a;--blue:#1d4ed8;--gold:#b45309;--terra:#c8553d;--soft:#eef6f2}
+ @media (prefers-color-scheme:dark){:root{--bg:#141412;--card:#1c1c19;--line:#34332d;--ink:#ecebe6;--ink2:#a9a59b;--soft:#14302d}}
+-*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
++*{box-sizing:border-box}[hidden]{display:none!important}html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+ header{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+ h1{margin:0;font-size:20px}h1 span{color:var(--green)}
+ .tabs{display:flex;gap:6px;flex-wrap:wrap}.tabs button,.chip{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:5px 12px;cursor:pointer}
+@@ -43,6 +43,11 @@ svg text{font:11px system-ui;fill:var(--ink)}svg line{stroke:var(--line);stroke-
+   <div class="list" id="list" role="list"></div>
+   <section class="detail" id="detail"><p class="meta" id="intro">Pick a record. Companies, contacts and schedules hold public facts with their sources; the graph shows a record and what it is linked to.</p></section>
+ </main>
++<section id="mail" hidden style="padding:14px 18px"></section>
++<script>
++// the email twin (WS-176): assets/crm-mail.js, inlined here by `node admin/tools/crm.mjs app`
++/*__MAIL__*/
++</script>
+ <script>
+ const WHICH = /*__WHICH__*/''
+ const BRIDGE_ORIGINS = /*__ORIGINS__*/['https://web-summit.sgit.ai']
+@@ -51,7 +56,7 @@ const BRIDGE_ORIGINS = /*__ORIGINS__*/['https://web-summit.sgit.ai']
+   const sg = window.sg || null, $ = id => document.getElementById(id)
+   const el = (t, cls, txt) => { const e = document.createElement(t); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e }
+   const readJson = async p => JSON.parse(await sg.vfs.readText(p))
+-  const TYPES = [['company', 'Companies'], ['contact', 'Contacts'], ['action', 'Actions'], ['schedule', 'Schedules'], ['vault-key', 'Keys']]
++  const TYPES = [['thread', 'Mail'], ['company', 'Companies'], ['contact', 'Contacts'], ['action', 'Actions'], ['schedule', 'Schedules'], ['vault-key', 'Keys']]
+   let NODES = [], EDGES = [], BY = {}, TYPE = 'company', CUR = null
+   const label = n => n.label || n.id
+   const sub = n => n.type === 'company' ? [n.kind === 'organisation' ? 'organisation' : n.category, n.country].filter(Boolean).join(' · ')
+@@ -65,6 +70,13 @@ const BRIDGE_ORIGINS = /*__ORIGINS__*/['https://web-summit.sgit.ai']
+       const b = el('button', null, name + ' (' + n + ')'); b.type = 'button'; b.setAttribute('aria-pressed', String(k === TYPE))
+       b.onclick = () => { TYPE = k; tabs(); list() }; t.appendChild(b)
+     }
++    mailMode()
++  }
++  let MAILED = false
++  function mailMode() {                                      // the Mail tab: the email twin takes the page (WS-176)
++    const on = TYPE === 'thread' && !!window.WSCrmMail
++    $('mail').hidden = !on; document.querySelector('main').hidden = on; $('q').hidden = on
++    if (on && !MAILED) { MAILED = true; window.WSCrmMail.mount($('mail'), { nodes: NODES, edges: EDGES, readText: p => sg.vfs.readText(p) }) }
+   }
+   function list() {
+     const q = $('q').value.trim().toLowerCase(), box = $('list'); box.textContent = ''
+@@ -170,6 +182,7 @@ const BRIDGE_ORIGINS = /*__ORIGINS__*/['https://web-summit.sgit.ai']
+     try { NODES = (await readJson('graph/nodes.json')).nodes; EDGES = (await readJson('graph/edges.json')).edges }
+     catch (e) { $('intro').textContent = 'Could not read graph/: run node admin/tools/crm.mjs derive.' }
+     BY = Object.fromEntries(NODES.map(n => [n.id, n]))
++    if (WHICH === 'private' && NODES.some(n => n.type === 'thread' && n.file)) TYPE = 'thread'   // the mail first (WS-176)
+     if (!NODES.some(n => n.type === TYPE && n.file)) TYPE = (TYPES.find(([k]) => NODES.some(n => n.type === k && n.file)) || ['company'])[0]
+     tabs(); list(); $('q').addEventListener('input', list)
+     if (WHICH === 'private' && window.top !== window) ping().then(ok => { $('bridge').textContent = ok ? '🔑 Unsealing through web-summit.sgit.ai' : 'No unsealing here: open from web-summit.sgit.ai/crm/'; if (CUR) show(CUR) })
+diff --git a/assets/crm-mail.js b/assets/crm-mail.js
+new file mode 100644
+index 00000000..55a0c637
+--- /dev/null
++++ b/assets/crm-mail.js
+@@ -0,0 +1,266 @@
++// The email twin (WS-176; crm@web-summit.angelo, 5 November 2026, at Dinis's word, with Angelo's yes): a mail view of the
++// private team CRM, read straight from the vault. One file, used in two places: the private CRM's own vault app
++// (admin/tools/crm_app.html.tpl, where `node admin/tools/crm.mjs app` inlines it) and /crm/ after "Open the private CRM"
++// (assets/crm.js loads it). Read-only.
++//
++// What it reads: the graph that `crm.mjs derive` writes, whose `thread` and `message` nodes come from
++//   companies/<company>/comms/<YYYY-MM-DD>-<thread>/thread.json        the thread: subject, owner, state, next step...
++//   companies/<company>/comms/<YYYY-MM-DD>-<thread>/<stamp>-<in|out|draft>-<id>.json   a message's card
++//   companies/<company>/comms/<YYYY-MM-DD>-<thread>/<same name>.eml    the message itself (RFC 5322), the evidence
++// and then each thread.json, card and EML when it is opened, through io.readText(path).
++//
++// Every byte of mail is untrusted. Nothing from a vault is ever parsed as HTML or put into innerHTML: every string reaches
++// the page through textContent. An HTML-only email is turned into plain text by removing its tags. Links are shown as
++// text, never made clickable; images and other remote content are never loaded. Sizes are capped.
++//
++//   WSCrmMail.mount(root, { nodes, edges, readText })   draws the inbox, the thread view and the company view in root
++//   WSCrmMail.parseEml(text)                             { headers, get(name), text, html, attachments, notes }
++//   WSCrmMail.htmlToText(html)                           plain text from HTML, by removing tags (no DOM is involved)
++;(function () {
++  'use strict'
++  const MAX_EML = 5 * 1024 * 1024, MAX_BODY = 200000, MAX_PARTS = 200, MAX_DEPTH = 8
++
++  // ---------- EML (RFC 5322 and MIME), parsed as text ----------
++  function decoderFor(charset) {
++    try { return new TextDecoder(String(charset || 'utf-8').trim().toLowerCase()) } catch (e) { return new TextDecoder('utf-8') }
++  }
++  const latin1Bytes = s => { const b = new Uint8Array(s.length); for (let i = 0; i < s.length; i++) b[i] = s.charCodeAt(i) & 255; return b }
++  function b64Bytes(s) {
++    const clean = String(s).replace(/[^A-Za-z0-9+/=]/g, '')
++    try { return latin1Bytes(atob(clean.replace(/=+$/, '') + '==='.slice((clean.replace(/=+$/, '').length + 3) % 4))) } catch (e) { return new Uint8Array(0) }
++  }
++  function qpBytes(s, inHeader) {
++    const out = []
++    s = String(s).replace(/=\r?\n/g, '')
++    for (let i = 0; i < s.length; i++) {
++      const c = s[i]
++      if (c === '=' && /^[0-9A-Fa-f]{2}$/.test(s.substr(i + 1, 2))) { out.push(parseInt(s.substr(i + 1, 2), 16)); i += 2 }
++      else if (inHeader && c === '_') out.push(32)
++      else { const code = s.charCodeAt(i); if (code < 128) out.push(code); else for (const b of new TextEncoder().encode(c)) out.push(b) }
++    }
++    return new Uint8Array(out)
++  }
++  // =?charset?B|Q?text?= words in a header (RFC 2047); spaces between two encoded words are dropped
++  function decodeWords(v) {
++    return String(v).replace(/(=\?[^?\s]+\?[BbQq]\?[^?\s]*\?=)\s+(?==\?)/g, '$1').replace(/=\?([^?\s]+)\?([BbQq])\?([^?\s]*)\?=/g, (m, cs, enc, t) => {
++      try { return decoderFor(cs.split('*')[0]).decode(/^b$/i.test(enc) ? b64Bytes(t) : qpBytes(t, true)) } catch (e) { return m }
++    })
++  }
++  function splitHead(text) {
++    const i = text.search(/\n\n/)
++    return i < 0 ? [text, ''] : [text.slice(0, i), text.slice(i + 2)]
++  }
++  function parseHeaders(block) {
++    const out = []
++    for (const line of block.split('\n')) {
++      if (/^[ \t]/.test(line) && out.length) out[out.length - 1].value += ' ' + line.trim()
++      else { const m = /^([!-9;-~]+):[ \t]*(.*)$/.exec(line); if (m) out.push({ name: m[1], value: m[2] }) }
++    }
++    for (const h of out) h.value = decodeWords(h.value).trim()
++    return out
++  }
++  function params(value) {                                   // 'text/plain; charset="utf-8"; name=a.txt' -> { _: 'text/plain', charset, name }
++    const parts = String(value || '').split(';'), p = { _: parts.shift().trim().toLowerCase() }
++    for (const x of parts) {
++      const m = /^\s*([^=\s]+)\s*=\s*(?:"((?:[^"\\]|\\.)*)"|([^;]*))/.exec(x)
++      if (!m) continue
++      let k = m[1].toLowerCase(), v = m[2] != null ? m[2].replace(/\\(.)/g, '$1') : m[3].trim()
++      if (/\*$/.test(k)) { k = k.replace(/\*\d*\*?$/, ''); const e = /^([^']*)'[^']*'(.*)$/.exec(v); if (e) { try { v = decoderFor(e[1]).decode(qpBytes(e[2].replace(/%([0-9A-Fa-f]{2})/g, '=$1'))) } catch (er) { } } }
++      else k = k.replace(/\*\d+$/, '')
++      p[k] = (p[k] && /\*\d+/.test(m[1]) ? p[k] : '') + v
++    }
++    return p
++  }
++  const ENT = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', copy: '©', reg: '®', trade: '™', hellip: '…', mdash: '—', ndash: '–', rsquo: '’', lsquo: '‘', rdquo: '”', ldquo: '“', laquo: '«', raquo: '»', bull: '•', middot: '·', deg: '°', euro: '€', pound: '£', yen: '¥', cent: '¢', szlig: 'ß', ordf: 'ª', ordm: 'º', iexcl: '¡', iquest: '¿' }
++  for (const [l, marks] of Object.entries({ a: 'acute grave circ tilde uml ring', e: 'acute grave circ uml', i: 'acute grave circ uml', o: 'acute grave circ tilde uml slash', u: 'acute grave circ uml', c: 'cedil', n: 'tilde', y: 'acute uml' }))
++    for (const m of marks.split(' ')) for (const L of [l, l.toUpperCase()]) { const ch = (L + { acute: '\u0301', grave: '\u0300', circ: '\u0302', tilde: '\u0303', uml: '\u0308', ring: '\u030A', cedil: '\u0327', slash: '' }[m]).normalize('NFC'); ENT[L + m] = m === 'slash' ? (L === 'o' ? 'ø' : 'Ø') : ch }
++  function htmlToText(html) {
++    return String(html)
++      .replace(/<!--[\s\S]*?-->/g, '')
++      .replace(/<(script|style|head|title|template|noscript|svg|math)\b[\s\S]*?<\/\1\s*>/gi, '')
++      .replace(/<br\s*\/?>/gi, '\n')
++      .replace(/<(p|div|tr|h[1-6]|blockquote|section|article|table|ul|ol)\b[^>]*>/gi, '\n')
++      .replace(/<\/(p|div|tr|li|h[1-6]|blockquote|section|article|table|ul|ol)\s*>/gi, '\n')
++      .replace(/<li\b[^>]*>/gi, '• ')
++      .replace(/<a\b[^>]*\bhref\s*=\s*["']?([^"'\s>]+)[^>]*>([\s\S]*?)<\/a\s*>/gi, (m, href, inner) => inner + ' [' + href + ']')
++      .replace(/<[^>]*>/g, '')
++      .replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e) => {
++        if (e[0] === '#') { const n = e[1] === 'x' || e[1] === 'X' ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10); try { return n > 0 && n < 0x110000 ? String.fromCodePoint(n) : '' } catch (er) { return '' } }
++        return ENT[e] ?? ENT[e.toLowerCase()] ?? m
++      })
++      .replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim()
++  }
++  function parseEml(raw) {
++    const notes = []
++    let text = String(raw == null ? '' : raw)
++    if (text.length > MAX_EML) { text = text.slice(0, MAX_EML); notes.push('The message is larger than 5 MB: only its first 5 MB were read.') }
++    text = text.replace(/\r\n?/g, '\n')
++    const [hb, body] = splitHead(text), headers = parseHeaders(hb)
++    const get = name => { const h = headers.find(x => x.name.toLowerCase() === String(name).toLowerCase()); return h ? h.value : '' }
++    const out = { headers, get, text: '', html: '', attachments: [], notes }
++    let count = 0
++    const leaf = (hs, content) => {
++      const g = n => { const h = hs.find(x => x.name.toLowerCase() === n); return h ? h.value : '' }
++      const ct = params(g('content-type') || 'text/plain'), cd = params(g('content-disposition')), cte = g('content-transfer-encoding').toLowerCase().trim()
++      const name = cd.filename || ct.name || ''
++      const bytes = () => cte === 'base64' ? b64Bytes(content) : cte === 'quoted-printable' ? qpBytes(content) : null
++      const asText = () => { const b = bytes(); return b ? decoderFor(ct.charset).decode(b) : content }
++      if (cd._ === 'attachment' || (name && !/^text\/(plain|html)$/.test(ct._))) {
++        const b = bytes()
++        out.attachments.push({ name: name || '(no name)', type: ct._, size: b ? b.length : content.length })
++      } else if (ct._ === 'text/plain' && !out.text) out.text = asText()
++      else if (ct._ === 'text/html' && !out.html) out.html = asText()
++      else if (/^message\/rfc822$/.test(ct._)) out.attachments.push({ name: name || 'a forwarded message', type: ct._, size: content.length })
++      else if (!/^text\//.test(ct._)) out.attachments.push({ name: name || '(inline ' + ct._ + ')', type: ct._, size: (bytes() || content).length })
++    }
++    const walk = (hs, content, depth) => {
++      if (++count > MAX_PARTS) { if (count === MAX_PARTS + 1) notes.push('More than ' + MAX_PARTS + ' parts: the rest were not read.'); return }
++      const ct = params((hs.find(x => x.name.toLowerCase() === 'content-type') || {}).value || 'text/plain')
++      if (/^multipart\//.test(ct._) && ct.boundary && depth < MAX_DEPTH) {
++        const b = '--' + ct.boundary, lines = content.split('\n'), parts = []
++        let cur = null
++        for (const l of lines) {
++          if (l.trimEnd() === b) { if (cur) parts.push(cur); cur = []; continue }
++          if (l.trimEnd() === b + '--') { if (cur) parts.push(cur); cur = null; break }
++          if (cur) cur.push(l)
++        }
++        if (cur) parts.push(cur)
++        for (const p of parts) { const [h, c] = splitHead(p.join('\n')); walk(parseHeaders(h), c, depth + 1) }
++      } else leaf(hs, content)
++    }
++    walk(headers, body, 0)
++    for (const k of ['text', 'html']) if (out[k].length > MAX_BODY) { out[k] = out[k].slice(0, MAX_BODY); notes.push('The ' + (k === 'text' ? 'text' : 'HTML') + ' is longer than ' + MAX_BODY + ' characters: the rest is not shown.') }
++    return out
++  }
++
++  // ---------- the views ----------
++  const CSS = `
++.wsm{--wsm-line:var(--line,#e5e1d5);--wsm-ink:var(--ink,#161615);--wsm-ink2:var(--ink-2,var(--ink2,#5c5f66));--wsm-card:var(--surface,var(--card,#fff));--wsm-soft:var(--accent-soft,var(--soft,#eef6f2));--wsm-acc:var(--accent,var(--green,#1a7f5a));color:var(--wsm-ink)}
++.wsm-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
++.wsm-bar input,.wsm-bar select{font:inherit;padding:6px 10px;border-radius:999px;border:1px solid var(--wsm-line);background:var(--wsm-card);color:var(--wsm-ink)}
++.wsm-bar input{flex:1;min-width:12rem}
++.wsm-cols{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.4fr);gap:12px}
++.wsm-list{list-style:none;margin:0;padding:0;border:1px solid var(--wsm-line);border-radius:12px;max-height:70vh;overflow:auto;background:var(--wsm-card)}
++.wsm-list li{margin:0;border-bottom:1px solid var(--wsm-line)}
++.wsm-list button{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:none;border:0;padding:8px 12px;cursor:pointer}
++.wsm-list button:hover,.wsm-list button[aria-current=true]{background:var(--wsm-soft)}
++.wsm-list .wsm-l1{display:flex;gap:8px;justify-content:space-between;font-size:13px;color:var(--wsm-ink2)}
++.wsm-list b{display:block;overflow-wrap:anywhere}
++.wsm-view{border:1px solid var(--wsm-line);border-radius:12px;padding:10px 14px;min-height:14rem;background:var(--wsm-card);overflow-wrap:anywhere}
++.wsm-view h3{margin:0 0 4px;font-size:18px}
++.wsm-meta{color:var(--wsm-ink2);font-size:13px}
++.wsm-dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:2px 12px;margin:8px 0;font-size:14px}.wsm-dl dt{color:var(--wsm-ink2)}.wsm-dl dd{margin:0}
++.wsm-msg{border:1px solid var(--wsm-line);border-radius:10px;padding:8px 10px;margin:10px 0}
++.wsm-msg.out{border-left:4px solid var(--wsm-acc)}.wsm-msg.in{border-left:4px solid #1d4ed8}.wsm-msg.draft{border-left:4px dashed #b45309}
++.wsm-dir{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:1px 8px;border:1px solid var(--wsm-line);margin-right:6px}
++.wsm-body{white-space:pre-wrap;font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--bg,#f7f6f2);border:1px solid var(--wsm-line);border-radius:8px;padding:8px 10px;max-height:60vh;overflow:auto;margin:6px 0}
++.wsm-btn{font:inherit;font-size:13px;border:1px solid var(--wsm-line);background:var(--wsm-card);color:inherit;border-radius:999px;padding:3px 10px;cursor:pointer;margin:2px 4px 2px 0}
++.wsm-link{font:inherit;border:0;background:none;color:#1d4ed8;padding:0;cursor:pointer;text-decoration:underline}
++.wsm-warn{color:#b45309}
++@media (max-width:760px){.wsm-cols{grid-template-columns:1fr}.wsm-list{max-height:45vh}}`
++
++  function mount(root, io) {
++    const nodes = (io && io.nodes) || [], edges = (io && io.edges) || [], readText = io.readText
++    const el = (t, cls, txt) => { const e = document.createElement(t); if (cls) e.className = cls; if (txt != null) e.textContent = String(txt); return e }
++    const btn = (cls, txt, fn) => { const b = el('button', cls, txt); b.type = 'button'; b.onclick = fn; return b }
++    if (!document.getElementById('wsm-css')) { const s = el('style'); s.id = 'wsm-css'; s.textContent = CSS; document.head.appendChild(s) }
++    const BY = Object.fromEntries(nodes.map(n => [n.id, n]))
++    const threads = nodes.filter(n => n.type === 'thread' && n.file)
++    const msgsOf = id => nodes.filter(n => n.type === 'message' && n.thread === id).sort((a, b) => String(a.date || '').localeCompare(String(b.date || '')))
++    const coName = id => (BY[id] && BY[id].label) || String(id || '').replace(/^company:/, '') || '(no company)'
++    const when = d => { const t = Date.parse(d); return isNaN(t) ? String(d || '') : new Date(t).toISOString().slice(0, 16).replace('T', ' ') + ' UTC' }
++    for (const t of threads) { const m = msgsOf(t.id); t._n = m.length; t._last = (m.length ? m[m.length - 1].date : '') || t.last_at || t.date || ''; t._lastDir = m.length ? m[m.length - 1].direction : '' ; t._who = m.map(x => [x.from, x.to].join(' ')).join(' ') }
++
++    root.textContent = ''; root.classList.add('wsm')
++    if (!threads.length) { root.appendChild(el('p', 'wsm-meta', 'No mail in the CRM yet: threads appear here once companies/<company>/comms/<thread>/ hold them (WS-173) and the graph is derived again.')); return }
++    const bar = el('div', 'wsm-bar'), q = el('input'), co = el('select'), ow = el('select')
++    q.type = 'search'; q.placeholder = 'Search subjects, companies, people, summaries...'; q.setAttribute('aria-label', 'Search the mail')
++    const opts = (sel, first, vals, name) => { sel.appendChild(new Option(first, '')); for (const v of vals) sel.appendChild(new Option(name ? name(v) : v, v)) }
++    opts(co, 'Every company', [...new Set(threads.map(t => t.company).filter(Boolean))].sort((a, b) => coName(a).localeCompare(coName(b))), coName)
++    opts(ow, 'Every owner', [...new Set(threads.map(t => t.owner).filter(Boolean))].sort())
++    co.setAttribute('aria-label', 'Company'); ow.setAttribute('aria-label', 'Owner')
++    bar.append(q, co, ow); root.appendChild(bar)
++    const cols = el('div', 'wsm-cols'), list = el('ol', 'wsm-list'), view = el('section', 'wsm-view')
++    view.appendChild(el('p', 'wsm-meta', 'Pick a thread: its messages in order, each email shown as plain text, and its owner and next step. The company name opens everything we have with that company.'))
++    cols.append(list, view); root.appendChild(cols)
++    let CUR = null
++
++    function inbox() {
++      const s = q.value.trim().toLowerCase(), c = co.value, o = ow.value
++      const rows = threads.filter(t => (!c || t.company === c) && (!o || t.owner === o) &&
++        (!s || [t.label, coName(t.company), t.owner, t.state, t.next_step, t._who, ...msgsOf(t.id).map(m => m.summary)].join(' ').toLowerCase().includes(s)))
++        .sort((a, b) => String(b._last).localeCompare(String(a._last)))
++      list.textContent = ''
++      for (const t of rows) {
++        const li = el('li'), b = btn(null, null, () => thread(t.id))
++        if (t.id === CUR) b.setAttribute('aria-current', 'true')
++        const l1 = el('span', 'wsm-l1'); l1.append(el('span', null, coName(t.company)), el('span', null, when(t._last)))
++        b.append(l1, el('b', null, t.label || '(no subject)'), el('span', 'wsm-meta', [t._n + ' message' + (t._n === 1 ? '' : 's'), t._lastDir && 'last ' + t._lastDir, t.state, t.owner && 'owner ' + t.owner].filter(Boolean).join(' · ')))
++        li.appendChild(b); list.appendChild(li)
++      }
++      if (!rows.length) list.appendChild(el('li', 'wsm-meta', '  Nothing matches.'))
++    }
++    const dl = pairs => { const d = el('dl', 'wsm-dl'); for (const [k, v] of pairs) { if (v == null || v === '' || (Array.isArray(v) && !v.length)) continue; d.append(el('dt', null, k), el('dd', null, Array.isArray(v) ? v.map(x => typeof x === 'object' ? (x.name || x.email || JSON.stringify(x)) : x).join(', ') : typeof v === 'object' ? JSON.stringify(v) : v)) } return d }
++    const readJson = async p => JSON.parse(await readText(p))
++
++    async function thread(id) {
++      const t = BY[id]; if (!t) return
++      CUR = id; inbox(); view.textContent = ''
++      view.appendChild(el('h3', null, t.label || '(no subject)'))
++      const line = el('p', 'wsm-meta'); line.append(btn('wsm-link', coName(t.company), () => company(t.company)), document.createTextNode(' · ' + (t.channel || 'email') + ' · ' + t.file)); view.appendChild(line)
++      let r = {}; try { r = await readJson(t.file) } catch (e) { view.appendChild(el('p', 'wsm-warn', 'Could not read ' + t.file)) }
++      if (CUR !== id) return
++      view.appendChild(dl([['owner', r.owner || t.owner], ['state', r.state || t.state], ['next step', r.next_step || t.next_step], ['our people', r.our_people || r.ours], ['their contacts', r.their_contacts || r.contacts], ['messages', String(t._n)]]))
++      for (const m of msgsOf(id)) view.appendChild(message(m))
++    }
++    function message(m) {
++      const box = el('article', 'wsm-msg ' + (['in', 'out', 'draft'].includes(m.direction) ? m.direction : ''))
++      const head = el('p'); head.append(el('span', 'wsm-dir', m.direction || '?'), el('b', null, m.label || '(no subject)')); box.appendChild(head)
++      box.appendChild(el('p', 'wsm-meta', [when(m.date), m.from && 'from ' + m.from, m.to && 'to ' + m.to].filter(Boolean).join(' · ')))
++      if (m.summary) box.appendChild(el('p', null, m.summary))
++      if (m.reconstructed) box.appendChild(el('p', 'wsm-meta', 'Reconstructed from the headers and body (the raw message was not available).'))
++      const more = el('div'); box.appendChild(more)
++      const bar = el('p'); box.insertBefore(bar, more)
++      bar.appendChild(btn('wsm-btn', 'The card', async e => { e.target.disabled = true; try { const c = await readJson(m.file); more.appendChild(dl(Object.entries(c).filter(([k]) => !['type', 'id'].includes(k)))) } catch (er) { more.appendChild(el('p', 'wsm-warn', 'Could not read ' + m.file)) } }))
++      if (m.eml) bar.appendChild(btn('wsm-btn', 'The message (as text)', async e => { e.target.disabled = true; more.appendChild(await emlView(m)) }))
++      else box.appendChild(el('p', 'wsm-meta', 'No .eml beside this card.'))
++      return box
++    }
++    async function emlView(m) {
++      const out = el('div')
++      let raw
++      try { raw = await readText(m.eml) } catch (e) { out.appendChild(el('p', 'wsm-warn', 'Could not read ' + m.eml)); return out }
++      const p = parseEml(raw)
++      out.appendChild(dl(['From', 'To', 'Cc', 'Date', 'Subject', 'Message-ID', 'In-Reply-To'].map(h => [h, p.get(h)])))
++      if (m.sha256 && window.crypto && crypto.subtle) {
++        try {
++          const h = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(raw))), b => b.toString(16).padStart(2, '0')).join('')
++          const want = String(m.sha256).replace(/^sha256:/, '').toLowerCase()
++          out.appendChild(el('p', h === want ? 'wsm-meta' : 'wsm-warn', h === want ? 'sha256 matches the card.' : 'sha256 does not match the card (the file changed, or it is not plain UTF-8).'))
++        } catch (e) { }
++      }
++      for (const n of p.notes) out.appendChild(el('p', 'wsm-warn', n))
++      const body = p.text || (p.html ? htmlToText(p.html) : '')
++      if (!p.text && p.html) out.appendChild(el('p', 'wsm-meta', 'An HTML email, shown as plain text: its tags are removed and nothing in it is loaded.'))
++      out.appendChild(el('div', 'wsm-body', body || '(no text in this message)'))
++      if (p.attachments.length) { out.appendChild(el('p', 'wsm-meta', 'Attachments (listed, not opened):')); const ul = el('ul'); for (const a of p.attachments) ul.appendChild(el('li', null, a.name + ' · ' + a.type + ' · about ' + Math.max(1, Math.round(a.size / 1024)) + ' KB')); out.appendChild(ul) }
++      const all = btn('wsm-btn', 'All headers', () => { all.disabled = true; out.appendChild(el('div', 'wsm-body', p.headers.map(h => h.name + ': ' + h.value).join('\n'))) }); out.appendChild(all)
++      return out
++    }
++    async function company(id) {
++      CUR = null; co.value = [...co.options].some(o => o.value === id) ? id : ''; inbox(); view.textContent = ''
++      view.appendChild(el('h3', null, coName(id)))
++      const n = BY[id]; view.appendChild(el('p', 'wsm-meta', 'company' + (n && n.file ? ' · ' + n.file : '')))
++      if (n && n.file) { try { const r = await readJson(n.file); view.appendChild(dl([['what', r.what], ['country', r.country], ['website', r.website], ['attending', r.attending_as || r.attending]])) } catch (e) { } }
++      const ts = threads.filter(t => t.company === id).sort((a, b) => String(b._last).localeCompare(String(a._last)))
++      view.appendChild(el('h4', null, 'Threads (' + ts.length + ')'))
++      const ul = el('ul'); for (const t of ts) { const li = el('li'); li.append(btn('wsm-link', t.label || '(no subject)', () => thread(t.id)), el('span', 'wsm-meta', ' · ' + when(t._last) + ' · ' + [t.state, t.owner].filter(Boolean).join(' · '))); ul.appendChild(li) } view.appendChild(ul)
++      const acts = edges.filter(e => e.verb === 'about' && e.to === id && BY[e.from] && BY[e.from].type === 'action').map(e => BY[e.from])
++      view.appendChild(el('h4', null, 'Actions (' + acts.length + ')'))
++      const ua = el('ul'); for (const a of acts) ua.appendChild(el('li', null, (a.label || a.id) + ' · ' + [a.state, a.due && 'due ' + a.due, a.owner].filter(Boolean).join(' · '))); view.appendChild(ua)
++    }
++    q.addEventListener('input', inbox); co.addEventListener('change', inbox); ow.addEventListener('change', inbox)
++    inbox()
++  }
++  window.WSCrmMail = { mount, parseEml, htmlToText }
++})()
+diff --git a/assets/crm.js b/assets/crm.js
+index 32625c28..73053ced 100644
+--- a/assets/crm.js
++++ b/assets/crm.js
+@@ -155,7 +155,8 @@
+             const m = await KR.open(env), vk = (m.fields || {})['Vault key']
+             if (!vk) throw new Error('the sealed message holds no vault key')
+             const v = await openWithVaultKey(vk)                              // layer 1
+-            const nodes = (await readJson(v, 'graph/nodes.json')).nodes.filter(n => n.file)
++            const all = (await readJson(v, 'graph/nodes.json')).nodes
++            const nodes = all.filter(n => n.file && n.type !== 'thread' && n.type !== 'message')   // mail: in the email twin below
+             btn.hidden = true
+             // the private vault in a new window: the key goes only into that window's address fragment (never sent to a server)
+             const win = document.createElement('p'); win.className = 'crm-win'
+@@ -167,6 +168,17 @@
+             here.innerHTML = '<p class="crm-win"><button type="button" data-here>Open the CRM app here, with unsealing</button> <span class="meta">(SG/Vault in this page; when the app asks for a sealed record, this page opens it with your key and hands back only that record)</span></p>'
+             here.querySelector('[data-here]').onclick = () => { here.querySelector('.crm-win').hidden = true; bridge(here, v, vk) }
+             out.before(here)
++            // the email twin (WS-176): the mail in companies/*/comms/, read from the vault opened above, as plain text only
++            if (all.some(n => n.type === 'thread' && n.file)) {
++                const mail = document.createElement('div'); mail.className = 'crm-mail'
++                mail.innerHTML = '<h3>Mail: the email twin</h3><div data-mail><p class="meta">Loading the mail view...</p></div>'
++                out.before(mail)
++                try {
++                    let edges = []; try { edges = (await readJson(v, 'graph/edges.json')).edges } catch { }
++                    if (!window.WSCrmMail) await loadScript(up + 'assets/crm-mail.js')
++                    window.WSCrmMail.mount(mail.querySelector('[data-mail]'), { nodes: all, edges, readText: f => readFile(v, f) })
++                } catch (e) { mail.querySelector('[data-mail]').textContent = 'Could not open the mail view: ' + (e.message || e) }
++            }
+             out.innerHTML = `<p class="meta">${nodes.length} record${nodes.length === 1 ? '' : 's'} in ${esc(CFG.private.name)} (${esc(CFG.private.vault_id)}). Layer 2: each sealed record opens only if you are in its audience.</p><ol class="crm-plist">${nodes.map(n => `<li data-f="${esc(n.file)}"><b>${esc(n.sealed ? '🔒 ' + n.type : label(n))}</b> <span class="meta">${esc(n.file)}</span><div class="crm-pbody meta">${n.sealed ? 'Opening...' : esc(sub(n))}</div></li>`).join('')}</ol>`
+             for (const n of nodes.filter(n => n.sealed)) {
+                 const li = out.querySelector(`[data-f="${CSS.escape(n.file)}"]`), body = li.querySelector('.crm-pbody')
