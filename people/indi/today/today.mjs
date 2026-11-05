@@ -98,7 +98,7 @@ export function build(ROOT) {
 
     // the next stand-up (Lisbon is UTC in November)
     const S = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/meetings/schedule.json'), 'utf8'))
-    const slots = []; for (let d = new Date(S.from + 'T00:00:00Z'); d <= new Date(S.until + 'T23:59:59Z'); d = new Date(d.getTime() + 864e5)) for (const s of S.slots) slots.push(new Date(d.toISOString().slice(0, 10) + 'T' + s + ':00Z'))
+    const slots = []; for (let d = new Date(S.from + 'T00:00:00Z'); d <= new Date(S.until + 'T23:59:59Z'); d = new Date(d.getTime() + 864e5)) for (const s of ((k => k ? S.slots_from[k] : S.slots)(Object.keys(S.slots_from || {}).filter(x => x <= d.toISOString().slice(0, 10)).sort().pop()))) slots.push(new Date(d.toISOString().slice(0, 10) + 'T' + s + ':00Z'))
     const nx = slots.find(d => d.getTime() > N) || slots[slots.length - 1], nxId = nx.toISOString().slice(0, 16).replace('T', '-').replace(':', '')
     const nxIso = nx.toISOString().replace('.000', ''), nxDay = nx.toISOString().slice(0, 10) === now.toISOString().slice(0, 10) ? 'today' : dayName(nxIso)
 
