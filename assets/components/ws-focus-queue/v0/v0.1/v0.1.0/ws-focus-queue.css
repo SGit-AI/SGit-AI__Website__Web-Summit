@@ -1,3 +1,4 @@
+:host([hidden]) { display: none; }
 :host           { display: block; color: var(--ink); }
 *               { box-sizing: border-box; }
 button, select, input { font: inherit; color: var(--ink); }
@@ -35,3 +36,4 @@ button, select, input { font: inherit; color: var(--ink); }
 .list small     { color: var(--ink-2); font-size: 0.75rem; }
 .main           { display: grid; gap: 1rem; min-width: 0; }
 .empty          { text-align: center; padding: 4rem 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+.go.big          { margin-top: 0.8rem; padding: 0.8rem 1.6rem; font-size: 1.1rem; }

@@ -160,7 +160,10 @@ ${this._notice ? `<p class="notice" role="status">${esc(this._notice)}${this._un
         const card = r.getElementById('card'), chat = r.getElementById('chat'), empty = r.getElementById('empty')
         if (!c) {
             card.hidden = chat.hidden = true; empty.hidden = false
-            empty.innerHTML = this._all().length ? '<h2>Nothing matches the filters.</h2><p>Clear a filter above to see the rest.</p>' : `<h2>All clear.</h2><p>Nothing left in ${esc(QUEUES[this._queue])}. ${A.load().some(e => e.state === 'draft') ? 'Submit your answers at the top.' : ''}</p>`
+            const n = A.load().filter(e => e.state === 'draft').length
+            empty.innerHTML = this._all().length ? '<h2>Nothing matches the filters.</h2><p>Clear a filter above to see the rest.</p>'
+                : `<h2>All clear.</h2><p>Nothing left in ${esc(QUEUES[this._queue])}.</p>${n ? `<p><b>${n} answer${n > 1 ? 's are' : ' is'} still in this browser.</b> Nothing reaches the dashboard agent until you submit.</p><button type="button" class="go big" id="send2">Submit ${n} signed</button>` : '<p>Everything you answered has been sent.</p>'}`
+            const s2 = r.getElementById('send2'); if (s2) s2.onclick = () => this._send()
             return
         }
         card.hidden = chat.hidden = false; empty.hidden = true

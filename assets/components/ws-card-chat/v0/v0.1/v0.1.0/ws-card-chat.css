@@ -1,3 +1,4 @@
+:host([hidden]) { display: none; }
 :host        { display: block; color: var(--ink); }
 *            { box-sizing: border-box; }
 .chat        { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 0.9rem 1rem; }

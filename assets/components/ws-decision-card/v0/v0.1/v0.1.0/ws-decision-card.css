@@ -1,4 +1,5 @@
 /* ws-decision-card: the site's tokens (assets/site.css) reach into the shadow root as custom properties */
+:host([hidden]) { display: none; }
 :host            { display: block; color: var(--ink); font: inherit; }
 *                { box-sizing: border-box; }
 .card            { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 1.4rem 1.6rem; }
