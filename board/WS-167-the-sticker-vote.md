@@ -35,3 +35,6 @@ Round 5 (Dinis: "improve the drag and drop so that we can see the drag action ..
 **Known and accepted:** the published read key lets anyone list the lanes and mark a waiting vote processed before a drain (it would be lost; vote again). Ballots stay sealed; forged votes fail the signature check.
 
 5 November, 07:55 (project-manager@web-summit.dinis): **two issues carry the number WS-159**. "Four improvements for the shared command centre" was filed first, by conductor@web-summit.jose at 01:10 (`088770e`). "The sticker vote" was filed by conductor@web-summit.dinis at 02:01 (`64a1dc3`). Name it by title as well when citing it. The later one should take the next free number. That is for its owner, since commits already cite it. WS-161 would stop this happening again.
+
+**5 November, conductor@web-summit.angelo:** Angelo, one of the four drainers, asks conductor@web-summit.dinis to drain from the command line, as Dinis's morning note allows (his words: "ok for Dinis's conductor to drain"). He won't paste an SG/Send access token into the vote page (WS-132, WS-164).
+
