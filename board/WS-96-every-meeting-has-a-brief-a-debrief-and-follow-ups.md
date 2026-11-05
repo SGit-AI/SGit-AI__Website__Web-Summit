@@ -105,3 +105,28 @@ At Dinis's note of 5 November (via conductor@web-summit.angelo, fe778310): close
 
 Five of the 16 wait on Dinis alone, and nine more include him. A one-line answer per row, said as "decided: <item>: <words>", closes them all.
 
+### 5 November, 12:00 (the first at 12:00; written 13:55 UTC, from Angelo's notes)
+
+**Present:** Angelo, Jose, Silvio, Vicky. Dinis, Nimay and Indi were not there. **Source:** Angelo's notes, quoted in conductor@web-summit.angelo's 1fd27ba3. No transcript: Dinis's tool was not on the call.
+
+**Decided:** personal business cards: in Angelo's words, "present team members are ok with generic business cards". That is for those present only: the three team cards, no personal cards for Angelo, Jose, Silvio and Vicky. Recorded on the item.
+
+**Not decided:** the garments stay open, with the new facts: only whoever holds the confirmation or receipt collects them (who that is, still to clarify), and they are ready Monday or Tuesday, not known yet (WS-48).
+
+**Follow-ups (one owner each; due):**
+
+| # | What | Owner | Due | Issue |
+|---|---|---|---|---|
+| 1 | The last stand-ups' notes were not turned into actions. From now on, within an hour of each stand-up, every note becomes an owned follow-up here, and the next stand-up opens with them | team-collaboration@web-summit.angelo | each stand-up | WS-96 |
+| 1a | The deck's second slide, easier to use | conductor@web-summit.dinis | the 18:00 | WS-150 |
+| 2 | No transcription when Dinis is not on the call. Meanwhile the chair asks at the start who takes notes | Dinis (WS-98); the chair, each stand-up | today | WS-98 |
+| 3 | How we write an article on the spot after talking to a lead | Dinis (with Nimay, Indi) | not given | WS-168 |
+| 4 | Hot leads: the process, and what it is for | Vicky (with Nimay) | not given | WS-29 |
+| 5 | The commercial offers we have up our sleeve | Dinis (with Nimay) | not given | WS-21 |
+| 6 | Our strategy for the Web Summit app | Nimay (with Indi, Silvio) | not given | WS-169 |
+| 7 | Pending decisions and follow-ups lack context: each decision on the deck with two lines of context, options and a recommendation, and follow-ups with owner and due | conductor@web-summit.dinis, with team-collaboration@web-summit.angelo | the 18:00 | WS-150 |
+| 8 | Garments: who holds the receipt, and the ready day | procurement@web-summit.silvio | before Monday | WS-48 |
+| 9 | The printer's brief still lists personal cards; those present want team cards only | designer@web-summit.indi, procurement@web-summit.silvio | before printing | WS-155 |
+
+**Transcripts (WS-98):** conductor@web-summit.jose proposes, for the 18:00, that Dinis turns on Meet transcripts and that the writer of the record reads them through a Claude Google Drive connector (ad383223). Its open question, whether a scheduled session has the connector: team-collaboration@web-summit.angelo's does. Its scheduled debrief runs on 3 and 4 November searched Angelo's Drive and mail for a transcript. Angelo organises both stand-up series, so Meet saves their transcripts to his Drive, which this agent reads. Nothing of a transcript goes into the repository; only decisions in the decider's words and follow-ups.
+
