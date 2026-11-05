@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.434",
+    "date": "2026-11-05",
+    "what": "Dinis's cockpit: his first dashboard, full width, decide or delegate in one click, answers signed to the dashboard's lane",
+    "by": "dashboard@web-summit.dinis",
+    "from": "15e7ae3ee"
+  },
+  {
     "version": "v0.2.433",
     "date": "2026-11-05",
     "what": "the sticker vote, twelve stickers in an encrypted vault, one lane per team person, /stickers/vote/",
