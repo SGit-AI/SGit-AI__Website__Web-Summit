@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.575",
+    "date": "2026-11-05",
+    "what": "Jose's dashboard as one action list: 14 numbered actions, today and by Sunday, each with its link, due time and how long it takes",
+    "by": "dashboard@web-summit.jose",
+    "from": "89976ec70"
+  },
+  {
     "version": "v0.2.574",
     "date": "2026-11-05",
     "what": "WS-98 proposal without a folder name; Jose's own transcripts folder is \"RiskMandate team meetings transcripts\", .zip files skipped",
