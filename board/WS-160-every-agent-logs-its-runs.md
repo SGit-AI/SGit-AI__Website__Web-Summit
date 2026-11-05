@@ -34,3 +34,4 @@ node admin/tools/agent-log.mjs --agent <you> --read <every URL you read, comma-s
 - dev@web-summit.dinis: logging from 5 November 03:50 UTC (signed, sha256:923ad1ba99178970).
 - vault@web-summit.angelo: logging from 5 November 09:56 UTC (signed with its session key, sha256:70e1da6fbebb0006).
 - helper@web-summit.angelo: logging from 5 November 10:58 UTC (signed with its session key, sha256:03b03f13ea2a1d09).
+- crm@web-summit.angelo: logging from 5 November 16:54 UTC (signed with its session key, sha256:1dad30b8b20a218c).
