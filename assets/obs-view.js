@@ -296,11 +296,44 @@
         log('seal', `opened: ${KEYS.vaults.length} vault keys and an access token, kept in this page's memory only`)
         drawVaults(); drawActions()
     }
+    // the drain's own panel, at the top of the explorer (Dinis only): a button, the steps as they run, a timer, and
+    // the records just drained, so "a drain takes a little while" is something you can watch
+    const STEPS = ['Load the vault library', 'Open the data vault with its vault key (PBKDF2, 600,000 iterations)', 'Derive the enum key from the read key',
+        'List the five lanes', 'Read the drain key from identity/private/', 'Fetch and open the records', 'Write them, still sealed, to inbox/ and push', 'Mark them processed']
+    const panel = h('div', { class: 'obsd-drain', hidden: '' })
+    const stepList = h('ol', { class: 'obsd-steps' }), status = h('span', { class: 'obsd-status' }), justBox = h('div')
+    let running = false, timer = null, started = 0
+    const step = (i, state, detail) => { const li = stepList.children[i]; if (!li) return; const was = li.className; li.className = state; li.querySelector('small').textContent = detail || ''; if (state === 'run' && was !== 'run') log('step', `${i + 1}/${STEPS.length} ${STEPS[i]}${detail ? ': ' + detail : ''}`) }
+    const runBtn = h('button', { type: 'button', class: 'obsd-run', text: 'Drain now', onclick: () => runDrain() })
+    panel.append(h('div', { class: 'obsd-head' }, [h('b', { text: 'Your drain' }), ' ', runBtn, ' ', status,
+        h('span', { class: 'obsd-m', text: ' Only this browser can do this: it holds your key, which opens the vault keys sealed to you.' })]), stepList, justBox)
+    function runDrain() {
+        if (running) return
+        running = true; runBtn.disabled = true; runBtn.textContent = 'Draining…'; justBox.textContent = ''
+        stepList.textContent = ''; STEPS.forEach(t => stepList.append(h('li', {}, [t, ' ', h('small')])))
+        started = performance.now(); timer = setInterval(() => { status.textContent = `${((performance.now() - started) / 1000).toFixed(1)} s` }, 100)
+        if (pane.hidden) toggle.click()
+        drain().then(n => { status.textContent = `done in ${((performance.now() - started) / 1000).toFixed(1)} s: ${n} records` })
+            .catch(x => { status.textContent = 'stopped: ' + (x && x.message || x); log('error', String(x && x.message || x)); const cur = stepList.querySelector('.run'); if (cur) cur.className = 'err' })
+            .finally(() => { clearInterval(timer); running = false; runBtn.disabled = false; runBtn.textContent = 'Drain again' })
+    }
+    function showJust(rows) {
+        justBox.textContent = ''
+        if (!rows.length) { justBox.append(h('p', { class: 'obsd-m', text: 'Nothing was waiting in the lanes.' })); return }
+        const mine = rows.filter(e => e.person === 'dinis').length
+        justBox.append(h('h3', { text: `Just drained: ${rows.length} records, ${mine} of them yours` }),
+            table(['When (UTC)', 'What', 'Page or agent', 'Who', 'Time', 'Scroll'], rows.sort((a, b) => String(b.ts || b.run).localeCompare(String(a.ts || a.run))).map(e => e.type === 'web-summit.agent-run/v1'
+                ? [e.run, 'agent run', agentLink(e.agent), e.sig ? 'signed' : 'unsigned', `${(e.read || []).length} read`, `${(e.did || []).length} did`]
+                : [e.ts, e.type, pageLink(e.path), e.person ? e.person + (e.sig ? ' (signed)' : '') : e.agent || 'anonymous', e.type === 'read' ? secs(e.visible_s) : '', e.type === 'read' ? e.scroll + '%' : '']), [4, 5]),
+            h('p', { class: 'obsd-m', text: 'These are in the data vault now; the hourly drain (at :47) verifies them and adds them to the stats above.' }))
+    }
     function drawActions() {
         actBox.textContent = ''
         if (!KEYS) { actBox.append(h('p', { class: 'obsd-m', text: 'Only for Dinis: the vault keys are sealed to his site key.' })); return }
-        actBox.append(h('button', { type: 'button', text: 'Drain the lanes now', onclick: e => { e.target.disabled = true; drain().catch(x => log('error', String(x && x.message || x))).finally(() => { e.target.disabled = false }) } }),
-            h('p', { class: 'obsd-m', text: 'Lists the five lanes, opens each record here (you will see your own page views), writes them still sealed to the data vault\'s inbox/, pushes, marks them processed. The hourly drain verifies them and folds them into the stats.' }))
+        actBox.append(h('button', { type: 'button', text: 'Drain now', onclick: () => runDrain() }), h('p', { class: 'obsd-m', text: 'Or use the panel at the top of the page; the steps and the records appear there and in this log.' }))
+        const host = boxes.find(b => b.dataset.view !== 'punch')
+        if (host && !panel.parentNode) { host.insertBefore(panel, host.querySelector('[data-out]')) }
+        panel.hidden = false
     }
     let libP = null
     const loadLib = () => libP || (libP = (async () => {
@@ -312,24 +345,27 @@
     const b64 = buf => { let s = ''; for (const x of new Uint8Array(buf)) s += String.fromCharCode(x); return btoa(s) }
     const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0))
     async function drain() {
-        await loadLib()
+        step(0, 'run'); await loadLib(); step(0, 'done')
         const data = KEYS.vaults.find(v => v.vault_id === 'kuuqr3do'), ep = KEYS.endpoint
         const sgSend = new SGSend({ endpoint: ep, token: KEYS.access_token })
-        log('vault', 'opening the data vault kuuqr3do with its vault key (PBKDF2, 600,000 iterations, twice)…')
+        step(1, 'run', 'kuuqr3do'); log('vault', 'opening the data vault kuuqr3do with its vault key (PBKDF2, 600,000 iterations, twice)…')
         const vault = await SGVault.open(sgSend, SGVaultCrypto.stripKeyPrefix(data.vault_key), { cloneBranch: 'obs-dinis-browser' })
+        step(1, 'done', vault.writable ? 'writable' : 'read-only'); step(2, 'run')
         const rk = await vault.readKeyRawBytes()
         const enumKey = [...new Uint8Array(await crypto.subtle.digest('SHA-256', new Uint8Array([...enc.encode('sg-inbox-enum:'), ...rk])))].map(x => x.toString(16).padStart(2, '0')).join('')
         log('derive', `enum key = SHA-256("sg-inbox-enum:" || read key): ${enumKey.slice(0, 8)}… (lists and fetches every lane)`)
+        step(2, 'done', enumKey.slice(0, 8) + '…'); step(3, 'run')
         const api = async (op, body) => { const r = await fetch(`${ep}/api/vault/append/${op}/kuuqr3do`, { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-sgraph-vault-enum-key': enumKey }, body: JSON.stringify(body) }); if (!r.ok) throw new Error(`${op}: HTTP ${r.status}`); return r.json() }
         const entries = []; let after = null
         for (;;) { const r = await api('list', { include_content: false, limit: 200, ...(after ? { after_file_id: after } : {}) }); entries.push(...(r.entries || [])); if (!r.truncated || !(r.entries || []).length) break; after = r.entries[r.entries.length - 1].file_id }
-        log('lanes', `${entries.length} records pending`)
-        if (!entries.length) return
+        log('lanes', `${entries.length} records pending`); step(3, 'done', `${entries.length} waiting`)
+        if (!entries.length) { for (let i = 4; i < STEPS.length; i++) step(i, 'skip', 'nothing to do'); showJust([]); return 0 }
+        step(4, 'run')
         if (vault.needsLoading('/identity')) await vault.loadSubTreeOnDemand('/identity')
         if (vault.needsLoading('/identity/private')) await vault.loadSubTreeOnDemand('/identity/private')
         const pem = dec.decode(await vault.getFile('/identity/private', 'private_key.pem'))
         const key = await crypto.subtle.importKey('pkcs8', unb64(pem.replace(/-----[^-]+-----/g, '').replace(/\s/g, '')), { name: 'RSA-OAEP', hash: 'SHA-256' }, false, ['decrypt'])
-        log('key', 'the drain key (RSA-OAEP 4096) read from identity/private/ and imported non-extractable')
+        log('key', 'the drain key (RSA-OAEP 4096) read from identity/private/ and imported non-extractable'); step(4, 'done', 'RSA-OAEP 4096'); step(5, 'run', `0 of ${entries.length}`)
         const byLane = {}; for (const e of entries) (byLane[e.inbox] = byLane[e.inbox] || []).push(e.file_id)
         const lines = [], shown = []
         for (const [token, ids] of Object.entries(byLane)) for (let i = 0; i < ids.length; i += 50) {
@@ -342,18 +378,20 @@
                     const ev = JSON.parse(dec.decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(env.i) }, aes, unb64(env.c))))
                     shown.push(ev); log('record', ev.type === 'web-summit.agent-run/v1' ? `agent run: ${ev.agent}, ${(ev.read || []).length} read` : `${ev.type} ${ev.path} ${ev.person ? 'by ' + ev.person + ' (signed)' : ev.agent ? '(' + ev.agent + ')' : '(anonymous)'} ${ev.type === 'read' ? ev.visible_s + 's, ' + ev.scroll + '%' : ''}`)
                 } catch (e) { log('record', 'could not open one record: ' + e.message) }
+                step(5, 'run', `${lines.length} of ${entries.length}`)
             }
         }
+        step(5, 'done', `${shown.length} opened`); showJust(shown.slice()); step(6, 'run')
         const name = `browser-${new Date().toISOString().replace(/[:.]/g, '-')}.jsonl`
         if (vault.needsLoading('/inbox')) await vault.loadSubTreeOnDemand('/inbox')
         if (!vault.listFolder('/inbox')) await vault.createFolder('/inbox')
         await vault.addFile('/inbox', name, enc.encode(lines.join('\n') + '\n'))
         log('vault', `committed inbox/${name} (${lines.length} records, still sealed): one encrypted commit`)
         await vault.pushIfMatch()
-        log('vault', 'pushed (compare-and-swap on the named branch)')
+        log('vault', 'pushed (compare-and-swap on the named branch)'); step(6, 'done', name); step(7, 'run')
         for (const [token, ids] of Object.entries(byLane)) for (let i = 0; i < ids.length; i += 100) await api('mark-processed', { inbox: token, file_ids: ids.slice(i, i + 100) })
-        log('lanes', `${entries.length} records marked processed; the hourly drain folds them into the stats`)
-        actBox.append(h('p', { class: 'obsv-ok', text: `Drained ${entries.length}: ${shown.filter(e => e.person === 'dinis').length} of them yours.` }))
+        log('lanes', `${entries.length} records marked processed; the hourly drain folds them into the stats`); step(7, 'done', `${entries.length}`)
+        return entries.length
     }
 
     // ------------------------------------------------------------------ boot
@@ -366,8 +404,9 @@
 .obsv-card{border:1px solid #8884;border-radius:8px;padding:4px 12px 10px;margin:10px 0}.obsv-card input{min-width:240px}
 .obsd-toggle{position:fixed;right:0;top:45%;z-index:60;writing-mode:vertical-rl;transform:rotate(180deg);border:1px solid #8886;border-right:0;border-radius:0 8px 8px 0;background:#1d1d1b;color:#fff;padding:10px 6px;font:12px system-ui;cursor:pointer}.obsd-toggle.on{right:min(440px,92vw)}
 .obsd-pane{position:fixed;top:0;right:0;bottom:0;width:min(440px,92vw);z-index:59;overflow:auto;background:#16171a;color:#e8e6e1;font:12px/1.45 ui-monospace,monospace;padding:10px 12px;box-shadow:-4px 0 18px #0005}.obsd-pane header{display:flex;justify-content:space-between;align-items:center;font:14px system-ui;margin-bottom:6px}.obsd-pane header button{background:none;border:0;color:inherit;font-size:20px;cursor:pointer}
-.obsd-pane h4{font:600 12px system-ui;margin:12px 0 4px;color:#9fd3b9;text-transform:uppercase;letter-spacing:.04em}.obsd-pane a{color:#8fb8ff}.obsd-pane code{color:#ffd28a;background:none;padding:0;border:0;word-break:break-all;font-size:11px}.obsd-pane table{width:100%;border-collapse:collapse}.obsd-pane td,.obsd-pane th{padding:2px 4px;border-bottom:1px solid #fff1;text-align:left}
-.obsd-pane button{font:12px system-ui;padding:5px 10px;border-radius:6px;border:1px solid #9fd3b9;background:#1f3a2e;color:#fff;cursor:pointer}.obsd-log{list-style:none;padding:0;margin:0;max-height:40vh;overflow:auto}.obsd-log li{padding:1px 0;border-bottom:1px solid #fff1}.obsd-log li span{opacity:.5}.obsd-log b{color:#9fd3b9}.obsd-log .k-error b{color:#ff8a8a}.obsd-log .k-record b{color:#ffd28a}` })
+.obsd-pane h4{font:600 12px system-ui;margin:12px 0 4px;color:#9fd3b9;text-transform:uppercase;letter-spacing:.04em}.obsd-pane a{color:#8fb8ff}.obsd-pane code{color:#ffd28a;background:none;padding:0;border:0;word-break:break-all;font-size:11px}.obsd-pane table{width:100%;border-collapse:collapse}.obsd-pane td,.obsd-pane th{padding:2px 4px;border-bottom:1px solid #fff1;text-align:left;background:none;color:inherit}.obsd-pane th{opacity:.6;font-weight:600}
+.obsd-pane button{font:12px system-ui;padding:5px 10px;border-radius:6px;border:1px solid #9fd3b9;background:#1f3a2e;color:#fff;cursor:pointer}.obsd-drain{border:2px solid #1f9d6b;border-radius:10px;padding:10px 14px;margin:10px 0}.obsd-drain .obsd-run{font:600 14px system-ui;padding:6px 16px;border-radius:8px;border:0;background:#1f9d6b;color:#fff;cursor:pointer}.obsd-drain .obsd-run:disabled{opacity:.6}.obsd-status{font:600 13px ui-monospace,monospace;margin:0 8px}.obsd-steps{margin:8px 0 0 18px;padding:0;font-size:13px}.obsd-steps li{opacity:.45;padding:1px 0}.obsd-steps li small{margin-left:6px;opacity:.8;font-family:ui-monospace,monospace}.obsd-steps li.run{opacity:1;font-weight:600}.obsd-steps li.run::after{content:' ⏳'}.obsd-steps li.done{opacity:.9}.obsd-steps li.done::after{content:' ✓';color:#1f9d6b}.obsd-steps li.skip{opacity:.5}.obsd-steps li.err{opacity:1;color:#c0392b}.obsd-steps li.err::after{content:' ✗'}
+.obsd-log{list-style:none;padding:0;margin:0;max-height:40vh;overflow:auto}.obsd-log li{padding:1px 0;border-bottom:1px solid #fff1}.obsd-log li span{opacity:.5}.obsd-log b{color:#9fd3b9}.obsd-log .k-error b{color:#ff8a8a}.obsd-log .k-record b{color:#ffd28a}` })
     document.head.append(style)
     const render = async () => {
         for (const box of boxes) {
