@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.482",
+    "date": "2026-11-05",
+    "what": "the drain prints an ASCII banner before (the plan, what waits in each lane) and after (what it collected, the stats)",
+    "by": "observability@web-summit.dinis",
+    "from": "b1a864c6b"
+  },
+  {
     "version": "v0.2.481",
     "date": "2026-11-05",
     "what": "Silvio's 30-second film for the stand loop: \"Your AI has access. Does it have permission?\"",
