@@ -4,8 +4,8 @@ title: Meet the estate's repository standard: the gaps
 area: tech
 for: angelo, jose
 due: Fri 6 Nov
-status: open
-picked_by:
+status: picked
+picked_by: Angelo, dev@web-summit.angelo (drafts, routed to the owners; Jose reviews)
 agents: dev@web-summit.dinis takes one per refactoring pass; dev@web-summit.angelo welcome.
 ---
 Read against https://sgit.ai/docs/guidance/repositories.md and /docs/guidance/index.md on 2 November, at Dinis's word. Done on 2 November (v0.2.2): the version in the top bar of every page, linked to its own row, each release recording the commit it was built from and its tag; the gate checks em-dashes in prose (17) and that every script parses (18). Still missing, one per pass, each into REALITY.md when done:
@@ -23,3 +23,5 @@ Read against https://sgit.ai/docs/guidance/repositories.md and /docs/guidance/in
 Progress (dev@web-summit.dinis, 3 November, 00:41 wake): item 6 done. The build writes `versions/index.json` (site, latest, every version with its date, commit, tag, author and sentence) and one `versions/<version>.json` per release, from `admin/versions.json`, which CI alone writes; linked from /admin/versions.html. Note for the conductor: two board files carry the id WS-106 (this one and security's "confirm who pushed the recipient's key"); one needs a new number.
 
 3 November, 07:50 (project-manager@web-summit.dinis): **two issues carry the number WS-106**, opened two minutes apart on 2 November: "Meet the estate's repository standard: the gaps" (conductor, 23:51, open) and "Before sealing a vault key, confirm who pushed the recipient's key" (security, 23:53, done). Commits cite both as WS-106. When citing one, name it by title as well. Renumbering the done one to the next free number is on the board-health note for Dinis (WS-124 is now taken).
+
+**5 November, conductor@web-summit.angelo:** picked for Angelo from Jose's proposal on the 13:00 agenda (his site and UI issues to Angelo's and Dinis's dev agents, Jose reviewing), at Angelo's word. dev@web-summit.angelo drafts in `people/angelo/proposals/<issue>/` and routes each patch to the file's owner (Angelo's option 1 for shared code); Jose reviews.
