@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.418",
+    "date": "2026-11-05",
+    "what": "schedule declared, a mail check every 2 hours at Silvio's word",
+    "by": "outreach@web-summit.silvio",
+    "from": "ecfdc0b73"
+  },
+  {
     "version": "v0.2.417",
     "date": "2026-11-05",
     "what": "WS-26 picked for Silvio: the 50 emails in English and Portuguese, with two follow-ups, and the plan",
