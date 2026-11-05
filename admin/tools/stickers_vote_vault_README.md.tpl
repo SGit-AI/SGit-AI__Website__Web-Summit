@@ -31,13 +31,13 @@ encrypted vaults and append lanes. Voting closes Thursday 5 November 2026, 18:00
 1. Each team person with a site key has one lane. Its token is sealed to their key (ws-ecies-1) in the site's
    `data/stickers-vote.json`, so only their browser opens it.
 2. On the vote page their browser opens the token, signs `{type: web-summit.sticker-vote/v2, person, ranking, not_for_me, at}`
-   (`ranking`: up to 10 sticker ids in order) with their site key, seals
+   (`ranking`: ten fixed slots in order, sticker ids with `null` for an empty slot, trailing empties trimmed) with their site key, seals
    `{vote, signed, sig, key}` to this vault's drain key (sgit hybrid v2) and writes it to their lane.
 3. A drainer opens this vault with the vault key, writable, and presses **Drain**: each ballot is opened, its
    signature checked against `identity/person-keys.json` and checked to have come on the signer's own lane, kept
    sealed in `votes/`, and counted into `results.json`; the vault is pushed, and only then are the lane files marked
    processed. The newest ballot of each person counts; a v1 ballot (one `choice`, from the first version of the page) counts
-   as a ranking of one; every ballot is scored by position with the same rule, so an older top 6 scores 10 to 5. `stickers_vote.py drain` does the same from a terminal.
+   as a ranking of one; every ballot is scored by position with the same rule, so an older top 6 scores 10 to 5; an empty slot scores nothing. `stickers_vote.py drain` does the same from a terminal.
 
 ## Who holds what
 

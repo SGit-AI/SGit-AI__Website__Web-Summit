@@ -4,12 +4,21 @@ summary: Twenty-three funny laptop stickers for Web Summit Lisbon in three sets,
 path: stickers/vote/index.html
 script: stickers-vote
 ---
-**Twenty-three stickers in three sets, your top 10, team only.** Tap the stickers you would put on your own laptop in Lisbon: they go into **My top 10** (on the right, or at the bottom of a phone). Put them in order by dragging the handle or with the arrows, press 👎 on any that are not for you, and **Submit**. The 1st gets 10 points, the 10th gets 1 (Dinis, 5 November: "can you allow 10 votes?"). A ballot sent earlier as a top 6 still counts, by position with the same rule. You can submit again until the vote closes: your newest ballot counts. **The road trip** (1 to 12) is the [funny set](../chatgpt/index.html) from [the creative brief](../creative/index.html), each in four variations: flip them with the dots or arrows, and press ♡ on the one you like best (it goes with your ballot). **Creative takes** (13 to 18) are new views on the originals; 13 is still on its way. **The gap** (19 to 24) is about the RiskMandate gap between what an agent can reach and what it is allowed to do.
+## How to vote {#how-to-vote}
+
+1. 👆 **Tap** the stickers you would put on your laptop. Each one lands in **My top 10**.
+2. ↕️ **Drag** them into order: slot 1 gets 10 points, slot 10 gets 1. Gaps are fine.
+3. 👎 **Not for me** on any you would never stick on.
+4. ✅ **Submit.** Change your mind and submit again until **14:30 UTC**: your newest ballot counts.
 
 ```sticker-vote
 ```
 
 ## How it works {#how}
+
+**The stickers.** The road trip (1 to 12) is the [funny set](../chatgpt/index.html) from [the creative brief](../creative/index.html), each in four variations: flip them with the dots or arrows and press ♡ on the one you like best (it goes with your ballot). Creative takes (13 to 18) are new views on the originals; 13 is still on its way. The gap (19 to 24) is about the gap between what an agent can reach and what it is allowed to do.
+
+**The slots.** My top 10 is ten fixed slots. A tap fills the first empty one; you can also drag a sticker straight onto a slot (with a mouse). Drag a row onto an empty slot to move it, onto a filled one to swap (on a phone, by its ⋮⋮ handle), or use the arrows; from the keyboard, Space picks a slot up, the arrows move it, Space drops it. An empty slot scores nothing. A ballot sent before the top 10 still counts, by position with the same rule.
 
 This page and the vault work together. The page holds the vault's **read key**, published on purpose, and uses it twice: to render the vault ([ws-stickers-vote](https://dev.vault.sgraph.ai/), opened in the frame above at full resolution, with a lightbox and the count) and to list the vote lanes, so it can show **who has voted** without opening a single vote.
 

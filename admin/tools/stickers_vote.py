@@ -391,8 +391,11 @@ def ballot(vote):
         return [vote['choice']], []
     if t != 'web-summit.sticker-vote/v2': raise ValueError('not a sticker vote')
     rk, nf = vote.get('ranking'), vote.get('not_for_me', [])
-    if not isinstance(rk, list) or not 1 <= len(rk) <= MAX_RANKING or not all(map(ok, rk)) or len(set(rk)) != len(rk): raise ValueError(f'ranking is not 1 to {MAX_RANKING} distinct stickers')
-    if not isinstance(nf, list) or not all(map(ok, nf)) or len(set(nf)) != len(nf) or set(nf) & set(rk): raise ValueError('not_for_me is not a list of other stickers')
+    # round 5: fixed slots, so a ranking may hold gaps (null) between picks; a dense list from earlier is still valid
+    picks = [x for x in rk if x is not None] if isinstance(rk, list) else []
+    if not isinstance(rk, list) or not 1 <= len(rk) <= MAX_RANKING or not picks or not all(x is None or ok(x) for x in rk) or len(set(picks)) != len(picks):
+        raise ValueError(f'ranking is not up to {MAX_RANKING} slots of distinct stickers (empty slots null)')
+    if not isinstance(nf, list) or not all(map(ok, nf)) or len(set(nf)) != len(nf) or set(nf) & set(picks): raise ValueError('not_for_me is not a list of other stickers')
     vp = vote.get('variant_pick', {})                                  # optional: {"12": 2}, the voter's favourite variant of a sticker
     if not isinstance(vp, dict) or not all(re.fullmatch(r'[1-9]\d?', str(k)) and int(k) <= MAX_ID and isinstance(v, int) and not isinstance(v, bool) and 1 <= v <= 20 for k, v in vp.items()):
         raise ValueError('variant_pick is not a map of sticker to variant')
@@ -405,7 +408,9 @@ def tally(ballots, picks=(), present=None):
     each variant of a sticker got (variant_hearts: {"2": 3})."""
     t = {s[0]: {'id': s[0], 'name': s[2], 'points': 0, 'in_top': 0, 'firsts': 0, 'not_for_me': 0} for s in STICKERS}
     for rk, nf in ballots:
-        for i, n in enumerate(rk): t[n]['points'] += MAX_RANKING - i; t[n]['in_top'] += 1; t[n]['firsts'] += (i == 0)
+        for i, n in enumerate(rk):                                      # by slot: slot 1 = MAX_RANKING ... an empty slot scores nothing
+            if n is None or n not in t: continue
+            t[n]['points'] += MAX_RANKING - i; t[n]['in_top'] += 1; t[n]['firsts'] += (i == 0)
         for n in nf: t[n]['not_for_me'] += 1
     for vp in picks:
         for k, v in vp.items(): h = t[int(k)].setdefault('variant_hearts', {}); h[str(v)] = h.get(str(v), 0) + 1

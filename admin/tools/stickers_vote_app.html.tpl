@@ -253,15 +253,17 @@ const FALLBACK = /*__DATA__*/{};
     if (v.type === 'web-summit.sticker-vote/v1') { if (!ok(v.choice)) throw new Error('choice is not a sticker'); return [[v.choice], []] }
     if (v.type !== 'web-summit.sticker-vote/v2') throw new Error('not a sticker vote')
     const rk = v.ranking, nf = v.not_for_me || []
-    if (!Array.isArray(rk) || rk.length < 1 || rk.length > MAXR() || !rk.every(ok) || !uniq(rk)) throw new Error('ranking is not 1 to ' + MAXR() + ' distinct stickers')
-    if (!Array.isArray(nf) || !nf.every(ok) || !uniq(nf) || nf.some(x => rk.includes(x))) throw new Error('not_for_me is not a list of other stickers')
+    // round 5: fixed slots, so a ranking may hold gaps (null) between picks; a dense list from earlier is still valid
+    const picks = Array.isArray(rk) ? rk.filter(x => x != null) : []
+    if (!Array.isArray(rk) || rk.length < 1 || rk.length > MAXR() || !picks.length || !rk.every(x => x === null || ok(x)) || !uniq(picks)) throw new Error('ranking is not up to ' + MAXR() + ' slots of distinct stickers (empty slots null)')
+    if (!Array.isArray(nf) || !nf.every(ok) || !uniq(nf) || nf.some(x => picks.includes(x))) throw new Error('not_for_me is not a list of other stickers')
     const vp = v.variant_pick || {}
     if (typeof vp !== 'object' || Array.isArray(vp) || !Object.entries(vp).every(([k, x]) => /^([1-9]|1\d|2[0-4])$/.test(k) && Number.isInteger(x) && x >= 1 && x <= 20)) throw new Error('variant_pick is not a map of sticker to variant')
     return [rk, nf]
   }
   function tally(ballots, picks) {
     const t = {}; DATA.stickers.forEach(s => { t[s.id] = { id: s.id, name: s.name, points: 0, in_top: 0, firsts: 0, not_for_me: 0 } })
-    for (const [rk, nf] of ballots) { rk.forEach((n, i) => { if (t[n]) { t[n].points += MAXR() - i; t[n].in_top++; if (!i) t[n].firsts++ } }); nf.forEach(n => { if (t[n]) t[n].not_for_me++ }) }
+    for (const [rk, nf] of ballots) { rk.forEach((n, i) => { if (n != null && t[n]) { t[n].points += MAXR() - i; t[n].in_top++; if (!i) t[n].firsts++ } }); nf.forEach(n => { if (t[n]) t[n].not_for_me++ }) }
     for (const vp of picks || []) for (const k in vp) if (t[+k]) { const h = t[+k].variant_hearts = t[+k].variant_hearts || {}; h[String(vp[k])] = (h[String(vp[k])] || 0) + 1 }
     return Object.values(t).sort((a, b) => b.points - a.points || b.in_top - a.in_top || a.not_for_me - b.not_for_me || a.id - b.id)
   }

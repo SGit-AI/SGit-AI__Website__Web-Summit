@@ -16,6 +16,8 @@ Round 3 (5 November, Dinis uploaded the art into the vault's `images/uploads/`):
 
 Round 4 (Dinis, 5 November: "can you allow 10 votes?"): a ranked **top 10**, 1st = 10 points ... 10th = 1. Ballots sent earlier (a top 6, or one pick) stay valid and are scored by position with the same rule. `max_ranking` in the vault's content.json is the one number.
 
+Round 5 (Dinis: "improve the drag and drop so that we can see the drag action ... allow the drag to occur in empty spaces"): ten fixed slots that may hold gaps (the ballot keeps them as `null`; an empty slot scores nothing); a floating copy follows the pointer, the slot under it says "drop here" or "swap"; stickers drag straight from the grid onto a slot (mouse); Space and the arrows move a slot from the keyboard.
+
 **What exists:**
 
 - The vault `ws-stickers-vote` (`uy67e2lt`, dev.send.sgraph.ai): the images (full, web, thumbs; placeholders until the real files arrive), `content.json`, the vault app (a gallery with a lightbox, the count, and a Drain panel when opened writable), the drain key (public half in `identity/public-bundle.json`, private halves wrapped), `identity/lanes.json`, `votes/` (ballots kept sealed) and `results.json`.
