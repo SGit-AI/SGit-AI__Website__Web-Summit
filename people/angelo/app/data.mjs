@@ -62,7 +62,9 @@ function kanban(root, person, d) {
     const streams = Object.fromEntries((d.workstreams || []).map(w => [w.id, { name: w.name, colour: w.colour }]))
     // a stream the shared build gives that Angelo's config does not name (issues for everyone are 'team')
     for (const i of d.issues) if (i.stream && !streams[i.stream]) streams[i.stream] = { name: i.stream === 'team' ? 'The whole team' : i.stream, colour: 'slate' }
-    return { me: person, people, streams, changed, history, agenda }
+    // WS-131: on a shallow clone (a fresh cloud session's local build) the history above reads short; the page says so
+    const shallow = git(root, ['rev-parse', '--is-shallow-repository']).trim() === 'true'
+    return { me: person, people, streams, changed, history, agenda, shallow }
 }
 
 // the collaboration board (slice 5): everyone, people and agents, who works with whom, and the machine. Built on

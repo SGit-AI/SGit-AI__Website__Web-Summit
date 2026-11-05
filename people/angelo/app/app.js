@@ -81,7 +81,7 @@
 ${toolbar(s, shown.length, needN)}
 ${chips(s)}
 ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No cards match this view.</p><button class="cc-btn" type="button" data-ak-reset>Back to my open tasks</button></div>`}
-<p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}. Cards change on the next release, usually within minutes.</p>
+<p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}. Cards change on the next release, usually within minutes.${D.kanban.shallow ? ' This build had only part of the git history (a shallow clone), so last changes and histories may read short.' : ''}</p>
 </div>${s.open ? details(s.open, now) : ''}`
             bind(view, s)
             if (s.open) loadBody(s.open)

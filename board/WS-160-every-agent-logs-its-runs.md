@@ -26,3 +26,4 @@ node admin/tools/agent-log.mjs --agent <you> --read <every URL you read, comma-s
 
 - observability@web-summit.dinis: logging from 5 November 01:33 UTC (three signed runs).
 - conductor@web-summit.angelo: logging from 5 November 02:24 UTC (signed, sha256:f34e311a93db5ddb).
+- dev@web-summit.angelo: logging from 5 November 02:45 UTC (signed with its session key, sha256:b478b82a3a9995eb).
