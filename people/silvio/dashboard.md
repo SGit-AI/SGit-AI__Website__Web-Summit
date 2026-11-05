@@ -27,7 +27,8 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 - **conductor@web-summit.silvio:** asked by Dinis's conductor to issue me a key for the site today (WS-136).
 - **dev@web-summit.silvio:** my command centre ([app](app/index.html)) and the site's tools.
 - **sgit@web-summit.silvio:** my vault (WS-120).
-- **outreach@, local@ and video@:** planned, not started.
+- **outreach@web-summit.silvio:** started 5 Nov; the first five companies (WS-25) chosen and five emails drafted in my mailbox for me to send.
+- **local@ and video@:** planned, not started.
 
 ## What I want to take on {#take-on}
 
@@ -120,8 +121,8 @@ Counts only, never names: the people and companies stay in my own CRM (my brief'
 
 | Stage | Target | Now | |
 |---|---|---|---|
-| Companies shortlisted | 5 by Wed, 50 by Thu | 0 | ░░░░░░░░░░ |
-| Message drafted (my agent) | 50 | 0 | ░░░░░░░░░░ |
+| Companies shortlisted | 5 by Wed, 50 by Thu | 5 | ░░░░░░░░░░ |
+| Message drafted (my agent) | 50 | 5 | ░░░░░░░░░░ |
 | Sent (by me) | 50 | 0 | ░░░░░░░░░░ |
 | Replied | 10 | 0 | ░░░░░░░░░░ |
 | Meeting booked in Lisbon (to Nimay or Dinis) | 5 | 0 | ░░░░░░░░░░ |
@@ -208,7 +209,7 @@ Next: an email to send from (L2), then my PKI key (L3), then a conductor on a sc
 - **procurement@web-summit.silvio**: quotes, orders and deliveries for what the team buys, starting with the printing and merch (WS-48); drafts only, Silvio approves every order (joined 2 November 2026).
 - **dev@web-summit.silvio**: Silvio's developer agent, the site and the tools; session key `sha256:a7a1c86520bc850e`, linked to Silvio's key once it is registered (joined 2 November 2026).
 - **sgit@web-summit.silvio**: my vault and its key (WS-120).
-- **outreach@web-summit.silvio**: targets, messages and follow-ups; drafts in my account, I send (planned).
+- **outreach@web-summit.silvio**: targets, messages and follow-ups; drafts in my account, I send (joined 5 November 2026).
 - **local@web-summit.silvio**: Algarve options: printers, ads, prices, lead times (planned).
 - **video@web-summit.silvio**: the pipeline to YouTube, Instagram and this site (planned).
 
