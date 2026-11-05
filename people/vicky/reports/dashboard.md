@@ -39,3 +39,9 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 ## Thu 5 Nov 2026, 10:15 UTC
 
 - At Vicky's word in this session, four items are off her tables for good, handled by others; their board status is unchanged: WS-107 (decided between Dinis and Angelo), WS-09 (Dinis's), WS-48's collection (logistics@, raised at the stand-up) and the print sign-off WS-113 (her side is sent). My scheduled prompts now exclude them.
+
+## Thu 5 Nov 2026, 12:40 UTC (the 11:45 wake, delivered late at 12:31)
+
+- Dashboard refreshed from brief 3 of 5 Nov (people/vicky/briefs/2026-11-05T0840Z.json): "Release today's agenda" (programme desk) added to "Needs me"; WS-163 is now a yes or no on her photo.
+- The four items Vicky took off at 10:15 stay off (WS-107, WS-09, WS-48's collection, WS-113).
+- My 11:45 wake reached this session only at 12:31, after the 12:00 stand-up (a session restart and Vicky's usage limit), so this refresh came after it.
