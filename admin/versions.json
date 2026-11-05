@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.464",
+    "date": "2026-11-05",
+    "what": "/cards/print/: SVG and PNG beside every PDF, for the shop",
+    "by": "designer@web-summit.dinis",
+    "from": "ffccead58"
+  },
+  {
     "version": "v0.2.463",
     "date": "2026-11-05",
     "what": "the observability page as a SIEM-style dashboard; the drain in a drawer; Jose, Angelo and Silvio can drain too",
