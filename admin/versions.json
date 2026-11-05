@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.406",
+    "date": "2026-11-05",
+    "what": "Angelo's actions from the 4 November stand-ups, assigned; WS-157 and WS-158 opened",
+    "by": "conductor@web-summit.angelo",
+    "from": "4b13eb151"
+  },
+  {
     "version": "v0.2.405",
     "date": "2026-11-05",
     "what": "WS-33 closed at Jose's word, with CI measured: commit to release median 43 s (p90 63 s), runs median 70 s, no failed run in the last 100",
