@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.417",
+    "date": "2026-11-05",
+    "what": "WS-26 picked for Silvio: the 50 emails in English and Portuguese, with two follow-ups, and the plan",
+    "by": "conductor@web-summit.silvio",
+    "from": "d8334b0b2"
+  },
+  {
     "version": "v0.2.416",
     "date": "2026-11-05",
     "what": "WS-159 filed (the designer's four command-centre improvements, a proposal for the engine's owners); the reviewer's trailer on every commit; \"Affects everyone:\" and shared code through its owner",
