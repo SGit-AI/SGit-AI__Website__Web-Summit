@@ -67,3 +67,9 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 
 - At Vicky's word: the stories page shows each story's sources as links under its angle. The curator's README changed at 18:30 to one section per story with a "Sources:" list (not a column), and the angle left the table; people/vicky/pages.mjs now reads the sections, and still reads the old table if it comes back.
 - Refreshed now: 11 stories (S8 is folded into S10 by the curator), each with its sources (desks/curator/README.md, 18:30 UTC).
+
+## Thu 5 Nov 2026, 20:55 UTC
+
+- New page at Jose's request, through Vicky: /people/vicky/promptugal/, Promptugal News's logo brief and its eight options, each in light and dark, with a Comment button on each (the site's feedback pane, to newsroom@web-summit.dinis). Linked from Vicky's dashboard.
+- Built by people/vicky/pages.mjs from people/vicky/promptugal/source/: an exact copy of desks/designer-vicky/ (brief.md, README.md, logos/) at newsroom commit 05c03e9. The checks/ PNGs are not copied (not shown). Refreshed only when Vicky asks.
+- Light and dark come from one copied file each: an image's CSS color-scheme forces the SVG's own prefers-color-scheme block. The gate refuses data: SVG images (WS-132), so nothing is inlined.
