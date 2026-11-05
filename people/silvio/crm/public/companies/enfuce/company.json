@@ -1,0 +1,29 @@
+{
+  "id": "enfuce",
+  "type": "company",
+  "kind": "company",
+  "name": "Enfuce",
+  "aliases": [],
+  "website": "https://enfuce.com",
+  "what": null,
+  "category": "payments / card issuing",
+  "country": "Finland",
+  "attending": "at Web Summit Lisbon 2026: event partner on websummit.com partners page (lis26); speaker: CEO",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/appearances/lis26/6014a206-50f9-4dd6-937d-3ac7f8c7eecd/enfuce/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://enfuce.com",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

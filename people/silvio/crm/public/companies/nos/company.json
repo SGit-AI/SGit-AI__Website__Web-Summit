@@ -1,0 +1,29 @@
+{
+  "id": "nos",
+  "type": "company",
+  "kind": "company",
+  "name": "NOS",
+  "aliases": [],
+  "website": "https://www.nos.pt",
+  "what": null,
+  "category": "telecoms",
+  "country": "Portugal",
+  "attending": "at Web Summit Lisbon 2026: speaker: CTO (listed as NOS Portugal) (lis26)",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/attendees/lis26/8ff1078e-e873-4af6-a0b7-cf3262c49df4/jorge-gra%C3%A7a/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.nos.pt",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

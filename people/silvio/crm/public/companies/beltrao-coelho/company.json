@@ -1,0 +1,29 @@
+{
+  "id": "beltrao-coelho",
+  "type": "company",
+  "kind": "company",
+  "name": "Beltrão Coelho",
+  "aliases": [],
+  "website": "https://www.beltraocoelho.pt",
+  "what": null,
+  "category": "IT services / document digitalisation",
+  "country": "Portugal",
+  "attending": "at Web Summit Lisbon 2026: event partner on websummit.com partners page (lis26)",
+  "attending_as": "event partner",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/appearances/lis26/a162accb-f8d6-4f51-8790-bed8cbb379a1/beltr%C3%A3o-coelho/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.beltraocoelho.pt",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "roland-berger",
+  "type": "company",
+  "kind": "company",
+  "name": "Roland Berger",
+  "aliases": [],
+  "website": "https://www.rolandberger.com",
+  "what": null,
+  "category": "consultancy",
+  "country": "Germany",
+  "attending": "at Web Summit Lisbon 2026: event partner on websummit.com partners page (lis26) (Roland Berger | CNTR); speaker: Global Managing Partner",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/appearances/lis26/e345ad7b-cf9f-4aa3-beb2-1c3bb48a0f28/roland-berger-%7C-cntr/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.rolandberger.com",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

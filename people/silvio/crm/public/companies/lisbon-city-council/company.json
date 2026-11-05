@@ -1,0 +1,29 @@
+{
+  "id": "lisbon-city-council",
+  "type": "company",
+  "kind": "company",
+  "name": "Lisbon City Council (Câmara Municipal de Lisboa)",
+  "aliases": [],
+  "website": "https://www.lisboa.pt",
+  "what": null,
+  "category": "local government",
+  "country": "Portugal",
+  "attending": "at Web Summit Lisbon 2026: event partner on websummit.com partners page (lis26) (LISBOA); speaker: Mayor Carlos Moedas",
+  "attending_as": "speaker",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/appearances/lis26/8e8c8a8d-9e2a-49ef-b68e-3d71fb21f043/lisboa/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    },
+    {
+      "url": "https://www.lisboa.pt",
+      "read_at": "2026-11-05",
+      "supports": "website, sector, country"
+    }
+  ],
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}

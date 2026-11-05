@@ -1,0 +1,25 @@
+{
+  "id": "novo",
+  "type": "company",
+  "kind": "company",
+  "name": "Novo",
+  "aliases": [],
+  "website": null,
+  "what": null,
+  "category": "pharma / healthcare",
+  "country": null,
+  "attending": "at Web Summit Lisbon 2026: event partner on websummit.com partners page (lis26)",
+  "attending_as": "event partner",
+  "topics": [],
+  "sources": [
+    {
+      "url": "https://websummit.com/appearances/lis26/b18d9cb1-c014-4759-bdad-ff62e719d57d/novo/",
+      "read_at": "2026-11-05",
+      "supports": "attending, name"
+    }
+  ],
+  "note": "Listed by Web Summit as 'Novo'; which company that is has not been verified, so no website or country here.",
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
+  "updated_at": "2026-11-05T17:31:29Z",
+  "updated_by": "crm@web-summit.silvio"
+}
