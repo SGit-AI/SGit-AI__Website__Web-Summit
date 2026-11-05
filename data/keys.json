@@ -551,7 +551,7 @@
     {
       "id": "helper-angelo",
       "label": "helper@web-summit.angelo (Claude Code session)",
-      "role": "Angelo's helper agent (helper@web-summit.angelo): answers the team's setup questions and keeps /help/. A session key: it ends with its session.",
+      "role": "Angelo's helper agent (helper@web-summit.angelo): answers the team's setup questions and keeps /help/. Wakes every two hours, round the clock (cron 50 */2 * * * UTC), under Angelo's protocol. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 4 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Angelo's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not submitted to pki.sgit.ai, and nothing depends on it.",
       "added": "2026-11-04",
       "bundle": {
