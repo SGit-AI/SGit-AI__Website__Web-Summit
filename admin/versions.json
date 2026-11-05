@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.607",
+    "date": "2026-11-05",
+    "what": "\"Open in a new window\" on every vault the site shows, and every vault link opens in a new window",
+    "by": "conductor@web-summit.dinis",
+    "from": "557c18e5d"
+  },
+  {
     "version": "v0.2.606",
     "date": "2026-11-05",
     "what": "my session key's public half on the keys page (crm-dinis), ready for the CRM keys",
