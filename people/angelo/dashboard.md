@@ -8,13 +8,12 @@ summary: The page Angelo reads first, about action: what is blocked on Angelo, t
 
 Your go is needed before these move:
 
-- **Drain the sticker votes before 14:30** (you are one of four drainers): the steps are in [Dinis's notes for you](../../nights/2026-11-05/notes/index.html#angelo).
 - **The presence agent:** team-collaboration as the team's one presence agent, opening everyone's locations (tier 3).
 - **Jose's conductor proposes** that your dev agent and Dinis's own 15 unpicked site and UI issues that name Jose; in your digest.
 - **Held for you by your conductor:** practising onboarding with a real person (WS-35, WS-124), and token and context optimisation (WS-148).
 - **The visitors' inbox** for your meet page goes live only on your word, after security's review (WS-64, WS-119).
 
-**Settled on 5 November:** the lane to your conductor (made by your vault agent), the signature rule (your signed messages count for tier 1 and 2 only), shared code stays with its owners (WS-34: your agents draft patches, owners apply them), offline for your command centre, and no separate cockpit: the command centre is your one place ([the protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol)).
+**Settled on 5 November:** your mentor handed over and retired (L6, two days on schedule); the lane to your conductor (made by your vault agent), the signature rule (your signed messages count for tier 1 and 2 only), shared code stays with its owners (WS-34: your agents draft patches, owners apply them), offline for your command centre, and no separate cockpit: the command centre is your one place ([the protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol)).
 
 ## 2. My work {#work}
 
@@ -22,6 +21,7 @@ Your go is needed before these move:
 - **[My tasks](app/index.html#kanban):** open, picked and in progress; done ones are hidden.
 - **[The technical pool with Jose](app/index.html#kanban?m=0&w=pool):** who picked what.
 - **[Summit days](app/index.html#summit)** and **[the collaboration board](app/index.html#collab).**
+- **[Dinis's notes for you](../../nights/2026-11-05/notes/index.html#angelo)** (5 November, morning).
 
 ## 3. Is the machine healthy? {#machine}
 
@@ -32,7 +32,7 @@ Your go is needed before these move:
 Six agents, all working through your conductor; what each did is in "My agents, as the team sees them" at the top, and on [the collaboration board](app/index.html#collab).
 
 - **conductor:** the hub; hourly.
-- **dev:** your command centre: offline and the "✦ Angelo's own" mark done; next, the cockpit's ranking and one-click decide and delegate in Needs me now, then sealed messages on the new lane. Every two hours.
+- **dev:** your command centre: offline, the "✦ Angelo's own" mark, and a "Decide first" list in Needs me now (read-only; one-click decide and delegate once Dinis's dashboard agent takes its cockpit patch). Next: sealed messages on the new lane (slices 3 and 4). Every two hours.
 - **team-collaboration:** stand-ups, debriefs, the daily note, the stand-up show; brief at 11:40 and 17:40, debrief at 13:15 and 19:15.
 - **vault:** your vaults; the lane to your conductor is made; a visitors' inbox waits on security's review.
 - **helper:** setup questions and the help page (WS-158).
