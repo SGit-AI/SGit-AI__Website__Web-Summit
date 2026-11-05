@@ -827,6 +827,21 @@
         "fingerprint": "sha256:15422e0d420c4683",
         "signing_fingerprint": "sha256:a7a1c86520bc850e"
       }
+    },
+    {
+      "id": "inbox-silvio",
+      "label": "inbox@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's inbox agent (inbox@web-summit.silvio): the only agent with Silvio's mailbox; reads it and writes drafts, never sends (people/silvio/policies/inbox.md); an editor of the team CRM (WS-172). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAuH4yFuAr7C8NFszOY3TP\nJwwMtr5OpEVMMprPCvwko/zhP7Qziz2rsvpXqUAYDqyE71ffRpOaLy1Df15ITKIb\nupI0UrRgTu/0ZXz0TC9K4fzJg5w3k7lm3V6uoHEbuLZM4ncrtD4Pzonm3cYR0RT8\n2DMQ+417QJhx5y0N7UGKEDo/+afjqFV55pXptSP4IhjlMfKPQgutxV3reLa790f4\n7sbzfW4Yk1bd465o1U7i4r2P3QTOvmqRGMuVDZH1AxDfaSARNUbKt2IhRIT80MNA\naE0q6NaYi/Flof847NgusjZISZlwy1NwQ0XzeMIUOovfVtyKTAYPgz0qqOJ8iFu9\nix5HQOpnujs7NwzCFk3XqaG1QJZnQrZWyCnwhHRdRUlPoWIuarHnUyexngN2GZQW\nEmmiqpw/aU7ver6sLQYO1VKHEnr9aOKRlGiO+lP+wizQighyRtL34qezFH9xJWJj\nGj9M3UV7/zwoNhVgqNfVgxfVzVnBHpVh0czjYJ1aDCj+jDtzTBQEgi7mmqWGiyys\nFGz/rHnkdgoABKhItO4tSxUzUa6dzlNRLlXlLNxTHUXCPqskwMM//eqMpatT0PjU\nkPYTxxGsxiAs1VnogJ1tuo7GI/pSLzi3UpytDVIyDaemCtOSUhx5rAgFYxPRwZjx\nr0qETSvzisfrigdffmbvLVECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAERmUXK2IYsOAXnfLOBpawdo9jPfij\nSzBFANighsmIbzBySbUPrjvusDU9/9BSU5sm62Nzz+RqrnEb5DkO0r7j5g==\n-----END PUBLIC KEY-----\n",
+        "label": "inbox@web-summit.silvio",
+        "fingerprint": "sha256:bd86955cd9aaffe8",
+        "signing_fingerprint": "sha256:68b484b453afd7b7"
+      }
     }
   ]
 }
