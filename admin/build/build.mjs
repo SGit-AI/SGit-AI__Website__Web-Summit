@@ -652,7 +652,7 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     const app = own ? await import(path.join(dir, 'data.mjs')) : CC
     const data = app.build(ROOT, m.id)
     // the switcher at the top of every command centre: everyone's, in roster order
-    data.team = teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => ({ id: x.id, name: x.name }))
+    data.team = teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => ({ id: x.id, name: x.name, ...(fs.existsSync(path.join(ROOT, 'people', x.id, 'photo.jpg')) ? { photo: `../../${x.id}/photo.jpg` } : {}) }))
     write(`people/${m.id}/app/data.json`, JSON.stringify(data))
     {   // this person's slice of me.json
         const o = onboard(m.id), nx = MEET.next(), a = MEET.ack(m.id), since = MEET.log(a?.acknowledged_at || new Date(Date.now() - 864e5).toISOString())

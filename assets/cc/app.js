@@ -13,6 +13,7 @@
 
     // ---------- small helpers ----------
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+    const face = (name, photo) => esc(String(name).split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase()) + (photo ? `<img src="${esc(photo)}" alt="" loading="lazy" decoding="async" onerror="this.remove()">` : '')
     const store = {
         get(k, d) { try { const v = localStorage.getItem('cc.' + k); return v === null ? d : JSON.parse(v) } catch { return d } },
         set(k, v) { try { localStorage.setItem('cc.' + k, JSON.stringify(v)) } catch { /* private mode: the page still works */ } },
@@ -139,7 +140,7 @@
 <div class="cc-layout">
   <aside class="cc-side" aria-label="Command centre">
     <div class="cc-brand"><span class="cc-mark" aria-hidden="true">R</span><div><b>RiskMandate</b><span>${esc(FIRST)}'s command centre</span></div></div>
-    <div class="cc-me"><span class="cc-avatar" aria-hidden="true">${esc((D.person.name || ME).split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase())}</span><div><b>${esc(D.person.name)}</b><span>${esc(D.person.role)}</span></div></div>
+    <div class="cc-me"><span class="cc-avatar" aria-hidden="true">${face(D.person.name || ME, D.person.photo)}</span><div><b>${esc(D.person.name)}</b><span>${esc(D.person.role)}</span></div></div>
     <nav class="cc-nav" aria-label="Views">
       ${VIEWS.slice(0, 2).map(navItem).join('')}
       <span class="grp">Work</span>${VIEWS.slice(2, 6).map(navItem).join('')}
@@ -154,7 +155,7 @@
       <span class="sep" aria-hidden="true"></span>
       <div class="ux" role="group" aria-label="Which view of ${esc(FIRST)}'s page"><a aria-current="page" href="index.html">Command centre</a><a href="../index.html">Classic</a></div>
       <span class="sep" aria-hidden="true"></span>
-      <div class="people">${(D.team || []).map(p => `<a href="../../${esc(p.id)}/app/index.html"${p.id === ME ? ' aria-current="page"' : ''} title="${esc(p.name)}'s command centre"><span class="av">${esc(p.name.split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase())}</span>${esc(p.name.split(' ')[0])}</a>`).join('')}</div>
+      <div class="people">${(D.team || []).map(p => `<a href="../../${esc(p.id)}/app/index.html"${p.id === ME ? ' aria-current="page"' : ''} title="${esc(p.name)}'s command centre"><span class="av">${face(p.name, p.photo)}</span>${esc(p.name.split(' ')[0])}</a>`).join('')}</div>
     </nav>
     <header class="cc-top">
       <span class="cc-mark sm" aria-hidden="true">R</span><div class="title" id="cc-title"></div><div class="grow"></div>
