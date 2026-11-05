@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.657",
+    "date": "2026-11-05",
+    "what": "the 20:57 report, the day's newsletter, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "b5be53d52"
+  },
+  {
     "version": "v0.2.656",
     "date": "2026-11-05",
     "what": "one SG/Send access token per agent in the vault guide (Dinis's rule, WS-170); WS-120 done with Silvio's first vault",
