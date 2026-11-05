@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.522",
+    "date": "2026-11-05",
+    "what": "WS-74's flow brought to n8n 3.0 practice: the site fetched by an HTTP node, a two-parameter template; this wake measured",
+    "by": "automation@web-summit.jose",
+    "from": "be00846ba"
+  },
+  {
     "version": "v0.2.521",
     "date": "2026-11-05",
     "what": "four items off Vicky's tables, handled by others",
