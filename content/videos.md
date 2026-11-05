@@ -8,6 +8,7 @@ RiskMandate is technical, so a 20-second promo is not enough: we explain it with
 ```cards
 Reach, Mandate, Gap | reach-mandate-gap/index.html | 53 s. The visual explanation: what an agent can reach, what it was authorised to do, and the gap.
 RiskMandate Stories: fifty new agents | fifty-new-agents/index.html | 2 min 44 s. Monday, fifty new agents, and the questions before you switch them on.
+Your AI has access. Does it have permission? | access-permission/index.html | 30 s, subtitled. Silvio's short film for the stand's loop and LinkedIn: the same lines as the T-shirts.
 Storyboard: the 2-minute silent loop | storyboard-loop/index.html | For the screen at our stand: stop, explain, start a conversation.
 ```
 
