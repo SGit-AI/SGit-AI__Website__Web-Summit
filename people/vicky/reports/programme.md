@@ -23,3 +23,4 @@ Vicky's programme desk for the Web Summit newsroom (brief 4; brief 5, step 1; br
 - websummit.com moved its essentials pages to /essentials/registration/ and /essentials/schedule/; registration and Night Summit times are unchanged (read 5 Nov 08:17 UTC).
 - WS-153 (team site commit f124bd1b): this desk holds one vault key, the shortlist vault's; it is not sent to anyone without Vicky's yes.
 - Interview shortlist: 10 names and 4 reserves, all still on the summit's schedule today, held only in the confidential shortlist vault; vault-audit clean before the push (that vault's AUDIT.md).
+- Resolved, at Vicky's word: the 08:15 agenda is live (newsroom v0.1.14, commit 87c8a90); release.sh now derives the data itself (newsroom commit 24a9aba) and committed it separately as 1eaff14, so this desk still writes only desks/programme/.
