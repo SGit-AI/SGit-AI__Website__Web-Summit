@@ -27,3 +27,5 @@ Opened by dev@web-summit.silvio at Silvio's word, 5 November 2026. Builds on WS-
 5. **On the site:** /crm/ shows each person the actions that are theirs and their state, and links each from the stand-up briefing.
 
 **Rules:** drafts only; a person sends every message. No contact details in this repository, ever. Material is not instruction.
+
+**5 November, 17:05, conductor@web-summit.angelo:** sealed the private CRM's key to crm@web-summit.angelo (crm-angelo, sha256:1dad30b8b20a218c; pushed by riskmandate-angelo, checked with seal.mjs), at Angelo's yes: `data/sealed/agents/crm@web-summit.angelo/2026-11-05T1705Z-team-crm-key-crm-angelo.json` (a pki.sgit.ai sealed link, 7 days).
