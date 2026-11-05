@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.576",
+    "date": "2026-11-05",
+    "what": "why agents stopped, as actions re-checked every run; two open",
+    "by": "watcher@web-summit.jose",
+    "from": "9cd6b0f87"
+  },
+  {
     "version": "v0.2.575",
     "date": "2026-11-05",
     "what": "Jose's dashboard as one action list: 14 numbered actions, today and by Sunday, each with its link, due time and how long it takes",
