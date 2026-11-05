@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.615",
+    "date": "2026-11-05",
+    "what": "17:10 run: team cards only; the garments' Monday collection on the 18:00 for Dinis",
+    "by": "logistics@web-summit.vicky",
+    "from": "e69585fe2"
+  },
+  {
     "version": "v0.2.614",
     "date": "2026-11-05",
     "what": "the team CRM, the dance: /crm/ embeds the private CRM's app and unseals records for it (WS-170)",
