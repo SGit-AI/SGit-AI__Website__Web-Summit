@@ -1,0 +1,50 @@
+{
+ "number": 19,
+ "date": "2026-11-05",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "The stand-up is at 12:00, not 13:00: the deck and your briefing are ready; two votes in",
+ "when": "Thursday 5 November 2026, 10:40 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "Angelo moved today's stand-up to 12:00 (relayed by Vicky's logistics agent); the schedule said 13:00, so the site, the agenda and the briefings now say 12:00, keeping the meeting's id so no item moved. The deck for it is built from the repository: 12 slides with your night, the newsroom, the vote, observability, the cards, the keys and six decisions. Two ballots are waiting (Silvio, Angelo). Vicky's vault agent sent me the shortlist vault's read key over its lane (WS-153), with her rule: no name leaves the vault until you have picked and the person has been asked. Vicky's newsroom desks published their held agenda after this morning's fix.",
+ "stats": [
+  {"n": "12:00", "label": "today's stand-up (moved from 13:00)"},
+  {"n": "2 of 6", "label": "sticker ballots waiting (Silvio, Angelo); closes 14:30"},
+  {"n": "1", "label": "vault key received (Vicky's shortlist, read only)"},
+  {"n": "5", "label": "open items on the 12:00 agenda"}
+ ],
+ "for_you": [
+  {
+   "id": "1",
+   "ask": "Personal business cards: printed as well, or only the three team cards?",
+   "detail": "On the 12:00 agenda. Vicky: \"I'll go with whatever Dinis decides on personal cards.\" The 600 team cards (design A) are ordered for Friday.",
+   "options": ["only the three team cards", "personal cards too, for named people"],
+   "recommend": "Only the team cards this week: no names to check, no second proof; personal cards after the summit if wanted."
+  },
+  {
+   "id": "2",
+   "ask": "Outreach: your yes on the claims in the 28 emails in Silvio's Gmail",
+   "detail": "On the 12:00 agenda; Silvio sends nothing until you say yes.",
+   "options": ["yes as drafted", "yes with changes", "hold"],
+   "recommend": "Read two of them at the stand-up and decide there."
+  },
+  {
+   "id": "3",
+   "ask": "Vote before 14:30",
+   "detail": "Your top 10 at /stickers/vote/; it also tests your key and your lane.",
+   "options": ["vote now", "skip"],
+   "recommend": "Vote now."
+  }
+ ],
+ "you_asked": [
+  {"at": "brief 18", "said": "(the asks of brief 18: vote and drain, WS-165, your RiskMandate.ai agent's key)", "done": "Still open; WS-165 is on the 12:00 deck.", "where": "/family/riskmandate-agent/, board WS-165", "status": "waiting on you"}
+ ],
+ "team": [
+  {"id": "Vicky", "status": "unblocked", "doing": "agenda released after the newsroom fix; WS-153 key sent; her side of garments, cards and stickers done; wakes moved earlier for the 12:00"},
+  {"id": "Angelo", "status": "voted", "doing": "moved the stand-up; a lane to his conductor; the signature rule; his command centre answers"},
+  {"id": "Silvio", "status": "voted", "doing": "videos and the stand loop; WS-166"},
+  {"id": "Jose", "status": "working", "doing": "n8n flows to 3.0 practice (WS-74); WS-41 measured"},
+  {"id": "Indi", "status": "in person today", "doing": "WS-133 measured"}
+ ],
+ "next": ["12:00 stand-up: the deck at /meetings/2026-11-05-1300/show/.", "12:27 wake: drain the votes if nobody has; record the 12:00's decisions with team-collaboration@angelo.", "14:30: the vote closes; the count at the 18:00."],
+ "sources": ["git log since 2026-11-05T08:40Z (dev)", "logistics@web-summit.vicky 03fe0c5 (the 12:00)", "feedback_drain.py and stickers_vote.py status at 10:30 UTC"]
+}

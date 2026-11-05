@@ -14,8 +14,9 @@ const S = JSON.parse(fs.readFileSync(path.join(DIR, 'schedule.json'), 'utf8'))
 export function slots() {
     const out = [], d = new Date(S.from + 'T00:00:00Z'), end = new Date(S.until + 'T23:59:59Z')
     for (; d <= end; d.setUTCDate(d.getUTCDate() + 1)) for (const t of S.slots) {
-        const day = d.toISOString().slice(0, 10), at = new Date(`${day}T${t}:00Z`)
-        out.push({ id: `${day}-${t.replace(':', '')}`, at: at.toISOString(), day, time: t })
+        // a stand-up moved on one day (schedule.json "moves": {"<id>": "HH:MM"}) keeps its id, so its items stay put
+        const day = d.toISOString().slice(0, 10), id = `${day}-${t.replace(':', '')}`, time = (S.moves || {})[id] || t
+        out.push({ id, at: new Date(`${day}T${time}:00Z`).toISOString(), day, time })
     }
     return out
 }

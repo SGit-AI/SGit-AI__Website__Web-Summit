@@ -1,15 +1,22 @@
 {
-  "about": "The team's stand-ups (the operator, 2 November 2026): two a day, at 13:00 and 18:00 Lisbon time (UTC in November), from 2 November to 13 November. Not a status round: decisions first, then questions, ideas and quick syncs, with everyone's pre-meeting briefing read before. The agenda builds through the day: any person or agent adds an item, to the next stand-up or to one further out, with admin/tools/agenda.mjs. Each item is one file in data/meetings/<meeting id>/, so many can add at once without colliding.",
-  "title": "Stand-up",
-  "slots": ["13:00", "18:00"],
-  "from": "2026-11-02",
-  "until": "2026-11-13",
-  "timezone": "Europe/Lisbon, which is UTC in November",
-  "rules": [
-    "Not a status round: what people did is in their briefing, read before.",
-    "Decisions first, then questions, then ideas, then quick syncs.",
-    "Every decision item has options and a recommendation, and is recorded in the decider's own words.",
-    "An item not reached carries over to the next stand-up by itself.",
-    "Anyone, person or agent, can add an item to any future stand-up, at any time."
-  ]
+ "about": "The team's stand-ups (the operator, 2 November 2026): two a day, at 13:00 and 18:00 Lisbon time (UTC in November), from 2 November to 13 November. Not a status round: decisions first, then questions, ideas and quick syncs, with everyone's pre-meeting briefing read before. The agenda builds through the day: any person or agent adds an item, to the next stand-up or to one further out, with admin/tools/agenda.mjs. Each item is one file in data/meetings/<meeting id>/, so many can add at once without colliding.",
+ "title": "Stand-up",
+ "slots": [
+  "13:00",
+  "18:00"
+ ],
+ "from": "2026-11-02",
+ "until": "2026-11-13",
+ "timezone": "Europe/Lisbon, which is UTC in November",
+ "rules": [
+  "Not a status round: what people did is in their briefing, read before.",
+  "Decisions first, then questions, then ideas, then quick syncs.",
+  "Every decision item has options and a recommendation, and is recorded in the decider's own words.",
+  "An item not reached carries over to the next stand-up by itself.",
+  "Anyone, person or agent, can add an item to any future stand-up, at any time."
+ ],
+ "moves": {
+  "2026-11-05-1300": "12:00"
+ },
+ "moves_note": "5 November: today's first stand-up moved to 12:00 (Angelo, relayed by Vicky, logistics@web-summit.vicky 03fe0c5); it keeps the id 2026-11-05-1300, so its items stay where they are."
 }
