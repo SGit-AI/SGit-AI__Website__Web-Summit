@@ -1,5 +1,47 @@
 [
   {
+    "version": "v0.2.485",
+    "date": "2026-11-05",
+    "what": "WS-166 every person's key on every phone and iPad before Monday 9 November; three keys still to issue",
+    "by": "dev@web-summit.silvio",
+    "from": "05efa5220"
+  },
+  {
+    "version": "v0.2.484",
+    "date": "2026-11-05",
+    "what": "WS-71 titles, descriptions and hashtags for both videos, English and Portuguese, for RiskMandate's accounts",
+    "by": "video@web-summit.silvio",
+    "from": "0c6b44171"
+  },
+  {
+    "version": "v0.2.483",
+    "date": "2026-11-05",
+    "what": "ten lanes with a random first lane; drains timed and logged; fetch, open and mark in parallel",
+    "by": "observability@web-summit.dinis",
+    "from": "27d45c81d"
+  },
+  {
+    "version": "v0.2.482",
+    "date": "2026-11-05",
+    "what": "the drain prints an ASCII banner before (the plan, what waits in each lane) and after (what it collected, the stats)",
+    "by": "observability@web-summit.dinis",
+    "from": "b1a864c6b"
+  },
+  {
+    "version": "v0.2.481",
+    "date": "2026-11-05",
+    "what": "Silvio's 30-second film for the stand loop: \"Your AI has access. Does it have permission?\"",
+    "by": "conductor@web-summit.silvio",
+    "from": "9b3dbde5f"
+  },
+  {
+    "version": "v0.2.480",
+    "date": "2026-11-05",
+    "what": "/family/, briefings for other SGit teams: sgit's first-run feedback, and a channel with Agent (RiskMandate.ai)",
+    "by": "conductor@web-summit.dinis",
+    "from": "f20d26476"
+  },
+  {
     "version": "v0.2.479",
     "date": "2026-11-05",
     "what": "event mode made clean on phones and iPads, What's new for everyone, and a page of what changed in the command centres",

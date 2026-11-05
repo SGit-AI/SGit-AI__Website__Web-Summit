@@ -73,7 +73,8 @@
                 ev.sig = { key: KR.fingerprint, alg: 'ECDSA-P256-SHA256-P1363', sig: await KR.sign(over), over }
             }
             const payload = await seal(c.recipient.encrypt, JSON.stringify(ev))
-            for (const token of c.lanes.site) {
+            const L = c.lanes.site, start = Math.floor(Math.random() * L.length)   // a random first lane spreads the load; on 507 the next
+            for (const token of L.map((_, i) => L[(start + i) % L.length])) {
                 const r = await fetch(`${c.endpoint}/api/vault/append/write/${c.vault_id}`, { method: 'POST', keepalive: true,
                     headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ append_token: token, payload }) })
                 if (r.status !== 507) return r.ok

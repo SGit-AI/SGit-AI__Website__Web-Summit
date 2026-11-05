@@ -94,10 +94,11 @@ def fold_inbox(vault, extract):
     touched, n = set(), 0
     for name in sorted(os.listdir(p)):
         if not name.endswith('.jsonl'): continue
-        rows = []
+        rows, meta = [], {}
         for l in open(os.path.join(p, name)):
             if not l.strip(): continue
             x = json.loads(l)
+            if 'meta' in x: meta = x['meta']; continue                    # the browser's own timings
             ev = extract(x['content'])
             ev.update(_file=x['file_id'], _lane=x.get('lane', 0), _via='browser:' + name,
                       _received=int(x['file_id'][:13]) if str(x['file_id'])[:13].isdigit() else None)
@@ -107,7 +108,7 @@ def fold_inbox(vault, extract):
         who = parts[1] if len(parts) > 2 and parts[1].isalpha() else 'browser'
         stamp = name[len('browser-' + (who + '-' if who != 'browser' else '')):-6]
         at = (stamp[:10] + 'T' + stamp[11:13] + ':' + stamp[14:16] + 'Z') if len(stamp) >= 16 else ''
-        DRAINS.append({'at': at, 'by': who, 'records': len(rows), 'via': 'browser'})
+        DRAINS.append({'at': at, 'by': who, 'records': len(rows), 'via': 'browser', **{k: meta[k] for k in ('secs', 'phases', 'lanes', 'lane_count') if k in meta}})
         os.remove(os.path.join(p, name))
     return touched, n
 
@@ -232,6 +233,12 @@ def agents_of(runs):
         a['done'] = a['done'][-100:][::-1]; a['triggers'] = dict(a['triggers']); a.pop('_seen')
         out.append(a)
     return sorted(out, key=lambda a: a['last'], reverse=True)
+
+def save_drains(data_vault, pub_vault, entry):
+    """Add one drain (when, by whom, how many, how long, each phase, each lane's pending count) to the log."""
+    dl = jload(os.path.join(data_vault, 'state', 'drains.json'), []) + [entry]
+    jsave(os.path.join(data_vault, 'state', 'drains.json'), dl[-1000:])
+    jsave(os.path.join(pub_vault, 'latest', 'drains.json'), {'v': 1, 'generated': entry['at'], 'drains': dl[-200:][::-1]})
 
 def transform(data_vault, pub_vault, dirty, now_hour, roster=()):
     """Recompute the dirty hours (and the current hour), their days, and latest/. Returns what was computed."""

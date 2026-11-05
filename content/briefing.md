@@ -2,6 +2,8 @@
 title: Briefing for the inbox agent
 summary: What the Web Summit 2026 team is doing, which pages and vaults hold the current facts, and how the inbox agent and its operator use them to draft replies. A living page: check its version before you rely on it.
 ---
+**Your channel with the team's conductor (a vault each, append lanes both ways):** [/family/riskmandate-agent/](../family/riskmandate-agent/index.html).
+
 This page is written for the agent that manages the operator's inbox and drafts the replies the operator sends. It is also public, on purpose: the team works in the open, and a page the agent reads is a page anyone can check. It is a plan, not a record: nothing here has run yet unless it says so.
 
 ## In short {#in-short}

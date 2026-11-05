@@ -423,7 +423,12 @@
                 h('p', { class: 'obsx-sub', text: ['phone', 'tablet', 'desktop'].map(k => `${k} ${sc[k] || 0}`).join(' · ') })]) : empty('No screens recorded in this range.'))]
     }
     function drainsLog(D) {
-        return panel('Drains', 6, D.length ? table(['When', 'By', 'Records', 'Via'], D.slice(0, 10).map(d => [h('span', { title: d.at, text: `${d.at.slice(5).replace('T', ' ')} · ${rel(d.at)}` }), d.by === 'hourly' ? h('span', { class: 'obsx-badge', text: 'hourly' }) : personLink(d.by), d.records, d.via]), [2]) : empty('No drain recorded yet.'))
+        const last = D.find(d => d.lanes), n = last ? (last.lane_count || 10) : 0
+        const lanes = last ? h('div', { class: 'obsx-lanes', title: 'records waiting in each lane at the last drain; a lane holds 1,000, then answers 507 and the sender moves on' },
+            Array.from({ length: n }, (_, i) => { const c = +(last.lanes[String(i + 1)] || 0); return h('span', { class: c >= 800 ? 'hot' : '' }, [h('i', { style: `height:${Math.max(2, 100 * c / 1000)}%` }), h('b', { text: String(i + 1) }), h('small', { text: String(c) })]) })) : null
+        return panel('Drains', 6, D.length ? h('div', {}, [table(['When', 'By', 'Records', 'Took', 'Via'], D.slice(0, 10).map(d => [h('span', { title: d.at, text: `${d.at.slice(5).replace('T', ' ')} · ${rel(d.at)}` }), d.by === 'hourly' ? h('span', { class: 'obsx-badge', text: 'hourly' }) : personLink(d.by), d.records,
+                d.secs != null ? h('span', { title: d.phases ? Object.entries(d.phases).map(([k, v]) => `${k} ${v}s`).join(' · ') : '', text: `${d.secs} s` }) : '–', d.via]), [2, 3]),
+            last ? h('p', { class: 'obsx-sub', text: `Lanes at the last drain (${last.at.slice(11, 16)}): records waiting in each, of 1,000` }) : null, lanes]) : empty('No drain recorded yet.'))
     }
     function policies(W, A) {
         const ran = new Set(A.agents.filter(a => a.runs).map(a => a.agent))
@@ -500,11 +505,11 @@
     const DRAINERS = ['dinis', 'jose', 'angelo', 'silvio']
     let ME = ''
     const STEPS = ['Load the vault library', 'Open the data vault with its vault key (PBKDF2, 600,000 iterations)', 'Derive the enum key from the read key',
-        'List the five lanes', 'Read the drain key from identity/private/', 'Fetch and open the records', 'Write them, still sealed, to inbox/ and push', 'Mark them processed']
+        'List the lanes', 'Read the drain key from identity/private/', 'Fetch and open the records', 'Write them, still sealed, to inbox/ and push', 'Mark them processed']
     const drainControl = h('span', { class: 'obsx-drain' })
     const drawer = h('aside', { class: 'obsx-drawer', hidden: '' })
     const stepList = h('ol', { class: 'obsd-steps' }), status = h('span', { class: 'obsd-status' }), justBox = h('div'), lastBox = h('div'), prog = h('div', { class: 'obsx-prog' })
-    let running = false, timer = null, started = 0, stepT = [], lastRows = []
+    let running = false, timer = null, started = 0, stepT = [], stepDone = [], lastRows = []
     const runBtn = h('button', { type: 'button', class: 'obsd-run', text: 'Drain now', onclick: () => runDrain() })
     drawer.append(h('header', {}, [h('b', { text: 'Drain the lanes' }), h('button', { type: 'button', class: 'x', text: '×', title: 'close (the drain keeps running)', onclick: () => { drawer.hidden = true } })]),
         h('div', { class: 'obsx-dhead' }, [runBtn, status]), prog, stepList, justBox, h('h4', { text: 'Last drains' }), lastBox,
@@ -512,6 +517,7 @@
     document.body.append(drawer)
     const step = (i, st, detail) => { const li = stepList.children[i]; if (!li) return; const was = li.className; li.className = st; li.querySelector('small').textContent = detail || ''
         if (st === 'run' && was !== 'run') { stepT[i] = performance.now(); log('step', `${i + 1}/${STEPS.length} ${STEPS[i]}${detail ? ': ' + detail : ''}`) }
+        if (st === 'done' || st === 'skip') stepDone[i] = performance.now()
         if ((st === 'done' || st === 'skip') && stepT[i]) li.querySelector('em').textContent = `${Math.round(performance.now() - stepT[i])} ms`
         prog.style.setProperty('--p', `${100 * [...stepList.children].filter(x => x.className === 'done' || x.className === 'skip').length / STEPS.length}%`) }
     async function drawLast() {
@@ -527,7 +533,7 @@
     }
     function runDrain() {
         if (running) return
-        running = true; runBtn.disabled = true; runBtn.textContent = 'Draining…'; justBox.textContent = ''; stepT = []
+        running = true; runBtn.disabled = true; runBtn.textContent = 'Draining…'; justBox.textContent = ''; stepT = []; stepDone = []
         stepList.textContent = ''; STEPS.forEach(t => stepList.append(h('li', {}, [t, ' ', h('small'), h('em')])))
         started = performance.now(); timer = setInterval(() => { status.textContent = `${((performance.now() - started) / 1000).toFixed(1)} s` }, 100); drawControl()
         drain().then(n => { status.textContent = `done in ${((performance.now() - started) / 1000).toFixed(1)} s: ${n} records` })
@@ -585,28 +591,34 @@
         log('key', 'the drain key (RSA-OAEP 4096) read from identity/private/ and imported non-extractable'); step(4, 'done', 'RSA-OAEP 4096'); step(5, 'run', `0 of ${entries.length}`)
         const byLane = {}; for (const e of entries) (byLane[e.inbox] = byLane[e.inbox] || []).push(e.file_id)
         const lines = [], shown = []
-        for (const [token, ids] of Object.entries(byLane)) for (let i = 0; i < ids.length; i += 50) {
-            const r = await api('fetch', { inbox: token, file_ids: ids.slice(i, i + 50) })
-            for (const f of r.files || []) {
-                lines.push(JSON.stringify({ file_id: f.file_id, lane: token.slice(0, 6), content: f.content }))
-                try {
-                    const env = JSON.parse(atob(atob(f.content)))
-                    const aes = await crypto.subtle.importKey('raw', await crypto.subtle.decrypt({ name: 'RSA-OAEP' }, key, unb64(env.w)), 'AES-GCM', false, ['decrypt'])
-                    const ev = JSON.parse(dec.decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(env.i) }, aes, unb64(env.c))))
-                    shown.push(ev); log('record', ev.type === 'web-summit.agent-run/v1' ? `agent run: ${ev.agent}, ${(ev.read || []).length} read` : `${ev.type} ${ev.path} ${ev.person ? 'by ' + ev.person + ' (signed)' : ev.agent ? '(' + ev.agent + ')' : '(anonymous)'} ${ev.type === 'read' ? ev.visible_s + 's, ' + ev.scroll + '%' : ''}`)
-                } catch (e) { log('record', 'could not open one record: ' + e.message) }
-                step(5, 'run', `${lines.length} of ${entries.length}`)
-            }
-        }
+        // in parallel (5 November): six fetches in flight, every record of a batch opened at once
+        const batches = []; for (const [token, ids] of Object.entries(byLane)) for (let i = 0; i < ids.length; i += 50) batches.push([token, ids.slice(i, i + 50)])
+        const openOne = async f => { try {
+                const env = JSON.parse(atob(atob(f.content)))
+                const aes = await crypto.subtle.importKey('raw', await crypto.subtle.decrypt({ name: 'RSA-OAEP' }, key, unb64(env.w)), 'AES-GCM', false, ['decrypt'])
+                return JSON.parse(dec.decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(env.i) }, aes, unb64(env.c))))
+            } catch (e) { log('record', 'could not open one record: ' + e.message); return null } }
+        let next = 0
+        const worker = async () => { while (next < batches.length) { const [token, ids] = batches[next++]
+            const r = await api('fetch', { inbox: token, file_ids: ids })
+            const evs = await Promise.all((r.files || []).map(openOne))
+            ;(r.files || []).forEach((f, i) => { lines.push(JSON.stringify({ file_id: f.file_id, lane: token.slice(0, 6), content: f.content })); if (evs[i]) shown.push(evs[i]) })
+            step(5, 'run', `${lines.length} of ${entries.length}`) } }
+        await Promise.all(Array.from({ length: Math.min(6, batches.length) }, worker))
+        log('record', `${shown.length} records opened: ${shown.filter(e => e.person).length} signed by the team, ${shown.filter(e => e.type === 'web-summit.agent-run/v1').length} agent runs`)
         step(5, 'done', `${shown.length} opened`); showJust(shown.slice()); step(6, 'run')
         const name = `browser-${ME}-${new Date().toISOString().replace(/[:.]/g, '-')}.jsonl`
         if (vault.needsLoading('/inbox')) await vault.loadSubTreeOnDemand('/inbox')
         if (!vault.listFolder('/inbox')) await vault.createFolder('/inbox')
-        await vault.addFile('/inbox', name, enc.encode(lines.join('\n') + '\n'))
+        const laneCount = {}; for (const e of entries) laneCount[e.inbox] = (laneCount[e.inbox] || 0) + 1
+        const meta = { meta: { secs: Math.round((performance.now() - started) / 100) / 10, phases: Object.fromEntries(STEPS.slice(0, 6).map((t, i) => [['library', 'open_vault', 'enum_key', 'list', 'drain_key', 'fetch_and_open'][i], +(((stepDone[i] || 0) - (stepT[i] || 0)) / 1000).toFixed(2)])), by: ME, records: lines.length, lanes_seen: Object.keys(laneCount).length } }
+        await vault.addFile('/inbox', name, enc.encode([JSON.stringify(meta), ...lines].join('\n') + '\n'))
         log('vault', `committed inbox/${name} (${lines.length} records, still sealed): one encrypted commit`)
         await vault.pushIfMatch()
         log('vault', 'pushed (compare-and-swap on the named branch)'); step(6, 'done', name); step(7, 'run')
-        for (const [token, ids] of Object.entries(byLane)) for (let i = 0; i < ids.length; i += 100) await api('mark-processed', { inbox: token, file_ids: ids.slice(i, i + 100) })
+        const marks = []; for (const [token, ids] of Object.entries(byLane)) for (let i = 0; i < ids.length; i += 100) marks.push([token, ids.slice(i, i + 100)])
+        let nm = 0; const marker = async () => { while (nm < marks.length) { const [token, ids] = marks[nm++]; await api('mark-processed', { inbox: token, file_ids: ids }) } }
+        await Promise.all(Array.from({ length: Math.min(6, marks.length) }, marker))   // in parallel
         log('lanes', `${entries.length} records marked processed; the hourly drain folds them into the stats`); step(7, 'done', `${entries.length}`)
         return entries.length
     }
@@ -655,6 +667,7 @@ body[data-section="observability"] .frame{max-width:none}body[data-section="obse
 .obsx-flow{width:100%;height:auto}.obsx-flow text{fill:currentColor;font:11px ui-monospace,monospace}.obsx-flow .e{fill:none;stroke:#2f6fdb;stroke-opacity:.35}.obsx-flow .e:hover{stroke-opacity:.8}
 .obsx-hbars>div{display:grid;grid-template-columns:minmax(80px,40%) 1fr auto;gap:6px;align-items:center;font-size:12px;margin:3px 0}.obsx-hbars i{display:block;height:8px;background:#2f6fdb;border-radius:2px}.obsx-hbars span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .obsx-stack{display:flex;height:16px;border-radius:4px;overflow:hidden}.obsx-stack i{display:block;height:100%}
+.obsx-lanes{display:flex;gap:6px;align-items:flex-end;height:70px;margin:4px 0}.obsx-lanes span{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;font-size:10px;position:relative}.obsx-lanes i{display:block;width:100%;background:#2f6fdb;border-radius:2px 2px 0 0;min-height:2px}.obsx-lanes .hot i{background:#d1343b}.obsx-lanes b{font-weight:600}.obsx-lanes small{opacity:.6}
 .obsx-badge{font-size:11px;padding:1px 7px;border-radius:9px;background:var(--surface-2,#f2f0e9)}
 .obsx-pol{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;font-size:12px}.obsx-list{list-style:none;padding:0;margin:4px 0;font-size:12px}.obsx-list li{margin:2px 0}.obsx-list small{opacity:.7}
 .obsx-p table{font-size:12px!important}.obsx-p th,.obsx-p td{padding:3px 6px!important}

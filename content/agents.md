@@ -285,3 +285,5 @@ Two stand-ups a day, 13:00 and 18:00 UTC (= Lisbon), for deciding, not for repor
 ## Each person's agents {#people}
 
 Each person's brief has a part two for their agents, with their names (`<agent>@web-summit.<person>`), their jobs, their rules and the prompt to start with: [the start page](../start/index.html#people) lists them all. Everyone's first prompt takes them through getting connected; their agents come after.
+
+**Briefings for other teams in the SGit family** (sgit, RiskMandate's agent and others): [/family/](../family/index.html).
