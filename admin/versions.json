@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.403",
+    "date": "2026-11-05",
+    "what": "Mission brief slice 7, Open issues in Jose's own app: only what is not done, grouped by when, three filters, on a phone",
+    "by": "designer@web-summit.jose",
+    "from": "ba597ad68"
+  },
+  {
     "version": "v0.2.402",
     "date": "2026-11-05",
     "what": "the 4 November 18:00 daily sync captured at Jose's word: four directions, five action items with owners, five open questions",
