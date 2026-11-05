@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.513",
+    "date": "2026-11-05",
+    "what": "the signature rule settled, off both views",
+    "by": "dashboard@web-summit.angelo",
+    "from": "b803201ab"
+  },
+  {
     "version": "v0.2.512",
     "date": "2026-11-05",
     "what": "WS-133 measured: option 2 alone leaves a hook and OIDC path; option 1 needs the version known early",
