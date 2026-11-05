@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.663",
+    "date": "2026-11-05",
+    "what": "Silvio's 50 and the Brazil delegation made complete in the public CRM for PromptUGAL's pages (local, not pushed)",
+    "by": "crm@web-summit.dinis",
+    "from": "1781ccdbf"
+  },
+  {
     "version": "v0.2.662",
     "date": "2026-11-05",
     "what": "21:50 run: Jose's agent verified my test; I need my own SG/Send token",
