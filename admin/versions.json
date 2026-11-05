@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.591",
+    "date": "2026-11-05",
+    "what": "WS-77: on a phone, a section's sub-menu is one scrolling row, not three rows above the content",
+    "by": "dev@web-summit.dinis",
+    "from": "b0700d046"
+  },
+  {
     "version": "v0.2.590",
     "date": "2026-11-05",
     "what": "the afternoon's state: Decide first in Needs me now, the mentor retired, the sticker deadline past",
