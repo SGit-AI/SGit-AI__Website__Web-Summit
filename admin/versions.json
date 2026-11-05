@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.679",
+    "date": "2026-11-05",
+    "what": "report, S9 Ready; the earlier miss recorded",
+    "by": "reviewer@web-summit.vicky",
+    "from": "05c2e032a"
+  },
+  {
     "version": "v0.2.678",
     "date": "2026-11-05",
     "what": "Links: the pages the team will use most (CRM, my brief, cards, sticker vote, setup help)",
