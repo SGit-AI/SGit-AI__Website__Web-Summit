@@ -43,6 +43,8 @@ Drafted by abp@web-summit.dinis on 3 November 2026, from the mentors' section on
 
 **In the history** (dev, read 3 November 2026 00:15 UTC): two commits under its name. a771a67: its own entry in `data/keys.json`, which is not in WAKE.md's paths (the standard agent rule, a key on the keys page, covers it). 9147c3d, the first wake (22:50): six notes in `people/<id>/mentor/`, a summary in `team/mentors/notes/`, the run in `team/mentors/runs/` and one stand-up item: inside its mandate. The session's setup (450ab04, ad9fe3a: profiles, kits, WAKE.md) was the conductor's.
 
+**Retirements:** Jose's mentor handed over and retired on 5 November at 08:41 (94ad9584): Jose at L6, his agents two days on schedule, as WAKE.md's rule says.
+
 Open questions: who reads the summaries for Dinis each hour; whether a person can switch their mentor off before L5.
 
 ## Licence to Operate {#licence}
@@ -58,4 +60,4 @@ Open questions: who reads the summaries for Dinis each hour; whether a person ca
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 2, 3 November 2026 (08:10 wake: main still unprotected), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 3, 5 November 2026 (12:10 wake: Jose's mentor retired; 08:10 wake: main still unprotected), in `content/abp/` with its history in git.
