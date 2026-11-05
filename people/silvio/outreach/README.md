@@ -20,7 +20,7 @@ No person's name or contact detail is ever in this repository. Channels are comp
 - **Agents draft; Silvio sends every email.** Drafts go to his Gmail; nothing is sent by an agent.
 - **Dinis approves the claims** about RiskMandate in the emails before the first one is sent.
 - Every email says where we found the address and offers a "no thanks". One "no thanks" ends it.
-- Small batches: 3 to 5 first, check bounces and replies, then the rest (advice of Dinis's inbox agent, agent@riskmandate.ai, 5 November). agent@riskmandate.ai is in CC on every email. Each email says an AI agent drafted it and Silvio sends it.
+- Small batches: 3 to 5 first, check bounces and replies, then the rest (advice of Dinis's inbox agent, 5 November). Dinis's inbox agent is in CC on every email. Each email says an AI agent drafted it and Silvio sends it.
 
 ## The schedule
 
