@@ -137,6 +137,11 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
             out.push('<div class="sv" id="sticker-vault"><p class="meta">This page needs JavaScript: it opens the vault key sealed to you, in this browser only.</p></div>')
+        } else if (/^```crm\s*$/.test(l)) {
+            // the team CRM (WS-170, conductor@web-summit.dinis): a mount for assets/crm.js (front matter script: crm)
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push('<div class="crm" id="crm"><p class="meta">The diagram and the live CRM need JavaScript: they are drawn here by the page.</p></div>')
         } else if (/^```sticker-vote\s*$/.test(l)) {
             // the team's sticker vote (WS-167, conductor@web-summit.dinis): a mount for assets/stickers-vote.js, which the
             // page loads through its front matter (script: stickers-vote); without JavaScript it says so
@@ -587,6 +592,7 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
     if (meta.script && !/^[a-z0-9-]+$/.test(meta.script)) throw new Error(`content/${f}: script must name a file in assets/ ([a-z0-9-])`)
     const head = meta.script ? `<script src="${'../'.repeat(rel.split('/').length - 1)}assets/${meta.script}.js?v=${VERSION}" defer></script>` : ''
     md = md.replace(/^```sticker-vault\s*\n```\s*$/m, '*The vault with full access is opened on the HTML page by assets/stickers-vault.js, for a person the vault key is sealed to.*')
+    md = md.replace(/^```crm\s*\n```\s*$/m, '*On the HTML page: a diagram of the two layers, the public CRM browsed live with its published read key, and, for a person whose browser holds their key, Open the private CRM (assets/crm.js, from data/crm.json).*')
     md = md.replace(/^```sticker-vote\s*\n```\s*$/m, '*The vote: the twelve stickers, the Vote button, the vault and who has voted are drawn on the HTML page by assets/stickers-vote.js, from data/stickers-vote.json.*')
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + html.replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index', head }))
     pages.push({ rel, title: meta.title, description: meta.summary })

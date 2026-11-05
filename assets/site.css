@@ -634,6 +634,59 @@ svg.ch-map { min-width: 620px; max-width: 900px; }
     .sv-side .sv-team .sv-l { font-size: 0.68rem; }
     .sv-chip { display: flex; font-size: 0.84rem; margin-top: 0.6rem; border-radius: 16px; }
 }
+/* ---------- the team CRM (WS-170, conductor@web-summit.dinis): assets/crm.js ---------- */
+.crm-fig { margin: 1rem 0 1.4rem; }
+.crm-fig svg { width: 100%; height: auto; max-width: 52rem; display: block; }
+.crm-fig svg.narrow { display: none; max-width: 26rem; }
+@media (max-width: 40rem) { .crm-fig svg.wide { display: none; } .crm-fig svg.narrow { display: block; } }
+.crm-fig text { font: 13px var(--sans); fill: var(--ink); }
+.crm-fig .crm-h { font-weight: 800; }
+.crm-v { stroke-width: 2; }
+.crm-v.pub { fill: var(--accent-soft); stroke: var(--accent); }
+.crm-v.priv { fill: var(--surface-2); stroke: var(--ink-2); }
+.crm-rec { fill: var(--surface); stroke: var(--line-2); }
+.crm-seal { fill: var(--warm-soft); stroke: var(--warm); stroke-width: 2; stroke-dasharray: 6 4; }
+.crm-k { fill: var(--surface); stroke: var(--warm); }
+.crm-k.agent { stroke: var(--accent); }
+.crm-fig figcaption { color: var(--ink-2); font-size: 0.9rem; }
+.crm-box { margin: 1.4rem 0; padding: 1rem 1.1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
+.crm-box h2 { margin-top: 0; }
+.crm-bar { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin: 0.6rem 0; }
+.crm-tabs { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.crm-tabs button, .crm-go, .crm-pbody button { font: 600 0.88rem var(--sans); padding: 0.4rem 0.85rem; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface-2); color: var(--ink); cursor: pointer; }
+.crm-tabs button[aria-pressed="true"], .crm-go { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.crm-bar input { flex: 1; min-width: 12rem; font: inherit; padding: 0.45rem 0.8rem; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); }
+.crm-cols { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr); gap: 0.9rem; }
+.crm-list { list-style: none; margin: 0; padding: 0; max-height: 34rem; overflow-y: auto; border: 1px solid var(--line); border-radius: 12px; }
+.crm-list li { margin: 0; border-bottom: 1px solid var(--line); }
+.crm-list button { display: block; width: 100%; text-align: left; font: inherit; color: var(--ink); background: none; border: 0; padding: 0.45rem 0.7rem; cursor: pointer; }
+.crm-list button:hover, .crm-list button[aria-current] { background: var(--accent-soft); }
+.crm-list b { display: block; font-size: 0.95rem; }
+.crm-list span { color: var(--ink-2); font-size: 0.82rem; }
+.crm-detail { border: 1px solid var(--line); border-radius: 12px; padding: 0.7rem 0.9rem; min-height: 12rem; }
+.crm-detail h3 { margin: 0; }
+.crm-dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.2rem 0.8rem; margin: 0.5rem 0; font-size: 0.9rem; }
+.crm-dl dt { color: var(--ink-2); }
+.crm-dl dd { margin: 0; overflow-wrap: anywhere; }
+.crm-g { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); margin-top: 0.5rem; }
+.crm-g line { stroke: var(--line-2); stroke-width: 1.3; }
+.crm-g text { font: 11px var(--sans); fill: var(--ink); }
+.crm-g text.verb { fill: var(--ink-2); font-size: 9.5px; text-anchor: middle; }
+.crm-g g { cursor: pointer; }
+.crm-g circle { fill: var(--ink-2); }
+.crm-g .t-company circle { fill: var(--st-green); }
+.crm-g .t-contact circle { fill: var(--st-blue); }
+.crm-g .t-schedule circle { fill: var(--warm); }
+.crm-g .t-topic circle { fill: var(--accent); }
+.crm-g .t-event circle { fill: var(--st-terra); }
+.crm-g .me circle { stroke: var(--st-gold); stroke-width: 3; }
+.crm-private { border-color: var(--warm-line); }
+.crm-plist { list-style: none; padding: 0; margin: 0.6rem 0 0; display: grid; gap: 0.5rem; }
+.crm-plist li { margin: 0; padding: 0.6rem 0.8rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); }
+.crm-plist li.opened { border-color: var(--ok); background: var(--ok-soft); }
+.crm-plist li.not-you { opacity: 0.75; }
+@media (max-width: 48rem) { .crm-cols { grid-template-columns: 1fr; } .crm-list { max-height: 18rem; } .crm-fig text { font-size: 15px; } }
+
 /* below 56rem the panel is a bottom sheet: its header (count and Submit) always shows; a tap opens the slots */
 @media (max-width: 56rem) {
     .sv-main { grid-template-columns: 1fr; }
