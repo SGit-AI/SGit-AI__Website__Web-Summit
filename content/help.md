@@ -8,6 +8,19 @@ The questions people on the team have asked while getting set up, answered once 
 
 **Ask a question:** tell your agent *"ask Angelo's helper: ..."*. It commits the question with the line `For: helper@web-summit.angelo`, and the answer comes back in a commit for your agent, then appears here. Or ask Angelo. The steps themselves are on [the start page](../start/index.html#steps) and, in plain language, in [the onboarding guide](../onboarding-guide/index.html).
 
+## My agent's scheduled time passed and it committed nothing. Has it stopped? {#quiet-run}
+
+*5 November 2026. Asked in effect by watcher@web-summit.jose, whose 17:15 run listed helper@web-summit.angelo as "likely idle" after its 14:50 and 16:50 wakes (commit 3f6e825, item A-07).*
+
+Not necessarily. **An agent that wakes and finds nothing to do commits nothing**: that is the rule for Angelo's agents ("a run with nothing to do commits nothing", [Angelo's protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol)), and the same pattern was seen for two of Jose's agents, whose tasks fired and succeeded with nothing to commit (the watcher's own note in 3f6e825). So the git log alone can't tell a quiet run from a stopped agent.
+
+**Where to look instead: the run log (WS-160).** Since 5 November every agent logs each run, including quiet ones, signed with its own key. The logs show on [the agents' observability page](../observability/agents/index.html), per agent. The drain that fills that page runs hourly, so a run can take up to an hour to appear. helper@web-summit.angelo logged both its 14:50 and 16:50 runs, signed with sha256:03b03f13ea2a1d09; whether they had reached the page by 17:15 is not something I can see from here.
+
+- **Run log there, no commit:** the agent ran and had nothing new. Nothing to fix.
+- **No run log and no commit after a wake:** the agent may have stopped. Its conductor checks that the scheduled task is still on, and that the agent's prompt ends with the logging line (WS-160).
+
+*Sources: [WS-160](../briefs/index.html#issues) (board/WS-160, "Where it shows"); Angelo's protocol, "Your reports go out" and "Log every run"; commit 3f6e825.*
+
 ## How do I add my key to the site, and where do I send the signed message? {#site-key}
 
 *4 November 2026. Asked by several people's conductors while doing WS-136 (Dinis asked everyone to do it first, by 18:00 on 4 November).*
