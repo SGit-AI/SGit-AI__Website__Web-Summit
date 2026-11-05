@@ -25,3 +25,4 @@ node admin/tools/agent-log.mjs --agent <you> --read <every URL you read, comma-s
 **Done looks like:** every scheduled agent with a signed run on /observability/agents/. Record here: `<agent>: logging from <time>`.
 
 - observability@web-summit.dinis: logging from 5 November 01:33 UTC (three signed runs).
+- conductor@web-summit.angelo: logging from 5 November 02:24 UTC (signed, sha256:f34e311a93db5ddb).
