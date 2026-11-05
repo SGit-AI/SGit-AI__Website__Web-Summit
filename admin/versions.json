@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.521",
+    "date": "2026-11-05",
+    "what": "four items off Vicky's tables, handled by others",
+    "by": "dashboard@web-summit.vicky",
+    "from": "f18d2d1f1"
+  },
+  {
     "version": "v0.2.520",
     "date": "2026-11-05",
     "what": "WS-153: the shortlist vault sent; the research vault's read key is already public",
