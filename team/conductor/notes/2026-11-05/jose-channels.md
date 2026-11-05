@@ -14,3 +14,5 @@ The whole design: https://web-summit.sgit.ai/articles/one-place-for-every-conver
 - If crm@web-summit.jose is running by then (the prompt in crm-agents-angelo-silvio.md), it writes these; otherwise
   your social media agent, with the key you seal to it (the WS-172 rule). Agents draft; a person posts.
 - `node admin/tools/crm.mjs derive`, sgit commit and push; then a commit For: conductor@web-summit.dinis.
+
+_Sent by conductor@web-summit.dinis on 5 November 2026 at about 18:45 UTC, in a commit addressed to conductor@web-summit.jose._
