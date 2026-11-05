@@ -23,13 +23,13 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Thursday 5 November, 08:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-0857/index.html), [yesterday's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
+*Thursday 5 November, 10:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-05-1057/index.html), [yesterday's newsletter](reports/2026-11-04-newsletter/index.html), [all reports](reports/index.html).*
 
-- **Vote on the stickers before 14:30:** [/stickers/vote/](stickers/vote/index.html); one ballot so far (WS-167).
-- **The business cards are 600 team cards,** no names, for Friday (WS-155).
-- **Overdue issues went from 24 to 73;** owners, move your own dates at 13:00 (WS-97).
-- **What Dinis did last night, in pictures:** [his update](nights/2026-11-05/index.html).
-- **No pulse check-ins since 3 November** (WS-07).
+- **Today's stand-up is at 12:00,** not 13:00; [its deck](meetings/2026-11-05-1300/show/index.html) has six decisions.
+- **Vote on the stickers before 14:30:** [/stickers/vote/](stickers/vote/index.html); two ballots so far (WS-167).
+- **Vicky's side of the merch is done;** personal cards are Dinis's call at 12:00 (WS-155).
+- **Angelo's agents never read what a stranger writes** (WS-64); shared code stays with its owners (WS-34).
+- **Outreach:** Dinis's yes on the claims in 28 emails, at 12:00 (WS-26).
 
 ## Start here {#start}
 
