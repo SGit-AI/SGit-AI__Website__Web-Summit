@@ -43,7 +43,10 @@ for (const c of log.split('\x1e')) {
   }
 }
 const agentNames = new Set([...inv.agents.map(a => a.name.toLowerCase()).filter(agentPerson), ...Object.keys(commits), ...Object.keys(edges).flatMap(k => k.split('>')).filter(agentPerson)])
-const allAgents = [...agentNames].map(n => ({ id: n, person: agentPerson(n), family: familyOf(n), short: n.split('@')[0], commits: commits[n] || 0 }))
+// kind (fresh, scheduled, long) comes from admin/build/inventory.mjs once dev@web-summit.angelo's patch lands (0638bb07);
+// until then it is undefined and the command centre draws no ring
+const invBy = Object.fromEntries(inv.agents.map(a => [String(a.name).toLowerCase(), a]))
+const allAgents = [...agentNames].map(n => ({ id: n, person: agentPerson(n), family: familyOf(n), short: n.split('@')[0], commits: commits[n] || 0, kind: (invBy[n] || {}).kind }))
 const allPeople = people.slice()
 const agents = ALL ? allAgents : allAgents.filter(a => a.commits)
 const activeP = new Set(agents.map(a => a.person))
