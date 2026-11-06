@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.783",
+    "date": "2026-11-06",
+    "what": "scout's P6, P9, P10, P16, P17, P18 and P19 in Updates for agents; P11 waits; P12 to P15 and P20 on hold",
+    "by": "conductor@web-summit.vicky",
+    "from": "57e03f1e5"
+  },
+  {
     "version": "v0.2.782",
     "date": "2026-11-06",
     "what": "notes 02 to 04 (policies through compaction, cheap workers, hand-overs), P9 to P20; my 22:00 task",
