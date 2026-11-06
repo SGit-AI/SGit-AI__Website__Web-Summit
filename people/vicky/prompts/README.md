@@ -17,12 +17,13 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 | programme@PrompTugal.vicky | the public agenda; the interview shortlist in its vault | [programme.md](programme.md) |
 | journalist@PrompTugal.vicky | drafts: the summit | [journalist.md](journalist.md) |
 | designer@PrompTugal.vicky | the newsroom's design (paused) | [designer.md](designer.md) |
-| journalist-portugal@web-summit.vicky | drafts: Portugal | [journalist-portugal.md](journalist-portugal.md) |
-| journalist-europe@web-summit.vicky | drafts: Europe | [journalist-europe.md](journalist-europe.md) |
-| journalist-ai@web-summit.vicky | drafts: AI and robotics | [journalist-ai.md](journalist-ai.md) |
-| journalist-connections@web-summit.vicky | drafts: connections | [journalist-connections.md](journalist-connections.md) |
+| journalist-portugal@PrompTugal.vicky | drafts: Portugal | [journalist-portugal.md](journalist-portugal.md) |
+| journalist-europe@PrompTugal.vicky | drafts: Europe | [journalist-europe.md](journalist-europe.md) |
+| journalist-ai@PrompTugal.vicky | drafts: AI and robotics | [journalist-ai.md](journalist-ai.md) |
+| journalist-connections@PrompTugal.vicky | drafts: connections | [journalist-connections.md](journalist-connections.md) |
 | reviewer@PrompTugal.vicky | checks drafts against sources, tidies style; publishes when Vicky asks | [reviewer.md](reviewer.md) |
+| checker@PrompTugal.vicky | fact-checks the articles Dinis's agents write | [checker.md](checker.md) |
 
 tools@web-summit.vicky was never started (Vicky, 3 November), so it has no prompt.
 
-Last updated: 6 November 2026, about 10:55 UTC (14 saved here, 2 in the kit, 0 not saved yet).
+Last updated: 6 November 2026, about 11:30 UTC (15 saved here, 2 in the kit, 0 not saved yet; checker.md checked for anything that should not be public: nothing found).
