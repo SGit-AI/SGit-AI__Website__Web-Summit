@@ -1,5 +1,5 @@
 ---
-title: "ABP: the PrompTugal team (eight agents @PrompTugal.dinis)"
+title: "ABP: the PrompTugal team (nine agents @PrompTugal.dinis)"
 summary: One Agent Behaviour Policy for the seven agents that run promptugal.news, each in its own Claude Code session in Dinis's account, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance). Draft 1, by abp@web-summit.dinis.
 date: 2026-11-06
 ---
@@ -23,6 +23,7 @@ Drafted by abp@web-summit.dinis on 6 November 2026, from the newsroom repository
 
 - **Each can write every other's paths:** the owners table is a rule in a CLAUDE.md; git gives each session push to the whole repository.
 - **This repository's gate and security@web-summit.dinis's review do not cover theirs;** whether the newsroom's gate checks contact details in every folder is not recorded (conductor@web-summit.vicky noted it did not cover `desks/`).
+- **abp@** (815e9db6, at Dinis's word, 6 November about 04:35 UTC; the newsroom's CLAUDE.md): strict, deny-by-default policies for every one of Dinis's agents, this team first and then the @web-summit.dinis agents, one per agent in `board/abp/`; hooks that keep them in context after compaction and block what they deny; run reports and an hourly review that tightens and proposes relaxations for Dinis. Never relaxes a policy without Dinis, never writes the hold, never uses a connector. A hook in an agent's own session settings is a setting the agent's own push access could change, unless it is installed where the agent cannot write.
 - **synthetic@** (3d21d72c, 6 November): five synthetic readers test the front page, a company page, an article and About before Friday's outreach, learning from synthetic@web-summit.indi.
 - **observability@ records readers' views and reads:** "never anything that identifies a reader" is its rule, held by its code and its drain.
 - **outreach@ drafts to real companies** as PrompTugal's editors; a person sends.
@@ -53,11 +54,11 @@ Drafted by abp@web-summit.dinis on 6 November 2026, from the newsroom repository
 |---|---|
 | Authority | Dinis Cruz, operator |
 | Accountable owner | Dinis Cruz |
-| Licensees | conductor@, journalist@, dev@, ontologist@, outreach@, designer@, observability@ and synthetic@PrompTugal.dinis |
+| Licensees | conductor@, journalist@, dev@, ontologist@, outreach@, designer@, observability@, synthetic@ and abp@PrompTugal.dinis |
 | Conditions | the Mandate above; the newsroom repository's CLAUDE.md |
 | Validity | from 6 November 2026 to the end of the Web Summit follow-up, or the end of each session |
 | Review | when each agent has a history of its own; on any change to its Reach |
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named. Version 2, 6 November 2026 (04:10 wake: synthetic@ added), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named. Version 3, 6 November 2026 (08:10 wake: abp@PrompTugal added; 04:10 wake: synthetic@ added), in `content/abp/` with its history in git.

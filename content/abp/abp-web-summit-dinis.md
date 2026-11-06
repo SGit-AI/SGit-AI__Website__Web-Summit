@@ -30,6 +30,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 - Open or merge pull requests, comment on GitHub: not in its mandate.
 - Create, share or trash files in Drive: no part of its mandate uses Drive.
 
+- **A second ABP agent** (815e9db6, 6 November): abp@PrompTugal.dinis writes prescriptive, deny-by-default policies for Dinis's agents, with hooks to enforce them, in the PrompTugal repository, "building on" these ABPs. These stay descriptive (Reach, Mandate, Gap, Barriers, as RiskMandate's model): its hooks, once installed, are barriers these ABPs will describe. Neither writes the other's files.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -60,4 +62,4 @@ Open questions: Measured, not inferred: this is the one ABP whose Reach was read
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 7, 3 November 2026 (12:10 wake: WS-89 fixed; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the scheduled task, and the history), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 8, 6 November 2026 (08:10 wake: abp@PrompTugal; 12:10 wake: WS-89 fixed; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected; 12:10 wake: the stand-ups' agenda; 08:10 wake: CI owns the version; 04:10 wake: the scheduled task, and the history), in `content/abp/` with its history in git.
