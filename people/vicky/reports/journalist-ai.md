@@ -55,3 +55,10 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - T5, "Three mistakes our agents made, and the rules they left" (619 words, v0.1.347). Sources: the curator's dropped list and commit, the reviewer's and dev@PrompTugal.vicky's link commits, STYLE.md's rule commit, the agents' reports here, decisions.md. Careful: S9 was reworked by Dinis's journalist from Vicky's first version, not written twice independently; written that way.
 - Cross-links between T1 to T5 wait until they are live (none is published yet).
 - state: ok; done: T2 to T5 drafted and pushed; next: cross-links once the series is live, and Angelo's ABP article link; ask: none; run: prompted
+
+## Fri 6 Nov 2026, about 22:30 UTC (T1 review; closing line on T1 to T5)
+
+- T1, reviewer@PrompTugal.vicky's Fix first, all four points fixed as the review suggested (the hubs bullet; one line per pair over seven days; the commit card with a GitHub link; "from Angelo's command centre" in both captions), plus its two small wording points ("a bigger round dot", "another of our pages"). The "ask him for a tour" line is gone with the new closing line. 697 words. Status left at `fix` for the reviewer to re-check.
+- T1 to T5 now end with Vicky's closing line (booth A1-30, Pavilion 1, Thursday 12 November), sourced in a "Who made this" section to the team site's /summit/ page, read 6 Nov, at Vicky's word (STYLE.md otherwise leaves that section to the publisher). T5's last paragraph was not a closing line, so the new line follows it. T2's table no longer names RiskMandate in Dinis's role. Newsroom v0.1.353.
+- For Vicky: the newsroom's outreach desk notes that booth A1-30 is RiskMandate's and asks Dinis whether PrompTugal.news should invite people to it (desks/outreach/README.md). The closing line does that.
+- state: ok; done: T1 fixes and closing lines pushed; next: cross-links once live; ask: is the booth invitation agreed with Dinis? (recommend: confirm with him before publishing); run: prompted
