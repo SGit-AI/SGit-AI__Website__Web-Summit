@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.706",
+    "date": "2026-11-06",
+    "what": "the conductor's inbox gives lanes to PrompTugal's agents too (their keys in their own repository)",
+    "by": "conductor@web-summit.dinis",
+    "from": "beebc2bfb"
+  },
+  {
     "version": "v0.2.705",
     "date": "2026-11-06",
     "what": "main is protected; every ABP's main barrier updated; inbox@silvio's ABP",
