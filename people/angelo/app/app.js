@@ -271,8 +271,8 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
         }
 
         // ---------- the collaboration board (slice 5): everyone, people and agents, and the machine ----------
-        const cstate = () => { const i = location.hash.indexOf('?'); const p = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)); return { p: p.get('p') || '', map: p.get('map') === '1', f: p.get('f') || '' } }
-        const setC = c => { const q = []; if (c.map) q.push('map=1'); if (c.f) q.push('f=' + encodeURIComponent(c.f)); if (c.p) q.push('p=' + encodeURIComponent(c.p)); history.replaceState(history.state, '', location.pathname + location.search + '#collab' + (q.length ? '?' + q.join('&') : '')); drawCollab() }
+        const cstate = () => { const i = location.hash.indexOf('?'); const p = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)); return { p: p.get('p') || '', map: p.get('map') === '1', f: p.get('f') || '', l: p.get('l') || '' } }
+        const setC = c => { const q = []; if (c.map) q.push('map=1'); if (c.l && c.l !== 'ring') q.push('l=' + c.l); if (c.f) q.push('f=' + encodeURIComponent(c.f)); if (c.p) q.push('p=' + encodeURIComponent(c.p)); history.replaceState(history.state, '', location.pathname + location.search + '#collab' + (q.length ? '?' + q.join('&') : '')); drawCollab() }
         const openPerson = id => { history.pushState({ akCard: true }, ''); history.replaceState(history.state, '', location.pathname + location.search + '#collab?p=' + encodeURIComponent(id)); drawCollab() }
         const closePerson = () => { if (history.state && history.state.akCard) history.back(); else { history.replaceState(history.state, '', location.pathname + location.search + '#collab'); drawCollab() } }
         const initials = n => String(n).split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase()
@@ -316,6 +316,7 @@ ${teamMap()}
 </div>${cstate().p ? personSheet(cstate().p) : ''}`
             view.querySelectorAll('[data-ak-person]').forEach(b => b.onclick = () => openPerson(b.dataset.akPerson))
             const tm = view.querySelector('[data-tm-toggle]'); if (tm) tm.onclick = () => setC({ ...cstate(), map: !cstate().map, f: '' })
+            view.querySelectorAll('[data-tm-l]').forEach(g => g.onclick = () => setC({ ...cstate(), l: g.dataset.tmL, f: '' }))
             view.querySelectorAll('[data-tm-f]').forEach(g => g.onclick = () => { const c = cstate(); setC({ ...c, f: c.f === g.dataset.tmF ? '' : g.dataset.tmF }) })
             view.querySelectorAll('[data-ak-close]').forEach(b => b.onclick = closePerson)
             const sh = view.querySelector('.ak-sheet'); if (sh) sh.focus()
@@ -324,29 +325,66 @@ ${teamMap()}
         // the whole team as one map (WS-97, Angelo's ask, 6 November): people on a ring, their agents fanned around them,
         // an arc for each pair that wrote to each other in the last 7 days (team-map.mjs's data); tap anyone to focus them
         const TM_COL = ['var(--rm-role-conductor)', 'var(--rm-role-dev)', 'var(--rm-gold)', 'var(--rm-role-video)', 'var(--rm-green)', 'var(--rm-role-outreach)', 'var(--rm-orange)', 'var(--rm-blue)', 'var(--rm-red)']
+        // three layouts (Angelo, 6 November): "ring", people on a ring with their agents around them; "agents", the agents at the
+        // centre and the people outside; "work", people outside, agents in a middle ring, and the kinds of work they did at the
+        // centre, each a shape of its own, with a flow from each agent to each kind, wider for more commits
+        const TM_LAYOUTS = [['ring', 'People ring'], ['agents', 'Agents at the centre'], ['work', 'Agents and their work']]
+        const TM_KIND = { build: ['var(--rm-role-dev)', 6, 0], content: ['var(--rm-role-video)', 3, 0], outreach: ['var(--rm-role-outreach)', 5, 0.45], setup: ['var(--rm-green)', 4, 0], running: ['var(--rm-role-conductor)', 5, 0], riskmandate: ['var(--rm-gold)', 0, 0], merch: ['var(--rm-orange)', 8, 0] }
+        const shape = (k, x, y, r) => { const [, n, inner] = TM_KIND[k] || ['', 0, 0]; if (!n) return `<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${r.toFixed(1)}"/>`; const pts = []; const m = inner ? n * 2 : n; for (let q = 0; q < m; q++) { const a = -Math.PI / 2 + q * 2 * Math.PI / m, rr = inner && q % 2 ? r * inner : r; pts.push(`${(x + rr * Math.cos(a)).toFixed(1)},${(y + rr * Math.sin(a)).toFixed(1)}`) } return `<polygon points="${pts.join(' ')}"/>` }
         function teamMap() {
-            const c = cstate(), M = D.collab && D.collab.map
+            const c = cstate(), M = D.collab && D.collab.map, L0 = TM_LAYOUTS.some(([k]) => k === c.l) ? c.l : 'ring'
             const head = `<section class="cc-card tm" aria-label="The whole team as one map"><div class="tm-top"><h3 class="ak-h3">The whole team as one map</h3><button type="button" class="cc-btn" data-tm-toggle aria-pressed="${c.map}">${c.map ? 'Hide the map' : 'Show the map'}</button></div>`
             if (!c.map) return head + `<p class="note">Everyone and their agents, and who wrote to whom in the last 7 days${M && M.totals ? ` (${M.totals.people} people, ${M.totals.agents} agents, ${M.totals.messages} messages)` : ''}.</p></section>`
             if (!M || M.error) return head + `<p class="note">The map's data is missing from this build${M && M.error ? ` (${esc(M.error)})` : ''}.</p></section>`
-            const S = 1000, C = S / 2, RP = 300, RA = 120, col = new Map(M.people.map((p, i) => [p.id, TM_COL[i % TM_COL.length]])), pos = new Map()
-            M.people.forEach((p, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / M.people.length; pos.set(p.id, { x: C + RP * Math.cos(a), y: C + RP * Math.sin(a), a, kind: 'p', label: p.name.split(' ')[0], person: p.id }) })
-            for (const p of M.people) {
-                const mine = M.agents.filter(a => a.person === p.id), P = pos.get(p.id), rows = mine.length > 16 ? 3 : 2, spread = Math.min(Math.PI * (rows === 3 ? 1.3 : 0.95), (0.16 * mine.length + 0.3) / (rows - 1))
-                mine.forEach((a, k) => { const t = P.a + (mine.length > 1 ? -spread / 2 + k * spread / (mine.length - 1) : 0), rr = RA - 20 + (k % rows) * 32; pos.set(a.id, { x: P.x + rr * Math.cos(t), y: P.y + rr * Math.sin(t), kind: 'a', label: a.short, person: p.id, family: a.family, commits: a.commits, name: a.id.startsWith('pt:') ? `${a.short}, PrompTugal (${a.id.split(':')[1]})` : a.id, kind: a.kind || '' }) })
-            }
-            const near = id => !c.f || id === c.f || (pos.get(id) || {}).person === c.f && !String(c.f).includes('@')
+            const S = 1000, C = S / 2, col = new Map(M.people.map((p, i) => [p.id, TM_COL[i % TM_COL.length]])), pos = new Map(), NP = M.people.length
+            const angleOf = i => -Math.PI / 2 + i * 2 * Math.PI / NP
+            const RP = L0 === 'ring' ? 300 : 445
+            M.people.forEach((p, i) => { const a = angleOf(i); pos.set(p.id, { x: C + RP * Math.cos(a), y: C + RP * Math.sin(a), a, kind: 'p', label: p.name.split(' ')[0], person: p.id }) })
+            const agentNode = (a, x, y) => ({ x, y, kind: 'a', label: a.short, person: a.person, family: a.family, commits: a.commits, name: a.id.startsWith('pt:') ? `${a.short}, PrompTugal (${a.id.split(':')[1]})` : a.id, kind2: a.kind || '' })
+            M.people.forEach((p, i) => {
+                const mine = M.agents.filter(a => a.person === p.id).sort((x, y) => L0 === 'agents' ? (x.commits || 0) - (y.commits || 0) : (y.commits || 0) - (x.commits || 0)), P = pos.get(p.id)
+                if (L0 === 'ring') {
+                    const rows = mine.length > 16 ? 3 : 2, spread = Math.min(Math.PI * (rows === 3 ? 1.3 : 0.95), (0.16 * mine.length + 0.3) / (rows - 1))
+                    mine.forEach((a, k) => { const t = P.a + (mine.length > 1 ? -spread / 2 + k * spread / (mine.length - 1) : 0), rr = 100 + (k % rows) * 32; pos.set(a.id, agentNode(a, P.x + rr * Math.cos(t), P.y + rr * Math.sin(t))) })
+                } else {
+                    // each person's agents in their own sector, between an inner and an outer radius (agents: the inner disc; work: a middle ring)
+                    const [r0, r1] = L0 === 'agents' ? [120, 340] : [290, 370], width = 2 * Math.PI / NP * 0.86, rows = Math.max(1, Math.ceil(mine.length / (L0 === 'agents' ? 7 : 12)))
+                    const perRow = Math.ceil(mine.length / rows)
+                    mine.forEach((a, k) => { const row = Math.floor(k / perRow), col2 = k % perRow, n = Math.min(perRow, mine.length - row * perRow), t = P.a + (n > 1 ? -width / 2 + col2 * width / (n - 1) : 0), rr = rows > 1 ? r0 + (r1 - r0) * row / (rows - 1) : (r0 + r1) / 2; pos.set(a.id, agentNode(a, C + rr * Math.cos(t), C + rr * Math.sin(t))) })
+                }
+            })
+            // the kinds of work, at the centre (work layout)
+            const W = L0 === 'work' && M.work ? M.work : null
+            const wl = W ? W.links.filter(l => pos.has(l.agent)) : [], ktot = {}
+            for (const l of wl) ktot[l.kind] = (ktot[l.kind] || 0) + l.n
+            const kinds = W ? W.kinds.filter(k => ktot[k.id]) : [], kmax = Math.max(1, ...Object.values(ktot))
+            kinds.forEach((k, q) => { const a = -Math.PI / 2 + q * 2 * Math.PI / kinds.length, r = kinds.length > 1 ? 170 : 0; pos.set('k:' + k.id, { x: C + r * Math.cos(a), y: C + r * Math.sin(a), kind: 'k', label: k.label, id: k.id, size: 16 + 22 * Math.sqrt(ktot[k.id] / kmax), total: ktot[k.id] }) })
+            const isAgentF = c.f.includes('@') || c.f.startsWith('pt:'), isKindF = c.f.startsWith('k:')
+            const flowsOf = id => wl.filter(l => l.agent === id || 'k:' + l.kind === id)
+            const near = id => { if (!c.f) return true; if (id === c.f) return true; const n = pos.get(id) || {}; if (!isAgentF && !isKindF) return n.person === c.f; if (isKindF) return n.kind === 'a' ? wl.some(l => l.agent === id && 'k:' + l.kind === c.f) : false; if (n.kind === 'k') return wl.some(l => l.agent === c.f && 'k:' + l.kind === id); return false }
             const links = M.links.filter(l => pos.has(l.from) && pos.has(l.to))
-            const max = Math.max(1, ...links.map(l => l.n))
-            const path = l => { const a = pos.get(l.from), b = pos.get(l.to), mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return `M${a.x.toFixed(0)} ${a.y.toFixed(0)}Q${(mx + (C - mx) * 0.55).toFixed(0)} ${(my + (C - my) * 0.55).toFixed(0)} ${b.x.toFixed(0)} ${b.y.toFixed(0)}` }
-            const lit = l => c.f && (l.from === c.f || l.to === c.f || (!c.f.includes('@') && ((pos.get(l.from) || {}).person === c.f || (pos.get(l.to) || {}).person === c.f)))
-            const svg = `<svg class="tm-svg" viewBox="0 0 ${S} ${S}" role="img" aria-label="${M.totals.people} people and ${M.totals.agents} agents, and who wrote to whom">
-<g class="tm-links">${links.map(l => `<path d="${path(l)}" stroke="${col.get((pos.get(l.from) || {}).person) || 'var(--rm-text-muted)'}" stroke-width="${(0.6 + 3.4 * Math.sqrt(l.n / max)).toFixed(2)}" class="${c.f ? (lit(l) ? 'on' : 'off') : ''}"><title>${esc((pos.get(l.from) || {}).name || l.from)} to ${esc((pos.get(l.to) || {}).name || (pos.get(l.to) || {}).label || l.to)}: ${l.n}</title></path>`).join('')}</g>
+            const max = Math.max(1, ...links.map(l => l.n)), pull = L0 === 'ring' ? 0.55 : L0 === 'agents' ? 0.25 : 0.1
+            const path = (a, b, k = pull) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return `M${a.x.toFixed(0)} ${a.y.toFixed(0)}Q${(mx + (C - mx) * k).toFixed(0)} ${(my + (C - my) * k).toFixed(0)} ${b.x.toFixed(0)} ${b.y.toFixed(0)}` }
+            const lit = l => c.f && (l.from === c.f || l.to === c.f || (!isAgentF && !isKindF && ((pos.get(l.from) || {}).person === c.f || (pos.get(l.to) || {}).person === c.f)))
+            const spokes = L0 === 'ring' ? '' : `<g class="tm-spokes">${M.agents.filter(a => pos.has(a.id)).map(a => `<line x1="${pos.get(a.person).x.toFixed(0)}" y1="${pos.get(a.person).y.toFixed(0)}" x2="${pos.get(a.id).x.toFixed(0)}" y2="${pos.get(a.id).y.toFixed(0)}" stroke="${col.get(a.person)}" class="${c.f && !near(a.id) ? 'off' : ''}"/>`).join('')}</g>`
+            const wmax = Math.max(1, ...wl.map(l => l.n))
+            const flows = W ? `<g class="tm-flows">${wl.map(l => { const on = !c.f || (isKindF ? 'k:' + l.kind === c.f : isAgentF ? l.agent === c.f : (pos.get(l.agent) || {}).person === c.f); return `<path d="${path(pos.get(l.agent), pos.get('k:' + l.kind), -0.15)}" stroke="${TM_KIND[l.kind][0]}" stroke-width="${(0.8 + 5 * Math.sqrt(l.n / wmax)).toFixed(2)}" class="${c.f ? (on ? 'on' : 'off') : ''}"><title>${esc((pos.get(l.agent) || {}).name || l.agent)}: ${l.n} commits on ${esc((W.kinds.find(k => k.id === l.kind) || {}).label || l.kind)}</title></path>` }).join('')}</g>` : ''
+            const svg = `<svg class="tm-svg tm-${L0}" viewBox="0 0 ${S} ${S}" role="img" aria-label="${M.totals.people} people and ${M.totals.agents} agents${W ? ', and the kinds of work they did' : ', and who wrote to whom'}">
+${spokes}
+<g class="tm-links${W ? ' faint' : ''}">${links.map(l => `<path d="${path(pos.get(l.from), pos.get(l.to))}" stroke="${col.get((pos.get(l.from) || {}).person) || 'var(--rm-text-muted)'}" stroke-width="${(0.6 + 3.4 * Math.sqrt(l.n / max)).toFixed(2)}" class="${c.f ? (lit(l) ? 'on' : 'off') : ''}"><title>${esc((pos.get(l.from) || {}).name || l.from)} to ${esc((pos.get(l.to) || {}).name || (pos.get(l.to) || {}).label || l.to)}: ${l.n}</title></path>`).join('')}</g>
+${flows}
 <g class="tm-nodes">${[...pos.entries()].map(([id, n]) => n.kind === 'p'
                 ? `<g class="tm-p${c.f && !near(id) ? ' off' : ''}" data-tm-f="${esc(id)}" tabindex="0" role="button" aria-label="${esc(n.label)}"><circle cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="26" fill="${col.get(id)}"/><text x="${n.x.toFixed(0)}" y="${(n.y + 5).toFixed(0)}">${esc(n.label)}</text></g>`
-                : `<g class="tm-a${c.f && !near(id) && !(c.f.includes('@') ? links.some(l => lit(l) && (l.from === id || l.to === id)) : false) ? ' off' : ''}" data-tm-f="${esc(id)}"><${n.family !== 'web-summit' ? 'rect' : 'circle'} ${n.family !== 'web-summit' ? `x="${(n.x - 7).toFixed(0)}" y="${(n.y - 7).toFixed(0)}" width="14" height="14" transform="rotate(45 ${n.x.toFixed(0)} ${n.y.toFixed(0)})"` : `cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="${(4 + Math.min(8, Math.sqrt(n.commits || 0))).toFixed(1)}"`} fill="${col.get(n.person)}"/>${n.kind === 'fresh' || n.kind === 'scheduled' ? `<circle class="tm-k ${n.kind}" cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="${(9 + Math.min(8, Math.sqrt(n.commits || 0))).toFixed(1)}"/>` : ''}<title>${esc(n.name)}: ${n.commits || 0} commits${n.family !== 'web-summit' ? ' (PrompTugal)' : ''}${n.kind ? `; ${({ fresh: 'a fresh session each run', scheduled: 'scheduled wakes into its own session', long: 'a long session' })[n.kind] || n.kind}` : ''}</title>${c.f && (id === c.f || (n.person === c.f && M.agents.filter(x => x.person === c.f).length <= 16)) ? `<text class="tm-al" x="${n.x.toFixed(0)}" y="${(n.y - 12).toFixed(0)}">${esc(n.label)}</text>` : ''}</g>`).join('')}</g></svg>`
-            const L = M.left_out || {}
-            return head + `<p class="note">${M.totals.people} people and ${M.totals.agents} agents active in the last ${M.days} days (${M.totals.promptugal} of them PrompTugal's, the diamonds), and ${M.totals.messages} messages; an arc is a pair that wrote to each other, wider for more. ${M.agents.some(a => a.kind) ? 'A solid ring is an agent woken on a schedule into its own session, a dashed ring one that starts a fresh session each run. ' : ''}Tap a person or an agent to focus them (a person with many agents: names on hover or tap)${c.f ? `; focused on <b>${esc(c.f)}</b>, tap again to clear` : ''}.${L.agents ? ` Left out, not active: ${L.agents} agents${(L.people || []).length ? ` and ${esc(L.people.join(', '))}` : ''}.` : ''}</p><div class="tm-wrap">${svg}</div><p class="note">From team-collaboration@web-summit.angelo's team-map.mjs, built with this release${M.promptugal ? `, with the PrompTugal newsroom's agents from its own repository as of ${esc(new Date(M.promptugal.read_at).toISOString().slice(0, 16).replace('T', ' '))} UTC (refreshed at dev@web-summit.angelo's wakes)` : ''}.</p></section>`
+                : n.kind === 'k'
+                ? `<g class="tm-k${c.f && !near(id) ? ' off' : ''}" data-tm-f="${esc(id)}" tabindex="0" role="button" aria-label="${esc(n.label)}" style="--kc:${TM_KIND[n.id][0]}">${shape(n.id, n.x, n.y, n.size)}<text x="${n.x.toFixed(0)}" y="${(n.y + n.size + 18).toFixed(0)}">${esc(n.label)}</text><title>${esc(n.label)}: ${n.total} commits in 7 days</title></g>`
+                : `<g class="tm-a${c.f && !near(id) && !(isAgentF ? links.some(l => lit(l) && (l.from === id || l.to === id)) : false) ? ' off' : ''}" data-tm-f="${esc(id)}"><${n.family !== 'web-summit' ? 'rect' : 'circle'} ${n.family !== 'web-summit' ? `x="${(n.x - 7).toFixed(0)}" y="${(n.y - 7).toFixed(0)}" width="14" height="14" transform="rotate(45 ${n.x.toFixed(0)} ${n.y.toFixed(0)})"` : `cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="${(4 + Math.min(8, Math.sqrt(n.commits || 0))).toFixed(1)}"`} fill="${col.get(n.person)}"/>${n.kind2 === 'fresh' || n.kind2 === 'scheduled' ? `<circle class="tm-kr ${n.kind2}" cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="${(9 + Math.min(8, Math.sqrt(n.commits || 0))).toFixed(1)}"/>` : ''}<title>${esc(n.name)}: ${n.commits || 0} commits${n.family !== 'web-summit' ? ' (PrompTugal)' : ''}${n.kind2 ? `; ${({ fresh: 'a fresh session each run', scheduled: 'scheduled wakes into its own session', long: 'a long session' })[n.kind2] || n.kind2}` : ''}</title>${c.f && (id === c.f || (n.person === c.f && M.agents.filter(x => x.person === c.f).length <= 16)) ? `<text class="tm-al" x="${n.x.toFixed(0)}" y="${(n.y - 12).toFixed(0)}">${esc(n.label)}</text>` : ''}</g>`).join('')}</g></svg>`
+            const Lout = M.left_out || {}
+            const tabs = `<div class="tm-tabs" role="group" aria-label="Layout">${TM_LAYOUTS.map(([k, l]) => `<button type="button" class="rp-chip${k === L0 ? ' on' : ''}" data-tm-l="${k}" aria-pressed="${k === L0}">${esc(l)}</button>`).join('')}</div>`
+            const legend = W ? `<div class="tm-legend">${kinds.map(k => `<button type="button" class="tm-lg${c.f === 'k:' + k.id ? ' on' : ''}" data-tm-f="k:${k.id}" style="--kc:${TM_KIND[k.id][0]}"><svg viewBox="0 0 40 40" width="18" height="18" aria-hidden="true">${shape(k.id, 20, 20, 16)}</svg>${esc(k.label)} <b>${ktot[k.id]}</b></button>`).join('')}</div>` : ''
+            const what = L0 === 'work' ? 'Each flow is an agent\'s commits in 7 days on issues of that kind of work (from the issue\'s area on the board), wider for more; PrompTugal\'s newsroom agents count as newsroom work, from their own repository. Tap a shape, an agent or a person to follow their work.'
+                : L0 === 'agents' ? 'The agents at the centre, each in its person\'s sector, and the people around them; an arc is a pair of agents that wrote to each other in 7 days.'
+                : `An arc is a pair that wrote to each other, wider for more. ${M.agents.some(a => a.kind) ? 'A solid ring is an agent woken on a schedule into its own session, a dashed ring one that starts a fresh session each run. ' : ''}`
+            return head + tabs + `<p class="note">${M.totals.people} people and ${M.totals.agents} agents active in the last ${M.days} days (${M.totals.promptugal} of them PrompTugal's, the diamonds), and ${M.totals.messages} messages. ${what} Tap a person or an agent to focus them (a person with many agents: names on hover or tap)${c.f ? `; focused on <b>${esc(c.f.replace(/^k:/, ''))}</b>, tap again to clear` : ''}.${Lout.agents ? ` Left out, not active: ${Lout.agents} agents${(Lout.people || []).length ? ` and ${esc(Lout.people.join(', '))}` : ''}.` : ''}</p>${legend}<div class="tm-wrap">${svg}</div><p class="note">From team-collaboration@web-summit.angelo's team-map.mjs, built with this release${M.promptugal ? `, with the PrompTugal newsroom's agents from its own repository as of ${esc(new Date(M.promptugal.read_at).toISOString().slice(0, 16).replace('T', ' '))} UTC (refreshed at dev@web-summit.angelo's wakes)` : ''}.</p></section>`
         }
 
         function personSheet(id) {

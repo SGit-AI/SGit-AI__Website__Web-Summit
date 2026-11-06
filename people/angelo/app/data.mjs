@@ -241,6 +241,20 @@ export function build(root, person, now = new Date()) {
             M.promptugal = { read_at: PT.read_at, commit: PT.commit, agents: PT.agents.length }
             M.totals = { ...M.totals, agents: M.agents.length, promptugal: M.agents.filter(a => a.family !== 'web-summit').length, messages: M.links.reduce((n, l) => n + l.n, 0) }
         }
+        // the kinds of work (the third layout): each agent's commits in 7 days that name an issue, by the issue's board area,
+        // grouped into seven kinds; the PrompTugal newsroom's agents, from their own repository, count as newsroom work
+        const KINDS = [['build', 'Building the site and tools', ['tech', 'agents']], ['content', 'Content and the newsroom', ['content', 'video', 'newsroom']], ['outreach', 'Outreach', ['outreach', 'crm', 'friendly']], ['setup', 'Getting set up', ['onboarding', 'people', 'team']], ['running', 'Running the team', ['pm', 'operator', 'operations', 'ops']], ['riskmandate', 'RiskMandate', ['riskmandate', 'idea']], ['merch', 'Merch and design', ['merch', 'design']]]
+        const kindOf = {}; for (const [k, , areas] of KINDS) for (const a of areas) kindOf[a] = k
+        const areaOf = {}; for (const f of fs.readdirSync(path.join(root, 'board')).filter(f => /^WS-\d+.*\.md$/.test(f))) { const m = fs.readFileSync(path.join(root, 'board', f), 'utf8').match(/^area: *(.+)$/m); areaOf[+f.match(/^WS-(\d+)/)[1]] = m ? m[1].trim().toLowerCase() : '' }
+        const work = new Map(), ids = new Set(M.agents.map(a => a.id))
+        for (const c of git(root, ['log', '--since=7 days ago', '--format=%s%x1f%b%x1e']).split('\x1e')) {
+            const [sj, bd = ''] = c.trim().split('\x1f'); if (!sj || /^site v\d/.test(sj)) continue
+            const who = (sj.match(/^([a-z0-9-]+@web-summit\.[a-z0-9-]+):/) || [])[1]; if (!who || !ids.has(who)) continue
+            const kinds = new Set([...`${sj}\n${bd}`.matchAll(/\bWS-(\d+)\b/g)].map(m => kindOf[areaOf[+m[1]]]).filter(Boolean))
+            for (const k of kinds) { const key = `${who}|${k}`; work.set(key, (work.get(key) || 0) + 1) }
+        }
+        for (const a of (PT && PT.agents) || []) if (ids.has(a.id) && a.id.startsWith('pt:')) work.set(`${a.id}|content`, (work.get(`${a.id}|content`) || 0) + a.commits)
+        M.work = { kinds: KINDS.map(([id, label]) => ({ id, label })), links: [...work].map(([k, n]) => { const [agent, kind] = k.split('|'); return { agent, kind, n } }) }
         d.collab.map = M
     } catch (e) { d.collab.map = { error: String(e.message || e).slice(0, 160) } }
     d.summit_days = summitDays(root)

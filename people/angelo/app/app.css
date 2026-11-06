@@ -214,5 +214,22 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .tm-al { fill: var(--rm-text); font: 600 15px/1 var(--rm-font); text-anchor: middle; paint-order: stroke; stroke: var(--rm-surface); stroke-width: 4px; }
 .tm-p.off, .tm-a.off { opacity: .18; }
 .tm-p:focus-visible circle { stroke: var(--rm-focus); }
-.tm-k { fill: none; stroke: var(--rm-text-secondary); stroke-width: 1.5; pointer-events: none; }
-.tm-k.fresh { stroke-dasharray: 3 3; }
+/* the map's three layouts (6 November) */
+.tm-tabs, .tm-legend { display: flex; flex-wrap: wrap; gap: 6px; }
+.tm-spokes line { stroke-width: 1; opacity: .18; }
+.tm-spokes line.off { opacity: .03; }
+.tm-links.faint path { opacity: .07; }
+.tm-links.faint path.on { opacity: .5; }
+.tm-flows path { fill: none; opacity: .55; stroke-linecap: round; }
+.tm-flows path.on { opacity: .95; }
+.tm-flows path.off { opacity: .03; }
+.tm-k { cursor: pointer; }
+.tm-k polygon, .tm-k circle { fill: color-mix(in srgb, var(--kc) 82%, transparent); stroke: var(--kc); stroke-width: 3; filter: drop-shadow(0 0 10px color-mix(in srgb, var(--kc) 60%, transparent)); }
+.tm-k text { fill: var(--rm-text); font: 700 14px/1 var(--rm-font); text-anchor: middle; paint-order: stroke; stroke: var(--rm-surface); stroke-width: 4px; }
+.tm-k.off { opacity: .2; }
+.tm-kr { fill: none; stroke: var(--rm-text-secondary); stroke-width: 1.5; pointer-events: none; }
+.tm-kr.fresh { stroke-dasharray: 3 3; }
+.tm-lg { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--rm-border); background: var(--rm-surface); color: var(--rm-text); font: 500 13px/18px var(--rm-font); cursor: pointer; }
+.tm-lg svg polygon, .tm-lg svg circle { fill: var(--kc); }
+.tm-lg b { font-weight: 700; color: var(--rm-text-secondary); }
+.tm-lg.on { border-color: var(--kc); background: color-mix(in srgb, var(--kc) 16%, var(--rm-surface)); }
