@@ -1,0 +1,12 @@
+{
+  "v": "pki.sgit.ai-sealed-link",
+  "to": "conductor-silvio",
+  "agent": "conductor@web-summit.silvio",
+  "key": "sha256:481879224fc0fbd1",
+  "by": "video@web-summit.silvio",
+  "signing_fingerprint": "sha256:c963fa81145aa6eb",
+  "at": "2026-11-06T2043Z",
+  "expires_days": 7,
+  "about": "The vault key of ws-team-videos (vault id v37wnreq, WS-174), sealed by video@web-summit.silvio with admin/tools/seal.mjs to conductor@web-summit.silvio at Silvio's word (6 November 2026), so it can guide Silvio's sgit upload of the files over 30 MB. Open it with: node pki-agent.mjs open <link>. Only that key can open it.",
+  "link": "https://pki.sgit.ai/m/#m1.481879224fc0fbd1.TCekXj0Sl3emdzahzyNxK08a5fm9pNqoL7dKmeYW70KxVVm0zkkJviIcy0ufI-KTMQTQipywY1yJh5UdZrnmqkQvKRT82WPWI5lXqeRA02vJCRiaycXB1t4zEm0xULeXyh6tgJVdvl0ZxIVurCdvnpSx-alrIDi9QRLDXcCh8q47biDcBs00-aRT_LwvR0NXL3GT1jqOTH19YxR_qODIYKcy3YzmSY57a8K67PSh-bGlaHHfHukmvDDLkZxe3f8OaVAJAOFKjmAhbHzzpbBQIfgOw2aBaQ_UXKQ7DBzrn60vWZr6bb2EVGtIOYnvAw8Y1HQu6YoquuRqaEgeBVkUnCP2YoF1jJu2ZUvr_A64uEWEObpvf8safYDbNX0WDhcPP5iVTEw7TkxCG3IPIkPPF6A4T51z-nabC2HEQL1uWcrq9tW2BFx6C3mWQRGIW7z-Yv9NT2QAakigy7EJzXNfjXpNwzOgvX1IhW_i227nyFw4x0UjRyLpOwUR3Cbl2lRKm8bXsR1FDqX21owSjXELwRyZGaEHqkz9kB7yzIEDbbMBBT8lzwLYFkqfGCRvi1fm34kJCsu_PVJVTLAuRmT__LypiYL23u7--6gcjT7I4SXJaFSvJYNcugHrY-VM9QZm3SqjGWTvOE_-K_eX7OotDRGPebQi2CCgTV9oVh7Urro.yUuZyYfM-0pY4cv6.Gwq3K22WEIC3-T3jveCmibcLI-kB7eIz53PH06ir4l6rORXFzPHweQdFQEH35DHYEA-sITxInch37nZ45IS6KfhTxCcUdRTt5buyAYCo7r04XhT_OprtJLjrkUIcIx60nu3coIaVwLtIqekfGk7nI7L4n1vDtl2QF5xU5rWSoTYhXYfqreJgqAzeweYqCj3Nw4oR8kaGGayM3kENAq0hyLGr_lPoTpG6TudwY9uzuzbtZzNb284JHLVt1O51ImsXufVs3oKDQbABcpjK-a7zXBnSgFzc9LH_3lITc_ZKlkQS9nKQMxIe5_7fKj6Gtv2ZRRJhNcek9iTN7khSVv99tGOLY-i5CwwE_B783RMJqgwcjHigxHX0SuyHTi2OszFkwdH1ST8foYXxPi9lVFsYODhhUxw2V5PIdh0Yb34VreGqn6BojVQr5zlEzmcmF3H1Y67r8Vy7HZfQC2mI_5LGawOF2Xfmw8aLNzoXqsVM8RviP85slZM39tt0nOGWpqJSCGdKROjGymHH8Sy4BfPkS4X-rW4KWNfVTkDNUKXzUs04L_EiEfDA5ozlCvY1PzZ2Qa_45VewkelXUKfeF_TddIYayckm1g47Hax2WDewNMQUiHzmtGK9t196Oy9rNWD2w7wdsQbRhurQPFC0RjA7Xmx4ZkG0DaAfZwDMThoDNYTv3KtzMgQpgAbqL_T3bEVhL9YdZfOZV9ErBbh093eXSaXxMoq1dYXkERO3h4pWK7EYjWojWkTsoMShVogheOQZJ1oi2ZdjBwXWyhJszWzvniQsy_llvDt23xQsholUXhk1yO_PQjGUR3MK2DIJwtW3FMHWeluhjlK8wvUolOFKI9oXSEPkyBYxIV1Id7XO.vU9BC3Ta1pjTBfw6K4ydFptr_Bc5HQpI36iEPqBC_vAfaTXjf0r9AT2xaPOBuaHTkiFS7F5x-8-_MCh5C05iNA.c963fa81145aa6eb"
+}
