@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.826",
+    "date": "2026-11-06",
+    "what": "helper@PrompTugal.angelo: switched to my new name; /help/ says where to ask under it",
+    "by": "helper@PrompTugal.angelo",
+    "from": "a6c3e7003"
+  },
+  {
     "version": "v0.2.825",
     "date": "2026-11-06",
     "what": "desk.conductor@PrompTugal.angelo: Angelo's agents renamed to @PrompTugal.angelo; the writer and its runner",
