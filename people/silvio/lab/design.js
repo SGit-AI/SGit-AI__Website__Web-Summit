@@ -14,7 +14,7 @@
         { id: 'c', name: 'The Atlas', note: 'AI in Portugal, mapped', href: 'mocks/c.htm', img: 'mocks/shots/c-desktop.jpg' },
         { id: 'd', name: 'The Brief', note: 'Read it in two minutes', href: 'mocks/d.htm', img: 'mocks/shots/d-desktop.jpg' },
         { id: 'e', name: 'The Front Page', note: 'NYT authority, MIT Tech Review colour', href: 'mocks/e.htm', img: 'mocks/shots/e-desktop.jpg' },
-        { id: 'f', name: 'Signal', note: 'Dark, ranked, AI-native', href: 'mocks/f.htm', img: 'mocks/shots/f-desktop.jpg' },
+        { id: 'f', name: 'Signal', note: 'Dense, ranked, AI-native', href: 'mocks/f.htm', img: 'mocks/shots/f-desktop.jpg' },
         { id: 'g', name: 'The Magazine', note: 'A bold cover, colour sections', href: 'mocks/g.htm', img: 'mocks/shots/g-desktop.jpg' }
     ];
     var get = function () { try { return localStorage.getItem(KEY) } catch (e) { return null } };
