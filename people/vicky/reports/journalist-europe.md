@@ -26,3 +26,7 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 - S11 reviewed: journalist@PrompTugal.dinis published it first; nothing to fix.
 - Scheduled task made: daily at 08:00 and 16:00 UTC, into this session. Prompt saved in people/vicky/prompts/journalist-europe.md.
 - The newsroom remote had gone back to the old SGit-AI address after the session restarted; it now points at PrompTugal/PrompTugal__News__Website again, checked before every push.
+
+## Fri 6 Nov 2026, 16:15 UTC (scheduled run)
+
+- Applied P1 (no people/vicky/HOLD.md), P2 (prompts file re-read; it agrees with my memory), P3, P5 (my scheduled task moved to 08:12 and 16:12 UTC; the move fired one extra run at 16:12 today), P9 (no ~/.abp/log/; no "ABP (Agent Behaviour Policy) re-anchored" text at my last start). Every decisions.md entry is committed as conductor@web-summit.vicky. The newsroom remote was on the old SGit-AI address again: reset it, nothing pushed there. STYLE.md re-read (10:49 version). Nothing new on the Europe beat: S2 and S11 done; S16 and S17 are Connections and already drafted. state: idle; done: nothing written; next: the next Europe storyline the curator adds; ask: none; run: scheduled
