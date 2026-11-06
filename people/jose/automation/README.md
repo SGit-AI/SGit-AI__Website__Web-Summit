@@ -21,11 +21,11 @@ All the tests: `for t in people/jose/dev/*.test.mjs people/jose/automation/*.tes
 
 Six nodes in a line: a schedule (every 30 minutes, 07:15 to 22:45 UTC) → **Settings** → **Get the vault agent's count** (an HTTP Request node, a GET of the public `https://web-summit.sgit.ai/people/jose/lanes/feedback-count.json`, no credential) → **Draft the note** (pure logic) → **Send to Jose** (WhatsApp Cloud API, as route 3) → **Remember the note** (only after Meta accepted it).
 
-What Jose gets, for example: *"WS-74 feedback: 3 new answers on the public feedback form (3 in all). Drained into jose-inbox by vault@web-summit.jose at 2026-11-05 17:41 UTC. Ask it for the summary (feedback-summary.mjs); nothing is quoted without the person's tick."* Also said: answers that could not be opened (sealed to an earlier session key), 800 or more still pending on the lane (it refuses new ones at 1000, 507), and a count older than 26 hours (the vault agent's drains may have stopped). A note goes when any of these changes, so each is said once, even with no new answers; a stale count with new answers in it reports both. When there is nothing left to say (the lane drained), that is remembered without a note, so a later warning is said again. Nothing is sent while nothing changed, or while the file doesn't exist yet (404).
+What Jose gets, for example: *"WS-74 feedback: 3 new answers on the public feedback form (3 in all). Counted by vault@web-summit.jose at 2026-11-05 17:41 UTC. Ask it for the summary (feedback-summary.mjs); nothing is quoted without the person's tick."* Also said: answers that could not be opened (sealed to an earlier session key), 800 or more still pending on the lane (it refuses new ones at 1000, 507), and a count older than 26 hours (the vault agent's drains may have stopped). A note goes when any of these changes, so each is said once, even with no new answers; a stale count with new answers in it reports both. When there is nothing left to say (the lane drained), that is remembered without a note, so a later warning is said again. Nothing is sent while nothing changed, or while the file doesn't exist yet (404).
 
-### The count file, proposed for vault@web-summit.jose
+### The count file, kept by vault@web-summit.jose
 
-The flow reads `people/jose/lanes/feedback-count.json`, which does not exist yet (checked live on 5 November, 16:20 UTC: 404). The site serves the JSON files in that folder as they are (`vault-jose.json` answers 200). Proposed: the vault agent commits it after each drain, with numbers only, never content:
+The flow reads `people/jose/lanes/feedback-count.json`, **live since 6 November, 11:45 UTC** (vault@web-summit.jose, `8dc2c519`; by its own Report it writes it at every wake, 11:40 and 17:40 UTC, even when nothing moved; so far one write, and the kit's "if nothing changed, commit nothing" for it is still to be reconciled, which it asked of the conductor). An extra `note` field, which the vault agent uses to say how it counted, is ignored by the flow. The site serves the JSON files in that folder as they are (`vault-jose.json` answers 200). Its format, numbers only, never content:
 
 ```json
 {
@@ -40,7 +40,7 @@ The flow reads `people/jose/lanes/feedback-count.json`, which does not exist yet
 ```
 
 - `at`: when it drained (ISO 8601, UTC), **updated on every drain, even one that found nothing**: that is how the flow tells a quiet day from a stopped vault agent. This means one small commit per drain, an exception to the vault agent's "if nothing changed, commit nothing"; if the conductor prefers not, set `stale_hours: 0` in Settings and the stale note is off. `received_total`: every answer drained from the feedback lanes so far, never going down within a counter (the flow notes the difference; if it goes down, the flow starts again from it without a note). `drained_this_run`: from `feedback_drain.py`'s summary line. `pending_left`: what was still pending after the drain. `could_not_open`: what the drain left because it could not open it.
-- Under one door this is the conductor's to hand out as a task file to vault@web-summit.jose; asked in this commit's Report.
+- Handed to vault@web-summit.jose by the conductor (`people/jose/tasks/2026-11-05-vault-feedback-count.md`). The note says "counted", not "drained": until the vault agent has an SG/Send token of its own (WS-170) it lists the lane and counts without draining.
 
 ### WS-74: to fill in n8n
 
@@ -72,7 +72,10 @@ In `mode: 'text'`, "Send to Jose" succeeds when Meta *accepts* the message and r
 
 **5 November 2026, 16:10 UTC wake (scheduled).** Jose decided that n8n never holds the enum key and that the vault agent counts. **Changed:** the flow now reads a public count file the vault agent would commit after each drain, so the lane listing, its untested pagination and the enum-key credential are gone, and the only credential left is the WhatsApp one. Jose's reviewer then found two bugs in my first version, both reproduced: after a counter went down, a climb back to the old total was dropped, and new answers inside a stale count were never reported. Also, the "said once" warnings were not part of what the flow remembered, so a full lane with no new answers sent nothing. **Changed:** one state holds everything a note can say (the total, stale, could not open, full), and a note goes when it changes; the three cases are tests now. **Learned:** the site already serves `people/jose/lanes/*.json`, so a count needs no new endpoint, no token and no change to shared code; and it is only as fresh as the vault agent's drains (11:40 and 17:40 UTC), which is also why a stale count is now worth a note on its own. The earlier notes above about the listing and the enum key stay as the record of what was tried.
 
+**6 November 2026, 16:10 UTC wake (scheduled).** The vault agent published the count file at 11:45 (0 answers so far; it lists the lane and counts, without draining, until it has its own SG/Send token, WS-170). The flow accepts it as it is. **Changed:** the live test started from a huge remembered total, so it only exercised the counter-reset path; it now reads the file as a first real run would, and fails if there are answers and no note.
+
 ## Next
 
-- The count file, from vault@web-summit.jose (above), handed out by the conductor. Until it exists the flow is ready and stays quiet.
+- WS-74 needs nothing more from this side: the flow waits on Jose setting up WhatsApp in Meta and n8n (on his Actions list, through dev's Report), the same steps as route 3. The answers themselves reach jose-inbox once the vault agent can drain (WS-170).
+
 - Slack for route 3 (route 4), once someone with Slack admin makes the app and the channel: a Slack node or HTTP call with `text_slack`, which `report-draft.mjs` already makes.
