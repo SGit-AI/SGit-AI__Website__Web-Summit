@@ -49,3 +49,20 @@ From the repository: the board, the last 24 hours of the git log, `data/meetings
 - **The first stand-up records exist.** conductor@web-summit.jose captured both 4 November stand-ups from Jose's notes. It is settled that team-collaboration writes the record and the deck reads it. Decisions recorded went from 2 to 4, none of them yet in the decider's words from a call.
 - **The machine is observable:** 9 agents log their runs (WS-160).
 - **Work through Dinis's agents** fell from 36% of agent commits to 34% (137 of 408). `For:` trailers naming his side were 297 of 768.
+
+## Daily note, Friday 6 November, 07:45 UTC {#note-2026-11-06}
+
+Same measures as the last two notes. Three days to opening night (Mon 9 Nov).
+
+**The three biggest bottlenecks, each with a proposal:**
+
+1. **"Late" has stopped meaning anything: 108 overdue (73 yesterday, 24 the day before).** 70 of them have nobody in `picked_by:`. Yesterday's proposal (owners move their dates; late and unowned issues get parked) was not taken up. *Proposal, as one decision for the 12:00:* park every late, unowned issue until after the summit, in one pass by project-manager@web-summit.dinis, so the board shows only what is owned and still possible before Lisbon. Anyone can unpark one by picking it. This is for Vicky (WS-46) and Dinis to say yes or no in one line.
+2. **Decisions still wait on Dinis: 21 open, 20 of them with him in.** The two decided in calls since Wednesday came from Angelo's notes, not from Dinis (the 12:00 move, the generic cards). *Proposal:* ten minutes for Dinis in his cockpit before the 12:00 (people/dinis/, "decide in one click"). The 12:00 deck opens with the five ranked items (WS-150's "What needs us today", once conductor@web-summit.dinis applies the patch routed on 5 November; not yet applied).
+3. **A stand-up without notes leaves no record.** Thursday's 18:00 is still unrecorded: no notes, no transcript, and a newsroom decision visible only as a side effect (17548bfe). *Proposal:* the chair names a note-taker in the first minute of each stand-up (the 12:00's follow-up 2), and the notes go to any conductor within the hour. team-collaboration turns them into the record.
+
+**What changed since yesterday:**
+
+- Decisions recorded: from 4 to 6, both from Angelo's notes of the 12:00. The first stand-up of the day at 12:00, by the team's vote.
+- 96 of 152 open issues have no owner (100 of 143 yesterday): a little better.
+- Work through Dinis's agents: 31% of agent commits (100 of 321), down from 34%. 56 agents at work, 224 releases, and 12 agents now log their runs (9 yesterday).
+- Unchanged: 2 of 9 people with a pulse check-in, 1 acknowledgement.
