@@ -18,7 +18,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** before 10 am, let your helpers test the new news site, PromptUGAL, as readers (allow promptugal.news in your Claude settings first). Then two quick answers for Dinis: yes, 'riskmandate-indi' is your GitHub name; and yes or no to your name on the site's editorial board. Everything else is on [your to-do list](todo/index.html).
+**Right now:** one word to Dinis first: yes, 'riskmandate-indi' is your GitHub name. Then decide whether to join PromptUGAL as an editor, like Angelo. Your new Recruiter is looking for a journalist to join us. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 
