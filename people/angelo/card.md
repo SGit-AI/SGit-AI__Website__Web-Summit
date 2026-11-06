@@ -18,7 +18,8 @@ The companies I'd like to connect with, if they are at the summit (none is on th
 People's names stay in my private CRM, never here.
 
 **3. The conversations I'll lead, and what I'm not doing.**
-(to ask)
+I'll lead: technical conversations about running agents in production under control; meetings with my own network (answer 2); live demos on my laptop of how the agentic workflow works, an article written on the spot and an ABP made and checked live (alongside Jose's demos of an agent attacked, then governed).
+Not doing: not settled yet; I may take on commercial conversations too.
 
 **4. My accounts.**
 (to ask)
