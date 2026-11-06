@@ -163,3 +163,9 @@ Five of the 16 wait on Dinis alone, and nine more include him. A one-line answer
 | PrompTugal.news ahead of the other agencies, citing them, never copying | the newsroom | during the summit | WS-183 |
 | More models through OpenRouter: which, for whom, keys and budgets | Dinis (keys and money) | not given | WS-115 |
 | Park the late, unowned issues: yes or no | Vicky and Dinis | the 18:00 | WS-46 |
+
+### 6 November, 18:00 (pending: checked 19:20 UTC)
+
+- **Not yet written.** By 19:20 UTC no decision from the call was recorded in `data/meetings/`. No notes were routed by a conductor, and there is no Meet transcript in Angelo's Drive. Every open item carries over to Saturday.
+- **Still open from today:** the garment files (Dinis's yes, or Monday's collection slips, WS-48), parking the late, unowned issues (the list is ready), the outreach claim (WS-26), WS-177, and the rest of the ranked list.
+- **What would close this:** notes from whoever took them, routed by any conductor (as on 5 and 6 November).

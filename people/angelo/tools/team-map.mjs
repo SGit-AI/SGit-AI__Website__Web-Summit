@@ -25,28 +25,34 @@ const people = humans.map(m => ({ id: m.id, name: m.name, role: m.role || '' }))
 const pid = new Set(people.map(p => p.id))
 // two families of agents (Angelo, 6 November: "include both RiskMandate and Promptugal news agents"): <agent>@web-summit.<person>
 // (the team's RiskMandate work, its newsroom included) and <agent>@PrompTugal.<person> (the Promptugal newsroom); ids lowercase
-const FAM = /^([a-z0-9-]+)@(web-summit|promptugal)\.([a-z0-9-]+)$/
-const agentPerson = n => { const m = String(n).toLowerCase().match(FAM); return m && pid.has(m[3]) ? m[3] : null }
+const FAM = /^([a-z0-9.-]+)@(web-summit|promptugal)\.([a-z0-9-]+)$/
+// one agent, whatever it is called (Angelo's renaming of 6 November, 90299d08): <role>@<person>, with desk./runner. dropped,
+// so conductor@web-summit.angelo, desk.conductor@ and runner.conductor@PrompTugal.angelo are one node
+const canon = n => { const l = String(n).toLowerCase(), m = l.match(FAM); return m ? m[1].replace(/^(desk|runner)\./, '') + '@' + m[3] : l }
+const agentPerson = n => { const l = String(n).toLowerCase(), m = l.match(FAM); if (m) return pid.has(m[3]) ? m[3] : null; const c = l.match(/^([a-z0-9.-]+)@([a-z0-9-]+)$/); return c && pid.has(c[2]) ? c[2] : null }
 const familyOf = n => (String(n).toLowerCase().match(FAM) || [])[2] || null
 
 // edges and activity: For: trailers (comma- or line-separated) in commits from the last DAYS days
 const log = execFileSync('git', ['log', `--since=${DAYS} days ago`, '--format=%s%x1f%b%x1e'], { cwd: ROOT, encoding: 'utf8', maxBuffer: 256 << 20 })
-const commits = {}, edges = {}
+const commits = {}, edges = {}, names = {}
 for (const c of log.split('\x1e')) {
   const [s, b] = c.trim().split('\x1f'); if (!s || /^site v\d/.test(s)) continue
-  const from = ((s.match(/^([A-Za-z0-9-]+@(?:web-summit|PrompTugal|promptugal)\.[a-z0-9-]+):/) || [])[1] || '').toLowerCase(); if (!from || !agentPerson(from)) continue
+  const raw0 = ((s.match(/^([A-Za-z0-9.-]+@(?:web-summit|PrompTugal|promptugal)\.[a-z0-9-]+):/) || [])[1] || '').toLowerCase(); if (!raw0 || !agentPerson(raw0)) continue
+  const from = canon(raw0); (names[from] = names[from] || new Set()).add(raw0)
   commits[from] = (commits[from] || 0) + 1
   for (const line of String(b || '').matchAll(/^For:\s*(.+)$/gm)) for (const raw of line[1].split(/[,\s]+/)) {
-    const to = raw.trim().toLowerCase(); if (!to || to === from) continue
+    const r = raw.trim().toLowerCase(); if (!r) continue
+    const to = agentPerson(r) && r.includes('@') ? canon(r) : r; if (to === from) continue
     const ok = agentPerson(to) || pid.has(to); if (!ok) continue
+    if (to.includes('@')) (names[to] = names[to] || new Set()).add(r)
     const k = from + '>' + to; edges[k] = (edges[k] || 0) + 1
   }
 }
-const agentNames = new Set([...inv.agents.map(a => a.name.toLowerCase()).filter(agentPerson), ...Object.keys(commits), ...Object.keys(edges).flatMap(k => k.split('>')).filter(agentPerson)])
+const agentNames = new Set([...inv.agents.map(a => a.name.toLowerCase()).filter(agentPerson).map(canon), ...Object.keys(commits), ...Object.keys(edges).flatMap(k => k.split('>')).filter(agentPerson)])
 // kind (fresh, scheduled, long) comes from admin/build/inventory.mjs once dev@web-summit.angelo's patch lands (0638bb07);
 // until then it is undefined and the command centre draws no ring
-const invBy = Object.fromEntries(inv.agents.map(a => [String(a.name).toLowerCase(), a]))
-const allAgents = [...agentNames].map(n => ({ id: n, person: agentPerson(n), family: familyOf(n), short: n.split('@')[0], commits: commits[n] || 0, kind: (invBy[n] || {}).kind }))
+const invBy = Object.fromEntries(inv.agents.map(a => [canon(a.name), a]))
+const allAgents = [...agentNames].map(n => ({ id: n, person: agentPerson(n), names: [...(names[n] || [])].sort(), short: n.split('@')[0], commits: commits[n] || 0, kind: (invBy[n] || {}).kind }))
 const allPeople = people.slice()
 const agents = ALL ? allAgents : allAgents.filter(a => a.commits)
 const activeP = new Set(agents.map(a => a.person))
@@ -55,7 +61,7 @@ const keep = new Set([...agents.map(a => a.id), ...people.map(p => p.id)])
 const links = Object.entries(edges).map(([k, n]) => { const [a, b] = k.split('>'); return { from: a, to: b, n } }).filter(l => keep.has(l.from) && keep.has(l.to))
 const left = { agents: allAgents.length - agents.length, people: allPeople.filter(p => !people.includes(p)).map(p => p.name.split(' ')[0]) }
 const data = { built: new Date().toISOString(), days: DAYS, people, agents, links, left_out: ALL ? null : left,
-  totals: { people: people.length, agents: agents.length, promptugal: agents.filter(a => a.family === 'promptugal').length, active: agents.filter(a => a.commits).length, messages: links.reduce((s, l) => s + l.n, 0) } }
+  totals: { people: people.length, agents: agents.length, renamed: agents.filter(a => (a.names || []).length > 1).length, active: agents.filter(a => a.commits).length, messages: links.reduce((s, l) => s + l.n, 0) } }
 if (JSONOUT) { process.stdout.write(JSON.stringify(data, null, 1) + '\n'); process.exit(0) }
 
 // layout: people evenly on a ring; each person's agents on an arc around them, further out; size by commits
@@ -75,7 +81,7 @@ const arc = l => { const a = pos[l.from], b = pos[l.to]; if (!a || !b) return ''
   return `<path d="M${a.x.toFixed(1)},${a.y.toFixed(1)} Q${qx.toFixed(1)},${qy.toFixed(1)} ${b.x.toFixed(1)},${b.y.toFixed(1)}" stroke="${colOf(l.from)}" stroke-opacity="${(0.18 + 0.5 * l.n / maxN).toFixed(2)}" stroke-width="${(0.8 + 6 * Math.sqrt(l.n / maxN)).toFixed(1)}" fill="none" data-from="${esc(l.from)}" data-to="${esc(l.to)}"><title>${esc(l.from)} → ${esc(l.to)}: ${l.n} message${l.n > 1 ? 's' : ''}</title></path>` }
 const label = (x, y, t, text, cls) => { const right = Math.cos(t) >= 0; const dx = right ? 1 : -1; const rot = (t * 180 / Math.PI) + (right ? 0 : 180)
   return `<text class="${cls}" transform="translate(${x.toFixed(1)},${y.toFixed(1)}) rotate(${rot.toFixed(1)})" x="${dx * 16}" text-anchor="${right ? 'start' : 'end'}" dominant-baseline="middle">${esc(text)}</text>` }
-const svgAgents = agents.filter(a => pos[a.id]).map(a => { const p = pos[a.id], s = size(a); const pt = a.family === 'promptugal'; return `<g class="ag${pt ? ' pt' : ''}" data-id="${esc(a.id)}"><rect x="${(p.x - s / 2).toFixed(1)}" y="${(p.y - s / 2).toFixed(1)}" width="${s.toFixed(1)}" height="${s.toFixed(1)}" rx="${pt ? 1 : (s / 5).toFixed(1)}"${pt ? ` transform="rotate(45 ${p.x.toFixed(1)} ${p.y.toFixed(1)})"` : ''} fill="${a.commits ? colOf(a.id) : 'none'}" stroke="${colOf(a.id)}" stroke-width="1.5"><title>${esc(a.id)}: ${a.commits} commits in ${DAYS} days</title></rect>${label(p.x, p.y, p.t, a.short + (pt ? ' · PT' : ''), 'al')}</g>` }).join('')
+const svgAgents = agents.filter(a => pos[a.id]).map(a => { const p = pos[a.id], s = size(a); const pt = false; return `<g class="ag" data-id="${esc(a.id)}"><rect x="${(p.x - s / 2).toFixed(1)}" y="${(p.y - s / 2).toFixed(1)}" width="${s.toFixed(1)}" height="${s.toFixed(1)}" rx="${pt ? 1 : (s / 5).toFixed(1)}"${pt ? ` transform="rotate(45 ${p.x.toFixed(1)} ${p.y.toFixed(1)})"` : ''} fill="${a.commits ? colOf(a.id) : 'none'}" stroke="${colOf(a.id)}" stroke-width="1.5"><title>${esc((a.names && a.names.length ? a.names : [a.id]).join(', '))}: ${a.commits} commits in ${DAYS} days</title></rect>${label(p.x, p.y, p.t, a.short, 'al')}</g>` }).join('')
 const svgPeople = people.map(p => { const q = pos[p.id], n = agents.filter(a => a.person === p.id), act = n.filter(a => a.commits).length
   return `<g class="pp" data-id="${esc(p.id)}"><circle cx="${q.x.toFixed(1)}" cy="${q.y.toFixed(1)}" r="46" fill="#1a1a19" stroke="${COL[p.id] || '#9ca3af'}" stroke-width="3"/><text x="${q.x.toFixed(1)}" y="${(q.y - 6).toFixed(1)}" class="pn" text-anchor="middle">${esc(p.name.split(' ')[0])}</text><text x="${q.x.toFixed(1)}" y="${(q.y + 16).toFixed(1)}" class="pc" text-anchor="middle">${act}/${n.length} agents</text><title>${esc(p.name)}: ${esc(p.role)}</title></g>` }).join('')
 const T = data.totals
@@ -83,8 +89,8 @@ process.stdout.write(`<!doctype html><html lang="en"><meta charset="utf-8"><meta
 <style>body{margin:0;background:#141413;color:#e7e5e4;font-family:system-ui,sans-serif}main{max-width:1100px;margin:0 auto;padding:16px}h1{font:700 1.6rem Georgia,serif;margin:.4em 0}.cap{color:#a8a29e;font-size:.95rem}
 svg{width:100%;height:auto;display:block}.al{font:13px system-ui;fill:#d6d3d1}.pn{font:700 20px system-ui;fill:#fafaf9}.pc{font:12px system-ui;fill:#a8a29e}
 svg.focus path{stroke-opacity:.04!important}svg.focus path.on{stroke-opacity:.9!important}svg.focus .ag:not(.on) text{opacity:.3}</style>
-<main><h1>The team, as one map</h1><p class="cap">${ALL ? `${T.people} people and ${T.agents} agents (${T.active} committed in the last ${DAYS} days)` : `The ${T.people} people and ${T.agents} agents active in the last ${DAYS} days`} (${T.agents - T.promptugal} RiskMandate agents, squares, named @web-summit; ${T.promptugal} Promptugal newsroom agents, diamonds marked PT, named @PrompTugal), and ${T.messages} messages between them: each arc is a commit's <code>For:</code> line, coloured by its sender, thicker for more. ${ALL ? 'A filled square has committed; an outline has not. ' : ''}Hover or tap a person or agent to see only their links. Built ${esc(data.built.slice(0, 16).replace('T', ' '))} UTC from the repository.${ALL ? '' : ` Left out as inactive (no commit in ${DAYS} days): ${left.agents} agents${left.people.length ? `, and ${esc(left.people.join(', '))}, none of whose agents committed` : ''}.`}</p>
+<main><h1>The team, as one map</h1><p class="cap">${ALL ? `${T.people} people and ${T.agents} agents (${T.active} committed in the last ${DAYS} days)` : `The ${T.people} people and ${T.agents} agents active in the last ${DAYS} days`} (agents named @web-summit or @PrompTugal; ${T.renamed} of them renamed on 6 November, each drawn once under its role, its old and new names in its tooltip), and ${T.messages} messages between them: each arc is a commit's <code>For:</code> line, coloured by its sender, thicker for more. ${ALL ? 'A filled square has committed; an outline has not. ' : ''}Hover or tap a person or agent to see only their links. Built ${esc(data.built.slice(0, 16).replace('T', ' '))} UTC from the repository.${ALL ? '' : ` Left out as inactive (no commit in ${DAYS} days): ${left.agents} agents${left.people.length ? `, and ${esc(left.people.join(', '))}, none of whose agents committed` : ''}.`}</p>
 <svg viewBox="0 0 ${W} ${H}" id="m" role="img" aria-label="The team's people and agents, and who writes to whom"><g>${links.map(arc).join('')}</g>${svgAgents}${svgPeople}</svg></main>
-<script>const m=document.getElementById('m');function f(id){m.classList.toggle('focus',!!id);m.querySelectorAll('path').forEach(p=>p.classList.toggle('on',!!id&&(p.dataset.from===id||p.dataset.to===id||p.dataset.from.endsWith('.'+id)||p.dataset.to.endsWith('.'+id))));m.querySelectorAll('.ag').forEach(g=>g.classList.toggle('on',!id||g.dataset.id===id||g.dataset.id.endsWith('.'+id)))}
+<script>const m=document.getElementById('m');function f(id){m.classList.toggle('focus',!!id);m.querySelectorAll('path').forEach(p=>p.classList.toggle('on',!!id&&(p.dataset.from===id||p.dataset.to===id||p.dataset.from.endsWith('@'+id)||p.dataset.to.endsWith('@'+id))));m.querySelectorAll('.ag').forEach(g=>g.classList.toggle('on',!id||g.dataset.id===id||g.dataset.id.endsWith('@'+id)))}
 m.querySelectorAll('.ag,.pp').forEach(g=>{g.addEventListener('mouseenter',()=>f(g.dataset.id));g.addEventListener('click',e=>{e.stopPropagation();f(m.classList.contains('focus')&&g.classList.contains('on')&&g.dataset.id===m.dataset.sel?null:g.dataset.id);m.dataset.sel=g.dataset.id})});m.addEventListener('mouseleave',()=>f(null))</script></html>
 `)
