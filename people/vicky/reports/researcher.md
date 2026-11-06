@@ -59,3 +59,9 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
 - Portugal: Lisbon healthtech Octo Health launches its health tracking platform in Portugal and the US, with testing for 110+ biomarkers, after a 2.7 million euro pre-seed led by 3xP Global (portugalstartupnews.com, 5 Nov).
 - Nothing new overnight on websummit.com/blog, Metro de Lisboa, Executive Digest or the Commission's digital strategy news.
+
+## Fri 6 Nov 2026, 11:30 UTC run (Portugal)
+
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- Portugal: startup AgroGrINTech extracts bromelain from pineapple waste for fish feed at a pilot unit in Maia, about 200 kg a year, in the PRR-funded Pep4Fish project (portugalglobal.pt, 4 Nov).
+- Nothing new since 07:30 on websummit.com/blog, Portugal Startup News, Metro de Lisboa or Executive Digest about the summit.
