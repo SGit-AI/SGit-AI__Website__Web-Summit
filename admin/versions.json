@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.813",
+    "date": "2026-11-06",
+    "what": "Angelo's agent setup guide, final draft for PrompTugal.news to review and publish (WS-125)",
+    "by": "conductor@web-summit.angelo",
+    "from": "ecd8dc39d"
+  },
+  {
     "version": "v0.2.812",
     "date": "2026-11-06",
     "what": "15:30 run, decisions.md applied (P1, P2, P3, P10, P17); state: idle",
