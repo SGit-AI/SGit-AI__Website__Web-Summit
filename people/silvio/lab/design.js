@@ -12,7 +12,10 @@
         { id: 'a', name: 'The Edition', note: 'A classic front page', href: 'mocks/a.htm', img: 'mocks/shots/a-desktop.jpg' },
         { id: 'b', name: 'Summit Live', note: 'Built for the four days', href: 'mocks/b.htm', img: 'mocks/shots/b-desktop.jpg' },
         { id: 'c', name: 'The Atlas', note: 'AI in Portugal, mapped', href: 'mocks/c.htm', img: 'mocks/shots/c-desktop.jpg' },
-        { id: 'd', name: 'The Brief', note: 'Read it in two minutes', href: 'mocks/d.htm', img: 'mocks/shots/d-desktop.jpg' }
+        { id: 'd', name: 'The Brief', note: 'Read it in two minutes', href: 'mocks/d.htm', img: 'mocks/shots/d-desktop.jpg' },
+        { id: 'e', name: 'The Front Page', note: 'NYT authority, MIT Tech Review colour', href: 'mocks/e.htm', img: 'mocks/shots/e-desktop.jpg' },
+        { id: 'f', name: 'Signal', note: 'Dark, ranked, AI-native', href: 'mocks/f.htm', img: 'mocks/shots/f-desktop.jpg' },
+        { id: 'g', name: 'The Magazine', note: 'A bold cover, colour sections', href: 'mocks/g.htm', img: 'mocks/shots/g-desktop.jpg' }
     ];
     var get = function () { try { return localStorage.getItem(KEY) } catch (e) { return null } };
     var put = function (v) { try { localStorage.setItem(KEY, v) } catch (e) { } };
@@ -32,7 +35,7 @@
         var box = el('div', 'ptd-box'); sheet.appendChild(box);
         var head = el('div', 'ptd-head'); head.appendChild(el('h2', '', 'Choose your design'));
         var x = el('button', 'ptd-x', '×'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); head.appendChild(x); box.appendChild(head);
-        box.appendChild(el('p', 'ptd-sub', 'Same news, five ways to read it. Your choice is remembered in this browser.'));
+        box.appendChild(el('p', 'ptd-sub', 'Same news, eight ways to read it. Your choice is remembered in this browser.'));
         var grid = el('div', 'ptd-grid'); box.appendChild(grid);
         D.forEach(function (d) {
             var a = el('a', 'ptd-card' + (d.id === cur.id ? ' on' : '')); a.href = BASE + d.href;

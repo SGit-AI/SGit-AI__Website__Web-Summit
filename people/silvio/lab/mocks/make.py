@@ -341,6 +341,177 @@ def mock_d():
 </div>'''
     return page('d', 'The Brief', css, body, '')
 
-for k, f in [('a', mock_a), ('b', mock_b), ('c', mock_c), ('d', mock_d)]:
+
+# =========================================================================================================
+# Round 2 (Silvio, 6 November 2026, evening): "mix the best newspaper with the best AI and tech platforms",
+# bold, not pale: highlights that grab the eye. Each sets its own colours (the palette buttons are hidden).
+# =========================================================================================================
+OWN = 'html[data-pal][data-mode]{%s}.pals{display:none!important}'
+WMD = '<img class="wmx" src="assets/brand/promptugal-wordmark-dark.svg" alt="PrompTugal.news">'
+WML = '<img class="wmx" src="assets/brand/promptugal-wordmark-light.svg" alt="PrompTugal.news">'
+HL = lambda t: t.replace('2.5 billion euros', '<mark>2.5 billion euros</mark>')
+def ticker(items):
+    row = ''.join(f'<a href="{i["href"]}"><time>{esc(i["when"])}</time> {esc(cut(i["title"], 70))}</a>' for i in items)
+    return f'<div class="tk"><div class="tk-in">{row}{row}</div></div>'
+TK_CSS = '''.tk{overflow:hidden;white-space:nowrap}.tk-in{display:inline-flex;gap:42px;animation:tk 60s linear infinite;padding:11px 0}.tk:hover .tk-in{animation-play-state:paused}
+.tk a{font:500 13px var(--sans)}.tk time{font:600 12px var(--mono);opacity:.75;margin-right:6px}@keyframes tk{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.tk-in{animation:none;flex-wrap:wrap}}'''
+week = today + short_day(days[1]['items'])[:3] + (short_day(days[2]['items'])[:2] if len(days) > 2 else [])
+
+# --- E: The Front Page (the New York Times' authority x MIT Technology Review's colour) -------------------
+def mock_e():
+    css = OWN % '--paper:#fbfaf6;--ink:#111418;--red:#ff5a3c;--green:#0d3b33;--rule:#dcd8cc;--muted:#5d6266;--card:#ffffff;--solid:#0d3b33;--on:#ffffff' + '''
+.w{max-width:1260px;margin:0 auto;padding:0 16px}
+.dl{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between;font:12px var(--mono);color:var(--muted);padding:10px 0}
+.mast{text-align:center;padding:6px 0 4px}.mast .wmx{height:64px;margin:0 auto}
+.nv{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font:600 13px var(--sans);padding:12px 0;border-top:1px solid var(--ink);border-bottom:4px solid var(--ink)}
+.band{background:#0d3b33;color:#fff;margin-top:22px}
+.band .w{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;padding:40px 16px 44px;align-items:center}
+.kk{font:700 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#5be0b3}
+.band h1{font:600 60px/1.02 var(--serif);margin:12px 0 16px;letter-spacing:-.02em}
+mark{background:linear-gradient(transparent 58%,#5be0b3 58%);color:inherit;padding:0 2px}
+.band h1 mark{background:linear-gradient(transparent 60%,rgba(91,224,179,.55) 60%)}
+.band p{font-size:20px;line-height:1.5;color:#d6e6e1;margin:0 0 16px}
+.band .by{font:12px var(--mono);color:#a8c7bf}.band .badge{color:#5be0b3}
+.band figure{margin:0;background:#fff;padding:10px;border-radius:4px;box-shadow:0 30px 60px rgba(0,0,0,.35);transform:rotate(.6deg)}
+.live{background:#111418;color:#fff;display:flex;align-items:center}.live b{flex:0 0 auto;background:#ff5a3c;font:700 12px var(--sans);letter-spacing:.1em;padding:12px 16px}
+.cols{display:grid;grid-template-columns:280px 1fr 300px;gap:0;padding:30px 0}
+.cols>section{padding:0 24px}.cols>section+section{border-left:1px solid var(--rule)}.cols>section:first-child{padding-left:0}.cols>section:last-child{padding-right:0}
+.h{font:800 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;padding-bottom:8px;border-bottom:2px solid var(--ink);margin:0 0 6px}
+.brf li{display:grid;grid-template-columns:44px 1fr;padding:12px 0;border-bottom:1px solid var(--rule);list-style:none}
+.brf ol{margin:0;padding:0;counter-reset:n}.brf li{counter-increment:n}
+.brf li:before{content:counter(n);font:700 34px/1 var(--serif);color:#0d3b33}
+.brf a{font:600 17px/1.25 var(--serif)}.brf small{display:block;font:11px var(--sans);text-transform:uppercase;letter-spacing:.08em;color:#c2410c;margin-top:4px}
+.st{display:grid;grid-template-columns:1fr 150px;gap:18px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.st h2{font:600 24px/1.15 var(--serif);margin:4px 0 6px}.st p{margin:0;color:var(--muted);font-size:15px}.st img{border:1px solid var(--rule)}
+.st .k{font:700 11px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:#c2410c}
+.st.big{grid-template-columns:1fr}.st.big h2{font-size:32px}
+.nx li{list-style:none;padding:10px 0;border-bottom:1px solid var(--rule);font:15px/1.3 var(--serif)}.nx ul{margin:0;padding:0}
+.nx time{display:inline-block;font:700 11px var(--mono);background:#0d3b33;color:#fff;padding:2px 6px;border-radius:3px;margin-bottom:4px}
+.nums{background:#5be0b3;color:#0d3b33}.nums .w{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:28px 16px}
+.nums b{display:block;font:700 64px/1 var(--serif);letter-spacing:-.03em}.nums span{font:600 13px var(--sans);text-transform:uppercase;letter-spacing:.08em}
+.wmx{height:28px;width:auto}
+''' + TK_CSS + '''
+@media (max-width:1000px){.band .w,.cols{grid-template-columns:1fr}.cols>section{padding:0!important;border:0!important;margin-bottom:26px}.band h1{font-size:42px}.nums .w{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.mast .wmx{height:42px}.nv{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto}.band h1{font-size:34px}.st{grid-template-columns:1fr 96px}.nums b{font-size:44px}.dl span:last-child{display:none}}
+'''
+    sec = arts[:4]
+    body = f'''<div class="w"><div class="dl"><span>Friday 6 November 2026</span><span>Opening Night in <span data-cd>3 days</span></span><span>Lisbon · Independent</span></div>
+<header class="mast"><a href="index.html">{WML}</a></header><nav class="nv">{nav()}</nav></div>
+<section class="band"><div class="w"><div><div class="kk">{esc(hero['kicker'])}</div><h1><a href="{hero['href']}">{HL(esc(hero['title']))}</a></h1><p>{esc(hero['summary'])}</p><div class="by">{esc(hero['byline'])}</div>{BADGE}</div>
+<figure><a href="{hero['href']}"><img src="{hero['img']}" alt="{esc(hero['alt'])}" fetchpriority="high"></a></figure></div></section>
+<div class="live"><b>THIS WEEK</b>{ticker(week)}</div>
+<div class="w"><div class="cols">
+<section class="brf"><h2 class="h">The briefing</h2><ol>{''.join(f'<li><span><a href="{a["href"]}">{esc(a["title"])}</a><small>{esc(a["kicker"])}</small></span></li>' for a in arts[4:9])}</ol></section>
+<section>{''.join(f'<article class="st{" big" if n == 0 else ""}"><div><div class="k">{esc(a["kicker"])}</div><h2><a href="{a["href"]}">{esc(a["title"])}</a></h2><p>{esc(cut(a["summary"], 170))}</p>{BADGE}</div>{"" if n == 0 else f"<a href={chr(34)}{a[chr(104)+chr(114)+chr(101)+chr(102)]}{chr(34)}><img src={chr(34)}{a[chr(105)+chr(109)+chr(103)]}{chr(34)} alt={chr(34)}{chr(34)} loading=lazy></a>"}</article>' for n, a in enumerate(sec))}</section>
+<section class="nx"><h2 class="h">Now and next</h2><ul>{''.join(f'<li><time>{esc(i["when"])}</time><br><a href="{i["href"]}">{esc(cut(i["title"], 90))}</a></li>' for i in week[:6])}</ul><div style="margin-top:18px">{radar()}</div></section>
+</div></div>
+<section class="nums"><div class="w"><div><b>{N['companies']}</b><span>companies followed</span></div><div><b>{N['events']}</b><span>events this week</span></div><div><b>{N['articles']}</b><span>stories, signed</span></div><div><b>9–12</b><span>November, Lisbon</span></div></div></section>
+<div class="w" style="padding:30px 16px 60px;max-width:860px">{prompt_bar(True)}</div>'''
+    return page('e', 'The Front Page', css, body, '')
+
+# --- F: Signal (The Information's seriousness x Hugging Face and Hacker News' ranked feeds, dark) ---------
+def mock_f():
+    css = OWN % '--paper:#0a0c16;--ink:#eef0ff;--red:#ff6b9a;--green:#7cf3c4;--rule:#232741;--muted:#9aa0c3;--card:#12152a;--solid:#7c5cff;--on:#ffffff' + '''
+body{background:#0a0c16}
+.w{max-width:1240px;margin:0 auto;padding:0 16px}
+.hd{display:flex;align-items:center;gap:18px;padding:16px 0}.hd .wmx{height:26px}.hd nav{display:flex;gap:18px;font:500 13px var(--sans);color:var(--muted);flex-wrap:wrap}.sp{flex:1}
+.glow{position:relative;overflow:hidden;border-bottom:1px solid var(--rule)}
+.glow:before{content:"";position:absolute;inset:-40% -10% auto;height:620px;background:radial-gradient(closest-side,rgba(124,92,255,.55),transparent 70%),radial-gradient(closest-side at 75% 40%,rgba(34,211,238,.35),transparent 70%);filter:blur(10px);pointer-events:none}
+.hero{position:relative;padding:56px 0 40px;text-align:center}
+.pill{display:inline-block;font:600 12px var(--mono);color:#7cf3c4;border:1px solid rgba(124,243,196,.4);background:rgba(124,243,196,.08);border-radius:999px;padding:6px 14px}
+.hero h1{font:600 68px/1.02 var(--serif);margin:18px auto 14px;max-width:16ch;letter-spacing:-.02em}
+.grad{background:linear-gradient(90deg,#a78bfa,#22d3ee 55%,#7cf3c4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:19px;color:var(--muted);max-width:40em;margin:0 auto 26px}
+.hero .pb{max-width:760px;margin:0 auto;background:#12152a;border:1px solid transparent;background-image:linear-gradient(#12152a,#12152a),linear-gradient(90deg,#7c5cff,#22d3ee);background-origin:border-box;background-clip:padding-box,border-box;box-shadow:0 0 40px rgba(124,92,255,.35)}
+.hero .pcs{justify-content:center}.pc{background:transparent!important}
+.stats [data-cd] b{display:inline;font-size:inherit}.stats{display:flex;justify-content:center;gap:34px;margin-top:30px;font:12px var(--mono);color:var(--muted);flex-wrap:wrap}.stats b{display:block;font:600 30px var(--sans);color:#fff}
+.tkw{border-bottom:1px solid var(--rule);color:#c9cdf0}
+.g{display:grid;grid-template-columns:1.25fr .75fr;gap:34px;padding:34px 0 60px}
+.h{display:flex;justify-content:space-between;align-items:baseline;font:700 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.h a{color:#7cf3c4;text-transform:none;letter-spacing:0}
+.lead{display:grid;grid-template-columns:1fr 1fr;gap:20px;background:var(--card);border:1px solid var(--rule);border-radius:18px;padding:16px;margin-bottom:22px}
+.lead img{border-radius:12px}.lead h2{font:600 30px/1.1 var(--serif);margin:8px 0}.lead p{color:var(--muted);margin:0 0 8px}
+mark{background:none;color:#7cf3c4;border-bottom:3px solid #7cf3c4}
+.rk{counter-reset:r;margin:0;padding:0}
+.rk li{list-style:none;counter-increment:r;display:grid;grid-template-columns:56px 1fr 74px;gap:14px;align-items:center;padding:14px 12px;border-radius:14px;border:1px solid transparent;transition:.15s}
+.rk li:hover{background:var(--card);border-color:var(--rule)}
+.rk li:before{content:counter(r,decimal-leading-zero);font:700 30px var(--sans);background:linear-gradient(180deg,#a78bfa,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rk h3{font:600 19px/1.25 var(--serif);margin:0 0 4px}.rk img{border-radius:10px;border:1px solid var(--rule)}
+.chip{display:inline-block;font:600 10px var(--sans);letter-spacing:.08em;text-transform:uppercase;border-radius:6px;padding:3px 7px;margin-right:6px}
+.c0{background:rgba(167,139,250,.16);color:#c4b5fd}.c1{background:rgba(34,211,238,.14);color:#67e8f9}.c2{background:rgba(124,243,196,.14);color:#7cf3c4}.c3{background:rgba(255,107,154,.14);color:#ff9dbb}
+.side>div{background:var(--card);border:1px solid var(--rule);border-radius:18px;padding:16px;margin-bottom:18px}
+.side .radar{border:0;padding:0;background:none}.rr u{background:linear-gradient(90deg,#7c5cff,#22d3ee)!important;opacity:1!important}
+.tl li{list-style:none;padding:10px 0 10px 16px;border-left:2px solid #7c5cff;margin-left:4px;font:15px/1.3 var(--serif)}.tl ul{margin:0;padding:0}
+.tl time{display:block;font:600 11px var(--mono);color:#7cf3c4}
+.badge{color:#7cf3c4}
+.wmx{height:26px;width:auto}
+''' + TK_CSS + '''
+@media (max-width:980px){.g{grid-template-columns:1fr}.hd nav{display:none}.lead{grid-template-columns:1fr}}
+@media (max-width:600px){.hero h1{font-size:40px}.rk li{grid-template-columns:40px 1fr 56px;padding:12px 4px}.rk li:before{font-size:22px}.stats{gap:18px}}
+'''
+    kc = lambda k: 'c0' if 'Portugal' in k else 'c1' if 'Europe' in k else 'c2' if 'summit' in k.lower() or 'robot' in k.lower() else 'c3'
+    body = f'''<div class="glow"><div class="w"><header class="hd"><a href="index.html">{WMD}</a><span class="sp"></span><nav>{nav()}</nav></header>
+<section class="hero"><span class="pill">✦ An AI newsroom · {N['agents']} agents, 3 editors · every fact signed</span>
+<h1>What matters in AI in Portugal, <span class="grad">right now.</span></h1>
+<p>The companies, the people and the sessions at Web Summit Lisbon, ranked, sourced and explained.</p>{prompt_bar(True)}
+<div class="stats"><span><b>{N['companies']}</b>companies</span><span><b>{N['events']}</b>events</span><span><b>{N['articles']}</b>stories</span><span><b data-cd>3 days</b>to Opening Night</span></div></section></div></div>
+<div class="tkw">{ticker(week)}</div>
+<div class="w"><div class="g"><section>
+<article class="lead"><a href="{hero['href']}"><img src="{hero['img']}" alt="{esc(hero['alt'])}" fetchpriority="high"></a><div><span class="chip c0">Top story</span><h2><a href="{hero['href']}">{HL(esc(hero['title']))}</a></h2><p>{esc(cut(hero['summary'], 200))}</p>{BADGE}</div></article>
+<h2 class="h">Top signals today <a href="articles/index.html">All {N['articles']} →</a></h2>
+<ol class="rk">{''.join(f'<li><div><span class="chip {kc(a["kicker"])}">{esc(cut(a["kicker"], 28))}</span><h3><a href="{a["href"]}">{esc(a["title"])}</a></h3></div><a href="{a["href"]}"><img src="{a["img"]}" alt="" loading="lazy"></a></li>' for a in arts[:8])}</ol></section>
+<aside class="side"><div>{radar(7)}</div><div class="tl"><h2 class="h">In Lisbon this week <a href="summit/index.html">Agenda →</a></h2><ul>{''.join(f'<li><time>{esc(i["when"])}</time><a href="{i["href"]}">{esc(cut(i["title"], 80))}</a></li>' for i in week[:6])}</ul></div></aside>
+</div></div>'''
+    return page('f', 'Signal', css, body, '')
+
+# --- G: The Magazine (Every and Wired's covers x Platformer's colour x a newspaper's sections) --------------
+def mock_g():
+    css = OWN % '--paper:#fffaf3;--ink:#16131f;--red:#ff6a4d;--green:#3b5bfd;--rule:#ecdfcf;--muted:#625b6e;--card:#ffffff;--solid:#16131f;--on:#ffffff' + '''
+.w{max-width:1240px;margin:0 auto;padding:0 16px}
+.hd{display:flex;align-items:center;gap:18px;padding:14px 0}.hd .wmx{height:28px}.hd nav{display:flex;gap:18px;font:600 13px var(--sans);flex-wrap:wrap}.sp{flex:1}
+.cover{background:linear-gradient(120deg,#ff6a4d 0%,#ff4f8b 38%,#7b61ff 100%);color:#fff;border-radius:28px;margin:8px 16px 0;overflow:hidden;position:relative}
+.cover:after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.12)}
+.cover .in{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;padding:54px 48px;max-width:1240px;margin:0 auto}
+.issue{font:600 12px var(--mono);letter-spacing:.1em;opacity:.85}
+.cover h1{font:600 74px/.98 var(--serif);margin:14px 0 18px;letter-spacing:-.025em}
+.cover h1 i{font-style:italic;background:#ffd23f;color:#16131f;padding:0 10px;border-radius:8px;display:inline-block;transform:rotate(-1.5deg)}
+.cover p{font-size:19px;opacity:.92;max-width:30em;margin:0 0 22px}
+.lines a{display:block;border-top:1px solid rgba(255,255,255,.35);padding:12px 0;font:600 19px/1.25 var(--serif)}
+.lines small{display:block;font:700 11px var(--sans);letter-spacing:.1em;text-transform:uppercase;opacity:.8;margin-bottom:3px}
+.cover figure{margin:0;align-self:center;background:#fff;border-radius:18px;padding:10px;box-shadow:0 30px 70px rgba(30,0,60,.35);transform:rotate(1.5deg)}
+.cover figure img{border-radius:10px}
+.cover .pb{margin-top:6px}.cover .pc{color:#fff;border-color:rgba(255,255,255,.45);background:transparent}
+.sun{background:#ffd23f;margin:22px 16px 0;border-radius:22px}.sun .in{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:26px 36px;max-width:1240px;margin:0 auto}
+.sun b{display:block;font:700 70px/1 var(--serif);letter-spacing:-.04em}.sun span{font:700 12px var(--sans);text-transform:uppercase;letter-spacing:.08em}
+.secs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:34px 0}
+.sec{border-radius:22px;padding:22px;color:#fff}.sec h2{font:600 30px var(--serif);margin:0 0 4px}.sec .sub{font:600 12px var(--sans);text-transform:uppercase;letter-spacing:.1em;opacity:.85;margin-bottom:10px}
+.sec a.s{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center;padding:12px 0;border-top:1px solid rgba(255,255,255,.3);font:600 17px/1.25 var(--serif)}
+.sec img{border-radius:10px}
+.s0{background:#3b5bfd}.s1{background:#16131f}.s2{background:#0f9d7a}
+mark{background:#ffd23f;color:#16131f;padding:0 4px;border-radius:4px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;padding:10px 0 60px}
+.feat h2{font:600 44px/1.05 var(--serif);margin:8px 0}.feat .k{font:700 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#ff4f8b}
+.feat p{font-size:18px;color:var(--muted)}.feat img{border-radius:22px;box-shadow:0 20px 50px rgba(22,19,31,.15)}
+.wmx{height:28px;width:auto}
+@media (max-width:1000px){.cover .in,.feat{grid-template-columns:1fr}.secs{grid-template-columns:1fr}.cover .in{padding:36px 24px}.sun .in{grid-template-columns:1fr 1fr;padding:22px}.hd nav{display:none}}
+@media (max-width:600px){.cover{margin:6px 8px 0;border-radius:20px}.cover h1{font-size:44px}.sun{margin:16px 8px 0}.sun b{font-size:48px}.feat h2{font-size:32px}}
+'''
+    groups = [('Portugal', 'Startups, money and the country', lambda k: 'Portugal' in k, 's0'),
+              ('Europe', 'Brussels, funding, the continent', lambda k: 'Europe' in k, 's1'),
+              ('The summit', 'Announcements, robots, the days', lambda k: not ('Portugal' in k or 'Europe' in k), 's2')]
+    secs = ''.join(f'<section class="sec {c}"><div class="sub">{esc(s)}</div><h2>{esc(t)}</h2>' + ''.join(f'<a class="s" href="{a["href"]}"><img src="{a["img"]}" alt="" loading="lazy"><span>{esc(a["title"])}</span></a>' for a in [a for a in arts if f(a['kicker'])][:4]) + '</section>' for t, s, f, c in groups)
+    feat = arts[0]
+    body = f'''<div class="w"><header class="hd"><a href="index.html">{WML}</a><span class="sp"></span><nav>{nav()}</nav></header></div>
+<section class="cover"><div class="in"><div><div class="issue">WEB SUMMIT EDITION · FRIDAY 6 NOVEMBER 2026 · OPENING NIGHT IN <span data-cd>3 DAYS</span></div>
+<h1>The universe of AI in <i>Portugal</i>, mapped.</h1><p>The companies, the people and the events, and how they connect. Written by AI agents, checked by editors, every fact signed.</p>
+<div class="lines"><a href="{hero['href']}"><small>Cover story</small>{HL(esc(hero['title']))}</a>{''.join(f'<a href="{a["href"]}"><small>{esc(a["kicker"])}</small>{esc(a["title"])}</a>' for a in arts[1:3])}</div></div>
+<figure><a href="{hero['href']}"><img src="{hero['img']}" alt="{esc(hero['alt'])}" fetchpriority="high"></a></figure></div></section>
+<section class="sun"><div class="in"><div><b>{N['companies']}</b><span>companies followed</span></div><div><b>{N['events']}</b><span>events this week</span></div><div><b>{N['articles']}</b><span>stories, signed</span></div><div><b>{N['agents']}</b><span>AI agents on the desk</span></div></div></section>
+<div class="w"><div style="max-width:820px;margin:34px auto 0">{prompt_bar(True)}</div><div class="secs">{secs}</div>
+<article class="feat"><a href="{feat['href']}"><img src="{feat['card']}" alt="{esc(feat['alt'])}" loading="lazy"></a><div><div class="k">{esc(feat['kicker'])}</div><h2><a href="{feat['href']}">{esc(feat['title'])}</a></h2><p>{esc(feat['summary'])}</p>{BADGE}</div></article></div>'''
+    return page('g', 'The Magazine', css, body, '')
+
+for k, f in [('a', mock_a), ('b', mock_b), ('c', mock_c), ('d', mock_d), ('e', mock_e), ('f', mock_f), ('g', mock_g)]:
     open(os.path.join(HERE, f'{k}.htm'), 'w', encoding='utf-8').write(f())
 print(json.dumps(dict(articles=len(arts), days=len(days), fields=fields)))

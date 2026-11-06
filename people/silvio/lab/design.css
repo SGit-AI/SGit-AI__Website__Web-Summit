@@ -8,7 +8,7 @@
 .ptd-head{display:flex;justify-content:space-between;align-items:center}.ptd-head h2{margin:0;font:600 22px Newsreader,Georgia,serif}
 .ptd-x{border:0;background:#eef2f6;color:#1e2a38;width:34px;height:34px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer}
 .ptd-sub{margin:4px 0 16px;color:#5f6b7a;font-size:14px}
-.ptd-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.ptd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .ptd-card{display:block;text-decoration:none;color:inherit;border:1px solid #e3e8ee;border-radius:14px;overflow:hidden;background:#fff;transition:transform .15s,box-shadow .15s}
 .ptd-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(20,30,50,.12)}
 .ptd-card.on{border:2px solid #2f6f9f}
