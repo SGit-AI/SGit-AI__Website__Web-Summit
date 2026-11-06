@@ -1094,6 +1094,22 @@
         "fingerprint": "sha256:23a5e63301a503bc",
         "signing_fingerprint": "sha256:cd04300999022a77"
       }
+    },
+    {
+      "id": "recruiter-indi",
+      "label": "recruiter@web-summit.indi (Claude Code session)",
+      "role": "Indi Gupte's recruiter (recruiter@web-summit.indi): searches public sources for people who may want RiskMandate or could join the team, and drafts approaches for Indi to send. Never contacts anyone, and keeps nothing about a person in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Indi's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlN48tsC2L6X71Gckq7xB\nCAjH3MVmfzqYpTZxO2rKipdYXRUk4R21DQzh+yT+iefupJC4+3kkOzgaebaEd808\nu4zJYHQ+Pj+meKYq/BjyGV+IaWaEPCbKpH6SJ9EigKemw/Cci0R72fvQyUKKP/Yr\nT6GSxTzqeK4oRAQLNhCKPUMVTLlCXo+1UiZncwzWY2Bx+QXWhXc1zpFtNqEhSsS4\n4EOOzL0lgbOwno+GTRt8po8YdkvpghV2xNpFpoaI4hUNpf2uDOERHWisrY3QKskt\n5RPW6zhTiEqEh8pZHYKdA1KPpwxM0fodm8jgifbLnVJoABAxz/hlFW3+l1t47vie\nv3xLIllj2UmC40fzFca5OA81kESy85Eyi0p3Tz/51vd95F9mAK6deglYlpCeKVFa\n+R4bySsYY6bNcIVQcPT4ZAWHHffY/SdxfvTJ08bnHq6EEB8//6CoKA1fLkvGwVrY\nRkR4fTRjdbwDGdSYkSE8zPKg0jBHpxp2uWoDEyvi/Im8Nj7p+ShNF16XRaZm/N7q\n/zjEBlDzk+PeGCQoKfL+V6BGi/ac641/PnWZU/pw4TMpg1axPo1dWHy6pCII29wk\nnIKuH2nMSylG14cCcY0PWMO0MOvyhli+4Lku+DNEROlns02FXXn3PnRvnDK4IYK+\nynNDo+RvNi8CksaRcTqFgO0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEVUrCAVwHD13TuE6JC8x+fytic62B\nWbbRBaYhI1xzZHNO3ifC1Q+CVjoSItnWebXsJnzJSAGTX8JNjf+AHyE7Dg==\n-----END PUBLIC KEY-----\n",
+        "label": "recruiter@web-summit.indi",
+        "fingerprint": "sha256:3c64e5b7dd6aa1ce",
+        "signing_fingerprint": "sha256:9d60bf7152322b58"
+      },
+      "status": "active"
     }
   ]
 }
