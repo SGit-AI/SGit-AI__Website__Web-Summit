@@ -30,10 +30,25 @@ export function build(ROOT) {
     if (!stories.length) stories = md.split('\n').filter(l => /^\|\s*S\d+\s*\|/.test(l)).map(l => l.split('|').slice(1, -1).map(c => c.trim()))
         .map(([id, title, beat, angle, added]) => ({ id, title, beat, angle, added, sources: [] }))
     const srcList = s => s.sources.length ? `<p class="meta">Sources:</p><ul class="story-sources">${s.sources.map(x => `<li><a href="${esc(x.url)}" rel="noopener">${esc(x.label)}</a>${x.read ? `, read ${esc(x.read)}` : ''}</li>`).join('')}</ul>` : '<p class="meta">No source yet.</p>'
-    const card = s => `<article class="card story" id="${esc(s.id.toLowerCase())}"><p class="meta"><strong class="story-id">${esc(s.id)}</strong> · <span class="pill">${esc(s.beat)}</span> · added ${esc(s.added)}</p><h3 class="story-title">${esc(s.title)}</h3><p>${esc(s.angle)}</p>${srcList(s)}<p><button type="button" class="story-comment" data-story="${esc(s.id.toLowerCase())}">Comment on ${esc(s.id)}</button></p></article>`
+    // Each card is a native <details> (no script): collapsed it shows the number, title, beat and the one-line angle;
+    // open it shows when it was added, the sources and the Comment button. Collapsed by default (Vicky, 6 Nov).
+    const card = s => `<details class="card story" id="${esc(s.id.toLowerCase())}"><summary><span class="meta"><strong class="story-id">${esc(s.id)}</strong> · <span class="pill">${esc(s.beat)}</span></span><h3 class="story-title">${esc(s.title)}</h3><span class="story-angle">${esc(s.angle)}</span></summary><div class="story-more"><p class="meta">Added ${esc(s.added)}</p>${srcList(s)}<p><button type="button" class="story-comment" data-story="${esc(s.id.toLowerCase())}">Comment on ${esc(s.id)}</button></p></div></details>`
+    const storyCss = `<style>
+.stories-list details.story > summary { cursor: pointer; list-style: none; display: block; min-height: 44px; padding-right: 7rem; position: relative }
+.stories-list details.story > summary::-webkit-details-marker { display: none }
+.stories-list details.story > summary > * { display: block }
+.stories-list details.story > summary .story-title { margin: .25rem 0 }
+.stories-list details.story > summary .story-id, .stories-list details.story > summary .pill { display: inline }
+.stories-list details.story > summary::after { content: "Show more \\25BE"; position: absolute; top: 0; right: 0; font-size: .85rem; color: var(--accent); white-space: nowrap }
+.stories-list details.story[open] > summary::after { content: "Show less \\25B4" }
+.stories-list details.story > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px }
+.stories-list .story-more { margin-top: .75rem; border-top: 1px solid currentColor; padding-top: .5rem }
+.stories-list .story-sources a { overflow-wrap: anywhere }
+</style>`
     const body = `<p>The story ideas the newsroom's curator (curator@web-summit.vicky) suggests for the journalist, newest first. None is fact-checked yet. Source: <a href="${SRC}">desks/curator/README.md</a> in the newsroom repository, last updated by the curator on ${esc(updated)}; this page is refreshed at each run of Vicky's dashboard agent.</p>
 <p class="meta"><b>To comment on a story:</b> press its <i>Comment</i> button. It selects the story's id and title and opens the site's feedback pane with them quoted; write your comment and press Submit. The first time, the pane may need turning on for your device (<a href="?feedback=on">turn on feedback</a>). Choose newsroom@web-summit.dinis as the recipient for the newsroom.</p>
-<div class="cards">${stories.map(card).join('')}</div>
+${storyCss}
+<div class="cards stories-list">${stories.map(card).join('')}</div>
 <script>
 document.addEventListener('click', e => {
   const b = e.target.closest('.story-comment'); if (!b) return

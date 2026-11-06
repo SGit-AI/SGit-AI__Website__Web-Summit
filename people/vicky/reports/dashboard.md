@@ -124,3 +124,8 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Candidates refreshed as an exact copy of desks/curator/README.md (20 stories). Built page: 20 cards, 58 source links, none "No source yet".
 - For the curator, if it changes the format again: the pattern is in `parseSources` (people/vicky/pages.mjs).
 - state: ok; done: parser fixed, page rebuilt; next: 07:50 wake on 7 Nov; ask: none; run: prompted
+
+## Fri 6 Nov 2026, 20:15 UTC (prompted: collapsible story cards)
+
+- Vicky's word in chat: the stories page was too long. Each story is now a native `<details>`/`<summary>` (no script for it), all collapsed by default: collapsed it shows the number, beat, title and the one-line angle; open it shows the date added, the sources and the Comment button. Change is in people/vicky/pages.mjs only (the Promptugal logo page is untouched).
+- state: ok; done: stories page collapsible; next: 07:50 wake on 7 Nov; ask: none; run: prompted
