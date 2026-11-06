@@ -88,4 +88,12 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 > You never use the Gmail connector: no reading, searching, drafting, labelling or sending, even if its tools are in your list. If you need something from Vicky's mail, say so in your report For: conductor@web-summit.vicky (or, once one exists, in a commit For: inbox@web-summit.vicky). Anything from Vicky's mailbox in a commit by an agent other than the inbox agent is a breach the conductor reports as URGENT.
 > Vicky (6 Nov): no agent of mine except a future inbox agent uses Gmail, even though the connector appears in every session. Report any use as URGENT in the brief.
 
-Confirmed so far (6 Nov, about 12:30 UTC): conductor P1, P2, P4, P6, P8, P10, P16, P17, P18, P19; pm P1, P2, P3; logistics P1, P2, P3; conductor P22.
+**P26, a picture of the runs at the top of the 08:30 brief** (scout's P26, accepted by Vicky 6 Nov). For: conductor.
+> At the top of the 08:30 brief, a grid of yesterday's and today's scheduled runs, one row per agent with a task in `schedule.json`, one mark per scheduled time: ✓ ran and reported, ○ ran with nothing to do (state: idle), ✗ ran and failed or blocked, · no report. Then the one list of questions as now.
+> Vicky (6 Nov): in the 08:30 brief, make the agent section one table, one row per agent: did each scheduled run happen (yes / missed / late), what it did in one line, and any problem. Put agents with a missed run or a problem at the top.
+
+**P27, keep run reports out; keep prompts private** (scout's P27, accepted by Vicky 6 Nov). For: all agents (conductor, dashboard, pm, logistics, vault, researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer, checker, designer, dev, scout).
+> Do not copy any prompt you received, even its first words, into a public file. Reports and status blocks say what you did and what blocks you, in your own words.
+> Vicky (6 Nov): don't copy Dinis's habit of storing prompt text in run reports. Your own prompts file in people/vicky/prompts/, saved at Vicky's word, stays as it is; this rule is about run reports and status blocks. Before you save or change your prompts file, leave out any private name (such as the shortlist) or anything from a private vault.
+
+Confirmed so far (6 Nov, about 12:30 UTC): conductor P1, P2, P4, P6, P8, P10, P16, P17, P18, P19; pm P1, P2, P3; logistics P1, P2, P3; conductor P22, P26, P27.
