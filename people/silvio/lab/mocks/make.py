@@ -57,8 +57,8 @@ PAL = {
                ('#121317', '#f6f3ec', '#f07278', '#6dbb7e', '#44453f', '#b4b6ad', '#1b1c21', '#f6f3ec', '#121317')),
 }
 _v = lambda t: ';'.join(f'--{k}:{c}' for k, c in zip(['paper', 'ink', 'red', 'green', 'rule', 'muted', 'card', 'solid', 'on'], t))
-PALETTES = '\n'.join(f'[data-pal={k}]{{{_v(l)}}}' for k, (l, d) in PAL.items()) + '\n@media (prefers-color-scheme:dark){' + ''.join(f'[data-pal={k}]{{{_v(d)}}}' for k, (l, d) in PAL.items()) + '}'
-PAL_JS = '''<script>(function(){var h=document.documentElement,k='pt-lab-palette';function set(p){h.dataset.pal=p;document.querySelectorAll('.pals button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.p===p)});try{localStorage.setItem(k,p)}catch(e){}}var s=null;try{s=localStorage.getItem(k)}catch(e){}set(s||'atlantico');document.querySelectorAll('.pals button').forEach(function(b){b.onclick=function(){set(b.dataset.p)}})})();</script>'''
+PALETTES = '\n'.join(f'[data-pal={k}]{{{_v(l)}}}' for k, (l, d) in PAL.items()) + '\n' + ''.join(f'[data-mode=dark][data-pal={k}]{{{_v(d)}}}' for k, (l, d) in PAL.items())
+PAL_JS = '''<script>(function(){var h=document.documentElement,k='pt-lab-palette';function set(p){h.dataset.pal=p;document.querySelectorAll('.pals [data-p]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.p===p)});try{localStorage.setItem(k,p)}catch(e){}}var s=null;try{s=localStorage.getItem(k)}catch(e){}set(s||'atlantico');var mk='pt-lab-mode';function sm(m){h.dataset.mode=m;document.querySelectorAll('.pals [data-m]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.m===m)});try{localStorage.setItem(mk,m)}catch(e){}}var m=null;try{m=localStorage.getItem(mk)}catch(e){}sm(m==='dark'?'dark':'light');document.querySelectorAll('.pals [data-m]').forEach(function(b){b.onclick=function(){sm(b.dataset.m)}});document.querySelectorAll('.pals [data-p]').forEach(function(b){b.onclick=function(){set(b.dataset.p)}})})();</script>'''
 
 N = dict(companies=120, articles=22, events=218, days_to_go=3, agents=30)
 
@@ -96,7 +96,7 @@ AI_CSS = '''
 # --- shared head and lab banner ---------------------------------------------------------------------------
 def page(key, name, css, body, title):
     return f'''<!doctype html>
-<html lang="en-GB" data-pal="atlantico">
+<html lang="en-GB" data-pal="atlantico" data-mode="light">
 <head>
 <meta charset="utf-8">
 <!-- LAB MOCK {key.upper()}, not the original: {name}. Made by design@web-summit.silvio on 6 November 2026 from the lab copy's real content (people/silvio/lab/mocks/make.py). Links go to the live site. -->
@@ -116,14 +116,14 @@ img{{max-width:100%;height:auto;display:block}}
 .pals button{{font:500 12px var(--sans);border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:999px;padding:3px 10px;margin-left:4px;cursor:pointer}}.pals button[aria-pressed=true]{{background:var(--solid);color:var(--on);border-color:var(--solid)}}
 .lab a{{text-decoration:underline}}
 .wm{{height:28px;width:auto}}.wm.dk{{display:none}}
-@media (prefers-color-scheme:dark){{.wm.lt{{display:none}}.wm.dk{{display:inline}}}}
+[data-mode=dark] .wm.lt{{display:none}}[data-mode=dark] .wm.dk{{display:inline}}
 .mono{{font-family:var(--mono)}}.sans{{font-family:var(--sans)}}
 {AI_CSS}
 {css}
 </style>
 </head>
 <body>
-<div class="lab"><span>LAB MOCK {key.upper()} · {esc(name)} · not the live site</span><span class="pals">Colours: <button data-p="atlantico">Atlântico</button><button data-p="salvia">Sálvia</button><button data-p="azulejo">Azulejo</button><button data-p="classic">Classic</button></span><span><a href="https://web-summit.sgit.ai/people/silvio/lab/index.html">All options</a> · <a href="https://promptugal.news/">The original</a></span></div>
+<div class="lab"><span>LAB MOCK {key.upper()} · {esc(name)} · not the live site</span><span class="pals">Colours: <button data-p="atlantico">Atlântico</button><button data-p="salvia">Sálvia</button><button data-p="azulejo">Azulejo</button><button data-p="classic">Classic</button> · <button data-m="light">Light</button><button data-m="dark">Dark</button></span><span><a href="https://web-summit.sgit.ai/people/silvio/lab/index.html">All options</a> · <a href="https://promptugal.news/">The original</a></span></div>
 {body}
 {COUNTDOWN_JS}
 {PAL_JS}
