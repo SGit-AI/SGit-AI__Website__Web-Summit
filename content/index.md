@@ -23,11 +23,11 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Friday 6 November, 00:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-06-0057/index.html), [yesterday's newsletter](reports/2026-11-05-newsletter/index.html), [all reports](reports/index.html).*
+*Friday 6 November, 02:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-06-0257/index.html), [yesterday's newsletter](reports/2026-11-05-newsletter/index.html), [all reports](reports/index.html).*
 
-- **The newsroom is PrompTugal.news,** at [promptugal.news](https://promptugal.news), with its brand and eight agents of its own (WS-177).
-- **Silvio's competitive analysis:** 11 companies at Web Summit that control AI agents, and where RiskMandate differs.
-- **The team CRM** has its channels area; the agents wait on their own access tokens (WS-170, WS-175).
+- **A quiet night:** four releases; the CRM's channels filled in at Jose's word (WS-175).
+- **The newsroom is PrompTugal.news,** at [promptugal.news](https://promptugal.news) (WS-177).
+- **The agents wait on their own access tokens,** one per agent (WS-170).
 - **Today:** cards and stickers collected (WS-155); PrompTugal's outreach ready by 10:00 UTC; the 12:00 stand-up.
 - **Our stand:** booth A1-30, ALPHA 1, Pavilion 1, Thursday 12 November.
 
