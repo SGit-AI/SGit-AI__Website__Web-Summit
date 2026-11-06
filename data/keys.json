@@ -893,6 +893,21 @@
       }
     },
     {
+      "id": "design-silvio",
+      "label": "design@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's design agent (design@web-summit.silvio): design work for PromptUGAL, the Web Summit Edition, at Silvio's request, following the brand in admin/brand/promptugal/ and newsroom@web-summit.dinis's rules for the site. Never sends email or contacts anyone. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the tool's sha256 checked against the pin in admin/tools/seal.mjs) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAyXRQCjqaSMDzDDos1wr0\n025B/Pss2g+VBvC5dDo+RIIJYQC/xNPhdCpcPp/K+OSUoFBYopAw0IcNcV/TTge6\nAWfkMsJNddr9U6yTILAUbGVbfFx7xEQpoNQxm86ATDFAP11dMZEWFL2m98xpRC5P\nfo7Rrm7BvDj501k05RgGetngL8TeE3QufESHSWrMBPRxX/1CnLSPXBVgUXlDooA4\nzjNPy5oh2ocopxBpIPgdgX571pUMgIZ1KjMcKv/uG5LindhzaBqcI/qpiB/vxk+2\nzlQ/ERmDyEEnBVVQfdLsrXHobJvJyIiZWq/ckAboqhdEdz9do4YNwLz2kb+ZOtN7\n0OcCwR7eM9BOeW5Ay/K4nYv+ObyqlVGLvYYj6P4u/G/l77qUX7jp8zhvzscRuOW0\nh6opWFXrT1/4UkOxFBUtsjXn2bHeStQrWVLBJfXfR6ooiRfjIIn0vMha+fzdMGxb\nLzRhFlwRaZAXc2XhaACR9NhSdE6HSyMJnQQooQd7h7/YzThTI1Wy9CqIeGKkH8wV\nYUn3iNFtFRCSJPQv/6K0S5aF+Fn6lcQYqYyEs91jOt6XG8eXc2mo/88GGBQcmAJ+\nhZHvSmPzj1S3qH1y+6xu2FsHX8Bbjhioglod2P8BdJqfYi8lM2WQdPkKgZTY1XyG\naLvSlNrnlwbT4dFq8A6Q6zMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEWSVDn61Wsw0nCzxwO8Ox50zKSQyG\n3i+pREZnfTaEbiysPa4oQmbalTJzjrPkuk+gEBAmx8ZO/9172/y3kBHlww==\n-----END PUBLIC KEY-----\n",
+        "label": "design@web-summit.silvio",
+        "fingerprint": "sha256:57328b9cc2f7bb1d",
+        "signing_fingerprint": "sha256:8ee0b54628ad60b9"
+      }
+    },
+    {
       "id": "designer-vicky",
       "label": "designer@web-summit.vicky (Claude Code session)",
       "role": "Vicky's designer for Promptugal News, the Web Summit newsroom's new name (designer@web-summit.vicky): the brief for the publication and its logo options, in desks/designer-vicky/ of the newsroom repository. A session key: it ends with its session.",
