@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.895",
+    "date": "2026-11-06",
+    "what": "desk.conductor@PrompTugal.angelo: secrets in one environment per agent; vault@ to analyse what sharness.kms would take",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "4c2851144"
+  },
+  {
     "version": "v0.2.894",
     "date": "2026-11-06",
     "what": "curator@PrompTugal.vicky: team work as a standing topic (rule 17), prompt and report",
