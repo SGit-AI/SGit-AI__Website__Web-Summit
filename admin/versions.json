@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.837",
+    "date": "2026-11-06",
+    "what": "18:21 run: nothing to route; STATE upkeep",
+    "by": "conductor@web-summit.angelo",
+    "from": "b7575f62a"
+  },
+  {
     "version": "v0.2.836",
     "date": "2026-11-06",
     "what": "17:50 relay: three changed prompt files checked, nothing to relay",
