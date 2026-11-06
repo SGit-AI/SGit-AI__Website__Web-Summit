@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.814",
+    "date": "2026-11-06",
+    "what": "the whole-team map full screen, with its own link: open it straight from a URL, copy the link, close with Esc",
+    "by": "dev@web-summit.angelo",
+    "from": "b60d4ffd4"
+  },
+  {
     "version": "v0.2.813",
     "date": "2026-11-06",
     "what": "Angelo's agent setup guide, final draft for PrompTugal.news to review and publish (WS-125)",
