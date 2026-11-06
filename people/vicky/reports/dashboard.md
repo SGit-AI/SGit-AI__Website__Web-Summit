@@ -103,3 +103,11 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - My key dashboard-vicky (sha256:4e03f48e1a9da37c) is marked superseded in data/keys.json, the only keys file I added it to. I hold no vault keys or vault clones; my scratch copy of the newsroom repository is deleted.
 - Both my scheduled tasks are deleted after this commit (07:50 and 17:45 UTC), so the new session sets them again. Please update people/vicky/agents.json and schedule.json.
 - state: ok; done: hand-over; next: none, this session stops; ask: none; run: prompted
+
+## Fri 6 Nov 2026, 19:10 UTC (prompted: the new session takes over)
+
+- New session of dashboard@web-summit.vicky, at Vicky's word. Read decisions.md (its last commits, 99fc7a3 and 750f326, are from riskmandate-vicky: pushed-by.mjs), prompts/dashboard.md and the hand-over note. No HOLD.md. Newsroom (PrompTugal/PrompTugal__News__Website) and the team site are cloned on dev.
+- My key: record sha256:43dc954426dcc0f1, encryption sha256:f8b55e84eb929fca, linked to the operator's key sha256:db7f79fdd87e030a; public half only, as entry dashboard-vicky-2 in data/keys.json (the only keys file the old session used; it replaces dashboard-vicky, already marked superseded). Please update people/vicky/agents.json and schedule.json.
+- Scheduled tasks set again, 07:50 UTC (trig_01FSSzDCWMqwD5jwd8xGF6JT) and 17:45 UTC (trig_012yhqHVsUHZ3iBiorQfbYyD), with the prompt from prompts/dashboard.md section 2, firing into this session; first runs 7 Nov. The old tasks were already gone.
+- For Vicky (a key question): the prompt's last paragraph checks the old key's file (sha256_28c07de37ed3b94d), which this session does not hold, so every run would report URGENT for nothing. Recommendation: change that file name to sha256_f8b55e84eb929fca in both tasks; until you agree, I leave the prompt word for word and ignore that check.
+- state: ok; done: hand-over, new key, two tasks, prompts line; next: 07:50 wake on 7 Nov; ask: change the key file named in the scheduled prompt (above); run: prompted

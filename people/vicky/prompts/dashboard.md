@@ -57,3 +57,7 @@ In Vicky's words where she gave them, with the date. Most are already in the pro
 - **Publishing a page that isn't linked**: the gate refuses an orphan page, so a new page under people/vicky/ is linked from the dashboard's links groups (Vicky asked for both pages to be linked there).
 - **A replacement** (6 Nov): before a new session takes over, bring this file up to date, write a hand-over note in people/vicky/handover/dashboard-<date>.md, mark the key superseded in data/keys.json, and delete this session's scheduled tasks (Vicky's word; it also covers P17's debrief).
 
+
+## 4. Hand-overs
+
+- **6 November 2026, about 19:05 UTC:** a new session of dashboard@web-summit.vicky took over from the old one, at Vicky's word (scout's P17). It read decisions.md, this file and the hand-over note, made its own session key (record sha256:43dc954426dcc0f1, encryption sha256:f8b55e84eb929fca; entry `dashboard-vicky-2` in data/keys.json, replacing `dashboard-vicky`), and set the two scheduled tasks again (07:50 and 17:45 UTC, the prompt in section 2 word for word, firing into the new session). The scheduled prompt's last paragraph still names the old key's file (`sha256_28c07de37ed3b94d`); it was left as it is, and a change to the new key is asked of Vicky in reports/dashboard.md.

@@ -95,6 +95,22 @@
       "status": "superseded: replaced by a new session on 6 November 2026 at Vicky's word (scout's P17), about 19:00 UTC; the new session makes and publishes its own key"
     },
     {
+      "id": "dashboard-vicky-2",
+      "label": "dashboard@web-summit.vicky (Claude Code session, 6 November 2026)",
+      "role": "Vicky's dashboard agent (dashboard@web-summit.vicky), the new session that took over on 6 November 2026 at Vicky's word (scout's P17). It replaces the entry dashboard-vicky (sha256:28c07de37ed3b94d), which is superseded. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository from Vicky's account; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); the operator has not confirmed it, and nothing depends on it.",
+      "added": "2026-11-06",
+      "replaces": "dashboard-vicky",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwX4QiCw9k81flOHV7/+R\n1HgvO/B0Ty47jgIavuiog38o4mOmIFTa+03vk9PIQbhb2ZKR2y63S0qyTvS6TPOB\nD+z7ZefmNvVVVLk5GaMjr2sdNslTucJjG/0FqRENT0KX78rGRIKv+SIKVIVk7hRO\nnVD+j5ihner0HvyD/XVEG4hhVYXC0dNT2iyg3jSHYsjdf7opTBj6Dmpf2SlWM5bL\nBBWjpONhyIrWYA0GmEa2Z8nJvouMw4hn0O59MaVzGM8AR55TWMUVItrHoAysZxI/\n/xXgNI0+VW2/bYQlsR71n8+aFy2pnYkSav+l0FlHBSufCem1z+Kx+F5KPATEX/xt\ngw48+fnuBHUflYJayoGziSNFpFHUqKVfEv2xS4GyVuxY420/2ygpTklDd6PNexKJ\n8wgQ3nK9ZGJdzKzRtaVy2WwU6UxFWOShSIbouAU2dzKqEv8YerXl4a5VmMxsvxtG\nVc/MGCotisJGYoZ1aUZMqD/esbRptIMm8nJLzoX8Yek+OEEAUZtH+uflOxBC+wEZ\nBxvUXsjpKRFtMpUkD4xuqO3zuB52bYooMgmOspofYiwb2Ab49Zl5rI9bIBE7VS60\nIsXylHd4GaAGPVSnPN2xv/Tfnu1+Ef/gtFs+LplgdQU1CON98JZmuEyh9g83tHtF\nN79TKW0NIjd9APcr9B2sup8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYKPscBrHb6+xhqpMyTetZxlq2/1z\n7rVu4yh/xh4dDHMSok6+rB+mazSOoKfghagytigucpoYlUEotcEnbvL+bg==\n-----END PUBLIC KEY-----\n",
+        "label": "dashboard@web-summit.vicky (Claude Code session)",
+        "fingerprint": "sha256:f8b55e84eb929fca",
+        "signing_fingerprint": "sha256:43dc954426dcc0f1"
+      }
+    },
+    {
       "id": "conductor-vicky",
       "label": "conductor@web-summit.vicky (Claude Code session)",
       "role": "Vicky's conductor (conductor@web-summit.vicky): conducts Vicky's agents and keeps people/vicky/ with Vicky. A session key: it ends with its session.",
