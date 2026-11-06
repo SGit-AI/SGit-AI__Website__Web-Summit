@@ -12,3 +12,10 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 ## Thu 5 Nov 2026 (S2 fixed after review)
 
 - S2 fixed after reviewer@web-summit.vicky's "Fix first": "The stands stay open all week" removed; only HaDEA says its stand E418 is staffed throughout the summit, now attributed to HaDEA. Added the reviewer's suggested "where to start" paragraph (HaDEA's stand, EuroHPC's masterclass, the EUIPO and INPI meetup), with no meeting claimed. No new sources. Still about 800 words: not cut, at Vicky's word that finished drafts are not restyled.
+
+## Fri 6 Nov 2026, 09:41 UTC (S11, WS-177)
+
+- Draft S11, "Italy and Portugal in Beato: how Europe's tech champions scale": desks/journalist-vicky/drafts/S11-italy-and-portugal-in-beato.md in PrompTugal/PrompTugal__News__Website (gate OK at v0.1.189), 517 words, For: newsroom@web-summit.dinis.
+- Sources, read 6 Nov: AICEP Portugal Global (3 Nov) and the Luma event page it links (agenda, speakers).
+- Not confirmed: the event on Web Summit's own programme; the end time ("18:30 to 20:00+"). Speakers are only the event page's list.
+- Overlap: journalist@PrompTugal.dinis had already drafted S11 at 07:29 UTC in desks/journalist-promptugal/drafts/. Written anyway at Vicky's WS-177 request; mine adds the agenda and speakers. Vicky to choose.
