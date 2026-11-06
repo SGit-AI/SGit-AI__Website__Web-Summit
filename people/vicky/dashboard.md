@@ -6,12 +6,11 @@ Kept short at Vicky's word (3 November): your issues, decisions and agents are i
 
 ## Needs me {#needs-me}
 
-*Written by your dashboard agent at each wake from the board, the stand-up agendas, your conductor's briefs and the board-health notes; soonest first. Last updated: Fri 6 Nov, 17:55 UTC.*
+*Written by your dashboard agent at each wake from the board, the stand-up agendas, your conductor's briefs and the board-health notes; soonest first. Last updated: Fri 6 Nov, 19:20 UTC.*
 
 | Type | What | Due | With |
 |---|---|---|---|
 | Decide | [One line for the record: the 5 Nov newsroom decision](briefs/2026-11-06T0845Z.pdf) | Today | Your conductor records your words |
-| Decide | [WS-31: how the schedules leave the vault](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/reports/pm.md) | Tomorrow, Sat 7 Nov | pm@ recommends its own token from Dinis; or vault@ pushes them |
 | Decide | [The guide's token step](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/reports/pm.md) | When you can | pm@ proposes "one token per agent" (WS-170) |
 
 ## To follow up {#follow-up}
@@ -24,7 +23,7 @@ Not mine, but on the plan: due by Thursday, overdue, or blocking someone. **No o
 | [Pulse app](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-41-the-pulse-app.md); [PM workflow write-up](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-53-silvio-s-agentic-project-management-workflow-wri.md) | **No owner** (Jose; Silvio) | Open | **Overdue:** Wed 4 Nov | Not yours, at your word; theirs to pick up |
 | [The 12 storylines](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-177-promptugal-ready-for-outreach-by-friday.md) (WS-177) | conductor@web-summit.dinis | Picked | **Overdue:** today, 10:00 | Every draft that lands helps Friday's outreach |
 | [Photos on the site](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-163-each-person-confirms-their-own-photo.md) (WS-163) | You | Yours confirmed | Today | Angelo, Indi, Jose and Dinis still to answer |
-| [Sessions each person attends](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-32-the-sessions-each-person-attends.md) | **No owner** (for everyone) | Open | Tomorrow, Sat 7 Nov | Each person adds their own (your word on WS-31) |
+| [Sessions each person attends](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-32-the-sessions-each-person-attends.md) | **No owner** (for everyone) | Open | Tomorrow, Sat 7 Nov | Each person adds their own |
 | [Articles from a lead conversation](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/board/WS-168-articles-from-a-conversation-with-a-lead.md) (WS-168) | **No owner** (for Dinis, Nimay, Indi) | Open; your proposal on it | Sun 8 Nov | Dinis and Nimay to answer; WS-29 waits on it |
 
 ## My vault {#vault}

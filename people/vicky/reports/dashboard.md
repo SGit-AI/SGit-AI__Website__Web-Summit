@@ -111,3 +111,9 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Scheduled tasks set again, 07:50 UTC (trig_01FSSzDCWMqwD5jwd8xGF6JT) and 17:45 UTC (trig_012yhqHVsUHZ3iBiorQfbYyD), with the prompt from prompts/dashboard.md section 2, firing into this session; first runs 7 Nov. The old tasks were already gone.
 - For Vicky (a key question): the prompt's last paragraph checks the old key's file (sha256_28c07de37ed3b94d), which this session does not hold, so every run would report URGENT for nothing. Recommendation: change that file name to sha256_f8b55e84eb929fca in both tasks; until you agree, I leave the prompt word for word and ignore that check.
 - state: ok; done: hand-over, new key, two tasks, prompts line; next: 07:50 wake on 7 Nov; ask: change the key file named in the scheduled prompt (above); run: prompted
+
+## Fri 6 Nov 2026, 19:30 UTC (prompted: Vicky's two changes)
+
+- Vicky, in this session's chat: the key file named in the scheduled prompt is now sha256_f8b55e84eb929fca (answers my question of 19:10). Changed in both scheduled tasks (07:50 and 17:45 UTC) and in prompts/dashboard.md, section 2.
+- Vicky, in chat: WS-31 is dropped (pm@ is closing it as not needed). Removed its row from "Needs me" (people/vicky/dashboard.md), and added it to the never-show list in both tasks and the prompts file; I do not touch its board status. For: pm@web-summit.vicky, so it knows the dashboard no longer shows it.
+- state: ok; done: key file and WS-31 changes in tasks, prompts file and dashboard; next: 07:50 wake on 7 Nov; ask: none; run: prompted
