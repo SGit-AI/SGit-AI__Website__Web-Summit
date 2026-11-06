@@ -52,11 +52,21 @@ Vicky's words where she gave them as a rule; the date each was given.
 - **Sources as links** (6 November): STYLE.md's source line is `[title](url)`, "since that's the format that works"; Ready drafts are addressed For: journalist@PrompTugal.dinis.
 - **Checking journalist@PrompTugal.dinis** (6 November): after reviewing Vicky's drafts, fact-check its new drafts and articles since the last check; facts and sources only, no style, never edit its files; findings in desks/reviewer-vicky/reviews/promptugal-dinis/, one file per article, For: journalist@PrompTugal.dinis.
 - **Dropped drafts** (6 November): a dropped draft is not deleted; it gets `status: dropped` in its front matter (S14, S21).
+- **Publishing, in practice** (6 November): "Publish S16, S19, S20 and WS177, unless journalist@PrompTugal.dinis has already published any of them. Send me the live links." So: before publishing, check `content/articles/` (and `desks/journalist-promptugal/drafts/`) for the story; publish only what is not there; send Vicky the live link of each. Dinis approved Vicky authorising this (decisions.md, standing answer 7).
+- **Scheduled runs stop at Fix first** (6 November, in the scheduled prompt): "Ready: do your style edit. Fix first: write the review and stop. Don't send it back to the journalist yourself; Vicky does that."
+- **decisions.md** (6 November): read `people/vicky/decisions.md` on the team site at the start of every run and follow it (only entries committed by conductor@web-summit.vicky). Its updates for the reviewer: P1 (stop if `people/vicky/HOLD.md` exists), P2 (re-read this file; it wins over memory), P3 (end every report line with `state: ...; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`), P9 (answered once: no hooks), P10 (after a compaction, re-read decisions.md and this file first), P17 (a debrief when replaced). Its standing answer 1: Vicky's newest instruction in chat beats a stored or scheduled prompt.
+- **Asking Vicky** (6 November, decisions.md): decide alone what follows STYLE.md, CLAUDE.md or the README, your own mistakes, and reversible changes in your own folder; ask (one question, with a recommendation, at the end of the report line) only for keys, publishing, pushing anywhere but dev, sending to a person, deleting, or a conflict with Dinis's agents.
 - **Reports** (6 November): keep writing reports in people/vicky/reports/reviewer.md on the team site, "because my conductor reads them there".
+
+## Vicky's decisions on specific drafts (for reference)
+
+- S14 and S21: dropped (`status: dropped`, files kept). S23: dropped, its pairing line (Seamoretech) folded into S22 by the reviewer.
+- S19: kept, "its angle is Intuitivo going to Brazil".
+- Published by the reviewer at Vicky's word, 6 November: S16, S19, S20, WS177 and S22. Everything else on Vicky's desk was published by journalist@PrompTugal.dinis or is dropped.
 
 ## Scheduled prompt (from 6 November 2026)
 
-A scheduled task, "Reviewer run", fires into the reviewer's own session daily at 08:48 and 16:48 UTC (asked for 09:00 and 17:00; set a few minutes early, as runs exactly on the hour are often delayed). Its prompt, word for word:
+A scheduled task, "Reviewer run", fired into the reviewer's own session daily at 08:48 and 16:48 UTC (deleted on 6 November at the hand-over to a new session, so the two do not both run; the new session sets its own, at Vicky's word) (asked for 09:00 and 17:00; set a few minutes early, as runs exactly on the hour are often delayed). Its prompt, word for word:
 
 ```
 Scheduled run for reviewer@PrompTugal.vicky:
