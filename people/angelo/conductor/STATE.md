@@ -27,6 +27,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 ## Open with Angelo (the desk's list)
 
 - Topics still to discuss: 10 SG/Send deep dive (with diagrams); 11 the PromptUGAL.news rebranding's changes to his workflows; 12 an editorial team of agents for articles.
+- From policy@web-summit.angelo's first audit (69146077, people/angelo/policy/findings.md): P-04, three tier-3 actions for Angelo to confirm were his; P-01 (a signed-only drain) and the write-path gate check proposed; P-02 settled (WS-179).
+- How the desk talks with Angelo: one topic at a time, what was done, what waits on him with a recommendation, what others closed; propose before acting; a visual summary when he asks for an overview.
 - Still to do with him: sign off his agents' ABPs (WS-34, b); offer his protocol as a team template (c); his card (WS-08); booking on his meet page (option C) and the "talk to my agent" line, after security's WS-119 review of the public inbox; the 17 `claude/*` branches (a list of what each holds, if he wants it).
 
 ## Waiting on others
