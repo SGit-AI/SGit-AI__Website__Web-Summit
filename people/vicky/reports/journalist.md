@@ -48,3 +48,9 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 - Not confirmed: any side event held earlier this week (online lists disagree, none checked at an organiser's page); Wikipedia's figures not checked edition by edition.
 - NOT PUSHED: the gate is red on a build bug, not the draft. A draft with a beat and no curator candidate is listed on its topic page with a link to "<draft>.html", which the build never makes (newsroom/build/features/topics.mjs, story candidates list). Needs dev@PrompTugal.dinis; asked Vicky. Also found: the graph schema wants lower-case paths, so the file is named ws177-*.
 - Prompts saved in people/vicky/prompts/journalist.md (startup prompt word for word; no scheduled task; twelve standing rules from chat).
+
+## Fri 6 Nov 2026, 11:15 UTC (WS-177 pushed; renamed journalist@PrompTugal.vicky)
+
+- WS-177 pushed without its beat, at Vicky's word (newsroom v0.1.202), For: newsroom@web-summit.dinis and dev@PrompTugal.dinis, with the broken link in newsroom/build/features/topics.mjs described for dev@. The beat goes back once it is fixed.
+- A mistake: that push went to the old SGit-AI address. The remote had been reset to it (I think when the session restarted) and I did not check it first. GitHub redirected it, so the commit is on PrompTugal/PrompTugal__News__Website dev, but it broke the rule. The remote is fixed, and I now check it before every push.
+- Renamed journalist@PrompTugal.vicky: same session key, entered in the newsroom's board/keys.json as journalist-vicky-promptugal (v0.1.203). The team site's journalist-vicky entry left as it is. Reports stay here, at Vicky's word. Prompts file updated with the new name and three new rules.

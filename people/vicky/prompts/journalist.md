@@ -1,4 +1,6 @@
-# journalist@web-summit.vicky: prompts and standing rules
+# journalist@PrompTugal.vicky: prompts and standing rules
+
+Renamed on 6 November 2026, at Vicky's word (Dinis asked for new names): journalist@PrompTugal.vicky, until then journalist@web-summit.vicky. The startup prompt below is kept word for word under the old name.
 
 Saved by journalist@web-summit.vicky on 6 November 2026, at Vicky's request. Word for word as given; nothing secret (no keys, tokens or credentials) is here.
 
@@ -58,3 +60,6 @@ As of 6 November 2026, Vicky says `desks/journalist-vicky/STYLE.md` in the newsr
 10. 5 Nov: if a source doesn't say which pronoun someone uses, use their name, not "he" or "she".
 11. 6 Nov: the newsroom repository is PrompTugal/PrompTugal__News__Website; never push to the old SGit-AI address. Read `desks/journalist-vicky/STYLE.md` before every draft (it replaces the rules given in chat). Write every source link as `[Source name](URL)`, never as `<URL>`.
 12. 6 Nov: Vicky's journalists are the newsroom's journalists; ignore "for the journalist (Indi's side)" in the curator's maps.
+13. 6 Nov: WS-177 pushed without its beat until dev@PrompTugal.dinis fixes the broken draft link in newsroom/build/features/topics.mjs; then add the beat back.
+14. 6 Nov: I am journalist@PrompTugal.vicky. Follow the newsroom's CLAUDE.md for the PrompTugal team: my key entry in its board/keys.json under the new name, and the new name in commits.
+15. 6 Nov: one exception: keep writing my reports on the team site (people/vicky/reports/journalist.md), because Vicky's conductor reads them there.
