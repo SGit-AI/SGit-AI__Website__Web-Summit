@@ -7,7 +7,7 @@ Kept by conductor@web-summit.vicky. Updated 4 November 2026, at Vicky's word.
 Write to the agent that does the job (`For: <agent>` in your commit), or `For: vicky` for something only Vicky decides:
 
 - **`logistics@web-summit.vicky`**: printing, merch and deliveries: sizes, print sign-offs, the printer's dates, WS-48. procurement@web-summit.silvio's print-order mail goes here.
-- **`pm@web-summit.vicky`**: the board's health (WS-46), alignment from the pulse (WS-47), each person's schedule for 10 to 12 November (WS-31), deadlines and dependencies; and **all writing**: guides, write-ups, rules and process documents (WS-100, the onboarding guide).
+- **`pm@web-summit.vicky`**: the board's health (WS-46), alignment from the pulse (WS-47) deadlines and dependencies; and **all writing**: guides, write-ups, rules and process documents (WS-100, the onboarding guide).
 - **`conductor@web-summit.vicky`**: anything about Vicky's agents or records, and anything that fits no one else.
 - **The newsroom desks** (promptugal.news; repository `PrompTugal/PrompTugal__News__Website` from 5 Nov 23:30 UTC, moved from SGit-AI/SGit-AI__Website__Newsroom__Web-Summit with the same history and rules; `people/vicky/newsroom/`): **`researcher@web-summit.vicky`** (public research: the summit, Portugal, Europe, announcements, in the research vault). **`curator@web-summit.vicky`** and **`programme@web-summit.vicky`** in the newsroom repository's `desks/`; and five journalists (08:00 and 16:00 UTC, from 6 Nov) writing drafts only in `desks/journalist-vicky/drafts/`: **`journalist@web-summit.vicky`** (the summit), **`journalist-portugal@web-summit.vicky`**, **`journalist-europe@web-summit.vicky`**, **`journalist-ai@web-summit.vicky`** and **`journalist-connections@web-summit.vicky`** (one beat each), and **`checker@PrompTugal.vicky`** (09:48 and 17:48 UTC, from 6 Nov; fact-checks the articles Dinis's agents write, and talks to them; `desks/checker-vicky/`), and **`reviewer@web-summit.vicky`** (08:48 and 16:48 UTC, from 6 Nov; checks the journalists' drafts against their sources and tidies their style; reviews only in `desks/reviewer-vicky/reviews/`), and **`designer@web-summit.vicky`** (`desks/designer-vicky/`). Where each writes: `people/vicky/newsroom/README.md`.
   The newsroom is spelled **PrompTugal** (promptugal.news). Vicky is the newsroom's editor (5 Nov 18:00 stand-up). Publishing, for now: journalist@PrompTugal.dinis publishes Ready drafts; Vicky's reviewer publishes only when she asks (6 Nov). The nine newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as they wake from 6 Nov; write to either name until agents.json shows the switch.
@@ -29,9 +29,9 @@ Write to the agent that does the job (`For: <agent>` in your commit), or `For: v
 
 History: on 3 November at 14:54 this file said logistics@ and pm@ would not be started; Vicky changed her mind, and both started at about 15:10.
 
-## Vicky's word on WS-31 (6 November 2026, about 09:00 UTC)
+## Vicky's word on WS-31 (6 November 2026)
 
-- **WS-31**: the smaller scope (meetings and companies only; each person adds their own sessions), and **pm@ builds it**, in the meetings vault.
+- **WS-31 is dropped** (Vicky, 6 Nov evening): not needed; pm@ is closing it. Her earlier word (the smaller scope, built by pm@) no longer applies.
 
 ## Vicky's standing word on four issues (4 November 2026, about 21:05 UTC)
 

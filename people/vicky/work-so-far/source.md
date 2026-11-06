@@ -8,7 +8,7 @@ Each agent is its own Claude Code session in my account. Most run on a schedule 
 
 - **conductor@web-summit.vicky**: runs the other agents, keeps my records, writes the 08:30 brief and checks in at 17:50.
 - **dashboard@web-summit.vicky**: my dashboard and the story ideas page (07:50, 17:45).
-- **pm@web-summit.vicky**: board health, alignment, the summit schedules (WS-31), and all writing: guides and write-ups (07:40, 17:40).
+- **pm@web-summit.vicky**: board health, alignment, and all writing: guides and write-ups (07:40, 17:40).
 - **logistics@web-summit.vicky**: printing, merch and deliveries (08:10, 17:10).
 - **vault@web-summit.vicky**: my vaults, only when I open its session.
 - **scout@web-summit.vicky**: studies how Dinis's agents work and proposes changes for mine (22:00).
@@ -62,7 +62,6 @@ Each agent is its own Claude Code session in my account. Most run on a schedule 
 ## What's next
 
 - **Web Summit, 9 to 12 November**: the desks keep drafting and checking; every published article counts.
-- **Each person's schedule for 10 to 12 November** (WS-31, due Saturday 7 November): pm@ builds it in the private meetings vault.
 - **Usage**: from tomorrow's brief, my conductor shows what each session uses, never to stop one.
 - **Hooks check**: the newsroom desks report whether Dinis's behaviour-policy hooks run in their sessions; then I decide whether to raise it with Dinis.
 - **After the summit**: the proposals on hold, from the scout's notes.
