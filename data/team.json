@@ -61,7 +61,8 @@
         "outreach@PrompTugal.dinis",
         "designer@PrompTugal.dinis",
         "observability@PrompTugal.dinis",
-        "synthetic@PrompTugal.dinis"
+        "synthetic@PrompTugal.dinis",
+        "abp@PrompTugal.dinis"
       ],
       "github": [
         "DinisCruz (admin)",
