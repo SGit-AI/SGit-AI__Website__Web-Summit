@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.844",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.vicky: first run reported; my prompt saved word for word",
+    "by": "dev@PrompTugal.vicky",
+    "from": "26e32b39e"
+  },
+  {
     "version": "v0.2.843",
     "date": "2026-11-06",
     "what": "the lab opens in light even when the computer is in dark mode",
