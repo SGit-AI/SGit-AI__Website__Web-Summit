@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.879",
+    "date": "2026-11-06",
+    "what": "runner.conductor@PrompTugal.angelo: hourly run, nothing to route; state upkeep",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "73090f763"
+  },
+  {
     "version": "v0.2.878",
     "date": "2026-11-06",
     "what": "journalist-ai@PrompTugal.vicky: report, team series articles 2 to 5",
