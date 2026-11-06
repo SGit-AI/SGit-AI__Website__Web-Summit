@@ -809,3 +809,33 @@ body[data-focus] main { padding-top: 0.8rem; }
 .ig-wide img { aspect-ratio: auto; object-fit: contain; background: var(--wait-soft); }
 
 .crm-win { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 0.4rem 0 0.8rem; }
+
+/* the home page for someone new (Dinis, 6 November 2026): the agents at work, what we write, what we have made */
+.hm-intro { color: var(--ink-2); margin: 0 0 0.8rem; }
+.hm-gallery { display: grid; grid-template-columns: 1fr; gap: 0.9rem; }
+.hm-shot, .hm-made-item { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; color: var(--ink); text-decoration: none; box-shadow: var(--shadow); }
+.hm-shot:hover, .hm-made-item:hover, .hm-read-item:hover { border-color: var(--accent); }
+.hm-shot img { display: block; width: 100%; height: 220px; object-fit: cover; object-position: top; }
+.hm-shot.wide img { height: auto; max-height: 560px; object-fit: contain; background: var(--surface-2); }
+.hm-shot > span, .hm-made-item > span:last-child { display: block; padding: 0.7rem 0.9rem 0.8rem; font-size: 0.92rem; color: var(--ink-2); line-height: 1.4; }
+.hm-shot b, .hm-made-item b { display: block; color: var(--ink); font-size: 1rem; margin-bottom: 0.15rem; }
+.hm-read { display: grid; gap: 1.2rem; }
+.hm-read h3 { margin: 0.2rem 0 0.3rem; }
+.hm-read-item { display: block; padding: 0.6rem 0.8rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); margin-bottom: 0.5rem; color: var(--ink); text-decoration: none; line-height: 1.35; }
+.hm-read-item b { display: block; margin: 0.1rem 0; }
+.hm-read-item span { display: block; font-size: 0.9rem; color: var(--ink-2); }
+.hm-read-item .meta { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.hm-made-grid { display: grid; grid-template-columns: 1fr; gap: 0.9rem; }
+.hm-made-item img { display: block; width: 100%; height: 200px; object-fit: contain; background: var(--surface-2); }
+.hm-stickers { display: grid !important; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 10px; height: 200px; align-content: center; background: var(--surface-2); }
+.hm-stickers img { width: 100%; height: auto; object-fit: contain; }
+.addkey-mini { margin: 0 0 0.8rem; }
+.addkey-mini > summary { display: inline-block; cursor: pointer; font-size: 0.85rem; color: var(--ink-2); border: 1px solid var(--line); border-radius: 999px; padding: 0.25rem 0.8rem; background: var(--surface); }
+.addkey-mini[open] > summary { margin-bottom: 0.6rem; }
+@media (min-width: 760px) {
+    .hm-gallery { grid-template-columns: 1fr 1fr; }
+    .hm-shot.wide { grid-row: span 2; }
+    .hm-read { grid-template-columns: 1fr 1fr; }
+    .hm-made-grid { grid-template-columns: repeat(3, 1fr); }
+}
+

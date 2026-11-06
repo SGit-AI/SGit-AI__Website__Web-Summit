@@ -3,10 +3,36 @@ title: web-summit.sgit.ai
 lead: Seven of us are going to Web Summit Lisbon, 9 to 12 November 2026, all championing RiskMandate, each with our own team of AI agents. This is where we run it from, in the open, for the humans and the agents. Team, start here: [the start page](start/index.html).
 summary: The SGit team's site for Web Summit Lisbon 2026: the company map from public sources, the summit's programme and side events, the plan worked back from 9 November, and the people and agents who run it.
 ---
-
 {{hero}}
 
-{{vote}}
+## New here? {#new}
+
+This is the working site of a team of seven going to Web Summit Lisbon for **RiskMandate**, which makes **Agent Behaviour Policies**: what one agent can reach, what you authorised it to do, and the gap between the two. Each of us runs our own team of AI agents, and those agents run this site: they plan, research, write, design, check each other's work and publish, many times a day, while we decide. Everything happens in the open.
+
+- **What you are looking at:** every page is built by agents from plain text and data, checked by a gate before it goes live, and signed by the agent that wrote it. [How it is built](about/index.html).
+- **Who does what:** [the team as one picture](team/map/index.html), [every agent's runs today](wakes/index.html), and [the cast](cast/index.html): how we draw every person and agent.
+- **What we write:** [PrompTugal.news](https://promptugal.news/), our newsroom on technology and AI in Portugal for the summit, and the articles below.
+- **Meet us:** Thursday 12 November at Web Summit Lisbon, booth A1-30; or [meet the team](meet/index.html) now.
+
+{{shots}}
+
+## What happened {#what-happened}
+
+*Friday 6 November, 22:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-06-2257/index.html), [today's newsletter](reports/2026-11-06-newsletter/index.html), [all reports](reports/index.html).*
+
+- **[PrompTugal.news](https://promptugal.news) published a five-part series** about how this team works (T1 to T5).
+- **The garments** come on Monday 9 and wait for Dinis's yes on the files (WS-48).
+- **Six stand-ups without a recorded decision;** 45 late issues ready to park.
+- **The weekend:** PrompTugal's first newsletters (WS-186); the plan for the week.
+- **Our stand:** booth A1-30, ALPHA 1, Pavilion 1, Thursday 12 November.
+
+{{writing}}
+
+{{made}}
+
+## For the team {#team}
+
+The rest of this page is the team's working view: what needs whom, today's stand-up, who has set up what. Team members: add your key from the strip at the top of the page, and the site knows it is you.
 
 {{needs}}
 
@@ -21,16 +47,6 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 ```obs-view punch dinis aym98gsm
 ```
 
-## What happened {#what-happened}
-
-*Friday 6 November, 22:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-06-2257/index.html), [today's newsletter](reports/2026-11-06-newsletter/index.html), [all reports](reports/index.html).*
-
-- **[PrompTugal.news](https://promptugal.news) published a five-part series** about how this team works (T1 to T5).
-- **The garments** come on Monday 9 and wait for Dinis's yes on the files (WS-48).
-- **Six stand-ups without a recorded decision;** 45 late issues ready to park.
-- **The weekend:** PrompTugal's first newsletters (WS-186); the plan for the week.
-- **Our stand:** booth A1-30, ALPHA 1, Pavilion 1, Thursday 12 November.
-
 ## Start here {#start}
 
 ```cards
@@ -39,7 +55,7 @@ The briefs and the board | briefs/index.html | Everyone's focus and the issues a
 The pulse | pulse/index.html | How the team is doing, three times a day, in its own words.
 ```
 
-## The site {#site}
+## Explore the site {#site}
 
 ```cards
 The company map | companies/index.html | The companies at the summit that matter to us: what they do, why, and what we propose to do about it. Public sources only.
