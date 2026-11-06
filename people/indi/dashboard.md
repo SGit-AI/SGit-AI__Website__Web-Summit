@@ -18,7 +18,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** one word to Dinis first: yes, 'riskmandate-indi' is your GitHub name. Then decide whether to join PromptUGAL as an editor, like Angelo. Your new Recruiter is looking for a journalist to join us. Everything else is on [your to-do list](todo/index.html).
+**Right now:** your key works. Before the weekend: run the readers' test on PromptUGAL (paste your conductor's prompt into your synthetic helper), say yes or no to Angelo's request to your accountant, and pick your About-me words. Your GitHub name in the team list is waiting on Dinis. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 
