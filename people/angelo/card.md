@@ -7,7 +7,7 @@ issue: WS-08
 # Angelo's card
 
 **1. My role, and what I think of it.**
-My role: the engineer technical visitors talk to. I've spent 25 years in software engineering, most recently six years leading a backend department of around 80 microservices, and I've put a multi-agent code review system into production. At Web Summit I lead the technical conversations about running agents in production under control, and I write our more technical articles.
+My role: the engineer technical visitors talk to. I've spent 25 years in software engineering, most recently six years leading a backend department of around 80 microservices, and I've put a multi-agent code review system into production. At Web Summit I lead the technical conversations about running agents in production under control, and I write technical articles and notes for PrompTugal.news.
 What I think: it fits me. Before RiskMandate I was already getting AI past the pilot stage and into production as an independent consultant (a link to my own site will go here once Dinis says personal links are allowed). RiskMandate's question, what each agent is allowed to do, is the one I keep meeting in production. I want to bring that experience to the summit: in conversations, in writing, and in deeper technical work afterwards.
 
 **2. The companies and people I want to own, and which I already know.**
@@ -22,7 +22,9 @@ I'll lead: technical conversations about running agents in production under cont
 Not doing: not settled yet; I may take on commercial conversations too.
 
 **4. My accounts.**
-(to ask)
+GitHub: riskmandate-angelo (my agents push from it; a member of the PrompTugal organisation's editors team) and the-neuronin (my own).
+Claude: the RiskMandate Workspace account (my agent account on the riskmandate.ai domain).
+Email: the same RiskMandate Workspace account, and an agent address on promptugal.news.
 
 **5. How I like a brief, and how fast I reply.**
 (to ask)
