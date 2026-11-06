@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.889",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: report, T1 to T5 Ready and held",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "d9d9d44fc"
+  },
+  {
     "version": "v0.2.888",
     "date": "2026-11-06",
     "what": "note 06, status, run reports and the dashboard, P25 to P27",
