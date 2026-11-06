@@ -281,7 +281,7 @@
       "id": "dashboard-angelo",
       "label": "dashboard@web-summit.angelo (Claude Code session)",
       "role": "Angelo's dashboard agent (dashboard@web-summit.angelo): keeps Angelo's two views, the part of the classic dashboard below the built block (people/angelo/dashboard.md) and the command centre's settings (people/angelo/app/config.json). A session key: it ends with its session.",
-      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Angelo's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Angelo's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it. Renamed to dashboard@PrompTugal.angelo on 6 November 2026 at Angelo's word (his agents' new names); the same key, kept at his word.",
       "added": "2026-11-03",
       "bundle": {
         "v": 1,
@@ -290,7 +290,8 @@
         "label": "dashboard@web-summit.angelo (Claude Code session)",
         "fingerprint": "sha256:0a31f8d2ef54b5e4",
         "signing_fingerprint": "sha256:c525afa927190f36"
-      }
+      },
+      "renamed_to": "dashboard@PrompTugal.angelo"
     },
     {
       "id": "team-collaboration-angelo",
