@@ -34,12 +34,12 @@ export function build(ROOT) {
     // open it shows when it was added, the sources and the Comment button. Collapsed by default (Vicky, 6 Nov).
     const card = s => `<details class="card story" id="${esc(s.id.toLowerCase())}"><summary><span class="meta"><strong class="story-id">${esc(s.id)}</strong> · <span class="pill">${esc(s.beat)}</span></span><h3 class="story-title">${esc(s.title)}</h3><span class="story-angle">${esc(s.angle)}</span></summary><div class="story-more"><p class="meta">Added ${esc(s.added)}</p>${srcList(s)}<p><button type="button" class="story-comment" data-story="${esc(s.id.toLowerCase())}">Comment on ${esc(s.id)}</button></p></div></details>`
     const storyCss = `<style>
-.stories-list details.story > summary { cursor: pointer; list-style: none; display: block; min-height: 44px; padding-right: 7rem; position: relative }
+.stories-list details.story > summary { cursor: pointer; list-style: none; display: block; min-height: 44px; -webkit-tap-highlight-color: transparent }
 .stories-list details.story > summary::-webkit-details-marker { display: none }
 .stories-list details.story > summary > * { display: block }
 .stories-list details.story > summary .story-title { margin: .25rem 0 }
 .stories-list details.story > summary .story-id, .stories-list details.story > summary .pill { display: inline }
-.stories-list details.story > summary::after { content: "Show more \\25BE"; position: absolute; top: 0; right: 0; font-size: .85rem; color: var(--accent); white-space: nowrap }
+.stories-list details.story > summary::after { content: "Show more \\25BE"; display: block; margin-top: .5rem; padding: .25rem 0; font-size: .9rem; color: var(--accent-dk) }
 .stories-list details.story[open] > summary::after { content: "Show less \\25B4" }
 .stories-list details.story > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px }
 .stories-list .story-more { margin-top: .75rem; border-top: 1px solid currentColor; padding-top: .5rem }

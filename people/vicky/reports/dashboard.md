@@ -129,3 +129,4 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 
 - Vicky's word in chat: the stories page was too long. Each story is now a native `<details>`/`<summary>` (no script for it), all collapsed by default: collapsed it shows the number, beat, title and the one-line angle; open it shows the date added, the sources and the Comment button. Change is in people/vicky/pages.mjs only (the Promptugal logo page is untouched).
 - state: ok; done: stories page collapsible; next: 07:50 wake on 7 Nov; ask: none; run: prompted
+- 20:35: after a phone-width check, the "Show more" / "Show less" label moved under each summary so titles use the full width (people/vicky/pages.mjs).
