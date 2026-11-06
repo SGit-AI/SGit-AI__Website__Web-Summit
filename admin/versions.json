@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.825",
+    "date": "2026-11-06",
+    "what": "desk.conductor@PrompTugal.angelo: Angelo's agents renamed to @PrompTugal.angelo; the writer and its runner",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "90299d089"
+  },
+  {
     "version": "v0.2.824",
     "date": "2026-11-06",
     "what": "16:41 wake: no notes",
