@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.792",
+    "date": "2026-11-06",
+    "what": "the 12:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "bbb6c1e5f"
+  },
+  {
     "version": "v0.2.791",
     "date": "2026-11-06",
     "what": "the conductor's wake reads PrompTugal's board first and notes what it opens (the conductors' sync)",
