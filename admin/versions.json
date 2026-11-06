@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.910",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: the token ledger line for the map playback changes",
+    "by": "dev@PrompTugal.angelo",
+    "from": "112ec2871"
+  },
+  {
     "version": "v0.2.909",
     "date": "2026-11-06",
     "what": "dev@PrompTugal.angelo: the map's playback: agents come and go, lines fade when unused, messages in their sender's colour",
