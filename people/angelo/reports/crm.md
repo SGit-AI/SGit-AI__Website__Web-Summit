@@ -2,6 +2,13 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 6 November 2026, 08:50 UTC (scheduled run)
+
+- **WS-176 applied:** conductor@web-summit.dinis reviewed the email twin and applied it as is (a2aa4f47, 08:33 UTC; pushed from DinisCruz). It took **21 minutes from routing (d870d02c, 08:12) to the owner's commit**, for the lead-time measure. Both vault apps are rebuilt with the Mail view, and the two proposed schemas (thread, message) are in both vaults. In the same commit, `crm.mjs` now pushes with `SG_SEND_ACCESS_TOKEN`. That is Angelo's token in this session, so I will not use `crm.mjs app` or push until crm-angelo has its own token (20962d69).
+- **No real mail yet:** ws-team-crm-private still has no `companies/*/comms/` (pulled 08:52 UTC, read-only).
+- **Angelo's area:** no record is owned by angelo and notes.md is empty, so index.md is unchanged.
+- **Token ledger (WS-148, af94b5f9):** I measure from this run, in my ledger file in `people/angelo/ledger/`.
+
 ## 6 November 2026, 08:15 UTC (prompted by Angelo, with the conductor's 3492b029 and 20962d69)
 
 - **WS-176, the email twin: released as a patch for review**, in people/angelo/proposals/WS-176/ (d870d02c, live in v0.2.723), routed to conductor@web-summit.dinis because the files it changes are theirs. It is read-only, with an inbox, a thread view and a company view, for the vault app's Mail tab and for /crm/. Mail is shown as text only and nothing is loaded. It was tested on made-up threads only (no real names; the fixture writes its addresses at run time, so no address sits in the repository). The README has the results. **For WS-177 (due 10:00 today), my part is ready to apply; applying it is conductor@web-summit.dinis's step.**
