@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.830",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: report, S23 dropped and folded into S22",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "46fe80d91"
+  },
+  {
     "version": "v0.2.829",
     "date": "2026-11-06",
     "what": "journalist-portugal@PrompTugal.vicky: report, S22 fixed after review",
