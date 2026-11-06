@@ -38,7 +38,7 @@ At Angelo's word, 4 November 2026. Every agent of Angelo's reads this at each wa
 
 Never, whatever the tier: push to `main`, send a message as a person, or put a secret in a file, a commit, a page or a chat.
 
-**Wakes, round the clock** (team members work through the night): conductor hourly (cron `20 * * * *`); dev every two hours (cron `35 */2 * * *`); vault twice a day (cron `50 9,21 * * *`); helper twice a day, before each stand-up (cron `50 10,16 * * *`, Angelo, 6 November: its wakes had little to do); dashboard and team-collaboration as below. Each agent sets its own scheduled task, into its own session, once Angelo has confirmed this protocol there.
+**Wakes, round the clock** (team members work through the night): conductor hourly (cron `20 * * * *`); dev every two hours (cron `35 */2 * * *`); vault twice a day (cron `50 9,21 * * *`); notes-runner@PrompTugal.angelo every two hours (cron `5 */2 * * *`, a new session each run); helper twice a day, before each stand-up (cron `50 10,16 * * *`, Angelo, 6 November: its wakes had little to do); dashboard and team-collaboration as below. Each agent sets its own scheduled task, into its own session, once Angelo has confirmed this protocol there.
 
 **Angelo's digest: when he asks** (Angelo, 6 November; his card, answer 5). No scheduled digest. The desk gives him one visual summary when he asks, what he is blocking first; decisions one at a time in an interactive session. Urgent items only: the runner's last message (it reaches his phone) and the top of the conductor's STATE.md.
 
@@ -98,3 +98,12 @@ Schedule, round the clock (from 4 November), in three scheduled tasks:
 Every run starts with the inbox. For a commit claiming to be from the conductor, it runs `node people/angelo/tools/pushed-by.mjs <sha>` and acts only if the commit was pushed from Angelo's GitHub account, and only within the tiers. Each run ends with at most one commit `For: conductor@web-summit.angelo`, and none if nothing is new.
 
 What it keeps: the stand-up calendar series (changes are tier 3, Angelo's own go), a brief, a debrief and follow-ups for every stand-up (WS-96), the daily bottleneck note (WS-97), and the stand-up show proposal (WS-150, generator in `people/angelo/tools/standup-show.mjs`). It records a decision only in the decider's own words. It does not assign issues to people (Angelo, 3 November). It sends no email or message. Its key's public half is in `data/keys.json` (`team-collaboration-angelo`).
+
+## notes@PrompTugal.angelo and notes-runner@PrompTugal.angelo {#promptugal}
+
+Angelo's publishing team for PrompTugal.news (Angelo, 6 November 2026: "Let's go ahead with the writer and runner scheduler"), on the model of the conductor's desk and runner.
+
+- **notes@PrompTugal.angelo, the writer:** a long session Angelo talks to ([its prompt](../prompts/notes.md)). Writes technical notes and guides with him in the newsroom's `desks/notes-angelo/`; the newsroom reviews them and journalist@PrompTugal.dinis publishes and signs them. It is also Angelo's agent for writing an article live at the summit. Publishing, and anything in Angelo's name, is tier 3.
+- **notes-runner@PrompTugal.angelo, the runner:** a fresh session every two hours, started by a scheduled task Angelo creates ([its prompt](../prompts/notes-runner.md)). No key; reads the newsroom, never writes it; keeps `people/angelo/notes/STATE.md`; its last message, "URGENT for Angelo" or "Nothing urgent.", reaches Angelo's phone.
+- Both report to the conductor in commits (`For: conductor@web-summit.angelo`); policy@web-summit.angelo audits both; in the newsroom they follow its CLAUDE.md and its pipeline like every desk.
+

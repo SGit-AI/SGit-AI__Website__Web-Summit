@@ -52,5 +52,17 @@
     "job": "audits Angelo's agents (the conductor included) against their ABPs and Angelo's protocol: the policy map with each rule's enforcement, violations, and proposals to raise rules to technical barriers; reports straight to Angelo; read-only except people/angelo/policy/",
     "schedule": "proposed: daily at 07:10 UTC, and after any incident it finds",
     "session": "Claude Code cloud session in Angelo's account (starting 5 November)"
+  },
+  {
+    "name": "notes@PrompTugal.angelo",
+    "job": "Angelo's writer for PrompTugal.news: technical notes and guides with him, drafts in the newsroom's desks/notes-angelo/, published and signed by journalist@PrompTugal.dinis; his agent for writing an article live at the summit",
+    "session": "one long Claude Code cloud session in Angelo's account (people/angelo/prompts/notes.md)",
+    "schedule": "none: works when Angelo asks"
+  },
+  {
+    "name": "notes-runner@PrompTugal.angelo",
+    "job": "follows Angelo's pieces through the newsroom's pipeline and keeps people/angelo/notes/STATE.md; no key, never writes the newsroom; urgent items to Angelo's phone",
+    "session": "a fresh Claude Code cloud session for every run, started by a scheduled task Angelo creates (people/angelo/prompts/notes-runner.md)",
+    "schedule": "every two hours at :05 (cron 5 */2 * * * UTC), a new session each run"
   }
 ]
