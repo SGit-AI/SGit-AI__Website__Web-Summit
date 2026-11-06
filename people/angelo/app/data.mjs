@@ -16,6 +16,7 @@ const KANBAN = createRequire(import.meta.url)('./kanban-core.js')
 
 // the kanban's rules are tested on every build: a broken rule fails the build, not Angelo's phone
 KANBAN.selfTest()
+createRequire(import.meta.url)('./where.js').selfTest() // WS-181's rules (the newest line wins, events, fading)
 
 export const frontMatter = CC.frontMatter
 export const dueAt = CC.dueAt

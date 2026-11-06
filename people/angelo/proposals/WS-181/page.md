@@ -66,6 +66,10 @@ it: vault data lives in IndexedDB, under the page's own control, so turning offl
 - **Shared code:** a small helper may be needed, for example "sign and seal one record to a lane", which feedback.js
   does today without signing. Under Angelo's rule of ce069603 I would add it in place, after the protocol's five
   steps, For: its owner. If its owner is busy, I would send a draft instead.
+- **A limit found in step 1 (the gate's rule 22, WS-164):** a script under people/ may not use the keyring, IndexedDB
+  or data/sealed/. So the real version's key-handling half (opening the private vault, signing an update) must be a
+  site script in assets/, for its owner, with Angelo's view drawing only what that script hands it. Step 1 keeps its
+  demo store in localStorage for the same reason.
 - **Never in this repository:** anyone's place or line. The build never sees the private vault, the page's data.json
   holds no location, and no location goes in the public vault.
 
@@ -85,7 +89,7 @@ it: vault data lives in IndexedDB, under the page's own control, so turning offl
 
 ## 6. Built in steps, after Angelo's go and security's review
 
-1. **The view with demo data:** made-up names, clearly marked, no vault. Two-tap update, local queue, offline banner,
+1. **The view with demo data** (built 6 November, at Angelo's go: `#where` in his command centre, where.js): made-up names, clearly marked, no vault. Two-tap update, local queue, offline banner,
    tested at desktop and phone width. Angelo tries it.
 2. **The public vault read:** stand hours, talks and shifts. Public data only, so it can ship before review.
 3. **The private vault**, once security has reviewed and vault@ has its own SG/Send token (vaults.md, "Blocked"):

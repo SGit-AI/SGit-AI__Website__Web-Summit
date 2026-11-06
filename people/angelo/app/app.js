@@ -20,13 +20,13 @@
             return orig.apply(this, arguments)
         }
     }
-    load('kanban-core.js').catch(() => null).then(() => load('replay.js').catch(() => null)).then(() => load('../../../assets/cc/app.js')).then(() => { if (root && window.AngeloKanban) start() })
+    load('kanban-core.js').catch(() => null).then(() => load('replay.js').catch(() => null)).then(() => load('where.js').catch(() => null)).then(() => load('../../../assets/cc/app.js')).then(() => { if (root && window.AngeloKanban) start() })
 
     // ---------- offline (WS-84 step 1, at Angelo's go): sw.js stores this page and what it loads ----------
     // ?offline=off unregisters the worker and deletes its store (remembered in this browser); ?offline=on turns it back on
     const OFF_KEY = 'ak.offline', q = new URLSearchParams(location.search).get('offline')
     const lsGet = k => { try { return localStorage.getItem(k) } catch { return null } }, lsSet = (k, v) => { try { v === null ? localStorage.removeItem(k) : localStorage.setItem(k, v) } catch { } }
-    if (q === 'off') lsSet(OFF_KEY, 'off'); if (q === 'on') lsSet(OFF_KEY, null)
+    if (q === 'off') { lsSet(OFF_KEY, 'off'); try { for (const k of Object.keys(localStorage)) if (k.startsWith('ak.where.demo.')) localStorage.removeItem(k) } catch { } } if (q === 'on') lsSet(OFF_KEY, null)
     const SW = 'serviceWorker' in navigator ? navigator.serviceWorker : null
     const scope = new URL('./', here).href
     if (SW && lsGet(OFF_KEY) === 'off') {
@@ -54,6 +54,7 @@
     const ico = p => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${p}"/></svg>`
     const KANBAN_ICON = 'M4 4h4v16H4zM10 4h4v10h-4zM16 4h4v13h-4z'
     const REPLAY_ICON = 'M4 5h16v14H4zM10 9l5 3-5 3z'
+    const WHERE_ICON = 'M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z'
     const SUMMIT_ICON = 'M4 6h16v14H4zM4 10h16M8 3v4M16 3v4M8 14h3v3H8z'
     const TEAM_ICON = 'M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21v-1a6 6 0 0 1 12 0v1M16 3.1a4 4 0 0 1 0 7.8M22 21v-1a6 6 0 0 0-4-5.6'
     const PHONE = matchMedia('(max-width: 767px)')
@@ -61,7 +62,7 @@
     function start() {
         const K = window.AngeloKanban
         let D = null, failed = ''
-        const route = () => (location.hash.match(/^#(kanban|collab|summit|replay)(\?|$)/) || [])[1] || ''
+        const route = () => (location.hash.match(/^#(kanban|collab|where|summit|replay)(\?|$)/) || [])[1] || ''
         const mine = () => !!route()
         once.then(r => r.ok ? r.clone().json() : Promise.reject(new Error(r.status))).then(d => { D = d; nav(); loadCockpit(); if (mine()) draw() }).catch(e => { failed = e.message; if (mine()) draw() })
 
@@ -73,12 +74,12 @@
         const OWN_TIP = 'Only in this command centre: the team\'s shared command centre does not have it'
         // the mark by a view's title, and its explanation, shown once until dismissed
         const ownTitle = t => `${esc(t)} <span class="ak-own" title="${esc(OWN_TIP)}">✦<span class="ak-own-t"> ${esc(ownName())}</span></span>`
-        const ownNote = () => { let seen = false; try { seen = localStorage.getItem('ak.ownSeen') === '1' } catch { } return seen ? '' : `<div class="ak-ownnote" role="note"><span><b>✦ ${esc(ownName())}</b> marks the views only in this command centre: Kanban, Team and the machine, Summit days, Replay. The rest are the team's shared views.</span><button type="button" class="cc-btn" data-ak-ownok>Got it</button></div>` }
+        const ownNote = () => { let seen = false; try { seen = localStorage.getItem('ak.ownSeen') === '1' } catch { } return seen ? '' : `<div class="ak-ownnote" role="note"><span><b>✦ ${esc(ownName())}</b> marks the views only in this command centre: Kanban, Team and the machine, Where, Summit days, Replay. The rest are the team's shared views.</span><button type="button" class="cc-btn" data-ak-ownok>Got it</button></div>` }
         root.addEventListener('click', e => { if (e.target.closest('[data-ak-ownok]')) { try { localStorage.setItem('ak.ownSeen', '1') } catch { } const n = root.querySelector('.ak-ownnote'); if (n) n.remove() } })
         function nav() {
             const side = root.querySelector('.cc-nav [data-view="board"]')
             // the views only in this command centre, in a group of their own, each with the same mark (Angelo, 5 November)
-            if (side && !root.querySelector('.cc-nav [data-view="kanban"]')) { const grp = [...root.querySelectorAll('.cc-nav .grp')].find(g => /connect/i.test(g.textContent)); (grp || side).insertAdjacentHTML(grp ? 'beforebegin' : 'afterend', `<span class="grp ak-grp" title="${esc(OWN_TIP)}">✦ ${esc(ownName())}</span><a href="#kanban" data-view="kanban" title="Kanban">${ico(KANBAN_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Kanban</span></a><a href="#collab" data-view="collab" title="Team and the machine">${ico(TEAM_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Team and the machine</span></a><a href="#summit" data-view="summit" title="Summit days">${ico(SUMMIT_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Summit days</span></a><a href="#replay" data-view="replay" title="Replay">${ico(REPLAY_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Replay</span></a>`) }
+            if (side && !root.querySelector('.cc-nav [data-view="kanban"]')) { const grp = [...root.querySelectorAll('.cc-nav .grp')].find(g => /connect/i.test(g.textContent)); (grp || side).insertAdjacentHTML(grp ? 'beforebegin' : 'afterend', `<span class="grp ak-grp" title="${esc(OWN_TIP)}">✦ ${esc(ownName())}</span><a href="#kanban" data-view="kanban" title="Kanban">${ico(KANBAN_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Kanban</span></a><a href="#collab" data-view="collab" title="Team and the machine">${ico(TEAM_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Team and the machine</span></a><a href="#where" data-view="where" title="Where">${ico(WHERE_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Where</span></a><a href="#summit" data-view="summit" title="Summit days">${ico(SUMMIT_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Summit days</span></a><a href="#replay" data-view="replay" title="Replay">${ico(REPLAY_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Replay</span></a>`) }
             const g = root.querySelector('.cc-nav .ak-grp'); if (g) g.textContent = `✦ ${ownName()}`
             // phones: the Board tab opens the kanban (with My tasks off it is the whole team's board)
             const tab = root.querySelector('.cc-tabs a[href="#board"]')
@@ -101,6 +102,7 @@
         // ---------- drawing ----------
         function draw() {
             if (route() === 'collab') return drawCollab()
+            if (route() === 'where') return drawWhere()
             if (route() === 'summit') return drawSummit()
             if (route() === 'replay') return drawReplay()
             const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
@@ -113,7 +115,7 @@
             const shown = K.filter(D.issues, s, ctx, now)
             const needN = D.issues.filter(i => K.needsMe(i, ctx, now)).length
             view.innerHTML = `<div class="ak">${ownNote()}
-<nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#replay">Replay → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
+<nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#where">Where → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#replay">Replay → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
 ${toolbar(s, shown.length, needN)}
 ${chips(s)}
 ${s.now ? decideFirst() : ''}
@@ -490,6 +492,14 @@ ${day ? `<h3 class="ak-lane">${esc(DAYNAME(day))}${day === today ? ' (today)' : 
             if (!D || !window.AngeloReplay) { view.innerHTML = failed ? `<p class="note">Replay could not load (${esc(failed)}).</p>` : '<p class="note">Loading Replay…</p>'; return }
             document.title = `Replay · ${(D.person.name || D.person.id).split(' ')[0]}'s command centre`
             window.AngeloReplay.render(view, { D, title, note: ownNote, ownTitle, ago })
+        }
+        // Where (where.js, WS-181 step 1): the team's whereabouts and logistics, a demo kept on this device
+        function drawWhere() {
+            const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
+            if (!view) return
+            document.title = `Where · ${D ? (D.person.name || D.person.id).split(' ')[0] + "'s" : 'the'} command centre`
+            if (!window.AngeloWhere) { view.innerHTML = '<p class="note">Where could not load.</p>'; return }
+            window.AngeloWhere.render(view, { title, note: ownNote, ownTitle, ago })
         }
         window.addEventListener('popstate', () => { if (mine()) draw() })
         PHONE.addEventListener?.('change', () => { if (mine()) draw() })
