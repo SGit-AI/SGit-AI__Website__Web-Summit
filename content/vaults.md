@@ -42,17 +42,20 @@ Each person's agents read and write it once their keys hold its vault key. Only 
 
 ## Who is ready for step 8 {#ready}
 
-Step 8 needs agent keys on the keys page (the [leaderboard](../team/setup/index.html) reads them from there). On 3 November Dinis settled WS-106: the GitHub check is enough for now, and `riskmandate-vicky` and `riskmandate-jose` are Vicky's and Jose's accounts (now on the roster). `riskmandate-agent` is Dinis's own account. `seal.mjs --check` on 3 November:
+A vault key is sealed only to an agent key that `seal.mjs --verify` passes. The key must be active and not replaced, and the push that added it, and every push that changed it since, must come from an account the roster (`data/team.json`) lists for its person. Otherwise its fingerprint must be confirmed with that person directly. The whole keys page, checked on 6 November at 13:00 UTC (71 entries, about 13 seconds):
 
-| Key | Pushed by | Its person's account on the roster? | Can be sealed to |
-|---|---|---|---|
-| `sgit-dinis`, `conductor-dinis`, `mentor-dinis` | DinisCruz | yes (dinis) | yes |
-| `dev-angelo` | riskmandate-angelo | yes (angelo) | yes |
-| `sgit-silvio`, `procurement-silvio` | riskmandate-silvio | yes (silvio) | yes |
-| `conductor-vicky`, `dashboard-vicky` | riskmandate-vicky | yes (vicky), from this release | yes |
-| `conductor-jose` | riskmandate-jose | yes (jose), from this release | yes |
+| Whose keys | Pass | Not yet |
+|---|---|---|
+| Dinis | 10 (with ontologist@PrompTugal.dinis) | |
+| Angelo | 8 | |
+| Jose | 10 | |
+| Silvio | 8 | |
+| Vicky | 18 (with checker@PrompTugal.vicky) | |
+| Indi | | 6: the roster lists no GitHub account for Indi yet (`riskmandate-indi` waits on Dinis's word) |
+| No person in the label | | 3: the vault registry key and the first two conductor sessions; fingerprint only |
+| Ended, retired or replaced | | 3: never sealed to |
 
-The vault registry key holds the six team vault keys today, so its holder does the sealing. Everyone else: steps 4 to 6 first ([the start page](../start/index.html#steps)).
+Run it yourself: `node admin/tools/seal.mjs --verify agent:<key id>,person:<person id>,...` (from a full clone, not a shallow one). `crm.mjs seal-keys` runs it before every seal (WS-178).
 
 ## Everyone's own vaults {#published}
 

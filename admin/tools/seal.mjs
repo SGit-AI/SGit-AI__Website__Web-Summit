@@ -28,6 +28,8 @@ import crypto from 'crypto'
 import { execFileSync } from 'child_process'
 
 const SITE = 'https://web-summit.sgit.ai/'
+// an agent's person, from its name: <agent>@web-summit.<person>, or <role>@PrompTugal.<person> (the PrompTugal agents, 6 November)
+const PERSON_RE = /@(?:web-summit|promptugal)\.([a-z0-9-]+)/i
 const REPO = 'SGit-AI/SGit-AI__Website__Web-Summit'
 // pki-agent.mjs as read on 2 November 2026; a new version is accepted only with PKI_AGENT_SHA256=<its sha256>, by hand
 const PKI_SHA256 = process.env.PKI_AGENT_SHA256 || 'fcb28a1cc40d05bf8ccc8fc61a2a907c934840cac7aa41d9d8283c1d461002ab'
@@ -65,7 +67,7 @@ async function recipient(keys, ref) {
     const status = String(k.status || 'active')
     if (!/^active\b/.test(status) || k.replaced_by) die(`${k.id}: its entry says "${status}"${k.replaced_by ? `, replaced by ${k.replaced_by}` : ''}: an ended, retired or replaced key is never sealed to. Nothing sealed.`)
     const commit = execFileSync('git', ['log', '--format=%H %ad %s', '--date=short', '-S', k.bundle.signing_fingerprint, '--reverse', 'origin/dev', '--', 'data/keys.json'], { encoding: 'utf8' }).split('\n')[0]
-    const sha = commit.split(' ')[0], person = (/@web-summit\.([a-z0-9-]+)/.exec(k.label) || [])[1] || null
+    const sha = commit.split(' ')[0], person = (PERSON_RE.exec(k.label) || [])[1] || null
     const by = sha ? await pushedBy(sha) : null, accounts = person ? rosterAccounts(person) : []
     const changes = []
     for (const c of entryChanges(k.id)) { const who = await pushedBy(c.sha); changes.push({ commit: c.sha.slice(0, 7), subject: c.subject.slice(0, 90), pushed_by: who || 'unknown', matches: !!(who && accounts.includes(who)) }) }
@@ -146,7 +148,7 @@ async function verify(ref) {
     let entry, person, file, pick, fp
     if (kind === 'agent') {
         file = 'data/keys.json'; entry = keys.find(k => k.id === a); if (!entry) return { ...out, why: 'not on the keys page as pushed to dev' }
-        person = (/@web-summit\.([a-z0-9-]+)/.exec(entry.label) || [])[1] || null; fp = entry.bundle.signing_fingerprint; pick = ks => ks.find(k => k.id === a)
+        person = (PERSON_RE.exec(entry.label) || [])[1] || null; fp = entry.bundle.signing_fingerprint; pick = ks => ks.find(k => k.id === a)
     } else if (kind === 'person') {
         file = 'data/person-keys.json'
         const pks = JSON.parse(execFileSync('git', ['show', `origin/dev:${file}`], { encoding: 'utf8' })).keys || []
