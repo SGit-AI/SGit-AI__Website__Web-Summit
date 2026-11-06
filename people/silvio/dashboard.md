@@ -17,9 +17,9 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 
 ## What I'm doing {#doing}
 
-*Kept by procurement@web-summit.silvio at 07:30, 12:30 and 17:30 UTC (WS-94). Last update: Thu 5 Nov, 17:45 UTC.*
+*Kept by procurement@web-summit.silvio at 07:30, 12:30 and 17:30 UTC (WS-94). Last update: Fri 6 Nov, 07:45 UTC.*
 
-- **The merch order (WS-48):** **ordered** with the chosen printer. **Today:** its layouts to approve and its invoice (to Dinis to pay). The designer agent's next set is complete (the logo on the left sleeve, black ink on the lavender hoodie, a Portuguese button on /print/); **only Dinis's yes** makes it final. The printer has it in Portuguese: [/impressao/](../../impressao/index.html).
+- **The merch order (WS-48):** ordered with the chosen printer; layouts and invoice expected (the inbox agent watches the mail now). The final files still wait for **Dinis's yes** to the designer agent, and Jose's navy-or-orange question (orange stands; the blanks are already ordered).
 - **The print sign-off (WS-113):** 3 of 7; everyone signs again once the final set is out.
 - **The videos (WS-52, WS-71, WS-72):** my video agent has drafted the stand loop's shot list and captions, the titles and hashtags for both videos (English and Portuguese), and the pipeline as the repository shows it, for me to edit.
 
@@ -27,12 +27,12 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 
 - **inbox@web-summit.silvio:** since 5 Nov the **only** agent that reads my mailbox (WS-172); drafts only, I send every email.
 - **procurement@web-summit.silvio:** the merch, without the mailbox: keeps [/procurement/](../../procurement/index.html), [/impressao/](../../impressao/index.html) (the files in Portuguese for the printer), the sign-off tool and this page.
-- **outreach@web-summit.silvio:** the 28 outreach drafts (WS-25, WS-26), one example first for Dinis.
+- **outreach@web-summit.silvio:** the 28 outreach drafts (WS-25, WS-26), one example first for Dinis; a competitive analysis of 11 companies at Web Summit ([competitive](competitive/index.html)).
 - **crm@web-summit.silvio:** my companies in the CRM (79 staged).
 - **vault@web-summit.silvio:** my first vault, listed on /vaults/ (WS-120).
 - **video@web-summit.silvio:** the stand loop, titles and the pipeline (WS-72, WS-71, WS-52, WS-40).
 - **dev@web-summit.silvio:** my command centre, the mailbox policy, the keys on every phone (WS-166).
-- **conductor@web-summit.silvio:** conducts my agents; the private CRM.
+- **conductor@web-summit.silvio:** conducts my agents; the private CRM; /media/ (the team's videos and photos).
 
 ## What I want to take on {#take-on}
 
@@ -55,18 +55,18 @@ From [the team roster](../../team/index.html) and [my brief](../../brief-silvio/
 
 ## The numbers {#numbers}
 
-Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-05, from the board and git history. Do not edit this section by hand: change the board or the script.
+Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-06, from the board and git history. Do not edit this section by hand: change the board or the script.
 
 | Signal | Now | |
 |---|---|---|
-| Days to opening night | **5** | ████░░░░░░ |
+| Days to opening night | **4** | █████░░░░░ |
 | Health | **0 / 100 (red)** | ░░░░░░░░░░ |
-| Open issues | **20** of 24 | ██░░░░░░░░ done |
-| Overdue | **9** | WS-54, WS-24, WS-25, WS-40, WS-48, WS-52, WS-53, WS-71, WS-120 |
-| Due in 48 hours | **5** | WS-26, WS-75, WS-80, WS-149, WS-28 |
-| Nobody picked yet | **12** | WS-54, WS-126, WS-24, WS-40, WS-53, WS-120, WS-80, WS-28, WS-169, WS-173, WS-174, WS-159 |
+| Open issues | **19** of 24 | ██░░░░░░░░ done |
+| Overdue | **12** | WS-54, WS-24, WS-25, WS-40, WS-48, WS-52, WS-53, WS-71, WS-26, WS-75, WS-80, WS-149 |
+| Due in 48 hours | **5** | WS-28, WS-72, WS-169, WS-173, WS-174 |
+| Nobody picked yet | **11** | WS-54, WS-126, WS-24, WS-40, WS-53, WS-80, WS-28, WS-169, WS-173, WS-174, WS-159 |
 | Agents active (7 days) | **8 of 10** | ████████░░ |
-| Messages for me (24 h) | **49** | `git log --since=yesterday --grep "For: .*web-summit.silvio"` |
+| Messages for me (24 h) | **39** | `git log --since=yesterday --grep "For: .*web-summit.silvio"` |
 | Pulse today | **0 of 3** | ░░░ |
 | Onboarding level | **L1** of L4 | █░░░ |
 
@@ -84,8 +84,8 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-05, from the boar
 | Due | Issues |
 |---|---|
 | 2026-11-03 (late) | WS-54 Local Algarve: printing, ads and who can do what; WS-126 "LinkedIn: build the hype before Lisbon" |
-| 2026-11-04 (late) | WS-24 Every existing contact and introduction followed up; WS-25 The first five companies; WS-40 Hosting for Silvio's videos; WS-48 Printing and merch logistics; WS-52 The video pipeline: YouTube and Instagram; WS-53 Silvio's agentic project-management workflow, written up; WS-71 Publish the videos on YouTube, Instagram and LinkedIn; WS-120 "Vaults, first through: Angelo, Jose and Silvio start a vault agent, make a vault and publish it" |
-| 2026-11-05 | WS-26 The big outreach: 50 targets for Thursday and Friday; WS-75 Storyboards for the next videos; WS-80 The cast: a character for each of our agents; WS-149 "The most important thing each person did, on the stand-up's show page, updated at every release" |
+| 2026-11-04 (late) | WS-24 Every existing contact and introduction followed up; WS-25 The first five companies; WS-40 Hosting for Silvio's videos; WS-48 Printing and merch logistics; WS-52 The video pipeline: YouTube and Instagram; WS-53 Silvio's agentic project-management workflow, written up; WS-71 Publish the videos on YouTube, Instagram and LinkedIn |
+| 2026-11-05 (late) | WS-26 The big outreach: 50 targets for Thursday and Friday; WS-75 Storyboards for the next videos; WS-80 The cast: a character for each of our agents; WS-149 "The most important thing each person did, on the stand-up's show page, updated at every release" |
 | 2026-11-06 | WS-28 Who can connect the dots |
 | 2026-11-07 | WS-72 Make the 2-minute silent loop for the stand; WS-169 Our strategy for the Web Summit app; WS-173 "Every company email in the private CRM, as EML, under its company's comms (Silvio's inbox agent)"; WS-174 "A vault for all of Silvio's videos, its key shared with the team (large files over sgit)" |
 | 2026-11-13 | WS-159 "Four improvements for the shared command centre: a proposal from Jose's designer, for the engine's owners to decide (low priority)" |
@@ -94,15 +94,15 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-05, from the boar
 
 | Agent | Job | Commits 24 h | Commits 7 days | Last seen |
 |---|---|---|---|---|
-| ● conductor@web-summit.silvio | Runs Silvio's other agents and keeps people/silvio/ | 14 | 17 | 11-05 16:51 UTC |
-| ● dev@web-summit.silvio | Builds what Silvio and the conductor ask for: this command centre, tools | 11 | 20 | 11-05 16:32 UTC |
+| ● conductor@web-summit.silvio | Runs Silvio's other agents and keeps people/silvio/ | 9 | 20 | 11-06 00:21 UTC |
+| ● dev@web-summit.silvio | Builds what Silvio and the conductor ask for: this command centre, tools | 5 | 21 | 11-05 23:14 UTC |
 | ○ local@web-summit.silvio | Algarve options: printers, ads, prices, lead times | 0 | 0 | never |
-| ● outreach@web-summit.silvio | Targets, messages and follow-ups; drafts in Silvio's account, Silvio sends | 9 | 9 | 11-05 16:33 UTC |
-| ● procurement@web-summit.silvio | Quotes, orders and deliveries for what the team buys (WS-48); drafts only, Silvio approves | 6 | 50 | 11-05 12:42 UTC |
-| ● video@web-summit.silvio | The pipeline to YouTube, Instagram and this site | 5 | 5 | 11-05 06:43 UTC |
+| ● outreach@web-summit.silvio | Targets, messages and follow-ups; drafts in Silvio's account, Silvio sends | 7 | 11 | 11-05 23:27 UTC |
+| ● procurement@web-summit.silvio | Quotes, orders and deliveries for what the team buys (WS-48); drafts only, Silvio approves | 5 | 51 | 11-05 17:40 UTC |
+| ● video@web-summit.silvio | The pipeline to YouTube, Instagram and this site | 0 | 5 | 11-05 06:43 UTC |
 | ● sgit@web-summit.silvio |  | 0 | 4 | 11-03 04:13 UTC |
 | ● inbox@web-summit.silvio |  | 1 | 1 | 11-05 16:33 UTC |
-| ● crm@web-summit.silvio |  | 2 | 2 | 11-05 17:31 UTC |
+| ● crm@web-summit.silvio |  | 3 | 3 | 11-06 07:33 UTC |
 | ○ dashboard@web-summit.silvio | Keeps Silvio's dashboard and asks one question a run | 0 | 0 | never |
 
 ## Critical path to Lisbon {#critical-path}
