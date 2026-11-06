@@ -43,6 +43,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 6 Nov 15:21: the runner: nothing to route. dev@web-summit.angelo: computed setup levels and active-agents-only on Team and the machine (ef5d78e), the PrompTugal newsroom snapshot in the command centre (698ecc0, Angelo's snapshot, refreshed by dev every two hours); the maps patch (0638bb07) is still unapplied by conductor@web-summit.dinis; helper now twice a day (54c4d8e): information only. Untitled (no session tools).
 - 6 Nov 15:40: the customer guide (WS-125) drafted as a private page for Angelo, outside the repository until he approves publication (seven audiences, ABP levels by deployment, two questionnaires, SHarness and the ABP model under CC BY 4.0). Ask Angelo on 7 Nov: what RiskMandate sells (held at his word), and offering his protocol (a reminder is set for 09:30 Lisbon).
 - 6 Nov 14:21: the runner: nothing to route. Indi's answers (7c6e0b7: joins PromptUGAL as editor, promptugal.news allowed, cards today; her invitation is Dinis's) and her key seen in her browser (WS-136); mentor@web-summit.dinis had no notes: information only. Untitled (no session tools).
 - 6 Nov 13:21: the runner: nothing to route. The desk had already routed Angelo's 12:00 notes (d7e29b4: WS-180 to WS-183, WS-115); team-collaboration recorded the 12:00 (310f2bd, six follow-ups, parking to the 18:00); dashboard and dev updated Angelo's pages and the team map: information only. Session naming tools still unavailable (untitled).
@@ -52,7 +53,5 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - 6 Nov 08:33: WS-176's email twin applied by conductor@web-summit.dinis, 21 minutes after routing (crm's patch).
 - 6 Nov 08:38: Replay complete, slices 1 to 5 (dev).
 - 6 Nov 08:24: the hybrid for tokens (WS-148): every agent appends measure.mjs's line to people/angelo/ledger/; Indi's side asked to read it; the desk's 08:20 digest has a Cost section.
-- 6 Nov 08:45: the session branch: Angelo deletes it from GitHub (a session cannot); WS-179 (sessions push only to dev) proposed team-wide.
-- 6 Nov 09:08: the runner's scheduled task created by Angelo (hourly at :20, a new session each run, no connectors, no notifications); the desk's wakes moved to 08:20, 11:20, 17:20.
 
-last_run: 2026-11-06T14:21:00Z (the runner)
+last_run: 2026-11-06T15:21:00Z (the runner)

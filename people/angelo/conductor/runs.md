@@ -8,3 +8,4 @@
 2026-11-06T12:22Z | session id unavailable (no get_session tool) | nothing to route; vault-jose's WS-120 reply is in vault-angelo's lane; untitled
 2026-11-06T13:21Z | no session id (get_session unavailable) | nothing to route; STATE upkeep
 2026-11-06T14:21Z | no session id (get_session unavailable) | nothing to route; STATE upkeep
+2026-11-06T15:21:00Z | unknown (no session tools available) | nothing to route; STATE upkeep (dev's levels, PrompTugal snapshot, helper cadence: information only)
