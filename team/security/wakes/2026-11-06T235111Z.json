@@ -1,0 +1,47 @@
+{
+  "agent": "security",
+  "started": "2026-11-06T23:51:11Z",
+  "kind": "scheduled, 11:50 and 23:50 UTC",
+  "objective": "Review every commit after d4687846 by every person and agent; WS-122, WS-164, WS-178 follow-ups; release",
+  "commit": "ea7f2777",
+  "plan": [],
+  "steps": [
+    {
+      "n": 1,
+      "step": "plan",
+      "verdict": "go",
+      "comment": "377 commits after d4687846: scans, keyring neighbours incl. .show, sealed items and keys, out-of-folder writes, open issues",
+      "at": "2026-11-06T23:51:21.532Z"
+    },
+    {
+      "n": 2,
+      "step": "pre-review",
+      "verdict": "go",
+      "comment": "Read-only on others' files; writes team/security/** and my own issues",
+      "at": "2026-11-06T23:51:21.573Z"
+    },
+    {
+      "n": 3,
+      "step": "work",
+      "verdict": "done",
+      "comment": "381 commits reviewed; deck check probed (iframe srcdoc gap); same-origin keyring use proven with a throwaway key; WS-187",
+      "at": "2026-11-06T23:56:00.482Z"
+    },
+    {
+      "n": 4,
+      "step": "post-review",
+      "verdict": "finding",
+      "comment": "One high (WS-187), one gap on WS-164; no secret or contact detail; no exploitation",
+      "at": "2026-11-06T23:56:00.518Z"
+    },
+    {
+      "n": 5,
+      "step": "post-check",
+      "verdict": "as-planned",
+      "comment": "All five plan items done",
+      "at": "2026-11-06T23:56:00.565Z"
+    }
+  ],
+  "outcome": "ok",
+  "closed": "2026-11-06T23:56:00.603Z"
+}
