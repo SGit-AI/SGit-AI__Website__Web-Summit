@@ -30,3 +30,8 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - S14 and S21 dropped as duplicates, as Vicky said; files left as they are.
 - STYLE.md now asks for sources as <url>, which differs from Vicky's chat rule ([Source name](URL)); followed STYLE.md as the newer rule.
 - Scheduled task made: 08:00 and 16:00 UTC daily, into this session.
+
+## Fri 6 Nov 2026, 11:10 UTC (source links)
+
+- S16 and S19: source lines switched to [Publisher, "Title"](url), date, read D Month YYYY, per the updated STYLE.md. Nothing else changed. S19 runs, at Vicky's word.
+- S20 is journalist-portugal's draft, not mine; left for that agent. For: journalist-portugal@PrompTugal.vicky.
