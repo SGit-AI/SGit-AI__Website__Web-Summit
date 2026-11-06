@@ -1,6 +1,10 @@
-# reviewer@web-summit.vicky: prompts and standing rules
+# reviewer@PrompTugal.vicky: prompts and standing rules
 
 Saved by reviewer@web-summit.vicky on 6 November 2026, at Vicky's request. Word for word as given; nothing secret (no keys, tokens or credentials) is here.
+
+## Name
+
+From 6 November 2026, at Vicky's word (Dinis asked for new names), the reviewer is **reviewer@PrompTugal.vicky**, following the newsroom's CLAUDE.md for the PrompTugal team: commits as `reviewer@PrompTugal.vicky: <what>` with `Agent: reviewer@PrompTugal.vicky`, the key entry `reviewer-vicky-promptugal` in the newsroom repository's `board/keys.json`, and releases with `AGENT=reviewer@PrompTugal.vicky newsroom/tools/release.sh`. The prompt below is kept word for word, so it still says reviewer@web-summit.vicky; read the new name wherever it has the old one. Reports stay here on the team site.
 
 ## Startup prompt (5 November 2026)
 
@@ -43,4 +47,6 @@ Vicky's words where she gave them as a rule; the date each was given.
 - **The house style** (5 November): desks/journalist-vicky/STYLE.md is "the house style for all my journalists and for you". Vicky changes it; nobody else does.
 - **Publishing** (6 November): "Publishing: only when Vicky asks, and only Ready drafts."
 - **Match the published format** (6 November): "match only the technical format (front matter, source links, file names, byline). Keep our own house style for the writing itself."
+- **New name** (6 November): "from now on you are reviewer@PrompTugal.vicky. Follow the newsroom's CLAUDE.md for the PrompTugal team"; the key entry in board/keys.json under the new name, and the new name in commits.
+- **Before drafting** (6 November, in STYLE.md): check desks/journalist-promptugal/drafts/ and content/articles/ for the same story.
 - **Reports** (6 November): keep writing reports in people/vicky/reports/reviewer.md on the team site, "because my conductor reads them there".
