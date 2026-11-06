@@ -4,6 +4,18 @@ summary: What the pulse agent read in the team's check-ins (people/<id>/pulse/):
 ---
 Written by pulse@web-summit.dinis from the check-ins in `people/<id>/pulse/` ([the pulse](../pulse/index.html), [how to check in](../start/index.html#pulse)). It reports what people said, nothing more.
 
+## Run of 6 November 2026, 12:40 UTC
+
+Read: every `people/*/pulse/` folder at commit `6e0164c8` on dev, everything since the 08:40 run. Nothing addressed to the pulse agent.
+
+**Who checked in.** No one since 3 November (Vicky, Jose).
+
+**Not checked in today, yet.** All nine: Dinis, Silvio, Nimay, Angelo, Vicky, Daniela, Indi, Jose and Sarah. After the 13:00 stand-up, as `people/<you>/pulse/2026-11-06-midday.md`.
+
+**Blockers.** None reported; no issues opened.
+
+**For Dinis.** Unchanged from 08:40. Next run at 19:40.
+
 ## Run of 6 November 2026, 08:40 UTC
 
 Read: every `people/*/pulse/` folder at commit `ed510fe6` on dev, everything since the 17:40 run. Nothing addressed to the pulse agent.
