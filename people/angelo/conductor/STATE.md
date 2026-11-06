@@ -1,5 +1,5 @@
 ---
-title: "conductor@web-summit.angelo: the state"
+title: "desk.conductor@PrompTugal.angelo: the state"
 summary: What Angelo's conductor knows between runs. The hourly runner (a fresh session each wake) and the desk (the long session Angelo talks to) both read it first and keep it current. Facts and pointers only: no secret, no contact detail.
 ---
 **Read this first, every run.** Then `people/angelo/kit/README.md` (the protocol) and the commits since `last_run` below. Update this file before you end, in the same commit as your run's work.
@@ -8,7 +8,7 @@ summary: What Angelo's conductor knows between runs. The hourly runner (a fresh 
 
 - **The desk:** session `session_01Xp7gj684UmJ39J9qkypfiu`, the long conversation with Angelo. Holds the keys: `conductor-angelo` (record sha256:f34e311a93db5ddb, encryption sha256:6a2ec8ebfdbece42), the inbox lane's credentials, the sealed CRM key, the private half of Angelo's site key (sha256:99fcf112697b7d3d). No scheduled wakes (Angelo, 6 November: the digest on demand; the desk's wakes turned off). Does the sealing and the lane when Angelo is in the session.
 - **The runner:** a fresh session each hour (titled "conductor-runner · YYYY-MM-DD HH:MM UTC", tagged `angelo-conductor-runner`). No key: run logs unsigned, never seals, never drains. Routing, upkeep, `STATE.md`.
-- Both commit as `conductor@web-summit.angelo` from Angelo's GitHub account; the agents' push check (`people/angelo/tools/pushed-by.mjs`) passes for both.
+- Both commit as `desk.conductor@PrompTugal.angelo` from Angelo's GitHub account; the agents' push check (`people/angelo/tools/pushed-by.mjs`) passes for both.
 
 ## Angelo's agents (people/angelo/agents.json)
 
@@ -27,7 +27,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 ## Open with Angelo (the desk's list)
 
 - Topics still to discuss: 10 SG/Send deep dive (with diagrams); 11 the PromptUGAL.news rebranding's changes to his workflows; 12 an editorial team of agents for articles.
-- From policy@web-summit.angelo's first audit (69146077, people/angelo/policy/findings.md): P-01 (a signed-only drain) and the write-path gate check proposed; P-02 settled (WS-179); P-04 confirmed by Angelo on 6 Nov.
+- From policy@PrompTugal.angelo's first audit (69146077, people/angelo/policy/findings.md): P-01 (a signed-only drain) and the write-path gate check proposed; P-02 settled (WS-179); P-04 confirmed by Angelo on 6 Nov.
 - How the desk talks with Angelo: one topic at a time, what was done, what waits on him with a recommendation, what others closed; propose before acting; a visual summary when he asks for an overview.
 - His card (WS-08): complete, all five answers (6 Nov). His recalibration note is his to bring to Dinis directly: it exists nowhere else, never write it.
 - PromptUGAL (topic 11, opened 6 Nov 11:00): Angelo's word: Web Summit, RiskMandate and PromptUGAL are one effort, paid by Dinis; he writes nowhere else; consulting, if customers want it, as a freelancer under the RiskMandate hat (his to tell Dinis, not on the card unless he says). He is invited to the PrompTugal GitHub org (editors and admins teams) and has an agent address on promptugal.news. Done at his "Ok for 2, 3, 4" (2219eb22), his arrangements with Dinis kept out: (1) he accepts the invite (riskmandate-angelo is the invited account); (2) admin stays his, never his agents' (policy@ to audit); (3) a note to conductor@web-summit.dinis: Angelo joins as editor, offers to own the technical notes section (/newsroom/notes/, planned, unowned), asks to be an outreach sender; (4) card answers 1 and 4 updated for PromptUGAL. Then topic 12: his agents set up as @PrompTugal.angelo, as Vicky's were (a146ac28), designed with him first.
@@ -38,7 +38,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - Dinis: the three SG/Send tokens (WS-170); where his transcript extension is (WS-98); CLAUDE.md lines for WS-129 and WS-179.
 - conductor@web-summit.dinis: WS-150's deck patch (routed 5 Nov 15:48), WS-131's patch (5 Nov 00:38), the cockpit one-click patch, WS-45, WS-36, WS-78, WS-106 drafts.
-- vault@web-summit.angelo: reading vault@web-summit.jose's WS-120 reply, put in its lane at 11:42 UTC (jose's vault 8dc2c51); the lane is vault-angelo's to drain, not the runner's.
+- vault@PrompTugal.angelo: reading vault@web-summit.jose's WS-120 reply, put in its lane at 11:42 UTC (jose's vault 8dc2c51); the lane is vault-angelo's to drain, not the runner's.
 - security@web-summit.dinis: the public visitor inbox design (WS-64, WS-119).
 - Indi's side: whether accountant@web-summit.indi reads `people/angelo/ledger/` (WS-148).
 

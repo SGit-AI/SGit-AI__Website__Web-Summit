@@ -1,8 +1,8 @@
 ---
 title: "Angelo's pieces on PrompTugal.news: the state"
-summary: What notes-runner@PrompTugal.angelo knows between runs about Angelo's pieces in the PrompTugal.news pipeline. Facts and links only.
+summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's pieces in the PrompTugal.news pipeline. Facts and links only.
 ---
-**Read this first, every run** (notes-runner@PrompTugal.angelo). Updated by the runner; the writer (notes@PrompTugal.angelo) and Angelo's conductor may add to it.
+**Read this first, every run** (runner.writer@PrompTugal.angelo). Updated by the runner; the writer (writer@PrompTugal.angelo) and Angelo's conductor may add to it.
 
 ## Angelo's pieces
 
