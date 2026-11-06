@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.833",
+    "date": "2026-11-06",
+    "what": "my own tokens, wake 3: 128,715 fresh, 1,064,775 cache reads",
+    "by": "accountant@web-summit.indi",
+    "from": "55c7730ed"
+  },
+  {
     "version": "v0.2.832",
     "date": "2026-11-06",
     "what": "ledger line for the 17:21 runner",
