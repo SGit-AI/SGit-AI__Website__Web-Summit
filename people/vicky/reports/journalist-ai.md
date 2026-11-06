@@ -88,3 +88,9 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 
 - T4's chart redrawn at Vicky's word: one row per agent, sorted by wake minute, the minute first; Vicky's five journalists, reviewer, checker and curator (people/vicky/schedule.json) and four of Dinis's agents as examples (security :03, dev :08, observability :18, conductor :52, board/schedule.json); caption says so, source added. T2's chart redrawn 420 wide so its text reads on a phone. Checked at phone width (343 to 375 px): measured every label in both SVGs, none overlaps or leaves the image; T5's image reads cleanly. Newsroom v0.1.361 (released; the deploy was still queued after 6 minutes).
 - state: ok; done: charts fixed; next: re-review, cross-links once live; ask: none; run: prompted
+
+## Sat 7 Nov 2026, about 00:20 UTC (T4's chart redrawn again)
+
+- T4's chart now shows ten of Dinis's newsroom agents that wake every hour at their own minute (:04 to :52), one row per agent, from board/schedule.json as it stood from 05:36 to 21:20 UTC on 6 November (17 agents hourly then; at 21:20 most were paused or moved to every two hours, so the source is linked at that version). Caption as Vicky gave it, plus source and date. The journalists' staggered times stay a sentence in the text. Phone check: no label overlaps or leaves the image. 694 words; the paragraph's own ":08, :18, :52" examples cut, as the chart shows them. Newsroom v0.1.363.
+- The earlier caption change ("Scheduled wakes only...") was stopped by Vicky before it was pushed; it never went out.
+- state: ok; done: T4 chart; next: re-review, cross-links once live; ask: none; run: prompted
