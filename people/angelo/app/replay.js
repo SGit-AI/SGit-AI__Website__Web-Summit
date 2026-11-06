@@ -14,11 +14,11 @@
     function parse(hash) {
         const i = hash.indexOf('?'), q = new URLSearchParams(i < 0 ? '' : hash.slice(i + 1))
         const list = k => (q.get(k) || '').split(',').filter(Boolean)
-        const w = q.get('w'); return { w: WINDOWS[w] ? w : '24h', p: list('p'), k: list('k'), a: q.get('a') || '', i: q.get('i') || '', sel: q.get('sel') || '', m: q.get('m') !== '0' }
+        const w = q.get('w'); return { w: WINDOWS[w] ? w : '24h', p: list('p'), k: list('k'), a: q.get('a') || '', i: q.get('i') || '', sel: q.get('sel') || '', m: q.get('m') !== '0', r: q.get('r') === '1' }
     }
     function toHash(s) {
         const q = []; if (s.w !== '24h') q.push('w=' + s.w); if (s.p.length) q.push('p=' + s.p.join(',')); if (s.k.length) q.push('k=' + s.k.join(','))
-        if (s.a) q.push('a=' + encodeURIComponent(s.a)); if (s.i) q.push('i=' + encodeURIComponent(s.i)); if (s.sel) q.push('sel=' + s.sel); if (!s.m) q.push('m=0')
+        if (s.a) q.push('a=' + encodeURIComponent(s.a)); if (s.i) q.push('i=' + encodeURIComponent(s.i)); if (s.sel) q.push('sel=' + s.sel); if (!s.m) q.push('m=0'); if (s.r) q.push('r=1')
         return '#replay' + (q.length ? '?' + q.join('&') : '')
     }
     const at = (R, m) => new Date(Date.parse(R.from) + m * 6e4)
@@ -35,6 +35,21 @@
     }
 
     let play = null   // { raf, last, t, speed }
+    // slice 4: the agents' runs (WS-160), read in this browser from observability's public vault with its published read key,
+    // through the site's vendored reader (assets/vendor/sgit-ai/.../vault-embed.js): only when asked, once per page
+    let RUNS = null   // null | 'loading' | [runs] | Error
+    function loadRuns(src, base, after) {
+        if (RUNS) return; RUNS = 'loading'
+        const need = window.SGVaultEmbed ? Promise.resolve() : new Promise((ok, no) => { const sc = document.createElement('script'); sc.src = new URL('../../../assets/vendor/sgit-ai/2026-11-05/vault-embed.js', base).href; sc.onload = ok; sc.onerror = () => no(new Error('the vault reader did not load')); document.head.appendChild(sc) })
+        need.then(async () => {
+            const dec = new TextDecoder(), R = await new window.SGVaultEmbed.Reader({ endpoint: src.endpoint, vault_id: src.vault_id, read_key: src.read_key.replace(/^sgit_public_read_/, '') }).init()
+            const ref = JSON.parse(dec.decode(await R.decrypt(await R.raw('bare/refs/ref-pid-muw-' + await R.fileId('sg-vault-v1:file-id:ref:' + src.vault_id)))))
+            let id = (await R.objJson(ref.commit_id)).tree_id, entry = null
+            for (const part of src.path.split('/')) { const t = await R.objJson(id); entry = null; for (const e of t.entries || []) if (await R.decB64(e.name_enc) === part) { entry = e; break } if (!entry) throw new Error('not in the vault: ' + src.path); id = entry.tree_id }
+            const j = JSON.parse(dec.decode(await R.obj(entry.blob_id)))
+            RUNS = (j.runs || []).filter(x => x.agent && x.run)
+        }).catch(e => { RUNS = e instanceof Error ? e : new Error(String(e)) }).then(after)
+    }
     function render(view, ctx) {
         const { D, title, note, ownTitle, ago } = ctx, R = D.replay
         if (play) { cancelAnimationFrame(play.raf); play = null }
@@ -59,6 +74,8 @@
         const aByName = new Map(R.agents.map((a, i) => [a.name, i])), personRow = new Map(rows.map((r, n) => [r.person, n]).filter(([p]) => p))
         const targetRow = t => { const i = aByName.get(t); if (i != null && rowOf.has(i)) return rowOf.get(i); const p = t.includes('@web-summit.') ? t.split('@web-summit.')[1] : t; return personRow.has(p) ? personRow.get(p) : null }
         const yOf = n => TOP + n * RH + RH / 2
+        // slice 4: each run on its agent's row (or its person's), at its minute, within the window and the filters
+        const runMarks = s.r && Array.isArray(RUNS) ? RUNS.map(u => { const t = Math.round((Date.parse(u.run.replace(/Z$/, ':00Z')) - Date.parse(R.from)) / 6e4); const i = aByName.get(u.agent); const n = i != null && rowOf.has(i) ? rowOf.get(i) : null; return [u, n, t] }).filter(([u, n, t]) => n != null && t >= start && t <= end && (!s.a || u.agent === s.a)) : []
         const arcs = s.m ? ev.filter(e => e[1] >= 0 && rowOf.has(e[1]) && e[3].length).flatMap(e => e[3].map(ti => [e, targetRow(R.targets[ti])]).filter(([, n]) => n != null && n !== rowOf.get(e[1]))) : []
         const arcPath = (e, n) => { const x0 = x(e[0]), y0 = yOf(rowOf.get(e[1])), y1 = yOf(n), dx = Math.min(46, Math.abs(y1 - y0) / 3 + 6); return `M${x0.toFixed(1)} ${y0}C${(x0 + dx).toFixed(1)} ${y0} ${(x0 + dx).toFixed(1)} ${y1} ${x0.toFixed(1)} ${y1}` }
         // the label spacing follows the width: the first step that leaves about 56 px between labels
@@ -71,6 +88,7 @@
 ${rows.map((r, n) => `<g class="rp-row ${r.kind}"><rect x="0" y="${TOP + n * RH}" width="${W}" height="${RH}"/><text x="6" y="${TOP + n * RH + RH / 2 + 4}">${esc(r.label)}${r.title ? `<title>${esc(r.title)}</title>` : ''}</text></g>`).join('')}
 <g class="rp-rel">${ev.filter(e => e[1] < 0).map(e => `<line class="rp-e" data-t="${e[0]}" x1="${x(e[0])}" x2="${x(e[0])}" y1="${TOP - 4}" y2="${TOP}"><title>${esc(e[5])} by CI, ${esc(hhmm(at(R, e[0])))} UTC</title></line>`).join('')}</g>
 <g class="rp-arcs">${arcs.map(([e, n]) => `<path class="rp-e rp-arc${e[6] === s.sel ? ' on' : ''}" data-t="${e[0]}" data-h="${esc(e[6])}" d="${arcPath(e, n)}" stroke="${KINDS[e[2]][1]}"/>`).join('')}</g>
+<g class="rp-runs">${runMarks.map(([u, n, t]) => `<rect class="rp-e rp-run${u.signed ? ' signed' : ''}" data-t="${t}" x="${(x(t) - 4).toFixed(1)}" y="${TOP + n * RH + 2}" width="8" height="${RH - 4}" rx="2"><title>${esc(u.agent)} ran at ${esc(u.run.slice(11, 16))} UTC (${esc(u.trigger || 'run')}${u.signed ? ', signed' : ''}): read ${(u.read || []).length}, did ${(u.did || []).length}${u.notes ? '. ' + esc(u.notes) : ''}</title></rect>`).join('')}</g>
 <g class="rp-dots">${ev.filter(e => e[1] >= 0 && rowOf.has(e[1])).map(e => `<circle class="rp-e${e[6] === s.sel ? ' on' : ''}" data-t="${e[0]}" data-h="${esc(e[6])}" cx="${x(e[0]).toFixed(1)}" cy="${TOP + rowOf.get(e[1]) * RH + RH / 2}" r="${phone ? 4 : 3.5}" fill="${KINDS[e[2]][1]}"><title>${esc(R.agents[e[1]].name)}, ${esc(hhmm(at(R, e[0])))} UTC: ${esc(e[5])}</title></circle>`).join('')}</g>
 <line class="rp-head" x1="${x(end)}" x2="${x(end)}" y1="${TOP - 10}" y2="${H}"/></svg>`
         const chip = (k, v, l, on, col) => `<button type="button" class="rp-chip${on ? ' on' : ''}" data-rp="${k}" data-v="${esc(v)}" aria-pressed="${on}">${col ? `<i style="background:${col}"></i>` : ''}${esc(l)}</button>`
@@ -83,7 +101,7 @@ ${rows.map((r, n) => `<g class="rp-row ${r.kind}"><rect x="0" y="${TOP + n * RH}
   <label class="ak-q"><span>Issue</span><input type="search" data-rp-i value="${esc(s.i)}" placeholder="WS-34" inputmode="numeric"></label>
 </div>
 <div class="rp-chips" role="group" aria-label="People">${R.people.map(p => chip('p', p.id, p.name.split(' ')[0], s.p.includes(p.id))).join('')}</div>
-<div class="rp-chips" role="group" aria-label="Kinds">${Object.entries(KINDS).map(([k, [l, c]]) => chip('k', k, l, s.k.includes(k), c)).join('')}${chip('k', 'r', 'Release by CI', s.k.includes('r'), 'var(--rm-green)')}<button type="button" class="rp-chip${s.m ? ' on' : ''}" data-rp-m aria-pressed="${s.m}">↷ Messages between agents</button></div>
+<div class="rp-chips" role="group" aria-label="Kinds">${Object.entries(KINDS).map(([k, [l, c]]) => chip('k', k, l, s.k.includes(k), c)).join('')}${chip('k', 'r', 'Release by CI', s.k.includes('r'), 'var(--rm-green)')}<button type="button" class="rp-chip${s.m ? ' on' : ''}" data-rp-m aria-pressed="${s.m}">↷ Messages between agents</button>${R.runs ? `<button type="button" class="rp-chip${s.r ? ' on' : ''}" data-rp-r aria-pressed="${s.r}">▮ Runs, from the agents' logs</button>` : ''}</div>
 </details>
 <div class="rp-play">
   <button type="button" class="cc-btn" data-rp-play aria-pressed="false">▶ Play</button>
@@ -93,11 +111,13 @@ ${rows.map((r, n) => `<g class="rp-row ${r.kind}"><rect x="0" y="${TOP + n * RH}
   <b class="rp-now" data-rp-now>${esc(dayLabel(at(R, end)))} ${esc(hhmm(at(R, end)))} UTC</b>
 </div>
 <p class="note">${ev.length} commits and releases shown. Tap a dot for the commit; an arc is a commit's For: line, from its agent to the agent or person it is for. Kinds are read from each commit (who it is from and to), so they are a guide, not a record.</p>
+${s.r ? `<p class="note rp-runnote">${RUNS === 'loading' || !RUNS ? 'Reading the agents\' run logs from observability\'s public vault…' : RUNS instanceof Error ? `The run logs could not be read (${esc(RUNS.message)}).` : `${runMarks.length} runs shown (▮, green when signed), from the latest ${RUNS.length} the agents logged (WS-160); runs carry no duration, so each is a mark at its minute.`}</p>` : ''}
 <div class="rp-wrap">${rows.length ? svg : '<p class="note">Nothing in this window for these filters.</p>'}</div>
 ${sel ? detail(R, sel) : ''}
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}: every commit on dev since 2 November up to that release.</p>
 </div>`
         bind(view, ctx, s, start, end, x)
+        if (s.r && !RUNS && R.runs) loadRuns(R.runs, location.href, () => { if (/^#replay(\?|$)/.test(location.hash)) render(view, ctx) })
     }
 
     function detail(R, e) {
@@ -110,6 +130,7 @@ ${sel ? detail(R, sel) : ''}
     function bind(view, ctx, s, start, end, x) {
         const go = patch => { const open = !!view.querySelector('.rp-filters[open]'); history.replaceState(history.state, '', location.pathname + location.search + toHash({ ...s, ...patch })); render(view, ctx); const f = view.querySelector('.rp-filters'); if (f && open) f.open = true }
         view.querySelectorAll('[data-rp]').forEach(b => b.onclick = () => { const k = b.dataset.rp, v = b.dataset.v; go({ [k]: s[k].includes(v) ? s[k].filter(x => x !== v) : [...s[k], v] }) })
+        const rr = view.querySelector('[data-rp-r]'); if (rr) rr.onclick = () => go({ r: !s.r })
         const mm = view.querySelector('[data-rp-m]'); if (mm) mm.onclick = () => go({ m: !s.m })
         const w = view.querySelector('[data-rp-w]'); if (w) w.onchange = () => go({ w: w.value })
         const a = view.querySelector('[data-rp-a]'); if (a) a.onchange = () => go({ a: a.value })

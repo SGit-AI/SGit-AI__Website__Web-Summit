@@ -187,3 +187,7 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .rp-arcs path.now { opacity: .95; stroke-width: 2; }
 .rp-arcs path.on { opacity: 1; stroke-width: 2.5; }
 .rp-arcs path.fut { opacity: .04; }
+/* Replay slice 4: the agents' runs */
+.rp-runs rect { fill: color-mix(in srgb, var(--rm-text-muted) 35%, transparent); stroke: var(--rm-text-muted); stroke-width: 1; }
+.rp-runs rect.signed { stroke: var(--rm-green); fill: color-mix(in srgb, var(--rm-green) 30%, transparent); }
+.rp-runs rect.fut { opacity: .1; }

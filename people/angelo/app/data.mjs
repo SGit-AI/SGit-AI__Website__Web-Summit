@@ -186,7 +186,11 @@ function replay(root) {
     // the stand-ups, from the schedule (each slot's minute) and the meetings that have a folder
     const sch = readJson(root, 'data/meetings/schedule.json') || {}, mdir = path.join(root, 'data/meetings')
     const standups = fs.existsSync(mdir) ? fs.readdirSync(mdir).filter(x => /^\d{4}-\d\d-\d\d-\d{4}$/.test(x)).map(id => [Math.round((Date.UTC(+id.slice(0, 4), +id.slice(5, 7) - 1, +id.slice(8, 10), +id.slice(11, 13), +id.slice(13, 15)) - REPLAY_FROM) / 6e4), id]) : []
-    return { from: new Date(REPLAY_FROM).toISOString(), people, agents, targets, events, standups, repo: 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit' }
+    // slice 4, the runs: the agents' run logs (WS-160) as observability@web-summit.dinis publishes them, in its public vault;
+    // only the published read key's record (people/dinis/vaults.json), which the page uses to read latest/runs.json itself
+    const obs = ((readJson(root, 'people/dinis/vaults.json') || {}).vaults || []).find(v => v.agent === 'observability@web-summit.dinis' && /^sgit_public_read_[0-9a-f]{64}$/.test(v.read_key || ''))
+    const runs = obs ? { endpoint: 'https://dev.send.sgraph.ai', vault_id: obs.vault_id, read_key: obs.read_key, path: 'latest/runs.json', source: 'people/dinis/vaults.json' } : null
+    return { from: new Date(REPLAY_FROM).toISOString(), people, agents, targets, events, standups, runs, repo: 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit' }
 }
 
 export function build(root, person, now = new Date()) {
