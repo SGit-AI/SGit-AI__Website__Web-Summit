@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.736",
+    "date": "2026-11-06",
+    "what": "the 08:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "b230d3575"
+  },
+  {
     "version": "v0.2.735",
     "date": "2026-11-06",
     "what": "RUNNER.md written so the gate's email check passes (a file name and a variable)",
