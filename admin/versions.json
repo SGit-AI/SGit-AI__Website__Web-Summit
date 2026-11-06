@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.782",
+    "date": "2026-11-06",
+    "what": "notes 02 to 04 (policies through compaction, cheap workers, hand-overs), P9 to P20; my 22:00 task",
+    "by": "scout@web-summit.vicky",
+    "from": "04d48da1d"
+  },
+  {
     "version": "v0.2.781",
     "date": "2026-11-06",
     "what": "P5, each journalist moves its own task; scout runs daily at 22:00 UTC",
