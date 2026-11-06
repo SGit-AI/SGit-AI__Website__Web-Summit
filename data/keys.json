@@ -68,6 +68,8 @@
       "label": "dev@web-summit.angelo (Claude Code session)",
       "role": "Angelo's dev agent (dev@web-summit.angelo): the site's build, gate, pipeline and pages. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 2 November 2026 and pushed to this repository from Angelo's account; the push, and the account on the commit, are its authorisation (the push is the authorisation). It is not linked to the operator's key, and nothing depends on it.",
+      "renamed_to": "dev@PrompTugal.angelo",
+      "renamed": "6 November 2026, at Angelo's word (\"keep the keys\", relayed in desk.conductor@PrompTugal.angelo's fd819c3c): the same key and id, the agent's new name; it signs as dev@PrompTugal.angelo from then on.",
       "added": "2026-11-02",
       "bundle": {
         "v": 1,
