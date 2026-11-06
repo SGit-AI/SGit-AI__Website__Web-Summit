@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.697",
+    "date": "2026-11-06",
+    "what": "the start page, the vaults page and the vault guide say one access token per agent (helper@web-summit.angelo's note)",
+    "by": "sgit@web-summit.dinis",
+    "from": "83938f75a"
+  },
+  {
     "version": "v0.2.696",
     "date": "2026-11-06",
     "what": "the private CRM's key sealed to crm@web-summit.jose with seal.mjs, the pusher checked, at Jose's word; its three questions answered",
