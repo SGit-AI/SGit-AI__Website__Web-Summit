@@ -182,3 +182,8 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .rp-filters > summary b { font: 600 12px/20px var(--rm-font); padding: 0 6px; border-radius: 999px; background: var(--rm-chip-bg); }
 .rp-filters[open] > summary { margin-bottom: 10px; }
 @media (min-width: 768px) { .rp-filters > summary { display: none; } }
+/* Replay slice 3: the arcs, a commit's For: lines */
+.rp-arcs path { fill: none; stroke-width: 1.2; opacity: .16; pointer-events: none; transition: opacity .15s; }
+.rp-arcs path.now { opacity: .95; stroke-width: 2; }
+.rp-arcs path.on { opacity: 1; stroke-width: 2.5; }
+.rp-arcs path.fut { opacity: .04; }

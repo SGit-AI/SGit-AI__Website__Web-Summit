@@ -14,11 +14,11 @@
     function parse(hash) {
         const i = hash.indexOf('?'), q = new URLSearchParams(i < 0 ? '' : hash.slice(i + 1))
         const list = k => (q.get(k) || '').split(',').filter(Boolean)
-        const w = q.get('w'); return { w: WINDOWS[w] ? w : '24h', p: list('p'), k: list('k'), a: q.get('a') || '', i: q.get('i') || '', sel: q.get('sel') || '' }
+        const w = q.get('w'); return { w: WINDOWS[w] ? w : '24h', p: list('p'), k: list('k'), a: q.get('a') || '', i: q.get('i') || '', sel: q.get('sel') || '', m: q.get('m') !== '0' }
     }
     function toHash(s) {
         const q = []; if (s.w !== '24h') q.push('w=' + s.w); if (s.p.length) q.push('p=' + s.p.join(',')); if (s.k.length) q.push('k=' + s.k.join(','))
-        if (s.a) q.push('a=' + encodeURIComponent(s.a)); if (s.i) q.push('i=' + encodeURIComponent(s.i)); if (s.sel) q.push('sel=' + s.sel)
+        if (s.a) q.push('a=' + encodeURIComponent(s.a)); if (s.i) q.push('i=' + encodeURIComponent(s.i)); if (s.sel) q.push('sel=' + s.sel); if (!s.m) q.push('m=0')
         return '#replay' + (q.length ? '?' + q.join('&') : '')
     }
     const at = (R, m) => new Date(Date.parse(R.from) + m * 6e4)
@@ -49,12 +49,18 @@
             const mine = R.agents.map((a, i) => [a, i]).filter(([a, i]) => a.person === p.id && agentsSeen.has(i))
             if (!mine.length) continue
             if (phone) rows.push({ kind: 'person', label: p.name.split(' ')[0], person: p.id, idx: mine.map(([, i]) => i) })
-            else { rows.push({ kind: 'head', label: p.name }); for (const [a, i] of mine) rows.push({ kind: 'agent', label: a.short, title: a.name, idx: [i] }) }
+            else { rows.push({ kind: 'head', label: p.name, person: p.id }); for (const [a, i] of mine) rows.push({ kind: 'agent', label: a.short, title: a.name, idx: [i] }) }
         }
         const W = Math.max(320, view.clientWidth || 960), LW = phone ? 72 : 170, RH = phone ? 26 : 20, TOP = 34
         const H = TOP + rows.length * RH + 8, span = Math.max(60, end - start)
         const x = m => LW + (m - start) / span * (W - LW - 12)
         const rowOf = new Map(); rows.forEach((r, n) => (r.idx || []).forEach(i => rowOf.set(i, n)))
+        // slice 3, the arcs: each For: target's row, an agent's own row or, for a person (or an agent not shown), their person's row
+        const aByName = new Map(R.agents.map((a, i) => [a.name, i])), personRow = new Map(rows.map((r, n) => [r.person, n]).filter(([p]) => p))
+        const targetRow = t => { const i = aByName.get(t); if (i != null && rowOf.has(i)) return rowOf.get(i); const p = t.includes('@web-summit.') ? t.split('@web-summit.')[1] : t; return personRow.has(p) ? personRow.get(p) : null }
+        const yOf = n => TOP + n * RH + RH / 2
+        const arcs = s.m ? ev.filter(e => e[1] >= 0 && rowOf.has(e[1]) && e[3].length).flatMap(e => e[3].map(ti => [e, targetRow(R.targets[ti])]).filter(([, n]) => n != null && n !== rowOf.get(e[1]))) : []
+        const arcPath = (e, n) => { const x0 = x(e[0]), y0 = yOf(rowOf.get(e[1])), y1 = yOf(n), dx = Math.min(46, Math.abs(y1 - y0) / 3 + 6); return `M${x0.toFixed(1)} ${y0}C${(x0 + dx).toFixed(1)} ${y0} ${(x0 + dx).toFixed(1)} ${y1} ${x0.toFixed(1)} ${y1}` }
         // the label spacing follows the width: the first step that leaves about 56 px between labels
         const ppm = (W - LW - 12) / span, step = [60, 120, 180, 360, 720, 1440, 2880, 5760].find(st => st * ppm >= 56) || 5760
         const ticks = []; for (let m = Math.ceil(start / step) * step; m <= end; m += step) ticks.push(m)
@@ -64,6 +70,7 @@
 <g class="rp-stand">${R.standups.filter(([m]) => m >= start && m <= end).map(([m, id]) => `<line x1="${x(m)}" x2="${x(m)}" y1="${TOP - 10}" y2="${H}"/><text x="${x(m) + 3}" y="${TOP - 12}">stand-up ${esc(id.slice(-4, -2))}:${esc(id.slice(-2))}</text>`).join('')}</g>
 ${rows.map((r, n) => `<g class="rp-row ${r.kind}"><rect x="0" y="${TOP + n * RH}" width="${W}" height="${RH}"/><text x="6" y="${TOP + n * RH + RH / 2 + 4}">${esc(r.label)}${r.title ? `<title>${esc(r.title)}</title>` : ''}</text></g>`).join('')}
 <g class="rp-rel">${ev.filter(e => e[1] < 0).map(e => `<line class="rp-e" data-t="${e[0]}" x1="${x(e[0])}" x2="${x(e[0])}" y1="${TOP - 4}" y2="${TOP}"><title>${esc(e[5])} by CI, ${esc(hhmm(at(R, e[0])))} UTC</title></line>`).join('')}</g>
+<g class="rp-arcs">${arcs.map(([e, n]) => `<path class="rp-e rp-arc${e[6] === s.sel ? ' on' : ''}" data-t="${e[0]}" data-h="${esc(e[6])}" d="${arcPath(e, n)}" stroke="${KINDS[e[2]][1]}"/>`).join('')}</g>
 <g class="rp-dots">${ev.filter(e => e[1] >= 0 && rowOf.has(e[1])).map(e => `<circle class="rp-e${e[6] === s.sel ? ' on' : ''}" data-t="${e[0]}" data-h="${esc(e[6])}" cx="${x(e[0]).toFixed(1)}" cy="${TOP + rowOf.get(e[1]) * RH + RH / 2}" r="${phone ? 4 : 3.5}" fill="${KINDS[e[2]][1]}"><title>${esc(R.agents[e[1]].name)}, ${esc(hhmm(at(R, e[0])))} UTC: ${esc(e[5])}</title></circle>`).join('')}</g>
 <line class="rp-head" x1="${x(end)}" x2="${x(end)}" y1="${TOP - 10}" y2="${H}"/></svg>`
         const chip = (k, v, l, on, col) => `<button type="button" class="rp-chip${on ? ' on' : ''}" data-rp="${k}" data-v="${esc(v)}" aria-pressed="${on}">${col ? `<i style="background:${col}"></i>` : ''}${esc(l)}</button>`
@@ -76,7 +83,7 @@ ${rows.map((r, n) => `<g class="rp-row ${r.kind}"><rect x="0" y="${TOP + n * RH}
   <label class="ak-q"><span>Issue</span><input type="search" data-rp-i value="${esc(s.i)}" placeholder="WS-34" inputmode="numeric"></label>
 </div>
 <div class="rp-chips" role="group" aria-label="People">${R.people.map(p => chip('p', p.id, p.name.split(' ')[0], s.p.includes(p.id))).join('')}</div>
-<div class="rp-chips" role="group" aria-label="Kinds">${Object.entries(KINDS).map(([k, [l, c]]) => chip('k', k, l, s.k.includes(k), c)).join('')}${chip('k', 'r', 'Release by CI', s.k.includes('r'), 'var(--rm-green)')}</div>
+<div class="rp-chips" role="group" aria-label="Kinds">${Object.entries(KINDS).map(([k, [l, c]]) => chip('k', k, l, s.k.includes(k), c)).join('')}${chip('k', 'r', 'Release by CI', s.k.includes('r'), 'var(--rm-green)')}<button type="button" class="rp-chip${s.m ? ' on' : ''}" data-rp-m aria-pressed="${s.m}">↷ Messages between agents</button></div>
 </details>
 <div class="rp-play">
   <button type="button" class="cc-btn" data-rp-play aria-pressed="false">▶ Play</button>
@@ -85,7 +92,7 @@ ${rows.map((r, n) => `<g class="rp-row ${r.kind}"><rect x="0" y="${TOP + n * RH}
   <input type="range" class="rp-scrub" data-rp-scrub min="${start}" max="${end}" value="${end}" step="1" aria-label="Time">
   <b class="rp-now" data-rp-now>${esc(dayLabel(at(R, end)))} ${esc(hhmm(at(R, end)))} UTC</b>
 </div>
-<p class="note">${ev.length} commits and releases shown. Tap a dot for the commit. Kinds are read from each commit (who it is from and to), so they are a guide, not a record.</p>
+<p class="note">${ev.length} commits and releases shown. Tap a dot for the commit; an arc is a commit's For: line, from its agent to the agent or person it is for. Kinds are read from each commit (who it is from and to), so they are a guide, not a record.</p>
 <div class="rp-wrap">${rows.length ? svg : '<p class="note">Nothing in this window for these filters.</p>'}</div>
 ${sel ? detail(R, sel) : ''}
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}: every commit on dev since 2 November up to that release.</p>
@@ -103,6 +110,7 @@ ${sel ? detail(R, sel) : ''}
     function bind(view, ctx, s, start, end, x) {
         const go = patch => { const open = !!view.querySelector('.rp-filters[open]'); history.replaceState(history.state, '', location.pathname + location.search + toHash({ ...s, ...patch })); render(view, ctx); const f = view.querySelector('.rp-filters'); if (f && open) f.open = true }
         view.querySelectorAll('[data-rp]').forEach(b => b.onclick = () => { const k = b.dataset.rp, v = b.dataset.v; go({ [k]: s[k].includes(v) ? s[k].filter(x => x !== v) : [...s[k], v] }) })
+        const mm = view.querySelector('[data-rp-m]'); if (mm) mm.onclick = () => go({ m: !s.m })
         const w = view.querySelector('[data-rp-w]'); if (w) w.onchange = () => go({ w: w.value })
         const a = view.querySelector('[data-rp-a]'); if (a) a.onchange = () => go({ a: a.value })
         const i = view.querySelector('[data-rp-i]'); if (i) { let t; i.oninput = () => { clearTimeout(t); t = setTimeout(() => { go({ i: i.value }); const n = view.querySelector('[data-rp-i]'); if (n) { n.focus(); n.setSelectionRange(n.value.length, n.value.length) } }, 300) } }
@@ -112,16 +120,19 @@ ${sel ? detail(R, sel) : ''}
         const head = view.querySelector('.rp-head'), now = view.querySelector('[data-rp-now]'), scrub = view.querySelector('[data-rp-scrub]'), btn = view.querySelector('[data-rp-play]'), speed = view.querySelector('[data-rp-speed]')
         const R = ctx.D.replay
         let shown = dots.length
+        const arcs = [...view.querySelectorAll('.rp-arc')], playing = () => !!play
         function seek(t) {
             t = Math.max(start, Math.min(end, t))
             while (shown > 0 && +dots[shown - 1].dataset.t > t) dots[--shown].classList.add('fut')
             while (shown < dots.length && +dots[shown].dataset.t <= t) dots[shown++].classList.remove('fut')
+            // slice 3: the messages of the last 90 minutes before the playhead are drawn bright, so each one lights up as it happens
+            if (arcs.length && playing()) for (const a of arcs) a.classList.toggle('now', +a.dataset.t <= t && +a.dataset.t > t - 90)
             if (head) { head.setAttribute('x1', x(t)); head.setAttribute('x2', x(t)) }
             if (now) now.textContent = `${dayLabel(at(R, t))} ${hhmm(at(R, t))} UTC`
             if (scrub && +scrub.value !== Math.round(t)) scrub.value = Math.round(t)
             return t
         }
-        const stop = () => { if (play) cancelAnimationFrame(play.raf); play = null; if (btn) { btn.textContent = '▶ Play'; btn.setAttribute('aria-pressed', 'false') } }
+        const stop = () => { if (play) cancelAnimationFrame(play.raf); play = null; arcs.forEach(a => a.classList.remove('now')); if (btn) { btn.textContent = '▶ Play'; btn.setAttribute('aria-pressed', 'false') } }
         if (scrub) scrub.oninput = () => { stop(); seek(+scrub.value) }
         const j = view.querySelector('[data-rp-jump]'); if (j) j.onchange = () => { if (j.value) { stop(); seek(+j.value) } }
         if (btn) btn.onclick = () => {
