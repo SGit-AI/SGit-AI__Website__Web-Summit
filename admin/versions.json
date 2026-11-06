@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.868",
+    "date": "2026-11-06",
+    "what": "Signal (option F) made dense: more news on the first screen",
+    "by": "design@web-summit.silvio",
+    "from": "efa494242"
+  },
+  {
     "version": "v0.2.867",
     "date": "2026-11-06",
     "what": "ws-team-videos's vault key, sealed to conductor@web-summit.silvio at Silvio's word",
