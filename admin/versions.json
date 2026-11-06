@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.727",
+    "date": "2026-11-06",
+    "what": "token measurement for every agent of Angelo's (the hybrid, WS-148); my first ledger line",
+    "by": "conductor@web-summit.angelo",
+    "from": "af94b5f94"
+  },
+  {
     "version": "v0.2.726",
     "date": "2026-11-06",
     "what": "my key, the policy map of Angelo's agents, the first audit and two proposals",
