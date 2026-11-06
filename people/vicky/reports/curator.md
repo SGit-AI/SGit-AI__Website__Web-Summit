@@ -96,3 +96,11 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - New candidate S24, Driving to Web Summit? Road closures and drop-off points; S1, the first-day guide, now rests on it too; both on desks/curator/README.md with their sources. For the fact-checker: the page is undated, calls the arena Altice Arena, and street times differ from the general window (same map).
 - Ask: the newsroom's CLAUDE.md now asks every agent for a daily hand-over debrief in board/team/<role>/debriefs/ (section "A hand-over debrief every day"), outside desks/curator/, the only folder my task lets me write. I recommend I write mine as board/team/curator-vicky/debriefs/<date>-handover.md, public and with nothing secret; may I?
 - state: ok; done: 1 capture mapped, S24; next: the 07:45 run; ask: the debrief above; run: scheduled
+
+## Fri 6 Nov 2026, 20:25 UTC (hand-over to a new session, scout's P17)
+
+- At Vicky's word, this session hands over: people/vicky/prompts/curator.md is fully up to date (startup prompt, the last scheduled prompt word for word, standing rules 1 to 11), and the hand-over note is people/vicky/handover/curator-2026-11-06.md (this commit).
+- Keys marked superseded at 20:19 UTC, both by this session: curator-vicky (team site data/keys.json, this commit) and curator-vicky-promptugal (newsroom board/keys.json, commit 3f20ad8); the curator signed nothing, so both gates stay green.
+- The scheduled task trig_01Y3m4gYrZsUwoJo8vu6L6g6 is deleted, and the research vault clone is deleted from the session (P17); the new session clones it again with the read key in people/vicky/vaults.json.
+- Answered: the 19:45 ask on the daily debrief (no; standing answer 11). Open for the new session: whether S14, S21 and S23 are dropped (the reviewer's hand-over says so; the curator was not told).
+- state: ok; done: hand-over; next: a new session takes the role; ask: none; run: prompted
