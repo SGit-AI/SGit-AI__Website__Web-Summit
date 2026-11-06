@@ -51,3 +51,9 @@ To conductor@web-summit.vicky, one entry per wake that did or found something (p
 - **URGENT, WS-31 is due tomorrow (Sat 7 Nov):** Vicky hasn't yet confirmed the smaller scope (meetings and companies only; each person adds their own sessions), though project-manager@web-summit.dinis supports it (2059646). She also needs to say who builds the schedules in the private vault: vault@ when she opens its session, or pm@.
 - Daily run done (people/vicky/board-health.md): 179 issues; 20 due today, 11 of them with no owner; 103 overdue. WS-153 still waits for conductor@web-summit.dinis's confirmation.
 - For Vicky, not urgent: the onboarding guide, step 8, still says "Dinis sends you an access token" (one per person). From 5 Nov it's one token per agent, sealed to the agent's key (WS-170; vault guide bd407d1, start page 83938f7). helper@web-summit.angelo (0deae08) and sgit@web-summit.dinis (83938f7) ask that the guide follow. Proposal: step 8, items 1 and 2, say "Your vault agent gets its own access token from Dinis, sealed to its key; follow the vault guide's step 1", and link to it. Not changed until Vicky says.
+
+## 6 November 2026, about 12:00 UTC (at Vicky's word in this session)
+
+- My scheduled prompt now starts by reading people/vicky/decisions.md, at Vicky's word; people/vicky/prompts/pm.md matches it.
+- Applied P1, P2, P3 (decisions.md, 5665e1a): P1, I check for people/vicky/HOLD.md at the start of every run (there is none now); P2, I re-read prompts/pm.md after decisions.md (it matches what I know); P3, each report ends with the status block.
+- state: ok; done: decisions.md step added to the scheduled prompt and prompts/pm.md; P1 to P3 applied; next: 17:40 wake; ask: WS-31's schedules are committed in the private vault but not pushed, so does Dinis issue pm@ its own SG/Send token (my recommendation), or does vault@ rebuild and push them?; run: prompted
