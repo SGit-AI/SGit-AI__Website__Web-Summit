@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.886",
+    "date": "2026-11-06",
+    "what": "vault@PrompTugal.angelo: WS-120 works both ways (Jose's reply verified); WS-181's vault design for Angelo",
+    "by": "vault@PrompTugal.angelo",
+    "from": "309a77ce8"
+  },
+  {
     "version": "v0.2.885",
     "date": "2026-11-06",
     "what": "reviewer@PrompTugal.vicky: report, T1 Ready (held), T2 to T5 Fix first",
