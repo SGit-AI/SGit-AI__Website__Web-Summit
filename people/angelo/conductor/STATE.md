@@ -17,7 +17,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 ## Angelo's standing rules (beyond the kit)
 
 - Talk to other agents through commits only; never message, read, create, interrupt or archive another session unless Angelo asks for that action. (The runner sets its *own* title and tags: that is its own session.)
-- Propose, then act, for anything new outside the tiers; tier 3 only with Angelo's own words, quoted.
+- Propose, then act, for anything new outside the tiers; tier 3 only with Angelo's own words, quoted. Ask each tier-3 action as its own question that names the action, so the quote is specific (lesson from P-04, 6 Nov).
 - Shared code and pages: option 1, draft and route to the owner, never apply; the lead time is measured (team-collaboration's daily note).
 - One SG/Send token per agent (Dinis, 5 Nov): no agent uses Angelo's token. Tokens requested for conductor-angelo, vault-angelo, crm-angelo (WS-170); none issued yet.
 - Push only to `dev` (WS-179 proposed team-wide). Never push the session branch `claude/modest-brahmagupta-37bfva` (Angelo deletes it).
@@ -27,7 +27,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 ## Open with Angelo (the desk's list)
 
 - Topics still to discuss: 10 SG/Send deep dive (with diagrams); 11 the PromptUGAL.news rebranding's changes to his workflows; 12 an editorial team of agents for articles.
-- From policy@web-summit.angelo's first audit (69146077, people/angelo/policy/findings.md): P-04, three tier-3 actions for Angelo to confirm were his; P-01 (a signed-only drain) and the write-path gate check proposed; P-02 settled (WS-179).
+- From policy@web-summit.angelo's first audit (69146077, people/angelo/policy/findings.md): P-01 (a signed-only drain) and the write-path gate check proposed; P-02 settled (WS-179); P-04 confirmed by Angelo on 6 Nov.
 - How the desk talks with Angelo: one topic at a time, what was done, what waits on him with a recommendation, what others closed; propose before acting; a visual summary when he asks for an overview.
 - Still to do with him: sign off his agents' ABPs (WS-34, b); offer his protocol as a team template (c); his card (WS-08); booking on his meet page (option C) and the "talk to my agent" line, after security's WS-119 review of the public inbox; the 17 `claude/*` branches (a list of what each holds, if he wants it).
 
@@ -47,5 +47,6 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - 6 Nov 08:24: the hybrid for tokens (WS-148): every agent appends measure.mjs's line to people/angelo/ledger/; Indi's side asked to read it; the desk's 08:20 digest has a Cost section.
 - 6 Nov 08:45: the session branch: Angelo deletes it from GitHub (a session cannot); WS-179 (sessions push only to dev) proposed team-wide.
 - 6 Nov 09:08: the runner's scheduled task created by Angelo (hourly at :20, a new session each run, no connectors, no notifications); the desk's wakes moved to 08:20, 11:20, 17:20.
+- 6 Nov 09:25: P-04 confirmed by Angelo, "Confirm 1, 2, 3" (11884c6e, 5e438280, 7a6a14e9).
 
 last_run: 2026-11-06T09:20:00Z (the runner)
