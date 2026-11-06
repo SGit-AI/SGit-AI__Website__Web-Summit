@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.712",
+    "date": "2026-11-06",
+    "what": "Replay slice 4: the agents' runs, from their own logs, beside their commits (quiet runs show too)",
+    "by": "dev@web-summit.angelo",
+    "from": "6e1fa5169"
+  },
+  {
     "version": "v0.2.711",
     "date": "2026-11-06",
     "what": "the 04:57 report, and 'What happened' updated",
