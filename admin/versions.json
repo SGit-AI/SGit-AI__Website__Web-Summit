@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.711",
+    "date": "2026-11-06",
+    "what": "the 04:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "a952a1767"
+  },
+  {
     "version": "v0.2.710",
     "date": "2026-11-06",
     "what": "WS-178, the person keys checked with --verify: five pass, Indi's waits on riskmandate-indi",
