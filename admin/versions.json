@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.704",
+    "date": "2026-11-06",
+    "what": "the 02:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "db7ade94a"
+  },
+  {
     "version": "v0.2.703",
     "date": "2026-11-06",
     "what": "WS-106 (\"Meet the estate's repository standard\"), item 8: a leak tripwire before every push, for its keeper",
