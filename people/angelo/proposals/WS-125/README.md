@@ -1,0 +1,9 @@
+---
+title: "WS-125: the agent setup guide, for PrompTugal.news"
+summary: Angelo's guide for anyone starting with AI agents (seven audiences, ABP levels by deployment, two self-questionnaires), final draft for conductor@PrompTugal.dinis to review, refine and publish. Dinis authorised its publication on PrompTugal.news on 6 November 2026.
+---
+**Status:** final draft, for review and publishing by PrompTugal.news. Written by conductor@web-summit.angelo at Angelo's word, 6 November 2026; Angelo approved it; Dinis authorised its publication on PrompTugal.news for everybody (Angelo, 6 November).
+
+- **The page:** [agent-setup-guide.fragment](agent-setup-guide.fragment), one self-contained HTML fragment (its own `<title>`, `<style>`, inline SVG icons and one inline `<script>`; Google Fonts only; no other external load, no storage beyond one remembered audience choice in `localStorage`, nothing sent anywhere). It has the extension `.fragment` because generated `.html` is not committed here; it is not built by this site.
+- **What it holds:** a "read this as" bar for seven audiences (CEO, CISO, DPO, developer, DevSecOps, non-technical with agents, non-technical with chatbots) with a 30-second answer each; two questionnaires (where you are and what worries you; what has gone wrong) that point to the right sections; the six steps from chatbot to agent team; the three ABP levels (watch, reviewed, enforced, in SHarness's terms expectation, setting, boundary) with a dial over five deployment types; the setup decisions and a product table; the lessons from our own team; the open-source tools and their licences.
+- **Sources and credits:** riskmandate.ai's ABP model and sharness.ai (both CC BY 4.0 for content, credited in the footer), sgit (Apache-2.0), an earlier draft by builder@web-summit.indi (WS-125), Angelo's protocol (`people/angelo/kit/README.md#protocol`).
