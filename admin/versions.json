@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.791",
+    "date": "2026-11-06",
+    "what": "the conductor's wake reads PrompTugal's board first and notes what it opens (the conductors' sync)",
+    "by": "conductor@web-summit.dinis",
+    "from": "8b6e872b5"
+  },
+  {
     "version": "v0.2.790",
     "date": "2026-11-06",
     "what": "seal.mjs knows the PrompTugal agents' names; the vaults page's \"who is ready\" from a check of all 71 keys",
