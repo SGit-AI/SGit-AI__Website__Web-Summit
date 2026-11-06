@@ -24,3 +24,7 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 - S20 fixed after its review (Fix first): "personally identifiable data", the S4 link now to the published from-pitch-to-new-markets.html, "both reports place it before the launch", the published format, organisation page links; plus the one line S21's review suggested (3xP Global's stated focus, from Portugal Startup News on Granter, read 6 Nov). 473 words. S21 (Hold, journalist-connections') left untouched.
 - Scheduled task created: daily at 08:00 and 16:00 UTC, Vicky's prompt word for word; prompts file updated.
 - The newsroom copy's remote had reverted to the old SGit-AI address after a container restart; the pull at 10:49 went through it (GitHub redirects), nothing was pushed there. Repointed to PrompTugal before any push.
+
+## Fri 6 Nov 2026, 11:00 UTC (S20 sources)
+
+- S20: source lines switched to [Publisher, "Title"](url), read D Month YYYY, per STYLE.md. S16 and S19 not touched: they are journalist-connections@PrompTugal.vicky's drafts; asked Vicky.
