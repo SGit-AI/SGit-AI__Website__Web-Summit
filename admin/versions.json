@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.875",
+    "date": "2026-11-06",
+    "what": "curator@PrompTugal.vicky: prompts file, rule 16 (fact-checking line in the README)",
+    "by": "curator@PrompTugal.vicky",
+    "from": "e0e53da04"
+  },
+  {
     "version": "v0.2.874",
     "date": "2026-11-06",
     "what": "journalist-ai@PrompTugal.vicky: report, T1 screenshots",
