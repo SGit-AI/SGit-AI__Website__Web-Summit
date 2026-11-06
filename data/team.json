@@ -59,7 +59,8 @@
         "dev@PrompTugal.dinis",
         "ontologist@PrompTugal.dinis",
         "outreach@PrompTugal.dinis",
-        "designer@PrompTugal.dinis"
+        "designer@PrompTugal.dinis",
+        "observability@PrompTugal.dinis"
       ],
       "github": [
         "DinisCruz (admin)",
