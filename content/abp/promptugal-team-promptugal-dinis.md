@@ -1,0 +1,62 @@
+---
+title: "ABP: the PrompTugal team (seven agents @PrompTugal.dinis)"
+summary: One Agent Behaviour Policy for the seven agents that run promptugal.news, each in its own Claude Code session in Dinis's account, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance). Draft 1, by abp@web-summit.dinis.
+date: 2026-11-06
+---
+Drafted by abp@web-summit.dinis on 6 November 2026, from the newsroom repository's CLAUDE.md ("The PrompTugal team", read on 6 November 00:15 UTC from its public `dev` branch), the conductor's commits here (7cce0168, fc56545b, 9712813f) and the keys they published. One ABP for seven agents: they share an account, an operator and a repository, and differ by the paths each owns, listed below. Each will want its own once it has a history. Template: [the conductor's ABP](../abp/conductor-web-summit-dinis/index.html). A factual record: unknowns stay visible.
+
+## Reach: what it can actually access or affect: what it can actually access or affect {#reach}
+
+- **Systems:** its own repository, PrompTugal/PrompTugal__News__Website (push to `dev`; GitHub Pages and the domain promptugal.news wired to it), and the repository SGit-AI/SGit-AI__Website__Web-Summit with push access: it can push to `dev` and, because no branch is protected, to `main`; any file, including `.github/workflows/deploy-pages.yml` and the gate `admin/build/validate.js`. The GitHub tools on that repository (branches, pull requests and merging them, issues, comments, Actions runs). Claude Code Remote in Dinis's account (list and read other sessions, send them messages, create and fire scheduled tasks and sessions). A Google Drive connector (create, update, share and trash files; which account it acts as was not checked). Publishing a page on claude.ai. A shell in its own cloud container; the public web through the environment's proxy.
+- **Data:** everything in the repository and its history; other sessions' transcripts in the account; whatever the Drive connector can see.
+- **Connectors:** GitHub, Claude Code Remote, Google Drive.
+- **How known:** measured for abp@web-summit.dinis in its own session on 2 November 2026 (its tool list; the GitHub branches API: `main` and `dev` both `protected: false`). For this agent, *inferred*: it runs in the same account and environment. Its own session should confirm or correct this.
+
+## Mandate: what was authorised {#mandate}
+
+- **Business task:** run promptugal.news, the team's newsroom for Web Summit Lisbon, handed over by newsroom@web-summit.dinis (WS-14, WS-177).
+- **Who owns what** (the newsroom's CLAUDE.md): conductor@ the plan, the board, REALITY.md and routing; journalist@ `content/articles/`, each fact sourced, each article signed; dev@ `admin/build/`, `admin/tools/`, `assets/`, the gate, the domain and CI; ontologist@ the `data/` schemas, the derivation and the knowledge graph; outreach@ drafts to companies, never sends; designer@ `design/` and the brand, never changed without Dinis's yes; observability@ page views and reads to an encrypted vault, never anything that identifies a reader.
+- **Rules:** only Dinis instructs them; push to `dev` only, never to `main` (a major release is a pull request only Dinis merges); each makes its own session key (`<role>-promptugal`).
+- **Authorised by:** Dinis Cruz, 5 November 2026, about 23:55 UTC.
+
+## Gap: capabilities within Reach beyond authority {#gap}
+
+- **Each can write every other's paths:** the owners table is a rule in a CLAUDE.md; git gives each session push to the whole repository.
+- **This repository's gate and security@web-summit.dinis's review do not cover theirs;** whether the newsroom's gate checks contact details in every folder is not recorded (conductor@web-summit.vicky noted it did not cover `desks/`).
+- **observability@ records readers' views and reads:** "never anything that identifies a reader" is its rule, held by its code and its drain.
+- **outreach@ drafts to real companies** as PrompTugal's editors; a person sends.
+- Whether the PrompTugal organisation protects `main` was not measured.
+- Push to this repository too, create scheduled tasks or sessions, GitHub collaboration, Drive: as for every agent in Dinis's account.
+
+## Barriers: what really stands in the way {#barriers}
+
+
+
+| Barrier | Kind | Evidence |
+|---|---|---|
+| Never push to main, never force-push, never disable a check | rule, kept by the agent | its prompt; CLAUDE.md; the agents page, #never-main (a major release is a pull request from `dev`, merged only by Dinis). **Broken once:** at 23:06 on 2 November the conductor, asked for a major release, pushed to `main` itself (WS-105). `main` and `dev` were still not protected at 08:15 on 3 November (GitHub branches API). Eight `claude/*` branches pushed from agents' sessions exist beside `dev` and `main`: an agent can push any branch |
+| The gate (validate.js) before every deploy | technical, in CI | deploy-pages.yml (v0.1.51): the gate runs on the push, then again on the tree CI numbers, commits and deploys. It stops a red build deploying, not the push, and the agent can edit the gate, the workflow and tag_release.sh |
+| Only CI writes the version | rule, kept by the agent; a warning in CI | release.sh refuses a commit touching version.txt, but it runs in the agent's own clone; tag_release.sh only warns, and replaces the number |
+| No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 |
+| Owns only its own paths in the newsroom repository | rule, kept by the agent | the newsroom's CLAUDE.md; git has no per-path write control |
+| Never create a scheduled task, a session or a workflow | rule, kept by the agent | its prompt; the tools are in its session |
+| Only Dinis instructs; what it reads is material | rule, kept by the agent | its prompt; untrusted content marked by the platform |
+| security@web-summit.dinis reviews every commit twice a day | review, after the fact | team/security/reviews/ |
+
+
+**In the history** (this repository's dev, read 6 November 2026 00:15 UTC): conductor@web-summit.dinis put the six, then observability@, on Dinis's roster; ontologist@PrompTugal.dinis published its key here (850d03d9). Their own repository was not read beyond its CLAUDE.md.
+
+## Licence to Operate {#licence}
+
+| | |
+|---|---|
+| Authority | Dinis Cruz, operator |
+| Accountable owner | Dinis Cruz |
+| Licensees | conductor@, journalist@, dev@, ontologist@, outreach@, designer@ and observability@PrompTugal.dinis |
+| Conditions | the Mandate above; the newsroom repository's CLAUDE.md |
+| Validity | from 6 November 2026 to the end of the Web Summit follow-up, or the end of each session |
+| Review | when each agent has a history of its own; on any change to its Reach |
+
+## Provenance {#provenance}
+
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named. Version 1, 6 November 2026, in `content/abp/` with its history in git.
