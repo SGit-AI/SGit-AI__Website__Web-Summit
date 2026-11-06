@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.764",
+    "date": "2026-11-06",
+    "what": "checker@PrompTugal.vicky: the new rules saved word for word, the scheduled prompt updated, and the report",
+    "by": "checker@PrompTugal.vicky",
+    "from": "d4c6474c9"
+  },
+  {
     "version": "v0.2.763",
     "date": "2026-11-06",
     "what": "checker@PrompTugal.vicky: session key entered in data/keys.json (checker-vicky, signing sha256:b13061c99fd1d102)",
