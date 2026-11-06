@@ -31,6 +31,7 @@ From 4 November 2026 (Vicky's word): Vicky's GitHub account can push to the news
 | Reviewer | `reviewer@PrompTugal.vicky` (was reviewer@web-summit.vicky until 6 Nov 10:20 UTC) | `desks/reviewer-vicky/reviews/` in the newsroom repository (reviews of the journalists' drafts against their sources, and style) | 08:48 and 16:48, on its own scheduled task (from 6 Nov; Vicky said 09:00 and 17:00), in the web-summit-research environment | set up 5 Nov, night (Vicky's word) |
 | Checker | `checker@PrompTugal.vicky` | `desks/checker-vicky/` in the newsroom repository: fact-checks of the articles Dinis's agents write (`findings/`), and the publish workflow draft (`publish-workflow.md`) | 09:48 and 17:48, on its own scheduled task | since 6 Nov 11:02 UTC (keys checker-vicky-promptugal and checker-vicky) |
 | Designer | `designer@PrompTugal.vicky` (was designer@web-summit.vicky until 6 Nov 10:27 UTC) | `desks/designer-vicky/` in the newsroom repository | paused until Vicky asks (6 Nov; Dinis's designer owns the brand) | since 5 Nov 19:22 UTC (key designer-vicky) |
+| Dev | `dev@PrompTugal.vicky` | the newsroom site, only when Vicky asks; tells the owner of what it changes in a commit For: that agent (standing answer 10) | on demand | set up 6 Nov, evening (replaces dev@web-summit.vicky) |
 
 `researcher/` here holds the researcher's first two files (4 Nov, 12:55 and 15:46), written before the vault existed; their captures move into the vault. `curator/` and `programme/` here are not used: those desks write in the newsroom repository.
 

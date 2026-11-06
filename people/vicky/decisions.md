@@ -34,6 +34,7 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 7. Vicky's reviewer publishes Ready drafts from Vicky's desks when Vicky asks, with Dinis's approval of 6 November (he confirmed at 14:22 UTC that Vicky may authorise publishing, answering his watcher's question). (Vicky, 6 Nov)
 8. For how to write, STYLE.md wins over anything Vicky said in chat before it; always re-read it before a draft. (Vicky, 6 Nov)
 9. Sources are written as STYLE.md says: `[Publisher, "Title"](url)`, never `<url>`. (Vicky, 6 Nov)
+10. Dinis said at the 6 November 18:00 stand-up that we can all make changes to the newsroom site. Vicky's agents may change it when she asks, and must tell the owner in a commit For: that agent. (Vicky, 6 Nov)
 
 ## Updates for agents
 

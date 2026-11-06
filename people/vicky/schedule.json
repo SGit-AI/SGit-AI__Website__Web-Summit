@@ -163,14 +163,14 @@
    "why": "on demand (Vicky, 4 Nov)"
   },
   {
-   "agent": "dev@web-summit.vicky",
-   "state": "none",
-   "why": "paused until after the summit; no scheduled task exists, though agents.json had listed an 08:00 report-only run"
-  },
-  {
    "agent": "designer@PrompTugal.vicky",
    "state": "none",
    "why": "paused until Vicky asks (6 Nov)"
+  },
+  {
+   "agent": "dev@PrompTugal.vicky",
+   "state": "none",
+   "why": "on demand, for newsroom site changes (Vicky, 6 Nov); replaces dev@web-summit.vicky, which had no task"
   }
  ]
 }
