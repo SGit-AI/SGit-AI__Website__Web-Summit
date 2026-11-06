@@ -59,7 +59,7 @@
     "conductor": {
       "colour": "conductor",
       "job": "conducts Jose's agents and keeps people/jose/ with Jose: onboarding, agents.json, ack.json, stand-up items, the mentor's notes, and a numbered PDF brief to Jose",
-      "schedule": "cron 20 7,12,17 * * * (UTC), the wake; and cron 7 * * * * (UTC), the hourly telemetry drain (WS-37); both scheduled tasks fire into its own session, set at Jose's word on 3 and 4 November 2026"
+      "schedule": "cron 20 7,12,17 * * * (UTC), the wake; and cron 7 * * * * (UTC), the hourly page-view run (WS-37), which only counts from 6 November 2026, 00:07 UTC, until the conductor has an SG/Send token of its own (Dinis's rule); both scheduled tasks fire into its own session, set at Jose's word on 3 and 4 November 2026"
     },
     "dashboard": {
       "colour": "blue",
@@ -94,7 +94,7 @@
     "watcher": {
       "colour": "slate",
       "job": "Jose's security watcher, read-only",
-      "schedule": "cron 15 7,12,17 * * * (UTC), a scheduled task firing into its own session since 4 November 2026, 23:10 UTC (its commit f1e9241)"
+      "schedule": "cron 15 7,12,17,22 * * * (UTC), a scheduled task firing into its own session since 4 November 2026, 23:10 UTC (its commit f1e9241); the 22:15 run added at Jose's word on 5 November 2026"
     },
     "reviewer": {
       "colour": "slate",
