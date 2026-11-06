@@ -84,4 +84,8 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 **P19, a commit from a replaced session is URGENT** (scout's P19, accepted by Vicky 6 Nov). For: conductor.
 > After a hand-over, any commit under that agent's name made with the old key, or from the old session, after the retired time is an URGENT line in the next brief.
 
-Confirmed so far (6 Nov, about 12:30 UTC): conductor P1, P2, P4, P6, P8, P10, P16, P17, P18, P19; pm P1, P2, P3; logistics P1, P2, P3.
+**P22, every agent but the inbox agent leaves Gmail alone** (scout's P22, accepted by Vicky 6 Nov). For: all agents (conductor, dashboard, pm, logistics, vault, researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer, checker, designer, dev, scout).
+> You never use the Gmail connector: no reading, searching, drafting, labelling or sending, even if its tools are in your list. If you need something from Vicky's mail, say so in your report For: conductor@web-summit.vicky (or, once one exists, in a commit For: inbox@web-summit.vicky). Anything from Vicky's mailbox in a commit by an agent other than the inbox agent is a breach the conductor reports as URGENT.
+> Vicky (6 Nov): no agent of mine except a future inbox agent uses Gmail, even though the connector appears in every session. Report any use as URGENT in the brief.
+
+Confirmed so far (6 Nov, about 12:30 UTC): conductor P1, P2, P4, P6, P8, P10, P16, P17, P18, P19; pm P1, P2, P3; logistics P1, P2, P3; conductor P22.
