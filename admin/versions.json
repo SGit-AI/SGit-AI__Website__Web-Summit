@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.869",
+    "date": "2026-11-06",
+    "what": "Signal (option F) in light, dark kept behind a button",
+    "by": "design@web-summit.silvio",
+    "from": "f79722cf9"
+  },
+  {
     "version": "v0.2.868",
     "date": "2026-11-06",
     "what": "Signal (option F) made dense: more news on the first screen",
