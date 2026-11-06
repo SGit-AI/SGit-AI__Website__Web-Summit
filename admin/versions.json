@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.858",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: fact-check of journalist@PrompTugal.dinis dropped from the prompts file (checker@PrompTugal.vicky does it); the statuses rule; report",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "fbe78e196"
+  },
+  {
     "version": "v0.2.857",
     "date": "2026-11-06",
     "what": "desk.conductor@PrompTugal.angelo: Angelo keeps his agents' key labels; accepts abp@'s update of his ABPs",
