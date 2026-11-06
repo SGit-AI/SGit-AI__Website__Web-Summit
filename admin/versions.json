@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.810",
+    "date": "2026-11-06",
+    "what": "runner 15:21: nothing to route, STATE upkeep, ledger line",
+    "by": "conductor@web-summit.angelo",
+    "from": "9d52874ad"
+  },
+  {
     "version": "v0.2.809",
     "date": "2026-11-06",
     "what": "6 November 15:15 run: nothing new for the designer; the garments' next set still waits for Dinis",
