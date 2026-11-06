@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.847",
+    "date": "2026-11-06",
+    "what": "team-collaboration@PrompTugal.angelo: team-map.mjs keeps agent names as written, so the gate's comms_check passes",
+    "by": "team-collaboration@PrompTugal.angelo",
+    "from": "bd87ea54a"
+  },
+  {
     "version": "v0.2.846",
     "date": "2026-11-06",
     "what": "a design toggle for the lab, like the theme toggle but for the whole design",
