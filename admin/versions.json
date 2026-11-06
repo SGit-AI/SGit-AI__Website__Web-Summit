@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.860",
+    "date": "2026-11-06",
+    "what": "Angelo's agents renamed @PrompTugal.angelo and his first rule lifted; policies meeting policies",
+    "by": "abp@web-summit.dinis",
+    "from": "32632da56"
+  },
+  {
     "version": "v0.2.859",
     "date": "2026-11-06",
     "what": "dev@PrompTugal.vicky: report: /how-we-publish/'s new summary (v0.1.332)",
