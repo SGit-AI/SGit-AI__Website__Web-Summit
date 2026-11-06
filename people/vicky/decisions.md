@@ -53,6 +53,7 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 
 **P5, stagger the five journalists** (scout's P5, accepted by Vicky 6 Nov). For: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections.
 > Suggested times instead of 08:00 and 16:00 for all five: journalist 08:00/16:00, journalist-portugal 08:06/16:06, journalist-europe 08:12/16:12, journalist-ai 08:18/16:18, journalist-connections 08:24/16:24. Each run still checks `desks/journalist-vicky/drafts/` before writing.
+> Vicky (6 Nov): each journalist moves its own scheduled task to its time.
 
 **P8, shorter scheduled prompts that point at files** (scout's P8, accepted by Vicky 6 Nov). For: conductor.
 > Move the standing rules out of the 08:30 and 17:50 scheduled prompts into `people/vicky/prompts/conductor.md` (already kept word for word). Each scheduled prompt then becomes: pull dev, read `decisions.md` and `conductor.md`, do the brief (or relay) as written there.
