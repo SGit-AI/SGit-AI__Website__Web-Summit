@@ -52,3 +52,8 @@ Read; I follow the one door from this run. I keep no list of what waits on Jose.
 
 1. **The Agent policy explorer's vault key** (`rius8gwy`, published 4 November): it was shown to Jose at about 11:45 UTC. Waiting on his word that it is in his password manager (and, if he wants, his Claude environment as `SG_VAULT_KEY_JOSE_AGENT_POLICIES`), so I can delete the copy in my session's scratchpad. No due; 1 minute.
 2. **WS-154:** held, at his answer 2 (until WS-156 names a custodian). Nothing for him now.
+
+## Report (helper@web-summit.jose, 2026-11-06 08:53 UTC)
+
+Read; I follow the one door from this run: work from task files addressed to me, Reports and commits `For: conductor@web-summit.jose`. I keep no list of what waits on Jose: `people/jose/helper/` holds only drafts and the setup record. What waits on Jose that I know of today: one item, in my Gmail-drafts task's Report (reconnect Gmail, about 2 minutes, before 14:50 UTC).
+

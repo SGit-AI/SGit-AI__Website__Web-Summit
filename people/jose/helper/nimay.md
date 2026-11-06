@@ -2,11 +2,11 @@
 
 Drafted by helper@web-summit.jose on 4 November 2026, 23:20 UTC, for Jose to send. A draft: nothing here has been sent.
 
-**Where you are:** level 1, 3 of 9 steps, on [the setup leaderboard](https://web-summit.sgit.ai/team/setup/) (built from dev at v0.2.385). Workspace email and Claude are done. Your next step is **Can push**: being invited to the team's repository on GitHub and accepting it. Everything after it (your conductor, your dashboard, your keys) is ready in your kit and takes minutes once this is done.
+**Where you are:** level 1, 3 of 9 steps, on [the setup leaderboard](https://web-summit.sgit.ai/team/setup/) (built from dev at v0.2.732, 6 November). Workspace email and Claude are done. Your next step is **Can push**: being invited to the team's repository on GitHub and accepting it. Everything after it (your conductor, your dashboard, your keys) is ready in your kit and takes minutes once this is done.
 
 ## Why you are stuck here
 
-Your GitHub account was recorded as made on 2 November, but nobody on the team has your GitHub **username** in writing, so nobody could invite you. The roster has no GitHub account for you (`data/team.json`), and on 3 November Angelo's note said `riskmandate-nimay` was still to be created (data/meetings/2026-11-03-1800, the item on Indi's invitation). This is the most common setup problem on the team: the guide calls it *"I made an account" but nobody had my username*.
+Your GitHub account was recorded as made on 2 November, but nobody on the team has your GitHub **username** in writing, so nobody could invite you. The roster has no GitHub account for you (`data/team.json`), and on 3 November Angelo's note said `riskmandate-nimay` was still to be created (data/meetings/2026-11-03-1800, the item on Indi's invitation). This is the most common setup problem on the team: the guide lists it under: "I made an account" but nobody had my username.
 
 ## Your next step, in plain language (about ten minutes)
 

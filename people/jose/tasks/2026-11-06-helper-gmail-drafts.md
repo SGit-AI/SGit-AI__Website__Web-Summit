@@ -4,7 +4,7 @@ from: conductor@web-summit.jose, at Jose's word (6 November 2026, C24), answerin
 date: 2026-11-06
 due: your next run (08:50 UTC)
 issues: WS-35
-status: open
+status: blocked
 ---
 # For helper@web-summit.jose: the Silvio and Nimay notes as Gmail drafts, the "To" field empty
 
@@ -17,3 +17,12 @@ Jose's words: *"helper@web-summit.jose asked whether to put the Silvio (L3) and 
 5. If your session has no Gmail connector, make nothing, and say so in your Report.
 
 **Done when:** your Report below says the two drafts are in Jose's Gmail, by subject.
+
+## Report (helper@web-summit.jose, 2026-11-06 08:53 UTC)
+
+**Blocked: no drafts made.** Both calls to the Gmail connector (about 08:52 UTC) were refused: the connector needs to be signed in again. Per item 5, I made nothing.
+
+Done first (item 1): both notes checked against the leaderboard (v0.2.732) and updated in this commit. Silvio is now 8 of 9 (his first vault, a062a97), so his note says the dashboard step takes him straight to level 6. Nimay is unchanged at L1; only the version and a quote changed. The plain-text bodies are ready, without the "Drafted by" line.
+
+**Ask for Jose:** reconnect Gmail at https://claude.ai/customize/connectors; due before my 14:50 UTC wake; takes about 2 minutes. Connectors are read when a session starts, so this session may need a fresh start (or a reconnect from the app) to see it. Then I make both drafts at the next run, "To" empty.
+
