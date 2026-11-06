@@ -37,14 +37,15 @@ const log = execFileSync('git', ['log', `--since=${DAYS} days ago`, '--format=%s
 const commits = {}, edges = {}, names = {}
 for (const c of log.split('\x1e')) {
   const [s, b] = c.trim().split('\x1f'); if (!s || /^site v\d/.test(s)) continue
-  const raw0 = ((s.match(/^([A-Za-z0-9.-]+@(?:web-summit|PrompTugal|promptugal)\.[a-z0-9-]+):/) || [])[1] || '').toLowerCase(); if (!raw0 || !agentPerson(raw0)) continue
-  const from = canon(raw0); (names[from] = names[from] || new Set()).add(raw0)
+  const orig0 = (s.match(/^([A-Za-z0-9.-]+@(?:web-summit|PrompTugal|promptugal)\.[a-z0-9-]+):/) || [])[1] || '', raw0 = orig0.toLowerCase(); if (!raw0 || !agentPerson(raw0)) continue
+  // names are kept as written (the gate's comms_check knows @web-summit. and @PrompTugal., not a lower-cased domain)
+  const from = canon(raw0); (names[from] = names[from] || new Set()).add(orig0)
   commits[from] = (commits[from] || 0) + 1
   for (const line of String(b || '').matchAll(/^For:\s*(.+)$/gm)) for (const raw of line[1].split(/[,\s]+/)) {
-    const r = raw.trim().toLowerCase(); if (!r) continue
+    const o = raw.trim(), r = o.toLowerCase(); if (!r) continue
     const to = agentPerson(r) && r.includes('@') ? canon(r) : r; if (to === from) continue
     const ok = agentPerson(to) || pid.has(to); if (!ok) continue
-    if (to.includes('@')) (names[to] = names[to] || new Set()).add(r)
+    if (to.includes('@')) (names[to] = names[to] || new Set()).add(o)
     const k = from + '>' + to; edges[k] = (edges[k] || 0) + 1
   }
 }
@@ -52,7 +53,7 @@ const agentNames = new Set([...inv.agents.map(a => a.name.toLowerCase()).filter(
 // kind (fresh, scheduled, long) comes from admin/build/inventory.mjs once dev@web-summit.angelo's patch lands (0638bb07);
 // until then it is undefined and the command centre draws no ring
 const invBy = Object.fromEntries(inv.agents.map(a => [canon(a.name), a]))
-const allAgents = [...agentNames].map(n => ({ id: n, person: agentPerson(n), names: [...(names[n] || [])].sort(), short: n.split('@')[0], commits: commits[n] || 0, kind: (invBy[n] || {}).kind }))
+const allAgents = [...agentNames].map(n => ({ id: n, person: agentPerson(n), names: [...new Set([...(names[n] || [])].map(x => x.replace(/@promptugal\./i, '@PrompTugal.').replace(/@web-summit\./i, '@web-summit.')))].sort(), short: n.split('@')[0], commits: commits[n] || 0, kind: (invBy[n] || {}).kind }))
 const allPeople = people.slice()
 const agents = ALL ? allAgents : allAgents.filter(a => a.commits)
 const activeP = new Set(agents.map(a => a.person))
