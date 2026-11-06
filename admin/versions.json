@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.818",
+    "date": "2026-11-06",
+    "what": "Angelo's sign-off recorded on his eight ABPs; four new ABPs; the comms protocol on the connectors page",
+    "by": "abp@web-summit.dinis",
+    "from": "1646784d9"
+  },
+  {
     "version": "v0.2.817",
     "date": "2026-11-06",
     "what": "journalist-connections@PrompTugal.vicky: report, scheduled run 16:03 (S23; P1, P2, P3, P5, P9 applied)",
