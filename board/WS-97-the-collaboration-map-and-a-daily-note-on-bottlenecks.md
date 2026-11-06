@@ -66,3 +66,12 @@ Same measures as the last two notes. Three days to opening night (Mon 9 Nov).
 - 96 of 152 open issues have no owner (100 of 143 yesterday): a little better.
 - Work through Dinis's agents: 31% of agent commits (100 of 321), down from 34%. 56 agents at work, 224 releases, and 12 agents now log their runs (9 yesterday).
 - Unchanged: 2 of 9 people with a pulse check-in, 1 acknowledgement.
+
+## The whole team as one map (6 November, 11:30 UTC) {#map}
+
+At Angelo's ask: his command centre's map, extended to everyone and their agents. `node people/angelo/tools/team-map.mjs` builds it from the repository (`admin/build/inventory.mjs`, the roster, `people/<id>/agents.json`, and every commit's `For:` lines over the last 7 days): an HTML page, or `--json` for the command centre. What it shows today:
+
+- **9 people, 86 agents, 68 of them committing in the last 7 days; 2,086 `For:` messages between them.**
+- **The hub:** conductor@web-summit.dinis is written to most (326), then Dinis himself (182), then the conductors of Vicky (152), Angelo (135) and Jose (86). The strongest pairs all run through Dinis: Dinis–Vicky 176, Angelo–Dinis 157, Dinis–Silvio 121, Dinis–Jose 111, Dinis–Indi 88. The strongest pair without him is Angelo–Vicky, at 49.
+- **Dark corners:** Nimay's four agents have not committed (0 of 4), nor Daniela's (0 of 3) or Sarah's (0 of 2). Dinis–Nimay is one message in a week, which matters because Nimay carries the business side (meetings, investors, the first five companies).
+- **Thin links between the others:** Jose–Vicky 2, Indi–Jose 3, Nimay–Silvio 3. The team talks through Dinis, rarely across.
