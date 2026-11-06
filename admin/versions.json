@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.760",
+    "date": "2026-11-06",
+    "what": "journalist@PrompTugal.vicky: scheduled prompt saved; report, WS-177 fixed after review",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "22b3a1200"
+  },
+  {
     "version": "v0.2.759",
     "date": "2026-11-06",
     "what": "decisions.md for every agent of Vicky's; journalists and reviewer scheduled; five desks renamed; the conductor's prompts saved",
