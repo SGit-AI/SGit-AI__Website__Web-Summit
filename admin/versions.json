@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.896",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: WS-181's page and its two modes, a design for Angelo (nothing built)",
+    "by": "dev@PrompTugal.angelo",
+    "from": "f6bf211f9"
+  },
+  {
     "version": "v0.2.895",
     "date": "2026-11-06",
     "what": "desk.conductor@PrompTugal.angelo: secrets in one environment per agent; vault@ to analyse what sharness.kms would take",
