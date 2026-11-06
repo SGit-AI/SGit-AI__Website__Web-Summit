@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.882",
+    "date": "2026-11-06",
+    "what": "journalist-ai@PrompTugal.vicky: report, T1 review fixes and the closing line on T1 to T5",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "952e106ab"
+  },
+  {
     "version": "v0.2.881",
     "date": "2026-11-06",
     "what": "the stories page: Show more label under the summary, so titles use the full width on a phone",
