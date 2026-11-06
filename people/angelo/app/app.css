@@ -241,3 +241,4 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .tm-fs .tm-svg { width: 100%; height: 100%; }
 @media (max-width: 767px) { .tm-top { flex-wrap: wrap; } .tm-fs .tm-legend { max-height: 30vh; overflow: auto; } }
 @media (max-width: 767px) { .tm-fs .tm-lg, .tm-fs .rp-chip { min-height: 28px; padding: 0 8px; font-size: 12px; } .tm-fs .tm-acts .cc-btn { min-height: 36px; padding: 0 10px; font-size: 13px; } .tm-fs .tm-tabs, .tm-fs .tm-legend { gap: 4px; } }
+.tm-links path[data-as] { stroke-dasharray: 4 4; opacity: .9; stroke-width: 1.5; }

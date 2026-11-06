@@ -21,17 +21,20 @@ if (!/github\.com\/PrompTugal\/PrompTugal__News__Website/i.test(origin)) { conso
 if (process.argv.includes('--fetch')) { git(['fetch', '-q', '--depth=3000', 'origin', 'dev']); git(['checkout', '-q', '--detach', 'FETCH_HEAD']) }
 
 const roster = new Set(JSON.parse(fs.readFileSync(path.join(ROOT, 'data/team.json'), 'utf8')).members.filter(m => m.kind === 'human').map(m => m.id))
-const NAME = /^([a-z0-9-]+)@([A-Za-z][A-Za-z0-9-]*)\.([a-z0-9-]+)$/
+const NAME = /^([a-z0-9][a-z0-9.-]*)@([A-Za-z][A-Za-z0-9-]*)\.([a-z0-9-]+)$/   // agent names may carry a dot (dev.pages@PrompTugal.dinis)
 const idOf = n => { const m = String(n).match(NAME); if (!m || !roster.has(m[3].toLowerCase())) return null; return /^promptugal$/i.test(m[2]) ? `pt:${m[3].toLowerCase()}:${m[1]}` : `${m[1]}@web-summit.${m[3].toLowerCase()}` }
 // labels from the newsroom's own roster, where its names still match
 const labels = {}
 try { for (const a of JSON.parse(fs.readFileSync(path.join(clone, 'data/newsroom/agents.json'), 'utf8')).agents || []) { const id = a.name && idOf(a.name); if (id) labels[id] = a.label || '' } } catch { }
 
+// the newsroom's own keys page (board/keys.json): which of its agents hold a live key there
+const keyed = new Set()
+try { for (const k of JSON.parse(fs.readFileSync(path.join(clone, 'board/keys.json'), 'utf8')).keys || []) if (/^active$/i.test(k.status || '') && !k.replaced_by) { const id = idOf(k.agent || String(k.label || '').split(' ')[0]); if (id) keyed.add(id) } } catch { }
 const head = git(['rev-parse', '--short', 'HEAD']).trim(), now = Date.now(), week = now - 7 * 864e5
 const agents = new Map(), links = new Map()
 for (const rec of git(['log', '--format=%cI%x1f%s%x1f%b%x1e']).split('\x1e')) {
     const [at, s = '', b = ''] = rec.trim().split('\x1f'); if (!at || /^site v\d/.test(s)) continue
-    const who = (s.match(/^([a-z0-9-]+@[A-Za-z][A-Za-z0-9-]*\.[a-z0-9-]+):/) || b.match(/^Agent: *([a-z0-9-]+@[A-Za-z][A-Za-z0-9-]*\.[a-z0-9-]+)/m) || [])[1]
+    const who = (s.match(/^([a-z0-9][a-z0-9.-]*@[A-Za-z][A-Za-z0-9-]*\.[a-z0-9-]+):/) || b.match(/^Agent: *([a-z0-9][a-z0-9.-]*@[A-Za-z][A-Za-z0-9-]*\.[a-z0-9-]+)/m) || [])[1]
     const id = who && idOf(who); if (!id) continue
     const a = agents.get(id) || { id, person: id.startsWith('pt:') ? id.split(':')[1] : id.split('.').pop(), short: id.startsWith('pt:') ? id.split(':')[2] : id.split('@')[0], family: id.startsWith('pt:') ? 'PrompTugal' : 'web-summit', label: labels[id] || '', commits: 0, first: at, last: at }
     a.commits++; if (at < a.first) a.first = at; if (at > a.last) a.last = at; agents.set(id, a)
@@ -43,7 +46,7 @@ for (const rec of git(['log', '--format=%cI%x1f%s%x1f%b%x1e']).split('\x1e')) {
 const out = {
     about: "The PrompTugal newsroom's agents, from the git log of PrompTugal/PrompTugal__News__Website (its dev branch), for Angelo's command centre; refreshed by dev@web-summit.angelo at its wakes. Names, counts and times only. pt:<person>:<agent> is a PrompTugal agent of that person.",
     source: 'https://github.com/PrompTugal/PrompTugal__News__Website', commit: head, read_at: new Date(now).toISOString(), days: 7,
-    agents: [...agents.values()].sort((x, y) => y.commits - x.commits),
+    agents: [...agents.values()].map(a => ({ ...a, key: keyed.has(a.id) })).sort((x, y) => y.commits - x.commits),
     links: [...links].map(([k, n]) => { const [from, to] = k.split('|'); return { from, to, n } }).sort((x, y) => y.n - x.n),
 }
 fs.writeFileSync(path.join(ROOT, 'people/angelo/app/promptugal.json'), JSON.stringify(out, null, 1) + '\n')

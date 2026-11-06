@@ -76,7 +76,8 @@ function collab(root, person, d, now) {
     const team = readJson(root, 'data/team.json') || { members: [] }
     const inv = INV.inventory(root, team)
     const humans = team.members.filter(m => m.kind === 'human')
-    const keys = (readJson(root, 'data/keys.json') || { keys: [] }).keys.map(k => String(k.label || '').split(' ')[0])
+    // live keys on the keys page: by the entry's agent field or its label's first word; ended, retired or replaced keys do not count
+    const keys = (readJson(root, 'data/keys.json') || { keys: [] }).keys.filter(k => !k.replaced_by && !/^(ended|retired|superseded)/i.test(k.status || '')).map(k => k.agent || String(k.label || '').split(' ')[0])
     // the level the setup page computes from what exists (admin/build/onboarding.mjs), not the one written by hand in
     // people/<id>/onboarding.json, which falls behind (Angelo, 6 November: "the LX levels don't seem to be accurate")
     const OB = OBMOD.onboarding(root, () => inv)
@@ -123,14 +124,26 @@ function collab(root, person, d, now) {
     const vers = (readJson(root, 'admin/versions.json') || []).filter(v => /^v\d+\.\d+\.\d+$/.test(v.version))
     const vnum = v => v.version.slice(1).split('.').map(Number).reduce((a, x) => a * 1e4 + x, 0)
     const last = vers.sort((a, b) => vnum(b) - vnum(a))[0] || null
-    const active = inv.agents.filter(a => a.last && (now - Date.parse(a.last.replace(' ', 'T') + ':00Z')) < 2 * 864e5)
+    // the agents-and-keys card counts the same agents as the people lists (those that have run, here or in the PrompTugal
+    // newsroom); a key is a live key on this site's keys page or, for a newsroom agent, on the newsroom's own; an agent whose
+    // declaration says it has no key (a runner) is listed as such, not as a gap
+    const peopleRows = humans.map(m => ({ id: m.id, name: m.name, role: m.role || '', level: level(m.id), status: m.status || '', agents: agentsOf(m.id), work: work(m.id) }))
+    const declared = new Map(); for (const m of humans) for (const a of readJson(root, `people/${m.id}/agents.json`) || []) declared.set(String(a.name).toLowerCase(), a)
+    const ptKeyed = new Set(((readJson(root, 'people/angelo/app/promptugal.json') || {}).agents || []).filter(a => a.key).map(a => a.id))
+    const ptId = n => { const m = String(n).match(/^([a-z0-9][a-z0-9.-]*)@promptugal\.([a-z0-9-]+)$/i); return m ? `pt:${m[2].toLowerCase()}:${m[1].toLowerCase()}` : '' }
+    const everyone = peopleRows.flatMap(p => p.agents)
+    const active = everyone.filter(a => a.last && (now - Date.parse(a.last.replace(' ', 'T') + ':00Z')) < 2 * 864e5)
+    const hasKey = a => keys.includes(a.name) || ptKeyed.has(ptId(a.name))
+    const noKeyByDesign = a => /\bno key\b|with no key/i.test(`${(declared.get(a.name.toLowerCase()) || {}).job || ''} ${(declared.get(a.name.toLowerCase()) || {}).session || ''}`)
     return {
-        people: humans.map(m => ({ id: m.id, name: m.name, role: m.role || '', level: level(m.id), status: m.status || '', agents: agentsOf(m.id), work: work(m.id) })),
+        people: peopleRows,
         links: Object.entries(pairs).map(([k, n]) => { const [a, b] = k.split('|'); return { a, b, messages: n, shared: shared[k] || 0 } }).filter(l => l.messages || l.shared).sort((x, y) => (y.messages + y.shared) - (x.messages + x.shared)),
         machine: {
             release: last ? { version: last.version, date: last.date, what: String(last.what || '').slice(0, 240) } : null,
-            agents: inv.agents.length, active48h: active.length, activeWithKey: active.filter(a => keys.includes(a.name)).length,
-            activeWithoutKey: active.filter(a => !keys.includes(a.name)).map(a => a.name),
+            agents: everyone.length, active48h: active.length, activeWithKey: active.filter(hasKey).length,
+            activeWithoutKey: active.filter(a => !hasKey(a) && !noKeyByDesign(a)).map(a => a.name),
+            noKeyByDesign: active.filter(a => !hasKey(a) && noKeyByDesign(a)).map(a => a.name),
+            newsroom: everyone.filter(a => a.elsewhere).length,
             ci: `${d.repo}/actions/workflows/deploy-pages.yml`,
         },
     }
@@ -241,6 +254,16 @@ export function build(root, person, now = new Date()) {
             M.promptugal = { read_at: PT.read_at, commit: PT.commit, agents: PT.agents.length }
             M.totals = { ...M.totals, agents: M.agents.length, promptugal: M.agents.filter(a => a.family !== 'web-summit').length, messages: M.links.reduce((n, l) => n + l.n, 0) }
         }
+        // an agent declared to "commit as" another (a runner, Angelo, 6 November) has no commits of its own: drawn beside the
+        // agent it works as, with a dashed line, whenever that one is on the map
+        { const have = new Set(M.agents.map(a => a.id))
+          for (const p of M.people) for (const a of readJson(root, `people/${p.id}/agents.json`) || []) {
+            const host = (String(a.job || '').match(/commits as ([a-z0-9][a-z0-9.-]*@[A-Za-z][A-Za-z0-9-]*\.[a-z0-9-]+)/) || [])[1]
+            if (!host || have.has(a.name) || !have.has(host)) continue
+            M.agents.push({ id: a.name, person: p.id, family: 'web-summit', short: a.name.split('@')[0], commits: 0, runsAs: host }); have.add(a.name)
+            M.links.push({ from: a.name, to: host, n: 1, as: true })
+          }
+          M.totals = { ...M.totals, agents: M.agents.length } }
         // the kinds of work (the third layout): each agent's commits in 7 days that name an issue, by the issue's board area,
         // grouped into seven kinds; the PrompTugal newsroom's agents, from their own repository, count as newsroom work
         const KINDS = [['build', 'Building the site and tools', ['tech', 'agents']], ['content', 'Content and the newsroom', ['content', 'video', 'newsroom']], ['outreach', 'Outreach', ['outreach', 'crm', 'friendly']], ['setup', 'Getting set up', ['onboarding', 'people', 'team']], ['running', 'Running the team', ['pm', 'operator', 'operations', 'ops']], ['riskmandate', 'RiskMandate', ['riskmandate', 'idea']], ['merch', 'Merch and design', ['merch', 'design']]]
