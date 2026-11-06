@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.902",
+    "date": "2026-11-06",
+    "what": "runner.writer@PrompTugal.angelo: STATE after first run: WS-125 not yet visible in the newsroom",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "5390f218d"
+  },
+  {
     "version": "v0.2.901",
     "date": "2026-11-06",
     "what": "dev@PrompTugal.angelo: Replay's map mode: the team map played back, messages flowing as time moves",
