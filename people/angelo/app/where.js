@@ -120,12 +120,17 @@
         const form = pending ? `<form class="aw-pinf"><input type="text" maxlength="40" required placeholder="Its label, e.g. Our base, Coffee by Hall 2" aria-label="The pin's label" value="${esc(pinLabel)}"><div class="aw-pink" role="group" aria-label="Kind">${PIN_KINDS.map(([k, l]) => `<button type="button" class="ak-chip" data-aw-pin-kind="${k}" aria-pressed="${pinKind === k}">${l}</button>`).join('')}</div><button type="submit" class="cc-btn">Save the pin</button><button type="button" class="ak-tog" data-aw-pin-cancel>Cancel</button></form>` : ''
         return `<section class="cc-card aw-map"><div class="aw-maph"><h3 class="ak-h3">The venue map</h3><button type="button" class="ak-tog" data-aw-pin-add aria-pressed="${pinMode}">${pinMode ? (pending ? 'Placing a pin…' : 'Tap the map where the pin goes') : '＋ Add a pin'}</button></div>
 ${lfail ? '<p class="note">The map could not load (offline?). The pins, as a list:</p>' : '<div class="aw-map-slot"></div>'}${form}
-<ul class="aw-pins">${list}</ul>
+<ul class="aw-pins" style="list-style:none;padding:0">${list}</ul>
 <p class="note">Map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors. Grey pins are the venues (OpenStreetMap's positions); yours are gold for a base, blue for a meeting spot. Each shows who is there now, from the team's lines. Places only: never a person's location.</p></section>`
     }
     function mountMap(L) {
         const slot = view.querySelector('.aw-map-slot'); if (!slot) return
-        if (!mapEl) { mapEl = document.createElement('div'); mapEl.className = 'aw-leaf' }
+        if (!mapEl) {
+            mapEl = document.createElement('div'); mapEl.className = 'aw-leaf'
+            // its size set here, not only in app.css: the offline store can serve this script with an older app.css (Angelo
+            // saw an empty map box on 6 November), and a Leaflet map in a box with no height draws nothing
+            Object.assign(mapEl.style, { height: matchMedia('(max-width: 767px)').matches ? '300px' : '380px', width: '100%', borderRadius: '12px', overflow: 'hidden', margin: '10px 0' })
+        }
         slot.appendChild(mapEl)
         leaflet().then(Lf => {
             if (!Lf || !mapEl.isConnected) return
