@@ -50,7 +50,7 @@ Vicky's words where she gave them as a rule; the date each was given.
 - **New name** (6 November): "from now on you are reviewer@PrompTugal.vicky. Follow the newsroom's CLAUDE.md for the PrompTugal team"; the key entry in board/keys.json under the new name, and the new name in commits.
 - **Before drafting** (6 November, in STYLE.md): check desks/journalist-promptugal/drafts/ and content/articles/ for the same story.
 - **Sources as links** (6 November): STYLE.md's source line is `[title](url)`, "since that's the format that works"; Ready drafts are addressed For: journalist@PrompTugal.dinis.
-- **Checking journalist@PrompTugal.dinis** (6 November): after reviewing Vicky's drafts, fact-check its new drafts and articles since the last check; facts and sources only, no style, never edit its files; findings in desks/reviewer-vicky/reviews/promptugal-dinis/, one file per article, For: journalist@PrompTugal.dinis.
+- **Checking journalist@PrompTugal.dinis** (6 November; stopped 6 November, 20:00 UTC, at Vicky's word: checker@PrompTugal.vicky does it now): after reviewing Vicky's drafts, fact-check its new drafts and articles since the last check; facts and sources only, no style, never edit its files; findings in desks/reviewer-vicky/reviews/promptugal-dinis/, one file per article, For: journalist@PrompTugal.dinis.
 - **Dropped drafts** (6 November): a dropped draft is not deleted; it gets `status: dropped` in its front matter (S14, S21).
 - **Publishing, in practice** (6 November): "Publish S16, S19, S20 and WS177, unless journalist@PrompTugal.dinis has already published any of them. Send me the live links." So: before publishing, check `content/articles/` (and `desks/journalist-promptugal/drafts/`) for the story; publish only what is not there; send Vicky the live link of each. Dinis approved Vicky authorising this (decisions.md, standing answer 7).
 - **Scheduled runs stop at Fix first** (6 November, in the scheduled prompt): "Ready: do your style edit. Fix first: write the review and stop. Don't send it back to the journalist yourself; Vicky does that."
@@ -58,6 +58,8 @@ Vicky's words where she gave them as a rule; the date each was given.
 - **Asking Vicky** (6 November, decisions.md): decide alone what follows STYLE.md, CLAUDE.md or the README, your own mistakes, and reversible changes in your own folder; ask (one question, with a recommendation, at the end of the report line) only for keys, publishing, pushing anywhere but dev, sending to a person, deleting, or a conflict with Dinis's agents.
 - **Reports** (6 November): keep writing reports in people/vicky/reports/reviewer.md on the team site, "because my conductor reads them there".
 - **Hand-over** (6 November, 19:47 UTC): a new session (session 2, `session_015JeffJsCGEdJt5ShXrEQda`) took over the role at Vicky's word, following `people/vicky/handover/reviewer-2026-11-06.md`. Its key is `reviewer-vicky-promptugal-2` in the newsroom's `board/keys.json` (and `reviewer-vicky-2` in the team site's `data/keys.json`); the five articles session 1 signed are re-signed with it and `reviewer-vicky-promptugal` is superseded (2026-11-06T19:50Z, newsroom v0.1.327). Its scheduled task, "Reviewer run" (`trig_01JzwYcUkMpfFThdm1mbeGgs`), fires into this session at 08:48 and 16:48 UTC with the scheduled prompt below, word for word.
+- **Reviewer only** (6 November, 20:00 UTC): "Drop step 4 (fact-checking journalist@PrompTugal.dinis) from your scheduled task and your prompts file: checker@PrompTugal.vicky does that job now. You review my desks' drafts only." Done the same evening: the fact-check step (step 5 of the scheduled prompt) is gone from the task and from the prompt below; the "Checking journalist@PrompTugal.dinis" rule above is stopped.
+- **Statuses** (6 November, 20:00 UTC): the status list is in `desks/journalist-vicky/STYLE.md` (Status): "draft (the writer), in-review, fix and ready (the reviewer or checker), approved (the editor only, or an agent recording the editor's word), published (the publisher), dropped (the editor, or a reviewer at the editor's word; the file stays). On my desks, nothing is published without approved."
 
 ## Vicky's decisions on specific drafts (for reference)
 
@@ -65,7 +67,7 @@ Vicky's words where she gave them as a rule; the date each was given.
 - S19: kept, "its angle is Intuitivo going to Brazil".
 - Published by the reviewer at Vicky's word, 6 November: S16, S19, S20, WS177 and S22. Everything else on Vicky's desk was published by journalist@PrompTugal.dinis or is dropped.
 
-## Scheduled prompt (from 6 November 2026)
+## Scheduled prompt (from 6 November 2026; step 5, the fact-check, dropped at 20:00 UTC)
 
 A scheduled task, "Reviewer run", fired into the reviewer's own session daily at 08:48 and 16:48 UTC (deleted on 6 November at the hand-over to a new session, so the two do not both run; the new session set its own at Vicky's word on 6 November, 19:48 UTC: `trig_01JzwYcUkMpfFThdm1mbeGgs`) (asked for 09:00 and 17:00; set a few minutes early, as runs exactly on the hour are often delayed). Its prompt, word for word:
 
@@ -75,6 +77,5 @@ Scheduled run for reviewer@PrompTugal.vicky:
 2. Check your newsroom remote points at PrompTugal/PrompTugal__News__Website, then pull dev.
 3. Review every draft in desks/journalist-vicky/drafts/ that has no review yet, by your README checklist and STYLE.md.
 4. Ready: do your style edit. Fix first: write the review and stop. Don't send it back to the journalist yourself; Vicky does that.
-5. Fact-check journalist@PrompTugal.dinis's new drafts and articles since your last check, as your README says. Facts and sources only.
-6. Add a report line in people/vicky/reports/reviewer.md on the team site.
+5. Add a report line in people/vicky/reports/reviewer.md on the team site.
 ```
