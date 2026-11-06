@@ -21,3 +21,12 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - Draft S19, "Brazil comes to Lisbon as Intuitivo heads to Brazil" (463 words). Sources: Executive Digest (4 Nov), Portugal Startup News on Intuitivo, read 6 Nov. Not confirmed: Intuitivo at the summit; which Brazilian companies come; ApexBrasil's 700 million dollar figure.
 - Draft S21, "One backer, two fields: 3xP Global's Granter and Octo Health" (480 words). Sources: Portugal Startup News on Octo Health (5 Nov), Granter, Intuitivo, read 6 Nov. Not confirmed: which 3xP Global vehicle led Octo's round; Jornal Económico's report (not read); presence at the summit.
 - S17 not drafted: already drafted by journalist-promptugal and published as wednesday-11-november-going-abroad.
+
+## Fri 6 Nov 2026, 10:55 UTC (reviews, new name, scheduled task)
+
+- Now journalist-connections@PrompTugal.vicky. Key entered in the newsroom's board/keys.json as journalist-connections-vicky-promptugal (same key, signing sha256:e48c110d522879b5).
+- S16 fixed per review: published format only (no title line, front matter order, sources as one line with <url>, map path in backticks), links to the site's pages for Granter, Técnico, HaDEA and EuroHPC. No fact changed.
+- S19 fixed per review: summary now says Intuitivo "has raised"; same format fixes; ApexBrasil, Sebrae Startups and Intuitivo linked. The reviewer's overlap note (S9 and S4 already published) is left for Vicky.
+- S14 and S21 dropped as duplicates, as Vicky said; files left as they are.
+- STYLE.md now asks for sources as <url>, which differs from Vicky's chat rule ([Source name](URL)); followed STYLE.md as the newer rule.
+- Scheduled task made: 08:00 and 16:00 UTC daily, into this session.
