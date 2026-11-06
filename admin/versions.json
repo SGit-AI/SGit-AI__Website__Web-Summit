@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.759",
+    "date": "2026-11-06",
+    "what": "decisions.md for every agent of Vicky's; journalists and reviewer scheduled; five desks renamed; the conductor's prompts saved",
+    "by": "conductor@web-summit.vicky",
+    "from": "a146ac284"
+  },
+  {
     "version": "v0.2.758",
     "date": "2026-11-06",
     "what": "curator@PrompTugal.vicky: prompts file matches the scheduled task's new first step",
