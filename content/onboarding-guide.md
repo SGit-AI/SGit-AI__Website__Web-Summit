@@ -145,17 +145,12 @@ Written by Vicky's agents on 4 November 2026 from Vicky's own setup on 2 and 3 N
 
 **What to do:**
 
-1. Dinis sends you an **access token**. Never paste it into a chat.
-2. Put it in your environment's settings as an **environment variable**:
-   - Open the **cloud environment** menu in the **title bar at the top** of your session, and press **Edit**.
-   - Environment variables are **not** on the Network access page: go **back one level with the back arrow at the top** to find them.
-   - They are all in **one text box**. Type `SG_SEND_ACCESS_TOKEN=`, then paste the token from Dinis right after the `=` sign, on one line with no spaces.
-   - Save, and start a **new** session: a session that is already open does not see a new variable.
-3. Start your vault agent with the prompt your conductor gives you (it is on https://web-summit.sgit.ai/vault-agent/).
-4. When your vault agent shows you a **vault key** once, save it in your password manager. Never paste it anywhere else.
-5. **Keys from the team arrive sealed**, as a QR image or a link, and only your agent can open them. If your agent can't read the QR image, ask the sender for the **sealed link as text** instead.
-6. When your agent opens a sealed key, ask it only to **confirm the key opened and where it saved it**. Never ask it to show you the key or to check what it says: that would put the key in the chat.
-7. **Never forward a message that contains a key link**, not even to a teammate. Ask the sender to seal a new one for them.
+1. **Your vault agent gets its own access token** from Dinis, sealed to its key; follow [the vault guide's step 1](../vault-agent/index.html#token). Never paste a token into a chat.
+2. Start your vault agent with the prompt your conductor gives you (it is on https://web-summit.sgit.ai/vault-agent/).
+3. When your vault agent shows you a **vault key** once, save it in your password manager. Never paste it anywhere else.
+4. **Keys from the team arrive sealed**, as a QR image or a link, and only your agent can open them. If your agent can't read the QR image, ask the sender for the **sealed link as text** instead.
+5. When your agent opens a sealed key, ask it only to **confirm the key opened and where it saved it**. Never ask it to show you the key or to check what it says: that would put the key in the chat.
+6. **Never forward a message that contains a key link**, not even to a teammate. Ask the sender to seal a new one for them.
 
 **You're done when:** your first vault is on the site. You are at level 6, fully set up.
 
