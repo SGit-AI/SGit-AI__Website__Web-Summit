@@ -1,0 +1,172 @@
+{
+ "about": "Every scheduled task of Vicky's agents, one row per task (UTC). Kept by conductor@web-summit.vicky (scout's P4, accepted by Vicky on 6 Nov 2026), checked against the account's scheduled tasks in each 08:30 brief: listed only, never changed by the conductor. Changes to tasks are Vicky's.",
+ "checked": "2026-11-06T11:55Z",
+ "tasks": [
+  {
+   "agent": "conductor@web-summit.vicky",
+   "task": "the daily brief",
+   "cron_utc": "30 8 * * *",
+   "task_id": "trig_013xdhaBHbA52GD47m1JaKDL",
+   "state": "enabled",
+   "since": "4 Nov 2026",
+   "at_whose_word": "Vicky (08:30 brief, 4 Nov)"
+  },
+  {
+   "agent": "conductor@web-summit.vicky",
+   "task": "the evening relay",
+   "cron_utc": "50 17 * * *",
+   "task_id": "trig_016MC7wrcBLcFqSgfthMqAnZ",
+   "state": "enabled",
+   "since": "2 Nov 2026",
+   "at_whose_word": "Vicky (17:50 only from 5 Nov)"
+  },
+  {
+   "agent": "dashboard@web-summit.vicky",
+   "task": "morning run",
+   "cron_utc": "50 7 * * *",
+   "task_id": "trig_01HHM9j3JruLHXcuvoXEc3dK",
+   "state": "enabled",
+   "since": "4 Nov 2026",
+   "at_whose_word": "Vicky"
+  },
+  {
+   "agent": "dashboard@web-summit.vicky",
+   "task": "evening run",
+   "cron_utc": "45 17 * * *",
+   "task_id": "trig_01V1YhEQE8qJBBmnewmMot42",
+   "state": "enabled",
+   "since": "2 Nov 2026",
+   "at_whose_word": "Vicky"
+  },
+  {
+   "agent": "pm@web-summit.vicky",
+   "task": "wake",
+   "cron_utc": "40 7,17 * * *",
+   "task_id": "trig_01Eyuw3fp9LTutRJctAR7PGZ",
+   "state": "enabled",
+   "since": "3 Nov 2026",
+   "at_whose_word": "Vicky (no midday from 6 Nov)"
+  },
+  {
+   "agent": "logistics@web-summit.vicky",
+   "task": "merch and print run",
+   "cron_utc": "10 8,17 * * *",
+   "task_id": "trig_018ka28onyKY92kBp6xmV9Ym",
+   "state": "enabled",
+   "since": "3 Nov 2026",
+   "at_whose_word": "Vicky (no midday from 6 Nov)"
+  },
+  {
+   "agent": "researcher@web-summit.vicky",
+   "task": "research run",
+   "cron_utc": "30 7,11,15,19 * * *",
+   "task_id": "trig_01KV2FctiUnh6ratBLVcsfSj",
+   "state": "enabled",
+   "since": "4 Nov 2026",
+   "at_whose_word": "Vicky"
+  },
+  {
+   "agent": "curator@PrompTugal.vicky",
+   "task": "curator run",
+   "cron_utc": "45 7,11,15,19 * * *",
+   "task_id": "trig_01Y3m4gYrZsUwoJo8vu6L6g6",
+   "state": "enabled",
+   "since": "4 Nov 2026",
+   "at_whose_word": "Vicky"
+  },
+  {
+   "agent": "programme@PrompTugal.vicky",
+   "task": "daily run",
+   "cron_utc": "15 8 * * *",
+   "task_id": "trig_01RhHHq7KU16JfguhbU1d7HU",
+   "state": "enabled",
+   "since": "4 Nov 2026",
+   "at_whose_word": "Vicky"
+  },
+  {
+   "agent": "journalist@PrompTugal.vicky",
+   "task": "scheduled run",
+   "cron_utc": "0 8,16 * * *",
+   "task_id": "trig_01SpLzX33tb8C82iAaPMBy3d",
+   "state": "enabled",
+   "since": "6 Nov 2026",
+   "at_whose_word": "Vicky (6 Nov)"
+  },
+  {
+   "agent": "journalist-portugal@PrompTugal.vicky",
+   "task": "scheduled run",
+   "cron_utc": "0 8,16 * * *",
+   "task_id": "trig_01R4SDnvm1qg6LrQVcmCRPaH",
+   "state": "enabled",
+   "since": "6 Nov 2026",
+   "at_whose_word": "Vicky (6 Nov)"
+  },
+  {
+   "agent": "journalist-europe@PrompTugal.vicky",
+   "task": "twice-daily run",
+   "cron_utc": "0 8,16 * * *",
+   "task_id": "trig_01KRJSLJ46fntBKdqukvLoKx",
+   "state": "enabled",
+   "since": "6 Nov 2026",
+   "at_whose_word": "Vicky (6 Nov)"
+  },
+  {
+   "agent": "journalist-ai@PrompTugal.vicky",
+   "task": "scheduled run",
+   "cron_utc": "0 8,16 * * *",
+   "task_id": "trig_014T4B2EkggPSUDazhhJZ1Gf",
+   "state": "enabled",
+   "since": "6 Nov 2026",
+   "at_whose_word": "Vicky (6 Nov)"
+  },
+  {
+   "agent": "journalist-connections@PrompTugal.vicky",
+   "task": "scheduled run",
+   "cron_utc": "0 8,16 * * *",
+   "task_id": "trig_01RqSqjPAC6WuwNmTbjKFzwa",
+   "state": "enabled",
+   "since": "6 Nov 2026",
+   "at_whose_word": "Vicky (6 Nov)"
+  },
+  {
+   "agent": "reviewer@PrompTugal.vicky",
+   "task": "reviewer run",
+   "cron_utc": "48 8,16 * * *",
+   "task_id": "trig_018Qy1oAgZfBFrPnvDN9zSbx",
+   "state": "enabled",
+   "since": "6 Nov 2026",
+   "at_whose_word": "Vicky (6 Nov; she said 09:00 and 17:00, the task fires at 08:48 and 16:48)"
+  },
+  {
+   "agent": "checker@PrompTugal.vicky",
+   "task": "checker run",
+   "cron_utc": "48 9,17 * * *",
+   "task_id": "trig_01Fn672SH89TL4RcvCvEMQUA",
+   "state": "enabled",
+   "since": "6 Nov 2026",
+   "at_whose_word": "Vicky (6 Nov)"
+  }
+ ],
+ "no_task": [
+  {
+   "agent": "vault@web-summit.vicky",
+   "state": "none",
+   "why": "on demand (Vicky, 4 Nov)"
+  },
+  {
+   "agent": "dev@web-summit.vicky",
+   "state": "none",
+   "why": "paused until after the summit; no scheduled task exists, though agents.json had listed an 08:00 report-only run"
+  },
+  {
+   "agent": "designer@PrompTugal.vicky",
+   "state": "none",
+   "why": "paused until Vicky asks (6 Nov)"
+  },
+  {
+   "agent": "scout@web-summit.vicky",
+   "state": "none",
+   "why": "no schedule (Vicky, 6 Nov)"
+  }
+ ]
+}

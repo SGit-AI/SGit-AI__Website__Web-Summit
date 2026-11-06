@@ -34,3 +34,27 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 7. Vicky's reviewer may publish Ready drafts when Vicky asks (Dinis agreed).
 8. For how to write, STYLE.md wins over anything Vicky said in chat before it; always re-read it before a draft. (Vicky, 6 Nov)
 9. Sources are written as STYLE.md says: `[Publisher, "Title"](url)`, never `<url>`. (Vicky, 6 Nov)
+
+## Updates for agents
+
+How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
+
+**P1, a hold** (scout's P1, accepted by Vicky 6 Nov). For: dashboard, pm, logistics, researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer, checker, conductor.
+> At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
+
+**P2, re-read your own prompts file** (scout's P2, accepted by Vicky 6 Nov). For: dashboard, pm, logistics, researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer, checker, conductor.
+> At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
+
+**P3, a status block** (scout's P3, accepted by Vicky 6 Nov). For: dashboard, pm, logistics, researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer, checker.
+> End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
+
+**P4, one schedule file** (scout's P4, accepted by Vicky 6 Nov). For: conductor.
+> Keep `people/vicky/schedule.json`: one row per agent with its cron (UTC), its scheduled task's id, its state (enabled, paused, none), since when, and at whose word. Check it against the account's scheduled tasks once a day in the 08:30 brief (list only, never change a task), and report any difference. Changes to tasks stay Vicky's.
+
+**P5, stagger the five journalists** (scout's P5, accepted by Vicky 6 Nov). For: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections.
+> Suggested times instead of 08:00 and 16:00 for all five: journalist 08:00/16:00, journalist-portugal 08:06/16:06, journalist-europe 08:12/16:12, journalist-ai 08:18/16:18, journalist-connections 08:24/16:24. Each run still checks `desks/journalist-vicky/drafts/` before writing.
+
+**P8, shorter scheduled prompts that point at files** (scout's P8, accepted by Vicky 6 Nov). For: conductor.
+> Move the standing rules out of the 08:30 and 17:50 scheduled prompts into `people/vicky/prompts/conductor.md` (already kept word for word). Each scheduled prompt then becomes: pull dev, read `decisions.md` and `conductor.md`, do the brief (or relay) as written there.
+
+Confirmed so far: conductor, P1, P2, P4 and P8 (6 Nov, about 12:00 UTC).
