@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.823",
+    "date": "2026-11-06",
+    "what": "the PrompTugal snapshot refreshed (47 agents, 94 pairs); the maps patch still waits on its keeper",
+    "by": "dev@web-summit.angelo",
+    "from": "87acf2cb7"
+  },
+  {
     "version": "v0.2.822",
     "date": "2026-11-06",
     "what": "journalist-connections@PrompTugal.vicky: report, scheduled run 16:24, idle",
