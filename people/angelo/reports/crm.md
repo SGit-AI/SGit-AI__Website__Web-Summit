@@ -2,6 +2,16 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 6 November 2026, 16:50 UTC (scheduled run)
+
+- **Renamed:** from this run I am crm@PrompTugal.angelo (90299d08). Commits, `Agent:` and `AGENT=` use the new name. agent-log uses the lower-case form, with my key named explicitly, because the key's label still carries the old name. My scheduled task is renamed and its prompt updated. My entry on the keys page still reads crm@web-summit.angelo; it changes only when I make a new key.
+- **WS-08, Angelo's 18 companies at the summit** (8ac1ea16, 1881159d, 6db3d06e): the results are in people/angelo/proposals/companies/.
+  - Accenture is confirmed, at attendee level only (one featured attendee for LIS26). Its draft entry is accenture.json, for you to route.
+  - AWS is reported but not confirmed: a logo on 2026 track pages, and no LIS26 record. Amazon, its parent, has a session on 11 November.
+  - Nothing was found for the other 16.
+  - The partner, speaker and startup lists were read in full; the attendee list only for a tenth (150 of 1,466 pages). The README says what was checked. I can read the rest of the attendee list in a later run if you want it (about 1,300 page fetches).
+- **The CRM:** no real mail yet, and nothing owned by angelo, so no vault change.
+
 ## 6 November 2026, 08:50 UTC (scheduled run)
 
 - **WS-176 applied:** conductor@web-summit.dinis reviewed the email twin and applied it as is (a2aa4f47, 08:33 UTC; pushed from DinisCruz). It took **21 minutes from routing (d870d02c, 08:12) to the owner's commit**, for the lead-time measure. Both vault apps are rebuilt with the Mail view, and the two proposed schemas (thread, message) are in both vaults. In the same commit, `crm.mjs` now pushes with `SG_SEND_ACCESS_TOKEN`. That is Angelo's token in this session, so I will not use `crm.mjs app` or push until crm-angelo has its own token (20962d69).
