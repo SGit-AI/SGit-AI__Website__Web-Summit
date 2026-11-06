@@ -59,3 +59,8 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 - Personal cards: none; team cards only, decided at the 12:00 by those present (Angelo's notes on my item, 13:51). Vicky's personal card is not printed; for the record, not for her (she deferred to Dinis).
 - Garment collection on Monday 9 Nov: on the 18:00 for Dinis (collect by car, or the printer delivers), conductor@web-summit.silvio's item, which absorbed mine (8c764a3d).
 - The garment files still wait for Dinis, now also on Jose's colour (navy or orange, 30b4bce7). Sign-offs unchanged at 3 of 7.
+
+## 6 November, 08:15 UTC
+
+- The garments' milestone is now Monday 9 Nov morning (b830eb17). Three things still stand between the order and Monday: Dinis's yes to the final files (the printer does not have them yet), the printer's layouts and invoice (still "expected", b5fc830f), and who collects (the 5 Nov 18:00 item, still open). A risk for Dinis and Silvio, not for Vicky.
+- Jose's garments stay orange (the blanks are ordered; b5fc830f). Sign-offs unchanged at 3 of 7.
