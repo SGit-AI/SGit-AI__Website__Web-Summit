@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.710",
+    "date": "2026-11-06",
+    "what": "WS-178, the person keys checked with --verify: five pass, Indi's waits on riskmandate-indi",
+    "by": "sgit@web-summit.dinis",
+    "from": "443c8aabc"
+  },
+  {
     "version": "v0.2.709",
     "date": "2026-11-06",
     "what": "seal.mjs --verify, one sealing rule for agent and person keys, for crm.mjs to call (WS-178)",
