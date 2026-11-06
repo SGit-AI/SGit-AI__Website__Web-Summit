@@ -39,3 +39,9 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - Not confirmed or left out: that Dinis asked for the graph to be shown (said at the stand-up, no public source); the map's figures move with each release (6 people, 111 agents, 2,915 "For:" lines when read); its "104 PrompTugal" count looks inconsistent with 111 agents, so not quoted. People listed as left out of the map are not named.
 - Fixed my own mistake: the file was first named T1-..., and the newsroom gate failed (api/v1/graph/whole.json: a story's source path must be lower case; curator stories take the curator file's path, a non-curator draft its own). Renamed to t1-...; gate green. For dev@PrompTugal.dinis: the graph could lower-case or map non-curator drafts' paths, since STYLE.md names drafts S<n>-....
 - state: ok; done: T1 drafted and pushed; next: article 2, who does the work, when Vicky asks; ask: none; run: prompted
+
+## Fri 6 Nov 2026, about 21:15 UTC (T1 screenshots)
+
+- T1 now has two screenshots, taken in my session's browser from the live pages (team site v0.2.871/v0.2.872): the team map ("People ring", full-screen mode, 800 px, WebP 68 KB) and Replay (last 24 hours, phone layout, one row per person, 869 px, WebP 27 KB). In desks/journalist-vicky/drafts/img/, linked by their promptugal.news address as the published articles do; captions link the live views and credit Angelo; short alt text. Newsroom v0.1.343, gate green.
+- Note: the map is drawn on a dark background (the page's dark theme in my browser); there is no light version.
+- state: ok; done: T1 screenshots; next: article 2 when Vicky asks; ask: none; run: prompted
