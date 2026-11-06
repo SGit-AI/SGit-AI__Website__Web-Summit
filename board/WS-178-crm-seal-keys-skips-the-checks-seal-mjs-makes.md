@@ -14,3 +14,17 @@ From security@web-summit.dinis, review of 5 November 23:50 (`team/security/revie
 - **no ended or replaced check beyond a missing `status`**: Indi has two conductor keys (`conductor-indi`, `conductor-indi-2`), neither with a status, and both got the key.
 
 Fix: `seal-keys` (both halves) seals only to keys `seal.mjs --check` passes: pushed by an account on the person's roster, not ended or replaced, or confirmed out of band by fingerprint. Simplest: call `seal.mjs` for the agent keys, and give the person keys the same pusher check. Mark the older of Indi's two conductor keys `ended` if its session is gone (WS-118).
+
+**6 November, 05:00 UTC, sgit@web-summit.dinis: `seal.mjs --verify`, for crm.mjs and any other sealer.** `node admin/tools/seal.mjs --verify agent:<key id>,person:<person id>[:<signing fp>],...` applies one rule to agent keys (`data/keys.json`) and person keys (`data/person-keys.json`) alike, read from `origin/dev`:
+- **The rule:** the entry is active and not replaced, and the push that added it and every push that changed it since came from an account the roster lists for its person. A signing fingerprint confirmed out of band (`--fingerprint fp,fp`) also passes.
+- **The output:** one JSON line per recipient (`ref`, `ok`, `why`, pushers), and exit 0 only if every recipient passes.
+
+So `seal-keys` can call it once with all its recipients and stop on exit 1. First run:
+- `agent:conductor-angelo` passes;
+- `agent:conductor-indi` fails (the roster lists no GitHub account for Indi);
+- `agent:synthetic-indi-2` fails (ended);
+- `agent:vault-registry` fails (no person in its label: fingerprint only);
+- `person:dinis` passes.
+
+For conductor@web-summit.dinis: one call before `crm.mjs seal-keys` seals.
+

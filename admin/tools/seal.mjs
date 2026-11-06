@@ -6,6 +6,7 @@
 //
 //   node admin/tools/seal.mjs --to <key id | fingerprint>[,...] (--from-vault DIR | --file F) [--name N] [--expires DAYS] [--qr out.png|out.svg]
 //   node admin/tools/seal.mjs --check <key id | fingerprint>     what the repository says about a key (nothing sealed)
+//   node admin/tools/seal.mjs --verify agent:<id>,person:<id>,...  the sealing rule for other sealers (crm.mjs), exit 0 if all pass
 //
 // The recipient's bundle is read from origin/dev:data/keys.json (what was pushed, not the working tree) and must match
 // the copy the live site serves (keys/sha256-<signing fp>.json). The sealing code is pki-agent.mjs's own, unmodified:
@@ -108,12 +109,12 @@ async function pushedBy(sha) {
 }
 // WS-152: every commit on dev that changed this key's entry (added it, or altered any field since), oldest first.
 // The first push only proves who added the key; a later commit by another agent can revive an ended key or swap it.
-function entryChanges(id) {
-    const shas = execFileSync('git', ['log', '--format=%H', '--reverse', 'origin/dev', '--', 'data/keys.json'], { encoding: 'utf8' }).split('\n').filter(Boolean)
+function entryChanges(id, file = 'data/keys.json', pick = keys => keys.find(k => k.id === id)) {
+    const shas = execFileSync('git', ['log', '--format=%H', '--reverse', 'origin/dev', '--', file], { encoding: 'utf8' }).split('\n').filter(Boolean)
     const out = []; let prev = null
     for (const sha of shas) {
         let cur = null
-        try { cur = JSON.stringify((JSON.parse(execFileSync('git', ['show', `${sha}:data/keys.json`], { encoding: 'utf8', maxBuffer: 64 << 20 })).keys || []).find(k => k.id === id) || null) } catch { continue }
+        try { cur = JSON.stringify(pick(JSON.parse(execFileSync('git', ['show', `${sha}:${file}`], { encoding: 'utf8', maxBuffer: 64 << 20 })).keys || []) || null) } catch { continue }
         if (cur !== prev && cur !== 'null' && cur !== null) out.push({ sha, subject: execFileSync('git', ['log', '-1', '--format=%s', sha], { encoding: 'utf8' }).trim() })
         prev = cur
     }
@@ -125,6 +126,46 @@ function rosterAccounts(person) {
 }
 
 const keys = published()
+
+// --verify (WS-178): the same rule for any sealer, over many recipients at once, agent keys and person keys alike.
+//   node admin/tools/seal.mjs --verify agent:<key id>,person:<person id>[:<signing fp>],... [--fingerprint fp,fp]
+// One JSON line per recipient ({ref, ok, why, pushed_by, changes}); exit 0 only if every one passes. A recipient passes
+// when its entry (on origin/dev) is active and not replaced, and the push that added it and every push that changed it
+// since came from an account the roster lists for its person; or its signing fingerprint is in --fingerprint.
+async function verify(ref) {
+    const oob = new Set(String(flags.fingerprint && flags.fingerprint !== true ? flags.fingerprint : '').split(',').filter(Boolean))
+    const [kind, a, b] = ref.split(':'), out = { ref, ok: false }
+    let entry, person, file, pick, fp
+    if (kind === 'agent') {
+        file = 'data/keys.json'; entry = keys.find(k => k.id === a); if (!entry) return { ...out, why: 'not on the keys page as pushed to dev' }
+        person = (/@web-summit\.([a-z0-9-]+)/.exec(entry.label) || [])[1] || null; fp = entry.bundle.signing_fingerprint; pick = ks => ks.find(k => k.id === a)
+    } else if (kind === 'person') {
+        file = 'data/person-keys.json'
+        const pks = JSON.parse(execFileSync('git', ['show', `origin/dev:${file}`], { encoding: 'utf8' })).keys || []
+        entry = pks.find(k => k.person === a && (!b || k.signing_fingerprint === b || k.fingerprint === b) && (b || k.status === 'active'))
+        if (!entry) return { ...out, why: `no ${b ? 'such' : 'active'} person key for ${a} on dev` }
+        person = a; fp = entry.signing_fingerprint; pick = ks => ks.find(k => k.person === a && k.signing_fingerprint === fp)
+    } else return { ...out, why: 'use agent:<key id> or person:<person id>[:<signing fp>]' }
+    out.signing_fingerprint = fp
+    const status = String(entry.status || 'active')
+    if (!/^active\b/.test(status) || entry.replaced_by) return { ...out, why: `its entry says "${status}"${entry.replaced_by ? `, replaced by ${entry.replaced_by}` : ''}` }
+    if (oob.has(fp)) return { ...out, ok: true, why: 'fingerprint confirmed out of band (--fingerprint)' }
+    if (!person) return { ...out, why: 'its label names no <agent>@web-summit.<person>: confirm its fingerprint out of band' }
+    const accounts = rosterAccounts(person), changes = []
+    for (const c of entryChanges(a, file, pick)) { const who = await pushedBy(c.sha); changes.push({ commit: c.sha.slice(0, 7), pushed_by: who || 'unknown', matches: !!(who && accounts.includes(who)) }) }
+    out.person = person; out.roster = accounts; out.changes = changes; out.pushed_by = changes[0] ? changes[0].pushed_by : 'unknown'
+    if (!changes.length) return { ...out, why: 'its commit was not found in the fetched history' }
+    if (!accounts.length) return { ...out, why: `the roster lists no GitHub account for ${person}` }
+    const bad = changes.filter(c => !c.matches)
+    if (bad.length) return { ...out, why: `pushed or changed from an account not on ${person}'s roster: ${bad.map(c => `${c.commit} by ${c.pushed_by}`).join(', ')}` }
+    return { ...out, ok: true, why: `added and changed only from ${person}'s accounts` }
+}
+if (flags.verify) {
+    const refs = String(flags.verify).split(',').map(x => x.trim()).filter(Boolean)
+    let all = true
+    for (const ref of refs) { const r = await verify(ref); all = all && r.ok; console.log(JSON.stringify(r)) }
+    process.exit(all ? 0 : 1)
+}
 if (flags.check) {
     const r = await recipient(keys, String(flags.check))
     console.log(JSON.stringify({ id: r.k.id, label: r.k.label, signing_fingerprint: r.k.bundle.signing_fingerprint, encryption_fingerprint: r.k.bundle.fingerprint, pushed_in: r.commit, pushed_by: r.pushed_by || 'unknown (GitHub did not say)', person: r.person, roster_accounts: r.roster, pusher_matches_roster: r.pusher_matches, entry_changes: r.changes, every_change_by_its_person: r.changes_match, live: r.live, url: r.url }, null, 2))
