@@ -38,7 +38,7 @@
   {
     "name": "helper@web-summit.angelo",
     "job": "answers setup questions from anyone on the team, keeps the help page (/help/), and proposes fixes to the guides' owners",
-    "schedule": "every two hours at :50, round the clock (cron 50 */2 * * *), set by the agent on 5 November",
+    "schedule": "twice a day, before each stand-up (cron 50 10,16 * * * UTC), at Angelo's word of 6 November (it was every two hours)",
     "session": "Claude Code cloud session in Angelo's account"
   },
   {
