@@ -271,8 +271,8 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
         }
 
         // ---------- the collaboration board (slice 5): everyone, people and agents, and the machine ----------
-        const cstate = () => { const i = location.hash.indexOf('?'); const p = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)); return { p: p.get('p') || '', map: p.get('map') === '1', f: p.get('f') || '', l: p.get('l') || '' } }
-        const setC = c => { const q = []; if (c.map) q.push('map=1'); if (c.l && c.l !== 'ring') q.push('l=' + c.l); if (c.f) q.push('f=' + encodeURIComponent(c.f)); if (c.p) q.push('p=' + encodeURIComponent(c.p)); history.replaceState(history.state, '', location.pathname + location.search + '#collab' + (q.length ? '?' + q.join('&') : '')); drawCollab() }
+        const cstate = () => { const i = location.hash.indexOf('?'); const p = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)); return { p: p.get('p') || '', map: p.get('map') === '1', f: p.get('f') || '', l: p.get('l') || '', fs: p.get('fs') === '1' } }
+        const setC = c => { const q = []; if (c.map) q.push('map=1'); if (c.l && c.l !== 'ring') q.push('l=' + c.l); if (c.f) q.push('f=' + encodeURIComponent(c.f)); if (c.p) q.push('p=' + encodeURIComponent(c.p)); if (c.fs && c.map) q.push('fs=1'); history.replaceState(history.state, '', location.pathname + location.search + '#collab' + (q.length ? '?' + q.join('&') : '')); drawCollab() }
         const openPerson = id => { history.pushState({ akCard: true }, ''); history.replaceState(history.state, '', location.pathname + location.search + '#collab?p=' + encodeURIComponent(id)); drawCollab() }
         const closePerson = () => { if (history.state && history.state.akCard) history.back(); else { history.replaceState(history.state, '', location.pathname + location.search + '#collab'); drawCollab() } }
         const initials = n => String(n).split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase()
@@ -317,6 +317,9 @@ ${teamMap()}
             view.querySelectorAll('[data-ak-person]').forEach(b => b.onclick = () => openPerson(b.dataset.akPerson))
             const tm = view.querySelector('[data-tm-toggle]'); if (tm) tm.onclick = () => setC({ ...cstate(), map: !cstate().map, f: '' })
             view.querySelectorAll('[data-tm-l]').forEach(g => g.onclick = () => setC({ ...cstate(), l: g.dataset.tmL, f: '' }))
+            const tf = view.querySelector('[data-tm-fs]'); if (tf) tf.onclick = () => { const c = cstate(), on = !c.fs; setC({ ...c, map: true, fs: on }); try { if (on && document.documentElement.requestFullscreen && !document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => null); if (!on && document.fullscreenElement) document.exitFullscreen().catch(() => null) } catch { } }
+            const tcp = view.querySelector('[data-tm-copy]'); if (tcp) tcp.onclick = async () => { const n = view.querySelector('[data-tm-copied]'); try { await navigator.clipboard.writeText(location.href); if (n) n.textContent = 'Link copied' } catch { if (n) n.textContent = location.href } }
+            if (!window.__tmEsc) { window.__tmEsc = true; addEventListener('keydown', e => { if (e.key === 'Escape' && route() === 'collab' && cstate().fs) { const c = cstate(); setC({ ...c, fs: false }) } }); document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement && route() === 'collab' && cstate().fs) setC({ ...cstate(), fs: false }) }) }
             view.querySelectorAll('[data-tm-f]').forEach(g => g.onclick = () => { const c = cstate(); setC({ ...c, f: c.f === g.dataset.tmF ? '' : g.dataset.tmF }) })
             view.querySelectorAll('[data-ak-close]').forEach(b => b.onclick = closePerson)
             const sh = view.querySelector('.ak-sheet'); if (sh) sh.focus()
@@ -333,7 +336,9 @@ ${teamMap()}
         const shape = (k, x, y, r) => { const [, n, inner] = TM_KIND[k] || ['', 0, 0]; if (!n) return `<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${r.toFixed(1)}"/>`; const pts = []; const m = inner ? n * 2 : n; for (let q = 0; q < m; q++) { const a = -Math.PI / 2 + q * 2 * Math.PI / m, rr = inner && q % 2 ? r * inner : r; pts.push(`${(x + rr * Math.cos(a)).toFixed(1)},${(y + rr * Math.sin(a)).toFixed(1)}`) } return `<polygon points="${pts.join(' ')}"/>` }
         function teamMap() {
             const c = cstate(), M = D.collab && D.collab.map, L0 = TM_LAYOUTS.some(([k]) => k === c.l) ? c.l : 'ring'
-            const head = `<section class="cc-card tm" aria-label="The whole team as one map"><div class="tm-top"><h3 class="ak-h3">The whole team as one map</h3><button type="button" class="cc-btn" data-tm-toggle aria-pressed="${c.map}">${c.map ? 'Hide the map' : 'Show the map'}</button></div>`
+            // full screen (fs=1 in the address), so the map alone can be opened from a link, or shown on a screen
+            const fs = c.fs && c.map
+            const head = `<section class="cc-card tm${fs ? ' tm-fs' : ''}" aria-label="The whole team as one map"><div class="tm-top"><h3 class="ak-h3">The whole team as one map</h3><span class="tm-acts">${c.map ? `<button type="button" class="cc-btn" data-tm-fs aria-pressed="${fs}" title="${fs ? 'Back to the page (Esc)' : 'The map alone, full screen, with its own link'}">${fs ? '✕ Close full screen' : '⛶ Full screen'}</button><button type="button" class="cc-btn" data-tm-copy title="Copy a link to this map, as you see it: layout, focus${fs ? ', full screen' : ''}">🔗 Copy link</button><span class="note" data-tm-copied role="status"></span>` : ''}${fs ? '' : `<button type="button" class="cc-btn" data-tm-toggle aria-pressed="${c.map}">${c.map ? 'Hide the map' : 'Show the map'}</button>`}</span></div>`
             if (!c.map) return head + `<p class="note">Everyone and their agents, and who wrote to whom in the last 7 days${M && M.totals ? ` (${M.totals.people} people, ${M.totals.agents} agents, ${M.totals.messages} messages)` : ''}.</p></section>`
             if (!M || M.error) return head + `<p class="note">The map's data is missing from this build${M && M.error ? ` (${esc(M.error)})` : ''}.</p></section>`
             const S = 1000, C = S / 2, col = new Map(M.people.map((p, i) => [p.id, TM_COL[i % TM_COL.length]])), pos = new Map(), NP = M.people.length
