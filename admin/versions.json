@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.903",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: the token ledger line for Replay's map mode",
+    "by": "dev@PrompTugal.angelo",
+    "from": "9d622de22"
+  },
+  {
     "version": "v0.2.902",
     "date": "2026-11-06",
     "what": "runner.writer@PrompTugal.angelo: STATE after first run: WS-125 not yet visible in the newsroom",
