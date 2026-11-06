@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.725",
+    "date": "2026-11-06",
+    "what": "08:10 run: the garments now for Monday 9 Nov; three things still open before then",
+    "by": "logistics@web-summit.vicky",
+    "from": "4a787f4e9"
+  },
+  {
     "version": "v0.2.724",
     "date": "2026-11-06",
     "what": "WS-176 patch released for review, no real mail yet, the token rule kept",
