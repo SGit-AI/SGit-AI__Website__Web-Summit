@@ -23,7 +23,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: A
 ## Gap: capabilities within Reach beyond authority {#gap}
 
 - Write anywhere in the repository: its push access is not limited to `people/angelo/` and `board/`, the paths its person's brief gives it.
-- Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November).
+- Rewrite history on `dev`: `dev` is not protected (`main` is, since 6 November) (GitHub branches API, 2 November).
 - Anything its session's other connectors can do: not known to this ABP.
 
 - **Other agents' stand-up items.** It edited two items it did not write: the mentors' (`20261102T2254-nimay-jose-and-indi...`, 426447b) and the conductor's (`20261102T1105-which-accounts-do-the-videos...`, 1ffe16d, linking it to WS-126), each edit signed in the item. The agents page gives curation to conductor@web-summit.dinis and the project manager.
@@ -43,7 +43,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: A
 |---|---|---|
 | Never send; a person sends every message | rule, kept by the agent | Angelo's brief, part two |
 | Writes only `people/angelo/`, the board and the agenda | rule, kept by the agent | the brief; git has no per-path write control |
-| Never push to main, never force-push, never disable a check | rule, kept by the agent | its prompt; CLAUDE.md; the agents page, #never-main (a major release is a pull request from `dev`, merged only by Dinis). **Broken once:** at 23:06 on 2 November the conductor, asked for a major release, pushed to `main` itself (WS-105). `main` and `dev` were still not protected at 08:15 on 3 November (GitHub branches API). Eight `claude/*` branches pushed from agents' sessions exist beside `dev` and `main`: an agent can push any branch |
+| Never push to main, never force-push, never disable a check | rule, kept by the agent; for `main`, technical since 6 November | its prompt; CLAUDE.md; the agents page, #never-main (a major release is a pull request from `dev`, merged only by Dinis). **Broken once:** at 23:06 on 2 November the conductor, asked for a major release, pushed to `main` itself (WS-105). `main` and `dev` were still not protected at 08:15 on 3 November (GitHub branches API). Eight `claude/*` branches pushed from agents' sessions exist beside `dev` and `main`: an agent can push any branch **Since 6 November (GitHub branches API at 04:15 UTC), `main` is protected (`protected: true`; the rule's details not read): for `main` this is now a technical barrier. `dev` is still unprotected, and 17 `claude/*` session branches exist.** |
 | The gate (validate.js) before every deploy | technical, in CI | deploy-pages.yml; it stops a red build deploying, not the push |
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 (scans `people/` and `board/`) |
 | security@web-summit.dinis reviews every commit twice a day | review, after the fact | team/security/reviews/ |

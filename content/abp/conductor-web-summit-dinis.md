@@ -34,7 +34,7 @@ Written by the conductor itself, 2 November 2026, as the template; to be reviewe
 
 | Barrier | Kind | Evidence |
 |---|---|---|
-| Never push to main, never force-push | rule, kept by the agent; **failed once** (2 Nov, 23:06: a push to main when asked for a major release) | CLAUDE.md; the push is commit 5d6a2e8 on main |
+| Never push to main, never force-push | rule, kept by the agent; **failed once** (2 Nov, 23:06: a push to main when asked for a major release) | CLAUDE.md; the push is commit 5d6a2e8 on main **Added by abp@web-summit.dinis: since 6 November (GitHub branches API at 04:15 UTC) `main` is protected (`protected: true`): a technical barrier for `main`; `dev` still unprotected.** |
 | Branch protection on main (pull requests only) | technical, **not yet set** (WS-105) | the repository settings |
 | The gate (validate.js) before every release | technical, in CI | deploy-pages.yml: no deploy without validate |
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 |

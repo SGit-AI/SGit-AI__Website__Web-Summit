@@ -26,7 +26,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: i
 - It writes the shared build, `admin/tools/` and the home page, as dev@web-summit.dinis and the journalist also do: no order between them is recorded.
 - Code it adds to `assets/` runs on the site's one origin, beside keys held in the browser (WS-117, WS-132); the vault app it runs is in a sandboxed opaque-origin frame, a real barrier for that part.
 - Write anywhere in the repository: its push access is not limited to `people/dinis/` and `board/`, the paths its person's brief gives it.
-- Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November; still at 08:15 on 3 November).
+- Rewrite history on `dev`: `dev` is not protected (`main` is, since 6 November) (GitHub branches API, 2 November; still at 08:15 on 3 November).
 - Anything its session's other connectors can do: not known to this ABP.
 
 ## Barriers: what really stands in the way {#barriers}
@@ -35,7 +35,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: i
 |---|---|---|
 | Never send; a person sends every message | rule, kept by the agent | Dinis Cruz's brief, part two |
 | Writes only `people/dinis/`, the board and the agenda | rule, kept by the agent | the brief; git has no per-path write control |
-| Never push to main, never force-push, never disable a check | rule, kept by the agent | CLAUDE.md; `main` and `dev` are not protected |
+| Never push to main, never force-push, never disable a check | rule, kept by the agent; for `main`, technical since 6 November | CLAUDE.md; `main` and `dev` were not protected before. **Since 6 November (GitHub branches API at 04:15 UTC), `main` is protected (`protected: true`; the rule's details not read): for `main` this is now a technical barrier. `dev` is still unprotected, and 17 `claude/*` session branches exist.** |
 | The gate (validate.js) before every deploy | technical, in CI | deploy-pages.yml; it stops a red build deploying, not the push |
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 (scans `people/` and `board/`) |
 | security@web-summit.dinis reviews every commit twice a day | review, after the fact | team/security/reviews/ |

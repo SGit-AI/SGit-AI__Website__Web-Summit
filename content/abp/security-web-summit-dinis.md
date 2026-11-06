@@ -23,7 +23,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 
 - Write anywhere, including fixing other people's work, which its section says it must not do.
 - Write HOLD.md is in its mandate; removing someone else's hold is not, and nothing stops it.
-- Push to `main` (a major release, Dinis's call only): nothing technical stops it.
+- Push to `main` (a major release, Dinis's call only): nothing technical stopped it until 6 November, when `main` became protected (GitHub branches API); `dev` is still open.
 - Rewrite history on `dev` or `main` (force-push, delete a branch): no branch protection.
 - Edit the gate or the CI workflow in the same push the gate judges. Since v0.1.51 (CI owns the version), every push to `dev` also runs `admin/build/tag_release.sh` from the pushed tree in a CI job with `contents: write` and `pages: write`, which commits, tags, pushes and deploys: a push that changes that script has its code run with a token that can write to the repository and the live site.
 - Create scheduled tasks or sessions, and message or steer other agents' sessions.
@@ -34,7 +34,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from its section on [the age
 
 | Barrier | Kind | Evidence |
 |---|---|---|
-| Never push to main, never force-push, never disable a check | rule, kept by the agent | its prompt; CLAUDE.md; the agents page, #never-main (a major release is a pull request from `dev`, merged only by Dinis). **Broken once:** at 23:06 on 2 November the conductor, asked for a major release, pushed to `main` itself (WS-105). `main` and `dev` were still not protected at 08:15 on 3 November (GitHub branches API). Eight `claude/*` branches pushed from agents' sessions exist beside `dev` and `main`: an agent can push any branch |
+| Never push to main, never force-push, never disable a check | rule, kept by the agent; for `main`, technical since 6 November | its prompt; CLAUDE.md; the agents page, #never-main (a major release is a pull request from `dev`, merged only by Dinis). **Broken once:** at 23:06 on 2 November the conductor, asked for a major release, pushed to `main` itself (WS-105). `main` and `dev` were still not protected at 08:15 on 3 November (GitHub branches API). Eight `claude/*` branches pushed from agents' sessions exist beside `dev` and `main`: an agent can push any branch **Since 6 November (GitHub branches API at 04:15 UTC), `main` is protected (`protected: true`; the rule's details not read): for `main` this is now a technical barrier. `dev` is still unprotected, and 17 `claude/*` session branches exist.** |
 | The gate (validate.js) before every deploy | technical, in CI | deploy-pages.yml (v0.1.51): the gate runs on the push, then again on the tree CI numbers, commits and deploys. It stops a red build deploying, not the push, and the agent can edit the gate, the workflow and tag_release.sh |
 | Only CI writes the version | rule, kept by the agent; a warning in CI | release.sh refuses a commit touching version.txt, but it runs in the agent's own clone; tag_release.sh only warns, and replaces the number |
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 |

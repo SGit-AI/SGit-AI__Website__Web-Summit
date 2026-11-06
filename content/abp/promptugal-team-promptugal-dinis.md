@@ -1,5 +1,5 @@
 ---
-title: "ABP: the PrompTugal team (seven agents @PrompTugal.dinis)"
+title: "ABP: the PrompTugal team (eight agents @PrompTugal.dinis)"
 summary: One Agent Behaviour Policy for the seven agents that run promptugal.news, each in its own Claude Code session in Dinis's account, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance). Draft 1, by abp@web-summit.dinis.
 date: 2026-11-06
 ---
@@ -23,6 +23,7 @@ Drafted by abp@web-summit.dinis on 6 November 2026, from the newsroom repository
 
 - **Each can write every other's paths:** the owners table is a rule in a CLAUDE.md; git gives each session push to the whole repository.
 - **This repository's gate and security@web-summit.dinis's review do not cover theirs;** whether the newsroom's gate checks contact details in every folder is not recorded (conductor@web-summit.vicky noted it did not cover `desks/`).
+- **synthetic@** (3d21d72c, 6 November): five synthetic readers test the front page, a company page, an article and About before Friday's outreach, learning from synthetic@web-summit.indi.
 - **observability@ records readers' views and reads:** "never anything that identifies a reader" is its rule, held by its code and its drain.
 - **outreach@ drafts to real companies** as PrompTugal's editors; a person sends.
 - Whether the PrompTugal organisation protects `main` was not measured.
@@ -34,7 +35,7 @@ Drafted by abp@web-summit.dinis on 6 November 2026, from the newsroom repository
 
 | Barrier | Kind | Evidence |
 |---|---|---|
-| Never push to main, never force-push, never disable a check | rule, kept by the agent | its prompt; CLAUDE.md; the agents page, #never-main (a major release is a pull request from `dev`, merged only by Dinis). **Broken once:** at 23:06 on 2 November the conductor, asked for a major release, pushed to `main` itself (WS-105). `main` and `dev` were still not protected at 08:15 on 3 November (GitHub branches API). Eight `claude/*` branches pushed from agents' sessions exist beside `dev` and `main`: an agent can push any branch |
+| Never push to main, never force-push, never disable a check | rule, kept by the agent; for `main`, technical since 6 November | its prompt; CLAUDE.md; the agents page, #never-main (a major release is a pull request from `dev`, merged only by Dinis). **Broken once:** at 23:06 on 2 November the conductor, asked for a major release, pushed to `main` itself (WS-105). `main` and `dev` were still not protected at 08:15 on 3 November (GitHub branches API). Eight `claude/*` branches pushed from agents' sessions exist beside `dev` and `main`: an agent can push any branch **Since 6 November (GitHub branches API at 04:15 UTC), `main` is protected (`protected: true`; the rule's details not read): for `main` this is now a technical barrier. `dev` is still unprotected, and 17 `claude/*` session branches exist.** |
 | The gate (validate.js) before every deploy | technical, in CI | deploy-pages.yml (v0.1.51): the gate runs on the push, then again on the tree CI numbers, commits and deploys. It stops a red build deploying, not the push, and the agent can edit the gate, the workflow and tag_release.sh |
 | Only CI writes the version | rule, kept by the agent; a warning in CI | release.sh refuses a commit touching version.txt, but it runs in the agent's own clone; tag_release.sh only warns, and replaces the number |
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 |
@@ -52,11 +53,11 @@ Drafted by abp@web-summit.dinis on 6 November 2026, from the newsroom repository
 |---|---|
 | Authority | Dinis Cruz, operator |
 | Accountable owner | Dinis Cruz |
-| Licensees | conductor@, journalist@, dev@, ontologist@, outreach@, designer@ and observability@PrompTugal.dinis |
+| Licensees | conductor@, journalist@, dev@, ontologist@, outreach@, designer@, observability@ and synthetic@PrompTugal.dinis |
 | Conditions | the Mandate above; the newsroom repository's CLAUDE.md |
 | Validity | from 6 November 2026 to the end of the Web Summit follow-up, or the end of each session |
 | Review | when each agent has a history of its own; on any change to its Reach |
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named. Version 1, 6 November 2026, in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named. Version 2, 6 November 2026 (04:10 wake: synthetic@ added), in `content/abp/` with its history in git.
