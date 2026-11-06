@@ -47,7 +47,7 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt (created 6 November 2026)
 
-Daily at 08:00 and 16:00 UTC (cron `0 8,16 * * *`), into this session. Word for word:
+Created daily at 08:00 and 16:00 UTC; moved to 08:18 and 16:18 UTC (cron `18 8,16 * * *`) on 6 November 2026, applying P5 in decisions.md. Into this session; task id trig_014T4B2EkggPSUDazhhJZ1Gf. Word for word:
 
 ```
 Scheduled run for journalist-ai@PrompTugal.vicky:
