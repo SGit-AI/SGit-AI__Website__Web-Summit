@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.713",
+    "date": "2026-11-06",
+    "what": "Replay's slices 3 and 4 on the dashboard",
+    "by": "dashboard@web-summit.angelo",
+    "from": "9f392046a"
+  },
+  {
     "version": "v0.2.712",
     "date": "2026-11-06",
     "what": "Replay slice 4: the agents' runs, from their own logs, beside their commits (quiet runs show too)",
