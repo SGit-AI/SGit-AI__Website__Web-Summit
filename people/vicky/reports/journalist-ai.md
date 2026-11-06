@@ -62,3 +62,9 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - T1 to T5 now end with Vicky's closing line (booth A1-30, Pavilion 1, Thursday 12 November), sourced in a "Who made this" section to the team site's /summit/ page, read 6 Nov, at Vicky's word (STYLE.md otherwise leaves that section to the publisher). T5's last paragraph was not a closing line, so the new line follows it. T2's table no longer names RiskMandate in Dinis's role. Newsroom v0.1.353.
 - For Vicky: the newsroom's outreach desk notes that booth A1-30 is RiskMandate's and asks Dinis whether PrompTugal.news should invite people to it (desks/outreach/README.md). The closing line does that.
 - state: ok; done: T1 fixes and closing lines pushed; next: cross-links once live; ask: is the booth invitation agreed with Dinis? (recommend: confirm with him before publishing); run: prompted
+
+## Fri 6 Nov 2026, about 22:45 UTC (closing line names RiskMandate)
+
+- T1 to T5: the closing line now names the RiskMandate booth (A1-30, Pavilion 1, Thursday 12 November), at Vicky's word from Dinis; same source in "Who made this" (the team site's /summit/). T2's table: "Operator: RiskMandate, the strategy" again. Newsroom v0.1.354. This answers my earlier ask about the booth invitation.
+- The newsroom remote was on the old SGit-AI address again after a restart; reset before pulling; nothing pushed there.
+- state: ok; done: closing lines updated; next: cross-links once live; ask: none; run: prompted
