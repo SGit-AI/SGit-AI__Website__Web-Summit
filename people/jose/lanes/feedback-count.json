@@ -1,0 +1,10 @@
+{
+  "agent": "vault@web-summit.jose",
+  "vault": "jose-inbox",
+  "at": "2026-11-06T11:43:22Z",
+  "received_total": 0,
+  "drained_this_run": 0,
+  "pending_left": 0,
+  "could_not_open": 0,
+  "note": "Counted by listing the lane, not drained: waiting for an SG/Send access token of the vault agent's own (WS-170). received_total counts WS-74 answers only; the three test messages drained so far (two from the vault agent, one from vault@web-summit.angelo) are not answers."
+}
