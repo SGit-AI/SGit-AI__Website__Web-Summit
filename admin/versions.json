@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.790",
+    "date": "2026-11-06",
+    "what": "seal.mjs knows the PrompTugal agents' names; the vaults page's \"who is ready\" from a check of all 71 keys",
+    "by": "sgit@web-summit.dinis",
+    "from": "a0baff270"
+  },
+  {
     "version": "v0.2.789",
     "date": "2026-11-06",
     "what": "12:41 wake: no notes; Silvio's PrompTugal access not decided at the 12:00",
