@@ -4,37 +4,27 @@ summary: What the project manager read on the board (board/WS-NN-*.md), the plan
 ---
 Written by project-manager@web-summit.dinis from the issue files in `board/` ([the board](../briefs/index.html#issues)), `data/meetings/` ([the stand-ups](../meetings/index.html)), `people/*/onboarding.json` and the git log. Vicky picked up WS-46 on 3 November; her own note, written by pm@web-summit.vicky once a day at 07:40 for her deadlines, is [people/vicky/board-health.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/board-health.md) . This page stays the team-wide view until Vicky decides otherwise. Each run replaces the last; earlier runs are in the file's git history.
 
-## Run of 6 November 2026, 07:50 UTC
+## Run of 6 November 2026, 12:50 UTC
 
-Read: everything at commit `6d15e0e` on dev (v0.2.720). Since 17:50 yesterday: the newsroom became **PromptUGAL** (promptugal.news, repository PrompTugal/PrompTugal__News__Website), with WS-177 to have it ready for outreach by 10:00 today; one issue done (WS-120, Silvio's first vault); two new (WS-177, WS-178); the merch milestone moved to Monday 9 November morning (dashboard@web-summit.dinis, 07:11). **No stand-up decision has been recorded since Wednesday evening.**
+Read: everything at commit `2b06ac5` on dev (v0.2.789). Since 07:50: five new issues (WS-179 to WS-183: sessions push only to dev, a back office, coordination in the command centre, and two PromptUGAL beats), one done (WS-178), and **again no stand-up decision recorded**. The 12:00 was held without notes. Silvio's PromptUGAL access was not decided (mentor@web-summit.dinis, 12:41).
 
 ### Only Dinis can do this {#only-dinis}
 
-From the board's `only: dinis` field. Unchanged for two days.
+Unchanged: **WS-13** (the merch budget, blocks Silvio), **WS-105** (who may merge to main, then Angelo applies it), **WS-115** (the OpenRouter key per agent), **WS-113** (your yes on the generic-QR set: 3 of 7 signed, the merch now on Monday morning). Also asked of you and still open: Silvio's push access to PrompTugal/PrompTugal__News__Website (WS-177), and the outreach emails' one claim (WS-26).
 
-| # | Issue | Who is blocked | The action |
-|---|---|---|---|
-| 1 | **WS-13** the merch budget | Silvio | Say yes, or name a ceiling. Your yes of 3 November may already be it. |
-| 2 | **WS-105** protect main | Every agent | Say who may merge to main, and Angelo applies the rule. |
-| 3 | **WS-115** the OpenRouter key, one per agent | Ask Claude on the command centres | Seal and sign one key per agent. |
-| 4 | **WS-113** your yes on the generic-QR set and the logo | The printer: 3 of 7 sets signed | On [/print/](../print/index.html). |
+### The parking decision, ready to apply {#parking}
 
-Also asked of Dinis overnight, and on today's 12:00 agenda: **push access for Silvio to the PromptUGAL repository** (conductor@web-summit.silvio, 23:59; WS-177). I have not set `only:` on it: who administers the PrompTugal organisation is not on record.
+On the 18:00 agenda: *"Park every late, unowned issue until after the summit?"* (team-collaboration@web-summit.angelo, WS-46, recommended "yes, park them all now"). If the answer is yes, I apply it in one pass. **66 issues** are dated up to 5 November, not done, and have nobody in `picked_by:`. My recommendation is **yes, with 21 exceptions**. Parking them would hide what most needs a name:
+
+- **Keep (not parked), 21:** WS-13, WS-15, WS-16, WS-17, WS-18, WS-19, WS-20, WS-21, WS-66, WS-105, WS-107, WS-109, WS-113, WS-115, WS-118, WS-119, WS-122, WS-132, WS-154, WS-156, WS-164. These are the RiskMandate core, everything only Dinis can do, who records the decisions, the merch sign-off, and the open security issues.
+- **Park, 45:** WS-01, WS-02, WS-03, WS-04, WS-05, WS-06, WS-09, WS-10, WS-12, WS-24, WS-30, WS-34, WS-38, WS-40, WS-41, WS-42, WS-53, WS-54, WS-56, WS-59, WS-62, WS-68, WS-69, WS-70, WS-73, WS-77, WS-79, WS-80, WS-82, WS-88, WS-90, WS-98, WS-99, WS-110, WS-111, WS-112, WS-117, WS-127, WS-133, WS-136, WS-138, WS-144, WS-150, WS-160, WS-162.
+
+"Parked" would be `status: parked` with a one-line note in each file ("parked at the 6 November stand-up, unpark by picking it"). Nothing is parked until someone records the decision in Dinis's words.
 
 ### The rest of the board
 
-**In one line.** 179 issue files: 105 open, 42 picked, 5 in progress, 27 done. **103 dated up to yesterday are not done, 66 of them with nobody on them.** Today, Friday 6 November, 20 are due, 11 with nobody on them: WS-28, WS-43, WS-60, WS-81, WS-121, WS-143, WS-146, WS-147, WS-152, WS-165 and WS-178.
+**In one line.** 184 issue files: 108 open, 43 picked, 5 in progress, 28 done. 66 late issues have nobody on them (above). WS-177 (PromptUGAL for outreach, due 10:00 today) and WS-31 (schedules, due tomorrow) are both picked and still open.
 
-**Due today and urgent.**
-
-- **WS-177, PromptUGAL ready for outreach, 10:00.** Picked by the conductor, with most teams' agents on it. Outreach from Silvio depends on it, and on Dinis's yes to the emails' one claim (WS-26, on the agenda since Thursday).
-- **WS-31, everyone's schedule for 10 to 12 November, due tomorrow.** pm@web-summit.vicky flags it URGENT: it needs Vicky's word on the smaller scope (meetings and companies only, sessions by each person). WS-32 (sessions) has nobody on it.
-- **WS-178:** `crm seal-keys` skips the checks `seal.mjs` makes. Security, nobody on it.
-
-**RiskMandate.** The ten core issues (WS-15 to WS-22, WS-66, WS-109) are still open with nobody picked: three days now. Meanwhile outreach@web-summit.silvio has published a competitive analysis of 11 companies at Web Summit (/people/silvio/competitive/), which WS-16 (positioning) can use. **I repeat the 17:50 recommendation: name an owner at 12:00, or re-date these to what will really happen.**
-
-**Stand-ups.** The 12:00 has 34 open items, 33 of them carried over. Nothing was recorded at Thursday's 18:00: team-collaboration@web-summit.angelo's debrief (19:15) has no notes or transcript. WS-107 (who records) and WS-98 (Meet transcripts) are the fix, and both wait on Dinis.
-
-**Tidied this run.** No duplicates on the 12:00 agenda or the board beyond the known WS-106. No issue's `only:` field is wrong.
+**Stand-ups.** Four in a row have recorded no decision. The 18:00 has 34 open items, all carried over. On it, two past "order of the meeting" items are closed (the 5 November 18:00 and today's 12:00 have both passed, and their asks carry over in their own items). A note-taker named at the start of the 18:00 (WS-107) would let everything else on this page move.
 
 **The pulse.** Two check-ins in total, both from 3 November.
