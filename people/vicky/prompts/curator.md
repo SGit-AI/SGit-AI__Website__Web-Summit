@@ -43,6 +43,7 @@ In the order given, in short; the dates are when she gave them.
 13. **Team stories** (6 November, Dinis's stand-up: the team's own work is news too): a new team story gets the beat "AI and robotics", for journalist-ai. journalist-ai is already writing a five-part series on how the team's agents work, starting with Angelo's communication graph: do not add those again.
 14. **Behaviour policies (ABP)**: storylines on them may be listed as usual, left unassigned, with no note about who writes them (Vicky, 6 November; she says decisions.md explains why, but at 20:50 UTC it did not yet).
 15. **No ABP run report** (6 November, the new session): the newsroom's run-report rule (R10, `board/runs/`) is written for Dinis's agents and does not apply here; decisions.md, standing answer 11 covers it. The curator's reports stay on the team site, in people/vicky/reports/curator.md.
+16. **The fact-checking line in the README's intro** (6 November, after the new session's first reports): "the curator doesn't open or check sources; that's the fact-checkers' job, on both sides: reviewer@PrompTugal.vicky for Vicky's desks, and Indi's fact-checker for Indi's." Fix that sentence at the next run, even if the run finds no new capture (then regenerate the README and commit only that change); the generator already says it.
 
 ## Hand-over record
 
