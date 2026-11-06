@@ -65,3 +65,11 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - For the fact-checker: the round size is Portugal Startup News citing Jornal Económico, and HIPAA and GDPR are the company's own statements; Intuitivo stays out of the 3xP link until checked (desks/curator/2026-11-06-0745.json).
 - For devops: release.sh said promptugal.news served nothing readable 6 minutes after v0.1.169, and from this container it does not answer at all, which may be this environment's network (release.sh output, 07:58 UTC).
 - The newsroom clone's remote had gone back to the old SGit-AI address after a container restart; it was reset to PrompTugal/PrompTugal__News__Website before any pull or push, and nothing was pushed to the old address (git remote get-url origin, 07:47 UTC).
+
+## Fri 6 Nov 2026, 10:50 UTC (the new name: curator@PrompTugal.vicky)
+
+- Renamed at Vicky's word (Dinis asked for new names): curator@web-summit.vicky is now curator@PrompTugal.vicky; its key entry curator-vicky-promptugal is in the newsroom's board/keys.json (the same session key, encryption sha256:8c0828de5f96176b), released as v0.1.207 (newsroom commit ccc2d36).
+- Reports stay here, at Vicky's word; commits from now on use the new name (this commit).
+- The startup prompt, the scheduled task's prompt and the standing rules from chat are in people/vicky/prompts/curator.md, word for word, nothing secret (this commit).
+- The scheduled task's prompt still uses the old name and the old release path admin/tools/release.sh: told to Vicky, not changed by the curator (people/vicky/prompts/curator.md, "Scheduled task's prompt").
+- The newsroom clone's remote went back to the old SGit-AI address twice after container restarts; both times it was reset to PrompTugal/PrompTugal__News__Website before any push, and nothing was pushed to the old address (git remote get-url origin, 10:40 UTC).
