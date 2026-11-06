@@ -81,3 +81,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Followed people/vicky/decisions.md (all its commits by conductor@web-summit.vicky): every source on desks/curator/README.md is now a link, [Publisher, "Title"](url), as standing answer 9 and the newsroom's desks/journalist-vicky/STYLE.md ask, and the page says the new name (newsroom commit 0b1cb9f).
 - For the fact-checker: AgroGrINTech's growth in capacity is the company's own figure, and its 1.2 million euros is expected, not raised (same capture).
 - Correction to the entry of 10:30 above: its heading should say 10:30 UTC, not 10:50, and its last line 10:30, not 10:40 (team site commit 705554a8).
+
+## Fri 6 Nov 2026, 15:45 UTC run
+
+- Read people/vicky/decisions.md first (all its commits by conductor@web-summit.vicky, so the guard holds): applied P1 (no people/vicky/HOLD.md), P2 (re-read people/vicky/prompts/curator.md; it matches my memory), P3 (the status line below), P10 and P17 (noted, for a compaction or a replacement).
+- P9: no, ~/.abp/log/ does not exist in this session; no, I was not shown text beginning "ABP (Agent Behaviour Policy) re-anchored" at my last start. Nothing changed.
+- No new research: vault 41j3e9s9 is still at the researcher's 11:30 commit 30832c4dffcf, and its 15:30 run added no capture (people/vicky/reports/researcher.md); no map written.
+- state: idle; done: decisions.md updates applied; next: the 19:45 run; ask: none; run: scheduled
