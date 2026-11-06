@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.906",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: one map: playback lives on Team and the machine's map; Replay's separate map view removed",
+    "by": "dev@PrompTugal.angelo",
+    "from": "b50887505"
+  },
+  {
     "version": "v0.2.905",
     "date": "2026-11-06",
     "what": "runner.conductor@PrompTugal.angelo: STATE upkeep, 23:20 run",
