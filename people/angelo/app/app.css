@@ -293,42 +293,15 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
   .aw-item .aw-kind { grid-column: 1 / -1; }
 }
 
-/* Replay's map mode (v=map): the team map on Replay's clock */
-.rp-views { display: flex; gap: 8px; margin: 4px 0 8px; }
-.rpm-wrap { position: relative; overflow: hidden; }
-.rpm-svg { width: 100%; height: auto; max-height: 78vh; margin: 0 auto; }
-.rpm-links path { fill: none; stroke-opacity: .42; stroke-linecap: round; transition: stroke-width .2s; }
-.rpm-svg .z { display: none; }
-.rpm-pulses circle { stroke: var(--rm-surface); stroke-width: 1.5; filter: drop-shadow(0 0 4px currentColor); }
-.rpm-p { cursor: pointer; }
-.rpm-p text { fill: #fff; font: 700 15px/1 var(--rm-font); text-anchor: middle; pointer-events: none; }
-.rpm-p.off { opacity: .35; }
-.rpm-a { cursor: pointer; }
-.rpm-a circle, .rpm-a rect { stroke: var(--rm-surface); stroke-width: 1.5; transition: transform .15s; transform-box: fill-box; transform-origin: center; }
-.rpm-a .rpm-l { fill: var(--rm-text); font: 600 13px/1 var(--rm-font); text-anchor: middle; opacity: 0; pointer-events: none; paint-order: stroke; stroke: var(--rm-surface); stroke-width: 3px; transition: opacity .2s; }
-.rpm-a.hot circle, .rpm-a.hot rect { stroke: var(--rm-text); stroke-width: 3; transform: scale(1.5); }
-.rpm-a.hot .rpm-l, .rpm-a.sel .rpm-l, .rpm-a:hover .rpm-l { opacity: 1; }
-.rpm-a.sel circle, .rpm-a.sel rect { stroke: var(--rm-action); stroke-width: 3; }
-.rpm-ci circle { fill: var(--rm-surface-raised); stroke: var(--rm-green); stroke-width: 2; }
-.rpm-ci text { fill: var(--rm-text-secondary); font: 700 12px/1 var(--rm-font); text-anchor: middle; }
-.rpm-ci.hot circle { fill: var(--rm-green); }
-.rpm-ci.hot text { fill: #fff; }
-.rpm-a:focus-visible, .rpm-p:focus-visible { outline: 2px solid var(--rm-focus); }
-.rpm-tick { margin: 0; padding: 8px 12px; border-top: 1px solid var(--rm-border); font: 400 13px/19px var(--rm-font); color: var(--rm-text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 36px; }
-.rp-clip .rp-views { display: none; }
-.rp-clip .rpm-svg { max-height: calc(100vh - 110px); width: auto; display: block; }
-
-/* the venue map in Where (Angelo, 6 November) */
-.aw-maph { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
-.aw-leaf { height: 380px; width: 100%; border-radius: var(--rm-radius-control); overflow: hidden; margin: 10px 0; background: var(--rm-surface-raised); }
-@media (max-width: 767px) { .aw-leaf { height: 300px; } }
-.aw-pins { list-style: none; margin: 8px 0; padding: 0; display: grid; gap: 6px; }
-.aw-pin { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
-.aw-x { background: none; border: 0; color: var(--rm-text-muted); text-decoration: underline; cursor: pointer; font: 400 13px/18px var(--rm-font); min-height: 32px; }
-.aw-pinf { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 6px 0; }
-.aw-pinf input { flex: 1 1 220px; min-height: 44px; padding: 0 10px; border-radius: var(--rm-radius-control); border: 1px solid var(--rm-border); background: var(--rm-surface-raised); color: var(--rm-text); font: 400 15px/22px var(--rm-font); }
-.aw-pink { display: flex; gap: 6px; }
-.aw-mk span { display: inline-block; transform: translate(-50%, -100%); white-space: nowrap; padding: 3px 8px; border-radius: 999px; font: 600 12px/16px var(--rm-font); color: #0b1a2b; background: #c9d4e0; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
-.aw-mk-base span { background: #e8b33a; }
-.aw-mk-meet span { background: #6db3f2; }
-.aw-mk-other span { background: #b9a4f0; }
+/* the team map played back (replay.js mountFlow): Replay's clock on Team and the machine's map */
+.tmf { display: grid; gap: 6px; margin-top: 8px; }
+.tmf-play { margin: 0; }
+.tm-svg.tm-replay .tm-links { display: none; }
+.tmf-links path { fill: none; stroke-opacity: .45; stroke-linecap: round; }
+.tm-svg .tmf-links .z, .tm-svg .tmf-pulses .z { display: none; }
+.tmf-pulses circle { stroke: var(--rm-surface); stroke-width: 1.5; pointer-events: none; }
+.tm-a.tmf-hot > circle:first-of-type, .tm-a.tmf-hot > rect { stroke: var(--rm-text); stroke-width: 3; transform: scale(1.5); transform-box: fill-box; transform-origin: center; }
+.tm-a .tmf-l { display: none; fill: var(--rm-text); font: 600 13px/1 var(--rm-font); text-anchor: middle; pointer-events: none; paint-order: stroke; stroke: var(--rm-surface); stroke-width: 3px; }
+.tm-a.tmf-hot .tmf-l { display: inline; }
+.tmf-tick { margin: 0; padding: 8px 12px; border-radius: var(--rm-radius-control); background: var(--rm-surface-raised); font: 400 13px/19px var(--rm-font); color: var(--rm-text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 36px; }
+.tm-fs .tmf { flex: none; }
