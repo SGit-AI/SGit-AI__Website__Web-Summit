@@ -62,3 +62,5 @@ Open questions: its connectors; who reviews its output each day; whether Jose ha
 ## Provenance {#provenance}
 
 Owner: Jose. Drafted by abp@web-summit.dinis from the repository; Jose and the agent correct it. Version 5, 5 November 2026 (16:10 wake: one door; 04:10 wake: Jose's reviewer; 00:10 wake: WS-39 decided; 00:10 wake: WS-133), in `content/abp/` with its history in git.
+
+**Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

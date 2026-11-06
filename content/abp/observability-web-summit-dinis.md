@@ -58,3 +58,5 @@ Open questions: its connectors; who reviews its output each day; whether Dinis C
 ## Provenance {#provenance}
 
 Owner: Dinis Cruz. Drafted by abp@web-summit.dinis from the repository; Dinis Cruz and the agent correct it. Version 1, 5 November 2026, in `content/abp/` with its history in git.
+
+**Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

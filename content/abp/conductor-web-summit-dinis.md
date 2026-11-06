@@ -59,3 +59,5 @@ Open questions: no technical barrier stops a push to main or a workflow edit (br
 ## Provenance {#provenance}
 
 Owner: Dinis Cruz. Reviewer: to be named (abp@web-summit.dinis drafts, a person signs off). Version 3, 5 November 2026 (abp@web-summit.dinis: the CRM; the inbox and the keys it collects), in `content/abp/` with its history in git.
+
+**Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

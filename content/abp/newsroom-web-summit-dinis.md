@@ -60,3 +60,5 @@ Open questions: whether its repository protects `main`; who reviews what it publ
 ## Provenance {#provenance}
 
 Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named (a person signs off). Version 1, 4 November 2026, in `content/abp/` with its history in git.
+
+**Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

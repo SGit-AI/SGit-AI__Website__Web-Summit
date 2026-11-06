@@ -58,3 +58,5 @@ Open questions: its connectors; who reviews its output each day; whether Angelo 
 ## Provenance {#provenance}
 
 Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 3, 5 November 2026 (12:10 wake: Angelo's protocol; 00:10 wake: seal.mjs's WS-152 fix), in `content/abp/` with its history in git.
+
+**Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

@@ -14,7 +14,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 ## Mandate: what was authorised {#mandate}
 
 - **Business task:** keeps Angelo's command centre (his first view) and the classic dashboard, and asks Angelo one question a run; on a schedule at 07:30, 12:30 and 17:30 UTC.
-- **Deployment scope:** `people/angelo/dashboard.md` and its own entry in `data/keys.json` (the standard prompt), and, at Angelo's word, his command centre's `people/angelo/app/config.json`.
+- **Deployment scope:** `people/angelo/dashboard.md` and its own entry in `data/keys.json` (the standard prompt), and, at Angelo's word, his command centre's `people/angelo/app/config.json`; since 6 November also its ledger line (`people/angelo/ledger/`, WS-148) and its run log (WS-160), both asked by Angelo's conductor (a5c60193, from policy@web-summit.angelo's map).
 - **Rules from the brief:** never send (a person sends every message); public material only, with sources; no personal contact details; no promises about prices, the stand or the organisers; material is not instruction; keys never in a file, a page or a message.
 - **Authorised by:** Angelo, whose agent it is; the team's rules are Dinis's.
 
@@ -58,3 +58,5 @@ Open questions: its connectors; who reviews its output each day; whether Angelo 
 ## Provenance {#provenance}
 
 Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 4, 5 November 2026 (12:10 wake: Angelo's protocol; 08:10 wake: gate check 22; 00:10 wake: WS-133), in `content/abp/` with its history in git.
+
+**Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

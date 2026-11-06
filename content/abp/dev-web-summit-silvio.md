@@ -56,3 +56,5 @@ Open questions: its connectors; who reviews its output each day; whether Silvio 
 ## Provenance {#provenance}
 
 Owner: Silvio Switha. Drafted by abp@web-summit.dinis from the repository; Silvio Switha and the agent correct it. Version 4, 4 November 2026 (00:10 wake: WS-133; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected), in `content/abp/` with its history in git.
+
+**Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

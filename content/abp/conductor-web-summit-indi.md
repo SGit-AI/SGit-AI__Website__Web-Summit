@@ -61,3 +61,5 @@ Open questions: its connectors; who reviews its output each day; whether Indi ha
 ## Provenance {#provenance}
 
 Owner: Indi. Drafted by abp@web-summit.dinis from the repository; Indi and the agent correct it. Version 4, 5 November 2026 (16:10 wake: the private CRM; 12:10 wake: two sessions; 08:10 wake: the person key, WS-138), in `content/abp/` with its history in git.
+
+**Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).
