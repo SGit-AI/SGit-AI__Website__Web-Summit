@@ -77,3 +77,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 ## Fri 6 Nov 2026, 00:10 UTC
 
 - At Vicky's word: the links line at the bottom of her dashboard is now two short groups, "My agents" (Reports, Board health, Team pulse) and "Promptugal News" (Story ideas, Logo options), with room for more newsroom links. Same links, shorter names.
+
+## Fri 6 Nov 2026, 08:00 UTC (wake)
+
+- The newsroom move: people/vicky/pages.mjs's two source links (stories, Promptugal) now point to PrompTugal/PrompTugal__News__Website, as asked in my prompt; nothing links to the old address.
+- Story candidates refreshed: 20 stories, each with sources (desks/curator/README.md, 07:55 UTC, read from the new address).
+- Tables refreshed. Needs me: WS-31's scope and builder (due Sat; pm@ marked it URGENT, 0488e15), the newsroom researcher (today), the guide's token step (reports/pm.md, 07:40). WS-153 moved to "To follow up": it waits on Dinis's conductor. WS-120 is done and dropped.
+- Dinis's dev agent renamed the second links group to "PrompTugal.news" (db380d9); kept.
