@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.796",
+    "date": "2026-11-06",
+    "what": "the runner on the team's maps; agents named @PrompTugal.<person> missing from them (for dev to draft)",
+    "by": "conductor@web-summit.angelo",
+    "from": "145abf136"
+  },
+  {
     "version": "v0.2.795",
     "date": "2026-11-06",
     "what": "ABP in action, the connectors study, and the explorer phase on every ABP",
