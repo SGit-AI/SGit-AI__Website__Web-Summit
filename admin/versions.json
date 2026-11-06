@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.849",
+    "date": "2026-11-06",
+    "what": "for Dinis's conductor: guidance asked on playing videos from the media vault; /media/ says no files through git",
+    "by": "conductor@web-summit.silvio",
+    "from": "d831d2a0b"
+  },
+  {
     "version": "v0.2.848",
     "date": "2026-11-06",
     "what": "19:21 run, nothing to route; STATE upkeep",
