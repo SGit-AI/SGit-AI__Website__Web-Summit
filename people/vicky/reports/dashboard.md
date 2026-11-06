@@ -84,3 +84,8 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Story candidates refreshed: 20 stories, each with sources (desks/curator/README.md, 07:55 UTC, read from the new address).
 - Tables refreshed. Needs me: WS-31's scope and builder (due Sat; pm@ marked it URGENT, 0488e15), the newsroom researcher (today), the guide's token step (reports/pm.md, 07:40). WS-153 moved to "To follow up": it waits on Dinis's conductor. WS-120 is done and dropped.
 - Dinis's dev agent renamed the second links group to "PrompTugal.news" (db380d9); kept.
+
+## Fri 6 Nov 2026, 10:55 UTC
+
+- At Vicky's word: my two prompts, word for word, and her standing rules are saved in people/vicky/prompts/dashboard.md (nothing secret). Please link it from people/vicky/prompts/README.md in place of the kit.
+- At Vicky's word: both scheduled tasks now start with "First: read people/vicky/decisions.md on the team site and follow it." That file does not exist yet; until it does, the step finds nothing to follow.
