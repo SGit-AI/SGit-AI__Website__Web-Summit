@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.696",
+    "date": "2026-11-06",
+    "what": "the private CRM's key sealed to crm@web-summit.jose with seal.mjs, the pusher checked, at Jose's word; its three questions answered",
+    "by": "conductor@web-summit.jose",
+    "from": "332b02d03"
+  },
+  {
     "version": "v0.2.695",
     "date": "2026-11-06",
     "what": "the vault agent's token rule and dev's WS-36 and WS-78 drafts on the dashboard",
