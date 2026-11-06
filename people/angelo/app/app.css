@@ -227,8 +227,11 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .tm-k polygon, .tm-k circle { fill: color-mix(in srgb, var(--kc) 82%, transparent); stroke: var(--kc); stroke-width: 3; filter: drop-shadow(0 0 10px color-mix(in srgb, var(--kc) 60%, transparent)); }
 .tm-k text { fill: var(--rm-text); font: 700 14px/1 var(--rm-font); text-anchor: middle; paint-order: stroke; stroke: var(--rm-surface); stroke-width: 4px; }
 .tm-k.off { opacity: .2; }
-.tm-kr { fill: none; stroke: var(--rm-text-secondary); stroke-width: 1.5; pointer-events: none; }
-.tm-kr.fresh { stroke-dasharray: 3 3; }
+/* the ring round an agent says how it runs (solid: scheduled into its own session; dashed: a fresh session each run).
+   It was drawn in the surface colour, because .tm-a circle (the agent's outline) outranked .tm-kr: hence the near-black
+   ring Angelo could not read (6 November). The ring now has its own, stronger selector and a colour that shows. */
+.tm-kr, .tm-a circle.tm-kr { fill: none; stroke: var(--rm-text); stroke-width: 2; opacity: .8; pointer-events: none; }
+.tm-kr.fresh, .tm-a circle.tm-kr.fresh { stroke-dasharray: 3 3; }
 .tm-lg { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--rm-border); background: var(--rm-surface); color: var(--rm-text); font: 500 13px/18px var(--rm-font); cursor: pointer; }
 .tm-lg svg polygon, .tm-lg svg circle { fill: var(--kc); }
 .tm-lg b { font-weight: 700; color: var(--rm-text-secondary); }
@@ -242,3 +245,12 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 @media (max-width: 767px) { .tm-top { flex-wrap: wrap; } .tm-fs .tm-legend { max-height: 30vh; overflow: auto; } }
 @media (max-width: 767px) { .tm-fs .tm-lg, .tm-fs .rp-chip { min-height: 28px; padding: 0 8px; font-size: 12px; } .tm-fs .tm-acts .cc-btn { min-height: 36px; padding: 0 10px; font-size: 13px; } .tm-fs .tm-tabs, .tm-fs .tm-legend { gap: 4px; } }
 .tm-links path[data-as] { stroke-dasharray: 4 4; opacity: .9; stroke-width: 1.5; }
+
+/* the map's key (Angelo, 6 November) */
+.tm-key { border: 1px solid var(--rm-border); border-radius: var(--rm-radius-control); background: var(--rm-surface); padding: 0 12px; }
+.tm-key summary { min-height: 40px; display: flex; align-items: center; cursor: pointer; font: 600 14px/20px var(--rm-font); color: var(--rm-text); }
+.tm-key ul { list-style: none; margin: 0 0 8px; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 6px 16px; }
+.tm-key li { display: flex; align-items: center; gap: 10px; font: 400 13px/18px var(--rm-font); color: var(--rm-text-secondary); }
+.tm-key li svg { flex: none; }
+.tm-key .note { margin: 0 0 10px; }
+.tm-fs .tm-key { flex: none; max-height: 35vh; overflow: auto; }
