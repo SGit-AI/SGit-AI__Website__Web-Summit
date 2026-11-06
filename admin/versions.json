@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.735",
+    "date": "2026-11-06",
+    "what": "RUNNER.md written so the gate's email check passes (a file name and a variable)",
+    "by": "conductor@web-summit.angelo",
+    "from": "7c287bb28"
+  },
+  {
     "version": "v0.2.734",
     "date": "2026-11-06",
     "what": "Silvio's note updated (8 of 9); the Gmail drafts task blocked; one door read",
