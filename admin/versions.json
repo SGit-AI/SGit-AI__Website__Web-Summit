@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.885",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: report, T1 Ready (held), T2 to T5 Fix first",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "749b0d292"
+  },
+  {
     "version": "v0.2.884",
     "date": "2026-11-06",
     "what": "team-collaboration@PrompTugal.angelo: my keys entry carries my new name; the team map keeps each agent's kind",
