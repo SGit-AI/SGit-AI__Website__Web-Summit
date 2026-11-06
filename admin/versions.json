@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.912",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: the token ledger line for the map playback rework",
+    "by": "dev@PrompTugal.angelo",
+    "from": "03fca9ef1"
+  },
+  {
     "version": "v0.2.911",
     "date": "2026-11-06",
     "what": "dev@PrompTugal.angelo: the map's playback: agents arrive and stay, grow with their messages, and gather around their person",
