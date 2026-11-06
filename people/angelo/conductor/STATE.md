@@ -32,6 +32,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - His card (WS-08): complete, all five answers (6 Nov). His recalibration note is his to bring to Dinis directly: it exists nowhere else, never write it.
 - PromptUGAL (topic 11, opened 6 Nov 11:00): Angelo's word: Web Summit, RiskMandate and PromptUGAL are one effort, paid by Dinis; he writes nowhere else; consulting, if customers want it, as a freelancer under the RiskMandate hat (his to tell Dinis, not on the card unless he says). He is invited to the PrompTugal GitHub org (editors and admins teams) and has an agent address on promptugal.news. Done at his "Ok for 2, 3, 4" (2219eb22), his arrangements with Dinis kept out: (1) he accepts the invite (riskmandate-angelo is the invited account); (2) admin stays his, never his agents' (policy@ to audit); (3) a note to conductor@web-summit.dinis: Angelo joins as editor, offers to own the technical notes section (/newsroom/notes/, planned, unowned), asks to be an outreach sender; (4) card answers 1 and 4 updated for PromptUGAL. Then topic 12: his agents set up as @PrompTugal.angelo, as Vicky's were (a146ac28), designed with him first.
 - abp@web-summit.dinis's 630ca8a8 changes (the phase line; dashboard@angelo's mandate) wait for Angelo's word (16:12 commit); the comms protocol WS-184 (every private conversation in the team's CRM) is for him to read.
+- WS-08: crm's 18-company result (0deb159) is in; the desk to show Angelo it and route accenture.json to data/companies.json's keeper (shared data: option 1).
 - Still to do with him: offer his protocol as a team template (c): not yet, Angelo (6 Nov): "there's still some work we're going to do to improve it. Ask me again later" (ask again after the summit, or when it changes); his card (WS-08); booking on his meet page (option C) and the "talk to my agent" line, after security's WS-119 review of the public inbox; the 17 `claude/*` branches (a list of what each holds, if he wants it).
 
 ## Waiting on others
@@ -44,6 +45,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 6 Nov 17:21: the runner: nothing to route. crm reported the 18-company check (0deb159, WS-08): Accenture confirmed at attendee level, AWS unconfirmed, 16 not found; one draft entry (people/angelo/proposals/companies/accenture.json) waits for data/companies.json's keeper, for the desk to route. The desk renamed Angelo's agents (90299d0; helper switched, a6c3e70); inbox@web-summit.dinis started (WS-184); others' work: information only. Untitled (no session tools).
 - 6 Nov 15:40: the customer guide (WS-125) drafted as a private page for Angelo, outside the repository until he approves publication (seven audiences, ABP levels by deployment, two questionnaires, SHarness and the ABP model under CC BY 4.0). Ask Angelo on 7 Nov: what RiskMandate sells (held at his word), and offering his protocol (a reminder is set for 09:30 Lisbon).
 - 6 Nov 14:21: the runner: nothing to route. Indi's answers (7c6e0b7: joins PromptUGAL as editor, promptugal.news allowed, cards today; her invitation is Dinis's) and her key seen in her browser (WS-136); mentor@web-summit.dinis had no notes: information only. Untitled (no session tools).
 - 6 Nov 13:21: the runner: nothing to route. The desk had already routed Angelo's 12:00 notes (d7e29b4: WS-180 to WS-183, WS-115); team-collaboration recorded the 12:00 (310f2bd, six follow-ups, parking to the 18:00); dashboard and dev updated Angelo's pages and the team map: information only. Session naming tools still unavailable (untitled).
@@ -53,6 +55,5 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - 6 Nov 08:33: WS-176's email twin applied by conductor@web-summit.dinis, 21 minutes after routing (crm's patch).
 - 6 Nov 08:38: Replay complete, slices 1 to 5 (dev).
 - 6 Nov 08:24: the hybrid for tokens (WS-148): every agent appends measure.mjs's line to people/angelo/ledger/; Indi's side asked to read it; the desk's 08:20 digest has a Cost section.
-- 6 Nov 16:20 (runner, first run to read since 09:08): helper slowed to 10:50 and 16:50 (54c4d8e); dev's command-centre work (maps, full screen, newsroom snapshot, agents and keys; WS-97); setup guide in review at PrompTugal.news (ecd8dc3, WS-125); Angelo's eight ABPs signed off (abp, WS-34). No tier-3 acted on.
 
-last_run: 2026-11-06T16:20:00Z (the runner)
+last_run: 2026-11-06T17:21:00Z (the runner)
