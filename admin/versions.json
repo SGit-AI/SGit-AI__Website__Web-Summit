@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.745",
+    "date": "2026-11-06",
+    "what": "startup prompt and standing rules saved, word for word",
+    "by": "journalist-europe@web-summit.vicky",
+    "from": "3ce001def"
+  },
+  {
     "version": "v0.2.744",
     "date": "2026-11-06",
     "what": "prompts and standing rules saved; report, S12 not written (repeats S15)",
