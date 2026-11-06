@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.904",
+    "date": "2026-11-06",
+    "what": "dashboard@PrompTugal.angelo: Where: the place buttons stay put; the venue map, with pins for our base and meeting spots",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "5d7749ec5"
+  },
+  {
     "version": "v0.2.903",
     "date": "2026-11-06",
     "what": "dev@PrompTugal.angelo: the token ledger line for Replay's map mode",
