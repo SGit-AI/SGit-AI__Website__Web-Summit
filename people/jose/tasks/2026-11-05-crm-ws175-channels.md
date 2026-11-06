@@ -31,3 +31,31 @@ Read; I follow the one door from this run. **Step 1 done:** my session key is ma
 2. **Until you have a token of your own: keep the channel records committed locally in the vault, and report them.** I do not push them: no agent pushes a vault with anyone else's token (Dinis's rule; the vault guide's step 1). My own page-view drains stopped at 00:07 for the same reason. Jose is asked whether I should ask Dinis for your token (his Actions list).
 3. **Yes: draft the channel list now**, from the repository alone, handles and owners blank, and put the questions for Jose in your Report as `Ask for Jose: ...`.
 
+
+## Report (crm@web-summit.jose, 2026-11-06 00:48 UTC): step 2 done, committed locally in the vault
+
+Your three answers read and followed. **The key:** opened at 00:45 UTC from `data/sealed/agents/crm@web-summit.jose/` with `pki-agent.mjs open --save ~/.sg-send/crm` (0600, never printed). The register could not check its signature (the sender is not on pki.sgit.ai), so I checked the sender's fingerprint myself: `sha256:006ceb9a9e3febbe` is `conductor-jose` on the keys page, pushed by riskmandate-jose (`seal.mjs --check` passes). Private CRM cloned.
+
+**The channels area is in ws-team-crm-private**, vault commit `9cdb4fbc`, **committed locally, not pushed** (no token of my own; your answer 2): 10 `channels/<channel>/channel.json`, 6 drafted posts, and `schemas/channel.schema.json` and `post.schema.json`. Every record valid against those schemas, every fact with its source and the date read, no contact detail. `crm.mjs derive private` run: the graph does not show channels yet (`people/jose/crm/proposals/derive-channels.md`, for the tool's owner).
+
+| Channel | State | Owner |
+|---|---|---|
+| email-outreach (as PromptUGAL from Friday, WS-177) | planned | blank |
+| linkedin-riskmandate (WS-126, WS-71) | blank | blank |
+| youtube-riskmandate, instagram-riskmandate (WS-71, WS-52) | blank | blank |
+| x, tiktok ("if we do") | blank | blank |
+| whatsapp-team-reports (WS-39 route 3) | planned | jose |
+| slack-riskmandate (the reports channel in the existing workspace, WS-39 route 4) | planned | blank |
+| website-web-summit | live | dinis |
+| website-promptugal (WS-177) | planned | dinis |
+
+Posts: the two videos as drafts on YouTube, Instagram and LinkedIn (text in `people/silvio/video/PUBLISH.md`, Silvio posts; the files are in Drive, not yet in ws-team-videos, WS-174). Handles and URLs of the social accounts are blank everywhere: the repository does not record them. The schemas in `people/jose/crm/schemas/` now allow a blank owner and state, and an undated post.
+
+**Ask for Jose** (due Sat 7 Nov, WS-175; takes about 5 minutes):
+1. LinkedIn: does a RiskMandate company page exist, and who posts there (WS-126 has asked since 3 November)?
+2. YouTube and Instagram: do RiskMandate's accounts exist yet, and who owns each (Silvio posts the videos to them)?
+3. X and TikTok: do we use them, and under which name?
+4. PromptUGAL: which social accounts open under that name (the sprint note asks Jose's team)?
+5. Email outreach: who owns it, Silvio for all, or each person for their own companies?
+
+**Left:** the push of vault commit `9cdb4fbc`, when a token of my own is sealed to me; the answers above into the records; channel and post in the graph, when the tool's owner takes the proposal. Status stays `picked` until the push.

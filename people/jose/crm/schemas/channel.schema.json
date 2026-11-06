@@ -3,32 +3,149 @@
   "title": "A channel: one account the team uses or plans to use (WS-175)",
   "description": "channels/<channel>/channel.json in ws-team-crm-private. Proposed by crm@web-summit.jose on 5 November 2026 from board WS-175 and the article one-place-for-every-conversation; the same shape as the other record kinds (id, type, sources, updated_at, updated_by). Lives in the private CRM: the handle, the owner and the state are the team's own knowledge.",
   "type": "object",
-  "required": ["id", "type", "platform", "name", "owner", "purpose", "state", "sources", "updated_at", "updated_by"],
+  "required": [
+    "id",
+    "type",
+    "platform",
+    "name",
+    "purpose",
+    "sources",
+    "updated_at",
+    "updated_by"
+  ],
   "properties": {
-    "id": { "type": "string", "description": "the folder name: <platform>-<account>, for example linkedin-riskmandate, email-outreach" },
-    "type": { "const": "channel" },
-    "platform": { "enum": ["email", "linkedin", "instagram", "x", "tiktok", "youtube", "whatsapp", "slack", "website", "newsletter", "other"] },
-    "name": { "type": "string", "description": "what the team calls it" },
-    "brand": { "type": ["string", "null"], "description": "whose name the account is under: riskmandate, promptugal, a person's id, or null" },
-    "handle": { "type": ["string", "null"], "description": "the account's handle or page name; null while planned" },
-    "url": { "type": ["string", "null"] },
-    "owner": { "type": "string", "description": "the person who posts or sends (a person id); agents draft, a person posts" },
-    "drafted_by": { "type": "array", "items": { "type": "string" }, "description": "the agents that draft for it" },
-    "purpose": { "type": "string" },
-    "audience": { "type": ["string", "null"] },
-    "cadence": { "type": ["string", "null"], "description": "for example 'one post a day to 9 November'" },
-    "state": { "enum": ["live", "planned", "not-used"] },
-    "language": { "type": "array", "items": { "type": "string" } },
-    "issues": { "type": "array", "items": { "type": "string" }, "description": "board issues, for example WS-126" },
-    "next_step": { "type": ["string", "null"] },
-    "sources": { "$ref": "#/$defs/sources" },
-    "updated_at": { "type": "string" },
-    "updated_by": { "type": "string" }
+    "id": {
+      "type": "string",
+      "description": "the folder name: <platform>-<account>, for example linkedin-riskmandate, email-outreach"
+    },
+    "type": {
+      "const": "channel"
+    },
+    "platform": {
+      "enum": [
+        "email",
+        "linkedin",
+        "instagram",
+        "x",
+        "tiktok",
+        "youtube",
+        "whatsapp",
+        "slack",
+        "website",
+        "newsletter",
+        "other"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "what the team calls it"
+    },
+    "brand": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "whose name the account is under: riskmandate, promptugal, a person's id, or null"
+    },
+    "handle": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "the account's handle or page name; null while planned"
+    },
+    "url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "owner": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "the person who posts or sends (a person id); null until named. Agents draft, a person posts"
+    },
+    "drafted_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "the agents that draft for it"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "audience": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "cadence": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "for example 'one post a day to 9 November'"
+    },
+    "state": {
+      "enum": [
+        "live",
+        "planned",
+        "not-used",
+        null
+      ],
+      "description": "null while not known (a question for the person)"
+    },
+    "language": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "board issues, for example WS-126"
+    },
+    "next_step": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sources": {
+      "$ref": "#/$defs/sources"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "updated_by": {
+      "type": "string"
+    }
   },
   "$defs": {
     "sources": {
       "type": "array",
-      "items": { "type": "object", "required": ["url", "read_at"], "properties": { "url": { "type": "string" }, "read_at": { "type": "string" } } }
+      "items": {
+        "type": "object",
+        "required": [
+          "url",
+          "read_at"
+        ],
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "read_at": {
+            "type": "string"
+          }
+        }
+      }
     }
   }
 }

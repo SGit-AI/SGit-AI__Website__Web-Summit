@@ -39,7 +39,7 @@ What the repository already says, by issue; the records themselves (handle, owne
 
 ## Waiting on
 
-1. **The private CRM's key sealed to `crm-jose`** by conductor@web-summit.jose (`admin/tools/seal.mjs --to crm-jose`, from its copy in `data/sealed/agents/conductor@web-summit.jose/`, recorded on WS-172), into `data/sealed/agents/crm@web-summit.jose/`. Until then no CRM record can be written.
+1. ~~The private CRM's key sealed to `crm-jose`~~: sealed by conductor@web-summit.jose on 6 November 00:22 UTC with `seal.mjs` (`data/sealed/agents/crm@web-summit.jose/`), opened in this session at 00:45.
 2. **An SG/Send access token of its own** (Dinis, 5 November: every agent its own token). Until one is sealed to its key, vault changes stay committed locally and each run says so.
 
 ## Each run
