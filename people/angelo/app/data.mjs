@@ -107,7 +107,7 @@ function collab(root, person, d, now) {
     // Angelo's agents were renamed <role>@PrompTugal.angelo on 6 November (desk.conductor and runner.conductor for the
     // conductor's two modes); the old and new names are one agent (canon: person/role), shown by the declared name
     const DECL = declaredNames(root, humans)
-    const local = new Map() // this repo's commits under PrompTugal names, which the inventory does not read yet
+    const local = new Map() // this repo's commits under PrompTugal names, for an inventory that does not read them (before 0638bb07)
     for (const c of git(root, ['log', '--format=%cI%x1f%s%x1f%b%x1e']).split('\x1e')) {
         const [at, s = '', b = ''] = c.trim().split('\x1f'); if (!at || /^site v\d/.test(s)) continue
         const w = committer(s, b), p = w && parseName(w); if (!p || p.team !== 'PrompTugal') continue
@@ -122,7 +122,8 @@ function collab(root, person, d, now) {
             by.set(c, row)
         }
         for (const a of inv.agents.filter(a => a.person === id && a.commits > 0)) add(a)
-        for (const a of local.values()) if (a.person === id) add({ ...a, declared: false })
+        const inInv = new Set(inv.agents.map(a => a.name.toLowerCase()))
+        for (const [k, a] of local) if (a.person === id && !inInv.has(k)) add({ ...a, declared: false })
         // and their work in the PrompTugal newsroom's repository (the snapshot): added to the same agent, or listed on its own
         const PTS = readJson(root, 'people/angelo/app/promptugal.json')
         for (const a of (PTS && PTS.agents || []).filter(a => a.person === id)) {
@@ -269,9 +270,20 @@ export function build(root, person, now = new Date()) {
         const M = JSON.parse(execFileSync('node', [path.join(root, 'people/angelo/tools/team-map.mjs'), '--json'], { cwd: root, encoding: 'utf8', maxBuffer: 32 << 20 }))
         // a PrompTugal agent's name (<agent>@PrompTugal.<person>) reads as an email address to the gate's contact check, which
         // knows only @web-summit. names: kept here as pt:<person>:<agent>, shown as "<agent>, PrompTugal"
-        const pt = viewId
-        M.agents = M.agents.map(a => ({ ...a, id: pt(a.id) }))
-        M.links = M.links.map(l => ({ ...l, from: pt(l.from), to: pt(l.to) }))
+        // team-map.mjs names a node <role>@<person> with the names it went by (since bd87ea54): each node is given the name
+        // its person declares now (else its newest), its team and its kind from the inventory (any of its names' rows)
+        const DM = declaredNames(root, M.people.map(p => ({ id: p.id })))
+        const invK = new Map(); for (const a of INV.inventory(root, readJson(root, 'data/team.json') || { members: [] }).agents) { const c = canon(a.name); if (c && a.kind) invK.set(c, a.kind) }
+        const tmId = new Map()
+        M.agents = M.agents.map(a => {
+            const ns = Array.isArray(a.names) && a.names.length ? a.names : [a.id]
+            const pick = ns.find(n => { const c = canon(n); return c && DM.get(c) && c === `${a.person}/${a.short}` }) || ns.find(n => { const c = canon(n); return c && DM.get(c) }) || ns.find(n => /@promptugal\./i.test(n)) || ns[0]
+            const c = canon(pick), dcl = c && DM.get(c), nm = (dcl || {}).name || pick, p = parseName(nm), id = viewId(nm)
+            tmId.set(a.id, id)
+            return { ...a, id, short: p ? p.role : a.short, family: a.family || (p ? p.team : 'web-summit'), kind: (dcl && INV.agentKind ? INV.agentKind(dcl.session, dcl.schedule) : '') || a.kind || invK.get(c) || '' }
+        })
+        const fix = id => tmId.get(id) || viewId(id)
+        M.links = M.links.map(l => ({ ...l, from: fix(l.from), to: fix(l.to) }))
         // the PrompTugal newsroom's agents work in their own repository (Angelo, 6 November): merged from the snapshot
         // people/angelo/app/promptugal.json, which dev@web-summit.angelo refreshes at its wakes; active ones only (7 days)
         const PT = readJson(root, 'people/angelo/app/promptugal.json')
@@ -285,7 +297,6 @@ export function build(root, person, now = new Date()) {
         }
         // one agent, one node: an agent's old and new names (Angelo's agents became <role>@PrompTugal.angelo on 6 November)
         // and its newsroom self are merged under the name its person declares now
-        const DM = declaredNames(root, M.people.map(p => ({ id: p.id })))
         const toNode = id => { const c = canon(id), dcl = c && DM.get(c); return dcl ? viewId(dcl.name) : id }
         { const to = toNode
           const nodes = new Map()
@@ -300,7 +311,7 @@ export function build(root, person, now = new Date()) {
           for (const p of M.people) for (const a of readJson(root, `people/${p.id}/agents.json`) || []) {
             const hm = (String(a.job || '').match(/commits as ([a-z0-9][a-z0-9.-]*@[A-Za-z][A-Za-z0-9-]*\.[a-z0-9-]+)/) || [])[1], host = hm && viewId(hm), me = viewId(a.name)
             if (!host || have.has(me) || !have.has(host)) continue
-            M.agents.push({ id: me, person: p.id, family: me.startsWith('pt:') ? 'PrompTugal' : 'web-summit', short: me.startsWith('pt:') ? me.split(':')[2] : me.split('@')[0], commits: 0, runsAs: host }); have.add(me)
+            M.agents.push({ id: me, person: p.id, family: me.startsWith('pt:') ? 'PrompTugal' : 'web-summit', short: me.startsWith('pt:') ? me.split(':')[2] : me.split('@')[0], commits: 0, runsAs: host, kind: INV.agentKind ? INV.agentKind(a.session, a.schedule) : '' }); have.add(me)
             M.links.push({ from: me, to: host, n: 1, as: true })
           }
           M.totals = { ...M.totals, agents: M.agents.length } }
