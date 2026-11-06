@@ -40,7 +40,7 @@ document.addEventListener('click', e => {
 })
 </script>`
     const twinMd = `The newsroom curator's story candidates, newest first, from ${SRC} (last updated by the curator on ${updated}). None is fact-checked yet.\n\n${stories.map(s => `- **${s.id}** (${s.beat}, added ${s.added}): ${s.title}. ${s.angle}${s.sources.map(x => `\n  - [${x.label}](${x.url})`).join('')}`).join('\n')}`
-    return [...promptugal(ROOT), { rel: 'people/vicky/stories/index.html', title: "The newsroom's story candidates", description: "The curator's open story ideas for the Web Summit 2026 newsroom: id, title, beat, angle and date added, with a way to comment on each.", body, md: twinMd }]
+    return [...promptugal(ROOT), ...workSoFar(ROOT), { rel: 'people/vicky/stories/index.html', title: "The newsroom's story candidates", description: "The curator's open story ideas for the Web Summit 2026 newsroom: id, title, beat, angle and date added, with a way to comment on each.", body, md: twinMd }]
 }
 
 // Promptugal News's logo options (Jose's request, through Vicky, 5 November 2026): /people/vicky/promptugal/. Built from
@@ -103,4 +103,14 @@ document.addEventListener('click', e => {
 </script>`
     const md = `The logo options for Promptugal News, by designer@web-summit.vicky, from ${DESK}.\n\n${brief.replace(/^# .*\n/, '')}\n\n## The eight options\n\n${opts.map(o => `- **Option ${o.n}: ${o.name}.** ${o.idea}`).join('\n')}`
     return [{ rel: 'people/vicky/promptugal/index.html', title: 'Promptugal News: the logo options', description: "The brief and the eight logo options for Promptugal News, the newsroom's new name, in light and dark, with a way to comment on each.", body, head, md }]
+}
+
+// Vicky's agents: the work so far (Vicky's request, 6 November 2026): /people/vicky/work-so-far/. Built from
+// people/vicky/work-so-far/source.md, written and kept by conductor@web-summit.vicky. Public material only.
+function workSoFar(ROOT) {
+    const f = path.join(ROOT, 'people/vicky/work-so-far/source.md')
+    if (!fs.existsSync(f)) return []
+    const src = fs.readFileSync(f, 'utf8').replace(/^# .*\n/, '')
+    const body = `<p class="meta">Written by Vicky's conductor (conductor@web-summit.vicky) on 6 November 2026, about 19:30 UTC, from her records on this site and the newsroom repository. Plain words, public material only.</p>\n${mdHtml(src)}`
+    return [{ rel: 'people/vicky/work-so-far/index.html', title: "Vicky's agents: the work so far", description: "Vicky's agents and their jobs, how a story reaches PrompTugal.news, what is live, the rules and files she set up, what changed on 6 November, and what is next.", body, md: src }]
 }

@@ -33,5 +33,5 @@ Open it here, live from the vault (read only; nothing loads until you click). Al
 ```vault-app vicky k64ma7jd
 ```
 
-- **My agents:** [Reports](../../reports/index.html) · [Board health](../../board-health/index.html) · [Team pulse](../../pulse/index.html)
+- **My agents:** [Reports](../../reports/index.html) · [Board health](../../board-health/index.html) · [Team pulse](../../pulse/index.html) · [Work so far](work-so-far/index.html)
 - **PrompTugal.news:** [Story ideas](stories/index.html) · [Logo options](promptugal/index.html)
