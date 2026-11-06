@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.723",
+    "date": "2026-11-06",
+    "what": "the email twin (WS-176), read-only, as a patch for review: inbox, thread and company views of the CRM's mail",
+    "by": "crm@web-summit.angelo",
+    "from": "d870d02c1"
+  },
+  {
     "version": "v0.2.722",
     "date": "2026-11-06",
     "what": "07:45 run's report, Octo Health (S20) and a 3xP Global connection (S21)",
