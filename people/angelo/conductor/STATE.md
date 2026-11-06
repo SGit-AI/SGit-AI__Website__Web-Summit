@@ -34,6 +34,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - abp@web-summit.dinis's 630ca8a8 changes (the phase line; dashboard@angelo's mandate) wait for Angelo's word (16:12 commit); the comms protocol WS-184 (every private conversation in the team's CRM) is for him to read.
 - WS-08: crm's 18-company result (0deb159) is in; the desk to show Angelo it and route accenture.json to data/companies.json's keeper (shared data: option 1).
 - Still to do with him: offer his protocol as a team template (c): not yet, Angelo (6 Nov): "there's still some work we're going to do to improve it. Ask me again later" (ask again after the summit, or when it changes); his card (WS-08); booking on his meet page (option C) and the "talk to my agent" line, after security's WS-119 review of the public inbox; the 17 `claude/*` branches (a list of what each holds, if he wants it).
+- Key labels (tier 3): dev@PrompTugal.angelo asks (acdd549) to relabel its key entry dev-angelo (sha256:b478b82a3a9995eb) or make a new key under the new name; the same for team-collaboration and dashboard (dashboard-angelo kept its old label, c525afa927190f36). Until Angelo says, they sign with --key.
 
 ## Waiting on others
 
@@ -45,6 +46,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 6 Nov 19:21: the runner: nothing to route. dev and dashboard switched to @PrompTugal.angelo names (acdd549, 1c61aa3; the command centre reads both names as one agent); dev asks whether to relabel its key entry dev-angelo or make a new key (tier 3, added to Open with Angelo); team-collaboration's 18:00 record is pending (no decision yet) and its team-map fix is released (v0.2.847); Silvio's design desk and Vicky's agents' hand-overs: information only. Untitled (no session tools).
 - 6 Nov 18:21: the runner: nothing to route. team-collaboration switched to @PrompTugal.angelo names (d2016ee; its key label stays until Angelo says: relabelling is tier 3, for the desk) and briefed the 18:00 (note-taker, garment files WS-48, outreach claim WS-26, parking 45/21); accountant@web-summit.indi's brief 3: Angelo's agents measure, Indi's do not, Angelo's workload ask waits for Indi's word; vault@web-summit.jose still lacks its own token (WS-170): information only. Untitled (no session tools).
 - 6 Nov 17:21: the runner: nothing to route. crm reported the 18-company check (0deb159, WS-08): Accenture confirmed at attendee level, AWS unconfirmed, 16 not found; one draft entry (people/angelo/proposals/companies/accenture.json) waits for data/companies.json's keeper, for the desk to route. The desk renamed Angelo's agents (90299d0; helper switched, a6c3e70); inbox@web-summit.dinis started (WS-184); others' work: information only. Untitled (no session tools).
 - 6 Nov 15:40: the customer guide (WS-125) drafted as a private page for Angelo, outside the repository until he approves publication (seven audiences, ABP levels by deployment, two questionnaires, SHarness and the ABP model under CC BY 4.0). Ask Angelo on 7 Nov: what RiskMandate sells (held at his word), and offering his protocol (a reminder is set for 09:30 Lisbon).
@@ -54,6 +56,5 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - 6 Nov 10:20: the runner: nothing to route. vault reported ucvg2pkv clean (09:50); crm has the 18-company check from the desk (8ac1ea1, answer 2 of Angelo's card), no reply yet; pm@web-summit.vicky told Angelo of the onboarding guide's step 8 change (WS-170, e5f521e): information only. Ledger lines now in from vault, team-collaboration, dashboard.
 - 6 Nov 09:20: the runner's first run: nothing for Angelo or his agents since 09:08 (only designer@web-summit.dinis's status for logistics); session naming tools (get_session, set_session_title) are not available in the runner's session, so it is untitled.
 - 6 Nov 08:33: WS-176's email twin applied by conductor@web-summit.dinis, 21 minutes after routing (crm's patch).
-- 6 Nov 08:38: Replay complete, slices 1 to 5 (dev).
 
-last_run: 2026-11-06T18:21:00Z (the runner)
+last_run: 2026-11-06T19:21:00Z (the runner)
