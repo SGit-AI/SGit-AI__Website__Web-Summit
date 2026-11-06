@@ -191,3 +191,10 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .rp-runs rect { fill: color-mix(in srgb, var(--rm-text-muted) 35%, transparent); stroke: var(--rm-text-muted); stroke-width: 1; }
 .rp-runs rect.signed { stroke: var(--rm-green); fill: color-mix(in srgb, var(--rm-green) 30%, transparent); }
 .rp-runs rect.fut { opacity: .1; }
+/* Replay slice 5: the clip, full screen */
+.rp-clip { position: fixed; inset: 0; z-index: 200; background: var(--rm-bg); padding: 12px; overflow: hidden; align-content: start; }
+.rp-clip .rp-filters, .rp-clip .rp-bar, .rp-clip .rp-chips, .rp-clip .rp-play, .rp-clip > .note, .rp-clip .rp-runnote, .rp-clip .rp-detail, .rp-clip .ak-fresh, .rp-clip .ak-ownnote { display: none; }
+.rp-clip .rp-play { display: none; }
+.rp-cliphead { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font: 600 18px/26px var(--rm-font); }
+.rp-cliphead span { font: 700 22px/28px var(--rm-font); color: var(--rm-action); margin-left: auto; }
+.rp-clip .rp-wrap { border: 0; overflow: hidden; }

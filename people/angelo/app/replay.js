@@ -14,11 +14,11 @@
     function parse(hash) {
         const i = hash.indexOf('?'), q = new URLSearchParams(i < 0 ? '' : hash.slice(i + 1))
         const list = k => (q.get(k) || '').split(',').filter(Boolean)
-        const w = q.get('w'); return { w: WINDOWS[w] ? w : '24h', p: list('p'), k: list('k'), a: q.get('a') || '', i: q.get('i') || '', sel: q.get('sel') || '', m: q.get('m') !== '0', r: q.get('r') === '1' }
+        const w = q.get('w'); return { w: WINDOWS[w] ? w : '24h', p: list('p'), k: list('k'), a: q.get('a') || '', i: q.get('i') || '', sel: q.get('sel') || '', m: q.get('m') !== '0', r: q.get('r') === '1', c: q.get('c') === '1' }
     }
     function toHash(s) {
         const q = []; if (s.w !== '24h') q.push('w=' + s.w); if (s.p.length) q.push('p=' + s.p.join(',')); if (s.k.length) q.push('k=' + s.k.join(','))
-        if (s.a) q.push('a=' + encodeURIComponent(s.a)); if (s.i) q.push('i=' + encodeURIComponent(s.i)); if (s.sel) q.push('sel=' + s.sel); if (!s.m) q.push('m=0'); if (s.r) q.push('r=1')
+        if (s.a) q.push('a=' + encodeURIComponent(s.a)); if (s.i) q.push('i=' + encodeURIComponent(s.i)); if (s.sel) q.push('sel=' + s.sel); if (!s.m) q.push('m=0'); if (s.r) q.push('r=1'); if (s.c) q.push('c=1')
         return '#replay' + (q.length ? '?' + q.join('&') : '')
     }
     const at = (R, m) => new Date(Date.parse(R.from) + m * 6e4)
@@ -66,7 +66,8 @@
             if (phone) rows.push({ kind: 'person', label: p.name.split(' ')[0], person: p.id, idx: mine.map(([, i]) => i) })
             else { rows.push({ kind: 'head', label: p.name, person: p.id }); for (const [a, i] of mine) rows.push({ kind: 'agent', label: a.short, title: a.name, idx: [i] }) }
         }
-        const W = Math.max(320, view.clientWidth || 960), LW = phone ? 72 : 170, RH = phone ? 26 : 20, TOP = 34
+        // slice 5, the clip (c=1): the window played full screen in 60 seconds, looping, for a stand-up screen or a screen recording
+        const W = s.c ? innerWidth - 24 : Math.max(320, view.clientWidth || 960), LW = phone ? 72 : 170, TOP = 34, RH = s.c ? Math.max(8, Math.min(22, Math.floor((innerHeight - 140 - TOP) / Math.max(1, rows.length)))) : phone ? 26 : 20
         const H = TOP + rows.length * RH + 8, span = Math.max(60, end - start)
         const x = m => LW + (m - start) / span * (W - LW - 12)
         const rowOf = new Map(); rows.forEach((r, n) => (r.idx || []).forEach(i => rowOf.set(i, n)))
@@ -93,7 +94,7 @@ ${rows.map((r, n) => `<g class="rp-row ${r.kind}"><rect x="0" y="${TOP + n * RH}
 <line class="rp-head" x1="${x(end)}" x2="${x(end)}" y1="${TOP - 10}" y2="${H}"/></svg>`
         const chip = (k, v, l, on, col) => `<button type="button" class="rp-chip${on ? ' on' : ''}" data-rp="${k}" data-v="${esc(v)}" aria-pressed="${on}">${col ? `<i style="background:${col}"></i>` : ''}${esc(l)}</button>`
         const agentOpts = [...agentsSeen].map(i => R.agents[i].name).sort()
-        view.innerHTML = `<div class="ak rp">${note()}
+        view.innerHTML = `<div class="ak rp${s.c ? ' rp-clip' : ''}">${s.c ? `<header class="rp-cliphead"><b>The team at work: ${esc(WINDOWS[s.w][0].toLowerCase())}, in 60 seconds</b><span data-rp-now></span><button type="button" class="cc-btn" data-rp-exit>Close the clip</button></header>` : note()}
 <details class="rp-filters"${phone ? '' : ' open'}><summary>Filters${s.p.length + s.k.length + (s.a ? 1 : 0) + (s.i ? 1 : 0) ? ` <b>${s.p.length + s.k.length + (s.a ? 1 : 0) + (s.i ? 1 : 0)}</b>` : ''}</summary>
 <div class="rp-bar">
   <label class="ak-sel"><span>Time</span><select data-rp-w>${Object.entries(WINDOWS).map(([k, [l]]) => `<option value="${k}"${k === s.w ? ' selected' : ''}>${l}</option>`).join('')}</select></label>
@@ -105,6 +106,7 @@ ${rows.map((r, n) => `<g class="rp-row ${r.kind}"><rect x="0" y="${TOP + n * RH}
 </details>
 <div class="rp-play">
   <button type="button" class="cc-btn" data-rp-play aria-pressed="false">▶ Play</button>
+  <button type="button" class="cc-btn" data-rp-clip title="Full screen, 60 seconds, looping: for a stand-up screen or a screen recording">⛶ Clip: this window in 60 s</button>
   <label class="ak-sel"><span>Speed</span><select data-rp-speed>${SPEEDS.map(([v, l]) => `<option value="${v}">${l}</option>`).join('')}</select></label>
   <label class="ak-sel"><span>Jump to</span><select data-rp-jump><option value="">a stand-up…</option>${R.standups.filter(([m]) => m >= start && m <= end).map(([m, id]) => `<option value="${m}">${esc(dayLabel(at(R, m)))} ${esc(id.slice(-4, -2))}:${esc(id.slice(-2))}</option>`).join('')}</select></label>
   <input type="range" class="rp-scrub" data-rp-scrub min="${start}" max="${end}" value="${end}" step="1" aria-label="Time">
@@ -153,16 +155,20 @@ ${sel ? detail(R, sel) : ''}
             if (scrub && +scrub.value !== Math.round(t)) scrub.value = Math.round(t)
             return t
         }
-        const stop = () => { if (play) cancelAnimationFrame(play.raf); play = null; arcs.forEach(a => a.classList.remove('now')); if (btn) { btn.textContent = '▶ Play'; btn.setAttribute('aria-pressed', 'false') } }
+        const stop = () => { if (play) { cancelAnimationFrame(play.raf); clearTimeout(play.raf) } play = null; arcs.forEach(a => a.classList.remove('now')); if (btn) { btn.textContent = '▶ Play'; btn.setAttribute('aria-pressed', 'false') } }
         if (scrub) scrub.oninput = () => { stop(); seek(+scrub.value) }
         const j = view.querySelector('[data-rp-jump]'); if (j) j.onchange = () => { if (j.value) { stop(); seek(+j.value) } }
         if (btn) btn.onclick = () => {
             if (play) return stop()
             let t = +scrub.value >= end ? seek(start) : +scrub.value
             play = { last: performance.now(), raf: 0 }; btn.textContent = '❚❚ Pause'; btn.setAttribute('aria-pressed', 'true')
-            const tick = ts => { if (!play) return; const dt = (ts - play.last) / 1000; play.last = ts; t = seek(t + dt * +speed.value); if (t >= end) return stop(); play.raf = requestAnimationFrame(tick) }
+            const rate = s.c ? Math.max(1, (end - start) / 60) : +speed.value
+            const tick = ts => { if (!play) return; const dt = (ts - play.last) / 1000; play.last = ts; t = seek(t + dt * rate); if (t >= end) { if (!s.c) return stop(); play.last = ts + 3000; t = start - 1; play.raf = setTimeout(() => { seek(start); play.raf = requestAnimationFrame(tick) }, 3000); return } play.raf = requestAnimationFrame(tick) }
             play.raf = requestAnimationFrame(tick)
         }
+        const cb = view.querySelector('[data-rp-clip]'); if (cb) cb.onclick = () => go({ c: true, sel: '' })
+        const ex = view.querySelector('[data-rp-exit]'); if (ex) ex.onclick = () => go({ c: false })
+        if (s.c) { if (!window.__rpEsc) { window.__rpEsc = true; addEventListener('keydown', e => { if (e.key === 'Escape' && parse(location.hash).c) { const b = document.querySelector('[data-rp-exit]'); if (b) b.click() } }) } if (btn) setTimeout(() => btn.click(), 400) }
     }
 
     root.AngeloReplay = { render, parse }
