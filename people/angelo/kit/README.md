@@ -40,7 +40,7 @@ Never, whatever the tier: push to `main`, send a message as a person, or put a s
 
 **Wakes, round the clock** (team members work through the night): conductor hourly (cron `20 * * * *`); dev every two hours (cron `35 */2 * * *`); vault twice a day (cron `50 9,21 * * *`); helper every two hours (cron `50 */2 * * *`); dashboard and team-collaboration as below. Each agent sets its own scheduled task, into its own session, once Angelo has confirmed this protocol there.
 
-**Angelo's digest.** The conductor sends Angelo one summary at about 08:00, 11:20 and 17:20 UTC (the two last before each stand-up, at 12:00 and 18:00) (needs you, done, in progress, blocked), and anything urgent at once.
+**Angelo's digest: when he asks** (Angelo, 6 November; his card, answer 5). No scheduled digest. The desk gives him one visual summary when he asks, what he is blocking first; decisions one at a time in an interactive session. Urgent items only: the runner's last message (it reaches his phone) and the top of the conductor's STATE.md.
 
 ## conductor@web-summit.angelo
 
