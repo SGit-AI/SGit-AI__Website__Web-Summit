@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.714",
+    "date": "2026-11-06",
+    "what": "the 06:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "84c85217f"
+  },
+  {
     "version": "v0.2.713",
     "date": "2026-11-06",
     "what": "Replay's slices 3 and 4 on the dashboard",
