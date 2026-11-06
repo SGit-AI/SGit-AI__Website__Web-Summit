@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.748",
+    "date": "2026-11-06",
+    "what": "prompts and standing rules saved; report, WS-177 drafted, not pushed (gate)",
+    "by": "journalist@web-summit.vicky",
+    "from": "8447e4201"
+  },
+  {
     "version": "v0.2.747",
     "date": "2026-11-06",
     "what": "report for WS-177 (S3, S4, S7, S13, S20) and prompts saved",
