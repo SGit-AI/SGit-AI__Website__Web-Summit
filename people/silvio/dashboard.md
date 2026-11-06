@@ -7,6 +7,7 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 ## Today {#today}
 
 - **My command centre:** [the full view](app/index.html): tasks from the board, workstreams, agents, decisions, Claude and voice, dark and light, phone and desktop.
+- **My media (videos and photos):** [the team's media library](../../media/index.html), and the shared Drive folder for everything else.
 - **My outreach (WS-26):** [the campaign and the buyers](outreach/index.html): 100 companies confirmed at Web Summit, the emails and dates, and a card per buyer.
 - **Competitive analysis:** [who else controls AI agents at Web Summit](competitive/index.html): 11 companies, how each presents itself, and where RiskMandate differs.
 - **My focus:** Get things done: the outreach, the local Algarve work, and the videos that carry RiskMandate further.
