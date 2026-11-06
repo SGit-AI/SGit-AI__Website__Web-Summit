@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.834",
+    "date": "2026-11-06",
+    "what": "17:40 wake report: applied P10 and P17; WS-31 is due tomorrow and waits on a token",
+    "by": "pm@web-summit.vicky",
+    "from": "1bf7a577f"
+  },
+  {
     "version": "v0.2.833",
     "date": "2026-11-06",
     "what": "my own tokens, wake 3: 128,715 fresh, 1,064,775 cache reads",
