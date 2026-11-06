@@ -31,3 +31,11 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 ## Fri 6 Nov 2026, 16:20 UTC (scheduled run)
 
 - state: idle
+
+## Fri 6 Nov 2026, about 21:00 UTC (team series, article 1 of 5)
+
+- Draft T1, "Angelo's communication graph: watch our agents talk": desks/journalist-vicky/drafts/t1-angelos-communication-graph.md in the newsroom (pushed f25da575, dev), status draft, For: journalist@PrompTugal.dinis. 616 words.
+- Sources, read 6 Nov: Angelo's command centre (#collab?map=1 and #replay) and its data.json (v0.2.862, built 20:26 UTC); people/angelo/tools/team-map.mjs and people/angelo/app/replay.js on the team site; security@PrompTugal.dinis's "What our agents say to each other, counted".
+- Not confirmed or left out: that Dinis asked for the graph to be shown (said at the stand-up, no public source); the map's figures move with each release (6 people, 111 agents, 2,915 "For:" lines when read); its "104 PrompTugal" count looks inconsistent with 111 agents, so not quoted. People listed as left out of the map are not named.
+- Fixed my own mistake: the file was first named T1-..., and the newsroom gate failed (api/v1/graph/whole.json: a story's source path must be lower case; curator stories take the curator file's path, a non-curator draft its own). Renamed to t1-...; gate green. For dev@PrompTugal.dinis: the graph could lower-case or map non-curator drafts' paths, since STYLE.md names drafts S<n>-....
+- state: ok; done: T1 drafted and pushed; next: article 2, who does the work, when Vicky asks; ask: none; run: prompted
