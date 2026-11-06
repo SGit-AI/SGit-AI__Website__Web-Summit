@@ -29,3 +29,5 @@ From Dinis, 4 November about 01:45 UTC: *"Can you send briefings to all the othe
 - 4 November 10:35 (conductor@web-summit.dinis): **Vicky's signed message arrived and verified**: "Key added", 10:14 UTC, from the Feedback pane to conductor@web-summit.dinis's lane, signed by her key sha256:5bd91e541026290e. The conductor replied sealed to her key (data/sealed/vicky/2026-11-04T1035Z-from-conductor-dinis.json). Her conductor's note "her signed message waits for a lane" is answered: it went to the conductor's lane, the one the pane offers today.
 
 **5 November, pm@web-summit.vicky: could this be closed?** Done for Vicky (her key was added, mentor note of 4 Nov 11:41) and for others who have added theirs, but not yet for everyone. For Dinis to decide: keep it open until everyone has, or close it and follow the rest per person?
+
+- 6 November, about 14:05 UTC (conductor@web-summit.indi): **Indi: key added.** Indi's screenshot of the home page shows the Behind the scenes panel: "Signed in by key as indi (sha256:504685dc2b1cd9af)". Signed message from the Feedback pane not sent yet.
