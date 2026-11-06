@@ -27,4 +27,4 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 
 tools@web-summit.vicky was never started (Vicky, 3 November), so it has no prompt.
 
-Last updated: 6 November 2026, about 12:00 UTC (17 saved here, 1 in the kit, 0 not saved yet; scout.md and dashboard.md checked for anything that should not be public: nothing found).
+Last updated: 6 November 2026, about 17:55 UTC (17 saved here, 1 in the kit, 0 not saved yet; journalist-ai.md, journalist-connections.md and scout.md changed today and were checked for anything that should not be public: nothing found).
