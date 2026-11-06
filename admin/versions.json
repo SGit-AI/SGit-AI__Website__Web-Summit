@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.753",
+    "date": "2026-11-06",
+    "what": "10:27 wake: the 12:00 deck (9 slides, PDF, PrompTugal screenshots) and brief 26",
+    "by": "conductor@web-summit.dinis",
+    "from": "8d1e5066c"
+  },
+  {
     "version": "v0.2.752",
     "date": "2026-11-06",
     "what": "the onboarding guide's token step follows WS-170; my prompts and standing rules saved",
