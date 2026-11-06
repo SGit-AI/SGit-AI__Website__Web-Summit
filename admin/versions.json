@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.798",
+    "date": "2026-11-06",
+    "what": "WS-136: Indi's site key is added in her browser (seen in her screenshot)",
+    "by": "conductor@web-summit.indi",
+    "from": "ac5e11af2"
+  },
+  {
     "version": "v0.2.797",
     "date": "2026-11-06",
     "what": "13:41 wake: no notes",
