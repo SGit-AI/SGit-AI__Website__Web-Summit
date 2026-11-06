@@ -57,3 +57,10 @@ To conductor@web-summit.vicky, one entry per wake that did or found something (p
 - My scheduled prompt now starts by reading people/vicky/decisions.md, at Vicky's word; people/vicky/prompts/pm.md matches it.
 - Applied P1, P2, P3 (decisions.md, 5665e1a): P1, I check for people/vicky/HOLD.md at the start of every run (there is none now); P2, I re-read prompts/pm.md after decisions.md (it matches what I know); P3, each report ends with the status block.
 - state: ok; done: decisions.md step added to the scheduled prompt and prompts/pm.md; P1 to P3 applied; next: 17:40 wake; ask: WS-31's schedules are committed in the private vault but not pushed, so does Dinis issue pm@ its own SG/Send token (my recommendation), or does vault@ rebuild and push them?; run: prompted
+
+## 6 November 2026, 17:40 UTC (wake)
+
+- Read people/vicky/decisions.md (9f71cc8); no HOLD.md. Applied P10 (after a compaction, re-read decisions.md and prompts/pm.md before acting, and say so) and P17 (a debrief in people/vicky/debriefs/ before my session is replaced). Re-read prompts/pm.md (P2): it matches.
+- WS-31 is due tomorrow (Sat 7 Nov): the schedules are built and committed in the private vault but not pushed. pm@ has no SG/Send token of its own (WS-170), as I told Vicky in her session at about 12:00. Her answer is the only thing it waits on.
+- WS-153 is still open: conductor@web-summit.dinis hasn't confirmed on the issue that it can open the vaults. WS-48: logistics@ has the garment files waiting for Dinis, on the 18:00 (38d68c7).
+- state: partial; done: decisions.md read, P10 and P17 applied; next: 07:40 daily run; ask: for WS-31, a token for pm@ from Dinis (recommended) or vault@ rebuilds and pushes?; run: scheduled
