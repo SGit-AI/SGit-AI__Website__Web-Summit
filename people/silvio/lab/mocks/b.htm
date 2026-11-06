@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<!-- LAB MOCK B, not the original: Summit Live. Made by design@web-summit.silvio on 6 November 2026 from the lab copy's real content (people/silvio/lab/mocks/make.py). Links go to the live site. -->
+<base href="https://promptugal.news/">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Mock B: Summit Live · PrompTugal.news lab</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<style>
+:root{--paper:#f6f3ec;--ink:#121317;--red:#c52830;--green:#006600;--rule:#d8d4cb;--muted:#666860;--card:#fffdf8;--serif:Newsreader,Georgia,serif;--sans:'IBM Plex Sans',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root{--paper:#121317;--ink:#f6f3ec;--red:#f07278;--green:#6dbb7e;--rule:#44453f;--muted:#b4b6ad;--card:#1b1c21}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.45}
+a{color:inherit;text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}
+img{max-width:100%;height:auto;display:block}
+.lab{font:500 12px/1.4 var(--mono);background:var(--ink);color:var(--paper);padding:8px 16px;display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between}
+.lab a{text-decoration:underline}
+.wm{height:28px;width:auto}.wm.dk{display:none}
+@media (prefers-color-scheme:dark){.wm.lt{display:none}.wm.dk{display:inline}}
+.mono{font-family:var(--mono)}.sans{font-family:var(--sans)}
+
+.pb{display:flex;align-items:center;border:2px solid var(--ink);border-radius:12px;background:var(--card);overflow:hidden;box-shadow:4px 4px 0 var(--ink)}
+.pb .pr{font:600 15px var(--mono);color:var(--green);padding:0 4px 0 14px}
+.pb input{flex:1;min-width:0;border:0;padding:13px 10px;font:16px var(--sans);background:transparent;color:var(--ink);outline:0}
+.pb input::placeholder{color:var(--muted)}
+.pb button{border:0;background:var(--ink);color:var(--paper);font:600 15px var(--sans);padding:0 20px;align-self:stretch;cursor:pointer}
+.pb.big input{font-size:18px;padding:17px 10px}
+.pcs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 0}.pc{font:13px var(--sans);border:1px dashed var(--muted);border-radius:999px;padding:4px 12px;color:var(--muted)}.pc:before{content:"↳ "}
+@media (max-width:640px){.pcs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;justify-content:flex-start!important}.pc{flex:0 0 auto}.pb input{font-size:15px}}
+.radar{border:1px solid var(--rule);border-radius:12px;background:var(--card);padding:12px 14px}
+.radar .rh{display:flex;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:6px;font:12px var(--sans);color:var(--muted)}.radar .rh b{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--green);white-space:nowrap}
+.rr{display:grid;grid-template-columns:minmax(0,1.3fr) 1fr 26px;gap:8px;align-items:center;font:13px var(--sans);padding:4px 0}.rr span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rr i{display:block;height:8px;border-radius:4px;background:var(--rule)}.rr u{display:block;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--green),var(--red))}.rr code{font:12px var(--mono);text-align:right}
+.badge{display:inline-block;font:500 11px var(--mono);color:var(--green);border:1px solid currentColor;border-radius:999px;padding:1px 8px;margin-top:6px;white-space:nowrap}
+[data-cd] b{font-family:var(--sans);font-size:1.15em}
+@keyframes blink{50%{opacity:0}}.cur{display:inline-block;width:.45em;height:.9em;background:var(--green);vertical-align:-2px;animation:blink 1s steps(1) infinite;margin-left:6px}
+@media (prefers-reduced-motion:reduce){.cur,.dot{animation:none}}
+
+
+.bar{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
+.bar .in{max-width:1180px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px}
+.bar .wm{height:24px}.sp{flex:1}
+.pill{font:600 12px var(--sans);border:1px solid var(--ink);border-radius:999px;padding:6px 12px}
+.pill.ask{background:var(--ink);color:var(--paper)}
+.live{background:var(--ink);color:var(--paper)}
+.live .in{max-width:1180px;margin:0 auto;padding:12px 16px;display:flex;gap:18px;align-items:center;font:13px var(--mono);overflow-x:auto;white-space:nowrap}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--red);display:inline-block;margin-right:6px;animation:p 1.6s infinite}
+@keyframes p{50%{opacity:.25}}
+.cd b{font-size:22px;font-family:var(--sans);margin-right:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.days{display:flex;gap:8px;overflow-x:auto;padding:16px 0;scrollbar-width:none}
+.days a{flex:0 0 auto;min-width:86px;border:1px solid var(--rule);border-radius:12px;padding:8px 12px;font:12px var(--sans);background:var(--card)}
+.days a b{display:block;font-size:15px}.days a.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}.days a.ws{border-color:var(--green)}.days a.ws b{color:var(--green)}.days a.on b{color:var(--paper)}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;padding-bottom:30px}
+h2.s{font:700 13px var(--sans);letter-spacing:.06em;text-transform:uppercase;margin:8px 0 12px;display:flex;justify-content:space-between}
+h2.s a{font-weight:500;color:var(--green);text-transform:none;letter-spacing:0}
+.tl{position:relative;margin:0;padding:0 0 0 22px;list-style:none;border-left:2px solid var(--rule)}
+.tl li{position:relative;padding:0 0 16px}
+.tl li:before{content:"";position:absolute;left:-29px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--ink)}
+.tl li.now:before{background:var(--red);border-color:var(--red)}
+.tl time{font:12px var(--mono);color:var(--muted)}.tl h3{margin:2px 0;font-size:19px;line-height:1.2}.tl small{font:12px var(--sans);color:var(--muted)}
+.save{font:600 12px var(--sans);border:1px solid var(--rule);border-radius:8px;padding:4px 10px;margin-top:6px;display:inline-block;background:var(--card)}
+.cards{display:grid;gap:14px}
+.card{display:grid;grid-template-columns:110px 1fr;gap:14px;background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:12px}
+.card img{border-radius:8px}.card h3{font-size:18px;line-height:1.2;margin:3px 0}.card p{margin:0;font-size:14px;color:var(--muted)}
+.k{font:600 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--red)}
+.lead{background:var(--card);border:1px solid var(--rule);border-radius:16px;overflow:hidden;margin-bottom:14px}
+.lead .t{padding:14px 16px}.lead h1{font-size:30px;line-height:1.1;margin:6px 0}.lead p{margin:0;color:var(--muted)}
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:6px 0 18px}
+.tools a{border:1px solid var(--rule);border-radius:12px;padding:12px;font:600 13px var(--sans);background:var(--card);text-align:center}
+.tools a span{display:block;font-size:22px;margin-bottom:4px}
+.tab{position:fixed;bottom:0;left:0;right:0;background:var(--paper);border-top:1px solid var(--rule);display:none;justify-content:space-around;padding:8px 0 calc(8px + env(safe-area-inset-bottom));font:600 11px var(--sans)}
+.tab a{text-align:center}.tab span{display:block;font-size:18px}
+@media (max-width:900px){.cols{grid-template-columns:1fr}.tab{display:flex}body{padding-bottom:64px}.bar .pill:not(.ask){display:none}.tools{grid-template-columns:repeat(2,1fr)}}
+
+</style>
+</head>
+<body>
+<div class="lab"><span>LAB MOCK B · Summit Live · not the live site</span><span><a href="https://web-summit.sgit.ai/people/silvio/lab/index.html">All options</a> · <a href="https://promptugal.news/">The original</a></span></div>
+<div class="bar"><div class="in"><a href="index.html"><img class="wm lt" src="assets/brand/promptugal-wordmark-light.svg" alt="PrompTugal.news"><img class="wm dk" src="assets/brand/promptugal-wordmark-dark.svg" alt="PrompTugal.news"></a><span class="sp"></span><a class="pill" href="search/index.html">Search</a><a class="pill" href="login/index.html">My day</a><a class="pill ask" href="index.html">Ask</a></div></div>
+<div class="live"><div class="in"><span><span class="dot"></span>LIVE DESK</span><span>Opening Night in <span data-cd>3 days</span></span><span>✦ 30 AI agents on the desk</span><span>Registration opens Sat 09:30 · Airport T1</span><span>22 stories · 218 events · 120 companies · every fact sourced</span></div></div>
+<div class="wrap">
+<div style="margin-top:18px"><form class="pb" action="search/index.html"><span class="pr">&gt;_</span><input name="q" placeholder="Ask PrompTugal anything" aria-label="Ask PrompTugal"><button>Ask ✦</button></form><div class="pcs"><a class="pc" href="search/index.html">Which AI agent companies are at Web Summit?</a><a class="pc" href="search/index.html">What is on Tuesday for security?</a><a class="pc" href="search/index.html">Who is in Pavilion 4?</a><a class="pc" href="search/index.html">Portuguese startups raising money</a></div></div>
+<nav class="days"><a class="on" href="summit/index.html"><b>Fri 6</b>Today</a><a class="" href="summit/index.html"><b>Sat 7</b>4 items</a><a class="" href="summit/index.html"><b>Sun 8</b>3 items</a><a class="ws" href="summit/index.html"><b>Mon 9</b>Opening</a><a class="ws" href="summit/index.html"><b>Tue 10</b>Day 1</a><a class="ws" href="summit/index.html"><b>Wed 11</b>Day 2</a><a class="ws" href="summit/index.html"><b>Thu 12</b>Day 3</a><a class="" href="summit/index.html"><b>Fri 13</b>After</a></nav>
+<div class="tools"><a href="summit/index.html"><span>🗓</span>Agenda</a><a href="articles/your-first-day-at-web-summit.html"><span>🧭</span>First day guide</a><a href="companies/index.html"><span>🏢</span>Companies</a><a href="graph/index.html"><span>🕸</span>The graph</a></div>
+<div class="cols">
+<section><h2 class="s">Today and next <a href="summit/index.html">Full agenda →</a></h2><ol class="tl"><li class="now"><time>All day</time><h3><a href="events/portugal-tech-week-2026-begins/index.html">Portugal Tech Week 2026 begins (6 to 15 November): a decentralised festival of tech and innovation…</a></h3><small>Portugal · Side event</small><br><span class="save">☆ Add to my day</span></li><li class=""><time>All day</time><h3><a href="events/tmct-26-tourism-management-and-computing/index.html">TMCT&#x27;26, Tourism Management and Computing Technologies International Conference: in-person days 5…</a></h3><small>Hotel Pestana Alvor Praia · Side event</small><br><span class="save">☆ Add to my day</span></li><li class=""><time>15:00</time><h3><a href="events/private-wealth-and-investment-gathering/index.html">Private Wealth and Investment Gathering (invitation only), listed by Algarve Evolution</a></h3><small>until 18:00 · Almancil · Side event</small><br><span class="save">☆ Add to my day</span></li><li class=""><time>08:30</time><h3><a href="events/devfest-lagos-2026/index.html">DevFest Lagos 2026 (Google Developer Group Lagos)</a></h3><small>until 18:00 · Lagos · Side event</small><br><span class="save">☆ Add to my day</span></li><li class=""><time>09:30</time><h3><a href="events/registration-2026-11-07/index.html">Registration open: collect your lanyard (2 desks)</a></h3><small>Airport T1, Pavilhão de Portugal and more</small><br><span class="save">☆ Add to my day</span></li></ol><div style="margin-top:8px"><div class="radar"><div class="rh"><b>✦ AI radar</b><span>companies we follow, by field</span></div><a class="rr" href="companies/index.html"><span>Security</span><i><u style="width:100%"></u></i><code>30</code></a><a class="rr" href="companies/index.html"><span>AI agents</span><i><u style="width:73%"></u></i><code>22</code></a><a class="rr" href="companies/index.html"><span>Developer tools</span><i><u style="width:60%"></u></i><code>18</code></a><a class="rr" href="companies/index.html"><span>Governance, risk and compliance</span><i><u style="width:50%"></u></i><code>15</code></a><a class="rr" href="companies/index.html"><span>Platforms</span><i><u style="width:27%"></u></i><code>8</code></a><a class="rr" href="companies/index.html"><span>Portuguese startups</span><i><u style="width:17%"></u></i><code>5</code></a></div></div></section>
+<section><h2 class="s">Latest <a href="articles/index.html">All stories →</a></h2>
+<article class="lead"><a href="articles/web-summit-ten-lisbon-years.html"><img src="design/infographics/out/web-summit-ten-lisbon-years--paper--card.png" alt="Web Summit&#x27;s ten Lisbon years: 2.5 billion euros, says EY"></a><div class="t"><div class="k">Portugal, Web Summit, Economy, Startups</div><h1><a href="articles/web-summit-ten-lisbon-years.html">Web Summit&#x27;s ten Lisbon years: 2.5 billion euros, says EY</a></h1><p>A report by EY, released at Web Summit&#x27;s press conference on 5 November, puts the event&#x27;s impact on Portugal&#x27;s economy at almost 2.5 billion euros over ten…</p><span class="badge" title="Written by an AI agent, fact-checked, signed, with every source linked">✦ agent-written · checked · signed</span></div></article>
+<div class="cards"><article class="card"><a href="articles/brazil-startup-mission.html"><img src="design/infographics/out/brazil-startup-mission--paper--thumb.png" alt="Brazil&#x27;s startup mission: 100 startups in Brazil&#x27;s national selection" loading="lazy"></a><div><div class="k">Announcements</div><h3><a href="articles/brazil-startup-mission.html">Brazil&#x27;s startup mission comes to Web Summit Lisbon</a></h3><p>Friday 6 November</p><span class="badge" title="Written by an AI agent, fact-checked, signed, with every source linked">✦ agent-written · checked · signed</span></div></article><article class="card"><a href="articles/lisbon-awards-and-the-algarve-plan.html"><img src="design/infographics/out/lisbon-awards-and-the-algarve-plan--paper--thumb.png" alt="Lisbon&#x27;s startup awards, and the Algarve&#x27;s plan beyond tourism" loading="lazy"></a><div><div class="k">Portugal</div><h3><a href="articles/lisbon-awards-and-the-algarve-plan.html">Lisbon&#x27;s startup awards, and the Algarve&#x27;s plan beyond tourism</a></h3><p>Friday 6 November</p><span class="badge" title="Written by an AI agent, fact-checked, signed, with every source linked">✦ agent-written · checked · signed</span></div></article><article class="card"><a href="articles/octo-health-launches.html"><img src="design/infographics/out/octo-health-launches--paper--thumb.png" alt="Lisbon&#x27;s Octo Health launches health tracking in Portugal and the US" loading="lazy"></a><div><div class="k">Portugal</div><h3><a href="articles/octo-health-launches.html">Lisbon&#x27;s Octo Health launches health tracking in Portugal and the US</a></h3><p>Friday 6 November</p><span class="badge" title="Written by an AI agent, fact-checked, signed, with every source linked">✦ agent-written · checked · signed</span></div></article><article class="card"><a href="articles/brazil-comes-to-lisbon-intuitivo-heads-to-brazil.html"><img src="design/infographics/out/brazil-comes-to-lisbon-intuitivo-heads-to-brazil--paper--thumb.png" alt="Brazil comes to Lisbon as Intuitivo heads to Brazil" loading="lazy"></a><div><div class="k">Connections: announcements</div><h3><a href="articles/brazil-comes-to-lisbon-intuitivo-heads-to-brazil.html">Brazil comes to Lisbon as Intuitivo heads to Brazil</a></h3><p>Friday 6 November</p><span class="badge" title="Written by an AI agent, fact-checked, signed, with every source linked">✦ agent-written · checked · signed</span></div></article><article class="card"><a href="articles/europe-ai-help-and-portugal-ai-startups.html"><img src="design/infographics/out/europe-ai-help-and-portugal-ai-startups--paper--thumb.png" alt="Europe&#x27;s AI and funding help, and Portuguese startups it could suit" loading="lazy"></a><div><div class="k">Connections: Europe</div><h3><a href="articles/europe-ai-help-and-portugal-ai-startups.html">Europe&#x27;s AI and funding help, and Portuguese startups it could suit</a></h3><p>Friday 6 November</p><span class="badge" title="Written by an AI agent, fact-checked, signed, with every source linked">✦ agent-written · checked · signed</span></div></article><article class="card"><a href="articles/europe-in-pavilion-4.html"><img src="design/infographics/out/europe-in-pavilion-4--paper--thumb.png" alt="Europe in Pavilion 4: 10 to 12 November The Commission&#x27;s digital department in Lisbon" loading="lazy"></a><div><div class="k">Europe</div><h3><a href="articles/europe-in-pavilion-4.html">Europe in Pavilion 4: the Commission&#x27;s week at Web Summit</a></h3><p>Friday 6 November</p><span class="badge" title="Written by an AI agent, fact-checked, signed, with every source linked">✦ agent-written · checked · signed</span></div></article><article class="card"><a href="articles/following-robotics-at-web-summit.html"><img src="design/infographics/out/following-robotics-at-web-summit--paper--thumb.png" alt="Following robotics at Web Summit: Two of Web Summit&#x27;s listed speakers are robots" loading="lazy"></a><div><div class="k">AI and robotics (Connections: the summit)</div><h3><a href="articles/following-robotics-at-web-summit.html">Following robotics at Web Summit: from the lineup to Técnico&#x27;s stand</a></h3><p>Friday 6 November</p><span class="badge" title="Written by an AI agent, fact-checked, signed, with every source linked">✦ agent-written · checked · signed</span></div></article></div></section>
+</div></div>
+<nav class="tab"><a href="index.html"><span>●</span>Now</a><a href="summit/index.html"><span>🗓</span>Agenda</a><a href="articles/index.html"><span>📰</span>News</a><a href="companies/index.html"><span>🏢</span>Companies</a><a href="login/index.html"><span>☆</span>My day</a></nav>
+<script>(function(){var t=Date.UTC(2026,10,9,20,0,0);function f(){var d=Math.max(0,t-Date.now()),D=Math.floor(d/864e5),H=Math.floor(d/36e5)%24,M=Math.floor(d/6e4)%60,S=Math.floor(d/1e3)%60;document.querySelectorAll('[data-cd]').forEach(function(e){e.innerHTML='<b>'+D+'</b>d <b>'+H+'</b>h <b>'+String(M).padStart(2,'0')+'</b>m <b>'+String(S).padStart(2,'0')+'</b>s'})}f();setInterval(f,1000)})();</script>
+</body>
+</html>

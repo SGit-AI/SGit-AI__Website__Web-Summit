@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<!-- LAB MOCK C, not the original: The Atlas. Made by design@web-summit.silvio on 6 November 2026 from the lab copy's real content (people/silvio/lab/mocks/make.py). Links go to the live site. -->
+<base href="https://promptugal.news/">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Mock C: The Atlas · PrompTugal.news lab</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<style>
+:root{--paper:#f6f3ec;--ink:#121317;--red:#c52830;--green:#006600;--rule:#d8d4cb;--muted:#666860;--card:#fffdf8;--serif:Newsreader,Georgia,serif;--sans:'IBM Plex Sans',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root{--paper:#121317;--ink:#f6f3ec;--red:#f07278;--green:#6dbb7e;--rule:#44453f;--muted:#b4b6ad;--card:#1b1c21}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.45}
+a{color:inherit;text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}
+img{max-width:100%;height:auto;display:block}
+.lab{font:500 12px/1.4 var(--mono);background:var(--ink);color:var(--paper);padding:8px 16px;display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between}
+.lab a{text-decoration:underline}
+.wm{height:28px;width:auto}.wm.dk{display:none}
+@media (prefers-color-scheme:dark){.wm.lt{display:none}.wm.dk{display:inline}}
+.mono{font-family:var(--mono)}.sans{font-family:var(--sans)}
+
+.pb{display:flex;align-items:center;border:2px solid var(--ink);border-radius:12px;background:var(--card);overflow:hidden;box-shadow:4px 4px 0 var(--ink)}
+.pb .pr{font:600 15px var(--mono);color:var(--green);padding:0 4px 0 14px}
+.pb input{flex:1;min-width:0;border:0;padding:13px 10px;font:16px var(--sans);background:transparent;color:var(--ink);outline:0}
+.pb input::placeholder{color:var(--muted)}
+.pb button{border:0;background:var(--ink);color:var(--paper);font:600 15px var(--sans);padding:0 20px;align-self:stretch;cursor:pointer}
+.pb.big input{font-size:18px;padding:17px 10px}
+.pcs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 0}.pc{font:13px var(--sans);border:1px dashed var(--muted);border-radius:999px;padding:4px 12px;color:var(--muted)}.pc:before{content:"↳ "}
+@media (max-width:640px){.pcs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;justify-content:flex-start!important}.pc{flex:0 0 auto}.pb input{font-size:15px}}
+.radar{border:1px solid var(--rule);border-radius:12px;background:var(--card);padding:12px 14px}
+.radar .rh{display:flex;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:6px;font:12px var(--sans);color:var(--muted)}.radar .rh b{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--green);white-space:nowrap}
+.rr{display:grid;grid-template-columns:minmax(0,1.3fr) 1fr 26px;gap:8px;align-items:center;font:13px var(--sans);padding:4px 0}.rr span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rr i{display:block;height:8px;border-radius:4px;background:var(--rule)}.rr u{display:block;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--green),var(--red))}.rr code{font:12px var(--mono);text-align:right}
+.badge{display:inline-block;font:500 11px var(--mono);color:var(--green);border:1px solid currentColor;border-radius:999px;padding:1px 8px;margin-top:6px;white-space:nowrap}
+[data-cd] b{font-family:var(--sans);font-size:1.15em}
+@keyframes blink{50%{opacity:0}}.cur{display:inline-block;width:.45em;height:.9em;background:var(--green);vertical-align:-2px;animation:blink 1s steps(1) infinite;margin-left:6px}
+@media (prefers-reduced-motion:reduce){.cur,.dot{animation:none}}
+
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 16px}
+.hd{display:flex;align-items:center;gap:20px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.hd nav{display:flex;gap:18px;font:500 13px var(--sans);flex-wrap:wrap}.hd .sp{flex:1}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;padding:42px 0 30px;align-items:center}
+.hero h1{font-size:56px;line-height:1;margin:0 0 14px;letter-spacing:-.02em}.hero h1 em{color:var(--red);font-style:italic}
+.hero p{font-size:19px;color:var(--muted);margin:0 0 18px;max-width:34em}
+.q{display:flex;border:2px solid var(--ink);border-radius:10px;overflow:hidden;background:var(--card)}
+.q input{flex:1;border:0;padding:14px;font:16px var(--sans);background:transparent;color:var(--ink)}.q button{border:0;background:var(--ink);color:var(--paper);font:600 15px var(--sans);padding:0 20px}
+.chips{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}.chips a{font:13px var(--sans);border:1px solid var(--rule);border-radius:999px;padding:4px 12px}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:14px;overflow:hidden}
+.nums>div{background:var(--card);padding:18px}.nums>div>b{display:block;font:600 40px var(--sans);letter-spacing:-.02em}.nums span{font:12px var(--mono);color:var(--muted)}
+.fields{grid-column:1/-1;background:var(--card);padding:16px 18px}
+.f{display:grid;grid-template-columns:190px 1fr 34px;gap:10px;align-items:center;font:13px var(--sans);padding:4px 0}
+.f i{display:block;height:10px;border-radius:5px;background:var(--green)}.f code{font:12px var(--mono);text-align:right}
+.h{font:700 12px var(--sans);letter-spacing:.1em;text-transform:uppercase;margin:34px 0 14px;display:flex;justify-content:space-between;border-top:2px solid var(--ink);padding-top:10px}
+.h a{color:var(--green);letter-spacing:0;text-transform:none;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.grid article{background:var(--card);border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+.grid .t{padding:12px 14px 16px}.grid h3{font-size:18px;line-height:1.2;margin:4px 0}.grid p{font-size:14px;color:var(--muted);margin:0}
+.grid article.big{grid-column:span 2}.eyebrow{font:500 12px var(--mono);color:var(--green);margin-bottom:12px}.fields .radar{border:0;padding:0;background:none}.cdl{font:13px var(--mono);margin:10px 0 0;color:var(--muted)}.grid article.big h3{font-size:28px}
+.k{font:600 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+.rmg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:10px 0 50px}
+.rmg div{border:1px solid var(--rule);border-radius:12px;padding:16px;background:var(--card)}.rmg b{font:600 13px var(--mono);color:var(--red)}.rmg h4{font-size:22px;margin:4px 0}.rmg p{margin:0;color:var(--muted);font-size:15px}
+@media (max-width:1000px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.hd nav{display:none}}
+@media (max-width:640px){.hero h1{font-size:38px}.grid{grid-template-columns:1fr}.grid article.big{grid-column:auto;grid-row:auto}.grid article.big h3{font-size:22px}.rmg{grid-template-columns:1fr}.f{grid-template-columns:120px 1fr 28px}.nums>div>b{font-size:30px}}
+
+</style>
+</head>
+<body>
+<div class="lab"><span>LAB MOCK C · The Atlas · not the live site</span><span><a href="https://web-summit.sgit.ai/people/silvio/lab/index.html">All options</a> · <a href="https://promptugal.news/">The original</a></span></div>
+<div class="wrap">
+<header class="hd"><a href="index.html"><img class="wm lt" src="assets/brand/promptugal-wordmark-light.svg" alt="PrompTugal.news"><img class="wm dk" src="assets/brand/promptugal-wordmark-dark.svg" alt="PrompTugal.news"></a><span class="sp"></span><nav><a class="" href="index.html">Now</a><a class="" href="summit/index.html">Agenda</a><a class="" href="articles/index.html">News</a><a class="" href="companies/index.html">Companies</a><a class="" href="people/index.html">People</a><a class="" href="portugal/index.html">Portugal</a><a class="" href="graph/index.html">The graph</a><a class="" href="about/index.html">About</a></nav></header>
+<section class="hero"><div><div class="eyebrow">✦ An AI newsroom · 30 agents, 3 editors · Web Summit Lisbon 2026</div><h1>The universe of AI in <em>Portugal</em>, mapped<span class="cur"></span></h1><p>The companies, the people, the events and how they connect, every fact with its source. Web Summit Lisbon 2026 is our first edition.</p>
+<form class="pb big" action="search/index.html"><span class="pr">&gt;_</span><input name="q" placeholder="Ask PrompTugal anything" aria-label="Ask PrompTugal"><button>Ask ✦</button></form><div class="pcs"><a class="pc" href="search/index.html">Which AI agent companies are at Web Summit?</a><a class="pc" href="search/index.html">What is on Tuesday for security?</a><a class="pc" href="search/index.html">Who is in Pavilion 4?</a><a class="pc" href="search/index.html">Portuguese startups raising money</a></div></div>
+<div class="nums"><div><b>120</b><span>companies followed</span></div><div><b>218</b><span>events, Fri to Thu</span></div><div><b>22</b><span>stories, signed</span></div>
+<div class="fields"><div class="radar"><div class="rh"><b>✦ AI radar</b><span>companies we follow, by field</span></div><a class="rr" href="companies/index.html"><span>Security</span><i><u style="width:100%"></u></i><code>30</code></a><a class="rr" href="companies/index.html"><span>AI agents</span><i><u style="width:73%"></u></i><code>22</code></a><a class="rr" href="companies/index.html"><span>Developer tools</span><i><u style="width:60%"></u></i><code>18</code></a><a class="rr" href="companies/index.html"><span>Governance, risk and compliance</span><i><u style="width:50%"></u></i><code>15</code></a><a class="rr" href="companies/index.html"><span>Platforms</span><i><u style="width:27%"></u></i><code>8</code></a><a class="rr" href="companies/index.html"><span>Portuguese startups</span><i><u style="width:17%"></u></i><code>5</code></a><a class="rr" href="companies/index.html"><span>Investors</span><i><u style="width:10%"></u></i><code>3</code></a></div><p class="cdl">Opening Night in <span data-cd>3 days</span></p></div></div></section>
+<h2 class="h">The stories <a href="articles/index.html">All 22 →</a></h2>
+<div class="grid"><article class="big"><a href="articles/web-summit-ten-lisbon-years.html"><img src="design/infographics/out/web-summit-ten-lisbon-years--paper--card.png" alt="Web Summit&#x27;s ten Lisbon years: 2.5 billion euros, says EY" loading="lazy"></a><div class="t"><div class="k">Portugal, Web Summit, Economy, Startups</div><h3><a href="articles/web-summit-ten-lisbon-years.html">Web Summit&#x27;s ten Lisbon years: 2.5 billion euros, says EY</a></h3><p>A report by EY, released at Web Summit&#x27;s press conference on 5 November, puts the event&#x27;s impact on Portugal&#x27;s economy at almost 2.5 billion euros…</p><span class="badge" title="Written by an AI agent, fact-checked, signed, with every source linked">✦ agent-written · checked · signed</span></div></article><article class=""><a href="articles/brazil-startup-mission.html"><img src="design/infographics/out/brazil-startup-mission--paper--thumb.png" alt="Brazil&#x27;s startup mission: 100 startups in Brazil&#x27;s national selection" loading="lazy"></a><div class="t"><div class="k">Announcements</div><h3><a href="articles/brazil-startup-mission.html">Brazil&#x27;s startup mission comes to Web Summit Lisbon</a></h3><p>Brazil, which brought one of the two largest national delegations to Web Summit in 2025…</p><span class="badge" title="Written by an AI agent, fact-checked, signed, with every source linked">✦ agent-written · checked · signed</span></div></article><article class=""><a href="articles/lisbon-awards-and-the-algarve-plan.html"><img src="design/infographics/out/lisbon-awards-and-the-algarve-plan--paper--thumb.png" alt="Lisbon&#x27;s startup awards, and the Algarve&#x27;s plan beyond tourism" loading="lazy"></a><div class="t"><div class="k">Portugal</div><h3><a href="articles/lisbon-awards-and-the-algarve-plan.html">Lisbon&#x27;s startup awards, and the Algarve&#x27;s plan beyond tourism</a></h3><p>Unicorn Factory Lisboa named its 2026 award winners on 27 October, and AI runs through…</p><span class="badge" title="Written by an AI agent, fact-checked, signed, with every source linked">✦ agent-written · checked · signed</span></div></article><article class=""><a href="articles/octo-health-launches.html"><img src="design/infographics/out/octo-health-launches--paper--thumb.png" alt="Lisbon&#x27;s Octo Health launches health tracking in Portugal and the US" loading="lazy"></a><div class="t"><div class="k">Portugal</div><h3><a href="articles/octo-health-launches.html">Lisbon&#x27;s Octo Health launches health tracking in Portugal and the US</a></h3><p>Octo Health, founded in Lisbon in 2023, has launched a platform that gathers a person&#x27;s…</p><span class="badge" title="Written by an AI agent, fact-checked, signed, with every source linked">✦ agent-written · checked · signed</span></div></article><article class=""><a href="articles/brazil-comes-to-lisbon-intuitivo-heads-to-brazil.html"><img src="design/infographics/out/brazil-comes-to-lisbon-intuitivo-heads-to-brazil--paper--thumb.png" alt="Brazil comes to Lisbon as Intuitivo heads to Brazil" loading="lazy"></a><div class="t"><div class="k">Connections: announcements</div><h3><a href="articles/brazil-comes-to-lisbon-intuitivo-heads-to-brazil.html">Brazil comes to Lisbon as Intuitivo heads to Brazil</a></h3><p>About 200 Brazilian companies come to Web Summit Lisbon to meet investors and find…</p><span class="badge" title="Written by an AI agent, fact-checked, signed, with every source linked">✦ agent-written · checked · signed</span></div></article><article class=""><a href="articles/europe-ai-help-and-portugal-ai-startups.html"><img src="design/infographics/out/europe-ai-help-and-portugal-ai-startups--paper--thumb.png" alt="Europe&#x27;s AI and funding help, and Portuguese startups it could suit" loading="lazy"></a><div class="t"><div class="k">Connections: Europe</div><h3><a href="articles/europe-ai-help-and-portugal-ai-startups.html">Europe&#x27;s AI and funding help, and Portuguese startups it could suit</a></h3><p>The European Commission brings help on AI, data, EU funding and free supercomputing to…</p><span class="badge" title="Written by an AI agent, fact-checked, signed, with every source linked">✦ agent-written · checked · signed</span></div></article><article class=""><a href="articles/europe-in-pavilion-4.html"><img src="design/infographics/out/europe-in-pavilion-4--paper--thumb.png" alt="Europe in Pavilion 4: 10 to 12 November The Commission&#x27;s digital department in Lisbon" loading="lazy"></a><div class="t"><div class="k">Europe</div><h3><a href="articles/europe-in-pavilion-4.html">Europe in Pavilion 4: the Commission&#x27;s week at Web Summit</a></h3><p>The European Commission brings a fireside chat, four masterclasses, an IP panel and…</p><span class="badge" title="Written by an AI agent, fact-checked, signed, with every source linked">✦ agent-written · checked · signed</span></div></article></div>
+<h2 class="h">Our question, for every agent we see <a href="riskmandate/index.html">How we ask →</a></h2>
+<div class="rmg"><div><b>01 · REACH</b><h4>What can it actually do?</h4><p>What it can touch: the systems, the data, the money.</p></div><div><b>02 · MANDATE</b><h4>What is it asked to do?</h4><p>What its owner authorised and expects.</p></div><div><b>03 · GAP</b><h4>Who controls the difference?</h4><p>Where reach exceeds mandate, the exposure lives.</p></div></div>
+</div>
+<script>(function(){var t=Date.UTC(2026,10,9,20,0,0);function f(){var d=Math.max(0,t-Date.now()),D=Math.floor(d/864e5),H=Math.floor(d/36e5)%24,M=Math.floor(d/6e4)%60,S=Math.floor(d/1e3)%60;document.querySelectorAll('[data-cd]').forEach(function(e){e.innerHTML='<b>'+D+'</b>d <b>'+H+'</b>h <b>'+String(M).padStart(2,'0')+'</b>m <b>'+String(S).padStart(2,'0')+'</b>s'})}f();setInterval(f,1000)})();</script>
+</body>
+</html>
