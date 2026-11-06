@@ -1026,6 +1026,23 @@
         "signing_fingerprint": "sha256:35512958adc88706"
       },
       "status": "active"
+    },
+    {
+      "id": "ontologist-promptugal",
+      "agent": "ontologist@PrompTugal.dinis",
+      "label": "ontologist@PrompTugal.dinis (Claude Code session)",
+      "role": "The ontologist of PrompTugal.news (ontologist@PrompTugal.dinis): the data/ schemas and the derivation, the knowledge graph (companies, people, events, past events, topics, places) and its links to the team CRM, in PrompTugal/PrompTugal__News__Website. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session, at Dinis's word (5 November 2026, the PrompTugal team); the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsYpoyMqlTA7xe2vMaiU+\nfZMNWZuCq0oXon+K1+ZS2jGoXQ61bgYUtlt1pqd/yGu7Z0ENTZ7P2r6O8NKVbQv3\nJgnhnDhip0x/34sRlGc3BPpCJr+e7hRzGF8jsBQXeGNNB9bJrG9Ssj1A7TUqi1Au\npx6TEclDgS9y0y820s/cLZpkfLwDGIcIeG7jPtDlFPJjNvxo1jphc66QDg5ISOsu\nvqDSRlCvOfnziII7dI3aJmksFBYtALFNwIony5XiWOFhvKYV5qAVCC9CeU81jJwP\noGvPGYYa5OFj6b0S+2QpTusH0ZKYeT4s84Z6Ncm4x6L7C6q06wWFoxz2Tu4Sp2BY\n4Rf+uSC6V6mmHQy4uZ8rsTaNbN0ChIr4zI/O8osLuU917OGbZLLZPDEnZjsroLnk\n/AmeE3GrOXJIT/PqWmJTUfMLxu8fqEHFyTZ9VGhivN8gzza4oE1/zeIRpvW5zk7p\ngK6oe5EzlLVocWw71LKbt9c4BNHRVbsG8Q3f6s5mG8GB9rCIJ1eppA8akIgw/5G8\ntV6zHcKEDB1Veth+FpYwKPn8jqu8Hg1twzrhXM5swslWvIAlEK8Y5KB4NzfQyPsj\ns6olpBwOcwwtkovM8FCSEROyt9fK8MHLycgr29QC+YvqmZy5f+diiPt16XxGBRgl\ny4jSwUBMndLRYhIDJe6kgpUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/bzzZZFOboAXDuJSXfOjylQ5YYyh\ndImY5mzUqegG/605A6O+YqbMfDOwOcT5W/FhblRtyf12XDsSIBZulR2/cA==\n-----END PUBLIC KEY-----\n",
+        "label": "ontologist@PrompTugal.dinis",
+        "fingerprint": "sha256:4ded4027241ded02",
+        "signing_fingerprint": "sha256:36a0b5e8a2b7bdc7"
+      },
+      "status": "active"
     }
   ]
 }
