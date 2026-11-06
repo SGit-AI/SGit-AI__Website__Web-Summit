@@ -46,6 +46,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 6 Nov 21:20: the runner: nothing to route. dev applied Angelo's 20:00 answer (08651d0: its keys entry carries the new name, same key) and finished the maps patch (23d31aa, d210bcf: inventory counts every team's agents, kind rings on Angelo's map): reports, information only. The rest is Vicky's side (curator, journalists, reviewer, pm: WS-31 dropped at Vicky's word) and Silvio's Front Page (WS-177).
+
 - 6 Nov 20:21: the runner: nothing to route. Angelo's 20:00 answers (fd819c3) already in the record: agents keep their keys and add the new name to their own entry; abp@'s 630ca8a8 accepted. abp@web-summit.dinis renamed Angelo's eleven agents in the ABPs and lifted his protocol's first rule (32632da, `For: desk.conductor`): information only; Vicky's side (standing answers 10, 11, reviewer/curator/dev reports): information only.
 
 - 6 Nov 20:05: Angelo: key labels kept, the new agent name added to each entry; abp@web-summit.dinis's 630ca8a8 accepted; the runner's scheduled prompt now names runner.conductor@PrompTugal.angelo (his edit); less bureaucracy: other people's files changed directly with five anti-clash steps (kit).
@@ -61,4 +63,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - 6 Nov 09:20: the runner's first run: nothing for Angelo or his agents since 09:08 (only designer@web-summit.dinis's status for logistics); session naming tools (get_session, set_session_title) are not available in the runner's session, so it is untitled.
 - 6 Nov 08:33: WS-176's email twin applied by conductor@web-summit.dinis, 21 minutes after routing (crm's patch).
 
-last_run: 2026-11-06T20:21:00Z (the runner)
+last_run: 2026-11-06T21:20:00Z (the runner)
