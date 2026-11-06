@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="en-GB" data-pal="atlantico">
 <head>
 <meta charset="utf-8">
 <!-- LAB MOCK C, not the original: The Atlas. Made by design@web-summit.silvio on 6 November 2026 from the lab copy's real content (people/silvio/lab/mocks/make.py). Links go to the live site. -->
@@ -9,30 +9,35 @@
 <title>Mock C: The Atlas · PrompTugal.news lab</title>
 <link rel="stylesheet" href="assets/fonts.css">
 <style>
-:root{--paper:#f6f3ec;--ink:#121317;--red:#c52830;--green:#006600;--rule:#d8d4cb;--muted:#666860;--card:#fffdf8;--serif:Newsreader,Georgia,serif;--sans:'IBM Plex Sans',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
-@media (prefers-color-scheme:dark){:root{--paper:#121317;--ink:#f6f3ec;--red:#f07278;--green:#6dbb7e;--rule:#44453f;--muted:#b4b6ad;--card:#1b1c21}}
+:root{--serif:Newsreader,Georgia,serif;--sans:'IBM Plex Sans',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace;--shadow:0 1px 2px rgba(20,30,50,.05),0 6px 20px rgba(20,30,50,.06)}
+[data-pal=atlantico]{--paper:#f7f9fb;--ink:#1e2a38;--red:#d0704f;--green:#2f6f9f;--rule:#e3e8ee;--muted:#5f6b7a;--card:#ffffff;--solid:#2f6f9f;--on:#ffffff}
+[data-pal=salvia]{--paper:#f8f8f4;--ink:#23302a;--red:#c0704f;--green:#4f7d63;--rule:#e3e6dc;--muted:#66706a;--card:#ffffff;--solid:#4f7d63;--on:#ffffff}
+[data-pal=azulejo]{--paper:#fbfaf7;--ink:#1c2440;--red:#c98a2b;--green:#3557a8;--rule:#e7e4dc;--muted:#626a80;--card:#ffffff;--solid:#3557a8;--on:#ffffff}
+[data-pal=classic]{--paper:#f6f3ec;--ink:#121317;--red:#c52830;--green:#006600;--rule:#d8d4cb;--muted:#666860;--card:#fffdf8;--solid:#121317;--on:#f6f3ec}
+@media (prefers-color-scheme:dark){[data-pal=atlantico]{--paper:#11161c;--ink:#e8edf2;--red:#e8977b;--green:#7fb3dc;--rule:#26303b;--muted:#9aa7b5;--card:#171e26;--solid:#7fb3dc;--on:#0e141a}[data-pal=salvia]{--paper:#121512;--ink:#e9ece6;--red:#e09a7c;--green:#8fbf9f;--rule:#2a302b;--muted:#a2aca5;--card:#181d19;--solid:#8fbf9f;--on:#101511}[data-pal=azulejo]{--paper:#10131c;--ink:#e9ebf3;--red:#e6b45e;--green:#8aa6e8;--rule:#262b3a;--muted:#a0a7bb;--card:#161a26;--solid:#8aa6e8;--on:#0f1320}[data-pal=classic]{--paper:#121317;--ink:#f6f3ec;--red:#f07278;--green:#6dbb7e;--rule:#44453f;--muted:#b4b6ad;--card:#1b1c21;--solid:#f6f3ec;--on:#121317}}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.45}
 a{color:inherit;text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}
 img{max-width:100%;height:auto;display:block}
-.lab{font:500 12px/1.4 var(--mono);background:var(--ink);color:var(--paper);padding:8px 16px;display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between}
+.lab{font:500 12px/1.4 var(--mono);background:var(--card);color:var(--muted);border-bottom:1px solid var(--rule);padding:8px 16px;display:flex;gap:8px 14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+.pals button{font:500 12px var(--sans);border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:999px;padding:3px 10px;margin-left:4px;cursor:pointer}.pals button[aria-pressed=true]{background:var(--solid);color:var(--on);border-color:var(--solid)}
 .lab a{text-decoration:underline}
 .wm{height:28px;width:auto}.wm.dk{display:none}
 @media (prefers-color-scheme:dark){.wm.lt{display:none}.wm.dk{display:inline}}
 .mono{font-family:var(--mono)}.sans{font-family:var(--sans)}
 
-.pb{display:flex;align-items:center;border:2px solid var(--ink);border-radius:12px;background:var(--card);overflow:hidden;box-shadow:4px 4px 0 var(--ink)}
+.pb{display:flex;align-items:center;border:1px solid var(--rule);border-radius:14px;background:var(--card);overflow:hidden;box-shadow:var(--shadow)}
 .pb .pr{font:600 15px var(--mono);color:var(--green);padding:0 4px 0 14px}
 .pb input{flex:1;min-width:0;border:0;padding:13px 10px;font:16px var(--sans);background:transparent;color:var(--ink);outline:0}
 .pb input::placeholder{color:var(--muted)}
-.pb button{border:0;background:var(--ink);color:var(--paper);font:600 15px var(--sans);padding:0 20px;align-self:stretch;cursor:pointer}
+.pb button{border:0;background:var(--solid);color:var(--on);border-radius:10px;margin:5px;font:600 15px var(--sans);padding:0 20px;align-self:stretch;cursor:pointer}
 .pb.big input{font-size:18px;padding:17px 10px}
-.pcs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 0}.pc{font:13px var(--sans);border:1px dashed var(--muted);border-radius:999px;padding:4px 12px;color:var(--muted)}.pc:before{content:"↳ "}
+.pcs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 0}.pc{font:13px var(--sans);border:1px solid var(--rule);background:var(--card);border-radius:999px;padding:4px 12px;color:var(--muted)}.pc:before{content:"↳ "}
 @media (max-width:640px){.pcs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;justify-content:flex-start!important}.pc{flex:0 0 auto}.pb input{font-size:15px}}
 .radar{border:1px solid var(--rule);border-radius:12px;background:var(--card);padding:12px 14px}
 .radar .rh{display:flex;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:6px;font:12px var(--sans);color:var(--muted)}.radar .rh b{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--green);white-space:nowrap}
 .rr{display:grid;grid-template-columns:minmax(0,1.3fr) 1fr 26px;gap:8px;align-items:center;font:13px var(--sans);padding:4px 0}.rr span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.rr i{display:block;height:8px;border-radius:4px;background:var(--rule)}.rr u{display:block;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--green),var(--red))}.rr code{font:12px var(--mono);text-align:right}
+.rr i{display:block;height:8px;border-radius:4px;background:var(--rule)}.rr u{display:block;height:8px;border-radius:4px;background:var(--green);opacity:.85}.rr code{font:12px var(--mono);text-align:right}
 .badge{display:inline-block;font:500 11px var(--mono);color:var(--green);border:1px solid currentColor;border-radius:999px;padding:1px 8px;margin-top:6px;white-space:nowrap}
 [data-cd] b{font-family:var(--sans);font-size:1.15em}
 @keyframes blink{50%{opacity:0}}.cur{display:inline-block;width:.45em;height:.9em;background:var(--green);vertical-align:-2px;animation:blink 1s steps(1) infinite;margin-left:6px}
@@ -43,20 +48,20 @@ img{max-width:100%;height:auto;display:block}
 .hd{display:flex;align-items:center;gap:20px;padding:14px 0;border-bottom:1px solid var(--rule)}
 .hd nav{display:flex;gap:18px;font:500 13px var(--sans);flex-wrap:wrap}.hd .sp{flex:1}
 .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;padding:42px 0 30px;align-items:center}
-.hero h1{font-size:56px;line-height:1;margin:0 0 14px;letter-spacing:-.02em}.hero h1 em{color:var(--red);font-style:italic}
+.hero h1{font-size:56px;line-height:1.02;margin:0 0 14px;letter-spacing:-.02em;font-weight:500}.hero h1 em{color:var(--green);font-style:italic}
 .hero p{font-size:19px;color:var(--muted);margin:0 0 18px;max-width:34em}
 .q{display:flex;border:2px solid var(--ink);border-radius:10px;overflow:hidden;background:var(--card)}
-.q input{flex:1;border:0;padding:14px;font:16px var(--sans);background:transparent;color:var(--ink)}.q button{border:0;background:var(--ink);color:var(--paper);font:600 15px var(--sans);padding:0 20px}
+.q input{flex:1;border:0;padding:14px;font:16px var(--sans);background:transparent;color:var(--ink)}.q button{border:0;background:var(--solid);color:var(--on);font:600 15px var(--sans);padding:0 20px}
 .chips{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}.chips a{font:13px var(--sans);border:1px solid var(--rule);border-radius:999px;padding:4px 12px}
 .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:14px;overflow:hidden}
 .nums>div{background:var(--card);padding:18px}.nums>div>b{display:block;font:600 40px var(--sans);letter-spacing:-.02em}.nums span{font:12px var(--mono);color:var(--muted)}
 .fields{grid-column:1/-1;background:var(--card);padding:16px 18px}
 .f{display:grid;grid-template-columns:190px 1fr 34px;gap:10px;align-items:center;font:13px var(--sans);padding:4px 0}
 .f i{display:block;height:10px;border-radius:5px;background:var(--green)}.f code{font:12px var(--mono);text-align:right}
-.h{font:700 12px var(--sans);letter-spacing:.1em;text-transform:uppercase;margin:34px 0 14px;display:flex;justify-content:space-between;border-top:2px solid var(--ink);padding-top:10px}
+.h{font:700 12px var(--sans);letter-spacing:.1em;text-transform:uppercase;margin:34px 0 14px;display:flex;justify-content:space-between;border-top:1px solid var(--rule);padding-top:10px}
 .h a{color:var(--green);letter-spacing:0;text-transform:none;font-weight:500}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.grid article{background:var(--card);border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+.grid article{background:var(--card);border:1px solid var(--rule);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
 .grid .t{padding:12px 14px 16px}.grid h3{font-size:18px;line-height:1.2;margin:4px 0}.grid p{font-size:14px;color:var(--muted);margin:0}
 .grid article.big{grid-column:span 2}.eyebrow{font:500 12px var(--mono);color:var(--green);margin-bottom:12px}.fields .radar{border:0;padding:0;background:none}.cdl{font:13px var(--mono);margin:10px 0 0;color:var(--muted)}.grid article.big h3{font-size:28px}
 .k{font:600 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
@@ -68,7 +73,7 @@ img{max-width:100%;height:auto;display:block}
 </style>
 </head>
 <body>
-<div class="lab"><span>LAB MOCK C · The Atlas · not the live site</span><span><a href="https://web-summit.sgit.ai/people/silvio/lab/index.html">All options</a> · <a href="https://promptugal.news/">The original</a></span></div>
+<div class="lab"><span>LAB MOCK C · The Atlas · not the live site</span><span class="pals">Colours: <button data-p="atlantico">Atlântico</button><button data-p="salvia">Sálvia</button><button data-p="azulejo">Azulejo</button><button data-p="classic">Classic</button></span><span><a href="https://web-summit.sgit.ai/people/silvio/lab/index.html">All options</a> · <a href="https://promptugal.news/">The original</a></span></div>
 <div class="wrap">
 <header class="hd"><a href="index.html"><img class="wm lt" src="assets/brand/promptugal-wordmark-light.svg" alt="PrompTugal.news"><img class="wm dk" src="assets/brand/promptugal-wordmark-dark.svg" alt="PrompTugal.news"></a><span class="sp"></span><nav><a class="" href="index.html">Now</a><a class="" href="summit/index.html">Agenda</a><a class="" href="articles/index.html">News</a><a class="" href="companies/index.html">Companies</a><a class="" href="people/index.html">People</a><a class="" href="portugal/index.html">Portugal</a><a class="" href="graph/index.html">The graph</a><a class="" href="about/index.html">About</a></nav></header>
 <section class="hero"><div><div class="eyebrow">✦ An AI newsroom · 30 agents, 3 editors · Web Summit Lisbon 2026</div><h1>The universe of AI in <em>Portugal</em>, mapped<span class="cur"></span></h1><p>The companies, the people, the events and how they connect, every fact with its source. Web Summit Lisbon 2026 is our first edition.</p>
@@ -81,5 +86,6 @@ img{max-width:100%;height:auto;display:block}
 <div class="rmg"><div><b>01 · REACH</b><h4>What can it actually do?</h4><p>What it can touch: the systems, the data, the money.</p></div><div><b>02 · MANDATE</b><h4>What is it asked to do?</h4><p>What its owner authorised and expects.</p></div><div><b>03 · GAP</b><h4>Who controls the difference?</h4><p>Where reach exceeds mandate, the exposure lives.</p></div></div>
 </div>
 <script>(function(){var t=Date.UTC(2026,10,9,20,0,0);function f(){var d=Math.max(0,t-Date.now()),D=Math.floor(d/864e5),H=Math.floor(d/36e5)%24,M=Math.floor(d/6e4)%60,S=Math.floor(d/1e3)%60;document.querySelectorAll('[data-cd]').forEach(function(e){e.innerHTML='<b>'+D+'</b>d <b>'+H+'</b>h <b>'+String(M).padStart(2,'0')+'</b>m <b>'+String(S).padStart(2,'0')+'</b>s'})}f();setInterval(f,1000)})();</script>
+<script>(function(){var h=document.documentElement,k='pt-lab-palette';function set(p){h.dataset.pal=p;document.querySelectorAll('.pals button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.p===p)});try{localStorage.setItem(k,p)}catch(e){}}var s=null;try{s=localStorage.getItem(k)}catch(e){}set(s||'atlantico');document.querySelectorAll('.pals button').forEach(function(b){b.onclick=function(){set(b.dataset.p)}})})();</script>
 </body>
 </html>

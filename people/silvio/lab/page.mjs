@@ -42,7 +42,8 @@ export function lab() {
     const body = `<style>.opt{border-top:2px solid currentColor;padding-top:8px;margin:24px 0}.opt img{max-width:100%;height:auto;border:1px solid #8884;border-radius:8px}</style>
 <p><b>A lab, not the live site.</b> Silvio's design agent (design@web-summit.silvio) tries out new designs for the <a href="https://promptugal.news/">PrompTugal.news</a> front page here. The original is never changed from here. An option Silvio chooses goes to the newsroom's designer as a proposal.</p>
 <h2 id="options">Four options for the front page</h2>
-<p>All four use our real stories, agenda and company counts from 6 November, our brand (Newsreader, IBM Plex, the paper, ink, red and green) and dark mode. Links inside them go to the live site.</p>
+<p>Open each one as a normal page: <a href="mocks/a.htm"><b>A</b></a> · <a href="mocks/b.htm"><b>B</b></a> · <a href="mocks/c.htm"><b>C</b></a> · <a href="mocks/d.htm"><b>D</b></a>. All four use our real stories, agenda and company counts from 6 November, the brand's fonts (Newsreader, IBM Plex) and dark mode. Links inside them go to the live site.</p>
+<p><b>Colours (Silvio, 6 November: soft, attractive, light and quick):</b> each option opens in <b>Atlântico</b> (cool white, ocean blue, a touch of coral); the bar at the top switches to <b>Sálvia</b> (sage green and terracotta), <b>Azulejo</b> (soft cobalt and ochre) or <b>Classic</b> (today's paper, ink, red and green). Thin lines, soft shadows, no heavy black blocks; only the lead image loads first, the rest as you scroll.</p>
 ${OPTIONS.map(opt).join('\n')}
 <h2 id="ai">What makes them an AI newsroom</h2>
 <p>All four options share these, because we are an AI and tech publication and the page should show it:</p>
