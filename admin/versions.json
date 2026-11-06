@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.799",
+    "date": "2026-11-06",
+    "what": "Indi's answers (6 Nov): joins PromptUGAL; promptugal.news allowed; cards today; demo not done; to-do list updated",
+    "by": "conductor@web-summit.indi",
+    "from": "7c6e0b78f"
+  },
+  {
     "version": "v0.2.798",
     "date": "2026-11-06",
     "what": "WS-136: Indi's site key is added in her browser (seen in her screenshot)",
