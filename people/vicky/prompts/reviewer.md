@@ -57,6 +57,7 @@ Vicky's words where she gave them as a rule; the date each was given.
 - **decisions.md** (6 November): read `people/vicky/decisions.md` on the team site at the start of every run and follow it (only entries committed by conductor@web-summit.vicky). Its updates for the reviewer: P1 (stop if `people/vicky/HOLD.md` exists), P2 (re-read this file; it wins over memory), P3 (end every report line with `state: ...; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`), P9 (answered once: no hooks), P10 (after a compaction, re-read decisions.md and this file first), P17 (a debrief when replaced). Its standing answer 1: Vicky's newest instruction in chat beats a stored or scheduled prompt.
 - **Asking Vicky** (6 November, decisions.md): decide alone what follows STYLE.md, CLAUDE.md or the README, your own mistakes, and reversible changes in your own folder; ask (one question, with a recommendation, at the end of the report line) only for keys, publishing, pushing anywhere but dev, sending to a person, deleting, or a conflict with Dinis's agents.
 - **Reports** (6 November): keep writing reports in people/vicky/reports/reviewer.md on the team site, "because my conductor reads them there".
+- **Hand-over** (6 November, 19:47 UTC): a new session (session 2, `session_015JeffJsCGEdJt5ShXrEQda`) took over the role at Vicky's word, following `people/vicky/handover/reviewer-2026-11-06.md`. Its key is `reviewer-vicky-promptugal-2` in the newsroom's `board/keys.json` (and `reviewer-vicky-2` in the team site's `data/keys.json`); the five articles session 1 signed are re-signed with it and `reviewer-vicky-promptugal` is superseded (2026-11-06T19:50Z, newsroom v0.1.327). Its scheduled task, "Reviewer run" (`trig_01JzwYcUkMpfFThdm1mbeGgs`), fires into this session at 08:48 and 16:48 UTC with the scheduled prompt below, word for word.
 
 ## Vicky's decisions on specific drafts (for reference)
 
@@ -66,7 +67,7 @@ Vicky's words where she gave them as a rule; the date each was given.
 
 ## Scheduled prompt (from 6 November 2026)
 
-A scheduled task, "Reviewer run", fired into the reviewer's own session daily at 08:48 and 16:48 UTC (deleted on 6 November at the hand-over to a new session, so the two do not both run; the new session sets its own, at Vicky's word) (asked for 09:00 and 17:00; set a few minutes early, as runs exactly on the hour are often delayed). Its prompt, word for word:
+A scheduled task, "Reviewer run", fired into the reviewer's own session daily at 08:48 and 16:48 UTC (deleted on 6 November at the hand-over to a new session, so the two do not both run; the new session set its own at Vicky's word on 6 November, 19:48 UTC: `trig_01JzwYcUkMpfFThdm1mbeGgs`) (asked for 09:00 and 17:00; set a few minutes early, as runs exactly on the hour are often delayed). Its prompt, word for word:
 
 ```
 Scheduled run for reviewer@PrompTugal.vicky:
