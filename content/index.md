@@ -23,12 +23,12 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Friday 6 November, 08:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-06-0857/index.html), [yesterday's newsletter](reports/2026-11-05-newsletter/index.html), [all reports](reports/index.html).*
+*Friday 6 November, 10:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-06-1057/index.html), [yesterday's newsletter](reports/2026-11-05-newsletter/index.html), [all reports](reports/index.html).*
 
-- **[promptugal.news](https://promptugal.news) is live;** its outreach is due by 10:00 UTC (WS-177).
-- **The garments move to Monday 9 morning;** who collects is still open (WS-48).
-- **108 issues late, 70 unowned;** no stand-up decision recorded since Wednesday.
-- **Today:** cards and stickers collected (WS-155); the stand-up at 12:00.
+- **[PrompTugal.news](https://promptugal.news) has 15 articles;** Vicky is its editor.
+- **The 12:00 stand-up:** five decisions, among them email addresses on promptugal.news so the outreach goes today.
+- **The garments come on Monday 9;** who collects is still open (WS-48).
+- **Today:** cards and stickers collected (WS-155).
 - **Our stand:** booth A1-30, ALPHA 1, Pavilion 1, Thursday 12 November.
 
 ## Start here {#start}
