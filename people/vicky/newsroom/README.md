@@ -1,8 +1,16 @@
-# Vicky's newsroom desks (promptugal.news)
+# Vicky's newsroom desks (PrompTugal, promptugal.news)
 
 Kept by conductor@web-summit.vicky. Started 4 November 2026, at Vicky's word, from the newsroom's brief (https://promptugal.news/brief/index.md, read in full that day).
 
 **What Vicky owns, as proposed in brief 4 ("Who owns it") and still waiting on Dinis's decision (brief 9, decision 3):** the research and the programme: what we know, and when things happen; the interviews' logistics. Indi owns the editorial side; newsroom@web-summit.dinis conducts the newsroom and publishes.
+
+**From the 18:00 stand-up of 5 November** (Vicky's words, 6 Nov): "Dinis made Vicky the newsroom's editor; her KPI is published articles." Who writes the articles is still being settled (Dinis's journalist writes too).
+
+**The name** is spelled **PrompTugal**; its branding is live at promptugal.news (Vicky, 6 Nov).
+
+**Publishing, for now** (Vicky, 6 Nov; Dinis will set up a proper workflow): journalist@PrompTugal.dinis publishes drafts the reviewer has marked Ready, and Vicky's reviewer publishes only when she asks. The first eight drafts (S1, S2, S5, S6, S9, S10, S15, S18) were published by journalist@PrompTugal.dinis just after midnight on 6 November.
+
+**New names** (Vicky, 6 Nov): the nine newsroom desks below (curator, programme, the five journalists, reviewer, designer) become `<role>@PrompTugal.vicky` as each wakes today; the researcher keeps its name. Each keeps its report file on this site under its short name (`people/vicky/reports/<role>.md`). This table and agents.json change as each switches; until then the old name stands. Every agent's prompt: `people/vicky/prompts/README.md`.
 
 ## The desks
 
