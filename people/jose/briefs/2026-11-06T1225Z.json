@@ -1,0 +1,111 @@
+{
+  "number": 12,
+  "date": "6 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "Your one-door test is in; the helper needs Gmail; brief 11's asks still wait",
+  "when": "6 November 2026, 12:25 UTC (scheduled wake; since brief 11, 07:45 UTC)",
+  "by": "conductor@web-summit.jose",
+  "headline": "Dev's Report on your one-door test came in at 09:35: your 37 open issues, 6 of them picked by you or your agents. It took 16 hours, almost all of it waiting for dev's next scheduled run. The helper could not make your Gmail drafts: its Gmail connector needs signing in again. Brief 11's three asks still wait for your word.",
+  "stats": [
+    {
+      "n": "16 h",
+      "label": "from your test task to dev's Report, 15 of them waiting for its next run"
+    },
+    {
+      "n": "37",
+      "label": "open issues for you, 6 picked by you or your agents"
+    },
+    {
+      "n": "5 of 7",
+      "label": "agents reported through the one door"
+    },
+    {
+      "n": "154",
+      "label": "page views waiting, counted not drained (12:07)"
+    }
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "📧 Decide: your helper's Gmail drafts (Silvio and Nimay)",
+      "detail": "The helper tried at 08:52: both calls to its Gmail connector were refused because the connector needs signing in again; it made nothing, as its task says. Both notes are updated and ready (Silvio is now at 8 of 9). Either reconnect Gmail at https://claude.ai/customize/connectors (connectors are read when a session starts, so the helper's session may need a fresh start to see it), or let me try making the two drafts from my session, with the 'To' field empty, as your task says: my session lists a Gmail connector, untested; if it works, it would be the one exception, at your word, to my rule of touching nothing else in your mail.",
+      "options": [
+        "reconnect Gmail; the helper retries at 14:50",
+        "let my conductor try the two drafts now"
+      ],
+      "recommend": "Let me try them now: two drafts, 'To' empty, no address anywhere in the repository; you fill in the addresses and send. If my Gmail also refuses, reconnect it, and the helper's session may need a fresh start."
+    },
+    {
+      "id": "2",
+      "ask": "✅ Still waiting from brief 11: one word for my drain task's stored prompt (A-06)",
+      "detail": "Its stored prompt still says to drain and push with your token; I only count at run time. Say 'change your drain task', or paste the count-only text from schedules.md#paste.",
+      "options": [
+        "change your drain task",
+        "I paste it myself"
+      ],
+      "recommend": "Change your drain task."
+    },
+    {
+      "id": "3",
+      "ask": "⏱️ Decide: the faster schedules (schedules.md), with what the test showed",
+      "detail": "Your test task waited 15 hours for dev's next run (it reached dev at 18:36; dev runs at 09:30 and 15:30). With dev every two hours it would have been picked up within two. The proposal: about 113M tokens a day now, 172M to 207M proposed (1.5 to 1.8 times). The paste texts are ready (schedules.md#paste).",
+      "options": [
+        "yes, as proposed",
+        "a cheaper variant",
+        "not now"
+      ],
+      "recommend": "Yes as proposed for one day, then keep or cut on the accountant's numbers."
+    }
+  ],
+  "you_asked": [
+    {
+      "at": "5 Nov, about 17:15",
+      "said": "One-door test: give dev a small task through a task file: \"list the open WS issues where Jose is the owner, one line each, in your Report\". Tell me in my brief when dev's Report is in.",
+      "done": "In: dev's Report at 09:35, 37 issues, 6 picked by you or your agents, the definition it used and one line each; the task reached dev at 18:36 with brief 10's push and waited for its 09:30 run",
+      "where": "people/jose/tasks/2026-11-05-dev-jose-open-issues.md (0a57dfb1)",
+      "status": "done"
+    }
+  ],
+  "sections": [
+    {
+      "title": "The one door, since this morning",
+      "items": [
+        "dev (09:35): your one-door test done, and its WS-41 count (still 2 check-ins; your first pulse from an interview is expected this evening).",
+        "helper (08:53): read the one door; blocked on Gmail (ask 1); Silvio's note updated, now 8 of 9.",
+        "vault (11:45): all three tasks done: the WS-120 test message sent into Angelo's lane, signed and sealed, nothing private; the WS-74 count file live; Dinis's token rule followed, so it drains nothing with your token.",
+        "5 of 7 agents have now reported through the one door (dev, automation, the dashboard, vault, the helper); the designer and the sales coach report when you open them."
+      ]
+    },
+    {
+      "title": "Still waiting from brief 11",
+      "items": [
+        "The accountant's advice: five agents to Sonnet, one at a time, the dashboard first.",
+        "A pre-read by dev of Angelo's five drafts: dev's next run is 15:30.",
+        "WS-163, your photo on the site: keep or remove, due today.",
+        "Your three stand-up items: still open; the 12:00 stand-up's record is not written yet."
+      ]
+    },
+    {
+      "title": "Page views",
+      "items": [
+        "Counted only, under Dinis's token rule: 154 waiting at 12:07 (115 at 07:07), in one lane that holds 1,000. Still no answer from Dinis on the agents' tokens."
+      ]
+    },
+    {
+      "title": "Your watcher (12:15)",
+      "items": [
+        "A-06 in its fifth run: the hourly drain's stored prompt still says to push (ask 2). The helper's stored prompt was updated at 08:52. High, sixth run: the email-address lines on a page by Dinis's conductor, with security."
+      ]
+    }
+  ],
+  "next": [
+    "17:20: the evening brief with the 'today' list for your interview, and your words from today's stand-ups if you send them."
+  ],
+  "sources": [
+    "people/jose/tasks/*.md (Reports: helper 08:53, dev 09:35, vault 11:45)",
+    "git log origin/dev since 07:45",
+    "people/jose/schedules.md",
+    "the connector guidance for reconnecting a connector",
+    "people/jose/watcher/latest.md (12:15, 5680f8d9)"
+  ]
+}
