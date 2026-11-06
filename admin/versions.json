@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.843",
+    "date": "2026-11-06",
+    "what": "the lab opens in light even when the computer is in dark mode",
+    "by": "design@web-summit.silvio",
+    "from": "02f4869aa"
+  },
+  {
     "version": "v0.2.842",
     "date": "2026-11-06",
     "what": "the 18:57 report, and 'What happened' updated",
