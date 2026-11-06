@@ -1,6 +1,6 @@
 {
  "about": "Every scheduled task of Vicky's agents, one row per task (UTC). Kept by conductor@web-summit.vicky (scout's P4, accepted by Vicky on 6 Nov 2026), checked against the account's scheduled tasks in each 08:30 brief: listed only, never changed by the conductor. Changes to tasks are Vicky's.",
- "checked": "2026-11-06T11:55Z",
+ "checked": "2026-11-06T21:00Z",
  "tasks": [
   {
    "agent": "conductor@web-summit.vicky",
@@ -24,19 +24,19 @@
    "agent": "dashboard@web-summit.vicky",
    "task": "morning run",
    "cron_utc": "50 7 * * *",
-   "task_id": "trig_01HHM9j3JruLHXcuvoXEc3dK",
+   "task_id": "trig_01FSSzDCWMqwD5jwd8xGF6JT",
    "state": "enabled",
-   "since": "4 Nov 2026",
-   "at_whose_word": "Vicky"
+   "since": "6 Nov 2026 (new session)",
+   "at_whose_word": "Vicky (hand-over, 6 Nov); the old session's task deleted"
   },
   {
    "agent": "dashboard@web-summit.vicky",
    "task": "evening run",
    "cron_utc": "45 17 * * *",
-   "task_id": "trig_01V1YhEQE8qJBBmnewmMot42",
+   "task_id": "trig_012yhqHVsUHZ3iBiorQfbYyD",
    "state": "enabled",
-   "since": "2 Nov 2026",
-   "at_whose_word": "Vicky"
+   "since": "6 Nov 2026 (new session)",
+   "at_whose_word": "Vicky (hand-over, 6 Nov); the old session's task deleted"
   },
   {
    "agent": "pm@web-summit.vicky",
@@ -69,10 +69,10 @@
    "agent": "curator@PrompTugal.vicky",
    "task": "curator run",
    "cron_utc": "45 7,11,15,19 * * *",
-   "task_id": "trig_01Y3m4gYrZsUwoJo8vu6L6g6",
+   "task_id": "trig_01QqwpxE9hhp5rwuxSS9D9ZF",
    "state": "enabled",
-   "since": "4 Nov 2026",
-   "at_whose_word": "Vicky"
+   "since": "6 Nov 2026 (new session)",
+   "at_whose_word": "Vicky (hand-over, 6 Nov); the old session's task deleted"
   },
   {
    "agent": "programme@PrompTugal.vicky",
@@ -95,7 +95,7 @@
   {
    "agent": "journalist-portugal@PrompTugal.vicky",
    "task": "scheduled run",
-   "cron_utc": "0 8,16 * * *",
+   "cron_utc": "6 8,16 * * *",
    "task_id": "trig_01R4SDnvm1qg6LrQVcmCRPaH",
    "state": "enabled",
    "since": "6 Nov 2026",
@@ -104,7 +104,7 @@
   {
    "agent": "journalist-europe@PrompTugal.vicky",
    "task": "twice-daily run",
-   "cron_utc": "0 8,16 * * *",
+   "cron_utc": "12 8,16 * * *",
    "task_id": "trig_01KRJSLJ46fntBKdqukvLoKx",
    "state": "enabled",
    "since": "6 Nov 2026",
@@ -113,7 +113,7 @@
   {
    "agent": "journalist-ai@PrompTugal.vicky",
    "task": "scheduled run",
-   "cron_utc": "0 8,16 * * *",
+   "cron_utc": "18 8,16 * * *",
    "task_id": "trig_014T4B2EkggPSUDazhhJZ1Gf",
    "state": "enabled",
    "since": "6 Nov 2026",
@@ -122,7 +122,7 @@
   {
    "agent": "journalist-connections@PrompTugal.vicky",
    "task": "scheduled run",
-   "cron_utc": "0 8,16 * * *",
+   "cron_utc": "24 8,16 * * *",
    "task_id": "trig_01RqSqjPAC6WuwNmTbjKFzwa",
    "state": "enabled",
    "since": "6 Nov 2026",
@@ -132,10 +132,10 @@
    "agent": "reviewer@PrompTugal.vicky",
    "task": "reviewer run",
    "cron_utc": "48 8,16 * * *",
-   "task_id": "trig_018Qy1oAgZfBFrPnvDN9zSbx",
+   "task_id": "trig_01JzwYcUkMpfFThdm1mbeGgs",
    "state": "enabled",
-   "since": "6 Nov 2026",
-   "at_whose_word": "Vicky (6 Nov; she said 09:00 and 17:00, the task fires at 08:48 and 16:48)"
+   "since": "6 Nov 2026 (new session)",
+   "at_whose_word": "Vicky (hand-over, 6 Nov); the old session's task deleted"
   },
   {
    "agent": "checker@PrompTugal.vicky",
@@ -150,10 +150,10 @@
    "agent": "scout@web-summit.vicky",
    "task": "daily run",
    "cron_utc": "0 22 * * *",
-   "task_id": null,
-   "state": "enabled (at Vicky's word)",
+   "task_id": "trig_01H1P9CwiciQNftmoE4AghcQ",
+   "state": "enabled",
    "since": "6 Nov 2026",
-   "at_whose_word": "Vicky (6 Nov); not yet on the account at 12:10 UTC, so no task id: the 08:30 brief checks"
+   "at_whose_word": "Vicky (6 Nov)"
   }
  ],
  "no_task": [

@@ -10,7 +10,7 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 | dashboard@web-summit.vicky | Vicky's dashboard and the stories page | [dashboard.md](dashboard.md) (start prompt in the [kit](../kit/README.md#dashboardweb-summitvicky)) |
 | vault@web-summit.vicky | Vicky's vaults (on demand) | [vault.md](vault.md) |
 | dev@web-summit.vicky | replaced by dev@PrompTugal.vicky (6 Nov) | [kit: dev](../kit/README.md#devweb-summitvicky) |
-| dev@PrompTugal.vicky | newsroom site changes, on demand | not saved yet |
+| dev@PrompTugal.vicky | newsroom site changes, on demand | [dev.md](dev.md) |
 | logistics@web-summit.vicky | printing, merch and deliveries (WS-48) | [logistics.md](logistics.md) |
 | pm@web-summit.vicky | board health, alignment, WS-31, all writing | [pm.md](pm.md) |
 | researcher@web-summit.vicky | the newsroom's research, into vault 41j3e9s9 | [researcher.md](researcher.md) |
@@ -28,4 +28,4 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 
 tools@web-summit.vicky was never started (Vicky, 3 November), so it has no prompt.
 
-Last updated: 6 November 2026, about 17:55 UTC (17 saved here, 1 in the kit, 1 not saved yet (dev@PrompTugal.vicky, new); journalist-ai.md, journalist-connections.md and scout.md changed today and were checked for anything that should not be public: nothing found).
+Last updated: 6 November 2026, about 21:00 UTC (19 saved here, 1 in the kit, 0 not saved yet; dev.md is new; curator.md, reviewer.md and dashboard.md were updated for their new sessions and checked for anything that should not be public: nothing found).
