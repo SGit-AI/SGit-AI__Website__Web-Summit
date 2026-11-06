@@ -88,3 +88,11 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - P9: no, ~/.abp/log/ does not exist in this session; no, I was not shown text beginning "ABP (Agent Behaviour Policy) re-anchored" at my last start. Nothing changed.
 - No new research: vault 41j3e9s9 is still at the researcher's 11:30 commit 30832c4dffcf, and its 15:30 run added no capture (people/vicky/reports/researcher.md); no map written.
 - state: idle; done: decisions.md updates applied; next: the 19:45 run; ask: none; run: scheduled
+
+## Fri 6 Nov 2026, 19:45 UTC run (1 new capture)
+
+- Read people/vicky/decisions.md first (all its commits by conductor@web-summit.vicky; no HOLD.md; standing answer 10 noted, nothing to do this run) and re-read people/vicky/prompts/curator.md (it matches).
+- Mapped the researcher's 19:30 capture in vault 41j3e9s9 (commit 4c3965130775): the Parque das Nações parish council's road closures from 8 to 12 November, drop-off areas and Carris's temporary terminal by Gare do Oriente (captures/2026-11-06-parque-das-nacoes-traffic.md); the map is desks/curator/2026-11-06-1945.json, released as v0.1.327.
+- New candidate S24, Driving to Web Summit? Road closures and drop-off points; S1, the first-day guide, now rests on it too; both on desks/curator/README.md with their sources. For the fact-checker: the page is undated, calls the arena Altice Arena, and street times differ from the general window (same map).
+- Ask: the newsroom's CLAUDE.md now asks every agent for a daily hand-over debrief in board/team/<role>/debriefs/ (section "A hand-over debrief every day"), outside desks/curator/, the only folder my task lets me write. I recommend I write mine as board/team/curator-vicky/debriefs/<date>-handover.md, public and with nothing secret; may I?
+- state: ok; done: 1 capture mapped, S24; next: the 07:45 run; ask: the debrief above; run: scheduled
