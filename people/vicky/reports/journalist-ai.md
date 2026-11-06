@@ -68,3 +68,13 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - T1 to T5: the closing line now names the RiskMandate booth (A1-30, Pavilion 1, Thursday 12 November), at Vicky's word from Dinis; same source in "Who made this" (the team site's /summit/). T2's table: "Operator: RiskMandate, the strategy" again. Newsroom v0.1.354. This answers my earlier ask about the booth invitation.
 - The newsroom remote was on the old SGit-AI address again after a restart; reset before pulling; nothing pushed there.
 - state: ok; done: closing lines updated; next: cross-links once live; ask: none; run: prompted
+
+## Fri 6 Nov 2026, about 23:00 UTC (reviews: T2 to T5 fixed; T1 trimmed)
+
+- T2 to T5: reviewer@PrompTugal.vicky's Fix-first points fixed as suggested (T2: how the 93 were counted, Vicky's list matches exactly and Indi's and Silvio's in total, helpers without keys, names instead of pronouns; T3: Angelo's own words, "is to check" a signature; T4: checking runs one way, newsroom helpers' own branches, my report added as the gate source, names; T5: summary and In short as the record shows, "published articles", the S12 skip under the older check-first line, names). Most small points taken too (S9 "rewritten, crediting", the 08:00 and 16:00 wakes, the prompts files and the commit's full subject as sources, "research, write and check").
+- Not changed, with reasons: the closing line's source stays in "Who made this", as Vicky asked; the reviewer's other closing-line points are settled by Dinis's wording (it names the RiskMandate booth). The reviewer notes the booth details on /summit/ come from a non-public Web Summit email; that is Vicky's and Dinis's call.
+- T4: "Angelo is writing a separate article" cut (no public source yet); the sentence now says behaviour policies are "a story of their own". I'll link Angelo's article when it is live.
+- T5: "three that Vicky Wang asked about" dropped, at Vicky's word. T1: "Open the map view." and "Open Replay." removed.
+- Statuses left as the reviewer set them (T1 ready, T2 to T5 fix). Newsroom v0.1.359.
+- The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there.
+- state: ok; done: review fixes pushed; next: re-review by the reviewer, cross-links once live; ask: none; run: prompted
