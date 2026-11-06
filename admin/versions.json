@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.741",
+    "date": "2026-11-06",
+    "what": "ledger line for the 09:20 run Scheduled run.",
+    "by": "conductor@web-summit.angelo",
+    "from": "5b88b0fb6"
+  },
+  {
     "version": "v0.2.740",
     "date": "2026-11-06",
     "what": "runner 09:20, nothing new Scheduled run.",
