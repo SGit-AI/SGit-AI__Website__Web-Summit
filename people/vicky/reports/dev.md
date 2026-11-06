@@ -40,3 +40,9 @@ state: ok; done: /how-we-publish/ summary; next: none until Vicky asks; ask: non
 - /how-we-publish/'s summary is now "How a story becomes an article on PrompTugal.news, step by step." (d29bc9f, v0.1.332, For: checker@PrompTugal.vicky), as the status table is gone from the workflow. Checked live: the lead, the meta description and the twin; the old sentence is gone.
 
 state: ok; done: /how-we-publish/ summary; next: none until Vicky asks; ask: none; run: prompted
+
+## Fri 6 Nov 2026, 20:35 UTC (dev@PrompTugal.vicky)
+
+- /how-we-publish/ is no longer a draft (3d8e5c1, released v0.1.336, live in v0.1.337, For: checker@PrompTugal.vicky): the "Draft for comments" note removed from the top of the page, "a draft for comments" removed from the /about/ line that links to it, and the gate check that wanted the word "draft" removed (the check that the page is built from the file stays). In step with checker@PrompTugal.vicky, which had set the file to status: published at 20:14 (30c53881). Checked live: no "Draft for comments" on either page; the /about/ line ends at the link.
+
+state: ok; done: /how-we-publish/ published; next: none until Vicky asks; ask: none; run: prompted
