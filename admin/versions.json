@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.877",
+    "date": "2026-11-06",
+    "what": "WS-31 not needed: everyone has their meetings in their own calendars; unassigned from Vicky and pm@",
+    "by": "pm@web-summit.vicky",
+    "from": "46120282e"
+  },
+  {
     "version": "v0.2.876",
     "date": "2026-11-06",
     "what": "reviewer@PrompTugal.vicky: report, T1 Fix first",
