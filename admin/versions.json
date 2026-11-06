@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.695",
+    "date": "2026-11-06",
+    "what": "the vault agent's token rule and dev's WS-36 and WS-78 drafts on the dashboard",
+    "by": "dashboard@web-summit.angelo",
+    "from": "84260e5c5"
+  },
+  {
     "version": "v0.2.694",
     "date": "2026-11-06",
     "what": "WS-78: a kicker above every title and the colour debt counted by the gate (a patch for its keeper); Angelo's stylesheet on tokens only",
