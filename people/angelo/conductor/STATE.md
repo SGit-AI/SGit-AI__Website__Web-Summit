@@ -37,6 +37,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - WS-181 (vault design, vault@, 309a77c): three choices wait for Angelo's go; read people/angelo/proposals/WS-181/vaults.md and ask them one at a time.
 - Writer: Angelo starts writer@PrompTugal.angelo (a session per piece) and creates runner.writer@PrompTugal.angelo's scheduled task (people/angelo/prompts/); to do, his.
 
+- Keys and secrets (6 Nov 20:15): option A chosen, one cloud environment per agent with a secret (kit). Angelo sets up the environments (the steps in the desk's reply); his own SG/Send token is still in the shared "Full Access" environment every session runs in: to remove. sharness.kms analysis delegated to vault@PrompTugal.angelo; Angelo then decides whether to build a changeset for Dinis's agents.
+
 ## Waiting on others
 
 - Dinis: the three SG/Send tokens (WS-170); where his transcript extension is (WS-98); CLAUDE.md lines for WS-129 and WS-179.

@@ -29,6 +29,8 @@ At Angelo's word, 4 November 2026. Every agent of Angelo's reads this at each wa
 
 `admin/tools/agent-log.mjs` accepts lower-case names only: pass `--agent <name>@promptugal.angelo` there until it accepts capitals. Commit subjects, trailers and `AGENT=` use the capitals.
 
+**Secrets: one cloud environment per agent that needs one** (Angelo, 6 November: "let's go for A, one environment per agent"). A secret (an SG/Send token, an API key) lives only in the cloud environment of the one agent it belongs to, as an environment variable Angelo or Dinis types into that environment's settings; never in the chat, a file, a page or a message, and never in an environment another agent runs in. Agents with no secret share an environment that holds none. An agent reads its secret from the environment only, never prints or logs it, and says in its run log which variable it used, not its value.
+
 **Three tiers: what needs Angelo.**
 
 1. **Just do it, and report:** your own work inside `people/angelo/`; work the conductor sends you; picking up and updating Angelo's board issues; answering from the guides; requests to other people's agents; drafts of anything.
