@@ -1045,6 +1045,23 @@
       }
     },
     {
+      "id": "reviewer-vicky-2",
+      "agent": "reviewer@PrompTugal.vicky",
+      "label": "reviewer@PrompTugal.vicky (Claude Code session 2)",
+      "role": "Vicky Wang's reviewer and copy editor for PrompTugal.news (reviewer@PrompTugal.vicky, session 2): reviews her journalists' drafts in the newsroom repository and reports here in people/vicky/reports/reviewer.md. Its signing entry is reviewer-vicky-promptugal-2 in the newsroom's board/keys.json. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session (Claude Code session 2 of the role) on 6 November 2026 at 19:47 UTC with pki-agent.mjs keygen --session (the copy with sha256 fcb28a1cc40d05bf8ccc8fc61a2a907c934840cac7aa41d9d8283c1d461002ab, matching the pin in the team site's seal.mjs), at Vicky's word, when this session took over the role from the previous one (scout's P17). Not linked to an operator's key or confirmed on pki.sgit.ai. The private halves stay in the session (~/.sg-send, outside this repository); the push of this entry is the authorisation. It replaces reviewer-vicky (session 1, already marked superseded).",
+      "added": "2026-11-06",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArsllpLCWSKmI7iW2hIcE\naf1eKEaF4svwZcuYU3GyEVp0SuB7APWJYhA9alJ3vVOulNgYRmBCRxGa9IC5i5IV\nS7mlVkkaOplYXf/xfDv5jPWfslP4hkmGWuLtfj0pRcaL29dr82DJUDyIpU06xw8Z\nZBsyRPnaNlgueS3f5FGx2gaW2FODTT6zs3iZJ55Nlj5D8qwFDOXkRDSvSVEdfc/N\nQFa962CPFsus00ReeytQUfZz1wNWpnJALguaD4d4G5sRJaimOfa976cWBi45txPt\nwL2s6dGNy3fZK/WQYibv4uZn9mu+CmnWCjd6u9469QNAvf2Wsb9RtL1TtylykM61\ngVybQCYtnz419Q2kKckJJ+u9k1wTW7EhgqIYBw4+G5Ebd2Xwtqx1T9k0zkqd9BHt\ncfZ+6/L8klyXWS5uCq1+65CTXlL2vA3pvaxIYVe2ARG5y5enqgln/1hMgUvuXKO9\nIgHqqTKbo7etG9S4RYpfAvqnTKx81FhRMEn4cei7CrMU6uBgy+jPWJoUrvfi+uUu\n58Zx+CFeXrd1Ao+KEebvoZ6Hg2LtPhi51SJJgjmvj1j6cbvvitfunPrFWwfwnxMt\nTDF942irQoVa1A+P7vzIzq2MBBP3a5gKaNy1zrKb4FULN/hVtGFHHVUmGhWT933k\n79Xl5PemwayYa7iorIndwZMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6tUsv6ZQy1oQJOFiWukLxgwK7MMf\n/6SVEOcqxIEAzYxQ8E7dTs/vt105GCfBt3JMe4kGY8ldvB3xKLGgLUGWkw==\n-----END PUBLIC KEY-----\n",
+        "label": "reviewer@PrompTugal.vicky",
+        "fingerprint": "sha256:c1ae3cc07544d361",
+        "signing_fingerprint": "sha256:e08d700e4e0db741"
+      }
+    },
+    {
       "id": "crm-jose",
       "agent": "crm@web-summit.jose",
       "label": "crm@web-summit.jose (Claude Code session)",
