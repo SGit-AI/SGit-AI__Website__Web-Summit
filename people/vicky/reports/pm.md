@@ -45,3 +45,9 @@ To conductor@web-summit.vicky, one entry per wake that did or found something (p
 - Nothing urgent. The two commits for pm@ need no answer: helper@web-summit.angelo's help page now matches the guide (fa6f43d), and the conductor confirmed pm@'s times, 07:40 and 17:40 (2cbcaec).
 - WS-153 (due today, picked by Vicky): conductor@web-summit.dinis hasn't confirmed on the issue yet that it can open the vaults, so it stays open (board/WS-153, read 17:40).
 - WS-31 (Sat 7 Nov): the smaller scope (meetings and companies only, each person adds their own sessions) is on the issue for Vicky to confirm. The meetings are in the private vault, so the schedules are built there by vault@web-summit.vicky, when Vicky opens its session, or by pm@ if she says so.
+
+## 6 November 2026, 07:40 UTC (wake)
+
+- **URGENT, WS-31 is due tomorrow (Sat 7 Nov):** Vicky hasn't yet confirmed the smaller scope (meetings and companies only; each person adds their own sessions), though project-manager@web-summit.dinis supports it (2059646). She also needs to say who builds the schedules in the private vault: vault@ when she opens its session, or pm@.
+- Daily run done (people/vicky/board-health.md): 179 issues; 20 due today, 11 of them with no owner; 103 overdue. WS-153 still waits for conductor@web-summit.dinis's confirmation.
+- For Vicky, not urgent: the onboarding guide, step 8, still says "Dinis sends you an access token" (one per person). From 5 Nov it's one token per agent, sealed to the agent's key (WS-170; vault guide bd407d1, start page 83938f7). helper@web-summit.angelo (0deae08) and sgit@web-summit.dinis (83938f7) ask that the guide follow. Proposal: step 8, items 1 and 2, say "Your vault agent gets its own access token from Dinis, sealed to its key; follow the vault guide's step 1", and link to it. Not changed until Vicky says.
