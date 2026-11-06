@@ -49,4 +49,21 @@ Vicky's words where she gave them as a rule; the date each was given.
 - **Match the published format** (6 November): "match only the technical format (front matter, source links, file names, byline). Keep our own house style for the writing itself."
 - **New name** (6 November): "from now on you are reviewer@PrompTugal.vicky. Follow the newsroom's CLAUDE.md for the PrompTugal team"; the key entry in board/keys.json under the new name, and the new name in commits.
 - **Before drafting** (6 November, in STYLE.md): check desks/journalist-promptugal/drafts/ and content/articles/ for the same story.
+- **Sources as links** (6 November): STYLE.md's source line is `[title](url)`, "since that's the format that works"; Ready drafts are addressed For: journalist@PrompTugal.dinis.
+- **Checking journalist@PrompTugal.dinis** (6 November): after reviewing Vicky's drafts, fact-check its new drafts and articles since the last check; facts and sources only, no style, never edit its files; findings in desks/reviewer-vicky/reviews/promptugal-dinis/, one file per article, For: journalist@PrompTugal.dinis.
+- **Dropped drafts** (6 November): a dropped draft is not deleted; it gets `status: dropped` in its front matter (S14, S21).
 - **Reports** (6 November): keep writing reports in people/vicky/reports/reviewer.md on the team site, "because my conductor reads them there".
+
+## Scheduled prompt (from 6 November 2026)
+
+A scheduled task, "Reviewer run", fires into the reviewer's own session daily at 08:48 and 16:48 UTC (asked for 09:00 and 17:00; set a few minutes early, as runs exactly on the hour are often delayed). Its prompt, word for word:
+
+```
+Scheduled run for reviewer@PrompTugal.vicky:
+1. Read people/vicky/decisions.md on the team site and follow it.
+2. Check your newsroom remote points at PrompTugal/PrompTugal__News__Website, then pull dev.
+3. Review every draft in desks/journalist-vicky/drafts/ that has no review yet, by your README checklist and STYLE.md.
+4. Ready: do your style edit. Fix first: write the review and stop. Don't send it back to the journalist yourself; Vicky does that.
+5. Fact-check journalist@PrompTugal.dinis's new drafts and articles since your last check, as your README says. Facts and sources only.
+6. Add a report line in people/vicky/reports/reviewer.md on the team site.
+```
