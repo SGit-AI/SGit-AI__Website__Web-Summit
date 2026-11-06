@@ -14,7 +14,12 @@ export function build(ROOT) {
     const updated = (md.match(/^Last updated: (.+?)\.?$/m) || [])[1] || 'unknown'
     // two layouts: since 5 Nov 18:30 one "## S12: title" section per story (first line "Beat, added 5 Nov. Angle", then a
     // "Sources:" list of "- Publisher, read <date>: <url>"); before that, one table row per story with the angle in it
-    const parseSources = t => [...t.matchAll(/^- (.+?): <(https?:[^>\s]+)>\s*$/gm)].map(m => ({ label: m[1], url: m[2] }))
+    // Two source formats: the curator's current one, `- [Publisher, "Title"](url), read D Month YYYY` (decisions.md answer 9),
+    // and the earlier `- Publisher, read date: <url>`.
+    const parseSources = t => [
+        ...[...t.matchAll(/^- \[(.+)\]\((https?:[^)\s]+)\)(?:,\s*read\s+(.+?))?\s*$/gm)].map(m => ({ label: m[1], url: m[2], read: m[3] || '' })),
+        ...[...t.matchAll(/^- (.+?): <(https?:[^>\s]+)>\s*$/gm)].map(m => ({ label: m[1], url: m[2], read: '' }))
+    ]
     let stories = md.split(/^## (?=S\d+:)/m).slice(1).map(sec => {
         const [head, ...rest] = sec.split('\n'), body = rest.join('\n')
         const [, id, title] = head.match(/^(S\d+):\s*(.+)$/) || []
@@ -24,7 +29,7 @@ export function build(ROOT) {
     }).filter(x => x.id)
     if (!stories.length) stories = md.split('\n').filter(l => /^\|\s*S\d+\s*\|/.test(l)).map(l => l.split('|').slice(1, -1).map(c => c.trim()))
         .map(([id, title, beat, angle, added]) => ({ id, title, beat, angle, added, sources: [] }))
-    const srcList = s => s.sources.length ? `<p class="meta">Sources:</p><ul class="story-sources">${s.sources.map(x => `<li><a href="${esc(x.url)}" rel="noopener">${esc(x.label)}</a></li>`).join('')}</ul>` : '<p class="meta">No source yet.</p>'
+    const srcList = s => s.sources.length ? `<p class="meta">Sources:</p><ul class="story-sources">${s.sources.map(x => `<li><a href="${esc(x.url)}" rel="noopener">${esc(x.label)}</a>${x.read ? `, read ${esc(x.read)}` : ''}</li>`).join('')}</ul>` : '<p class="meta">No source yet.</p>'
     const card = s => `<article class="card story" id="${esc(s.id.toLowerCase())}"><p class="meta"><strong class="story-id">${esc(s.id)}</strong> · <span class="pill">${esc(s.beat)}</span> · added ${esc(s.added)}</p><h3 class="story-title">${esc(s.title)}</h3><p>${esc(s.angle)}</p>${srcList(s)}<p><button type="button" class="story-comment" data-story="${esc(s.id.toLowerCase())}">Comment on ${esc(s.id)}</button></p></article>`
     const body = `<p>The story ideas the newsroom's curator (curator@web-summit.vicky) suggests for the journalist, newest first. None is fact-checked yet. Source: <a href="${SRC}">desks/curator/README.md</a> in the newsroom repository, last updated by the curator on ${esc(updated)}; this page is refreshed at each run of Vicky's dashboard agent.</p>
 <p class="meta"><b>To comment on a story:</b> press its <i>Comment</i> button. It selects the story's id and title and opens the site's feedback pane with them quoted; write your comment and press Submit. The first time, the pane may need turning on for your device (<a href="?feedback=on">turn on feedback</a>). Choose newsroom@web-summit.dinis as the recipient for the newsroom.</p>
@@ -39,7 +44,7 @@ document.addEventListener('click', e => {
   if (fb) fb.click(); else location.href = '?feedback=on#' + b.dataset.story
 })
 </script>`
-    const twinMd = `The newsroom curator's story candidates, newest first, from ${SRC} (last updated by the curator on ${updated}). None is fact-checked yet.\n\n${stories.map(s => `- **${s.id}** (${s.beat}, added ${s.added}): ${s.title}. ${s.angle}${s.sources.map(x => `\n  - [${x.label}](${x.url})`).join('')}`).join('\n')}`
+    const twinMd = `The newsroom curator's story candidates, newest first, from ${SRC} (last updated by the curator on ${updated}). None is fact-checked yet.\n\n${stories.map(s => `- **${s.id}** (${s.beat}, added ${s.added}): ${s.title}. ${s.angle}${s.sources.map(x => `\n  - [${x.label}](${x.url})${x.read ? `, read ${x.read}` : ''}`).join('')}`).join('\n')}`
     return [...promptugal(ROOT), ...workSoFar(ROOT), { rel: 'people/vicky/stories/index.html', title: "The newsroom's story candidates", description: "The curator's open story ideas for the Web Summit 2026 newsroom: id, title, beat, angle and date added, with a way to comment on each.", body, md: twinMd }]
 }
 

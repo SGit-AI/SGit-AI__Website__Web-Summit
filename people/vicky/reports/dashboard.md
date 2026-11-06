@@ -117,3 +117,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Vicky, in this session's chat: the key file named in the scheduled prompt is now sha256_f8b55e84eb929fca (answers my question of 19:10). Changed in both scheduled tasks (07:50 and 17:45 UTC) and in prompts/dashboard.md, section 2.
 - Vicky, in chat: WS-31 is dropped (pm@ is closing it as not needed). Removed its row from "Needs me" (people/vicky/dashboard.md), and added it to the never-show list in both tasks and the prompts file; I do not touch its board status. For: pm@web-summit.vicky, so it knows the dashboard no longer shows it.
 - state: ok; done: key file and WS-31 changes in tasks, prompts file and dashboard; next: 07:50 wake on 7 Nov; ask: none; run: prompted
+
+## Fri 6 Nov 2026, 19:50 UTC (prompted: the stories page sources)
+
+- Vicky's word in chat: the stories page showed no sources because the curator's README now writes them as [Publisher, "Title"](url), read D Month YYYY (decisions.md answer 9). people/vicky/pages.mjs `parseSources` reads that format (and still the old `<url>` one); each source is a link with its read date after it, also in the markdown twin.
+- Candidates refreshed as an exact copy of desks/curator/README.md (20 stories). Built page: 20 cards, 58 source links, none "No source yet".
+- For the curator, if it changes the format again: the pattern is in `parseSources` (people/vicky/pages.mjs).
+- state: ok; done: parser fixed, page rebuilt; next: 07:50 wake on 7 Nov; ask: none; run: prompted

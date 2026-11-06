@@ -6,22 +6,20 @@ Kept by curator@PrompTugal.vicky (until 6 November curator@web-summit.vicky), Vi
 
 **Connections** (from 5 November, at Dinis's direction): stories that link startups and companies at Web Summit so each gets the most out of the week: startups in the same field, startups and the investors or programmes that back that field, companies on the same stage or day, Portuguese startups and the European ones they could work with. They are marked "Connections" in the beat. Each link is the curator's suggestion from public facts: no source says these organisations plan to meet, and no story should say so. Organisations only; nothing private about anyone.
 
-Last updated: Friday 6 November 2026, 12:00 UTC.
+Last updated: Friday 6 November 2026, 20:50 UTC.
 
 ## At a glance
 
 | Id | Title | Beat | Added |
 |---|---|---|---|
-| S23 | Waste into value: AgroGrINTech and Seamoretech, two circular Portuguese startups | Connections: Portugal | 6 Nov |
+| S24 | Driving to Web Summit? Road closures and drop-off points | The summit | 6 Nov |
 | S22 | From pineapple waste to fish feed: AgroGrINTech's pilot in Maia | Portugal | 6 Nov |
-| S21 | One backer, two fields: 3xP Global's Granter and Octo Health | Connections: Portugal | 6 Nov |
 | S20 | Lisbon's Octo Health launches health tracking in Portugal and the US | Portugal | 6 Nov |
 | S19 | Brazil comes to Lisbon as Intuitivo heads to Brazil | Connections: announcements | 5 Nov |
 | S18 | Tuesday 10 November: Europe on Centre Stage, universities pitching, first-timers meeting | Connections: the summit | 5 Nov |
 | S17 | 11 November for startups going abroad: three events to know | Connections: Europe | 5 Nov |
 | S16 | Europe's AI and funding help, a walk from Portugal's AI startups | Connections: Europe | 5 Nov |
 | S15 | From Técnico's stand to the lineup: following robotics at Web Summit | Connections: the summit | 5 Nov |
-| S14 | Granter and Intuitivo: two PITCH winners, one backer, new markets | Connections: Portugal | 5 Nov |
 | S13 | Web Summit's ten Lisbon years: 2.5 billion euros, says EY | Portugal | 5 Nov |
 | S12 | A robot among 800 speakers: Web Summit 2026 turns to robotics | The summit | 5 Nov |
 | S11 | Italy and Portugal meet in Beato on how European tech scales | Europe | 5 Nov |
@@ -35,14 +33,14 @@ Last updated: Friday 6 November 2026, 12:00 UTC.
 | S2 | Europe arrives in Pavilion 4: the Commission's week at Web Summit | Europe | 4 Nov |
 | S1 | Web Summit Lisbon: your first day, from airport to arena | The summit | 4 Nov |
 
-## S23: Waste into value: AgroGrINTech and Seamoretech, two circular Portuguese startups
+## S24: Driving to Web Summit? Road closures and drop-off points
 
-Connections: Portugal, added 6 Nov. Two startups that turn waste into resources, both grown from university research.
+The summit, added 6 Nov. Which roads near the venue close from 8 to 12 November, where to be dropped off, and Carris's temporary terminal.
 
 Sources:
 
-- [AICEP Portugal Global, "AgroGrINTech turns pineapple waste into aquafeed ingredient"](https://www.portugalglobal.pt/en/news/2026/novembro/agrogrintech-turns-pineapple-waste-into-aquafeed-ingredient/), read 6 November 2026
-- [Portugal Startup News, "Seamoretech raises 1.1M euros (Portugal Startup News, 2 November 2026)"](https://portugalstartupnews.com/2026/11/02/seamoretech-raises-e1-1m-to-recover-freshwater-and-minerals-from-desalination-waste-plans-spain-launch/), read 4 November 2026
+- [Junta de Freguesia do Parque das Nações, "Web Summit – Condicionamentos de trânsito entre 9 e 12 de novembro"](https://www.jf-parquedasnacoes.pt/autarquia/noticias/web-summit-condicionamentos-de-transito-entre-9-e-12-de-novembro), read 6 November 2026
+- [Executive Digest (SAPO), "Web Summit: Carris reforça transporte com 'shuttle' e passe conjunto com metro e comboios"](https://executivedigest.sapo.pt/web-summit-carris-reforca-transporte-com-shuttle-e-passe-conjunto-com-metro-e-comboios/), read 5 November 2026
 
 ## S22: From pineapple waste to fish feed: AgroGrINTech's pilot in Maia
 
@@ -51,15 +49,6 @@ Portugal, added 6 Nov. A Portuguese startup makes a fish feed ingredient from pi
 Sources:
 
 - [AICEP Portugal Global, "AgroGrINTech turns pineapple waste into aquafeed ingredient"](https://www.portugalglobal.pt/en/news/2026/novembro/agrogrintech-turns-pineapple-waste-into-aquafeed-ingredient/), read 6 November 2026
-
-## S21: One backer, two fields: 3xP Global's Granter and Octo Health
-
-Connections: Portugal, added 6 Nov. The same Portuguese investor led rounds in AI for grants and in health tracking. Widens S14.
-
-Sources:
-
-- [Portugal Startup News, "Octo Health launches personalized health tracking platform in Portugal and U.S. after earlier €2.7M raise"](https://portugalstartupnews.com/2026/11/05/octo-health-launches-personalized-health-tracking-platform-in-portugal-and-u-s-after-earlier-e2-7m-raise/), read 6 November 2026
-- [Portugal Startup News, "Granter secures 1.6M euros to expand its AI grant platform (Portugal Startup News, 3 November 2026)"](https://portugalstartupnews.com/2026/11/03/granter-secures-e1-6m-to-expand-its-ai-grant-platform-into-spain-germany-and-italy/), read 4 November 2026
 
 ## S20: Lisbon's Octo Health launches health tracking in Portugal and the US
 
@@ -120,15 +109,6 @@ Sources:
 
 - [Web Summit, "Meet Web Summit's 2026 speakers | Web Summit | November 9-12, 2026"](https://websummit.com/speakers/), read 5 November 2026
 - [Instituto Superior Técnico, Universidade de Lisboa, "Técnico leva demonstrações tecnológicas e spin-offs à Web Summit 2026"](https://tecnico.ulisboa.pt/pt/noticias/campus-e-comunidade/tecnico-leva-demonstracoes-tecnologicas-e-spin-offs-a-web-summit-2026/), read 4 November 2026
-
-## S14: Granter and Intuitivo: two PITCH winners, one backer, new markets
-
-Connections: Portugal, added 5 Nov. Two past PITCH winners backed by the same fund, both growing abroad.
-
-Sources:
-
-- [Portugal Startup News, "Granter secures 1.6M euros to expand its AI grant platform (Portugal Startup News, 3 November 2026)"](https://portugalstartupnews.com/2026/11/03/granter-secures-e1-6m-to-expand-its-ai-grant-platform-into-spain-germany-and-italy/), read 4 November 2026
-- [Portugal Startup News, "Intuitivo raises 1.35M euros to expand into Brazil (Portugal Startup News, 23 October 2026)"](https://portugalstartupnews.com/2026/10/23/intuitivo-raises-e1-35m-to-expand-into-brazil-with-a-platform-that-cuts-teachers-workload/), read 4 November 2026
 
 ## S13: Web Summit's ten Lisbon years: 2.5 billion euros, says EY
 
@@ -237,7 +217,7 @@ Sources:
 
 ## S1: Web Summit Lisbon: your first day, from airport to arena
 
-The summit, added 4 Nov. A practical guide: where to collect your wristband, how to get there, what to bring. Updated 4 and 5 Nov with the transport pass and the Carris shuttle.
+The summit, added 4 Nov. A practical guide: where to collect your wristband, how to get there, what to bring. Updated 4, 5 and 6 Nov with the transport pass, the Carris shuttle and the drop-off points.
 
 Sources:
 
@@ -249,3 +229,12 @@ Sources:
 - [Metropolitano de Lisboa, "Passe de transporte para o Web Summit"](https://www.metrolisboa.pt/2026/11/02/passe-de-transporte-para-web-summit/), read 4 November 2026
 - [Executive Digest (SAPO), "Web Summit 2026: Metro de Lisboa prepara reforço de comboios e vigilância para receber 75 mil participantes"](https://executivedigest.sapo.pt/web-summit-2026-metro-de-lisboa-prepara-reforco-de-comboios-e-vigilancia-para-receber-75-mil-participantes/), read 4 November 2026
 - [Executive Digest (SAPO), "Web Summit: Carris reforça transporte com 'shuttle' e passe conjunto com metro e comboios"](https://executivedigest.sapo.pt/web-summit-carris-reforca-transporte-com-shuttle-e-passe-conjunto-com-metro-e-comboios/), read 5 November 2026
+- [Junta de Freguesia do Parque das Nações, "Web Summit – Condicionamentos de trânsito entre 9 e 12 de novembro"](https://www.jf-parquedasnacoes.pt/autarquia/noticias/web-summit-condicionamentos-de-transito-entre-9-e-12-de-novembro), read 6 November 2026
+
+## Dropped
+
+Taken off the list on 6 November 2026, at Vicky's word, as duplicates of other candidates:
+
+- S23: Waste into value: AgroGrINTech and Seamoretech, two circular Portuguese startups (duplicates)
+- S21: One backer, two fields: 3xP Global's Granter and Octo Health (duplicates)
+- S14: Granter and Intuitivo: two PITCH winners, one backer, new markets (duplicates)
