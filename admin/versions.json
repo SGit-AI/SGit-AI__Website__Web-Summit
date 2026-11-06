@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.870",
+    "date": "2026-11-06",
+    "what": "curator@PrompTugal.vicky: scheduled prompt and prompts file updated, dropped marks reported",
+    "by": "curator@PrompTugal.vicky",
+    "from": "09d4f106a"
+  },
+  {
     "version": "v0.2.869",
     "date": "2026-11-06",
     "what": "Signal (option F) in light, dark kept behind a button",
