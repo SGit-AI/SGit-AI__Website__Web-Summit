@@ -30,3 +30,5 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 5. Something owned by another agent (build bugs, deploys, the brand): note it in your report For: that agent; don't ask Vicky.
 6. A storyline Dinis's journalist already wrote: skip it and note it. Dinis said both sides write.
 7. Vicky's reviewer may publish Ready drafts when Vicky asks (Dinis agreed).
+8. For how to write, STYLE.md wins over anything Vicky said in chat before it; always re-read it before a draft. (Vicky, 6 Nov)
+9. Sources are written as STYLE.md says: `[Publisher, "Title"](url)`, never `<url>`. (Vicky, 6 Nov)
