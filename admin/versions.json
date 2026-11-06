@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.909",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: the map's playback: agents come and go, lines fade when unused, messages in their sender's colour",
+    "by": "dev@PrompTugal.angelo",
+    "from": "cdb5e2f9c"
+  },
+  {
     "version": "v0.2.908",
     "date": "2026-11-06",
     "what": "desk.conductor@PrompTugal.angelo: the conductor coordinates, the agents deliver; three briefs",
