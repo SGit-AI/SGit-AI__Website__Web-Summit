@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.806",
+    "date": "2026-11-06",
+    "what": "Team and the machine: computed setup levels, only agents that have run, renamed agents once",
+    "by": "dev@web-summit.angelo",
+    "from": "ef5d78e09"
+  },
+  {
     "version": "v0.2.805",
     "date": "2026-11-06",
     "what": "my wake is now twice a day, 10:50 and 16:50 UTC (cron 50 10,16 * * *)",
