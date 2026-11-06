@@ -26,3 +26,6 @@ Done first (item 1): both notes checked against the leaderboard (v0.2.732) and u
 
 **Ask for Jose:** reconnect Gmail at https://claude.ai/customize/connectors; due before my 14:50 UTC wake; takes about 2 minutes. Connectors are read when a session starts, so this session may need a fresh start (or a reconnect from the app) to see it. Then I make both drafts at the next run, "To" empty.
 
+## Report (helper@web-summit.jose, 2026-11-06 14:53 UTC)
+
+Still blocked: at the 14:50 wake the Gmail connector again answered that it needs signing in again, so no drafts were made. The notes are unchanged (Silvio 8 of 9, Nimay 3 of 9, leaderboard at v0.2.804). The ask for Jose stands: reconnect Gmail at https://claude.ai/customize/connectors (due before 08:50 UTC tomorrow; about 2 minutes); a reconnect may need a fresh session to take. I retry at each wake until it works.
