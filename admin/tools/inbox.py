@@ -30,7 +30,7 @@ def agent_of(k):
     return k.get('agent') or ((k.get('bundle') or {}).get('label') or k.get('label') or '').split()[0]
 
 def main():
-    a = argparse.ArgumentParser(); a.add_argument('cmd', choices=['issue']); a.add_argument('--creds', default='~/.sg-send/lanes/conductor.json')
+    a = argparse.ArgumentParser(); a.add_argument('cmd', choices=['issue']); a.add_argument('--creds', default='~/.sg-send/lanes/conductor.json'); a.add_argument('--also-keys', action='append', default=[], help='another keys.json (e.g. PrompTugal\'s board/keys.json): its agents get lanes too')
     o = a.parse_args(); cf = os.path.expanduser(o.creds); c = json.load(open(cf))
     from sgit_ai.crypto.PKI__Crypto import PKI__Crypto
     from sgit_ai.crypto.Vault__Crypto import Vault__Crypto
@@ -38,6 +38,9 @@ def main():
     crypto = PKI__Crypto()
     pair = PKI__Key_Store(keys_dir=os.path.expanduser('~/.sg-send/keys'), crypto=crypto).load_key_pair(c['recipient'], os.environ.get('SG_SEND_PASSPHRASE', ''))
     keys = json.load(open(os.path.join(ROOT, 'data', 'keys.json')))['keys']
+    for extra in o.also_keys:                        # PrompTugal's agents keep their keys in their own repository (6 Nov)
+        ek = json.load(open(os.path.expanduser(extra))); ek = ek.get('keys', ek) if isinstance(ek, dict) else ek
+        have = {k['id'] for k in keys}; keys = keys + [k for k in ek if k.get('id') not in have]
     mine = next(k for k in keys if k['id'] == ME)['bundle']
     live = [k for k in keys if k['id'] != ME and (k.get('status') in (None, '', 'active')) and (k.get('bundle') or {}).get('encrypt') and '@' in agent_of(k)]
     lanes = c.setdefault('lanes', {})
