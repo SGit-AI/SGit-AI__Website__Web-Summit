@@ -104,3 +104,11 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - The scheduled task trig_01Y3m4gYrZsUwoJo8vu6L6g6 is deleted, and the research vault clone is deleted from the session (P17); the new session clones it again with the read key in people/vicky/vaults.json.
 - Answered: the 19:45 ask on the daily debrief (no; standing answer 11). Open for the new session: whether S14, S21 and S23 are dropped (the reviewer's hand-over says so; the curator was not told).
 - state: ok; done: hand-over; next: a new session takes the role; ask: none; run: prompted
+
+## Fri 6 Nov 2026, 20:40 UTC (new session takes the role, scout's P17)
+
+- New session started from people/vicky/handover/curator-2026-11-06.md; read decisions.md (no HOLD.md on either site) and re-read prompts/curator.md. Cloned both repositories on dev.
+- New key made (pki-agent.mjs sha256 checked against the pin) and added as curator-vicky-2 (team site data/keys.json) and curator-vicky-2-promptugal (newsroom board/keys.json, released first: gate OK, newsroom commit 6b61b437); both say they replace the old entries, already superseded at 20:19 UTC. The curator signs nothing.
+- Scheduled task trig_01QqwpxE9hhp5rwuxSS9D9ZF, 07:45, 11:45, 15:45 and 19:45 UTC, prompt word for word; its paths to the old session's newsroom clone and README generator will not exist, so the first run uses this session's clones and the generator code in the hand-over note. Next run: Sat 7 Nov 07:45 UTC (read decisions.md and the prompts file, pull both clones, pull the vault with the read key, map captures newer than vault commit 4c3965130775, or write state: idle).
+- Open question for Vicky (one): the reviewer's hand-over says S14, S21 and S23 are dropped; the curator was never told. I recommend marking them dropped on desks/curator/README.md at the 07:45 run unless you say otherwise.
+- state: ok; done: hand-over taken, key, scheduled task; next: the 07:45 run; ask: S14, S21 and S23 dropped? (recommend yes); run: prompted

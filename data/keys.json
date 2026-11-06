@@ -631,6 +631,23 @@
       "status": "superseded: replaced by a new session on 6 November 2026 at Vicky's word (scout's P17), 20:19 UTC; it signed nothing on this site. Its newsroom entry, curator-vicky-promptugal, is marked superseded too; the new session makes and publishes its own key"
     },
     {
+      "id": "curator-vicky-2",
+      "label": "curator@PrompTugal.vicky (Claude Code session)",
+      "role": "Vicky's curator desk for the Web Summit 2026 newsroom (curator@web-summit.vicky): maps what researcher@web-summit.vicky found (beat, company or organisation, what is new, whether it is a story) and proposes story candidates for the journalist, in desks/curator/ of the newsroom repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy with sha256 fcb28a1cc40d05bf8ccc8fc61a2a907c934840cac7aa41d9d8283c1d461002ab, matching the pin in the team site's seal.mjs). A new session that replaces the one whose key was curator-vicky, at Vicky's word (scout's P17), 6 November 2026. Not confirmed on pki.sgit.ai. The private half stays in the session (~/.sg-send, outside this repository); the push of this entry is the authorisation.",
+      "added": "2026-11-06",
+      "replaces": "curator-vicky",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAtj40dA58p+S2AgLpifMQ\no09ON8mFUfmcQAHLEvyuRkj2wGVEmMBb6n3R9MZ7BzAvJOKGmeLfaip6x19KrZO2\nrx+i0aWPz4/LedClbwOFW67CMFFun2Fu48FRAmy48D8NiAfqQozoGzXKvqYpbIlf\nbQGHB9jkzsn5C+/a4bL3mOFfnsNtaOwW4oGZzdb1MPtW9zuJR15caLfLJ/UrmJ7j\ntofjIkVJ2ekeA4XdgHwEh6Tq6JRbfoE/qRZFOaQvtDCAY1xrJtlN4yenDeycYoH9\nmuguBFW2X4BD16QKdwY7qtG6p4yw16JtSFtV/mnp3PZhpYaxagbu46hIXIpyMNKH\nppqZnHg/Okf190Uhm5cly7mp7pBTB3mhexUpXpW6yuyS2hiVUcKzLaP/+1H5Eki8\nS5gvN1NX/F7dBm2kzKvqOIQv4lhGjTVpmz8pfrfNO36lyvXEZe36L0d+OAKFZyUq\nYGs+zl9HUcwcwYdPrS5DMA1/YcfniWj56VfkMVbQvauiYIjj6UG3oqfox5VlSEAf\njZAYYAuKivBd7QMrwLqu0W79+P0TrdOTlOJEsZKTHH74JohEohkBE0MNnXePAm3X\ndFWj5Xkk2ruCfoCEAhBFD/1r9W+KUBzgJZZU/ffYWRaZg0dIDlnOuyn2Ot3zjyDD\nQz8o/XBk807XilLKsUPE7UkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYzfKWIzmUskEGY7sJgifzXpisGMK\nRYpuek/jipp7mQ/fKmI+9AWkIsfiPegsdLQCb3ioV82n0c4JmoUfvZuLZQ==\n-----END PUBLIC KEY-----\n",
+        "label": "curator@PrompTugal.vicky",
+        "fingerprint": "sha256:990f9a2b383fb585",
+        "signing_fingerprint": "sha256:785c4b7b689e6c29"
+      },
+      "status": "active"
+    },
+    {
       "id": "programme-vicky",
       "label": "programme@web-summit.vicky (Claude Code session)",
       "role": "Vicky's programme desk for the Web Summit 2026 newsroom (programme@web-summit.vicky): the public agenda to 12 November in desks/programme/ of the newsroom repository, and the interview shortlist, kept only in its confidential vault. A session key: it ends with its session.",
