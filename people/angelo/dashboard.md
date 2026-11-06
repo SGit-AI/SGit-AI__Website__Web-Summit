@@ -20,7 +20,7 @@ Your go is needed before these move:
 - **[Needs me now](app/index.html#kanban?n=1):** overdue, due today, and every issue with an open stand-up item for you.
 - **[My tasks](app/index.html#kanban):** open, picked and in progress; done ones are hidden.
 - **[The technical pool with Jose](app/index.html#kanban?m=0&w=pool):** who picked what.
-- **[Summit days](app/index.html#summit)**, **[the collaboration board](app/index.html#collab)** and **[Replay](app/index.html#replay)** (every commit since 2 November as a timeline, filtered and played back).
+- **[Summit days](app/index.html#summit)**, **[the collaboration board](app/index.html#collab)** and **[Replay](app/index.html#replay)** (every commit since 2 November as a timeline, filtered and played back, with who wrote to whom and each agent's runs from its own log).
 - **[Dinis's notes for you](../../nights/2026-11-05/notes/index.html#angelo)** (5 November, morning).
 
 ## 3. Is the machine healthy? {#machine}
@@ -32,7 +32,7 @@ Your go is needed before these move:
 Eight agents. All but one work through your conductor; the policy agent audits them all, the conductor included, and reports to you directly. What each did is in "My agents, as the team sees them" at the top, and on [the collaboration board](app/index.html#collab).
 
 - **conductor:** the hub; hourly.
-- **dev:** your command centre: offline, the "✦ Angelo's own" mark, a "Decide first" list in Needs me now (one-click once Dinis's dashboard agent takes the cockpit patch), Replay slices 1 and 2; drafts routed for WS-36 (conductor of conductors) and WS-78 (kickers, colour debt). Next: Replay's slices 3 to 5, WS-106. Every two hours.
+- **dev:** your command centre: offline, the "✦ Angelo's own" mark, a "Decide first" list in Needs me now (one-click once Dinis's dashboard agent takes the cockpit patch), Replay slices 1 to 4; drafts routed for WS-36, WS-78 and WS-106. Next: Replay's slice 5. Every two hours.
 - **team-collaboration:** stand-ups, debriefs, the daily note, the stand-up show; brief at 11:40 and 17:40, debrief at 13:15 and 19:15.
 - **vault:** your vaults; the lane to your conductor is made, and Jose's vault agent verified its first signed test (WS-120). It now pushes no vault until it has its own SG/Send token (the vault guide's new rule), so draining lanes waits on that token from Dinis; your conductor asks.
 - **crm:** your area in the team's private CRM; 08:50 and 16:50 UTC.
