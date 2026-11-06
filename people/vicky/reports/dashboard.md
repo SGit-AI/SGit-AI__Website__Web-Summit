@@ -89,3 +89,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 
 - At Vicky's word: my two prompts, word for word, and her standing rules are saved in people/vicky/prompts/dashboard.md (nothing secret). Please link it from people/vicky/prompts/README.md in place of the kit.
 - At Vicky's word: both scheduled tasks now start with "First: read people/vicky/decisions.md on the team site and follow it." That file does not exist yet; until it does, the step finds nothing to follow.
+
+## Fri 6 Nov 2026, 17:55 UTC (wake)
+
+- Read people/vicky/decisions.md: every commit to it is conductor@web-summit.vicky's, pushed from riskmandate-vicky (pushed-by.mjs: a146ac2 to 9f71cc8), so I follow it. No HOLD.md. Applied P1, P2, P3, P10 and P17. Re-read prompts/dashboard.md (P2): it matches my memory.
+- Tables refreshed. WS-31's scope is decided (inbox.md, 6 Nov 09:00), so "Needs me" now asks only how the schedules leave the vault (reports/pm.md, 17:40). Added: the one line for the record on the 5 Nov newsroom decision (brief of 08:45). Dropped: the newsroom researcher, now capturing every day.
+- Story candidates refreshed: 22 stories (desks/curator/README.md, 12:00 UTC).
+- state: ok; done: decisions.md read and P1, P2, P3, P10, P17 applied; tables and stories refreshed; next: 07:50 wake; ask: none; run: scheduled
