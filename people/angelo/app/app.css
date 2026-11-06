@@ -214,3 +214,5 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .tm-al { fill: var(--rm-text); font: 600 15px/1 var(--rm-font); text-anchor: middle; paint-order: stroke; stroke: var(--rm-surface); stroke-width: 4px; }
 .tm-p.off, .tm-a.off { opacity: .18; }
 .tm-p:focus-visible circle { stroke: var(--rm-focus); }
+.tm-k { fill: none; stroke: var(--rm-text-secondary); stroke-width: 1.5; pointer-events: none; }
+.tm-k.fresh { stroke-dasharray: 3 3; }
