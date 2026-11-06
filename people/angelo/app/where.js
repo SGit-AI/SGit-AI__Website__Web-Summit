@@ -68,11 +68,11 @@
 
     // ---------- state, loaded once; every change is written back to this device ----------
     let S = null, loading = null, timer = null, wired = false, sending = false, undo = null, picked = false, view = null, ctx = null
-    const save = () => Promise.all(['vault', 'queue', 'recent', 'syncedAt', 'offline'].map(k => put(k, S[k])))
+    const save = () => Promise.all(['vault', 'queue', 'recent', 'syncedAt', 'offline', 'pins'].map(k => put(k, S[k])))
     async function load() {
         const vault = await get('vault')
-        if (!vault) { S = seed(Date.now()); await save(); return }
-        S = { vault, queue: (await get('queue')) || [], recent: (await get('recent')) || [], syncedAt: (await get('syncedAt')) || '', offline: !!(await get('offline')) }
+        if (!vault) { S = { ...seed(Date.now()), pins: [] }; await save(); return }
+        S = { vault, queue: (await get('queue')) || [], recent: (await get('recent')) || [], syncedAt: (await get('syncedAt')) || '', offline: !!(await get('offline')), pins: (await get('pins')) || [] }
     }
     const online = () => navigator.onLine !== false && !S.offline
     const all = () => [...S.vault, ...S.queue]
@@ -89,18 +89,78 @@
     }
     async function add(rec) { S.queue.push(rec); await save() }
 
+    // ---------- the venue map (Angelo, 6 November: "the actual (or closest representation of) map spanning across all the
+    // venues, including the ability to set new pins with a label ... to setup our base or identify meeting spots") ----------
+    // The map is OpenStreetMap's, drawn with Leaflet (loaded from cdnjs only when this view opens; offline, the pins show
+    // as a list). The venues' positions are OpenStreetMap's own (Nominatim, read 6 November 2026), not guessed. The team's
+    // pins are places, never people: a person's line still names a place, and the map counts who is at each.
+    const VENUES = [
+        { id: 'v-meo', label: 'MEO Arena (Centre Stage)', short: 'MEO Arena', kind: 'venue', lat: 38.7684689, lng: -9.0939002, src: 'https://www.openstreetmap.org/way/821784762' },
+        { id: 'v-fil', label: 'FIL, Pavilions 1 to 5 (our stand: Pavilion 1, A1-30)', short: 'FIL · our stand P1', kind: 'venue', lat: 38.7709304, lng: -9.0939393, src: 'https://www.openstreetmap.org/way/821641463' },
+        { id: 'v-oriente', label: 'Oriente station (metro, train)', short: 'Oriente', kind: 'venue', lat: 38.7678490, lng: -9.1016705, src: 'https://www.openstreetmap.org/way/189718436' },
+        { id: 'v-pp', label: 'Pavilhão de Portugal', kind: 'venue', lat: 38.7663417, lng: -9.0949798, src: 'https://www.openstreetmap.org/relation/3266709' },
+    ]
+    // which pin a place from the short list belongs to (the halls and the stand are in FIL; Centre Stage is the arena)
+    const PLACE_PIN = { 'Stand': 'v-fil', 'Hall 1': 'v-fil', 'Hall 2': 'v-fil', 'Hall 3': 'v-fil', 'Hall 4': 'v-fil', 'Centre Stage': 'v-meo', 'Venue': 'v-fil' }
+    const PIN_KINDS = [['base', 'Our base'], ['meet', 'Meeting spot'], ['other', 'Other']]
+    const LEAFLET = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/'
+    let pinMode = false, pending = null, pinKind = 'meet', pinLabel = '', lmap = null, mapEl = null, layer = null, lfail = false, lloading = null
+    function leaflet() {
+        if (root.L && root.L.map) return Promise.resolve(root.L)
+        if (lloading) return lloading
+        const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = LEAFLET + 'leaflet.min.css'; document.head.appendChild(css)
+        return lloading = new Promise((ok, no) => { const sc = document.createElement('script'); sc.src = LEAFLET + 'leaflet.min.js'; sc.onload = () => ok(root.L); sc.onerror = no; document.head.appendChild(sc) })
+            .catch(() => { lfail = true; lloading = null; draw() })
+    }
+    const pinOf = (place, pins) => { const own = pins.find(x => x.label === place); return own ? own.id : PLACE_PIN[place] || '' }
+    function whoAt(L) { const by = {}; for (const [p, r] of L) { if (freshness(r, Date.now()) === 'gone') continue; const id = pinOf(r.place, S.pins); if (id) (by[id] = by[id] || []).push(NAMES[p] || p) } return by }
+    function mapSection(L) {
+        const pins = [...VENUES, ...S.pins], at = whoAt(L)
+        const list = pins.map(x => `<li class="aw-pin aw-pin-${x.kind}"><button type="button" class="ak-chip" data-aw-pin-go="${esc(x.id)}">${esc(x.label)}</button>${at[x.id] ? ` <span class="note">${esc(at[x.id].join(', '))}</span>` : ''}${x.kind !== 'venue' ? ` <span class="note">(${esc((PIN_KINDS.find(k => k[0] === x.kind) || [, ''])[1])})</span> <button type="button" class="aw-x" data-aw-pin-del="${esc(x.id)}" aria-label="Remove the pin ${esc(x.label)}">Remove</button>` : ''}</li>`).join('')
+        const form = pending ? `<form class="aw-pinf"><input type="text" maxlength="40" required placeholder="Its label, e.g. Our base, Coffee by Hall 2" aria-label="The pin's label" value="${esc(pinLabel)}"><div class="aw-pink" role="group" aria-label="Kind">${PIN_KINDS.map(([k, l]) => `<button type="button" class="ak-chip" data-aw-pin-kind="${k}" aria-pressed="${pinKind === k}">${l}</button>`).join('')}</div><button type="submit" class="cc-btn">Save the pin</button><button type="button" class="ak-tog" data-aw-pin-cancel>Cancel</button></form>` : ''
+        return `<section class="cc-card aw-map"><div class="aw-maph"><h3 class="ak-h3">The venue map</h3><button type="button" class="ak-tog" data-aw-pin-add aria-pressed="${pinMode}">${pinMode ? (pending ? 'Placing a pin…' : 'Tap the map where the pin goes') : '＋ Add a pin'}</button></div>
+${lfail ? '<p class="note">The map could not load (offline?). The pins, as a list:</p>' : '<div class="aw-map-slot"></div>'}${form}
+<ul class="aw-pins">${list}</ul>
+<p class="note">Map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors. Grey pins are the venues (OpenStreetMap's positions); yours are gold for a base, blue for a meeting spot. Each shows who is there now, from the team's lines. Places only: never a person's location.</p></section>`
+    }
+    function mountMap(L) {
+        const slot = view.querySelector('.aw-map-slot'); if (!slot) return
+        if (!mapEl) { mapEl = document.createElement('div'); mapEl.className = 'aw-leaf' }
+        slot.appendChild(mapEl)
+        leaflet().then(Lf => {
+            if (!Lf || !mapEl.isConnected) return
+            if (!lmap) {
+                lmap = Lf.map(mapEl, { scrollWheelZoom: false }).fitBounds(VENUES.map(v => [v.lat, v.lng]), { padding: [30, 30] })
+                Lf.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(lmap)
+                lmap.on('click', e => { if (!pinMode) return; pending = e.latlng; draw(); const i = view.querySelector('.aw-pinf input'); if (i) i.focus() })
+            }
+            lmap.invalidateSize()
+            if (layer) layer.remove()
+            layer = Lf.layerGroup().addTo(lmap)
+            const at = whoAt(lines(all()))
+            for (const x of [...VENUES, ...S.pins]) {
+                const n = (at[x.id] || []).length
+                Lf.marker([x.lat, x.lng], { icon: Lf.divIcon({ className: `aw-mk aw-mk-${x.kind}`, html: `<span>${esc(x.short || x.label)}${n ? ` · ${n} here` : ''}</span>`, iconSize: null }) })
+                    .bindPopup(`<b>${esc(x.label)}</b>${n ? `<br>${esc(at[x.id].join(', '))}` : ''}${x.src ? `<br><a href="${x.src}" target="_blank" rel="noopener">OpenStreetMap</a>` : ''}`).addTo(layer)
+            }
+            if (pending) Lf.circleMarker(pending, { radius: 9, color: '#e8b33a', weight: 3 }).addTo(layer)
+        })
+    }
+
     // ---------- drawing ----------
     const lisbon = d => new Date(d).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Lisbon' })
     const untilText = u => !u ? '' : u === 'eod' ? 'until the end of the day' : `until ${lisbon(u)}`
     function draw() {
         if (!view || !view.isConnected || !ctx) return
-        const focus = view.querySelector('.aw-note input:focus'); if (focus) return // never under someone's typing
+        const focus = view.querySelector('.aw-note input:focus, .aw-pinf input:focus'); if (focus) return // never under someone's typing
         const now = Date.now(), L = lines(all()), mine = L.get(ME), I = items(all())
         const queued = S.queue.length, off = !online()
         const status = off
             ? `<b>Offline${S.offline ? ' (tried)' : ''}:</b> the board as of ${S.syncedAt ? lisbon(S.syncedAt) : 'never'}${queued ? `; ${queued} update${queued > 1 ? 's' : ''} waiting to send` : '; nothing waiting'}.`
             : queued ? `<b>Sending</b> ${queued} update${queued > 1 ? 's' : ''}, oldest first${undo && Date.now() - undo.t < UNDO_MS ? ' (yours waits 5 s, so you can undo)' : ''}…` : `<b>Synced</b> at ${lisbon(S.syncedAt)}.`
-        const placeOrder = [...new Set([...S.recent, ...PLACES])].slice(0, PLACES.length)
+        // fixed order (Angelo, 6 November: the buttons "change text as I click": they were reordered, most recent first,
+        // so the button under the finger took another place's name). The team's own pins follow the list.
+        const placeOrder = [...new Set([...PLACES, ...S.pins.map(x => x.label)])]
         const row = (p, r) => {
             const f = freshness(r, now), q = S.queue.some(x => x === r)
             return `<li class="aw-line aw-${f}${p === ME ? ' aw-me' : ''}"><span class="aw-who">${esc(NAMES[p] || p)}</span><span class="aw-place">${esc(r.place)}</span><span class="aw-what">${esc(r.next || '')}${r.until ? ` <span class="note">${esc(untilText(r.until))}</span>` : ''}${r.note ? `<br><span class="note">${esc(r.note)}</span>` : ''}</span><span class="aw-age note">${f === 'gone' ? `not seen since ${esc(lisbon(r.at))}` : esc(ctx.ago(r.at))}${q ? ' · <i>sending</i>' : ''}</span></li>`
@@ -111,6 +171,7 @@
         view.innerHTML = `${ctx.note()}<nav class="ak-switch" aria-label="More views"><a href="#kanban">← Kanban <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav><section class="aw">
 <div class="aw-demo" role="note"><b>Demo.</b> Made-up people and items; nothing leaves this browser. The "vault" here is a store on this device, so you can try the two modes: updates go into a queue first and are sent when online. Step 1 of WS-181 (the design: <a href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/proposals/WS-181/page.md">page.md</a>); the real vaults come after security's review.</div>
 <div class="aw-status${off ? ' aw-off' : ''}" role="status" aria-live="polite"><span>${status}</span><span class="aw-btns"><button type="button" class="ak-tog" data-aw-offline aria-pressed="${S.offline}">Try offline</button><button type="button" class="ak-tog" data-aw-reset>Reset the demo</button></span></div>
+${mapSection(L)}
 <section class="cc-card aw-mine"><h3 class="ak-h3">Your line</h3>
 <p class="aw-now">${mine ? `<b>${esc(mine.place)}</b>${mine.next ? `, ${esc(mine.next.toLowerCase())}` : ''}${mine.until ? ` ${esc(untilText(mine.until))}` : ''} <span class="note">(${esc(ctx.ago(mine.at))})</span>` : 'Not set yet.'}${undo && Date.now() - undo.t < UNDO_MS && S.queue.some(x => x.at === undo.at) ? ` <button type="button" class="ak-chip" data-aw-undo>Undo</button>` : ''}</p>
 <p class="aw-step">1. Where are you?</p><div class="aw-grid" role="group" aria-label="Where are you">${placeOrder.map(p => `<button type="button" class="aw-b" data-aw-place="${esc(p)}"${mine && mine.place === p ? ' aria-pressed="true"' : ''}>${esc(p)}</button>`).join('')}</div>
@@ -126,7 +187,8 @@ ${picked ? `<p class="aw-step">2. What next? <span class="note">(optional)</span
 <li><b>Conflicts.</b> Each person writes only their own line, and the newest by its own time wins: an older update that arrives late never replaces a newer one. Collections, shifts and meetings are events (created, done, moved), so two people never overwrite each other.</li>
 <li><b>In the real version</b> (after security's review), the queue goes to the team's private vault, signed with your key, and the board is read from the vaults. Nobody's place is ever in the repository or a public vault.</li></ul></details>
 </section>`
-        if (!view.__aw) { view.__aw = true; view.addEventListener('click', onClick); view.addEventListener('submit', onSubmit) }
+        mountMap(L)
+        if (!view.__aw) { view.__aw = true; view.addEventListener('click', onClick); view.addEventListener('submit', onSubmit); view.addEventListener('input', e => { if (e.target.closest('.aw-pinf')) pinLabel = e.target.value }) }
     }
     async function setMine(patch, fresh) {
         const cur = lines(all()).get(ME) || {}
@@ -146,9 +208,20 @@ ${picked ? `<p class="aw-step">2. What next? <span class="note">(optional)</span
         if ('awUndo' in d) { if (undo) S.queue = S.queue.filter(r => r.at !== undo.at); undo = null; picked = false; await save(); return draw() }
         if (d.awDone) { await add({ type: 'done', id: d.awDone, at: new Date().toISOString() }); return draw() }
         if ('awOffline' in d) { S.offline = !S.offline; await save(); return draw() }
-        if ('awReset' in d) { await wipe(); S = null; undo = null; picked = false; sending = false; await load(); return draw() }
+        if ('awPinAdd' in d) { pinMode = !pinMode; pending = null; return draw() }
+        if ('awPinCancel' in d) { pinMode = false; pending = null; pinLabel = ''; return draw() }
+        if (d.awPinKind !== undefined) { pinKind = d.awPinKind; return draw() }
+        if (d.awPinDel) { S.pins = S.pins.filter(x => x.id !== d.awPinDel); await save(); return draw() }
+        if (d.awPinGo) { const x = [...VENUES, ...S.pins].find(v => v.id === d.awPinGo); if (x && lmap) lmap.setView([x.lat, x.lng], 18); return }
+        if ('awReset' in d) { await wipe(); S = null; undo = null; picked = false; sending = false; pinMode = false; pending = null; await load(); return draw() }
     }
     async function onSubmit(e) {
+        if (e.target.closest('.aw-pinf')) {
+            e.preventDefault(); const label = e.target.querySelector('input').value.trim().slice(0, 40)
+            if (!label || !pending) return
+            S.pins.push({ id: 'p' + Date.now().toString(36), label, kind: pinKind, lat: +pending.lat.toFixed(6), lng: +pending.lng.toFixed(6), at: new Date().toISOString(), by: ME })
+            pinMode = false; pending = null; pinLabel = ''; e.target.querySelector('input').blur(); await save(); return draw()
+        }
         if (!e.target.closest('.aw-note')) return
         e.preventDefault(); const v = e.target.querySelector('input').value.trim().slice(0, 80); e.target.querySelector('input').blur()
         await setMine({ note: v })

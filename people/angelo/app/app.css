@@ -317,3 +317,18 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .rpm-tick { margin: 0; padding: 8px 12px; border-top: 1px solid var(--rm-border); font: 400 13px/19px var(--rm-font); color: var(--rm-text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 36px; }
 .rp-clip .rp-views { display: none; }
 .rp-clip .rpm-svg { max-height: calc(100vh - 110px); width: auto; display: block; }
+
+/* the venue map in Where (Angelo, 6 November) */
+.aw-maph { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.aw-leaf { height: 380px; width: 100%; border-radius: var(--rm-radius-control); overflow: hidden; margin: 10px 0; background: var(--rm-surface-raised); }
+@media (max-width: 767px) { .aw-leaf { height: 300px; } }
+.aw-pins { list-style: none; margin: 8px 0; padding: 0; display: grid; gap: 6px; }
+.aw-pin { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.aw-x { background: none; border: 0; color: var(--rm-text-muted); text-decoration: underline; cursor: pointer; font: 400 13px/18px var(--rm-font); min-height: 32px; }
+.aw-pinf { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 6px 0; }
+.aw-pinf input { flex: 1 1 220px; min-height: 44px; padding: 0 10px; border-radius: var(--rm-radius-control); border: 1px solid var(--rm-border); background: var(--rm-surface-raised); color: var(--rm-text); font: 400 15px/22px var(--rm-font); }
+.aw-pink { display: flex; gap: 6px; }
+.aw-mk span { display: inline-block; transform: translate(-50%, -100%); white-space: nowrap; padding: 3px 8px; border-radius: 999px; font: 600 12px/16px var(--rm-font); color: #0b1a2b; background: #c9d4e0; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
+.aw-mk-base span { background: #e8b33a; }
+.aw-mk-meet span { background: #6db3f2; }
+.aw-mk-other span { background: #b9a4f0; }
