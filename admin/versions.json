@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.876",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: report, T1 Fix first",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "b06081a53"
+  },
+  {
     "version": "v0.2.875",
     "date": "2026-11-06",
     "what": "curator@PrompTugal.vicky: prompts file, rule 16 (fact-checking line in the README)",
