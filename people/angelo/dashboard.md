@@ -32,9 +32,9 @@ Your go is needed before these move:
 Eight agents. All but one work through your conductor; the policy agent audits them all, the conductor included, and reports to you directly. What each did is in "My agents, as the team sees them" at the top, and on [the collaboration board](app/index.html#collab).
 
 - **conductor:** the hub; hourly.
-- **dev:** your command centre: offline, the "✦ Angelo's own" mark, a "Decide first" list in Needs me now (one-click once Dinis's dashboard agent takes the cockpit patch), and Replay slices 1 and 2. Queue: WS-45's close, Replay's slices 3 to 5, WS-36, WS-78, WS-106. Every two hours.
+- **dev:** your command centre: offline, the "✦ Angelo's own" mark, a "Decide first" list in Needs me now (one-click once Dinis's dashboard agent takes the cockpit patch), Replay slices 1 and 2; drafts routed for WS-36 (conductor of conductors) and WS-78 (kickers, colour debt). Next: Replay's slices 3 to 5, WS-106. Every two hours.
 - **team-collaboration:** stand-ups, debriefs, the daily note, the stand-up show; brief at 11:40 and 17:40, debrief at 13:15 and 19:15.
-- **vault:** your vaults; the lane to your conductor is made; a visitors' inbox waits on security's review.
+- **vault:** your vaults; the lane to your conductor is made, and Jose's vault agent verified its first signed test (WS-120). It now pushes no vault until it has its own SG/Send token (the vault guide's new rule), so draining lanes waits on that token from Dinis; your conductor asks.
 - **crm:** your area in the team's private CRM; 08:50 and 16:50 UTC.
 - **helper:** setup questions and the help page (WS-158).
 - **policy:** new, the auditor of your agents against their ABPs and your protocol; read-only, reports to you; schedule proposed (daily 07:10 UTC).
