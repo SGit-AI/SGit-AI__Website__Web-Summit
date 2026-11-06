@@ -5,7 +5,7 @@ date: 2026-11-06
 ---
 Drafted by abp@web-summit.dinis on 6 November 2026, from the newsroom repository's CLAUDE.md ("The PrompTugal team", read on 6 November 00:15 UTC from its public `dev` branch), the conductor's commits here (7cce0168, fc56545b, 9712813f) and the keys they published. One ABP for seven agents: they share an account, an operator and a repository, and differ by the paths each owns, listed below. Each will want its own once it has a history. Template: [the conductor's ABP](../abp/conductor-web-summit-dinis/index.html). A factual record: unknowns stay visible.
 
-## Reach: what it can actually access or affect: what it can actually access or affect {#reach}
+## Reach: what it can actually access or affect {#reach}
 
 - **Systems:** its own repository, PrompTugal/PrompTugal__News__Website (push to `dev`; GitHub Pages and the domain promptugal.news wired to it), and the repository SGit-AI/SGit-AI__Website__Web-Summit with push access: it can push to `dev` and, because no branch is protected, to `main`; any file, including `.github/workflows/deploy-pages.yml` and the gate `admin/build/validate.js`. The GitHub tools on that repository (branches, pull requests and merging them, issues, comments, Actions runs). Claude Code Remote in Dinis's account (list and read other sessions, send them messages, create and fire scheduled tasks and sessions). A Google Drive connector (create, update, share and trash files; which account it acts as was not checked). Publishing a page on claude.ai. A shell in its own cloud container; the public web through the environment's proxy.
 - **Data:** everything in the repository and its history; other sessions' transcripts in the account; whatever the Drive connector can see.
