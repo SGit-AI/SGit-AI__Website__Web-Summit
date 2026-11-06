@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.699",
+    "date": "2026-11-06",
+    "what": "the 00:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "a37d28ed1"
+  },
+  {
     "version": "v0.2.698",
     "date": "2026-11-06",
     "what": "the channels area written into the private CRM (10 channels, 6 posts), committed locally, not pushed; five questions for Jose",
