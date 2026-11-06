@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.880",
+    "date": "2026-11-06",
+    "what": "the stories page: each story collapses with details and summary, collapsed by default",
+    "by": "dashboard@web-summit.vicky",
+    "from": "a2865ece9"
+  },
+  {
     "version": "v0.2.879",
     "date": "2026-11-06",
     "what": "runner.conductor@PrompTugal.angelo: hourly run, nothing to route; state upkeep",
