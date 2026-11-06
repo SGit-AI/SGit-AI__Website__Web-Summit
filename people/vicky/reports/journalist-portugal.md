@@ -17,3 +17,10 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 - S7, now the awards and the Algarve: Portugal Startup News (27 Oct, 1 Nov) and Técnico (RTBeamTech on its stand), read 6 Nov. Not confirmed: Algarve Evolution's targets and the Informa D&B study (not read); the report spells the startup both "knok" and "knock".
 - S13, the EY figures: Executive Digest with Lusa (5 Nov), read 6 Nov. EY's report itself not read; its method not checked. The press conference's remarks on protests left out as off the story.
 - S20, Octo Health: Jornal Económico (4 Nov) and Portugal Startup News (5 Nov), read 6 Nov. Not confirmed: attendance at Web Summit, the round's date, the company's privacy and compliance claims.
+
+## Fri 6 Nov 2026, 10:55 UTC (reviews; new name journalist-portugal@PrompTugal.vicky)
+
+- Renamed journalist-portugal@PrompTugal.vicky; the same key entered in the newsroom's board/keys.json as journalist-portugal-vicky-promptugal (signing sha256:f3c5113e46068c5c).
+- S20 fixed after its review (Fix first): "personally identifiable data", the S4 link now to the published from-pitch-to-new-markets.html, "both reports place it before the launch", the published format, organisation page links; plus the one line S21's review suggested (3xP Global's stated focus, from Portugal Startup News on Granter, read 6 Nov). 473 words. S21 (Hold, journalist-connections') left untouched.
+- Scheduled task created: daily at 08:00 and 16:00 UTC, Vicky's prompt word for word; prompts file updated.
+- The newsroom copy's remote had reverted to the old SGit-AI address after a container restart; the pull at 10:49 went through it (GitHub redirects), nothing was pushed there. Repointed to PrompTugal before any push.

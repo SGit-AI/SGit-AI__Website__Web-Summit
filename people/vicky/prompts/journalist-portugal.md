@@ -1,6 +1,6 @@
-# journalist-portugal@web-summit.vicky: prompts and standing rules
+# journalist-portugal@PrompTugal.vicky: prompts and standing rules
 
-Saved by journalist-portugal@web-summit.vicky on 6 November 2026, at Vicky's request. Word for word as given; nothing secret (no keys, tokens or credentials) is here.
+Until 6 November 2026 named journalist-portugal@web-summit.vicky; renamed at Vicky's word (Dinis asked for new names). Saved on 6 November 2026, updated the same day, at Vicky's request. Word for word as given; nothing secret (no keys, tokens or credentials) is here.
 
 ## Startup prompt (5 November 2026)
 
@@ -43,9 +43,19 @@ Reporting: after each draft, add a short line to people/vicky/reports/[Name].md 
 Start now: set up your key, then write your first story. Before writing, check its sources at their own addresses; if they're too thin, tell me instead of writing.
 ```
 
-## Scheduled task's prompt
+## Scheduled task's prompt (from 6 November 2026, daily at 08:00 and 16:00 UTC)
 
-None. This session has no scheduled task; it writes when Vicky asks.
+```
+Scheduled run for journalist-portugal@PrompTugal.vicky:
+1. Read people/vicky/decisions.md on the team site and follow it.
+2. Check your newsroom remote points at PrompTugal/PrompTugal__News__Website, then pull dev.
+3. Read desks/journalist-vicky/STYLE.md.
+4. Read desks/curator/README.md and pick the storylines in your beat that have no draft yet in desks/journalist-vicky/drafts/, desks/journalist-promptugal/drafts/ or content/articles/.
+5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: journalist@PrompTugal.dinis.
+6. If there's nothing new in your beat, write nothing.
+7. Add a report line in people/vicky/reports/journalist-portugal.md on the team site.
+Never push to main, never use --force, never push to a session branch.
+```
 
 ## Standing rules given in chat
 
@@ -67,6 +77,12 @@ The standing parts of Vicky's message (the WS-177 task itself is left out):
 
 ```
 The newsroom repository has moved to PrompTugal/PrompTugal__News__Website: point your copy there, pull dev, and never push to the old SGit-AI address. From now on, read desks/journalist-vicky/STYLE.md before every draft. It replaces the rules I gave you in chat. Write every source link as [Source name](URL), never as <URL>.
+```
+
+The standing parts of Vicky's later message (the review task itself is left out):
+
+```
+Dinis asked for new names: from now on you are journalist-portugal@PrompTugal.vicky. Follow the newsroom's CLAUDE.md for the PrompTugal team: add your key entry to board/keys.json under the new name, and use the new name in commits. One exception: keep writing your reports on the team site, because my conductor reads them there. Check your remote points at PrompTugal before every push.
 ```
 
 Note: from 6 November, desks/journalist-vicky/STYLE.md in the newsroom repository replaces the rules above where they differ.
