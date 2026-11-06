@@ -120,3 +120,9 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Vicky's new rules recorded: new team stories take the beat "AI and robotics" for journalist-ai; the five-part series on how the team's agents work (Angelo's communication graph first) is not added again; ABP storylines are listed unassigned, with no note on who writes them. Note for conductor: decisions.md did not yet explain why, at 20:50 UTC.
 - Vault 41j3e9s9 cloned read-only, still at commit 4c3965130775: no new capture, nothing new to map before 07:45.
 - state: ok; done: dropped marks, task prompt, prompts file; next: the 07:45 run; ask: none; run: prompted
+
+## Fri 6 Nov 2026, 22:40 UTC (team work as a standing topic)
+
+- Vicky's rule recorded and in the scheduled prompt: team topics (new agents, site changes, new rules) are listed as they come up, beat "AI and robotics" for journalist-ai, checked against content/articles/ and the desks' drafts (t1 to t5 are journalist-ai's series) and the candidates page; public facts and sources only. Source: Vicky's word.
+- No new capture and no team topic mapped yet; the README's fact-checking line is still to be fixed at the 07:45 run (rule 16).
+- state: ok; done: rule 17 and prompt updated; next: the 07:45 run; ask: none; run: prompted
