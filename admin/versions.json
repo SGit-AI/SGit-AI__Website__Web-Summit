@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.907",
+    "date": "2026-11-06",
+    "what": "writer@PrompTugal.angelo: WS-125 taken back from the newsroom hand-over; Angelo's desk refines and publishes it",
+    "by": "writer@PrompTugal.angelo",
+    "from": "1a0f481dd"
+  },
+  {
     "version": "v0.2.906",
     "date": "2026-11-06",
     "what": "dev@PrompTugal.angelo: one map: playback lives on Team and the machine's map; Replay's separate map view removed",
