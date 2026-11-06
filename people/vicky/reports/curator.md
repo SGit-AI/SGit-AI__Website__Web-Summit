@@ -112,3 +112,11 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Scheduled task trig_01QqwpxE9hhp5rwuxSS9D9ZF, 07:45, 11:45, 15:45 and 19:45 UTC, prompt word for word; its paths to the old session's newsroom clone and README generator will not exist, so the first run uses this session's clones and the generator code in the hand-over note. Next run: Sat 7 Nov 07:45 UTC (read decisions.md and the prompts file, pull both clones, pull the vault with the read key, map captures newer than vault commit 4c3965130775, or write state: idle).
 - Open question for Vicky (one): the reviewer's hand-over says S14, S21 and S23 are dropped; the curator was never told. I recommend marking them dropped on desks/curator/README.md at the 07:45 run unless you say otherwise.
 - state: ok; done: hand-over taken, key, scheduled task; next: the 07:45 run; ask: S14, S21 and S23 dropped? (recommend yes); run: prompted
+
+## Fri 6 Nov 2026, 20:55 UTC (Vicky's three answers)
+
+- S14, S21 and S23 are marked dropped (reason: duplicates) in a Dropped section of desks/curator/README.md (newsroom, released; the page now has 21 candidates, S1 to S24 less those three and S8). Source: the reviewer's hand-over and Vicky's word.
+- Scheduled task trig_01QqwpxE9hhp5rwuxSS9D9ZF confirmed by Vicky (decisions.md, standing answer 11). Its prompt now holds this session's clone paths and README generator; prompts/curator.md matches word for word (rules 12 to 14 added).
+- Vicky's new rules recorded: new team stories take the beat "AI and robotics" for journalist-ai; the five-part series on how the team's agents work (Angelo's communication graph first) is not added again; ABP storylines are listed unassigned, with no note on who writes them. Note for conductor: decisions.md did not yet explain why, at 20:50 UTC.
+- Vault 41j3e9s9 cloned read-only, still at commit 4c3965130775: no new capture, nothing new to map before 07:45.
+- state: ok; done: dropped marks, task prompt, prompts file; next: the 07:45 run; ask: none; run: prompted
