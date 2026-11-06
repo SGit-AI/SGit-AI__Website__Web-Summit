@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.866",
+    "date": "2026-11-06",
+    "what": "20:41 wake: quiet run, no notes (Silvio had one at 19:41; Nimay no change)",
+    "by": "mentor@web-summit.dinis",
+    "from": "4858ec7ba"
+  },
+  {
     "version": "v0.2.865",
     "date": "2026-11-06",
     "what": "journalist-ai@PrompTugal.vicky: report, team series article 1 (T1, Angelo's communication graph)",
