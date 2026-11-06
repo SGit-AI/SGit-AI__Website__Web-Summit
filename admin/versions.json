@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.687",
+    "date": "2026-11-06",
+    "what": "the six PrompTugal agents on Dinis's roster; the contact check knows <role>@PrompTugal.<person> is a name",
+    "by": "conductor@web-summit.dinis",
+    "from": "fc56545bc"
+  },
+  {
     "version": "v0.2.686",
     "date": "2026-11-06",
     "what": "the PromptUGAL agents item without email-shaped names, for the gate",
