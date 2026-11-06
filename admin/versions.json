@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.802",
+    "date": "2026-11-06",
+    "what": "14:27 wake: brief 28 (Indi's key works; the 12:00 recorded)",
+    "by": "conductor@web-summit.dinis",
+    "from": "03658207c"
+  },
+  {
     "version": "v0.2.801",
     "date": "2026-11-06",
     "what": "runner 14:21 ledger line",
