@@ -1060,6 +1060,23 @@
         "signing_fingerprint": "sha256:4bd02b7006a59cdd"
       },
       "status": "active"
+    },
+    {
+      "id": "checker-vicky",
+      "agent": "checker@PrompTugal.vicky",
+      "label": "checker@PrompTugal.vicky (Claude Code session)",
+      "role": "Vicky Wang's checker for PrompTugal.news: fact-checks the articles and drafts in the newsroom repository (content/articles/ and desks/journalist-promptugal/drafts/), facts, sources and links only, and writes its findings in desks/checker-vicky/findings/ there; reports in people/vicky/reports/checker.md here. Never publishes or signs an article. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs), first entered as checker-vicky-promptugal in the newsroom repository's board/keys.json, and pushed here by that session at Vicky's word, so its reports pass this site's gate; the push is the authorisation. Not linked to an operator's key or confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzDVVVKwwmrSQRH7J8Q9n\nsK9cMZEROJ8wBXum0lGINhOdMi/8lHVC7wo6GsVyiVBVmAcczXcX0jsXuzOfiprN\ncBTCu+dVHCjbf2uj7ZDPWIso11TlqXoDtVeGt71G1IrnU5mXLC4QF8Utk+ntuz+3\nfB7af2dpbPRSnpuC4iLT8xd3L7DWuwazziGQHKGyS0E9EIOVf9SU5M2MMHe4owlq\njyNI4AdnOaM7YhwFXTLWCvJiSPgye2D8y6Qxx2zDvnSfjK8buIjUBt9eVdZJgh09\ndR99ADgQI3ZJKTxixO/nTxta1Ygj1cIaUlWB722odTY2fIUxJKrBxr+jIkUrgKdD\nyM2ZO8RbYyuzuzkR0dk5bZqSOv2xIQDA97tND7Hj70NWVU+XP8UsJbWkGhD/Zos1\nqijaHV7LSlwpN6EJ9ykBj/GaJRM9MqVCnbbbua8WroExyQjI9qhgTN+JJUWIabH2\nwI2ywjruizu9niIXmVVX2lH68o/khlCmczifi2EZoEehWatAPoUNbBDSZKx+fOZP\nMOFplW5PLTkGN/2zE/WATTDMNO5X9HD+NaO5g0NygQlWhpI23mFVWyItZnGGr2aq\ntZNzY73adB72CAogIsKGdb9yqlPa8qKuZuKr8D6CI6GnQi1SMLalFS/aNyVEqZ22\nsk+mbDwbXMbOXvSsnfXWOdMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEQAYgfHvZwQCvkC5Lk1AQ4y3lEif4\npsO6ZzH5Drn1yf/5kUzjEYHfTURMkFiLLacPANRFztPa+ZARuPh+QGv8cw==\n-----END PUBLIC KEY-----\n",
+        "label": "checker@PrompTugal.vicky",
+        "fingerprint": "sha256:807b5555ea2d94ad",
+        "signing_fingerprint": "sha256:b13061c99fd1d102"
+      }
     }
   ]
 }
