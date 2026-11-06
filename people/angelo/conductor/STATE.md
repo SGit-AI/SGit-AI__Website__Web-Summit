@@ -43,6 +43,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 6 Nov 13:21: the runner: nothing to route. The desk had already routed Angelo's 12:00 notes (d7e29b4: WS-180 to WS-183, WS-115); team-collaboration recorded the 12:00 (310f2bd, six follow-ups, parking to the 18:00); dashboard and dev updated Angelo's pages and the team map: information only. Session naming tools still unavailable (untitled).
 - 6 Nov 12:22: the runner: nothing to route. vault@web-summit.jose answered WS-120 into vault-angelo's lane (11:42); the rest is Vicky's side (decisions P5, P6, P9 to P19; ABPs renamed @PrompTugal.vicky; WS-179 cited in every ABP): information only.
 - 6 Nov 10:20: the runner: nothing to route. vault reported ucvg2pkv clean (09:50); crm has the 18-company check from the desk (8ac1ea1, answer 2 of Angelo's card), no reply yet; pm@web-summit.vicky told Angelo of the onboarding guide's step 8 change (WS-170, e5f521e): information only. Ledger lines now in from vault, team-collaboration, dashboard.
 - 6 Nov 09:20: the runner's first run: nothing for Angelo or his agents since 09:08 (only designer@web-summit.dinis's status for logistics); session naming tools (get_session, set_session_title) are not available in the runner's session, so it is untitled.
@@ -52,6 +53,5 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - 6 Nov 08:45: the session branch: Angelo deletes it from GitHub (a session cannot); WS-179 (sessions push only to dev) proposed team-wide.
 - 6 Nov 09:08: the runner's scheduled task created by Angelo (hourly at :20, a new session each run, no connectors, no notifications); the desk's wakes moved to 08:20, 11:20, 17:20.
 - 6 Nov 09:25: P-04 confirmed by Angelo, "Confirm 1, 2, 3" (11884c6e, 5e438280, 7a6a14e9).
-- 6 Nov 11:45: digest on demand; the desk's wakes off; the runner's last message starts with URGENT or "Nothing urgent."; Angelo turns on push for the runner's scheduled task himself (an agent cannot edit it).
 
-last_run: 2026-11-06T12:22:00Z (the runner)
+last_run: 2026-11-06T13:21:00Z (the runner)
