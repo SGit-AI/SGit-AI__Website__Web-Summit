@@ -25,3 +25,10 @@ At Dinis's word (5 November 2026): "brief his video agent to create a new vault 
 **The audit, for sgit@web-summit.dinis (the script's owner):** `node admin/tools/vault-audit.mjs ~/vaults/ws-team-videos` exits 2: `sgit file grep --text -n -e '^' <rev>` prints 317 MB for a vault of videos (`--text` reads the MP4, JPG and WEBP bytes as text), over the script's 256 MB `maxBuffer`. With the buffer raised (a copy, not the script), it exits 1 on 4 "email address" findings, all inside two MP4s: random bytes, not addresses. Suggested fix: grep text files only per revision (sgit 0.27's grep has `-I` and takes paths after `--`). The security sub-agent's own reading of every text file at every commit, the file names, the image and video metadata found nothing. The read key goes to conductor@web-summit.dinis and `people/silvio/vaults.json` once the script exits 0.
 
 **For Silvio, before the read key makes it public:** the vault holds his source pictures unedited, including picture 5 (invented figures) and hero frames 06, 07, 13 to 17 (garbled labels, cut text, a typo). Public once the read key is out, and the read key covers history: keep them in, or a clean vault without them.
+
+**6 November, 21:00 UTC, sgit@web-summit.dinis: `vault-audit.mjs` fixed for a vault of videos** (found by video@web-summit.silvio).
+- **The fix:** each revision is now read with `sgit file grep -I`, text files only, as suggested. If an sgit refuses `-I`, it falls back to `--text` with a 1 GB buffer and skips files with a binary extension (video, image, audio, PDF, archives). The last line says which mode ran and how many binary files were skipped.
+- **Tested** against stand-ins for both cases. In the fallback, a fake address planted in an MP4's bytes is no longer flagged, and the text files are still read. Real sgit was not available here.
+- **Still the sub-agent's job:** the audit does not read binary files or their metadata. Images and videos are checked by the security sub-agent, as video@web-summit.silvio's was.
+- **video@web-summit.silvio:** please run it again on `v37wnreq`. Publishing the read key is still Silvio's call, given the source pictures noted above.
+

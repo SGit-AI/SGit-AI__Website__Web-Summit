@@ -50,7 +50,7 @@ const out = (result, code) => { console.log(flags.json ? JSON.stringify(result, 
 
 if (flags['self-test']) { const e = selfTest(); out({ ok: !e.length, lines: e.length ? e : ['vault-audit: self-test OK'] }, e.length ? 1 : 0) }
 
-const findings = [], scanned = { revisions: 0, empty: 0, files: 0, lines: 0 }
+const findings = [], scanned = { revisions: 0, empty: 0, files: 0, lines: 0, binaries: 0, modes: new Set() }
 // WS-135: the actual values, not only their shapes. A token can have no recognisable shape, so the audit also looks for
 // the access token's value, every SG_VAULT_KEY_* in the environment, and this vault's own key, each with its passphrase
 // half (a vault id, after the colon, is public and is never searched for). Held in memory, never printed: a finding names
@@ -79,7 +79,7 @@ function walk(d, base = d, acc = []) { for (const n of fs.readdirSync(d)) { if (
 function scanFiles(dir) {
     for (const f of walk(dir)) { checkName('working', f); if (secrets.BINARY.test(f)) continue; scanned.files++; scanText({ rev: 'working', file: f }, fs.readFileSync(path.join(dir, f), 'utf8')) }
 }
-const sgit = (dir, argv) => execFileSync('sgit', argv, { cwd: dir, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], maxBuffer: 256 << 20 })
+const sgit = (dir, argv, maxBuffer = 256 << 20) => execFileSync('sgit', argv, { cwd: dir, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], maxBuffer })
 function revisions(dir) {
     if (flags.revs) return String(flags.revs).split(',').map(s => s.trim()).filter(Boolean)
     // 1. sgit history log --json (it lists nothing outside range mode in sgit 0.27: vault@web-summit.angelo, WS-128)
@@ -97,13 +97,19 @@ function revisions(dir) {
     return ids
 }
 function scanRevision(dir, rev) {
-    let text
-    try { text = sgit(dir, ['file', 'grep', '--text', '-n', '-e', '^', rev]) }
-    catch (e) { if (e.status === 1 && !String(e.stdout || '').trim()) { scanned.revisions++; scanned.empty++; return } throw new Error(`sgit file grep at ${rev} failed (exit ${e.status})`) }   // exit 1, no output: a commit with no files (init), counted
+    // text files only (WS-174, video@web-summit.silvio): `--text` read a video vault's MP4s as text, 317 MB past the buffer, and
+    // random bytes in them looked like email addresses. `-I` skips binary files (sgit 0.27); if this sgit refuses -I, fall
+    // back to --text with a larger buffer and drop files with a binary extension. Binaries' metadata is not read here.
+    let text, mode = '-I'
+    const run = argv => { try { return { out: sgit(dir, argv, 1 << 30) } } catch (e) { return { e } } }
+    let r = run(['file', 'grep', '-I', '-n', '-e', '^', rev])
+    if (r.e && !(r.e.status === 1 && !String(r.e.stdout || '').trim())) { mode = '--text'; r = run(['file', 'grep', '--text', '-n', '-e', '^', rev]) }
+    if (r.e) { if (r.e.status === 1 && !String(r.e.stdout || '').trim()) { scanned.revisions++; scanned.empty++; return } throw new Error(`sgit file grep at ${rev} failed (exit ${r.e.status})`) }   // exit 1, no output: a commit with no (text) files
+    text = r.out; scanned.modes.add(mode)
     scanned.revisions++
     const byFile = new Map()
     for (const raw of text.split('\n')) { const m = /^(.+?):(\d+):(.*)$/.exec(raw); if (!m) continue; if (!byFile.has(m[1])) byFile.set(m[1], []); byFile.get(m[1]).push([Number(m[2]), m[3]]) }
-    for (const [file, lines] of byFile) { checkName(rev, file); scanned.files++; for (const [n, line] of lines) { scanned.lines++; check({ rev, file, line: n }, line) } }
+    for (const [file, lines] of byFile) { checkName(rev, file); if (secrets.BINARY.test(file) || /\.(mp4|m4v|mov|webm|mkv|avi|jpe?g|png|gif|webp|heic|tiff?|ico|pdf|zip|gz|mp3|wav|ogg)$/i.test(file)) { scanned.binaries++; continue } scanned.files++; for (const [n, line] of lines) { scanned.lines++; check({ rev, file, line: n }, line) } }
 }
 
 try {
@@ -118,10 +124,10 @@ try {
     }
 } catch (e) { out({ ok: false, error: e.message, lines: [`vault-audit: could not run: ${e.message}. Treat the vault as not audited.`] }, 2) }
 
-const revs = `${scanned.revisions} revision(s)${scanned.empty ? ` (${scanned.empty} with no files)` : ''}`
+const revs = `${scanned.revisions} revision(s)${scanned.empty ? ` (${scanned.empty} with no files)` : ''}, text files only${scanned.modes.size ? ` (grep ${[...scanned.modes].join(', ')})` : ''}${scanned.binaries ? `, ${scanned.binaries} binary file(s) skipped` : ''}`
 const vals = `${VALUES.length} actual value(s) compared${VALUES.length ? '' : ' (none set: no token in the environment, no key in .sg_vault/local/)'}`
 const lines = findings.map(f => `FOUND ${f.rule}: ${f.rev} ${f.file}${f.line ? ':' + f.line : ''}`)
 lines.push(findings.length
     ? `vault-audit: ${findings.length} finding(s) in ${revs}, ${scanned.files} file reads, ${scanned.lines} lines, ${vals}. Do not publish: rule each one out by reading it, or make a clean new vault.`
     : `vault-audit: clean: ${revs}, ${scanned.files} file reads, ${scanned.lines} lines, ${RULES.length} rules, ${vals}.`)
-out({ ok: !findings.length, findings, scanned, lines }, findings.length ? 1 : 0)
+out({ ok: !findings.length, findings, scanned: { ...scanned, modes: [...scanned.modes] }, lines }, findings.length ? 1 : 0)
