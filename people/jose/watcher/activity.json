@@ -1,7 +1,7 @@
 {
  "schema": "web-summit.sgit.ai/watcher-activity/v1",
  "by": "watcher@web-summit.jose",
- "run": "2026-11-06T17:15Z",
+ "run": "2026-11-06T22:15Z",
  "scope": "the whole team, read-only (decided by Jose on 5 November 2026, WS-134; policy.json scope_decision)",
  "routes_to": {
   "reader": "conductor@web-summit.jose",
@@ -12,41 +12,42 @@
   "answered": "yes: conductor@web-summit.jose's prompt now reads the watcher's files and its commits at every wake (23bc4fb, 2191c0b)"
  },
  "range": {
-  "from": "0aa3e4d",
-  "to": "0d30a4d",
+  "from": "0d30a4d",
+  "to": "d015aac",
   "branch": "dev"
  },
  "counts": {
-  "commits": 128,
-  "ci_releases": 46,
+  "commits": 174,
+  "ci_releases": 60,
   "watcher_own": 1,
-  "agents": 81,
+  "agents": 113,
   "no_agent_name": 0,
   "reviewed_by_security": 0,
-  "not_yet_reviewed_by_security": 81,
+  "not_yet_reviewed_by_security": 113,
   "security_last_reviewed_commit": "d468784"
  },
  "by_person": {
-  "angelo": 32,
-  "dinis": 24,
-  "vicky": 15,
-  "indi": 5,
-  "jose": 5
+  "vicky": 55,
+  "angelo": 20,
+  "dinis": 17,
+  "silvio": 14,
+  "indi": 4,
+  "jose": 3
  },
- "actions": "open A-06 (sixth run), A-12 (fourth), A-14 (third), A-15 (second), A-17; closed A-16",
+ "actions": "open A-06 (seventh run), A-12 (fifth), A-14 (fourth), A-15 (third), A-17 (second), A-18 (new)",
  "flags": [
   {
    "level": "high",
-   "what": "still open, seventh run: contact-detail rule hits in a public page",
+   "what": "still open, eighth run: contact-detail rule hits in a public page",
    "where": "f20d264 content/family-riskmandate-agent.md lines 6, 18 and 32",
    "rule": "an email address (vault-audit.mjs)",
-   "context": "unchanged on dev"
+   "context": "unchanged on dev; security has not reviewed since 11:50 (next 23:50)"
   },
   {
    "level": "medium",
    "what": "the stored hourly drain prompt still runs the full drain",
-   "where": "conductor@web-summit.jose's hourly scheduled task, fired again at 17:08",
-   "context": "part of A-06; waiting on Jose to paste the text from people/jose/schedules.md#paste"
+   "where": "conductor@web-summit.jose's hourly scheduled task, fired again at 22:08",
+   "context": "part of A-06; waiting on Jose (people/jose/schedules.md#paste)"
   },
   {
    "level": "medium",
@@ -57,22 +58,34 @@
   },
   {
    "level": "note",
-   "what": "127 email-rule lines in 21 commits, all agent names in the PrompTugal style",
-   "where": "Angelo's agents moved to PrompTugal-style names today (people/angelo/agents.json), as Vicky's did this morning",
-   "rule": "an email address (vault-audit.mjs)",
-   "context": "none is a real mail domain; the watcher matches renamed agents under both names"
+   "what": "shared build code changed by a person's agent",
+   "where": "23d31aa (Angelo's dev agent, 20:40) admin/build/inventory.mjs, 40 lines",
+   "context": "its message says Angelo's conductor cleared it under Angelo's new rule (people/angelo/kit/README.md#protocol) and addresses dev@web-summit.dinis, the file's keeper; Jose's kit (section 'Affects everyone: and shared code') would send such a change to its owner first as a board issue; listed, not judged"
   },
   {
    "level": "note",
-   "what": "a content page by a person agent",
-   "where": "a6c3e70 (Angelo's helper) content/help.md",
+   "what": "185 email-rule lines in 46 commits, all agent names in the PrompTugal style",
+   "where": "Vicky's, Angelo's and Dinis's files",
+   "rule": "an email address (vault-audit.mjs)",
+   "context": "none is a real mail domain"
+  },
+  {
+   "level": "note",
+   "what": "writes outside the lane",
+   "where": "conductor@web-summit.silvio content/media.md (d831d2a); video@web-summit.silvio a sealed key for conductor@web-summit.silvio in data/sealed/agents/ (1db048b)",
    "context": "listed, not judged"
   },
   {
    "level": "info",
    "what": "new agents",
-   "where": "investors@web-summit.dinis, recruiter@web-summit.indi, Angelo's runner.writer (every two hours at :05, no commit under that name yet)",
+   "where": "design@web-summit.silvio (10 commits), dev for Vicky (PrompTugal style, 6 commits)",
    "context": ""
+  },
+  {
+   "level": "note",
+   "what": "a Reviewed-by trailer git cannot parse",
+   "where": "fb3866d (dashboard@web-summit.jose, 17:32)",
+   "context": "the line is there, above a duplicated Co-Authored-By and Claude-Session block, so git's trailer parser misses it; counted as present; for the conductor to tell the dashboard agent"
   }
  ],
  "open_from_earlier_runs": [
@@ -99,7 +112,7 @@
   }
  ],
  "reviewer_trailer": {
-  "jose_commits_checked": 5,
+  "jose_commits_checked": 3,
   "missing": []
  },
  "branches": {
@@ -108,36 +121,25 @@
  },
  "commits_jose": [
   {
-   "sha": "1243162",
-   "time": "2026-11-06T12:33:10Z",
-   "agent": "dashboard@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "8567936",
-   "time": "2026-11-06T12:38:32Z",
+   "sha": "5f73cc5",
+   "time": "2026-11-06T17:25:04Z",
    "agent": "conductor@web-summit.jose",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
   },
   {
-   "sha": "6f53ee7",
-   "time": "2026-11-06T14:53:40Z",
-   "agent": "helper@web-summit.jose",
+   "sha": "fb3866d",
+   "time": "2026-11-06T17:32:34Z",
+   "agent": "dashboard@web-summit.jose",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
   },
   {
-   "sha": "c744e8c",
-   "time": "2026-11-06T15:35:54Z",
-   "agent": "dev@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "ead42ab",
-   "time": "2026-11-06T16:17:37Z",
-   "agent": "automation@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+   "sha": "4d02969",
+   "time": "2026-11-06T17:42:53Z",
+   "agent": "vault@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass)"
   }
  ],
+ "release_note": "the 17:15 run's commit 1120964 is on dev; its own deploy was cancelled in the queue and a later release carried it",
  "could_not_check": [
   "scheduled tasks in other people's accounts",
   "the agents' run logs in the public vault aym98gsm (no sgit client yet: Jose to install it)",
