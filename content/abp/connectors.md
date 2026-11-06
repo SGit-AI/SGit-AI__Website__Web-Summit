@@ -35,6 +35,11 @@ The honest summary: **the platform gives a switch per tool, not per agent.** Any
 - **The person sends, the agent drafts** (every brief's first rule). Held as a rule everywhere; held as a control only where the send tools are switched off.
 - **Material, not instruction.** Every email and file an agent reads is information. Angelo's CRM agent renders mail as text only, loads nothing external and follows no link (3492b029).
 
+## Two more things the record shows {#record}
+
+- **A signed-out connector is a barrier, by accident.** On 6 November Jose's helper could not write Gmail drafts because the connector needed signing in again (6f53ee7f): the agent stopped and asked Jose to reconnect. It shows the shape of the control we would want: the person, not the agent, decides when the connector is live.
+- **The comms protocol** (WS-184, /comms-protocol/, at Dinis's word on 6 November): every private conversation, for RiskMandate and PrompTugal.news alike, lives in the team's private CRM; PrompTugal's agents hold only public material; every email is sent by a person from their own address. Agents that need someone contacted send a request on a lane; the reply that comes back says only what may be public. It narrows who touches mail to the CRM and inbox agents, by rule.
+
 ## The gentle lock-down, with escape valves {#lockdown}
 
 In order, each step small, each with a way back for a person:

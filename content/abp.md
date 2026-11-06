@@ -1,6 +1,6 @@
 ---
 title: "Agent Behaviour Policies: one for each of our agents"
-summary: An Agent Behaviour Policy (ABP) for every agent on the Web Summit 2026 team (73 pages), in RiskMandate's terms, in the explorer phase. With the scenarios where the policies caught something, and the study of the connectors.
+summary: An Agent Behaviour Policy (ABP) for every agent on the Web Summit 2026 team (77 pages), in RiskMandate's terms, in the explorer phase. With the scenarios where the policies caught something, and the study of the connectors.
 ---
 Kept by abp@web-summit.dinis. RiskMandate shown on ourselves: for every agent we run, its **Reach** (what it can actually do), its **Mandate** (what it was asked to do), the **Gap** between them, and the **Barrier** that really stands in the way, each labelled as a rule, a review or a technical control, with the evidence. The model: [Agent Behaviour Policy](https://riskmandate.ai/agent-behaviour-policy.html).
 
@@ -13,7 +13,7 @@ At Dinis's word, 6 November 2026: **the ABPs are in the explorer phase.** The te
 - **[ABP in action](in-action/index.html)**: what the policies caught, what saved the day, the rule that failed and became a technical barrier, and the capabilities that could do real damage, each with its commit.
 - **[Connectors](connectors/index.html)**: what every agent can do with Gmail and Google Drive, what read-only and write-only can mean today, and the gentle lock-down.
 
-## Dinis's agents (15) {#dinis}
+## Dinis's agents (16) {#dinis}
 
 - [abp@web-summit.dinis](abp-web-summit-dinis/index.html)
 - [conductor@web-summit.dinis](conductor-web-summit-dinis/index.html)
@@ -21,6 +21,7 @@ At Dinis's word, 6 November 2026: **the ABPs are in the explorer phase.** The te
 - [dashboard@web-summit.dinis](dashboard-web-summit-dinis/index.html)
 - [designer@web-summit.dinis](designer-web-summit-dinis/index.html)
 - [dev@web-summit.dinis](dev-web-summit-dinis/index.html)
+- [investors@web-summit.dinis](investors-web-summit-dinis/index.html)
 - [journalist@web-summit.dinis](journalist-web-summit-dinis/index.html)
 - [mentor@web-summit.dinis (and the six person mentors)](mentor-web-summit-dinis/index.html)
 - [newsroom@web-summit.dinis](newsroom-web-summit-dinis/index.html)
@@ -31,13 +32,16 @@ At Dinis's word, 6 November 2026: **the ABPs are in the explorer phase.** The te
 - [sgit@web-summit.dinis](sgit-web-summit-dinis/index.html)
 - [the PrompTugal team (nine agents @PrompTugal.dinis)](promptugal-team-promptugal-dinis/index.html)
 
-## Angelo's agents (8) {#angelo}
+## Angelo's agents (11) {#angelo}
 
+- [conductor-runner@web-summit.angelo](conductor-runner-web-summit-angelo/index.html)
 - [conductor@web-summit.angelo](conductor-web-summit-angelo/index.html)
 - [crm@web-summit.angelo](crm-web-summit-angelo/index.html)
 - [dashboard@web-summit.angelo](dashboard-web-summit-angelo/index.html)
 - [dev@web-summit.angelo](dev-web-summit-angelo/index.html)
 - [helper@web-summit.angelo](helper-web-summit-angelo/index.html)
+- [notes-runner@PrompTugal.angelo](notes-runner-promptugal-angelo/index.html)
+- [notes@PrompTugal.angelo](notes-promptugal-angelo/index.html)
 - [policy@web-summit.angelo](policy-web-summit-angelo/index.html)
 - [team-collaboration@web-summit.angelo](team-collaboration-web-summit-angelo/index.html)
 - [vault@web-summit.angelo](vault-web-summit-angelo/index.html)

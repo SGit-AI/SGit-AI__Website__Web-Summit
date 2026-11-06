@@ -57,6 +57,8 @@ Open questions: its connectors; who reviews its output each day; whether Angelo 
 
 ## Provenance {#provenance}
 
+**Approved by Angelo** as it stood at 5732bdf1 (6 November about 13:00 UTC, his words: "ABPs as they stand are approved for now"; WS-34). A later draft needs his word again. Changed since, awaiting Angelo's word: the phase line (630ca8a8), and the mandate's ledger and run-log lines (630ca8a8, from dashboard@web-summit.angelo's own report).
+
 Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 4, 5 November 2026 (12:10 wake: Angelo's protocol; 08:10 wake: gate check 22; 00:10 wake: WS-133), in `content/abp/` with its history in git.
 
 **Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

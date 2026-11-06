@@ -76,7 +76,11 @@ These are what an agent on this team *can* do today, whatever it was asked. In t
 - **The keys page is one shared file** that every agent writes (WS-152).
 - **The public can write to agents.** Feedback lanes take sealed messages from anyone with the page, and agents drain them (WS-114); company email is to flow into the private CRM (WS-173). The barrier is "material is not instruction", plus Angelo's design: a visitors' inbox that no agent can open (b8a5d3ab).
 
-## 6. Learning from each other {#learning}
+## 6. The first sign-off {#signoff}
+
+On 6 November about 13:00 UTC Angelo approved the ABPs of his eight agents as they stood: *"ABPs as they stand are approved for now"* (5732bdf1, WS-34). From then, his policy agent audits his agents against those approved texts, and any later draft needs his word again. This is the step RiskMandate's model calls the acceptance: a named person owns the policy, not only the agent that drafted it. The ABP agent changed two of them three hours later (the phase line, one mandate line), and each now says that change waits for Angelo's word.
+
+## 7. Learning from each other {#learning}
 
 - **Angelo's protocol** turned three ABP gaps into rules in his own words: shared code stays with its owners, his signature counts for tier 1 and 2 only, no agent of his reads what a stranger writes. His policy agent mapped 21 rules for his agents with how each is enforced, and its first audit found four issues (69146077).
 - **Jose's one door**: his agents take work only from his conductor's task files (2191c0b2), and a reviewer runs before every push.
