@@ -23,11 +23,11 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Friday 6 November, 12:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-06-1257/index.html), [yesterday's newsletter](reports/2026-11-05-newsletter/index.html), [all reports](reports/index.html).*
+*Friday 6 November, 14:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-06-1457/index.html), [yesterday's newsletter](reports/2026-11-05-newsletter/index.html), [all reports](reports/index.html).*
 
-- **The 12:00 stand-up:** a back office, coordination in the command centre, PrompTugal's summit logistics (WS-180 to WS-183).
-- **[PrompTugal.news](https://promptugal.news):** Angelo joins as an editor; twelve articles from Vicky's desks are live.
-- **The whole team as one map,** with who writes to whom (WS-97).
+- **Indi joins PromptUGAL** as an editor; every person but Nimay has a working key (WS-136).
+- **The 12:00 is on the record:** five directions, six follow-ups (WS-96).
+- **[PrompTugal.news](https://promptugal.news)** prepared an Algarve sprint for Dinis's 15:00 meeting.
 - **At 18:00:** park 45 late issues, keeping the RiskMandate core and the security issues.
 - **Monday:** the garments, and who collects them (WS-48).
 
