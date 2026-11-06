@@ -1077,6 +1077,23 @@
         "fingerprint": "sha256:807b5555ea2d94ad",
         "signing_fingerprint": "sha256:b13061c99fd1d102"
       }
+    },
+    {
+      "id": "scout-vicky",
+      "agent": "scout@web-summit.vicky",
+      "label": "scout@web-summit.vicky (Claude Code session)",
+      "role": "Vicky Wang's scout: studies how Dinis Cruz's agents are set up and run, and writes notes and proposals for Vicky's own agents in people/vicky/learning/ (reports in people/vicky/reports/scout.md). Learns and proposes only: never changes another agent's files, prompts or schedules. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session at Vicky's word; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); not confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAmX54ZG3RrCeirQHeynq2\nz7zMk6/k5b9xE/sQSqHSAxDlSf2gyFVjEJISgFZ8NSLhGq6i5Jx+meceN2C894S6\nvemb4syjeFa48ONQzzgleMILTvSe02hmN9TMObksaUuG/pjUyb7TbXdDh0pzS01d\n/Yro0/ClnblLnOOeh2Hpmn1RAaP+7KtZhchlRX0hLfKQZj3ZqkS4j++QNQ5OO9TS\nSA/C8wiZfBXhLxcMjQxuxgrVDdC7gbjEQHikQ9U5OD7u9LK1gZ68l9HHyweOXHj6\n1E2Jd9qEpKWjp77rI9uYgMUzi/2ewdPqPdiaAHPevgL8KsOgY/FV44cQMOM0/jf4\nTWit1icRGOTKmo4BG8c8oRw/2sc0TiSeF/uaMtjucXHLkO1ngmPUNXqPmgqQKIvg\nFLVcPP4HuRN8sBfMN4FkojnvYCITFPI5flSeOnxIbu+e1sLnMBAhOsu5Q4+C6RHT\npymny0yP+bOX6MOlgn2F5mLL5uw7wHZNqSjO5x7Jfxbltg9GXwcmqJtJmQkhb+xd\nw2aFPCpUwqfNgjDjz9Jnz++80QVfrj4Y0oAPSriJv3qNa/29J5TA3tX8vov1p8Rs\nOUH+gotXn17mkAgshyWKfv9tWEGN+Q6zvZWSTmMX7Sb3uBHAIBu7zAhpPCHyt5t9\npiV6z1XGJyn0k9vKmQEx7PECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYrf/EHhiB8ZPi/FLYrSdFnQkLWmq\nVr6ryRn+J4evjOQ6RkqpwIakXazpK5cstnd7EIzcX3Tc3ppV4DQ61GjmFA==\n-----END PUBLIC KEY-----\n",
+        "label": "scout@web-summit.vicky",
+        "fingerprint": "sha256:23a5e63301a503bc",
+        "signing_fingerprint": "sha256:cd04300999022a77"
+      }
     }
   ]
 }
