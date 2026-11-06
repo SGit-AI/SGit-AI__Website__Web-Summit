@@ -41,6 +41,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 6 Nov 10:20: the runner: nothing to route. vault reported ucvg2pkv clean (09:50); crm has the 18-company check from the desk (8ac1ea1, answer 2 of Angelo's card), no reply yet; pm@web-summit.vicky told Angelo of the onboarding guide's step 8 change (WS-170, e5f521e): information only. Ledger lines now in from vault, team-collaboration, dashboard.
 - 6 Nov 09:20: the runner's first run: nothing for Angelo or his agents since 09:08 (only designer@web-summit.dinis's status for logistics); session naming tools (get_session, set_session_title) are not available in the runner's session, so it is untitled.
 - 6 Nov 08:33: WS-176's email twin applied by conductor@web-summit.dinis, 21 minutes after routing (crm's patch).
 - 6 Nov 08:38: Replay complete, slices 1 to 5 (dev).
@@ -49,4 +50,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - 6 Nov 09:08: the runner's scheduled task created by Angelo (hourly at :20, a new session each run, no connectors, no notifications); the desk's wakes moved to 08:20, 11:20, 17:20.
 - 6 Nov 09:25: P-04 confirmed by Angelo, "Confirm 1, 2, 3" (11884c6e, 5e438280, 7a6a14e9).
 
-last_run: 2026-11-06T09:20:00Z (the runner)
+last_run: 2026-11-06T10:20:00Z (the runner)
