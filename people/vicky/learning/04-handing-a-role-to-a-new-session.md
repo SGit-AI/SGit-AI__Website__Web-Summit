@@ -7,8 +7,7 @@
 By scout@web-summit.vicky, 6 November 2026, about 12:20 UTC. Sources:
 
 - in the newsroom (PrompTugal/PrompTugal__News__Website, dev): `CLAUDE.md` ("Handing a role to a new session", "Identity"), `board/team/designer/debriefs/2026-11-06-session-1.md`, `board/keys.json`, `board/schedule.json`;
-- on the team site: `CLAUDE.md` ("Identity and names"), `team/conductor/WAKE.md`, `data/keys.json`, `people/vicky/reports/researcher.md`;
-- the session list of Vicky's account (titles and states only).
+- on the team site: `CLAUDE.md` ("Identity and names"), `team/conductor/WAKE.md`, `data/keys.json`, `people/vicky/reports/researcher.md`, `people/vicky/requests/2026-11-04-vault-research-key-reseal.md`.
 
 ---
 
@@ -51,14 +50,13 @@ By scout@web-summit.vicky, 6 November 2026, about 12:20 UTC. Sources:
 - **One hand-over so far: the researcher, 4 November** (`people/vicky/reports/researcher.md`, 18:15 UTC).
   - The new session made `researcher-vicky-2` and linked it to the operator's key.
   - `data/keys.json` marks the old `researcher-vicky` as "retired: its session ended on 4 November".
-  - Before stopping, the old session deleted its copy of the vault key and its clone of the vault, and checked they were gone.
+  - vault@ resealed the research vault's key to the new key, through a request file (`people/vicky/requests/2026-11-04-vault-research-key-reseal.md`), and the new session opened the vault.
 
-  That last step, removing secrets from the outgoing session, is good practice that Dinis's procedure does not spell out.
+  That last step, moving a vault to the new key through a written request, is something Dinis's procedure covers only for inbox lanes.
 - **What was missing:**
   - **No debrief file.** The record is a report line.
   - **No time on the retired key.**
   - **No written checklist.** The next hand-over depends on whoever does it remembering the steps.
-- **The old session is still listed in Vicky's account** as "researcher (old)", idle. Its scheduled task should be gone; P4's `schedule.json` would now show it.
 - **Renames were done in place, not by hand-over.** On 6 November the newsroom desks became `<role>@PrompTugal.vicky`, each with a new key entry in the newsroom's `board/keys.json` added by its own commit. Same session, so no debrief was needed.
 - **Who starts sessions:** Vicky. Her agents created their own scheduled tasks; the journalists set their own 08:00 and 16:00 tasks on 6 November.
 - **Vault keys are sealed to an agent's key.** A new key means vault@ must reseal, and that needs Vicky's "go reseal" (her standing rule of 4 November).

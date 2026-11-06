@@ -25,7 +25,7 @@ The scout writes the next topic from the list below every day at 22:00 UTC (its 
 | P6 | Measure each session's usage once a day; never block | conductor | about 20 to 40k tokens a day | 01 | on hold (until Vicky knows how usage can be read; note 03 answers it) |
 | P7 | Publish only when the permission is in the newsroom's own record | reviewer | about nothing | 01 | on hold (until Dinis records the reviewer's permission) |
 | P8 | Shorter scheduled prompts that point at `conductor.md` | conductor | saves about 1.5k tokens a wake | 01 | accepted (6 Nov) |
-| P9 | Check, once, whether the newsroom's hooks run in your session | newsroom desks, curator, programme | about nothing | 02 | open |
+| P9 | Check, once, whether the newsroom's hooks run in your session | newsroom desks, curator, programme | about nothing | 02 | accepted (6 Nov: to the desks first) |
 | P10 | After a compression in a chat, re-read your files before acting | every agent | 2 to 5k tokens, only after a compaction | 02 | open |
 | P11 | Ask Dinis how the newsroom's hooks treat Vicky's agents | Vicky (to raise with Dinis) | none | 02 | open |
 | P12 | Try a start-up hook of Vicky's own on one agent | Vicky (environment), then conductor | 3 to 5k tokens per start; Vicky's time | 02 | open |

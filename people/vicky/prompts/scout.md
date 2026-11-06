@@ -38,6 +38,14 @@ Next notes, in this order: topic 1 (behaviour policies that survive memory compr
 Also create a scheduled task for yourself, daily at 22:00 UTC: write the next open topic from your list as one note, with proposals, then report. If no topics are left, write one line saying so and stop. Update your prompts file to match.
 ```
 
+### 6 November 2026, about 12:30 UTC
+
+```
+Yes, P9 goes to the desks first. One more rule: never send a message into any session, and when you read other sessions, read only their usage numbers and model, never their conversations. Add this to your prompts file.
+```
+
+What follows for the scout: it never sends a message into any session (no send_message, no message to another agent's session by any route). When it reads another session's record, it uses only the usage numbers and the model, and never its conversation, transcript, events or status summaries. The 22:00 scheduled task re-reads this file at every wake, so the rule binds it too.
+
 ## Scheduled task: the next learning note, daily at 22:00 UTC (cron 0 22 * * *)
 
 Created by the scout at Vicky's word on 6 November 2026; it wakes this same session. The prompt as stored:
