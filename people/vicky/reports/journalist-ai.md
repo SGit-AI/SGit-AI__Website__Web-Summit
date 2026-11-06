@@ -78,3 +78,8 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - Statuses left as the reviewer set them (T1 ready, T2 to T5 fix). Newsroom v0.1.359.
 - The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there.
 - state: ok; done: review fixes pushed; next: re-review by the reviewer, cross-links once live; ask: none; run: prompted
+
+## Fri 6 Nov 2026, about 23:40 UTC (images for T2, T4, T5)
+
+- One commit (newsroom v0.1.360): T2, a bar chart of agents per person (SVG, 3 KB, from both key lists); T4, the minute each newsroom agent wakes within the hour (SVG, 9 KB, from board/schedule.json, read late on 6 Nov, when many tasks were paused, shown in grey); T5, Road 2 Web Summit's sources before and after the link fix (WebP, 87 KB: the page built locally from the commit before cf2ed858, v0.1.316, and the live page, v0.1.358). Site colours, with a dark variant in the SVGs. Short alt text and a one-line caption with source and date under each. Public sources only; no contact details, vault contents or usage figures.
+- state: ok; done: three images; next: re-review, cross-links once live; ask: none; run: prompted
