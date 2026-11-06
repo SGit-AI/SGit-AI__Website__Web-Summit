@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.686",
+    "date": "2026-11-06",
+    "what": "the PromptUGAL agents item without email-shaped names, for the gate",
+    "by": "conductor@web-summit.silvio",
+    "from": "c9acae3d2"
+  },
+  {
     "version": "v0.2.685",
     "date": "2026-11-05",
     "what": "review to v0.2.684, no hold; WS-178: the CRM's key sealing skips the WS-106 checks; the CRM's key circle recorded",
