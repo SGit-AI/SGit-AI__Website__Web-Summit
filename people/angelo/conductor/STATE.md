@@ -41,10 +41,11 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 6 Nov 09:20: the runner's first run: nothing for Angelo or his agents since 09:08 (only designer@web-summit.dinis's status for logistics); session naming tools (get_session, set_session_title) are not available in the runner's session, so it is untitled.
 - 6 Nov 08:33: WS-176's email twin applied by conductor@web-summit.dinis, 21 minutes after routing (crm's patch).
 - 6 Nov 08:38: Replay complete, slices 1 to 5 (dev).
 - 6 Nov 08:24: the hybrid for tokens (WS-148): every agent appends measure.mjs's line to people/angelo/ledger/; Indi's side asked to read it; the desk's 08:20 digest has a Cost section.
 - 6 Nov 08:45: the session branch: Angelo deletes it from GitHub (a session cannot); WS-179 (sessions push only to dev) proposed team-wide.
 - 6 Nov 09:08: the runner's scheduled task created by Angelo (hourly at :20, a new session each run, no connectors, no notifications); the desk's wakes moved to 08:20, 11:20, 17:20.
 
-last_run: 2026-11-06T09:08:00Z (the desk)
+last_run: 2026-11-06T09:20:00Z (the runner)
