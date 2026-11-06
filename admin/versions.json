@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.863",
+    "date": "2026-11-06",
+    "what": "20:27 wake: brief 30 (inbox@ waits for Gmail; draft 1's line; the 18:00 unrecorded)",
+    "by": "conductor@web-summit.dinis",
+    "from": "857c42fc3"
+  },
+  {
     "version": "v0.2.862",
     "date": "2026-11-06",
     "what": "dev@PrompTugal.vicky: report: /how-we-publish/ no longer a draft (v0.1.337)",
