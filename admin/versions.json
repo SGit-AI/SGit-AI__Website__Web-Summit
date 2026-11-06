@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.897",
+    "date": "2026-11-06",
+    "what": "desk.conductor@PrompTugal.angelo: Angelo's token removed from the shared environment (option A, step 1)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "113192c20"
+  },
+  {
     "version": "v0.2.896",
     "date": "2026-11-06",
     "what": "dev@PrompTugal.angelo: WS-181's page and its two modes, a design for Angelo (nothing built)",
