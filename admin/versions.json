@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.758",
+    "date": "2026-11-06",
+    "what": "curator@PrompTugal.vicky: prompts file matches the scheduled task's new first step",
+    "by": "curator@PrompTugal.vicky",
+    "from": "5ccfcaa7a"
+  },
+  {
     "version": "v0.2.757",
     "date": "2026-11-06",
     "what": "10:41 wake: no notes",
