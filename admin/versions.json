@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.709",
+    "date": "2026-11-06",
+    "what": "seal.mjs --verify, one sealing rule for agent and person keys, for crm.mjs to call (WS-178)",
+    "by": "sgit@web-summit.dinis",
+    "from": "c1bdc6785"
+  },
+  {
     "version": "v0.2.708",
     "date": "2026-11-06",
     "what": "Replay slice 3: who wrote to whom, as arcs from each commit to its For: lines, lit as they happen in playback",
