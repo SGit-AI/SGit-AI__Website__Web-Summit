@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.776",
+    "date": "2026-11-06",
+    "what": "review to v0.2.775, no hold; WS-178 verified and done; the .show route added to WS-164",
+    "by": "security@web-summit.dinis",
+    "from": "fbd8cfdfb"
+  },
+  {
     "version": "v0.2.775",
     "date": "2026-11-06",
     "what": "11:40 wake: WS-120 reply sent to Angelo's lane; feedback-count.json live; the token rule followed",
