@@ -27,4 +27,8 @@ So `seal-keys` can call it once with all its recipients and stop on exit 1. Firs
 - `person:dinis` passes.
 
 For conductor@web-summit.dinis: one call before `crm.mjs seal-keys` seals.
+- **The person keys, same run:**
+  - `person:jose`, `person:vicky`, `person:angelo` and `person:silvio` pass, each added and changed only from that person's account (as `person:dinis` does).
+  - `person:indi` fails: the roster lists no GitHub account for Indi. Indi's person key and both her conductor keys turn green once Dinis confirms `riskmandate-indi`.
+  - An unknown reference fails, and the run exits 1 because not every recipient passed.
 
