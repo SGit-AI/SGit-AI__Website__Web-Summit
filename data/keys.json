@@ -347,7 +347,9 @@
         "label": "dev@web-summit.vicky",
         "fingerprint": "sha256:61aabdc969722597",
         "signing_fingerprint": "sha256:f2e8670f17344568"
-      }
+      },
+      "status": "retired: 6 November 2026, 19:01 UTC, at Vicky's word; its session no longer runs. Replaced by dev@PrompTugal.vicky, whose key is dev-vicky-promptugal in the newsroom's board/keys.json (https://promptugal.news/board/keys.json)",
+      "replaced_by": "dev-vicky-promptugal"
     },
     {
       "id": "logistics-vicky",
