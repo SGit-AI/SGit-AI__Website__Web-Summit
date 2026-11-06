@@ -81,7 +81,7 @@
     {
       "id": "dashboard-vicky",
       "label": "dashboard@web-summit.vicky (Claude Code session)",
-      "role": "Vicky's dashboard agent (dashboard@web-summit.vicky): keeps people/vicky/dashboard.md, the part of Vicky's dashboard below the built top. A session key: it ends with its session.",
+      "role": "Vicky's dashboard agent (dashboard@web-summit.vicky): keeps people/vicky/dashboard.md, the part of Vicky's dashboard below the built top. A session key: it ended with its session on 6 November 2026; superseded, sign or seal nothing to it.",
       "how": "Made by the agent in its own session on 2 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository from Vicky's account; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); the operator has not confirmed it, and nothing depends on it.",
       "added": "2026-11-02",
       "bundle": {
@@ -91,7 +91,8 @@
         "label": "dashboard@web-summit.vicky (Claude Code session)",
         "fingerprint": "sha256:28c07de37ed3b94d",
         "signing_fingerprint": "sha256:4e03f48e1a9da37c"
-      }
+      },
+      "status": "superseded: replaced by a new session on 6 November 2026 at Vicky's word (scout's P17), about 19:00 UTC; the new session makes and publishes its own key"
     },
     {
       "id": "conductor-vicky",

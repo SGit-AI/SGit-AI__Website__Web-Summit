@@ -96,3 +96,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Tables refreshed. WS-31's scope is decided (inbox.md, 6 Nov 09:00), so "Needs me" now asks only how the schedules leave the vault (reports/pm.md, 17:40). Added: the one line for the record on the 5 Nov newsroom decision (brief of 08:45). Dropped: the newsroom researcher, now capturing every day.
 - Story candidates refreshed: 22 stories (desks/curator/README.md, 12:00 UTC).
 - state: ok; done: decisions.md read and P1, P2, P3, P10, P17 applied; tables and stories refreshed; next: 07:50 wake; ask: none; run: scheduled
+
+## Fri 6 Nov 2026, 19:05 UTC (prompted: the hand-over)
+
+- At Vicky's word, before a new session replaces this one (scout's P17): people/vicky/prompts/dashboard.md is up to date, with every standing rule; the hand-over note is people/vicky/handover/dashboard-2026-11-06.md (Vicky asked for handover/; P17 says debriefs/, and her newest word wins).
+- My key dashboard-vicky (sha256:4e03f48e1a9da37c) is marked superseded in data/keys.json, the only keys file I added it to. I hold no vault keys or vault clones; my scratch copy of the newsroom repository is deleted.
+- Both my scheduled tasks are deleted after this commit (07:50 and 17:45 UTC), so the new session sets them again. Please update people/vicky/agents.json and schedule.json.
+- state: ok; done: hand-over; next: none, this session stops; ask: none; run: prompted
