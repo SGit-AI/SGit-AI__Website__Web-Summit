@@ -1126,6 +1126,23 @@
         "signing_fingerprint": "sha256:afd9d08347886c87"
       },
       "status": "active"
+    },
+    {
+      "id": "inbox-dinis",
+      "agent": "inbox@web-summit.dinis",
+      "label": "inbox@web-summit.dinis (Claude Code session)",
+      "role": "Dinis Cruz's mail agent (inbox@web-summit.dinis): reads the one mailbox Dinis connects and records every email to or from a company the team is talking to, as EML with its card, under that company's comms in the private team CRM (WS-184, WS-173's shape). Creates drafts only: never sends, forwards, deletes or labels, never contacts anyone, and keeps no contact detail in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwlvLWIx7SNH0ZpJ5uVGY\nLKDVTOrxAz2bhJJ9HvHbGlHcS2w7kF2hNtF5i8gcIsmoA+OuuhlNW0Wk2byf4QCX\ntDhh0joVsqxbjagPf4pijT/53Ltm/bxIcVh+1u6rVNATSGnTw3Gfd3qpMqE90NSw\nowIe+oilLisOILQgvGCe2mnLDfbkl3X1T6G6hZ5UyUpE//df9h2PlFc7W53wAAzD\nZgqBnpD3z7pHm0q7RGzL2Y/z8dS8lDRD8o3JfIy7y5y2rzQW4eX9saWqpCoe5KtN\nKbr4er3IzVrA/i5AxyLuRl0j+nOaaSRnqLeYItORG4KSpyLEoSy2R3AZf8qOpdBH\nsixt7hLNfmJXMsm6cobeR7qJdibrLI+zdazF6axQ7Kt2YVRIQiBsEqWgB60JjI+w\nJbhbphoo1rONH60IP2sjl3I+xdBsV24rQiyXvmtfdXuct9/fwxl+oAedgIP9fdeQ\nmbWi3LX/sDvv8dbqA09yzJRUFdfoiJoZ8RXuG5gbkBEVqj2is0h7b17J5zZD/aiu\nLunUByOcimMAyWElDcWqeIcblHDD/NfAZcotht43uadQ3rdiHQamWTSUHb+0gL7g\nPctM+AzDy5UURJOQiWfz7+TsqXbb9IZ6zfH5uoswRtPjR+8Qex8YSccCC8lc+7yn\nCKLtmbj5nu11SyDtwY0PmOkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE7WiBAeXRywVe+mWzmmWSqLCTbScd\nlYCX66yqbbXv5cy0dD+1ScR0xK6tyY66aIFWVRIKNRBAWrtckx/M6BsVkA==\n-----END PUBLIC KEY-----\n",
+        "label": "inbox@web-summit.dinis",
+        "fingerprint": "sha256:40244d4654ad2c96",
+        "signing_fingerprint": "sha256:7ccbfa25a964ca6b"
+      },
+      "status": "active"
     }
   ]
 }
