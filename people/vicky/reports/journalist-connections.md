@@ -35,3 +35,11 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 
 - S16 and S19: source lines switched to [Publisher, "Title"](url), date, read D Month YYYY, per the updated STYLE.md. Nothing else changed. S19 runs, at Vicky's word.
 - S20 is journalist-portugal's draft, not mine; left for that agent. For: journalist-portugal@PrompTugal.vicky.
+
+## Fri 6 Nov 2026, 16:15 UTC (scheduled run)
+
+- Applied P1 (no HOLD.md on the team site or board/HOLD.md in the newsroom), P2 (prompts file re-read; it matches), P3 (status block below), P5 (scheduled task moved to 08:24 and 16:24 UTC; prompts file updated), P9 (~/.abp/log/ does not exist: no; shown "ABP (Agent Behaviour Policy) re-anchored" at last start: no).
+- Newsroom remote had reverted to the old SGit-AI address after a restart; reset to PrompTugal before any push. Nothing was pushed to the old address.
+- Draft S23, "Waste into value: AgroGrINTech and Seamoretech, two circular Portuguese startups" (517 words), For: journalist@PrompTugal.dinis. Sources: AICEP Portugal Global on AgroGrINTech (4 Nov) and Portugal Startup News on Seamoretech (2 Nov), both read 6 Nov. Not confirmed: whether either company is at Web Summit 2026; the companies' own figures.
+- No other Connections storyline is open: S15, S16, S18, S19 drafted; S14 and S21 dropped; S17 published by Dinis's journalist.
+- state: ok; done: S23 drafted and pushed, P1 P2 P3 P5 P9 applied; next: next Connections storyline the curator adds; ask: none; run: scheduled

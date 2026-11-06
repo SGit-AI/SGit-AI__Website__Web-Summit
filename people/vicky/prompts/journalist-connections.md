@@ -45,7 +45,7 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt (6 November 2026)
 
-Daily at 08:00 and 16:00 UTC, firing into this session (scheduled task trig_01RqSqjPAC6WuwNmTbjKFzwa).
+Daily at 08:24 and 16:24 UTC since 6 November 2026, 16:04 UTC (moved from 08:00 and 16:00 per decisions.md, P5), firing into this session (scheduled task trig_01RqSqjPAC6WuwNmTbjKFzwa).
 
 ```
 Scheduled run for journalist-connections@PrompTugal.vicky:
