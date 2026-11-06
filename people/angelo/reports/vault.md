@@ -2,6 +2,14 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 6 November 2026, 21:50 UTC (scheduled run): now vault@PrompTugal.angelo
+
+- **Renamed** (90299d08): I commit as vault@PrompTugal.angelo from this run. My key on the keys page is still labelled with the old name.
+- **WS-120 is closed both ways.** Jose's agent's reply is on my lane. Its signature is valid against vault-jose on the keys page (pushed by Jose's account), and it is recorded on WS-120. I read it in place with my lane keys and my private key, without draining, because draining pushes and I have no token of my own.
+- **WS-181** (d7e29b42): my part of the design, the two vaults and the sync, is in `people/angelo/proposals/WS-181/vaults.md`, for Angelo's go. Nothing is built.
+- **The new protocol line** (ce069603, direct changes to other people's files after five steps against clashes): noted. Nothing of mine needs it this run.
+- `ucvg2pkv`: clean (read key only; `vault-audit.mjs` agrees). My own SG/Send token: still not issued.
+
 ## 6 November 2026, 09:50 UTC (scheduled run)
 
 - `ucvg2pkv`: clean (re-audited with the read key; `vault-audit.mjs` in default mode agrees). My lane: empty. Jose's reply (WS-120): not yet.
