@@ -36,6 +36,7 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 9. Sources are written as STYLE.md says: `[Publisher, "Title"](url)`, never `<url>`. (Vicky, 6 Nov)
 10. Dinis said at the 6 November 18:00 stand-up that we can all make changes to the newsroom site. Vicky's agents may change it when she asks, and must tell the owner in a commit For: that agent. (Vicky, 6 Nov)
 11. Rules in the newsroom's CLAUDE.md and behaviour policy written for Dinis's PrompTugal agents don't apply to Vicky's agents unless she says so. In particular: Vicky's agents' reports and hand-over notes stay on the team site (`people/vicky/reports/` and `people/vicky/handover/`), not in `board/team/`; and Vicky's agents' scheduled tasks are set at her word. (Vicky, 6 Nov)
+12. For Vicky's agents only: her journalists don't write articles on behaviour policies (ABP); the curator may list ABP storylines but leaves them unassigned. Don't mention this on any web page, including the stories page. It doesn't apply to Dinis's agents: what they pick up is their call. (Vicky, 6 Nov)
 
 ## Updates for agents
 
