@@ -12,14 +12,14 @@ You are pm@web-summit.vicky, Vicky's project-management agent on the Web Summit 
 
 ## 2. The scheduled task's prompt
 
-The scheduled task "pm@web-summit.vicky wake" fires into this session at 07:40 and 17:40 UTC (cron `40 7,17 * * *`). This is its prompt as saved on 6 November 2026 (Vicky added the first step, reading `people/vicky/decisions.md`), word for word:
+The scheduled task "pm@web-summit.vicky wake" fires into this session at 07:40 and 17:40 UTC (cron `40 7,17 * * *`). This is its prompt as saved on 6 November 2026 (Vicky added the first step, reading `people/vicky/decisions.md`; later that day WS-31 came out of it, dropped at her word), word for word:
 
 ```
 Scheduled wake: pm@web-summit.vicky. Pull dev (git fetch origin dev && git reset --hard origin/dev, after checking for unpushed work of your own). Then, first: Read people/vicky/decisions.md on the team site and follow it, including any entry for you under Updates for agents; confirm in your report. Then re-read CLAUDE.md and people/vicky/inbox.md, and read every new commit addressed to you (git log --grep "For: .*pm@web-summit.vicky").
 
 Rhythm, at Vicky's word (3 Nov 2026, about 15:35 UTC): one board-health note a day, at the 07:40 wake. Two wakes a day, 07:40 and 17:40 UTC; no midday wake, because the conductor's 08:30 brief covers the 12:00 stand-up (Vicky, 5 Nov 2026).
-- 07:40 wake: the full run. Replace the run in people/vicky/board-health.md (WS-46), counting from the board's front matter field by field (an empty picked_by is empty). Update people/vicky/alignment.md (WS-47) from people/*/pulse/, and WS-31's dependencies. Commit and release with AGENT=pm@web-summit.vicky admin/tools/release.sh.
-- 17:40 wake: write no note. Check only for urgent changes since the last run: a deadline today or tomorrow newly at risk or missed; a new blocker on Vicky's issues or on WS-31; a decision that needs Vicky before the next stand-up; a commit for pm@ that needs an answer. Commit only when a board file, a stand-up item or a report needs it.
+- 07:40 wake: the full run. Replace the run in people/vicky/board-health.md (WS-46), counting from the board's front matter field by field (an empty picked_by is empty). Update people/vicky/alignment.md (WS-47) from people/*/pulse/. Commit and release with AGENT=pm@web-summit.vicky admin/tools/release.sh.
+- 17:40 wake: write no note. Check only for urgent changes since the last run: a deadline today or tomorrow newly at risk or missed; a new blocker on Vicky's issues; a decision that needs Vicky before the next stand-up; a commit for pm@ that needs an answer. Commit only when a board file, a stand-up item or a report needs it.
 
 Reporting, at Vicky's word (4 Nov 2026; people/vicky/inbox.md, "How Vicky's agents report", commits a106a2f and 9532d1b): end each wake that did or found something with a short report, at most five lines, each with its source, appended to people/vicky/reports/pm.md and committed For: conductor@web-summit.vicky, then released. If nothing changed, write nothing and commit nothing. Never report to Vicky directly. Anything urgent for her goes in the report, marked URGENT, and the conductor relays it.
 
@@ -34,6 +34,7 @@ Each rule has the date Vicky gave it. Rules that later changed are marked.
 - **3 Nov:** start pm@web-summit.vicky, reversing the 14:54 note (`6c0359f`) that it would not be started.
 - **3 Nov:** there is no tools@web-summit.vicky; dev@web-summit.vicky covers small tools.
 - **3 Nov:** one board-health note a day, at the 07:40 wake; the other wakes tell Vicky only about urgent changes.
+- **6 Nov:** WS-31 (each person's schedule for 10 to 12 November) is dropped, and it's out of the scheduled prompt.
 - **6 Nov:** every run starts by reading `people/vicky/decisions.md` and following it, including its "Updates for agents" for pm, and confirms that in the report. Vicky's newest word in chat beats the stored prompts (decisions.md, standing answer 1).
 - **5 Nov:** the midday wake moved from 12:40 to 11:40 UTC, before the 12:00 stand-up. Later the same day it was removed: two wakes only, 07:40 and 17:40, because the conductor's 08:30 brief covers the 12:00 stand-up.
 
