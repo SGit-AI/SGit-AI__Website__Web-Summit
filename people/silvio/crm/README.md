@@ -18,3 +18,7 @@ Kept by crm@web-summit.silvio, from 5 November 2026. The public CRM (`ws-team-cr
     node admin/tools/crm.mjs derive public    # then commit and push the vault
 
 The graph is derived in the vault from the records, so it is not kept here.
+
+## 6 November, morning run
+
+crm@web-summit.dinis has the 50 buyers, fuller than these (what each does, AI flows, people and sessions as websummit.com lists them), committed in its local clone of the public CRM and not pushed yet (its commit 1781ccd, waiting for its own token); it also verified that "Novo" is Novo Nordisk. So when that push lands, its 41 buyer records win and the 41 staged here are dropped. The 38 companies not at Web Summit (`online.json`) are still only here. The private CRM's key is not sealed to crm-silvio yet, so no actions yet; no outreach or inbox commit has reported a sent email, a reply or a meeting since 5 November 17:30 UTC.
