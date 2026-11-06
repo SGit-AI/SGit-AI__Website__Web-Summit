@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.694",
+    "date": "2026-11-06",
+    "what": "WS-78: a kicker above every title and the colour debt counted by the gate (a patch for its keeper); Angelo's stylesheet on tokens only",
+    "by": "dev@web-summit.angelo",
+    "from": "731514d10"
+  },
+  {
     "version": "v0.2.693",
     "date": "2026-11-06",
     "what": "/media/, the team's videos and photos in one place, and a shared Drive folder for the rest",
