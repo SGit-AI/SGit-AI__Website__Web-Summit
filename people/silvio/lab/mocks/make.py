@@ -411,57 +411,66 @@ mark{background:linear-gradient(transparent 58%,#5be0b3 58%);color:inherit;paddi
     return page('e', 'The Front Page', css, body, '')
 
 # --- F: Signal (The Information's seriousness x Hugging Face and Hacker News' ranked feeds, dark) ---------
+# v2 (Silvio, 6 November evening: "optimise the space, not all big, we need to see a lot at once"): a compact
+# hero, three dense columns from the first screen, smaller type and tighter rows.
 def mock_f():
     css = OWN % '--paper:#0a0c16;--ink:#eef0ff;--red:#ff6b9a;--green:#7cf3c4;--rule:#232741;--muted:#9aa0c3;--card:#12152a;--solid:#7c5cff;--on:#ffffff' + '''
-body{background:#0a0c16}
-.w{max-width:1240px;margin:0 auto;padding:0 16px}
-.hd{display:flex;align-items:center;gap:18px;padding:16px 0}.hd .wmx{height:26px}.hd nav{display:flex;gap:18px;font:500 13px var(--sans);color:var(--muted);flex-wrap:wrap}.sp{flex:1}
+body{background:#0a0c16;font-size:15px}
+.w{max-width:1320px;margin:0 auto;padding:0 16px}
 .glow{position:relative;overflow:hidden;border-bottom:1px solid var(--rule)}
-.glow:before{content:"";position:absolute;inset:-40% -10% auto;height:620px;background:radial-gradient(closest-side,rgba(124,92,255,.55),transparent 70%),radial-gradient(closest-side at 75% 40%,rgba(34,211,238,.35),transparent 70%);filter:blur(10px);pointer-events:none}
-.hero{position:relative;padding:56px 0 40px;text-align:center}
-.pill{display:inline-block;font:600 12px var(--mono);color:#7cf3c4;border:1px solid rgba(124,243,196,.4);background:rgba(124,243,196,.08);border-radius:999px;padding:6px 14px}
-.hero h1{font:600 68px/1.02 var(--serif);margin:18px auto 14px;max-width:16ch;letter-spacing:-.02em}
+.glow:before{content:"";position:absolute;inset:-60% -10% auto;height:520px;background:radial-gradient(closest-side,rgba(124,92,255,.5),transparent 70%),radial-gradient(closest-side at 78% 45%,rgba(34,211,238,.3),transparent 70%);filter:blur(10px);pointer-events:none}
+.hd{position:relative;display:flex;align-items:center;gap:18px;padding:12px 0}.hd .wmx{height:24px}.hd nav{display:flex;gap:16px;font:500 13px var(--sans);color:var(--muted);flex-wrap:wrap}.sp{flex:1}
+.hero{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;padding:14px 0 18px}
+.pill{display:inline-block;font:600 11px var(--mono);color:#7cf3c4;border:1px solid rgba(124,243,196,.35);background:rgba(124,243,196,.07);border-radius:999px;padding:4px 10px}
+.hero h1{font:600 40px/1.05 var(--serif);margin:10px 0 6px;letter-spacing:-.015em}
 .grad{background:linear-gradient(90deg,#a78bfa,#22d3ee 55%,#7cf3c4);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{font-size:19px;color:var(--muted);max-width:40em;margin:0 auto 26px}
-.hero .pb{max-width:760px;margin:0 auto;background:#12152a;border:1px solid transparent;background-image:linear-gradient(#12152a,#12152a),linear-gradient(90deg,#7c5cff,#22d3ee);background-origin:border-box;background-clip:padding-box,border-box;box-shadow:0 0 40px rgba(124,92,255,.35)}
-.hero .pcs{justify-content:center}.pc{background:transparent!important}
-.stats [data-cd] b{display:inline;font-size:inherit}.stats{display:flex;justify-content:center;gap:34px;margin-top:30px;font:12px var(--mono);color:var(--muted);flex-wrap:wrap}.stats b{display:block;font:600 30px var(--sans);color:#fff}
-.tkw{border-bottom:1px solid var(--rule);color:#c9cdf0}
-.g{display:grid;grid-template-columns:1.25fr .75fr;gap:34px;padding:34px 0 60px}
-.h{display:flex;justify-content:space-between;align-items:baseline;font:700 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
-.h a{color:#7cf3c4;text-transform:none;letter-spacing:0}
-.lead{display:grid;grid-template-columns:1fr 1fr;gap:20px;background:var(--card);border:1px solid var(--rule);border-radius:18px;padding:16px;margin-bottom:22px}
-.lead img{border-radius:12px}.lead h2{font:600 30px/1.1 var(--serif);margin:8px 0}.lead p{color:var(--muted);margin:0 0 8px}
-mark{background:none;color:#7cf3c4;border-bottom:3px solid #7cf3c4}
+.hero p{font-size:15px;color:var(--muted);margin:0}
+.hero .pb{background:#12152a;border:1px solid transparent;background-image:linear-gradient(#12152a,#12152a),linear-gradient(90deg,#7c5cff,#22d3ee);background-origin:border-box;background-clip:padding-box,border-box;box-shadow:0 0 30px rgba(124,92,255,.3)}
+.hero .pb input{padding:11px 10px;font-size:15px}.pcs{margin-top:8px}.pc{background:transparent!important;font-size:12px!important;padding:3px 10px!important}
+.stats{display:flex;gap:22px;margin-top:12px;font:11px var(--mono);color:var(--muted);flex-wrap:wrap;align-items:baseline}.stats b{font:600 20px var(--sans);color:#fff;margin-right:5px}
+.stats [data-cd] b{font-size:inherit;margin:0}
+.tkw{border-bottom:1px solid var(--rule);color:#c9cdf0}.tk-in{padding:8px 0}.tk a{font-size:12px}
+.g{display:grid;grid-template-columns:1.25fr 1fr .8fr;gap:22px;padding:18px 0 50px}
+.h{display:flex;justify-content:space-between;align-items:baseline;font:700 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--rule)}
+.h a{color:#7cf3c4;text-transform:none;letter-spacing:0;font-weight:500}
+.lead{display:grid;grid-template-columns:44% 1fr;gap:14px;background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:10px;margin-bottom:16px}
+.lead img{border-radius:9px}.lead h2{font:600 22px/1.12 var(--serif);margin:6px 0}.lead p{color:var(--muted);margin:0 0 6px;font-size:14px;line-height:1.4}
+mark{background:none;color:#7cf3c4;border-bottom:2px solid #7cf3c4}
 .rk{counter-reset:r;margin:0;padding:0}
-.rk li{list-style:none;counter-increment:r;display:grid;grid-template-columns:56px 1fr 74px;gap:14px;align-items:center;padding:14px 12px;border-radius:14px;border:1px solid transparent;transition:.15s}
-.rk li:hover{background:var(--card);border-color:var(--rule)}
-.rk li:before{content:counter(r,decimal-leading-zero);font:700 30px var(--sans);background:linear-gradient(180deg,#a78bfa,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}
-.rk h3{font:600 19px/1.25 var(--serif);margin:0 0 4px}.rk img{border-radius:10px;border:1px solid var(--rule)}
-.chip{display:inline-block;font:600 10px var(--sans);letter-spacing:.08em;text-transform:uppercase;border-radius:6px;padding:3px 7px;margin-right:6px}
+.rk li{list-style:none;counter-increment:r;display:grid;grid-template-columns:30px 1fr 46px;gap:10px;align-items:center;padding:7px 6px;border-bottom:1px solid var(--rule);transition:background .15s}
+.rk li:hover{background:var(--card)}
+.rk li:before{content:counter(r,decimal-leading-zero);font:700 17px var(--sans);background:linear-gradient(180deg,#a78bfa,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rk h3{font:600 15px/1.25 var(--serif);margin:2px 0 0}.rk img{border-radius:6px;border:1px solid var(--rule)}
+.chip{display:inline-block;font:600 9.5px var(--sans);letter-spacing:.08em;text-transform:uppercase;border-radius:5px;padding:2px 6px}
 .c0{background:rgba(167,139,250,.16);color:#c4b5fd}.c1{background:rgba(34,211,238,.14);color:#67e8f9}.c2{background:rgba(124,243,196,.14);color:#7cf3c4}.c3{background:rgba(255,107,154,.14);color:#ff9dbb}
-.side>div{background:var(--card);border:1px solid var(--rule);border-radius:18px;padding:16px;margin-bottom:18px}
-.side .radar{border:0;padding:0;background:none}.rr u{background:linear-gradient(90deg,#7c5cff,#22d3ee)!important;opacity:1!important}
-.tl li{list-style:none;padding:10px 0 10px 16px;border-left:2px solid #7c5cff;margin-left:4px;font:15px/1.3 var(--serif)}.tl ul{margin:0;padding:0}
-.tl time{display:block;font:600 11px var(--mono);color:#7cf3c4}
-.badge{color:#7cf3c4}
-.wmx{height:26px;width:auto}
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mg article{background:var(--card);border:1px solid var(--rule);border-radius:12px;overflow:hidden;transition:transform .15s,border-color .15s}
+.mg article:hover{transform:translateY(-2px);border-color:#7c5cff}
+.mg img{aspect-ratio:16/10;object-fit:cover;object-position:top;width:100%}.mg .t{padding:8px 10px 10px}.mg h3{font:600 14px/1.25 var(--serif);margin:4px 0 0}
+.side>div{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:12px;margin-bottom:14px}
+.side .radar{border:0;padding:0;background:none}.rr{font-size:12px!important;padding:3px 0!important}.rr u{background:linear-gradient(90deg,#7c5cff,#22d3ee)!important;opacity:1!important}
+.tl li{list-style:none;padding:6px 0 6px 12px;border-left:2px solid #7c5cff;margin-left:3px;font:14px/1.3 var(--serif)}.tl ul{margin:0;padding:0}
+.tl time{display:block;font:600 10.5px var(--mono);color:#7cf3c4}
+.badge{color:#7cf3c4;font-size:10px!important}
+.wmx{height:24px;width:auto}
 ''' + TK_CSS + '''
-@media (max-width:980px){.g{grid-template-columns:1fr}.hd nav{display:none}.lead{grid-template-columns:1fr}}
-@media (max-width:600px){.hero h1{font-size:40px}.rk li{grid-template-columns:40px 1fr 56px;padding:12px 4px}.rk li:before{font-size:22px}.stats{gap:18px}}
+@media (max-width:1100px){.g{grid-template-columns:1fr 1fr}.side{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:14px}.side>div{margin:0}}
+@media (max-width:760px){.hero,.g,.side{grid-template-columns:1fr}.hd nav{display:none}.hero h1{font-size:30px}.lead{grid-template-columns:1fr}}
 '''
     kc = lambda k: 'c0' if 'Portugal' in k else 'c1' if 'Europe' in k else 'c2' if 'summit' in k.lower() or 'robot' in k.lower() else 'c3'
+    chip = lambda a: f'<span class="chip {kc(a["kicker"])}">{esc(cut(a["kicker"], 26))}</span>'
     body = f'''<div class="glow"><div class="w"><header class="hd"><a href="index.html">{WMD}</a><span class="sp"></span><nav>{nav()}</nav></header>
-<section class="hero"><span class="pill">✦ An AI newsroom · {N['agents']} agents, 3 editors · every fact signed</span>
+<section class="hero"><div><span class="pill">✦ An AI newsroom · about 30 agents, 3 editors · every fact signed</span>
 <h1>What matters in AI in Portugal, <span class="grad">right now.</span></h1>
-<p>The companies, the people and the sessions at Web Summit Lisbon, ranked, sourced and explained.</p>{prompt_bar(True)}
-<div class="stats"><span><b>{N['companies']}</b>companies</span><span><b>{N['events']}</b>events</span><span><b>{N['articles']}</b>stories</span><span><b data-cd>3 days</b>to Opening Night</span></div></section></div></div>
+<p>The companies, the people and the sessions at Web Summit Lisbon, ranked, sourced and explained.</p></div>
+<div>{prompt_bar()}<div class="stats"><span><b>{N['companies']}</b>companies</span><span><b>{N['events']}</b>events</span><span><b>{N['articles']}</b>stories</span><span><b data-cd>3 days</b>to Opening Night</span></div></div></section></div></div>
 <div class="tkw">{ticker(week)}</div>
 <div class="w"><div class="g"><section>
-<article class="lead"><a href="{hero['href']}"><img src="{hero['img']}" alt="{esc(hero['alt'])}" fetchpriority="high"></a><div><span class="chip c0">Top story</span><h2><a href="{hero['href']}">{HL(esc(hero['title']))}</a></h2><p>{esc(cut(hero['summary'], 200))}</p>{BADGE}</div></article>
+<article class="lead"><a href="{hero['href']}"><img src="{hero['img']}" alt="{esc(hero['alt'])}" fetchpriority="high"></a><div><span class="chip c0">Top story</span><h2><a href="{hero['href']}">{HL(esc(hero['title']))}</a></h2><p>{esc(cut(hero['summary'], 150))}</p>{BADGE}</div></article>
 <h2 class="h">Top signals today <a href="articles/index.html">All {N['articles']} →</a></h2>
-<ol class="rk">{''.join(f'<li><div><span class="chip {kc(a["kicker"])}">{esc(cut(a["kicker"], 28))}</span><h3><a href="{a["href"]}">{esc(a["title"])}</a></h3></div><a href="{a["href"]}"><img src="{a["img"]}" alt="" loading="lazy"></a></li>' for a in arts[:8])}</ol></section>
-<aside class="side"><div>{radar(7)}</div><div class="tl"><h2 class="h">In Lisbon this week <a href="summit/index.html">Agenda →</a></h2><ul>{''.join(f'<li><time>{esc(i["when"])}</time><a href="{i["href"]}">{esc(cut(i["title"], 80))}</a></li>' for i in week[:6])}</ul></div></aside>
+<ol class="rk">{''.join(f'<li><div>{chip(a)}<h3><a href="{a["href"]}">{esc(a["title"])}</a></h3></div><a href="{a["href"]}"><img src="{a["img"]}" alt="" loading="lazy"></a></li>' for a in arts[:9])}</ol></section>
+<section><h2 class="h">More stories <a href="articles/index.html">All →</a></h2><div class="mg">{''.join(f'<article><a href="{a["href"]}"><img src="{a["img"]}" alt="" loading="lazy"></a><div class="t">{chip(a)}<h3><a href="{a["href"]}">{esc(a["title"])}</a></h3></div></article>' for a in arts[9:15])}</div></section>
+<aside class="side"><div>{radar(7)}</div><div class="tl"><h2 class="h">In Lisbon this week <a href="summit/index.html">Agenda →</a></h2><ul>{''.join(f'<li><time>{esc(i["when"])}</time><a href="{i["href"]}">{esc(cut(i["title"], 70))}</a></li>' for i in week[:7])}</ul></div></aside>
 </div></div>'''
     return page('f', 'Signal', css, body, '')
 
