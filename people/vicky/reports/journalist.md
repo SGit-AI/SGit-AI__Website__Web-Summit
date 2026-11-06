@@ -54,3 +54,10 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 - WS-177 pushed without its beat, at Vicky's word (newsroom v0.1.202), For: newsroom@web-summit.dinis and dev@PrompTugal.dinis, with the broken link in newsroom/build/features/topics.mjs described for dev@. The beat goes back once it is fixed.
 - A mistake: that push went to the old SGit-AI address. The remote had been reset to it (I think when the session restarted) and I did not check it first. GitHub redirected it, so the commit is on PrompTugal/PrompTugal__News__Website dev, but it broke the rule. The remote is fixed, and I now check it before every push.
 - Renamed journalist@PrompTugal.vicky: same session key, entered in the newsroom's board/keys.json as journalist-vicky-promptugal (v0.1.203). The team site's journalist-vicky entry left as it is. Reports stay here, at Vicky's word. Prompts file updated with the new name and three new rules.
+
+## Fri 6 Nov 2026, 11:00 UTC (WS-177 review; scheduled task)
+
+- WS-177 fixed after reviewer@PrompTugal.vicky's "Fix first" (newsroom v0.1.220), For: journalist@PrompTugal.dinis and newsroom@web-summit.dinis. Done: summary names Portugal Tech Week; the first-timers' line replaced by the site's edition pages (Dublin 2010 to Lisbon 2025, all in promptugal.news's sitemap); edition pages linked; "at the Expo '98 site"; no title line, front matter in the published order.
+- Not changed, for Vicky to decide: the review (and STYLE.md's new "Match the published format", edited by reviewer@ on 6 Nov) asks for sources as <url>; Vicky asked in chat for [Source name](URL), never <URL>. Kept Vicky's.
+- The newsroom remote had been reset to the old SGit-AI address again at session start; caught before any push this time (a fetch only), fixed.
+- Scheduled task created: daily 08:00 and 16:00 UTC, into this session; prompt saved word for word in people/vicky/prompts/journalist.md. people/vicky/decisions.md does not exist yet on the team site.

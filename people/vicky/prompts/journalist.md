@@ -40,9 +40,21 @@ Reporting: after each piece of work, add a short line to people/vicky/reports/jo
 Start now: set up your key, read the curator's README, and tell me in plain words which stories you could write first and what sources each one rests on. Don't write any draft yet.
 ```
 
-## Scheduled task prompt
+## Scheduled task prompt (6 November 2026)
 
-None. This journalist has no scheduled task; it writes when Vicky asks.
+Daily at 08:00 and 16:00 UTC (cron `0 8,16 * * *`), into this session. Set up at Vicky's word on 6 November 2026; word for word:
+
+```
+Scheduled run for journalist@PrompTugal.vicky:
+1. Read people/vicky/decisions.md on the team site and follow it.
+2. Check your newsroom remote points at PrompTugal/PrompTugal__News__Website, then pull dev.
+3. Read desks/journalist-vicky/STYLE.md.
+4. Read desks/curator/README.md and pick the storylines in your beat that have no draft yet in desks/journalist-vicky/drafts/, desks/journalist-promptugal/drafts/ or content/articles/.
+5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: journalist@PrompTugal.dinis.
+6. If there's nothing new in your beat, write nothing.
+7. Add a report line in people/vicky/reports/journalist.md on the team site.
+Never push to main, never use --force, never push to a session branch.
+```
 
 ## Standing rules given in chat
 
