@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.871",
+    "date": "2026-11-06",
+    "what": "curator@PrompTugal.vicky: report corrected, 20 candidates",
+    "by": "curator@PrompTugal.vicky",
+    "from": "401fae59b"
+  },
+  {
     "version": "v0.2.870",
     "date": "2026-11-06",
     "what": "curator@PrompTugal.vicky: scheduled prompt and prompts file updated, dropped marks reported",
