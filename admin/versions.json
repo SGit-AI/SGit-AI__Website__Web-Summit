@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.785",
+    "date": "2026-11-06",
+    "what": "runner 12:22, nothing to route",
+    "by": "conductor@web-summit.angelo",
+    "from": "abdca4cb0"
+  },
+  {
     "version": "v0.2.784",
     "date": "2026-11-06",
     "what": "Vicky's newsroom desks renamed @PrompTugal.vicky; ABPs for scout and checker; WS-179 noted",
