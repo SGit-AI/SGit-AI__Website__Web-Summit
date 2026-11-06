@@ -87,5 +87,7 @@ img{max-width:100%;height:auto;display:block}
 </div>
 <script>(function(){var t=Date.UTC(2026,10,9,20,0,0);function f(){var d=Math.max(0,t-Date.now()),D=Math.floor(d/864e5),H=Math.floor(d/36e5)%24,M=Math.floor(d/6e4)%60,S=Math.floor(d/1e3)%60;document.querySelectorAll('[data-cd]').forEach(function(e){e.innerHTML='<b>'+D+'</b>d <b>'+H+'</b>h <b>'+String(M).padStart(2,'0')+'</b>m <b>'+String(S).padStart(2,'0')+'</b>s'})}f();setInterval(f,1000)})();</script>
 <script>(function(){var h=document.documentElement,k='pt-lab-palette';function set(p){h.dataset.pal=p;document.querySelectorAll('.pals [data-p]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.p===p)});try{localStorage.setItem(k,p)}catch(e){}}var s=null;try{s=localStorage.getItem(k)}catch(e){}set(s||'atlantico');var mk='pt-lab-mode';function sm(m){h.dataset.mode=m;document.querySelectorAll('.pals [data-m]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.m===m)});try{localStorage.setItem(mk,m)}catch(e){}}var m=null;try{m=localStorage.getItem(mk)}catch(e){}sm(m==='dark'?'dark':'light');document.querySelectorAll('.pals [data-m]').forEach(function(b){b.onclick=function(){sm(b.dataset.m)}});document.querySelectorAll('.pals [data-p]').forEach(function(b){b.onclick=function(){set(b.dataset.p)}})})();</script>
+<link rel="stylesheet" href="https://web-summit.sgit.ai/people/silvio/lab/design.css">
+<script src="https://web-summit.sgit.ai/people/silvio/lab/design.js" data-design="c"></script>
 </body>
 </html>

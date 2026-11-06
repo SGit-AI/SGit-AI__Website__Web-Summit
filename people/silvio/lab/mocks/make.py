@@ -127,6 +127,8 @@ img{{max-width:100%;height:auto;display:block}}
 {body}
 {COUNTDOWN_JS}
 {PAL_JS}
+<link rel="stylesheet" href="https://web-summit.sgit.ai/people/silvio/lab/design.css">
+<script src="https://web-summit.sgit.ai/people/silvio/lab/design.js" data-design="{key}"></script>
 </body>
 </html>
 '''

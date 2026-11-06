@@ -1,0 +1,19 @@
+/* The design toggle's look (people/silvio/lab/design.js). Self-contained: it does not depend on the page's tokens,
+   so it looks the same on the original and on every option, in light and dark. */
+.ptd-btn{position:fixed;right:16px;bottom:16px;z-index:9999;display:inline-flex;align-items:center;gap:4px;font:500 14px/1 'IBM Plex Sans',Arial,sans-serif;color:#1e2a38;background:#ffffff;border:1px solid #dfe5ec;border-radius:999px;padding:11px 16px;box-shadow:0 2px 6px rgba(20,30,50,.08),0 10px 30px rgba(20,30,50,.14);cursor:pointer}
+.ptd-btn:hover{border-color:#2f6f9f}.ptd-btn b{font-weight:600}.ptd-spark{color:#2f6f9f}
+.ptd-sheet{position:fixed;inset:0;z-index:10000;background:rgba(15,22,30,.42);display:flex;align-items:flex-end;justify-content:center;padding:16px}
+.ptd-sheet[hidden]{display:none}
+.ptd-box{background:#fbfcfd;color:#1e2a38;width:100%;max-width:1040px;max-height:calc(100vh - 32px);overflow:auto;border-radius:18px;padding:20px 22px 24px;box-shadow:0 20px 60px rgba(0,0,0,.25);font-family:'IBM Plex Sans',Arial,sans-serif}
+.ptd-head{display:flex;justify-content:space-between;align-items:center}.ptd-head h2{margin:0;font:600 22px Newsreader,Georgia,serif}
+.ptd-x{border:0;background:#eef2f6;color:#1e2a38;width:34px;height:34px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer}
+.ptd-sub{margin:4px 0 16px;color:#5f6b7a;font-size:14px}
+.ptd-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.ptd-card{display:block;text-decoration:none;color:inherit;border:1px solid #e3e8ee;border-radius:14px;overflow:hidden;background:#fff;transition:transform .15s,box-shadow .15s}
+.ptd-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(20,30,50,.12)}
+.ptd-card.on{border:2px solid #2f6f9f}
+.ptd-pic{display:block;aspect-ratio:4/3;background:#f1f4f7;overflow:hidden}.ptd-pic img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.ptd-today{display:flex;height:100%;align-items:center;justify-content:center;font:italic 600 26px Newsreader,Georgia,serif;color:#5f6b7a;background:#f6f3ec}
+.ptd-t{display:block;padding:10px 12px 12px}.ptd-t b{display:block;font-size:14px}.ptd-t small{display:block;color:#5f6b7a;font-size:12px;margin-top:2px}
+@media (max-width:760px){.ptd-grid{grid-template-columns:repeat(2,1fr)}.ptd-box{padding:16px}}
+@media (prefers-reduced-motion:reduce){.ptd-card{transition:none}}
