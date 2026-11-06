@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.762",
+    "date": "2026-11-06",
+    "what": "checker@PrompTugal.vicky: prompts saved word for word, and the first run's report",
+    "by": "checker@PrompTugal.vicky",
+    "from": "4dd590ea3"
+  },
+  {
     "version": "v0.2.761",
     "date": "2026-11-06",
     "what": "Angelo's card, answer 3 (the conversations and demos he'll lead)",
