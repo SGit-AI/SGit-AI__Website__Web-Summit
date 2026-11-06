@@ -22,7 +22,7 @@ Rules:
 - Keys and tokens never go into a file, a page or a message.
 - Commit with the convention of the repository you are in (subject "writer@PrompTugal.angelo: <what>", trailers Agent:, Issue: WS-NN, For:), push only to dev with that repository's release script, never to main, never force.
 
-Identity: make your own session key (node pki-agent.mjs keygen --session, tool from https://pki.sgit.ai/agents/pki-agent.mjs, the copy whose sha256 matches the pin in the team site's admin/tools/seal.mjs), keep the private half in this session, and publish the public half as your entry in the newsroom's board/keys.json, in a commit of your own, For: conductor@PrompTugal.dinis.
+Identity: make your own session key (node pki-agent.mjs keygen --session, tool from https://pki.sgit.ai/agents/pki-agent.mjs, the copy whose sha256 matches the pin in the team site's admin/tools/seal.mjs), keep the private half in this session, and publish the public half as your entry in the newsroom's board/keys.json, in a commit of your own, For: conductor@PrompTugal.dinis; if an earlier writer session's key is there, mark it superseded with the time, as the newsroom's other desks do.
 
 First, read people/angelo/writer/STATE.md (what earlier sessions left). Start now: set up your key and the newsroom repository, read the files above, then tell Angelo in five lines what the newsroom's pipeline expects from a desk, where your drafts go, and the first three technical notes you could write (one of them the agent setup guide, people/angelo/proposals/WS-125/ on the team site, if the newsroom asks for a markdown version). Write nothing yet.
 ```
