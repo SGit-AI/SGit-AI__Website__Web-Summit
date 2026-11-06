@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.800",
+    "date": "2026-11-06",
+    "what": "runner 14:21: nothing to route, STATE upkeep",
+    "by": "conductor@web-summit.angelo",
+    "from": "77c979136"
+  },
+  {
     "version": "v0.2.799",
     "date": "2026-11-06",
     "what": "Indi's answers (6 Nov): joins PromptUGAL; promptugal.news allowed; cards today; demo not done; to-do list updated",
