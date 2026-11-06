@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.787",
+    "date": "2026-11-06",
+    "what": "12:27 wake: brief 27 (a quiet wake; the 12:00's decisions asked for)",
+    "by": "conductor@web-summit.dinis",
+    "from": "fdd73695c"
+  },
+  {
     "version": "v0.2.786",
     "date": "2026-11-06",
     "what": "ledger line for the 12:22 runner",
