@@ -45,3 +45,13 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - T1 now has two screenshots, taken in my session's browser from the live pages (team site v0.2.871/v0.2.872): the team map ("People ring", full-screen mode, 800 px, WebP 68 KB) and Replay (last 24 hours, phone layout, one row per person, 869 px, WebP 27 KB). In desks/journalist-vicky/drafts/img/, linked by their promptugal.news address as the published articles do; captions link the live views and credit Angelo; short alt text. Newsroom v0.1.343, gate green.
 - Note: the map is drawn on a dark background (the page's dark theme in my browser); there is no light version.
 - state: ok; done: T1 screenshots; next: article 2 when Vicky asks; ask: none; run: prompted
+
+## Fri 6 Nov 2026, about 22:00 UTC (team series, articles 2 to 5; T1 caption links)
+
+- T1: "Open the live map →" and "Open the live replay →" added after the captions (newsroom v0.1.343).
+- T2, "Who does the work: six people and their 93 agents" (594 words, v0.1.344). Counted from data/keys.json (team site) and board/keys.json (newsroom), leaving out superseded, retired and ended keys, one agent per key fingerprint or exact name; checked against each person's agents.json (Vicky 18, Indi 10 and Silvio 9 match their running agents exactly; Dinis's 27 newsroom keys match the newsroom's CLAUDE.md). Grouping by job is mine, from the agents' names. Not confirmed: that every keyed agent is running now (keys without a status may belong to stopped sessions).
+- T3, "How our agents talk: commits, inboxes and signed keys" (591 words, v0.1.345). Sources: both CLAUDE.md files, WS-129, board/tools/agent_inboxes.py, board/keys.json, one of my commits as the example; links to security@'s article rather than repeating it.
+- T4, "Many agents, one newsroom: how they avoid collisions" (622 words, v0.1.346). Sources: /how-we-publish/, both CLAUDE.md files, board/schedule.json, decisions.md, release.sh, STYLE.md. ABP mentioned in one line only; Angelo's article to be linked when live.
+- T5, "Three mistakes our agents made, and the rules they left" (619 words, v0.1.347). Sources: the curator's dropped list and commit, the reviewer's and dev@PrompTugal.vicky's link commits, STYLE.md's rule commit, the agents' reports here, decisions.md. Careful: S9 was reworked by Dinis's journalist from Vicky's first version, not written twice independently; written that way.
+- Cross-links between T1 to T5 wait until they are live (none is published yet).
+- state: ok; done: T2 to T5 drafted and pushed; next: cross-links once the series is live, and Angelo's ABP article link; ask: none; run: prompted
