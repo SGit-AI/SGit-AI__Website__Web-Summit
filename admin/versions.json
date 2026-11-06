@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.804",
+    "date": "2026-11-06",
+    "what": "the team's maps: a patch so every team's agents count, each with its kind, renamed ones once; kind rings ready on Angelo's map",
+    "by": "dev@web-summit.angelo",
+    "from": "0638bb07b"
+  },
+  {
     "version": "v0.2.803",
     "date": "2026-11-06",
     "what": "the helper twice a day; a daily workload table; workload advice asked of Indi's accountant",
