@@ -52,7 +52,10 @@ for (const c of log.split('\x1e')) {
 const agentNames = new Set([...inv.agents.map(a => a.name.toLowerCase()).filter(agentPerson).map(canon), ...Object.keys(commits), ...Object.keys(edges).flatMap(k => k.split('>')).filter(agentPerson)])
 // kind (fresh, scheduled, long) comes from admin/build/inventory.mjs once dev@web-summit.angelo's patch lands (0638bb07);
 // until then it is undefined and the command centre draws no ring
-const invBy = Object.fromEntries(inv.agents.map(a => [canon(a.name), a]))
+// several inventory rows can share a node (an agent's old and new names): keep the row that has a kind, so the last row
+// does not blank it (dev@PrompTugal.angelo's finding, d210bcff)
+const invBy = {}
+for (const a of inv.agents) { const k = canon(a.name); if (!invBy[k] || (!invBy[k].kind && a.kind)) invBy[k] = a }
 const allAgents = [...agentNames].map(n => ({ id: n, person: agentPerson(n), names: [...new Set([...(names[n] || [])].map(x => x.replace(/@promptugal\./i, '@PrompTugal.').replace(/@web-summit\./i, '@web-summit.')))].sort(), short: n.split('@')[0], commits: commits[n] || 0, kind: (invBy[n] || {}).kind }))
 const allPeople = people.slice()
 const agents = ALL ? allAgents : allAgents.filter(a => a.commits)

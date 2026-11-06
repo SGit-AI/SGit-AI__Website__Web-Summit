@@ -297,7 +297,7 @@
       "id": "team-collaboration-angelo",
       "label": "team-collaboration@web-summit.angelo (Claude Code session)",
       "role": "Angelo's team-collaboration agent (team-collaboration@web-summit.angelo): keeps the stand-up calendar, a brief, a debrief and follow-ups for every meeting (WS-96), and the collaboration map with a daily note on bottlenecks (WS-97). A session key: it ends with its session.",
-      "how": "Made by the agent in its own session on 2 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session from Angelo's account on 3 November; the push is the authorisation (Angelo, 2 November). Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it.",
+      "how": "Made by the agent in its own session on 2 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session from Angelo's account on 3 November; the push is the authorisation (Angelo, 2 November). Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it. Renamed on 6 November 2026 to team-collaboration@PrompTugal.angelo (Angelo's naming standard, 90299d08); the same key, at Angelo's word (\"keep the keys\", fd819c3c).",
       "added": "2026-11-03",
       "bundle": {
         "v": 1,
@@ -306,7 +306,8 @@
         "label": "team-collaboration@web-summit.angelo (Claude Code session)",
         "fingerprint": "sha256:d802c378d28e8c5a",
         "signing_fingerprint": "sha256:c1cb85a164aa1852"
-      }
+      },
+      "renamed_to": "team-collaboration@PrompTugal.angelo"
     },
     {
       "id": "conductor-angelo",
