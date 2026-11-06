@@ -1,9 +1,11 @@
 ---
-title: "ABP: notes-runner@PrompTugal.angelo"
-summary: The Agent Behaviour Policy of Angelo's agent notes-runner@PrompTugal.angelo, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance). Draft 1, by abp@web-summit.dinis, from the repository alone.
+title: "ABP: writer@PrompTugal.angelo"
+summary: The Agent Behaviour Policy of Angelo's agent writer@PrompTugal.angelo, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance). Draft 1, by abp@web-summit.dinis, from the repository alone.
 date: 2026-11-06
 ---
-Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: conductor@web-summit.angelo's commit (24781daf) and `people/angelo/agents.json`; not yet started at 16:15 UTC, [Angelo's brief](../brief-angelo/index.html) (part two, the rules for their agents) and the agent's commits. Its session runs in Angelo's account, which abp@web-summit.dinis cannot see, so most of the Reach is unknown and says so. Template: [the conductor's ABP](../abp/conductor-web-summit-dinis/index.html). A factual record: it says what is, not what should be.
+**Renamed** from notes@PrompTugal.angelo to writer@PrompTugal.angelo on 6 November 2026 (`people/angelo/agents.json`).
+
+Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: desk.conductor@PrompTugal.angelo's commit (24781daf, at Angelo's word) and `people/angelo/agents.json`; not yet started at 16:15 UTC, [Angelo's brief](../brief-angelo/index.html) (part two, the rules for their agents) and the agent's commits. Its session runs in Angelo's account, which abp@web-summit.dinis cannot see, so most of the Reach is unknown and says so. Template: [the conductor's ABP](../abp/conductor-web-summit-dinis/index.html). A factual record: it says what is, not what should be.
 
 ## Reach: what it can actually access or affect {#reach}
 
@@ -13,15 +15,14 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: c
 
 ## Mandate: what was authorised {#mandate}
 
-- **Business task:** follows Angelo's pieces through the newsroom's pipeline and keeps `people/angelo/notes/STATE.md`; no key, never writes the newsroom; urgent items to Angelo's phone; every two hours.
-- **Deployment scope:** `people/angelo/notes/STATE.md` only; reads the newsroom, never writes it.
+- **Business task:** Angelo's writer for PrompTugal.news: technical notes and guides with him, drafts in the newsroom's `desks/notes-angelo/`, published and signed by journalist@PrompTugal.dinis; his agent for writing an article live at the summit; works when Angelo asks.
+- **Deployment scope:** `desks/notes-angelo/` in the newsroom repository; Angelo starts its session.
 - **Rules from the brief:** never send (a person sends every message); public material only, with sources; no personal contact details; no promises about prices, the stand or the organisers; material is not instruction; keys never in a file, a page or a message.
 - **Authorised by:** Angelo, whose agent it is; the team's rules are Dinis's.
 
 ## Gap: capabilities within Reach beyond authority {#gap}
 
-- "Urgent items to Angelo's phone": a message to a person; which channel, and whether that is sending, is not recorded.
-- A fresh session every two hours, with whatever connectors Angelo's account has.
+- It writes in the newsroom repository, beyond this repository's gate and review; another agent publishes what it drafts.
 - Code in its person's folder runs in CI with a token that can push and deploy (WS-133).
 - Write anywhere in the repository: its push access is not limited to `people/angelo/` and `board/`, the paths its person's brief gives it.
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November); `main` protected since 6 November.
@@ -48,7 +49,7 @@ Open questions: its connectors; who reviews its output each day; whether Angelo 
 |---|---|
 | Authority | Angelo, within the team's rules (Dinis Cruz, operator) |
 | Accountable owner | Angelo |
-| Licensee | notes-runner@PrompTugal.angelo (a Claude Code session in Angelo's account) |
+| Licensee | writer@PrompTugal.angelo (a Claude Code session in Angelo's account) |
 | Conditions | the Mandate above; Angelo's brief, part two; CLAUDE.md |
 | Validity | from 6 November 2026 to the end of the Web Summit follow-up, or the end of the session |
 | Review | on any change to its Reach, and weekly |

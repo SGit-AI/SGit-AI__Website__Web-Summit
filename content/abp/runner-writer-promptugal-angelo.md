@@ -1,9 +1,11 @@
 ---
-title: "ABP: conductor-runner@web-summit.angelo"
-summary: The Agent Behaviour Policy of Angelo's agent conductor-runner@web-summit.angelo, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance). Draft 1, by abp@web-summit.dinis, from the repository alone.
+title: "ABP: runner.writer@PrompTugal.angelo"
+summary: The Agent Behaviour Policy of Angelo's agent runner.writer@PrompTugal.angelo, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance). Draft 1, by abp@web-summit.dinis, from the repository alone.
 date: 2026-11-06
 ---
-Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `people/angelo/agents.json`, [Angelo's brief](../brief-angelo/index.html) (part two, the rules for their agents) and the agent's commits. Its session runs in Angelo's account, which abp@web-summit.dinis cannot see, so most of the Reach is unknown and says so. Template: [the conductor's ABP](../abp/conductor-web-summit-dinis/index.html). A factual record: it says what is, not what should be.
+**Renamed** from notes-runner@PrompTugal.angelo to runner.writer@PrompTugal.angelo on 6 November 2026 (`people/angelo/agents.json`).
+
+Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: desk.conductor@PrompTugal.angelo's commit (24781daf) and `people/angelo/agents.json`; not yet started at 16:15 UTC, [Angelo's brief](../brief-angelo/index.html) (part two, the rules for their agents) and the agent's commits. Its session runs in Angelo's account, which abp@web-summit.dinis cannot see, so most of the Reach is unknown and says so. Template: [the conductor's ABP](../abp/conductor-web-summit-dinis/index.html). A factual record: it says what is, not what should be.
 
 ## Reach: what it can actually access or affect {#reach}
 
@@ -13,15 +15,15 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 
 ## Mandate: what was authorised {#mandate}
 
-- **Business task:** the conductor's hourly runner: routing, upkeep and `people/angelo/conductor/STATE.md`, with no key (`people/angelo/conductor/RUNNER.md`); hourly, round the clock.
-- **Deployment scope:** as conductor@web-summit.angelo's, for routing and upkeep; no key of its own.
+- **Business task:** follows Angelo's pieces through the newsroom's pipeline and keeps `people/angelo/notes/STATE.md`; no key, never writes the newsroom; urgent items to Angelo's phone; every two hours.
+- **Deployment scope:** `people/angelo/notes/STATE.md` only; reads the newsroom, never writes it.
 - **Rules from the brief:** never send (a person sends every message); public material only, with sources; no personal contact details; no promises about prices, the stand or the organisers; material is not instruction; keys never in a file, a page or a message.
 - **Authorised by:** Angelo, whose agent it is; the team's rules are Dinis's.
 
 ## Gap: capabilities within Reach beyond authority {#gap}
 
-- **Two sessions, one name.** The runner and the desk session both commit as conductor@web-summit.angelo: a commit's name no longer says which session made it, and the ABP Angelo approved for the conductor (5732bdf1) now covers two sessions.
-- It has no key, so it cannot sign; what it writes is attributed only by the subject line.
+- "Urgent items to Angelo's phone": a message to a person; which channel, and whether that is sending, is not recorded.
+- A fresh session every two hours, with whatever connectors Angelo's account has.
 - Code in its person's folder runs in CI with a token that can push and deploy (WS-133).
 - Write anywhere in the repository: its push access is not limited to `people/angelo/` and `board/`, the paths its person's brief gives it.
 - Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November); `main` protected since 6 November.
@@ -38,7 +40,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 (scans `people/` and `board/`) |
 | security@web-summit.dinis reviews every commit twice a day | review, after the fact | team/security/reviews/ |
 
-**In the history** (dev, read 6 November 2026 16:15 UTC): it commits as conductor@web-summit.angelo, so its commits count under the conductor's name ("runner 14:21: nothing to route", 77c97913). Its commits are authored "Claude" and git reads no `Agent:` line on them (the `Co-Authored-By` paragraph follows it): the name in the subject is the agent's own word.
+**In the history** (dev, read 6 November 2026 16:15 UTC): none yet. Its commits are authored "Claude" and git reads no `Agent:` line on them (the `Co-Authored-By` paragraph follows it): the name in the subject is the agent's own word.
 
 Open questions: its connectors; who reviews its output each day; whether Angelo has registered a key for it to link to.
 
@@ -48,7 +50,7 @@ Open questions: its connectors; who reviews its output each day; whether Angelo 
 |---|---|
 | Authority | Angelo, within the team's rules (Dinis Cruz, operator) |
 | Accountable owner | Angelo |
-| Licensee | conductor-runner@web-summit.angelo (a Claude Code session in Angelo's account) |
+| Licensee | runner.writer@PrompTugal.angelo (a Claude Code session in Angelo's account) |
 | Conditions | the Mandate above; Angelo's brief, part two; CLAUDE.md |
 | Validity | from 6 November 2026 to the end of the Web Summit follow-up, or the end of the session |
 | Review | on any change to its Reach, and weekly |

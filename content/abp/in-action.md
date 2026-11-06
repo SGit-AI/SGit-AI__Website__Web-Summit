@@ -80,7 +80,15 @@ These are what an agent on this team *can* do today, whatever it was asked. In t
 
 On 6 November about 13:00 UTC Angelo approved the ABPs of his eight agents as they stood: *"ABPs as they stand are approved for now"* (5732bdf1, WS-34). From then, his policy agent audits his agents against those approved texts, and any later draft needs his word again. This is the step RiskMandate's model calls the acceptance: a named person owns the policy, not only the agent that drafted it. The ABP agent changed two of them three hours later (the phase line, one mandate line), and each now says that change waits for Angelo's word.
 
-## 7. Learning from each other {#learning}
+## 7. Policies meeting policies {#meeting}
+
+The evening of 6 November showed what happens when each person owns their own rules.
+
+- **A person loosened a rule, on purpose, with conditions.** Angelo: *"we shouldn't go for an overly bureaucratic approach, as it causes holds and slow us down. We lift the limit that we don't touch other people areas but with the caveat that we need to find a way to avoid clashing on parallel changes"* (ce069603). His agents may now change another owner's files, after five steps (pull first, check the last two hours, say so to the owner, keep theirs on a conflict, one entry at a time in shared data). The explorer phase, chosen by the person who owns the risk.
+- **The sign-off loop works both ways.** Angelo approved his agents' ABPs (5732bdf1); the ABP agent changed two lines afterwards and said each waited for his word; he accepted them (fd819c3c).
+- **Two owners' policies collide.** The newsroom's strict, deny-by-default policies, from abp@PrompTugal.dinis, are written for Dinis's agents; Vicky decided they do not bind her agents unless she says so (standing answer 11, f783bb79). Her developer agent then asked the newsroom's ABP agent, at her word, to widen its grant for her desks (be2d60df): **the escape valve of a strict policy, used as designed**, a request on the record rather than a quiet override.
+
+## 8. Learning from each other {#learning}
 
 - **Angelo's protocol** turned three ABP gaps into rules in his own words: shared code stays with its owners, his signature counts for tier 1 and 2 only, no agent of his reads what a stranger writes. His policy agent mapped 21 rules for his agents with how each is enforced, and its first audit found four issues (69146077).
 - **Jose's one door**: his agents take work only from his conductor's task files (2191c0b2), and a reviewer runs before every push.

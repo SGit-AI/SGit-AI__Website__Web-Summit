@@ -1,9 +1,11 @@
 ---
-title: "ABP: policy@web-summit.angelo"
-summary: The Agent Behaviour Policy of Angelo's agent policy@web-summit.angelo, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance). Draft 1, by abp@web-summit.dinis, from the repository alone.
+title: "ABP: policy@PrompTugal.angelo"
+summary: The Agent Behaviour Policy of Angelo's agent policy@PrompTugal.angelo, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance). Draft 1, by abp@web-summit.dinis, from the repository alone.
 date: 2026-11-05
 ---
-Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: conductor@web-summit.angelo's commit (dd853ad9, at Angelo's word) and `people/angelo/agents.json`; not started at 20:15 UTC, [Angelo's brief](../brief-angelo/index.html) (part two, the rules for their agents) and the agent's commits. Its session runs in Angelo's account, which abp@web-summit.dinis cannot see, so most of the Reach is unknown and says so. Template: [the conductor's ABP](../abp/conductor-web-summit-dinis/index.html). A factual record: it says what is, not what should be.
+**Renamed** from policy@web-summit.angelo to policy@PrompTugal.angelo on 6 November 2026 (Angelo's agents' new names, `people/angelo/agents.json`; it keeps its key and key id, at Angelo's word, fd819c3c). Earlier versions are in git at `content/abp/policy-web-summit-angelo.md`.
+
+Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: desk.conductor@PrompTugal.angelo's commit (dd853ad9, at Angelo's word) and `people/angelo/agents.json`; not started at 20:15 UTC, [Angelo's brief](../brief-angelo/index.html) (part two, the rules for their agents) and the agent's commits. Its session runs in Angelo's account, which abp@web-summit.dinis cannot see, so most of the Reach is unknown and says so. Template: [the conductor's ABP](../abp/conductor-web-summit-dinis/index.html). A factual record: it says what is, not what should be.
 
 ## Reach: what it can actually access or affect {#reach}
 
@@ -25,6 +27,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: c
 - Write anywhere in the repository: its push access is not limited to `people/angelo/` and `board/`, the paths its person's brief gives it.
 - Rewrite history on `dev`: `dev` is not protected (`main` is, since 6 November) (GitHub branches API, 2 November; still at 08:15 on 3 November).
 - Anything its session's other connectors can do: not known to this ABP.
+- **Angelo's protocol, 5 November** (`people/angelo/kit/README.md`, each rule in Angelo's words): (1) **shared code stays with its owners**: his agents draft patches to shared code and pages and route them to the owner, never apply them, with a `Routed:` line (9e94d0c3, WS-34); (2) **his signature counts for tier 1 and 2 actions only**, never tier 3, and a signed message names its recipient, item, action and old value with an id and a time, refused if replayed or stale (70aa65fa, WS-138); (3) **no agent of his reads what a stranger writes**: visitors get a separate inbox sealed only to Angelo's person key (b8a5d3ab, held for security's review of the design). Rules (1) and (2) are kept by the agents; (3), once built, is a technical barrier: what a stranger writes cannot be opened by any of his agents.
+- **Angelo lifted his first rule** (ce069603, 6 November evening, his words: "we shouldn't go for an overly bureaucratic approach ... We lift the limit that we don't touch other people areas but with the caveat that we need to find a way to avoid clashing on parallel changes"). His agents may now change another owner's code, page or data directly, under the tiers, after five steps: pull `dev` just before; check the path's last two hours and the board's picked issues (if busy, send a draft instead); say it in the commit, For: the owner; on a rebase conflict keep theirs and send theirs as a draft; shared `data/*.json` from a fresh `dev`, one entry at a time. A deliberate loosening, with conditions: the explorer phase as a person chose it.
 
 ## Barriers: what really stands in the way {#barriers}
 
@@ -47,15 +51,15 @@ Open questions: its connectors; who reviews its output each day; whether Angelo 
 |---|---|
 | Authority | Angelo, within the team's rules (Dinis Cruz, operator) |
 | Accountable owner | Angelo |
-| Licensee | policy@web-summit.angelo (a Claude Code session in Angelo's account) |
+| Licensee | policy@PrompTugal.angelo (a Claude Code session in Angelo's account) |
 | Conditions | the Mandate above; Angelo's brief, part two; CLAUDE.md |
 | Validity | from 5 November 2026 to the end of the Web Summit follow-up, or the end of the session |
 | Review | on any change to its Reach, and weekly |
 
 ## Provenance {#provenance}
 
-**Approved by Angelo** as it stood at 5732bdf1 (6 November about 13:00 UTC, his words: "ABPs as they stand are approved for now"; WS-34). A later draft needs his word again. Changed since, awaiting Angelo's word: the phase line (630ca8a8).
+**Approved by Angelo** as it stood at 5732bdf1 (6 November about 13:00 UTC, his words: "ABPs as they stand are approved for now"; WS-34). A later draft needs his word again. The phase line added in 630ca8a8 was accepted by Angelo (fd819c3c).
 
-Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 1, 5 November 2026, in `content/abp/` with its history in git.
+Owner: Angelo. Drafted by abp@web-summit.dinis from the repository; Angelo and the agent correct it. Version 2, 6 November 2026 (20:10 wake: renamed; Angelo's acceptance; his first rule lifted), in `content/abp/` with its history in git.
 
 **Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

@@ -3,6 +3,8 @@ title: "ABP: dev@web-summit.vicky"
 summary: The Agent Behaviour Policy of Vicky's agent dev@web-summit.vicky, in RiskMandate's terms (Reach, Mandate, Gap, Barriers, Provenance). Draft 1, by abp@web-summit.dinis, from the repository alone.
 date: 2026-11-03
 ---
+**Replaced** on 6 November 2026 by [dev@PrompTugal.vicky](../abp/dev-promptugal-vicky/index.html), a new session for newsroom site changes (99fc7a3d); this agent was paused since 4 November and its key `dev-vicky` is marked retired (823573ca). Kept as the record of what it was.
+
 Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `people/vicky/agents.json` and the agent's commits, [Vicky's brief](../brief-vicky/index.html) (part two, the rules for their agents) and the agent's commits. Its session runs in Vicky's account, which abp@web-summit.dinis cannot see, so most of the Reach is unknown and says so. Template: [the conductor's ABP](../abp/conductor-web-summit-dinis/index.html). A factual record: it says what is, not what should be.
 
 ## Reach: what it can actually access or affect {#reach}
