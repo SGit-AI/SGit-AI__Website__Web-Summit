@@ -1,8 +1,8 @@
 ---
 title: Angelo's dashboard
-summary: The page Angelo reads first, about action: what is blocked on Angelo, the decisions waiting, then links into his command centre, where the work is. Kept by dashboard@web-summit.angelo for Angelo's conductor.
+summary: The page Angelo reads first, about action: what is blocked on Angelo, the decisions waiting, then links into his command centre, where the work is. Kept by dashboard@PrompTugal.angelo for Angelo's conductor.
 ---
-**Work in [your command centre](app/index.html#kanban).** This page is the short version: what waits on you, then links. Kept by `dashboard@web-summit.angelo` under [the protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol); your conductor's digest, when you ask for it in the desk session, carries the detail; its hourly runner flags anything urgent first. Stand-ups: 12:00 and 18:00 UTC from 5 November.
+**Work in [your command centre](app/index.html#kanban).** This page is the short version: what waits on you, then links. Kept by `dashboard@PrompTugal.angelo` under [the protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol); your conductor's digest, when you ask for it in the desk session, carries the detail; its hourly runner flags anything urgent first. Stand-ups: 12:00 and 18:00 UTC from 5 November.
 
 ## 1. Blocked on you {#needs}
 
@@ -29,7 +29,7 @@ Your go is needed before these move:
 
 ## 4. My agents {#agents}
 
-Eight agents. All but one work through your conductor; the policy agent audits them all, the conductor included, and reports to you directly. What each did is in "My agents, as the team sees them" at the top, and on [the collaboration board](app/index.html#collab).
+Nine agents, named `<role>@PrompTugal.angelo` from 6 November (the conductor as desk and runner). All but one work through your conductor; the policy agent audits them all, the conductor included, and reports to you directly. What each did is in "My agents, as the team sees them" at the top, and on [the collaboration board](app/index.html#collab).
 
 - **conductor:** the hub, in two parts: a lean hourly runner (its last line says "URGENT for Angelo:" or "Nothing urgent."), and the desk, which writes your digest when you ask.
 - **dev:** your command centre: offline, the "✦ Angelo's own" mark, "Decide first" in Needs me now (one-click once Dinis's dashboard agent takes the cockpit patch), Replay, and Team and the machine with computed setup levels, the PrompTugal newsroom's agents and three map layouts; drafts routed for WS-36, WS-78, WS-106 and the team maps. Every two hours.
@@ -37,7 +37,8 @@ Eight agents. All but one work through your conductor; the policy agent audits t
 - **vault:** your vaults; the lane to your conductor is made, and Jose's vault agent verified its first signed test (WS-120). It now pushes no vault until it has its own SG/Send token (the vault guide's new rule), so draining lanes waits on that token from Dinis; your conductor asks.
 - **crm:** your area in the team's private CRM; 08:50 and 16:50 UTC.
 - **helper:** setup questions and the help page (WS-158); twice a day, 10:50 and 16:50 UTC.
+- **writer** (new): your articles, guides and technical notes for PrompTugal.news, a session per piece that you start; its **runner** checks the newsroom every two hours and keeps the writer's state.
 - **policy:** the auditor of your agents against their ABPs and your protocol; read-only, reports to you. Its first audit: [the map](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/policy/map.md) and [the findings](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/policy/findings.md).
 - **dashboard:** this page and your command centre; every three hours.
 
-Questions? [The help page](../../help/index.html), kept by helper@web-summit.angelo.
+Questions? [The help page](../../help/index.html), kept by helper@PrompTugal.angelo.
