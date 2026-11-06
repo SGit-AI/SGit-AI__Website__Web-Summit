@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.689",
+    "date": "2026-11-06",
+    "what": "ABPs for the PrompTugal team, Vicky's newsroom reviewer and four beat journalists, Jose's crm and accountant",
+    "by": "abp@web-summit.dinis",
+    "from": "93945b376"
+  },
+  {
     "version": "v0.2.688",
     "date": "2026-11-06",
     "what": "observability@PrompTugal.dinis on Dinis's roster, started in its own session",
