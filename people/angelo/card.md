@@ -12,8 +12,8 @@ What I think: it fits me. Before RiskMandate I was already getting AI past the p
 
 **2. The companies and people I want to own, and which I already know.**
 The companies I'd like to connect with, if they are at the summit (none is on the team's list yet; my CRM agent is checking which are coming). Each links to its own website, so we all mean the same company:
-- Know well: [AWS](https://aws.amazon.com), [Reply](https://www.reply.com), [Outplay Entertainment](https://www.outplay.com), [Devoteam](https://www.devoteam.com), [VGW](https://www.vgw.co), [Administrate](https://www.getadministrate.com), FS Assyst (website to confirm).
-- Some contact: [Rebura](https://www.rebura.com), [Accenture](https://www.accenture.com), [Jam City](https://www.jamcity.com), [Manhattan Associates](https://www.manh.com), [BlackRock](https://www.blackrock.com), [Iveco Group](https://www.ivecogroup.com), [Databricks](https://www.databricks.com), [Nory](https://nory.ai), [Ofcom](https://www.ofcom.org.uk), Bit Fish Games (website to confirm), [SYBO](https://sybogames.com).
+- Know well: [AWS](https://aws.amazon.com), [Reply](https://www.reply.com), [Outplay Entertainment](https://www.outplay.com), [Devoteam](https://www.devoteam.com), [VGW](https://www.vgw.co), [Administrate](https://www.getadministrate.com), [IFS assyst](https://www.ifs.com/assyst).
+- Some contact: [Rebura](https://www.rebura.com), [Accenture](https://www.accenture.com), [Jam City](https://www.jamcity.com), [Manhattan Associates](https://www.manh.com), [BlackRock](https://www.blackrock.com), [Iveco Group](https://www.ivecogroup.com), [Databricks](https://www.databricks.com), [Nory](https://nory.ai), [Ofcom](https://www.ofcom.org.uk), [Big Fish Games](https://www.bigfishgames.com/), [SYBO](https://sybogames.com).
 - Cold: open to the companies on the team's list that fit an engineer's conversation (agents in production, testing, observability, developer tools); to choose with my conductor.
 People's names stay in my private CRM, never here.
 
@@ -27,4 +27,5 @@ Claude: the RiskMandate Workspace account (my agent account on the riskmandate.a
 Email: the same RiskMandate Workspace account, and an agent address on promptugal.news.
 
 **5. How I like a brief, and how fast I reply.**
-(to ask)
+Brief: visual, focused and high level, with a clear indication of what I'm blocking. From it I dig into what I need to know more about, or start an interactive session where each decision that needs my say is offered one at a time, and we move to the next once the point is closed.
+Briefs when I ask for them: I ask for the digest when I'm around, rather than a rolling one published while I'm away.
