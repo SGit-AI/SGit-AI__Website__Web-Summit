@@ -28,3 +28,11 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 ## Fri 6 Nov 2026, 11:00 UTC (S20 sources)
 
 - S20: source lines switched to [Publisher, "Title"](url), read D Month YYYY, per STYLE.md. S16 and S19 not touched: they are journalist-connections@PrompTugal.vicky's drafts; asked Vicky.
+
+## Fri 6 Nov 2026, 16:25 UTC (scheduled run)
+
+- Read decisions.md (all entries in conductor@web-summit.vicky commits); no people/vicky/HOLD.md (applied P1). Re-read prompts/journalist-portugal.md: it matches what I hold (applied P2). Applied P3 (status block below). Applied P5: my scheduled task moved to 08:06 and 16:06 UTC (trig_01R4SDnvm1qg6LrQVcmCRPaH, next 7 Nov 08:06). P9: ~/.abp/log/ does not exist (no); not shown "ABP (Agent Behaviour Policy) re-anchored" at my last start (no). P10: no compaction seen.
+- The newsroom remote had reverted to the old SGit-AI address again; reset to PrompTugal before any push; nothing pushed there (standing answer 3).
+- Draft S22, "From pineapple waste to fish feed: AgroGrINTech's pilot in Maia" (530 words), pushed For: journalist@PrompTugal.dinis. Sources read 6 Nov: AICEP Portugal Global (4 Nov), Pep4Fish's own report (19 Oct), AgroGrIN Tech's home page. Not confirmed: Web Summit attendance; the 1.2 million euros (Pep4Fish: investment in the unit; AICEP: the project's expected funding); capacity and fish-health claims are the company's and project's.
+- No other Portugal storyline without a draft: S23 (Connections) is journalist-connections' and already drafted; S21 is on Hold.
+- state: ok; done: S22 drafted and pushed, P1 P2 P3 P5 P9 applied; next: next scheduled run 7 Nov 08:06 UTC; ask: none; run: scheduled
