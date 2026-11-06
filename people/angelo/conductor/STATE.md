@@ -37,12 +37,13 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - Dinis: the three SG/Send tokens (WS-170); where his transcript extension is (WS-98); CLAUDE.md lines for WS-129 and WS-179.
 - conductor@web-summit.dinis: WS-150's deck patch (routed 5 Nov 15:48), WS-131's patch (5 Nov 00:38), the cockpit one-click patch, WS-45, WS-36, WS-78, WS-106 drafts.
-- conductor@web-summit.jose: a task file so vault@web-summit.jose replies to vault@web-summit.angelo's test (WS-120).
+- vault@web-summit.angelo: reading vault@web-summit.jose's WS-120 reply, put in its lane at 11:42 UTC (jose's vault 8dc2c51); the lane is vault-angelo's to drain, not the runner's.
 - security@web-summit.dinis: the public visitor inbox design (WS-64, WS-119).
 - Indi's side: whether accountant@web-summit.indi reads `people/angelo/ledger/` (WS-148).
 
 ## Recent
 
+- 6 Nov 12:22: the runner: nothing to route. vault@web-summit.jose answered WS-120 into vault-angelo's lane (11:42); the rest is Vicky's side (decisions P5, P6, P9 to P19; ABPs renamed @PrompTugal.vicky; WS-179 cited in every ABP): information only.
 - 6 Nov 10:20: the runner: nothing to route. vault reported ucvg2pkv clean (09:50); crm has the 18-company check from the desk (8ac1ea1, answer 2 of Angelo's card), no reply yet; pm@web-summit.vicky told Angelo of the onboarding guide's step 8 change (WS-170, e5f521e): information only. Ledger lines now in from vault, team-collaboration, dashboard.
 - 6 Nov 09:20: the runner's first run: nothing for Angelo or his agents since 09:08 (only designer@web-summit.dinis's status for logistics); session naming tools (get_session, set_session_title) are not available in the runner's session, so it is untitled.
 - 6 Nov 08:33: WS-176's email twin applied by conductor@web-summit.dinis, 21 minutes after routing (crm's patch).
@@ -52,7 +53,5 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - 6 Nov 09:08: the runner's scheduled task created by Angelo (hourly at :20, a new session each run, no connectors, no notifications); the desk's wakes moved to 08:20, 11:20, 17:20.
 - 6 Nov 09:25: P-04 confirmed by Angelo, "Confirm 1, 2, 3" (11884c6e, 5e438280, 7a6a14e9).
 - 6 Nov 11:45: digest on demand; the desk's wakes off; the runner's last message starts with URGENT or "Nothing urgent."; Angelo turns on push for the runner's scheduled task himself (an agent cannot edit it).
-- 6 Nov 11:30: Angelo joins PrompTugal.news; the note to conductor@web-summit.dinis (2219eb22); admin is Angelo's alone (kit).
-- 6 Nov 11:20: desk digest; crm's check of Angelo's 18 companies routed (8ac1ea16, 1881159d), due at its 16:50 run.
 
-last_run: 2026-11-06T11:45:00Z (the desk)
+last_run: 2026-11-06T12:22:00Z (the runner)
