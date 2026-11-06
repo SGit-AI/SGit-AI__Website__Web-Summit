@@ -1,37 +1,36 @@
 # Watcher: latest run
 
-**Run:** 2026-11-06 07:15 UTC (scheduled), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed is `activity.json`; the actions are `actions.json`, both beside this file. **Addressed to:** Jose and conductor@web-summit.jose, which reads it at every wake.
+**Run:** 2026-11-06 12:15 UTC (scheduled), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed is `activity.json`; the actions are `actions.json`, both beside this file. **Addressed to:** Jose and conductor@web-summit.jose, which reads it at every wake.
 
-**Range:** `dev` from `4dbeb40` to `dbb6fa6`, overnight.
+**Range:** `dev` from `dbb6fa6` to `0aa3e4d`.
 
 ## Who committed
 
-115 commits: 52 CI releases (counted), 1 by the watcher itself, none without an agent name, and 62 by agents: Dinis 24, Vicky 13, Jose 10, Angelo 9, Silvio 6. Security's 23:50 review (`8b56e28`) covers 26 of them; the other 36 wait for 11:50.
+196 commits: 69 CI releases (counted), 1 by the watcher itself, none without an agent name, and 126 by agents: Vicky 64, Angelo 37, Dinis 16, Jose 5, Indi 2, Silvio 2. Security's 11:50 review (`d468784`) covers 114 of them.
 
 ## Open actions (re-checked every run)
 
-1. **A-06, open for the fourth run, now waiting on Jose: the prompts stored in Jose's scheduled tasks.** Your conductor has prepared the kit's texts to paste in `people/jose/schedules.md#paste` (`0848e6a`), and it is on your Actions list. **Paste the hourly drain first:** its stored prompt still runs the full drain, which pushes a vault. Since 01:30 (`0848e6a`) the kit says count only (`--dry`) until the conductor has its own SG/Send token, under Dinis's rule that no agent pushes a vault with its person's token. That task last fired at 07:10.
-2. **A-11, second run: conductor@web-summit.angelo.** It committed at 22:22, then nothing in the 8 hourly slots overnight. Probably quiet night wakes.
-3. **A-12, second run: inbox@web-summit.silvio.** No commit since it joined at 16:33 yesterday. Its work is in Silvio's mailbox and the CRM; it should log its runs (WS-160).
-4. **A-13, new: helper@web-summit.angelo.** No commit since 22:51 (4 slots overnight). Probably quiet.
-5. **A-14, new: dev@web-summit.dinis.** No commit since 23:53; the 02:40 and 05:40 wakes passed. Unusual, since its mandate is a refactoring pass every wake. For conductor@web-summit.dinis.
+1. **A-06, open for the fifth run, waiting on Jose: paste the new prompts into your scheduled tasks** (`people/jose/schedules.md#paste`). The helper's was updated at 08:52. The conductor's wake, dev, dashboard, vault and **the hourly drain** are unchanged. The drain fired again at 12:08 with the text that pushes a vault, which the kit stopped at 01:30 under Dinis's rule.
+2. **A-12, third run: inbox@web-summit.silvio.** No commit in about 20 hours since it joined. For conductor@web-summit.silvio: have it log its runs (WS-160).
+3. **A-14, second run: dev@web-summit.dinis.** No commit since 23:53 yesterday; four wakes passed (00:40, 03:40, 06:40, 09:40). For conductor@web-summit.dinis.
+4. **A-15, new: dashboard@web-summit.dinis**, quiet again after its 07:11 commit (5 hourly slots). The same pattern as A-01 yesterday; it will keep reopening until it logs its runs.
+5. **A-16, new: dev@web-summit.angelo**, late by one slot (10:35; last 08:38).
 
-Closed: **A-01**, dashboard@web-summit.dinis committed at 07:11, its first commit since 02:54 yesterday.
+Closed: A-11 conductor@web-summit.angelo (23 commits this morning) and A-13 helper@web-summit.angelo (08:51).
 
 ## What to look at
 
-1. **High, open for the fifth run:** `content/family-riskmandate-agent.md` lines 6, 18 and 32 (from `f20d264`) still match the rule "an email address". Security's 23:50 review does not mention them either.
-2. **Medium:** the hourly drain prompt (A-06, item 1 above).
-3. **Medium, still open:** the public session branch `claude/optimistic-feynman-7pkot9` (`dc306d7`) still carries an email-rule line in `board/WS-26-*` line 16.
-4. **Note:** 40 email-rule lines (one per line, as vault-audit.mjs counts) in 13 commits overnight are all agent names in the new `@PrompTugal.<person>` style, not real addresses (a binary PDF under `admin/brand/promptugal/` also matches as noise; the gate and the audit skip binaries). The gate's own check was updated for them (`fc56545`), but `vault-audit.mjs` still exempts only `@web-summit.*` names, so a vault audit would flag them. For security or sgit@web-summit.dinis.
-5. **Note:** shared code again from dev@web-summit.silvio (`assets/cc/app.js`, `f5459a5`); content pages from conductor@web-summit.silvio (`content/media.md`, `content/videos.md`) and helper@web-summit.angelo (`content/help.md`); your conductor sealed the private CRM's key to crm@web-summit.jose (`332b02d`, `data/sealed/agents/`). Listed, not judged.
-6. **Info:** new agents: crm@web-summit.jose (7 commits, all with `Reviewed-by`), reviewer@web-summit.vicky, Dinis's new ontologist agent (PrompTugal style name).
+1. **High, open for the sixth run:** `content/family-riskmandate-agent.md` lines 6, 18 and 32 (from `f20d264`) still match the rule "an email address".
+2. **Medium:** the hourly drain prompt (A-06 above).
+3. **Medium, still open:** the public session branch `claude/optimistic-feynman-7pkot9` (`dc306d7`), `board/WS-26-*` line 16 (its second match on the line; the vault audit checks only the first, which is exempt).
+4. **Note:** 186 email-rule lines in 36 commits, all agent names in the PrompTugal style. Vicky's newsroom agents moved to those names today. None is a real mail domain; `vault-audit.mjs` still exempts only web-summit names.
+5. **Note:** writes outside the lane: pm@web-summit.vicky (`content/onboarding-guide.md`), team-collaboration@web-summit.angelo (`team/conductor/shows/`, `assets/shows/`). Listed, not judged.
 
 ## The checks
 
-- **Jose's agents:** 10 commits (crm 7, conductor 3), every one with `Reviewed-by`. All their scheduled tasks fired on time.
-- **Other branches:** nothing new on `main`; `claude/nifty-bell-f1rkca` moved (merges only, no file difference).
-- **Cost:** `people/jose/schedules.md` puts the watcher at about 24M tokens a day for 4 runs, second only to the conductor.
+- **Jose's agents:** 5 commits (dashboard, conductor, helper, dev, vault), every one with `Reviewed-by`. All their scheduled tasks fired on time.
+- **Other branches:** nothing new on `main`.
+- The 07:15 run's commit (`067c289`) is on `dev`; its own queued deploy was folded into a later release.
 
 ## Could not check
 
