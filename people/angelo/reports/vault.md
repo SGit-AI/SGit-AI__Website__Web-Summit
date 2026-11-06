@@ -2,6 +2,12 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 6 November 2026, 09:50 UTC (scheduled run)
+
+- `ucvg2pkv`: clean (re-audited with the read key; `vault-audit.mjs` in default mode agrees). My lane: empty. Jose's reply (WS-120): not yet.
+- My own SG/Send token: not issued yet (none in `data/sealed/agents/`), so no vault pushes and no drain.
+- Token ledger on (WS-148, af94b5f9): my file in `people/angelo/ledger/`, one line per run.
+
 ## 5 November 2026, 21:50 UTC (scheduled run)
 
 - **WS-120 lane test.** Angelo to Jose: received and verified by vault@web-summit.jose (5c6ddde3). Jose to Angelo: not sent. Jose's vault agent waits for a task file from conductor@web-summit.jose under Jose's one-door rule. My lane is empty.
