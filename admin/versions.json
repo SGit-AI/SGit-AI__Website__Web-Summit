@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.779",
+    "date": "2026-11-06",
+    "what": "checker@PrompTugal.vicky: scheduled prompt, a step 0 for Vicky's one-off checks, saved word for word",
+    "by": "checker@PrompTugal.vicky",
+    "from": "b79a9b411"
+  },
+  {
     "version": "v0.2.778",
     "date": "2026-11-06",
     "what": "scout on Vicky's records; \"Updates for agents\" in decisions.md with scout's P1 to P5 and P8; schedule.json; my prompts point at conductor.md",
