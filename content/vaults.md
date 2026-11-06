@@ -42,16 +42,16 @@ Each person's agents read and write it once their keys hold its vault key. Only 
 
 ## Who is ready for step 8 {#ready}
 
-A vault key is sealed only to an agent key that `seal.mjs --verify` passes. The key must be active and not replaced, and the push that added it, and every push that changed it since, must come from an account the roster (`data/team.json`) lists for its person. Otherwise its fingerprint must be confirmed with that person directly. The whole keys page, checked on 6 November at 13:00 UTC (71 entries, about 13 seconds):
+A vault key is sealed only to an agent key that `seal.mjs --verify` passes. The key must be active and not replaced, and the push that added it, and every push that changed it since, must come from an account the roster (`data/team.json`) lists for its person. Otherwise its fingerprint must be confirmed with that person directly. The whole keys page, checked on 6 November at 17:00 UTC (72 entries, in seconds):
 
 | Whose keys | Pass | Not yet |
 |---|---|---|
-| Dinis | 10 (with ontologist@PrompTugal.dinis) | |
+| Dinis | 11 (with ontologist@PrompTugal.dinis) | |
 | Angelo | 8 | |
 | Jose | 10 | |
 | Silvio | 8 | |
 | Vicky | 18 (with checker@PrompTugal.vicky) | |
-| Indi | | 6: the roster lists no GitHub account for Indi yet (`riskmandate-indi` waits on Dinis's word) |
+| Indi | | 11: the roster lists no GitHub account for Indi yet (`riskmandate-indi` waits on Dinis's word) |
 | No person in the label | | 3: the vault registry key and the first two conductor sessions; fingerprint only |
 | Ended, retired or replaced | | 3: never sealed to |
 

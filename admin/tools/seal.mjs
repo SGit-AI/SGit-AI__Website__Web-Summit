@@ -81,7 +81,7 @@ async function recipient(keys, ref) {
 const isAncestor = (a, b) => { try { execFileSync('git', ['merge-base', '--is-ancestor', a, b], { stdio: 'ignore' }); return true } catch { return false } }
 const ACTIVITY = { pages: [], next: `https://api.github.com/repos/${REPO}/activity?ref=refs/heads/dev&per_page=100`, failed: false }
 async function activityPage(i) {   // GitHub's push activity on dev, newest first, fetched once per run and kept
-    while (ACTIVITY.pages.length <= i && ACTIVITY.next && !ACTIVITY.failed && ACTIVITY.pages.length < 20) {
+    while (ACTIVITY.pages.length <= i && ACTIVITY.next && !ACTIVITY.failed && ACTIVITY.pages.length < 200) {   // the whole history: 22 pages by 6 November, and growing
         let head = '', list
         // curl, not fetch: curl honours HTTPS_PROXY (a cloud session's authenticated proxy); GITHUB_TOKEN is used if set
         try {
