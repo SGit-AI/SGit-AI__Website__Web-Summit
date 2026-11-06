@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.839",
+    "date": "2026-11-06",
+    "what": "the PrompTugal.news design lab, a copy of the front page for design tests",
+    "by": "design@web-summit.silvio",
+    "from": "93891ca53"
+  },
+  {
     "version": "v0.2.838",
     "date": "2026-11-06",
     "what": "18:21 run's ledger line",
