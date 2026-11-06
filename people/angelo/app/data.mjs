@@ -77,9 +77,25 @@ function collab(root, person, d, now) {
     const inv = INV.inventory(root, team)
     const humans = team.members.filter(m => m.kind === 'human')
     const keys = (readJson(root, 'data/keys.json') || { keys: [] }).keys.map(k => String(k.label || '').split(' ')[0])
-    const level = id => (readJson(root, `people/${id}/onboarding.json`) || {}).level ?? 0
+    // the level the setup page computes from what exists (admin/build/onboarding.mjs), not the one written by hand in
+    // people/<id>/onboarding.json, which falls behind (Angelo, 6 November: "the LX levels don't seem to be accurate")
+    const OB = OBMOD.onboarding(root, () => inv)
+    const level = id => { try { return OB.onboard(id).level || 0 } catch { return (readJson(root, `people/${id}/onboarding.json`) || {}).level ?? 0 } }
+    // a renamed agent (its agents.json entry says was: "<old name> until …") shows once, under its new name
+    const renamed = new Map()
+    for (const m of humans) for (const a of readJson(root, `people/${m.id}/agents.json`) || []) { const old = (String(a.was || '').match(/^([a-z0-9-]+@[A-Za-z][A-Za-z0-9-]*\.[a-z0-9-]+)/) || [])[1]; if (old) renamed.set(old.toLowerCase(), a) }
     const work = id => d.issues.filter(i => (i.status === 'picked' || i.status === 'in progress') && KANBAN.pickers(i, { people: Object.fromEntries(humans.map(m => [m.id, m.name])) }).includes(id)).map(i => ({ id: i.id, title: i.title, status: i.status }))
-    const agentsOf = id => inv.agents.filter(a => a.person === id).map(a => ({ name: a.name, job: a.job || '', schedule: a.schedule || '', declared: a.declared, commits: a.commits, last: a.last, key: keys.includes(a.name) }))
+    // only agents that have run: at least one commit here (Angelo, 6 November: proposed agents "aren't real"); merged by
+    // the name they go by now, so an old and a new name are one agent
+    const agentsOf = id => {
+        const by = new Map()
+        for (const a of inv.agents.filter(a => a.person === id && a.commits > 0)) {
+            const r = renamed.get(a.name.toLowerCase()), name = r ? r.name : a.name, cur = by.get(name.toLowerCase())
+            const row = { name, job: (r && r.job) || a.job || '', schedule: (r && r.schedule) || a.schedule || '', declared: a.declared || !!r, commits: a.commits + (cur ? cur.commits : 0), last: cur && cur.last > a.last ? cur.last : a.last, key: keys.includes(a.name) || keys.includes(name) || !!(cur && cur.key), was: r ? a.name : (cur && cur.was) || '' }
+            by.set(name.toLowerCase(), row)
+        }
+        return [...by.values()].sort((x, y) => (y.last || '').localeCompare(x.last || ''))
+    }
 
     // who works with whom: For: trailers over the last 7 days (agent or person to agent or person), counted per pair of people
     const pairs = {}
