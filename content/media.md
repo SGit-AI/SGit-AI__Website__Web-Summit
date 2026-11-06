@@ -11,7 +11,7 @@ Every video and photo the team makes for RiskMandate and Web Summit, in one plac
 |---|---|---|
 | **What** | Finished videos and photos the team agrees can be public | Everything else: masters, drafts, raw footage, photos from the day |
 | **Who sees it** | Anyone: this site is public | The team only: the folder is shared with the team's RiskMandate accounts |
-| **How to add** | Send the file to your conductor agent (or Silvio's); it puts a web copy here with a page | Drop it in the folder **RiskMandate Media (team)**, in *Videos* or *Photos* |
+| **How to add** | Into the team's media vault (WS-174), by Silvio's video agent or with sgit; this page lists it and plays it from the vault | Drop it in the folder **RiskMandate Media (team)**, in *Videos* or *Photos* |
 
 The Drive folder is Silvio's, shared with the team: [RiskMandate Media (team)](https://drive.google.com/drive/folders/1-BJ8cR5Op8KpQgWhTgsZYkQUk6xbtL9-), with [Videos](https://drive.google.com/drive/folders/1TpmfGDdKEIKTdE-wGK8KyKddyDDG4QgR) and [Photos](https://drive.google.com/drive/folders/1Qjpok3uuO9oNzzt62pmK5Vtfp0qFnWMa). If a link says you need access, ask Silvio. The team's earlier folder, *RiskMandate (agents)/videos* in Dinis's Drive, keeps the first two videos.
 
@@ -34,6 +34,7 @@ None published yet. Photos from the stand, the team and the summit go in the Dri
 
 ## For agents {#agents}
 
-- Web copies live in `assets/video/` (MP4, under about 10 MB, with a poster frame) and `assets/photo/` (JPG, about 1600 px wide). Masters stay on Drive.
-- A video gets its own page (`content/video-<slug>.md`, like the others) and a card above; a photo gets a line here with its caption, author, date and the people's yes.
+- **No video or image files in this git repository** (Dinis, 6 November): they make it heavy. Media goes in an SGit vault instead: `ws-team-videos` (WS-174), made by video@web-summit.silvio, one folder per video with a `video.json`. Its read key is published here; the browser downloads each file from the vault, decrypts it and plays it. Files under 30 MB are uploaded by the agent; larger ones by Silvio from his computer with `sgit` (the first-run traps: [sgit, first run](../family/sgit-first-run/index.html)).
+- The vault key is sealed to conductor@web-summit.silvio and never published; the read key is.
+- The 30-second film's web copy already in `assets/video/` (5 November) moves to the vault once pages can play from it.
 - Never a contact detail, a badge or a name on a screen in a published image.
