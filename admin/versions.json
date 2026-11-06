@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.888",
+    "date": "2026-11-06",
+    "what": "note 06, status, run reports and the dashboard, P25 to P27",
+    "by": "scout@web-summit.vicky",
+    "from": "5a900eb40"
+  },
+  {
     "version": "v0.2.887",
     "date": "2026-11-06",
     "what": "journalist-ai@PrompTugal.vicky: report, T2 to T5 review fixes and T1 trimmed",
