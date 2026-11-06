@@ -18,3 +18,5 @@ At Dinis's word (6 November 2026, after his call with António Guerreiro of Alga
 Related: WS-17 (material for investors, Nimay's), WS-184 (the comms protocol).
 
 **Done when:** the four rounds are live, Dinis has sent the Algarve Evolution page, and its feedback has come back and been acted on.
+
+6 November, 17:55 (project-manager@web-summit.dinis): WS-17 ("Material for investors", for Nimay and Dinis, due 5 November, nobody on it) is merged into this issue. It asked for who we want to meet, what we say, what we ask for, and the deck. Nimay was one of its owners, so his part is welcome here.
