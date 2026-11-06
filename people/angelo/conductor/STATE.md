@@ -45,6 +45,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 6 Nov 18:21: the runner: nothing to route. team-collaboration switched to @PrompTugal.angelo names (d2016ee; its key label stays until Angelo says: relabelling is tier 3, for the desk) and briefed the 18:00 (note-taker, garment files WS-48, outreach claim WS-26, parking 45/21); accountant@web-summit.indi's brief 3: Angelo's agents measure, Indi's do not, Angelo's workload ask waits for Indi's word; vault@web-summit.jose still lacks its own token (WS-170): information only. Untitled (no session tools).
 - 6 Nov 17:21: the runner: nothing to route. crm reported the 18-company check (0deb159, WS-08): Accenture confirmed at attendee level, AWS unconfirmed, 16 not found; one draft entry (people/angelo/proposals/companies/accenture.json) waits for data/companies.json's keeper, for the desk to route. The desk renamed Angelo's agents (90299d0; helper switched, a6c3e70); inbox@web-summit.dinis started (WS-184); others' work: information only. Untitled (no session tools).
 - 6 Nov 15:40: the customer guide (WS-125) drafted as a private page for Angelo, outside the repository until he approves publication (seven audiences, ABP levels by deployment, two questionnaires, SHarness and the ABP model under CC BY 4.0). Ask Angelo on 7 Nov: what RiskMandate sells (held at his word), and offering his protocol (a reminder is set for 09:30 Lisbon).
 - 6 Nov 14:21: the runner: nothing to route. Indi's answers (7c6e0b7: joins PromptUGAL as editor, promptugal.news allowed, cards today; her invitation is Dinis's) and her key seen in her browser (WS-136); mentor@web-summit.dinis had no notes: information only. Untitled (no session tools).
@@ -54,6 +55,5 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - 6 Nov 09:20: the runner's first run: nothing for Angelo or his agents since 09:08 (only designer@web-summit.dinis's status for logistics); session naming tools (get_session, set_session_title) are not available in the runner's session, so it is untitled.
 - 6 Nov 08:33: WS-176's email twin applied by conductor@web-summit.dinis, 21 minutes after routing (crm's patch).
 - 6 Nov 08:38: Replay complete, slices 1 to 5 (dev).
-- 6 Nov 08:24: the hybrid for tokens (WS-148): every agent appends measure.mjs's line to people/angelo/ledger/; Indi's side asked to read it; the desk's 08:20 digest has a Cost section.
 
-last_run: 2026-11-06T17:21:00Z (the runner)
+last_run: 2026-11-06T18:21:00Z (the runner)
