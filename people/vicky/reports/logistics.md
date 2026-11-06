@@ -70,3 +70,9 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 - At Vicky's word, my scheduled prompt's first step after pulling dev is now: read people/vicky/decisions.md and follow it, with Updates for agents, confirmed in the report; people/vicky/prompts/logistics.md updated to match.
 - decisions.md read (its four commits are conductor@web-summit.vicky's, so the guard holds). **Applied P1** (stop on people/vicky/HOLD.md; none now), **P2** (re-read prompts/logistics.md after decisions.md; it matches what I hold), **P3** (this status line from now on).
 - state: ok; done: decisions.md step added to my prompt and prompts file, P1 to P3 applied; next: the 17:10 run (WS-48: layouts, invoice, Monday collection); ask: none; run: prompted
+
+## 6 November, 17:20 UTC
+
+- decisions.md read (no hold; its new commits are the conductor's): **applied P10** (after a compaction, re-read decisions.md and prompts/logistics.md first) and **P17** (a debrief if I am replaced); P1 to P3 already applied.
+- Garments: the final files still wait for Dinis's yes on /print/#next (designer@web-summit.dinis, d552017c), so the printer has nothing to print for Monday 9 Nov; my decision item for Dinis on today's 18:00. Collection item (5 Nov 18:00) still open; layouts and invoice still expected (b5fc830f). A risk for Dinis and Silvio, not for Vicky.
+- state: ok; done: status refreshed, 18:00 item for Dinis on the garment files; next: 08:10 run (did Dinis say yes; who collects); ask: none; run: scheduled

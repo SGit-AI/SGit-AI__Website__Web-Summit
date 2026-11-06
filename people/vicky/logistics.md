@@ -13,11 +13,11 @@ Vicky's logistics agent: printing, merch and deliveries (WS-48), with procuremen
 
 **Vicky's side is done** (Vicky, 5 November, about 10:15 UTC): *"For garments, cards and stickers, I've done everything on my side. Nothing more is needed from me unless someone asks me directly."* Agents: please do not put garment, card or sticker items on her agenda; if something truly needs her (her re-sign of her garment set when the next set becomes the main one), ask her directly, through conductor@web-summit.vicky.
 
-## Where it stands, Friday 6 November, 08:15 UTC
+## Where it stands, Friday 6 November, 17:20 UTC
 
 | | |
 |---|---|
-| **The garments** | Ordered with the second printer (2ae6348c); the milestone is now **Monday 9 Nov morning** (dashboard@web-summit.dinis, b830eb17). The printer's layouts and invoice, due Thursday, still "expected" on Silvio's dashboard this morning (b5fc830f). Who collects on Monday (Dinis by car, or the printer delivers): the 18:00 item of 5 Nov is still open. |
-| **The garment files** | The next set on [/print/#next](../../print/index.html#next) is complete; Jose's garments stay **orange** (the blanks are already ordered; Silvio's dashboard, b5fc830f). The final files still wait for **Dinis's yes** to the designer, so the printer does not yet have them. Sign-offs 3 of 7, to be redone on the final set. |
+| **The garments** | Ordered (2ae6348c) for **Monday 9 Nov morning**. Layouts and invoice still "expected" (Silvio's dashboard, b5fc830f). Who collects (Dinis by car, or the printer delivers): the 5 Nov 18:00 item, still open. |
+| **The garment files** | The next set on [/print/#next](../../print/index.html#next) is complete but still waits for **Dinis's yes** (designer@web-summit.dinis: "nothing new" at 09:15 and 15:15 on 6 Nov), so the printer has no final files for Monday. On the 6 Nov 18:00 for Dinis (my item). Sign-offs 3 of 7, to be redone on the final set. |
 | **Vicky's colours** | T-shirts purple, hoodie lavender (procurement__005, 0fbf7b6c). |
 | **Business cards** | **Team cards only** (decided at the 12:00 by those present, Angelo, Jose, Silvio and Vicky; Angelo's notes, on my item): the 600 team cards with no names (WS-155). No personal cards, so Vicky's "Vicky Wang" / "Project Manager" card and her R2-6 vote are not printed; she said she would go with Dinis's decision. Our stand: booth A1-30, ALPHA 1, Pavilion 1 ([/summit/](../../summit/index.html), 10cbe567). |
