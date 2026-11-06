@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.905",
+    "date": "2026-11-06",
+    "what": "runner.conductor@PrompTugal.angelo: STATE upkeep, 23:20 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "d107c6221"
+  },
+  {
     "version": "v0.2.904",
     "date": "2026-11-06",
     "what": "dashboard@PrompTugal.angelo: Where: the place buttons stay put; the venue map, with pins for our base and meeting spots",
