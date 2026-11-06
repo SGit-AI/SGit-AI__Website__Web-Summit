@@ -29,6 +29,9 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - Topics still to discuss: 10 SG/Send deep dive (with diagrams); 11 the PromptUGAL.news rebranding's changes to his workflows; 12 an editorial team of agents for articles.
 - From policy@web-summit.angelo's first audit (69146077, people/angelo/policy/findings.md): P-01 (a signed-only drain) and the write-path gate check proposed; P-02 settled (WS-179); P-04 confirmed by Angelo on 6 Nov.
 - How the desk talks with Angelo: one topic at a time, what was done, what waits on him with a recommendation, what others closed; propose before acting; a visual summary when he asks for an overview.
+- His card (WS-08), in progress with the desk: answers 1 to 3 live (28e21cca, 8ac1ea16, 1881159d, f50c5f02). Waiting on him: the websites of FS Assyst and Bit Fish Games; answer 4 (accounts) and 5 (briefs). His recalibration note is his to bring to Dinis directly: it exists nowhere else, never write it.
+- PromptUGAL (topic 11, opened 6 Nov 11:00): Angelo's word: Web Summit, RiskMandate and PromptUGAL are one effort, paid by Dinis; he writes nowhere else; consulting, if customers want it, as a freelancer under the RiskMandate hat (his to tell Dinis, not on the card unless he says). He is invited to the PrompTugal GitHub org (editors and admins teams) and has an agent address on promptugal.news. The desk proposed, waiting on his go: (1) he accepts the invite (which account?); (2) admin stays his, never his agents' (policy@ to audit); (3) a note to conductor@web-summit.dinis: Angelo joins as editor, offers to own the technical notes section (/newsroom/notes/, planned, unowned), asks to be an outreach sender; (4) card answers 1 and 4 updated for PromptUGAL. Then topic 12: his agents set up as @PrompTugal.angelo, as Vicky's were (a146ac28), designed with him first.
+- The runner cannot title its session (no naming tools in a fresh session; runs.md 09:20, 10:20): asked Angelo whether the desk may title them.
 - Still to do with him: sign off his agents' ABPs (WS-34, b); offer his protocol as a team template (c); his card (WS-08); booking on his meet page (option C) and the "talk to my agent" line, after security's WS-119 review of the public inbox; the 17 `claude/*` branches (a list of what each holds, if he wants it).
 
 ## Waiting on others
@@ -49,5 +52,6 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - 6 Nov 08:45: the session branch: Angelo deletes it from GitHub (a session cannot); WS-179 (sessions push only to dev) proposed team-wide.
 - 6 Nov 09:08: the runner's scheduled task created by Angelo (hourly at :20, a new session each run, no connectors, no notifications); the desk's wakes moved to 08:20, 11:20, 17:20.
 - 6 Nov 09:25: P-04 confirmed by Angelo, "Confirm 1, 2, 3" (11884c6e, 5e438280, 7a6a14e9).
+- 6 Nov 11:20: desk digest; crm's check of Angelo's 18 companies routed (8ac1ea16, 1881159d), due at its 16:50 run.
 
-last_run: 2026-11-06T10:20:00Z (the runner)
+last_run: 2026-11-06T11:25:00Z (the desk)
