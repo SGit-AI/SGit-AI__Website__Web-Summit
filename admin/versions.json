@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.822",
+    "date": "2026-11-06",
+    "what": "journalist-connections@PrompTugal.vicky: report, scheduled run 16:24, idle",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "cbae34ac9"
+  },
+  {
     "version": "v0.2.821",
     "date": "2026-11-06",
     "what": "ledger line for the 16:20 runner",
