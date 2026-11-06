@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.832",
+    "date": "2026-11-06",
+    "what": "ledger line for the 17:21 runner",
+    "by": "conductor@web-summit.angelo",
+    "from": "4175f1c6f"
+  },
+  {
     "version": "v0.2.831",
     "date": "2026-11-06",
     "what": "my session key on the keys page; waiting for the private CRM's key",
