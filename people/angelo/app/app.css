@@ -300,15 +300,12 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .tmf-links path { fill: none; stroke-linecap: round; transition: stroke-opacity .25s; }
 .tm-svg .tmf-links .z, .tm-svg .tmf-pulses .z { display: none; }
 .tmf-pulses circle { stroke: var(--rm-surface); stroke-width: 1.5; pointer-events: none; }
-/* agents come and go while it plays back: --tmf-s is the size from the last day's work (0: not yet, or quiet a day) */
-.tm-replay .tm-a > circle, .tm-replay .tm-a > rect { transform: scale(calc(var(--tmf-s, 1) * var(--tmf-h, 1))); transform-box: fill-box; transform-origin: center; transition: transform .45s cubic-bezier(.3, 1.6, .5, 1); }
-.tm-replay .tm-a { transition: opacity .45s; }
+.tm-replay .tm-a { transition: opacity .35s; }
 .tm-replay .tm-a.tmf-gone { opacity: 0; pointer-events: none; }
-.tm-replay .tm-a > .tm-kr { transform: scale(var(--tmf-s, 1)); }
-.tm-a.tmf-hot { --tmf-h: 1.5; }
-.tm-a.tmf-hot > circle:first-of-type, .tm-a.tmf-hot > rect { stroke: var(--rm-text); stroke-width: 3; }
-.tm-a.tmf-born > circle:first-of-type, .tm-a.tmf-born > rect { animation: tmf-born .9s ease-out; }
-@keyframes tmf-born { 0% { stroke: var(--rm-action); stroke-width: 10; } 100% { stroke-width: 1.5; } }
+.tm-replay .tm-spokes, .tm-replay .tm-flows { display: none; }
+.tm-a.tmf-hot > circle:not(.tm-kr), .tm-a.tmf-hot > rect { stroke: var(--rm-text); stroke-width: 3; }
+.tm-a.tmf-born > circle:not(.tm-kr), .tm-a.tmf-born > rect { animation: tmf-born .9s ease-out; }
+@keyframes tmf-born { 0% { stroke: var(--rm-action); stroke-width: 9; } 100% { stroke-width: 1.5; } }
 .tm-a .tmf-l { display: none; fill: var(--rm-text); font: 600 13px/1 var(--rm-font); text-anchor: middle; pointer-events: none; paint-order: stroke; stroke: var(--rm-surface); stroke-width: 3px; }
 .tm-a.tmf-hot .tmf-l { display: inline; }
 .tmf-tick { margin: 0; padding: 8px 12px; border-radius: var(--rm-radius-control); background: var(--rm-surface-raised); font: 400 13px/19px var(--rm-font); color: var(--rm-text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 36px; }

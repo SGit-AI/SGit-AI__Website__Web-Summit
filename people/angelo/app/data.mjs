@@ -290,7 +290,7 @@ export function build(root, person, now = new Date()) {
         const PT = readJson(root, 'people/angelo/app/promptugal.json')
         if (PT && PT.agents) {
             const have = new Set(M.agents.map(a => a.id)), weekAgo = Date.now() - 7 * 864e5
-            for (const a of PT.agents) if (!have.has(a.id) && Date.parse(a.last) >= weekAgo && M.people.some(p => p.id === a.person)) { M.agents.push({ id: a.id, person: a.person, family: a.family, short: a.short, commits: a.commits, elsewhere: true }); have.add(a.id) }
+            for (const a of PT.agents) if (!have.has(a.id) && Date.parse(a.last) >= weekAgo && M.people.some(p => p.id === a.person)) { M.agents.push({ id: a.id, person: a.person, family: a.family, short: a.short, commits: a.commits, elsewhere: true, first: a.first }); have.add(a.id) }
             const idx = new Map(M.links.map((l, i) => [`${l.from}|${l.to}`, i]))
             for (const l of PT.links || []) if ((have.has(l.from) || M.people.some(p => p.id === l.from)) && (have.has(l.to) || M.people.some(p => p.id === l.to))) { const k = `${l.from}|${l.to}`; if (idx.has(k)) M.links[idx.get(k)].n += l.n; else { idx.set(k, M.links.length); M.links.push({ ...l }) } }
             M.promptugal = { read_at: PT.read_at, commit: PT.commit, agents: PT.agents.length }

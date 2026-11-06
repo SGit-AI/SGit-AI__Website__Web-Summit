@@ -178,46 +178,60 @@ ${sel ? detail(R, sel) : ''}
     // ---------- playback on another view's map (Team and the machine's map; Angelo, 6 November: "apply all these
     // enhancements to the existing map there rather than creating a new one") ----------
     // mountFlow(host, o) puts Replay's clock on a map that is already drawn: o.svg (the map's <svg>), o.pos (node id ->
-    // {x, y, person}), o.ctrl(a, b) (the control point its links curve through), o.colOf(person), o.nodeOf(name) (the
-    // node a commit's agent or For: target lands on, or null), o.keep(from, to) (the map's focus), o.w (the window).
-    // Each For: line becomes a pulse from its agent to its target, in one second of playback, coloured by kind; a second
-    // set of links builds up message by message to the playhead (the map's own 7-day links hide while it plays back);
-    // an agent glows when it commits. The controls are Replay's: play, pause, speed, scrubber, jump to a stand-up.
-    const POOL = 160, TRAVEL_S = 1, FADE_S = 1, IDLE_MIN = 24 * 60
+    // {x, y, person, kind}), o.place(person, n) (where that person's n agents sit in this layout), o.ctrl(a, b) (the
+    // control point its links curve through), o.colOf(person), o.nodeOf(name) (the node a commit's agent or For: target
+    // lands on, or null), o.keep(from, to) (the map's focus), o.w (the window).
+    // While it plays back (Angelo, 6 November): an agent joins the map the first time it is used (its first commit, or
+    // the first message to it) and stays; it grows with the messages it has sent so far and never shrinks; each person's
+    // agents are re-arranged around them as more arrive, gliding to their new places. Each For: line is a dot that
+    // travels, in its sender's colour, from its agent to its target in one second of playback; the line under it shows
+    // until the dot arrives and fades one second after the pair's last message. The controls are Replay's.
+    const POOL = 160, TRAVEL_S = 1, FADE_S = 1
     // the shared shell redraws the page from time to time, which rebuilds the map: where the playback was is kept here,
     // per map (o.key: window, layout, focus), and picked up again by the new map
     let flowState = { key: '', t: null, playing: false, speed: '' }
     function mountFlow(host, o) {
         const R = o.D && o.D.replay, bar = host.querySelector('[data-tmf]'); if (!R || !bar || !o.svg) return
         const w = WINDOWS[o.w] ? o.w : '24h', nowMin = Math.round((Date.now() - Date.parse(R.from)) / 6e4), end = nowMin, start = WINDOWS[w][1] ? Math.max(0, end - WINDOWS[w][1]) : 0
+        const lowerBound = (arr, v, key) => { let lo = 0, hi = arr.length; while (lo < hi) { const mid = (lo + hi) >> 1; if (key(arr[mid]) <= v) lo = mid + 1; else hi = mid } return lo }
+        const isAgent = id => { const n = o.pos.get(id); return !!n && n.kind === 'a' }
+        // ---- the history: since 2 November, so an agent used before the window is already there when it starts ----
+        const firstUse = new Map(), sentAt = new Map(), use = (id, t) => { if (isAgent(id) && !(firstUse.get(id) <= t)) firstUse.set(id, t) }
+        for (const e of R.events) if (e[1] >= 0) {
+            const from = o.nodeOf(R.agents[e[1]].name); if (!from) continue
+            use(from, e[0])
+            for (const ti of e[3]) { const to = o.nodeOf(R.targets[ti]); if (!to || to === from) continue; use(to, e[0]); if (isAgent(from)) { if (!sentAt.has(from)) sentAt.set(from, []); sentAt.get(from).push(e[0]) } }
+        }
+        for (const [id, n] of o.pos) if (n.kind === 'a' && n.first) use(id, Math.max(0, Math.round((Date.parse(n.first) - Date.parse(R.from)) / 6e4)))   // a newsroom agent: its first commit there
+        for (const [id, n] of o.pos) if (n.kind === 'a' && n.runsAs && firstUse.has(n.runsAs)) use(id, firstUse.get(n.runsAs))                          // a runner: with the agent it works as
+        for (const a of sentAt.values()) a.sort((x, y) => x - y)
+        // each person's agents in the order they arrived; one that is never used stays off the map
+        const byPerson = new Map()
+        for (const [id, t] of [...firstUse].sort((x, y) => x[1] - y[1] || (x[0] < y[0] ? -1 : 1))) { const p = o.pos.get(id).person; if (!byPerson.has(p)) byPerson.set(p, []); byPerson.get(p).push([id, t]) }
+        // ---- the window's messages ----
         const ev = R.events.filter(e => e[0] >= start && e[0] <= end)
         const msgs = [], pairs = new Map()
-        for (const e of ev) if (e[1] >= 0) { const from = o.nodeOf(R.agents[e[1]].name); if (!from) continue; for (const ti of e[3]) { const to = o.nodeOf(R.targets[ti]); if (!to || to === from || !o.keep(from, to)) continue; const k = from + '|' + to; if (!pairs.has(k)) pairs.set(k, { i: pairs.size, from, to, q: o.ctrl(o.pos.get(from), o.pos.get(to)), n: 0 }); msgs.push({ t: e[0], from, to, k: e[2], pair: pairs.get(k) }) } }
-        msgs.sort((x, y) => x.t - y.t)
-        for (const m of msgs) (m.pair.ts = m.pair.ts || []).push(m.t)
+        for (const e of ev) if (e[1] >= 0) { const from = o.nodeOf(R.agents[e[1]].name); if (!from) continue; for (const ti of e[3]) { const to = o.nodeOf(R.targets[ti]); if (!to || to === from || !o.keep(from, to)) continue; const k = from + '|' + to; if (!pairs.has(k)) pairs.set(k, { i: pairs.size, from, to, ts: [] }); msgs.push({ t: e[0], from, to, pair: pairs.get(k) }) } }
+        msgs.sort((x, y) => x.t - y.t); for (const m of msgs) m.pair.ts.push(m.t)
         const acts = ev.filter(e => e[1] >= 0 && o.nodeOf(R.agents[e[1]].name)).sort((x, y) => x[0] - y[0])
-        const P = [...pairs.values()], f0 = n => n.toFixed(0)
-        // the layers, under the nodes
-        const NS = 'http://www.w3.org/2000/svg', nodes = o.svg.querySelector('.tm-nodes')
+        const P = [...pairs.values()], maxN = Math.max(1, ...P.map(p => p.ts.length)), f1 = n => n.toFixed(1)
+        // ---- the layers, under the nodes ----
+        const NS = 'http://www.w3.org/2000/svg', nodesG = o.svg.querySelector('.tm-nodes')
         const gl = document.createElementNS(NS, 'g'); gl.setAttribute('class', 'tmf-links')
-        gl.innerHTML = P.map(p => { const a = o.pos.get(p.from), b = o.pos.get(p.to); return `<path class="z" d="M${f0(a.x)} ${f0(a.y)}Q${f0(p.q.x)} ${f0(p.q.y)} ${f0(b.x)} ${f0(b.y)}" stroke="${o.colOf(a.person) || 'var(--rm-text-muted)'}"/>` }).join('')
+        gl.innerHTML = P.map(p => `<path class="z" stroke="${o.colOf((o.pos.get(p.from) || {}).person) || 'var(--rm-text-muted)'}"/>`).join('')
         const gp = document.createElementNS(NS, 'g'); gp.setAttribute('class', 'tmf-pulses')
         gp.innerHTML = Array.from({ length: POOL }, () => '<circle r="5" class="z"/>').join('')
-        o.svg.insertBefore(gl, nodes); o.svg.insertBefore(gp, nodes)
+        o.svg.insertBefore(gl, nodesG); o.svg.insertBefore(gp, nodesG)
         const links = [...gl.children], pulses = [...gp.children]
-        const nodeEl = new Map([...o.svg.querySelectorAll('[data-tm-f]')].map(g => [g.dataset.tmF, g]))
-        // an agent's name, shown while it is busy (the map labels agents only when focused)
-        for (const [id, g] of nodeEl) { const n = o.pos.get(id); if (!n || n.kind !== 'a' || g.querySelector('text')) continue; const t = document.createElementNS(NS, 'text'); t.setAttribute('class', 'tmf-l'); t.setAttribute('x', f0(n.x)); t.setAttribute('y', f0(n.y - 13)); t.textContent = n.label; g.appendChild(t) }
-        // agents come and go: each agent node's commits since 2 November (all of them, so an agent from before the window
-        // is already there when it starts); a runner that commits as another lives and goes with it
-        const life = new Map()
-        for (const e of R.events) if (e[1] >= 0) { const id = o.nodeOf(R.agents[e[1]].name), n = id && o.pos.get(id); if (n && n.kind === 'a' && id === R.agents[e[1]].name) { if (!life.has(id)) life.set(id, []); life.get(id).push(e[0]) } }
-        for (const a of life.values()) a.sort((x, y) => x - y)
-        const agentIds = [...o.pos.entries()].filter(([, n]) => n.kind === 'a').map(([id]) => id)
-        const lifeOf = id => life.get(id) || (o.pos.get(id).runsAs && life.get(o.pos.get(id).runsAs)) || null
-        let alive = new Map()
-        const tot = new Map(); for (const m of msgs) tot.set(m.pair, (tot.get(m.pair) || 0) + 1)
-        const maxN = Math.max(1, ...tot.values())
+        // ---- the agent nodes: their parts, and where they are now (cur) and are going (tgt) ----
+        const N = new Map()
+        for (const g of o.svg.querySelectorAll('.tm-a[data-tm-f]')) {
+            const id = g.dataset.tmF, n = o.pos.get(id); if (!n) continue
+            let label = g.querySelector('text'); if (!label) { label = document.createElementNS(NS, 'text'); label.setAttribute('class', 'tmf-l'); label.setAttribute('x', f1(n.x)); label.textContent = n.label; g.appendChild(label) }
+            N.set(id, { g, n, dot: g.querySelector('circle:not(.tm-kr), rect'), ring: g.querySelector('.tm-kr'), label, cur: null, tgt: null, r: -1, on: null })
+        }
+        const pos = id => { const a = N.get(id); return a && a.cur ? a.cur : o.pos.get(id) }
+        const ctrl = (a, b) => o.ctrl(a, b)
         bar.innerHTML = `<div class="rp-play tmf-play">
   <button type="button" class="cc-btn" data-tmf-play aria-pressed="false">▶ Play back</button>
   <label class="ak-sel"><span>Time</span><select data-tmf-w>${Object.entries(WINDOWS).map(([k, [l]]) => `<option value="${k}"${k === w ? ' selected' : ''}>${l}</option>`).join('')}</select></label>
@@ -225,74 +239,96 @@ ${sel ? detail(R, sel) : ''}
   <label class="ak-sel"><span>Jump to</span><select data-tmf-jump><option value="">a stand-up…</option>${R.standups.filter(([m]) => m >= start && m <= end).map(([m, id]) => `<option value="${m}">${esc(dayLabel(at(R, m)))} ${esc(id.slice(-4, -2))}:${esc(id.slice(-2))}</option>`).join('')}</select></label>
   <input type="range" class="rp-scrub" data-tmf-scrub min="${start}" max="${end}" value="${end}" step="1" aria-label="Time">
   <b class="rp-now" data-tmf-now>${esc(dayLabel(at(R, end)))} ${esc(hhmm(at(R, end)))} UTC</b>
-</div><p class="tmf-tick" data-tmf-tick aria-live="off">${msgs.length} messages in this window. Press Play back to watch them flow: each travels from its agent, in its sender's colour, to the agent or person it is for; a line glows while two are talking and fades when they stop. Agents join as they start work and leave after a day without a commit.</p>`
+</div><p class="tmf-tick" data-tmf-tick aria-live="off">${msgs.length} messages in this window. Press Play back: agents join the map the first time they are used and gather around their person; each message travels from its agent, in its sender's colour, to the agent or person it is for, along a line that fades when they stop talking.</p>`
         const btn = bar.querySelector('[data-tmf-play]'), speed = bar.querySelector('[data-tmf-speed]'), scrub = bar.querySelector('[data-tmf-scrub]'), now = bar.querySelector('[data-tmf-now]'), tick = bar.querySelector('[data-tmf-tick]')
         bar.querySelector('[data-tmf-w]').onchange = e => o.setWindow(e.target.value)
-        const lowerBound = (arr, v, key) => { let lo = 0, hi = arr.length; while (lo < hi) { const mid = (lo + hi) >> 1; if (key(arr[mid]) <= v) lo = mid + 1; else hi = mid } return lo }
         const rate = () => +speed.value
-        let sent = 0, hot = new Set(), lastTick = '', on = false, run = null
         const nameOf = n => n.startsWith('pt:') ? n.split(':')[2] : n.split('@')[0]
-        function seek(t) {
-            t = Math.max(start, Math.min(end, t))
-            if (!on) { on = true; o.svg.classList.add('tm-replay') }
-            const travel = Math.max(1, rate() * TRAVEL_S)
-            sent = lowerBound(msgs, t, m => m.t)
-            // a line lights up with each message and fades out over FADE_S seconds of playback after its pair's last one;
-            // the more messages the pair has sent so far, the wider it is
+        let T = end, on = false, playing = false, raf = 0, lastTs = 0, lastTick = '', hot = new Set(), counts = new Map(), fly = [], travel = 1
+        // ---- the state at time T (who is on the map and where they should be, the lines, the dots in flight) ----
+        function state() {
+            travel = Math.max(1, rate() * TRAVEL_S)
             const fade = Math.max(1, rate() * FADE_S)
+            let total = 0
+            for (const [p, list] of byPerson) {
+                const k = lowerBound(list, T, x => x[1]); total += k
+                if (counts.get(p) === k) continue
+                counts.set(p, k)
+                const spots = k ? o.place(p, k) : [], P0 = o.pos.get(p)
+                list.forEach(([id], i) => { const a = N.get(id); if (!a) return; if (i < k) { a.tgt = spots[i]; if (!a.on) { a.cur = { x: P0 ? P0.x : a.n.x, y: P0 ? P0.y : a.n.y }; a.on = true; a.g.classList.remove('tmf-gone'); a.g.classList.remove('tmf-born'); void a.g.getBBox; a.g.classList.add('tmf-born') } } else if (a.on !== false) { a.on = false; a.g.classList.add('tmf-gone') } })
+            }
+            for (const [id, a] of N) if (a.on === null) { a.on = false; a.g.classList.add('tmf-gone') }   // never used: off the map
+            // size: the messages sent so far
+            for (const [id, a] of N) { if (!a.on) continue; const ts = sentAt.get(id), n = ts ? lowerBound(ts, T, x => x) : 0, r = Math.min(13, 3.5 + 1.3 * Math.sqrt(n)); if (Math.abs(r - a.r) < 0.05) continue; a.r = r; size(a) }
+            // lines: lit while a dot is on its way, then fading
             for (const p of P) {
-                const k = lowerBound(p.ts, t, x => x), op = k ? Math.max(0, 1 - (t - p.ts[k - 1]) / fade) : 0, el = links[p.i], vis = op > 0.03
+                const k = lowerBound(p.ts, T, x => x), last = k ? p.ts[k - 1] : null, ends = isOn(p.from) && isOn(p.to)
+                const op = last == null || !ends ? 0 : T <= last + travel ? 1 : Math.max(0, 1 - (T - last - travel) / fade), el = links[p.i], vis = op > 0.03
                 if (vis !== p.vis) { el.classList.toggle('z', !vis); p.vis = vis }
-                if (vis) { const ow = (0.8 + 4.2 * Math.sqrt(k / maxN)).toFixed(2), oo = (0.12 + 0.7 * op).toFixed(2); if (ow !== p.ow) el.setAttribute('stroke-width', p.ow = ow); if (oo !== p.oo) el.setAttribute('stroke-opacity', p.oo = oo) }
+                if (vis) { const ow = (0.8 + 4.2 * Math.sqrt(k / maxN)).toFixed(2), oo = (0.15 + 0.65 * op).toFixed(2); if (ow !== p.ow) el.setAttribute('stroke-width', p.ow = ow); if (oo !== p.oo) el.setAttribute('stroke-opacity', p.oo = oo) }
             }
-            const lo = lowerBound(msgs, t - travel, m => m.t), fly = msgs.slice(Math.max(lo, sent - POOL), sent), busy = new Set()
-            pulses.forEach((c, i) => {
-                const m = fly[i]; if (!m) { c.classList.add('z'); return }
-                const a = o.pos.get(m.from), b = o.pos.get(m.to), q = m.pair.q, u = Math.min(1, Math.max(0, (t - m.t) / travel)), v = 1 - u
-                c.setAttribute('cx', (v * v * a.x + 2 * v * u * q.x + u * u * b.x).toFixed(1)); c.setAttribute('cy', (v * v * a.y + 2 * v * u * q.y + u * u * b.y).toFixed(1))
-                c.setAttribute('fill', o.colOf(a.person) || 'var(--rm-text-muted)'); c.classList.remove('z')
-            })
-            for (let i = lowerBound(acts, t - travel * 1.5, e => e[0]); i < acts.length && acts[i][0] <= t; i++) busy.add(o.nodeOf(R.agents[acts[i][1]].name))
-            for (const id of hot) if (!busy.has(id)) { const g = nodeEl.get(id); if (g) g.classList.remove('tmf-hot') }
-            for (const id of busy) if (!hot.has(id)) { const g = nodeEl.get(id); if (g) g.classList.add('tmf-hot') }
+            const sent = lowerBound(msgs, T, m => m.t), lo = lowerBound(msgs, T - travel, m => m.t); fly = msgs.slice(Math.max(lo, sent - POOL), sent)
+            // busy: committed in the last moment of playback
+            const busy = new Set()
+            for (let i = lowerBound(acts, T - travel * 1.5, e => e[0]); i < acts.length && acts[i][0] <= T; i++) busy.add(o.nodeOf(R.agents[acts[i][1]].name))
+            for (const id of hot) if (!busy.has(id)) { const a = N.get(id); if (a) a.g.classList.remove('tmf-hot') }
+            for (const id of busy) if (!hot.has(id)) { const a = N.get(id); if (a) a.g.classList.add('tmf-hot') }
             hot = busy
-            // (below) a line waits until both its ends are on the map
-            // who is on the map at t: committed already, and not quiet for more than a day; the size follows the last day's work
-            let shown = 0, moved = false
-            for (const id of agentIds) {
-                const g = nodeEl.get(id); if (!g) continue
-                const ts = lifeOf(id), k = ts ? lowerBound(ts, t, x => x) : 0, last = k ? ts[k - 1] : null
-                const on = last != null && t - last <= IDLE_MIN, day = on ? k - lowerBound(ts, t - IDLE_MIN, x => x) : 0
-                const sc = on ? (0.55 + 0.3 * Math.min(4, Math.sqrt(day))).toFixed(2) : '0'
-                const was = alive.get(id); if (was !== sc) { g.style.setProperty('--tmf-s', sc); g.classList.toggle('tmf-gone', !on); if (on && (was === '0' || was === undefined) && k) { g.classList.remove('tmf-born'); void g.getBBox; g.classList.add('tmf-born') } alive.set(id, sc); moved = true }
-                if (on) shown++
-            }
-            const e = acts[lowerBound(acts, t, x => x[0]) - 1], key = e ? e[6] : ''
+            const e = acts[lowerBound(acts, T, x => x[0]) - 1], key = e ? e[6] : ''
             if (key !== lastTick) { lastTick = key; tick.innerHTML = e ? `<b>${esc(hhmm(at(R, e[0])))}</b> ${esc(nameOf(R.agents[e[1]].name))}${e[3].length ? ' → ' + esc(e[3].map(i => nameOf(R.targets[i])).join(', ')) : ''}: ${esc(e[5])}` : '' }
-            if (moved) { const gone = id => alive.get(id) === '0'; for (const p of P) links[p.i].classList.toggle('tmf-x', gone(p.from) || gone(p.to)) }
-            now.textContent = `${dayLabel(at(R, t))} ${hhmm(at(R, t))} UTC · ${shown} agent${shown === 1 ? '' : 's'} at work`
-            if (+scrub.value !== Math.round(t)) scrub.value = Math.round(t)
-            return t
+            now.textContent = `${dayLabel(at(R, T))} ${hhmm(at(R, T))} UTC · ${total} agent${total === 1 ? '' : 's'}`
+            if (+scrub.value !== Math.round(T)) scrub.value = Math.round(T)
+            flowState.t = T
         }
+        const isOn = id => { const a = N.get(id); return a ? !!a.on : true }
+        function size(a) {
+            const { x, y } = a.n, r = a.r
+            if (a.dot.tagName === 'rect') { const s = r * 1.6; a.dot.setAttribute('x', f1(x - s / 2)); a.dot.setAttribute('y', f1(y - s / 2)); a.dot.setAttribute('width', f1(s)); a.dot.setAttribute('height', f1(s)) }
+            else a.dot.setAttribute('r', f1(r))
+            if (a.ring) a.ring.setAttribute('r', f1(r + 5))
+            a.label.setAttribute('y', f1(y - r - 6))
+        }
+        // ---- drawing what moves: the agents gliding to their places, the lines and dots that follow them ----
+        function paint(dt) {
+            let moving = false
+            const k = 1 - Math.exp(-dt * 5)
+            for (const a of N.values()) {
+                if (!a.on || !a.tgt) continue
+                const dx = a.tgt.x - a.cur.x, dy = a.tgt.y - a.cur.y
+                if (Math.abs(dx) + Math.abs(dy) > 0.4) { a.cur.x += dx * k; a.cur.y += dy * k; moving = true } else { a.cur.x = a.tgt.x; a.cur.y = a.tgt.y }
+                const tx = f1(a.cur.x - a.n.x), ty = f1(a.cur.y - a.n.y); if (tx !== a.tx || ty !== a.ty) { a.tx = tx; a.ty = ty; a.g.setAttribute('transform', `translate(${tx} ${ty})`) }
+            }
+            for (const p of P) if (p.vis) { const a = pos(p.from), b = pos(p.to), q = ctrl(a, b); links[p.i].setAttribute('d', `M${f1(a.x)} ${f1(a.y)}Q${f1(q.x)} ${f1(q.y)} ${f1(b.x)} ${f1(b.y)}`) }
+            pulses.forEach((c, i) => {
+                const m = fly[i]; if (!m) { if (!c.classList.contains('z')) c.classList.add('z'); return }
+                const a = pos(m.from), b = pos(m.to), q = ctrl(a, b), u = Math.min(1, Math.max(0, (T - m.t) / travel)), v = 1 - u
+                c.setAttribute('cx', f1(v * v * a.x + 2 * v * u * q.x + u * u * b.x)); c.setAttribute('cy', f1(v * v * a.y + 2 * v * u * q.y + u * u * b.y))
+                c.setAttribute('fill', o.colOf((o.pos.get(m.from) || {}).person) || 'var(--rm-text-muted)'); c.classList.remove('z')
+            })
+            return moving
+        }
+        // one loop: it advances the clock while playing, and runs while anything still moves
+        function frame(ts) {
+            raf = 0; if (!host.isConnected) return
+            const dt = Math.min(0.1, (ts - (lastTs || ts)) / 1000); lastTs = ts
+            if (playing) { T = Math.min(end, T + dt * rate()); state(); if (T >= end) stop() }
+            const moving = paint(dt)
+            if (playing || moving) raf = requestAnimationFrame(frame); else lastTs = 0
+        }
+        const kick = () => { if (!raf) { lastTs = 0; raf = requestAnimationFrame(frame) } }
+        function seek(t) { T = Math.max(start, Math.min(end, t)); if (!on) { on = true; o.svg.classList.add('tm-replay') } state(); kick(); return T }
         const key = o.key || w
         if (flowState.key !== key) flowState = { key, t: null, playing: false, speed: flowState.speed }
         if (flowState.speed) speed.value = flowState.speed
-        const keepT = seekRaw => t => { const r = seekRaw(t); flowState.t = r; return r }
-        const seekK = keepT(seek)
-        const stop = () => { if (run) cancelAnimationFrame(run.raf); run = null; flowState.playing = false; btn.textContent = '▶ Play back'; btn.setAttribute('aria-pressed', 'false') }
-        scrub.oninput = () => { stop(); seekK(+scrub.value) }
-        const j = bar.querySelector('[data-tmf-jump]'); j.onchange = () => { if (j.value) { stop(); seekK(+j.value) } }
-        speed.onchange = () => { flowState.speed = speed.value; if (on && !run) seekK(+scrub.value) }
-        const go = from => {
-            let t = from
-            run = { last: performance.now(), raf: 0 }; flowState.playing = true; btn.textContent = '❚❚ Pause'; btn.setAttribute('aria-pressed', 'true')
-            const step = ts => { if (!run) return; if (!host.isConnected) { cancelAnimationFrame(run.raf); return } const dt = (ts - run.last) / 1000; run.last = ts; t = seekK(t + dt * rate()); if (t >= end) return stop(); run.raf = requestAnimationFrame(step) }
-            run.raf = requestAnimationFrame(step)
-        }
-        btn.onclick = () => { if (run) return stop(); go(+scrub.value >= end ? seekK(start) : +scrub.value) }
+        function stop() { playing = false; flowState.playing = false; btn.textContent = '▶ Play back'; btn.setAttribute('aria-pressed', 'false') }
+        function play() { playing = true; flowState.playing = true; btn.textContent = '❚❚ Pause'; btn.setAttribute('aria-pressed', 'true'); kick() }
+        scrub.oninput = () => { stop(); seek(+scrub.value) }
+        const j = bar.querySelector('[data-tmf-jump]'); j.onchange = () => { if (j.value) { stop(); seek(+j.value) } }
+        speed.onchange = () => { flowState.speed = speed.value; if (on) seek(T) }
+        btn.onclick = () => { if (playing) return stop(); seek(+scrub.value >= end ? start : +scrub.value); play() }
         // picked up after a redraw: the same moment, still playing if it was
-        if (flowState.t != null) { const t = seekK(flowState.t); if (flowState.playing) go(t) }
-        return { seek: seekK, msgs: msgs.length }
+        if (flowState.t != null) { seek(flowState.t); if (flowState.playing) play() }
+        return { seek, msgs: msgs.length }
     }
 
     root.AngeloReplay = { render, parse, mountFlow }

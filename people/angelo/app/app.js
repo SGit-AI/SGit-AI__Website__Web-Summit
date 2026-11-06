@@ -323,11 +323,11 @@ ${teamMap()}
             // the map played back (replay.js's mountFlow, on this map's own layout and focus)
             const host = view.querySelector('section.tm'), svgEl = host && host.querySelector('.tm-svg')
             if (svgEl && lastMap && window.AngeloReplay && window.AngeloReplay.mountFlow) {
-                const { pos, C: MC, pull, col, focus, wl } = lastMap, c0 = cstate()
+                const { pos, C: MC, pull, col, focus, wl, place } = lastMap, c0 = cstate()
                 const personOf = n => { const m = String(n).match(/@(?:web-summit|promptugal)\.([a-z0-9-]+)$/i) || String(n).match(/^pt:([a-z0-9-]+):/); return m ? m[1].toLowerCase() : n }
                 const nodeOf = n => { const x = pos.get(n); if (x && x.kind !== 'k') return n; const pid = personOf(n); return pos.has(pid) && pos.get(pid).kind === 'p' ? pid : null }
                 const keep = (a, b) => { if (!focus) return true; if (focus.startsWith('k:')) return [a, b].some(id => wl.some(l => l.agent === id && 'k:' + l.kind === focus)); if (focus.includes('@') || focus.startsWith('pt:')) return a === focus || b === focus; return [a, b].some(id => id === focus || (pos.get(id) || {}).person === focus) }
-                window.AngeloReplay.mountFlow(host, { D, key: [c0.w || '24h', c0.l, c0.f].join('|'), svg: svgEl, pos, nodeOf, keep, w: c0.w || '24h', colOf: p => col.get(p), ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return { x: mx + (MC - mx) * pull, y: my + (MC - my) * pull } }, setWindow: w => setC({ ...cstate(), w }) })
+                window.AngeloReplay.mountFlow(host, { D, place, key: [c0.w || '24h', c0.l, c0.f].join('|'), svg: svgEl, pos, nodeOf, keep, w: c0.w || '24h', colOf: p => col.get(p), ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return { x: mx + (MC - mx) * pull, y: my + (MC - my) * pull } }, setWindow: w => setC({ ...cstate(), w }) })
             }
             const tm = view.querySelector('[data-tm-toggle]'); if (tm) tm.onclick = () => setC({ ...cstate(), map: !cstate().map, f: '' })
             view.querySelectorAll('[data-tm-l]').forEach(g => g.onclick = () => setC({ ...cstate(), l: g.dataset.tmL, f: '' }))
@@ -361,18 +361,24 @@ ${teamMap()}
             const angleOf = i => -Math.PI / 2 + i * 2 * Math.PI / NP
             const RP = L0 === 'ring' ? 300 : 445
             M.people.forEach((p, i) => { const a = angleOf(i); pos.set(p.id, { x: C + RP * Math.cos(a), y: C + RP * Math.sin(a), a, kind: 'p', label: p.name.split(' ')[0], person: p.id }) })
-            const agentNode = (a, x, y) => ({ x, y, kind: 'a', label: a.short, person: a.person, family: a.family, commits: a.commits, name: a.id.startsWith('pt:') ? `${a.short}, PrompTugal (${a.id.split(':')[1]})` : a.id, kind2: a.kind || '', runsAs: a.runsAs || '' })
-            M.people.forEach((p, i) => {
-                const mine = M.agents.filter(a => a.person === p.id).sort((x, y) => L0 === 'agents' ? (x.commits || 0) - (y.commits || 0) : (y.commits || 0) - (x.commits || 0)), P = pos.get(p.id)
+            const agentNode = (a, x, y) => ({ x, y, kind: 'a', label: a.short, person: a.person, family: a.family, commits: a.commits, name: a.id.startsWith('pt:') ? `${a.short}, PrompTugal (${a.id.split(':')[1]})` : a.id, kind2: a.kind || '', runsAs: a.runsAs || '', first: a.elsewhere ? a.first || '' : '' })
+            // where a person's N agents sit, for this layout (also used while playing back, as agents arrive one by one)
+            const placeFor = (P, N) => {
+                const out = []
                 if (L0 === 'ring') {
-                    const rows = mine.length > 16 ? 3 : 2, spread = Math.min(Math.PI * (rows === 3 ? 1.3 : 0.95), (0.16 * mine.length + 0.3) / (rows - 1))
-                    mine.forEach((a, k) => { const t = P.a + (mine.length > 1 ? -spread / 2 + k * spread / (mine.length - 1) : 0), rr = 100 + (k % rows) * 32; pos.set(a.id, agentNode(a, P.x + rr * Math.cos(t), P.y + rr * Math.sin(t))) })
+                    const rows = N > 16 ? 3 : 2, spread = Math.min(Math.PI * (rows === 3 ? 1.3 : 0.95), (0.16 * N + 0.3) / (rows - 1))
+                    for (let k = 0; k < N; k++) { const t = P.a + (N > 1 ? -spread / 2 + k * spread / (N - 1) : 0), rr = 100 + (k % rows) * 32; out.push({ x: P.x + rr * Math.cos(t), y: P.y + rr * Math.sin(t) }) }
                 } else {
                     // each person's agents in their own sector, between an inner and an outer radius (agents: the inner disc; work: a middle ring)
-                    const [r0, r1] = L0 === 'agents' ? [120, 340] : [290, 370], width = 2 * Math.PI / NP * 0.86, rows = Math.max(1, Math.ceil(mine.length / (L0 === 'agents' ? 7 : 12)))
-                    const perRow = Math.ceil(mine.length / rows)
-                    mine.forEach((a, k) => { const row = Math.floor(k / perRow), col2 = k % perRow, n = Math.min(perRow, mine.length - row * perRow), t = P.a + (n > 1 ? -width / 2 + col2 * width / (n - 1) : 0), rr = rows > 1 ? r0 + (r1 - r0) * row / (rows - 1) : (r0 + r1) / 2; pos.set(a.id, agentNode(a, C + rr * Math.cos(t), C + rr * Math.sin(t))) })
+                    const [r0, r1] = L0 === 'agents' ? [120, 340] : [290, 370], width = 2 * Math.PI / NP * 0.86, rows = Math.max(1, Math.ceil(N / (L0 === 'agents' ? 7 : 12)))
+                    const perRow = Math.ceil(N / rows)
+                    for (let k = 0; k < N; k++) { const row = Math.floor(k / perRow), col2 = k % perRow, n = Math.min(perRow, N - row * perRow), t = P.a + (n > 1 ? -width / 2 + col2 * width / (n - 1) : 0), rr = rows > 1 ? r0 + (r1 - r0) * row / (rows - 1) : (r0 + r1) / 2; out.push({ x: C + rr * Math.cos(t), y: C + rr * Math.sin(t) }) }
                 }
+                return out
+            }
+            M.people.forEach(p => {
+                const mine = M.agents.filter(a => a.person === p.id).sort((x, y) => L0 === 'agents' ? (x.commits || 0) - (y.commits || 0) : (y.commits || 0) - (x.commits || 0)), P = pos.get(p.id)
+                placeFor(P, mine.length).forEach((q, k) => pos.set(mine[k].id, agentNode(mine[k], q.x, q.y)))
             })
             // the kinds of work, at the centre (work layout)
             const W = L0 === 'work' && M.work ? M.work : null
@@ -384,7 +390,7 @@ ${teamMap()}
             const flowsOf = id => wl.filter(l => l.agent === id || 'k:' + l.kind === id)
             const near = id => { if (!c.f) return true; if (id === c.f) return true; const n = pos.get(id) || {}; if (!isAgentF && !isKindF) return n.person === c.f; if (isKindF) return n.kind === 'a' ? wl.some(l => l.agent === id && 'k:' + l.kind === c.f) : false; if (n.kind === 'k') return wl.some(l => l.agent === c.f && 'k:' + l.kind === id); return false }
             const links = M.links.filter(l => pos.has(l.from) && pos.has(l.to))
-            lastMap = { pos, C, pull: L0 === 'ring' ? 0.55 : L0 === 'agents' ? 0.25 : 0.1, col, focus: c.f, wl }
+            lastMap = { place: (pid, n) => placeFor(pos.get(pid), n), pos, C, pull: L0 === 'ring' ? 0.55 : L0 === 'agents' ? 0.25 : 0.1, col, focus: c.f, wl }
             const max = Math.max(1, ...links.map(l => l.n)), pull = L0 === 'ring' ? 0.55 : L0 === 'agents' ? 0.25 : 0.1
             const path = (a, b, k = pull) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return `M${a.x.toFixed(0)} ${a.y.toFixed(0)}Q${(mx + (C - mx) * k).toFixed(0)} ${(my + (C - my) * k).toFixed(0)} ${b.x.toFixed(0)} ${b.y.toFixed(0)}` }
             const lit = l => c.f && (l.from === c.f || l.to === c.f || (!isAgentF && !isKindF && ((pos.get(l.from) || {}).person === c.f || (pos.get(l.to) || {}).person === c.f)))
