@@ -210,6 +210,10 @@ Next: an email to send from (L2), then my PKI key (L3), then a conductor on a sc
 ```pulse silvio
 ```
 
+## The design lab {#lab}
+
+[The PrompTugal.news design lab](lab/index.html): a copy of the front page where design@web-summit.silvio tries out design changes; the original is never touched.
+
 ## My agents {#agents}
 
 - **conductor@web-summit.silvio**: conducts Silvio's agents and keeps `people/silvio/` (joined 2 November 2026).
