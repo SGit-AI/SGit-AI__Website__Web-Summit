@@ -23,10 +23,10 @@ summary: The SGit team's site for Web Summit Lisbon 2026: the company map from p
 
 ## What happened {#what-happened}
 
-*Friday 6 November, 20:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-06-2057/index.html), [today's newsletter](reports/2026-11-06-newsletter/index.html), [all reports](reports/index.html).*
+*Friday 6 November, 22:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-06-2257/index.html), [today's newsletter](reports/2026-11-06-newsletter/index.html), [all reports](reports/index.html).*
 
-- **Today:** the newsroom became [PrompTugal.news](https://promptugal.news); main is protected; an investors agent after the Algarve Evolution call.
-- **The garments** move to Monday 9 and wait for Dinis's yes on the files (WS-48).
+- **[PrompTugal.news](https://promptugal.news) published a five-part series** about how this team works (T1 to T5).
+- **The garments** come on Monday 9 and wait for Dinis's yes on the files (WS-48).
 - **Six stand-ups without a recorded decision;** 45 late issues ready to park.
 - **The weekend:** PrompTugal's first newsletters (WS-186); the plan for the week.
 - **Our stand:** booth A1-30, ALPHA 1, Pavilion 1, Thursday 12 November.
