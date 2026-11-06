@@ -155,7 +155,8 @@
             const m = await KR.open(env), vk = (m.fields || {})['Vault key']
             if (!vk) throw new Error('the sealed message holds no vault key')
             const v = await openWithVaultKey(vk)                              // layer 1
-            const nodes = (await readJson(v, 'graph/nodes.json')).nodes.filter(n => n.file)
+            const all = (await readJson(v, 'graph/nodes.json')).nodes
+            const nodes = all.filter(n => n.file && n.type !== 'thread' && n.type !== 'message')   // mail: in the email twin below
             btn.hidden = true
             // the private vault in a new window: the key goes only into that window's address fragment (never sent to a server)
             const win = document.createElement('p'); win.className = 'crm-win'
@@ -167,6 +168,17 @@
             here.innerHTML = '<p class="crm-win"><button type="button" data-here>Open the CRM app here, with unsealing</button> <span class="meta">(SG/Vault in this page; when the app asks for a sealed record, this page opens it with your key and hands back only that record)</span></p>'
             here.querySelector('[data-here]').onclick = () => { here.querySelector('.crm-win').hidden = true; bridge(here, v, vk) }
             out.before(here)
+            // the email twin (WS-176): the mail in companies/*/comms/, read from the vault opened above, as plain text only
+            if (all.some(n => n.type === 'thread' && n.file)) {
+                const mail = document.createElement('div'); mail.className = 'crm-mail'
+                mail.innerHTML = '<h3>Mail: the email twin</h3><div data-mail><p class="meta">Loading the mail view...</p></div>'
+                out.before(mail)
+                try {
+                    let edges = []; try { edges = (await readJson(v, 'graph/edges.json')).edges } catch { }
+                    if (!window.WSCrmMail) await loadScript(up + 'assets/crm-mail.js')
+                    window.WSCrmMail.mount(mail.querySelector('[data-mail]'), { nodes: all, edges, readText: f => readFile(v, f) })
+                } catch (e) { mail.querySelector('[data-mail]').textContent = 'Could not open the mail view: ' + (e.message || e) }
+            }
             out.innerHTML = `<p class="meta">${nodes.length} record${nodes.length === 1 ? '' : 's'} in ${esc(CFG.private.name)} (${esc(CFG.private.vault_id)}). Layer 2: each sealed record opens only if you are in its audience.</p><ol class="crm-plist">${nodes.map(n => `<li data-f="${esc(n.file)}"><b>${esc(n.sealed ? '🔒 ' + n.type : label(n))}</b> <span class="meta">${esc(n.file)}</span><div class="crm-pbody meta">${n.sealed ? 'Opening...' : esc(sub(n))}</div></li>`).join('')}</ol>`
             for (const n of nodes.filter(n => n.sealed)) {
                 const li = out.querySelector(`[data-f="${CSS.escape(n.file)}"]`), body = li.querySelector('.crm-pbody')
