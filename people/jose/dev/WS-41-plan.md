@@ -24,6 +24,8 @@ That is 2 of the 54 slots of 3 and 4 November for 9 people, none on 4 November, 
 
 **After, 2 (5 November, 15:35 UTC, scheduled wake):** still 2 check-ins in total, the same two; no new pulse file for anyone since 23:42 on 4 November. The reminder ran at two of Jose's conductor's wakes before C19 replaced it: 07:20 (brief 8 doesn't mention the pulse) and 12:20 (brief 9, `people/jose/briefs/2026-11-05T1225Z.json`, "Due today for you": *"WS-41: your pulse for today: none yet in people/jose/pulse/. One line: how it felt."*). No check-in followed by 15:35.
 
+**After, 3 (6 November, 09:35 UTC, scheduled wake):** still 2 check-ins in total, no new pulse file for anyone since 23:42 on 4 November. Under the new way, Jose's first expected check-in is this evening's (from his daily interview); the next count is at 15:30.
+
 ## The problem, in numbers
 
 WS-41 asks for "the agent interview prompt, a reminder at each slot, and a view of the team's pulse over time." The files version works, but on the morning of 4 November there are **2 check-ins** in `people/*/pulse/` (Vicky, 3 November morning; Jose, 3 November evening), out of about 36 slots due since check-ins started on 3 November (WS-07; 9 people, the slots of 3 November and the morning of 4 November). Nobody is reminded (the pulse agent lists who hasn't checked in today in `content/pulse-summary.md`, but nobody is told) and it takes an agent session to answer. **So the first thing to build is the reminder, and the second is a way to answer in under two minutes without opening a session.** The view over time matters only once there is data.
