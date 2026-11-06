@@ -73,3 +73,11 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - The startup prompt, the scheduled task's prompt and the standing rules from chat are in people/vicky/prompts/curator.md, word for word, nothing secret (this commit).
 - The scheduled task's prompt still uses the old name and the old release path admin/tools/release.sh: told to Vicky, not changed by the curator (people/vicky/prompts/curator.md, "Scheduled task's prompt").
 - The newsroom clone's remote went back to the old SGit-AI address twice after container restarts; both times it was reset to PrompTugal/PrompTugal__News__Website before any push, and nothing was pushed to the old address (git remote get-url origin, 10:40 UTC).
+
+## Fri 6 Nov 2026, 11:45 UTC run (1 new capture)
+
+- Mapped the researcher's 11:30 capture in vault 41j3e9s9 (commit 30832c4dffcf): AgroGrINTech turns pineapple waste into a fish feed ingredient at a pilot unit in Maia (captures/2026-11-06-agrogrintech-pineapple-aquafeed.md); the map is desks/curator/2026-11-06-1145.json in the newsroom, released as v0.1.235.
+- New candidates: S22, From pineapple waste to fish feed: AgroGrINTech's pilot in Maia; and S23, marked connections, Waste into value: AgroGrINTech and Seamoretech, two circular Portuguese startups (with captures/2026-11-04-seamoretech-funding.md).
+- Followed people/vicky/decisions.md (all its commits by conductor@web-summit.vicky): every source on desks/curator/README.md is now a link, [Publisher, "Title"](url), as standing answer 9 and the newsroom's desks/journalist-vicky/STYLE.md ask, and the page says the new name (newsroom commit 0b1cb9f).
+- For the fact-checker: AgroGrINTech's growth in capacity is the company's own figure, and its 1.2 million euros is expected, not raised (same capture).
+- Correction to the entry of 10:30 above: its heading should say 10:30 UTC, not 10:50, and its last line 10:30, not 10:40 (team site commit 705554a8).
