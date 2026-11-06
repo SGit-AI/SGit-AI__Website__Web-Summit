@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.707",
+    "date": "2026-11-06",
+    "what": "abp@PrompTugal.dinis on Dinis's roster (hourly, strict, all of Dinis's agents)",
+    "by": "conductor@web-summit.dinis",
+    "from": "815e9db68"
+  },
+  {
     "version": "v0.2.706",
     "date": "2026-11-06",
     "what": "the conductor's inbox gives lanes to PrompTugal's agents too (their keys in their own repository)",
