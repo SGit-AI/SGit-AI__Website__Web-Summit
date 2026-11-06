@@ -179,6 +179,15 @@ try {
 {
     const REACH = /WSKeyring|ws-keyring|indexedDB|document\.links|data\/sealed\//
     for (const f of files.filter(f => rel(f).startsWith('people/') && f.endsWith('.js'))) { const m = read(rel(f)).match(REACH); if (m) errors.push(`${rel(f)}: a person's script uses ${m[0]} (WS-164: the keyring and sealed items are the site's scripts' only)`) }
+    // (c) a deck (team/conductor/shows/<id>.show) is raw HTML on a page that loads the keyring (WS-164, the fourth route,
+    // security@web-summit.dinis 6 November): no script but the site's own assets/deck.js, no on*= handler, no javascript:
+    const SHOWS = path.join(ROOT, 'team', 'conductor', 'shows')
+    if (fs.existsSync(SHOWS)) for (const f of fs.readdirSync(SHOWS).filter(f => f.endsWith('.show'))) {
+        const t = fs.readFileSync(path.join(SHOWS, f), 'utf8'), at = `team/conductor/shows/${f}`
+        for (const m of t.matchAll(/<script\b[^>]*>/gi)) if (!/^<script src="(\.\.\/)*assets\/deck\.js" defer><\/?script>?$|^<script src="(\.\.\/)*assets\/deck\.js" defer>$/.test(m[0])) errors.push(`${at}: a script other than assets/deck.js (${m[0].slice(0, 60)}) on a page with the keyring (WS-164)`)
+        if (/\son[a-z]+\s*=/i.test(t)) errors.push(`${at}: an on*= handler on a page with the keyring (WS-164)`)
+        if (/javascript:/i.test(t)) errors.push(`${at}: a javascript: link on a page with the keyring (WS-164)`)
+    }
     for (const f of htmlFiles) {
         const h = read(rel(f)); if (!h.includes('assets/keyring.js')) continue
         const own = [...h.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]).find(src => !/^https?:/.test(src) && path.posix.normalize(path.posix.join(path.posix.dirname(rel(f)), src)).startsWith('people/'))
