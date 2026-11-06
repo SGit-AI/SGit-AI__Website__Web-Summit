@@ -96,25 +96,33 @@ async function activityPage(i) {   // GitHub's push activity on dev, newest firs
     }
     return ACTIVITY.pages[i] || null
 }
+// the commits that contain `sha` (it and every descendant on dev), from one git call; a push brought `sha` to dev when
+// its "after" is one of them and its "before" is not (set lookups, not a git process per push)
+const DESC = new Map()
+const containing = sha => { if (!DESC.has(sha)) { let list = []; try { list = execFileSync('git', ['rev-list', '--ancestry-path', `${sha}..origin/dev`], { encoding: 'utf8', maxBuffer: 256 << 20 }).split('\n').filter(Boolean) } catch { } DESC.set(sha, new Set([execFileSync('git', ['rev-parse', sha], { encoding: 'utf8' }).trim(), ...list])) } return DESC.get(sha) }
 async function pushedBy(sha) {
-    // the one push whose "after" holds the commit and whose "before" does not
+    const has = containing(sha)
     for (let i = 0; ; i++) {
         const list = await activityPage(i); if (!list) return null
         for (const a of list) {
-            if (!/^[0-9a-f]{40}$/.test(a.after || '') || !isAncestor(sha, a.after)) continue
-            if (/^[0-9a-f]{40}$/.test(a.before || '') && !/^0+$/.test(a.before) && isAncestor(sha, a.before)) continue
+            if (!/^[0-9a-f]{40}$/.test(a.after || '') || !has.has(a.after)) continue
+            if (/^[0-9a-f]{40}$/.test(a.before || '') && !/^0+$/.test(a.before) && has.has(a.before)) continue
             return (a.actor && a.actor.login) || null
         }
     }
 }
 // WS-152: every commit on dev that changed this key's entry (added it, or altered any field since), oldest first.
 // The first push only proves who added the key; a later commit by another agent can revive an ended key or swap it.
+const FILE_AT = new Map(), LOG_OF = new Map()   // each file's history and each version of it, read once per run
+const fileAt = (sha, file) => { const k = sha + ':' + file; if (!FILE_AT.has(k)) { try { FILE_AT.set(k, JSON.parse(execFileSync('git', ['show', k], { encoding: 'utf8', maxBuffer: 64 << 20 })).keys || []) } catch { FILE_AT.set(k, null) } } return FILE_AT.get(k) }
 function entryChanges(id, file = 'data/keys.json', pick = keys => keys.find(k => k.id === id)) {
-    const shas = execFileSync('git', ['log', '--format=%H', '--reverse', 'origin/dev', '--', file], { encoding: 'utf8' }).split('\n').filter(Boolean)
+    if (!LOG_OF.has(file)) LOG_OF.set(file, execFileSync('git', ['log', '--format=%H', '--reverse', 'origin/dev', '--', file], { encoding: 'utf8' }).split('\n').filter(Boolean))
+    const shas = LOG_OF.get(file)
     const out = []; let prev = null
     for (const sha of shas) {
         let cur = null
-        try { cur = JSON.stringify(pick(JSON.parse(execFileSync('git', ['show', `${sha}:${file}`], { encoding: 'utf8', maxBuffer: 64 << 20 })).keys || []) || null) } catch { continue }
+        const ks = fileAt(sha, file); if (!ks) continue
+        cur = JSON.stringify(pick(ks) || null)
         if (cur !== prev && cur !== 'null' && cur !== null) out.push({ sha, subject: execFileSync('git', ['log', '-1', '--format=%s', sha], { encoding: 'utf8' }).trim() })
         prev = cur
     }
@@ -134,7 +142,7 @@ const keys = published()
 // since came from an account the roster lists for its person; or its signing fingerprint is in --fingerprint.
 async function verify(ref) {
     const oob = new Set(String(flags.fingerprint && flags.fingerprint !== true ? flags.fingerprint : '').split(',').filter(Boolean))
-    const [kind, a, b] = ref.split(':'), out = { ref, ok: false }
+    const [kind, a, ...rest] = ref.split(':'), b = rest.join(':'), out = { ref, ok: false }   // a fingerprint has its own colon
     let entry, person, file, pick, fp
     if (kind === 'agent') {
         file = 'data/keys.json'; entry = keys.find(k => k.id === a); if (!entry) return { ...out, why: 'not on the keys page as pushed to dev' }

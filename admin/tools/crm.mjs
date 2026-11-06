@@ -38,6 +38,23 @@ import { execFileSync } from 'child_process'
 
 const HERE = path.dirname(new URL(import.meta.url).pathname)
 const args = process.argv.slice(2)
+// WS-178 (security@web-summit.dinis; added by sgit@web-summit.dinis): seal-keys seals only to keys that pass
+// `seal.mjs --verify`: active and not replaced, and added and changed only from accounts the roster lists for their
+// person (GitHub's activity API), read from origin/dev. The run stops before sealing anything if a recipient fails;
+// `--allow-unverified <ref,ref>` lets named ones through after their fingerprint was confirmed out of band.
+function verifyRecipients() {
+    const label = k => k.agent || ((k.bundle || {}).label || k.label || '').split(' ')[0]
+    const refs = [...personKeys().map(k => `person:${k.person}:${k.signing_fingerprint}`),
+        ...agentKeys().filter(k => k.id !== 'conductor-3' && label(k).startsWith('conductor@web-summit.')).map(k => `agent:${k.id}`)]
+    const i = args.indexOf('--allow-unverified'), allow = new Set(i >= 0 ? String(args[i + 1] || '').split(',') : [])
+    let out = ''
+    try { out = execFileSync(process.execPath, [path.join(HERE, 'seal.mjs'), '--verify', refs.join(',')], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'inherit'] }) }
+    catch (e) { out = String(e.stdout || ''); if (!out.trim()) fail(`seal.mjs --verify could not run (${e.message.split('\n')[0]}): nothing sealed`) }
+    const verdicts = out.split('\n').filter(Boolean).map(l => JSON.parse(l)), bad = verdicts.filter(v => !v.ok && !allow.has(v.ref))
+    for (const v of verdicts) say(`${v.ok ? 'ok ' : allow.has(v.ref) ? 'allowed' : 'NO '} ${v.ref}: ${v.why}`)
+    if (verdicts.length !== refs.length) fail('seal.mjs --verify did not answer for every recipient: nothing sealed')
+    if (bad.length) fail(`${bad.length} recipient(s) failed seal.mjs --verify: nothing sealed. Fix them (WS-178), or after confirming a fingerprint out of band pass --allow-unverified ${bad.map(v => v.ref).join(',')}`)
+}
 const pos = args.filter((a, i) => !a.startsWith('--') && !(i > 0 && args[i - 1].startsWith('--'))), cmd = pos[0]   // options are --name value
 const opt = k => { const i = args.indexOf('--' + k); return i >= 0 ? args[i + 1] : undefined }
 const ROOT = path.resolve(opt('root') || path.join(HERE, '../..'))
@@ -289,6 +306,7 @@ if (cmd === 'create') {
 } else if (cmd === 'app') {
     for (const w of pos[1] ? [pos[1]] : ['public', 'private']) { appFiles(w); derive(vdir(w)); push(w, 'the app, schemas and README rebuilt') }
 } else if (cmd === 'seal-keys') {
+    verifyRecipients()                                                        // WS-178: the rule seal.mjs applies, before anything is sealed
     const stamp = now().replace(/:\d\dZ$/, 'Z').replace(/[-:]/g, '').replace(/^(\d{4})(\d\d)(\d\d)T/, '$1-$2-$3T'), v = vaults().private
     const vk = fs.readFileSync(path.join(CRM, 'private.vault_key'), 'utf8').trim()
     for (const k of personKeys()) {

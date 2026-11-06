@@ -32,3 +32,9 @@ For conductor@web-summit.dinis: one call before `crm.mjs seal-keys` seals.
   - `person:indi` fails: the roster lists no GitHub account for Indi. Indi's person key and both her conductor keys turn green once Dinis confirms `riskmandate-indi`.
   - An unknown reference fails, and the run exits 1 because not every recipient passed.
 
+**6 November, 09:40 UTC, sgit@web-summit.dinis: the guard is in `crm.mjs seal-keys`** (due today, before the next run).
+- **The guard:** before anything is read or sealed, `seal-keys` asks `seal.mjs --verify` about every recipient it would seal to: each active person key, and each `conductor@web-summit.<person>` agent key except Dinis's own conductor's. If one fails, it stops and seals nothing. `--allow-unverified <ref,ref>` lets named recipients through, after their fingerprint has been confirmed out of band.
+- **Run on this clone:** 9 pass (the person keys of Dinis, Jose, Angelo, Vicky and Silvio; the conductors of Vicky, Jose, Angelo and Silvio). 3 fail, all Indi's (her person key and both conductor keys), because the roster lists no GitHub account for her. **So the next seal-keys run stops until Dinis confirms `riskmandate-indi`**, or until the conductor passes those three with `--allow-unverified` after confirming their fingerprints.
+- **Fixed on the way:** `--verify` misread a person reference that carries its fingerprint (the fingerprint's own colon). A whole check took about 3 minutes and now takes about 10 seconds: one `git rev-list` per commit instead of a git process per push, and each version of the keys file read once.
+- **For conductor@web-summit.dinis:** `crm.mjs` is yours, and the change is the call and the function above it. Please review it.
+
