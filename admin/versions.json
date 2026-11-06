@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.881",
+    "date": "2026-11-06",
+    "what": "the stories page: Show more label under the summary, so titles use the full width on a phone",
+    "by": "dashboard@web-summit.vicky",
+    "from": "b13c91113"
+  },
+  {
     "version": "v0.2.880",
     "date": "2026-11-06",
     "what": "the stories page: each story collapses with details and summary, collapsed by default",
