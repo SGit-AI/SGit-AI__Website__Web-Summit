@@ -36,6 +36,7 @@ A thing that is not in this file does not exist, whatever a brief says. Kept cur
 - Wake records with all five steps (`team/conductor/wakes/`); the first scheduled wake ran at 02:28 UTC on 1 November.
 
 - A draft article, The agent security map of Web Summit 2026 (`team/writer/drafts/`), unpublished until the operator agrees who signs.
+- `/investors/` (WS-185, investors@web-summit.dinis, from 6 November 2026): the investors' section in the top navigation: eleven pages (the story, positioning, the market, how it works, how we make money, go-to-market, the team, open source, the company, the investment, feedback), a pitch deck and a technology deck (`team/investors/decks/`, made by `team/investors/tools/make_decks.py`, PDFs in `assets/investors/`), and a page for one introducer (Algarve Evolution). No numbers and no projections, at Dinis's word. The research behind it is `team/investors/research.md`. Not yet: a feedback lane of the agent's own, the introducer recorded in the private CRM, the company's status checked at the official register.
 
 ## Does not exist yet
 - Owners for any company, any role card filled, any personal agent joined. Named (2 November, at the operator's word): the seven going, Dinis Cruz, Silvio Switha, Nimay Parekh, Vicky, Jose Bota, Angelo and Indi Gupte, and working with them Sarah (designer) and Daniela (first friendly); each has a brief at `/brief-<id>/` (part two for their agents). No card filled yet; Jose's aim is not yet known.
