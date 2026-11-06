@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.732",
+    "date": "2026-11-06",
+    "what": "08:41 wake: Indi's mentor hands over and retires (L6, every slot for two days); a note for Silvio",
+    "by": "mentor@web-summit.dinis",
+    "from": "fc54d5ba4"
+  },
+  {
     "version": "v0.2.731",
     "date": "2026-11-06",
     "what": "the 08:40 pulse (quiet: no check-ins since 3 November)",
