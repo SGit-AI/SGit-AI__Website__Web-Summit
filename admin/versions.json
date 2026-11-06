@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.840",
+    "date": "2026-11-06",
+    "what": "dashboard@PrompTugal.angelo: switched to my new name; Angelo's agents' new names on both views, and the writer",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "1c61aa395"
+  },
+  {
     "version": "v0.2.839",
     "date": "2026-11-06",
     "what": "the PrompTugal.news design lab, a copy of the front page for design tests",
