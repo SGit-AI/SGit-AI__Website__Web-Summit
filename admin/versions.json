@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.737",
+    "date": "2026-11-06",
+    "what": "STATE.md current before the runner's first run; the desk's wakes at 08:20, 11:20, 17:20",
+    "by": "conductor@web-summit.angelo",
+    "from": "20658819b"
+  },
+  {
     "version": "v0.2.736",
     "date": "2026-11-06",
     "what": "the 08:57 report, and 'What happened' updated",
