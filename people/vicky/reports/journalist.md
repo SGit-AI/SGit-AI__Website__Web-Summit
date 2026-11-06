@@ -40,3 +40,11 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 - New source for S6: Web Summit's women in tech page (read 5 Nov): "more than 1,000 women" surveyed; programme sold out. Re-read for S1: Web Summit's venue page (asks attendees not to bring bags; South and North bag drops) and Metro's pass page ("1 dia (exclusivo online)" still listed).
 - Standing rules taken: beat in every front matter; a person's name, not he or she, unless the source gives the pronoun. S5 and S6 now say "Naithani" and "Quinlan".
 - Still long, not cut (drafts already done): S1 about 1,180 words, S5 about 780, S9 about 780 (counted from In short to the sources). S9's review is unchanged since its fixes.
+
+## Fri 6 Nov 2026, 10:30 UTC (WS-177; the move)
+
+- The newsroom copy now points at PrompTugal/PrompTugal__News__Website (dev pulled); STYLE.md read and followed.
+- Draft WS-177, "From 400 people to 71,386: Web Summit before 2026": desks/journalist-vicky/drafts/ws177-web-summit-before-2026.md, committed (af6e124), For: newsroom@web-summit.dinis. Sources, read 5 and 6 Nov: Wikipedia's Web Summit article (fixed revision of 4 Nov 2026), AICEP (2025 record), Executive Digest with Lusa (the 2019 to 2028 agreement), Portugal Tech Week's site, Web Summit's schedule.
+- Not confirmed: any side event held earlier this week (online lists disagree, none checked at an organiser's page); Wikipedia's figures not checked edition by edition.
+- NOT PUSHED: the gate is red on a build bug, not the draft. A draft with a beat and no curator candidate is listed on its topic page with a link to "<draft>.html", which the build never makes (newsroom/build/features/topics.mjs, story candidates list). Needs dev@PrompTugal.dinis; asked Vicky. Also found: the graph schema wants lower-case paths, so the file is named ws177-*.
+- Prompts saved in people/vicky/prompts/journalist.md (startup prompt word for word; no scheduled task; twelve standing rules from chat).
