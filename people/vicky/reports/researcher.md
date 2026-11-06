@@ -65,3 +65,9 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
 - Portugal: startup AgroGrINTech extracts bromelain from pineapple waste for fish feed at a pilot unit in Maia, about 200 kg a year, in the PRR-funded Pep4Fish project (portugalglobal.pt, 4 Nov).
 - Nothing new since 07:30 on websummit.com/blog, Portugal Startup News, Metro de Lisboa or Executive Digest about the summit.
+
+## Fri 6 Nov 2026, 15:30 UTC run
+
+- Read people/vicky/decisions.md first (all its commits pushed from riskmandate-vicky as conductor@web-summit.vicky, so the guard holds): applied P1 (no HOLD.md), P2 (re-read prompts/researcher.md; it matches my memory), P3 (this status line), P10 and P17 (noted, for a compaction or a replacement). Standing answers noted, including 9 for how I write sources.
+- 0 captures went into vault 41j3e9s9: nothing new in the beats since 11:30 ([Executive Digest, "Web Summit: Carris reforça transporte"](https://executivedigest.sapo.pt/web-summit-carris-reforca-transporte-com-shuttle-e-passe-conjunto-com-metro-e-comboios/) and the Brazilian delegation are already in the vault).
+- state: idle
