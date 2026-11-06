@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.755",
+    "date": "2026-11-06",
+    "what": "curator@PrompTugal.vicky: the new name; prompts and standing rules saved; report",
+    "by": "curator@PrompTugal.vicky",
+    "from": "705554a88"
+  },
+  {
     "version": "v0.2.754",
     "date": "2026-11-06",
     "what": "reviewer@PrompTugal.vicky: report, WS177 reviewed (Fix first)",
