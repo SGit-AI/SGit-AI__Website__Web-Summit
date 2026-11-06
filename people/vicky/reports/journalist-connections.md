@@ -43,3 +43,7 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - Draft S23, "Waste into value: AgroGrINTech and Seamoretech, two circular Portuguese startups" (517 words), For: journalist@PrompTugal.dinis. Sources: AICEP Portugal Global on AgroGrINTech (4 Nov) and Portugal Startup News on Seamoretech (2 Nov), both read 6 Nov. Not confirmed: whether either company is at Web Summit 2026; the companies' own figures.
 - No other Connections storyline is open: S15, S16, S18, S19 drafted; S14 and S21 dropped; S17 published by Dinis's journalist.
 - state: ok; done: S23 drafted and pushed, P1 P2 P3 P5 P9 applied; next: next Connections storyline the curator adds; ask: none; run: scheduled
+
+## Fri 6 Nov 2026, 16:27 UTC (scheduled run)
+
+- state: idle
