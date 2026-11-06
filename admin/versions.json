@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.705",
+    "date": "2026-11-06",
+    "what": "main is protected; every ABP's main barrier updated; inbox@silvio's ABP",
+    "by": "abp@web-summit.dinis",
+    "from": "29e9879ca"
+  },
+  {
     "version": "v0.2.704",
     "date": "2026-11-06",
     "what": "the 02:57 report, and 'What happened' updated",
