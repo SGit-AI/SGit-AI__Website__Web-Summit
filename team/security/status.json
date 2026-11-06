@@ -1,7 +1,7 @@
 {
   "agent": "security",
   "state": "active: a scheduled session of its own (cron 50 11 and 50 23 UTC)",
-  "last_wake": "2026-11-05T23:51:29Z",
+  "last_wake": "2026-11-06T11:50:59Z",
   "done": [
     "review 2026-11-02-0300: all 44 commits on dev, no hold",
     "review 2026-11-02-0310: 14 commits to v0.1.41, no hold, WS-85 fix verified",
@@ -12,18 +12,19 @@
     "review 2026-11-04-2350: 350 commits to v0.2.397, no hold, WS-137 fixes verified, WS-122 decided, WS-156 opened",
     "review 2026-11-05-0342: 129 commits to v0.2.456, no hold, WS-132 part 1 verified, WS-163 opened",
     "review 2026-11-05-1150: 192 commits to v0.2.538, no hold, WS-164 items 1 and 3 verified",
-    "review 2026-11-05-2350: 369 commits to v0.2.684, no hold, WS-178 opened (CRM sealing skips WS-106 checks)"
+    "review 2026-11-05-2350: 369 commits to v0.2.684, no hold, WS-178 opened (CRM sealing skips WS-106 checks)",
+    "review 2026-11-06-1150: 242 commits to v0.2.775, no hold, WS-178 verified and done"
   ],
   "next": [
-    "review every commit after 8b56e287 at 11:50 UTC",
-    "WS-178 before the next crm seal-keys",
-    "WS-122 into secrets.cjs",
-    "WS-164 item 2"
+    "review every commit after d4687846 at 23:50 UTC",
+    "WS-122 into secrets.cjs (third ask)",
+    "WS-164 item 2 and the .show route",
+    "WS-178 follow-ups (low)"
   ],
   "asks": [
     "Dinis: WS-132 and WS-117 (the keyring on an origin of its own)",
     "Dinis: the PKI decisions on /pki/",
     "Dinis: update this role's ROLE.md and policy.json"
   ],
-  "last_reviewed_commit": "8b56e287"
+  "last_reviewed_commit": "d4687846"
 }

@@ -4,7 +4,7 @@ title: "crm.mjs seal-keys skips the checks seal.mjs makes: a key anyone pushes w
 area: tech
 for: dinis
 due: Fri 6 Nov, before the next seal-keys run
-status: open
+status: done
 picked_by:
 agents: conductor@web-summit.dinis (crm.mjs, crm_agents.py), sgit@web-summit.dinis (seal.mjs), security@web-summit.dinis (review).
 ---
@@ -38,3 +38,8 @@ For conductor@web-summit.dinis: one call before `crm.mjs seal-keys` seals.
 - **Fixed on the way:** `--verify` misread a person reference that carries its fingerprint (the fingerprint's own colon). A whole check took about 3 minutes and now takes about 10 seconds: one `git rev-list` per commit instead of a git process per push, and each version of the keys file read once.
 - **For conductor@web-summit.dinis:** `crm.mjs` is yours, and the change is the call and the function above it. Please review it.
 
+
+**Verified by security@web-summit.dinis, 6 November 11:50** (review `team/security/reviews/2026-11-06-1150.md`, finding 1): **done.** `crm.mjs seal-keys` runs `seal.mjs --verify` on every person key and conductor key before it reads or seals anything, and stops if one fails. The rule is right: the key is active and not replaced, and its entry was added and changed only from accounts on its person's roster, or its fingerprint was confirmed out of band. Two low follow-ups for sgit:
+1. `crm_agents.py` re-picks the agents it seals to with its own filter instead of sealing exactly the verified list. They differ on `"status": ""` (sealed to, not verified). Pass it the verified refs.
+2. `--allow-unverified` names refs, not fingerprints: let it take only `--fingerprint <fp>` (which `seal.mjs` already supports), so what was confirmed out of band is what gets sealed to.
+Also: `seal.mjs --verify` reads only `@web-summit.` names, so the new `@PrompTugal.` agent keys always fail (safe, fail-closed). Teach it the second namespace, keeping the pusher check.
