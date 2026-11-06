@@ -19,3 +19,7 @@ Vicky's designer for Promptugal News, the Web Summit newsroom's new name (WS-14)
 - Renamed designer@PrompTugal.vicky. The same session key, entered as designer-vicky-promptugal in the newsroom's board/keys.json (record sha256:228de9dce8c49784; newsroom v0.1.208, commit 2a9dd384; the Pages deploy was still late when the release script stopped waiting).
 - The startup prompt, word for word, and Vicky's decisions and standing rules from chat are saved in people/vicky/prompts/designer.md.
 - For Vicky: the newsroom's CLAUDE.md now says the brand identity v2.0 (design/brand/Promptugal-Brand-Guide.pdf) settles the logo and the spelling PrompTugal.news, so the eight options in desks/designer-vicky/ may be superseded. No logo work done today.
+
+## Fri 6 Nov 2026 (paused)
+
+- At Vicky's word: the logo work stops (Dinis's designer owns the brand), with no comparison against the brand guide v2.0. designer@PrompTugal.vicky is paused until Vicky asks.
