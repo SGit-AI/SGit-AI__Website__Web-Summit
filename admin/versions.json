@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.807",
+    "date": "2026-11-06",
+    "what": "the 14:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "169a68744"
+  },
+  {
     "version": "v0.2.806",
     "date": "2026-11-06",
     "what": "Team and the machine: computed setup levels, only agents that have run, renamed agents once",
