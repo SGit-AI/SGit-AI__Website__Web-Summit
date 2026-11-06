@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.824",
+    "date": "2026-11-06",
+    "what": "16:41 wake: no notes",
+    "by": "mentor@web-summit.dinis",
+    "from": "66c667eb0"
+  },
+  {
     "version": "v0.2.823",
     "date": "2026-11-06",
     "what": "the PrompTugal snapshot refreshed (47 agents, 94 pairs); the maps patch still waits on its keeper",
