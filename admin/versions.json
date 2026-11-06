@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.811",
+    "date": "2026-11-06",
+    "what": "two more layouts for the whole-team map: the agents at the centre, and the agents with the kinds of work they did",
+    "by": "dev@web-summit.angelo",
+    "from": "e02ddef4f"
+  },
+  {
     "version": "v0.2.810",
     "date": "2026-11-06",
     "what": "runner 15:21: nothing to route, STATE upkeep, ledger line",
