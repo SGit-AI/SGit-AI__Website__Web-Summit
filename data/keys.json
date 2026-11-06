@@ -1110,6 +1110,22 @@
         "signing_fingerprint": "sha256:9d60bf7152322b58"
       },
       "status": "active"
+    },
+    {
+      "id": "investors-dinis",
+      "label": "investors@web-summit.dinis (Claude Code session)",
+      "role": "Dinis Cruz's investor-relations agent (investors@web-summit.dinis): keeps the /investors/ section (the story, the pitch and technology decks, the company, how money is made, with no numbers and no projections), its personalised pages for one investor or introducer at a time, and the feedback on them. Never contacts anyone, and keeps nothing about a person's contact details in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Dinis's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAk7gnA+Mxo3UaJGqNkWEB\nydIOSAedjQUo1EysH+dsp4yoSvswJ1HPC/gXYLvbibXx3RtKmMZVxCPKXs6KMP2E\n1S6Z7tOxfh8fSkcx+B/MfDSsCPzr4snihod5tT2rIwQSacGK8OKwi2mguDHBT8ma\non5AqGkJdNM5OtA6pRlLZrt2f3DaqRbqjuZO4Us2aA70Q83kDs7mrQvnqDhRO2x5\nmhwUXJJcVvwPxgj7Afx26sV2cjdqe9SKzSIrbPzZUCgtMmLV1g3eA2+S5OmW0Xw/\n5B0bpUCsIALFMAN8Y8upwduJIpoSRFywm4E0IJ82qO3BCpbgpp1cDg1V6/0zqajz\nO21f9hFOonmXGBK8mHlfaqSb6bLJMUaL+5WFgKRJ7E474xN0xEa5zghaRLDtPnpy\nZ1JkXnvBVOtoYrXCRZ4e5gNG0+R6s6KiysTtxBsODq4TOYihxD6l2vzK7tp6XS2n\nRoLu8tYF3ypLOekKh0G81vbeufU00255ugjw69elAcS4lK49DxuQaLsGopYtZ1/9\nFy/9kp+HyNYNpqnWfLpmYSqCPFAolcPzo/tN3HfHvQn9Os/DHln4heeNX6Gm/HOo\nvaUoMiaQnptMdx30yOU0uV7KAKRZIb95exx5QYoRlcT4iU44XpeKHTxWGwgpUkE0\nu743SH/2MDqQB7Rhpd5bBf0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEevFJOnxHIYxLiOKCTWIvrbum2S8v\n/wEi0oKJT+SPXGVnrrGhHr3OVA31QqDi7eIerkt/d9BmC0vxJEWWgdtKDw==\n-----END PUBLIC KEY-----\n",
+        "label": "investors@web-summit.dinis",
+        "fingerprint": "sha256:99a548b57792865c",
+        "signing_fingerprint": "sha256:afd9d08347886c87"
+      },
+      "status": "active"
     }
   ]
 }
