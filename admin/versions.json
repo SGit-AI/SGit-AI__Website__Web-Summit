@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.795",
+    "date": "2026-11-06",
+    "what": "ABP in action, the connectors study, and the explorer phase on every ABP",
+    "by": "abp@web-summit.dinis",
+    "from": "630ca8a8f"
+  },
+  {
     "version": "v0.2.794",
     "date": "2026-11-06",
     "what": "runner 13:21, nothing to route",
