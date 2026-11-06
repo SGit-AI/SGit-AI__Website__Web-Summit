@@ -1043,6 +1043,23 @@
         "signing_fingerprint": "sha256:36a0b5e8a2b7bdc7"
       },
       "status": "active"
+    },
+    {
+      "id": "policy-angelo",
+      "agent": "policy@web-summit.angelo",
+      "label": "policy@web-summit.angelo (Claude Code session)",
+      "role": "Angelo's policy auditor (policy@web-summit.angelo): maps which rules apply to each of Angelo's agents and how each is enforced, audits their commits against their ABPs and Angelo's protocol, and proposes barriers. Independent of the conductor: takes work only from Angelo and reports only to him (people/angelo/policy/). Read-only except that folder and this entry. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching seal.mjs's pinned sha256) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAj34k9mMjQ9To1KZBPaVf\nttzChiP2EhCzTrZVskivvoMrPGtb+4WxLT/3kDcpXQYzah6J76Mc9POIGgmER1MJ\nmKZ99ULH8V+1U53BRBCOHxd2/6TX+C6oJTkY9PW6Dm6s9BweFdbN2U8KnHtNtK9S\n/v2cBsLC29Qyzsr2NRrXhOjRaWcgzzFQXmfUNJWlpE0SDs33z2xRmtRNUqMtT3B2\nRiTL5x5WfBWIaXatErhvyaJgztApPOWWM6OBfWmniR5QInw0nlScRCqKBLbwW1dX\niWlASKOJA+kXwK/RcGeuFUGVMZ5WtwtdLIQ+tCosUIEUFyjgMYLm1R2c7NM6Cx+T\nK2lYHf1VWDkgBBu+AWV2eSNG9meuMMu7mx2NUo0JRndRSfLy2cwXZR4GOfPG4Sc/\ns5fVEWAOmR0Zpt6Qy6dElyvuIvJovGNTEc8miiNwG75WOP0EsgsxZCHqfIyDV3Va\nUE71Ciy85WUJEO8QJjstoV1b9lbt9AOt7tnueFnewKmYqja+BcAR+HbZ/awyBSXi\nk7GsyxSLvGk+GyIUSsQpd8yfqA2L1WxlESKa2rBvYNLM+7UCSxBf510szoFZ+s8s\nMQc4ePapmsLJQQobZDxuuTw1nJgy5zS4SHvSQoLoByvg2z51DEEXUfymoNw2fgV0\nSZ6qyWl23UAUTlu7kMRjXWcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEvdCLtNaT+XZYV68RJ2IFxbxx2Osj\nJTJOghZSxQsWRwSWzFE9zTNa5ztZLLtT3vGNB/F4cqMmrFyb2HAyAXw4nA==\n-----END PUBLIC KEY-----\n",
+        "label": "policy@web-summit.angelo",
+        "fingerprint": "sha256:a1310b3a70f44df5",
+        "signing_fingerprint": "sha256:4bd02b7006a59cdd"
+      },
+      "status": "active"
     }
   ]
 }
