@@ -12,3 +12,12 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 ## Thu 5 Nov 2026 (S18 review)
 
 - S18 fixed as reviewer-vicky's "Fix first" asked: "she will talk about" became "the talk covers" (the Commission gives no pronoun), and the meetup quote now starts at "Calling all", checked against the session page. Length left for the style pass, as the review says. No point disputed.
+
+## Fri 6 Nov 2026, 09:50 UTC (WS-177)
+
+- Newsroom copy now points at PrompTugal/PrompTugal__News__Website; all pushes to dev there, through newsroom/tools/release.sh.
+- Draft S14, "Granter and Intuitivo: two PITCH winners, one backer, new markets" (475 words). Sources: Portugal Startup News on Granter (3 Nov) and Intuitivo (23 Oct), read 6 Nov. Not confirmed: whether either company or 3xP Global is at Web Summit 2026; the companies' own figures.
+- Draft S16, "Europe's AI and funding help, and Portuguese startups it could suit" (513 words). Sources: the Commission's DigitalEU agenda (3 Nov), HaDEA's event page, Portugal Startup News on Granter, Técnico's announcement, all read 6 Nov. Not confirmed: Granter at the summit; what Técnico's spin-offs make; masterclass rooms.
+- Draft S19, "Brazil comes to Lisbon as Intuitivo heads to Brazil" (463 words). Sources: Executive Digest (4 Nov), Portugal Startup News on Intuitivo, read 6 Nov. Not confirmed: Intuitivo at the summit; which Brazilian companies come; ApexBrasil's 700 million dollar figure.
+- Draft S21, "One backer, two fields: 3xP Global's Granter and Octo Health" (480 words). Sources: Portugal Startup News on Octo Health (5 Nov), Granter, Intuitivo, read 6 Nov. Not confirmed: which 3xP Global vehicle led Octo's round; Jornal Económico's report (not read); presence at the summit.
+- S17 not drafted: already drafted by journalist-promptugal and published as wednesday-11-november-going-abroad.
