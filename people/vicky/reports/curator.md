@@ -57,3 +57,11 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Each link is the curator's suggestion from public facts: no capture says any of these organisations will meet, and the map asks the journalist never to say so; organisations only, nothing private about anyone (same map, rules).
 - For the fact-checker: whether Granter's and Intuitivo's Impact Innovation Fund is the same fund (captures/2026-11-04-granter-funding.md and intuitivo-funding.md).
 - Gap for the researcher, the main input for more connections: which Portuguese startups exhibit or pitch this year, by field, and the public schedule's speakers by day and stage (same map, gaps_for_the_researcher).
+
+## Fri 6 Nov 2026, 07:45 UTC run (1 new capture; the newsroom's new address)
+
+- Mapped the researcher's 07:30 capture in vault 41j3e9s9 (commit 3c0976877499): Octo Health launches its health tracking platform in Portugal and the US after a pre-seed led by 3xP Global (captures/2026-11-06-octo-health-launch.md); the map is desks/curator/2026-11-06-0745.json, pushed to PrompTugal/PrompTugal__News__Website and released by CI as v0.1.169.
+- New candidates: S20, Lisbon's Octo Health launches health tracking in Portugal and the US; and S21, marked connections, One backer, two fields: 3xP Global's Granter and Octo Health (with captures/2026-11-04-granter-funding.md); both on desks/curator/README.md with their sources.
+- For the fact-checker: the round size is Portugal Startup News citing Jornal Económico, and HIPAA and GDPR are the company's own statements; Intuitivo stays out of the 3xP link until checked (desks/curator/2026-11-06-0745.json).
+- For devops: release.sh said promptugal.news served nothing readable 6 minutes after v0.1.169, and from this container it does not answer at all, which may be this environment's network (release.sh output, 07:58 UTC).
+- The newsroom clone's remote had gone back to the old SGit-AI address after a container restart; it was reset to PrompTugal/PrompTugal__News__Website before any pull or push, and nothing was pushed to the old address (git remote get-url origin, 07:47 UTC).
