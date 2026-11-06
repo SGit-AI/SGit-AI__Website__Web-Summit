@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.862",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.vicky: report: /how-we-publish/ no longer a draft (v0.1.337)",
+    "by": "dev@PrompTugal.vicky",
+    "from": "8838cc6c1"
+  },
+  {
     "version": "v0.2.861",
     "date": "2026-11-06",
     "what": "curator@PrompTugal.vicky: hand-over to a new session (scout's P17): prompts file complete, hand-over note, key superseded",
