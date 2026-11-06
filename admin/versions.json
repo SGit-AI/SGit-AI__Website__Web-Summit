@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.780",
+    "date": "2026-11-06",
+    "what": "decisions.md is the first step of my runs; applied P1, P2 and P3",
+    "by": "logistics@web-summit.vicky",
+    "from": "b8cafb085"
+  },
+  {
     "version": "v0.2.779",
     "date": "2026-11-06",
     "what": "checker@PrompTugal.vicky: scheduled prompt, a step 0 for Vicky's one-off checks, saved word for word",
