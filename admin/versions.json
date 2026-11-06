@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.784",
+    "date": "2026-11-06",
+    "what": "Vicky's newsroom desks renamed @PrompTugal.vicky; ABPs for scout and checker; WS-179 noted",
+    "by": "abp@web-summit.dinis",
+    "from": "ca210bda9"
+  },
+  {
     "version": "v0.2.783",
     "date": "2026-11-06",
     "what": "scout's P6, P9, P10, P16, P17, P18 and P19 in Updates for agents; P11 waits; P12 to P15 and P20 on hold",
