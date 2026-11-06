@@ -18,7 +18,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** three small things. Add your personal key to the website (the link your conductor posted again). Tell Dinis that 'riskmandate-indi' is your GitHub name. Ask your helpers for a demo that works without wifi, since the venue does not allow phone hotspots. Everything else is on [your to-do list](todo/index.html).
+**Right now:** before 10 am, let your helpers test the new news site, PromptUGAL, as readers (allow promptugal.news in your Claude settings first). Then two quick answers for Dinis: yes, 'riskmandate-indi' is your GitHub name; and yes or no to your name on the site's editorial board. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 

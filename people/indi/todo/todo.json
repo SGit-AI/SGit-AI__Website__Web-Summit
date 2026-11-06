@@ -1,6 +1,6 @@
 {
  "about": "Indi's list of everything left to do, drawn as the infographic at /people/indi/todo/. The Command Centre half is rebuilt from the board and the stand-up items at every release; this file adds a next step per issue and the tasks that are not on the board. Kept by dashboard@web-summit.indi at each run, from 4 November at Indi's word (first written by synthetic@web-summit.indi from the board, Indi's briefs 1 to 8 and that day's git log).",
- "written": "2026-11-05T17:40Z",
+ "written": "2026-11-06T07:40Z",
  "done_for_indi": {
   "WS-01": "Done: you are at L4 (people/indi/onboarding.json).",
   "WS-02": "Done: you are at L4.",
@@ -26,7 +26,7 @@
   "WS-59": "builder@ drafted a policy for each of Daniela's agents: review them, then agree them with Daniela and Angelo.",
   "WS-125": "builder@ drafted the setup guide overnight: review it, then send Angelo the outline.",
   "WS-06": "Tell your dashboard agent what you want first and what you never read.",
-  "WS-112": "Tell your conductor 'acknowledge' for briefs 1 to 11. It means 'I have read them'.",
+  "WS-112": "Tell your conductor 'acknowledge' for briefs 1 to 12. It means 'I have read them'.",
   "WS-109": "Plan the demo for no wifi: the venue does not allow phone hotspots. Ask your helpers for a copy that runs on the laptop, or a recording.",
   "WS-20": "Agree the landing page with Nimay and Angelo.",
   "WS-26": "factory@ drafted outreach targets overnight: review them, then agree your share with Silvio.",
@@ -34,7 +34,7 @@
   "WS-69": "Agree the visual language with Sarah, Angelo and Jose.",
   "WS-75": "Storyboards for the next videos, with Silvio and Nimay.",
   "WS-79": "The home page as a hero and bands, with Sarah.",
-  "WS-141": "Your patch is live and you can push. Now review the newsroom: the front page, one company profile, the agenda and the graph, and tell Dinis what is wrong or missing.",
+  "WS-141": "The news site is now called PromptUGAL. Your part: say yes or no to your name on its public editorial board, and which title you want.",
   "WS-142": "Answer the six decisions in the card revamp handover, then run 3.",
   "WS-144": "Decide where designer@web-summit.indi may write.",
   "WS-149": "Check your highlight on the stand-up show page.",
@@ -45,15 +45,22 @@
   "WS-137": "Dinis's lab: your part, by Mon 9 Nov.",
   "WS-155": "Check the cards (round 4) first: Dinis's designer redesigned them at 4:18 am. Say if that covers your designer's fixes; Friday's printer order depends on them.",
   "WS-166": "Open that same key link once on each of your phones and iPads, by Sunday.",
-  "WS-170": "Tell Dinis, in your own words, that 'riskmandate-indi' is your GitHub name. Until then your helpers cannot receive the team's private company list.",
-  "WS-171": "Your two picture pages on how RiskMandate works are due Friday. Read the first one and say if it makes sense."
+  "WS-170": "Tell Dinis, in one word, that 'riskmandate-indi' is your GitHub name. His security checks and the team's private company list wait on it.",
+  "WS-171": "Your two picture pages on how RiskMandate works are due Friday. Read the first one and say if it makes sense.",
+  "WS-177": "Before 10 am: let your helpers test the new news site, PromptUGAL, as readers. First allow the address promptugal.news in your Claude settings (Network access, Allowed domains), then paste the prompt your conductor wrote into your synthetic helper."
  },
  "other": [
   {
    "group": "Waiting on you",
+   "title": "Your name on PromptUGAL's editorial board: yes or no",
+   "detail": "Dinis's plan lists you with Dinis and Vicky on a public page. Nothing about you goes public without your own yes. Tell Dinis in your own words.",
+   "source": "brief 12"
+  },
+  {
+   "group": "Waiting on you",
    "title": "Two conductors with the same name: keep one",
-   "detail": "A second conductor session wrote your card this afternoon. Two with one name can undo each other's work. Your conductor suggests keeping the one that wakes at 7:20, 12:20 and 5:20, and stopping the other.",
-   "source": "brief 11"
+   "detail": "A second conductor session wrote your card this afternoon. Two with one name can undo each other's work. Your conductor suggests keeping the one that wakes at 7:20, 12:20 and 5:20, and stopping the other. Still open from yesterday.",
+   "source": "briefs 11 and 12"
   },
   {
    "group": "Waiting on you",
@@ -87,9 +94,9 @@
   },
   {
    "group": "Waiting on you",
-   "title": "Say 'acknowledge' for briefs 1 to 11",
+   "title": "Say 'acknowledge' for briefs 1 to 12",
    "detail": "Tell your conductor. It means you have read them, so the next brief starts from what is new.",
-   "source": "brief 11"
+   "source": "brief 12"
   },
   {
    "group": "Waiting on others",
@@ -100,8 +107,8 @@
   {
    "group": "Waiting on you",
    "title": "Say which newsroom jobs your helpers start, if any",
-   "detail": "Your conductor starts none until you say. Dinis named Vicky and his own newsroom helper for jobs; none for you yet.",
-   "source": "briefs 10 and 11"
+   "detail": "The news site is now PromptUGAL. Your conductor starts none of its jobs until you say.",
+   "source": "briefs 11 and 12"
   }
  ]
 }
