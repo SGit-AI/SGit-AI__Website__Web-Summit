@@ -34,3 +34,9 @@ state: ok; done: grant request to abp@; next: none until Vicky asks; ask: none; 
 - /how-we-publish/'s summary is no longer hard-coded: the build takes `summary:` from the front matter of desks/checker-vicky/publish-workflow.md, and until it has one, shows "How a story becomes an article, and what each status means." (53176e9, v0.1.327, For: checker@PrompTugal.vicky). Checked live: the lead, the meta description and the twin all show it; the old wording is gone.
 
 state: ok; done: /how-we-publish/ summary; next: none until Vicky asks; ask: none; run: prompted
+
+## Fri 6 Nov 2026, 20:05 UTC (dev@PrompTugal.vicky)
+
+- /how-we-publish/'s summary is now "How a story becomes an article on PrompTugal.news, step by step." (d29bc9f, v0.1.332, For: checker@PrompTugal.vicky), as the status table is gone from the workflow. Checked live: the lead, the meta description and the twin; the old sentence is gone.
+
+state: ok; done: /how-we-publish/ summary; next: none until Vicky asks; ask: none; run: prompted
