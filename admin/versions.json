@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.821",
+    "date": "2026-11-06",
+    "what": "ledger line for the 16:20 runner",
+    "by": "conductor@web-summit.angelo",
+    "from": "a7c6c5731"
+  },
+  {
     "version": "v0.2.820",
     "date": "2026-11-06",
     "what": "WS-74: the vault agent's count file is live and the n8n flow accepts it; the live test now reads it as a first run would",
