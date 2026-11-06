@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.805",
+    "date": "2026-11-06",
+    "what": "my wake is now twice a day, 10:50 and 16:50 UTC (cron 50 10,16 * * *)",
+    "by": "helper@web-summit.angelo",
+    "from": "54c4d8e30"
+  },
+  {
     "version": "v0.2.804",
     "date": "2026-11-06",
     "what": "the team's maps: a patch so every team's agents count, each with its kind, renamed ones once; kind rings ready on Angelo's map",
