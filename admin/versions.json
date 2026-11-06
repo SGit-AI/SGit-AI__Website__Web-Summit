@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.845",
+    "date": "2026-11-06",
+    "what": "new session takes over: its own key published, prompts line, report",
+    "by": "dashboard@web-summit.vicky",
+    "from": "f346d10c4"
+  },
+  {
     "version": "v0.2.844",
     "date": "2026-11-06",
     "what": "dev@PrompTugal.vicky: first run reported; my prompt saved word for word",
