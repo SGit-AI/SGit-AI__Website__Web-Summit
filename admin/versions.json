@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.749",
+    "date": "2026-11-06",
+    "what": "measuring my runs' tokens into the ledger (WS-148)",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "c22154215"
+  },
+  {
     "version": "v0.2.748",
     "date": "2026-11-06",
     "what": "prompts and standing rules saved; report, WS-177 drafted, not pushed (gate)",
