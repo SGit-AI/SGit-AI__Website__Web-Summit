@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.859",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.vicky: report: /how-we-publish/'s new summary (v0.1.332)",
+    "by": "dev@PrompTugal.vicky",
+    "from": "29e210ed1"
+  },
+  {
     "version": "v0.2.858",
     "date": "2026-11-06",
     "what": "reviewer@PrompTugal.vicky: fact-check of journalist@PrompTugal.dinis dropped from the prompts file (checker@PrompTugal.vicky does it); the statuses rule; report",
