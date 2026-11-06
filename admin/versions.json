@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.890",
+    "date": "2026-11-06",
+    "what": "scout's P26 and P27 accepted, P25 rejected; the brief's agent section becomes one table",
+    "by": "conductor@web-summit.vicky",
+    "from": "2d9bc3633"
+  },
+  {
     "version": "v0.2.889",
     "date": "2026-11-06",
     "what": "reviewer@PrompTugal.vicky: report, T1 to T5 Ready and held",
