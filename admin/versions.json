@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.716",
+    "date": "2026-11-06",
+    "what": "07:20 wake: brief 12; PromptUGAL (WS-177): a readers-test prompt for Indi's synthetic session",
+    "by": "conductor@web-summit.indi",
+    "from": "c8047a016"
+  },
+  {
     "version": "v0.2.715",
     "date": "2026-11-06",
     "what": "07:06 wake: the merch milestone moves from Friday 6 to Monday 9 Nov morning (WS-48)",
