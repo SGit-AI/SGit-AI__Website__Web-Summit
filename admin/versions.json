@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.846",
+    "date": "2026-11-06",
+    "what": "a design toggle for the lab, like the theme toggle but for the whole design",
+    "by": "design@web-summit.silvio",
+    "from": "898e0a5d9"
+  },
+  {
     "version": "v0.2.845",
     "date": "2026-11-06",
     "what": "new session takes over: its own key published, prompts line, report",
