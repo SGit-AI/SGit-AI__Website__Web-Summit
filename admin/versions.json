@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.688",
+    "date": "2026-11-06",
+    "what": "observability@PrompTugal.dinis on Dinis's roster, started in its own session",
+    "by": "conductor@web-summit.dinis",
+    "from": "9712813fa"
+  },
+  {
     "version": "v0.2.687",
     "date": "2026-11-06",
     "what": "the six PrompTugal agents on Dinis's roster; the contact check knows <role>@PrompTugal.<person> is a name",
