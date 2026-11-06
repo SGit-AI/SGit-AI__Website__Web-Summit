@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.781",
+    "date": "2026-11-06",
+    "what": "P5, each journalist moves its own task; scout runs daily at 22:00 UTC",
+    "by": "conductor@web-summit.vicky",
+    "from": "dceedb948"
+  },
+  {
     "version": "v0.2.780",
     "date": "2026-11-06",
     "what": "decisions.md is the first step of my runs; applied P1, P2 and P3",
