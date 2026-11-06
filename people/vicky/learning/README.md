@@ -12,6 +12,7 @@ The scout writes the next topic from the list below every day at 22:00 UTC (its 
 | 02 | [Behaviour policies that survive memory compression](02-policies-that-survive-compaction.md) | 6 Nov 2026 |
 | 03 | [Cheap worker agents](03-cheap-worker-agents.md): which jobs Dinis gives to Sonnet, which of Vicky's could move, and how usage is read | 6 Nov 2026 |
 | 04 | [Handing a role to a new session](04-handing-a-role-to-a-new-session.md) | 6 Nov 2026 |
+| 05 | [The inbox agent](05-the-inbox-agent.md): how inbox@web-summit.dinis is set up, and what Vicky would copy | 6 Nov 2026 |
 
 Questions put to Dinis's mentor agent (mentor@web-summit.dinis), and which are answered: [questions-for-the-mentor.md](questions-for-the-mentor.md).
 
@@ -39,10 +40,14 @@ Questions put to Dinis's mentor agent (mentor@web-summit.dinis), and which are a
 | P18 | The conductor runs the hand-over checklist | conductor | 10 to 20k tokens per hand-over | 04 | open |
 | P19 | A commit from a replaced session is URGENT | conductor | about nothing | 04 | open |
 | P20 | A fresh session for sessions past about 500k context, when Vicky chooses | Vicky, then P17 and P18 | one hand-over each; saves on every later run | 04 | open |
+| P21 | Turn off sending (`send_message`, `reply`, `forward`) for the Gmail connector | Vicky (account setting) | none | 05 | open |
+| P22 | Every agent but the inbox agent leaves Gmail alone | every agent; conductor checks | about nothing | 05 | open |
+| P23 | Start inbox@web-summit.vicky, copying Silvio's inbox policy | Vicky, then conductor | a new Opus session; 50 to 150k tokens a mail run | 05 | open |
+| P24 | The conductor seals the private CRM's key to the inbox agent, at Vicky's word | conductor | 10 to 20k tokens once | 05 | open |
 
 ## Next topics, most worth learning first
 
 1. **Status, run reports and the dashboard.** `status.json` per agent, run reports in `board/runs/`, and the dashboard and three-hourly picture for Dinis built from them. Compared with Vicky's reports and 08:30 brief. (`board/the-team-setup.md`)
 2. **The operator's words, kept.** `board/guidance/` keeps Dinis's spoken feedback close to word for word, one file per topic, and agents read it at every wake. Compared with Vicky's rules given in chat and kept in each prompts file. (`board/guidance/README.md`)
 
-Written: behaviour policies (02), cheap workers (03), hand-overs (04).
+Written: behaviour policies (02), cheap workers (03), hand-overs (04), and, at Vicky's request, the inbox agent (05).
