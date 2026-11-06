@@ -94,6 +94,14 @@ function collab(root, person, d, now) {
             const row = { name, job: (r && r.job) || a.job || '', schedule: (r && r.schedule) || a.schedule || '', declared: a.declared || !!r, commits: a.commits + (cur ? cur.commits : 0), last: cur && cur.last > a.last ? cur.last : a.last, key: keys.includes(a.name) || keys.includes(name) || !!(cur && cur.key), was: r ? a.name : (cur && cur.was) || '' }
             by.set(name.toLowerCase(), row)
         }
+        // and their work in the PrompTugal newsroom's repository (the snapshot): added to the same agent, or listed on its own
+        const PTS = readJson(root, 'people/angelo/app/promptugal.json')
+        for (const a of (PTS && PTS.agents || []).filter(a => a.person === id)) {
+            const asName = a.id.startsWith('pt:') ? `${a.short}@PrompTugal.${a.person}` : a.id, r = renamed.get(asName.toLowerCase()), name = r ? r.name : asName
+            const cur = by.get(name.toLowerCase()), last = a.last.slice(0, 16).replace('T', ' ')
+            if (cur) { cur.elsewhere = (cur.elsewhere || 0) + a.commits; if (last > (cur.last || '')) cur.last = last }
+            else by.set(name.toLowerCase(), { name, job: a.label || (r && r.job) || '', schedule: (r && r.schedule) || '', declared: !!r, commits: 0, elsewhere: a.commits, last, key: keys.includes(name), was: '' })
+        }
         return [...by.values()].sort((x, y) => (y.last || '').localeCompare(x.last || ''))
     }
 
@@ -222,6 +230,17 @@ export function build(root, person, now = new Date()) {
         const pt = id => { const m = String(id).match(/^([a-z0-9-]+)@promptugal\.([a-z0-9-]+)$/i); return m ? `pt:${m[2].toLowerCase()}:${m[1].toLowerCase()}` : id }
         M.agents = M.agents.map(a => ({ ...a, id: pt(a.id) }))
         M.links = M.links.map(l => ({ ...l, from: pt(l.from), to: pt(l.to) }))
+        // the PrompTugal newsroom's agents work in their own repository (Angelo, 6 November): merged from the snapshot
+        // people/angelo/app/promptugal.json, which dev@web-summit.angelo refreshes at its wakes; active ones only (7 days)
+        const PT = readJson(root, 'people/angelo/app/promptugal.json')
+        if (PT && PT.agents) {
+            const have = new Set(M.agents.map(a => a.id)), weekAgo = Date.now() - 7 * 864e5
+            for (const a of PT.agents) if (!have.has(a.id) && Date.parse(a.last) >= weekAgo && M.people.some(p => p.id === a.person)) { M.agents.push({ id: a.id, person: a.person, family: a.family, short: a.short, commits: a.commits, elsewhere: true }); have.add(a.id) }
+            const idx = new Map(M.links.map((l, i) => [`${l.from}|${l.to}`, i]))
+            for (const l of PT.links || []) if ((have.has(l.from) || M.people.some(p => p.id === l.from)) && (have.has(l.to) || M.people.some(p => p.id === l.to))) { const k = `${l.from}|${l.to}`; if (idx.has(k)) M.links[idx.get(k)].n += l.n; else { idx.set(k, M.links.length); M.links.push({ ...l }) } }
+            M.promptugal = { read_at: PT.read_at, commit: PT.commit, agents: PT.agents.length }
+            M.totals = { ...M.totals, agents: M.agents.length, promptugal: M.agents.filter(a => a.family !== 'web-summit').length, messages: M.links.reduce((n, l) => n + l.n, 0) }
+        }
         d.collab.map = M
     } catch (e) { d.collab.map = { error: String(e.message || e).slice(0, 160) } }
     d.summit_days = summitDays(root)
