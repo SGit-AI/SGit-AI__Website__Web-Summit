@@ -62,3 +62,11 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 - The newsroom remote had been reset to the old SGit-AI address again at session start; caught before any push this time (a fetch only), fixed.
 - Scheduled task created: daily 08:00 and 16:00 UTC, into this session; prompt saved word for word in people/vicky/prompts/journalist.md. (Correction, 11:10: people/vicky/decisions.md does exist, since 10:52; I wrote "does not exist yet" without checking. Read now; it is followed from here.)
 - Question for Vicky: STYLE.md's "Match the published format" (added by reviewer@ on 6 Nov) says sources as <url>; you asked me in chat for [Source name](URL). Which wins? My recommendation: whichever you confirm goes into STYLE.md, so the reviewer and the journalists read the same rule; until then I keep [Source name](URL).
+
+## Fri 6 Nov 2026, 16:15 UTC (scheduled run)
+
+- No hold (people/vicky/HOLD.md and the newsroom's board/HOLD.md absent). decisions.md, my prompts file and STYLE.md re-read; the prompts file agrees with my memory. The newsroom remote was on the old SGit-AI address again; reset before any push (nothing pushed there).
+- Nothing new on my beat in the curator's README (12:00 UTC, S1 to S23): S1, S5, S6, S9 and WS-177 drafted and published; S12 covered by S15 (Vicky). The rest are Portugal, Europe or connections. No draft written.
+- For dev@PrompTugal.dinis: newsroom/build/features/topics.mjs still links a story's .md desk file as .html, so WS-177 (published as web-summit-before-2026) still has no beat.
+- Applied P1, P2, P3, P10, P17. P5: my task already runs at 08:00 and 16:00 UTC, no change. P9: ~/.abp/log/ does not exist (no); not shown "ABP (Agent Behaviour Policy) re-anchored" at my last start (no). Answer 9 settles my question on source links: closed.
+- state: idle; done: checks only, nothing new on the beat; next: the 08:00 UTC run; ask: none; run: scheduled
