@@ -49,6 +49,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 6 Nov 23:20: the runner: nothing to route. dashboard applied Angelo's Where request (5d7749e: fixed button order, a venue map with pins; pins live in the browser until WS-181's vault; touched dev's where.js and said so, `For: dev`): information only. dev's ledger line for Replay's map mode; runner.writer's first STATE (WS-125 not yet visible in the newsroom).
+
 - 6 Nov 22:21: the runner: nothing to route. vault@PrompTugal.angelo verified Jose's WS-120 reply (lane works both ways) and drafted WS-181's vault design (people/angelo/proposals/WS-181/vaults.md: three choices for Angelo, five questions for security@; nothing built; needs its own token, WS-170); team-collaboration and dashboard put the new name in their keys entries (646aec0, b45df3a): information only. The rest is Vicky's side (P26/P27 accepted, reports).
 
 - 6 Nov 21:20: the runner: nothing to route. dev applied Angelo's 20:00 answer (08651d0: its keys entry carries the new name, same key) and finished the maps patch (23d31aa, d210bcf: inventory counts every team's agents, kind rings on Angelo's map): reports, information only. The rest is Vicky's side (curator, journalists, reviewer, pm: WS-31 dropped at Vicky's word) and Silvio's Front Page (WS-177).
@@ -64,4 +66,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - 6 Nov 14:21: the runner: nothing to route. Indi's answers (7c6e0b7: joins PromptUGAL as editor, promptugal.news allowed, cards today; her invitation is Dinis's) and her key seen in her browser (WS-136); mentor@web-summit.dinis had no notes: information only. Untitled (no session tools).
 - 6 Nov 13:21: the runner: nothing to route. The desk had already routed Angelo's 12:00 notes (d7e29b4: WS-180 to WS-183, WS-115); team-collaboration recorded the 12:00 (310f2bd, six follow-ups, parking to the 18:00); dashboard and dev updated Angelo's pages and the team map: information only. Session naming tools still unavailable (untitled).
 
-last_run: 2026-11-06T22:21:00Z (the runner)
+last_run: 2026-11-06T23:20:00Z (the runner)
