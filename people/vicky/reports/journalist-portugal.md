@@ -36,3 +36,10 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 - Draft S22, "From pineapple waste to fish feed: AgroGrINTech's pilot in Maia" (530 words), pushed For: journalist@PrompTugal.dinis. Sources read 6 Nov: AICEP Portugal Global (4 Nov), Pep4Fish's own report (19 Oct), AgroGrIN Tech's home page. Not confirmed: Web Summit attendance; the 1.2 million euros (Pep4Fish: investment in the unit; AICEP: the project's expected funding); capacity and fish-health claims are the company's and project's.
 - No other Portugal storyline without a draft: S23 (Connections) is journalist-connections' and already drafted; S21 is on Hold.
 - state: ok; done: S22 drafted and pushed, P1 P2 P3 P5 P9 applied; next: next scheduled run 7 Nov 08:06 UTC; ask: none; run: scheduled
+
+## Fri 6 Nov 2026, 17:15 UTC (S22 review)
+
+- S22 fixed after its review (Fix first): pineapple flour "allowing more of the fruit to be used"; Débora Campos's quote marked as cut and translated from Portuguese; the name's spellings corrected (AICEP: AgroGrINTech; Pep4Fish: both; the company: AgroGrIN Tech). 619 words.
+- The pairing with Seamoretech (S23, dropped): reviewer@PrompTugal.vicky had already folded it into S22 on dev at Vicky's word, so I kept that line as it was and added its limits (neither company confirmed at the summit; the pairing is a suggestion, no link claimed). My own version of the line clashed with it on rebase and was dropped.
+- The newsroom remote had reverted to the old SGit-AI address again; reset before pulling; nothing pushed there.
+- state: ok; done: S22 fixed and pushed; next: scheduled run 7 Nov 08:06 UTC; ask: none; run: prompted
