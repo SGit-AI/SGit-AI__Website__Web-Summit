@@ -2,7 +2,7 @@
  "schema": "web-summit.sgit.ai/watcher-actions/v1",
  "by": "watcher@web-summit.jose",
  "about": "At Jose's word (5 November 2026): every time an agent looks stopped or late, the watcher opens an action here with what it found and what it recommends, addressed to Jose's conductor and to the agent's owner's conductor in its commit (For:). Every run re-checks each open action: closed when the agent commits again or its scheduled task is seen to fire; still open after two runs, it is raised again at the top of the commit. The watcher only reports and recommends; it never changes an agent, a task or a session (WS-129). An action's 'opened' is the run that first flagged the agent (12:15), before the loop existed.",
- "updated": "2026-11-06T12:15Z",
+ "updated": "2026-11-06T17:15Z",
  "actions": [
   {
    "id": "A-2026-11-05-01",
@@ -90,11 +90,11 @@
    ],
    "status": "open",
    "opened": "2026-11-05T14:22Z",
-   "runs_open": 5,
-   "seen": "the stored prompts of the scheduled tasks of conductor, dev and dashboard are the 3 November versions (no reviewer step for conductor and dev, no WS-160 log), and vault's has no log step; the kit's versions (people/jose/kit/README.md) have them; at 17:15 the stored prompts are unchanged, and since 15:22 the kit also adds the one-door step (C19) to every agent's wake, which no stored prompt has; unchanged again at 22:15; at 07:15 on 6 November still unchanged. The conductor has taken it up: the kit's wake texts are ready to paste in people/jose/schedules.md#paste (0848e6a), on Jose's Actions list. Most urgent: the stored hourly drain prompt still runs the full drain, which pushes a vault, while the kit since 01:30 (0848e6a) says count only (--dry) until the conductor has its own SG/Send token (Dinis's rule); its task fired at 07:10; at 12:15 the helper's stored prompt has been updated (08:52, with the one-door step), but the conductor's wake, dev, dashboard, vault and the hourly drain are unchanged; the hourly drain fired again at 12:08 with the full-drain text",
+   "runs_open": 6,
+   "seen": "the stored prompts of the scheduled tasks of conductor, dev and dashboard are the 3 November versions (no reviewer step for conductor and dev, no WS-160 log), and vault's has no log step; the kit's versions (people/jose/kit/README.md) have them; at 17:15 the stored prompts are unchanged, and since 15:22 the kit also adds the one-door step (C19) to every agent's wake, which no stored prompt has; unchanged again at 22:15; at 07:15 on 6 November still unchanged. The conductor has taken it up: the kit's wake texts are ready to paste in people/jose/schedules.md#paste (0848e6a), on Jose's Actions list. Most urgent: the stored hourly drain prompt still runs the full drain, which pushes a vault, while the kit since 01:30 (0848e6a) says count only (--dry) until the conductor has its own SG/Send token (Dinis's rule); its task fired at 07:10; at 12:15 the helper's stored prompt has been updated (08:52, with the one-door step), but the conductor's wake, dev, dashboard, vault and the hourly drain are unchanged; the hourly drain fired again at 12:08 with the full-drain text; at 17:15 still unchanged (only the helper's was updated); the hourly drain fired again at 17:08",
    "likely_cause": "the tasks were made before the kit changed; the agents re-read the kit at each wake, so they may follow it anyway, but the stored prompts disagree",
    "recommend": "Jose: paste the texts from people/jose/schedules.md#paste into the scheduled tasks, the hourly drain first",
-   "raised": "open five runs: raised at the top of the 12:15 commit"
+   "raised": "open six runs: raised"
   },
   {
    "id": "A-2026-11-05-07",
@@ -190,11 +190,11 @@
    ],
    "status": "open",
    "opened": "2026-11-05T22:15Z",
-   "runs_open": 3,
-   "seen": "no commit since it joined at 16:33 on 5 November (about 20 hours, 10 mail-check slots)",
+   "runs_open": 4,
+   "seen": "no commit since it joined at 16:33 on 5 November (about 25 hours)",
    "likely_cause": "probably idle here: its work is drafts in Silvio's mailbox and actions in the CRM, which a mail check need not commit to this repository",
    "recommend": "conductor@web-summit.silvio: check the mail checks run; have it log every run (WS-160) so the watcher can see them",
-   "raised": "open three runs: raised"
+   "raised": "open four runs: raised"
   },
   {
    "id": "A-2026-11-06-13",
@@ -223,11 +223,11 @@
    ],
    "status": "open",
    "opened": "2026-11-06T07:15Z",
-   "runs_open": 2,
-   "seen": "no commit since 23:53 on 5 November; its wakes (cron 40 */3) at 00:40, 03:40, 06:40 and 09:40 passed",
+   "runs_open": 3,
+   "seen": "no commit since 23:53 on 5 November; six wakes (00:40 to 15:40) passed",
    "likely_cause": "unknown; its mandate is a refactoring pass every wake, so a quiet wake is unusual; not confirmed (Dinis's account)",
    "recommend": "conductor@web-summit.dinis: check its 00:40 to 09:40 wakes",
-   "raised": "open two runs: raised"
+   "raised": "open three runs: raised"
   },
   {
    "id": "A-2026-11-06-15",
@@ -239,10 +239,11 @@
    ],
    "status": "open",
    "opened": "2026-11-06T12:15Z",
-   "runs_open": 1,
-   "seen": "committed at 07:11, then nothing in the hourly slots 08:06 to 12:06 (5)",
+   "runs_open": 2,
+   "seen": "committed at 07:11, then nothing in the hourly slots 08:06 to 17:06 (10)",
    "likely_cause": "as on 5 November (A-01): probably idle with no cockpit answers to apply; not confirmed",
-   "recommend": "conductor@web-summit.dinis: have it log every run (WS-160), so its quiet hours show and this stops reopening"
+   "recommend": "conductor@web-summit.dinis: have it log every run (WS-160), so its quiet hours show and this stops reopening",
+   "raised": "open two runs: raised"
   },
   {
    "id": "A-2026-11-06-16",
@@ -252,12 +253,29 @@
     "conductor@web-summit.jose",
     "conductor@web-summit.angelo"
    ],
-   "status": "open",
+   "status": "closed",
    "opened": "2026-11-06T12:15Z",
    "runs_open": 1,
    "seen": "no commit since 08:38; every two hours at :35, so the 10:35 slot passed",
    "likely_cause": "late by one slot",
-   "recommend": "none yet; re-checked at 17:15"
+   "recommend": "none yet; re-checked at 17:15",
+   "closed": "2026-11-06T17:15Z",
+   "cause": "recovered: 8 commits under its old web-summit name, last 16:36 (only its row in people/angelo/agents.json was renamed)"
+  },
+  {
+   "id": "A-2026-11-06-17",
+   "agent": "procurement@web-summit.silvio",
+   "owner": "silvio",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.silvio"
+   ],
+   "status": "open",
+   "opened": "2026-11-06T17:15Z",
+   "runs_open": 1,
+   "seen": "its dashboard runs at 07:30, 12:30 and 17:30; last commit 07:41, so the 12:30 slot passed",
+   "likely_cause": "late by one slot, or a dashboard run with nothing new",
+   "recommend": "none yet; re-checked at 22:15"
   }
  ],
  "could_not_check": [
