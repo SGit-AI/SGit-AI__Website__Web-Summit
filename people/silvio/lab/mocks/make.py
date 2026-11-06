@@ -389,12 +389,12 @@ mark{background:linear-gradient(transparent 58%,#5be0b3 58%);color:inherit;paddi
 .st.big{grid-template-columns:1fr}.st.big h2{font-size:32px}
 .nx li{list-style:none;padding:10px 0;border-bottom:1px solid var(--rule);font:15px/1.3 var(--serif)}.nx ul{margin:0;padding:0}
 .nx time{display:inline-block;font:700 11px var(--mono);background:#0d3b33;color:#fff;padding:2px 6px;border-radius:3px;margin-bottom:4px}
-.nums{background:#5be0b3;color:#0d3b33}.nums .w{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:28px 16px}
-.nums b{display:block;font:700 64px/1 var(--serif);letter-spacing:-.03em}.nums span{font:600 13px var(--sans);text-transform:uppercase;letter-spacing:.08em}
+.nums{background:#f1ece0;color:#0d3b33;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}.nums .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;padding:12px 16px}
+.nums .w>div{display:flex;align-items:baseline;gap:8px}.nums b{font:700 26px/1 var(--serif);letter-spacing:-.02em;color:#0d3b33}.nums span{font:600 11px var(--sans);text-transform:uppercase;letter-spacing:.08em;color:#8a5a12}
 .wmx{height:28px;width:auto}
 ''' + TK_CSS + '''
-@media (max-width:1000px){.band .w,.cols{grid-template-columns:1fr}.cols>section{padding:0!important;border:0!important;margin-bottom:26px}.band h1{font-size:38px}.band figure{margin:0 auto}.nums .w{grid-template-columns:1fr 1fr}}
-@media (max-width:600px){.mast .wmx{height:42px}.nv{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto}.band h1{font-size:30px}.st{grid-template-columns:1fr 96px}.nums b{font-size:44px}.dl span:last-child{display:none}}
+@media (max-width:1000px){.band .w,.cols{grid-template-columns:1fr}.cols>section{padding:0!important;border:0!important;margin-bottom:26px}.band h1{font-size:38px}.band figure{margin:0 auto}}
+@media (max-width:600px){.mast .wmx{height:42px}.nv{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto}.band h1{font-size:30px}.st{grid-template-columns:1fr 96px}.nums b{font-size:22px}.dl span:last-child{display:none}}
 '''
     sec = arts[:4]
     body = f'''<div class="w"><div class="dl"><span>Friday 6 November 2026</span><span>Opening Night in <span data-cd>3 days</span></span><span>Lisbon · Independent</span></div>
