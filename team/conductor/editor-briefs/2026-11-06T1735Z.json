@@ -7,21 +7,78 @@
  "by": "conductor@web-summit.dinis",
  "headline": "inbox@web-summit.dinis is running (session_018yvwtMs43w1K2mZWczRrD8), published its key and now has the team CRM's keys sealed to it. António Pinto Guerreiro's paragraph is live on promptugal.news/portugal/algarve-evolution/, so emails 2 and 1 can both go once you connect Gmail to inbox@'s session. investors@ shipped the investors' section and two decks. The 18:00 deck (8 slides) and your briefing PDF are ready.",
  "stats": [
-  {"n": "57", "label": "team-site commits since 14:35"},
-  {"n": "2", "label": "new agents for Dinis today (investors, inbox)"},
-  {"n": "3", "label": "emails to António drafted in the private CRM"},
-  {"n": "8", "label": "slides for the 18:00"}
+  {
+   "n": "57",
+   "label": "team-site commits since 14:35"
+  },
+  {
+   "n": "2",
+   "label": "new agents for Dinis today (investors, inbox)"
+  },
+  {
+   "n": "3",
+   "label": "emails to António drafted in the private CRM"
+  },
+  {
+   "n": "8",
+   "label": "slides for the 18:00"
+  }
  ],
  "for_you": [
-  {"id": "1", "ask": "Connect Gmail to inbox@'s session", "detail": "It creates drafts only, never sends. Say which mailbox.", "options": ["your own mailbox", "a promptugal.news mailbox"], "recommend": "Your own, for António: he knows you."},
-  {"id": "2", "ask": "Send António's emails", "detail": "Email 2 (the wish list) and email 1 (what you are seeing); email 3 with the first newsletter.", "options": ["tonight", "tomorrow morning"], "recommend": "Tonight, while the call is fresh."}
+  {
+   "id": "1",
+   "ask": "Connect Gmail to inbox@'s session",
+   "detail": "It creates drafts only, never sends. Say which mailbox.",
+   "options": [
+    "your own mailbox",
+    "a promptugal.news mailbox"
+   ],
+   "recommend": "Your own, for António: he knows you."
+  },
+  {
+   "id": "2",
+   "ask": "Send António's emails",
+   "detail": "Email 2 (the wish list) and email 1 (what you are seeing); email 3 with the first newsletter.",
+   "options": [
+    "tonight",
+    "tomorrow morning"
+   ],
+   "recommend": "Tonight, while the call is fresh."
+  }
  ],
- "you_asked": [{"id": "inbox agent", "status": "started, briefed, CRM keys sealed; waiting for Gmail"}],
+ "you_asked": [
+  {
+   "at": "6 Nov, ~16:45",
+   "said": "start that agent, brief it with this, via the private CRM and then I'll connect Gmail to that session",
+   "done": "inbox@web-summit.dinis started and briefed; it published its key; the team CRM's keys sealed to it (43d1bf27).",
+   "where": "session_018yvwtMs43w1K2mZWczRrD8",
+   "status": "waiting for Gmail"
+  }
+ ],
  "team": [
-  {"id": "Angelo", "status": "active", "doing": "agents renamed to @PrompTugal.angelo; 18 companies checked"},
-  {"id": "Jose", "status": "active", "doing": "WS-74 vault count live in n8n; his helper's Gmail connector signed out"},
-  {"id": "Vicky", "status": "active", "doing": "S22 and S23 through review"}
+  {
+   "id": "Angelo",
+   "status": "active",
+   "doing": "agents renamed to @PrompTugal.angelo; 18 companies checked"
+  },
+  {
+   "id": "Jose",
+   "status": "active",
+   "doing": "WS-74 vault count live in n8n; his helper's Gmail connector signed out"
+  },
+  {
+   "id": "Vicky",
+   "status": "active",
+   "doing": "S22 and S23 through review"
+  }
  ],
- "next": ["18:00 stand-up, then record its decisions.", "18:27 wake: the record and Saturday's schedule."],
- "sources": ["git log since 2026-11-06T14:35Z", "promptugal.news/portugal/algarve-evolution/ read at 17:28 UTC", "43d1bf27 (keys sealed to inbox-dinis)"]
+ "next": [
+  "18:00 stand-up, then record its decisions.",
+  "18:27 wake: the record and Saturday's schedule."
+ ],
+ "sources": [
+  "git log since 2026-11-06T14:35Z",
+  "promptugal.news/portugal/algarve-evolution/ read at 17:28 UTC",
+  "43d1bf27 (keys sealed to inbox-dinis)"
+ ]
 }
