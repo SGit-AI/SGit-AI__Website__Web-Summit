@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.848",
+    "date": "2026-11-06",
+    "what": "19:21 run, nothing to route; STATE upkeep",
+    "by": "conductor@web-summit.angelo",
+    "from": "ece9b7c74"
+  },
+  {
     "version": "v0.2.847",
     "date": "2026-11-06",
     "what": "team-collaboration@PrompTugal.angelo: team-map.mjs keeps agent names as written, so the gate's comms_check passes",
