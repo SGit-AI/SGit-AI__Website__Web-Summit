@@ -2,8 +2,14 @@
   {
     "name": "conductor@web-summit.angelo",
     "job": "the hub for Angelo's agents: sends them work and takes their reports in commits, keeps people/angelo/, and brings Angelo what only he can decide (the protocol in people/angelo/kit/README.md)",
-    "session": "Claude Code cloud session in Angelo's account",
-    "schedule": "hourly, round the clock (cron 20 * * * *), a scheduled task into its own session; digests to Angelo at about 08:00, 11:20 and 17:20 UTC (before each stand-up) (Angelo, 4 November)"
+    "session": "the desk: one long Claude Code cloud session in Angelo's account, the one Angelo talks to; it holds the conductor's keys",
+    "schedule": "no scheduled wakes: the digest when Angelo asks (Angelo, 6 November); the hourly routing is the runner's (conductor-runner@web-summit.angelo)"
+  },
+  {
+    "name": "conductor-runner@web-summit.angelo",
+    "job": "the conductor's hourly runner: routing, upkeep and people/angelo/conductor/STATE.md, with no key (people/angelo/conductor/RUNNER.md); it commits as conductor@web-summit.angelo, so its commits count under the conductor; urgent items to Angelo's phone",
+    "session": "a fresh Claude Code cloud session for every run, started by a scheduled task in Angelo's account (each run listed in people/angelo/conductor/runs.md)",
+    "schedule": "hourly, round the clock (cron 20 * * * *), a new session each run (Angelo, 6 November)"
   },
   {
     "name": "dev@web-summit.angelo",
