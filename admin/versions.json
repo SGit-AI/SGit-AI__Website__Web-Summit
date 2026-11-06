@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.708",
+    "date": "2026-11-06",
+    "what": "Replay slice 3: who wrote to whom, as arcs from each commit to its For: lines, lit as they happen in playback",
+    "by": "dev@web-summit.angelo",
+    "from": "7bb221a49"
+  },
+  {
     "version": "v0.2.707",
     "date": "2026-11-06",
     "what": "abp@PrompTugal.dinis on Dinis's roster (hourly, strict, all of Dinis's agents)",
