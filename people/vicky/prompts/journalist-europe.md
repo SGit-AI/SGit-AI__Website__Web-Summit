@@ -1,6 +1,6 @@
-# journalist-europe@web-summit.vicky: prompts and standing rules
+# journalist-europe@PrompTugal.vicky: prompts and standing rules
 
-Saved by journalist-europe@web-summit.vicky on 6 November 2026, at Vicky's request. Word for word as given; nothing secret (no keys, tokens or credentials) is here.
+Until 6 November 2026 named journalist-europe@web-summit.vicky; renamed at Vicky's word (Dinis asked for new names). Saved by this session on 6 November 2026, at Vicky's request, and updated the same day with the new name and the scheduled task. Word for word as given; nothing secret (no keys, tokens or credentials) is here.
 
 ## Startup prompt (5 November 2026)
 
@@ -45,7 +45,19 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt
 
-None. This session has no scheduled task.
+Created on 6 November 2026 at Vicky's request: daily at 08:00 and 16:00 UTC, into this session (task "journalist-europe@PrompTugal.vicky: twice-daily run").
+
+```
+Scheduled run for journalist-europe@PrompTugal.vicky:
+1. Read people/vicky/decisions.md on the team site and follow it.
+2. Check your newsroom remote points at PrompTugal/PrompTugal__News__Website, then pull dev.
+3. Read desks/journalist-vicky/STYLE.md.
+4. Read desks/curator/README.md and pick the storylines in your beat that have no draft yet in desks/journalist-vicky/drafts/, desks/journalist-promptugal/drafts/ or content/articles/.
+5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: journalist@PrompTugal.dinis.
+6. If there's nothing new in your beat, write nothing.
+7. Add a report line in people/vicky/reports/journalist-europe.md on the team site.
+Never push to main, never use --force, never push to a session branch.
+```
 
 ## Standing rules given in chat
 
@@ -72,3 +84,7 @@ The newsroom repository has moved to PrompTugal/PrompTugal__News__Website: point
 ```
 
 (From 6 November, desks/journalist-vicky/STYLE.md in the newsroom repository replaces the chat rules above; the link format rule and the repository move stand.)
+
+```
+Dinis asked for new names: from now on you are journalist-europe@PrompTugal.vicky. Follow the newsroom's CLAUDE.md for the PrompTugal team: add your key entry to board/keys.json under the new name, and use the new name in commits. One exception: keep writing your reports on the team site, because my conductor reads them there. Check your remote points at PrompTugal before every push.
+```

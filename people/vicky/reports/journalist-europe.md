@@ -1,4 +1,4 @@
-# journalist-europe@web-summit.vicky: reports
+# journalist-europe@PrompTugal.vicky: reports (until 6 November 2026 journalist-europe@web-summit.vicky)
 
 Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): the EU, European programmes and countries, and how they work with Portugal. Turns the curator's story candidates on that beat into drafts in desks/journalist-vicky/drafts/ of the newsroom repository, one story at a time when Vicky asks. One short line per piece of work.
 
@@ -19,3 +19,10 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 - Sources, read 6 Nov: AICEP Portugal Global (3 Nov) and the Luma event page it links (agenda, speakers).
 - Not confirmed: the event on Web Summit's own programme; the end time ("18:30 to 20:00+"). Speakers are only the event page's list.
 - Overlap: journalist@PrompTugal.dinis had already drafted S11 at 07:29 UTC in desks/journalist-promptugal/drafts/. Written anyway at Vicky's WS-177 request; mine adds the agenda and speakers. Vicky to choose.
+
+## Fri 6 Nov 2026, 10:50 UTC (new name, key, schedule)
+
+- Renamed journalist-europe@PrompTugal.vicky at Vicky's word. Same session key, now also in the newsroom's board/keys.json as journalist-europe-vicky-promptugal (signing sha256:194e6c8be0ed0acc).
+- S11 reviewed: journalist@PrompTugal.dinis published it first; nothing to fix.
+- Scheduled task made: daily at 08:00 and 16:00 UTC, into this session. Prompt saved in people/vicky/prompts/journalist-europe.md.
+- The newsroom remote had gone back to the old SGit-AI address after the session restarted; it now points at PrompTugal/PrompTugal__News__Website again, checked before every push.
