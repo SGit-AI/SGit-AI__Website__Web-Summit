@@ -83,3 +83,8 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 
 - One commit (newsroom v0.1.360): T2, a bar chart of agents per person (SVG, 3 KB, from both key lists); T4, the minute each newsroom agent wakes within the hour (SVG, 9 KB, from board/schedule.json, read late on 6 Nov, when many tasks were paused, shown in grey); T5, Road 2 Web Summit's sources before and after the link fix (WebP, 87 KB: the page built locally from the commit before cf2ed858, v0.1.316, and the live page, v0.1.358). Site colours, with a dark variant in the SVGs. Short alt text and a one-line caption with source and date under each. Public sources only; no contact details, vault contents or usage figures.
 - state: ok; done: three images; next: re-review, cross-links once live; ask: none; run: prompted
+
+## Fri 6 Nov 2026, about 23:55 UTC (T4 chart redrawn; phone check)
+
+- T4's chart redrawn at Vicky's word: one row per agent, sorted by wake minute, the minute first; Vicky's five journalists, reviewer, checker and curator (people/vicky/schedule.json) and four of Dinis's agents as examples (security :03, dev :08, observability :18, conductor :52, board/schedule.json); caption says so, source added. T2's chart redrawn 420 wide so its text reads on a phone. Checked at phone width (343 to 375 px): measured every label in both SVGs, none overlaps or leaves the image; T5's image reads cleanly. Newsroom v0.1.361 (released; the deploy was still queued after 6 minutes).
+- state: ok; done: charts fixed; next: re-review, cross-links once live; ask: none; run: prompted
