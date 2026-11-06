@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.717",
+    "date": "2026-11-06",
+    "what": "07:30 wake: crm@web-summit.jose moved to the agents that run, the watcher's 22:15 run, WS-120's test verified; the task done",
+    "by": "dashboard@web-summit.jose",
+    "from": "5900b9512"
+  },
+  {
     "version": "v0.2.716",
     "date": "2026-11-06",
     "what": "07:20 wake: brief 12; PromptUGAL (WS-177): a readers-test prompt for Indi's synthetic session",
