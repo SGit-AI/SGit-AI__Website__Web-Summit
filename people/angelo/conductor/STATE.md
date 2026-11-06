@@ -31,10 +31,10 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - How the desk talks with Angelo: one topic at a time, what was done, what waits on him with a recommendation, what others closed; propose before acting; a visual summary when he asks for an overview.
 - His card (WS-08): complete, all five answers (6 Nov). His recalibration note is his to bring to Dinis directly: it exists nowhere else, never write it.
 - PromptUGAL (topic 11, opened 6 Nov 11:00): Angelo's word: Web Summit, RiskMandate and PromptUGAL are one effort, paid by Dinis; he writes nowhere else; consulting, if customers want it, as a freelancer under the RiskMandate hat (his to tell Dinis, not on the card unless he says). He is invited to the PrompTugal GitHub org (editors and admins teams) and has an agent address on promptugal.news. Done at his "Ok for 2, 3, 4" (2219eb22), his arrangements with Dinis kept out: (1) he accepts the invite (riskmandate-angelo is the invited account); (2) admin stays his, never his agents' (policy@ to audit); (3) a note to conductor@web-summit.dinis: Angelo joins as editor, offers to own the technical notes section (/newsroom/notes/, planned, unowned), asks to be an outreach sender; (4) card answers 1 and 4 updated for PromptUGAL. Then topic 12: his agents set up as @PrompTugal.angelo, as Vicky's were (a146ac28), designed with him first.
-- abp@web-summit.dinis's 630ca8a8 changes (the phase line; dashboard@angelo's mandate) wait for Angelo's word (16:12 commit); the comms protocol WS-184 (every private conversation in the team's CRM) is for him to read.
 - WS-08: crm's 18-company result (0deb159) is in; the desk to show Angelo it and route accenture.json to data/companies.json's keeper (shared data: option 1).
 - Still to do with him: offer his protocol as a team template (c): not yet, Angelo (6 Nov): "there's still some work we're going to do to improve it. Ask me again later" (ask again after the summit, or when it changes); his card (WS-08); booking on his meet page (option C) and the "talk to my agent" line, after security's WS-119 review of the public inbox; the 17 `claude/*` branches (a list of what each holds, if he wants it).
-- Key labels (tier 3): dev@PrompTugal.angelo asks (acdd549) to relabel its key entry dev-angelo (sha256:b478b82a3a9995eb) or make a new key under the new name; the same for team-collaboration and dashboard (dashboard-angelo kept its old label, c525afa927190f36). Until Angelo says, they sign with --key.
+
+- Writer: Angelo starts writer@PrompTugal.angelo (a session per piece) and creates runner.writer@PrompTugal.angelo's scheduled task (people/angelo/prompts/); to do, his.
 
 ## Waiting on others
 
@@ -45,6 +45,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - Indi's side: whether accountant@web-summit.indi reads `people/angelo/ledger/` (WS-148).
 
 ## Recent
+
+- 6 Nov 20:05: Angelo: key labels kept, the new agent name added to each entry; abp@web-summit.dinis's 630ca8a8 accepted; the runner's scheduled prompt now names runner.conductor@PrompTugal.angelo (his edit); less bureaucracy: other people's files changed directly with five anti-clash steps (kit).
 
 - 6 Nov 19:21: the runner: nothing to route. dev and dashboard switched to @PrompTugal.angelo names (acdd549, 1c61aa3; the command centre reads both names as one agent); dev asks whether to relabel its key entry dev-angelo or make a new key (tier 3, added to Open with Angelo); team-collaboration's 18:00 record is pending (no decision yet) and its team-map fix is released (v0.2.847); Silvio's design desk and Vicky's agents' hand-overs: information only. Untitled (no session tools).
 - 6 Nov 18:21: the runner: nothing to route. team-collaboration switched to @PrompTugal.angelo names (d2016ee; its key label stays until Angelo says: relabelling is tier 3, for the desk) and briefed the 18:00 (note-taker, garment files WS-48, outreach claim WS-26, parking 45/21); accountant@web-summit.indi's brief 3: Angelo's agents measure, Indi's do not, Angelo's workload ask waits for Indi's word; vault@web-summit.jose still lacks its own token (WS-170): information only. Untitled (no session tools).
