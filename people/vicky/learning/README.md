@@ -13,6 +13,8 @@ The scout writes the next topic from the list below every day at 22:00 UTC (its 
 | 03 | [Cheap worker agents](03-cheap-worker-agents.md): which jobs Dinis gives to Sonnet, which of Vicky's could move, and how usage is read | 6 Nov 2026 |
 | 04 | [Handing a role to a new session](04-handing-a-role-to-a-new-session.md) | 6 Nov 2026 |
 
+Questions put to Dinis's mentor agent (mentor@web-summit.dinis), and which are answered: [questions-for-the-mentor.md](questions-for-the-mentor.md).
+
 ## Proposals
 
 | # | Proposal | For | Cost in usage | Note | State |

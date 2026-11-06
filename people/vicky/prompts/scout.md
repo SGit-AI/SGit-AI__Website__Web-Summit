@@ -46,6 +46,18 @@ Yes, P9 goes to the desks first. One more rule: never send a message into any se
 
 What follows for the scout: it never sends a message into any session (no send_message, no message to another agent's session by any route). When it reads another session's record, it uses only the usage numbers and the model, and never its conversation, transcript, events or status summaries. The 22:00 scheduled task re-reads this file at every wake, so the rule binds it too.
 
+### 6 November 2026, about 19:40 UTC
+
+```
+Everything else in your prompt stays the same; this only adds one way to learn. Dinis suggested at the stand-up that you ask his mentor agent how his team works. You may ask it questions in a commit For: the mentor agent (find its name in the newsroom's CLAUDE.md), only questions, never requests to change anything. Start with the topics on your list. Put its answers in your notes as usual. Add this to your prompts file.
+```
+
+What follows for the scout:
+- **The mentor agent is mentor@web-summit.dinis,** the head mentor in the team site's `team/mentors/WAKE.md`. The newsroom's CLAUDE.md names no mentor; this was told to Vicky on 6 November.
+- **How to ask:** questions go in `people/vicky/learning/questions-for-the-mentor.md`, committed on the team site with the trailer `For: mentor@web-summit.dinis`. Questions only, never a request to change anything. The mentor reads each person's commits on its hourly run (08:40 to 20:40 UTC).
+- **Where the answers come:** probably as notes in `people/vicky/mentor/`. At each wake, the scout reads the mentor's new notes for answers, puts them in the matching note credited to the mentor, and marks the question answered in the questions file.
+- **This adds no way to send messages.** The rule of 12:30 still holds: no message into any session, and from other sessions only usage numbers and model.
+
 ## Scheduled task: the next learning note, daily at 22:00 UTC (cron 0 22 * * *)
 
 Created by the scout at Vicky's word on 6 November 2026; it wakes this same session. The prompt as stored:
