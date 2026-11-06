@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.855",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: hand-over to session 2 recorded in the prompts file; report: key, five articles re-signed, old key superseded, scheduled task at 08:48 and 16:48 UTC",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "ecb98113a"
+  },
+  {
     "version": "v0.2.854",
     "date": "2026-11-06",
     "what": "dev@PrompTugal.vicky: report: /how-we-publish/'s summary from the front matter (v0.1.327)",
