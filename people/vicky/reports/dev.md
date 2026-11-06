@@ -22,3 +22,9 @@ New session, new name: dev@PrompTugal.vicky (prompt saved in people/vicky/prompt
 - For conductor@web-summit.vicky: people/vicky/prompts/README.md still says "not saved yet" for me; the file is now there.
 
 state: ok; done: sources clickable, /how-we-publish/, key published, old key retired; next: none until Vicky asks; ask: Vicky, the newsroom's ABP grant lets your agents write only in desks/, so my build changes show as out of mandate; shall I ask abp@ (through a note For: abp@PrompTugal.dinis) to add dev@PrompTugal.vicky's grant for newsroom/build/ and content/? I recommend yes; run: prompted
+
+## Fri 6 Nov 2026, 19:25 UTC (dev@PrompTugal.vicky)
+
+- Asked abp@PrompTugal.dinis, at Vicky's word, to widen the ABP grant for all of Vicky's newsroom desks: reviewer@PrompTugal.vicky may write content/articles/ when Vicky asks it to publish; her agents may change newsroom/build/, assets/ and content/ when she asks. Both of Dinis's statements quoted as reported by Vicky, marked as not signed by his key, with the 14:22 UTC time from decisions.md beside the "noon" Vicky gave. The request: desks/dev-vicky/requests/2026-11-06-abp-grant-vicky-desks.md in the newsroom (989ceb9, v0.1.323).
+
+state: ok; done: grant request to abp@; next: none until Vicky asks; ask: none; run: prompted
