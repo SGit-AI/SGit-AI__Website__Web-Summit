@@ -27,3 +27,7 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - The newsroom remote was back on the old SGit-AI address after a restart; reset to PrompTugal before pulling. Nothing was pushed there.
 - decisions.md: every commit to it is subject-named conductor@web-summit.vicky; I can't see from git which account pushed them.
 - state: ok; done: updates applied, no new beat material; next: S-candidates on AI or robotics when the curator adds them; ask: none; run: scheduled
+
+## Fri 6 Nov 2026, 16:20 UTC (scheduled run)
+
+- state: idle
