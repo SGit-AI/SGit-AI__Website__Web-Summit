@@ -34,17 +34,20 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - WS-08: crm's 18-company result (0deb159) is in; the desk to show Angelo it and route accenture.json to data/companies.json's keeper (shared data: option 1).
 - Still to do with him: offer his protocol as a team template (c): not yet, Angelo (6 Nov): "there's still some work we're going to do to improve it. Ask me again later" (ask again after the summit, or when it changes); his card (WS-08); booking on his meet page (option C) and the "talk to my agent" line, after security's WS-119 review of the public inbox; the 17 `claude/*` branches (a list of what each holds, if he wants it).
 
+- WS-181 (vault design, vault@, 309a77c): three choices wait for Angelo's go; read people/angelo/proposals/WS-181/vaults.md and ask them one at a time.
 - Writer: Angelo starts writer@PrompTugal.angelo (a session per piece) and creates runner.writer@PrompTugal.angelo's scheduled task (people/angelo/prompts/); to do, his.
 
 ## Waiting on others
 
 - Dinis: the three SG/Send tokens (WS-170); where his transcript extension is (WS-98); CLAUDE.md lines for WS-129 and WS-179.
 - conductor@web-summit.dinis: WS-150's deck patch (routed 5 Nov 15:48), WS-131's patch (5 Nov 00:38), the cockpit one-click patch, WS-45, WS-36, WS-78, WS-106 drafts.
-- vault@PrompTugal.angelo: reading vault@web-summit.jose's WS-120 reply, put in its lane at 11:42 UTC (jose's vault 8dc2c51); the lane is vault-angelo's to drain, not the runner's.
+- security@web-summit.dinis: five questions on WS-181's vaults (vault@'s design); vault@ needs its own token (WS-170).
 - security@web-summit.dinis: the public visitor inbox design (WS-64, WS-119).
 - Indi's side: whether accountant@web-summit.indi reads `people/angelo/ledger/` (WS-148).
 
 ## Recent
+
+- 6 Nov 22:21: the runner: nothing to route. vault@PrompTugal.angelo verified Jose's WS-120 reply (lane works both ways) and drafted WS-181's vault design (people/angelo/proposals/WS-181/vaults.md: three choices for Angelo, five questions for security@; nothing built; needs its own token, WS-170); team-collaboration and dashboard put the new name in their keys entries (646aec0, b45df3a): information only. The rest is Vicky's side (P26/P27 accepted, reports).
 
 - 6 Nov 21:20: the runner: nothing to route. dev applied Angelo's 20:00 answer (08651d0: its keys entry carries the new name, same key) and finished the maps patch (23d31aa, d210bcf: inventory counts every team's agents, kind rings on Angelo's map): reports, information only. The rest is Vicky's side (curator, journalists, reviewer, pm: WS-31 dropped at Vicky's word) and Silvio's Front Page (WS-177).
 
@@ -58,9 +61,5 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - 6 Nov 15:40: the customer guide (WS-125) drafted as a private page for Angelo, outside the repository until he approves publication (seven audiences, ABP levels by deployment, two questionnaires, SHarness and the ABP model under CC BY 4.0). Ask Angelo on 7 Nov: what RiskMandate sells (held at his word), and offering his protocol (a reminder is set for 09:30 Lisbon).
 - 6 Nov 14:21: the runner: nothing to route. Indi's answers (7c6e0b7: joins PromptUGAL as editor, promptugal.news allowed, cards today; her invitation is Dinis's) and her key seen in her browser (WS-136); mentor@web-summit.dinis had no notes: information only. Untitled (no session tools).
 - 6 Nov 13:21: the runner: nothing to route. The desk had already routed Angelo's 12:00 notes (d7e29b4: WS-180 to WS-183, WS-115); team-collaboration recorded the 12:00 (310f2bd, six follow-ups, parking to the 18:00); dashboard and dev updated Angelo's pages and the team map: information only. Session naming tools still unavailable (untitled).
-- 6 Nov 12:22: the runner: nothing to route. vault@web-summit.jose answered WS-120 into vault-angelo's lane (11:42); the rest is Vicky's side (decisions P5, P6, P9 to P19; ABPs renamed @PrompTugal.vicky; WS-179 cited in every ABP): information only.
-- 6 Nov 10:20: the runner: nothing to route. vault reported ucvg2pkv clean (09:50); crm has the 18-company check from the desk (8ac1ea1, answer 2 of Angelo's card), no reply yet; pm@web-summit.vicky told Angelo of the onboarding guide's step 8 change (WS-170, e5f521e): information only. Ledger lines now in from vault, team-collaboration, dashboard.
-- 6 Nov 09:20: the runner's first run: nothing for Angelo or his agents since 09:08 (only designer@web-summit.dinis's status for logistics); session naming tools (get_session, set_session_title) are not available in the runner's session, so it is untitled.
-- 6 Nov 08:33: WS-176's email twin applied by conductor@web-summit.dinis, 21 minutes after routing (crm's patch).
 
-last_run: 2026-11-06T21:20:00Z (the runner)
+last_run: 2026-11-06T22:21:00Z (the runner)
