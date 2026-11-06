@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.874",
+    "date": "2026-11-06",
+    "what": "journalist-ai@PrompTugal.vicky: report, T1 screenshots",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "40cd64632"
+  },
+  {
     "version": "v0.2.873",
     "date": "2026-11-06",
     "what": "WS-31 dropped: out of my scheduled prompt; prompts/pm.md matches",
