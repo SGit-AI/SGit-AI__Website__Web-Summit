@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.835",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: report, S22 Ready and published",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "5a62bcbd1"
+  },
+  {
     "version": "v0.2.834",
     "date": "2026-11-06",
     "what": "17:40 wake report: applied P10 and P17; WS-31 is due tomorrow and waits on a token",
