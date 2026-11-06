@@ -56,7 +56,7 @@ The vault registry key holds the six team vault keys today, so its holder does t
 
 ## Everyone's own vaults {#published}
 
-Everyone now makes their own vaults, with the access token Dinis shared on 3 November, through a **vault agent**: [your vault agent, step by step](../vault-agent/index.html). Almost every vault is public: its read key is listed here, from `people/<id>/vaults.json`, and opens the vault read-only, with no account. The build refuses anything but a `sgit_public_read_` key in those files.
+Everyone now makes their own vaults, through a **vault agent** with an SG/Send access token of its own (one per agent, from 5 November): [your vault agent, step by step](../vault-agent/index.html). Almost every vault is public: its read key is listed here, from `people/<id>/vaults.json`, and opens the vault read-only, with no account. The build refuses anything but a `sgit_public_read_` key in those files.
 
 ```vaults all
 ```

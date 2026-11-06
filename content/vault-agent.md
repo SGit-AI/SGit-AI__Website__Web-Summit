@@ -2,9 +2,9 @@
 title: Your vault agent
 summary: How everyone on the team creates, publishes and shares SGit vaults. Start a vault agent, put the SG/Send access token in your Claude environment, make vaults, publish their read keys on this site, build vault apps, and send keys only as QR codes. Angelo, Jose and Silvio go first, then everyone.
 ---
-Everyone on the team now has an **SG/Send access token**, shared by Dinis on 3 November. With it, your agents can make as many encrypted vaults as you want, on `dev.send.sgraph.ai`. This page is how. Most of the work is your **vault agent**, `vault@web-summit.<you>`: one agent that creates and manages your vaults, so your other agents don't each have to learn how.
+Every agent on the team gets its own **SG/Send access token** from Dinis (one per agent since 5 November, [step 1](#token)). With it, your vault agent can make as many encrypted vaults as you want, on `dev.send.sgraph.ai`. This page is how. Most of the work is your **vault agent**, `vault@web-summit.<you>`: one agent that creates and manages your vaults, so your other agents don't each have to learn how.
 
-**Order:** Angelo, Jose and Silvio go first ([WS-120](../briefs/index.html#issues)). They correct this page where it is wrong. Then everyone else ([WS-121](../briefs/index.html#issues)).
+**Order:** Angelo, Jose and Silvio went first and are done ([WS-120](../briefs/index.html#issues)), and they corrected this page from their runs. Now everyone else ([WS-121](../briefs/index.html#issues)).
 
 **The rule for what goes in a vault:** almost every vault is **public**. We share its *read key*, which can only read, and we put it on this site. Only a few vaults hold confidential material: the CRM, and booked meetings and contacts ([the private vault](../vaults/index.html#private)). Never put a secret into a vault that will be published. Even with nothing secret in it, a vault is useful: it is versioned, it can be signed, it can run an app, and it can receive messages.
 
@@ -32,7 +32,7 @@ Until your agent has its own token, its vault changes stay committed in `~/vault
 The steps below put a token in a Claude environment. They still apply to a token issued to that agent, in an environment only that agent's sessions use (step 5). You never paste a token into a chat.
 
 1. In the Claude app, open your session. In the title bar, open the **cloud environment** menu, then **Edit** (the environment your agents' sessions run in).
-2. Add the token. If the editor has a **Network secrets** section (older apps call it API credentials), put it there. Otherwise add an **environment variable**: name `SG_SEND_ACCESS_TOKEN`, value the token Dinis sent you.
+2. Add the token. If the editor has a **Network secrets** section (older apps call it API credentials), put it there. Otherwise add an **environment variable**: name `SG_SEND_ACCESS_TOKEN`, value the token issued to this agent (opened from `data/sealed/agents/<agent>/` with the agent's key), never your own or another agent's.
 3. In the same editor, check the **network access**: the session must reach `sgit.ai`, `*.sgit.ai` and `*.sgraph.ai`, with the apex domains listed too. If sgit gets `CONNECT … 403`, the host is blocked, not down ([egress, for Claude Team](https://sgit.ai/docs/how-to/claude-team-egress.md)).
 4. **Start a new session.** A running session does not pick up the change.
 5. **Give the vault agent an environment of its own** (WS-129). Every session in an environment can read all of its variables, so the token and your vault keys belong in an environment that only your vault agent's sessions use. Make a second environment for it (the same environment menu, then add one), put the variables there, and start the vault agent's session in it. Your conductor, dashboard and other agents stay in an environment without them.
