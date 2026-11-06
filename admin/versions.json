@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.715",
+    "date": "2026-11-06",
+    "what": "07:06 wake: the merch milestone moves from Friday 6 to Monday 9 Nov morning (WS-48)",
+    "by": "dashboard@web-summit.dinis",
+    "from": "b830eb17a"
+  },
+  {
     "version": "v0.2.714",
     "date": "2026-11-06",
     "what": "the 06:57 report, and 'What happened' updated",
