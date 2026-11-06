@@ -198,3 +198,19 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .rp-cliphead { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font: 600 18px/26px var(--rm-font); }
 .rp-cliphead span { font: 700 22px/28px var(--rm-font); color: var(--rm-action); margin-left: auto; }
 .rp-clip .rp-wrap { border: 0; overflow: hidden; }
+
+/* ---------- the whole team as one map (WS-97) ---------- */
+.tm { display: grid; gap: 8px; }
+.tm-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.tm-wrap { max-width: 860px; width: 100%; margin: 0 auto; }
+.tm-svg { width: 100%; height: auto; display: block; }
+.tm-links path { fill: none; opacity: .35; }
+.tm-links path.on { opacity: .9; }
+.tm-links path.off { opacity: .04; }
+.tm-p, .tm-a { cursor: pointer; }
+.tm-p text { fill: var(--rm-bg); font: 700 15px/1 var(--rm-font); text-anchor: middle; pointer-events: none; }
+.tm-p circle { stroke: var(--rm-surface); stroke-width: 3; }
+.tm-a circle, .tm-a rect { stroke: var(--rm-surface); stroke-width: 1.5; }
+.tm-al { fill: var(--rm-text); font: 600 15px/1 var(--rm-font); text-anchor: middle; paint-order: stroke; stroke: var(--rm-surface); stroke-width: 4px; }
+.tm-p.off, .tm-a.off { opacity: .18; }
+.tm-p:focus-visible circle { stroke: var(--rm-focus); }

@@ -271,7 +271,8 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
         }
 
         // ---------- the collaboration board (slice 5): everyone, people and agents, and the machine ----------
-        const cstate = () => { const i = location.hash.indexOf('?'); const p = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)); return { p: p.get('p') || '' } }
+        const cstate = () => { const i = location.hash.indexOf('?'); const p = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)); return { p: p.get('p') || '', map: p.get('map') === '1', f: p.get('f') || '' } }
+        const setC = c => { const q = []; if (c.map) q.push('map=1'); if (c.f) q.push('f=' + encodeURIComponent(c.f)); if (c.p) q.push('p=' + encodeURIComponent(c.p)); history.replaceState(history.state, '', location.pathname + location.search + '#collab' + (q.length ? '?' + q.join('&') : '')); drawCollab() }
         const openPerson = id => { history.pushState({ akCard: true }, ''); history.replaceState(history.state, '', location.pathname + location.search + '#collab?p=' + encodeURIComponent(id)); drawCollab() }
         const closePerson = () => { if (history.state && history.state.akCard) history.back(); else { history.replaceState(history.state, '', location.pathname + location.search + '#collab'); drawCollab() } }
         const initials = n => String(n).split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase()
@@ -308,13 +309,44 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
                 const next = p.agents.map(a => ({ a, r: nextRun(a.schedule) })).filter(x => x.r).sort((x, y) => parseInt(x.r.wait) * (/h$/.test(x.r.wait) ? 60 : 1) - parseInt(y.r.wait) * (/h$/.test(y.r.wait) ? 60 : 1))[0]
                 return `<button type="button" class="ak-person" data-ak-person="${esc(p.id)}"><span class="ak-av">${esc(initials(p.name))}</span><span class="ak-pn"><b>${esc(p.name)}</b><small>${esc(p.role)}</small></span><span class="ak-meta"><span class="chip ${p.level >= 4 ? 't-green' : p.level >= 2 ? 't-blue' : 't-slate'}">L${esc(p.level)}</span><span class="chip plain">${p.agents.length} agent${p.agents.length === 1 ? '' : 's'}</span>${p.work.length ? `<span class="chip t-yellow">${p.work.length} picked</span>` : ''}</span>${next ? `<small class="note">Next run: ${esc(next.a.name.split('@')[0])} ${esc(next.r.wait)}</small>` : runs.length ? '' : '<small class="note">No schedule recorded</small>'}</button>`
             }).join('')}</div></section>
+${teamMap()}
 <section aria-label="Who works with whom"><h3 class="ak-lane">Who works with whom</h3><p class="note">Messages: commits from one person's agents to another's (For: lines, last 7 days). Shared: open issues they both own.</p>
 <ul class="ak-links">${C.links.slice(0, 14).map(l => `<li><span>${esc(name(l.a))} and ${esc(name(l.b))}</span><span class="ak-barw"><span class="ak-barf" style="width:${Math.round((l.messages + l.shared) / max * 100)}%"></span></span><small class="note">${l.messages} messages, ${l.shared} shared</small></li>`).join('')}</ul></section>
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}. Next runs are worked out in this browser from each agent's recorded schedule.</p>
 </div>${cstate().p ? personSheet(cstate().p) : ''}`
             view.querySelectorAll('[data-ak-person]').forEach(b => b.onclick = () => openPerson(b.dataset.akPerson))
+            const tm = view.querySelector('[data-tm-toggle]'); if (tm) tm.onclick = () => setC({ ...cstate(), map: !cstate().map, f: '' })
+            view.querySelectorAll('[data-tm-f]').forEach(g => g.onclick = () => { const c = cstate(); setC({ ...c, f: c.f === g.dataset.tmF ? '' : g.dataset.tmF }) })
             view.querySelectorAll('[data-ak-close]').forEach(b => b.onclick = closePerson)
             const sh = view.querySelector('.ak-sheet'); if (sh) sh.focus()
+        }
+
+        // the whole team as one map (WS-97, Angelo's ask, 6 November): people on a ring, their agents fanned around them,
+        // an arc for each pair that wrote to each other in the last 7 days (team-map.mjs's data); tap anyone to focus them
+        const TM_COL = ['var(--rm-role-conductor)', 'var(--rm-role-dev)', 'var(--rm-gold)', 'var(--rm-role-video)', 'var(--rm-green)', 'var(--rm-role-outreach)', 'var(--rm-orange)', 'var(--rm-blue)', 'var(--rm-red)']
+        function teamMap() {
+            const c = cstate(), M = D.collab && D.collab.map
+            const head = `<section class="cc-card tm" aria-label="The whole team as one map"><div class="tm-top"><h3 class="ak-h3">The whole team as one map</h3><button type="button" class="cc-btn" data-tm-toggle aria-pressed="${c.map}">${c.map ? 'Hide the map' : 'Show the map'}</button></div>`
+            if (!c.map) return head + `<p class="note">Everyone and their agents, and who wrote to whom in the last 7 days${M && M.totals ? ` (${M.totals.people} people, ${M.totals.agents} agents, ${M.totals.messages} messages)` : ''}.</p></section>`
+            if (!M || M.error) return head + `<p class="note">The map's data is missing from this build${M && M.error ? ` (${esc(M.error)})` : ''}.</p></section>`
+            const S = 1000, C = S / 2, RP = 300, RA = 120, col = new Map(M.people.map((p, i) => [p.id, TM_COL[i % TM_COL.length]])), pos = new Map()
+            M.people.forEach((p, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / M.people.length; pos.set(p.id, { x: C + RP * Math.cos(a), y: C + RP * Math.sin(a), a, kind: 'p', label: p.name.split(' ')[0], person: p.id }) })
+            for (const p of M.people) {
+                const mine = M.agents.filter(a => a.person === p.id), P = pos.get(p.id), spread = Math.min(Math.PI * 0.95, 0.16 * mine.length + 0.3)
+                mine.forEach((a, k) => { const t = P.a + (mine.length > 1 ? -spread / 2 + k * spread / (mine.length - 1) : 0), rr = RA + (k % 2) * 34; pos.set(a.id, { x: P.x + rr * Math.cos(t), y: P.y + rr * Math.sin(t), kind: 'a', label: a.short, person: p.id, family: a.family, commits: a.commits, name: a.id.startsWith('pt:') ? `${a.short}, PrompTugal (${a.id.split(':')[1]})` : a.id }) })
+            }
+            const near = id => !c.f || id === c.f || (pos.get(id) || {}).person === c.f && !String(c.f).includes('@')
+            const links = M.links.filter(l => pos.has(l.from) && pos.has(l.to))
+            const max = Math.max(1, ...links.map(l => l.n))
+            const path = l => { const a = pos.get(l.from), b = pos.get(l.to), mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return `M${a.x.toFixed(0)} ${a.y.toFixed(0)}Q${(mx + (C - mx) * 0.55).toFixed(0)} ${(my + (C - my) * 0.55).toFixed(0)} ${b.x.toFixed(0)} ${b.y.toFixed(0)}` }
+            const lit = l => c.f && (l.from === c.f || l.to === c.f || (!c.f.includes('@') && ((pos.get(l.from) || {}).person === c.f || (pos.get(l.to) || {}).person === c.f)))
+            const svg = `<svg class="tm-svg" viewBox="0 0 ${S} ${S}" role="img" aria-label="${M.totals.people} people and ${M.totals.agents} agents, and who wrote to whom">
+<g class="tm-links">${links.map(l => `<path d="${path(l)}" stroke="${col.get((pos.get(l.from) || {}).person) || 'var(--rm-text-muted)'}" stroke-width="${(0.6 + 3.4 * Math.sqrt(l.n / max)).toFixed(2)}" class="${c.f ? (lit(l) ? 'on' : 'off') : ''}"><title>${esc((pos.get(l.from) || {}).name || l.from)} to ${esc((pos.get(l.to) || {}).name || (pos.get(l.to) || {}).label || l.to)}: ${l.n}</title></path>`).join('')}</g>
+<g class="tm-nodes">${[...pos.entries()].map(([id, n]) => n.kind === 'p'
+                ? `<g class="tm-p${c.f && !near(id) ? ' off' : ''}" data-tm-f="${esc(id)}" tabindex="0" role="button" aria-label="${esc(n.label)}"><circle cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="26" fill="${col.get(id)}"/><text x="${n.x.toFixed(0)}" y="${(n.y + 5).toFixed(0)}">${esc(n.label)}</text></g>`
+                : `<g class="tm-a${c.f && !near(id) && !(c.f.includes('@') ? links.some(l => lit(l) && (l.from === id || l.to === id)) : false) ? ' off' : ''}" data-tm-f="${esc(id)}"><${n.family !== 'web-summit' ? 'rect' : 'circle'} ${n.family !== 'web-summit' ? `x="${(n.x - 7).toFixed(0)}" y="${(n.y - 7).toFixed(0)}" width="14" height="14" transform="rotate(45 ${n.x.toFixed(0)} ${n.y.toFixed(0)})"` : `cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="${(4 + Math.min(8, Math.sqrt(n.commits || 0))).toFixed(1)}"`} fill="${col.get(n.person)}"/><title>${esc(n.name)}: ${n.commits || 0} commits${n.family !== 'web-summit' ? ' (PrompTugal)' : ''}</title>${c.f && (n.person === c.f || id === c.f) ? `<text class="tm-al" x="${n.x.toFixed(0)}" y="${(n.y - 12).toFixed(0)}">${esc(n.label)}</text>` : ''}</g>`).join('')}</g></svg>`
+            const L = M.left_out || {}
+            return head + `<p class="note">${M.totals.people} people and ${M.totals.agents} agents active in the last ${M.days} days (${M.totals.promptugal} of them PrompTugal's, the diamonds), and ${M.totals.messages} messages; an arc is a pair that wrote to each other, wider for more. Tap a person or an agent to focus them${c.f ? `; focused on <b>${esc(c.f)}</b>, tap again to clear` : ''}.${L.agents ? ` Left out, not active: ${L.agents} agents${(L.people || []).length ? ` and ${esc(L.people.join(', '))}` : ''}.` : ''}</p><div class="tm-wrap">${svg}</div><p class="note">From team-collaboration@web-summit.angelo's team-map.mjs, built with this release.</p></section>`
         }
 
         function personSheet(id) {

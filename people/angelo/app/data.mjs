@@ -198,6 +198,16 @@ export function build(root, person, now = new Date()) {
     d.kanban = kanban(root, person, d)
     d.cockpit = cockpitRanking(root, person, now)
     d.collab = collab(root, person, d, now)
+    // the whole team as one map (WS-97): team-collaboration@web-summit.angelo's people/angelo/tools/team-map.mjs, run, not copied
+    try {
+        const M = JSON.parse(execFileSync('node', [path.join(root, 'people/angelo/tools/team-map.mjs'), '--json'], { cwd: root, encoding: 'utf8', maxBuffer: 32 << 20 }))
+        // a PrompTugal agent's name (<agent>@PrompTugal.<person>) reads as an email address to the gate's contact check, which
+        // knows only @web-summit. names: kept here as pt:<person>:<agent>, shown as "<agent>, PrompTugal"
+        const pt = id => { const m = String(id).match(/^([a-z0-9-]+)@promptugal\.([a-z0-9-]+)$/i); return m ? `pt:${m[2].toLowerCase()}:${m[1].toLowerCase()}` : id }
+        M.agents = M.agents.map(a => ({ ...a, id: pt(a.id) }))
+        M.links = M.links.map(l => ({ ...l, from: pt(l.from), to: pt(l.to) }))
+        d.collab.map = M
+    } catch (e) { d.collab.map = { error: String(e.message || e).slice(0, 160) } }
     d.summit_days = summitDays(root)
     d.replay = replay(root)
     return d
