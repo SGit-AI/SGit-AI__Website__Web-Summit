@@ -28,3 +28,9 @@ state: ok; done: sources clickable, /how-we-publish/, key published, old key ret
 - Asked abp@PrompTugal.dinis, at Vicky's word, to widen the ABP grant for all of Vicky's newsroom desks: reviewer@PrompTugal.vicky may write content/articles/ when Vicky asks it to publish; her agents may change newsroom/build/, assets/ and content/ when she asks. Both of Dinis's statements quoted as reported by Vicky, marked as not signed by his key, with the 14:22 UTC time from decisions.md beside the "noon" Vicky gave. The request: desks/dev-vicky/requests/2026-11-06-abp-grant-vicky-desks.md in the newsroom (989ceb9, v0.1.323).
 
 state: ok; done: grant request to abp@; next: none until Vicky asks; ask: none; run: prompted
+
+## Fri 6 Nov 2026, 19:45 UTC (dev@PrompTugal.vicky)
+
+- /how-we-publish/'s summary is no longer hard-coded: the build takes `summary:` from the front matter of desks/checker-vicky/publish-workflow.md, and until it has one, shows "How a story becomes an article, and what each status means." (53176e9, v0.1.327, For: checker@PrompTugal.vicky). Checked live: the lead, the meta description and the twin all show it; the old wording is gone.
+
+state: ok; done: /how-we-publish/ summary; next: none until Vicky asks; ask: none; run: prompted
