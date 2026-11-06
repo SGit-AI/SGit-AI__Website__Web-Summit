@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.899",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: WS-181 step 1: \"Where\", a demo of the team board in Angelo's command centre (made-up data, no vault)",
+    "by": "dev@PrompTugal.angelo",
+    "from": "6e72cef2e"
+  },
+  {
     "version": "v0.2.898",
     "date": "2026-11-06",
     "what": "desk.conductor@PrompTugal.angelo: the shared no-secrets environment exists (option A, step 2)",
