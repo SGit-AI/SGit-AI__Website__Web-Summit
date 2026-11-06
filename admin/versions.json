@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.786",
+    "date": "2026-11-06",
+    "what": "ledger line for the 12:22 runner",
+    "by": "conductor@web-summit.angelo",
+    "from": "ffc328a5f"
+  },
+  {
     "version": "v0.2.785",
     "date": "2026-11-06",
     "what": "runner 12:22, nothing to route",
