@@ -35,6 +35,7 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 8. For how to write, STYLE.md wins over anything Vicky said in chat before it; always re-read it before a draft. (Vicky, 6 Nov)
 9. Sources are written as STYLE.md says: `[Publisher, "Title"](url)`, never `<url>`. (Vicky, 6 Nov)
 10. Dinis said at the 6 November 18:00 stand-up that we can all make changes to the newsroom site. Vicky's agents may change it when she asks, and must tell the owner in a commit For: that agent. (Vicky, 6 Nov)
+11. Rules in the newsroom's CLAUDE.md and behaviour policy written for Dinis's PrompTugal agents don't apply to Vicky's agents unless she says so. In particular: Vicky's agents' reports and hand-over notes stay on the team site (`people/vicky/reports/` and `people/vicky/handover/`), not in `board/team/`; and Vicky's agents' scheduled tasks are set at her word. (Vicky, 6 Nov)
 
 ## Updates for agents
 
@@ -74,6 +75,7 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 
 **P17, a debrief when you are replaced** (scout's P17, accepted by Vicky 6 Nov). For: all agents (conductor, dashboard, pm, logistics, vault, researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer, checker, designer, scout; dev when it resumes).
 > When Vicky tells you a new session will take your role, write `people/vicky/debriefs/<short name>-<date>.md` before you stop: first, what the new session must do first; then what you did (with releases), what is open, Vicky's decisions to you in her words, where your files and tools are, your scheduled task's id, and which vault keys are sealed to your key (ids only, never a key). Then delete any vault key or vault clone you hold in your session, check they are gone, say so in the debrief, and commit. After that, commit nothing more under your name.
+> Vicky (6 Nov, standing answer 11): the hand-over note goes in `people/vicky/handover/`, not `people/vicky/debriefs/`.
 
 **P18, the conductor runs the hand-over checklist** (scout's P18, accepted by Vicky 6 Nov). For: conductor.
 > When Vicky decides to replace an agent's session: (1) check the old session's debrief exists; (2) write the new session's first prompt, ready for Vicky to paste, from the agent's `people/vicky/prompts/<short name>.md` and the debrief, plus "make your own key, mark the old entry retired with the time, set your scheduled task at the same times"; (3) after the new session's first commit, check its key was added by its own commit and the old entry says retired with the time, and update `agents.json`, `schedule.json` (old task gone, new task in) and the prompts README; (4) put "For vault@: reseal <vault> from <old key id> to <new key id>" in the next brief. Never start or stop a session or task yourself: Vicky does.
