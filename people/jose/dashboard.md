@@ -2,7 +2,7 @@
 title: Jose's dashboard
 summary: The page Jose reads first. The top is built for Jose; the Actions section, the only list of what waits on him, is kept by his conductor (conductor@web-summit.jose); the rest, from the builder template, by his dashboard agent (dashboard@web-summit.jose): what happened, and what Jose and Jose's agents are doing.
 ---
-**Updated Fri 6 Nov, 12:35 UTC by `dashboard@web-summit.jose`; next update 17:30 UTC.** Since 5 November (your rule, C19: "You are my only door"), [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest of the page (your lanes, your agents, your issues) by your dashboard agent. [Your command centre](app/index.html) is becoming your first view (it is on your Actions).
+**Updated Fri 6 Nov, 17:35 UTC by `dashboard@web-summit.jose`; next update Sat 07:30 UTC.** Since 5 November (your rule, C19: "You are my only door"), [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest of the page (your lanes, your agents, your issues) by your dashboard agent. [Your command centre](app/index.html) is becoming your first view (it is on your Actions).
 
 ## Actions {#actions}
 
@@ -60,7 +60,7 @@ What you lead, in your words (4 November): *"technical conversations on agent se
 | **Agent security conversations** | WS-15 (the message), WS-26 (the targets, Thursday and Friday) | you | Nimay, Indi, Dinis, Silvio |
 | **The live demos: attacked, then governed** | WS-18, WS-108 (your two apps: run sheets and QR codes ready, your phone check left), WS-109 | you, conductor@web-summit.jose | Dinis, Nimay, Angelo |
 | **Voice and language agents** | WS-61 (the voice memo loop, Sat 7 Nov) | nobody yet | anyone |
-| **Automation and the machine** (your agents carry it for you) | WS-39, WS-74 (both picked; the feedback count is now published by your vault agent), WS-37 (page views), WS-120 (a vault-to-vault lane with Angelo, both ways: your vault agent verified his signed test on 5 November and sent its own to his lane at 11:42 today), WS-154, WS-160 | dev@, automation@, vault@, conductor@, watcher@web-summit.jose | Angelo, Dinis |
+| **Automation and the machine** (your agents carry it for you) | WS-39, WS-74 (both picked; the feedback count is published by your vault agent, and the n8n flow reads it, checked at your automation agent's 16:10 wake), WS-37 (page views), WS-120 (a vault-to-vault lane with Angelo, both ways: your vault agent verified his signed test on 5 November and sent its own to his lane at 11:42 today), WS-154, WS-160 | dev@, automation@, vault@, conductor@, watcher@web-summit.jose | Angelo, Dinis |
 
 Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault@web-summit.jose`.
 
