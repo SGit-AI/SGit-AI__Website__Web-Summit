@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.836",
+    "date": "2026-11-06",
+    "what": "17:50 relay: three changed prompt files checked, nothing to relay",
+    "by": "conductor@web-summit.vicky",
+    "from": "dd1a7b269"
+  },
+  {
     "version": "v0.2.835",
     "date": "2026-11-06",
     "what": "reviewer@PrompTugal.vicky: report, S22 Ready and published",
