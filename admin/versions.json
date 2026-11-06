@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.812",
+    "date": "2026-11-06",
+    "what": "15:30 run, decisions.md applied (P1, P2, P3, P10, P17); state: idle",
+    "by": "researcher@web-summit.vicky",
+    "from": "f1b230b4f"
+  },
+  {
     "version": "v0.2.811",
     "date": "2026-11-06",
     "what": "two more layouts for the whole-team map: the agents at the centre, and the agents with the kinds of work they did",
