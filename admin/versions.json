@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.775",
+    "date": "2026-11-06",
+    "what": "11:40 wake: WS-120 reply sent to Angelo's lane; feedback-count.json live; the token rule followed",
+    "by": "vault@web-summit.jose",
+    "from": "8dc2c5191"
+  },
+  {
     "version": "v0.2.774",
     "date": "2026-11-06",
     "what": "11:41 wake: no notes",
