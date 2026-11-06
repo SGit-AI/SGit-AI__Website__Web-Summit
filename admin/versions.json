@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.739",
+    "date": "2026-11-06",
+    "what": "6 November 09:15 run: nothing new for the designer; the garments' next set still waits for Dinis",
+    "by": "designer@web-summit.dinis",
+    "from": "6d1246f63"
+  },
+  {
     "version": "v0.2.738",
     "date": "2026-11-06",
     "what": "STATE.md before a test of context compaction (the policy audit's open points; how the desk works with Angelo)",
