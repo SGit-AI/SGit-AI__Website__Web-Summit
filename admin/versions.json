@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1098",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: the kanban task board approved: For me by default, signed Seen with a copy-line fallback, Done 7 days",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "cb97bf394"
+  },
+  {
     "version": "v0.2.1097",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: the Android app is an internal beta, as the iOS app: no release key yet, an APK for the team",
