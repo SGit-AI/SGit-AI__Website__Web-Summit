@@ -8,14 +8,16 @@ summary: What writer@PrompTugal.jose's earlier sessions left for the next one. F
 
 | Piece | Stage | Waits on | Link |
 |---|---|---|---|
-| Three proposed on 7 November 2026, 19:50 UTC (session 1): (1) one door: how Jose stopped being the middleman between his agents (C19, task files, the Actions list); (2) counting the tokens: what a day of agents costs, from the ledgers (the accountant, WS-148, the Sonnet trial); (3) the watcher and the reviewer: a read-only watcher over the whole team and a reviewer that holds pushes, and what they caught | Proposed | Jose's pick | sources: [tasks/README.md](../tasks/README.md), [kit](../kit/README.md), [accountant](../accountant/ROLE.md), [ledgers](../accountant/ledger/), [watcher](../watcher/ROLE.md), [latest run](../watcher/latest.md), [reviewer](../reviewer/ROLE.md), [reviews](../reviewer/reviews/) |
+| JW1, one door: how Jose stopped being the middleman between a dozen agents (C19) | Draft and check in the newsroom; Fact-check on /newsroom/stories/ | the newsroom's review (a reviewer desk), then journalist@PrompTugal.dinis to publish and sign; Jose's read | [draft](https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/writer-jose/drafts/jw1-one-door.md), [check](https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/writer-jose/checks/jw1.md), newsroom 33fede99 (v0.1.626), [review](../reviewer/reviews/2026-11-07-2013-writer.md) |
+| Counting the tokens (the ledgers, the accountant, the Sonnet trial) | Proposed, not picked | Jose's pick | [accountant](../accountant/ROLE.md), [ledgers](../accountant/ledger/), [schedules](../schedules.md) |
+| The watcher and the reviewer (what they caught) | Proposed, not picked | Jose's pick | [watcher](../watcher/ROLE.md), [latest run](../watcher/latest.md), [reviewer](../reviewer/ROLE.md), [reviews](../reviewer/reviews/) |
 
-No idea, draft or check file in the newsroom desk yet: nothing is drafted until Jose picks.
+Picked by Jose at 20:02 UTC on 7 November 2026 (session 2): piece one, one door. Story id JW1; the files are `desks/writer-jose/ideas/jw1.md`, `drafts/jw1-one-door.md`, `checks/jw1.md`.
 
 ## The desk and the key
 
 - Desk `desks/writer-jose/` in the newsroom: set up on 7 November 2026 (newsroom commit e538944, in v0.1.622, the release numbered after the curator's push): README only, with `ideas/`, `drafts/` and `checks/` to follow when a piece is picked.
-- Key `writer-jose-promptugal` in the newsroom's `board/keys.json`: published 7 November 2026 (newsroom commit 7608012). A session key: it ended with session 1, so the next session makes its own and marks this one `superseded`, with the time. Not linked to an operator key and not submitted to pki.sgit.ai.
+- Key `writer-jose-promptugal` in the newsroom's `board/keys.json`: published 7 November 2026 (newsroom commit 7608012). A session key: it ends with the session that made it (sessions 1 and 2 were the same session), so the next new session makes its own and marks this one `superseded`, with the time. Not linked to an operator key and not submitted to pki.sgit.ai.
 - Dinis's yes, as editor-in-chief, for this desk, its sessions and the two team-site files: asked on 7 November 2026 in the README's commit message (For: conductor@PrompTugal.dinis and security@PrompTugal.dinis). No answer yet. Angelo's writer asked the same question (its ask of 7 November in `desks/writer-angelo/asks/`); the newsroom's security and ABP agents put it to Dinis on 7 November. If the answer is no or wait: stop writing in the newsroom and tell Jose.
 - Jose's GitHub account in the PrompTugal editors team: yes. Session 1 pushed to the newsroom's `dev` with push access (attach and push were not refused).
 
@@ -26,7 +28,18 @@ No idea, draft or check file in the newsroom desk yet: nothing is drafted until 
 - The reviewer ran as a sub-agent on each diff before `release.sh`, in both repositories; its records are in `../reviewer/reviews/` (2026-11-07-1946-writer.md for the newsroom diff).
 - The ABP hooks in the newsroom log this session as an agent of another operator, in observe mode; its grant file `board/abp/writer.md` does not exist there, so what it may do is what Jose's prompt says.
 
+## How session 2 ran (for the next one)
+
+- The author line must start with the agent (`writer@PrompTugal.jose, for Jose Bota ...`): the derivation takes the part before the first comma as the agent, and the story schema rejects anything else.
+- The gate is red until the derived card exists; `release.sh` runs `derive.mjs` and commits it itself, after the review, so that commit has no `Reviewed-by` trailer. To show the reviewer the card, derive locally, run the gate, then `git checkout -- data; git clean -fd data` before `release.sh`.
+- Jose's reviewer re-opened every fact itself and found nine wrong or dated: commit times differ from release times (author date against committer date and the CI release), and `schedules.md` was corrected after its first figures. Read the latest version of a source and its history, not the commit that first said it.
+- Pin team-site links to a commit; folder links need `/tree/`, not `/blob/`.
+- No pronouns for Jose or Dinis: neither has stated them. Quotations from the team site use "his"; paraphrase them.
+- The session's proxy cannot reach promptugal.news; `release.sh` cannot confirm the live page. CI's release tag is the evidence.
+
 ## Open
 
-- Jose's pick of a piece (about 2 minutes).
-- Dinis's yes (newsroom, open).
+- JW1: the newsroom's review, then publishing by journalist@PrompTugal.dinis. Jose's read of the draft (about 8 minutes).
+- Dinis's yes (newsroom, open). The key `writer-jose-promptugal` was session 1's; session 2 had the same session and key.
+- Pieces two and three wait for Jose's pick.
+- JW1, for the next desk commit (the reviewer's notes of 20:26 UTC): the automation decision was answered at 12:25 UTC, not "that morning"; pin the draft's link to the direct log to a team-site commit.
