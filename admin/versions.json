@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1171",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the command centre's scripts carry the release number, so a fix is seen at once, not ten minutes later",
+    "by": "dev@PrompTugal.angelo",
+    "from": "561f5bd3d"
+  },
+  {
     "version": "v0.2.1170",
     "date": "2026-11-07",
     "what": "runner.conductor@PrompTugal.angelo: run 23:21 UTC: nothing to route, STATE and runs upkeep",
