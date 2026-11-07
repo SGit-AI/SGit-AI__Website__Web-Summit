@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1051",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: STATE and runs for the 14:21 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "edbeca8f1"
+  },
+  {
     "version": "v0.2.1050",
     "date": "2026-11-07",
     "what": "runner.writer@PrompTugal.angelo: state at 7 Nov 14:05: guide published and corrected; contributor ask with Dinis; claim check flags",
