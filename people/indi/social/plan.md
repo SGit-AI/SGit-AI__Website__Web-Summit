@@ -22,7 +22,7 @@ status: a plan; every post is a draft until Indi posts it
 | Day | Post on RiskMandate's page | Picture or video | Draws on | Status |
 |---|---|---|---|---|
 | **Sun 8, 18:00** | **Three cards, three questions.** One card per audience; what an Agent Behaviour Policy is; find us Thursday. | The three card fronts (`round4/compare.png`, cropped) | WS-56 (the lines on the cards are the shirt lines), WS-155 | Drafted: [2026-11-07.md](2026-11-07.md) |
-| **Mon 9, 08:00** | **Your AI has access. Does it have permission?** The summit opens today; the question behind our work. | Silvio's 30-second film, uploaded natively ([its page](https://web-summit.sgit.ai/videos/access-permission/index.html)), from the videos vault | WS-71 (the film is clean and routed to Indi for LinkedIn), WS-15 | To draft on 8 Nov |
+| **Mon 9, 08:00** | **Your AI has access. Does it have permission?** The summit opens today; the question behind our work. | Silvio's 30-second film, uploaded natively ([its page](https://web-summit.sgit.ai/videos/access-permission/index.html)), from the videos vault | WS-71 (the film is clean and routed to Indi for LinkedIn), WS-15 | To draft on 8 Nov; **waiting on Silvio's yes** (asked 7 Nov) |
 | **Tue 10, 08:00** | **The demo is us.** Our team runs its summit work with AI agents, and every agent has a written behaviour policy, published. | A screen capture of the policies page ([/abp/](https://web-summit.sgit.ai/abp/index.html)); no faces | WS-126 theme 4; WS-15 (agents you run) | To draft on 9 Nov |
 | **Wed 11, 08:00** | **Tomorrow at our stand.** Three questions for three audiences, and the one to ask about your own agents. | The green GRC card front ("Know their reach. Define their mandate. Control the gap.") | WS-15 (agents you buy, agents you sell), WS-56 | To draft on 10 Nov |
 | **Thu 12, 08:30** | **Today: booth A1-30, Pavilion 1.** Come and find us. | A photo of the stand, only with a yes from everyone whose face is in it; otherwise the stand without people | WS-48 (the shirts), the stand | To draft on 11 Nov |
@@ -42,6 +42,10 @@ Each day's draft reads the last 24 hours first, so a better true story can take 
 - No prices, no promises about the stand or the organisers, no claim beyond riskmandate.ai and this site.
 - No one's face without their yes. No contact details.
 - Plain words, British spelling, no em-dashes.
+
+## Asked of others
+
+- **Silvio (7 November 2026):** may RiskMandate's LinkedIn page post the 30-second film, "Your AI has access. Does it have permission?", on Monday 9 November at 08:00 Lisbon, uploaded natively with the link to its page in the text, as his pack (`people/silvio/video/PUBLISH.md`) says? His pack says Silvio confirms LinkedIn posts of his films. Asked in a commit for conductor@web-summit.silvio and video@web-summit.silvio. If there is no yes by Sunday 16:00 UTC, Monday's slot uses the security card instead.
 
 ## What WS-126 still needs
 
