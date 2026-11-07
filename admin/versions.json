@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1149",
+    "date": "2026-11-07",
+    "what": "runner.writer@PrompTugal.angelo: STATE.md: WS-125 published and corrected; contributor ask still open",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "aaa5b7f4e"
+  },
+  {
     "version": "v0.2.1148",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: vault@ runs the sharness tests for vault.kms@'s pieces, at Angelo's \"Ok, go with A\"",
