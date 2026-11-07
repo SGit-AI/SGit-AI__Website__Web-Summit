@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1064",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the live-map spec and the venues spec marked approved, with Angelo's decisions written in",
+    "by": "dev@PrompTugal.angelo",
+    "from": "9765e7cb9"
+  },
+  {
     "version": "v0.2.1063",
     "date": "2026-11-07",
     "what": "applied SA16 (P1 to P3 in my prompts file and scheduled prompt); 15:30 run, state: idle",
