@@ -1,6 +1,6 @@
 ---
 title: The command centre: what changed
-summary: What changed in everyone's command centre on 4, 5 and 7 November 2026, release by release: calmer lists, the Links folder, the For me bell, sorted messages, event mode for Web Summit, the team's photos, and event mode made clean on phones and iPads. Kept by dev@web-summit.silvio, the agent of Silvio Switha, who owns the command centres with dev@web-summit.dinis.
+summary: What changed in everyone's command centre on 4, 5 and 7 November 2026, release by release: calmer lists, the Links folder, the For me bell, sorted messages, event mode for Web Summit, the team's photos, event mode made clean on phones and iPads, and two brains (My brain and the Summit brain) as a 3D map. Kept by dev@web-summit.silvio, the agent of Silvio Switha, who owns the command centres with dev@web-summit.dinis.
 ---
 Every person on the team has a command centre at `/people/<id>/app/`: the page to open first, on a phone, an iPad or a computer. It is one engine for everyone (`assets/cc/`, built by `admin/build/commandcentre.mjs`), so every change below reached all nine command centres at once. Each change was tried first on a private test copy (Silvio's Lab), tested as a person would use it on an iPhone, an iPad and a computer, in the dark and the light theme, then released.
 
@@ -33,6 +33,17 @@ What waits on you sits right under the greeting, with how long it has been waiti
 ### Summit desk {#summit-desk}
 
 A **Summit desk** link (Web Summit, in the menu) opens the team's private page for the stand: the visitor demo, the plan and the brain. It is a private claude.ai page, shared by Silvio; nothing about visitors is ever on this public site. Next, the Summit desk is rebuilt to read and write the team's private CRM ([/crm/](../crm/index.html)), so the stand and the outreach share one list.
+
+### Two brains: My brain and the Summit brain {#brain}
+
+On the command centres of **Silvio, Angelo and Jose** (at Silvio's word; the others' command centres are unchanged), tried first in Silvio's Lab, then brought here. Nothing that Angelo or Jose built was removed or changed: their own views, Kanban and menus stay as they are, and the brain is added beside them.
+
+- **My brain** (in the menu, Web Summit): the second brain from *The Second Brain Build*: capture anything, Claude organises it into a linked wiki, ask it questions. It is kept **in your browser only**; nothing you capture is sent to this site. Export keeps a copy.
+- **The Summit brain**, one tap away at the top of the map: Web Summit 2026 from the **public CRM** (companies, organisations, speakers, sessions, pitches, side events, topics; about 790 points and 1,260 links) joined to what this site already has: the team, our company map with the reason for each company, and our open summit tasks, all around RiskMandate at stand A1-30. Public facts only. With nothing in My brain yet, the map opens on the Summit brain.
+- **The 3D map:** glass balloons in a sky of small stars; bigger balloons have more links; tap one to read it; search lights the matches. **Each of us is a balloon in our T-shirt colour** (from the print set, [/print/](../print/index.html)), as luminous glass: Dinis smoked obsidian (black), Nimay sapphire (blue), Angelo emerald (green), Jose amber (orange), Vicky amethyst (purple), Silvio ruby (red), Indi gold (yellow).
+- **Tidy controls:** the legend (tap a kind to show or hide it) and the map's buttons sit in one row above the map, next to "How the brain works", so the map itself stays clean.
+- **Full screen:** fills the screen with the map and keeps everything at hand (find, which brain, the legend and the buttons, at the bottom); Esc or the button brings it back. **Cinema** stays the stand's mode: nothing on screen, turning by itself.
+- **No outside calls:** the 3D libraries (3d-force-graph 1.80.1 and three 0.186.1) are bundled on this site (`assets/cc/brain-libs.js`) and load only when the map opens.
 
 ## 5 November {#nov-5}
 

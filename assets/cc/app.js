@@ -699,7 +699,7 @@ ${n.source ? `<details class="br-src"><summary>The original</summary><p>${esc(n.
 <p class="note">${esc(String(n.at || '').slice(0, 10))} · <button type="button" class="br-link" data-br="del-note" data-val="${esc(n.id)}">Delete</button></p></details>`
     }
     V.brain = () => {
-        const b = BR.get(), tab = S.brTab || (brMap() && b.notes.length ? 'map' : b.inbox.length ? 'inbox' : b.notes.length ? 'wiki' : 'inbox'), key = !!chat.key() || !!(BX() && BX().hasLLM && BX().hasLLM())
+        const b = BR.get(), tab = S.brTab || (brMap() ? 'map' : b.inbox.length ? 'inbox' : b.notes.length ? 'wiki' : 'inbox'), key = !!chat.key() || !!(BX() && BX().hasLLM && BX().hasLLM())
         const notes = b.notes.filter(n => n.kind !== 'answer'), outs = b.notes.filter(n => n.kind === 'answer')
         const busy = k => S.brBusy === k ? ' disabled aria-busy="true"' : ''
         const how = BX() && BX().hasLLM && BX().hasLLM() ? `Claude works right here, in this private page.` : key ? `Claude works here, through your OpenRouter key (${esc(keyHint(chat.key()))}) on this device.` : `Claude works by hand-off: you copy, open Claude, and paste its answer back here. <a href="#ask">Add an OpenRouter key</a> and it works in one tap.`
@@ -887,10 +887,10 @@ ${groups.map(([g, l]) => `<section class="cc-linkgrp"><h3>${esc(g)}</h3><div cla
     const stars = () => store.get('stars', [])
     const toggleStar = id => { const s = stars(); store.set('stars', s.includes(id) ? s.filter(x => x !== id) : [...s, id]) }
     const hhmm = s => { const m = String(s || '').match(/(\d{1,2}):(\d{2})/); return m ? m[1].padStart(2, '0') + ':' + m[2] : '' }
-    const NEWS = '2026-11-07-calm'
-    const newsCard = () => store.get('news', '') === NEWS ? '' : `<section class="cc-card cc-news" aria-labelledby="h-news"><header><span class="hic" aria-hidden="true">${ico('bell', '')}</span><h2 id="h-news">What's new in your command centre</h2><button class="more" type="button" data-news-close>Got it ✕</button></header>
+    const NEWS_ = () => window.CC_BRAIN ? '2026-11-07-brain' : '2026-11-07-calm'
+    const newsCard = () => store.get('news', '') === NEWS_() ? '' : `<section class="cc-card cc-news" aria-labelledby="h-news"><header><span class="hic" aria-hidden="true">${ico('bell', '')}</span><h2 id="h-news">What's new in your command centre</h2><button class="more" type="button" data-news-close>Got it ✕</button></header>
 <ul class="cc-newslist">
-<li><b>🧭 A calmer command centre</b>: the menu is grouped by colour (Work, Web Summit, Connect, More), the type is smaller and the pages are lighter. The bar of names is gone: <b>tap your name</b> (top left) to open anyone's command centre.</li>
+${window.CC_BRAIN ? `<li><b>🧠 Two brains</b> (My brain, in the menu): your own second brain, and the <b>Summit brain</b>: everyone at Web Summit from the public CRM (companies, speakers, sessions, pitches, side events) joined to our team, our company map and our tasks, as a 3D map. Each of us is a balloon in our T-shirt colour. <b>Full screen</b> fills the screen and keeps everything at hand; <b>Cinema</b> is for the stand.</li>` : ''}<li><b>🧭 A calmer command centre</b>: the menu is grouped by colour (Work, Web Summit, Connect, More), the type is smaller and the pages are lighter. The bar of names is gone: <b>tap your name</b> (top left) to open anyone's command centre.</li>
 <li><b>🗂️ Kanban</b>: the board button in the top bar opens every task as cards; drag a card to change its status (or use ⋯), group by date, person or area. Tap it again to go back.</li>
 <li><b>⚖️ Decisions first</b>: what waits on you sits right under the greeting.</li>
 <li><b>🎙️ Ask Claude</b> is the round button at the bottom right; tap it to type or speak.</li>
@@ -940,7 +940,7 @@ ${list.length ? `<div class="cc-rows">${list.map(sessRow).join('')}</div>` : emp
 </div>`)
     }
     let lastFocus = null
-    document.addEventListener('click', e => { const n = e.target.closest && e.target.closest('[data-news-close]'); if (n) { store.set('news', NEWS); render() } })
+    document.addEventListener('click', e => { const n = e.target.closest && e.target.closest('[data-news-close]'); if (n) { store.set('news', NEWS_()); render() } })
     document.addEventListener('click', e => { const v = e.target.closest && e.target.closest('[data-evmode]'); if (v) { store.set('eventMode', v.dataset.evmode); render() } })
     document.addEventListener('click', e => { const s = e.target.closest && e.target.closest('[data-star]'); if (s) { toggleStar(s.dataset.star); render() } })
     document.addEventListener('click', e => { const a = e.target.closest && e.target.closest('[data-links]'); if (a) { e.preventDefault(); setTimeout(linksPanel) } })
@@ -1056,6 +1056,14 @@ ${list.length ? `<div class="cc-rows">${list.map(sessRow).join('')}</div>` : emp
     window.addEventListener('hashchange', () => { closeOverlay(); render() })
     matchMedia('(prefers-color-scheme: light)').addEventListener?.('change', () => { if (store.get('theme', 'dark') === 'system') { applyTheme(); render() } })
 
-    fetch(root.dataset.src || 'data.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json() }).then(d => { (d.issues || []).forEach(i => { if (/^in.progress$/i.test(i.status)) i.status = 'picked' }); D = d; ME = d.person.id; FIRST = (d.person.name || ME).split(' ')[0]; D.connectors = d.connectors || {}; Object.assign(PROMPTS, d.prompts || {}); render() })
+    // the brain (My brain + Summit brain) on the command centres of Silvio, Angelo and Jose (dashboard@web-summit.silvio, 7 November)
+    const BRAIN_FOR = ['silvio', 'angelo', 'jose'], ENGINE = (document.currentScript && document.currentScript.src) || ''
+    const brainFor = id => {
+        if (window.CC_BRAIN || !BRAIN_FOR.includes(id) || !ENGINE) return Promise.resolve()
+        const base = ENGINE.replace(/[^/]*$/, ''), css = document.createElement('link'); css.rel = 'stylesheet'; css.href = base + 'brain.css'; document.head.appendChild(css)
+        return new Promise(ok => { const s = document.createElement('script'); s.src = base + 'brain.js'; s.onload = s.onerror = () => ok(); document.head.appendChild(s) })
+            .then(() => { if (window.CC_BRAIN && !VIEWS.some(v => v[0] === 'brain')) VIEWS.splice(VIEWS.findIndex(v => v[0] === 'ask') + 1, 0, ['brain', 'My brain', 'brain']) })
+    }
+    fetch(root.dataset.src || 'data.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json() }).then(d => { (d.issues || []).forEach(i => { if (/^in.progress$/i.test(i.status)) i.status = 'picked' }); D = d; ME = d.person.id; FIRST = (d.person.name || ME).split(' ')[0]; D.connectors = d.connectors || {}; Object.assign(PROMPTS, d.prompts || {}); brainFor(ME).then(render) })
         .catch(e => { html.classList.remove('cc-on'); root.innerHTML = `<p class="note">The command centre could not load its data (${esc(e.message)}); the summary below is the same data as text.</p>` })
 })()
