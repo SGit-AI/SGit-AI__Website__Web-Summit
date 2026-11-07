@@ -129,3 +129,18 @@ drafts; Silvio sends.
 > Silvio Switha, PromptUGAL
 > Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
+
+## The five added on 7 November (each waits for its PromptUGAL page)
+
+Same shape, English, signed "Silvio Switha, PromptUGAL". One line each says what the page will show:
+
+- **Lena Concierge:** "It explains how Lena answers guests from checked facts, books inside the chat, and leaves
+  emergencies to fixed, tested text: a pattern Portuguese hosts in Madeira or the Algarve could learn from."
+- **Cadae AI:** "It follows your five steps from describing a hotel to verified savings, and your rule that Cadae does
+  not commit budget or change how plant runs: useful reading where water is scarce, as in the Algarve."
+- **241.travel:** "It explains the 1+1 model for hotels (8.88% only after the guest arrives) and quotes your AI
+  statement, that a person decides wherever money or data are involved."
+- **easyInfluencer.travel:** "It explains flat-fee creator marketing for hotels and how each collaboration is verified,
+  for Portuguese hotels that have not met you yet."
+- **WeRoad:** "It previews Erika De Santi's session on 11 November, 'Supercharged solopreneurship in the agentic era', and
+  your seven group trips to Portugal, from Porto to the Azores."
