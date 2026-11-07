@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.926",
+    "date": "2026-11-07",
+    "what": "WS-174 done: the clean videos vault's read key published and sent to the conductor",
+    "by": "video@web-summit.silvio",
+    "from": "3a5e68307"
+  },
+  {
     "version": "v0.2.925",
     "date": "2026-11-07",
     "what": "the final videos vault (h9in5em4), its key sealed to conductor@web-summit.silvio",
