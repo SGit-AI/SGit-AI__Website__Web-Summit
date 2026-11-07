@@ -86,7 +86,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - WS-181 spec-venues.md Part B (dev@, 693e3d0): the public venue map on PrompTugal.news is for Angelo's review; dev@ recommends no person on the public map yet.
 - writer@'s question (aed0ae7): dev.verify flagged 9 of 12 claims in the published WS-125 guide as unsupported or contradicted (help-page checks, "nine people and dozens of agents", 70 active keys, dates); shall the writer correct them? Corrections to a piece he started are allowed by his publishing rule, unless a claim concerns a person or company.
 
-- To do for Angelo (7 Nov): research@'s scheduled task to hourly (cron `CRON_TZ=Europe/Lisbon 25 * * * *`), at https://claude.ai/code/routines/trig_01Fc8hLyqA7vpMUi9bJFBbkg; the desk cannot edit tasks he created (correcting 1c7 of the desk's last commit, which said it was done). Back to every three hours once his 18 companies are briefed.
+- To do for Angelo (7 Nov): research@'s scheduled task to hourly (cron `CRON_TZ=Europe/Lisbon 25 * * * *`), at https://claude.ai/code/routines/trig_01Fc8hLyqA7vpMUi9bJFBbkg; the desk cannot edit tasks he created (the desk's previous commit said it was done; it was not). Back to every three hours once his 18 companies are briefed.
 - Desktop to-do for Angelo (7 Nov): add `pip install sgit-ai` to the "PrompTugal.angelo shared" environment's setup script (and allow pypi.org, files.pythonhosted.org if needed); the phone app cannot edit environments.
 
 ## Waiting on others
