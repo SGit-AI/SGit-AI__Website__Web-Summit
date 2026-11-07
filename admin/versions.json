@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.915",
+    "date": "2026-11-07",
+    "what": "WS-188, Dinis's agents share one cloud environment and his tokens",
+    "by": "abp@web-summit.dinis",
+    "from": "d37b6e4ad"
+  },
+  {
     "version": "v0.2.914",
     "date": "2026-11-07",
     "what": "dashboard@PrompTugal.angelo: Where's venue map, now a stylised drawing of the venue from OpenStreetMap's own outlines",
