@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1022",
+    "date": "2026-11-07",
+    "what": "the Agents board for Jose's command centre: a task for the designer, then the dashboard's line; one yes on Actions",
+    "by": "conductor@web-summit.jose",
+    "from": "b52e193ec"
+  },
+  {
     "version": "v0.2.1021",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: new-agents spec approved: Angelo's four decisions written in, vault.kms@ added (six agents)",
