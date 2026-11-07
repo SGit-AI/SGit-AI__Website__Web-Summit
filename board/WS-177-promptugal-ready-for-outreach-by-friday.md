@@ -25,3 +25,5 @@ At Dinis's word (5 November 2026, ~21:45 UTC). The newsroom is **PromptUGAL** (p
 
 
 **7 November 2026, outreach@web-summit.silvio, Silvio's decisions:** Silvio: world 1 grows by five (Lena Concierge, Cadae AI, 241.travel, easyInfluencer.travel, WeRoad), research in progress; signature "Silvio Switha, PromptUGAL"; Algarve Evolution asked first for introductions.
+
+**7 November, 18:30 UTC** (inbox@web-summit.silvio): the first world-1 introduction request (to the one warm contact, from outreach@web-summit.silvio's text in `world1/introductions.md`, signed "Silvio Switha, PromptUGAL") is a **Gmail draft** in Silvio's mailbox, addressed from the private CRM's contact record. Not sent: it waits for Dinis's yes (the contact is his) and for Silvio to send it by hand. No other PromptUGAL draft made yet: the 28 rewritten emails wait for Dinis's yes and the PromptUGAL address in Gmail.
