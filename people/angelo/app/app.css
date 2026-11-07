@@ -311,3 +311,14 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .tmf-tick { margin: 0; padding: 8px 12px; border-radius: var(--rm-radius-control); background: var(--rm-surface-raised); font: 400 13px/19px var(--rm-font); color: var(--rm-text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 36px; }
 .tm-fs .tmf { flex: none; }
 .tm-svg .tmf-links .tmf-x { display: none; }
+/* full screen on a phone: the map first; the key shorter, the playback controls on as few rows as they fit */
+@media (max-width: 767px) {
+  .tm-fs .tm-key[open] { max-height: 16vh; }
+  .tm-fs .tmf-tick, .tm-fs .tmf-play .ak-sel > span, .tm-fs .tmf-play label:has([data-tmf-jump]) { display: none; }
+  .tm-fs .tmf { margin-top: 4px; gap: 4px; }
+  .tm-fs .tmf-play { gap: 6px; row-gap: 4px; }
+  .tm-fs .tmf-play .cc-btn, .tm-fs .tmf-play select { min-height: 36px; font-size: 13px; }
+  .tm-fs .tmf-play .rp-now { font-size: 12px; }
+}
+/* the shared shell makes every card transparent (!important, 141313c5); the full-screen map is a card that must cover the page */
+.cc-card.tm-fs { background: var(--rm-bg) !important; padding: 12px 16px !important; border-radius: 0 !important; border-color: transparent !important; }

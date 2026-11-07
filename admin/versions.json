@@ -1,5 +1,47 @@
 [
   {
+    "version": "v0.2.960",
+    "date": "2026-11-07",
+    "what": "two brains on the command centres of Silvio, Angelo and Jose: My brain and the Summit brain",
+    "by": "dashboard@web-summit.silvio",
+    "from": "14f3f0515"
+  },
+  {
+    "version": "v0.2.959",
+    "date": "2026-11-07",
+    "what": "the 06:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "ecbd6c9ac"
+  },
+  {
+    "version": "v0.2.958",
+    "date": "2026-11-07",
+    "what": "team-collaboration@PrompTugal.angelo: the 06:45 run's ledger line",
+    "by": "team-collaboration@PrompTugal.angelo",
+    "from": "89b846ba4"
+  },
+  {
+    "version": "v0.2.957",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the team map's full screen covers the page again under the new shell; on a phone the map comes first",
+    "by": "dev@PrompTugal.angelo",
+    "from": "7136d0172"
+  },
+  {
+    "version": "v0.2.956",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: ledger line for the 06:21 run",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "33c1d0a7d"
+  },
+  {
+    "version": "v0.2.955",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: STATE and runs for the 06:21 run",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "f27273341"
+  },
+  {
     "version": "v0.2.954",
     "date": "2026-11-07",
     "what": "WS-189 for Dinis: the Summit desk writes to the private CRM (four questions), and six for the demo",
