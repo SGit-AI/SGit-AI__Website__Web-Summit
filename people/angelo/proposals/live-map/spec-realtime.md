@@ -94,3 +94,14 @@ Open `people/angelo/app/index.html#live` (also "◉ Live" on Team and the machin
 - **Freshness is the release's:** a few minutes behind git, which Angelo accepted. The newsroom's side is as fresh as dev@'s snapshot.
 - **Not yet built:** Safari and iPad (video picture-in-picture), full screen and `?display=1`, `?wallpaper=1`, the Wake Lock, the 6-hour reload, the four-hour test.
 - **Tests:** `people/angelo/app/tests/live.test.js` (the hexagon, the replay, a new exchange arriving, no text, at 1280 and 390 px). The build change that writes `live.json` is two lines in `admin/build/build.mjs` (the person's own `data.mjs` may export `extras()`), and `/people/*/app/live.json` is gitignored like `data.json`.
+
+## Built, 7 November night: never stops (backlog item 00, Angelo's words in bd7c439 and ce5fa33)
+
+- **Real pace, never accelerated:** each exchange plays at its own moment, a fixed 4 minutes behind (`?livedelay=` in minutes). An exchange that reaches the site later than that (a slow release) plays at once, a beat apart from the others. **No replay** on opening and no "replay" label: the screen starts at now.
+- **A constant faint flow:** small, faint dots travel along the lines all the time. Each line gets dots in proportion to how busy that pair has been in the last 48 hours, with older exchanges counting less (a three-hour half-life). The overall rate follows the last hour against the 48-hour average and breathes slowly. If nothing happened in 48 hours, it follows the graph's own links. Nothing in it is invented: it is the recent record, drawn as a flow.
+- **Real new exchanges** come as brighter, larger dots with a halo, lighting their line and both ends.
+- **The stray green dot** to the left of Indi's group was the freshness light, not a node. It is now a small status light in the window's top-left corner, outside the graph.
+- **Any window:** the hexagon fills the largest square that fits, down to 150 px (tested).
+- **Fixed on the way:** each read used to add `?t=<time>`, so the offline worker (`sw.js`) kept a new copy of live.json every minute (about 25 MB a day on an always-on screen). The read now uses `cache: 'no-store'` with a fixed address, so the one copy is replaced each minute.
+- **Not yet:** (7) exchanges from other repositories wait for dev@'s `people/angelo/app/repos.json` and snapshot tool (backlog 00); after that, Safari and iPad, full screen, and the long test.
+- **Tests:** `live` now checks a quiet spell that never stops (flow dots in every sample, no bright pulse), a real exchange arriving as a bright pulse, no replay and no text, the light outside the graph, and a 150 px window.
