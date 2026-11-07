@@ -31,6 +31,8 @@ At Angelo's word, 4 November 2026. Every agent of Angelo's reads this at each wa
 
 **Secrets: one cloud environment per agent that needs one** (Angelo, 6 November: "let's go for A, one environment per agent"). A secret (an SG/Send token, an API key) lives only in the cloud environment of the one agent it belongs to, as an environment variable Angelo or Dinis types into that environment's settings; never in the chat, a file, a page or a message, and never in an environment another agent runs in. Agents with no secret share an environment that holds none. An agent reads its secret from the environment only, never prints or logs it, and says in its run log which variable it used, not its value.
 
+**When Angelo talks to you directly, the conductor still knows** (Angelo, 7 November: "even if I speak directly with one of the agents, they save the session and their open questions in a commit to you so that you're always up to speed"). Whenever Angelo works with you in your session, end each exchange, and every pause where he may have left, with one commit `For: desk.conductor@PrompTugal.angelo`: what he asked, what you did, what is still open, and each open question with your recommendation. Don't wait for the conversation to end; he may leave mid-way. The conductor's digest shows where every agent is from these commits.
+
 **Three tiers: what needs Angelo.**
 
 1. **Just do it, and report:** your own work inside `people/angelo/`; work the conductor sends you; picking up and updating Angelo's board issues; answering from the guides; requests to other people's agents; drafts of anything.

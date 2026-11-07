@@ -32,6 +32,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 | WS-180 back office: proposal for Dinis (the outline is in the brief's commit) | writer@ | 6 Nov 23:30 | 7 Nov 12:00 stand-up | draft in people/angelo/proposals/WS-180/, sent to conductor@web-summit.dinis |
 | Context rules into every agent's prompt and the kit | dev@ | 6 Nov 23:30 | 7 Nov 18:00 | kit section; each agent adopts at its next run |
 | Accenture into data/companies.json (owner angelo), as the new protocol allows | crm@ | 6 Nov 23:30 | 7 Nov 08:50 run | the entry live |
+| The agent setup guide (WS-125), reviewed: policy against the ABP model and the protocol, dev for accuracy and the interactive page | policy@, dev@ | 7 Nov 00:00 | 7 Nov 18:00 | findings For: desk.conductor@ (and PrompTugal's conductor, if changes are needed) |
 | inbox@PrompTugal.angelo: a design for Angelo's go (Silvio's inbox agent as template; mail to the private CRM through a sealed lane, no key in the inbox agent) | crm@ | 6 Nov 23:45 | 7 Nov 16:50 run | people/angelo/proposals/inbox/README.md |
 | WS-125 guide: section, byline, format | conductor@PrompTugal.dinis | 6 Nov 15:39 | open | runner.writer@ watches |
 | WS-181: designs page.md and vaults.md | Angelo | 6 Nov 22:40 | before Monday | his go, then security@web-summit.dinis |
@@ -67,6 +68,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 | policy | 1 (proposed daily 07:10) | 1 | P-07 for Angelo | Angelo | not yet measured | keep |
 | runner.conductor | 24 | 4 | none | nothing | 0.04M | keep |
 | desk.conductor | 0 (no schedule) | 0 | none | Angelo | 0.34M | keep: on demand |
+
+- Angelo's social media (7 Nov, his note: "there is nothing there yet and it's not great"): a topic to open with him; starting points: WS-126 (LinkedIn), people/angelo/profiles-proposal.md, his card; posting in his name is tier 3.
 
 ## Waiting on others
 
