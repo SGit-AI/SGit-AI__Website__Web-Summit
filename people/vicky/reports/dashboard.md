@@ -137,3 +137,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Tables rebuilt from board-health.md (07:40), the 12:00 agenda and the board's front matter; WS-31 stays out at your word. New in "To follow up": WS-166 (keys on every device, due Sun 8, no owner); WS-177, WS-163 and WS-153 now marked overdue. Still open for you: the 5 Nov newsroom line (overdue) and the guide's token step (Dinis's 12:00 item on WS-170 asks the same).
 - Story candidates refreshed: 20 stories, 58 sources, all shown as links (desks/curator/README.md, 07:46 UTC).
 - state: ok; done: tables and stories refreshed, P22 and P27 applied; next: 17:45 wake; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, 17:55 UTC (wake)
+
+- Read people/vicky/decisions.md (47541d70; ten new conductor commits since this morning, all with the Agent: line the reworded guard asks for, pushed by riskmandate-vicky). No HOLD.md; session key present. Re-read prompts/dashboard.md (P2): it matches. **Applied SA16**: P1 to P3 word for word in prompts/dashboard.md and in both of my scheduled tasks' prompts (I changed the tasks too).
+- Tables rebuilt (board-health.md 07:40, the 18:00 agenda, the 7 Nov brief, board front matter). New in "Needs me": Dinis's and your yes or no on parking the late unowned issues (18:00 agenda). Brief items 1 and 2 (the guard, the shortlist push) are done, so not shown. "To follow up" is now in due order.
+- Story candidates refreshed: 21 stories, 59 sources, all links (desks/curator/README.md, 11:50 UTC).
+- state: ok; done: SA16 applied, tables and stories refreshed; next: 07:50 wake on 8 Nov; ask: none; run: scheduled
