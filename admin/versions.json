@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1160",
+    "date": "2026-11-07",
+    "what": "decisions.md, a blank line before \"Updates for agents\" again",
+    "by": "conductor@web-summit.vicky",
+    "from": "1e4e66ae9"
+  },
+  {
     "version": "v0.2.1159",
     "date": "2026-11-07",
     "what": "writer@PrompTugal.angelo: report: the PrompTugal article elevated in its brand",
