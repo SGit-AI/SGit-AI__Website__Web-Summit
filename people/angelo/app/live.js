@@ -30,7 +30,9 @@
 .lv-pulses circle.halo { stroke: none; opacity: .28; }
 .lv .tm-p, .lv .tm-a { cursor: default; }
 .lv .tm-a.lv-hot > circle, .lv .tm-a.lv-hot > rect { stroke: var(--rm-text, #fff); stroke-width: 3; }
-.lv-dot { position: absolute; left: 8px; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--rm-green, #3ecf8e); box-shadow: 0 0 6px currentColor; color: var(--rm-green, #3ecf8e); opacity: .8; }
+.lv-dot { display: none; position: absolute; left: 8px; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--rm-green, #3ecf8e); box-shadow: 0 0 6px currentColor; color: var(--rm-green, #3ecf8e); opacity: .8; }
+.lv-dot.old, .lv-dot.off { display: block; }
+/* the light shows only when something is wrong (Angelo, 7 November: a green dot that belongs to no one reads as an agent) */
 .lv-dot.old { background: var(--rm-orange, #f5a524); color: var(--rm-orange, #f5a524); }
 .lv-dot.off { background: var(--rm-text-muted, #9EB2C7); color: transparent; }
 .lv-bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 0 0 10px; }
@@ -85,12 +87,16 @@
         const pairEl = (a, b) => { const k = a + '|' + b; let e = lines.get(k); if (!e) { e = { path: el('path', { stroke: col.get(pos.get(a).person) || 'var(--rm-text-muted)', 'stroke-width': 2.2, 'stroke-opacity': 0, d: curve(pos.get(a), pos.get(b)) }, links), at: -1e9 }; lines.set(k, e) } return e }
         const colOf = id => col.get(pos.get(id).person) || 'var(--rm-text-muted)'
         // a real exchange: a bright dot with a halo, the line lit behind it
-        const launch = (from, to, now) => { const e = pairEl(from, to); e.at = now; const c = colOf(from); fly.push({ from, to, t0: now, ms: TRAVEL_MS, halo: el('circle', { r: 11, fill: c, class: 'halo' }, pulses), dot: el('circle', { r: 6, fill: c }, pulses) }); if (fly.length > 160) { const x = fly.shift(); x.dot.remove(); x.halo && x.halo.remove() } }
+        // the dots keep a minimum size on screen, so a small pop-out window still shows them moving (Angelo, 7 November: in the
+        // pop-out "the messages stop": they were there, but a pixel wide). unit: screen pixels per drawing unit, measured as drawn
+        let unit = 1, unitAt = -1e9
+        const px = (base, minPx, now) => { if (now - unitAt > 1000) { const w = svg.getBoundingClientRect().width; if (w) unit = w / S * SCALE; unitAt = now } return f1(Math.max(base, minPx / Math.max(unit, 0.05))) }
+        const launch = (from, to, now) => { const e = pairEl(from, to); e.at = now; const c = colOf(from); fly.push({ from, to, t0: now, ms: TRAVEL_MS, halo: el('circle', { r: px(11, 10, now), fill: c, class: 'halo' }, pulses), dot: el('circle', { r: px(6, 5, now), fill: c }, pulses) }); if (fly.length > 160) { const x = fly.shift(); x.dot.remove(); x.halo && x.halo.remove() } }
         // the constant flow: small, faint, slower dots on the lines, chosen by how busy each pair has been lately
         const flowOne = (now) => {
             if (!wsum || flowN >= FLOW_MAX) return
             let r = Math.random() * wsum, k = 0; while (k < weights.length - 1 && (r -= weights[k].w) > 0) k++
-            const w = weights[k]; flowN++; fly.push({ from: w.from, to: w.to, t0: now, ms: FLOW_TRAVEL_MS * (0.8 + Math.random() * 0.5), flow: true, dot: el('circle', { r: 2.6, fill: colOf(w.from), class: 'flow' }, pulses) })
+            const w = weights[k]; flowN++; fly.push({ from: w.from, to: w.to, t0: now, ms: FLOW_TRAVEL_MS * (0.8 + Math.random() * 0.5), flow: true, dot: el('circle', { r: px(2.6, 2.4, now), fill: colOf(w.from), class: 'flow' }, pulses) })
         }
         const busy = (id, now) => { if (!hot.has(id)) N.get(id).classList.add('lv-hot'); hot.set(id, now + 1200) }
         // one event: from its agent to each of its targets; with no target the agent alone lights up
