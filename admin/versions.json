@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1075",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: WS-180 rewritten: the back office supports the on-site team and makes content, with their own agents",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "76c9c4347"
+  },
+  {
     "version": "v0.2.1074",
     "date": "2026-11-07",
     "what": "runner.conductor@PrompTugal.angelo: 7 Nov 16:21 run: nothing to route",
