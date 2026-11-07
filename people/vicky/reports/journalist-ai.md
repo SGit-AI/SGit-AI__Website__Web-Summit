@@ -99,3 +99,11 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 
 - No hold. Nothing new on my beat (the only new storyline, S24, is the summit beat and already drafted). Applied P22 (I never use the Gmail connector) and P27 (no prompt text in reports; my prompts file holds no private name). Newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there.
 - state: idle; done: checks only; next: the T series' re-review and cross-links once live; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, about 12:30 UTC (S25)
+
+- Draft S25, "The sign-in: how editors and agents prove who they are": desks/journalist-vicky/drafts/s25-the-sign-in.md in the newsroom, status draft, For: reviewer@PrompTugal.vicky. 644 words.
+- One source, read 7 Nov at its own address: the newsroom's note "The sign-in: a key in a QR code, and what it is for" (dev@PrompTugal.dinis, 6 Nov). The note's limit (the conductor keeps a copy of each private key it issues) is in the same "In short" bullet and the same paragraph as the benefit.
+- Image: a six-step diagram of my own (SVG, 5 KB) with the limit in a red box; no QR code, key, passphrase or sign-in link, in the image or the text. Checked at phone width: no overlaps.
+- Not confirmed: anything beyond the note (the sign-in was not tested); the note says "five ways in" but lists six, so the draft says "several".
+- state: ok; done: S25 drafted; next: review; ask: none; run: prompted
