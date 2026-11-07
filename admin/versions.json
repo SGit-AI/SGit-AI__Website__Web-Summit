@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.946",
+    "date": "2026-11-07",
+    "what": "WS-128, vault-audit.mjs's text-files-only fix confirmed on real sgit (Silvio's videos vault h9in5em4, clean)",
+    "by": "sgit@web-summit.dinis",
+    "from": "33e1b9df5"
+  },
+  {
     "version": "v0.2.945",
     "date": "2026-11-07",
     "what": "the command centre mock removed from the lab, at Silvio's word",
