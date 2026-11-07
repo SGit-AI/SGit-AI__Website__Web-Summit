@@ -1,0 +1,78 @@
+diff --git a/data/companies/aicep/sources.json b/data/companies/aicep/sources.json
+index 424a722..964b863 100644
+--- a/data/companies/aicep/sources.json
++++ b/data/companies/aicep/sources.json
+@@ -7,7 +7,7 @@
+       "url": "https://websummit.com/sessions/lis26/2f8c4adf-ebea-46d7-b876-1b9bd5a6c1dc/aicep-connecting-portuguese-startups-to-global-markets-hosted-by-aicep/",
+       "read_on": "2026-11-01",
+       "read_by": "curator@web-summit",
+-      "supports": "LIS26 session page: 'AICEP: Connecting Portuguese startups to global markets [Hosted by AICEP]', 11 Nov, Masterclasses, Masterclass 3, names AICEP - Portugal Trade & Invest as the speaker's organisation; the session is hosted by this company",
++      "supports": "LIS26 session page: 'AICEP: Connecting Portuguese startups to global markets [Hosted by AICEP]', 11 Nov, Masterclasses, Masterclass 3, names AICEP - Portugal Trade & Invest as the speaker's organisation; the session is hosted by this company [Page removed: the address returned 404 when re-read on 7 November 2026; the fact is kept.]",
+       "kind": "summit-session"
+     },
+     {
+diff --git a/data/companies/qase/sources.json b/data/companies/qase/sources.json
+index b926034..f00cd85 100644
+--- a/data/companies/qase/sources.json
++++ b/data/companies/qase/sources.json
+@@ -7,7 +7,7 @@
+       "url": "https://websummit.com/appearances/lis26/72ac9bd5-9275-4c1d-bbc6-56e8d732e2b0/qase",
+       "read_on": "2026-11-01",
+       "read_by": "curator@web-summit",
+-      "supports": "LIS26 appearance page: name, country, industry, website",
++      "supports": "LIS26 appearance page: name, country, industry, website [Page removed: the address returned 404 when re-read on 7 November 2026; the fact is kept.]",
+       "kind": "summit-appearance"
+     },
+     {
+diff --git a/data/companies/trustscale/sources.json b/data/companies/trustscale/sources.json
+index 6f56ef3..75748f7 100644
+--- a/data/companies/trustscale/sources.json
++++ b/data/companies/trustscale/sources.json
+@@ -7,7 +7,7 @@
+       "url": "https://websummit.com/sessions/lis26/4a442f4c-c3da-4c62-89ad-b65cc22f988b/whose-ai-is-it-anyway/",
+       "read_on": "2026-11-01",
+       "read_by": "curator@web-summit",
+-      "supports": "LIS26 session page: 'Whose AI is it anyway?', 10 Nov, Policy Summit, Stage 11, names TrustScale as the speaker's organisation",
++      "supports": "LIS26 session page: 'Whose AI is it anyway?', 10 Nov, Policy Summit, Stage 11, names TrustScale as the speaker's organisation [Page removed: the address returned 404 when re-read on 7 November 2026; the fact is kept.]",
+       "kind": "summit-session"
+     },
+     {
+diff --git a/data/companies/whitespace/sources.json b/data/companies/whitespace/sources.json
+index 4ee1289..ef5567c 100644
+--- a/data/companies/whitespace/sources.json
++++ b/data/companies/whitespace/sources.json
+@@ -15,7 +15,7 @@
+       "url": "https://websummit.com/attendees/lis26/3f26a8cf-0526-4759-9d24-c4747ef74665/paul-jenkinson/",
+       "read_on": "2026-11-01",
+       "read_by": "curator@web-summit",
+-      "supports": "LIS26 attendee page: Paul Jenkinson, Co-founder & CEO, Whitespace; country and industry as listed by Web Summit; public bio",
++      "supports": "LIS26 attendee page: Paul Jenkinson, Co-founder & CEO, Whitespace; country and industry as listed by Web Summit; public bio [Page removed: the address returned 404 when re-read on 7 November 2026; the fact is kept.]",
+       "kind": "summit-attendee"
+     }
+   ]
+diff --git a/data/organisations/algarve-evolution/organisation.json b/data/organisations/algarve-evolution/organisation.json
+index dbf58ec..3f97353 100644
+--- a/data/organisations/algarve-evolution/organisation.json
++++ b/data/organisations/algarve-evolution/organisation.json
+@@ -30,7 +30,7 @@
+       "url": "https://anje.pt/wp-content/uploads/2025/09/Regulamento_Participacao-Startups-Algarvias-no-Web-Summit-Lisboa-2025.pdf",
+       "read_on": "2026-11-06",
+       "by": "researcher@PrompTugal.dinis",
+-      "how": "named as project partner of the 2025 competition for Algarve startups at Web Summit Lisbon, with one of five permanent jury seats"
++      "how": "named as project partner of the 2025 competition for Algarve startups at Web Summit Lisbon, with one of five permanent jury seats [Page removed: the address returned 404 when re-read on 7 November 2026; the fact is kept.]"
+     }
+   ],
+   "note": "Hand-written by the ontologist for the Algarve Evolution sprint (6 November 2026) from researcher@'s rounds 1 to 6 (desks/researcher/algarve-evolution-round-1.md); its programmes, partners, figures and roles are in network.json beside this file. People are roles here, not names, until the decision on naming people (content/newsroom/decisions/naming-people-on-algarve-evolution.md) is taken."
+diff --git a/data/organisations/anje/organisation.json b/data/organisations/anje/organisation.json
+index 7e3fbb5..af5efc2 100644
+--- a/data/organisations/anje/organisation.json
++++ b/data/organisations/anje/organisation.json
+@@ -11,7 +11,7 @@
+       "url": "https://anje.pt/wp-content/uploads/2025/09/Regulamento_Participacao-Startups-Algarvias-no-Web-Summit-Lisboa-2025.pdf",
+       "read_on": "2026-11-06",
+       "by": "researcher@PrompTugal.dinis",
+-      "how": "publisher of the 2025 Web Summit competition's regulation; jury seat; partner in ADI and Venture Lab"
++      "how": "publisher of the 2025 Web Summit competition's regulation; jury seat; partner in ADI and Venture Lab [Page removed: the address returned 404 when re-read on 7 November 2026; the fact is kept.]"
+     }
+   ],
+   "note": "Hand-written for the Algarve Evolution sprint (6 November 2026): a partner of Algarve Evolution, from researcher@'s sourced rounds."
