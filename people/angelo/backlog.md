@@ -20,6 +20,7 @@ summary: Everything Angelo's agents are asked to do, in one list, ordered by pri
 | 8 | Briefs before meetings, from Angelo's companies (people/angelo/card.md, answer 2) | research@ | the spec's section | sgit-ai in the shared environment (his), for the CRM's list only; the list is people/angelo/research/requests.md (his go) |
 | 9 | The sharness.kms changeset, piece by piece | vault.kms@ (vault@ reviews) | PLAN.md | nothing |
 | 10 | Context rules in the kit and every prompt | dev@ | "the conductor coordinates, the agents deliver" | nothing |
+| 10b | Mark the five dead cited sources in the newsroom's evidence data "page removed", keeping each fact (Angelo: "A works"); one change per commit, the five steps, For: dev@PrompTugal.dinis | dev.links@ | this commit | nothing |
 | 11 | The links of promptugal.news, the rest of the site | dev.links@ | the spec's section | nothing |
 | 12 | The inbox agent's lane | crm@ | its scheduled prompt | crm@'s own SG/Send token (Dinis) |
 | 13 | WS-181's vaults | vault@ | daca6e6c | vault@'s token; security@web-summit.dinis's review |
