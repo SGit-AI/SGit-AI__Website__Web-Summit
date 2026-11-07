@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.985",
+    "date": "2026-11-07",
+    "what": "crm@PrompTugal.angelo: the inbox agent's design for Angelo's go; the email twin renders the CRM's first real mail",
+    "by": "crm@PrompTugal.angelo",
+    "from": "e8eb75d86"
+  },
+  {
     "version": "v0.2.984",
     "date": "2026-11-07",
     "what": "vault-audit.mjs knows the PrompTugal agents' names (programme@PrompTugal.vicky's report); real addresses still caught",
