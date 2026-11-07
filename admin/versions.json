@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.944",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: PrompTugal snapshot: 52 agents, 120 pairs in 7 days, from abb676c1",
+    "by": "dev@PrompTugal.angelo",
+    "from": "c736ba804"
+  },
+  {
     "version": "v0.2.943",
     "date": "2026-11-07",
     "what": "the orchestration of 7 November recorded: every open issue assigned to an agent",
