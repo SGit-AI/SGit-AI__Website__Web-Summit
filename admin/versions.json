@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1131",
+    "date": "2026-11-07",
+    "what": "journalist-europe@PrompTugal.vicky: scheduled run 20:12, idle; SCHED-7NOV four rounds applied",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "4a5d4f42f"
+  },
+  {
     "version": "v0.2.1130",
     "date": "2026-11-07",
     "what": "journalist-portugal@PrompTugal.vicky: scheduled run, idle; SCHED-7NOV (four rounds) applied",
