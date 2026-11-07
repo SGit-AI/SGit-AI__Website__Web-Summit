@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1101",
+    "date": "2026-11-07",
+    "what": "runner.writer@PrompTugal.angelo: state: WS125 published; checker's five findings to answer",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "6f0937fbf"
+  },
+  {
     "version": "v0.2.1100",
     "date": "2026-11-07",
     "what": "checker@PrompTugal.vicky: report of the 7 November evening run; applied SA16, P1 to P3 word for word",
