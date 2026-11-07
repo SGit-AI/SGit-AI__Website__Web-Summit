@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1073",
+    "date": "2026-11-07",
+    "what": "journalist-portugal's task moved to 08:06, 12:06 and 20:06 UTC, at Vicky's yes",
+    "by": "conductor@web-summit.vicky",
+    "from": "2aae37f89"
+  },
+  {
     "version": "v0.2.1072",
     "date": "2026-11-07",
     "what": "journalist-portugal, apply SCHED-7NOV: move your task to 08:06, 12:06 and 20:06 UTC",
