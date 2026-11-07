@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1116",
+    "date": "2026-11-07",
+    "what": "the X-ray search tool applies the gate's phone rule too",
+    "by": "xray@web-summit.dinis",
+    "from": "a022c5daf"
+  },
+  {
     "version": "v0.2.1115",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: backlog: kanban built, Accenture in, the Android repository is Angelo's to create",
