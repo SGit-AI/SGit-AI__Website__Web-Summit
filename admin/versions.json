@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1003",
+    "date": "2026-11-07",
+    "what": "crm@PrompTugal.angelo: every three hours from now (cron 50 */3 * * *), at Angelo's word",
+    "by": "crm@PrompTugal.angelo",
+    "from": "d53e0f44a"
+  },
+  {
     "version": "v0.2.1002",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: brief to dev@: broken links on PrompTugal.news, checked continuously",
