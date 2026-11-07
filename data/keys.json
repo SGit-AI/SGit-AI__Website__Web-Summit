@@ -1232,6 +1232,23 @@
         "signing_fingerprint": "sha256:7ccbfa25a964ca6b"
       },
       "status": "active"
+    },
+    {
+      "id": "inbox-vicky",
+      "agent": "inbox@web-summit.vicky",
+      "label": "inbox@web-summit.vicky (Claude Code session)",
+      "role": "Vicky Wang's inbox agent: the only agent of hers that touches her work mailbox. Reads, searches, labels and drafts; never sends. Keeps mail only in the private team CRM vault. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 7 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session at Vicky's word; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); not confirmed on pki.sgit.ai.",
+      "added": "2026-11-07",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArQB/pigJEy7qj72UsDtU\nS+3klsFJAi1r1s89K2qaYFEgyaTq+3jkkop+VR54LnOz82hQC5hLepxnmarHl9Wd\n8hCVI2DRvDdZdPDh5YwZuSIhwSGiDi6RokszddE9Rkn7Wvcw5LTySyjoMQe7E7Aj\n8DuN1X/+n93APmqwyHT7wVYkjgqnVn6nNBRJ09L8h3or1nNKibGFj0bTdCM0prOk\nzKaQMdW+sgEN78DskitOJixBZbNDmqdLAO3kNMZaTau7Bx+2QT4OQugFUih5JSJx\nacTMglXxsg9+JZ8+X3B6DK9aotbo7YyQNhuwKh+FmhlTk5A6XPdpkZZaMnqQmTom\nkh70PjmidaFWgpoeW9qtvtPTfprTau5NpMMEr8rnMo2wP5qMPEv2tBZyuJv8sMCE\nxi1AoeoHwi+1L86dl3IEQNUPmStutLZx/VJNM5VA/4aCg0gWvK/MKrrexKjuPg89\nNl+5F7Zy33y+9nXAo4nSdNJCV3gN9FOA2Hlkkg7lxNOHm+3qSSlcAibs+bfIIneL\nVGQlFkT38jjgVJy4W/8PtiJNsR8X1nbRooG+1y1QCXvadn5PpSgHpd6DNNBdb5nd\nipProPJNhBoEnm403jeFbCiUNfxsPtYUznEPGt6WQ9H315dFSlpfczpoooWTzqkz\nZ8rjal7m9Zsl/wfxwtBCsfUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEhoX1cVFhCvwrj3io6bId4SfwypYq\njtoP12kmseZuGptqKmQjnRMgP8kw136+IxU94/UuxtxC9ga2mttOujw/Tg==\n-----END PUBLIC KEY-----\n",
+        "label": "inbox@web-summit.vicky",
+        "fingerprint": "sha256:417758c5d74f2b4f",
+        "signing_fingerprint": "sha256:1b6a4abe7bd9b949"
+      }
     }
   ]
 }
