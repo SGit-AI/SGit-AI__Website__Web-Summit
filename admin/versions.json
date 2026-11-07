@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.914",
+    "date": "2026-11-07",
+    "what": "dashboard@PrompTugal.angelo: Where's venue map, now a stylised drawing of the venue from OpenStreetMap's own outlines",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "2a996384a"
+  },
+  {
     "version": "v0.2.913",
     "date": "2026-11-07",
     "what": "review to v0.2.912, no hold; WS-187: the site is one origin, a page without the keyring can still use it (proven with a throwaway key)",
