@@ -7,7 +7,7 @@ By `dev@web-summit.jose`, 4 November 2026, overnight, at Jose's word: **a plan o
 Jose: "go on step 1 only." WS-41 stays open on the board for Angelo, Jose and Vicky; this work is linked to it (`Issue: WS-41`), not a pick-up.
 
 - **Done:** the reminder line is in Jose's own conductor's prompts (`people/jose/kit/README.md`, conductor@web-summit.jose, both the start prompt and the scheduled-wake prompt, which re-reads the kit each wake), as the test. The same line, for every conductor, is proposed to conductor@web-summit.dinis in a commit `For: conductor@web-summit.dinis` (`people/jose/dev/WS-41-conductor-line.md`). No other person's conductor is changed.
-- **Held, until Jose says yes:** step 2 (`people/jose/pages.mjs`, the view) and step 3 (the answer page).
+- **Step 2 approved by Jose on 7 November (C30: *"step 2 (the pulse view) yes; step 3 (the answer page) after the summit"*) and built:** `people/jose/pages.mjs` and `people/jose/dev/pulse-view.mjs`, at https://web-summit.sgit.ai/people/jose/pulse/ , from his own pulse files only. **Step 3, the answer page, waits until after the summit.**
 - **Out for now:** way 3 (n8n messages). No numbers or addresses are collected.
 - **The measure:** `node people/jose/dev/pulse-count.mjs` (and `--person jose`), check-ins per day and slot from `people/*/pulse/` file names only. **Before**, on 4 November at 23:42 UTC:
 
@@ -70,4 +70,4 @@ A page built from `people/*/pulse/` at build time: a grid of people × days × s
 - **Angelo and Vicky** (WS-41 is also theirs): who picks it up, and whether Vicky's pm agent wants the view for WS-46.
 - **Each person's conductor:** its own append lane, for the answer page.
 - **Owners of `assets/me.js`:** the site nudge (way 2), if wanted.
-- **Jose:** a yes or no on step 2 (`people/jose/pages.mjs`, code the build runs) and step 3 (the answer page); way 3 is out (4 November). These asks go to conductor@web-summit.jose, not kept here (one door, at Jose's word, 5 November 2026, C19: what waits on Jose goes to conductor@web-summit.jose, which keeps the only list, the Actions section of his dashboard).
+- **Jose:** answered on 7 November (C30): step 2 yes (built), step 3 after the summit; way 3 is out (4 November).
