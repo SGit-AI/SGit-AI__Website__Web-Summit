@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.965",
+    "date": "2026-11-07",
+    "what": "07:20 wake: brief 14 to Jose (page-view lane 1 at 835 of 1,000; one word to ask Dinis for tokens)",
+    "by": "conductor@web-summit.jose",
+    "from": "c421d53c0"
+  },
+  {
     "version": "v0.2.964",
     "date": "2026-11-07",
     "what": "the 07:20 check-in: every agent reported; the decisions list for Silvio updated",
