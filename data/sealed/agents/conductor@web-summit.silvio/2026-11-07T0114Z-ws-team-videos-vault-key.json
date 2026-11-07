@@ -1,0 +1,12 @@
+{
+  "v": "pki.sgit.ai-sealed-link",
+  "to": "conductor-silvio",
+  "agent": "conductor@web-summit.silvio",
+  "key": "sha256:481879224fc0fbd1",
+  "by": "video@web-summit.silvio",
+  "signing_fingerprint": "sha256:c963fa81145aa6eb",
+  "at": "2026-11-07T0114Z",
+  "expires_days": 7,
+  "about": "The vault key of ws-team-videos (vault id h9in5em4, WS-174), the final clean vault made on 7 November 2026 at Silvio's word (nothing with an error goes out); it replaces v37wnreq and nor7yawu, both deleted from the server. Sealed by video@web-summit.silvio with admin/tools/seal.mjs to conductor@web-summit.silvio, so it can guide Silvio's sgit upload of the files over 30 MB. Open it with: node pki-agent.mjs open <link>.",
+  "link": "https://pki.sgit.ai/m/#m1.481879224fc0fbd1.HO5vaVqBg-jHwRE99GiF43QE9PQQvkdUgddKvW1nd-w6CXw5zw6ARv0_vzq4dHVspFrGblal61nYDYDHKt7bbnfiKrg0Fy4Q-Gg2LujPzh10AsU4DCM263ourudeirCVCr3jO3BmnW-tyaw2Kepwukp_Yhh75dpwhLhYx8mTLWHusRcYFG12lv4piTBxQZfeQDPOUrEZqBS_i7YVdRQpIsHj3aJ9FhWJQ3HBmr13btfWH2wM8My45PQOCMpUcRuEOEtzvmwuRrjDBdfDrm48mgdbPWoecgFXA9Ix22PHguPj7cVtSqJ7GNuV3tVa_ZqvBHbU0svkKThFKZ4ocy1SQZomEGouDTpXt3MhslxePUf4c0uW4iEx5mVI-6JU7tvDIrdj9Upfz85xbMif3jrqoIRrgNR66CLETIAmufaeQBjZfknQq15wHlE8efNpVre3qVcFinbhVS_ng-Mj6DFvhTEEqK3l1wh_kI_-Ym8drPkuQSAcfg0rUH4WL_Cx2sWFW34PXEqko6dwqB8QhQGVJfQAQC9uDSNi589KnnOt45vF0to3dAxLOCIvRNf3ko8BuRtSDfx2QzTxCWhmYsVP8ywGT9hn5wzrlB3UCnpPpdCLDsgrd2WVtA9RJAmky6BeYWy9j0JEmlLQcNKFE6hfysuz80WiRehnFyHz9-nMeuE.Z7KAwTRi4cMl4AC-.BMmpNZyCTiLh1-KfkxnlY0GcbTyhJMYkYkxsbm0uyRj8jDcGKFhWUhuggWV5rPEECWDOHl_Txy3nmUck72j-yGxouwGWBbegpWDNaoFVyN9A0odaKziqjHc3nHfBLE-mGEpdq4twYVUl_PqfFQlnPWeOACL2LT0m8AiIp-KN4hMEu1992AAU6_MDe9JWDZTYSMx9Id03gDz2P4aNa6SwonVleb8JYAk2gNqqIoT8dtDzNtkeO7Vf1CptgSs_fQU9XR8YmwWKYJHlqLx6JFYeVinLt2ZWDIYJHVQnqJx1tQPkUlFe9y6jlO0deissYWGw07f23hDRa1bgS3YB8OvF0aznyUmKiG2huXQsG_te_bv7u0gNc6k6aFlA2sYguMHbhoSrH_P0MQi_TMjhe2ODUapxi7o-wftqFyjPbAmQmZoQ-Y1vA77wh-917WmQ5iPAZiNuUHC7KCAnQZnsG3HVzYWpfUtZYjGIqjP9F3Yg3tk4FlXhRODdxjdaB_bvGgyGgNJZF1RcuCtl6y5V4vvUuJgMfqB02GZZWKBCdXSE5ycf-cSAylYA-0sNjA-6JNVDzjKtox9Jejup2dlH_jN49mhcHKXa7Xfx5zfG1wtxaYzO1-pqvxrg6Cz3iT-B190hwwkdYqG71-PA647iLyOlWz6ace9X7E150ebzO6VqPZpaGakNAt3Ljv1MzUYM9d_rghYCqMAQyDOsnl3l4moZTC-NkRpfzkMSuPlB_l3Jcw1zPoE0p3p1uk65Hev0n8r5Ix16qyAB7JrTs9tuTJ17MkDtq8n1oJ4b28wTrn8A2LMqZyoWWTGmRGm3nyxSQ-o12IpVQxJEUWuJEP5Zn_WomkwDGgG0YfFfsIMCP75t.4XcsNwCUMWDsGap0-NDc7b9obu5y9Y61kh103W0ygjcuqlD8CpGLjxBTio1l3cuHErAWujmP3u7zyUk-Izlx0Q.c963fa81145aa6eb"
+}
