@@ -15,7 +15,7 @@
     const POLL = (() => { try { return +new URLSearchParams(root.location.search).get('livepoll') || 0 } catch { return 0 } })()   // seconds; only for the tests
     const POLL_MS = POLL ? POLL * 1000 : 60000, SPREAD_MS = POLL ? 0 : 10000, TRAVEL_MS = 1600, FADE_MS = 3200, STALE_MIN = 20
     const DELAY_MS = (+new URLSearchParams(root.location.search || '').get('livedelay') || 4) * 6e4   // a fixed few minutes behind
-    const FLOW_BASE = 1.4, FLOW_MAX = 70, FLOW_TRAVEL_MS = 3000, HALF_LIFE_H = 3   // ambient dots a second, at most on screen, their travel, how fast the past fades
+    const FLOW_BASE = 2.2, FLOW_MAX = 70, FLOW_TRAVEL_MS = 3000, HALF_LIFE_H = 3   // ambient dots a second, at most on screen, their travel, how fast the past fades
     const HEX = 'M250 67 L750 67 L1000 500 L750 933 L250 933 L0 500 Z'
     const CSS = `
 .lv { container-type: size; position: relative; width: 100%; height: 100%; display: grid; place-items: center; background: var(--rm-bg, #07111F); overflow: hidden; }
@@ -26,7 +26,7 @@
 .lv-links path { fill: none; stroke-linecap: round; }
 .lv-links path.base { opacity: .1; }
 .lv-pulses circle { stroke: var(--rm-surface, #0E2035); stroke-width: 1.5; pointer-events: none; }
-.lv-pulses circle.flow { stroke: none; opacity: .38; }
+.lv-pulses circle.flow { stroke: none; opacity: .6; }
 .lv-pulses circle.halo { stroke: none; opacity: .28; }
 .lv .tm-p, .lv .tm-a { cursor: default; }
 .lv .tm-a.lv-hot > circle, .lv .tm-a.lv-hot > rect { stroke: var(--rm-text, #fff); stroke-width: 3; }
@@ -96,7 +96,7 @@
         const flowOne = (now) => {
             if (!wsum || flowN >= FLOW_MAX) return
             let r = Math.random() * wsum, k = 0; while (k < weights.length - 1 && (r -= weights[k].w) > 0) k++
-            const w = weights[k]; flowN++; fly.push({ from: w.from, to: w.to, t0: now, ms: FLOW_TRAVEL_MS * (0.8 + Math.random() * 0.5), flow: true, dot: el('circle', { r: px(2.6, 2.4, now), fill: colOf(w.from), class: 'flow' }, pulses) })
+            const w = weights[k], e = pairEl(w.from, w.to), ms = FLOW_TRAVEL_MS * (0.8 + Math.random() * 0.5); e.flowAt = now; e.flowMs = ms; flowN++; fly.push({ from: w.from, to: w.to, t0: now, ms, flow: true, dot: el('circle', { r: px(4, 3.5, now), fill: colOf(w.from), class: 'flow' }, pulses) })
         }
         const busy = (id, now) => { if (!hot.has(id)) N.get(id).classList.add('lv-hot'); hot.set(id, now + 1200) }
         // one event: from its agent to each of its targets; with no target the agent alone lights up
@@ -118,9 +118,9 @@
                 const a = pos.get(f.from), b = pos.get(f.to), q = bend(a, b), v = 1 - u
                 const x = f1(v * v * a.x + 2 * v * u * q.x + u * u * b.x), y = f1(v * v * a.y + 2 * v * u * q.y + u * u * b.y)
                 f.dot.setAttribute('cx', x); f.dot.setAttribute('cy', y); if (f.halo) { f.halo.setAttribute('cx', x); f.halo.setAttribute('cy', y) }
-                if (f.flow) f.dot.style.opacity = (0.38 * Math.sin(Math.PI * u)).toFixed(2)
+                if (f.flow) f.dot.style.opacity = (0.25 + 0.65 * Math.sin(Math.PI * u)).toFixed(2)
             }
-            for (const [, e] of lines) { const age = now - e.at, op = age < TRAVEL_MS ? 0.9 : Math.max(0, 0.9 * (1 - (age - TRAVEL_MS) / FADE_MS)); const v = op.toFixed(2); if (v !== e.op) { e.op = v; e.path.setAttribute('stroke-opacity', v) } }
+            for (const [, e] of lines) { const age = now - e.at, fa = e.flowAt ? now - e.flowAt : 1e9, fop = fa < e.flowMs ? 0.45 : Math.max(0, 0.45 * (1 - (fa - e.flowMs) / 1500)), op = Math.max(fop, age < TRAVEL_MS ? 0.95 : Math.max(0, 0.95 * (1 - (age - TRAVEL_MS) / FADE_MS))); const v = op.toFixed(2); if (v !== e.op) { e.op = v; e.path.setAttribute('stroke-opacity', v) } }
             for (const [id, until] of hot) if (until <= now) { hot.delete(id); N.get(id).classList.remove('lv-hot') }
             raf = win.requestAnimationFrame(frame)
         }
