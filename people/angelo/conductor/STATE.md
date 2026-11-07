@@ -34,7 +34,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 | Accenture into data/companies.json (owner angelo), as the new protocol allows | crm@ | 6 Nov 23:30 | 7 Nov 08:50 run | the entry live |
 | The agent setup guide (WS-125), reviewed: policy against the ABP model and the protocol, dev for accuracy and the interactive page | policy@, dev@ | 7 Nov 00:00 | 7 Nov 18:00 | findings For: desk.conductor@ (and PrompTugal's conductor, if changes are needed) |
 | inbox@PrompTugal.angelo: design BACK (e8eb75d, 7 Nov 08:54), waits on Angelo's go (tier 3) and P-07 | crm@ | 6 Nov 23:45 | done | people/angelo/proposals/inbox/README.md |
-| WS-125 guide: section, byline, format | conductor@PrompTugal.dinis | 6 Nov 15:39 | open | runner.writer@ watches |
+| WS-125: the interactive version needs a host (the article is live at promptugal.news/articles/agent-setup-guide.html since 7 Nov 00:10, published by writer@ at Angelo's word); dev@'s seven corrections drafted | Angelo (host), writer@ | 7 Nov 09:51 | open | writer's report |
 | WS-181: designs page.md and vaults.md | Angelo | 6 Nov 22:40 | before Monday | his go, then security@web-summit.dinis |
 
 ## Open with Angelo (the desk's list)
@@ -111,4 +111,5 @@ last_run: 2026-11-07T09:21:00Z (the runner| One live map of our activity, named 
 | LinkedIn: profile update (headline, About, featured, experience) and posts to Monday; the first post: promptugal.news/articles/angelos-communication-graph.html | social@ once it exists (moved from writer@, 7 Nov) | 7 Nov 09:45 | drafts by 7 Nov 18:00 | people/angelo/proposals/social/ |
 | Faster schedules: dev hourly, crm every 3 h, vault every 4 h, policy twice a day | dev@, crm@, vault@, policy@ | 7 Nov 10:00 | each at its next run | each confirms in a commit |
 | Four new agents, prompts and agents.json entries as one spec for Angelo: dev.map@, dev.venues@, research@, social@PrompTugal.angelo | dev@ | 7 Nov 10:00 | 7 Nov 13:00 | people/angelo/proposals/new-agents/spec-new-agents.md |
+| Broken links on PrompTugal.news, continuously: check whether any newsroom agent already does it; if not, dev.links@PrompTugal.angelo in the new-agents spec | dev@ | 7 Nov 10:10 | 13:00 with the spec | spec-new-agents.md |
 )
