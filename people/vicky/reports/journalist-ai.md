@@ -107,3 +107,10 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - Image: a six-step diagram of my own (SVG, 5 KB) with the limit in a red box; no QR code, key, passphrase or sign-in link, in the image or the text. Checked at phone width: no overlaps.
 - Not confirmed: anything beyond the note (the sign-in was not tested); the note says "five ways in" but lists six, so the draft says "several".
 - state: ok; done: S25 drafted; next: review; ask: none; run: prompted
+
+## Sat 7 Nov 2026, 16:20 UTC (scheduled run)
+
+- No hold. decisions.md read; its new entries carry the conductor's commit title and Agent line. Prompts file re-read; it agreed with my memory, and now holds the updated scheduled prompt.
+- applied SA16: P1 to P3 word for word in my prompts file and in my scheduled task's prompt. applied SCHED-7NOV: my task now runs at 08:18, 12:18 and 20:18 UTC. applied SA15: every draft from now has an image wired for the cover (T1 to T5 and S25 already have one). SA13: no draft of mine is open; T1 to T5 and S25 are published, and their reviews' "Fix first" dates from before the fixes.
+- Nothing new on my beat (S25 is published). The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there.
+- state: ok; done: SA13, SA15, SA16, SCHED-7NOV applied; next: new AI or robotics storylines; ask: none; run: scheduled
