@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1107",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: backlog: the back-office proposal and the guide's fact-check fixes done; kanban and Android items now the build",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "09c57f37c"
+  },
+  {
     "version": "v0.2.1106",
     "date": "2026-11-07",
     "what": "writer@PrompTugal.angelo: the interactive guide follows the fact-checked article; report for the desk (WS-125)",
