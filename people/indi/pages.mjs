@@ -6,6 +6,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { build as buildTodo } from './todo/todo.mjs'   // Indi's to-do infographic (/people/indi/todo/)
 import { build as buildToday } from './today/today.mjs'   // Indi's day on one page (/people/indi/today/, WS-06)
+import { build as buildSchedules } from './schedules/schedules.mjs'   // Indi's agents and their timetables (/people/indi/schedules/)
 
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 const PAL = ['#cdefe3', '#e3ddf7', '#ffe1d0', '#fff3c4', '#d6ecfa', '#f9d9e3']  // mint, lavender, peach, butter, sky, rose
@@ -84,6 +85,6 @@ ${panel('model', '★', 'RiskMandate in one picture', `<div class="ig-helps">${r
 <p class="meta">Built from <code>people/indi/factory/companies.json</code> by <code>people/indi/pages.mjs</code> (WS-27). The companies are those marked "meet" on <a href="../../../companies/index.html">the company map</a>. Each page: the sourced facts, then our analysis, side by side in normal and lay terms; every panel expands to fill the screen.</p></div>`
     const idxMd = `${F.intro}\n\n## RiskMandate in one picture\n\n${STEPS.map(([k, t]) => `- **${t}:** ${R[k]}`).join('\n')}\n\n- **Normal:** ${R.n}\n- **Lay:** ${R.l}\n\n## The companies\n\n${cards.map(({ c, f }) => `- [${f.name}](${c.id}/index.md): ${c.tagline}`).join('\n')}\n`
     out.unshift({ rel: 'people/indi/factory/index.html', title: 'The factory: one infographic per company', description: `What each target company does, the risks it faces from AI agents and how RiskMandate helps, in pictures and in normal and lay terms: ${cards.length} companies (WS-27).`, body: idx, md: idxMd, head: HEAD.replaceAll('FACTORY', '.') })
-    out.push(...buildTodo(ROOT), ...buildToday(ROOT))
+    out.push(...buildTodo(ROOT), ...buildToday(ROOT), ...buildSchedules(ROOT))
     return out
 }
