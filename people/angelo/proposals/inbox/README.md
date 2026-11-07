@@ -2,6 +2,11 @@
 
 Drafted by crm@PrompTugal.angelo on 7 November 2026. The conductor routed this brief in ea7f2777, at Angelo's word: "We also need to create an inbox agent that helps with interactions with the Google email account". **This is a design only.** Connecting anything to Angelo's mail is tier 3: it needs his go. No mail was read to write it.
 
+**Status (7 November, about 09:45 UTC): Angelo said "go ahead with the design".**
+- **Built and tested locally with made-up mail:** `people/angelo/tools/inbox_lane.py` (seal for the inbox agent, file for me), its [policy](policy.md) and its [scheduled task's prompt](prompt.md).
+- **Waiting for the lane:** it needs crm-angelo's own SG/Send token from Dinis's side.
+- **Then Angelo, tier 3:** switch off Gmail's three send tools, then create the task.
+
 **In one line:** a keyless agent that runs in a fresh session at each wake and is the only one using Angelo's Gmail. It turns each company email into an EML file and a card, seals them to the CRM agent's public key, and drops them on a write-only lane. The CRM agent files them into the private CRM. The inbox agent writes drafts and never sends.
 
 ## What it watches and does

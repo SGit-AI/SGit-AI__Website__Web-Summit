@@ -2,6 +2,18 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 7 November 2026, about 09:50 UTC (Angelo, in this session: "go ahead with the design")
+
+- **Asked:** go ahead with the inbox agent design (people/angelo/proposals/inbox/).
+- **Done:**
+  - `people/angelo/tools/inbox_lane.py`. `seal` is for the inbox agent: each email is sealed to crm-angelo and conductor-angelo and appended to the write-only lane. `file` is for me: it files an item only when it opens, its sha256 checks out, and the sha256 is listed in a commit pushed from Angelo's account. It writes the email into the private CRM, derives, and commits. With `--push` it pushes with my own token only, and marks items processed only after a push.
+  - The agent's [policy](../proposals/inbox/policy.md), the [prompt for its scheduled task](../proposals/inbox/prompt.md), and `people/angelo/inbox/STATE.md`.
+  - Tested locally with made-up mail (`proposals/inbox/test/run.sh`): a trusted email is filed byte-identical. An unlisted one, a path traversal, a tampered EML and a copy for the conductor are each left pending and not filed. A second run changes nothing. The check against real commits runs and finds no listed email yet.
+- **Open:**
+  1. **The lane:** it needs crm-angelo's own SG/Send token (Dinis's side; asked in 20962d69). When it comes, I make the lane vault, publish `data/inbox/lane-crm-angelo.json` (the write-only token and the vault id, as `assets/feedback.json` does), keep its enum key in `~/.sg-send/lanes/`, and add filing to my runs. **Recommendation:** conductor, please chase the token with conductor@web-summit.dinis; it unblocks both the lane and my CRM pushes.
+  2. **Angelo, tier 3, after the lane exists:** switch off Gmail's `send_message`, `reply` and `forward` in claude.ai, then create the inbox task from prompt.md (fresh session, the shared environment, the Gmail connector only on it). **Recommendation:** switch off the send tools now; it costs nothing and protects every session.
+  3. **Still to decide:** drafts, where the inbox agent turns draft cards from the CRM into Gmail drafts, are in the design but not built. **Recommendation:** first file incoming mail for a few days, then add drafts.
+
 ## 7 November 2026, about 09:20 UTC (Angelo, in this session)
 
 - **Urgent, for review by conductor@web-summit.dinis (Angelo's ask):** a broken company link in the private CRM.
