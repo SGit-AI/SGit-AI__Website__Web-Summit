@@ -33,12 +33,13 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 | Context rules into every agent's prompt and the kit | dev@ | 6 Nov 23:30 | 7 Nov 18:00 | kit section; each agent adopts at its next run |
 | Accenture into data/companies.json (owner angelo), as the new protocol allows | crm@ | 6 Nov 23:30 | 7 Nov 08:50 run | the entry live |
 | The agent setup guide (WS-125), reviewed: policy against the ABP model and the protocol, dev for accuracy and the interactive page | policy@, dev@ | 7 Nov 00:00 | 7 Nov 18:00 | findings For: desk.conductor@ (and PrompTugal's conductor, if changes are needed) |
-| inbox@PrompTugal.angelo: a design for Angelo's go (Silvio's inbox agent as template; mail to the private CRM through a sealed lane, no key in the inbox agent) | crm@ | 6 Nov 23:45 | 7 Nov 16:50 run | people/angelo/proposals/inbox/README.md |
+| inbox@PrompTugal.angelo: design BACK (e8eb75d, 7 Nov 08:54), waits on Angelo's go (tier 3) and P-07 | crm@ | 6 Nov 23:45 | done | people/angelo/proposals/inbox/README.md |
 | WS-125 guide: section, byline, format | conductor@PrompTugal.dinis | 6 Nov 15:39 | open | runner.writer@ watches |
 | WS-181: designs page.md and vaults.md | Angelo | 6 Nov 22:40 | before Monday | his go, then security@web-summit.dinis |
 
 ## Open with Angelo (the desk's list)
 
+- inbox@PrompTugal.angelo (crm@'s design, e8eb75d): his go is tier 3, asked as two questions: (1) switch the three Gmail send tools off; (2) create its scheduled task with the Gmail connector. Settle P-07 (a stranger's email is a visitor's note) first. Read people/angelo/proposals/inbox/README.md.
 - Topics still to discuss: 10 SG/Send deep dive (with diagrams); 11 the PromptUGAL.news rebranding's changes to his workflows; 12 an editorial team of agents for articles.
 - From policy@PrompTugal.angelo's first audit (69146077, people/angelo/policy/findings.md): P-01 (a signed-only drain) and the write-path gate check proposed; P-02 settled (WS-179); P-04 confirmed by Angelo on 6 Nov.
 - How the desk talks with Angelo: one topic at a time, what was done, what waits on him with a recommendation, what others closed; propose before acting; a visual summary when he asks for an overview.
@@ -81,6 +82,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 7 Nov 09:21: the runner: two briefs back, nothing to route. crm@ delivered the inbox@ design (e8eb75d, people/angelo/proposals/inbox/README.md, ahead of its 16:50 due): Angelo's go is tier 3 (the three Gmail send tools off, the scheduled task created with the Gmail connector), added to Open with Angelo; P-07 comes first. dev@ reviewed the WS-125 guide (d23e255, review-dev.md): accurate on sources, seven corrections already routed `For: writer`, policy@ and Dinis's conductor; policy@'s half still out (due 18:00). Others' work, information only: Silvio's dashboard agent at L6, vault-audit fix, journalist 08:57, designer's /print/.
+
 - 7 Nov 08:20: the runner: nothing to route; nothing urgent. Since 07:20 only reports and others' work: team-collaboration's 07:40 daily note (9dd5c3e, For: desk: parking open, decisions wait on Dinis, no 18:00 records), dev's Replay map mode (1b8683d, For: Angelo, WS-97), Vicky's and Silvio's agents. No brief of Angelo's has come back. Workload table written (above).
 
 - 7 Nov 07:20: the runner: nothing to route; nothing urgent. policy@ run 2 (a071a51, `For: angelo`): P-07 for Angelo before inbox@ is built (a stranger's email is a visitor's note, R11; added to Open with Angelo), P-05 (team-collaboration still pushes its session branch, a policy matter), P-06 (low). Others' work, information only: dev@'s full-screen map fix under Silvio's calmer shell (7136d01), dashboard@silvio's two brains on the command centres of Silvio, Angelo and Jose (14f3f05, touches the shared engine, no change to Angelo's own apps), journalist@dinis's 06:57 report. No brief of Angelo's has come back.
@@ -99,6 +102,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 7 Nov 00:20: the runner: nothing to route. Since 23:20: dev reworked the map's playback in four steps at Angelo's words (one map on Team and the machine, agents arriving and gathering round their person: reports to the desk, information only); dashboard's venue map (names on the map, stylised drawing, full screen); writer published WS-125 on PrompTugal.news and reports it (6885f0c); the desk's own briefs to writer, dev and crm (d300e38, ea7f277). Dinis's WS-188 (abp@) and security's WS-187 review: others' work, information only.
 
-- 6 Nov 23:20: the runner: nothing to route. dashboard applied Angelo's Where request (5d7749e: fixed button order, a venue map with pins; pins live in the browser until WS-181's vault; touched dev's where.js and said so, `For: dev`): information only. dev's ledger line for Replay's map mode; runner.writer's first STATE (WS-125 not yet visible in the newsroom).
-
-last_run: 2026-11-07T08:20:00Z (the runner)
+last_run: 2026-11-07T09:21:00Z (the runner)
