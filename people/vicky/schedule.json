@@ -5,11 +5,11 @@
   {
    "agent": "conductor@web-summit.vicky",
    "task": "the morning brief",
-   "cron_utc": "30 9 * * *",
+   "cron_utc": "45 9 * * *",
    "task_id": "trig_013xdhaBHbA52GD47m1JaKDL",
    "state": "enabled",
    "since": "4 Nov 2026",
-   "at_whose_word": "Vicky (08:30 brief, 4 Nov; 09:00 on 7 Nov; 09:30 on 7 Nov, after the reviewer's 09:00 run)"
+   "at_whose_word": "Vicky (08:30 brief, 4 Nov; 09:00, then 09:30 on 7 Nov; 09:45 on 7 Nov night, after the journalists' fix-only follow-ups)"
   },
   {
    "agent": "conductor@web-summit.vicky",
