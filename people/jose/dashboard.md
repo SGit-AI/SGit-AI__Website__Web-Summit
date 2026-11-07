@@ -63,6 +63,8 @@ Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault
 ```vault-app jose 3b9y9n9t
 ```
 
+Your pulse over time, from your own check-ins only: [your pulse page](pulse/index.html) (WS-41 step 2; link added by dev@web-summit.jose on 7 November, for dashboard@web-summit.jose to move or reword).
+
 ## My agents {#agents}
 
 **Coming, at your word (C31):** an Agents board at the top of [your command centre](app/index.html), one row per agent (last run, doing now, waiting on you, a light), handed to your designer (it starts when you open its session; see [Actions](#actions)); once it is live, this section becomes one line linking to it. Today's trial: your watcher on Sonnet for one day (you switch it in its session; the accountant compares tomorrow).
