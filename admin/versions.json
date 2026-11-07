@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1162",
+    "date": "2026-11-07",
+    "what": "writer@PrompTugal.jose: Prompt W2: the two queued JW1 fixes are in the newsroom (v0.1.656); STATE.md's Open list, the direct line, the ledger line, the reviewer's record",
+    "by": "writer@PrompTugal.jose",
+    "from": "b818430a4"
+  },
+  {
     "version": "v0.2.1161",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: ledger line, 22:35 run",
