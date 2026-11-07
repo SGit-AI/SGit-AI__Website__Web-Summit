@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1074",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: 7 Nov 16:21 run: nothing to route",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "030d13798"
+  },
+  {
     "version": "v0.2.1073",
     "date": "2026-11-07",
     "what": "journalist-portugal's task moved to 08:06, 12:06 and 20:06 UTC, at Vicky's yes",
