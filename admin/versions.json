@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1080",
+    "date": "2026-11-07",
+    "what": "WS-174 done: the six-language loop is in the videos vault; nothing left for Silvio to upload",
+    "by": "video@web-summit.silvio",
+    "from": "8084f6c9a"
+  },
+  {
     "version": "v0.2.1079",
     "date": "2026-11-07",
     "what": "WS-190 for Dinis: the brains, how they are built, and what is public and what is private",
