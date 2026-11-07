@@ -1,0 +1,190 @@
+From 236148708c7dd6d8b956e937dbc1f9a00f09df2e Mon Sep 17 00:00:00 2001
+From: "vault.kms" <noreply@anthropic.com>
+Date: Sat, 7 Nov 2026 15:07:41 +0000
+Subject: [PATCH] policy: per-agent kms rows (agent, vault_id, ops, max_uses,
+ until) in the v0 policy hash
+
+Proposal for sharness.kms, piece 1. Rows are checked by kms_problems(), accepted
+under the optional key 'kms', and hashed like any other row. Nothing enforces
+them until the kms door exists (piece 2). Based on 05e5290.
+---
+ sharness_ai/policy.py         | 42 ++++++++++++++-
+ tests/unit/test_policy_kms.py | 98 +++++++++++++++++++++++++++++++++++
+ 2 files changed, 139 insertions(+), 1 deletion(-)
+ create mode 100644 tests/unit/test_policy_kms.py
+
+diff --git a/sharness_ai/policy.py b/sharness_ai/policy.py
+index 7ca998c..1397d1b 100644
+--- a/sharness_ai/policy.py
++++ b/sharness_ai/policy.py
+@@ -37,6 +37,8 @@ MAX_SAFE_INT  = 2 ** 53 - 1        # Number.MAX_SAFE_INTEGER: the largest intege
+ MAX_FILE_SIZE = 1 << 20            # a policy is small; a megabyte of JSON is not a policy
+ MAX_ID_LENGTH = 200
+ CONTROL = re.compile(r"[\x00-\x1f\x7f]")
++KMS_OPS       = ("read", "write")  # what a kms row may allow; sign and unseal_secret are later ops
++KMS_ROW_KEYS  = ("agent", "vault_id", "ops", "max_uses", "until")
+ 
+ 
+ class PolicyError(ValueError):
+@@ -123,6 +125,42 @@ def path_problem(p) -> str:
+     return ""
+ 
+ 
++def kms_problems(rows) -> list:
++    """Problems with the `kms` rows: one row per (agent, vault_id), each
++    {"agent": str, "vault_id": str, "ops": ["read", "write"], "max_uses": int >= 1, "until": int}.
++    `until` is a Unix time in whole seconds (integers only, as everywhere in a policy). The rows go
++    into the policy hash like every other row, so changing any one of them changes the hash."""
++    if not isinstance(rows, list):
++        return ["kms must be a list of rows"]
++    p, seen = [], set()
++    for i, r in enumerate(rows):
++        w = f"kms[{i}]"
++        if not isinstance(r, dict):
++            p.append(f"{w} must be an object")
++            continue
++        for k in r:
++            if k not in KMS_ROW_KEYS:
++                p.append(f"{w}.{k}: unknown key")
++        for k in ("agent", "vault_id"):
++            v = r.get(k)
++            if not isinstance(v, str) or not v or len(v) > MAX_ID_LENGTH or CONTROL.search(v):
++                p.append(f"{w}.{k} must be a non-empty printable string of at most {MAX_ID_LENGTH} characters")
++        ops = r.get("ops")
++        if (not isinstance(ops, list) or not ops or len(set(map(str, ops))) != len(ops)
++                or any(o not in KMS_OPS for o in ops)):
++            p.append(f"{w}.ops must be a non-empty list of distinct ops from {list(KMS_OPS)}")
++        for k, low in (("max_uses", 1), ("until", 0)):
++            v = r.get(k)
++            if isinstance(v, bool) or not isinstance(v, int) or v < low:
++                p.append(f"{w}.{k} must be an integer of at least {low}")
++        key = (r.get("agent"), r.get("vault_id"))
++        if all(isinstance(x, str) for x in key):
++            if key in seen:
++                p.append(f"{w}: a second row for agent {key[0]!r} and vault {key[1]!r}; say each thing once")
++            seen.add(key)
++    return p
++
++
+ def check(policy) -> list:
+     """The shape of a v0 policy. Returns a list of problems; empty means well-formed."""
+     p = []
+@@ -172,8 +210,10 @@ def check(policy) -> list:
+         for k in proc:
+             if k not in ("no_new_privs", "max_memory_mb", "max_pids"):
+                 p.append(f"process.{k}: unknown key")
++    if "kms" in policy:
++        p.extend(kms_problems(policy["kms"]))
+     for k in policy:
+-        if k not in ("pbp", "id", "layer", "files", "network", "process", "notes"):
++        if k not in ("pbp", "id", "layer", "files", "network", "process", "notes", "kms"):
+             p.append(f"{k}: unknown key")
+     try:
+         canonical(policy)
+diff --git a/tests/unit/test_policy_kms.py b/tests/unit/test_policy_kms.py
+new file mode 100644
+index 0000000..e81a256
+--- /dev/null
++++ b/tests/unit/test_policy_kms.py
+@@ -0,0 +1,98 @@
++"""Per-agent kms rows in the policy (piece 1 of the sharness.kms changeset). No real vault id or key
++appears here: every identifier is made up inside the test."""
++import copy
++
++import pytest
++
++from sharness_ai.policy import PolicyError, check, kms_problems, policy_hash
++from sharness_ai.level.l3.L3 import L3
++
++ROW = {"agent": "agent-a", "vault_id": "vault-1", "ops": ["read"], "max_uses": 20, "until": 1_800_000_000}
++
++
++def base(*rows):
++    return {"pbp": 1, "id": "kms-test", "network": "none", "kms": [dict(r) for r in rows]}
++
++
++class Test_Kms_Rows:
++
++    def test_a_well_formed_row_is_accepted(self):
++        assert check(base(ROW)) == []
++
++    def test_no_kms_key_leaves_the_hash_of_an_old_policy_alone(self):
++        old = {"pbp": 1, "id": "kms-test", "network": "none"}
++        assert check(old) == []
++        assert policy_hash(old) == policy_hash({"network": "none", "id": "kms-test", "pbp": 1})
++
++    @pytest.mark.parametrize("field,value", [
++        ("agent", "agent-b"), ("vault_id", "vault-2"), ("ops", ["read", "write"]),
++        ("max_uses", 21), ("until", 1_800_000_001)])
++    def test_the_hash_changes_when_any_field_of_a_row_changes(self, field, value):
++        changed = dict(ROW, **{field: value})
++        assert policy_hash(base(ROW)) != policy_hash(base(changed))
++
++    def test_the_hash_changes_when_a_row_is_added_or_removed(self):
++        other = dict(ROW, agent="agent-b")
++        assert len({policy_hash(base()), policy_hash(base(ROW)), policy_hash(base(ROW, other))}) == 3
++
++    def test_an_unknown_op_is_refused(self):
++        assert any("ops" in x for x in kms_problems([dict(ROW, ops=["sign"])]))
++        assert any("ops" in x for x in kms_problems([dict(ROW, ops=[])]))
++        assert any("ops" in x for x in kms_problems([dict(ROW, ops=["read", "read"])]))
++
++    def test_an_unknown_key_is_refused(self):
++        assert any("unknown key" in x for x in kms_problems([dict(ROW, any_agent=True)]))
++
++    @pytest.mark.parametrize("field", ["agent", "vault_id"])
++    def test_an_empty_or_missing_agent_or_vault_is_refused(self, field):
++        bad = dict(ROW); bad[field] = ""
++        assert kms_problems([bad])
++        gone = dict(ROW); del gone[field]
++        assert kms_problems([gone])
++
++    @pytest.mark.parametrize("field,value", [
++        ("max_uses", 0), ("max_uses", -1), ("max_uses", 1.5), ("max_uses", True),
++        ("until", -1), ("until", 1.5), ("until", "tomorrow")])
++    def test_bad_counts_and_times_are_refused(self, field, value):
++        assert kms_problems([dict(ROW, **{field: value})])
++
++    def test_a_second_row_for_the_same_agent_and_vault_is_refused(self):
++        assert any("second row" in x for x in kms_problems([ROW, dict(ROW, ops=["write"])]))
++
++    def test_the_rows_must_be_a_list_of_objects(self):
++        assert kms_problems({"agent": "x"})
++        assert kms_problems(["x"])
++
++    def test_check_reports_kms_problems(self):
++        assert any("kms[0]" in x for x in check(base(dict(ROW, max_uses=0))))
++
++    def test_a_row_cannot_hide_a_float_in_the_hash(self):
++        with pytest.raises(PolicyError):
++            policy_hash(base(dict(ROW, until=1.5)))
++
++    def test_rows_are_not_mutated_by_checking(self):
++        doc = base(ROW)
++        before = copy.deepcopy(doc)
++        check(doc)
++        assert doc == before
++
++
++class Test_Level3_Passes_Kms_Rows_Down:
++
++    def test_a_level_3_document_carries_kms_rows_into_the_v0_policy(self):
++        doc = {"pbp": 1, "id": "kms-test", "level": 3, "network": "none", "kms": [dict(ROW)]}
++        out = L3.compile(doc)["document"]
++        assert out["kms"] == [ROW]
++        assert check(out) == []
++
++    def test_a_bad_row_is_refused_at_level_3(self):
++        doc = {"pbp": 1, "id": "kms-test", "level": 3, "network": "none", "kms": [dict(ROW, ops=["sign"])]}
++        with pytest.raises(PolicyError):
++            L3.compile(doc)
++
++    def test_secrets_names_and_kms_rows_stay_separate(self):
++        doc = {"pbp": 1, "id": "kms-test", "level": 3, "network": "none",
++               "secrets": ["SOME_ENV_NAME"], "kms": [dict(ROW)]}
++        result = L3.compile(doc)
++        assert "secrets" not in result["document"] and result["document"]["kms"] == [ROW]
++        assert any("secrets" in u for u in result["unheld"])
+-- 
+2.43.0
+

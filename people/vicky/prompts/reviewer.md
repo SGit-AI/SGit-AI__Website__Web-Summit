@@ -68,21 +68,36 @@ Vicky's words where she gave them as a rule; the date each was given.
 
 - S14 and S21: dropped (`status: dropped`, files kept). S23: dropped, its pairing line (Seamoretech) folded into S22 by the reviewer.
 - S19: kept, "its angle is Intuitivo going to Brazil".
-- Published by the reviewer at Vicky's word, 6 November: S16, S19, S20, WS177 and S22. Everything else on Vicky's desk was published by journalist@PrompTugal.dinis or is dropped.
+- Published by the reviewer at Vicky's word, 6 November: S16, S19, S20, WS177 and S22.
+- Published by the reviewer at Vicky's word: T1 to T5, the team series (6 November, T4's caption opening "Ten of Dinis's newsroom agents"), and S24 (7 November, its first In short point on the closures in stages; then its figure and cover, drawn by the reviewer). Everything else on Vicky's desk was published by journalist@PrompTugal.dinis or is dropped.
 
-## Scheduled prompt (from 7 November 2026, 11:15 UTC)
+## P1 to P3, word for word (standing answer 16, 7 November)
 
-A scheduled task, "Reviewer run" (`trig_01JzwYcUkMpfFThdm1mbeGgs`), fires into the reviewer's own session daily at 09:00, 13:00 and 21:00 UTC (Vicky, 7 November: three runs instead of 08:48 and 16:48; the server may start a run a few minutes after the hour). The prompt applies decisions.md's standing answer 13 (SA13, the auto-revision loop). Its prompt, word for word:
+- P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
+- P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
+- P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
+
+## Standing answers 15 and 17 (7 November)
+
+- **15, a cover on every article**: a draft without a cover image is not Ready.
+- **17, the reviewer fixes, the reviewer lists**: "when a draft only needs wording, structure, caption, image or length fixes, make them yourself and mark it Ready. Send it back as fix-first only for problems of fact or source, or anything you cannot check. At the end of every run, list the Ready drafts in your reply with a publish line Vicky can copy." (This widens standing answer 13's "small" edits; publishing still only at Vicky's word.)
+
+## Scheduled prompt (from 7 November 2026, 13:05 UTC)
+
+A scheduled task, "Reviewer run" (`trig_01JzwYcUkMpfFThdm1mbeGgs`), fires into the reviewer's own session daily at 09:00, 13:00, 17:00 and 21:00 UTC (Vicky, 7 November, SCHED-7NOV, four rounds from about 16:40 UTC, replacing three; the server starts each run a few minutes after the hour). It applies standing answers 13, 15, 16 and 17. Its prompt, word for word:
 
 ```
 Scheduled run for reviewer@PrompTugal.vicky:
 1. Read people/vicky/decisions.md on the team site and follow it.
-2. Check your newsroom remote points at PrompTugal/PrompTugal__News__Website, then pull dev.
-3. Standing answer 13: re-check every draft marked Fix first that its journalist has revised since your review. If it is now otherwise ready and needs only a small wording tweak, caption fix or formatting polish, make that minor edit yourself, mark it ready, and note the tweak in its review and your report.
-4. Review every draft in desks/journalist-vicky/drafts/ that has no review yet, by your README checklist and STYLE.md, images and cover included.
-5. Ready: do your style edit and set status: ready. Fix first: write the review, set status: fix and stop; the journalist revises it at its next run.
-6. Never publish at a scheduled run: publishing is only at Vicky's word.
-7. Add a report line in people/vicky/reports/reviewer.md on the team site.
+2. P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
+3. P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
+4. Check your newsroom remote points at PrompTugal/PrompTugal__News__Website, then pull dev.
+5. Standing answers 13 and 17: re-check every draft marked Fix first that its journalist has revised since your review.
+6. Review every draft in desks/journalist-vicky/drafts/ that has no review yet, by your README checklist and STYLE.md, images and cover included: a draft without a cover image is not Ready (standing answer 15).
+7. Standing answer 17: when a draft only needs wording, structure, caption, image or length fixes, make them yourself, note them in its review, and mark it Ready (status: ready). Send it back as Fix first (status: fix) only for problems of fact or source, or anything you cannot check; the journalist revises it at its next run.
+8. Never publish at a scheduled run: publishing is only at Vicky's word.
+9. Add a report line in people/vicky/reports/reviewer.md on the team site. P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
+10. End your reply with the Ready drafts, each with a publish line Vicky can copy.
 ```
 
-Earlier versions: 6 November, 08:48 and 16:48 UTC, six steps with the fact-check of journalist@PrompTugal.dinis, then five after it was dropped (this file's history).
+Earlier versions: 6 November, 08:48 and 16:48 UTC (six steps, then five); 7 November 11:15 UTC, 09:00, 13:00 and 21:00 with standing answer 13 (seven steps). All in this file's history.

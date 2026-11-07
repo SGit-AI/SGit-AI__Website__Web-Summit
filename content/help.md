@@ -82,9 +82,10 @@ Do this **before** an agent makes its key: a key made in a session you then repl
 - **Start a new session.** A session that is already open does not see a new variable; that is why the agent still says "no access token configured".
 - **One environment per agent that holds a secret** (WS-129; for Angelo's agents his rule of 6 November): every session in an environment can read its variables, so a token lives only in the environment of the one agent it belongs to.
 - **An old token still in a session?** A token removed from the environment's settings stays in sessions started before. Each agent checks its own session without printing it, and removes it if it is still there.
+- **After the vault is pushed, harden the session**: no token left in a vault clone, credentials opened into memory rather than files, a passphrase on the key store, and never print a key ([the vault guide's four steps](../vault-agent/index.html#hardening), 7 November).
 - The vault agent checks first, without printing the token: is it set, and does `dev.send.sgraph.ai` answer? If not, fix the environment before it makes its key.
 
-*Revised 7 November: one environment per agent with a secret, and how an old token left in a running session is removed; the onboarding guide's step 8 now follows the one-token-per-agent rule too.*
+*Revised 7 November: one environment per agent with a secret, how an old token left in a running session is removed, and the vault guide's new hardening steps; the onboarding guide's step 8 now follows the one-token-per-agent rule too.*
 
 *Sources: [the vault guide](../vault-agent/index.html#token), step 1 (one token per agent since 5 November, commit bd407d1), and the onboarding guide's step 8 (aligned 6 November, commit e5f521e); Angelo's protocol, "Secrets"; commit 66b37f0 (removing an old token); [when something goes wrong](../vault-agent/index.html#help).*
 

@@ -2,7 +2,7 @@
 title: "Angelo on LinkedIn: profile edits, and posts from 7 to 12 November"
 summary: writer@PrompTugal.angelo's drafts for Angelo (WS-126): edits to his LinkedIn profile as it stands on 7 November, and a post plan to Thursday 12 November, from PrompTugal.news, RiskMandate and the team, ending at RiskMandate's stand. Angelo edits and posts everything himself; no agent posts.
 ---
-**Status: drafts, for Angelo.** Written by writer@PrompTugal.angelo on 7 November 2026, from the export of his profile he gave in the writer's session (not kept here: it holds contact details), his card (`people/angelo/card.md`), the team's roster, riskmandate.ai, the team site's /summit/ and the articles linked below (all read 7 November). Angelo posts himself. Every fact about RiskMandate is from riskmandate.ai or this site; nothing says what RiskMandate sells.
+**Status: profile, Project, Featured and the Saturday post done by Angelo on 7 November; the posts from Sunday 8 to Thursday 12 to go.** Written by writer@PrompTugal.angelo on 7 November 2026, from the export of his profile he gave in the writer's session (not kept here: it holds contact details), his card (`people/angelo/card.md`), the team's roster, riskmandate.ai, the team site's /summit/ and the articles linked below (all read 7 November). Angelo posts himself. Every fact about RiskMandate is from riskmandate.ai or this site; nothing says what RiskMandate sells.
 
 **Angelo's brief (7 November):** "I'd like to post stuff from the PrompTugal News, RiskMandate and other members of the team if relevant to my angle. I also want to declare that I'm at the Web Summit and to come find me at the RiskMandate stand on Thursday."
 
@@ -110,10 +110,9 @@ Notes:
 >
 > Every step up (projects, connected mail, scheduled runs, code, a team of agents) saves time and adds reach: more the agent can do, whether you meant it to or not.
 >
-> I wrote a guide to climbing those steps safely: what each needs, what it risks, how much control to put around it. Read it as a CEO, a CISO, a DPO, a developer or a non-technical user, with two short questionnaires and a dial for five kinds of deployment.
+> I wrote a guide to climbing those steps safely: what each needs, what it risks, how much control to put around it. It's interactive: read it as a CEO, a CISO, a DPO, a developer or a non-technical user, answer two short questionnaires, and turn a dial over five kinds of deployment.
 >
-> The text: https://promptugal.news/articles/agent-setup-guide.html
-> Interactive: https://web-summit.sgit.ai/people/angelo/guide/index.html
+> https://promptugal.news/articles/agent-setup-guide.html
 
 ### Mon 9 (the summit opens). Reshare: the team behind it
 

@@ -8,12 +8,15 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 
 | Piece | Stage | Waits on | Link |
 |---|---|---|---|
-| The agent setup guide (WS-125) | sent to the newsroom for review, refinement and publishing, 6 Nov (ecd8dc39); Dinis authorised publication | conductor@PrompTugal.dinis: section, byline, format | people/angelo/proposals/WS-125/ |
-| (not Angelo's piece) T1, "Angelo's communication graph: watch our agents talk", by journalist-ai@PrompTugal.vicky | published 6 Nov (e1f51cb0, reviewer@PrompTugal.vicky) | nothing | https://github.com/PrompTugal/PrompTugal__News__Website/blob/main/content/articles/angelos-communication-graph.md |
+| The agent setup guide (WS-125) | **published** 6 Nov (222e196e); corrected and re-signed 7 Nov after dev@, policy@ and checker@PrompTugal.vicky's five findings (43e52e03); interactive version live (3c4a60fd, site v0.1.644) | no open finding found; Dinis's own line authorising publication | https://promptugal.news/articles/agent-setup-guide.html ; people/angelo/proposals/WS-125/ |
 
-## Open with the newsroom
+## Waits on Angelo
 
-- Newsroom as of 6 Nov 23:10 UTC: no desks/writer-angelo/, no review finding or pass naming the WS-125 guide, no commit For: writer@PrompTugal.angelo or desk.conductor@PrompTugal.angelo. The guide is not yet visible there (ecd8dc39 unanswered).
-- Whether Angelo's pieces can carry his byline; whether he owns the technical notes section; whether he is an outreach sender (2219eb22, ecd8dc39).
+- Nothing found blocking. The interactive version went out at his "Yep push it" (7 Nov), before dev@PrompTugal.dinis's review of work/writer-angelo; that review is still open.
 
-last_run: 2026-11-06T23:20Z
+## Waits on the newsroom
+
+- Dinis's answer to the ask in desks/writer-angelo/asks/2026-11-07-angelo-as-contributor.md (status: open): list Angelo as a technical content contributor; may an agent of another operator hold a key and publish (security@, abp@); a line from Dinis confirming publication.
+- Whether pieces can carry Angelo's byline; whether he owns the technical notes section; whether he is an outreach sender.
+
+last_run: 2026-11-07

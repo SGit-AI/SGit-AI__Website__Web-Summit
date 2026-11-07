@@ -8,6 +8,7 @@ summary: The page Angelo reads first, about action: what is blocked on Angelo, t
 
 Your go is needed before these move:
 
+- **Two specs to review with your desk:** [the live map](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/proposals/live-map/spec-live-map.md) (Replay inside Team and the machine, keys, sealed messages and lanes, a public version, a 3D option) and [the venues, Part B](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/proposals/WS-181/spec-venues.md) (the venue map on PrompTugal.news; Part A, the team's board, is approved). dev.map and dev.venues build only after.
 - **The presence agent:** team-collaboration as the team's one presence agent, opening everyone's locations (tier 3).
 - **Jose's conductor proposes** that your dev agent and Dinis's own 15 unpicked site and UI issues that name Jose; ask your desk for it.
 - **Held for you by your conductor:** practising onboarding with a real person (WS-35, WS-124), and token and context optimisation (WS-148).

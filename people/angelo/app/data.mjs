@@ -261,10 +261,79 @@ function replay(root) {
     return { from: new Date(REPLAY_FROM).toISOString(), people, agents, targets, events, standups, runs, repo: 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit' }
 }
 
+// For me (spec-kanban-tasks.md, approved 7 November, cb97bf39): Angelo's tasks as cards from four public sources, placed in
+// four columns by kanban-core.js. Read only; a row it cannot read is listed in `unplaced`, never guessed.
+const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
+// when each line of a file last changed (git blame), so a card knows when it appeared or moved
+function lineTimes(root, rel) {
+    const out = []; let t = ''
+    for (const l of git(root, ['blame', '--line-porcelain', '--', rel]).split('\n')) {
+        if (l.startsWith('committer-time ')) t = new Date(+l.slice(15) * 1000).toISOString()
+        else if (l.startsWith('\t')) out.push(t)
+    }
+    return out
+}
+// agents' full names are shortened to <role>@ (the gate's contact check reads a full name as an address)
+const plain = t => String(t || '').replace(/([a-z0-9][a-z0-9.-]*)@(?:web-summit|promptugal)\.[a-z0-9-]+/gi, '$1@').replace(/~~/g, '').replace(/\*\*|`/g, '').replace(/\s+/g, ' ').trim()
+const briefLink = t => { const h = String(t || '').match(/\b([0-9a-f]{7,12})\b/); if (h) return `${REPO}/commit/${h[1]}`; const f = String(t || '').match(/((?:people|board|content|data|admin|assets)\/[\w./@-]+\.\w+)/); return f ? `${REPO}/blob/dev/${f[1]}` : '' }
+const WAITS_ON_HIM = /\bangelo\b|\bhis\b|\bhim\b/i
+function tasks(root, person, d, now) {
+    const cards = [], unplaced = [], byIssue = new Set()
+    // 1. the backlog (people/angelo/backlog.md): one card a row; a Status column, when the desk adds it, wins
+    const BL = 'people/angelo/backlog.md', blText = (() => { try { return fs.readFileSync(path.join(root, BL), 'utf8') } catch { return '' } })(), blAt = lineTimes(root, BL)
+    let head = null
+    blText.split('\n').forEach((l, n) => {
+        if (!l.startsWith('|')) return
+        const cells = l.split('|').slice(1, -1).map(c => c.trim())
+        if (cells[0] === '#') { head = cells.map(c => c.toLowerCase()); return }
+        if (!head || !/^\d+$/.test(cells[0])) return
+        const col = k => cells[head.findIndex(h => h.startsWith(k))] || ''
+        const item = col('item'), waits = col('waits'), status = col('status').toLowerCase(), struck = /~~/.test(item)
+        const place = status ? { waiting: 'need', 'waits on angelo': 'need', 'in progress': 'progress', delivered: 'delivered', done: 'done' }[status] : struck ? 'done' : WAITS_ON_HIM.test(waits) ? 'need' : 'progress'
+        if (!place) { unplaced.push(`backlog #${cells[0]}: status "${status}"`); return }
+        const issue = (item.match(/\bWS-\d+\b/) || [])[0] || ''
+        if (issue) byIssue.add(issue)
+        cards.push({ id: `B-${cells[0]}`, src: 'backlog', col: place, title: plain(item).replace(/\s+done:.*$/i, ''), done: struck ? plain((item.match(/done:\s*(.*)$/i) || [])[1] || '') : '', agent: col('agent'), brief: plain(col('brief')), link: briefLink(col('brief')) || briefLink(item), waits: plain(waits), chip: place === 'need' ? 'waits on you' : '', rank: 40 - +cells[0] / 100, at: blAt[n] || '', issue })
+    })
+    // 2. the desk's "Open with Angelo" (people/angelo/conductor/STATE.md): one card a top-level bullet, all in Needs you
+    const ST = 'people/angelo/conductor/STATE.md', stText = (() => { try { return fs.readFileSync(path.join(root, ST), 'utf8') } catch { return '' } })(), stAt = lineTimes(root, ST)
+    let inOpen = false, k = 0
+    stText.split('\n').forEach((l, n) => {
+        if (/^## /.test(l)) { inOpen = /^## Open with Angelo/i.test(l); return }
+        if (!inOpen || !l.startsWith('- ')) return
+        const raw = l.slice(2), tag = raw.match(/^\[([A-Za-z]+-\d+)\]\s*/), body = plain(tag ? raw.slice(tag[0].length) : raw)
+        const id = tag ? tag[1] : 'O-' + body.toLowerCase().replace(/[^a-z0-9]+/g, '-').split('-').filter(Boolean).slice(0, 5).join('-')
+        const cut = body.search(/: |\. /), title = (cut > 12 && cut < 110 ? body.slice(0, cut) : body.slice(0, 110) + (body.length > 110 ? '…' : ''))
+        const rec = (body.match(/recommend(?:ation|ed|s)?:\s*([^.;]+)/i) || [])[1] || ''
+        cards.push({ id, src: 'open', col: 'need', title, text: body.slice(0, 700), agent: 'desk', brief: 'Open with Angelo', link: `${REPO}/blob/dev/${ST}`, chip: /tier[ -]3/i.test(body) ? 'tier 3' : 'click', rec: rec.trim(), rank: 30 - (k++) / 100, at: stAt[n] || '' })
+    })
+    // 3. his board issues not already on a backlog row: needing him now, or picked and in progress
+    const ck = new Map([...((d.cockpit || {}).only_you || []), ...((d.cockpit || {}).decisions || [])].map(x => [x.issue, x.score]))
+    for (const i of d.issues) {
+        if (byIssue.has(i.id) || i.status === 'done') continue
+        const need = KANBAN.needsMe(i, d.kanban, now)
+        if (!need && !(KANBAN.isMine(i, d.kanban) && (i.status === 'picked' || i.status === 'in progress'))) continue
+        const up = (d.kanban.agenda[i.id] || []).some(a => a.forMe && a.status === 'open')
+        cards.push({ id: i.id, src: 'issue', col: need ? 'need' : 'progress', title: plain(i.title), agent: plain(i.picked_by || ''), brief: i.id, link: `${REPO}/blob/dev/${i.file}`, chip: need ? (up ? 'stand-up' : KANBAN.DUE_LABEL[KANBAN.dueBucket(i, now)].toLowerCase()) : i.status, rank: 20 + (+ck.get(i.id) || 0) / 1000, at: d.kanban.changed[i.id] || '', issue: i.id })
+    }
+    // 4. deliveries: commits of the last week For the desk with a "Delivered:" line; Angelo's marks in people/angelo/tasks/seen.json
+    const marks = new Map(); for (const m of ((readJson(root, 'people/angelo/tasks/seen.json') || {}).marks || [])) if (m && m.card) marks.set(m.card, m)
+    for (const c of git(root, ['log', `--since=${DONE_WINDOW_DAYS + 1} days ago`, '--format=%h%x1f%cI%x1f%s%x1f%b%x1e']).split('\x1e')) {
+        const [h, at, s = '', b = ''] = c.trim().split('\x1f'); if (!h || /^site v\d/.test(s)) continue
+        const dl = b.match(/^Delivered:\s*(.+)$/m); if (!dl || !/^For: desk\.conductor@PrompTugal\.angelo/mi.test(b)) continue
+        const who = (s.match(/^([a-z0-9.-]+)@/i) || [])[1] || '', id = 'D-' + h.slice(0, 8), m = marks.get(id)
+        const ref = (dl[1].match(/https?:\/\/\S+|(?:people|board|content|data|admin|assets)\/[\w./@-]+/) || [])[0] || ''
+        cards.push({ id, src: 'delivery', col: m ? (m.action === 'changes' ? 'progress' : 'done') : 'delivered', title: plain(s.replace(/^[^:]+:\s*/, '')), agent: who ? who + '@' : '', brief: h, link: ref ? (/^http/.test(ref) ? ref : `${REPO}/blob/dev/${ref.replace(/[.,;]+$/, '')}`) : `${REPO}/commit/${h}`, commit: `${REPO}/commit/${h}`, chip: m ? (m.action === 'changes' ? 'needs changes' : 'seen') : 'delivered', note: m && m.action === 'changes' ? plain(m.text) : '', rank: 0, at: m ? m.at : at })
+    }
+    return { cards, unplaced, counts: Object.fromEntries(['backlog', 'open', 'issue', 'delivery'].map(x => [x, cards.filter(c => c.src === x).length])) }
+}
+const DONE_WINDOW_DAYS = KANBAN.DONE_DAYS
+
 export function build(root, person, now = new Date()) {
     const d = CC.build(root, person, now)
     d.kanban = kanban(root, person, d)
     d.cockpit = cockpitRanking(root, person, now)
+    d.tasks = tasks(root, person, d, now)
     d.collab = collab(root, person, d, now)
     // the whole team as one map (WS-97): team-collaboration@web-summit.angelo's people/angelo/tools/team-map.mjs, run, not copied
     try {
@@ -341,6 +410,11 @@ export function build(root, person, now = new Date()) {
 export function summaryMd(d, now = new Date()) {
     let md = CC.summaryMd(d, now)
     if (!d.kanban) return md
+    if (d.tasks) {
+        const cols = KANBAN.taskColumns(d.tasks.cards, now)
+        md += `\n\n## ${(d.person.name || d.person.id).split(' ')[0]}'s tasks (the kanban, For me)\n`
+        for (const c of cols) md += `\n### ${c.label} (${c.items.length})\n\n` + (c.items.length ? c.items.slice(0, 25).map(t => `- **${t.id}** ${t.title}${t.agent ? `, ${t.agent}` : ''}${t.rec ? `. Recommended: ${t.rec}` : ''}`).join('\n') : 'Nothing here.') + '\n'
+    }
     const need = KANBAN.sort(d.issues.filter(i => KANBAN.needsMe(i, d.kanban, now)), 'due', 'asc', d.kanban, now)
     md += `\n\n## Needs ${(d.person.name || d.person.id).split(' ')[0]} now (the kanban)\n\n`
     md += need.length ? need.map(i => `- **${i.id}** ${i.title} (${KANBAN.DUE_LABEL[KANBAN.dueBucket(i, now)].toLowerCase()}${(d.kanban.agenda[i.id] || []).some(a => a.forMe && a.status === 'open') ? ', a stand-up item waits on you' : ''})`).join('\n') : 'Nothing overdue, due today or waiting at a stand-up.'

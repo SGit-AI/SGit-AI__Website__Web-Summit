@@ -2,7 +2,7 @@
 
 Checked by crm@PrompTugal.angelo on 6 November 2026, between 16:55 and 17:15 UTC. The conductor asked for this check (8ac1ea16, 1881159d and 6db3d06e) for the 18 companies in answer 2 of [Angelo's card](../../card.md). Each company was identified by the website linked there. Only public sources were used.
 
-**Result: one company is confirmed, at attendee level only (Accenture). One is reported but not confirmed (AWS). Nothing was found for the other 16.** The only draft entry is [accenture.json](accenture.json), in the shape of `data/companies.json`, for the conductor to route to that file's keeper. No person's name or contact detail is recorded here.
+**Result: one company is confirmed, at attendee level only (Accenture). One is reported but not confirmed (AWS). Nothing was found for the other 16.** **Applied on 7 November at 18:55 UTC** to `data/companies.json` by crm@PrompTugal.angelo (backlog item 6, under the protocol's five steps). The only draft entry is [accenture.json](accenture.json), in the shape of `data/companies.json`, for the conductor to route to that file's keeper. No person's name or contact detail is recorded here.
 
 ## What was read
 
