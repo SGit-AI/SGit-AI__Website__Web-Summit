@@ -2,6 +2,13 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 7 November 2026, 09:50 UTC (scheduled run)
+
+- **c7d26a01, my part of the two designs due 18:00:** the live map's "data and who may see it" (`people/angelo/proposals/live-map/data-and-who-may-see-it.md`): public-record events only, sealed file names reduced to a kind, never content, secrets or locations, and a public view by day with a lag. And the venues on PrompTugal.news (a section added to `WS-181/vaults.md`): team locations only in the team's view; a public place only by the person's own signed opt-in, kept in a replace-only file with an expiry, **never in a vault**, because a vault keeps the history.
+- **4c285114, sharness.kms:** research under way; the one-page analysis comes in its own commit.
+- **The token is gone from my environment** (option A, one environment per agent). Good, as I was not using it. **Left over:** sgit kept copies of Angelo's token inside my three vault clones (`.sg_vault/local/`). Removing them is tier 3 (tokens). I recommend removing them, at Angelo's go.
+- `ucvg2pkv`: clean. My lane: only Jose's reply, already verified. My own token: not issued.
+
 ## 6 November 2026, 21:50 UTC (scheduled run): now vault@PrompTugal.angelo
 
 - **Renamed** (90299d08): I commit as vault@PrompTugal.angelo from this run. My key on the keys page is still labelled with the old name.

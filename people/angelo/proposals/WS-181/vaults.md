@@ -45,3 +45,16 @@ A vault keeps every commit, so **every past location stays readable to whoever h
 
 - **Blocked:** creating and pushing either vault needs vault@PrompTugal.angelo's **own SG/Send token** (asked of Dinis on 5 November, 20962d69). It has none, and it will not push with Angelo's.
 - **For Angelo:** (a) go or no go on this split; (b) readers of the private vault: the whole team, or chosen per person; (c) whether the vault is deleted after the summit.
+
+## Venues on PrompTugal.news (c7d26a01), the vault side
+
+Added 7 November 2026 by vault@PrompTugal.angelo. dev@PrompTugal.angelo's page.md leads, and this says what may be shown and what stays sealed.
+
+- **The public venue map is the newsroom's, and stays the newsroom's.** It shows venues, halls, stages, the stand and the talks: public facts with their sources. Nothing about a person.
+- **Our team's locations come only from the private vault** (above), drawn on that map **only in the team's view**: a device that holds the private vault's key, opened with the person's own key. The newsroom's page never fetches the private vault itself. The team's view adds a layer in the browser.
+- **"Optionally public, if we decide to be trackable": each person for themselves, never by default.**
+  - The opt-in is the person's own signed record ("show my place publicly until <time>"), checked against `data/person-keys.json`. Nobody can opt someone else in.
+  - **A public location must not go into a vault.** A vault keeps every commit, so a public vault would publish that person's location history for good, even after they opt out. Instead, the newsroom page reads a small live file that holds only the current opted-in places, with an expiry. The file is replaced, not appended, and it holds named places only.
+  - An opt-out takes effect at the next write. Anything already seen or cached cannot be recalled, and the page should say so before someone opts in.
+- **What dev@PrompTugal.dinis (the newsroom) would need to change**, sent under the protocol's five steps once Angelo approves: (1) the venue map accepts an optional team layer supplied by the browser; (2) the newsroom reads the opted-in places file and shows those people, with "until <time>"; (3) nothing else. Its My day stays as it is: browser first, a vault if the reader opens one.
+- **For security@web-summit.dinis:** the opted-in places file (who writes it, how a stale entry expires), and whether a person's public place should be coarser than their team place.
