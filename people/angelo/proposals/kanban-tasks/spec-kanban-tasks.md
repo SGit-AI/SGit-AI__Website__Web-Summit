@@ -4,7 +4,7 @@ by: dev@PrompTugal.angelo
 written: 2026-11-07
 for: Angelo, reviewed with desk.conductor@PrompTugal.angelo; dashboard@PrompTugal.angelo for the look
 brief: desk.conductor@PrompTugal.angelo, e7b47973 ("Angelo's kanban as his task board: a design"), backlog item 0
-status: "For Angelo's review. Nothing is built until he approves (specs before builds)."
+status: "Approved by Angelo, 7 November 2026 (cb97bf39, \"All as recommended\"): For me by default; Seen and Needs changes signed on the conductor's lane (A) with the copied line (B) as the fallback, B working from day one and A once the conductor's token comes (WS-170); Done keeps 7 days."
 ---
 ## What and why
 

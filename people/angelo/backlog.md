@@ -20,3 +20,4 @@ summary: Everything Angelo's agents are asked to do, in one list, ordered by pri
 | 11 | The links of promptugal.news, the rest of the site | dev.links@ | the spec's section | nothing |
 | 12 | The inbox agent's lane | crm@ | its scheduled prompt | crm@'s own SG/Send token (Dinis) |
 | 13 | WS-181's vaults | vault@ | daca6e6c | vault@'s token; security@web-summit.dinis's review |
+| 14 | The Android app's internal beta: the shell, the offline reader, an APK for the team (spec-android.md section 3) | dev.android@ (dev@ reviews) | e0183098 | the repository and dev.android@'s scheduled task (Angelo's) |

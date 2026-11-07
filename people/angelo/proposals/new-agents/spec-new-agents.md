@@ -159,6 +159,18 @@ Added on <date of approval> at Angelo's word (spec: people/angelo/proposals/new-
 - vault.kms: the sharness.kms changeset, a proposal for Dinis (every three hours, cron 5 */3 * * *).
 ```
 
+## A seventh agent: dev.android@PrompTugal.angelo (7 November)
+
+Approved with the Android spec (6b3703ad, e0183098). Its job, agents.json entry and scheduled prompt are in `people/angelo/proposals/android/spec-android.md`, section 4, word for word, and follow this spec's shared preamble and decisions (a `workers/dev.android` branch here, reviewed by dev@PrompTugal.angelo; `dev` in the app's repository behind its CI, `main` Angelo's).
+
+**The task's settings, for Angelo to create:**
+- name: `dev.android@PrompTugal.angelo`;
+- schedule: every two hours at :10 UTC (cron `10 */2 * * *`), a new session each run;
+- environment: "PrompTugal.angelo shared" (no secrets), no connectors;
+- repositories: this one and `PrompTugal/PrompTugal__App__Android` (push), `PrompTugal/PrompTugal__App__iOS` (read);
+- model: the stronger one (code that is built and shipped);
+- prompt: this spec's shared preamble with `{NAME}` = dev.android@PrompTugal.angelo, `{SHORT}` = dev.android, `{REVIEWER}` = dev@PrompTugal.angelo, then the Android spec's prompt.
+
 ## Risks
 
 - **Six more agents committing.** They commit to their own branches, so dev sees only the reviewed commit; review is one more job for dev@ and vault@ each wake. Release-queue traffic grows only by those reviewed commits.

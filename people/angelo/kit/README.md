@@ -148,3 +148,4 @@ Added on 7 November 2026 at Angelo's word (spec: people/angelo/proposals/new-age
 - social-media (first called social): Angelo's LinkedIn, drafts only (08:40 and 16:40 UTC, cron 40 8,16 * * *).
 - dev.links: promptugal.news's links, fixes on the newsroom's dev under the five steps (every four hours, cron 55 */4 * * *).
 - vault.kms: the sharness.kms changeset, a proposal for Dinis (every three hours, cron 5 */3 * * *).
+- dev.android (added 7 November at Angelo's word, e0183098): the Android app for PrompTugal.news, an internal beta in line with the iOS app, in PrompTugal/PrompTugal__App__Android (spec: people/angelo/proposals/android/spec-android.md; every two hours, cron 10 */2 * * *). Its scheduled task is Angelo's to create.

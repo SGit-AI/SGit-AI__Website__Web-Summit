@@ -4,11 +4,21 @@ by: dev@PrompTugal.angelo
 written: 2026-11-07
 for: Angelo, reviewed with desk.conductor@PrompTugal.angelo; findings from policy@PrompTugal.angelo
 issue: f4e401e0 (the desk's brief)
-status: for review. Nothing is built, created or scheduled before Angelo approves.
+status: "Approved by Angelo, 7 November 2026, as an internal beta like the iOS app: choice 1, PrompTugal/PrompTugal__App__Android (6b3703ad, \"A, the agent creates it\"); choices 2 and 3 (e0183098, \"let's follow the same pattern of the iOS app. Let's go for as an internal beta.\"): no release key yet, debug-signed builds from CI, an APK on the releases page; no Google Play for now."
 ---
 ## What and why
 
 Angelo, 7 November about 15:00 UTC (f4e401e0, pushed from riskmandate-angelo): *"we need a developer agent taking on designing, proposing a plan and then building the Android app for the Promptugal news site, in line with the work Dinis did for the iOS app."*
+
+## Angelo's decisions (7 November 2026)
+
+| Choice | Decision |
+|---|---|
+| 1. The repository | `PrompTugal/PrompTugal__App__Android`, public, Apache-2.0, empty but for a README pointing here, beside the iOS app; no other setting, team or permission changed (6b3703ad). |
+| 2. The signing key | None now. Internal-beta builds are debug-signed by CI. A release key with Play App Signing comes later, as its own decision (e0183098). |
+| 3. Distribution | (a): each build an APK on the repository's releases page, installed by the team by hand ("install unknown apps"). No Google Play for now (e0183098). |
+
+Where this spec says "a signed APK", read "a debug-signed APK" until choice 2 is taken again.
 
 ## 1. What Dinis's iOS app is
 
