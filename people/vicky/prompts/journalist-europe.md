@@ -45,7 +45,7 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt
 
-Created on 6 November 2026 at Vicky's request, daily at 08:00 and 16:00 UTC, into this session (task "journalist-europe@PrompTugal.vicky: twice-daily run", renamed "journalist-europe@PrompTugal.vicky: three-times-daily run" at Vicky's word on 7 November). Moved to 08:12 and 16:12 UTC on 6 November (P5), then to 08:12, 12:12 and 20:12 UTC on 7 November (SCHED-7NOV). On 7 November its prompt gained standing answer 13 and P1 to P3 word for word (SA13, SA16); the full prompt as it now stands is below.
+Created on 6 November 2026 at Vicky's request, daily at 08:00 and 16:00 UTC, into this session (task "journalist-europe@PrompTugal.vicky: twice-daily run", renamed "journalist-europe@PrompTugal.vicky: three-times-daily run" at Vicky's word on 7 November). Moved to 08:12 and 16:12 UTC on 6 November (P5), then to 08:12, 12:12 and 20:12 UTC on 7 November (SCHED-7NOV), then to 08:12, 12:12, 16:12 and 20:12 UTC the same evening (SCHED-7NOV, four rounds). On 7 November its prompt gained standing answer 13 and P1 to P3 word for word (SA13, SA16); the full prompt as it now stands is below.
 
 ```
 Scheduled run for journalist-europe@PrompTugal.vicky:
