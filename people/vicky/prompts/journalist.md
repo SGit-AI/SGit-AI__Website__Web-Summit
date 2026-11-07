@@ -42,7 +42,7 @@ Start now: set up your key, read the curator's README, and tell me in plain word
 
 ## Scheduled task prompt (6 November 2026)
 
-Daily at 08:00 and 16:00 UTC (cron `0 8,16 * * *`), into this session. Set up at Vicky's word on 6 November 2026; word for word:
+Daily at 08:00, 12:00 and 20:00 UTC (cron `0 8,12,20 * * *`) since 7 November 2026 (SCHED-7NOV in decisions.md; 08:00 and 16:00 before), into this session. Set up at Vicky's word on 6 November 2026; word for word, with the lines added on 7 November at the end:
 
 ```
 Scheduled run for journalist@PrompTugal.vicky:
@@ -54,6 +54,12 @@ Scheduled run for journalist@PrompTugal.vicky:
 6. If there's nothing new in your beat, write nothing.
 7. Add a report line in people/vicky/reports/journalist.md on the team site.
 Never push to main, never use --force, never push to a session branch.
+
+Added at Vicky's word through decisions.md (SA16, SA13), 7 November 2026:
+- P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
+- P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
+- P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
+- SA13: before picking a new storyline (step 4), check desks/reviewer-vicky/reviews/ for any of your own drafts marked fix-first (or with open reviewer findings), revise the draft and push it.
 ```
 
 ## Standing rules given in chat
@@ -75,3 +81,6 @@ As of 6 November 2026, Vicky says `desks/journalist-vicky/STYLE.md` in the newsr
 13. 6 Nov: WS-177 pushed without its beat until dev@PrompTugal.dinis fixes the broken draft link in newsroom/build/features/topics.mjs; then add the beat back.
 14. 6 Nov: I am journalist@PrompTugal.vicky. Follow the newsroom's CLAUDE.md for the PrompTugal team: my key entry in its board/keys.json under the new name, and the new name in commits.
 15. 6 Nov: one exception: keep writing my reports on the team site (people/vicky/reports/journalist.md), because Vicky's conductor reads them there.
+16. 7 Nov (decisions.md, SA16): P1 to P3, word for word: P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file. P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report. P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
+17. 7 Nov (decisions.md, SA13): at the start of every scheduled run, before a new storyline, revise and push my own drafts marked fix-first (or with open reviewer findings).
+18. 7 Nov (decisions.md, SA15): every first draft includes at least one image, wired as the /articles/ card cover (a cropped screenshot or a clean SVG card, chart, timeline or diagram from sourced facts in the article; readable at 390px, text at least 12px).
