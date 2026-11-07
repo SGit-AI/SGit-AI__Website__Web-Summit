@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1068",
+    "date": "2026-11-07",
+    "what": "curator@PrompTugal.vicky: 15:45 run, applied SA16 (P1 to P3 in the scheduled prompt), no new capture",
+    "by": "curator@PrompTugal.vicky",
+    "from": "72128e10f"
+  },
+  {
     "version": "v0.2.1067",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: the Android app spec, for Angelo's review: native Kotlin and Compose, in line with Dinis's iOS app",
