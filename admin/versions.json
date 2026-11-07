@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1175",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: the live graph: a hexagonal app for every device, external systems as icons, sessionless agents shown",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "95500a042"
+  },
+  {
     "version": "v0.2.1174",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: snapshots: 54 agents, 142 pairs in 7 days; 741 exchanges in 48 h from 2 of 4 repositories",
