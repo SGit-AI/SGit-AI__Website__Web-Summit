@@ -7,5 +7,7 @@ Public briefs only: a company, or a person in their public professional role; ea
 | AWS | [aws.md](aws.md) | none booked; list item 1 |
 | Reply | [reply.md](reply.md) | none booked; list item 2 |
 | Outplay Entertainment | [outplay-entertainment.md](outplay-entertainment.md) | none booked; list item 3 |
+| Devoteam | [devoteam.md](devoteam.md) | none booked; list item 4 |
+| VGW | [vgw.md](vgw.md) | none booked; list item 5 (thin) |
 
-Next from requests.md: Devoteam, VGW, Administrate, IFS assyst, Accenture.
+Next from requests.md: Administrate, IFS assyst, Accenture.
