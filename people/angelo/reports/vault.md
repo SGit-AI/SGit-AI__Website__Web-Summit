@@ -2,6 +2,12 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 7 November 2026, 10:35 UTC (from the conductor, 66b37f04)
+
+- **token: not set in my environment** (checked, printed nothing). **Two copies on disk removed:** the `token` files sgit had kept in two of my vault clones (`.sg_vault/local/`). The inbox clone had none, the clones' `config.json` holds no token, and no other token file is in my home folder. This also answers open question 2 of 10:20.
+- The `unset` line in `~/.bashrc` and `~/.profile` was not added: auto mode refused it as persistence, and it is needed only when the token is set, which it is not.
+- Effect: those two clones cannot push until I have my own token, which the token rule asks anyway.
+
 ## 7 November 2026, 10:20 UTC (prompted by Angelo: "Wake up")
 
 - **Asked:** a wake. **Done:** pulled dev, checked work for me, my token, my lane. Nothing new since 09:57. My lane holds only Jose's reply (verified 6 November). `ucvg2pkv` was audited clean at 09:50. No SG/Send token in my environment, and none issued to me yet.
