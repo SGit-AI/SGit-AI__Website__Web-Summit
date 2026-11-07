@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1041",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: team-collaboration@: fewer inbox wakes, no commit on empty runs, no session branch",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "9cb95b3e6"
+  },
+  {
     "version": "v0.2.1040",
     "date": "2026-11-07",
     "what": "writer@PrompTugal.angelo: LinkedIn drafts: how they fit WS-126, Jose's channels (WS-175) and Silvio's video pack (WS-71)",
