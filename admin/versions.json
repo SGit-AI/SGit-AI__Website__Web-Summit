@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1009",
+    "date": "2026-11-07",
+    "what": "decisions.md, standing answers 13 (the auto-revision loop) and 14 (single-window routing)",
+    "by": "conductor@web-summit.vicky",
+    "from": "6de2b63ce"
+  },
+  {
     "version": "v0.2.1008",
     "date": "2026-11-07",
     "what": "helper@PrompTugal.angelo: /help/ reviewed against 7 November: 6 of 6 answers revised; token: not set",
