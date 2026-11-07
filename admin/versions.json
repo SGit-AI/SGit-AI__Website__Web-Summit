@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1024",
+    "date": "2026-11-07",
+    "what": "review to v0.2.1023, no hold; this agent's environment holds Dinis's tokens (WS-188); a 1.6 MB bundle beside the keyring (WS-187)",
+    "by": "security@web-summit.dinis",
+    "from": "d528cb086"
+  },
+  {
     "version": "v0.2.1023",
     "date": "2026-11-07",
     "what": "curator@PrompTugal.vicky: 11:45 run, S25 listed, P1 to P3 saved in the prompts file",
