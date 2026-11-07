@@ -222,7 +222,7 @@
    "finish": "stop",
    "citations": [],
    "answer_urls": [
-    "https://www.sec.gov/Archives/edgar/data/2003292/000200329226000007/klar-20251231.htm"
+    "[url withheld: it matches the phone check]"
    ],
    "answer": {
     "what_it_does": "Klarna’s AI assistant is a 24/7 customer service chatbot available in the Klarna app that handles customer service chats at scale. It manages tasks such as multilingual customer service and handling refunds and returns.",
@@ -236,7 +236,7 @@
        "Manage refunds and returns workflows mentioned by Klarna as tasks performed by the assistant",
        "Operate 24/7 in Klarna’s covered markets"
       ],
-      "source": "https://www.sec.gov/Archives/edgar/data/2003292/000200329226000007/klar-20251231.htm"
+      "source": "[url withheld: it matches the phone check]"
      }
     ],
     "use_cases": [
@@ -248,30 +248,30 @@
        "Klarna service-chat operations (as described through service chat logs and customer service chat handling metrics)",
        "Refunds and returns processes (work performed by the assistant per Klarna’s disclosures)"
       ],
-      "source": "https://www.sec.gov/Archives/edgar/data/2003292/000200329226000007/klar-20251231.htm"
+      "source": "[url withheld: it matches the phone check]"
      }
     ],
     "incidents_or_risks": [],
     "facts": [
      {
       "claim": "Klarna launched its AI assistant in February 2024 in partnership with OpenAI.",
-      "source": "https://www.sec.gov/Archives/edgar/data/2003292/000200329226000007/klar-20251231.htm"
+      "source": "[url withheld: it matches the phone check]"
      },
      {
       "claim": "Klarna reports the AI assistant has handled 80% of customer service chats in the year ended December 31, 2025.",
-      "source": "https://www.sec.gov/Archives/edgar/data/2003292/000200329226000007/klar-20251231.htm"
+      "source": "[url withheld: it matches the phone check]"
      },
      {
       "claim": "Klarna reports the AI assistant is available 24/7 in 23 markets and communicates in more than 35 languages.",
-      "source": "https://www.sec.gov/Archives/edgar/data/2003292/000200329226000007/klar-20251231.htm"
+      "source": "[url withheld: it matches the phone check]"
      },
      {
       "claim": "Klarna reports its AI assistant has had 31 million conversations since launch (as of the year ended December 31, 2025 disclosures).",
-      "source": "https://www.sec.gov/Archives/edgar/data/2003292/000200329226000007/klar-20251231.htm"
+      "source": "[url withheld: it matches the phone check]"
      },
      {
       "claim": "Klarna states the AI assistant manages tasks including multilingual customer service and refunds and returns.",
-      "source": "https://www.sec.gov/Archives/edgar/data/2003292/000200329226000007/klar-20251231.htm"
+      "source": "[url withheld: it matches the phone check]"
      }
     ]
    }

@@ -68,6 +68,10 @@ const out = { subject, kind, slug, run_at: new Date().toISOString(), note: 'What
   cost_usd: +results.reduce((s, r) => s + (r.cost_usd || 0), 0).toFixed(4), agents: results }
 // no contact details in the repository: an address a model quotes is replaced before anything is written
 export const redact = s => s.replace(/[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}/g, '[address removed]')
+  // and anything the gate's phone rule (admin/tools/comms_check.mjs) would read as a number, even inside a URL (an SEC
+  // filing's accession number did, 7 November): a URL that matches is withheld whole, so no broken link is left
+  .replace(/https?:\/\/[^\s"]*(?:\+|00)\d{1,3}[\s.-]?\(?\d{2,4}\)?[\s.-]?\d{3,4}[\s.-]?\d{3,4}[^\s"]*/g, '[url withheld: it matches the phone check]')
+  .replace(/(?:\+|00)\d{1,3}[\s.-]?\(?\d{2,4}\)?[\s.-]?\d{3,4}[\s.-]?\d{3,4}/g, '[number removed]')
 if (!flag('dry')) { fs.mkdirSync(dir, { recursive: true }); fs.writeFileSync(path.join(dir, stamp + '.json'), redact(JSON.stringify(out, null, 1)) + '\n') }
 for (const r of results) console.log(`${r.id.padEnd(11)} ${r.model.padEnd(36)} ${r.error ? 'ERROR ' + r.error : r.dry ? 'dry' : `${r.ms}ms $${r.cost_usd} ${r.citations.length} citations ${r.answer_urls.length} urls ${r.answer ? 'json' : 'raw'} ${r.finish}`}`)
 console.log(`total $${out.cost_usd} -> data/xray/${slug}/search/${stamp}.json`)
