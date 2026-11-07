@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.945",
+    "date": "2026-11-07",
+    "what": "the command centre mock removed from the lab, at Silvio's word",
+    "by": "design@web-summit.silvio",
+    "from": "daf100a37"
+  },
+  {
     "version": "v0.2.944",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: PrompTugal snapshot: 52 agents, 120 pairs in 7 days, from abb676c1",
