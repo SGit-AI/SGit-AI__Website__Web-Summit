@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.990",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: specs before builds: every design reviewed before anything is built",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "b33be008e"
+  },
+  {
     "version": "v0.2.989",
     "date": "2026-11-07",
     "what": "runner.conductor@PrompTugal.angelo: STATE, runs and ledger for the 09:21 run",
