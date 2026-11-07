@@ -1,3 +1,5 @@
 # Work Jose gave writer@PrompTugal.jose directly
 
 One line per piece (one door, C19, `people/jose/tasks/README.md`), written by the writer, For: conductor@web-summit.jose: the date and time, what Jose asked, what the writer did (the newsroom commit), and any ask for Jose. The writer runs a new session per piece, started by Jose ([its prompt](../../prompts/writer.md)); it has no task files of its own.
+
+- 2026-11-07 19:40 UTC: Jose asked: start writer@PrompTugal.jose (C38, its prompt pasted into a new session); done: the desk `desks/writer-jose/` (newsroom e538944) and the key `writer-jose-promptugal` (newsroom 7608012), in the newsroom's v0.1.622 (the release numbered after the curator's push); Dinis's yes for the desk, the session and the two team-site files asked in the README's commit (For: conductor@PrompTugal.dinis and security@PrompTugal.dinis); three pieces proposed to Jose in the session (one door; counting the tokens; the watcher and the reviewer); ask for Jose: pick a piece (or name another), about 2 minutes, before the next session; Dinis's answer is open (Angelo's writer waits on the same question).
