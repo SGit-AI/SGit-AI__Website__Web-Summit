@@ -16,8 +16,8 @@
     const OPEN_STATUSES = ['open', 'picked', 'in progress']
 
     // ---------- the view, in the address after # (a view is a link; nothing reaches a server) ----------
-    const DEFAULTS = { mine: true, now: false, col: 'status', lane: '', sort: 'due', dir: 'asc', pick: [], due: [], ws: [], st: OPEN_STATUSES.slice(), q: '', open: '', tab: '' }
-    const KEYS = { mine: 'm', now: 'n', col: 'c', lane: 'l', sort: 's', dir: 'd', pick: 'p', due: 'u', ws: 'w', st: 't', q: 'q', open: 'o', tab: 'k' }
+    const DEFAULTS = { fm: true, mine: true, now: false, col: 'status', lane: '', sort: 'due', dir: 'asc', pick: [], due: [], ws: [], st: OPEN_STATUSES.slice(), q: '', open: '', tab: '' }
+    const KEYS = { fm: 'f', mine: 'm', now: 'n', col: 'c', lane: 'l', sort: 's', dir: 'd', pick: 'p', due: 'u', ws: 'w', st: 't', q: 'q', open: 'o', tab: 'k' }
     const LISTS = ['pick', 'due', 'ws', 'st']
 
     function parseState(hash) {
@@ -28,7 +28,7 @@
         for (const [k, short] of Object.entries(KEYS)) {
             if (!p.has(short)) continue
             const v = p.get(short)
-            if (k === 'mine' || k === 'now') s[k] = v === '1'
+            if (k === 'mine' || k === 'now' || k === 'fm') s[k] = v === '1'
             else if (LISTS.includes(k)) s[k] = v ? v.split(',').filter(Boolean) : []
             else s[k] = v
         }
@@ -162,6 +162,38 @@
         return issues.slice().sort((a, b) => { const x = sortKey(a, field, ctx, now), y = sortKey(b, field, ctx, now); return (x < y ? -1 : x > y ? 1 : 0) * f || num(a.id) - num(b.id) })
     }
 
+    // ---------- For me: Angelo's tasks in four columns (spec-kanban-tasks.md, approved 7 November, cb97bf39) ----------
+    // A task card comes from the build (data.mjs): { id, src: 'backlog'|'open'|'issue'|'delivery', col, title, agent, brief,
+    // waits, rec, chip, rank, at }. The rules below only place, order and compare them; nothing is fetched or sent.
+    const TASK_COLS = [['need', 'Needs you'], ['progress', 'In progress'], ['delivered', 'Delivered, to check'], ['done', 'Done']]
+    const DONE_DAYS = 7
+    // hidden: { cardId: untilMs } (Later, kept in this browser); a card hidden until a time past is shown again
+    function taskColumns(cards, now, hidden = {}) {
+        const t = now.getTime(), by = Object.fromEntries(TASK_COLS.map(([k]) => [k, []]))
+        for (const c of cards || []) {
+            const col = by[c.col] ? c.col : 'progress'
+            if (col === 'done' && c.at && t - Date.parse(c.at) > DONE_DAYS * 864e5) continue
+            if (col === 'need' && hidden[c.id] && hidden[c.id] > t) continue
+            by[col].push(c)
+        }
+        const at = c => c.at ? Date.parse(c.at) : 0
+        by.need.sort((a, b) => (b.rank || 0) - (a.rank || 0) || at(b) - at(a) || String(a.id).localeCompare(String(b.id)))
+        for (const k of ['progress', 'delivered', 'done']) by[k].sort((a, b) => at(b) - at(a) || String(a.id).localeCompare(String(b.id)))
+        return TASK_COLS.map(([key, label]) => ({ key, label, items: by[key] }))
+    }
+    // what changed since he last looked: cards that appeared or moved after that time (none on a first visit)
+    function changedSince(cards, since) {
+        const t = since ? Date.parse(since) : NaN
+        if (!isFinite(t)) return []
+        return (cards || []).filter(c => c.at && Date.parse(c.at) > t).map(c => c.id)
+    }
+    // the copied line for the desk (B, the fallback): one line, the card's id first, so the desk can find it
+    function copyLine(card, action, text) {
+        const what = String(card.title || '').replace(/\s+/g, ' ').slice(0, 80)
+        const line = String(text || '').replace(/\s+/g, ' ').trim()
+        return action === 'changes' ? `Needs changes: ${card.id} (${what}): ${line || '(say what)'}` : `Seen: ${card.id} (${what})`
+    }
+
     // ---------- the self-test the build runs ----------
     function selfTest() {
         const now = new Date('2026-11-04T12:00:00Z')
@@ -191,8 +223,21 @@
         ok(!s.mine && s.col === 'due' && s.lane === 'stream' && s.sort === 'id' && s.dir === 'desc' && s.st.join() === 'done' && s.q === 'key', 'the address is read back')
         ok(stateToHash(parseState(stateToHash(s))) === stateToHash(s) && stateToHash(d) === '#kanban', 'the address round-trips')
         ok(parseState('#kanban?c=nope&l=nope&s=nope&d=up').col === 'status', 'a bad address falls back to the defaults')
+        // For me
+        ok(parseState('#kanban').fm === true && parseState('#kanban?f=0').fm === false && stateToHash(parseState('#kanban?f=0')) === '#kanban?f=0', 'For me is the default, and f=0 the old layouts')
+        const T = [
+            { id: 'A-1', col: 'need', rank: 1, at: '2026-11-04T10:00:00Z' }, { id: 'A-2', col: 'need', rank: 5, at: '2026-11-03T10:00:00Z' },
+            { id: 'b-1', col: 'progress', at: '2026-11-04T09:00:00Z' }, { id: 'd-1', col: 'delivered', at: '2026-11-04T11:00:00Z' },
+            { id: 'd-0', col: 'done', at: '2026-10-20T11:00:00Z' }, { id: 'd-2', col: 'done', at: '2026-11-02T11:00:00Z' }, { id: 'x', col: 'odd', at: '2026-11-01T00:00:00Z' },
+        ]
+        const tc = taskColumns(T, now)
+        ok(tc.map(c => c.key).join() === 'need,progress,delivered,done' && tc[0].items.map(c => c.id).join() === 'A-2,A-1', 'Needs you by rank first')
+        ok(tc[3].items.map(c => c.id).join() === 'd-2' && tc[1].items.map(c => c.id).join() === 'b-1,x', 'Done keeps 7 days; an unknown column reads as in progress')
+        ok(taskColumns(T, now, { 'A-2': now.getTime() + 1 })[0].items.map(c => c.id).join() === 'A-1' && taskColumns(T, now, { 'A-2': now.getTime() - 1 })[0].items.length === 2, 'Later hides a card until its time')
+        ok(changedSince(T, '2026-11-04T09:30:00Z').join() === 'A-1,d-1' && changedSince(T, '').length === 0, 'what changed since he last looked')
+        ok(copyLine({ id: 'd-1', title: 'A  spec' }, 'seen') === 'Seen: d-1 (A spec)' && copyLine({ id: 'd-1', title: 'x' }, 'changes', ' more  tests ') === 'Needs changes: d-1 (x): more tests', 'the copied line')
         return true
     }
 
-    return { FIELDS, SORTS, STATUS_ORDER, DUE_ORDER, DUE_LABEL, OPEN_STATUSES, DEFAULTS, parseState, stateToHash, pickers, isMine, dueBucket, needsMe, groupOf, groupLabel, groups, filter, sort, selfTest }
+    return { TASK_COLS, DONE_DAYS, taskColumns, changedSince, copyLine, FIELDS, SORTS, STATUS_ORDER, DUE_ORDER, DUE_LABEL, OPEN_STATUSES, DEFAULTS, parseState, stateToHash, pickers, isMine, dueBucket, needsMe, groupOf, groupLabel, groups, filter, sort, selfTest }
 })

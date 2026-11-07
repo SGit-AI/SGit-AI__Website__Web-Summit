@@ -119,9 +119,11 @@
             document.title = `Kanban · ${first}'s command centre`
             if (!D) { view.innerHTML = failed ? `<p class="note">The kanban could not load its data (${esc(failed)}); the summary below the page is the same data as text.</p>` : '<p class="note">Loading the board…</p>'; return }
             const s = state(), now = new Date(), ctx = D.kanban
+            if (s.fm && !s.open && D.tasks && K.taskColumns) return drawTasks(view, s, now)
             const shown = K.filter(D.issues, s, ctx, now)
             const needN = D.issues.filter(i => K.needsMe(i, ctx, now)).length
             view.innerHTML = `<div class="ak">${ownNote()}
+<p class="ak-views">Your tasks: <a href="#kanban">For me</a></p>
 <nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#where">Where → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
 ${toolbar(s, shown.length, needN)}
 ${chips(s)}
@@ -172,6 +174,60 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             for (const k of ['st', 'due', 'pick', 'ws']) if (s[k].length && !(k === 'st' && sameList(s.st, K.DEFAULTS.st))) c.push([k, `${label[k]}: ${s[k].map(v => name(k, v)).join(', ')}`])
             if (k0(s)) c.push(['q', `“${s.q}”`])
             return c.length ? `<div class="ak-chips">${c.map(([k, l]) => `<button type="button" class="ak-chip" data-ak-clear="${k}" aria-label="Remove ${esc(l)}">${esc(l)} <span aria-hidden="true">×</span></button>`).join('')}</div>` : ''
+        }
+        // ---------- For me (spec-kanban-tasks.md, approved 7 November, cb97bf39): Needs you, In progress, Delivered, Done ----------
+        // Cards come from the build (data.mjs tasks()); their place and order from kanban-core.js. Seen and Needs changes copy
+        // one line for the desk session (B); signed sending on the desk's lane (A) comes once the desk's token is here (WS-170).
+        // Later and "since you last looked" are kept in this browser only, and the page works without them.
+        const LSK = { get(k, d) { try { const v = localStorage.getItem('ak.' + k); return v === null ? d : JSON.parse(v) } catch { return d } }, set(k, v) { try { localStorage.setItem('ak.' + k, JSON.stringify(v)) } catch { } } }
+        let copied = null // { id, line } of the last copied line, shown until the next one
+        function drawTasks(view, s, now) {
+            const first = (D.person.name || D.person.id).split(' ')[0], cards = D.tasks.cards
+            let last = LSK.get('lastLooked', '')
+            if (!last) { last = new Date().toISOString(); LSK.set('lastLooked', last) }
+            const changed = new Set(K.changedSince(cards, last))
+            const cols = K.taskColumns(cards, now, LSK.get('later', {}))
+            const marked = LSK.get('marked', {})
+            const chg = cols.map(c => [c.label, c.items.filter(t => changed.has(t.id)).length]).filter(x => x[1])
+            const link = (h, t) => h ? `<a href="${esc(h)}" target="_blank" rel="noopener">${esc(t)}</a>` : esc(t)
+            const chipCls = t => t.chip === 'tier 3' ? 't-orange' : /waits|click|overdue|stand-up|today/.test(t.chip) ? 't-red' : /delivered/.test(t.chip) ? 't-green' : t.chip === 'needs changes' ? 't-orange' : 'plain'
+            const card = t => `<article class="ak-card ak-task${changed.has(t.id) ? ' ak-new' : ''}" data-task="${esc(t.id)}">${changed.has(t.id) ? '<span class="ak-newb">NEW</span>' : ''}
+<span class="ak-meta">${t.chip ? `<span class="chip ${chipCls(t)}">${esc(t.chip)}</span>` : ''}${t.agent ? `<span class="chip t-blue">${esc(t.agent)}</span>` : ''}<span class="chip plain">${esc(t.id)}</span></span>
+<b class="ak-tt">${esc(t.title)}</b>
+${t.rec ? `<span class="ak-rec">Recommended: <b>${esc(t.rec)}</b></span>` : ''}${t.waits && t.col !== 'done' && !/^nothing$/i.test(t.waits) ? `<span class="note">Waits on: ${esc(t.waits)}</span>` : ''}${t.done ? `<span class="note">${esc(t.done)}</span>` : ''}${t.note ? `<span class="note">Your line: ${esc(t.note)}</span>` : ''}
+${t.chip === 'tier 3' ? '<span class="note">A tier-3 go is your own words in a session; this card only opens the question.</span>' : ''}
+${t.text && t.text !== t.title ? `<details class="ak-more"><summary>More</summary><p>${esc(t.text)}</p></details>` : ''}
+<span class="ak-acts">${t.col === 'need' ? `${t.link ? `<a class="cc-btn ak-primary" href="${esc(t.src === 'issue' ? '#kanban?f=0&m=0&t=open,picked,in%20progress,done&o=' + t.id : t.link)}"${t.src === 'issue' ? '' : ' target="_blank" rel="noopener"'}>Open</a>` : ''}<button type="button" class="cc-btn" data-later="${esc(t.id)}">Later</button>`
+                : t.col === 'delivered' ? (marked[t.id] ? `<span class="note">${marked[t.id] === 'seen' ? 'Seen' : 'Needs changes'}: line copied, waiting for the desk</span>` : `<button type="button" class="cc-btn ak-primary" data-mark="seen" data-id="${esc(t.id)}">Seen ✓</button><button type="button" class="cc-btn" data-mark="changes" data-id="${esc(t.id)}">Needs changes…</button>`) + (t.link ? link(t.link, 'Open the delivery ↗') : '')
+                : t.link ? link(t.link, t.src === 'delivery' ? 'The delivery ↗' : 'The brief ↗') : ''}</span>
+${copied && copied.id === t.id ? `<div class="ak-copy" role="status"><code>${esc(copied.line)}</code><span class="note">${copied.ok ? 'Copied.' : 'Select and copy it.'} Paste it in the desk session; the desk records it and the card moves on the next release.</span></div>` : ''}
+</article>`
+            const colHtml = c => {
+                if (c.key !== 'need') return c.items.map(card).join('') || '<p class="note">Nothing here.</p>'
+                const top = c.items.filter(t => t.src !== 'issue'), board = c.items.filter(t => t.src === 'issue')
+                return (top.map(card).join('') || '<p class="note">Nothing waits on you.</p>') + (board.length ? `<details class="ak-fromboard"><summary>From the board: ${board.length} of your issues overdue, due today or at a stand-up</summary>${board.map(card).join('')}</details>` : '')
+            }
+            const tab = cols.find(c => c.key === s.tab) || cols[0]
+            const cnt = c => c.key === 'need' ? c.items.filter(t => t.src !== 'issue').length : c.items.length
+            view.innerHTML = `<div class="ak">${ownNote()}
+<nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#where">Where → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
+<div class="ak-since" role="status">${chg.length ? `Since you last looked (${esc(ago(last))}): ${chg.map(([l, n]) => `${n} in ${esc(l)}`).join(', ')}.` : `Nothing new since you last looked (${esc(ago(last))}).`} <button type="button" class="ak-linkbtn" data-looked>Mark all as looked at</button></div>
+<p class="ak-views">Other views: <a href="#kanban?f=0">Status</a> · <a href="#kanban?f=0&c=due">Due</a> · <a href="#kanban?f=0&c=picked">Picked by</a> · <a href="#kanban?f=0&c=stream">Workstream</a> · <a href="#kanban?f=0&n=1">Needs me now</a></p>
+${PHONE.matches ? `<div class="ak-tabs" role="tablist" aria-label="Your tasks">${cols.map(c => `<button type="button" role="tab" data-ak-tab="${c.key}" aria-selected="${c.key === tab.key}">${esc(c.key === 'delivered' ? 'Delivered' : c.label)} <b>${cnt(c)}</b></button>`).join('')}</div><div class="ak-list ak-tasks" role="tabpanel">${colHtml(tab)}</div>`
+                : `<div class="ak-grid ak-tasks" style="--n:4">${cols.map(c => `<section class="ak-col" aria-label="${esc(c.label)}" data-col="${c.key}"><header>${esc(c.label)} <b>${cnt(c)}</b></header>${colHtml(c)}</section>`).join('')}</div>`}
+${D.tasks.unplaced.length ? `<p class="note">Could not place: ${esc(D.tasks.unplaced.join('; '))}.</p>` : ''}
+<p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}. From your backlog, the desk's "Open with Angelo", your board issues and deliveries reported to the desk (a "Delivered:" line). Cards move on the next release, usually within minutes.</p>
+</div>`
+            view.querySelectorAll('[data-ak-tab]').forEach(b => b.onclick = () => set({ tab: b.dataset.akTab }))
+            const looked = view.querySelector('[data-looked]'); if (looked) looked.onclick = () => { LSK.set('lastLooked', new Date().toISOString()); draw() }
+            view.querySelectorAll('[data-later]').forEach(b => b.onclick = () => { const l = LSK.get('later', {}); l[b.dataset.later] = Date.now() + 864e5; LSK.set('later', l); draw() })
+            view.querySelectorAll('[data-mark]').forEach(b => b.onclick = () => {
+                const t = cards.find(x => x.id === b.dataset.id); if (!t) return
+                let text = ''
+                if (b.dataset.mark === 'changes') { text = prompt('What needs changing? (one line, for the desk)') || ''; if (!text.trim()) return }
+                const line = K.copyLine(t, b.dataset.mark, text), done = ok => { copied = { id: t.id, line, ok }; const m = LSK.get('marked', {}); m[t.id] = b.dataset.mark; LSK.set('marked', m); draw() }
+                try { navigator.clipboard.writeText(line).then(() => done(true), () => done(false)) } catch { done(false) }
+            })
         }
         const k0 = s => !!(s.q || '').trim()
 
@@ -266,7 +322,7 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             const q = view.querySelector('input[data-ak="q"]')
             if (q) { let t; q.oninput = () => { clearTimeout(t); t = setTimeout(() => { set({ q: q.value }); reopen('Filter', true) }, 250) } }
             view.querySelectorAll('[data-ak-clear]').forEach(b => b.onclick = () => set({ [b.dataset.akClear]: b.dataset.akClear === 'q' ? '' : K.DEFAULTS[b.dataset.akClear].slice() }))
-            view.querySelectorAll('[data-ak-reset]').forEach(b => b.onclick = () => set({ ...K.DEFAULTS, st: K.DEFAULTS.st.slice(), pick: [], due: [], ws: [] }))
+            view.querySelectorAll('[data-ak-reset]').forEach(b => b.onclick = () => set({ ...K.DEFAULTS, fm: false, st: K.DEFAULTS.st.slice(), pick: [], due: [], ws: [] }))
             view.querySelectorAll('[data-ak-tab]').forEach(b => b.onclick = () => set({ tab: b.dataset.akTab }))
             view.querySelectorAll('[data-ak-card]').forEach(b => b.onclick = () => { history.pushState({ akCard: true }, ''); set({ open: b.dataset.akCard }) })
             view.querySelectorAll('[data-ak-close]').forEach(b => b.onclick = closeCard)
