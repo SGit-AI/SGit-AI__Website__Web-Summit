@@ -6,11 +6,11 @@ summary: Everything Angelo's agents are asked to do, in one list, ordered by pri
 
 | # | Item | Agent | Brief | Waits on |
 |---|---|---|---|---|
+| 00 | TOP PRIORITY, first implementation tonight (Angelo's go to build): The live map as an always-on floating graph: Angelo's graph exactly as it looks, lines and dots only, beating as exchanges arrive (a few minutes late is fine), in a small always-on-top window over other work on desktops, the iPad and the stand monitor: spec-realtime.md revised for his review | dev.map@ (dev@ reviews) | this commit | nothing |
 | 0 | ~~Build Angelo's kanban as his task board~~ built (4c719b8f), for Angelo to check; dashboard@ checks it against its look (8d8c312f) | dev@ | cb97bf39 | Angelo's check |
 | 1 | ~~The back-office proposal for Dinis (WS-180)~~ done: proposals/WS-180/README.md, sent to Dinis's conductor (1eb4b337) | team-collaboration@ | | Dinis's four decisions |
 | 1b | policy@'s two barriers, approved by Angelo ("Go ahead with both", 80d54893): first the signed-only drain (people/angelo/policy/proposals/drain-signed-only.md), then the lane check in release.sh and CI (gate-lane-check.md); files are Dinis's team's, so the five steps and For: their owners; policy@ checks both once built | dev@ | this commit | nothing |
 | 2 | Team and the machine, the live map: its pieces in the spec's order | dev.map@ (dev@ reviews) | spec-live-map.md, approved | nothing |
-| 2b | The live map as an always-on floating graph: Angelo's graph exactly as it looks, lines and dots only, beating as exchanges arrive (a few minutes late is fine), in a small always-on-top window over other work on desktops, the iPad and the stand monitor: spec-realtime.md revised for his review | dev.map@ (dev@ reviews) | this commit | nothing |
 | 3 | The venue map on PrompTugal.news, public parts first (Part B 1) | dev.venues@ (dev@ reviews) | spec-venues.md, approved | nothing |
 | 4 | ~~Fix the agent setup guide's claim-check flags~~ done: checker's five findings taken, article re-signed (newsroom v0.1.604), interactive guide aligned (5853ddfd) | writer@ | | |
 | 4b | Update Angelo's own website, leggiopasqua.com, in line with his card and LinkedIn: draft first, for his review; nothing goes live in his name without his go | writer@ | this commit | Angelo: where the site lives and how it is edited; a writer session |
