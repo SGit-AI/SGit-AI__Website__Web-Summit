@@ -64,5 +64,41 @@
     "job": "follows Angelo's pieces through the newsroom's pipeline and keeps people/angelo/writer/STATE.md; no key, never writes the newsroom; urgent items to Angelo's phone",
     "session": "a fresh Claude Code cloud session for every run, started by a scheduled task Angelo creates (people/angelo/prompts/runner.writer.md)",
     "schedule": "every two hours at :05 (cron 5 */2 * * * UTC), a new session each run"
+  },
+  {
+    "name": "dev.map@PrompTugal.angelo",
+    "job": "Team and the machine: Replay merged in, the command centre's look kept, a 3D option, live updates (people/angelo/proposals/live-map/); dev@PrompTugal.angelo reviews its work",
+    "session": "a fresh Claude Code cloud session for every run, started by a scheduled task in Angelo's account; the shared no-secrets environment; no key",
+    "schedule": "every two hours at :15 (cron 15 */2 * * *), a new session each run"
+  },
+  {
+    "name": "dev.venues@PrompTugal.angelo",
+    "job": "the venue map and the team's private locations (WS-181), PrompTugal.news's summit pages included (people/angelo/proposals/WS-181/); dev@PrompTugal.angelo reviews its work",
+    "session": "a fresh Claude Code cloud session for every run, started by a scheduled task in Angelo's account; the shared no-secrets environment; no key",
+    "schedule": "every two hours at :45 (cron 45 */2 * * *), a new session each run"
+  },
+  {
+    "name": "research@PrompTugal.angelo",
+    "job": "public briefs on companies, and on people in their public professional role, before meetings, from the public CRM's list, each fact with its source (people/angelo/research/); the back office at the summit",
+    "session": "a fresh Claude Code cloud session for every run, started by a scheduled task in Angelo's account; the shared no-secrets environment; no key",
+    "schedule": "every three hours at :25 (cron 25 */3 * * *), a new session each run"
+  },
+  {
+    "name": "social-media@PrompTugal.angelo",
+    "job": "Angelo's LinkedIn: profile and post drafts in people/angelo/proposals/social/, in his voice; Angelo posts himself, nothing is posted by an agent",
+    "session": "a fresh Claude Code cloud session for every run, started by a scheduled task in Angelo's account; the shared no-secrets environment; no key",
+    "schedule": "twice a day, 08:40 and 16:40 UTC (cron 40 8,16 * * *), a new session each run; the desk wakes it when a piece by or about Angelo goes live"
+  },
+  {
+    "name": "dev.links@PrompTugal.angelo",
+    "job": "crawls promptugal.news, checks every internal and external link, fixes what it may in page code and data, reports the rest (people/angelo/links/report.md); never edits a signed article",
+    "session": "a fresh Claude Code cloud session for every run, started by a scheduled task in Angelo's account; the shared no-secrets environment; no key",
+    "schedule": "every four hours at :55 (cron 55 */4 * * *), a new session each run"
+  },
+  {
+    "name": "vault.kms@PrompTugal.angelo",
+    "job": "builds the sharness.kms changeset from people/angelo/proposals/kms/spec-kms.md as patches and tests in people/angelo/proposals/kms/changeset/, a proposal for Dinis; vault@PrompTugal.angelo reviews it; never pushes to SHarness's or sgit's repositories",
+    "session": "a fresh Claude Code cloud session for every run, started by a scheduled task in Angelo's account; the shared no-secrets environment; no key",
+    "schedule": "every three hours at :05 (cron 5 */3 * * *), a new session each run"
   }
 ]

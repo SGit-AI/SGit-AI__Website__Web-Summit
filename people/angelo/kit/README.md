@@ -130,3 +130,12 @@ Angelo's publishing team for PrompTugal.news (Angelo, 6 November 2026: "Let's go
 - **runner.writer@PrompTugal.angelo, the runner:** a fresh session every two hours, started by a scheduled task Angelo creates ([its prompt](../prompts/runner.writer.md)). No key; reads the newsroom, never writes it; keeps `people/angelo/writer/STATE.md`; its last message, "URGENT for Angelo" or "Nothing urgent.", reaches Angelo's phone.
 - Both report to the conductor in commits (`For: desk.conductor@PrompTugal.angelo`); policy@PrompTugal.angelo audits both; in the newsroom they follow its CLAUDE.md and its pipeline like every desk.
 
+## dev.map, dev.venues, research, social-media, dev.links, vault.kms @PrompTugal.angelo
+
+Added on 7 November 2026 at Angelo's word (spec: people/angelo/proposals/new-agents/spec-new-agents.md). Six agents in fresh sessions, each started by a scheduled task in Angelo's account, in the shared no-secrets environment, with no connectors and no key; their scheduled prompts word for word in that spec (each task follows the section with its own name). Each pushes only to workers/<agent> (P-08, 97eaa947); dev@PrompTugal.angelo reviews and brings their work onto dev (vault@PrompTugal.angelo for vault.kms) and reports it to the desk.
+- dev.map: Team and the machine's live map (every two hours, cron 15 */2 * * *).
+- dev.venues: the venue map and private locations, WS-181, the newsroom's summit pages included (every two hours, cron 45 */2 * * *).
+- research: public briefs before meetings (every three hours, cron 25 */3 * * *).
+- social-media (first called social): Angelo's LinkedIn, drafts only (08:40 and 16:40 UTC, cron 40 8,16 * * *).
+- dev.links: promptugal.news's links, fixes on the newsroom's dev under the five steps (every four hours, cron 55 */4 * * *).
+- vault.kms: the sharness.kms changeset, a proposal for Dinis (every three hours, cron 5 */3 * * *).
