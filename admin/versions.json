@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1151",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the task board's three phone fixes from dashboard@'s check",
+    "by": "dev@PrompTugal.angelo",
+    "from": "4f6b9e07c"
+  },
+  {
     "version": "v0.2.1150",
     "date": "2026-11-07",
     "what": "vault@PrompTugal.angelo: kms piece 1 applies cleanly and compiles; its tests are refused by auto mode in my session too",
