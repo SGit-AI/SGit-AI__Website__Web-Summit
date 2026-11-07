@@ -46,6 +46,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - WS-08: crm's 18-company result (0deb159) is in; the desk to show Angelo it and route accenture.json to data/companies.json's keeper (shared data: option 1).
 - Still to do with him: offer his protocol as a team template (c): not yet, Angelo (6 Nov): "there's still some work we're going to do to improve it. Ask me again later" (ask again after the summit, or when it changes); his card (WS-08); booking on his meet page (option C) and the "talk to my agent" line, after security's WS-119 review of the public inbox; the 17 `claude/*` branches (a list of what each holds, if he wants it).
 
+- Tapped spots on the venue map (dashboard@ 8a444ab, dev@ 59d777f, WS-181; tier 3, Angelo's call, before real lines are stored): A store only the nearest building (the brief; dashboard's and dev's recommendation), B per-person choice "building only" or "my spot" with security's review, C spots for everyone (changes the brief). Ask as one question.
 - WS-181 (vault design, vault@, 309a77c): three choices wait for Angelo's go; read people/angelo/proposals/WS-181/vaults.md and ask them one at a time.
 - Writer: Angelo starts writer@PrompTugal.angelo (a session per piece) and creates runner.writer@PrompTugal.angelo's scheduled task (people/angelo/prompts/); to do, his.
 
@@ -60,6 +61,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - Indi's side: whether accountant@web-summit.indi reads `people/angelo/ledger/` (WS-148).
 
 ## Recent
+
+- 7 Nov 01:20: the runner: nothing to route. dashboard and dev raise the tapped-spots question for Angelo (added to Open with Angelo; demo only, nothing exposed). Others' work, information only: Silvio's conductor and video (clean videos vault WS-174, merch pickup Monday, private CRM key sealed to his agents), inbox@silvio's first CRM run, Dinis's lanes re-issued, WS-188 reports. team-collaboration's ledger line.
 
 - 7 Nov 00:20: the runner: nothing to route. Since 23:20: dev reworked the map's playback in four steps at Angelo's words (one map on Team and the machine, agents arriving and gathering round their person: reports to the desk, information only); dashboard's venue map (names on the map, stylised drawing, full screen); writer published WS-125 on PrompTugal.news and reports it (6885f0c); the desk's own briefs to writer, dev and crm (d300e38, ea7f277). Dinis's WS-188 (abp@) and security's WS-187 review: others' work, information only.
 
@@ -79,6 +82,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 6 Nov 17:21: the runner: nothing to route. crm reported the 18-company check (0deb159, WS-08): Accenture confirmed at attendee level, AWS unconfirmed, 16 not found; one draft entry (people/angelo/proposals/companies/accenture.json) waits for data/companies.json's keeper, for the desk to route. The desk renamed Angelo's agents (90299d0; helper switched, a6c3e70); inbox@web-summit.dinis started (WS-184); others' work: information only. Untitled (no session tools).
 
-- 6 Nov 15:40: the customer guide (WS-125) drafted as a private page for Angelo, outside the repository until he approves publication (seven audiences, ABP levels by deployment, two questionnaires, SHarness and the ABP model under CC BY 4.0). Ask Angelo on 7 Nov: what RiskMandate sells (held at his word), and offering his protocol (a reminder is set for 09:30 Lisbon).
-
-last_run: 2026-11-07T00:20:00Z (the runner)
+last_run: 2026-11-07T01:20:00Z (the runner)
