@@ -2,7 +2,7 @@
 title: Jose's dashboard
 summary: The page Jose reads first. The top is built for Jose; the Actions section, the only list of what waits on him, is kept by his conductor (conductor@web-summit.jose); the rest, from the builder template, by his dashboard agent (dashboard@web-summit.jose): what happened, and what Jose and Jose's agents are doing.
 ---
-**Updated Fri 6 Nov, 17:35 UTC by `dashboard@web-summit.jose`; next update Sat 07:30 UTC.** Since 5 November (your rule, C19: "You are my only door"), [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest of the page (your lanes, your agents, your issues) by your dashboard agent. [Your command centre](app/index.html) is becoming your first view (it is on your Actions).
+**Updated Sat 7 Nov, 07:35 UTC by `dashboard@web-summit.jose`; next update 12:30 UTC.** Since 5 November (your rule, C19: "You are my only door"), [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest of the page (your lanes, your agents, your issues) by your dashboard agent. [Your command centre](app/index.html) is becoming your first view (it is on your Actions).
 
 ## Actions {#actions}
 
@@ -61,7 +61,7 @@ What you lead, in your words (4 November): *"technical conversations on agent se
 | **Agent security conversations** | WS-15 (the message), WS-26 (the targets, Thursday and Friday) | you | Nimay, Indi, Dinis, Silvio |
 | **The live demos: attacked, then governed** | WS-18, WS-108 (your two apps: run sheets and QR codes ready, your phone check left), WS-109 | you, conductor@web-summit.jose | Dinis, Nimay, Angelo |
 | **Voice and language agents** | WS-61 (the voice memo loop, Sat 7 Nov) | nobody yet | anyone |
-| **Automation and the machine** (your agents carry it for you) | WS-39, WS-74 (both picked; the feedback count is published by your vault agent, and the n8n flow reads it, checked at your automation agent's 16:10 wake), WS-37 (page views), WS-120 (a vault-to-vault lane with Angelo, both ways: your vault agent verified his signed test on 5 November and sent its own to his lane at 11:42 today), WS-154, WS-160 | dev@, automation@, vault@, conductor@, watcher@web-summit.jose | Angelo, Dinis |
+| **Automation and the machine** (your agents carry it for you) | WS-39, WS-74 (both picked; the feedback count is published by your vault agent, and the n8n flow reads it, checked at your automation agent's 16:10 wake), WS-37 (page views), WS-120 (a vault-to-vault lane with Angelo: works both ways, each side has verified the other's signed message, 5c6ddde3 and 309a77ce), WS-154, WS-160 | dev@, automation@, vault@, conductor@, watcher@web-summit.jose | Angelo, Dinis |
 
 Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault@web-summit.jose`.
 
@@ -75,6 +75,7 @@ Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault
 - **On schedule:** conductor, dashboard, dev, watcher (now also at 22:15 UTC), automation, helper, and vault (11:40 and 17:40 UTC, draining its lanes).
 - **On demand:** designer, sales-coach (started 5 November for your RiskMandate pitch, its key published), crm (started 5 November at your yes, key `crm-jose`; the private CRM's key is sealed to it, and it has written the channels area for WS-175, kept locally until it has an SG/Send token of its own), the reviewer as a sub-agent on every push, and the accountant once a day in your conductor's 07:20 wake (each agent measures its own run).
 - **Proposed, waiting on you through your conductor:** new schedules with their token cost ([schedules.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/schedules.md), nothing switched yet).
+- **Your command centre was changed by another person's agent:** Silvio's dashboard agent added "two brains" to the command centres of Silvio, Angelo and you this morning (14f3f05, 07:07), through the shared engine and with a 1.6 MB 3D library, at Silvio's word and with no `For:` line to you or your agents (its commit says nothing in your own app was removed or changed); your watcher flagged it ([its latest](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/latest.md)). What to do about it goes to your conductor, who puts it on [Actions](#actions) if it needs you.
 - **Anything wrong with them** (late runs, missing reviews) is on [Actions](#actions); your watcher's latest run is [here](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/latest.md).
 
 The full list: [agents.json](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/agents.json); the prompts: [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/kit/README.md). The improvements your designer proposed for everyone's command centre are WS-159 ("four improvements for the shared command centre"), for the engine's owners: nobody else's app changes unless they take it.
