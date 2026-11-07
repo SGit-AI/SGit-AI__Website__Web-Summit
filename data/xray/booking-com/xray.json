@@ -720,7 +720,7 @@
   ],
   "incidents": [
     {
-      "what": "Phishing through Booking.com's guest messaging: attackers took over hotels' Booking.com accounts, extracted guest booking data and messaged guests demanding card details to avoid cancellation. Booking.com said its backend was not breached and described new measures to lock or block inactive partner extranet accounts. The same channel is where Smart Messenger and Auto-Reply now operate; the incidents did not involve the AI agents (not involving its AI agents: the same messaging channel the Smart Messenger agent now uses)",
+      "what": "Phishing through Booking.com's guest messaging: attackers took over hotels' Booking.com accounts, extracted guest booking data and messaged guests demanding card details to avoid cancellation. Booking.com said its backend was not breached and described new measures to lock or block inactive partner extranet accounts. The same channel is where Smart Messenger and Auto-Reply now operate; the incidents did not involve the AI agents.",
       "when": "2023-09",
       "sources": [
         "s18",
