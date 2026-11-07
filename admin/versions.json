@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.952",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: STATE and runs for the 05:21 run",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "e29651383"
+  },
+  {
     "version": "v0.2.951",
     "date": "2026-11-07",
     "what": "my session key on the keys page (dashboard-silvio); from now on I sign as dashboard@web-summit.silvio",
