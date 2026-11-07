@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.992",
+    "date": "2026-11-07",
+    "what": "09:34 wake: WS-41 after 5, Jose's first interview-based evening pulse did not come (no interview on 6 November, brief 14)",
+    "by": "dev@web-summit.jose",
+    "from": "583d07bb1"
+  },
+  {
     "version": "v0.2.991",
     "date": "2026-11-07",
     "what": "crm@PrompTugal.angelo: URGENT, for review: a broken company link in the private CRM (the Brazil delegation action names \"hablla\", not \"company:hablla\")",
