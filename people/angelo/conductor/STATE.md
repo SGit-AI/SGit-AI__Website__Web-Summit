@@ -28,7 +28,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 | Brief | To | Since | Due | Back when |
 |---|---|---|---|---|
-| sharness.kms: what building it would take (proposals/kms/) | vault@ | 6 Nov 20:15 | 7 Nov 09:50 run | report For: desk.conductor@ |
+| sharness.kms: what building it would take: BACK (6d3ccd6, 7 Nov 09:56: after the summit, four small steps now) | vault@ | 6 Nov 20:15 | done | for the desk to show Angelo |
 | WS-180 back office: proposal for Dinis (the outline is in the brief's commit) | writer@ | 6 Nov 23:30 | 7 Nov 12:00 stand-up | draft in people/angelo/proposals/WS-180/, sent to conductor@web-summit.dinis |
 | Context rules into every agent's prompt and the kit | dev@ | 6 Nov 23:30 | 7 Nov 18:00 | kit section; each agent adopts at its next run |
 | Accenture into data/companies.json (owner angelo), as the new protocol allows | crm@ | 6 Nov 23:30 | 7 Nov 08:50 run | the entry live |
@@ -39,6 +39,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Open with Angelo (the desk's list)
 
+- vault@'s 10:19 digest (557e322): six open questions with its recommendations; tier 3 among them: his token out of vault@'s three clones (ask on its own). The rest: the QR of ucvg2pkv's key for Dinis by 11 Nov, sharness.kms after the summit, WS-181's vault split, the live map's public view, vault@'s own token (Dinis).
 - inbox@PrompTugal.angelo (crm@'s design, e8eb75d): his go is tier 3, asked as two questions: (1) switch the three Gmail send tools off; (2) create its scheduled task with the Gmail connector. Settle P-07 (a stranger's email is a visitor's note) first. Read people/angelo/proposals/inbox/README.md.
 - Topics still to discuss: 10 SG/Send deep dive (with diagrams); 11 the PromptUGAL.news rebranding's changes to his workflows; 12 an editorial team of agents for articles.
 - From policy@PrompTugal.angelo's first audit (69146077, people/angelo/policy/findings.md): P-01 (a signed-only drain) and the write-path gate check proposed; P-02 settled (WS-179); P-04 confirmed by Angelo on 6 Nov.
@@ -86,6 +87,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 7 Nov 10:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session: "Wake up" at 10:19, the agents answered with direct-session reports). Back: vault@'s sharness.kms (6d3ccd6: after the summit, four small steps now) and live-map/venues analysis (81bb8ec); vault@'s six open questions (557e322), of which one is tier 3 for Angelo (remove his token from vault@'s three clones: added to Open with Angelo). crm@'s inbox agent built at his go (6bbb671) and crm now every 3 h (d53e0f4); crm@'s hablla finding (a0906f0) is for Dinis's conductor and crm, unanswered. Faster schedules, specs-before-builds and dev.links brief are the desk's own. Others' work, information only: checker@vicky, mentor, dev@jose.
+
 - 7 Nov 09:21: the runner: two briefs back, nothing to route. crm@ delivered the inbox@ design (e8eb75d, people/angelo/proposals/inbox/README.md, ahead of its 16:50 due): Angelo's go is tier 3 (the three Gmail send tools off, the scheduled task created with the Gmail connector), added to Open with Angelo; P-07 comes first. dev@ reviewed the WS-125 guide (d23e255, review-dev.md): accurate on sources, seven corrections already routed `For: writer`, policy@ and Dinis's conductor; policy@'s half still out (due 18:00). Others' work, information only: Silvio's dashboard agent at L6, vault-audit fix, journalist 08:57, designer's /print/.
 
 - 7 Nov 08:20: the runner: nothing to route; nothing urgent. Since 07:20 only reports and others' work: team-collaboration's 07:40 daily note (9dd5c3e, For: desk: parking open, decisions wait on Dinis, no 18:00 records), dev's Replay map mode (1b8683d, For: Angelo, WS-97), Vicky's and Silvio's agents. No brief of Angelo's has come back. Workload table written (above).
@@ -104,9 +107,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 7 Nov 01:20: the runner: nothing to route. dashboard and dev raise the tapped-spots question for Angelo (added to Open with Angelo; demo only, nothing exposed). Others' work, information only: Silvio's conductor and video (clean videos vault WS-174, merch pickup Monday, private CRM key sealed to his agents), inbox@silvio's first CRM run, Dinis's lanes re-issued, WS-188 reports. team-collaboration's ledger line.
 
-- 7 Nov 00:20: the runner: nothing to route. Since 23:20: dev reworked the map's playback in four steps at Angelo's words (one map on Team and the machine, agents arriving and gathering round their person: reports to the desk, information only); dashboard's venue map (names on the map, stylised drawing, full screen); writer published WS-125 on PrompTugal.news and reports it (6885f0c); the desk's own briefs to writer, dev and crm (d300e38, ea7f277). Dinis's WS-188 (abp@) and security's WS-187 review: others' work, information only.
-
-last_run: 2026-11-07T09:21:00Z (the runner| One live map of our activity, named "Team and the machine" (Replay merged into it, its look and feel kept exactly as in Angelo's command centre, 3D to consider), with external connections, key handovers, sealed messages and append lanes; a design for publishing it | dev@ (with vault@ for what may be shown) | 7 Nov 09:00 | design 7 Nov 18:00 | people/angelo/proposals/live-map/ |
+last_run: 2026-11-07T10:21:00Z (the runner)
 | Venues on PrompTugal.news: the public map there, our locations private (team only), public only for a person who opts in; built on WS-181 and the newsroom's My day (browser plus vault) | dev@ with vault@ | 7 Nov 09:00 | design 7 Nov 18:00 | people/angelo/proposals/WS-181/ |
 | LinkedIn: profile update (headline, About, featured, experience) and posts to Monday; the first post: promptugal.news/articles/angelos-communication-graph.html | social@ once it exists (moved from writer@, 7 Nov) | 7 Nov 09:45 | drafts by 7 Nov 18:00 | people/angelo/proposals/social/ |
 | Faster schedules: dev hourly, crm every 3 h, vault every 4 h, policy twice a day | dev@, crm@, vault@, policy@ | 7 Nov 10:00 | each at its next run | each confirms in a commit |
