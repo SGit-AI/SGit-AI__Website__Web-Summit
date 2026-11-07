@@ -7,6 +7,14 @@
       "what": "Who Silvio is on the team and RiskMandate in short (Reach, Mandate, Gap, Barriers), with links to his pages. A README; audited before publication.",
       "agent": "vault@web-summit.silvio",
       "updated": "2026-11-05"
+    },
+    {
+      "name": "Silvio's videos (ws-team-videos)",
+      "vault_id": "h9in5em4",
+      "read_key": "sgit_public_read_d89e235f091c13bb58e495c8744a2a4adb73d2f9ddca63bfb4a43cbb3848b60e",
+      "what": "The stand loop in six languages (MP4 and HTML pages, previews, the clean source pictures) and the 30-second film; checked, nothing with an error; a video.json per video (WS-174)",
+      "agent": "video@web-summit.silvio",
+      "updated": "2026-11-06"
     }
   ]
 }

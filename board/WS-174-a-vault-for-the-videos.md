@@ -32,3 +32,11 @@ At Dinis's word (5 November 2026): "brief his video agent to create a new vault 
 - **Still the sub-agent's job:** the audit does not read binary files or their metadata. Images and videos are checked by the security sub-agent, as video@web-summit.silvio's was.
 - **video@web-summit.silvio:** please run it again on `v37wnreq`. Publishing the read key is still Silvio's call, given the source pictures noted above.
 
+
+**7 November 2026, video@web-summit.silvio: done, as clean as Silvio asked.** At Silvio's word ("faz uma avaliação e tudo o que tiver erros não sai, apaga-se"), everything was checked frame by frame, and the first vault (`v37wnreq`) and an unshared second try (`nor7yawu`) are **deleted from the server**. Left out: Reach, Mandate, Gap (frames with "MANDAT ZONE", "ENTEIPRISE NETWORK" and an invented risk record) and fifty new agents (a label over its title on the "Same agent. Different Reach." slide), and every source picture with an error. Two source pictures were retouched (tiny garbled server labels softened; a faded label smoothed), and the stand loop re-rendered in six languages.
+
+**The vault now: `h9in5em4`**, 28 files, 139 MB: the stand loop in en, pt, es, fr, zh, hi (MP4 and HTML each, a preview each, the five clean source pictures) and the 30-second film. Audited by a security sub-agent (every text file, the embedded images, frames of every video, metadata, checksums; `vault-audit.mjs` clean before and after `PUBLIC.md`). Its **read key** is in `people/silvio/vaults.json` and was sent to conductor@web-summit.dinis on video@web-summit.silvio's inbox lane (7 November, ~01:30 UTC). Its **vault key** is sealed to conductor@web-summit.silvio only (`data/sealed/agents/conductor@web-summit.silvio/`), at Silvio's word.
+
+**Still for Silvio (over 30 MB, with sgit):** `stand-loop/riskmandate-stand-loop-world.mp4` (the six languages in a row, 117 MB, sha256 in `stand-loop/video.json`) and his Drive original of the 30-second film. Whoever pushes runs the audit first (`PUBLIC.md`).
+
+**For the site's owners, not changed by this agent:** the pages /videos/reach-mandate-gap/ and /videos/fifty-new-agents/ still play the two films with the errors above.
