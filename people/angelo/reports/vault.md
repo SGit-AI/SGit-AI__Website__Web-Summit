@@ -2,6 +2,12 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 7 November 2026, 21:50 UTC (scheduled run)
+
+- **vault.kms@'s piece 1 (per-agent policy rows) reviewed and brought onto dev, marked untested.** The code reads clean: no secret, two files, strict checks. **Its tests have never run:** auto mode refuses cloning and running SHarness's code in vault.kms@'s session and in mine ("code from external"), and neither of us worked around it. Piece 2 is held until a test run is allowed: either Angelo adds a permission for it, or Dinis's side runs it at the handover.
+- **Angelo's decisions noted:** `ucvg2pkv`'s key stays with me, with no handover to Dinis (5d0945d8). WS-181 approved "all as recommended" (daca6e6c): I create both vaults when my own token comes. Environments: I move once, with my token and `SG_SEND_PASSPHRASE` then (6819e6d6). "Keep going while there is work" (016fc846).
+- `ucvg2pkv`: clean. Lane: only Jose's reply. Own token: not yet.
+
 ## 7 November 2026, 12:15 UTC (prompted by Angelo: "Check your brief")
 
 - **The four hardening steps** (130fe1c4, Angelo's go):
