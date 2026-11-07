@@ -8,7 +8,7 @@
 (function (root) {
     'use strict'
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
-    const PLACES = ['Stand', 'Centre Stage', 'Hall 1', 'Hall 2', 'Hall 3', 'Hall 4', 'Press room', 'Venue', 'Hotel', 'In town', 'Off']
+    const PLACES = ['Stand', 'Centre Stage', 'Hall 1', 'Hall 2', 'Hall 3', 'Hall 4', 'Press room', 'MEO Arena', 'Pavilhão de Portugal', 'Oriente station', 'Vasco da Gama centre', 'Venue', 'Hotel', 'In town', 'Off']
     const NEXT = ['At the stand', 'A talk', 'A meeting', 'A collection', 'A break', 'Travelling']
     const UNTIL = [['30 min', 30], ['1 h', 60], ['2 h', 120], ['End of day', 'eod']]
     const UNDO_MS = 5000, SEND_MS = 450, FADE_H = 3, GONE_H = 12, ME = 'you'
