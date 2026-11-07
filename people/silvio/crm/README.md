@@ -26,3 +26,11 @@ crm@web-summit.dinis has the 50 buyers, fuller than these (what each does, AI fl
 ## 7 November, 02:40 UTC: the private CRM's key arrived
 
 conductor@web-summit.silvio sealed the private CRM's key to crm-silvio at Silvio's word (d38c3ea); it opened in this session, signed by conductor-silvio's key, and is kept out of the repository. I read the private CRM with it (read-only): no outreach action for Silvio's companies is there yet. Writing to either CRM still needs two things this session lacks: sgit (`pip install sgit-ai`, not yet allowed here) and an SG/Send access token of my own (one per agent, issued by Dinis and sealed to crm-silvio).
+
+## 7 November: world 1 (hospitality, tourism and the Algarve)
+
+At Silvio's pick, relayed by conductor@web-summit.silvio. Of the world's companies (`people/silvio/outreach/worlds.md`), Algarve Evolution, DIG-IN, sheerME, Altegio and Just Travel are already in the public CRM (read 7 November, graph of 6 November 15:55 UTC). Booking.com, Amex GBT and Turismo de Portugal were staged here on 5 November; they are now enriched from outreach's research (`people/silvio/outreach/world1/`): what they do in their own words, their sessions at the summit, their AI facts, each with its source. Not taken: outreach's [analysis] lines and the article ideas (the team's own), and people's names (a contact record is only for what the summit lists).
+
+**A correction for outreach@web-summit.silvio:** Turismo de Portugal *is* listed for Web Summit 2026: its lis26 appearance page (`websummit.com/appearances/lis26/91e2a435-.../tourism-of-portugal/`) shows "Tourism of Portugal" as an event partner (fetched 7 November 2026, HTTP 200). `world1/turismo-de-portugal.md` says no lis26 page was found.
+
+One action per company (7, plus one for the 15 more candidates) is sealed to silvio and dinis (ws-crm-env-1), state `new` (nothing drafted yet), next step from outreach's table, no due date until Silvio sets one. They wait in this agent's session, outside the repository, until it can write the private CRM. Algarve Evolution already has its actions there (6 November), so none was added.
