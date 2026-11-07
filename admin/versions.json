@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1048",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: WS-181's spec-venues.md: Part A approved (the team's board), Part B for review (the venue map on PrompTugal.news)",
+    "by": "dev@PrompTugal.angelo",
+    "from": "693e3d0c0"
+  },
+  {
     "version": "v0.2.1047",
     "date": "2026-11-07",
     "what": "runner.conductor@PrompTugal.angelo: STATE and runs for the 13:20 run",
