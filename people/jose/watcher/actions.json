@@ -2,7 +2,7 @@
  "schema": "web-summit.sgit.ai/watcher-actions/v1",
  "by": "watcher@web-summit.jose",
  "about": "At Jose's word (5 November 2026): every time an agent looks stopped or late, the watcher opens an action here with what it found and what it recommends, addressed to Jose's conductor and to the agent's owner's conductor in its commit (For:). Every run re-checks each open action: closed when the agent commits again or its scheduled task is seen to fire; still open after two runs, it is raised again at the top of the commit. The watcher only reports and recommends; it never changes an agent, a task or a session (WS-129). An action's 'opened' is the run that first flagged the agent (12:15), before the loop existed.",
- "updated": "2026-11-07T17:15Z",
+ "updated": "2026-11-07T22:15Z",
  "actions": [
   {
    "id": "A-2026-11-05-01",
@@ -90,11 +90,11 @@
    ],
    "status": "open",
    "opened": "2026-11-05T14:22Z",
-   "runs_open": 10,
-   "seen": "the stored prompts of the scheduled tasks of conductor, dev and dashboard are the 3 November versions (no reviewer step for conductor and dev, no WS-160 log), and vault's has no log step; the kit's versions (people/jose/kit/README.md) have them; at 17:15 the stored prompts are unchanged, and since 15:22 the kit also adds the one-door step (C19) to every agent's wake, which no stored prompt has; unchanged again at 22:15; at 07:15 on 6 November still unchanged. The conductor has taken it up: the kit's wake texts are ready to paste in people/jose/schedules.md#paste (0848e6a), on Jose's Actions list. Most urgent: the stored hourly drain prompt still runs the full drain, which pushes a vault, while the kit since 01:30 (0848e6a) says count only (--dry) until the conductor has its own SG/Send token (Dinis's rule); its task fired at 07:10; at 12:15 the helper's stored prompt has been updated (08:52, with the one-door step), but the conductor's wake, dev, dashboard, vault and the hourly drain are unchanged; the hourly drain fired again at 12:08 with the full-drain text; at 17:15 still unchanged (only the helper's was updated); the hourly drain fired again at 17:08; at 22:15 still unchanged; the hourly drain fired again at 22:08; at 07:15 on 7 November still unchanged; the hourly drain fired again at 07:07; at 12:15 on 7 November: the hourly drain's stored prompt was changed by the conductor to count only (11:27, C30), the most urgent part done; the conductor's wake, dev, dashboard and vault prompts are still the old text, and the one-day schedules Jose approved (C30) are not in yet; the automation task's stored prompt still lacks the one-door step, and the watcher's own lacks the measure step (it measures anyway); at 17:15 on 7 November unchanged again (the drain counts only; the four wake prompts and the one-day schedules are not in)",
+   "runs_open": 11,
+   "seen": "the stored prompts of the scheduled tasks of conductor, dev and dashboard are the 3 November versions (no reviewer step for conductor and dev, no WS-160 log), and vault's has no log step; the kit's versions (people/jose/kit/README.md) have them; at 17:15 the stored prompts are unchanged, and since 15:22 the kit also adds the one-door step (C19) to every agent's wake, which no stored prompt has; unchanged again at 22:15; at 07:15 on 6 November still unchanged. The conductor has taken it up: the kit's wake texts are ready to paste in people/jose/schedules.md#paste (0848e6a), on Jose's Actions list. Most urgent: the stored hourly drain prompt still runs the full drain, which pushes a vault, while the kit since 01:30 (0848e6a) says count only (--dry) until the conductor has its own SG/Send token (Dinis's rule); its task fired at 07:10; at 12:15 the helper's stored prompt has been updated (08:52, with the one-door step), but the conductor's wake, dev, dashboard, vault and the hourly drain are unchanged; the hourly drain fired again at 12:08 with the full-drain text; at 17:15 still unchanged (only the helper's was updated); the hourly drain fired again at 17:08; at 22:15 still unchanged; the hourly drain fired again at 22:08; at 07:15 on 7 November still unchanged; the hourly drain fired again at 07:07; at 12:15 on 7 November: the hourly drain's stored prompt was changed by the conductor to count only (11:27, C30), the most urgent part done; the conductor's wake, dev, dashboard and vault prompts are still the old text, and the one-day schedules Jose approved (C30) are not in yet; the automation task's stored prompt still lacks the one-door step, and the watcher's own lacks the measure step (it measures anyway); at 17:15 on 7 November unchanged again (the drain counts only; the four wake prompts and the one-day schedules are not in); at 22:15 on 7 November unchanged again",
    "likely_cause": "the tasks were made before the kit changed; the agents re-read the kit at each wake, so they may follow it anyway, but the stored prompts disagree",
    "recommend": "Jose: paste the remaining texts and set the times shown in people/jose/schedules.md (conductor every hour 07:20 to 21:20, dev and helper every two hours, a new designer task)",
-   "raised": "open ten runs: raised"
+   "raised": "open eleven runs: raised"
   },
   {
    "id": "A-2026-11-05-07",
@@ -225,11 +225,11 @@
    ],
    "status": "open",
    "opened": "2026-11-06T07:15Z",
-   "runs_open": 7,
-   "seen": "no commit since 23:53 on 5 November, about 41 hours",
+   "runs_open": 8,
+   "seen": "no commit since 23:53 on 5 November, about 46 hours",
    "likely_cause": "unknown; its mandate is a refactoring pass every wake, so a quiet wake is unusual; not confirmed (Dinis's account)",
    "recommend": "conductor@web-summit.dinis: check its 00:40 to 09:40 wakes",
-   "raised": "open seven runs: raised"
+   "raised": "open eight runs: raised; now part of A-21"
   },
   {
    "id": "A-2026-11-06-15",
@@ -241,11 +241,11 @@
    ],
    "status": "open",
    "opened": "2026-11-06T12:15Z",
-   "runs_open": 6,
-   "seen": "committed at 07:11 on 6 November, nothing since (about 34 hours)",
+   "runs_open": 7,
+   "seen": "no commit since 07:11 on 6 November, about 39 hours",
    "likely_cause": "as on 5 November (A-01): probably idle with no cockpit answers to apply; not confirmed",
    "recommend": "conductor@web-summit.dinis: have it log every run (WS-160), so its quiet hours show and this stops reopening",
-   "raised": "open six runs: raised"
+   "raised": "open seven runs: raised; now part of A-21"
   },
   {
    "id": "A-2026-11-06-16",
@@ -333,6 +333,22 @@
    "recommend": "conductor@web-summit.silvio: have it log every run (WS-160) so its checks show",
    "closed": "2026-11-07T17:15Z",
    "cause": "recovered: committed at 17:12"
+  },
+  {
+   "id": "A-2026-11-07-21",
+   "agent": "Dinis's scheduled agents",
+   "owner": "dinis",
+   "to": [
+    "conductor@web-summit.jose",
+    "conductor@web-summit.dinis",
+    "dinis"
+   ],
+   "status": "open",
+   "opened": "2026-11-07T22:15Z",
+   "runs_open": 1,
+   "seen": "no commit by any scheduled agent of Dinis's since 16:41: conductor (17:27 and 20:27 passed; last 14:28), journalist (16:57, 18:57, 20:57; last 14:59), sgit (16:50, 20:50; last 12:52), mentor (hourly at about :41 by its commit history, not declared in people/dinis/agents.json; 17:40 to 21:40; last 16:41), abp (20:10; last 16:13), pulse and project-manager (their evening slots); dev and dashboard quiet much longer (A-14, A-15). Only xray@web-summit.dinis, a new agent not yet in people/dinis/agents.json, committed (18:49 to 21:52)",
+   "likely_cause": "something account-wide in Dinis's account (scheduled tasks paused, a usage limit, or sessions not starting), more likely than nine separate faults; not confirmed: the watcher cannot see Dinis's account",
+   "recommend": "Dinis: look at the scheduled tasks in his account (last run and status); conductor@web-summit.jose: raise it with Dinis at the next stand-up if it is not back by morning"
   }
  ],
  "could_not_check": [
