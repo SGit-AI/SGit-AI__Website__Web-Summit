@@ -50,19 +50,27 @@ After the summit, drop the last part. (Not "Technical lead at RiskMandate": on L
   - **Skills** (LinkedIn takes a few per item; the first two are already his top skills, so the project strengthens them): Agentic AI Development; Generative AI; AI Governance; Technical Writing; Claude Code (only if he wants a product name on his profile).
   - Team members: add the people he worked with, if they agree.
 
-**Featured** (new). LinkedIn offers post, article, link, image and document; use **Post** and **Link** only:
-1. **Post:** his "I'm at Web Summit" declaration (Sunday 8 evening), once posted, first until Thursday 12; then remove it.
-2. **Link:** the agent setup guide, https://promptugal.news/articles/agent-setup-guide.html (first after the summit).
-3. **Link:** the interactive guide, https://web-summit.sgit.ai/people/angelo/guide/index.html
-4. **Link:** the communication graph, https://promptugal.news/articles/angelos-communication-graph.html
+**Featured**, for the people who look him up before and during the summit (Angelo, 7 November). What they want to know, in order: where and when to find him, what the team is about, what he knows, and something to talk about at the stand.
+1. **Post:** the declaration, "I'm at Web Summit, find me Thursday at booth A1-30" (posted first, today). Where and when, in one card.
+2. **Link:** Reach, Mandate, Gap, RiskMandate in 53 seconds, https://web-summit.sgit.ai/videos/reach-mandate-gap/index.html. The quickest answer to "what is this team about?"
+3. **Link:** the agent setup guide, https://promptugal.news/articles/agent-setup-guide.html. What he knows, and a reason to talk.
+4. **Link:** the communication graph, https://promptugal.news/articles/angelos-communication-graph.html. The team's own agents, what visitors can see live at the stand.
 
-Titles and descriptions as in the Project's Media below. Not used: **Article** (a LinkedIn article would copy the guide away from its signed source; link to it instead), **Document** (a PDF copy goes stale when the guide is corrected), **Image** (only if designer@ makes a "find me Thursday" card; ask). The film stays in the Project, so Featured stays short.
+The interactive guide is not in Featured: the guide's card leads to it. **Image**, optional and the best of all if made: a "Find me Thursday 12 November, booth A1-30, ALPHA 1, Pavilion 1" card in the team's style (designer@, if Angelo asks), first in the list, with the declaration second. **After the summit:** remove the declaration (and the card); the guide first, then the graph, then the interactive guide. Not used: Article and Document (copies drift from the signed guide).
 
 ## 2. Posts, Saturday 7 to Thursday 12 November
 
 Short, in his voice, one link each; tag RiskMandate in every post. Times are suggestions (Lisbon). "Reshare" means sharing the link with his own line on top.
 
-### Sat 7, evening. His own: the communication graph
+### Sat 7, today. The declaration: I'm at Web Summit (first, so Featured can show it at once)
+
+> I'm at Web Summit Lisbon from Monday, collaborating with the RiskMandate team.
+>
+> Come and find me at RiskMandate's stand on Thursday 12 November: booth A1-30, ALPHA 1, Pavilion 1.
+>
+> If you run AI agents in production, or want to, I'd like to compare notes: what they can reach, what they're allowed to do, and what actually stops them when something goes wrong. I'll be showing our own setup live on my laptop.
+
+### Sun 8, morning. His own: the communication graph
 
 > We run our Web Summit work with nine people and dozens of AI agents. They talk to each other through git: every change is a commit, and a "For:" line says who it's for.
 >
@@ -72,7 +80,7 @@ Short, in his voice, one link each; tag RiskMandate in every post. Times are sug
 >
 > https://promptugal.news/articles/angelos-communication-graph.html
 
-### Sun 8, morning. His own: the agent setup guide
+### Sun 8, evening. His own: the agent setup guide
 
 > Most people using AI are on step 1: lots of chats, and you're the courier copying text between them.
 >
@@ -82,14 +90,6 @@ Short, in his voice, one link each; tag RiskMandate in every post. Times are sug
 >
 > The text: https://promptugal.news/articles/agent-setup-guide.html
 > Interactive: https://web-summit.sgit.ai/people/angelo/guide/index.html
-
-### Sun 8, evening. The declaration: I'm at Web Summit
-
-> I'm at Web Summit Lisbon from Monday, collaborating with the RiskMandate team.
->
-> Come and find me at RiskMandate's stand on Thursday 12 November: booth A1-30, ALPHA 1, Pavilion 1.
->
-> If you run AI agents in production, or want to, I'd like to compare notes: what they can reach, what they're allowed to do, and what actually stops them when something goes wrong. I'll be showing our own setup live on my laptop.
 
 ### Mon 9 (the summit opens). Reshare: the team behind it
 
