@@ -293,7 +293,7 @@ function tasks(root, person, d, now) {
         if (!place) { unplaced.push(`backlog #${cells[0]}: status "${status}"`); return }
         const issue = (item.match(/\bWS-\d+\b/) || [])[0] || ''
         if (issue) byIssue.add(issue)
-        cards.push({ id: `B-${cells[0]}`, src: 'backlog', col: place, title: plain(item).replace(/\s+done:.*$/i, ''), done: struck ? plain((item.match(/done:\s*(.*)$/i) || [])[1] || '') : '', agent: col('agent'), brief: plain(col('brief')), link: briefLink(col('brief')) || briefLink(item), waits: plain(waits), chip: place === 'need' ? 'waits on you' : '', rank: 40 - +cells[0] / 100, at: blAt[n] || '', issue })
+        cards.push({ id: `B-${cells[0]}`, src: 'backlog', col: place, title: plain(item).replace(/\s+done:.*$/i, '').replace(/\s*\((?:[0-9a-f]{7,12}(?:,\s*)?)+\)/g, ''), done: struck ? plain((item.match(/done:\s*(.*)$/i) || [])[1] || '') : '', agent: col('agent'), brief: plain(col('brief')), link: briefLink(col('brief')) || briefLink(item), waits: plain(waits), chip: place === 'need' ? 'waits on you' : '', rank: 40 - +cells[0] / 100, at: blAt[n] || '', issue })
     })
     // 2. the desk's "Open with Angelo" (people/angelo/conductor/STATE.md): one card a top-level bullet, all in Needs you
     const ST = 'people/angelo/conductor/STATE.md', stText = (() => { try { return fs.readFileSync(path.join(root, ST), 'utf8') } catch { return '' } })(), stAt = lineTimes(root, ST)

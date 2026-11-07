@@ -362,3 +362,13 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
   .ak-tt { font-size: 17px; line-height: 24px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .ak-since .cc-btn { margin-left: 0; }
 }
+/* dashboard@'s check (d4853e79): titles clamp everywhere; on a phone the tabs as a 2 x 2 grid, the banner one line */
+.ak-tt { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+@media (max-width: 767px) {
+  .ak-tt { -webkit-line-clamp: 2; }
+  .ak-tabs.ak-tabs-2x2 { display: grid; grid-template-columns: 1fr 1fr; overflow: visible; }
+  .ak-tabs.ak-tabs-2x2 button { width: 100%; }
+  .ak-since-1 { flex-wrap: nowrap; padding: 6px 10px; justify-content: space-between; }
+  .ak-since-1 span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ak-since-1 .cc-btn { flex: none; }
+}
