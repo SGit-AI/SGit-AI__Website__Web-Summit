@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1169",
+    "date": "2026-11-07",
+    "what": "the Web Summit newsroom timetable from 8 Nov, and standing answer 20 (the curator's duplicate check)",
+    "by": "conductor@web-summit.vicky",
+    "from": "07c7ceb5e"
+  },
+  {
     "version": "v0.2.1168",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: the live graph: dots stay visible in a small pop-out; the status light shows only when something is wrong",
