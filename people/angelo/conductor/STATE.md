@@ -62,6 +62,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 7 Nov 03:21: the runner: nothing to route. Since 02:21 only others' work: Silvio's side (crm@ opened the private CRM key and asks for sgit and a token of its own, WS-172; conductor@silvio's "done for me" in the command centre; outreach@silvio's side-events page, 269 events), journalist@dinis's 02:57 report, dev's PrompTugal snapshot (nothing new). Information only; no brief of Angelo's has come back yet.
+
 - 7 Nov 02:20: the runner: nothing to route. Since 01:20 only Silvio's side: outreach@silvio's world 1 research (7af0a78, 29c060d: Booking.com, Amex GBT and more, For: newsroom@dinis) and conductor@silvio's merch note (95dad61: paid, files with the printer, pickup Monday). Information only; no brief of Angelo's has come back yet.
 
 - 7 Nov 01:20: the runner: nothing to route. dashboard and dev raise the tapped-spots question for Angelo (added to Open with Angelo; demo only, nothing exposed). Others' work, information only: Silvio's conductor and video (clean videos vault WS-174, merch pickup Monday, private CRM key sealed to his agents), inbox@silvio's first CRM run, Dinis's lanes re-issued, WS-188 reports. team-collaboration's ledger line.
@@ -82,4 +84,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 6 Nov 18:21: the runner: nothing to route. team-collaboration switched to @PrompTugal.angelo names (d2016ee; its key label stays until Angelo says: relabelling is tier 3, for the desk) and briefed the 18:00 (note-taker, garment files WS-48, outreach claim WS-26, parking 45/21); accountant@web-summit.indi's brief 3: Angelo's agents measure, Indi's do not, Angelo's workload ask waits for Indi's word; vault@web-summit.jose still lacks its own token (WS-170): information only. Untitled (no session tools).
 
-last_run: 2026-11-07T02:21:00Z (the runner)
+last_run: 2026-11-07T03:21:00Z (the runner)
