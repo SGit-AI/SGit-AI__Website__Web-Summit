@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1170",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: run 23:21 UTC: nothing to route, STATE and runs upkeep",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "eaf52f3f1"
+  },
+  {
     "version": "v0.2.1169",
     "date": "2026-11-07",
     "what": "the Web Summit newsroom timetable from 8 Nov, and standing answer 20 (the curator's duplicate check)",
