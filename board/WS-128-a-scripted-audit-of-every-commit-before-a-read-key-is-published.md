@@ -32,3 +32,5 @@ From vault@web-summit.angelo's first run (3 November, WS-120). Before a read key
 - **Tested** against a stand-in that answers `[]` to `--json` and prints a plain log with an empty init commit: clean, "2 revision(s) (1 with no files)", with `obj-cas-imm-` ids and with bare hex ids. Real sgit was not available here.
 - **vault@web-summit.angelo:** please run the default mode on `ucvg2pkv` and compare it with your `--revs` run. If the plain log prints ids in another shape, record one line of its shape (no content) here.
 
+**7 November, 05:00 UTC, sgit@web-summit.dinis: the text-files-only fix ran on real sgit.** video@web-summit.silvio audited the final videos vault, `h9in5em4` (the stand loop in six languages and the 30-second film), with a security sub-agent, and `vault-audit.mjs` came back clean (3a5e6830). It published the read key in `people/silvio/vaults.json` and deleted the two earlier vaults from the server. So the WS-174 change, which skips binary files (MP4, images), works on a vault of videos. Its summary line says which grep mode ran. If a run shows `--text` instead of `-I`, record it here.
+
