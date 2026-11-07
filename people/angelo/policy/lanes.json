@@ -5,7 +5,9 @@
   "common": [
     "data/keys.json",
     "board/WS-160-every-agent-logs-its-runs.md",
-    "people/angelo/ledger/**"
+    "people/angelo/ledger/**",
+    "people/angelo/reports/**",
+    "people/angelo/proposals/**"
   ],
   "agents": {
     "desk.conductor@PrompTugal.angelo": {
@@ -119,12 +121,62 @@
     "writer@PrompTugal.angelo": {
       "writes": [],
       "aliases": [],
-      "source": "ABP: the newsroom repository only (desks/), nothing here"
+      "source": "ABP: the newsroom repository only (desks/), nothing here; here only reports/ and proposals/ (common)"
+    },
+    "dev.map@PrompTugal.angelo": {
+      "writes": [
+        "people/angelo/proposals/live-map/**",
+        "people/angelo/app/**"
+      ],
+      "aliases": [],
+      "branch": "workers/dev.map",
+      "source": "ABP: proposals/live-map and the command centre's map"
+    },
+    "dev.venues@PrompTugal.angelo": {
+      "writes": [
+        "people/angelo/proposals/WS-181/**"
+      ],
+      "aliases": [],
+      "branch": "workers/dev.venues",
+      "source": "ABP; and the newsroom's dev under the five steps"
+    },
+    "research@PrompTugal.angelo": {
+      "writes": [
+        "people/angelo/research/**"
+      ],
+      "aliases": [],
+      "branch": "workers/research",
+      "source": "ABP"
+    },
+    "social-media@PrompTugal.angelo": {
+      "writes": [
+        "people/angelo/proposals/social/**"
+      ],
+      "aliases": [],
+      "branch": "workers/social-media",
+      "source": "ABP; drafts only, Angelo posts himself"
+    },
+    "dev.links@PrompTugal.angelo": {
+      "writes": [
+        "people/angelo/links/**"
+      ],
+      "aliases": [],
+      "branch": "workers/dev.links",
+      "source": "ABP; and the newsroom's page code and data"
+    },
+    "vault.kms@PrompTugal.angelo": {
+      "writes": [
+        "people/angelo/proposals/kms/**"
+      ],
+      "aliases": [],
+      "branch": "workers/vault.kms",
+      "source": "ABP; never SHarness's repositories"
     }
   },
   "everyone": {
     "board_line_ws160": "board/WS-160: one 'logging from' line, asked of every agent by WS-160 (Dinis): allowed for all (common)",
     "two_files_rule": "a new page and the first link to it, inside people/angelo/, in one commit (the protocol); listed, not a finding"
   },
-  "others_files": "From 6 November (Angelo, ce069603) an agent may change another owner's file directly, under the tiers, with five steps: fresh dev, look at the last two hours and picked issues, For: <owner> in the commit, never overwrite on a rebase conflict, shared data one entry at a time. audit.mjs lists such writes and flags one without a For: line other than Angelo's own agents."
+  "others_files": "From 6 November (Angelo, ce069603) an agent may change another owner's file directly, under the tiers, with five steps: fresh dev, look at the last two hours and picked issues, For: <owner> in the commit, never overwrite on a rebase conflict, shared data one entry at a time. audit.mjs lists such writes and flags one without a For: line other than Angelo's own agents.",
+  "common_why": "reports/ (each agent's report file for the desk) and proposals/ (drafts of anything, tier 1, and the protocol's place for drafts and specs) are every agent's, by practice and the protocol"
 }

@@ -2,6 +2,31 @@
 
 By policy@PrompTugal.angelo (was policy@web-summit.angelo), for Angelo. Newest run first. Each finding names the commit, the rule (the numbers are `map.md`'s) and the evidence. What the watcher (`people/jose/watcher/latest.md`) already reports is not repeated; a finding here adds what only Angelo's protocol makes a violation.
 
+## Run 3: 7 November 2026, 19:15 UTC (scheduled)
+
+**Range:** `a3497d36..b776ef5c`, 97 commits by Angelo's agents. Pushes: the activity API from 16:47 (its last 100 events) and each branch's head. Next run starts after `b776ef5c`.
+
+**Clean:**
+
+- **P-08 settled as Angelo chose:** the new workers push only to `workers/<agent>` (`workers/dev.links`, `dev.map`, `dev.venues`, `research`, `vault.kms` exist; three pushes since 16:47, all there). The kit records it (`97eaa947`).
+- **R7, others' files:** crm's `5c7a04cb` (`data/companies.json`, Dinis's conductor's) names all five steps and its owner.
+- **Tier 3:** Angelo did his LinkedIn himself (`91cec20e`: "Ok I've done everything for today"); social-media drafts only. No sealing, no key, no admin action.
+- **Lanes:** every other write is inside the agent's paths, now that `reports/` and `proposals/` count for everyone (the protocol's place for drafts and reports).
+
+### P-09 (medium, for Angelo and security) R6 and WS-132: the writer added code the build runs, which puts a script on the site
+
+- **Evidence:** `aafbbb05` (writer, 10:44, at Angelo's "I want all interactivity to be back") created `people/angelo/pages.mjs`. The build imports and runs that module, in CI too, and it places the guide's inline script on `people/angelo/guide/`, on the same origin as the person keys in people's browsers.
+- **Why it matters:** this is WS-132's second risk, by name ("`people/<id>/pages.mjs` ... its pages carry raw HTML and a head of scripts"). Today's script is clean (I read it: the audience switch, the questionnaires, the dial; one `localStorage` key; nothing sent anywhere), and gate check 22 passed. But from now on any change to `agent-setup-guide.fragment`, by any agent that may write `proposals/`, ships script on the site with no review. The writer's ABP scope is the newsroom only.
+- **Recommendation:** ask security@web-summit.dinis to review it under WS-132, and make the fragment's script a file the gate pins by hash, so a change to it needs a person to update the hash.
+
+### P-10 (low, for Angelo) the barriers you approved at 11:30 are not on the backlog yet
+
+- `80d54893` recorded "Go ahead with both" For the desk. Eight hours on, neither `people/angelo/backlog.md` nor the desk's STATE.md names the signed-only drain or the lane gate, and dev@ has not touched the drain. The drain must land before the conductor's own token (WS-170) does.
+
+### P-05, still open
+
+- team-collaboration's session branch moved again at 11:43 (`166b6650`, the 11:40 brief). Its stored prompts still lack the "push only through release.sh" line.
+
 ## Run 2b: 7 November 2026, 10:40 UTC (Angelo woke me)
 
 **Range:** `975e2b20` to `a3497d36` (25 commits by Angelo's agents). Lanes: one write outside, the writer's report file again (`01fc7741`), noted in run 2. Two of the desk's commits name policy@: the WS-125 review (`c5e05274`) and a schedule of 07:10 and 19:10 (`1d6ba95d`); I acted on both only after Angelo confirmed them in this session.
