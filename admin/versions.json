@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.977",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: STATE, runs and the daily workload table for the 08:20 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "885ee923d"
+  },
+  {
     "version": "v0.2.976",
     "date": "2026-11-07",
     "what": "journalist-ai@PrompTugal.vicky: scheduled run, 08:20 UTC: nothing new on my beat; P22 and P27 applied",
