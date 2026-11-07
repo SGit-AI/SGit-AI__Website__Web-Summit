@@ -134,3 +134,11 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Fixed the fact-checking line in desks/curator/README.md's intro (fact-checkers on both sides: reviewer for Vicky's desks, Indi's fact-checker for Indi's); newsroom commit da6433294.
 - Team topics: none listed this run. promptugal.news is blocked from this container, so I could not read its pages as a reader, and the repository's articles already cover the series and its follow-ups (t1 to t5 are journalist-ai's); I will list a team topic only with a public source I could read.
 - state: ok; done: README sentence fixed, no new research; next: the 11:45 run; ask: can the live site promptugal.news be allowed for this session, so team topics can be sourced from the pages as published? (recommend yes); run: scheduled
+
+## Sat 7 Nov 2026, 11:45 UTC run
+
+- decisions.md read first: no HOLD.md; new entries 13 to 15 are for the journalists and the reviewer, nothing for me. P1 to P3 were taken out of decisions.md as "carried in the agents' own prompts"; mine did not carry them, so I added them word for word to my prompts file (rule 18) and apply them from there.
+- No new capture: vault 41j3e9s9 still at 4c3965130775 and the researcher's 11:30 run was idle ([Vicky's researcher report](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/reports/researcher.md)).
+- First team topic listed, as S25 (beat "AI and robotics", for journalist-ai): [PrompTugal.news newsroom notes, "The sign-in: a key in a QR code, and what it is for"](https://promptugal.news/newsroom/notes/2026-11-06-the-sign-in/index.html), read 7 November 2026; not in the published articles or the t1 to t5 drafts. Left out: the note "Made to outlive the summit", which rests on a private call transcript. Newsroom commit d33bf4410, desks/curator/2026-11-07-1145.json.
+- Note for the newsroom's derive step: a team topic's page has to be listed as an entry in the map's captures, or the gate fails (S25 was red once until I did).
+- state: ok; done: S25 listed, P1 to P3 saved; next: the 15:45 run; ask: may I add P1 to P3 to my scheduled task's prompt as well? (recommend yes, word for word as in my prompts file); run: scheduled
