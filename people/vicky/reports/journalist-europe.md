@@ -42,3 +42,7 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 ## Sat 7 Nov 2026, 16:20 UTC (scheduled run)
 
 - No hold. decisions.md entries since my last run all carry the conductor's title and Agent line. Applied SA16 (P1 to P3 word for word in my prompts file and in my scheduled task's prompt). Applied SA13 (my scheduled prompt now checks my own fix-first reviews first; this run: none, S2 Ready, S11 closed). Applied SCHED-7NOV (task now 08:12, 12:12, 20:12 UTC; next 20:12 today). Applied SA15 (a cover image in every first draft from now; no draft written this run). Confirmed P10 (after any summary of my conversation I re-read decisions.md and my prompts file before acting; none so far) and P17 (if replaced, a hand-over note in people/vicky/handover/ per standing answer 11). P2: prompts file agrees with my memory. STYLE.md re-read (11:13: the cover rule). Curator map of 11:50: nothing new on the Europe beat. Newsroom remote had reverted to SGit-AI again; reset, nothing pushed there. state: idle; done: rule updates only, no draft; next: the next Europe storyline, with a cover image; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, 16:16 UTC (prompted)
+
+- Scheduled task renamed "journalist-europe@PrompTugal.vicky: three-times-daily run" at Vicky's word; times and prompt unchanged. state: ok; done: task renamed; next: the 20:12 run; ask: none; run: prompted
