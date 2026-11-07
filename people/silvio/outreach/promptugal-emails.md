@@ -16,8 +16,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > Se nos mandarem mais (o que vão mostrar na Web Summit, quem vai, como funciona o vosso produto), acrescentamos à vossa página durante a semana do evento.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · feito com a RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · feito com a RiskMandate
 > Rascunho do meu agente de IA; revisto e enviado por mim.
 >
 > <small>Encontrámos este endereço no vosso site. Preferem não receber estes emails? Respondam e não voltamos a escrever.</small>
@@ -34,8 +34,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > Se nos mandarem mais (o que vão mostrar na Web Summit, quem vai, como funciona o vosso produto), acrescentamos à vossa página durante a semana do evento.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · feito com a RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · feito com a RiskMandate
 > Rascunho do meu agente de IA; revisto e enviado por mim.
 >
 > <small>Encontrámos este endereço no vosso site. Preferem não receber estes emails? Respondam e não voltamos a escrever.</small>
@@ -52,8 +52,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > Se nos mandarem mais (o que vão mostrar na Web Summit, quem vai, como funciona o vosso produto), acrescentamos à vossa página durante a semana do evento.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · feito com a RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · feito com a RiskMandate
 > Rascunho do meu agente de IA; revisto e enviado por mim.
 >
 > <small>Encontrámos este endereço no vosso site. Preferem não receber estes emails? Respondam e não voltamos a escrever.</small>
@@ -70,8 +70,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > Se nos mandarem mais (o que vão mostrar na Web Summit, quem vai, como funciona o vosso produto), acrescentamos à vossa página durante a semana do evento.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · feito com a RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · feito com a RiskMandate
 > Rascunho do meu agente de IA; revisto e enviado por mim.
 >
 > <small>Preferem não receber estes emails? Respondam e não voltamos a escrever.</small>
@@ -88,8 +88,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > Se nos mandarem mais (o que vão mostrar na Web Summit, quem vai, como funciona o vosso produto), acrescentamos à vossa página durante a semana do evento.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · feito com a RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · feito com a RiskMandate
 > Rascunho do meu agente de IA; revisto e enviado por mim.
 >
 > <small>Preferem não receber estes emails? Respondam e não voltamos a escrever.</small>
@@ -106,8 +106,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>Rather not receive these? Reply and we will not write again.</small>
@@ -124,8 +124,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -142,8 +142,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -160,8 +160,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -178,8 +178,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -196,8 +196,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -214,8 +214,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -232,8 +232,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -250,8 +250,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -268,8 +268,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>Rather not receive these? Reply and we will not write again.</small>
@@ -286,8 +286,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -304,8 +304,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>Rather not receive these? Reply and we will not write again.</small>
@@ -322,8 +322,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>Rather not receive these? Reply and we will not write again.</small>
@@ -340,8 +340,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>Rather not receive these? Reply and we will not write again.</small>
@@ -358,8 +358,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -376,8 +376,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -394,8 +394,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -412,8 +412,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -430,8 +430,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -448,8 +448,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>Rather not receive these? Reply and we will not write again.</small>
@@ -466,8 +466,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -484,8 +484,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>We found this address on your website. Rather not receive these? Reply and we will not write again.</small>
@@ -502,8 +502,8 @@ By outreach@web-summit.silvio, 7 November 2026, at the word of conductor@web-sum
 >
 > If you send us more (what you are showing at Web Summit, who is coming, how your product works), we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>Rather not receive these? Reply and we will not write again.</small>

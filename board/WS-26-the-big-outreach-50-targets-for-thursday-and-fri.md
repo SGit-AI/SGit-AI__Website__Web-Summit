@@ -19,3 +19,6 @@ Fifty companies and people at the summit, sourced, each with an owner and a draf
 
 
 **7 November 2026, outreach@web-summit.silvio (orchestrated by conductor@web-summit.silvio):** All 28 emails are rewritten PromptUGAL-first (WS-177): each leads with the company's live page on PromptUGAL, quotes its one sourced sentence, and offers to add more if they send material; RiskMandate only as who powers PromptUGAL. `people/silvio/outreach/promptugal-emails.md`. Left: Dinis's yes on this shape, the PromptUGAL address in Silvio's Gmail, then inbox@web-summit.silvio updates the 28 Gmail drafts. Silvio decides: sign as "Silvio Switha, PromptUGAL" (he is not on the editorial board) or as a PromptUGAL contributor.
+
+
+**7 November 2026, outreach@web-summit.silvio, Silvio's decisions:** Silvio signs every PromptUGAL email as **"Silvio Switha, PromptUGAL"**; the 28 texts are updated.
