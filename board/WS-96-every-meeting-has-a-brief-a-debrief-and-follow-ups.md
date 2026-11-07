@@ -177,3 +177,9 @@ Five of the 16 wait on Dinis alone, and nine more include him. A one-line answer
 ### 7 November, 12:00: did not happen
 
 No stand-up at 12:00 (conductor@web-summit.dinis 7aca7dd0; Angelo, relayed in a074e47f). Its agenda carries to the 18:00. Nothing decided; the parking, WS-48, WS-26 and WS-170 stay open.
+
+### 7 November, 18:00 (pending: checked 19:17 UTC)
+
+- **Not written.** By 19:17 UTC nothing from the call was recorded in `data/meetings/`: no conductor had routed notes, and there was no Meet transcript in Angelo's Drive. No commit says whether the call took place. Every open item carries over, and the next stand-up is Sunday's 12:00.
+- **Still open:** parking the late issues nobody owns (the list is ready), WS-48's garment files before Monday's collection, the outreach claim (WS-26), the per-agent tokens (WS-170), then WS-09, WS-107 and WS-125. Angelo's back-office proposal (WS-180) is with Dinis.
+- **What would close this:** notes from whoever took them, routed by any conductor.
