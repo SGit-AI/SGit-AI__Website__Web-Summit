@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1122",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: the real-time map also as an animated desktop background (Windows, Mac, iPad)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "99e287e68"
+  },
+  {
     "version": "v0.2.1121",
     "date": "2026-11-07",
     "what": "writer@PrompTugal.jose, Jose's writer for PrompTugal.news: its start prompt, its state, its direct line, agents.json and the kit",
