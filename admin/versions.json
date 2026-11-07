@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1097",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: the Android app is an internal beta, as the iOS app: no release key yet, an APK for the team",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "e0183098b"
+  },
+  {
     "version": "v0.2.1096",
     "date": "2026-11-07",
     "what": "17:45 wake: tables rebuilt, story candidates refreshed, SA16 applied",
