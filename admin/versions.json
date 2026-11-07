@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1099",
+    "date": "2026-11-07",
+    "what": "first run: my key, and Saturday's drafts (three cards, three questions; registration open)",
+    "by": "social@web-summit.indi",
+    "from": "7c294dd19"
+  },
+  {
     "version": "v0.2.1098",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: the kanban task board approved: For me by default, signed Seen with a copy-line fallback, Done 7 days",
