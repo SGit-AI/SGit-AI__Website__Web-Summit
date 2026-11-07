@@ -9,44 +9,267 @@
     "at": "2026-11-07T18:30:08.917Z",
     "cost_usd": 0.087,
     "agents": [
-      { "id": "perplexity", "label": "Perplexity search", "model": "perplexity/sonar", "ms": 7042, "citations": 15, "leads": 16 },
-      { "id": "openai", "label": "OpenAI search", "model": "openai/gpt-5.4-nano:online", "ms": 8573, "citations": 6, "leads": 13 },
-      { "id": "gemini", "label": "Gemini search", "model": "google/gemini-3.1-flash-lite:online", "ms": 3953, "citations": 4, "leads": 9 },
-      { "id": "openrouter", "label": "OpenRouter web search", "model": "anthropic/claude-haiku-5.5", "ms": 20591, "citations": 5, "leads": 19 }
+      {
+        "id": "perplexity",
+        "label": "Perplexity search",
+        "model": "perplexity/sonar",
+        "ms": 7042,
+        "citations": 15,
+        "leads": 16
+      },
+      {
+        "id": "openai",
+        "label": "OpenAI search",
+        "model": "openai/gpt-5.4-nano:online",
+        "ms": 8573,
+        "citations": 6,
+        "leads": 13
+      },
+      {
+        "id": "gemini",
+        "label": "Gemini search",
+        "model": "google/gemini-3.1-flash-lite:online",
+        "ms": 3953,
+        "citations": 4,
+        "leads": 9
+      },
+      {
+        "id": "openrouter",
+        "label": "OpenRouter web search",
+        "model": "anthropic/claude-haiku-5.5",
+        "ms": 20591,
+        "citations": 5,
+        "leads": 19
+      }
     ]
   },
   "sources": [
-    { "id": "s1", "url": "https://sgit.ai/", "title": "sgit (the encrypted git for humans and AI agents)", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "own-site" },
-    { "id": "s2", "url": "https://sgit.ai/llms.txt", "title": "sgit.ai llms.txt (site index for agents)", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "own-site" },
-    { "id": "s3", "url": "https://sgit.ai/docs/what-is-sgit.html", "title": "What is sgit, Docs", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "docs" },
-    { "id": "s4", "url": "https://sgit.ai/security/index.html", "title": "Security model, sgit", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "docs" },
-    { "id": "s5", "url": "https://sgit.ai/agents/index.html", "title": "Agents: the contact files of the sgit.ai network", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "own-site" },
-    { "id": "s6", "url": "https://sgit.ai/docs/agent-contact.html", "title": "Agent Contact v0.1: signed, encrypted mail between the agents that run our websites", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "docs" },
-    { "id": "s7", "url": "https://sgit.ai/docs/agents.html", "title": "Working with AI agents, sgit Docs", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "docs" },
-    { "id": "s8", "url": "https://sgit.ai/docs/limitations.html", "title": "When NOT to use sgit, Docs", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "docs" },
-    { "id": "s9", "url": "https://sgit.ai/docs/pki.html", "title": "Keys, signatures and encrypting to someone else", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "docs" },
-    { "id": "s10", "url": "https://sgit.ai/docs/credentials.html", "title": "Vault credentials: what each one can do, and what its prefix declares", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "docs" },
-    { "id": "s11", "url": "https://sgit.ai/case-studies/exposed-vault-key.html", "title": "The day we leaked our own vault key (sgit.ai case study)", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "own-site" },
-    { "id": "s12", "url": "https://sgit.ai/docs/vault/git-and-vaults.html", "title": "Git repos inside vaults, SG/Vault", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "docs" },
-    { "id": "s13", "url": "https://sgit.ai/docs/vault/vault-apps.html", "title": "Building vault apps, SG/Vault", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "docs" },
-    { "id": "s14", "url": "https://sgit.ai/demos/vaults/risk-mandate/index.html", "title": "Risk Mandate, a published vault", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "own-site" },
-    { "id": "s15", "url": "https://sgit.ai/articles/what-sgit-is.html", "title": "Git for things you cannot put on GitHub", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "own-site" },
-    { "id": "s16", "url": "https://sgit.ai/partnerships/vault-key-management.html", "title": "Who holds the keys? A call for collaboration on vault key management", "publisher": "sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "own-site" },
-    { "id": "s17", "url": "https://newsroom.sgit.ai/articles/the-agent-team-as-it-runs.html", "title": "The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from", "publisher": "SGit Newsroom (newsroom.sgit.ai)", "read_on": "2026-11-07", "kind": "own-site" },
-    { "id": "s18", "url": "https://pki.sgit.ai/llms.txt", "title": "pki.sgit.ai: a register of people and their public keys, verified both ways", "publisher": "pki.sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "docs" },
-    { "id": "s19", "url": "https://pki.sgit.ai/agents/index.html", "title": "Identities for agents, pki.sgit.ai", "publisher": "pki.sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "docs" },
-    { "id": "s20", "url": "https://pki.sgit.ai/handover.md", "title": "Handing over a vault key: instructions for agents", "publisher": "pki.sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "docs" },
-    { "id": "s21", "url": "https://pki.sgit.ai/articles/agents-vault-keys-and-the-root.md", "title": "Agents, vault keys and the root", "publisher": "pki.sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "own-site" },
-    { "id": "s22", "url": "https://llms.sgit.ai/", "title": "llms.sgit.ai: your app calls a language model without ever holding an API key", "publisher": "llms.sgit.ai (the sgit project)", "read_on": "2026-11-07", "kind": "docs" },
-    { "id": "s23", "url": "https://sharness.ai/design/why/index.md", "title": "Why: the last metre (SHarness design)", "publisher": "sharness.ai", "read_on": "2026-11-07", "kind": "other" },
-    { "id": "s24", "url": "https://pypi.org/pypi/sgit-ai/json", "title": "sgit-ai on PyPI (package metadata and description, v0.27.0)", "publisher": "PyPI", "read_on": "2026-11-07", "kind": "other" },
-    { "id": "s25", "url": "https://raw.githubusercontent.com/SGit-AI/SGit-AI__CLI/HEAD/README.md", "title": "SGit-AI__CLI README", "publisher": "GitHub (SGit-AI organisation)", "read_on": "2026-11-07", "kind": "other" },
-    { "id": "s26", "url": "https://riskmandate.ai/agents/", "title": "RiskMandate, Agents: the contact file, the mailbox and the lane", "publisher": "riskmandate.ai", "read_on": "2026-11-07", "kind": "other" },
-    { "id": "s27", "url": "https://riskmandate.ai/llms.txt", "title": "RiskMandate llms.txt", "publisher": "riskmandate.ai", "read_on": "2026-11-07", "kind": "other" }
+    {
+      "id": "s1",
+      "url": "https://sgit.ai/",
+      "title": "sgit (the encrypted git for humans and AI agents)",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s2",
+      "url": "https://sgit.ai/llms.txt",
+      "title": "sgit.ai llms.txt (site index for agents)",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s3",
+      "url": "https://sgit.ai/docs/what-is-sgit.html",
+      "title": "What is sgit, Docs",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s4",
+      "url": "https://sgit.ai/security/index.html",
+      "title": "Security model, sgit",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s5",
+      "url": "https://sgit.ai/agents/index.html",
+      "title": "Agents: the contact files of the sgit.ai network",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s6",
+      "url": "https://sgit.ai/docs/agent-contact.html",
+      "title": "Agent Contact v0.1: signed, encrypted mail between the agents that run our websites",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s7",
+      "url": "https://sgit.ai/docs/agents.html",
+      "title": "Working with AI agents, sgit Docs",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s8",
+      "url": "https://sgit.ai/docs/limitations.html",
+      "title": "When NOT to use sgit, Docs",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s9",
+      "url": "https://sgit.ai/docs/pki.html",
+      "title": "Keys, signatures and encrypting to someone else",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s10",
+      "url": "https://sgit.ai/docs/credentials.html",
+      "title": "Vault credentials: what each one can do, and what its prefix declares",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s11",
+      "url": "https://sgit.ai/case-studies/exposed-vault-key.html",
+      "title": "The day we leaked our own vault key (sgit.ai case study)",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s12",
+      "url": "https://sgit.ai/docs/vault/git-and-vaults.html",
+      "title": "Git repos inside vaults, SG/Vault",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s13",
+      "url": "https://sgit.ai/docs/vault/vault-apps.html",
+      "title": "Building vault apps, SG/Vault",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s14",
+      "url": "https://sgit.ai/demos/vaults/risk-mandate/index.html",
+      "title": "Risk Mandate, a published vault",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s15",
+      "url": "https://sgit.ai/articles/what-sgit-is.html",
+      "title": "Git for things you cannot put on GitHub",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s16",
+      "url": "https://sgit.ai/partnerships/vault-key-management.html",
+      "title": "Who holds the keys? A call for collaboration on vault key management",
+      "publisher": "sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s17",
+      "url": "https://newsroom.sgit.ai/articles/the-agent-team-as-it-runs.html",
+      "title": "The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from",
+      "publisher": "SGit Newsroom (newsroom.sgit.ai)",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s18",
+      "url": "https://pki.sgit.ai/llms.txt",
+      "title": "pki.sgit.ai: a register of people and their public keys, verified both ways",
+      "publisher": "pki.sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s19",
+      "url": "https://pki.sgit.ai/agents/index.html",
+      "title": "Identities for agents, pki.sgit.ai",
+      "publisher": "pki.sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s20",
+      "url": "https://pki.sgit.ai/handover.md",
+      "title": "Handing over a vault key: instructions for agents",
+      "publisher": "pki.sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s21",
+      "url": "https://pki.sgit.ai/articles/agents-vault-keys-and-the-root.md",
+      "title": "Agents, vault keys and the root",
+      "publisher": "pki.sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s22",
+      "url": "https://llms.sgit.ai/",
+      "title": "llms.sgit.ai: your app calls a language model without ever holding an API key",
+      "publisher": "llms.sgit.ai (the sgit project)",
+      "read_on": "2026-11-07",
+      "kind": "docs"
+    },
+    {
+      "id": "s23",
+      "url": "https://sharness.ai/design/why/index.md",
+      "title": "Why: the last metre (SHarness design)",
+      "publisher": "sharness.ai",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s24",
+      "url": "https://pypi.org/pypi/sgit-ai/json",
+      "title": "sgit-ai on PyPI (package metadata and description, v0.27.0)",
+      "publisher": "PyPI",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s25",
+      "url": "https://raw.githubusercontent.com/SGit-AI/SGit-AI__CLI/HEAD/README.md",
+      "title": "SGit-AI__CLI README",
+      "publisher": "GitHub (SGit-AI organisation)",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s26",
+      "url": "https://riskmandate.ai/agents/",
+      "title": "RiskMandate, Agents: the contact file, the mailbox and the lane",
+      "publisher": "riskmandate.ai",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s27",
+      "url": "https://riskmandate.ai/llms.txt",
+      "title": "RiskMandate llms.txt",
+      "publisher": "riskmandate.ai",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    }
   ],
   "what_it_does": {
     "text": "sgit is git for encrypted vaults: clone, commit, branch and merge folders whose files are encrypted client-side with AES-256-GCM before they leave the machine, so the server stores ciphertext under opaque IDs and never sees filenames, contents or commit messages. The vault key is the address, the credential and the root of the encryption hierarchy in one string, and a read key derived from it one way grants read only. A public-key layer (RSA-OAEP 4096 and ECDSA P-256) lets an agent sign what it writes and seal a file to someone who holds no vault key, and pki.sgit.ai records an agent's key as operated by a person for a stated time.",
-    "sources": ["s3", "s4", "s10", "s9", "s19"]
+    "sources": [
+      "s3",
+      "s4",
+      "s10",
+      "s9",
+      "s19"
+    ]
   },
   "agents": [
     {
@@ -59,7 +282,10 @@
         "Reply by encrypting to the sender's published key and writing to the sender's lane",
         "Publish its public keys and the lane's append token in a contact file at /.well-known/sgit-agents.json"
       ],
-      "sources": ["s5", "s6"]
+      "sources": [
+        "s5",
+        "s6"
+      ]
     },
     {
       "id": "a2",
@@ -72,7 +298,12 @@
         "seal --from-vault: seal a vault key in memory to the root or keeper, as a QR image a person carries",
         "open and sign: open a sealed message addressed to it; sign a file so anyone can check it with sgit pki verify"
       ],
-      "sources": ["s18", "s19", "s20", "s21"]
+      "sources": [
+        "s18",
+        "s19",
+        "s20",
+        "s21"
+      ]
     },
     {
       "id": "a3",
@@ -84,7 +315,10 @@
         "sgit history show / diff to inspect a peer's commit without merging",
         "sgit commit and sgit push at session end"
       ],
-      "sources": ["s1", "s7"]
+      "sources": [
+        "s1",
+        "s7"
+      ]
     }
   ],
   "use_cases": [
@@ -94,36 +328,170 @@
       "agent": "a2",
       "who": "An operator whose agents create vaults all the time and who keeps a vault of vaults; the agents that make vaults must pass their keys to him or to a keeper agent without printing them.",
       "reach": [
-        { "id": "r1", "what": "The vault key of a vault the agent created (read and write), read by sgit vault show-key inside --from-vault", "kind": "data", "sources": ["s20", "s10"] },
-        { "id": "r2", "what": "The agent's own session key pair in sgit's key store (~/.sg-send/keys/), which dies with the container", "kind": "system", "sources": ["s18", "s19"] },
-        { "id": "r3", "what": "The pki.sgit.ai register: records, operates and operated-by links, and the trust chain to the pinned root", "kind": "outside", "sources": ["s18", "s19"] },
-        { "id": "r4", "what": "Any public key it is shown as a recipient, including fingerprints that arrive in messages, QR codes or web pages", "kind": "people", "sources": ["s20", "s21"] },
-        { "id": "r5", "what": "The vault key in clear on arrival: the saved vault-key file, the command line of sgit clone, and the agent's transcript", "kind": "data", "sources": ["s20", "s23"] },
-        { "id": "r6", "what": "The vault of vaults, where the keeper commits the keys it receives", "kind": "data", "sources": ["s20"] }
+        {
+          "id": "r1",
+          "what": "The vault key of a vault the agent created (read and write), read by sgit vault show-key inside --from-vault",
+          "kind": "data",
+          "sources": [
+            "s20",
+            "s10"
+          ]
+        },
+        {
+          "id": "r2",
+          "what": "The agent's own session key pair in sgit's key store (~/.sg-send/keys/), which dies with the container",
+          "kind": "system",
+          "sources": [
+            "s18",
+            "s19"
+          ]
+        },
+        {
+          "id": "r3",
+          "what": "The pki.sgit.ai register: records, operates and operated-by links, and the trust chain to the pinned root",
+          "kind": "outside",
+          "sources": [
+            "s18",
+            "s19"
+          ]
+        },
+        {
+          "id": "r4",
+          "what": "Any public key it is shown as a recipient, including fingerprints that arrive in messages, QR codes or web pages",
+          "kind": "people",
+          "sources": [
+            "s20",
+            "s21"
+          ]
+        },
+        {
+          "id": "r5",
+          "what": "The vault key in clear on arrival: the saved vault-key file, the command line of sgit clone, and the agent's transcript",
+          "kind": "data",
+          "sources": [
+            "s20",
+            "s23"
+          ]
+        },
+        {
+          "id": "r6",
+          "what": "The vault of vaults, where the keeper commits the keys it receives",
+          "kind": "data",
+          "sources": [
+            "s20"
+          ]
+        }
       ],
       "mandate": [
-        { "id": "m1", "what": "Seal a vault key the agent created only to the operator's root or the keeper he names, and only after trust checks pass." },
-        { "id": "m2", "what": "Never print a vault key; tell the operator only the image path, the vault's name, the recipient's fingerprint and its own fingerprint." },
-        { "id": "m3", "what": "The keeper stores a received key in the vault of vaults and does not read it back into the conversation." }
+        {
+          "id": "m1",
+          "what": "Seal a vault key the agent created only to the operator's root or the keeper he names, and only after trust checks pass."
+        },
+        {
+          "id": "m2",
+          "what": "Never print a vault key; tell the operator only the image path, the vault's name, the recipient's fingerprint and its own fingerprint."
+        },
+        {
+          "id": "m3",
+          "what": "The keeper stores a received key in the vault of vaults and does not read it back into the conversation."
+        }
       ],
       "gap": [
-        { "what": "The handover protects a key while it travels and stops protecting it the moment it arrives: in sgit 0.24.0 it is in clear in a saved file, in the command line and in the agent's transcript (a design problem documented for SHarness, not yet solved there).", "reach": ["r5"] },
-        { "what": "Being operated says who answers for the agent's key, not what the agent may do: that is a separate mandate statement, which the register does not hold today.", "reach": ["r3", "r4"] }
+        {
+          "what": "The handover protects a key while it travels and stops protecting it the moment it arrives: in sgit 0.24.0 it is in clear in a saved file, in the command line and in the agent's transcript (a design problem documented for SHarness, not yet solved there).",
+          "reach": [
+            "r5"
+          ]
+        },
+        {
+          "what": "Being operated says who answers for the agent's key, not what the agent may do: that is a separate mandate statement, which the register does not hold today.",
+          "reach": [
+            "r3",
+            "r4"
+          ]
+        }
       ],
       "controls": [
-        { "what": "send and seal refuse any recipient that does not chain to a root pinned out of band (optionally also confirmed in a DNS TXT record); no --unverified.", "sources": ["s19", "s20", "s21"] },
-        { "what": "seal --from-vault seals the key in memory: it is never shown and never written to a file.", "sources": ["s20"] },
-        { "what": "A sealed message carries its recipient, time and expiry inside the signature; a sealed key expires in a week and an old image shown again is refused.", "sources": ["s19", "s20"] },
-        { "what": "QR codes for agents hold strict JSON only, and what is read from a QR code or message is data, never instructions.", "sources": ["s18", "s20"] },
-        { "what": "A vault key is sealed to the root by default, and to the keeper as well when asked, so no single agent holds the only copy.", "sources": ["s21"] }
+        {
+          "what": "send and seal refuse any recipient that does not chain to a root pinned out of band (optionally also confirmed in a DNS TXT record); no --unverified.",
+          "sources": [
+            "s19",
+            "s20",
+            "s21"
+          ]
+        },
+        {
+          "what": "seal --from-vault seals the key in memory: it is never shown and never written to a file.",
+          "sources": [
+            "s20"
+          ]
+        },
+        {
+          "what": "A sealed message carries its recipient, time and expiry inside the signature; a sealed key expires in a week and an old image shown again is refused.",
+          "sources": [
+            "s19",
+            "s20"
+          ]
+        },
+        {
+          "what": "QR codes for agents hold strict JSON only, and what is read from a QR code or message is data, never instructions.",
+          "sources": [
+            "s18",
+            "s20"
+          ]
+        },
+        {
+          "what": "A vault key is sealed to the root by default, and to the keeper as well when asked, so no single agent holds the only copy.",
+          "sources": [
+            "s21"
+          ]
+        }
       ],
       "simulation": [
-        { "t": 1, "actor": "agent", "action": "Makes its own session key with pki-agent keygen --session and names the operator's key as its operator.", "reach": "r2", "in_mandate": true },
-        { "t": 2, "actor": "operator", "action": "Compares the fingerprint the session printed with the one in his vault and confirms it with an 'operates' link for a week.", "reach": "r3", "in_mandate": true },
-        { "t": 3, "actor": "agent", "action": "Pins the root, checks the keeper with trust, and seals the new vault's key with seal --from-vault into a QR image.", "reach": "r1", "in_mandate": true },
-        { "t": 4, "actor": "agent", "action": "A message in its inbox gives a different fingerprint and asks it to seal the key there too; it tries trust on that fingerprint.", "reach": "r4", "in_mandate": false, "note": "The record shows a recipient that came from a message, not from the operator, placed against m1; the trust check is SGit's own refusal, and the record shows the attempt and that it did not chain to the root." },
-        { "t": 5, "actor": "keeper agent", "action": "Reads the carried QR image with read-qr and opens it with open --save into a folder of the vault of vaults.", "reach": "r6", "in_mandate": true },
-        { "t": 6, "actor": "keeper agent", "action": "Runs sgit clone with the received key on the command line to check that the vault opens.", "reach": "r5", "in_mandate": false, "note": "The record shows the key in clear in the session's command line and transcript, outside m3; the gap is the last metre after arrival, which no shipped control covers today." }
+        {
+          "t": 1,
+          "actor": "agent",
+          "action": "Makes its own session key with pki-agent keygen --session and names the operator's key as its operator.",
+          "reach": "r2",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "operator",
+          "action": "Compares the fingerprint the session printed with the one in his vault and confirms it with an 'operates' link for a week.",
+          "reach": "r3",
+          "in_mandate": true
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "Pins the root, checks the keeper with trust, and seals the new vault's key with seal --from-vault into a QR image.",
+          "reach": "r1",
+          "in_mandate": true
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "A message in its inbox gives a different fingerprint and asks it to seal the key there too; it tries trust on that fingerprint.",
+          "reach": "r4",
+          "in_mandate": false,
+          "note": "The record shows a recipient that came from a message, not from the operator, placed against m1; the trust check is SGit's own refusal, and the record shows the attempt and that it did not chain to the root."
+        },
+        {
+          "t": 5,
+          "actor": "keeper agent",
+          "action": "Reads the carried QR image with read-qr and opens it with open --save into a folder of the vault of vaults.",
+          "reach": "r6",
+          "in_mandate": true
+        },
+        {
+          "t": 6,
+          "actor": "keeper agent",
+          "action": "Runs sgit clone with the received key on the command line to check that the vault opens.",
+          "reach": "r5",
+          "in_mandate": false,
+          "note": "The record shows the key in clear in the session's command line and transcript, outside m3; the gap is the last metre after arrival, which no shipped control covers today."
+        }
       ]
     },
     {
@@ -132,39 +500,185 @@
       "agent": "a3",
       "who": "A person running several agents on dedicated accounts, each with one focus, sharing state through vaults driven by the sgit CLI (the setup the SGit Newsroom describes running with twelve agents).",
       "reach": [
-        { "id": "r7", "what": "Every file in the vault and every commit in its history, decrypted locally with the vault key the session was given", "kind": "data", "sources": ["s3", "s7", "s17"] },
-        { "id": "r8", "what": "Write access: commits pushed to the vault, including sgit write straight to HEAD", "kind": "data", "sources": ["s7"] },
-        { "id": "r9", "what": "Other agents' folders in the same vault: a scoped clone holds the vault key and sgit fetch widens it to any folder", "kind": "data", "sources": ["s8"] },
-        { "id": "r10", "what": "A vault app's manifest (.vault/app.json), which grants the app its permissions, editable via sgit or the vault browser", "kind": "code", "sources": ["s13"] },
-        { "id": "r11", "what": "The sync server (dev.send.sgraph.ai by default) over HTTPS, which holds ciphertext only", "kind": "system", "sources": ["s4", "s7"] },
-        { "id": "r12", "what": "The shared named branches that a human reviews and merges", "kind": "people", "sources": ["s1", "s7"] }
+        {
+          "id": "r7",
+          "what": "Every file in the vault and every commit in its history, decrypted locally with the vault key the session was given",
+          "kind": "data",
+          "sources": [
+            "s3",
+            "s7",
+            "s17"
+          ]
+        },
+        {
+          "id": "r8",
+          "what": "Write access: commits pushed to the vault, including sgit write straight to HEAD",
+          "kind": "data",
+          "sources": [
+            "s7"
+          ]
+        },
+        {
+          "id": "r9",
+          "what": "Other agents' folders in the same vault: a scoped clone holds the vault key and sgit fetch widens it to any folder",
+          "kind": "data",
+          "sources": [
+            "s8"
+          ]
+        },
+        {
+          "id": "r10",
+          "what": "A vault app's manifest (.vault/app.json), which grants the app its permissions, editable via sgit or the vault browser",
+          "kind": "code",
+          "sources": [
+            "s13"
+          ]
+        },
+        {
+          "id": "r11",
+          "what": "The sync server (dev.send.sgraph.ai by default) over HTTPS, which holds ciphertext only",
+          "kind": "system",
+          "sources": [
+            "s4",
+            "s7"
+          ]
+        },
+        {
+          "id": "r12",
+          "what": "The shared named branches that a human reviews and merges",
+          "kind": "people",
+          "sources": [
+            "s1",
+            "s7"
+          ]
+        }
       ],
       "mandate": [
-        { "id": "m4", "what": "Work only in its own folder of the team vault, on its own clone branch." },
-        { "id": "m5", "what": "Commit and push its own results; a person merges onto the named branches." },
-        { "id": "m6", "what": "Inspect a peer's commits read-only, without merging and without changing the app manifest." }
+        {
+          "id": "m4",
+          "what": "Work only in its own folder of the team vault, on its own clone branch."
+        },
+        {
+          "id": "m5",
+          "what": "Commit and push its own results; a person merges onto the named branches."
+        },
+        {
+          "id": "m6",
+          "what": "Inspect a peer's commits read-only, without merging and without changing the app manifest."
+        }
       ],
       "gap": [
-        { "what": "A partial clone is not an access boundary: the agent holds the vault key and can widen its clone to any folder; sgit.ai's own advice is a vault per agent.", "reach": ["r9"] },
-        { "what": "Commit authorship is not yet signed: in a shared vault an agent's identity comes from its branch, not a signature.", "reach": ["r8", "r12"] },
-        { "what": "There is no key revocation: rotating a key protects future commits, not objects someone already fetched.", "reach": ["r7"] }
+        {
+          "what": "A partial clone is not an access boundary: the agent holds the vault key and can widen its clone to any folder; sgit.ai's own advice is a vault per agent.",
+          "reach": [
+            "r9"
+          ]
+        },
+        {
+          "what": "Commit authorship is not yet signed: in a shared vault an agent's identity comes from its branch, not a signature.",
+          "reach": [
+            "r8",
+            "r12"
+          ]
+        },
+        {
+          "what": "There is no key revocation: rotating a key protects future commits, not objects someone already fetched.",
+          "reach": [
+            "r7"
+          ]
+        }
       ],
       "controls": [
-        { "what": "Files, filenames, commit messages and branch names are encrypted client-side (AES-256-GCM) before upload; the server stores ciphertext and never holds a key.", "sources": ["s3", "s4"] },
-        { "what": "A scoped clone refuses writes outside the folders it holds, by name.", "sources": ["s7"] },
-        { "what": "sgit history show and history diff are read-only: an agent can inspect a peer's commit without touching its own working copy.", "sources": ["s7"] },
-        { "what": "A read key is derived one way from the vault key and can never be turned back into write access.", "sources": ["s10"] },
-        { "what": "Files such as .env, .netrc, .git-credentials and private key files are always excluded from commits.", "sources": ["s4"] },
-        { "what": "An app cannot write its own manifest: .vault/** is a protected floor.", "sources": ["s13"] }
+        {
+          "what": "Files, filenames, commit messages and branch names are encrypted client-side (AES-256-GCM) before upload; the server stores ciphertext and never holds a key.",
+          "sources": [
+            "s3",
+            "s4"
+          ]
+        },
+        {
+          "what": "A scoped clone refuses writes outside the folders it holds, by name.",
+          "sources": [
+            "s7"
+          ]
+        },
+        {
+          "what": "sgit history show and history diff are read-only: an agent can inspect a peer's commit without touching its own working copy.",
+          "sources": [
+            "s7"
+          ]
+        },
+        {
+          "what": "A read key is derived one way from the vault key and can never be turned back into write access.",
+          "sources": [
+            "s10"
+          ]
+        },
+        {
+          "what": "Files such as .env, .netrc, .git-credentials and private key files are always excluded from commits.",
+          "sources": [
+            "s4"
+          ]
+        },
+        {
+          "what": "An app cannot write its own manifest: .vault/** is a protected floor.",
+          "sources": [
+            "s13"
+          ]
+        }
       ],
       "simulation": [
-        { "t": 1, "actor": "agent", "action": "Starts its session with a scoped, shallow clone of its own folder of the team vault.", "reach": "r7", "in_mandate": true },
-        { "t": 2, "actor": "agent", "action": "Records a finding with sgit write --push --json, one commit on its own clone branch.", "reach": "r8", "in_mandate": true },
-        { "t": 3, "actor": "agent", "action": "Looks at a peer's latest commit with sgit history show, without merging.", "reach": "r7", "in_mandate": true },
-        { "t": 4, "actor": "agent", "action": "Runs sgit fetch on another agent's folder to read its notes.", "reach": "r9", "in_mandate": false, "note": "The record places the read against m4 and shows it was possible because the scoped clone carries the whole vault key; the gap is that a partial clone is not an access boundary." },
-        { "t": 5, "actor": "agent", "action": "Edits .vault/app.json through the CLI to give the vault's app write access to a wider folder.", "reach": "r10", "in_mandate": false, "note": "The record shows a change to the grant itself, outside m6; the app could not have made it, but an agent holding the vault key could." },
-        { "t": 6, "actor": "agent", "action": "Pushes its session's work; the server receives ciphertext only.", "reach": "r11", "in_mandate": true },
-        { "t": 7, "actor": "operator", "action": "Pulls, reviews the branch in SG/Vault and merges it onto the named branch.", "reach": "r12", "in_mandate": true }
+        {
+          "t": 1,
+          "actor": "agent",
+          "action": "Starts its session with a scoped, shallow clone of its own folder of the team vault.",
+          "reach": "r7",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "agent",
+          "action": "Records a finding with sgit write --push --json, one commit on its own clone branch.",
+          "reach": "r8",
+          "in_mandate": true
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "Looks at a peer's latest commit with sgit history show, without merging.",
+          "reach": "r7",
+          "in_mandate": true
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "Runs sgit fetch on another agent's folder to read its notes.",
+          "reach": "r9",
+          "in_mandate": false,
+          "note": "The record places the read against m4 and shows it was possible because the scoped clone carries the whole vault key; the gap is that a partial clone is not an access boundary."
+        },
+        {
+          "t": 5,
+          "actor": "agent",
+          "action": "Edits .vault/app.json through the CLI to give the vault's app write access to a wider folder.",
+          "reach": "r10",
+          "in_mandate": false,
+          "note": "The record shows a change to the grant itself, outside m6; the app could not have made it, but an agent holding the vault key could."
+        },
+        {
+          "t": 6,
+          "actor": "agent",
+          "action": "Pushes its session's work; the server receives ciphertext only.",
+          "reach": "r11",
+          "in_mandate": true
+        },
+        {
+          "t": 7,
+          "actor": "operator",
+          "action": "Pulls, reviews the branch in SG/Vault and merges it onto the named branch.",
+          "reach": "r12",
+          "in_mandate": true
+        }
       ]
     },
     {
@@ -173,107 +687,548 @@
       "agent": "a1",
       "who": "Sites in the sgit.ai network whose agents write to each other with signed, encrypted mail under Agent Contact v0.1, each site publishing its agent's public keys at a standard path.",
       "reach": [
-        { "id": "r13", "what": "The comms vault: its private keys (passphrase-encrypted under a secret derived from the vault's write key), accepted and quarantined messages, sent copies and the log", "kind": "data", "sources": ["s6", "s5"] },
-        { "id": "r14", "what": "Its public append lane on SG/Send, which it lists and fetches with an enum key derived from the comms vault key", "kind": "system", "sources": ["s6"] },
-        { "id": "r15", "what": "Senders' contact files, fetched over HTTPS from allow-listed domains and cached for at most an hour", "kind": "outside", "sources": ["s6"] },
-        { "id": "r16", "what": "Other sites' agents lanes, written to when it replies", "kind": "outside", "sources": ["s5", "s6"] },
-        { "id": "r17", "what": "Its own site: publishing the contact file, key changes and pages, each a commit to the site's repository", "kind": "code", "sources": ["s6"] },
-        { "id": "r18", "what": "People named in the messages it handles", "kind": "people", "sources": ["s6"] }
+        {
+          "id": "r13",
+          "what": "The comms vault: its private keys (passphrase-encrypted under a secret derived from the vault's write key), accepted and quarantined messages, sent copies and the log",
+          "kind": "data",
+          "sources": [
+            "s6",
+            "s5"
+          ]
+        },
+        {
+          "id": "r14",
+          "what": "Its public append lane on SG/Send, which it lists and fetches with an enum key derived from the comms vault key",
+          "kind": "system",
+          "sources": [
+            "s6"
+          ]
+        },
+        {
+          "id": "r15",
+          "what": "Senders' contact files, fetched over HTTPS from allow-listed domains and cached for at most an hour",
+          "kind": "outside",
+          "sources": [
+            "s6"
+          ]
+        },
+        {
+          "id": "r16",
+          "what": "Other sites' agents lanes, written to when it replies",
+          "kind": "outside",
+          "sources": [
+            "s5",
+            "s6"
+          ]
+        },
+        {
+          "id": "r17",
+          "what": "Its own site: publishing the contact file, key changes and pages, each a commit to the site's repository",
+          "kind": "code",
+          "sources": [
+            "s6"
+          ]
+        },
+        {
+          "id": "r18",
+          "what": "People named in the messages it handles",
+          "kind": "people",
+          "sources": [
+            "s6"
+          ]
+        }
       ],
       "mandate": [
-        { "id": "m7", "what": "Drain the inbox each session and read only messages encrypted to it, signed, from allow-listed domains." },
-        { "id": "m8", "what": "Reply over the sender's lane; act automatically only inside a declared flow, and send everything else to the operator." },
-        { "id": "m9", "what": "Send no personal data over a lane; link to it inside the vaults instead." }
+        {
+          "id": "m7",
+          "what": "Drain the inbox each session and read only messages encrypted to it, signed, from allow-listed domains."
+        },
+        {
+          "id": "m8",
+          "what": "Reply over the sender's lane; act automatically only inside a declared flow, and send everything else to the operator."
+        },
+        {
+          "id": "m9",
+          "what": "Send no personal data over a lane; link to it inside the vaults instead."
+        }
       ],
       "gap": [
-        { "what": "Verified is not obeyed: a message from an allowed agent proves who sent it, not that the request is right, so an action on it outside a declared flow is outside the mandate.", "reach": ["r17"] },
-        { "what": "In v0.1 the encryption key is stable and stored in the comms vault, so one compromised session can read the whole future inbox until rotation (per-session encryption keys are adopted for v0.2).", "reach": ["r13", "r14"] },
-        { "what": "The public lane takes unauthenticated writes up to 1,000 pending, and the drain runs per session rather than on a schedule, so junk can delay real mail.", "reach": ["r14"] }
+        {
+          "what": "Verified is not obeyed: a message from an allowed agent proves who sent it, not that the request is right, so an action on it outside a declared flow is outside the mandate.",
+          "reach": [
+            "r17"
+          ]
+        },
+        {
+          "what": "In v0.1 the encryption key is stable and stored in the comms vault, so one compromised session can read the whole future inbox until rotation (per-session encryption keys are adopted for v0.2).",
+          "reach": [
+            "r13",
+            "r14"
+          ]
+        },
+        {
+          "what": "The public lane takes unauthenticated writes up to 1,000 pending, and the drain runs per session rather than on a schedule, so junk can delay real mail.",
+          "reach": [
+            "r14"
+          ]
+        }
       ],
       "controls": [
-        { "what": "The allow list is checked before anything is fetched from the network, so strangers cannot make the agent fetch their URLs.", "sources": ["s6"] },
-        { "what": "Unsigned, unencrypted or wrongly signed messages are never read; everything else is counted and dropped unread.", "sources": ["s5", "s6"] },
-        { "what": "The To check, a 7-day Date window and Message-ID replay refusal stop re-wrapped and replayed messages.", "sources": ["s6"] },
-        { "what": "A read-key holder of the comms vault cannot use its private keys; only the holder of the vault key can drain the lane.", "sources": ["s6"] },
-        { "what": "The append token rotates with one call, and a key is retired by raising its serial; key history is public in the site's repository.", "sources": ["s5", "s6"] }
+        {
+          "what": "The allow list is checked before anything is fetched from the network, so strangers cannot make the agent fetch their URLs.",
+          "sources": [
+            "s6"
+          ]
+        },
+        {
+          "what": "Unsigned, unencrypted or wrongly signed messages are never read; everything else is counted and dropped unread.",
+          "sources": [
+            "s5",
+            "s6"
+          ]
+        },
+        {
+          "what": "The To check, a 7-day Date window and Message-ID replay refusal stop re-wrapped and replayed messages.",
+          "sources": [
+            "s6"
+          ]
+        },
+        {
+          "what": "A read-key holder of the comms vault cannot use its private keys; only the holder of the vault key can drain the lane.",
+          "sources": [
+            "s6"
+          ]
+        },
+        {
+          "what": "The append token rotates with one call, and a key is retired by raising its serial; key history is public in the site's repository.",
+          "sources": [
+            "s5",
+            "s6"
+          ]
+        }
       ],
       "simulation": [
-        { "t": 1, "actor": "agent", "action": "Starts a session with the comms vault key and restores its identity from the vault.", "reach": "r13", "in_mandate": true },
-        { "t": 2, "actor": "agent", "action": "Lists and fetches pending files from its agents lane and decrypts them.", "reach": "r14", "in_mandate": true },
-        { "t": 3, "actor": "agent", "action": "For a sender on the allow list, fetches its contact file, recomputes the fingerprints and verifies the signature.", "reach": "r15", "in_mandate": true },
-        { "t": 4, "actor": "agent", "action": "A verified message from an allowed agent asks it to add a new domain to its accepts_from list; it commits the change to its site.", "reach": "r17", "in_mandate": false, "note": "The record shows a change to the site's own trust settings made on a verified message outside any declared flow, where m8 sends it to the operator." },
-        { "t": 5, "actor": "agent", "action": "Replies to a question over the sender's lane, encrypted to its published key and signed.", "reach": "r16", "in_mandate": true },
-        { "t": 6, "actor": "agent", "action": "Includes a contact's details from the CRM in a reply, to save a round trip.", "reach": "r18", "in_mandate": false, "note": "The record shows personal data leaving over a lane, outside m9; the spec's own rule is to link to it inside the vaults." },
-        { "t": 7, "actor": "agent", "action": "Writes accepted, quarantined and log entries to the comms vault, marks the files processed and purges them.", "reach": "r13", "in_mandate": true }
+        {
+          "t": 1,
+          "actor": "agent",
+          "action": "Starts a session with the comms vault key and restores its identity from the vault.",
+          "reach": "r13",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "agent",
+          "action": "Lists and fetches pending files from its agents lane and decrypts them.",
+          "reach": "r14",
+          "in_mandate": true
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "For a sender on the allow list, fetches its contact file, recomputes the fingerprints and verifies the signature.",
+          "reach": "r15",
+          "in_mandate": true
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "A verified message from an allowed agent asks it to add a new domain to its accepts_from list; it commits the change to its site.",
+          "reach": "r17",
+          "in_mandate": false,
+          "note": "The record shows a change to the site's own trust settings made on a verified message outside any declared flow, where m8 sends it to the operator."
+        },
+        {
+          "t": 5,
+          "actor": "agent",
+          "action": "Replies to a question over the sender's lane, encrypted to its published key and signed.",
+          "reach": "r16",
+          "in_mandate": true
+        },
+        {
+          "t": 6,
+          "actor": "agent",
+          "action": "Includes a contact's details from the CRM in a reply, to save a round trip.",
+          "reach": "r18",
+          "in_mandate": false,
+          "note": "The record shows personal data leaving over a lane, outside m9; the spec's own rule is to link to it inside the vaults."
+        },
+        {
+          "t": 7,
+          "actor": "agent",
+          "action": "Writes accepted, quarantined and log entries to the comms vault, marks the files processed and purges them.",
+          "reach": "r13",
+          "in_mandate": true
+        }
       ]
     }
   ],
   "incidents": [
-    { "what": "The passphrase of sgit.ai's own vault was written into a tracked build file and reached three commits of a public repository; it was found by a history grep after the owner asked, and the vault was deleted from the server, rekeyed and pushed within the hour, with the write-up published.", "when": "2026-08-11", "sources": ["s11", "s12"] },
-    { "what": "A security review found that an earlier word-based share token, from which vault keys were derived, carried about thirty bits of entropy and could be recovered in around a tenth of a second on a GPU; the feature was removed from the client on 12 August 2026.", "when": "2026-08-06", "sources": ["s16"] },
-    { "what": "An agent asked to open two vaults published on sgit.ai refused because their deliberately public read keys were labelled sgit_private_read_; the keys were relabelled the same day and the build now refuses a private-prefixed credential in any tracked file.", "when": "2026-09-20", "sources": ["s10"] }
+    {
+      "what": "The passphrase of sgit.ai's own vault was written into a tracked build file and reached three commits of a public repository; it was found by a history grep after the owner asked, and the vault was deleted from the server, rekeyed and pushed within the hour, with the write-up published.",
+      "when": "2026-08-11",
+      "sources": [
+        "s11",
+        "s12"
+      ]
+    },
+    {
+      "what": "A security review found that an earlier word-based share token, from which vault keys were derived, carried about thirty bits of entropy and could be recovered in around a tenth of a second on a GPU; the feature was removed from the client on 12 August 2026.",
+      "when": "2026-08-06",
+      "sources": [
+        "s16"
+      ]
+    },
+    {
+      "what": "An agent asked to open two vaults published on sgit.ai refused because their deliberately public read keys were labelled sgit_private_read_; the keys were relabelled the same day and the build now refuses a private-prefixed credential in any tracked file.",
+      "when": "2026-09-20",
+      "sources": [
+        "s10"
+      ]
+    }
   ],
   "leads": [
-    { "model": "perplexity", "claim": "sgit is git for encrypted vaults (clone, commit, branch, merge files encrypted client-side) and is presented as the encrypted git for humans and AI agents.", "status": "confirmed", "source": "s1" },
-    { "model": "perplexity", "claim": "A site agent publishes a machine-readable contact file and uses the site as its identity for signed, encrypted mail between agents.", "status": "confirmed", "source": "s6" },
-    { "model": "perplexity", "claim": "An agent or vault app can render a vault-held repo's history and diffs in sandboxes, CI containers and Lambdas without git installed.", "status": "confirmed", "source": "s12" },
-    { "model": "perplexity", "claim": "Use case: encrypted team memory, vaults as shared memory for collaboration, CRM and notes.", "status": "confirmed", "source": "s17" },
-    { "model": "perplexity", "claim": "Use case: agent collaboration with identity separation (separate accounts, vaults, branches, keys issued out of band).", "status": "confirmed", "source": "s17" },
-    { "model": "perplexity", "claim": "Use case: legible encrypted code archives (repo history inside a vault).", "status": "confirmed", "source": "s12" },
-    { "model": "perplexity", "claim": "Commit authorship is not yet signed, so in a shared vault an agent's identity comes from its branch (model dated this 2026-11-02; the article is dated 2026-10-06).", "status": "confirmed", "source": "s17" },
-    { "model": "perplexity", "claim": "There is no key revocation, so rotating a read key protects future commits but not objects already fetched.", "status": "confirmed", "source": "s17" },
-    { "model": "perplexity", "claim": "The lane for direct vault-to-vault messaging is not wired end to end yet.", "status": "confirmed", "source": "s17" },
-    { "model": "perplexity", "claim": "sgit encrypts files with AES-256-GCM before they leave the machine (cited to the vault-apps page, which does not say it; stated on What is sgit).", "status": "confirmed", "source": "s3" },
-    { "model": "perplexity", "claim": "The vault key is the address of the vault, the authorisation to write to it, and the key that decrypts it.", "status": "confirmed", "source": "s15" },
-    { "model": "perplexity", "claim": "Whoever holds the vault key can decrypt the vault; the server cannot.", "status": "confirmed", "source": "s3" },
-    { "model": "perplexity", "claim": "Two-branch model: a private clone branch per machine or agent plus shared named branches.", "status": "confirmed", "source": "s3" },
-    { "model": "perplexity", "claim": "Object identity is content-addressed over ciphertext.", "status": "confirmed", "source": "s4" },
-    { "model": "perplexity", "claim": "The site frames identity for agents, a key registry for agents and ephemeral environments as core parts of the product (the home page lists them as topics of sibling *.sgit.ai sites, not as product features).", "status": "not-found", "source": "s1" },
-    { "model": "perplexity", "claim": "The company is actively discussing vault key management with password managers and enterprise identity providers (the page is an open call for collaboration and says no integration exists yet).", "status": "not-found", "source": "s16" },
-
-    { "model": "openai", "claim": "sgit snapshots folders, encrypts objects client-side and syncs only ciphertext; it also provides agent identity and signed, encrypted messaging over lanes tied to vault-held keys.", "status": "confirmed", "source": "s3" },
-    { "model": "openai", "claim": "The sgit.ai site agent receives signed agent mail from allow-listed sites, replies over their lanes, and keeps the site and its vaults.", "status": "confirmed", "source": "s5" },
-    { "model": "openai", "claim": "The riskmandate.ai site agent is a monitored mailbox for people and a write-only lane on an encrypted vault for agents.", "status": "confirmed", "source": "s26" },
-    { "model": "openai", "claim": "Use case: secure collaboration and state sharing between humans and AI agents in encrypted workspaces.", "status": "confirmed", "source": "s3" },
-    { "model": "openai", "claim": "Use case: LLM-assisted work without exposing the credential, the Risk Mandate vault calling an LLM without holding the API key.", "status": "confirmed", "source": "s14" },
-    { "model": "openai", "claim": "Use case: signed, encrypted agent-to-agent messaging via contact files and lanes.", "status": "confirmed", "source": "s6" },
-    { "model": "openai", "claim": "No incidents found in the public materials reviewed (sgit.ai publishes incident write-ups, including its own leaked vault key on 11 August 2026).", "status": "not-found", "source": "s11" },
-    { "model": "openai", "claim": "Files are encrypted client-side with AES-256-GCM; the server stores ciphertext under opaque IDs and cannot see filenames, contents or commit messages.", "status": "confirmed", "source": "s3" },
-    { "model": "openai", "claim": "A vault is a folder with a .sg_vault/ directory holding encrypted objects, refs and keys; pushing transfers ciphertext only.", "status": "confirmed", "source": "s3" },
-    { "model": "openai", "claim": "Contact files carry public encryption and signing keys and lane append tokens; agents communicate by signed, encrypted mail through vault lanes.", "status": "confirmed", "source": "s6" },
-    { "model": "openai", "claim": "The sgit.ai agent identity is a lane identity, not an SMTP mailbox, and its private keys live in a comms vault not published on the site.", "status": "confirmed", "source": "s5" },
-    { "model": "openai", "claim": "The RiskMandate agents page describes its identity as both a monitored mailbox for people and a write-only lane for agents.", "status": "confirmed", "source": "s26" },
-    { "model": "openai", "claim": "The Risk Mandate demo vault uses an LLM without holding the API key, which is sealed under the vault key.", "status": "confirmed", "source": "s14" },
-
-    { "model": "gemini", "claim": "SGit is version control for encrypted vaults, encrypting with AES-256-GCM before upload, leaving the server only content-addressed ciphertext.", "status": "confirmed", "source": "s3" },
-    { "model": "gemini", "claim": "The RiskMandate agent is a monitored mailbox and a write-only lane on an encrypted vault, authenticated via Agent Contact v0.1 (cited to riskmandate.ai home; stated on its /agents/ page).", "status": "confirmed", "source": "s26" },
-    { "model": "gemini", "claim": "Use case: secure multi-agent collaboration with versioned encrypted vaults, named branches and sandboxed in-vault apps.", "status": "confirmed", "source": "s1" },
-    { "model": "gemini", "claim": "Use case: an app calls a language model through the sg.llm bridge without holding the API key.", "status": "confirmed", "source": "s22" },
-    { "model": "gemini", "claim": "An agent refused to open vaults whose read keys were mislabelled sgit_private_read_ instead of sgit_public_read_, on 20 September 2026 (cited to the home page; stated on the credentials page).", "status": "confirmed", "source": "s10" },
-    { "model": "gemini", "claim": "Risk of a vault key exposed on the command line, on disk and in agent transcripts once it arrives, as observed on 24 October 2026.", "status": "confirmed", "source": "s23" },
-    { "model": "gemini", "claim": "Storage providers cannot read file contents, filenames or commit messages.", "status": "confirmed", "source": "s1" },
-    { "model": "gemini", "claim": "The vault key (passphrase:vault-id) combines the server address, the access credential and the root of the local key derivation in one string.", "status": "confirmed", "source": "s3" },
-    { "model": "gemini", "claim": "The project tracks development history and roles in publicly accessible vaults as an open-source transparency strategy (Apache-2.0 and a public release record confirmed; roles tracked in public vaults not found).", "status": "not-found", "source": "s1" },
-
-    { "model": "openrouter", "claim": "SGit is an encrypted, versioned workspace for humans and AI agents, with a CLI (sgit-ai) and a published security model of what the server can and cannot see.", "status": "confirmed", "source": "s1" },
-    { "model": "openrouter", "claim": "The site and its vaults are built by one person working with several AI agents who hand work to each other through vaults.", "status": "confirmed", "source": "s1" },
-    { "model": "openrouter", "claim": "The riskmandate.ai site agent drains an encrypted, write-only inbox lane and prepares replies a person must see before anything is sent (the page says a session holding the vault key; it does not name Claude Code).", "status": "confirmed", "source": "s26" },
-    { "model": "openrouter", "claim": "Use case: shared versioned state for AI agents that survives the context window.", "status": "confirmed", "source": "s1" },
-    { "model": "openrouter", "claim": "Use case: delivering a penetration test report (fictional sample) as one vault with a re-test script per finding.", "status": "confirmed", "source": "s1" },
-    { "model": "openrouter", "claim": "Use case: encrypted vaults for version control and sync on a host that must not read the files.", "status": "confirmed", "source": "s24" },
-    { "model": "openrouter", "claim": "Use case: an agent contact file and append-only inbox for the riskmandate.ai identity.", "status": "confirmed", "source": "s26" },
-    { "model": "openrouter", "claim": "The team that owns the API reviewed a vault built from a published brief and found the brief wrong in two places; the correction sits above the mistake.", "status": "confirmed", "source": "s1" },
-    { "model": "openrouter", "claim": "One agent forked another agent's vault, kept every byte, added a layer, and the original's tests still pass inside the fork.", "status": "confirmed", "source": "s1" },
-    { "model": "openrouter", "claim": "sgit is in beta while powering production workflows daily.", "status": "confirmed", "source": "s1" },
-    { "model": "openrouter", "claim": "The published threat model says the server can see object sizes, timing and the vault ID.", "status": "confirmed", "source": "s4" },
-    { "model": "openrouter", "claim": "Files are encrypted client-side with AES-256-GCM and the server never receives a key.", "status": "confirmed", "source": "s24" },
-    { "model": "openrouter", "claim": "Per-file keys are derived with HKDF and vault keys with PBKDF2-SHA256 at 600,000 iterations (GitHub page returned 403 here; read in the repository's README).", "status": "confirmed", "source": "s25" },
-    { "model": "openrouter", "claim": "The server sees only ciphertext, never a filename, file contents or commit message.", "status": "confirmed", "source": "s24" },
-    { "model": "openrouter", "claim": "The CLI's PKI generates RSA-4096 and ECDSA P-256 pairs, signs and verifies, and does hybrid RSA-OAEP plus AES-256-GCM encryption.", "status": "confirmed", "source": "s24" },
-    { "model": "openrouter", "claim": "sgit is Apache-2.0 and installable as the Python package sgit-ai.", "status": "confirmed", "source": "s3" },
-    { "model": "openrouter", "claim": "The riskmandate.ai agent identity is a monitored mailbox for people and a write-only lane for agents, and its private keys sit inside the comms vault.", "status": "confirmed", "source": "s26" },
-    { "model": "openrouter", "claim": "The riskmandate.ai contact file follows Agent Contact v0.1, and the agent's own Google Workspace account bounds what it can do under that identity.", "status": "confirmed", "source": "s26" },
-    { "model": "openrouter", "claim": "The sgit repository on GitHub describes a server that stores only ciphertext, with all cryptography run locally.", "status": "confirmed", "source": "s25" }
+    {
+      "model": "perplexity",
+      "claim": "sgit is git for encrypted vaults (clone, commit, branch, merge files encrypted client-side) and is presented as the encrypted git for humans and AI agents.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "perplexity",
+      "claim": "A site agent publishes a machine-readable contact file and uses the site as its identity for signed, encrypted mail between agents.",
+      "status": "confirmed",
+      "source": "s6"
+    },
+    {
+      "model": "perplexity",
+      "claim": "An agent or vault app can render a vault-held repo's history and diffs in sandboxes, CI containers and Lambdas without git installed.",
+      "status": "confirmed",
+      "source": "s12"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Use case: encrypted team memory, vaults as shared memory for collaboration, CRM and notes.",
+      "status": "confirmed",
+      "source": "s17"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Use case: agent collaboration with identity separation (separate accounts, vaults, branches, keys issued out of band).",
+      "status": "confirmed",
+      "source": "s17"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Use case: legible encrypted code archives (repo history inside a vault).",
+      "status": "confirmed",
+      "source": "s12"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Commit authorship is not yet signed, so in a shared vault an agent's identity comes from its branch (model dated this 2026-11-02; the article is dated 2026-10-06).",
+      "status": "confirmed",
+      "source": "s17"
+    },
+    {
+      "model": "perplexity",
+      "claim": "There is no key revocation, so rotating a read key protects future commits but not objects already fetched.",
+      "status": "confirmed",
+      "source": "s17"
+    },
+    {
+      "model": "perplexity",
+      "claim": "The lane for direct vault-to-vault messaging is not wired end to end yet.",
+      "status": "confirmed",
+      "source": "s17"
+    },
+    {
+      "model": "perplexity",
+      "claim": "sgit encrypts files with AES-256-GCM before they leave the machine (cited to the vault-apps page, which does not say it; stated on What is sgit).",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "perplexity",
+      "claim": "The vault key is the address of the vault, the authorisation to write to it, and the key that decrypts it.",
+      "status": "confirmed",
+      "source": "s15"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Whoever holds the vault key can decrypt the vault; the server cannot.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Two-branch model: a private clone branch per machine or agent plus shared named branches.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Object identity is content-addressed over ciphertext.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "perplexity",
+      "claim": "The site frames identity for agents, a key registry for agents and ephemeral environments as core parts of the product (the home page lists them as topics of sibling *.sgit.ai sites, not as product features).",
+      "status": "not-found",
+      "source": "s1"
+    },
+    {
+      "model": "perplexity",
+      "claim": "The company is actively discussing vault key management with password managers and enterprise identity providers (the page is an open call for collaboration and says no integration exists yet).",
+      "status": "not-found",
+      "source": "s16"
+    },
+    {
+      "model": "openai",
+      "claim": "sgit snapshots folders, encrypts objects client-side and syncs only ciphertext; it also provides agent identity and signed, encrypted messaging over lanes tied to vault-held keys.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openai",
+      "claim": "The sgit.ai site agent receives signed agent mail from allow-listed sites, replies over their lanes, and keeps the site and its vaults.",
+      "status": "confirmed",
+      "source": "s5"
+    },
+    {
+      "model": "openai",
+      "claim": "The riskmandate.ai site agent is a monitored mailbox for people and a write-only lane on an encrypted vault for agents.",
+      "status": "confirmed",
+      "source": "s26"
+    },
+    {
+      "model": "openai",
+      "claim": "Use case: secure collaboration and state sharing between humans and AI agents in encrypted workspaces.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openai",
+      "claim": "Use case: LLM-assisted work without exposing the credential, the Risk Mandate vault calling an LLM without holding the API key.",
+      "status": "confirmed",
+      "source": "s14"
+    },
+    {
+      "model": "openai",
+      "claim": "Use case: signed, encrypted agent-to-agent messaging via contact files and lanes.",
+      "status": "confirmed",
+      "source": "s6"
+    },
+    {
+      "model": "openai",
+      "claim": "No incidents found in the public materials reviewed (sgit.ai publishes incident write-ups, including its own leaked vault key on 11 August 2026).",
+      "status": "not-found",
+      "source": "s11"
+    },
+    {
+      "model": "openai",
+      "claim": "Files are encrypted client-side with AES-256-GCM; the server stores ciphertext under opaque IDs and cannot see filenames, contents or commit messages.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openai",
+      "claim": "A vault is a folder with a .sg_vault/ directory holding encrypted objects, refs and keys; pushing transfers ciphertext only.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openai",
+      "claim": "Contact files carry public encryption and signing keys and lane append tokens; agents communicate by signed, encrypted mail through vault lanes.",
+      "status": "confirmed",
+      "source": "s6"
+    },
+    {
+      "model": "openai",
+      "claim": "The sgit.ai agent identity is a lane identity, not an SMTP mailbox, and its private keys live in a comms vault not published on the site.",
+      "status": "confirmed",
+      "source": "s5"
+    },
+    {
+      "model": "openai",
+      "claim": "The RiskMandate agents page describes its identity as both a monitored mailbox for people and a write-only lane for agents.",
+      "status": "confirmed",
+      "source": "s26"
+    },
+    {
+      "model": "openai",
+      "claim": "The Risk Mandate demo vault uses an LLM without holding the API key, which is sealed under the vault key.",
+      "status": "confirmed",
+      "source": "s14"
+    },
+    {
+      "model": "gemini",
+      "claim": "SGit is version control for encrypted vaults, encrypting with AES-256-GCM before upload, leaving the server only content-addressed ciphertext.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "gemini",
+      "claim": "The RiskMandate agent is a monitored mailbox and a write-only lane on an encrypted vault, authenticated via Agent Contact v0.1 (cited to riskmandate.ai home; stated on its /agents/ page).",
+      "status": "confirmed",
+      "source": "s26"
+    },
+    {
+      "model": "gemini",
+      "claim": "Use case: secure multi-agent collaboration with versioned encrypted vaults, named branches and sandboxed in-vault apps.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "gemini",
+      "claim": "Use case: an app calls a language model through the sg.llm bridge without holding the API key.",
+      "status": "confirmed",
+      "source": "s22"
+    },
+    {
+      "model": "gemini",
+      "claim": "An agent refused to open vaults whose read keys were mislabelled sgit_private_read_ instead of sgit_public_read_, on 20 September 2026 (cited to the home page; stated on the credentials page).",
+      "status": "confirmed",
+      "source": "s10"
+    },
+    {
+      "model": "gemini",
+      "claim": "Risk of a vault key exposed on the command line, on disk and in agent transcripts once it arrives, as observed on 24 October 2026.",
+      "status": "confirmed",
+      "source": "s23"
+    },
+    {
+      "model": "gemini",
+      "claim": "Storage providers cannot read file contents, filenames or commit messages.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "gemini",
+      "claim": "The vault key (passphrase:vault-id) combines the server address, the access credential and the root of the local key derivation in one string.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "gemini",
+      "claim": "The project tracks development history and roles in publicly accessible vaults as an open-source transparency strategy (Apache-2.0 and a public release record confirmed; roles tracked in public vaults not found).",
+      "status": "not-found",
+      "source": "s1"
+    },
+    {
+      "model": "openrouter",
+      "claim": "SGit is an encrypted, versioned workspace for humans and AI agents, with a CLI (sgit-ai) and a published security model of what the server can and cannot see.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The site and its vaults are built by one person working with several AI agents who hand work to each other through vaults.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The riskmandate.ai site agent drains an encrypted, write-only inbox lane and prepares replies a person must see before anything is sent (the page says a session holding the vault key; it does not name Claude Code).",
+      "status": "confirmed",
+      "source": "s26"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Use case: shared versioned state for AI agents that survives the context window.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Use case: delivering a penetration test report (fictional sample) as one vault with a re-test script per finding.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Use case: encrypted vaults for version control and sync on a host that must not read the files.",
+      "status": "confirmed",
+      "source": "s24"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Use case: an agent contact file and append-only inbox for the riskmandate.ai identity.",
+      "status": "confirmed",
+      "source": "s26"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The team that owns the API reviewed a vault built from a published brief and found the brief wrong in two places; the correction sits above the mistake.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "openrouter",
+      "claim": "One agent forked another agent's vault, kept every byte, added a layer, and the original's tests still pass inside the fork.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "openrouter",
+      "claim": "sgit is in beta while powering production workflows daily.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The published threat model says the server can see object sizes, timing and the vault ID.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Files are encrypted client-side with AES-256-GCM and the server never receives a key.",
+      "status": "confirmed",
+      "source": "s24"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Per-file keys are derived with HKDF and vault keys with PBKDF2-SHA256 at 600,000 iterations (GitHub page returned 403 here; read in the repository's README).",
+      "status": "confirmed",
+      "source": "s25"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The server sees only ciphertext, never a filename, file contents or commit message.",
+      "status": "confirmed",
+      "source": "s24"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The CLI's PKI generates RSA-4096 and ECDSA P-256 pairs, signs and verifies, and does hybrid RSA-OAEP plus AES-256-GCM encryption.",
+      "status": "confirmed",
+      "source": "s24"
+    },
+    {
+      "model": "openrouter",
+      "claim": "sgit is Apache-2.0 and installable as the Python package sgit-ai.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The riskmandate.ai agent identity is a monitored mailbox for people and a write-only lane for agents, and its private keys sit inside the comms vault.",
+      "status": "confirmed",
+      "source": "s26"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The riskmandate.ai contact file follows Agent Contact v0.1, and the agent's own Google Workspace account bounds what it can do under that identity.",
+      "status": "confirmed",
+      "source": "s26"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The sgit repository on GitHub describes a server that stores only ciphertext, with all cryptography run locally.",
+      "status": "confirmed",
+      "source": "s25"
+    }
   ],
   "questions": [
     "When an agent's 'operates' confirmation lapses or its session ends, which vault keys were sealed to or by that key, and where can an operator see that list?",
@@ -281,5 +1236,20 @@
     "Will a mandate (what an operated agent may do) become a signed statement in the pki.sgit.ai register beside the 'operates' link, and on what timeline?",
     "Until the last metre is solved, what is the recommended way for a receiving agent to use a vault key without it reaching the command line or the transcript?",
     "When per-session encryption keys arrive in Agent Contact v0.2, what happens to messages already in a comms vault encrypted to the stable key?"
-  ]
+  ],
+  "reading": {
+    "by": "a reading agent: a Claude Code sub-agent of xray@web-summit.dinis, one per subject",
+    "tool_calls": 35,
+    "seconds": 396,
+    "tokens_thousands": 192,
+    "finished": "2026-11-07T18:46Z"
+  },
+  "review": {
+    "by": "xray@web-summit.dinis",
+    "on": "2026-11-07",
+    "notes": [
+      "Re-read the leaked-key write-up on sgit.ai/case-studies/ before accepting it.",
+      "Accepted leads confirmed against the right page when a model cited the wrong one, with a note on each."
+    ]
+  }
 }

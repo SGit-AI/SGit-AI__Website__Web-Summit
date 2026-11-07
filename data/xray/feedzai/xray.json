@@ -1169,5 +1169,20 @@
     "For Know Your Agent: when a customer's agent arrives at a bank, what will your detection read to learn the limits the customer set, and what happens to a payment that is outside them on a rail that settles in seconds?",
     "Farol runs inside the institution's environment: which model providers does it call, and does any case or customer data leave the bank's estate for inference?",
     "Can a bank export Farol's record of what it retrieved, recommended and who acted on it into its own model risk records, so a supervisor can see who authorised each step?"
-  ]
+  ],
+  "reading": {
+    "by": "a reading agent: a Claude Code sub-agent of xray@web-summit.dinis, one per subject",
+    "tool_calls": 28,
+    "seconds": 344,
+    "tokens_thousands": 170,
+    "finished": "2026-11-07T21:24Z"
+  },
+  "review": {
+    "by": "xray@web-summit.dinis",
+    "on": "2026-11-07",
+    "notes": [
+      "Removed two risks Feedzai describes from the incidents: not events.",
+      "Kept the lawsuit lead as worded (\"no Feedzai failure is alleged\"), outside the incidents."
+    ]
+  }
 }

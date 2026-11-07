@@ -1077,5 +1077,20 @@
     "How does the chat agent tie a password reset, loyalty change or invoice request to the signed-in traveler?",
     "In Hotel Lobby, how is benchmark and compliance data from other clients separated from the client being sourced?",
     "Under Long Lake, will client travel data be used to improve the Nexus platform shared across Long Lake companies?"
-  ]
+  ],
+  "reading": {
+    "by": "a reading agent: a Claude Code sub-agent of xray@web-summit.dinis, one per subject",
+    "tool_calls": 42,
+    "seconds": 321,
+    "tokens_thousands": 146,
+    "finished": "2026-11-07T21:23Z"
+  },
+  "review": {
+    "by": "xray@web-summit.dinis",
+    "on": "2026-11-07",
+    "notes": [
+      "Removed two general industry findings listed as incidents: not events at Amex GBT.",
+      "Left out the claim that its CTO speaks at Web Summit: no readable source."
+    ]
+  }
 }

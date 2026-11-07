@@ -1015,5 +1015,20 @@
     "What can a caller reach after Contact IA's voice authentication, and what will the planned self-service let it change on a policy?",
     "Which external systems can Knowledge AI's language-model layer reach, can it write to any of them, and which AI systems does it feed?",
     "A press report says you integrated Coalex.ai to keep your autonomous agents compliant: which agents are these, and what does a flagged action trigger?"
-  ]
+  ],
+  "reading": {
+    "by": "a reading agent: a Claude Code sub-agent of xray@web-summit.dinis, one per subject",
+    "tool_calls": 53,
+    "seconds": 409,
+    "tokens_thousands": 174,
+    "finished": "2026-11-07T21:25Z"
+  },
+  "review": {
+    "by": "xray@web-summit.dinis",
+    "on": "2026-11-07",
+    "notes": [
+      "Softened the tagline: the AI director's spoken remark is given as reported, not as a headline fact.",
+      "Removed two documented limits from the incidents: not events."
+    ]
+  }
 }

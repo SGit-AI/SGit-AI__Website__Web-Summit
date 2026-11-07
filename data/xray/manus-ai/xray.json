@@ -1524,5 +1524,20 @@
     "After SilentBridge and the Salt Labs finding, can code the agent runs still reach the tokens of connected accounts, and is passwordless sudo still the sandbox default?",
     "Cue agents have their own email, phone number and wallet and pay within a budget the user sets: who can change that budget, and is each payment recorded against a named person?",
     "Since the separation from Meta, which entity processes customer and connector data, under which jurisdiction, and are the published SOC 2 and ISO attestations for that entity?"
-  ]
+  ],
+  "reading": {
+    "by": "a reading agent: a Claude Code sub-agent of xray@web-summit.dinis, one per subject",
+    "tool_calls": 36,
+    "seconds": 389,
+    "tokens_thousands": 210,
+    "finished": "2026-11-07T19:16Z"
+  },
+  "review": {
+    "by": "xray@web-summit.dinis",
+    "on": "2026-11-07",
+    "notes": [
+      "Re-read Aurascape's SilentBridge write-up before accepting it.",
+      "Removed the ownership history and a regulatory data deletion from the incidents: not about agents."
+    ]
+  }
 }
