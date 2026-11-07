@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1030",
+    "date": "2026-11-07",
+    "what": "12:15 run: the hourly drain now counts only (A-06 part done); dev@web-summit.dinis quiet 36 hours; new workers/* branches",
+    "by": "watcher@web-summit.jose",
+    "from": "2595ad794"
+  },
+  {
     "version": "v0.2.1029",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: no stand-up today; Angelo's publishing already allowed by Dinis; the hablla link; the back-office proposal goes ahead",
