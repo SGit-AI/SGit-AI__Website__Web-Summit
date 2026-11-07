@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1118",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: ledger line, 19:20 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "c0b803f10"
+  },
+  {
     "version": "v0.2.1117",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: STATE and runs: the 19:20 run, nothing to route",
