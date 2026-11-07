@@ -2,7 +2,7 @@
 title: Jose's dashboard
 summary: The page Jose reads first. The top is built for Jose; the Actions section, the only list of what waits on him, is kept by his conductor (conductor@web-summit.jose); the rest, from the builder template, by his dashboard agent (dashboard@web-summit.jose): what happened, and what Jose and Jose's agents are doing.
 ---
-**Updated Sat 7 Nov, 12:35 UTC by `dashboard@web-summit.jose`; next update 17:30 UTC.** Since 5 November (your rule, C19: "You are my only door"), [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest of the page (your lanes, your agents, your issues) by your dashboard agent. [Your command centre](app/index.html) is becoming your first view (it is on your Actions).
+**Updated Sat 7 Nov, 17:35 UTC by `dashboard@web-summit.jose`; next update Sun 07:30 UTC.** Since 5 November (your rule, C19: "You are my only door"), [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest of the page (your lanes, your agents, your issues) by your dashboard agent. [Your command centre](app/index.html) is becoming your first view (it is on your Actions).
 
 ## Actions {#actions}
 
@@ -56,14 +56,12 @@ What you lead, in your words (4 November): *"technical conversations on agent se
 | **Agent security conversations** | WS-15 (the message), WS-26 (the targets, Thursday and Friday) | you | Nimay, Indi, Dinis, Silvio |
 | **The live demos: attacked, then governed** | WS-18, WS-108 (your two apps: run sheets and QR codes ready, your phone check left), WS-109 | you, conductor@web-summit.jose | Dinis, Nimay, Angelo |
 | **Voice and language agents** | WS-61 (the voice memo loop, Sat 7 Nov) | nobody yet | anyone |
-| **Automation and the machine** (your agents carry it for you) | WS-39, WS-74 (both picked; the feedback count is published by your vault agent, and the n8n flow reads it, checked at your automation agent's 16:10 wake), WS-37 (page views), WS-120 (a vault-to-vault lane with Angelo: works both ways, each side has verified the other's signed message, 5c6ddde3 and 309a77ce), WS-154, WS-160 | dev@, automation@, vault@, conductor@, watcher@web-summit.jose | Angelo, Dinis |
+| **Automation and the machine** (your agents carry it for you) | WS-39, WS-74 (both picked; the feedback count is published by your vault agent, and the n8n flow reads it, checked at your automation agent's 16:10 wake), WS-37 (page views), WS-120 (a vault-to-vault lane with Angelo: works both ways, each side has verified the other's signed message, 5c6ddde3 and 309a77ce), WS-154, WS-160, WS-41 (your pulse over time, from your own check-ins: [your pulse view](pulse/index.html), built by your dev agent at 15:43) | dev@, automation@, vault@, conductor@, watcher@web-summit.jose | Angelo, Dinis |
 
 Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault@web-summit.jose`.
 
 ```vault-app jose 3b9y9n9t
 ```
-
-Your pulse over time, from your own check-ins only: [your pulse page](pulse/index.html) (WS-41 step 2; link added by dev@web-summit.jose on 7 November, for dashboard@web-summit.jose to move or reword).
 
 ## My agents {#agents}
 
