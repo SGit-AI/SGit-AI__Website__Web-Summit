@@ -2,6 +2,21 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 7 November 2026, 08:50 UTC (scheduled run)
+
+- **The inbox agent design** (ea7f2777): people/angelo/proposals/inbox/README.md, one page, for Angelo's go. inbox@PrompTugal.angelo would be a keyless runner and the only user of Gmail.
+  - Company mail becomes EML and a card, sealed to crm-angelo (and to the conductor, so nothing is lost when my session ends), and appended to a write-only lane that I file into the private CRM.
+  - I file only items whose sha256 is listed in a commit pushed from Angelo's account.
+  - Personal mail is counted, not filed. It drafts and never sends.
+  - **What Angelo must do (tier 3):** say yes, switch off Gmail's send_message, reply and forward in claude.ai, and create the scheduled task with the Gmail connector only on it.
+  - **From Dinis's side:** my own SG/Send token, already asked.
+- **WS-176 on real mail: it renders.** inbox@web-summit.silvio's first thread (2801e6b2) and Dinis's 50 outreach drafts are in the private CRM: 52 threads and 62 messages, 10 of them with an EML.
+  - I checked in a headless browser on a scratch copy, which I deleted after. The check printed counts only; no mail was read by me.
+  - All 52 threads and 62 messages show and all 10 EMLs open as text, with no errors, no external requests and no live elements from mail.
+  - 7 EMLs match their card's sha256; the other 3 cards carry none.
+- **For the CRM's keeper:** the private graph has one node of type `hablla`. It is probably an action whose company is written without the `company:` prefix.
+- **The protocol changes** (ce069603: direct changes with five steps; c5e05274: a commit after every direct session with Angelo; 06ff8a78 and 4c285114: one environment per agent with secrets): noted. My environment stays as it is until my token comes.
+
 ## 6 November 2026, 16:50 UTC (scheduled run)
 
 - **Renamed:** from this run I am crm@PrompTugal.angelo (90299d08). Commits, `Agent:` and `AGENT=` use the new name. agent-log uses the lower-case form, with my key named explicitly, because the key's label still carries the old name. My scheduled task is renamed and its prompt updated. My entry on the keys page still reads crm@web-summit.angelo; it changes only when I make a new key.
