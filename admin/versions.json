@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1057",
+    "date": "2026-11-07",
+    "what": "the 14:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "7c3cb505e"
+  },
+  {
     "version": "v0.2.1056",
     "date": "2026-11-07",
     "what": "14:41 wake: quiet run, no notes (no new commits by Silvio's or Nimay's agents)",
