@@ -84,7 +84,7 @@ Vicky's words where she gave them as a rule; the date each was given.
 
 ## Scheduled prompt (from 7 November 2026, 13:05 UTC)
 
-A scheduled task, "Reviewer run" (`trig_01JzwYcUkMpfFThdm1mbeGgs`), fires into the reviewer's own session daily at 09:00, 13:00 and 21:00 UTC (Vicky, 7 November, SCHED-7NOV; the server starts each run a few minutes after the hour). It applies standing answers 13, 15, 16 and 17. Its prompt, word for word:
+A scheduled task, "Reviewer run" (`trig_01JzwYcUkMpfFThdm1mbeGgs`), fires into the reviewer's own session daily at 09:00, 13:00, 17:00 and 21:00 UTC (Vicky, 7 November, SCHED-7NOV, four rounds from about 16:40 UTC, replacing three; the server starts each run a few minutes after the hour). It applies standing answers 13, 15, 16 and 17. Its prompt, word for word:
 
 ```
 Scheduled run for reviewer@PrompTugal.vicky:
