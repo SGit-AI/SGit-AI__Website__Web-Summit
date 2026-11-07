@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1055",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: ucvg2pkv's key stays with the vault agent; no handover to Dinis",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "5d0945d8a"
+  },
+  {
     "version": "v0.2.1054",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: the live-map spec, for Angelo's review: Replay inside Team and the machine, keys, sealed messages and lanes, a public version, a 3D option",
