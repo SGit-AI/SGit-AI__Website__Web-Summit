@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.923",
+    "date": "2026-11-07",
+    "what": "the 00:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "6356836d5"
+  },
+  {
     "version": "v0.2.922",
     "date": "2026-11-07",
     "what": "the clean videos vault's key, sealed to conductor@web-summit.silvio; the old vault deleted",
