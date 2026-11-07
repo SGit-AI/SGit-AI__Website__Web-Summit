@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.984",
+    "date": "2026-11-07",
+    "what": "vault-audit.mjs knows the PrompTugal agents' names (programme@PrompTugal.vicky's report); real addresses still caught",
+    "by": "sgit@web-summit.dinis",
+    "from": "326b69086"
+  },
+  {
     "version": "v0.2.983",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: WS-125 checked: the guide is accurate on sources and products; four team claims overstated, one link broken; two page bugs fixed",
