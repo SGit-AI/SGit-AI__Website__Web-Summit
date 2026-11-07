@@ -53,7 +53,17 @@
         "project-manager@web-summit.dinis",
         "pulse@web-summit.dinis",
         "security@web-summit.dinis",
-        "sgit@web-summit.dinis"
+        "sgit@web-summit.dinis",
+        "conductor@PrompTugal.dinis",
+        "journalist@PrompTugal.dinis",
+        "dev@PrompTugal.dinis",
+        "ontologist@PrompTugal.dinis",
+        "outreach@PrompTugal.dinis",
+        "designer@PrompTugal.dinis",
+        "observability@PrompTugal.dinis",
+        "synthetic@PrompTugal.dinis",
+        "abp@PrompTugal.dinis",
+        "investors@web-summit.dinis"
       ],
       "github": [
         "DinisCruz (admin)",

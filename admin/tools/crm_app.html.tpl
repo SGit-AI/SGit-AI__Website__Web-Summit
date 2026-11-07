@@ -12,7 +12,7 @@
 <style>
 :root{--bg:#f7f6f2;--card:#fff;--line:#e5e1d5;--ink:#161615;--ink2:#5c5f66;--green:#1a7f5a;--blue:#1d4ed8;--gold:#b45309;--terra:#c8553d;--soft:#eef6f2}
 @media (prefers-color-scheme:dark){:root{--bg:#141412;--card:#1c1c19;--line:#34332d;--ink:#ecebe6;--ink2:#a9a59b;--soft:#14302d}}
-*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}[hidden]{display:none!important}html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
 header{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 h1{margin:0;font-size:20px}h1 span{color:var(--green)}
 .tabs{display:flex;gap:6px;flex-wrap:wrap}.tabs button,.chip{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:5px 12px;cursor:pointer}
@@ -43,6 +43,11 @@ svg text{font:11px system-ui;fill:var(--ink)}svg line{stroke:var(--line);stroke-
   <div class="list" id="list" role="list"></div>
   <section class="detail" id="detail"><p class="meta" id="intro">Pick a record. Companies, contacts and schedules hold public facts with their sources; the graph shows a record and what it is linked to.</p></section>
 </main>
+<section id="mail" hidden style="padding:14px 18px"></section>
+<script>
+// the email twin (WS-176): assets/crm-mail.js, inlined here by `node admin/tools/crm.mjs app`
+/*__MAIL__*/
+</script>
 <script>
 const WHICH = /*__WHICH__*/''
 const BRIDGE_ORIGINS = /*__ORIGINS__*/['https://web-summit.sgit.ai']
@@ -51,7 +56,7 @@ const BRIDGE_ORIGINS = /*__ORIGINS__*/['https://web-summit.sgit.ai']
   const sg = window.sg || null, $ = id => document.getElementById(id)
   const el = (t, cls, txt) => { const e = document.createElement(t); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e }
   const readJson = async p => JSON.parse(await sg.vfs.readText(p))
-  const TYPES = [['company', 'Companies'], ['contact', 'Contacts'], ['action', 'Actions'], ['schedule', 'Schedules'], ['vault-key', 'Keys']]
+  const TYPES = [['thread', 'Mail'], ['company', 'Companies'], ['contact', 'Contacts'], ['action', 'Actions'], ['schedule', 'Schedules'], ['vault-key', 'Keys']]
   let NODES = [], EDGES = [], BY = {}, TYPE = 'company', CUR = null
   const label = n => n.label || n.id
   const sub = n => n.type === 'company' ? [n.kind === 'organisation' ? 'organisation' : n.category, n.country].filter(Boolean).join(' · ')
@@ -65,6 +70,13 @@ const BRIDGE_ORIGINS = /*__ORIGINS__*/['https://web-summit.sgit.ai']
       const b = el('button', null, name + ' (' + n + ')'); b.type = 'button'; b.setAttribute('aria-pressed', String(k === TYPE))
       b.onclick = () => { TYPE = k; tabs(); list() }; t.appendChild(b)
     }
+    mailMode()
+  }
+  let MAILED = false
+  function mailMode() {                                      // the Mail tab: the email twin takes the page (WS-176)
+    const on = TYPE === 'thread' && !!window.WSCrmMail
+    $('mail').hidden = !on; document.querySelector('main').hidden = on; $('q').hidden = on
+    if (on && !MAILED) { MAILED = true; window.WSCrmMail.mount($('mail'), { nodes: NODES, edges: EDGES, readText: p => sg.vfs.readText(p) }) }
   }
   function list() {
     const q = $('q').value.trim().toLowerCase(), box = $('list'); box.textContent = ''
@@ -170,6 +182,7 @@ const BRIDGE_ORIGINS = /*__ORIGINS__*/['https://web-summit.sgit.ai']
     try { NODES = (await readJson('graph/nodes.json')).nodes; EDGES = (await readJson('graph/edges.json')).edges }
     catch (e) { $('intro').textContent = 'Could not read graph/: run node admin/tools/crm.mjs derive.' }
     BY = Object.fromEntries(NODES.map(n => [n.id, n]))
+    if (WHICH === 'private' && NODES.some(n => n.type === 'thread' && n.file)) TYPE = 'thread'   // the mail first (WS-176)
     if (!NODES.some(n => n.type === TYPE && n.file)) TYPE = (TYPES.find(([k]) => NODES.some(n => n.type === k && n.file)) || ['company'])[0]
     tabs(); list(); $('q').addEventListener('input', list)
     if (WHICH === 'private' && window.top !== window) ping().then(ok => { $('bridge').textContent = ok ? '🔑 Unsealing through web-summit.sgit.ai' : 'No unsealing here: open from web-summit.sgit.ai/crm/'; if (CUR) show(CUR) })

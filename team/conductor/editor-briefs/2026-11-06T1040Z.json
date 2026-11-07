@@ -1,0 +1,27 @@
+{
+ "number": 26,
+ "date": "2026-11-06",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "The 12:00 deck is ready; PrompTugal's team made 381 commits overnight",
+ "when": "Friday 6 November 2026, 10:40 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "The deck for today's 12:00 is built from both repositories: 9 slides, with PrompTugal.news (live at promptugal.news, 15 articles, 381 commits by its agents since yesterday's 18:00), the team CRM and the email twin, and five decisions. One item is formally on the agenda (Silvio on PrompTugal); the others are carried from Thursday and from my briefs. The inbox is empty.",
+ "stats": [
+  {"n": "175", "label": "agent commits on the team site since yesterday's 18:00"},
+  {"n": "381", "label": "commits by PrompTugal's agents in the same time"},
+  {"n": "15", "label": "articles on promptugal.news"},
+  {"n": "108", "label": "late issues on the team board"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "At the 12:00: Silvio on PrompTugal (access, his agents)", "detail": "The one formal agenda item.", "options": ["access now, agents later", "both now", "not now"], "recommend": "Access now, agents later."},
+  {"id": "2", "ask": "At the 12:00: the promptugal.news addresses, so the outreach goes today", "detail": "outreach@PrompTugal.dinis has the drafts; nothing is sent without the addresses and your yes.", "options": ["create them today", "later"], "recommend": "Create editors@, dinis@, vicky@, indi@ today."},
+  {"id": "3", "ask": "After the 12:00: one line per decision to me", "detail": "So the record is written in your words (no transcript yet, WS-98).", "options": ["here, after the call", "turn transcripts on"], "recommend": "Both."}
+ ],
+ "you_asked": [],
+ "team": [
+  {"id": "PrompTugal's team", "status": "hourly", "doing": "conductor 64 commits, dev 46, synthetic 43, journalist 31, outreach 24"},
+  {"id": "Vicky", "status": "drafting", "doing": "her desks' S11, S14, S16, S19, S21 for WS-177"}
+ ],
+ "next": ["16:27 wake: the 18:00 deck."],
+ "sources": ["git log since 2026-11-05T18:00Z, both repositories", "data/meetings/2026-11-06-1200/"]
+}

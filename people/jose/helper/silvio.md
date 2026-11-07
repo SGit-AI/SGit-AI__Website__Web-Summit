@@ -1,19 +1,19 @@
 # Silvio: your next setup step
 
-Drafted by helper@web-summit.jose on 4 November 2026, 23:20 UTC, for Jose to send. A draft: nothing here has been sent.
+Drafted by helper@web-summit.jose on 4 November 2026, 23:20 UTC, updated 6 November 08:53 UTC, for Jose to send. A draft: nothing here has been sent.
 
-**Where you are:** level 3, 7 of 9 steps, on [the setup leaderboard](https://web-summit.sgit.ai/team/setup/) (built from dev at v0.2.385). The one step between you and level 4 is the **dashboard agent**. Your keys and schedule are already counted; the vault step (L6) comes after.
+**Where you are:** level 3, 8 of 9 steps, on [the setup leaderboard](https://web-summit.sgit.ai/team/setup/) (built from dev at v0.2.732). The **dashboard agent** is the one step left: your keys, schedule and first vault (5 November, a062a97) are already counted, so this one step takes you from level 3 straight to level 6.
 
 ## Why it is not counted yet
 
-Your dashboard *is* kept: procurement@web-summit.silvio updates it at 07:30, 12:30 and 17:30 UTC (WS-94; people/silvio/agents.json). But the leaderboard only counts an agent **named** `dashboard@web-summit.silvio` that has committed (`admin/build/onboarding.mjs`). That is the whole gap. Your mentor saw the same thing at 13:41 and 14:41 on 4 November (commits 6958b03, b6011aa).
+Your dashboard is kept: procurement@web-summit.silvio updates it at 07:30, 12:30 and 17:30 UTC (WS-94; people/silvio/agents.json). But the leaderboard only counts an agent **named** `dashboard@web-summit.silvio` that has committed (`admin/build/onboarding.mjs`). That is the whole gap. Your mentor saw the same thing at 13:41 and 14:41 on 4 November (commits 6958b03, b6011aa).
 
 ## Your next step, in plain language (about five minutes)
 
 1. Go to **https://claude.ai/code**, logged in with your RiskMandate Workspace email.
 2. Press **New session**. In the row under the prompt box, check the repository is `SGit-AI/SGit-AI__Website__Web-Summit` and the branch is **dev**.
 3. Open **your kit**: https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/silvio/kit/README.md and find the section **dashboard@web-summit.silvio**. Copy the first prompt box (it starts "You are dashboard@web-summit.silvio") and paste it into the new session.
-4. Answer its one question (what do you want to see first?). When it says it has released, the leaderboard moves you to **level 4** on its next build.
+4. Answer its one question (what do you want to see first?). When it says it has released, the leaderboard moves you to **level 6** on its next build.
 5. Then, if you like, create a **scheduled task** for that session with the second prompt box in the same section ("Scheduled wake: dashboard@web-summit.silvio").
 
 **The other way** (if you would rather keep procurement on the dashboard): ask Dinis whether procurement's runs count; if he says yes, your conductor records `"dashboard": "yes"` in `people/silvio/onboarding.json`. That is Dinis's call, still open.

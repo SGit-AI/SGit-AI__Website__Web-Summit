@@ -1,0 +1,63 @@
+{
+  "number": 13,
+  "date": "6 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Midday: Angelo and Vicky have joined PromptUGAL. You have not yet.",
+  "when": "6 November 2026, 12:25 UTC (scheduled wake; since brief 12, 07:25 UTC)",
+  "by": "conductor@web-summit.indi",
+  "headline": "Since this morning, Vicky's helpers renamed themselves under PromptUGAL and published twelve articles, and Angelo joined as an editor. Your helpers have not tested the site yet, and the four answers from my last brief are still open. Your mentor has finished. One new thing needs you: whether to join PromptUGAL. Nothing is decided here.",
+  "stats": [
+    {"n": "12", "label": "articles live on PromptUGAL (Vicky's desks, 11:21 UTC)"},
+    {"n": "2 of 3", "label": "editors on the board page have joined: Vicky and Angelo's desks work there; you have not"},
+    {"n": "0", "label": "tests of the site by your helpers so far"},
+    {"n": "4", "label": "answers I am still waiting for"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Decide whether to join PromptUGAL, like Angelo",
+      "detail": "Dinis invited Angelo to the PromptUGAL group on GitHub as an editor, and Angelo said yes at about 11:20. Dinis's plan also lists you as an editor. If you say yes, Dinis sends you the same invitation, and your helpers can work there as Vicky's do. If you say no, you stay on the RiskMandate side, and I keep going as now.",
+      "options": ["yes, invite me", "not yet", "no, stay on RiskMandate"],
+      "recommend": "Your choice. If yes, tell Dinis today, because the emails go out under this name."
+    },
+    {
+      "id": "2",
+      "ask": "Answer my four open questions in one message",
+      "detail": "(a) Is riskmandate-indi your GitHub name? (b) Are you happy to be named on the editorial board page, and with which title? (c) Is the other 'conductor' helper that wrote your card yours? (d) Did you add your site key (WS-136)? A short line each is enough.",
+      "options": ["answer here now", "answer later today"],
+      "recommend": "Answer (a) first. Dinis's security check is waiting on that name."
+    },
+    {
+      "id": "3",
+      "ask": "Allow promptugal.news, then paste the readers-test prompt",
+      "detail": "Dinis asked your helpers to test the new site as readers. Your Claude environment must allow the address promptugal.news first. Then paste the prompt in people/indi/promptugal/readers-prompt.md into your synthetic helper's session. The emails are going out today, so a test helps most now.",
+      "options": ["allow it and paste now", "ask me to start a helper", "skip"],
+      "recommend": "Allow it and paste: five minutes."
+    }
+  ],
+  "you_asked": [
+    {"at": "6 Nov, 07:25 UTC", "said": "(my brief 12 asks)", "done": "No answer yet, so nothing changed.", "where": "-", "status": "waiting"}
+  ],
+  "sections": [
+    {
+      "title": "1. What changed since brief 12",
+      "items": [
+        "Vicky's helpers took new names (for example checker@PrompTugal.vicky) and published twelve articles (9cbfb9f). Angelo joined as editor and keeps the admin role to himself (2219eb2).",
+        "Dinis's security helper finished its check of the team's private keys (WS-178). Yours still wait on your GitHub name.",
+        "Your mentor has finished. His last note says your helpers ran every scheduled slot for two days without a prompt. A word to Dinis brings a mentor back.",
+        "I cannot open promptugal.news from my session, so I still have not seen the site myself."
+      ]
+    }
+  ],
+  "next": [
+    "17:20: my next wake.",
+    "Monday: you are at the summit. Your site key needs adding on each phone and iPad you carry (WS-166).",
+    "Tell me 'acknowledge' when you have read briefs 1 to 13."
+  ],
+  "sources": [
+    "git log since 07:20 UTC on 6 November: 9cbfb9f, 2219eb2, fbd8cfd, fc54d5b, ca210bd",
+    "board/WS-177, WS-178, WS-166",
+    "people/indi/mentor/2026-11-06-0841.md",
+    "promptugal.news at 12:21 UTC: not reachable from my session"
+  ]
+}

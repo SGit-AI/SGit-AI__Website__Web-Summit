@@ -1,0 +1,122 @@
+{
+  "number": 5,
+  "date": "6 November 2026",
+  "kicker": "Web Summit 2026 · Vicky's conductor brief",
+  "title": "Friday: twelve storylines to draft for PromptUGAL by 10:00, and WS-31's scope by tomorrow",
+  "when": "6 November 2026, 08:45 UTC (the daily brief; since brief 4, 5 Nov 08:40 UTC)",
+  "by": "conductor@web-summit.vicky",
+  "headline": "All six scheduled agents ran this morning and every change of yours went live. Your eight drafts from last night are all marked Ready by the reviewer. The newsroom's force-update cost your desks nothing. The pressing item is WS-177: Dinis's conductor asked your desks to draft every storyline on the candidates page by 10:00 UTC today, and 12 of the 20 have no draft yet; your journalists are on demand, so only you can wake them. WS-31's scope and builder are due tomorrow.",
+  "stats": [
+    {"n": "6 of 6", "label": "scheduled agents ran this morning (dev@ paused); every release live"},
+    {"n": "8 of 20", "label": "storylines drafted; all 8 marked Ready by the reviewer"},
+    {"n": "12", "label": "storylines still to draft for WS-177, due 10:00 UTC today"},
+    {"n": "0", "label": "commits of your desks lost in the newsroom's force-update"}
+  ],
+  "for_you": [
+    {
+      "id": 1,
+      "ask": "WS-177, due 10:00 UTC today: draft the 12 storylines left, and past events",
+      "detail": "Dinis's conductor (14003ac6, 5 Nov 21:45, team/conductor/notes/2026-11-05/promptugal-sprint.md) asks your desks to write every storyline on the candidates page (Dinis: \"all of them\"), each fact-checked and sourced, sent to newsroom@web-summit.dinis, plus past events: Web Summit's earlier editions and side events already held. The page has 20 storylines (S8 is folded into S10). Drafted: S1, S2, S5, S6, S9, S10, S15, S18. Not drafted, by beat: Portugal S3, S4, S7, S13, S20; Europe S11; connections S14, S16, S17, S19, S21; the summit S12 (robotics, so the AI journalist). Your journalists and reviewer have no schedule.",
+      "options": [
+        "Wake them now. journalist-portugal session: \"WS-177: draft S3, S4, S7, S13 and S20 from desks/curator/README.md, one at a time, each sourced, For: newsroom@web-summit.dinis.\" journalist-europe session: the same with S11. journalist-connections session: S14, S16, S17, S19 and S21. journalist-ai session: S12. journalist session: \"WS-177: past events: Web Summit's earlier editions and the side events already held, with sources.\" Then the reviewer session: \"Review every new draft.\" Each one: check the newsroom clone points at PrompTugal/PrompTugal__News__Website first.",
+        "Wake them, and tell me to ask Dinis's conductor in a commit for the afternoon instead of 10:00",
+        "Draft only the Portugal storylines this morning; the rest after the 12:00 stand-up"
+      ],
+      "recommend": "The first. Twelve drafts and past events will not all land by 10:00, but every one that does counts for Friday's outreach; whatever is left follows today, and the reviewer checks them as they come."
+    },
+    {
+      "id": 2,
+      "ask": "WS-31, due tomorrow (Sat 7 Nov): the schedules' scope, and who builds them",
+      "detail": "pm@ marks this URGENT (reports/pm.md, 07:40; 0488e15). The smaller scope: meetings and companies only, each person adds their own sessions; project-manager@web-summit.dinis supports it (2059646). The booked meetings are in the private meetings vault, so the schedules are built there. Its key is sealed to pm@ (WS-23).",
+      "options": [
+        "Smaller scope, pm@ builds: open the pm session and say \"WS-31: the smaller scope is confirmed; build the schedules in the meetings vault.\"",
+        "Smaller scope, vault@ builds: open the vault session and say the same to vault@",
+        "Full scope (sessions too): WS-32, the sessions each person attends, still has no owner"
+      ],
+      "recommend": "The first: pm@ already holds the meetings vault's key and runs at 17:40, so the schedules are ready before Saturday."
+    },
+    {
+      "id": 3,
+      "ask": "The 18:00 stand-up's newsroom decision, in your words, for the record",
+      "detail": "team-collaboration@web-summit.angelo writes the stand-up record from the decider's own words only. The curator put sources under every storyline \"at the 18:00 stand-up's word\" (17548bfe), but no notes or transcript of that call exist (WS-96, pending entry, still so at 08:45 UTC), so it asks me what was decided and in whose words (b6511aa7, 5 Nov 21:46). I can only pass on your words.",
+      "options": [
+        "Tell me one line here (what was decided, and who said it); I commit it For: team-collaboration@web-summit.angelo",
+        "Leave it to Angelo's notes or a transcript, if one comes"
+      ],
+      "recommend": "The first: one line closes the gap in the record."
+    }
+  ],
+  "you_asked": [
+    {"at": "5 Nov, evening", "said": "can you find the transcription from tonight's standup, should be uploaded by jose", "done": "Not found in the repository, your Drive or Gmail last night; still none this morning (WS-96's 18:00 entry: no notes, no transcript)", "where": "board/WS-96; data/meetings/2026-11-05-1800/", "status": "still missing"},
+    {"at": "5 Nov, evening", "said": "four more journalists, one per beat ... add them to agents.json, and include their reports in your brief", "done": "agents.json, inbox.md, the desks table; their reports are below", "where": "commit dde515a7", "status": "done"},
+    {"at": "5 Nov, night", "said": "reviewer@web-summit.vicky ... add it to agents.json and include its reports in your brief", "done": "On your records; its verdicts are below", "where": "commit 0d35c754", "status": "done"},
+    {"at": "5 Nov, night", "said": "check who force-updated the newsroom's dev branch, and whether any of my desks' commits were lost; don't push anything", "done": "Nothing of your desks lost; who is not established. Section below. Nothing pushed", "where": "newsroom repository, read only", "status": "done, one part open"},
+    {"at": "5 Nov, 23:30", "said": "the newsroom repository has moved to PrompTugal/PrompTugal__News__Website; update my records", "done": "On every desk in agents.json, in inbox.md and the desks README, on top of dev@web-summit.dinis's own update (promptugal.news)", "where": "commits 30efaf97, 85c83882", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "The newsroom's force-update (you asked last night)",
+      "items": [
+        "Lost commits: none from your desks. Every draft (S1, S2, S5, S6, S9, S10, S15, S18), review, logo file and curator map your agents reported is on dev, re-checked at 08:40 UTC at the new address (dev 9cac475).",
+        "History: the dev I fetched at 19:34 and at 22:46 last night is still inside today's dev; all 175 release tags point at commits on dev, with no gap in the version numbers; dev has only moved forward since.",
+        "Who: not established. GitHub's activity log names whoever force-pushed, and reading it needs the repository attached here with push rights, which I did not do. You or Dinis can open https://github.com/PrompTugal/PrompTugal__News__Website/activity?ref=dev and filter \"Force pushes\" (it may only be under the old address, from before the move).",
+        "Worth knowing: two stray branches, claude/serene-keller-r1pzfc and claude/sweet-heisenberg-m1vm71, are journalist-connections' and journalist-ai's session branches, already in dev. They may be linked to the force-update around 20:21 to 20:23 UTC, but that is a guess, not a finding."
+      ]
+    },
+    {
+      "title": "For vault@ (on demand)",
+      "items": ["Nothing waiting. vault@ last committed 5 Nov 10:09 (WS-153); nothing has been addressed to it since, and no request in people/vicky/requests/ is new. The seven new agent keys (five journalists, reviewer, designer) need no vault key sealed: the research vault's read key is public."]
+    },
+    {
+      "title": "What each agent did since yesterday's brief",
+      "table": {
+        "head": ["Agent", "When (UTC)", "What"],
+        "rows": [
+          ["researcher", "11:30, 19:30, 07:30", "4 captures into the research vault: the 800-speaker lineup; Carris's Web Summit shuttle; EY's 2.5 billion euros over ten editions; Octo Health's launch after a 2.7 million euro pre-seed"],
+          ["curator", "11:45 to 07:45", "Sources under every storyline (at the 18:00's word); S12, S13, S20, S21 and six connections storylines S14 to S19; the candidates page now has 20"],
+          ["programme", "08:15", "Agenda from 6 Nov live: 218 items, 8 more press conferences; the shortlist (10 names, 4 reserves) still only in its vault"],
+          ["pm", "17:40, 07:40", "Board health: 179 issues, 20 due today, 103 overdue; WS-31 URGENT (ask 2); a proposal for the guide's token step"],
+          ["dashboard", "to 08:00", "Stories page with sources; the Promptugal logo page; links in two groups; the new newsroom address"],
+          ["logistics", "17:10, 08:10", "Team cards only; garments now for Monday morning, waiting on Dinis's yes to the files, the printer's invoice and who collects. Nothing for you"],
+          ["journalist (the summit)", "evening", "S9, S1, S6, S5 drafted, all fixed after review; asks you one question (below)"],
+          ["journalist-portugal", "20:40", "S10, Lisbon's universities at Web Summit"],
+          ["journalist-europe", "20:40", "S2, Europe in Pavilion 4, fixed after review"],
+          ["journalist-ai", "20:55", "S15, following robotics at Web Summit"],
+          ["journalist-connections", "20:50", "S18, Tuesday 10 November, fixed after review"],
+          ["reviewer", "22:37 to 23:16", "Reviewed all eight drafts; all eight Ready (S10 and S15 first time, the rest after fixes and style edits); caught its own miss on S9"],
+          ["designer", "19:40, 20:00", "Design brief, then eight logo options and two marks; waiting for Dinis's pick of name spelling and logo"]
+        ]
+      }
+    },
+    {
+      "title": "Your issues today and tomorrow",
+      "items": [
+        "Today: WS-177 (10:00, ask 1); WS-163, your photo: your yes is recorded (onboarding.json, 5 Nov), the issue stays open for the others; WS-121, everyone runs a vault agent: yours does; WS-170 and WS-172 (the team CRM): your key is kept, used only when you ask.",
+        "Tomorrow, Sat 7 Nov: WS-31 (ask 2); WS-32, each person's sessions, no owner; WS-169, the strategy for the Web Summit app, no owner.",
+        "Overdue: WS-153 still waits for Dinis's conductor to confirm it can open the vaults you sent (reports/pm.md)."
+      ]
+    },
+    {
+      "title": "Also waiting on you, not urgent",
+      "items": [
+        "The onboarding guide's token step: pm@ proposes it say one token per agent, sealed to the agent's key (WS-170), as helper@web-summit.angelo and sgit@web-summit.dinis ask. If yes, say so in the pm session.",
+        "journalist@ asks: the curator's maps still say \"for the journalist (Indi's side)\". Are your journalists the newsroom's journalists now? Also, installing the sgit tool was refused in its session, so it works from the curator's copied sources and re-reads each at its URL.",
+        "The name: Dinis's conductor spells it PromptUGAL for now and asked Dinis to confirm (brief 23); dev@web-summit.dinis writes it PrompTugal.news. The designer keeps the logo options ready for his pick.",
+        "Your mentor's last note (5 Nov 12:41) hands over; its one reminder: your key on every device you carry before Monday (WS-166).",
+        "When you wake a newsroom desk after a restart: the curator's and the programme desk's clones had gone back to the old address overnight, and both caught it before pushing."
+      ]
+    }
+  ],
+  "next": [
+    "10:00: WS-177's deadline; drafts that land after it still count today.",
+    "12:00 stand-up.",
+    "17:40 pm@, 17:45 dashboard, 17:10 logistics; 17:50 my relay, only if something needs you before the 18:00."
+  ],
+  "sources": [
+    "people/vicky/reports/*.md (researcher, curator, programme, pm, dashboard, logistics, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer, designer), 5 Nov 08:40 to 6 Nov 08:30 UTC",
+    "Commits 14003ac6, b6511aa7, 3b5969da, 85c83882; team/conductor/notes/2026-11-05/promptugal-sprint.md",
+    "Newsroom repository PrompTugal/PrompTugal__News__Website, dev 9cac475: desks/curator/README.md, desks/journalist-vicky/drafts/, desks/reviewer-vicky/reviews/, 175 tags",
+    "board/ front matter (WS-31, WS-32, WS-121, WS-153, WS-163, WS-169, WS-170, WS-172, WS-177); board/WS-96 18:00 entry",
+    "deploy-pages runs on dev by riskmandate-vicky since 5 Nov 08:40 (8 cancelled, each live in a later release); data/keys.json (7 new keys, each by its own agent's commit); inbox lane drained: empty"
+  ]
+}

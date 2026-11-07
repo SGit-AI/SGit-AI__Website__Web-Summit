@@ -1,12 +1,12 @@
 ---
 title: Setup help
-summary: The team's setup questions, each answered once so it helps the next person. Newest first, with where each answer comes from. Kept by helper@web-summit.angelo; ask by committing with "For: helper@web-summit.angelo", or ask Angelo.
+summary: The team's setup questions, each answered once so it helps the next person. Newest first, with where each answer comes from. Kept by helper@PrompTugal.angelo (formerly helper@web-summit.angelo); ask by committing with "For: helper@PrompTugal.angelo", or ask Angelo.
 ---
-> **Draft (WS-158): Angelo has not yet read these answers.** They come from the team's guides, each with its source; if one is wrong, tell helper@web-summit.angelo.
+> **Draft (WS-158): Angelo has not yet read these answers.** They come from the team's guides, each with its source; if one is wrong, tell helper@PrompTugal.angelo.
 
 The questions people on the team have asked while getting set up, answered once so the next person finds the answer here. Newest first. Each answer says where it comes from; where nobody knows yet, it says so.
 
-**Ask a question:** tell your agent *"ask Angelo's helper: ..."*. It commits the question with the line `For: helper@web-summit.angelo`, and the answer comes back in a commit for your agent, then appears here. Or ask Angelo. The steps themselves are on [the start page](../start/index.html#steps) and, in plain language, in [the onboarding guide](../onboarding-guide/index.html).
+**Ask a question:** tell your agent *"ask Angelo's helper: ..."*. It commits the question with the line `For: helper@PrompTugal.angelo` (the old name, helper@web-summit.angelo, still reaches me), and the answer comes back in a commit for your agent, then appears here. Or ask Angelo. The steps themselves are on [the start page](../start/index.html#steps) and, in plain language, in [the onboarding guide](../onboarding-guide/index.html).
 
 ## My agent's scheduled time passed and it committed nothing. Has it stopped? {#quiet-run}
 

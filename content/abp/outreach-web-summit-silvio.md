@@ -24,7 +24,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: S
 - It writes drafts in Silvio's Gmail: whether that connection can also send is not recorded; the rule that Silvio sends is in its brief, and the drafts wait for the conductor's two lines and Dinis's yes.
 - Two agents of Silvio's draft to the same companies (its Gmail drafts and conductor@web-summit.silvio's messages.json); it asked which wins, rather than draft over the other's.
 - Write anywhere in the repository: its push access is not limited to `people/silvio/` and `board/`, the paths its person's brief gives it.
-- Push to `main` or rewrite history: `main` and `dev` are not protected (GitHub branches API, 2 November; still at 08:15 on 3 November).
+- Rewrite history on `dev`: `dev` is not protected (`main` is, since 6 November) (GitHub branches API, 2 November; still at 08:15 on 3 November).
 - Anything its session's other connectors can do: not known to this ABP.
 
 - **Proposed as an editor of the team CRM** (WS-172, cd594eb5): write access for each person's outreach agent, once it has a session key; not yet in place.
@@ -35,7 +35,7 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: S
 |---|---|---|
 | Never send; a person sends every message | rule, kept by the agent | Silvio Switha's brief, part two |
 | Writes only `people/silvio/`, the board and the agenda | rule, kept by the agent | the brief; git has no per-path write control |
-| Never push to main, never force-push, never disable a check | rule, kept by the agent | CLAUDE.md; `main` and `dev` are not protected |
+| Never push to main, never force-push, never disable a check | rule, kept by the agent; for `main`, technical since 6 November | CLAUDE.md; `main` and `dev` were not protected before. **Since 6 November (GitHub branches API at 04:15 UTC), `main` is protected (`protected: true`; the rule's details not read): for `main` this is now a technical barrier. `dev` is still unprotected, and 17 `claude/*` session branches exist; WS-179 (proposed at Angelo's word, 6 November) would have every session push only to `dev`, delete them, and refuse new ones.** |
 | The gate (validate.js) before every deploy | technical, in CI | deploy-pages.yml; it stops a red build deploying, not the push |
 | No contact detail or key shape in public folders | technical | comms_check.mjs, gate check 15 (scans `people/` and `board/`) |
 | security@web-summit.dinis reviews every commit twice a day | review, after the fact | team/security/reviews/ |
@@ -58,3 +58,5 @@ Open questions: its connectors; who reviews its output each day; whether Silvio 
 ## Provenance {#provenance}
 
 Owner: Silvio Switha. Drafted by abp@web-summit.dinis from the repository; Silvio Switha and the agent correct it. Version 2, 5 November 2026 (16:10 wake: CRM editor proposed), in `content/abp/` with its history in git.
+
+**Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

@@ -138,3 +138,38 @@ Five of the 16 wait on Dinis alone, and nine more include him. A one-line answer
 - **The 12:00's nine follow-ups** stay as written above until someone reports progress.
 - **A lead (21:45):** curator@web-summit.vicky put sources under every storyline on the candidates page "at the 18:00 stand-up's word" (17548bfe, WS-14). So the 18:00 decided something about the newsroom, but no words are recorded. Asked of conductor@web-summit.vicky.
 - **What would close this:** Angelo's or anyone's notes of the call, passed to conductor@web-summit.angelo or committed (as on 4 and 5 November), or Dinis's transcript.
+
+### 6 November, 12:00 (written 13:20 UTC, from Angelo's notes)
+
+**Present:** Angelo, Dinis, Indi. **Source:** Angelo's notes, routed by conductor@web-summit.angelo (d7e29b42), each quoted in its issue. No transcript (none in Angelo's Drive).
+
+**Directions, in Angelo's notes' words** (not answers to agenda items, so no item is closed):
+
+- "we need to find people to operate a backoffice, they need to support operations from outside the summit" (WS-180)
+- "we should have a way to coordinate the team and our logistics using the page Angelo has been putting together in the command center, we need to know where everybody is, and coordination"; "the above should be done in 2 vaults, one public, one private" (WS-181)
+- "on the promptugal news we should have enough data to support participants with the summit logistics" (WS-182)
+- "we should be able to beat the other agencies reporting on the web summit with our newsroom, and we can leverage what other agencies publish" (WS-183)
+- "we should enable a lot more models through OpenRouter" (WS-115)
+
+**Not decided (carried):** parking the late, unowned issues (project-manager@web-summit.dinis has the list ready: 45 to park, 21 kept, d3742cc1); Silvio's PromptUGAL push access (WS-177, per mentor@web-summit.dinis 1d0601fe); the ranked five (WS-48, WS-26, WS-09, WS-107, WS-125).
+
+**Follow-ups (owner; due):**
+
+| What | Owner | Due | Issue |
+|---|---|---|---|
+| Who runs a back office from outside the summit | Dinis | before Mon 9 Nov | WS-180 |
+| A design for team coordination and logistics in the command centre (two vaults; no location in the repository or a public vault; security review before real locations) | dev@web-summit.angelo with vault@web-summit.angelo; Angelo's go before building | design first | WS-181 |
+| PrompTugal.news with the summit's logistics for participants | the newsroom, with logistics@web-summit.vicky's facts | before Mon 9 Nov | WS-182 |
+| PrompTugal.news ahead of the other agencies, citing them, never copying | the newsroom | during the summit | WS-183 |
+| More models through OpenRouter: which, for whom, keys and budgets | Dinis (keys and money) | not given | WS-115 |
+| Park the late, unowned issues: yes or no | Vicky and Dinis | the 18:00 | WS-46 |
+
+### 6 November, 18:00 (pending: checked 19:20 UTC)
+
+- **Not yet written.** By 19:20 UTC no decision from the call was recorded in `data/meetings/`. No notes were routed by a conductor, and there is no Meet transcript in Angelo's Drive. Every open item carries over to Saturday.
+- **Still open from today:** the garment files (Dinis's yes, or Monday's collection slips, WS-48), parking the late, unowned issues (the list is ready), the outreach claim (WS-26), WS-177, and the rest of the ranked list.
+- **What would close this:** notes from whoever took them, routed by any conductor (as on 5 and 6 November).
+
+### Recorded since the last debrief (7 November, 03:50 UTC)
+
+- **WS-48, the merch on Monday 9 November: who collects it, and how** (on the 5 November 18:00 agenda, for Dinis, Silvio and Vicky). Recorded as decided by Silvio, 01:11 UTC, in his words: "I already said I go on Monday with Dinis; we go to Web Summit together, so we go straight to pick it up, if everything is done." Follow-up: Silvio and Dinis collect on Monday on the way to Lisbon, if the order is ready. The garment files (Dinis's yes, from the 6 November 18:00) are still open.

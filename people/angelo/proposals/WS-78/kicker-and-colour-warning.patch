@@ -1,0 +1,93 @@
+diff --git a/admin/build/build.mjs b/admin/build/build.mjs
+index 66609df5..0c67e2bf 100644
+--- a/admin/build/build.mjs
++++ b/admin/build/build.mjs
+@@ -22,6 +22,8 @@ import { highlights, highlightsHtml, highlightsMd, withHighlights } from './high
+ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
+ const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
+ const VERSION = fs.readFileSync(path.join(ROOT, 'admin/build/version.txt'), 'utf8').trim()
++// WS-78 (proposed by dev@web-summit.angelo): each page's source file, for its kicker; pages built from data say so
++const SRC = new Map()
+ const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
+ // navigation: a few sections on top, each with its own sub-menu; every page gets breadcrumbs back to its parent
+ const SECTIONS = [
+@@ -201,6 +203,8 @@ function page({ rel, title, description, body, meta = '', mdTwin = '', lead = ''
+     body = String(body).replaceAll('href="@@/', `href="${up}`)   // links from build-time blocks (the agenda) written from the site root
+     const side = home || wide ? '' : rail(rel, up, body)   // wide: a cockpit (people/<id>/dashboard.md, layout: cockpit) uses the whole screen
+     const heroed = home && body.includes('class="hm-hero"')   // the home page's hero band (WS-103) is its title
++    // the kicker (WS-78): the page's section, and the file it is written in, or the build when it is made from data
++    const src = SRC.get(rel), kicker = `<p class="kicker">${esc(home ? 'Home' : sectionOf(rel)?.t || 'Site')} · ${src ? `written in <a href="${REPO}/blob/dev/${src}">${esc(src)}</a>` : `built from the repository by <a href="${REPO}/blob/dev/admin/build/build.mjs">admin/build/build.mjs</a>`}</p>`
+     const url = `https://${HOST}/${rel}`
+     const agent = `For an agent: this page is ${url}${mdTwin ? ` (markdown: https://${HOST}/${mdTwin})` : ''}. Site index for agents: https://${HOST}/llms.txt. Source: ${REPO} (release branch dev). Identity of the agent that runs this site: https://${HOST}/agent/index.html.`
+     return `<!doctype html>
+@@ -236,7 +240,7 @@ ${home || wide ? '' : (() => {
+     const bar = who && who.kind === 'human' ? `<p class="personbar">${castIcon(who.id, 'icon')}<b>${esc(who.name)}</b>${[['Profile', `team/${who.id}/index.html`], ['Brief', `brief-${who.id}/index.html`], ['Dashboard', `people/${who.id}/index.html`], who.core ? ['Meet page', `meet/${who.id}/index.html`] : null].filter(Boolean).filter(([, h]) => fs.existsSync(path.join(ROOT, h)) || h.startsWith('brief-') || h.startsWith('people/') || h.startsWith('meet/') || h.startsWith('team/')).map(([t, h]) => rel === h ? `<span aria-current="page">${t}</span>` : `<a href="${up}${h}">${t}</a>`).join('')}</p>` : ''
+     return `<nav class="crumbs" aria-label="Breadcrumbs">${c.join('<span>›</span>')}<span>›</span><span aria-current="page">${esc(title)}</span></nav>${bar}`
+ })()}
+-${heroed || wide ? '' : `<h1>${inline(title)}</h1>
++${heroed || wide ? '' : `${kicker}<h1>${inline(title)}</h1>
+ ${lead ? `<p class="lead">${inline(lead)}</p>` : ''}
+ ${home ? `<p class="countdown" data-countdown="2026-11-09">Web Summit Lisbon: 9 to 12 November 2026</p><script src="assets/countdown.js" defer></script>` : ''}`}
+ ${meta}
+@@ -278,6 +282,7 @@ for (const f of fs.readdirSync(adir).filter(f => f.endsWith('.md')).sort()) {
+     const raw = fs.readFileSync(path.join(adir, f), 'utf8')
+     const { meta, body } = parse(raw)
+     const s = f.replace(/\.md$/, ''), rel = `articles/${s}.html`
++    SRC.set(rel, `content/articles/${f}`)
+     const sig = fs.existsSync(path.join(ROOT, `articles/${s}.md.sig`))
+     const m = `<p class="meta">${esc(meta.date)} · by ${esc(meta.author)}${sig ? ` · signed: <a href="${s}.md.sig">${s}.md.sig</a>` : ''} · <a href="${s}.md">markdown</a></p>`
+     write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), meta: m, mdTwin: `articles/${s}.md` }))
+@@ -496,6 +501,7 @@ for (const dir of fs.readdirSync(path.join(ROOT, 'content'), { withFileTypes: tr
+     const items = fs.readdirSync(path.join(ROOT, 'content', dir)).filter(f => f.endsWith('.md')).sort().reverse().map(f => {
+         const { meta, body: rawBody } = parse(fs.readFileSync(path.join(ROOT, 'content', dir, f), 'utf8'))
+         const slug = f.replace(/\.md$/, ''), rel = `${dir}/${slug}/index.html`, title = meta.title || slug, body = expandIssues(rawBody, '../../')
++        SRC.set(rel, `content/${dir}/${f}`)
+         write(rel, page({ rel, title, description: meta.summary || title, body: render(body).replace(/href="\.\.\/(?!\.\.)/g, 'href="../../'), mdTwin: twinPath(rel) }))
+         pages.push({ rel, title, description: meta.summary || title })
+         twin(rel, title, meta.summary || title, body)
+@@ -584,6 +590,7 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
+     const raw = fs.readFileSync(path.join(ROOT, 'content', f), 'utf8')
+     const { meta, body: rawBody } = parse(raw)
+     const name = f.replace(/\.md$/, ''), body = expandIssues(rawBody, name === 'index' ? '' : '../'), rel = meta.path || (name === 'index' ? 'index.html' : `${name}/index.html`)
++    SRC.set(rel, `content/${f}`)
+     let html = render(body), md = body
+     if (name === 'index') ({ html, md } = expandHome(html, md, homeBlocks({ ROOT, teamData, onboard, LEVELS, INV, MEET, ISSUES, plan, castData, merch })))
+     if (name === 'print') ({ html, md } = expandSignoff(html, md, ROOT))
+diff --git a/admin/build/validate.js b/admin/build/validate.js
+index 0724e21c..5c3a90d1 100644
+--- a/admin/build/validate.js
++++ b/admin/build/validate.js
+@@ -270,5 +270,19 @@ try {
+ } catch (e) { warnings.push(`briefs: ${e.message}`) }
+ if (warnings.length) console.log(warnings.map(w => 'WARN ' + w).join('\n'))
+ 
++// 21. the kicker (WS-78, proposed by dev@web-summit.angelo): every page with a title says its section and its source
++for (const f of htmlFiles) { const h = read(rel(f)); if (/<h1>/.test(h) && !h.includes('class="hm-hero"') && !/<p class="kicker">/.test(h)) errors.push(`${rel(f)}: a title with no kicker (its section and source file)`) }
++// 22. colour through tokens beyond site.css (WS-78): a warning for now, counted per stylesheet, so the debt is visible; it
++// becomes a failure once each stylesheet marks its own tokens block (/* tokens:start */ ... /* tokens:end */)
++{
++    const warn = []
++    for (const f of files.filter(f => f.endsWith('.css') && !rel(f).endsWith('assets/site.css') && !/(^|\/)(vendor|node_modules)\//.test(rel(f)))) {
++        const out = read(rel(f)).replace(/\/\* tokens:start \*\/[\s\S]*?\/\* tokens:end \*\//g, '').replace(/\/\*[\s\S]*?\*\//g, '')
++        const n = (out.match(/#[0-9a-fA-F]{3,8}\b|\brgba?\(|\bhsla?\(/g) || []).length
++        if (n) warn.push(`${rel(f)} ${n}`)
++    }
++    if (warn.length) console.warn(`WARN colour outside a tokens block (WS-78): ${warn.join(', ')}`)
++}
++
+ if (errors.length) { console.error(errors.map(e => 'FAIL ' + e).join('\n')); process.exit(1) }
+ console.log(`OK ${VERSION}: ${htmlFiles.length} pages`)
+diff --git a/assets/site.css b/assets/site.css
+index 19ee3d3b..24548db5 100644
+--- a/assets/site.css
++++ b/assets/site.css
+@@ -222,6 +222,9 @@ nav.subnav { border-bottom: 1px solid var(--line); background: var(--nav-bg); }
+ nav.subnav .row { max-width: var(--wide); margin: 0 auto; display: flex; flex-wrap: wrap; gap: 0.1rem 1rem; padding: 0.35rem var(--gutter); font-size: 0.92rem; }
+ nav.subnav a { color: var(--ink-2); text-decoration: none; padding: 0.15rem 0; }
+ nav.subnav a[aria-current="page"], nav.subnav a:hover { color: var(--ink); border-bottom: 2px solid var(--accent); }
++/* the kicker (WS-78): a page's section and the file it is written in, above its title */
++.kicker { font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-2); margin: 0.4rem 0 0.2rem; }
++.kicker a { color: var(--ink-2); text-transform: none; letter-spacing: 0; }
+ nav.crumbs { font-size: 0.88rem; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.2rem 0 0.6rem; }
+ nav.crumbs a { color: var(--ink-2); }
+ p.personbar { display: flex; flex-wrap: wrap; gap: 0.3rem 0.9rem; align-items: baseline; padding: 0.5rem 0.8rem; border: 1px solid var(--line); border-radius: 10px; font-size: 0.95rem; }

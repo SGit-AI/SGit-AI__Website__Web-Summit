@@ -1,50 +1,68 @@
 [
   {
-    "name": "conductor@web-summit.angelo",
+    "name": "desk.conductor@PrompTugal.angelo",
     "job": "the hub for Angelo's agents: sends them work and takes their reports in commits, keeps people/angelo/, and brings Angelo what only he can decide (the protocol in people/angelo/kit/README.md)",
-    "session": "Claude Code cloud session in Angelo's account",
-    "schedule": "hourly, round the clock (cron 20 * * * *), a scheduled task into its own session; digests to Angelo at about 08:00, 11:20 and 17:20 UTC (before each stand-up) (Angelo, 4 November)"
+    "session": "the desk: one long Claude Code cloud session in Angelo's account, the one Angelo talks to; it holds the conductor's keys",
+    "schedule": "no scheduled wakes: the digest when Angelo asks (Angelo, 6 November); the hourly routing is the runner's (runner.conductor@PrompTugal.angelo)"
   },
   {
-    "name": "dev@web-summit.angelo",
+    "name": "runner.conductor@PrompTugal.angelo",
+    "job": "the conductor's hourly runner: routing, upkeep and people/angelo/conductor/STATE.md, with no key (people/angelo/conductor/RUNNER.md); it commits as desk.conductor@PrompTugal.angelo, so its commits count under the conductor; urgent items to Angelo's phone",
+    "session": "a fresh Claude Code cloud session for every run, started by a scheduled task in Angelo's account (each run listed in people/angelo/conductor/runs.md)",
+    "schedule": "hourly, round the clock (cron 20 * * * *), a new session each run (Angelo, 6 November)"
+  },
+  {
+    "name": "dev@PrompTugal.angelo",
     "job": "the site's build, gate, pipeline and pages",
     "session": "Claude Code cloud session in Angelo's account",
     "schedule": "every two hours, round the clock (cron 35 */2 * * * UTC), a scheduled task into its own session, set on 4 November after Angelo confirmed the protocol in its session"
   },
   {
-    "name": "team-collaboration@web-summit.angelo",
+    "name": "team-collaboration@PrompTugal.angelo",
     "job": "the team's collaboration: the stand-up calendar, a brief, a debrief and follow-ups for every meeting, the map of who works with whom (people and agents), and a daily note on bottlenecks",
     "schedule": "07:40, 11:40, 17:40 UTC (cron 40 7,11,17 * * *); debriefs 13:15, 19:15 UTC (cron 15 13,19 * * *), from 5 November (the midday stand-up at 12:00); inbox 00:45, 03:45, 06:45, 09:45, 15:45, 21:45 UTC (cron 45 0,3,6,9,15,21 * * *), round the clock, under the protocol (kit #protocol)",
     "session": "Claude Code cloud session in Angelo's account"
   },
   {
-    "name": "dashboard@web-summit.angelo",
+    "name": "dashboard@PrompTugal.angelo",
     "job": "keeps Angelo's command centre (his first view) and the classic dashboard, and asks Angelo one question a run",
     "schedule": "every three hours, round the clock (cron 30 */3 * * *, 00:30 to 21:30 UTC), Angelo's choice, 4 November",
     "session": "Claude Code cloud session in Angelo's account"
   },
   {
-    "name": "vault@web-summit.angelo",
+    "name": "vault@PrompTugal.angelo",
     "job": "creates and manages Angelo's SGit vaults, audits each before its read key is published, and corrects the vault guide from its runs (WS-120)",
     "schedule": "09:50 and 21:50 UTC (cron 50 9,21 * * *), set by the agent on 4 November",
     "session": "Claude Code cloud session in Angelo's account"
   },
   {
-    "name": "helper@web-summit.angelo",
+    "name": "helper@PrompTugal.angelo",
     "job": "answers setup questions from anyone on the team, keeps the help page (/help/), and proposes fixes to the guides' owners",
-    "schedule": "every two hours at :50, round the clock (cron 50 */2 * * *), set by the agent on 5 November",
+    "schedule": "twice a day, before each stand-up (cron 50 10,16 * * * UTC), at Angelo's word of 6 November (it was every two hours)",
     "session": "Claude Code cloud session in Angelo's account"
   },
   {
-    "name": "crm@web-summit.angelo",
+    "name": "crm@PrompTugal.angelo",
     "job": "keeps Angelo's side of the team CRM true (WS-170, WS-172): public facts with sources in the public CRM; his actions and requests in the private one, sealed to their readers; never contacts anyone",
     "schedule": "08:50 and 16:50 UTC (cron 50 8,16 * * *), a scheduled task into its own session, set by the agent on 5 November at Angelo's word",
     "session": "Claude Code cloud session in Angelo's account (starting 5 November, at Dinis's ask)"
   },
   {
-    "name": "policy@web-summit.angelo",
+    "name": "policy@PrompTugal.angelo",
     "job": "audits Angelo's agents (the conductor included) against their ABPs and Angelo's protocol: the policy map with each rule's enforcement, violations, and proposals to raise rules to technical barriers; reports straight to Angelo; read-only except people/angelo/policy/",
     "schedule": "proposed: daily at 07:10 UTC, and after any incident it finds",
     "session": "Claude Code cloud session in Angelo's account (starting 5 November)"
+  },
+  {
+    "name": "writer@PrompTugal.angelo",
+    "job": "Angelo's writer for PrompTugal.news: articles, guides and technical notes with him, drafts in the newsroom's desks/writer-angelo/, published and signed by journalist@PrompTugal.dinis; his agent for writing an article live at the summit",
+    "session": "a Claude Code cloud session per piece, started by Angelo (people/angelo/prompts/writer.md)",
+    "schedule": "none: works when Angelo asks"
+  },
+  {
+    "name": "runner.writer@PrompTugal.angelo",
+    "job": "follows Angelo's pieces through the newsroom's pipeline and keeps people/angelo/writer/STATE.md; no key, never writes the newsroom; urgent items to Angelo's phone",
+    "session": "a fresh Claude Code cloud session for every run, started by a scheduled task Angelo creates (people/angelo/prompts/runner.writer.md)",
+    "schedule": "every two hours at :05 (cron 5 */2 * * * UTC), a new session each run"
   }
 ]

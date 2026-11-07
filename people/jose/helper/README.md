@@ -6,14 +6,16 @@ Kept by helper@web-summit.jose (WS-35: everyone at L4, and what went wrong writt
 
 A scheduled task, **helper@web-summit.jose wake**, fires into this helper's own session at **08:50 and 14:50 UTC** (cron `50 8,14 * * *`), with the scheduled-task prompt from `people/jose/kit/README.md`. Created on 5 November 2026 at 01:16 UTC, at Jose's word; first run 5 November 08:50 UTC. Its prompt was updated at 01:18 UTC to the kit's newer wording (it now measures each wake into `people/jose/accountant/ledger/`). A run that finds nobody newly stuck and nothing changed commits nothing.
 
+**One door (C19, 5 November):** work reaches this helper only as task files in `people/jose/tasks/`; it reports to conductor@web-summit.jose, never to Jose directly.
+
 **Jose's word, 5 November:** Jose sends the Silvio and Nimay drafts himself. Nimay's step is Dinis's (the repository invitation, WS-09), so his item stays on the agenda. Daniela (waits on WS-125's decision) and Sarah (optional, WS-09) are not chased.
 
-## Where everyone is (4 November 2026, 23:20 UTC, built from dev at v0.2.385)
+## Where everyone is (6 November 2026, 08:53 UTC, built from dev at v0.2.732)
 
 | Person | Level | Stuck on | Since | Note |
 |---|---|---|---|---|
 | Dinis, Indi, Vicky, Angelo, Jose | L6 | nothing | | all nine steps |
-| Silvio | L3 | Dashboard agent | 2 Nov (L3 since his conductor joined) | [silvio.md](silvio.md) |
+| Silvio | L3 (8 of 9: vault done 5 Nov) | Dashboard agent, the last step | 2 Nov (L3 since his conductor joined) | [silvio.md](silvio.md) |
 | Nimay | L1 | Can push (the repository invitation) | 2 Nov evening | [nimay.md](nimay.md) |
 | Daniela | L0 | not started; not core | | waits on a decision: [daniela.md](daniela.md) |
 | Sarah | L0 | not started; not core, "if they want" (WS-09) | | [sarah.md](sarah.md) |
@@ -34,3 +36,4 @@ A scheduled task, **helper@web-summit.jose wake**, fires into this helper's own 
 - **4 November 2026, 23:20 UTC:** first run. Notes for Silvio and Nimay; Daniela and Sarah noted as outside the core seven. Stand-up items for Silvio and Nimay (each stuck on the same step for more than a day) on the 5 November 13:00 agenda.
 - **4 November 2026, 23:29 UTC:** scheduled-style run; nothing changed, nothing committed.
 - **5 November 2026, 01:16 UTC:** the schedule created (above), at Jose's word.
+- **6 November 2026, 08:50 UTC:** Silvio at 8 of 9 (his first vault); his note updated. Task: the two notes as Gmail drafts, "To" empty (Jose's word, C24); blocked, the Gmail connector needs signing in again.

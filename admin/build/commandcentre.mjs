@@ -52,13 +52,16 @@ export function build(root, person, now = new Date()) {
         const areas = [...new Set(named.map(m => m.area || 'other'))]
         config.workstreams = areas.map(a => ({ id: a, name: (AREA[a] || [a])[0], colour: (AREA[a] || [, 'slate'])[1], agent: '', issues: named.filter(m => (m.area || 'other') === a).map(m => m.id), with: '', goal: `The issues on the board in the area "${a}" named for you (grouped by the build; your agents can set workstreams in people/${person}/app/config.json).` }))
     }
+    // a person's own "done" for team-wide issues (people/<id>/app/config.json "done_for_me": {"WS-NN": "why"}): the issue stays
+    // open for the team on the board, and shows as done in this person's command centre only (Silvio, 7 November)
+    const doneForMe = config.done_for_me || {}
     const streamOf = id => (config.workstreams.find(w => w.issues.includes(id)) || {}).id || null
     const issues = fs.readdirSync(path.join(root, 'board')).filter(f => /^WS-\d+.*\.md$/.test(f)).map(f => {
         const { meta, body } = frontMatter(fs.readFileSync(path.join(root, 'board', f), 'utf8'))
         const forList = (meta.for || '').split(/,\s*/).map(s => s.trim()).filter(Boolean)
         return {
             id: meta.id, title: meta.title, area: meta.area || '', for: forList, due: meta.due || '', due_at: dueAt(meta.due),
-            recurring: /daily|every/i.test(meta.due || ''), status: (meta.status || 'open').toLowerCase(), picked_by: meta.picked_by || '',
+            recurring: /daily|every/i.test(meta.due || ''), status: (doneForMe[meta.id] ? 'done' : (meta.status || 'open').toLowerCase()), picked_by: meta.picked_by || '', done_for_me: doneForMe[meta.id] || '',
             agents: (meta.agents || '').replace(/\.$/, ''), body: body.slice(0, 1500), file: `board/${f}`,
             // named: the issue names the person; team: it is for everyone
             mine: forList.includes(person) || forList.includes('everyone'), named: forList.includes(person), stream: streamOf(meta.id) || (forList.includes('everyone') ? 'team' : null),

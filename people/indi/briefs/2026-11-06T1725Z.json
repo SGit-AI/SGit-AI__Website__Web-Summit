@@ -1,0 +1,64 @@
+{
+  "number": 14,
+  "date": "6 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Evening: your key works; three small things before the weekend",
+  "when": "6 November 2026, 17:25 UTC (scheduled wake; since brief 13, 12:25 UTC)",
+  "by": "conductor@web-summit.indi",
+  "headline": "Your key works: Dinis's conductor confirmed it at 14:27. This afternoon you joined PromptUGAL, picked your profile words and asked Dinis about your title. Angelo has asked your accountant helper for help, and your helpers have not run the readers test yet. Nothing is decided here.",
+  "stats": [
+    {"n": "4 of 7", "label": "of the team with a site key working, you included (WS-136)"},
+    {"n": "165", "label": "characters in the shortest About-me version (limit 225)"},
+    {"n": "0", "label": "commits from your helpers since 14:00"},
+    {"n": "1", "label": "request from Angelo to your accountant helper"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Choose your About-me words and paste them into your Web Summit profile",
+      "detail": "An invented executive reviewed the words this afternoon. Her pick names your job: 'Brand and partnerships at RiskMandate. Can your AI agents reach more than anyone authorised? We record that gap. If you run agents, let's meet at Web Summit on Thursday 12 Nov.' The version without your job is 165 characters and starts at the question.",
+      "options": ["with my job named", "without my job named", "something else"],
+      "recommend": "With the job named, once Dinis says yes to your title. Until then, the version without it."
+    },
+    {
+      "id": "2",
+      "ask": "Say yes or no to Angelo's request to your accountant helper",
+      "detail": "Angelo asked your accountant helper for a daily view of how hard each of his scheduled helpers works, with advice on each (c7de373). Your helpers only take instructions from you, so it waits for your word.",
+      "options": ["yes, help Angelo", "no, my helpers only", "later"],
+      "recommend": "Yes: it is small, it helps the team, and your accountant already measures this for you."
+    },
+    {
+      "id": "3",
+      "ask": "Run the readers test on PromptUGAL",
+      "detail": "You allowed promptugal.news this morning. The test has not run. Paste the prompt in people/indi/promptugal/readers-prompt.md into your synthetic helper's chat. It tells Dinis how the site reads before the emails go out.",
+      "options": ["paste it now", "Monday", "skip"],
+      "recommend": "Paste it now: five minutes, and it runs on its own."
+    }
+  ],
+  "you_asked": [
+    {"at": "6 Nov, afternoon", "said": "Can you draft a message to Dinis?", "done": "Drafted: joining PromptUGAL, your GitHub name, your title (Head of Brand and Partnerships) and the board page. You sent your own version.", "where": "this chat", "status": "waiting"},
+    {"at": "6 Nov, afternoon", "said": "Use a synthetic user ... to review this blurb", "done": "Reviewed by an invented COO. Four versions with exact character counts.", "where": "this chat", "status": "done"},
+    {"at": "6 Nov, about 14:30 UTC", "said": "3. join 4 done 5 picking them up today 7 not done yet", "done": "Recorded on WS-141 and WS-155. Your to-do list shows each.", "where": "board, people/indi/todo/", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "1. What changed since brief 13",
+      "items": [
+        "Dinis's conductor confirmed your key works (03658207).",
+        "Dinis set a rule for messages (WS-184): every private conversation, even one sent as PromptUGAL, goes in the team's private CRM, and only public things go to PromptUGAL. The page is /comms-protocol/ on the team site.",
+        "Angelo's helpers are renamed under PromptUGAL, as Vicky's were this morning (90299d0). Your invitation has not shown up in the record yet.",
+        "The picture pages (WS-171) are still not built."
+      ]
+    }
+  ],
+  "next": [
+    "Tomorrow 07:20: my next wake (I wake at 07:20, 12:20 and 17:20 every day).",
+    "When Dinis answers on your title, I record it in your profile.",
+    "Tell me 'acknowledge' when you have read briefs 1 to 14."
+  ],
+  "sources": [
+    "git log since 14:00 UTC on 6 November: 03658207, f07a58cb, c7de3717, 90299d08",
+    "board/WS-136, WS-141, WS-184",
+    "this chat: the blurb review and the draft to Dinis"
+  ]
+}

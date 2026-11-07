@@ -68,6 +68,8 @@
       "label": "dev@web-summit.angelo (Claude Code session)",
       "role": "Angelo's dev agent (dev@web-summit.angelo): the site's build, gate, pipeline and pages. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 2 November 2026 and pushed to this repository from Angelo's account; the push, and the account on the commit, are its authorisation (the push is the authorisation). It is not linked to the operator's key, and nothing depends on it.",
+      "renamed_to": "dev@PrompTugal.angelo",
+      "renamed": "6 November 2026, at Angelo's word (\"keep the keys\", relayed in desk.conductor@PrompTugal.angelo's fd819c3c): the same key and id, the agent's new name; it signs as dev@PrompTugal.angelo from then on.",
       "added": "2026-11-02",
       "bundle": {
         "v": 1,
@@ -81,7 +83,7 @@
     {
       "id": "dashboard-vicky",
       "label": "dashboard@web-summit.vicky (Claude Code session)",
-      "role": "Vicky's dashboard agent (dashboard@web-summit.vicky): keeps people/vicky/dashboard.md, the part of Vicky's dashboard below the built top. A session key: it ends with its session.",
+      "role": "Vicky's dashboard agent (dashboard@web-summit.vicky): keeps people/vicky/dashboard.md, the part of Vicky's dashboard below the built top. A session key: it ended with its session on 6 November 2026; superseded, sign or seal nothing to it.",
       "how": "Made by the agent in its own session on 2 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository from Vicky's account; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); the operator has not confirmed it, and nothing depends on it.",
       "added": "2026-11-02",
       "bundle": {
@@ -91,6 +93,23 @@
         "label": "dashboard@web-summit.vicky (Claude Code session)",
         "fingerprint": "sha256:28c07de37ed3b94d",
         "signing_fingerprint": "sha256:4e03f48e1a9da37c"
+      },
+      "status": "superseded: replaced by a new session on 6 November 2026 at Vicky's word (scout's P17), about 19:00 UTC; the new session makes and publishes its own key"
+    },
+    {
+      "id": "dashboard-vicky-2",
+      "label": "dashboard@web-summit.vicky (Claude Code session, 6 November 2026)",
+      "role": "Vicky's dashboard agent (dashboard@web-summit.vicky), the new session that took over on 6 November 2026 at Vicky's word (scout's P17). It replaces the entry dashboard-vicky (sha256:28c07de37ed3b94d), which is superseded. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository from Vicky's account; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); the operator has not confirmed it, and nothing depends on it.",
+      "added": "2026-11-06",
+      "replaces": "dashboard-vicky",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwX4QiCw9k81flOHV7/+R\n1HgvO/B0Ty47jgIavuiog38o4mOmIFTa+03vk9PIQbhb2ZKR2y63S0qyTvS6TPOB\nD+z7ZefmNvVVVLk5GaMjr2sdNslTucJjG/0FqRENT0KX78rGRIKv+SIKVIVk7hRO\nnVD+j5ihner0HvyD/XVEG4hhVYXC0dNT2iyg3jSHYsjdf7opTBj6Dmpf2SlWM5bL\nBBWjpONhyIrWYA0GmEa2Z8nJvouMw4hn0O59MaVzGM8AR55TWMUVItrHoAysZxI/\n/xXgNI0+VW2/bYQlsR71n8+aFy2pnYkSav+l0FlHBSufCem1z+Kx+F5KPATEX/xt\ngw48+fnuBHUflYJayoGziSNFpFHUqKVfEv2xS4GyVuxY420/2ygpTklDd6PNexKJ\n8wgQ3nK9ZGJdzKzRtaVy2WwU6UxFWOShSIbouAU2dzKqEv8YerXl4a5VmMxsvxtG\nVc/MGCotisJGYoZ1aUZMqD/esbRptIMm8nJLzoX8Yek+OEEAUZtH+uflOxBC+wEZ\nBxvUXsjpKRFtMpUkD4xuqO3zuB52bYooMgmOspofYiwb2Ab49Zl5rI9bIBE7VS60\nIsXylHd4GaAGPVSnPN2xv/Tfnu1+Ef/gtFs+LplgdQU1CON98JZmuEyh9g83tHtF\nN79TKW0NIjd9APcr9B2sup8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYKPscBrHb6+xhqpMyTetZxlq2/1z\n7rVu4yh/xh4dDHMSok6+rB+mazSOoKfghagytigucpoYlUEotcEnbvL+bg==\n-----END PUBLIC KEY-----\n",
+        "label": "dashboard@web-summit.vicky (Claude Code session)",
+        "fingerprint": "sha256:f8b55e84eb929fca",
+        "signing_fingerprint": "sha256:43dc954426dcc0f1"
       }
     },
     {
@@ -262,7 +281,7 @@
       "id": "dashboard-angelo",
       "label": "dashboard@web-summit.angelo (Claude Code session)",
       "role": "Angelo's dashboard agent (dashboard@web-summit.angelo): keeps Angelo's two views, the part of the classic dashboard below the built block (people/angelo/dashboard.md) and the command centre's settings (people/angelo/app/config.json). A session key: it ends with its session.",
-      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Angelo's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it.",
+      "how": "Made by the agent in its own session on 3 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Angelo's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it. Renamed to dashboard@PrompTugal.angelo on 6 November 2026 at Angelo's word (his agents' new names); the same key, kept at his word.",
       "added": "2026-11-03",
       "bundle": {
         "v": 1,
@@ -271,13 +290,14 @@
         "label": "dashboard@web-summit.angelo (Claude Code session)",
         "fingerprint": "sha256:0a31f8d2ef54b5e4",
         "signing_fingerprint": "sha256:c525afa927190f36"
-      }
+      },
+      "renamed_to": "dashboard@PrompTugal.angelo"
     },
     {
       "id": "team-collaboration-angelo",
       "label": "team-collaboration@web-summit.angelo (Claude Code session)",
       "role": "Angelo's team-collaboration agent (team-collaboration@web-summit.angelo): keeps the stand-up calendar, a brief, a debrief and follow-ups for every meeting (WS-96), and the collaboration map with a daily note on bottlenecks (WS-97). A session key: it ends with its session.",
-      "how": "Made by the agent in its own session on 2 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session from Angelo's account on 3 November; the push is the authorisation (Angelo, 2 November). Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it.",
+      "how": "Made by the agent in its own session on 2 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session from Angelo's account on 3 November; the push is the authorisation (Angelo, 2 November). Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai, and nothing depends on it. Renamed on 6 November 2026 to team-collaboration@PrompTugal.angelo (Angelo's naming standard, 90299d08); the same key, at Angelo's word (\"keep the keys\", fd819c3c).",
       "added": "2026-11-03",
       "bundle": {
         "v": 1,
@@ -286,7 +306,8 @@
         "label": "team-collaboration@web-summit.angelo (Claude Code session)",
         "fingerprint": "sha256:d802c378d28e8c5a",
         "signing_fingerprint": "sha256:c1cb85a164aa1852"
-      }
+      },
+      "renamed_to": "team-collaboration@PrompTugal.angelo"
     },
     {
       "id": "conductor-angelo",
@@ -346,7 +367,9 @@
         "label": "dev@web-summit.vicky",
         "fingerprint": "sha256:61aabdc969722597",
         "signing_fingerprint": "sha256:f2e8670f17344568"
-      }
+      },
+      "status": "retired: 6 November 2026, 19:01 UTC, at Vicky's word; its session no longer runs. Replaced by dev@PrompTugal.vicky, whose key is dev-vicky-promptugal in the newsroom's board/keys.json (https://promptugal.news/board/keys.json)",
+      "replaced_by": "dev-vicky-promptugal"
     },
     {
       "id": "logistics-vicky",
@@ -608,6 +631,23 @@
         "label": "curator@web-summit.vicky",
         "fingerprint": "sha256:8c0828de5f96176b",
         "signing_fingerprint": "sha256:6abb02a8e470be6a"
+      },
+      "status": "superseded: replaced by a new session on 6 November 2026 at Vicky's word (scout's P17), 20:19 UTC; it signed nothing on this site. Its newsroom entry, curator-vicky-promptugal, is marked superseded too; the new session makes and publishes its own key"
+    },
+    {
+      "id": "curator-vicky-2",
+      "label": "curator@PrompTugal.vicky (Claude Code session)",
+      "role": "Vicky's curator desk for the Web Summit 2026 newsroom (curator@web-summit.vicky): maps what researcher@web-summit.vicky found (beat, company or organisation, what is new, whether it is a story) and proposes story candidates for the journalist, in desks/curator/ of the newsroom repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy with sha256 fcb28a1cc40d05bf8ccc8fc61a2a907c934840cac7aa41d9d8283c1d461002ab, matching the pin in the team site's seal.mjs). A new session that replaces the one whose key was curator-vicky, at Vicky's word (scout's P17), 6 November 2026. Not confirmed on pki.sgit.ai. The private half stays in the session (~/.sg-send, outside this repository); the push of this entry is the authorisation.",
+      "added": "2026-11-06",
+      "replaces": "curator-vicky",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAtj40dA58p+S2AgLpifMQ\no09ON8mFUfmcQAHLEvyuRkj2wGVEmMBb6n3R9MZ7BzAvJOKGmeLfaip6x19KrZO2\nrx+i0aWPz4/LedClbwOFW67CMFFun2Fu48FRAmy48D8NiAfqQozoGzXKvqYpbIlf\nbQGHB9jkzsn5C+/a4bL3mOFfnsNtaOwW4oGZzdb1MPtW9zuJR15caLfLJ/UrmJ7j\ntofjIkVJ2ekeA4XdgHwEh6Tq6JRbfoE/qRZFOaQvtDCAY1xrJtlN4yenDeycYoH9\nmuguBFW2X4BD16QKdwY7qtG6p4yw16JtSFtV/mnp3PZhpYaxagbu46hIXIpyMNKH\nppqZnHg/Okf190Uhm5cly7mp7pBTB3mhexUpXpW6yuyS2hiVUcKzLaP/+1H5Eki8\nS5gvN1NX/F7dBm2kzKvqOIQv4lhGjTVpmz8pfrfNO36lyvXEZe36L0d+OAKFZyUq\nYGs+zl9HUcwcwYdPrS5DMA1/YcfniWj56VfkMVbQvauiYIjj6UG3oqfox5VlSEAf\njZAYYAuKivBd7QMrwLqu0W79+P0TrdOTlOJEsZKTHH74JohEohkBE0MNnXePAm3X\ndFWj5Xkk2ruCfoCEAhBFD/1r9W+KUBzgJZZU/ffYWRaZg0dIDlnOuyn2Ot3zjyDD\nQz8o/XBk807XilLKsUPE7UkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYzfKWIzmUskEGY7sJgifzXpisGMK\nRYpuek/jipp7mQ/fKmI+9AWkIsfiPegsdLQCb3ioV82n0c4JmoUfvZuLZQ==\n-----END PUBLIC KEY-----\n",
+        "label": "curator@PrompTugal.vicky",
+        "fingerprint": "sha256:990f9a2b383fb585",
+        "signing_fingerprint": "sha256:785c4b7b689e6c29"
       },
       "status": "active"
     },
@@ -893,6 +933,21 @@
       }
     },
     {
+      "id": "design-silvio",
+      "label": "design@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's design agent (design@web-summit.silvio): design work for PromptUGAL, the Web Summit Edition, at Silvio's request, following the brand in admin/brand/promptugal/ and newsroom@web-summit.dinis's rules for the site. Never sends email or contacts anyone. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the tool's sha256 checked against the pin in admin/tools/seal.mjs) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAyXRQCjqaSMDzDDos1wr0\n025B/Pss2g+VBvC5dDo+RIIJYQC/xNPhdCpcPp/K+OSUoFBYopAw0IcNcV/TTge6\nAWfkMsJNddr9U6yTILAUbGVbfFx7xEQpoNQxm86ATDFAP11dMZEWFL2m98xpRC5P\nfo7Rrm7BvDj501k05RgGetngL8TeE3QufESHSWrMBPRxX/1CnLSPXBVgUXlDooA4\nzjNPy5oh2ocopxBpIPgdgX571pUMgIZ1KjMcKv/uG5LindhzaBqcI/qpiB/vxk+2\nzlQ/ERmDyEEnBVVQfdLsrXHobJvJyIiZWq/ckAboqhdEdz9do4YNwLz2kb+ZOtN7\n0OcCwR7eM9BOeW5Ay/K4nYv+ObyqlVGLvYYj6P4u/G/l77qUX7jp8zhvzscRuOW0\nh6opWFXrT1/4UkOxFBUtsjXn2bHeStQrWVLBJfXfR6ooiRfjIIn0vMha+fzdMGxb\nLzRhFlwRaZAXc2XhaACR9NhSdE6HSyMJnQQooQd7h7/YzThTI1Wy9CqIeGKkH8wV\nYUn3iNFtFRCSJPQv/6K0S5aF+Fn6lcQYqYyEs91jOt6XG8eXc2mo/88GGBQcmAJ+\nhZHvSmPzj1S3qH1y+6xu2FsHX8Bbjhioglod2P8BdJqfYi8lM2WQdPkKgZTY1XyG\naLvSlNrnlwbT4dFq8A6Q6zMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEWSVDn61Wsw0nCzxwO8Ox50zKSQyG\n3i+pREZnfTaEbiysPa4oQmbalTJzjrPkuk+gEBAmx8ZO/9172/y3kBHlww==\n-----END PUBLIC KEY-----\n",
+        "label": "design@web-summit.silvio",
+        "fingerprint": "sha256:57328b9cc2f7bb1d",
+        "signing_fingerprint": "sha256:8ee0b54628ad60b9"
+      }
+    },
+    {
       "id": "designer-vicky",
       "label": "designer@web-summit.vicky (Claude Code session)",
       "role": "Vicky's designer for Promptugal News, the Web Summit newsroom's new name (designer@web-summit.vicky): the brief for the publication and its logo options, in desks/designer-vicky/ of the newsroom repository. A session key: it ends with its session.",
@@ -1000,7 +1055,7 @@
       "role": "Vicky Wang's reviewer and copy editor for Promptugal News, the Web Summit newsroom (reviewer@web-summit.vicky): checks the journalists' drafts in desks/journalist-vicky/drafts/ of the newsroom repository against their sources, writes a review per draft in desks/reviewer-vicky/reviews/, and makes style edits only once a draft is clear. Never publishes or signs an article. A session key: it ends with its session.",
       "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Vicky's account; the push is the authorisation. Not yet linked to an operator's key, submitted to or confirmed on pki.sgit.ai.",
       "added": "2026-11-05",
-      "status": "active",
+      "status": "superseded: replaced by a new session on 6 November 2026 at Vicky's word (scout's P17), 19:41 UTC; it signed nothing on this site. Its newsroom entry, reviewer-vicky-promptugal, stays active until the new session re-signs the five articles it signed there",
       "bundle": {
         "v": 1,
         "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAt+vA4m0wSSGA+qRYtTTe\nRqu8fyjZNG6/wFvp9iJAKhzOCqhEOqZUW+chw9AZDwKJQvxW2LW9VNlPV8kCDyl9\nXBIgLRCqFkDlJkIRtasOE53pdEdOFlThxD270r1nt2ahkEQ18u/h3IIAtHbk4n/E\ntaNI3p8VSe/BAmdP1OXlOvOy4ODdKD4S0029craa3p4DIaIr4U4aqGFjcDjDkH6A\nvAcXJn1mBAtF0UYxQzeRyWRvV/qqGmAswPpTFbqTdugUJDdOT0U346LIpvQlo1xE\n03cLEcm5VrMwV6EAw7CwYBqzQqvt7Q98c5xQCkIYAhKMhI/o67KH7EcQXwR1J2cm\nVsjteHmXDZtH8D9w17d/o63goV/mnJ/R9dGUukGMYQMUCl5NfzHyaI6ZZNwNVfKD\n4C//UAWfU9QeBNBxbUf8u61MVyk6gr01PRjNVlrB0rytIQ5f9NNb1BrC1Xcu8cd5\n7tp3GDSqx+KcYj+qlFFq/MUIZtEnQ+L755UA82JbgBv+Cclqu0Aovt/ka37639D2\n4bLfygU9lRyIXx5uCYB5jwwh9fHmyQGk+Gf0OTq8GcWKTxSEnrO6jEDtzizzbdz0\nnWT+XMWYKZuCLfk8YCeK9VKZykjzei3ZWnKV0dvb66VWIvMRCAcunld3HTPjWDsm\noEQOVW+f08YCNYXIL5jutUcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
@@ -1009,6 +1064,157 @@
         "fingerprint": "sha256:8dfc8f144f816d68",
         "signing_fingerprint": "sha256:d26f3e5ec1db676c"
       }
+    },
+    {
+      "id": "reviewer-vicky-2",
+      "agent": "reviewer@PrompTugal.vicky",
+      "label": "reviewer@PrompTugal.vicky (Claude Code session 2)",
+      "role": "Vicky Wang's reviewer and copy editor for PrompTugal.news (reviewer@PrompTugal.vicky, session 2): reviews her journalists' drafts in the newsroom repository and reports here in people/vicky/reports/reviewer.md. Its signing entry is reviewer-vicky-promptugal-2 in the newsroom's board/keys.json. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session (Claude Code session 2 of the role) on 6 November 2026 at 19:47 UTC with pki-agent.mjs keygen --session (the copy with sha256 fcb28a1cc40d05bf8ccc8fc61a2a907c934840cac7aa41d9d8283c1d461002ab, matching the pin in the team site's seal.mjs), at Vicky's word, when this session took over the role from the previous one (scout's P17). Not linked to an operator's key or confirmed on pki.sgit.ai. The private halves stay in the session (~/.sg-send, outside this repository); the push of this entry is the authorisation. It replaces reviewer-vicky (session 1, already marked superseded).",
+      "added": "2026-11-06",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArsllpLCWSKmI7iW2hIcE\naf1eKEaF4svwZcuYU3GyEVp0SuB7APWJYhA9alJ3vVOulNgYRmBCRxGa9IC5i5IV\nS7mlVkkaOplYXf/xfDv5jPWfslP4hkmGWuLtfj0pRcaL29dr82DJUDyIpU06xw8Z\nZBsyRPnaNlgueS3f5FGx2gaW2FODTT6zs3iZJ55Nlj5D8qwFDOXkRDSvSVEdfc/N\nQFa962CPFsus00ReeytQUfZz1wNWpnJALguaD4d4G5sRJaimOfa976cWBi45txPt\nwL2s6dGNy3fZK/WQYibv4uZn9mu+CmnWCjd6u9469QNAvf2Wsb9RtL1TtylykM61\ngVybQCYtnz419Q2kKckJJ+u9k1wTW7EhgqIYBw4+G5Ebd2Xwtqx1T9k0zkqd9BHt\ncfZ+6/L8klyXWS5uCq1+65CTXlL2vA3pvaxIYVe2ARG5y5enqgln/1hMgUvuXKO9\nIgHqqTKbo7etG9S4RYpfAvqnTKx81FhRMEn4cei7CrMU6uBgy+jPWJoUrvfi+uUu\n58Zx+CFeXrd1Ao+KEebvoZ6Hg2LtPhi51SJJgjmvj1j6cbvvitfunPrFWwfwnxMt\nTDF942irQoVa1A+P7vzIzq2MBBP3a5gKaNy1zrKb4FULN/hVtGFHHVUmGhWT933k\n79Xl5PemwayYa7iorIndwZMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6tUsv6ZQy1oQJOFiWukLxgwK7MMf\n/6SVEOcqxIEAzYxQ8E7dTs/vt105GCfBt3JMe4kGY8ldvB3xKLGgLUGWkw==\n-----END PUBLIC KEY-----\n",
+        "label": "reviewer@PrompTugal.vicky",
+        "fingerprint": "sha256:c1ae3cc07544d361",
+        "signing_fingerprint": "sha256:e08d700e4e0db741"
+      }
+    },
+    {
+      "id": "crm-jose",
+      "agent": "crm@web-summit.jose",
+      "label": "crm@web-summit.jose (Claude Code session)",
+      "role": "Jose Bota's CRM agent (crm@web-summit.jose): keeps Jose's side of the team CRM true (WS-170, WS-172): public facts with their sources in ws-team-crm-public, Jose's actions, requests and the team's own knowledge in ws-team-crm-private, and the channels area, every account the team uses or plans to and its posts (WS-175). Reports to conductor@web-summit.jose (one door, C19). Never sends, never contacts anyone; agents draft, a person posts. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 5 November 2026 (pki-agent.mjs keygen --session, the tool's sha256 checked against the pin in admin/tools/seal.mjs) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-05",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA2t0UQ9ez0KyZlbPHJOaZ\nu18GgdkHmxpLHkR7B+BvevG89qt3ly5rP48enmBMgvCFN2H863qyoE57cdU47Hqu\nk3YRt9Vy0X7pD/WL8EPl+B14VnFnpaYR0KBvn96g4fqKh2pgIn0Bhju6oA0/VNeI\nISfSjCJpKdAT2d77IysZGOH4qT0wAI0xclGA0qAwWr7QSlJ2NENzwkCpOXDhxow/\nyvaGZmamKgGYZBz9bFaGuYO7nGb/7dRgXp7kFDoHzNiKlkWbI11n4kdVCex4wert\nh/GSjm+wPGpNsBVy25l4FZhkZ9/jD1YiumXqFuRIiicR7JIBsc4W/EfHvlVyqH2y\nMouhWU0SohJONrw1m1E2k0Vm9OWOxkbqStLp4g6lTswf74iZnAql+R0fj1GltZcc\nuFxAE7nrpL5OaBiOdx1WdJBMkmYp+7QQyHsKiHhFaAK6mZNsZfM/GgfoRPl1h0Eg\npfYypexp9bFatAI75i0/hAaEBo70xc6WS3FyCzHFHV7VLR/A2ER6krqBHC10vhMB\nTHKbuFVQeLpHr+DeSzGW7D8X0J8nMNAlC3+uRCu9h8R5Q/AGpAaTpo6Rx6se1EiX\njzZzqBnTANwLsYGTbUAOk9egCITagecFeLdqs77jZewU9X8AmYPFgtU2rx47Nbo/\nTqzX7fKz7npPMd7kxEao1i8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE7H+uD4Gd5ujecUR8xz6O2flN6hLF\nfEpDxJLAbehWi/oisL9Y/laXaItIaJX99dWJkim7BzJueWSqu2CFRHg4OA==\n-----END PUBLIC KEY-----\n",
+        "label": "crm@web-summit.jose",
+        "fingerprint": "sha256:465b46a780a1df9e",
+        "signing_fingerprint": "sha256:35512958adc88706"
+      },
+      "status": "active"
+    },
+    {
+      "id": "ontologist-promptugal",
+      "agent": "ontologist@PrompTugal.dinis",
+      "label": "ontologist@PrompTugal.dinis (Claude Code session)",
+      "role": "The ontologist of PrompTugal.news (ontologist@PrompTugal.dinis): the data/ schemas and the derivation, the knowledge graph (companies, people, events, past events, topics, places) and its links to the team CRM, in PrompTugal/PrompTugal__News__Website. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session, at Dinis's word (5 November 2026, the PrompTugal team); the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsYpoyMqlTA7xe2vMaiU+\nfZMNWZuCq0oXon+K1+ZS2jGoXQ61bgYUtlt1pqd/yGu7Z0ENTZ7P2r6O8NKVbQv3\nJgnhnDhip0x/34sRlGc3BPpCJr+e7hRzGF8jsBQXeGNNB9bJrG9Ssj1A7TUqi1Au\npx6TEclDgS9y0y820s/cLZpkfLwDGIcIeG7jPtDlFPJjNvxo1jphc66QDg5ISOsu\nvqDSRlCvOfnziII7dI3aJmksFBYtALFNwIony5XiWOFhvKYV5qAVCC9CeU81jJwP\noGvPGYYa5OFj6b0S+2QpTusH0ZKYeT4s84Z6Ncm4x6L7C6q06wWFoxz2Tu4Sp2BY\n4Rf+uSC6V6mmHQy4uZ8rsTaNbN0ChIr4zI/O8osLuU917OGbZLLZPDEnZjsroLnk\n/AmeE3GrOXJIT/PqWmJTUfMLxu8fqEHFyTZ9VGhivN8gzza4oE1/zeIRpvW5zk7p\ngK6oe5EzlLVocWw71LKbt9c4BNHRVbsG8Q3f6s5mG8GB9rCIJ1eppA8akIgw/5G8\ntV6zHcKEDB1Veth+FpYwKPn8jqu8Hg1twzrhXM5swslWvIAlEK8Y5KB4NzfQyPsj\ns6olpBwOcwwtkovM8FCSEROyt9fK8MHLycgr29QC+YvqmZy5f+diiPt16XxGBRgl\ny4jSwUBMndLRYhIDJe6kgpUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/bzzZZFOboAXDuJSXfOjylQ5YYyh\ndImY5mzUqegG/605A6O+YqbMfDOwOcT5W/FhblRtyf12XDsSIBZulR2/cA==\n-----END PUBLIC KEY-----\n",
+        "label": "ontologist@PrompTugal.dinis",
+        "fingerprint": "sha256:4ded4027241ded02",
+        "signing_fingerprint": "sha256:36a0b5e8a2b7bdc7"
+      },
+      "status": "active"
+    },
+    {
+      "id": "policy-angelo",
+      "agent": "policy@web-summit.angelo",
+      "label": "policy@web-summit.angelo (Claude Code session)",
+      "role": "Angelo's policy auditor (policy@web-summit.angelo): maps which rules apply to each of Angelo's agents and how each is enforced, audits their commits against their ABPs and Angelo's protocol, and proposes barriers. Independent of the conductor: takes work only from Angelo and reports only to him (people/angelo/policy/). Read-only except that folder and this entry. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching seal.mjs's pinned sha256) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAj34k9mMjQ9To1KZBPaVf\nttzChiP2EhCzTrZVskivvoMrPGtb+4WxLT/3kDcpXQYzah6J76Mc9POIGgmER1MJ\nmKZ99ULH8V+1U53BRBCOHxd2/6TX+C6oJTkY9PW6Dm6s9BweFdbN2U8KnHtNtK9S\n/v2cBsLC29Qyzsr2NRrXhOjRaWcgzzFQXmfUNJWlpE0SDs33z2xRmtRNUqMtT3B2\nRiTL5x5WfBWIaXatErhvyaJgztApPOWWM6OBfWmniR5QInw0nlScRCqKBLbwW1dX\niWlASKOJA+kXwK/RcGeuFUGVMZ5WtwtdLIQ+tCosUIEUFyjgMYLm1R2c7NM6Cx+T\nK2lYHf1VWDkgBBu+AWV2eSNG9meuMMu7mx2NUo0JRndRSfLy2cwXZR4GOfPG4Sc/\ns5fVEWAOmR0Zpt6Qy6dElyvuIvJovGNTEc8miiNwG75WOP0EsgsxZCHqfIyDV3Va\nUE71Ciy85WUJEO8QJjstoV1b9lbt9AOt7tnueFnewKmYqja+BcAR+HbZ/awyBSXi\nk7GsyxSLvGk+GyIUSsQpd8yfqA2L1WxlESKa2rBvYNLM+7UCSxBf510szoFZ+s8s\nMQc4ePapmsLJQQobZDxuuTw1nJgy5zS4SHvSQoLoByvg2z51DEEXUfymoNw2fgV0\nSZ6qyWl23UAUTlu7kMRjXWcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEvdCLtNaT+XZYV68RJ2IFxbxx2Osj\nJTJOghZSxQsWRwSWzFE9zTNa5ztZLLtT3vGNB/F4cqMmrFyb2HAyAXw4nA==\n-----END PUBLIC KEY-----\n",
+        "label": "policy@web-summit.angelo",
+        "fingerprint": "sha256:a1310b3a70f44df5",
+        "signing_fingerprint": "sha256:4bd02b7006a59cdd"
+      },
+      "status": "active"
+    },
+    {
+      "id": "checker-vicky",
+      "agent": "checker@PrompTugal.vicky",
+      "label": "checker@PrompTugal.vicky (Claude Code session)",
+      "role": "Vicky Wang's checker for PrompTugal.news: fact-checks the articles and drafts in the newsroom repository (content/articles/ and desks/journalist-promptugal/drafts/), facts, sources and links only, and writes its findings in desks/checker-vicky/findings/ there; reports in people/vicky/reports/checker.md here. Never publishes or signs an article. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs), first entered as checker-vicky-promptugal in the newsroom repository's board/keys.json, and pushed here by that session at Vicky's word, so its reports pass this site's gate; the push is the authorisation. Not linked to an operator's key or confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzDVVVKwwmrSQRH7J8Q9n\nsK9cMZEROJ8wBXum0lGINhOdMi/8lHVC7wo6GsVyiVBVmAcczXcX0jsXuzOfiprN\ncBTCu+dVHCjbf2uj7ZDPWIso11TlqXoDtVeGt71G1IrnU5mXLC4QF8Utk+ntuz+3\nfB7af2dpbPRSnpuC4iLT8xd3L7DWuwazziGQHKGyS0E9EIOVf9SU5M2MMHe4owlq\njyNI4AdnOaM7YhwFXTLWCvJiSPgye2D8y6Qxx2zDvnSfjK8buIjUBt9eVdZJgh09\ndR99ADgQI3ZJKTxixO/nTxta1Ygj1cIaUlWB722odTY2fIUxJKrBxr+jIkUrgKdD\nyM2ZO8RbYyuzuzkR0dk5bZqSOv2xIQDA97tND7Hj70NWVU+XP8UsJbWkGhD/Zos1\nqijaHV7LSlwpN6EJ9ykBj/GaJRM9MqVCnbbbua8WroExyQjI9qhgTN+JJUWIabH2\nwI2ywjruizu9niIXmVVX2lH68o/khlCmczifi2EZoEehWatAPoUNbBDSZKx+fOZP\nMOFplW5PLTkGN/2zE/WATTDMNO5X9HD+NaO5g0NygQlWhpI23mFVWyItZnGGr2aq\ntZNzY73adB72CAogIsKGdb9yqlPa8qKuZuKr8D6CI6GnQi1SMLalFS/aNyVEqZ22\nsk+mbDwbXMbOXvSsnfXWOdMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEQAYgfHvZwQCvkC5Lk1AQ4y3lEif4\npsO6ZzH5Drn1yf/5kUzjEYHfTURMkFiLLacPANRFztPa+ZARuPh+QGv8cw==\n-----END PUBLIC KEY-----\n",
+        "label": "checker@PrompTugal.vicky",
+        "fingerprint": "sha256:807b5555ea2d94ad",
+        "signing_fingerprint": "sha256:b13061c99fd1d102"
+      }
+    },
+    {
+      "id": "scout-vicky",
+      "agent": "scout@web-summit.vicky",
+      "label": "scout@web-summit.vicky (Claude Code session)",
+      "role": "Vicky Wang's scout: studies how Dinis Cruz's agents are set up and run, and writes notes and proposals for Vicky's own agents in people/vicky/learning/ (reports in people/vicky/reports/scout.md). Learns and proposes only: never changes another agent's files, prompts or schedules. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session at Vicky's word; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); not confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAmX54ZG3RrCeirQHeynq2\nz7zMk6/k5b9xE/sQSqHSAxDlSf2gyFVjEJISgFZ8NSLhGq6i5Jx+meceN2C894S6\nvemb4syjeFa48ONQzzgleMILTvSe02hmN9TMObksaUuG/pjUyb7TbXdDh0pzS01d\n/Yro0/ClnblLnOOeh2Hpmn1RAaP+7KtZhchlRX0hLfKQZj3ZqkS4j++QNQ5OO9TS\nSA/C8wiZfBXhLxcMjQxuxgrVDdC7gbjEQHikQ9U5OD7u9LK1gZ68l9HHyweOXHj6\n1E2Jd9qEpKWjp77rI9uYgMUzi/2ewdPqPdiaAHPevgL8KsOgY/FV44cQMOM0/jf4\nTWit1icRGOTKmo4BG8c8oRw/2sc0TiSeF/uaMtjucXHLkO1ngmPUNXqPmgqQKIvg\nFLVcPP4HuRN8sBfMN4FkojnvYCITFPI5flSeOnxIbu+e1sLnMBAhOsu5Q4+C6RHT\npymny0yP+bOX6MOlgn2F5mLL5uw7wHZNqSjO5x7Jfxbltg9GXwcmqJtJmQkhb+xd\nw2aFPCpUwqfNgjDjz9Jnz++80QVfrj4Y0oAPSriJv3qNa/29J5TA3tX8vov1p8Rs\nOUH+gotXn17mkAgshyWKfv9tWEGN+Q6zvZWSTmMX7Sb3uBHAIBu7zAhpPCHyt5t9\npiV6z1XGJyn0k9vKmQEx7PECAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYrf/EHhiB8ZPi/FLYrSdFnQkLWmq\nVr6ryRn+J4evjOQ6RkqpwIakXazpK5cstnd7EIzcX3Tc3ppV4DQ61GjmFA==\n-----END PUBLIC KEY-----\n",
+        "label": "scout@web-summit.vicky",
+        "fingerprint": "sha256:23a5e63301a503bc",
+        "signing_fingerprint": "sha256:cd04300999022a77"
+      }
+    },
+    {
+      "id": "recruiter-indi",
+      "label": "recruiter@web-summit.indi (Claude Code session)",
+      "role": "Indi Gupte's recruiter (recruiter@web-summit.indi): searches public sources for people who may want RiskMandate or could join the team, and drafts approaches for Indi to send. Never contacts anyone, and keeps nothing about a person in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Indi's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlN48tsC2L6X71Gckq7xB\nCAjH3MVmfzqYpTZxO2rKipdYXRUk4R21DQzh+yT+iefupJC4+3kkOzgaebaEd808\nu4zJYHQ+Pj+meKYq/BjyGV+IaWaEPCbKpH6SJ9EigKemw/Cci0R72fvQyUKKP/Yr\nT6GSxTzqeK4oRAQLNhCKPUMVTLlCXo+1UiZncwzWY2Bx+QXWhXc1zpFtNqEhSsS4\n4EOOzL0lgbOwno+GTRt8po8YdkvpghV2xNpFpoaI4hUNpf2uDOERHWisrY3QKskt\n5RPW6zhTiEqEh8pZHYKdA1KPpwxM0fodm8jgifbLnVJoABAxz/hlFW3+l1t47vie\nv3xLIllj2UmC40fzFca5OA81kESy85Eyi0p3Tz/51vd95F9mAK6deglYlpCeKVFa\n+R4bySsYY6bNcIVQcPT4ZAWHHffY/SdxfvTJ08bnHq6EEB8//6CoKA1fLkvGwVrY\nRkR4fTRjdbwDGdSYkSE8zPKg0jBHpxp2uWoDEyvi/Im8Nj7p+ShNF16XRaZm/N7q\n/zjEBlDzk+PeGCQoKfL+V6BGi/ac641/PnWZU/pw4TMpg1axPo1dWHy6pCII29wk\nnIKuH2nMSylG14cCcY0PWMO0MOvyhli+4Lku+DNEROlns02FXXn3PnRvnDK4IYK+\nynNDo+RvNi8CksaRcTqFgO0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEVUrCAVwHD13TuE6JC8x+fytic62B\nWbbRBaYhI1xzZHNO3ifC1Q+CVjoSItnWebXsJnzJSAGTX8JNjf+AHyE7Dg==\n-----END PUBLIC KEY-----\n",
+        "label": "recruiter@web-summit.indi",
+        "fingerprint": "sha256:3c64e5b7dd6aa1ce",
+        "signing_fingerprint": "sha256:9d60bf7152322b58"
+      },
+      "status": "active"
+    },
+    {
+      "id": "investors-dinis",
+      "label": "investors@web-summit.dinis (Claude Code session)",
+      "role": "Dinis Cruz's investor-relations agent (investors@web-summit.dinis): keeps the /investors/ section (the story, the pitch and technology decks, the company, how money is made, with no numbers and no projections), its personalised pages for one investor or introducer at a time, and the feedback on them. Never contacts anyone, and keeps nothing about a person's contact details in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session from Dinis's account; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAk7gnA+Mxo3UaJGqNkWEB\nydIOSAedjQUo1EysH+dsp4yoSvswJ1HPC/gXYLvbibXx3RtKmMZVxCPKXs6KMP2E\n1S6Z7tOxfh8fSkcx+B/MfDSsCPzr4snihod5tT2rIwQSacGK8OKwi2mguDHBT8ma\non5AqGkJdNM5OtA6pRlLZrt2f3DaqRbqjuZO4Us2aA70Q83kDs7mrQvnqDhRO2x5\nmhwUXJJcVvwPxgj7Afx26sV2cjdqe9SKzSIrbPzZUCgtMmLV1g3eA2+S5OmW0Xw/\n5B0bpUCsIALFMAN8Y8upwduJIpoSRFywm4E0IJ82qO3BCpbgpp1cDg1V6/0zqajz\nO21f9hFOonmXGBK8mHlfaqSb6bLJMUaL+5WFgKRJ7E474xN0xEa5zghaRLDtPnpy\nZ1JkXnvBVOtoYrXCRZ4e5gNG0+R6s6KiysTtxBsODq4TOYihxD6l2vzK7tp6XS2n\nRoLu8tYF3ypLOekKh0G81vbeufU00255ugjw69elAcS4lK49DxuQaLsGopYtZ1/9\nFy/9kp+HyNYNpqnWfLpmYSqCPFAolcPzo/tN3HfHvQn9Os/DHln4heeNX6Gm/HOo\nvaUoMiaQnptMdx30yOU0uV7KAKRZIb95exx5QYoRlcT4iU44XpeKHTxWGwgpUkE0\nu743SH/2MDqQB7Rhpd5bBf0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEevFJOnxHIYxLiOKCTWIvrbum2S8v\n/wEi0oKJT+SPXGVnrrGhHr3OVA31QqDi7eIerkt/d9BmC0vxJEWWgdtKDw==\n-----END PUBLIC KEY-----\n",
+        "label": "investors@web-summit.dinis",
+        "fingerprint": "sha256:99a548b57792865c",
+        "signing_fingerprint": "sha256:afd9d08347886c87"
+      },
+      "status": "active"
+    },
+    {
+      "id": "inbox-dinis",
+      "agent": "inbox@web-summit.dinis",
+      "label": "inbox@web-summit.dinis (Claude Code session)",
+      "role": "Dinis Cruz's mail agent (inbox@web-summit.dinis): reads the one mailbox Dinis connects and records every email to or from a company the team is talking to, as EML with its card, under that company's comms in the private team CRM (WS-184, WS-173's shape). Creates drafts only: never sends, forwards, deletes or labels, never contacts anyone, and keeps no contact detail in this repository. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-06",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwlvLWIx7SNH0ZpJ5uVGY\nLKDVTOrxAz2bhJJ9HvHbGlHcS2w7kF2hNtF5i8gcIsmoA+OuuhlNW0Wk2byf4QCX\ntDhh0joVsqxbjagPf4pijT/53Ltm/bxIcVh+1u6rVNATSGnTw3Gfd3qpMqE90NSw\nowIe+oilLisOILQgvGCe2mnLDfbkl3X1T6G6hZ5UyUpE//df9h2PlFc7W53wAAzD\nZgqBnpD3z7pHm0q7RGzL2Y/z8dS8lDRD8o3JfIy7y5y2rzQW4eX9saWqpCoe5KtN\nKbr4er3IzVrA/i5AxyLuRl0j+nOaaSRnqLeYItORG4KSpyLEoSy2R3AZf8qOpdBH\nsixt7hLNfmJXMsm6cobeR7qJdibrLI+zdazF6axQ7Kt2YVRIQiBsEqWgB60JjI+w\nJbhbphoo1rONH60IP2sjl3I+xdBsV24rQiyXvmtfdXuct9/fwxl+oAedgIP9fdeQ\nmbWi3LX/sDvv8dbqA09yzJRUFdfoiJoZ8RXuG5gbkBEVqj2is0h7b17J5zZD/aiu\nLunUByOcimMAyWElDcWqeIcblHDD/NfAZcotht43uadQ3rdiHQamWTSUHb+0gL7g\nPctM+AzDy5UURJOQiWfz7+TsqXbb9IZ6zfH5uoswRtPjR+8Qex8YSccCC8lc+7yn\nCKLtmbj5nu11SyDtwY0PmOkCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE7WiBAeXRywVe+mWzmmWSqLCTbScd\nlYCX66yqbbXv5cy0dD+1ScR0xK6tyY66aIFWVRIKNRBAWrtckx/M6BsVkA==\n-----END PUBLIC KEY-----\n",
+        "label": "inbox@web-summit.dinis",
+        "fingerprint": "sha256:40244d4654ad2c96",
+        "signing_fingerprint": "sha256:7ccbfa25a964ca6b"
+      },
+      "status": "active"
     }
   ]
 }

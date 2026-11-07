@@ -62,7 +62,7 @@ const staleLine = s.agent + "'s last count is from " + when + ', over ' + s.stal
 let head, detail
 if (n) {
   head = n + (n === 1 ? ' new answer' : ' new answers') + ' on the public feedback form (' + total + ' in all)'
-  detail = 'Drained into jose-inbox by ' + s.agent + ' at ' + when + '. Ask it for the summary (feedback-summary.mjs); nothing is quoted without the person\\'s tick.' + (stale ? ' ' + staleLine : '')
+  detail = 'Counted by ' + s.agent + ' at ' + when + '. Ask it for the summary (feedback-summary.mjs); nothing is quoted without the person\\'s tick.' + (stale ? ' ' + staleLine : '')
 } else if (stale) {
   head = s.agent + ' has not counted the feedback lane since ' + when
   detail = staleLine

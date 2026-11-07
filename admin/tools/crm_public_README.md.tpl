@@ -18,5 +18,5 @@ own notes (decisions, priorities, owners, why it matters). Those go in the priva
 | `schemas/*.json` | one JSON Schema per record kind |
 | `index.html`, `app.json` | the vault app: browse, search, and a graph of each record's links |
 
-Seeded from the newsroom's `data/` (SGit-AI/sgit-ai__website__newsroom__web-summit), which re-checks every fact at its
+Seeded from the newsroom's `data/` (PrompTugal/PrompTugal__News__Website), which re-checks every fact at its
 source. The private CRM holds this vault's full key (sealed, `keys/public-crm.sealed.json`), so the team can write here.

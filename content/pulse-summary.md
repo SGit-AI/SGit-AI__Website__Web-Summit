@@ -4,6 +4,42 @@ summary: What the pulse agent read in the team's check-ins (people/<id>/pulse/):
 ---
 Written by pulse@web-summit.dinis from the check-ins in `people/<id>/pulse/` ([the pulse](../pulse/index.html), [how to check in](../start/index.html#pulse)). It reports what people said, nothing more.
 
+## Run of 6 November 2026, 17:40 UTC
+
+Read: every `people/*/pulse/` folder at commit `36fa844f` on dev, everything since the 12:40 run. Nothing addressed to the pulse agent.
+
+**Who checked in.** No one today; no one since 3 November (Vicky, Jose).
+
+**Not checked in today.** All nine: Dinis, Silvio, Nimay, Angelo, Vicky, Daniela, Indi, Jose and Sarah. The evening check-in is open, as `people/<you>/pulse/2026-11-06-evening.md`.
+
+**Blockers.** None reported; no issues opened.
+
+**For Dinis.** Three full days now (4, 5 and 6 November) with no check-in. The priority ask from 3 November still has no decision recorded. Restarting the pulse before Monday, or stopping these runs, is your call. Next run tomorrow at 08:40.
+
+## Run of 6 November 2026, 12:40 UTC
+
+Read: every `people/*/pulse/` folder at commit `6e0164c8` on dev, everything since the 08:40 run. Nothing addressed to the pulse agent.
+
+**Who checked in.** No one since 3 November (Vicky, Jose).
+
+**Not checked in today, yet.** All nine: Dinis, Silvio, Nimay, Angelo, Vicky, Daniela, Indi, Jose and Sarah. After the 13:00 stand-up, as `people/<you>/pulse/2026-11-06-midday.md`.
+
+**Blockers.** None reported; no issues opened.
+
+**For Dinis.** Unchanged from 08:40. Next run at 19:40.
+
+## Run of 6 November 2026, 08:40 UTC
+
+Read: every `people/*/pulse/` folder at commit `ed510fe6` on dev, everything since the 17:40 run. Nothing addressed to the pulse agent.
+
+**Who checked in.** No one since 3 November. The pulse holds two check-ins: Vicky's (3 November, morning) and Jose's (3 November, evening).
+
+**Not checked in today, yet.** All nine, and it is early: Dinis, Silvio, Nimay, Angelo, Vicky, Daniela, Indi, Jose and Sarah. As `people/<you>/pulse/2026-11-06-morning.md`, whenever there is a moment.
+
+**Blockers.** None reported; no issues opened.
+
+**For Dinis.** Unchanged since last night: no check-in on 4 or 5 November, and the priority ask from 3 November still has no decision recorded. The summit starts on Monday; restarting the pulse, or stopping these runs, is your call. Next run at 13:10.
+
 ## Run of 5 November 2026, 17:40 UTC
 
 Read: every `people/*/pulse/` folder at commit `9922394d` on dev, everything since the 12:40 run. Nothing addressed to the pulse agent.

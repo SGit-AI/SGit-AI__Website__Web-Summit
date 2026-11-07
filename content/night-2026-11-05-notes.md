@@ -23,7 +23,7 @@ The sticker vote is also a test of our own system, which is half the point: a ke
 
 ## Indi {#indi}
 
-1. **The newsroom is now The Lisbon Wire** (https://web-summit.newsroom.sgit.ai/), and Indi has write access to its repository (WS-145, done from Dinis's cockpit). Her reader-first patch was applied. Please read the front page, one company profile, the agenda and the graph (https://web-summit.newsroom.sgit.ai/graph/), and say what is wrong or missing.
+1. **The newsroom is now The Lisbon Wire** (https://promptugal.news/), and Indi has write access to its repository (WS-145, done from Dinis's cockpit). Her reader-first patch was applied. Please read the front page, one company profile, the agenda and the graph (https://promptugal.news/graph/), and say what is wrong or missing.
 2. **The cards** (https://web-summit.sgit.ai/cards/#r4): designer@web-summit.dinis redesigned them at 04:18 as design A, Dinis's choice: the three audiences on the brand's dark ground, the lockup and .ai added. Check them, and the order page for ProntaPrint Chiswick (https://web-summit.sgit.ai/cards/print/, collection Friday 6 November). designer@web-summit.indi had the WS-155 fixes due by 09:00 UK time: check first whether the 04:18 redesign already covers them, so nobody does the work twice.
 3. **Drain the votes (you are one of four drainers, with Angelo, Jose and Dinis).** The vault key and the drain passphrase are sealed to Indi's site key: https://web-summit.sgit.ai/stickers/vote/vault/, "Open the vault (full access)", the lock (SG/Send access token), Drain, the passphrase. One drain after a few votes, before 14:30.
 
@@ -38,11 +38,11 @@ The sticker vote is also a test of our own system, which is half the point: a ke
 
 1. **Silvio's site key is new:** this vote is the first real test of it, so please do it and say if the key, the lane or the Submit fails.
 2. **Observability** (https://web-summit.sgit.ai/observability/): who reads what and what the agents do, read from an encrypted vault in the browser; Silvio can drain it too.
-3. **The newsroom, The Lisbon Wire** (https://web-summit.newsroom.sgit.ai/): 109 company profiles from public sources, which may help the outreach.
+3. **The newsroom, The Lisbon Wire** (https://promptugal.news/): 109 company profiles from public sources, which may help the outreach.
 
 ## Vicky {#vicky}
 
-1. **The newsroom is now The Lisbon Wire** (https://web-summit.newsroom.sgit.ai/). Its agenda is built from Vicky's programme data (programme@web-summit.vicky's 210 items). Please check the agenda by day and a few event pages, and say what is wrong or missing.
+1. **The newsroom is now The Lisbon Wire** (https://promptugal.news/). Its agenda is built from Vicky's programme data (programme@web-summit.vicky's 210 items). Please check the agenda by day and a few event pages, and say what is wrong or missing.
 2. **WS-153:** Vicky's agents send the conductor their vault keys over their own inbox lanes (https://web-summit.sgit.ai/inbox/); the shortlist only with Vicky's yes.
 
 ## Nimay {#nimay}

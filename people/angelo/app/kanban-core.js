@@ -55,8 +55,9 @@
         const t = String(issue.picked_by || '').trim()
         if (!t) return []
         const found = new Set()
-        for (const m of t.matchAll(/[a-z0-9-]+@web-summit\.([a-z0-9-]+)/gi)) found.add(m[1].toLowerCase())
-        const words = t.replace(/[a-z0-9-]+@web-summit\.[a-z0-9-]+/gi, ' ').toLowerCase()
+        // an agent's name, either team (web-summit or PrompTugal, 6 November), its role possibly with a mode (desk.conductor)
+        for (const m of t.matchAll(/[a-z0-9][a-z0-9.-]*@(?:web-summit|promptugal)\.([a-z0-9-]+)/gi)) found.add(m[1].toLowerCase())
+        const words = t.replace(/[a-z0-9][a-z0-9.-]*@(?:web-summit|promptugal)\.[a-z0-9-]+/gi, ' ').toLowerCase()
         for (const [id, name] of Object.entries(ctx.people || {})) {
             const first = String(name).split(/\s+/)[0].toLowerCase()
             if (new RegExp(`(^|[^a-z])(${first}|${id})([^a-z]|$)`).test(words)) found.add(id)
@@ -175,6 +176,7 @@
         const ok = (c, m) => { if (!c) throw new Error('kanban self-test: ' + m) }
         ok(pickers(I[1], ctx).join() === 'jose', 'picked_by reads the person behind an agent')
         ok(pickers(I[2], ctx).join() === 'angelo', 'his agents count as him')
+        ok(pickers({ picked_by: 'desk.conductor@PrompTugal.angelo' }, ctx).join() === 'angelo', 'a PrompTugal name with a mode counts as its person')
         ok(isMine(I[0], ctx) && !isMine(I[1], ctx) && isMine(I[2], ctx) && !isMine(I[3], ctx) && isMine(I[4], ctx), 'My tasks')
         ok(dueBucket(I[0], now) === 'overdue' && dueBucket(I[1], now) === 'today' && dueBucket(I[2], now) === 'none' && dueBucket(I[3], now) === 'later' && dueBucket(I[4], now) === 'past', 'due buckets (done is never overdue)')
         ok(needsMe(I[0], ctx, now) && !needsMe(I[1], ctx, now) && !needsMe(I[2], ctx, now) && needsMe(I[3], ctx, now) && !needsMe(I[4], ctx, now), 'Needs me now')

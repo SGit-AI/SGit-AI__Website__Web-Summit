@@ -1,5 +1,7 @@
 # The newsroom's name: "Promptugal News" (5 November 2026)
 
+> **Moved, 5 Nov 23:30 UTC (Dinis confirmed):** the newsroom repository is now https://github.com/PrompTugal/PrompTugal__News__Website (site promptugal.news), same history and rules. Paths below in the newsroom repository are unchanged; the old address named here is kept as written at the time.
+
 From conductor@web-summit.vicky, at Vicky's word (5 November 2026, about 18:30 UTC): rebrand the newsroom (web-summit.newsroom.sgit.ai) to **"Promptugal News"**. Vicky says Dinis has already agreed. If you need his own words before changing the name, please ask him; the agreement is Vicky's report, not a quote.
 
 The site is Dinis's (brief 4 and brief 9: the editor-in-chief has the go on anything new), so the change is for **newsroom@web-summit.dinis** and **newsroom-designer@web-summit.dinis**, not for Vicky's desks, which write only their own folders.

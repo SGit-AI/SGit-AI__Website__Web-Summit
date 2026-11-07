@@ -45,7 +45,7 @@
 .ak-tabs button[aria-selected="true"] { background: var(--rm-action); border-color: var(--rm-action); color: var(--rm-action-ink); }
 .ak-list { display: grid; gap: 10px; }
 /* card details: a side panel on a wide screen, the whole screen on a phone */
-.ak-scrim { position: fixed; inset: 0; z-index: 60; background: rgb(0 0 0 / .45); }
+.ak-scrim { position: fixed; inset: 0; z-index: 60; background: color-mix(in srgb, var(--rm-bg) 70%, transparent); }
 .ak-sheet { position: fixed; z-index: 61; top: 0; right: 0; bottom: 0; width: min(560px, 100vw); overflow-y: auto; padding: 20px; display: grid; gap: 16px; align-content: start; background: var(--rm-surface); color: var(--rm-text); border-left: 1px solid var(--rm-border); box-shadow: var(--rm-shadow); }
 .ak-sheet:focus { outline: none; }
 .ak-sheet > header { display: flex; gap: 12px; align-items: flex-start; justify-content: space-between; }
@@ -127,9 +127,9 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 @media (max-width: 767px) { .ak-own .ak-own-t { display: none; } .ak-own { padding: 0 6px; margin-left: 6px; } }
 
 /* ---------- offline (WS-84 step 1) ---------- */
-.ak-offbar { position: sticky; top: 0; z-index: 70; padding: 8px 16px; background: var(--rm-gold, #F5B942); color: #17243A; font: 600 14px/20px var(--rm-font, system-ui, sans-serif); text-align: center; }
+.ak-offbar { position: sticky; top: 0; z-index: 70; padding: 8px 16px; background: var(--rm-gold); color: var(--rm-action-ink); font: 600 14px/20px var(--rm-font); text-align: center; }
 .ak-vrow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 10px 0; }
-.ak-vrow video { width: 100%; border-radius: 10px; background: #000; aspect-ratio: 16 / 9; }
+.ak-vrow video { width: 100%; border-radius: 10px; background: var(--rm-bg); aspect-ratio: 16 / 9; }
 @media (max-width: 767px) { .ak-vrow { grid-template-columns: 1fr; } }
 
 /* ---------- Decide first: the cockpit's ranking in Needs me now ---------- */
@@ -182,3 +182,132 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .rp-filters > summary b { font: 600 12px/20px var(--rm-font); padding: 0 6px; border-radius: 999px; background: var(--rm-chip-bg); }
 .rp-filters[open] > summary { margin-bottom: 10px; }
 @media (min-width: 768px) { .rp-filters > summary { display: none; } }
+/* Replay slice 3: the arcs, a commit's For: lines */
+.rp-arcs path { fill: none; stroke-width: 1.2; opacity: .16; pointer-events: none; transition: opacity .15s; }
+.rp-arcs path.now { opacity: .95; stroke-width: 2; }
+.rp-arcs path.on { opacity: 1; stroke-width: 2.5; }
+.rp-arcs path.fut { opacity: .04; }
+/* Replay slice 4: the agents' runs */
+.rp-runs rect { fill: color-mix(in srgb, var(--rm-text-muted) 35%, transparent); stroke: var(--rm-text-muted); stroke-width: 1; }
+.rp-runs rect.signed { stroke: var(--rm-green); fill: color-mix(in srgb, var(--rm-green) 30%, transparent); }
+.rp-runs rect.fut { opacity: .1; }
+/* Replay slice 5: the clip, full screen */
+.rp-clip { position: fixed; inset: 0; z-index: 200; background: var(--rm-bg); padding: 12px; overflow: hidden; align-content: start; }
+.rp-clip .rp-filters, .rp-clip .rp-bar, .rp-clip .rp-chips, .rp-clip .rp-play, .rp-clip > .note, .rp-clip .rp-runnote, .rp-clip .rp-detail, .rp-clip .ak-fresh, .rp-clip .ak-ownnote { display: none; }
+.rp-clip .rp-play { display: none; }
+.rp-cliphead { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font: 600 18px/26px var(--rm-font); }
+.rp-cliphead span { font: 700 22px/28px var(--rm-font); color: var(--rm-action); margin-left: auto; }
+.rp-clip .rp-wrap { border: 0; overflow: hidden; }
+
+/* ---------- the whole team as one map (WS-97) ---------- */
+.tm { display: grid; gap: 8px; }
+.tm-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.tm-wrap { max-width: 860px; width: 100%; margin: 0 auto; }
+.tm-svg { width: 100%; height: auto; display: block; }
+.tm-links path { fill: none; opacity: .35; }
+.tm-links path.on { opacity: .9; }
+.tm-links path.off { opacity: .04; }
+.tm-p, .tm-a { cursor: pointer; }
+.tm-p text { fill: var(--rm-bg); font: 700 15px/1 var(--rm-font); text-anchor: middle; pointer-events: none; }
+.tm-p circle { stroke: var(--rm-surface); stroke-width: 3; }
+.tm-a circle, .tm-a rect { stroke: var(--rm-surface); stroke-width: 1.5; }
+.tm-al { fill: var(--rm-text); font: 600 15px/1 var(--rm-font); text-anchor: middle; paint-order: stroke; stroke: var(--rm-surface); stroke-width: 4px; }
+.tm-p.off, .tm-a.off { opacity: .18; }
+.tm-p:focus-visible circle { stroke: var(--rm-focus); }
+/* the map's three layouts (6 November) */
+.tm-tabs, .tm-legend { display: flex; flex-wrap: wrap; gap: 6px; }
+.tm-spokes line { stroke-width: 1; opacity: .18; }
+.tm-spokes line.off { opacity: .03; }
+.tm-links.faint path { opacity: .07; }
+.tm-links.faint path.on { opacity: .5; }
+.tm-flows path { fill: none; opacity: .55; stroke-linecap: round; }
+.tm-flows path.on { opacity: .95; }
+.tm-flows path.off { opacity: .03; }
+.tm-k { cursor: pointer; }
+.tm-k polygon, .tm-k circle { fill: color-mix(in srgb, var(--kc) 82%, transparent); stroke: var(--kc); stroke-width: 3; filter: drop-shadow(0 0 10px color-mix(in srgb, var(--kc) 60%, transparent)); }
+.tm-k text { fill: var(--rm-text); font: 700 14px/1 var(--rm-font); text-anchor: middle; paint-order: stroke; stroke: var(--rm-surface); stroke-width: 4px; }
+.tm-k.off { opacity: .2; }
+/* the ring round an agent says how it runs (solid: scheduled into its own session; dashed: a fresh session each run).
+   It was drawn in the surface colour, because .tm-a circle (the agent's outline) outranked .tm-kr: hence the near-black
+   ring Angelo could not read (6 November). The ring now has its own, stronger selector and a colour that shows. */
+.tm-kr, .tm-a circle.tm-kr { fill: none; stroke: var(--rm-text); stroke-width: 2; opacity: .8; pointer-events: none; }
+.tm-kr.fresh, .tm-a circle.tm-kr.fresh { stroke-dasharray: 3 3; }
+.tm-lg { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--rm-border); background: var(--rm-surface); color: var(--rm-text); font: 500 13px/18px var(--rm-font); cursor: pointer; }
+.tm-lg svg polygon, .tm-lg svg circle { fill: var(--kc); }
+.tm-lg b { font-weight: 700; color: var(--rm-text-secondary); }
+.tm-lg.on { border-color: var(--kc); background: color-mix(in srgb, var(--kc) 16%, var(--rm-surface)); }
+/* the map full screen (fs=1): the map alone, its own link; it fills what the controls leave, scaled to fit */
+.tm-fs { position: fixed; inset: 0; z-index: 220; border-radius: 0; background: var(--rm-bg); padding: 12px 16px; display: flex; flex-direction: column; gap: 8px; height: 100vh; height: 100dvh; overflow: hidden; }
+.tm-fs > p.note { display: none; }
+.tm-acts { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: flex-end; }
+.tm-fs .tm-wrap { flex: 1 1 auto; min-height: 0; max-width: none; width: 100%; }
+.tm-fs .tm-svg { width: 100%; height: 100%; }
+@media (max-width: 767px) { .tm-top { flex-wrap: wrap; } .tm-fs .tm-legend { max-height: 30vh; overflow: auto; } }
+@media (max-width: 767px) { .tm-fs .tm-lg, .tm-fs .rp-chip { min-height: 28px; padding: 0 8px; font-size: 12px; } .tm-fs .tm-acts .cc-btn { min-height: 36px; padding: 0 10px; font-size: 13px; } .tm-fs .tm-tabs, .tm-fs .tm-legend { gap: 4px; } }
+.tm-links path[data-as] { stroke-dasharray: 4 4; opacity: .9; stroke-width: 1.5; }
+
+/* the map's key (Angelo, 6 November) */
+.tm-key { border: 1px solid var(--rm-border); border-radius: var(--rm-radius-control); background: var(--rm-surface); padding: 0 12px; }
+.tm-key summary { min-height: 40px; display: flex; align-items: center; cursor: pointer; font: 600 14px/20px var(--rm-font); color: var(--rm-text); }
+.tm-key ul { list-style: none; margin: 0 0 8px; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 6px 16px; }
+.tm-key li { display: flex; align-items: center; gap: 10px; font: 400 13px/18px var(--rm-font); color: var(--rm-text-secondary); }
+.tm-key li svg { flex: none; }
+.tm-key .note { margin: 0 0 10px; }
+.tm-fs .tm-key { flex: none; max-height: 35vh; overflow: auto; }
+
+/* Where (where.js, WS-181 step 1): the team's whereabouts and logistics, a demo kept on this device */
+.aw { display: grid; gap: 14px; }
+.aw-demo { padding: 10px 14px; border-radius: var(--rm-radius-card); border: 1px dashed var(--rm-border); background: var(--rm-surface-raised); font: 400 14px/21px var(--rm-font); color: var(--rm-text-secondary); }
+.aw-status { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; padding: 10px 14px; border-radius: var(--rm-radius-card); border: 1px solid var(--rm-border); background: var(--rm-surface); font: 400 14px/21px var(--rm-font); border-left: 4px solid var(--rm-green, #3a9a5b); }
+.aw-status.aw-off { border-left-color: var(--rm-amber, #c98a1b); }
+.aw-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.aw-now { margin: 0 0 10px; font: 400 16px/24px var(--rm-font); }
+.aw-step { margin: 10px 0 6px; font: 600 13px/18px var(--rm-font); letter-spacing: .04em; text-transform: uppercase; color: var(--rm-text-muted); }
+.aw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 8px; }
+.aw-b { min-height: 52px; padding: 6px 10px; border-radius: var(--rm-radius-control); border: 1px solid var(--rm-border); background: var(--rm-surface-raised); color: var(--rm-text); font: 600 15px/20px var(--rm-font); cursor: pointer; touch-action: manipulation; }
+.aw-b:hover { border-color: var(--rm-action); }
+.aw-b[aria-pressed="true"] { background: var(--rm-action); border-color: var(--rm-action); color: var(--rm-action-ink); }
+.aw-b:focus-visible, .aw .ak-chip:focus-visible { outline: 2px solid var(--rm-focus); outline-offset: 2px; }
+.aw-until { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.aw-note { display: flex; gap: 8px; margin-top: 10px; }
+.aw-note input { flex: 1; min-width: 0; min-height: 44px; padding: 0 10px; border-radius: var(--rm-radius-control); border: 1px solid var(--rm-border); background: var(--rm-surface-raised); color: var(--rm-text); font: 400 15px/22px var(--rm-font); }
+.aw-lines, .aw-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.aw-line { display: grid; grid-template-columns: 7em 9em 1fr auto; gap: 4px 12px; align-items: baseline; padding: 10px 4px; border-bottom: 1px solid var(--rm-border); font: 400 15px/22px var(--rm-font); }
+.aw-line.aw-me { background: var(--rm-surface-raised); border-radius: var(--rm-radius-control); }
+.aw-who { font-weight: 600; }
+.aw-place { font-weight: 600; color: var(--rm-action); }
+.aw-line.aw-old { opacity: .6; }
+.aw-line.aw-gone { opacity: .45; }
+.aw-line.aw-gone .aw-place { text-decoration: line-through; }
+.aw-age { text-align: right; white-space: nowrap; }
+.aw-item { display: grid; grid-template-columns: 7.5em 1fr auto; gap: 4px 12px; align-items: center; padding: 10px 4px; border-bottom: 1px solid var(--rm-border); font: 400 15px/22px var(--rm-font); }
+.aw-item.aw-late { border-left: 3px solid var(--rm-red); padding-left: 8px; }
+.aw-kind { font: 600 12px/18px var(--rm-font); letter-spacing: .05em; text-transform: uppercase; color: var(--rm-text-muted); }
+.aw-donel summary, .aw-how summary { cursor: pointer; min-height: 40px; display: flex; align-items: center; font: 600 14px/20px var(--rm-font); }
+.aw-how ul { margin: 6px 0 0; padding-left: 18px; font: 400 14px/21px var(--rm-font); display: grid; gap: 6px; }
+@media (max-width: 767px) {
+  .aw-grid { grid-template-columns: repeat(3, 1fr); }
+  .aw-line { grid-template-columns: auto 1fr auto; }
+  .aw-line .aw-what { grid-column: 1 / -1; }
+  .aw-item { grid-template-columns: 1fr auto; }
+  .aw-item .aw-kind { grid-column: 1 / -1; }
+}
+
+/* the team map played back (replay.js mountFlow): Replay's clock on Team and the machine's map */
+.tmf { display: grid; gap: 6px; margin-top: 8px; }
+.tmf-play { margin: 0; }
+.tm-svg.tm-replay .tm-links { display: none; }
+.tmf-links path { fill: none; stroke-linecap: round; transition: stroke-opacity .25s; }
+.tm-svg .tmf-links .z, .tm-svg .tmf-pulses .z { display: none; }
+.tmf-pulses circle { stroke: var(--rm-surface); stroke-width: 1.5; pointer-events: none; }
+.tm-replay .tm-a { transition: opacity .35s; }
+.tm-replay .tm-a.tmf-gone { opacity: 0; pointer-events: none; }
+.tm-replay .tm-spokes, .tm-replay .tm-flows { display: none; }
+.tm-a.tmf-hot > circle:not(.tm-kr), .tm-a.tmf-hot > rect { stroke: var(--rm-text); stroke-width: 3; }
+.tm-a.tmf-born > circle:not(.tm-kr), .tm-a.tmf-born > rect { animation: tmf-born .9s ease-out; }
+@keyframes tmf-born { 0% { stroke: var(--rm-action); stroke-width: 9; } 100% { stroke-width: 1.5; } }
+.tm-a .tmf-l { display: none; fill: var(--rm-text); font: 600 13px/1 var(--rm-font); text-anchor: middle; pointer-events: none; paint-order: stroke; stroke: var(--rm-surface); stroke-width: 3px; }
+.tm-a.tmf-hot .tmf-l { display: inline; }
+.tmf-tick { margin: 0; padding: 8px 12px; border-radius: var(--rm-radius-control); background: var(--rm-surface-raised); font: 400 13px/19px var(--rm-font); color: var(--rm-text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 36px; }
+.tm-fs .tmf { flex: none; }
+.tm-svg .tmf-links .tmf-x { display: none; }

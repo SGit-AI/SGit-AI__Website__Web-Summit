@@ -1,5 +1,1902 @@
 [
   {
+    "version": "v0.2.949",
+    "date": "2026-11-07",
+    "what": "a calmer, professional command centre for everyone: colour-coded menu, the team behind your name, one top bar, Kanban, decisions first",
+    "by": "dev@web-summit.silvio",
+    "from": "141313c57"
+  },
+  {
+    "version": "v0.2.948",
+    "date": "2026-11-07",
+    "what": "for Dinis: an SG/Send access token for crm-silvio, one token per agent (WS-170)",
+    "by": "conductor@web-summit.silvio",
+    "from": "03020622a"
+  },
+  {
+    "version": "v0.2.947",
+    "date": "2026-11-07",
+    "what": "the 04:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "0c256cffe"
+  },
+  {
+    "version": "v0.2.946",
+    "date": "2026-11-07",
+    "what": "WS-128, vault-audit.mjs's text-files-only fix confirmed on real sgit (Silvio's videos vault h9in5em4, clean)",
+    "by": "sgit@web-summit.dinis",
+    "from": "33e1b9df5"
+  },
+  {
+    "version": "v0.2.945",
+    "date": "2026-11-07",
+    "what": "the command centre mock removed from the lab, at Silvio's word",
+    "by": "design@web-summit.silvio",
+    "from": "daf100a37"
+  },
+  {
+    "version": "v0.2.944",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: PrompTugal snapshot: 52 agents, 120 pairs in 7 days, from abb676c1",
+    "by": "dev@PrompTugal.angelo",
+    "from": "c736ba804"
+  },
+  {
+    "version": "v0.2.943",
+    "date": "2026-11-07",
+    "what": "the orchestration of 7 November recorded: every open issue assigned to an agent",
+    "by": "conductor@web-summit.silvio",
+    "from": "1595d92f0"
+  },
+  {
+    "version": "v0.2.942",
+    "date": "2026-11-07",
+    "what": "the merch ready day not confirmed: Monday 9 or Tuesday 10 November (Silvio)",
+    "by": "procurement@web-summit.silvio",
+    "from": "92f4820e7"
+  },
+  {
+    "version": "v0.2.941",
+    "date": "2026-11-07",
+    "what": "what is good is kept, what had errors is withdrawn: the video notes brought up to date",
+    "by": "video@web-summit.silvio",
+    "from": "353423543"
+  },
+  {
+    "version": "v0.2.940",
+    "date": "2026-11-07",
+    "what": "world 1 in the CRM: 3 records enriched, 8 actions sealed (waiting for sgit and a token); Turismo de Portugal is listed for 2026",
+    "by": "crm@web-summit.silvio",
+    "from": "3edb05a30"
+  },
+  {
+    "version": "v0.2.939",
+    "date": "2026-11-07",
+    "what": "my four issues moved forward: WS-48, WS-113, WS-62, WS-54",
+    "by": "procurement@web-summit.silvio",
+    "from": "bab838893"
+  },
+  {
+    "version": "v0.2.938",
+    "date": "2026-11-07",
+    "what": "account B, an agent that starts agents, as designed; the first mail in the CRM",
+    "by": "abp@web-summit.dinis",
+    "from": "94e4541b1"
+  },
+  {
+    "version": "v0.2.937",
+    "date": "2026-11-07",
+    "what": "team-collaboration@PrompTugal.angelo: Silvio's decision on Monday's merch collection, in the record",
+    "by": "team-collaboration@PrompTugal.angelo",
+    "from": "e866b7532"
+  },
+  {
+    "version": "v0.2.936",
+    "date": "2026-11-07",
+    "what": "/people/silvio/eventos/: the PT/EN switch moves to the site's bar, beside Dashboard",
+    "by": "outreach@web-summit.silvio",
+    "from": "28a3be7ae"
+  },
+  {
+    "version": "v0.2.935",
+    "date": "2026-11-07",
+    "what": "/people/silvio/eventos/: 269 side events of Web Summit week and the team's picks, in Portuguese and English",
+    "by": "outreach@web-summit.silvio",
+    "from": "5afea977b"
+  },
+  {
+    "version": "v0.2.934",
+    "date": "2026-11-07",
+    "what": "the 02:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "a62e931b6"
+  },
+  {
+    "version": "v0.2.933",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: PrompTugal snapshot: 52 agents, 120 pairs in 7 days, from c4fdc485",
+    "by": "dev@PrompTugal.angelo",
+    "from": "79991209c"
+  },
+  {
+    "version": "v0.2.932",
+    "date": "2026-11-07",
+    "what": "\"done for me\": a person can mark a team-wide issue done in their own command centre only",
+    "by": "conductor@web-summit.silvio",
+    "from": "fc2f7c53a"
+  },
+  {
+    "version": "v0.2.931",
+    "date": "2026-11-07",
+    "what": "the private CRM's key sealed to crm-silvio, at Silvio's word (WS-172)",
+    "by": "conductor@web-summit.silvio",
+    "from": "d38c3ea13"
+  },
+  {
+    "version": "v0.2.930",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: ledger line for the 02:21 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "0641234e7"
+  },
+  {
+    "version": "v0.2.929",
+    "date": "2026-11-07",
+    "what": "the merch is paid and the files are with the printer; pickup Monday morning by Silvio and Dinis",
+    "by": "conductor@web-summit.silvio",
+    "from": "95dad61f3"
+  },
+  {
+    "version": "v0.2.928",
+    "date": "2026-11-07",
+    "what": "world 1 research: Booking.com, Amex GBT, Turismo de Portugal, and 15 more candidates",
+    "by": "outreach@web-summit.silvio",
+    "from": "29c060d81"
+  },
+  {
+    "version": "v0.2.927",
+    "date": "2026-11-07",
+    "what": "world 1 research for PromptUGAL pages: DIG-IN, sheerME, Altegio, Just Travel",
+    "by": "outreach@web-summit.silvio",
+    "from": "7af0a78c5"
+  },
+  {
+    "version": "v0.2.926",
+    "date": "2026-11-07",
+    "what": "WS-174 done: the clean videos vault's read key published and sent to the conductor",
+    "by": "video@web-summit.silvio",
+    "from": "3a5e68307"
+  },
+  {
+    "version": "v0.2.925",
+    "date": "2026-11-07",
+    "what": "the final videos vault (h9in5em4), its key sealed to conductor@web-summit.silvio",
+    "by": "video@web-summit.silvio",
+    "from": "0b50638ab"
+  },
+  {
+    "version": "v0.2.924",
+    "date": "2026-11-07",
+    "what": "the merch on Monday: Silvio and Dinis pick it up together, on their way to Web Summit",
+    "by": "conductor@web-summit.silvio",
+    "from": "225ef665e"
+  },
+  {
+    "version": "v0.2.923",
+    "date": "2026-11-07",
+    "what": "the 00:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "6356836d5"
+  },
+  {
+    "version": "v0.2.922",
+    "date": "2026-11-07",
+    "what": "the clean videos vault's key, sealed to conductor@web-summit.silvio; the old vault deleted",
+    "by": "video@web-summit.silvio",
+    "from": "201e1d558"
+  },
+  {
+    "version": "v0.2.921",
+    "date": "2026-11-07",
+    "what": "WS-188, its own environment measured: the same shared environment and tokens; it used Dinis's token only before the rule",
+    "by": "sgit@web-summit.dinis",
+    "from": "8fd8b17d1"
+  },
+  {
+    "version": "v0.2.920",
+    "date": "2026-11-07",
+    "what": "WS-173 first run in the private CRM: 1 thread, 7 emails as EML, for review",
+    "by": "inbox@web-summit.silvio",
+    "from": "2801e6b27"
+  },
+  {
+    "version": "v0.2.919",
+    "date": "2026-11-07",
+    "what": "team-collaboration@PrompTugal.angelo: the 00:45 run's ledger line",
+    "by": "team-collaboration@PrompTugal.angelo",
+    "from": "abc154c77"
+  },
+  {
+    "version": "v0.2.918",
+    "date": "2026-11-07",
+    "what": "dashboard@PrompTugal.angelo: a decision for Angelo: tapped spots on the venue map against the brief's \"zones only\"",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "8a444ab91"
+  },
+  {
+    "version": "v0.2.917",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: 00:35 wake: snapshot; a note on WS-181's tapped spots",
+    "by": "dev@PrompTugal.angelo",
+    "from": "59d777f37"
+  },
+  {
+    "version": "v0.2.916",
+    "date": "2026-11-07",
+    "what": "Silvio's yes on WS-173; the private CRM's key to inbox-silvio, please",
+    "by": "inbox@web-summit.silvio",
+    "from": "4a5d35320"
+  },
+  {
+    "version": "v0.2.915",
+    "date": "2026-11-07",
+    "what": "WS-188, Dinis's agents share one cloud environment and his tokens",
+    "by": "abp@web-summit.dinis",
+    "from": "d37b6e4ad"
+  },
+  {
+    "version": "v0.2.914",
+    "date": "2026-11-07",
+    "what": "dashboard@PrompTugal.angelo: Where's venue map, now a stylised drawing of the venue from OpenStreetMap's own outlines",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "2a996384a"
+  },
+  {
+    "version": "v0.2.913",
+    "date": "2026-11-07",
+    "what": "review to v0.2.912, no hold; WS-187: the site is one origin, a page without the keyring can still use it (proven with a throwaway key)",
+    "by": "security@web-summit.dinis",
+    "from": "2b34cbbf6"
+  },
+  {
+    "version": "v0.2.912",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: the token ledger line for the map playback rework",
+    "by": "dev@PrompTugal.angelo",
+    "from": "03fca9ef1"
+  },
+  {
+    "version": "v0.2.911",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: the map's playback: agents arrive and stay, grow with their messages, and gather around their person",
+    "by": "dev@PrompTugal.angelo",
+    "from": "c39d2948c"
+  },
+  {
+    "version": "v0.2.910",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: the token ledger line for the map playback changes",
+    "by": "dev@PrompTugal.angelo",
+    "from": "112ec2871"
+  },
+  {
+    "version": "v0.2.909",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: the map's playback: agents come and go, lines fade when unused, messages in their sender's colour",
+    "by": "dev@PrompTugal.angelo",
+    "from": "cdb5e2f9c"
+  },
+  {
+    "version": "v0.2.908",
+    "date": "2026-11-06",
+    "what": "desk.conductor@PrompTugal.angelo: the conductor coordinates, the agents deliver; three briefs",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "d300e3815"
+  },
+  {
+    "version": "v0.2.907",
+    "date": "2026-11-06",
+    "what": "writer@PrompTugal.angelo: WS-125 taken back from the newsroom hand-over; Angelo's desk refines and publishes it",
+    "by": "writer@PrompTugal.angelo",
+    "from": "1a0f481dd"
+  },
+  {
+    "version": "v0.2.906",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: one map: playback lives on Team and the machine's map; Replay's separate map view removed",
+    "by": "dev@PrompTugal.angelo",
+    "from": "b50887505"
+  },
+  {
+    "version": "v0.2.905",
+    "date": "2026-11-06",
+    "what": "runner.conductor@PrompTugal.angelo: STATE upkeep, 23:20 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "d107c6221"
+  },
+  {
+    "version": "v0.2.904",
+    "date": "2026-11-06",
+    "what": "dashboard@PrompTugal.angelo: Where: the place buttons stay put; the venue map, with pins for our base and meeting spots",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "5d7749ec5"
+  },
+  {
+    "version": "v0.2.903",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: the token ledger line for Replay's map mode",
+    "by": "dev@PrompTugal.angelo",
+    "from": "9d622de22"
+  },
+  {
+    "version": "v0.2.902",
+    "date": "2026-11-06",
+    "what": "runner.writer@PrompTugal.angelo: STATE after first run: WS-125 not yet visible in the newsroom",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "5390f218d"
+  },
+  {
+    "version": "v0.2.901",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: Replay's map mode: the team map played back, messages flowing as time moves",
+    "by": "dev@PrompTugal.angelo",
+    "from": "1b8683dbb"
+  },
+  {
+    "version": "v0.2.900",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: the token ledger line for WS-181 step 1",
+    "by": "dev@PrompTugal.angelo",
+    "from": "1578ab415"
+  },
+  {
+    "version": "v0.2.899",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: WS-181 step 1: \"Where\", a demo of the team board in Angelo's command centre (made-up data, no vault)",
+    "by": "dev@PrompTugal.angelo",
+    "from": "6e72cef2e"
+  },
+  {
+    "version": "v0.2.898",
+    "date": "2026-11-06",
+    "what": "desk.conductor@PrompTugal.angelo: the shared no-secrets environment exists (option A, step 2)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "06ff8a788"
+  },
+  {
+    "version": "v0.2.897",
+    "date": "2026-11-06",
+    "what": "desk.conductor@PrompTugal.angelo: Angelo's token removed from the shared environment (option A, step 1)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "113192c20"
+  },
+  {
+    "version": "v0.2.896",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.angelo: WS-181's page and its two modes, a design for Angelo (nothing built)",
+    "by": "dev@PrompTugal.angelo",
+    "from": "f6bf211f9"
+  },
+  {
+    "version": "v0.2.895",
+    "date": "2026-11-06",
+    "what": "desk.conductor@PrompTugal.angelo: secrets in one environment per agent; vault@ to analyse what sharness.kms would take",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "4c2851144"
+  },
+  {
+    "version": "v0.2.894",
+    "date": "2026-11-06",
+    "what": "curator@PrompTugal.vicky: team work as a standing topic (rule 17), prompt and report",
+    "by": "curator@PrompTugal.vicky",
+    "from": "80b9f5855"
+  },
+  {
+    "version": "v0.2.893",
+    "date": "2026-11-06",
+    "what": "22:27 wake: brief 31 (a quiet evening; the videos vault in; Gmail still not connected)",
+    "by": "conductor@web-summit.dinis",
+    "from": "6172b37c6"
+  },
+  {
+    "version": "v0.2.892",
+    "date": "2026-11-06",
+    "what": "The Front Page (E): the numbers band slim and in sand, not mint",
+    "by": "design@web-summit.silvio",
+    "from": "9be451793"
+  },
+  {
+    "version": "v0.2.891",
+    "date": "2026-11-06",
+    "what": "journalist-ai@PrompTugal.vicky: report, T4's chart redrawn and the phone check",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "d015aac2f"
+  },
+  {
+    "version": "v0.2.890",
+    "date": "2026-11-06",
+    "what": "scout's P26 and P27 accepted, P25 rejected; the brief's agent section becomes one table",
+    "by": "conductor@web-summit.vicky",
+    "from": "2d9bc3633"
+  },
+  {
+    "version": "v0.2.889",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: report, T1 to T5 Ready and held",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "d9d9d44fc"
+  },
+  {
+    "version": "v0.2.888",
+    "date": "2026-11-06",
+    "what": "note 06, status, run reports and the dashboard, P25 to P27",
+    "by": "scout@web-summit.vicky",
+    "from": "5a900eb40"
+  },
+  {
+    "version": "v0.2.887",
+    "date": "2026-11-06",
+    "what": "journalist-ai@PrompTugal.vicky: report, T2 to T5 review fixes and T1 trimmed",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "d3b7cc23e"
+  },
+  {
+    "version": "v0.2.886",
+    "date": "2026-11-06",
+    "what": "vault@PrompTugal.angelo: WS-120 works both ways (Jose's reply verified); WS-181's vault design for Angelo",
+    "by": "vault@PrompTugal.angelo",
+    "from": "309a77ce8"
+  },
+  {
+    "version": "v0.2.885",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: report, T1 Ready (held), T2 to T5 Fix first",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "749b0d292"
+  },
+  {
+    "version": "v0.2.884",
+    "date": "2026-11-06",
+    "what": "team-collaboration@PrompTugal.angelo: my keys entry carries my new name; the team map keeps each agent's kind",
+    "by": "team-collaboration@PrompTugal.angelo",
+    "from": "646aec030"
+  },
+  {
+    "version": "v0.2.883",
+    "date": "2026-11-06",
+    "what": "note 05, the inbox agent: how inbox@web-summit.dinis is set up, P21 to P24",
+    "by": "scout@web-summit.vicky",
+    "from": "dc7221d09"
+  },
+  {
+    "version": "v0.2.882",
+    "date": "2026-11-06",
+    "what": "journalist-ai@PrompTugal.vicky: report, T1 review fixes and the closing line on T1 to T5",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "952e106ab"
+  },
+  {
+    "version": "v0.2.881",
+    "date": "2026-11-06",
+    "what": "the stories page: Show more label under the summary, so titles use the full width on a phone",
+    "by": "dashboard@web-summit.vicky",
+    "from": "b13c91113"
+  },
+  {
+    "version": "v0.2.880",
+    "date": "2026-11-06",
+    "what": "the stories page: each story collapses with details and summary, collapsed by default",
+    "by": "dashboard@web-summit.vicky",
+    "from": "a2865ece9"
+  },
+  {
+    "version": "v0.2.879",
+    "date": "2026-11-06",
+    "what": "runner.conductor@PrompTugal.angelo: hourly run, nothing to route; state upkeep",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "73090f763"
+  },
+  {
+    "version": "v0.2.878",
+    "date": "2026-11-06",
+    "what": "journalist-ai@PrompTugal.vicky: report, team series articles 2 to 5",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "aa6db09d3"
+  },
+  {
+    "version": "v0.2.877",
+    "date": "2026-11-06",
+    "what": "WS-31 not needed: everyone has their meetings in their own calendars; unassigned from Vicky and pm@",
+    "by": "pm@web-summit.vicky",
+    "from": "46120282e"
+  },
+  {
+    "version": "v0.2.876",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: report, T1 Fix first",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "b06081a53"
+  },
+  {
+    "version": "v0.2.875",
+    "date": "2026-11-06",
+    "what": "curator@PrompTugal.vicky: prompts file, rule 16 (fact-checking line in the README)",
+    "by": "curator@PrompTugal.vicky",
+    "from": "e0e53da04"
+  },
+  {
+    "version": "v0.2.874",
+    "date": "2026-11-06",
+    "what": "journalist-ai@PrompTugal.vicky: report, T1 screenshots",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "40cd64632"
+  },
+  {
+    "version": "v0.2.873",
+    "date": "2026-11-06",
+    "what": "WS-31 dropped: out of my scheduled prompt; prompts/pm.md matches",
+    "by": "pm@web-summit.vicky",
+    "from": "47f205dfb"
+  },
+  {
+    "version": "v0.2.872",
+    "date": "2026-11-06",
+    "what": "The Front Page (option E), Silvio's favourite, tightened",
+    "by": "design@web-summit.silvio",
+    "from": "69beac5c3"
+  },
+  {
+    "version": "v0.2.871",
+    "date": "2026-11-06",
+    "what": "curator@PrompTugal.vicky: report corrected, 20 candidates",
+    "by": "curator@PrompTugal.vicky",
+    "from": "401fae59b"
+  },
+  {
+    "version": "v0.2.870",
+    "date": "2026-11-06",
+    "what": "curator@PrompTugal.vicky: scheduled prompt and prompts file updated, dropped marks reported",
+    "by": "curator@PrompTugal.vicky",
+    "from": "09d4f106a"
+  },
+  {
+    "version": "v0.2.869",
+    "date": "2026-11-06",
+    "what": "Signal (option F) in light, dark kept behind a button",
+    "by": "design@web-summit.silvio",
+    "from": "f79722cf9"
+  },
+  {
+    "version": "v0.2.868",
+    "date": "2026-11-06",
+    "what": "Signal (option F) made dense: more news on the first screen",
+    "by": "design@web-summit.silvio",
+    "from": "efa494242"
+  },
+  {
+    "version": "v0.2.867",
+    "date": "2026-11-06",
+    "what": "ws-team-videos's vault key, sealed to conductor@web-summit.silvio at Silvio's word",
+    "by": "video@web-summit.silvio",
+    "from": "1db048b6c"
+  },
+  {
+    "version": "v0.2.866",
+    "date": "2026-11-06",
+    "what": "20:41 wake: quiet run, no notes (Silvio had one at 19:41; Nimay no change)",
+    "by": "mentor@web-summit.dinis",
+    "from": "4858ec7ba"
+  },
+  {
+    "version": "v0.2.865",
+    "date": "2026-11-06",
+    "what": "journalist-ai@PrompTugal.vicky: report, team series article 1 (T1, Angelo's communication graph)",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "56b573bd5"
+  },
+  {
+    "version": "v0.2.864",
+    "date": "2026-11-06",
+    "what": "curator@PrompTugal.vicky: new session's key, hand-over record and report",
+    "by": "curator@PrompTugal.vicky",
+    "from": "2ed7dca2a"
+  },
+  {
+    "version": "v0.2.863",
+    "date": "2026-11-06",
+    "what": "20:27 wake: brief 30 (inbox@ waits for Gmail; draft 1's line; the 18:00 unrecorded)",
+    "by": "conductor@web-summit.dinis",
+    "from": "857c42fc3"
+  },
+  {
+    "version": "v0.2.862",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.vicky: report: /how-we-publish/ no longer a draft (v0.1.337)",
+    "by": "dev@PrompTugal.vicky",
+    "from": "8838cc6c1"
+  },
+  {
+    "version": "v0.2.861",
+    "date": "2026-11-06",
+    "what": "curator@PrompTugal.vicky: hand-over to a new session (scout's P17): prompts file complete, hand-over note, key superseded",
+    "by": "curator@PrompTugal.vicky",
+    "from": "f7f964d9b"
+  },
+  {
+    "version": "v0.2.860",
+    "date": "2026-11-06",
+    "what": "Angelo's agents renamed @PrompTugal.angelo and his first rule lifted; policies meeting policies",
+    "by": "abp@web-summit.dinis",
+    "from": "32632da56"
+  },
+  {
+    "version": "v0.2.859",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.vicky: report: /how-we-publish/'s new summary (v0.1.332)",
+    "by": "dev@PrompTugal.vicky",
+    "from": "29e210ed1"
+  },
+  {
+    "version": "v0.2.858",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: fact-check of journalist@PrompTugal.dinis dropped from the prompts file (checker@PrompTugal.vicky does it); the statuses rule; report",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "fbe78e196"
+  },
+  {
+    "version": "v0.2.857",
+    "date": "2026-11-06",
+    "what": "desk.conductor@PrompTugal.angelo: Angelo keeps his agents' key labels; accepts abp@'s update of his ABPs",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "fd819c3cf"
+  },
+  {
+    "version": "v0.2.856",
+    "date": "2026-11-06",
+    "what": "curator@PrompTugal.vicky: 19:45 run's report, road closures and drop-off points (S24); one ask on the daily debrief",
+    "by": "curator@PrompTugal.vicky",
+    "from": "3d960ee88"
+  },
+  {
+    "version": "v0.2.855",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: hand-over to session 2 recorded in the prompts file; report: key, five articles re-signed, old key superseded, scheduled task at 08:48 and 16:48 UTC",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "ecb98113a"
+  },
+  {
+    "version": "v0.2.854",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.vicky: report: /how-we-publish/'s summary from the front matter (v0.1.327)",
+    "by": "dev@PrompTugal.vicky",
+    "from": "1351b98a8"
+  },
+  {
+    "version": "v0.2.853",
+    "date": "2026-11-06",
+    "what": "19:41 wake: a short note for Silvio (two picks: a world and a design option)",
+    "by": "mentor@web-summit.dinis",
+    "from": "b4493f62e"
+  },
+  {
+    "version": "v0.2.852",
+    "date": "2026-11-06",
+    "what": "eight questions for Dinis's mentor agent on how his team works",
+    "by": "scout@web-summit.vicky",
+    "from": "ca0c4732a"
+  },
+  {
+    "version": "v0.2.851",
+    "date": "2026-11-06",
+    "what": "/people/vicky/work-so-far/, Vicky's agents and the work so far, linked from her page",
+    "by": "conductor@web-summit.vicky",
+    "from": "4b80434e5"
+  },
+  {
+    "version": "v0.2.850",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.vicky: report: the ABP grant request for Vicky's desks, sent to abp@ in a newsroom commit",
+    "by": "dev@PrompTugal.vicky",
+    "from": "be2d60df9"
+  },
+  {
+    "version": "v0.2.849",
+    "date": "2026-11-06",
+    "what": "for Dinis's conductor: guidance asked on playing videos from the media vault; /media/ says no files through git",
+    "by": "conductor@web-summit.silvio",
+    "from": "d831d2a0b"
+  },
+  {
+    "version": "v0.2.848",
+    "date": "2026-11-06",
+    "what": "19:21 run, nothing to route; STATE upkeep",
+    "by": "conductor@web-summit.angelo",
+    "from": "ece9b7c74"
+  },
+  {
+    "version": "v0.2.847",
+    "date": "2026-11-06",
+    "what": "team-collaboration@PrompTugal.angelo: team-map.mjs keeps agent names as written, so the gate's comms_check passes",
+    "by": "team-collaboration@PrompTugal.angelo",
+    "from": "bd87ea54a"
+  },
+  {
+    "version": "v0.2.846",
+    "date": "2026-11-06",
+    "what": "a design toggle for the lab, like the theme toggle but for the whole design",
+    "by": "design@web-summit.silvio",
+    "from": "898e0a5d9"
+  },
+  {
+    "version": "v0.2.845",
+    "date": "2026-11-06",
+    "what": "new session takes over: its own key published, prompts line, report",
+    "by": "dashboard@web-summit.vicky",
+    "from": "f346d10c4"
+  },
+  {
+    "version": "v0.2.844",
+    "date": "2026-11-06",
+    "what": "dev@PrompTugal.vicky: first run reported; my prompt saved word for word",
+    "by": "dev@PrompTugal.vicky",
+    "from": "26e32b39e"
+  },
+  {
+    "version": "v0.2.843",
+    "date": "2026-11-06",
+    "what": "the lab opens in light even when the computer is in dark mode",
+    "by": "design@web-summit.silvio",
+    "from": "02f4869aa"
+  },
+  {
+    "version": "v0.2.842",
+    "date": "2026-11-06",
+    "what": "the 18:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "9682183f1"
+  },
+  {
+    "version": "v0.2.841",
+    "date": "2026-11-06",
+    "what": "four front-page options for PrompTugal.news in the lab, from a look at the best news sites",
+    "by": "design@web-summit.silvio",
+    "from": "d345ca810"
+  },
+  {
+    "version": "v0.2.840",
+    "date": "2026-11-06",
+    "what": "dashboard@PrompTugal.angelo: switched to my new name; Angelo's agents' new names on both views, and the writer",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "1c61aa395"
+  },
+  {
+    "version": "v0.2.839",
+    "date": "2026-11-06",
+    "what": "the PrompTugal.news design lab, a copy of the front page for design tests",
+    "by": "design@web-summit.silvio",
+    "from": "93891ca53"
+  },
+  {
+    "version": "v0.2.838",
+    "date": "2026-11-06",
+    "what": "18:21 run's ledger line",
+    "by": "conductor@web-summit.angelo",
+    "from": "04db0d028"
+  },
+  {
+    "version": "v0.2.837",
+    "date": "2026-11-06",
+    "what": "18:21 run: nothing to route; STATE upkeep",
+    "by": "conductor@web-summit.angelo",
+    "from": "b7575f62a"
+  },
+  {
+    "version": "v0.2.836",
+    "date": "2026-11-06",
+    "what": "17:50 relay: three changed prompt files checked, nothing to relay",
+    "by": "conductor@web-summit.vicky",
+    "from": "dd1a7b269"
+  },
+  {
+    "version": "v0.2.835",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: report, S22 Ready and published",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "5a62bcbd1"
+  },
+  {
+    "version": "v0.2.834",
+    "date": "2026-11-06",
+    "what": "17:40 wake report: applied P10 and P17; WS-31 is due tomorrow and waits on a token",
+    "by": "pm@web-summit.vicky",
+    "from": "1bf7a577f"
+  },
+  {
+    "version": "v0.2.833",
+    "date": "2026-11-06",
+    "what": "my own tokens, wake 3: 128,715 fresh, 1,064,775 cache reads",
+    "by": "accountant@web-summit.indi",
+    "from": "55c7730ed"
+  },
+  {
+    "version": "v0.2.832",
+    "date": "2026-11-06",
+    "what": "ledger line for the 17:21 runner",
+    "by": "conductor@web-summit.angelo",
+    "from": "4175f1c6f"
+  },
+  {
+    "version": "v0.2.831",
+    "date": "2026-11-06",
+    "what": "my session key on the keys page; waiting for the private CRM's key",
+    "by": "inbox@web-summit.dinis",
+    "from": "9f43e7a70"
+  },
+  {
+    "version": "v0.2.830",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: report, S23 dropped and folded into S22",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "46fe80d91"
+  },
+  {
+    "version": "v0.2.829",
+    "date": "2026-11-06",
+    "what": "journalist-portugal@PrompTugal.vicky: report, S22 fixed after review",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "bad2aa6f2"
+  },
+  {
+    "version": "v0.2.828",
+    "date": "2026-11-06",
+    "what": "crm@PrompTugal.angelo: Angelo's 18 companies at the summit: Accenture confirmed (attendee level), AWS unconfirmed, 16 not found",
+    "by": "crm@PrompTugal.angelo",
+    "from": "0deb1593f"
+  },
+  {
+    "version": "v0.2.827",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: report, scheduled run of 16:48: S22, S23, second fact-check; P1 P2 P3 P9 applied",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "aad6e3188"
+  },
+  {
+    "version": "v0.2.826",
+    "date": "2026-11-06",
+    "what": "helper@PrompTugal.angelo: switched to my new name; /help/ says where to ask under it",
+    "by": "helper@PrompTugal.angelo",
+    "from": "a6c3e7003"
+  },
+  {
+    "version": "v0.2.825",
+    "date": "2026-11-06",
+    "what": "desk.conductor@PrompTugal.angelo: Angelo's agents renamed to @PrompTugal.angelo; the writer and its runner",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "90299d089"
+  },
+  {
+    "version": "v0.2.824",
+    "date": "2026-11-06",
+    "what": "16:41 wake: no notes",
+    "by": "mentor@web-summit.dinis",
+    "from": "66c667eb0"
+  },
+  {
+    "version": "v0.2.823",
+    "date": "2026-11-06",
+    "what": "the PrompTugal snapshot refreshed (47 agents, 94 pairs); the maps patch still waits on its keeper",
+    "by": "dev@web-summit.angelo",
+    "from": "87acf2cb7"
+  },
+  {
+    "version": "v0.2.822",
+    "date": "2026-11-06",
+    "what": "journalist-connections@PrompTugal.vicky: report, scheduled run 16:24, idle",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "cbae34ac9"
+  },
+  {
+    "version": "v0.2.821",
+    "date": "2026-11-06",
+    "what": "ledger line for the 16:20 runner",
+    "by": "conductor@web-summit.angelo",
+    "from": "a7c6c5731"
+  },
+  {
+    "version": "v0.2.820",
+    "date": "2026-11-06",
+    "what": "WS-74: the vault agent's count file is live and the n8n flow accepts it; the live test now reads it as a first run would",
+    "by": "automation@web-summit.jose",
+    "from": "ead42ab7e"
+  },
+  {
+    "version": "v0.2.819",
+    "date": "2026-11-06",
+    "what": "journalist-europe@PrompTugal.vicky: scheduled run 16:12, idle",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "96ac90322"
+  },
+  {
+    "version": "v0.2.818",
+    "date": "2026-11-06",
+    "what": "Angelo's sign-off recorded on his eight ABPs; four new ABPs; the comms protocol on the connectors page",
+    "by": "abp@web-summit.dinis",
+    "from": "1646784d9"
+  },
+  {
+    "version": "v0.2.817",
+    "date": "2026-11-06",
+    "what": "journalist-connections@PrompTugal.vicky: report, scheduled run 16:03 (S23; P1, P2, P3, P5, P9 applied)",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "0821c94d3"
+  },
+  {
+    "version": "v0.2.816",
+    "date": "2026-11-06",
+    "what": "investors@web-summit.dinis on Dinis's roster (WS-185); WS-186, the daily newsletter (morning and evening)",
+    "by": "conductor@web-summit.dinis",
+    "from": "956bd8fa4"
+  },
+  {
+    "version": "v0.2.815",
+    "date": "2026-11-06",
+    "what": "Angelo's PrompTugal.news team, a writer and a runner; three questions for the newsroom",
+    "by": "conductor@web-summit.angelo",
+    "from": "24781daf8"
+  },
+  {
+    "version": "v0.2.814",
+    "date": "2026-11-06",
+    "what": "the whole-team map full screen, with its own link: open it straight from a URL, copy the link, close with Esc",
+    "by": "dev@web-summit.angelo",
+    "from": "b60d4ffd4"
+  },
+  {
+    "version": "v0.2.813",
+    "date": "2026-11-06",
+    "what": "Angelo's agent setup guide, final draft for PrompTugal.news to review and publish (WS-125)",
+    "by": "conductor@web-summit.angelo",
+    "from": "ecd8dc39d"
+  },
+  {
+    "version": "v0.2.812",
+    "date": "2026-11-06",
+    "what": "15:30 run, decisions.md applied (P1, P2, P3, P10, P17); state: idle",
+    "by": "researcher@web-summit.vicky",
+    "from": "f1b230b4f"
+  },
+  {
+    "version": "v0.2.811",
+    "date": "2026-11-06",
+    "what": "two more layouts for the whole-team map: the agents at the centre, and the agents with the kinds of work they did",
+    "by": "dev@web-summit.angelo",
+    "from": "e02ddef4f"
+  },
+  {
+    "version": "v0.2.810",
+    "date": "2026-11-06",
+    "what": "runner 15:21: nothing to route, STATE upkeep, ledger line",
+    "by": "conductor@web-summit.angelo",
+    "from": "9d52874ad"
+  },
+  {
+    "version": "v0.2.809",
+    "date": "2026-11-06",
+    "what": "6 November 15:15 run: nothing new for the designer; the garments' next set still waits for Dinis",
+    "by": "designer@web-summit.dinis",
+    "from": "d552017c1"
+  },
+  {
+    "version": "v0.2.808",
+    "date": "2026-11-06",
+    "what": "STATE.md: the customer guide's private draft; two questions for Angelo tomorrow",
+    "by": "conductor@web-summit.angelo",
+    "from": "e2b834815"
+  },
+  {
+    "version": "v0.2.807",
+    "date": "2026-11-06",
+    "what": "the 14:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "169a68744"
+  },
+  {
+    "version": "v0.2.806",
+    "date": "2026-11-06",
+    "what": "Team and the machine: computed setup levels, only agents that have run, renamed agents once",
+    "by": "dev@web-summit.angelo",
+    "from": "ef5d78e09"
+  },
+  {
+    "version": "v0.2.805",
+    "date": "2026-11-06",
+    "what": "my wake is now twice a day, 10:50 and 16:50 UTC (cron 50 10,16 * * *)",
+    "by": "helper@web-summit.angelo",
+    "from": "54c4d8e30"
+  },
+  {
+    "version": "v0.2.804",
+    "date": "2026-11-06",
+    "what": "the team's maps: a patch so every team's agents count, each with its kind, renamed ones once; kind rings ready on Angelo's map",
+    "by": "dev@web-summit.angelo",
+    "from": "0638bb07b"
+  },
+  {
+    "version": "v0.2.803",
+    "date": "2026-11-06",
+    "what": "the helper twice a day; a daily workload table; workload advice asked of Indi's accountant",
+    "by": "conductor@web-summit.angelo",
+    "from": "c7de37170"
+  },
+  {
+    "version": "v0.2.802",
+    "date": "2026-11-06",
+    "what": "14:27 wake: brief 28 (Indi's key works; the 12:00 recorded)",
+    "by": "conductor@web-summit.dinis",
+    "from": "03658207c"
+  },
+  {
+    "version": "v0.2.801",
+    "date": "2026-11-06",
+    "what": "runner 14:21 ledger line",
+    "by": "conductor@web-summit.angelo",
+    "from": "b3a0938e8"
+  },
+  {
+    "version": "v0.2.800",
+    "date": "2026-11-06",
+    "what": "runner 14:21: nothing to route, STATE upkeep",
+    "by": "conductor@web-summit.angelo",
+    "from": "77c979136"
+  },
+  {
+    "version": "v0.2.799",
+    "date": "2026-11-06",
+    "what": "Indi's answers (6 Nov): joins PromptUGAL; promptugal.news allowed; cards today; demo not done; to-do list updated",
+    "by": "conductor@web-summit.indi",
+    "from": "7c6e0b78f"
+  },
+  {
+    "version": "v0.2.798",
+    "date": "2026-11-06",
+    "what": "WS-136: Indi's site key is added in her browser (seen in her screenshot)",
+    "by": "conductor@web-summit.indi",
+    "from": "ac5e11af2"
+  },
+  {
+    "version": "v0.2.797",
+    "date": "2026-11-06",
+    "what": "13:41 wake: no notes",
+    "by": "mentor@web-summit.dinis",
+    "from": "438064032"
+  },
+  {
+    "version": "v0.2.796",
+    "date": "2026-11-06",
+    "what": "the runner on the team's maps; agents named @PrompTugal.<person> missing from them (for dev to draft)",
+    "by": "conductor@web-summit.angelo",
+    "from": "145abf136"
+  },
+  {
+    "version": "v0.2.795",
+    "date": "2026-11-06",
+    "what": "ABP in action, the connectors study, and the explorer phase on every ABP",
+    "by": "abp@web-summit.dinis",
+    "from": "630ca8a8f"
+  },
+  {
+    "version": "v0.2.794",
+    "date": "2026-11-06",
+    "what": "runner 13:21, nothing to route",
+    "by": "conductor@web-summit.angelo",
+    "from": "058b41d8f"
+  },
+  {
+    "version": "v0.2.793",
+    "date": "2026-11-06",
+    "what": "13:15 debrief: the 6 November 12:00 record, from Angelo's notes: five directions, six follow-ups",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "310f2bd9c"
+  },
+  {
+    "version": "v0.2.792",
+    "date": "2026-11-06",
+    "what": "the 12:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "bbb6c1e5f"
+  },
+  {
+    "version": "v0.2.791",
+    "date": "2026-11-06",
+    "what": "the conductor's wake reads PrompTugal's board first and notes what it opens (the conductors' sync)",
+    "by": "conductor@web-summit.dinis",
+    "from": "8b6e872b5"
+  },
+  {
+    "version": "v0.2.790",
+    "date": "2026-11-06",
+    "what": "seal.mjs knows the PrompTugal agents' names; the vaults page's \"who is ready\" from a check of all 71 keys",
+    "by": "sgit@web-summit.dinis",
+    "from": "a0baff270"
+  },
+  {
+    "version": "v0.2.789",
+    "date": "2026-11-06",
+    "what": "12:41 wake: no notes; Silvio's PrompTugal access not decided at the 12:00",
+    "by": "mentor@web-summit.dinis",
+    "from": "1d0601fe8"
+  },
+  {
+    "version": "v0.2.788",
+    "date": "2026-11-06",
+    "what": "the digest on demand, PrompTugal and the card on the dashboard; the team map linked",
+    "by": "dashboard@web-summit.angelo",
+    "from": "6e0164c88"
+  },
+  {
+    "version": "v0.2.787",
+    "date": "2026-11-06",
+    "what": "12:27 wake: brief 27 (a quiet wake; the 12:00's decisions asked for)",
+    "by": "conductor@web-summit.dinis",
+    "from": "fdd73695c"
+  },
+  {
+    "version": "v0.2.786",
+    "date": "2026-11-06",
+    "what": "ledger line for the 12:22 runner",
+    "by": "conductor@web-summit.angelo",
+    "from": "ffc328a5f"
+  },
+  {
+    "version": "v0.2.785",
+    "date": "2026-11-06",
+    "what": "runner 12:22, nothing to route",
+    "by": "conductor@web-summit.angelo",
+    "from": "abdca4cb0"
+  },
+  {
+    "version": "v0.2.784",
+    "date": "2026-11-06",
+    "what": "Vicky's newsroom desks renamed @PrompTugal.vicky; ABPs for scout and checker; WS-179 noted",
+    "by": "abp@web-summit.dinis",
+    "from": "ca210bda9"
+  },
+  {
+    "version": "v0.2.783",
+    "date": "2026-11-06",
+    "what": "scout's P6, P9, P10, P16, P17, P18 and P19 in Updates for agents; P11 waits; P12 to P15 and P20 on hold",
+    "by": "conductor@web-summit.vicky",
+    "from": "57e03f1e5"
+  },
+  {
+    "version": "v0.2.782",
+    "date": "2026-11-06",
+    "what": "notes 02 to 04 (policies through compaction, cheap workers, hand-overs), P9 to P20; my 22:00 task",
+    "by": "scout@web-summit.vicky",
+    "from": "04d48da1d"
+  },
+  {
+    "version": "v0.2.781",
+    "date": "2026-11-06",
+    "what": "P5, each journalist moves its own task; scout runs daily at 22:00 UTC",
+    "by": "conductor@web-summit.vicky",
+    "from": "dceedb948"
+  },
+  {
+    "version": "v0.2.780",
+    "date": "2026-11-06",
+    "what": "decisions.md is the first step of my runs; applied P1, P2 and P3",
+    "by": "logistics@web-summit.vicky",
+    "from": "b8cafb085"
+  },
+  {
+    "version": "v0.2.779",
+    "date": "2026-11-06",
+    "what": "checker@PrompTugal.vicky: scheduled prompt, a step 0 for Vicky's one-off checks, saved word for word",
+    "by": "checker@PrompTugal.vicky",
+    "from": "b79a9b411"
+  },
+  {
+    "version": "v0.2.778",
+    "date": "2026-11-06",
+    "what": "scout on Vicky's records; \"Updates for agents\" in decisions.md with scout's P1 to P5 and P8; schedule.json; my prompts point at conductor.md",
+    "by": "conductor@web-summit.vicky",
+    "from": "5665e1a54"
+  },
+  {
+    "version": "v0.2.777",
+    "date": "2026-11-06",
+    "what": "curator@PrompTugal.vicky: 11:45 run's report, AgroGrINTech (S22), a circular connection (S23), sources as links",
+    "by": "curator@PrompTugal.vicky",
+    "from": "abca8dba5"
+  },
+  {
+    "version": "v0.2.776",
+    "date": "2026-11-06",
+    "what": "review to v0.2.775, no hold; WS-178 verified and done; the .show route added to WS-164",
+    "by": "security@web-summit.dinis",
+    "from": "fbd8cfdfb"
+  },
+  {
+    "version": "v0.2.775",
+    "date": "2026-11-06",
+    "what": "11:40 wake: WS-120 reply sent to Angelo's lane; feedback-count.json live; the token rule followed",
+    "by": "vault@web-summit.jose",
+    "from": "8dc2c5191"
+  },
+  {
+    "version": "v0.2.774",
+    "date": "2026-11-06",
+    "what": "11:41 wake: no notes",
+    "by": "mentor@web-summit.dinis",
+    "from": "f6599dc0c"
+  },
+  {
+    "version": "v0.2.773",
+    "date": "2026-11-06",
+    "what": "11:40 brief for the 12:00: a note-taker first, the parking decision, the ranked five",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "20de4892a"
+  },
+  {
+    "version": "v0.2.772",
+    "date": "2026-11-06",
+    "what": "Angelo's card complete (answer 5; IFS assyst and Big Fish Games)",
+    "by": "conductor@web-summit.angelo",
+    "from": "6db3d06e4"
+  },
+  {
+    "version": "v0.2.771",
+    "date": "2026-11-06",
+    "what": "11:30 run, 1 capture in the research vault 41j3e9s9",
+    "by": "researcher@web-summit.vicky",
+    "from": "ecfab7388"
+  },
+  {
+    "version": "v0.2.770",
+    "date": "2026-11-06",
+    "what": "the whole team as one map, a slide in today's 12:00 deck, at Angelo's ask",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "b68f5b82d"
+  },
+  {
+    "version": "v0.2.769",
+    "date": "2026-11-06",
+    "what": "the team map: active only, and both RiskMandate and Promptugal agents",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "b99b7e7e4"
+  },
+  {
+    "version": "v0.2.768",
+    "date": "2026-11-06",
+    "what": "the whole team as one map: everyone, their agents, and who writes to whom (WS-97)",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "39e0d7410"
+  },
+  {
+    "version": "v0.2.767",
+    "date": "2026-11-06",
+    "what": "Angelo joins PrompTugal.news as an editor; admin stays his alone; his card's answers 1 and 4",
+    "by": "conductor@web-summit.angelo",
+    "from": "2219eb223"
+  },
+  {
+    "version": "v0.2.766",
+    "date": "2026-11-06",
+    "what": "ledger line for the 11:20 desk wake",
+    "by": "conductor@web-summit.angelo",
+    "from": "50e732b4d"
+  },
+  {
+    "version": "v0.2.765",
+    "date": "2026-11-06",
+    "what": "checker@PrompTugal.vicky on Vicky's records; the four beat journalists renamed; twelve articles live",
+    "by": "conductor@web-summit.vicky",
+    "from": "9cbfb9ff5"
+  },
+  {
+    "version": "v0.2.764",
+    "date": "2026-11-06",
+    "what": "checker@PrompTugal.vicky: the new rules saved word for word, the scheduled prompt updated, and the report",
+    "by": "checker@PrompTugal.vicky",
+    "from": "d4c6474c9"
+  },
+  {
+    "version": "v0.2.763",
+    "date": "2026-11-06",
+    "what": "checker@PrompTugal.vicky: session key entered in data/keys.json (checker-vicky, signing sha256:b13061c99fd1d102)",
+    "by": "checker@PrompTugal.vicky",
+    "from": "3ca27862f"
+  },
+  {
+    "version": "v0.2.762",
+    "date": "2026-11-06",
+    "what": "checker@PrompTugal.vicky: prompts saved word for word, and the first run's report",
+    "by": "checker@PrompTugal.vicky",
+    "from": "4dd590ea3"
+  },
+  {
+    "version": "v0.2.761",
+    "date": "2026-11-06",
+    "what": "Angelo's card, answer 3 (the conversations and demos he'll lead)",
+    "by": "conductor@web-summit.angelo",
+    "from": "f50c5f027"
+  },
+  {
+    "version": "v0.2.760",
+    "date": "2026-11-06",
+    "what": "journalist@PrompTugal.vicky: scheduled prompt saved; report, WS-177 fixed after review",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "22b3a1200"
+  },
+  {
+    "version": "v0.2.759",
+    "date": "2026-11-06",
+    "what": "decisions.md for every agent of Vicky's; journalists and reviewer scheduled; five desks renamed; the conductor's prompts saved",
+    "by": "conductor@web-summit.vicky",
+    "from": "a146ac284"
+  },
+  {
+    "version": "v0.2.758",
+    "date": "2026-11-06",
+    "what": "curator@PrompTugal.vicky: prompts file matches the scheduled task's new first step",
+    "by": "curator@PrompTugal.vicky",
+    "from": "5ccfcaa7a"
+  },
+  {
+    "version": "v0.2.757",
+    "date": "2026-11-06",
+    "what": "10:41 wake: no notes",
+    "by": "mentor@web-summit.dinis",
+    "from": "9cb111e07"
+  },
+  {
+    "version": "v0.2.756",
+    "date": "2026-11-06",
+    "what": "designer@PrompTugal.vicky: report, logo work stopped and the designer paused at Vicky's word",
+    "by": "designer@PrompTugal.vicky",
+    "from": "5adeb80a4"
+  },
+  {
+    "version": "v0.2.755",
+    "date": "2026-11-06",
+    "what": "curator@PrompTugal.vicky: the new name; prompts and standing rules saved; report",
+    "by": "curator@PrompTugal.vicky",
+    "from": "705554a88"
+  },
+  {
+    "version": "v0.2.754",
+    "date": "2026-11-06",
+    "what": "reviewer@PrompTugal.vicky: report, WS177 reviewed (Fix first)",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "0de7e8c05"
+  },
+  {
+    "version": "v0.2.753",
+    "date": "2026-11-06",
+    "what": "10:27 wake: the 12:00 deck (9 slides, PDF, PrompTugal screenshots) and brief 26",
+    "by": "conductor@web-summit.dinis",
+    "from": "8d1e5066c"
+  },
+  {
+    "version": "v0.2.752",
+    "date": "2026-11-06",
+    "what": "the onboarding guide's token step follows WS-170; my prompts and standing rules saved",
+    "by": "pm@web-summit.vicky",
+    "from": "e5f521e2c"
+  },
+  {
+    "version": "v0.2.751",
+    "date": "2026-11-06",
+    "what": "prompts and standing rules, saved at Vicky's request",
+    "by": "reviewer@web-summit.vicky",
+    "from": "194c613e5"
+  },
+  {
+    "version": "v0.2.750",
+    "date": "2026-11-06",
+    "what": "Angelo's card, answer 2 (his companies); crm checks which are at the summit",
+    "by": "conductor@web-summit.angelo",
+    "from": "8ac1ea16d"
+  },
+  {
+    "version": "v0.2.749",
+    "date": "2026-11-06",
+    "what": "measuring my runs' tokens into the ledger (WS-148)",
+    "by": "team-collaboration@web-summit.angelo",
+    "from": "c22154215"
+  },
+  {
+    "version": "v0.2.748",
+    "date": "2026-11-06",
+    "what": "prompts and standing rules saved; report, WS-177 drafted, not pushed (gate)",
+    "by": "journalist@web-summit.vicky",
+    "from": "8447e4201"
+  },
+  {
+    "version": "v0.2.747",
+    "date": "2026-11-06",
+    "what": "report for WS-177 (S3, S4, S7, S13, S20) and prompts saved",
+    "by": "journalist-portugal@web-summit.vicky",
+    "from": "77bc4463f"
+  },
+  {
+    "version": "v0.2.746",
+    "date": "2026-11-06",
+    "what": "09:41 wake: no notes; two mentors active (Silvio, Nimay)",
+    "by": "mentor@web-summit.dinis",
+    "from": "7bf942138"
+  },
+  {
+    "version": "v0.2.745",
+    "date": "2026-11-06",
+    "what": "startup prompt and standing rules saved, word for word",
+    "by": "journalist-europe@web-summit.vicky",
+    "from": "3ce001def"
+  },
+  {
+    "version": "v0.2.744",
+    "date": "2026-11-06",
+    "what": "prompts and standing rules saved; report, S12 not written (repeats S15)",
+    "by": "journalist-ai@web-summit.vicky",
+    "from": "68b773327"
+  },
+  {
+    "version": "v0.2.743",
+    "date": "2026-11-06",
+    "what": "09:34 wake: the one-door test done, Jose's 37 open issues (6 picked by him or his agents) in the task Report; WS-41 after 3",
+    "by": "dev@web-summit.jose",
+    "from": "0a57dfb1a"
+  },
+  {
+    "version": "v0.2.742",
+    "date": "2026-11-06",
+    "what": "P-04 confirmed by Angelo, all three tier-3 actions were his",
+    "by": "conductor@web-summit.angelo",
+    "from": "35090bafa"
+  },
+  {
+    "version": "v0.2.741",
+    "date": "2026-11-06",
+    "what": "ledger line for the 09:20 run Scheduled run.",
+    "by": "conductor@web-summit.angelo",
+    "from": "5b88b0fb6"
+  },
+  {
+    "version": "v0.2.740",
+    "date": "2026-11-06",
+    "what": "runner 09:20, nothing new Scheduled run.",
+    "by": "conductor@web-summit.angelo",
+    "from": "6b8a00680"
+  },
+  {
+    "version": "v0.2.739",
+    "date": "2026-11-06",
+    "what": "6 November 09:15 run: nothing new for the designer; the garments' next set still waits for Dinis",
+    "by": "designer@web-summit.dinis",
+    "from": "6d1246f63"
+  },
+  {
+    "version": "v0.2.738",
+    "date": "2026-11-06",
+    "what": "STATE.md before a test of context compaction (the policy audit's open points; how the desk works with Angelo)",
+    "by": "conductor@web-summit.angelo",
+    "from": "9022b7b11"
+  },
+  {
+    "version": "v0.2.737",
+    "date": "2026-11-06",
+    "what": "STATE.md current before the runner's first run; the desk's wakes at 08:20, 11:20, 17:20",
+    "by": "conductor@web-summit.angelo",
+    "from": "20658819b"
+  },
+  {
+    "version": "v0.2.736",
+    "date": "2026-11-06",
+    "what": "the 08:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "b230d3575"
+  },
+  {
+    "version": "v0.2.735",
+    "date": "2026-11-06",
+    "what": "RUNNER.md written so the gate's email check passes (a file name and a variable)",
+    "by": "conductor@web-summit.angelo",
+    "from": "7c287bb28"
+  },
+  {
+    "version": "v0.2.734",
+    "date": "2026-11-06",
+    "what": "Silvio's note updated (8 of 9); the Gmail drafts task blocked; one door read",
+    "by": "helper@web-summit.jose",
+    "from": "ce6c8ab68"
+  },
+  {
+    "version": "v0.2.733",
+    "date": "2026-11-06",
+    "what": "WS-176 applied by its owner (21 minutes from routing), no real mail yet, ledger on",
+    "by": "crm@web-summit.angelo",
+    "from": "32a0d1026"
+  },
+  {
+    "version": "v0.2.732",
+    "date": "2026-11-06",
+    "what": "08:41 wake: Indi's mentor hands over and retires (L6, every slot for two days); a note for Silvio",
+    "by": "mentor@web-summit.dinis",
+    "from": "fc54d5ba4"
+  },
+  {
+    "version": "v0.2.731",
+    "date": "2026-11-06",
+    "what": "the 08:40 pulse (quiet: no check-ins since 3 November)",
+    "by": "pulse@web-summit.dinis",
+    "from": "7d593242f"
+  },
+  {
+    "version": "v0.2.730",
+    "date": "2026-11-06",
+    "what": "brief 5 to Vicky: WS-177's twelve storylines by 10:00, WS-31's scope, the 18:00's words",
+    "by": "conductor@web-summit.vicky",
+    "from": "ed510fe66"
+  },
+  {
+    "version": "v0.2.729",
+    "date": "2026-11-06",
+    "what": "Replay slice 5: the clip, any window played full screen in 60 seconds, looping; and my first token ledger line",
+    "by": "dev@web-summit.angelo",
+    "from": "e368c8877"
+  },
+  {
+    "version": "v0.2.728",
+    "date": "2026-11-06",
+    "what": "08:27 wake: brief 25 (promptugal.news live, the email twin applied, Silvio's PrompTugal ask)",
+    "by": "conductor@web-summit.dinis",
+    "from": "a78a6540f"
+  },
+  {
+    "version": "v0.2.727",
+    "date": "2026-11-06",
+    "what": "token measurement for every agent of Angelo's (the hybrid, WS-148); my first ledger line",
+    "by": "conductor@web-summit.angelo",
+    "from": "af94b5f94"
+  },
+  {
+    "version": "v0.2.726",
+    "date": "2026-11-06",
+    "what": "my key, the policy map of Angelo's agents, the first audit and two proposals",
+    "by": "policy@web-summit.angelo",
+    "from": "69146077e"
+  },
+  {
+    "version": "v0.2.725",
+    "date": "2026-11-06",
+    "what": "08:10 run: the garments now for Monday 9 Nov; three things still open before then",
+    "by": "logistics@web-summit.vicky",
+    "from": "4a787f4e9"
+  },
+  {
+    "version": "v0.2.724",
+    "date": "2026-11-06",
+    "what": "WS-176 patch released for review, no real mail yet, the token rule kept",
+    "by": "crm@web-summit.angelo",
+    "from": "f599125c7"
+  },
+  {
+    "version": "v0.2.723",
+    "date": "2026-11-06",
+    "what": "the email twin (WS-176), read-only, as a patch for review: inbox, thread and company views of the CRM's mail",
+    "by": "crm@web-summit.angelo",
+    "from": "d870d02c1"
+  },
+  {
+    "version": "v0.2.722",
+    "date": "2026-11-06",
+    "what": "07:45 run's report, Octo Health (S20) and a 3xP Global connection (S21)",
+    "by": "curator@web-summit.vicky",
+    "from": "84caf680b"
+  },
+  {
+    "version": "v0.2.721",
+    "date": "2026-11-06",
+    "what": "07:50 wake: the newsroom's new address on the source links, 20 stories, tables refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "d59181ac5"
+  },
+  {
+    "version": "v0.2.720",
+    "date": "2026-11-06",
+    "what": "07:40 daily run: WS-31 due tomorrow needs Vicky's word (URGENT in the report); the guide's token step, a proposal",
+    "by": "pm@web-summit.vicky",
+    "from": "0488e1519"
+  },
+  {
+    "version": "v0.2.719",
+    "date": "2026-11-06",
+    "what": "07:30 run, 1 capture in the research vault 41j3e9s9",
+    "by": "researcher@web-summit.vicky",
+    "from": "ca3dfab86"
+  },
+  {
+    "version": "v0.2.718",
+    "date": "2026-11-06",
+    "what": "morning run; the 41 staged buyers give way to crm@web-summit.dinis's fuller records, the 38 online stay",
+    "by": "crm@web-summit.silvio",
+    "from": "2e52cc5c5"
+  },
+  {
+    "version": "v0.2.717",
+    "date": "2026-11-06",
+    "what": "07:30 wake: crm@web-summit.jose moved to the agents that run, the watcher's 22:15 run, WS-120's test verified; the task done",
+    "by": "dashboard@web-summit.jose",
+    "from": "5900b9512"
+  },
+  {
+    "version": "v0.2.716",
+    "date": "2026-11-06",
+    "what": "07:20 wake: brief 12; PromptUGAL (WS-177): a readers-test prompt for Indi's synthetic session",
+    "by": "conductor@web-summit.indi",
+    "from": "c8047a016"
+  },
+  {
+    "version": "v0.2.715",
+    "date": "2026-11-06",
+    "what": "07:06 wake: the merch milestone moves from Friday 6 to Monday 9 Nov morning (WS-48)",
+    "by": "dashboard@web-summit.dinis",
+    "from": "b830eb17a"
+  },
+  {
+    "version": "v0.2.714",
+    "date": "2026-11-06",
+    "what": "the 06:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "84c85217f"
+  },
+  {
+    "version": "v0.2.713",
+    "date": "2026-11-06",
+    "what": "Replay's slices 3 and 4 on the dashboard",
+    "by": "dashboard@web-summit.angelo",
+    "from": "9f392046a"
+  },
+  {
+    "version": "v0.2.712",
+    "date": "2026-11-06",
+    "what": "Replay slice 4: the agents' runs, from their own logs, beside their commits (quiet runs show too)",
+    "by": "dev@web-summit.angelo",
+    "from": "6e1fa5169"
+  },
+  {
+    "version": "v0.2.711",
+    "date": "2026-11-06",
+    "what": "the 04:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "a952a1767"
+  },
+  {
+    "version": "v0.2.710",
+    "date": "2026-11-06",
+    "what": "WS-178, the person keys checked with --verify: five pass, Indi's waits on riskmandate-indi",
+    "by": "sgit@web-summit.dinis",
+    "from": "443c8aabc"
+  },
+  {
+    "version": "v0.2.709",
+    "date": "2026-11-06",
+    "what": "seal.mjs --verify, one sealing rule for agent and person keys, for crm.mjs to call (WS-178)",
+    "by": "sgit@web-summit.dinis",
+    "from": "c1bdc6785"
+  },
+  {
+    "version": "v0.2.708",
+    "date": "2026-11-06",
+    "what": "Replay slice 3: who wrote to whom, as arcs from each commit to its For: lines, lit as they happen in playback",
+    "by": "dev@web-summit.angelo",
+    "from": "7bb221a49"
+  },
+  {
+    "version": "v0.2.707",
+    "date": "2026-11-06",
+    "what": "abp@PrompTugal.dinis on Dinis's roster (hourly, strict, all of Dinis's agents)",
+    "by": "conductor@web-summit.dinis",
+    "from": "815e9db68"
+  },
+  {
+    "version": "v0.2.706",
+    "date": "2026-11-06",
+    "what": "the conductor's inbox gives lanes to PrompTugal's agents too (their keys in their own repository)",
+    "by": "conductor@web-summit.dinis",
+    "from": "beebc2bfb"
+  },
+  {
+    "version": "v0.2.705",
+    "date": "2026-11-06",
+    "what": "main is protected; every ABP's main barrier updated; inbox@silvio's ABP",
+    "by": "abp@web-summit.dinis",
+    "from": "29e9879ca"
+  },
+  {
+    "version": "v0.2.704",
+    "date": "2026-11-06",
+    "what": "the 02:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "db7ade94a"
+  },
+  {
+    "version": "v0.2.703",
+    "date": "2026-11-06",
+    "what": "WS-106 (\"Meet the estate's repository standard\"), item 8: a leak tripwire before every push, for its keeper",
+    "by": "dev@web-summit.angelo",
+    "from": "7d8c445e5"
+  },
+  {
+    "version": "v0.2.702",
+    "date": "2026-11-06",
+    "what": "the wake texts to paste, beside the schedules proposal (A-06); Jose's Actions updated; crm-jose's token asked of Dinis; Gmail drafts for the helper",
+    "by": "conductor@web-summit.jose",
+    "from": "0848e6ade"
+  },
+  {
+    "version": "v0.2.701",
+    "date": "2026-11-06",
+    "what": "RiskMandate's LinkedIn page recorded in the private CRM; the videos go there",
+    "by": "crm@web-summit.jose",
+    "from": "ad355ce92"
+  },
+  {
+    "version": "v0.2.700",
+    "date": "2026-11-06",
+    "what": "Jose's answers on the channels in the private CRM: PromptUGAL's LinkedIn added; no YouTube or Instagram yet; no X or TikTok",
+    "by": "crm@web-summit.jose",
+    "from": "1f3ed6777"
+  },
+  {
+    "version": "v0.2.699",
+    "date": "2026-11-06",
+    "what": "the 00:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "a37d28ed1"
+  },
+  {
+    "version": "v0.2.698",
+    "date": "2026-11-06",
+    "what": "the channels area written into the private CRM (10 channels, 6 posts), committed locally, not pushed; five questions for Jose",
+    "by": "crm@web-summit.jose",
+    "from": "2dd5667ce"
+  },
+  {
+    "version": "v0.2.697",
+    "date": "2026-11-06",
+    "what": "the start page, the vaults page and the vault guide say one access token per agent (helper@web-summit.angelo's note)",
+    "by": "sgit@web-summit.dinis",
+    "from": "83938f75a"
+  },
+  {
+    "version": "v0.2.696",
+    "date": "2026-11-06",
+    "what": "the private CRM's key sealed to crm@web-summit.jose with seal.mjs, the pusher checked, at Jose's word; its three questions answered",
+    "by": "conductor@web-summit.jose",
+    "from": "332b02d03"
+  },
+  {
+    "version": "v0.2.695",
+    "date": "2026-11-06",
+    "what": "the vault agent's token rule and dev's WS-36 and WS-78 drafts on the dashboard",
+    "by": "dashboard@web-summit.angelo",
+    "from": "84260e5c5"
+  },
+  {
+    "version": "v0.2.694",
+    "date": "2026-11-06",
+    "what": "WS-78: a kicker above every title and the colour debt counted by the gate (a patch for its keeper); Angelo's stylesheet on tokens only",
+    "by": "dev@web-summit.angelo",
+    "from": "731514d10"
+  },
+  {
+    "version": "v0.2.693",
+    "date": "2026-11-06",
+    "what": "/media/, the team's videos and photos in one place, and a shared Drive folder for the rest",
+    "by": "conductor@web-summit.silvio",
+    "from": "7154308f9"
+  },
+  {
+    "version": "v0.2.692",
+    "date": "2026-11-06",
+    "what": "synthetic@PrompTugal.dinis on Dinis's roster, started in its own session",
+    "by": "conductor@web-summit.dinis",
+    "from": "3d21d72c7"
+  },
+  {
+    "version": "v0.2.691",
+    "date": "2026-11-06",
+    "what": "asking the conductor how to go on: the key sealed through seal.mjs, the token, the channel draft",
+    "by": "crm@web-summit.jose",
+    "from": "4070e6b15"
+  },
+  {
+    "version": "v0.2.690",
+    "date": "2026-11-06",
+    "what": "the PrompTugal team's ABP, its Reach heading written twice by my script",
+    "by": "abp@web-summit.dinis",
+    "from": "1f808e718"
+  },
+  {
+    "version": "v0.2.689",
+    "date": "2026-11-06",
+    "what": "ABPs for the PrompTugal team, Vicky's newsroom reviewer and four beat journalists, Jose's crm and accountant",
+    "by": "abp@web-summit.dinis",
+    "from": "93945b376"
+  },
+  {
+    "version": "v0.2.688",
+    "date": "2026-11-06",
+    "what": "observability@PrompTugal.dinis on Dinis's roster, started in its own session",
+    "by": "conductor@web-summit.dinis",
+    "from": "9712813fa"
+  },
+  {
+    "version": "v0.2.687",
+    "date": "2026-11-06",
+    "what": "the six PrompTugal agents on Dinis's roster; the contact check knows <role>@PrompTugal.<person> is a name",
+    "by": "conductor@web-summit.dinis",
+    "from": "fc56545bc"
+  },
+  {
+    "version": "v0.2.686",
+    "date": "2026-11-06",
+    "what": "the PromptUGAL agents item without email-shaped names, for the gate",
+    "by": "conductor@web-summit.silvio",
+    "from": "c9acae3d2"
+  },
+  {
+    "version": "v0.2.685",
+    "date": "2026-11-05",
+    "what": "review to v0.2.684, no hold; WS-178: the CRM's key sealing skips the WS-106 checks; the CRM's key circle recorded",
+    "by": "security@web-summit.dinis",
+    "from": "7f5fe17db"
+  },
+  {
+    "version": "v0.2.684",
+    "date": "2026-11-05",
+    "what": "the links at the bottom in two short groups: My agents, Promptugal News",
+    "by": "dashboard@web-summit.vicky",
+    "from": "443726308"
+  },
+  {
+    "version": "v0.2.683",
+    "date": "2026-11-05",
+    "what": "the newsroom repository PrompTugal/PrompTugal__News__Website on every desk in Vicky's records",
+    "by": "conductor@web-summit.vicky",
+    "from": "30efaf975"
+  },
+  {
+    "version": "v0.2.682",
+    "date": "2026-11-05",
+    "what": "the newsroom is Promptugal News at promptugal.news, from PrompTugal/PrompTugal__News__Website, everywhere it is current",
+    "by": "dev@web-summit.dinis",
+    "from": "85c83882f"
+  },
+  {
+    "version": "v0.2.681",
+    "date": "2026-11-05",
+    "what": "competitive analysis reorganised from Silvio's report: overlap against partner fit, the plan, the questions, a card per company",
+    "by": "outreach@web-summit.silvio",
+    "from": "d95ef11a3"
+  },
+  {
+    "version": "v0.2.680",
+    "date": "2026-11-05",
+    "what": "WS-175 task picked, step 1 reported; the reviewer's record",
+    "by": "crm@web-summit.jose",
+    "from": "a262f291b"
+  },
+  {
+    "version": "v0.2.679",
+    "date": "2026-11-05",
+    "what": "report, S9 Ready; the earlier miss recorded",
+    "by": "reviewer@web-summit.vicky",
+    "from": "05c2e032a"
+  },
+  {
     "version": "v0.2.678",
     "date": "2026-11-05",
     "what": "Links: the pages the team will use most (CRM, my brief, cards, sticker vote, setup help)",

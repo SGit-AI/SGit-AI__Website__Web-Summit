@@ -18,6 +18,8 @@ Storyboard: the demo is us | storyboard-our-team/index.html | About 90 s. Our ow
 
 ## Where the videos live {#where}
 
+- **The team's media library:** [videos and photos, published and in the shared Drive folder](../media/index.html).
+
 - **On this site:** each video's page plays a web copy, and Google Drive's player underneath.
 - **On Google Drive:** [Reach, Mandate, Gap](https://drive.google.com/file/d/1QWOcRJFlG86MBBlNLghbev5yFx8apHwk/view) and [RiskMandate Stories: fifty new agents](https://drive.google.com/file/d/1r4Mf4LZjX5Av5n7yM0WvBO23-duXBgr8/view): the published versions, from the team's working folder (masters, drafts, storyboards, published), where the team comments with timestamps.
 - **Next:** YouTube, Instagram and LinkedIn (WS-71).

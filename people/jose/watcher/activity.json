@@ -1,7 +1,7 @@
 {
  "schema": "web-summit.sgit.ai/watcher-activity/v1",
  "by": "watcher@web-summit.jose",
- "run": "2026-11-05T22:15Z",
+ "run": "2026-11-06T22:15Z",
  "scope": "the whole team, read-only (decided by Jose on 5 November 2026, WS-134; policy.json scope_decision)",
  "routes_to": {
   "reader": "conductor@web-summit.jose",
@@ -12,106 +12,80 @@
   "answered": "yes: conductor@web-summit.jose's prompt now reads the watcher's files and its commits at every wake (23bc4fb, 2191c0b)"
  },
  "range": {
-  "from": "bc8e218",
-  "to": "4dbeb40",
+  "from": "0d30a4d",
+  "to": "d015aac",
   "branch": "dev"
  },
  "counts": {
-  "commits": 136,
-  "ci_releases": 48,
+  "commits": 174,
+  "ci_releases": 60,
   "watcher_own": 1,
-  "agents": 87,
+  "agents": 113,
   "no_agent_name": 0,
   "reviewed_by_security": 0,
-  "not_yet_reviewed_by_security": 87,
-  "security_last_reviewed_commit": "a45be68"
+  "not_yet_reviewed_by_security": 113,
+  "security_last_reviewed_commit": "d468784"
  },
  "by_person": {
-  "vicky": 27,
-  "dinis": 24,
-  "angelo": 16,
-  "indi": 10,
-  "jose": 6,
-  "silvio": 4
+  "vicky": 55,
+  "angelo": 20,
+  "dinis": 17,
+  "silvio": 14,
+  "indi": 4,
+  "jose": 3
  },
- "by_agent": {
-  "accountant@web-summit.indi": 8,
-  "conductor@web-summit.dinis": 7,
-  "conductor@web-summit.vicky": 5,
-  "conductor@web-summit.angelo": 4,
-  "crm@web-summit.dinis": 4,
-  "mentor@web-summit.dinis": 4,
-  "conductor@web-summit.jose": 4,
-  "journalist@web-summit.vicky": 4,
-  "team-collaboration@web-summit.angelo": 3,
-  "dashboard@web-summit.vicky": 3,
-  "curator@web-summit.vicky": 3,
-  "designer@web-summit.vicky": 3,
-  "crm@web-summit.angelo": 2,
-  "vault@web-summit.angelo": 2,
-  "crm@web-summit.silvio": 2,
-  "project-manager@web-summit.dinis": 2,
-  "dev@web-summit.angelo": 2,
-  "dashboard@web-summit.angelo": 2,
-  "dev@web-summit.dinis": 2,
-  "journalist@web-summit.dinis": 2,
-  "journalist-portugal@web-summit.vicky": 2,
-  "journalist-europe@web-summit.vicky": 2,
-  "journalist-connections@web-summit.vicky": 2,
-  "conductor@web-summit.indi": 1,
-  "vault@web-summit.silvio": 1,
-  "dashboard@web-summit.indi": 1,
-  "dashboard@web-summit.jose": 1,
-  "procurement@web-summit.silvio": 1,
-  "pulse@web-summit.dinis": 1,
-  "pm@web-summit.vicky": 1,
-  "vault@web-summit.jose": 1,
-  "helper@web-summit.angelo": 1,
-  "researcher@web-summit.vicky": 1,
-  "abp@web-summit.dinis": 1,
-  "journalist-ai@web-summit.vicky": 1,
-  "sgit@web-summit.dinis": 1
- },
- "actions": "people/jose/watcher/actions.json: open A-01 (fourth run), A-06 (third run), A-11, A-12; closed A-07, A-08, A-09",
+ "actions": "open A-06 (seventh run), A-12 (fifth), A-14 (fourth), A-15 (third), A-17 (second), A-18 (new)",
  "flags": [
   {
    "level": "high",
-   "what": "still open, fourth run: contact-detail rule hits in a public page",
+   "what": "still open, eighth run: contact-detail rule hits in a public page",
    "where": "f20d264 content/family-riskmandate-agent.md lines 6, 18 and 32",
    "rule": "an email address (vault-audit.mjs)",
    "context": "unchanged on dev; security has not reviewed since 11:50 (next 23:50)"
   },
   {
    "level": "medium",
+   "what": "the stored hourly drain prompt still runs the full drain",
+   "where": "conductor@web-summit.jose's hourly scheduled task, fired again at 22:08",
+   "context": "part of A-06; waiting on Jose (people/jose/schedules.md#paste)"
+  },
+  {
+   "level": "medium",
    "what": "still open: a contact-detail rule hit on a public session branch",
    "where": "claude/optimistic-feynman-7pkot9 (dc306d7) board/WS-26-* line 16",
-   "rule": "an email address",
-   "context": "the branch has not moved"
+   "rule": "an email address (every match on the line)",
+   "context": "unchanged"
   },
   {
    "level": "note",
-   "what": "code in another person's folder, under the one-line-fix exception",
-   "where": "fa36c6e (conductor@web-summit.jose, 18:35) people/indi/today/today.mjs, one line",
-   "context": "a fix for a gate that failed for everyone since 18:00; the commit has an 'Affects everyone:' line and is addressed to Indi's agents and Dinis's conductor, as the kit's exception asks; carries Reviewed-by"
+   "what": "shared build code changed by a person's agent",
+   "where": "23d31aa (Angelo's dev agent, 20:40) admin/build/inventory.mjs, 40 lines",
+   "context": "its message says Angelo's conductor cleared it under Angelo's new rule (people/angelo/kit/README.md#protocol) and addresses dev@web-summit.dinis, the file's keeper; Jose's kit (section 'Affects everyone: and shared code') would send such a change to its owner first as a board issue; listed, not judged"
   },
   {
    "level": "note",
-   "what": "key-shape rule hits in the shared feedback lanes",
-   "where": "7a6a14e (vault@web-summit.angelo) assets/feedback.json line 103; d9209a8 (conductor@web-summit.vicky) assets/feedback.json line 115",
-   "rule": "a token assignment",
-   "context": "append tokens, public by design, as with the earlier lanes; with data/inbox/ lane files"
+   "what": "185 email-rule lines in 46 commits, all agent names in the PrompTugal style",
+   "where": "Vicky's, Angelo's and Dinis's files",
+   "rule": "an email address (vault-audit.mjs)",
+   "context": "none is a real mail domain"
   },
   {
    "level": "note",
-   "what": "content page by a person agent",
-   "where": "095ff9b (helper@web-summit.angelo) content/help.md",
+   "what": "writes outside the lane",
+   "where": "conductor@web-summit.silvio content/media.md (d831d2a); video@web-summit.silvio a sealed key for conductor@web-summit.silvio in data/sealed/agents/ (1db048b)",
    "context": "listed, not judged"
   },
   {
    "level": "info",
-   "what": "new agents declared",
-   "where": "policy@web-summit.angelo (proposed daily 07:10), crm@web-summit.silvio, and six newsroom agents of Vicky's (journalist, designer, journalist-portugal, -europe, -ai, -connections) that write only in the newsroom repository",
-   "context": "the watcher sees only this repository"
+   "what": "new agents",
+   "where": "design@web-summit.silvio (10 commits), dev for Vicky (PrompTugal style, 6 commits)",
+   "context": ""
+  },
+  {
+   "level": "note",
+   "what": "a Reviewed-by trailer git cannot parse",
+   "where": "fb3866d (dashboard@web-summit.jose, 17:32)",
+   "context": "the line is there, above a duplicated Co-Authored-By and Claude-Session block, so git's trailer parser misses it; counted as present; for the conductor to tell the dashboard agent"
   }
  ],
  "open_from_earlier_runs": [
@@ -138,61 +112,34 @@
   }
  ],
  "reviewer_trailer": {
-  "jose_commits_checked": 6,
+  "jose_commits_checked": 3,
   "missing": []
  },
  "branches": {
   "main": "no new commit (last 81353d4)",
-  "moved, on dev": [
-   "claude/modest-lamport-v1ejmm (b6511aa)"
-  ],
-  "moved, not on dev": [
-   "claude/modest-brahmagupta-37bfva (60e4404, conductor@web-summit.angelo): one board line in WS-176, the same subject as 3492b02 on dev (a pre-rebase copy); no rule hit"
-  ],
-  "not on dev, unchanged": [
-   "claude/optimistic-feynman-7pkot9 (dc306d7)",
-   "claude/sharp-archimedes-chn14g (0834db3)",
-   "claude/nifty-bell-f1rkca"
-  ]
+  "claude/optimistic-feynman-7pkot9": "unchanged, dc306d7"
  },
  "commits_jose": [
   {
-   "sha": "5923d4e",
-   "time": "2026-11-05T17:34:29Z",
+   "sha": "5f73cc5",
+   "time": "2026-11-06T17:25:04Z",
+   "agent": "conductor@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+  },
+  {
+   "sha": "fb3866d",
+   "time": "2026-11-06T17:32:34Z",
    "agent": "dashboard@web-summit.jose",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
   },
   {
-   "sha": "5c6ddde",
-   "time": "2026-11-05T17:44:39Z",
+   "sha": "4d02969",
+   "time": "2026-11-06T17:42:53Z",
    "agent": "vault@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "d3df747",
-   "time": "2026-11-05T18:17:06Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "106902f",
-   "time": "2026-11-05T18:35:00Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "fa36c6e",
-   "time": "2026-11-05T18:35:01Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "0fb2fc8",
-   "time": "2026-11-05T18:35:01Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+   "reviewed_by": "reviewer@web-summit.jose (pass)"
   }
  ],
+ "release_note": "the 17:15 run's commit 1120964 is on dev; its own deploy was cancelled in the queue and a later release carried it",
  "could_not_check": [
   "scheduled tasks in other people's accounts",
   "the agents' run logs in the public vault aym98gsm (no sgit client yet: Jose to install it)",

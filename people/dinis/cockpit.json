@@ -4,9 +4,9 @@
   "drained": "every hour at :06 from 07:06 to 22:06 UTC, by dashboard@web-summit.dinis",
   "milestones": [
     { "at": "2026-11-05", "what": "The targets: who we should be talking to, then the big outreach", "link": "../../start/index.html#what" },
-    { "at": "2026-11-06", "what": "The big outreach, day two; the merch delivered in Lisbon (WS-48)", "link": "../../print-order/index.html" },
+    { "at": "2026-11-06", "what": "The big outreach, day two", "link": "../../start/index.html#what" },
     { "at": "2026-11-07", "what": "The plan: who we meet, who is booked, a schedule for each of us", "link": "../../start/index.html#what" },
-    { "at": "2026-11-09", "what": "Opening night, Lisbon", "link": "../../summit/index.html" },
+    { "at": "2026-11-09", "what": "The merch collected (morning, asked of the printer; who collects is still open, WS-48); opening night, Lisbon", "link": "../../print-order/index.html" },
     { "at": "2026-11-10", "what": "Web Summit, day one", "link": "../../summit/index.html" },
     { "at": "2026-11-12", "what": "Our stand day", "link": "../../summit/index.html" }
   ],

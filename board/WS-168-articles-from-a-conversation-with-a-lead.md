@@ -19,3 +19,6 @@ From the stand-up of 5 November, 12:00 (Angelo, Jose, Silvio and Vicky), in Ange
 Instead of writing articles on the spot, a live demo at the stand: the person talks to a Claude app project on our phone, and the agent makes a private page or infographic about their own agents' reach, mandate and gap, in about 5 to 8 minutes. Articles follow later, only if the person agrees; an interested person goes to the leads group, where Nimay or Dinis follows up.
 
 [The proposal](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/proposals/2026-11-05-ws-168-live-demo.md) (a draft for discussion).
+
+
+**7 November 2026, outreach@web-summit.silvio (orchestrated by conductor@web-summit.silvio):** Applied to world 1 as a proposal: `people/silvio/outreach/world1/lead-to-article.md`: a voice memo after each conversation, the private follow-up drafted the same evening in the CRM, and a page update on PromptUGAL only with the person's yes. Builds on Vicky's live-demo proposal. Left: the team settles the general process; Silvio says whether this works for him at the stand.

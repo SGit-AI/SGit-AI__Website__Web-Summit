@@ -2,6 +2,31 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 6 November 2026, 16:50 UTC (scheduled run)
+
+- **Renamed:** from this run I am crm@PrompTugal.angelo (90299d08). Commits, `Agent:` and `AGENT=` use the new name. agent-log uses the lower-case form, with my key named explicitly, because the key's label still carries the old name. My scheduled task is renamed and its prompt updated. My entry on the keys page still reads crm@web-summit.angelo; it changes only when I make a new key.
+- **WS-08, Angelo's 18 companies at the summit** (8ac1ea16, 1881159d, 6db3d06e): the results are in people/angelo/proposals/companies/.
+  - Accenture is confirmed, at attendee level only (one featured attendee for LIS26). Its draft entry is accenture.json, for you to route.
+  - AWS is reported but not confirmed: a logo on 2026 track pages, and no LIS26 record. Amazon, its parent, has a session on 11 November.
+  - Nothing was found for the other 16.
+  - The partner, speaker and startup lists were read in full; the attendee list only for a tenth (150 of 1,466 pages). The README says what was checked. I can read the rest of the attendee list in a later run if you want it (about 1,300 page fetches).
+- **The CRM:** no real mail yet, and nothing owned by angelo, so no vault change.
+
+## 6 November 2026, 08:50 UTC (scheduled run)
+
+- **WS-176 applied:** conductor@web-summit.dinis reviewed the email twin and applied it as is (a2aa4f47, 08:33 UTC; pushed from DinisCruz). It took **21 minutes from routing (d870d02c, 08:12) to the owner's commit**, for the lead-time measure. Both vault apps are rebuilt with the Mail view, and the two proposed schemas (thread, message) are in both vaults. In the same commit, `crm.mjs` now pushes with `SG_SEND_ACCESS_TOKEN`. That is Angelo's token in this session, so I will not use `crm.mjs app` or push until crm-angelo has its own token (20962d69).
+- **No real mail yet:** ws-team-crm-private still has no `companies/*/comms/` (pulled 08:52 UTC, read-only).
+- **Angelo's area:** no record is owned by angelo and notes.md is empty, so index.md is unchanged.
+- **Token ledger (WS-148, af94b5f9):** I measure from this run, in my ledger file in `people/angelo/ledger/`.
+
+## 6 November 2026, 08:15 UTC (prompted by Angelo, with the conductor's 3492b029 and 20962d69)
+
+- **WS-176, the email twin: released as a patch for review**, in people/angelo/proposals/WS-176/ (d870d02c, live in v0.2.723), routed to conductor@web-summit.dinis because the files it changes are theirs. It is read-only, with an inbox, a thread view and a company view, for the vault app's Mail tab and for /crm/. Mail is shown as text only and nothing is loaded. It was tested on made-up threads only (no real names; the fixture writes its addresses at run time, so no address sits in the repository). The README has the results. **For WS-177 (due 10:00 today), my part is ready to apply; applying it is conductor@web-summit.dinis's step.**
+- **No real mail in the CRM yet.** A fresh read-only clone of ws-team-crm-private at 08:10 UTC has no `companies/*/comms/`. When WS-173's threads arrive, I will only check that they render.
+- **The token rule (20962d69):** acknowledged. I have no own token yet, so I push no vault; vault changes stay as local commits. Reading needs no token, and none is stored in either clone. My scheduled task (08:50 and 16:50 UTC) now says so.
+- **Released last night? No:** my release waited overnight because dev's gate was red from 18:00 UTC (people/indi/today/today.mjs ignored schedule.json's `slots_from`). Angelo gave his go for me to fix it, but conductor@web-summit.jose had already fixed it the same way (fa36c6e2), so I changed nothing outside people/angelo/.
+- **Still waiting:** crm-angelo's own SG/Send token (asked of conductor@web-summit.dinis in 20962d69).
+
 ## 5 November 2026, 17:35 UTC (prompted by Angelo)
 
 - **Angelo has an area in the private CRM**: `people/angelo/` in ws-team-crm-private, at Angelo's word ("Folder in private CRM", his choice in this session). It holds README.md (what the area is for, who keeps it, who can read it), index.md (Angelo's records across the CRM, which I rebuild each run; empty for now) and notes.md (his working notes, which I turn into actions when they become one). Pushed, and confirmed in a fresh clone.

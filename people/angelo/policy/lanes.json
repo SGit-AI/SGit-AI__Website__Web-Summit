@@ -1,0 +1,81 @@
+{
+  "schema": "web-summit.sgit.ai/angelo-lanes/v1",
+  "about": "Where each of Angelo's agents may write, from its ABP (content/abp/<agent>-web-summit-angelo.md, Mandate, Deployment scope) and Angelo's protocol (people/angelo/kit/README.md#protocol). Kept by policy@web-summit.angelo; read by people/angelo/policy/audit.mjs. A write outside these paths is not always a violation (tier 2 allows small changes the owner asked for, said so in the commit), but every one is listed and judged in findings.md.",
+  "updated": "2026-11-06",
+  "common": [
+    "data/keys.json",
+    "board/WS-160-every-agent-logs-its-runs.md"
+  ],
+  "agents": {
+    "conductor@web-summit.angelo": {
+      "writes": [
+        "people/angelo/**",
+        "board/**",
+        "data/meetings/**"
+      ],
+      "tier3_paths": [
+        "data/sealed/agents/*@web-summit.angelo/**",
+        "data/person-keys.json",
+        "data/sealed/angelo/**"
+      ],
+      "source": "ABP Mandate; prompt (sealing Dinis-issued tokens to Angelo's agents, Angelo's yes of 5 November)"
+    },
+    "dev@web-summit.angelo": {
+      "writes": [
+        "people/angelo/**",
+        "board/**",
+        "data/meetings/**"
+      ],
+      "source": "ABP Mandate; shared code only as a routed patch in people/angelo/proposals/ (Angelo, 5 November, option 1)"
+    },
+    "dashboard@web-summit.angelo": {
+      "writes": [
+        "people/angelo/dashboard.md",
+        "people/angelo/app/config.json"
+      ],
+      "source": "ABP Mandate (the standard prompt's 'only', and Angelo's word for app/config.json)"
+    },
+    "team-collaboration@web-summit.angelo": {
+      "writes": [
+        "people/angelo/**",
+        "board/**",
+        "data/meetings/**"
+      ],
+      "source": "ABP Mandate"
+    },
+    "vault@web-summit.angelo": {
+      "writes": [
+        "people/angelo/**",
+        "board/**"
+      ],
+      "tier3_paths": [
+        "data/inbox/lane-*-angelo.json",
+        "assets/feedback.json"
+      ],
+      "source": "ABP Mandate; lanes only through admin/tools/lane_for.py, the owners' tool, which writes assets/feedback.json and data/inbox/; the board, which CLAUDE.md opens to anyone (its ABP Mandate omits it)"
+    },
+    "helper@web-summit.angelo": {
+      "writes": [
+        "content/help.md"
+      ],
+      "source": "ABP Mandate; its prompt"
+    },
+    "crm@web-summit.angelo": {
+      "writes": [
+        "people/angelo/**",
+        "board/**"
+      ],
+      "source": "ABP Mandate; the shared CRM UI only as a routed patch; the board, which CLAUDE.md opens to anyone (its ABP Mandate omits it)"
+    },
+    "policy@web-summit.angelo": {
+      "writes": [
+        "people/angelo/policy/**"
+      ],
+      "source": "Angelo's prompt, 5 November; the protocol's one exception to the hub"
+    }
+  },
+  "everyone": {
+    "board_line_ws160": "board/WS-160: one 'logging from' line, asked of every agent by WS-160 (Dinis): allowed for all (common)",
+    "two_files_rule": "a new page and the first link to it, inside people/angelo/, in one commit (the protocol); listed, not a finding"
+  }
+}

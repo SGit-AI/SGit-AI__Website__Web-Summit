@@ -24,3 +24,10 @@ Vicky's programme desk for the Web Summit newsroom (brief 4; brief 5, step 1; br
 - WS-153 (team site commit f124bd1b): this desk holds one vault key, the shortlist vault's; it is not sent to anyone without Vicky's yes.
 - Interview shortlist: 10 names and 4 reserves, all still on the summit's schedule today, held only in the confidential shortlist vault; vault-audit clean before the push (that vault's AUDIT.md).
 - Resolved, at Vicky's word: the 08:15 agenda is live (newsroom v0.1.14, commit 87c8a90); release.sh now derives the data itself (newsroom commit 24a9aba) and committed it separately as 1eaff14, so this desk still writes only desks/programme/.
+
+## Fri 6 Nov 2026, 08:15 UTC run
+
+- The agenda from 6 November is live: 218 items, 19 of the 80 sessions in data/events.json now at other times, the same 4 entries answering 404 (PrompTugal/PrompTugal__News__Website, commit cd52b43 with its derived data ecf0c94, promptugal.news v0.1.174).
+- New announcements on the summit's schedule: 8 more press conferences, among them PitchBook (Tue 10 Nov 10:30), Discord's expansion in Lisbon (Wed 11 Nov 10:30) and Unicorn Factory Lisboa with partners (Thu 12 Nov 11:00) (websummit.com/schedule/, press conference filter, read 6 Nov 08:20 UTC).
+- This desk's newsroom clone had its origin set back to the old SGit-AI address overnight; it points at PrompTugal again, with a push redirect from the old address, and nothing went there. The release script is now newsroom/tools/release.sh (newsroom commit d5dcff8).
+- Interview shortlist: 10 names and 4 reserves, all still on the summit's schedule today, held only in the confidential shortlist vault; vault-audit clean before the push. The conductor's reported showing of the overview to Dinis is recorded in that vault's AUDIT.md, attributed to the conductor, as it asked (team site commit 7523baf2).

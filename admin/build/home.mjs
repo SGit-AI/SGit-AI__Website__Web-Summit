@@ -37,8 +37,8 @@ export function homeBlocks({ ROOT, teamData, onboard, LEVELS, INV, MEET, ISSUES,
         [`${connected} of ${core.length}`, `${connected} of ${core.length}`, 'of us connected', 'team/setup/index.html'],
         [String(running.length), String(running.length), 'agents running', 'team/map/index.html']]
     const hero = {
-        html: `<section class="hm-hero"><h1>Seven of us. Our agents.<br>One RiskMandate.</h1><p>Web Summit Lisbon, 9 to 12 November 2026. Our stand: Thursday 12 November.</p><div class="hm-count">${heroNums.map(([h, , t, href]) => `<a href="${href}"><b>${h}</b><span>${t}</span></a>`).join('')}</div></section><script src="assets/countdown.js" defer></script>`,
-        md: `## Seven of us. Our agents. One RiskMandate.\n\nWeb Summit Lisbon, 9 to 12 November 2026. Our stand: Thursday 12 November.\n\n${heroNums.map(([, m, t]) => `- **${m}** ${t}`).join('\n')}`
+        html: `<section class="hm-hero"><h1>Seven of us. Our agents.<br>One RiskMandate.</h1><p>Seven people and our AI agents, getting ready for Web Summit Lisbon (9 to 12 November 2026) in the open. Our stand: Thursday 12 November, booth A1-30.</p><div class="hm-count">${heroNums.map(([h, , t, href]) => `<a href="${href}"><b>${h}</b><span>${t}</span></a>`).join('')}</div></section><script src="assets/countdown.js" defer></script>`,
+        md: `## Seven of us. Our agents. One RiskMandate.\n\nSeven people and our AI agents, getting ready for Web Summit Lisbon (9 to 12 November 2026) in the open. Our stand: Thursday 12 November, booth A1-30.\n\n${heroNums.map(([, m, t]) => `- **${m}** ${t}`).join('\n')}`
     }
 
     // 2. needs you: a setup step people are stuck at (grouped), the next stand-up's decisions by who decides,
@@ -124,12 +124,37 @@ export function homeBlocks({ ROOT, teamData, onboard, LEVELS, INV, MEET, ISSUES,
         html: svImgs.length ? `<section class="hm-vote"><div class="hm-vote-txt"><h2 id="sticker-vote">${svOpen ? 'Pick our stickers' : 'The sticker vote is closed'}</h2><p>${svImgs.length} funny laptop stickers for Lisbon in three sets: the road trip, creative takes and the gap. ${svOpen ? 'Rank your top 10, team only, signed with your key. Closes <b>today, 14:30 UTC</b>.' : 'See which ones won.'}</p><a class="hm-vote-btn" href="stickers/vote/index.html">${svOpen ? 'Vote now' : 'See the results'}</a></div><a class="hm-vote-strip" href="stickers/vote/index.html" aria-label="The stickers">${svPick.map(f => `<img src="assets/stickers/vote/${f}" alt="" width="120" height="120" loading="lazy">`).join('')}</a></section>` : '',
         md: svImgs.length ? `## ${svOpen ? 'Pick our stickers' : 'The sticker vote is closed'}\n\n${svImgs.length} laptop stickers in three sets; ${svOpen ? 'rank your top 10 (team only), closes 5 November 14:30 UTC' : 'see the results'}: https://web-summit.sgit.ai/stickers/vote/` : ''
     }
-    return { hero, needs, now: now_, people, numbers, today, vote }
+    // 8. for someone new (Dinis, 6 November 2026: a home page to share: what we write, what we have made, the agents in action).
+    //    The content is assets/design/home/showcase.json (designer@web-summit.dinis); our own articles are read from content/articles/.
+    const SC = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/design/home/showcase.json'), 'utf8')) } catch { return { shots: [], made: [], promptugal: { picks: [] } } } })()
+    const shots = {
+        html: `<section class="hm-shots"><h2 id="at-work">The agents at work</h2><p class="hm-intro">Real screens from this site, taken on 6 November. Click one to see it live.</p><div class="hm-gallery">${SC.shots.map(x => `<a class="hm-shot${x.wide ? ' wide' : ''}" href="${esc(x.href)}"><img src="${esc(x.img)}" alt="${esc(x.title)}" loading="lazy"><span><b>${esc(x.title)}</b>${esc(x.text)}</span></a>`).join('')}</div></section>`,
+        md: `## The agents at work\n\n${SC.shots.map(x => `- **${x.title}**: ${x.text} https://web-summit.sgit.ai/${x.href}`).join('\n')}`
+    }
+    const ADIR = path.join(ROOT, 'content/articles')
+    const ours = (fs.existsSync(ADIR) ? fs.readdirSync(ADIR).filter(f => f.endsWith('.md')) : []).map(f => {
+        const t = fs.readFileSync(path.join(ADIR, f), 'utf8'), fm = (t.match(/^---\n([\s\S]*?)\n---/) || [, ''])[1]
+        const g = k => ((fm.match(new RegExp(`^${k}:\\s*(.*)$`, 'm')) || [, ''])[1]).replace(/^"|"$/g, '')
+        return { title: g('title'), date: g('date'), summary: g('summary'), href: `articles/${f.replace(/\.md$/, '.html')}` }
+    }).filter(a => a.title).sort((a, b) => b.date.localeCompare(a.date))
+    const P = SC.promptugal || { picks: [] }
+    const dshort = d => d ? new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' }) : ''
+    const item = (x, src) => `<a class="hm-read-item" href="${esc(x.href)}"><span class="meta">${esc(src)}</span><b>${esc(x.title)}</b><span>${esc(clip(plain(x.summary || ''), 150))}</span></a>`
+    const writing = {
+        html: `<section class="hm-writing"><h2 id="writing">What we are writing</h2><div class="hm-read"><div><h3><a href="${esc(P.href || '')}">${esc(P.name || '')}</a></h3><p class="hm-intro">${esc(P.about || '')}</p>${(P.picks || []).map(x => item(x, 'PrompTugal.news')).join('')}<p class="meta"><a href="${esc(P.all || P.href || '')}">Every PrompTugal article</a></p></div><div><h3><a href="articles/index.html">From this site</a></h3><p class="hm-intro">How the site and its agents work, written by the agents that run it.</p>${ours.slice(0, 5).map(x => item(x, dshort(x.date))).join('')}<p class="meta"><a href="reports/index.html">The reports, every two hours</a> · <a href="videos/index.html">The videos</a></p></div></div></section>`,
+        md: `## What we are writing\n\n${P.name} (${P.href}): ${P.about}\n\n${(P.picks || []).map(x => `- [${x.title}](${x.href}): ${x.summary}`).join('\n')}\n\nFrom this site:\n\n${ours.slice(0, 5).map(x => `- [${x.title}](https://web-summit.sgit.ai/${x.href}) (${x.date}): ${plain(x.summary)}`).join('\n')}`
+    }
+    const stickerArt = svPick.slice(0, 4).map(f => `<img src="assets/stickers/vote/${esc(f)}" alt="" loading="lazy">`).join('')
+    const made = {
+        html: `<section class="hm-made"><h2 id="made">What we have made</h2><div class="hm-made-grid">${SC.made.map(x => `<a class="hm-made-item" href="${esc(x.href)}">${x.img === 'stickers' ? `<span class="hm-stickers">${stickerArt}</span>` : `<img src="${esc(x.img)}" alt="${esc(x.title)}" loading="lazy">`}<span><b>${esc(x.title)}</b>${esc(x.text)}</span></a>`).join('')}</div></section>`,
+        md: `## What we have made\n\n${SC.made.map(x => `- **${x.title}**: ${x.text} https://web-summit.sgit.ai/${x.href}`).join('\n')}`
+    }
+    return { hero, needs, now: now_, people, numbers, today, vote, shots, writing, made }
 }
 
 // content/index.md's placeholders, each alone on its line: {{hero}} and the others
 export const expandHome = (html, md, B) => {
-    for (const k of ['hero', 'vote', 'needs', 'now', 'people', 'numbers']) {
+    for (const k of ['hero', 'vote', 'needs', 'now', 'people', 'numbers', 'shots', 'writing', 'made']) {
         html = html.replace(`<p>{{${k}}}</p>`, B[k].html)
         md = md.replace(`{{${k}}}`, B[k].md)
     }

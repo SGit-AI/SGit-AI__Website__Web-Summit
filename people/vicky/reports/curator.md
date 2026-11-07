@@ -57,3 +57,72 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Each link is the curator's suggestion from public facts: no capture says any of these organisations will meet, and the map asks the journalist never to say so; organisations only, nothing private about anyone (same map, rules).
 - For the fact-checker: whether Granter's and Intuitivo's Impact Innovation Fund is the same fund (captures/2026-11-04-granter-funding.md and intuitivo-funding.md).
 - Gap for the researcher, the main input for more connections: which Portuguese startups exhibit or pitch this year, by field, and the public schedule's speakers by day and stage (same map, gaps_for_the_researcher).
+
+## Fri 6 Nov 2026, 07:45 UTC run (1 new capture; the newsroom's new address)
+
+- Mapped the researcher's 07:30 capture in vault 41j3e9s9 (commit 3c0976877499): Octo Health launches its health tracking platform in Portugal and the US after a pre-seed led by 3xP Global (captures/2026-11-06-octo-health-launch.md); the map is desks/curator/2026-11-06-0745.json, pushed to PrompTugal/PrompTugal__News__Website and released by CI as v0.1.169.
+- New candidates: S20, Lisbon's Octo Health launches health tracking in Portugal and the US; and S21, marked connections, One backer, two fields: 3xP Global's Granter and Octo Health (with captures/2026-11-04-granter-funding.md); both on desks/curator/README.md with their sources.
+- For the fact-checker: the round size is Portugal Startup News citing Jornal Económico, and HIPAA and GDPR are the company's own statements; Intuitivo stays out of the 3xP link until checked (desks/curator/2026-11-06-0745.json).
+- For devops: release.sh said promptugal.news served nothing readable 6 minutes after v0.1.169, and from this container it does not answer at all, which may be this environment's network (release.sh output, 07:58 UTC).
+- The newsroom clone's remote had gone back to the old SGit-AI address after a container restart; it was reset to PrompTugal/PrompTugal__News__Website before any pull or push, and nothing was pushed to the old address (git remote get-url origin, 07:47 UTC).
+
+## Fri 6 Nov 2026, 10:50 UTC (the new name: curator@PrompTugal.vicky)
+
+- Renamed at Vicky's word (Dinis asked for new names): curator@web-summit.vicky is now curator@PrompTugal.vicky; its key entry curator-vicky-promptugal is in the newsroom's board/keys.json (the same session key, encryption sha256:8c0828de5f96176b), released as v0.1.207 (newsroom commit ccc2d36).
+- Reports stay here, at Vicky's word; commits from now on use the new name (this commit).
+- The startup prompt, the scheduled task's prompt and the standing rules from chat are in people/vicky/prompts/curator.md, word for word, nothing secret (this commit).
+- The scheduled task's prompt still uses the old name and the old release path admin/tools/release.sh: told to Vicky, not changed by the curator (people/vicky/prompts/curator.md, "Scheduled task's prompt").
+- The newsroom clone's remote went back to the old SGit-AI address twice after container restarts; both times it was reset to PrompTugal/PrompTugal__News__Website before any push, and nothing was pushed to the old address (git remote get-url origin, 10:40 UTC).
+
+## Fri 6 Nov 2026, 11:45 UTC run (1 new capture)
+
+- Mapped the researcher's 11:30 capture in vault 41j3e9s9 (commit 30832c4dffcf): AgroGrINTech turns pineapple waste into a fish feed ingredient at a pilot unit in Maia (captures/2026-11-06-agrogrintech-pineapple-aquafeed.md); the map is desks/curator/2026-11-06-1145.json in the newsroom, released as v0.1.235.
+- New candidates: S22, From pineapple waste to fish feed: AgroGrINTech's pilot in Maia; and S23, marked connections, Waste into value: AgroGrINTech and Seamoretech, two circular Portuguese startups (with captures/2026-11-04-seamoretech-funding.md).
+- Followed people/vicky/decisions.md (all its commits by conductor@web-summit.vicky): every source on desks/curator/README.md is now a link, [Publisher, "Title"](url), as standing answer 9 and the newsroom's desks/journalist-vicky/STYLE.md ask, and the page says the new name (newsroom commit 0b1cb9f).
+- For the fact-checker: AgroGrINTech's growth in capacity is the company's own figure, and its 1.2 million euros is expected, not raised (same capture).
+- Correction to the entry of 10:30 above: its heading should say 10:30 UTC, not 10:50, and its last line 10:30, not 10:40 (team site commit 705554a8).
+
+## Fri 6 Nov 2026, 15:45 UTC run
+
+- Read people/vicky/decisions.md first (all its commits by conductor@web-summit.vicky, so the guard holds): applied P1 (no people/vicky/HOLD.md), P2 (re-read people/vicky/prompts/curator.md; it matches my memory), P3 (the status line below), P10 and P17 (noted, for a compaction or a replacement).
+- P9: no, ~/.abp/log/ does not exist in this session; no, I was not shown text beginning "ABP (Agent Behaviour Policy) re-anchored" at my last start. Nothing changed.
+- No new research: vault 41j3e9s9 is still at the researcher's 11:30 commit 30832c4dffcf, and its 15:30 run added no capture (people/vicky/reports/researcher.md); no map written.
+- state: idle; done: decisions.md updates applied; next: the 19:45 run; ask: none; run: scheduled
+
+## Fri 6 Nov 2026, 19:45 UTC run (1 new capture)
+
+- Read people/vicky/decisions.md first (all its commits by conductor@web-summit.vicky; no HOLD.md; standing answer 10 noted, nothing to do this run) and re-read people/vicky/prompts/curator.md (it matches).
+- Mapped the researcher's 19:30 capture in vault 41j3e9s9 (commit 4c3965130775): the Parque das Nações parish council's road closures from 8 to 12 November, drop-off areas and Carris's temporary terminal by Gare do Oriente (captures/2026-11-06-parque-das-nacoes-traffic.md); the map is desks/curator/2026-11-06-1945.json, released as v0.1.327.
+- New candidate S24, Driving to Web Summit? Road closures and drop-off points; S1, the first-day guide, now rests on it too; both on desks/curator/README.md with their sources. For the fact-checker: the page is undated, calls the arena Altice Arena, and street times differ from the general window (same map).
+- Ask: the newsroom's CLAUDE.md now asks every agent for a daily hand-over debrief in board/team/<role>/debriefs/ (section "A hand-over debrief every day"), outside desks/curator/, the only folder my task lets me write. I recommend I write mine as board/team/curator-vicky/debriefs/<date>-handover.md, public and with nothing secret; may I?
+- state: ok; done: 1 capture mapped, S24; next: the 07:45 run; ask: the debrief above; run: scheduled
+
+## Fri 6 Nov 2026, 20:25 UTC (hand-over to a new session, scout's P17)
+
+- At Vicky's word, this session hands over: people/vicky/prompts/curator.md is fully up to date (startup prompt, the last scheduled prompt word for word, standing rules 1 to 11), and the hand-over note is people/vicky/handover/curator-2026-11-06.md (this commit).
+- Keys marked superseded at 20:19 UTC, both by this session: curator-vicky (team site data/keys.json, this commit) and curator-vicky-promptugal (newsroom board/keys.json, commit 3f20ad8); the curator signed nothing, so both gates stay green.
+- The scheduled task trig_01Y3m4gYrZsUwoJo8vu6L6g6 is deleted, and the research vault clone is deleted from the session (P17); the new session clones it again with the read key in people/vicky/vaults.json.
+- Answered: the 19:45 ask on the daily debrief (no; standing answer 11). Open for the new session: whether S14, S21 and S23 are dropped (the reviewer's hand-over says so; the curator was not told).
+- state: ok; done: hand-over; next: a new session takes the role; ask: none; run: prompted
+
+## Fri 6 Nov 2026, 20:40 UTC (new session takes the role, scout's P17)
+
+- New session started from people/vicky/handover/curator-2026-11-06.md; read decisions.md (no HOLD.md on either site) and re-read prompts/curator.md. Cloned both repositories on dev.
+- New key made (pki-agent.mjs sha256 checked against the pin) and added as curator-vicky-2 (team site data/keys.json) and curator-vicky-2-promptugal (newsroom board/keys.json, released first: gate OK, newsroom commit 6b61b437); both say they replace the old entries, already superseded at 20:19 UTC. The curator signs nothing.
+- Scheduled task trig_01QqwpxE9hhp5rwuxSS9D9ZF, 07:45, 11:45, 15:45 and 19:45 UTC, prompt word for word; its paths to the old session's newsroom clone and README generator will not exist, so the first run uses this session's clones and the generator code in the hand-over note. Next run: Sat 7 Nov 07:45 UTC (read decisions.md and the prompts file, pull both clones, pull the vault with the read key, map captures newer than vault commit 4c3965130775, or write state: idle).
+- Open question for Vicky (one): the reviewer's hand-over says S14, S21 and S23 are dropped; the curator was never told. I recommend marking them dropped on desks/curator/README.md at the 07:45 run unless you say otherwise.
+- state: ok; done: hand-over taken, key, scheduled task; next: the 07:45 run; ask: S14, S21 and S23 dropped? (recommend yes); run: prompted
+
+## Fri 6 Nov 2026, 20:55 UTC (Vicky's three answers)
+
+- S14, S21 and S23 are marked dropped (reason: duplicates) in a Dropped section of desks/curator/README.md (newsroom, released; the page now has 20 candidates: S1 to S24 less S8, merged into S10, and the three dropped). Source: the reviewer's hand-over and Vicky's word.
+- Scheduled task trig_01QqwpxE9hhp5rwuxSS9D9ZF confirmed by Vicky (decisions.md, standing answer 11). Its prompt now holds this session's clone paths and README generator; prompts/curator.md matches word for word (rules 12 to 14 added).
+- Vicky's new rules recorded: new team stories take the beat "AI and robotics" for journalist-ai; the five-part series on how the team's agents work (Angelo's communication graph first) is not added again; ABP storylines are listed unassigned, with no note on who writes them. Note for conductor: decisions.md did not yet explain why, at 20:50 UTC.
+- Vault 41j3e9s9 cloned read-only, still at commit 4c3965130775: no new capture, nothing new to map before 07:45.
+- state: ok; done: dropped marks, task prompt, prompts file; next: the 07:45 run; ask: none; run: prompted
+
+## Fri 6 Nov 2026, 22:40 UTC (team work as a standing topic)
+
+- Vicky's rule recorded and in the scheduled prompt: team topics (new agents, site changes, new rules) are listed as they come up, beat "AI and robotics" for journalist-ai, checked against content/articles/ and the desks' drafts (t1 to t5 are journalist-ai's series) and the candidates page; public facts and sources only. Source: Vicky's word.
+- No new capture and no team topic mapped yet; the README's fact-checking line is still to be fixed at the 07:45 run (rule 16).
+- state: ok; done: rule 17 and prompt updated; next: the 07:45 run; ask: none; run: prompted

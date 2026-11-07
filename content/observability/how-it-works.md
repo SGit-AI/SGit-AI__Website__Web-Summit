@@ -82,7 +82,7 @@ It reads the public vault **lazily**: it computes the HEAD's id from the read ke
 | 2 | the same, when lane 1 is full (507) | `assets/obs-dinis.js` |
 | 3 | agent runs | `admin/tools/agent-log.mjs` |
 | 4 | the same, when lane 3 is full | `admin/tools/agent-log.mjs` |
-| 5 | web-summit.newsroom.sgit.ai page views | reserved, for the newsroom's sender |
+| 5 | promptugal.news page views | reserved, for the newsroom's sender |
 
 The append tokens and the drain's public key are in `assets/obs-dinis.json`, public on purpose: a token can only write to its lane and the key can only encrypt. The vault key, the enum key and the drain's private key never enter this repository.
 

@@ -12,3 +12,38 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 ## Thu 5 Nov 2026 (S18 review)
 
 - S18 fixed as reviewer-vicky's "Fix first" asked: "she will talk about" became "the talk covers" (the Commission gives no pronoun), and the meetup quote now starts at "Calling all", checked against the session page. Length left for the style pass, as the review says. No point disputed.
+
+## Fri 6 Nov 2026, 09:50 UTC (WS-177)
+
+- Newsroom copy now points at PrompTugal/PrompTugal__News__Website; all pushes to dev there, through newsroom/tools/release.sh.
+- Draft S14, "Granter and Intuitivo: two PITCH winners, one backer, new markets" (475 words). Sources: Portugal Startup News on Granter (3 Nov) and Intuitivo (23 Oct), read 6 Nov. Not confirmed: whether either company or 3xP Global is at Web Summit 2026; the companies' own figures.
+- Draft S16, "Europe's AI and funding help, and Portuguese startups it could suit" (513 words). Sources: the Commission's DigitalEU agenda (3 Nov), HaDEA's event page, Portugal Startup News on Granter, Técnico's announcement, all read 6 Nov. Not confirmed: Granter at the summit; what Técnico's spin-offs make; masterclass rooms.
+- Draft S19, "Brazil comes to Lisbon as Intuitivo heads to Brazil" (463 words). Sources: Executive Digest (4 Nov), Portugal Startup News on Intuitivo, read 6 Nov. Not confirmed: Intuitivo at the summit; which Brazilian companies come; ApexBrasil's 700 million dollar figure.
+- Draft S21, "One backer, two fields: 3xP Global's Granter and Octo Health" (480 words). Sources: Portugal Startup News on Octo Health (5 Nov), Granter, Intuitivo, read 6 Nov. Not confirmed: which 3xP Global vehicle led Octo's round; Jornal Económico's report (not read); presence at the summit.
+- S17 not drafted: already drafted by journalist-promptugal and published as wednesday-11-november-going-abroad.
+
+## Fri 6 Nov 2026, 10:55 UTC (reviews, new name, scheduled task)
+
+- Now journalist-connections@PrompTugal.vicky. Key entered in the newsroom's board/keys.json as journalist-connections-vicky-promptugal (same key, signing sha256:e48c110d522879b5).
+- S16 fixed per review: published format only (no title line, front matter order, sources as one line with <url>, map path in backticks), links to the site's pages for Granter, Técnico, HaDEA and EuroHPC. No fact changed.
+- S19 fixed per review: summary now says Intuitivo "has raised"; same format fixes; ApexBrasil, Sebrae Startups and Intuitivo linked. The reviewer's overlap note (S9 and S4 already published) is left for Vicky.
+- S14 and S21 dropped as duplicates, as Vicky said; files left as they are.
+- STYLE.md now asks for sources as <url>, which differs from Vicky's chat rule ([Source name](URL)); followed STYLE.md as the newer rule.
+- Scheduled task made: 08:00 and 16:00 UTC daily, into this session.
+
+## Fri 6 Nov 2026, 11:10 UTC (source links)
+
+- S16 and S19: source lines switched to [Publisher, "Title"](url), date, read D Month YYYY, per the updated STYLE.md. Nothing else changed. S19 runs, at Vicky's word.
+- S20 is journalist-portugal's draft, not mine; left for that agent. For: journalist-portugal@PrompTugal.vicky.
+
+## Fri 6 Nov 2026, 16:15 UTC (scheduled run)
+
+- Applied P1 (no HOLD.md on the team site or board/HOLD.md in the newsroom), P2 (prompts file re-read; it matches), P3 (status block below), P5 (scheduled task moved to 08:24 and 16:24 UTC; prompts file updated), P9 (~/.abp/log/ does not exist: no; shown "ABP (Agent Behaviour Policy) re-anchored" at last start: no).
+- Newsroom remote had reverted to the old SGit-AI address after a restart; reset to PrompTugal before any push. Nothing was pushed to the old address.
+- Draft S23, "Waste into value: AgroGrINTech and Seamoretech, two circular Portuguese startups" (517 words), For: journalist@PrompTugal.dinis. Sources: AICEP Portugal Global on AgroGrINTech (4 Nov) and Portugal Startup News on Seamoretech (2 Nov), both read 6 Nov. Not confirmed: whether either company is at Web Summit 2026; the companies' own figures.
+- No other Connections storyline is open: S15, S16, S18, S19 drafted; S14 and S21 dropped; S17 published by Dinis's journalist.
+- state: ok; done: S23 drafted and pushed, P1 P2 P3 P5 P9 applied; next: next Connections storyline the curator adds; ask: none; run: scheduled
+
+## Fri 6 Nov 2026, 16:27 UTC (scheduled run)
+
+- state: idle

@@ -29,7 +29,7 @@ Agents fetch Markdown or HTML without running JavaScript, so page views never se
 { "type": "web-summit.agent-run/v1", "v": 1,
   "agent": "pm@web-summit.vicky", "session": "<the Claude session id, if known>",
   "run": "2026-11-04T15:30Z", "trigger": "schedule | person | message",
-  "read":  [ { "url": "https://web-summit.newsroom.sgit.ai/brief/index.md", "as": "md", "bytes": 3120, "status": 200 } ],
+  "read":  [ { "url": "https://promptugal.news/brief/index.md", "as": "md", "bytes": 3120, "status": 200 } ],
   "did":   [ { "commit": "ab64608", "repo": "SGit-AI/SGit-AI__Website__Web-Summit", "subject": "..." },
              { "release": "v0.2.312" } ],
   "tokens": { "input": 48211, "output": 5120 },

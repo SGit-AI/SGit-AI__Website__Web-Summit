@@ -53,3 +53,28 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - The summit: Carris runs a dedicated Shuttle Web Summit between Praça do Comércio (Sul e Sueste) and Oriente, 9 to 12 November, and says the transport pass is also sold at the Web Summit Welcome Center, not only the airport (executivedigest.sapo.pt, 5 Nov). Differs from Metro's page; flagged for the curator.
 - Portugal: an EY report puts Web Summit's contribution at about 250 million euros a year, nearly 2.5 billion over ten editions, with Portuguese startups up from 2,193 in 2016 to 5,091 in 2025 (executivedigest.sapo.pt, 5 Nov; the EY report itself not read).
 - Not captured: the event's future in Lisbon after 2028 and remarks on protests (observador.pt, expresso.pt), outside the positive line; Público's count of 300 Brazilian startups, which differs from ApexBrasil's 200.
+
+## Fri 6 Nov 2026, 07:30 UTC run (Portugal)
+
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- Portugal: Lisbon healthtech Octo Health launches its health tracking platform in Portugal and the US, with testing for 110+ biomarkers, after a 2.7 million euro pre-seed led by 3xP Global (portugalstartupnews.com, 5 Nov).
+- Nothing new overnight on websummit.com/blog, Metro de Lisboa, Executive Digest or the Commission's digital strategy news.
+
+## Fri 6 Nov 2026, 11:30 UTC run (Portugal)
+
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- Portugal: startup AgroGrINTech extracts bromelain from pineapple waste for fish feed at a pilot unit in Maia, about 200 kg a year, in the PRR-funded Pep4Fish project (portugalglobal.pt, 4 Nov).
+- Nothing new since 07:30 on websummit.com/blog, Portugal Startup News, Metro de Lisboa or Executive Digest about the summit.
+
+## Fri 6 Nov 2026, 15:30 UTC run
+
+- Read people/vicky/decisions.md first (all its commits pushed from riskmandate-vicky as conductor@web-summit.vicky, so the guard holds): applied P1 (no HOLD.md), P2 (re-read prompts/researcher.md; it matches my memory), P3 (this status line), P10 and P17 (noted, for a compaction or a replacement). Standing answers noted, including 9 for how I write sources.
+- 0 captures went into vault 41j3e9s9: nothing new in the beats since 11:30 ([Executive Digest, "Web Summit: Carris reforça transporte"](https://executivedigest.sapo.pt/web-summit-carris-reforca-transporte-com-shuttle-e-passe-conjunto-com-metro-e-comboios/) and the Brazilian delegation are already in the vault).
+- state: idle
+
+## Fri 6 Nov 2026, 19:30 UTC run (the summit)
+
+- decisions.md read first: no HOLD.md; standing answers 7 and 10 changed since 15:30 (both pushed from riskmandate-vicky), nothing new for the researcher; prompts file re-read, no difference.
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- The summit: roads around the venue close from 19:00 on 8 November to 23:00 on 12 November, residents' garages kept open; a temporary Carris terminal by Gare do Oriente, and drop-off areas on Rua do Caribe and Alameda dos Oceanos ([Junta de Freguesia do Parque das Nações, "Web Summit – Condicionamentos de trânsito entre 9 e 12 de novembro"](https://www.jf-parquedasnacoes.pt/autarquia/noticias/web-summit-condicionamentos-de-transito-entre-9-e-12-de-novembro)).
+- state: ok; done: 1 capture (road closures); next: 07:30 run; ask: none; run: scheduled

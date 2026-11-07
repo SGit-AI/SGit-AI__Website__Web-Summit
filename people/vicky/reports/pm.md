@@ -45,3 +45,22 @@ To conductor@web-summit.vicky, one entry per wake that did or found something (p
 - Nothing urgent. The two commits for pm@ need no answer: helper@web-summit.angelo's help page now matches the guide (fa6f43d), and the conductor confirmed pm@'s times, 07:40 and 17:40 (2cbcaec).
 - WS-153 (due today, picked by Vicky): conductor@web-summit.dinis hasn't confirmed on the issue yet that it can open the vaults, so it stays open (board/WS-153, read 17:40).
 - WS-31 (Sat 7 Nov): the smaller scope (meetings and companies only, each person adds their own sessions) is on the issue for Vicky to confirm. The meetings are in the private vault, so the schedules are built there by vault@web-summit.vicky, when Vicky opens its session, or by pm@ if she says so.
+
+## 6 November 2026, 07:40 UTC (wake)
+
+- **URGENT, WS-31 is due tomorrow (Sat 7 Nov):** Vicky hasn't yet confirmed the smaller scope (meetings and companies only; each person adds their own sessions), though project-manager@web-summit.dinis supports it (2059646). She also needs to say who builds the schedules in the private vault: vault@ when she opens its session, or pm@.
+- Daily run done (people/vicky/board-health.md): 179 issues; 20 due today, 11 of them with no owner; 103 overdue. WS-153 still waits for conductor@web-summit.dinis's confirmation.
+- For Vicky, not urgent: the onboarding guide, step 8, still says "Dinis sends you an access token" (one per person). From 5 Nov it's one token per agent, sealed to the agent's key (WS-170; vault guide bd407d1, start page 83938f7). helper@web-summit.angelo (0deae08) and sgit@web-summit.dinis (83938f7) ask that the guide follow. Proposal: step 8, items 1 and 2, say "Your vault agent gets its own access token from Dinis, sealed to its key; follow the vault guide's step 1", and link to it. Not changed until Vicky says.
+
+## 6 November 2026, about 12:00 UTC (at Vicky's word in this session)
+
+- My scheduled prompt now starts by reading people/vicky/decisions.md, at Vicky's word; people/vicky/prompts/pm.md matches it.
+- Applied P1, P2, P3 (decisions.md, 5665e1a): P1, I check for people/vicky/HOLD.md at the start of every run (there is none now); P2, I re-read prompts/pm.md after decisions.md (it matches what I know); P3, each report ends with the status block.
+- state: ok; done: decisions.md step added to the scheduled prompt and prompts/pm.md; P1 to P3 applied; next: 17:40 wake; ask: WS-31's schedules are committed in the private vault but not pushed, so does Dinis issue pm@ its own SG/Send token (my recommendation), or does vault@ rebuild and push them?; run: prompted
+
+## 6 November 2026, 17:40 UTC (wake)
+
+- Read people/vicky/decisions.md (9f71cc8); no HOLD.md. Applied P10 (after a compaction, re-read decisions.md and prompts/pm.md before acting, and say so) and P17 (a debrief in people/vicky/debriefs/ before my session is replaced). Re-read prompts/pm.md (P2): it matches.
+- WS-31 is due tomorrow (Sat 7 Nov): the schedules are built and committed in the private vault but not pushed. pm@ has no SG/Send token of its own (WS-170), as I told Vicky in her session at about 12:00. Her answer is the only thing it waits on.
+- WS-153 is still open: conductor@web-summit.dinis hasn't confirmed on the issue that it can open the vaults. WS-48: logistics@ has the garment files waiting for Dinis, on the 18:00 (38d68c7).
+- state: partial; done: decisions.md read, P10 and P17 applied; next: 07:40 daily run; ask: for WS-31, a token for pm@ from Dinis (recommended) or vault@ rebuilds and pushes?; run: scheduled

@@ -73,3 +73,60 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - New page at Jose's request, through Vicky: /people/vicky/promptugal/, Promptugal News's logo brief and its eight options, each in light and dark, with a Comment button on each (the site's feedback pane, to newsroom@web-summit.dinis). Linked from Vicky's dashboard.
 - Built by people/vicky/pages.mjs from people/vicky/promptugal/source/: an exact copy of desks/designer-vicky/ (brief.md, README.md, logos/) at newsroom commit 05c03e9. The checks/ PNGs are not copied (not shown). Refreshed only when Vicky asks.
 - Light and dark come from one copied file each: an image's CSS color-scheme forces the SVG's own prefers-color-scheme block. The gate refuses data: SVG images (WS-132), so nothing is inlined.
+
+## Fri 6 Nov 2026, 00:10 UTC
+
+- At Vicky's word: the links line at the bottom of her dashboard is now two short groups, "My agents" (Reports, Board health, Team pulse) and "Promptugal News" (Story ideas, Logo options), with room for more newsroom links. Same links, shorter names.
+
+## Fri 6 Nov 2026, 08:00 UTC (wake)
+
+- The newsroom move: people/vicky/pages.mjs's two source links (stories, Promptugal) now point to PrompTugal/PrompTugal__News__Website, as asked in my prompt; nothing links to the old address.
+- Story candidates refreshed: 20 stories, each with sources (desks/curator/README.md, 07:55 UTC, read from the new address).
+- Tables refreshed. Needs me: WS-31's scope and builder (due Sat; pm@ marked it URGENT, 0488e15), the newsroom researcher (today), the guide's token step (reports/pm.md, 07:40). WS-153 moved to "To follow up": it waits on Dinis's conductor. WS-120 is done and dropped.
+- Dinis's dev agent renamed the second links group to "PrompTugal.news" (db380d9); kept.
+
+## Fri 6 Nov 2026, 10:55 UTC
+
+- At Vicky's word: my two prompts, word for word, and her standing rules are saved in people/vicky/prompts/dashboard.md (nothing secret). Please link it from people/vicky/prompts/README.md in place of the kit.
+- At Vicky's word: both scheduled tasks now start with "First: read people/vicky/decisions.md on the team site and follow it." That file does not exist yet; until it does, the step finds nothing to follow.
+
+## Fri 6 Nov 2026, 17:55 UTC (wake)
+
+- Read people/vicky/decisions.md: every commit to it is conductor@web-summit.vicky's, pushed from riskmandate-vicky (pushed-by.mjs: a146ac2 to 9f71cc8), so I follow it. No HOLD.md. Applied P1, P2, P3, P10 and P17. Re-read prompts/dashboard.md (P2): it matches my memory.
+- Tables refreshed. WS-31's scope is decided (inbox.md, 6 Nov 09:00), so "Needs me" now asks only how the schedules leave the vault (reports/pm.md, 17:40). Added: the one line for the record on the 5 Nov newsroom decision (brief of 08:45). Dropped: the newsroom researcher, now capturing every day.
+- Story candidates refreshed: 22 stories (desks/curator/README.md, 12:00 UTC).
+- state: ok; done: decisions.md read and P1, P2, P3, P10, P17 applied; tables and stories refreshed; next: 07:50 wake; ask: none; run: scheduled
+
+## Fri 6 Nov 2026, 19:05 UTC (prompted: the hand-over)
+
+- At Vicky's word, before a new session replaces this one (scout's P17): people/vicky/prompts/dashboard.md is up to date, with every standing rule; the hand-over note is people/vicky/handover/dashboard-2026-11-06.md (Vicky asked for handover/; P17 says debriefs/, and her newest word wins).
+- My key dashboard-vicky (sha256:4e03f48e1a9da37c) is marked superseded in data/keys.json, the only keys file I added it to. I hold no vault keys or vault clones; my scratch copy of the newsroom repository is deleted.
+- Both my scheduled tasks are deleted after this commit (07:50 and 17:45 UTC), so the new session sets them again. Please update people/vicky/agents.json and schedule.json.
+- state: ok; done: hand-over; next: none, this session stops; ask: none; run: prompted
+
+## Fri 6 Nov 2026, 19:10 UTC (prompted: the new session takes over)
+
+- New session of dashboard@web-summit.vicky, at Vicky's word. Read decisions.md (its last commits, 99fc7a3 and 750f326, are from riskmandate-vicky: pushed-by.mjs), prompts/dashboard.md and the hand-over note. No HOLD.md. Newsroom (PrompTugal/PrompTugal__News__Website) and the team site are cloned on dev.
+- My key: record sha256:43dc954426dcc0f1, encryption sha256:f8b55e84eb929fca, linked to the operator's key sha256:db7f79fdd87e030a; public half only, as entry dashboard-vicky-2 in data/keys.json (the only keys file the old session used; it replaces dashboard-vicky, already marked superseded). Please update people/vicky/agents.json and schedule.json.
+- Scheduled tasks set again, 07:50 UTC (trig_01FSSzDCWMqwD5jwd8xGF6JT) and 17:45 UTC (trig_012yhqHVsUHZ3iBiorQfbYyD), with the prompt from prompts/dashboard.md section 2, firing into this session; first runs 7 Nov. The old tasks were already gone.
+- For Vicky (a key question): the prompt's last paragraph checks the old key's file (sha256_28c07de37ed3b94d), which this session does not hold, so every run would report URGENT for nothing. Recommendation: change that file name to sha256_f8b55e84eb929fca in both tasks; until you agree, I leave the prompt word for word and ignore that check.
+- state: ok; done: hand-over, new key, two tasks, prompts line; next: 07:50 wake on 7 Nov; ask: change the key file named in the scheduled prompt (above); run: prompted
+
+## Fri 6 Nov 2026, 19:30 UTC (prompted: Vicky's two changes)
+
+- Vicky, in this session's chat: the key file named in the scheduled prompt is now sha256_f8b55e84eb929fca (answers my question of 19:10). Changed in both scheduled tasks (07:50 and 17:45 UTC) and in prompts/dashboard.md, section 2.
+- Vicky, in chat: WS-31 is dropped (pm@ is closing it as not needed). Removed its row from "Needs me" (people/vicky/dashboard.md), and added it to the never-show list in both tasks and the prompts file; I do not touch its board status. For: pm@web-summit.vicky, so it knows the dashboard no longer shows it.
+- state: ok; done: key file and WS-31 changes in tasks, prompts file and dashboard; next: 07:50 wake on 7 Nov; ask: none; run: prompted
+
+## Fri 6 Nov 2026, 19:50 UTC (prompted: the stories page sources)
+
+- Vicky's word in chat: the stories page showed no sources because the curator's README now writes them as [Publisher, "Title"](url), read D Month YYYY (decisions.md answer 9). people/vicky/pages.mjs `parseSources` reads that format (and still the old `<url>` one); each source is a link with its read date after it, also in the markdown twin.
+- Candidates refreshed as an exact copy of desks/curator/README.md (20 stories). Built page: 20 cards, 58 source links, none "No source yet".
+- For the curator, if it changes the format again: the pattern is in `parseSources` (people/vicky/pages.mjs).
+- state: ok; done: parser fixed, page rebuilt; next: 07:50 wake on 7 Nov; ask: none; run: prompted
+
+## Fri 6 Nov 2026, 20:15 UTC (prompted: collapsible story cards)
+
+- Vicky's word in chat: the stories page was too long. Each story is now a native `<details>`/`<summary>` (no script for it), all collapsed by default: collapsed it shows the number, beat, title and the one-line angle; open it shows the date added, the sources and the Comment button. Change is in people/vicky/pages.mjs only (the Promptugal logo page is untouched).
+- state: ok; done: stories page collapsible; next: 07:50 wake on 7 Nov; ask: none; run: prompted
+- 20:35: after a phone-width check, the "Show more" / "Show less" label moved under each summary so titles use the full width (people/vicky/pages.mjs).

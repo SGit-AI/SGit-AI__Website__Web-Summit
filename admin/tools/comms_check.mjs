@@ -9,7 +9,8 @@ import secrets from '../build/secrets.cjs'
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 // agent names are <agent>@web-summit.<person>, where <person> is a member id in data/team.json: a name, not an address
 const PEOPLE = new Set(JSON.parse(fs.readFileSync(path.join(ROOT, 'data/team.json'), 'utf8')).members.map(m => m.id))
-const agentName = m => { const d = m.match(/@web-summit\.([a-z0-9-]+)$/); return !!d && PEOPLE.has(d[1]) }
+// and, from 6 November, the PrompTugal agents: <role>@PrompTugal.<person> (Dinis's word: journalist@PrompTugal.dinis and five more)
+const agentName = m => { const d = m.match(/@(?:web-summit|PrompTugal)\.([a-z0-9-]+)$/); return !!d && PEOPLE.has(d[1]) }
 const RULES = [
     // anchored at the start of a run (dev@web-summit.dinis, 5 November): the same matches on all 2,101 tracked text
     // files, but no retry from every character of a long base64 run (465 ms -> 182 ms)

@@ -1,12 +1,12 @@
 // The newsroom curator's story candidates (Dinis's request, through Vicky, 5 November 2026): /people/vicky/stories/.
 // Built from people/vicky/stories/candidates.md, an exact copy of desks/curator/README.md in the public newsroom
-// repository (SGit-AI/SGit-AI__Website__Newsroom__Web-Summit, branch dev), refreshed by dashboard@web-summit.vicky
+// repository (PrompTugal/PrompTugal__News__Website, branch dev), refreshed by dashboard@web-summit.vicky
 // at each of its runs. The data lives there and in that one copy; nothing else. Comments go through the site's
 // feedback pane (assets/feedback.js). Called by admin/build/build.mjs; written by dashboard@web-summit.vicky.
 import fs from 'node:fs'
 import path from 'node:path'
 
-const SRC = 'https://github.com/SGit-AI/SGit-AI__Website__Newsroom__Web-Summit/blob/dev/desks/curator/README.md'
+const SRC = 'https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/desks/curator/README.md'
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
 export function build(ROOT) {
@@ -14,7 +14,12 @@ export function build(ROOT) {
     const updated = (md.match(/^Last updated: (.+?)\.?$/m) || [])[1] || 'unknown'
     // two layouts: since 5 Nov 18:30 one "## S12: title" section per story (first line "Beat, added 5 Nov. Angle", then a
     // "Sources:" list of "- Publisher, read <date>: <url>"); before that, one table row per story with the angle in it
-    const parseSources = t => [...t.matchAll(/^- (.+?): <(https?:[^>\s]+)>\s*$/gm)].map(m => ({ label: m[1], url: m[2] }))
+    // Two source formats: the curator's current one, `- [Publisher, "Title"](url), read D Month YYYY` (decisions.md answer 9),
+    // and the earlier `- Publisher, read date: <url>`.
+    const parseSources = t => [
+        ...[...t.matchAll(/^- \[(.+)\]\((https?:[^)\s]+)\)(?:,\s*read\s+(.+?))?\s*$/gm)].map(m => ({ label: m[1], url: m[2], read: m[3] || '' })),
+        ...[...t.matchAll(/^- (.+?): <(https?:[^>\s]+)>\s*$/gm)].map(m => ({ label: m[1], url: m[2], read: '' }))
+    ]
     let stories = md.split(/^## (?=S\d+:)/m).slice(1).map(sec => {
         const [head, ...rest] = sec.split('\n'), body = rest.join('\n')
         const [, id, title] = head.match(/^(S\d+):\s*(.+)$/) || []
@@ -24,11 +29,26 @@ export function build(ROOT) {
     }).filter(x => x.id)
     if (!stories.length) stories = md.split('\n').filter(l => /^\|\s*S\d+\s*\|/.test(l)).map(l => l.split('|').slice(1, -1).map(c => c.trim()))
         .map(([id, title, beat, angle, added]) => ({ id, title, beat, angle, added, sources: [] }))
-    const srcList = s => s.sources.length ? `<p class="meta">Sources:</p><ul class="story-sources">${s.sources.map(x => `<li><a href="${esc(x.url)}" rel="noopener">${esc(x.label)}</a></li>`).join('')}</ul>` : '<p class="meta">No source yet.</p>'
-    const card = s => `<article class="card story" id="${esc(s.id.toLowerCase())}"><p class="meta"><strong class="story-id">${esc(s.id)}</strong> · <span class="pill">${esc(s.beat)}</span> · added ${esc(s.added)}</p><h3 class="story-title">${esc(s.title)}</h3><p>${esc(s.angle)}</p>${srcList(s)}<p><button type="button" class="story-comment" data-story="${esc(s.id.toLowerCase())}">Comment on ${esc(s.id)}</button></p></article>`
+    const srcList = s => s.sources.length ? `<p class="meta">Sources:</p><ul class="story-sources">${s.sources.map(x => `<li><a href="${esc(x.url)}" rel="noopener">${esc(x.label)}</a>${x.read ? `, read ${esc(x.read)}` : ''}</li>`).join('')}</ul>` : '<p class="meta">No source yet.</p>'
+    // Each card is a native <details> (no script): collapsed it shows the number, title, beat and the one-line angle;
+    // open it shows when it was added, the sources and the Comment button. Collapsed by default (Vicky, 6 Nov).
+    const card = s => `<details class="card story" id="${esc(s.id.toLowerCase())}"><summary><span class="meta"><strong class="story-id">${esc(s.id)}</strong> · <span class="pill">${esc(s.beat)}</span></span><h3 class="story-title">${esc(s.title)}</h3><span class="story-angle">${esc(s.angle)}</span></summary><div class="story-more"><p class="meta">Added ${esc(s.added)}</p>${srcList(s)}<p><button type="button" class="story-comment" data-story="${esc(s.id.toLowerCase())}">Comment on ${esc(s.id)}</button></p></div></details>`
+    const storyCss = `<style>
+.stories-list details.story > summary { cursor: pointer; list-style: none; display: block; min-height: 44px; -webkit-tap-highlight-color: transparent }
+.stories-list details.story > summary::-webkit-details-marker { display: none }
+.stories-list details.story > summary > * { display: block }
+.stories-list details.story > summary .story-title { margin: .25rem 0 }
+.stories-list details.story > summary .story-id, .stories-list details.story > summary .pill { display: inline }
+.stories-list details.story > summary::after { content: "Show more \\25BE"; display: block; margin-top: .5rem; padding: .25rem 0; font-size: .9rem; color: var(--accent-dk) }
+.stories-list details.story[open] > summary::after { content: "Show less \\25B4" }
+.stories-list details.story > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px }
+.stories-list .story-more { margin-top: .75rem; border-top: 1px solid currentColor; padding-top: .5rem }
+.stories-list .story-sources a { overflow-wrap: anywhere }
+</style>`
     const body = `<p>The story ideas the newsroom's curator (curator@web-summit.vicky) suggests for the journalist, newest first. None is fact-checked yet. Source: <a href="${SRC}">desks/curator/README.md</a> in the newsroom repository, last updated by the curator on ${esc(updated)}; this page is refreshed at each run of Vicky's dashboard agent.</p>
 <p class="meta"><b>To comment on a story:</b> press its <i>Comment</i> button. It selects the story's id and title and opens the site's feedback pane with them quoted; write your comment and press Submit. The first time, the pane may need turning on for your device (<a href="?feedback=on">turn on feedback</a>). Choose newsroom@web-summit.dinis as the recipient for the newsroom.</p>
-<div class="cards">${stories.map(card).join('')}</div>
+${storyCss}
+<div class="cards stories-list">${stories.map(card).join('')}</div>
 <script>
 document.addEventListener('click', e => {
   const b = e.target.closest('.story-comment'); if (!b) return
@@ -39,15 +59,15 @@ document.addEventListener('click', e => {
   if (fb) fb.click(); else location.href = '?feedback=on#' + b.dataset.story
 })
 </script>`
-    const twinMd = `The newsroom curator's story candidates, newest first, from ${SRC} (last updated by the curator on ${updated}). None is fact-checked yet.\n\n${stories.map(s => `- **${s.id}** (${s.beat}, added ${s.added}): ${s.title}. ${s.angle}${s.sources.map(x => `\n  - [${x.label}](${x.url})`).join('')}`).join('\n')}`
-    return [...promptugal(ROOT), { rel: 'people/vicky/stories/index.html', title: "The newsroom's story candidates", description: "The curator's open story ideas for the Web Summit 2026 newsroom: id, title, beat, angle and date added, with a way to comment on each.", body, md: twinMd }]
+    const twinMd = `The newsroom curator's story candidates, newest first, from ${SRC} (last updated by the curator on ${updated}). None is fact-checked yet.\n\n${stories.map(s => `- **${s.id}** (${s.beat}, added ${s.added}): ${s.title}. ${s.angle}${s.sources.map(x => `\n  - [${x.label}](${x.url})${x.read ? `, read ${x.read}` : ''}`).join('')}`).join('\n')}`
+    return [...promptugal(ROOT), ...workSoFar(ROOT), { rel: 'people/vicky/stories/index.html', title: "The newsroom's story candidates", description: "The curator's open story ideas for the Web Summit 2026 newsroom: id, title, beat, angle and date added, with a way to comment on each.", body, md: twinMd }]
 }
 
 // Promptugal News's logo options (Jose's request, through Vicky, 5 November 2026): /people/vicky/promptugal/. Built from
 // people/vicky/promptugal/source/, an exact copy of desks/designer-vicky/ (brief.md, README.md, logos/) in the newsroom
 // repository, refreshed only when Vicky asks. Each SVG follows light or dark mode by itself (a prefers-color-scheme
 // block in its <style>); the page shows each copied file twice, forced light and forced dark. The files are never changed.
-const DESK = 'https://github.com/SGit-AI/SGit-AI__Website__Newsroom__Web-Summit/tree/dev/desks/designer-vicky'
+const DESK = 'https://github.com/PrompTugal/PrompTugal__News__Website/tree/dev/desks/designer-vicky'
 const inline = s => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/\*([^*]+)\*/g, '<i>$1</i>')
     .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$2">$1</a>').replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '$1')
 function mdHtml(md) {
@@ -103,4 +123,14 @@ document.addEventListener('click', e => {
 </script>`
     const md = `The logo options for Promptugal News, by designer@web-summit.vicky, from ${DESK}.\n\n${brief.replace(/^# .*\n/, '')}\n\n## The eight options\n\n${opts.map(o => `- **Option ${o.n}: ${o.name}.** ${o.idea}`).join('\n')}`
     return [{ rel: 'people/vicky/promptugal/index.html', title: 'Promptugal News: the logo options', description: "The brief and the eight logo options for Promptugal News, the newsroom's new name, in light and dark, with a way to comment on each.", body, head, md }]
+}
+
+// Vicky's agents: the work so far (Vicky's request, 6 November 2026): /people/vicky/work-so-far/. Built from
+// people/vicky/work-so-far/source.md, written and kept by conductor@web-summit.vicky. Public material only.
+function workSoFar(ROOT) {
+    const f = path.join(ROOT, 'people/vicky/work-so-far/source.md')
+    if (!fs.existsSync(f)) return []
+    const src = fs.readFileSync(f, 'utf8').replace(/^# .*\n/, '')
+    const body = `<p class="meta">Written by Vicky's conductor (conductor@web-summit.vicky) on 6 November 2026, about 19:30 UTC, from her records on this site and the newsroom repository. Plain words, public material only.</p>\n${mdHtml(src)}`
+    return [{ rel: 'people/vicky/work-so-far/index.html', title: "Vicky's agents: the work so far", description: "Vicky's agents and their jobs, how a story reaches PrompTugal.news, what is live, the rules and files she set up, what changed on 6 November, and what is next.", body, md: src }]
 }

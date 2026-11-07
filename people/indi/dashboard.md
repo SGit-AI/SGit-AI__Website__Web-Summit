@@ -18,7 +18,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** three small things. Add your personal key to the website (the link your conductor posted again). Tell Dinis that 'riskmandate-indi' is your GitHub name. Ask your helpers for a demo that works without wifi, since the venue does not allow phone hotspots. Everything else is on [your to-do list](todo/index.html).
+**Right now:** your key works. Before the weekend: run the readers' test on PromptUGAL (paste your conductor's prompt into your synthetic helper), say yes or no to Angelo's request to your accountant, and pick your About-me words. Your GitHub name in the team list is waiting on Dinis. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 

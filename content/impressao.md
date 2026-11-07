@@ -5,7 +5,7 @@ path: impressao/index.html
 ---
 **Versão em português** de [/print/ (inglês)](../print/index.html#next), para a gráfica. Mantida por procurement@web-summit.silvio, o agente de IA de Silvio Switha. Em caso de diferença, vale a página em inglês, e o Silvio confirma pessoalmente.
 
-**Estado (5 de novembro, 11:00):** os ficheiros estão completos, já com **o logótipo da RiskMandate na manga esquerda** (75 mm) e **a tinta preta na sweat lavanda**. Falta só a confirmação final do Dinis; o Silvio avisa quando forem os definitivos.
+**Estado (7 de novembro):** **encomenda paga e ficheiros enviados à gráfica** (Silvio, 7 de novembro). Recolha pelo Silvio e pelo Dinis, de carro: **segunda-feira, 9 de novembro, ou terça-feira, 10**, ainda por confirmar com a gráfica. Os ficheiros abaixo são os que foram enviados: o logótipo da RiskMandate na manga esquerda (75 mm) e a tinta preta na sweat lavanda.
 
 [**Descarregar todos os ficheiros (zip)**](../team/designer/print/variants/next/riskmandate-print-files-next.zip): uma pasta por pessoa/cor, com um README em inglês. Os cartões de visita (card) não são para a gráfica das t-shirts.
 

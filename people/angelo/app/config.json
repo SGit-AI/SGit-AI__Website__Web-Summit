@@ -1,12 +1,12 @@
 {
-  "about": "Angelo's command centre settings, and his first view (his answer on 3 November); the classic dashboard follows the same order. Kept by dashboard@web-summit.angelo (people/angelo/ only); admin/build/commandcentre.mjs reads this and takes the rest from its defaults. The order follows Angelo's five questions: what needs me now, is everyone connected, is the machine healthy, the technical pool with Jose, and what my agents did. Issues, decisions on the stand-up agenda and agents' commits are always read from the board, data/meetings/ and git; nothing here copies a number. Public: no contact details, no keys.",
+  "about": "Angelo's command centre settings, and his first view (his answer on 3 November); the classic dashboard follows the same order. Kept by dashboard@PrompTugal.angelo (people/angelo/ only); admin/build/commandcentre.mjs reads this and takes the rest from its defaults. The order follows Angelo's five questions: what needs me now, is everyone connected, is the machine healthy, the technical pool with Jose, and what my agents did. Issues, decisions on the stand-up agenda and agents' commits are always read from the board, data/meetings/ and git; nothing here copies a number. Public: no contact details, no keys.",
   "person": "angelo",
   "workstreams": [
     {
       "id": "connected",
       "name": "Is everyone connected?",
       "colour": "blue",
-      "agent": "conductor@web-summit.angelo",
+      "agent": "desk.conductor@PrompTugal.angelo",
       "issues": [
         "WS-35",
         "WS-100",
@@ -24,7 +24,7 @@
       "id": "machine",
       "name": "The machine",
       "colour": "dev",
-      "agent": "dev@web-summit.angelo",
+      "agent": "dev@PrompTugal.angelo",
       "issues": [
         "WS-105",
         "WS-90",
@@ -44,7 +44,7 @@
       "id": "pool",
       "name": "The technical pool with Jose",
       "colour": "orange",
-      "agent": "dev@web-summit.angelo",
+      "agent": "dev@PrompTugal.angelo",
       "issues": [
         "WS-34",
         "WS-36",
@@ -74,7 +74,7 @@
       "id": "collab",
       "name": "Running the team",
       "colour": "conductor",
-      "agent": "team-collaboration@web-summit.angelo",
+      "agent": "team-collaboration@PrompTugal.angelo",
       "issues": [
         "WS-96",
         "WS-97",
@@ -149,7 +149,7 @@
   "decisions": [
     {
       "who": "Angelo",
-      "what": "The presence agent: team-collaboration@web-summit.angelo as the team's one presence agent (everyone's locations)",
+      "what": "The presence agent: team-collaboration@PrompTugal.angelo as the team's one presence agent (everyone's locations)",
       "issue": "WS-06",
       "since": "2026-11-04T17:40:00Z",
       "source": "people/angelo/index.html",

@@ -19,3 +19,5 @@ From Dinis, 3 November: distribute secrets to agents via QR codes, the OpenRoute
 4. Each agent opens it with `pki-agent.mjs open`, **refuses it unless signed by the operator's key** (`sha256:db7f79fdd87e030a`), keeps it in the session only, and commits a line saying it received it (never the value).
 
 Done when the first agents have their own capped key and nothing secret is in the repository (the gate's check 5 catches `sk-or-v1-`).
+
+6 November, 12:00 stand-up (Angelo, Dinis, Indi), from Angelo's notes: *"we should enable a lot more models through OpenRouter"*. Which models, for which agents, and each agent's key and budget are Dinis's to decide (keys and money); the accountant's budgets (WS-148) would show the cost per model. (conductor@web-summit.angelo)

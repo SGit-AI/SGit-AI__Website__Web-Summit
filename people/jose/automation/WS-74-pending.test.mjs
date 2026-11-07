@@ -80,7 +80,7 @@ await test('new answers: one text note to Jose; remembered after the send; the s
     assert.equal(m.url, 'https://graph.facebook.com/vX/PNID/messages')
     assert.equal(m.body.to, DIGITS)
     assert.equal(m.body.type, 'text')
-    assert.equal(m.body.text.body, "*WS-74 feedback*\n3 new answers on the public feedback form (3 in all). Drained into jose-inbox by vault@web-summit.jose at 2026-11-05 17:41 UTC. Ask it for the summary (feedback-summary.mjs); nothing is quoted without the person's tick.")
+    assert.equal(m.body.text.body, "*WS-74 feedback*\n3 new answers on the public feedback form (3 in all). Counted by vault@web-summit.jose at 2026-11-05 17:41 UTC. Ask it for the summary (feedback-summary.mjs); nothing is quoted without the person's tick.")
     assert.equal(w.statics.last_total, undefined, 'remembered before the send')
     await w.run('Remember the note', [{ json: { messages: [{ id: 'wamid.x' }] } }])
     assert.deepEqual(w.statics, { last_state: 'total:3|stale:|lost:0|full:0', last_total: 3 })
@@ -109,7 +109,7 @@ await test('a stale count (over 26 hours) is said once; 0 stale hours turns it o
 await test('new answers inside a stale count are still reported, with the stale line (the reviewer\'s case: last 3, a 32-hour-old 5)', async () => {
     const w = n8n({ last_total: 3, last_state: 'total:3|stale:|lost:0|full:0' })
     const [{ json: m }] = await upToNote(w, count({ received_total: 5, at: '2026-11-04T10:00:00Z' }))
-    assert.match(m.text, /^\*WS-74 feedback\*\n2 new answers on the public feedback form \(5 in all\)\. Drained .* over 26 hours ago/)
+    assert.match(m.text, /^\*WS-74 feedback\*\n2 new answers on the public feedback form \(5 in all\)\. Counted .* over 26 hours ago/)
     await w.run('Remember the note', [{ json: {} }])
     assert.deepEqual(await upToNote(n8n({ ...w.statics }), count({ received_total: 5, at: '2026-11-04T10:00:00Z' })), [])
     assert.deepEqual(await upToNote(n8n({ ...w.statics }), count({ received_total: 5 })), [], 'fresh again with nothing new: silent')
@@ -148,16 +148,20 @@ await test('mode template: two body parameters, the headline and the rest, no ne
     assert.equal(ps.length, 2)
     assert.equal(ps[0], '5 new answers on the public feedback form (5 in all)')
     for (const p of ps) assert.ok(!/[\n\t]| {5}/.test(p) && p.length <= 400, p)
-    assert.match(ps[1], /^Drained into jose-inbox .* 1 answer could not be opened .* Warning: 900 answers are still pending/)
+    assert.match(ps[1], /^Counted by vault@web-summit\.jose .* 1 answer could not be opened .* Warning: 900 answers are still pending/)
 })
 
 if (process.argv.includes('--live')) {
-    await test('live: the count file on the site, read the way the flow reads it (a 404 is fine until the vault agent publishes it)', async () => {
-        const r = await fetch(COUNT_URL)
-        const w = n8n({ last_total: Number.MAX_SAFE_INTEGER })
-        const out = await upToNote(w, [{ json: { statusCode: r.status, body: await r.text() } }], src => filled(src).replace(`now: '${NOW}',`, 'now: new Date().toISOString(),'))
-        console.log('    ' + COUNT_URL + ': ' + r.status + (r.ok ? ', accepted' : ', not published yet'))
-        assert.ok(Array.isArray(out))
+    await test('live: the vault agent\'s count file on the site, read as a first real run would read it (a 404 is fine before it exists)', async () => {
+        const r = await fetch(COUNT_URL), body = await r.text()
+        const w = n8n()   // a first run: nothing remembered
+        const out = await upToNote(w, [{ json: { statusCode: r.status, body } }], src => filled(src).replace(`now: '${NOW}',`, 'now: new Date().toISOString(),'))
+        if (r.status === 404) { assert.deepEqual(out, []); console.log('    ' + COUNT_URL + ': 404, not published yet'); return }
+        assert.equal(r.status, 200)
+        const c = JSON.parse(body)
+        console.log(`    ${COUNT_URL}: 200, at ${c.at}, received_total ${c.received_total}, pending_left ${c.pending_left}; ` + (out.length ? 'a note: ' + out[0].json.text.split('\n')[1] : 'no note'))
+        if (out.length) assert.match(out[0].json.text, /^\*WS-74 feedback\*\n/)
+        else assert.equal(c.received_total, 0, 'answers but no note')
     })
 }
 

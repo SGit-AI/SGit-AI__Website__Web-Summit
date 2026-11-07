@@ -40,3 +40,33 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 - New source for S6: Web Summit's women in tech page (read 5 Nov): "more than 1,000 women" surveyed; programme sold out. Re-read for S1: Web Summit's venue page (asks attendees not to bring bags; South and North bag drops) and Metro's pass page ("1 dia (exclusivo online)" still listed).
 - Standing rules taken: beat in every front matter; a person's name, not he or she, unless the source gives the pronoun. S5 and S6 now say "Naithani" and "Quinlan".
 - Still long, not cut (drafts already done): S1 about 1,180 words, S5 about 780, S9 about 780 (counted from In short to the sources). S9's review is unchanged since its fixes.
+
+## Fri 6 Nov 2026, 10:30 UTC (WS-177; the move)
+
+- The newsroom copy now points at PrompTugal/PrompTugal__News__Website (dev pulled); STYLE.md read and followed.
+- Draft WS-177, "From 400 people to 71,386: Web Summit before 2026": desks/journalist-vicky/drafts/ws177-web-summit-before-2026.md, committed (af6e124), For: newsroom@web-summit.dinis. Sources, read 5 and 6 Nov: Wikipedia's Web Summit article (fixed revision of 4 Nov 2026), AICEP (2025 record), Executive Digest with Lusa (the 2019 to 2028 agreement), Portugal Tech Week's site, Web Summit's schedule.
+- Not confirmed: any side event held earlier this week (online lists disagree, none checked at an organiser's page); Wikipedia's figures not checked edition by edition.
+- NOT PUSHED: the gate is red on a build bug, not the draft. A draft with a beat and no curator candidate is listed on its topic page with a link to "<draft>.html", which the build never makes (newsroom/build/features/topics.mjs, story candidates list). Needs dev@PrompTugal.dinis; asked Vicky. Also found: the graph schema wants lower-case paths, so the file is named ws177-*.
+- Prompts saved in people/vicky/prompts/journalist.md (startup prompt word for word; no scheduled task; twelve standing rules from chat).
+
+## Fri 6 Nov 2026, 11:15 UTC (WS-177 pushed; renamed journalist@PrompTugal.vicky)
+
+- WS-177 pushed without its beat, at Vicky's word (newsroom v0.1.202), For: newsroom@web-summit.dinis and dev@PrompTugal.dinis, with the broken link in newsroom/build/features/topics.mjs described for dev@. The beat goes back once it is fixed.
+- A mistake: that push went to the old SGit-AI address. The remote had been reset to it (I think when the session restarted) and I did not check it first. GitHub redirected it, so the commit is on PrompTugal/PrompTugal__News__Website dev, but it broke the rule. The remote is fixed, and I now check it before every push.
+- Renamed journalist@PrompTugal.vicky: same session key, entered in the newsroom's board/keys.json as journalist-vicky-promptugal (v0.1.203). The team site's journalist-vicky entry left as it is. Reports stay here, at Vicky's word. Prompts file updated with the new name and three new rules.
+
+## Fri 6 Nov 2026, 11:00 UTC (WS-177 review; scheduled task)
+
+- WS-177 fixed after reviewer@PrompTugal.vicky's "Fix first" (newsroom v0.1.220), For: journalist@PrompTugal.dinis and newsroom@web-summit.dinis. Done: summary names Portugal Tech Week; the first-timers' line replaced by the site's edition pages (Dublin 2010 to Lisbon 2025, all in promptugal.news's sitemap); edition pages linked; "at the Expo '98 site"; no title line, front matter in the published order.
+- Not changed, for Vicky to decide: the review (and STYLE.md's new "Match the published format", edited by reviewer@ on 6 Nov) asks for sources as <url>; Vicky asked in chat for [Source name](URL), never <URL>. Kept Vicky's.
+- The newsroom remote had been reset to the old SGit-AI address again at session start; caught before any push this time (a fetch only), fixed.
+- Scheduled task created: daily 08:00 and 16:00 UTC, into this session; prompt saved word for word in people/vicky/prompts/journalist.md. (Correction, 11:10: people/vicky/decisions.md does exist, since 10:52; I wrote "does not exist yet" without checking. Read now; it is followed from here.)
+- Question for Vicky: STYLE.md's "Match the published format" (added by reviewer@ on 6 Nov) says sources as <url>; you asked me in chat for [Source name](URL). Which wins? My recommendation: whichever you confirm goes into STYLE.md, so the reviewer and the journalists read the same rule; until then I keep [Source name](URL).
+
+## Fri 6 Nov 2026, 16:15 UTC (scheduled run)
+
+- No hold (people/vicky/HOLD.md and the newsroom's board/HOLD.md absent). decisions.md, my prompts file and STYLE.md re-read; the prompts file agrees with my memory. The newsroom remote was on the old SGit-AI address again; reset before any push (nothing pushed there).
+- Nothing new on my beat in the curator's README (12:00 UTC, S1 to S23): S1, S5, S6, S9 and WS-177 drafted and published; S12 covered by S15 (Vicky). The rest are Portugal, Europe or connections. No draft written.
+- For dev@PrompTugal.dinis: newsroom/build/features/topics.mjs still links a story's .md desk file as .html, so WS-177 (published as web-summit-before-2026) still has no beat.
+- Applied P1, P2, P3, P10, P17. P5: my task already runs at 08:00 and 16:00 UTC, no change. P9: ~/.abp/log/ does not exist (no); not shown "ABP (Agent Behaviour Policy) re-anchored" at my last start (no). Answer 9 settles my question on source links: closed.
+- state: idle; done: checks only, nothing new on the beat; next: the 08:00 UTC run; ask: none; run: scheduled

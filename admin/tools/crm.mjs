@@ -38,11 +38,28 @@ import { execFileSync } from 'child_process'
 
 const HERE = path.dirname(new URL(import.meta.url).pathname)
 const args = process.argv.slice(2)
+// WS-178 (security@web-summit.dinis; added by sgit@web-summit.dinis): seal-keys seals only to keys that pass
+// `seal.mjs --verify`: active and not replaced, and added and changed only from accounts the roster lists for their
+// person (GitHub's activity API), read from origin/dev. The run stops before sealing anything if a recipient fails;
+// `--allow-unverified <ref,ref>` lets named ones through after their fingerprint was confirmed out of band.
+function verifyRecipients() {
+    const label = k => k.agent || ((k.bundle || {}).label || k.label || '').split(' ')[0]
+    const refs = [...personKeys().map(k => `person:${k.person}:${k.signing_fingerprint}`),
+        ...agentKeys().filter(k => k.id !== 'conductor-3' && label(k).startsWith('conductor@web-summit.')).map(k => `agent:${k.id}`)]
+    const i = args.indexOf('--allow-unverified'), allow = new Set(i >= 0 ? String(args[i + 1] || '').split(',') : [])
+    let out = ''
+    try { out = execFileSync(process.execPath, [path.join(HERE, 'seal.mjs'), '--verify', refs.join(',')], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'inherit'] }) }
+    catch (e) { out = String(e.stdout || ''); if (!out.trim()) fail(`seal.mjs --verify could not run (${e.message.split('\n')[0]}): nothing sealed`) }
+    const verdicts = out.split('\n').filter(Boolean).map(l => JSON.parse(l)), bad = verdicts.filter(v => !v.ok && !allow.has(v.ref))
+    for (const v of verdicts) say(`${v.ok ? 'ok ' : allow.has(v.ref) ? 'allowed' : 'NO '} ${v.ref}: ${v.why}`)
+    if (verdicts.length !== refs.length) fail('seal.mjs --verify did not answer for every recipient: nothing sealed')
+    if (bad.length) fail(`${bad.length} recipient(s) failed seal.mjs --verify: nothing sealed. Fix them (WS-178), or after confirming a fingerprint out of band pass --allow-unverified ${bad.map(v => v.ref).join(',')}`)
+}
 const pos = args.filter((a, i) => !a.startsWith('--') && !(i > 0 && args[i - 1].startsWith('--'))), cmd = pos[0]   // options are --name value
 const opt = k => { const i = args.indexOf('--' + k); return i >= 0 ? args[i + 1] : undefined }
 const ROOT = path.resolve(opt('root') || path.join(HERE, '../..'))
 const CRM = path.resolve(opt('crm') || path.join(os.homedir(), '.sg-send/crm'))
-const NEWSROOM = path.resolve(opt('newsroom') || '/home/user/sgit-ai__website__newsroom__web-summit')
+const NEWSROOM = path.resolve(opt('newsroom') || '/home/user/PrompTugal__News__Website')
 const AGENT = 'conductor@web-summit.dinis'
 const HOST = 'https://dev.send.sgraph.ai'
 const VAULTS = { public: 'ws-team-crm-public', private: 'ws-team-crm-private' }
@@ -115,12 +132,34 @@ const openAny = env => {                                          // reseal: ope
 
 // ---------- the graph, derived from the records ----------
 function walk(dir) { const out = []; if (!fs.existsSync(dir)) return out; for (const e of fs.readdirSync(dir, { withFileTypes: true })) { if (e.name.startsWith('.')) continue; const f = path.join(dir, e.name); if (e.isDirectory()) out.push(...walk(f)); else out.push(f) } return out }
+const COMMS = /^companies\/([^/]+)\/comms\/([^/]+)\/([^/]+\.json)$/
 function derive(dir) {
     const nodes = new Map(), edges = []
     const node = (id, type, label, extra = {}) => { if (!nodes.has(id)) nodes.set(id, { id, type, label, ...extra }); else { const n = nodes.get(id); if (extra.file) { n.label = label; n.type = type } Object.assign(n, extra) } return id }
     const edge = (from, verb, to) => { if (from && to) edges.push({ from, verb, to }) }
+    // the comms (WS-173, WS-176): companies/<company>/comms/<thread>/thread.json and a card .json per message, beside its
+    // .eml; a thread is about its company, a message is part_of its thread. A file that is not JSON is skipped, not fatal.
+    const comms = (rel, f) => {
+        const [, co, th, name] = COMMS.exec(rel), tid = `thread:${co}/${th}`, cid = `company:${co}`
+        if (/\.sealed\.json$/.test(name)) { node(`message:${co}/${th}/${name}`, 'message', 'message (sealed)', { file: rel, sealed: true, thread: tid }); edge(`message:${co}/${th}/${name}`, 'part_of', tid); return }
+        let r; try { r = rj(f) } catch (e) { say(`skipped ${rel}: not JSON`); return }
+        const s = v => v == null ? null : Array.isArray(v) ? v.map(x => typeof x === 'object' && x ? (x.name || x.email || '') : String(x)).filter(Boolean).join(', ') : typeof v === 'object' ? (v.name || v.email || null) : String(v)
+        if (name === 'thread.json') {
+            node(tid, 'thread', r.subject || r.title || th, { file: rel, company: cid, channel: r.channel || 'email', owner: r.owner || null, state: r.state || null, next_step: r.next_step || null, date: th.slice(0, 10) })
+            edge(tid, 'about', cid)
+            if (r.owner) edge(node(`person:${r.owner}`, 'person', r.owner), 'owns', tid)
+            for (const c of [].concat(r.their_contacts || r.contacts || [])) if (typeof c === 'string' && /^contact:/.test(c)) edge(tid, 'with', c)
+        } else {
+            const eml = rel.replace(/\.json$/, '.eml'), id = `message:${co}/${th}/${name.replace(/\.json$/, '')}`
+            node(id, 'message', r.subject || name, { file: rel, eml: fs.existsSync(path.join(dir, eml)) ? eml : null, thread: tid, company: cid, date: r.date || null, direction: r.direction || (/-(in|out|draft)-/.exec(name) || [])[1] || null, from: s(r.from), to: s(r.to), summary: r.summary || null, sha256: r.sha256 || r.eml_sha256 || null, reconstructed: !!r.reconstructed, attachments: (r.attachments || []).length })
+            edge(id, 'part_of', tid)
+            if (!nodes.get(tid)) node(tid, 'thread', th, { company: cid })
+        }
+    }
     for (const f of walk(dir).filter(f => /^(companies|contacts|actions|schedules|keys)\//.test(path.relative(dir, f)) && f.endsWith('.json'))) {
-        const rel = path.relative(dir, f), r = rj(f)
+        const rel = path.relative(dir, f)
+        if (COMMS.test(rel)) { comms(rel, f); continue }                 // a thread or a message card (WS-176)
+        const r = rj(f)
         if (r.v === 'ws-crm-env-1') { node(`${r.kind}:${r.id}`, r.kind, `${r.kind} (sealed)`, { file: rel, sealed: true, audience: r.audience }); continue }
         if (r.type === 'company') {
             const id = node(`company:${r.id}`, 'company', r.name, { file: rel, kind: r.kind, country: r.country, category: r.category, what: r.what, website: r.website, attending_as: r.attending_as })
@@ -154,6 +193,8 @@ const SCHEMAS = {
     'contact.schema.json': { title: 'A contact: in the public CRM only what the summit lists (name, role, organisation)', type: 'object', required: ['id', 'type', 'name', 'sources', 'updated_at', 'updated_by'], properties: { id: { type: 'string' }, type: { const: 'contact' }, kind: { enum: ['person'] }, name: { type: 'string' }, role: { type: ['string', 'null'] }, organisation: { type: ['string', 'null'] }, company: { type: ['string', 'null'] }, sessions: { type: 'array', items: { type: 'string' } }, sources: { type: 'array' }, updated_at: { type: 'string' }, updated_by: { type: 'string' } } },
     'action.schema.json': { title: 'An action or request', type: 'object', required: ['id', 'type', 'title', 'kind', 'owner', 'state', 'updated_at', 'updated_by'], properties: { id: { type: 'string' }, type: { const: 'action' }, title: { type: 'string' }, kind: { enum: ['meeting', 'invitation', 'supplier', 'idea', 'request', 'follow-up'] }, owner: { type: 'string' }, due: { type: ['string', 'null'] }, state: { enum: ['new', 'acknowledged', 'proposed', 'booked', 'done', 'followed-up', 'closed', 'declined'] }, company: { type: ['string', 'null'] }, contact: { type: ['string', 'null'] }, next_step: { type: ['string', 'null'] }, links: { type: 'array', items: { type: 'string' } }, sources: { type: 'array' }, updated_at: { type: 'string' }, updated_by: { type: 'string' } } },
     'schedule.schema.json': { title: 'A schedule item: a session, a meeting, stand time', type: 'object', required: ['id', 'type', 'title', 'date', 'sources', 'updated_at', 'updated_by'], properties: { id: { type: 'string' }, type: { const: 'schedule' }, kind: { type: 'string' }, title: { type: 'string' }, date: { type: 'string' }, start: { type: ['string', 'null'] }, end: { type: ['string', 'null'] }, where: { type: ['string', 'null'] }, track: { type: ['string', 'null'] }, part_of: { type: ['string', 'null'] }, speakers: { type: 'array' }, hosted_by: { type: 'array' }, sources: { type: 'array' }, updated_at: { type: 'string' }, updated_by: { type: 'string' } } },
+    'thread.schema.json': { title: 'A conversation with a company: companies/<company>/comms/<YYYY-MM-DD>-<thread>/thread.json (WS-173)', type: 'object', required: ['subject', 'owner', 'state'], properties: { subject: { type: 'string' }, channel: { type: 'string' }, our_people: { type: 'array', items: { type: 'string' } }, their_contacts: { type: 'array', items: { type: 'string' } }, owner: { type: 'string' }, state: { type: 'string' }, next_step: { type: ['string', 'null'] }, updated_at: { type: 'string' }, updated_by: { type: 'string' } } },
+    'message.schema.json': { title: 'A message card, beside its .eml of the same name: <YYYY-MM-DDTHHMMZ>-<in|out|draft>-<id>.json (WS-173)', type: 'object', required: ['date', 'direction', 'subject'], properties: { from: { type: 'string' }, to: { type: ['string', 'array'] }, cc: { type: ['string', 'array'] }, date: { type: 'string' }, subject: { type: 'string' }, direction: { enum: ['in', 'out', 'draft'] }, message_id: { type: ['string', 'null'] }, in_reply_to: { type: ['string', 'null'] }, sha256: { type: 'string', description: 'of the .eml file' }, reconstructed: { type: 'boolean' }, attachments: { type: 'array', items: { type: 'object', properties: { name: { type: 'string' }, sha256: { type: 'string' } } } }, summary: { type: 'string' } } },
     'sealed.schema.json': { title: 'ws-crm-env-1: a record sealed to an audience (layer 2)', type: 'object', required: ['v', 'id', 'kind', 'audience', 'recipients', 'iv', 'ct', 'sealed_by', 'at'], properties: { v: { const: 'ws-crm-env-1' }, id: { type: 'string' }, kind: { type: 'string' }, audience: { type: 'array', items: { type: 'string' } }, agents: { type: 'array', items: { type: 'string' } }, recipients: { type: 'array', items: { type: 'object', required: ['to', 'key', 'env'] } }, iv: { type: 'string' }, ct: { type: 'string' }, sealed_by: { type: 'string' }, at: { type: 'string' } } },
 }
 function appFiles(which) {
@@ -161,7 +202,9 @@ function appFiles(which) {
     const tpl = fs.readFileSync(path.join(HERE, 'crm_app.html.tpl'), 'utf8')
     // the origins whose /crm/ page may answer the app's unseal requests; CRM_APP_ORIGINS adds one for a test (then rebuild without it)
     const origins = ['https://web-summit.sgit.ai', ...(process.env.CRM_APP_ORIGINS || '').split(',').filter(o => /^https?:\/\/[a-z0-9.-]+(:\d+)?$/.test(o))]
-    fs.writeFileSync(path.join(dir, 'index.html'), tpl.replace("const WHICH = /*__WHICH__*/''", `const WHICH = /*__WHICH__*/${JSON.stringify(which)}`).replace("const BRIDGE_ORIGINS = /*__ORIGINS__*/['https://web-summit.sgit.ai']", `const BRIDGE_ORIGINS = /*__ORIGINS__*/${JSON.stringify(origins)}`))
+    const mail = fs.readFileSync(path.join(ROOT, 'assets/crm-mail.js'), 'utf8')     // the email twin (WS-176), inlined
+    if (/<\/script/i.test(mail)) fail('assets/crm-mail.js must not contain a closing script tag')
+    fs.writeFileSync(path.join(dir, 'index.html'), tpl.replace('/*__MAIL__*/', () => mail).replace("const WHICH = /*__WHICH__*/''", `const WHICH = /*__WHICH__*/${JSON.stringify(which)}`).replace("const BRIDGE_ORIGINS = /*__ORIGINS__*/['https://web-summit.sgit.ai']", `const BRIDGE_ORIGINS = /*__ORIGINS__*/${JSON.stringify(origins)}`))
     const manifest = { entry: 'index.html', present: true, auto_open: true, title: which === 'public' ? 'The team CRM (public)' : 'The team CRM (private)', hud: { mode: 'minimal' }, permissions: { fs: { read: true } } }
     wj(path.join(dir, 'app.json'), manifest); wj(path.join(dir, '.vault/app.json'), manifest)
     for (const [f, s] of Object.entries(SCHEMAS)) wj(path.join(dir, 'schemas', f), { $schema: 'https://json-schema.org/draft/2020-12/schema', ...s })
@@ -170,7 +213,11 @@ function appFiles(which) {
 function push(which, msg) {
     const dir = vdir(which)
     try { sgit(dir, 'commit', '-m', msg) } catch (e) { if (!/nothing to commit/i.test(String(e.stdout) + String(e.stderr))) throw e }
-    sgit(dir, 'push'); say(`${VAULTS[which]} pushed: ${msg}`)
+    // the pusher's own SG/Send access token, from the environment (one token per agent, WS-170); sgit saves it into the
+    // clone's .sg_vault/local/token, so it is removed again after the push
+    const tok = process.env.SG_SEND_ACCESS_TOKEN
+    try { sgit(dir, 'push', ...(tok ? ['--token', tok] : [])) } finally { fs.rmSync(path.join(dir, '.sg_vault', 'local', 'token'), { force: true }) }
+    say(`${VAULTS[which]} pushed: ${msg}`)
 }
 
 if (cmd === 'create') {
@@ -259,6 +306,7 @@ if (cmd === 'create') {
 } else if (cmd === 'app') {
     for (const w of pos[1] ? [pos[1]] : ['public', 'private']) { appFiles(w); derive(vdir(w)); push(w, 'the app, schemas and README rebuilt') }
 } else if (cmd === 'seal-keys') {
+    verifyRecipients()                                                        // WS-178: the rule seal.mjs applies, before anything is sealed
     const stamp = now().replace(/:\d\dZ$/, 'Z').replace(/[-:]/g, '').replace(/^(\d{4})(\d\d)(\d\d)T/, '$1-$2-$3T'), v = vaults().private
     const vk = fs.readFileSync(path.join(CRM, 'private.vault_key'), 'utf8').trim()
     for (const k of personKeys()) {

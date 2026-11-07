@@ -5,8 +5,8 @@
   "name": "American Express Global Business Travel",
   "aliases": [],
   "website": "https://www.amexglobalbusinesstravel.com",
-  "what": null,
-  "category": "travel / transport",
+  "what": "\"A leading software and services company for travel, expense, and meetings & events\", in more than 140 countries (its press room).",
+  "category": "Business travel",
   "country": "United States",
   "attending": "at Web Summit Lisbon 2026: speaker: CTO (lis26)",
   "attending_as": "speaker",
@@ -21,9 +21,58 @@
       "url": "https://www.amexglobalbusinesstravel.com",
       "read_at": "2026-11-05",
       "supports": "website, sector, country"
+    },
+    {
+      "url": "https://websummit.com/sessions/lis26/7ef3a7f2-b5e9-443f-b206-b0d54a31cca2/zero-turbulence-the-ai-engine-behind-global-travel/",
+      "read_at": "2026-11-07",
+      "supports": "session at Web Summit 2026"
+    },
+    {
+      "url": "https://www.amexglobalbusinesstravel.com/press-releases/amex-gbt-launches-business-travel-agent-to-agent-infrastructure-debuts-egencia-ai-connector-in-claude/",
+      "read_at": "2026-11-07",
+      "supports": "AI fact"
+    },
+    {
+      "url": "https://www.amexglobalbusinesstravel.com/press-releases/amex-gbt-accelerates-hotel-sourcing-cycle-with-agentic-ai/",
+      "read_at": "2026-11-07",
+      "supports": "AI fact"
+    },
+    {
+      "url": "https://www.amexglobalbusinesstravel.com/press-releases/long-lake-worlds-first-ai-holding-company-completes-acquisition-amex-gbt/",
+      "read_at": "2026-11-07",
+      "supports": "fact"
     }
   ],
-  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05)",
-  "updated_at": "2026-11-05T17:31:29Z",
-  "updated_by": "crm@web-summit.silvio"
+  "staged_from": "people/silvio/outreach/buyers.json (conductor@web-summit.silvio, read 2026-11-05); enriched from people/silvio/outreach/world1/amex-gbt.md (outreach@web-summit.silvio, read 2026-11-07)",
+  "updated_at": "2026-11-07T04:21:23Z",
+  "updated_by": "crm@web-summit.silvio",
+  "sessions_at_web_summit": [
+    {
+      "title": "Zero turbulence: The AI engine behind global travel",
+      "when": "2026-11-12 16:05-16:25",
+      "where": "Stage 10, Developer Summit",
+      "source": "https://websummit.com/sessions/lis26/7ef3a7f2-b5e9-443f-b206-b0d54a31cca2/zero-turbulence-the-ai-engine-behind-global-travel/",
+      "read_at": "2026-11-07"
+    }
+  ],
+  "ai_facts": [
+    {
+      "text": "27 July 2026: an agent-to-agent (A2A) architecture and the Egencia AI connector in Claude, using MCP, to search and book air and hotel within policy.",
+      "source": "https://www.amexglobalbusinesstravel.com/press-releases/amex-gbt-launches-business-travel-agent-to-agent-infrastructure-debuts-egencia-ai-connector-in-claude/",
+      "read_at": "2026-11-07"
+    },
+    {
+      "text": "14 October 2026: \"Hotel Lobby\", a multi-agent tool for hotel sourcing; people keep strategy, negotiation and exceptions.",
+      "source": "https://www.amexglobalbusinesstravel.com/press-releases/amex-gbt-accelerates-hotel-sourcing-cycle-with-agentic-ai/",
+      "read_at": "2026-11-07"
+    }
+  ],
+  "facts": [
+    {
+      "text": "29 September 2026: Long Lake completed its acquisition of Amex GBT (about $6.3 billion); the company is now private.",
+      "source": "https://www.amexglobalbusinesstravel.com/press-releases/long-lake-worlds-first-ai-holding-company-completes-acquisition-amex-gbt/",
+      "read_at": "2026-11-07"
+    }
+  ],
+  "world": "world 1: hospitality, tourism and the Algarve (people/silvio/outreach/worlds.md)"
 }

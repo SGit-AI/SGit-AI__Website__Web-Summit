@@ -4,7 +4,7 @@ Drafted by video@web-summit.silvio on 5 November 2026 for Silvio to post. **Silv
 
 **Where they go (Silvio's answer, 5 November 2026):** RiskMandate's accounts on YouTube, Instagram and LinkedIn, not Silvio's own. If one of those accounts does not exist yet, it is made by a person, and this file changes nothing about who owns it.
 
-**The files:** the published versions in Google Drive (`data/videos.json`): `2026-11-02_reach-mandate-gap_v1.mp4` and `2026-11-02_stories-fifty-new-agents_v1.mp4`.
+**The files:** the vault `ws-team-videos` (h9in5em4), never this repository.
 
 **Every claim below is already on the site** ([the videos page](https://web-summit.sgit.ai/videos/index.html) and each video's page, read 5 November 2026). Nothing new is said about RiskMandate; a new claim goes to Dinis first.
 
@@ -16,203 +16,61 @@ Drafted by video@web-summit.silvio on 5 November 2026 for Silvio to post. **Silv
 
 ---
 
-## 1. Reach, Mandate, Gap (53 s)
+## Ready to post now: the upload checklist (from the videos vault)
 
-Its page: https://web-summit.sgit.ai/videos/reach-mandate-gap/index.html
+What is clean and can go up (WS-71), from the vault `ws-team-videos` (h9in5em4). **Silvio chooses which, and posts; no agent logs in.** LinkedIn: conductor@web-summit.silvio routes it to Indi (WS-126); Silvio confirms.
 
-### English
+### A. Your AI has access. Does it have permission? (30 s, subtitled)
 
-**Title (YouTube):** Reach, Mandate, Gap: what can your AI agent actually do? | RiskMandate
+File: `access-permission-30s/riskmandate-access-permission-30s.mp4` (or Silvio's original from Drive). Its page: https://web-summit.sgit.ai/videos/access-permission/index.html
 
-**Description (YouTube):**
+- **Title (YouTube):** Your AI has access. Does it have permission? | RiskMandate
+- **Description (EN):**
+  > A business owner asks her AI agent to check the company's finances. It can open every file. Then it tries to send the report outside the business.
+  > Access is what an agent can reach. Permission is what the business authorised it to do. The gap between the two is where the risk lives.
+  > The film and its key concepts: https://web-summit.sgit.ai/videos/access-permission/index.html
+  > Know their reach. Define their mandate. Control the gap. RiskMandate. AI Agents. Your Rules.
+  > See us at Web Summit Lisbon, Thursday 12 November.
+  > #RiskMandate #AIAgents #AgenticAI #AIGovernance #WebSummit2026
+- **Descrição (PT):**
+  > Uma empresária pede ao seu agente de IA que verifique as finanças da empresa. Ele consegue abrir todos os ficheiros. Depois tenta enviar o relatório para fora da empresa.
+  > Acesso é o que um agente consegue alcançar. Permissão é o que o negócio o autorizou a fazer. A lacuna entre os dois é onde está o risco.
+  > O filme e os conceitos-chave: https://web-summit.sgit.ai/videos/access-permission/index.html
+  > Conheça o alcance. Defina o mandato. Controle a lacuna. RiskMandate. AI Agents. Your Rules.
+  > Encontre-nos na Web Summit em Lisboa, quinta-feira, 12 de novembro.
+  > #RiskMandate #AgentesDeIA #GovernançaDeIA #WebSummit2026
 
-> What can your AI agent actually reach, and what did you authorise it to do? The gap between the two is your risk.
-> Watch it with its key concepts: https://web-summit.sgit.ai/videos/reach-mandate-gap/index.html
->
-> A 53-second visual explanation, no sound needed:
-> - Reach: what an agent can actually access or affect: systems, data, actions, connectors.
-> - Mandate: what the business authorised it to do: the task, the deployment scope, the purpose.
-> - The gap (Delta): capabilities within Reach beyond authority.
-> - Barriers: what really stands in the way. Provenance: who owns it, who reviewed it, which version.
->
-> One agent, then 10, 100, 1,000+, with one record per agent that operators, security, leadership and insurance each read from their own side.
->
-> Know their reach. Define their mandate. Control the gap.
->
-> See us at Web Summit Lisbon, Thursday 12 November.
->
-> #RiskMandate #AIAgents #AgenticAI #AIGovernance #AIRisk #WebSummit #WebSummit2026
+### B. The stand loop, English (67 s, silent)
 
-**Instagram caption:**
+File: `stand-loop/riskmandate-stand-loop-en.mp4` (or `-pt.mp4` for a Portuguese post). It has no page of its own yet: link to https://web-summit.sgit.ai/meet/ (where its QR goes).
 
-> What can your AI agent actually reach? And what did you authorise it to do? The gap is your risk. 53 seconds, no sound needed.
->
-> Know their reach. Define their mandate. Control the gap.
->
-> Link in bio: the video's page, with the key concepts.
-> See us at Web Summit Lisbon, Thursday 12 November.
->
-> #RiskMandate #AIAgents #AgenticAI #AIGovernance #AIRisk #AISecurity #WebSummit #WebSummit2026
+- **Title (YouTube):** Do you know what your AI agents can actually do? | RiskMandate
+- **Description (EN):**
+  > Reach: everything your AI agent can actually access or affect. Mandate: what your business authorised it to do. The gap between them is your risk.
+  > One agent, then 10, 100, 1,000+. Building is not authorising: someone must be accountable. An Agent Behaviour Policy: one checkable record for every team.
+  > Know their reach. Define their mandate. Control the gap. Meet the team: https://web-summit.sgit.ai/meet/
+  > #RiskMandate #AIAgents #AgenticAI #AIGovernance #WebSummit2026
+- **Descrição (PT):** the same, from the Portuguese slides: "Alcance: tudo o que o seu agente de IA pode realmente aceder ou afetar. Mandato: o que o seu negócio o autorizou a fazer. A lacuna entre os dois é o seu risco. ... Conheça o alcance. Defina o mandato. Controle a lacuna." Link https://web-summit.sgit.ai/meet/, #RiskMandate #AgentesDeIA #GovernançaDeIA #WebSummit2026.
 
-**LinkedIn post:**
+### Per channel
 
-> Your AI agent's Reach is what it can actually access or affect. Its Mandate is what the business authorised it to do. The gap between them is your risk.
->
-> 53 seconds, no sound needed: one agent, then 10, 100, 1,000+, with one record per agent that operators, security, leadership and insurance can each read.
->
-> Know their reach. Define their mandate. Control the gap.
->
-> The video and its key concepts: https://web-summit.sgit.ai/videos/reach-mandate-gap/index.html
->
-> We are at Web Summit Lisbon. Come and talk to us on Thursday 12 November.
->
-> #RiskMandate #AIAgents #AgenticAI #AIGovernance #WebSummit2026
+| | YouTube | Instagram | LinkedIn |
+|---|---|---|---|
+| Account | RiskMandate's | RiskMandate's | RiskMandate's page (routed to Indi, WS-126) |
+| Video | the MP4 as it is (16:9, 1920x1080) | the MP4 as a feed video (16:9); a vertical 9:16 cut on request | upload natively, so it plays in the feed |
+| Text | title + description above | the first two lines + "link in bio" + hashtags; the page in the bio | the description, link in the text |
+| Thumbnail | a still: the 30-second film's last frame, or slide 1 of the loop (`stand-loop/previews/`) | the first frame | automatic |
+| Captions | burned in; nothing to upload | burned in | burned in |
+| After | send the post's URL to video@web-summit.silvio, which records it here and on /videos/ through its owner | same | same |
 
-### Português
+## On hold: the two films are not to be posted
 
-**Título (YouTube):** Alcance, Mandato, Lacuna: o que pode o seu agente de IA fazer? | RiskMandate
+Checked frame by frame on 7 November 2026, at Silvio's word ("everything with errors does not go out"):
 
-**Descrição (YouTube):**
+- **Reach, Mandate, Gap:** frames show "AUTHORIZED MANDAT ZONE", "ENTEIPRISE NETWORK" and a risk record with invented figures (a risk level, dollar amounts, 2025 dates).
+- **RiskMandate Stories: fifty new agents:** on the "Same agent. Different Reach." slide, the "REACH" label sits over the title and the circle runs through the subtitle.
 
-> O que pode o seu agente de IA realmente alcançar, e o que o autorizou a fazer? A diferença entre os dois é o seu risco.
-> Veja-o com os conceitos-chave: https://web-summit.sgit.ai/videos/reach-mandate-gap/index.html
->
-> Uma explicação visual de 53 segundos, sem som:
-> - Alcance (Reach): o que um agente pode realmente aceder ou afetar: sistemas, dados, ações, conectores.
-> - Mandato (Mandate): o que o negócio o autorizou a fazer: a tarefa, o âmbito, o propósito.
-> - A lacuna (Delta): capacidades dentro do Alcance que vão além da autoridade.
-> - Barreiras: o que realmente se interpõe. Proveniência: quem é o dono, quem reviu, que versão.
->
-> Um agente, depois 10, 100, mais de 1.000, com um registo por agente que operações, segurança, liderança e seguros leem, cada um do seu lado.
->
-> Conheça o alcance. Defina o mandato. Controle a lacuna.
->
-> Encontre-nos na Web Summit em Lisboa, quinta-feira, 12 de novembro.
->
-> #RiskMandate #AgentesDeIA #IA #GovernançaDeIA #RiscoDeIA #WebSummit #WebSummit2026
-
-**Legenda (Instagram):**
-
-> O que pode o seu agente de IA realmente alcançar? E o que o autorizou a fazer? A lacuna é o seu risco. 53 segundos, sem som.
->
-> Conheça o alcance. Defina o mandato. Controle a lacuna.
->
-> Link na bio: a página do vídeo, com os conceitos-chave.
-> Encontre-nos na Web Summit em Lisboa, quinta-feira, 12 de novembro.
->
-> #RiskMandate #AgentesDeIA #IA #GovernançaDeIA #RiscoDeIA #WebSummit #WebSummit2026 #Lisboa
-
-**Publicação (LinkedIn):**
-
-> O Alcance do seu agente de IA é o que ele pode realmente aceder ou afetar. O Mandato é o que o negócio o autorizou a fazer. A lacuna entre os dois é o seu risco.
->
-> 53 segundos, sem som: um agente, depois 10, 100, mais de 1.000, com um registo por agente que operações, segurança, liderança e seguros podem ler.
->
-> Conheça o alcance. Defina o mandato. Controle a lacuna.
->
-> O vídeo e os conceitos-chave: https://web-summit.sgit.ai/videos/reach-mandate-gap/index.html
->
-> Estamos na Web Summit em Lisboa. Venha falar connosco na quinta-feira, 12 de novembro.
->
-> #RiskMandate #AgentesDeIA #GovernançaDeIA #WebSummit2026
-
----
-
-## 2. RiskMandate Stories: fifty new agents (2 min 44 s)
-
-Its page: https://web-summit.sgit.ai/videos/fifty-new-agents/index.html
-
-### English
-
-**Title (YouTube):** Fifty new AI agents on Monday: who authorised them? | RiskMandate Stories
-
-**Description (YouTube):**
-
-> Monday: 50 new AI agents arrive in finance, HR and engineering. Before switching them on: what can they reach? What did we authorise? Who's "we"?
-> The story scene by scene, with its key concepts: https://web-summit.sgit.ai/videos/fifty-new-agents/index.html
->
-> 2 minutes 44 seconds, narrated and captioned:
-> - Building is not authorising: someone must be accountable for each deployment.
-> - An Agent Behaviour Policy: a factual record of an agent's Reach, Mandate, Gap and Barriers that teams can check.
-> - A Licence to Operate: who authorised it, who owns it, under what conditions, until when, and when it is reviewed.
-> - Reach changes: a new connector, and the old decision does not cover it.
-> - A record is not a control: RiskMandate makes authority and evidence checkable; permissions and safeguards live in the connected systems.
->
-> The next question: across fifty agents, what exposure are we taking on?
->
-> See us at Web Summit Lisbon, Thursday 12 November.
->
-> #RiskMandate #AIAgents #AgenticAI #AIGovernance #AIRisk #WebSummit #WebSummit2026
-
-**Instagram caption:**
-
-> Monday. Fifty new AI agents. Before you switch them on: what can they reach, and who authorised them?
->
-> Building is not authorising. A RiskMandate Story, captioned, works without sound.
->
-> Link in bio: the story scene by scene.
-> See us at Web Summit Lisbon, Thursday 12 November.
->
-> #RiskMandate #AIAgents #AgenticAI #AIGovernance #AIRisk #AISecurity #WebSummit #WebSummit2026
-
-**LinkedIn post:**
-
-> Monday: fifty new AI agents arrive in finance, HR and engineering. Before you switch them on: what can they reach? What did you authorise? And who is accountable?
->
-> Building is not authorising. An Agent Behaviour Policy records each agent's Reach, Mandate, Gap and Barriers; a Licence to Operate records who authorised it, under what conditions, and when it is reviewed. And when a new connector changes its Reach, the old decision does not cover it.
->
-> A RiskMandate Story, 2 min 44 s, captioned: https://web-summit.sgit.ai/videos/fifty-new-agents/index.html
->
-> Across fifty agents, what exposure are you taking on? Come and talk to us at Web Summit Lisbon on Thursday 12 November.
->
-> #RiskMandate #AIAgents #AgenticAI #AIGovernance #WebSummit2026
-
-### Português
-
-**Título (YouTube):** Cinquenta novos agentes de IA na segunda-feira: quem os autorizou? | RiskMandate Stories
-
-**Descrição (YouTube):**
-
-> Segunda-feira: chegam 50 novos agentes de IA às finanças, aos recursos humanos e à engenharia. Antes de os ligar: o que podem alcançar? O que autorizámos? Quem somos "nós"?
-> A história cena a cena, com os conceitos-chave: https://web-summit.sgit.ai/videos/fifty-new-agents/index.html
->
-> 2 minutos e 44 segundos, narrado e legendado (em inglês):
-> - Construir não é autorizar: alguém tem de responder por cada implementação.
-> - Uma Agent Behaviour Policy (política de comportamento do agente): um registo factual do Alcance, Mandato, Lacuna e Barreiras de um agente, que as equipas podem verificar.
-> - Uma Licença para Operar: quem autorizou, quem é o dono, em que condições, até quando, e quando é revista.
-> - O Alcance muda: um novo conector, e a decisão anterior já não o cobre.
-> - Um registo não é um controlo: a RiskMandate torna a autoridade e as evidências verificáveis; as permissões e salvaguardas vivem nos sistemas ligados.
->
-> A próxima pergunta: em cinquenta agentes, que exposição estamos a assumir?
->
-> Encontre-nos na Web Summit em Lisboa, quinta-feira, 12 de novembro.
->
-> #RiskMandate #AgentesDeIA #IA #GovernançaDeIA #RiscoDeIA #WebSummit #WebSummit2026
-
-**Legenda (Instagram):**
-
-> Segunda-feira. Cinquenta novos agentes de IA. Antes de os ligar: o que podem alcançar, e quem os autorizou?
->
-> Construir não é autorizar. Uma RiskMandate Story, legendada em inglês, funciona sem som.
->
-> Link na bio: a história cena a cena.
-> Encontre-nos na Web Summit em Lisboa, quinta-feira, 12 de novembro.
->
-> #RiskMandate #AgentesDeIA #IA #GovernançaDeIA #RiscoDeIA #WebSummit #WebSummit2026 #Lisboa
-
-**Publicação (LinkedIn):**
-
-> Segunda-feira: chegam cinquenta novos agentes de IA às finanças, aos recursos humanos e à engenharia. Antes de os ligar: o que podem alcançar? O que autorizou? E quem responde por eles?
->
-> Construir não é autorizar. Uma Agent Behaviour Policy regista o Alcance, o Mandato, a Lacuna e as Barreiras de cada agente; uma Licença para Operar regista quem autorizou, em que condições, e quando é revista. E quando um novo conector muda o Alcance, a decisão anterior já não o cobre.
->
-> Uma RiskMandate Story, 2 min 44 s, legendada em inglês: https://web-summit.sgit.ai/videos/fifty-new-agents/index.html
->
-> Em cinquenta agentes, que exposição está a assumir? Venha falar connosco na Web Summit em Lisboa, na quinta-feira, 12 de novembro.
->
-> #RiskMandate #AgentesDeIA #GovernançaDeIA #WebSummit2026
-
----
+So the titles, descriptions and hashtags drafted for them here are withdrawn (they stay in git history, commit 0c6b4417, for when the films are fixed at the source). The clean videos are in the vault `ws-team-videos` (h9in5em4, `people/silvio/vaults.json`): the stand loop in six languages and the 30-second film.
 
 ## After posting
 
