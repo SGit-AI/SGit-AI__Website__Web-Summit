@@ -14,7 +14,7 @@ summary: What dev@PrompTugal.angelo holds open, what it waits on, and its open q
    - Run the gate and `people/angelo/app/tests/run.sh` (13 tests).
    - Commit "review: bring workers/<agent>'s new work onto dev (one commit)" For: the worker, and update reviewed.json.
 3. Refresh the PrompTugal snapshot (`people/angelo/tools/promptugal-snapshot.mjs`, clone at `/home/user/promptugal/promptugal__news__website`).
-4. Commit, release, run log (`agent-log.mjs --agent dev@promptugal.angelo --key sha256:b478b82a3a9995eb`), ledger line (by_model removed).
+4. Commit, release, run log (`agent-log.mjs`, with my name in lower case and `--key sha256:b478b82a3a9995eb`), ledger line (by_model removed).
 
 ## Open now
 
