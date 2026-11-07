@@ -12,19 +12,20 @@ summary: writer@PrompTugal.angelo's drafts for Angelo (WS-126): edits to his Lin
 
 **Headline.** Today: *Engineering leader who ships AI in production - not pilots | Agentic code review, platform modernization, delivery performance | 25 years.* Proposed, keeping his line and adding the two things a visitor should see:
 
-> Technical lead at RiskMandate | Engineering leader who ships AI in production, not pilots | 25 years | At Web Summit Lisbon, 9 to 12 Nov
+> Engineering leader who ships AI in production, not pilots | Agentic code review, platform modernization | With the RiskMandate team at Web Summit Lisbon, 9 to 12 Nov
 
-After the summit, drop the last part.
+After the summit, drop the last part. (Not "Technical lead at RiskMandate": on LinkedIn a title at a company reads as employment, and he is an independent consultant working with the team. "Technical lead: the site, the agents, the behaviour policies" is how this site describes his part in the Web Summit work, not a job title.)
 
 **Summary.** Keep it as it is, and add two lines at the top (what LinkedIn shows before "see more"):
 
-> Technical lead at RiskMandate: I run AI agents in production, and the policies that keep them in their lane. At Web Summit Lisbon this week; find me at RiskMandate's stand on Thursday 12 November.
+> This week I'm at Web Summit Lisbon with the RiskMandate team, running the AI agents behind our work and the policies that keep them in their lane. Find me at RiskMandate's stand on Thursday 12 November.
 
-**Experience: a new entry above "Independent Consultant".**
-- Company: RiskMandate (link the company page). Title: Technical lead. Start date: **Angelo to give** (this site records him joining the team on 2 November 2026).
-- Description:
+**Experience: no new RiskMandate entry.** A separate entry under RiskMandate's name would read as a job there. Instead, one of these, his choice:
+- **A: a line in his "Independent Consultant" entry** (it stays the current role):
 
-> The site, the agents and the behaviour policies behind RiskMandate's work at Web Summit Lisbon 2026: a team of people and AI agents, each agent with a written policy of what it may do. RiskMandate: "Give agents access. Not free rein." Know their reach, define their mandate, control the gap.
+> Since November 2026: working with the RiskMandate team on Web Summit Lisbon 2026, as the technical lead for the team's site, its AI agents and the behaviour policies they work under.
+
+- **B: a Project** (LinkedIn's Projects section), associated with the Independent Consultant entry: *RiskMandate at Web Summit Lisbon 2026*, November 2026, with the same line, and RiskMandate mentioned in the description rather than as the employer.
 
 **Featured** (new; in this order):
 1. Set up your AI agents and decide what each may do (PrompTugal.news): https://promptugal.news/articles/agent-setup-guide.html
@@ -59,7 +60,7 @@ Short, in his voice, one link each; tag RiskMandate in every post. Times are sug
 
 ### Sun 8, evening. The declaration: I'm at Web Summit
 
-> I'm at Web Summit Lisbon from Monday, with the RiskMandate team.
+> I'm at Web Summit Lisbon from Monday, working with the RiskMandate team.
 >
 > Come and find me at RiskMandate's stand on Thursday 12 November: booth A1-30, ALPHA 1, Pavilion 1.
 >
@@ -91,7 +92,7 @@ Reshare *Three mistakes our agents made, and the rules they left* (PrompTugal.ne
 
 > Today: RiskMandate's stand at Web Summit, booth A1-30, ALPHA 1, Pavilion 1.
 >
-> On my laptop, live: an article written on the spot by my agents, and an agent behaviour policy made and checked in front of you. My colleague Jose shows an agent attacked, then governed.
+> On my laptop, live: an article written on the spot by my agents, and an agent behaviour policy made and checked in front of you. Jose, from the team, shows an agent attacked, then governed.
 >
 > Come and say hello.
 
@@ -103,10 +104,10 @@ Reshare *Three mistakes our agents made, and the rules they left* (PrompTugal.ne
 
 As a follower (no admin needed): tag RiskMandate in each post; reshare the page's posts with a line of his own; comment early on them.
 
-Needs the page's admins (for Angelo to take to Dinis and Nimay): posting the guide and the graph as the company; a summit banner and a pinned post with the stand; linking his new experience entry to the page.
+Needs the page's admins (for Angelo to take to Dinis and Nimay): posting the guide and the graph as the company; a summit banner and a pinned post with the stand; a mention of RiskMandate in his entry or project. Being added to the page as an employee would not be accurate.
 
 ## Open, for Angelo
 
-1. The start date of the RiskMandate entry.
+1. Option A or B for the experience section, and whether "working with the RiskMandate team" is how he wants the relationship described.
 2. Jose's demo in the Thursday post: Angelo's card names it; Jose to agree to being named.
 3. The "paid consultancy" tone line the desk relayed stays out of the RiskMandate posts (what RiskMandate offers is for Dinis and Nimay). His own consulting entry and summary are his, and stay as they are.
