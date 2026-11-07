@@ -5,6 +5,109 @@
 // by handing off to them (Gmail, Google Calendar, Claude), and the page says so. One exception, only where the person's
 // config.json sets "llm" (Dinis first, 3 November): Ask Claude chats in the page through OpenRouter, with the person's
 // own key kept in this browser's localStorage and sent only to openrouter.ai (dev@web-summit.dinis). Kept by conductor@web-summit.dinis; a person's own app/data.mjs overrides it.
+;// The Kanban board (every command centre without its own; dev@web-summit.silvio, 7 November 2026): every task on the team's board as cards in columns, grouped by status, due date,
+// person or area; quick filters; drag a card to change its status (or use its "Move to" menu). The board files on
+// GitHub stay the truth: a move is shown as pending and opens the file on GitHub to save it.
+(function () {
+    'use strict'
+    const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+    const LS = k => 'cc.kb.' + k
+    const lget = (k, d) => { try { const v = localStorage.getItem(LS(k)); return v == null ? d : JSON.parse(v) } catch { return d } }
+    const lset = (k, v) => { try { localStorage.setItem(LS(k), JSON.stringify(v)) } catch {} }
+    const st = { D: null, group: lget('group', 'status'), scope: lget('scope', 'mine'), q: '', chip: '', doneAll: false, moves: lget('moves', {}), drag: null, menu: '' }
+    const STATUS = [['open', 'To do', 'slate'], ['picked', 'In progress', 'blue'], ['blocked', 'Waiting', 'amber'], ['done', 'Done', 'green']]
+    const AREA = { outreach: 'Outreach', merch: 'Merch and print', content: 'Content', tech: 'Tech', pm: 'Running the team', onboarding: 'Getting set up', riskmandate: 'RiskMandate', operator: 'Operator', friendly: 'Friendlies', ops: 'Ops', idea: 'Ideas', newsroom: 'Newsroom', design: 'Design' }
+    const norm = s => /^in.progress$/i.test(s || '') ? 'picked' : (s || 'open')
+    const queued = i => (window.CC_QUEUE && window.CC_QUEUE.get(i.id)) || ''
+    const statusOf = i => queued(i) && queued(i) !== norm(i.status) ? queued(i) : st.moves[i.id] && st.moves[i.id] !== norm(i.status) ? st.moves[i.id] : norm(i.status)
+    const day = d => { const x = new Date(d); x.setHours(0, 0, 0, 0); return x }
+    function dueBucket(i) {
+        if (!i.due_at) return ['none', 'No date']
+        const t = day(Date.now()), d = day(i.due_at), n = Math.round((d - t) / 864e5)
+        return n < 0 ? ['overdue', 'Overdue'] : n === 0 ? ['today', 'Today'] : n <= 7 ? ['week', 'This week'] : ['later', 'Later']
+    }
+    const dueLabel = i => { if (!i.due_at) return ''; const t = day(Date.now()), d = day(i.due_at), n = Math.round((d - t) / 864e5); if (statusOf(i) === 'done') return ''; return n < 0 ? `${-n} day${n === -1 ? '' : 's'} late` : n === 0 ? 'Today' : n === 1 ? 'Tomorrow' : new Date(i.due_at).toLocaleDateString([], { weekday: 'short', day: 'numeric' }) }
+    const dueTone = i => { const b = dueBucket(i)[0]; return statusOf(i) === 'done' ? 'muted' : b === 'overdue' ? 'bad' : b === 'today' ? 'warn' : b === 'week' ? 'info' : 'muted' }
+    const people = () => (st.D && st.D.team) || []
+    const pName = id => (people().find(p => p.id === id) || {}).name || id
+    const pOf = i => { const ids = new Set((i.for || []).filter(x => x !== 'everyone')); people().forEach(p => { if (new RegExp('\\b' + p.id + '\\b', 'i').test(i.picked_by || '')) ids.add(p.id) }); return [...ids] }
+    const av = id => { const p = people().find(x => x.id === id) || { id, name: id }; const ini = String(p.name || id).split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase(); return `<span class="kb-av" title="${esc(p.name)}">${ini}${p.photo ? `<img src="${esc(p.photo)}" alt="" loading="lazy" onerror="this.remove()">` : ''}</span>` }
+    const ME = () => (st.D && st.D.person && st.D.person.id) || ''
+    function list() {
+        const I = (st.D && st.D.issues) || [], q = st.q.trim().toLowerCase()
+        return I.filter(i => st.scope === 'team' || i.named || (i.for || []).includes(ME()) || new RegExp('\\b' + ME() + '\\b', 'i').test(i.picked_by || ''))
+            .filter(i => !q || (i.id + ' ' + i.title + ' ' + (i.area || '') + ' ' + (i.picked_by || '')).toLowerCase().includes(q))
+            .filter(i => !st.chip || (st.chip === 'overdue' ? dueBucket(i)[0] === 'overdue' && statusOf(i) !== 'done' : st.chip === 'week' ? ['today', 'week'].includes(dueBucket(i)[0]) && statusOf(i) !== 'done' : st.chip === 'nobody' ? !(i.picked_by || '').trim() && statusOf(i) !== 'done' : true))
+    }
+    function columns(items) {
+        const byDue = (a, b) => (a.due_at || '9') < (b.due_at || '9') ? -1 : 1
+        if (st.group === 'due') return [['overdue', 'Overdue'], ['today', 'Today'], ['week', 'This week'], ['later', 'Later'], ['none', 'No date']].map(([k, l]) => ({ k, l, tone: k === 'overdue' ? 'bad' : k === 'today' ? 'warn' : 'slate', items: items.filter(i => statusOf(i) !== 'done' && dueBucket(i)[0] === k).sort(byDue) }))
+        if (st.group === 'person') { const ids = [...new Set(items.flatMap(pOf))]; return [...people().filter(p => ids.includes(p.id)).map(p => ({ k: p.id, l: p.name.split(' ')[0], person: p.id, items: items.filter(i => statusOf(i) !== 'done' && pOf(i).includes(p.id)).sort(byDue) })), { k: 'nobody', l: 'Everyone / nobody yet', items: items.filter(i => statusOf(i) !== 'done' && !pOf(i).length).sort(byDue) }].filter(c => c.items.length) }
+        if (st.group === 'area') { const as = [...new Set(items.map(i => i.area || 'other'))]; return as.map(a => ({ k: a, l: AREA[a] || a, items: items.filter(i => statusOf(i) !== 'done' && (i.area || 'other') === a).sort(byDue) })).filter(c => c.items.length).sort((x, y) => y.items.length - x.items.length) }
+        return STATUS.filter(([k]) => k !== 'blocked' || items.some(i => statusOf(i) === 'blocked')).map(([k, l, tone]) => ({ k, l, tone, status: true, items: items.filter(i => statusOf(i) === k).sort((a, b) => ((st.moves[b.id] ? 1 : 0) - (st.moves[a.id] ? 1 : 0)) || (k === 'done' ? 0 : byDue(a, b))) }))
+    }
+    function card(i) {
+        const s = statusOf(i), q = queued(i) && queued(i) !== norm(i.status), pend = !q && st.moves[i.id] && st.moves[i.id] !== norm(i.status), dl = dueLabel(i), ps = pOf(i)
+        const agent = (i.picked_by || '').match(/[a-z-]+@web-summit\.[a-z]+/i)
+        return `<article class="kb-card${s === 'done' ? ' done' : ''}${pend || q ? ' pend' : ''}" draggable="${st.group === 'status'}" data-kb-id="${esc(i.id)}" tabindex="0" aria-label="${esc(i.id + ': ' + i.title)}">
+<div class="kb-top"><span class="kb-id">${esc(i.id)}</span><span class="kb-area">${esc(AREA[i.area] || i.area || '')}</span>${s === 'done' ? '<span class="kb-ok" aria-label="Done">✓</span>' : ''}<button type="button" class="kb-more" data-kb-menu="${esc(i.id)}" aria-label="Move ${esc(i.id)}">⋯</button></div>
+<h4>${esc(i.title)}</h4>
+<div class="kb-foot">${dl ? `<span class="kb-due ${dueTone(i)}">${esc(dl)}</span>` : ''}${pend ? '<span class="kb-due pend">Pending on GitHub</span>' : ''}${q ? '<span class="kb-due queued">Queued for the board</span>' : ''}${agent && s !== 'done' ? `<span class="kb-agent" title="${esc(i.picked_by)}">${esc(agent[0].split('@')[0])}</span>` : ''}<span class="kb-people">${ps.slice(0, 3).map(av).join('')}${ps.length > 3 ? `<span class="kb-av more">+${ps.length - 3}</span>` : ''}</span></div>
+${st.menu === i.id ? `<div class="kb-menu" role="menu">${STATUS.map(([k, l]) => `<button type="button" role="menuitem" data-kb-move="${k}"${k === s ? ' aria-current="true"' : ''}>${l}</button>`).join('')}</div>` : ''}</article>`
+    }
+    function html() {
+        if (!st.D) return '<p class="note">Loading the board…</p>'
+        const items = list(), cols = columns(items), all = (st.D.issues || [])
+        const open = items.filter(i => statusOf(i) !== 'done'), late = open.filter(i => dueBucket(i)[0] === 'overdue').length
+        const pend = Object.entries(st.moves).filter(([id, s]) => { const i = all.find(x => x.id === id); return i && norm(i.status) !== s })
+        const seg = (k, opts, cur) => `<div class="cc-seg kb-seg" role="group">${opts.map(([v, l]) => `<button type="button" data-kb-${k}="${v}" aria-pressed="${cur === v}">${l}</button>`).join('')}</div>`
+        return `<div class="kb">
+<div class="kb-head"><div><h2>Board</h2><p class="note">${open.length} open · <span class="${late ? 'kb-late' : ''}">${late} overdue</span> · ${items.length - open.length} done${st.scope === 'mine' ? ' · yours' : ' · the whole team'}</p></div>
+<div class="kb-tools">${seg('scope', [['mine', 'Mine'], ['team', 'Team']], st.scope)}
+<label class="kb-sel"><span>Group by</span><select id="kb-group">${[['status', 'Status'], ['due', 'Due date'], ['person', 'Person'], ['area', 'Area']].map(([v, l]) => `<option value="${v}"${st.group === v ? ' selected' : ''}>${l}</option>`).join('')}</select></label>
+<label class="sr" for="kb-q">Search the board</label><input id="kb-q" class="kb-q" type="search" placeholder="Search WS-NN, title, agent…" value="${esc(st.q)}" autocomplete="off"></div></div>
+<div class="kb-chips">${[['overdue', 'Overdue'], ['week', 'Due this week'], ['nobody', 'Nobody picked it']].map(([k, l]) => `<button type="button" class="kb-chip${st.chip === k ? ' on' : ''}" data-kb-chip="${k}">${l}</button>`).join('')}${st.chip || st.q ? '<button type="button" class="kb-chip clear" data-kb-chip="">Clear filters</button>' : ''}</div>
+${window.CC_QUEUE && window.CC_QUEUE.all().length ? `<div class="kb-pend" role="status"><b>${window.CC_QUEUE.all().length} change${window.CC_QUEUE.all().length === 1 ? '' : 's'} queued for the board:</b> ${window.CC_QUEUE.all().map(([id, s]) => `${esc(id)} → ${esc((STATUS.find(x => x[0] === s) || [, s])[1])}`).join(' · ')}. Written to GitHub at the next sync. <button type="button" class="kb-chip" data-kb-undo>Undo all</button></div>` : ''}${!window.CC_QUEUE && pend.length ? `<div class="kb-pend" role="status"><b>${pend.length} move${pend.length === 1 ? '' : 's'} not on the board yet.</b> The board files on GitHub are the truth: open each and change <code>status:</code>. ${pend.map(([id, s]) => { const i = all.find(x => x.id === id); return `<a href="${esc((st.D.repo || 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit') + '/edit/dev/' + i.file)}" target="_blank" rel="noopener">${esc(id)} → ${esc((STATUS.find(x => x[0] === s) || [, s])[1])}</a>` }).join(' · ')} <button type="button" class="kb-chip" data-kb-undo>Undo all</button></div>` : ''}
+${cols.length > 1 ? `<nav class="kb-jump" aria-label="Columns">${cols.map(c => `<button type="button" data-kb-jump="${esc(c.k)}">${esc(c.l)} <span>${c.items.length}</span></button>`).join('')}</nav>` : ''}
+<div class="kb-cols" id="kb-cols">${cols.map(c => { const show = c.k === 'done' && !st.doneAll ? c.items.slice(0, 6) : c.items; return `<section class="kb-col" data-kb-col="${esc(c.k)}" id="kb-col-${esc(c.k)}"><header>${c.person ? av(c.person) : `<span class="kb-dot ${c.tone || 'slate'}"></span>`}<h3>${esc(c.l)}</h3><span class="kb-n">${c.items.length}</span></header>
+<div class="kb-list" data-kb-drop="${c.status ? esc(c.k) : ''}">${show.map(card).join('') || '<p class="kb-empty">Nothing here</p>'}${show.length < c.items.length ? `<button type="button" class="kb-chip" data-kb-doneall>Show all ${c.items.length}</button>` : ''}</div></section>` }).join('')}</div>
+<p class="note kb-help">${st.group === 'status' ? 'Drag a card to another column, or use ⋯ on the card, to change its status.' : 'Group by Status to move cards between columns.'} Tap a card to open the task.</p></div>`
+    }
+    let root = null
+    function paint() { root = document.getElementById('kanban'); if (!root) return; const a = document.activeElement, keep = a && a.id === 'kb-q', pos = keep ? a.selectionStart : 0, sx = (document.getElementById('kb-cols') || {}).scrollLeft || 0; root.innerHTML = html(); const c = document.getElementById('kb-cols'); if (c) c.scrollLeft = sx; if (keep) { const q = document.getElementById('kb-q'); q.focus(); q.setSelectionRange(pos, pos) } }
+    function move(id, s) {
+        const i = ((st.D && st.D.issues) || []).find(x => x.id === id); if (!i) return
+        if (window.CC_QUEUE) { if (norm(i.status) === s) window.CC_QUEUE.undo(id); else window.CC_QUEUE.add(id, s); st.menu = ''; paint(); return }
+        if (norm(i.status) === s) delete st.moves[id]; else st.moves[id] = s
+        lset('moves', st.moves); st.menu = ''; paint()
+    }
+    fetch('data.json').then(r => r.json()).then(d => { st.D = d; paint() }).catch(() => {})
+    window.addEventListener('cc-queue', () => paint())
+    document.addEventListener('click', e => {
+        if (!root || !root.contains(e.target)) { if (st.menu) { st.menu = ''; paint() } return }
+        const t = e.target.closest('[data-kb-scope],[data-kb-chip],[data-kb-menu],[data-kb-move],[data-kb-jump],[data-kb-doneall],[data-kb-undo],.kb-card'); if (!t) return
+        if (t.dataset.kbScope) { st.scope = t.dataset.kbScope; lset('scope', st.scope); paint() }
+        else if (t.dataset.kbChip !== undefined && t.matches('[data-kb-chip]')) { st.chip = st.chip === t.dataset.kbChip ? '' : t.dataset.kbChip; if (!t.dataset.kbChip) st.q = ''; paint() }
+        else if (t.dataset.kbMenu) { e.stopPropagation(); st.menu = st.menu === t.dataset.kbMenu ? '' : t.dataset.kbMenu; paint() }
+        else if (t.dataset.kbMove) { move(t.closest('.kb-card').dataset.kbId, t.dataset.kbMove) }
+        else if (t.dataset.kbJump) { const c = document.getElementById('kb-col-' + t.dataset.kbJump); if (c) c.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' }) }
+        else if (t.matches('[data-kb-doneall]')) { st.doneAll = true; paint() }
+        else if (t.matches('[data-kb-undo]')) { if (window.CC_QUEUE) window.CC_QUEUE.all().forEach(([id]) => window.CC_QUEUE.undo(id)); st.moves = {}; lset('moves', {}); paint() }
+        else if (t.classList.contains('kb-card')) { if (window.__ccOpenIssue) window.__ccOpenIssue(t.dataset.kbId) }
+    })
+    document.addEventListener('keydown', e => { const c = e.target.closest && e.target.closest('.kb-card'); if (c && e.target === c && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); window.__ccOpenIssue && window.__ccOpenIssue(c.dataset.kbId) } if (e.key === 'Escape' && st.menu) { st.menu = ''; paint() } })
+    document.addEventListener('input', e => { if (e.target.id === 'kb-q') { st.q = e.target.value; paint() } })
+    document.addEventListener('change', e => { if (e.target.id === 'kb-group') { st.group = e.target.value; lset('group', st.group); paint() } })
+    // drag and drop between status columns
+    document.addEventListener('dragstart', e => { const c = e.target.closest && e.target.closest('.kb-card'); if (!c || st.group !== 'status') return; st.drag = c.dataset.kbId; c.classList.add('dragging'); try { e.dataTransfer.setData('text/plain', st.drag); e.dataTransfer.effectAllowed = 'move' } catch {} })
+    document.addEventListener('dragend', e => { const c = e.target.closest && e.target.closest('.kb-card'); if (c) c.classList.remove('dragging'); document.querySelectorAll('.kb-list.over').forEach(x => x.classList.remove('over')); st.drag = null })
+    document.addEventListener('dragover', e => { const l = e.target.closest && e.target.closest('.kb-list[data-kb-drop]'); if (!l || !l.dataset.kbDrop || !st.drag) return; e.preventDefault(); document.querySelectorAll('.kb-list.over').forEach(x => x !== l && x.classList.remove('over')); l.classList.add('over') })
+    document.addEventListener('drop', e => { const l = e.target.closest && e.target.closest('.kb-list[data-kb-drop]'); if (!l || !l.dataset.kbDrop || !st.drag) return; e.preventDefault(); move(st.drag, l.dataset.kbDrop) })
+    // a command centre with its own kanban (Angelo's, Jose's) keeps it: ours steps aside
+    if (window.AngeloKanban || window.JoseKanban) return
+    const X = window.CC_EXTRA = window.CC_EXTRA || { views: {} }; X.views = X.views || {}
+    X.views.kanban = { label: 'Kanban', icon: 'board', render: () => '<div id="kanban"></div>', after: () => paint() }
+})();
 (() => {
     'use strict'
     const root = document.getElementById('cc')
@@ -37,6 +140,7 @@
         agents: 'M8 4h8v6H8zM12 10v3M6 13h12v7H6zM9 16h.01M15 16h.01',
         inbox: 'M3 6h18v12H3zM3 7l9 6 9-6',
         cal: 'M4 6h16v14H4zM4 10h16M8 3v4M16 3v4',
+        brain: 'M9.5 4A3.5 3.5 0 0 0 6 7.5v.3A3.5 3.5 0 0 0 4 11a3.5 3.5 0 0 0 2 3.2v.3A3.5 3.5 0 0 0 9.5 18H12V4zM14.5 4A3.5 3.5 0 0 1 18 7.5v.3a3.5 3.5 0 0 1 2 3.2 3.5 3.5 0 0 1-2 3.2v.3a3.5 3.5 0 0 1-3.5 3.5H12M12 18v2',
         claude: 'M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1',
         reports: 'M4 20V10M10 20V4M16 20v-7M22 20H2',
         settings: 'M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z',
@@ -117,10 +221,11 @@
 
     // ---------- state ----------
     const S = { view: 'home', scope: store.get('scope', 'named'), stream: 'all', status: 'active', window: 'all', q: '', boardScope: 'mine', boardCol: 'open', voiceLang: store.get('lang', 'en-GB') }
+    const XV = (window.CC_EXTRA && window.CC_EXTRA.views) || {}
     const VIEWS = [
-        ['home', 'Command centre', 'home'], ['tasks', 'My tasks', 'tasks'], ['streams', 'Workstreams', 'streams'], ['board', 'Team board', 'board'],
-        ['waiting', 'Waiting and decisions', 'wait'], ['agents', 'My agents', 'agents'], ['inbox', 'Inbox and email', 'inbox'], ['calendar', 'Calendar', 'cal'],
-        ['ask', 'Ask Claude', 'claude'], ['reports', 'Reports', 'reports'], ['settings', 'Settings', 'settings'],
+        ['home', 'Overview', 'home'], ['tasks', 'My tasks', 'tasks'], ['streams', 'Workstreams', 'streams'], ['board', 'Team board', 'board'],
+        ['waiting', 'Decisions', 'wait'], ['agents', 'My agents', 'agents'], ['inbox', 'Inbox', 'inbox'], ['calendar', 'Calendar', 'cal'],
+        ['ask', 'Ask Claude', 'claude'], ...Object.entries(XV).map(([id, x]) => [id, x.label, x.icon || 'flag']), ...(window.CC_BRAIN ? [['brain', 'My brain', 'brain']] : []), ['reports', 'Reports', 'reports'], ['settings', 'Settings', 'settings'],
     ]
     const counts = () => {
         const o = openNamed(), u = o.map(urgency)
@@ -140,12 +245,9 @@
 <div class="cc-layout">
   <aside class="cc-side" aria-label="Command centre">
     <div class="cc-brand"><span class="cc-mark" aria-hidden="true">R</span><div><b>RiskMandate</b><span>${esc(FIRST)}'s command centre</span></div></div>
-    <div class="cc-me"><span class="cc-avatar" aria-hidden="true">${face(D.person.name || ME, D.person.photo)}</span><div><b>${esc(D.person.name)}</b><span>${esc(D.person.role)}</span></div></div>
+    <button class="cc-me" id="cc-me" type="button" aria-haspopup="menu" aria-expanded="false" title="Open anyone's command centre"><span class="cc-avatar" aria-hidden="true">${face(D.person.name || ME, D.person.photo)}</span><div><b>${esc(D.person.name)}</b><span>${esc(D.person.role)}</span></div>${ico('down', 'cc-chev')}</button>
     <nav class="cc-nav" aria-label="Views">
-      ${VIEWS.slice(0, 2).map(navItem).join('')}
-      <span class="grp">Work</span>${VIEWS.slice(2, 6).map(navItem).join('')}
-      <span class="grp">Connect</span>${VIEWS.slice(6, 9).map(navItem).join('')}
-      <span class="grp">More</span>${VIEWS.slice(9).map(navItem).join('')}
+      ${(() => { const G = [['', 'core', ['home', 'tasks']], ['Work', 'work', ['board', 'streams', 'waiting', 'agents']], ['Web Summit', 'summit', ['desk', 'brain']], ['Connect', 'connect', ['inbox', 'calendar', 'ask']], ['More', 'more', ['reports', 'settings']]], seen = new Set([...G.flatMap(g => g[2]), 'kanban']); G[4][2].push(...VIEWS.map(v => v[0]).filter(id => !seen.has(id))); return G.map(([t, c, ids]) => { const it = ids.map(id => VIEWS.find(v => v[0] === id)).filter(Boolean); const extra = c === 'summit' && !VIEWS.some(v => v[0] === 'desk') ? `<a href="${esc(D.summit_desk || 'https://claude.ai/artifact/1RCwGGKm3XU9mCwajfcn93')}" target="_blank" rel="noopener" data-g="summit" title="The team's private page for the stand: visitors, the demo, the plan">${ico('star')}<span class="lbl">Summit desk</span><span class="ext" aria-hidden="true">↗</span></a>` : ''; return it.length || extra ? `${t ? `<span class="grp" data-g="${c}">${t}</span>` : ''}${it.map(x => navItem(x).replace('<a ', `<a data-g="${c}" `)).join('')}${extra}` : '' }).join('') })()}
     </nav>
     <div class="foot">Data ${esc(D.version)} · ${esc(ago(D.built_at))}<br><a href="../index.html">Classic dashboard</a> · <a href="../../../index.html">Site</a></div>
   </aside>
@@ -158,12 +260,13 @@
       <div class="people">${(D.team || []).map(p => `<a href="../../${esc(p.id)}/app/index.html"${p.id === ME ? ' aria-current="page"' : ''} title="${esc(p.name)}'s command centre"><span class="av">${face(p.name, p.photo)}</span>${esc(p.name.split(' ')[0])}</a>`).join('')}</div>
     </nav>
     <header class="cc-top">
-      <span class="cc-mark sm" aria-hidden="true">R</span><div class="title" id="cc-title"></div><div class="grow"></div>
+      <span class="cc-mark sm" aria-hidden="true">R</span><button class="cc-whobtn" type="button" aria-haspopup="menu" aria-label="Open anyone's command centre"><span class="cc-avatar" aria-hidden="true">${face(D.person.name || ME, D.person.photo)}</span>${ico('down', 'cc-chev')}</button><div class="title" id="cc-title"></div><div class="grow"></div>
       <form class="cc-search" role="search" id="cc-search"><label class="sr" for="cc-q">Search the board</label>${ico('search', '')}<input id="cc-q" type="search" placeholder="Search issues, WS-NN, people…" value="${esc(S.q)}"></form>
+      <div class="cc-tools" role="group" aria-label="Tools">${(() => { const own = !V.kanban && (window.AngeloKanban || window.JoseKanban); if (!V.kanban && !own) return ''; const on = own ? /^#kanban/.test(location.hash) : S.view === 'kanban'; return `<a class="cc-iconbtn" href="#${on ? (S.prevView || 'home') : 'kanban'}" aria-label="${on ? 'Close the Kanban board' : 'Open the Kanban board'}" aria-pressed="${on}" title="${on ? 'Close the Kanban' : 'Kanban board'}"${on ? ' aria-current="page"' : ''}>${ico('board', '')}</a>` })()}
       <button class="cc-iconbtn cc-forme" id="cc-forme" type="button" aria-label="For me: ${forMeCount()} items need you" title="For me">${ico('bell', '')}${forMeCount() ? `<span class="cc-count">${forMeCount()}</span>` : ''}</button>
       <button class="cc-iconbtn" id="cc-links" type="button" aria-label="Links: every site we work with" title="Links">${ico('links', '')}</button>
-      <button class="cc-iconbtn" id="cc-theme" type="button" aria-label="Switch to ${html.dataset.theme === 'dark' ? 'light' : 'dark'} mode">${ico(html.dataset.theme === 'dark' ? 'sun' : 'moon', '')}</button>
-      <div class="cc-today"><time id="cc-clock"></time><br><span>${esc(TZ)}</span></div>
+      <button class="cc-iconbtn" id="cc-theme" type="button" aria-label="Switch to ${html.dataset.theme === 'dark' ? 'light' : 'dark'} mode" title="Light or dark">${ico(html.dataset.theme === 'dark' ? 'sun' : 'moon', '')}</button></div>
+      <div class="cc-today" title="${esc(TZ)}"><time id="cc-clock"></time></div>
     </header>
     <div class="cc-content" id="cc-view" tabindex="-1"></div>
     <div class="cc-ask" id="cc-askbar">
@@ -198,7 +301,7 @@
     // the greeting follows the viewer's own clock (the device's local time zone): 05-11 morning, 12-17 afternoon, else evening
     const greeting = (d = new Date()) => { const h = d.getHours(); return h >= 5 && h < 12 ? 'Good morning' : h >= 12 && h < 18 ? 'Good afternoon' : 'Good evening' }
     const PHONE = matchMedia('(max-width: 767px)'), TOUCH = matchMedia('(min-width: 768px) and (pointer: coarse)')
-    const fabMode = () => PHONE.matches || (TOUCH.matches && eventMode())
+    const fabMode = () => true
     function setAsk(open) {
         S.askOpen = open
         const c = $('.cc', root); if (!c) return
@@ -207,7 +310,7 @@
         if (fabMode()) (open ? $('#cc-askq') : $('#cc-askfab')).focus()
     }
     const tick = () => {
-        const el = $('#cc-clock'); if (el) el.textContent = new Date().toLocaleDateString([], { weekday: 'long', day: 'numeric', month: 'long' }) + ' · ' + fmtTime(Date.now())
+        const el = $('#cc-clock'); if (el) el.textContent = new Date().toLocaleDateString([], { weekday: 'short', day: 'numeric', month: 'short' }) + ' · ' + fmtTime(Date.now())
         const g = $('#cc-greet'); if (g && g.textContent !== greeting()) g.textContent = greeting()
     }
     setInterval(tick, 30e3)
@@ -240,15 +343,15 @@
 <section class="cc-hero${eventMode() ? ' compact' : ''}"><div class="grow"><p class="eyebrow">${esc(new Date().toLocaleDateString([], { weekday: 'short', day: 'numeric', month: 'short' }))} · Web Summit Lisbon</p><h1><span id="cc-greet">${greet}</span>, <span class="gild">${esc(FIRST)}</span>.</h1><p>${c.open} open issues named for you · ${c.soon} due within 72 hours · ${D.decisions.length} decisions waiting.</p></div>
 <div class="cc-count" role="img" aria-label="${toSummit} days to Web Summit opening night"><b class="num">${toSummit}</b><span>days to<br>opening night</span></div>
 <div class="cc-actions"><button class="cc-btn gold" type="button" data-go="ask">${ico('claude', '')}Ask Claude</button><button class="cc-btn tint t-green" type="button" data-new>${ico('plus', '')}New task</button><button class="cc-btn tint t-conductor" type="button" data-go="board">${ico('board', '')}Team board</button><button class="cc-btn tint t-blue" type="button" data-go="waiting">${ico('wait', '')}Decisions</button></div></section>
-${eventMode() ? eventCard() + newsCard() : ''}<section class="cc-urgent" aria-labelledby="h-urgent"><header><h2 id="h-urgent">${ico('flag', '')}Most urgent</h2><button class="more" type="button" data-go="tasks">All ${c.open} →</button></header>
+${eventMode() ? eventCard() + newsCard() : ''}${(() => { const mine = D.decisions.filter(x => (x.who || '').toLowerCase() === FIRST.toLowerCase()); return mine.length ? `<section class="cc-decide" aria-labelledby="h-decide"><header><h2 id="h-decide">Decisions waiting on you <span>${mine.length}</span></h2><button class="more" type="button" data-go="waiting">All decisions →</button></header><ol>${mine.slice(0, 4).map(x => `<li><span>${esc(x.what)}</span><small>${x.issue ? esc(x.issue) + ' · ' : ''}waiting ${esc(ago(x.since).replace(' ago', ''))}</small></li>`).join('')}</ol></section>` : '' })()}<section class="cc-urgent" aria-labelledby="h-urgent"><header><h2 id="h-urgent">${ico('flag', '')}Most urgent</h2><button class="more" type="button" data-go="tasks">All ${c.open} →</button></header>
 ${urgentTop().length ? `<div class="cc-list">${urgentTop().map(i => taskRow(i, true)).join('')}</div>` : empty('Nothing open is named for you.')}</section>
 ${eventMode() ? '' : newsCard()}<div class="cc-kpis">
 ${kpi('open', 'My tasks', c.open, `of ${c.total} named for me`, 'blue', 'tasks')}
-${kpi('soon', 'Due in 72 h', c.soon, 'derived from due dates', 'orange', 'flag')}
-${kpi('overdue', 'Overdue', c.overdue, c.overdue ? 'act today' : 'none late', 'red', 'alert')}
-${kpi('picked', 'In progress', c.picked, 'status: picked', 'blue', 'prog')}
-${kpi('waiting', 'Waiting / decisions', c.waiting, 'on others or on me', 'yellow', 'wait')}
-${kpi('done', 'Completed', c.done, 'status: done', 'green', 'check')}
+${kpi('soon', 'Due in 72 h', c.soon, 'next 3 days', 'orange', 'flag')}
+${kpi('overdue', 'Overdue', c.overdue, c.overdue ? 'needs you today' : 'nothing late', 'red', 'alert')}
+${kpi('picked', 'In progress', c.picked, 'you are on it', 'blue', 'prog')}
+${kpi('waiting', 'Waiting', c.waiting, 'on someone or a decision', 'yellow', 'wait')}
+${kpi('done', 'Done', c.done, 'finished', 'green', 'check')}
 </div>
 <div class="cc-grid">
 ${card("Today's priority tasks", o.length ? grouped(byUrgency(o), true) : empty('Nothing open is named for you.'), { cls: 'cc-span-5', more: 'tasks', id: 'prio', icon: 'flag' })}
@@ -493,6 +596,176 @@ ${card('How this works', LLM() ? `<div class="cc-list">
 </div>`
     }
 
+    for (const [id, x] of Object.entries(XV)) V[id] = () => x.render()
+    // ---------- my brain: a second brain on this device (inbox -> wiki -> outputs), organised by Claude ----------
+    // After "The Second Brain Build (Claude Code)": capture without sorting; Claude summarises, titles, tags and links;
+    // questions are answered only from the notes, with the titles cited; good answers are saved back. Kept in this
+    // browser's local storage only: never in the repository, never on the public site. Claude runs through the
+    // person's own OpenRouter key when there is one, else by copy, open claude.ai, and paste the answer back.
+    const BX = () => window.CC_BRAIN || null
+    const BR = { get: () => Object.assign({ inbox: [], notes: [], reports: [] }, BX() ? BX().get() : store.get('brain', {})), set: b => BX() ? BX().set(b) : store.set('brain', b) }
+    const brMap = () => !!(BX() && BX().graph)
+    const brId = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6)
+    const brKey = s => String(s || '').trim().toLowerCase()
+    const brFind = (b, title) => b.notes.find(n => brKey(n.title) === brKey(title))
+    const brNoteText = n => `### ${n.title}\nTags: ${(n.tags || []).join(', ')}\n${(n.bullets || []).map(x => '- ' + x).join('\n')}${n.body ? '\n' + n.body : ''}`
+    const BRAIN = {
+        organize: b => `You are organising ${D.person.name}'s second brain. Read everything in INBOX. For each item:
+1. Summarise it in 3 bullets.
+2. Give it a clear title and 3 to 5 tags (short, lowercase).
+3. List related notes: the exact titles of WIKI notes (or of the other new notes) on the same theme.
+Then a short report: the themes you are seeing across everything, and any 2 notes that contradict each other.
+Reply with JSON only, no other text:
+{"notes":[{"item":1,"title":"","bullets":["","",""],"tags":[""],"related":[""]}],"report":{"themes":[""],"contradictions":[{"a":"","b":"","why":""}]}}
+
+WIKI (existing notes):
+${b.notes.length ? b.notes.map(n => `- ${n.title} [${(n.tags || []).join(', ')}]`).join('\n') : '(empty)'}
+
+INBOX:
+${b.inbox.slice(0, 40).map((x, i) => `[${i + 1}] (${x.at.slice(0, 10)}) ${x.text}`).join('\n\n')}`,
+        ask: (b, q) => `Using only what's in the WIKI below, answer: ${q}
+Cite the note titles you pulled from, in square brackets, like [Title]. If the answer isn't in there, say so instead of guessing.
+
+WIKI:
+${b.notes.map(brNoteText).join('\n\n')}`,
+        merge: b => `Scan the WIKI for notes covering the same topic and merge them into one, keeping every unique detail.
+Reply with JSON only, no other text: {"merges":[{"from":["exact title","exact title"],"title":"","bullets":["","",""],"tags":[""]}]} ({"merges":[]} if none).
+
+WIKI:
+${b.notes.map(brNoteText).join('\n\n')}`,
+        tags: b => `List every tag used in the WIKI and propose a smaller, consistent tag set, then re-tag.
+Reply with JSON only, no other text: {"tags":["the new set"],"map":{"old tag":"new tag"}}
+
+WIKI tags, with how many notes use each:
+${Object.entries(b.notes.flatMap(n => n.tags || []).reduce((m, x) => (m[x] = (m[x] || 0) + 1, m), {})).map(([k, v]) => `${k} (${v})`).join(', ')}`,
+    }
+    const brJSON = s => { const a = s.indexOf('{'), z = s.lastIndexOf('}'); if (a < 0 || z < a) throw new Error('no JSON in the answer'); return JSON.parse(s.slice(a, z + 1)) }
+    // apply Claude's answer to the brain; returns a line for the toast
+    function brApply(kind, text, ctx = {}) {
+        const b = BR.get(), now = new Date().toISOString()
+        if (kind === 'ask') { S.brAnswer = { q: ctx.q, text, cites: [...new Set((text.match(/\[([^\]\n]{2,120})\]/g) || []).map(x => x.slice(1, -1)))].filter(x => brFind(b, x)) }; if (BX() && BX().pulse) BX().pulse(S.brAnswer.cites.map(c => brFind(b, c).id)); return 'Answered' }
+        const j = brJSON(text)
+        if (kind === 'organize') {
+            const used = new Set(), made = []
+            for (const n of j.notes || []) {
+                const src = b.inbox[(n.item || 0) - 1]; if (src) used.add(src.id)
+                made.push({ id: brId(), at: now, kind: 'note', title: String(n.title || 'Untitled').slice(0, 120), bullets: (n.bullets || []).slice(0, 5).map(String), tags: [...new Set((n.tags || []).map(brKey).filter(Boolean))].slice(0, 6), related: (n.related || []).map(String), source: src ? src.text : '' })
+            }
+            if (!made.length) throw new Error('no notes in the answer')
+            b.notes.push(...made); b.inbox = b.inbox.filter(x => !used.has(x.id))
+            b.reports.unshift({ at: now, themes: (j.report && j.report.themes || []).map(String), contradictions: (j.report && j.report.contradictions || []).map(c => ({ a: String(c.a || ''), b: String(c.b || ''), why: String(c.why || '') })) }); b.reports = b.reports.slice(0, 10)
+            BR.set(b); S.brTab = 'wiki'; return `${made.length} note${made.length === 1 ? '' : 's'} made; ${used.size} moved out of the inbox`
+        }
+        if (kind === 'merge') {
+            let n = 0
+            for (const m of j.merges || []) {
+                const from = (m.from || []).map(x => brFind(b, x)).filter(Boolean); if (from.length < 2) continue
+                const ids = new Set(from.map(x => x.id))
+                b.notes = b.notes.filter(x => !ids.has(x.id))
+                b.notes.push({ id: brId(), at: now, kind: from.some(x => x.kind === 'answer') ? 'answer' : 'note', title: String(m.title || from[0].title), bullets: (m.bullets || []).map(String), tags: [...new Set([...(m.tags || []), ...from.flatMap(x => x.tags || [])].map(brKey))].slice(0, 6), related: [...new Set(from.flatMap(x => x.related || []))], source: from.map(x => x.source || x.body || '').filter(Boolean).join('\n\n---\n\n'), merged: from.map(x => x.title) })
+                n++
+            }
+            BR.set(b); return n ? `${n} merge${n === 1 ? '' : 's'} done` : 'No duplicates found'
+        }
+        if (kind === 'tags') {
+            const map = Object.fromEntries(Object.entries(j.map || {}).map(([k, v]) => [brKey(k), brKey(v)]))
+            b.notes.forEach(x => { x.tags = [...new Set((x.tags || []).map(tg => map[tg] || tg).filter(Boolean))] })
+            BR.set(b); return `Tags tidied: ${new Set(b.notes.flatMap(x => x.tags)).size} now`
+        }
+    }
+    async function brLLM(prompt) {
+        const r = await fetch(OR, { method: 'POST', headers: { 'Authorization': `Bearer ${chat.key()}`, 'Content-Type': 'application/json', 'HTTP-Referer': location.origin + location.pathname, 'X-Title': 'web-summit.sgit.ai command centre: my brain' },
+            body: JSON.stringify({ model: chat.model(), messages: [{ role: 'user', content: prompt }], provider: { data_collection: 'deny' } }) })
+        const j = await r.json().catch(() => ({}))
+        if (!r.ok) throw new Error((j.error && j.error.message) || `OpenRouter said ${r.status}`)
+        return (j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content) || ''
+    }
+    async function brRun(kind, ctx = {}) {
+        const b = BR.get(), prompt = BRAIN[kind](b, ctx.q)
+        const inPage = BX() && BX().hasLLM && BX().hasLLM()
+        if (inPage) { S.brBusy = kind; render(); try { const before = new Set(BR.get().notes.map(n => n.id)); toast(brApply(kind, await BX().llm(prompt), ctx)); const fresh = BR.get().notes.filter(n => !before.has(n.id)).map(n => n.id); if (brMap() && fresh.length && BX().pulse) { S.brTab = 'map'; S.brPulse = fresh } } catch (e) { toast('Not done: ' + e.message) } finally { S.brBusy = null; render() } return }
+        if (!chat.key()) { S.brHand = { kind, prompt, ctx }; render(); setTimeout(() => { const h = $('.br-hand'); if (h) h.scrollIntoView({ block: 'start' }) }); return }
+        S.brBusy = kind; render()
+        try { toast(brApply(kind, await brLLM(prompt), ctx)) } catch (e) { toast('Not done: ' + e.message) } finally { S.brBusy = null; render() }
+    }
+    const brTag = tg => `<button type="button" class="br-tag" data-br="tag" data-val="${esc(tg)}">#${esc(tg)}</button>`
+    function brNote(n, b) {
+        const rel = (n.related || []).map(x => brFind(b, x)).filter(r => r && r.id !== n.id)
+        return `<details class="br-note" id="n-${esc(n.id)}" data-q="${esc((n.title + ' ' + (n.tags || []).join(' ') + ' ' + (n.bullets || []).join(' ') + ' ' + (n.body || '')).toLowerCase())}"${S.brOpen === n.id ? ' open' : ''}><summary><b>${esc(n.title)}</b><span class="br-tags">${(n.tags || []).map(x => `<span>#${esc(x)}</span>`).join('')}</span></summary>
+${n.bullets && n.bullets.length ? `<ul>${n.bullets.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${n.body ? `<div class="br-body"><p>${mdLite(n.body)}</p></div>` : ''}
+${rel.length ? `<p class="br-rel"><b>Related:</b> ${rel.map(r => `<button type="button" class="br-link" data-br="open" data-val="${esc(r.id)}">${esc(r.title)}</button>`).join(' · ')}</p>` : ''}
+${n.merged ? `<p class="note">Merged from: ${n.merged.map(esc).join(' · ')}</p>` : ''}
+${n.source ? `<details class="br-src"><summary>The original</summary><p>${esc(n.source).replace(/\n/g, '<br>')}</p></details>` : ''}
+<p class="note">${esc(String(n.at || '').slice(0, 10))} · <button type="button" class="br-link" data-br="del-note" data-val="${esc(n.id)}">Delete</button></p></details>`
+    }
+    V.brain = () => {
+        const b = BR.get(), tab = S.brTab || (brMap() && b.notes.length ? 'map' : b.inbox.length ? 'inbox' : b.notes.length ? 'wiki' : 'inbox'), key = !!chat.key() || !!(BX() && BX().hasLLM && BX().hasLLM())
+        const notes = b.notes.filter(n => n.kind !== 'answer'), outs = b.notes.filter(n => n.kind === 'answer')
+        const busy = k => S.brBusy === k ? ' disabled aria-busy="true"' : ''
+        const how = BX() && BX().hasLLM && BX().hasLLM() ? `Claude works right here, in this private page.` : key ? `Claude works here, through your OpenRouter key (${esc(keyHint(chat.key()))}) on this device.` : `Claude works by hand-off: you copy, open Claude, and paste its answer back here. <a href="#ask">Add an OpenRouter key</a> and it works in one tap.`
+        const hand = S.brHand ? card("Claude's turn", `<ol class="br-steps"><li><button class="cc-btn primary" type="button" data-br="copyopen">${ico('copy', '')}Copy and open Claude</button> Paste it in Claude and send.</li>
+<li><label class="f" for="br-paste">Then paste Claude's whole answer here</label><textarea id="br-paste" rows="6" placeholder="Claude's answer…"></textarea></li></ol>
+<div class="cc-filters"><button class="cc-btn primary" type="button" data-br="apply">${ico('check', '')}Use this answer</button><button class="cc-btn ghost" type="button" data-br="cancel">Cancel</button></div>`, { cls: 'cc-span-12 br-hand', id: 'brhand', icon: 'claude' }) : ''
+        const report = b.reports[0]
+        const tabs = `<div class="cc-seg br-tabs" role="group" aria-label="Brain">${[...(brMap() ? [['map', 'Map', b.notes.length]] : []), ['inbox', 'Inbox', b.inbox.length], ['wiki', 'Wiki', notes.length], ['outputs', 'Outputs', outs.length]].map(([v, l, n]) => `<button type="button" data-br="tab" data-val="${v}" aria-pressed="${tab === v}">${l} <span class="num">${n}</span></button>`).join('')}</div>`
+        const tagsAll = [...new Set(notes.flatMap(n => n.tags || []))].sort()
+        if (tab === 'map') setTimeout(() => { const el = $('#br-map'); if (el && BX()) { BX().graph(el, BR.get(), { open: id => { const n = BR.get().notes.find(x => x.id === id); if (!n) return; S.brTab = n.kind === 'answer' ? 'outputs' : 'wiki'; S.brOpen = id; render(); setTimeout(() => { const d = $('#n-' + id); if (d) { d.open = true; d.scrollIntoView({ block: 'center' }) } }) } }); if (S.brPulse && BX().pulse) { BX().pulse(S.brPulse); S.brPulse = null } } })
+        const body = tab === 'map' ? `<section class="cc-card cc-span-12 br-mapcard" aria-label="The map of my brain"><div id="br-map" class="br-map"></div></section>` : tab === 'inbox' ? card('Inbox', `${b.inbox.length ? `<div class="cc-rows">${b.inbox.map(x => `<div class="cc-row"><span class="when">${esc(x.at.slice(5, 10).replace('-', '/'))}</span><span class="what">${esc(x.text.length > 220 ? x.text.slice(0, 220) + '…' : x.text)}</span><button type="button" class="cc-iconbtn" data-br="del-in" data-val="${esc(x.id)}" aria-label="Remove from the inbox">${ico('x', '')}</button></div>`).join('')}</div>
+<div class="cc-filters" style="margin-top:12px"><button class="cc-btn primary" type="button" data-br="organize"${busy('organize')}>${ico('claude', '')}${S.brBusy === 'organize' ? 'Organising…' : `Organise ${b.inbox.length} with Claude`}</button></div>
+<p class="note" style="margin-top:6px">Claude summarises each in 3 bullets, gives it a title and tags, links it to related notes, and reports the themes and any 2 notes that contradict each other.</p>` : empty('The inbox is empty. Capture something above: it does not need sorting.')}
+${report ? `<h3 class="cc-when">Last report<span>${esc(report.at.slice(0, 10))}</span></h3><p><b>Themes:</b> ${report.themes.map(esc).join(' · ') || '—'}</p>${report.contradictions.length ? `<p><b>Contradictions:</b></p><ul>${report.contradictions.map(c => `<li><b>${esc(c.a)}</b> vs <b>${esc(c.b)}</b>: ${esc(c.why)}</li>`).join('')}</ul>` : '<p class="note">No contradictions found.</p>'}` : ''}`, { cls: 'cc-span-12 br-inbox', id: 'brinbox' })
+            : tab === 'wiki' ? card('Wiki', notes.length ? `<div class="cc-filters"><label class="sr" for="br-q">Find a note</label><input id="br-q" type="search" placeholder="Find a note, a tag, a word…" autocomplete="off" style="flex:1;min-width:200px">
+<button class="cc-btn" type="button" data-br="merge"${busy('merge')}>${S.brBusy === 'merge' ? 'Merging…' : 'Merge duplicates'}</button><button class="cc-btn" type="button" data-br="tags"${busy('tags')}>${S.brBusy === 'tags' ? 'Tidying…' : 'Tidy tags'}</button></div>
+${tagsAll.length ? `<div class="br-tagbar">${tagsAll.map(brTag).join('')}</div>` : ''}
+<div class="br-notes">${notes.slice().reverse().map(n => brNote(n, b)).join('')}</div><p class="note br-none" hidden>No note matches.</p>` : empty('No notes yet. Capture things in the inbox, then organise them with Claude.'), { cls: 'cc-span-12 br-wiki', id: 'brwiki' })
+            : card('Outputs', outs.length ? `<div class="br-notes">${outs.slice().reverse().map(n => brNote(n, b)).join('')}</div>` : empty('Answers you save from "Ask my brain" land here, linked to the notes they came from.'), { cls: 'cc-span-12 br-out', id: 'brout' })
+        const a = S.brAnswer
+        return `<div class="cc-grid">${BX() && BX().intro ? BX().intro() : ''}${tab === 'map' ? body : ''}
+${card('My brain', `<p>A second brain, on this device: throw anything into the inbox, let Claude organise it into a linked wiki, then ask it questions. Answers come only from your notes, with the titles cited; save the good ones and it gets sharper the more you use it.</p>
+<p class="note">${how} Kept in this browser only: not in the repository, not on the site, not on your other devices (use Export to move it). Never put passwords or keys in it.</p>
+<label class="f" for="br-cap" style="margin-top:10px">Capture</label><textarea id="br-cap" rows="3" placeholder="Paste anything: a note, a link, an email, what someone said at the stand… No need to sort it."></textarea>
+<div class="cc-filters" style="margin-top:8px"><button class="cc-btn primary" type="button" data-br="add">${ico('plus', '')}Add to the inbox</button><span style="flex:1"></span>${tabs}</div>`, { cls: 'cc-span-12 br-main', id: 'brmain', icon: 'brain' })}
+${hand}
+${card('Ask my brain', `<form id="br-askf" class="cc-filters"><label class="sr" for="br-ask">Your question</label><input id="br-ask" type="text" placeholder="e.g. What did people at the stand ask about agent permissions?" autocomplete="off" style="flex:1;min-width:220px"${notes.length || outs.length ? '' : ' disabled'}><button class="cc-btn primary" type="submit"${notes.length || outs.length ? '' : ' disabled'}${busy('ask')}>${S.brBusy === 'ask' ? 'Asking…' : 'Ask'}</button></form>
+${a ? `<div class="br-answer"><p class="note">${esc(a.q)}</p><div><p>${mdLite(a.text)}</p></div>${a.cites.length ? `<p class="br-rel"><b>From:</b> ${a.cites.map(c => { const n = brFind(b, c); return `<button type="button" class="br-link" data-br="open" data-val="${esc(n.id)}">${esc(n.title)}</button>` }).join(' · ')}</p>` : ''}
+<div class="cc-filters"><label class="sr" for="br-atitle">Title</label><input id="br-atitle" type="text" value="${esc(a.q.slice(0, 100))}" style="flex:1;min-width:200px"><button class="cc-btn primary" type="button" data-br="save">${ico('check', '')}Save as a note</button><button class="cc-btn ghost" type="button" data-br="drop">Dismiss</button></div></div>` : `<p class="note">Answers only from what is in your wiki, citing the notes; if it is not there, it says so instead of guessing.</p>`}`, { cls: 'cc-span-12 br-askc', id: 'braskc' })}
+${tab === 'map' ? '' : body}
+${card('Keep it', `<div class="cc-filters"><button class="cc-btn" type="button" data-br="export">${ico('copy', '')}Export (a file)</button><label class="cc-btn" for="br-imp">Import a file</label><input id="br-imp" type="file" accept="application/json,.json" hidden><button class="cc-btn ghost" type="button" data-br="clear">Empty the brain</button></div>
+<p class="note">${b.inbox.length} in the inbox · ${notes.length} notes · ${outs.length} outputs. Export to keep a copy or to move it to another device; import merges, it does not replace.</p>`, { cls: 'cc-span-12 br-keep', id: 'brkeep' })}
+</div>`
+    }
+    document.addEventListener('click', e => {
+        const el = e.target.closest && e.target.closest('[data-br]'); if (!el || S.view !== 'brain') return
+        const act = el.dataset.br, val = el.dataset.val, b = BR.get()
+        if (act === 'add') { const ta = $('#br-cap'), v = (ta.value || '').trim(); if (!v) { ta.focus(); return } b.inbox.push({ id: brId(), at: new Date().toISOString(), text: v.slice(0, 20000) }); BR.set(b); S.brTab = 'inbox'; render(); toast('In the inbox'); setTimeout(() => { const c = $('#br-cap'); if (c) c.focus() }) }
+        else if (act === 'del-in') { b.inbox = b.inbox.filter(x => x.id !== val); BR.set(b); render() }
+        else if (act === 'del-note') { if (!confirm('Delete this note?')) return; b.notes = b.notes.filter(x => x.id !== val); BR.set(b); render() }
+        else if (act === 'tab') { S.brTab = val; render() }
+        else if (act === 'open') { const n = b.notes.find(x => x.id === val); if (!n) return; S.brTab = n.kind === 'answer' ? 'outputs' : 'wiki'; S.brOpen = val; render(); setTimeout(() => { const d = $('#n-' + val); if (d) { d.open = true; d.scrollIntoView({ block: 'center' }) } }) }
+        else if (act === 'tag') { const q = $('#br-q'); if (q) { q.value = '#' + val; q.dispatchEvent(new Event('input', { bubbles: true })) } }
+        else if (['organize', 'merge', 'tags'].includes(act)) brRun(act)
+        else if (act === 'copyopen') { if (!S.brHand) return; copy(S.brHand.prompt); window.open('https://claude.ai/new', '_blank', 'noopener') }
+        else if (act === 'apply') { const v = ($('#br-paste').value || '').trim(); if (!v) { $('#br-paste').focus(); return } try { const h = S.brHand; toast(brApply(h.kind, v, h.ctx)); S.brHand = null; render() } catch (err) { toast('That answer could not be used: ' + err.message) } }
+        else if (act === 'cancel') { S.brHand = null; render() }
+        else if (act === 'save') { const a = S.brAnswer; if (!a) return; b.notes.push({ id: brId(), at: new Date().toISOString(), kind: 'answer', title: (($('#br-atitle') || {}).value || a.q).trim().slice(0, 120), bullets: [], body: a.text, tags: ['answer'], related: a.cites, source: 'Question: ' + a.q }); BR.set(b); S.brAnswer = null; S.brTab = 'outputs'; render(); toast('Saved, linked to the notes it used') }
+        else if (act === 'drop') { S.brAnswer = null; render() }
+        else if (act === 'export') { const blob = new Blob([JSON.stringify({ kind: 'cc-brain', person: ME, at: new Date().toISOString(), ...b }, null, 1)], { type: 'application/json' }); const u = URL.createObjectURL(blob), l = document.createElement('a'); l.href = u; l.download = `brain-${ME}-${new Date().toISOString().slice(0, 10)}.json`; document.body.appendChild(l); l.click(); l.remove(); setTimeout(() => URL.revokeObjectURL(u), 1000) }
+        else if (act === 'clear') { if (!confirm('Empty the whole brain on this device? Export first if you want a copy.')) return; BR.set({ inbox: [], notes: [], reports: [] }); S.brAnswer = null; S.brHand = null; render() }
+    })
+    window.addEventListener('cc-brain', () => { if (S.view !== 'brain') return; const a = document.activeElement; if (a && /^(TEXTAREA|INPUT)$/.test(a.tagName) && a.value) return; render() })
+    document.addEventListener('submit', e => { if (e.target.id !== 'br-askf') return; e.preventDefault(); const q = ($('#br-ask').value || '').trim(); if (!q) return; S.brAnswer = null; brRun('ask', { q }) })
+    document.addEventListener('input', e => {
+        if (e.target.id !== 'br-q') return
+        const v = e.target.value.trim().toLowerCase().replace(/^#/, ''); let any = 0
+        $$('.br-note').forEach(d => { const ok = !v || d.dataset.q.includes(v); d.hidden = !ok; any += ok }); const none = $('.br-none'); if (none) none.hidden = !!any
+    })
+    document.addEventListener('change', async e => {
+        if (e.target.id !== 'br-imp' || !e.target.files[0]) return
+        try { const j = JSON.parse(await e.target.files[0].text()); if (j.kind !== 'cc-brain') throw new Error('not a brain file'); const b = BR.get(), seen = new Set([...b.inbox, ...b.notes].map(x => x.id)); let n = 0
+            for (const x of j.inbox || []) if (!seen.has(x.id)) { b.inbox.push(x); n++ }
+            for (const x of j.notes || []) if (!seen.has(x.id)) { b.notes.push(x); n++ }
+            b.reports = [...(j.reports || []), ...b.reports].slice(0, 10); BR.set(b); render(); toast(`${n} imported`) } catch (err) { toast('Could not import: ' + err.message) }
+    })
     V.reports = () => {
         const o = openNamed(), byDay = {}
         for (const i of o) { const k = i.recurring ? 'daily' : i.due_at ? fmtDay(i.due_at) : 'no date'; byDay[k] = (byDay[k] || 0) + 1 }
@@ -524,6 +797,7 @@ ${card('Privacy', `<p class="note">This page is public on GitHub Pages, like the
     const activityRows = n => D.activity.length ? `<div class="cc-rows">${D.activity.slice(0, n).map(a => `<div class="cc-row"><span class="when">${esc(fmtTime(a.at))}</span><span class="what">${esc(a.subject.replace(/^[a-z0-9-]+@web-summit\.[a-z0-9-]+: /, ''))}<small>${esc(a.agent || 'unsigned')}${a.mine ? ' · yours' : ''}</small></span><span class="side">${esc(ago(a.at))}</span></div>`).join('')}</div>` : empty('No commits in the last 48 hours.')
 
     // ---------- task drawer and new task ----------
+    window.__ccOpenIssue = id => openIssue(id)
     function openIssue(id) {
         const i = D.issues.find(x => x.id === id); if (!i) return
         const u = urgency(i), [sl, st] = statusOf(i)
@@ -533,8 +807,8 @@ ${card('Privacy', `<p class="note">This page is public on GitHub Pages, like the
 <div class="cc-filters">${streamChip(i.stream)}${chip(sl, st)}${chip(u.label, u.tone)}</div>
 <div class="cc-rows"><div class="cc-row wide"><span class="what">Due</span><span class="side">${esc(i.due || 'no date')}</span></div><div class="cc-row wide"><span class="what">For</span><span class="side">${esc(i.for.join(', '))}</span></div><div class="cc-row wide"><span class="what">Picked by</span><span class="side">${esc(i.picked_by || 'nobody yet')}</span></div>${i.agents ? `<div class="cc-row wide"><span class="what">Agents</span><span class="side" style="white-space:normal;text-align:right">${esc(i.agents)}</span></div>` : ''}</div>
 <h3 style="font:600 16px/24px var(--rm-font)">Done when</h3><div class="body">${md(i.body)}</div>
-<div class="cc-filters"><a class="cc-btn" href="${ghBlob(i.file)}" target="_blank" rel="noopener">${ico('github', '')}Open on GitHub</a><a class="cc-btn primary" href="${ghEdit(i.file)}" target="_blank" rel="noopener">${ico('ext', '')}Pick up / update / done</a><button class="cc-btn gold" type="button" data-prompt="task" data-for="${esc(i.id)}">${ico('claude', '')}Ask Claude</button></div>
-<p class="note">To pick it up, set <code>picked_by:</code> and <code>status: picked</code>; to finish, <code>status: done</code> and where the result is (board/README.md). GitHub's editor commits as you; your agents can do the same.</p></div>`)
+<div class="cc-filters"><a class="cc-btn" href="${ghBlob(i.file)}" target="_blank" rel="noopener">${ico('github', '')}Open on GitHub</a>${window.CC_QUEUE ? (window.CC_QUEUE.get(i.id) ? `<span class="dr-q">${ico('check', '')}Queued: ${esc(window.CC_QUEUE.get(i.id) === 'done' ? 'done' : 'in progress')}, it goes on the board at the next sync</span><button class="cc-btn" type="button" data-q-undo="${esc(i.id)}">Undo</button>` : `${i.status !== 'done' ? `<button class="cc-btn primary" type="button" data-q-status="done" data-q-id="${esc(i.id)}">${ico('check', '')}Mark done</button>` : ''}${!/picked|in progress|done/i.test(i.status) ? `<button class="cc-btn" type="button" data-q-status="picked" data-q-id="${esc(i.id)}">I'm on it</button>` : ''}`) : `<a class="cc-btn primary" href="${ghEdit(i.file)}" target="_blank" rel="noopener">${ico('ext', '')}Pick up / update / done</a>`}<button class="cc-btn gold" type="button" data-prompt="task" data-for="${esc(i.id)}">${ico('claude', '')}Ask Claude</button></div>
+<p class="note">${window.CC_QUEUE ? 'Mark done or I’m on it: the change is queued here and written to the board on GitHub at the next sync, signed by your agent.' : 'To pick it up, set <code>picked_by:</code> and <code>status: picked</code>; to finish, <code>status: done</code> (board/README.md). GitHub’s editor commits as you.'}</p></div>`)
     }
     function newTask() {
         const next = 'WS-' + (Math.max(...D.issues.map(i => +i.id.slice(3) || 0)) + 1)
@@ -613,16 +887,22 @@ ${groups.map(([g, l]) => `<section class="cc-linkgrp"><h3>${esc(g)}</h3><div cla
     const stars = () => store.get('stars', [])
     const toggleStar = id => { const s = stars(); store.set('stars', s.includes(id) ? s.filter(x => x !== id) : [...s, id]) }
     const hhmm = s => { const m = String(s || '').match(/(\d{1,2}):(\d{2})/); return m ? m[1].padStart(2, '0') + ':' + m[2] : '' }
-    const NEWS = '2026-11-05-event'
+    const NEWS = '2026-11-07-calm'
     const newsCard = () => store.get('news', '') === NEWS ? '' : `<section class="cc-card cc-news" aria-labelledby="h-news"><header><span class="hic" aria-hidden="true">${ico('bell', '')}</span><h2 id="h-news">What's new in your command centre</h2><button class="more" type="button" data-news-close>Got it ✕</button></header>
 <ul class="cc-newslist">
+<li><b>🧭 A calmer command centre</b>: the menu is grouped by colour (Work, Web Summit, Connect, More), the type is smaller and the pages are lighter. The bar of names is gone: <b>tap your name</b> (top left) to open anyone's command centre.</li>
+<li><b>🗂️ Kanban</b>: the board button in the top bar opens every task as cards; drag a card to change its status (or use ⋯), group by date, person or area. Tap it again to go back.</li>
+<li><b>⚖️ Decisions first</b>: what waits on you sits right under the greeting.</li>
+<li><b>🎙️ Ask Claude</b> is the round button at the bottom right; tap it to type or speak.</li>
+<li><b>⭐ Summit desk</b> (Web Summit, in the menu): the team's private page for the stand, with the visitor demo, the plan and the brain. Ask Silvio for access.</li>
+</ul><details class="cc-newsold"><summary>Earlier changes</summary><ul class="cc-newslist">
 <li><b>🧑 Photos</b>: the team's faces are on the buttons at the top and on your profile card. <b>If yours is up, confirm it through your own agent by Friday 6 November</b> (WS-163), or it comes down and your initials come back. No photo yet? Send a square one to Silvio, or add <code>people/&lt;you&gt;/photo.jpg</code>.</li>
 <li><b>🔔 For me</b>: the bell at the top counts what needs you (tasks due now or late, decisions only you can make, messages that ask you something). Tap it for the list.</li>
 <li><b>📩 Messages</b>: the ones that ask you something come first; the team's updates and your own agents' reports are folded.</li>
 <li><b>📅 Event mode</b>: from 9 to 12 November your home page starts with your day at Web Summit, right under a one-line greeting; on an iPad your day and the sessions sit side by side. Tap ☆ on a session to add it to your day. Try it now in Settings → Event mode.</li>
 <li><b>✅ Calmer lists</b>: done tasks fold away, the most urgent come first (Overdue, Today, This week, Later); red means late, orange means today.</li>
 <li><b>🔗 Links</b>: every site we use in one place (the chain button at the top). Add your own in <code>people/&lt;you&gt;/app/config.json</code>, public links only.</li>
-</ul><p class="note" style="margin-top:8px"><a href="../../../command-centre/index.html">Everything that changed, day by day →</a></p></section>`
+</ul></details><p class="note" style="margin-top:8px"><a href="../../../command-centre/index.html">Everything that changed, day by day →</a></p></section>`
     function eventCard() {
         const E = D.event || { sessions: [], side_events: [] }
         const day = S.evDay || (EV_DAYS.find(([d]) => d === localDay()) || EV_DAYS[1])[0]
@@ -674,6 +954,23 @@ ${list.length ? `<div class="cc-rows">${list.map(sessRow).join('')}</div>` : emp
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOverlay() })
 
     // ---------- clipboard, Claude, speech ----------
+    // the team, behind the profile: a menu on desktop, a sheet on the phone
+    function teamMenu(btn) {
+        const old = document.querySelector('.cc-teammenu'); if (old) { old.remove(); document.querySelectorAll('[aria-haspopup="menu"]').forEach(x => x.setAttribute('aria-expanded', 'false')); return }
+        const m = document.createElement('div'); m.className = 'cc-teammenu'; m.setAttribute('role', 'menu'); m.setAttribute('aria-label', "Open anyone's command centre")
+        const SITE = 'https://web-summit.sgit.ai/'
+        m.innerHTML = `<header><b>Open a command centre</b><span>${(D.team || []).length} people</span></header><div class="tm-people">${(D.team || []).map(p => `<a role="menuitem" href="${p.id === ME ? '#home' : SITE + 'people/' + esc(p.id) + '/app/index.html'}"${p.id === ME ? ' aria-current="page"' : ' target="_blank" rel="noopener"'}><span class="cc-avatar sm" aria-hidden="true">${face(p.name, p.photo)}</span><span><b>${esc(p.name.split(' ')[0])}</b><small>${p.id === ME ? 'You' : 'Command centre'}</small></span>${p.id === ME ? ico('check', 'tm-chk') : ''}</a>`).join('')}</div><footer><a href="${SITE}people/${esc(ME)}/index.html" target="_blank" rel="noopener">Classic dashboard</a><a href="${SITE}index.html" target="_blank" rel="noopener">The site</a><a href="#settings" data-tm-close>Settings</a></footer>`
+        document.body.appendChild(m); btn.setAttribute('aria-expanded', 'true')
+        const r = btn.getBoundingClientRect(); if (innerWidth >= 768) { m.style.left = Math.round(r.left) + 'px'; m.style.top = Math.round(r.bottom + 6) + 'px' }
+        setTimeout(() => { const a = m.querySelector('a'); if (a) a.focus() })
+    }
+    document.addEventListener('click', e => {
+        const b = e.target.closest && e.target.closest('#cc-me, .cc-whobtn'); if (b) { e.preventDefault(); teamMenu(b); return }
+        const m = document.querySelector('.cc-teammenu'); if (m && (!m.contains(e.target) || e.target.closest('[aria-current],[data-tm-close]'))) { m.remove(); document.querySelectorAll('[aria-haspopup="menu"]').forEach(x => x.setAttribute('aria-expanded', 'false')) }
+    })
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { const m = document.querySelector('.cc-teammenu'); if (m) { m.remove(); const b = document.querySelector('#cc-me'); if (b) b.focus() } } })
+    addEventListener('hashchange', e => { let o = ''; try { o = new URL(e.oldURL).hash.slice(1) } catch {} if (location.hash === '#kanban' && o && o !== 'kanban') S.prevView = o })
+    window.__ccReopenIssue = id => openIssue(id)
     function toast(t) { const el = document.createElement('div'); el.className = 'cc-toast'; el.setAttribute('role', 'status'); el.textContent = t; document.body.appendChild(el); setTimeout(() => el.remove(), 2600) }
     async function copy(t) { try { await navigator.clipboard.writeText(t); toast('Copied') } catch { const a = document.createElement('textarea'); a.value = t; document.body.appendChild(a); a.select(); try { document.execCommand('copy'); toast('Copied') } catch { toast('Copy failed: select and copy by hand') } a.remove() } }
     const fullPrompt = () => { const t = ($('#ask-text') || {}).value || ''; const ctx = $('#ask-ctx') ? $('#ask-ctx').checked : true; return `${t.trim()}\n\n${ctx ? context() + '\n\n' : ''}${RULES_()}`.trim() }
@@ -747,8 +1044,9 @@ ${list.length ? `<div class="cc-rows">${list.map(sessRow).join('')}</div>` : emp
         const meta = VIEWS.find(x => x[0] === S.view)
         $('#cc-title').innerHTML = `${esc(meta[1])}<small>${S.view === 'home' ? 'RiskMandate · Web Summit 2026' : FIRST + "'s command centre"}</small>`
         $('#cc-view').innerHTML = V[S.view]()
+        if (XV[S.view] && XV[S.view].after) setTimeout(() => XV[S.view].after($('#cc-view')))
         { const cur = $('.cc-switch .people [aria-current]'), bar = $('.cc-switch'); if (cur && bar && cur.offsetLeft + cur.offsetWidth > bar.clientWidth) bar.scrollLeft = cur.offsetLeft - 80 }
-        $('#cc-askbar').hidden = S.view === 'ask'; $('#cc-askfab').hidden = S.view === 'ask'
+        { const full = ['ask', 'brain', 'desk'].includes(S.view); $('#cc-askbar').hidden = full; $('#cc-askfab').hidden = full }
         document.title = `${meta[1]} · ${FIRST}'s command centre`
         bind(root)
         window.scrollTo(0, S.lastView === S.view ? y : 0)

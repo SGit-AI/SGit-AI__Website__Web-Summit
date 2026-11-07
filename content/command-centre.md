@@ -1,10 +1,38 @@
 ---
 title: The command centre: what changed
-summary: What changed in everyone's command centre on 4 and 5 November 2026, release by release: calmer lists, the Links folder, the For me bell, sorted messages, event mode for Web Summit, the team's photos, and event mode made clean on phones and iPads. Kept by dev@web-summit.silvio, the agent of Silvio Switha, who owns the command centres with dev@web-summit.dinis.
+summary: What changed in everyone's command centre on 4, 5 and 7 November 2026, release by release: calmer lists, the Links folder, the For me bell, sorted messages, event mode for Web Summit, the team's photos, and event mode made clean on phones and iPads. Kept by dev@web-summit.silvio, the agent of Silvio Switha, who owns the command centres with dev@web-summit.dinis.
 ---
 Every person on the team has a command centre at `/people/<id>/app/`: the page to open first, on a phone, an iPad or a computer. It is one engine for everyone (`assets/cc/`, built by `admin/build/commandcentre.mjs`), so every change below reached all nine command centres at once. Each change was tried first on a private test copy (Silvio's Lab), tested as a person would use it on an iPhone, an iPad and a computer, in the dark and the light theme, then released.
 
 Open yours: [Dinis](../people/dinis/app/index.html) · [Silvio](../people/silvio/app/index.html) · [Nimay](../people/nimay/app/index.html) · [Angelo](../people/angelo/app/index.html) · [Vicky Wang](../people/vicky/app/index.html) · [Daniela](../people/daniela/app/index.html) · [Indi](../people/indi/app/index.html) · [Jose](../people/jose/app/index.html) · [Sarah](../people/sarah/app/index.html). On a phone, add it to the home screen (Safari: Share, then Add to Home Screen).
+
+## 7 November {#nov-7}
+
+A calmer, more professional command centre for everyone, tried first on Silvio's private test page (the Lab), tested on iPhone, iPad and computer in both themes, then released. Nothing in Angelo's or Jose's own views was changed: their Kanban, Team and the machine, Summit days, Replay and Where stay exactly as they built them.
+
+### Calmer and clearer {#calm}
+
+- **The menu, grouped by colour:** Work (blue), Web Summit (gold), Connect (green), More (grey); shorter names (Overview, Decisions, Inbox); compact rows; the open page is marked in its group's colour.
+- **The bar of names is gone.** Tap your own name (top left; on a phone, your photo) to open the team, with their photos, and open anyone's command centre from there.
+- **One top bar:** the page title, the search, one group of tools (Kanban, For me, Links, light or dark) and the date on one line.
+- **Lighter pages:** sections are a title and a hairline instead of boxes inside boxes; task lists are rows with a thin colour bar; secondary buttons read as links; smaller, calmer type; the numbers in one strip, in plain words ("next 3 days", "you are on it").
+- **One button system:** gold for the main action, outlined for the second, plain for the rest; at least 44 px tall on phones and iPads.
+- **Ask Claude** is the round button at the bottom right on every screen; tap it to type or speak.
+
+### Kanban for everyone {#kanban}
+
+- **The board button in the top bar** opens every task as cards in columns (To do, In progress, Done); tap it again to go back where you were.
+- **Group by** status, due date, person or area; **filters**: Mine or Team, Overdue, Due this week, Nobody picked it, and a search.
+- **Drag a card** to another column, or use its ⋯ menu, to change its status: the change is shown as pending, with the link to save it in the issue's file on GitHub (the board files stay the truth). Tap a card to open the task.
+- In **Angelo's and Jose's** command centres the button opens their own Kanban.
+
+### Decisions first (WS-06) {#decisions}
+
+What waits on you sits right under the greeting, with how long it has been waiting, and a link to all decisions.
+
+### Summit desk {#summit-desk}
+
+A **Summit desk** link (Web Summit, in the menu) opens the team's private page for the stand: the visitor demo, the plan and the brain. It is a private claude.ai page, shared by Silvio; nothing about visitors is ever on this public site. Next, the Summit desk is rebuilt to read and write the team's private CRM ([/crm/](../crm/index.html)), so the stand and the outreach share one list.
 
 ## 5 November {#nov-5}
 
