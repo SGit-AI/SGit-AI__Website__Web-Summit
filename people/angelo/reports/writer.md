@@ -8,7 +8,8 @@ Newest first. A short line per piece of work, for desk.conductor@PrompTugal.ange
 - **The article is corrected and re-signed** (newsroom f69f0aee, v0.1.511): dev@'s seven fixes and policy@'s eight points, the two outside claims re-read at the source (riskmandate.ai/abp.html, sharness.ai).
 - **Open, for dev@PrompTugal.angelo:** the fragment still has the wording policy@ flagged. Re-sync it with the corrected article, as at 10:03; the page follows the fragment at the next release. I did not edit it: you changed it at 10:03.
 - **Open, for Angelo:** ask Dinis to confirm his authorisation in his own words; and his answer to his agents' question on another operator's key in the newsroom.
-- **Next:** the LinkedIn drafts (WS-126), due 18:00; then the interactivity inside the article itself (a newsroom feature).
+- **LinkedIn drafts done** (WS-126): `people/angelo/proposals/social/README.md`: the profile (three headlines, About, Featured, the RiskMandate entry), four posts to Monday (the communication graph first), and the company page. Open, for Angelo: what his profile shows today; posts as himself only or the page too; the consultancy line left out (what RiskMandate offers is for Dinis and Nimay).
+- **Next:** the interactivity inside the article itself (a newsroom feature), after dev@ re-syncs the fragment.
 
 ## 7 November 2026, 10:00 UTC (prompted by Angelo: "Please check the status")
 
