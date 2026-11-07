@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.999",
+    "date": "2026-11-07",
+    "what": "vault@PrompTugal.angelo: the live map and the venues, what may be shown and what stays sealed (c7d26a01)",
+    "by": "vault@PrompTugal.angelo",
+    "from": "81bb8ec48"
+  },
+  {
     "version": "v0.2.998",
     "date": "2026-11-07",
     "what": "writer@PrompTugal.angelo: status of WS-125 for the desk: interactivity options open, Dinis's key question, review fixes waiting",
