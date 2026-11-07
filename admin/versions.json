@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1028",
+    "date": "2026-11-07",
+    "what": "escape valves and hardening in ABP in action; inbox@vicky's ABP",
+    "by": "abp@web-summit.dinis",
+    "from": "64b067468"
+  },
+  {
     "version": "v0.2.1027",
     "date": "2026-11-07",
     "what": "decisions.md, a blank line before \"Updates for agents\"",
