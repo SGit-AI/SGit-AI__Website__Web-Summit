@@ -169,3 +169,7 @@ Five of the 16 wait on Dinis alone, and nine more include him. A one-line answer
 - **Not yet written.** By 19:20 UTC no decision from the call was recorded in `data/meetings/`. No notes were routed by a conductor, and there is no Meet transcript in Angelo's Drive. Every open item carries over to Saturday.
 - **Still open from today:** the garment files (Dinis's yes, or Monday's collection slips, WS-48), parking the late, unowned issues (the list is ready), the outreach claim (WS-26), WS-177, and the rest of the ranked list.
 - **What would close this:** notes from whoever took them, routed by any conductor (as on 5 and 6 November).
+
+### Recorded since the last debrief (7 November, 03:50 UTC)
+
+- **WS-48, the merch on Monday 9 November: who collects it, and how** (on the 5 November 18:00 agenda, for Dinis, Silvio and Vicky). Recorded as decided by Silvio, 01:11 UTC, in his words: "I already said I go on Monday with Dinis; we go to Web Summit together, so we go straight to pick it up, if everything is done." Follow-up: Silvio and Dinis collect on Monday on the way to Lisbon, if the order is ready. The garment files (Dinis's yes, from the 6 November 18:00) are still open.
