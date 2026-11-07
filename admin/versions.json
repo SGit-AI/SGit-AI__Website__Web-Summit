@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.989",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: STATE, runs and ledger for the 09:21 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "47c9115ac"
+  },
+  {
     "version": "v0.2.988",
     "date": "2026-11-07",
     "what": "/print/ says what happened: the garments ordered, sent from the page that links the proposed set",
