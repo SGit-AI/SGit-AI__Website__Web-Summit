@@ -18,7 +18,7 @@ const CSS = `<style>
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .evp{--ink:#e6ecef;--soft:#98a5ad;--line:#2c373f;--card:#1a2228;--ac:#4cc3b8;--red:#ec8b72}}
 :root[data-theme=dark] .evp{--ink:#e6ecef;--soft:#98a5ad;--line:#2c373f;--card:#1a2228;--ac:#4cc3b8;--red:#ec8b72}
 .evp [lang=en]{display:none}.evp.en [lang=en]{display:inline}.evp.en [lang=pt]{display:none}
-.evp .langs{display:flex;gap:6px;margin:0 0 12px}.evp .langs button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:3px 12px;font:inherit;cursor:pointer}.evp .langs button[aria-pressed=true]{background:var(--ac);border-color:var(--ac);color:#fff}
+.langs{display:flex;gap:6px;margin:0 0 12px}.langs.inbar{margin:0 0 0 10px;display:inline-flex;vertical-align:middle}.personbar .langs.inbar{margin-left:auto}.langs button{border:1px solid var(--line,#ccd);background:var(--card,transparent);color:inherit;border-radius:99px;padding:3px 12px;font:inherit;cursor:pointer}.langs button[aria-pressed=true]{background:var(--ac,#0b6e69);border-color:var(--ac,#0b6e69);color:#fff}
 .evp .lead{color:var(--soft);max-width:62ch;font-size:1.05rem}
 .evp .stats{display:flex;flex-wrap:wrap;gap:28px;margin:12px 0 24px}.evp .stats b{display:block;font-size:1.6rem}.evp .stats span{color:var(--soft);font-size:.9rem}
 .evp h2{margin:2rem 0 .8rem}
@@ -64,9 +64,11 @@ export function eventos(ROOT) {
 ${panels}
 <p class="note">${L('Fontes: a página de inscrição de cada evento (Luma, Eventbrite, Meetup e outras) e os eventos da semana no PromptUGAL. Lista de partida: "Web Summit Lisbon 2026 Side Events", do iProxy, lida a 6 de novembro. Os temas são marcados automaticamente e podem falhar. O programa oficial (palcos, Night Summit) está no PromptUGAL. Preços, horas e vagas mudam: confirma na inscrição.', 'Sources: each event\'s registration page (Luma, Eventbrite, Meetup and others) and PromptUGAL\'s events of the week. Starting list: "Web Summit Lisbon 2026 Side Events" by iProxy, read on 6 November. Themes are tagged automatically and may be wrong. The official programme (stages, Night Summit) is on PromptUGAL. Prices, times and places change: check the registration page.')} <a href="https://promptugal.news/events/">PromptUGAL</a> · <a href="https://iproxy.online/blog/web-summit-2026-side-events/">iProxy</a></p>
 <script>(function(){var r=document.getElementById('evp'),q=document.getElementById('evp-q'),w=document.getElementById('evp-w'),day='${start}';
-function lang(l){r.classList.toggle('en',l==='en');r.querySelectorAll('.langs button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.l===l))});try{localStorage.setItem('evp-lang',l)}catch(e){}}
+function lang(l){r.classList.toggle('en',l==='en');document.querySelectorAll('.langs button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.l===l))});try{localStorage.setItem('evp-lang',l)}catch(e){}}
 try{var s=localStorage.getItem('evp-lang');if(s)lang(s)}catch(e){}
 r.querySelectorAll('.langs button').forEach(function(b){b.onclick=function(){lang(b.dataset.l)}});
+// the switch sits in the site's bar, beside the person's links (Silvio, 7 November): find the bar with Dashboard / Command centre, else the person bar
+var sw=r.querySelector('.langs');function place(){var t=[].find.call(document.querySelectorAll('a,button'),function(a){return /Command centre/.test(a.textContent)&&!r.contains(a)});var host=t?t.parentElement:document.querySelector('.personbar');if(host&&sw.parentElement!==host){host.appendChild(sw);sw.classList.add('inbar')}}place();setTimeout(place,600);setTimeout(place,2000);
 function show(){var s=q.value.trim().toLowerCase(),t=w.value;r.querySelectorAll('.panel').forEach(function(p){var on=p.dataset.d===day;p.hidden=!on;if(!on)return;p.querySelectorAll('.ev').forEach(function(e){e.hidden=!((!t||e.dataset.w.split('|').indexOf(t)>=0)&&(!s||e.dataset.s.indexOf(s)>=0))});p.querySelectorAll('h3').forEach(function(h){h.hidden=![].some.call(h.nextElementSibling.children,function(e){return !e.hidden})})})}
 r.querySelectorAll('.tab').forEach(function(b){b.onclick=function(){day=b.dataset.d;r.querySelectorAll('.tab').forEach(function(x){x.setAttribute('aria-selected',String(x===b))});show()}});q.oninput=show;w.onchange=show})();</script>
 </div>`
