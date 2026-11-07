@@ -6,7 +6,7 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 
 | Agent | Job | Prompt |
 |---|---|---|
-| conductor@web-summit.vicky | runs Vicky's agents, keeps her records, the 09:30 brief | [conductor.md](conductor.md) |
+| conductor@web-summit.vicky | runs Vicky's agents, keeps her records, the 09:45 brief | [conductor.md](conductor.md) |
 | dashboard@web-summit.vicky | Vicky's dashboard and the stories page | [dashboard.md](dashboard.md) (start prompt in the [kit](../kit/README.md#dashboardweb-summitvicky)) |
 | vault@web-summit.vicky | Vicky's vaults (on demand) | [vault.md](vault.md) |
 | dev@web-summit.vicky | replaced by dev@PrompTugal.vicky (6 Nov) | [kit: dev](../kit/README.md#devweb-summitvicky) |
