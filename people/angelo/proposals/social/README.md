@@ -110,10 +110,9 @@ Notes:
 >
 > Every step up (projects, connected mail, scheduled runs, code, a team of agents) saves time and adds reach: more the agent can do, whether you meant it to or not.
 >
-> I wrote a guide to climbing those steps safely: what each needs, what it risks, how much control to put around it. Read it as a CEO, a CISO, a DPO, a developer or a non-technical user, with two short questionnaires and a dial for five kinds of deployment.
+> I wrote a guide to climbing those steps safely: what each needs, what it risks, how much control to put around it. It's interactive: read it as a CEO, a CISO, a DPO, a developer or a non-technical user, answer two short questionnaires, and turn a dial over five kinds of deployment.
 >
-> The text: https://promptugal.news/articles/agent-setup-guide.html
-> Interactive: https://web-summit.sgit.ai/people/angelo/guide/index.html
+> https://promptugal.news/articles/agent-setup-guide.html
 
 ### Mon 9 (the summit opens). Reshare: the team behind it
 
