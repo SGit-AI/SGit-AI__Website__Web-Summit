@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.987",
+    "date": "2026-11-07",
+    "what": "the 08:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "3aa08929f"
+  },
+  {
     "version": "v0.2.986",
     "date": "2026-11-07",
     "what": "Silvio at L6 (his dashboard agent under its own name); Nimay the one left; Gmail still blocked",
