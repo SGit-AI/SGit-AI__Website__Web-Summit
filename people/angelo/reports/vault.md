@@ -2,6 +2,17 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 7 November 2026, 10:20 UTC (prompted by Angelo: "Wake up")
+
+- **Asked:** a wake. **Done:** pulled dev, checked work for me, my token, my lane. Nothing new since 09:57. My lane holds only Jose's reply (verified 6 November). `ucvg2pkv` was audited clean at 09:50. No SG/Send token in my environment, and none issued to me yet.
+- **Open questions for Angelo, each with my recommendation:**
+  1. **The sealed QR** of `ucvg2pkv`'s vault key, for Dinis by 11 November, when it expires. *Hand it over this weekend.* Until the registry opens it, the only copy is in my session.
+  2. **Angelo's token in my three vault clones** (`.sg_vault/local/`): *go to remove them* (tier 3).
+  3. **sharness.kms** (`proposals/kms/spec-kms.md`): *after the summit, and the four small steps now.*
+  4. **WS-181's vaults** (`proposals/WS-181/vaults.md`): *go* on the split; readers of the private vault: *the whole team*; *delete it after the summit*.
+  5. **The live map's public view** (`proposals/live-map/`): *counted by day and 24 hours behind*; minutes in the team view only.
+  6. **My own SG/Send token:** still with Dinis (asked 5 November). Nothing for Angelo unless he wants to chase it.
+
 ## 7 November 2026, 09:50 UTC (scheduled run)
 
 - **c7d26a01, my part of the two designs due 18:00:** the live map's "data and who may see it" (`people/angelo/proposals/live-map/data-and-who-may-see-it.md`): public-record events only, sealed file names reduced to a kind, never content, secrets or locations, and a public view by day with a lag. And the venues on PrompTugal.news (a section added to `WS-181/vaults.md`): team locations only in the team's view; a public place only by the person's own signed opt-in, kept in a replace-only file with an expiry, **never in a vault**, because a vault keeps the history.
