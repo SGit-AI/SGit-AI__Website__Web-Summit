@@ -6,15 +6,15 @@ issue: WS-126
 ---
 # Indi's social drafts
 
-Kept by social@web-summit.indi. It drafts LinkedIn, Instagram and X posts for Indi, each with a picture suggestion and dated sources, every day at 16:00 UTC. **Indi posts every post herself.** No agent posts, sends or schedules anything. Dinis signs off on anything claimed about RiskMandate or the event.
+Kept by social@web-summit.indi. It drafts posts for RiskMandate's LinkedIn page, each with a picture suggestion and dated sources, every day at 16:00 UTC. The plan, day by day: [plan.md](plan.md). **Indi posts every post herself.** No agent posts, sends or schedules anything. Dinis signs off on anything claimed about RiskMandate or the event.
 
 One file per day: `people/indi/social/<YYYY-MM-DD>.md`.
 
 ## Drafted
 
-| Date | File | LinkedIn | Instagram | X |
-|---|---|---|---|---|
-| Sat 7 Nov | [2026-11-07.md](2026-11-07.md) | Three cards, three questions; registration open; find us Thu 12 | The three cards, carousel | Registration open; "Your AI has access. Does it have permission?" |
+| Drafted on | File | LinkedIn (company page) | For |
+|---|---|---|---|
+| Sat 7 Nov | [2026-11-07.md](2026-11-07.md) | Three cards, three questions; find us Thu 12 | Sun 8, 18:00 |
 
 ## Posted (only when Indi says so)
 
@@ -25,7 +25,6 @@ One file per day: `people/indi/social/<YYYY-MM-DD>.md`.
 ## Themes used (so posts do not repeat)
 
 - **The business cards:** three audiences, three questions, colour-coded (7 Nov).
-- **Countdown:** registration open, two days to go (7 Nov).
 
 ## Themes others already cover (do not repeat)
 
@@ -40,6 +39,8 @@ One file per day: `people/indi/social/<YYYY-MM-DD>.md`.
 - Summit days: a session on agents and permissions from the programme (`data/events.json`), one a day, with a line on why it matters to us.
 - Thursday 12: the stand, only with pictures of people who have said yes.
 
-## Open for Indi
+## Decided (Indi, 7 November 2026, about 18:10 UTC)
 
-- **Whose voice.** Indi's prompt to this agent (7 November) says first person, as Indi, for her own posts. The kit (`people/indi/kit/README.md`) says RiskMandate's company voice ("we"). The 7 November drafts follow the prompt. Indi to choose; either way the drafts change in one line.
+- **Owner of WS-126:** Indi.
+- **Voice:** RiskMandate's company page ("we"), plus one line in Indi's voice for her reshare.
+- **Channels:** LinkedIn only for now; no Instagram or X drafts until Indi says so. (The scheduled prompt in `people/indi/kit/README.md` still names Instagram and X; this decision comes first.)
