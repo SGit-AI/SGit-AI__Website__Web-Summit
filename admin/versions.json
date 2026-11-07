@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.934",
+    "date": "2026-11-07",
+    "what": "the 02:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "a62e931b6"
+  },
+  {
     "version": "v0.2.933",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: PrompTugal snapshot: 52 agents, 120 pairs in 7 days, from c4fdc485",
