@@ -74,7 +74,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - RiskMandate at the summit, Angelo's own view (7 Nov, to be confirmed in the coming days): "write cool articles about cool companies, get engagement on the Promptugal News digital newspaper, offer help and ideas, with the door open to paid consultancy for those who are interested." The paid-services question stays open for Dinis and Nimay; nothing about it in public until then.
 - Social media: LinkedIn, his personal profile to update, then posts; he follows the RiskMandate company page "but we should probably do more". Brief to writer@ (7 Nov). He posts himself (tier 3).
-- Pace (7 Nov): "we need to tighten the ranks... accelerating schedules and adding new agents": the desk's proposal is with Angelo.
+- Pace (7 Nov): Angelo's yes to the desk's proposal (faster schedules; dev.map@, dev.venues@, research@) plus a social-media agent, social@PrompTugal.angelo, "to leave the writer to its articles".
 
 ## Waiting on others
 
@@ -108,5 +108,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 last_run: 2026-11-07T09:21:00Z (the runner| One live map of our activity, named "Team and the machine" (Replay merged into it, its look and feel kept exactly as in Angelo's command centre, 3D to consider), with external connections, key handovers, sealed messages and append lanes; a design for publishing it | dev@ (with vault@ for what may be shown) | 7 Nov 09:00 | design 7 Nov 18:00 | people/angelo/proposals/live-map/ |
 | Venues on PrompTugal.news: the public map there, our locations private (team only), public only for a person who opts in; built on WS-181 and the newsroom's My day (browser plus vault) | dev@ with vault@ | 7 Nov 09:00 | design 7 Nov 18:00 | people/angelo/proposals/WS-181/ |
-| LinkedIn: profile update (headline, About, featured, experience) and posts to Monday; the first post: promptugal.news/articles/angelos-communication-graph.html | writer@ | 7 Nov 09:45 | drafts by 7 Nov 18:00 | people/angelo/proposals/social/ |
+| LinkedIn: profile update (headline, About, featured, experience) and posts to Monday; the first post: promptugal.news/articles/angelos-communication-graph.html | social@ once it exists (moved from writer@, 7 Nov) | 7 Nov 09:45 | drafts by 7 Nov 18:00 | people/angelo/proposals/social/ |
+| Faster schedules: dev hourly, crm every 3 h, vault every 4 h, policy twice a day | dev@, crm@, vault@, policy@ | 7 Nov 10:00 | each at its next run | each confirms in a commit |
+| Four new agents, prompts and agents.json entries as one spec for Angelo: dev.map@, dev.venues@, research@, social@PrompTugal.angelo | dev@ | 7 Nov 10:00 | 7 Nov 13:00 | people/angelo/proposals/new-agents/spec-new-agents.md |
 )
