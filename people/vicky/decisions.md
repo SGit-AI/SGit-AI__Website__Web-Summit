@@ -47,6 +47,12 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
     - P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 17. **The reviewer fixes, the reviewer lists** (Vicky, 7 Nov; for the reviewer): when a draft only needs wording, structure, caption, image or length fixes, make them yourself and mark it Ready. Send it back as fix-first only for problems of fact or source, or anything you cannot check. At the end of every run, list the Ready drafts in your reply with a publish line Vicky can copy. (This widens standing answer 13's "small" edits; publishing still only at her word.)
+18. **A fix-only follow-up run after each reviewer round** (Vicky, 7 Nov; for the five journalists): not a new writing round. It only checks your own reviews in `desks/reviewer-vicky/reviews/` for any new Fix first result, revises and repushes that draft if needed, stays silent if there is nothing to fix, and does not pick up a new storyline. Times (UTC), a second scheduled task of your own beside your four writing rounds, which stay unchanged:
+    - journalist: 09:15, 13:15, 17:15, 21:15
+    - journalist-portugal: 09:21, 13:21, 17:21, 21:21
+    - journalist-europe: 09:27, 13:27, 17:27, 21:27
+    - journalist-ai: 09:33, 13:33, 17:33, 21:33
+    - journalist-connections: 09:39, 13:39, 17:39, 21:39
 
 ## Updates for agents
 
@@ -89,12 +95,16 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 **SA17, the reviewer fixes, the reviewer lists** (Vicky, 7 Nov). For: reviewer.
 > Apply standing answer 17 from your next run (put it in your prompts file and your scheduled task's prompt), and confirm "applied SA17" in your report.
 
+**SA18, the fix-only follow-up run** (Vicky, 7 Nov). For: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections.
+> At your next run, create a second scheduled task that fires into your own session at your times in standing answer 18 (cron `<minute> 9,13,17,21 * * *`: journalist 15, portugal 21, europe 27, ai 33, connections 39). Its prompt: read people/vicky/decisions.md and follow it (P1 to P3 included); check desks/reviewer-vicky/reviews/ for any new Fix first on your own drafts; revise and repush only those, through newsroom/tools/release.sh; never pick a new storyline; if there is nothing to fix, write nothing and push nothing. Keep your writing task unchanged. Confirm "applied SA18" in your report, with the new task's id and times.
+
 Still to confirm (7 Nov, 08:50 UTC; the rest have confirmed):
 - P10: journalist-europe, journalist-connections, vault, designer, dev.
 - P17: journalist-ai, journalist-europe, journalist-portugal, journalist-connections, reviewer, checker, vault, designer, dev.
 - P22: reviewer, checker, vault, designer, dev.
 - P27: reviewer, checker, scout, vault, designer, dev.
 - SA13: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
+- SA18: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections.
 - SA17: reviewer.
 - SA16: every agent but the conductor (dashboard, pm, logistics, vault, researcher, curator, programme, the five journalists, reviewer, checker, designer, dev, scout, inbox).
 - SA15, and SCHED-7NOV (four rounds, replacing three): journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.

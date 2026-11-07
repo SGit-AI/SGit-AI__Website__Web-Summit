@@ -163,6 +163,51 @@
    "state": "enabled",
    "since": "7 Nov 2026",
    "at_whose_word": "Vicky (7 Nov): a lightweight check after the reviewer's 17:00 run; silent unless actionable"
+  },
+  {
+   "agent": "journalist@PrompTugal.vicky",
+   "task": "fix-only follow-up",
+   "cron_utc": "15 9,13,17,21 * * *",
+   "task_id": null,
+   "state": "enabled (at Vicky's word; the agent creates it)",
+   "since": "7 Nov 2026",
+   "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; the agent creates its own task at its next run"
+  },
+  {
+   "agent": "journalist-portugal@PrompTugal.vicky",
+   "task": "fix-only follow-up",
+   "cron_utc": "21 9,13,17,21 * * *",
+   "task_id": null,
+   "state": "enabled (at Vicky's word; the agent creates it)",
+   "since": "7 Nov 2026",
+   "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; the agent creates its own task at its next run"
+  },
+  {
+   "agent": "journalist-europe@PrompTugal.vicky",
+   "task": "fix-only follow-up",
+   "cron_utc": "27 9,13,17,21 * * *",
+   "task_id": null,
+   "state": "enabled (at Vicky's word; the agent creates it)",
+   "since": "7 Nov 2026",
+   "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; the agent creates its own task at its next run"
+  },
+  {
+   "agent": "journalist-ai@PrompTugal.vicky",
+   "task": "fix-only follow-up",
+   "cron_utc": "33 9,13,17,21 * * *",
+   "task_id": null,
+   "state": "enabled (at Vicky's word; the agent creates it)",
+   "since": "7 Nov 2026",
+   "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; the agent creates its own task at its next run"
+  },
+  {
+   "agent": "journalist-connections@PrompTugal.vicky",
+   "task": "fix-only follow-up",
+   "cron_utc": "39 9,13,17,21 * * *",
+   "task_id": null,
+   "state": "enabled (at Vicky's word; the agent creates it)",
+   "since": "7 Nov 2026",
+   "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; the agent creates its own task at its next run"
   }
  ],
  "no_task": [
