@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1066",
+    "date": "2026-11-07",
+    "what": "the review's notes on the pre-read and the pulse view, fixed before the push",
+    "by": "dev@web-summit.jose",
+    "from": "7fbb4a8e8"
+  },
+  {
     "version": "v0.2.1065",
     "date": "2026-11-07",
     "what": "15:41 wake: quiet run, no notes (no new commits by Silvio's or Nimay's agents)",
