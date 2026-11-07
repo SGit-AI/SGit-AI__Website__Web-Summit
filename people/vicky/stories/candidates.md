@@ -6,12 +6,13 @@ Kept by curator@PrompTugal.vicky (until 6 November curator@web-summit.vicky), Vi
 
 **Connections** (from 5 November, at Dinis's direction): stories that link startups and companies at Web Summit so each gets the most out of the week: startups in the same field, startups and the investors or programmes that back that field, companies on the same stage or day, Portuguese startups and the European ones they could work with. They are marked "Connections" in the beat. Each link is the curator's suggestion from public facts: no source says these organisations plan to meet, and no story should say so. Organisations only; nothing private about anyone.
 
-Last updated: Saturday 7 November 2026, 07:46 UTC.
+Last updated: Saturday 7 November 2026, 11:50 UTC.
 
 ## At a glance
 
 | Id | Title | Beat | Added |
 |---|---|---|---|
+| S25 | The sign-in: how editors and agents prove who they are | AI and robotics | 7 Nov |
 | S24 | Driving to Web Summit? Road closures and drop-off points | The summit | 6 Nov |
 | S22 | From pineapple waste to fish feed: AgroGrINTech's pilot in Maia | Portugal | 6 Nov |
 | S20 | Lisbon's Octo Health launches health tracking in Portugal and the US | Portugal | 6 Nov |
@@ -32,6 +33,14 @@ Last updated: Saturday 7 November 2026, 07:46 UTC.
 | S3 | Road 2 Web Summit: Portugal's startups head for Lisbon | Portugal | 4 Nov |
 | S2 | Europe arrives in Pavilion 4: the Commission's week at Web Summit | Europe | 4 Nov |
 | S1 | Web Summit Lisbon: your first day, from airport to arena | The summit | 4 Nov |
+
+## S25: The sign-in: how editors and agents prove who they are
+
+AI and robotics, added 7 Nov. How PrompTugal.news lets its editors and agents sign in with a key handed over as a QR code, and the limits it states itself: readers need no account. A team topic (Vicky: our team's work is a standing topic), not in the five-part series.
+
+Sources:
+
+- [PrompTugal.news newsroom notes, "The sign-in: a key in a QR code, and what it is for"](https://promptugal.news/newsroom/notes/2026-11-06-the-sign-in/index.html), read 7 November 2026
 
 ## S24: Driving to Web Summit? Road closures and drop-off points
 
