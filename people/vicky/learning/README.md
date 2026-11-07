@@ -14,6 +14,7 @@ The scout writes the next topic from the list below every day at 22:00 UTC (its 
 | 04 | [Handing a role to a new session](04-handing-a-role-to-a-new-session.md) | 6 Nov 2026 |
 | 05 | [The inbox agent](05-the-inbox-agent.md): how inbox@web-summit.dinis is set up, and what Vicky would copy | 6 Nov 2026 |
 | 06 | [Status, run reports and the dashboard](06-status-run-reports-and-the-dashboard.md) | 6 Nov 2026 |
+| 07 | [The operator's words, kept](07-the-operators-words-kept.md) | 7 Nov 2026 |
 
 Questions put to Dinis's mentor agent (mentor@web-summit.dinis), and which are answered: [questions-for-the-mentor.md](questions-for-the-mentor.md).
 
@@ -27,7 +28,7 @@ Questions put to Dinis's mentor agent (mentor@web-summit.dinis), and which are a
 | P4 | One schedule file `people/vicky/schedule.json`, checked daily | conductor | about 5 to 10k tokens a day | 01 | accepted (6 Nov) |
 | P5 | Stagger the five journalists by 6 minutes | five journalists (Vicky changes the tasks) | none | 01 | accepted (6 Nov) |
 | P6 | Measure each session's usage once a day; never block | conductor | about 20 to 40k tokens a day | 01 | accepted (6 Nov) |
-| P7 | Publish only when the permission is in the newsroom's own record | reviewer | about nothing | 01 | on hold (until Dinis records the reviewer's permission) |
+| P7 | Publish only when the permission is in the newsroom's own record | reviewer | about nothing | 01 | on hold; its condition is met: Dinis said "that is ok what Vicky did" (newsroom board/guidance/2026-11-06-feedback-reading-and-vicky.md, 6 Nov 12:00), so Vicky may mark it done or drop it |
 | P8 | Shorter scheduled prompts that point at `conductor.md` | conductor | saves about 1.5k tokens a wake | 01 | accepted (6 Nov) |
 | P9 | Check, once, whether the newsroom's hooks run in your session | newsroom desks, curator, programme | about nothing | 02 | accepted (6 Nov: to the desks first) |
 | P10 | After a compression in a chat, re-read your files before acting | every agent | 2 to 5k tokens, only after a compaction | 02 | accepted (6 Nov) |
@@ -45,12 +46,15 @@ Questions put to Dinis's mentor agent (mentor@web-summit.dinis), and which are a
 | P22 | Every agent but the inbox agent leaves Gmail alone | every agent; conductor checks | about nothing | 05 | accepted (6 Nov) |
 | P23 | Start inbox@web-summit.vicky, copying Silvio's inbox policy | Vicky, then conductor | a new Opus session; 50 to 150k tokens a mail run | 05 | done (Vicky, 7 Nov) |
 | P24 | The conductor seals the private CRM's key to the inbox agent, at Vicky's word | conductor | 10 to 20k tokens once | 05 | done (7 Nov, sealed) |
-| P25 | An "agents" table on Vicky's dashboard from the status blocks, with stale rows and open asks | dashboard | 15 to 30k tokens a dashboard run | 06 | open |
-| P26 | A small grid of today's scheduled runs at the top of the 08:30 brief | conductor | a few thousand tokens a brief | 06 | open |
-| P27 | Never copy a received prompt into a public file | every agent | none | 06 | open |
+| P25 | An "agents" table on Vicky's dashboard from the status blocks, with stale rows and open asks | dashboard | 15 to 30k tokens a dashboard run | 06 | rejected (6 Nov) |
+| P26 | A small grid of today's scheduled runs at the top of the 08:30 brief | conductor | a few thousand tokens a brief | 06 | accepted (6 Nov) |
+| P27 | Never copy a received prompt into a public file | every agent | none | 06 | accepted (6 Nov) |
+| P28 | "New from Vicky" (newest first) at the top of decisions.md | conductor; every agent reads it | a few hundred tokens per new rule | 07 | open |
+| P29 | Pass on a rule that other agents need too, in your report For: conductor | every agent | a line now and then | 07 | open |
+| P30 | Keep Vicky's standing words as she gave them, in people/vicky/words/ | Vicky, then conductor | small, only on new rules | 07 | open |
 
-## Next topics, most worth learning first
+## Next topics
 
-1. **The operator's words, kept.** `board/guidance/` keeps Dinis's spoken feedback close to word for word, one file per topic, and agents read it at every wake. Compared with Vicky's rules given in chat and kept in each prompts file. (`board/guidance/README.md`)
+None left: every topic on the list has a note. The 22:00 run says so in one line and stops until Vicky adds a topic.
 
-Written: behaviour policies (02), cheap workers (03), hand-overs (04), at Vicky's request the inbox agent (05), and status, run reports and the dashboard (06).
+Written: behaviour policies (02), cheap workers (03), hand-overs (04), at Vicky's request the inbox agent (05), status, run reports and the dashboard (06), and the operator's words, kept (07).
