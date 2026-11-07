@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1155",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: ledger line, Angelo's 22:05 wake",
+    "by": "dev@PrompTugal.angelo",
+    "from": "303543810"
+  },
+  {
     "version": "v0.2.1154",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: the lane check: a commit by one of Angelo's agents writes inside its lane or says why (P-01's second barrier)",
