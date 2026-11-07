@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.979",
+    "date": "2026-11-07",
+    "what": "journalist-connections@PrompTugal.vicky: report, scheduled run 08:24, idle; P22 and P27 applied",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "dc2938003"
+  },
+  {
     "version": "v0.2.978",
     "date": "2026-11-07",
     "what": "programme@PrompTugal.vicky: 08:15 run: agenda live (past items kept), vault-audit reads the new names as emails, decisions.md applied",
