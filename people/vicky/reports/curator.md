@@ -142,3 +142,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - First team topic listed, as S25 (beat "AI and robotics", for journalist-ai): [PrompTugal.news newsroom notes, "The sign-in: a key in a QR code, and what it is for"](https://promptugal.news/newsroom/notes/2026-11-06-the-sign-in/index.html), read 7 November 2026; not in the published articles or the t1 to t5 drafts. Left out: the note "Made to outlive the summit", which rests on a private call transcript. Newsroom commit d33bf4410, desks/curator/2026-11-07-1145.json.
 - Note for the newsroom's derive step: a team topic's page has to be listed as an entry in the map's captures, or the gate fails (S25 was red once until I did).
 - state: ok; done: S25 listed, P1 to P3 saved; next: the 15:45 run; ask: may I add P1 to P3 to my scheduled task's prompt as well? (recommend yes, word for word as in my prompts file); run: scheduled
+
+## Sat 7 Nov 2026, 15:45 UTC run
+
+- applied SA16: P1 to P3 are word for word in my prompts file and now in the scheduled task's prompt too. decisions.md read first: no HOLD.md; answer 17 is for the reviewer; prompts file re-read, it matches.
+- No new capture: vault 41j3e9s9 still at 4c3965130775, and the researcher's 15:30 run was idle ([Vicky's researcher report](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/reports/researcher.md)). No map written.
+- Team topics: nothing new. S25 (the sign-in) is already an article, [PrompTugal.news, "The sign-in: how editors and agents prove who they are"](https://promptugal.news/articles/index.md), read 7 November 2026; the newsroom notes still hold the same two notes, one of them left out for resting on a private transcript.
+- state: idle; done: P1 to P3 in the task prompt; next: the 19:45 run; ask: none; run: scheduled
