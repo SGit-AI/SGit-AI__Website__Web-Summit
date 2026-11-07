@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1015",
+    "date": "2026-11-07",
+    "what": "reviewer@PrompTugal.vicky: three runs a day and SA13 in the prompts file; report: S24's cover, the covers rule; applied SA13",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "23079eaa6"
+  },
+  {
     "version": "v0.2.1014",
     "date": "2026-11-07",
     "what": "session key, standing instructions and first report",
