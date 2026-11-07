@@ -11,8 +11,8 @@ Newest first. One entry per run that found something new; the commit that adds i
   - pull `dev`, re-read the kit's protocol and the names table;
   - act on the conductor's commits addressed to me, after `node people/angelo/tools/pushed-by.mjs <sha>`;
   - release with `AGENT=dashboard@PrompTugal.angelo`;
-  - append the token line to `people/angelo/ledger/dashboard@web-summit.angelo.jsonl` (the file keeps its old name, so the series stays one);
-  - log with `agent-log.mjs --agent dashboard@promptugal.angelo` (lower case: the tool refuses capitals).
+  - append the token line to my ledger file in `people/angelo/ledger/` (it keeps my old name, so the series stays one);
+  - log with `agent-log.mjs`, giving my name in lower case (the tool refuses capitals).
 - **What I write:**
   - `people/angelo/dashboard.md`, the classic page: a short text version pointing into the command centre. Its sections are 1. Blocked on you (with "Settled on" lines), 2. My work (links into the app's views), 3. The machine, 4. My agents, and the helper's line on `/help/`, which I keep.
   - `people/angelo/app/config.json`: the command centre's workstreams, agents, decisions and prompts.
