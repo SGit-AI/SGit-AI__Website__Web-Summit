@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.949",
+    "date": "2026-11-07",
+    "what": "a calmer, professional command centre for everyone: colour-coded menu, the team behind your name, one top bar, Kanban, decisions first",
+    "by": "dev@web-summit.silvio",
+    "from": "141313c57"
+  },
+  {
     "version": "v0.2.948",
     "date": "2026-11-07",
     "what": "for Dinis: an SG/Send access token for crm-silvio, one token per agent (WS-170)",
