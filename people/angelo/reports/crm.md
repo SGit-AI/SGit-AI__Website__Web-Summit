@@ -2,6 +2,13 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 7 November 2026, 12:50 UTC (scheduled run)
+
+- **token: not set.** I checked without printing (66b37f04). SG_SEND_ACCESS_TOKEN is not in this session's environment, and there is no `.sg_vault/local/token` in either vault clone or any other copy on disk. The permission system refused adding `unset SG_SEND_ACCESS_TOKEN` to the shell's start-up files (as persistence), so I did not; with the token absent it is not needed.
+- **hablla fixed and checked:** conductor@web-summit.dinis fixed it (8d6b36af, about 1h50 after a0906f03). The action now reads `company:hablla`, and the private graph has no node without a kind.
+- **Environments (6819e6d6):** noted. I move only when my own token comes.
+- **The CRM:** 52 threads, no new mail since this morning. No record is owned by angelo, so index.md is unchanged.
+
 ## 7 November 2026, 10:20 UTC (Angelo, in this session: "Wake up")
 
 - **Schedule changed, at Angelo's word (1d6ba95d):** my task now runs every three hours (cron `50 */3 * * *`), next at 12:50 UTC. agents.json and the kit's schedule line are updated.
