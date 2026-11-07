@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.972",
+    "date": "2026-11-07",
+    "what": "07:50 wake: tables rebuilt for Sat 7 and Sun 8, story candidates refreshed, P22 and P27 applied",
+    "by": "dashboard@web-summit.vicky",
+    "from": "df3ebd0f5"
+  },
+  {
     "version": "v0.2.971",
     "date": "2026-11-07",
     "what": "the board's health at 07:50 Saturday: WS-31 closed, the parking list at 74 (50 to park, 24 kept), four only-Dinis items",
