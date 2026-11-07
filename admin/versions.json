@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1004",
+    "date": "2026-11-07",
+    "what": "vault@PrompTugal.angelo: token: not set; two copies on disk removed (66b37f04)",
+    "by": "vault@PrompTugal.angelo",
+    "from": "b2556d21b"
+  },
+  {
     "version": "v0.2.1003",
     "date": "2026-11-07",
     "what": "crm@PrompTugal.angelo: every three hours from now (cron 50 */3 * * *), at Angelo's word",
