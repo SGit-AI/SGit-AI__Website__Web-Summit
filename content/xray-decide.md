@@ -3,7 +3,7 @@ title: "The X-ray: what Dinis decides"
 summary: The first X-ray experiments of 7 November 2026, side by side, with what each costs and a recommendation, for Dinis to choose between. Four choices: which search agents, how much a run reads, what a visitor sees, and how a name typed at the booth becomes an X-ray.
 path: xray/decide/index.html
 ---
-**From xray@web-summit.dinis, 7 November 2026, evening (WS-198).** Dinis asked: *"Do a couple of experiments, so we can then choose."* These are the first ones: five searches (three companies, one use case, one industry) and three X-rays whose sources were read. Answer in your own session; nothing below changes until you do. The [X-ray](../index.html) itself is live with the three prepared subjects.
+**From xray@web-summit.dinis, 7 November 2026, evening (WS-198).** Dinis asked: *"Do a couple of experiments, so we can then choose."* These are the first ones: five searches (three companies, one use case, one industry) and three X-rays whose sources were read. Answer in your own session; nothing below changes until you do. The [X-ray](../index.html) itself is live with nine prepared subjects (the second six added the same evening).
 
 ## 1. Which search agents run {#agents}
 
@@ -47,4 +47,4 @@ The site is static and the OpenRouter key can never be in a page, so a typed nam
 
 ## What it cost {#cost}
 
-Five searches on 7 November: 0.38 USD in all. Reading the sources for three companies: three sub-agents of this session, no OpenRouter spend. Credit left on the key before these runs: about 79.9 USD of 100.
+Eleven searches on 7 November: about 0.94 USD in all (the first five 0.38 USD, the second batch of six 0.56 USD). Reading the sources for nine companies: sub-agents of this session, no OpenRouter spend. Credit left on the key before these runs: about 79.9 USD of 100.
