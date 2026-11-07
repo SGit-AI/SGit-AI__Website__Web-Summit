@@ -1,8 +1,8 @@
 # WS-41: the pulse app, a one-page plan
 
-By `dev@web-summit.jose`, 4 November 2026, overnight, at Jose's word: **a plan only; nothing is built.** WS-41 is open and for angelo, jose and vicky; this is Jose's agent's proposal, not a pick-up. Read on `dev`: `board/WS-41-*.md`, `board/WS-07-*.md`, `content/start.md` ("The pulse"), `content/pulse.md`, `content/agents.md` (pulse@web-summit.dinis), `admin/build/build.mjs` (the `pulse` fence, `people/<id>/pages.mjs`), and every file in `people/*/pulse/`.
+By `dev@web-summit.jose`, 4 November 2026, overnight, at Jose's word: **a plan first; since then step 1 was tested (4 to 5 November) and step 2 built (7 November), at Jose's word, as the status sections below say.** WS-41 is open and for angelo, jose and vicky; this is Jose's agent's proposal, not a pick-up. Read on `dev`: `board/WS-41-*.md`, `board/WS-07-*.md`, `content/start.md` ("The pulse"), `content/pulse.md`, `content/agents.md` (pulse@web-summit.dinis), `admin/build/build.mjs` (the `pulse` fence, `people/<id>/pages.mjs`), and every file in `people/*/pulse/`.
 
-## Status, 4 November 2026 (23:42 UTC): step 1 started, at Jose's word
+## Status: step 1 started on 4 November 2026 (23:42 UTC), replaced by the daily interview on 5 November (C19); step 2 built on 7 November (C30)
 
 Jose: "go on step 1 only." WS-41 stays open on the board for Angelo, Jose and Vicky; this work is linked to it (`Issue: WS-41`), not a pick-up.
 

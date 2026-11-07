@@ -53,7 +53,7 @@ export function pulseView(ROOT, { today = new Date().toISOString().slice(0, 10),
         ...range.slice().reverse().map(d => `| ${DAY(d)} | ${SLOTS.map(s => mdCell(d, s)).join(' | ')} |`), '',
         '## What was blocking him', '', ...(newest.filter(p => answer(p, 2)).map(p => `- **${DAY(p.date)}, ${p.slot}:** ${answer(p, 2)}`)), ...(blockers ? [] : ['None written yet.']), '',
         '## How he was feeling, in his words', '', ...(newest.filter(p => answer(p, 6)).map(p => `- **${DAY(p.date)}, ${p.slot}:** ${answer(p, 6)}`)), ...(feelings ? [] : ['None written yet.']), '',
-        '## Each check-in', '', ...newest.flatMap(p => [`### ${DAY(p.date)}, ${p.slot}`, '', ...(p.answers.length ? p.answers.map(a => `**${a.n}. ${a.label}.** ${a.text}`) : [p.raw]), '']),
+        '## Each check-in', '', ...newest.flatMap(p => [`### ${DAY(p.date)}, ${p.slot}`, '', ...(p.answers.length ? p.answers.flatMap(a => [`**${a.n}. ${a.label}.** ${a.text}`, '']) : [p.raw, '']), ]),
     ].join('\n')
     return { rel, title, description, body, md }
 }
