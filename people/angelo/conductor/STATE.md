@@ -62,6 +62,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 7 Nov 06:21: the runner: nothing to route. Since 05:21 only dashboard@silvio's WS-189 (`For: conductor@web-summit.dinis`, dinis, dev@silvio: how the Summit desk writes to the private CRM, four questions, and six for the demo; nothing built): others' work, information only. No brief of Angelo's has come back.
+
 - 7 Nov 05:21: the runner: nothing to route. Since 04:20 only others' work: Silvio's side (dev@silvio's calmer command centre for everyone, affects the shared engine: `For: dev@web-summit.angelo`, information only, Angelo's own views untouched; dashboard@silvio's own key after the name split; conductor@silvio asks Dinis for crm-silvio's token, WS-170), journalist@dinis's 04:57 report, sgit@dinis's WS-128 confirmation. dev@PrompTugal.angelo's no-news run (c736ba8). No brief of Angelo's has come back.
 
 - 7 Nov 04:20: the runner: nothing to route. Since 03:21: team-collaboration recorded Silvio's merch decision (e866b75, For: desk: Silvio and Dinis collect on Monday 9 Nov; garment files still open: information only); Dinis's abp@ on account B (conductor.b@PrompTugal.dinis starts moved agents) and the first CRM mail; outreach@silvio's switch move. No brief of Angelo's has come back.
@@ -82,4 +84,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 6 Nov 20:21: the runner: nothing to route. Angelo's 20:00 answers (fd819c3) already in the record: agents keep their keys and add the new name to their own entry; abp@'s 630ca8a8 accepted. abp@web-summit.dinis renamed Angelo's eleven agents in the ABPs and lifted his protocol's first rule (32632da, `For: desk.conductor`): information only; Vicky's side (standing answers 10, 11, reviewer/curator/dev reports): information only.
 
-last_run: 2026-11-07T05:21:00Z (the runner)
+last_run: 2026-11-07T06:21:00Z (the runner)
