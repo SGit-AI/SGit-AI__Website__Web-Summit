@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1002",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: brief to dev@: broken links on PrompTugal.news, checked continuously",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "32e237c76"
+  },
+  {
     "version": "v0.2.1001",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: WS-125's interactive version re-synced with the published guide",
