@@ -90,66 +90,69 @@
     async function add(rec) { S.queue.push(rec); await save() }
 
     // ---------- the venue map (Angelo, 6 November: "the actual (or closest representation of) map spanning across all the
-    // venues, including the ability to set new pins with a label ... to setup our base or identify meeting spots") ----------
-    // The map is OpenStreetMap's, drawn with Leaflet (loaded from cdnjs only when this view opens; offline, the pins show
-    // as a list). The venues' positions are OpenStreetMap's own (Nominatim, read 6 November 2026), not guessed. The team's
-    // pins are places, never people: a person's line still names a place, and the map counts who is at each.
-    const VENUES = [
-        { id: 'v-meo', label: 'MEO Arena (Centre Stage)', short: 'MEO Arena', kind: 'venue', lat: 38.7684689, lng: -9.0939002, src: 'https://www.openstreetmap.org/way/821784762' },
-        { id: 'v-fil', label: 'FIL, Pavilions 1 to 5 (our stand: Pavilion 1, A1-30)', short: 'FIL · our stand P1', kind: 'venue', lat: 38.7709304, lng: -9.0939393, src: 'https://www.openstreetmap.org/way/821641463' },
-        { id: 'v-oriente', label: 'Oriente station (metro, train)', short: 'Oriente', kind: 'venue', lat: 38.7678490, lng: -9.1016705, src: 'https://www.openstreetmap.org/way/189718436' },
-        { id: 'v-pp', label: 'Pavilhão de Portugal', kind: 'venue', lat: 38.7663417, lng: -9.0949798, src: 'https://www.openstreetmap.org/relation/3266709' },
-    ]
-    // which pin a place from the short list belongs to (the halls and the stand are in FIL; Centre Stage is the arena)
-    const PLACE_PIN = { 'Stand': 'v-fil', 'Hall 1': 'v-fil', 'Hall 2': 'v-fil', 'Hall 3': 'v-fil', 'Hall 4': 'v-fil', 'Centre Stage': 'v-meo', 'Venue': 'v-fil' }
+    // venues, including the ability to set new pins with a label"; 7 November: "draw a stylized version of the relevant parts
+    // of the map so that it's not too much info ... all contained in the same area"). A drawing, not tiles: OpenStreetMap's
+    // own outlines of FIL and its pavilions, the MEO Arena, Pavilhão de Portugal, Oriente station and the Vasco da Gama
+    // centre, the two main streets and the river, simplified by people/angelo/tools/venue-map.mjs into venue-map.js (data
+    // only; it works offline, from the stored copy). The team's pins are places, never people: a person's line still names
+    // a place, and the map counts who is at each.
+    const HERE = (typeof document !== 'undefined' && document.currentScript && document.currentScript.src) || (typeof location !== 'undefined' ? location.href : '')
+    const AREA_OF = { 'Stand': 'osm-821643074', 'Hall 1': 'osm-821643074', 'Hall 2': 'osm-821643075', 'Hall 3': 'osm-821643076', 'Hall 4': 'osm-821643077', 'Centre Stage': 'osm-821784762', 'Venue': 'osm-821641463' }
     const PIN_KINDS = [['base', 'Our base'], ['meet', 'Meeting spot'], ['other', 'Other']]
-    const LEAFLET = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/'
-    let pinMode = false, pending = null, pinKind = 'meet', pinLabel = '', lmap = null, mapEl = null, layer = null, lfail = false, lloading = null
-    function leaflet() {
-        if (root.L && root.L.map) return Promise.resolve(root.L)
-        if (lloading) return lloading
-        const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = LEAFLET + 'leaflet.min.css'; document.head.appendChild(css)
-        return lloading = new Promise((ok, no) => { const sc = document.createElement('script'); sc.src = LEAFLET + 'leaflet.min.js'; sc.onload = () => ok(root.L); sc.onerror = no; document.head.appendChild(sc) })
-            .catch(() => { lfail = true; lloading = null; draw() })
+    let pinMode = false, pending = null, pinKind = 'meet', pinLabel = '', vmLoading = null, vmFail = false, focusId = ''
+    const VM = () => root.AngeloVenueMap || null
+    function venueMap() {
+        if (VM() || vmFail) return Promise.resolve(VM())
+        return vmLoading = vmLoading || new Promise(ok => { const sc = document.createElement('script'); sc.src = new URL('venue-map.js', HERE).href; sc.onload = () => ok(VM()); sc.onerror = () => { vmFail = true; ok(null) }; document.head.appendChild(sc) }).then(m => { draw(); return m })
     }
-    const pinOf = (place, pins) => { const own = pins.find(x => x.label === place); return own ? own.id : PLACE_PIN[place] || '' }
+    // lat/lng <-> the drawing's frame (the generator's projection, kept to its frame)
+    const toXY = (f, lat, lng) => [((lng - f.w) / (f.e - f.w)) * f.width, ((f.n - lat) / (f.n - f.s)) * f.height]
+    const toLL = (f, x, y) => ({ lat: f.n - (y / f.height) * (f.n - f.s), lng: f.w + (x / f.width) * (f.e - f.w) })
+    const pinOf = (place, pins) => { const own = pins.find(x => x.label === place); return own ? own.id : AREA_OF[place] || '' }
     function whoAt(L) { const by = {}; for (const [p, r] of L) { if (freshness(r, Date.now()) === 'gone') continue; const id = pinOf(r.place, S.pins); if (id) (by[id] = by[id] || []).push(NAMES[p] || p) } return by }
     function mapSection(L) {
-        const pins = [...VENUES, ...S.pins], at = whoAt(L)
-        const list = pins.map(x => `<li class="aw-pin aw-pin-${x.kind}"><button type="button" class="ak-chip" data-aw-pin-go="${esc(x.id)}">${esc(x.label)}</button>${at[x.id] ? ` <span class="note">${esc(at[x.id].join(', '))}</span>` : ''}${x.kind !== 'venue' ? ` <span class="note">(${esc((PIN_KINDS.find(k => k[0] === x.kind) || [, ''])[1])})</span> <button type="button" class="aw-x" data-aw-pin-del="${esc(x.id)}" aria-label="Remove the pin ${esc(x.label)}">Remove</button>` : ''}</li>`).join('')
-        const form = pending ? `<form class="aw-pinf"><input type="text" maxlength="40" required placeholder="Its label, e.g. Our base, Coffee by Hall 2" aria-label="The pin's label" value="${esc(pinLabel)}"><div class="aw-pink" role="group" aria-label="Kind">${PIN_KINDS.map(([k, l]) => `<button type="button" class="ak-chip" data-aw-pin-kind="${k}" aria-pressed="${pinKind === k}">${l}</button>`).join('')}</div><button type="submit" class="cc-btn">Save the pin</button><button type="button" class="ak-tog" data-aw-pin-cancel>Cancel</button></form>` : ''
-        return `<section class="cc-card aw-map"><div class="aw-maph"><h3 class="ak-h3">The venue map</h3><button type="button" class="ak-tog" data-aw-pin-add aria-pressed="${pinMode}">${pinMode ? (pending ? 'Placing a pin…' : 'Tap the map where the pin goes') : '＋ Add a pin'}</button></div>
-${lfail ? '<p class="note">The map could not load (offline?). The pins, as a list:</p>' : '<div class="aw-map-slot"></div>'}${form}
-<ul class="aw-pins" style="list-style:none;padding:0">${list}</ul>
-<p class="note">Map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors. Grey pins are the venues (OpenStreetMap's positions); yours are gold for a base, blue for a meeting spot. Each shows who is there now, from the team's lines. Places only: never a person's location.</p></section>`
-    }
-    function mountMap(L) {
-        const slot = view.querySelector('.aw-map-slot'); if (!slot) return
-        if (!mapEl) {
-            mapEl = document.createElement('div'); mapEl.className = 'aw-leaf'
-            // its size set here, not only in app.css: the offline store can serve this script with an older app.css (Angelo
-            // saw an empty map box on 6 November), and a Leaflet map in a box with no height draws nothing
-            Object.assign(mapEl.style, { height: matchMedia('(max-width: 767px)').matches ? '300px' : '380px', width: '100%', borderRadius: '12px', overflow: 'hidden', margin: '10px 0' })
+        const M = VM(); if (!M && !vmFail) venueMap()
+        const at = whoAt(L), f = M && M.frame
+        const venues = M ? M.areas.filter(a => a.kind !== 'site') : []
+        const list = [...venues.map(a => ({ id: a.id, label: a.label, kind: 'venue' })), ...S.pins].map(x => `<li class="aw-pin"><button type="button" class="ak-chip" data-aw-focus="${esc(x.id)}" aria-pressed="${focusId === x.id}">${esc(x.label)}</button>${at[x.id] ? ` <span class="note">${esc(at[x.id].join(', '))}</span>` : ''}${x.kind !== 'venue' ? ` <span class="note">(${esc((PIN_KINDS.find(k => k[0] === x.kind) || [, ''])[1])})</span> <button type="button" class="aw-x" style="background:none;border:0;color:inherit;opacity:.75;text-decoration:underline;cursor:pointer;min-height:32px" data-aw-pin-del="${esc(x.id)}" aria-label="Remove the pin ${esc(x.label)}">Remove</button>` : ''}</li>`).join('')
+        const form = pending ? `<form class="aw-pinf"><input type="text" maxlength="40" required placeholder="Its label, e.g. Our base, Coffee by Pavilion 2" aria-label="The pin's label" value="${esc(pinLabel)}"><div class="aw-pink" role="group" aria-label="Kind">${PIN_KINDS.map(([k, l]) => `<button type="button" class="ak-chip" data-aw-pin-kind="${k}" aria-pressed="${pinKind === k}">${l}</button>`).join('')}</div><button type="submit" class="cc-btn">Save the pin</button><button type="button" class="ak-tog" data-aw-pin-cancel>Cancel</button></form>` : ''
+        let svg = ''
+        if (M) {
+            const lab = (x, y, t, cls = '') => `<text class="vm-t ${cls}" x="${x}" y="${y}">${esc(t)}</text>`
+            const badge = (x, y, n) => n ? `<g class="vm-n"><circle cx="${x}" cy="${y}" r="17"/><text x="${x}" y="${y + 6}">${n}</text></g>` : ''
+            const areas = M.areas.map(a => `<path class="vm-a vm-${a.kind}${focusId && focusId !== a.id ? ' vm-dim' : ''}${focusId === a.id ? ' vm-on' : ''}" d="${a.d}" data-aw-focus="${esc(a.id)}"><title>${esc(a.label)}${at[a.id] ? ': ' + esc(at[a.id].join(', ')) : ''}</title></path>`).join('')
+            // labels: the pavilions by number inside them, the rest under their shape; FIL's name to the left of its halls
+            const short = { 'Pavilion 1': 'P1', 'Pavilion 2': 'P2', 'Pavilion 3': 'P3', 'Pavilion 4': 'P4' }
+            const labels = M.areas.map(a => a.kind === 'site' ? lab(a.c[0] + 115, a.c[1] - 150, 'FIL', 'vm-big') : short[a.label] ? lab(a.c[0], a.c[1] + 8, short[a.label] + (a.id === AREA_OF.Stand ? ' · our stand' : ''), 'vm-in') : lab(a.c[0], a.c[1] + (a.kind === 'arena' ? 8 : 4), a.label, a.kind === 'arena' ? 'vm-in' : 'vm-out')).join('')
+            const counts = M.areas.map(a => badge(a.c[0] + (a.kind === 'hall' ? 70 : 60), a.c[1] - 30, (at[a.id] || []).length)).join('')
+            const streets = M.streets.map(st => `<path class="vm-s" d="${st.d}"/>`).join('') + M.streets.map(st => `<text class="vm-sl" transform="translate(${st.at[0] - 12} ${st.at[1] + 30}) rotate(${st.angle})">${esc(st.short)}</text>`).join('')
+            const pins = S.pins.map(x => { const [px, py] = toXY(f, x.lat, x.lng), n = (at[x.id] || []).length; return `<g class="vm-pin vm-p-${x.kind}${focusId && focusId !== x.id ? ' vm-dim' : ''}" data-aw-focus="${esc(x.id)}"><path d="M${px} ${py}l-13 -24a15 15 0 1 1 26 0z"/><circle cx="${px}" cy="${py - 34}" r="6" class="vm-dot"/><text class="vm-t vm-pl" x="${px}" y="${py + 22}">${esc(x.label)}${n ? ` · ${n}` : ''}</text></g>` }).join('')
+            const ghost = pending ? (([px, py]) => `<circle class="vm-ghost" cx="${px}" cy="${py}" r="12"/>`)(toXY(f, pending.lat, pending.lng)) : ''
+            svg = `<div class="vm-wrap${pinMode ? ' vm-placing' : ''}" style="margin:10px 0;border-radius:12px;overflow:hidden;background:#13263c${pinMode ? ';outline:3px dashed #f4c542;cursor:crosshair' : ''}"><svg class="vm" style="display:block;width:100%;height:auto" viewBox="0 0 ${f.width} ${f.height}" role="img" aria-label="The venue: FIL and its pavilions, the MEO Arena, Pavilhão de Portugal, Oriente station and the Vasco da Gama centre, by the river" data-aw-map>
+<style>
+.vm-r{fill:#1e4a78;opacity:.55}.vm-rl{fill:#9cc3ea;font:600 22px/1 system-ui,sans-serif;text-anchor:middle;letter-spacing:.2em;opacity:.8}
+.vm-s{fill:none;stroke:#7d93ad;stroke-width:9;stroke-linecap:round;stroke-linejoin:round;opacity:.35}.vm-sl{fill:#9fb3c9;font:500 19px/1 system-ui,sans-serif;opacity:.9}
+.vm-a{stroke:#c9d6e3;stroke-width:2;cursor:pointer;transition:opacity .2s}.vm-site{fill:#22405f;stroke-dasharray:6 5}.vm-hall{fill:#2f6aa3}.vm-arena{fill:#7a5cc4}.vm-landmark{fill:#4b5f78}.vm-station{fill:#4b5f78}
+.vm-a.vm-on{stroke:#fff;stroke-width:4}.vm-dim{opacity:.35}
+.vm-t{fill:#eef3f8;font:600 23px/1 system-ui,sans-serif;text-anchor:middle;pointer-events:none;paint-order:stroke;stroke:#0d1b2a;stroke-width:4px}.vm-big{font-size:26px;letter-spacing:.15em;fill:#c9d6e3}.vm-out{font-size:21px}
+.vm-n circle{fill:#f4c542;stroke:#0d1b2a;stroke-width:3}.vm-n text{fill:#0d1b2a;font:800 18px/1 system-ui,sans-serif;text-anchor:middle;pointer-events:none}
+.vm-pin{cursor:pointer}.vm-pin path{stroke:#0d1b2a;stroke-width:3}.vm-p-base path{fill:#f4c542}.vm-p-meet path{fill:#5fb2f5}.vm-p-other path{fill:#b9a4f0}.vm-dot{fill:#0d1b2a}.vm-pl{font-size:21px}
+.vm-ghost{fill:none;stroke:#f4c542;stroke-width:4;stroke-dasharray:5 4}
+</style><path class="vm-r" d="${M.river}"/><text class="vm-rl" x="${f.width - 70}" y="${f.height / 2}" transform="rotate(-90 ${f.width - 70} ${f.height / 2})">Tagus (Tejo)</text>
+${streets}${areas}${labels}${counts}${pins}${ghost}</svg></div>`
         }
-        slot.appendChild(mapEl)
-        leaflet().then(Lf => {
-            if (!Lf || !mapEl.isConnected) return
-            if (!lmap) {
-                lmap = Lf.map(mapEl, { scrollWheelZoom: false }).fitBounds(VENUES.map(v => [v.lat, v.lng]), { padding: [30, 30] })
-                Lf.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(lmap)
-                lmap.on('click', e => { if (!pinMode) return; pending = e.latlng; draw(); const i = view.querySelector('.aw-pinf input'); if (i) i.focus() })
-            }
-            lmap.invalidateSize()
-            if (layer) layer.remove()
-            layer = Lf.layerGroup().addTo(lmap)
-            const at = whoAt(lines(all()))
-            for (const x of [...VENUES, ...S.pins]) {
-                const n = (at[x.id] || []).length
-                Lf.marker([x.lat, x.lng], { icon: Lf.divIcon({ className: `aw-mk aw-mk-${x.kind}`, html: `<span>${esc(x.short || x.label)}${n ? ` · ${n} here` : ''}</span>`, iconSize: null }) })
-                    .bindPopup(`<b>${esc(x.label)}</b>${n ? `<br>${esc(at[x.id].join(', '))}` : ''}${x.src ? `<br><a href="${x.src}" target="_blank" rel="noopener">OpenStreetMap</a>` : ''}`).addTo(layer)
-            }
-            if (pending) Lf.circleMarker(pending, { radius: 9, color: '#e8b33a', weight: 3 }).addTo(layer)
-        })
+        return `<section class="cc-card aw-map"><div class="aw-maph"><h3 class="ak-h3">The venue map</h3><button type="button" class="ak-tog" data-aw-pin-add aria-pressed="${pinMode}">${pinMode ? (pending ? 'Placing a pin…' : 'Tap the map where the pin goes') : '＋ Add a pin'}</button></div>
+${M ? svg : vmFail ? '<p class="note">The map could not load (offline, and not stored yet). The places, as a list:</p>' : '<p class="note">Drawing the map…</p>'}${form}
+<ul class="aw-pins" style="list-style:none;padding:0">${list}</ul>
+<p class="note">A drawing of the venue, simplified from <a href="https://www.openstreetmap.org/#map=17/38.7700/-9.0960">OpenStreetMap</a> (map data © OpenStreetMap contributors, ODbL). The number on a building is how many of the team are there now, from their lines; tap a building or a pin to pick it out. Your pins: gold for a base, blue for a meeting spot. Places only: never a person's location, and the phone's location is never asked for.</p></section>`
+    }
+    function mountMap() { }
+    function mapClick(e) {
+        const svg = e.target.closest('svg[data-aw-map]'); if (!svg || !pinMode) return false
+        const M = VM(); if (!M) return false
+        const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; const q = pt.matrixTransform(svg.getScreenCTM().inverse())
+        pending = toLL(M.frame, q.x, q.y); draw(); const i = view.querySelector('.aw-pinf input'); if (i) i.focus()
+        return true
     }
 
     // ---------- drawing ----------
@@ -192,7 +195,6 @@ ${picked ? `<p class="aw-step">2. What next? <span class="note">(optional)</span
 <li><b>Conflicts.</b> Each person writes only their own line, and the newest by its own time wins: an older update that arrives late never replaces a newer one. Collections, shifts and meetings are events (created, done, moved), so two people never overwrite each other.</li>
 <li><b>In the real version</b> (after security's review), the queue goes to the team's private vault, signed with your key, and the board is read from the vaults. Nobody's place is ever in the repository or a public vault.</li></ul></details>
 </section>`
-        mountMap(L)
         if (!view.__aw) { view.__aw = true; view.addEventListener('click', onClick); view.addEventListener('submit', onSubmit); view.addEventListener('input', e => { if (e.target.closest('.aw-pinf')) pinLabel = e.target.value }) }
     }
     async function setMine(patch, fresh) {
@@ -205,6 +207,8 @@ ${picked ? `<p class="aw-step">2. What next? <span class="note">(optional)</span
         await save(); draw()
     }
     async function onClick(e) {
+        if (mapClick(e)) return
+        const fz = e.target.closest('[data-aw-focus]'); if (fz && view.contains(fz)) { focusId = focusId === fz.dataset.awFocus ? '' : fz.dataset.awFocus; return draw() }
         const b = e.target.closest('button'); if (!b || !view.contains(b)) return
         const d = b.dataset
         if (d.awPlace !== undefined) { S.recent = [d.awPlace, ...S.recent.filter(p => p !== d.awPlace)].slice(0, 6); picked = true; return setMine({ place: d.awPlace }, true) }
@@ -216,8 +220,7 @@ ${picked ? `<p class="aw-step">2. What next? <span class="note">(optional)</span
         if ('awPinAdd' in d) { pinMode = !pinMode; pending = null; return draw() }
         if ('awPinCancel' in d) { pinMode = false; pending = null; pinLabel = ''; return draw() }
         if (d.awPinKind !== undefined) { pinKind = d.awPinKind; return draw() }
-        if (d.awPinDel) { S.pins = S.pins.filter(x => x.id !== d.awPinDel); await save(); return draw() }
-        if (d.awPinGo) { const x = [...VENUES, ...S.pins].find(v => v.id === d.awPinGo); if (x && lmap) lmap.setView([x.lat, x.lng], 18); return }
+        if (d.awPinDel) { S.pins = S.pins.filter(x => x.id !== d.awPinDel); if (focusId === d.awPinDel) focusId = ''; await save(); return draw() }
         if ('awReset' in d) { await wipe(); S = null; undo = null; picked = false; sending = false; pinMode = false; pending = null; await load(); return draw() }
     }
     async function onSubmit(e) {
