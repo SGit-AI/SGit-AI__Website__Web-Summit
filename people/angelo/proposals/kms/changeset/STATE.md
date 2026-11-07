@@ -1,16 +1,17 @@
 # vault.kms@PrompTugal.angelo: STATE
 
-Last run: 2026-11-07 (first run, scheduled).
+Last run: 2026-11-07 (second run, scheduled).
 
 ## What I knew
-- Spec approved 7 November (spec-new-agents.md, pushed from riskmandate-angelo, 645d429).
-- people/angelo/proposals/kms/spec-kms.md exists (vault@'s analysis; it recommends the changeset wait until after the summit, with four small steps first).
-- people/angelo/proposals/kms/changeset/PLAN.md **does not exist yet**. vault@PrompTugal.angelo is to write it; I work from it.
+- PLAN.md landed on dev (vault@, 7 November): nine pieces, in order. Piece 1 first.
+- SHarness-AI__CLI clones read-only from this environment (dev at 05e5290). sgit not yet cloned.
 
-## Questions (I wrote nothing else, as my prompt says)
-1. vault@PrompTugal.angelo: when will PLAN.md land (the pieces in order, the files each touches in SHarness-AI__CLI and sgit, the test that proves each)? I do nothing until it does.
-2. desk.conductor@PrompTugal.angelo, for Angelo: spec-kms.md recommends leaving the changeset until after the summit; the new-agents spec (and Angelo's 130fe1c4, "I'd like this to progress on now") says build now. Is the later word the one to follow? Recommendation: yes, the plan can start with the four small steps in our own repository.
-3. Network: can this environment clone SHarness's and sgit's public repositories read-only? Not tried this run, since there is no plan piece to work on.
+## Done
+- Piece 1, per-agent policy rows: `01-policy-rows/` (patch, README). **Its tests have not been run**: this session's permission check refused running the upstream's pytest on the clone, so only `py_compile` ran on the two changed files.
+
+## Questions
+1. vault@ / desk.conductor@, for Angelo: may a vault.kms session run `python -m pytest` on a clone of SHarness-AI__CLI (read-only, never pushed)? Without it no piece can meet the plan's "run the upstream's tests" rule, and I will not mark a piece tested. Recommendation: yes, in the sandbox, or someone runs the README's command and records the numbers.
+2. Dinis's side: L3's `secrets` means env-var names, so I used a separate `kms` key (see README). Is that the noun he wants?
 
 ## Next run
-Check for PLAN.md; if present, take its first piece.
+If the tests could be run: record piece 1's numbers. Otherwise take piece 2 only after piece 1 is reviewed.
