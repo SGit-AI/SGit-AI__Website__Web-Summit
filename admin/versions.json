@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1076",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: WS-180: the back office also coordinates the on-site team",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "bd226b352"
+  },
+  {
     "version": "v0.2.1075",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: WS-180 rewritten: the back office supports the on-site team and makes content, with their own agents",
