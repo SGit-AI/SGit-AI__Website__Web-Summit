@@ -15,7 +15,7 @@
     "name": "dev@PrompTugal.angelo",
     "job": "the site's build, gate, pipeline and pages",
     "session": "Claude Code cloud session in Angelo's account",
-    "schedule": "every two hours, round the clock (cron 35 */2 * * * UTC), a scheduled task into its own session, set on 4 November after Angelo confirmed the protocol in its session"
+    "schedule": "hourly, round the clock (cron 35 * * * * UTC), a scheduled task into its own session; every two hours from 4 November, hourly from 7 November at Angelo's word"
   },
   {
     "name": "team-collaboration@PrompTugal.angelo",
