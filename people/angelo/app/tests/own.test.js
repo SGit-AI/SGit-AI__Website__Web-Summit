@@ -11,5 +11,5 @@ const S = process.argv[2], U = 'http://127.0.0.1:8765/people/angelo/app/index.ht
   await p.goto(U + '#tasks', { waitUntil: 'networkidle' }); await p.waitForTimeout(300);
   const r3 = await p.evaluate(() => ({ sharedMarked: !!document.querySelector('#cc-title .ak-own'), title: document.querySelector('#cc-title').textContent }));
   console.log(n, JSON.stringify({ ...r, after: r2, shared: r3 }), errs);
-  ok = ok && r.grp === "✦ Angelo's own" && r.marks === 5 && /✦/.test(r.title) && r.note && !r2.note && /Angelo's own/.test(r2.title || '') && !r3.sharedMarked && /Kanban ✦/.test(r.tab || '') && !errs.length; await p.close() }
+  ok = ok && r.grp === "✦ Angelo's own" && r.marks === 4 && /✦/.test(r.title) && r.note && !r2.note && /Angelo's own/.test(r2.title || '') && !r3.sharedMarked && /Kanban ✦/.test(r.tab || '') && !errs.length; await p.close() }
  await b.close(); console.log(ok ? 'PASS' : 'FAIL') })();

@@ -1,16 +1,17 @@
 # dev.map@PrompTugal.angelo: STATE
 
-First run, 7 November 2026. Nothing built.
+Second run, 7 November 2026. The live-map spec is approved (c6fc4442) and the tests are in `people/angelo/app/tests/`.
 
-## What I know
-- `people/angelo/proposals/live-map/spec-live-map.md` does not exist on dev yet. Only vault@'s `data-and-who-may-see-it.md` is there. My prompt says to build only once the spec's status line says "approved", so I build nothing.
-- `people/angelo/app/tests/` does not exist yet. dev@ is to move its Playwright tests there before I start.
-- No `workers/*` branch existed before this run.
+## Done
+- Piece 1 (spec section 1), first slice, on `workers/dev.map`: Replay's timeline sits under Team and the machine's map (`replay.js` `render` with `embed`), on the map's clock (`ak-clock` event from `mountFlow`); a commit picked on the timeline moves the map to its time; filters live in `r_*` keys of the `#collab` address, the window is the map's `w`. `#replay?...` redirects to `#collab?map=1&...` (the clip `#replay?c=1` stays its own view). Replay is out of the menu and the switch links. Tests: new `tmtl`, `rp` and `arcs` rewritten for the embedded timeline, `own` expects four marks.
 
-## Open questions (for dev@ and the desk)
-1. Where is spec-live-map.md (dev@'s spec, c7d26a01)? Has it been written, and is it approved?
-2. Have the browser tests moved to `people/angelo/app/tests/`, with their README?
-3. From vault@'s note, Angelo is to choose the metadata option: (a) public view by day, (b) public view lagging 24 h, or both. Recommendation, as vault@ gives: both for the public view, minutes for the team view only.
+## Not done in piece 1
+- The timeline selection does not yet pick out the agent on the map (it moves the clock only; the map's tick line shows the message).
+- Screenshots for dev@'s review: `tmtl-desktop.png` and `tmtl-phone.png` are made by `tests/run.sh tmtl` (not committed).
+
+## Failing before my change (not mine; dev@ to say)
+- `tmf`: its mid-playback check wants links lit at a moment the 24 h window may have none (clock-dependent). Same output on a clean dev.
+- `tm`: wants at least 5 people and 50 agents; the build has 4 and 48.
 
 ## Next run
-Check whether the spec says "approved" and the tests exist. If both do, take the first piece of the spec.
+Finish piece 1 (highlight the picked commit's agent on the map), then piece 2 (the four new events) once dev@ has reviewed piece 1.

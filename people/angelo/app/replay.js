@@ -11,12 +11,20 @@
     const SPEEDS = [['60', '1 h a second'], ['360', '6 h a second'], ['1440', '1 day a second']]
     const PHONE = () => matchMedia('(max-width: 767px)').matches
 
-    function parse(hash) {
-        const i = hash.indexOf('?'), q = new URLSearchParams(i < 0 ? '' : hash.slice(i + 1))
+    // embedded under Team and the machine's map (#collab), the timeline keeps its state in r_-prefixed keys of that address
+    // (r_p, r_k, r_a, r_i, r_sel, r_m, r_r) and takes its window from the map's own w; standalone it is #replay as before
+    function parse(hash, embed) {
+        const i = hash.indexOf('?'), q0 = new URLSearchParams(i < 0 ? '' : hash.slice(i + 1))
+        const q = embed ? { get: k => k === 'w' ? q0.get('w') : q0.get('r_' + k) } : q0
         const list = k => (q.get(k) || '').split(',').filter(Boolean)
         const w = q.get('w'); return { w: WINDOWS[w] ? w : '24h', p: list('p'), k: list('k'), a: q.get('a') || '', i: q.get('i') || '', sel: q.get('sel') || '', m: q.get('m') !== '0', r: q.get('r') === '1', c: q.get('c') === '1' }
     }
-    function toHash(s) {
+    function toHash(s, embed) {
+        if (embed) {
+            const i = location.hash.indexOf('?'), q = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)), set = (k, v) => { if (v) q.set('r_' + k, v); else q.delete('r_' + k) }
+            set('p', s.p.join(',')); set('k', s.k.join(',')); set('a', s.a); set('i', s.i); set('sel', s.sel); set('m', s.m ? '' : '0'); set('r', s.r ? '1' : '')
+            q.set('map', '1'); const t = q.toString().replace(/%2C/g, ',').replace(/%3A/g, ':'); return '#collab' + (t ? '?' + t : '')
+        }
         const q = []; if (s.w !== '24h') q.push('w=' + s.w); if (s.p.length) q.push('p=' + s.p.join(',')); if (s.k.length) q.push('k=' + s.k.join(','))
         if (s.a) q.push('a=' + encodeURIComponent(s.a)); if (s.i) q.push('i=' + encodeURIComponent(s.i)); if (s.sel) q.push('sel=' + s.sel); if (!s.m) q.push('m=0'); if (s.r) q.push('r=1'); if (s.c) q.push('c=1')
         return '#replay' + (q.length ? '?' + q.join('&') : '')
@@ -38,6 +46,9 @@
     const personOfName = t => { const m = String(t).match(/@(?:web-summit|promptugal)\.([a-z0-9-]+)$/i) || String(t).match(/^pt:([a-z0-9-]+):/); return m ? m[1].toLowerCase() : t }
 
     let play = null   // { raf, last, t, speed }
+    // the map's clock (mountFlow) and the embedded timeline share one moment: the map says where it is, the timeline follows,
+    // and a commit picked on the timeline moves the map there
+    let flowApi = null, embedClock = null
     // slice 4: the agents' runs (WS-160), read in this browser from observability's public vault with its published read key,
     // through the site's vendored reader (assets/vendor/sgit-ai/.../vault-embed.js): only when asked, once per page
     let RUNS = null   // null | 'loading' | [runs] | Error
@@ -54,11 +65,11 @@
         }).catch(e => { RUNS = e instanceof Error ? e : new Error(String(e)) }).then(after)
     }
     function render(view, ctx) {
-        const { D, title, note, ownTitle, ago } = ctx, R = D.replay
+        const { D, title, note, ownTitle, ago } = ctx, R = D.replay, E = !!ctx.embed
         if (play) { cancelAnimationFrame(play.raf); play = null }
-        if (title) title.innerHTML = `${ownTitle('Replay')}<small>${esc((D.person.name || D.person.id).split(' ')[0])}'s command centre</small>`
+        if (title && !E) title.innerHTML = `${ownTitle('Replay')}<small>${esc((D.person.name || D.person.id).split(' ')[0])}'s command centre</small>`
         if (!R) { view.innerHTML = '<p class="note">Replay has no data in this build.</p>'; return }
-        const s = parse(location.hash), nowMin = Math.round((Date.now() - Date.parse(R.from)) / 6e4)
+        const s = parse(location.hash, E), nowMin = Math.round((Date.now() - Date.parse(R.from)) / 6e4)
         const { start, end, ev } = select(R, s, nowMin), phone = PHONE()
         // rows: per agent grouped by person; on a phone, per person
         const agentsSeen = new Set(ev.filter(e => e[1] >= 0).map(e => e[1]))
@@ -70,7 +81,7 @@
             else { rows.push({ kind: 'head', label: p.name, person: p.id }); for (const [a, i] of mine) rows.push({ kind: 'agent', label: a.short, title: a.name, idx: [i] }) }
         }
         // slice 5, the clip (c=1): the window played full screen in 60 seconds, looping, for a stand-up screen or a screen recording
-        const W = s.c ? innerWidth - 24 : Math.max(320, view.clientWidth || 960), LW = phone ? 72 : 170, TOP = 34, RH = s.c ? Math.max(8, Math.min(22, Math.floor((innerHeight - 140 - TOP) / Math.max(1, rows.length)))) : phone ? 26 : 20
+        const W = s.c ? innerWidth - 24 : Math.max(320, (view.clientWidth || 960)), LW = phone ? 72 : 170, TOP = 34, RH = s.c ? Math.max(8, Math.min(22, Math.floor((innerHeight - 140 - TOP) / Math.max(1, rows.length)))) : phone ? 26 : 20
         const H = TOP + rows.length * RH + 8, span = Math.max(60, end - start)
         const x = m => LW + (m - start) / span * (W - LW - 12)
         const rowOf = new Map(); rows.forEach((r, n) => (r.idx || []).forEach(i => rowOf.set(i, n)))
@@ -97,7 +108,7 @@ ${rows.map((r, n) => `<g class="rp-row ${r.kind}"><rect x="0" y="${TOP + n * RH}
 <line class="rp-head" x1="${x(end)}" x2="${x(end)}" y1="${TOP - 10}" y2="${H}"/></svg>`
         const chip = (k, v, l, on, col) => `<button type="button" class="rp-chip${on ? ' on' : ''}" data-rp="${k}" data-v="${esc(v)}" aria-pressed="${on}">${col ? `<i style="background:${col}"></i>` : ''}${esc(l)}</button>`
         const agentOpts = [...agentsSeen].map(i => R.agents[i].name).sort()
-        view.innerHTML = `<div class="ak rp${s.c ? ' rp-clip' : ''}">${s.c ? `<header class="rp-cliphead"><b>The team at work: ${esc(WINDOWS[s.w][0].toLowerCase())}, in 60 seconds</b><span data-rp-now></span><button type="button" class="cc-btn" data-rp-exit>Close the clip</button></header>` : note()}
+        view.innerHTML = `<div class="${E ? 'rp rp-embed' : 'ak rp'}${s.c ? ' rp-clip' : ''}">${s.c ? `<header class="rp-cliphead"><b>The team at work: ${esc(WINDOWS[s.w][0].toLowerCase())}, in 60 seconds</b><span data-rp-now></span><button type="button" class="cc-btn" data-rp-exit>Close the clip</button></header>` : note()}
 <details class="rp-filters"${phone ? '' : ' open'}><summary>Filters${s.p.length + s.k.length + (s.a ? 1 : 0) + (s.i ? 1 : 0) ? ` <b>${s.p.length + s.k.length + (s.a ? 1 : 0) + (s.i ? 1 : 0)}</b>` : ''}</summary>
 <div class="rp-bar">
   <label class="ak-sel"><span>Time</span><select data-rp-w>${Object.entries(WINDOWS).map(([k, [l]]) => `<option value="${k}"${k === s.w ? ' selected' : ''}>${l}</option>`).join('')}</select></label>
@@ -121,8 +132,13 @@ ${s.r ? `<p class="note rp-runnote">${RUNS === 'loading' || !RUNS ? 'Reading the
 ${sel ? detail(R, sel) : ''}
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}: every commit on dev since 2 November up to that release.</p>
 </div>`
+        if (E) {   // the map's controls serve both: no play bar and no window of its own here
+            const bar = view.querySelector('.rp-play'); if (bar) bar.remove()
+            const tl = [...view.querySelectorAll('.rp-bar .ak-sel')].find(l => /^Time/.test(l.textContent)); if (tl) tl.remove()
+            const fr = view.querySelector('.ak-fresh'); if (fr) fr.remove()
+        }
         bind(view, ctx, s, start, end, x)
-        if (s.r && !RUNS && R.runs) loadRuns(R.runs, location.href, () => { if (/^#replay(\?|$)/.test(location.hash)) render(view, ctx) })
+        if (s.r && !RUNS && R.runs) loadRuns(R.runs, location.href, () => { if (view.isConnected && (E ? /^#collab(\?|$)/ : /^#replay(\?|$)/).test(location.hash)) render(view, ctx) })
     }
 
     function detail(R, e) {
@@ -133,14 +149,14 @@ ${sel ? detail(R, sel) : ''}
     }
 
     function bind(view, ctx, s, start, end, x) {
-        const go = patch => { const open = !!view.querySelector('.rp-filters[open]'); history.replaceState(history.state, '', location.pathname + location.search + toHash({ ...s, ...patch })); render(view, ctx); const f = view.querySelector('.rp-filters'); if (f && open) f.open = true }
+        const go = patch => { const open = !!view.querySelector('.rp-filters[open]'); history.replaceState(history.state, '', location.pathname + location.search + toHash({ ...s, ...patch }, ctx.embed)); render(view, ctx); const f = view.querySelector('.rp-filters'); if (f && open) f.open = true }
         view.querySelectorAll('[data-rp]').forEach(b => b.onclick = () => { const k = b.dataset.rp, v = b.dataset.v; go({ [k]: s[k].includes(v) ? s[k].filter(x => x !== v) : [...s[k], v] }) })
         const rr = view.querySelector('[data-rp-r]'); if (rr) rr.onclick = () => go({ r: !s.r })
         const mm = view.querySelector('[data-rp-m]'); if (mm) mm.onclick = () => go({ m: !s.m })
         const w = view.querySelector('[data-rp-w]'); if (w) w.onchange = () => go({ w: w.value })
         const a = view.querySelector('[data-rp-a]'); if (a) a.onchange = () => go({ a: a.value })
         const i = view.querySelector('[data-rp-i]'); if (i) { let t; i.oninput = () => { clearTimeout(t); t = setTimeout(() => { go({ i: i.value }); const n = view.querySelector('[data-rp-i]'); if (n) { n.focus(); n.setSelectionRange(n.value.length, n.value.length) } }, 300) } }
-        view.querySelectorAll('circle.rp-e').forEach(c => c.onclick = () => go({ sel: c.dataset.h === s.sel ? '' : c.dataset.h }))
+        view.querySelectorAll('circle.rp-e').forEach(c => c.onclick = () => { if (ctx.embed && flowApi && c.dataset.h !== s.sel) flowApi.seek(+c.dataset.t); go({ sel: c.dataset.h === s.sel ? '' : c.dataset.h }) })
         // playback: dots after the playhead fade; the pointer walks the sorted dots so each frame touches only what changed
         const dots = [...view.querySelectorAll('.rp-e')].sort((p, q) => +p.dataset.t - +q.dataset.t)
         const head = view.querySelector('.rp-head'), now = view.querySelector('[data-rp-now]'), scrub = view.querySelector('[data-rp-scrub]'), btn = view.querySelector('[data-rp-play]'), speed = view.querySelector('[data-rp-speed]')
@@ -159,6 +175,10 @@ ${sel ? detail(R, sel) : ''}
             if (scrub && +scrub.value !== Math.round(t)) scrub.value = Math.round(t)
             return t
         }
+        // embedded: follow the map's clock
+        if (embedClock) removeEventListener('ak-clock', embedClock)
+        embedClock = null
+        if (ctx.embed) { embedClock = e => { if (view.isConnected) seek(e.detail) }; addEventListener('ak-clock', embedClock); if (flowApi && flowApi.at() != null) seek(flowApi.at()) }
         const stop = () => { if (play) { cancelAnimationFrame(play.raf); clearTimeout(play.raf) } play = null; arcs.forEach(a => a.classList.remove('now')); if (btn) { btn.textContent = '▶ Play'; btn.setAttribute('aria-pressed', 'false') } }
         if (scrub) scrub.oninput = () => { stop(); seek(+scrub.value) }
         const j = view.querySelector('[data-rp-jump]'); if (j) j.onchange = () => { if (j.value) { stop(); seek(+j.value) } }
@@ -279,6 +299,7 @@ ${sel ? detail(R, sel) : ''}
             now.textContent = `${dayLabel(at(R, T))} ${hhmm(at(R, T))} UTC · ${total} agent${total === 1 ? '' : 's'}`
             if (+scrub.value !== Math.round(T)) scrub.value = Math.round(T)
             flowState.t = T
+            dispatchEvent(new CustomEvent('ak-clock', { detail: T }))
         }
         const isOn = id => { const a = N.get(id); return a ? !!a.on : true }
         function size(a) {
@@ -328,6 +349,7 @@ ${sel ? detail(R, sel) : ''}
         btn.onclick = () => { if (playing) return stop(); seek(+scrub.value >= end ? start : +scrub.value); play() }
         // picked up after a redraw: the same moment, still playing if it was
         if (flowState.t != null) { seek(flowState.t); if (flowState.playing) play() }
+        flowApi = { seek, at: () => flowState.t }
         return { seek, msgs: msgs.length }
     }
 

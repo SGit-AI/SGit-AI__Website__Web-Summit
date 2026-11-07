@@ -1,0 +1,24 @@
+// The timeline under Team and the machine's map: one clock, filters in the address, #replay redirects, Replay out of the menu.
+const { chromium } = require('playwright');
+const S = process.argv[2], U = 'http://127.0.0.1:8765/people/angelo/app/index.html';
+(async () => { const b = await chromium.launch(); let ok = true; const fail = m => { ok = false; console.log('  FAIL', m) };
+ for (const [n, vp] of [['desktop', { width: 1280, height: 900 }], ['phone', { width: 390, height: 844 }]]) {
+  const p = await b.newPage({ viewport: vp }); const errs = []; p.on('pageerror', e => errs.push(e.message));
+  // an old Replay address lands on the map with the timeline, keeping its filters
+  await p.goto(U + '#replay?w=72h&p=angelo', { waitUntil: 'networkidle' });
+  await p.waitForSelector('.rp-embed .rp-svg', { timeout: 8000 }).catch(() => fail('no timeline'));
+  const a = await p.evaluate(() => ({ hash: location.hash, title: document.querySelector('#cc-title').textContent, map: !!document.querySelector('.tm-svg'), dots: document.querySelectorAll('.rp-embed circle.rp-e').length, ownPlay: !!document.querySelector('.rp-embed [data-rp-play]'), menu: !!document.querySelector('.cc-nav [data-view="replay"]'), overflow: document.documentElement.scrollWidth - innerWidth }));
+  await p.screenshot({ path: `${S}/tmtl-${n}.png`, fullPage: true });
+  // one clock: scrubbing the map moves the timeline's playhead and fades the dots after it
+  const before = await p.evaluate(() => document.querySelectorAll('.rp-embed .rp-e.fut').length);
+  await p.evaluate(() => { const r = document.querySelector('[data-tmf-scrub]'); r.value = r.min; r.dispatchEvent(new Event('input', { bubbles: true })) }); await p.waitForTimeout(300);
+  const after = await p.evaluate(() => ({ fut: document.querySelectorAll('.rp-embed .rp-e.fut').length, total: document.querySelectorAll('.rp-embed .rp-e').length, head: document.querySelector('.rp-embed .rp-head').getAttribute('x1') }));
+  // a commit picked on the timeline moves the map's clock there and is kept in the address
+  await p.locator('.rp-embed circle.rp-e').first().click({ force: true }); await p.waitForSelector('.rp-embed .rp-detail', { timeout: 4000 }).catch(() => fail('no detail'));
+  const d = await p.evaluate(() => ({ hash: location.hash, scrub: +document.querySelector('[data-tmf-scrub]').value, min: +document.querySelector('[data-tmf-scrub]').min }));
+  console.log(n, JSON.stringify({ a, before, after, d }), errs);
+  if (!/#collab\?/.test(a.hash) || !a.hash.includes('map=1') || !a.hash.includes('r_p=angelo') || !a.hash.includes('w=72h') || !/Team and the machine/.test(a.title) || !a.map || a.dots < 3 || a.ownPlay || a.menu || a.overflow > 1) fail('landing ' + JSON.stringify(a));
+  if (!(after.fut >= after.total - 2 && after.fut > before)) fail('timeline did not follow the map');
+  if (!d.hash.includes('r_sel=') || !d.hash.includes('r_p=angelo') || !d.hash.includes('map=1') || d.scrub < d.min) fail('pick ' + d.hash);
+  if (errs.length) fail('errors ' + errs.join(' | ')); await p.close() }
+ await b.close(); console.log(ok ? 'PASS' : 'FAIL') })();
