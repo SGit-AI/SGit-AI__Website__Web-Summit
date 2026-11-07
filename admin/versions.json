@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1113",
+    "date": "2026-11-07",
+    "what": "/xray/: the RiskMandate X-ray page, a page and a deck per subject, and the decision page",
+    "by": "xray@web-summit.dinis",
+    "from": "a39a46bb3"
+  },
+  {
     "version": "v0.2.1112",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: ledger line, 18:35 run",
