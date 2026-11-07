@@ -54,6 +54,20 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - P-07 (policy@, 7 Nov, findings.md): is an email from a stranger a visitor's note (read by no agent, only sealed to Angelo)? Needed before inbox@'s design (crm@ due 16:50 run); also P-05 (team-collaboration still pushes its session branch).
 
+## Workload (7 Nov 08:20 UTC, last 24 h; tokens = ledger, without cache reads; commits counted by subject name, so a floor)
+
+| Agent | Wakes | Commits | Open work | Waits on | Tokens | Recommend |
+|---|---|---|---|---|---|---|
+| dev | 12 (every 2 h) | 1+ | context rules into kit (due 18:00) | nothing | 4.77M (17 lines) | keep: the heaviest builder, busy with Replay and WS-181 |
+| team-collaboration | 11 | 2+ | 18:00 records none yet; P-05 branch push | Angelo's parking | 5.67M (14 lines) | slow down: highest tokens, the 07:40 note says the work has spread out; fewer inbox wakes (6/day) |
+| dashboard | 8 (every 3 h) | 0 by subject | none routed | Angelo's tapped-spots choice | 1.97M | keep, or every 6 h while Angelo's questions stay unanswered |
+| helper | 2 | 0 | none | no questions | 1.38M (3 lines) | keep (twice a day is already lean) |
+| vault | 2 | 0 | sharness.kms analysis (due 09:50) | Angelo's WS-181 go, own token (WS-170) | 0.60M | keep |
+| crm | 2 | 0 | Accenture entry (08:50), inbox@ design (16:50) | Dinis's tokens (WS-172) | 0.27M | keep |
+| policy | 1 (proposed daily 07:10) | 1 | P-07 for Angelo | Angelo | not yet measured | keep |
+| runner.conductor | 24 | 4 | none | nothing | 0.04M | keep |
+| desk.conductor | 0 (no schedule) | 0 | none | Angelo | 0.34M | keep: on demand |
+
 ## Waiting on others
 
 - Dinis: the three SG/Send tokens (WS-170); where his transcript extension is (WS-98); CLAUDE.md lines for WS-129 and WS-179.
@@ -63,6 +77,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - Indi's side: whether accountant@web-summit.indi reads `people/angelo/ledger/` (WS-148).
 
 ## Recent
+
+- 7 Nov 08:20: the runner: nothing to route; nothing urgent. Since 07:20 only reports and others' work: team-collaboration's 07:40 daily note (9dd5c3e, For: desk: parking open, decisions wait on Dinis, no 18:00 records), dev's Replay map mode (1b8683d, For: Angelo, WS-97), Vicky's and Silvio's agents. No brief of Angelo's has come back. Workload table written (above).
 
 - 7 Nov 07:20: the runner: nothing to route; nothing urgent. policy@ run 2 (a071a51, `For: angelo`): P-07 for Angelo before inbox@ is built (a stranger's email is a visitor's note, R11; added to Open with Angelo), P-05 (team-collaboration still pushes its session branch, a policy matter), P-06 (low). Others' work, information only: dev@'s full-screen map fix under Silvio's calmer shell (7136d01), dashboard@silvio's two brains on the command centres of Silvio, Angelo and Jose (14f3f05, touches the shared engine, no change to Angelo's own apps), journalist@dinis's 06:57 report. No brief of Angelo's has come back.
 
@@ -82,8 +98,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 6 Nov 23:20: the runner: nothing to route. dashboard applied Angelo's Where request (5d7749e: fixed button order, a venue map with pins; pins live in the browser until WS-181's vault; touched dev's where.js and said so, `For: dev`): information only. dev's ledger line for Replay's map mode; runner.writer's first STATE (WS-125 not yet visible in the newsroom).
 
-- 6 Nov 22:21: the runner: nothing to route. vault@PrompTugal.angelo verified Jose's WS-120 reply (lane works both ways) and drafted WS-181's vault design (people/angelo/proposals/WS-181/vaults.md: three choices for Angelo, five questions for security@; nothing built; needs its own token, WS-170); team-collaboration and dashboard put the new name in their keys entries (646aec0, b45df3a): information only. The rest is Vicky's side (P26/P27 accepted, reports).
-
-- 6 Nov 21:20: the runner: nothing to route. dev applied Angelo's 20:00 answer (08651d0: its keys entry carries the new name, same key) and finished the maps patch (23d31aa, d210bcf: inventory counts every team's agents, kind rings on Angelo's map): reports, information only. The rest is Vicky's side (curator, journalists, reviewer, pm: WS-31 dropped at Vicky's word) and Silvio's Front Page (WS-177).
-
-last_run: 2026-11-07T07:20:00Z (the runner)
+last_run: 2026-11-07T08:20:00Z (the runner)
