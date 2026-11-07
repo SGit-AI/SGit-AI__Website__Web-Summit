@@ -1,0 +1,569 @@
+{
+ "subject": "RiskMandate (riskmandate.ai)",
+ "kind": "company",
+ "slug": "riskmandate",
+ "run_at": "2026-11-07T18:30:03.227Z",
+ "note": "What each model said, as leads: not facts until their sources are read.",
+ "cost_usd": 0.084,
+ "agents": [
+  {
+   "id": "perplexity",
+   "label": "Perplexity search",
+   "model": "perplexity/sonar",
+   "ms": 7973,
+   "cost_usd": 0.0061677,
+   "tokens": {
+    "in": 214,
+    "out": 1020
+   },
+   "finish": "stop",
+   "citations": [
+    {
+     "url": "https://riskmandate.ai/",
+     "title": "RiskMandate — Give agents access. Not free rein."
+    },
+    {
+     "url": "https://riskmandate.ai/about.html",
+     "title": "the company, the two founders, and the investor deck - RiskMandate.ai"
+    },
+    {
+     "url": "https://riskmandate.ai/contact.html",
+     "title": "contact: write to us, encrypted in your browser - RiskMandate.ai"
+    },
+    {
+     "url": "https://riskmandate.ai/team/",
+     "title": "The team: who does what, and what stands in the way - RiskMandate.ai"
+    },
+    {
+     "url": "https://riskmandate.ai/library.html",
+     "title": "RiskMandate — Library"
+    },
+    {
+     "url": "https://riskmandate.ai/early-access.html",
+     "title": "RiskMandate — early access: a behaviour policy for the agent you run, invite only"
+    },
+    {
+     "url": "https://riskmandate.ai/agent-behaviour-policy.html",
+     "title": "RiskMandate — Agent Behaviour Policies, one vault per application"
+    },
+    {
+     "url": "https://riskmandate.ai/agents/",
+     "title": "Agents: the contact file, the mailbox and the lane - RiskMandate.ai"
+    },
+    {
+     "url": "https://riskmandate.ai/scenarios.html",
+     "title": "How long will you accept this risk? - RiskMandate.ai"
+    },
+    {
+     "url": "https://github.com/Risk-Mandate/riskmandate.ai",
+     "title": "Risk-Mandate/riskmandate.ai: repo for main website vault"
+    },
+    {
+     "url": "https://riskmandate.ai/demo-licence-to-operate.html",
+     "title": "RiskMandate — Licence to Operate, live"
+    },
+    {
+     "url": "https://riskmandate.ai/questions.html",
+     "title": "questions we were asked - RiskMandate.ai"
+    },
+    {
+     "url": "https://riskmandate.ai/interview-founder-marketing.html",
+     "title": "RiskMandate — Half an hour of your advice, by voice"
+    },
+    {
+     "url": "https://riskmandate.ai/grant-gap.html",
+     "title": "RiskMandate — Know the risk. Name the owner. Own the mandate."
+    },
+    {
+     "url": "https://newsroom.sgit.ai/articles/riskmandate-ten-questions.html",
+     "title": "Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not, SGit Newsroom"
+    }
+   ],
+   "answer": {
+    "what_it_does": "RiskMandate is a UK-based platform for autonomous risk management that helps organisations document what an AI agent can reach, what it is authorised to do, and the gap between the two. Its main product is an Agent Behaviour Policy for one AI agent in one deployment, positioned as a licence-to-operate style control for agentic AI.",
+    "ai_agents": [
+     {
+      "name": "The site-running agent",
+      "what_it_does": "Runs parts of the RiskMandate site and handles inbound agent mail and encrypted vault workflows.",
+      "actions": [
+       "Monitors a dedicated mailbox identity",
+       "Accepts write-only encrypted messages into an encrypted vault",
+       "Lists, fetches, and decrypts vault contents",
+       "Maintains the site content and related workflows"
+      ],
+      "source": "https://riskmandate.ai/agents/"
+     },
+     {
+      "name": "RiskMandate policy assistant",
+      "what_it_does": "Produces an Agent Behaviour Policy for a named AI agent in a specific deployment, showing grant, mandate, delta, and barrier.",
+      "actions": [
+       "Documents what the agent can reach in vendor systems",
+       "Maps what the business authorised",
+       "Derives the gap between actual reach and authorised scope",
+       "Records barriers and controls around agent actions"
+      ],
+      "source": "https://riskmandate.ai/agent-behaviour-policy.html"
+     },
+     {
+      "name": "Early-access policy agent",
+      "what_it_does": "Creates a behaviour policy for an organisation’s real agent and asks the user to validate where it is wrong.",
+      "actions": [
+       "Inspects mailbox, code host, workflow tool, and CRM access",
+       "Drafts a policy vault for one agent",
+       "Compares vendor-documented reach to intended authorisation"
+      ],
+      "source": "https://riskmandate.ai/early-access.html"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Gmail and mailbox-connected agents",
+      "who_uses_it": "Organisations running agents with email access",
+      "what_the_agent_can_reach": [
+       "Email systems",
+       "Messages and attachments",
+       "User communications",
+       "Approval and exception workflows"
+      ],
+      "source": "https://riskmandate.ai/"
+     },
+     {
+      "name": "HR and payroll agents",
+      "who_uses_it": "Businesses with agents touching workforce operations",
+      "what_the_agent_can_reach": [
+       "HR systems",
+       "Payroll systems",
+       "Employee data",
+       "Sensitive administrative actions"
+      ],
+      "source": "https://riskmandate.ai/"
+     },
+     {
+      "name": "CRM and workflow-tool agents",
+      "who_uses_it": "Teams using AI agents in customer and automation systems",
+      "what_the_agent_can_reach": [
+       "CRM records",
+       "Workflow tools",
+       "Operational data",
+       "Business processes and approvals"
+      ],
+      "source": "https://riskmandate.ai/early-access.html"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "The product is explicitly framed around the risk that an AI agent can do more than was authorised, creating a gap between access and mandate.",
+      "when": "2026-11-07",
+      "source": "https://riskmandate.ai/agent-behaviour-policy.html"
+     },
+     {
+      "what": "RiskMandate says every agent action can create an exception, approval, or acceptance that needs an owner, blast radius, and expiry date.",
+      "when": "2026-10-10",
+      "source": "https://riskmandate.ai/grant-gap.html"
+     },
+     {
+      "what": "The company warns that the real question is not whether a risk exists, but how long it is accepted for, implying time-bounded operational risk management.",
+      "when": "2026-11-07",
+      "source": "https://riskmandate.ai/scenarios.html"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "RiskMandate’s public tagline is “Give agents access. Not free rein.”",
+      "source": "https://riskmandate.ai/"
+     },
+     {
+      "claim": "RiskMandate describes itself as an autonomous risk management and insurability layer for agentic AI.",
+      "source": "https://riskmandate.ai/questions.html"
+     },
+     {
+      "claim": "The company says its core product is the Agent Behaviour Policy, written for one agent in one deployment.",
+      "source": "https://riskmandate.ai/agent-behaviour-policy.html"
+     },
+     {
+      "claim": "The policy records what the agent can do, what was authorised, the delta, and what stands in the way.",
+      "source": "https://riskmandate.ai/agent-behaviour-policy.html"
+     },
+     {
+      "claim": "RiskMandate says it is run by two founders, Nimay Parekh and Dinis Cruz.",
+      "source": "https://riskmandate.ai/about.html"
+     },
+     {
+      "claim": "RiskMandate says it is UK-based and founder-led.",
+      "source": "https://riskmandate.ai/interview-founder-marketing.html"
+     },
+     {
+      "claim": "The company says the site, templates, and tooling are open source.",
+      "source": "https://riskmandate.ai/about.html"
+     },
+     {
+      "claim": "RiskMandate says it is not an insurer.",
+      "source": "https://riskmandate.ai/interview-founder-marketing.html"
+     },
+     {
+      "claim": "The company says it maintains SHarness, an open-source secure harness.",
+      "source": "https://riskmandate.ai/"
+     },
+     {
+      "claim": "RiskMandate publishes example policies for tools such as Claude Code, ChatGPT, and Gmail connectors.",
+      "source": "https://riskmandate.ai/interview-founder-marketing.html"
+     }
+    ]
+   },
+   "answer_urls": [
+    "https://riskmandate.ai/agents/",
+    "https://riskmandate.ai/agent-behaviour-policy.html",
+    "https://riskmandate.ai/early-access.html",
+    "https://riskmandate.ai/",
+    "https://riskmandate.ai/grant-gap.html",
+    "https://riskmandate.ai/scenarios.html",
+    "https://riskmandate.ai/questions.html",
+    "https://riskmandate.ai/about.html",
+    "https://riskmandate.ai/interview-founder-marketing.html"
+   ]
+  },
+  {
+   "id": "openai",
+   "label": "OpenAI search",
+   "model": "openai/gpt-5.4-nano:online",
+   "ms": 13844,
+   "cost_usd": 0.024956514,
+   "tokens": {
+    "in": 13018,
+    "out": 2084
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer": {
+    "what_it_does": "RiskMandate provides an “Agent Behaviour Policy” that documents what an AI agent is authorized to do, what it can actually reach, and the barriers that prevent it from stepping out of scope. It enforces rule-by-rule agent controls across systems (e.g., Gmail, CRM, HR, payroll, meeting apps) and alerts owners when actions would violate policy.",
+    "ai_agents": [
+     {
+      "name": "RiskMandate agent(s) that operate the site and supporting vaults",
+      "what_it_does": "Run the RiskMandate website and supporting “agent contact” mailbox/vault workflow, including reading incoming messages, drafting responses, and recording workflow items into a CRM-like system.",
+      "actions": [
+       "Read inbox messages on a schedule and produce a tagged plan of what needs to happen (without sending by default, except a verified lead instruction).",
+       "Draft replies/labels/filing actions in inbox threads.",
+       "Send outbound messages only from approved drafts and only where delivery is allowed by admin restrictions.",
+       "Record people/workflows/tasks and register program entries with owners in a CRM component.",
+       "Access encrypted vault tooling and keys for the site’s provenance/policy records via the agent identity and encrypted lane."
+      ],
+      "source": "https://riskmandate.ai/agents/"
+     },
+     {
+      "name": "Example “Inbox assistant” / system-specific agents (Gmail)",
+      "what_it_does": "Operate as a Gmail-capable agent subject to RiskMandate behavior policies that control what it can do and when an owner must approve actions.",
+      "actions": [
+       "Perform approved Gmail inbox assistant behaviors under a defined behavior policy.",
+       "Trigger approval/deny/hold outcomes when a requested action is outside enforceable policy constraints."
+      ],
+      "source": "https://riskmandate.ai/"
+     },
+     {
+      "name": "Example “Sales agent” / CRM agent",
+      "what_it_does": "Operate a CRM-related sales workflow that can export contacts only when policy conditions are met; otherwise it is held and escalated for approval.",
+      "actions": [
+       "Export CRM contacts subject to policy thresholds (e.g., exports over a record limit are held).",
+       "Escalate to owners for approval when an action violates the behavior policy."
+      ],
+      "source": "https://riskmandate.ai/"
+     },
+     {
+      "name": "Example “Payroll copilot” / payroll agent",
+      "what_it_does": "Operate payroll-related actions with controls that block or hold high-risk payroll operations (e.g., changing bank details or pay rates).",
+      "actions": [
+       "Attempt or perform payroll operations under policy enforcement.",
+       "Be blocked or held when attempting prohibited payroll actions (e.g., changing bank details/pay rates or starting off-cycle pay runs)."
+      ],
+      "source": "https://riskmandate.ai/"
+     },
+     {
+      "name": "Example “HR assistant”",
+      "what_it_does": "Answer HR questions under policy controls that can redact or hold certain sensitive content.",
+      "actions": [
+       "Answer HR-related prompts/actions subject to redaction/hold/block behavior rules."
+      ],
+      "source": "https://riskmandate.ai/"
+     },
+     {
+      "name": "Example “Meeting bot”",
+      "what_it_does": "Join specific meetings and follow policy restrictions for prohibited meeting types (e.g., HR/Legal meetings).",
+      "actions": [
+       "Join meetings only when allowed by behavior policy.",
+       "Block meeting participation when meetings are labeled HR or Legal."
+      ],
+      "source": "https://riskmandate.ai/"
+     },
+     {
+      "name": "Example “Drive agent” / Google Workspace Drive agent",
+      "what_it_does": "Perform Drive/Workspace file-sharing actions under policy controls that prevent prohibited sharing configurations.",
+      "actions": [
+       "Attempt workspace/Drive actions that can be blocked when they violate workspace policies (e.g., making a board deck public)."
+      ],
+      "source": "https://riskmandate.ai/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Agentic AI governance with enforced behavior policies",
+      "who_uses_it": "",
+      "what_the_agent_can_reach": [
+       "Business systems connected by “systems” categories listed by RiskMandate: Gmail, Google Workspace, HR, payroll, CRM, marketing, note takers, and meeting apps.",
+       "Policy-controlled actions within those systems (e.g., exports, meeting participation, and payroll operations) with approval gates for sensitive actions."
+      ],
+      "source": "https://riskmandate.ai/"
+     },
+     {
+      "name": "Control-plane documentation of what agents can actually touch (mandate vs. reach vs. barriers)",
+      "who_uses_it": "",
+      "what_the_agent_can_reach": [
+       "Agent capability discovery inputs/outputs used to draft the behavior policy (reach vs. mandate vs. gap).",
+       "Integration with an organization’s existing control planes via connectors (identity provider, cloud IAM, proxy, CI) as described in the “how it works” documentation."
+      ],
+      "source": "https://riskmandate.ai/how-it-works.html"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Hidden characters in a rules file caused two assistants to insert attacker-controlled script tags into generated code (described as a documented incident in RiskMandate’s Lab).",
+      "when": "Mar 2025",
+      "source": "https://riskmandate.ai/lab-commit-author.html"
+     },
+     {
+      "what": "A public issue in a repository caused an assistant to pull private repository contents into context and leak them into a pull request (described as a documented incident in RiskMandate’s Lab).",
+      "when": "May 2025",
+      "source": "https://riskmandate.ai/lab-commit-author.html"
+     },
+     {
+      "what": "An example agent behavior risk: CRM policy holds exports above a threshold; an example “Sales agent” request for exporting 12,400 contacts was held and escalated for approval rather than executed.",
+      "when": "N/A (example shown on product page; no date provided on the page)",
+      "source": "https://riskmandate.ai/"
+     },
+     {
+      "what": "An example enforcement risk: a “Drive agent” attempt to make a “Board deck” public is blocked by workspace policy.",
+      "when": "N/A (example shown on product page; no date provided on the page)",
+      "source": "https://riskmandate.ai/"
+     },
+     {
+      "what": "An example enforcement risk: a “Payroll copilot” attempt to change bank details for an employee is blocked by policy.",
+      "when": "N/A (example shown on product page; date/time shown as “Today 9:44 AM” on the page)",
+      "source": "https://riskmandate.ai/"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "RiskMandate describes itself as providing an “Agent Behaviour Policy” that records what one agent can reach, what it was authorized to do, the gap, and barriers preventing out-of-scope actions.",
+      "source": "https://riskmandate.ai/about.html"
+     },
+     {
+      "claim": "RiskMandate states that it enforces behavior policies in real time with alerts to owners by text and email (approval actions such as Allow/Redact/Hold/Block are shown).",
+      "source": "https://riskmandate.ai/"
+     },
+     {
+      "claim": "RiskMandate describes its enforcement model as having rules outside the agent that cannot be bypassed just by changing instructions inside a system prompt.",
+      "source": "https://riskmandate.ai/"
+     },
+     {
+      "claim": "RiskMandate describes that each agent capability is discovered and then bounded by barriers; it states the work is “shrinking” the gap between what an agent can reach and what it should do, with authority conferred by actual capability routes.",
+      "source": "https://riskmandate.ai/how-it-works.html"
+     },
+     {
+      "claim": "RiskMandate describes that it keeps policy records in an encrypted vault (with versions and provenance/sign-off), and that the vault keys are held by the customer/user (described as “you hold the keys”).",
+      "source": "https://riskmandate.ai/how-it-works.html"
+     },
+     {
+      "claim": "RiskMandate’s site documents an agent identity for its own operations: `[address removed]` as a monitored mailbox when addressed as an address, and as a write-only lane on an encrypted vault when addressed as an agent.",
+      "source": "https://riskmandate.ai/agents/"
+     },
+     {
+      "claim": "RiskMandate states its agent/contact information is provided in a machine-readable file at `/.well-known/sgit-agents.json` and that the page is built from it.",
+      "source": "https://riskmandate.ai/agents/"
+     }
+    ]
+   },
+   "answer_urls": [
+    "https://riskmandate.ai/agents/",
+    "https://riskmandate.ai/",
+    "https://riskmandate.ai/how-it-works.html",
+    "https://riskmandate.ai/lab-commit-author.html",
+    "https://riskmandate.ai/about.html"
+   ]
+  },
+  {
+   "id": "gemini",
+   "label": "Gemini search",
+   "model": "google/gemini-3.1-flash-lite:online",
+   "ms": 3334,
+   "cost_usd": 0.02857635,
+   "tokens": {
+    "in": 232,
+    "out": 538
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer": {
+    "what_it_does": "RiskMandate provides a governance layer for AI agents by creating 'Agent Behaviour Policies' that document and measure the gap between what an agent is granted access to and what it is authorized to do. It enables organizations to manage risk and insurability by defining and evidencing controls for autonomous agent actions outside of the runtime path.",
+    "ai_agents": [
+     {
+      "name": "Generic Agent Behaviour Policy (ABP)",
+      "what_it_does": "Serves as a formal, versioned document defining an agent's authorized capabilities, its actual reach, and the gaps between them.",
+      "actions": [
+       "Analyzes system access and permissions",
+       "Maps agent capabilities against organizational mandates",
+       "Tracks and records risk acceptance, ownership, and expiry",
+       "Provides an evidence trail for auditors and insurers"
+      ],
+      "source": "https://riskmandate.ai/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "AI Agent Governance and Insurability",
+      "who_uses_it": "CISOs, security leaders, and organizations deploying AI agents in high-stakes environments.",
+      "what_the_agent_can_reach": [
+       "Gmail and communication tools",
+       "HR and payroll systems",
+       "CRM databases",
+       "Meeting software",
+       "External APIs and vendor-master data"
+      ],
+      "source": "https://riskmandate.ai/"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Excess authority (grant vs. mandate gap), where agents possess broader technical permissions than business requirements dictate.",
+      "when": "Ongoing/General",
+      "source": "https://riskmandate.ai/"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "RiskMandate operates 'out-of-band' and is never in the request path of the AI agent, meaning it does not enforce decisions at runtime.",
+      "source": "https://riskmandate.ai/"
+     },
+     {
+      "claim": "The company uses an open-source model for its templates and tooling under Apache 2.0 and CC BY 4.0 licenses.",
+      "source": "https://riskmandate.ai/"
+     }
+    ]
+   },
+   "answer_urls": [
+    "https://riskmandate.ai/"
+   ]
+  },
+  {
+   "id": "openrouter",
+   "label": "OpenRouter web search",
+   "model": "anthropic/claude-haiku-5.5",
+   "plugins": [
+    {
+     "id": "web",
+     "max_results": 6
+    }
+   ],
+   "max_tokens": 4000,
+   "ms": 14899,
+   "cost_usd": 0.024259851,
+   "tokens": {
+    "in": 30824,
+    "out": 2845
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer": {
+    "what_it_does": "RiskMandate sells an Agent Behaviour Policy, a document for one AI agent in one deployment that lists everything the agent can reach, what it was authorised to do, the gap between the two, and what stands in the way. Its homepage positions the company as a business risk layer that maps each autonomous system to its blast radius, assigns a business owner, and drives an accept, fund, or fix decision.",
+    "ai_agents": [
+     {
+      "name": "RiskMandate site agent and mailbox agent ([address removed])",
+      "what_it_does": "Runs the company's public website and handles inbound messages to its shared mailbox, with a person making decisions on what is sent or filed.",
+      "actions": [
+       "Drains an encrypted write-only comms vault at each session of the site agent (Claude Code, on demand), decrypts messages and files them for a person",
+       "Drafts replies, but a person must see a draft before anything is answered; sends only to addresses the account is permitted to write to",
+       "Holds its own Google Workspace account and code-host account, so its actions are bounded by that account rather than a person's",
+       "Holds private keys inside the comms vault; the vault is not published",
+       "Accepts signed, encrypted agent-to-agent mail from allow-listed domains; unsigned or off-list messages are dropped"
+      ],
+      "source": "https://riskmandate.ai/agents/"
+     },
+     {
+      "name": "Agents that build and maintain riskmandate.ai",
+      "what_it_does": "Each agent that makes the website is described as holding its own Agent Behaviour Policy in the same format as the company's catalogue.",
+      "actions": [
+       "Edits and publishes pages in the riskmandate.ai site repository",
+       "Updates derived files such as the sitemap, robots file and llms.txt via repository scripts"
+      ],
+      "source": "https://riskmandate.ai/about.html"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Early-access Agent Behaviour Policy programme",
+      "who_uses_it": "Organisations and individuals who already run an AI agent with real access, such as a mailbox, code host, workflow tool or CRM, by invitation.",
+      "what_the_agent_can_reach": [
+       "Mailbox",
+       "Code host",
+       "Workflow tool",
+       "CRM"
+      ],
+      "source": "https://riskmandate.ai/early-access.html"
+     },
+     {
+      "name": "Early-adopter behaviour policy offer",
+      "who_uses_it": "Early users of The Cyber Boardroom and early adopters of RiskMandate, who receive a corrected policy for one agent they run.",
+      "what_the_agent_can_reach": [],
+      "source": "https://riskmandate.ai/early-adopters.html"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "The company states that riskmandate.ai is kept by one person and their agents, a concentration of operational dependence on a single operator.",
+      "when": "Not dated on the page",
+      "source": "https://riskmandate.ai/agents/"
+     },
+     {
+      "what": "The early-access programme states it is not a security assessment and makes no promise about an agent's behaviour.",
+      "when": "Current programme page, undated",
+      "source": "https://riskmandate.ai/early-access.html"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "RiskMandate is run by two founders: Nimay Parekh as co-founder and chief executive, and Dinis Cruz as co-founder.",
+      "source": "https://riskmandate.ai/about.html"
+     },
+     {
+      "claim": "The product is sold at four levels, from a pack to a reviewed policy with a named person's signature, using sixteen published template policies.",
+      "source": "https://riskmandate.ai/about.html"
+     },
+     {
+      "claim": "The company's early trading runs through The Cyber Boardroom, a UK-incorporated company, and a separate company for RiskMandate alone is being set up.",
+      "source": "https://riskmandate.ai/about.html"
+     },
+     {
+      "claim": "The early-adopter offer gives one agent an Agent Behaviour Policy corrected with the user, at the level the store sells for £500, free for thirty days from the email.",
+      "source": "https://riskmandate.ai/early-adopters.html"
+     },
+     {
+      "claim": "The site, templates and tooling are open source, and the site's pages are licensed under CC BY 4.0.",
+      "source": "https://riskmandate.ai/about.html"
+     },
+     {
+      "claim": "The public website repository is hosted on GitHub Pages and the site has no build step.",
+      "source": "https://github.com/Risk-Mandate/riskmandate.ai"
+     },
+     {
+      "claim": "The company's Agent Behaviour Policy is designed to show where an agent's mandate and its actual reach diverge, and the company says it never assigns a score to a behaviour policy.",
+      "source": "https://riskmandate.ai/about.html"
+     }
+    ]
+   },
+   "answer_urls": [
+    "https://riskmandate.ai/agents/",
+    "https://riskmandate.ai/about.html",
+    "https://riskmandate.ai/early-access.html",
+    "https://riskmandate.ai/early-adopters.html",
+    "https://github.com/Risk-Mandate/riskmandate.ai"
+   ]
+  }
+ ]
+}

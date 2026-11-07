@@ -1,0 +1,543 @@
+{
+ "subject": "SGit (sgit.ai), encrypted vaults and agent identity",
+ "kind": "company",
+ "slug": "sgit",
+ "run_at": "2026-11-07T18:30:08.917Z",
+ "note": "What each model said, as leads: not facts until their sources are read.",
+ "cost_usd": 0.087,
+ "agents": [
+  {
+   "id": "perplexity",
+   "label": "Perplexity search",
+   "model": "perplexity/sonar",
+   "ms": 7042,
+   "cost_usd": 0.0061182,
+   "tokens": {
+    "in": 217,
+    "out": 967
+   },
+   "finish": "stop",
+   "citations": [
+    {
+     "url": "https://sgit.ai/articles/seven-vaults-one-method.html",
+     "title": "Seven vaults, one method"
+    },
+    {
+     "url": "https://sgit.ai/docs/vault/vault-apps.html",
+     "title": "Building vault apps, SG/Vault"
+    },
+    {
+     "url": "https://sgit.ai/docs/what-is-sgit.html",
+     "title": "What is sgit, Docs"
+    },
+    {
+     "url": "https://sgit.ai/docs/quickstart.html",
+     "title": "Quickstart, sgit Docs"
+    },
+    {
+     "url": "https://sgit.ai/articles/what-sgit-is.html",
+     "title": "Git for things you cannot put on GitHub, sgit.ai"
+    },
+    {
+     "url": "https://sgit.ai/docs/agent-contact.html",
+     "title": "Agent Contact v0.1: signed, encrypted mail between the agents that run our websites, sgit.ai"
+    },
+    {
+     "url": "https://sgit.ai/docs/vault/sub-vaults.html",
+     "title": "Sub-vaults, SG/Vault"
+    },
+    {
+     "url": "https://sgit.ai/security/index.html",
+     "title": "Security model, sgit"
+    },
+    {
+     "url": "https://sgit.ai/index.html",
+     "title": "sgit (the encrypted git for humans and AI agents)"
+    },
+    {
+     "url": "https://sgit.ai/partnerships/vault-key-management.html",
+     "title": "Who holds the keys? A call for collaboration on vault key management, sgit.ai"
+    },
+    {
+     "url": "https://newsroom.sgit.ai/articles/the-agent-team-as-it-runs.html",
+     "title": "The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from, SGit Newsroom"
+    },
+    {
+     "url": "https://newsroom.sgit.ai/sections/vaults/index.html",
+     "title": "sgit & vaults"
+    },
+    {
+     "url": "https://sgit.ai/articles/where-the-vault-keys-live.md",
+     "title": "where-the-vault-keys-live.md"
+    },
+    {
+     "url": "https://sgit.ai/docs/vault/git-and-vaults.html",
+     "title": "Git repos inside vaults, SG/Vault"
+    },
+    {
+     "url": "https://github.com/SGit-AI/SGit-AI__Website__Newsroom/blob/dev/articles/messaging-fs.md",
+     "title": "SGit-AI__Website__Newsroom/articles/messaging-fs.md ..."
+    }
+   ],
+   "answer": {
+    "what_it_does": "sgit is described as git for encrypted vaults: it lets users clone, commit, branch, and merge files that are encrypted client-side before leaving the machine. The site also presents it as “the encrypted git for humans and AI agents,” with a focus on encrypted memory, agent identity, and governance.",
+    "ai_agents": [
+     {
+      "name": "Site agent identity / comms agent",
+      "what_it_does": "Runs a site in the sgit network, publishes a machine-readable contact file, and uses the site as the agent’s identity for signed, encrypted mail between agents.",
+      "actions": [
+       "Publishes public encryption and signing keys on the site",
+       "Publishes an append token for the agent’s public inbox lane",
+       "Receives encrypted messages in a comms vault",
+       "Reads messages only when the sender domain is allow-listed and the signature matches"
+      ],
+      "source": "https://sgit.ai/docs/agent-contact.html"
+     },
+     {
+      "name": "Vault app agent",
+      "what_it_does": "Interacts with encrypted vaults and can render vault contents such as history and diffs in environments where git may not be installed.",
+      "actions": [
+       "Clones encrypted vaults",
+       "Reads commit history and diffs",
+       "Works with vault content in sandboxes, CI containers, Lambdas, and other Python runtimes"
+      ],
+      "source": "https://sgit.ai/docs/vault/git-and-vaults.html"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Encrypted team memory",
+      "who_uses_it": "Teams and operators using vaults as durable shared memory for collaboration, CRM, notes, or work tracking.",
+      "what_the_agent_can_reach": [
+       "Encrypted vault data",
+       "Client-side decrypted files for authorized key-holders",
+       "Shared branches and history",
+       "Host storage that only sees ciphertext"
+      ],
+      "source": "https://newsroom.sgit.ai/articles/the-agent-team-as-it-runs.html"
+     },
+     {
+      "name": "Agent collaboration with identity separation",
+      "who_uses_it": "Organizations running multiple AI agents or workspaces that need separation between identities and data.",
+      "what_the_agent_can_reach": [
+       "Separate agent accounts",
+       "Separate vaults per identity",
+       "Branch-based collaboration across agents",
+       "Keys issued out of band to sessions"
+      ],
+      "source": "https://sgit.ai/docs/what-is-sgit.html"
+     },
+     {
+      "name": "Encrypted code archives",
+      "who_uses_it": "Developers or agents that need to store and inspect code inside encrypted vaults.",
+      "what_the_agent_can_reach": [
+       "Repo history inside a vault",
+       "Per-commit file changes",
+       "Python environments running without git installed"
+      ],
+      "source": "https://sgit.ai/docs/vault/git-and-vaults.html"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "The newsroom notes that commit authorship is not yet signed, so in a shared vault an agent’s identity comes from its branch rather than a signature.",
+      "when": "2026-11-02",
+      "source": "https://newsroom.sgit.ai/articles/the-agent-team-as-it-runs.html"
+     },
+     {
+      "what": "The newsroom says there is no key revocation yet, so rotating a read key protects future commits but not objects already fetched.",
+      "when": "2026-11-02",
+      "source": "https://newsroom.sgit.ai/articles/the-agent-team-as-it-runs.html"
+     },
+     {
+      "what": "The newsroom says the lane for direct vault-to-vault messaging is not wired end to end yet, which limits fully automated cross-vault communication.",
+      "when": "2026-11-02",
+      "source": "https://newsroom.sgit.ai/articles/the-agent-team-as-it-runs.html"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "sgit encrypts files with AES-256-GCM before they leave the machine.",
+      "source": "https://sgit.ai/docs/vault/vault-apps.html"
+     },
+     {
+      "claim": "The vault key is described as the address of the vault, the authorization to write to it, and the key that decrypts it.",
+      "source": "https://sgit.ai/articles/what-sgit-is.html"
+     },
+     {
+      "claim": "Whoever holds the vault key can decrypt the vault; the server cannot.",
+      "source": "https://sgit.ai/docs/what-is-sgit.html"
+     },
+     {
+      "claim": "sgit uses a two-branch model: a private clone branch per machine or agent plus shared named branches.",
+      "source": "https://sgit.ai/docs/what-is-sgit.html"
+     },
+     {
+      "claim": "The security model uses content-addressed object identity over ciphertext.",
+      "source": "https://sgit.ai/security/index.html"
+     },
+     {
+      "claim": "The site frames identity for agents, a key registry for agents, and ephemeral environments as core parts of the product.",
+      "source": "https://sgit.ai/index.html"
+     },
+     {
+      "claim": "The company is actively discussing vault key management with password managers and enterprise identity providers.",
+      "source": "https://sgit.ai/partnerships/vault-key-management.html"
+     }
+    ]
+   },
+   "answer_urls": [
+    "https://sgit.ai/docs/agent-contact.html",
+    "https://sgit.ai/docs/vault/git-and-vaults.html",
+    "https://newsroom.sgit.ai/articles/the-agent-team-as-it-runs.html",
+    "https://sgit.ai/docs/what-is-sgit.html",
+    "https://sgit.ai/docs/vault/vault-apps.html",
+    "https://sgit.ai/articles/what-sgit-is.html",
+    "https://sgit.ai/security/index.html",
+    "https://sgit.ai/index.html",
+    "https://sgit.ai/partnerships/vault-key-management.html"
+   ]
+  },
+  {
+   "id": "openai",
+   "label": "OpenAI search",
+   "model": "openai/gpt-5.4-nano:online",
+   "ms": 8573,
+   "cost_usd": 0.0125159661,
+   "tokens": {
+    "in": 8884,
+    "out": 1227
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer": {
+    "what_it_does": "SGit (sgit.ai) is “git for encrypted vaults”: it snapshots folders, encrypts objects client-side, and syncs only ciphertext so the server cannot read filenames, contents, or commit messages. It also provides an agent identity and encrypted messaging model where agents communicate via signed, encrypted “lanes” tied to vault-held keys.",
+    "ai_agents": [
+     {
+      "name": "Sgit site agent (@Sgit / [address removed])",
+      "what_it_does": "Receives signed agent mail from allow-listed sites, replies over their lanes, and “keeps the site and its vaults.”",
+      "actions": [
+       "Receive signed, encrypted agent mail over public lanes (allow-list protected).",
+       "Reply by writing to the sender site’s lane.",
+       "Operate using encryption/signing keys held in a comms vault that is not published."
+      ],
+      "source": "https://sgit.ai/agents/"
+     },
+     {
+      "name": "RiskMandate site agent ([address removed])",
+      "what_it_does": "Acts as the identity front door for agent/person communication for RiskMandate matters, bridging monitored mailbox behavior and write-only lane access on encrypted vaults.",
+      "actions": [
+       "Provide an identity for writing: monitored mailbox for people and a write-only lane for agents.",
+       "Manage subscription list updates for new articles via its lane.",
+       "Accept signed, encrypted agent mail written through the encrypted-vault lane mechanism."
+      ],
+      "source": "https://riskmandate.ai/agents/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Secure collaboration and state sharing between humans/AI agents in encrypted workspaces",
+      "who_uses_it": "",
+      "what_the_agent_can_reach": [
+       "Encrypted vault contents (files, histories) that are encrypted before leaving the agent/device.",
+       "Shared named branches for safe multi-agent collaboration (subject to the vault/keys used).",
+       "Server-stored ciphertext under opaque IDs (server cannot decrypt content)."
+      ],
+      "source": "https://sgit.ai/docs/what-is-sgit.html"
+     },
+     {
+      "name": "LLM-assisted work without exposing vault credentials (vault-mediated execution)",
+      "who_uses_it": "",
+      "what_the_agent_can_reach": [
+       "Encrypted project workspace inside a vault.",
+       "Cached/offline execution of a working application developed and delivered from within a vault.",
+       "Only the necessary credential material via the vault-held read/write keys (not raw secrets in the model context)."
+      ],
+      "source": "https://sgit.ai/demos/vaults/risk-mandate/index.html"
+     },
+     {
+      "name": "Encrypted, signed agent-to-agent (or site-to-agent) messaging via PKI contact files and lanes",
+      "who_uses_it": "",
+      "what_the_agent_can_reach": [
+       "A destination agent’s or site’s encrypted vault lane (append/write) to deliver signed, encrypted messages.",
+       "The recipient can decrypt and verify signatures after fetching from the lane using vault access it holds."
+      ],
+      "source": "https://sgit.ai/docs/agent-contact.html"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "No incidents found in the public materials reviewed; however, the platform documentation highlights operational/cryptographic security boundaries and limitations relevant to agent identity and shared vault collaboration.",
+      "when": "",
+      "source": "https://sgit.ai/articles/the-agent-team-as-it-runs.html"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "SGit encrypts files client-side using AES-256-GCM before they leave the machine; the server stores ciphertext under opaque IDs and cannot see filenames, contents, or commit messages.",
+      "source": "https://sgit.ai/docs/what-is-sgit.html"
+     },
+     {
+      "claim": "SGit vaults are folders that include a .sg_vault/ directory holding encrypted objects and refs/keys; pushing transfers ciphertext only.",
+      "source": "https://sgit.ai/docs/what-is-sgit.html"
+     },
+     {
+      "claim": "SGit agents are tied to identity contact files containing public encryption/signing keys and lane append tokens; agents communicate via signed, encrypted mail through vault lanes.",
+      "source": "https://sgit.ai/docs/agent-contact.html"
+     },
+     {
+      "claim": "[address removed] is described as a lane identity for signed, encrypted agent mail (not a conventional SMTP mailbox), and agent private keys live in a comms vault not published on the site.",
+      "source": "https://sgit.ai/agents/"
+     },
+     {
+      "claim": "The RiskMandate agents page describes [address removed] as both a monitored mailbox identity for people and a write-only lane identity for agents.",
+      "source": "https://riskmandate.ai/agents/"
+     },
+     {
+      "claim": "SGit’s “Risk Mandate” demo describes an LLM use without holding the API key inside the vault demo narrative, emphasizing credential isolation via the vault credential model.",
+      "source": "https://sgit.ai/demos/vaults/risk-mandate/index.html"
+     }
+    ]
+   },
+   "answer_urls": [
+    "https://sgit.ai/agents/",
+    "https://riskmandate.ai/agents/",
+    "https://sgit.ai/docs/what-is-sgit.html",
+    "https://sgit.ai/demos/vaults/risk-mandate/index.html",
+    "https://sgit.ai/docs/agent-contact.html",
+    "https://sgit.ai/articles/the-agent-team-as-it-runs.html"
+   ]
+  },
+  {
+   "id": "gemini",
+   "label": "Gemini search",
+   "model": "google/gemini-3.1-flash-lite:online",
+   "ms": 3953,
+   "cost_usd": 0.0427459725,
+   "tokens": {
+    "in": 235,
+    "out": 746
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer": {
+    "what_it_does": "SGit provides a version control system for encrypted vaults that enables git-like operations such as cloning, committing, and branching on client-side encrypted folders. It ensures data privacy by encrypting files with AES-256-GCM before upload, leaving the storage server with only opaque, content-addressed ciphertext.",
+    "ai_agents": [
+     {
+      "name": "RiskMandate Agent",
+      "what_it_does": "Operates as a monitored mailbox and a write-only lane on an encrypted vault, serving as an identity for agent-to-agent and human-to-agent communication.",
+      "actions": [
+       "Monitors communication via a public encryption key",
+       "Processes messages through a write-only inbox on an encrypted vault",
+       "Authenticates via Agent Contact v0.1 protocol",
+       "Uses PKI for encrypted file and message handling"
+      ],
+      "source": "https://riskmandate.ai"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Secure Multi-Agent Collaboration",
+      "who_uses_it": "AI agents and development teams",
+      "what_the_agent_can_reach": [
+       "Versioned, encrypted data vaults",
+       "Shared named branches for collaboration",
+       "Sandboxed applications residing within vaults"
+      ],
+      "source": "https://sgit.ai"
+     },
+     {
+      "name": "Credential-Free LLM Interaction",
+      "who_uses_it": "Applications running inside vaults",
+      "what_the_agent_can_reach": [
+       "Language models via the sg.llm bridge",
+       "Encrypted data structures without holding API credentials"
+      ],
+      "source": "https://llms.sgit.ai"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Refusal to open vaults due to mislabeled read keys (sgit_private_read_ instead of sgit_public_read_)",
+      "when": "September 20, 2026",
+      "source": "https://sgit.ai"
+     },
+     {
+      "what": "Risk of secret exposure on command line, disk, and agent transcripts when vault keys are handled by AI agents",
+      "when": "October 24, 2026",
+      "source": "https://sharness.ai"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "SGit vaults utilize AES-256-GCM client-side encryption, ensuring that storage providers cannot read file contents, filenames, or commit messages.",
+      "source": "https://sgit.ai"
+     },
+     {
+      "claim": "Vault keys (passphrase:vault-id) consolidate the server address, access credentials, and root of the local key-derivation hierarchy into a single string.",
+      "source": "https://sgit.ai"
+     },
+     {
+      "claim": "The project emphasizes open-source strategy and transparency, where development history and roles are tracked within publicly accessible vaults.",
+      "source": "https://sgit.ai"
+     }
+    ]
+   },
+   "answer_urls": [
+    "https://riskmandate.ai",
+    "https://sgit.ai",
+    "https://llms.sgit.ai",
+    "https://sharness.ai"
+   ]
+  },
+  {
+   "id": "openrouter",
+   "label": "OpenRouter web search",
+   "model": "anthropic/claude-haiku-5.5",
+   "plugins": [
+    {
+     "id": "web",
+     "max_results": 6
+    }
+   ],
+   "max_tokens": 4000,
+   "ms": 20591,
+   "cost_usd": 0.02563407,
+   "tokens": {
+    "in": 39095,
+    "out": 3967
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer": {
+    "what_it_does": "SGit (sgit.ai) is an encrypted, versioned workspace that lets humans and AI agents share state through git-style vaults, with files encrypted on the client before upload. Its CLI (sgit-ai) and a published security model describe what the storage server can and cannot see.",
+    "ai_agents": [
+     {
+      "name": "SGit site-building agents",
+      "what_it_does": "Several AI agents, coordinated by one person, build and publish the sgit.ai site and its vaults, handing work to each other through versioned vaults.",
+      "actions": [
+       "Clone a vault, read and write its files, commit, and push changes",
+       "Keep separate private clone branches, with merges onto named branches reviewed by a human",
+       "Pull the latest state in later sessions so work continues across context windows",
+       "Read the site's machine-readable maps (llms.txt, markdown twins of each page)"
+      ],
+      "source": "https://sgit.ai/"
+     },
+     {
+      "name": "riskmandate.ai site agent (Claude Code session)",
+      "what_it_does": "An agent on the riskmandate.ai site receives messages through an encrypted, write-only inbox lane on a vault and prepares replies that a person must approve before anything is sent.",
+      "actions": [
+       "Drain the encrypted inbox vault at each session, listing, fetching and decrypting queued messages",
+       "Draft replies that a person reviews before sending",
+       "Hold the vault key, which is what identifies it as the site agent",
+       "Reply only to addresses on an allow list; unsigned or unencrypted messages are dropped"
+      ],
+      "source": "https://riskmandate.ai/agents/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Shared versioned state for AI agents",
+      "who_uses_it": "Developers and teams running AI agents that need persistent, private shared files",
+      "what_the_agent_can_reach": [
+       "Encrypted vault contents and commit history",
+       "Files in shared named branches",
+       "Agent session state carried between sessions"
+      ],
+      "source": "https://sgit.ai/"
+     },
+     {
+      "name": "Client delivery of penetration test reports",
+      "who_uses_it": "Security testing firms and their clients, per the sgit.ai sample vault",
+      "what_the_agent_can_reach": [
+       "Findings, evidence and per-finding retest scripts packaged as one vault",
+       "Client re-runs of tests using a single vault string"
+      ],
+      "source": "https://sgit.ai/"
+     },
+     {
+      "name": "Encrypted vaults for version control and sync",
+      "who_uses_it": "Individuals and teams who need version control on files their storage host must not read",
+      "what_the_agent_can_reach": [
+       "Client-side encrypted files and their history on the host",
+       "Vault keys stored under local aliases"
+      ],
+      "source": "https://pypi.org/project/sgit-ai/"
+     },
+     {
+      "name": "Agent contact and inbox for the riskmandate.ai identity",
+      "who_uses_it": "Other agents and organisations that write to the riskmandate.ai agent identity",
+      "what_the_agent_can_reach": [
+       "Incoming signed, encrypted messages in an append-only inbox lane",
+       "Drafts awaiting human approval before any reply goes out"
+      ],
+      "source": "https://riskmandate.ai/agents/"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "The sgit.ai site reports that a team owning an API reviewed a vault built from a published brief and found the brief wrong in two places; the correction was added above the original mistake.",
+      "when": "Not dated on the page",
+      "source": "https://sgit.ai/index.html"
+     },
+     {
+      "what": "The sgit.ai site reports that one agent forked another agent's vault, kept every byte, added a layer, and the original's tests still passed inside the fork.",
+      "when": "Not dated on the page",
+      "source": "https://sgit.ai/index.html"
+     },
+     {
+      "what": "The project states that sgit is in beta, while describing production workflows running on it daily.",
+      "when": "Current as of the page's last crawl (2026)",
+      "source": "https://sgit.ai/"
+     },
+     {
+      "what": "The published threat model states the server can still see object sizes, timing and vault IDs, so metadata is not hidden.",
+      "when": "Current as of the page's last crawl (2026)",
+      "source": "https://sgit.ai/index.html"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Files are encrypted client-side with AES-256-GCM before they leave the user's machine, and the server never receives a key.",
+      "source": "https://pypi.org/project/sgit-ai/"
+     },
+     {
+      "claim": "Per-file encryption keys are derived with HKDF, and vault keys are derived with PBKDF2-SHA256 using 600,000 iterations.",
+      "source": "https://github.com/SGit-AI/SGit-AI__CLI"
+     },
+     {
+      "claim": "The storage server is said to see only ciphertext and never a filename, file contents, or commit message.",
+      "source": "https://pypi.org/project/sgit-ai/"
+     },
+     {
+      "claim": "The CLI includes public-key tooling that generates RSA-4096 and ECDSA P-256 key pairs, signs and verifies documents, and performs hybrid RSA-OAEP and AES-256-GCM encryption.",
+      "source": "https://pypi.org/project/sgit-ai/"
+     },
+     {
+      "claim": "The project is released under the Apache-2.0 licence and is installable as a Python package named sgit-ai.",
+      "source": "https://sgit.ai/"
+     },
+     {
+      "claim": "The riskmandate.ai agent identity is a monitored mailbox for people and a write-only lane on an encrypted vault for agents, and the agent's private keys sit inside that vault.",
+      "source": "https://riskmandate.ai/agents/"
+     },
+     {
+      "claim": "The riskmandate.ai agent contact file follows a published protocol named Agent Contact v0.1, and the agent's own Google Workspace account bounds what the agent can do under that identity.",
+      "source": "https://riskmandate.ai/agents/"
+     },
+     {
+      "claim": "A sgit repository on GitHub is described as storing only ciphertext on its server, with all cryptography run locally.",
+      "source": "https://github.com/SGit-AI/SGit-AI__CLI"
+     }
+    ]
+   },
+   "answer_urls": [
+    "https://sgit.ai/",
+    "https://riskmandate.ai/agents/",
+    "https://pypi.org/project/sgit-ai/",
+    "https://sgit.ai/index.html",
+    "https://github.com/SGit-AI/SGit-AI__CLI"
+   ]
+  }
+ ]
+}
