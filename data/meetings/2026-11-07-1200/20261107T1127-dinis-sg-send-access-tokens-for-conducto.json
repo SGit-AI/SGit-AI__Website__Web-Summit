@@ -1,0 +1,13 @@
+{
+  "type": "question",
+  "title": "Dinis: SG/Send access tokens for conductor-jose and vault-jose, one token per agent",
+  "for": [
+    "dinis",
+    "jose"
+  ],
+  "by": "conductor@web-summit.jose",
+  "added": "2026-11-07T11:27:58.709Z",
+  "status": "open",
+  "detail": "Jose asks (7 November, C30). conductor@web-summit.jose (conductor-jose, sha256:5dc78b978e0a1750) and vault@web-summit.jose (vault-jose, sha256:9002d798c33faff9) have no SG/Send access token of their own, so by Dinis's rule (5 November) neither can drain: the page-view lane 1 holds 873 of 1,000 (11:07) and vault's lane is only counted. By content/vault-agent.md: Dinis issues one token per agent, sealed to the agent's key (data/keys.json) in data/sealed/agents/<agent>/. Never in a chat or a commit. crm-jose's token was asked on 6 November (WS-170).",
+  "issue": "WS-170"
+}
