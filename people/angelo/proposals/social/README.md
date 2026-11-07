@@ -18,14 +18,25 @@ After the summit, drop the last part. (Not "Technical lead at RiskMandate": on L
 
 **Summary.** Keep it as it is, and add two lines at the top (what LinkedIn shows before "see more"):
 
-> This week I'm at Web Summit Lisbon with the RiskMandate team, running the AI agents behind our work and the policies that keep them in their lane. Find me at RiskMandate's stand on Thursday 12 November.
+> This week I'm at Web Summit Lisbon, collaborating with the RiskMandate team, running the AI agents behind our work and the policies that keep them in their lane. Find me at RiskMandate's stand on Thursday 12 November.
 
-**Experience: no new RiskMandate entry.** A separate entry under RiskMandate's name would read as a job there. Instead, one of these, his choice:
-- **A: a line in his "Independent Consultant" entry** (it stays the current role):
+**Experience: no new RiskMandate entry; both a line and a Project** (Angelo, 7 November: he is collaborating with RiskMandate on this Web Summit operation, with no fixed agreement for it). A separate entry under RiskMandate's name would read as a job there; "collaborating with" says what it is, without implying a contract or a client.
 
-> Since November 2026: working with the RiskMandate team on Web Summit Lisbon 2026, as the technical lead for the team's site, its AI agents and the behaviour policies they work under.
+- **A: one line at the top of his "Independent Consultant" entry** (it stays the current role), so anyone who opens the profile sees it:
 
-- **B: a Project** (LinkedIn's Projects section), associated with the Independent Consultant entry: *RiskMandate at Web Summit Lisbon 2026*, November 2026, with the same line, and RiskMandate mentioned in the description rather than as the employer.
+> Since November 2026: collaborating with the RiskMandate team on Web Summit Lisbon 2026 (see Projects).
+
+- **B: a Project** in LinkedIn's Projects section, associated with the Independent Consultant entry:
+  - Name: *RiskMandate at Web Summit Lisbon 2026*
+  - Dates: November 2026 (an end date after the summit, so it reads as finished work, not a role)
+  - Description:
+
+> A collaboration with the RiskMandate team for Web Summit Lisbon 2026: the technical side of the team's site, the AI agents that run much of the work, and the behaviour policies they work under. Writing for PrompTugal.news, and live demos of the agentic workflow at RiskMandate's stand.
+>
+> The agent setup guide: https://promptugal.news/articles/agent-setup-guide.html
+> The communication graph: https://promptugal.news/articles/angelos-communication-graph.html
+
+  - Team members: add the people he worked with, if they agree.
 
 **Featured** (new; in this order):
 1. Set up your AI agents and decide what each may do (PrompTugal.news): https://promptugal.news/articles/agent-setup-guide.html
@@ -60,7 +71,7 @@ Short, in his voice, one link each; tag RiskMandate in every post. Times are sug
 
 ### Sun 8, evening. The declaration: I'm at Web Summit
 
-> I'm at Web Summit Lisbon from Monday, working with the RiskMandate team.
+> I'm at Web Summit Lisbon from Monday, collaborating with the RiskMandate team.
 >
 > Come and find me at RiskMandate's stand on Thursday 12 November: booth A1-30, ALPHA 1, Pavilion 1.
 >
@@ -108,6 +119,6 @@ Needs the page's admins (for Angelo to take to Dinis and Nimay): posting the gui
 
 ## Open, for Angelo
 
-1. Option A or B for the experience section, and whether "working with the RiskMandate team" is how he wants the relationship described.
+1. Both A and B for the experience section (Angelo, 7 November), worded as "collaborating with"; nothing more formal until there is an agreement.
 2. Jose's demo in the Thursday post: Angelo's card names it; Jose to agree to being named.
 3. The "paid consultancy" tone line the desk relayed stays out of the RiskMandate posts (what RiskMandate offers is for Dinis and Nimay). His own consulting entry and summary are his, and stay as they are.
