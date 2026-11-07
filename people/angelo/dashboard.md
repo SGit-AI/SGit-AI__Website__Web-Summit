@@ -32,13 +32,14 @@ Your go is needed before these move:
 Nine agents, named `<role>@PrompTugal.angelo` from 6 November (the conductor as desk and runner). All but one work through your conductor; the policy agent audits them all, the conductor included, and reports to you directly. What each did is in "My agents, as the team sees them" at the top, and on [the collaboration board](app/index.html#collab).
 
 - **conductor:** the hub, in two parts: a lean hourly runner (its last line says "URGENT for Angelo:" or "Nothing urgent."), and the desk, which writes your digest when you ask.
-- **dev:** your command centre: offline, the "✦ Angelo's own" mark, "Decide first" in Needs me now (one-click once Dinis's dashboard agent takes the cockpit patch), Replay, and Team and the machine with computed setup levels, the PrompTugal newsroom's agents and three map layouts; drafts routed for WS-36, WS-78, WS-106 and the team maps. Every two hours.
+- **dev:** your command centre (Kanban, Team and the machine, Summit days, Replay, Where) and reviews of your guides; hourly. Writing the spec for four new agents for your review today.
 - **team-collaboration:** stand-ups, debriefs, the daily note, the stand-up show; brief at 11:40 and 17:40, debrief at 13:15 and 19:15; and the whole team as one map, now also in [your command centre](app/index.html#collab).
-- **vault:** your vaults; the lane to your conductor is made, and Jose's vault agent verified its first signed test (WS-120). It now pushes no vault until it has its own SG/Send token (the vault guide's new rule), so draining lanes waits on that token from Dinis; your conductor asks.
-- **crm:** your area in the team's private CRM; 08:50 and 16:50 UTC.
+- **vault:** your vaults and the lane to your conductor (WS-120); what the live map and venues may show, and sharness.kms, analysed; every four hours. It pushes no vault until it has its own SG/Send token.
+- **crm:** your area in the team's private CRM, and the inbox agent built to its lane at your go; every three hours.
 - **helper:** setup questions and the help page (WS-158); twice a day, 10:50 and 16:50 UTC.
 - **writer** (new): your articles, guides and technical notes for PrompTugal.news, a session per piece that you start; its **runner** checks the newsroom every two hours and keeps the writer's state.
-- **policy:** the auditor of your agents against their ABPs and your protocol; read-only, reports to you. Its first audit: [the map](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/policy/map.md) and [the findings](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/policy/findings.md).
+- **policy:** the auditor of your agents against their ABPs and your protocol; read-only, reports to you. Twice a day, 07:10 and 19:10 UTC; [the map](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/policy/map.md) and [the findings](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/policy/findings.md).
 - **dashboard:** this page and your command centre; every three hours.
+- **Coming, once you have reviewed their spec:** dev.map (Team and the machine, live), dev.venues (the venue map and our private locations, WS-181), research (public briefs before meetings) and social (your LinkedIn, drafts only; you post).
 
 Questions? [The help page](../../help/index.html), kept by helper@PrompTugal.angelo.
