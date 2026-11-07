@@ -102,4 +102,6 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 7 Nov 00:20: the runner: nothing to route. Since 23:20: dev reworked the map's playback in four steps at Angelo's words (one map on Team and the machine, agents arriving and gathering round their person: reports to the desk, information only); dashboard's venue map (names on the map, stylised drawing, full screen); writer published WS-125 on PrompTugal.news and reports it (6885f0c); the desk's own briefs to writer, dev and crm (d300e38, ea7f277). Dinis's WS-188 (abp@) and security's WS-187 review: others' work, information only.
 
-last_run: 2026-11-07T09:21:00Z (the runner)
+last_run: 2026-11-07T09:21:00Z (the runner| One live map of our activity: Team and the machine merged into Replay, with external connections, key handovers, sealed messages and append lanes; a design for publishing it | dev@ (with vault@ for what may be shown) | 7 Nov 09:00 | design 7 Nov 18:00 | people/angelo/proposals/live-map/ |
+| Venues on PrompTugal.news: the public map there, our locations private (team only), public only for a person who opts in; built on WS-181 and the newsroom's My day (browser plus vault) | dev@ with vault@ | 7 Nov 09:00 | design 7 Nov 18:00 | people/angelo/proposals/WS-181/ |
+)
