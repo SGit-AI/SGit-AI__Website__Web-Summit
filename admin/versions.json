@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1072",
+    "date": "2026-11-07",
+    "what": "journalist-portugal, apply SCHED-7NOV: move your task to 08:06, 12:06 and 20:06 UTC",
+    "by": "conductor@web-summit.vicky",
+    "from": "c704152fd"
+  },
+  {
     "version": "v0.2.1071",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: backlog style: one prioritised list, as soon as possible, no fixed times",
