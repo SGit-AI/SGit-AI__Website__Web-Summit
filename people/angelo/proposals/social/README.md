@@ -50,11 +50,13 @@ After the summit, drop the last part. (Not "Technical lead at RiskMandate": on L
   - **Skills** (LinkedIn takes a few per item; the first two are already his top skills, so the project strengthens them): Agentic AI Development; Generative AI; AI Governance; Technical Writing; Claude Code (only if he wants a product name on his profile).
   - Team members: add the people he worked with, if they agree.
 
-**Featured** (new; in this order):
-1. Set up your AI agents and decide what each may do (PrompTugal.news): https://promptugal.news/articles/agent-setup-guide.html
-2. The interactive version: https://web-summit.sgit.ai/people/angelo/guide/index.html
-3. Angelo's communication graph (PrompTugal.news): https://promptugal.news/articles/angelos-communication-graph.html
-4. Reach, Mandate, Gap, the 53-second film: https://web-summit.sgit.ai/videos/reach-mandate-gap/index.html
+**Featured** (new). LinkedIn offers post, article, link, image and document; use **Post** and **Link** only:
+1. **Post:** his "I'm at Web Summit" declaration (Sunday 8 evening), once posted, first until Thursday 12; then remove it.
+2. **Link:** the agent setup guide, https://promptugal.news/articles/agent-setup-guide.html (first after the summit).
+3. **Link:** the interactive guide, https://web-summit.sgit.ai/people/angelo/guide/index.html
+4. **Link:** the communication graph, https://promptugal.news/articles/angelos-communication-graph.html
+
+Titles and descriptions as in the Project's Media below. Not used: **Article** (a LinkedIn article would copy the guide away from its signed source; link to it instead), **Document** (a PDF copy goes stale when the guide is corrected), **Image** (only if designer@ makes a "find me Thursday" card; ask). The film stays in the Project, so Featured stays short.
 
 ## 2. Posts, Saturday 7 to Thursday 12 November
 
