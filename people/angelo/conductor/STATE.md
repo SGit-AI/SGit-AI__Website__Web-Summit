@@ -39,6 +39,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Open with Angelo (the desk's list)
 
+- vault@'s 12:14 report (5c1e5d3): SG_SEND_PASSPHRASE must be added to vault@'s environment by Angelo (hardening step 3); recommendation: add it and keep a copy in his password manager. Also: the sealed QR for Dinis by 11 Nov this weekend.
 - vault@'s 10:19 digest (557e322): six open questions with its recommendations; tier 3 among them: his token out of vault@'s three clones (ask on its own). The rest: the QR of ucvg2pkv's key for Dinis by 11 Nov, sharness.kms after the summit, WS-181's vault split, the live map's public view, vault@'s own token (Dinis).
 - inbox@PrompTugal.angelo (crm@'s design, e8eb75d): his go is tier 3, asked as two questions: (1) switch the three Gmail send tools off; (2) create its scheduled task with the Gmail connector. Settle P-07 (a stranger's email is a visitor's note) first. Read people/angelo/proposals/inbox/README.md.
 - Topics still to discuss: 10 SG/Send deep dive (with diagrams); 11 the PromptUGAL.news rebranding's changes to his workflows; 12 an editorial team of agents for articles.
@@ -87,6 +88,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 7 Nov 12:20: the runner: nothing to route; nothing urgent (Angelo is in the desk session, which routed his 12:15 words: no stand-up, publishing already allowed by Dinis, hablla link to Dinis's conductor and crm, WS-180 go to writer@). Back: vault@'s report (5c1e5d3, For: desk): hardening steps 1, 2, 4 done, step 3 blocked on SG_SEND_PASSPHRASE in its environment (only Angelo can add it: added to Open with Angelo); the kms changeset PLAN (nine pieces); WS-181 zones by default. dev@ re-synced the WS-125 guide (c5814ae) and approved the six-agent spec (645d429, 7155904). Others' work, information only: Vicky's standing answers 16 and 17, Jose's Agents board, abp@dinis, security@dinis (WS-187, WS-188).
+
 - 7 Nov 11:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session; the desk already briefed and routed his answers). Since 10:21: Angelo's three answers on P-08, P-07 and WS-125's fixes (97eaa94, 01aa9ac), the four hardening steps (130fe1c), zones by default for WS-181 (592d109, dev 4dead81), his words that agents publish what he started and newsroom changes go direct (e145647, now in the protocol). Back: writer@'s interactive WS-125 guide live (aafbbb0, 2222782: asks dev@ to re-sync the fragment) and LinkedIn drafts for Angelo (8d280f5, WS-126: his to read, he posts himself); dev@'s five-agent spec (7c99981); every agent's token check done by those that ran (vault, dashboard, helper: "token: not set"). Others' work, information only: Vicky's agents (inbox@vicky, schedules, covers rule), journalist@dinis.
 
 - 7 Nov 10:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session: "Wake up" at 10:19, the agents answered with direct-session reports). Back: vault@'s sharness.kms (6d3ccd6: after the summit, four small steps now) and live-map/venues analysis (81bb8ec); vault@'s six open questions (557e322), of which one is tier 3 for Angelo (remove his token from vault@'s three clones: added to Open with Angelo). crm@'s inbox agent built at his go (6bbb671) and crm now every 3 h (d53e0f4); crm@'s hablla finding (a0906f0) is for Dinis's conductor and crm, unanswered. Faster schedules, specs-before-builds and dev.links brief are the desk's own. Others' work, information only: checker@vicky, mentor, dev@jose.
@@ -105,6 +108,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 7 Nov 03:21: the runner: nothing to route. Since 02:21 only others' work: Silvio's side (crm@ opened the private CRM key and asks for sgit and a token of its own, WS-172; conductor@silvio's "done for me" in the command centre; outreach@silvio's side-events page, 269 events), journalist@dinis's 02:57 report, dev's PrompTugal snapshot (nothing new). Information only; no brief of Angelo's has come back yet.
 
-- 7 Nov 02:20: the runner: nothing to route. Since 01:20 only Silvio's side: outreach@silvio's world 1 research (7af0a78, 29c060d: Booking.com, Amex GBT and more, For: newsroom@dinis) and conductor@silvio's merch note (95dad61: paid, files with the printer, pickup Monday). Information only; no brief of Angelo's has come back yet.
-
-last_run: 2026-11-07T11:20:00Z (the runner)
+last_run: 2026-11-07T12:20:00Z (the runner)

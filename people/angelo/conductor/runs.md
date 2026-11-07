@@ -29,3 +29,4 @@
 2026-11-07T09:21Z | no session id (get_session unavailable) | two briefs back (crm inbox design, dev WS-125 review), nothing to route; inbox go added to Open with Angelo; STATE upkeep
 2026-11-07T10:21Z | no session id | nothing to route; vault's sharness.kms and digest in; tier-3 token-removal added to Open with Angelo; STATE upkeep
 2026-11-07T11:20Z | no session id | nothing to route; WS-125 guide live and LinkedIn drafts (WS-126) noted; STATE upkeep
+2026-11-07T12:20Z | no session id | nothing to route; vault hardening report (passphrase env var is Angelo's) and dev spec/guide re-sync noted; STATE upkeep
