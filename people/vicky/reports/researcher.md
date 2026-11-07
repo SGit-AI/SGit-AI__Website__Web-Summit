@@ -78,3 +78,8 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
 - The summit: roads around the venue close from 19:00 on 8 November to 23:00 on 12 November, residents' garages kept open; a temporary Carris terminal by Gare do Oriente, and drop-off areas on Rua do Caribe and Alameda dos Oceanos ([Junta de Freguesia do Parque das Nações, "Web Summit – Condicionamentos de trânsito entre 9 e 12 de novembro"](https://www.jf-parquedasnacoes.pt/autarquia/noticias/web-summit-condicionamentos-de-transito-entre-9-e-12-de-novembro)).
 - state: ok; done: 1 capture (road closures); next: 07:30 run; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, 07:30 UTC run
+
+- decisions.md read first (new entries pushed from riskmandate-vicky): no HOLD.md; applied P22 (I don't use Gmail) and P27 (no prompt text in reports; my prompts file holds no private names); P17's note now goes in people/vicky/handover/; prompts file re-read, no difference. 0 captures went into vault 41j3e9s9; a Coimbra startup story could not be found at its source ([Notícias de Coimbra](https://www.noticiasdecoimbra.pt/)).
+- state: idle

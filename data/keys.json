@@ -1146,7 +1146,9 @@
         "fingerprint": "sha256:a1310b3a70f44df5",
         "signing_fingerprint": "sha256:4bd02b7006a59cdd"
       },
-      "status": "active"
+      "status": "active",
+      "renamed_to": "policy@PrompTugal.angelo",
+      "renamed": "7 November 2026, under Angelo's names of 6 November (people/angelo/kit/README.md, 90299d08): the same key and id, the agent's new name; it signs as policy@PrompTugal.angelo from then on."
     },
     {
       "id": "checker-vicky",

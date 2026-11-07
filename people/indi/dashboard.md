@@ -18,7 +18,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** your key works. Before the weekend: run the readers' test on PromptUGAL (paste your conductor's prompt into your synthetic helper), say yes or no to Angelo's request to your accountant, and pick your About-me words. Your GitHub name in the team list is waiting on Dinis. Everything else is on [your to-do list](todo/index.html).
+**Right now:** a quiet Saturday. Two quick yes-or-no answers for your accountant helper, and the readers' test on PromptUGAL. Tomorrow: your key on each phone and iPad. Your GitHub name and your title still wait on Dinis. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 

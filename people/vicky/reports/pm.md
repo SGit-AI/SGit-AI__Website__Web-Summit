@@ -64,3 +64,10 @@ To conductor@web-summit.vicky, one entry per wake that did or found something (p
 - WS-31 is due tomorrow (Sat 7 Nov): the schedules are built and committed in the private vault but not pushed. pm@ has no SG/Send token of its own (WS-170), as I told Vicky in her session at about 12:00. Her answer is the only thing it waits on.
 - WS-153 is still open: conductor@web-summit.dinis hasn't confirmed on the issue that it can open the vaults. WS-48: logistics@ has the garment files waiting for Dinis, on the 18:00 (38d68c7).
 - state: partial; done: decisions.md read, P10 and P17 applied; next: 07:40 daily run; ask: for WS-31, a token for pm@ from Dinis (recommended) or vault@ rebuilds and pushes?; run: scheduled
+
+## 7 November 2026, 07:40 UTC (wake)
+
+- Read people/vicky/decisions.md (2d9bc36); no HOLD.md. Applied P22 (I never use Gmail), P27 (no prompt text in reports or other public files; prompts/pm.md has no private names), and P17 as updated (the hand-over note goes in people/vicky/handover/). Re-read prompts/pm.md (P2): it matches.
+- Daily run (people/vicky/board-health.md): 190 issues; 10 due today, 6 of them with no owner; 120 overdue. WS-31 is closed as not needed (4612028). WS-153 still waits for conductor@web-summit.dinis; WS-163 has no answer yet from the other four.
+- WS-48: the merch ready day is not confirmed, Monday 9 or Tuesday 10 (92f4820).
+- state: ok; done: daily board-health and alignment notes, P17, P22, P27 applied; next: 17:40 check; ask: none; run: scheduled

@@ -52,6 +52,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - Keys and secrets (6 Nov 20:15): option A chosen, one cloud environment per agent with a secret (kit). Angelo sets up the environments (the steps in the desk's reply); Angelo removed his own SG/Send token from "Full Access" (6 Nov 20:25); sessions started before still carry it in their environment until they end: no agent uses it (one token per agent). Environments now (6 Nov 22:55): "desk.conductor env" (env_0184kEGHCLipr7NCahgvQAyR, the former Full Access: the desk's own) and "PrompTugal.angelo shared" (env_01Bj9f5wqStWMqi7id2FbqMX, no secrets: every keyless agent, the runners and the writer, as each starts a new session). Next: vault's and crm's own, when their tokens come. sharness.kms analysis delegated to vault@PrompTugal.angelo; Angelo then decides whether to build a changeset for Dinis's agents.
 
+- P-07 (policy@, 7 Nov, findings.md): is an email from a stranger a visitor's note (read by no agent, only sealed to Angelo)? Needed before inbox@'s design (crm@ due 16:50 run); also P-05 (team-collaboration still pushes its session branch).
+
 ## Waiting on others
 
 - Dinis: the three SG/Send tokens (WS-170); where his transcript extension is (WS-98); CLAUDE.md lines for WS-129 and WS-179.
@@ -61,6 +63,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - Indi's side: whether accountant@web-summit.indi reads `people/angelo/ledger/` (WS-148).
 
 ## Recent
+
+- 7 Nov 07:20: the runner: nothing to route; nothing urgent. policy@ run 2 (a071a51, `For: angelo`): P-07 for Angelo before inbox@ is built (a stranger's email is a visitor's note, R11; added to Open with Angelo), P-05 (team-collaboration still pushes its session branch, a policy matter), P-06 (low). Others' work, information only: dev@'s full-screen map fix under Silvio's calmer shell (7136d01), dashboard@silvio's two brains on the command centres of Silvio, Angelo and Jose (14f3f05, touches the shared engine, no change to Angelo's own apps), journalist@dinis's 06:57 report. No brief of Angelo's has come back.
 
 - 7 Nov 06:21: the runner: nothing to route. Since 05:21 only dashboard@silvio's WS-189 (`For: conductor@web-summit.dinis`, dinis, dev@silvio: how the Summit desk writes to the private CRM, four questions, and six for the demo; nothing built): others' work, information only. No brief of Angelo's has come back.
 
@@ -82,6 +86,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 6 Nov 21:20: the runner: nothing to route. dev applied Angelo's 20:00 answer (08651d0: its keys entry carries the new name, same key) and finished the maps patch (23d31aa, d210bcf: inventory counts every team's agents, kind rings on Angelo's map): reports, information only. The rest is Vicky's side (curator, journalists, reviewer, pm: WS-31 dropped at Vicky's word) and Silvio's Front Page (WS-177).
 
-- 6 Nov 20:21: the runner: nothing to route. Angelo's 20:00 answers (fd819c3) already in the record: agents keep their keys and add the new name to their own entry; abp@'s 630ca8a8 accepted. abp@web-summit.dinis renamed Angelo's eleven agents in the ABPs and lifted his protocol's first rule (32632da, `For: desk.conductor`): information only; Vicky's side (standing answers 10, 11, reviewer/curator/dev reports): information only.
-
-last_run: 2026-11-07T06:21:00Z (the runner)
+last_run: 2026-11-07T07:20:00Z (the runner)

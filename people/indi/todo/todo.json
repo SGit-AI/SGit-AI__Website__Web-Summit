@@ -1,6 +1,6 @@
 {
  "about": "Indi's list of everything left to do, drawn as the infographic at /people/indi/todo/. The Command Centre half is rebuilt from the board and the stand-up items at every release; this file adds a next step per issue and the tasks that are not on the board. Kept by dashboard@web-summit.indi at each run, from 4 November at Indi's word (first written by synthetic@web-summit.indi from the board, Indi's briefs 1 to 8 and that day's git log).",
- "written": "2026-11-06T17:40Z",
+ "written": "2026-11-07T07:40Z",
  "done_for_indi": {
   "WS-01": "Done: you are at L4 (people/indi/onboarding.json).",
   "WS-02": "Done: you are at L4.",
@@ -26,7 +26,7 @@
   "WS-59": "builder@ drafted a policy for each of Daniela's agents: review them, then agree them with Daniela and Angelo.",
   "WS-125": "builder@ drafted the setup guide overnight: review it, then send Angelo the outline.",
   "WS-06": "Tell your dashboard agent what you want first and what you never read.",
-  "WS-112": "Tell your conductor 'acknowledge' for briefs 1 to 14. It means 'I have read them'.",
+  "WS-112": "Tell your conductor 'acknowledge' for briefs 1 to 15. It means 'I have read them'.",
   "WS-109": "NOT DONE YET (your word, 6 Nov). Plan the demo for no wifi: the venue does not allow phone hotspots. Ask your helpers for a copy that runs on the laptop, or a recording.",
   "WS-20": "Agree the landing page with Nimay and Angelo.",
   "WS-26": "factory@ drafted outreach targets overnight: review them, then agree your share with Silvio.",
@@ -44,17 +44,17 @@
   "WS-148": "Your accountant is running: read its daily token report (5:30 pm) and answer the decisions it asks of you.",
   "WS-137": "Dinis's lab: your part, by Mon 9 Nov.",
   "WS-155": "Picking this up today (your word, 6 Nov): check the cards, round 4, at https://web-summit.sgit.ai/cards/#r4. Say if Dinis's designer's 4:18 am redesign covers your designer's fixes.",
-  "WS-166": "Open that same key link once on each of your phones and iPads, by Sunday.",
-  "WS-170": "Waiting on Dinis now: you asked him to add 'riskmandate-indi' to your entry in the team list. Until then his security check cannot match your keys to you. Still missing when checked at 5:30 pm.",
+  "WS-166": "Tomorrow (Sunday) is the day: open your key link once on each phone and iPad you will carry at the summit.",
+  "WS-170": "Still waiting on Dinis (checked Saturday 7:30 am): your GitHub name is not in the team list yet. Tell your conductor when he answers.",
   "WS-171": "Not built yet when checked at 14:30 UTC on 6 Nov: it is due today. Ask factory@'s chat for the first page, then read it and say if it makes sense.",
-  "WS-177": "Run the readers' test: paste the prompt your conductor wrote into your synthetic helper's chat. It takes five minutes and tells Dinis how PromptUGAL reads before the emails go out."
+  "WS-177": "Still to run: paste your conductor's prompt into your synthetic helper's chat. Your accountant suggests the cheaper Sonnet or Haiku models for it. The outreach emails wait on reviews this weekend."
  },
  "other": [
   {
    "group": "Waiting on you",
-   "title": "Say yes or no to Angelo's request to your accountant",
-   "detail": "Angelo asked your accountant helper for a daily view of how hard his helpers work, with advice. Your helpers only act on your word. Your conductor suggests yes: it is small and helps the team.",
-   "source": "brief 14"
+   "title": "Your accountant's two asks: yes or no",
+   "detail": "First: one extra step in each helper's wake-up, so each writes down what it cost (Angelo's helpers already do). Second: Angelo's daily view of how hard his helpers work. Third time it has asked; your conductor suggests yes to both.",
+   "source": "briefs 14 and 15"
   },
   {
    "group": "Waiting on you",
@@ -88,12 +88,6 @@
   },
   {
    "group": "Your agents",
-   "title": "Add the token-measuring line to each agent's wake",
-   "detail": "One line at the end of each wake prompt (end of PROMPT.md), or let the accountant ask.",
-   "source": "WS-148"
-  },
-  {
-   "group": "Your agents",
    "title": "Start the vault agent",
    "detail": "Messaging, factory and builder started overnight; the vault agent is still planned.",
    "source": "people/indi/agents.json; WS-05 (dd483dc)"
@@ -112,9 +106,9 @@
   },
   {
    "group": "Waiting on you",
-   "title": "Say 'acknowledge' for briefs 1 to 14",
+   "title": "Say 'acknowledge' for briefs 1 to 15",
    "detail": "Tell your conductor. It means you have read them, so the next brief starts from what is new.",
-   "source": "brief 14"
+   "source": "brief 15"
   },
   {
    "group": "Waiting on others",

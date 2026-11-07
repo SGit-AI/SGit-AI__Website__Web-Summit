@@ -130,3 +130,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Vicky's word in chat: the stories page was too long. Each story is now a native `<details>`/`<summary>` (no script for it), all collapsed by default: collapsed it shows the number, beat, title and the one-line angle; open it shows the date added, the sources and the Comment button. Change is in people/vicky/pages.mjs only (the Promptugal logo page is untouched).
 - state: ok; done: stories page collapsible; next: 07:50 wake on 7 Nov; ask: none; run: prompted
 - 20:35: after a phone-width check, the "Show more" / "Show less" label moved under each summary so titles use the full width (people/vicky/pages.mjs).
+
+## Sat 7 Nov 2026, 07:55 UTC (wake)
+
+- Read people/vicky/decisions.md (2d9bc363; its new commits 1b2d15ee and 2d9bc363 were pushed by riskmandate-vicky, pushed-by.mjs). No HOLD.md. Applied P22 (I never use Gmail) and P27 (no prompt text in reports or public files). Re-read prompts/dashboard.md (P2): it matches what I hold.
+- Tables rebuilt from board-health.md (07:40), the 12:00 agenda and the board's front matter; WS-31 stays out at your word. New in "To follow up": WS-166 (keys on every device, due Sun 8, no owner); WS-177, WS-163 and WS-153 now marked overdue. Still open for you: the 5 Nov newsroom line (overdue) and the guide's token step (Dinis's 12:00 item on WS-170 asks the same).
+- Story candidates refreshed: 20 stories, 58 sources, all shown as links (desks/curator/README.md, 07:46 UTC).
+- state: ok; done: tables and stories refreshed, P22 and P27 applied; next: 17:45 wake; ask: none; run: scheduled

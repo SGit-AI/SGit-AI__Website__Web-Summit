@@ -1,0 +1,105 @@
+{
+  "number": 14,
+  "date": "7 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "Your page-view lane is almost full: one word to ask Dinis for tokens",
+  "when": "7 November 2026, 07:20 UTC (scheduled wake; since brief 13, 17:20 UTC yesterday)",
+  "by": "conductor@web-summit.jose",
+  "headline": "Lane 1 holds 835 of 1,000 page views. It grew by 164 between 06:07 and 07:07, so it could be full this morning. Nothing can drain it: Dinis's rule bars any agent from pushing a vault with your token, and none of your agents has a token of its own. Silvio's conductor asked Dinis for its CRM agent's token at 05:02; one word from you and I ask the same way, for me and for vault. No interview write-up came in last night.",
+  "stats": [
+    {
+      "n": "835",
+      "label": "page views waiting in lane 1, of 1,000 (07:21)"
+    },
+    {
+      "n": "+164",
+      "label": "in the hour from 06:07 to 07:07"
+    },
+    {
+      "n": "0",
+      "label": "SG/Send tokens your agents hold"
+    },
+    {
+      "n": "$54",
+      "label": "your agents' tokens yesterday, at Opus prices (accountant's estimate)"
+    }
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "🔑 Now: say 'ask Dinis for tokens'",
+      "detail": "I ask Dinis, the usual way on WS-170 (Silvio's conductor did it at 05:02 for its CRM agent, as a question to Dinis for the 12:00 stand-up), for one SG/Send access token each for conductor@web-summit.jose and vault@web-summit.jose, sealed to their keys. Vault asked you for this at 17:42. Your CRM agent's token is already asked (WS-170, 6 November). If the lane fills before a token arrives, ask Dinis yourself to drain it once. What happens to page views after it is full is not confirmed: they may be lost.",
+      "options": [
+        "ask Dinis for tokens",
+        "I ask Dinis myself",
+        "not now"
+      ],
+      "recommend": "Ask Dinis for tokens, today."
+    },
+    {
+      "id": "2",
+      "ask": "🎙️ Your daily interview: none came in last night",
+      "detail": "Your Drive folder has no new file since yesterday morning. Tonight's brief carries a fresh 'today' list; yesterday's is in brief 13. Dev's WS-41 still has 2 check-ins.",
+      "options": [
+        "tonight",
+        "skip"
+      ],
+      "recommend": "Tonight, 10 minutes."
+    },
+    {
+      "id": "3",
+      "ask": "✅ Still waiting: my drain task's stored text, and the schedules (A-06, seven runs)",
+      "detail": "Say 'change your drain task' and I change its stored text to count-only. The faster schedules and their paste texts (schedules.md#paste) are overdue since yesterday 07:00.",
+      "options": [
+        "change your drain task",
+        "schedules: yes as proposed",
+        "not now"
+      ],
+      "recommend": "Both: change the drain task, and the schedules for one day."
+    }
+  ],
+  "you_asked": [],
+  "sections": [
+    {
+      "title": "Overnight, your agents",
+      "items": [
+        "vault (17:42): counted its lane, drained nothing (no token of its own); feedback-count.json refreshed; asks you for its token (ask 1).",
+        "dashboard (17:31): WS-74's n8n flow reads the vault agent's count.",
+        "watcher (22:15): A-06 in its seventh run; the drain fired again at 22:08 with its old text, and I counted only.",
+        "The helper's Gmail drafts are still blocked: reconnect Gmail, or let me try them ('To' empty)."
+      ]
+    },
+    {
+      "title": "From others",
+      "items": [
+        "Silvio's dashboard agent (14f3f051) added 'two brains' to your command centre through the shared engine: My brain (kept in your browser only) and the Summit brain, a 3D map of public Web Summit facts. Nothing in your own app was changed.",
+        "Silvio's conductor asked Dinis for a token for its CRM agent (05:02), the same ask as ask 1.",
+        "Dinis's conductor's brief 30 says yesterday's 18:00 stand-up is not recorded, so your three stand-up items carry over."
+      ]
+    },
+    {
+      "title": "The accountant: yesterday (6 November)",
+      "items": [
+        "From your agents' ledgers: about 92M tokens, 6.7M of them not cache reads, about $54 at Opus prices (an estimate; cache writes cost the most). The costliest: the watcher ($12.57), dev ($9.31), the CRM agent ($7.74), your conductor ($7.32).",
+        "Its advice, unchanged and sharper: Sonnet for the watcher first (the costliest, routine, quality held in all 6 wakes), then the dashboard, automation, the helper, vault and the CRM agent; dev as a trial, watching its reviews; your conductor stays on Opus (Dinis's direction); the designer stays until it has a ledger line (none since 5 November).",
+        "You decide, and change the model in each agent's session; nothing changes until you say."
+      ]
+    },
+    {
+      "title": "Page views overnight (counted only)",
+      "items": [
+        "18:08 268 · 20:08 303 · 22:08 361 · 00:08 534 · 02:07 554 · 04:07 576 · 05:08 657 · 06:07 663 · 07:07 827 · 07:21 835."
+      ]
+    }
+  ],
+  "next": [
+    "12:20: the midday brief; a token ask to Dinis the moment you say so."
+  ],
+  "sources": [
+    "telemetry_drain.py --dry, hourly",
+    "git log origin/dev since 5f73cc5c",
+    "people/jose/watcher/latest.md (22:15, dfdf560d)",
+    "vault 4d029697, dashboard fb3866d1, 14f3f051, 03020622",
+    "your Drive folder (titles only: no new files)"
+  ]
+}

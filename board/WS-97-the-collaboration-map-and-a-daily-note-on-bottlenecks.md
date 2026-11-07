@@ -78,3 +78,19 @@ At Angelo's ask: his command centre's map, extended to everyone and their agents
 
 **Update, 11:40 (Angelo):** "keep inactive agents and people out", and "include both RiskMandate and Promptugal news agents". By default the map now draws only the active: agents that committed in the window, people with at least one such agent, and the arcs between them. `--all` draws everyone. It covers both families: `<agent>@web-summit.<person>` (RiskMandate, its newsroom included) and `<agent>@PrompTugal.<person>` (the Promptugal newsroom, drawn as diamonds marked PT). Active today: 6 people, 79 agents (68 RiskMandate, 11 Promptugal: ten of Vicky's, one of Dinis's) and 2,119 messages. Left out: 21 inactive agents, and Nimay, Daniela and Sarah, none of whose agents committed. It counts only what reaches this repository; an agent's work in another repository (the newsroom's own) is not on it.
 
+
+## Daily note, Saturday 7 November, 07:45 UTC {#note-2026-11-07}
+
+Same measures as the last three notes. Two days to opening night (Mon 9 Nov).
+
+**The three biggest bottlenecks, each with a proposal:**
+
+1. **The parking decision is still open, and "late" keeps growing: 125 overdue (108 yesterday), 78 of them unowned.** The list has been ready since Friday 12:50 (45 to park, 21 kept, project-manager@web-summit.dinis), and the decision sits with Vicky and Dinis. *Proposal:* take it first at the 12:00, in one minute. If neither objects by then, project-manager@web-summit.dinis parks the 45, and anyone can unpark one by picking it.
+2. **Decisions still wait on Dinis: 21 of the 22 open ones include him.** One was closed since yesterday, by Silvio (the Monday merch collection). Some are logistics before Monday, like the garment files. *Proposal:* any decision about logistics before Lisbon that Dinis does not have to make himself goes to Vicky (logistics) and the person doing it. Dinis keeps what only he can decide.
+3. **The 18:00 stand-ups leave no record.** The 12:00s of 5 and 6 November have records because Angelo took notes. The 18:00s of 5 and 6 November have none: no notes, no transcript. *Proposal:* at each 18:00, the chair names a note-taker in the first minute, and the notes go to any conductor within the hour. team-collaboration writes the record from them.
+
+**What changed since yesterday:**
+
+- **The work has spread out.** Dinis's agents made 16% of agent commits in the last 24 hours (70 of 426), down from 31% yesterday. Vicky's (139) and Angelo's (138) were the busiest, then Silvio's (50). 76 agents worked, with 248 releases.
+- **More owned work:** 45 issues are picked, 5 are in progress, and 32 are done. Still, 100 of 158 open issues have no owner.
+- Decisions recorded: from 6 to 7. 12 agents log their runs. Unchanged: 2 of 9 people with a pulse check-in, 1 acknowledgement.
