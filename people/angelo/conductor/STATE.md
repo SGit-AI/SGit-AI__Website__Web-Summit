@@ -34,7 +34,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 | Accenture into data/companies.json (owner angelo), as the new protocol allows | crm@ | 6 Nov 23:30 | 7 Nov 08:50 run | the entry live |
 | The agent setup guide (WS-125), reviewed: policy against the ABP model and the protocol, dev for accuracy and the interactive page | policy@, dev@ | 7 Nov 00:00 | 7 Nov 18:00 | findings For: desk.conductor@ (and PrompTugal's conductor, if changes are needed) |
 | inbox@PrompTugal.angelo: design BACK (e8eb75d, 7 Nov 08:54), waits on Angelo's go (tier 3) and P-07 | crm@ | 6 Nov 23:45 | done | people/angelo/proposals/inbox/README.md |
-| WS-125: the interactive version needs a host (the article is live at promptugal.news/articles/agent-setup-guide.html since 7 Nov 00:10, published by writer@ at Angelo's word); dev@'s seven corrections drafted | Angelo (host), writer@ | 7 Nov 09:51 | open | writer's report |
+| WS-125: interactive guide live at people/angelo/guide/ (aafbbb0), article corrected (2222782); dev@ to re-sync the fragment | dev@, writer@ | 7 Nov 09:51 | open | dev's report |
 | WS-181: designs page.md and vaults.md | Angelo | 6 Nov 22:40 | before Monday | his go, then security@web-summit.dinis |
 
 ## Open with Angelo (the desk's list)
@@ -87,6 +87,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 7 Nov 11:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session; the desk already briefed and routed his answers). Since 10:21: Angelo's three answers on P-08, P-07 and WS-125's fixes (97eaa94, 01aa9ac), the four hardening steps (130fe1c), zones by default for WS-181 (592d109, dev 4dead81), his words that agents publish what he started and newsroom changes go direct (e145647, now in the protocol). Back: writer@'s interactive WS-125 guide live (aafbbb0, 2222782: asks dev@ to re-sync the fragment) and LinkedIn drafts for Angelo (8d280f5, WS-126: his to read, he posts himself); dev@'s five-agent spec (7c99981); every agent's token check done by those that ran (vault, dashboard, helper: "token: not set"). Others' work, information only: Vicky's agents (inbox@vicky, schedules, covers rule), journalist@dinis.
+
 - 7 Nov 10:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session: "Wake up" at 10:19, the agents answered with direct-session reports). Back: vault@'s sharness.kms (6d3ccd6: after the summit, four small steps now) and live-map/venues analysis (81bb8ec); vault@'s six open questions (557e322), of which one is tier 3 for Angelo (remove his token from vault@'s three clones: added to Open with Angelo). crm@'s inbox agent built at his go (6bbb671) and crm now every 3 h (d53e0f4); crm@'s hablla finding (a0906f0) is for Dinis's conductor and crm, unanswered. Faster schedules, specs-before-builds and dev.links brief are the desk's own. Others' work, information only: checker@vicky, mentor, dev@jose.
 
 - 7 Nov 09:21: the runner: two briefs back, nothing to route. crm@ delivered the inbox@ design (e8eb75d, people/angelo/proposals/inbox/README.md, ahead of its 16:50 due): Angelo's go is tier 3 (the three Gmail send tools off, the scheduled task created with the Gmail connector), added to Open with Angelo; P-07 comes first. dev@ reviewed the WS-125 guide (d23e255, review-dev.md): accurate on sources, seven corrections already routed `For: writer`, policy@ and Dinis's conductor; policy@'s half still out (due 18:00). Others' work, information only: Silvio's dashboard agent at L6, vault-audit fix, journalist 08:57, designer's /print/.
@@ -105,12 +107,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 7 Nov 02:20: the runner: nothing to route. Since 01:20 only Silvio's side: outreach@silvio's world 1 research (7af0a78, 29c060d: Booking.com, Amex GBT and more, For: newsroom@dinis) and conductor@silvio's merch note (95dad61: paid, files with the printer, pickup Monday). Information only; no brief of Angelo's has come back yet.
 
-- 7 Nov 01:20: the runner: nothing to route. dashboard and dev raise the tapped-spots question for Angelo (added to Open with Angelo; demo only, nothing exposed). Others' work, information only: Silvio's conductor and video (clean videos vault WS-174, merch pickup Monday, private CRM key sealed to his agents), inbox@silvio's first CRM run, Dinis's lanes re-issued, WS-188 reports. team-collaboration's ledger line.
-
-last_run: 2026-11-07T10:21:00Z (the runner)
-| Venues on PrompTugal.news: the public map there, our locations private (team only), public only for a person who opts in; built on WS-181 and the newsroom's My day (browser plus vault) | dev@ with vault@ | 7 Nov 09:00 | design 7 Nov 18:00 | people/angelo/proposals/WS-181/ |
-| LinkedIn: profile update (headline, About, featured, experience) and posts to Monday; the first post: promptugal.news/articles/angelos-communication-graph.html | social@ once it exists (moved from writer@, 7 Nov) | 7 Nov 09:45 | drafts by 7 Nov 18:00 | people/angelo/proposals/social/ |
-| Faster schedules: dev hourly, crm every 3 h, vault every 4 h, policy twice a day | dev@, crm@, vault@, policy@ | 7 Nov 10:00 | each at its next run | each confirms in a commit |
-| Four new agents, prompts and agents.json entries as one spec for Angelo: dev.map@, dev.venues@, research@, social@PrompTugal.angelo | dev@ | 7 Nov 10:00 | 7 Nov 13:00 | people/angelo/proposals/new-agents/spec-new-agents.md |
-| Broken links on PrompTugal.news, continuously: check whether any newsroom agent already does it; if not, dev.links@PrompTugal.angelo in the new-agents spec | dev@ | 7 Nov 10:10 | 13:00 with the spec | spec-new-agents.md |
-)
+last_run: 2026-11-07T11:20:00Z (the runner)
