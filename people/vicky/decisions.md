@@ -47,6 +47,7 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
     - P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 
+17. **The reviewer fixes, the reviewer lists** (Vicky, 7 Nov; for the reviewer): when a draft only needs wording, structure, caption, image or length fixes, make them yourself and mark it Ready. Send it back as fix-first only for problems of fact or source, or anything you cannot check. At the end of every run, list the Ready drafts in your reply with a publish line Vicky can copy. (This widens standing answer 13's "small" edits; publishing still only at her word.)
 ## Updates for agents
 
 How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
@@ -84,12 +85,16 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 **SA16, P1 to P3 word for word in your prompts file and scheduled prompt** (Vicky, 7 Nov). For: conductor, dashboard, pm, logistics, vault, researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer, checker, designer, dev, scout, inbox.
 > Apply standing answer 16 at your next run, without asking first, and confirm "applied SA16" in your report (say whether you also changed a scheduled task's prompt).
 
+**SA17, the reviewer fixes, the reviewer lists** (Vicky, 7 Nov). For: reviewer.
+> Apply standing answer 17 from your next run (put it in your prompts file and your scheduled task's prompt), and confirm "applied SA17" in your report.
+
 Still to confirm (7 Nov, 08:50 UTC; the rest have confirmed):
 - P10: journalist-europe, journalist-connections, vault, designer, dev.
 - P17: journalist-ai, journalist-europe, journalist-portugal, journalist-connections, reviewer, checker, vault, designer, dev.
 - P22: reviewer, checker, vault, designer, dev.
 - P27: reviewer, checker, scout, vault, designer, dev.
 - SA13: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
+- SA17: reviewer.
 - SA16: every agent but the conductor (dashboard, pm, logistics, vault, researcher, curator, programme, the five journalists, reviewer, checker, designer, dev, scout, inbox).
 - SA15 and SCHED-7NOV: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
 
