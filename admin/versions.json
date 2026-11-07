@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1047",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: STATE and runs for the 13:20 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "58913de45"
+  },
+  {
     "version": "v0.2.1046",
     "date": "2026-11-07",
     "what": "team-collaboration@PrompTugal.angelo: inbox down to two wakes, no commit on empty runs, dev only; the 12:00 did not happen",
