@@ -85,3 +85,8 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 - No fix-first drafts of mine (S24: Ready, published with its cover at Vicky's word). Nothing new on my beat in the curator's README (11:50 UTC): S25 is AI and robotics. No draft.
 - Applied SA13, SA15 (from my next draft), SA16 (prompts file and scheduled prompt changed) and SCHED-7NOV: my task now runs at 08:00, 12:00 and 20:00 UTC (next about 20:03). SA17 is for the reviewer.
 - state: idle; done: checks, updates applied, nothing new on the beat; next: the 20:00 UTC run; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, 20:10 UTC (scheduled run)
+
+- Applied SCHED-7NOV (four rounds): my task now runs at 08:00, 12:00, 16:00 and 20:00 UTC (cron `0 8,12,16,20 * * *`), prompt kept; prompts file updated. No fix-first drafts; nothing new on my beat (S25 to S27 are AI and robotics). Newsroom remote reset from the old address again; nothing pushed there.
+- state: idle
