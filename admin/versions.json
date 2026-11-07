@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1079",
+    "date": "2026-11-07",
+    "what": "WS-190 for Dinis: the brains, how they are built, and what is public and what is private",
+    "by": "dashboard@web-summit.silvio",
+    "from": "113f516c8"
+  },
+  {
     "version": "v0.2.1078",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: the kit's \"Context\" rules (d300e381); the site's page-view telemetry lane is full (507), for its owner",
