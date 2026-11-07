@@ -35,6 +35,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 | The agent setup guide (WS-125), reviewed: policy against the ABP model and the protocol, dev for accuracy and the interactive page | policy@, dev@ | 7 Nov 00:00 | 7 Nov 18:00 | findings For: desk.conductor@ (and PrompTugal's conductor, if changes are needed) |
 | inbox@PrompTugal.angelo: design BACK (e8eb75d, 7 Nov 08:54), waits on Angelo's go (tier 3) and P-07 | crm@ | 6 Nov 23:45 | done | people/angelo/proposals/inbox/README.md |
 | WS-125: interactive guide live at people/angelo/guide/ (aafbbb0), article corrected (2222782); dev@ to re-sync the fragment | dev@, writer@ | 7 Nov 09:51 | open | dev's report |
+| Android app spec (spec-android.md) | dev@ | 7 Nov 15:07 | 7 Nov 20:00 | report For: desk.conductor@ |
+| Live-map spec approved: build /team/map/ | dev@, dev.map@, writer@ | 7 Nov 15:08 | open | dev.map's report |
 | WS-181: designs page.md and vaults.md | Angelo | 6 Nov 22:40 | before Monday | his go, then security@web-summit.dinis |
 
 ## Open with Angelo (the desk's list)
@@ -94,6 +96,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 7 Nov 15:22: the runner: nothing to route; nothing urgent (Angelo is in the desk session, which routed his words from about 15:00: the live-map spec approved with /team/map/ replaced (c6fc444), an Android app spec for dev@ due 20:00 (f4e401e), and WS-181 Part B: PrompTugal.news as the one guide, the team layer private, built after security's review and vault@'s token (2254b43)). No report back from the agents since 14:21; others' work (journalist, designer, mentor) information only.
+
 - 7 Nov 14:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session, which routed his "All as recommended" on WS-181). Back: dev@ (693e3d0) wrote spec-venues.md: Part A approved, Part B (a public venue map on PrompTugal.news, no person on it) waits for Angelo's review; dev@ brought dev.links's first crawl (700 of 1,217 pages, no broken links) and dev.venues's STATE onto dev (live-map spec still due 18:00). runner.writer@ (aed0ae7, For: desk): the WS-125 guide is published and corrected; Angelo's contributor ask is in Dinis's next brief (no answer); dev.verify flagged 9 of 12 claims in the guide, and asks whether the writer answers them (added to Open with Angelo). Others' work, information only: mentor@dinis quiet, reviewer@vicky's S25.
 
 
@@ -113,7 +117,5 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 7 Nov 06:21: the runner: nothing to route. Since 05:21 only dashboard@silvio's WS-189 (`For: conductor@web-summit.dinis`, dinis, dev@silvio: how the Summit desk writes to the private CRM, four questions, and six for the demo; nothing built): others' work, information only. No brief of Angelo's has come back.
 
-- 7 Nov 05:21: the runner: nothing to route. Since 04:20 only others' work: Silvio's side (dev@silvio's calmer command centre for everyone, affects the shared engine: `For: dev@web-summit.angelo`, information only, Angelo's own views untouched; dashboard@silvio's own key after the name split; conductor@silvio asks Dinis for crm-silvio's token, WS-170), journalist@dinis's 04:57 report, sgit@dinis's WS-128 confirmation. dev@PrompTugal.angelo's no-news run (c736ba8). No brief of Angelo's has come back.
-
-last_run: 2026-11-07T14:21:00Z (the runner)
+last_run: 2026-11-07T15:22:00Z (the runner)
 
