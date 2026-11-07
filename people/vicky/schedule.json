@@ -5,11 +5,11 @@
   {
    "agent": "conductor@web-summit.vicky",
    "task": "the daily brief",
-   "cron_utc": "30 8 * * *",
+   "cron_utc": "0 9 * * *",
    "task_id": "trig_013xdhaBHbA52GD47m1JaKDL",
    "state": "enabled",
    "since": "4 Nov 2026",
-   "at_whose_word": "Vicky (08:30 brief, 4 Nov)"
+   "at_whose_word": "Vicky (08:30 brief, 4 Nov; moved to 09:00 on 7 Nov, after the reviewer's 08:48 run)"
   },
   {
    "agent": "conductor@web-summit.vicky",

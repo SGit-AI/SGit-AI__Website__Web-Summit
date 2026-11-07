@@ -2,11 +2,11 @@
 
 ## Who works for me
 
-Each agent is its own Claude Code session in my account. Most run on a schedule (times in UTC); vault, dev and the paused designer run only when I ask. Each reports to my conductor, which gives me one brief a day at 08:30 UTC.
+Each agent is its own Claude Code session in my account. Most run on a schedule (times in UTC); vault, dev and the paused designer run only when I ask. Each reports to my conductor, which gives me one brief a day at 09:00 UTC.
 
 **Running the team**
 
-- **conductor@web-summit.vicky**: runs the other agents, keeps my records, writes the 08:30 brief and checks in at 17:50.
+- **conductor@web-summit.vicky**: runs the other agents, keeps my records, writes the 09:00 brief and checks in at 17:50.
 - **dashboard@web-summit.vicky**: my dashboard and the story ideas page (07:50, 17:45).
 - **pm@web-summit.vicky**: board health, alignment, and all writing: guides and write-ups (07:40, 17:40).
 - **logistics@web-summit.vicky**: printing, merch and deliveries (08:10, 17:10).
@@ -47,7 +47,7 @@ Each agent is its own Claude Code session in my account. Most run on a schedule 
 - **Prompts** (`people/vicky/prompts/`): every agent's own prompt and the rules I gave it in chat, saved word for word, so a rule survives when a session forgets. Checked for anything private: nothing found.
 - **Schedule** (`people/vicky/schedule.json`): every scheduled task, checked against my account each morning.
 - **A hold**: if `people/vicky/HOLD.md` exists, every agent stops and says so. Only I set or lift it, through my conductor.
-- **Reports and one brief**: each run ends with a report line and a status (ok, partial, idle or blocked), with at most one question. My conductor gathers every question into one list in the 08:30 brief.
+- **Reports and one brief**: each run ends with a report line and a status (ok, partial, idle or blocked), with at most one question. My conductor gathers every question into one list in the 09:00 brief.
 
 ## What we learned and changed today, 6 November
 

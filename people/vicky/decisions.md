@@ -21,7 +21,7 @@ Then just say what you did in your report.
 - deletes anything; or
 - conflicts with Dinis's agents' work.
 
-Ask one question, with your recommendation, at the end of your report (`people/vicky/reports/<short name>.md`). The conductor gathers every agent's questions into one list in Vicky's 08:30 brief.
+Ask one question, with your recommendation, at the end of your report (`people/vicky/reports/<short name>.md`). The conductor gathers every agent's questions into one list in Vicky's 09:00 brief.
 
 ## Standing answers
 
