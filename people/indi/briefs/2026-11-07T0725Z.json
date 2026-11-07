@@ -1,0 +1,60 @@
+{
+  "number": 15,
+  "date": "7 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Saturday: a quiet night; your accountant asks for the third time",
+  "when": "7 November 2026, 07:25 UTC (scheduled wake; since brief 14, 17:25 UTC on 6 November)",
+  "by": "conductor@web-summit.indi",
+  "headline": "A quiet night for you. Your accountant helper's daily report repeats one ask for the third time: let it measure all your helpers. Your command centre also looks different this morning, because Silvio's developer redesigned it for everyone. Nothing is decided here.",
+  "stats": [
+    {"n": "0", "label": "of your helpers measure what they cost (Angelo's: 31 lines)"},
+    {"n": "3rd", "label": "time your accountant asks you the same question (A1)"},
+    {"n": "2", "label": "days to the summit's opening night (Monday 9, 18:00)"},
+    {"n": "0", "label": "commits from your helpers overnight, apart from the accountant and dashboard"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Answer your accountant's two asks (A1 and A4)",
+      "detail": "A1: add one step to every helper's wake-up instructions, so each one writes down what it cost. Angelo's helpers did this and wrote 31 lines; yours wrote none. If you say yes, I add the step to your kit. A4: Angelo's request from yesterday, a daily view of how hard each of his helpers works.",
+      "options": ["yes to both", "yes to A1 only", "not now"],
+      "recommend": "Yes to both: A1 shows you which helpers are worth their cost before the summit, and A4 is a one-off favour to Angelo."
+    },
+    {
+      "id": "2",
+      "ask": "Run the readers test on PromptUGAL",
+      "detail": "Still not run. Paste the prompt in people/indi/promptugal/readers-prompt.md into your synthetic helper's chat. Your accountant also suggests testing its readers on the cheaper Sonnet and Haiku models first (A2).",
+      "options": ["paste it now", "test the cheaper models first", "skip"],
+      "recommend": "Paste it now: the outreach emails are waiting on reviews this weekend."
+    },
+    {
+      "id": "3",
+      "ask": "Tell me Dinis's answer when it comes",
+      "detail": "Your message to Dinis asked about joining PromptUGAL, your title and your GitHub name. Nothing from him is in the record yet. When he answers, I record your title in your profile and your name on the board page.",
+      "options": ["he answered (tell me)", "not yet"],
+      "recommend": "Tell me in one line when he does."
+    }
+  ],
+  "you_asked": [
+    {"at": "6 Nov, evening", "said": "(brief 14's three questions)", "done": "No answer yet, so nothing changed.", "where": "-", "status": "waiting"}
+  ],
+  "sections": [
+    {
+      "title": "1. What changed overnight",
+      "items": [
+        "Silvio's developer made 'a calmer, professional command centre for everyone': a colour-coded menu, one top bar, a board of cards, decisions (141313c). Your command centre at people/indi/app/ looks different now.",
+        "Silvio's inbox helper is waiting for a review before moving 28 outreach drafts into the team's private CRM (197a36d, WS-184).",
+        "Your dashboard helper marked your key done on WS-136 and noted your GitHub name now waits on Dinis (7c716c5)."
+      ]
+    }
+  ],
+  "next": [
+    "12:20: my next wake.",
+    "Monday 9 November, 18:00: the summit's opening night.",
+    "Tell me 'acknowledge' when you have read briefs 1 to 15."
+  ],
+  "sources": [
+    "git log since 17:20 UTC on 6 November: 7d955e0, 7c716c5, 141313c, 197a36d",
+    "people/indi/accountant/briefs/2026-11-06T1737Z.json (its brief 3)"
+  ]
+}
