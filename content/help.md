@@ -4,7 +4,7 @@ summary: The team's setup questions, each answered once so it helps the next per
 ---
 > **Draft (WS-158): Angelo has not yet read these answers.** They come from the team's guides, each with its source; if one is wrong, tell helper@PrompTugal.angelo.
 
-The questions people on the team have asked while getting set up, answered once so the next person finds the answer here. Newest first. Each answer says where it comes from; where nobody knows yet, it says so.
+The questions people on the team have asked while getting set up, answered once so the next person finds the answer here. Newest first. Each answer says where it comes from; where nobody knows yet, it says so. All six were reviewed on 7 November against the guides as they stand that day; each that changed says so in one line.
 
 **Ask a question:** tell your agent *"ask Angelo's helper: ..."*. It commits the question with the line `For: helper@PrompTugal.angelo` (the old name, helper@web-summit.angelo, still reaches me), and the answer comes back in a commit for your agent, then appears here. Or ask Angelo. The steps themselves are on [the start page](../start/index.html#steps) and, in plain language, in [the onboarding guide](../onboarding-guide/index.html).
 
@@ -19,7 +19,11 @@ Not necessarily. **An agent that wakes and finds nothing to do commits nothing**
 - **Run log there, no commit:** the agent ran and had nothing new. Nothing to fix.
 - **No run log and no commit after a wake:** the agent may have stopped. Its conductor checks that the scheduled task is still on, and that the agent's prompt ends with the logging line (WS-160).
 
-*Sources: [WS-160](../briefs/index.html#issues) (board/WS-160, "Where it shows"); Angelo's protocol, "Your reports go out" and "Log every run"; commit 3f6e825.*
+- **Look under both names.** Since 6 November, Angelo's and Vicky's agents are named `<role>@PrompTugal.<person>` (for example helper@PrompTugal.angelo, formerly helper@web-summit.angelo), and the run log takes the name in lower case for now (`helper@promptugal.angelo`). An agent that switched names keeps its old runs under the old one.
+
+*Revised 7 November: names changed to @PrompTugal.<person> for Angelo's and Vicky's agents, so look for runs under both names.*
+
+*Sources: [WS-160](../briefs/index.html#issues) (board/WS-160, "Where it shows"); Angelo's protocol, "Your reports go out", "Log every run" and "Names"; commit 3f6e825; commit 90299d0 (the new names).*
 
 ## How do I add my key to the site, and where do I send the signed message? {#site-key}
 
@@ -28,12 +32,14 @@ Not necessarily. **An agent that wakes and finds nothing to do commits nothing**
 1. **Ask your conductor**, in its own session: *"Issue me a key for the site."* It makes the key and gives you a **private link** in your chat.
 2. **Open the site** (any page shows a big **Add your key** box until you have one). Tap the link, or copy it and press **Paste my key**.
 3. **Check** that your **For-you panel** shows **Unlocked**, with a first message from your conductor.
-4. **Send one message** from the **Feedback** pane. It is signed with your key. If the pane offers no lane for your own conductor, send it to the lane it does offer (conductor@web-summit.dinis's): that completes the step. Vicky's went there on 4 November and was verified and answered.
+4. **Send one message** from the **Feedback** pane. It is signed with your key. Choose your own conductor's lane if the pane lists it (on 7 November it lists Angelo's and Vicky's conductors, as well as Dinis's); if yours is not there, send it to conductor@web-summit.dinis's lane: that completes the step. Vicky's went there on 4 November and was verified and answered.
 5. **Never forward the link** or paste it anywhere else.
 
 If your conductor's session is replaced, the new session issues a new key and the old one is marked replaced: open the new link.
 
-*Sources: [WS-136](../briefs/index.html#issues) (board/WS-136), [issuing a person's key](../agents/index.html#person-key), the onboarding guide's step 6, the mentor notes of 4 November.*
+*Revised 7 November: the Feedback pane now has lanes for Angelo's and Vicky's conductors, not only Dinis's.*
+
+*Sources: [WS-136](../briefs/index.html#issues) (board/WS-136), [issuing a person's key](../agents/index.html#person-key), the onboarding guide's step 6, the mentor notes of 4 November; the pane's lane list (assets/feedback.json, read 7 November).*
 
 ## I have two sessions of the same agent, or a new session made a new key. Is something wrong? {#two-sessions}
 
@@ -41,9 +47,12 @@ If your conductor's session is replaced, the new session issues a new key and th
 
 - **A new key in a new session is normal.** An agent's key lives only in its session; when the session ends, the key ends with it, and the new session makes a new one and publishes it on the keys page.
 - **Two sessions under one name is a problem**: both wake, both work, and they double up. **Choose one to keep, and close the other.** Keep the one that holds what you need: Indi kept the conductor session that had issued her site key, so her site-key link still worked.
+- **Two sessions on purpose are fine when they have different names.** Some people now run one role two ways: a long session that holds keys, the *desk*, and fresh scheduled sessions, the *runner* (for example desk.conductor@PrompTugal.angelo and runner.conductor@PrompTugal.angelo). Different names, different jobs: that is not doubling up.
 - **Rename each session after its agent** ("conductor", "dashboard", "vault") so you open the right one next time.
 
-*Sources: [the start page](../start/index.html#steps), step 6; conductor@web-summit.indi's brief 4 (commit 2a0ce5f); Indi's mentor notes, 4 November 11:41 and 14:41; the onboarding guide's tips.*
+*Revised 7 November: added the desk-and-runner pattern, two sessions of one role under two names, which is intended.*
+
+*Sources: [the start page](../start/index.html#steps), step 6; conductor@web-summit.indi's brief 4 (commit 2a0ce5f); Indi's mentor notes, 4 November 11:41 and 14:41; the onboarding guide's tips; Angelo's protocol, "Names" (commit 90299d0).*
 
 ## My agent can't reach a website ("refused by the network policy", or CONNECT 403) {#network}
 
@@ -55,9 +64,13 @@ The site is not down: your **cloud environment** only lets agents reach the webs
 2. Under **Allowed domains**, add all six: `web-summit.sgit.ai`, `pki.sgit.ai`, `sgit.ai`, `*.sgit.ai`, `sgraph.ai`, `*.sgraph.ai`. (`*.sgit.ai` covers newsroom.sgit.ai and pki.sgit.ai, but not `sgit.ai` itself, which is why both are listed.) **Save.**
 3. Ask the agent to try again: a domain change works in the session that is already open. **If it still can't reach the site, start a new session.** (The onboarding guide says this since 5 November; the vault guide still says to start a new session every time, and its owner may align it.)
 
+**Other sites your agents need go on the same list.** The six cover the team's sites. An agent that works on PrompTugal.news needs `promptugal.news` allowed too (Indi's conductor allowed it on 6 November, commit 7c6e0b7); the same goes for any other site an agent must read.
+
 Do this **before** an agent makes its key: a key made in a session you then replace is wasted. Jose's case (WS-139) is not fully explained: newsroom.sgit.ai was refused on 3 November and reached by two of his agents on 4 November.
 
-*Sources: the onboarding guide's step 3B, item 9 (settled by pm@web-summit.vicky on 5 November, commit 6c5f80c); [the vault guide](../vault-agent/index.html#token), step 1; commits 5eac229 and 799d37c; [WS-139](../briefs/index.html#issues).*
+*Revised 7 November: added that sites beyond the six, such as promptugal.news, must be allowed the same way.*
+
+*Sources: the onboarding guide's step 3B, item 9 (settled by pm@web-summit.vicky on 5 November, commit 6c5f80c); commit 7c6e0b7; [the vault guide](../vault-agent/index.html#token), step 1; commits 5eac229 and 799d37c; [WS-139](../briefs/index.html#issues).*
 
 ## Where does the SG/Send access token go, and why does my vault agent say "no access token configured"? {#token}
 
@@ -67,10 +80,13 @@ Do this **before** an agent makes its key: a key made in a session you then repl
 - **Never paste a token into a chat**, a file or a message. If it goes in the environment's settings, it goes in an environment only that agent's sessions use:
   - Open the **cloud environment** menu in the **title bar at the top**, press **Edit**. Environment variables are **not** on the Network access page: go **back one level with the back arrow at the top**. They are all in **one text box**: type `SG_SEND_ACCESS_TOKEN=` and paste the token right after the `=`, on one line, no spaces. **Save.**
 - **Start a new session.** A session that is already open does not see a new variable; that is why the agent still says "no access token configured".
-- **Give the vault agent an environment of its own** (WS-129): every session in an environment can read its variables, so keep the token where only the vault agent runs.
+- **One environment per agent that holds a secret** (WS-129; for Angelo's agents his rule of 6 November): every session in an environment can read its variables, so a token lives only in the environment of the one agent it belongs to.
+- **An old token still in a session?** A token removed from the environment's settings stays in sessions started before. Each agent checks its own session without printing it, and removes it if it is still there.
 - The vault agent checks first, without printing the token: is it set, and does `dev.send.sgraph.ai` answer? If not, fix the environment before it makes its key.
 
-*Sources: [the vault guide](../vault-agent/index.html#token), step 1 (one token per agent since 5 November, commit bd407d1), and the onboarding guide's step 8; [when something goes wrong](../vault-agent/index.html#help).*
+*Revised 7 November: one environment per agent with a secret, and how an old token left in a running session is removed; the onboarding guide's step 8 now follows the one-token-per-agent rule too.*
+
+*Sources: [the vault guide](../vault-agent/index.html#token), step 1 (one token per agent since 5 November, commit bd407d1), and the onboarding guide's step 8 (aligned 6 November, commit e5f521e); Angelo's protocol, "Secrets"; commit 66b37f0 (removing an old token); [when something goes wrong](../vault-agent/index.html#help).*
 
 ## My agent can't push, or can't see the repository. Who sends the invitation? {#push}
 
@@ -78,10 +94,12 @@ Do this **before** an agent makes its key: a key made in a session you then repl
 
 It is almost always one of three things:
 
-1. **The invitation isn't accepted yet.** Send your **exact GitHub username** in writing to Angelo (he sends the invitations now, WS-124; Dinis can too). It arrives in your **Workspace email**: press **View invitation**, then the green **Accept invitation**. Not there? Check spam, then **Notifications** at the top right of github.com. Invitations expire: ask for a new one.
+1. **The invitation isn't accepted yet.** Send your **exact GitHub username** in writing to Angelo (he sends the invitations himself, WS-124; Dinis can too). Agents never send invitations: admin rights stay with people. It arrives in your **Workspace email**: press **View invitation**, then the green **Accept invitation**. Not there? Check spam, then **Notifications** at the top right of github.com. Invitations expire: ask for a new one.
 2. **Claude Code is connected to a different GitHub account**, often a personal one. Check at https://claude.ai/connect-github.
 3. **The session was opened before you accepted.** Open a new session.
 
 Saying "done" is not enough: twice, someone was recorded as having a GitHub account that nobody could find. Only an **admin** of a repository can invite; another repository (the newsroom's, for example) has its own admins (WS-141).
 
-*Sources: the onboarding guide's step 3A and "What goes wrong"; [WS-09 and WS-124](../briefs/index.html#issues); commit 575d48b (Indi invited by Angelo); commit a6c8a91 (WS-141).*
+*Revised 7 November: invitations come from Angelo or Dinis in person, never from an agent (Angelo's rule of 6 November). The start page's step 3 still says to send the username to Dinis; either works.*
+
+*Sources: the onboarding guide's step 3A and "What goes wrong"; [WS-09 and WS-124](../briefs/index.html#issues); Angelo's protocol, "Admin rights" (commit 2219eb2); commit 575d48b (Indi invited by Angelo); commit a6c8a91 (WS-141).*
