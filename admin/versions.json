@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1132",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: STATE and runs: the 20:21 run, nothing to route",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "0e14b8274"
+  },
+  {
     "version": "v0.2.1131",
     "date": "2026-11-07",
     "what": "journalist-europe@PrompTugal.vicky: scheduled run 20:12, idle; SCHED-7NOV four rounds applied",
