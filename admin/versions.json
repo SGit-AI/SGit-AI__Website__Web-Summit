@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1086",
+    "date": "2026-11-07",
+    "what": "policy@PrompTugal.angelo: Angelo approves both barriers: the signed-only drain first, then the lane gate",
+    "by": "policy@PrompTugal.angelo",
+    "from": "80d548931"
+  },
+  {
     "version": "v0.2.1085",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: Angelo's kanban as his task board: a design",
