@@ -69,6 +69,16 @@ Short, in his voice, one link each; tag RiskMandate in every post. Times are sug
 > Come and find me at RiskMandate's stand on Thursday 12 November: booth A1-30, ALPHA 1, Pavilion 1.
 >
 > If you run AI agents in production, or want to, I'd like to compare notes: what they can reach, what they're allowed to do, and what actually stops them when something goes wrong. I'll be showing our own setup live on my laptop.
+>
+> Before then, my page for the summit: who I am, what RiskMandate does, and a 53-second film: https://web-summit.sgit.ai/meet/angelo/index.html
+>
+> #WebSummit #AIagents
+
+To make it land (Angelo asked, 7 November):
+- **The one link: his meet page** (above). It is the page his shirt and card QR codes open, so the post and the stand say the same thing: who he is, RiskMandate in short, the 53-second film, the stand day. One link only; LinkedIn shows a preview for the first.
+- **Tag** RiskMandate and Web Summit's page; tag teammates only if they agree (Silvio Switha made the film, as riskmandate.ai credits it).
+- **An image beats a link preview** if there is one: the stand card ("Find me Thursday 12 November, booth A1-30, ALPHA 1, Pavilion 1") from designer@, if Angelo asks. Then the meet page link stays in the text.
+- **Then:** feature the post, and reply to every comment the same day.
 
 ### Sun 8, morning. His own: the communication graph
 
