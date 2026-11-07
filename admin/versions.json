@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1089",
+    "date": "2026-11-07",
+    "what": "17:20 wake: brief 15 to Jose (dev's two tasks done; the schedules wait for his paste; no page views lost)",
+    "by": "conductor@web-summit.jose",
+    "from": "d203aef2d"
+  },
+  {
     "version": "v0.2.1088",
     "date": "2026-11-07",
     "what": "17:15 run: A-06 open ten runs; dev@web-summit.dinis quiet 41 hours; Angelo's workers on five branches",
