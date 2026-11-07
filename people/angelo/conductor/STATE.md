@@ -98,6 +98,9 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+
+- 7 Nov 18:20: the runner: nothing to route; nothing urgent (Angelo is in the desk session, which routed his words: kanban task board approved, research@'s list of his 18 companies, Android internal beta and repo). Back: writer@'s LinkedIn report (91cec20, For: desk: his profile, Project, Featured and first post done; Sunday to Thursday next; open: Dinis's answers, dev@'s re-sync) and runner.writer@'s state (6f0937f: checker's five findings on WS-125 to answer). dev@'s kanban spec (2dd1b73) is with the desk. Others' work, information only: Indi's social@ plan (WS-126), Silvio's team joining X-ray, inbox@silvio's first draft (not sent).
+
 - 7 Nov (summary for the desk after compaction): the backlog (people/angelo/backlog.md) is the single list; Angelo's items worked through one at a time today (token cleanup, WS-181 C and A/B, P-07, kms proposal and vault.kms@, six new agents created, live map approved: /team/map/ live plus a daily snapshot in his article, venues: PrompTugal.news the one guide with a private team layer, back office moved to team-collaboration@ as on-call support plus content plus coordination, backlog style with no fixed times, kanban as his task board (dev@ designing), Android spec for review). Context sizes checked 17:20; Angelo compacting dev@, team-collaboration@, dashboard@ and the desk.
 
 - 7 Nov 17:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session: it routed his kanban-as-task-board design to dev@ and dashboard@, e7b4797). policy@ (80d5489, For: desk) records Angelo's "Go ahead with both" on the two barriers (signed-only drain first, then the lane gate): the desk to brief dev@, files being Dinis's team's so the five steps apply; not yet in the backlog, left to the desk (live). Others' work, information only: Silvio's outreach (five more world-1 companies, KPMG/Startup Portugal/Feedzai his), garment collection asked for Monday 9 Nov, Vicky's logistics prompts.
@@ -117,8 +120,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 7 Nov 10:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session: "Wake up" at 10:19, the agents answered with direct-session reports). Back: vault@'s sharness.kms (6d3ccd6: after the summit, four small steps now) and live-map/venues analysis (81bb8ec); vault@'s six open questions (557e322), of which one is tier 3 for Angelo (remove his token from vault@'s three clones: added to Open with Angelo). crm@'s inbox agent built at his go (6bbb671) and crm now every 3 h (d53e0f4); crm@'s hablla finding (a0906f0) is for Dinis's conductor and crm, unanswered. Faster schedules, specs-before-builds and dev.links brief are the desk's own. Others' work, information only: checker@vicky, mentor, dev@jose.
 
-- 7 Nov 09:21: the runner: two briefs back, nothing to route. crm@ delivered the inbox@ design (e8eb75d, people/angelo/proposals/inbox/README.md, ahead of its 16:50 due): Angelo's go is tier 3 (the three Gmail send tools off, the scheduled task created with the Gmail connector), added to Open with Angelo; P-07 comes first. dev@ reviewed the WS-125 guide (d23e255, review-dev.md): accurate on sources, seven corrections already routed `For: writer`, policy@ and Dinis's conductor; policy@'s half still out (due 18:00). Others' work, information only: Silvio's dashboard agent at L6, vault-audit fix, journalist 08:57, designer's /print/.
-
-- 7 Nov 08:20: the runner: nothing to route; nothing urgent. Since 07:20 only reports and others' work: team-collaboration's 07:40 daily note (9dd5c3e, For: desk: parking open, decisions wait on Dinis, no 18:00 records), dev's Replay map mode (1b8683d, For: Angelo, WS-97), Vicky's and Silvio's agents. No brief of Angelo's has come back. Workload table written (above).
-
-last_run: 2026-11-07T17:35:00Z (the desk)
+last_run: 2026-11-07T18:20:00Z (the runner)
