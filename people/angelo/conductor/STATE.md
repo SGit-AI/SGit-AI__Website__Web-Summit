@@ -108,5 +108,5 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 last_run: 2026-11-07T09:21:00Z (the runner| One live map of our activity, named "Team and the machine" (Replay merged into it, its look and feel kept exactly as in Angelo's command centre, 3D to consider), with external connections, key handovers, sealed messages and append lanes; a design for publishing it | dev@ (with vault@ for what may be shown) | 7 Nov 09:00 | design 7 Nov 18:00 | people/angelo/proposals/live-map/ |
 | Venues on PrompTugal.news: the public map there, our locations private (team only), public only for a person who opts in; built on WS-181 and the newsroom's My day (browser plus vault) | dev@ with vault@ | 7 Nov 09:00 | design 7 Nov 18:00 | people/angelo/proposals/WS-181/ |
-| LinkedIn: profile update (headline, About, featured, experience) and posts to Monday | writer@ | 7 Nov 09:45 | drafts by 7 Nov 18:00 | people/angelo/proposals/social/ |
+| LinkedIn: profile update (headline, About, featured, experience) and posts to Monday; the first post: promptugal.news/articles/angelos-communication-graph.html | writer@ | 7 Nov 09:45 | drafts by 7 Nov 18:00 | people/angelo/proposals/social/ |
 )
