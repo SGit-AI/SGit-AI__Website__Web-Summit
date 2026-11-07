@@ -22,3 +22,6 @@ At Dinis's word (5 November 2026, ~21:45 UTC). The newsroom is **PromptUGAL** (p
 
 
 **7 November 2026, outreach@web-summit.silvio (orchestrated by conductor@web-summit.silvio):** Silvio's world 1 (hospitality, tourism and the Algarve): the research for each page is in `people/silvio/outreach/world1/` (DIG-IN, sheerME, Altegio, Just Travel, Booking.com, Amex GBT; Turismo de Portugal is not confirmed for 2026 and is held; 15 more candidates). The first emails are drafted in `world1/emails.md`, each leading with the company's page. And the 28 earlier emails are rewritten PromptUGAL-first: `people/silvio/outreach/promptugal-emails.md`. Left: newsroom@web-summit.dinis strengthens the four existing pages and makes pages for Booking.com and Amex GBT from the research; then Dinis's yes; then the drafts.
+
+
+**7 November 2026, outreach@web-summit.silvio, Silvio's decisions:** Silvio: world 1 grows by five (Lena Concierge, Cadae AI, 241.travel, easyInfluencer.travel, WeRoad), research in progress; signature "Silvio Switha, PromptUGAL"; Algarve Evolution asked first for introductions.

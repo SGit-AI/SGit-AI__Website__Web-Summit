@@ -25,8 +25,8 @@ drafts; Silvio sends.
 > Queremos juntar um mapa de quem trabalha com restauração e bebidas na Web Summit. Se nos mandarem mais material, ou
 > nos disserem com quem gostariam de se cruzar, publicamos mais sobre vocês durante a semana do evento.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · feito com a RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · feito com a RiskMandate
 > Rascunho do meu agente de IA; revisto e enviado por mim.
 >
 > <small>Preferem não receber estes emails? Respondam e não voltamos a escrever.</small>
@@ -46,8 +46,8 @@ drafts; Silvio sends.
 > Estamos a preparar um retrato da "economia das marcações" na Web Summit. Se nos mandarem mais (o que vão mostrar, quem
 > vai estar, os vossos números mais recentes), acrescentamos à vossa página durante a semana do evento.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · feito com a RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · feito com a RiskMandate
 > Rascunho do meu agente de IA; revisto e enviado por mim.
 >
 > <small>Preferem não receber estes emails? Respondam e não voltamos a escrever.</small>
@@ -67,8 +67,8 @@ drafts; Silvio sends.
 > Se nos mandarem mais (o que vão mostrar na Web Summit, os planos para a Europa a partir de Portugal), acrescentamos à
 > vossa página durante a semana do evento.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · feito com a RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · feito com a RiskMandate
 > Rascunho do meu agente de IA; revisto e enviado por mim.
 >
 > <small>Preferem não receber estes emails? Respondam e não voltamos a escrever.</small>
@@ -88,8 +88,8 @@ drafts; Silvio sends.
 > We would like to explain to Portuguese salons and clinics how to connect their business to an AI assistant. If you send
 > us more, we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>Rather not receive these? Reply and we will not write again.</small>
@@ -108,8 +108,8 @@ drafts; Silvio sends.
 >
 > If you send us more, for example how Portuguese properties use these tools, we will add it during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 
 ## Amex GBT (waits for its page)
@@ -126,6 +126,6 @@ drafts; Silvio sends.
 >
 > If you send us more, we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.

@@ -26,4 +26,12 @@ Gmail; inbox@web-summit.silvio makes the Gmail drafts.
 | Booking.com | not yet | done (session Thu 12 Nov, 12:45, Stage 8) | waiting for the newsroom | after the page |
 | Amex GBT | not yet | done (session Thu 12 Nov, 16:05, Stage 10) | waiting for the newsroom | after the page |
 | Turismo de Portugal | not yet | done; **not confirmed for 2026** | hold | hold |
-| 15 more (`more-companies.md`): Lena Concierge, 241.travel, easyInfluencer.travel, Cadae AI, KioskIQ, Koobata, DRIVESHARE, WeRoad, and others | not yet | candidates found | Silvio picks | |
+| Lena Concierge, Cadae AI, 241.travel, easyInfluencer.travel, WeRoad (joined at Silvio's word, 7 Nov) | not yet | in progress | waiting for the research | after the page |
+| The other 10 in `more-companies.md` | | candidates | not picked | |
+
+## Silvio's decisions, 7 November 2026
+
+- Introductions: **Algarve Evolution first** (`introductions.md`).
+- Signature on every PromptUGAL email: **"Silvio Switha, PromptUGAL"**.
+- World 1 grows by five: Lena Concierge, Cadae AI, 241.travel, easyInfluencer.travel, WeRoad.
+- WS-30: Silvio owns KPMG Portugal, Startup Portugal and Feedzai.
