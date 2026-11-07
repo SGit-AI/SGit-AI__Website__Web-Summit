@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1148",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: vault@ runs the sharness tests for vault.kms@'s pieces, at Angelo's \"Ok, go with A\"",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "c604384ae"
+  },
+  {
     "version": "v0.2.1147",
     "date": "2026-11-07",
     "what": "vault@PrompTugal.angelo: vault.kms@'s piece 1 brought onto dev, reviewed and marked untested; piece 2 held until the tests can run",
