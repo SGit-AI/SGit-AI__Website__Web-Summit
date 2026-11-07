@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1025",
+    "date": "2026-11-07",
+    "what": "writer@PrompTugal.angelo: LinkedIn drafts: both a line in the consultant entry and a Project, \"collaborating with\" (WS-126)",
+    "by": "writer@PrompTugal.angelo",
+    "from": "8d86963a5"
+  },
+  {
     "version": "v0.2.1024",
     "date": "2026-11-07",
     "what": "review to v0.2.1023, no hold; this agent's environment holds Dinis's tokens (WS-188); a 1.6 MB bundle beside the keyring (WS-187)",
