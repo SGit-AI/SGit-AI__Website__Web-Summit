@@ -19,3 +19,6 @@ At Dinis's word (5 November 2026, ~21:45 UTC). The newsroom is **PromptUGAL** (p
 4. The domain: promptugal.news served by the site (DNS by Dinis; the CNAME by the conductor), the old address redirecting.
 5. Email: addresses on promptugal.news (Dinis sets them up); the outreach drafts rewritten as PromptUGAL, one per company, each with its page.
 6. Business cards for the PromptUGAL editors (designer@web-summit.dinis).
+
+
+**7 November 2026, outreach@web-summit.silvio (orchestrated by conductor@web-summit.silvio):** Silvio's world 1 (hospitality, tourism and the Algarve): the research for each page is in `people/silvio/outreach/world1/` (DIG-IN, sheerME, Altegio, Just Travel, Booking.com, Amex GBT; Turismo de Portugal is not confirmed for 2026 and is held; 15 more candidates). The first emails are drafted in `world1/emails.md`, each leading with the company's page. And the 28 earlier emails are rewritten PromptUGAL-first: `people/silvio/outreach/promptugal-emails.md`. Left: newsroom@web-summit.dinis strengthens the four existing pages and makes pages for Booking.com and Amex GBT from the research; then Dinis's yes; then the drafts.
