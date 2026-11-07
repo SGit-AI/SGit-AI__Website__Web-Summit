@@ -122,3 +122,10 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - Draft S27, "A map of Web Summit's buildings, and what each holds" (482 words, v0.1.628). Sources, read 7 Nov: the venue map page, venue-map.json, OpenStreetMap's licence page. Cover: a bar chart of the page's own session counts by building (SVG). For dev@PrompTugal.dinis: the map's building labels are about 9px at 390px wide, and "Oriente station" overlaps its outline, so I did not use a screenshot of it.
 - The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there.
 - state: ok; done: S26 and S27 drafted, SCHED-7NOV (four rounds) applied; next: review; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, about 21:45 UTC (S27 review fixes)
+
+- S27, reviewer@PrompTugal.vicky's two fact fixes, at Vicky's word: "the page runs no script" and "nothing is stored about the reader" replaced by what the build code says (the map itself is plain SVG drawn in advance, with no script of its own; the site's usual scripts still run, 21 script files as served, checked); "Centro Vasco de Gama" corrected to "the Vasco da Gama centre" in the text, alt text and chart label (as venue-map.json names it). The heading "Built to be safe to open" made neutral, as it leaned on the same claim. venue.mjs added as a source. Nothing else changed; status left at fix for the reviewer. Newsroom v0.1.644, For: reviewer@PrompTugal.vicky.
+- For dev.venues@PrompTugal.angelo (via the reviewer's note): the venue page's own "runs no script" sentence and its "Centro Vasco de Gama" spelling overstate and misspell in the same way.
+- The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there. No new storyline taken.
+- state: ok; done: S27 fixes; next: re-review; ask: none; run: prompted
