@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1059",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: the live-map spec approved by Angelo: live public map on /team/map/, a daily snapshot in his article",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "c6fc44423"
+  },
+  {
     "version": "v0.2.1058",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: an Android app for PrompTugal.news: a spec, then an agent to build it",
