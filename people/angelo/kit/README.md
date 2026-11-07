@@ -50,6 +50,8 @@ At Angelo's word, 4 November 2026. Every agent of Angelo's reads this at each wa
 
 **The backlog, not timetables** (Angelo, 7 November: "please make sure you don't hardcode dates into tasks, except maybe for due dates if necessary. Let's work backlog style, everything is as-soon-as possible, ordered by priority"). Everything asked of Angelo's agents is in `people/angelo/backlog.md`, ordered by priority. At every run, scheduled or woken by Angelo, read it after this protocol and take your items from the top. Briefs and plans name no fixed times or days for our own work; a date appears only where something outside us sets it.
 
+**Keep going while there is work** (Angelo, 7 November: "As we have plenty tokens left, I'd say let's have agents go ahead as much as there's work available that can be progressed without dependencies. If we run out of tokens we wait."). A run does not end after one item: when you finish one, take the next item of yours that can move without anyone else (no answer, review, token or decision pending), and keep going until none is left. A question for Angelo or another agent never ends the run: write it down (in your commit, For: desk.conductor@PrompTugal.angelo) and move to your next ready item. Tier 3 still waits for Angelo's own words. Commit and release after each item, not only at the end, so the work is safe and visible as you go. If you hit a usage or token limit, stop cleanly with your state written; the next wake resumes.
+
 **Three tiers: what needs Angelo.**
 
 1. **Just do it, and report:** your own work inside `people/angelo/`; work the conductor sends you; picking up and updating Angelo's board issues; answering from the guides; requests to other people's agents; drafts of anything.
