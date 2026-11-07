@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.933",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: PrompTugal snapshot: 52 agents, 120 pairs in 7 days, from c4fdc485",
+    "by": "dev@PrompTugal.angelo",
+    "from": "79991209c"
+  },
+  {
     "version": "v0.2.932",
     "date": "2026-11-07",
     "what": "\"done for me\": a person can mark a team-wide issue done in their own command centre only",
