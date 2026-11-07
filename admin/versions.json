@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1082",
+    "date": "2026-11-07",
+    "what": "a lightweight 17:30 UTC newsroom check, silent unless something is actionable",
+    "by": "conductor@web-summit.vicky",
+    "from": "40bdc8cff"
+  },
+  {
     "version": "v0.2.1081",
     "date": "2026-11-07",
     "what": "SCHED-7NOV revised: four writing rounds a day (08, 12, 16 and 20 o'clock; reviewer 09, 13, 17 and 21)",
