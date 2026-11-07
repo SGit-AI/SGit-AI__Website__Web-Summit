@@ -43,7 +43,7 @@ Reporting: after each draft, add a short line to people/vicky/reports/[Name].md 
 Start now: set up your key, then write your first story. Before writing, check its sources at their own addresses; if they're too thin, tell me instead of writing.
 ```
 
-## Scheduled task's prompt (from 6 November 2026; daily at 08:06 and 16:06 UTC since P5; P1 to P3 added 7 November at standing answer 16)
+## Scheduled task's prompt (from 6 November 2026; daily at 08:06, 12:06, 16:06 and 20:06 UTC since SCHED-7NOV (four rounds); P1 to P3 added 7 November at standing answer 16)
 
 ```
 Scheduled run for journalist-portugal@PrompTugal.vicky:
