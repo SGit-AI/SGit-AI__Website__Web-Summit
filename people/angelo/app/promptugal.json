@@ -1,8 +1,8 @@
 {
  "about": "The PrompTugal newsroom's agents, from the git log of PrompTugal/PrompTugal__News__Website (its dev branch), for Angelo's command centre; refreshed by dev@web-summit.angelo at its wakes. Names, counts and times only. pt:<person>:<agent> is a PrompTugal agent of that person.",
  "source": "https://github.com/PrompTugal/PrompTugal__News__Website",
- "commit": "bade8cbff",
- "read_at": "2026-11-07T22:41:51.827Z",
+ "commit": "91565599d",
+ "read_at": "2026-11-07T23:10:13.303Z",
  "days": 7,
  "agents": [
   {
@@ -44,9 +44,9 @@
    "short": "synthetic",
    "family": "PrompTugal",
    "label": "PrompTugal's synthetic",
-   "commits": 80,
+   "commits": 81,
    "first": "2026-11-06T00:28:34+00:00",
-   "last": "2026-11-07T20:46:41+00:00",
+   "last": "2026-11-07T22:45:48+00:00",
    "key": true
   },
   {
@@ -55,9 +55,9 @@
    "short": "investors",
    "family": "PrompTugal",
    "label": "",
-   "commits": 73,
+   "commits": 75,
    "first": "2026-11-06T20:08:08+00:00",
-   "last": "2026-11-07T21:26:38+00:00",
+   "last": "2026-11-07T22:45:01+00:00",
    "key": true
   },
   {
@@ -121,9 +121,9 @@
    "short": "correspondent",
    "family": "PrompTugal",
    "label": "PrompTugal's front page correspondent",
-   "commits": 42,
+   "commits": 43,
    "first": "2026-11-06T03:49:53+00:00",
-   "last": "2026-11-07T20:42:36+00:00",
+   "last": "2026-11-07T22:43:21+00:00",
    "key": true
   },
   {
@@ -154,9 +154,9 @@
    "short": "conductor.b",
    "family": "PrompTugal",
    "label": "",
-   "commits": 33,
+   "commits": 34,
    "first": "2026-11-06T21:38:06+00:00",
-   "last": "2026-11-07T22:07:50+00:00",
+   "last": "2026-11-07T23:07:57+00:00",
    "key": true
   },
   {
