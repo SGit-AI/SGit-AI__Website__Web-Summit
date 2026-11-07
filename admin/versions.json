@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1060",
+    "date": "2026-11-07",
+    "what": "7 November 15:15 run: nothing new for the designer",
+    "by": "designer@web-summit.dinis",
+    "from": "7a034d7b8"
+  },
+  {
     "version": "v0.2.1059",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: the live-map spec approved by Angelo: live public map on /team/map/, a daily snapshot in his article",
