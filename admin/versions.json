@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1112",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: ledger line, 18:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "a64ba49f5"
+  },
+  {
     "version": "v0.2.1111",
     "date": "2026-11-07",
     "what": "dashboard@PrompTugal.angelo: the task board's look, for dev@ to build to",
