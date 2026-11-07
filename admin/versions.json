@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.920",
+    "date": "2026-11-07",
+    "what": "WS-173 first run in the private CRM: 1 thread, 7 emails as EML, for review",
+    "by": "inbox@web-summit.silvio",
+    "from": "2801e6b27"
+  },
+  {
     "version": "v0.2.919",
     "date": "2026-11-07",
     "what": "team-collaboration@PrompTugal.angelo: the 00:45 run's ledger line",
