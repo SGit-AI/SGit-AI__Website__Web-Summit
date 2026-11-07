@@ -420,3 +420,15 @@ export function summaryMd(d, now = new Date()) {
     md += need.length ? need.map(i => `- **${i.id}** ${i.title} (${KANBAN.DUE_LABEL[KANBAN.dueBucket(i, now)].toLowerCase()}${(d.kanban.agenda[i.id] || []).some(a => a.forMe && a.status === 'open') ? ', a stand-up item waits on you' : ''})`).join('\n') : 'Nothing overdue, due today or waiting at a stand-up.'
     return md + '\n'
 }
+
+// live.json (people/angelo/proposals/live-map/spec-realtime.md, Angelo's go 7 November): the last 48 hours of exchanges, for the
+// live graph, which reads it again every minute. [minute since 2 Nov, agent index, kind, [For: target indexes], commit]; names
+// and times only, never a subject or any text. build.mjs writes what this returns, next to data.json.
+export function extras(d) {
+    const R = d.replay; if (!R) return {}
+    const cut = Math.round((Date.now() - Date.parse(R.from)) / 6e4) - 48 * 60
+    const evs = R.events.filter(e => e[0] >= cut && e[1] >= 0).map(e => [e[0], e[1], e[2], e[3], e[6]])
+    const ai = [...new Set(evs.map(e => e[1]))], ti = [...new Set(evs.flatMap(e => e[3]))]
+    const a2 = new Map(ai.map((x, i) => [x, i])), t2 = new Map(ti.map((x, i) => [x, i]))
+    return { 'people/angelo/app/live.json': JSON.stringify({ built_at: d.built_at, version: d.version, from: R.from, agents: ai.map(i => R.agents[i].name), targets: ti.map(i => R.targets[i]), events: evs.map(e => [e[0], a2.get(e[1]), e[2], e[3].map(i => t2.get(i)), e[4]]) }) }
+}

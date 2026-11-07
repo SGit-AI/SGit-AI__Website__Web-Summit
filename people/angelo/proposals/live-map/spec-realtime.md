@@ -4,7 +4,7 @@ by: dev.map@PrompTugal.angelo
 written: 2026-11-07
 for: Angelo, reviewed with desk.conductor@PrompTugal.angelo; findings from policy@PrompTugal.angelo
 issue: WS-08
-status: draft for Angelo's review. Nothing is built before his go. An addendum to spec-live-map.md (approved), which puts live updates between releases out of scope.
+status: first version built on Angelo's go (7 November, backlog item 00, 4fd55d5): the floating hexagon graph at #live. The rest (display and wallpaper modes) is still a draft for his review. An addendum to spec-live-map.md (approved), which puts live updates between releases out of scope.
 ---
 ## What and why
 
@@ -80,3 +80,17 @@ Anything fetched from GitHub or a vault at view time; any token; a server; locat
 **One change I recommend to the subject-line rule:** a list of words to leave out will miss things, because subjects are free text. For the stand, show subjects **only from an allow list of agents whose subjects are about the work** (dev@, dev.map@, dev.links@, the newsroom's writers), and for everyone else "a commit by crm@ for desk.conductor@". crm@, inbox@, research@, vault@ and any person's conductor never show a subject at the stand. The wallpaper shows none, as written.
 
 Otherwise sound: our own site as the source, the 60-second tick with a spread, flat memory by a 48-hour window and a reload every 6 hours, the "as of" line and the labelled replay.
+
+## Built, 7 November evening: the live graph in a hexagon (Angelo's go, 4fd55d5)
+
+Open `people/angelo/app/index.html#live` (also "◉ Live" on Team and the machine's map).
+- **The graph** is the people ring exactly as the map draws it (same layout, colours, shapes and CSS classes), lines and dots only: no controls, no feed. People keep their first name, as on the map; the agents have no labels.
+- **`live.json`** is written by the build beside `data.json`: the last 48 hours of exchanges as `[minute, agent, kind, [For: targets], commit]`. Names and times only, never a subject or any text (the subject-line rule above is not needed for this view). About 17 KB.
+- **Every minute** (a random spread of 10 s) the page reads it again. A new exchange travels from its agent to its target in its sender's colour along the map's curved line; the line lights and fades over three seconds. A commit with no target lights its agent alone.
+- **On opening** the last hour is replayed in about 20 seconds, labelled "replay of the last hour". A page redraw does not replay it again.
+- **The freshness dot** (left of the hexagon): green while the data is under 20 minutes old, amber when older (a quiet spell or a slow release), grey if the last reads failed.
+- **Pop out**: Document Picture-in-Picture, an always-on-top window (Chrome and Edge, Windows and Mac), 440 x 440 px, with the page's stylesheets copied in and its own frame clock, so it keeps running when the page is hidden. Close it to bring the graph back.
+- **The hexagon**: an operating-system window is always a rectangle, so the graph is drawn inside a flat-top hexagon with a thin glowing rim, and the corners are the page's own dark. On most screens it reads as a floating hexagon. A truly shaped, transparent window needs an installed app: later, and Angelo's call.
+- **Freshness is the release's:** a few minutes behind git, which Angelo accepted. The newsroom's side is as fresh as dev@'s snapshot.
+- **Not yet built:** Safari and iPad (video picture-in-picture), full screen and `?display=1`, `?wallpaper=1`, the Wake Lock, the 6-hour reload, the four-hour test.
+- **Tests:** `people/angelo/app/tests/live.test.js` (the hexagon, the replay, a new exchange arriving, no text, at 1280 and 390 px). The build change that writes `live.json` is two lines in `admin/build/build.mjs` (the person's own `data.mjs` may export `extras()`), and `/people/*/app/live.json` is gitignored like `data.json`.
