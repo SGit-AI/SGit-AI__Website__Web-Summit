@@ -21,7 +21,7 @@ Then just say what you did in your report.
 - deletes anything; or
 - conflicts with Dinis's agents' work.
 
-Ask one question, with your recommendation, at the end of your report (`people/vicky/reports/<short name>.md`). The conductor gathers every agent's questions into one list in Vicky's 09:00 brief.
+Ask one question, with your recommendation, at the end of your report (`people/vicky/reports/<short name>.md`). The conductor gathers every agent's questions into one list in Vicky's 09:30 brief.
 
 ## Standing answers
 
@@ -41,6 +41,7 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - At the start of every scheduled run, before picking a new storyline, each journalist must check `desks/reviewer-vicky/reviews/` for any of its own drafts marked `fix-first` (or with open reviewer findings), revise the draft, and push it. Vicky will no longer pass "Check your reviews" messages manually.
     - On its next scheduled run, `reviewer` automatically re-checks any revised draft. When a draft is otherwise `ready` and only needs a small wording tweak, caption fix, or formatting polish, `reviewer` may make that minor edit directly, mark the draft `ready`, and note the tweak in its review and report rather than holding it back for another round. Publishing still requires Vicky's explicit approval.
 14. **Single-window routing** (Vicky, 7 Nov; for the conductor's brief): in the brief's Action section, routine answers and rule updates for Vicky's other agents go through `decisions.md` whenever possible, so the copy-paste reply is addressed to the conductor (`conductor` window) and Vicky only needs to open `reviewer` to approve publishing. Agents: an answer to your question may arrive as a standing answer or an update here, not in your own window.
+15. **A cover image for every article** (Vicky, 7 Nov; for the five journalists and the reviewer): every article from our desks (not just team articles) must now include at least one image from the first draft so that every published piece has a cover thumbnail on `/articles/`. Use either a cropped screenshot of the real thing or a clean SVG summary card, chart, timeline, or diagram drawn strictly from sourced numbers and facts in the article (readable at 390px phone width, text at least 12px, and wired up so the `/articles/` index displays it as the card cover).
 
 ## Updates for agents
 
@@ -64,11 +65,24 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 **SA13, apply standing answer 13 in your scheduled runs** (Vicky, 7 Nov). For: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
 > Change your own scheduled task's prompt so every scheduled run follows standing answer 13 (journalists: revise your own fix-first drafts first; reviewer: re-check revised drafts, make minor edits and mark them ready; publishing still only at Vicky's word), and confirm "applied SA13" in your report.
 
+**SA15, a cover image on every article** (Vicky, 7 Nov). For: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
+> Follow standing answer 15 from your next draft (journalists: an image in every first draft, wired as the `/articles/` card cover; reviewer: a draft without one is not Ready), and confirm "applied SA15" in your report.
+
+**SCHED-7NOV, three rounds a day** (Vicky, 7 Nov). For: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
+> Update your own scheduled task to these UTC times, and confirm "applied SCHED-7NOV" with the new times in your report:
+> - journalist (summit): 08:00, 12:00, 20:00
+> - journalist-portugal: 08:06, 12:06, 20:06
+> - journalist-europe: 08:12, 12:12, 20:12
+> - journalist-ai: 08:18, 12:18, 20:18
+> - journalist-connections: 08:24, 12:24, 20:24
+> - reviewer: 09:00, 13:00, 21:00 (shifted later so all journalists finish pushing drafts and images first, and giving reviewer a full 30-minute window before the brief).
+
 Still to confirm (7 Nov, 08:50 UTC; the rest have confirmed):
 - P10: journalist-europe, journalist-connections, vault, designer, dev.
 - P17: journalist-ai, journalist-europe, journalist-portugal, journalist-connections, reviewer, checker, vault, designer, dev.
 - P22: reviewer, checker, vault, designer, dev.
 - P27: reviewer, checker, scout, vault, designer, dev.
 - SA13: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
+- SA15 and SCHED-7NOV: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
 
 Removed on 7 Nov once every agent they were for had confirmed them: P1 (the hold), P2 (re-read your prompts file), P3 (the status block), P5 (the journalists' staggered times), P9 (the hooks check), and the conductor's P4, P6, P8, P16, P18, P19 and P26. They stay in force; the agents carry them in their own prompts, and their text is in this file's history and in the scout's notes.
