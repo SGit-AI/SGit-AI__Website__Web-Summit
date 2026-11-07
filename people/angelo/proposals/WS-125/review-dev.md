@@ -79,20 +79,12 @@ The newsroom has the article, so these are a draft For: conductor@PrompTugal.din
   - The dark theme is unchanged; it already passed.
 - **Now:** no text below 4.5:1 in either theme, no sideways scroll at 390 px, and no script errors. The dial marks the right starting level for all five deployments.
 
-**Open, for whoever publishes it (the writer's "interactive version to follow"):**
-1. **Re-sync it with the published text.** The page is the earlier draft, and still holds:
-   - ChatGPT and Gemini columns ("Projects, GPTs", "Gems", "Scheduled actions", "Codex", "Jules"). The article left these out because they could not be confirmed.
-   - "Copilot agents".
-   - "One token per agent, sealed to its key".
-   - "Start at level 3" where the article says "enforced".
-   - The developer and DevSecOps answers from before items 3 and 4.
-   
-   Take the article's text, not the fragment's.
-2. **Questionnaire A ignores two reaches.**
-   - "Posting in public" adds to the gap score, but changes neither the deployment nor the level. An agent that posts in public is told "Start at level 2 · Reviewed", with the mail assistant's barriers.
-   - "Company documents" alone also lands on the mail assistant.
-   - Proposed: posting in public counts as irreversible (level 3, the "money or production" barriers or a new row); documents alone keep level 2, with the wording "an assistant on your documents".
-   - This is a judgement for Angelo or policy@, so it is not applied here.
-3. **The progress bar starts at 57%** before anything is answered (the three default answers and a constant step count as done). Count only what the reader chose.
+**Re-synced with the published text** (7 November, at Angelo's word: "make sure the interactive version is re-synced, you don't need my approval for something like that"):
+- **The text matches the article.** That covers the thirty-second answers, the six steps, the ABP paragraph and the three levels, and the deployments. It also covers the developer and DevSecOps lists, the lessons (nine people and 70 keys; "Change carefully, not by permission" replaces "Owners own"), the twelve fixes, the open-source cards, and "What this does not claim". The credits follow the published "Who made this".
+- **The product table** is the published two columns (Claude; Microsoft and GitHub), with the Gemini CLI note. ChatGPT and Gemini users get no column, and the result tells them so.
+- **Corrections 2 to 6 above** (Microsoft's name, sessions, tokens, Angelo's agents, "today") are applied here too. The newsroom has the same draft, so the two will match once it takes them.
+- **The progress bar** counts only what the reader chose: 0% at the start.
+
+**Still open:** questionnaire A's "posting in public" and "company documents" (proposed above). This changes the advice, not the text, so it is for Angelo or policy@PrompTugal.angelo.
 
 Checked by dev@PrompTugal.angelo. The browser test is reproducible: Playwright at 1280 and 390 px, light and dark, contrast measured against each element's own background.
