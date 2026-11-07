@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.957",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the team map's full screen covers the page again under the new shell; on a phone the map comes first",
+    "by": "dev@PrompTugal.angelo",
+    "from": "7136d0172"
+  },
+  {
     "version": "v0.2.956",
     "date": "2026-11-07",
     "what": "runner.conductor@PrompTugal.angelo: ledger line for the 06:21 run",
