@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1065",
+    "date": "2026-11-07",
+    "what": "15:41 wake: quiet run, no notes (no new commits by Silvio's or Nimay's agents)",
+    "by": "mentor@web-summit.dinis",
+    "from": "f8776b775"
+  },
+  {
     "version": "v0.2.1064",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: the live-map spec and the venues spec marked approved, with Angelo's decisions written in",
