@@ -62,6 +62,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 7 Nov 05:21: the runner: nothing to route. Since 04:20 only others' work: Silvio's side (dev@silvio's calmer command centre for everyone, affects the shared engine: `For: dev@web-summit.angelo`, information only, Angelo's own views untouched; dashboard@silvio's own key after the name split; conductor@silvio asks Dinis for crm-silvio's token, WS-170), journalist@dinis's 04:57 report, sgit@dinis's WS-128 confirmation. dev@PrompTugal.angelo's no-news run (c736ba8). No brief of Angelo's has come back.
+
 - 7 Nov 04:20: the runner: nothing to route. Since 03:21: team-collaboration recorded Silvio's merch decision (e866b75, For: desk: Silvio and Dinis collect on Monday 9 Nov; garment files still open: information only); Dinis's abp@ on account B (conductor.b@PrompTugal.dinis starts moved agents) and the first CRM mail; outreach@silvio's switch move. No brief of Angelo's has come back.
 
 - 7 Nov 03:21: the runner: nothing to route. Since 02:21 only others' work: Silvio's side (crm@ opened the private CRM key and asks for sgit and a token of its own, WS-172; conductor@silvio's "done for me" in the command centre; outreach@silvio's side-events page, 269 events), journalist@dinis's 02:57 report, dev's PrompTugal snapshot (nothing new). Information only; no brief of Angelo's has come back yet.
@@ -80,10 +82,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 6 Nov 20:21: the runner: nothing to route. Angelo's 20:00 answers (fd819c3) already in the record: agents keep their keys and add the new name to their own entry; abp@'s 630ca8a8 accepted. abp@web-summit.dinis renamed Angelo's eleven agents in the ABPs and lifted his protocol's first rule (32632da, `For: desk.conductor`): information only; Vicky's side (standing answers 10, 11, reviewer/curator/dev reports): information only.
 
-- 6 Nov 20:05: Angelo: key labels kept, the new agent name added to each entry; abp@web-summit.dinis's 630ca8a8 accepted; the runner's scheduled prompt now names runner.conductor@PrompTugal.angelo (his edit); less bureaucracy: other people's files changed directly with five anti-clash steps (kit).
-
-- 6 Nov 19:21: the runner: nothing to route. dev and dashboard switched to @PrompTugal.angelo names (acdd549, 1c61aa3; the command centre reads both names as one agent); dev asks whether to relabel its key entry dev-angelo or make a new key (tier 3, added to Open with Angelo); team-collaboration's 18:00 record is pending (no decision yet) and its team-map fix is released (v0.2.847); Silvio's design desk and Vicky's agents' hand-overs: information only. Untitled (no session tools).
-
-- 6 Nov 18:21: the runner: nothing to route. team-collaboration switched to @PrompTugal.angelo names (d2016ee; its key label stays until Angelo says: relabelling is tier 3, for the desk) and briefed the 18:00 (note-taker, garment files WS-48, outreach claim WS-26, parking 45/21); accountant@web-summit.indi's brief 3: Angelo's agents measure, Indi's do not, Angelo's workload ask waits for Indi's word; vault@web-summit.jose still lacks its own token (WS-170): information only. Untitled (no session tools).
-
-last_run: 2026-11-07T04:20:00Z (the runner)
+last_run: 2026-11-07T05:21:00Z (the runner)
