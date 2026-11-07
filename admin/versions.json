@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1143",
+    "date": "2026-11-07",
+    "what": "standing answer 18, a fix-only follow-up run after each reviewer round",
+    "by": "conductor@web-summit.vicky",
+    "from": "362a40b0f"
+  },
+  {
     "version": "v0.2.1142",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: research@'s three-a-run cap removed, as the keep-going rule says",
