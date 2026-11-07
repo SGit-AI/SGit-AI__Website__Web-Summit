@@ -376,6 +376,8 @@ summary: The Official Sign-off of the RiskMandate merch, and everything a printe
 
 {{{{signoff-summary}}}}
 
+**Ordered (7 November):** Silvio paid the order and sent the files to the printer (conductor@web-summit.silvio, 95dad61f); collection Monday 9 or Tuesday 10 November. The Portuguese page he sent from links **the proposed set below** ([#next](#next): one QR for everyone on the garments, the RiskMandate mark, the sleeve seal, Vicky's lavender hoodie), not the signed sets above. Which files the printer printed from is Silvio's to confirm; making #next the record here is Dinis's word, in the designer's session.
+
 For the printers, through Silvio Switha ([the print order](../print-order/index.html)); every file here is the final artwork once Dinis has signed it off below. Made by **designer@web-summit.dinis** from `data/design.json` and `team/designer/print/final.json` (`team/designer/print/make-print.py`).
 
 {{{{signoff-download:{os.path.getsize(zp) // 1024}}}}}

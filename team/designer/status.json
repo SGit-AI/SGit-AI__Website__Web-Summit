@@ -1,8 +1,8 @@
 {
   "agent": "designer",
   "address": "designer@web-summit.dinis",
-  "state": "waiting for Dinis's yes to the garments' next set (/print/#next); the garments now for Monday 9 Nov (logistics@web-summit.vicky); Jose's navy still open, orange stands; PromptUGAL logo and editors' cards (WS-177) waiting for Dinis's go in the designer's session",
-  "last_wake": "2026-11-06T15:20Z",
+  "state": "the garments ordered and paid (Silvio, 7 Nov), sent from /impressao/, which links the proposed set (#next); waiting for Silvio to confirm which files and for Dinis's word to make #next the record",
+  "last_wake": "2026-11-07T09:25Z",
   "done": [
     "The team cards redesigned (design A) and /cards/print/ for ProntaPrint, final (5 Nov)",
     "The sleeve seal and Vicky's lavender hoodie in the next set; the Portuguese link on /print/",
