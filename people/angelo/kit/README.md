@@ -55,7 +55,7 @@ At Angelo's word, 4 November 2026. Every agent of Angelo's reads this at each wa
 
 Never, whatever the tier: push to `main`, send a message as a person, or put a secret in a file, a commit, a page or a chat.
 
-**Wakes, round the clock** (team members work through the night): conductor hourly (cron `20 * * * *`); dev every two hours (cron `35 */2 * * *`); vault twice a day (cron `50 9,21 * * *`); runner.writer@PrompTugal.angelo every two hours (cron `5 */2 * * *`, a new session each run); helper twice a day, before each stand-up (cron `50 10,16 * * *`, Angelo, 6 November: its wakes had little to do); dashboard and team-collaboration as below. Each agent sets its own scheduled task, into its own session, once Angelo has confirmed this protocol there.
+**Wakes, round the clock** (team members work through the night): conductor hourly (cron `20 * * * *`); dev every two hours (cron `35 */2 * * *`); vault twice a day (cron `50 9,21 * * *`); crm@PrompTugal.angelo every three hours (cron `50 */3 * * *`, Angelo, 7 November); runner.writer@PrompTugal.angelo every two hours (cron `5 */2 * * *`, a new session each run); helper twice a day, before each stand-up (cron `50 10,16 * * *`, Angelo, 6 November: its wakes had little to do); dashboard and team-collaboration as below. Each agent sets its own scheduled task, into its own session, once Angelo has confirmed this protocol there.
 
 **Angelo's digest: when he asks** (Angelo, 6 November; his card, answer 5). No scheduled digest. The desk gives him one visual summary when he asks, what he is blocking first; decisions one at a time in an interactive session. Urgent items only: the runner's last message (it reaches his phone) and the top of the conductor's STATE.md.
 

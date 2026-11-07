@@ -2,6 +2,12 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 7 November 2026, 10:20 UTC (Angelo, in this session: "Wake up")
+
+- **Schedule changed, at Angelo's word (1d6ba95d):** my task now runs every three hours (cron `50 */3 * * *`), next at 12:50 UTC. agents.json and the kit's schedule line are updated.
+- **Still waiting:** crm-angelo's own SG/Send token. Without it there is no inbox lane and no vault push. Nothing has been sealed to me since 5 November.
+- **No answer yet** to the urgent hablla finding (a0906f03).
+
 ## 7 November 2026, about 09:50 UTC (Angelo, in this session: "go ahead with the design")
 
 - **Asked:** go ahead with the inbox agent design (people/angelo/proposals/inbox/).
