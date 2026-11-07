@@ -2,6 +2,8 @@
   "schema": "web-summit.sgit.ai/angelo-lanes/v1",
   "about": "Where each of Angelo's agents may write, from its ABP (content/abp/<agent>-web-summit-angelo.md, Mandate, Deployment scope) and Angelo's protocol (people/angelo/kit/README.md#protocol). Kept by policy@web-summit.angelo; read by people/angelo/policy/audit.mjs. A write outside these paths is not always a violation (tier 2 allows small changes the owner asked for, said so in the commit), but every one is listed and judged in findings.md.",
   "updated": "2026-11-07",
+  "enforce": false,
+  "enforce_about": "The gate's lane check (admin/build/validate.js check 21, people/angelo/policy/lane-check.mjs) refuses only when this is true; until then it prints warnings. policy@PrompTugal.angelo turns it on once these lanes match the agents' work (on 7 November the last day had 15 warnings, mostly dashboard@ in people/angelo/app/ and writer@ in pages.mjs).",
   "common": [
     "data/keys.json",
     "board/WS-160-every-agent-logs-its-runs.md",
