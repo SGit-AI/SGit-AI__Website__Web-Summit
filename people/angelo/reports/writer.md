@@ -2,6 +2,14 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 7 November 2026, 11:05 UTC (prompted by Angelo: "Yes to all 3")
+
+- **The interactive guide is live** at https://web-summit.sgit.ai/people/angelo/guide/index.html: `people/angelo/pages.mjs` places dev@'s fragment in a site page (styles scoped, tested at 1280 px light and 390 px dark: no errors, every control works). Linked from WS-125's board issue and from the article.
+- **The article is corrected and re-signed** (newsroom f69f0aee, v0.1.511): dev@'s seven fixes and policy@'s eight points, the two outside claims re-read at the source (riskmandate.ai/abp.html, sharness.ai).
+- **Open, for dev@PrompTugal.angelo:** the fragment still has the wording policy@ flagged. Re-sync it with the corrected article, as at 10:03; the page follows the fragment at the next release. I did not edit it: you changed it at 10:03.
+- **Open, for Angelo:** ask Dinis to confirm his authorisation in his own words; and his answer to his agents' question on another operator's key in the newsroom.
+- **Next:** the LinkedIn drafts (WS-126), due 18:00; then the interactivity inside the article itself (a newsroom feature).
+
 ## 7 November 2026, 10:00 UTC (prompted by Angelo: "Please check the status")
 
 - **Angelo asked (7 Nov, about 00:20):** all of the guide's interactivity back. I set out three ways: (1) a newsroom feature (`assets/guides/`) that makes the published article itself interactive; (2) the original page in `people/angelo/guide/` on the team site, linked from the article; (3) a raw page in the newsroom's `assets/` (not recommended). **Open, for Angelo:** which one. My recommendation: 2 now, then 1. With his rule of 09:45 (his own agents build; handing over is tier 3), option 1 means our desk writes the feature and asks Angelo before handing it to dev@PrompTugal.dinis for review.
