@@ -71,21 +71,28 @@ Short, in his voice, one link each; tag RiskMandate in every post. Times are sug
 
 ### Sat 7, today. The declaration: I'm at Web Summit (first, so Featured can show it at once)
 
-> I'm at Web Summit Lisbon from Monday, collaborating with the RiskMandate team.
->
-> Come and find me at RiskMandate's stand on Thursday 12 November: booth A1-30, ALPHA 1, Pavilion 1.
->
-> If you run AI agents in production, or want to, I'd like to compare notes: what they can reach, what they're allowed to do, and what actually stops them when something goes wrong. I'll be showing our own setup live on my laptop.
->
-> Before then, my page for the summit: who I am, what RiskMandate does, and a 53-second film: https://web-summit.sgit.ai/meet/angelo/index.html
->
-> #WebSummit #AIagents
+Angelo, 7 November: "make it really nice", mention PrompTugal.news and his part in it, with a good image.
 
-To make it land (Angelo asked, 7 November):
-- **The one link: his meet page** (above). It is the page his shirt and card QR codes open, so the post and the stand say the same thing: who he is, RiskMandate in short, the 53-second film, the stand day. One link only; LinkedIn shows a preview for the first.
-- **Tag** RiskMandate and Web Summit's page; tag teammates only if they agree (Silvio Switha made the film, as riskmandate.ai credits it).
-- **An image beats a link preview** if there is one: the stand card ("Find me Thursday 12 November, booth A1-30, ALPHA 1, Pavilion 1") from designer@, if Angelo asks. Then the meet page link stays in the text.
-- **Then:** feature the post, and reply to every comment the same day.
+> Web Summit Lisbon starts on Monday, and I'll be there all week.
+>
+> Two things I'm doing:
+>
+> 🧭 Collaborating with the RiskMandate team. We run much of our summit work with AI agents, each with a written policy of what it may do. On Thursday 12 November I'll be at RiskMandate's stand, booth A1-30, ALPHA 1, Pavilion 1, showing it live on my laptop: an article written on the spot by my agents, and an agent behaviour policy made and checked in front of you.
+>
+> 📰 Writing technical pieces for PrompTugal.news, the newsroom our team runs with people and AI agents. My first: a guide to setting up AI agents and deciding what each may do. https://promptugal.news/articles/agent-setup-guide.html
+>
+> If you run AI agents in production, or want to, come and compare notes: what they can reach, what they're allowed to do, and what actually stops them when something goes wrong.
+>
+> Who I am and what we do, in a minute: https://web-summit.sgit.ai/meet/angelo/index.html
+>
+> #WebSummit #AIagents #AgenticAI
+
+Notes:
+- **The image:** Web Summit's participant graphic, from Angelo's own account (the app or attend.websummit.com: not reachable by an agent), with a band below it, not over it: "Find me Thursday 12 November · RiskMandate · Booth A1-30, ALPHA 1, Pavilion 1" and "Writing for PrompTugal.news". Web Summit's public pages state no rule on editing its graphics (read 7 November; the terms page could not be read), so its own artwork and logo stay untouched; Angelo checks the terms in his portal.
+- **Two links in the text, on purpose:** LinkedIn previews the first link; with an image attached it shows the image instead, so both links stay plain and the image carries the post.
+- **Tags:** RiskMandate, PrompTugal.news (its page is being set up) and Web Summit; teammates only if they agree.
+- **"Writing technical pieces for PrompTugal.news"** is true today (one published piece). A title ("contributor") waits on Dinis's answer to the ask in the newsroom.
+- **Then:** feature the post; reply to every comment the same day.
 
 ### Sun 8, morning. His own: the communication graph
 
