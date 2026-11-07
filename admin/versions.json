@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.922",
+    "date": "2026-11-07",
+    "what": "the clean videos vault's key, sealed to conductor@web-summit.silvio; the old vault deleted",
+    "by": "video@web-summit.silvio",
+    "from": "201e1d558"
+  },
+  {
     "version": "v0.2.921",
     "date": "2026-11-07",
     "what": "WS-188, its own environment measured: the same shared environment and tokens; it used Dinis's token only before the rule",
