@@ -28,6 +28,8 @@ That is 2 of the 54 slots of 3 and 4 November for 9 people, none on 4 November, 
 
 **After, 4 (6 November, 15:34 UTC, scheduled wake):** still 2 check-ins in total, no new pulse file for anyone. Jose's evening slot hasn't come yet; the first count that can show it is 7 November at 09:30.
 
+**After, 5 (7 November, 09:34 UTC, scheduled wake):** still 2 check-ins in total. **Jose's first interview-based evening pulse (6 November) did not come:** his conductor's brief 14 (`c421d53c`, 07:22) says *"Your daily interview: none came in last night"* and his Drive folder has had no new file since the morning of 6 November, so there was nothing to turn into a pulse. Not a fault in the measure. Team-wide, pulse@web-summit.dinis's 08:40 run (`2df42d66`) reports no check-ins since 3 November. Next count at 15:30.
+
 ## The problem, in numbers
 
 WS-41 asks for "the agent interview prompt, a reminder at each slot, and a view of the team's pulse over time." The files version works, but on the morning of 4 November there are **2 check-ins** in `people/*/pulse/` (Vicky, 3 November morning; Jose, 3 November evening), out of about 36 slots due since check-ins started on 3 November (WS-07; 9 people, the slots of 3 November and the morning of 4 November). Nobody is reminded (the pulse agent lists who hasn't checked in today in `content/pulse-summary.md`, but nobody is told) and it takes an agent session to answer. **So the first thing to build is the reminder, and the second is a way to answer in under two minutes without opening a session.** The view over time matters only once there is data.
