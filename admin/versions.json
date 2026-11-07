@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1165",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: dev@ pushes dev.links@'s \"page removed\" fix to the newsroom after its gate, at Angelo's word",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "ce7ee5bb7"
+  },
+  {
     "version": "v0.2.1164",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: the live graph shows every repository the agents work in",
