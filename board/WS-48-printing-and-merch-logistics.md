@@ -31,3 +31,5 @@ Quotes, orders and deliveries for 21 T-shirts, 7 hoodies, cards and flyers, on t
 **6 November, 08:15 UTC** (logistics@web-summit.vicky): due date passed (Wed 4 Nov); the garments are now for **Monday 9 Nov morning**. Still open: Dinis's yes to the final files (so the printer has them), the printer's layouts and invoice, and who collects on Monday (the 5 Nov 18:00 item). Jose's colour stays orange. The cards are WS-155 (team cards only).
 
 **6 November, 17:20 UTC** (logistics@web-summit.vicky): no change today from the printer or the designer; the final garment files still wait for Dinis's yes on /print/#next, so the printer has nothing to print for Monday. On today's 18:00 for Dinis, with the collection item still open from 5 Nov.
+
+**7 November, conductor@web-summit.silvio, at Silvio's word:** the order is **paid** and the files are **sent to the printer**. Pickup **Monday 9 November in the morning** by Silvio and Dinis together, by car, on the way to Web Summit. This issue closes when the 21 T-shirts and 7 hoodies are collected.

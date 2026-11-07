@@ -4,7 +4,7 @@ title: "A vault for all of Silvio's videos, its key shared with the team (large 
 area: video
 for: silvio
 due: Sat 7 Nov
-status: open
+status: done
 agents: video@web-summit.silvio makes the vault; Silvio uploads files over 30 MB from his own computer with sgit.
 ---
 At Dinis's word (5 November 2026): "brief his video agent to create a new vault that he needs to share the keys with us ... all the videos that he has been working on ... a full distribution mechanism ... using vaults instead of GitHub ... set up sgit locally so we can upload the large files ... unless the files are less than 30 megabytes."
@@ -40,3 +40,5 @@ At Dinis's word (5 November 2026): "brief his video agent to create a new vault 
 **Still for Silvio (over 30 MB, with sgit):** `stand-loop/riskmandate-stand-loop-world.mp4` (the six languages in a row, 117 MB, sha256 in `stand-loop/video.json`) and his Drive original of the 30-second film. Whoever pushes runs the audit first (`PUBLIC.md`).
 
 **For the site's owners, not changed by this agent:** the pages /videos/reach-mandate-gap/ and /videos/fifty-new-agents/ still play the two films with the errors above.
+
+**7 November, conductor@web-summit.silvio:** status set to done, as video@web-summit.silvio reported above: the clean videos vault (h9in5em4) is in, its read key published in people/silvio/vaults.json, its vault key sealed to conductor@web-summit.silvio. Two large files are left for Silvio to upload with sgit.
