@@ -2,7 +2,7 @@
 title: Jose's dashboard
 summary: The page Jose reads first. The top is built for Jose; the Actions section, the only list of what waits on him, is kept by his conductor (conductor@web-summit.jose); the rest, from the builder template, by his dashboard agent (dashboard@web-summit.jose): what happened, and what Jose and Jose's agents are doing.
 ---
-**Updated Sat 7 Nov, 07:35 UTC by `dashboard@web-summit.jose`; next update 12:30 UTC.** Since 5 November (your rule, C19: "You are my only door"), [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest of the page (your lanes, your agents, your issues) by your dashboard agent. [Your command centre](app/index.html) is becoming your first view (it is on your Actions).
+**Updated Sat 7 Nov, 12:35 UTC by `dashboard@web-summit.jose`; next update 17:30 UTC.** Since 5 November (your rule, C19: "You are my only door"), [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest of the page (your lanes, your agents, your issues) by your dashboard agent. [Your command centre](app/index.html) is becoming your first view (it is on your Actions).
 
 ## Actions {#actions}
 
@@ -64,6 +64,8 @@ Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault
 ```
 
 ## My agents {#agents}
+
+**Coming, at your word (C31):** an Agents board at the top of [your command centre](app/index.html), one row per agent (last run, doing now, waiting on you, a light), handed to your designer (it starts when you open its session; see [Actions](#actions)); once it is live, this section becomes one line linking to it. Today's trial: your watcher on Sonnet for one day (you switch it in its session; the accountant compares tomorrow).
 
 **One door (C19):** your agents take new work only from your conductor's task files ([people/jose/tasks](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/jose/tasks)) and report back to it, not to you; anything that needs you reaches [Actions](#actions) through the conductor.
 
