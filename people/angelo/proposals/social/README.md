@@ -32,10 +32,14 @@ After the summit, drop the last part. (Not "Technical lead at RiskMandate": on L
   - Description:
 
 > A collaboration with the RiskMandate team for Web Summit Lisbon 2026: the technical side of the team's site, the AI agents that run much of the work, and the behaviour policies they work under. Writing for PrompTugal.news, and live demos of the agentic workflow at RiskMandate's stand.
->
-> The agent setup guide: https://promptugal.news/articles/agent-setup-guide.html
-> The communication graph: https://promptugal.news/articles/angelos-communication-graph.html
 
+  - **Media** (the links go here, not in the description: each becomes a card with a title and a picture, and the card is clickable; a URL typed into a description may show as plain text). Add as links, in this order:
+    1. The agent setup guide: https://promptugal.news/articles/agent-setup-guide.html
+    2. The interactive version: https://web-summit.sgit.ai/people/angelo/guide/index.html
+    3. The communication graph: https://promptugal.news/articles/angelos-communication-graph.html
+    4. Reach, Mandate, Gap, the 53-second film: https://web-summit.sgit.ai/videos/reach-mandate-gap/index.html
+    Check each card's title and picture after adding it; edit the title if LinkedIn picks a poor one.
+  - **Skills** (LinkedIn takes a few per item; the first two are already his top skills, so the project strengthens them): Agentic AI Development; Generative AI; AI Governance; Technical Writing; Claude Code (only if he wants a product name on his profile).
   - Team members: add the people he worked with, if they agree.
 
 **Featured** (new; in this order):
