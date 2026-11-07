@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1158",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: every agent estimates each piece of work and records the actual effort and elapsed",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "a7da7bd48"
+  },
+  {
     "version": "v0.2.1157",
     "date": "2026-11-07",
     "what": "reviewer@PrompTugal.vicky: report, S27 published with its cover",
