@@ -9,7 +9,7 @@ summary: Everything Angelo's agents are asked to do, in one list, ordered by pri
 | 0 | ~~Build Angelo's kanban as his task board~~ built (4c719b8f), for Angelo to check; dashboard@ checks it against its look (8d8c312f) | dev@ | cb97bf39 | Angelo's check |
 | 1 | ~~The back-office proposal for Dinis (WS-180)~~ done: proposals/WS-180/README.md, sent to Dinis's conductor (1eb4b337) | team-collaboration@ | | Dinis's four decisions |
 | 2 | Team and the machine, the live map: its pieces in the spec's order | dev.map@ (dev@ reviews) | spec-live-map.md, approved | nothing |
-| 2b | The live map's real-time mode for a monitor at the stand: a spec addendum with a mock-up first, for Angelo's review (nothing built before his go) | dev.map@ (dev@ reviews) | this commit: "the live map's real-time mode, for a monitor at the stand" | nothing |
+| 2b | The live map's real-time mode for a monitor at the stand, and as an animated desktop background (Windows, Mac, iPad): a spec addendum with a mock-up first, for Angelo's review (nothing built before his go) | dev.map@ (dev@ reviews) | this commit: "the live map's real-time mode, for a monitor at the stand" | nothing |
 | 3 | The venue map on PrompTugal.news, public parts first (Part B 1) | dev.venues@ (dev@ reviews) | spec-venues.md, approved | nothing |
 | 4 | ~~Fix the agent setup guide's claim-check flags~~ done: checker's five findings taken, article re-signed (newsroom v0.1.604), interactive guide aligned (5853ddfd) | writer@ | | |
 | 5 | Angelo's LinkedIn: take over the writer's drafts, keep them current | social-media@ | the spec's section | Angelo's feedback on the drafts |
