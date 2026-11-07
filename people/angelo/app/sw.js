@@ -25,7 +25,8 @@ async function stamp(res) {
     return new Response(await res.blob(), { status: res.status, statusText: res.statusText, headers: h })
 }
 async function put(req, res) { if (!stopped && res && res.ok && res.status === 200 && res.type === 'basic') { const c = await caches.open(STORE); await c.put(req, await stamp(res)) } }
-const keyOf = req => { const u = new URL(req.url); u.hash = ''; return u.href }
+// one stored copy per file: the release number a script carries (?v=) is not part of its key, so a new release replaces the copy
+const keyOf = req => { const u = new URL(req.url); u.hash = ''; u.searchParams.delete('v'); return u.href }
 
 // the stored copy of a range of a stored file (a video element asks for ranges)
 async function ranged(req, stored) {
