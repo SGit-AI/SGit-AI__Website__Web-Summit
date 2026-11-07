@@ -66,12 +66,12 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-07, from the boar
 |---|---|---|
 | Days to opening night | **3** | ██████░░░░ |
 | Health | **0 / 100 (red)** | ░░░░░░░░░░ |
-| Open issues | **17** of 25 | ███░░░░░░░ done |
+| Open issues | **18** of 26 | ███░░░░░░░ done |
 | Overdue | **12** | WS-54, WS-24, WS-25, WS-40, WS-48, WS-52, WS-53, WS-71, WS-26, WS-80, WS-149, WS-28 |
-| Due in 48 hours | **4** | WS-72, WS-169, WS-173, WS-189 |
-| Nobody picked yet | **9** | WS-24, WS-40, WS-53, WS-80, WS-28, WS-169, WS-173, WS-189, WS-159 |
+| Due in 48 hours | **5** | WS-72, WS-169, WS-173, WS-189, WS-190 |
+| Nobody picked yet | **10** | WS-24, WS-40, WS-53, WS-80, WS-28, WS-169, WS-173, WS-189, WS-190, WS-159 |
 | Agents active (7 days) | **10 of 11** | █████████░ |
-| Messages for me (24 h) | **55** | `git log --since=yesterday --grep "For: .*web-summit.silvio"` |
+| Messages for me (24 h) | **61** | `git log --since=yesterday --grep "For: .*web-summit.silvio"` |
 | Pulse today | **0 of 3** | ░░░ |
 | Onboarding level | **L1** of L4 | █░░░ |
 
@@ -93,22 +93,22 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-07, from the boar
 | 2026-11-05 (late) | WS-26 The big outreach: 50 targets for Thursday and Friday; WS-80 The cast: a character for each of our agents; WS-149 "The most important thing each person did, on the stand-up's show page, updated at every release" |
 | 2026-11-06 (late) | WS-28 Who can connect the dots |
 | 2026-11-07 | WS-72 Make the 2-minute silent loop for the stand; WS-169 Our strategy for the Web Summit app; WS-173 "Every company email in the private CRM, as EML, under its company's comms (Silvio's inbox agent)" |
-| 2026-11-08 | WS-189 "The Summit desk writes to the private CRM: four questions for Dinis, and six for the demo" |
+| 2026-11-08 | WS-189 "The Summit desk writes to the private CRM: four questions for Dinis, and six for the demo"; WS-190 "The brains on the command centres: how they are built, and what is public and what is private" |
 | 2026-11-13 | WS-159 "Four improvements for the shared command centre: a proposal from Jose's designer, for the engine's owners to decide (low priority)" |
 
 ### Agents {#agent-activity}
 
 | Agent | Job | Commits 24 h | Commits 7 days | Last seen |
 |---|---|---|---|---|
-| ● conductor@web-summit.silvio | Runs Silvio's other agents and keeps people/silvio/ | 13 | 33 | 11-07 07:23 UTC |
-| ● dev@web-summit.silvio | Builds what Silvio and the conductor ask for: this command centre, tools | 4 | 25 | 11-07 06:43 UTC |
+| ● conductor@web-summit.silvio | Runs Silvio's other agents and keeps people/silvio/ | 16 | 36 | 11-07 17:12 UTC |
+| ● dev@web-summit.silvio | Builds what Silvio and the conductor ask for: this command centre, tools | 5 | 26 | 11-07 08:54 UTC |
 | ○ local@web-summit.silvio | Algarve options: printers, ads, prices, lead times | 0 | 0 | never |
-| ● outreach@web-summit.silvio | Targets, messages and follow-ups; drafts in Silvio's account, Silvio sends | 6 | 17 | 11-07 04:22 UTC |
-| ● procurement@web-summit.silvio | Quotes, orders and deliveries for what the team buys (WS-48); drafts only, Silvio approves | 4 | 55 | 11-07 04:31 UTC |
-| ● video@web-summit.silvio | The pipeline to YouTube, Instagram and this site | 7 | 12 | 11-07 04:26 UTC |
-| ● dashboard@web-summit.silvio | Keeps Silvio's dashboard and asks one question a run | 4 | 4 | 11-07 07:07 UTC |
+| ● outreach@web-summit.silvio | Targets, messages and follow-ups; drafts in Silvio's account, Silvio sends | 8 | 19 | 11-07 17:20 UTC |
+| ● procurement@web-summit.silvio | Quotes, orders and deliveries for what the team buys (WS-48); drafts only, Silvio approves | 3 | 56 | 11-07 07:41 UTC |
+| ● video@web-summit.silvio | The pipeline to YouTube, Instagram and this site | 8 | 13 | 11-07 16:52 UTC |
+| ● dashboard@web-summit.silvio | Keeps Silvio's dashboard and asks one question a run | 5 | 5 | 11-07 16:47 UTC |
 | ● sgit@web-summit.silvio |  | 0 | 4 | 11-03 04:13 UTC |
-| ● inbox@web-summit.silvio |  | 3 | 4 | 11-07 04:20 UTC |
+| ● inbox@web-summit.silvio |  | 4 | 5 | 11-07 17:12 UTC |
 | ● crm@web-summit.silvio |  | 2 | 5 | 11-07 04:22 UTC |
 | ● design@web-summit.silvio |  | 13 | 13 | 11-07 04:42 UTC |
 
@@ -245,5 +245,5 @@ Next: an email to send from (L2), then my PKI key (L3), then a conductor on a sc
 
 ## The merch order {#printers}
 
-*procurement@web-summit.silvio, Sat 7 Nov, 07:45 UTC.* **Ordered, paid and the files at the printer** (near Lisbon, chosen by Dinis on 3 November). Ready **Monday 9 or Tuesday 10 November**, not yet confirmed; Silvio and Dinis collect it by car. 21 T-shirts (each colour 1 M, 1 L, 1 XL), 7 hoodies (one per person, Vicky's lavender), RiskMandate only, one generic QR on the backs, the RiskMandate logo on the left sleeve. The printer's name and price stay private (it declined publication). The story: [the print order](../../print-order/index.html), [procurement](../../procurement/index.html), [in Portuguese](../../impressao/index.html).
+*procurement@web-summit.silvio, Sat 7 Nov, 07:45 UTC.* **Ordered, paid and the files at the printer** (near Lisbon, chosen by Dinis on 3 November). Ready **Monday 9 or Tuesday 10 November**, not yet confirmed: Silvio asked the printer (7 Nov, 17:00) for collection on Monday, the hour and the place; Silvio and Dinis collect it by car. 21 T-shirts (each colour 1 M, 1 L, 1 XL), 7 hoodies (one per person, Vicky's lavender), RiskMandate only, one generic QR on the backs, the RiskMandate logo on the left sleeve. The printer's name and price stay private (it declined publication). The story: [the print order](../../print-order/index.html), [procurement](../../procurement/index.html), [in Portuguese](../../impressao/index.html).
 
