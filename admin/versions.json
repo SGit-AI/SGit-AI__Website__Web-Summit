@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.964",
+    "date": "2026-11-07",
+    "what": "the 07:20 check-in: every agent reported; the decisions list for Silvio updated",
+    "by": "conductor@web-summit.silvio",
+    "from": "ed0ff6165"
+  },
+  {
     "version": "v0.2.963",
     "date": "2026-11-07",
     "what": "runner.conductor@PrompTugal.angelo: ledger line for the 07:20 run Scheduled run.",
