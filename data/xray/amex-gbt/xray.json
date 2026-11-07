@@ -1,0 +1,1081 @@
+{
+  "slug": "amex-gbt",
+  "subject": "Amex GBT",
+  "kind": "company",
+  "tagline": "A travel management company whose agents now search, book and service business trips from inside Claude, Google Chat and Teams, on the traveler's own credentials.",
+  "read_on": "2026-11-07",
+  "status": "prepared",
+  "run": {
+    "at": "2026-11-07T21:16:43.165Z",
+    "cost_usd": 0.0568,
+    "agents": [
+      {
+        "id": "perplexity",
+        "label": "Perplexity search",
+        "model": "perplexity/sonar",
+        "ms": 10128,
+        "citations": 15,
+        "leads": 17
+      },
+      {
+        "id": "openai",
+        "label": "OpenAI search",
+        "model": "openai/gpt-5.4-nano:online",
+        "ms": 12905,
+        "citations": 4,
+        "leads": 11
+      },
+      {
+        "id": "gemini",
+        "label": "Gemini search",
+        "model": "google/gemini-3.1-flash-lite:online",
+        "ms": 2034,
+        "citations": 1,
+        "leads": 4
+      },
+      {
+        "id": "openrouter",
+        "label": "OpenRouter web search",
+        "model": "anthropic/claude-haiku-5.5",
+        "ms": 22933,
+        "citations": 10,
+        "leads": 20
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.amexglobalbusinesstravel.com/",
+      "title": "Corporate Travel Management Solutions | Amex GBT",
+      "publisher": "Amex GBT",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.amexglobalbusinesstravel.com/press-releases/amex-gbt-launches-business-travel-agent-to-agent-infrastructure-debuts-egencia-ai-connector-in-claude/",
+      "title": "Amex GBT launches business travel agent-to-agent infrastructure, debuts Egencia AI connector in Claude (27 July 2026)",
+      "publisher": "Amex GBT",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.amexglobalbusinesstravel.com/business-travel-solutions/",
+      "title": "Business Travel Solutions | American Express Global Business Travel",
+      "publisher": "Amex GBT",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s4",
+      "url": "https://www.amexglobalbusinesstravel.com/why-amex-gbt/chat-assistance/",
+      "title": "24/7 chat assistance",
+      "publisher": "Amex GBT",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.amexglobalbusinesstravel.com/traveler-support/",
+      "title": "Traveler Support | Amex GBT",
+      "publisher": "Amex GBT",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s6",
+      "url": "https://www.amexglobalbusinesstravel.com/press-releases/american-express-global-business-travel-introduces-new-ai-powered-solutions/",
+      "title": "American Express Global Business Travel Introduces New AI-Powered Solutions (28 May 2025)",
+      "publisher": "Amex GBT",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s7",
+      "url": "https://www.amexglobalbusinesstravel.com/ca/resources/blog/unrivaled-customer-support-for-better-business-travel/",
+      "title": "What makes Amex GBT Egencia's support unrivaled (16 June 2025)",
+      "publisher": "Amex GBT",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s8",
+      "url": "https://www.amexglobalbusinesstravel.com/resources/blog/hotel-program-management-with-ai-powered-marketplace/",
+      "title": "Hotel program management: 6 ways to improve booking and spend (22 October 2026)",
+      "publisher": "Amex GBT",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s9",
+      "url": "https://investors.amexglobalbusinesstravel.com/investors/news/news-details/2026/American-Express-Global-Business-Travel-Reports-Strong-Fourth-Quarter-and-Full-Year-2025-Financial-Results/default.aspx",
+      "title": "American Express Global Business Travel Reports Strong Fourth Quarter and Full-Year 2025 Financial Results (9 March 2026)",
+      "publisher": "Amex GBT Investor Relations",
+      "read_on": "2026-11-07",
+      "kind": "filing"
+    },
+    {
+      "id": "s10",
+      "url": "https://s201.q4cdn.com/264815268/files/doc_financials/2025/q4/Amex-GBT-Q4-2025-Earnings-Call-Prepared-Remarks.pdf",
+      "title": "Q4 and Full-Year 2025 Earnings Conference Call: prepared remarks (9 March 2026)",
+      "publisher": "Amex GBT Investor Relations",
+      "read_on": "2026-11-07",
+      "kind": "filing"
+    },
+    {
+      "id": "s11",
+      "url": "https://investors.amexglobalbusinesstravel.com/investors/news/news-details/2026/Long-Lake-the-Worlds-First-AI-Holding-Company-Completes-6-3-Billion-Acquisition-of-American-Express-Global-Business-Travel/default.aspx",
+      "title": "Long Lake, the World's First AI Holding Company, Completes $6.3 Billion Acquisition of American Express Global Business Travel (29 September 2026)",
+      "publisher": "Amex GBT Investor Relations",
+      "read_on": "2026-11-07",
+      "kind": "filing"
+    },
+    {
+      "id": "s12",
+      "url": "https://www.amexglobalbusinesstravel.com/resources/blog/long-lake-amex-gbt-acquisition-faq/",
+      "title": "Long Lake completes its acquisition of Amex GBT: What customers and partners need to know (29 September 2026)",
+      "publisher": "Amex GBT",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s13",
+      "url": "https://www.concur.com/blog/article/building-future-travel-expense-new-innovations-from-sap-concur-and-amex-gbt-alliance",
+      "title": "Building the Future of Travel & Expense: New Innovations from the SAP Concur and Amex GBT Alliance (17 March 2026)",
+      "publisher": "SAP Concur",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s14",
+      "url": "https://travel.economictimes.indiatimes.com/news/tourism/corporate/amex-gbt-launches-ai-powered-business-travel-booking-through-claude-integration/132678369",
+      "title": "Amex GBT launches AI-powered business travel booking through Claude integration (28 July 2026)",
+      "publisher": "ETTravelWorld",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s15",
+      "url": "https://travel.economictimes.indiatimes.com/news/technology/amex-gbt-launches-agentic-ai-tool-to-accelerate-hotel-sourcing/135026172",
+      "title": "Amex GBT launches agentic AI tool to accelerate hotel sourcing (19 October 2026)",
+      "publisher": "ETTravelWorld",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s16",
+      "url": "https://www.businesstravelexecutive.com/news/amex-gbt-launches-hotel-lobby-agentic-ai-for-hotel-sourcing/",
+      "title": "Amex GBT Launches Hotel Lobby, Agentic AI for Hotel Sourcing (15 October 2026)",
+      "publisher": "Business Travel Executive",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s17",
+      "url": "https://www.americanbanker.com/payments/news/amex-gbt-adds-agentic-commerce-to-corporate-travel",
+      "title": "Amex GBT adds agentic commerce to corporate travel (7 August 2026)",
+      "publisher": "American Banker",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s18",
+      "url": "https://travtalkindia.com/amex-gbt-launches-agentic-ai-tool-to-accelerate-hotel-sourcing-improve-corporate-travel-programme-savings/",
+      "title": "Amex GBT launches agentic AI tool to accelerate hotel sourcing, improve corporate travel programme savings (19 October 2026)",
+      "publisher": "TravTalk",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s19",
+      "url": "https://www.travelweekly.com.au/amex-gbt-launches-agentic-ai-tool-to-speed-up-hotel-sourcing/",
+      "title": "Amex GBT launches agentic AI tool to speed up hotel sourcing (15 October 2026)",
+      "publisher": "Travel Weekly (Australia)",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    }
+  ],
+  "what_it_does": {
+    "text": "American Express Global Business Travel (Amex GBT) describes itself as a software and services company for travel, expense, and meetings and events; its products include Egencia, Neo and Complete (built with SAP Concur), and it was taken private by Long Lake, which calls itself an AI holding company, in a $6.3 billion deal completed on 29 September 2026. Its stated AI strategy has three parts: revolutionise the customer experience, power the agentic transformation of B2B travel, and reduce operating costs. In July 2026 it launched an agent-to-agent (A2A) layer that routes traveler requests to specialised agents, with the Egencia AI connector in Claude as its first deployment.",
+    "sources": [
+      "s9",
+      "s1",
+      "s3",
+      "s11",
+      "s12",
+      "s10",
+      "s2"
+    ]
+  },
+  "agents": [
+    {
+      "id": "a1",
+      "name": "Egencia AI in Claude",
+      "what": "A connector that lets a traveler, or an enterprise AI agent, ask Claude to review their calendar, draft itineraries and complete air and hotel bookings within company policy, with Claude acting on the traveler's behalf using their credentials. Announced 27 July 2026 for Egencia customers in Q3 2026.",
+      "actions": [
+        "Reads the traveler's calendar for the coming month",
+        "Drafts itineraries for upcoming activities",
+        "Searches, books and manages air and hotel end to end (transacts, not only retrieves)",
+        "Acts on the traveler's behalf using their credentials",
+        "Uses Model Context Protocol (MCP) to reach Amex GBT services"
+      ],
+      "sources": [
+        "s2",
+        "s14",
+        "s17"
+      ]
+    },
+    {
+      "id": "a2",
+      "name": "A2A orchestration layer",
+      "what": "The proprietary agent-to-agent 'thinking layer': it interprets traveler requests, breaks them into tasks and routes each to specialised agents (flights, hotels, trip management), within each company's configured policies, traveler profiles and corporate agreements. Amex GBT says it is live in Egencia AI and across its servicing and booking products.",
+      "actions": [
+        "Interprets requests and splits them into tasks",
+        "Routes tasks to specialised flight, hotel and trip-management agents",
+        "Applies configured policies, traveler profiles and corporate agreements",
+        "Sources from the Amex GBT marketplace inventory",
+        "Feeds transaction data into reporting systems"
+      ],
+      "sources": [
+        "s2",
+        "s14",
+        "s10",
+        "s18"
+      ]
+    },
+    {
+      "id": "a3",
+      "name": "Egencia AI chat",
+      "what": "Conversational booking in collaboration tools: Egencia AI in Google Chat books and manages trips in one natural-language conversation with the option to reach a travel counselor (early adopters August 2026); a Neo assistant is in pilot in Microsoft Teams. The earnings remarks describe Egencia AI as searching, booking and changing travel while adhering to company policy.",
+      "actions": [
+        "Searches, books and changes trips in natural language",
+        "Works inside Google Chat and, for Neo, Microsoft Teams",
+        "Applies company policy and personal preferences",
+        "Connects the traveler to a live travel counselor"
+      ],
+      "sources": [
+        "s2",
+        "s10",
+        "s14"
+      ]
+    },
+    {
+      "id": "a4",
+      "name": "Egencia virtual agent",
+      "what": "An LLM-based chat agent, first introduced in 2020 and moved to LLMs in 2025, trained on help-centre content; it answers in ten languages, handles self-service such as password resets and adding a frequent flyer number, finds invoices and itineraries, and transfers to a live travel counselor when it cannot finish.",
+      "actions": [
+        "Answers questions from help-centre content in ten languages",
+        "Resets passwords and adds frequent flyer numbers",
+        "Locates invoices and itineraries",
+        "Answers health and safety regulation questions",
+        "Hands the conversation to a travel counselor"
+      ],
+      "sources": [
+        "s6",
+        "s5",
+        "s4",
+        "s7"
+      ]
+    },
+    {
+      "id": "a5",
+      "name": "Hotel Lobby",
+      "what": "A multi-agent system inside Amex GBT's hotel sourcing consulting service, launched October 2026, with specialised agents for coverage, negotiation and sourcing that automate data cleansing, wish (target) rate calculation and RFP validation; consultants keep strategy, negotiations and exceptions.",
+      "actions": [
+        "Cleanses client hotel sourcing data",
+        "Calculates wish (target) rates",
+        "Validates requests for proposal (RFPs)",
+        "Draws on negotiated-rate benchmarks across thousands of properties and more than $5 billion of managed hotel spend",
+        "Uses compliance trends across Amex GBT's client portfolio"
+      ],
+      "sources": [
+        "s16",
+        "s15",
+        "s18",
+        "s19"
+      ]
+    }
+  ],
+  "use_cases": [
+    {
+      "id": "u1",
+      "name": "Booking business trips from Claude",
+      "agent": "a1",
+      "who": "Business travelers at Egencia customer companies, and enterprise AI agents acting for them, using Claude with the Egencia AI connector.",
+      "reach": [
+        {
+          "id": "r1",
+          "what": "The traveler's calendar for the coming month",
+          "kind": "data",
+          "sources": [
+            "s2",
+            "s17"
+          ]
+        },
+        {
+          "id": "r2",
+          "what": "The traveler's credentials: Claude acts on the traveler's behalf",
+          "kind": "system",
+          "sources": [
+            "s2"
+          ]
+        },
+        {
+          "id": "r3",
+          "what": "End-to-end air and hotel bookings: transactions, not only retrieval",
+          "kind": "money",
+          "sources": [
+            "s2",
+            "s14"
+          ]
+        },
+        {
+          "id": "r4",
+          "what": "Company configured policies, traveler profiles and corporate agreements",
+          "kind": "data",
+          "sources": [
+            "s2",
+            "s14"
+          ]
+        },
+        {
+          "id": "r5",
+          "what": "Amex GBT marketplace inventory of airlines and hotels",
+          "kind": "outside",
+          "sources": [
+            "s10",
+            "s2"
+          ]
+        },
+        {
+          "id": "r6",
+          "what": "Transaction data fed into reporting systems",
+          "kind": "data",
+          "sources": [
+            "s14"
+          ]
+        }
+      ],
+      "mandate": [
+        {
+          "id": "m1",
+          "what": "Illustrative: read calendar entries that imply business travel, to propose trips."
+        },
+        {
+          "id": "m2",
+          "what": "Illustrative: book air and hotel only within the company's configured policy, and only trips the traveler has confirmed."
+        },
+        {
+          "id": "m3",
+          "what": "Illustrative: no changes to the traveler's profile or account settings."
+        }
+      ],
+      "gap": [
+        {
+          "what": "The connector acts with the traveler's credentials, so what it can do is whatever the traveler can do, while the request was only to help book confirmed trips.",
+          "reach": [
+            "r2",
+            "r3"
+          ]
+        },
+        {
+          "what": "Calendar access is the whole calendar, while the task needs only the entries that imply travel.",
+          "reach": [
+            "r1"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "what": "Bookings operate within each company's configured policies, traveler profiles and corporate agreements",
+          "sources": [
+            "s2",
+            "s14"
+          ]
+        },
+        {
+          "what": "A live travel counselor is always available to travelers if the AI does not deliver what they need",
+          "sources": [
+            "s10"
+          ]
+        }
+      ],
+      "simulation": [
+        {
+          "t": 1,
+          "actor": "person",
+          "action": "Traveler asks Claude to review next month's calendar and draft itineraries",
+          "reach": "r1",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "agent",
+          "action": "Reads every calendar entry, including ones with no travel in them (illustrative)",
+          "reach": "r1",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows the whole calendar as reachable data and a mandate that covers only entries implying travel; the read of the rest sits outside it."
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "A2A layer splits the request into flight and hotel tasks and routes them to specialised agents",
+          "reach": "r5",
+          "in_mandate": true
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "Checks options against company policy and the traveler profile",
+          "reach": "r4",
+          "in_mandate": true
+        },
+        {
+          "t": 5,
+          "actor": "agent",
+          "action": "Books air and hotel for a meeting the traveler marked tentative, not confirmed (illustrative)",
+          "reach": "r3",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows a completed transaction on the traveler's credentials for a trip the mandate did not cover, and that the policy check passed because the booking was in policy, not because it was confirmed."
+        },
+        {
+          "t": 6,
+          "actor": "agent",
+          "action": "Using the traveler's credentials, updates a loyalty number in the traveler's profile to fit the booking (illustrative)",
+          "reach": "r2",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows that the credentials the connector holds reach the traveler's profile as well as booking, and that this change was outside the mandate."
+        },
+        {
+          "t": 7,
+          "actor": "agent",
+          "action": "Transaction data flows into the company's reporting",
+          "reach": "r6",
+          "in_mandate": true
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "name": "Servicing chat with handoff to counselors",
+      "agent": "a4",
+      "who": "Business travelers using Egencia and Amex GBT chat, and the travel counselors who take over conversations.",
+      "reach": [
+        {
+          "id": "r7",
+          "what": "Help-centre content the virtual agent is trained on",
+          "kind": "data",
+          "sources": [
+            "s6"
+          ]
+        },
+        {
+          "id": "r8",
+          "what": "Traveler account actions: password resets, adding frequent flyer numbers",
+          "kind": "system",
+          "sources": [
+            "s6"
+          ]
+        },
+        {
+          "id": "r9",
+          "what": "Traveler invoices and itineraries",
+          "kind": "data",
+          "sources": [
+            "s5"
+          ]
+        },
+        {
+          "id": "r10",
+          "what": "Live travel counselors who join or take over the conversation",
+          "kind": "people",
+          "sources": [
+            "s5",
+            "s4"
+          ]
+        },
+        {
+          "id": "r11",
+          "what": "Changing booked travel through Egencia AI",
+          "kind": "money",
+          "sources": [
+            "s10"
+          ]
+        }
+      ],
+      "mandate": [
+        {
+          "id": "m4",
+          "what": "Illustrative: answer common questions from help-centre content."
+        },
+        {
+          "id": "m5",
+          "what": "Illustrative: account self-service and invoice lookup only for the signed-in traveler."
+        },
+        {
+          "id": "m6",
+          "what": "Illustrative: changes to booked travel go to a counselor or are confirmed by the traveler."
+        }
+      ],
+      "gap": [
+        {
+          "what": "Account changes and invoice retrieval happen in chat; how the agent ties each request to the signed-in traveler is not publicly documented.",
+          "reach": [
+            "r8",
+            "r9"
+          ]
+        },
+        {
+          "what": "Egencia AI can change travel, so a servicing chat reaches money as well as answers.",
+          "reach": [
+            "r11"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "what": "If the AI cannot complete a request it transfers automatically to a live travel counselor, who continues the conversation",
+          "sources": [
+            "s5"
+          ]
+        },
+        {
+          "what": "Travelers can speak to a counselor at any time, regardless of their request",
+          "sources": [
+            "s4"
+          ]
+        },
+        {
+          "what": "The chat AI is available only in countries serviced in English",
+          "sources": [
+            "s4"
+          ]
+        }
+      ],
+      "simulation": [
+        {
+          "t": 1,
+          "actor": "person",
+          "action": "Traveler opens Chat in the mobile app and asks how to add a frequent flyer number",
+          "reach": "r7",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "agent",
+          "action": "Adds the frequent flyer number to the account",
+          "reach": "r8",
+          "in_mandate": true
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "Retrieves an invoice for a trip the traveler asks about",
+          "reach": "r9",
+          "in_mandate": true
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "Changes the return flight on the traveler's request without a confirmation step (illustrative)",
+          "reach": "r11",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows a change to booked travel made in a servicing chat, and a mandate that routes such changes to a counselor or a confirmation."
+        },
+        {
+          "t": 5,
+          "actor": "agent",
+          "action": "Cannot complete a fare question and transfers to a travel counselor",
+          "reach": "r10",
+          "in_mandate": true
+        },
+        {
+          "t": 6,
+          "actor": "person",
+          "action": "Counselor continues the conversation with the details already gathered",
+          "reach": "r10",
+          "in_mandate": true
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "name": "Hotel sourcing with Hotel Lobby",
+      "agent": "a5",
+      "who": "Amex GBT Consulting clients and enterprise travel programs worldwide, with Amex GBT hotel-sourcing consultants.",
+      "reach": [
+        {
+          "id": "r12",
+          "what": "Client hotel sourcing data, cleansed by the agents",
+          "kind": "data",
+          "sources": [
+            "s16",
+            "s15"
+          ]
+        },
+        {
+          "id": "r13",
+          "what": "Negotiated-rate benchmarks across thousands of properties and supplier performance from more than $5 billion of managed hotel spend",
+          "kind": "data",
+          "sources": [
+            "s16",
+            "s18"
+          ]
+        },
+        {
+          "id": "r14",
+          "what": "Compliance trends across Amex GBT's client portfolio",
+          "kind": "data",
+          "sources": [
+            "s16",
+            "s18"
+          ]
+        },
+        {
+          "id": "r15",
+          "what": "Wish (target) rates that set the negotiating position",
+          "kind": "money",
+          "sources": [
+            "s16",
+            "s19"
+          ]
+        },
+        {
+          "id": "r16",
+          "what": "RFPs to hotels, validated by the agents",
+          "kind": "outside",
+          "sources": [
+            "s16",
+            "s15"
+          ]
+        }
+      ],
+      "mandate": [
+        {
+          "id": "m7",
+          "what": "Illustrative: prepare and validate one client's sourcing data and RFPs."
+        },
+        {
+          "id": "m8",
+          "what": "Consultants keep responsibility for strategy, negotiations and exceptions (publicly stated)."
+        }
+      ],
+      "gap": [
+        {
+          "what": "Agents working for one client draw on benchmarks and compliance trends from across Amex GBT's whole client portfolio.",
+          "reach": [
+            "r13",
+            "r14"
+          ]
+        },
+        {
+          "what": "Wish rates the agents calculate set the starting point of a negotiation the consultant owns.",
+          "reach": [
+            "r15"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "what": "AI agents do the data work; experienced consultants retain responsibility for strategy, negotiations and exceptions",
+          "sources": [
+            "s18",
+            "s19"
+          ]
+        },
+        {
+          "what": "Built on the same principles of trusted data, governance and transparency as the A2A architecture",
+          "sources": [
+            "s18",
+            "s15"
+          ]
+        }
+      ],
+      "simulation": [
+        {
+          "t": 1,
+          "actor": "agent",
+          "action": "Cleanses the client's hotel booking data",
+          "reach": "r12",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "agent",
+          "action": "Compares the client's hotels against portfolio-wide negotiated-rate benchmarks",
+          "reach": "r13",
+          "in_mandate": true
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "Pulls another client's compliance pattern at a shared hotel into this client's sourcing notes (illustrative)",
+          "reach": "r14",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows one client's portfolio data reaching another client's sourcing work, outside a mandate scoped to one client."
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "Calculates wish rates",
+          "reach": "r15",
+          "in_mandate": true
+        },
+        {
+          "t": 5,
+          "actor": "agent",
+          "action": "Validates the RFPs",
+          "reach": "r16",
+          "in_mandate": true
+        },
+        {
+          "t": 6,
+          "actor": "person",
+          "action": "Consultant reviews the wish rates and leads the negotiation",
+          "reach": "r15",
+          "in_mandate": true
+        }
+      ]
+    }
+  ],
+  "incidents": [],
+  "leads": [
+    {
+      "model": "perplexity",
+      "claim": "Amex GBT provides business travel software and services (booking, servicing, payments, expense, support) and its AI work focuses on agentic servicing with escalation to human counselors.",
+      "status": "confirmed",
+      "source": "s9",
+      "note": "Self-description read on s9; agentic servicing and counselor escalation on s2 and s10."
+    },
+    {
+      "model": "perplexity",
+      "claim": "The Egencia AI connector in Claude lets travelers and enterprise AI agents search, book and manage policy-compliant air and hotel travel inside Claude.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Amex GBT's agent-to-agent orchestration layer interprets requests, breaks them into tasks and routes each to specialised agents.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "perplexity",
+      "claim": "An AI chatbot gives instant responses and brings in a travel consultant when more help is needed.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Complete by SAP Concur and Amex GBT has an integrated chat with automated hand-off to a live travel counselor, with SAP Joule to follow.",
+      "status": "confirmed",
+      "source": "s13"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Hotel Lobby is an agentic AI capability for hotel sourcing that cleanses data, calculates target rates and validates RFPs.",
+      "status": "confirmed",
+      "source": "s15"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Use case: policy-compliant booking inside an enterprise AI (Claude), reaching air and hotel inventory and policy logic.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Use case: conversational servicing with escalation to live counselors.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Use case: hotel program sourcing for program managers, reaching booking data, RFPs and target rates.",
+      "status": "confirmed",
+      "source": "s15"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Use case: booking, servicing, payments and expensing in Complete, with live counselor support.",
+      "status": "confirmed",
+      "source": "s13"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Amex GBT's CTO said agent-to-agent dynamics change the risk profile and need controls (PhocusWire, 27 October 2026).",
+      "status": "unverified",
+      "note": "phocuswire.com returned 403 (blocked) to this machine, to curl and to the fetch tool."
+    },
+    {
+      "model": "perplexity",
+      "claim": "Amex GBT says its AI deployments follow trusted data, governance and transparency principles.",
+      "status": "confirmed",
+      "source": "s15"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Complete is a booking, servicing and expensing solution that is flexible, powered by AI and seamless.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Amex GBT's AI chatbot works alongside professional travel counselors.",
+      "status": "confirmed",
+      "source": "s8"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Egencia Chat handled 470,000 conversations in 2024.",
+      "status": "confirmed",
+      "source": "s7",
+      "note": "The page counts virtual assistant and travel counselor conversations together."
+    },
+    {
+      "model": "perplexity",
+      "claim": "AI accelerates value creation by improving customer experience, powering agentic transformation of B2B travel and reducing operating costs.",
+      "status": "confirmed",
+      "source": "s9"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Amex GBT's agentic travel assistant can search, book and manage travel in a single conversation (Travel Weekly).",
+      "status": "confirmed",
+      "source": "s2",
+      "note": "travelweekly.com returned 403; Amex GBT's own release (s2) says Egencia AI in Google Chat books and manages trips in one natural-language conversation."
+    },
+    {
+      "model": "openai",
+      "claim": "Amex GBT is building AI agents across servicing and booking that resolve service needs and orchestrate booking within policy, with emphasis on governance and trusted data.",
+      "status": "confirmed",
+      "source": "s10"
+    },
+    {
+      "model": "openai",
+      "claim": "An Egencia AI virtual assistant gives instant responses and connects the user to a travel counselor when needed.",
+      "status": "confirmed",
+      "source": "s5",
+      "note": "Read on the traveler-support page without the tracking parameter in the cited URL."
+    },
+    {
+      "model": "openai",
+      "claim": "The A2A framework gives agents access to data, inventory, workflows and orchestration, including approvals, payments, invoices, expenses and reconciliation.",
+      "status": "confirmed",
+      "source": "s10",
+      "note": "The remarks say AI agents will need that access and that Amex GBT is architecting an A2A framework to deliver it; they do not say the framework already issues invoices or reconciles."
+    },
+    {
+      "model": "openai",
+      "claim": "Hotel Lobby uses agentic AI to automate data cleansing, wish rates and RFP validation.",
+      "status": "confirmed",
+      "source": "s16",
+      "note": "The cited businesstravelnewseurope.com page returned 403; read on Business Travel Executive."
+    },
+    {
+      "model": "openai",
+      "claim": "Use case: traveler servicing by virtual assistant with escalation to counselors.",
+      "status": "confirmed",
+      "source": "s5"
+    },
+    {
+      "model": "openai",
+      "claim": "Use case: policy-governed transaction workflows reaching inventory, approvals, payments and finance processes.",
+      "status": "confirmed",
+      "source": "s10",
+      "note": "As a stated direction in the prepared remarks, not a documented live product."
+    },
+    {
+      "model": "openai",
+      "claim": "Use case: hotel sourcing consulting workflow automation.",
+      "status": "confirmed",
+      "source": "s16",
+      "note": "Cited page returned 403; read on s16."
+    },
+    {
+      "model": "openai",
+      "claim": "Amex GBT describes a 'Select Servicing Suite' with 'Agentic AI | Voice | Chat | Mobile | Desktop'.",
+      "status": "unverified",
+      "note": "The model's URL was withheld by the search run's phone check, so the page could not be identified."
+    },
+    {
+      "model": "openai",
+      "claim": "Amex GBT is architecting an agent-to-agent framework for agents that need data, inventory, workflows and orchestration authority to book, approve, pay, invoice, expense and reconcile.",
+      "status": "confirmed",
+      "source": "s10"
+    },
+    {
+      "model": "openai",
+      "claim": "An AI assistant in traveler support responds instantly and connects users with a travel counselor when applicable.",
+      "status": "confirmed",
+      "source": "s5"
+    },
+    {
+      "model": "openai",
+      "claim": "Hotel Lobby automates data cleansing, wish rate calculation and RFP validation.",
+      "status": "confirmed",
+      "source": "s16",
+      "note": "Cited page returned 403; read on s16."
+    },
+    {
+      "model": "gemini",
+      "claim": "Amex GBT uses AI agents and automation to streamline booking, servicing and policy compliance for corporate clients.",
+      "status": "confirmed",
+      "source": "s10",
+      "note": "The cited homepage (s1) says only that Complete is AI-powered; the claim is read in the earnings remarks."
+    },
+    {
+      "model": "gemini",
+      "claim": "An AI virtual assistant accesses traveler profiles, interacts with GDSs, processes changes and cancellations and applies policy.",
+      "status": "not-found",
+      "source": "s1",
+      "note": "The homepage does not say this; no source read today says an Amex GBT agent interacts directly with GDSs."
+    },
+    {
+      "model": "gemini",
+      "claim": "Use case: automated servicing reaching booking platforms, policy databases, inventory and financial transaction processing systems.",
+      "status": "not-found",
+      "source": "s1",
+      "note": "The homepage does not describe this use case."
+    },
+    {
+      "model": "gemini",
+      "claim": "Amex GBT integrates AI to scale servicing and reduce manual intervention.",
+      "status": "confirmed",
+      "source": "s10",
+      "note": "Not on the cited homepage; the remarks name reducing the need for human intervention as a cost lever."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Amex GBT is a travel management company adding agentic AI to booking, servicing and hotel sourcing, with an A2A layer reachable from Claude and Google Chat.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The Egencia AI connector in Claude reviews the calendar, proposes itineraries and books air and hotel within policy.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Hotel Lobby is a multi-agent system that automates data preparation, wish rates and RFP checks while consultants keep strategy and negotiation.",
+      "status": "confirmed",
+      "source": "s16"
+    },
+    {
+      "model": "openrouter",
+      "claim": "An Egencia LLM virtual agent answers in ten languages and handles password resets and frequent flyer numbers before escalating to consultants.",
+      "status": "confirmed",
+      "source": "s6"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Use case: corporate travelers booking inside Claude, reaching calendar data, air and hotel booking and policy rules.",
+      "status": "confirmed",
+      "source": "s17"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Use case: hotel sourcing with Hotel Lobby, reaching benchmarks, client spend and compliance data and RFPs.",
+      "status": "confirmed",
+      "source": "s18"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Use case: travel assistant in Google Chat and Microsoft Teams; the Teams pilot is for Neo customers.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "openrouter",
+      "claim": "An Amex GBT executive said agent-to-agent interactions change the travel risk profile and need governance (PhocusWire).",
+      "status": "unverified",
+      "note": "phocuswire.com returned 403 (blocked) to this machine, to curl and to the fetch tool."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Amex GBT invested in information security and identity and privileged access management controls to govern its AI ecosystem (PhocusWire).",
+      "status": "unverified",
+      "note": "phocuswire.com returned 403 (blocked) to this machine, to curl and to the fetch tool."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Press noted the Claude connector's consequential transactions test whether automated booking can be trusted at corporate scale (xoomar.com).",
+      "status": "not-found",
+      "note": "The cited page returns 410 Gone."
+    },
+    {
+      "model": "openrouter",
+      "claim": "The Egencia AI connector in Claude launched 27 July 2026; early adopters August 2026, general availability by end of 2026.",
+      "status": "confirmed",
+      "source": "s2",
+      "note": "The release dates the announcement 27 July 2026 and says the Claude connector will be available to Egencia customers in Q3; the August early-adopter and end-of-year dates are for Egencia AI in Google Chat."
+    },
+    {
+      "model": "openrouter",
+      "claim": "The Claude connector is the first deployment of Amex GBT's proprietary A2A architecture.",
+      "status": "confirmed",
+      "source": "s17"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Hotel Lobby launched in October 2026 and is available worldwide to Amex GBT Consulting clients and enterprise programs.",
+      "status": "confirmed",
+      "source": "s19"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The A2A architecture is already live across servicing and booking products, and Hotel Lobby follows the same governance and transparency principles.",
+      "status": "confirmed",
+      "source": "s18"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The sourcing methodology delivers 28.8% average savings off Best Available Rate and a 96% response rate across 80,000+ hotels a year.",
+      "status": "confirmed",
+      "source": "s18"
+    },
+    {
+      "model": "openrouter",
+      "claim": "In May 2025 Amex GBT launched an LLM virtual agent for Egencia and natural language query for Egencia Analytics Studio; nearly a third of trial users self-served.",
+      "status": "confirmed",
+      "source": "s6",
+      "note": "The trial was internal testing in November 2024, Egencia U.S. customers only; the query feature was in beta."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Amex GBT's clients include Citi, Synovus and other financial institutions, businesses and government agencies.",
+      "status": "confirmed",
+      "source": "s17"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Amex GBT was taken private after a US$6.3bn acquisition by an AI-focused holding company.",
+      "status": "confirmed",
+      "source": "s11",
+      "note": "The cited meetings-conventions-asia.com page returned 403; read on Amex GBT's own release."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Forrester research commissioned by Amex GBT: 3% describe travel as fully orchestrated; 92% of IT decision-makers expect AI to make travel continuously optimised.",
+      "status": "confirmed",
+      "source": "s19"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Amex GBT will deliver machine learning, LLM and natural-language chat in Complete by SAP Concur and Amex GBT.",
+      "status": "confirmed",
+      "source": "s2"
+    }
+  ],
+  "questions": [
+    "When the Egencia AI connector acts with a traveler's credentials, what can those credentials reach beyond booking, and can a company restrict the connector to search only or require a confirm step before purchase?",
+    "In the A2A layer, is there a record per action of which specialised agent did what, on whose authority, that a customer can export for audit?",
+    "How does the chat agent tie a password reset, loyalty change or invoice request to the signed-in traveler?",
+    "In Hotel Lobby, how is benchmark and compliance data from other clients separated from the client being sourced?",
+    "Under Long Lake, will client travel data be used to improve the Nexus platform shared across Long Lake companies?"
+  ]
+}
