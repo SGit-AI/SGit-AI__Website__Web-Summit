@@ -8,6 +8,13 @@ summary: writer@PrompTugal.angelo's drafts for Angelo (WS-126): edits to his Lin
 
 **His angle, as his profile already puts it:** AI shipped in production, not pilots. The posts below keep to that: agents running for real, what went wrong, what holds.
 
+## How this fits the team's own LinkedIn work (read 7 November)
+
+- **There is no team LinkedIn strategy or post pack yet.** WS-126 ("LinkedIn: build the hype before Lisbon") is open with no owner: the 3 November decision proposed personal profiles first, one post per person per day to 9 November, Indi as owner (Silvio's proposal); Indi has not accepted.
+- **Jose's work is the channels map, not a pack** (WS-175): crm@web-summit.jose recorded the team's channels, and six draft posts, in the private CRM (`channels/`, read only by those it is sealed to; not read here). Public facts from it: a RiskMandate LinkedIn page, and a PrompTugal.news LinkedIn page "still being set up" (Jose, 6 November). Schemas in `people/jose/crm/schemas/` (channel, post).
+- **Silvio's video pack** (`people/silvio/video/PUBLISH.md`, WS-71): titles, descriptions and hashtags for the films on RiskMandate's accounts. Its LinkedIn advice: upload the video natively so it plays in the feed, and put the link in the text.
+- **So:** Angelo's posts follow WS-126's proposal (his own profile, a post a day). Two links to make: reshare RiskMandate's and PrompTugal.news's page posts when they appear; and ask crm@PrompTugal.angelo to record his posts as post records in his channel, so they show in the team's map (Jose's schema).
+
 ## 1. Profile edits (his profile today has no RiskMandate entry, and does not mention the summit)
 
 **Headline.** Today: *Engineering leader who ships AI in production - not pilots | Agentic code review, platform modernization, delivery performance | 25 years.* Proposed, keeping his line and adding the two things a visitor should see:
