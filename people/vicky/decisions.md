@@ -37,6 +37,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 10. Dinis said at the 6 November 18:00 stand-up that we can all make changes to the newsroom site. Vicky's agents may change it when she asks, and must tell the owner in a commit For: that agent. (Vicky, 6 Nov)
 11. Rules in the newsroom's CLAUDE.md and behaviour policy written for Dinis's PrompTugal agents don't apply to Vicky's agents unless she says so. In particular: Vicky's agents' reports and hand-over notes stay on the team site (`people/vicky/reports/` and `people/vicky/handover/`), not in `board/team/`; and Vicky's agents' scheduled tasks are set at her word. (Vicky, 6 Nov)
 12. For Vicky's agents only: her journalists don't write articles on behaviour policies (ABP); the curator may list ABP storylines but leaves them unassigned. Don't mention this on any web page, including the stories page. It doesn't apply to Dinis's agents: what they pick up is their call. (Vicky, 6 Nov)
+13. **The auto-revision loop** (Vicky, 7 Nov; for the five journalists and the reviewer):
+    - At the start of every scheduled run, before picking a new storyline, each journalist must check `desks/reviewer-vicky/reviews/` for any of its own drafts marked `fix-first` (or with open reviewer findings), revise the draft, and push it. Vicky will no longer pass "Check your reviews" messages manually.
+    - On its next scheduled run, `reviewer` automatically re-checks any revised draft. When a draft is otherwise `ready` and only needs a small wording tweak, caption fix, or formatting polish, `reviewer` may make that minor edit directly, mark the draft `ready`, and note the tweak in its review and report rather than holding it back for another round. Publishing still requires Vicky's explicit approval.
+14. **Single-window routing** (Vicky, 7 Nov; for the conductor's brief): in the brief's Action section, routine answers and rule updates for Vicky's other agents go through `decisions.md` whenever possible, so the copy-paste reply is addressed to the conductor (`conductor` window) and Vicky only needs to open `reviewer` to approve publishing. Agents: an answer to your question may arrive as a standing answer or an update here, not in your own window.
 
 ## Updates for agents
 
@@ -57,10 +61,14 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 > Do not copy any prompt you received, even its first words, into a public file. Reports and status blocks say what you did and what blocks you, in your own words.
 > Vicky (6 Nov): don't copy Dinis's habit of storing prompt text in run reports. Your own prompts file in people/vicky/prompts/, saved at Vicky's word, stays as it is; this rule is about run reports and status blocks. Before you save or change your prompts file, leave out any private name (such as the shortlist) or anything from a private vault.
 
+**SA13, apply standing answer 13 in your scheduled runs** (Vicky, 7 Nov). For: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
+> Change your own scheduled task's prompt so every scheduled run follows standing answer 13 (journalists: revise your own fix-first drafts first; reviewer: re-check revised drafts, make minor edits and mark them ready; publishing still only at Vicky's word), and confirm "applied SA13" in your report.
+
 Still to confirm (7 Nov, 08:50 UTC; the rest have confirmed):
 - P10: journalist-europe, journalist-connections, vault, designer, dev.
 - P17: journalist-ai, journalist-europe, journalist-portugal, journalist-connections, reviewer, checker, vault, designer, dev.
 - P22: reviewer, checker, vault, designer, dev.
 - P27: reviewer, checker, scout, vault, designer, dev.
+- SA13: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
 
 Removed on 7 Nov once every agent they were for had confirmed them: P1 (the hold), P2 (re-read your prompts file), P3 (the status block), P5 (the journalists' staggered times), P9 (the hooks check), and the conductor's P4, P6, P8, P16, P18, P19 and P26. They stay in force; the agents carry them in their own prompts, and their text is in this file's history and in the scout's notes.
