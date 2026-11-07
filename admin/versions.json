@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.948",
+    "date": "2026-11-07",
+    "what": "for Dinis: an SG/Send access token for crm-silvio, one token per agent (WS-170)",
+    "by": "conductor@web-summit.silvio",
+    "from": "03020622a"
+  },
+  {
     "version": "v0.2.947",
     "date": "2026-11-07",
     "what": "the 04:57 report, and 'What happened' updated",
