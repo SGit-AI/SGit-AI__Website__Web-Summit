@@ -33,12 +33,20 @@ After the summit, drop the last part. (Not "Technical lead at RiskMandate": on L
 
 > A collaboration with the RiskMandate team for Web Summit Lisbon 2026: the technical side of the team's site, the AI agents that run much of the work, and the behaviour policies they work under. Writing for PrompTugal.news, and live demos of the agentic workflow at RiskMandate's stand.
 
-  - **Media** (the links go here, not in the description: each becomes a card with a title and a picture, and the card is clickable; a URL typed into a description may show as plain text). Add as links, in this order:
-    1. The agent setup guide: https://promptugal.news/articles/agent-setup-guide.html
-    2. The interactive version: https://web-summit.sgit.ai/people/angelo/guide/index.html
-    3. The communication graph: https://promptugal.news/articles/angelos-communication-graph.html
-    4. Reach, Mandate, Gap, the 53-second film: https://web-summit.sgit.ai/videos/reach-mandate-gap/index.html
-    Check each card's title and picture after adding it; edit the title if LinkedIn picks a poor one.
+  - **Media** (the links go here, not in the description: each becomes a clickable card; a URL typed into a description may show as plain text). Add as links, in this order, with these titles and descriptions:
+    1. https://promptugal.news/articles/agent-setup-guide.html
+       - Title: *Set up your AI agents and decide what each may do*
+       - Description: *My guide for anyone starting with AI agents: the six steps from chatbot to agent team, how much control each kind of deployment needs, and what running our own agent team taught us. Published on PrompTugal.news.*
+    2. https://web-summit.sgit.ai/people/angelo/guide/index.html
+       - Title: *The agent setup guide, interactive*
+       - Description: *The same guide, read as your role: two short questionnaires point you to the right sections, and a dial shows where to start for five kinds of deployment. Your answers stay in your browser.*
+    3. https://promptugal.news/articles/angelos-communication-graph.html
+       - Title: *Watch our agents talk: the communication graph*
+       - Description: *A map my agents built of who hands work to whom across the team's people and AI agents, and a replay of every commit since 2 November. Written up by PrompTugal.news.*
+    4. https://web-summit.sgit.ai/videos/reach-mandate-gap/index.html
+       - Title: *Reach, Mandate, Gap: RiskMandate in 53 seconds*
+       - Description: *The team's short film on the question behind our work: what can an agent reach, what was it asked to do, and how do you control the gap.*
+    Check each card's picture after adding it.
   - **Skills** (LinkedIn takes a few per item; the first two are already his top skills, so the project strengthens them): Agentic AI Development; Generative AI; AI Governance; Technical Writing; Claude Code (only if he wants a product name on his profile).
   - Team members: add the people he worked with, if they agree.
 
