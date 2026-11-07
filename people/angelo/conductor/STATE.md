@@ -41,6 +41,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Open with Angelo (the desk's list)
 
+- Models (Angelo, 7 Nov about 23:00 UTC): dev.map@'s task set to Opus by name ("dev.map woken and set to Opus"); dev.venues@ and vault.kms@ still on "default" (their commits show Sonnet): the desk recommended Opus by name for both. The desk checks the next commits' Co-Authored-By lines.
+
 - Estimates (Angelo, 7 Nov about 22:35 UTC): every agent estimates each piece (effort, elapsed) and records the actual (people/angelo/estimates/, kit "Estimate, then measure"). The desk collects them into people/angelo/estimates/stats.md and shows accuracy in his digest on request; first stats once a few pieces are done.
 
 - P-09 settled (Angelo, 7 Nov about 21:55 UTC, "Ok sure." to option B): people/angelo/pages.mjs stays as it is; policy@ checks it at every audit and flags any change. No security review asked of Dinis's team for now.
