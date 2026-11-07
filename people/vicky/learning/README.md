@@ -28,11 +28,11 @@ Questions put to Dinis's mentor agent (mentor@web-summit.dinis), and which are a
 | P4 | One schedule file `people/vicky/schedule.json`, checked daily | conductor | about 5 to 10k tokens a day | 01 | accepted (6 Nov) |
 | P5 | Stagger the five journalists by 6 minutes | five journalists (Vicky changes the tasks) | none | 01 | accepted (6 Nov) |
 | P6 | Measure each session's usage once a day; never block | conductor | about 20 to 40k tokens a day | 01 | accepted (6 Nov) |
-| P7 | Publish only when the permission is in the newsroom's own record | reviewer | about nothing | 01 | on hold; its condition is met: Dinis said "that is ok what Vicky did" (newsroom board/guidance/2026-11-06-feedback-reading-and-vicky.md, 6 Nov 12:00), so Vicky may mark it done or drop it |
+| P7 | Publish only when the permission is in the newsroom's own record | reviewer | about nothing | 01 | done (Vicky, 7 Nov: the permission is in the newsroom's own record, Dinis's "that is ok what Vicky did") |
 | P8 | Shorter scheduled prompts that point at `conductor.md` | conductor | saves about 1.5k tokens a wake | 01 | accepted (6 Nov) |
 | P9 | Check, once, whether the newsroom's hooks run in your session | newsroom desks, curator, programme | about nothing | 02 | accepted (6 Nov: to the desks first) |
 | P10 | After a compression in a chat, re-read your files before acting | every agent | 2 to 5k tokens, only after a compaction | 02 | accepted (6 Nov) |
-| P11 | Ask Dinis how the newsroom's hooks treat Vicky's agents | Vicky (to raise with Dinis) | none | 02 | open |
+| P11 | Ask Dinis how the newsroom's hooks treat Vicky's agents | Vicky (to raise with Dinis) | none | 02 | parked (Vicky, 7 Nov: the current workflow works; raise it only if a real permissions problem appears) |
 | P12 | Try a start-up hook of Vicky's own on one agent | Vicky (environment), then conductor | 3 to 5k tokens per start; Vicky's time | 02 | open |
 | P13 | Move the researcher to Sonnet at its next hand-over | researcher, through Vicky | one hand-over; saves perhaps half to two-thirds | 03 | open |
 | P14 | Move the dashboard to Sonnet at its next hand-over | dashboard, through Vicky | one hand-over; the largest saving of the candidates | 03 | open |
@@ -49,9 +49,9 @@ Questions put to Dinis's mentor agent (mentor@web-summit.dinis), and which are a
 | P25 | An "agents" table on Vicky's dashboard from the status blocks, with stale rows and open asks | dashboard | 15 to 30k tokens a dashboard run | 06 | rejected (6 Nov) |
 | P26 | A small grid of today's scheduled runs at the top of the 08:30 brief | conductor | a few thousand tokens a brief | 06 | accepted (6 Nov) |
 | P27 | Never copy a received prompt into a public file | every agent | none | 06 | accepted (6 Nov) |
-| P28 | "New from Vicky" (newest first) at the top of decisions.md | conductor; every agent reads it | a few hundred tokens per new rule | 07 | open |
-| P29 | Pass on a rule that other agents need too, in your report For: conductor | every agent | a line now and then | 07 | open |
-| P30 | Keep Vicky's standing words as she gave them, in people/vicky/words/ | Vicky, then conductor | small, only on new rules | 07 | open |
+| P28 | "New from Vicky" (newest first) at the top of decisions.md | conductor; every agent reads it | a few hundred tokens per new rule | 07 | rejected (Vicky, 7 Nov: Updates for agents in decisions.md already covers it) |
+| P29 | Pass on a rule that other agents need too, in your report For: conductor | every agent | a line now and then | 07 | rejected (Vicky, 7 Nov: standing answer 14 already routes through the conductor) |
+| P30 | Keep Vicky's standing words as she gave them, in people/vicky/words/ | Vicky, then conductor | small, only on new rules | 07 | rejected (Vicky, 7 Nov: no further exception for storing her words in public files) |
 
 ## Next topics
 
