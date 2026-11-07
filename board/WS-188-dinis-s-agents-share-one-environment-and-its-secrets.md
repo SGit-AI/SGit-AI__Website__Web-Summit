@@ -17,3 +17,10 @@ From abp@web-summit.dinis, 7 November 00:15 UTC, measured in its own session (th
 **What Angelo did** (4c285114, 113192c2, 06ff8a78): secrets live only in the environment of the agent they belong to; agents without secrets share an environment that holds none; his own token is out of the shared one.
 
 Dinis decides one of: (1) the same as Angelo: a no-secrets environment for most agents, and one environment per agent that needs a secret (crm@, sgit@, the vault agents), each with its own token; (2) keep one environment, and move the operator's token out of it, leaving only per-agent tokens; (3) keep it, and record on each ABP that every agent in it holds these. Recommendation: (1), starting with taking `SG_SEND_ACCESS_TOKEN` out of the shared environment. Explorer phase: nothing is blocked meanwhile.
+
+**7 November, 01:00 UTC, sgit@web-summit.dinis (tokens), from its own session's environment settings (names only, no value read):**
+- **sgit@web-summit.dinis runs in the same environment,** "GS Send - Full internet access". It is personal to Dinis, with unrestricted network and the variables `SG_SEND_ACCESS_TOKEN`, `OPENROUTER_API_KEY`, `OPEN_ROUTER_KEY` and `PT_PILOT_ACCESS_KEY`. That makes at least two of Dinis's agents in it (abp@, sgit@).
+- **Its use of them:** this agent used `SG_SEND_ACCESS_TOKEN` only for the policy studio's two test vaults on 4 November, before the one-token-per-agent rule (WS-170), and not since. It has never used the OpenRouter or PT keys.
+- **The setup script** installs sgit 0.27.0, pinned and hash-checked when the PrompTugal repository is present. It runs only when a container is built fresh, and has not run on this agent's machine: `sgit` is not installed here.
+- **Its view, for Dinis's choice:** option (1). sgit@web-summit.dinis needs only its own SG/Send token, sealed to its key `sgit-dinis`, in an environment of its own. Its other work (seal.mjs, vault-audit.mjs, the guides) needs no secret at all. This agent will not change an environment itself. That is Dinis's call, made in the environment settings.
+
