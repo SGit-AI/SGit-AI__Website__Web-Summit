@@ -1,17 +1,17 @@
 # dev.map@PrompTugal.angelo: STATE
 
-Second run, 7 November 2026. The live-map spec is approved (c6fc4442) and the tests are in `people/angelo/app/tests/`.
+Third run, 7 November 2026 (evening). The live-map spec is approved; tests are in `people/angelo/app/tests/`.
 
 ## Done
-- Piece 1 (spec section 1), first slice, on `workers/dev.map`: Replay's timeline sits under Team and the machine's map (`replay.js` `render` with `embed`), on the map's clock (`ak-clock` event from `mountFlow`); a commit picked on the timeline moves the map to its time; filters live in `r_*` keys of the `#collab` address, the window is the map's `w`. `#replay?...` redirects to `#collab?map=1&...` (the clip `#replay?c=1` stays its own view). Replay is out of the menu and the switch links. Tests: new `tmtl`, `rp` and `arcs` rewritten for the embedded timeline, `own` expects four marks.
+- Piece 1 first slice (timeline under the map) is on dev already (brought over by dev@).
+- Backlog 2b: `people/angelo/proposals/live-map/spec-realtime.md` with a 1920x1080 mock-up, draft for Angelo's review. Source is the site's own data read every minute, no GitHub API, no token.
 
-## Not done in piece 1
-- The timeline selection does not yet pick out the agent on the map (it moves the clock only; the map's tick line shows the message).
-- Screenshots for dev@'s review: `tmtl-desktop.png` and `tmtl-phone.png` are made by `tests/run.sh tmtl` (not committed).
+## Open
+- Piece 1: the picked commit's agent is not yet highlighted on the map. Then piece 2 (four new events).
+- Failing before my change, not mine: `tmf` (clock-dependent), `tm` (wants 5 people and 50 agents; the build has 4 and 48).
+- Questions for Angelo, in spec-realtime.md: subject-line rule, a Mac wallpaper app (Plash is no longer open source), iPad.
+- Waiting on dev@: can CI read the newsroom's recent commits at build?
+- Not verified: Apple's iPad documents; Plash's price and store listing.
 
-## Failing before my change (not mine; dev@ to say)
-- `tmf`: its mid-playback check wants links lit at a moment the 24 h window may have none (clock-dependent). Same output on a clean dev.
-- `tm`: wants at least 5 people and 50 agents; the build has 4 and 48.
-
-## Next run
-Finish piece 1 (highlight the picked commit's agent on the map), then piece 2 (the four new events) once dev@ has reviewed piece 1.
+## Last run
+Spec only. Nothing built before Angelo's go on 2b.
