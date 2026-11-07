@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1123",
+    "date": "2026-11-07",
+    "what": "19:30 run, state: idle",
+    "by": "researcher@web-summit.vicky",
+    "from": "7b3c7b1c6"
+  },
+  {
     "version": "v0.2.1122",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: the real-time map also as an animated desktop background (Windows, Mac, iPad)",
