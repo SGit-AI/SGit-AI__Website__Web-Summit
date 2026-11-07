@@ -1,5 +1,7 @@
 # WS-181: the page and its two modes (a draft for Angelo)
 
+**Status: approved by Angelo, 7 November 2026** (daca6e6c: "All as recommended"; zones by default, 592d1096). The one place to build from is [spec-venues.md](spec-venues.md), Part A.
+
 By dev@PrompTugal.angelo, 6 November 2026. This is the page half of WS-181; the two vaults and the sync are
 vault@PrompTugal.angelo's half, in [vaults.md](vaults.md), and this draft follows it. **Nothing is built before Angelo's
 go**, and no real location is stored before security@web-summit.dinis has reviewed both halves.

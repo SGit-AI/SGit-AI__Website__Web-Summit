@@ -1,37 +1,35 @@
 # Watcher: latest run
 
-**Run:** 2026-11-07 07:15 UTC (scheduled), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed is `activity.json`; the actions are `actions.json`, both beside this file. **Addressed to:** Jose and conductor@web-summit.jose, which reads it at every wake.
+**Run:** 2026-11-07 12:15 UTC (scheduled), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed is `activity.json`; the actions are `actions.json`, both beside this file. **Addressed to:** Jose and conductor@web-summit.jose, which reads it at every wake.
 
-**Range:** `dev` from `d015aac` to `6ad2db9`, overnight.
+**Range:** `dev` from `6ad2db9` to `641fbc1`.
 
 ## Who committed
 
-171 commits: 71 CI releases (counted), 1 by the watcher itself, none without an agent name, and 99 by agents: Angelo 47, Silvio 34, Dinis 13, Vicky 5. None by Jose's agents (a quiet night). Security's 23:50 review (`4f1fd20`) covers 35 of them; the other 64 wait for 11:50.
+186 commits: 68 CI releases (counted), 1 by the watcher itself, none without an agent name, and 117 by agents: Angelo 57, Vicky 31, Dinis 15, Jose 9, Silvio 3, Indi 2. Security's 11:50 review (`f4a9fbe`) covers 105 of them.
 
 ## Open actions (re-checked every run)
 
-1. **A-06, open for the eighth run, waiting on Jose:** paste the new prompts from `people/jose/schedules.md#paste` into your scheduled tasks. Only the helper's has been updated. **The hourly drain fired again at 07:07** with the text that pushes a vault.
-2. **A-14, fifth run: dev@web-summit.dinis.** No commit in about 31 hours (since 23:53 on 5 November). For conductor@web-summit.dinis.
-3. **A-15, fourth run: dashboard@web-summit.dinis.** Nothing since 07:11 yesterday: 16 hourly slots. For conductor@web-summit.dinis.
-4. **A-19, new: Angelo's dashboard agent.** Last commit 00:39; its 03:30 and 06:30 runs left none. Probably quiet night runs.
+1. **A-06, open for the ninth run: progress.** Your conductor changed the hourly drain's stored prompt to count only (11:27, C30), so it no longer pushes a vault. Still for you: the conductor's wake, dev, dashboard and vault prompts are the old text (automation's also lacks the one-door step, and the watcher's own lacks the measure step, which it does anyway), and the one-day schedules you approved (C30) are not set yet. The texts and times are in `people/jose/schedules.md`.
+2. **A-14, sixth run: dev@web-summit.dinis.** No commit in about 36 hours. For conductor@web-summit.dinis.
+3. **A-15, fifth run: dashboard@web-summit.dinis.** Nothing since 07:11 yesterday. For conductor@web-summit.dinis.
+4. **A-20, new: inbox@web-summit.silvio**, quiet again since 04:20 (four mail-check slots). For conductor@web-summit.silvio: have it log its runs.
 
-5. **A-18, second run (reopened): Angelo's writer runner.** It started at 23:17, then left no commit at 01:05, 03:05 or 05:05. It may commit only when it has something new.
-
-Closed: A-12 (Silvio's inbox agent committed at 04:20), A-17 (Silvio's procurement agent at 04:31).
+Closed: A-18 (Angelo's writer runner: its work shows under the writer's name, 7 commits this morning) and A-19 (Angelo's dashboard agent, 10:29).
 
 ## What to look at
 
-1. **High, open for the ninth run:** `content/family-riskmandate-agent.md` lines 6, 18 and 32 (from `f20d264`) still match the rule "an email address". Security's 23:50 review does not mention them either.
-2. **Medium: another person's agent changed your command centre.** dashboard@web-summit.silvio (`14f3f05`, 07:07) added "two brains" to the command centres of Silvio, Angelo and Jose. It went through the shared engine in `assets/cc/` and added a 1.6 MB bundled 3D library (`assets/cc/brain-libs.js`). There is no `Affects everyone:` line, and although its body names your command centre, no `For:` line addresses you or your agents. Your rules bind only your agents, so this is for you and your conductor to raise with Silvio.
-3. **Note:** two lines of that library (500 and 4724) match the vault-key rule. By shape they are minified method names and a colour-name table, not secrets.
-4. **Medium:** the hourly drain prompt (A-06 above).
-5. **Medium, still open:** the public session branch `claude/optimistic-feynman-7pkot9` (`dc306d7`), `board/WS-26-*` line 16.
-6. **Note:** 112 email-rule lines in 48 commits, all PrompTugal-style agent names. Silvio's agents also changed `assets/cc/` (`141313c`) and `content/impressao.md`, edited board files outside their `Issue:` trailers (`f97921a`, `4844e54`), and sealed CRM and video keys for each other in `data/sealed/agents/`. Listed, not judged.
+1. **High, open for the tenth run:** `content/family-riskmandate-agent.md` lines 6, 18 and 32 (from `f20d264`) still match the rule "an email address".
+2. **Medium, still open:** the public session branch `claude/optimistic-feynman-7pkot9` (`dc306d7`), `board/WS-26-*` line 16.
+3. **Note: new branches outside `claude/*`.** Angelo's worker agents push to `workers/dev.map` (2 commits) and `workers/vault.kms` (1 commit), not to `dev`. They touch only `people/angelo/` files and match no rule, but CLAUDE.md says agents push to `dev` only. For Angelo's conductor to confirm.
+4. **Fixed:** the vault audit now treats PrompTugal-style agent names as names, not addresses (`326b690`), the gap raised on 6 November. Its two phone-rule matches (lines 41 and 42) are its own self-test samples.
+5. **Info:** you approved a one-day trial of the watcher on Sonnet (C30). You switch the model in this session; this run still ran on Opus (its ledger line), so the trial has not started. The accountant compares it tomorrow morning.
 
 ## The checks
 
-- **Jose's agents:** no commits overnight; all their scheduled tasks fired on time.
-- **Other branches:** nothing new on `main`; three session branches moved (two on `dev`; `claude/nifty-bell-f1rkca` merges only, no file difference).
+- **Jose's agents:** 9 commits (conductor 5, dashboard, helper, dev, vault), every one with `Reviewed-by`. All their scheduled tasks fired on time.
+- **Email rule:** 183 lines in 60 commits, all PrompTugal-style agent names; none is a real mail domain.
+- **Other branches:** nothing new on `main`; the two `workers/*` branches above.
 
 ## Could not check
 

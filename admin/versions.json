@@ -1,5 +1,229 @@
 [
   {
+    "version": "v0.2.1057",
+    "date": "2026-11-07",
+    "what": "the 14:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "7c3cb505e"
+  },
+  {
+    "version": "v0.2.1056",
+    "date": "2026-11-07",
+    "what": "14:41 wake: quiet run, no notes (no new commits by Silvio's or Nimay's agents)",
+    "by": "mentor@web-summit.dinis",
+    "from": "b818a10cb"
+  },
+  {
+    "version": "v0.2.1055",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: ucvg2pkv's key stays with the vault agent; no handover to Dinis",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "5d0945d8a"
+  },
+  {
+    "version": "v0.2.1054",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the live-map spec, for Angelo's review: Replay inside Team and the machine, keys, sealed messages and lanes, a public version, a 3D option",
+    "by": "dev@PrompTugal.angelo",
+    "from": "e330e5423"
+  },
+  {
+    "version": "v0.2.1053",
+    "date": "2026-11-07",
+    "what": "14:27 wake: brief 35 (WS-181 approved by Angelo; the asks carry to the 18:00)",
+    "by": "conductor@web-summit.dinis",
+    "from": "c4a930106"
+  },
+  {
+    "version": "v0.2.1052",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: ledger line for the 14:21 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "3b459b69e"
+  },
+  {
+    "version": "v0.2.1051",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: STATE and runs for the 14:21 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "edbeca8f1"
+  },
+  {
+    "version": "v0.2.1050",
+    "date": "2026-11-07",
+    "what": "runner.writer@PrompTugal.angelo: state at 7 Nov 14:05: guide published and corrected; contributor ask with Dinis; claim check flags",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "aed0ae76c"
+  },
+  {
+    "version": "v0.2.1049",
+    "date": "2026-11-07",
+    "what": "13:41 wake: quiet run, no notes (no new commits by Silvio's or Nimay's agents)",
+    "by": "mentor@web-summit.dinis",
+    "from": "83a293256"
+  },
+  {
+    "version": "v0.2.1048",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: WS-181's spec-venues.md: Part A approved (the team's board), Part B for review (the venue map on PrompTugal.news)",
+    "by": "dev@PrompTugal.angelo",
+    "from": "693e3d0c0"
+  },
+  {
+    "version": "v0.2.1047",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: STATE and runs for the 13:20 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "58913de45"
+  },
+  {
+    "version": "v0.2.1046",
+    "date": "2026-11-07",
+    "what": "team-collaboration@PrompTugal.angelo: inbox down to two wakes, no commit on empty runs, dev only; the 12:00 did not happen",
+    "by": "team-collaboration@PrompTugal.angelo",
+    "from": "7ddebc603"
+  },
+  {
+    "version": "v0.2.1045",
+    "date": "2026-11-07",
+    "what": "reviewer@PrompTugal.vicky: report, 13:00 run: S25 Ready; applied SA15, SA16, SA17; P1 to P3 in the prompts file",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "28127b623"
+  },
+  {
+    "version": "v0.2.1044",
+    "date": "2026-11-07",
+    "what": "the 12:57 report, and 'What happened' updated",
+    "by": "journalist@web-summit.dinis",
+    "from": "c23bcc2e2"
+  },
+  {
+    "version": "v0.2.1043",
+    "date": "2026-11-07",
+    "what": "12:50: the two token asks (WS-170) made one; two past meeting-order items closed; the board unchanged since 07:50",
+    "by": "project-manager@web-summit.dinis",
+    "from": "8dd256285"
+  },
+  {
+    "version": "v0.2.1042",
+    "date": "2026-11-07",
+    "what": "writer@PrompTugal.angelo: report: the LinkedIn morning, and the contributor ask to Dinis",
+    "by": "writer@PrompTugal.angelo",
+    "from": "aac11f339"
+  },
+  {
+    "version": "v0.2.1041",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: team-collaboration@: fewer inbox wakes, no commit on empty runs, no session branch",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "9cb95b3e6"
+  },
+  {
+    "version": "v0.2.1040",
+    "date": "2026-11-07",
+    "what": "writer@PrompTugal.angelo: LinkedIn drafts: how they fit WS-126, Jose's channels (WS-175) and Silvio's video pack (WS-71)",
+    "by": "writer@PrompTugal.angelo",
+    "from": "63913098c"
+  },
+  {
+    "version": "v0.2.1039",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: environments: no session moves before the summit; vault@ and crm@ move with their tokens",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "6819e6d63"
+  },
+  {
+    "version": "v0.2.1038",
+    "date": "2026-11-07",
+    "what": "12:41 wake: quiet run, no notes (Silvio had one at 11:41; Nimay no change)",
+    "by": "mentor@web-summit.dinis",
+    "from": "2e4a1405b"
+  },
+  {
+    "version": "v0.2.1037",
+    "date": "2026-11-07",
+    "what": "writer@PrompTugal.angelo: LinkedIn declaration post: his meet page as the one link, tags, the stand card (WS-126)",
+    "by": "writer@PrompTugal.angelo",
+    "from": "6a4ae684c"
+  },
+  {
+    "version": "v0.2.1036",
+    "date": "2026-11-07",
+    "what": "dashboard@PrompTugal.angelo: WS-181's \"C\", the six approved agents and the publishing rules on the dashboard",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "3b5015485"
+  },
+  {
+    "version": "v0.2.1035",
+    "date": "2026-11-07",
+    "what": "writer@PrompTugal.angelo: LinkedIn Featured for summit visitors: where to find him, the film, the guide, the graph; the declaration posted first (WS-126)",
+    "by": "writer@PrompTugal.angelo",
+    "from": "435ebd180"
+  },
+  {
+    "version": "v0.2.1034",
+    "date": "2026-11-07",
+    "what": "12:30 wake: the Agents board task read and waiting on the designer; one line in My agents says it is coming",
+    "by": "dashboard@web-summit.jose",
+    "from": "4a912ef64"
+  },
+  {
+    "version": "v0.2.1033",
+    "date": "2026-11-07",
+    "what": "12:30 wake: a quiet one; the to-do list re-checked, nothing new for Indi",
+    "by": "dashboard@web-summit.indi",
+    "from": "c9f7990c6"
+  },
+  {
+    "version": "v0.2.1032",
+    "date": "2026-11-07",
+    "what": "12:27 wake: brief 34 (the 12:00 did not happen; its agenda carries to the 18:00)",
+    "by": "conductor@web-summit.dinis",
+    "from": "7aca7dd03"
+  },
+  {
+    "version": "v0.2.1031",
+    "date": "2026-11-07",
+    "what": "writer@PrompTugal.angelo: LinkedIn Project: a title and description for each Media link (WS-126)",
+    "by": "writer@PrompTugal.angelo",
+    "from": "134cf68d7"
+  },
+  {
+    "version": "v0.2.1030",
+    "date": "2026-11-07",
+    "what": "12:15 run: the hourly drain now counts only (A-06 part done); dev@web-summit.dinis quiet 36 hours; new workers/* branches",
+    "by": "watcher@web-summit.jose",
+    "from": "2595ad794"
+  },
+  {
+    "version": "v0.2.1029",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: no stand-up today; Angelo's publishing already allowed by Dinis; the hablla link; the back-office proposal goes ahead",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "a074e47fc"
+  },
+  {
+    "version": "v0.2.1028",
+    "date": "2026-11-07",
+    "what": "escape valves and hardening in ABP in action; inbox@vicky's ABP",
+    "by": "abp@web-summit.dinis",
+    "from": "64b067468"
+  },
+  {
+    "version": "v0.2.1027",
+    "date": "2026-11-07",
+    "what": "decisions.md, a blank line before \"Updates for agents\"",
+    "by": "conductor@web-summit.vicky",
+    "from": "9997dd846"
+  },
+  {
+    "version": "v0.2.1026",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: the six tasks checked; the spec names social-media@ and says which section \"NAME\" means",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "ae3d64a4d"
+  },
+  {
     "version": "v0.2.1025",
     "date": "2026-11-07",
     "what": "writer@PrompTugal.angelo: LinkedIn drafts: both a line in the consultant entry and a Project, \"collaborating with\" (WS-126)",

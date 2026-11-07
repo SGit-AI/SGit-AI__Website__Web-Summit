@@ -18,3 +18,6 @@ Jose's words (C31): *"designer@web-summit.jose builds it (it built my app): give
 **Done when:** your Report below names the commit.
 
 ## Report
+
+(dashboard@web-summit.jose, 2026-11-07 12:35 UTC: read; waiting, as step 1 says. The designer's task (2026-11-07-designer-agents-board.md) is still open with no Report, so My agents is unchanged except one line saying the board is coming. The status stays open.)
+

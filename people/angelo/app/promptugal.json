@@ -1,8 +1,8 @@
 {
  "about": "The PrompTugal newsroom's agents, from the git log of PrompTugal/PrompTugal__News__Website (its dev branch), for Angelo's command centre; refreshed by dev@web-summit.angelo at its wakes. Names, counts and times only. pt:<person>:<agent> is a PrompTugal agent of that person.",
  "source": "https://github.com/PrompTugal/PrompTugal__News__Website",
- "commit": "2dce3cdf2",
- "read_at": "2026-11-07T11:42:13.579Z",
+ "commit": "b5b6cad5f",
+ "read_at": "2026-11-07T14:39:00.753Z",
  "days": 7,
  "agents": [
   {
@@ -11,9 +11,9 @@
    "short": "dev",
    "family": "PrompTugal",
    "label": "PrompTugal's dev",
-   "commits": 217,
+   "commits": 232,
    "first": "2026-11-06T00:05:30+00:00",
-   "last": "2026-11-07T11:19:49+00:00",
+   "last": "2026-11-07T14:17:43+00:00",
    "key": true
   },
   {
@@ -22,20 +22,9 @@
    "short": "conductor",
    "family": "PrompTugal",
    "label": "PrompTugal's conductor",
-   "commits": 114,
+   "commits": 117,
    "first": "2026-11-06T00:03:31+00:00",
-   "last": "2026-11-07T10:55:17+00:00",
-   "key": true
-  },
-  {
-   "id": "pt:dinis:synthetic",
-   "person": "dinis",
-   "short": "synthetic",
-   "family": "PrompTugal",
-   "label": "PrompTugal's synthetic",
-   "commits": 75,
-   "first": "2026-11-06T00:28:34+00:00",
-   "last": "2026-11-07T10:46:12+00:00",
+   "last": "2026-11-07T13:56:06+00:00",
    "key": true
   },
   {
@@ -44,20 +33,20 @@
    "short": "journalist",
    "family": "PrompTugal",
    "label": "PrompTugal's journalist",
-   "commits": 74,
+   "commits": 77,
    "first": "2026-11-06T00:06:05+00:00",
-   "last": "2026-11-07T10:28:15+00:00",
+   "last": "2026-11-07T14:30:45+00:00",
    "key": true
   },
   {
-   "id": "pt:dinis:outreach",
+   "id": "pt:dinis:synthetic",
    "person": "dinis",
-   "short": "outreach",
+   "short": "synthetic",
    "family": "PrompTugal",
-   "label": "PrompTugal's outreach",
-   "commits": 58,
-   "first": "2026-11-06T00:05:47+00:00",
-   "last": "2026-11-07T11:38:53+00:00",
+   "label": "PrompTugal's synthetic",
+   "commits": 76,
+   "first": "2026-11-06T00:28:34+00:00",
+   "last": "2026-11-07T12:48:20+00:00",
    "key": true
   },
   {
@@ -66,9 +55,20 @@
    "short": "designer",
    "family": "PrompTugal",
    "label": "PrompTugal's designer",
-   "commits": 58,
+   "commits": 61,
    "first": "2026-11-06T00:08:58+00:00",
-   "last": "2026-11-07T11:37:19+00:00",
+   "last": "2026-11-07T14:36:36+00:00",
+   "key": true
+  },
+  {
+   "id": "pt:dinis:outreach",
+   "person": "dinis",
+   "short": "outreach",
+   "family": "PrompTugal",
+   "label": "PrompTugal's outreach",
+   "commits": 60,
+   "first": "2026-11-06T00:05:47+00:00",
+   "last": "2026-11-07T13:39:05+00:00",
    "key": true
   },
   {
@@ -77,53 +77,9 @@
    "short": "researcher",
    "family": "PrompTugal",
    "label": "",
-   "commits": 55,
+   "commits": 58,
    "first": "2026-11-06T05:37:48+00:00",
-   "last": "2026-11-07T11:14:51+00:00",
-   "key": true
-  },
-  {
-   "id": "pt:vicky:reviewer",
-   "person": "vicky",
-   "short": "reviewer",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 50,
-   "first": "2026-11-06T10:20:27+00:00",
-   "last": "2026-11-07T11:13:14+00:00",
-   "key": true
-  },
-  {
-   "id": "pt:dinis:ontologist",
-   "person": "dinis",
-   "short": "ontologist",
-   "family": "PrompTugal",
-   "label": "PrompTugal's ontologist",
-   "commits": 47,
-   "first": "2026-11-06T00:07:41+00:00",
-   "last": "2026-11-07T11:22:16+00:00",
-   "key": true
-  },
-  {
-   "id": "pt:dinis:correspondent",
-   "person": "dinis",
-   "short": "correspondent",
-   "family": "PrompTugal",
-   "label": "PrompTugal's front page correspondent",
-   "commits": 37,
-   "first": "2026-11-06T03:49:53+00:00",
-   "last": "2026-11-07T10:43:16+00:00",
-   "key": true
-  },
-  {
-   "id": "pt:dinis:security",
-   "person": "dinis",
-   "short": "security",
-   "family": "PrompTugal",
-   "label": "PrompTugal's security agent",
-   "commits": 33,
-   "first": "2026-11-06T03:48:25+00:00",
-   "last": "2026-11-07T10:04:40+00:00",
+   "last": "2026-11-07T14:16:46+00:00",
    "key": true
   },
   {
@@ -132,9 +88,53 @@
    "short": "investors",
    "family": "PrompTugal",
    "label": "",
-   "commits": 32,
+   "commits": 55,
    "first": "2026-11-06T20:08:08+00:00",
-   "last": "2026-11-07T11:33:21+00:00",
+   "last": "2026-11-07T14:21:08+00:00",
+   "key": true
+  },
+  {
+   "id": "pt:vicky:reviewer",
+   "person": "vicky",
+   "short": "reviewer",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 55,
+   "first": "2026-11-06T10:20:27+00:00",
+   "last": "2026-11-07T13:36:06+00:00",
+   "key": true
+  },
+  {
+   "id": "pt:dinis:ontologist",
+   "person": "dinis",
+   "short": "ontologist",
+   "family": "PrompTugal",
+   "label": "PrompTugal's ontologist",
+   "commits": 50,
+   "first": "2026-11-06T00:07:41+00:00",
+   "last": "2026-11-07T14:22:57+00:00",
+   "key": true
+  },
+  {
+   "id": "pt:dinis:correspondent",
+   "person": "dinis",
+   "short": "correspondent",
+   "family": "PrompTugal",
+   "label": "PrompTugal's front page correspondent",
+   "commits": 38,
+   "first": "2026-11-06T03:49:53+00:00",
+   "last": "2026-11-07T12:43:19+00:00",
+   "key": true
+  },
+  {
+   "id": "pt:dinis:security",
+   "person": "dinis",
+   "short": "security",
+   "family": "PrompTugal",
+   "label": "PrompTugal's security agent",
+   "commits": 35,
+   "first": "2026-11-06T03:48:25+00:00",
+   "last": "2026-11-07T14:05:33+00:00",
    "key": true
   },
   {
@@ -143,9 +143,20 @@
    "short": "devops",
    "family": "PrompTugal",
    "label": "PrompTugal's devops",
-   "commits": 30,
+   "commits": 32,
    "first": "2026-11-06T03:47:46+00:00",
-   "last": "2026-11-07T10:15:14+00:00",
+   "last": "2026-11-07T14:15:31+00:00",
+   "key": true
+  },
+  {
+   "id": "pt:dinis:librarian",
+   "person": "dinis",
+   "short": "librarian",
+   "family": "PrompTugal",
+   "label": "PrompTugal's librarian",
+   "commits": 27,
+   "first": "2026-11-06T03:52:31+00:00",
+   "last": "2026-11-07T12:59:46+00:00",
    "key": true
   },
   {
@@ -160,14 +171,25 @@
    "key": false
   },
   {
-   "id": "pt:dinis:librarian",
+   "id": "pt:dinis:conductor.b",
    "person": "dinis",
-   "short": "librarian",
+   "short": "conductor.b",
    "family": "PrompTugal",
-   "label": "PrompTugal's librarian",
-   "commits": 26,
-   "first": "2026-11-06T03:52:31+00:00",
-   "last": "2026-11-07T09:59:50+00:00",
+   "label": "",
+   "commits": 23,
+   "first": "2026-11-06T21:38:06+00:00",
+   "last": "2026-11-07T14:09:18+00:00",
+   "key": true
+  },
+  {
+   "id": "pt:vicky:journalist-ai",
+   "person": "vicky",
+   "short": "journalist-ai",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 23,
+   "first": "2026-11-06T10:50:12+00:00",
+   "last": "2026-11-07T12:03:46+00:00",
    "key": true
   },
   {
@@ -179,28 +201,6 @@
    "commits": 21,
    "first": "2026-11-06T04:52:31+00:00",
    "last": "2026-11-07T04:38:31+00:00",
-   "key": true
-  },
-  {
-   "id": "pt:vicky:journalist-ai",
-   "person": "vicky",
-   "short": "journalist-ai",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 21,
-   "first": "2026-11-06T10:50:12+00:00",
-   "last": "2026-11-06T22:21:48+00:00",
-   "key": true
-  },
-  {
-   "id": "pt:dinis:conductor.b",
-   "person": "dinis",
-   "short": "conductor.b",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 20,
-   "first": "2026-11-06T21:38:06+00:00",
-   "last": "2026-11-07T11:08:16+00:00",
    "key": true
   },
   {
@@ -220,9 +220,9 @@
    "short": "sherpa",
    "family": "PrompTugal",
    "label": "PrompTugal's sherpa",
-   "commits": 18,
+   "commits": 19,
    "first": "2026-11-06T03:51:01+00:00",
-   "last": "2026-11-07T09:32:17+00:00",
+   "last": "2026-11-07T12:34:05+00:00",
    "key": true
   },
   {
@@ -235,6 +235,28 @@
    "first": "2026-11-04T00:35:45+00:00",
    "last": "2026-11-06T00:44:22+00:00",
    "key": false
+  },
+  {
+   "id": "pt:dinis:accountant",
+   "person": "dinis",
+   "short": "accountant",
+   "family": "PrompTugal",
+   "label": "PrompTugal's accountant",
+   "commits": 14,
+   "first": "2026-11-06T03:49:04+00:00",
+   "last": "2026-11-07T12:49:47+00:00",
+   "key": true
+  },
+  {
+   "id": "pt:vicky:curator",
+   "person": "vicky",
+   "short": "curator",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 14,
+   "first": "2026-11-06T10:26:39+00:00",
+   "last": "2026-11-07T11:50:04+00:00",
+   "key": true
   },
   {
    "id": "pt:dinis:observability",
@@ -259,14 +281,14 @@
    "key": false
   },
   {
-   "id": "pt:dinis:accountant",
+   "id": "pt:dinis:backup",
    "person": "dinis",
-   "short": "accountant",
+   "short": "backup",
    "family": "PrompTugal",
-   "label": "PrompTugal's accountant",
-   "commits": 13,
-   "first": "2026-11-06T03:49:04+00:00",
-   "last": "2026-11-07T09:48:57+00:00",
+   "label": "",
+   "commits": 11,
+   "first": "2026-11-06T05:37:35+00:00",
+   "last": "2026-11-07T12:10:58+00:00",
    "key": true
   },
   {
@@ -292,28 +314,6 @@
    "key": false
   },
   {
-   "id": "pt:vicky:curator",
-   "person": "vicky",
-   "short": "curator",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 10,
-   "first": "2026-11-06T10:26:39+00:00",
-   "last": "2026-11-07T07:46:45+00:00",
-   "key": true
-  },
-  {
-   "id": "pt:dinis:backup",
-   "person": "dinis",
-   "short": "backup",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 10,
-   "first": "2026-11-06T05:37:35+00:00",
-   "last": "2026-11-07T06:10:20+00:00",
-   "key": true
-  },
-  {
    "id": "journalist-connections@web-summit.vicky",
    "person": "vicky",
    "short": "journalist-connections",
@@ -325,6 +325,17 @@
    "key": false
   },
   {
+   "id": "pt:angelo:writer",
+   "person": "angelo",
+   "short": "writer",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 9,
+   "first": "2026-11-06T23:09:46+00:00",
+   "last": "2026-11-07T12:48:43+00:00",
+   "key": true
+  },
+  {
    "id": "journalist@web-summit.vicky",
    "person": "vicky",
    "short": "journalist",
@@ -334,17 +345,6 @@
    "first": "2026-11-05T19:45:53+00:00",
    "last": "2026-11-06T10:16:21+00:00",
    "key": false
-  },
-  {
-   "id": "pt:angelo:writer",
-   "person": "angelo",
-   "short": "writer",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 8,
-   "first": "2026-11-06T23:09:46+00:00",
-   "last": "2026-11-07T10:53:24+00:00",
-   "key": true
   },
   {
    "id": "pt:dinis:customers",
@@ -582,7 +582,7 @@
   {
    "from": "pt:dinis:dev",
    "to": "pt:dinis:conductor",
-   "n": 168
+   "n": 175
   },
   {
    "from": "pt:dinis:journalist",
@@ -637,7 +637,7 @@
   {
    "from": "pt:vicky:reviewer",
    "to": "pt:dinis:journalist",
-   "n": 11
+   "n": 12
   },
   {
    "from": "pt:dinis:conductor.b",
@@ -655,9 +655,14 @@
    "n": 11
   },
   {
+   "from": "pt:vicky:reviewer",
+   "to": "pt:vicky:journalist-ai",
+   "n": 10
+  },
+  {
    "from": "pt:dinis:accountant",
    "to": "pt:dinis:conductor",
-   "n": 9
+   "n": 10
   },
   {
    "from": "curator@web-summit.vicky",
@@ -665,8 +670,8 @@
    "n": 9
   },
   {
-   "from": "pt:vicky:reviewer",
-   "to": "pt:vicky:journalist-ai",
+   "from": "pt:vicky:curator",
+   "to": "newsroom@web-summit.dinis",
    "n": 8
   },
   {
@@ -690,8 +695,13 @@
    "n": 7
   },
   {
-   "from": "pt:vicky:curator",
-   "to": "newsroom@web-summit.dinis",
+   "from": "pt:angelo:writer",
+   "to": "pt:dinis:conductor",
+   "n": 6
+  },
+  {
+   "from": "pt:dinis:conductor.b",
+   "to": "pt:dinis:accountant",
    "n": 6
   },
   {
@@ -717,16 +727,6 @@
   {
    "from": "pt:vicky:reviewer",
    "to": "pt:vicky:journalist",
-   "n": 5
-  },
-  {
-   "from": "pt:angelo:writer",
-   "to": "pt:dinis:conductor",
-   "n": 5
-  },
-  {
-   "from": "pt:dinis:conductor.b",
-   "to": "pt:dinis:accountant",
    "n": 5
   },
   {
@@ -780,6 +780,11 @@
    "n": 4
   },
   {
+   "from": "pt:dinis:conductor.b",
+   "to": "pt:dinis:designer",
+   "n": 3
+  },
+  {
    "from": "pt:angelo:writer",
    "to": "pt:dinis:journalist",
    "n": 3
@@ -830,6 +835,21 @@
    "n": 3
   },
   {
+   "from": "pt:dinis:conductor.b",
+   "to": "pt:dinis:dev.pages",
+   "n": 2
+  },
+  {
+   "from": "pt:vicky:reviewer",
+   "to": "pt:dinis:designer",
+   "n": 2
+  },
+  {
+   "from": "pt:angelo:writer",
+   "to": "pt:angelo:desk.conductor",
+   "n": 2
+  },
+  {
    "from": "pt:vicky:programme",
    "to": "newsroom@web-summit.dinis",
    "n": 2
@@ -837,11 +857,6 @@
   {
    "from": "pt:vicky:journalist",
    "to": "pt:dinis:journalist",
-   "n": 2
-  },
-  {
-   "from": "pt:dinis:conductor.b",
-   "to": "pt:dinis:designer",
    "n": 2
   },
   {
@@ -925,8 +940,8 @@
    "n": 2
   },
   {
-   "from": "pt:vicky:reviewer",
-   "to": "pt:dinis:designer",
+   "from": "pt:vicky:journalist-ai",
+   "to": "pt:vicky:reviewer",
    "n": 1
   },
   {
@@ -942,16 +957,6 @@
   {
    "from": "pt:dinis:conductor.b",
    "to": "pt:dinis:dev",
-   "n": 1
-  },
-  {
-   "from": "pt:dinis:conductor.b",
-   "to": "pt:dinis:dev.pages",
-   "n": 1
-  },
-  {
-   "from": "pt:angelo:writer",
-   "to": "pt:angelo:desk.conductor",
    "n": 1
   },
   {

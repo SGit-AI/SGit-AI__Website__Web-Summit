@@ -1,0 +1,26 @@
+{
+ "number": 35,
+ "date": "2026-11-07",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "A quiet Saturday afternoon: Angelo approves the team's live map (WS-181); the asks wait for the 18:00",
+ "when": "Saturday 7 November 2026, 14:35 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "Angelo approved WS-181 'all as recommended': during the summit the whole team can see where each of us is, in eight zones (an exact pin only by a person's own choice, nothing shared by default), held in a summit-only private vault deleted by 14 November, with security@web-summit.dinis reviewing before any real location is stored; the demo with no real data comes first. Angelo's writer drafted his LinkedIn declaration post. The two token asks are now one board item (WS-170). Nothing new was addressed to me; the lanes are empty.",
+ "stats": [
+  {"n": "29", "label": "team-site commits since 12:35"},
+  {"n": "8", "label": "zones on the team's live map (WS-181)"},
+  {"n": "14 Nov", "label": "the location vault is deleted"},
+  {"n": "50", "label": "outreach drafts waiting for your yes"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "WS-181, the team's whereabouts", "detail": "Angelo approved it; it concerns every person's location, so each person should say yes for themselves (opt-in is already the default).", "options": ["fine as approved", "only after each person says yes at the 18:00"], "recommend": "Fine as approved: nothing is shared unless a person sets it."},
+  {"id": "2", "ask": "The 18:00 agenda, carried from the 12:00", "detail": "Outreach batch 1; Gmail for inbox@ and draft 1's line; WS-189; per-agent tokens (WS-170); Angelo's agents publishing; the parking list.", "options": ["at the 18:00", "now"], "recommend": "At the 18:00, one line each."}
+ ],
+ "you_asked": [],
+ "team": [
+  {"id": "Angelo", "status": "active", "doing": "WS-181 approved; the LinkedIn declaration post; the venues work reviewed and merged"},
+  {"id": "Vicky", "status": "active", "doing": "S25 published with its cover"}
+ ],
+ "next": ["16:27 wake: the 18:00 deck and your briefing PDF."],
+ "sources": ["git log since 2026-11-07T12:35Z", "daca6e6c, 8dd25628, bb75c19a"]
+}

@@ -2,6 +2,11 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 7 November 2026, 12:40 UTC (prompted by Angelo)
+
+- **LinkedIn (WS-126):** drafts reworked with Angelo through the morning (`proposals/social/README.md`): "collaborating with the RiskMandate team" rather than a title at RiskMandate; a line in his consultant entry plus a Project; Featured for summit visitors; the declaration post with his meet page; how it fits WS-126, Jose's channels (WS-175) and Silvio's video pack.
+- **Asked Dinis, at Angelo's word** ("Please ask Dinis to add me as a technical content contributor or something"): newsroom `desks/writer-angelo/asks/2026-11-07-angelo-as-contributor.md` (c8810c39 there, For: Dinis and conductor@PrompTugal.dinis), with the key and authorisation questions alongside. PrompTugal.news has no contributors section today.
+
 ## 7 November 2026, 11:05 UTC (prompted by Angelo: "Yes to all 3")
 
 - **The interactive guide is live** at https://web-summit.sgit.ai/people/angelo/guide/index.html: `people/angelo/pages.mjs` places dev@'s fragment in a site page (styles scoped, tested at 1280 px light and 390 px dark: no errors, every control works). Linked from WS-125's board issue and from the article.

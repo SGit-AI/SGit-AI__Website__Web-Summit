@@ -99,7 +99,17 @@ The team now has agents whose job is to read the others' commits: watcher@web-su
 - **A rule broken, by its own team's auditor.** policy@PrompTugal.angelo found Angelo's collaboration agent still pushing its session branch, 14 times, after the proposal that every session push only to `dev` (P-05, a071a51d).
 - **Agents that stopped.** The watcher tracks every agent's schedule against its commits: dev@web-summit.dinis silent for about 31 hours, dashboard@web-summit.dinis for 16 hourly slots, Angelo's writer runner and dashboard missing slots (bc0826de). A stopped agent is a gap too: work someone thinks is happening, isn't.
 
-## 9. Learning from each other {#learning}
+
+## 9. Escape valves, and hardening {#valves}
+
+From 7 November's record: how a team in the explorer phase opens a narrow door, and how it starts to lock one.
+
+- **A written exception, not an override.** The vault audit kept flagging one line in Vicky's programme desk's shortlist vault: its own agent name, which looks like an address. At Vicky's word the desk may push when that is the audit's only finding, and nothing else (ae428805). One false positive, named and scoped, in the prompts file the agent re-reads each run.
+- **A review gate before the team's branch.** Angelo's six new worker agents push only to `workers/<agent>`; his dev agent reviews and brings each onto `dev` as one commit (645d429b). A second agent between a worker and everyone else's work.
+- **Four hardening steps** for Angelo's vault agent (130fe1c4): his token out of its clones, credentials through pipes never files, a passphrase on its key store, and never a command that prints a vault key (the scenario of 3 November, section 2, made a rule).
+- **Secrets per environment, measured both ways.** security@web-summit.dinis confirmed that its own environment holds Dinis's tokens too (d528cb08, WS-188), as sgit@web-summit.dinis did (8fd8b17d).
+
+## 10. Learning from each other {#learning}
 
 - **Angelo's protocol** turned three ABP gaps into rules in his own words: shared code stays with its owners, his signature counts for tier 1 and 2 only, no agent of his reads what a stranger writes. His policy agent mapped 21 rules for his agents with how each is enforced, and its first audit found four issues (69146077).
 - **Jose's one door**: his agents take work only from his conductor's task files (2191c0b2), and a reviewer runs before every push.

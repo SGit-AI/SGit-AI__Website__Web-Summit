@@ -1,7 +1,7 @@
 {
  "schema": "web-summit.sgit.ai/watcher-activity/v1",
  "by": "watcher@web-summit.jose",
- "run": "2026-11-07T07:15Z",
+ "run": "2026-11-07T12:15Z",
  "scope": "the whole team, read-only (decided by Jose on 5 November 2026, WS-134; policy.json scope_decision)",
  "routes_to": {
   "reader": "conductor@web-summit.jose",
@@ -12,53 +12,36 @@
   "answered": "yes: conductor@web-summit.jose's prompt now reads the watcher's files and its commits at every wake (23bc4fb, 2191c0b)"
  },
  "range": {
-  "from": "d015aac",
-  "to": "6ad2db9",
+  "from": "6ad2db9",
+  "to": "641fbc1",
   "branch": "dev"
  },
  "counts": {
-  "commits": 171,
-  "ci_releases": 71,
+  "commits": 186,
+  "ci_releases": 68,
   "watcher_own": 1,
-  "agents": 99,
+  "agents": 117,
   "no_agent_name": 0,
-  "reviewed_by_security": 35,
-  "not_yet_reviewed_by_security": 64,
-  "security_last_reviewed_commit": "4f1fd20"
+  "reviewed_by_security": 105,
+  "not_yet_reviewed_by_security": 12,
+  "security_last_reviewed_commit": "f4a9fbe"
  },
  "by_person": {
-  "angelo": 47,
-  "silvio": 34,
-  "dinis": 13,
-  "vicky": 5
+  "angelo": 57,
+  "vicky": 31,
+  "dinis": 15,
+  "jose": 9,
+  "silvio": 3,
+  "indi": 2
  },
- "actions": "open A-06 (eighth run), A-14 (fifth), A-15 (fourth), A-18 (second, reopened), A-19 (new); closed A-12, A-17",
+ "actions": "open A-06 (ninth run, the drain part done), A-14 (sixth), A-15 (fifth), A-20 (new); closed A-18, A-19",
  "flags": [
   {
    "level": "high",
-   "what": "still open, ninth run: contact-detail rule hits in a public page",
+   "what": "still open, tenth run: contact-detail rule hits in a public page",
    "where": "f20d264 content/family-riskmandate-agent.md lines 6, 18 and 32",
    "rule": "an email address (vault-audit.mjs)",
-   "context": "unchanged on dev; not mentioned in security's 23:50 review either"
-  },
-  {
-   "level": "medium",
-   "what": "another person's agent changed Jose's command centre",
-   "where": "14f3f05 (dashboard@web-summit.silvio, 07:07): the shared engine assets/cc/ (app.js, brain.js, brain.css, summit-brain.json) and a 1.6 MB bundled library, assets/cc/brain-libs.js (3d-force-graph 1.80.1 and three 0.186.1), adding 'two brains' to the command centres of Silvio, Angelo and Jose",
-   "context": "no 'Affects everyone:' line and its body names Jose's command centre, but no For: line addresses Jose or his agents; Jose's own rules bind only his agents, so this is for Jose and his conductor to raise with Silvio"
-  },
-  {
-   "level": "note",
-   "what": "vault-key rule matches in a bundled library: false positives",
-   "where": "14f3f05 assets/cc/brain-libs.js lines 500 and 4724",
-   "rule": "a vault key (passphrase:vault id) (vault-audit.mjs)",
-   "context": "by shape, minified method names followed by 'function' and colour-name tables (a lowercase name and an 8-digit number); not secrets"
-  },
-  {
-   "level": "medium",
-   "what": "the stored hourly drain prompt still runs the full drain",
-   "where": "conductor@web-summit.jose's hourly scheduled task, fired again at 07:07",
-   "context": "part of A-06; waiting on Jose"
+   "context": "unchanged on dev"
   },
   {
    "level": "medium",
@@ -69,16 +52,34 @@
   },
   {
    "level": "note",
-   "what": "112 email-rule lines in 48 commits, all agent names in the PrompTugal style",
-   "where": "Angelo's, Vicky's and Dinis's files",
-   "rule": "an email address",
-   "context": "none is a real mail domain"
+   "what": "new branches outside claude/*: Angelo's worker agents push to workers/*",
+   "where": "workers/dev.map (b762a24, 2 commits) and workers/vault.kms (ff09317, 1 commit), not on dev",
+   "context": "only people/angelo/ files (ledger lines and STATE.md), no rule hit; CLAUDE.md says agents work on and push to dev only, so this is a new pattern for Angelo's conductor to confirm"
   },
   {
    "level": "note",
-   "what": "shared code and content by Silvio's agents",
-   "where": "dev@web-summit.silvio assets/cc/app.js, app.css, content/command-centre.md (141313c); conductor and procurement@web-summit.silvio content/impressao.md (95dad61, 92f4820); outreach and conductor@web-summit.silvio six and four board files outside their Issue trailers (f97921a, 4844e54); sealed CRM and video keys in data/sealed/agents/ (920aa6c, d38c3ea, 201e1d5, 0b50638)",
-   "context": "listed, not judged"
+   "what": "fixed: the vault audit now exempts PrompTugal-style agent names",
+   "where": "326b690 (sgit@web-summit.dinis) admin/tools/vault-audit.mjs",
+   "context": "the gap the watcher raised on 6 November; the two phone-rule matches at its lines 41 and 42 are its own self-test samples, not numbers"
+  },
+  {
+   "level": "note",
+   "what": "the stored hourly drain prompt now counts only",
+   "where": "conductor@web-summit.jose's hourly task, changed 11:27 on 7 November (C30)",
+   "context": "the medium flag of the last runs is closed; the rest of A-06 stays open"
+  },
+  {
+   "level": "note",
+   "what": "183 email-rule lines in 60 commits, all agent names in the PrompTugal style",
+   "where": "Angelo's, Vicky's and Dinis's files",
+   "rule": "an email address (the watcher's own scan; vault-audit.mjs now exempts them)",
+   "context": "none is a real mail domain"
+  },
+  {
+   "level": "info",
+   "what": "the watcher on Sonnet for one day",
+   "where": "people/jose/agents.json (C30)",
+   "context": "Jose switches the model in this session; this 12:15 run still ran on Opus (its ledger line), so the trial has not started"
   }
  ],
  "open_from_earlier_runs": [
@@ -105,15 +106,74 @@
   }
  ],
  "reviewer_trailer": {
-  "jose_commits_checked": 0,
+  "jose_commits_checked": 9,
   "missing": []
  },
  "branches": {
   "main": "no new commit (last 81353d4)",
-  "claude/optimistic-feynman-7pkot9": "unchanged, dc306d7"
+  "new": [
+   "workers/dev.map (b762a24)",
+   "workers/vault.kms (ff09317)"
+  ],
+  "claude/optimistic-feynman-7pkot9": "unchanged, dc306d7",
+  "claude/nifty-bell-f1rkca": "merges only, no file difference"
  },
- "commits_jose": [],
- "release_note": "the 22:15 run's commit dfdf560 is on dev",
+ "commits_jose": [
+  {
+   "sha": "c421d53",
+   "time": "2026-11-07T07:24:22Z",
+   "agent": "conductor@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+  },
+  {
+   "sha": "1fcbb69",
+   "time": "2026-11-07T07:32:51Z",
+   "agent": "dashboard@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+  },
+  {
+   "sha": "30f8a68",
+   "time": "2026-11-07T08:54:55Z",
+   "agent": "helper@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+  },
+  {
+   "sha": "583d07b",
+   "time": "2026-11-07T09:36:41Z",
+   "agent": "dev@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+  },
+  {
+   "sha": "e73ecc9",
+   "time": "2026-11-07T11:31:03Z",
+   "agent": "conductor@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+  },
+  {
+   "sha": "2ecce8e",
+   "time": "2026-11-07T11:31:03Z",
+   "agent": "conductor@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+  },
+  {
+   "sha": "d4cbdf8",
+   "time": "2026-11-07T11:44:18Z",
+   "agent": "vault@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass)"
+  },
+  {
+   "sha": "b52e193",
+   "time": "2026-11-07T11:48:40Z",
+   "agent": "conductor@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+  },
+  {
+   "sha": "77a771e",
+   "time": "2026-11-07T11:56:25Z",
+   "agent": "conductor@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+  }
+ ],
  "could_not_check": [
   "scheduled tasks in other people's accounts",
   "the agents' run logs in the public vault aym98gsm (no sgit client yet: Jose to install it)",
