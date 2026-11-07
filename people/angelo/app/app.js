@@ -210,12 +210,19 @@ ${copied && copied.id === t.id ? `<div class="ak-copy" role="status"><code>${esc
             }
             const tab = cols.find(c => c.key === s.tab) || cols[0]
             const cnt = c => c.key === 'need' ? c.items.filter(t => t.src !== 'issue').length : c.items.length
-            view.innerHTML = `<div class="ak">${ownNote()}
-<nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#where">Where → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
-<div class="ak-since" role="status">${chg.length ? `Since you last looked (${esc(ago(last))}): ${chg.map(([l, n]) => `${n} in ${esc(l)}`).join(', ')}.` : `Nothing new since you last looked (${esc(ago(last))}).`} <button type="button" class="cc-btn" data-looked>Mark all as looked at</button></div>
-<p class="ak-views">Other views: <a href="#kanban?f=0">Status</a> · <a href="#kanban?f=0&c=due">Due</a> · <a href="#kanban?f=0&c=picked">Picked by</a> · <a href="#kanban?f=0&c=stream">Workstream</a> · <a href="#kanban?f=0&n=1">Needs me now</a></p>
-${PHONE.matches ? `<div class="ak-tabs" role="tablist" aria-label="Your tasks">${cols.map(c => `<button type="button" role="tab" data-ak-tab="${c.key}" aria-selected="${c.key === tab.key}" aria-label="${esc(c.label)}, ${cnt(c)}">${esc(c.key === 'delivered' ? 'Delivered' : c.label)} <b>${cnt(c)}</b></button>`).join('')}</div><div class="ak-list ak-tasks" role="tabpanel">${colHtml(tab)}</div>`
-                : `<div class="ak-grid ak-tasks" style="--n:4">${cols.map(c => `<section class="ak-col" aria-label="${esc(c.label)}" data-col="${c.key}"><header>${esc(c.label)} <b>${cnt(c)}</b></header>${colHtml(c)}</section>`).join('')}</div>`}
+            // phone first (dashboard@'s check, d4853e79): the tabs and the cards before anything else; the links after them
+            const hm = t => new Date(t).toISOString().slice(11, 16)
+            const nNew = chg.reduce((a, [, n]) => a + n, 0)
+            const SHORT = { need: 'Needs you', progress: 'Working', delivered: 'To check', done: 'Done' }
+            const since = PHONE.matches
+                ? `<div class="ak-since ak-since-1" role="status"><span>${nNew ? `${nNew} new since ${esc(hm(last))}` : `Nothing new since ${esc(hm(last))}`}</span> <button type="button" class="cc-btn" data-looked>Mark looked</button></div>`
+                : `<div class="ak-since" role="status">${chg.length ? `Since you last looked (${esc(ago(last))}): ${chg.map(([l, n]) => `${n} in ${esc(l)}`).join(', ')}.` : `Nothing new since you last looked (${esc(ago(last))}).`} <button type="button" class="cc-btn" data-looked>Mark all as looked at</button></div>`
+            const links = `<nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#where">Where → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>`
+            const others = `<p class="ak-views">Other views: <a href="#kanban?f=0">Status</a> · <a href="#kanban?f=0&c=due">Due</a> · <a href="#kanban?f=0&c=picked">Picked by</a> · <a href="#kanban?f=0&c=stream">Workstream</a> · <a href="#kanban?f=0&n=1">Needs me now</a></p>`
+            const body = PHONE.matches
+                ? `<div class="ak-tabs ak-tabs-2x2" role="tablist" aria-label="Your tasks">${cols.map(c => `<button type="button" role="tab" data-ak-tab="${c.key}" aria-selected="${c.key === tab.key}" aria-label="${esc(c.label)}, ${cnt(c)}">${esc(SHORT[c.key])} <b>${cnt(c)}</b></button>`).join('')}</div>${since}<div class="ak-list ak-tasks" role="tabpanel">${colHtml(tab)}</div>${others}${links}${ownNote()}`
+                : `${ownNote()}${links}${since}${others}<div class="ak-grid ak-tasks" style="--n:4">${cols.map(c => `<section class="ak-col" aria-label="${esc(c.label)}" data-col="${c.key}"><header>${esc(c.label)} <b>${cnt(c)}</b></header>${colHtml(c)}</section>`).join('')}</div>`
+            view.innerHTML = `<div class="ak">${body}
 ${D.tasks.unplaced.length ? `<p class="note">Could not place: ${esc(D.tasks.unplaced.join('; '))}.</p>` : ''}
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}. From your backlog, the desk's "Open with Angelo", your board issues and deliveries reported to the desk (a "Delivered:" line). Cards move on the next release, usually within minutes.</p>
 </div>`
