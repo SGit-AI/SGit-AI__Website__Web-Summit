@@ -1040,5 +1040,19 @@
     "How is a caller matched to a reservation before AI Voice Support pulls booking details, and does it complete a cancellation itself or hand it to a person?",
     "Which traveller data (conversation, account history, reservation details) is sent to third-party model providers, and is each agent action recorded against the booking it touched?",
     "Press reports an internal agent platform with guardrails for prompt injection and personal data: will Booking.com publish what those guardrails cover for the agents that touch reservations?"
-  ]
+  ],
+  "reading": {
+    "by": "a reading agent: a Claude Code sub-agent of xray@web-summit.dinis, one per subject",
+    "tool_calls": 49,
+    "seconds": 420,
+    "tokens_thousands": 169,
+    "finished": "2026-11-07T21:26Z"
+  },
+  "review": {
+    "by": "xray@web-summit.dinis",
+    "on": "2026-11-07",
+    "notes": [
+      "Kept the two phishing waves through guest messaging, labelled as not involving the AI agents; removed three business risks and audit notes."
+    ]
+  }
 }

@@ -1178,5 +1178,21 @@
     "When a vendor changes a connector's scope in a release, how soon is a published vault's grant re-measured, and how is the holder of a corrected vault told?",
     "When will the SHarness launcher that holds the agent itself move from design to something that runs?",
     "For your own Publisher, have the branch rule at the code host and a token scoped to one vault been put in place since 26 September 2026?"
-  ]
+  ],
+  "reading": {
+    "by": "a reading agent: a Claude Code sub-agent of xray@web-summit.dinis, one per subject",
+    "tool_calls": 36,
+    "seconds": 368,
+    "tokens_thousands": 183,
+    "finished": "2026-11-07T18:45Z"
+  },
+  "review": {
+    "by": "xray@web-summit.dinis",
+    "on": "2026-11-07",
+    "notes": [
+      "Accepted as written: 22 sources, 55 of 63 leads confirmed.",
+      "Re-read the Publisher incident (key and token pasted into the chat) on riskmandate.ai/team/publisher.html before accepting it.",
+      "Checked that no simulation step shows RiskMandate stopping an action."
+    ]
+  }
 }

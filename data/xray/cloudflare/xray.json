@@ -1446,5 +1446,20 @@
     "Is every action an agent takes through the MCP server recorded in the account audit log as that agent, separately from the human who granted it?",
     "For agents that pay through x402 or MPP, can an account set a hard spending ceiling and mandatory approval that the developer cannot leave optional?",
     "Browser sessions keep cookies and logins between turns: which controls stop an agent from using a logged-in session for something its task did not need, and is that use logged?"
-  ]
+  ],
+  "reading": {
+    "by": "a reading agent: a Claude Code sub-agent of xray@web-summit.dinis, one per subject",
+    "tool_calls": 32,
+    "seconds": 356,
+    "tokens_thousands": 184,
+    "finished": "2026-11-07T19:15Z"
+  },
+  "review": {
+    "by": "xray@web-summit.dinis",
+    "on": "2026-11-07",
+    "notes": [
+      "Re-read Cloudflare's own report of the KV cache exposure (155 responses, offline within 40 minutes) before accepting it.",
+      "Removed four network outages from the incidents: not about agents."
+    ]
+  }
 }

@@ -1264,5 +1264,19 @@
     "Trusted URLs redaction runs after the agent writes its output: is it now applied identically on every surface that renders agent output (chat, Slack, mobile, Experience sites), and can customers see a log of what was redacted?",
     "For actions that move money, such as refunds, quotes or provisional credits, what approval thresholds can a customer set, and is each approval recorded against a named person?",
     "Which identity does a customer-facing Service Agent run as, and can a customer list every record and system an agent can reach through its actions before it goes live?"
-  ]
+  ],
+  "reading": {
+    "by": "a reading agent: a Claude Code sub-agent of xray@web-summit.dinis, one per subject",
+    "tool_calls": 37,
+    "seconds": 387,
+    "tokens_thousands": 183,
+    "finished": "2026-11-07T19:16Z"
+  },
+  "review": {
+    "by": "xray@web-summit.dinis",
+    "on": "2026-11-07",
+    "notes": [
+      "Re-read Zenity Labs' SalesBleed post and SecurityWeek's report with Salesforce's statement before accepting it."
+    ]
+  }
 }
