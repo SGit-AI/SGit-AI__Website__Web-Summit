@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1092",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: ledger line, 17:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "f8dd492fa"
+  },
+  {
     "version": "v0.2.1091",
     "date": "2026-11-07",
     "what": "my own tokens, wake 4",
