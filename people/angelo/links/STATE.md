@@ -1,11 +1,10 @@
 # dev.links STATE
 
-Last run: 7 November 2026, 16:57 UTC onward (run 2).
+Last run: 7 November 2026 (run 3).
 
-- Pages 1 to 1389 of the sitemap are all crawled (689 more in run 2, all 200). Re-crawl from page 0 only when the sitemap has changed a lot.
-- Broken: five external 404s (anje.pt PDF, four websummit.com lis26 pages), in report.md, for the signers. Not yet traced to files: attach PrompTugal/PrompTugal__News__Website and grep for them next run (page code, templates and data I fix; articles I report).
-- Could not check: algarveevolution.pt (timeout twice), the 401/403 list in report.md.
-- 1547 links unchecked (budget), in unchecked.txt: do these first. Internal ones are mostly /api/v1, .md twins and ?query URLs.
-- crawl.mjs (this folder) now counts before it sends: node crawl.mjs <workdir> <firstPage> <lastPage>; workdir holds sitemap.xml and unchecked.txt. Run 2 stopped at exactly 2,000 requests.
-- The scratch crawler's raw results stay out of the repository.
-- Questions for the desk: none.
+- First full pass is done: all sitemap pages crawled, all links found checked, none left over (unchecked.txt removed).
+- Broken: six external 404s, traced to files in report.md. One is in a signed article (startupportugal.com, replacement found: for journalist@PrompTugal.dinis); five are cited sources in the evidence data (anje.pt PDF, four websummit.com lis26 pages), where there is no replacement address, so not edited.
+- Could not check: 21 x 403 (ebu.ch, LinkedIn share links), the earlier 401/403 list, algarveevolution.pt (timeout).
+- Next run: the sitemap has grown (1,399 pages): re-crawl from page 1218 for new pages, then re-check the six 404s; crawl.mjs <workdir> <first> <last>.
+- Newsroom clone worked (read-only so far; no fix of mine needed there).
+- Questions for the desk: should the data owners (programme desk, journalist) drop or mark the dead websummit.com sources? Recommend: mark "page removed, read 7 Nov" and keep the fact.
