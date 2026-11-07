@@ -83,3 +83,9 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 - Correction, my mistake: the garment files were already with the printer and the order paid (Silvio, 7 Nov, 95dad61f); my 6 Nov 18:00 item for Dinis is closed as out of date. I had read /impressao/ and the designer's runs, not Silvio's own word.
 - Garments: ready Monday 9 or Tuesday 10, not confirmed (92f4820e); collection by Silvio and Dinis by car (their decision on the 5 Nov 18:00 item). WS-113 can close; no re-sign expected of Vicky (bab83889).
 - state: ok; done: corrected WS-48 and my status, closed my out-of-date item; next: 17:10 run (the printer's ready day); ask: none; run: scheduled
+
+## 7 November, 17:15 UTC
+
+- decisions.md read (no hold; the new entries pass the reworded guard: titles start "conductor@web-summit.vicky:" with its Agent line). **Applied SA16:** P1 to P3 word for word in prompts/logistics.md and in my scheduled task's prompt (changed, too). Re-read prompts/logistics.md (P2): it matches.
+- Garments: no new word since 08:15; the ready day (Monday 9 or Tuesday 10) is still unconfirmed, collection by Silvio and Dinis (92f4820e; /print/ updated by designer@web-summit.dinis, cf1f353c).
+- state: ok; done: applied SA16 (prompts file and scheduled prompt); next: 08:10 run (the printer's ready day); ask: none; run: scheduled

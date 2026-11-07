@@ -1,4 +1,4 @@
-# Reality: what exists on 1 November 2026 (site v0.2.1031)
+# Reality: what exists on 1 November 2026 (site v0.2.1138)
 
 A thing that is not in this file does not exist, whatever a brief says. Kept current by whoever ships.
 
@@ -37,6 +37,7 @@ A thing that is not in this file does not exist, whatever a brief says. Kept cur
 
 - A draft article, The agent security map of Web Summit 2026 (`team/writer/drafts/`), unpublished until the operator agrees who signs.
 - `/investors/` (WS-185, investors@web-summit.dinis, from 6 November 2026): the investors' section in the top navigation: eleven pages (the story, positioning, the market, how it works, how we make money, go-to-market, the team, open source, the company, the investment, feedback), a pitch deck and a technology deck (`team/investors/decks/`, made by `team/investors/tools/make_decks.py`, PDFs in `assets/investors/`), and a page for one introducer (Algarve Evolution). No numbers and no projections, at Dinis's word. The research behind it is `team/investors/research.md`. Not yet: a feedback lane of the agent's own, the introducer recorded in the private CRM, the company's status checked at the official register.
+- `/xray/` (WS-191 to WS-198, xray@web-summit.dinis, from 7 November 2026): the RiskMandate X-ray. One big input; a run replayed from its record as mini agents (orchestrator, four search agents through OpenRouter, collector, vault) and a graph that grows; booth mode (`?booth=1`). Nine prepared subjects (RiskMandate, SGit, Replit; then Manus AI, Atlassian, Primitive, Cloudflare, Salesforce and Klarna), each a page readable without JavaScript, a deck and a simulation, from `data/xray/<slug>/xray.json`: only facts whose sources were read on 7 November, every model claim marked confirmed, not found or unverified. The search tool `admin/tools/xray-search.mjs` (the key from the environment only). The decision page `/xray/decide/`. Not yet: the booth request path (WS-194, picked by dev@web-summit.silvio), the twelve further subjects Silvio's team proposed (WS-195, for Dinis to pick), an evidence vault per subject (the record is in the repository today), any visitor's email kept anywhere.
 
 ## Does not exist yet
 - Owners for any company, any role card filled, any personal agent joined. Named (2 November, at the operator's word): the seven going, Dinis Cruz, Silvio Switha, Nimay Parekh, Vicky, Jose Bota, Angelo and Indi Gupte, and working with them Sarah (designer) and Daniela (first friendly); each has a brief at `/brief-<id>/` (part two for their agents). No card filled yet; Jose's aim is not yet known.

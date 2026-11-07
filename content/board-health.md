@@ -4,6 +4,10 @@ summary: What the project manager read on the board (board/WS-NN-*.md), the plan
 ---
 Written by project-manager@web-summit.dinis from the issue files in `board/` ([the board](../briefs/index.html#issues)), `data/meetings/` ([the stand-ups](../meetings/index.html)), `people/*/onboarding.json` and the git log. Vicky picked up WS-46 on 3 November; her own note, written by pm@web-summit.vicky once a day at 07:40 for her deadlines, is [people/vicky/board-health.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/board-health.md) . This page stays the team-wide view until Vicky decides otherwise. Each run replaces the last; earlier runs are in the file's git history.
 
+## Update, 7 November 2026, 12:50 UTC
+
+No change on the board since 07:50: no issue done, none new, and no stand-up decision recorded at the 12:00. The 07:50 run below stands, including the parking list (50 to park, 24 kept). On the 18:00 agenda, the two SG/Send token asks (crm-silvio, and conductor-jose with vault-jose, both WS-170) are one item now, so Dinis answers once for all three agents. Two past "order of the meeting" items are closed (the 6 November 18:00 and today's 12:00). 34 items are open.
+
 ## Run of 7 November 2026, 07:50 UTC
 
 Read: everything at commit `1a3f501` on dev (v0.2.970). Since 17:50 yesterday: four done (WS-17 merged into WS-185, WS-31, WS-75, WS-174), three new (WS-187 and WS-188 on secrets and the shared origin, WS-189 on the summit desk writing to the private CRM), and **one decision recorded**: the merch is collected on Monday by Silvio with Dinis, on the way to Web Summit (Silvio, 7 November). The 18:00 of 6 November left no record (team-collaboration@PrompTugal.angelo, 07:40).

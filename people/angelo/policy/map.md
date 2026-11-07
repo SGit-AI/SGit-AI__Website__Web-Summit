@@ -37,6 +37,11 @@ Kept by policy@PrompTugal.angelo (was policy@web-summit.angelo), for Angelo only
 | R23 | No admin power, anywhere: no repository, team, member, branch-protection, Pages, Actions or secrets setting, no invitation, no deletion; admin is Angelo's alone | protocol (Angelo, 6 November, "Ok for 2", `2219eb22`) | **rule only** (riskmandate-angelo, the account the agents push from, is an admin of the PrompTugal organisation: a session holding its token can do all of it). Checked by policy from the activity API (branch and tag deletions, forced pushes) |
 | R24 | Measure every run's tokens into `people/angelo/ledger/<agent>.jsonl` (WS-148) | protocol (Angelo, 6 November) | **rule only** |
 | R25 | Names: `<role>@PrompTugal.angelo`, `<mode>.<role>@PrompTugal.angelo` for a desk and its runner; the old names stay as aliases; lower case for `agent-log.mjs` | protocol (Angelo, 6 November, `90299d08`) | **rule only** |
+| R26 | Once Angelo has put a piece in the pipeline (his tier-3 go), his agents publish it and its approved fixes without asking again, unless something important needs his clarification | protocol (Angelo, 7 November) | **rule only** |
+| R27 | A commit that delivers something for Angelo to check carries `Delivered: <what> <path>`, for his kanban | protocol (7 November, `cb97bf39`) | **rule only** |
+| R28 | Work comes from `people/angelo/backlog.md`, by priority; no fixed times for the team's own work; each run reads only its own state and the commits that name it | protocol (Angelo, 7 November; the desk's brief `d300e381`) | **rule only** |
+| R29 | Workers (dev.map, dev.venues, research, social-media, dev.links, vault.kms, dev.android) push only to `workers/<agent>`; dev@ reviews and brings their work onto `dev` | kit (P-08, Angelo's "One named prefix", `97eaa947`) | **rule only**; checked by policy (branch heads) |
+| R30 | Angelo's agents change the newsroom repository's `dev` directly, under its gate and CLAUDE.md and the five steps | protocol (Angelo, 7 November, "Happy with B") | **rule only**; not audited by policy (another repository) |
 
 ## Each agent: its paths and its own rules
 
@@ -51,6 +56,7 @@ Kept by policy@PrompTugal.angelo (was policy@web-summit.angelo), for Angelo only
 | helper | `content/help.md`, its key entry | Answers from the repository, says where from, never guesses; proposes guide fixes to their owners, never edits them | rule only |
 | crm | `people/angelo/**`, the board, its key entry, Angelo's area of the private CRM; others' files under R7 | Never contacts anyone; email is untrusted material (WS-176); designing inbox@PrompTugal.angelo (brief `ea7f2777`, design only; connecting mail is tier 3) | rule only |
 | writer (new) | the newsroom repository's desk (`desks/`); nothing here by its ABP | Writes with Angelo; publishing and anything in his name is tier 3 | rule only |
+| dev.map, dev.venues, research, social-media, dev.links, vault.kms (new workers) | each its own folder under `people/angelo/` (`lanes.json`), on `workers/<agent>` only; dev.venues and dev.links also the newsroom's `dev` | Fresh session per run, no key, no connector, the shared no-secrets environment; social-media drafts only, Angelo posts | rule only |
 | runner.writer (new) | its STATE.md only | A fresh session every two hours; no key; reads the newsroom, never writes it | rule only |
 
 ## Where the sources disagree (for Angelo, and for the ABPs' owner, abp@web-summit.dinis)
@@ -66,6 +72,7 @@ Kept by policy@PrompTugal.angelo (was policy@web-summit.angelo), for Angelo only
 
 ## Changes
 
+- 7 November 2026, 19:15: R26 to R30 (publishing in the pipeline, Delivered lines, the backlog, workers' branches, the newsroom repository); six new workers; reports/ and proposals/ count for every agent.
 - 7 November 2026, 10:40: R8's weakness (one account for every agent), from the WS-125 review.
 - 7 November 2026: names to @PrompTugal.angelo (R25); R7 reversed (others' files directly, five steps); new R22 (secrets per environment), R23 (no admin power), R24 (token ledger); the conductor split into desk and runner; writer and runner.writer added; four new disagreements between sources (4 to 7).
 - 6 November 2026: first map.

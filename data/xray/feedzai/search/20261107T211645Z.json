@@ -1,0 +1,527 @@
+{
+ "subject": "Feedzai (financial crime prevention, AI agents for fraud and AML)",
+ "kind": "company",
+ "slug": "feedzai",
+ "run_at": "2026-11-07T21:16:45.210Z",
+ "note": "What each model said, as leads: not facts until their sources are read.",
+ "cost_usd": 0.0929,
+ "agents": [
+  {
+   "id": "perplexity",
+   "label": "Perplexity search",
+   "model": "perplexity/sonar",
+   "ms": 7398,
+   "cost_usd": 0.0063756,
+   "tokens": {
+    "in": 220,
+    "out": 1217
+   },
+   "finish": "stop",
+   "citations": [
+    {
+     "url": "https://www.feedzai.com/",
+     "title": "AI-Powered Fraud & Financial Crime Prevention| Feedzai"
+    },
+    {
+     "url": "https://www.feedzai.com/solutions/ai/",
+     "title": "AI for Fraud Prevention and Financial Crime | Feedzai"
+    },
+    {
+     "url": "https://www.feedzai.com/blog/feedzai-fusion-brazil/",
+     "title": "3 Key Lessons from Feedzai Fusion São Paulo 2026"
+    },
+    {
+     "url": "https://www.feedzai.com/farol-agentic-riskops/",
+     "title": "Farol: The AI Agent for Fraud & Risk"
+    },
+    {
+     "url": "https://www.feedzai.com/resource/anti-money-laundering-transaction-monitoring/",
+     "title": "Anti-Money Laundering Transaction Monitoring | Feedzai"
+    },
+    {
+     "url": "https://www.feedzai.com/pressrelease/as-banks-pivot-to-agentic-ai-feedzai-unveils-farol-to-transform-fraud-analysis-and-cut-investigation-times/",
+     "title": "Feedzai Unveils Farol: The AI Agent to Transform How Fraud Teams Work"
+    },
+    {
+     "url": "https://www.feedzai.com/riskops/",
+     "title": "RiskOps"
+    },
+    {
+     "url": "https://www.feedzai.com/blog/riskops-brazil-risk-architecture/",
+     "title": "RiskOps Brazil: Merging Identity, Fraud, and AML"
+    },
+    {
+     "url": "https://www.feedzai.com/solutions/transaction-fraud/",
+     "title": "Transaction Fraud Solution for Banks | Feedzai"
+    },
+    {
+     "url": "https://www.feedzai.com/industries/core-banking-providers/",
+     "title": "Fraud and Financial Crime Prevention for Core Banking ..."
+    },
+    {
+     "url": "https://www.feedzai.com/press-releases/",
+     "title": "Press Releases"
+    },
+    {
+     "url": "https://www.feedzai.com/blog/watchlist-screening-compliance/",
+     "title": "How Modern Watchlist Capabilities Improve Screening"
+    },
+    {
+     "url": "https://www.feedzai.com/pressrelease/novobanco-modernizes-fraud-aml-with-feedzai-ai/",
+     "title": "Novobanco Enhances Fraud & AML With AI"
+    },
+    {
+     "url": "https://www.feedzai.com/industries/retail-banks/",
+     "title": "Fraud & Financial Crime Prevention for Retail Banks | Feedzai"
+    },
+    {
+     "url": "https://www.feedzai.com/solutions/aml-transaction-monitoring/",
+     "title": "AML Transaction Monitoring Software - Powered by AI"
+    }
+   ],
+   "answer_urls": [
+    "https://www.feedzai.com/farol-agentic-riskops/",
+    "https://www.feedzai.com/pressrelease/as-banks-pivot-to-agentic-ai-feedzai-unveils-farol-to-transform-fraud-analysis-and-cut-investigation-times/",
+    "https://www.feedzai.com/resource/anti-money-laundering-transaction-monitoring/",
+    "https://www.feedzai.com/blog/feedzai-fusion-brazil/",
+    "https://www.feedzai.com/",
+    "https://www.feedzai.com/solutions/ai/",
+    "https://www.feedzai.com/riskops/",
+    "https://www.feedzai.com/blog/riskops-brazil-risk-architecture/",
+    "https://www.feedzai.com/industries/retail-banks/",
+    "https://www.feedzai.com/solutions/aml-transaction-monitoring/"
+   ],
+   "answer": {
+    "what_it_does": "Feedzai provides AI-powered fraud and financial crime prevention for banks and fintechs, covering fraud, AML, and related risk workflows in real time.[1][2] It combines models, shared intelligence, rules, and AI agents to help teams detect risk, investigate alerts, and act faster across onboarding, payments, and compliance operations.[2][5]",
+    "ai_agents": [
+     {
+      "name": "Farol",
+      "what_it_does": "An always-on AI agent embedded in Feedzai RiskOps Studio that helps fraud and AML teams analyze rules, investigate alerts, and draft suspicious activity reports.[3][6]",
+      "actions": [
+       "Interrogates and analyzes rule sets",
+       "Flags rules that generate noise without catching fraud",
+       "Retrieves and summarizes alert data",
+       "Drafts suspicious activity reports (SARs)",
+       "Provides contextual answers inside RiskOps Studio",
+       "Works within fraud and AML team workflows"
+      ],
+      "source": "https://www.feedzai.com/farol-agentic-riskops/"
+     },
+     {
+      "name": "Bring Your Own Agent",
+      "what_it_does": "An upcoming capability that lets customers connect their own or partner-built AI agents to Feedzai’s platform, data, intelligence, and workflows.[4]",
+      "actions": [
+       "Connects external AI agents to Feedzai data",
+       "Uses shared context across agents",
+       "Runs alongside Feedzai-native and third-party agents",
+       "Integrates with risk workflows and analysis",
+       "Supports secure connections to bank workflows"
+      ],
+      "source": "https://www.feedzai.com/farol-agentic-riskops/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Fraud investigations",
+      "who_uses_it": "Fraud analysts and fraud operations teams at banks and financial institutions.[6][9]",
+      "what_the_agent_can_reach": [
+       "Alert data",
+       "Fraud rules",
+       "Case context",
+       "Investigation workflows",
+       "Analyst workspaces"
+      ],
+      "source": "https://www.feedzai.com/pressrelease/as-banks-pivot-to-agentic-ai-feedzai-unveils-farol-to-transform-fraud-analysis-and-cut-investigation-times/"
+     },
+     {
+      "name": "AML transaction monitoring",
+      "who_uses_it": "Compliance teams and AML investigators.[5][15]",
+      "what_the_agent_can_reach": [
+       "Transaction monitoring data",
+       "Rules and machine learning outputs",
+       "Behavioral profiles",
+       "Alert prioritization queues",
+       "SAR filing workflows"
+      ],
+      "source": "https://www.feedzai.com/resource/anti-money-laundering-transaction-monitoring/"
+     },
+     {
+      "name": "Risk strategy and rule tuning",
+      "who_uses_it": "Risk strategy teams and model/rule owners.[6]",
+      "what_the_agent_can_reach": [
+       "Rule sets",
+       "Performance analytics",
+       "Noise and detection metrics",
+       "Threshold recommendations"
+      ],
+      "source": "https://www.feedzai.com/pressrelease/as-banks-pivot-to-agentic-ai-feedzai-unveils-farol-to-transform-fraud-analysis-and-cut-investigation-times/"
+     },
+     {
+      "name": "Suspicious activity reporting",
+      "who_uses_it": "AML and compliance analysts.[3][5]",
+      "what_the_agent_can_reach": [
+       "Case evidence",
+       "Narratives and summaries",
+       "SAR drafting and submission workflows",
+       "Alert histories"
+      ],
+      "source": "https://www.feedzai.com/pressrelease/as-banks-pivot-to-agentic-ai-feedzai-unveils-farol-to-transform-fraud-analysis-and-cut-investigation-times/"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Feedzai says fraudsters may use AI agents too, and it is building detection to verify who authorized an agent, what it can do, and whether its behavior still matches intent.[3][4]",
+      "when": "2026-11",
+      "source": "https://www.feedzai.com/blog/feedzai-fusion-brazil/"
+     },
+     {
+      "what": "The company describes the need to detect agentic attacks, including agent takeovers, agent botnets, and malware, as banking becomes more agentic.[3][4]",
+      "when": "2026-11",
+      "source": "https://www.feedzai.com/blog/feedzai-fusion-brazil/"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Feedzai says it stops fraud and financial crime in real time with AI that catches risk and an AI agent that helps teams act and respond faster.[1]",
+      "source": "https://www.feedzai.com/"
+     },
+     {
+      "claim": "Its platform is designed to detect fraud across inbound and outbound transactions and multiple payment rails, including card fraud, account takeover, synthetic identity, scams, money mules, phishing, and malware.[2]",
+      "source": "https://www.feedzai.com/solutions/ai/"
+     },
+     {
+      "claim": "Feedzai’s AML solution blends rules and machine learning to detect criminal activity, reduce false positives, prioritize alerts, and integrate SAR submission.[5]",
+      "source": "https://www.feedzai.com/resource/anti-money-laundering-transaction-monitoring/"
+     },
+     {
+      "claim": "RiskOps unifies identity across channels to detect fraud and money laundering risk from onboarding to remediation.[7]",
+      "source": "https://www.feedzai.com/riskops/"
+     },
+     {
+      "claim": "Feedzai says its transaction fraud tools evaluate payments and transfers in real time using transaction history, customer behavior, and predictive intelligence.[8]",
+      "source": "https://www.feedzai.com/blog/riskops-brazil-risk-architecture/"
+     },
+     {
+      "claim": "Feedzai says its retail bank offerings combine long-term and real-time data, behavioral biometrics, device signals, and network attributes to identify fraud typologies.[14]",
+      "source": "https://www.feedzai.com/industries/retail-banks/"
+     },
+     {
+      "claim": "Feedzai says its AML tools support workflows to investigate, manage cases, and report suspicious activity on one platform.[15]",
+      "source": "https://www.feedzai.com/solutions/aml-transaction-monitoring/"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openai",
+   "label": "OpenAI search",
+   "model": "openai/gpt-5.4-nano:online",
+   "ms": 12883,
+   "cost_usd": 0.0341603856,
+   "tokens": {
+    "in": 17643,
+    "out": 1316
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://www.feedzai.com/farol-agentic-riskops/",
+    "https://www.feedzai.com/pressrelease/as-banks-pivot-to-agentic-ai-feedzai-unveils-farol-to-transform-fraud-analysis-and-cut-investigation-times/",
+    "https://www.feedzai.com/riskops/"
+   ],
+   "answer": {
+    "what_it_does": "Feedzai provides an AI-native fraud and financial crime prevention platform (RiskOps) that unifies identity and risk signals across the customer lifecycle to detect fraud and money laundering risk in real time. It also includes an embedded AI agent (Farol) to accelerate investigations, rule analysis, and SAR drafting within financial crime/risk workflows.",
+    "ai_agents": [
+     {
+      "name": "Farol",
+      "what_it_does": "An embedded AI agent inside Feedzai’s RiskOps workflows that helps fraud teams investigate faster and optimize risk strategy by analyzing rules, retrieving/summarizing case data, drafting SARs, and answering platform knowledge questions.",
+      "actions": [
+       "Risk strategy: interrogates and analyzes rule sets; identifies rule noise without catching fraud; recommends threshold changes",
+       "Investigations: retrieves and summarizes alert/case data to provide contextual information for analysts",
+       "Knowledge: answers how-to questions about using the platform inside the user interface",
+       "SAR drafting: compiles evidence and drafts Suspicious Activity Reports (SARs) for investigator review",
+       "Connects/operates within Feedzai RiskOps Studio workflows and embeds into existing risk operations; supports future “Bring Your Own Agent” connectivity",
+       "Agent protection/detection: includes detection to verify who authorized an agent and constrain whether the agent’s actions match intended behavior"
+      ],
+      "source": "https://www.feedzai.com/farol-agentic-riskops/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Fraud investigation acceleration and evidence preparation",
+      "who_uses_it": "Fraud and financial crime investigators/analysts at banks and fintechs using Feedzai RiskOps",
+      "what_the_agent_can_reach": [
+       "Alert/case data within the Feedzai RiskOps environment",
+       "Fraud/risk workflows in RiskOps Studio (investigation and analyst workspaces)",
+       "SAR drafting workflows (report content for investigator review)",
+       "Rule sets/configuration used for fraud detection strategies"
+      ],
+      "source": "https://www.feedzai.com/pressrelease/as-banks-pivot-to-agentic-ai-feedzai-unveils-farol-to-transform-fraud-analysis-and-cut-investigation-times/"
+     },
+     {
+      "name": "AML transaction monitoring and watchlist screening support",
+      "who_uses_it": "AML operations and compliance teams at financial institutions running Feedzai RiskOps",
+      "what_the_agent_can_reach": [
+       "AML transaction monitoring and watchlist screening processes (within Feedzai’s platform)",
+       "Customer/transaction/third-party risk signals unified across the lifecycle",
+       "Alert/risk profiles that are used to prioritize investigations and remediation"
+      ],
+      "source": "https://www.feedzai.com/riskops/"
+     },
+     {
+      "name": "Fraud/scam detection across channels with unified identity and behavioral/device signals",
+      "who_uses_it": "Organizations operating payment and onboarding channels through Feedzai RiskOps",
+      "what_the_agent_can_reach": [
+       "Signals across onboarding, activity, and payments (identity, behavioral biometrics, device intelligence, transaction and third-party signals)",
+       "Risk scoring/decisioning across the customer journey",
+       "Investigations and reporting workflows in a centralized workspace"
+      ],
+      "source": "https://www.feedzai.com/riskops/"
+     }
+    ],
+    "incidents_or_risks": [],
+    "facts": [
+     {
+      "claim": "Feedzai’s RiskOps platform unifies identity across channels to detect fraud and money laundering risk from onboarding through remediation.",
+      "source": "https://www.feedzai.com/riskops/"
+     },
+     {
+      "claim": "Farol is an embedded AI agent in Feedzai RiskOps that delivers contextual case summarizations, automated rule performance analytics, and SAR drafting inside the software stack analysts already use.",
+      "source": "https://www.feedzai.com/pressrelease/as-banks-pivot-to-agentic-ai-feedzai-unveils-farol-to-transform-fraud-analysis-and-cut-investigation-times/"
+     },
+     {
+      "claim": "Farol includes capabilities for Risk Strategy, Investigations, Knowledge, and SAR Drafting.",
+      "source": "https://www.feedzai.com/pressrelease/as-banks-pivot-to-agentic-ai-feedzai-unveils-farol-to-transform-fraud-analysis-and-cut-investigation-times/"
+     },
+     {
+      "claim": "Feedzai states that its agentic AI is designed to augment analysts rather than replace them, with transparent reasoning so analysts can verify and take actions.",
+      "source": "https://www.feedzai.com/farol-agentic-riskops/"
+     },
+     {
+      "claim": "Feedzai states it is building detection to verify who authorized an agent, what it is allowed to do, and whether behavior matches intent to stop malicious agents before they act.",
+      "source": "https://www.feedzai.com/farol-agentic-riskops/"
+     }
+    ]
+   }
+  },
+  {
+   "id": "gemini",
+   "label": "Gemini search",
+   "model": "google/gemini-3.1-flash-lite:online",
+   "ms": 2817,
+   "cost_usd": 0.0006892875,
+   "tokens": {
+    "in": 235,
+    "out": 425
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://feedzai.com/solutions/fraud-prevention/",
+    "https://feedzai.com/customers/",
+    "https://feedzai.com/company/",
+    "https://feedzai.com/blog/feedzai-risk-ledger-and-the-future-of-fraud-prevention/"
+   ],
+   "answer": {
+    "what_it_does": "Feedzai is a global platform that utilizes artificial intelligence and machine learning to detect and prevent financial crime in real-time. It provides solutions for fraud prevention and anti-money laundering (AML) across banking, fintech, and payment networks.",
+    "ai_agents": [
+     {
+      "name": "Feedzai Fraud Prevention AI",
+      "what_it_does": "An autonomous risk management system that analyzes behavioral and transactional data to identify and block fraudulent activity.",
+      "actions": [
+       "Analyzes real-time transaction data",
+       "Executes risk scoring models",
+       "Automates case management workflows",
+       "Interacts with core banking systems to block transactions"
+      ],
+      "source": "https://feedzai.com/solutions/fraud-prevention/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Real-Time Transaction Monitoring",
+      "who_uses_it": "Tier-1 banks and major fintech companies",
+      "what_the_agent_can_reach": [
+       "Transactional data streams",
+       "Customer identity profiles",
+       "Payment processing systems",
+       "AML compliance databases"
+      ],
+      "source": "https://feedzai.com/customers/"
+     }
+    ],
+    "incidents_or_risks": [],
+    "facts": [
+     {
+      "claim": "Feedzai's technology protects over 900 million users globally.",
+      "source": "https://feedzai.com/company/"
+     },
+     {
+      "claim": "The company leverages a 'Risk Ledger' to share threat intelligence across its global network of clients.",
+      "source": "https://feedzai.com/blog/feedzai-risk-ledger-and-the-future-of-fraud-prevention/"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openrouter",
+   "label": "OpenRouter web search",
+   "model": "anthropic/claude-haiku-5.5",
+   "plugins": [
+    {
+     "id": "web",
+     "max_results": 6
+    }
+   ],
+   "max_tokens": 7000,
+   "ms": 24981,
+   "cost_usd": 0.051654339,
+   "tokens": {
+    "in": 97001,
+    "out": 4952
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://www.feedzai.com/pressrelease/as-banks-pivot-to-agentic-ai-feedzai-unveils-farol-to-transform-fraud-analysis-and-cut-investigation-times/",
+    "https://fintech.global/2026/03/09/novobanco-selects-feedzai-to-unify-fraud-and-aml-prevention/",
+    "https://finance.yahoo.com/technology/ai/articles/advance-canadas-real-time-rail-130000007.html",
+    "https://financefeeds.com/feedzai-warns-of-ai-powered-romance-scams-as-citibank-faces-lawsuit-over-20-million-fraud/",
+    "https://www.prnewswire.com/in/news-releases/banks-think-theyre-ready-for-tomorrows-fraud-feedzais-survey-suggests-otherwise-302901413.html",
+    "https://aws.amazon.com/marketplace/pp/prodview-6cbmn62splyhq",
+    "https://www.feedzai.com/pressrelease/feedzai-iq-score-9t-fraud-intelligence-network/",
+    "https://www.feedzai.com/pressrelease/riskfm-ai-risk-model/",
+    "https://www.feedzai.com/anti-money-laundering/",
+    "https://www.feedzai.com/inthenews/feedzai-recognized-as-industry-leader-in-2026-spark-matrix-for-fcc/",
+    "https://www.feedzai.com/resource/feedzai-again-named-best-in-class-fraud-and-aml-machine-learning-platform-by-aite-novarica-group/",
+    "https://www.chartis-research.com/organisations/feedzai",
+    "https://www.mastercard.com/us/en/news-and-trends/press/2025/february/mastercard-and-feedzai-join-forces-to-protect-more-consumers-and-businesses-from-scams.html",
+    "https://www.feedzai.com/press-releases/"
+   ],
+   "answer": {
+    "what_it_does": "Feedzai is an AI-native financial crime company that helps banks, fintechs and payment providers detect and stop fraud, scams, money mule activity and money laundering in real time across channels. Its RiskOps platform combines fraud and AML detection, investigations and rule management in one workspace, with an embedded AI agent (Farol) for analysts.",
+    "ai_agents": [
+     {
+      "name": "Farol",
+      "what_it_does": "An embedded agentic AI for fraud and financial crime teams that helps investigators uncover insights, accelerate decisions and resolve cases with less manual review, while keeping humans in control. It was launched on September 24, 2026 and is integrated into Feedzai's RiskOps Studio.",
+      "actions": [
+       "Conversational intelligence for querying risk data and insights",
+       "Automated rule performance analytics that flag rules generating noise",
+       "Contextual case summarization for investigators",
+       "Production-ready rule suggestions for fraud strategy",
+       "Data retrieval from case data and analyst tools, per the launch release",
+       "Described in the launch release as capable of autonomous execution, with transparent audit trails of what the agent did and why",
+       "Runs inside each institution's own environment so insights stay within the customer's estate",
+       "Works within RiskOps Studio, the workspace covering strategy configuration, investigations and reporting"
+      ],
+      "source": "https://www.feedzai.com/pressrelease/as-banks-pivot-to-agentic-ai-feedzai-unveils-farol-to-transform-fraud-analysis-and-cut-investigation-times/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Agent-assisted fraud investigation and rule tuning",
+      "who_uses_it": "Fraud prevention teams at banks; SEB is cited as a customer voicing the value of a single interface for data retrieval and rule suggestions",
+      "what_the_agent_can_reach": [
+       "Case data held in the institution's fraud stack",
+       "Analyst tools inside RiskOps Studio",
+       "Fraud detection rule logic and rule performance analytics",
+       "Investigation case summaries"
+      ],
+      "source": "https://www.feedzai.com/pressrelease/as-banks-pivot-to-agentic-ai-feedzai-unveils-farol-to-transform-fraud-analysis-and-cut-investigation-times/"
+     },
+     {
+      "name": "Unified fraud and AML operations at a bank",
+      "who_uses_it": "Novobanco, which combined its KYC, AML and fraud teams into a single Economic Crime Prevention function and selected Feedzai as a strategic platform partner in March 2026",
+      "what_the_agent_can_reach": [
+       "Fraud and AML alert queues, including alert quality tuning",
+       "Transaction monitoring and customer risk signals across channels",
+       "Customer behaviour and transactional activity data consolidated from legacy tools that Feedzai replaced",
+       "Rules, alerts and suspicious activity report (SAR) workflows as described on the Feedzai platform page"
+      ],
+      "source": "https://fintech.global/2026/03/09/novobanco-selects-feedzai-to-unify-fraud-and-aml-prevention/"
+     },
+     {
+      "name": "Real-time transaction risk scoring for instant payments",
+      "who_uses_it": "Peoples Group, a Canadian regulated bank and trust provider, ahead of Canada's Real-Time Rail rollout in late 2026",
+      "what_the_agent_can_reach": [
+       "Real-time transaction fraud monitoring and alert management in its core transaction framework",
+       "Risk scores applied to instant payments and partner transactions",
+       "Its partners' real-time transactions processed through the RiskOps suite"
+      ],
+      "source": "https://finance.yahoo.com/technology/ai/articles/advance-canadas-real-time-rail-130000007.html"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "A federal lawsuit against Citibank alleged it failed to prevent a roughly $20 million romance-investment scam. Feedzai commented on the threat in general terms; the coverage does not allege any Feedzai failure.",
+      "when": "Reported June 2025",
+      "source": "https://financefeeds.com/feedzai-warns-of-ai-powered-romance-scams-as-citibank-faces-lawsuit-over-20-million-fraud/"
+     },
+     {
+      "what": "Feedzai's own 2026 survey found a gap between how institutions rate their fraud readiness (average 80.2 out of 100) and their measured capabilities (average 66.9). This is a market finding, not an incident involving Feedzai.",
+      "when": "Survey fielded July 13 to August 4, 2026; published October 8, 2026",
+      "source": "https://www.prnewswire.com/in/news-releases/banks-think-theyre-ready-for-tomorrows-fraud-feedzais-survey-suggests-otherwise-302901413.html"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Feedzai was founded in 2011 and describes itself as an end-to-end AI-native platform for stopping fraud and financial crime.",
+      "source": "https://aws.amazon.com/marketplace/pp/prodview-6cbmn62splyhq"
+     },
+     {
+      "claim": "Feedzai says its platform is built on Amazon Web Services cloud infrastructure and can ingest third-party and internal data through APIs and adapters.",
+      "source": "https://aws.amazon.com/marketplace/pp/prodview-6cbmn62splyhq"
+     },
+     {
+      "claim": "Feedzai reports that the world's top banks, payment networks and acquirers use its technology to safeguard more than one billion consumers and $9 trillion in payment volume each year.",
+      "source": "https://www.feedzai.com/pressrelease/as-banks-pivot-to-agentic-ai-feedzai-unveils-farol-to-transform-fraud-analysis-and-cut-investigation-times/"
+     },
+     {
+      "claim": "Feedzai IQ Score, launched June 9, 2026, is a network-derived fraud risk scoring product delivered through a single API that uses federated learning so raw customer data is not shared.",
+      "source": "https://www.feedzai.com/pressrelease/feedzai-iq-score-9t-fraud-intelligence-network/"
+     },
+     {
+      "claim": "Feedzai reports 4x more fraud detected and 50% fewer alerts for IQ Score versus traditional rules-based approaches; this is a company-reported figure.",
+      "source": "https://www.feedzai.com/pressrelease/feedzai-iq-score-9t-fraud-intelligence-network/"
+     },
+     {
+      "claim": "RiskFM, announced March 24, 2026, is described by Feedzai as a tabular foundation model for fraud, AML and broader risk decisions, trained on onboarding, digital, payment and AML workflow data.",
+      "source": "https://www.feedzai.com/pressrelease/riskfm-ai-risk-model/"
+     },
+     {
+      "claim": "Feedzai's AML offering uses rules and AI to prioritise alerts so investigators can focus on high-risk cases.",
+      "source": "https://www.feedzai.com/anti-money-laundering/"
+     },
+     {
+      "claim": "Feedzai's AML page says its AI agents are meant to reduce false positives and focus teams on the riskiest alerts.",
+      "source": "https://www.feedzai.com/anti-money-laundering/"
+     },
+     {
+      "claim": "Feedzai's platform is described as combining fraud detection and AML workflows into one decisioning layer, which Chartis-type analyst recognition cited in a 2025 SPARK Matrix placement for Financial Crime and Compliance data management.",
+      "source": "https://www.feedzai.com/inthenews/feedzai-recognized-as-industry-leader-in-2026-spark-matrix-for-fcc/"
+     },
+     {
+      "claim": "Feedzai was named a Best-in-Class vendor in an Aite-Novarica Group fraud and AML machine learning platform report, which cited its single risk engine and ease of use.",
+      "source": "https://www.feedzai.com/resource/feedzai-again-named-best-in-class-fraud-and-aml-machine-learning-platform-by-aite-novarica-group/"
+     },
+     {
+      "claim": "Feedzai has been named a winner of the AML Mule Detection award in Chartis' Financial Crime and Compliance50 (FCC50) 2026 ranking.",
+      "source": "https://www.chartis-research.com/organisations/feedzai"
+     },
+     {
+      "claim": "Feedzai and Mastercard announced in February 2025 a partnership to expand Mastercard's Consumer Fraud Risk scam solution to more markets using Feedzai's platform, which Mastercard said was available in over 90 countries.",
+      "source": "https://www.mastercard.com/us/en/news-and-trends/press/2025/february/mastercard-and-feedzai-join-forces-to-protect-more-consumers-and-businesses-from-scams.html"
+     },
+     {
+      "claim": "Feedzai's Fraud Readiness Index 2026 surveyed more than 1,000 senior fraud leaders across 12 countries.",
+      "source": "https://www.prnewswire.com/in/news-releases/banks-think-theyre-ready-for-tomorrows-fraud-feedzais-survey-suggests-otherwise-302901413.html"
+     },
+     {
+      "claim": "Feedzai has said the European Central Bank concluded a framework agreement with it as the first-ranked tenderer.",
+      "source": "https://www.feedzai.com/press-releases/"
+     }
+    ]
+   }
+  }
+ ]
+}

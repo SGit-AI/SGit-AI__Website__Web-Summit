@@ -1249,6 +1249,40 @@
         "fingerprint": "sha256:417758c5d74f2b4f",
         "signing_fingerprint": "sha256:1b6a4abe7bd9b949"
       }
+    },
+    {
+      "id": "social-indi",
+      "agent": "social@web-summit.indi",
+      "label": "social@web-summit.indi (Claude Code session)",
+      "role": "Indi Gupte's social media agent: drafts LinkedIn, Instagram and X posts, each with a photo or video suggestion and sourced facts, in people/indi/social/ (WS-126). Never posts, sends or schedules: Indi posts. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 7 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session at Indi's word; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); not confirmed on pki.sgit.ai.",
+      "added": "2026-11-07",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAyU2v1S9FGGgwrxj5f75I\no1enJmDfXwVIexZUo8gEoa4Vo0Q9fi2SwQHe8g0483JTXx184NnoPIezndvw8GvV\ng6XB/vJwrGZbmr889D1ZpSJsMdrVUXZjodiBpFP8eXIRQlo8fVabaBqeYqX5KrR0\nhkstAb9rbw6PirsnLBFvr0PpxjPMeM2zC4tYfQjmLnofMMSe65Uz9ISYRylvxye/\nInT95VhNmJltwzV4GcraY4MDa3h+ILgVTJdiVhiP99tLH4DyScaJfksn+WusNfac\nNjcmaQaSsBxqR+anlVjpxkjn8+Ot3VIno3k9h8qcVCtUD1xlva1LqIQgoK3Kd1p6\ncYira5jv7d+N7C+cAuyk0lnB78NyXIMAA+Isoip6c9tqDOG7IyIHTUL8ZYTRI0D4\n5ZeA0McLkba6qUwid2gWNLcxEePtqFxWXe6FNkZnZ7oi/qR6TePaVK9xdF/Prc2J\ndULc7WGHrU7Ms7TKeb9YuxMGq1Ezf5CVjK7MKRf75we1wZsbK3BHAO9ixcSYuku1\nhIAPJErLpbyMF3wF7d4dxt1dPH09r6Ulm4NW9CyFQ+bpe8K3z/iTGXSweo18zLww\nzjeCdX+Qo6jYx6GO/MFkIyJZCuSimqiT2HaOuKBNUPxrQvVRUo7XJJSm+mjh2zNE\nnH572eT4sW2dV6x1TYon7HcCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExwr7IPy3hSb9Jj7lCdEXborLn7EE\nJrdYVxEZWrAlwUhttZL5+F242vSKVIaOIqoAyRJceciDdY8ZWgnZhBpy3g==\n-----END PUBLIC KEY-----\n",
+        "label": "social@web-summit.indi",
+        "fingerprint": "sha256:3ea5cb169a17cf02",
+        "signing_fingerprint": "sha256:f228676c01d67686"
+      }
+    },
+    {
+      "id": "xray-dinis",
+      "agent": "xray@web-summit.dinis",
+      "label": "xray@web-summit.dinis (Claude Code session)",
+      "role": "RiskMandate X-ray for Web Summit: the demo where a company, use case or industry is typed in, search agents gather public evidence, and the result maps its AI agents, their reach and a mandate (/xray/). A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 7 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session at Dinis's word; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); not confirmed on pki.sgit.ai.",
+      "added": "2026-11-07",
+      "status": "active",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAt6y0tl0g25x1FtN1Gt2F\nqb3j/3Zi7DSGPhkiJx7o9VBkv9Oe9/aiHJ0KdOMvkUcHcDw2ib7AYTeDq9JwQP2u\nDy6uvFsOMyPjjTh0W/CUEmvwV2fIsP2YwremI9gGtQU3p6NHGiLeEgUHmMZITmrX\n4ODWCoe6oD+emUBc1k+sWyV/nuiJGG3cSyf8zzJdOl9m6uqrM4OzLUHEL3/3fB6L\nblHKG4fHb/D7Z53pDFoS9KCefCZOO+VyxSuZTU7it1/LTiM/LIKImHtYzdSz/8Nz\nZz7Txc28QyCnFUXCQ4vxNddsF10viJiMXsCgRpVVbnucx1sUb6+l7BOQcypj/0cG\nW3YE+L8ROAG9IgIvhb1haIhvHmgu0k90clzfLhx/5aDdEkyFwSLUjy8wyg5KQzfI\nv7FulX4D2BaaCrP53sYPucIZahJ+RuCL8W1zfeG5iz83eSaUHbpRHP32XQPe//0S\nPb2Y6LcohF8Gm8qjfe2gSKUzD+hsktHebtKEhcYMm6kUsbQLK3Sy4bYOk50Qme/C\nXNxFKpcRnHH5jOlJM+POtJiD7Mz3Ll30eEOyaYJRBBJsrxWp9UpWFocWEc+/hcHN\nx4RRSymF0Xly8E6q37CFSjpWqYUgFn7ea2dDAWpKQsGmBC8RUC5knt60PgJaxSi/\nVxlArrTcCBkxuVAd7KRcTR8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEL1wshTU5nVNpFvw4bnRlKuAeH1rv\nCYnEdxnjUuuaDGWURxeaUHHqaRMKYQYThDGSWt9e3dRq0MJQBt0ciKAO6Q==\n-----END PUBLIC KEY-----\n",
+        "label": "xray@web-summit.dinis",
+        "fingerprint": "sha256:20d43179e545d40e",
+        "signing_fingerprint": "sha256:15ddeeaf3529137d"
+      }
     }
   ]
 }

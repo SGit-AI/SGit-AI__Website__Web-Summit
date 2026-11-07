@@ -322,3 +322,43 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 }
 /* the shared shell makes every card transparent (!important, 141313c5); the full-screen map is a card that must cover the page */
 .cc-card.tm-fs { background: var(--rm-bg) !important; padding: 12px 16px !important; border-radius: 0 !important; border-color: transparent !important; }
+
+/* For me: Angelo's tasks in four columns (spec-kanban-tasks.md, approved 7 November) */
+.ak-since { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; padding: 10px 12px; border-radius: var(--rm-radius-card); border: 1px solid var(--rm-gold); color: var(--rm-text); font: 500 14px/20px var(--rm-font); }
+.ak-linkbtn { border: 0; background: none; padding: 0; min-height: 32px; color: var(--rm-action); font: 600 14px/20px var(--rm-font); text-decoration: underline; cursor: pointer; }
+.ak-views { margin: 0; font: 400 13px/19px var(--rm-font); color: var(--rm-text-muted); }
+.ak-views a { color: var(--rm-action); text-decoration: none; }
+.ak-task { position: relative; }
+.ak-task.ak-new { box-shadow: 0 0 0 2px var(--rm-gold), var(--rm-shadow); }
+.ak-newb { position: absolute; top: 10px; right: 12px; font: 700 11px/16px var(--rm-font); letter-spacing: .04em; color: var(--rm-gold); }
+.ak-task .ak-meta { padding-right: 36px; }
+.ak-tt { font: 600 15px/21px var(--rm-font); overflow-wrap: anywhere; }
+.ak-rec { font: 400 13px/19px var(--rm-font); color: var(--rm-text-muted); }
+.ak-rec b { color: var(--rm-text); font-weight: 600; }
+.ak-acts { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ak-acts .cc-btn { min-height: 40px; }
+.ak-acts a:not(.cc-btn) { color: var(--rm-action); font: 500 13px/19px var(--rm-font); text-decoration: none; }
+.ak-primary { background: var(--rm-action) !important; border-color: var(--rm-action) !important; color: var(--rm-action-ink) !important; }
+.ak-more summary, .ak-fromboard summary { cursor: pointer; color: var(--rm-action); font: 500 13px/19px var(--rm-font); min-height: 32px; display: flex; align-items: center; }
+.ak-more p { margin: 6px 0 0; font: 400 13px/19px var(--rm-font); color: var(--rm-text-muted); overflow-wrap: anywhere; }
+.ak-fromboard { display: grid; gap: 10px; }
+.ak-fromboard[open] summary { margin-bottom: 4px; }
+.ak-copy { display: grid; gap: 4px; padding: 8px 10px; border-radius: 8px; background: var(--rm-chip-bg); }
+.ak-copy code { font-size: 13px; overflow-wrap: anywhere; user-select: all; }
+.ak-tasks.ak-list { display: grid; gap: 10px; }
+.ak-grid.ak-tasks { grid-template-columns: repeat(4, minmax(0, 1fr)); overflow-x: visible; }
+/* the look (dashboard@'s look.md, 8d8c312f) */
+.ak-since .cc-btn { margin-left: auto; }
+.ak-rec { color: var(--rm-text-secondary); }
+.ak-rec b { color: var(--rm-text); font-weight: 600; }
+.ak-tt { font-weight: 650; }
+.ak-hint { font: 400 13px/18px var(--rm-font); color: var(--rm-text-muted); }
+.ak-acts .cc-btn, .ak-since .cc-btn { min-height: 34px; }
+.ak-tasks + * .cc-btn:focus-visible, .ak-task .cc-btn:focus-visible, .ak-since .cc-btn:focus-visible, .ak-tabs button:focus-visible, .ak-task a:focus-visible { outline: 2px solid var(--rm-focus); outline-offset: 2px; }
+.ak-grid.ak-tasks { grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, .8fr); gap: 8px; }
+@media (max-width: 767px) {
+  .ak-acts .cc-btn, .ak-since .cc-btn, .ak-tabs button { min-height: 44px; }
+  .ak-task { padding: 14px; }
+  .ak-tt { font-size: 17px; line-height: 24px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .ak-since .cc-btn { margin-left: 0; }
+}

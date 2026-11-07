@@ -73,14 +73,15 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 **SA15, a cover image on every article** (Vicky, 7 Nov). For: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
 > Follow standing answer 15 from your next draft (journalists: an image in every first draft, wired as the `/articles/` card cover; reviewer: a draft without one is not Ready), and confirm "applied SA15" in your report.
 
-**SCHED-7NOV, three rounds a day** (Vicky, 7 Nov). For: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
-> Update your own scheduled task to these UTC times, and confirm "applied SCHED-7NOV" with the new times in your report:
-> - journalist (summit): 08:00, 12:00, 20:00
-> - journalist-portugal: 08:06, 12:06, 20:06
-> - journalist-europe: 08:12, 12:12, 20:12
-> - journalist-ai: 08:18, 12:18, 20:18
-> - journalist-connections: 08:24, 12:24, 20:24
-> - reviewer: 09:00, 13:00, 21:00 (shifted later so all journalists finish pushing drafts and images first, and giving reviewer a full 30-minute window before the brief).
+**SCHED-7NOV, four rounds a day** (Vicky, 7 Nov, about 16:40 UTC; replaces the three-round schedule given earlier today). For: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
+> Vicky: keep the 16:xx journalist round, because otherwise the gap between midday and evening is too long, and the 15:30 researcher / 15:45 curator round has no journalist round immediately after it. Four writing rounds:
+> - journalist: 08:00, 12:00, 16:00, 20:00
+> - journalist-portugal: 08:06, 12:06, 16:06, 20:06
+> - journalist-europe: 08:12, 12:12, 16:12, 20:12
+> - journalist-ai: 08:18, 12:18, 16:18, 20:18
+> - journalist-connections: 08:24, 12:24, 16:24, 20:24
+> - reviewer: 09:00, 13:00, 17:00, 21:00
+> Update your own scheduled task to these UTC times at your next run (journalists: cron `<minute> 8,12,16,20 * * *`; reviewer: `0 9,13,17,21 * * *`), keep its prompt, and confirm "applied SCHED-7NOV (four rounds)" with the new times in your report. If you already moved to three rounds, move again.
 
 **SA16, P1 to P3 word for word in your prompts file and scheduled prompt** (Vicky, 7 Nov). For: conductor, dashboard, pm, logistics, vault, researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer, checker, designer, dev, scout, inbox.
 > Apply standing answer 16 at your next run, without asking first, and confirm "applied SA16" in your report (say whether you also changed a scheduled task's prompt).
@@ -96,7 +97,7 @@ Still to confirm (7 Nov, 08:50 UTC; the rest have confirmed):
 - SA13: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
 - SA17: reviewer.
 - SA16: every agent but the conductor (dashboard, pm, logistics, vault, researcher, curator, programme, the five journalists, reviewer, checker, designer, dev, scout, inbox).
-- SA15 and SCHED-7NOV: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
+- SA15, and SCHED-7NOV (four rounds, replacing three): journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
 
 Accepted and done on 7 Nov (Vicky's word): P21 (she turned off Gmail send, reply and forward in the account's connector settings, 6 Nov), P23 (inbox@web-summit.vicky started, on demand; key inbox-vicky, its own commit 714a2149) and P24 (the private CRM's key sealed to inbox-vicky by the conductor, recorded on WS-172). Only inbox@web-summit.vicky uses Gmail (P22).
 

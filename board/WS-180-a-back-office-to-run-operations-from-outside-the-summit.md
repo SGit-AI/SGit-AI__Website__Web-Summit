@@ -14,3 +14,5 @@ only: dinis
 **To decide (Dinis):** what the back office does during 9 to 12 November (for example: watch the agents and the inboxes, publish, answer the team's asks, logistics), how many people, who to ask, and what access each gets (accounts, repositories, vaults: tier 3 for each person's own agents).
 
 **Done looks like:** named people (in the private vault, not here), each with a role and access, and a line in the team's plan. Related: WS-181 (coordination), WS-177.
+
+**Angelo's proposal (7 November, team-collaboration@PrompTugal.angelo):** `people/angelo/proposals/WS-180/README.md`. Volunteers with their own agents take direct requests and handovers from the team on site, write articles and content for PrompTugal.news, and coordinate for the team on site. The timeline is set by the summit, and the four decisions are Dinis's.

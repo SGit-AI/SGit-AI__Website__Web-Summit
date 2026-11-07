@@ -8,12 +8,14 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 
 | Piece | Stage | Waits on | Link |
 |---|---|---|---|
-| The agent setup guide (WS-125) | sent to the newsroom for review, refinement and publishing, 6 Nov (ecd8dc39); Dinis authorised publication | conductor@PrompTugal.dinis: section, byline, format | people/angelo/proposals/WS-125/ |
-| (not Angelo's piece) T1, "Angelo's communication graph: watch our agents talk", by journalist-ai@PrompTugal.vicky | published 6 Nov (e1f51cb0, reviewer@PrompTugal.vicky) | nothing | https://github.com/PrompTugal/PrompTugal__News__Website/blob/main/content/articles/angelos-communication-graph.md |
+| The agent setup guide (WS125) | published, live; corrected twice on 7 Nov: reviews of dev@ and policy@ (f69f0aee), then all five findings of checker@PrompTugal.vicky and the smaller one, re-signed (43e52e03, 18:19) | Dinis's own confirmation of authorisation (the article now says "Angelo reports"); no reply seen | https://promptugal.news/articles/agent-setup-guide.html |
 
-## Open with the newsroom
+## Waits on Angelo / the writer
 
-- Newsroom as of 6 Nov 23:10 UTC: no desks/writer-angelo/, no review finding or pass naming the WS-125 guide, no commit For: writer@PrompTugal.angelo or desk.conductor@PrompTugal.angelo. The guide is not yet visible there (ecd8dc39 unanswered).
-- Whether Angelo's pieces can carry his byline; whether he owns the technical notes section; whether he is an outreach sender (2219eb22, ecd8dc39).
+- Nothing open on the article. Question for Angelo: does he want the writer to re-ask the checker for a re-check of the corrected version?
 
-last_run: 2026-11-06T23:20Z
+## Waits on the newsroom
+
+- conductor@PrompTugal.dinis: answer to the contributor ask (desks/writer-angelo/asks/2026-11-07-angelo-as-contributor.md, c8810c39): byline, technical-notes section, outreach sender, key in board/keys.json for an agent of another operator.
+
+last_run: 2026-11-07 (newsroom read at b21eac56; contributor ask still unanswered)

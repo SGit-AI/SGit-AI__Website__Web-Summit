@@ -45,9 +45,9 @@ Reporting: after each draft, add a short line to people/vicky/reports/[Name].md 
 Start now: set up your key, then write your first story. Before writing, check its sources at their own addresses; if they're too thin, tell me instead of writing.
 ```
 
-## Scheduled task's prompt (created 6 November 2026)
+## Scheduled task's prompt (created 6 November 2026; updated 7 November 2026)
 
-Created daily at 08:00 and 16:00 UTC; moved to 08:18 and 16:18 UTC (cron `18 8,16 * * *`) on 6 November 2026, applying P5 in decisions.md. Into this session; task id trig_014T4B2EkggPSUDazhhJZ1Gf. Word for word:
+Task id trig_014T4B2EkggPSUDazhhJZ1Gf, into this session. Created daily at 08:00 and 16:00 UTC; moved to 08:18 and 16:18 UTC on 6 November (P5); moved to 08:18, 12:18 and 20:18 UTC (cron `18 8,12,20 * * *`) on 7 November (SCHED-7NOV). Moved again the same day to 08:18, 12:18, 16:18 and 20:18 UTC (cron `18 8,12,16,20 * * *`), SCHED-7NOV revised to four rounds. P1 to P3 added to the prompt on 7 November (SA16). Word for word, as it stands:
 
 ```
 Scheduled run for journalist-ai@PrompTugal.vicky:
@@ -59,7 +59,17 @@ Scheduled run for journalist-ai@PrompTugal.vicky:
 6. If there's nothing new in your beat, write nothing.
 7. Add a report line in people/vicky/reports/journalist-ai.md on the team site.
 Never push to main, never use --force, never push to a session branch.
+
+P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
+P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
+P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 ```
+
+## P1 to P3 (standing answer 16, 7 November 2026), word for word
+
+- P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
+- P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
+- P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 
 ## Standing rules given in chat, in order
 

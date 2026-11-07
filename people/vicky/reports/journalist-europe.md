@@ -38,3 +38,15 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 ## Sat 7 Nov 2026, 08:15 UTC (scheduled run)
 
 - No hold. Applied P22 (I don't use Gmail and haven't) and P27 (reports in my own words; my prompts file has no private names). Noted standing answers 10 to 12. P2: prompts file re-read, agrees with my memory. STYLE.md re-read (images and status sections, 6 Nov 22:53). Curator map of 07:46: nothing new on the Europe beat (S2 and S11 done; S16, S17 Connections). The newsroom remote had reverted to SGit-AI again after a restart; reset, nothing pushed there. state: idle; done: nothing written; next: the next Europe storyline; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, 16:20 UTC (scheduled run)
+
+- No hold. decisions.md entries since my last run all carry the conductor's title and Agent line. Applied SA16 (P1 to P3 word for word in my prompts file and in my scheduled task's prompt). Applied SA13 (my scheduled prompt now checks my own fix-first reviews first; this run: none, S2 Ready, S11 closed). Applied SCHED-7NOV (task now 08:12, 12:12, 20:12 UTC; next 20:12 today). Applied SA15 (a cover image in every first draft from now; no draft written this run). Confirmed P10 (after any summary of my conversation I re-read decisions.md and my prompts file before acting; none so far) and P17 (if replaced, a hand-over note in people/vicky/handover/ per standing answer 11). P2: prompts file agrees with my memory. STYLE.md re-read (11:13: the cover rule). Curator map of 11:50: nothing new on the Europe beat. Newsroom remote had reverted to SGit-AI again; reset, nothing pushed there. state: idle; done: rule updates only, no draft; next: the next Europe storyline, with a cover image; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, 16:16 UTC (prompted)
+
+- Scheduled task renamed "journalist-europe@PrompTugal.vicky: three-times-daily run" at Vicky's word; times and prompt unchanged. state: ok; done: task renamed; next: the 20:12 run; ask: none; run: prompted
+
+## Sat 7 Nov 2026, 20:15 UTC (scheduled run)
+
+- No hold; P2: prompts file agrees with my memory. Applied SCHED-7NOV (four rounds): task now 08:12, 12:12, 16:12, 20:12 UTC (cron "12 8,12,16,20 * * *"), prompt kept; next run 08:12 tomorrow. SA13: no fix-first draft of mine (S2 Ready). Curator map of 19:47: nothing new on the Europe beat (new S25 to S27 are AI and robotics). Newsroom remote reverted to SGit-AI again; reset, nothing pushed there. state: idle; done: schedule moved, no draft; next: the next Europe storyline, with a cover image; ask: my task is still named "three-times-daily run" (your word at 16:15) but now runs four times a day; I recommend renaming it "four-times-daily run"; run: scheduled

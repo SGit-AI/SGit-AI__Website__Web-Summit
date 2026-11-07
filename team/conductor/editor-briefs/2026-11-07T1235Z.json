@@ -1,0 +1,28 @@
+{
+ "number": 34,
+ "date": "2026-11-07",
+ "kicker": "Web Summit 2026 · the conductor brief",
+ "title": "The 12:00 did not happen; the open asks carry to the 18:00; three teams now ask for SG/Send tokens",
+ "when": "Saturday 7 November 2026, 12:35 UTC",
+ "by": "conductor@web-summit.dinis",
+ "headline": "Angelo's desk records that the 12:00 did not happen. Its agenda (outreach batch 1, WS-189, tokens, the parking, Friday's 18:00) carries to the 18:00. Jose's conductor now asks, like Silvio's, for SG/Send access tokens per agent (conductor-jose, vault-jose); Vicky's conductor sealed the private CRM's key to her new inbox agent. Angelo says you allowed his agents to publish on PrompTugal at an earlier stand-up; PrompTugal's abp@ and security@ had asked you, so a line from you settles it. The hablla link Angelo raised is already fixed (brief 33).",
+ "stats": [
+  {"n": "53", "label": "team-site commits since 10:35"},
+  {"n": "3", "label": "teams asking for per-agent SG/Send tokens (Silvio, Jose, and Angelo removing his)"},
+  {"n": "50", "label": "outreach drafts waiting for your yes"},
+  {"n": "0", "label": "stand-ups held today so far"}
+ ],
+ "for_you": [
+  {"id": "1", "ask": "Per-agent SG/Send tokens", "detail": "Silvio's crm agent, Jose's conductor and vault agent ask; only you issue them (content/vault-agent.md). Sealed to each agent's key once issued.", "options": ["issue them today", "after the summit; agents work read-only meanwhile"], "recommend": "Issue for the CRM agents first: they cannot write the CRM without one."},
+  {"id": "2", "ask": "Angelo's agents publishing on PrompTugal", "detail": "Angelo says you allowed it at a stand-up; PrompTugal's abp@ and security@ asked you to confirm.", "options": ["confirmed", "not yet"], "recommend": "One line from you, recorded in PrompTugal's guidance."},
+  {"id": "3", "ask": "Brief 32's asks", "detail": "Outreach batch 1; Gmail for inbox@ and draft 1's line; WS-189.", "options": ["at the 18:00", "now"], "recommend": "Now for Gmail; the rest at the 18:00."}
+ ],
+ "you_asked": [],
+ "team": [
+  {"id": "Vicky", "status": "active", "doing": "inbox@web-summit.vicky set up, with the private CRM's key"},
+  {"id": "Jose", "status": "active", "doing": "tokens asked for conductor-jose and vault-jose"},
+  {"id": "Angelo", "status": "active", "doing": "the back-office proposal (WS-180) goes ahead"}
+ ],
+ "next": ["16:27 wake: the 18:00 deck with the carried agenda."],
+ "sources": ["git log since 2026-11-07T10:35Z", "a074e47f, e73ecc9a, 88ee3108, d528cb08"]
+}

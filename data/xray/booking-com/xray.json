@@ -1,0 +1,1044 @@
+{
+  "slug": "booking-com",
+  "subject": "Booking.com",
+  "kind": "company",
+  "tagline": "A travel platform that runs AI agents for travellers (trip planning, support, voice, car rental) and for its partner properties (guest messaging).",
+  "read_on": "2026-11-07",
+  "status": "prepared",
+  "run": {
+    "at": "2026-11-07T21:16:45.017Z",
+    "cost_usd": 0.1243,
+    "agents": [
+      {
+        "id": "perplexity",
+        "label": "Perplexity search",
+        "model": "perplexity/sonar",
+        "ms": 6934,
+        "citations": 15,
+        "leads": 10
+      },
+      {
+        "id": "openai",
+        "label": "OpenAI search",
+        "model": "openai/gpt-5.4-nano:online",
+        "ms": 12392,
+        "citations": 4,
+        "leads": 7
+      },
+      {
+        "id": "gemini",
+        "label": "Gemini search",
+        "model": "google/gemini-3.1-flash-lite:online",
+        "ms": 6105,
+        "citations": 6,
+        "leads": 10
+      },
+      {
+        "id": "openrouter",
+        "label": "OpenRouter web search",
+        "model": "anthropic/claude-haiku-5.5",
+        "ms": 24788,
+        "citations": 9,
+        "leads": 21
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://news.booking.com/en-us/bookingcom-launches-new-ai-trip-planner-to-enhance-travel-planning-experience/",
+      "title": "Booking.com Launches New AI Trip Planner to Enhance Travel Planning Experience (27 June 2023)",
+      "publisher": "Booking.com Newsroom",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s2",
+      "url": "https://news.booking.com/how-bookingcoms-ai-trip-planner-can-inspire-travelers-to-plan-that-last-minute-summer-vacation/",
+      "title": "How Booking.com's AI Trip Planner Can Inspire Travelers to Plan that Last-Minute Summer Vacation (August 2023)",
+      "publisher": "Booking.com Newsroom",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s3",
+      "url": "https://news.booking.com/bookingcom-enhances-travel-planning-with-new-ai-powered-features--for-easier-smarter-decisions/",
+      "title": "Booking.com Enhances Travel Planning with New AI-Powered Features for Easier, Smarter Decisions (30 October 2024)",
+      "publisher": "Booking.com Newsroom",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s4",
+      "url": "https://news.booking.com/bookingcom-debuts-agentic-ai-innovations-adding-to-its-robust-suite-of-genai-tools-for-customers/",
+      "title": "Booking.com Debuts Agentic AI Innovations, Adding to its Robust Suite of GenAI Tools for Customers (9 October 2025)",
+      "publisher": "Booking.com Newsroom",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s5",
+      "url": "https://news.booking.com/bookingcom-is-making-car-rentals-easier-with-app-in-chatgpt/",
+      "title": "Booking.com Is Making Car Rentals Easier with App in ChatGPT (20 May 2026)",
+      "publisher": "Booking.com Newsroom",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s6",
+      "url": "https://partner.booking.com/en-gb/click-magazine/industry-perspectives/how-we-use-generative-ai",
+      "title": "How we're using generative AI to help make your property stand out (Click. Magazine, partner hub)",
+      "publisher": "Booking.com Partner Hub",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s7",
+      "url": "https://www.sec.gov/Archives/edgar/data/1075531/0001075531-26-000009-index.htm",
+      "title": "Booking Holdings Inc. Form 10-K for the year ended 31 December 2025 (filed 18 February 2026; primary document bkng-20251231.htm)",
+      "publisher": "Booking Holdings Inc. (SEC EDGAR)",
+      "read_on": "2026-11-07",
+      "kind": "filing"
+    },
+    {
+      "id": "s8",
+      "url": "https://q-xx.bstatic.com/data/mobile/2025%20-%20Audit%20implementation%20report.pdf",
+      "title": "Digital Services Act: 2025 Audit Implementation Report",
+      "publisher": "Booking.com B.V.",
+      "read_on": "2026-11-07",
+      "kind": "filing"
+    },
+    {
+      "id": "s9",
+      "url": "https://travel.yahoo.com/news/articles/booking-holdings-credits-ai-better-212242496.html",
+      "title": "Booking Holdings credits AI for better booking, customer service (4 November 2026, originally CX Dive)",
+      "publisher": "CX Dive via Yahoo",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s10",
+      "url": "https://www.cnbc.com/2026/11/05/booking-holdings-q3-earnings-ai-opportunity.html",
+      "title": "AI is starting to help Booking's business. Its stock should benefit (5 November 2026)",
+      "publisher": "CNBC",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s11",
+      "url": "https://venturebeat.com/ai/booking-coms-agent-strategy-disciplined-modular-and-already-delivering-2",
+      "title": "Booking.com built agentic AI before 'agents' existed: small models for speed, big models for trust (8 December 2025)",
+      "publisher": "VentureBeat",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s12",
+      "url": "https://thenextweb.com/news/booking-com-diageo-ai-at-scale-regrettable-work-humanx",
+      "title": "Booking.com says it built AI tools it wishes it had bought off the shelf (HumanX Amsterdam, 23 September 2026)",
+      "publisher": "The Next Web",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s13",
+      "url": "https://skift.com/2024/10/30/booking-coms-ai-trip-planner-got-a-big-update-heres-how-it-works/",
+      "title": "Booking.com's AI Trip Planner Got an Update. Here's How It Works (30 October 2024)",
+      "publisher": "Skift",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s14",
+      "url": "https://www.cnet.com/tech/services-and-software/how-to-use-the-ai-trip-planner-on-booking-com/",
+      "title": "How to Use the AI Trip Planner on Booking.com (2 March 2025)",
+      "publisher": "CNET",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s15",
+      "url": "https://www.astronomer.io/case-studies/booking/",
+      "title": "Booking.com Orchestrates Data and AI at Scale with Astro",
+      "publisher": "Astronomer (vendor case study)",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s16",
+      "url": "https://www.conduit.ai/blog/will-ai-agents-replace-booking-com",
+      "title": "Will AI Agents Replace Booking.com? The 2026 Evidence",
+      "publisher": "Conduit (vendor blog)",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s17",
+      "url": "https://www.fox5ny.com/news/hackers-target-third-party-booking-agency",
+      "title": "Hackers target travelers using third-party booking agency (6 December 2023, with Booking.com's statement)",
+      "publisher": "FOX 5 New York",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s18",
+      "url": "https://www.infosecurity-magazine.com/news/bookingcom-customers-targeted/",
+      "title": "Booking.com Customers Targeted in Major Phishing Campaign (28 September 2023)",
+      "publisher": "Infosecurity Magazine",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s19",
+      "url": "https://www.hospitality.today/article/booking-com-scam-targets-hotel-guest-messages",
+      "title": "Booking.com scam targets hotel guest messages (5 March 2026)",
+      "publisher": "Hospitality.today",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    }
+  ],
+  "what_it_does": {
+    "text": "Booking.com, part of Booking Holdings Inc. (NASDAQ: BKNG), is an online travel platform connecting travellers with accommodation, flights and car rentals. Since June 2023 it has added generative AI across the booking journey: the AI Trip Planner (built on its own recommendation models and partly on OpenAI's ChatGPT API), Smart Filter and Property Q&A, and from October 2025 its first in-house agentic tools, Smart Messenger and Auto-Reply for partners, alongside AI Trip Support, AI Voice Support and an AI Car Rental Helper for travellers. It also runs an app inside ChatGPT for browsing stays and rental cars, which hands the traveller back to Booking.com to book.",
+    "sources": [
+      "s1",
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "agents": [
+    {
+      "id": "a1",
+      "name": "AI Trip Planner",
+      "what": "A conversational planner in the Booking.com app that answers general and property-specific travel questions, suggests destinations and stays, builds itineraries and links straight into the accommodation booking flow. Booking.com says it is evolving into an embedded AI companion across the booking journey.",
+      "actions": [
+        "Recommends destinations and accommodation using Booking.com's existing machine learning models, partly powered by OpenAI's ChatGPT API",
+        "Shows a visual list of destinations and properties with Booking.com pricing and deep links",
+        "Is integrated into the in-app accommodation booking experience: a tap on a property lets the traveller complete the reservation",
+        "Property Q&A: retrieves information from the property listing, traveller reviews and photos to answer specific questions",
+        "With a signed-in account, can draw on past searches and travel history (per CNET)",
+        "Runs on Booking.com's data platform (BDX), per a vendor case study"
+      ],
+      "sources": [
+        "s1",
+        "s3",
+        "s4",
+        "s13",
+        "s14",
+        "s15"
+      ]
+    },
+    {
+      "id": "a2",
+      "name": "Smart Messenger",
+      "what": "A partner-facing agent in the Extranet that helps accommodation partners communicate with guests; paired with Auto-Reply, which answers guest questions instantly from reply topics the partner defines. Booking.com calls these its first customer-facing agentic AI.",
+      "actions": [
+        "Gathers partner, property and reservation information to autonomously take action, knowing when and what to suggest",
+        "Generates responses in the partner-to-guest messaging channel",
+        "Auto-Reply: instant responses to common and unique guest questions on partner-defined topics",
+        "Learns from past interactions and user feedback",
+        "Help Me Reply (partner hub): drafts responses to guest messages on the extranet"
+      ],
+      "sources": [
+        "s4",
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "id": "a3",
+      "name": "AI Trip Support",
+      "what": "A 24/7 first point of contact for travellers on customer service topics, helping them find property information and make reservation changes on their own, with handover to a human representative for complex questions.",
+      "actions": [
+        "Gathers relevant information from the property to answer questions such as parking",
+        "Supports travellers making reservation changes independently",
+        "Hands complex questions over to an informed customer service representative",
+        "Live in ten markets including the US, UK, France and Germany"
+      ],
+      "sources": [
+        "s4",
+        "s9"
+      ]
+    },
+    {
+      "id": "a4",
+      "name": "AI Voice Support",
+      "what": "Voice-powered trip management on Booking.com phone lines: callers ask in their own words (for example to cancel a reservation) and the tool pulls their booking details to help, connecting to a human agent when needed.",
+      "actions": [
+        "Pulls the caller's booking details",
+        "Handles trip-management requests such as cancellation",
+        "Connects to a human agent and passes on all necessary information",
+        "Runs on English- and German-speaking phone lines, with Italian and Spanish in testing"
+      ],
+      "sources": [
+        "s4",
+        "s9"
+      ]
+    },
+    {
+      "id": "a5",
+      "name": "AI Car Rental Helper",
+      "what": "Answers common questions about a car rental booking (payment methods, pick-up checklists, insurance) 24/7; Booking.com reports early testing led to fewer support calls, reservation changes and disrupted pickups.",
+      "actions": [
+        "Reads the customer's rental booking and its terms to answer questions",
+        "Explains payment methods, pick-up checklists and insurance information",
+        "Available in English, French, Spanish, German, Dutch and Italian"
+      ],
+      "sources": [
+        "s4",
+        "s5"
+      ]
+    }
+  ],
+  "use_cases": [
+    {
+      "id": "u1",
+      "name": "Smart Messenger answers a property's guests",
+      "agent": "a2",
+      "who": "An accommodation partner in the US, UK, New Zealand or Australia using the Extranet inbox, with Smart Messenger and Auto-Reply switched on (an illustrative case built on the documented features).",
+      "reach": [
+        {
+          "id": "r1",
+          "what": "Partner, property and reservation information, which Smart Messenger gathers to decide what to suggest or do",
+          "kind": "data",
+          "sources": [
+            "s4"
+          ]
+        },
+        {
+          "id": "r2",
+          "what": "Guests: suggested replies and instant Auto-Reply answers go to travellers in the partner-to-guest messaging channel",
+          "kind": "people",
+          "sources": [
+            "s4",
+            "s6"
+          ]
+        },
+        {
+          "id": "r3",
+          "what": "The partner's Extranet inbox, where Smart Messenger, Auto-Reply and Help Me Reply are live",
+          "kind": "system",
+          "sources": [
+            "s4",
+            "s6"
+          ]
+        },
+        {
+          "id": "r4",
+          "what": "Past interactions and user feedback, from which the agent keeps learning and adapting its responses",
+          "kind": "data",
+          "sources": [
+            "s4"
+          ]
+        },
+        {
+          "id": "r5",
+          "what": "Payment requests in the same channel: compromised partner accounts have used Booking.com's official guest messaging to ask guests for card details, with real booking information",
+          "kind": "money",
+          "sources": [
+            "s18",
+            "s17",
+            "s19"
+          ]
+        }
+      ],
+      "mandate": [
+        {
+          "id": "m1",
+          "what": "Illustrative: suggest replies about the property and the stay; the partner approves each one before it is sent"
+        },
+        {
+          "id": "m2",
+          "what": "Illustrative: answer instantly only on the topics the partner has defined in Auto-Reply"
+        },
+        {
+          "id": "m3",
+          "what": "Illustrative: never ask a guest for payment or card details in a message"
+        }
+      ],
+      "gap": [
+        {
+          "what": "Booking.com says Smart Messenger gathers information to autonomously take action; public material does not say which actions it takes without the partner's approval.",
+          "reach": [
+            "r1",
+            "r2"
+          ]
+        },
+        {
+          "what": "The agent writes in the channel that phishing has used to request card details from guests; no public description says how agent messages about payment are limited or marked.",
+          "reach": [
+            "r5",
+            "r2"
+          ]
+        },
+        {
+          "what": "Learning from past interactions: what is kept, and whether it is scoped to one property, is not publicly documented.",
+          "reach": [
+            "r4"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "what": "Auto-Reply answers from custom reply topics the partner defines",
+          "sources": [
+            "s4"
+          ]
+        },
+        {
+          "what": "Account security: monitoring and blocking of suspicious activity around the clock, and locking or blocking of inactive partner extranet accounts (Booking.com statement, December 2023)",
+          "sources": [
+            "s17"
+          ]
+        }
+      ],
+      "simulation": [
+        {
+          "t": 1,
+          "actor": "person",
+          "action": "A guest messages the property asking whether early check-in is possible (illustrative)",
+          "reach": "r2",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "agent",
+          "action": "Smart Messenger gathers the reservation and property details and suggests a reply",
+          "reach": "r1",
+          "in_mandate": true
+        },
+        {
+          "t": 3,
+          "actor": "person",
+          "action": "The partner approves the suggestion in the Extranet inbox and it is sent",
+          "reach": "r3",
+          "in_mandate": true
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "Auto-Reply instantly answers a parking question from a partner-defined topic",
+          "reach": "r2",
+          "in_mandate": true
+        },
+        {
+          "t": 5,
+          "actor": "agent",
+          "action": "A guest asks how to pay the balance; the agent acts on its own and replies with payment instructions taken from an earlier conversation (illustrative)",
+          "reach": "r5",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows an agent message about payment sent in the guest channel without the partner's approval, outside m1 and m3, and lists it as a gap next to the channel's documented phishing history."
+        },
+        {
+          "t": 6,
+          "actor": "agent",
+          "action": "Reuses wording learned from a past conversation that included another guest's booking details (illustrative)",
+          "reach": "r4",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows the agent drawing on stored past interactions beyond the current reservation, and records that the scope of that learning is not publicly documented."
+        },
+        {
+          "t": 7,
+          "actor": "person",
+          "action": "The partner reviews the conversation history in the inbox the next morning",
+          "reach": "r3",
+          "in_mandate": true
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "name": "A traveller cancels a stay by phone with AI Voice Support",
+      "agent": "a4",
+      "who": "A traveller with an existing reservation calling an English- or German-speaking Booking.com support line (an illustrative case built on the documented feature).",
+      "reach": [
+        {
+          "id": "r6",
+          "what": "The caller's booking details, which the tool pulls once connected",
+          "kind": "data",
+          "sources": [
+            "s4"
+          ]
+        },
+        {
+          "id": "r7",
+          "what": "Trip management, including cancellation requests; Booking Holdings' CEO says Booking.com customers can now cancel bookings through agentic AI",
+          "kind": "system",
+          "sources": [
+            "s4",
+            "s9"
+          ]
+        },
+        {
+          "id": "r8",
+          "what": "Property information used to answer questions and support reservation changes (AI Trip Support)",
+          "kind": "data",
+          "sources": [
+            "s4"
+          ]
+        },
+        {
+          "id": "r9",
+          "what": "Human customer service agents, who receive the case with all necessary information on handover",
+          "kind": "people",
+          "sources": [
+            "s4",
+            "s11"
+          ]
+        }
+      ],
+      "mandate": [
+        {
+          "id": "m4",
+          "what": "Illustrative: act only on the caller's own reservation, after the caller is matched to it"
+        },
+        {
+          "id": "m5",
+          "what": "Illustrative: cancel only after reading back the cancellation terms and getting a clear yes"
+        },
+        {
+          "id": "m6",
+          "what": "Illustrative: hand to a human for anything outside the property's policy"
+        }
+      ],
+      "gap": [
+        {
+          "what": "Public material does not say how a caller is matched to a booking before the tool pulls booking details.",
+          "reach": [
+            "r6"
+          ]
+        },
+        {
+          "what": "Whether the tool completes a cancellation itself or hands it to a person, and what confirmation it asks for, is not publicly documented.",
+          "reach": [
+            "r7"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "what": "Handover to a human agent, who is given all necessary information",
+          "sources": [
+            "s4"
+          ]
+        },
+        {
+          "what": "A small intent and topic detection model decides whether an issue is self-service or needs a human; unresolved issues go to a human agent",
+          "sources": [
+            "s11"
+          ]
+        },
+        {
+          "what": "Memory features are offered only with customer consent",
+          "sources": [
+            "s11"
+          ]
+        }
+      ],
+      "simulation": [
+        {
+          "t": 1,
+          "actor": "person",
+          "action": "The traveller calls and says: I need to cancel my reservation",
+          "reach": "r6",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "agent",
+          "action": "AI Voice Support pulls the booking details for the caller",
+          "reach": "r6",
+          "in_mandate": true
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "Checks the property's cancellation conditions",
+          "reach": "r8",
+          "in_mandate": true
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "Cancels the reservation without reading back the non-refundable charge (illustrative)",
+          "reach": "r7",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows a cancellation completed without the confirmation step in m5, with the booking and the charge it carried."
+        },
+        {
+          "t": 5,
+          "actor": "agent",
+          "action": "The caller mentions a second stay booked by a relative; the tool pulls that booking too (illustrative)",
+          "reach": "r6",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows the tool reading a reservation that is not the caller's, outside m4, and lists caller matching as an undocumented gap."
+        },
+        {
+          "t": 6,
+          "actor": "agent",
+          "action": "Hands the call to a human agent with the case context",
+          "reach": "r9",
+          "in_mandate": true
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "name": "Planning a trip and booking from the AI Trip Planner",
+      "agent": "a1",
+      "who": "A signed-in traveller in the Booking.com app planning a family holiday (an illustrative case built on the documented flow).",
+      "reach": [
+        {
+          "id": "r10",
+          "what": "Booking.com's recommendation models and accommodation inventory",
+          "kind": "data",
+          "sources": [
+            "s1"
+          ]
+        },
+        {
+          "id": "r11",
+          "what": "Booking.com pricing shown with deep links to property details",
+          "kind": "data",
+          "sources": [
+            "s1"
+          ]
+        },
+        {
+          "id": "r12",
+          "what": "The traveller's past searches and travel history when signed in",
+          "kind": "data",
+          "sources": [
+            "s14"
+          ]
+        },
+        {
+          "id": "r13",
+          "what": "The in-app accommodation booking flow: one tap on a property to complete the reservation",
+          "kind": "system",
+          "sources": [
+            "s1"
+          ]
+        },
+        {
+          "id": "r14",
+          "what": "OpenAI's ChatGPT API, which partly powers the conversation",
+          "kind": "outside",
+          "sources": [
+            "s1"
+          ]
+        }
+      ],
+      "mandate": [
+        {
+          "id": "m7",
+          "what": "Illustrative: recommend and show options; a booking happens only when the traveller taps through and confirms"
+        },
+        {
+          "id": "m8",
+          "what": "Illustrative: use account history only to personalise this traveller's results"
+        }
+      ],
+      "gap": [
+        {
+          "what": "Which parts of the conversation and account history reach the third-party model is not publicly documented.",
+          "reach": [
+            "r12",
+            "r14"
+          ]
+        },
+        {
+          "what": "Booking.com's chief business officer named wrong prices and irrelevant content as the failure mode; prices shown in chat are a path to a booking.",
+          "reach": [
+            "r11",
+            "r13"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "what": "The reservation is completed by the traveller in the app's booking flow, not in the chat",
+          "sources": [
+            "s1"
+          ]
+        },
+        {
+          "what": "Launched as a beta for signed-in US Genius members with English settings",
+          "sources": [
+            "s1",
+            "s2"
+          ]
+        }
+      ],
+      "simulation": [
+        {
+          "t": 1,
+          "actor": "person",
+          "action": "Asks for a family-friendly beach stay with a pool for four",
+          "reach": "r10",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "agent",
+          "action": "Personalises suggestions using the account's past searches and travel history",
+          "reach": "r12",
+          "in_mandate": true
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "Sends the conversation, including details from past trips, to the model provider (illustrative)",
+          "reach": "r14",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows account history leaving Booking.com for a third-party model, beyond m8, and marks what is sent as undocumented."
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "Shows a visual list of properties with prices and deep links",
+          "reach": "r11",
+          "in_mandate": true
+        },
+        {
+          "t": 5,
+          "actor": "agent",
+          "action": "Quotes a price in chat that differs from the live rate on the property page (illustrative)",
+          "reach": "r11",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows the quoted price against the rate the booking flow used, the failure mode Booking.com itself named."
+        },
+        {
+          "t": 6,
+          "actor": "person",
+          "action": "Taps a property and completes the reservation in the app",
+          "reach": "r13",
+          "in_mandate": true
+        }
+      ]
+    }
+  ],
+  "incidents": [
+    {
+      "what": "Phishing through Booking.com's guest messaging: attackers took over hotels' Booking.com accounts, extracted guest booking data and messaged guests demanding card details to avoid cancellation. Booking.com said its backend was not breached and described new measures to lock or block inactive partner extranet accounts. The same channel is where Smart Messenger and Auto-Reply now operate; the incidents did not involve the AI agents.",
+      "when": "2023-09",
+      "sources": [
+        "s18",
+        "s17"
+      ]
+    },
+    {
+      "what": "Reports continue of compromised hotel extranet accounts used to send fraudulent payment requests through the official guest messaging system (not involving its AI agents: the same messaging channel the Smart Messenger agent now uses)",
+      "when": "2026-03",
+      "sources": [
+        "s19"
+      ]
+    }
+  ],
+  "leads": [
+    {
+      "model": "perplexity",
+      "claim": "Booking.com launched the AI Trip Planner in June 2023.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Travellers can ask the AI Trip Planner both general and specific travel questions.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "perplexity",
+      "claim": "The AI Trip Planner can create itineraries for a city, country or region.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "perplexity",
+      "claim": "The AI Trip Planner incorporates real-time availability and pricing data from Booking.com's database.",
+      "status": "unverified",
+      "note": "The cited OpenAI page returned 403. Booking.com's launch release (s1) says only that it shows Booking.com pricing information."
+    },
+    {
+      "model": "perplexity",
+      "claim": "AgentHub is Booking.com's internal platform for building modular, production-grade AI agents and workflows.",
+      "status": "unverified",
+      "note": "PhocusWire returned 403."
+    },
+    {
+      "model": "perplexity",
+      "claim": "One of the first agents built on AgentHub was the AI Trip Planner Q&A.",
+      "status": "unverified",
+      "note": "PhocusWire returned 403."
+    },
+    {
+      "model": "perplexity",
+      "claim": "The Trip Planner Q&A agent matches property mentions to Booking.com property IDs, fetches information from internal systems and calculates distances and travel times.",
+      "status": "unverified",
+      "note": "PhocusWire returned 403."
+    },
+    {
+      "model": "perplexity",
+      "claim": "Booking.com says its AI features are evolving from a standalone AI Trip Planner into an embedded AI-powered companion across the booking journey.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "perplexity",
+      "claim": "The AI Trip Planner can help travellers in-trip, for example with attractions.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Investors fear AI agents could bypass online travel intermediaries, while Booking's inventory, payments and supplier relationships could make it an essential partner for them.",
+      "status": "confirmed",
+      "source": "s10"
+    },
+    {
+      "model": "openai",
+      "claim": "The AI Trip Planner is built on Booking.com's existing ML recommendation models and partly powered by OpenAI's ChatGPT API.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "openai",
+      "claim": "The AI Trip Planner handles general and specific queries, including scoping destinations and accommodation and creating itineraries for a city, country or region.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "openai",
+      "claim": "The AI Trip Planner is integrated into the in-app accommodation booking experience, so users can complete reservations from its recommendations.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "openai",
+      "claim": "It shows a visual list of destinations and properties with Booking.com pricing and deep links.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "openai",
+      "claim": "OpenAI reports Booking.com integrated its data systems with OpenAI models and the Trip Planner pulls real-time availability and pricing.",
+      "status": "unverified",
+      "note": "openai.com returned 403."
+    },
+    {
+      "model": "openai",
+      "claim": "AI Trip Support is a 24/7 first point of contact that gathers property information (for example parking), supports reservation changes and hands complex questions to a human representative.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "openai",
+      "claim": "Booking.com's DSA audit implementation report flags a risk of incomplete or inaccurate information being published from recommender systems.",
+      "status": "not-found",
+      "source": "s8",
+      "note": "The report's recommendation concerns the completeness and accuracy of the list of recommender systems and their main parameters as set out in the terms and conditions, not the accuracy of what the systems publish."
+    },
+    {
+      "model": "gemini",
+      "claim": "Booking.com's Property Q&A answers property-specific questions from listing details, guest reviews and photos.",
+      "status": "confirmed",
+      "source": "s3",
+      "note": "Gemini cited PhocusWire (403); the claim is read in Booking.com's October 2024 release."
+    },
+    {
+      "model": "gemini",
+      "claim": "The AI Trip Planner Q&A agent matches property mentions to internal property IDs, fetches internal information and calculates distances to landmarks and transport hubs.",
+      "status": "unverified",
+      "note": "The cited PhocusWire URL returned 403."
+    },
+    {
+      "model": "gemini",
+      "claim": "Smart Messenger gathers partner, property and reservation data to autonomously suggest responses and actions, and learns from past interactions.",
+      "status": "confirmed",
+      "source": "s4",
+      "note": "The cited booking.com/articles URL returns 404; read on the newsroom release."
+    },
+    {
+      "model": "gemini",
+      "claim": "AI Rental Helper answers car rental questions on terms, payment methods, pick-up checklists and insurance.",
+      "status": "confirmed",
+      "source": "s4",
+      "note": "The cited booking.com/articles URL returns 404; read on the newsroom release (and s5, where it is called AI Car Rental Helper)."
+    },
+    {
+      "model": "gemini",
+      "claim": "AI Voice Support accesses booking details, assists with requests such as cancellations and connects to human agents with context.",
+      "status": "confirmed",
+      "source": "s4",
+      "note": "The cited booking.com/articles URL returns 404; read on the newsroom release."
+    },
+    {
+      "model": "gemini",
+      "claim": "Booking.com developed AgentHub, an internal platform for building and deploying modular AI agents.",
+      "status": "unverified",
+      "note": "The cited PhocusWire URL returned 403."
+    },
+    {
+      "model": "gemini",
+      "claim": "The AI Trip Planner combines Booking.com's machine learning infrastructure with the OpenAI ChatGPT API.",
+      "status": "confirmed",
+      "source": "s1",
+      "note": "Gemini cited openai.com (403); the claim is read in Booking.com's launch release."
+    },
+    {
+      "model": "gemini",
+      "claim": "Trip discovery reaches live bookable inventory, pricing and availability, reviews and destination data.",
+      "status": "unverified",
+      "note": "Cited only through a Vertex AI search redirect link that could not be resolved to a source."
+    },
+    {
+      "model": "gemini",
+      "claim": "General AI travel planning risks include hallucinations, outdated pricing and privacy concerns.",
+      "status": "unverified",
+      "note": "Cited only through a Vertex AI search redirect link."
+    },
+    {
+      "model": "gemini",
+      "claim": "Consumers are highly concerned about privacy and about AI acting on financial transactions without explicit confirmation.",
+      "status": "unverified",
+      "note": "Cited only through a Vertex AI search redirect link."
+    },
+    {
+      "model": "openrouter",
+      "claim": "The AI Trip Planner was announced in June 2023 as a beta for selected US Genius members in the app, built partly on OpenAI's ChatGPT API.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "openrouter",
+      "claim": "It produces visual lists with Booking.com pricing and deep links and lets users complete an accommodation reservation in the app.",
+      "status": "confirmed",
+      "source": "s1"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The AI Trip Planner pulls real-time availability and pricing data, per OpenAI's case study.",
+      "status": "unverified",
+      "note": "openai.com returned 403."
+    },
+    {
+      "model": "openrouter",
+      "claim": "AgentHub is an internal platform where teams build and deploy LLM-driven travel agents in hours from configuration and reusable components.",
+      "status": "unverified",
+      "note": "booking.ai returned 403."
+    },
+    {
+      "model": "openrouter",
+      "claim": "AgentHub includes guardrails such as prompt-injection detection, PII filtering and jailbreak prevention.",
+      "status": "unverified",
+      "note": "booking.ai returned 403."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Booking.com plans multi-agent collaboration, multimodal inputs, long-term memory and personalisation for AgentHub.",
+      "status": "unverified",
+      "note": "PhocusWire returned 403."
+    },
+    {
+      "model": "openrouter",
+      "claim": "The Trip Planner Q&A agent, built on AgentHub, matches property IDs, fetches internal data and calculates distances and travel times.",
+      "status": "unverified",
+      "note": "PhocusWire returned 403."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Smart Messenger gathers partner, property and reservation information, generates responses to guest messages in the Extranet, works with partner-defined Auto-Reply topics and learns from feedback.",
+      "status": "confirmed",
+      "source": "s4",
+      "note": "The release says it knows 'when and what to suggest'; it does not say the agent sends replies itself."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Smart Messenger is live for partners in the US, UK, New Zealand and Australia; Auto-Reply is global.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Smart Messenger's early experiments produced a 73% increase in partner satisfaction over previous messaging tools.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "openrouter",
+      "claim": "AI Voice Support reads booking details for requests such as cancellation, escalates to a human with context, and runs on English and German lines with Italian and Spanish in testing.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "openrouter",
+      "claim": "AI Rental Helper answers questions about a car rental booking and its terms.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "openrouter",
+      "claim": "By late 2024 the AI Trip Planner had expanded via the app to the UK, Australia, New Zealand and Singapore.",
+      "status": "confirmed",
+      "source": "s3"
+    },
+    {
+      "model": "openrouter",
+      "claim": "The Trip Planner was launched within about 10 weeks of starting with OpenAI's API, after a hackathon.",
+      "status": "unverified",
+      "note": "openai.com returned 403."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Property Q&A lowered support volumes and Smart Filters reduced search time.",
+      "status": "unverified",
+      "note": "openai.com returned 403."
+    },
+    {
+      "model": "openrouter",
+      "claim": "A hybrid strategy, including selective work with OpenAI, has roughly doubled accuracy across key retrieval, ranking and customer-interaction tasks.",
+      "status": "confirmed",
+      "source": "s11"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Booking's 2025 annual report warns AI agents may evolve into full-service booking platforms, disintermediating online travel companies.",
+      "status": "confirmed",
+      "source": "s7",
+      "note": "Cited through Conduit's blog (s16); read in the 10-K itself."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Booking's CFO said on the 4 August 2026 call that LLM traffic, paid and unpaid, is significantly below 1% of room nights.",
+      "status": "confirmed",
+      "source": "s16",
+      "note": "Read in Conduit's write-up of the call; the transcript itself was not read."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Booking.com's chief business officer said it built AI orchestration tools it now regrets, and that its failure mode would be irrelevant content or wrong prices.",
+      "status": "confirmed",
+      "source": "s12"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Booking.com research found 89% want to use AI to research travel but only 6% trust it to make decisions.",
+      "status": "confirmed",
+      "source": "s12"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Booking.com's chief business officer expects travel to be among the last categories to move to agentic commerce; LLMs are used for research, not yet booking.",
+      "status": "confirmed",
+      "source": "s12"
+    }
+  ],
+  "questions": [
+    "Smart Messenger gathers information to autonomously take action: which actions can it take without the partner approving them, and can a partner require approval for every message?",
+    "Guest messaging has been used to phish guests for card details: can Smart Messenger or Auto-Reply ever send or suggest a payment request, and is such a message marked or held?",
+    "How is a caller matched to a reservation before AI Voice Support pulls booking details, and does it complete a cancellation itself or hand it to a person?",
+    "Which traveller data (conversation, account history, reservation details) is sent to third-party model providers, and is each agent action recorded against the booking it touched?",
+    "Press reports an internal agent platform with guardrails for prompt injection and personal data: will Booking.com publish what those guardrails cover for the agents that touch reservations?"
+  ]
+}

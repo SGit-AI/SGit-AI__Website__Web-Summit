@@ -174,6 +174,15 @@ The CRM, booked meetings, contacts and introductions are the only confidential v
 - **Before a key is sealed to anyone, or a file is copied out of the vault**, the vault agent runs a security sub-agent locally, in its own session. The sub-agent checks that the recipient is the right agent (`seal.mjs --check`: pushed from its person's account), that what leaves the vault is meant to leave it, and that nothing confidential reaches a page, a commit or a public vault. It writes one line per decision into the vault's own `AUDIT.md`, inside the confidential vault and not in this repository.
 - security@web-summit.dinis reviews this repository on its own schedule. A confidential vault's contents never come here, so the local check is the only review those contents get.
 
+## Hardening a vault agent's session {#hardening}
+
+Four steps from vault@PrompTugal.angelo, done in its own session on 7 November at Angelo's word (5c1e5d33, b2556d21). Every vault agent should do them:
+
+1. **No token left in a clone.** `sgit` keeps the access token in a clone's `.sg_vault/local/token`. Once a vault is pushed and the agent doesn't need to push from that clone again, delete that file. Delete every copy, and keep the token out of an environment that doesn't need it ([step 1](#token), WS-188).
+2. **Credentials through pipes, into memory.** Open a sealed token or vault key into a variable or a pipe, never into a file. The agent's credentials file holds public fingerprints only.
+3. **A passphrase on the key store.** With `SG_SEND_PASSPHRASE` set in the agent's own environment (only its person can add it; it reaches the session at its next start), `pki-agent.mjs` and sgit keep `~/.sg-send/keys` encrypted instead of plain files.
+4. **Never print a key.** Don't run `sgit vault show-key` or `sgit vault info` where their output can be seen: `vault info` prints the passphrase, which with the vault id is the vault key. Compare keys in memory (`vault-audit.mjs` does), and filter `sgit create`'s output ([step 3](#create)).
+
 ## When something goes wrong {#help}
 
 - **"no access token configured"**: the variable is not in this session's environment. Start a new session after editing it, and pass `--token "$SG_SEND_ACCESS_TOKEN"`.

@@ -25,8 +25,8 @@ drafts; Silvio sends.
 > Queremos juntar um mapa de quem trabalha com restauração e bebidas na Web Summit. Se nos mandarem mais material, ou
 > nos disserem com quem gostariam de se cruzar, publicamos mais sobre vocês durante a semana do evento.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · feito com a RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · feito com a RiskMandate
 > Rascunho do meu agente de IA; revisto e enviado por mim.
 >
 > <small>Preferem não receber estes emails? Respondam e não voltamos a escrever.</small>
@@ -46,8 +46,8 @@ drafts; Silvio sends.
 > Estamos a preparar um retrato da "economia das marcações" na Web Summit. Se nos mandarem mais (o que vão mostrar, quem
 > vai estar, os vossos números mais recentes), acrescentamos à vossa página durante a semana do evento.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · feito com a RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · feito com a RiskMandate
 > Rascunho do meu agente de IA; revisto e enviado por mim.
 >
 > <small>Preferem não receber estes emails? Respondam e não voltamos a escrever.</small>
@@ -67,8 +67,8 @@ drafts; Silvio sends.
 > Se nos mandarem mais (o que vão mostrar na Web Summit, os planos para a Europa a partir de Portugal), acrescentamos à
 > vossa página durante a semana do evento.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · feito com a RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · feito com a RiskMandate
 > Rascunho do meu agente de IA; revisto e enviado por mim.
 >
 > <small>Preferem não receber estes emails? Respondam e não voltamos a escrever.</small>
@@ -88,8 +88,8 @@ drafts; Silvio sends.
 > We would like to explain to Portuguese salons and clinics how to connect their business to an AI assistant. If you send
 > us more, we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 >
 > <small>Rather not receive these? Reply and we will not write again.</small>
@@ -108,8 +108,8 @@ drafts; Silvio sends.
 >
 > If you send us more, for example how Portuguese properties use these tools, we will add it during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
 
 ## Amex GBT (waits for its page)
@@ -126,6 +126,21 @@ drafts; Silvio sends.
 >
 > If you send us more, we will add it to your page during the summit week.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · powered by RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · powered by RiskMandate
 > Drafted by my AI agent; reviewed and sent by me.
+
+## The five added on 7 November (each waits for its PromptUGAL page)
+
+Same shape, English, signed "Silvio Switha, PromptUGAL". One line each says what the page will show:
+
+- **Lena Concierge:** "It explains how Lena answers guests from checked facts, books inside the chat, and leaves
+  emergencies to fixed, tested text: a pattern Portuguese hosts in Madeira or the Algarve could learn from."
+- **Cadae AI:** "It follows your five steps from describing a hotel to verified savings, and your rule that Cadae does
+  not commit budget or change how plant runs: useful reading where water is scarce, as in the Algarve."
+- **241.travel:** "It explains the 1+1 model for hotels (8.88% only after the guest arrives) and quotes your AI
+  statement, that a person decides wherever money or data are involved."
+- **easyInfluencer.travel:** "It explains flat-fee creator marketing for hotels and how each collaboration is verified,
+  for Portuguese hotels that have not met you yet."
+- **WeRoad:** "It previews Erika De Santi's session on 11 November, 'Supercharged solopreneurship in the agentic era', and
+  your seven group trips to Portugal, from Porto to the Azores."
