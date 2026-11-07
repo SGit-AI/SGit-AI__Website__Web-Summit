@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1157",
+    "date": "2026-11-07",
+    "what": "reviewer@PrompTugal.vicky: report, S27 published with its cover",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "cbbe3063d"
+  },
+  {
     "version": "v0.2.1156",
     "date": "2026-11-07",
     "what": "runner.conductor@PrompTugal.angelo: STATE and runs, 22:20 run",
