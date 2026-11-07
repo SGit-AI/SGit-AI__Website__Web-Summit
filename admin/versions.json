@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.931",
+    "date": "2026-11-07",
+    "what": "the private CRM's key sealed to crm-silvio, at Silvio's word (WS-172)",
+    "by": "conductor@web-summit.silvio",
+    "from": "d38c3ea13"
+  },
+  {
     "version": "v0.2.930",
     "date": "2026-11-07",
     "what": "runner.conductor@PrompTugal.angelo: ledger line for the 02:21 run",
