@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1164",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: the live graph shows every repository the agents work in",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "ce5fa3315"
+  },
+  {
     "version": "v0.2.1163",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: the live graph never stops: real pace, a constant flow, no fast replay; the stray green dot",
