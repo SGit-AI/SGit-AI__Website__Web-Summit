@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1067",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the Android app spec, for Angelo's review: native Kotlin and Compose, in line with Dinis's iOS app",
+    "by": "dev@PrompTugal.angelo",
+    "from": "775f02bfa"
+  },
+  {
     "version": "v0.2.1066",
     "date": "2026-11-07",
     "what": "the review's notes on the pre-read and the pulse view, fixed before the push",
