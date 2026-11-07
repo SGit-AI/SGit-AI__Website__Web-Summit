@@ -83,5 +83,12 @@
   "session": "Claude Code cloud session in Indi's account",
   "status": "running",
   "note": "Started 4 November 2026 overnight by synthetic@web-summit.indi at Indi's word (WS-05), in its own Claude Code session, model Opus 5.5; tasks WS-06; prompt in people/indi/overnight/2026-11-04/ws-05-new-agents/PROMPTS.md."
+ },
+ {
+  "name": "social@web-summit.indi",
+  "job": "drafts posts for RiskMandate's company pages (LinkedIn, Instagram, X) with photo or video suggestions, from a daily check of RiskMandate, Web Summit and the team's work; Indi posts (WS-126)",
+  "session": "not started",
+  "status": "planned",
+  "planned_schedule": "16:00 UTC daily (cron 0 16 * * *)"
  }
 ]
