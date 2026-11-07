@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1168",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the live graph: dots stay visible in a small pop-out; the status light shows only when something is wrong",
+    "by": "dev@PrompTugal.angelo",
+    "from": "539253a20"
+  },
+  {
     "version": "v0.2.1167",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: ledger line, Angelo's 23:02 wake",
