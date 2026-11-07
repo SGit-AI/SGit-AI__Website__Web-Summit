@@ -22,10 +22,11 @@ Sources, read 5 November 2026: `content/videos.md` (the pipeline table), `data/v
 | 3 | **Script and narration** | _to ask:_ who writes the script, how the narration of the story video is made (voice or text-to-speech), how captions are made. | Silvio | _to ask_ |
 | 4 | **Pictures and animation** | _to ask:_ the tools or AI services for the robot "Agent", the scenes and the animated diagrams (the Reach dome, the Mandate ring). | Silvio | _to ask_ |
 | 5 | **Edit and export** | _to ask:_ the editor, the export settings (resolution, aspect ratio, codec). The names follow `YYYY-MM-DD_<slug>_v<N>.mp4`. | Silvio | _to ask_ |
-| 6 | **Master saved** | In Google Drive, the team's private working folder `RiskMandate (agents)/videos` (masters, drafts, storyboards, published). Only the published files are shared, as "anyone with the link" (`data/videos.json`). | Silvio | written |
+| 6 | **Master saved** | In Google Drive, the team's private working folder `RiskMandate (agents)/videos` (masters, drafts, storyboards, published). | Silvio | written |
+| 6b | **Checked, then into the vault** | Every frame checked for errors (misspelled or garbled text, invented figures, text over text) at Silvio's rule: what has one stays out. A clean file goes into `ws-team-videos` with its `video.json`: under 30 MB by video@web-summit.silvio, larger by Silvio with sgit ([UPLOAD.md](UPLOAD.md)); the audit before every push. | video@ silvio, Silvio | running since 7 Nov |
 | 7 | **Review** | The team votes and comments in `people/<id>/feedback/videos.json` (WS-73); anyone else through the encrypted feedback pane on each video's page, opened only by vault@web-summit.jose; the team also comments with timestamps in Drive. Then a fix pass. | everyone | written |
-| 8 | **On this site** | A page `content/video-<slug>.md`: a web copy in `assets/video/` played by `!video[caption](file poster)`, Drive's player underneath by `!drive[caption](<file id>)`, four frames, what it shows, the key concepts, the feedback links; a card on [/videos/](https://web-summit.sgit.ai/videos/index.html). Done so far by conductor@web-summit.silvio. | conductor@ or video@ silvio | written |
-| 9 | **YouTube, Instagram, LinkedIn** | To **RiskMandate's accounts** (Silvio, 5 Nov). Titles, descriptions and hashtags in English and Portuguese, each linking to the video's page here: [PUBLISH.md](PUBLISH.md). **Silvio uploads and posts; no agent logs in.** Each post's URL then comes back here. | Silvio | drafted (WS-71) |
+| 8 | **On this site** | A page `content/video-<slug>.md`: what it shows, the key concepts, the feedback links, a card on [/videos/](https://web-summit.sgit.ai/videos/index.html). Until 6 November the video itself was a web copy committed in `assets/video/`; from now on no video goes into git, so a new page plays the file from the vault by its id and path. The player for that is still to build (conductor@web-summit.dinis's note of 6 November, "the reader that exists, the fence to build"); until it exists, a new page links to the post on YouTube. | conductor@ or video@ silvio; the player: the site's dev | the player to build |
+| 9 | **YouTube, Instagram, LinkedIn** | To **RiskMandate's accounts** (Silvio, 5 Nov), from the file in the vault. Titles, descriptions and the checklist per channel: [PUBLISH.md](PUBLISH.md). **Silvio uploads and posts; no agent logs in**; LinkedIn routed to Indi (WS-126). Each post's URL then comes back here. | Silvio (Indi for LinkedIn) | ready, not yet run once (WS-71) |
 | 10 | **Learn** | Views, comments and conversations back into the next storyboard. | Vicky, the journalist agent | not started |
 
 ## Where the videos live (WS-40, WS-174)
@@ -39,8 +40,13 @@ Sources, read 5 November 2026: `content/videos.md` (the pipeline table), `data/v
 
 The loop on the stand's screen plays from a laptop, from the masters, not from the web (the operator's note: keep the originals on a laptop for longer conversations). What was made for the stand is in [LOOP.md](LOOP.md).
 
-## To ask Silvio
+## The flow in one line
 
-1. Steps 3, 4 and 5: the tools and services, in your own words, a line each.
-2. Is the 30-second film's master in the Drive folder, under which name? (`data/videos.json` lists only the first two.)
-3. Who puts a new video on this site: conductor@web-summit.silvio (as so far) or video@web-summit.silvio?
+Silvio's file (Drive) → checked frame by frame → the vault `ws-team-videos` with its `video.json` → a page here (the player from the vault still to build) and the posts on RiskMandate's channels (Silvio posts) → each post's URL back into `video.json` and the page.
+
+## Only Silvio can answer
+
+1. Steps 3, 4 and 5: the tools and services you use for the script, the narration, the pictures and animation, and the edit, a line each.
+2. The two films on hold (Reach, Mandate, Gap; fifty new agents): fix them at the source, or retire them? And their pages on this site: leave, take down, or replace? (Not this agent's pages.)
+3. Which clean video goes up first, on which channel (PUBLISH.md, A or B), and whether RiskMandate's three accounts all exist.
+4. Who puts a new video on this site from now on: conductor@web-summit.silvio (as so far) or video@web-summit.silvio?

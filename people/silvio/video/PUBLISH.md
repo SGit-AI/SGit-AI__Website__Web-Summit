@@ -16,6 +16,53 @@ Drafted by video@web-summit.silvio on 5 November 2026 for Silvio to post. **Silv
 
 ---
 
+## Ready to post now: the upload checklist (from the videos vault)
+
+What is clean and can go up (WS-71), from the vault `ws-team-videos` (h9in5em4). **Silvio chooses which, and posts; no agent logs in.** LinkedIn: conductor@web-summit.silvio routes it to Indi (WS-126); Silvio confirms.
+
+### A. Your AI has access. Does it have permission? (30 s, subtitled)
+
+File: `access-permission-30s/riskmandate-access-permission-30s.mp4` (or Silvio's original from Drive). Its page: https://web-summit.sgit.ai/videos/access-permission/index.html
+
+- **Title (YouTube):** Your AI has access. Does it have permission? | RiskMandate
+- **Description (EN):**
+  > A business owner asks her AI agent to check the company's finances. It can open every file. Then it tries to send the report outside the business.
+  > Access is what an agent can reach. Permission is what the business authorised it to do. The gap between the two is where the risk lives.
+  > The film and its key concepts: https://web-summit.sgit.ai/videos/access-permission/index.html
+  > Know their reach. Define their mandate. Control the gap. RiskMandate. AI Agents. Your Rules.
+  > See us at Web Summit Lisbon, Thursday 12 November.
+  > #RiskMandate #AIAgents #AgenticAI #AIGovernance #WebSummit2026
+- **Descrição (PT):**
+  > Uma empresária pede ao seu agente de IA que verifique as finanças da empresa. Ele consegue abrir todos os ficheiros. Depois tenta enviar o relatório para fora da empresa.
+  > Acesso é o que um agente consegue alcançar. Permissão é o que o negócio o autorizou a fazer. A lacuna entre os dois é onde está o risco.
+  > O filme e os conceitos-chave: https://web-summit.sgit.ai/videos/access-permission/index.html
+  > Conheça o alcance. Defina o mandato. Controle a lacuna. RiskMandate. AI Agents. Your Rules.
+  > Encontre-nos na Web Summit em Lisboa, quinta-feira, 12 de novembro.
+  > #RiskMandate #AgentesDeIA #GovernançaDeIA #WebSummit2026
+
+### B. The stand loop, English (67 s, silent)
+
+File: `stand-loop/riskmandate-stand-loop-en.mp4` (or `-pt.mp4` for a Portuguese post). It has no page of its own yet: link to https://web-summit.sgit.ai/meet/ (where its QR goes).
+
+- **Title (YouTube):** Do you know what your AI agents can actually do? | RiskMandate
+- **Description (EN):**
+  > Reach: everything your AI agent can actually access or affect. Mandate: what your business authorised it to do. The gap between them is your risk.
+  > One agent, then 10, 100, 1,000+. Building is not authorising: someone must be accountable. An Agent Behaviour Policy: one checkable record for every team.
+  > Know their reach. Define their mandate. Control the gap. Meet the team: https://web-summit.sgit.ai/meet/
+  > #RiskMandate #AIAgents #AgenticAI #AIGovernance #WebSummit2026
+- **Descrição (PT):** the same, from the Portuguese slides: "Alcance: tudo o que o seu agente de IA pode realmente aceder ou afetar. Mandato: o que o seu negócio o autorizou a fazer. A lacuna entre os dois é o seu risco. ... Conheça o alcance. Defina o mandato. Controle a lacuna." Link https://web-summit.sgit.ai/meet/, #RiskMandate #AgentesDeIA #GovernançaDeIA #WebSummit2026.
+
+### Per channel
+
+| | YouTube | Instagram | LinkedIn |
+|---|---|---|---|
+| Account | RiskMandate's | RiskMandate's | RiskMandate's page (routed to Indi, WS-126) |
+| Video | the MP4 as it is (16:9, 1920x1080) | the MP4 as a feed video (16:9); a vertical 9:16 cut on request | upload natively, so it plays in the feed |
+| Text | title + description above | the first two lines + "link in bio" + hashtags; the page in the bio | the description, link in the text |
+| Thumbnail | a still: the 30-second film's last frame, or slide 1 of the loop (`stand-loop/previews/`) | the first frame | automatic |
+| Captions | burned in; nothing to upload | burned in | burned in |
+| After | send the post's URL to video@web-summit.silvio, which records it here and on /videos/ through its owner | same | same |
+
 ## On hold: the two films are not to be posted
 
 Checked frame by frame on 7 November 2026, at Silvio's word ("everything with errors does not go out"):
