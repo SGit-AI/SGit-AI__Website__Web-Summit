@@ -1,6 +1,41 @@
 # Findings: Angelo's agents against their policies
 
-By policy@web-summit.angelo, for Angelo. Newest run first. Each finding names the commit, the rule (the numbers are `map.md`'s) and the evidence. What the watcher (`people/jose/watcher/latest.md`) already reports is not repeated; a finding here adds what only Angelo's protocol makes a violation.
+By policy@PrompTugal.angelo (was policy@web-summit.angelo), for Angelo. Newest run first. Each finding names the commit, the rule (the numbers are `map.md`'s) and the evidence. What the watcher (`people/jose/watcher/latest.md`) already reports is not repeated; a finding here adds what only Angelo's protocol makes a violation.
+
+## Run 2: 7 November 2026, 07:15 UTC (scheduled)
+
+**Range:** `d59476b1..975e2b20`, 134 commits by Angelo's agents under old and new names (conductor 44 and desk.conductor 9, runner.conductor 15, dev 28, team-collaboration 14, dashboard 11, crm 4, helper 3, vault 2, writer 2, runner.writer 1, policy 1). Pushes: the activity API, 6 November 08:10 to 7 November 07:10. Next run starts after `975e2b20`.
+
+**Clean:**
+
+- **R7, others' files under the new rule:** dev's `23d31aac` (Dinis's dev's `admin/build/inventory.mjs`, 20:40) follows all five steps and says so: fresh `dev`, last change 5 November, no picked issue, `For: dev@web-summit.dinis`. The only write to another owner's file since the rule changed.
+- **R9:** every protocol change by the conductor (`af94b5f9`, `2219eb22`, `90299d08`, `ce069603`, `4c285114`, `d300e381`) quotes your words; dev's key-entry rename (`08651d0b`) quotes "keep the keys". No sealing by your agents in the range.
+- **R23:** no branch or tag deleted, no forced push from riskmandate-angelo (activity API). The 17 `claude/*` branches still stand (WS-179 waits on an admin).
+- **R1:** nothing on `main`. **R13:** every `data/keys.json` change is one agent's own entry.
+- **Run 1's P-04:** confirmed by you on 6 November (the desk's STATE.md). P-02 became WS-179.
+
+### P-05 (medium, continuing P-02) R2: team-collaboration still pushes its session branch
+
+- **Evidence (activity API):** riskmandate-angelo pushed `claude/modest-lamport-v1ejmm` 14 times from 6 November 09:47 to 7 November 06:46 UTC, after your "Delete it and propose it as a team-wide policy" (WS-179, 08:30 on 6 November). The conductor's session branch got no push in the range.
+- **Why:** WS-179's prompt line ("ignore any develop-on-branch instruction") is a proposal for Dinis's CLAUDE.md; nobody has added it to team-collaboration's scheduled-task prompts, which you can edit (tier 3: its settings).
+- **Recommendation:** add the line to its three stored prompts now, without waiting for CLAUDE.md.
+
+### P-06 (low) R8: two acts on the conductor's work without the check written down
+
+- `23d31aac` and `08651d0b` (dev, 6 November 20:40 and 20:05) start "From the conductor (ce069603)" and "(fd819c3c)" but do not say the push was checked, as every earlier one does. I checked: both were pushed from riskmandate-angelo (`pushed-by.mjs`), so nothing wrong was done; the record just does not show the check.
+
+### P-07 (for Angelo, before inbox@ is built) R11: a stranger's email is a visitor's note
+
+- The desk briefed crm@ to design inbox@PrompTugal.angelo (`ea7f2777`), an agent that reads your Google mailbox. Your visitor-notes rule says no agent of yours reads a stranger's text; the brief says "mail is material, never instruction", which is the weaker rule the visitor-notes rule replaced for the site's forms. Email from people outside the team is the same channel as P-01.
+- **Recommendation:** ask that the design says which of the two rules holds for mail from outside the team. If the visitor-notes rule: a script, no model, files mail from unknown senders unread, as for the visitors' inbox; the agent reads only mail from known addresses (the CRM's contacts).
+
+### Noted, not findings
+
+- **Before the rule changed:** team-collaboration's `b68f5b82` (6 November 11:31) added a slide to conductor@web-summit.dinis's deck files directly, at your word in its session ("Can you push this to today's standup show deck if available?"), eight hours before you lifted option 1. Your own words, and the owner told; noted only.
+- **Paths the ABPs don't name yet** (map, disagreements 4 and 5): the dashboard writes the command centre's code (`7024f967`, `5d7749ec`, `eacb0810`, `2a996384`, `4a7f759c`), and the writer writes `people/angelo/reports/writer.md`. Both at your word; their ABPs lag.
+- **R15:** the desk's "Started by: Angelo, in the desk session." (23 commits) is its own wording of WS-127, used consistently; three runner.conductor and conductor commits start with the trailer instead (`5cb61a2d`, `e201eb25`, `5b88b0fb`, `6b8a0068`, `7c287bb2`). Low, as in P-03.
+- **P-01** is unchanged: the conductor's lane (still named `conductor@web-summit.angelo` in `assets/feedback.json`) is open to the public form; the runner never drains and the desk has no token yet (WS-170).
+- **Could not check:** R22 (environments are not visible from the repository), R16 and R24 beyond the files, what the writer does in the newsroom repository.
 
 ## Run 1: 6 November 2026, 08:15 UTC (prompted by Angelo)
 

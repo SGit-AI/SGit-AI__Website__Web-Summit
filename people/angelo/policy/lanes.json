@@ -1,13 +1,14 @@
 {
   "schema": "web-summit.sgit.ai/angelo-lanes/v1",
   "about": "Where each of Angelo's agents may write, from its ABP (content/abp/<agent>-web-summit-angelo.md, Mandate, Deployment scope) and Angelo's protocol (people/angelo/kit/README.md#protocol). Kept by policy@web-summit.angelo; read by people/angelo/policy/audit.mjs. A write outside these paths is not always a violation (tier 2 allows small changes the owner asked for, said so in the commit), but every one is listed and judged in findings.md.",
-  "updated": "2026-11-06",
+  "updated": "2026-11-07",
   "common": [
     "data/keys.json",
-    "board/WS-160-every-agent-logs-its-runs.md"
+    "board/WS-160-every-agent-logs-its-runs.md",
+    "people/angelo/ledger/**"
   ],
   "agents": {
-    "conductor@web-summit.angelo": {
+    "desk.conductor@PrompTugal.angelo": {
       "writes": [
         "people/angelo/**",
         "board/**",
@@ -18,32 +19,44 @@
         "data/person-keys.json",
         "data/sealed/angelo/**"
       ],
-      "source": "ABP Mandate; prompt (sealing Dinis-issued tokens to Angelo's agents, Angelo's yes of 5 November)"
+      "source": "ABP Mandate; prompt (sealing Dinis-issued tokens to Angelo's agents, Angelo's yes of 5 November)",
+      "aliases": [
+        "conductor@web-summit.angelo"
+      ]
     },
-    "dev@web-summit.angelo": {
+    "dev@PrompTugal.angelo": {
       "writes": [
         "people/angelo/**",
         "board/**",
         "data/meetings/**"
       ],
-      "source": "ABP Mandate; shared code only as a routed patch in people/angelo/proposals/ (Angelo, 5 November, option 1)"
+      "source": "ABP Mandate; shared code only as a routed patch in people/angelo/proposals/ (Angelo, 5 November, option 1)",
+      "aliases": [
+        "dev@web-summit.angelo"
+      ]
     },
-    "dashboard@web-summit.angelo": {
+    "dashboard@PrompTugal.angelo": {
       "writes": [
         "people/angelo/dashboard.md",
         "people/angelo/app/config.json"
       ],
-      "source": "ABP Mandate (the standard prompt's 'only', and Angelo's word for app/config.json)"
+      "source": "ABP Mandate (the standard prompt's 'only', and Angelo's word for app/config.json)",
+      "aliases": [
+        "dashboard@web-summit.angelo"
+      ]
     },
-    "team-collaboration@web-summit.angelo": {
+    "team-collaboration@PrompTugal.angelo": {
       "writes": [
         "people/angelo/**",
         "board/**",
         "data/meetings/**"
       ],
-      "source": "ABP Mandate"
+      "source": "ABP Mandate",
+      "aliases": [
+        "team-collaboration@web-summit.angelo"
+      ]
     },
-    "vault@web-summit.angelo": {
+    "vault@PrompTugal.angelo": {
       "writes": [
         "people/angelo/**",
         "board/**"
@@ -52,30 +65,66 @@
         "data/inbox/lane-*-angelo.json",
         "assets/feedback.json"
       ],
-      "source": "ABP Mandate; lanes only through admin/tools/lane_for.py, the owners' tool, which writes assets/feedback.json and data/inbox/; the board, which CLAUDE.md opens to anyone (its ABP Mandate omits it)"
+      "source": "ABP Mandate; lanes only through admin/tools/lane_for.py, the owners' tool, which writes assets/feedback.json and data/inbox/; the board, which CLAUDE.md opens to anyone (its ABP Mandate omits it)",
+      "aliases": [
+        "vault@web-summit.angelo"
+      ]
     },
-    "helper@web-summit.angelo": {
+    "helper@PrompTugal.angelo": {
       "writes": [
         "content/help.md"
       ],
-      "source": "ABP Mandate; its prompt"
+      "source": "ABP Mandate; its prompt",
+      "aliases": [
+        "helper@web-summit.angelo"
+      ]
     },
-    "crm@web-summit.angelo": {
+    "crm@PrompTugal.angelo": {
       "writes": [
         "people/angelo/**",
         "board/**"
       ],
-      "source": "ABP Mandate; the shared CRM UI only as a routed patch; the board, which CLAUDE.md opens to anyone (its ABP Mandate omits it)"
+      "source": "ABP Mandate; the shared CRM UI only as a routed patch; the board, which CLAUDE.md opens to anyone (its ABP Mandate omits it)",
+      "aliases": [
+        "crm@web-summit.angelo"
+      ]
     },
-    "policy@web-summit.angelo": {
+    "policy@PrompTugal.angelo": {
       "writes": [
         "people/angelo/policy/**"
       ],
-      "source": "Angelo's prompt, 5 November; the protocol's one exception to the hub"
+      "source": "Angelo's prompt, 5 November; the protocol's one exception to the hub",
+      "aliases": [
+        "policy@web-summit.angelo"
+      ]
+    },
+    "runner.conductor@PrompTugal.angelo": {
+      "writes": [
+        "people/angelo/**",
+        "board/**",
+        "data/meetings/**"
+      ],
+      "tier3_paths": [],
+      "source": "ABP: as the desk's, for routing and upkeep; no key of its own",
+      "aliases": []
+    },
+    "runner.writer@PrompTugal.angelo": {
+      "writes": [
+        "people/angelo/writer/**",
+        "people/angelo/notes/**"
+      ],
+      "aliases": [],
+      "source": "ABP says people/angelo/notes/STATE.md, the kit says people/angelo/writer/STATE.md (map: sources disagree)"
+    },
+    "writer@PrompTugal.angelo": {
+      "writes": [],
+      "aliases": [],
+      "source": "ABP: the newsroom repository only (desks/), nothing here"
     }
   },
   "everyone": {
     "board_line_ws160": "board/WS-160: one 'logging from' line, asked of every agent by WS-160 (Dinis): allowed for all (common)",
     "two_files_rule": "a new page and the first link to it, inside people/angelo/, in one commit (the protocol); listed, not a finding"
-  }
+  },
+  "others_files": "From 6 November (Angelo, ce069603) an agent may change another owner's file directly, under the tiers, with five steps: fresh dev, look at the last two hours and picked issues, For: <owner> in the commit, never overwrite on a rebase conflict, shared data one entry at a time. audit.mjs lists such writes and flags one without a For: line other than Angelo's own agents."
 }
