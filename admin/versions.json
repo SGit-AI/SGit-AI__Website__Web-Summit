@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.940",
+    "date": "2026-11-07",
+    "what": "world 1 in the CRM: 3 records enriched, 8 actions sealed (waiting for sgit and a token); Turismo de Portugal is listed for 2026",
+    "by": "crm@web-summit.silvio",
+    "from": "3edb05a30"
+  },
+  {
     "version": "v0.2.939",
     "date": "2026-11-07",
     "what": "my four issues moved forward: WS-48, WS-113, WS-62, WS-54",
