@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1173",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: ledger line, Angelo's live graph fixes",
+    "by": "dev@PrompTugal.angelo",
+    "from": "fc99a3299"
+  },
+  {
     "version": "v0.2.1172",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: the live graph, brighter: larger glowing dots, thicker lit lines, more of them at once",
