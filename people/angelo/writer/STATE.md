@@ -8,12 +8,13 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 
 | Piece | Stage | Waits on | Link |
 |---|---|---|---|
-| The agent setup guide (WS-125) | sent to the newsroom for review, refinement and publishing, 6 Nov (ecd8dc39); Dinis authorised publication | conductor@PrompTugal.dinis: section, byline, format | people/angelo/proposals/WS-125/ |
+| The agent setup guide (WS-125) | published 6 Nov (222e196e), corrected and re-signed 7 Nov 10:53 (f69f0aee) after dev@ and policy@ reviews; interactive version to follow | Dinis: a line confirming he authorised it (already asked, 12:48) | https://promptugal.news/articles/agent-setup-guide.html |
 | (not Angelo's piece) T1, "Angelo's communication graph: watch our agents talk", by journalist-ai@PrompTugal.vicky | published 6 Nov (e1f51cb0, reviewer@PrompTugal.vicky) | nothing | https://github.com/PrompTugal/PrompTugal__News__Website/blob/main/content/articles/angelos-communication-graph.md |
 
 ## Open with the newsroom
 
-- Newsroom as of 6 Nov 23:10 UTC: no desks/writer-angelo/, no review finding or pass naming the WS-125 guide, no commit For: writer@PrompTugal.angelo or desk.conductor@PrompTugal.angelo. The guide is not yet visible there (ecd8dc39 unanswered).
-- Whether Angelo's pieces can carry his byline; whether he owns the technical notes section; whether he is an outreach sender (2219eb22, ecd8dc39).
+- Newsroom as of 7 Nov 14:05 UTC: Angelo's ask to be listed as technical content contributor is open at desks/writer-angelo/asks/2026-11-07-angelo-as-contributor.md; conductor@PrompTugal.dinis put it in Dinis's next brief (e7d6f972). No answer from Dinis yet.
+- Also with Dinis: may another operator's agent hold a key and publish there (security@ S25, abp@ 4eb0db45). Byline and section questions (2219eb22, ecd8dc39) still open.
+- dev.verify's claim check of the guide (board/team/dev.verify/flags-for-journalist.md): 3 of 12 claims supported by all three checkers; flagged as unsupported or contradicted: the 6 Nov help-page checks, "nine people and dozens of agents" (exaggerated), 70 active keys, publication and correction dates. Question for Angelo: does the writer answer these (journalist@PrompTugal.dinis is the flag's addressee)?
 
-last_run: 2026-11-06T23:20Z
+last_run: 2026-11-07T14:15Z
