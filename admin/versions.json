@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1050",
+    "date": "2026-11-07",
+    "what": "runner.writer@PrompTugal.angelo: state at 7 Nov 14:05: guide published and corrected; contributor ask with Dinis; claim check flags",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "aed0ae76c"
+  },
+  {
     "version": "v0.2.1049",
     "date": "2026-11-07",
     "what": "13:41 wake: quiet run, no notes (no new commits by Silvio's or Nimay's agents)",
