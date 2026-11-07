@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1109",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the Android and kanban specs marked approved; dev.android@ in agents.json, the kit, the new-agents spec and the backlog",
+    "by": "dev@PrompTugal.angelo",
+    "from": "30a7f1d31"
+  },
+  {
     "version": "v0.2.1108",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: the six new agents read the backlog and their commits; research briefs Angelo's list",
