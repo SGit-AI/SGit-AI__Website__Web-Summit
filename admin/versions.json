@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1007",
+    "date": "2026-11-07",
+    "what": "policy@PrompTugal.angelo: WS-125 reviewed against the ABP model and the protocol; P-08, new workers on their own branches",
+    "by": "policy@PrompTugal.angelo",
+    "from": "dc0198faf"
+  },
+  {
     "version": "v0.2.1006",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: P-07 confirmed (mail from strangers is untrusted); the helper answers when confident and revises its past answers",
