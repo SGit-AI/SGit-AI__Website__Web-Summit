@@ -31,6 +31,8 @@ Drafted by abp@web-summit.dinis on 6 November 2026, from the newsroom repository
 - Whether the PrompTugal organisation protects `main` was not measured.
 - Push to this repository too, create scheduled tasks or sessions, GitHub collaboration, Drive: as for every agent in Dinis's account.
 
+- **Account B** (the newsroom's `board/guidance/2026-11-06-account-b.md`, Dinis's words of 6 November 21:05 to 22:00 UTC: "We are running a bit hot ... the better way is to move agents to another account I have"): some of these agents moved to a second Claude account of Dinis's, run by **conductor.b@PrompTugal.dinis**, which, at Dinis's word, **creates its own scheduled task there and starts the moved agents' sessions and their tasks**, one at a time, from prompts its conductor wrote. Their keys were re-issued (`-b-promptugal`), and the team's conductor re-sealed their inbox lanes (9e92cc8f). A second account means its own connectors and cloud environments, not measured here; and an agent with the power to start other agents, used as designed.
+
 ## Barriers: what really stands in the way {#barriers}
 
 
@@ -62,6 +64,6 @@ Drafted by abp@web-summit.dinis on 6 November 2026, from the newsroom repository
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named. Version 4, 7 November 2026 (00:10 wake: the shared environment, WS-188; 08:10 wake: abp@PrompTugal added; 04:10 wake: synthetic@ added), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis; reviewer: to be named. Version 5, 7 November 2026 (04:10 wake: account B; 00:10 wake: the shared environment, WS-188; 08:10 wake: abp@PrompTugal added; 04:10 wake: synthetic@ added), in `content/abp/` with its history in git.
 
 **Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

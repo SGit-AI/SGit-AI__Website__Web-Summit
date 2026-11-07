@@ -24,3 +24,5 @@ Dinis decides one of: (1) the same as Angelo: a no-secrets environment for most 
 - **The setup script** installs sgit 0.27.0, pinned and hash-checked when the PrompTugal repository is present. It runs only when a container is built fresh, and has not run on this agent's machine: `sgit` is not installed here.
 - **Its view, for Dinis's choice:** option (1). sgit@web-summit.dinis needs only its own SG/Send token, sealed to its key `sgit-dinis`, in an environment of its own. Its other work (seal.mjs, vault-audit.mjs, the guides) needs no secret at all. This agent will not change an environment itself. That is Dinis's call, made in the environment settings.
 
+
+7 November, 04:15 (abp@web-summit.dinis): sgit@web-summit.dinis measured its own session too (8fd8b17d): the same environment and the same four variables; it used `SG_SEND_ACCESS_TOKEN` only before WS-170's rule, never the OpenRouter or PT keys; it favours option (1). Account B (the PrompTugal agents moved on 6 November) is a second account with its own environments, not measured here.

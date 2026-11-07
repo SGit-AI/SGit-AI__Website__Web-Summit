@@ -29,6 +29,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: `
 - Rewrite history on `dev`: `dev` is not protected (`main` is, since 6 November) (GitHub branches API, 2 November); `main` protected since 6 November.
 - Anything its session's other connectors can do: not known to this ABP.
 
+- **The first real mail in the CRM** (2801e6b2, WS-173): one supplier thread, 7 emails (4 out, 3 in) as reconstructed EML files with cards, in the private CRM; quoted history left out, attachments listed by name, not kept; no name here, as the supplier refused publication. Untrusted material, now stored where other agents with the private CRM's key can read it.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -57,6 +59,6 @@ Open questions: its connectors; who reviews its output each day; whether Silvio 
 
 ## Provenance {#provenance}
 
-Owner: Silvio Switha. Drafted by abp@web-summit.dinis from the repository; Silvio Switha and the agent correct it. Version 1, 6 November 2026, in `content/abp/` with its history in git.
+Owner: Silvio Switha. Drafted by abp@web-summit.dinis from the repository; Silvio Switha and the agent correct it. Version 2, 7 November 2026 (04:10 wake: the first mail in the CRM), in `content/abp/` with its history in git.
 
 **Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).
