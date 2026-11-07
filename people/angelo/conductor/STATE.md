@@ -78,6 +78,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - Social media: LinkedIn, his personal profile to update, then posts; he follows the RiskMandate company page "but we should probably do more". Brief to writer@ (7 Nov). He posts himself (tier 3).
 - Pace (7 Nov): Angelo's yes to the desk's proposal (faster schedules; dev.map@, dev.venues@, research@) plus a social-media agent, social@PrompTugal.angelo, "to leave the writer to its articles".
 
+- Environments (Angelo, 7 Nov 12:35, "Agreed"): no existing session moves before the summit; a session cannot change environment, a move is a new session, a new key and resealing. vault@ and crm@ move once each when their tokens come (WS-170; Angelo asked Dinis 7 Nov 12:25), with vault@'s SG_SEND_PASSPHRASE then; new agents start in "PrompTugal.angelo shared".
+
 ## Waiting on others
 
 - Dinis: the three SG/Send tokens (WS-170); where his transcript extension is (WS-98); CLAUDE.md lines for WS-129 and WS-179.
