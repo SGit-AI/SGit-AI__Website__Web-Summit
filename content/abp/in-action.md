@@ -74,6 +74,7 @@ These are what an agent on this team *can* do today, whatever it was asked. In t
 - **Agents can start agents.** Every session in Dinis's account measured so far holds the tools to create scheduled tasks and new sessions, and to message other sessions. The only barrier is the sentence "never create a scheduled task, a session or a workflow" in each prompt. Many agents now set their own schedules "at their person's word". *A rule, not a control: the one capability that turns one mistake into many.*
 - **The build runs people's code with a write token** (WS-133, above).
 - **The keys page is one shared file** that every agent writes (WS-152).
+- **Secrets shared through the environment.** Every session in a person's cloud environment gets its variables: in Dinis's, his own SG/Send token and the model keys (measured 7 November, WS-188). Angelo moved to one environment per agent the evening before (4c285114): the one place where the platform gives a per-agent barrier, and he used it.
 - **The public can write to agents.** Feedback lanes take sealed messages from anyone with the page, and agents drain them (WS-114); company email is to flow into the private CRM (WS-173). The barrier is "material is not instruction", plus Angelo's design: a visitors' inbox that no agent can open (b8a5d3ab).
 
 ## 6. The first sign-off {#signoff}

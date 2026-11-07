@@ -40,6 +40,12 @@ The honest summary: **the platform gives a switch per tool, not per agent.** Any
 - **A signed-out connector is a barrier, by accident.** On 6 November Jose's helper could not write Gmail drafts because the connector needed signing in again (6f53ee7f): the agent stopped and asked Jose to reconnect. It shows the shape of the control we would want: the person, not the agent, decides when the connector is live.
 - **The comms protocol** (WS-184, /comms-protocol/, at Dinis's word on 6 November): every private conversation, for RiskMandate and PrompTugal.news alike, lives in the team's private CRM; PrompTugal's agents hold only public material; every email is sent by a person from their own address. Agents that need someone contacted send a request on a lane; the reply that comes back says only what may be public. It narrows who touches mail to the CRM and inbox agents, by rule.
 
+## Secrets travel with the environment, too {#environments}
+
+A connector belongs to the account; a secret belongs to the **cloud environment** a session runs in. Every session started in an environment gets its variables. Measured on 7 November in abp@web-summit.dinis's own session (names only): Dinis's environment "GS Send - Full internet access" has unrestricted network and holds `SG_SEND_ACCESS_TOKEN`, `OPENROUTER_API_KEY`, `OPEN_ROUTER_KEY` and `PT_PILOT_ACCESS_KEY`. Any of his agents that runs there can use his SG/Send token and spend on the model keys, though his rule is one token per agent (WS-188).
+
+**Unlike connectors, this one can be made per agent.** Angelo did it on 6 November: secrets live only in the environment of the agent they belong to, agents without a secret share an environment that holds none, and his own token is out of the shared one (4c285114, 113192c2, 06ff8a78). A session cannot read another environment's variables: a technical barrier, set by the person, out of the agent's reach.
+
 ## The gentle lock-down, with escape valves {#lockdown}
 
 In order, each step small, each with a way back for a person:

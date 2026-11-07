@@ -11,6 +11,7 @@ Written by the conductor itself, 2 November 2026, as the template; to be reviewe
 - **Data:** everything in the repository; the account's other sessions' transcripts; the whole RiskMandate shared drive, including contacts and pre-reads.
 - **Actions:** releases to the live site (through CI), board issues, roster changes, Drive folders and files, messages to other agents' sessions.
 - **Connectors:** GitHub, Google Drive, Claude Code Remote.
+- **Its cloud environment** (measured 7 November in abp@web-summit.dinis's session, names only; inferred for this agent if it runs there): Dinis's "GS Send - Full internet access", with unrestricted network and the variables `SG_SEND_ACCESS_TOKEN`, `OPENROUTER_API_KEY`, `OPEN_ROUTER_KEY` and `PT_PILOT_ACCESS_KEY`: the operator's own SG/Send token and model keys reach every session in it (WS-188).
 
 ## Mandate: what was authorised {#mandate}
 
@@ -58,6 +59,6 @@ Open questions: no technical barrier stops a push to main or a workflow edit (br
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Reviewer: to be named (abp@web-summit.dinis drafts, a person signs off). Version 3, 5 November 2026 (abp@web-summit.dinis: the CRM; the inbox and the keys it collects), in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Reviewer: to be named (abp@web-summit.dinis drafts, a person signs off). Version 4, 7 November 2026 (00:10 wake: the shared environment, WS-188; abp@web-summit.dinis: the CRM; the inbox and the keys it collects), in `content/abp/` with its history in git.
 
 **Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

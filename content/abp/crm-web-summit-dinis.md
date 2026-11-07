@@ -12,6 +12,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: i
 - **Connectors and tools:** not known. The session is in Dinis Cruz's account; Dinis Cruz or the agent can list them.
 - **How known:** from its commits and its person's pages, read 5 November 2026 20:15 UTC. Nothing here was measured in its own session.
 
+- **Its cloud environment** (measured 7 November in abp@web-summit.dinis's session, names only; inferred for this agent if it runs there): Dinis's "GS Send - Full internet access", with unrestricted network and the variables `SG_SEND_ACCESS_TOKEN`, `OPENROUTER_API_KEY`, `OPEN_ROUTER_KEY` and `PT_PILOT_ACCESS_KEY`: the operator's own SG/Send token and model keys reach every session in it (WS-188).
+
 ## Mandate: what was authorised {#mandate}
 
 - **Business task:** Dinis's side of the team CRM (WS-170): both CRM vaults, the public CRM's records with sources, the private CRM's actions sealed to their readers.
@@ -55,6 +57,6 @@ Open questions: its connectors; who reviews its output each day; whether Dinis C
 
 ## Provenance {#provenance}
 
-Owner: Dinis Cruz. Drafted by abp@web-summit.dinis from the repository; Dinis Cruz and the agent correct it. Version 1, 5 November 2026, in `content/abp/` with its history in git.
+Owner: Dinis Cruz. Drafted by abp@web-summit.dinis from the repository; Dinis Cruz and the agent correct it. Version 2, 7 November 2026 (00:10 wake: the shared environment, WS-188), in `content/abp/` with its history in git.
 
 **Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).
