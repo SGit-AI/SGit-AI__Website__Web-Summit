@@ -154,6 +154,15 @@
    "state": "enabled",
    "since": "6 Nov 2026",
    "at_whose_word": "Vicky (6 Nov)"
+  },
+  {
+   "agent": "conductor@web-summit.vicky",
+   "task": "the 17:30 newsroom check",
+   "cron_utc": "30 17 * * *",
+   "task_id": "trig_01NYwcWXpPmsPK9MLgtq5NAt",
+   "state": "enabled",
+   "since": "7 Nov 2026",
+   "at_whose_word": "Vicky (7 Nov): a lightweight check after the reviewer's 17:00 run; silent unless actionable"
   }
  ],
  "no_task": [

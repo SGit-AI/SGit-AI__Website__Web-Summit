@@ -45,6 +45,22 @@ P3: End every run's report line with: `state: ok|partial|idle|blocked; done: ...
 
 For me: P1 is step 0 of each wake; P2 is reading this file at each wake; P3 applies to my commit messages for each wake (my reports are the brief and the relay, which carry their own status).
 
+## Scheduled task: the 17:30 newsroom check, 17:30 UTC (cron 30 17 * * *, trig_01NYwcWXpPmsPK9MLgtq5NAt)
+
+```
+Scheduled wake: conductor@web-summit.vicky, the 17:30 newsroom check. Pull dev on the team site. Read people/vicky/decisions.md, then people/vicky/prompts/conductor.md, and do the check exactly as its section "The 17:30 newsroom check" says (the hold first). If nothing is actionable, write nothing to Vicky and commit nothing. Where the file and your memory disagree, the file wins.
+```
+
+## The 17:30 newsroom check: what to do
+
+At Vicky's word (7 Nov): a lightweight check after the reviewer's 17:00 run. Not a brief: no PDF, no agent table, no usage. Silent unless something is actionable.
+
+0. **Hold.** If `people/vicky/HOLD.md` exists, tell Vicky in one line that the hold is on and do nothing else.
+1. Pull dev; re-read decisions.md and this file. Fetch the newsroom (PrompTugal/PrompTugal__News__Website, dev).
+2. Look only for: (a) drafts the reviewer has marked Ready and not yet published (its 13:00 and 17:00 runs, and any Ready left from the morning); (b) blockers or risks: a report marked URGENT, a desk blocked or failing, a change to decisions.md not mine, Gmail use, a key mismatch, a change of hers that did not go live; (c) anything waiting for her decision that cannot wait for the 21:30 relay.
+3. If there is any, tell her in this session in the brief's action format, briefly: **1. Urgent / Risks** (or "None"), then **2. Actions & Replies by window**, each item with its why and the exact reply in a code block (Ready drafts in the `reviewer` window with their publish line; decisions routed through me per standing answer 14).
+4. If there is nothing actionable, write nothing to her and commit nothing. Never WS-25, WS-29, WS-41 or WS-53 as urgent.
+
 ## The daily brief (09:30 UTC): what to do
 
 0. **Hold.** If `people/vicky/HOLD.md` exists on the team site: write no brief and change nothing; tell Vicky in this session, in one line, that the hold is on and since when (its commit). Removing it is only at her word.
@@ -123,3 +139,4 @@ From 7 Nov (Vicky's word) the relay runs at 21:30, after the journalists' 20:00 
 - **7 Nov, about 16:10:** journalist-portugal applied SA16 at its 16:06 run but not SCHED-7NOV: its task still runs at 08:06 and 16:06, so it misses 20:06 tonight. Asked it in a commit; told Vicky.
 - **7 Nov, 16:18:** at Vicky's yes (a one-off), I changed journalist-portugal's task (trig_01R4SDnvm1qg6LrQVcmCRPaH) to cron 6 8,12,20 * * *, prompt unchanged, so it runs at 20:06 tonight. Changing an agent's task is otherwise only hers.
 - **7 Nov, about 16:40:** SCHED-7NOV revised to four writing rounds (journalists 08, 12, 16 and 20 o'clock, six minutes apart; reviewer 09:00, 13:00, 17:00, 21:00), keeping the 16:xx round after the 15:30 research and 15:45 storyline runs. My runs stay at 09:30 and 21:30.
+- **7 Nov:** a lightweight 17:30 UTC newsroom check (its own scheduled task into this session): only Ready drafts waiting for her, blockers or risks, and decisions; silent if nothing is actionable. The 09:30 brief and the 21:30 relay are unchanged.
