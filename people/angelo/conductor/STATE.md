@@ -72,6 +72,10 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - Angelo's social media (7 Nov, his note: "there is nothing there yet and it's not great"): a topic to open with him; starting points: WS-126 (LinkedIn), people/angelo/profiles-proposal.md, his card; posting in his name is tier 3.
 
+- RiskMandate at the summit, Angelo's own view (7 Nov, to be confirmed in the coming days): "write cool articles about cool companies, get engagement on the Promptugal News digital newspaper, offer help and ideas, with the door open to paid consultancy for those who are interested." The paid-services question stays open for Dinis and Nimay; nothing about it in public until then.
+- Social media: LinkedIn, his personal profile to update, then posts; he follows the RiskMandate company page "but we should probably do more". Brief to writer@ (7 Nov). He posts himself (tier 3).
+- Pace (7 Nov): "we need to tighten the ranks... accelerating schedules and adding new agents": the desk's proposal is with Angelo.
+
 ## Waiting on others
 
 - Dinis: the three SG/Send tokens (WS-170); where his transcript extension is (WS-98); CLAUDE.md lines for WS-129 and WS-179.
@@ -102,6 +106,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 7 Nov 00:20: the runner: nothing to route. Since 23:20: dev reworked the map's playback in four steps at Angelo's words (one map on Team and the machine, agents arriving and gathering round their person: reports to the desk, information only); dashboard's venue map (names on the map, stylised drawing, full screen); writer published WS-125 on PrompTugal.news and reports it (6885f0c); the desk's own briefs to writer, dev and crm (d300e38, ea7f277). Dinis's WS-188 (abp@) and security's WS-187 review: others' work, information only.
 
-last_run: 2026-11-07T09:21:00Z (the runner| One live map of our activity: Team and the machine merged into Replay, with external connections, key handovers, sealed messages and append lanes; a design for publishing it | dev@ (with vault@ for what may be shown) | 7 Nov 09:00 | design 7 Nov 18:00 | people/angelo/proposals/live-map/ |
+last_run: 2026-11-07T09:21:00Z (the runner| One live map of our activity, named "Team and the machine" (Replay merged into it, its look and feel kept exactly as in Angelo's command centre, 3D to consider), with external connections, key handovers, sealed messages and append lanes; a design for publishing it | dev@ (with vault@ for what may be shown) | 7 Nov 09:00 | design 7 Nov 18:00 | people/angelo/proposals/live-map/ |
 | Venues on PrompTugal.news: the public map there, our locations private (team only), public only for a person who opts in; built on WS-181 and the newsroom's My day (browser plus vault) | dev@ with vault@ | 7 Nov 09:00 | design 7 Nov 18:00 | people/angelo/proposals/WS-181/ |
+| LinkedIn: profile update (headline, About, featured, experience) and posts to Monday | writer@ | 7 Nov 09:45 | drafts by 7 Nov 18:00 | people/angelo/proposals/social/ |
 )
