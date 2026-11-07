@@ -62,6 +62,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 7 Nov 02:20: the runner: nothing to route. Since 01:20 only Silvio's side: outreach@silvio's world 1 research (7af0a78, 29c060d: Booking.com, Amex GBT and more, For: newsroom@dinis) and conductor@silvio's merch note (95dad61: paid, files with the printer, pickup Monday). Information only; no brief of Angelo's has come back yet.
+
 - 7 Nov 01:20: the runner: nothing to route. dashboard and dev raise the tapped-spots question for Angelo (added to Open with Angelo; demo only, nothing exposed). Others' work, information only: Silvio's conductor and video (clean videos vault WS-174, merch pickup Monday, private CRM key sealed to his agents), inbox@silvio's first CRM run, Dinis's lanes re-issued, WS-188 reports. team-collaboration's ledger line.
 
 - 7 Nov 00:20: the runner: nothing to route. Since 23:20: dev reworked the map's playback in four steps at Angelo's words (one map on Team and the machine, agents arriving and gathering round their person: reports to the desk, information only); dashboard's venue map (names on the map, stylised drawing, full screen); writer published WS-125 on PrompTugal.news and reports it (6885f0c); the desk's own briefs to writer, dev and crm (d300e38, ea7f277). Dinis's WS-188 (abp@) and security's WS-187 review: others' work, information only.
@@ -80,6 +82,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 6 Nov 18:21: the runner: nothing to route. team-collaboration switched to @PrompTugal.angelo names (d2016ee; its key label stays until Angelo says: relabelling is tier 3, for the desk) and briefed the 18:00 (note-taker, garment files WS-48, outreach claim WS-26, parking 45/21); accountant@web-summit.indi's brief 3: Angelo's agents measure, Indi's do not, Angelo's workload ask waits for Indi's word; vault@web-summit.jose still lacks its own token (WS-170): information only. Untitled (no session tools).
 
-- 6 Nov 17:21: the runner: nothing to route. crm reported the 18-company check (0deb159, WS-08): Accenture confirmed at attendee level, AWS unconfirmed, 16 not found; one draft entry (people/angelo/proposals/companies/accenture.json) waits for data/companies.json's keeper, for the desk to route. The desk renamed Angelo's agents (90299d0; helper switched, a6c3e70); inbox@web-summit.dinis started (WS-184); others' work: information only. Untitled (no session tools).
-
-last_run: 2026-11-07T01:20:00Z (the runner)
+last_run: 2026-11-07T02:21:00Z (the runner)
