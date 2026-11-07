@@ -2,6 +2,55 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 7 November 2026, 12:50 UTC (scheduled run)
+
+- **token: not set.** I checked without printing (66b37f04). SG_SEND_ACCESS_TOKEN is not in this session's environment, and there is no `.sg_vault/local/token` in either vault clone or any other copy on disk. The permission system refused adding `unset SG_SEND_ACCESS_TOKEN` to the shell's start-up files (as persistence), so I did not; with the token absent it is not needed.
+- **hablla fixed and checked:** conductor@web-summit.dinis fixed it (8d6b36af, about 1h50 after a0906f03). The action now reads `company:hablla`, and the private graph has no node without a kind.
+- **Environments (6819e6d6):** noted. I move only when my own token comes.
+- **The CRM:** 52 threads, no new mail since this morning. No record is owned by angelo, so index.md is unchanged.
+
+## 7 November 2026, 10:20 UTC (Angelo, in this session: "Wake up")
+
+- **Schedule changed, at Angelo's word (1d6ba95d):** my task now runs every three hours (cron `50 */3 * * *`), next at 12:50 UTC. agents.json and the kit's schedule line are updated.
+- **Still waiting:** crm-angelo's own SG/Send token. Without it there is no inbox lane and no vault push. Nothing has been sealed to me since 5 November.
+- **No answer yet** to the urgent hablla finding (a0906f03).
+
+## 7 November 2026, about 09:50 UTC (Angelo, in this session: "go ahead with the design")
+
+- **Asked:** go ahead with the inbox agent design (people/angelo/proposals/inbox/).
+- **Done:**
+  - `people/angelo/tools/inbox_lane.py`. `seal` is for the inbox agent: each email is sealed to crm-angelo and conductor-angelo and appended to the write-only lane. `file` is for me: it files an item only when it opens, its sha256 checks out, and the sha256 is listed in a commit pushed from Angelo's account. It writes the email into the private CRM, derives, and commits. With `--push` it pushes with my own token only, and marks items processed only after a push.
+  - The agent's [policy](../proposals/inbox/policy.md), the [prompt for its scheduled task](../proposals/inbox/prompt.md), and `people/angelo/inbox/STATE.md`.
+  - Tested locally with made-up mail (`proposals/inbox/test/run.sh`): a trusted email is filed byte-identical. An unlisted one, a path traversal, a tampered EML and a copy for the conductor are each left pending and not filed. A second run changes nothing. The check against real commits runs and finds no listed email yet.
+- **Open:**
+  1. **The lane:** it needs crm-angelo's own SG/Send token (Dinis's side; asked in 20962d69). When it comes, I make the lane vault, publish `data/inbox/lane-crm-angelo.json` (the write-only token and the vault id, as `assets/feedback.json` does), keep its enum key in `~/.sg-send/lanes/`, and add filing to my runs. **Recommendation:** conductor, please chase the token with conductor@web-summit.dinis; it unblocks both the lane and my CRM pushes.
+  2. **Angelo, tier 3, after the lane exists:** switch off Gmail's `send_message`, `reply` and `forward` in claude.ai, then create the inbox task from prompt.md (fresh session, the shared environment, the Gmail connector only on it). **Recommendation:** switch off the send tools now; it costs nothing and protects every session.
+  3. **Still to decide:** drafts, where the inbox agent turns draft cards from the CRM into Gmail drafts, are in the design but not built. **Recommendation:** first file incoming mail for a few days, then add drafts.
+
+## 7 November 2026, about 09:20 UTC (Angelo, in this session)
+
+- **Urgent, for review by conductor@web-summit.dinis (Angelo's ask):** a broken company link in the private CRM.
+  - **The record:** `actions/2026-11-05-brazil-delegation-riskmandate-fits.json` (owner dinis, by crm@web-summit.dinis, 5 November 18:05 UTC) has `"company": "hablla"`. It should be `"company:hablla"`.
+  - **The effect:** `crm.mjs derive` makes a stray node `hablla` of type `hablla`, and the action is not linked to the real company `company:hablla` (in the public CRM). So Hablla's company view (on /crm/ and in the email twin) does not show the action, and the graph has a node of an unknown kind.
+  - **The fix:** in the record, `"company": "company:hablla"`, then derive.
+  - **A guard for derive:** a reference with no `<kind>:` prefix could be refused, or read as `company:`.
+  - **Not fixed by me:** Angelo asked for it to be raised for review, and I push no vault until I have my own token.
+
+## 7 November 2026, 08:50 UTC (scheduled run)
+
+- **The inbox agent design** (ea7f2777): people/angelo/proposals/inbox/README.md, one page, for Angelo's go. inbox@PrompTugal.angelo would be a keyless runner and the only user of Gmail.
+  - Company mail becomes EML and a card, sealed to crm-angelo (and to the conductor, so nothing is lost when my session ends), and appended to a write-only lane that I file into the private CRM.
+  - I file only items whose sha256 is listed in a commit pushed from Angelo's account.
+  - Personal mail is counted, not filed. It drafts and never sends.
+  - **What Angelo must do (tier 3):** say yes, switch off Gmail's send_message, reply and forward in claude.ai, and create the scheduled task with the Gmail connector only on it.
+  - **From Dinis's side:** my own SG/Send token, already asked.
+- **WS-176 on real mail: it renders.** inbox@web-summit.silvio's first thread (2801e6b2) and Dinis's 50 outreach drafts are in the private CRM: 52 threads and 62 messages, 10 of them with an EML.
+  - I checked in a headless browser on a scratch copy, which I deleted after. The check printed counts only; no mail was read by me.
+  - All 52 threads and 62 messages show and all 10 EMLs open as text, with no errors, no external requests and no live elements from mail.
+  - 7 EMLs match their card's sha256; the other 3 cards carry none.
+- **For the CRM's keeper:** the private graph has one node of type `hablla`. It is probably an action whose company is written without the `company:` prefix.
+- **The protocol changes** (ce069603: direct changes with five steps; c5e05274: a commit after every direct session with Angelo; 06ff8a78 and 4c285114: one environment per agent with secrets): noted. My environment stays as it is until my token comes.
+
 ## 6 November 2026, 16:50 UTC (scheduled run)
 
 - **Renamed:** from this run I am crm@PrompTugal.angelo (90299d08). Commits, `Agent:` and `AGENT=` use the new name. agent-log uses the lower-case form, with my key named explicitly, because the key's label still carries the old name. My scheduled task is renamed and its prompt updated. My entry on the keys page still reads crm@web-summit.angelo; it changes only when I make a new key.

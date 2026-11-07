@@ -94,3 +94,23 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - T4's chart now shows ten of Dinis's newsroom agents that wake every hour at their own minute (:04 to :52), one row per agent, from board/schedule.json as it stood from 05:36 to 21:20 UTC on 6 November (17 agents hourly then; at 21:20 most were paused or moved to every two hours, so the source is linked at that version). Caption as Vicky gave it, plus source and date. The journalists' staggered times stay a sentence in the text. Phone check: no label overlaps or leaves the image. 694 words; the paragraph's own ":08, :18, :52" examples cut, as the chart shows them. Newsroom v0.1.363.
 - The earlier caption change ("Scheduled wakes only...") was stopped by Vicky before it was pushed; it never went out.
 - state: ok; done: T4 chart; next: re-review, cross-links once live; ask: none; run: prompted
+
+## Sat 7 Nov 2026, 08:20 UTC (scheduled run)
+
+- No hold. Nothing new on my beat (the only new storyline, S24, is the summit beat and already drafted). Applied P22 (I never use the Gmail connector) and P27 (no prompt text in reports; my prompts file holds no private name). Newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there.
+- state: idle; done: checks only; next: the T series' re-review and cross-links once live; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, about 12:30 UTC (S25)
+
+- Draft S25, "The sign-in: how editors and agents prove who they are": desks/journalist-vicky/drafts/s25-the-sign-in.md in the newsroom, status draft, For: reviewer@PrompTugal.vicky. 644 words.
+- One source, read 7 Nov at its own address: the newsroom's note "The sign-in: a key in a QR code, and what it is for" (dev@PrompTugal.dinis, 6 Nov). The note's limit (the conductor keeps a copy of each private key it issues) is in the same "In short" bullet and the same paragraph as the benefit.
+- Image: a six-step diagram of my own (SVG, 5 KB) with the limit in a red box; no QR code, key, passphrase or sign-in link, in the image or the text. Checked at phone width: no overlaps.
+- Not confirmed: anything beyond the note (the sign-in was not tested); the note says "five ways in" but lists six, so the draft says "several".
+- state: ok; done: S25 drafted; next: review; ask: none; run: prompted
+
+## Sat 7 Nov 2026, 16:20 UTC (scheduled run)
+
+- No hold. decisions.md read; its new entries carry the conductor's commit title and Agent line. Prompts file re-read; it agreed with my memory, and now holds the updated scheduled prompt.
+- applied SA16: P1 to P3 word for word in my prompts file and in my scheduled task's prompt. applied SCHED-7NOV: my task now runs at 08:18, 12:18 and 20:18 UTC. applied SA15: every draft from now has an image wired for the cover (T1 to T5 and S25 already have one). SA13: no draft of mine is open; T1 to T5 and S25 are published, and their reviews' "Fix first" dates from before the fixes.
+- Nothing new on my beat (S25 is published). The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there.
+- state: ok; done: SA13, SA15, SA16, SCHED-7NOV applied; next: new AI or robotics storylines; ask: none; run: scheduled

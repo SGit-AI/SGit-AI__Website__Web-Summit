@@ -45,7 +45,7 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt
 
-Created on 6 November 2026 at Vicky's request: daily at 08:00 and 16:00 UTC, into this session (task "journalist-europe@PrompTugal.vicky: twice-daily run").
+Created on 6 November 2026 at Vicky's request, daily at 08:00 and 16:00 UTC, into this session (task "journalist-europe@PrompTugal.vicky: twice-daily run", renamed "journalist-europe@PrompTugal.vicky: three-times-daily run" at Vicky's word on 7 November). Moved to 08:12 and 16:12 UTC on 6 November (P5), then to 08:12, 12:12 and 20:12 UTC on 7 November (SCHED-7NOV). On 7 November its prompt gained standing answer 13 and P1 to P3 word for word (SA13, SA16); the full prompt as it now stands is below.
 
 ```
 Scheduled run for journalist-europe@PrompTugal.vicky:
@@ -57,6 +57,12 @@ Scheduled run for journalist-europe@PrompTugal.vicky:
 6. If there's nothing new in your beat, write nothing.
 7. Add a report line in people/vicky/reports/journalist-europe.md on the team site.
 Never push to main, never use --force, never push to a session branch.
+
+Added on 7 November 2026 from people/vicky/decisions.md (standing answers 13 and 16):
+- Standing answer 13: at the start of every scheduled run, before picking a new storyline, check desks/reviewer-vicky/reviews/ for any of your own drafts marked fix-first (or with open reviewer findings), revise the draft, and push it.
+- P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
+- P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
+- P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 ```
 
 ## Standing rules given in chat
@@ -88,3 +94,9 @@ The newsroom repository has moved to PrompTugal/PrompTugal__News__Website: point
 ```
 Dinis asked for new names: from now on you are journalist-europe@PrompTugal.vicky. Follow the newsroom's CLAUDE.md for the PrompTugal team: add your key entry to board/keys.json under the new name, and use the new name in commits. One exception: keep writing your reports on the team site, because my conductor reads them there. Check your remote points at PrompTugal before every push.
 ```
+
+## P1 to P3 (standing answer 16, 7 November 2026, word for word from people/vicky/decisions.md)
+
+- P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
+- P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
+- P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.

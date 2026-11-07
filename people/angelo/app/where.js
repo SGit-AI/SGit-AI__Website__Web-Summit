@@ -8,7 +8,7 @@
 (function (root) {
     'use strict'
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
-    const PLACES = ['Stand', 'Centre Stage', 'Hall 1', 'Hall 2', 'Hall 3', 'Hall 4', 'Press room', 'Venue', 'Hotel', 'In town', 'Off']
+    const PLACES = ['Stand', 'Centre Stage', 'Hall 1', 'Hall 2', 'Hall 3', 'Hall 4', 'Press room', 'MEO Arena', 'Pavilhão de Portugal', 'Oriente station', 'Vasco da Gama centre', 'Venue', 'Hotel', 'In town', 'Off']
     const NEXT = ['At the stand', 'A talk', 'A meeting', 'A collection', 'A break', 'Travelling']
     const UNTIL = [['30 min', 30], ['1 h', 60], ['2 h', 120], ['End of day', 'eod']]
     const UNDO_MS = 5000, SEND_MS = 450, FADE_H = 3, GONE_H = 12, ME = 'you'
@@ -100,7 +100,7 @@
     const AREA_OF = { 'Stand': 'osm-821643074', 'Hall 1': 'osm-821643074', 'Hall 2': 'osm-821643075', 'Hall 3': 'osm-821643076', 'Hall 4': 'osm-821643077', 'Centre Stage': 'osm-821784762', 'Venue': 'osm-821641463' }
     const PIN_KINDS = [['base', 'Our base'], ['meet', 'Meeting spot'], ['other', 'Other']]
     // mode: '' | 'me' (tap where you are) | 'pin' (tap where a new pin goes); fsMap: the map alone, full screen
-    let pinMode = false, meMode = false, fsMap = false, pending = null, pinKind = 'meet', pinLabel = '', vmLoading = null, vmFail = false, focusId = ''
+    let pinMode = false, meMode = false, exactMode = false, offerExact = false, fsMap = false, pending = null, pinKind = 'meet', pinLabel = '', vmLoading = null, vmFail = false, focusId = ''
     const OFFMAP = ['Hotel', 'In town', 'Off']
     const VM = () => root.AngeloVenueMap || null
     function venueMap() {
@@ -144,7 +144,7 @@
             const streets = M.streets.map(st => `<path class="vm-s" d="${st.d}"/>`).join('') + M.streets.map(st => `<text class="vm-sl" transform="translate(${st.at[0] - 12} ${st.at[1] + 30}) rotate(${st.angle})">${esc(st.short)}</text>`).join('')
             const pins = S.pins.map(x => { const [px, py] = toXY(f, x.lat, x.lng); return `<g class="vm-pin vm-p-${x.kind}${focusId && focusId !== x.id ? ' vm-dim' : ''}" data-aw-focus="${esc(x.id)}"><path d="M${px} ${py}l-13 -24a15 15 0 1 1 26 0z"/><circle cx="${px}" cy="${py - 34}" r="6" class="vm-dot"/><text class="vm-t vm-pl" x="${px}" y="${py + 24}">${esc(x.label)}</text></g>` }).join('')
             const ghost = pending ? (([px, py]) => `<circle class="vm-ghost" cx="${px}" cy="${py}" r="12"/>`)(toXY(f, pending.lat, pending.lng)) : ''
-            const placing = pinMode || meMode
+            const placing = pinMode || meMode || exactMode
             svg = `<div class="vm-wrap" style="margin:10px 0;border-radius:12px;overflow:hidden;background:#13263c${placing ? ';outline:3px dashed #f4c542;cursor:crosshair' : ''}${fsMap ? ';flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center' : ''}"><svg class="vm" style="display:block;width:100%;height:auto${fsMap ? ';max-height:100%' : ''}" viewBox="0 0 ${f.width} ${f.height}" role="img" aria-label="The venue: FIL and its pavilions, the MEO Arena, Pavilhão de Portugal, Oriente station and the Vasco da Gama centre, by the river, with the team on it" data-aw-map>
 <style>
 .vm-r{fill:#1e4a78;opacity:.55}.vm-rl{fill:#9cc3ea;font:600 22px/1 system-ui,sans-serif;text-anchor:middle;letter-spacing:.2em;opacity:.8}
@@ -160,29 +160,35 @@
 <path class="vm-r" d="${M.river}"/><text class="vm-rl" x="${f.width - 70}" y="${f.height / 2}" transform="rotate(-90 ${f.width - 70} ${f.height / 2})">Tagus (Tejo)</text>
 ${streets}${areas}${labels}${pins}${people.join('')}${ghost}</svg></div>`
         }
-        const hint = meMode ? 'Tap a building, or the spot where you are.' : pinMode ? (pending ? 'Name the pin.' : 'Tap where the pin goes.') : ''
+        const hint = exactMode ? 'Tap your exact spot. It is kept for this update only; your next update is a zone again.' : meMode ? 'Tap the building or the area you are in.' : pinMode ? (pending ? 'Name the pin.' : 'Tap where the pin goes.') : ''
         const fsStyle = fsMap ? ' style="position:fixed;inset:0;z-index:300;margin:0;border-radius:0;display:flex;flex-direction:column;overflow:auto;padding:12px 16px"' : ''
         return `<section class="cc-card aw-map"${fsStyle}><div class="aw-maph" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between"><h3 class="ak-h3">The venue map</h3><span style="display:flex;flex-wrap:wrap;gap:8px">
 <button type="button" class="ak-tog" data-aw-me aria-pressed="${meMode}">📍 I'm here</button><button type="button" class="ak-tog" data-aw-pin-add aria-pressed="${pinMode}">＋ Add a pin</button><button type="button" class="ak-tog" data-aw-fs aria-pressed="${fsMap}">${fsMap ? '✕ Close' : '⛶ Full screen'}</button></span></div>
 ${hint ? `<p class="note" style="margin:6px 0"><b>${hint}</b> <button type="button" class="aw-x" style="background:none;border:0;color:inherit;text-decoration:underline;cursor:pointer" data-aw-pin-cancel>Cancel</button></p>` : ''}
+${offerExact && !meMode && !exactMode ? `<p class="note" style="margin:4px 0">Set as a zone. <button type="button" class="ak-chip" data-aw-exact>📌 Pin my exact spot (this time only)</button></p>` : ''}
 ${meMode ? `<p class="note" style="margin:4px 0">Not at the venue? ${OFFMAP.map(o => `<button type="button" class="ak-chip" data-aw-place="${esc(o)}">${esc(o)}</button>`).join(' ')}</p>` : ''}
 ${M ? svg : vmFail ? '<p class="note">The map could not load (offline, and not stored yet).</p>' : '<p class="note">Drawing the map…</p>'}${form}${act}${elsewhere}
 ${fsMap ? '' : `<p class="note">A drawing of the venue, simplified from <a href="https://www.openstreetmap.org/#map=17/38.7700/-9.0960">OpenStreetMap</a> (map data © OpenStreetMap contributors, ODbL). Names on the map are where each of us said we are (you in gold); tap a building or a pin to pick it out. Pins: gold for a base, blue for a meeting spot. Only what you tap: the phone's location is never asked for.</p>`}</section>`
     }
     function mountMap() { }
     function mapClick(e) {
-        const svg = e.target.closest('svg[data-aw-map]'); if (!svg || !(pinMode || meMode)) return false
+        const svg = e.target.closest('svg[data-aw-map]'); if (!svg || !(pinMode || meMode || exactMode)) return false
         const M = VM(); if (!M) return false
         const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; const q = pt.matrixTransform(svg.getScreenCTM().inverse())
+        // zones by default, an exact spot only by a person's choice, each time (Angelo, 7 November, option C, 592d1096)
+        const nearest = () => M.areas.filter(a => a.kind !== 'site').map(a => [a, Math.hypot(a.c[0] - q.x, a.c[1] - q.y)]).sort((x, y) => x[1] - y[1])[0][0]
         if (meMode) {
-            // a building (not FIL's outline: its pavilions are what count) names the place; anywhere else, the spot itself,
-            // named after the nearest building
+            // a building (not FIL's outline: its pavilions are what count) names the place; anywhere else, the zone of the
+            // nearest building, with no coordinates
             const ar = e.target.closest('[data-aw-area]'), area = ar && ar.dataset.awArea !== 'FIL' ? ar.dataset.awArea : ''
-            meMode = false; picked = true
-            if (area) { setMine({ place: area, lat: null, lng: null }, true); return true }
-            const near = M.areas.filter(a => a.kind !== 'site').map(a => [a, Math.hypot(a.c[0] - q.x, a.c[1] - q.y)]).sort((x, y) => x[1] - y[1])[0][0]
-            const ll = toLL(M.frame, q.x, q.y)
-            setMine({ place: 'Near ' + near.label, lat: +ll.lat.toFixed(6), lng: +ll.lng.toFixed(6) }, true); return true
+            meMode = false; picked = true; offerExact = true
+            setMine({ place: area || 'Near ' + nearest().label, lat: null, lng: null }, true); return true
+        }
+        if (exactMode) {
+            // the deliberate second step: this update only carries the spot; the next "I'm here" is a zone again
+            const ll = toLL(M.frame, q.x, q.y), ar = e.target.closest('[data-aw-area]'), area = ar && ar.dataset.awArea !== 'FIL' ? ar.dataset.awArea : ''
+            exactMode = false; offerExact = false
+            setMine({ place: area || 'Near ' + nearest().label, lat: +ll.lat.toFixed(6), lng: +ll.lng.toFixed(6) }); return true
         }
         pending = toLL(M.frame, q.x, q.y); draw(); const i = view.querySelector('.aw-pinf input'); if (i) i.focus()
         return true
@@ -214,7 +220,7 @@ ${fsMap ? '' : `<p class="note">A drawing of the venue, simplified from <a href=
 ${mapSection(L)}
 <section class="cc-card aw-mine"><h3 class="ak-h3">Your line</h3>
 <p class="aw-now">${mine ? `<b>${esc(mine.place)}</b>${mine.next ? `, ${esc(mine.next.toLowerCase())}` : ''}${mine.until ? ` ${esc(untilText(mine.until))}` : ''} <span class="note">(${esc(ctx.ago(mine.at))})</span>` : 'Not set yet.'}${undo && Date.now() - undo.t < UNDO_MS && S.queue.some(x => x.at === undo.at) ? ` <button type="button" class="ak-chip" data-aw-undo>Undo</button>` : ''}</p>
-<p class="aw-step">1. Where are you? <span class="note">Tap <b>📍 I'm here</b> on the map, then the building or the spot.</span></p>
+<p class="aw-step">1. Where are you? <span class="note">Tap <b>📍 I'm here</b> on the map, then your building or area. An exact spot is a second step, only when you choose it.</span></p>
 ${picked ? `<p class="aw-step">2. What next? <span class="note">(optional)</span></p><div class="aw-grid aw-next" role="group" aria-label="What next">${NEXT.map(n => `<button type="button" class="aw-b" data-aw-next="${esc(n)}"${mine && mine.next === n ? ' aria-pressed="true"' : ''}>${esc(n)}</button>`).join('')}</div>
 <div class="aw-until" role="group" aria-label="Until">${UNTIL.map(([l, v]) => `<button type="button" class="ak-chip" data-aw-until="${v}">${esc(l)}</button>`).join('')}</div>
 <form class="aw-note"><input type="text" maxlength="80" placeholder="A short note (optional, 80 characters)" aria-label="A short note" value="${esc(mine && mine.note || '')}"><button type="submit" class="cc-btn">Add</button></form>` : ''}
@@ -243,16 +249,17 @@ ${picked ? `<p class="aw-step">2. What next? <span class="note">(optional)</span
         const fz = e.target.closest('[data-aw-focus]'); if (fz && view.contains(fz)) { focusId = focusId === fz.dataset.awFocus ? '' : fz.dataset.awFocus; return draw() }
         const b = e.target.closest('button'); if (!b || !view.contains(b)) return
         const d = b.dataset
-        if (d.awPlace !== undefined) { S.recent = [d.awPlace, ...S.recent.filter(p => p !== d.awPlace)].slice(0, 6); picked = true; meMode = false; return setMine({ place: d.awPlace, lat: null, lng: null }, true) }
+        if (d.awPlace !== undefined) { S.recent = [d.awPlace, ...S.recent.filter(p => p !== d.awPlace)].slice(0, 6); picked = true; meMode = false; exactMode = false; offerExact = false; return setMine({ place: d.awPlace, lat: null, lng: null }, true) }
         if (d.awNext !== undefined) return setMine({ next: d.awNext })
         if (d.awUntil !== undefined) { const u = d.awUntil === 'eod' ? 'eod' : new Date(Date.now() + +d.awUntil * 6e4).toISOString(); return setMine({ until: u }) }
         if ('awUndo' in d) { if (undo) S.queue = S.queue.filter(r => r.at !== undo.at); undo = null; picked = false; await save(); return draw() }
         if (d.awDone) { await add({ type: 'done', id: d.awDone, at: new Date().toISOString() }); return draw() }
         if ('awOffline' in d) { S.offline = !S.offline; await save(); return draw() }
-        if ('awPinAdd' in d) { pinMode = !pinMode; meMode = false; pending = null; return draw() }
-        if ('awMe' in d) { meMode = !meMode; pinMode = false; pending = null; return draw() }
+        if ('awPinAdd' in d) { pinMode = !pinMode; meMode = false; exactMode = false; offerExact = false; pending = null; return draw() }
+        if ('awExact' in d) { exactMode = true; meMode = false; pinMode = false; return draw() }
+        if ('awMe' in d) { meMode = !meMode; pinMode = false; exactMode = false; offerExact = false; pending = null; return draw() }
         if ('awFs' in d) { fsMap = !fsMap; document.body.style.overflow = fsMap ? 'hidden' : ''; return draw() }
-        if ('awPinCancel' in d) { pinMode = false; meMode = false; pending = null; pinLabel = ''; return draw() }
+        if ('awPinCancel' in d) { pinMode = false; meMode = false; exactMode = false; pending = null; pinLabel = ''; return draw() }
         if (d.awPinKind !== undefined) { pinKind = d.awPinKind; return draw() }
         if (d.awPinDel) { S.pins = S.pins.filter(x => x.id !== d.awPinDel); if (focusId === d.awPinDel) focusId = ''; await save(); return draw() }
         if ('awReset' in d) { await wipe(); S = null; undo = null; picked = false; sending = false; pinMode = false; pending = null; await load(); return draw() }
@@ -276,7 +283,7 @@ ${picked ? `<p class="aw-step">2. What next? <span class="note">(optional)</span
         if (!timer) {
             timer = setInterval(() => { if (!view || !view.isConnected) { clearInterval(timer); timer = null; return } tick(); if (undo && Date.now() - undo.t > UNDO_MS + 200 && Date.now() - undo.t < UNDO_MS + 1300) draw() }, 500)
         }
-        if (!wired) { wired = true; addEventListener('keydown', e => { if (e.key === 'Escape' && (fsMap || meMode || pinMode)) { fsMap = false; meMode = false; pinMode = false; pending = null; document.body.style.overflow = ''; draw() } }); setInterval(() => { if (view && view.isConnected && !sending) draw() }, 60000); addEventListener('online', draw); addEventListener('offline', draw) }
+        if (!wired) { wired = true; addEventListener('keydown', e => { if (e.key === 'Escape' && (fsMap || meMode || pinMode || exactMode)) { fsMap = false; meMode = false; pinMode = false; exactMode = false; pending = null; document.body.style.overflow = ''; draw() } }); setInterval(() => { if (view && view.isConnected && !sending) draw() }, 60000); addEventListener('online', draw); addEventListener('offline', draw) }
         if (!S) { v.innerHTML = '<p class="note">Opening the board kept on this device…</p>'; if (!loading) loading = load().then(draw); return }
         draw()
     }

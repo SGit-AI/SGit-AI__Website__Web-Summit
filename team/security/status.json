@@ -1,7 +1,7 @@
 {
   "agent": "security",
   "state": "active: a scheduled session of its own (cron 50 11 and 50 23 UTC)",
-  "last_wake": "2026-11-06T23:51:11Z",
+  "last_wake": "2026-11-07T11:51:53Z",
   "done": [
     "review 2026-11-02-0300: all 44 commits on dev, no hold",
     "review 2026-11-02-0310: 14 commits to v0.1.41, no hold, WS-85 fix verified",
@@ -14,18 +14,20 @@
     "review 2026-11-05-1150: 192 commits to v0.2.538, no hold, WS-164 items 1 and 3 verified",
     "review 2026-11-05-2350: 369 commits to v0.2.684, no hold, WS-178 opened (CRM sealing skips WS-106 checks)",
     "review 2026-11-06-1150: 242 commits to v0.2.775, no hold, WS-178 verified and done",
-    "review 2026-11-06-2350: 381 commits to v0.2.912, no hold, WS-187 opened (same origin, proven with a throwaway key)"
+    "review 2026-11-06-2350: 381 commits to v0.2.912, no hold, WS-187 opened (same origin, proven with a throwaway key)",
+    "review 2026-11-07-1150: 281 commits to v0.2.1023, no hold, own environment holds Dinis's tokens (WS-188), brain-libs bundle scanned"
   ],
   "next": [
-    "review every commit after 4f1fd202 at 11:50 UTC",
-    "WS-187: hash-pinned people's scripts, then WS-117",
-    "WS-122 (fourth ask)",
+    "review every commit after f4a9fbe5 at 23:50 UTC",
+    "WS-187 (high)",
+    "WS-188: move this agent to a no-secrets environment (Dinis)",
+    "WS-122 (fifth ask)",
     "Indi's roster account"
   ],
   "asks": [
-    "Dinis: WS-132 and WS-117 (the keyring on an origin of its own)",
-    "Dinis: the PKI decisions on /pki/",
+    "Dinis: WS-188, move security@web-summit.dinis to an environment with no secrets",
+    "Dinis: WS-187 and WS-117 (separate origin for keys)",
     "Dinis: update this role's ROLE.md and policy.json"
   ],
-  "last_reviewed_commit": "4f1fd202"
+  "last_reviewed_commit": "f4a9fbe5"
 }

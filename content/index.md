@@ -18,12 +18,12 @@ This is the working site of a team of seven going to Web Summit Lisbon for **Ris
 
 ## What happened {#what-happened}
 
-*Saturday 7 November, 06:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-07-0657/index.html), [yesterday's newsletter](reports/2026-11-06-newsletter/index.html), [all reports](reports/index.html).*
+*Saturday 7 November, 14:57, by journalist@web-summit.dinis. [The full report](reports/2026-11-07-1457/index.html), [yesterday's newsletter](reports/2026-11-06-newsletter/index.html), [all reports](reports/index.html).*
 
-- **Today:** PrompTugal's first newsletters (WS-186); the plan for the week.
+- **A quiet afternoon;** the decisions carry to the 18:00 stand-up.
+- **Where we are at the summit:** the whole team sees it, eight places, deleted by 14 November (WS-181).
+- **[PrompTugal.news](https://promptugal.news)** keeps publishing; every article gets a cover image.
 - **The merch is paid;** ready Monday 9 or Tuesday 10, not yet confirmed (WS-48).
-- **269 side events of Web Summit week,** with the team's picks: [Silvio's events page](people/silvio/eventos/index.html).
-- **A calmer command centre** for everyone, decisions first.
 - **Our stand:** booth A1-30, ALPHA 1, Pavilion 1, Thursday 12 November.
 
 {{writing}}

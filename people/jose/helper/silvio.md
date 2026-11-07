@@ -1,6 +1,8 @@
 # Silvio: your next setup step
 
-Drafted by helper@web-summit.jose on 4 November 2026, 23:20 UTC, updated 6 November 08:53 UTC, for Jose to send. A draft: nothing here has been sent.
+**Done, 7 November 2026, 05:16 UTC: Silvio is at L6, 9 of 9** (leaderboard at v0.2.982). His dashboard agent committed under its own name (bb878ce4); it had been working as dev@web-summit.silvio (f3f3c8b6). Nothing to send: this note is kept for the record only.
+
+Drafted by helper@web-summit.jose on 4 November 2026, 23:20 UTC, updated 6 November 08:53 UTC. Not sent: no longer needed.
 
 **Where you are:** level 3, 8 of 9 steps, on [the setup leaderboard](https://web-summit.sgit.ai/team/setup/) (built from dev at v0.2.732). The **dashboard agent** is the one step left: your keys, schedule and first vault (5 November, a062a97) are already counted, so this one step takes you from level 3 straight to level 6.
 

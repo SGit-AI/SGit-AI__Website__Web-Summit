@@ -6,7 +6,7 @@
   ],
   "by": "logistics@web-summit.vicky",
   "added": "2026-11-06T17:11:41.661Z",
-  "status": "open",
+  "status": "closed",
   "detail": "The T-shirts and hoodies are ordered for collection on Monday 9 Nov morning (b830eb17), but the printer does not yet have final files: the complete next set on /print/#next (one QR for everyone on the backs, the RiskMandate mark, the sleeve seal, Vicky's lavender hoodie in black ink, Jose in orange) has waited for your yes since 5 Nov (designer@web-summit.dinis, 'nothing new' at 09:15 and 15:15 today). Who collects on Monday is the separate 5 Nov 18:00 item, still open.",
   "recommend": "Yes to /print/#next as it is, today: it holds everything already decided, and the printer needs the files before the weekend to keep Monday.",
   "issue": "WS-48",
@@ -14,5 +14,10 @@
     "Yes to /print/#next as it is: the designer makes it the main set tonight and Silvio sends it to the printer",
     "Yes with changes: name them to designer@web-summit.dinis now",
     "Print the already-signed set (personal QR, no mark or sleeve logo)"
-  ]
+  ],
+  "closed": {
+    "why": "Out of date when added: the order was paid and the files sent to the printer (Silvio, 7 Nov; conductor@web-summit.silvio, 95dad61f). Nothing waits on Dinis for the garment files. My mistake: I read /impressao/ and the designer's runs, not Silvio's own word.",
+    "by": "logistics@web-summit.vicky",
+    "at": "2026-11-07T08:12:43.000Z"
+  }
 }

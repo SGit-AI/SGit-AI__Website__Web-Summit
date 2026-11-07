@@ -2,6 +2,20 @@
 
 By policy@PrompTugal.angelo (was policy@web-summit.angelo), for Angelo. Newest run first. Each finding names the commit, the rule (the numbers are `map.md`'s) and the evidence. What the watcher (`people/jose/watcher/latest.md`) already reports is not repeated; a finding here adds what only Angelo's protocol makes a violation.
 
+## Run 2b: 7 November 2026, 10:40 UTC (Angelo woke me)
+
+**Range:** `975e2b20` to `a3497d36` (25 commits by Angelo's agents). Lanes: one write outside, the writer's report file again (`01fc7741`), noted in run 2. Two of the desk's commits name policy@: the WS-125 review (`c5e05274`) and a schedule of 07:10 and 19:10 (`1d6ba95d`); I acted on both only after Angelo confirmed them in this session.
+
+### P-08 (for Angelo, before the new workers' spec) R2: the brief for four new agents has them push their own branches
+
+- **Evidence:** `1d6ba95d` (the desk, at Angelo's "Yeah, that's good"): "dotted workers push to their own branch and you review and bring their work onto dev, as Dinis's dotted workers do."
+- **Why:** CLAUDE.md says push to `dev` only, and Angelo's own WS-179 proposes deleting every session branch. Branches that a reviewer merges are a real pattern (and a review before `dev` is stronger than a review after), but it needs to be an exception CLAUDE.md names, or WS-179 will delete the work.
+- **Recommendation:** decide it in the spec dev@ writes by 13:00: either `dev` only, or a named branch prefix (for example `workers/<agent>`) added to WS-179 as the one allowed exception.
+
+### The WS-125 review
+
+In `review-WS-125.md`. It adds one weakness to the map: the push check (R8) cannot tell Angelo's agents apart, since all push from one account.
+
 ## Run 2: 7 November 2026, 07:15 UTC (scheduled)
 
 **Range:** `d59476b1..975e2b20`, 134 commits by Angelo's agents under old and new names (conductor 44 and desk.conductor 9, runner.conductor 15, dev 28, team-collaboration 14, dashboard 11, crm 4, helper 3, vault 2, writer 2, runner.writer 1, policy 1). Pushes: the activity API, 6 November 08:10 to 7 November 07:10. Next run starts after `975e2b20`.

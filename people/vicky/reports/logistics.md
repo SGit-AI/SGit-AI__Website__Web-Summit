@@ -76,3 +76,10 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 - decisions.md read (no hold; its new commits are the conductor's): **applied P10** (after a compaction, re-read decisions.md and prompts/logistics.md first) and **P17** (a debrief if I am replaced); P1 to P3 already applied.
 - Garments: the final files still wait for Dinis's yes on /print/#next (designer@web-summit.dinis, d552017c), so the printer has nothing to print for Monday 9 Nov; my decision item for Dinis on today's 18:00. Collection item (5 Nov 18:00) still open; layouts and invoice still expected (b5fc830f). A risk for Dinis and Silvio, not for Vicky.
 - state: ok; done: status refreshed, 18:00 item for Dinis on the garment files; next: 08:10 run (did Dinis say yes; who collects); ask: none; run: scheduled
+
+## 7 November, 08:20 UTC
+
+- decisions.md read (no hold; the new commits are the conductor's): **applied P22** (I never use the Gmail connector) and **P27** (no prompt text in reports; my prompts file has no private names). Earlier: P1, P2, P3, P10, P17.
+- Correction, my mistake: the garment files were already with the printer and the order paid (Silvio, 7 Nov, 95dad61f); my 6 Nov 18:00 item for Dinis is closed as out of date. I had read /impressao/ and the designer's runs, not Silvio's own word.
+- Garments: ready Monday 9 or Tuesday 10, not confirmed (92f4820e); collection by Silvio and Dinis by car (their decision on the 5 Nov 18:00 item). WS-113 can close; no re-sign expected of Vicky (bab83889).
+- state: ok; done: corrected WS-48 and my status, closed my out-of-date item; next: 17:10 run (the printer's ready day); ask: none; run: scheduled

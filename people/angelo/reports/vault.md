@@ -2,6 +2,40 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 7 November 2026, 12:15 UTC (prompted by Angelo: "Check your brief")
+
+- **The four hardening steps** (130fe1c4, Angelo's go):
+  1. **Token out of the vault clones: done** (10:35).
+  2. **Credentials through pipes, never files: done.** My lane credentials open into memory and pass to tools over a pipe. My only credentials file holds my public fingerprint and nothing secret.
+  3. **A passphrase on `~/.sg-send/keys`: blocked on an environment variable only Angelo can add**, `SG_SEND_PASSPHRASE`, in my agent's environment. It reaches this session at its next restart, and then I encrypt my keys in place and pass it to my tools.
+  4. **Never run `show-key` or `vault info` where it prints a key: kept,** and written into the changeset plan's review rules.
+- **The changeset's plan** for vault.kms@ (130fe1c4): `people/angelo/proposals/kms/changeset/PLAN.md`. Nine pieces in order, each with the files it touches in SHarness-AI__CLI (at 05e5290) and sgit (0.27.0) and the tests that prove it, plus the worker's rules and what I check in each review.
+- **WS-181 pins** (592d1096, "Agreed on C"): `vaults.md` now says zones by default, and an exact pin only by the person's choice each time, expiring, team-only, never public, never at a home or hotel.
+
+## 7 November 2026, 10:35 UTC (from the conductor, 66b37f04)
+
+- **token: not set in my environment** (checked, printed nothing). **Two copies on disk removed:** the `token` files sgit had kept in two of my vault clones (`.sg_vault/local/`). The inbox clone had none, the clones' `config.json` holds no token, and no other token file is in my home folder. This also answers open question 2 of 10:20.
+- The `unset` line in `~/.bashrc` and `~/.profile` was not added: auto mode refused it as persistence, and it is needed only when the token is set, which it is not.
+- Effect: those two clones cannot push until I have my own token, which the token rule asks anyway.
+
+## 7 November 2026, 10:20 UTC (prompted by Angelo: "Wake up")
+
+- **Asked:** a wake. **Done:** pulled dev, checked work for me, my token, my lane. Nothing new since 09:57. My lane holds only Jose's reply (verified 6 November). `ucvg2pkv` was audited clean at 09:50. No SG/Send token in my environment, and none issued to me yet.
+- **Open questions for Angelo, each with my recommendation:**
+  1. **The sealed QR** of `ucvg2pkv`'s vault key, for Dinis by 11 November, when it expires. *Hand it over this weekend.* Until the registry opens it, the only copy is in my session.
+  2. **Angelo's token in my three vault clones** (`.sg_vault/local/`): *go to remove them* (tier 3).
+  3. **sharness.kms** (`proposals/kms/spec-kms.md`): *after the summit, and the four small steps now.*
+  4. **WS-181's vaults** (`proposals/WS-181/vaults.md`): *go* on the split; readers of the private vault: *the whole team*; *delete it after the summit*.
+  5. **The live map's public view** (`proposals/live-map/`): *counted by day and 24 hours behind*; minutes in the team view only.
+  6. **My own SG/Send token:** still with Dinis (asked 5 November). Nothing for Angelo unless he wants to chase it.
+
+## 7 November 2026, 09:50 UTC (scheduled run)
+
+- **c7d26a01, my part of the two designs due 18:00:** the live map's "data and who may see it" (`people/angelo/proposals/live-map/data-and-who-may-see-it.md`): public-record events only, sealed file names reduced to a kind, never content, secrets or locations, and a public view by day with a lag. And the venues on PrompTugal.news (a section added to `WS-181/vaults.md`): team locations only in the team's view; a public place only by the person's own signed opt-in, kept in a replace-only file with an expiry, **never in a vault**, because a vault keeps the history.
+- **4c285114, sharness.kms:** research under way; the one-page analysis comes in its own commit.
+- **The token is gone from my environment** (option A, one environment per agent). Good, as I was not using it. **Left over:** sgit kept copies of Angelo's token inside my three vault clones (`.sg_vault/local/`). Removing them is tier 3 (tokens). I recommend removing them, at Angelo's go.
+- `ucvg2pkv`: clean. My lane: only Jose's reply, already verified. My own token: not issued.
+
 ## 6 November 2026, 21:50 UTC (scheduled run): now vault@PrompTugal.angelo
 
 - **Renamed** (90299d08): I commit as vault@PrompTugal.angelo from this run. My key on the keys page is still labelled with the old name.

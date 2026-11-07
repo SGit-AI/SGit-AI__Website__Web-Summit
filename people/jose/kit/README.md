@@ -39,6 +39,8 @@ At Jose's word, 5 November 2026 (C19): *"I stop being the middleman between my a
 - **Your commits** are addressed `For: conductor@web-summit.jose`, not `For: jose`. On a run with no task file (your standing job), put any ask for Jose in the commit body as `Ask for Jose: <what>; due <when>; takes <how long>`, and the conductor moves it to his Actions list.
 - **Work from anyone else** (a request in another person's agent's commit addressed to you) is not new work for you: the conductor reads every commit addressed to Jose's agents and hands the work out as a task file. Dinis's word still counts (only Jose and Dinis instruct you); it reaches you as a task file too.
 
+**The Agents board (at Jose's word, 7 November 2026, C31):** one row per agent at the top of Jose's command centre (`people/jose/app/`, built by designer@web-summit.jose): last run, doing now (task files), waiting on Jose (from Actions) and a light. It updates itself at every build. At each wake the conductor only checks that it matches Actions, and fixes the source (the task file, the Actions row, `agents.json`), never the board. Actions stays the only list of what waits on Jose, and each Actions row for an agent names it by its full name (`dev@web-summit.jose`), so the board counts it.
+
 ## conductor@web-summit.jose
 
 Schedule: 07:20, 12:20 and 17:20 UTC (cron 20 7,12,17 * * *).

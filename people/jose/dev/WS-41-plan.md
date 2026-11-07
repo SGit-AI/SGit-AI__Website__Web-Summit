@@ -1,13 +1,13 @@
 # WS-41: the pulse app, a one-page plan
 
-By `dev@web-summit.jose`, 4 November 2026, overnight, at Jose's word: **a plan only; nothing is built.** WS-41 is open and for angelo, jose and vicky; this is Jose's agent's proposal, not a pick-up. Read on `dev`: `board/WS-41-*.md`, `board/WS-07-*.md`, `content/start.md` ("The pulse"), `content/pulse.md`, `content/agents.md` (pulse@web-summit.dinis), `admin/build/build.mjs` (the `pulse` fence, `people/<id>/pages.mjs`), and every file in `people/*/pulse/`.
+By `dev@web-summit.jose`, 4 November 2026, overnight, at Jose's word: **a plan first; since then step 1 was tested (4 to 5 November) and step 2 built (7 November), at Jose's word, as the status sections below say.** WS-41 is open and for angelo, jose and vicky; this is Jose's agent's proposal, not a pick-up. Read on `dev`: `board/WS-41-*.md`, `board/WS-07-*.md`, `content/start.md` ("The pulse"), `content/pulse.md`, `content/agents.md` (pulse@web-summit.dinis), `admin/build/build.mjs` (the `pulse` fence, `people/<id>/pages.mjs`), and every file in `people/*/pulse/`.
 
-## Status, 4 November 2026 (23:42 UTC): step 1 started, at Jose's word
+## Status: step 1 started on 4 November 2026 (23:42 UTC), replaced by the daily interview on 5 November (C19); step 2 built on 7 November (C30)
 
 Jose: "go on step 1 only." WS-41 stays open on the board for Angelo, Jose and Vicky; this work is linked to it (`Issue: WS-41`), not a pick-up.
 
 - **Done:** the reminder line is in Jose's own conductor's prompts (`people/jose/kit/README.md`, conductor@web-summit.jose, both the start prompt and the scheduled-wake prompt, which re-reads the kit each wake), as the test. The same line, for every conductor, is proposed to conductor@web-summit.dinis in a commit `For: conductor@web-summit.dinis` (`people/jose/dev/WS-41-conductor-line.md`). No other person's conductor is changed.
-- **Held, until Jose says yes:** step 2 (`people/jose/pages.mjs`, the view) and step 3 (the answer page).
+- **Step 2 approved by Jose on 7 November (C30: *"step 2 (the pulse view) yes; step 3 (the answer page) after the summit"*) and built:** `people/jose/pages.mjs` and `people/jose/dev/pulse-view.mjs`, at https://web-summit.sgit.ai/people/jose/pulse/ , from his own pulse files only. **Step 3, the answer page, waits until after the summit.**
 - **Out for now:** way 3 (n8n messages). No numbers or addresses are collected.
 - **The measure:** `node people/jose/dev/pulse-count.mjs` (and `--person jose`), check-ins per day and slot from `people/*/pulse/` file names only. **Before**, on 4 November at 23:42 UTC:
 
@@ -27,6 +27,8 @@ That is 2 of the 54 slots of 3 and 4 November for 9 people, none on 4 November, 
 **After, 3 (6 November, 09:35 UTC, scheduled wake):** still 2 check-ins in total, no new pulse file for anyone since 23:42 on 4 November. Under the new way, Jose's first expected check-in is this evening's (from his daily interview); the next count is at 15:30.
 
 **After, 4 (6 November, 15:34 UTC, scheduled wake):** still 2 check-ins in total, no new pulse file for anyone. Jose's evening slot hasn't come yet; the first count that can show it is 7 November at 09:30.
+
+**After, 5 (7 November, 09:34 UTC, scheduled wake):** still 2 check-ins in total. **Jose's first interview-based evening pulse (6 November) did not come:** his conductor's brief 14 (`c421d53c`, 07:22) says *"Your daily interview: none came in last night"* and his Drive folder has had no new file since the morning of 6 November, so there was nothing to turn into a pulse. Not a fault in the measure. Team-wide, pulse@web-summit.dinis's 08:40 run (`2df42d66`) reports no check-ins since 3 November. Next count at 15:30.
 
 ## The problem, in numbers
 
@@ -68,4 +70,4 @@ A page built from `people/*/pulse/` at build time: a grid of people × days × s
 - **Angelo and Vicky** (WS-41 is also theirs): who picks it up, and whether Vicky's pm agent wants the view for WS-46.
 - **Each person's conductor:** its own append lane, for the answer page.
 - **Owners of `assets/me.js`:** the site nudge (way 2), if wanted.
-- **Jose:** a yes or no on step 2 (`people/jose/pages.mjs`, code the build runs) and step 3 (the answer page); way 3 is out (4 November). These asks go to conductor@web-summit.jose, not kept here (one door, at Jose's word, 5 November 2026, C19: what waits on Jose goes to conductor@web-summit.jose, which keeps the only list, the Actions section of his dashboard).
+- **Jose:** answered on 7 November (C30): step 2 yes (built), step 3 after the summit; way 3 is out (4 November).

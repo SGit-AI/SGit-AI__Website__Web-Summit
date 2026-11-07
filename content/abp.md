@@ -1,6 +1,6 @@
 ---
 title: "Agent Behaviour Policies: one for each of our agents"
-summary: An Agent Behaviour Policy (ABP) for every agent on the Web Summit 2026 team (79 pages), in RiskMandate's terms, in the explorer phase. With the scenarios where the policies caught something, and the study of the connectors.
+summary: An Agent Behaviour Policy (ABP) for every agent on the Web Summit 2026 team (87 pages), in RiskMandate's terms, in the explorer phase. With the scenarios where the policies caught something, and the study of the connectors.
 ---
 Kept by abp@web-summit.dinis. RiskMandate shown on ourselves: for every agent we run, its **Reach** (what it can actually do), its **Mandate** (what it was asked to do), the **Gap** between them, and the **Barrier** that really stands in the way, each labelled as a rule, a review or a technical control, with the evidence. The model: [Agent Behaviour Policy](https://riskmandate.ai/agent-behaviour-policy.html).
 
@@ -32,17 +32,23 @@ At Dinis's word, 6 November 2026: **the ABPs are in the explorer phase.** The te
 - [sgit@web-summit.dinis](sgit-web-summit-dinis/index.html)
 - [the PrompTugal team (nine agents @PrompTugal.dinis)](promptugal-team-promptugal-dinis/index.html)
 
-## Angelo's agents (11) {#angelo}
+## Angelo's agents (17) {#angelo}
 
 - [crm@PrompTugal.angelo](crm-promptugal-angelo/index.html)
 - [dashboard@PrompTugal.angelo](dashboard-promptugal-angelo/index.html)
 - [desk.conductor@PrompTugal.angelo](desk-conductor-promptugal-angelo/index.html)
+- [dev.links@PrompTugal.angelo](dev-links-promptugal-angelo/index.html)
+- [dev.map@PrompTugal.angelo](dev-map-promptugal-angelo/index.html)
+- [dev.venues@PrompTugal.angelo](dev-venues-promptugal-angelo/index.html)
 - [dev@PrompTugal.angelo](dev-promptugal-angelo/index.html)
 - [helper@PrompTugal.angelo](helper-promptugal-angelo/index.html)
 - [policy@PrompTugal.angelo](policy-promptugal-angelo/index.html)
+- [research@PrompTugal.angelo](research-promptugal-angelo/index.html)
 - [runner.conductor@PrompTugal.angelo](runner-conductor-promptugal-angelo/index.html)
 - [runner.writer@PrompTugal.angelo](runner-writer-promptugal-angelo/index.html)
+- [social-media@PrompTugal.angelo](social-media-promptugal-angelo/index.html)
 - [team-collaboration@PrompTugal.angelo](team-collaboration-promptugal-angelo/index.html)
+- [vault.kms@PrompTugal.angelo](vault-kms-promptugal-angelo/index.html)
 - [vault@PrompTugal.angelo](vault-promptugal-angelo/index.html)
 - [writer@PrompTugal.angelo](writer-promptugal-angelo/index.html)
 
@@ -75,10 +81,11 @@ At Dinis's word, 6 November 2026: **the ABPs are in the explorer phase.** The te
 - [vault@web-summit.jose](vault-web-summit-jose/index.html)
 - [watcher@web-summit.jose](watcher-web-summit-jose/index.html)
 
-## Silvio's agents (10) {#silvio}
+## Silvio's agents (11) {#silvio}
 
 - [conductor@web-summit.silvio](conductor-web-summit-silvio/index.html)
 - [crm@web-summit.silvio](crm-web-summit-silvio/index.html)
+- [dashboard@web-summit.silvio](dashboard-web-summit-silvio/index.html)
 - [design@web-summit.silvio](design-web-summit-silvio/index.html)
 - [dev@web-summit.silvio](dev-web-summit-silvio/index.html)
 - [inbox@web-summit.silvio](inbox-web-summit-silvio/index.html)
@@ -88,7 +95,7 @@ At Dinis's word, 6 November 2026: **the ABPs are in the explorer phase.** The te
 - [vault@web-summit.silvio](vault-web-summit-silvio/index.html)
 - [video@web-summit.silvio](video-web-summit-silvio/index.html)
 
-## Vicky's agents (19) {#vicky}
+## Vicky's agents (20) {#vicky}
 
 - [checker@PrompTugal.vicky](checker-promptugal-vicky/index.html)
 - [conductor@web-summit.vicky](conductor-web-summit-vicky/index.html)
@@ -97,6 +104,7 @@ At Dinis's word, 6 November 2026: **the ABPs are in the explorer phase.** The te
 - [designer@PrompTugal.vicky](designer-promptugal-vicky/index.html)
 - [dev@PrompTugal.vicky](dev-promptugal-vicky/index.html)
 - [dev@web-summit.vicky](dev-web-summit-vicky/index.html)
+- [inbox@web-summit.vicky](inbox-web-summit-vicky/index.html)
 - [journalist-ai@PrompTugal.vicky](journalist-ai-promptugal-vicky/index.html)
 - [journalist-connections@PrompTugal.vicky](journalist-connections-promptugal-vicky/index.html)
 - [journalist-europe@PrompTugal.vicky](journalist-europe-promptugal-vicky/index.html)

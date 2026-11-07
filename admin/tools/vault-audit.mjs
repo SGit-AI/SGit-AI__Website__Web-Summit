@@ -21,21 +21,25 @@ import { execFileSync } from 'child_process'
 import { createRequire } from 'module'
 const secrets = createRequire(import.meta.url)('../build/secrets.cjs')
 
+// an agent's name ends in a person on the roster (data/team.json), so a real address such as editor@promptugal.news is not one
+const PEOPLE = (() => { try { return new Set(JSON.parse(fs.readFileSync(new URL('../../data/team.json', import.meta.url), 'utf8')).members.map(m => m.id)) } catch { return new Set() } })()
+const agentName = m => { const d = /@(?:web-summit|promptugal)\.([a-z0-9-]+)$/i.exec(m); return !!d && PEOPLE.has(d[1].toLowerCase()) }
 const r = (c, n) => c.repeat(n)
 const RULES = [
     ...secrets.KEY_RULES.map(([re, what]) => [re, what]),
     // WS-122: <passphrase>:<vault id> with today's short ids (8 to 12 lowercase characters)
     [/(?<![A-Za-z0-9_-])[A-Za-z0-9]{20,40}:[a-z0-9]{8,12}(?![A-Za-z0-9_-])/, 'a vault key (passphrase:vault id)'],
     [/\b(append_token|delete_auth|access_token)\b["']?\s*[:=]\s*["']?[A-Za-z0-9_-]{16,}/i, 'a token assignment'],
-    [/[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}/, 'an email address', m => /@web-summit\.[a-z0-9-]+$|noreply@|@example\.(com|org)$/.test(m)],
+    // agent names are not addresses: <agent>@web-summit.<person>, and <role>@PrompTugal.<person> (programme@PrompTugal.vicky, 7 Nov)
+    [/[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}/, 'an email address', m => agentName(m) || /noreply@|@example\.(com|org)$/.test(m)],
     // bounded on both sides, so a run of hex (a read key, a hash) is never read as a number
     [/(?<![A-Za-z0-9_])(?:\+|00)\d{1,3}[\s.-]?\(?\d{2,4}\)?[\s.-]?\d{3,4}[\s.-]?\d{3,4}(?![A-Za-z0-9_])/, 'a phone number'],
 ]
 const hitsIn = line => RULES.filter(([re, , ok]) => { const m = re.exec(line); return m && !(ok && ok(m[0])) }).map(([, what]) => what)
 
 const SAMPLES = {
-    found: ['sgit_private_' + 'vault_Ab1x', r('a', 24) + ':' + 'ucvg2pkx', '-----BEGIN ' + 'PRIVATE KEY-----', 'ghp' + '_' + r('c', 36), 'append_token' + '": "' + r('f', 32), 'someone' + '@' + 'company.com', '+351 912 345 678'],
-    clean: ['sgit_public_read_' + r('0', 64) + ':ucvg2pkv', 'sgit_public_read_3fbcdfae' + '0015735922' + r('e', 46) + ':ucvg2pkv', 'sha256:' + '00351912345678' + 'ab', 'vault@web-summit.angelo', 'sha256:db7f79fdd87e030a', 'see https://sgit.ai/docs/credentials.md', '2026-11-03 18:00', 'no private-prefixed credential'],
+    found: ['editor' + '@promptugal.news', 'sgit_private_' + 'vault_Ab1x', r('a', 24) + ':' + 'ucvg2pkx', '-----BEGIN ' + 'PRIVATE KEY-----', 'ghp' + '_' + r('c', 36), 'append_token' + '": "' + r('f', 32), 'someone' + '@' + 'company.com', '+351 912 345 678'],
+    clean: ['sgit_public_read_' + r('0', 64) + ':ucvg2pkv', 'sgit_public_read_3fbcdfae' + '0015735922' + r('e', 46) + ':ucvg2pkv', 'sha256:' + '00351912345678' + 'ab', 'vault@web-summit.angelo', 'programme@PrompTugal.vicky', 'desk.conductor@PrompTugal.angelo', 'sha256:db7f79fdd87e030a', 'see https://sgit.ai/docs/credentials.md', '2026-11-03 18:00', 'no private-prefixed credential'],
 }
 function selfTest() {
     const errors = []

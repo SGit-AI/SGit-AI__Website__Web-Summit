@@ -6,7 +6,7 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 
 | Agent | Job | Prompt |
 |---|---|---|
-| conductor@web-summit.vicky | runs Vicky's agents, keeps her records, the 08:30 brief | [conductor.md](conductor.md) |
+| conductor@web-summit.vicky | runs Vicky's agents, keeps her records, the 09:30 brief | [conductor.md](conductor.md) |
 | dashboard@web-summit.vicky | Vicky's dashboard and the stories page | [dashboard.md](dashboard.md) (start prompt in the [kit](../kit/README.md#dashboardweb-summitvicky)) |
 | vault@web-summit.vicky | Vicky's vaults (on demand) | [vault.md](vault.md) |
 | dev@web-summit.vicky | replaced by dev@PrompTugal.vicky (6 Nov) | [kit: dev](../kit/README.md#devweb-summitvicky) |
@@ -25,7 +25,8 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 | reviewer@PrompTugal.vicky | checks drafts against sources, tidies style; publishes when Vicky asks | [reviewer.md](reviewer.md) |
 | checker@PrompTugal.vicky | fact-checks the articles Dinis's agents write | [checker.md](checker.md) |
 | scout@web-summit.vicky | learning notes and proposals from how Dinis's agents work (daily 22:00 UTC) | [scout.md](scout.md) |
+| inbox@web-summit.vicky | the only agent that touches Vicky's mailbox; never sends (on demand) | [inbox.md](inbox.md) |
 
 tools@web-summit.vicky was never started (Vicky, 3 November), so it has no prompt.
 
-Last updated: 6 November 2026, about 21:00 UTC (19 saved here, 1 in the kit, 0 not saved yet; dev.md is new; curator.md, reviewer.md and dashboard.md were updated for their new sessions and checked for anything that should not be public: nothing found).
+Last updated: 7 November 2026, about 11:20 UTC (20 saved here, 1 in the kit, 0 not saved yet; inbox.md is new and was checked for anything that should not be public: nothing found).

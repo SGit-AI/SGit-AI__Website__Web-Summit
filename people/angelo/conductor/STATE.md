@@ -28,16 +28,23 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 | Brief | To | Since | Due | Back when |
 |---|---|---|---|---|
-| sharness.kms: what building it would take (proposals/kms/) | vault@ | 6 Nov 20:15 | 7 Nov 09:50 run | report For: desk.conductor@ |
-| WS-180 back office: proposal for Dinis (the outline is in the brief's commit) | writer@ | 6 Nov 23:30 | 7 Nov 12:00 stand-up | draft in people/angelo/proposals/WS-180/, sent to conductor@web-summit.dinis |
+| sharness.kms: what building it would take: BACK (6d3ccd6, 7 Nov 09:56: after the summit, four small steps now) | vault@ | 6 Nov 20:15 | done | for the desk to show Angelo |
+| WS-180 back office: proposal for Dinis (the outline is in the brief's commit) | team-collaboration@ (moved from writer@, 7 Nov 15:55) | 6 Nov 23:30 | 7 Nov 12:00 stand-up | draft in people/angelo/proposals/WS-180/, sent to conductor@web-summit.dinis |
 | Context rules into every agent's prompt and the kit | dev@ | 6 Nov 23:30 | 7 Nov 18:00 | kit section; each agent adopts at its next run |
 | Accenture into data/companies.json (owner angelo), as the new protocol allows | crm@ | 6 Nov 23:30 | 7 Nov 08:50 run | the entry live |
-| inbox@PrompTugal.angelo: a design for Angelo's go (Silvio's inbox agent as template; mail to the private CRM through a sealed lane, no key in the inbox agent) | crm@ | 6 Nov 23:45 | 7 Nov 16:50 run | people/angelo/proposals/inbox/README.md |
-| WS-125 guide: section, byline, format | conductor@PrompTugal.dinis | 6 Nov 15:39 | open | runner.writer@ watches |
+| The agent setup guide (WS-125), reviewed: policy against the ABP model and the protocol, dev for accuracy and the interactive page | policy@, dev@ | 7 Nov 00:00 | 7 Nov 18:00 | findings For: desk.conductor@ (and PrompTugal's conductor, if changes are needed) |
+| inbox@PrompTugal.angelo: design BACK (e8eb75d, 7 Nov 08:54), waits on Angelo's go (tier 3) and P-07 | crm@ | 6 Nov 23:45 | done | people/angelo/proposals/inbox/README.md |
+| WS-125: interactive guide live at people/angelo/guide/ (aafbbb0), article corrected (2222782); dev@ to re-sync the fragment | dev@, writer@ | 7 Nov 09:51 | open | dev's report |
+| Android app spec (spec-android.md) | dev@ | 7 Nov 15:07 | 7 Nov 20:00 | report For: desk.conductor@ |
+| Live-map spec approved: build /team/map/ | dev@, dev.map@, writer@ | 7 Nov 15:08 | open | dev.map's report |
 | WS-181: designs page.md and vaults.md | Angelo | 6 Nov 22:40 | before Monday | his go, then security@web-summit.dinis |
 
 ## Open with Angelo (the desk's list)
 
+- team-collaboration@'s SG/Send token check (66b37f04) was refused by its session's permission guard: it needs Angelo to allow it, or to restart that session (7ddebc6).
+- vault@'s 12:14 report (5c1e5d3): SG_SEND_PASSPHRASE must be added to vault@'s environment by Angelo (hardening step 3); recommendation: add it and keep a copy in his password manager. Also: the sealed QR for Dinis by 11 Nov this weekend.
+- vault@'s 10:19 digest (557e322): six open questions with its recommendations; tier 3 among them: his token out of vault@'s three clones (ask on its own). The rest: the QR of ucvg2pkv's key for Dinis by 11 Nov, sharness.kms after the summit, WS-181's vault split, the live map's public view, vault@'s own token (Dinis).
+- inbox@PrompTugal.angelo (crm@'s design, e8eb75d): his go is tier 3, asked as two questions: (1) switch the three Gmail send tools off; (2) create its scheduled task with the Gmail connector. Settle P-07 (a stranger's email is a visitor's note) first. Read people/angelo/proposals/inbox/README.md.
 - Topics still to discuss: 10 SG/Send deep dive (with diagrams); 11 the PromptUGAL.news rebranding's changes to his workflows; 12 an editorial team of agents for articles.
 - From policy@PrompTugal.angelo's first audit (69146077, people/angelo/policy/findings.md): P-01 (a signed-only drain) and the write-path gate check proposed; P-02 settled (WS-179); P-04 confirmed by Angelo on 6 Nov.
 - How the desk talks with Angelo: one topic at a time, what was done, what waits on him with a recommendation, what others closed; propose before acting; a visual summary when he asks for an overview.
@@ -54,9 +61,34 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - P-07 (policy@, 7 Nov, findings.md): is an email from a stranger a visitor's note (read by no agent, only sealed to Angelo)? Needed before inbox@'s design (crm@ due 16:50 run); also P-05 (team-collaboration still pushes its session branch).
 
+## Workload (7 Nov 08:20 UTC, last 24 h; tokens = ledger, without cache reads; commits counted by subject name, so a floor)
+
+| Agent | Wakes | Commits | Open work | Waits on | Tokens | Recommend |
+|---|---|---|---|---|---|---|
+| dev | 12 (every 2 h) | 1+ | context rules into kit (due 18:00) | nothing | 4.77M (17 lines) | keep: the heaviest builder, busy with Replay and WS-181 |
+| team-collaboration | 11 | 2+ | 18:00 records none yet; P-05 branch push | Angelo's parking | 5.67M (14 lines) | slow down: highest tokens, the 07:40 note says the work has spread out; fewer inbox wakes (6/day) |
+| dashboard | 8 (every 3 h) | 0 by subject | none routed | Angelo's tapped-spots choice | 1.97M | keep, or every 6 h while Angelo's questions stay unanswered |
+| helper | 2 | 0 | none | no questions | 1.38M (3 lines) | keep (twice a day is already lean) |
+| vault | 2 | 0 | sharness.kms analysis (due 09:50) | Angelo's WS-181 go, own token (WS-170) | 0.60M | keep |
+| crm | 2 | 0 | Accenture entry (08:50), inbox@ design (16:50) | Dinis's tokens (WS-172) | 0.27M | keep |
+| policy | 1 (proposed daily 07:10) | 1 | P-07 for Angelo | Angelo | not yet measured | keep |
+| runner.conductor | 24 | 4 | none | nothing | 0.04M | keep |
+| desk.conductor | 0 (no schedule) | 0 | none | Angelo | 0.34M | keep: on demand |
+
+- Angelo's social media (7 Nov, his note: "there is nothing there yet and it's not great"): a topic to open with him; starting points: WS-126 (LinkedIn), people/angelo/profiles-proposal.md, his card; posting in his name is tier 3.
+
+- RiskMandate at the summit, Angelo's own view (7 Nov, to be confirmed in the coming days): "write cool articles about cool companies, get engagement on the Promptugal News digital newspaper, offer help and ideas, with the door open to paid consultancy for those who are interested." The paid-services question stays open for Dinis and Nimay; nothing about it in public until then.
+- Social media: LinkedIn, his personal profile to update, then posts; he follows the RiskMandate company page "but we should probably do more". Brief to writer@ (7 Nov). He posts himself (tier 3).
+- Pace (7 Nov): Angelo's yes to the desk's proposal (faster schedules; dev.map@, dev.venues@, research@) plus a social-media agent, social@PrompTugal.angelo, "to leave the writer to its articles".
+
+- Environments (Angelo, 7 Nov 12:35, "Agreed"): no existing session moves before the summit; a session cannot change environment, a move is a new session, a new key and resealing. vault@ and crm@ move once each when their tokens come (WS-170; Angelo asked Dinis 7 Nov 12:25), with vault@'s SG_SEND_PASSPHRASE then; new agents start in "PrompTugal.angelo shared".
+
+- WS-181 spec-venues.md Part B (dev@, 693e3d0): the public venue map on PrompTugal.news is for Angelo's review; dev@ recommends no person on the public map yet.
+- writer@'s question (aed0ae7): dev.verify flagged 9 of 12 claims in the published WS-125 guide as unsupported or contradicted (help-page checks, "nine people and dozens of agents", 70 active keys, dates); shall the writer correct them? Corrections to a piece he started are allowed by his publishing rule, unless a claim concerns a person or company.
+
 ## Waiting on others
 
-- Dinis: the three SG/Send tokens (WS-170); where his transcript extension is (WS-98); CLAUDE.md lines for WS-129 and WS-179.
+- Dinis: a line on the contributor ask and on another operator's agent publishing at the newsroom (writer@, 14:05); the three SG/Send tokens (WS-170); where his transcript extension is (WS-98); CLAUDE.md lines for WS-129 and WS-179.
 - conductor@web-summit.dinis: WS-150's deck patch (routed 5 Nov 15:48), WS-131's patch (5 Nov 00:38), the cockpit one-click patch, WS-45, WS-36, WS-78, WS-106 drafts.
 - security@web-summit.dinis: five questions on WS-181's vaults (vault@'s design); vault@ needs its own token (WS-170).
 - security@web-summit.dinis: the public visitor inbox design (WS-64, WS-119).
@@ -64,26 +96,23 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
-- 7 Nov 07:20: the runner: nothing to route; nothing urgent. policy@ run 2 (a071a51, `For: angelo`): P-07 for Angelo before inbox@ is built (a stranger's email is a visitor's note, R11; added to Open with Angelo), P-05 (team-collaboration still pushes its session branch, a policy matter), P-06 (low). Others' work, information only: dev@'s full-screen map fix under Silvio's calmer shell (7136d01), dashboard@silvio's two brains on the command centres of Silvio, Angelo and Jose (14f3f05, touches the shared engine, no change to Angelo's own apps), journalist@dinis's 06:57 report. No brief of Angelo's has come back.
+- 7 Nov 16:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session, which routed his 16:00 words: backlog style, people/angelo/backlog.md, no fixed times, dde62ce; the back-office proposal to team-collaboration@, 1ae6087). Back: dev@'s Android app spec (775f02b, for Angelo's review, due 20:00: native Kotlin and Compose, recommended); dev@ marked the live-map and venues specs approved (9765e7c) and reviewed dev.venues onto dev (71c5aeb); dashboard@'s two specs wait on Angelo's review (373b618); abp@dinis wrote ABPs for the six workers (3144482, For: angelo, policy@: gaps noted: private team locations, briefs on named people, LinkedIn drafts in his voice, the key-service changeset). Others' work, information only: Vicky's agents (SA16, SCHED-7NOV), Jose's dev@, mentor.
 
-- 7 Nov 06:21: the runner: nothing to route. Since 05:21 only dashboard@silvio's WS-189 (`For: conductor@web-summit.dinis`, dinis, dev@silvio: how the Summit desk writes to the private CRM, four questions, and six for the demo; nothing built): others' work, information only. No brief of Angelo's has come back.
+- 7 Nov 15:22: the runner: nothing to route; nothing urgent (Angelo is in the desk session, which routed his words from about 15:00: the live-map spec approved with /team/map/ replaced (c6fc444), an Android app spec for dev@ due 20:00 (f4e401e), and WS-181 Part B: PrompTugal.news as the one guide, the team layer private, built after security's review and vault@'s token (2254b43)). No report back from the agents since 14:21; others' work (journalist, designer, mentor) information only.
 
-- 7 Nov 05:21: the runner: nothing to route. Since 04:20 only others' work: Silvio's side (dev@silvio's calmer command centre for everyone, affects the shared engine: `For: dev@web-summit.angelo`, information only, Angelo's own views untouched; dashboard@silvio's own key after the name split; conductor@silvio asks Dinis for crm-silvio's token, WS-170), journalist@dinis's 04:57 report, sgit@dinis's WS-128 confirmation. dev@PrompTugal.angelo's no-news run (c736ba8). No brief of Angelo's has come back.
+- 7 Nov 14:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session, which routed his "All as recommended" on WS-181). Back: dev@ (693e3d0) wrote spec-venues.md: Part A approved, Part B (a public venue map on PrompTugal.news, no person on it) waits for Angelo's review; dev@ brought dev.links's first crawl (700 of 1,217 pages, no broken links) and dev.venues's STATE onto dev (live-map spec still due 18:00). runner.writer@ (aed0ae7, For: desk): the WS-125 guide is published and corrected; Angelo's contributor ask is in Dinis's next brief (no answer); dev.verify flagged 9 of 12 claims in the guide, and asks whether the writer answers them (added to Open with Angelo). Others' work, information only: mentor@dinis quiet, reviewer@vicky's S25.
 
-- 7 Nov 04:20: the runner: nothing to route. Since 03:21: team-collaboration recorded Silvio's merch decision (e866b75, For: desk: Silvio and Dinis collect on Monday 9 Nov; garment files still open: information only); Dinis's abp@ on account B (conductor.b@PrompTugal.dinis starts moved agents) and the first CRM mail; outreach@silvio's switch move. No brief of Angelo's has come back.
 
-- 7 Nov 03:21: the runner: nothing to route. Since 02:21 only others' work: Silvio's side (crm@ opened the private CRM key and asks for sgit and a token of its own, WS-172; conductor@silvio's "done for me" in the command centre; outreach@silvio's side-events page, 269 events), journalist@dinis's 02:57 report, dev's PrompTugal snapshot (nothing new). Information only; no brief of Angelo's has come back yet.
+- 7 Nov 13:20: the runner: nothing to route; nothing urgent (Angelo is in the desk session, which routed WS-181's approval, the environments and team-collaboration's schedule). Back: team-collaboration@ did the three changes (7ddebc6: inbox wakes twice a day, no commit on empty runs, dev only; its SG/Send token check was refused by its permission guard: needs Angelo to allow it or restart that session, added to Open with Angelo); crm@ (92204d8): no token in its environment, hablla fix checked, nothing owned by angelo. writer@'s LinkedIn drafts (WS-126) continue; dev@ added the six agents to agents.json and the kit (a9ec481). Others' work, information only: Vicky's, Dinis's and Jose's agents.
 
-- 7 Nov 02:20: the runner: nothing to route. Since 01:20 only Silvio's side: outreach@silvio's world 1 research (7af0a78, 29c060d: Booking.com, Amex GBT and more, For: newsroom@dinis) and conductor@silvio's merch note (95dad61: paid, files with the printer, pickup Monday). Information only; no brief of Angelo's has come back yet.
+- 7 Nov 12:20: the runner: nothing to route; nothing urgent (Angelo is in the desk session, which routed his 12:15 words: no stand-up, publishing already allowed by Dinis, hablla link to Dinis's conductor and crm, WS-180 go to writer@). Back: vault@'s report (5c1e5d3, For: desk): hardening steps 1, 2, 4 done, step 3 blocked on SG_SEND_PASSPHRASE in its environment (only Angelo can add it: added to Open with Angelo); the kms changeset PLAN (nine pieces); WS-181 zones by default. dev@ re-synced the WS-125 guide (c5814ae) and approved the six-agent spec (645d429, 7155904). Others' work, information only: Vicky's standing answers 16 and 17, Jose's Agents board, abp@dinis, security@dinis (WS-187, WS-188).
 
-- 7 Nov 01:20: the runner: nothing to route. dashboard and dev raise the tapped-spots question for Angelo (added to Open with Angelo; demo only, nothing exposed). Others' work, information only: Silvio's conductor and video (clean videos vault WS-174, merch pickup Monday, private CRM key sealed to his agents), inbox@silvio's first CRM run, Dinis's lanes re-issued, WS-188 reports. team-collaboration's ledger line.
+- 7 Nov 11:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session; the desk already briefed and routed his answers). Since 10:21: Angelo's three answers on P-08, P-07 and WS-125's fixes (97eaa94, 01aa9ac), the four hardening steps (130fe1c), zones by default for WS-181 (592d109, dev 4dead81), his words that agents publish what he started and newsroom changes go direct (e145647, now in the protocol). Back: writer@'s interactive WS-125 guide live (aafbbb0, 2222782: asks dev@ to re-sync the fragment) and LinkedIn drafts for Angelo (8d280f5, WS-126: his to read, he posts himself); dev@'s five-agent spec (7c99981); every agent's token check done by those that ran (vault, dashboard, helper: "token: not set"). Others' work, information only: Vicky's agents (inbox@vicky, schedules, covers rule), journalist@dinis.
 
-- 7 Nov 00:20: the runner: nothing to route. Since 23:20: dev reworked the map's playback in four steps at Angelo's words (one map on Team and the machine, agents arriving and gathering round their person: reports to the desk, information only); dashboard's venue map (names on the map, stylised drawing, full screen); writer published WS-125 on PrompTugal.news and reports it (6885f0c); the desk's own briefs to writer, dev and crm (d300e38, ea7f277). Dinis's WS-188 (abp@) and security's WS-187 review: others' work, information only.
+- 7 Nov 10:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session: "Wake up" at 10:19, the agents answered with direct-session reports). Back: vault@'s sharness.kms (6d3ccd6: after the summit, four small steps now) and live-map/venues analysis (81bb8ec); vault@'s six open questions (557e322), of which one is tier 3 for Angelo (remove his token from vault@'s three clones: added to Open with Angelo). crm@'s inbox agent built at his go (6bbb671) and crm now every 3 h (d53e0f4); crm@'s hablla finding (a0906f0) is for Dinis's conductor and crm, unanswered. Faster schedules, specs-before-builds and dev.links brief are the desk's own. Others' work, information only: checker@vicky, mentor, dev@jose.
 
-- 6 Nov 23:20: the runner: nothing to route. dashboard applied Angelo's Where request (5d7749e: fixed button order, a venue map with pins; pins live in the browser until WS-181's vault; touched dev's where.js and said so, `For: dev`): information only. dev's ledger line for Replay's map mode; runner.writer's first STATE (WS-125 not yet visible in the newsroom).
+- 7 Nov 09:21: the runner: two briefs back, nothing to route. crm@ delivered the inbox@ design (e8eb75d, people/angelo/proposals/inbox/README.md, ahead of its 16:50 due): Angelo's go is tier 3 (the three Gmail send tools off, the scheduled task created with the Gmail connector), added to Open with Angelo; P-07 comes first. dev@ reviewed the WS-125 guide (d23e255, review-dev.md): accurate on sources, seven corrections already routed `For: writer`, policy@ and Dinis's conductor; policy@'s half still out (due 18:00). Others' work, information only: Silvio's dashboard agent at L6, vault-audit fix, journalist 08:57, designer's /print/.
 
-- 6 Nov 22:21: the runner: nothing to route. vault@PrompTugal.angelo verified Jose's WS-120 reply (lane works both ways) and drafted WS-181's vault design (people/angelo/proposals/WS-181/vaults.md: three choices for Angelo, five questions for security@; nothing built; needs its own token, WS-170); team-collaboration and dashboard put the new name in their keys entries (646aec0, b45df3a): information only. The rest is Vicky's side (P26/P27 accepted, reports).
+- 7 Nov 08:20: the runner: nothing to route; nothing urgent. Since 07:20 only reports and others' work: team-collaboration's 07:40 daily note (9dd5c3e, For: desk: parking open, decisions wait on Dinis, no 18:00 records), dev's Replay map mode (1b8683d, For: Angelo, WS-97), Vicky's and Silvio's agents. No brief of Angelo's has come back. Workload table written (above).
 
-- 6 Nov 21:20: the runner: nothing to route. dev applied Angelo's 20:00 answer (08651d0: its keys entry carries the new name, same key) and finished the maps patch (23d31aa, d210bcf: inventory counts every team's agents, kind rings on Angelo's map): reports, information only. The rest is Vicky's side (curator, journalists, reviewer, pm: WS-31 dropped at Vicky's word) and Silvio's Front Page (WS-177).
-
-last_run: 2026-11-07T07:20:00Z (the runner)
+last_run: 2026-11-07T16:21:16Z (the runner)

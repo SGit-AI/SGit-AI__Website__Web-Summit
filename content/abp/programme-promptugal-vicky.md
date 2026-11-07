@@ -30,6 +30,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: c
 - Rewrite history on `dev`: `dev` is not protected (`main` is, since 6 November) (GitHub branches API, 2 November; still at 08:15 on 3 November).
 - Anything its session's other connectors can do: not known to this ABP.
 
+- **A written exception to its audit** (ae428805, at Vicky's word, 7 November): when the vault audit's only finding is the ruled-out line carrying this desk's own agent name, and nothing else, the vault is pushed. One known false positive, named, scoped, and recorded in the prompts file it re-reads each run: an escape valve, not an override.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -58,6 +60,6 @@ Open questions: its connectors; who reviews its output each day; whether Vicky h
 
 ## Provenance {#provenance}
 
-Owner: Vicky. Drafted by abp@web-summit.dinis from the repository; Vicky and the agent correct it. Version 2, 6 November 2026 (12:10 wake: renamed), in `content/abp/` with its history in git.
+Owner: Vicky. Drafted by abp@web-summit.dinis from the repository; Vicky and the agent correct it. Version 3, 7 November 2026 (12:10 wake: a written exception; 12:10 wake: renamed), in `content/abp/` with its history in git.
 
 **Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

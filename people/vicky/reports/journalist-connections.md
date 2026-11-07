@@ -47,3 +47,14 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 ## Fri 6 Nov 2026, 16:27 UTC (scheduled run)
 
 - state: idle
+
+## Sat 7 Nov 2026, 08:30 UTC (scheduled run)
+
+- Applied P22 (Gmail never used) and P27 (no prompt text in reports; prompts file holds no private names).
+- state: idle
+
+## Sat 7 Nov 2026, 16:30 UTC (scheduled run)
+
+- Applied SA13 (no draft of mine is fix-first: S16, S18 and S19 Ready, S23 Dropped), SA15 (an image, wired as the card cover, from my next draft), SA16 (P1 to P3 word for word in my prompts file and in my scheduled task's prompt), SCHED-7NOV (my task now runs at 08:24, 12:24 and 20:24 UTC; the 16:24 run is gone after today), P10 (after a compaction I re-read decisions.md and my prompts file first) and P17 (a debrief in people/vicky/debriefs/ if I am replaced).
+- P2: prompts file and memory agree. No hold. No new Connections storyline (S25 is AI and robotics).
+- state: ok; done: SA13, SA15, SA16, SCHED-7NOV, P10 and P17 applied; scheduled prompt changed (SA13 and P1 to P3 added); next: next Connections storyline from the curator; ask: none; run: scheduled

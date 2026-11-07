@@ -1,0 +1,193 @@
+{
+  "number": 6,
+  "date": "7 November 2026",
+  "kicker": "Web Summit 2026 · Vicky's conductor brief",
+  "title": "Saturday: 18 articles live, the team series out, and two rules your agents cannot check",
+  "when": "7 November 2026, 08:45 UTC (the daily brief; since brief 5, 6 Nov 08:45 UTC)",
+  "by": "conductor@web-summit.vicky",
+  "headline": "Every scheduled run since yesterday happened, and every change of yours went live. Your desks now have 18 articles on promptugal.news, among them all five parts of journalist-ai's series on how the team's agents work (T1 at 22:13, T2 to T5 at 22:50). No URGENT line, no hold, no Gmail use reported, and decisions.md was changed only by me. Three things need your word: two agents cannot check decisions.md's guard as written, the programme desk cannot push the shortlist vault because the audit tool misreads the new names, and P9 is back, so P11 is yours to raise.",
+  "stats": [
+    {"n": "18", "label": "articles from your desks live (13 by Friday 17:29, then the five-part series)"},
+    {"n": "0", "label": "scheduled runs missed since yesterday's brief"},
+    {"n": "4 of 16", "label": "updates still waiting for some agents (P10, P17, P22, P27); 12 confirmed by all and removed"},
+    {"n": "429", "label": "API-equivalent dollars used so far by your 15 scheduled sessions (not money)"}
+  ],
+  "for_you": [
+    {
+      "id": 1,
+      "ask": "decisions.md's guard: make it something your agents can check",
+      "detail": "The guard says to follow only entries committed from your account (riskmandate-vicky). The checker (6 Nov 18:15) and the programme desk (today 08:15) both report they cannot check that: every commit shows the author \"Claude\", and all your agents push from your account. Both still follow the file; the programme desk flags it each run.",
+      "options": [
+        "Reword the guard: follow only entries in commits whose title starts \"conductor@web-summit.vicky:\" with the line \"Agent: conductor@web-summit.vicky\"; an entry about keys, vaults or publishing also needs your words quoted with their time. Say \"reword the guard\" in this session.",
+        "Signed commits: I sign each edit with my session key (already public) and agents check the signature; stronger, but every agent needs a new step. After the summit.",
+        "Leave it as it is; the agents keep flagging it"
+      ],
+      "recommend": "The first now, the second after the summit. It is the check I already run each brief, written so your agents can run it too."
+    },
+    {
+      "id": 2,
+      "ask": "The programme desk: may it push the shortlist vault?",
+      "detail": "Since the rename, the vault audit tool (admin/tools/vault-audit.mjs, Dinis's sgit agent's tool) reads the new agent names like programme@PrompTugal.vicky as email addresses, so the shortlist vault's audit can no longer come back clean, and the desk does not push (programme, 08:15). The agenda itself is live: 222 items.",
+      "options": [
+        "Yes, when the audit's only finding is the agent-name line: open the programme session and say \"Push the shortlist vault when the only audit finding is the PrompTugal name line; record it in AUDIT.md.\" I tell the tool's owner in a commit (standing answer 5).",
+        "Hold the shortlist until the tool is fixed (the shortlist on your side stays as it was at the last clean push)"
+      ],
+      "recommend": "The first: the finding is a false alarm with a known cause, and every other check still runs."
+    },
+    {
+      "id": 3,
+      "ask": "P11: the hooks check is back. Raise it with Dinis?",
+      "detail": "P9's result: the newsroom's behaviour-policy hooks are active in your reviewer's new session, which starts from the newsroom repository (it saw the \"ABP ... re-anchored\" text). The other desks, which start from the team site, report no hooks. The new curator also starts from the newsroom repository and had not re-run the check. P11 is to ask Dinis that his hooks recognise your agents and print \"Vicky instructs her agents\" for them; dev@PrompTugal.vicky's request to abp@ for a wider grant (6 Nov 19:26) is still open.",
+      "options": [
+        "Raise it at today's 12:00 stand-up, with the reviewer's result and dev's open request",
+        "After the summit, with the other proposals on hold"
+      ],
+      "recommend": "The first: your reviewer is the agent that publishes, and Dinis's policy text now loads in its session."
+    }
+  ],
+  "you_asked": [
+    {"at": "6 Nov, evening", "said": "Run the hand-over checklist (P18) for dashboard, reviewer and curator; flag any commit from the old sessions (P19)", "done": "All three clean: notes, new keys by the new sessions, old keys superseded, one task per role at the same times, no old-session commit after its hand-over", "where": "commit 4fae1ebd", "status": "done"},
+    {"at": "6 Nov, evening", "said": "Track journalist-ai's five-part series: drafted, reviewed, live", "done": "All five live; see the series table", "where": "newsroom commits of 6 Nov 22:13 and 22:50", "status": "done"},
+    {"at": "6 Nov, night", "said": "P26: the agent section as one table, missed runs and problems first", "done": "Below, from this brief on", "where": "commit 2d9bc363", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "The runs: yesterday and today (✓ ran and reported, ○ ran with nothing to do, ✗ failed or blocked, · no report)",
+      "table": {
+        "head": ["Agent", "Fri 6 Nov", "Sat 7 Nov, to 08:45"],
+        "rows": [
+          ["researcher", "07:30 ✓ · 11:30 ✓ · 15:30 ○ · 19:30 ✓", "07:30 ○"],
+          ["pm", "07:40 ✓ · 17:40 ✓ (partial)", "07:40 ✓"],
+          ["curator", "07:45 ✓ · 11:45 ✓ · 15:45 ○ · 19:45 ✓", "07:45 ✓"],
+          ["dashboard", "07:50 ✓ · 17:45 ✓", "07:50 ✓"],
+          ["logistics", "08:10 ✓ · 17:10 ✓", "08:10 ✓"],
+          ["programme", "08:15 ✓", "08:15 ✓"],
+          ["conductor", "08:30 ✓ · 17:50 ✓", "08:30 ✓ (this brief)"],
+          ["journalist", "16:00 ○", "08:00 ✓"],
+          ["journalist-portugal", "16:06 ✓", "08:06 ○"],
+          ["journalist-europe", "16:12 ○", "08:12 ○"],
+          ["journalist-ai", "16:18 ○", "08:18 ○"],
+          ["journalist-connections", "16:24 ✓", "08:24 ○"],
+          ["reviewer", "16:48 ✓", "08:48 (after this brief)"],
+          ["checker", "17:48 ✓", "09:48 (after this brief)"],
+          ["scout", "22:00 ✓", "22:00 (tonight)"]
+        ]
+      }
+    },
+    {
+      "title": "Your agents: problems first",
+      "table": {
+        "head": ["Agent", "Runs", "What it did", "Problem"],
+        "rows": [
+          ["programme", "yes", "Agenda from 7 Nov live, 222 items", "Shortlist vault not pushed: the audit tool reads the new names as emails (ask 2); flags the guard (ask 1)"],
+          ["checker", "yes", "Checked 10 of 20 articles by Dinis's agents, findings sent", "Cannot check the guard (ask 1); Dinis's articles still print sources as text"],
+          ["curator", "yes", "New session (Sonnet) from 20:32; S14, S21, S23 dropped as duplicates; README fixed", "promptugal.news blocked from its container; newsroom remote reverted to the old address twice, reset before any push"],
+          ["journalist", "yes", "S24, driving to Web Summit: road closures and drop-off points (08:04)", "6 Nov 11:15: pushed once to the old SGit-AI address (GitHub redirected it); Lisbon's traffic page answered 403"],
+          ["journalist-ai", "yes", "The five-part team series, all live; T4's chart redrawn", "Remote on the old address at three runs (reset); cross-links between the parts still to add"],
+          ["journalist-portugal, journalist-europe, journalist-connections", "yes", "S22 and S23 drafted yesterday; idle this morning", "Remote reverted after restarts, reset each time (standing answer 3)"],
+          ["dev", "on demand", "Sources clickable on every article; /how-we-publish/ live and published; ABP grant request to abp@", "The current grant covers desks/ only, so its site changes show as outside Dinis's policy until abp@ answers"],
+          ["reviewer", "yes", "New session (Opus); T1 to T5 reviewed and published at your word", "Newsroom hooks active in its session (ask 3)"],
+          ["researcher", "yes", "2 captures (road closures; the summit), idle at 07:30", "The Coimbra story was not at its source"],
+          ["pm", "yes", "Board health; WS-31 closed as not needed", "none"],
+          ["dashboard", "yes", "New session (Sonnet) from 19:06; tables rebuilt", "none"],
+          ["logistics", "yes", "Garment files were already with the printer and paid; its 18:00 item for Dinis closed", "none"],
+          ["scout", "yes", "Note 05 (the inbox agent) and note 06 (status and run reports)", "none"],
+          ["designer, vault", "not scheduled", "Paused; on demand", "none"]
+        ]
+      }
+    },
+    {
+      "title": "Your agents' questions, in one list",
+      "items": [
+        "programme (08:15): may it push the shortlist vault while the audit's only finding is the name line? Recommends yes. Ask 2.",
+        "checker (6 Nov 18:15) and programme (08:15): the guard names your account, which they cannot check; recommend naming a check they can make. Ask 1.",
+        "curator (07:45): can promptugal.news be allowed for its session, so team stories can be sourced from published pages? Recommends yes. It is a network setting in the environment your curator runs in, which only you can change.",
+        "scout (6 Nov 21:55): will you turn off Gmail sending for the account (its P21)? Recommends yes. You accepted P22 (no agent uses Gmail), not P21.",
+        "checker (note): journalist-connections' and journalist-ai's two old session branches in the newsroom repository (claude/serene-keller-r1pzfc, claude/sweet-heisenberg-m1vm71) are yours to delete or keep. Both are already in dev; nothing is lost either way."
+      ]
+    },
+    {
+      "title": "PrompTugal.news: your desks' articles",
+      "items": [
+        "Live: 18. 8 published 6 Nov 00:09 by Dinis's journalist; S16, S19, S20, WS177 at 11:07; S22 at 17:29; T1 at 22:13; T2 to T5 at 22:50 (the last ten by your reviewer, at your word).",
+        "Ready but not published: none. Drafted and waiting for review: S24 (driving to Web Summit), at the reviewer's 08:48 run.",
+        "Dropped as duplicates: S14, S21, S23. S12 was never drafted."
+      ]
+    },
+    {
+      "title": "The team series (journalist-ai)",
+      "table": {
+        "head": ["Part", "Title", "State"],
+        "rows": [
+          ["T1", "Angelo's communication graph: watch our agents talk", "live 6 Nov 22:13 (promptugal.news/articles/angelos-communication-graph.html)"],
+          ["T2", "Who does the work: six people and their 93 agents", "live 22:50 (who-does-the-work.html)"],
+          ["T3", "How our agents talk: commits, inboxes and signed keys", "live 22:50 (how-the-agents-talk.html)"],
+          ["T4", "Many agents, one newsroom: how they avoid collisions", "live 22:50 (how-agents-avoid-collisions.html); chart redrawn after"],
+          ["T5", "Three mistakes our agents made, and the rules they left", "live 22:50 (mistakes-we-made.html)"]
+        ]
+      }
+    },
+    {
+      "title": "Updates for agents: who has confirmed",
+      "items": [
+        "Confirmed by everyone and removed from decisions.md: P1, P2, P3, P5, P9, and my P4, P6, P8, P16, P18, P19, P26.",
+        "P10 (re-read after a compaction): waiting for journalist-europe, journalist-connections, vault, designer, dev.",
+        "P17 (hand-over notes): waiting for journalist-ai, journalist-europe, journalist-portugal, journalist-connections, reviewer, checker, vault, designer, dev.",
+        "P22 (no Gmail): waiting for reviewer, checker, vault, designer, dev. The programme desk 'noted' P10, P17, P22 and P27; I count that as confirmed.",
+        "P27 (no prompt text in reports): waiting for reviewer, checker, scout, vault, designer, dev.",
+        "Vault, designer and dev run only when you open them, so their confirmations come when you next wake them."
+      ]
+    },
+    {
+      "title": "Usage, once a day (API-equivalent dollars, not money; never used to stop an agent)",
+      "table": {
+        "head": ["Agent", "Model", "Dollars", "Output tokens", "Context used"],
+        "rows": [
+          ["conductor", "Opus", "130.72", "519,449", "577k of 1M"],
+          ["pm", "Opus", "66.98", "178,901", "523k"],
+          ["journalist-ai", "Opus", "27.65", "155,017", "468k"],
+          ["programme", "Opus", "31.09", "142,862", "454k"],
+          ["journalist", "Opus", "23.93", "127,028", "436k"],
+          ["researcher", "Opus", "33.07", "125,787", "375k"],
+          ["checker", "Opus", "18.03", "92,142", "374k"],
+          ["logistics", "Opus", "32.22", "87,452", "360k"],
+          ["scout", "Opus", "11.76", "90,433", "333k"],
+          ["reviewer (new 6 Nov)", "Opus", "15.26", "135,779", "320k"],
+          ["journalist-connections", "Opus", "13.03", "67,867", "294k"],
+          ["journalist-portugal", "Opus", "11.03", "62,157", "271k"],
+          ["dashboard (new 6 Nov)", "Sonnet", "3.05", "45,691", "228k"],
+          ["journalist-europe", "Opus", "8.52", "39,808", "221k"],
+          ["curator (new 6 Nov)", "Sonnet", "2.53", "32,774", "191k"]
+        ]
+      }
+    },
+    {
+      "title": "Checks",
+      "items": [
+        "For vault@: nothing waiting. Its last commit was 6 Nov 10:27; nothing addressed to it since needs it, and none of yesterday's new keys needs a vault key sealed to it (the curator reads the research vault with its public read key). The old dev key is marked retired (6 Nov 19:01).",
+        "decisions.md: 12 commits since brief 5, all mine. No hold. Inbox lane empty.",
+        "Gmail (P22): no agent reports using it, and no mailbox content in any report or commit I can see. I cannot see other sessions' tool use, only what they write.",
+        "Schedule: the account's 17 tasks match schedule.json, times and task ids; the old tasks of the three replaced sessions are gone.",
+        "Keys: every new entry for your agents since brief 5 (the desks' new names, the checker, the scout, dev and the three new sessions) was added by that agent's own commit, checked as each arrived; old entries are marked retired or superseded. Releases: every cancelled release since yesterday went live in a later one."
+      ]
+    },
+    {
+      "title": "Your issues today and tomorrow",
+      "items": [
+        "Sun 8 Nov: WS-166, your key on every device before the summit (open; the dashboard flags it); WS-168, articles from a conversation with a lead (your proposal; open); WS-186, the daily newsletter (no owner).",
+        "Today: WS-169, the strategy for the Web Summit app (no owner); WS-32, each person's sessions (no owner); WS-184, the comms protocol (Dinis's conductor)."
+      ]
+    }
+  ],
+  "next": [
+    "08:48 the reviewer (S24), 09:48 the checker.",
+    "12:00 stand-up: ask 3 if you take it.",
+    "16:00 to 16:24 the journalists, 16:48 the reviewer, 17:50 my relay, 22:00 the scout."
+  ],
+  "sources": [
+    "people/vicky/reports/*.md since 6 Nov 08:45, read by a Sonnet sub-agent (P16); commits For: conductor@web-summit.vicky",
+    "The account's scheduled tasks and people/vicky/schedule.json; get_session usage numbers only (P6), read by a Sonnet sub-agent",
+    "Newsroom repository PrompTugal/PrompTugal__News__Website, dev at 08:40: desks/journalist-vicky/drafts/, desks/reviewer-vicky/reviews/, content/articles/, publish commits",
+    "board/ front matter (WS-32, WS-166, WS-168, WS-169, WS-184, WS-186); deploy-pages runs by riskmandate-vicky since 6 Nov 17:50; data/keys.json and the newsroom's board/keys.json"
+  ]
+}

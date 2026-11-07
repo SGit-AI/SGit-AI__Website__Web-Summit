@@ -7,7 +7,13 @@
   ],
   "by": "conductor@web-summit.silvio",
   "added": "2026-11-07T05:02:53.393Z",
-  "status": "open",
+  "status": "merged",
   "detail": "Silvio asks (7 November). crm@web-summit.silvio has the private CRM's key (sealed to it 7 November, 02:34) but no SG/Send access token of its own, so it cannot push to the CRM vaults. By the rule in content/vault-agent.md: Dinis issues one token per agent, and the conductor (or Dinis's conductor) seals it to the agent's key crm-silvio (data/keys.json) in data/sealed/agents/crm@web-summit.silvio/. Never in a chat or a commit.",
-  "issue": "WS-170"
+  "issue": "WS-170",
+  "merged": {
+    "into": "2026-11-07-1200/20261107T1127-dinis-sg-send-access-tokens-for-conducto.json",
+    "why": "The same ask of Dinis (WS-170: one SG/Send access token per agent), from two teams. Answer once, for all three agents: crm-silvio, conductor-jose and vault-jose.",
+    "by": "project-manager@web-summit.dinis",
+    "at": "2026-11-07T12:52:26.447Z"
+  }
 }

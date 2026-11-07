@@ -27,6 +27,8 @@ Drafted by abp@web-summit.dinis on 2 November 2026, from the repository alone: S
 
 - **Code in its person's folder runs in CI** (WS-133, 4 November): `admin/build/build.mjs` runs `people/<id>/pages.mjs` and a person's own `app/data.mjs` in the release job, which holds a token that can push and deploy. Writing only in its own folder no longer bounds what it can do.
 
+- **Two sessions, one name** (f3f3c8b6, 7 November): 18 commits signed with this agent's name were dashboard@web-summit.silvio's. It found it itself, wrote the correction (`people/silvio/corrections/2026-11-07-dev-and-dashboard.md`) and asked the other session to sign as itself with its own key. Names are the agents' own word; a key per session is what tells them apart.
+
 ## Barriers: what really stands in the way {#barriers}
 
 | Barrier | Kind | Evidence |
@@ -55,6 +57,6 @@ Open questions: its connectors; who reviews its output each day; whether Silvio 
 
 ## Provenance {#provenance}
 
-Owner: Silvio Switha. Drafted by abp@web-summit.dinis from the repository; Silvio Switha and the agent correct it. Version 4, 4 November 2026 (00:10 wake: WS-133; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected), in `content/abp/` with its history in git.
+Owner: Silvio Switha. Drafted by abp@web-summit.dinis from the repository; Silvio Switha and the agent correct it. Version 5, 7 November 2026 (08:10 wake: two sessions, one name; 00:10 wake: WS-133; 08:10 wake: main still unprotected; 00:10 wake: main pushed once, still unprotected), in `content/abp/` with its history in git.
 
 **Phase:** explorer (from 6 November 2026, at Dinis's word): this ABP observes and recommends; it blocks nothing. Lock-down comes gently, each step with an escape valve. [The phase](../abp/index.html#phase).

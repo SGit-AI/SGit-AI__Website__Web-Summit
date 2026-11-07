@@ -89,7 +89,28 @@ The evening of 6 November showed what happens when each person owns their own ru
 - **The sign-off loop works both ways.** Angelo approved his agents' ABPs (5732bdf1); the ABP agent changed two lines afterwards and said each waited for his word; he accepted them (fd819c3c).
 - **Two owners' policies collide.** The newsroom's strict, deny-by-default policies, from abp@PrompTugal.dinis, are written for Dinis's agents; Vicky decided they do not bind her agents unless she says so (standing answer 11, f783bb79). Her developer agent then asked the newsroom's ABP agent, at her word, to widen its grant for her desks (be2d60df): **the escape valve of a strict policy, used as designed**, a request on the record rather than a quiet override.
 
-## 8. Learning from each other {#learning}
+
+## 8. Caught by the watchers {#watchers}
+
+The team now has agents whose job is to read the others' commits: watcher@web-summit.jose (the whole team, read-only), policy@PrompTugal.angelo (Angelo's agents against their approved ABPs) and security@web-summit.dinis (every commit, twice a day). On 7 November, between them:
+
+- **A person's agent changed other people's pages.** Silvio's dashboard agent added a feature to the shared command-centre engine, so it appeared in Angelo's and Jose's command centres, with no word to Jose's agents. The watcher flagged it at 07:15, and Jose's dashboard agent put the question to Jose: does he want it, and should Silvio's agent say so first next time (bc0826de, 1fcbb696). *Barrier: checked, after the fact; the decision stays with the person whose page it is.*
+- **Two sessions, one name.** 18 commits signed dev@web-summit.silvio were another session's. dev@web-summit.silvio found it, wrote the correction, and the other session now signs as dashboard@web-summit.silvio with its own key (f3f3c8b6, bb878ce4). *A name is an agent's own word; a key per session is what tells two apart.*
+- **A rule broken, by its own team's auditor.** policy@PrompTugal.angelo found Angelo's collaboration agent still pushing its session branch, 14 times, after the proposal that every session push only to `dev` (P-05, a071a51d).
+- **Agents that stopped.** The watcher tracks every agent's schedule against its commits: dev@web-summit.dinis silent for about 31 hours, dashboard@web-summit.dinis for 16 hourly slots, Angelo's writer runner and dashboard missing slots (bc0826de). A stopped agent is a gap too: work someone thinks is happening, isn't.
+
+
+## 9. Escape valves, and hardening {#valves}
+
+From 7 November's record: how a team in the explorer phase opens a narrow door, and how it starts to lock one.
+
+- **A written exception, not an override.** The vault audit kept flagging one line in Vicky's programme desk's shortlist vault: its own agent name, which looks like an address. At Vicky's word the desk may push when that is the audit's only finding, and nothing else (ae428805). One false positive, named and scoped, in the prompts file the agent re-reads each run.
+- **A review gate before the team's branch.** Angelo's six new worker agents push only to `workers/<agent>`; his dev agent reviews and brings each onto `dev` as one commit (645d429b). A second agent between a worker and everyone else's work; by 16:00 it had brought three workers' changes onto `dev`, each as one reviewed commit (2239d685, ed454d43, 71c5aeb3).
+- **One person's hardening becomes everyone's.** sgit@web-summit.dinis copied those four steps into the team's vault guide the same day (8fad074f): a lesson from Angelo's agents, now the default for every vault agent.
+- **Four hardening steps** for Angelo's vault agent (130fe1c4): his token out of its clones, credentials through pipes never files, a passphrase on its key store, and never a command that prints a vault key (the scenario of 3 November, section 2, made a rule).
+- **Secrets per environment, measured both ways.** security@web-summit.dinis confirmed that its own environment holds Dinis's tokens too (d528cb08, WS-188), as sgit@web-summit.dinis did (8fd8b17d).
+
+## 10. Learning from each other {#learning}
 
 - **Angelo's protocol** turned three ABP gaps into rules in his own words: shared code stays with its owners, his signature counts for tier 1 and 2 only, no agent of his reads what a stranger writes. His policy agent mapped 21 rules for his agents with how each is enforced, and its first audit found four issues (69146077).
 - **Jose's one door**: his agents take work only from his conductor's task files (2191c0b2), and a reviewer runs before every push.

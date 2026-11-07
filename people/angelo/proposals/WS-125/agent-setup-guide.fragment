@@ -6,17 +6,17 @@
 /* Layout: a field guide. One reading column, a sticky "read this as" bar, instruments (dials, meters, tiles) where the reader decides something. */
 :root{
   --ink:#161615; --paper:#F7F6F2; --panel:#EFEDE6; --line:#D9D6CC; --muted:#5E5C55;
-  --green:#1A7F5A; --green-soft:#DCEDE4; --gold:#B45309; --gold-soft:#F6E7D6;
+  --green:#1A7F5A; --green-ink:#156E4E; --gold-ink:#9A4508; --green-soft:#DCEDE4; --gold:#B45309; --gold-soft:#F6E7D6;
   --red:#A8322D; --red-soft:#F4DEDB; --track:#E2DFD6;
   --display:"Archivo","Arial Narrow",system-ui,sans-serif;
   --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --ink:#ECEAE3; --paper:#121311; --panel:#1C1E1B; --line:#34372F; --muted:#A5A398;
+  --ink:#ECEAE3; --paper:#121311; --panel:#1C1E1B; --line:#34372F; --muted:#A5A398; --green-ink:var(--green); --gold-ink:var(--gold);
   --green:#4FBF8E; --green-soft:#17352A; --gold:#E39A4B; --gold-soft:#3A2817; --red:#E5776F; --red-soft:#3D1F1C; --track:#2A2D27; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --ink:#ECEAE3; --paper:#121311; --panel:#1C1E1B; --line:#34372F; --muted:#A5A398;
+  --ink:#ECEAE3; --paper:#121311; --panel:#1C1E1B; --line:#34372F; --muted:#A5A398; --green-ink:var(--green); --gold-ink:var(--gold);
   --green:#4FBF8E; --green-soft:#17352A; --gold:#E39A4B; --gold-soft:#3A2817; --red:#E5776F; --red-soft:#3D1F1C; --track:#2A2D27; color-scheme:dark}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
 .wrap{max-width:1000px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
@@ -32,10 +32,10 @@ svg{display:block}
 .ico{width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .mono{font-family:var(--mono);font-size:.82rem}
-.tag{font-family:var(--mono);font-size:.74rem;padding:2px 8px;border-radius:4px;background:var(--green-soft);color:var(--green)}
-.tag.gold{background:var(--gold-soft);color:var(--gold)}
+.tag{font-family:var(--mono);font-size:.74rem;padding:2px 8px;border-radius:4px;background:var(--green-soft);color:var(--green-ink)}
+.tag.gold{background:var(--gold-soft);color:var(--gold-ink)}
 .meta{display:flex;flex-wrap:wrap;gap:6px 10px}
-.warn{color:var(--gold)} .ok{color:var(--green)}
+.warn{color:var(--gold)} .ok{color:var(--green-ink)}
 
 
 /* hero */
@@ -77,7 +77,7 @@ ul.plain{margin:0;padding-left:18px;display:grid;gap:4px}
 .tab{display:flex;gap:8px;align-items:center;font:600 .92rem var(--body);background:transparent;border:1px solid var(--line);color:var(--ink);padding:8px 14px;border-radius:8px;cursor:pointer}
 .tab .ico{width:20px;height:20px}
 .tab[aria-selected="true"]{background:var(--green);border-color:var(--green);color:var(--paper)}
-form.quiz{display:grid;gap:20px;background:var(--panel);border-radius:10px;padding:18px}
+form.quiz{display:grid;gap:20px;background:var(--panel);border-radius:10px;padding:18px}form.quiz[hidden]{display:none}
 fieldset{border:0;margin:0;padding:0;display:grid;gap:8px;min-width:0}
 legend{font-weight:600;margin-bottom:6px;padding:0}
 .progress{height:6px;background:var(--track);border-radius:3px;overflow:hidden}
@@ -94,7 +94,7 @@ legend{font-weight:600;margin-bottom:6px;padding:0}
 .pills{display:flex;flex-wrap:wrap;gap:8px}
 .pill{position:relative;display:flex;gap:6px;align-items:center;background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.88rem;cursor:pointer}
 .pill input{position:absolute;opacity:0;pointer-events:none}
-.pill:has(input:checked){border-color:var(--green);background:var(--green-soft);color:var(--green)}
+.pill:has(input:checked){border-color:var(--green);background:var(--green-soft);color:var(--green-ink)}
 .pill:has(input:focus-visible){outline:2px solid var(--gold);outline-offset:2px}
 .stepper{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px}
 .stepper label{position:relative;display:grid;justify-items:center;gap:4px;padding:8px 2px;border-radius:6px;background:var(--paper);border:1.5px solid var(--line);font-size:.72rem;text-align:center;line-height:1.2;cursor:pointer}
@@ -127,16 +127,16 @@ input[type=range]{width:100%;accent-color:var(--green)}
 @media (max-width:760px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* levels */
-.levels3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.levels3{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .lv{border-radius:10px;padding:14px;display:grid;gap:8px;align-content:start;min-width:0;border:1px solid var(--line)}
 .lv .ico{width:34px;height:34px}
 .lv.l1 .ico{color:var(--muted)} .lv.l2 .ico{color:var(--gold)} .lv.l3 .ico{color:var(--green)}
 .lv.l2{background:var(--gold-soft);border-color:transparent} .lv.l3{background:var(--green-soft);border-color:transparent}
-@media (max-width:700px){.levels3{grid-template-columns:1fr}}
+@media (max-width:980px){.levels3{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:700px){.levels3{grid-template-columns:1fr}}
 .lvl{display:inline-block;font-family:var(--mono);font-size:.72rem;padding:1px 7px;border-radius:4px}
 .lvl.l1{background:var(--panel);color:var(--muted);border:1px solid var(--line)}
-.lvl.l2{background:var(--gold-soft);color:var(--gold)}
-.lvl.l3{background:var(--green-soft);color:var(--green)}
+.lvl.l2{background:var(--gold-soft);color:var(--gold-ink)}
+.lvl.l3{background:var(--green-soft);color:var(--green-ink)}
 .deps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
 @media (max-width:760px){.deps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .dep{display:grid;gap:6px;justify-items:start;align-content:start;text-align:left;font:500 .86rem/1.3 var(--body);color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:8px;padding:10px;cursor:pointer}
@@ -148,7 +148,7 @@ input[type=range]{width:100%;accent-color:var(--green)}
 .console .read{display:grid;gap:10px;min-width:0}
 .verdict{display:flex;gap:8px;align-items:center;font-weight:600}
 .verdict .dot{width:12px;height:12px;border-radius:50%}
-.scroll{overflow-x:auto}
+.scroll{overflow-x:auto}table.kinds{min-width:0!important}table.kinds th{white-space:normal}
 table{border-collapse:collapse;width:100%;font-size:.88rem}
 th,td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--line)}
 th{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500}
@@ -305,7 +305,7 @@ footer{padding-block:30px 60px;color:var(--muted);font-size:.84rem;border-top:1p
 <!-- LADDER -->
 <section id="ladder">
  <div class="sechead"><span class="eyebrow">Plain English · 4 minutes</span><h2>The six steps from chatbot to agent team</h2>
- <p class="col">Most people are on step 1: many chat sessions, with them as the courier carrying text and files between those chats and wherever the results need to go. Each step up saves time and adds reach. Reach is what the agent can actually do, whether you meant it to or not.</p></div>
+ <p class="col">Most people are on step 1: many chats, with themselves as the courier carrying text and files between them. Each step up saves time and adds reach: what the agent can actually do, whether you meant it or not.</p></div>
  <svg class="ladder-art" viewBox="0 0 960 170" role="img" aria-label="A staircase of six steps; time saved and reach both rise with each step">
   <defs><linearGradient id="rg" x1="0" x2="1"><stop offset="0" stop-color="var(--green)"/><stop offset=".6" stop-color="var(--gold)"/><stop offset="1" stop-color="var(--red)"/></linearGradient></defs>
   <g id="stairs"></g>
@@ -314,20 +314,31 @@ footer{padding-block:30px 60px;color:var(--muted);font-size:.84rem;border-top:1p
  </svg>
  <div class="steps" id="steps"></div>
  <div class="foryou" data-for="chat"><svg class="ico"><use href="#i-chat"/></svg><div><span class="eyebrow">For you</span><p>You don't need to climb all six. Steps 2 and 3 remove most of the copying and pasting. Before step 3, decide what the agent may do with your mail: read only, or draft only, with you pressing send.</p></div></div>
- <div class="foryou" data-for="agentic"><svg class="ico"><use href="#i-robot"/></svg><div><span class="eyebrow">For you</span><p>From step 4, the agents work when you're not watching. That's when you need two things: a written rule for each agent (its policy), and a record of every run that you read when you choose, not when it pings you.</p></div></div>
- <div class="foryou" data-for="ceo"><svg class="ico"><use href="#i-ceo"/></svg><div><span class="eyebrow">For you</span><p>Productivity arrives at steps 3 and 4. Liability arrives at the same steps, because the agents start acting with your company's accounts. Ask your team which step each agent is on, and who decided what it may do.</p></div></div>
+ <div class="foryou" data-for="agentic"><svg class="ico"><use href="#i-robot"/></svg><div><span class="eyebrow">For you</span><p>From step 4 the agents work when you're not watching. That is when you need two things: a written rule for each agent, and a record of every run that you read when you choose.</p></div></div>
+ <div class="foryou" data-for="ceo"><svg class="ico"><use href="#i-ceo"/></svg><div><span class="eyebrow">For you</span><p>For a company, productivity and liability arrive at the same steps, 3 and 4, because the agents start acting with the company's accounts. Ask which step each agent is on, and who decided what it may do.</p></div></div>
 </section>
 
 <!-- LEVELS -->
 <section id="levels">
- <div class="sechead"><span class="eyebrow">Some technical · 6 minutes</span><h2>How much control: three levels, by deployment</h2>
- <p class="col">An <b>Agent Behaviour Policy (ABP)</b> describes one agent in one deployment: what it <i>can</i> do (its reach), what you <i>asked</i> it to do (its mandate), the <i>gap</i> between them, and the <i>barrier</i> that really stands in the way of each thing. It describes, and carries no score. You choose how strongly each barrier holds.</p></div>
+ <div class="sechead"><span class="eyebrow">Some technical · 6 minutes</span><h2>The four kinds of barrier, and three levels of practice</h2>
+ <p class="col">RiskMandate's <b>Agent Behaviour Policy (ABP)</b> describes one AI agent in one deployment: everything it <i>can</i> do (RiskMandate calls this the grant; we say its reach), what you actually <i>authorised</i> (the mandate), the <i>gap</i> between the two (the delta), and what really stands in the way of each thing (the <i>barrier</i>). It describes and does not judge, so it carries no score.</p>
+ <p class="col">RiskMandate's model sorts every barrier into four kinds, and asks of each: is it a control? In its words, &ldquo;a control bounds a grant only if it is enforced by something the grant does not include&rdquo;.</p></div>
+ <div class="scroll"><table class="kinds"><thead><tr><th>Kind</th><th>RiskMandate's definition</th><th>A control?</th></tr></thead><tbody>
+  <tr><td><b>None</b></td><td>nothing in the way</td><td>No</td></tr>
+  <tr><td><b>Expectation</b></td><td>a rule in prose, enforced by nobody</td><td>No</td></tr>
+  <tr><td><b>Setting</b></td><td>a switch the agent's own account can flip</td><td>No</td></tr>
+  <tr><td><b>Boundary</b></td><td>enforced above the grant, out of the agent's reach</td><td class="ok">Yes</td></tr>
+ </tbody></table></div>
+ <p class="col">The three levels in this guide are our own practice, mapped onto those kinds. They are not RiskMandate's.</p>
  <div class="levels3">
-  <div class="lv l1"><svg class="ico"><use href="#i-eye"/></svg><span class="lvl l1">Level 1 · Watch</span><p>Written down and logged. Nothing stops the agent; you find out afterwards. In SHarness's terms an <b>expectation</b>: a rule nothing holds.</p></div>
-  <div class="lv l2"><svg class="ico"><use href="#i-check"/></svg><span class="lvl l2">Level 2 · Reviewed</span><p>A person or an independent auditor agent checks, before or after. A <b>setting</b>: applied on the agent's own side, so a tricked agent could skip it.</p></div>
-  <div class="lv l3"><svg class="ico"><use href="#i-lock"/></svg><span class="lvl l3">Level 3 · Enforced</span><p>Technically impossible: a scope never given, a protected branch, a process sandbox. A <b>boundary</b>: held from outside, so a tricked agent cannot widen it.</p></div>
+  <div class="lv l1"><svg class="ico"><use href="#i-eye"/></svg><span class="lvl l1">1 · Watch</span><p>Written down and logged. Nothing stops the agent; you find out afterwards.</p><p class="mono" style="color:var(--muted)">An <b>expectation</b> · does not hold against a tricked agent</p></div>
+  <div class="lv l2"><svg class="ico"><use href="#i-eye"/></svg><span class="lvl l2">2a · Audited after</span><p>A person, or an auditor agent, checks what happened. You find out sooner, but nothing is stopped. Our own auditor is this kind.</p><p class="mono" style="color:var(--muted)">An <b>expectation</b> · does not hold</p></div>
+  <div class="lv l2"><svg class="ico"><use href="#i-check"/></svg><span class="lvl l2">2b · Approved before</span><p>The agent cannot act without a person: a person presses send, merges, or approves.</p><p class="mono" style="color:var(--muted)">A <b>boundary</b> if the tool enforces the approval; otherwise a <b>setting</b> · holds only if the tool enforces it</p></div>
+  <div class="lv l3"><svg class="ico"><use href="#i-lock"/></svg><span class="lvl l3">3 · Enforced</span><p>Technically impossible: a scope never given, a protected branch, a process sandbox.</p><p class="mono" style="color:var(--muted)">A <b>boundary</b> · holds against a tricked agent</p></div>
  </div>
+ <p class="col">Most people on steps 1 to 3 of the ladder start with none at all. Prompt injection turns every barrier the agent applies to itself into a suggestion. Only a boundary holds against an agent that has been tricked.</p>
  <h3>Try it: pick a deployment, then turn the dial</h3>
+ <p class="mono" style="color:var(--muted)">On the dial, &ldquo;Reviewed&rdquo; is level 2: approved before where a person approves, audited after where a person or an auditor checks.</p>
  <div class="deps" id="deps"></div>
  <div class="console">
   <svg viewBox="0 0 300 190" role="img" aria-label="A control dial from watch to enforced, with a needle at the chosen level" id="dial">
@@ -356,7 +367,7 @@ footer{padding-block:30px 60px;color:var(--muted);font-size:.84rem;border-top:1p
  <details class="more"><summary>All five deployments at a glance</summary><div class="scroll"><table style="min-width:680px" id="mtable"><thead><tr><th>Deployment</th><th>Watch</th><th>Reviewed</th><th>Enforced</th><th>Start at</th></tr></thead><tbody></tbody></table></div></details>
  <div class="foryou" data-for="ciso"><svg class="ico"><use href="#i-shield"/></svg><div><span class="eyebrow">For you</span><p>Ask for the ABP of every agent with access to company systems, and read its barriers. Anything at level 1 that touches production, money or personal data is a finding. Prompt injection turns every barrier the agent applies itself into a suggestion; only level 3 holds against an agent that has been tricked.</p></div></div>
  <div class="foryou" data-for="dpo"><svg class="ico"><use href="#i-privacy"/></svg><div><span class="eyebrow">For you</span><p>An ABP's reach section is a ready-made record of processing for each agent: which personal data it can see, where it sends it, which model provider processes it. Ask for it before an agent gets a connector to mail, HR or customer systems. Where an agent reads personal data, level 2 at least, with the provider's data-processing terms on file.</p></div></div>
- <div class="foryou" data-for="devsecops"><svg class="ico"><use href="#i-gear"/></svg><div><span class="eyebrow">For you</span><p>Level 3 is your job: scoped tokens (one per agent), protected branches, deny-by-default network, secrets in a vault the agent can use but never read in the clear. SHarness (open source) runs each tool as a process under a policy the kernel enforces, named by a hash the person supplies, not the agent.</p></div></div>
+ <div class="foryou" data-for="devsecops"><svg class="ico"><use href="#i-gear"/></svg><div><span class="eyebrow">For you</span><p>Level 3 is your job: scoped tokens (one per agent), protected branches, deny-by-default network, secrets in a vault the agent can use but never read in the clear. SHarness (open source, a design with its first experiments) aims to run each tool as a process under a policy the kernel enforces, named by a hash the person supplies, not the agent.</p></div></div>
 </section>
 
 <!-- SETUP -->
@@ -373,33 +384,33 @@ footer{padding-block:30px 60px;color:var(--muted);font-size:.84rem;border-top:1p
  </div>
  <div class="foryou" data-for="dev"><svg class="ico"><use href="#i-code"/></svg><div><span class="eyebrow">For you</span>
   <ul class="plain"><li>One repository, one folder per person, one file of instructions per agent; agents talk through commits, never by messaging each other's sessions.</li>
-  <li>Agents push to a development branch only; the main branch is protected and merged by a person.</li>
+  <li>Agents push to a development branch only; the main branch is protected and merged by a person. (Our rule; we are still enforcing it: this week some of our agents pushed to session branches of their own.)</li>
   <li>A gate (build, then validate) that must pass before any release; a red gate is no release.</li>
   <li>Each agent makes its own key in its own session and publishes only the public half.</li>
-  <li>A long session for the conversation with the person, a fresh session for each scheduled run, so context stays small and cheap.</li></ul></div></div>
+  <li>A long session for the conversation with the person. Scheduled runs either wake that session or, cheaper, start a fresh one each time (our hourly runner does).</li></ul></div></div>
  <div class="foryou" data-for="devsecops"><svg class="ico"><use href="#i-gear"/></svg><div><span class="eyebrow">For you</span>
-  <ul class="plain"><li>One token per agent, sealed to that agent's key; no agent uses its person's token.</li>
+  <ul class="plain"><li>One token per agent; no agent uses its person's token. (Ours are not yet: see what this guide does not claim.)</li>
   <li>Admin rights stay with the person; no agent uses an admin power.</li>
   <li>Every run logged (signed where the agent has a key) and its tokens measured; failed or missing runs show up in the person's brief.</li>
-  <li>Secrets in an encrypted vault (sgit), never in a file, a page or a message.</li>
+  <li>Secrets per agent, where only that agent can reach them (its own environment, or an encrypted vault only it can open); never in a file, a page or a message. An agent that can use a secret can also read it, until a broker exists that holds it for the agent.</li>
   <li>Pin tool versions; check the hash of what you run.</li></ul></div></div>
  <h3>Works with your product</h3>
- <p class="col">The ideas (reach, mandate, gap, barrier; one token per agent; untrusted inputs) are the same everywhere; the steps differ. We've tested Claude on our own team. Pick yours to see the matching features.</p>
+ <p class="col">The ideas are the same everywhere; the feature names differ. We have run the Claude column on our own team. The others are the vendors' own names, checked on their help pages on 6 November 2026, and not tested by us.</p>
  <div class="seg" id="prodseg" role="group" aria-label="Your product"></div>
  <div class="scroll"><table class="prodtable" style="min-width:640px" id="ptable"></table></div>
- <p class="mono" style="color:var(--muted)">Only the Claude column is tested by us. For the others, check each product's current help pages before relying on a row.</p>
+ <p class="mono" style="color:var(--muted)">Google's open-source Gemini CLI is also a terminal agent. We could not confirm the names of the ChatGPT and Gemini features at their sources, so they are left out. Only the Claude column is tested by us.</p>
 </section>
 
 <!-- LESSONS -->
 <section id="lessons">
  <div class="sechead"><span class="eyebrow">Some technical · 4 minutes</span><h2>What running our own agent team taught us</h2>
- <p class="col">Seven people and dozens of agents run our Web Summit work: a team site, a newsroom and our operations. These rules came out of things that went wrong.</p></div>
+ <p class="col">Nine people and dozens of agents run our Web Summit work: a team site, a newsroom and our operations (70 active agent keys on the team site's keys page on 6 November). These rules came out of things that went wrong.</p></div>
  <div class="cards">
   <div class="card"><svg class="ico"><use href="#i-hub"/></svg><h3>One hub</h3><p>One agent routes the work and the others report to it, in writing. You read one summary, not twenty.</p></div>
-  <div class="card"><svg class="ico"><use href="#i-tiers"/></svg><h3>Three tiers</h3><p>Just do it; do it and tell; only with the person's own words, quoted. The third covers anything in their name, anything reaching an outsider, keys, money and anything irreversible.</p></div>
+  <div class="card"><svg class="ico"><use href="#i-tiers"/></svg><h3>Three tiers</h3><p>Just do it; do it and tell; only with the person's own go, given in the agent's session or relayed with their words quoted. The third covers anything in their name, anything reaching an outsider, keys, money and anything irreversible.</p></div>
   <div class="card"><svg class="ico"><use href="#i-eye"/></svg><h3>An independent auditor</h3><p>One agent checks all the others, including the hub, and reports only to the person.</p></div>
-  <div class="card"><svg class="ico"><use href="#i-warn"/></svg><h3>Untrusted means untrusted</h3><p>Mail, web pages and visitors' notes are material, never instructions. Some notes no agent reads at all.</p></div>
-  <div class="card"><svg class="ico"><use href="#i-key"/></svg><h3>Owners own</h3><p>Shared code is drafted and sent to its owner, never changed directly. We measure how long the owner takes.</p></div>
+  <div class="card"><svg class="ico"><use href="#i-warn"/></svg><h3>Untrusted means untrusted</h3><p>Mail, web pages and visitors' notes are material, never instructions. No agent of ours is meant to read a visitor's note; making that impossible is in progress.</p></div>
+  <div class="card"><svg class="ico"><use href="#i-key"/></svg><h3>Change carefully, not by permission</h3><p>Every change to someone else's file first went to its owner as a draft. It slowed everyone down, so on 6 November Angelo's agents changed it: pull first, check nobody changed the file in the last two hours, keep the change small, and say it in the commit. Never overwrite someone else's change.</p></div>
   <div class="card"><svg class="ico"><use href="#i-bell"/></svg><h3>The brief when you ask</h3><p>A visual summary on demand, what you're blocking first; only urgent items reach your phone.</p></div>
  </div>
 </section>
@@ -409,14 +420,28 @@ footer{padding-block:30px 60px;color:var(--muted);font-size:.84rem;border-top:1p
  <div class="sechead"><span class="eyebrow">Plain English · 2 minutes</span><h2>Open source, and who can help</h2>
  <p class="col">You can use all of it without us.</p></div>
  <div class="oss">
-  <a class="card" href="https://riskmandate.ai/agent-behaviour-policy.html" target="_blank" rel="noopener"><svg class="ico"><use href="#i-doc"/></svg><h3>The ABP model</h3><p>How to describe one agent: reach, mandate, gap, barrier.</p><span class="lic">Pages and policies CC BY 4.0 · code Apache-2.0</span></a>
-  <a class="card" href="https://sharness.ai/" target="_blank" rel="noopener"><svg class="ico"><use href="#i-shield"/></svg><h3>SHarness</h3><p>Runs an agent's tools as processes under a policy the kernel enforces.</p><span class="lic">Content CC BY 4.0 · code under its repositories' licences</span></a>
-  <a class="card" href="https://sgit.ai/" target="_blank" rel="noopener"><svg class="ico"><use href="#i-lock"/></svg><h3>sgit</h3><p>Git for encrypted vaults: where secrets and private material live.</p><span class="lic">Apache-2.0</span></a>
+  <a class="card" href="https://riskmandate.ai/agent-behaviour-policy.html" target="_blank" rel="noopener"><svg class="ico"><use href="#i-doc"/></svg><h3>The ABP model</h3><p>How to describe one agent: grant, mandate, delta, barrier.</p><span class="lic">Pages and policies CC BY 4.0 · code Apache-2.0</span></a>
+  <a class="card" href="https://sharness.ai/" target="_blank" rel="noopener"><svg class="ico"><use href="#i-shield"/></svg><h3>SHarness</h3><p>A design for running an agent's tools as small processes, each under a policy the Linux kernel enforces, named by a hash the person supplies, so a tricked agent cannot widen it without changing the name. Its own status, as of November 2026: &ldquo;design, with the first experiments&rdquo;: two parts and a first slice of its launcher run as early versions, and &ldquo;no other component is built&rdquo;. It says the agent's own process is bound only by a launcher above it.</p><span class="lic">Content CC BY 4.0 · its code licence is not stated on its home page</span></a>
+  <a class="card" href="https://sgit.ai/" target="_blank" rel="noopener"><svg class="ico"><use href="#i-lock"/></svg><h3>sgit</h3><p>Git for encrypted vaults, for private material and secrets, encrypted before they leave your machine.</p><span class="lic">Apache-2.0</span></a>
  </div>
 </section>
 
+<section id="claims">
+ <div class="sechead"><span class="eyebrow">Plain English · 1 minute</span><h2>What this does not claim</h2></div>
+ <ul class="plain">
+  <li><b>Only the Claude column is tested by us.</b> The Microsoft and GitHub names are taken from their help pages, not from use.</li>
+  <li><b>The three levels and the &ldquo;start at&rdquo; column are our judgement</b>, from running our own team, not a standard. The four kinds of barrier are RiskMandate's.</li>
+  <li><b>It does not say what RiskMandate sells.</b> It uses RiskMandate's open model and links to it.</li>
+  <li><b>SHarness's code licence</b> is not stated on its home page, so this guide gives only its content licence.</li>
+  <li><b>No tool listed here keeps a secret from the agent that uses it.</b> Today an agent that can use a secret can read it.</li>
+  <li><b>SHarness is not a product you can deploy today.</b> It is a design with its first experiments.</li>
+  <li><b>Our own tokens are not yet one per agent.</b> Our agents push to GitHub through their person's account; secrets are per agent (one environment each), and one GitHub token per agent is where we are going, not where we are.</li>
+  <li><b>No security guarantee.</b> Following this guide reduces what a tricked or mistaken agent can do; it does not make agents safe.</li>
+ </ul>
+</section>
+
 <footer>
- <span>By Angelo, with his agents. Sources: riskmandate.ai/agent-behaviour-policy.html, sharness.ai and sgit.ai (read 6 November 2026), PyPI sgit-ai 0.27.0; an earlier setup draft by Indi Gupte's builder agent; the protocol Angelo's agents work under.</span>
+ <span>Written by Angelo with his agents: a first draft by builder@web-summit.indi, the guide by conductor@web-summit.angelo at Angelo's word (WS-125), refined and checked at the source by writer@PrompTugal.angelo, who published the text on PrompTugal.news on 6 November 2026; corrected on 7 November 2026 after reviews by dev@PrompTugal.angelo and policy@PrompTugal.angelo; this interactive version is built from the same corrected text. Sources: riskmandate.ai/agent-behaviour-policy.html and riskmandate.ai/abp.html (the four kinds of barrier), sharness.ai and its design brief, sgit.ai, PyPI sgit-ai 0.27.0, the Claude Help Center, Microsoft Learn, GitHub Docs and Angelo's protocol (web-summit.sgit.ai/people/angelo/kit/README.md#protocol), read 6 and 7 November 2026.</span>
  <span>Content adapted from riskmandate.ai and sharness.ai under CC BY 4.0.</span>
 </footer>
 </div>
@@ -427,11 +452,11 @@ const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const ic=(id,cls)=>'<svg class="ico'+(cls?' '+cls:'')+'"><use href="#i-'+id+'"/></svg>';
 const AUD={
  all:{who:"everyone",ico:"all",q:"What does it take to run agents safely?",a:"Three things: the accounts and tools (an hour to start), a written decision about what each agent may reach, and something that checks it. The tools are open source. The decisions are yours, and this guide helps you make them for your kind of deployment.",t:"About 25 minutes in full",d:0},
- ceo:{who:"CEO",ico:"ceo",q:"What is it, what does it cost, what's the risk?",a:"Agents turn hours of copying and chasing into work done overnight. The cost is a subscription per person plus usage. The risk is that they act with your company's accounts, so for each agent someone must decide what it may do, and something must check. Start with the ladder, then the three levels.",t:"5 minutes",d:1},
- ciso:{who:"CISO",ico:"shield",q:"What can the agents reach, what stops them, who audits them?",a:"Ask for an Agent Behaviour Policy per agent: reach, mandate, gap, and the barrier that really holds. Prompt injection means any barrier the agent applies to itself can be skipped; only enforced boundaries hold. Add an auditor that reports to a person, not to the agents.",t:"10 minutes",d:2},
- dpo:{who:"DPO",ico:"privacy",q:"What personal data can the agents see, and where does it go?",a:"Each agent's ABP lists what it can reach, which doubles as a record of processing: which personal data, which model provider, which destinations. Gate every connector to mail, HR or customer data on it, and keep the provider's processing terms on file.",t:"8 minutes",d:2},
- dev:{who:"Developer",ico:"code",q:"How do I set it up properly?",a:"A repository of instructions, one agent per job, commits as the only channel between agents, pushes to a development branch behind a gate, a key per agent, and a fresh session per scheduled run. The six decisions and the product table are your section.",t:"15 minutes",d:3},
- devsecops:{who:"DevSecOps",ico:"gear",q:"How does it run, recover and stay locked down?",a:"One token per agent, sealed to its key; secrets in an encrypted vault; admin kept by the person; every run logged and measured; protected branches; and, for tools, a process sandbox held by the kernel (SHarness). Start at level 3 for anything touching production.",t:"15 minutes",d:3},
+ ceo:{who:"CEO",ico:"ceo",q:"What is it, what does it cost, what's the risk?",a:"Agents turn hours of copying and chasing into work done overnight. The cost is a subscription per person plus usage. The risk is that they act with your company's accounts, so for each agent someone must decide what it may do, and something must check. Read the six steps, then the three levels.",t:"5 minutes",d:1},
+ ciso:{who:"CISO",ico:"shield",q:"What can the agents reach, what stops them, who audits them?",a:"Ask for a written policy per agent: what it can do, what it was asked to do, the gap between them, and the barrier that really holds. Any barrier the agent applies to itself can be skipped by a tricked agent; only barriers held from outside hold. Add an auditor that reports to a person, not to the agents.",t:"10 minutes",d:2},
+ dpo:{who:"DPO",ico:"privacy",q:"What personal data can the agents see, and where does it go?",a:"Each agent's policy lists what it can reach, which doubles as a record of processing: which personal data, which model provider, which destinations. Gate every connector to mail, HR or customer data on it, and keep the provider's processing terms on file.",t:"8 minutes",d:2},
+ dev:{who:"Developer",ico:"code",q:"How do I set it up properly?",a:"A repository of instructions, one agent per job, commits as the only channel between agents, pushes to a development branch behind a gate, a key per agent, and small, cheap scheduled runs. The setup section is yours.",t:"15 minutes",d:3},
+ devsecops:{who:"DevSecOps",ico:"gear",q:"How does it run, recover and stay locked down?",a:"One token per agent; secrets per agent, where only that agent can reach them; admin rights kept by the person; every run logged and measured; protected branches; and for tools, a process sandbox enforced by the operating system's kernel. Start at \u201cenforced\u201d for anything touching production.",t:"15 minutes",d:3},
  agentic:{who:"non-technical, with agents",ico:"robot",q:"My agents work. How do I keep them in their lane?",a:"Write one short policy per agent: what it may reach and what needs your word. Have one agent route the work and one check the others. Ask for a summary when you want it, and let only urgent things reach your phone.",t:"8 minutes",d:1},
  chat:{who:"non-technical, chatbots",ico:"chat",q:"I copy and paste between chats. What's the next step?",a:"Save your instructions in a project, then connect the chat to your mail or files, read-only first. That removes most of the copying. Before you let it send or change anything, decide what it may do, and write it down.",t:"5 minutes",d:1}};
 const DN=['All depths','Plain English','Some technical','Deeply technical'];
@@ -450,7 +475,7 @@ let saved='all';try{saved=localStorage.getItem('aud')||'all'}catch(e){}
 setAud(AUD[saved]?saved:'all');
 
 // ladder
-const RUNGS=[["chat","Chats","You paste in, copy out.","None beyond what you paste",8],["folder","Projects","Instructions saved once per job; files you upload.","Your uploaded files",22],["plug","Connected","Mail, calendar, drive. Start read-only or draft-only.","Your accounts",45],["clock","Scheduled","Runs while you're away; results land where needed.","Your accounts, unattended",62],["code","Code","Agents change code and systems through a repository.","Code, CI, sometimes production",80],["team","A team","Many agents, many people: one hub, an auditor, written policies.","Everything above, at scale",100]];
+const RUNGS=[["chat","Chats","You paste in, copy out.","None beyond what you paste",8],["folder","Projects","Instructions saved once per job; files you upload.","Your uploaded files",22],["plug","Connected","Mail, calendar, drive. Start read-only or draft-only.","Your accounts",45],["clock","Scheduled","Runs while you're away; results land where they're needed.","Your accounts, unattended",62],["code","Code","Agents change code and systems through a repository.","Code, CI, sometimes production",80],["team","A team","Many agents, many people: one hub, an auditor, written policies.","Everything above, at scale",100]];
 const st=$('#stairs');let s='';RUNGS.forEach((r,i)=>{const x=20+i*155,h=20+i*24,y=160-h;s+='<rect x="'+x+'" y="'+y+'" width="140" height="'+h+'" rx="6" fill="var(--panel)" stroke="var(--line)" id="stair-'+(i+1)+'"/><use href="#i-'+r[0]+'" x="'+(x+56)+'" y="'+(y+(h-28)/2)+'" width="28" height="28" stroke="var(--muted)" fill="none" stroke-width="1.6"/>'});st.innerHTML=s;
 $('#steps').innerHTML=RUNGS.map((r,i)=>'<div class="step" id="step-'+(i+1)+'"><span class="eyebrow">Step '+(i+1)+'</span><b>'+r[1]+'</b><small>'+r[2]+'</small><small><i>Reach:</i> '+r[3]+'</small><div class="reachbar" aria-hidden="true"><i style="width:'+r[4]+'%"></i></div></div>').join('');
 
@@ -458,9 +483,9 @@ $('#steps').innerHTML=RUNGS.map((r,i)=>'<div class="step" id="step-'+(i+1)+'"><s
 const DEP=[
  {id:"assist",ico:"mail",name:"Personal assistant on mail and calendar",l:["Logged; it could send or delete","You approve every send; it drafts","Read and draft scopes only; a separate account"],start:2,risk:["A tricked assistant forwards mail or accepts invites in your name, and you find out later.","Most of the risk is gone: nothing leaves without you pressing send. It can still read everything it's connected to.","It cannot send or delete even if tricked; a separate account limits what it can read."],bar:"Connector scopes set to read and draft; a separate agent account; a label it may touch."},
  {id:"code",ico:"code",name:"Coding agent on a repository",l:["Every push logged","A person merges; reviews before main","Main protected; push to dev only; scoped token"],start:3,risk:["Code reaches production unreviewed; a token that can do more than push.","A person sees every change, but a token with admin rights can still bypass the review.","The token can only push to dev; main is protected; the gate must pass. Costs nothing and holds."],bar:"Protected main, a gate in CI, one token per agent, no admin rights."},
- {id:"team",ico:"team",name:"A team of scheduled agents",l:["Run logs and a daily brief","A hub, three tiers, an independent auditor","One token per agent, sealed; admin kept by the person"],start:2,risk:["Agents act on each other's messages, or on a forged one; you read about it in the logs.","A hub routes, an auditor checks, and the person's words gate anything risky. A tricked agent could still skip its own rules.","Each agent can only do what its own token allows; one compromised agent cannot use another's access."],bar:"Commits only between agents; a check of who pushed; the auditor reporting to the person."},
+ {id:"team",ico:"team",name:"A team of scheduled agents",l:["Run logs and a daily brief","A hub, three tiers, an auditor; a person approves anything risky","One token per agent; admin kept by the person"],start:2,risk:["Agents act on each other's messages, or on a forged one; you read about it in the logs.","A hub routes, an auditor checks, and the person's words gate anything risky. A tricked agent could still skip its own rules.","Each agent can only do what its own token allows; one compromised agent cannot use another's access."],bar:"Commits as the only channel between agents, a check of who pushed, an auditor reporting to the person. None of these holds against a tricked agent: if all your agents push from one account, as ours do, a check of who pushed proves only that one of them did. Only one token per agent (level 3) holds.",barLabel:"What helps: "},
  {id:"front",ico:"inbox",name:"Customer-facing agent (inbox, chat)",l:["Not enough on its own","Every input untrusted; a person answers","Isolated: nothing it reads can trigger an action"],start:3,risk:["Strangers write the agent's input, so prompt injection is certain. Logging only tells you afterwards.","A person answers every message, but the agent can still be steered while it reads.","It has no tools beyond drafting a reply, in its own account and data store. A stranger can try, and nothing happens."],bar:"No tools beyond replying; replies drafted for a person; a separate account and data store."},
- {id:"money",ico:"coin",name:"Agents touching money or production",l:["Not advisable","Two-person approval for each action","Deny by default; limits; a kill switch"],start:3,risk:["Irreversible actions at machine speed. A mistake is a loss, not a draft.","Two people approve each action; safe but slow, and approval fatigue sets in.","Only listed actions under set limits; a kill switch; the tools in a process sandbox."],bar:"Per-action limits, two people for anything above them, a process sandbox around the tools (SHarness)."}];
+ {id:"money",ico:"coin",name:"Agents touching money or production",l:["Not advisable","Two-person approval for each action","Deny by default; limits; a kill switch"],start:3,risk:["Irreversible actions at machine speed. A mistake is a loss, not a draft.","Two people approve each action; safe but slow, and approval fatigue sets in.","Only listed actions under set limits; a kill switch; the tools in a process sandbox."],bar:"Per-action limits, two people for anything above them, a process sandbox around the tools (for example containers, or seccomp or Landlock profiles)."}];
 const LN=['Watch','Reviewed','Enforced'],LC=['var(--muted)','var(--gold)','var(--green)'],LV=['l1','l2','l3'];
 let cur=DEP[0];
 $('#deps').innerHTML=DEP.map((d,i)=>'<button type="button" class="dep" data-i="'+i+'" aria-pressed="'+(i===0)+'">'+ic(d.ico)+d.name+'</button>').join('');
@@ -475,17 +500,17 @@ function render(){const l=+$('#lvl').value,d=cur;
  $('#d-at').innerHTML='<span class="lvl '+LV[l-1]+'">'+LN[l-1]+'</span> '+d.l[l-1]+'. '+d.risk[l-1];
  const ok=l>=d.start;$('#d-dot').style.background=ok?'var(--green)':(l===d.start-1?'var(--gold)':'var(--red)');
  $('#d-verdict').textContent=ok?(l===d.start?'Where we\'d start for this deployment':'Stronger than we\'d start with; fine if you can afford it'):'Below where we\'d start: the gold mark on the dial';
- $('#d-bar').textContent='Barriers that hold: '+d.bar;
+ $('#d-bar').textContent=(d.barLabel||'Barriers that hold: ')+d.bar;
  $('#lvl').setAttribute('aria-valuetext',LN[l-1]);}
 function pickDep(i){cur=DEP[i];$$('.dep').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.i===i)));render()}
 $('#lvl').addEventListener('input',render);render();
 $('#mtable tbody').innerHTML=DEP.map(d=>'<tr><td><b>'+d.name+'</b></td>'+d.l.map(x=>'<td>'+x+'</td>').join('')+'<td><span class="lvl '+LV[d.start-1]+'">'+d.start+' · '+LN[d.start-1]+'</span></td></tr>').join('');
 
 // product table
-const PROD=["Claude","ChatGPT","Gemini","Copilot","Open models"];
-const PROWS=[["Saved instructions","Projects ✓ tested","Projects, GPTs","Gems","Copilot agents","Your own prompt files"],["Mail and calendar","Connectors ✓ tested","Connectors","Workspace apps","Microsoft 365","Your own integration"],["Scheduled runs","Scheduled tasks ✓ tested","Scheduled tasks","Scheduled actions","Power Automate","cron, CI"],["Coding agent on a repo","Claude Code ✓ tested","Codex","Gemini CLI, Jules","GitHub Copilot agent","Open-source harnesses"]];
+const PROD=["Claude","Microsoft and GitHub"];
+const PROWS=[["Saved instructions","Projects ✓ tested","Agents for Microsoft 365 Copilot"],["Mail and calendar","Connectors (Gmail, Google Calendar, Microsoft 365) ✓ tested","\u2014"],["Scheduled runs","Scheduled tasks ✓ tested","Power Automate scheduled flows"],["Coding agent on a repository","Claude Code ✓ tested","GitHub Copilot coding agent"]];
 let pcol=0;
-function ptable(){$('#ptable').innerHTML='<thead><tr><th>Step</th>'+PROD.map((p,i)=>'<th class="'+(i===pcol?'hi':'')+'">'+p+'</th>').join('')+'</tr></thead><tbody>'+PROWS.map(r=>'<tr><td>'+r[0]+'</td>'+r.slice(1).map((c,i)=>'<td class="'+(i===pcol?'hi':'')+(i===0?' ok':'')+'">'+c+'</td>').join('')+'</tr>').join('')+'<tr><td>Process-level enforcement</td><td colspan="5">Not built into any of them: SHarness (open source) wraps the tools, whichever model drives them</td></tr></tbody>';
+function ptable(){$('#ptable').innerHTML='<thead><tr><th>Step</th>'+PROD.map((p,i)=>'<th class="'+(i===pcol?'hi':'')+'">'+p+'</th>').join('')+'</tr></thead><tbody>'+PROWS.map(r=>'<tr><td>'+r[0]+'</td>'+r.slice(1).map((c,i)=>'<td class="'+(i===pcol?'hi':'')+(i===0?' ok':'')+'">'+c+'</td>').join('')+'</tr>').join('')+'<tr><td>Process-level enforcement</td><td colspan="2">None of these products enforces a policy on the processes an agent starts. SHarness, below, is an open-source design that aims to add that around the tools, whichever model drives them</td></tr></tbody>';
  $$('#prodseg button').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===pcol)))}
 $('#prodseg').innerHTML=PROD.map(p=>'<button type="button">'+p+'</button>').join('');
 $$('#prodseg button').forEach((b,i)=>b.addEventListener('click',()=>{pcol=i;ptable()}));ptable();
@@ -504,7 +529,7 @@ $('#worry-pills').innerHTML=[["leak","Data leaking out"],["inject","Agents trick
 const WHO=["Nobody, explicitly","Me, in my head","Written down for each agent","Written, and checked by someone else"];
 $('#who').addEventListener('input',e=>e.target.setAttribute('aria-valuetext',WHO[+e.target.value]));
 const qa=$('#qa');
-function prog(){const f=new FormData(qa);let n=3;if(f.getAll('reach').length)n++;if(+f.get('who')>0)n++;if(f.getAll('worry').length)n++;n+=1;$('#qa-prog').style.width=Math.round(n/7*100)+'%'}
+const touched=new Set();function prog(e){if(e&&e.target&&e.target.name)touched.add(e.target.name);$('#qa-prog').style.width=Math.round(touched.size/7*100)+'%'}
 qa.addEventListener('change',prog);qa.addEventListener('input',prog);prog();
 
 // tabs
@@ -551,13 +576,13 @@ qa.addEventListener('submit',e=>{e.preventDefault();const f=new FormData(qa);
   '<p><b>Your deployment:</b> '+D.name+'. <b>Start at</b> <span class="lvl '+LV[lvl-1]+'">level '+lvl+' · '+LN[lvl-1]+'</span></p>'+
   '<p class="mono" style="color:var(--muted)">Red: how much your agents can reach. Green: how much is decided and checked. The number is the gap between them.</p></div></div>'+
   '<p><b>First actions</b></p><ol>'+acts.slice(0,5).map(a=>'<li>'+a+'</li>').join('')+'</ol>'+
-  '<p><b>Read next:</b> '+reads.map(link).join(' · ')+(prod!=='claude'?' · and the product table for '+pn:'')+'</p>'+
+  '<p><b>Read next:</b> '+reads.map(link).join(' · ')+(prod==='copilot'?' · and the product table for '+pn:(prod==='chatgpt'||prod==='gemini')?' · the product table (it leaves '+pn+' out: check its own help pages)':prod!=='claude'?' · and the product table':'')+'</p>'+
   '<button class="btn ghost" type="button" id="qa-apply">Switch the guide to '+AUD[role].who+'</button></div>';
  out.hidden=false;
  $$('.step').forEach(x=>x.classList.remove('you'));$('#step-'+stage).classList.add('you');
  $$('#stairs rect').forEach((x,i)=>{x.setAttribute('fill',i+1===stage?'var(--gold-soft)':'var(--panel)');x.setAttribute('stroke',i+1===stage?'var(--gold)':'var(--line)')});
  pickDep(DEP.indexOf(D));$('#lvl').value=lvl;render();
- if(prod!=='mixed'){pcol={claude:0,chatgpt:1,gemini:2,copilot:3,open:4}[prod];ptable()}
+ pcol=prod==='claude'?0:prod==='copilot'?1:-1;ptable()
  $('#qa-apply').addEventListener('click',()=>{setAud(role);$('#ladder').scrollIntoView({behavior:'smooth'})});
 });
 
@@ -565,16 +590,16 @@ qa.addEventListener('submit',e=>{e.preventDefault();const f=new FormData(qa);
 const PROB=[
  ["courier","chat","I keep copying results between chats and tools","Saved instructions (projects), then connectors, then scheduled runs that put results where they're needed.","ladder"],
  ["drift","path","The agent forgets context or drifts from my instructions","Keep instructions and a short state file in a repository the agent reads first, every run.","setup"],
- ["blocked","lock","I can't connect it: the admin blocks it","The locked-down branch: ask the administrator per connector and per website, before building.","setup"],
- ["surprise","question","An agent did something I didn't expect","Write its ABP: the gap between what it can do and what you asked is where surprises come from. Close the gap with a barrier.","levels"],
- ["inject","warn","It followed instructions in an email or a web page","Prompt injection. Anything it reads is material, never instruction; only enforced barriers hold against it.","levels"],
+ ["blocked","lock","I can't connect it: the admin blocks it","Ask the administrator per connector and per website, before building.","setup"],
+ ["surprise","question","An agent did something I didn't expect","Write its policy: the gap between what it can do and what you asked is where surprises come from. Close it with a barrier.","levels"],
+ ["inject","warn","It followed instructions in an email or a web page","Prompt injection: anything it reads is material, never instruction; only enforced barriers hold.","levels"],
  ["blind","eye","I don't know what the agents did overnight","Log every run, and ask for a summary when you're ready; an auditor agent checks the others.","lessons"],
  ["cost","coin","The cost surprised me","Measure tokens per agent per run; fresh sessions for scheduled runs keep context, and cost, small.","lessons"],
- ["keys","key","Keys and passwords got shared around","One token per agent, sealed to its own key; secrets in an encrypted vault, never in a file or a message.","setup"],
- ["clash","team","Two agents overwrote each other's work","Every file has an owner; others draft changes and send them to the owner.","lessons"],
- ["no","shield","Security or legal said no","Show them each agent's ABP: reach, mandate, gap and barrier. It answers their questions in their terms.","levels"],
- ["silent","bell","Scheduled runs failed and nobody noticed","A run log, and the brief lists any missing or failed run; urgent items reach a phone.","lessons"],
- ["adopt","person","The team won't adopt it","Start each person at their own step of the ladder, with this guide read as them.","find"]];
+ ["keys","key","Keys and passwords got shared around","One token per agent; secrets per agent, where only that agent can reach them, never in a file or a message.","setup"],
+ ["clash","team","Two agents overwrote each other's work","Pull before you edit, check recent changes, and keep each change small and announced.","lessons"],
+ ["no","shield","Security or legal said no","Show them each agent's policy: grant, mandate, gap and barrier. It answers their questions in their terms.","levels"],
+ ["silent","bell","Scheduled runs failed and nobody noticed","A run log, and a brief that lists any missing or failed run.","lessons"],
+ ["adopt","person","The team won't adopt it","Start each person at their own step, with this guide read as them.","find"]];
 $('#qb-opts').innerHTML=PROB.map((p,i)=>tile('checkbox','prob',p[0],'pb-'+p[0],p[1],p[2],i===0)).join('');
 $('#qb').addEventListener('submit',e=>{e.preventDefault();const sel=new FormData(e.target).getAll('prob');const out=$('#qb-out');
  if(!sel.length){out.innerHTML='<div class="result"><p>Tick at least one problem to see its fix.</p></div>';out.hidden=false;return}
