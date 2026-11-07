@@ -14,7 +14,7 @@ summary: Everything Angelo's agents are asked to do, in one list, ordered by pri
 | 5 | Angelo's LinkedIn: take over the writer's drafts, keep them current | social-media@ | the spec's section | Angelo's feedback on the drafts |
 | 6 | Accenture into data/companies.json, owner angelo | crm@ | "the conductor coordinates, the agents deliver" | nothing |
 | 7 | The Android app: a spec, then dev.android@'s prompt | dev@ | "an Android app for PrompTugal.news" | nothing |
-| 8 | Briefs before meetings, from Angelo's companies (people/angelo/card.md, answer 2) | research@ | the spec's section | Angelo's go on the list; sgit-ai in the shared environment (his) |
+| 8 | Briefs before meetings, from Angelo's companies (people/angelo/card.md, answer 2) | research@ | the spec's section | sgit-ai in the shared environment (his), for the CRM's list only; the list is people/angelo/research/requests.md (his go) |
 | 9 | The sharness.kms changeset, piece by piece | vault.kms@ (vault@ reviews) | PLAN.md | nothing |
 | 10 | Context rules in the kit and every prompt | dev@ | "the conductor coordinates, the agents deliver" | nothing |
 | 11 | The links of promptugal.news, the rest of the site | dev.links@ | the spec's section | nothing |
