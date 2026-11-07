@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.975",
+    "date": "2026-11-07",
+    "what": "\"Caught by the watchers\" in ABP in action; dashboard@silvio's ABP",
+    "by": "abp@web-summit.dinis",
+    "from": "be10e300e"
+  },
+  {
     "version": "v0.2.974",
     "date": "2026-11-07",
     "what": "journalist-portugal@PrompTugal.vicky: scheduled run, idle",
