@@ -46,8 +46,8 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
     - P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
     - P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
-
 17. **The reviewer fixes, the reviewer lists** (Vicky, 7 Nov; for the reviewer): when a draft only needs wording, structure, caption, image or length fixes, make them yourself and mark it Ready. Send it back as fix-first only for problems of fact or source, or anything you cannot check. At the end of every run, list the Ready drafts in your reply with a publish line Vicky can copy. (This widens standing answer 13's "small" edits; publishing still only at her word.)
+
 ## Updates for agents
 
 How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
