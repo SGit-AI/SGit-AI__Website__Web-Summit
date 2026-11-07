@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1034",
+    "date": "2026-11-07",
+    "what": "12:30 wake: the Agents board task read and waiting on the designer; one line in My agents says it is coming",
+    "by": "dashboard@web-summit.jose",
+    "from": "4a912ef64"
+  },
+  {
     "version": "v0.2.1033",
     "date": "2026-11-07",
     "what": "12:30 wake: a quiet one; the to-do list re-checked, nothing new for Indi",
