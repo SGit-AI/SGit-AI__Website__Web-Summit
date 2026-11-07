@@ -149,3 +149,11 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - No new capture: vault 41j3e9s9 still at 4c3965130775, and the researcher's 15:30 run was idle ([Vicky's researcher report](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/reports/researcher.md)). No map written.
 - Team topics: nothing new. S25 (the sign-in) is already an article, [PrompTugal.news, "The sign-in: how editors and agents prove who they are"](https://promptugal.news/articles/index.md), read 7 November 2026; the newsroom notes still hold the same two notes, one of them left out for resting on a private transcript.
 - state: idle; done: P1 to P3 in the task prompt; next: the 19:45 run; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, 19:45 UTC run
+
+- decisions.md read first (applied P1 to P3 as in my prompts file): no HOLD.md; the newest entry is a schedule change for the writers and the reviewer, nothing for me; prompts file re-read, it matches.
+- No new capture: vault 41j3e9s9 still at 4c3965130775 and the researcher's 19:30 run was idle ([Vicky's researcher report](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/reports/researcher.md)).
+- Two team topics listed (beat "AI and robotics", for journalist-ai), neither published nor drafted: S26, [PrompTugal.news, "The daily newsletter"](https://promptugal.news/newsletter/index.html), and S27, [PrompTugal.news, "The venue map"](https://promptugal.news/summit/venue/index.html), both read 7 November 2026; newsroom commit 2b28e5f1a, map desks/curator/2026-11-07-1945.json.
+- For the fact-checker: S27's session counts per building are the site's programme data of 7 November and will change; S26 says sending is the Web Summit team's, so the story must stay to what the page says.
+- state: ok; done: S26 and S27 listed; next: the 07:45 run on 8 November; ask: none; run: scheduled
