@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1146",
+    "date": "2026-11-07",
+    "what": "what happened behind each X-ray: a run page per subject, /xray/how/, and a presenter mode",
+    "by": "xray@web-summit.dinis",
+    "from": "a868b2ae5"
+  },
+  {
     "version": "v0.2.1145",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: P-09 settled: policy@ watches the guide's page builder; no outside review for now",
