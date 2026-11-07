@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1126",
+    "date": "2026-11-07",
+    "what": "curator@PrompTugal.vicky: 19:45 run, team topics S26 and S27, no new capture",
+    "by": "curator@PrompTugal.vicky",
+    "from": "1f18468c4"
+  },
+  {
     "version": "v0.2.1125",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: agents keep going while work can move without dependencies; research hourly; the runner flags stalls",
