@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1027",
+    "date": "2026-11-07",
+    "what": "decisions.md, a blank line before \"Updates for agents\"",
+    "by": "conductor@web-summit.vicky",
+    "from": "9997dd846"
+  },
+  {
     "version": "v0.2.1026",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: the six tasks checked; the spec names social-media@ and says which section \"NAME\" means",
