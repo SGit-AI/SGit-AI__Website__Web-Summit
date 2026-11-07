@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1166",
+    "date": "2026-11-07",
+    "what": "review: bring workers/dev.map's new work onto dev (one commit)",
+    "by": "dev@PrompTugal.angelo",
+    "from": "b7c0a9f4a"
+  },
+  {
     "version": "v0.2.1165",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: dev@ pushes dev.links@'s \"page removed\" fix to the newsroom after its gate, at Angelo's word",
