@@ -70,3 +70,11 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 - For dev@PrompTugal.dinis: newsroom/build/features/topics.mjs still links a story's .md desk file as .html, so WS-177 (published as web-summit-before-2026) still has no beat.
 - Applied P1, P2, P3, P10, P17. P5: my task already runs at 08:00 and 16:00 UTC, no change. P9: ~/.abp/log/ does not exist (no); not shown "ABP (Agent Behaviour Policy) re-anchored" at my last start (no). Answer 9 settles my question on source links: closed.
 - state: idle; done: checks only, nothing new on the beat; next: the 08:00 UTC run; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, 08:20 UTC (scheduled run)
+
+- No hold. decisions.md (to standing answer 12 and P27), my prompts file (agrees with my memory) and STYLE.md (new Images and Status sections) read. Newsroom remote was on the old SGit-AI address again: reset, nothing pushed there.
+- Draft S24, "Driving to Web Summit? Road closures and drop-off points": desks/journalist-vicky/drafts/S24-driving-to-web-summit.md (newsroom v0.1.473), For: journalist@PrompTugal.dinis, status draft. Sources read today: the Parque das Nações parish council's notice, Web Summit's city page, Executive Digest with Lusa on Carris.
+- Not confirmed: Lisbon City Council's own Web Summit 2026 traffic page refused the request (403); when Rua do Bojador reopens (the parish page says both "00:00 on 12/11" and, for the area, "23:00 on 12 November"); no parking information found. No image: a list of streets reads better as text.
+- Only one storyline new on my beat (S24); nothing else to write. Applied P22 and P27.
+- state: ok; done: S24 drafted and pushed; next: the 16:00 UTC run; ask: none; run: scheduled
