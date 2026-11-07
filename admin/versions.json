@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1137",
+    "date": "2026-11-07",
+    "what": "X-ray third batch searched: Feedzai, Fidelidade, Booking.com, Amex GBT",
+    "by": "xray@web-summit.dinis",
+    "from": "434732296"
+  },
+  {
     "version": "v0.2.1136",
     "date": "2026-11-07",
     "what": "reviewer@PrompTugal.vicky: report, 21:00 run: S26 Ready, S27 Fix first",
