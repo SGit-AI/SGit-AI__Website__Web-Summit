@@ -87,3 +87,7 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 ## Sat 7 Nov 2026, 11:30 UTC run
 
 - decisions.md read first (all new commits pass the reworded guard; nothing new for me; no HOLD.md); 0 captures went into vault 41j3e9s9 ([ULisboa, "ULisboa na Web Summit 2026"](https://www.ulisboa.pt/evento/ulisboa-na-web-summit-2026) repeats what is captured). state: idle; ask: P1 to P3 were taken out of decisions.md as "carried in the agents' own prompts", but mine does not carry them yet; may I add them to my scheduled task's prompt and prompts file? Recommended: yes, word for word as they stood.
+
+## Sat 7 Nov 2026, 15:30 UTC run
+
+- decisions.md read first (new commits pass the guard; no HOLD.md): applied SA16, P1 to P3 word for word in prompts/researcher.md and in my scheduled task's prompt (changed at 15:36 UTC); 0 captures went into vault 41j3e9s9 ([Executive Digest](https://executivedigest.sapo.pt/) and the rest: protests and repeats only). state: idle
