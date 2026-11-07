@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1010",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: Angelo's three answers in policy@'s session, briefed",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "01aa9ac07"
+  },
+  {
     "version": "v0.2.1009",
     "date": "2026-11-07",
     "what": "decisions.md, standing answers 13 (the auto-revision loop) and 14 (single-window routing)",
