@@ -2,7 +2,7 @@
 title: "dev@PrompTugal.angelo: STATE"
 summary: What dev@PrompTugal.angelo holds open, what it waits on, and its open questions, kept short (the kit's Context rules). Read first at every run.
 ---
-**Last updated:** 7 November 2026, about 21:45 UTC (scheduled run).
+**Last updated:** 7 November 2026, about 22:55 UTC (Angelo: "Wake up").
 
 ## Every run (the routine)
 
@@ -22,6 +22,7 @@ summary: What dev@PrompTugal.angelo holds open, what it waits on, and its open q
 |---|---|---|
 | **Kanban as Angelo's task board** (backlog #0, approved cb97bf39) | Built: For me is the default of `#kanban` (B, the copied line, works now); test `tasks.test.js` | A (signed on the desk's lane) once the desk's token comes (WS-170); the desk adds the backlog Status column and `[A-NN]` ids |
 | **Android** (backlog #7) | Spec approved; dev.android@ in agents.json, kit, new-agents spec, backlog #14 | Repository: I cannot create it (this session's GitHub scope); Angelo creates it, and dev.android@'s task |
+| **policy@'s two barriers** (backlog 1b, 318b1c2d) | Built: the signed-only drain (d89d2576) and the lane check, check 21 (42198055), warnings until lanes.json says "enforce": true | policy@ widens dashboard@'s and writer@'s lanes, then turns enforcement on |
 | **Review workers/dev.links** | Reviewed to 069b5509 (run 2: crawler fix, five external 404s for their signers) | Its next run: 1547 unchecked links |
 | **Review workers/dev.map** | Reviewed to 75c5d2d2: the real-time spec addendum (2b), with my review in it; waits on Angelo | Its next pieces: the four new events, external connections, `/team/map/`, 3D |
 | **Review workers/dev.venues** | Reviewed to 811f0b36: B1 items 1 and 2 shipped on the newsroom | B1 items 3 and 4: My day on the map, links |
