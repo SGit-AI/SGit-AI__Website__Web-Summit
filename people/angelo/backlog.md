@@ -18,7 +18,7 @@ summary: Everything Angelo's agents are asked to do, in one list, ordered by pri
 | 6 | ~~Accenture into data/companies.json, owner angelo~~ done (5c7a04cb) | crm@ | | |
 | 7 | The Android app: spec approved and dev.android@'s settings written (30a7f1d3); the repository PrompTugal/PrompTugal__App__Android still to create (dev@ cannot: repository creation is off for its session) | Angelo, then dev.android@ | 30a7f1d3 | Angelo creating the repository and dev.android@'s task |
 | 8 | Briefs before meetings, from Angelo's companies (people/angelo/card.md, answer 2) | research@ | the spec's section | sgit-ai in the shared environment (his), for the CRM's list only; the list is people/angelo/research/requests.md (his go) |
-| 9 | The sharness.kms changeset, piece by piece | vault.kms@ (vault@ reviews) | PLAN.md | nothing |
+| 9 | The sharness.kms changeset, piece by piece. Tests: vault@ runs the upstream tests on each piece in its own session and reports pass or fail For: vault.kms@ (Angelo: "Ok, go with A"); vault.kms@ builds the next piece once the last one passes | vault.kms@ (vault@ reviews and tests) | PLAN.md; this commit | vault@'s test result on piece 1 |
 | 10 | Context rules in the kit and every prompt | dev@ | "the conductor coordinates, the agents deliver" | nothing |
 | 10b | Mark the five dead cited sources in the newsroom's evidence data "page removed", keeping each fact (Angelo: "A works"); one change per commit, the five steps, For: dev@PrompTugal.dinis | dev.links@ | this commit | nothing |
 | 11 | The links of promptugal.news, the rest of the site | dev.links@ | the spec's section | nothing |
