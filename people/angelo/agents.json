@@ -100,5 +100,11 @@
     "job": "builds the sharness.kms changeset from people/angelo/proposals/kms/spec-kms.md as patches and tests in people/angelo/proposals/kms/changeset/, a proposal for Dinis; vault@PrompTugal.angelo reviews it; never pushes to SHarness's or sgit's repositories",
     "session": "a fresh Claude Code cloud session for every run, started by a scheduled task in Angelo's account; the shared no-secrets environment; no key",
     "schedule": "every three hours at :05 (cron 5 */3 * * *), a new session each run"
+  },
+  {
+    "name": "dev.android@PrompTugal.angelo",
+    "job": "builds the Android app for PrompTugal.news in line with Dinis's iOS app, an internal beta (people/angelo/proposals/android/spec-android.md); dev@PrompTugal.angelo reviews its reports",
+    "session": "a fresh Claude Code cloud session for every run, started by a scheduled task in Angelo's account; the shared no-secrets environment; no key",
+    "schedule": "every two hours at :10 (cron 10 */2 * * *), a new session each run"
   }
 ]

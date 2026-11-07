@@ -86,56 +86,56 @@
   {
    "agent": "journalist@PrompTugal.vicky",
    "task": "scheduled run",
-   "cron_utc": "0 8,12,20 * * *",
+   "cron_utc": "0 8,12,16,20 * * *",
    "task_id": "trig_01SpLzX33tb8C82iAaPMBy3d",
    "state": "enabled",
    "since": "6 Nov 2026",
-   "at_whose_word": "Vicky (6 Nov); three rounds a day at Vicky's word, 7 Nov (the agent moves its own task; until it confirms, the account may still show the old times)"
+   "at_whose_word": "Vicky (6 Nov); four rounds a day at Vicky's word, 7 Nov about 16:40 (the agent moves its own task; until it confirms, the account may still show three rounds)"
   },
   {
    "agent": "journalist-portugal@PrompTugal.vicky",
    "task": "scheduled run",
-   "cron_utc": "6 8,12,20 * * *",
+   "cron_utc": "6 8,12,16,20 * * *",
    "task_id": "trig_01R4SDnvm1qg6LrQVcmCRPaH",
    "state": "enabled",
    "since": "6 Nov 2026",
-   "at_whose_word": "Vicky (6 Nov); three rounds a day at Vicky's word, 7 Nov (the agent moves its own task; until it confirms, the account may still show the old times)"
+   "at_whose_word": "Vicky (6 Nov); four rounds a day at Vicky's word, 7 Nov about 16:40 (the agent moves its own task; until it confirms, the account may still show three rounds)"
   },
   {
    "agent": "journalist-europe@PrompTugal.vicky",
    "task": "twice-daily run",
-   "cron_utc": "12 8,12,20 * * *",
+   "cron_utc": "12 8,12,16,20 * * *",
    "task_id": "trig_01KRJSLJ46fntBKdqukvLoKx",
    "state": "enabled",
    "since": "6 Nov 2026",
-   "at_whose_word": "Vicky (6 Nov); three rounds a day at Vicky's word, 7 Nov (the agent moves its own task; until it confirms, the account may still show the old times)"
+   "at_whose_word": "Vicky (6 Nov); four rounds a day at Vicky's word, 7 Nov about 16:40 (the agent moves its own task; until it confirms, the account may still show three rounds)"
   },
   {
    "agent": "journalist-ai@PrompTugal.vicky",
    "task": "scheduled run",
-   "cron_utc": "18 8,12,20 * * *",
+   "cron_utc": "18 8,12,16,20 * * *",
    "task_id": "trig_014T4B2EkggPSUDazhhJZ1Gf",
    "state": "enabled",
    "since": "6 Nov 2026",
-   "at_whose_word": "Vicky (6 Nov); three rounds a day at Vicky's word, 7 Nov (the agent moves its own task; until it confirms, the account may still show the old times)"
+   "at_whose_word": "Vicky (6 Nov); four rounds a day at Vicky's word, 7 Nov about 16:40 (the agent moves its own task; until it confirms, the account may still show three rounds)"
   },
   {
    "agent": "journalist-connections@PrompTugal.vicky",
    "task": "scheduled run",
-   "cron_utc": "24 8,12,20 * * *",
+   "cron_utc": "24 8,12,16,20 * * *",
    "task_id": "trig_01RqSqjPAC6WuwNmTbjKFzwa",
    "state": "enabled",
    "since": "6 Nov 2026",
-   "at_whose_word": "Vicky (6 Nov); three rounds a day at Vicky's word, 7 Nov (the agent moves its own task; until it confirms, the account may still show the old times)"
+   "at_whose_word": "Vicky (6 Nov); four rounds a day at Vicky's word, 7 Nov about 16:40 (the agent moves its own task; until it confirms, the account may still show three rounds)"
   },
   {
    "agent": "reviewer@PrompTugal.vicky",
    "task": "reviewer run",
-   "cron_utc": "0 9,13,21 * * *",
+   "cron_utc": "0 9,13,17,21 * * *",
    "task_id": "trig_01JzwYcUkMpfFThdm1mbeGgs",
    "state": "enabled",
    "since": "6 Nov 2026 (new session)",
-   "at_whose_word": "Vicky (hand-over, 6 Nov); the old session's task deleted; three rounds a day at Vicky's word, 7 Nov (the agent moves its own task; until it confirms, the account may still show the old times)"
+   "at_whose_word": "Vicky (hand-over, 6 Nov); the old session's task deleted; four rounds a day at Vicky's word, 7 Nov about 16:40 (the agent moves its own task; until it confirms, the account may still show three rounds)"
   },
   {
    "agent": "checker@PrompTugal.vicky",
@@ -154,6 +154,15 @@
    "state": "enabled",
    "since": "6 Nov 2026",
    "at_whose_word": "Vicky (6 Nov)"
+  },
+  {
+   "agent": "conductor@web-summit.vicky",
+   "task": "the 17:30 newsroom check",
+   "cron_utc": "30 17 * * *",
+   "task_id": "trig_01NYwcWXpPmsPK9MLgtq5NAt",
+   "state": "enabled",
+   "since": "7 Nov 2026",
+   "at_whose_word": "Vicky (7 Nov): a lightweight check after the reviewer's 17:00 run; silent unless actionable"
   }
  ],
  "no_task": [

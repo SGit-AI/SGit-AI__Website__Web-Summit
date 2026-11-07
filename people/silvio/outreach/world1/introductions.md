@@ -14,7 +14,7 @@ CRM, never here.
 | Embratur, Porto Digital | Eluvi, iFriend, Vent, SmartTalks (Brazilian tourism startups) | They bring them to the Brazil stand (Movimento Econômico, 21 Oct 2026) | cold |
 | AHRESP | restaurants and hotels in Portugal | DIG-IN shows its logo | cold |
 
-## The first request: Algarve Evolution (the one warm contact)
+## The first request: Algarve Evolution (the one warm contact; Silvio's pick, 7 November: ask them first)
 
 For Silvio to send after Dinis's yes, in the thread Dinis already has, or as a new email from PromptUGAL:
 
@@ -26,6 +26,6 @@ For Silvio to send after Dinis's yes, in the thread Dinis already has, or as a n
 > Que empresas e startups do Algarve vão estar este ano na Web Summit? Se nos indicarem duas ou três, publicamos uma
 > página sobre cada uma e mostramos-lhes antes de sair.
 >
-> Silvio Switha
-> PromptUGAL, Web Summit Edition · feito com a RiskMandate
+> Silvio Switha, PromptUGAL
+> Web Summit Edition · feito com a RiskMandate
 > Rascunho do meu agente de IA; revisto e enviado por mim.

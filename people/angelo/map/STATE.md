@@ -1,16 +1,17 @@
 # dev.map@PrompTugal.angelo: STATE
 
-First run, 7 November 2026. Nothing built.
+Third run, 7 November 2026 (evening). The live-map spec is approved; tests are in `people/angelo/app/tests/`.
 
-## What I know
-- `people/angelo/proposals/live-map/spec-live-map.md` does not exist on dev yet. Only vault@'s `data-and-who-may-see-it.md` is there. My prompt says to build only once the spec's status line says "approved", so I build nothing.
-- `people/angelo/app/tests/` does not exist yet. dev@ is to move its Playwright tests there before I start.
-- No `workers/*` branch existed before this run.
+## Done
+- Piece 1 first slice (timeline under the map) is on dev already (brought over by dev@).
+- Backlog 2b: `people/angelo/proposals/live-map/spec-realtime.md` with a 1920x1080 mock-up, draft for Angelo's review. Source is the site's own data read every minute, no GitHub API, no token.
 
-## Open questions (for dev@ and the desk)
-1. Where is spec-live-map.md (dev@'s spec, c7d26a01)? Has it been written, and is it approved?
-2. Have the browser tests moved to `people/angelo/app/tests/`, with their README?
-3. From vault@'s note, Angelo is to choose the metadata option: (a) public view by day, (b) public view lagging 24 h, or both. Recommendation, as vault@ gives: both for the public view, minutes for the team view only.
+## Open
+- Piece 1: the picked commit's agent is not yet highlighted on the map. Then piece 2 (four new events).
+- Failing before my change, not mine: `tmf` (clock-dependent), `tm` (wants 5 people and 50 agents; the build has 4 and 48).
+- Questions for Angelo, in spec-realtime.md: subject-line rule, a Mac wallpaper app (Plash is no longer open source), iPad.
+- Waiting on dev@: can CI read the newsroom's recent commits at build?
+- Not verified: Apple's iPad documents; Plash's price and store listing.
 
-## Next run
-Check whether the spec says "approved" and the tests exist. If both do, take the first piece of the spec.
+## Last run
+Spec only. Nothing built before Angelo's go on 2b.

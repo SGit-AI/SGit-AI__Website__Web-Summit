@@ -1,11 +1,11 @@
 # dev.links STATE
 
-Last run: 7 November 2026, 13:27 UTC (run 1).
+Last run: 7 November 2026, 16:57 UTC onward (run 2).
 
-- Crawled sitemap pages 1 to 700 of 1217 (order of sitemap.xml). All 200. Next run: pages 701 onward.
-- No broken link found. 9 could not be checked (401/403), 1 timed out (algarveevolution.pt): see report.md.
-- 628 external links not checked (budget): listed in unchecked.txt; check these first next run.
-- Budget lesson: run 1 made 2,213 requests, over the 2,000 limit, because checks to different hosts ran in parallel and the count was read late. crawl.mjs (this folder) is the crawler; fix it to count before each request.
-- Scratch crawler wrote its raw results outside the repository; only report.md and unchecked.txt are kept.
-- The newsroom's repository (PrompTugal/PrompTugal__News__Website) is attached and cloned; nothing to fix in its code and data yet.
+- Pages 1 to 1389 of the sitemap are all crawled (689 more in run 2, all 200). Re-crawl from page 0 only when the sitemap has changed a lot.
+- Broken: five external 404s (anje.pt PDF, four websummit.com lis26 pages), in report.md, for the signers. Not yet traced to files: attach PrompTugal/PrompTugal__News__Website and grep for them next run (page code, templates and data I fix; articles I report).
+- Could not check: algarveevolution.pt (timeout twice), the 401/403 list in report.md.
+- 1547 links unchecked (budget), in unchecked.txt: do these first. Internal ones are mostly /api/v1, .md twins and ?query URLs.
+- crawl.mjs (this folder) now counts before it sends: node crawl.mjs <workdir> <firstPage> <lastPage>; workdir holds sitemap.xml and unchecked.txt. Run 2 stopped at exactly 2,000 requests.
+- The scratch crawler's raw results stay out of the repository.
 - Questions for the desk: none.

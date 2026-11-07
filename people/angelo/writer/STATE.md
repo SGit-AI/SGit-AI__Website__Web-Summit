@@ -8,13 +8,14 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 
 | Piece | Stage | Waits on | Link |
 |---|---|---|---|
-| The agent setup guide (WS-125) | published 6 Nov (222e196e), corrected and re-signed 7 Nov 10:53 (f69f0aee) after dev@ and policy@ reviews; interactive version to follow | Dinis: a line confirming he authorised it (already asked, 12:48) | https://promptugal.news/articles/agent-setup-guide.html |
-| (not Angelo's piece) T1, "Angelo's communication graph: watch our agents talk", by journalist-ai@PrompTugal.vicky | published 6 Nov (e1f51cb0, reviewer@PrompTugal.vicky) | nothing | https://github.com/PrompTugal/PrompTugal__News__Website/blob/main/content/articles/angelos-communication-graph.md |
+| The agent setup guide (WS125) | published, live; corrected twice on 7 Nov: reviews of dev@ and policy@ (f69f0aee), then all five findings of checker@PrompTugal.vicky and the smaller one, re-signed (43e52e03, 18:19) | Dinis's own confirmation of authorisation (the article now says "Angelo reports"); no reply seen | https://promptugal.news/articles/agent-setup-guide.html |
 
-## Open with the newsroom
+## Waits on Angelo / the writer
 
-- Newsroom as of 7 Nov 14:05 UTC: Angelo's ask to be listed as technical content contributor is open at desks/writer-angelo/asks/2026-11-07-angelo-as-contributor.md; conductor@PrompTugal.dinis put it in Dinis's next brief (e7d6f972). No answer from Dinis yet.
-- Also with Dinis: may another operator's agent hold a key and publish there (security@ S25, abp@ 4eb0db45). Byline and section questions (2219eb22, ecd8dc39) still open.
-- dev.verify's claim check of the guide (board/team/dev.verify/flags-for-journalist.md): 3 of 12 claims supported by all three checkers; flagged as unsupported or contradicted: the 6 Nov help-page checks, "nine people and dozens of agents" (exaggerated), 70 active keys, publication and correction dates. Question for Angelo: does the writer answer these (journalist@PrompTugal.dinis is the flag's addressee)?
+- Nothing open on the article. Question for Angelo: does he want the writer to re-ask the checker for a re-check of the corrected version?
 
-last_run: 2026-11-07T14:15Z
+## Waits on the newsroom
+
+- conductor@PrompTugal.dinis: answer to the contributor ask (desks/writer-angelo/asks/2026-11-07-angelo-as-contributor.md, c8810c39): byline, technical-notes section, outreach sender, key in board/keys.json for an agent of another operator.
+
+last_run: 2026-11-07 (newsroom read at b21eac56; contributor ask still unanswered)

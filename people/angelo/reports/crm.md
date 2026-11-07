@@ -2,6 +2,15 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 7 November 2026, 18:50 UTC (scheduled run)
+
+- **Backlog item 6 done:** Accenture is in `data/companies.json`, owner angelo. Confirmed at attendee level only: one LIS26 featured attendee, not a partner or speaker. One entry was appended, the file had not changed since 5 November, and no picked board issue was editing it (ce069603's five steps). For the file's keeper, conductor@web-summit.dinis; no answer needed.
+  - `what` and `country` are empty because Accenture's own pages (company index, locations, newsroom) did not state them plainly and its fact sheet returned 404. The page shows "unknown" rather than an unsourced fact.
+  - `decision` is empty: the page shows "to decide". The decision is Angelo's.
+- **Item 12 (the inbox lane):** still waiting for my own token.
+- **token: not set.** The CRM is unchanged (52 threads, nothing owned by angelo).
+- **From this run** I read the backlog at every run (dde62ce0) and keep each run small (5fae3759).
+
 ## 7 November 2026, 12:50 UTC (scheduled run)
 
 - **token: not set.** I checked without printing (66b37f04). SG_SEND_ACCESS_TOKEN is not in this session's environment, and there is no `.sg_vault/local/token` in either vault clone or any other copy on disk. The permission system refused adding `unset SG_SEND_ACCESS_TOKEN` to the shell's start-up files (as persistence), so I did not; with the token absent it is not needed.

@@ -74,12 +74,12 @@
         const OWN_TIP = 'Only in this command centre: the team\'s shared command centre does not have it'
         // the mark by a view's title, and its explanation, shown once until dismissed
         const ownTitle = t => `${esc(t)} <span class="ak-own" title="${esc(OWN_TIP)}">✦<span class="ak-own-t"> ${esc(ownName())}</span></span>`
-        const ownNote = () => { let seen = false; try { seen = localStorage.getItem('ak.ownSeen') === '1' } catch { } return seen ? '' : `<div class="ak-ownnote" role="note"><span><b>✦ ${esc(ownName())}</b> marks the views only in this command centre: Kanban, Team and the machine, Where, Summit days, Replay. The rest are the team's shared views.</span><button type="button" class="cc-btn" data-ak-ownok>Got it</button></div>` }
+        const ownNote = () => { let seen = false; try { seen = localStorage.getItem('ak.ownSeen') === '1' } catch { } return seen ? '' : `<div class="ak-ownnote" role="note"><span><b>✦ ${esc(ownName())}</b> marks the views only in this command centre: Kanban, Team and the machine, Where, Summit days. The rest are the team's shared views.</span><button type="button" class="cc-btn" data-ak-ownok>Got it</button></div>` }
         root.addEventListener('click', e => { if (e.target.closest('[data-ak-ownok]')) { try { localStorage.setItem('ak.ownSeen', '1') } catch { } const n = root.querySelector('.ak-ownnote'); if (n) n.remove() } })
         function nav() {
             const side = root.querySelector('.cc-nav [data-view="board"]')
             // the views only in this command centre, in a group of their own, each with the same mark (Angelo, 5 November)
-            if (side && !root.querySelector('.cc-nav [data-view="kanban"]')) { const grp = [...root.querySelectorAll('.cc-nav .grp')].find(g => /connect/i.test(g.textContent)); (grp || side).insertAdjacentHTML(grp ? 'beforebegin' : 'afterend', `<span class="grp ak-grp" title="${esc(OWN_TIP)}">✦ ${esc(ownName())}</span><a href="#kanban" data-view="kanban" title="Kanban">${ico(KANBAN_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Kanban</span></a><a href="#collab" data-view="collab" title="Team and the machine">${ico(TEAM_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Team and the machine</span></a><a href="#where" data-view="where" title="Where">${ico(WHERE_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Where</span></a><a href="#summit" data-view="summit" title="Summit days">${ico(SUMMIT_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Summit days</span></a><a href="#replay" data-view="replay" title="Replay">${ico(REPLAY_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Replay</span></a>`) }
+            if (side && !root.querySelector('.cc-nav [data-view="kanban"]')) { const grp = [...root.querySelectorAll('.cc-nav .grp')].find(g => /connect/i.test(g.textContent)); (grp || side).insertAdjacentHTML(grp ? 'beforebegin' : 'afterend', `<span class="grp ak-grp" title="${esc(OWN_TIP)}">✦ ${esc(ownName())}</span><a href="#kanban" data-view="kanban" title="Kanban">${ico(KANBAN_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Kanban</span></a><a href="#collab" data-view="collab" title="Team and the machine">${ico(TEAM_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Team and the machine</span></a><a href="#where" data-view="where" title="Where">${ico(WHERE_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Where</span></a><a href="#summit" data-view="summit" title="Summit days">${ico(SUMMIT_ICON)}<span class="ak-mk" aria-hidden="true">✦</span><span class="lbl">Summit days</span></a>`) }
             const g = root.querySelector('.cc-nav .ak-grp'); if (g) g.textContent = `✦ ${ownName()}`
             // phones: the Board tab opens the kanban (with My tasks off it is the whole team's board)
             const tab = root.querySelector('.cc-tabs a[href="#board"]')
@@ -104,7 +104,14 @@
             if (route() === 'collab') return drawCollab()
             if (route() === 'where') return drawWhere()
             if (route() === 'summit') return drawSummit()
-            if (route() === 'replay') return drawReplay()
+            if (route() === 'replay') {   // Replay's timeline lives under Team and the machine's map; old #replay addresses land there (the clip stays on its own)
+                const i = location.hash.indexOf('?'), q = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1))
+                if (q.get('c') === '1') return drawReplay()
+                const n = new URLSearchParams({ map: '1' }); if (q.get('w')) n.set('w', q.get('w'))
+                for (const k of ['p', 'k', 'a', 'i', 'sel', 'm', 'r']) if (q.get(k)) n.set('r_' + k, q.get(k))
+                history.replaceState(history.state, '', location.pathname + location.search + '#collab?' + n.toString().replace(/%2C/g, ','))
+                return drawCollab()
+            }
             const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
             if (!view) return
             const first = D ? (D.person.name || D.person.id).split(' ')[0] : ''
@@ -112,10 +119,12 @@
             document.title = `Kanban · ${first}'s command centre`
             if (!D) { view.innerHTML = failed ? `<p class="note">The kanban could not load its data (${esc(failed)}); the summary below the page is the same data as text.</p>` : '<p class="note">Loading the board…</p>'; return }
             const s = state(), now = new Date(), ctx = D.kanban
+            if (s.fm && !s.open && D.tasks && K.taskColumns) return drawTasks(view, s, now)
             const shown = K.filter(D.issues, s, ctx, now)
             const needN = D.issues.filter(i => K.needsMe(i, ctx, now)).length
             view.innerHTML = `<div class="ak">${ownNote()}
-<nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#where">Where → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#replay">Replay → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
+<p class="ak-views">Your tasks: <a href="#kanban">For me</a></p>
+<nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#where">Where → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
 ${toolbar(s, shown.length, needN)}
 ${chips(s)}
 ${s.now ? decideFirst() : ''}
@@ -165,6 +174,62 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             for (const k of ['st', 'due', 'pick', 'ws']) if (s[k].length && !(k === 'st' && sameList(s.st, K.DEFAULTS.st))) c.push([k, `${label[k]}: ${s[k].map(v => name(k, v)).join(', ')}`])
             if (k0(s)) c.push(['q', `“${s.q}”`])
             return c.length ? `<div class="ak-chips">${c.map(([k, l]) => `<button type="button" class="ak-chip" data-ak-clear="${k}" aria-label="Remove ${esc(l)}">${esc(l)} <span aria-hidden="true">×</span></button>`).join('')}</div>` : ''
+        }
+        // ---------- For me (spec-kanban-tasks.md, approved 7 November, cb97bf39): Needs you, In progress, Delivered, Done ----------
+        // Cards come from the build (data.mjs tasks()); their place and order from kanban-core.js. Seen and Needs changes copy
+        // one line for the desk session (B); signed sending on the desk's lane (A) comes once the desk's token is here (WS-170).
+        // Later and "since you last looked" are kept in this browser only, and the page works without them.
+        const LSK = { get(k, d) { try { const v = localStorage.getItem('ak.' + k); return v === null ? d : JSON.parse(v) } catch { return d } }, set(k, v) { try { localStorage.setItem('ak.' + k, JSON.stringify(v)) } catch { } } }
+        let copied = null // { id, line } of the last copied line, shown until the next one
+        function drawTasks(view, s, now) {
+            const first = (D.person.name || D.person.id).split(' ')[0], cards = D.tasks.cards
+            let last = LSK.get('lastLooked', '')
+            if (!last) { last = new Date().toISOString(); LSK.set('lastLooked', last) }
+            const changed = new Set(K.changedSince(cards, last))
+            const cols = K.taskColumns(cards, now, LSK.get('later', {}))
+            const marked = LSK.get('marked', {})
+            const chg = cols.map(c => [c.label, c.items.filter(t => changed.has(t.id)).length]).filter(x => x[1])
+            const link = (h, t) => h ? `<a href="${esc(h)}" target="_blank" rel="noopener">${esc(t)}</a>` : esc(t)
+            // chip colours by meaning (dashboard@'s look.md): tier 3 yellow, a click or a wait blue, overdue red, delivered green, needs changes orange
+            const chipCls = t => t.chip === 'tier 3' ? 't-yellow' : /overdue|stand-up|today/.test(t.chip) ? 't-red' : /waits|click|sent/.test(t.chip) ? 't-blue' : /delivered/.test(t.chip) ? 't-green' : t.chip === 'needs changes' ? 't-orange' : 'plain'
+            const card = t => `<article class="ak-card ak-task${changed.has(t.id) ? ' ak-new' : ''}" data-task="${esc(t.id)}">${changed.has(t.id) ? '<span class="ak-newb">NEW</span>' : ''}
+<span class="ak-meta">${t.chip ? `<span class="chip ${chipCls(t)}">${esc(t.chip)}</span>` : ''}<span class="chip plain">${esc([t.agent, t.id].filter(Boolean).join(' · '))}</span></span>
+<b class="ak-tt" title="${esc(t.title)}">${esc(t.title)}</b>
+${t.rec ? `<span class="ak-rec">Recommended: <b>${esc(t.rec)}</b></span>` : ''}${t.waits && t.col !== 'done' && !/^nothing$/i.test(t.waits) ? `<span class="note">Waits on: ${esc(t.waits)}</span>` : ''}${t.done ? `<span class="note">${esc(t.done)}</span>` : ''}${t.note ? `<span class="note">Your line: ${esc(t.note)}</span>` : ''}
+${t.text && t.text !== t.title ? `<details class="ak-more"><summary>More</summary><p>${esc(t.text)}</p></details>` : ''}
+<span class="ak-acts">${t.col === 'need' ? `${t.link ? `<a class="cc-btn ak-primary" href="${esc(t.src === 'issue' ? '#kanban?f=0&m=0&t=open,picked,in%20progress,done&o=' + t.id : t.link)}"${t.src === 'issue' ? '' : ' target="_blank" rel="noopener"'}>Open</a>` : ''}${t.chip === 'click' ? `<button type="button" class="cc-btn" data-mark="done" data-id="${esc(t.id)}">I have done it</button>` : ''}<button type="button" class="cc-btn" data-later="${esc(t.id)}">Later</button>`
+                : t.col === 'delivered' ? (marked[t.id] ? `<span class="chip t-blue">sent</span><span class="note">${marked[t.id] === 'seen' ? 'Seen' : 'Needs changes'}: line copied for the desk</span>` : `<button type="button" class="cc-btn ak-primary" data-mark="seen" data-id="${esc(t.id)}">Seen ✓</button><button type="button" class="cc-btn" data-mark="changes" data-id="${esc(t.id)}">Needs changes…</button>`) + (t.link ? link(t.link, 'Open the delivery ↗') : '')
+                : t.link ? link(t.link, t.src === 'delivery' ? 'The delivery ↗' : 'The brief ↗') : ''}</span>
+${t.chip === 'tier 3' ? '<span class="ak-hint">Opens the question; your go is given in a session, not here.</span>' : t.col === 'delivered' && !marked[t.id] ? '<span class="ak-hint">Your key is not used here yet: this copies one line for the desk (signed sending comes with the desk\'s token).</span>' : ''}
+${copied && copied.id === t.id ? `<div class="ak-copy" role="status"><code>${esc(copied.line)}</code><span class="note">${copied.ok ? 'Copied.' : 'Select and copy it.'} Paste it in the desk session; the desk records it and the card moves on the next release.</span></div>` : ''}
+</article>`
+            const colHtml = c => {
+                if (c.key !== 'need') return c.items.map(card).join('') || `<p class="note">${c.key === 'delivered' ? 'Nothing waiting for you to check.' : c.key === 'done' ? 'Nothing done in the last 7 days.' : 'Nothing in progress.'}</p>`
+                const top = c.items.filter(t => t.src !== 'issue'), board = c.items.filter(t => t.src === 'issue')
+                return (top.map(card).join('') || '<p class="note">Nothing needs you right now.</p>') + (board.length ? `<details class="ak-fromboard"><summary>From the board: ${board.length} of your issues overdue, due today or at a stand-up</summary>${board.map(card).join('')}</details>` : '')
+            }
+            const tab = cols.find(c => c.key === s.tab) || cols[0]
+            const cnt = c => c.key === 'need' ? c.items.filter(t => t.src !== 'issue').length : c.items.length
+            view.innerHTML = `<div class="ak">${ownNote()}
+<nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#where">Where → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
+<div class="ak-since" role="status">${chg.length ? `Since you last looked (${esc(ago(last))}): ${chg.map(([l, n]) => `${n} in ${esc(l)}`).join(', ')}.` : `Nothing new since you last looked (${esc(ago(last))}).`} <button type="button" class="cc-btn" data-looked>Mark all as looked at</button></div>
+<p class="ak-views">Other views: <a href="#kanban?f=0">Status</a> · <a href="#kanban?f=0&c=due">Due</a> · <a href="#kanban?f=0&c=picked">Picked by</a> · <a href="#kanban?f=0&c=stream">Workstream</a> · <a href="#kanban?f=0&n=1">Needs me now</a></p>
+${PHONE.matches ? `<div class="ak-tabs" role="tablist" aria-label="Your tasks">${cols.map(c => `<button type="button" role="tab" data-ak-tab="${c.key}" aria-selected="${c.key === tab.key}" aria-label="${esc(c.label)}, ${cnt(c)}">${esc(c.key === 'delivered' ? 'Delivered' : c.label)} <b>${cnt(c)}</b></button>`).join('')}</div><div class="ak-list ak-tasks" role="tabpanel">${colHtml(tab)}</div>`
+                : `<div class="ak-grid ak-tasks" style="--n:4">${cols.map(c => `<section class="ak-col" aria-label="${esc(c.label)}" data-col="${c.key}"><header>${esc(c.label)} <b>${cnt(c)}</b></header>${colHtml(c)}</section>`).join('')}</div>`}
+${D.tasks.unplaced.length ? `<p class="note">Could not place: ${esc(D.tasks.unplaced.join('; '))}.</p>` : ''}
+<p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}. From your backlog, the desk's "Open with Angelo", your board issues and deliveries reported to the desk (a "Delivered:" line). Cards move on the next release, usually within minutes.</p>
+</div>`
+            view.querySelectorAll('[data-ak-tab]').forEach(b => b.onclick = () => set({ tab: b.dataset.akTab }))
+            const looked = view.querySelector('[data-looked]'); if (looked) looked.onclick = () => { LSK.set('lastLooked', new Date().toISOString()); draw() }
+            view.querySelectorAll('[data-later]').forEach(b => b.onclick = () => { const l = LSK.get('later', {}); l[b.dataset.later] = Date.now() + 864e5; LSK.set('later', l); draw() })
+            view.querySelectorAll('[data-mark]').forEach(b => b.onclick = () => {
+                const t = cards.find(x => x.id === b.dataset.id); if (!t) return
+                let text = ''
+                if (b.dataset.mark === 'done') { const line = `Done: ${t.id} (${String(t.title).slice(0, 80)})`; copied = { id: t.id, line, ok: false }; try { navigator.clipboard.writeText(line).then(() => { copied.ok = true; draw() }, () => draw()) } catch { draw() } return }
+                if (b.dataset.mark === 'changes') { text = prompt('What needs changing? (one line, for the desk)') || ''; if (!text.trim()) return }
+                const line = K.copyLine(t, b.dataset.mark, text), done = ok => { copied = { id: t.id, line, ok }; const m = LSK.get('marked', {}); m[t.id] = b.dataset.mark; LSK.set('marked', m); draw() }
+                try { navigator.clipboard.writeText(line).then(() => done(true), () => done(false)) } catch { done(false) }
+            })
         }
         const k0 = s => !!(s.q || '').trim()
 
@@ -259,7 +324,7 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             const q = view.querySelector('input[data-ak="q"]')
             if (q) { let t; q.oninput = () => { clearTimeout(t); t = setTimeout(() => { set({ q: q.value }); reopen('Filter', true) }, 250) } }
             view.querySelectorAll('[data-ak-clear]').forEach(b => b.onclick = () => set({ [b.dataset.akClear]: b.dataset.akClear === 'q' ? '' : K.DEFAULTS[b.dataset.akClear].slice() }))
-            view.querySelectorAll('[data-ak-reset]').forEach(b => b.onclick = () => set({ ...K.DEFAULTS, st: K.DEFAULTS.st.slice(), pick: [], due: [], ws: [] }))
+            view.querySelectorAll('[data-ak-reset]').forEach(b => b.onclick = () => set({ ...K.DEFAULTS, fm: false, st: K.DEFAULTS.st.slice(), pick: [], due: [], ws: [] }))
             view.querySelectorAll('[data-ak-tab]').forEach(b => b.onclick = () => set({ tab: b.dataset.akTab }))
             view.querySelectorAll('[data-ak-card]').forEach(b => b.onclick = () => { history.pushState({ akCard: true }, ''); set({ open: b.dataset.akCard }) })
             view.querySelectorAll('[data-ak-close]').forEach(b => b.onclick = closeCard)
@@ -277,7 +342,7 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
         const keyOpen = () => { try { return localStorage.getItem('ak-tm-key') !== '0' } catch { return true } }
         document.addEventListener('toggle', e => { if (e.target && e.target.classList && e.target.classList.contains('tm-key')) try { localStorage.setItem('ak-tm-key', e.target.open ? '1' : '0') } catch { } }, true)
         const cstate = () => { const i = location.hash.indexOf('?'); const p = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)); return { p: p.get('p') || '', map: p.get('map') === '1', f: p.get('f') || '', l: p.get('l') || '', fs: p.get('fs') === '1', w: p.get('w') || '' } }
-        const setC = c => { const q = []; if (c.map) q.push('map=1'); if (c.l && c.l !== 'ring') q.push('l=' + c.l); if (c.f) q.push('f=' + encodeURIComponent(c.f)); if (c.p) q.push('p=' + encodeURIComponent(c.p)); if (c.fs && c.map) q.push('fs=1'); if (c.w && c.map) q.push('w=' + c.w); history.replaceState(history.state, '', location.pathname + location.search + '#collab' + (q.length ? '?' + q.join('&') : '')); drawCollab() }
+        const setC = c => { const q = []; if (c.map) q.push('map=1'); if (c.l && c.l !== 'ring') q.push('l=' + c.l); if (c.f) q.push('f=' + encodeURIComponent(c.f)); if (c.p) q.push('p=' + encodeURIComponent(c.p)); if (c.fs && c.map) q.push('fs=1'); if (c.w && c.map) q.push('w=' + c.w); if (c.map) for (const [k, v] of new URLSearchParams(location.hash.slice(location.hash.indexOf('?') + 1))) if (k.startsWith('r_') && location.hash.includes('?')) q.push(k + '=' + encodeURIComponent(v).replace(/%2C/g, ',')); history.replaceState(history.state, '', location.pathname + location.search + '#collab' + (q.length ? '?' + q.join('&') : '')); drawCollab() }
         const openPerson = id => { history.pushState({ akCard: true }, ''); history.replaceState(history.state, '', location.pathname + location.search + '#collab?p=' + encodeURIComponent(id)); drawCollab() }
         const closePerson = () => { if (history.state && history.state.akCard) history.back(); else { history.replaceState(history.state, '', location.pathname + location.search + '#collab'); drawCollab() } }
         const initials = n => String(n).split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase()
@@ -314,7 +379,7 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
                 const next = p.agents.map(a => ({ a, r: nextRun(a.schedule) })).filter(x => x.r).sort((x, y) => parseInt(x.r.wait) * (/h$/.test(x.r.wait) ? 60 : 1) - parseInt(y.r.wait) * (/h$/.test(y.r.wait) ? 60 : 1))[0]
                 return `<button type="button" class="ak-person" data-ak-person="${esc(p.id)}"><span class="ak-av">${esc(initials(p.name))}</span><span class="ak-pn"><b>${esc(p.name)}</b><small>${esc(p.role)}</small></span><span class="ak-meta"><span class="chip ${p.level >= 4 ? 't-green' : p.level >= 2 ? 't-blue' : 't-slate'}">L${esc(p.level)}</span><span class="chip plain">${p.agents.length} agent${p.agents.length === 1 ? '' : 's'}</span>${p.work.length ? `<span class="chip t-yellow">${p.work.length} picked</span>` : ''}</span>${next ? `<small class="note">Next run: ${esc(next.a.name.split('@')[0])} ${esc(next.r.wait)}</small>` : runs.length ? '' : '<small class="note">No schedule recorded</small>'}</button>`
             }).join('')}</div></section>
-${teamMap()}
+${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane">Timeline</h3><div data-ak-tl></div></section>' : ''}
 <section aria-label="Who works with whom"><h3 class="ak-lane">Who works with whom</h3><p class="note">Messages: commits from one person's agents to another's (For: lines, last 7 days). Shared: open issues they both own.</p>
 <ul class="ak-links">${C.links.slice(0, 14).map(l => `<li><span>${esc(name(l.a))} and ${esc(name(l.b))}</span><span class="ak-barw"><span class="ak-barf" style="width:${Math.round((l.messages + l.shared) / max * 100)}%"></span></span><small class="note">${l.messages} messages, ${l.shared} shared</small></li>`).join('')}</ul></section>
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}. Next runs are worked out in this browser from each agent's recorded schedule.</p>
@@ -329,6 +394,7 @@ ${teamMap()}
                 const keep = (a, b) => { if (!focus) return true; if (focus.startsWith('k:')) return [a, b].some(id => wl.some(l => l.agent === id && 'k:' + l.kind === focus)); if (focus.includes('@') || focus.startsWith('pt:')) return a === focus || b === focus; return [a, b].some(id => id === focus || (pos.get(id) || {}).person === focus) }
                 window.AngeloReplay.mountFlow(host, { D, place, key: [c0.w || '24h', c0.l, c0.f].join('|'), svg: svgEl, pos, nodeOf, keep, w: c0.w || '24h', colOf: p => col.get(p), ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return { x: mx + (MC - mx) * pull, y: my + (MC - my) * pull } }, setWindow: w => setC({ ...cstate(), w }) })
             }
+            const tlHost = view.querySelector('[data-ak-tl]'); if (tlHost && window.AngeloReplay) window.AngeloReplay.render(tlHost, { D, ownTitle, ago, note: () => '', embed: true })
             const tm = view.querySelector('[data-tm-toggle]'); if (tm) tm.onclick = () => setC({ ...cstate(), map: !cstate().map, f: '' })
             view.querySelectorAll('[data-tm-l]').forEach(g => g.onclick = () => setC({ ...cstate(), l: g.dataset.tmL, f: '' }))
             const tf = view.querySelector('[data-tm-fs]'); if (tf) tf.onclick = () => { const c = cstate(), on = !c.fs; setC({ ...c, map: true, fs: on }); try { if (on && document.documentElement.requestFullscreen && !document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => null); if (!on && document.fullscreenElement) document.exitFullscreen().catch(() => null) } catch { } }

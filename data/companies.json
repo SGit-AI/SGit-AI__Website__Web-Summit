@@ -3490,6 +3490,34 @@
       "owner": "to decide",
       "status": "to contact",
       "assets": []
+    },
+    {
+      "id": "accenture",
+      "name": "Accenture",
+      "website": "https://www.accenture.com",
+      "what": null,
+      "category": "other",
+      "country": null,
+      "attending": "confirmed at attendee level only: one featured attendee for LIS26 lists Accenture as employer (a consulting manager); Accenture is not on the 2026 event partners list, the speakers list or the featured startups list",
+      "attending_as": "attendee's company",
+      "why_it_matters": "On Angelo's card (WS-08, answer 2): some contact. A large services firm putting AI into production for clients; a technical conversation about agents in production under control.",
+      "decision": null,
+      "priority": null,
+      "sources": [
+        {
+          "url": "https://websummit.com/attendees/lis26/41af4fd8-15b9-4c2a-bdab-7fb602d77c38/",
+          "read_on": "2026-11-06",
+          "supports": "a LIS26 (Web Summit Lisbon, 9 to 12 November 2026) featured-attendee page whose company is Accenture"
+        },
+        {
+          "url": "https://websummit.com/partners/event-partners-2026/",
+          "read_on": "2026-11-06",
+          "supports": "Accenture is not among the 300 event partners (pages 1 to 8 read)"
+        }
+      ],
+      "owner": "angelo",
+      "status": "to contact",
+      "assets": []
     }
   ]
 }

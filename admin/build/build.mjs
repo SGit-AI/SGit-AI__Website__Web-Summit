@@ -18,17 +18,22 @@ import { expandSignoff } from './signoff-ui.mjs'
 import { keysPage as pkiKeysPage } from './pki.mjs'
 import * as GIT from './gitlog.mjs'
 import { highlights, highlightsHtml, highlightsMd, withHighlights } from './highlights.mjs'
+import { loadXray, xrayIndexHtml, xrayIndexMd, buildXray } from './xray.mjs'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
 const VERSION = fs.readFileSync(path.join(ROOT, 'admin/build/version.txt'), 'utf8').trim()
 const REPO = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit'
+// the RiskMandate X-ray's subjects (data/xray/<slug>/xray.json; admin/build/xray.mjs), read first: the X-ray section lists them
+const XRAY = loadXray(ROOT)
 // navigation: a few sections on top, each with its own sub-menu; every page gets breadcrumbs back to its parent
 const SECTIONS = [
     { t: 'Start', h: 'start/index.html', re: /^start\//, sub: [] },
     { t: 'Team', h: 'team/index.html', re: /^(team|brief-|people|pulse|agents|meet|abp|cast|wakes)\b/, sub: [['People', 'team/index.html'], ['The map', 'team/map/index.html'], ['Setup', 'team/setup/index.html'], ['Everything', 'team/everything/index.html'], ['The cast', 'cast/index.html'], ['Briefs', 'briefs/index.html'], ['Pulse', 'pulse/index.html'], ['Agents', 'agents/index.html'], ['At work', 'wakes/index.html'], ['ABPs', 'abp/index.html'], ['Meet us', 'meet/index.html']] },
     { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|cards|log|print|print-order|procurement|videos|research|reports|board-health|site-review|updates|meetings)\b/, sub: [['Stand-ups', 'meetings/index.html'], ['Updates', 'updates/index.html'], ['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Cards', 'cards/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Print files', 'print/index.html'], ['Procurement', 'procurement/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
+    // the RiskMandate X-ray for the booth (xray@web-summit.dinis, 7 November 2026, at Dinis's word): type a name, watch the agents X-ray it
+    { t: 'X-ray', h: 'xray/index.html', re: /^xray\b/, sub: [['X-ray a name', 'xray/index.html'], ...(fs.existsSync(path.join(ROOT, 'content/xray-decide.md')) ? [['Decide', 'xray/decide/index.html']] : []), ...XRAY.map(s => [s.subject.replace(/[&<>"]/g, ''), `xray/${s.slug}/index.html`])] },
     // the investors' section (WS-185, investors@web-summit.dinis, at Dinis's word of 6 November: "a very focused section just for investors")
     { t: 'Investors', h: 'investors/index.html', re: /^investors\b/, sub: [['For investors', 'investors/index.html'], ['Pitch deck', 'investors/pitch-deck/index.html'], ['Technology deck', 'investors/technology-deck/index.html'], ['The story', 'investors/story/index.html'], ['How we make money', 'investors/business-model/index.html'], ['The company', 'investors/company/index.html'], ['The investment', 'investors/investment/index.html'], ['Feedback', 'investors/feedback/index.html']] },
     { t: 'Observability', h: 'observability/index.html', re: /^observability\b/, sub: [['Explore', 'observability/index.html'], ['Dashboard', 'observability/dashboard/index.html'], ['Graph', 'observability/graph/index.html'], ['Agents', 'observability/agents/index.html'], ['Pages', 'observability/pages/index.html'], ['People', 'observability/team/index.html'], ['The vault', 'observability/vault/index.html'], ['How it works', 'observability/how-it-works/index.html'], ['The brief', 'brief-observability/index.html'], ['The pack', 'observability-pack/index.html']] },
@@ -144,6 +149,11 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
             out.push('<div class="crm" id="crm"><p class="meta">The diagram and the live CRM need JavaScript: they are drawn here by the page.</p></div>')
+        } else if (/^```xray\s*$/.test(l)) {
+            // the RiskMandate X-ray (xray@web-summit.dinis): a mount for assets/xray.js (front matter script: xray), with every subject as a plain link
+            for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
+            i++
+            out.push(xrayIndexHtml(XRAY))
         } else if (/^```sticker-vote\s*$/.test(l)) {
             // the team's sticker vote (WS-167, conductor@web-summit.dinis): a mount for assets/stickers-vote.js, which the
             // page loads through its front matter (script: stickers-vote); without JavaScript it says so
@@ -606,6 +616,7 @@ for (const f of fs.readdirSync(path.join(ROOT, 'content')).filter(f => f.endsWit
     const head = meta.script ? `<script src="${'../'.repeat(rel.split('/').length - 1)}assets/${meta.script}.js?v=${VERSION}" defer></script>` : ''
     md = md.replace(/^```sticker-vault\s*\n```\s*$/m, '*The vault with full access is opened on the HTML page by assets/stickers-vault.js, for a person the vault key is sealed to.*')
     md = md.replace(/^```crm\s*\n```\s*$/m, '*On the HTML page: a diagram of the two layers, the public CRM browsed live with its published read key, and, for a person whose browser holds their key, Open the private CRM (assets/crm.js, from data/crm.json).*')
+    md = md.replace(/^```xray\s*\n```\s*$/m, () => `*On the HTML page: the input, the replay of each run and the graph, drawn by assets/xray.js.* The subjects X-rayed so far:\n\n${xrayIndexMd(XRAY)}`)
     md = md.replace(/^```sticker-vote\s*\n```\s*$/m, '*The vote: the twelve stickers, the Vote button, the vault and who has voted are drawn on the HTML page by assets/stickers-vote.js, from data/stickers-vote.json.*')
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: (meta.asof ? `<p class="asof">${esc(meta.asof)}</p>` : '') + html.replace('<p>{{numbers}}</p>', NUMBERS_HTML('')), mdTwin: twinPath(rel), lead: meta.lead || '', home: name === 'index', head }))
     pages.push({ rel, title: meta.title, description: meta.summary })
@@ -943,6 +954,9 @@ ${sections.join('\n')}`
     twin('wakes/index.html', 'The agents at work', `Every agent's schedule and wakes, from the git history, as of ${asOf} UTC.`, md)
     pages.push({ rel: 'wakes/index.html', title: 'The agents at work', description: 'Every agent: its schedule, its last wake, and what each wake did.' })
 }
+
+// the RiskMandate X-ray: a page and a deck per subject (admin/build/xray.mjs)
+buildXray({ list: XRAY, write, page, twin, pages, VERSION })
 
 // machine surfaces
 pages.sort((a, b) => a.rel.localeCompare(b.rel))

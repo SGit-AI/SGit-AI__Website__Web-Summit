@@ -83,5 +83,13 @@
   "session": "Claude Code cloud session in Indi's account",
   "status": "running",
   "note": "Started 4 November 2026 overnight by synthetic@web-summit.indi at Indi's word (WS-05), in its own Claude Code session, model Opus 5.5; tasks WS-06; prompt in people/indi/overnight/2026-11-04/ws-05-new-agents/PROMPTS.md."
+ },
+ {
+  "name": "social@web-summit.indi",
+  "job": "drafts one post a day for RiskMandate's LinkedIn page (company voice, plus a reshare line in Indi's voice), with a picture suggestion and dated sources, from a daily check of RiskMandate, Web Summit and the team's work; Indi posts (WS-126; LinkedIn only for now, Indi's word, 7 November)",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "running",
+  "note": "Started 7 November 2026, about 17:55 UTC, at Indi's word; first run the same evening (people/indi/social/2026-11-07.md). Session key social-indi (sha256:3ea5cb169a17cf02) in data/keys.json. Indi creates the 16:00 UTC scheduled task; this agent creates none.",
+  "schedule": "16:00 UTC daily (cron 0 16 * * *), a scheduled task firing into its own session, from 8 November"
  }
 ]

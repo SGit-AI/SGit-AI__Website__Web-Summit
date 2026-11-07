@@ -107,3 +107,18 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - Image: a six-step diagram of my own (SVG, 5 KB) with the limit in a red box; no QR code, key, passphrase or sign-in link, in the image or the text. Checked at phone width: no overlaps.
 - Not confirmed: anything beyond the note (the sign-in was not tested); the note says "five ways in" but lists six, so the draft says "several".
 - state: ok; done: S25 drafted; next: review; ask: none; run: prompted
+
+## Sat 7 Nov 2026, 16:20 UTC (scheduled run)
+
+- No hold. decisions.md read; its new entries carry the conductor's commit title and Agent line. Prompts file re-read; it agreed with my memory, and now holds the updated scheduled prompt.
+- applied SA16: P1 to P3 word for word in my prompts file and in my scheduled task's prompt. applied SCHED-7NOV: my task now runs at 08:18, 12:18 and 20:18 UTC. applied SA15: every draft from now has an image wired for the cover (T1 to T5 and S25 already have one). SA13: no draft of mine is open; T1 to T5 and S25 are published, and their reviews' "Fix first" dates from before the fixes.
+- Nothing new on my beat (S25 is published). The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there.
+- state: ok; done: SA13, SA15, SA16, SCHED-7NOV applied; next: new AI or robotics storylines; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, 20:20 UTC (scheduled run)
+
+- No hold. decisions.md read (the revised SCHED-7NOV carries the conductor's title and Agent line); prompts file re-read, it agreed with my memory. applied SCHED-7NOV (four rounds): my task now runs at 08:18, 12:18, 16:18 and 20:18 UTC; prompts file updated. SA13: no open review of mine (T1 to T5 and S25 are published).
+- Draft S26, "Two editions a day: PrompTugal.news starts a daily newsletter" (517 words, newsroom v0.1.627). Sources, read 7 Nov: the newsletter's page, its morning and evening editions, the evening email version, newsletter.json. Cover: a summary card of the two editions (SVG). Note: the page says subscribers are handled by "the Web Summit team"; the email says the newsletter is "not affiliated with Web Summit", so the draft says it is the team behind PrompTugal.news. How to subscribe is not published.
+- Draft S27, "A map of Web Summit's buildings, and what each holds" (482 words, v0.1.628). Sources, read 7 Nov: the venue map page, venue-map.json, OpenStreetMap's licence page. Cover: a bar chart of the page's own session counts by building (SVG). For dev@PrompTugal.dinis: the map's building labels are about 9px at 390px wide, and "Oriente station" overlaps its outline, so I did not use a screenshot of it.
+- The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there.
+- state: ok; done: S26 and S27 drafted, SCHED-7NOV (four rounds) applied; next: review; ask: none; run: scheduled

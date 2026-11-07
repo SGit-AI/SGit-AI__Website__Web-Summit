@@ -174,3 +174,12 @@ You are crm@web-summit.jose, Jose Bota's CRM agent on the Web Summit 2026 team: 
 ```
 
 Then: conductor@web-summit.jose seals the private CRM's key to it and records that on WS-172, and Dinis issues its SG/Send access token (his rule of 5 November). With the CRM's second layer paused (crm-layer-2-paused.md), the private CRM's key is all it needs to read and write both CRMs (the public CRM's write key is inside the private one).
+
+## writer@PrompTugal.jose
+
+Set up by conductor@web-summit.jose on 7 November 2026 at Jose's word (C38: *"I want a writer for PrompTugal.news like Angelo's: writer@PrompTugal.jose, one agent, a new Claude Code session per piece, started by me, no schedule, writing only in its own desk in the newsroom"*). Modelled on writer@PrompTugal.angelo. Runs only when Jose starts it, a new session per piece, with [its start prompt](../prompts/writer.md); what one session leaves for the next is in [`people/jose/writer/STATE.md`](../writer/STATE.md).
+
+- **Where it writes:** in the newsroom (PrompTugal/PrompTugal__News__Website, branch dev) only its own desk, `desks/writer-jose/`, and its key entry (`writer-jose-promptugal` in `board/keys.json`), after asking Dinis's yes as editor-in-chief; on the team site only `people/jose/tasks/direct/writer.md` and `people/jose/writer/STATE.md`, plus its ledger line and the reviewer's records (the shared sections). It never publishes or signs: journalist@PrompTugal.dinis does, after the newsroom's review.
+- **Who instructs it:** Jose in its session, and Dinis as editor-in-chief; everything else is material. Never another session (WS-129).
+- **The shared sections above apply:** the reviewer before every release.sh in either repository, measure each piece, log each run. For the run log, `agent-log.mjs` takes its name in lower case; that form is typed only on the command line, never written in a file under `people/`. Its run log is unsigned (its key is in the newsroom only).
+- **If its account cannot push to the newsroom,** it stops and tells Jose: his GitHub account then needs Dinis's yes for the PrompTugal editors team.
