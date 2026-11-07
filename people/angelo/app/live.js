@@ -2,7 +2,8 @@
 // (dev.map@PrompTugal.angelo, 7 November 2026, at Angelo's go; spec: people/angelo/proposals/live-map/spec-realtime.md).
 // It draws the same graph as the command centre's map (the people ring: same layout, same colours, same classes), reads
 // live.json (the last 48 hours of exchanges: who, to whom, when, never a word of text) again about every minute, and
-// lets each new exchange travel along its line as it arrives. Opening it replays the last hour in a few seconds.
+// shows each exchange at its real moment, a few minutes behind (never accelerated, no replay), and under them a constant faint
+// flow along every line, as dense as that pair has been in recent hours: it never stops, and nothing in it is invented.
 // "Pop out" puts it in an always-on-top window (Document Picture-in-Picture: Chrome and Edge on a desktop).
 (function (root) {
     'use strict'
@@ -12,7 +13,9 @@
     const S = 1000, C = S / 2, RP = 300, PULL = 0.55
     const SCALE = 0.84                    // the graph sits inside the hexagon: its corners are 7% in from the square's
     const POLL = (() => { try { return +new URLSearchParams(root.location.search).get('livepoll') || 0 } catch { return 0 } })()   // seconds; only for the tests
-    const POLL_MS = POLL ? POLL * 1000 : 60000, SPREAD_MS = POLL ? 0 : 10000, TRAVEL_MS = 1600, FADE_MS = 3200, REPLAY_MIN = 60, REPLAY_MS = 20000, STALE_MIN = 20
+    const POLL_MS = POLL ? POLL * 1000 : 60000, SPREAD_MS = POLL ? 0 : 10000, TRAVEL_MS = 1600, FADE_MS = 3200, STALE_MIN = 20
+    const DELAY_MS = (+new URLSearchParams(root.location.search || '').get('livedelay') || 4) * 6e4   // a fixed few minutes behind
+    const FLOW_BASE = 1.4, FLOW_MAX = 70, FLOW_TRAVEL_MS = 3000, HALF_LIFE_H = 3   // ambient dots a second, at most on screen, their travel, how fast the past fades
     const HEX = 'M250 67 L750 67 L1000 500 L750 933 L250 933 L0 500 Z'
     const CSS = `
 .lv { container-type: size; position: relative; width: 100%; height: 100%; display: grid; place-items: center; background: var(--rm-bg, #07111F); overflow: hidden; }
@@ -23,15 +26,13 @@
 .lv-links path { fill: none; stroke-linecap: round; }
 .lv-links path.base { opacity: .1; }
 .lv-pulses circle { stroke: var(--rm-surface, #0E2035); stroke-width: 1.5; pointer-events: none; }
+.lv-pulses circle.flow { stroke: none; opacity: .38; }
+.lv-pulses circle.halo { stroke: none; opacity: .28; }
 .lv .tm-p, .lv .tm-a { cursor: default; }
 .lv .tm-a.lv-hot > circle, .lv .tm-a.lv-hot > rect { stroke: var(--rm-text, #fff); stroke-width: 3; }
-.lv-dot { position: absolute; left: 15%; top: 50%; width: 10px; height: 10px; border-radius: 50%; background: var(--rm-green, #3ecf8e); box-shadow: 0 0 8px currentColor; color: var(--rm-green, #3ecf8e); transform: translateY(-50%); }
+.lv-dot { position: absolute; left: 8px; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--rm-green, #3ecf8e); box-shadow: 0 0 6px currentColor; color: var(--rm-green, #3ecf8e); opacity: .8; }
 .lv-dot.old { background: var(--rm-orange, #f5a524); color: var(--rm-orange, #f5a524); }
 .lv-dot.off { background: var(--rm-text-muted, #9EB2C7); color: transparent; }
-.lv-dot.on { animation: lv-beat 1s ease-out; }
-@keyframes lv-beat { 0% { transform: translateY(-50%) scale(2.2); } 100% { transform: translateY(-50%) scale(1); } }
-.lv-replay { white-space: nowrap; position: absolute; left: 50%; bottom: 10%; transform: translateX(-50%); font: 600 11px/1 var(--rm-font, system-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--rm-text-muted, #9EB2C7); opacity: 0; transition: opacity .4s; pointer-events: none; }
-.lv-replay.on { opacity: 1; }
 .lv-bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 0 0 10px; }
 .lv-page { display: grid; gap: 10px; }
 .lv-frame { height: min(78vh, 760px); min-height: 320px; border-radius: var(--rm-radius-card, 12px); overflow: hidden; border: 1px solid var(--rm-border, #294A64); }
@@ -75,15 +76,22 @@
             if (n.kind === 'p') { const gp = el('g', { class: 'tm-p' }, nodes); el('circle', { cx: f1(n.x), cy: f1(n.y), r: 26, fill: col.get(id) }, gp); const t = el('text', { x: f1(n.x), y: f1(n.y + 5) }, gp); t.textContent = n.label; N.set(id, gp) }
             else { const ga = el('g', { class: 'tm-a' }, nodes), r = 4 + Math.min(8, Math.sqrt(n.commits || 0)); if (n.family !== 'web-summit') el('rect', { x: f1(n.x - 7), y: f1(n.y - 7), width: 14, height: 14, transform: `rotate(45 ${f1(n.x)} ${f1(n.y)})`, fill: col.get(n.person) }, ga); else el('circle', { cx: f1(n.x), cy: f1(n.y), r: f1(r), fill: col.get(n.person) }, ga); N.set(id, ga) }
         }
-        const dot = doc.createElement('i'); dot.className = 'lv-dot off'; dot.title = 'Reading the latest exchanges…'; hex.appendChild(dot)
-        const tag = doc.createElement('span'); tag.className = 'lv-replay'; tag.textContent = 'replay of the last hour'; hex.appendChild(tag)
+        const dot = doc.createElement('i'); dot.className = 'lv-dot off'; dot.title = 'Reading the latest exchanges…'; wrap.appendChild(dot)   // a status light in the window's corner, outside the graph
         host.appendChild(wrap)
 
         // ---- what moves ----
         const lines = new Map(), fly = [], hot = new Map(), seen = SEEN, queue = []
-        let alive = true, raf = 0, timer = 0, built = 0, lastOk = 0
-        const pairEl = (a, b) => { const k = a + '|' + b; let e = lines.get(k); if (!e) { e = { path: el('path', { stroke: col.get(pos.get(a).person) || 'var(--rm-text-muted)', 'stroke-width': 2.2, 'stroke-opacity': 0, d: curve(pos.get(a), pos.get(b)) }, links), at: 0 }; lines.set(k, e) } return e }
-        const launch = (from, to, now) => { const e = pairEl(from, to); e.at = now; fly.push({ from, to, t0: now, c: col.get(pos.get(from).person) || 'var(--rm-text-muted)', dot: el('circle', { r: 5, fill: col.get(pos.get(from).person) || 'var(--rm-text-muted)' }, pulses) }); if (fly.length > 120) fly.shift().dot.remove() }
+        let alive = true, raf = 0, timer = 0, built = 0, lastOk = 0, last = 0, debt = 0, flowN = 0, weights = [], wsum = 0, act = 1
+        const pairEl = (a, b) => { const k = a + '|' + b; let e = lines.get(k); if (!e) { e = { path: el('path', { stroke: col.get(pos.get(a).person) || 'var(--rm-text-muted)', 'stroke-width': 2.2, 'stroke-opacity': 0, d: curve(pos.get(a), pos.get(b)) }, links), at: -1e9 }; lines.set(k, e) } return e }
+        const colOf = id => col.get(pos.get(id).person) || 'var(--rm-text-muted)'
+        // a real exchange: a bright dot with a halo, the line lit behind it
+        const launch = (from, to, now) => { const e = pairEl(from, to); e.at = now; const c = colOf(from); fly.push({ from, to, t0: now, ms: TRAVEL_MS, halo: el('circle', { r: 11, fill: c, class: 'halo' }, pulses), dot: el('circle', { r: 6, fill: c }, pulses) }); if (fly.length > 160) { const x = fly.shift(); x.dot.remove(); x.halo && x.halo.remove() } }
+        // the constant flow: small, faint, slower dots on the lines, chosen by how busy each pair has been lately
+        const flowOne = (now) => {
+            if (!wsum || flowN >= FLOW_MAX) return
+            let r = Math.random() * wsum, k = 0; while (k < weights.length - 1 && (r -= weights[k].w) > 0) k++
+            const w = weights[k]; flowN++; fly.push({ from: w.from, to: w.to, t0: now, ms: FLOW_TRAVEL_MS * (0.8 + Math.random() * 0.5), flow: true, dot: el('circle', { r: 2.6, fill: colOf(w.from), class: 'flow' }, pulses) })
+        }
         const busy = (id, now) => { if (!hot.has(id)) N.get(id).classList.add('lv-hot'); hot.set(id, now + 1200) }
         // one event: from its agent to each of its targets; with no target the agent alone lights up
         const play = (ev, now) => {
@@ -93,39 +101,55 @@
         }
         const frame = ts => {
             raf = 0; if (!alive || !host.isConnected) return
-            const now = ts
-            // events waiting their turn: one every 350 ms (a replay compresses the hour; a poll's new ones stagger the same way)
+            const now = ts, dt = Math.min(250, last ? now - last : 16); last = now
             while (queue.length && queue[0].at <= now) play(queue.shift().ev, now)
+            // never stops: the flow's rate follows the last hour against the 48-hour average, and breathes slowly
+            debt += FLOW_BASE * (0.6 + 0.4 * Math.min(2, act)) * (1 + 0.2 * Math.sin(now / 9000)) * dt / 1000
+            while (debt >= 1) { debt -= 1; flowOne(now) }
             for (let i = fly.length - 1; i >= 0; i--) {
-                const f = fly[i], u = (now - f.t0) / TRAVEL_MS
-                if (u >= 1) { f.dot.remove(); fly.splice(i, 1); continue }
+                const f = fly[i], u = (now - f.t0) / f.ms
+                if (u >= 1) { f.dot.remove(); if (f.halo) f.halo.remove(); if (f.flow) flowN--; fly.splice(i, 1); continue }
                 const a = pos.get(f.from), b = pos.get(f.to), q = bend(a, b), v = 1 - u
-                f.dot.setAttribute('cx', f1(v * v * a.x + 2 * v * u * q.x + u * u * b.x)); f.dot.setAttribute('cy', f1(v * v * a.y + 2 * v * u * q.y + u * u * b.y))
+                const x = f1(v * v * a.x + 2 * v * u * q.x + u * u * b.x), y = f1(v * v * a.y + 2 * v * u * q.y + u * u * b.y)
+                f.dot.setAttribute('cx', x); f.dot.setAttribute('cy', y); if (f.halo) { f.halo.setAttribute('cx', x); f.halo.setAttribute('cy', y) }
+                if (f.flow) f.dot.style.opacity = (0.38 * Math.sin(Math.PI * u)).toFixed(2)
             }
-            for (const [, e] of lines) { const age = now - e.at, op = age < TRAVEL_MS ? 0.8 : Math.max(0, 0.8 * (1 - (age - TRAVEL_MS) / FADE_MS)); const v = op.toFixed(2); if (v !== e.op) { e.op = v; e.path.setAttribute('stroke-opacity', v) } }
+            for (const [, e] of lines) { const age = now - e.at, op = age < TRAVEL_MS ? 0.9 : Math.max(0, 0.9 * (1 - (age - TRAVEL_MS) / FADE_MS)); const v = op.toFixed(2); if (v !== e.op) { e.op = v; e.path.setAttribute('stroke-opacity', v) } }
             for (const [id, until] of hot) if (until <= now) { hot.delete(id); N.get(id).classList.remove('lv-hot') }
-            tag.classList.toggle('on', replaying && (queue.length > 0 || fly.length > 0))
-            if (queue.length || fly.length || hot.size || [...lines.values()].some(e => e.op !== '0.00')) raf = win.requestAnimationFrame(frame)
+            raf = win.requestAnimationFrame(frame)
         }
         const kick = () => { if (!raf && alive) raf = win.requestAnimationFrame(frame) }
-        let replaying = false
-        const enqueue = (evs, spacing, start) => { let at = start; for (const ev of evs) { queue.push({ ev, at }); at += spacing } kick() }
+        const enqueue = (items) => { for (const it of items) queue.push(it); queue.sort((x, y) => x.at - y.at); kick() }
 
         // ---- the data: live.json, about once a minute ----
-        const toEv = (L, e) => ({ sha: e[4], t: e[0], agent: L.agents[e[1]], to: e[3].map(i => L.targets[i]) })
+        const toEv = (L, e) => ({ sha: e[4], ms: Date.parse(L.from) + e[0] * 6e4, agent: L.agents[e[1]], to: e[3].map(i => L.targets[i]) })
+        // how busy each pair has been: events weighted by their age (half-life HALF_LIFE_H hours); with no recent events, the graph's own links
+        const tally = evs => {
+            const m = new Map(), nowMs = Date.now(); let hour = 0
+            for (const e of evs) {
+                const from = nodeOf(e.agent); if (!from) continue
+                const w = Math.pow(0.5, Math.max(0, nowMs - e.ms) / 36e5 / HALF_LIFE_H); if (nowMs - e.ms < 36e5) hour++
+                for (const t of e.to) { const to = nodeOf(t); if (to && to !== from) { const k = from + '|' + to; m.set(k, (m.get(k) || 0) + w) } }
+            }
+            if (!m.size) for (const l of M.links || []) if (pos.get(l.from) && pos.get(l.to)) m.set(l.from + '|' + l.to, l.n)
+            weights = [...m].map(([k, w]) => { const [from, to] = k.split('|'); return { from, to, w } }); wsum = weights.reduce((x, y) => x + y.w, 0)
+            act = evs.length ? hour / (evs.length / 48) : 1
+        }
         async function read(first) {
             try {
-                const r = await fetch(new URL(o.liveUrl || 'live.json', root.location.href).href + '?t=' + Date.now(), { cache: 'no-store' }); if (!r.ok) throw new Error(r.status)
+                // no cache-busting query: the offline worker (sw.js) stores by address, so one copy is replaced each minute instead of a new one kept
+                const r = await fetch(new URL(o.liveUrl || 'live.json', root.location.href).href, { cache: 'no-store' }); if (!r.ok) throw new Error(r.status)
                 const L = await r.json(); if (!alive) return
                 lastOk = Date.now(); built = Date.parse(L.built_at) || built
-                const evs = L.events.map(e => toEv(L, e)).sort((x, y) => x.t - y.t)
-                const fresh = evs.filter(e => !seen.has(e.sha)), firstEver = !seen.size; for (const e of evs) seen.add(e.sha)
-                const t = win.performance.now()
-                if (first && firstEver) {   // opening: the last hour, played in REPLAY_MS (not again when the page redraws)
-                    const lastMin = evs.length ? evs[evs.length - 1].t : 0, hour = evs.filter(e => e.t >= lastMin - REPLAY_MIN)
-                    replaying = true; enqueue(hour, Math.min(500, REPLAY_MS / Math.max(1, hour.length)), t + 300)
-                    win.setTimeout(() => { replaying = false }, REPLAY_MS + 4000)
-                } else if (fresh.length) { dot.classList.remove('on'); void dot.offsetWidth; dot.classList.add('on'); enqueue(fresh, 350, t) }
+                const evs = L.events.map(e => toEv(L, e)).sort((x, y) => x.ms - y.ms); tally(evs)
+                const firstEver = !seen.size, t = win.performance.now(), disp = Date.now() - DELAY_MS, items = []; let late = 0
+                for (const e of evs) {
+                    if (seen.has(e.sha)) continue; seen.add(e.sha)
+                    if (firstEver && e.ms <= disp) continue                   // opening: nothing older than the delay is replayed
+                    // each exchange at its real moment, a fixed delay behind; one that reached the site later than that plays at once, a beat apart
+                    items.push({ ev: e, at: e.ms > disp ? t + (e.ms - disp) : t + 350 * late++ })
+                }
+                enqueue(items)
             } catch { lastOk = lastOk || 0 }
             paintDot()
             if (alive) timer = win.setTimeout(() => read(false), POLL_MS + (Math.random() * 2 - 1) * SPREAD_MS)
@@ -135,7 +159,7 @@
             dot.className = 'lv-dot ' + (!ok ? 'off' : age > STALE_MIN ? 'old' : '')
             dot.title = !ok ? 'Could not read the latest exchanges; trying again' : `Up to date as of ${new Date(built).toISOString().slice(11, 16)} UTC${age > STALE_MIN ? ' (a quiet spell, or a slow release)' : ''}`
         }
-        read(true)
+        read(true); kick()
         return { destroy() { alive = false; win.clearTimeout(timer); if (raf) win.cancelAnimationFrame(raf); fly.length = 0 } }
     }
 
@@ -154,7 +178,7 @@
     function view(host, o) {
         if (current) { current.destroy(); current = null }
         if (!host.ownerDocument.getElementById('lv-css')) { stylesInto(host.ownerDocument); host.ownerDocument.head.lastChild.id = 'lv-css' }
-        host.innerHTML = `<div class="lv-page"><div class="lv-bar"><button type="button" class="cc-btn" data-lv-pop>⧉ Pop out</button><span class="note" data-lv-note>${supported() ? 'An always-on-top window with this graph. Close it to come back here.' : 'Pop-out needs Chrome or Edge on a computer. On a Mac or iPad, keep this page open on its own.'}</span></div><div class="lv-frame" data-lv-frame></div><p class="note">Lines and dots only. Each exchange between agents (a commit with a For: line) travels along its line when it reaches the site, a few minutes after it is made. The dot at the left is green while the data is fresh. Names, edges and times only: no message text.</p></div>`
+        host.innerHTML = `<div class="lv-page"><div class="lv-bar"><button type="button" class="cc-btn" data-lv-pop>⧉ Pop out</button><span class="note" data-lv-note>${supported() ? 'An always-on-top window with this graph. Close it to come back here.' : 'Pop-out needs Chrome or Edge on a computer. On a Mac or iPad, keep this page open on its own.'}</span></div><div class="lv-frame" data-lv-frame></div><p class="note">Lines and dots only. Each exchange between agents (a commit with a For: line) travels along its line a few minutes after it is made, at its real pace. The faint dots between are the flow of recent hours: busier pairs, more dots. The light in the corner is green while the data is fresh. Names, edges and times only: no message text.</p></div>`
         const frame = host.querySelector('[data-lv-frame]'), btn = host.querySelector('[data-lv-pop]'), note = host.querySelector('[data-lv-note]')
         const inline = () => { current = mount(frame, { ...o, win: root }) }
         if (popped) { frame.innerHTML = '<p class="note" style="padding:16px">Popped out.</p>' } else inline()
