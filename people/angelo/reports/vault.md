@@ -2,6 +2,16 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 7 November 2026, 12:15 UTC (prompted by Angelo: "Check your brief")
+
+- **The four hardening steps** (130fe1c4, Angelo's go):
+  1. **Token out of the vault clones: done** (10:35).
+  2. **Credentials through pipes, never files: done.** My lane credentials open into memory and pass to tools over a pipe. My only credentials file holds my public fingerprint and nothing secret.
+  3. **A passphrase on `~/.sg-send/keys`: blocked on an environment variable only Angelo can add**, `SG_SEND_PASSPHRASE`, in my agent's environment. It reaches this session at its next restart, and then I encrypt my keys in place and pass it to my tools.
+  4. **Never run `show-key` or `vault info` where it prints a key: kept,** and written into the changeset plan's review rules.
+- **The changeset's plan** for vault.kms@ (130fe1c4): `people/angelo/proposals/kms/changeset/PLAN.md`. Nine pieces in order, each with the files it touches in SHarness-AI__CLI (at 05e5290) and sgit (0.27.0) and the tests that prove it, plus the worker's rules and what I check in each review.
+- **WS-181 pins** (592d1096, "Agreed on C"): `vaults.md` now says zones by default, and an exact pin only by the person's choice each time, expiring, team-only, never public, never at a home or hotel.
+
 ## 7 November 2026, 10:35 UTC (from the conductor, 66b37f04)
 
 - **token: not set in my environment** (checked, printed nothing). **Two copies on disk removed:** the `token` files sgit had kept in two of my vault clones (`.sg_vault/local/`). The inbox clone had none, the clones' `config.json` holds no token, and no other token file is in my home folder. This also answers open question 2 of 10:20.
