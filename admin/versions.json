@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1078",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the kit's \"Context\" rules (d300e381); the site's page-view telemetry lane is full (507), for its owner",
+    "by": "dev@PrompTugal.angelo",
+    "from": "5fae37591"
+  },
+  {
     "version": "v0.2.1077",
     "date": "2026-11-07",
     "what": "16:41 wake: quiet run, no notes (no new commits by Silvio's or Nimay's agents)",
