@@ -4,7 +4,7 @@ by: dev@PrompTugal.angelo, with vault@PrompTugal.angelo (data-and-who-may-see-it
 written: 2026-11-07
 for: Angelo, reviewed with desk.conductor@PrompTugal.angelo; findings from policy@PrompTugal.angelo
 issue: WS-97, WS-181
-status: for review. dev.map@PrompTugal.angelo builds nothing before this line says approved.
+status: approved by Angelo, 7 November 2026 (c6fc4442: the four decisions below, as decided). dev.map@PrompTugal.angelo builds from it, in the order of "The changes, by owner".
 ---
 ## What and why
 
@@ -45,7 +45,7 @@ From the public record only. vault@'s [data-and-who-may-see-it.md](data-and-who-
 | Event | From | Drawn as (in the map's own style) |
 |---|---|---|
 | A key published, replaced or ended | `data/keys.json` and the commits that change it (90 so far) | a small key mark on the agent, as it happens; an ended key greys it |
-| Something sealed to someone | `data/sealed/<person>/` and `data/sealed/agents/<agent>/`: `by`, `to`, `at` (21 files) | a gold dot from `by` to `to`, with a lock, labelled by kind only ("a key", "a record"), never the file's name |
+| Something sealed to someone | `data/sealed/<person>/` and `data/sealed/agents/<agent>/`: `by`, `to`, `at` (21 files) | a gold dot from `by` to `to`, with a lock, labelled "a key handed over" and nothing more specific (decision 1), never the file's name |
 | A lane made or handed over | `data/inbox/lane-*.json` (4), `assets/feedback.json` lanes (9) | a thin ring on the agent that can receive sealed messages, from the time it was made |
 | A sealed message sent or verified | only where an agent says so in a commit (WS-120's "test sent 17:25:33 UTC", "signature verified") | a dot with a lock, in the sender's colour, linked to the commit |
 | Work and requests (today) | commit subjects, `Agent:` and `For:` | as now: dots and fading lines |
@@ -80,9 +80,7 @@ The command centre is Angelo's own view. The public version is the site's existi
 
 **How it stays up to date:** built at each release from this repository, which happens with every push, so within minutes of any agent's commit. The build reads `data/keys.json`, `data/sealed/`, `data/inbox/`, `assets/feedback.json`, the commits and the newsroom's snapshot. There is no new data store, no secret in the build, and nothing fetched from a vault or from GitHub at view time.
 
-**The metadata, honestly:** times and edges are information. A minute-by-minute map shows when each person's agents work, which hints at sleep, travel and the stand's hours, and who talks to whom. All of it is already public in this repository's git history, so a public map adds convenience, not new facts. vault@ proposes two limits for the public page:
-- (a) activity counted **by day**, not by minute;
-- (b) the public map running **24 hours behind**.
+**The metadata, honestly:** times and edges are information. A minute-by-minute map shows when each person's agents work, which hints at sleep, travel and the stand's hours, and who talks to whom. All of it is already public in this repository's git history, so a public map adds convenience, not new facts. vault@ proposed two limits (counting by day; running 24 hours behind). Angelo chose neither (decision 1): the public map is as fresh as the releases. It carries no location event, and shows a key handover only as "a key handed over".
 
 ## 5. A 3D option
 
@@ -99,17 +97,17 @@ The command centre is Angelo's own view. The public version is the site's existi
 
 **What I recommend:** a "3D" switch beside the layouts, off by default, built last (piece 5 below). The 2D map stays exactly as it is.
 
-## Decisions for Angelo
+## Decisions (taken by Angelo, 7 November, c6fc4442)
 
-1. **The public page's metadata.**
-   - Options: (a) by day; (b) 24 hours behind; both; or neither.
-   - Recommendation: both, for `/team/map/`. Angelo's command centre keeps the minutes, as it does today.
-2. **The public page is `/team/map/`.** It is upgraded, not a new page. It is the site's shared page, drawn by `admin/build/build.mjs`, whose owner is dev@web-summit.dinis. Our protocol lets dev.map@ change it directly under the five steps, but replacing a page the whole team sees is more than a small change.
-   - Recommendation: dev.map@ builds the interactive map so that it can be placed on any page. It then makes the change to `/team/map/` as one commit For: dev@web-summit.dinis, keeping today's still picture as the page's no-script fallback. If Angelo prefers not to touch the shared page, the public version is a new page of Angelo's instead (`/people/angelo/live/`, through `people/angelo/pages.mjs`).
-3. **Replay leaves the menu** for Team and the machine's timeline, with old links still working.
-   - Recommendation: yes, as Angelo said.
-4. **3D: a switch, off by default, last.**
-   - Recommendation: yes.
+1. **The public map is as fresh as the site's releases. "Agreed on both points":**
+   - No 24-hour delay, and no counting by day.
+   - **No location event on it, ever.**
+   - Key handovers are shown only as **"a key handed over"**: who to whom and when. Not even the kind ("a record") appears in the public view.
+   - Angelo's command centre is a public page too, so its map follows the same two rules: no location event, and "a key handed over" only.
+   - **Also: a daily snapshot** of the map goes into Angelo's PrompTugal.news article ([angelos-communication-graph](https://promptugal.news/articles/angelos-communication-graph.html)). It replaces the article's picture and links to the live map. The image only, through writer@PrompTugal.angelo's article; the text is untouched. Under Angelo's publishing rule, the daily swap on his own article goes straight out.
+2. **"Option A, replace everybody's map, they aren't going to lose anything and it's going to be much cooler":** `/team/map/` becomes the live map. Today's still picture stays as its no-script fallback. It lands as one commit For: dev@web-summit.dinis.
+3. **Replay leaves the menu** for Team and the machine's timeline, with old links kept.
+4. **3D as a switch,** off by default, built last.
 
 ## Out of scope
 
@@ -126,8 +124,9 @@ The command centre is Angelo's own view. The public version is the site's existi
      - `replay.js`'s `mountFlow` draws them.
      - The build checks the never list: no file name from `data/sealed/`, no token, no key.
   3. The newsroom's key events and security@'s comms ledger (section 3), read by `people/angelo/tools/promptugal-snapshot.mjs`, which dev@ keeps and dev.map@ may change.
-  4. The public `/team/map/` (section 4), with Angelo's choice from decision 1:
-     - **The site's shared files:** `/team/map/` is built by `admin/build/build.mjs` (its orgchart). The change is to shared code, made under the five steps as one commit For: dev@web-summit.dinis, with today's picture kept as the fallback; or Angelo's own page instead (decision 2).
+  4. The public `/team/map/` (section 4, decisions 1 and 2), and the daily snapshot:
+     - **The snapshot:** once a day, a picture of the map (Playwright, the same build, the light and dark themes as the article needs) replaces the image in Angelo's article on PrompTugal.news. The image only, with a link to `/team/map/`; the text is untouched. It goes through writer@PrompTugal.angelo, the article's signer, as an image change (re-signed by writer@ if the image is part of the signed files).
+     - **The site's shared files:** `/team/map/` is built by `admin/build/build.mjs` (its orgchart). The change is to shared code, made under the five steps as one commit For: dev@web-summit.dinis, with today's picture kept as the no-script fallback (decision 2).
      - **team-collaboration@PrompTugal.angelo** keeps `people/angelo/tools/team-map.mjs`, which the map reads: changes there are announced For: it.
   5. The 3D switch (section 5), loading `assets/cc/brain-libs.js` only when switched on.
 - **dev@PrompTugal.angelo:** reviews each piece and keeps the tests and the snapshot tool.
@@ -146,6 +145,7 @@ The command centre is Angelo's own view. The public version is the site's existi
 - Team and the machine has one menu entry, and the map and the timeline move together. Old `#replay` links land in the right place.
 - The keys, sealed handovers, lanes and sealed messages appear at the times their commits say. Spot-check three of each against the files, and check that the gate's never-list test passes.
 - The newsroom's comms edges are drawn with their counts, which match its `comms.json` totals.
-- `/team/map/` shows the public view with Angelo's choice from decision 1.
+- `/team/map/` shows the live map, as fresh as the last release, with no location event and key handovers only as "a key handed over". Without script, it shows today's picture.
+- Angelo's article on PrompTugal.news shows a snapshot of the map from the last day, with its text unchanged.
 - 3D, when switched on, shows the same positions turned in space. It is off by default, and the 2D tests are unchanged.
 - Every piece is tested at 1280 and 390 px, light and dark, with no errors.
