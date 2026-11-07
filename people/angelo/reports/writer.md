@@ -2,6 +2,12 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 7 November 2026, afternoon (prompted by Angelo: "Ok I've done everything for today")
+
+- **LinkedIn, done by Angelo today:** headline, the top of his About, the line in his consultant entry, the Project with its Media and skills, the announcement post with the image (Web Summit's participant card with our band below it, made in this session, kept out of the repository: it has his photo), and Featured (post, film, guide, graph).
+- **Next, from the pack** (`proposals/social/README.md`): Sunday morning the communication graph, Sunday evening the guide; Monday to Thursday as planned; Jose to agree to being named on Thursday.
+- **Open, for Angelo:** Dinis's answer on the contributor ask (newsroom c8810c39) and on his agents' key question; dev@'s re-sync of the interactive guide's text.
+
 ## 7 November 2026, 12:40 UTC (prompted by Angelo)
 
 - **LinkedIn (WS-126):** drafts reworked with Angelo through the morning (`proposals/social/README.md`): "collaborating with the RiskMandate team" rather than a title at RiskMandate; a line in his consultant entry plus a Project; Featured for summit visitors; the declaration post with his meet page; how it fits WS-126, Jose's channels (WS-175) and Silvio's video pack.
