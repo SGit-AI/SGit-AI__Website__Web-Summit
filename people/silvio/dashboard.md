@@ -20,7 +20,7 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 
 *Updated by conductor@web-summit.silvio on Sat 7 Nov, 01:30 UTC, at Silvio's word.*
 
-- **The merch (WS-48):** **ordered, paid and the files sent to the printer.** Pickup **Monday 9 November, morning**: Silvio and Dinis together by car, on the way to Web Summit. Files in Portuguese: [/impressao/](../../impressao/index.html).
+- **The merch (WS-48):** **ordered, paid and the files sent to the printer.** Ready **Monday 9 or Tuesday 10 November** (not yet confirmed by the printer; I asked); Silvio and Dinis collect it by car. Files in Portuguese: [/impressao/](../../impressao/index.html).
 - **Outreach (WS-25, WS-26, WS-177):** the new way, at Dinis's word: the first email is about the page PromptUGAL publishes about the company, never about RiskMandate. **World 1 chosen: hospitality, tourism and the Algarve** (7 Nov). 28 drafts in my Gmail; nothing sent until Dinis's yes and my PromptUGAL address.
 - **Videos (WS-72, WS-174):** my 30-second film "Your AI has access" ([page](../../videos/access-permission/index.html)); the stand loop re-rendered in six languages; every clean video in my videos vault (h9in5em4), checked frame by frame; two large files for me to upload with sgit.
 - **The team CRM (WS-170, WS-172, WS-173):** its private key sealed to my dev and inbox agents (7 Nov); the first email thread is in it, waiting for Dinis's and my review.
@@ -71,7 +71,7 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-07, from the boar
 | Due in 48 hours | **4** | WS-72, WS-169, WS-173, WS-189 |
 | Nobody picked yet | **9** | WS-24, WS-40, WS-53, WS-80, WS-28, WS-169, WS-173, WS-189, WS-159 |
 | Agents active (7 days) | **10 of 11** | █████████░ |
-| Messages for me (24 h) | **56** | `git log --since=yesterday --grep "For: .*web-summit.silvio"` |
+| Messages for me (24 h) | **55** | `git log --since=yesterday --grep "For: .*web-summit.silvio"` |
 | Pulse today | **0 of 3** | ░░░ |
 | Onboarding level | **L1** of L4 | █░░░ |
 
@@ -100,7 +100,7 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-07, from the boar
 
 | Agent | Job | Commits 24 h | Commits 7 days | Last seen |
 |---|---|---|---|---|
-| ● conductor@web-summit.silvio | Runs Silvio's other agents and keeps people/silvio/ | 12 | 32 | 11-07 05:02 UTC |
+| ● conductor@web-summit.silvio | Runs Silvio's other agents and keeps people/silvio/ | 13 | 33 | 11-07 07:23 UTC |
 | ● dev@web-summit.silvio | Builds what Silvio and the conductor ask for: this command centre, tools | 4 | 25 | 11-07 06:43 UTC |
 | ○ local@web-summit.silvio | Algarve options: printers, ads, prices, lead times | 0 | 0 | never |
 | ● outreach@web-summit.silvio | Targets, messages and follow-ups; drafts in Silvio's account, Silvio sends | 6 | 17 | 11-07 04:22 UTC |
@@ -109,7 +109,7 @@ Refreshed by `node people/silvio/stats.mjs --write` on 2026-11-07, from the boar
 | ● dashboard@web-summit.silvio | Keeps Silvio's dashboard and asks one question a run | 4 | 4 | 11-07 07:07 UTC |
 | ● sgit@web-summit.silvio |  | 0 | 4 | 11-03 04:13 UTC |
 | ● inbox@web-summit.silvio |  | 3 | 4 | 11-07 04:20 UTC |
-| ● crm@web-summit.silvio |  | 3 | 5 | 11-07 04:22 UTC |
+| ● crm@web-summit.silvio |  | 2 | 5 | 11-07 04:22 UTC |
 | ● design@web-summit.silvio |  | 13 | 13 | 11-07 04:42 UTC |
 
 ## Critical path to Lisbon {#critical-path}
@@ -245,5 +245,5 @@ Next: an email to send from (L2), then my PKI key (L3), then a conductor on a sc
 
 ## The merch order {#printers}
 
-**Printer chosen by Dinis on 3 November** (the second option, near Lisbon). It cannot guarantee Friday; Monday 9 November morning asked, the first printer as fallback. 21 T-shirts (each colour 1 M, 1 L, 1 XL) and 7 hoodies (one per person, in their colour), RiskMandate only, one generic QR on the backs; sleeves to decide. The printer's name and price stay private until it agrees to publication. The story: [the print order](../../print-order/index.html) and [procurement](../../procurement/index.html).
+*procurement@web-summit.silvio, Sat 7 Nov, 07:45 UTC.* **Ordered, paid and the files at the printer** (near Lisbon, chosen by Dinis on 3 November). Ready **Monday 9 or Tuesday 10 November**, not yet confirmed; Silvio and Dinis collect it by car. 21 T-shirts (each colour 1 M, 1 L, 1 XL), 7 hoodies (one per person, Vicky's lavender), RiskMandate only, one generic QR on the backs, the RiskMandate logo on the left sleeve. The printer's name and price stay private (it declined publication). The story: [the print order](../../print-order/index.html), [procurement](../../procurement/index.html), [in Portuguese](../../impressao/index.html).
 
