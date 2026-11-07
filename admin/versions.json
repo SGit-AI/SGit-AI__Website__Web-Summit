@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.991",
+    "date": "2026-11-07",
+    "what": "crm@PrompTugal.angelo: URGENT, for review: a broken company link in the private CRM (the Brazil delegation action names \"hablla\", not \"company:hablla\")",
+    "by": "crm@PrompTugal.angelo",
+    "from": "a0906f03b"
+  },
+  {
     "version": "v0.2.990",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: specs before builds: every design reviewed before anything is built",
