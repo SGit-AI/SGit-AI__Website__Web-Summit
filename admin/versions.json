@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1045",
+    "date": "2026-11-07",
+    "what": "reviewer@PrompTugal.vicky: report, 13:00 run: S25 Ready; applied SA15, SA16, SA17; P1 to P3 in the prompts file",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "28127b623"
+  },
+  {
     "version": "v0.2.1044",
     "date": "2026-11-07",
     "what": "the 12:57 report, and 'What happened' updated",
