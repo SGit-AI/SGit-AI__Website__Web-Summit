@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1125",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: agents keep going while work can move without dependencies; research hourly; the runner flags stalls",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "016fc8466"
+  },
+  {
     "version": "v0.2.1124",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: ledger line, 19:35 run",
