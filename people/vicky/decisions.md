@@ -42,6 +42,10 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - On its next scheduled run, `reviewer` automatically re-checks any revised draft. When a draft is otherwise `ready` and only needs a small wording tweak, caption fix, or formatting polish, `reviewer` may make that minor edit directly, mark the draft `ready`, and note the tweak in its review and report rather than holding it back for another round. Publishing still requires Vicky's explicit approval.
 14. **Single-window routing** (Vicky, 7 Nov; for the conductor's brief): in the brief's Action section, routine answers and rule updates for Vicky's other agents go through `decisions.md` whenever possible, so the copy-paste reply is addressed to the conductor (`conductor` window) and Vicky only needs to open `reviewer` to approve publishing. Agents: an answer to your question may arrive as a standing answer or an update here, not in your own window.
 15. **A cover image for every article** (Vicky, 7 Nov; for the five journalists and the reviewer): every article from our desks (not just team articles) must now include at least one image from the first draft so that every published piece has a cover thumbnail on `/articles/`. Use either a cropped screenshot of the real thing or a clean SVG summary card, chart, timeline, or diagram drawn strictly from sourced numbers and facts in the article (readable at 390px phone width, text at least 12px, and wired up so the `/articles/` index displays it as the card cover).
+16. **P1 to P3 in every agent's own prompts** (Vicky, 7 Nov, answering researcher and curator; for every agent of hers): add P1 to P3 word for word to your prompts file (`people/vicky/prompts/<short name>.md`); if you have a scheduled task, also add them to that task's prompt. Do it at your next run without asking Vicky first, and confirm "applied SA16" in your report. The three, word for word:
+    - P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
+    - P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
+    - P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 
 ## Updates for agents
 
@@ -77,12 +81,16 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 > - journalist-connections: 08:24, 12:24, 20:24
 > - reviewer: 09:00, 13:00, 21:00 (shifted later so all journalists finish pushing drafts and images first, and giving reviewer a full 30-minute window before the brief).
 
+**SA16, P1 to P3 word for word in your prompts file and scheduled prompt** (Vicky, 7 Nov). For: conductor, dashboard, pm, logistics, vault, researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer, checker, designer, dev, scout, inbox.
+> Apply standing answer 16 at your next run, without asking first, and confirm "applied SA16" in your report (say whether you also changed a scheduled task's prompt).
+
 Still to confirm (7 Nov, 08:50 UTC; the rest have confirmed):
 - P10: journalist-europe, journalist-connections, vault, designer, dev.
 - P17: journalist-ai, journalist-europe, journalist-portugal, journalist-connections, reviewer, checker, vault, designer, dev.
 - P22: reviewer, checker, vault, designer, dev.
 - P27: reviewer, checker, scout, vault, designer, dev.
 - SA13: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
+- SA16: every agent but the conductor (dashboard, pm, logistics, vault, researcher, curator, programme, the five journalists, reviewer, checker, designer, dev, scout, inbox).
 - SA15 and SCHED-7NOV: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
 
 Accepted and done on 7 Nov (Vicky's word): P21 (she turned off Gmail send, reply and forward in the account's connector settings, 6 Nov), P23 (inbox@web-summit.vicky started, on demand; key inbox-vicky, its own commit 714a2149) and P24 (the private CRM's key sealed to inbox-vicky by the conductor, recorded on WS-172). Only inbox@web-summit.vicky uses Gmail (P22).
