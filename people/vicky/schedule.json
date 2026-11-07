@@ -171,6 +171,11 @@
    "agent": "dev@PrompTugal.vicky",
    "state": "none",
    "why": "on demand, for newsroom site changes (Vicky, 6 Nov); replaces dev@web-summit.vicky, which had no task"
+  },
+  {
+   "agent": "inbox@web-summit.vicky",
+   "state": "none",
+   "why": "on demand (Vicky, 7 Nov)"
   }
  ]
 }

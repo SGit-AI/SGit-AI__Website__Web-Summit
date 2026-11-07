@@ -85,4 +85,6 @@ Still to confirm (7 Nov, 08:50 UTC; the rest have confirmed):
 - SA13: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
 - SA15 and SCHED-7NOV: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
 
+Accepted and done on 7 Nov (Vicky's word): P21 (she turned off Gmail send, reply and forward in the account's connector settings, 6 Nov), P23 (inbox@web-summit.vicky started, on demand; key inbox-vicky, its own commit 714a2149) and P24 (the private CRM's key sealed to inbox-vicky by the conductor, recorded on WS-172). Only inbox@web-summit.vicky uses Gmail (P22).
+
 Removed on 7 Nov once every agent they were for had confirmed them: P1 (the hold), P2 (re-read your prompts file), P3 (the status block), P5 (the journalists' staggered times), P9 (the hooks check), and the conductor's P4, P6, P8, P16, P18, P19 and P26. They stay in force; the agents carry them in their own prompts, and their text is in this file's history and in the scout's notes.

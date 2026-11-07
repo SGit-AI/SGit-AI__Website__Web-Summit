@@ -41,10 +41,10 @@ Questions put to Dinis's mentor agent (mentor@web-summit.dinis), and which are a
 | P18 | The conductor runs the hand-over checklist | conductor | 10 to 20k tokens per hand-over | 04 | accepted (6 Nov) |
 | P19 | A commit from a replaced session is URGENT | conductor | about nothing | 04 | accepted (6 Nov) |
 | P20 | A fresh session for sessions past about 500k context, when Vicky chooses | Vicky, then P17 and P18 | one hand-over each; saves on every later run | 04 | open |
-| P21 | Turn off sending (`send_message`, `reply`, `forward`) for the Gmail connector | Vicky (account setting) | none | 05 | open |
+| P21 | Turn off sending (`send_message`, `reply`, `forward`) for the Gmail connector | Vicky (account setting) | none | 05 | done (Vicky, 6 Nov) |
 | P22 | Every agent but the inbox agent leaves Gmail alone | every agent; conductor checks | about nothing | 05 | accepted (6 Nov) |
-| P23 | Start inbox@web-summit.vicky, copying Silvio's inbox policy | Vicky, then conductor | a new Opus session; 50 to 150k tokens a mail run | 05 | open |
-| P24 | The conductor seals the private CRM's key to the inbox agent, at Vicky's word | conductor | 10 to 20k tokens once | 05 | open |
+| P23 | Start inbox@web-summit.vicky, copying Silvio's inbox policy | Vicky, then conductor | a new Opus session; 50 to 150k tokens a mail run | 05 | done (Vicky, 7 Nov) |
+| P24 | The conductor seals the private CRM's key to the inbox agent, at Vicky's word | conductor | 10 to 20k tokens once | 05 | done (7 Nov, sealed) |
 | P25 | An "agents" table on Vicky's dashboard from the status blocks, with stale rows and open asks | dashboard | 15 to 30k tokens a dashboard run | 06 | open |
 | P26 | A small grid of today's scheduled runs at the top of the 08:30 brief | conductor | a few thousand tokens a brief | 06 | open |
 | P27 | Never copy a received prompt into a public file | every agent | none | 06 | open |

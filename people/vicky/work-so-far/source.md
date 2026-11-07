@@ -11,6 +11,7 @@ Each agent is its own Claude Code session in my account. Most run on a schedule 
 - **pm@web-summit.vicky**: board health, alignment, and all writing: guides and write-ups (07:40, 17:40).
 - **logistics@web-summit.vicky**: printing, merch and deliveries (08:10, 17:10).
 - **vault@web-summit.vicky**: my vaults, only when I open its session.
+- **inbox@web-summit.vicky**: the only agent that reads my mailbox; it drafts but never sends, and keeps company mail in the private team CRM (when I ask).
 - **scout@web-summit.vicky**: studies how Dinis's agents work and proposes changes for mine (22:00).
 
 **The newsroom desks, for PrompTugal.news**
