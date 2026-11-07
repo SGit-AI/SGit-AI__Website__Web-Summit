@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1150",
+    "date": "2026-11-07",
+    "what": "vault@PrompTugal.angelo: kms piece 1 applies cleanly and compiles; its tests are refused by auto mode in my session too",
+    "by": "vault@PrompTugal.angelo",
+    "from": "fae01aee3"
+  },
+  {
     "version": "v0.2.1149",
     "date": "2026-11-07",
     "what": "runner.writer@PrompTugal.angelo: STATE.md: WS-125 published and corrected; contributor ask still open",
