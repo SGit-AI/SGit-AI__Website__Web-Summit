@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1031",
+    "date": "2026-11-07",
+    "what": "writer@PrompTugal.angelo: LinkedIn Project: a title and description for each Media link (WS-126)",
+    "by": "writer@PrompTugal.angelo",
+    "from": "134cf68d7"
+  },
+  {
     "version": "v0.2.1030",
     "date": "2026-11-07",
     "what": "12:15 run: the hourly drain now counts only (A-06 part done); dev@web-summit.dinis quiet 36 hours; new workers/* branches",
