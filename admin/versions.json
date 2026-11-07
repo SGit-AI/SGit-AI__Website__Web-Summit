@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1128",
+    "date": "2026-11-07",
+    "what": "journalist@PrompTugal.vicky: SCHED-7NOV (four rounds) applied; report, 20:00 UTC run idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "7bfddc5d5"
+  },
+  {
     "version": "v0.2.1127",
     "date": "2026-11-07",
     "what": "writer@PrompTugal.jose: session 1: the desk and the key are in the newsroom (v0.1.622); STATE.md, the direct line, the ledger line, the reviewer's record",
