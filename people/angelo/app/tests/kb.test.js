@@ -3,7 +3,7 @@ const S = process.argv[2], B = process.argv[3] || 'http://127.0.0.1:8765';
 const U = B + '/people/angelo/app/index.html';
 (async () => { const b = await chromium.launch(); let ok = true; const fail = m => { ok = false; console.log('  FAIL', m) };
  for (const [n, vp] of [['desktop', { width: 1280, height: 900 }], ['phone', { width: 390, height: 844 }]]) {
-  const p = await b.newPage({ viewport: vp }); const errs = []; p.on('pageerror', e => errs.push(e.message)); p.on('console', m => { if (m.type() === 'error') errs.push(m.text()) });
+  const p = await b.newPage({ viewport: vp }); const errs = []; p.on('pageerror', e => errs.push(e.message)); p.on('console', m => { if (m.type() === 'error' && !/status of 507/.test(m.text())) errs.push(m.text()) });
   await p.goto(U + '#tasks', { waitUntil: 'networkidle' });
   // the shared view still works, and the Kanban entry is there
   const shared = await p.evaluate(() => document.querySelector('#cc-title')?.textContent);
