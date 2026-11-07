@@ -45,7 +45,7 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt (6 November 2026)
 
-Daily at 08:24 and 16:24 UTC since 6 November 2026, 16:04 UTC (moved from 08:00 and 16:00 per decisions.md, P5), firing into this session (scheduled task trig_01RqSqjPAC6WuwNmTbjKFzwa).
+Daily at 08:24, 12:24 and 20:24 UTC since 7 November 2026, 16:25 UTC (SCHED-7NOV; before that 08:24 and 16:24 from P5, and 08:00 and 16:00 at first), firing into this session (scheduled task trig_01RqSqjPAC6WuwNmTbjKFzwa).
 
 ```
 Scheduled run for journalist-connections@PrompTugal.vicky:
@@ -57,6 +57,12 @@ Scheduled run for journalist-connections@PrompTugal.vicky:
 6. If there's nothing new in your beat, write nothing.
 7. Add a report line in people/vicky/reports/journalist-connections.md on the team site.
 Never push to main, never use --force, never push to a session branch.
+
+Added on 7 November 2026 at Vicky's word (decisions.md, SA13 and SA16):
+- Standing answer 13: at the start of every scheduled run, before picking a new storyline, check desks/reviewer-vicky/reviews/ for any of your own drafts marked fix-first (or with open reviewer findings), revise the draft, and push it.
+- P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
+- P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
+- P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 ```
 
 ## Standing rules given in chat, word for word
