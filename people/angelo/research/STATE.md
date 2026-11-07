@@ -1,9 +1,9 @@
 # research@PrompTugal.angelo: STATE
 
-Last run: 2026-11-07 (second run, scheduled). The spec's pushed-by check passed (016fc846, riskmandate-angelo). workers/research was unrelated to the force-updated dev, so I merged dev into it (no force).
+Last run: 2026-11-07 (third run, scheduled, 22:10 UTC): Devoteam and VGW added (VGW thin: vgw.co and devoteam.com not readable; devoteam.com gave 403). Earlier: second run. The spec's pushed-by check passed (016fc846, riskmandate-angelo). workers/research was unrelated to the force-updated dev, so I merged dev into it (no force).
 
 ## Briefs written
-aws, reply, outplay-entertainment (list items 1 to 3). Next: Devoteam (4), VGW (5), Administrate (6), IFS assyst (7), Accenture (8).
+aws, reply, outplay-entertainment, devoteam, vgw (list items 1 to 5). Next: Administrate (6), IFS assyst (7), Accenture (8). VGW wants a redo with company-site access.
 
 ## What I know
 - The summit is 9 to 12 November 2026 (data/events.json, read 2026-11-01). No meeting of Angelo's with a company or person is recorded in the repository's public data: data/meetings holds only the team's stand-ups; people/angelo/app/data.mjs builds summit_days from data/events.json (sessions and side events, not Angelo's meetings).

@@ -54,6 +54,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - journalist-ai: 09:33, 13:33, 17:33, 21:33
     - journalist-connections: 09:39, 13:39, 17:39, 21:39
 
+19. **Theme-led connection stories** (Vicky, 7 Nov; for the curator and journalist-connections). Use only public information. Do not use CRM data, private meetings, interview shortlist information or private outreach.
+    - Curator: actively create connection storylines when public information supports them; start from a useful theme, industry, market, problem or situation; identify relevant people and companies worth knowing within that theme; route these storylines to journalist-connections. (People may now be named, replacing "organisations only" for these storylines; as always, nothing about a person that is not already public and professional.)
+    - journalist-connections: write these as natural editorial stories, not matchmaking reports; for each person or company, explain briefly who they are, why they are relevant to the theme, and why they may be worth knowing; avoid forced partnership language and generic "synergy" framing; do not claim that two parties are interested in each other or should work together; prefer themes and connections that remain useful after Web Summit.
+    - Examples: Five people worth knowing if you're building in climate tech; Who fintech founders may want to meet at Web Summit; The people to know if you're expanding into Southern Europe; Companies working on the same problem from different angles.
+
 ## Updates for agents
 
 How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
@@ -98,12 +103,16 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 **SA18, the fix-only follow-up run** (Vicky, 7 Nov). For: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections.
 > At your next run, create a second scheduled task that fires into your own session at your times in standing answer 18 (cron `<minute> 9,13,17,21 * * *`: journalist 15, portugal 21, europe 27, ai 33, connections 39). Its prompt: read people/vicky/decisions.md and follow it (P1 to P3 included); check desks/reviewer-vicky/reviews/ for any new Fix first on your own drafts; revise and repush only those, through newsroom/tools/release.sh; never pick a new storyline; if there is nothing to fix, write nothing and push nothing. Keep your writing task unchanged. Confirm "applied SA18" in your report, with the new task's id and times.
 
+**SA19, theme-led connection stories** (Vicky, 7 Nov). For: curator, journalist-connections.
+> Add standing answer 19 to your prompts file and to your scheduled task's prompt at your next run (curator: it replaces "organisations only" for these storylines), follow it from then on, and confirm "applied SA19" in your report.
+
 Still to confirm (7 Nov, 08:50 UTC; the rest have confirmed):
 - P10: journalist-europe, journalist-connections, vault, designer, dev.
 - P17: journalist-ai, journalist-europe, journalist-portugal, journalist-connections, reviewer, checker, vault, designer, dev.
 - P22: reviewer, checker, vault, designer, dev.
 - P27: reviewer, checker, scout, vault, designer, dev.
 - SA13: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
+- SA19: curator, journalist-connections.
 - SA18: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections.
 - SA17: reviewer.
 - SA16: every agent but the conductor (dashboard, pm, logistics, vault, researcher, curator, programme, the five journalists, reviewer, checker, designer, dev, scout, inbox).

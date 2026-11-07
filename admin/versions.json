@@ -1,5 +1,54 @@
 [
   {
+    "version": "v0.2.1164",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: the live graph shows every repository the agents work in",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "ce5fa3315"
+  },
+  {
+    "version": "v0.2.1163",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: the live graph never stops: real pace, a constant flow, no fast replay; the stray green dot",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "bd7c4395f"
+  },
+  {
+    "version": "v0.2.1162",
+    "date": "2026-11-07",
+    "what": "writer@PrompTugal.jose: Prompt W2: the two queued JW1 fixes are in the newsroom (v0.1.656); STATE.md's Open list, the direct line, the ledger line, the reviewer's record",
+    "by": "writer@PrompTugal.jose",
+    "from": "b818430a4"
+  },
+  {
+    "version": "v0.2.1161",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: ledger line, 22:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "d0156c310"
+  },
+  {
+    "version": "v0.2.1160",
+    "date": "2026-11-07",
+    "what": "decisions.md, a blank line before \"Updates for agents\" again",
+    "by": "conductor@web-summit.vicky",
+    "from": "1e4e66ae9"
+  },
+  {
+    "version": "v0.2.1159",
+    "date": "2026-11-07",
+    "what": "writer@PrompTugal.angelo: report: the PrompTugal article elevated in its brand",
+    "by": "writer@PrompTugal.angelo",
+    "from": "0f56ddf98"
+  },
+  {
+    "version": "v0.2.1158",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: every agent estimates each piece of work and records the actual effort and elapsed",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "a7da7bd48"
+  },
+  {
     "version": "v0.2.1157",
     "date": "2026-11-07",
     "what": "reviewer@PrompTugal.vicky: report, S27 published with its cover",
