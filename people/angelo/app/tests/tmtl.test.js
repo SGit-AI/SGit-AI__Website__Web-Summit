@@ -16,6 +16,11 @@ const S = process.argv[2], U = 'http://127.0.0.1:8765/people/angelo/app/index.ht
   // a commit picked on the timeline moves the map's clock there and is kept in the address
   await p.locator('.rp-embed circle.rp-e').first().click({ force: true }); await p.waitForSelector('.rp-embed .rp-detail', { timeout: 4000 }).catch(() => fail('no detail'));
   const d = await p.evaluate(() => ({ hash: location.hash, scrub: +document.querySelector('[data-tmf-scrub]').value, min: +document.querySelector('[data-tmf-scrub]').min }));
+  // the picked commit's agent is picked out on the map, and un-picked when the commit is
+  await p.waitForTimeout(200); const picked = await p.evaluate(() => document.querySelectorAll('.tm-a.tmf-pick').length);
+  await p.locator('.rp-embed circle.rp-e.on').first().dispatchEvent('click'); await p.waitForTimeout(300);
+  const cleared = await p.evaluate(() => document.querySelectorAll('.tm-a.tmf-pick').length);
+  if (picked !== 1 || cleared !== 0) fail('pick on the map: ' + picked + ' then ' + cleared);
   console.log(n, JSON.stringify({ a, before, after, d }), errs);
   if (!/#collab\?/.test(a.hash) || !a.hash.includes('map=1') || !a.hash.includes('r_p=angelo') || !a.hash.includes('w=72h') || !/Team and the machine/.test(a.title) || !a.map || a.dots < 3 || a.ownPlay || a.menu || a.overflow > 1) fail('landing ' + JSON.stringify(a));
   if (!(after.fut >= after.total - 2 && after.fut > before)) fail('timeline did not follow the map');

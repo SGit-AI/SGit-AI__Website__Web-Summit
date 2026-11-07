@@ -70,6 +70,7 @@
         if (title && !E) title.innerHTML = `${ownTitle('Replay')}<small>${esc((D.person.name || D.person.id).split(' ')[0])}'s command centre</small>`
         if (!R) { view.innerHTML = '<p class="note">Replay has no data in this build.</p>'; return }
         const s = parse(location.hash, E), nowMin = Math.round((Date.now() - Date.parse(R.from)) / 6e4)
+        if (E) setTimeout(() => { if (flowApi) flowApi.pick(s.sel) }, 0)   // the map, drawn before this timeline, picks out the commit's agent
         const { start, end, ev } = select(R, s, nowMin), phone = PHONE()
         // rows: per agent grouped by person; on a phone, per person
         const agentsSeen = new Set(ev.filter(e => e[1] >= 0).map(e => e[1]))
@@ -349,7 +350,13 @@ ${sel ? detail(R, sel) : ''}
         btn.onclick = () => { if (playing) return stop(); seek(+scrub.value >= end ? start : +scrub.value); play() }
         // picked up after a redraw: the same moment, still playing if it was
         if (flowState.t != null) { seek(flowState.t); if (flowState.playing) play() }
-        flowApi = { seek, at: () => flowState.t }
+        // a commit picked on the timeline: its agent is picked out on the map (a dashed ring and its name), until another is picked or it is cleared
+        const pick = sha => {
+            for (const v of N.values()) v.g.classList.remove('tmf-pick')
+            const e = sha && R.events.find(x => x[6] === sha && x[1] >= 0), from = e && o.nodeOf(R.agents[e[1]].name), v = from && N.get(from)
+            if (v) v.g.classList.add('tmf-pick')
+        }
+        flowApi = { seek, at: () => flowState.t, pick }
         return { seek, msgs: msgs.length }
     }
 
