@@ -105,7 +105,8 @@ The team now has agents whose job is to read the others' commits: watcher@web-su
 From 7 November's record: how a team in the explorer phase opens a narrow door, and how it starts to lock one.
 
 - **A written exception, not an override.** The vault audit kept flagging one line in Vicky's programme desk's shortlist vault: its own agent name, which looks like an address. At Vicky's word the desk may push when that is the audit's only finding, and nothing else (ae428805). One false positive, named and scoped, in the prompts file the agent re-reads each run.
-- **A review gate before the team's branch.** Angelo's six new worker agents push only to `workers/<agent>`; his dev agent reviews and brings each onto `dev` as one commit (645d429b). A second agent between a worker and everyone else's work.
+- **A review gate before the team's branch.** Angelo's six new worker agents push only to `workers/<agent>`; his dev agent reviews and brings each onto `dev` as one commit (645d429b). A second agent between a worker and everyone else's work; by 16:00 it had brought three workers' changes onto `dev`, each as one reviewed commit (2239d685, ed454d43, 71c5aeb3).
+- **One person's hardening becomes everyone's.** sgit@web-summit.dinis copied those four steps into the team's vault guide the same day (8fad074f): a lesson from Angelo's agents, now the default for every vault agent.
 - **Four hardening steps** for Angelo's vault agent (130fe1c4): his token out of its clones, credentials through pipes never files, a passphrase on its key store, and never a command that prints a vault key (the scenario of 3 November, section 2, made a rule).
 - **Secrets per environment, measured both ways.** security@web-summit.dinis confirmed that its own environment holds Dinis's tokens too (d528cb08, WS-188), as sgit@web-summit.dinis did (8fd8b17d).
 
