@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1167",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: ledger line, Angelo's 23:02 wake",
+    "by": "dev@PrompTugal.angelo",
+    "from": "7ed5f22d8"
+  },
+  {
     "version": "v0.2.1166",
     "date": "2026-11-07",
     "what": "review: bring workers/dev.map's new work onto dev (one commit)",
