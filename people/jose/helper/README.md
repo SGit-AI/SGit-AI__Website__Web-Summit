@@ -10,12 +10,11 @@ A scheduled task, **helper@web-summit.jose wake**, fires into this helper's own 
 
 **Jose's word, 5 November:** Jose sends the Silvio and Nimay drafts himself. Nimay's step is Dinis's (the repository invitation, WS-09), so his item stays on the agenda. Daniela (waits on WS-125's decision) and Sarah (optional, WS-09) are not chased.
 
-## Where everyone is (6 November 2026, 08:53 UTC, built from dev at v0.2.732)
+## Where everyone is (7 November 2026, 08:53 UTC, built from dev at v0.2.982)
 
 | Person | Level | Stuck on | Since | Note |
 |---|---|---|---|---|
-| Dinis, Indi, Vicky, Angelo, Jose | L6 | nothing | | all nine steps |
-| Silvio | L3 (8 of 9: vault done 5 Nov) | Dashboard agent, the last step | 2 Nov (L3 since his conductor joined) | [silvio.md](silvio.md) |
+| Dinis, Indi, Vicky, Angelo, Jose, Silvio | L6 | nothing | | all nine steps (Silvio since 7 Nov, 05:16) |
 | Nimay | L1 | Can push (the repository invitation) | 2 Nov evening | [nimay.md](nimay.md) |
 | Daniela | L0 | not started; not core | | waits on a decision: [daniela.md](daniela.md) |
 | Sarah | L0 | not started; not core, "if they want" (WS-09) | | [sarah.md](sarah.md) |
@@ -28,7 +27,7 @@ A scheduled task, **helper@web-summit.jose wake**, fires into this helper's own 
 4. **Signed up with a personal email** (the guide, step 3A). **Fix:** add the Workspace email under GitHub Settings, Emails; no new account needed.
 5. **An agent could not push or see the repository.** One of three: the invitation not accepted, Claude Code connected to another GitHub account (https://claude.ai/connect-github), or the session opened before the invitation was accepted (open a new one). The guide, step 3A, item 6, written by Angelo (17dafc4).
 6. **An agent could not reach pki.sgit.ai** to make its key. **Fix:** the six team domains under the environment's Allowed domains (the guide, step 3B, item 9); works without a restart.
-7. **The dashboard is kept, but the step is not counted** (Silvio). Procurement keeps his dashboard; the leaderboard counts only an agent named `dashboard@web-summit.<id>` (`admin/build/onboarding.mjs`). **Two ways**, from his mentor (b6011aa): start a dashboard agent from his kit, or Dinis agrees procurement counts and the step is recorded by hand. Open.
+7. **The dashboard is kept, but the step is not counted** (Silvio). Procurement keeps his dashboard; the leaderboard counts only an agent named `dashboard@web-summit.<id>` (`admin/build/onboarding.mjs`). **Two ways**, from his mentor (b6011aa): start a dashboard agent from his kit, or Dinis agrees procurement counts and the step is recorded by hand. **Fixed, 7 November 05:16 UTC:** a dashboard agent was running, but its commits were signed `dev@web-summit.silvio` (f3f3c8b6 found 18 of them); once it signed as `dashboard@web-summit.silvio` (bb878ce4), Silvio went to L6 in one step. **For the next person:** an agent counts under the name it commits as, not the job it does.
 8. **An agent pushed to `main`** (2 November). **Fixed by rule:** `dev` only, absolute (CLAUDE.md).
 
 ## Runs
@@ -37,3 +36,5 @@ A scheduled task, **helper@web-summit.jose wake**, fires into this helper's own 
 - **4 November 2026, 23:29 UTC:** scheduled-style run; nothing changed, nothing committed.
 - **5 November 2026, 01:16 UTC:** the schedule created (above), at Jose's word.
 - **6 November 2026, 08:50 UTC:** Silvio at 8 of 9 (his first vault); his note updated. Task: the two notes as Gmail drafts, "To" empty (Jose's word, C24); blocked, the Gmail connector needs signing in again.
+- **6 November 2026, 14:50 UTC:** Gmail drafts still blocked (connector signed out).
+- **7 November 2026, 08:50 UTC:** Silvio at L6 (his dashboard agent signing under its own name); his draft dropped. Nimay unchanged at L1; his draft still blocked on Gmail.

@@ -2,7 +2,7 @@
 
 Drafted by helper@web-summit.jose on 4 November 2026, 23:20 UTC, for Jose to send. A draft: nothing here has been sent.
 
-**Where you are:** level 1, 3 of 9 steps, on [the setup leaderboard](https://web-summit.sgit.ai/team/setup/) (built from dev at v0.2.732, 6 November). Workspace email and Claude are done. Your next step is **Can push**: being invited to the team's repository on GitHub and accepting it. Everything after it (your conductor, your dashboard, your keys) is ready in your kit and takes minutes once this is done.
+**Where you are:** level 1, 3 of 9 steps, on [the setup leaderboard](https://web-summit.sgit.ai/team/setup/) (built from dev at v0.2.982, 7 November). Workspace email and Claude are done. Your next step is **Can push**: being invited to the team's repository on GitHub and accepting it. Everything after it (your conductor, your dashboard, your keys) is ready in your kit and takes minutes once this is done.
 
 ## Why you are stuck here
 
