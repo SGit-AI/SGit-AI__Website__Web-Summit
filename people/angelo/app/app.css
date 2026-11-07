@@ -347,3 +347,18 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .ak-copy code { font-size: 13px; overflow-wrap: anywhere; user-select: all; }
 .ak-tasks.ak-list { display: grid; gap: 10px; }
 .ak-grid.ak-tasks { grid-template-columns: repeat(4, minmax(0, 1fr)); overflow-x: visible; }
+/* the look (dashboard@'s look.md, 8d8c312f) */
+.ak-since .cc-btn { margin-left: auto; }
+.ak-rec { color: var(--rm-text-secondary); }
+.ak-rec b { color: var(--rm-text); font-weight: 600; }
+.ak-tt { font-weight: 650; }
+.ak-hint { font: 400 13px/18px var(--rm-font); color: var(--rm-text-muted); }
+.ak-acts .cc-btn, .ak-since .cc-btn { min-height: 34px; }
+.ak-tasks + * .cc-btn:focus-visible, .ak-task .cc-btn:focus-visible, .ak-since .cc-btn:focus-visible, .ak-tabs button:focus-visible, .ak-task a:focus-visible { outline: 2px solid var(--rm-focus); outline-offset: 2px; }
+.ak-grid.ak-tasks { grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, .8fr); gap: 8px; }
+@media (max-width: 767px) {
+  .ak-acts .cc-btn, .ak-since .cc-btn, .ak-tabs button { min-height: 44px; }
+  .ak-task { padding: 14px; }
+  .ak-tt { font-size: 17px; line-height: 24px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .ak-since .cc-btn { margin-left: 0; }
+}

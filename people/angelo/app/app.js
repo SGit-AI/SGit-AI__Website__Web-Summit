@@ -190,30 +190,31 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             const marked = LSK.get('marked', {})
             const chg = cols.map(c => [c.label, c.items.filter(t => changed.has(t.id)).length]).filter(x => x[1])
             const link = (h, t) => h ? `<a href="${esc(h)}" target="_blank" rel="noopener">${esc(t)}</a>` : esc(t)
-            const chipCls = t => t.chip === 'tier 3' ? 't-orange' : /waits|click|overdue|stand-up|today/.test(t.chip) ? 't-red' : /delivered/.test(t.chip) ? 't-green' : t.chip === 'needs changes' ? 't-orange' : 'plain'
+            // chip colours by meaning (dashboard@'s look.md): tier 3 yellow, a click or a wait blue, overdue red, delivered green, needs changes orange
+            const chipCls = t => t.chip === 'tier 3' ? 't-yellow' : /overdue|stand-up|today/.test(t.chip) ? 't-red' : /waits|click|sent/.test(t.chip) ? 't-blue' : /delivered/.test(t.chip) ? 't-green' : t.chip === 'needs changes' ? 't-orange' : 'plain'
             const card = t => `<article class="ak-card ak-task${changed.has(t.id) ? ' ak-new' : ''}" data-task="${esc(t.id)}">${changed.has(t.id) ? '<span class="ak-newb">NEW</span>' : ''}
-<span class="ak-meta">${t.chip ? `<span class="chip ${chipCls(t)}">${esc(t.chip)}</span>` : ''}${t.agent ? `<span class="chip t-blue">${esc(t.agent)}</span>` : ''}<span class="chip plain">${esc(t.id)}</span></span>
-<b class="ak-tt">${esc(t.title)}</b>
+<span class="ak-meta">${t.chip ? `<span class="chip ${chipCls(t)}">${esc(t.chip)}</span>` : ''}<span class="chip plain">${esc([t.agent, t.id].filter(Boolean).join(' · '))}</span></span>
+<b class="ak-tt" title="${esc(t.title)}">${esc(t.title)}</b>
 ${t.rec ? `<span class="ak-rec">Recommended: <b>${esc(t.rec)}</b></span>` : ''}${t.waits && t.col !== 'done' && !/^nothing$/i.test(t.waits) ? `<span class="note">Waits on: ${esc(t.waits)}</span>` : ''}${t.done ? `<span class="note">${esc(t.done)}</span>` : ''}${t.note ? `<span class="note">Your line: ${esc(t.note)}</span>` : ''}
-${t.chip === 'tier 3' ? '<span class="note">A tier-3 go is your own words in a session; this card only opens the question.</span>' : ''}
 ${t.text && t.text !== t.title ? `<details class="ak-more"><summary>More</summary><p>${esc(t.text)}</p></details>` : ''}
-<span class="ak-acts">${t.col === 'need' ? `${t.link ? `<a class="cc-btn ak-primary" href="${esc(t.src === 'issue' ? '#kanban?f=0&m=0&t=open,picked,in%20progress,done&o=' + t.id : t.link)}"${t.src === 'issue' ? '' : ' target="_blank" rel="noopener"'}>Open</a>` : ''}<button type="button" class="cc-btn" data-later="${esc(t.id)}">Later</button>`
-                : t.col === 'delivered' ? (marked[t.id] ? `<span class="note">${marked[t.id] === 'seen' ? 'Seen' : 'Needs changes'}: line copied, waiting for the desk</span>` : `<button type="button" class="cc-btn ak-primary" data-mark="seen" data-id="${esc(t.id)}">Seen ✓</button><button type="button" class="cc-btn" data-mark="changes" data-id="${esc(t.id)}">Needs changes…</button>`) + (t.link ? link(t.link, 'Open the delivery ↗') : '')
+<span class="ak-acts">${t.col === 'need' ? `${t.link ? `<a class="cc-btn ak-primary" href="${esc(t.src === 'issue' ? '#kanban?f=0&m=0&t=open,picked,in%20progress,done&o=' + t.id : t.link)}"${t.src === 'issue' ? '' : ' target="_blank" rel="noopener"'}>Open</a>` : ''}${t.chip === 'click' ? `<button type="button" class="cc-btn" data-mark="done" data-id="${esc(t.id)}">I have done it</button>` : ''}<button type="button" class="cc-btn" data-later="${esc(t.id)}">Later</button>`
+                : t.col === 'delivered' ? (marked[t.id] ? `<span class="chip t-blue">sent</span><span class="note">${marked[t.id] === 'seen' ? 'Seen' : 'Needs changes'}: line copied for the desk</span>` : `<button type="button" class="cc-btn ak-primary" data-mark="seen" data-id="${esc(t.id)}">Seen ✓</button><button type="button" class="cc-btn" data-mark="changes" data-id="${esc(t.id)}">Needs changes…</button>`) + (t.link ? link(t.link, 'Open the delivery ↗') : '')
                 : t.link ? link(t.link, t.src === 'delivery' ? 'The delivery ↗' : 'The brief ↗') : ''}</span>
+${t.chip === 'tier 3' ? '<span class="ak-hint">Opens the question; your go is given in a session, not here.</span>' : t.col === 'delivered' && !marked[t.id] ? '<span class="ak-hint">Your key is not used here yet: this copies one line for the desk (signed sending comes with the desk\'s token).</span>' : ''}
 ${copied && copied.id === t.id ? `<div class="ak-copy" role="status"><code>${esc(copied.line)}</code><span class="note">${copied.ok ? 'Copied.' : 'Select and copy it.'} Paste it in the desk session; the desk records it and the card moves on the next release.</span></div>` : ''}
 </article>`
             const colHtml = c => {
-                if (c.key !== 'need') return c.items.map(card).join('') || '<p class="note">Nothing here.</p>'
+                if (c.key !== 'need') return c.items.map(card).join('') || `<p class="note">${c.key === 'delivered' ? 'Nothing waiting for you to check.' : c.key === 'done' ? 'Nothing done in the last 7 days.' : 'Nothing in progress.'}</p>`
                 const top = c.items.filter(t => t.src !== 'issue'), board = c.items.filter(t => t.src === 'issue')
-                return (top.map(card).join('') || '<p class="note">Nothing waits on you.</p>') + (board.length ? `<details class="ak-fromboard"><summary>From the board: ${board.length} of your issues overdue, due today or at a stand-up</summary>${board.map(card).join('')}</details>` : '')
+                return (top.map(card).join('') || '<p class="note">Nothing needs you right now.</p>') + (board.length ? `<details class="ak-fromboard"><summary>From the board: ${board.length} of your issues overdue, due today or at a stand-up</summary>${board.map(card).join('')}</details>` : '')
             }
             const tab = cols.find(c => c.key === s.tab) || cols[0]
             const cnt = c => c.key === 'need' ? c.items.filter(t => t.src !== 'issue').length : c.items.length
             view.innerHTML = `<div class="ak">${ownNote()}
 <nav class="ak-switch" aria-label="More views"><a href="#collab">Team and the machine → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#where">Where → <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
-<div class="ak-since" role="status">${chg.length ? `Since you last looked (${esc(ago(last))}): ${chg.map(([l, n]) => `${n} in ${esc(l)}`).join(', ')}.` : `Nothing new since you last looked (${esc(ago(last))}).`} <button type="button" class="ak-linkbtn" data-looked>Mark all as looked at</button></div>
+<div class="ak-since" role="status">${chg.length ? `Since you last looked (${esc(ago(last))}): ${chg.map(([l, n]) => `${n} in ${esc(l)}`).join(', ')}.` : `Nothing new since you last looked (${esc(ago(last))}).`} <button type="button" class="cc-btn" data-looked>Mark all as looked at</button></div>
 <p class="ak-views">Other views: <a href="#kanban?f=0">Status</a> · <a href="#kanban?f=0&c=due">Due</a> · <a href="#kanban?f=0&c=picked">Picked by</a> · <a href="#kanban?f=0&c=stream">Workstream</a> · <a href="#kanban?f=0&n=1">Needs me now</a></p>
-${PHONE.matches ? `<div class="ak-tabs" role="tablist" aria-label="Your tasks">${cols.map(c => `<button type="button" role="tab" data-ak-tab="${c.key}" aria-selected="${c.key === tab.key}">${esc(c.key === 'delivered' ? 'Delivered' : c.label)} <b>${cnt(c)}</b></button>`).join('')}</div><div class="ak-list ak-tasks" role="tabpanel">${colHtml(tab)}</div>`
+${PHONE.matches ? `<div class="ak-tabs" role="tablist" aria-label="Your tasks">${cols.map(c => `<button type="button" role="tab" data-ak-tab="${c.key}" aria-selected="${c.key === tab.key}" aria-label="${esc(c.label)}, ${cnt(c)}">${esc(c.key === 'delivered' ? 'Delivered' : c.label)} <b>${cnt(c)}</b></button>`).join('')}</div><div class="ak-list ak-tasks" role="tabpanel">${colHtml(tab)}</div>`
                 : `<div class="ak-grid ak-tasks" style="--n:4">${cols.map(c => `<section class="ak-col" aria-label="${esc(c.label)}" data-col="${c.key}"><header>${esc(c.label)} <b>${cnt(c)}</b></header>${colHtml(c)}</section>`).join('')}</div>`}
 ${D.tasks.unplaced.length ? `<p class="note">Could not place: ${esc(D.tasks.unplaced.join('; '))}.</p>` : ''}
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}. From your backlog, the desk's "Open with Angelo", your board issues and deliveries reported to the desk (a "Delivered:" line). Cards move on the next release, usually within minutes.</p>
@@ -224,6 +225,7 @@ ${D.tasks.unplaced.length ? `<p class="note">Could not place: ${esc(D.tasks.unpl
             view.querySelectorAll('[data-mark]').forEach(b => b.onclick = () => {
                 const t = cards.find(x => x.id === b.dataset.id); if (!t) return
                 let text = ''
+                if (b.dataset.mark === 'done') { const line = `Done: ${t.id} (${String(t.title).slice(0, 80)})`; copied = { id: t.id, line, ok: false }; try { navigator.clipboard.writeText(line).then(() => { copied.ok = true; draw() }, () => draw()) } catch { draw() } return }
                 if (b.dataset.mark === 'changes') { text = prompt('What needs changing? (one line, for the desk)') || ''; if (!text.trim()) return }
                 const line = K.copyLine(t, b.dataset.mark, text), done = ok => { copied = { id: t.id, line, ok }; const m = LSK.get('marked', {}); m[t.id] = b.dataset.mark; LSK.set('marked', m); draw() }
                 try { navigator.clipboard.writeText(line).then(() => done(true), () => done(false)) } catch { done(false) }

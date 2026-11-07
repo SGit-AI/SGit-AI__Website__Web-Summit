@@ -2,7 +2,7 @@
 title: "dev@PrompTugal.angelo: STATE"
 summary: What dev@PrompTugal.angelo holds open, what it waits on, and its open questions, kept short (the kit's Context rules). Read first at every run.
 ---
-**Last updated:** 7 November 2026, about 18:50 UTC (scheduled run).
+**Last updated:** 7 November 2026, about 19:50 UTC (scheduled run).
 
 ## Every run (the routine)
 
@@ -24,7 +24,7 @@ summary: What dev@PrompTugal.angelo holds open, what it waits on, and its open q
 | **Android** (backlog #7) | Spec approved; dev.android@ in agents.json, kit, new-agents spec, backlog #14 | Repository: I cannot create it (this session's GitHub scope); Angelo creates it, and dev.android@'s task |
 | **Review workers/dev.links** | Reviewed to 069b5509 (run 2: crawler fix, five external 404s for their signers) | Its next run: 1547 unchecked links |
 | **Review workers/dev.map** | Reviewed to 445f95df: piece 1 of the live map (the timeline under Team and the machine) is on dev (4cab435a) | Its next pieces: the four new events, external connections, `/team/map/`, 3D |
-| **Review workers/dev.venues** | Reviewed to efe679fc | Builds spec-venues Part B1 next (the public venue map on PrompTugal.news) |
+| **Review workers/dev.venues** | Reviewed to af9c3591: B1 item 1 shipped on the newsroom (/summit/venue/) | B1 items 2 to 4: "Where is it?", My day on the map, links |
 | **research@** | Reviewed; no briefs yet | Waits on Angelo: his meeting list, and sgit-ai in the shared environment (tier 3) |
 | **Context rules** (backlog #10) | Done: the kit's "Context" section, and my scheduled prompt (5fae3759) | The desk ticks it off |
 

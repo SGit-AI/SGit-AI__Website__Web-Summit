@@ -1,8 +1,8 @@
 {
  "about": "The PrompTugal newsroom's agents, from the git log of PrompTugal/PrompTugal__News__Website (its dev branch), for Angelo's command centre; refreshed by dev@web-summit.angelo at its wakes. Names, counts and times only. pt:<person>:<agent> is a PrompTugal agent of that person.",
  "source": "https://github.com/PrompTugal/PrompTugal__News__Website",
- "commit": "133b43be8",
- "read_at": "2026-11-07T18:44:11.783Z",
+ "commit": "910ee4b0f",
+ "read_at": "2026-11-07T19:37:45.795Z",
  "days": 7,
  "agents": [
   {
@@ -11,9 +11,9 @@
    "short": "dev",
    "family": "PrompTugal",
    "label": "PrompTugal's dev",
-   "commits": 251,
+   "commits": 259,
    "first": "2026-11-06T00:05:30+00:00",
-   "last": "2026-11-07T18:13:17+00:00",
+   "last": "2026-11-07T19:14:07+00:00",
    "key": true
   },
   {
@@ -44,9 +44,9 @@
    "short": "synthetic",
    "family": "PrompTugal",
    "label": "PrompTugal's synthetic",
-   "commits": 78,
+   "commits": 79,
    "first": "2026-11-06T00:28:34+00:00",
-   "last": "2026-11-07T16:46:20+00:00",
+   "last": "2026-11-07T18:46:41+00:00",
    "key": true
   },
   {
@@ -61,25 +61,14 @@
    "key": true
   },
   {
-   "id": "pt:dinis:outreach",
-   "person": "dinis",
-   "short": "outreach",
-   "family": "PrompTugal",
-   "label": "PrompTugal's outreach",
-   "commits": 65,
-   "first": "2026-11-06T00:05:47+00:00",
-   "last": "2026-11-07T18:39:07+00:00",
-   "key": true
-  },
-  {
    "id": "pt:dinis:designer",
    "person": "dinis",
    "short": "designer",
    "family": "PrompTugal",
    "label": "PrompTugal's designer",
-   "commits": 65,
+   "commits": 67,
    "first": "2026-11-06T00:08:58+00:00",
-   "last": "2026-11-07T18:35:35+00:00",
+   "last": "2026-11-07T19:36:35+00:00",
    "key": true
   },
   {
@@ -88,9 +77,20 @@
    "short": "researcher",
    "family": "PrompTugal",
    "label": "",
-   "commits": 64,
+   "commits": 65,
    "first": "2026-11-06T05:37:48+00:00",
-   "last": "2026-11-07T18:16:28+00:00",
+   "last": "2026-11-07T19:14:30+00:00",
+   "key": true
+  },
+  {
+   "id": "pt:dinis:outreach",
+   "person": "dinis",
+   "short": "outreach",
+   "family": "PrompTugal",
+   "label": "PrompTugal's outreach",
+   "commits": 65,
+   "first": "2026-11-06T00:05:47+00:00",
+   "last": "2026-11-07T18:39:07+00:00",
    "key": true
   },
   {
@@ -110,9 +110,9 @@
    "short": "ontologist",
    "family": "PrompTugal",
    "label": "PrompTugal's ontologist",
-   "commits": 54,
+   "commits": 55,
    "first": "2026-11-06T00:07:41+00:00",
-   "last": "2026-11-07T18:23:42+00:00",
+   "last": "2026-11-07T19:22:50+00:00",
    "key": true
   },
   {
@@ -154,9 +154,9 @@
    "short": "conductor.b",
    "family": "PrompTugal",
    "label": "",
-   "commits": 29,
+   "commits": 30,
    "first": "2026-11-06T21:38:06+00:00",
-   "last": "2026-11-07T18:09:04+00:00",
+   "last": "2026-11-07T19:09:12+00:00",
    "key": true
   },
   {
@@ -165,9 +165,9 @@
    "short": "librarian",
    "family": "PrompTugal",
    "label": "PrompTugal's librarian",
-   "commits": 28,
+   "commits": 29,
    "first": "2026-11-06T03:52:31+00:00",
-   "last": "2026-11-07T16:00:39+00:00",
+   "last": "2026-11-07T18:59:26+00:00",
    "key": true
   },
   {
@@ -490,6 +490,17 @@
    "key": false
   },
   {
+   "id": "pt:angelo:dev.venues",
+   "person": "angelo",
+   "short": "dev.venues",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 1,
+   "first": "2026-11-07T18:50:46+00:00",
+   "last": "2026-11-07T18:50:46+00:00",
+   "key": false
+  },
+  {
    "id": "pt:dinis:designer.experiments",
    "person": "dinis",
    "short": "designer.experiments",
@@ -582,7 +593,7 @@
   {
    "from": "pt:dinis:dev",
    "to": "pt:dinis:conductor",
-   "n": 186
+   "n": 191
   },
   {
    "from": "pt:dinis:journalist",
@@ -632,7 +643,7 @@
   {
    "from": "pt:dinis:conductor.b",
    "to": "pt:dinis:conductor",
-   "n": 14
+   "n": 15
   },
   {
    "from": "pt:vicky:journalist-ai",
@@ -948,6 +959,11 @@
    "from": "newsroom-designer@web-summit.dinis",
    "to": "newsroom@web-summit.dinis",
    "n": 2
+  },
+  {
+   "from": "pt:angelo:dev.venues",
+   "to": "pt:dinis:dev",
+   "n": 1
   },
   {
    "from": "pt:angelo:writer",
