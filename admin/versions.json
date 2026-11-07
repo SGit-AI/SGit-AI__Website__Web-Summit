@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1032",
+    "date": "2026-11-07",
+    "what": "12:27 wake: brief 34 (the 12:00 did not happen; its agenda carries to the 18:00)",
+    "by": "conductor@web-summit.dinis",
+    "from": "7aca7dd03"
+  },
+  {
     "version": "v0.2.1031",
     "date": "2026-11-07",
     "what": "writer@PrompTugal.angelo: LinkedIn Project: a title and description for each Media link (WS-126)",
