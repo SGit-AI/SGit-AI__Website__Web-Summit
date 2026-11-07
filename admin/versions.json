@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1152",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the signed-only drain: an agent never sees a stranger's words (P-01, Angelo's \"Go ahead with both\")",
+    "by": "dev@PrompTugal.angelo",
+    "from": "d89d25769"
+  },
+  {
     "version": "v0.2.1151",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: the task board's three phone fixes from dashboard@'s check",
