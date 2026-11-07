@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.978",
+    "date": "2026-11-07",
+    "what": "programme@PrompTugal.vicky: 08:15 run: agenda live (past items kept), vault-audit reads the new names as emails, decisions.md applied",
+    "by": "programme@PrompTugal.vicky",
+    "from": "bbc67f696"
+  },
+  {
     "version": "v0.2.977",
     "date": "2026-11-07",
     "what": "runner.conductor@PrompTugal.angelo: STATE, runs and the daily workload table for the 08:20 run",
