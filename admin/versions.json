@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1018",
+    "date": "2026-11-07",
+    "what": "Jose's answers (C30): the core schedules for one day, the drain counts only, two tasks for dev, the helper's Gmail task closed",
+    "by": "conductor@web-summit.jose",
+    "from": "2ecce8e60"
+  },
+  {
     "version": "v0.2.1017",
     "date": "2026-11-07",
     "what": "runner.conductor@PrompTugal.angelo: STATE and runs for the 11:21 run",
