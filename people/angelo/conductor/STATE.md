@@ -29,7 +29,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 | Brief | To | Since | Due | Back when |
 |---|---|---|---|---|
 | sharness.kms: what building it would take: BACK (6d3ccd6, 7 Nov 09:56: after the summit, four small steps now) | vault@ | 6 Nov 20:15 | done | for the desk to show Angelo |
-| WS-180 back office: proposal for Dinis (the outline is in the brief's commit) | writer@ | 6 Nov 23:30 | 7 Nov 12:00 stand-up | draft in people/angelo/proposals/WS-180/, sent to conductor@web-summit.dinis |
+| WS-180 back office: proposal for Dinis (the outline is in the brief's commit) | team-collaboration@ (moved from writer@, 7 Nov 15:55) | 6 Nov 23:30 | 7 Nov 12:00 stand-up | draft in people/angelo/proposals/WS-180/, sent to conductor@web-summit.dinis |
 | Context rules into every agent's prompt and the kit | dev@ | 6 Nov 23:30 | 7 Nov 18:00 | kit section; each agent adopts at its next run |
 | Accenture into data/companies.json (owner angelo), as the new protocol allows | crm@ | 6 Nov 23:30 | 7 Nov 08:50 run | the entry live |
 | The agent setup guide (WS-125), reviewed: policy against the ABP model and the protocol, dev for accuracy and the interactive page | policy@, dev@ | 7 Nov 00:00 | 7 Nov 18:00 | findings For: desk.conductor@ (and PrompTugal's conductor, if changes are needed) |
