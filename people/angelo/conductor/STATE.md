@@ -96,6 +96,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 7 Nov 16:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session, which routed his 16:00 words: backlog style, people/angelo/backlog.md, no fixed times, dde62ce; the back-office proposal to team-collaboration@, 1ae6087). Back: dev@'s Android app spec (775f02b, for Angelo's review, due 20:00: native Kotlin and Compose, recommended); dev@ marked the live-map and venues specs approved (9765e7c) and reviewed dev.venues onto dev (71c5aeb); dashboard@'s two specs wait on Angelo's review (373b618); abp@dinis wrote ABPs for the six workers (3144482, For: angelo, policy@: gaps noted: private team locations, briefs on named people, LinkedIn drafts in his voice, the key-service changeset). Others' work, information only: Vicky's agents (SA16, SCHED-7NOV), Jose's dev@, mentor.
+
 - 7 Nov 15:22: the runner: nothing to route; nothing urgent (Angelo is in the desk session, which routed his words from about 15:00: the live-map spec approved with /team/map/ replaced (c6fc444), an Android app spec for dev@ due 20:00 (f4e401e), and WS-181 Part B: PrompTugal.news as the one guide, the team layer private, built after security's review and vault@'s token (2254b43)). No report back from the agents since 14:21; others' work (journalist, designer, mentor) information only.
 
 - 7 Nov 14:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session, which routed his "All as recommended" on WS-181). Back: dev@ (693e3d0) wrote spec-venues.md: Part A approved, Part B (a public venue map on PrompTugal.news, no person on it) waits for Angelo's review; dev@ brought dev.links's first crawl (700 of 1,217 pages, no broken links) and dev.venues's STATE onto dev (live-map spec still due 18:00). runner.writer@ (aed0ae7, For: desk): the WS-125 guide is published and corrected; Angelo's contributor ask is in Dinis's next brief (no answer); dev.verify flagged 9 of 12 claims in the guide, and asks whether the writer answers them (added to Open with Angelo). Others' work, information only: mentor@dinis quiet, reviewer@vicky's S25.
@@ -113,9 +115,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 7 Nov 08:20: the runner: nothing to route; nothing urgent. Since 07:20 only reports and others' work: team-collaboration's 07:40 daily note (9dd5c3e, For: desk: parking open, decisions wait on Dinis, no 18:00 records), dev's Replay map mode (1b8683d, For: Angelo, WS-97), Vicky's and Silvio's agents. No brief of Angelo's has come back. Workload table written (above).
 
-- 7 Nov 07:20: the runner: nothing to route; nothing urgent. policy@ run 2 (a071a51, `For: angelo`): P-07 for Angelo before inbox@ is built (a stranger's email is a visitor's note, R11; added to Open with Angelo), P-05 (team-collaboration still pushes its session branch, a policy matter), P-06 (low). Others' work, information only: dev@'s full-screen map fix under Silvio's calmer shell (7136d01), dashboard@silvio's two brains on the command centres of Silvio, Angelo and Jose (14f3f05, touches the shared engine, no change to Angelo's own apps), journalist@dinis's 06:57 report. No brief of Angelo's has come back.
-
-- 7 Nov 06:21: the runner: nothing to route. Since 05:21 only dashboard@silvio's WS-189 (`For: conductor@web-summit.dinis`, dinis, dev@silvio: how the Summit desk writes to the private CRM, four questions, and six for the demo; nothing built): others' work, information only. No brief of Angelo's has come back.
-
-last_run: 2026-11-07T15:22:00Z (the runner)
-
+last_run: 2026-11-07T16:21:16Z (the runner)
