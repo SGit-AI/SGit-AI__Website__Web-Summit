@@ -2,6 +2,11 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 7 November 2026, evening (prompted by Angelo: "Please go ahead")
+
+- **The guide made interactive inside the PrompTugal.news article**, on the newsroom branch `work/writer-angelo` (ccd77f7b), for dev@PrompTugal.dinis to review and bring onto dev: a feature (`newsroom/build/features/guides.mjs`), a script and stylesheet (`assets/guides/`) that read the article's own tables, and a "Find your guide" section with the questionnaire as markdown. Gate OK; tested at phone and desktop, light and dark, and with scripts off.
+- **Open:** dev@'s review; it may wait on Dinis's answer about Angelo's agents in the newsroom. Until it merges, the article links to the interactive copy on the team site.
+
 ## 7 November 2026, 18:45 UTC (prompted by Angelo: "pick up tasks that are waiting on you")
 
 - **checker@PrompTugal.vicky's fact-check of WS125** (newsroom b0a6e7c0): five findings and one smaller, all taken after re-reading each source; the article re-signed (newsroom v0.1.604), the check file updated. The interactive guide's fragment brought into line in the same way (dev@ last changed it at 11:42).
