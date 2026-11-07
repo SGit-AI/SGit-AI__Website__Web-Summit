@@ -18,7 +18,7 @@ import { expandSignoff } from './signoff-ui.mjs'
 import { keysPage as pkiKeysPage } from './pki.mjs'
 import * as GIT from './gitlog.mjs'
 import { highlights, highlightsHtml, highlightsMd, withHighlights } from './highlights.mjs'
-import { loadXray, xrayIndexHtml, xrayIndexMd, buildXray } from './xray.mjs'
+import { loadXray, xrayIndexHtml, xrayIndexMd, buildXray, buildXrayRuns } from './xray.mjs'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
@@ -33,7 +33,7 @@ const SECTIONS = [
     { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|cards|log|print|print-order|procurement|videos|research|reports|board-health|site-review|updates|meetings)\b/, sub: [['Stand-ups', 'meetings/index.html'], ['Updates', 'updates/index.html'], ['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Cards', 'cards/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Print files', 'print/index.html'], ['Procurement', 'procurement/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
     // the RiskMandate X-ray for the booth (xray@web-summit.dinis, 7 November 2026, at Dinis's word): type a name, watch the agents X-ray it
-    { t: 'X-ray', h: 'xray/index.html', re: /^xray\b/, sub: [['X-ray a name', 'xray/index.html'], ...(fs.existsSync(path.join(ROOT, 'content/xray-decide.md')) ? [['Decide', 'xray/decide/index.html']] : []), ...XRAY.map(s => [s.subject.replace(/[&<>"]/g, ''), `xray/${s.slug}/index.html`])] },
+    { t: 'X-ray', h: 'xray/index.html', re: /^xray\b/, sub: [['X-ray a name', 'xray/index.html'], ['How it works', 'xray/how/index.html'], ...(fs.existsSync(path.join(ROOT, 'content/xray-decide.md')) ? [['Decide', 'xray/decide/index.html']] : []), ...XRAY.map(s => [s.subject.replace(/[&<>"]/g, ''), `xray/${s.slug}/index.html`])] },
     // the investors' section (WS-185, investors@web-summit.dinis, at Dinis's word of 6 November: "a very focused section just for investors")
     { t: 'Investors', h: 'investors/index.html', re: /^investors\b/, sub: [['For investors', 'investors/index.html'], ['Pitch deck', 'investors/pitch-deck/index.html'], ['Technology deck', 'investors/technology-deck/index.html'], ['The story', 'investors/story/index.html'], ['How we make money', 'investors/business-model/index.html'], ['The company', 'investors/company/index.html'], ['The investment', 'investors/investment/index.html'], ['Feedback', 'investors/feedback/index.html']] },
     { t: 'Observability', h: 'observability/index.html', re: /^observability\b/, sub: [['Explore', 'observability/index.html'], ['Dashboard', 'observability/dashboard/index.html'], ['Graph', 'observability/graph/index.html'], ['Agents', 'observability/agents/index.html'], ['Pages', 'observability/pages/index.html'], ['People', 'observability/team/index.html'], ['The vault', 'observability/vault/index.html'], ['How it works', 'observability/how-it-works/index.html'], ['The brief', 'brief-observability/index.html'], ['The pack', 'observability-pack/index.html']] },
@@ -957,6 +957,8 @@ ${sections.join('\n')}`
 
 // the RiskMandate X-ray: a page and a deck per subject (admin/build/xray.mjs)
 buildXray({ list: XRAY, write, page, twin, pages, VERSION })
+// what happened: a run page per subject (/xray/<slug>/run/) and how every X-ray is made (/xray/how/)
+buildXrayRuns({ list: XRAY, write, page, twin, pages, VERSION })
 
 // machine surfaces
 pages.sort((a, b) => a.rel.localeCompare(b.rel))
