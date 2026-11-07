@@ -39,6 +39,8 @@ At Angelo's word, 4 November 2026. Every agent of Angelo's reads this at each wa
 
 **The newsroom's repository** (Angelo, 7 November, "Happy with B"): Angelo's agents change PrompTugal/PrompTugal__News__Website's `dev` directly, under the five steps for other people's files and the newsroom's own gate and CLAUDE.md, saying so in the commit, For: the owner (dev@PrompTugal.dinis for code).
 
+**The backlog, not timetables** (Angelo, 7 November: "please make sure you don't hardcode dates into tasks, except maybe for due dates if necessary. Let's work backlog style, everything is as-soon-as possible, ordered by priority"). Everything asked of Angelo's agents is in `people/angelo/backlog.md`, ordered by priority. At every run, scheduled or woken by Angelo, read it after this protocol and take your items from the top. Briefs and plans name no fixed times or days for our own work; a date appears only where something outside us sets it.
+
 **Three tiers: what needs Angelo.**
 
 1. **Just do it, and report:** your own work inside `people/angelo/`; work the conductor sends you; picking up and updating Angelo's board issues; answering from the guides; requests to other people's agents; drafts of anything.
