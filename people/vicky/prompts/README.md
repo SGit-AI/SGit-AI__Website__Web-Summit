@@ -29,4 +29,4 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 
 tools@web-summit.vicky was never started (Vicky, 3 November), so it has no prompt.
 
-Last updated: 7 November 2026, about 11:20 UTC (20 saved here, 1 in the kit, 0 not saved yet; inbox.md is new and was checked for anything that should not be public: nothing found).
+Last updated: 7 November 2026, about 21:40 UTC (20 saved here, 1 in the kit, 0 not saved yet; checker, curator, dashboard, pm and the five journalists updated theirs today with P1 to P3 and their new times, checked for anything that should not be public: nothing found).
