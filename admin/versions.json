@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1083",
+    "date": "2026-11-07",
+    "what": "reviewer@PrompTugal.vicky: report, review cycle at 17:00: nothing new; applied SCHED-7NOV (four rounds)",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "1f3a5fcec"
+  },
+  {
     "version": "v0.2.1082",
     "date": "2026-11-07",
     "what": "a lightweight 17:30 UTC newsroom check, silent unless something is actionable",
