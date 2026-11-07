@@ -8,6 +8,7 @@ summary: Everything Angelo's agents are asked to do, in one list, ordered by pri
 |---|---|---|---|---|
 | 0 | ~~Build Angelo's kanban as his task board~~ built (4c719b8f), for Angelo to check; dashboard@ checks it against its look (8d8c312f) | dev@ | cb97bf39 | Angelo's check |
 | 1 | ~~The back-office proposal for Dinis (WS-180)~~ done: proposals/WS-180/README.md, sent to Dinis's conductor (1eb4b337) | team-collaboration@ | | Dinis's four decisions |
+| 1b | policy@'s two barriers, approved by Angelo ("Go ahead with both", 80d54893): first the signed-only drain (people/angelo/policy/proposals/drain-signed-only.md), then the lane check in release.sh and CI (gate-lane-check.md); files are Dinis's team's, so the five steps and For: their owners; policy@ checks both once built | dev@ | this commit | nothing |
 | 2 | Team and the machine, the live map: its pieces in the spec's order | dev.map@ (dev@ reviews) | spec-live-map.md, approved | nothing |
 | 2b | The live map's real-time mode for a monitor at the stand, and as an animated desktop background (Windows, Mac, iPad); a few minutes late is fine, always on and accurate: a spec addendum with a mock-up first, for Angelo's review (nothing built before his go) | dev.map@ (dev@ reviews) | this commit: "the live map's real-time mode, for a monitor at the stand" | nothing |
 | 3 | The venue map on PrompTugal.news, public parts first (Part B 1) | dev.venues@ (dev@ reviews) | spec-venues.md, approved | nothing |
