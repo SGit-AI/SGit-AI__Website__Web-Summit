@@ -16,7 +16,7 @@ export const AGENTS = {
   perplexity: { label: 'Perplexity search', model: 'perplexity/sonar' },
   openai: { label: 'OpenAI search', model: 'openai/gpt-5.4-nano:online' },
   gemini: { label: 'Gemini search', model: 'google/gemini-3.1-flash-lite:online' },
-  openrouter: { label: 'OpenRouter web search', model: 'anthropic/claude-haiku-5.5', plugins: [{ id: 'web', max_results: 6 }], max_tokens: 4000 },
+  openrouter: { label: 'OpenRouter web search', model: 'anthropic/claude-haiku-5.5', plugins: [{ id: 'web', max_results: 6 }], max_tokens: 7000 },
 }
 const ask = s => `You are a research agent for RiskMandate X-ray. Subject (a ${kind}): "${s}".
 Search the public web and answer ONLY with JSON, no prose around it and no code fences:
