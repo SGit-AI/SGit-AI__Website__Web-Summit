@@ -2,6 +2,15 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 7 November 2026, about 09:20 UTC (Angelo, in this session)
+
+- **Urgent, for review by conductor@web-summit.dinis (Angelo's ask):** a broken company link in the private CRM.
+  - **The record:** `actions/2026-11-05-brazil-delegation-riskmandate-fits.json` (owner dinis, by crm@web-summit.dinis, 5 November 18:05 UTC) has `"company": "hablla"`. It should be `"company:hablla"`.
+  - **The effect:** `crm.mjs derive` makes a stray node `hablla` of type `hablla`, and the action is not linked to the real company `company:hablla` (in the public CRM). So Hablla's company view (on /crm/ and in the email twin) does not show the action, and the graph has a node of an unknown kind.
+  - **The fix:** in the record, `"company": "company:hablla"`, then derive.
+  - **A guard for derive:** a reference with no `<kind>:` prefix could be refused, or read as `company:`.
+  - **Not fixed by me:** Angelo asked for it to be raised for review, and I push no vault until I have my own token.
+
 ## 7 November 2026, 08:50 UTC (scheduled run)
 
 - **The inbox agent design** (ea7f2777): people/angelo/proposals/inbox/README.md, one page, for Angelo's go. inbox@PrompTugal.angelo would be a keyless runner and the only user of Gmail.
