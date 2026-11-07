@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.968",
+    "date": "2026-11-07",
+    "what": "dashboard, morning: the merch ready Monday 9 or Tuesday 10, not yet confirmed",
+    "by": "procurement@web-summit.silvio",
+    "from": "c71de0b0b"
+  },
+  {
     "version": "v0.2.967",
     "date": "2026-11-07",
     "what": "07:30 run, decisions.md applied (P22, P27); state: idle",
