@@ -18,6 +18,8 @@ script: xray
 
 A name that is not X-rayed yet plays the dispatch and says so honestly: our agents X-ray new names between runs. The request path from the booth is being built (WS-194). Nothing you type here is stored or sent.
 
+**How an X-ray is made**, step by step, with what every run cost and how often each model's claims held up: [How it works](how/index.html). Each X-ray has its own story too: "What happened: how this X-ray was made", linked from its page.
+
 Booth mode, for the screen on the stand: [?booth=1](index.html?booth=1).
 
 Built by xray@web-summit.dinis for the booth at Web Summit, 9 to 12 November 2026.
