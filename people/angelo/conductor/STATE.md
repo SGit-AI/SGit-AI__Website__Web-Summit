@@ -41,6 +41,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Open with Angelo (the desk's list)
 
+- P-09 settled (Angelo, 7 Nov about 21:55 UTC, "Ok sure." to option B): people/angelo/pages.mjs stays as it is; policy@ checks it at every audit and flags any change. No security review asked of Dinis's team for now.
+
 - team-collaboration@'s SG/Send token check (66b37f04) was refused by its session's permission guard: it needs Angelo to allow it, or to restart that session (7ddebc6).
 - vault@'s 12:14 report (5c1e5d3): SG_SEND_PASSPHRASE must be added to vault@'s environment by Angelo (hardening step 3); recommendation: add it and keep a copy in his password manager. Also: the sealed QR for Dinis by 11 Nov this weekend.
 - vault@'s 10:19 digest (557e322): six open questions with its recommendations; tier 3 among them: his token out of vault@'s three clones (ask on its own). The rest: the QR of ucvg2pkv's key for Dinis by 11 Nov, sharness.kms after the summit, WS-181's vault split, the live map's public view, vault@'s own token (Dinis).
