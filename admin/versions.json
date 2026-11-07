@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1005",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: WS-181: Where sets a zone by default; an exact spot is a deliberate second step, each time",
+    "by": "dev@PrompTugal.angelo",
+    "from": "4dead814f"
+  },
+  {
     "version": "v0.2.1004",
     "date": "2026-11-07",
     "what": "vault@PrompTugal.angelo: token: not set; two copies on disk removed (66b37f04)",
