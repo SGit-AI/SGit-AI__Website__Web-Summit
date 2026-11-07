@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1111",
+    "date": "2026-11-07",
+    "what": "dashboard@PrompTugal.angelo: the task board's look, for dev@ to build to",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "8d8c312fc"
+  },
+  {
     "version": "v0.2.1110",
     "date": "2026-11-07",
     "what": "writer@PrompTugal.angelo: report: the interactive article on the newsroom's work/writer-angelo, for dev@PrompTugal.dinis's review",
