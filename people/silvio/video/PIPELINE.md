@@ -6,11 +6,12 @@ Sources, read 5 November 2026: `content/videos.md` (the pipeline table), `data/v
 
 ## The videos so far
 
-| Video | Length | Made | On this site since | Master in Drive |
-|---|---|---|---|---|
-| Reach, Mandate, Gap | 53 s, no narration | November 2026 | 5 Nov (web copy in `assets/video/`) | `2026-11-02_reach-mandate-gap_v1.mp4` |
-| RiskMandate Stories: fifty new agents | 2 min 44 s, narrated, captioned | November 2026 | 5 Nov | `2026-11-02_stories-fifty-new-agents_v1.mp4` |
-| Your AI has access. Does it have permission? | 30 s, subtitled | 5 Nov 2026 | 5 Nov | not listed in `data/videos.json` yet |
+| Video | Length | State (7 November 2026) | Where |
+|---|---|---|---|
+| The stand loop, six languages | 67 s each | checked, final | vault `ws-team-videos` (h9in5em4), `stand-loop/` |
+| Your AI has access. Does it have permission? | 30 s, subtitled | checked, final | the vault, `access-permission-30s/`; Silvio's Drive original to upload |
+| Reach, Mandate, Gap | 53 s | **on hold: errors in frames** | not in the vault (PUBLISH.md says which) |
+| RiskMandate Stories: fifty new agents | 2 min 44 s | **on hold: a label over its title** | not in the vault |
 
 ## The pipeline, step by step
 
@@ -27,20 +28,16 @@ Sources, read 5 November 2026: `content/videos.md` (the pipeline table), `data/v
 | 9 | **YouTube, Instagram, LinkedIn** | To **RiskMandate's accounts** (Silvio, 5 Nov). Titles, descriptions and hashtags in English and Portuguese, each linking to the video's page here: [PUBLISH.md](PUBLISH.md). **Silvio uploads and posts; no agent logs in.** Each post's URL then comes back here. | Silvio | drafted (WS-71) |
 | 10 | **Learn** | Views, comments and conversations back into the next storyboard. | Vicky, the journalist agent | not started |
 
-## Where the videos live (WS-40)
+## Where the videos live (WS-40, WS-174)
 
-What exists today, not a decision:
-
-- **The masters:** Google Drive, the private working folder above. Silvio's.
-- **The web copies:** committed to this repository in `assets/video/` (6 to 8 MB each) and served by GitHub Pages with the site. Each page plays them directly; no outside player, no tracking.
-- **Drive's player:** under each video, for the published file; it works only while the file stays shared as "anyone with the link".
-- **YouTube, Instagram, LinkedIn:** not yet (WS-71). Each is uploaded there from the Drive master, by Silvio.
-
-**Open for WS-40** (Angelo, Jose, Silvio): is committing a web copy per video enough until Lisbon? Every new mp4 adds 6 to 8 MB to the repository forever. Once a video is on RiskMandate's YouTube, its page here could also embed it; the build has no `!youtube` line yet, and adding one is a change for the build's owner, not for this agent.
+- **The vault `ws-team-videos`** (vault id h9in5em4, read key in `people/silvio/vaults.json`): every checked video, a `video.json` each (title, length, size, sha256, language, where it is used, state). From 6 November no video or image goes into this git repository (Dinis's rule); pages refer to a file by the vault id and its path.
+- **Writing to it:** video@web-summit.silvio pushes files under 30 MB; Silvio pushes larger ones with sgit from his computer, guided by conductor@web-summit.silvio, who holds the vault key (sealed to it at Silvio's word). Whoever pushes runs the audit first (the vault's PUBLIC.md).
+- **The masters:** Silvio's Google Drive working folder.
+- **YouTube, Instagram, LinkedIn:** RiskMandate's accounts; Silvio posts.
 
 ## For the stand (Thursday 12 November)
 
-The loop on the stand's screen plays from a laptop, from the masters, not from the web (the operator's note: keep the originals on a laptop for longer conversations). The plan for the 2-minute loop is WS-72: [LOOP.md](LOOP.md) when it is drafted.
+The loop on the stand's screen plays from a laptop, from the masters, not from the web (the operator's note: keep the originals on a laptop for longer conversations). What was made for the stand is in [LOOP.md](LOOP.md).
 
 ## To ask Silvio
 
