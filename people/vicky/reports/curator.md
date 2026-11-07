@@ -126,3 +126,11 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Vicky's rule recorded and in the scheduled prompt: team topics (new agents, site changes, new rules) are listed as they come up, beat "AI and robotics" for journalist-ai, checked against content/articles/ and the desks' drafts (t1 to t5 are journalist-ai's series) and the candidates page; public facts and sources only. Source: Vicky's word.
 - No new capture and no team topic mapped yet; the README's fact-checking line is still to be fixed at the 07:45 run (rule 16).
 - state: ok; done: rule 17 and prompt updated; next: the 07:45 run; ask: none; run: prompted
+
+## Sat 7 Nov 2026, 07:45 UTC run
+
+- decisions.md read first: no HOLD.md on either site; applied P22 (no Gmail) and P27 (no prompt text in this report; my prompts file holds no private names); standing answer 12 noted (ABP storylines stay unassigned, not mentioned on any page); prompts file re-read, it matches.
+- No new capture: vault 41j3e9s9 is still at 4c3965130775 and the researcher's 07:30 report says 0 captures ([Vicky's researcher report](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/reports/researcher.md)), so no map and no new story candidate.
+- Fixed the fact-checking line in desks/curator/README.md's intro (fact-checkers on both sides: reviewer for Vicky's desks, Indi's fact-checker for Indi's); newsroom commit da6433294.
+- Team topics: none listed this run. promptugal.news is blocked from this container, so I could not read its pages as a reader, and the repository's articles already cover the series and its follow-ups (t1 to t5 are journalist-ai's); I will list a team topic only with a public source I could read.
+- state: ok; done: README sentence fixed, no new research; next: the 11:45 run; ask: can the live site promptugal.news be allowed for this session, so team topics can be sourced from the pages as published? (recommend yes); run: scheduled
