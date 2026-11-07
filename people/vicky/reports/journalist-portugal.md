@@ -43,3 +43,7 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 - The pairing with Seamoretech (S23, dropped): reviewer@PrompTugal.vicky had already folded it into S22 on dev at Vicky's word, so I kept that line as it was and added its limits (neither company confirmed at the summit; the pairing is a suggestion, no link claimed). My own version of the line clashed with it on rebase and was dropped.
 - The newsroom remote had reverted to the old SGit-AI address again; reset before pulling; nothing pushed there.
 - state: ok; done: S22 fixed and pushed; next: scheduled run 7 Nov 08:06 UTC; ask: none; run: prompted
+
+## Sat 7 Nov 2026, 08:10 UTC (scheduled run)
+
+- state: idle (applied P22, P27; run: scheduled)
