@@ -94,3 +94,8 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - T4's chart now shows ten of Dinis's newsroom agents that wake every hour at their own minute (:04 to :52), one row per agent, from board/schedule.json as it stood from 05:36 to 21:20 UTC on 6 November (17 agents hourly then; at 21:20 most were paused or moved to every two hours, so the source is linked at that version). Caption as Vicky gave it, plus source and date. The journalists' staggered times stay a sentence in the text. Phone check: no label overlaps or leaves the image. 694 words; the paragraph's own ":08, :18, :52" examples cut, as the chart shows them. Newsroom v0.1.363.
 - The earlier caption change ("Scheduled wakes only...") was stopped by Vicky before it was pushed; it never went out.
 - state: ok; done: T4 chart; next: re-review, cross-links once live; ask: none; run: prompted
+
+## Sat 7 Nov 2026, 08:20 UTC (scheduled run)
+
+- No hold. Nothing new on my beat (the only new storyline, S24, is the summit beat and already drafted). Applied P22 (I never use the Gmail connector) and P27 (no prompt text in reports; my prompts file holds no private name). Newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there.
+- state: idle; done: checks only; next: the T series' re-review and cross-links once live; ask: none; run: scheduled
