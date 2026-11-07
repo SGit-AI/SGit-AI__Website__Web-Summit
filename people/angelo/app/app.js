@@ -20,7 +20,7 @@
             return orig.apply(this, arguments)
         }
     }
-    load('kanban-core.js').catch(() => null).then(() => load('replay.js').catch(() => null)).then(() => load('where.js').catch(() => null)).then(() => load('../../../assets/cc/app.js')).then(() => { if (root && window.AngeloKanban) start() })
+    load('kanban-core.js').catch(() => null).then(() => load('replay.js').catch(() => null)).then(() => load('live.js').catch(() => null)).then(() => load('where.js').catch(() => null)).then(() => load('../../../assets/cc/app.js')).then(() => { if (root && window.AngeloKanban) start() })
 
     // ---------- offline (WS-84 step 1, at Angelo's go): sw.js stores this page and what it loads ----------
     // ?offline=off unregisters the worker and deletes its store (remembered in this browser); ?offline=on turns it back on
@@ -62,7 +62,7 @@
     function start() {
         const K = window.AngeloKanban
         let D = null, failed = ''
-        const route = () => (location.hash.match(/^#(kanban|collab|where|summit|replay)(\?|$)/) || [])[1] || ''
+        const route = () => (location.hash.match(/^#(kanban|collab|where|summit|replay|live)(\?|$)/) || [])[1] || ''
         const mine = () => !!route()
         once.then(r => r.ok ? r.clone().json() : Promise.reject(new Error(r.status))).then(d => { D = d; nav(); loadCockpit(); if (mine()) draw() }).catch(e => { failed = e.message; if (mine()) draw() })
 
@@ -102,6 +102,7 @@
         // ---------- drawing ----------
         function draw() {
             if (route() === 'collab') return drawCollab()
+            if (route() === 'live') return drawLive()
             if (route() === 'where') return drawWhere()
             if (route() === 'summit') return drawSummit()
             if (route() === 'replay') {   // Replay's timeline lives under Team and the machine's map; old #replay addresses land there (the clip stays on its own)
@@ -365,6 +366,17 @@ ${D.tasks.unplaced.length ? `<p class="note">Could not place: ${esc(D.tasks.unpl
         const lastAgo = l => l ? ago(l.replace(' ', 'T') + ':00Z') : 'no commit yet'
         const kanbanLink = id => `#kanban?m=0&t=open,picked,in%20progress,done&o=${encodeURIComponent(id)}`
 
+        // the live graph (live.js): the map as an always-on view, in a hexagon, that can pop out into its own window
+        function drawLive() {
+            const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title'); if (!view) return
+            const first = D ? (D.person.name || D.person.id).split(' ')[0] : ''
+            if (title) title.innerHTML = `${ownTitle('Live')}<small>${esc(first)}'s command centre</small>`
+            document.title = `Live · ${first}'s command centre`
+            if (!D || !D.collab || !window.AngeloLive) { view.innerHTML = failed ? `<p class="note">The board could not load its data (${esc(failed)}).</p>` : '<p class="note">Loading the team…</p>'; return }
+            view.innerHTML = `<div class="ak">${ownNote()}<nav class="ak-switch" aria-label="More views"><a href="#collab?map=1">← Team and the machine <span class="ak-mk" aria-hidden="true">✦</span></a></nav><div data-ak-live></div></div>`
+            window.AngeloLive.view(view.querySelector('[data-ak-live]'), { D, liveUrl: new URL('live.json', location.href).href })
+        }
+
         function drawCollab() {
             const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
             if (!view) return
@@ -427,7 +439,7 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
             const c = cstate(), M = D.collab && D.collab.map, L0 = TM_LAYOUTS.some(([k]) => k === c.l) ? c.l : 'ring'
             // full screen (fs=1 in the address), so the map alone can be opened from a link, or shown on a screen
             const fs = c.fs && c.map
-            const head = `<section class="cc-card tm${fs ? ' tm-fs' : ''}" aria-label="The whole team as one map"><div class="tm-top"><h3 class="ak-h3">The whole team as one map</h3><span class="tm-acts">${c.map ? `<button type="button" class="cc-btn" data-tm-fs aria-pressed="${fs}" title="${fs ? 'Back to the page (Esc)' : 'The map alone, full screen, with its own link'}">${fs ? '✕ Close full screen' : '⛶ Full screen'}</button><button type="button" class="cc-btn" data-tm-copy title="Copy a link to this map, as you see it: layout, focus${fs ? ', full screen' : ''}">🔗 Copy link</button><span class="note" data-tm-copied role="status"></span>` : ''}${fs ? '' : `<button type="button" class="cc-btn" data-tm-toggle aria-pressed="${c.map}">${c.map ? 'Hide the map' : 'Show the map'}</button>`}</span></div>`
+            const head = `<section class="cc-card tm${fs ? ' tm-fs' : ''}" aria-label="The whole team as one map"><div class="tm-top"><h3 class="ak-h3">The whole team as one map</h3><span class="tm-acts">${c.map ? `<button type="button" class="cc-btn" data-tm-fs aria-pressed="${fs}" title="${fs ? 'Back to the page (Esc)' : 'The map alone, full screen, with its own link'}">${fs ? '✕ Close full screen' : '⛶ Full screen'}</button><a class="cc-btn" href="#live" data-tm-live title="The map as an always-on live view, in a hexagon; it can pop out into its own window">◉ Live</a><button type="button" class="cc-btn" data-tm-copy title="Copy a link to this map, as you see it: layout, focus${fs ? ', full screen' : ''}">🔗 Copy link</button><span class="note" data-tm-copied role="status"></span>` : ''}${fs ? '' : `<button type="button" class="cc-btn" data-tm-toggle aria-pressed="${c.map}">${c.map ? 'Hide the map' : 'Show the map'}</button>`}</span></div>`
             if (!c.map) return head + `<p class="note">Everyone and their agents, and who wrote to whom in the last 7 days${M && M.totals ? ` (${M.totals.people} people, ${M.totals.agents} agents, ${M.totals.messages} messages)` : ''}.</p></section>`
             if (!M || M.error) return head + `<p class="note">The map's data is missing from this build${M && M.error ? ` (${esc(M.error)})` : ''}.</p></section>`
             const S = 1000, C = S / 2, col = new Map(M.people.map((p, i) => [p.id, TM_COL[i % TM_COL.length]])), pos = new Map(), NP = M.people.length
