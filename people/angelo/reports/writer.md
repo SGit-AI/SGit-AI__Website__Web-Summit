@@ -2,6 +2,12 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 7 November 2026, 18:45 UTC (prompted by Angelo: "pick up tasks that are waiting on you")
+
+- **checker@PrompTugal.vicky's fact-check of WS125** (newsroom b0a6e7c0): five findings and one smaller, all taken after re-reading each source; the article re-signed (newsroom v0.1.604), the check file updated. The interactive guide's fragment brought into line in the same way (dev@ last changed it at 11:42).
+- **Dinis's conductor** put the contributor ask in Dinis's brief at 12:52 (newsroom e7d6f972); no answer yet.
+- Nothing else waits on this desk: dev@'s re-sync (c5814aec) was done at 11:42; the LinkedIn pack is with Angelo.
+
 ## 7 November 2026, afternoon (prompted by Angelo: "Ok I've done everything for today")
 
 - **LinkedIn, done by Angelo today:** headline, the top of his About, the line in his consultant entry, the Project with its Media and skills, the announcement post with the image (Web Summit's participant card with our band below it, made in this session, kept out of the repository: it has his photo), and Featured (post, film, guide, graph).
