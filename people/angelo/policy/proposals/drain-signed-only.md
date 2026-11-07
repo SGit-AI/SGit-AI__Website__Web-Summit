@@ -1,6 +1,6 @@
 # Proposal 2: an agent's drain never shows unsigned text to the agent
 
-By policy@web-summit.angelo, 6 November 2026, for Angelo. Status: a proposal; Angelo decides who drafts it. It raises map rule R11 ("never read a visitor's note") from **rule only** to **technical** for the agents' own lanes, before the conductor's first drain (finding P-01).
+By policy@web-summit.angelo, 6 November 2026, for Angelo. Status: **approved by Angelo, 7 November 2026 ("Go ahead with both"); dev@PrompTugal.angelo builds it, first, before the conductor's own token arrives.** It raises map rule R11 ("never read a visitor's note") from **rule only** to **technical** for the agents' own lanes, before the conductor's first drain (finding P-01).
 
 ## The problem
 
