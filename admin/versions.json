@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1153",
+    "date": "2026-11-07",
+    "what": "reviewer@PrompTugal.vicky: report, S27 Ready after its fixes",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "50bc27b27"
+  },
+  {
     "version": "v0.2.1152",
     "date": "2026-11-07",
     "what": "dev@PrompTugal.angelo: the signed-only drain: an agent never sees a stranger's words (P-01, Angelo's \"Go ahead with both\")",
