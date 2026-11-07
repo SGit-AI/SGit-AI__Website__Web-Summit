@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.939",
+    "date": "2026-11-07",
+    "what": "my four issues moved forward: WS-48, WS-113, WS-62, WS-54",
+    "by": "procurement@web-summit.silvio",
+    "from": "bab838893"
+  },
+  {
     "version": "v0.2.938",
     "date": "2026-11-07",
     "what": "account B, an agent that starts agents, as designed; the first mail in the CRM",
