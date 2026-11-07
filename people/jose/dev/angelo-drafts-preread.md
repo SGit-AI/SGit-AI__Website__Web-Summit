@@ -22,7 +22,7 @@ Shared build code is kept by `conductor@web-summit.dinis`: "apply" here means yo
 - **Risks and open questions:**
   - It **fails closed**: if `git diff` errors, the push is refused. That is the safe way round, but an agent could be stuck until someone looks.
   - It checks key files only. **It would not have caught the one real leak from Jose's agents** (8fe508f, 3 November: a value matching an access token, which lives in an environment variable, not a key file). Worth asking Angelo's agent to also check the values of the session's credential variables (`SG_SEND_ACCESS_TOKEN`, `SG_VAULT_KEY_*`) the same way, by name, never printed.
-  - Vault keys kept in `~/vaults/<name>/.sg_vault/local/` are outside `~/.sg-send/`, so they are covered only through `TRIPWIRE_DIRS`. Worth a default.
+  - Vault keys kept in `~/vaults/<name>/.sg_vault/local/` are outside `~/.sg-send/`, so they are covered only through `TRIPWIRE_DIRS`. Worth a default. And the check slides its 24-character window in 12-character steps, so a leaked fragment is only sure to be caught from 36 characters: worth one clause in the same follow-up.
 - **Advice:** apply before the summit. It stops a real harm, costs nothing on a push, and fails safe. Ask for the two additions above as a follow-up, not a condition.
 
 ## WS-45: people's keys on `/keys/` (`people/angelo/proposals/WS-45/`)
@@ -49,7 +49,7 @@ Shared build code is kept by `conductor@web-summit.dinis`: "apply" here means yo
 
 ## WS-78: a kicker line and colour debt (`people/angelo/proposals/WS-78/`)
 
-- **What it changes, for whom:** every page gains a line above its title naming its section and the file it is written in, linked on GitHub; gate check 21 fails a page without it; gate check 22 warns about colours outside a tokens block in each stylesheet (260 in the shared command centre, 41 in the feedback pane, and others).
+- **What it changes, for whom:** every page gains a line above its title naming its section and the file it is written in, linked on GitHub; gate check 21 fails a page without it; gate check 22 warns about colours outside a tokens block in each stylesheet beyond `site.css` (260 in the shared command centre's `assets/cc/app.css`, and others; the colours that scripts inject, such as the feedback pane's 41, are not counted, since the check reads `.css` files only).
 - **What it touches:** shared: `build.mjs`, `validate.js`, `assets/site.css` (25 lines added); every page of the site.
 - **Risks:** a visible change to every page two days before the summit, including the pages visitors see from the stand; check 21 makes the gate stricter for every agent at the busiest time.
 - **Advice:** wait until after the summit. If anything sooner, only check 22 (a warning, which changes no page).
