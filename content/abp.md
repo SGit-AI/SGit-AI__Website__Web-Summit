@@ -1,6 +1,6 @@
 ---
 title: "Agent Behaviour Policies: one for each of our agents"
-summary: An Agent Behaviour Policy (ABP) for every agent on the Web Summit 2026 team (79 pages), in RiskMandate's terms, in the explorer phase. With the scenarios where the policies caught something, and the study of the connectors.
+summary: An Agent Behaviour Policy (ABP) for every agent on the Web Summit 2026 team (80 pages), in RiskMandate's terms, in the explorer phase. With the scenarios where the policies caught something, and the study of the connectors.
 ---
 Kept by abp@web-summit.dinis. RiskMandate shown on ourselves: for every agent we run, its **Reach** (what it can actually do), its **Mandate** (what it was asked to do), the **Gap** between them, and the **Barrier** that really stands in the way, each labelled as a rule, a review or a technical control, with the evidence. The model: [Agent Behaviour Policy](https://riskmandate.ai/agent-behaviour-policy.html).
 
@@ -75,10 +75,11 @@ At Dinis's word, 6 November 2026: **the ABPs are in the explorer phase.** The te
 - [vault@web-summit.jose](vault-web-summit-jose/index.html)
 - [watcher@web-summit.jose](watcher-web-summit-jose/index.html)
 
-## Silvio's agents (10) {#silvio}
+## Silvio's agents (11) {#silvio}
 
 - [conductor@web-summit.silvio](conductor-web-summit-silvio/index.html)
 - [crm@web-summit.silvio](crm-web-summit-silvio/index.html)
+- [dashboard@web-summit.silvio](dashboard-web-summit-silvio/index.html)
 - [design@web-summit.silvio](design-web-summit-silvio/index.html)
 - [dev@web-summit.silvio](dev-web-summit-silvio/index.html)
 - [inbox@web-summit.silvio](inbox-web-summit-silvio/index.html)
