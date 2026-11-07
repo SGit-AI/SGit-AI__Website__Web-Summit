@@ -869,6 +869,21 @@
       }
     },
     {
+      "id": "dashboard-silvio",
+      "label": "dashboard@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's dashboard agent (dashboard@web-summit.silvio): builds and keeps his command centre (people/silvio/app/), his dashboard and its links, and the team's shared command-centre engine with dev@web-summit.dinis; tests first on Silvio's private Lab, releases at his word. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 7 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-07",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA44YMAou3TlDqyUWa7zKk\n80gbeEm2+EmuozKa/mun1Fk07sRyads6e3y5K+wJkmznDWepfxo9iSevhyCZ1g1E\nzOD/ymVi7XpXLbAohaqI5G472Gxpe8vVmCqTKuNZoPQSDPuZK64zwmgYFa4nCCdZ\n81OCpbItvL+25fDYkwDhGPnsA5+x97KnFex0E1HdY1Jib3SR6RNvWRoSfGfBu1uF\nElUWzCBBGYfOz04pSHQuSIkxYniK3dqrs3CKMQwtiy1tSzqzNpVSE6X2vIVjt7jH\nmjn3CO43Ru7FGdiKNdK5oOJJxU8TjT9zHQfjsuGVbpJQw2sdlU9kcWFROcdr9Nuf\nANEEHB4G0EclYlnz0R46gfJkDL8HN39Y3Lo86IjYX4Npz2opXwq0MqKh3vN4p8KB\nnHUfzfLCXw8TA1Ywr6S7ml+fzk9qYjgNgM4mX7ZSriQGcjE6TOeiwuBbPre6nRVq\nYmCyjK49wLyMxoF/c6LELLgwMgNF90eZWU6PIrFkqc1Q3wLNxvoA1lKX9i0rnPsE\n9DGsbGpEOEASDEYUHh5xRM1+ruQIuvIn4Vvyjz4mX7oqd2SkuupFnO6YfYkeVsN4\nidoHyRGpErrWIqfYTAVcTyvs9aBCbYT8g1ZedY6Em0zanHeTM2tRYOfN8Wpcos5o\nNpaKmWWaxJkNVKCCq91y9s0CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/baPd9ll96UjpCL0vcruba6ewYI3\nq1YHugLfN6AWKDUjnrr5h32tQqBrWNL85pNyDCu7gkXWqskVqwJTRUYMjQ==\n-----END PUBLIC KEY-----\n",
+        "fingerprint": "sha256:6c034aeadba59c10",
+        "signing_fingerprint": "sha256:048766a34b808c7a",
+        "label": "dashboard@web-summit.silvio"
+      }
+    },
+    {
       "id": "inbox-silvio",
       "label": "inbox@web-summit.silvio (Claude Code session)",
       "role": "Silvio Switha's inbox agent (inbox@web-summit.silvio): the only agent with Silvio's mailbox; reads it and writes drafts, never sends (people/silvio/policies/inbox.md); an editor of the team CRM (WS-172). A session key: it ends with its session.",
