@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.921",
+    "date": "2026-11-07",
+    "what": "WS-188, its own environment measured: the same shared environment and tokens; it used Dinis's token only before the rule",
+    "by": "sgit@web-summit.dinis",
+    "from": "8fd8b17d1"
+  },
+  {
     "version": "v0.2.920",
     "date": "2026-11-07",
     "what": "WS-173 first run in the private CRM: 1 thread, 7 emails as EML, for review",
