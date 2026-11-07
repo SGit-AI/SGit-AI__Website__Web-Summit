@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.963",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: ledger line for the 07:20 run Scheduled run.",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "8e3c1f85a"
+  },
+  {
     "version": "v0.2.962",
     "date": "2026-11-07",
     "what": "07:20 wake: brief 15; the accountant's A1 and A4 carried to Indi",
