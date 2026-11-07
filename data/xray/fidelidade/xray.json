@@ -1,0 +1,1034 @@
+{
+  "slug": "fidelidade",
+  "subject": "Fidelidade",
+  "kind": "company",
+  "tagline": "Portugal's largest insurer, whose in-house AI reads motor claims, answers the phone and, its AI director told the press, drafts customer messages with language models",
+  "read_on": "2026-11-07",
+  "status": "prepared",
+  "run": {
+    "at": "2026-11-07T21:16:45.376Z",
+    "cost_usd": 0.0738,
+    "agents": [
+      {
+        "id": "perplexity",
+        "label": "Perplexity search",
+        "model": "perplexity/sonar",
+        "ms": 8480,
+        "citations": 16,
+        "leads": 15
+      },
+      {
+        "id": "openai",
+        "label": "OpenAI search",
+        "model": "openai/gpt-5.4-nano:online",
+        "ms": 15759,
+        "citations": 4,
+        "leads": 8
+      },
+      {
+        "id": "gemini",
+        "label": "Gemini search",
+        "model": "google/gemini-3.1-flash-lite:online",
+        "ms": 1830,
+        "citations": 1,
+        "leads": 4
+      },
+      {
+        "id": "openrouter",
+        "label": "OpenRouter web search",
+        "model": "anthropic/claude-haiku-5.5",
+        "ms": 25147,
+        "citations": 8,
+        "leads": 17
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://fidelidade.pt/",
+      "title": "Fidelidade | No1 em Seguros Automóvel, Saúde, Casa e Viagens (home page, Portuguese)",
+      "publisher": "Fidelidade (fidelidade.pt)",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s2",
+      "url": "https://fidelidade.pt/institucional/quem-somos/sobre-nos/a-fidelidade",
+      "title": "A Fidelidade: quem somos (about the company, Portuguese)",
+      "publisher": "Fidelidade (fidelidade.pt)",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s3",
+      "url": "https://fidelidade.pt/particulares/mobilidade/utilizar/participacao-sinistros-e-assistencia",
+      "title": "Seguro Automóvel: Participar Sinistro (motor claims and assistance, Portuguese)",
+      "publisher": "Fidelidade (fidelidade.pt)",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s4",
+      "url": "https://fidelidade.pt/hubfs/site-fidelidade/documentacao-institucional/press-releases/knowledge_ai_excellence_in_data_&_ai_2026.pdf?hsLang=pt",
+      "title": "Knowledge AI da Fidelidade distinguido nos Excellence in Data & AI 2026 (press release, Lisbon, 30 September 2026, Portuguese)",
+      "publisher": "Fidelidade (fidelidade.pt)",
+      "read_on": "2026-11-07",
+      "kind": "own-site"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.fidelidade.pt/EN/fidelidade/investor-relations/financial-information/Documents/RUI_Fidelidade_2025_EN_VF.pdf",
+      "title": "Fidelidade Integrated Management Report 2025 (English): AI strategy, innovation (p. 74) and sustainability statements (p. 183)",
+      "publisher": "Fidelidade (fidelidade.pt)",
+      "read_on": "2026-11-07",
+      "kind": "filing"
+    },
+    {
+      "id": "s6",
+      "url": "https://www.fidelidade.pt/PT/a-fidelidade/QuemSomos/QuemSomos/Documents/2.%20RUIG%202024%20-%20VFinal_EN.pdf",
+      "title": "Fidelidade Integrated Management Report 2024 (English): innovation and non-financial statements (pp. 344 to 345)",
+      "publisher": "Fidelidade (fidelidade.pt)",
+      "read_on": "2026-11-07",
+      "kind": "filing"
+    },
+    {
+      "id": "s7",
+      "url": "https://www.fidelidade.pt/EN/fidelidade/investor-relations/financial-information/Documents/2023/Fidelidade_SFCR_EN_2023.pdf",
+      "title": "Fidelidade Solvency and Financial Condition Report 2023 (English translation)",
+      "publisher": "Fidelidade (fidelidade.pt)",
+      "read_on": "2026-11-07",
+      "kind": "filing"
+    },
+    {
+      "id": "s8",
+      "url": "https://eco.sapo.pt/2025/04/09/fidelidade-estuda-vender-solucao-interna-de-ia-apos-receber-varias-propostas-de-compra/",
+      "title": "Fidelidade estuda vender solução interna de IA após receber \"várias propostas de compra\" (9 April 2025)",
+      "publisher": "ECO (eco.sapo.pt)",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s9",
+      "url": "https://eco.sapo.pt/2024/12/08/fidelidade-recebe-dois-premios-por-projeto-de-inteligencia-artificial/",
+      "title": "Fidelidade recebe dois prémios por projeto de inteligência artificial (8 December 2024)",
+      "publisher": "ECO (eco.sapo.pt)",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s10",
+      "url": "https://eco.sapo.pt/2021/12/16/assistente-virtual-da-fidelidade-vence-portugal-idc-digital-award/",
+      "title": "Assistente virtual da Fidelidade vence Portugal IDC Digital Award (16 December 2021)",
+      "publisher": "ECO (eco.sapo.pt)",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s11",
+      "url": "https://www.netthings.pt/2026/10/fidelidade-distinguida-nos-excellence.html",
+      "title": "Fidelidade distinguida nos Excellence in Data & AI 2026 com o projeto Knowledge AI (2 October 2026)",
+      "publisher": "Netthings (netthings.pt)",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s12",
+      "url": "https://dealroom.co/news/135231-coalex-ai-raises-angel-round-from-angels-way-to-build-its-ai-trust-layer/",
+      "title": "Coalex.ai raises angel round from Angels Way to build its AI 'trust layer' (19 June 2026)",
+      "publisher": "Dealroom.co",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s13",
+      "url": "https://en.fosun.com/content/details46_5067.html",
+      "title": "Fidelidade Fuels Innovation with the Launch of Protechting 7.0 (10 October 2024)",
+      "publisher": "Fosun (en.fosun.com)",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s14",
+      "url": "https://dxc.com/newsroom/04032023",
+      "title": "Portuguese Insurer Fidelidade Transforms Customer Experience with DXC Technology (3 April 2023)",
+      "publisher": "DXC Technology (dxc.com)",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s15",
+      "url": "https://www.qorusglobal.com/content/29715-innovation-at-fidelidade",
+      "title": "Innovation at Fidelidade",
+      "publisher": "Qorus (qorusglobal.com)",
+      "read_on": "2026-11-07",
+      "kind": "other"
+    },
+    {
+      "id": "s16",
+      "url": "https://executivedigest.sapo.pt/da-fundacao-em-2026-a-agarrar-as-poupancas-dos-portugueses-fidelidade-junta-4-000-pessoas-e-anuncia-objetivos-da-seguradora/",
+      "title": "Da Fundação em 2026 a agarrar as poupanças dos portugueses: Fidelidade junta 4.000 pessoas e anuncia objetivos",
+      "publisher": "Executive Digest (executivedigest.sapo.pt)",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s17",
+      "url": "https://segurus.pt/artigos/fidelidade-plataforma-longevidade",
+      "title": "Fidelidade apresenta plataforma inovadora para longevidade (21 June 2026)",
+      "publisher": "Segurus (segurus.pt)",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s18",
+      "url": "https://www.essential-business.pt/2026/10/19/fidelidade-two-centuries-protecting-portugal/",
+      "title": "Fidelidade: Two centuries protecting Portugal (19 October 2026)",
+      "publisher": "Essential Business (essential-business.pt)",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    },
+    {
+      "id": "s19",
+      "url": "https://executivedigest.sapo.pt/fidelidade-reforca-aposta-na-inovacao-aberta-e-longevidade-durante-a-web-summit-2025/",
+      "title": "Fidelidade reforça aposta na \"inovação aberta\" e \"longevidade\" durante a Web Summit 2025 (18 November 2025)",
+      "publisher": "Executive Digest (executivedigest.sapo.pt)",
+      "read_on": "2026-11-07",
+      "kind": "press"
+    }
+  ],
+  "what_it_does": {
+    "text": "Fidelidade, founded in 1808, is the market leader in Portuguese insurance (life and non-life, a 28.1% share), present in 14 countries on 4 continents, with gross written premiums of 6,529 million euros in 2025; Fosun holds about 85% of its capital and Caixa Geral de Depósitos about 15%. Its in-house Center for Artificial Intelligence & Analytics builds the AI it runs: GAMA, which reads claims documents and health invoices; Contact IA, a natural-voice phone line and email triage for its contact centres; Knowledge AI, a language-model assistant over the company's operational knowledge; and Trusty, the virtual assistant on its website and app. Its 2025 report sets out a six-pillar AI strategy that includes fairness, compliance with the AI Act and GDPR, and alignment with the business.",
+    "sources": [
+      "s2",
+      "s16",
+      "s18",
+      "s5",
+      "s4",
+      "s8",
+      "s1"
+    ]
+  },
+  "agents": [
+    {
+      "id": "a1",
+      "name": "GAMA (documents)",
+      "what": "Generic Analytical Model Automation: an AI document-processing system built in-house by the Center for Artificial Intelligence & Analytics, adapted to European Portuguese. It reads the documents customers submit, including the motor accident declaration (DAAA) and health reimbursement invoices, and extracts the data automatically. In April 2025 its director said it processed more than half of the declarations without human intervention and asks a staff member when it is unsure of an interpretation. The 2025 report gives 5,460 documents a day and 64.6% automation of the information collected.",
+      "actions": [
+        "Reads uploaded or photographed motor accident declarations and extracts their data",
+        "Processes health expense reimbursements and healthcare provider invoices (Portugal, and provider billing in Angola and Mozambique)",
+        "Runs configurable workflows, fields and integration flows for any line of business, geography or document type",
+        "Hands uncertain interpretations to a human and learns from the result"
+      ],
+      "sources": [
+        "s8",
+        "s9",
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "id": "a2",
+      "name": "Contact IA (voice/email)",
+      "what": "Contact AI (CAI), piloted at the Group Contact Center from 2024: a natural-voice IVR that identifies and authenticates customers, understands the reason for the call in natural language and routes them to an operator or team, with Call Analytics on interactions and Email Automation that classifies requests and sends them to the right team. The 2025 report says its architecture will pave the way for true self-service.",
+      "actions": [
+        "Identifies and authenticates callers by voice",
+        "Classifies the reason for a call and routes it to an operator or team",
+        "Classifies incoming emails and routes them to teams",
+        "Analyses calls and emails to extract operational information"
+      ],
+      "sources": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "id": "a3",
+      "name": "Knowledge AI (KAI)",
+      "what": "The company's knowledge platform, built by the Center for Artificial Intelligence & Analytics and enriched by business staff over two years: a vector knowledge base with version control, a content editor, semantic search with source verification and a conversational assistant based on large language models, able to interact with external systems. Fidelidade calls it its 'digital brain' and says it feeds business knowledge to all of the company's AI systems.",
+      "actions": [
+        "Answers staff questions on policies, procedures and coverage in seconds",
+        "Interacts with external and internal systems through a language-model integration layer",
+        "Supplies business knowledge to the company's other AI systems",
+        "Creates content such as FAQs, eLearning and simplified text, under workflows and permissions"
+      ],
+      "sources": [
+        "s4",
+        "s11",
+        "s5"
+      ]
+    },
+    {
+      "id": "a4",
+      "name": "Trusty (assistant)",
+      "what": "The virtual assistant on fidelidade.pt ('Posso ajudar com tudo o que estiver relacionado com os serviços e produtos da Fidelidade': I can help with everything related to Fidelidade's services and products) and on the home screen of the MyFidelidade app, where the motor claims page says a customer can ask it for roadside assistance. The 2024 report names it as the Trusty chatbot. Fidelidade does not publish what systems or data it reaches.",
+      "actions": [
+        "Answers customer questions on the website",
+        "Takes motor roadside assistance requests in the MyFidelidade app (as an alternative to the app's form)"
+      ],
+      "sources": [
+        "s1",
+        "s3",
+        "s6"
+      ]
+    },
+    {
+      "id": "a5",
+      "name": "MARIA (speech bot)",
+      "what": "A speech bot built by Fidelidade Assistance and the Advanced Analytics centre for the Fidelidade Assistance contact centre. ECO quoted the company in 2021 as saying it identifies callers automatically through their policy and other information, speaks and listens through a cloud speech service, and decides with a flow orchestrator developed by the group. The 2023 solvency report says work that year improved the speech-bot in car assistance, with the aim of fully automating car assistance, invoicing and provider payments.",
+      "actions": [
+        "Answers calls to the assistance line",
+        "Identifies the customer from the policy and other data",
+        "Interprets the customer's messages with a flow orchestrator to decide the next step"
+      ],
+      "sources": [
+        "s10",
+        "s7"
+      ]
+    }
+  ],
+  "use_cases": [
+    {
+      "id": "u1",
+      "name": "A motor claim read by GAMA, answered by a model",
+      "agent": "a1",
+      "who": "A policyholder who uploads a photographed accident declaration in MyFidelidade, and the claims team behind it (built from Fidelidade's claims page and what its AI director told ECO)",
+      "reach": [
+        {
+          "id": "r1",
+          "what": "The accident declaration (DAAA) and claim participation the customer uploads, or photographs, in the MyFidelidade app or web area",
+          "kind": "data",
+          "sources": [
+            "s3",
+            "s8"
+          ]
+        },
+        {
+          "id": "r2",
+          "what": "Extracting and processing the declaration's data automatically, more than half of declarations with no human intervention (April 2025)",
+          "kind": "system",
+          "sources": [
+            "s8"
+          ]
+        },
+        {
+          "id": "r3",
+          "what": "Customer communication: 'Toda a nossa comunicação com clientes é hoje produzida por modelos de linguagem' (all our communication with customers is now produced by language models), the AI director said in April 2025",
+          "kind": "outside",
+          "sources": [
+            "s8"
+          ]
+        },
+        {
+          "id": "r4",
+          "what": "Health expense reimbursements and provider invoices processed through GAMA, including provider billing in Angola and Mozambique",
+          "kind": "money",
+          "sources": [
+            "s5",
+            "s6"
+          ]
+        },
+        {
+          "id": "r5",
+          "what": "Configurable workflows, fields and integration flows for any line of business, geography or document type",
+          "kind": "system",
+          "sources": [
+            "s9"
+          ]
+        }
+      ],
+      "mandate": [
+        {
+          "id": "m1",
+          "what": "Illustrative: read the declaration, extract its fields and pass them to the claims team"
+        },
+        {
+          "id": "m2",
+          "what": "Illustrative: when a field is unreadable or ambiguous, hand it to a person (Fidelidade describes this behaviour in GAMA)"
+        },
+        {
+          "id": "m3",
+          "what": "Illustrative: no message to the customer and no payment decision without a claims handler's review"
+        }
+      ],
+      "gap": [
+        {
+          "what": "Fidelidade publishes the share processed without people and that all customer communication is written by language models, but not where a person reviews a message or a decision before it reaches the customer",
+          "reach": [
+            "r2",
+            "r3"
+          ]
+        },
+        {
+          "what": "The documents GAMA is known to struggle with (folded, phone-photographed declarations) are the ones customers send, and what follows a misread field is not published",
+          "reach": [
+            "r1",
+            "r2"
+          ]
+        },
+        {
+          "what": "The same system reaches reimbursements and provider invoices in other countries; the limits on what it settles there are not published",
+          "reach": [
+            "r4",
+            "r5"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "what": "When there is doubt in interpretation, the software asks a staff member to intervene and learns from the result",
+          "sources": [
+            "s8"
+          ]
+        },
+        {
+          "what": "The 2025 report's AI strategy names ethics and fairness (models free from discriminatory bias) and compliance with the AI Act and GDPR as pillars, and lists AI Act and GDPR compliance among GAMA's expected outcomes",
+          "sources": [
+            "s5",
+            "s6"
+          ]
+        },
+        {
+          "what": "The 2024 report records regulatory compliance in digital innovation as a material risk (IRO #31) and says Fidelidade has implemented a compliance framework for its digital products and services",
+          "sources": [
+            "s6"
+          ]
+        },
+        {
+          "what": "A press report says Fidelidade has integrated Coalex.ai, a real-time supervisor that flags risky agent outputs for human review; Fidelidade has published nothing on it, and which systems it covers is not known",
+          "sources": [
+            "s12"
+          ]
+        }
+      ],
+      "simulation": [
+        {
+          "t": 1,
+          "actor": "person",
+          "action": "After a collision, the driver photographs the folded accident declaration from the glove box and uploads it in MyFidelidade",
+          "reach": "r1",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "agent",
+          "action": "GAMA reads the photograph and extracts the declaration's fields",
+          "reach": "r2",
+          "in_mandate": true
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "(illustrative) A fold hides part of a field; GAMA reads it with confidence instead of asking a person",
+          "reach": "r2",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows automatic extraction as granted and the human hand-off as the mandate. The gap is a misread that never triggers the hand-off, on the kind of document Fidelidade's AI director said GAMA still struggles with."
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "(illustrative) The extracted data passes into the claim with no person in between, as with more than half of declarations",
+          "reach": "r5",
+          "in_mandate": false,
+          "note": "The record shows straight-through processing in the grant, with no published point at which a claims handler sees the case. The gap is made visible for the owner to accept or close."
+        },
+        {
+          "t": 5,
+          "actor": "agent",
+          "action": "(illustrative) A language model writes the update to the customer based on the extracted data",
+          "reach": "r3",
+          "in_mandate": false,
+          "note": "The record shows customer messages written by language models in the grant (stated by the AI director), and review before sending as mandate only. It records that no review step is published."
+        },
+        {
+          "t": 6,
+          "actor": "person",
+          "action": "A claims handler opens the case when the customer replies to dispute the details",
+          "reach": "r2",
+          "in_mandate": true
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "name": "A phone call answered and routed by Contact IA",
+      "agent": "a2",
+      "who": "A customer who calls Fidelidade's contact centre, and the operators the call is routed to (from the 2024 and 2025 integrated reports)",
+      "reach": [
+        {
+          "id": "r6",
+          "what": "Identifying and authenticating the caller by natural voice, replacing key navigation",
+          "kind": "people",
+          "sources": [
+            "s5",
+            "s6"
+          ]
+        },
+        {
+          "id": "r7",
+          "what": "Customer and policy records used to identify the caller (MARIA, the earlier speech bot, identified customers through their policy and other information)",
+          "kind": "data",
+          "sources": [
+            "s10",
+            "s5"
+          ]
+        },
+        {
+          "id": "r8",
+          "what": "Routing each call to the operator or team it judges most appropriate",
+          "kind": "system",
+          "sources": [
+            "s5",
+            "s6"
+          ]
+        },
+        {
+          "id": "r9",
+          "what": "Email Automation: classifying incoming customer emails and directing them to teams",
+          "kind": "system",
+          "sources": [
+            "s5"
+          ]
+        },
+        {
+          "id": "r10",
+          "what": "Call Analytics over recorded calls, emails and other channels",
+          "kind": "data",
+          "sources": [
+            "s5"
+          ]
+        },
+        {
+          "id": "r11",
+          "what": "A path to 'true self-service' that the 2025 report says the architecture will open",
+          "kind": "outside",
+          "sources": [
+            "s5"
+          ]
+        }
+      ],
+      "mandate": [
+        {
+          "id": "m4",
+          "what": "Illustrative: authenticate the caller and route the call; take no action on the policy"
+        },
+        {
+          "id": "m5",
+          "what": "Illustrative: give a caller's details to an operator only after authentication succeeds"
+        },
+        {
+          "id": "m6",
+          "what": "Illustrative: use recorded interactions for service analytics only"
+        }
+      ],
+      "gap": [
+        {
+          "what": "Voice authentication is the gate to the caller's policy data; how it fails, and what an unauthenticated caller can reach, is not published",
+          "reach": [
+            "r6",
+            "r7"
+          ]
+        },
+        {
+          "what": "Self-service is named as the next step, which would move the system from routing calls to acting on them",
+          "reach": [
+            "r11"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "what": "2025 cybersecurity actions: security controls aligned with the ISMS, wider penetration testing and threat modelling in solution development",
+          "sources": [
+            "s5"
+          ]
+        },
+        {
+          "what": "The group says it is monitoring the AI Act's implementation and integrating trust, robustness and explainability into its systems",
+          "sources": [
+            "s5"
+          ]
+        }
+      ],
+      "simulation": [
+        {
+          "t": 1,
+          "actor": "person",
+          "action": "A customer calls the contact centre about a home claim",
+          "reach": "r6",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "agent",
+          "action": "The natural-voice IVR asks for identification and authenticates the caller",
+          "reach": "r6",
+          "in_mandate": true
+        },
+        {
+          "t": 3,
+          "actor": "agent",
+          "action": "(illustrative) The caller is a relative who knows the policyholder's details; the IVR authenticates them",
+          "reach": "r7",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows the policy data behind the authentication step as reach, and authentication of the policyholder only as the mandate. The gap is who else can pass that step, which the public record does not describe."
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "Classifies the reason for the call in natural language and routes it to the claims team",
+          "reach": "r8",
+          "in_mandate": true
+        },
+        {
+          "t": 5,
+          "actor": "agent",
+          "action": "Call Analytics stores the classified motive for operations and quality teams",
+          "reach": "r10",
+          "in_mandate": true
+        },
+        {
+          "t": 6,
+          "actor": "agent",
+          "action": "(illustrative) With the planned self-service, the system changes the policy's contact details as the caller asks",
+          "reach": "r11",
+          "in_mandate": false,
+          "note": "The record shows a change to the policy as outside a routing mandate. It records the move to self-service as a change in reach that needs its own mandate before it is granted."
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "name": "Knowledge AI: one source feeding every AI system",
+      "agent": "a3",
+      "who": "Contact centre staff, claims managers and brokers who ask KAI, and the other AI systems it supplies (from Fidelidade's press release and 2025 report)",
+      "reach": [
+        {
+          "id": "r12",
+          "what": "The operational knowledge base: the company's procedures, policies and coverage logic, written and validated by business staff",
+          "kind": "data",
+          "sources": [
+            "s4",
+            "s11"
+          ]
+        },
+        {
+          "id": "r13",
+          "what": "External systems, reached through a language-model integration layer",
+          "kind": "system",
+          "sources": [
+            "s4",
+            "s11"
+          ]
+        },
+        {
+          "id": "r14",
+          "what": "Every other AI system in the company, which KAI supplies with business knowledge",
+          "kind": "system",
+          "sources": [
+            "s4"
+          ]
+        },
+        {
+          "id": "r15",
+          "what": "Content it creates: FAQs, eLearning and simplified text",
+          "kind": "outside",
+          "sources": [
+            "s5"
+          ]
+        },
+        {
+          "id": "r16",
+          "what": "Answers that claims managers and brokers rely on for decisions about customers",
+          "kind": "people",
+          "sources": [
+            "s11"
+          ]
+        }
+      ],
+      "mandate": [
+        {
+          "id": "m7",
+          "what": "Illustrative: answer staff questions from validated content, with the source shown"
+        },
+        {
+          "id": "m8",
+          "what": "Illustrative: change the knowledge base only through the editor's workflow and permissions"
+        }
+      ],
+      "gap": [
+        {
+          "what": "An error or unvalidated change in the base reaches every AI system it feeds, not only the person asking",
+          "reach": [
+            "r12",
+            "r14"
+          ]
+        },
+        {
+          "what": "Which external systems the language-model layer can reach, and whether it can write to them, is not published",
+          "reach": [
+            "r13"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "what": "Business staff introduce and validate the operational logic; the editor has version control, workflows and permissions, and search with source verification",
+          "sources": [
+            "s4",
+            "s5",
+            "s11"
+          ]
+        }
+      ],
+      "simulation": [
+        {
+          "t": 1,
+          "actor": "person",
+          "action": "A contact centre operator asks KAI whether a health policy covers a procedure",
+          "reach": "r12",
+          "in_mandate": true
+        },
+        {
+          "t": 2,
+          "actor": "agent",
+          "action": "KAI retrieves the coverage rule and answers with its source",
+          "reach": "r16",
+          "in_mandate": true
+        },
+        {
+          "t": 3,
+          "actor": "person",
+          "action": "(illustrative) A business editor updates a coverage rule; the change is published before it is validated",
+          "reach": "r12",
+          "in_mandate": false,
+          "note": "RiskMandate's record shows the editor's rights as grant and validation before publishing as the mandate. It records that the workflow exists and whether it was followed in this case."
+        },
+        {
+          "t": 4,
+          "actor": "agent",
+          "action": "(illustrative) KAI supplies the changed rule to the other AI systems it feeds",
+          "reach": "r14",
+          "in_mandate": false,
+          "note": "The record shows every downstream AI system inside KAI's reach, so one unvalidated rule becomes a gap in all of them at once. It is made visible for an owner to accept or fix."
+        },
+        {
+          "t": 5,
+          "actor": "person",
+          "action": "(illustrative) An editor reviews a KAI-generated FAQ before publishing it and finds the changed rule",
+          "reach": "r15",
+          "in_mandate": true
+        },
+        {
+          "t": 6,
+          "actor": "agent",
+          "action": "(illustrative) Through its integration layer KAI queries an external system to complete an answer",
+          "reach": "r13",
+          "in_mandate": false,
+          "note": "The record shows the external-system connection as reach with no published scope. It records what the connection can read and write once Fidelidade states it."
+        }
+      ]
+    }
+  ],
+  "incidents": [],
+  "leads": [
+    {
+      "model": "perplexity",
+      "claim": "Fidelidade is a Portuguese insurer, part of a wider financial and healthcare group with operations beyond Portugal.",
+      "status": "confirmed",
+      "source": "s18"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Its innovation strategy is driven by AI-powered analytics, omnichannel engagement and automation.",
+      "status": "confirmed",
+      "source": "s15",
+      "note": "Fidelidade's own text on a Qorus member page."
+    },
+    {
+      "model": "perplexity",
+      "claim": "Knowledge AI (KAI) centralises operational knowledge in one platform, gives autonomous, accurate answers and is meant as the company's 'digital brain'.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "perplexity",
+      "claim": "KAI combines a vector knowledge base, a content editor and a language-model integration layer.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "perplexity",
+      "claim": "KAI can interact with external systems.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "perplexity",
+      "claim": "KAI feeds business knowledge to all of Fidelidade's AI systems.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "perplexity",
+      "claim": "KAI won the insurance category of the Excellence in Data & AI 2026 awards.",
+      "status": "confirmed",
+      "source": "s4"
+    },
+    {
+      "model": "perplexity",
+      "claim": "The SARA clinical questionnaire, completed in MyFidelidade for individual Multicare and Life Risk products, uses AI to assess clinical risk and automatically accepts low-risk customers.",
+      "status": "confirmed",
+      "source": "s7"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Protechting has produced more than 40 pilots since 2018.",
+      "status": "confirmed",
+      "source": "s13"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Protechting has resulted in five commercial agreements.",
+      "status": "confirmed",
+      "source": "s13"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Protechting priority challenges include insurance product personalisation, claims automation and fraud prevention.",
+      "status": "confirmed",
+      "source": "s13"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Protechting offers up to 50,000 euros of pilot funding.",
+      "status": "confirmed",
+      "source": "s13"
+    },
+    {
+      "model": "perplexity",
+      "claim": "Teams from IT, Marketing, Legal, Actuary and Distribution work together to test ideas through pilots.",
+      "status": "confirmed",
+      "source": "s15"
+    },
+    {
+      "model": "perplexity",
+      "claim": "A customer data hub centralised 980 million customer records and processes up to 250,000 daily interactions.",
+      "status": "confirmed",
+      "source": "s14",
+      "note": "DXC's press release (April 2023), not Fidelidade's own statement."
+    },
+    {
+      "model": "perplexity",
+      "claim": "The company says its digital channels serve 2.3 million customers and 1.2 million mobile users.",
+      "status": "confirmed",
+      "source": "s14",
+      "note": "Stated in DXC's press release, not by Fidelidade."
+    },
+    {
+      "model": "openai",
+      "claim": "Fidelidade has deployed and piloted AI to improve customer interactions and internal efficiency.",
+      "status": "confirmed",
+      "source": "s5"
+    },
+    {
+      "model": "openai",
+      "claim": "A Contact AI pilot started in 2024 at the Group Contact Center to develop an IVR that authenticates customers and routes them to operators by skills.",
+      "status": "confirmed",
+      "source": "s6"
+    },
+    {
+      "model": "openai",
+      "claim": "Contact IA includes a conversational assistant, content creation and integration with internal systems.",
+      "status": "not-found",
+      "source": "s5",
+      "note": "The 2025 report attributes the conversational assistant, content creation and integration with internal systems to KIA (Knowledge AI), not to Contact IA."
+    },
+    {
+      "model": "openai",
+      "claim": "Contact IA uses AI to extract information to support customer interactions.",
+      "status": "confirmed",
+      "source": "s5"
+    },
+    {
+      "model": "openai",
+      "claim": "KIA uses generative AI, semantic search and RAG to centralise institutional knowledge.",
+      "status": "confirmed",
+      "source": "s5"
+    },
+    {
+      "model": "openai",
+      "claim": "GAMA processes documents with AI and was developed by the Center for Artificial Intelligence & Analytics.",
+      "status": "confirmed",
+      "source": "s9",
+      "note": "The cited press-release PDF returns 404; confirmed on ECO's report of the press release and in the 2025 report."
+    },
+    {
+      "model": "openai",
+      "claim": "The speech bot MARIA, developed by the Advanced Analytics centre and Fidelidade Assistance, won IDC's Best Insurance Project award.",
+      "status": "confirmed",
+      "source": "s10"
+    },
+    {
+      "model": "openai",
+      "claim": "The 2024 non-financial statements list a risk around regulatory compliance in digital innovation and AI.",
+      "status": "confirmed",
+      "source": "s6"
+    },
+    {
+      "model": "gemini",
+      "claim": "Fidelidade is a leading Portuguese insurer offering life, health and property cover.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "gemini",
+      "claim": "Fidelidade runs an AI virtual assistant for customer service.",
+      "status": "confirmed",
+      "source": "s1",
+      "note": "Trusty, on the home page and in the app."
+    },
+    {
+      "model": "gemini",
+      "claim": "The virtual assistant accesses policy databases, processes claims information and interacts with CRM systems.",
+      "status": "not-found",
+      "source": "s1",
+      "note": "The home page names Trusty but says nothing of the systems it reaches; the claims page says only that roadside assistance can be requested through it."
+    },
+    {
+      "model": "gemini",
+      "claim": "Fidelidade has invested significantly in a digital transformation programme implementing AI across the insurance value chain.",
+      "status": "confirmed",
+      "source": "s5",
+      "note": "Not on the cited home page; the 2025 report describes a structured AI strategy and continued AI investment."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Fidelidade is a Lisbon-based life and non-life insurer present in 14 countries with a leading share of the Portuguese market.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "openrouter",
+      "claim": "GAMA is an in-house intelligent document-processing system for insurance paperwork, from claims to reimbursements.",
+      "status": "confirmed",
+      "source": "s8"
+    },
+    {
+      "model": "openrouter",
+      "claim": "GAMA struggles with some folded accident declarations and phone-photographed forms.",
+      "status": "confirmed",
+      "source": "s8"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Claims and reimbursement processing reaches accident declarations, photos of documents and reimbursement paperwork.",
+      "status": "confirmed",
+      "source": "s8",
+      "note": "The cited ECO December 2024 article describes document processing in general; the accident declarations and photographs are in ECO's April 2025 article."
+    },
+    {
+      "model": "openrouter",
+      "claim": "KAI, built by the Center for Artificial Intelligence & Analytics, answers complex questions on policies, procedures and coverage almost instantly.",
+      "status": "confirmed",
+      "source": "s11"
+    },
+    {
+      "model": "openrouter",
+      "claim": "KAI's knowledge base can be edited by business experts in real time.",
+      "status": "confirmed",
+      "source": "s11"
+    },
+    {
+      "model": "openrouter",
+      "claim": "KAI connects a language model to external systems and supplies knowledge to the company's other AI systems.",
+      "status": "confirmed",
+      "source": "s11"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Trusty is a virtual assistant on Fidelidade's website, with chat also available via WhatsApp.",
+      "status": "confirmed",
+      "source": "s1",
+      "note": "The home page lists Trusty and WhatsApp as separate channels; it does not say Trusty runs on WhatsApp."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Fidelidade has integrated Coalex.ai's trust layer to keep its autonomous agents compliant.",
+      "status": "confirmed",
+      "source": "s12",
+      "note": "Third-party press only; Fidelidade publishes nothing about it."
+    },
+    {
+      "model": "openrouter",
+      "claim": "Coalex.ai monitors autonomous agents in real time and scores their actions on a 0 to 100 health index.",
+      "status": "confirmed",
+      "source": "s12"
+    },
+    {
+      "model": "openrouter",
+      "claim": "GAMA won Best Future of Work Project and Best Insurance Project at the Portugal Digital Awards 2024, and the 2024 National Innovation Prize (Workplace Transformation).",
+      "status": "confirmed",
+      "source": "s8"
+    },
+    {
+      "model": "openrouter",
+      "claim": "KAI won the insurance category of the Excellence in Data & AI 2026 awards.",
+      "status": "confirmed",
+      "source": "s11"
+    },
+    {
+      "model": "openrouter",
+      "claim": "In April 2025 Fidelidade was considering selling its document-processing AI to third parties after several purchase proposals.",
+      "status": "confirmed",
+      "source": "s8"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Fidelidade has a 28.1% market share and more than 6 million clients.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Gross written premiums reached 6,529 million euros in 2025.",
+      "status": "confirmed",
+      "source": "s2"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Fosun holds about 85% of Fidelidade's capital.",
+      "status": "confirmed",
+      "source": "s16"
+    },
+    {
+      "model": "openrouter",
+      "claim": "Fidelidade launched Longevity IA in June 2026, which uses a questionnaire on habits and lifestyle to project the user's life path.",
+      "status": "confirmed",
+      "source": "s17",
+      "note": "The article is dated 21 June 2026; it does not give an exact launch date."
+    }
+  ],
+  "questions": [
+    "GAMA processes more than half of accident declarations without a person: at what point, if any, does a claims handler see a case before the customer is told or paid?",
+    "Your AI director said all communication with customers is produced by language models: which messages are reviewed by a person before they are sent?",
+    "What can a caller reach after Contact IA's voice authentication, and what will the planned self-service let it change on a policy?",
+    "Which external systems can Knowledge AI's language-model layer reach, can it write to any of them, and which AI systems does it feed?",
+    "A press report says you integrated Coalex.ai to keep your autonomous agents compliant: which agents are these, and what does a flagged action trigger?"
+  ],
+  "reading": {
+    "by": "a reading agent: a Claude Code sub-agent of xray@web-summit.dinis, one per subject",
+    "tool_calls": 53,
+    "seconds": 409,
+    "tokens_thousands": 174,
+    "finished": "2026-11-07T21:25Z"
+  },
+  "review": {
+    "by": "xray@web-summit.dinis",
+    "on": "2026-11-07",
+    "notes": [
+      "Softened the tagline: the AI director's spoken remark is given as reported, not as a headline fact.",
+      "Removed two documented limits from the incidents: not events."
+    ]
+  }
+}

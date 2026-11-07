@@ -1,0 +1,612 @@
+{
+ "subject": "Manus AI (manus.im), the autonomous agent",
+ "kind": "company",
+ "slug": "manus-ai",
+ "run_at": "2026-11-07T19:08:52.457Z",
+ "note": "What each model said, as leads: not facts until their sources are read.",
+ "cost_usd": 0.1201,
+ "agents": [
+  {
+   "id": "perplexity",
+   "label": "Perplexity search",
+   "model": "perplexity/sonar",
+   "ms": 8002,
+   "cost_usd": 0.0060786,
+   "tokens": {
+    "in": 215,
+    "out": 926
+   },
+   "finish": "stop",
+   "citations": [
+    {
+     "url": "https://open.manus.im/docs/v2/agents-overview",
+     "title": "Agents"
+    },
+    {
+     "url": "https://manus.im/en/tools",
+     "title": "Manus AI Agent Toolkit for Delivering Work"
+    },
+    {
+     "url": "https://manus.im/docs/introduction/welcome",
+     "title": "Welcome - Manus Documentation"
+    },
+    {
+     "url": "https://manus.im/solutions/product",
+     "title": "Manus for Product Management: AI Agent for Product Management ..."
+    },
+    {
+     "url": "https://manus.im/blog/manus-agents-telegram",
+     "title": "Your Personal Agent, Everywhere You Are"
+    },
+    {
+     "url": "https://manus.im/solutions/marketing",
+     "title": "AI Agent for Marketing Automation"
+    },
+    {
+     "url": "https://www.manus.im/download",
+     "title": "Download Manus | Manus AI"
+    },
+    {
+     "url": "https://manus.im/features",
+     "title": "Manus Features: Build, Create, Research and Automate"
+    },
+    {
+     "url": "https://www.manus.im/blog",
+     "title": "Manus"
+    },
+    {
+     "url": "https://manus.im/about",
+     "title": "About US"
+    },
+    {
+     "url": "https://manus.im/",
+     "title": "Manus: Hands On AI"
+    },
+    {
+     "url": "https://help.manus.im/en/articles/15595028-verify-before-you-act",
+     "title": "Verify before you act"
+    },
+    {
+     "url": "https://manus.im/features/agent-skills",
+     "title": "Build custom AI workflows with Manus Agent Skills | AI automation"
+    },
+    {
+     "url": "https://manus.im/docs/features/browser-operator",
+     "title": "Browser Operator - Manus Documentation"
+    },
+    {
+     "url": "https://manus.im/connectors/asana",
+     "title": "Asana AI Agent and MCP: Plan, Track and Report Work"
+    }
+   ],
+   "answer_urls": [
+    "https://open.manus.im/docs/v2/agents-overview",
+    "https://manus.im/docs/features/browser-operator",
+    "https://manus.im/blog/manus-agents-telegram",
+    "https://manus.im/solutions/product",
+    "https://manus.im/solutions/marketing",
+    "https://manus.im/connectors/asana",
+    "https://www.manus.im/blog",
+    "https://help.manus.im/en/articles/15595028-verify-before-you-act",
+    "https://manus.im/about",
+    "https://www.manus.im/download",
+    "https://manus.im/features",
+    "https://manus.im/features/agent-skills"
+   ],
+   "answer": {
+    "what_it_does": "Manus AI is an autonomous general AI agent designed to complete tasks and deliver finished work, not just answer questions.[3][8] It operates as a virtual colleague with planning, execution, and delivery capabilities inside a sandboxed environment with internet access, a persistent file system, and software-installation ability.[3]",
+    "ai_agents": [
+     {
+      "name": "Default IM (Instant Messaging) agent",
+      "what_it_does": "A general-purpose default agent included with every account for conversations and task handling.[1]",
+      "actions": [
+       "general-purpose conversations",
+       "manage and interact with tasks via API",
+       "persistent main task conversation thread"
+      ],
+      "source": "https://open.manus.im/docs/v2/agents-overview"
+     },
+     {
+      "name": "Custom Manus agents",
+      "what_it_does": "Custom AI entities in Manus that can be created and tailored for specific use cases.[1]",
+      "actions": [
+       "customize nickname and description",
+       "handle a main task thread",
+       "interact through API endpoints",
+       "be created in Cue app"
+      ],
+      "source": "https://open.manus.im/docs/v2/agents-overview"
+     },
+     {
+      "name": "Manus Browser Operator",
+      "what_it_does": "A browser extension that turns a web browser into an autonomous agent that can perform multi-step web workflows on a user’s behalf.[14]",
+      "actions": [
+       "use the local browser",
+       "use existing logins and sessions",
+       "navigate websites",
+       "click through workflows",
+       "execute multi-step tasks without continuous supervision"
+      ],
+      "source": "https://manus.im/docs/features/browser-operator"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Research and reporting",
+      "who_uses_it": "People needing completed research outputs, structured reports, or PDF deliverables.[5][8]",
+      "what_the_agent_can_reach": [
+       "web pages and online sources",
+       "structured reports",
+       "PDF outputs",
+       "internet-accessible information"
+      ],
+      "source": "https://manus.im/blog/manus-agents-telegram"
+     },
+     {
+      "name": "Product management",
+      "who_uses_it": "Product managers and research teams.[4]",
+      "what_the_agent_can_reach": [
+       "product research data",
+       "planning artifacts",
+       "workflow outputs"
+      ],
+      "source": "https://manus.im/solutions/product"
+     },
+     {
+      "name": "Marketing automation",
+      "who_uses_it": "Marketing teams.[6]",
+      "what_the_agent_can_reach": [
+       "marketing workflows",
+       "campaign assets",
+       "recurring work automation"
+      ],
+      "source": "https://manus.im/solutions/marketing"
+     },
+     {
+      "name": "Work management in Asana",
+      "who_uses_it": "Users with an Asana account connected to Manus.[15]",
+      "what_the_agent_can_reach": [
+       "Asana tasks",
+       "projects",
+       "goals",
+       "status reports",
+       "connected files and apps"
+      ],
+      "source": "https://manus.im/connectors/asana"
+     },
+     {
+      "name": "Workspace automation in Slack",
+      "who_uses_it": "Teams using Slack as a workspace hub.[9]",
+      "what_the_agent_can_reach": [
+       "workspace messages",
+       "autonomous task execution",
+       "connected work context"
+      ],
+      "source": "https://www.manus.im/blog"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Manus advises users to verify important details through official or authoritative sources before acting, indicating a risk of acting on unverified outputs.[12]",
+      "when": "2026-06-23",
+      "source": "https://help.manus.im/en/articles/15595028-verify-before-you-act"
+     },
+     {
+      "what": "Manus Browser Operator can perform tasks using existing logins and sessions in a local browser, which creates operational risk if delegated actions are misused.[14]",
+      "when": "2026-11-04",
+      "source": "https://manus.im/docs/features/browser-operator"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Manus says it builds general AI agents as the 'Action Engine for life.'",
+      "source": "https://manus.im/about"
+     },
+     {
+      "claim": "Manus 2.0 includes a cascade agent harness, Cloud Computer, Automations, Manus Studio, and Cue.",
+      "source": "https://www.manus.im/blog"
+     },
+     {
+      "claim": "Manus is available for macOS, Windows, iOS, and Android.",
+      "source": "https://www.manus.im/download"
+     },
+     {
+      "claim": "Manus features include building apps, creating media, researching the web, automating recurring work, and connecting tools already in use.",
+      "source": "https://manus.im/features"
+     },
+     {
+      "claim": "Manus Agent Skills are executed end-to-end in a secure sandbox environment.",
+      "source": "https://manus.im/features/agent-skills"
+     },
+     {
+      "claim": "Manus agents can be accessed and managed via API.",
+      "source": "https://open.manus.im/docs/v2/agents-overview"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openai",
+   "label": "OpenAI search",
+   "model": "openai/gpt-5.4-nano:online",
+   "ms": 23429,
+   "cost_usd": 0.0461192985,
+   "tokens": {
+    "in": 21882,
+    "out": 1767
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://help.manus.im/en/articles/17768086-what-are-the-differences-between-chat-mode-and-agent-mode",
+    "https://manus.im/blog/introducing-wide-research",
+    "https://www.manus.im/features/projects",
+    "https://www.manus.im/connectors/notion",
+    "https://manus.im/uk/blog/introducing-automations",
+    "https://help.manus.im/en/articles/14320382-troubleshooting-the-my-computer-feature-not-appearing-or-connecting",
+    "https://manus.im/uk/blog/a-note-to-our-users",
+    "https://help.manus.im/en/articles/15392111-what-is-the-cloud-computer?trk=article-ssr-frontend-pulse_little-text-block",
+    "https://help.manus.im/en/articles/12231777-how-can-i-use-manus-connectors",
+    "https://open.manus.im/docs/v2/introduction"
+   ],
+   "answer": {
+    "what_it_does": "Manus AI is an autonomous AI agent platform that executes complex, multi-step tasks independently. It runs work in a cloud virtual machine and can use tools/connectors to carry out workflows like research, content/project creation, and automation.",
+    "ai_agents": [
+     {
+      "name": "Manus (Autonomous Agent Platform)",
+      "what_it_does": "Plans and executes multi-step tasks in an agent mode, including complex workflows beyond simple chat.",
+      "actions": [
+       "Execute tasks using an underlying cloud virtual machine / sandbox environment for running workloads",
+       "Use agent-mode workflows for complex tasks (e.g., creating projects such as websites/slides/videos via platform features)",
+       "Run “Wide Research” via parallel processing / agent-to-agent collaboration for large information-gathering tasks",
+       "Interact with connected third-party services via connectors / integration layer (e.g., Notion MCP, Notion connector) and update external workspaces",
+       "Use “Automations” that can trigger runs from connected apps/systems (integration list includes common SaaS apps)",
+       "Use “My Computer” / Desktop capability to execute command line instructions and work with local files/apps via the desktop app"
+      ],
+      "source": "https://help.manus.im/en/articles/17768086-what-are-the-differences-between-chat-mode-and-agent-mode"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Parallelized high-volume research and synthesis",
+      "who_uses_it": "Pro users / teams running research-intensive workflows",
+      "what_the_agent_can_reach": [
+       "Up to hundreds of items/sources in parallel research workflows (within Manus’s environment)",
+       "Connected documentation/workspace systems used as inputs/outputs for research results (e.g., Notion pages/databases via connectors)"
+      ],
+      "source": "https://manus.im/blog/introducing-wide-research"
+     },
+     {
+      "name": "Project-based execution with reusable instructions, files, and skills",
+      "who_uses_it": "Individuals and teams using Manus Projects",
+      "what_the_agent_can_reach": [
+       "Project context artifacts (instructions, files/sources) stored within Manus project workspaces",
+       "Connected tools (examples listed include Gmail/Google/Slack/GitHub within Teams/Projects positioning) depending on user authorization",
+       "Team collaboration spaces and shared project context (collaboration permissions controlled by the team/workspace)"
+      ],
+      "source": "https://www.manus.im/features/projects"
+     },
+     {
+      "name": "Notion knowledge/workflow automation (read/update/write)",
+      "who_uses_it": "Teams using Notion as a project tracker or knowledge base",
+      "what_the_agent_can_reach": [
+       "Notion pages and databases (read/search; create; update properties and comments)",
+       "Notion project management artifacts such as task statuses/owners/due dates and weekly report pages",
+       "Scheduled/triggered automations tied to Notion connector actions"
+      ],
+      "source": "https://www.manus.im/connectors/notion"
+     },
+     {
+      "name": "Scheduled or event-driven automations across SaaS tools",
+      "who_uses_it": "Teams building recurring workflows with Manus Automations",
+      "what_the_agent_can_reach": [
+       "Trigger events from connected apps (Apps list includes Gmail, Outlook, Google Calendar, GitHub, Shopify, Slack, Notion, RSS, and Webhook—depending on user connections/authorizations)",
+       "Webhook targets configured by users for workflow integration"
+      ],
+      "source": "https://manus.im/uk/blog/introducing-automations"
+     },
+     {
+      "name": "Local desktop execution via “My Computer”",
+      "who_uses_it": "Users of the Manus Desktop app who want the agent to run work on their local machine",
+      "what_the_agent_can_reach": [
+       "Local terminal/command-line (CLI) on the user’s computer via the desktop app",
+       "Local files/folders explicitly added for the feature to work with",
+       "Installed local applications launched through the Desktop feature"
+      ],
+      "source": "https://help.manus.im/en/articles/14320382-troubleshooting-the-my-computer-feature-not-appearing-or-connecting"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Account/data disruption involving deletion of certain user data created on/after December 29, 2025 during Manus’s transition back to independent operations; Manus states it was not caused by a data breach or security incident.",
+      "when": "Data generated on/after December 29, 2025 was deleted from 8:00 a.m. on August 23 through August 24, 2026 (SGT); affected users could back up until 7:59 a.m. on August 23, 2026 (SGT), and restore starting 8:00 a.m. on August 25, 2026 (SGT).",
+      "source": "https://manus.im/uk/blog/a-note-to-our-users"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Manus provides an agent platform that executes complex tasks independently (agent mode).",
+      "source": "https://help.manus.im/en/articles/17768086-what-are-the-differences-between-chat-mode-and-agent-mode"
+     },
+     {
+      "claim": "Manus offers a dedicated cloud VM called the “Manus Cloud Computer” that runs applications/bots/scripts 24/7 and differs from a standard temporary sandbox.",
+      "source": "https://help.manus.im/en/articles/15392111-what-is-the-cloud-computer?trk=article-ssr-frontend-pulse_little-text-block"
+     },
+     {
+      "claim": "Manus provides connectors and an integration layer (including MCP server connectivity) so Manus can securely access third-party data/APIs and execute workflows.",
+      "source": "https://help.manus.im/en/articles/12231777-how-can-i-use-manus-connectors"
+     },
+     {
+      "claim": "The Manus API allows programmatic creation and management of AI agent tasks.",
+      "source": "https://open.manus.im/docs/v2/introduction"
+     },
+     {
+      "claim": "Manus’s “Wide Research” is described as a system-level mechanism for parallel processing and agent-to-agent collaboration for large-scale research tasks.",
+      "source": "https://manus.im/blog/introducing-wide-research"
+     }
+    ]
+   }
+  },
+  {
+   "id": "gemini",
+   "label": "Gemini search",
+   "model": "google/gemini-3.1-flash-lite:online",
+   "ms": 4972,
+   "cost_usd": 0.0429207075,
+   "tokens": {
+    "in": 233,
+    "out": 864
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://manus.im",
+    "https://aurascape.ai",
+    "https://fairinstitute.org",
+    "https://wikipedia.org"
+   ],
+   "answer": {
+    "what_it_does": "Manus AI is an autonomous agent designed to handle complex, multi-step tasks by breaking them down, executing them in a sandboxed virtual computer, and delivering finished work products. It differentiates itself from traditional chatbots by performing active operations like web browsing, code execution, file management, and software interaction without requiring step-by-step guidance.",
+    "ai_agents": [
+     {
+      "name": "Manus AI",
+      "what_it_does": "An autonomous 'action engine' that functions as a virtual colleague, capable of independent research, data analysis, coding, and content creation.",
+      "actions": [
+       "Real-time web browsing and navigation",
+       "Code execution and software testing in a sandbox environment",
+       "Automated file system management",
+       "Integration with third-party apps like Gmail, Notion, Slack, and GitHub",
+       "Creation of digital artifacts such as websites, slide decks, and reports"
+      ],
+      "source": "https://manus.im"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Research and Analysis",
+      "who_uses_it": "Researchers and data analysts",
+      "what_the_agent_can_reach": [
+       "Public web data",
+       "Uploaded datasets (CSV files)",
+       "Internal data via connected SaaS integrations"
+      ],
+      "source": "https://manus.im"
+     },
+     {
+      "name": "Rapid Prototyping",
+      "who_uses_it": "Developers and entrepreneurs",
+      "what_the_agent_can_reach": [
+       "Code editors",
+       "Web hosting platforms",
+       "API endpoints"
+      ],
+      "source": "https://manus.im"
+     },
+     {
+      "name": "Support Operations",
+      "who_uses_it": "Operations teams",
+      "what_the_agent_can_reach": [
+       "Knowledge bases",
+       "Ticketing systems",
+       "QA audit logs"
+      ],
+      "source": "https://manus.im"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "SilentBridge zero-click indirect prompt injection vulnerabilities",
+      "when": "June 2026",
+      "source": "https://aurascape.ai"
+     },
+     {
+      "what": "Risk of autonomous agents performing unintended actions due to untrusted content influencing privileged tools",
+      "when": "June 2026",
+      "source": "https://aurascape.ai"
+     },
+     {
+      "what": "Potential for security misconfiguration where AI incorrectly identifies malicious traffic as benign or blocks legitimate traffic",
+      "when": "April 2025",
+      "source": "https://fairinstitute.org"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Manus AI was developed by Butterfly Effect Pte. Ltd., a company founded by Xiao Hong.",
+      "source": "https://wikipedia.org"
+     },
+     {
+      "claim": "In late 2025, Meta announced an agreement to acquire Manus in a deal reportedly valued between US$2-3 billion.",
+      "source": "https://wikipedia.org"
+     },
+     {
+      "claim": "Manus operates using a credit-based system where usage is metered by complexity, with a free tier available.",
+      "source": "https://manus.im"
+     },
+     {
+      "claim": "The name 'Manus' is Latin for 'hand', reflecting the tool's focus on execution rather than just text generation.",
+      "source": "https://manus.im"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openrouter",
+   "label": "OpenRouter web search",
+   "model": "anthropic/claude-haiku-5.5",
+   "plugins": [
+    {
+     "id": "web",
+     "max_results": 6
+    }
+   ],
+   "max_tokens": 7000,
+   "ms": 17636,
+   "cost_usd": 0.024980868,
+   "tokens": {
+    "in": 33642,
+    "out": 3738
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://manus.im/docs/introduction/welcome",
+    "https://manus.im/features/manus-browser-operator",
+    "https://manus.im/about",
+    "https://www.baytechconsulting.com/blog/manus-ai-an-analytical-guide-to-the-autonomous-ai-agent-2025",
+    "https://www.darkreading.com/application-security/prompt-injection-bug-agentic-ai-app-manus",
+    "https://aviatrix.ai/threat-research-center/manus-prompt-injection-vulnerability-2026/",
+    "https://aurascape.ai/resources/auralabs-research/silentbridge-zero-click-agent-takeover-meta-manus/",
+    "https://aurascape.ai/answers/manus-ai-security-compliance-risks/",
+    "https://en.wikipedia.org/wiki/Manus_(AI_agent",
+    "https://arxiv.org/abs/2505.02024",
+    "https://oodaloop.com/briefs/cyber/prompt-injection-vulnerability-hits-4b-agentic-ai-platform-manus-ai/",
+    "https://manus.im/",
+    "https://sqmagazine.co.uk/manus-prompt-injection-bug/"
+   ],
+   "answer": {
+    "what_it_does": "Manus is an autonomous general-purpose AI agent that plans and carries out multi-step tasks in its own sandboxed virtual computer, with internet access and a persistent file system. It can also connect to third-party services such as Gmail, Notion, Slack, and GitHub, and act on a user's behalf in those accounts.",
+    "ai_agents": [
+     {
+      "name": "Manus (core agent)",
+      "what_it_does": "A general-purpose agent that takes a high-level goal, breaks it into steps, and executes them end to end instead of only answering questions.",
+      "actions": [
+       "Browses the web and retrieves content",
+       "Runs code and installs software inside a sandbox virtual computer",
+       "Creates and keeps files in a persistent file system",
+       "Calls connected services such as Gmail, Notion, Slack and GitHub during a task, using the user's granted access tokens",
+       "Coordinates specialized sub-agents such as planners and knowledge agents"
+      ],
+      "source": "https://manus.im/docs/introduction/welcome"
+     },
+     {
+      "name": "Manus Browser Operator",
+      "what_it_does": "A browser-extension mode in which the Manus agent operates the user's existing logged-in browser session to complete tasks.",
+      "actions": [
+       "Navigates sites, clicks, fills forms and extracts data in the user's current browser session",
+       "Uses existing logins and active tabs without seeing passwords, per the vendor",
+       "Access can be granted and revoked by the user at any time"
+      ],
+      "source": "https://manus.im/features/manus-browser-operator"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Business workflow automation and research",
+      "who_uses_it": "Businesses and their teams, per the vendor's own positioning for scaling research and workflows",
+      "what_the_agent_can_reach": [
+       "Connected third-party accounts such as Gmail, Notion, Slack and GitHub",
+       "Web pages and search results it reads while working",
+       "Documents and files in its sandbox file system",
+       "Logged-in browser sessions when Browser Operator is enabled"
+      ],
+      "source": "https://manus.im/about"
+     },
+     {
+      "name": "Knowledge work for professionals and technologists",
+      "who_uses_it": "Professionals and technologists seeking automation of knowledge work, per an independent analysis",
+      "what_the_agent_can_reach": [
+       "Email inboxes, for example summarizing or acting on messages",
+       "Job application portals, as in the vendor's example of applying to listed roles with an attached resume",
+       "Financial and market data, in analyst-described scenarios"
+      ],
+      "source": "https://www.baytechconsulting.com/blog/manus-ai-an-analytical-guide-to-the-autonomous-ai-agent-2025"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Salt Labs researchers found an indirect prompt-injection flaw in which a crafted email could get Manus to run code and reach connected Gmail, cloud storage and code repository accounts; the flaw was patched after Meta's bug-bounty program triaged it.",
+      "when": "Disclosed September 24, 2026",
+      "source": "https://www.darkreading.com/application-security/prompt-injection-bug-agentic-ai-app-manus"
+     },
+     {
+      "what": "Researchers used an obfuscation technique to slip past Manus's security filter; the filter's warning fired only after the payload had already executed, and a remote-code-execution bug was used to open a reverse shell that exposed credentials and tokens for connected services.",
+      "when": "September 2026",
+      "source": "https://aviatrix.ai/threat-research-center/manus-prompt-injection-vulnerability-2026/"
+     },
+     {
+      "what": "Aurascape AuraLabs documented SilentBridge, a class of zero-click indirect prompt-injection vulnerabilities in the Manus agent covering web pages, documents and search results, which the vendor was told about and addressed before exploitation in the wild, per the researchers.",
+      "when": "Published February 24, 2026",
+      "source": "https://aurascape.ai/resources/auralabs-research/silentbridge-zero-click-agent-takeover-meta-manus/"
+     },
+     {
+      "what": "Enterprise risk analysis flags shadow adoption, where employees sign up on personal or free-tier accounts outside enterprise data terms, and agents that keep permissions and credentials after their task ends.",
+      "when": "Last updated June 2026",
+      "source": "https://aurascape.ai/answers/manus-ai-security-compliance-risks/"
+     },
+     {
+      "what": "Chinese authorities opened an evaluative investigation into Meta's acquisition of Manus over export-control, technology-transfer and foreign-investment rules, and regulators reportedly blocked the deal.",
+      "when": "January 2026 investigation; deal reportedly blocked April 2026",
+      "source": "https://en.wikipedia.org/wiki/Manus_(AI_agent)"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Manus launched in invitation-only beta on March 6, 2025.",
+      "source": "https://en.wikipedia.org/wiki/Manus_(AI_agent)"
+     },
+     {
+      "claim": "Manus is developed by Butterfly Effect, a company founded in China and based in Singapore, whose Singapore entity took over operating the product outside China.",
+      "source": "https://en.wikipedia.org/wiki/Manus_(AI_agent)"
+     },
+     {
+      "claim": "Manus is operated by Butterfly Effect Pte. Ltd., based in Singapore.",
+      "source": "https://aurascape.ai/answers/manus-ai-security-compliance-risks/"
+     },
+     {
+      "claim": "Some independent sources name Monica.im as the developer, a discrepancy with the Butterfly Effect attribution given elsewhere.",
+      "source": "https://arxiv.org/abs/2505.02024"
+     },
+     {
+      "claim": "Meta announced in December 2025 that it would acquire Manus, with the deal reportedly valued between US$2 and 3 billion.",
+      "source": "https://en.wikipedia.org/wiki/Manus_(AI_agent)"
+     },
+     {
+      "claim": "Chinese regulators reportedly blocked Meta's planned acquisition of Manus in April 2026.",
+      "source": "https://oodaloop.com/briefs/cyber/prompt-injection-vulnerability-hits-4b-agentic-ai-platform-manus-ai/"
+     },
+     {
+      "claim": "Manus blocked access from mainland China and closed its Chinese-language social media accounts.",
+      "source": "https://en.wikipedia.org/wiki/Manus_(AI_agent)"
+     },
+     {
+      "claim": "Manus offers connectors to Gmail, Notion, Slack and GitHub, giving the agent access to these services during a task.",
+      "source": "https://manus.im/docs/introduction/welcome"
+     },
+     {
+      "claim": "Manus is described by its vendor as an action engine that executes tasks and automates workflows.",
+      "source": "https://manus.im/"
+     },
+     {
+      "claim": "Reporting says Meta had begun an operational separation from Manus and halted data sharing with it, while Manus's own site still describes it as part of Meta; the company's ownership status is therefore unsettled and should be confirmed in contracts and trust documentation.",
+      "source": "https://aurascape.ai/answers/manus-ai-security-compliance-risks/"
+     },
+     {
+      "claim": "Manus is reportedly now raising fresh funding at a higher valuation, after reports of a $4 billion valuation.",
+      "source": "https://sqmagazine.co.uk/manus-prompt-injection-bug/"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -2,6 +2,11 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 7 November 2026, about 22:00 UTC (prompted by Angelo: "Yep push it")
+
+- **The interactive article is live on PrompTugal.news** (newsroom 3c4a60fd, v0.1.644), pushed by this desk at Angelo's word instead of waiting for dev@PrompTugal.dinis's review; the commit asks dev@ to review after the fact and tells Dinis. Checked on the live site: every control, phone and desktop, no errors; tables and lists without scripts.
+- The team site's interactive copy stays; Angelo to decide whether it stays a mirror or points to the article. The Sunday guide post in the LinkedIn pack now has one link, the article.
+
 ## 7 November 2026, evening (prompted by Angelo: "Please go ahead")
 
 - **The guide made interactive inside the PrompTugal.news article**, on the newsroom branch `work/writer-angelo` (ccd77f7b), for dev@PrompTugal.dinis to review and bring onto dev: a feature (`newsroom/build/features/guides.mjs`), a script and stylesheet (`assets/guides/`) that read the article's own tables, and a "Find your guide" section with the questionnaire as markdown. Gate OK; tested at phone and desktop, light and dark, and with scripts off.

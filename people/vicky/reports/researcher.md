@@ -91,3 +91,7 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 ## Sat 7 Nov 2026, 15:30 UTC run
 
 - decisions.md read first (new commits pass the guard; no HOLD.md): applied SA16, P1 to P3 word for word in prompts/researcher.md and in my scheduled task's prompt (changed at 15:36 UTC); 0 captures went into vault 41j3e9s9 ([Executive Digest](https://executivedigest.sapo.pt/) and the rest: protests and repeats only). state: idle
+
+## Sat 7 Nov 2026, 19:30 UTC run
+
+- state: idle

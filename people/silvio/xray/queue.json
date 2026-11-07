@@ -1,0 +1,90 @@
+{
+  "about": "Proposal 2 (Silvio's team): the prepared X-rays as a managed queue. Subjects proposed by conductor@the team site.silvio for xray@web-summit.dinis to accept; xray@ owns the runs, accountant@ the budgets. Silvio's world 1 (hospitality, tourism and the Algarve) after the three the brief names, so each X-ray also opens an outreach conversation. States: proposed, accepted, running, ready. Moved to the team site with X-ray (WS-195), 7 November.",
+  "updated": "2026-11-07",
+  "subjects": [
+    {
+      "subject": "Algarve Evolution",
+      "kind": "company",
+      "why": "world 1; the one warm contact (Dinis's meeting)",
+      "state": "proposed",
+      "owner": "outreach@web-summit.silvio follows up"
+    },
+    {
+      "subject": "Booking.com",
+      "kind": "company",
+      "why": "world 1; event partner at Web Summit 2026",
+      "state": "proposed",
+      "owner": "outreach@web-summit.silvio follows up"
+    },
+    {
+      "subject": "Turismo de Portugal",
+      "kind": "company",
+      "why": "world 1; event partner at Web Summit 2026",
+      "state": "proposed",
+      "owner": "outreach@web-summit.silvio follows up"
+    },
+    {
+      "subject": "DIG-IN",
+      "kind": "company",
+      "why": "world 1; data on the hospitality economy",
+      "state": "proposed",
+      "owner": "outreach@web-summit.silvio follows up"
+    },
+    {
+      "subject": "sheerME",
+      "kind": "company",
+      "why": "world 1; bookings and payments",
+      "state": "proposed",
+      "owner": "outreach@web-summit.silvio follows up"
+    },
+    {
+      "subject": "Altegio",
+      "kind": "company",
+      "why": "world 1; bookings for service businesses",
+      "state": "proposed",
+      "owner": "outreach@web-summit.silvio follows up"
+    },
+    {
+      "subject": "Just Travel",
+      "kind": "company",
+      "why": "world 1; travel platform",
+      "state": "proposed",
+      "owner": "outreach@web-summit.silvio follows up"
+    },
+    {
+      "subject": "Amex GBT",
+      "kind": "company",
+      "why": "world 1; business travel; speaker at Web Summit 2026",
+      "state": "proposed",
+      "owner": "outreach@web-summit.silvio follows up"
+    },
+    {
+      "subject": "hospitality in the Algarve",
+      "kind": "industry",
+      "why": "world 1 as an industry X-ray: hotels, bookings, guest messaging",
+      "state": "proposed",
+      "owner": "xray@web-summit.dinis"
+    },
+    {
+      "subject": "Feedzai",
+      "kind": "company",
+      "why": "Who let the agent in?, Thursday 12 November",
+      "state": "proposed",
+      "owner": "xray@web-summit.dinis"
+    },
+    {
+      "subject": "Fidelidade",
+      "kind": "company",
+      "why": "largest Portuguese insurer, event partner",
+      "state": "proposed",
+      "owner": "xray@web-summit.dinis"
+    },
+    {
+      "subject": "hotel guest messaging with AI agents",
+      "kind": "use case",
+      "why": "world 1 as a use case",
+      "state": "proposed",
+      "owner": "xray@web-summit.dinis"
+    }
+  ]
+}

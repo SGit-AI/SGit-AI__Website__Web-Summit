@@ -1,0 +1,471 @@
+{
+ "subject": "AI customer-service agents that can issue refunds",
+ "kind": "use-case",
+ "slug": "refund-agents",
+ "run_at": "2026-11-07T18:34:05.554Z",
+ "note": "What each model said, as leads: not facts until their sources are read.",
+ "cost_usd": 0.0692,
+ "agents": [
+  {
+   "id": "perplexity",
+   "label": "Perplexity search",
+   "model": "perplexity/sonar",
+   "ms": 7475,
+   "cost_usd": 0.0065043,
+   "tokens": {
+    "in": 213,
+    "out": 1353
+   },
+   "finish": "stop",
+   "citations": [
+    {
+     "url": "https://www.intercom.com/learning-center/ai-agents-that-take-action",
+     "title": "AI Agent That Takes Action: Refunds & Cancellations"
+    },
+    {
+     "url": "https://fin.ai/solutions/ecommerce",
+     "title": "AI Agent for Ecommerce Customer Service | Fin"
+    },
+    {
+     "url": "https://www.twilio.com/en-us/blog/insights/ai-agent-order-status-refunds",
+     "title": "How to build an AI agent for order status and refunds | Twilio"
+    },
+    {
+     "url": "https://devrev.ai/blog/bounded-financial-actions-support-refund-guardrails",
+     "title": "Refund guardrails for AI agents: approval isn't payment"
+    },
+    {
+     "url": "https://chatfuel.com/returns-and-refunds",
+     "title": "Returns and refunds - Chatfuel"
+    },
+    {
+     "url": "https://auralis.ai/ai-agents/returns-refunds-agent/",
+     "title": "Returns & Refunds AI Agent | Auralis"
+    },
+    {
+     "url": "https://help.kustomer.com/en_us/categories/ai-agents-for-customers-10-ry7zIs2KWe",
+     "title": "AI Agents for Customers 1.0"
+    },
+    {
+     "url": "https://www.usefini.com/guides/ai-customer-service-software-refunds-cancellations-account-updates",
+     "title": "AI Customer Service Software for Refunds & Cancellations"
+    },
+    {
+     "url": "https://vapi.ai/custom-agents/customer_service_refund_status_updates",
+     "title": "Vapi - Build Advanced Voice AI Agents"
+    },
+    {
+     "url": "https://www.text.com/blog/ai-in-customer-service/",
+     "title": "AI in customer service: what it automates, breaks, and what ..."
+    },
+    {
+     "url": "https://www.nytimes.com/wirecutter/advice/bad-ai-customer-service/",
+     "title": "AI Has Taken Over the Customer Service Industry. Here's ..."
+    },
+    {
+     "url": "https://vapi.ai/custom-agents/refunds-returns-agent",
+     "title": "AI Voice Agent for Refunds and Returns"
+    },
+    {
+     "url": "https://www.usefini.com/guides/ai-agents-handle-refunds-end-to-end",
+     "title": "AI Agents That Handle Refunds End-to-End: 7 Tested 2026"
+    },
+    {
+     "url": "https://www.richpanel.com/learn/ai-actions-refund-order",
+     "title": "AI Refunds Under Your Policy Cap and Approval"
+    },
+    {
+     "url": "https://docs.x.ai/cookbook/examples/refund-agent-human-approval",
+     "title": "Human-in-the-Loop AI Agent: Approve Refunds with the Grok API ..."
+    }
+   ],
+   "answer_urls": [
+    "https://www.intercom.com/learning-center/ai-agents-that-take-action",
+    "https://fin.ai/solutions/ecommerce",
+    "https://www.twilio.com/en-us/blog/insights/ai-agent-order-status-refunds",
+    "https://chatfuel.com/returns-and-refunds",
+    "https://auralis.ai/ai-agents/returns-refunds-agent/",
+    "https://help.kustomer.com/en_us/categories/ai-agents-for-customers-10-ry7zIs2KWe",
+    "https://www.usefini.com/guides/ai-customer-service-software-refunds-cancellations-account-updates",
+    "https://devrev.ai/blog/bounded-financial-actions-support-refund-guardrails",
+    "https://www.richpanel.com/learn/ai-actions-refund-order"
+   ],
+   "answer": {
+    "what_it_does": "AI customer-service agents in this use case resolve support requests end-to-end by checking policy and account/order data, then issuing refunds, cancellations, or other account changes when rules are met.[1][2] They typically connect to billing, payment, order, and help-desk systems so they can verify eligibility, trigger payouts, and record the outcome in the support record.[1][3]",
+    "ai_agents": [
+     {
+      "name": "Intercom Fin",
+      "what_it_does": "Processes refunds, cancellations, account changes, and multi-step disputes end-to-end.",
+      "actions": [
+       "Connects to Shopify, Stripe, and other ecommerce/billing platforms",
+       "Checks order status",
+       "Processes returns and refunds",
+       "Updates account details directly"
+      ],
+      "source": "https://www.intercom.com/learning-center/ai-agents-that-take-action"
+     },
+     {
+      "name": "Fin (ecommerce)",
+      "what_it_does": "Resolves ecommerce support requests and can automatically issue refunds.",
+      "actions": [
+       "Verifies order details",
+       "Processes partial or full cancellations",
+       "Issues refunds automatically",
+       "Hands off to a human when needed"
+      ],
+      "source": "https://fin.ai/solutions/ecommerce"
+     },
+     {
+      "name": "Twilio refund agent pattern",
+      "what_it_does": "A reference architecture for building a refund-capable support agent.",
+      "actions": [
+       "Looks up orders",
+       "Checks refund eligibility",
+       "Initiates refunds through payment or order systems",
+       "Updates tickets in the help desk"
+      ],
+      "source": "https://www.twilio.com/en-us/blog/insights/ai-agent-order-status-refunds"
+     },
+     {
+      "name": "Chatfuel returns and refunds automation",
+      "what_it_does": "Handles return and refund requests in chat and escalates exceptions.",
+      "actions": [
+       "Replies in WhatsApp, Instagram, and Facebook Messenger",
+       "Explains eligibility from policy and FAQs",
+       "Collects order number and reason",
+       "Hands off exceptions to a person with chat history"
+      ],
+      "source": "https://chatfuel.com/returns-and-refunds"
+     },
+     {
+      "name": "Auralis Returns & Refunds AI Agent",
+      "what_it_does": "Walks customers through returns and processes eligible refunds within policy.",
+      "actions": [
+       "Checks order and return policy",
+       "Issues eligible returns/refunds through Autopilot",
+       "Records the action",
+       "Escalates out-of-policy cases to a human through Assist"
+      ],
+      "source": "https://auralis.ai/ai-agents/returns-refunds-agent/"
+     },
+     {
+      "name": "Kustomer AI Agents for Customers 1.0",
+      "what_it_does": "Runs a controlled refund workflow that requires review before processing.",
+      "actions": [
+       "Checks for existing refund requests",
+       "Creates refund requests",
+       "Creates returns",
+       "Sends cases to a refund reviewer before processing"
+      ],
+      "source": "https://help.kustomer.com/en_us/categories/ai-agents-for-customers-10-ry7zIs2KWe"
+     },
+     {
+      "name": "Fini AI customer service software",
+      "what_it_does": "Takes authenticated actions across billing, identity, and order systems for refunds and cancellations.",
+      "actions": [
+       "Issues refunds",
+       "Cancels subscriptions",
+       "Updates accounts",
+       "Acts inside the conversation with write-level access"
+      ],
+      "source": "https://www.usefini.com/guides/ai-customer-service-software-refunds-cancellations-account-updates"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "Ecommerce order refund support",
+      "who_uses_it": "Ecommerce merchants and support teams",
+      "what_the_agent_can_reach": [
+       "Order management systems",
+       "Shopify",
+       "Stripe and other billing platforms",
+       "Refund status and order history",
+       "Customers requesting refunds"
+      ],
+      "source": "https://www.intercom.com/learning-center/ai-agents-that-take-action"
+     },
+     {
+      "name": "Customer self-service refunds in chat",
+      "who_uses_it": "Consumer brands using messaging support",
+      "what_the_agent_can_reach": [
+       "WhatsApp",
+       "Instagram",
+       "Facebook Messenger",
+       "Return policy and FAQs",
+       "Customer order numbers and reasons",
+       "Human agents for escalations"
+      ],
+      "source": "https://chatfuel.com/returns-and-refunds"
+     },
+     {
+      "name": "Policy-gated financial actions",
+      "who_uses_it": "Support operations that require approval controls",
+      "what_the_agent_can_reach": [
+       "Refund eligibility rules",
+       "Payment processors or order systems",
+       "Named human approvers",
+       "Audit trail or support tickets"
+      ],
+      "source": "https://www.twilio.com/en-us/blog/insights/ai-agent-order-status-refunds"
+     },
+     {
+      "name": "Subscription cancellation and account adjustment",
+      "who_uses_it": "SaaS and subscription businesses",
+      "what_the_agent_can_reach": [
+       "Billing systems",
+       "Subscription records",
+       "Account settings",
+       "Customer support records",
+       "Refund and cancellation workflows"
+      ],
+      "source": "https://www.usefini.com/guides/ai-customer-service-software-refunds-cancellations-account-updates"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "Refund guardrails are needed because approval is not the same as payment; agents can prepare a correction without actually moving money unless policy allows it.",
+      "when": "2026-10-16",
+      "source": "https://devrev.ai/blog/bounded-financial-actions-support-refund-guardrails"
+     },
+     {
+      "what": "Agents may need human approval for refunds above a threshold or outside policy, with escalation required for exceptions.",
+      "when": "2026-10-21",
+      "source": "https://www.twilio.com/en-us/blog/insights/ai-agent-order-status-refunds"
+     },
+     {
+      "what": "Refunds can be blocked until a reviewer approves them, showing that automated refund workflows can be intentionally constrained to reduce risk.",
+      "when": "2026-10-26",
+      "source": "https://help.kustomer.com/en_us/categories/ai-agents-for-customers-10-ry7zIs2KWe"
+     },
+     {
+      "what": "Refund automation can fail safely by routing anything outside policy to a human instead of issuing money automatically.",
+      "when": "2026-09-24",
+      "source": "https://www.richpanel.com/learn/ai-actions-refund-order"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Some vendors explicitly market AI agents that can issue full or partial refunds directly in the support flow.",
+      "source": "https://www.intercom.com/learning-center/ai-agents-that-take-action"
+     },
+     {
+      "claim": "Refund agents often use tools for order lookup, eligibility checks, refund initiation, and ticket updates.",
+      "source": "https://www.twilio.com/en-us/blog/insights/ai-agent-order-status-refunds"
+     },
+     {
+      "claim": "Policy, identity confirmation, and escalation paths are standard controls in refund-capable agents.",
+      "source": "https://www.twilio.com/en-us/blog/insights/ai-agent-order-status-refunds"
+     },
+     {
+      "claim": "Refund-capable agents may touch payment systems, order systems, help desks, and customer messaging channels.",
+      "source": "https://www.usefini.com/guides/ai-customer-service-software-refunds-cancellations-account-updates"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openai",
+   "label": "OpenAI search",
+   "model": "openai/gpt-5.4-nano:online",
+   "ms": 13902,
+   "cost_usd": 0.0240319926,
+   "tokens": {
+    "in": 13252,
+    "out": 1834
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://docs.gorgias.com/en-US/ai-agent-actions-make-changes-to-shopify-orders-757792",
+    "https://www.twilio.com/en-us/blog/insights/ai-agent-order-status-refunds",
+    "https://support.zendesk.com/hc/en-us/articles/9570369117338-About-automated-resolution-tiers?trk=article-ssr-frontend-pulse_little-text-block",
+    "https://actionsure.ai/",
+    "https://arxiv.org/abs/2512.24415"
+   ],
+   "answer": {
+    "what_it_does": "AI customer-service agents interpret customer messages and determine whether a refund is warranted based on the customer request and store/order policy. When approved and eligible, they can execute backend actions to initiate refunds or equivalent financial remedies (e.g., cancel/unfulfilled return flows) and then confirm outcomes or escalate to a human.",
+    "ai_agents": [
+     {
+      "name": "Gorgias AI Agent (AI Agent Actions via ecommerce apps like Shopify)",
+      "what_it_does": "An AI support agent that can take customer-service actions by connecting to ecommerce tools (e.g., cancel orders / update shipping) to drive automated resolution workflows that may result in refunds depending on eligibility and configuration.",
+      "actions": [
+       "Uses connected ecommerce/app integrations and “Actions” to perform tasks such as canceling an order and updating order/shipping info (and enforces rules about when it can run).",
+       "Accesses customer and order context through the connected commerce platform (e.g., Shopify) from within Gorgias, then executes the configured actions only under supported conditions."
+      ],
+      "source": "https://docs.gorgias.com/en-US/ai-agent-actions-make-changes-to-shopify-orders-757792"
+     },
+     {
+      "name": "Twilio-led AI agent pattern for order status + refunds (tool calling + verification)",
+      "what_it_does": "A reference architecture for building an AI agent that can look up orders, confirm identity/eligibility, and then initiate refund processes via API tool calls once appropriate verification and customer approval are obtained.",
+      "actions": [
+       "Looks up order status through backend APIs (tool calling).",
+       "Uses Twilio Verify (OTP/one-time passcode) to confirm the customer controls the phone/email on file before any refund action runs.",
+       "After verification and customer approval, triggers refund initiation via API/tool calls.",
+       "Escalates specific conversations to a real person when needed."
+      ],
+      "source": "https://www.twilio.com/en-us/blog/insights/ai-agent-order-status-refunds"
+     },
+     {
+      "name": "Zendesk AI agents (automation tiers/automated resolution workflows)",
+      "what_it_does": "An AI agent capability in a customer service platform that automates parts of customer interactions and can support automated resolution workflows (including billing- and refund-adjacent resolutions) based on configured automation tiers.",
+      "actions": [
+       "Interacts with customers across messaging/email/voice channels within Zendesk.",
+       "Supports automation up to automated resolution tiers and includes a verification process after automated conversation resolution to confirm the request was satisfactorily resolved."
+      ],
+      "source": "https://support.zendesk.com/hc/en-us/articles/9570369117338-About-automated-resolution-tiers?trk=article-ssr-frontend-pulse_little-text-block"
+     },
+     {
+      "name": "ActionSure (assurance layer for AI customer-service agents that execute refund/credit actions)",
+      "what_it_does": "A workflow assurance product positioned to test/replay and evaluate AI customer-service agents that can execute actions like refunds and credits, surfacing unsafe actions and policy/biz-state violations.",
+      "actions": [
+       "Replays AI agent workflows and outcomes (including duplicate/incorrect refund or credit risk indicators) against policy and business state.",
+       "Provides trace-level evidence of unsafe actions, broken fallback, and repeat-contact risk."
+      ],
+      "source": "https://actionsure.ai/"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "AI-assisted ecommerce support that can resolve refund/return requests end-to-end",
+      "who_uses_it": "Ecommerce merchants/customer-support teams using customer service platforms and ecommerce integrations (e.g., helpdesk + store/order management).",
+      "what_the_agent_can_reach": [
+       "Customer conversation channel within the helpdesk/support workflow (messaging/email/voice depending on platform).",
+       "Order data and order status in the connected commerce system (e.g., Shopify/order management via integrated apps).",
+       "Automated operational actions that may lead to refunds (e.g., canceling an order / managing return flow) subject to eligibility checks.",
+       "Case/ticket workflow for escalation to a human agent when required."
+      ],
+      "source": "https://www.twilio.com/en-us/blog/insights/ai-agent-order-status-refunds"
+     },
+     {
+      "name": "Policy-verified automated resolution that closes conversations without human intervention (when eligible)",
+      "who_uses_it": "Customer support orgs operating with AI-agent automation and automated resolution tiers.",
+      "what_the_agent_can_reach": [
+       "Customer interaction content for automated resolution decisions.",
+       "Automation resolution state within the customer service platform.",
+       "Post-resolution verification step that evaluates whether the customer request was satisfactorily resolved."
+      ],
+      "source": "https://support.zendesk.com/hc/en-us/articles/9570369117338-About-automated-resolution-tiers?trk=article-ssr-frontend-pulse_little-text-block"
+     },
+     {
+      "name": "Refund/credit execution assurance and risk testing for action-taking AI agents",
+      "who_uses_it": "Risk owners, QA teams, and contact-center operations teams deploying AI agents with tool access to financial remedies.",
+      "what_the_agent_can_reach": [
+       "AI agent action traces and refund/credit outcomes (for replay/testing against policy and business state).",
+       "Workflow evidence for detecting duplicate refund/credit and missing eligibility/verification checks."
+      ],
+      "source": "https://actionsure.ai/"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "AI customer-service agents may issue the wrong refund or apply a credit without required verification/eligibility checks, and may close the wrong case when fallback/escalation is broken.",
+      "when": "Ongoing risk; described as a failure mode in the product’s discussion of unsafe actions (no specific date tied to a single public event).",
+      "source": "https://actionsure.ai/"
+     },
+     {
+      "what": "Customers can exploit the behavior of help-seeking/LLM customer-service agents to induce profit-seeking unauthorized concessions, including refund-related decisions.",
+      "when": "Ongoing issue addressed in published research (no specific incident date).",
+      "source": "https://arxiv.org/abs/2512.24415"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "Gorgias AI Agent Actions can perform tasks like canceling an order and updating shipping address via connected ecommerce tools, and it restricts actions to supported conditions (e.g., preventing certain refund-related outcomes depending on eligibility/fulfillment state).",
+      "source": "https://docs.gorgias.com/en-US/ai-agent-actions-make-changes-to-shopify-orders-757792"
+     },
+     {
+      "claim": "Twilio’s example for an AI agent covering order status and refunds uses Twilio Verify to confirm the customer controls the phone/email on file via a one-time passcode before a refund mechanism runs, and then initiates refunds as a tool/API call after approval.",
+      "source": "https://www.twilio.com/en-us/blog/insights/ai-agent-order-status-refunds"
+     },
+     {
+      "claim": "Zendesk defines automated resolution tiers for AI-agent usage, including a verification process after the conversation ends to evaluate the text and confirm the customer request was satisfactorily resolved.",
+      "source": "https://support.zendesk.com/hc/en-us/articles/9570369117338-About-automated-resolution-tiers?trk=article-ssr-frontend-pulse_little-text-block"
+     }
+    ]
+   }
+  },
+  {
+   "id": "gemini",
+   "label": "Gemini search",
+   "model": "google/gemini-3.1-flash-lite:online",
+   "ms": 2139,
+   "cost_usd": 0.0007719525,
+   "tokens": {
+    "in": 233,
+    "out": 481
+   },
+   "finish": "stop",
+   "citations": [],
+   "answer_urls": [
+    "https://www.cbc.ca/news/business/air-canada-chatbot-refund-1.7124334",
+    "https://stripe.com/solutions/ai"
+   ],
+   "answer": {
+    "what_it_does": "AI customer-service agents capable of issuing refunds utilize natural language processing to automate financial transactions and resolve billing disputes without human intervention. These systems integrate directly with payment gateways and CRM platforms to verify transaction eligibility and execute automated customer service workflows.",
+    "ai_agents": [
+     {
+      "name": "Air Canada Customer Service Chatbot",
+      "what_it_does": "An automated chatbot that provided information on company policies, which led to a legal precedent regarding the binding nature of its statements.",
+      "actions": [
+       "Provides policy information",
+       "Interacts with customers regarding refund eligibility"
+      ],
+      "source": "https://www.cbc.ca/news/business/air-canada-chatbot-refund-1.7124334"
+     }
+    ],
+    "use_cases": [
+     {
+      "name": "E-commerce Automated Refund Processing",
+      "who_uses_it": "Online retail platforms and payment processors",
+      "what_the_agent_can_reach": [
+       "Payment processing systems (e.g., Stripe, PayPal)",
+       "Order management databases",
+       "Customer transaction history"
+      ],
+      "source": "https://stripe.com/solutions/ai"
+     }
+    ],
+    "incidents_or_risks": [
+     {
+      "what": "A chatbot created by Air Canada erroneously informed a user that they could request a bereavement fare refund after the flight; the airline was subsequently held liable for the chatbot's incorrect policy statement.",
+      "when": "2024",
+      "source": "https://www.cbc.ca/news/business/air-canada-chatbot-refund-1.7124334"
+     }
+    ],
+    "facts": [
+     {
+      "claim": "AI agents acting as autonomous representatives can create legally binding obligations for the companies that deploy them.",
+      "source": "https://www.cbc.ca/news/business/air-canada-chatbot-refund-1.7124334"
+     }
+    ]
+   }
+  },
+  {
+   "id": "openrouter",
+   "label": "OpenRouter web search",
+   "model": "anthropic/claude-haiku-5.5",
+   "plugins": [
+    {
+     "id": "web",
+     "max_results": 6
+    }
+   ],
+   "max_tokens": 4000,
+   "ms": 23263,
+   "cost_usd": 0.037919178,
+   "tokens": {
+    "in": 61287,
+    "out": 4347
+   },
+   "finish": "length",
+   "citations": [],
+   "answer_urls": [
+    "https://www.usefini.com/guides/ai-customer-support-vendors-automate-refunds-cancellations",
+    "https://www.usefini.com/guides/best-ai-support-platform-automated-refunds-pricing",
+    "https://www.lorikeetcx.ai/articles/ai-for-refund-status-customer-service"
+   ],
+   "answer": null,
+   "raw": "{\"what_it_does\": \"Customer-service AI agents that can issue refunds go beyond answering policy questions: they verify the customer and order, check eligibility against refund rules, and execute the payment action in systems such as Stripe, Shopify, or a helpdesk. The main concerns are unauthorized or duplicate payouts, wrong policy statements that the company is held to, and weak audit trails, so vendors and risk teams pair them with caps, escalation paths, and logging.\", \"ai_agents\": [{\"name\": \"Gorgias AI Agent\", \"what_it_does\": \"Commerce help-desk agent that handles order-related refunds and changes for online stores through native platform integrations.\", \"actions\": [\"Issues refunds\", \"Cancels and edits orders\", \"Updates shipping addresses\", \"Applies discounts\", \"Reads order context through Shopify, with similar hooks to BigCommerce and Magento\"], \"source\": \"https://www.usefini.com/guides/ai-customer-support-vendors-automate-refunds-cancellations\"}, {\"name\": \"Ada\", \"what_it_does\": \"AI-first customer service platform that runs multi-step conversations and connects to backend systems to complete tasks.\", \"actions\": [\"Processes refunds\", \"Updates shipping addresses\", \"Checks order status through an Actions API\", \"Verifies order details and refund eligibility via Shopify, Stripe, or custom order management systems\"], \"source\": \"https://www.usefini.com/guides/best-ai-support-platform-automated-refunds-pricing\"}, {\"name\": \"Fini\", \"what_it_does\": \"Enterprise support agent platform that reasons through policy logic before acting on an order or account.\", \"actions\": [\"Verifies customer identity\", \"Checks order state\", \"Applies refund policy as explicit logic\", \"Executes the refund API call\", \"Confirms the result and logs every step\", \"Integrates with Zendesk, Intercom, Salesforce, Shopify, and Stripe\"], \"source\": \"https://www.usefini.com/guides/ai-customer-support-vendors-automate-refunds-cancellations\"}, {\"name\": \"Forethought Triage and Solve\", \"what_it_does\": \"Splits refund requests by type and complexity, then sends simple ones to an autonomous agent and complex ones to a human.\", \"actions\": [\"Classifies refund requests as full, partial, or exchange\", \"Routes straightforward cases to the Solve agent\", \"Solve connects to backend systems through APIs to process transactional requests\", \"Integrates natively with Zendesk and Salesforce\"], \"source\": \"https://www.usefini.com/guides/best-ai-support-platform-automated-refunds-pricing\"}, {\"name\": \"Lorikeet\", \"what_it_does\": \"AI customer support platform that resolves tickets end to end, including refund status lookups and refund processing.\", \"actions\": [\"Queries payment processors such as Stripe for live refund records\", \"Processes refunds and updates accounts\", \"Creates investigation tickets and escalates unresolved cases to humans\", \"Operates across chat, email, voice, SMS, and WhatsApp\"], \"source\": \"https://www.lorikeetcx.ai/articles/ai-for-refund-status-customer-service\"}, {\"name\": \"StackOne refund-processing agent\", \"what_it_does\": \"Connects ticketing apps to payment and commerce systems so an agent can validate return requests and process refunds.\", \"actions\":"
+  }
+ ]
+}

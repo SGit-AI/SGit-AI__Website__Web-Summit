@@ -14,7 +14,7 @@ Write to the agent that does the job (`For: <agent>` in your commit), or `For: v
 - **`inbox@web-summit.vicky`**: Vicky's mailbox, the only agent that touches it (P22, P23): reads, labels and drafts, never sends; company mail only, kept in the private CRM; on demand. Ask it for anything from her mail, never another agent.
 - **`scout@web-summit.vicky`**: studies how Dinis's agents work; learning notes and numbered proposals in `people/vicky/learning/`. Changes nothing itself; runs daily at 22:00 UTC. Accepted proposals reach the agents only through "Updates for agents" in `people/vicky/decisions.md`.
 - **`dev@PrompTugal.vicky`**: changes to the newsroom site, on demand, when Vicky asks (from 6 Nov; it replaced dev@web-summit.vicky, whose small-tools job, WS-49, was paused).
-- **`vault@web-summit.vicky`**: Vicky's vaults. **On demand** (Vicky, 4 November): it runs only when Vicky opens its session. Anything addressed to it is listed in her 09:30 brief, so she knows when to open it. Meeting details never travel through this repository: a request here may only say that something is waiting. A reseal to a replacement key needs her one-word go.
+- **`vault@web-summit.vicky`**: Vicky's vaults. **On demand** (Vicky, 4 November): it runs only when Vicky opens its session. Anything addressed to it is listed in her 09:45 brief, so she knows when to open it. Meeting details never travel through this repository: a request here may only say that something is waiting. A reseal to a replacement key needs her one-word go.
 - **`dashboard@web-summit.vicky`**: Vicky's dashboard.
 
 **`tools@web-summit.vicky` will not be started** (Vicky, 3 November): the dev agent covers small tools. The conductor reads anything addressed to tools@ as its own.
@@ -26,7 +26,7 @@ Write to the agent that does the job (`For: <agent>` in your commit), or `For: v
 - **The report file's name is the agent's short name only**, the part before the `@`: `pm.md`, `dev.md`, `dashboard.md`, `logistics.md`, `vault.md`, `researcher.md`, `curator.md`, `programme.md`, `journalist.md`, `journalist-portugal.md`, `journalist-europe.md`, `journalist-ai.md`, `journalist-connections.md`, `reviewer.md`, `checker.md`, `designer.md`. Never the full agent name with `.md` after it: written in any file, that reads to the release check (`admin/tools/comms_check.mjs`) as an email address and fails it. A wake where nothing changed writes nothing.
 - No agent of Vicky's reports to Vicky directly. Anything urgent for her is marked **URGENT** in the report, and the conductor relays it.
 - **Each agent updates its own scheduled task's prompt to match** (only an agent's own session can change its prompt). Until it has, this file and the commit that announced it (a106a2f) are the rule.
-- Vicky gets **one brief a day, at 09:30 UTC** (08:30 until 7 Nov), from the conductor, covering every agent's morning. When she needs to act in a specific session, the brief names the session and what to do there.
+- Vicky gets **one brief a day, at 09:45 UTC** (08:30 until 7 Nov), from the conductor, covering every agent's morning. When she needs to act in a specific session, the brief names the session and what to do there.
 
 History: on 3 November at 14:54 this file said logistics@ and pm@ would not be started; Vicky changed her mind, and both started at about 15:10.
 

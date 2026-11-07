@@ -52,3 +52,16 @@ This reviews [the two mock-ups](spec-kanban-tasks.md#the-mock-up) against the co
 | Columns | one, with tabs | four, equal width; "Done" may be narrower (`minmax(220px, 0.8fr)`) |
 
 When it is built, I will check it on a phone and a wide screen, in both themes, before Angelo sees it, and send dev@ what I find in one commit.
+
+## The build, checked (7 November, 21:40 UTC, v0.2.1140)
+
+The four themes and widths: dark and light, an iPhone 13 and 1280 px. No page errors, no sideways scroll. On a phone every button is 44 px or more; on a wide screen 34 px, as planned. The chips follow the meaning (tier 3 yellow, click and "waits on you" blue, delivered green), and light mode reads well. "Copy for the desk" says why, and the wide screen looks right. Three things to fix, in this order:
+
+1. **On a phone the cards start below the first screen.** Above them sit the "✦ Angelo's own" note (until "Got it"), the three links to the other views, the "since you last looked" banner with its button, and the "Other views" line. The spec's test is "sees, without scrolling past anything else, what needs him". Under 768 px:
+   - put the four tabs straight under the title;
+   - shrink the banner to one line ("Nothing new since 21:39" or "3 new, 2 delivered"), with "Mark all as looked at" as a small button on the same line;
+   - move "Team and the machine / Where / Summit days" and "Other views" below the cards.
+2. **The tabs do not fit 390 px:** "Delivered" is cut off and "Done" is off screen. Either use short labels on a phone ("Needs you 20 · Working 9 · To check 4 · Done 4"), or a 2 × 2 grid of tabs, each 44 px high. Do not scroll the tabs sideways: Done must be visible without swiping.
+3. **Long titles:** the two-line limit is not applied (the Android card is seven lines on a wide screen). Clamp titles to 2 lines on a phone and 3 on a wide screen, with the full text in the card's details. The titles that carry commit hashes ("(4c719b8f)") read better without them, since the hash is already on the brief's link. That is for whoever writes the backlog rows, not the code.
+
+Not for the look, but noticed: "Needs you" holds 20 cards. If many are not truly Angelo's to act on now, the column loses its point. The desk may want to check which rows of backlog.md say "waiting" on him.

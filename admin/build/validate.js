@@ -266,6 +266,24 @@ catch (e) { errors.push(`wake check: ${(e.stderr || '').toString()}`.trim()) }
 try { execFileSync('node', [path.join(__dirname, '..', 'tools', 'signoff.mjs'), 'verify'], { cwd: ROOT, stdio: 'pipe' }) }
 catch (e) { errors.push(`sign-off check: ${(e.stdout || '').toString().split('\n').filter(l => /bad signature/.test(l)).join('; ')}`.trim()) }
 
+// 20. P-01 (policy@PrompTugal.angelo, approved by Angelo 7 November): no lane of one of Angelo's agents is open to the public
+// form (assets/feedback.json, `public: true`), so a stranger's link can never reach an agent's lane
+try {
+    const fb = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/feedback.json'), 'utf8'))
+    for (const l of [fb, ...(fb.lanes || [])]) if (l && l.public === true && /@(web-summit|promptugal)\.angelo$/i.test(String(l.agent || ''))) errors.push(`feedback.json: the lane of ${String(l.agent).split('@')[0]}@ (Angelo's) is marked public; an agent's lane is never open to the public form (P-01)`)
+} catch (e) { errors.push(`feedback.json: ${e.message}`) }
+
+// 21. the lane check (policy@PrompTugal.angelo's gate-lane-check.md, approved by Angelo 7 November): a commit by one of
+// Angelo's agents writes only inside its lane (people/angelo/policy/lanes.json), or says why on an "Outside: <path>; <why>"
+// line. Range: LANE_RANGE (CI: the push) or origin/dev..HEAD (release.sh, before the push). Refuses only when lanes.json
+// says "enforce": true (policy@ turns it on once the lanes match the agents' work); until then the gate prints warnings.
+const laneFindings = []
+try {
+    const out = JSON.parse(execFileSync('node', [path.join(ROOT, 'people/angelo/policy/lane-check.mjs'), '--gate'], { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }))
+    for (const l of out.declared) console.log('lanes: declared ' + l)
+    for (const l of out.refused) (out.enforce ? errors : laneFindings).push('lanes: ' + l)
+} catch (e) { laneFindings.push(`lanes: the check did not run (${String(e.message).split('\n')[0]})`) }
+
 // 18. the briefs' shape (WS-112): printed as warnings, never a failure, so a brief is never held back by its form
 const warnings = []
 try {
@@ -277,6 +295,7 @@ try {
         for (const k of ['next', 'sources', 'wide']) if (k in b && !Array.isArray(b[k])) warnings.push(`brief ${rel}: "${k}" is a ${typeof b[k]}, not a list`)
     }
 } catch (e) { warnings.push(`briefs: ${e.message}`) }
+warnings.push(...laneFindings)
 if (warnings.length) console.log(warnings.map(w => 'WARN ' + w).join('\n'))
 
 if (errors.length) { console.error(errors.map(e => 'FAIL ' + e).join('\n')); process.exit(1) }

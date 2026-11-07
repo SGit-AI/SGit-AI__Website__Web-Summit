@@ -1,5 +1,313 @@
 [
   {
+    "version": "v0.2.1155",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: ledger line, Angelo's 22:05 wake",
+    "by": "dev@PrompTugal.angelo",
+    "from": "303543810"
+  },
+  {
+    "version": "v0.2.1154",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the lane check: a commit by one of Angelo's agents writes inside its lane or says why (P-01's second barrier)",
+    "by": "dev@PrompTugal.angelo",
+    "from": "421980553"
+  },
+  {
+    "version": "v0.2.1153",
+    "date": "2026-11-07",
+    "what": "reviewer@PrompTugal.vicky: report, S27 Ready after its fixes",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "50bc27b27"
+  },
+  {
+    "version": "v0.2.1152",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the signed-only drain: an agent never sees a stranger's words (P-01, Angelo's \"Go ahead with both\")",
+    "by": "dev@PrompTugal.angelo",
+    "from": "d89d25769"
+  },
+  {
+    "version": "v0.2.1151",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the task board's three phone fixes from dashboard@'s check",
+    "by": "dev@PrompTugal.angelo",
+    "from": "4f6b9e07c"
+  },
+  {
+    "version": "v0.2.1150",
+    "date": "2026-11-07",
+    "what": "vault@PrompTugal.angelo: kms piece 1 applies cleanly and compiles; its tests are refused by auto mode in my session too",
+    "by": "vault@PrompTugal.angelo",
+    "from": "fae01aee3"
+  },
+  {
+    "version": "v0.2.1149",
+    "date": "2026-11-07",
+    "what": "runner.writer@PrompTugal.angelo: STATE.md: WS-125 published and corrected; contributor ask still open",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "aaa5b7f4e"
+  },
+  {
+    "version": "v0.2.1148",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: vault@ runs the sharness tests for vault.kms@'s pieces, at Angelo's \"Ok, go with A\"",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "c604384ae"
+  },
+  {
+    "version": "v0.2.1147",
+    "date": "2026-11-07",
+    "what": "vault@PrompTugal.angelo: vault.kms@'s piece 1 brought onto dev, reviewed and marked untested; piece 2 held until the tests can run",
+    "by": "vault@PrompTugal.angelo",
+    "from": "a0bc1a6d6"
+  },
+  {
+    "version": "v0.2.1146",
+    "date": "2026-11-07",
+    "what": "what happened behind each X-ray: a run page per subject, /xray/how/, and a presenter mode",
+    "by": "xray@web-summit.dinis",
+    "from": "a868b2ae5"
+  },
+  {
+    "version": "v0.2.1145",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: P-09 settled: policy@ watches the guide's page builder; no outside review for now",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "40ad331ac"
+  },
+  {
+    "version": "v0.2.1144",
+    "date": "2026-11-07",
+    "what": "reviewer@PrompTugal.vicky: report, S26 published with its cover",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "062f50902"
+  },
+  {
+    "version": "v0.2.1143",
+    "date": "2026-11-07",
+    "what": "standing answer 18, a fix-only follow-up run after each reviewer round",
+    "by": "conductor@web-summit.vicky",
+    "from": "362a40b0f"
+  },
+  {
+    "version": "v0.2.1142",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: research@'s three-a-run cap removed, as the keep-going rule says",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "4903c9c80"
+  },
+  {
+    "version": "v0.2.1141",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: policy@'s two barriers to dev@, at Angelo's \"Go ahead with both\"",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "318b1c2d1"
+  },
+  {
+    "version": "v0.2.1140",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: ledger line, 21:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "8d29f0d3f"
+  },
+  {
+    "version": "v0.2.1139",
+    "date": "2026-11-07",
+    "what": "each X-ray records its reading agent and its review, for the \"what happened\" view",
+    "by": "xray@web-summit.dinis",
+    "from": "8bfe7b9e0"
+  },
+  {
+    "version": "v0.2.1138",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: STATE and runs: the 21:20 run, nothing to route",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "679832dce"
+  },
+  {
+    "version": "v0.2.1137",
+    "date": "2026-11-07",
+    "what": "X-ray third batch searched: Feedzai, Fidelidade, Booking.com, Amex GBT",
+    "by": "xray@web-summit.dinis",
+    "from": "434732296"
+  },
+  {
+    "version": "v0.2.1136",
+    "date": "2026-11-07",
+    "what": "reviewer@PrompTugal.vicky: report, 21:00 run: S26 Ready, S27 Fix first",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "b8ee137d9"
+  },
+  {
+    "version": "v0.2.1135",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: backlog: Angelo's own website, leggiopasqua.com, for the writer",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "b68458d49"
+  },
+  {
+    "version": "v0.2.1134",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: ledger line, 20:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "0d8b34c5e"
+  },
+  {
+    "version": "v0.2.1133",
+    "date": "2026-11-07",
+    "what": "writer@PrompTugal.jose: JW1, one door, drafted in the newsroom (v0.1.626); the direct line, STATE.md, the ledger line, the reviewer's record",
+    "by": "writer@PrompTugal.jose",
+    "from": "9b2f12ebc"
+  },
+  {
+    "version": "v0.2.1132",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: STATE and runs: the 20:21 run, nothing to route",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "0e14b8274"
+  },
+  {
+    "version": "v0.2.1131",
+    "date": "2026-11-07",
+    "what": "journalist-europe@PrompTugal.vicky: scheduled run 20:12, idle; SCHED-7NOV four rounds applied",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "4a5d4f42f"
+  },
+  {
+    "version": "v0.2.1130",
+    "date": "2026-11-07",
+    "what": "journalist-portugal@PrompTugal.vicky: scheduled run, idle; SCHED-7NOV (four rounds) applied",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "aaaa3fc8a"
+  },
+  {
+    "version": "v0.2.1129",
+    "date": "2026-11-07",
+    "what": "runner.writer@PrompTugal.angelo: STATE.md: WS125's five findings are applied (43e52e03); contributor ask still open",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "513226100"
+  },
+  {
+    "version": "v0.2.1128",
+    "date": "2026-11-07",
+    "what": "journalist@PrompTugal.vicky: SCHED-7NOV (four rounds) applied; report, 20:00 UTC run idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "7bfddc5d5"
+  },
+  {
+    "version": "v0.2.1127",
+    "date": "2026-11-07",
+    "what": "writer@PrompTugal.jose: session 1: the desk and the key are in the newsroom (v0.1.622); STATE.md, the direct line, the ledger line, the reviewer's record",
+    "by": "writer@PrompTugal.jose",
+    "from": "2fded92a1"
+  },
+  {
+    "version": "v0.2.1126",
+    "date": "2026-11-07",
+    "what": "curator@PrompTugal.vicky: 19:45 run, team topics S26 and S27, no new capture",
+    "by": "curator@PrompTugal.vicky",
+    "from": "1f18468c4"
+  },
+  {
+    "version": "v0.2.1125",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: agents keep going while work can move without dependencies; research hourly; the runner flags stalls",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "016fc8466"
+  },
+  {
+    "version": "v0.2.1124",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: ledger line, 19:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "c0347e1a7"
+  },
+  {
+    "version": "v0.2.1123",
+    "date": "2026-11-07",
+    "what": "19:30 run, state: idle",
+    "by": "researcher@web-summit.vicky",
+    "from": "7b3c7b1c6"
+  },
+  {
+    "version": "v0.2.1122",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: the real-time map also as an animated desktop background (Windows, Mac, iPad)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "99e287e68"
+  },
+  {
+    "version": "v0.2.1121",
+    "date": "2026-11-07",
+    "what": "writer@PrompTugal.jose, Jose's writer for PrompTugal.news: its start prompt, its state, its direct line, agents.json and the kit",
+    "by": "conductor@web-summit.jose",
+    "from": "f310674d8"
+  },
+  {
+    "version": "v0.2.1120",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: the live map's real-time mode, for a monitor at the stand",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "7faae7c65"
+  },
+  {
+    "version": "v0.2.1119",
+    "date": "2026-11-07",
+    "what": "REALITY and the decision page: nine X-rays prepared, eleven searches, 0.94 USD",
+    "by": "xray@web-summit.dinis",
+    "from": "609dc3784"
+  },
+  {
+    "version": "v0.2.1118",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: ledger line, 19:20 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "c0b803f10"
+  },
+  {
+    "version": "v0.2.1117",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: STATE and runs: the 19:20 run, nothing to route",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "090d6463b"
+  },
+  {
+    "version": "v0.2.1116",
+    "date": "2026-11-07",
+    "what": "the X-ray search tool applies the gate's phone rule too",
+    "by": "xray@web-summit.dinis",
+    "from": "a022c5daf"
+  },
+  {
+    "version": "v0.2.1115",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: backlog: kanban built, Accenture in, the Android repository is Angelo's to create",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "5cb2f0a1c"
+  },
+  {
+    "version": "v0.2.1114",
+    "date": "2026-11-07",
+    "what": "crm@PrompTugal.angelo: Accenture in data/companies.json, owner angelo (attendee level only), backlog item 6",
+    "by": "crm@PrompTugal.angelo",
+    "from": "5c7a04cb1"
+  },
+  {
+    "version": "v0.2.1113",
+    "date": "2026-11-07",
+    "what": "/xray/: the RiskMandate X-ray page, a page and a deck per subject, and the decision page",
+    "by": "xray@web-summit.dinis",
+    "from": "a39a46bb3"
+  },
+  {
+    "version": "v0.2.1112",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: ledger line, 18:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "a64ba49f5"
+  },
+  {
     "version": "v0.2.1111",
     "date": "2026-11-07",
     "what": "dashboard@PrompTugal.angelo: the task board's look, for dev@ to build to",

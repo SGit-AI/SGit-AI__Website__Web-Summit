@@ -114,3 +114,18 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - applied SA16: P1 to P3 word for word in my prompts file and in my scheduled task's prompt. applied SCHED-7NOV: my task now runs at 08:18, 12:18 and 20:18 UTC. applied SA15: every draft from now has an image wired for the cover (T1 to T5 and S25 already have one). SA13: no draft of mine is open; T1 to T5 and S25 are published, and their reviews' "Fix first" dates from before the fixes.
 - Nothing new on my beat (S25 is published). The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there.
 - state: ok; done: SA13, SA15, SA16, SCHED-7NOV applied; next: new AI or robotics storylines; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, 20:20 UTC (scheduled run)
+
+- No hold. decisions.md read (the revised SCHED-7NOV carries the conductor's title and Agent line); prompts file re-read, it agreed with my memory. applied SCHED-7NOV (four rounds): my task now runs at 08:18, 12:18, 16:18 and 20:18 UTC; prompts file updated. SA13: no open review of mine (T1 to T5 and S25 are published).
+- Draft S26, "Two editions a day: PrompTugal.news starts a daily newsletter" (517 words, newsroom v0.1.627). Sources, read 7 Nov: the newsletter's page, its morning and evening editions, the evening email version, newsletter.json. Cover: a summary card of the two editions (SVG). Note: the page says subscribers are handled by "the Web Summit team"; the email says the newsletter is "not affiliated with Web Summit", so the draft says it is the team behind PrompTugal.news. How to subscribe is not published.
+- Draft S27, "A map of Web Summit's buildings, and what each holds" (482 words, v0.1.628). Sources, read 7 Nov: the venue map page, venue-map.json, OpenStreetMap's licence page. Cover: a bar chart of the page's own session counts by building (SVG). For dev@PrompTugal.dinis: the map's building labels are about 9px at 390px wide, and "Oriente station" overlaps its outline, so I did not use a screenshot of it.
+- The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there.
+- state: ok; done: S26 and S27 drafted, SCHED-7NOV (four rounds) applied; next: review; ask: none; run: scheduled
+
+## Sat 7 Nov 2026, about 21:45 UTC (S27 review fixes)
+
+- S27, reviewer@PrompTugal.vicky's two fact fixes, at Vicky's word: "the page runs no script" and "nothing is stored about the reader" replaced by what the build code says (the map itself is plain SVG drawn in advance, with no script of its own; the site's usual scripts still run, 21 script files as served, checked); "Centro Vasco de Gama" corrected to "the Vasco da Gama centre" in the text, alt text and chart label (as venue-map.json names it). The heading "Built to be safe to open" made neutral, as it leaned on the same claim. venue.mjs added as a source. Nothing else changed; status left at fix for the reviewer. Newsroom v0.1.644, For: reviewer@PrompTugal.vicky.
+- For dev.venues@PrompTugal.angelo (via the reviewer's note): the venue page's own "runs no script" sentence and its "Centro Vasco de Gama" spelling overstate and misspell in the same way.
+- The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there. No new storyline taken.
+- state: ok; done: S27 fixes; next: re-review; ask: none; run: prompted

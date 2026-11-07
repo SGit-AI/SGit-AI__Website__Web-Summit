@@ -6,17 +6,21 @@ summary: Everything Angelo's agents are asked to do, in one list, ordered by pri
 
 | # | Item | Agent | Brief | Waits on |
 |---|---|---|---|---|
-| 0 | Build Angelo's kanban as his task board (spec approved: For me by default, signed Seen with a copy-line fallback, Done 7 days) | dev@ | cb97bf39 | nothing |
+| 0 | ~~Build Angelo's kanban as his task board~~ built (4c719b8f), for Angelo to check; dashboard@ checks it against its look (8d8c312f) | dev@ | cb97bf39 | Angelo's check |
 | 1 | ~~The back-office proposal for Dinis (WS-180)~~ done: proposals/WS-180/README.md, sent to Dinis's conductor (1eb4b337) | team-collaboration@ | | Dinis's four decisions |
+| 1b | policy@'s two barriers, approved by Angelo ("Go ahead with both", 80d54893): first the signed-only drain (people/angelo/policy/proposals/drain-signed-only.md), then the lane check in release.sh and CI (gate-lane-check.md); files are Dinis's team's, so the five steps and For: their owners; policy@ checks both once built | dev@ | this commit | nothing |
 | 2 | Team and the machine, the live map: its pieces in the spec's order | dev.map@ (dev@ reviews) | spec-live-map.md, approved | nothing |
+| 2b | The live map's real-time mode for a monitor at the stand, and as an animated desktop background (Windows, Mac, iPad); a few minutes late is fine, always on and accurate: a spec addendum with a mock-up first, for Angelo's review (nothing built before his go) | dev.map@ (dev@ reviews) | this commit: "the live map's real-time mode, for a monitor at the stand" | nothing |
 | 3 | The venue map on PrompTugal.news, public parts first (Part B 1) | dev.venues@ (dev@ reviews) | spec-venues.md, approved | nothing |
 | 4 | ~~Fix the agent setup guide's claim-check flags~~ done: checker's five findings taken, article re-signed (newsroom v0.1.604), interactive guide aligned (5853ddfd) | writer@ | | |
+| 4b | Update Angelo's own website, leggiopasqua.com, in line with his card and LinkedIn: draft first, for his review; nothing goes live in his name without his go | writer@ | this commit | Angelo: where the site lives and how it is edited; a writer session |
 | 5 | Angelo's LinkedIn: take over the writer's drafts, keep them current | social-media@ | the spec's section | Angelo's feedback on the drafts |
-| 6 | Accenture into data/companies.json, owner angelo | crm@ | "the conductor coordinates, the agents deliver" | nothing |
-| 7 | The Android app: create PrompTugal__App__Android, mark the spec approved, then dev.android@'s section and task settings for Angelo | dev@ | e0183098, 6b3703ad | nothing |
+| 6 | ~~Accenture into data/companies.json, owner angelo~~ done (5c7a04cb) | crm@ | | |
+| 7 | The Android app: spec approved and dev.android@'s settings written (30a7f1d3); the repository PrompTugal/PrompTugal__App__Android still to create (dev@ cannot: repository creation is off for its session) | Angelo, then dev.android@ | 30a7f1d3 | Angelo creating the repository and dev.android@'s task |
 | 8 | Briefs before meetings, from Angelo's companies (people/angelo/card.md, answer 2) | research@ | the spec's section | sgit-ai in the shared environment (his), for the CRM's list only; the list is people/angelo/research/requests.md (his go) |
-| 9 | The sharness.kms changeset, piece by piece | vault.kms@ (vault@ reviews) | PLAN.md | nothing |
+| 9 | The sharness.kms changeset, piece by piece. Tests: vault@ runs the upstream tests on each piece in its own session and reports pass or fail For: vault.kms@ (Angelo: "Ok, go with A"); vault.kms@ builds the next piece once the last one passes | vault.kms@ (vault@ reviews and tests) | PLAN.md; this commit | vault@'s test result on piece 1 |
 | 10 | Context rules in the kit and every prompt | dev@ | "the conductor coordinates, the agents deliver" | nothing |
+| 10b | Mark the five dead cited sources in the newsroom's evidence data "page removed", keeping each fact (Angelo: "A works"); one change per commit, the five steps, For: dev@PrompTugal.dinis | dev.links@ | this commit | nothing |
 | 11 | The links of promptugal.news, the rest of the site | dev.links@ | the spec's section | nothing |
 | 12 | The inbox agent's lane | crm@ | its scheduled prompt | crm@'s own SG/Send token (Dinis) |
 | 13 | WS-181's vaults | vault@ | daca6e6c | vault@'s token; security@web-summit.dinis's review |

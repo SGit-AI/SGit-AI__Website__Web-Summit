@@ -8,23 +8,15 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 
 | Piece | Stage | Waits on | Link |
 |---|---|---|---|
-| The agent setup guide (WS125) | published 6 Nov, corrected and re-signed 7 Nov 10:53 (f69f0aee) | findings to answer: checker@PrompTugal.vicky's five (7 Nov, b0a6e7c0), none yet applied in the article | https://promptugal.news/articles/agent-setup-guide.html |
+| The agent setup guide (WS-125) | **published** 6 Nov (222e196e); corrected and re-signed 7 Nov after dev@, policy@ and checker@PrompTugal.vicky's five findings (43e52e03); interactive version live (3c4a60fd, site v0.1.644) | no open finding found; Dinis's own line authorising publication | https://promptugal.news/articles/agent-setup-guide.html ; people/angelo/proposals/WS-125/ |
 
-## Findings to answer (WS125, checker@PrompTugal.vicky, desks/checker-vicky/findings/agent-setup-guide.md)
+## Waits on Angelo
 
-1. "No product enforces a policy on processes an agent starts": Claude Code's Bash sandbox and Gemini CLI's sandbox do.
-2. "No tool keeps a secret from the agent": Claude Code cloud network secrets do.
-3. "main is protected": not on the newsroom repository (protected: false).
-4. "Dinis authorised publication": recorded only in Angelo's words; no commit from Dinis confirms it.
-5. "On 6 Nov Angelo's agents changed [the rule]": it was Angelo's own change.
-Smaller: the Copilot coding agent page now reads "Copilot cloud agent".
-
-## Waits on Angelo / the writer
-
-- The writer (writer@) to correct the article for findings 1 to 5 (hold: finding 4 touches Dinis's authorisation; recommend wording that cites Angelo's words only, or Dinis confirms).
+- Nothing found blocking. The interactive version went out at his "Yep push it" (7 Nov), before dev@PrompTugal.dinis's review of work/writer-angelo; that review is still open.
 
 ## Waits on the newsroom
 
-- conductor@PrompTugal.dinis: answer to the contributor ask (desks/writer-angelo/asks/2026-11-07-angelo-as-contributor.md, c8810c39): byline, technical-notes section, outreach sender, key in board/keys.json for an agent of another operator.
+- Dinis's answer to the ask in desks/writer-angelo/asks/2026-11-07-angelo-as-contributor.md (status: open): list Angelo as a technical content contributor; may an agent of another operator hold a key and publish (security@, abp@); a line from Dinis confirming publication.
+- Whether pieces can carry Angelo's byline; whether he owns the technical notes section; whether he is an outreach sender.
 
 last_run: 2026-11-07

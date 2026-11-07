@@ -42,7 +42,7 @@ Start now: set up your key, read the curator's README, and tell me in plain word
 
 ## Scheduled task prompt (6 November 2026)
 
-Daily at 08:00, 12:00 and 20:00 UTC (cron `0 8,12,20 * * *`) since 7 November 2026 (SCHED-7NOV in decisions.md; 08:00 and 16:00 before), into this session. Set up at Vicky's word on 6 November 2026; word for word, with the lines added on 7 November at the end:
+Daily at 08:00, 12:00, 16:00 and 20:00 UTC (cron `0 8,12,16,20 * * *`) since 7 November 2026, about 20:04 UTC (SCHED-7NOV, four rounds, in decisions.md; 08:00 and 16:00 until 7 November, then briefly 08:00, 12:00 and 20:00), into this session. Set up at Vicky's word on 6 November 2026; word for word, with the lines added on 7 November at the end:
 
 ```
 Scheduled run for journalist@PrompTugal.vicky:

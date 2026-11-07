@@ -57,3 +57,4 @@ In the order given, in short; the dates are when she gave them.
 - 6 November 2026, about 20:53 UTC: the scheduled prompt updated to this session's paths and rules 12 to 14, at Vicky's word.
 - 6 November 2026, about 22:35 UTC: the scheduled prompt's team-stories passage changed to the standing topic (rule 17), at Vicky's word.
 - 7 November 2026, about 15:50 UTC: P1 to P3 added word for word to the scheduled prompt (decisions.md, standing answer 16, applied SA16).
+- 7 November 2026, about 19:55 UTC: nothing changed in this file; the 19:45 run listed S26 and S27 as team topics under rule 17.

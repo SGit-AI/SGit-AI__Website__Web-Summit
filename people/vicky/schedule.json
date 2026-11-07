@@ -5,11 +5,11 @@
   {
    "agent": "conductor@web-summit.vicky",
    "task": "the morning brief",
-   "cron_utc": "30 9 * * *",
+   "cron_utc": "45 9 * * *",
    "task_id": "trig_013xdhaBHbA52GD47m1JaKDL",
    "state": "enabled",
    "since": "4 Nov 2026",
-   "at_whose_word": "Vicky (08:30 brief, 4 Nov; 09:00 on 7 Nov; 09:30 on 7 Nov, after the reviewer's 09:00 run)"
+   "at_whose_word": "Vicky (08:30 brief, 4 Nov; 09:00, then 09:30 on 7 Nov; 09:45 on 7 Nov night, after the journalists' fix-only follow-ups)"
   },
   {
    "agent": "conductor@web-summit.vicky",
@@ -163,6 +163,51 @@
    "state": "enabled",
    "since": "7 Nov 2026",
    "at_whose_word": "Vicky (7 Nov): a lightweight check after the reviewer's 17:00 run; silent unless actionable"
+  },
+  {
+   "agent": "journalist@PrompTugal.vicky",
+   "task": "fix-only follow-up",
+   "cron_utc": "15 9,13,17,21 * * *",
+   "task_id": null,
+   "state": "enabled (at Vicky's word; the agent creates it)",
+   "since": "7 Nov 2026",
+   "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; the agent creates its own task at its next run"
+  },
+  {
+   "agent": "journalist-portugal@PrompTugal.vicky",
+   "task": "fix-only follow-up",
+   "cron_utc": "21 9,13,17,21 * * *",
+   "task_id": null,
+   "state": "enabled (at Vicky's word; the agent creates it)",
+   "since": "7 Nov 2026",
+   "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; the agent creates its own task at its next run"
+  },
+  {
+   "agent": "journalist-europe@PrompTugal.vicky",
+   "task": "fix-only follow-up",
+   "cron_utc": "27 9,13,17,21 * * *",
+   "task_id": null,
+   "state": "enabled (at Vicky's word; the agent creates it)",
+   "since": "7 Nov 2026",
+   "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; the agent creates its own task at its next run"
+  },
+  {
+   "agent": "journalist-ai@PrompTugal.vicky",
+   "task": "fix-only follow-up",
+   "cron_utc": "33 9,13,17,21 * * *",
+   "task_id": null,
+   "state": "enabled (at Vicky's word; the agent creates it)",
+   "since": "7 Nov 2026",
+   "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; the agent creates its own task at its next run"
+  },
+  {
+   "agent": "journalist-connections@PrompTugal.vicky",
+   "task": "fix-only follow-up",
+   "cron_utc": "39 9,13,17,21 * * *",
+   "task_id": null,
+   "state": "enabled (at Vicky's word; the agent creates it)",
+   "since": "7 Nov 2026",
+   "at_whose_word": "Vicky (7 Nov, standing answer 18): fix-only, silent if nothing to fix; the agent creates its own task at its next run"
   }
  ],
  "no_task": [

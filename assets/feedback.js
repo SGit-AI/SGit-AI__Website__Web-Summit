@@ -199,10 +199,12 @@ ${CFG && !signer() ? `<p class="meta" style="margin:4px 0 0"><b>Sending needs yo
     // several lanes (feedback.json lanes[], conductor@web-summit.dinis, 4 November): the pane sends to the one chosen
     let ALL = null
     // WS-64: a public link to an agent with no lane opens on no lane (it says so and keeps the note on the device), never on someone else's
+    // P-01 (policy@PrompTugal.angelo, approved by Angelo 7 November): a public link opens only a lane marked public: true in
+    // feedback.json; an agent's own lane is never reachable from the public form
     // only the team sends (Dinis, 5 November 2026: "nobody else should be able to send messages apart from us; only our PKI"): a
     // message goes only signed with a person's key in this browser (assets/keyring.js), and the drain flags anything unsigned
     const signer = () => !!(window.WSKeyring && window.WSKeyring.person)
-    const pick = (to, keep = true) => { if (!ALL) return; const l = (ALL.lanes || [ALL]); CFG = l.find(x => x.agent === to) || (PUBLIC ? null : l[0]); if (keep && CFG) LS.set('to', CFG.agent) }
+    const pick = (to, keep = true) => { if (!ALL) return; const l = (ALL.lanes || [ALL]); CFG = l.find(x => x.agent === to && (!PUBLIC || x.public === true)) || (PUBLIC ? null : l[0]); if (keep && CFG) LS.set('to', CFG.agent) }
     Promise.all([fetch(base + 'feedback.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null), window.WSKeyring ? window.WSKeyring.ready.catch(() => '') : null]).then(([c]) => {
         // the public form (WS-74) is closed unless feedback.json opens it: a link with to= then shows nothing
         if (PUBLIC && !(c && c.open_to_public)) { document.querySelectorAll('.fb-btn,.fb-pane').forEach(e => e.remove()); document.documentElement.classList.remove('fb-docked'); return }

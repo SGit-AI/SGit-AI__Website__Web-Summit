@@ -14,6 +14,7 @@ Storyboard: for buyers of agents | storyboard-buyers/index.html | About 60 s. Wh
 Storyboard: for sellers of agents | storyboard-sellers/index.html | About 60 s. What do you say when your customer asks what your agent can reach? For comment.
 Storyboard: the Licence to Operate in 30 s | storyboard-licence/index.html | For LinkedIn: who authorised it, who owns it, until when. For comment.
 Storyboard: the demo is us | storyboard-our-team/index.html | About 90 s. Our own team and its agents, under behaviour policies. For comment.
+Storyboard: an X-ray in 30 seconds | storyboard-xray/index.html | For the stand loop: one real X-ray run, silent and captioned (WS-197). For Silvio's yes.
 ```
 
 ## Where the videos live {#where}
