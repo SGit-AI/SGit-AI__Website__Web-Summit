@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1058",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: an Android app for PrompTugal.news: a spec, then an agent to build it",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "f4e401e0f"
+  },
+  {
     "version": "v0.2.1057",
     "date": "2026-11-07",
     "what": "the 14:57 report, and 'What happened' updated",
