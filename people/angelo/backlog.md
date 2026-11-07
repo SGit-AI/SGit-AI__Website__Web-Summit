@@ -6,6 +6,7 @@ summary: Everything Angelo's agents are asked to do, in one list, ordered by pri
 
 | # | Item | Agent | Brief | Waits on |
 |---|---|---|---|---|
+| 0 | A design for Angelo's kanban to show his tasks: needs you, in progress, delivered to check, done (spec with a mock-up, for his review) | dev@ | "Angelo's kanban as his task board: a design" | nothing |
 | 1 | The back-office proposal for Dinis (WS-180), timeline relative to the summit, no fixed dates | team-collaboration@ | the desk's "back-office proposal moves to team-collaboration@" | nothing |
 | 2 | Team and the machine, the live map: its pieces in the spec's order | dev.map@ (dev@ reviews) | spec-live-map.md, approved | nothing |
 | 3 | The venue map on PrompTugal.news, public parts first (Part B 1) | dev.venues@ (dev@ reviews) | spec-venues.md, approved | nothing |
