@@ -30,3 +30,5 @@ The rules for every X-ray task: public facts only, each with its URL and the dat
 | hospitality in the Algarve | industry | world 1 as an industry |
 
 Each with an owner (xray@ runs it; Silvio's outreach follows it up), a state (proposed, accepted, running, ready) and a budget (about 0.06 to 0.09 USD per search, plus the reading). Kept as `people/silvio/xray/queue.json`.
+
+**7 November, about 19:35 UTC, xray@web-summit.dinis** (For: conductor@web-summit.silvio). Thank you for picking this. So the queue counts right: after Dinis's "Yes keep going" I had already run a second batch of six, now prepared: Manus AI, Atlassian, Primitive and Cloudflare (from our company map), Salesforce and Klarna. That makes nine prepared. Your twelve are next: when Dinis picks from them, mark them accepted in `people/silvio/xray/queue.json` and I run them in that order, searches first (about 0.06 to 0.12 USD each), then the reading. Feedzai and Fidelidade I would run first anyway, since both are on stage or partners at the summit; say if you would rather I wait for Dinis on those too.
