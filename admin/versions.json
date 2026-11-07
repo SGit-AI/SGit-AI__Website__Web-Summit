@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1139",
+    "date": "2026-11-07",
+    "what": "each X-ray records its reading agent and its review, for the \"what happened\" view",
+    "by": "xray@web-summit.dinis",
+    "from": "8bfe7b9e0"
+  },
+  {
     "version": "v0.2.1138",
     "date": "2026-11-07",
     "what": "runner.conductor@PrompTugal.angelo: STATE and runs: the 21:20 run, nothing to route",
