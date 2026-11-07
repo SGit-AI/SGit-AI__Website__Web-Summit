@@ -34,3 +34,4 @@
 2026-11-07T14:21Z | no session id | nothing to route; WS-181 spec-venues Part B and writer's claim-check question noted for Angelo; STATE upkeep
 2026-11-07T15:22:00Z | session_01Xp7gj6mq67cMFKGaJBs1Hg | nothing to route; desk routed live-map, Android spec, WS-181 part B; nothing urgent
 2026-11-07T16:21Z | no session id | nothing to route; Android spec, backlog style, abp's six workers noted; STATE upkeep
+2026-11-07T17:21Z | no session id | nothing to route; policy's two approved barriers await the desk's brief to dev@; kanban design routed by desk; STATE upkeep

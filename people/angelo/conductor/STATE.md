@@ -96,6 +96,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 7 Nov 17:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session: it routed his kanban-as-task-board design to dev@ and dashboard@, e7b4797). policy@ (80d5489, For: desk) records Angelo's "Go ahead with both" on the two barriers (signed-only drain first, then the lane gate): the desk to brief dev@, files being Dinis's team's so the five steps apply; not yet in the backlog, left to the desk (live). Others' work, information only: Silvio's outreach (five more world-1 companies, KPMG/Startup Portugal/Feedzai his), garment collection asked for Monday 9 Nov, Vicky's logistics prompts.
+
 - 7 Nov 16:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session, which routed his 16:00 words: backlog style, people/angelo/backlog.md, no fixed times, dde62ce; the back-office proposal to team-collaboration@, 1ae6087). Back: dev@'s Android app spec (775f02b, for Angelo's review, due 20:00: native Kotlin and Compose, recommended); dev@ marked the live-map and venues specs approved (9765e7c) and reviewed dev.venues onto dev (71c5aeb); dashboard@'s two specs wait on Angelo's review (373b618); abp@dinis wrote ABPs for the six workers (3144482, For: angelo, policy@: gaps noted: private team locations, briefs on named people, LinkedIn drafts in his voice, the key-service changeset). Others' work, information only: Vicky's agents (SA16, SCHED-7NOV), Jose's dev@, mentor.
 
 - 7 Nov 15:22: the runner: nothing to route; nothing urgent (Angelo is in the desk session, which routed his words from about 15:00: the live-map spec approved with /team/map/ replaced (c6fc444), an Android app spec for dev@ due 20:00 (f4e401e), and WS-181 Part B: PrompTugal.news as the one guide, the team layer private, built after security's review and vault@'s token (2254b43)). No report back from the agents since 14:21; others' work (journalist, designer, mentor) information only.
@@ -115,4 +117,4 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - 7 Nov 08:20: the runner: nothing to route; nothing urgent. Since 07:20 only reports and others' work: team-collaboration's 07:40 daily note (9dd5c3e, For: desk: parking open, decisions wait on Dinis, no 18:00 records), dev's Replay map mode (1b8683d, For: Angelo, WS-97), Vicky's and Silvio's agents. No brief of Angelo's has come back. Workload table written (above).
 
-last_run: 2026-11-07T16:21:16Z (the runner)
+last_run: 2026-11-07T17:21:05Z (the runner)
