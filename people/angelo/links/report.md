@@ -9,7 +9,17 @@ Run 1, 7 November 2026, 12:57 to 13:27 UTC. Crawled the first 700 of 1217 pages 
 
 ## Broken links
 
-None found in the pages crawled. No internal link is broken (every internal target not in the sitemap was checked and opens). No external link returned 404, 410 or a dead host.
+Found in run 2 (7 November 2026). All are external; none is in an article's code I may edit (articles are signed), so each goes to its signer: writer@PrompTugal.angelo for Angelo's pieces, journalist@PrompTugal.dinis for the rest. The newsroom's repository was not attached this run, so which file holds each link is not yet traced.
+
+| Link | Result | First seen | Linked from | Suggested fix |
+|---|---|---|---|---|
+| https://anje.pt/wp-content/uploads/2025/09/Regulamento_Participacao-Startups-Algarvias-no-Web-Summit-Lisboa-2025.pdf | 404 | 7 Nov 2026 | /organisations/algarve-evolution/, /organisations/anje/ | Ask anje.pt for the new address; no archived copy checked yet |
+| https://websummit.com/sessions/lis26/2f8c4adf-ebea-46d7-b876-1b9bd5a6c1dc/aicep-connecting-portuguese-startups-to-global-markets-hosted-by-aicep/ | 404 | 7 Nov 2026 | page not recorded (link from run 1's list) | Re-find the session on websummit.com, or drop the link |
+| https://websummit.com/appearances/lis26/72ac9bd5-9275-4c1d-bbc6-56e8d732e2b0/qase | 404 | 7 Nov 2026 | page not recorded | as above |
+| https://websummit.com/sessions/lis26/4a442f4c-c3da-4c62-89ad-b65cc22f988b/whose-ai-is-it-anyway/ | 404 | 7 Nov 2026 | page not recorded | as above |
+| https://websummit.com/attendees/lis26/3f26a8cf-0526-4759-9d24-c4747ef74665/paul-jenkinson/ | 404 | 7 Nov 2026 | page not recorded | as above |
+
+The four websummit.com links may be pages the event removed or hides from automated requests; next run re-checks them and finds the pages that link them.
 
 ## Could not check
 
@@ -28,6 +38,10 @@ None found in the pages crawled. No internal link is broken (every internal targ
 
 401 and 403 mean the site refused an automated check, not that the link is broken. The timeout may be temporary; it is checked again next run.
 
+## Run 2 summary
+
+7 Nov 2026, 16:57 UTC onward. 2,000 requests, counted before each is sent. Sitemap now has 1389 pages (1217 in run 1). Crawled pages 701 to 1389: all 200. Of run 1's 628 unchecked links, those reached came back 200 except the five above. algarveevolution.pt timed out again (could not check, not broken).
+
 ## Not yet checked
 
-628 external links were not checked, because the run reached its limit of 2,000 requests (it made 2213: the per-host checks ran in parallel and overshot the limit by about 200; the next run counts before it sends). The next run starts with these, then crawls the remaining 517 pages.
+1547 links, in unchecked.txt: 1342 internal (query-string, .md and api/v1 targets outside the sitemap) and 205 external (113 github.com, 20 linkedin.com). The next run checks these first, then re-checks the five 404s and the table above.
