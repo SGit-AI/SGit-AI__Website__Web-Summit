@@ -99,7 +99,9 @@
     const HERE = (typeof document !== 'undefined' && document.currentScript && document.currentScript.src) || (typeof location !== 'undefined' ? location.href : '')
     const AREA_OF = { 'Stand': 'osm-821643074', 'Hall 1': 'osm-821643074', 'Hall 2': 'osm-821643075', 'Hall 3': 'osm-821643076', 'Hall 4': 'osm-821643077', 'Centre Stage': 'osm-821784762', 'Venue': 'osm-821641463' }
     const PIN_KINDS = [['base', 'Our base'], ['meet', 'Meeting spot'], ['other', 'Other']]
-    let pinMode = false, pending = null, pinKind = 'meet', pinLabel = '', vmLoading = null, vmFail = false, focusId = ''
+    // mode: '' | 'me' (tap where you are) | 'pin' (tap where a new pin goes); fsMap: the map alone, full screen
+    let pinMode = false, meMode = false, fsMap = false, pending = null, pinKind = 'meet', pinLabel = '', vmLoading = null, vmFail = false, focusId = ''
+    const OFFMAP = ['Hotel', 'In town', 'Off']
     const VM = () => root.AngeloVenueMap || null
     function venueMap() {
         if (VM() || vmFail) return Promise.resolve(VM())
@@ -108,49 +110,80 @@
     // lat/lng <-> the drawing's frame (the generator's projection, kept to its frame)
     const toXY = (f, lat, lng) => [((lng - f.w) / (f.e - f.w)) * f.width, ((f.n - lat) / (f.n - f.s)) * f.height]
     const toLL = (f, x, y) => ({ lat: f.n - (y / f.height) * (f.n - f.s), lng: f.w + (x / f.width) * (f.e - f.w) })
-    const pinOf = (place, pins) => { const own = pins.find(x => x.label === place); return own ? own.id : AREA_OF[place] || '' }
+    const pinOf = (place, pins) => { const own = pins.find(x => x.label === place); if (own) return own.id; const M = VM(), a = M && M.areas.find(x => x.label === place); return a ? a.id : AREA_OF[place] || '' }
     function whoAt(L) { const by = {}; for (const [p, r] of L) { if (freshness(r, Date.now()) === 'gone') continue; const id = pinOf(r.place, S.pins); if (id) (by[id] = by[id] || []).push(NAMES[p] || p) } return by }
     function mapSection(L) {
         const M = VM(); if (!M && !vmFail) venueMap()
-        const at = whoAt(L), f = M && M.frame
-        const venues = M ? M.areas.filter(a => a.kind !== 'site') : []
-        const list = [...venues.map(a => ({ id: a.id, label: a.label, kind: 'venue' })), ...S.pins].map(x => `<li class="aw-pin"><button type="button" class="ak-chip" data-aw-focus="${esc(x.id)}" aria-pressed="${focusId === x.id}">${esc(x.label)}</button>${at[x.id] ? ` <span class="note">${esc(at[x.id].join(', '))}</span>` : ''}${x.kind !== 'venue' ? ` <span class="note">(${esc((PIN_KINDS.find(k => k[0] === x.kind) || [, ''])[1])})</span> <button type="button" class="aw-x" style="background:none;border:0;color:inherit;opacity:.75;text-decoration:underline;cursor:pointer;min-height:32px" data-aw-pin-del="${esc(x.id)}" aria-label="Remove the pin ${esc(x.label)}">Remove</button>` : ''}</li>`).join('')
+        const at = whoAt(L), f = M && M.frame, now = Date.now()
         const form = pending ? `<form class="aw-pinf"><input type="text" maxlength="40" required placeholder="Its label, e.g. Our base, Coffee by Pavilion 2" aria-label="The pin's label" value="${esc(pinLabel)}"><div class="aw-pink" role="group" aria-label="Kind">${PIN_KINDS.map(([k, l]) => `<button type="button" class="ak-chip" data-aw-pin-kind="${k}" aria-pressed="${pinKind === k}">${l}</button>`).join('')}</div><button type="submit" class="cc-btn">Save the pin</button><button type="button" class="ak-tog" data-aw-pin-cancel>Cancel</button></form>` : ''
+        // the pin picked out: its name, and Remove, right under the map (no list)
+        const fp = S.pins.find(x => x.id === focusId)
+        const act = fp ? `<div class="aw-act" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0"><b>${esc(fp.label)}</b><span class="note">${esc((PIN_KINDS.find(k => k[0] === fp.kind) || [, ''])[1])}${(at[fp.id] || []).length ? ' · ' + esc(at[fp.id].join(', ')) : ''}</span><button type="button" class="ak-tog" data-aw-pin-del="${esc(fp.id)}">Remove this pin</button></div>` : ''
+        // who is not on the map (the hotel, in town, off, or a place the map does not draw): one line, under the map
+        const away = [...L.entries()].filter(([, r]) => freshness(r, now) !== 'gone' && r.lat == null && !pinOf(r.place, S.pins))
+        const elsewhere = away.length ? `<p class="note" style="margin:6px 0"><b>Elsewhere:</b> ${away.map(([p, r]) => `${esc(NAMES[p] || p)} (${esc(r.place)})`).join(' · ')}</p>` : ''
         let svg = ''
         if (M) {
             const lab = (x, y, t, cls = '') => `<text class="vm-t ${cls}" x="${x}" y="${y}">${esc(t)}</text>`
-            const badge = (x, y, n) => n ? `<g class="vm-n"><circle cx="${x}" cy="${y}" r="17"/><text x="${x}" y="${y + 6}">${n}</text></g>` : ''
-            const areas = M.areas.map(a => `<path class="vm-a vm-${a.kind}${focusId && focusId !== a.id ? ' vm-dim' : ''}${focusId === a.id ? ' vm-on' : ''}" d="${a.d}" data-aw-focus="${esc(a.id)}"><title>${esc(a.label)}${at[a.id] ? ': ' + esc(at[a.id].join(', ')) : ''}</title></path>`).join('')
-            // labels: the pavilions by number inside them, the rest under their shape; FIL's name to the left of its halls
+            const areas = M.areas.map(a => `<path class="vm-a vm-${a.kind}${focusId && focusId !== a.id ? ' vm-dim' : ''}${focusId === a.id ? ' vm-on' : ''}" d="${a.d}" data-aw-focus="${esc(a.id)}" data-aw-area="${esc(a.label)}"><title>${esc(a.label)}</title></path>`).join('')
             const short = { 'Pavilion 1': 'P1', 'Pavilion 2': 'P2', 'Pavilion 3': 'P3', 'Pavilion 4': 'P4' }
             const labels = M.areas.map(a => a.kind === 'site' ? lab(a.c[0] + 115, a.c[1] - 150, 'FIL', 'vm-big') : short[a.label] ? lab(a.c[0], a.c[1] + 8, short[a.label] + (a.id === AREA_OF.Stand ? ' · our stand' : ''), 'vm-in') : lab(a.c[0], a.c[1] + (a.kind === 'arena' ? 8 : 4), a.label, a.kind === 'arena' ? 'vm-in' : 'vm-out')).join('')
-            const counts = M.areas.map(a => badge(a.c[0] + (a.kind === 'hall' ? 70 : 60), a.c[1] - 30, (at[a.id] || []).length)).join('')
+            // people, by name, on the map: at the spot they tapped, or stacked beside the building their place names
+            const chip = (x, y, t, cls) => { const w = 14 + t.length * 11.5; return `<g class="vm-who ${cls}"><rect x="${(x - w / 2).toFixed(1)}" y="${(y - 15).toFixed(1)}" width="${w.toFixed(1)}" height="28" rx="14"/><text x="${x.toFixed(1)}" y="${(y + 5).toFixed(1)}">${esc(t)}</text></g>` }
+            const stack = {}, people = []
+            for (const [p, r] of L) {
+                const fr = freshness(r, now); if (fr === 'gone') continue
+                const cls = `${p === ME ? 'vm-me' : ''}${fr === 'old' ? ' vm-old' : ''}`, name = NAMES[p] || p
+                if (r.lat != null) { const [x, y] = toXY(f, r.lat, r.lng); people.push(`<circle class="vm-spot ${cls}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7"/>` + chip(x, y - 24, name, cls)); continue }
+                const id = pinOf(r.place, S.pins), ar = M.areas.find(a => a.id === id), pn = S.pins.find(x => x.id === id)
+                const base = ar ? [ar.c[0] + (ar.kind === 'hall' ? 125 : ar.kind === 'arena' ? 0 : 0), ar.c[1] + (ar.kind === 'hall' ? -4 : ar.kind === 'arena' ? -60 : -34)] : pn ? (([x, y]) => [x, y + 50])(toXY(f, pn.lat, pn.lng)) : null
+                if (!base) continue
+                const k = stack[id] = (stack[id] || 0) + 1
+                people.push(chip(base[0], base[1] + (k - 1) * 32 * (ar && ar.kind === 'arena' ? -1 : 1), name, cls))
+            }
             const streets = M.streets.map(st => `<path class="vm-s" d="${st.d}"/>`).join('') + M.streets.map(st => `<text class="vm-sl" transform="translate(${st.at[0] - 12} ${st.at[1] + 30}) rotate(${st.angle})">${esc(st.short)}</text>`).join('')
-            const pins = S.pins.map(x => { const [px, py] = toXY(f, x.lat, x.lng), n = (at[x.id] || []).length; return `<g class="vm-pin vm-p-${x.kind}${focusId && focusId !== x.id ? ' vm-dim' : ''}" data-aw-focus="${esc(x.id)}"><path d="M${px} ${py}l-13 -24a15 15 0 1 1 26 0z"/><circle cx="${px}" cy="${py - 34}" r="6" class="vm-dot"/><text class="vm-t vm-pl" x="${px}" y="${py + 22}">${esc(x.label)}${n ? ` · ${n}` : ''}</text></g>` }).join('')
+            const pins = S.pins.map(x => { const [px, py] = toXY(f, x.lat, x.lng); return `<g class="vm-pin vm-p-${x.kind}${focusId && focusId !== x.id ? ' vm-dim' : ''}" data-aw-focus="${esc(x.id)}"><path d="M${px} ${py}l-13 -24a15 15 0 1 1 26 0z"/><circle cx="${px}" cy="${py - 34}" r="6" class="vm-dot"/><text class="vm-t vm-pl" x="${px}" y="${py + 24}">${esc(x.label)}</text></g>` }).join('')
             const ghost = pending ? (([px, py]) => `<circle class="vm-ghost" cx="${px}" cy="${py}" r="12"/>`)(toXY(f, pending.lat, pending.lng)) : ''
-            svg = `<div class="vm-wrap${pinMode ? ' vm-placing' : ''}" style="margin:10px 0;border-radius:12px;overflow:hidden;background:#13263c${pinMode ? ';outline:3px dashed #f4c542;cursor:crosshair' : ''}"><svg class="vm" style="display:block;width:100%;height:auto" viewBox="0 0 ${f.width} ${f.height}" role="img" aria-label="The venue: FIL and its pavilions, the MEO Arena, Pavilhão de Portugal, Oriente station and the Vasco da Gama centre, by the river" data-aw-map>
+            const placing = pinMode || meMode
+            svg = `<div class="vm-wrap" style="margin:10px 0;border-radius:12px;overflow:hidden;background:#13263c${placing ? ';outline:3px dashed #f4c542;cursor:crosshair' : ''}${fsMap ? ';flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center' : ''}"><svg class="vm" style="display:block;width:100%;height:auto${fsMap ? ';max-height:100%' : ''}" viewBox="0 0 ${f.width} ${f.height}" role="img" aria-label="The venue: FIL and its pavilions, the MEO Arena, Pavilhão de Portugal, Oriente station and the Vasco da Gama centre, by the river, with the team on it" data-aw-map>
 <style>
 .vm-r{fill:#1e4a78;opacity:.55}.vm-rl{fill:#9cc3ea;font:600 22px/1 system-ui,sans-serif;text-anchor:middle;letter-spacing:.2em;opacity:.8}
 .vm-s{fill:none;stroke:#7d93ad;stroke-width:9;stroke-linecap:round;stroke-linejoin:round;opacity:.35}.vm-sl{fill:#9fb3c9;font:500 19px/1 system-ui,sans-serif;opacity:.9}
 .vm-a{stroke:#c9d6e3;stroke-width:2;cursor:pointer;transition:opacity .2s}.vm-site{fill:#22405f;stroke-dasharray:6 5}.vm-hall{fill:#2f6aa3}.vm-arena{fill:#7a5cc4}.vm-landmark{fill:#4b5f78}.vm-station{fill:#4b5f78}
 .vm-a.vm-on{stroke:#fff;stroke-width:4}.vm-dim{opacity:.35}
 .vm-t{fill:#eef3f8;font:600 23px/1 system-ui,sans-serif;text-anchor:middle;pointer-events:none;paint-order:stroke;stroke:#0d1b2a;stroke-width:4px}.vm-big{font-size:26px;letter-spacing:.15em;fill:#c9d6e3}.vm-out{font-size:21px}
-.vm-n circle{fill:#f4c542;stroke:#0d1b2a;stroke-width:3}.vm-n text{fill:#0d1b2a;font:800 18px/1 system-ui,sans-serif;text-anchor:middle;pointer-events:none}
 .vm-pin{cursor:pointer}.vm-pin path{stroke:#0d1b2a;stroke-width:3}.vm-p-base path{fill:#f4c542}.vm-p-meet path{fill:#5fb2f5}.vm-p-other path{fill:#b9a4f0}.vm-dot{fill:#0d1b2a}.vm-pl{font-size:21px}
+.vm-who{pointer-events:none}.vm-who rect{fill:#eef3f8;stroke:#0d1b2a;stroke-width:2}.vm-who text{fill:#0d1b2a;font:700 19px/1 system-ui,sans-serif;text-anchor:middle}
+.vm-who.vm-me rect{fill:#f4c542}.vm-old{opacity:.55}.vm-spot{fill:#eef3f8;stroke:#0d1b2a;stroke-width:3}.vm-spot.vm-me{fill:#f4c542}
 .vm-ghost{fill:none;stroke:#f4c542;stroke-width:4;stroke-dasharray:5 4}
-</style><path class="vm-r" d="${M.river}"/><text class="vm-rl" x="${f.width - 70}" y="${f.height / 2}" transform="rotate(-90 ${f.width - 70} ${f.height / 2})">Tagus (Tejo)</text>
-${streets}${areas}${labels}${counts}${pins}${ghost}</svg></div>`
+</style>
+<path class="vm-r" d="${M.river}"/><text class="vm-rl" x="${f.width - 70}" y="${f.height / 2}" transform="rotate(-90 ${f.width - 70} ${f.height / 2})">Tagus (Tejo)</text>
+${streets}${areas}${labels}${pins}${people.join('')}${ghost}</svg></div>`
         }
-        return `<section class="cc-card aw-map"><div class="aw-maph"><h3 class="ak-h3">The venue map</h3><button type="button" class="ak-tog" data-aw-pin-add aria-pressed="${pinMode}">${pinMode ? (pending ? 'Placing a pin…' : 'Tap the map where the pin goes') : '＋ Add a pin'}</button></div>
-${M ? svg : vmFail ? '<p class="note">The map could not load (offline, and not stored yet). The places, as a list:</p>' : '<p class="note">Drawing the map…</p>'}${form}
-<ul class="aw-pins" style="list-style:none;padding:0">${list}</ul>
-<p class="note">A drawing of the venue, simplified from <a href="https://www.openstreetmap.org/#map=17/38.7700/-9.0960">OpenStreetMap</a> (map data © OpenStreetMap contributors, ODbL). The number on a building is how many of the team are there now, from their lines; tap a building or a pin to pick it out. Your pins: gold for a base, blue for a meeting spot. Places only: never a person's location, and the phone's location is never asked for.</p></section>`
+        const hint = meMode ? 'Tap a building, or the spot where you are.' : pinMode ? (pending ? 'Name the pin.' : 'Tap where the pin goes.') : ''
+        const fsStyle = fsMap ? ' style="position:fixed;inset:0;z-index:300;margin:0;border-radius:0;display:flex;flex-direction:column;overflow:auto;padding:12px 16px"' : ''
+        return `<section class="cc-card aw-map"${fsStyle}><div class="aw-maph" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between"><h3 class="ak-h3">The venue map</h3><span style="display:flex;flex-wrap:wrap;gap:8px">
+<button type="button" class="ak-tog" data-aw-me aria-pressed="${meMode}">📍 I'm here</button><button type="button" class="ak-tog" data-aw-pin-add aria-pressed="${pinMode}">＋ Add a pin</button><button type="button" class="ak-tog" data-aw-fs aria-pressed="${fsMap}">${fsMap ? '✕ Close' : '⛶ Full screen'}</button></span></div>
+${hint ? `<p class="note" style="margin:6px 0"><b>${hint}</b> <button type="button" class="aw-x" style="background:none;border:0;color:inherit;text-decoration:underline;cursor:pointer" data-aw-pin-cancel>Cancel</button></p>` : ''}
+${meMode ? `<p class="note" style="margin:4px 0">Not at the venue? ${OFFMAP.map(o => `<button type="button" class="ak-chip" data-aw-place="${esc(o)}">${esc(o)}</button>`).join(' ')}</p>` : ''}
+${M ? svg : vmFail ? '<p class="note">The map could not load (offline, and not stored yet).</p>' : '<p class="note">Drawing the map…</p>'}${form}${act}${elsewhere}
+${fsMap ? '' : `<p class="note">A drawing of the venue, simplified from <a href="https://www.openstreetmap.org/#map=17/38.7700/-9.0960">OpenStreetMap</a> (map data © OpenStreetMap contributors, ODbL). Names on the map are where each of us said we are (you in gold); tap a building or a pin to pick it out. Pins: gold for a base, blue for a meeting spot. Only what you tap: the phone's location is never asked for.</p>`}</section>`
     }
     function mountMap() { }
     function mapClick(e) {
-        const svg = e.target.closest('svg[data-aw-map]'); if (!svg || !pinMode) return false
+        const svg = e.target.closest('svg[data-aw-map]'); if (!svg || !(pinMode || meMode)) return false
         const M = VM(); if (!M) return false
         const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; const q = pt.matrixTransform(svg.getScreenCTM().inverse())
+        if (meMode) {
+            // a building (not FIL's outline: its pavilions are what count) names the place; anywhere else, the spot itself,
+            // named after the nearest building
+            const ar = e.target.closest('[data-aw-area]'), area = ar && ar.dataset.awArea !== 'FIL' ? ar.dataset.awArea : ''
+            meMode = false; picked = true
+            if (area) { setMine({ place: area, lat: null, lng: null }, true); return true }
+            const near = M.areas.filter(a => a.kind !== 'site').map(a => [a, Math.hypot(a.c[0] - q.x, a.c[1] - q.y)]).sort((x, y) => x[1] - y[1])[0][0]
+            const ll = toLL(M.frame, q.x, q.y)
+            setMine({ place: 'Near ' + near.label, lat: +ll.lat.toFixed(6), lng: +ll.lng.toFixed(6) }, true); return true
+        }
         pending = toLL(M.frame, q.x, q.y); draw(); const i = view.querySelector('.aw-pinf input'); if (i) i.focus()
         return true
     }
@@ -168,7 +201,6 @@ ${M ? svg : vmFail ? '<p class="note">The map could not load (offline, and not s
             : queued ? `<b>Sending</b> ${queued} update${queued > 1 ? 's' : ''}, oldest first${undo && Date.now() - undo.t < UNDO_MS ? ' (yours waits 5 s, so you can undo)' : ''}…` : `<b>Synced</b> at ${lisbon(S.syncedAt)}.`
         // fixed order (Angelo, 6 November: the buttons "change text as I click": they were reordered, most recent first,
         // so the button under the finger took another place's name). The team's own pins follow the list.
-        const placeOrder = [...new Set([...PLACES, ...S.pins.map(x => x.label)])]
         const row = (p, r) => {
             const f = freshness(r, now), q = S.queue.some(x => x === r)
             return `<li class="aw-line aw-${f}${p === ME ? ' aw-me' : ''}"><span class="aw-who">${esc(NAMES[p] || p)}</span><span class="aw-place">${esc(r.place)}</span><span class="aw-what">${esc(r.next || '')}${r.until ? ` <span class="note">${esc(untilText(r.until))}</span>` : ''}${r.note ? `<br><span class="note">${esc(r.note)}</span>` : ''}</span><span class="aw-age note">${f === 'gone' ? `not seen since ${esc(lisbon(r.at))}` : esc(ctx.ago(r.at))}${q ? ' · <i>sending</i>' : ''}</span></li>`
@@ -182,7 +214,7 @@ ${M ? svg : vmFail ? '<p class="note">The map could not load (offline, and not s
 ${mapSection(L)}
 <section class="cc-card aw-mine"><h3 class="ak-h3">Your line</h3>
 <p class="aw-now">${mine ? `<b>${esc(mine.place)}</b>${mine.next ? `, ${esc(mine.next.toLowerCase())}` : ''}${mine.until ? ` ${esc(untilText(mine.until))}` : ''} <span class="note">(${esc(ctx.ago(mine.at))})</span>` : 'Not set yet.'}${undo && Date.now() - undo.t < UNDO_MS && S.queue.some(x => x.at === undo.at) ? ` <button type="button" class="ak-chip" data-aw-undo>Undo</button>` : ''}</p>
-<p class="aw-step">1. Where are you?</p><div class="aw-grid" role="group" aria-label="Where are you">${placeOrder.map(p => `<button type="button" class="aw-b" data-aw-place="${esc(p)}"${mine && mine.place === p ? ' aria-pressed="true"' : ''}>${esc(p)}</button>`).join('')}</div>
+<p class="aw-step">1. Where are you? <span class="note">Tap <b>📍 I'm here</b> on the map, then the building or the spot.</span></p>
 ${picked ? `<p class="aw-step">2. What next? <span class="note">(optional)</span></p><div class="aw-grid aw-next" role="group" aria-label="What next">${NEXT.map(n => `<button type="button" class="aw-b" data-aw-next="${esc(n)}"${mine && mine.next === n ? ' aria-pressed="true"' : ''}>${esc(n)}</button>`).join('')}</div>
 <div class="aw-until" role="group" aria-label="Until">${UNTIL.map(([l, v]) => `<button type="button" class="ak-chip" data-aw-until="${v}">${esc(l)}</button>`).join('')}</div>
 <form class="aw-note"><input type="text" maxlength="80" placeholder="A short note (optional, 80 characters)" aria-label="A short note" value="${esc(mine && mine.note || '')}"><button type="submit" class="cc-btn">Add</button></form>` : ''}
@@ -211,14 +243,16 @@ ${picked ? `<p class="aw-step">2. What next? <span class="note">(optional)</span
         const fz = e.target.closest('[data-aw-focus]'); if (fz && view.contains(fz)) { focusId = focusId === fz.dataset.awFocus ? '' : fz.dataset.awFocus; return draw() }
         const b = e.target.closest('button'); if (!b || !view.contains(b)) return
         const d = b.dataset
-        if (d.awPlace !== undefined) { S.recent = [d.awPlace, ...S.recent.filter(p => p !== d.awPlace)].slice(0, 6); picked = true; return setMine({ place: d.awPlace }, true) }
+        if (d.awPlace !== undefined) { S.recent = [d.awPlace, ...S.recent.filter(p => p !== d.awPlace)].slice(0, 6); picked = true; meMode = false; return setMine({ place: d.awPlace, lat: null, lng: null }, true) }
         if (d.awNext !== undefined) return setMine({ next: d.awNext })
         if (d.awUntil !== undefined) { const u = d.awUntil === 'eod' ? 'eod' : new Date(Date.now() + +d.awUntil * 6e4).toISOString(); return setMine({ until: u }) }
         if ('awUndo' in d) { if (undo) S.queue = S.queue.filter(r => r.at !== undo.at); undo = null; picked = false; await save(); return draw() }
         if (d.awDone) { await add({ type: 'done', id: d.awDone, at: new Date().toISOString() }); return draw() }
         if ('awOffline' in d) { S.offline = !S.offline; await save(); return draw() }
-        if ('awPinAdd' in d) { pinMode = !pinMode; pending = null; return draw() }
-        if ('awPinCancel' in d) { pinMode = false; pending = null; pinLabel = ''; return draw() }
+        if ('awPinAdd' in d) { pinMode = !pinMode; meMode = false; pending = null; return draw() }
+        if ('awMe' in d) { meMode = !meMode; pinMode = false; pending = null; return draw() }
+        if ('awFs' in d) { fsMap = !fsMap; document.body.style.overflow = fsMap ? 'hidden' : ''; return draw() }
+        if ('awPinCancel' in d) { pinMode = false; meMode = false; pending = null; pinLabel = ''; return draw() }
         if (d.awPinKind !== undefined) { pinKind = d.awPinKind; return draw() }
         if (d.awPinDel) { S.pins = S.pins.filter(x => x.id !== d.awPinDel); if (focusId === d.awPinDel) focusId = ''; await save(); return draw() }
         if ('awReset' in d) { await wipe(); S = null; undo = null; picked = false; sending = false; pinMode = false; pending = null; await load(); return draw() }
@@ -242,7 +276,7 @@ ${picked ? `<p class="aw-step">2. What next? <span class="note">(optional)</span
         if (!timer) {
             timer = setInterval(() => { if (!view || !view.isConnected) { clearInterval(timer); timer = null; return } tick(); if (undo && Date.now() - undo.t > UNDO_MS + 200 && Date.now() - undo.t < UNDO_MS + 1300) draw() }, 500)
         }
-        if (!wired) { wired = true; setInterval(() => { if (view && view.isConnected && !sending) draw() }, 60000); addEventListener('online', draw); addEventListener('offline', draw) }
+        if (!wired) { wired = true; addEventListener('keydown', e => { if (e.key === 'Escape' && (fsMap || meMode || pinMode)) { fsMap = false; meMode = false; pinMode = false; pending = null; document.body.style.overflow = ''; draw() } }); setInterval(() => { if (view && view.isConnected && !sending) draw() }, 60000); addEventListener('online', draw); addEventListener('offline', draw) }
         if (!S) { v.innerHTML = '<p class="note">Opening the board kept on this device…</p>'; if (!loading) loading = load().then(draw); return }
         draw()
     }
