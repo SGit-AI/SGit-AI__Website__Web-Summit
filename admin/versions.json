@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.932",
+    "date": "2026-11-07",
+    "what": "\"done for me\": a person can mark a team-wide issue done in their own command centre only",
+    "by": "conductor@web-summit.silvio",
+    "from": "fc2f7c53a"
+  },
+  {
     "version": "v0.2.931",
     "date": "2026-11-07",
     "what": "the private CRM's key sealed to crm-silvio, at Silvio's word (WS-172)",
