@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1062",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: 7 Nov 15:22 run: nothing to route",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "b001170eb"
+  },
+  {
     "version": "v0.2.1061",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: WS-181 part B: PrompTugal.news becomes the one guide, public for all, the team's layer private to us",
