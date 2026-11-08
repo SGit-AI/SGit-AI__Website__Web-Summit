@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1285",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.vicky: report: the Live AI Office's run status corrected and live (v0.2.1284)",
+    "by": "dev@PrompTugal.vicky",
+    "from": "5fb2e9d1c"
+  },
+  {
     "version": "v0.2.1284",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.vicky: request to the conductor: journalists note their fix-only runs in their writing reports; schedule.json behind the account",
