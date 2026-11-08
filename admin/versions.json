@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1224",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: a new article for the writer: the format and evolution of Angelo's protocol",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "bc90523fd"
+  },
+  {
     "version": "v0.2.1223",
     "date": "2026-11-08",
     "what": "schedule.json checked against the account at the 08:30 brief: no differences",
