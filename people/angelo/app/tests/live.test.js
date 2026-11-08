@@ -12,7 +12,7 @@ const S = process.argv[2], U = 'http://127.0.0.1:8765/people/angelo/app/index.ht
     if (mode === 'new') { const like = L.events.filter(e => e[3].length && L.agents[e[1]].split('@')[1] !== String(L.targets[e[3][0]]).split('@')[1]).pop() || L.events.find(e => e[3].length); L.events.push([Math.round((Date.now() - Date.parse(L.from)) / 6e4) - 10, like[1], 'q', like[3], 'testsha1']) }
     await r.fulfill({ response: res, json: L }) })
   await p.goto(U + '?livepoll=2#live', { waitUntil: 'networkidle' }); await p.waitForSelector('.lv-svg')
-  const st = () => p.evaluate(() => { const hex = document.querySelector('.lv-hex').getBoundingClientRect(), dot = document.querySelector('.lv-dot').getBoundingClientRect()
+  const st = () => p.evaluate(() => { const hex = document.querySelector('.lv-hex').getBoundingClientRect(), dot = document.querySelector('.lv-live').getBoundingClientRect()
     return { hexRim: !!document.querySelector('.lv-rim'), people: document.querySelectorAll('.lv .tm-p').length, agents: document.querySelectorAll('.lv .tm-a').length, base: document.querySelectorAll('.lv-links path.base').length,
       flow: document.querySelectorAll('.lv-pulses circle.flow').length, bright: document.querySelectorAll('.lv-pulses circle:not(.flow):not(.halo)').length, hot: document.querySelectorAll('.lv-hot').length,
       replay: !!document.querySelector('.lv-replay'), pop: !!document.querySelector('[data-lv-pop]'), scrollX: document.documentElement.scrollWidth - innerWidth,

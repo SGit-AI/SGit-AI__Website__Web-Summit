@@ -6,6 +6,8 @@
 // flow along every line, as dense as that pair has been in recent hours: it never stops, and nothing in it is invented.
 // "Pop out" puts it in an always-on-top window (Document Picture-in-Picture: Chrome and Edge on a desktop); where that is
 // missing (Safari on a Mac or iPad), in a floating video: the graph drawn into a canvas, the canvas's stream played in picture-in-picture.
+// Inside the hexagon (backlog 0d): RiskMandate's and PrompTugal.news's logos (their sites' own files), a pulsing LIVE label, and the
+// date and time of the moment on screen, in the viewer's time zone.
 // 3D (d3=1, backlog 0c): the same engine, drawn by live3d.js in WebGL: the same flow, pulses, lit lines and breathing, turned by hand.
 (function (root) {
     'use strict'
@@ -15,10 +17,12 @@
     const S = 1000, C = S / 2, RP = 300, PULL = 0.55
     const SCALE = 0.84                    // the graph sits inside the hexagon: its corners are 7% in from the square's
     const POLL = (() => { try { return +new URLSearchParams(root.location.search).get('livepoll') || 0 } catch { return 0 } })()   // seconds; only for the tests
-    const POLL_MS = POLL ? POLL * 1000 : 60000, SPREAD_MS = POLL ? 0 : 10000, TRAVEL_MS = 1600, FADE_MS = 3200, STALE_MIN = 20
+    const POLL_MS = POLL ? POLL * 1000 : 60000, SPREAD_MS = POLL ? 0 : 10000, TRAVEL_MS = 1600, FADE_MS = 3200, STALE_MIN = 30
     const DELAY_MS = (+new URLSearchParams(root.location.search || '').get('livedelay') || 4) * 6e4   // a fixed few minutes behind
     const FLOW_BASE = 3.5, FLOW_MAX = 70, FLOW_TRAVEL_MS = 3000, HALF_LIFE_H = 3   // ambient dots a second, at most on screen, their travel, how fast the past fades
     const HEX = 'M250 67 L750 67 L1000 500 L750 933 L250 933 L0 500 Z'
+    // the two logos, unchanged copies of what their own sites publish, served from this site; the newsroom's stamp in the page's tone
+    const LOGO_RM = () => new URL('brand/riskmandate-mark.svg', HERE).href, LOGO_PT = tone => new URL(`brand/pt-news-stamp-${tone}.svg`, HERE).href   // local copies (brand/README.md): no call to another site
     const HERE = document.currentScript ? document.currentScript.src : root.location.href
     const CSS = `
 .lv { container-type: size; position: relative; width: 100%; height: 100%; display: grid; place-items: center; background: var(--rm-bg, #07111F); overflow: hidden; }
@@ -40,11 +44,22 @@
 @keyframes lv-turn { to { stroke-dashoffset: -24; } }
 @media (prefers-reduced-motion: reduce) { .lv .tm-a .lv-kr { animation: none; } }
 .lv .tm-a.lv-hot > circle:not(.lv-kr), .lv .tm-a.lv-hot > rect { stroke: var(--rm-text, #fff); stroke-width: 3; }
-.lv-dot { display: none; position: absolute; left: 8px; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--rm-green, #3ecf8e); box-shadow: 0 0 6px currentColor; color: var(--rm-green, #3ecf8e); opacity: .8; }
-.lv-dot.old, .lv-dot.off { display: block; }
-/* the light shows only when something is wrong (Angelo, 7 November: a green dot that belongs to no one reads as an agent) */
-.lv-dot.old { background: var(--rm-orange, #f5a524); color: var(--rm-orange, #f5a524); }
-.lv-dot.off { background: var(--rm-text-muted, #9EB2C7); color: transparent; }
+/* inside the hexagon, small and quiet (backlog 0d): the logos and LIVE at the top, the moment shown at the bottom */
+.lv-top { position: absolute; left: 50%; top: 8.4%; transform: translateX(-50%); display: flex; align-items: center; gap: max(5px, 1.5cqmin); pointer-events: none; z-index: 2; }
+.lv-logo { width: clamp(14px, 4.6cqmin, 40px); height: clamp(14px, 4.6cqmin, 40px); border-radius: 22%; opacity: .92; display: block; }
+.lv-logo.gone { display: none; }
+.lv-live { display: inline-flex; align-items: center; gap: .45em; font: 700 clamp(8px, 2.2cqmin, 18px)/1 var(--rm-font, system-ui, sans-serif); letter-spacing: .14em; white-space: nowrap; color: var(--rm-red, #ff4d5e); padding: .32em .55em .32em .5em; border: 1px solid currentColor; border-radius: 999px; background: color-mix(in srgb, var(--rm-bg, #07111F) 75%, transparent); }
+.lv-live i { width: .62em; height: .62em; border-radius: 50%; background: currentColor; box-shadow: 0 0 .7em currentColor; animation: lv-pulse 1.6s ease-in-out infinite; }
+.lv-live.on { animation: lv-breathe 1.6s ease-in-out infinite; }
+@keyframes lv-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .3; transform: scale(.65); } }
+@keyframes lv-breathe { 0%, 100% { box-shadow: 0 0 0 0 transparent; } 50% { box-shadow: 0 0 .9em -.1em currentColor; } }
+/* over 30 minutes old: amber and still; reads failing: grey and still */
+.lv-live.old { color: var(--rm-orange, #f5a524); }
+.lv-live.off { color: var(--rm-text-muted, #9EB2C7); }
+.lv-live.old i, .lv-live.off i { animation: none; }
+.lv-live.off i { box-shadow: none; }
+@media (prefers-reduced-motion: reduce) { .lv-live i, .lv-live.on { animation: none; } }
+.lv-when { position: absolute; left: 50%; bottom: 8.6%; transform: translateX(-50%); font: 500 clamp(8px, 2cqmin, 16px)/1 var(--rm-font, system-ui, sans-serif); color: var(--rm-text-secondary, #9EB2C7); white-space: nowrap; font-variant-numeric: tabular-nums; pointer-events: none; text-shadow: 0 0 4px var(--rm-bg, #07111F); z-index: 2; }
 .lv-bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 0 0 10px; }
 .lv-page { display: grid; gap: 10px; }
 .lv-frame:fullscreen, .lv-frame:-webkit-full-screen { width: 100vw; height: 100vh; border: 0; border-radius: 0; }
@@ -104,8 +119,23 @@
                 if (n.fresh) { ga.classList.add('lv-fresh'); ga.setAttribute('data-lv-id', id); el('circle', { class: 'lv-kr', cx: f1(n.x), cy: f1(n.y), r: f1(n.family !== 'web-summit' ? 13 : 9 + Math.min(8, Math.sqrt(n.commits || 0))) }, ga) }
                 N.set(id, ga) }
         }
-        const dot = doc.createElement('i'); dot.className = 'lv-dot off'; dot.title = 'Reading the latest exchanges…'; wrap.appendChild(dot)   // a status light in the window's corner, outside the graph
         host.appendChild(wrap)
+        const bg = (win.getComputedStyle(wrap).backgroundColor.match(/\d+(\.\d+)?/g) || [7, 17, 31]).slice(0, 3).map(Number), light = (0.299 * bg[0] + 0.587 * bg[1] + 0.114 * bg[2]) > 140
+        // the logos and LIVE at the top of the hexagon (LIVE replaces the old freshness light), the moment shown at its foot
+        const top = doc.createElement('div'); top.className = 'lv-top'
+        top.innerHTML = `<img class="lv-logo" data-lv-logo="riskmandate" alt="RiskMandate" title="RiskMandate" crossorigin="anonymous" referrerpolicy="no-referrer" src="${LOGO_RM()}"><span class="lv-live off" data-lv-live title="Reading the latest exchanges…"><i></i>LIVE</span><img class="lv-logo" data-lv-logo="promptugal" alt="PrompTugal.news" title="PrompTugal.news" crossorigin="anonymous" referrerpolicy="no-referrer" src="${LOGO_PT(light ? 'light' : 'dark')}">`
+        for (const im of top.querySelectorAll('img')) im.onerror = () => im.classList.add('gone')   // offline: the label stays, the logo steps aside
+        const dot = top.querySelector('[data-lv-live]'), when = doc.createElement('div'); when.className = 'lv-when'; when.setAttribute('data-lv-when', '')
+        hex.appendChild(top); hex.appendChild(when)
+        // the moment on screen: now, less the fixed delay, in the viewer's own time zone
+        // a small pop-out (the hexagon under 300 px) gets the short form: the day and the time, without the weekday and the zone
+        const F = o => { try { return new Intl.DateTimeFormat(undefined, o) } catch { return { format: d => d.toString().slice(0, 21) } } }
+        const fmtL = F({ weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }), fmtS = F({ day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
+        let whenAt = '', narrow = false, wAt = -1e9
+        const paintWhen = () => { const t = Date.now() - DELAY_MS, d = new Date(t), m = Math.floor(t / 6e4)
+            if (t - wAt > 1000) { wAt = t; const w = hex.clientWidth; if (w) narrow = w < 300 }
+            const key = m + (narrow ? 'n' : 'w'); if (key === whenAt) return; whenAt = key; when.textContent = (narrow ? fmtS : fmtL).format(d); when.setAttribute('data-lv-shown', String(m * 6e4)); when.title = `What you see happened at this moment, ${Math.round(DELAY_MS / 6e4)} minutes behind now` }
+        paintWhen()
 
         // 3D: the WebGL view over the hexagon's floor, fed by the engine below on each frame (live3d.js, loaded only now)
         let r3 = null, ranSet = new Set()
@@ -116,7 +146,6 @@
                 let z = 0; if (n.kind === 'a') { const k = shell.get(n.person) || 0; shell.set(n.person, k + 1); z = (k % 2 ? 1 : -1) * (40 + 38 * (Math.floor(k / 2) % 3)) }
                 nodes3.push({ id, x: n.x - C, y: C - n.y, z, color: col.get(n.person) || 'var(--rm-text-muted)', size: n.kind === 'p' ? 56 : n.family !== 'web-summit' ? 17 : 2 * (4 + Math.min(8, Math.sqrt(n.commits || 0))) + 2, ring: !!n.fresh, label: n.kind === 'p' ? n.label : '' })
             }
-            const bg = (win.getComputedStyle(wrap).backgroundColor.match(/\d+(\.\d+)?/g) || [7, 17, 31]).slice(0, 3).map(Number), light = (0.299 * bg[0] + 0.587 * bg[1] + 0.114 * bg[2]) > 140
             const lib = root.AngeloLive3D ? Promise.resolve() : new Promise((ok, no) => { const s = document.createElement('script'); s.src = (() => { const u = new URL('live3d.js', HERE), v = ((win.document.querySelector('a.ver') || document.querySelector('a.ver') || {}).textContent || '').trim(); if (v) u.searchParams.set('v', v); return u.href })(); s.onload = ok; s.onerror = () => no(new Error('live3d.js could not load')); document.head.appendChild(s) })
             lib.then(() => root.AngeloLive3D.create(box, { nodes: nodes3, links: M.links || [], light, keep: !!o.keep3d, still: win.matchMedia('(prefers-reduced-motion: reduce)').matches, dist: 1650,
                 ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, mz = (a.z + b.z) / 2; return { x: mx * (1 - PULL), y: my * (1 - PULL), z: mz * (1 - PULL) } } }))
@@ -152,6 +181,7 @@
             raf = 0; if (!alive || !host.isConnected) return
             const now = ts, dt = Math.min(250, last ? now - last : 16); last = now
             while (queue.length && queue[0].at <= now) play(queue.shift().ev, now)
+            paintWhen()
             // never stops: the flow's rate follows the last hour against the 48-hour average, and breathes slowly
             debt += FLOW_BASE * (0.6 + 0.4 * Math.min(2, act)) * (1 + 0.2 * Math.sin(now / 9000)) * dt / 1000
             while (debt >= 1) { debt -= 1; flowOne(now) }
@@ -212,8 +242,8 @@
         }
         const paintDot = () => {
             const age = built ? (Date.now() - built) / 6e4 : Infinity, ok = lastOk && Date.now() - lastOk < 3 * (POLL_MS + SPREAD_MS)
-            dot.className = 'lv-dot ' + (!ok ? 'off' : age > STALE_MIN ? 'old' : '')
-            dot.title = !ok ? 'Could not read the latest exchanges; trying again' : `Up to date as of ${new Date(built).toISOString().slice(11, 16)} UTC${age > STALE_MIN ? ' (a quiet spell, or a slow release)' : ''}`
+            dot.className = 'lv-live ' + (!ok ? 'off' : age > STALE_MIN ? 'old' : 'on')
+            dot.title = !ok ? 'Could not read the latest exchanges; trying again' : `Live: up to date as of ${new Date(built).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}${age > STALE_MIN ? `, over ${STALE_MIN} minutes ago (a quiet spell, or a slow release)` : ''}`
         }
         // back from sleep or lost Wi-Fi: read at once instead of waiting for the next tick (a failed read is simply tried again)
         const again = () => { if (!alive || win.document.visibilityState === 'hidden') return; win.clearTimeout(timer); read(false) }
@@ -256,15 +286,29 @@
         document.body.appendChild(v)
         let css = '', cssAt = 0; const bg = root.getComputedStyle(document.documentElement).getPropertyValue('--rm-bg').trim() || '#07111F'
         let busy = false, alive = true
+        // the logos, LIVE and the moment shown, painted over the picture where they sit on the page (the logos are served for any origin)
+        const over = s => {
+            const hx = s.parentNode, hr = hx && hx.getBoundingClientRect(); if (!hr || !hr.width) return; const k = cv.width / hr.width
+            for (const im of hx.querySelectorAll('.lv-logo')) { if (!im.complete || !im.naturalWidth || im.classList.contains('gone')) continue; const r = im.getBoundingClientRect(); try { cx.drawImage(im, (r.left - hr.left) * k, (r.top - hr.top) * k, r.width * k, r.height * k) } catch { } }
+            for (const el of hx.querySelectorAll('.lv-live, .lv-when')) {
+                const r = el.getBoundingClientRect(), cs = root.getComputedStyle(el), x = (r.left - hr.left) * k, y = (r.top - hr.top) * k, w = r.width * k, h = r.height * k
+                cx.save(); cx.fillStyle = cx.strokeStyle = cs.color; cx.font = `${cs.fontWeight} ${parseFloat(cs.fontSize) * k}px ${cs.fontFamily}`; cx.textBaseline = 'middle'
+                if (el.classList.contains('lv-live')) { cx.lineWidth = k; cx.beginPath(); cx.roundRect ? cx.roundRect(x, y, w, h, h / 2) : cx.rect(x, y, w, h); cx.stroke()
+                    cx.globalAlpha = el.classList.contains('on') ? 0.3 + 0.7 * Math.abs(Math.cos(Date.now() / 1600 * Math.PI)) : 1; cx.beginPath(); cx.arc(x + h * 0.55, y + h / 2, h * 0.17, 0, 7); cx.fill(); cx.globalAlpha = 1
+                    cx.textAlign = 'left'; cx.fillText('LIVE', x + h * 0.9, y + h / 2) }
+                else { cx.textAlign = 'center'; cx.fillText(el.textContent, x + w / 2, y + h / 2) }
+                cx.restore()
+            }
+        }
         const draw = () => {
             const s = src(); if (!alive || busy || !s) return
             const c3 = s.parentNode && s.parentNode.querySelector('.lv-3dc')
-            if (c3) { cx.fillStyle = bg; cx.fillRect(0, 0, cv.width, cv.height); try { cx.drawImage(c3, 0, 0, cv.width, cv.height) } catch { } return }   // 3D: the WebGL picture itself
+            if (c3) { cx.fillStyle = bg; cx.fillRect(0, 0, cv.width, cv.height); try { cx.drawImage(c3, 0, 0, cv.width, cv.height) } catch { } over(s); return }   // 3D: the WebGL picture itself
             busy = true
             const c = s.cloneNode(true); c.setAttribute('xmlns', NS); c.setAttribute('width', W * R); c.setAttribute('height', W * R); c.setAttribute('class', 'lv lv-svg tm-svg')
             if (!css || Date.now() - cssAt > 60000) { css = svgStyle(document, new root.XMLSerializer().serializeToString(s)); cssAt = Date.now() }   // again each minute: new agents, new colours
             const st = document.createElementNS(NS, 'style'); st.textContent = css; c.insertBefore(st, c.firstChild)
-            const img = new root.Image(); img.onload = () => { cx.fillStyle = bg; cx.fillRect(0, 0, cv.width, cv.height); cx.drawImage(img, 0, 0, cv.width, cv.height); busy = false }; img.onerror = () => { busy = false }
+            const img = new root.Image(); img.onload = () => { cx.fillStyle = bg; cx.fillRect(0, 0, cv.width, cv.height); cx.drawImage(img, 0, 0, cv.width, cv.height); over(s); busy = false }; img.onerror = () => { busy = false }
             img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new root.XMLSerializer().serializeToString(c))
         }
         cx.fillStyle = bg; cx.fillRect(0, 0, cv.width, cv.height); draw()
@@ -301,7 +345,7 @@
         if (current) { current.destroy(); current = null }
         const d3 = is3d()
         if (!host.ownerDocument.getElementById('lv-css')) { stylesInto(host.ownerDocument); host.ownerDocument.head.lastChild.id = 'lv-css' }
-        host.innerHTML = `<div class="lv-page"><div class="lv-bar"><button type="button" class="cc-btn" data-lv-pop>⧉ Pop out</button><button type="button" class="cc-btn" data-lv-fs hidden>⛶ Full screen</button><a class="cc-btn" data-lv-3dsw aria-pressed="${d3}" href="${d3 ? root.location.pathname + root.location.search.replace(/([?&])d3=1(&|$)/, '$1').replace(/[?&]$/, '') + '#live' : '#live?d3=1'}" title="${d3 ? 'Back to the flat graph' : 'The same live graph in 3D: drag to turn it; loads 1.6 MB of 3D libraries'}">${d3 ? '✓ 3D' : '3D'}</a><a class="cc-btn" data-lv-display href="?display=1${d3 ? '&d3=1' : ''}#live">Display mode</a><span class="note" data-lv-note>${pipMode() === 'doc' ? 'An always-on-top window with this graph. Close it to come back here.' : pipMode() === 'video' ? 'A floating window with this graph, over your other windows and apps. It moves while this page is open; close it from its own window.' : 'Pop-out needs Chrome or Edge on a computer, or Safari on a Mac or iPad. Otherwise use Full screen, or Display mode for a screen left on.'}</span></div><div class="lv-frame" data-lv-frame></div><p class="note">Lines and dots only. Each exchange between agents (a commit with a For: line, in any repository the agents work in: this site, its workers' branches, the newsroom, the apps) travels along its line a few minutes after it is made, at its real pace. The faint dots between are the flow of recent hours: busier pairs, more dots. A dashed ring that turns slowly is an agent that starts a fresh session each run: it is there between runs, and its ring is bright for two hours after it last sent something. The light in the corner shows only when the data is late or cannot be read. Names, edges and times only: no message text.</p></div>`
+        host.innerHTML = `<div class="lv-page"><div class="lv-bar"><button type="button" class="cc-btn" data-lv-pop>⧉ Pop out</button><button type="button" class="cc-btn" data-lv-fs hidden>⛶ Full screen</button><a class="cc-btn" data-lv-3dsw aria-pressed="${d3}" href="${d3 ? root.location.pathname + root.location.search.replace(/([?&])d3=1(&|$)/, '$1').replace(/[?&]$/, '') + '#live' : '#live?d3=1'}" title="${d3 ? 'Back to the flat graph' : 'The same live graph in 3D: drag to turn it; loads 1.6 MB of 3D libraries'}">${d3 ? '✓ 3D' : '3D'}</a><a class="cc-btn" data-lv-display href="?display=1${d3 ? '&d3=1' : ''}#live">Display mode</a><span class="note" data-lv-note>${pipMode() === 'doc' ? 'An always-on-top window with this graph. Close it to come back here.' : pipMode() === 'video' ? 'A floating window with this graph, over your other windows and apps. It moves while this page is open; close it from its own window.' : 'Pop-out needs Chrome or Edge on a computer, or Safari on a Mac or iPad. Otherwise use Full screen, or Display mode for a screen left on.'}</span></div><div class="lv-frame" data-lv-frame></div><p class="note">Lines and dots only. Each exchange between agents (a commit with a For: line, in any repository the agents work in: this site, its workers' branches, the newsroom, the apps) travels along its line a few minutes after it is made, at its real pace. The faint dots between are the flow of recent hours: busier pairs, more dots. A dashed ring that turns slowly is an agent that starts a fresh session each run: it is there between runs, and its ring is bright for two hours after it last sent something. LIVE at the top pulses while the data is fresh; it turns amber and still when the data is over 30 minutes old, and grey when it cannot be read. The time at the foot is the moment on screen, a few minutes behind now, in your time zone. Names, edges and times only: no message text.</p></div>`
         const frame = host.querySelector('[data-lv-frame]'), btn = host.querySelector('[data-lv-pop]'), note = host.querySelector('[data-lv-note]')
         const inline = () => { current = mount(frame, { ...o, win: root, d3, keep3d: pipMode() === 'video' }) }
         if (popped) { frame.innerHTML = '<p class="note" style="padding:16px">Popped out.</p>' } else inline()
