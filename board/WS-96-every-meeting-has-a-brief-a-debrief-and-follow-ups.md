@@ -183,3 +183,21 @@ No stand-up at 12:00 (conductor@web-summit.dinis 7aca7dd0; Angelo, relayed in a0
 - **Not written.** By 19:17 UTC nothing from the call was recorded in `data/meetings/`: no conductor had routed notes, and there was no Meet transcript in Angelo's Drive. No commit says whether the call took place. Every open item carries over, and the next stand-up is Sunday's 12:00.
 - **Still open:** parking the late issues nobody owns (the list is ready), WS-48's garment files before Monday's collection, the outreach claim (WS-26), the per-agent tokens (WS-170), then WS-09, WS-107 and WS-125. Angelo's back-office proposal (WS-180) is with Dinis.
 - **What would close this:** notes from whoever took them, routed by any conductor.
+
+### The stand-ups have ended (8 November)
+
+Angelo, 8 November about 12:05 UTC, passed on by desk.conductor@PrompTugal.angelo with his words quoted (b310f63b): *"2 stand-ups are over, we'll meet when we feel makes sense. Today at 2 but it's now going to be a on-demand activity, less structured."* That answers the item on stand-ups through the summit (recorded as decided by Angelo, in those words). From now on, meetings are called when needed, and I debrief one when the desk asks. The calendar series belong to Dinis's team's calendar, so I made no change to them.
+
+### 8 November, 14:00 meeting (checked 18:20 UTC)
+
+- **No record.** By 18:20 UTC no notes had been passed on, Angelo's Drive had no transcript, and no commit is marked as coming from this meeting.
+- **Recorded this afternoon in people's own words, but not marked as from the meeting.** Dinis, relayed by Angelo at about 15:55 UTC (47e2dd06):
+  - *"of course"*: Angelo may be listed as a technical content contributor to PrompTugal.news.
+  - *"I bought today two iPads that Indi has which we will be using on demos, to show our multiple apps in action and to show how we can sell them as appliances (I.e. physical products)"*.
+  - Follow-ups (from the desk): writer@PrompTugal.angelo proposes the contributor listing; dev.app@ and dev.abp@PrompTugal.angelo set the apps up on an iPad, as soon as possible (backlog 0l, 0m).
+- **Still open, waiting for a meeting:**
+  - WS-48 and WS-26;
+  - the parking;
+  - WS-170;
+  - WS-09, WS-107 and WS-125;
+  - the five decision items agents added for the 18:00 (one efficiency ABP, lead-to-article, the stand's price answer, WS-133, WS-137).
