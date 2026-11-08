@@ -415,11 +415,14 @@ function tasks(root, person, d, now) {
         const dl = b.match(/^Delivered:\s*(.+)$/m); if (!dl || !/^For: desk\.conductor@PrompTugal\.angelo/mi.test(b)) continue
         const who = (s.match(/^([a-z0-9.-]+)@/i) || [])[1] || '', id = 'D-' + h.slice(0, 8), m = marks.get(id)
         const ref = (dl[1].match(/https?:\/\/\S+|(?:people|board|content|data|admin|assets)\/[\w./@-]+/) || [])[0] || ''
-        cards.push({ id, src: 'delivery', col: m ? (m.action === 'changes' ? 'progress' : 'done') : 'delivered', title: plain(s.replace(/^[^:]+:\s*/, '')), agent: who ? who + '@' : '', brief: h, link: ref ? (/^http/.test(ref) ? ref : `${REPO}/blob/dev/${ref.replace(/[.,;]+$/, '')}`) : `${REPO}/commit/${h}`, commit: `${REPO}/commit/${h}`, chip: m ? (m.action === 'changes' ? 'needs changes' : 'seen') : 'delivered', note: m && m.action === 'changes' ? plain(m.text) : '', rank: 0, at: m ? m.at : at })
+        // the kind first, from the kit's short list ("Delivered: <kind>, <what> <path or link>", 8 November); an older line has none
+        const kind = ((dl[1].match(/^([a-z ]{3,14}),/i) || [])[1] || '').trim().toLowerCase(), KIND = DELIVERY_KINDS.includes(kind) ? kind : ''
+        cards.push({ id, src: 'delivery', kind: KIND, col: m ? (m.action === 'changes' ? 'progress' : 'done') : 'delivered', title: plain(s.replace(/^[^:]+:\s*/, '')), agent: who ? who + '@' : '', brief: h, link: ref ? (/^http/.test(ref) ? ref : `${REPO}/blob/dev/${ref.replace(/[.,;]+$/, '')}`) : `${REPO}/commit/${h}`, commit: `${REPO}/commit/${h}`, chip: m ? (m.action === 'changes' ? 'needs changes' : 'seen') : 'delivered', note: m && m.action === 'changes' ? plain(m.text) : '', rank: 0, at: m ? m.at : at })
     }
     return { cards, unplaced, counts: Object.fromEntries(['backlog', 'open', 'issue', 'delivery'].map(x => [x, cards.filter(c => c.src === x).length])) }
 }
 const DONE_WINDOW_DAYS = KANBAN.DONE_DAYS
+const DELIVERY_KINDS = ['article', 'brief', 'page', 'post', 'email draft', 'record', 'key', 'tool', 'app', 'spec', 'report']
 
 export function build(root, person, now = new Date()) {
     const d = CC.build(root, person, now)

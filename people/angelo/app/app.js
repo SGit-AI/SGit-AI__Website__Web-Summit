@@ -197,7 +197,7 @@ ${shown.length ? board(shown, s, now) : `<div class="cc-card ak-empty"><p>No car
             // chip colours by meaning (dashboard@'s look.md): tier 3 yellow, a click or a wait blue, overdue red, delivered green, needs changes orange
             const chipCls = t => t.chip === 'tier 3' ? 't-yellow' : /overdue|stand-up|today/.test(t.chip) ? 't-red' : /waits|click|sent/.test(t.chip) ? 't-blue' : /delivered/.test(t.chip) ? 't-green' : t.chip === 'needs changes' ? 't-orange' : 'plain'
             const card = t => `<article class="ak-card ak-task${changed.has(t.id) ? ' ak-new' : ''}" data-task="${esc(t.id)}">${changed.has(t.id) ? '<span class="ak-newb">NEW</span>' : ''}
-<span class="ak-meta">${t.chip ? `<span class="chip ${chipCls(t)}">${esc(t.chip)}</span>` : ''}<span class="chip plain">${esc([t.agent, t.id].filter(Boolean).join(' · '))}</span></span>
+<span class="ak-meta">${t.chip ? `<span class="chip ${chipCls(t)}">${esc(t.chip)}</span>` : ''}${t.kind ? `<span class="chip plain" title="What was delivered">${esc(t.kind)}</span>` : ''}<span class="chip plain">${esc([t.agent, t.id].filter(Boolean).join(' · '))}</span></span>
 <b class="ak-tt" title="${esc(t.title)}">${esc(t.title)}</b>
 ${t.rec ? `<span class="ak-rec">Recommended: <b>${esc(t.rec)}</b></span>` : ''}${t.waits && t.col !== 'done' && !/^nothing$/i.test(t.waits) ? `<span class="note">Waits on: ${esc(t.waits)}</span>` : ''}${t.done ? `<span class="note">${esc(t.done)}</span>` : ''}${t.note ? `<span class="note">Your line: ${esc(t.note)}</span>` : ''}
 ${t.text && t.text !== t.title ? `<details class="ak-more"><summary>More</summary><p>${esc(t.text)}</p></details>` : ''}
