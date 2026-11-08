@@ -179,3 +179,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - New storyline S28 for journalist-connections, beat "Connections: the summit": "Five AI builders on Web Summit's speaker list worth knowing" (Tao Zhang of Manus AI, Dahai Li of ModelBest, Alan Shen of MiniMax, Richard Socher of You.com, Michele Catasta of Replit). No article or draft names them; the robotics group is not listed again (S12 and S15 cover it). Newsroom: desks/curator/2026-11-08-1045.json.
 - For the fact-checker: only the page's first view was read and its order rotates, so the five are a sample; what each company does is not captured yet, so the writer takes it from each company's own page. Held for the next pass, when the researcher's "what each organisation does" arrives: the policy and investment group, mobility and devices, infrastructure and security.
 - state: ok; done: S28 listed, SA19C recorded; next: the 14:30 run; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 14:30 UTC run
+
+- applied SA22: the curator line is in my scheduled prompt (before step 3) and my prompts file (rule 24); my times are unchanged. decisions.md read first: no HOLD.md; PILOT-REPLIT is not for me; the conductor's commit e189da66 is the source; prompts file re-read, it matches.
+- New capture in vault 41j3e9s9 (researcher's 14:15 run): [Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/), read 8 November 2026, page 1 of 26, 100 startups with the page's industry tags (names and tags only). Mapped in desks/curator/2026-11-08-1445.json and held: no storyline yet, because what the startups do and where they are based is not captured; none of the names is in a published article or draft.
+- Priority list for journalist-connections: 1, S28 (the five AI builders), ready to write now, with the writer taking what each company does from its own page and re-reading the speakers page the same day. Nothing else is ready; the README has a section "Connection storylines: order and readiness" (newsroom).
+- state: ok; done: SA22 applied, startups capture mapped and held, S28 marked ready; next: the 18:30 run; ask: none; run: scheduled
