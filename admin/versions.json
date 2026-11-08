@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1399",
+    "date": "2026-11-08",
+    "what": "WS-194 steps 2 and 3: /xray/status/ for the stand, and xray-jobs.mjs to keep one job per booth request",
+    "by": "dev@web-summit.silvio",
+    "from": "939f3b0b2"
+  },
+  {
     "version": "v0.2.1398",
     "date": "2026-11-08",
     "what": "runner.conductor@PrompTugal.angelo: 21:21 run, nothing to route, nothing urgent",
