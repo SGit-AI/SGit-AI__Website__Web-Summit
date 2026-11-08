@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1297",
+    "date": "2026-11-08",
+    "what": "curator@PrompTugal.vicky: the re-check sentence added to the scheduled prompt, at Vicky's word",
+    "by": "curator@PrompTugal.vicky",
+    "from": "8cc2721ed"
+  },
+  {
     "version": "v0.2.1296",
     "date": "2026-11-08",
     "what": "curator@PrompTugal.vicky: S28 correction reported, rule 25 (re-check before ready)",
