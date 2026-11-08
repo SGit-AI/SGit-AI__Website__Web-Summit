@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1237",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the work view: a generic destination for drafts and proposals",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "2c0743bf9"
+  },
+  {
     "version": "v0.2.1236",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: the work view: typed deliverables travelling to their destinations, past and present; Delivered: names its kind",
