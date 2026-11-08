@@ -57,6 +57,10 @@
 /* inside the hexagon, small and quiet (backlog 0d): the logos and LIVE at the top, the moment shown at the bottom */
 .lv-top { position: absolute; left: 50%; top: 8.4%; transform: translateX(-50%); display: flex; align-items: center; gap: max(5px, 1.5cqmin); pointer-events: none; z-index: 2; }
 .lv-logo { width: clamp(14px, 4.6cqmin, 40px); height: clamp(14px, 4.6cqmin, 40px); border-radius: 22%; opacity: .92; display: block; }
+/* RiskMandate's mark as big as PT News's (backlog 0c4 (6), Angelo, 8 November: "the riskmandate logo is too small, it should equal the PT one"):
+   both are drawn in the same square, but on a dark hexagon RiskMandate's dark tile melts into it and only its inner ring shows, while
+   PT News's square shows whole; a faint edge round the tile (the file itself unchanged) shows the whole square, the same size as PT's */
+.lv-top.lv-on-dark .lv-logo[data-lv-logo="riskmandate"] { box-shadow: 0 0 0 max(1px, .14cqmin) rgba(247, 246, 242, .42); opacity: 1; }
 .lv-logo.gone { display: none; }
 /* larger in 3D (backlog 0c3, Angelo, 8 November: "The live 3d view should have the 2 logos bigger"), still inside the hexagon */
 .lv-3d-on .lv-logo { width: clamp(16px, 7.2cqmin, 66px); height: clamp(16px, 7.2cqmin, 66px); }
@@ -182,7 +186,7 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
         // asked when the 3D starts, not now: in a pop-out the copied stylesheets are still loading (backlog 0c2)
         const light = () => { const bg = (win.getComputedStyle(wrap).backgroundColor.match(/\d+(\.\d+)?/g) || [7, 17, 31]).slice(0, 3).map(Number); return (0.299 * bg[0] + 0.587 * bg[1] + 0.114 * bg[2]) > 140 }
         // the logos and LIVE at the top of the hexagon (LIVE replaces the old freshness light), the moment shown at its foot
-        const top = doc.createElement('div'); top.className = 'lv-top'
+        const top = doc.createElement('div'); top.className = 'lv-top' + (light() ? '' : ' lv-on-dark')
         top.innerHTML = `<img class="lv-logo" data-lv-logo="riskmandate" alt="RiskMandate" title="RiskMandate" crossorigin="anonymous" referrerpolicy="no-referrer" src="${LOGO_RM()}"><span class="lv-live off" data-lv-live title="Reading the latest exchanges…"><i></i>LIVE</span><img class="lv-logo" data-lv-logo="promptugal" alt="PrompTugal.news" title="PrompTugal.news" crossorigin="anonymous" referrerpolicy="no-referrer" src="${LOGO_PT(light ? 'light' : 'dark')}">`
         for (const im of top.querySelectorAll('img')) im.onerror = () => im.classList.add('gone')   // offline: the label stays, the logo steps aside
         const dot = top.querySelector('[data-lv-live]'), when = doc.createElement('div'); when.className = 'lv-when'; when.setAttribute('data-lv-when', '')
@@ -198,7 +202,7 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
         const fmtL = F({ weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }), fmtS = F({ day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
         let whenAt = '', narrow = false, wAt = -1e9
         const paintWhen = () => { const t = Date.now() - DELAY_MS, d = new Date(t), m = Math.floor(t / 6e4)
-            if (t - wAt > 1000) { wAt = t; const w = hex.clientWidth; if (w) narrow = w < 300 }
+            if (t - wAt > 1000) { wAt = t; const w = hex.clientWidth; if (w) narrow = w < 300; top.classList.toggle('lv-on-dark', !light()) }   // the pop-out's styles arrive late, and the theme can change
             const key = m + (narrow ? 'n' : 'w'); if (key === whenAt) return; whenAt = key; when.textContent = (narrow ? fmtS : fmtL).format(d); when.setAttribute('data-lv-shown', String(m * 6e4)); when.title = `What you see happened at this moment, ${Math.round(DELAY_MS / 6e4)} minutes behind now` }
         paintWhen()
 
