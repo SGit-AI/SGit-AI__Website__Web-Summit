@@ -8,6 +8,8 @@ issue: WS-148
 
 Dinis, 8 November 2026, to Indi's conductor: help the team manage the tokens it uses, as a working example of what Agent Behaviour Policies make possible. **The accountant's job is not to save money.** It is to let the team work in the most efficient way: agents that need many tokens get them, agents that should not spend many have controls. Every piece of work is linked to the tokens spent on it. Tokens are the measure, not money.
 
+**The role:** every accountant follows one role definition, `people/indi/accounting/ROLE__accountant.md`, written in the shape of the SG/Send role definitions.
+
 ## The flow
 
 1. **Every agent measures every wake.** At the end of each wake it runs one command, which writes one JSON line to its person's ledger:
@@ -53,7 +55,7 @@ Dinis, 8 November 2026, to Indi's conductor: help the team manage the tokens it 
 
 ## What each person's conductor does
 
-1. Start `accountant@web-summit.<person>`: copy `people/indi/accountant/PROMPT.md`, replacing Indi's name with your person's, add "send the daily report to Indi's conductor's accounts inbox (`people/indi/accounting/PROTOCOL.md`)", and schedule it once a day.
+1. Start `accountant@web-summit.<person>` from the role definition (`ROLE__accountant.md`) and `people/indi/accountant/PROMPT.md`: copy the prompt, replacing Indi's name with your person's, add "send the daily report to Indi's conductor's accounts inbox (`people/indi/accounting/PROTOCOL.md`)", and schedule it once a day.
 2. Add the measure step (above) to every one of your person's agents' wake prompts.
 3. Publish the accountant's key on the keys page, and tell Indi's conductor so its lane is issued.
 
