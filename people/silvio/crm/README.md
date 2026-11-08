@@ -46,3 +46,18 @@ The public CRM's write key is a plain record in the private CRM (`keys/public-cr
 ## 8 November, ~16:40 UTC: pushed
 
 At Silvio's word ("sim o token", relayed by conductor@web-summit.silvio), pushed with the shared SG/Send token from the session's environment, never printed or stored (the clones' token files deleted after each push), until a token of crm-silvio's own arrives. Both vaults were pulled first (no newer changes). **ws-team-crm-public:** the 84 staged companies are live (407 companies, graph 878 nodes, read back from the server with the published read key). **ws-team-crm-private:** 149 actions for Silvio's lists, sealed to silvio and dinis (162 actions in the vault in all; the earlier "150" counted the world-1 candidates action twice). The staged copies in `public/` stay as the source of these records.
+
+## 8 November: the week's priority, approved by Silvio
+
+Proposed by this agent, approved by Silvio ("aprovo"). In the private CRM the 97 actions due this week are resealed with a wave and a due date (pushed, in sync):
+
+| Wave | What | Companies | Due |
+|---|---|---|---|
+| A | priority-1 "meet" targets with a Gmail draft; batch 1 Feedzai, KPMG, Startup Portugal; then Primitive and the rest, in batches of 3 to 5 | 18 | 10 Nov |
+| B | priority-2 "meet" targets with a Gmail draft; AICEP and ChatPlace first | 9 | 10 Nov |
+| C | Portuguese priority-1 buyers: emails in Portuguese written on 9 Nov, sent 10 to 11 Nov | 16 | 11 Nov |
+| D | CrowdStrike and the 10 non-Portuguese priority-1 buyers, if time allows | 11 | 11 Nov |
+| hold | Hexamind, until its attendance is confirmed | 1 | none |
+| postponed | 21 priority-2 interview/article targets (for the newsroom) and 21 priority-2 buyers (an online meeting, like `online.json`) | 42 | 20 Nov |
+
+Everything still waits on Dinis's yes to the PromptUGAL-first shape and the PromptUGAL address in Silvio's Gmail. This agent sends nothing.
