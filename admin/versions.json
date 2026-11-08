@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1258",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: run 11:20 UTC: nothing to route, social-media questions to Angelo's list Scheduled run. Agent: runner.conductor@PrompTugal.angelo",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "3084f7903"
+  },
+  {
     "version": "v0.2.1257",
     "date": "2026-11-08",
     "what": "the incidents list is internal: removed from the public site, sealed to the team's keys",
