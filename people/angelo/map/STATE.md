@@ -16,4 +16,5 @@ Fourteenth run, 8 November 2026 (18:15 to about 19:40 UTC). Backlog 0c3 (6) (the
 - For policy@: my lane leaves out this STATE file (people/angelo/map/**); dashboard@'s review carries it onto dev.
 
 ## Last run
+Pushing: the branch already holds workers/dev.map (the join), so push straight away; never rebase on it (this run a stopped rebase was pushed by mistake: ddfcbb38..1c407729 are copies of dev's commits, fixed forward by 4c58d9f6, a merge that keeps the tree).
 Started from dev, joined workers/dev.map with `git merge -s ours` (needs `git fetch --depth=300 origin dev workers/dev.map` first in a shallow clone; `--depth=6000 origin dev` for tmf and the replay tests). Gate with LANE_RANGE=<the join commit>..HEAD.
