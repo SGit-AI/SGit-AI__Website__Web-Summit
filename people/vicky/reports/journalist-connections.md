@@ -135,3 +135,8 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - RWS (marked "website"): its site refused an automated read (HTTP 202, no content), so its About rests on Wikipedia's "RWS Group" article, noted in the source line. Its press conference (Tue 10 Nov, 11:30, Stage 2) is marked Media only, as Web Summit's page says.
 - Skipped: none. Blockers: none. Left out on purpose: where each company is based, as in C1.
 - state: ok; done: C2 written and pushed for review; next: my 19:50 fix-only run; no further batch; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 19:58 UTC (fix-only run)
+
+- S30 fixed after the reviewer's Fix first, all points accepted and checked today: the eleven companies' own Web Summit pages now cited and linked (each with its description and GROWTH badge), and the text says the descriptions come from those pages; NeoCannBio "says it is building" its chain; AURIMOD's drug-free claim attributed; the cover card and its alt text say the eleven are from page 1 of Web Summit's featured list; group label now "doctors, bookings, claims". Status back to draft, For: reviewer@PrompTugal.vicky. Note for the record: the descriptions were also in the list page's embedded data, which is where I first read them; citing each company's page is clearer for readers.
+- state: ok; done: S30 revised and pushed; next: the reviewer's 20:20 re-check; ask: none; run: scheduled

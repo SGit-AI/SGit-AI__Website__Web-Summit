@@ -46,7 +46,7 @@ Start now: set up your key, read the curator's README, and tell me in plain word
 
 **From 8 Nov (SCHED-WS):** writing 05:45, 10:45, 14:45, 18:45 UTC; fix-only 06:50, 11:50, 15:50, 19:50 UTC (`trig_01ENwR7p1ggLZHK2RcyBPTud`), both set by the conductor at Vicky's word, 7 Nov.
 
-Task trig_01SpLzX33tb8C82iAaPMBy3d, into this session. From 8 November at 05:45, 10:45, 14:45 and 18:45 UTC (cron `45 5,10,14,18 * * *`, SCHED-WS, set by the conductor at Vicky's word on 7 Nov); before that 08:00 and 16:00, then three and four rounds on 7 November. Step 2 replaced on 8 November (REMOTE-WS), into this session. Set up at Vicky's word on 6 November 2026; word for word, with the lines added on 7 November at the end:
+Task trig_01SpLzX33tb8C82iAaPMBy3d, into this session. From 8 November at 05:45, 10:45, 14:45 and 18:45 UTC (cron `45 5,10,14,18 * * *`, SCHED-WS, set by the conductor at Vicky's word on 7 Nov); before that 08:00 and 16:00, then three and four rounds on 7 November. Step 2 replaced on 8 November (REMOTE-WS); step 5 changed on 8 November (HANDOFF-FIX), into this session. Set up at Vicky's word on 6 November 2026; word for word, with the lines added on 7 November at the end:
 
 ```
 Scheduled run for journalist@PrompTugal.vicky:
@@ -54,7 +54,7 @@ Scheduled run for journalist@PrompTugal.vicky:
 2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
 3. Read desks/journalist-vicky/STYLE.md.
 4. Read desks/curator/README.md and pick the storylines in your beat that have no draft yet in desks/journalist-vicky/drafts/, desks/journalist-promptugal/drafts/ or content/articles/.
-5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: journalist@PrompTugal.dinis.
+5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: reviewer@PrompTugal.vicky (the review hand-off).
 6. If there's nothing new in your beat, write nothing.
 7. Add a report line in people/vicky/reports/journalist.md on the team site.
 Never push to main, never use --force, never push to a session branch.
@@ -86,7 +86,7 @@ Never push to main, never use --force, never push to a session branch.
 As of 6 November 2026, Vicky says `desks/journalist-vicky/STYLE.md` in the newsroom repository replaces these; they are kept here as given, in order.
 
 1. 5 Nov: the stories are mine (Dinis said so at the 18:00 stand-up). No need for the vault: re-read every source at its own address.
-2. 5 Nov: when a draft is ready, address its commit `For: newsroom@web-summit.dinis`, so Dinis's newsroom agent sees it. Publishing still waits for Dinis's word.
+2. 5 Nov: when a draft is ready, address its commit `For: newsroom@web-summit.dinis`, so Dinis's newsroom agent sees it. Publishing still waits for Dinis's word. (Superseded on 8 Nov by HANDOFF-FIX: drafts are handed to reviewer@PrompTugal.vicky; routine review and publication go through Vicky's reviewer only.)
 3. 5 Nov: I am the summit journalist: Web Summit itself, practical guides, its numbers and reports, and delegations coming to it. Other beats (Portugal, Europe, AI and robotics, connections) go to the other journalists; skip their stories.
 4. 5 Nov: new AI and robotics material goes to journalist-ai; I keep to the summit beat.
 5. 5 Nov: all of Vicky's journalists write in `desks/journalist-vicky/drafts/`, one file per story; leave the others' files alone.

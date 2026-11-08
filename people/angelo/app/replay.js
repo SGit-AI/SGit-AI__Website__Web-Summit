@@ -31,7 +31,10 @@
     }
     const at = (R, m) => new Date(Date.parse(R.from) + m * 6e4)
     const hhmm = d => d.toISOString().slice(11, 16)
-    const dayLabel = d => d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' })
+    // one formatter, and one label per UTC day: the map's playback asks for it on every frame (twice with the timeline open),
+    // and toLocaleDateString built a new formatter each time (dev.map@, 8 November: about 4% of a phone's playback)
+    const dayFmt = new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }), dayMemo = new Map()
+    const dayLabel = d => { const k = Math.floor(d.getTime() / 864e5); let v = dayMemo.get(k); if (v === undefined) dayMemo.set(k, v = dayFmt.format(d)); return v }
 
     // which events this view shows, and its time span in minutes since 2 November
     function select(R, s, nowMin) {

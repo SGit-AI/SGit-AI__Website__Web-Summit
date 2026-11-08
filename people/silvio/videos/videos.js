@@ -1,8 +1,10 @@
 // The team's video library (people/silvio/videos/): draws every approved video from the team's videos vault, in the
-// browser, with the vault's published read key. By video@web-summit.silvio, 8 November 2026.
-// Small files (library.json, posters) are read through the vault's read API. Large files (the videos) go through the
-// vault's presigned links, as SG/Vault's own app does; if the storage does not yet allow this site's origin, Watch and
-// Download open the file's vault in SG/Vault instead, where it plays and has a Save button. Nothing is sent anywhere.
+// browser, with the vault's published read key. By video@web-summit.silvio, 8 November 2026 (redrawn the same evening at
+// Silvio's word: one language picker and three buttons per video, cards aligned).
+// Small files (library.json, posters) are read through the vault's read API. The videos go through the vault's presigned
+// links, as SG/Vault's own app does. On load the page checks once whether the vault's storage lets this site fetch them:
+// if yes, Watch plays in the page and Download saves the file; if not yet, both say so and open the team's vault in a
+// new tab (where each file plays and has a Save button), naming the folder and the file. Nothing is sent anywhere.
 (() => {
   'use strict'
   const box = document.getElementById('vl'); if (!box) return
@@ -10,85 +12,77 @@
   const cfg = { endpoint: box.dataset.endpoint, vault_id: box.dataset.vault, read_key: box.dataset.key.replace(/^sgit_public_read_/, '') }
   const APP = box.dataset.app
   const CH = [['all', 'All'], ['linkedin', 'LinkedIn'], ['instagram', 'Instagram'], ['youtube', 'YouTube'], ['stand', 'The stand screen']]
-  const h = (tag, attrs = {}, kids = []) => { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (k === 'text') e.textContent = v; else if (k === 'on') e.addEventListener('click', v); else e.setAttribute(k, v) } for (const c of [].concat(kids)) if (c) e.append(c); return e }
-  const icon = d => { const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); s.setAttribute('width', '14'); s.setAttribute('height', '14'); s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('fill', 'none'); s.setAttribute('stroke', 'currentColor'); s.setAttribute('stroke-width', '2.2'); s.setAttribute('stroke-linecap', 'round'); s.setAttribute('stroke-linejoin', 'round'); s.setAttribute('aria-hidden', 'true'); const p = document.createElementNS('http://www.w3.org/2000/svg', 'path'); p.setAttribute('d', d); s.append(p); return s }
-  const I = { play: 'M7 4l13 8-13 8z', down: 'M12 4v11M7 11l5 5 5-5M5 20h14', share: 'M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M8 7l4-4 4 4', copy: 'M9 9h10v10H9zM5 15V5h10' }
-  const status = t => { $('vl-status').textContent = t || ''; $('vl-status').hidden = !t }
-  let R = null, LIB = null, channel = 'all'
+  const h = (tag, attrs = {}, kids = []) => { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (k === 'text') e.textContent = v; else if (k === 'on') e.addEventListener('click', v); else if (v !== false && v != null) e.setAttribute(k, v) } for (const c of [].concat(kids)) if (c) e.append(c); return e }
+  const svg = d => { const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); for (const [k, v] of Object.entries({ width: 15, height: 15, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': 2.2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'aria-hidden': 'true' })) s.setAttribute(k, v); const p = document.createElementNS('http://www.w3.org/2000/svg', 'path'); p.setAttribute('d', d); s.append(p); return s }
+  const I = { play: 'M7 4l13 8-13 8z', down: 'M12 4v11M7 11l5 5 5-5M5 20h14', share: 'M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v12M8 7l4-4 4 4', copy: 'M9 9h10v10H9zM5 15V5h10', out: 'M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5' }
+  let R = null, LIB = null, channel = 'all', inPage = false
   const blobs = new Map()
+  const presigned = async p => { const j = await (await fetch(cfg.endpoint + '/api/vault/presigned/read-url/' + cfg.vault_id + '/' + p)).json(); const r = await fetch(j.url); if (!r.ok) throw new Error('storage ' + r.status); return new Uint8Array(await r.arrayBuffer()) }
   async function open() {
     if (!window.SGVaultEmbed) throw new Error('the vault reader did not load')
     R = await new window.SGVaultEmbed.Reader(cfg).init()
     const raw = R.raw.bind(R)
-    R.raw = async function (p) {   // large objects: the vault's presigned link, as SG/Vault does
-      try { return await raw(p) } catch (e) {
-        if (!/^bare\/data\//.test(p)) throw e
-        const j = await (await fetch(this.endpoint + '/api/vault/presigned/read-url/' + this.vaultId + '/' + p)).json()
-        const r = await fetch(j.url); if (!r.ok) throw new Error('storage ' + r.status)
-        return new Uint8Array(await r.arrayBuffer())
-      }
-    }
+    R.raw = async function (p) { try { return await raw(p) } catch (e) { if (!/^bare\/data\//.test(p) || !inPage) throw e; return presigned(p) } }
     await R.open()
     LIB = JSON.parse(await R.readText('library.json'))
+    // can this site fetch through the presigned links? one small object (a poster) answers it
+    try { const id = R.files[LIB.videos[0].poster]; await presigned('bare/data/' + id); inPage = true } catch { inPage = false }
   }
   const mime = p => /\.mp4$/.test(p) ? 'video/mp4' : /\.html$/.test(p) ? 'text/html' : /\.jpe?g$/.test(p) ? 'image/jpeg' : 'application/octet-stream'
   async function blobOf(p) { if (!blobs.has(p)) blobs.set(p, R.readBytes(p).then(b => new Blob([b], { type: mime(p) })).catch(e => { blobs.delete(p); throw e })); return blobs.get(p) }
   const fname = p => p.split('/').pop()
-  function modal(kids) { const m = h('div', { class: 'vl-modal', role: 'dialog', 'aria-modal': 'true' }, [h('button', { class: 'close', text: 'Close', on: () => m.remove() }), ...kids]); m.addEventListener('click', e => { if (e.target === m) m.remove() }); document.addEventListener('keydown', function k(e) { if (e.key === 'Escape') { m.remove(); document.removeEventListener('keydown', k) } }); document.body.append(m); m.querySelector('.close').focus(); return m }
-  function fallback(f, why) {
-    modal([h('p', { text: `This file opens in the team's vault (${why}). There it plays, and its Save button downloads it: folder ${f.path.split('/')[0]}, file ${fname(f.path)}.` }), h('a', { class: 'btn play', href: APP, target: '_blank', rel: 'noopener', text: 'Open the vault' })])
+  function modal(title, kids) {
+    const close = h('button', { type: 'button', class: 'vl-x', text: 'Close' })
+    const m = h('div', { class: 'vl-modal', role: 'dialog', 'aria-modal': 'true', 'aria-label': title }, [h('div', { class: 'vl-box' }, [h('div', { class: 'vl-top' }, [h('strong', { text: title }), close]), ...kids])])
+    const done = () => { m.querySelectorAll('video').forEach(v => { v.pause(); if (v.src.startsWith('blob:')) URL.revokeObjectURL(v.src) }); m.remove(); document.removeEventListener('keydown', esc) }
+    const esc = e => { if (e.key === 'Escape') done() }
+    close.addEventListener('click', done); m.addEventListener('click', e => { if (e.target === m) done() }); document.addEventListener('keydown', esc)
+    document.body.append(m); close.focus()
   }
-  async function busy(btn, label, work) { const t = btn.lastChild, old = t.textContent; btn.disabled = true; t.textContent = ' ' + label; try { await work() } finally { btn.disabled = false; t.textContent = old } }
-  async function watch(f, btn) {
-    if (!/\.mp4$/.test(f.path)) return download(f, btn)
-    await busy(btn, 'Loading…', async () => {
-      try { const b = await blobOf(f.path); const u = URL.createObjectURL(b); const v = h('video', { controls: '', autoplay: '', playsinline: '', src: u }); const m = modal([v]); new MutationObserver((_, o) => { if (!document.body.contains(m)) { v.pause(); URL.revokeObjectURL(u); o.disconnect() } }).observe(document.body, { childList: true }) }
-      catch (e) { fallback(f, 'your browser could not fetch it here') }
-    })
-  }
-  async function download(f, btn) {
-    await busy(btn, 'Fetching…', async () => {
-      try { const b = await blobOf(f.path); const u = URL.createObjectURL(b); const a = h('a', { href: u, download: fname(f.path) }); document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 60000) }
-      catch (e) { fallback(f, 'your browser could not fetch it here') }
-    })
-  }
-  async function share(v, f, btn) {
-    await busy(btn, 'Preparing…', async () => {
-      const text = f.lang === 'pt' ? v.post_pt : v.post_en
-      try { const b = await blobOf(f.path); const file = new File([b], fname(f.path), { type: mime(f.path) }); if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], text, title: v.title }); return } }
-      catch (e) { if (e && e.name === 'AbortError') return }
-      try { await navigator.clipboard.writeText(text) } catch { }
-      fallback(f, 'this device cannot share a file from the page; the post text is copied')
-    })
-  }
-  async function copy(text, btn) { try { await navigator.clipboard.writeText(text); const o = btn.lastChild.textContent; btn.lastChild.textContent = ' Copied'; setTimeout(() => { btn.lastChild.textContent = o }, 1600) } catch { btn.lastChild.textContent = ' Select the text below' } }
+  async function busy(b, label, work) { const t = b.querySelector('span'), old = t.textContent; b.disabled = true; t.textContent = label; try { await work() } catch (e) { t.textContent = 'Could not load'; setTimeout(() => { t.textContent = old }, 2500); return } finally { b.disabled = false } t.textContent = old }
+  const button = (cls, ic, label, fn) => { const b = h('button', { type: 'button', class: cls }, [svg(ic), h('span', { text: label })]); b.addEventListener('click', () => fn(b)); return b }
+  const link = (cls, ic, label) => h('a', { class: 'btn ' + cls, href: APP, target: '_blank', rel: 'noopener' }, [svg(ic), h('span', { text: label })])
+  async function copy(text, b) { const t = b.querySelector('span'), old = t.textContent; try { await navigator.clipboard.writeText(text); t.textContent = 'Copied' } catch { t.textContent = 'Use Show text' } setTimeout(() => { t.textContent = old }, 1600) }
   const canShareFiles = !!(navigator.canShare && (() => { try { return navigator.canShare({ files: [new File(['x'], 'x.mp4', { type: 'video/mp4' })] }) } catch { return false } })())
-  const btn = (cls, ic, label, fn) => { const b = h('button', { type: 'button', class: cls }, [icon(ic), document.createTextNode(' ' + label)]); b.addEventListener('click', () => fn(b)); return b }
   function card(v) {
     const img = h('img', { alt: 'A frame of ' + v.title, loading: 'lazy' })
     blobOf(v.poster).then(b => { img.src = URL.createObjectURL(b) }).catch(() => { })
-    const text = h('div', { class: 'text' }, [h('h5', { text: 'ENGLISH' }), h('pre', { text: v.post_en }), h('h5', { text: 'PORTUGUÊS' }), h('pre', { text: v.post_pt })])
-    const mp4 = v.files.filter(f => /\.mp4$/.test(f.path))
-    const row = (label, list, make) => list.length ? h('div', { class: 'file' }, [h('span', { class: 'fl', text: label }), h('span', { class: 'fb' }, list.map(make))]) : null
-    const files = [
-      row('Watch', mp4, f => btn('play', I.play, f.label, b => watch(f, b))),
-      row('Download', v.files, f => btn('', I.down, f.label, b => download(f, b))),
-      canShareFiles ? row('Share', mp4, f => btn('', I.share, f.label, b => share(v, f, b))) : null]
-    const tags = [...v.formats, ...new Set(v.files.filter(f => f.lang !== 'all').map(f => f.lang.toUpperCase()))]
+    const vids = v.files.filter(f => /\.mp4$/.test(f.path)), extra = v.files.filter(f => !/\.mp4$/.test(f.path))
+    let cur = vids[0]
+    const textOf = () => (cur.lang === 'pt' ? v.post_pt : v.post_en)
+    const where = h('p', { class: 'where' })
+    const pre = h('pre', { text: textOf() }), textBox = h('div', { class: 'text' }, [pre])
+    const setWhere = () => { where.textContent = inPage ? '' : 'Opens in the vault: ' + fname(cur.path); pre.textContent = textOf() }
+    const picker = vids.length > 1 ? h('label', { class: 'pick' }, [h('span', { text: vids.some(f => /Square|16:9/.test(f.label)) ? 'Format' : 'Language' }),
+      (() => { const s = h('select', {}, vids.map((f, i) => h('option', { value: i, text: f.label }))); s.addEventListener('change', () => { cur = vids[+s.value]; setWhere() }); return s })()]) : h('p', { class: 'one', text: vids[0].label === 'EN' ? 'English' : vids[0].label })
+    const actions = inPage ? [
+      button('play', I.play, 'Watch', b => busy(b, 'Loading…', async () => { const u = URL.createObjectURL(await blobOf(cur.path)); modal(v.title + ' (' + cur.label + ')', [h('video', { controls: '', autoplay: '', playsinline: '', src: u })]) })),
+      button('', I.down, 'Download', b => busy(b, 'Fetching…', async () => { const u = URL.createObjectURL(await blobOf(cur.path)); const a = h('a', { href: u, download: fname(cur.path) }); document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 60000) })),
+      canShareFiles ? button('', I.share, 'Share', b => busy(b, 'Preparing…', async () => { const f = new File([await blobOf(cur.path)], fname(cur.path), { type: 'video/mp4' }); try { await navigator.share({ files: [f], text: textOf(), title: v.title }) } catch (e) { if (e.name !== 'AbortError') throw e } })) : null
+    ] : [link('play', I.out, 'Watch'), link('', I.out, 'Download')]
+    const toggle = h('button', { type: 'button', class: 'ghost', text: 'Show text' }); toggle.addEventListener('click', () => { textBox.classList.toggle('open'); toggle.textContent = textBox.classList.contains('open') ? 'Hide text' : 'Show text' })
+    setWhere()
     return h('article', {}, [
       h('div', { class: 'thumb' }, [img, h('span', { class: 'len', text: v.length })]),
-      h('div', { class: 'body' }, [h('p', { class: 'aud', text: v.audience }), h('h4', { text: v.title }), h('p', { class: 'shows', text: v.shows }),
-        h('div', { class: 'tags' }, tags.map(t => h('span', { text: t }))),
-        h('div', { class: 'files' }, files),
-        h('div', { class: 'file' }, [h('span', { class: 'fl', text: 'Post text' }), h('span', { class: 'fb' }, [btn('post', I.copy, 'Copy EN', b => copy(v.post_en, b)), btn('post', I.copy, 'Copy PT', b => copy(v.post_pt, b)), h('button', { type: 'button', class: '', text: 'Show', on: e => { text.classList.toggle('open'); e.target.textContent = text.classList.contains('open') ? 'Hide' : 'Show' } })])]),
-        text])])
+      h('div', { class: 'body' }, [
+        h('p', { class: 'aud', text: v.audience }), h('h4', { text: v.title }), h('p', { class: 'shows', text: v.shows }),
+        h('div', { class: 'ctl' }, [
+          h('div', { class: 'row1' }, [picker, h('span', { class: 'fmt', text: v.formats.join(' · ') })]),
+          h('div', { class: 'acts' }, actions),
+          where,
+          h('div', { class: 'acts' }, [button('post', I.copy, 'Copy text', b => copy(textOf(), b)), toggle]),
+          textBox,
+          extra.length ? h('div', { class: 'extra' }, extra.map(f => inPage ? button('ghost', I.down, f.label, b => busy(b, 'Fetching…', async () => { const u = URL.createObjectURL(await blobOf(f.path)); const a = h('a', { href: u, download: fname(f.path) }); document.body.append(a); a.click(); a.remove() })) : h('a', { class: 'btn ghost', href: APP, target: '_blank', rel: 'noopener' }, [svg(I.out), h('span', { text: f.label })]))) : null
+        ])])])
   }
   function draw() {
     const list = LIB.videos.filter(v => channel === 'all' || v.channels.includes(channel))
     $('vl-count').textContent = list.length + (list.length === 1 ? ' video' : ' videos')
     $('vl-ch').replaceChildren(...CH.map(([k, l]) => h('button', { type: 'button', class: k === channel ? 'on' : '', 'aria-pressed': String(k === channel), text: l, on: () => { channel = k; draw() } })))
     $('vl-list').replaceChildren(...LIB.sections.map(s => { const items = list.filter(v => v.section === s.id); return items.length ? h('section', {}, [h('div', { class: 'h' }, [h('h3', { text: s.title }), h('p', { text: s.sub })]), h('div', { class: 'grid' }, items.map(card))]) : null }).filter(Boolean))
+    $('vl-status').textContent = inPage ? '' : 'Watch and Download open the team’s vault in a new tab for now: each file there plays and has a Save button. (Playing and saving right here waits for the vault’s storage to allow this site.)'
+    $('vl-status').hidden = inPage
   }
-  const start = () => open().then(() => { status(''); draw() }).catch(e => { status(''); $('vl-list').replaceChildren(h('p', { text: 'Could not open the videos vault here (' + e.message + '). ' }, [h('a', { href: APP, text: 'Open it in SG/Vault' })])) })
+  const start = () => open().then(draw).catch(e => { $('vl-status').textContent = ''; $('vl-list').replaceChildren(h('p', { text: 'Could not open the videos vault here (' + e.message + '). ' }, [h('a', { href: APP, text: 'Open it in SG/Vault' })])) })
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start()
 })()

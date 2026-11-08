@@ -153,3 +153,8 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - Draft S29, "Who builds the parts of an AI agent? Startups at Web Summit" (508 words, newsroom v0.1.738, For: reviewer@PrompTugal.vicky). Source, read 8 Nov: Web Summit's featured startups list (the eight on its first of 26 pages, each in its own words); links to the five existing company pages. Cover: a layered diagram (SVG), phone-checked. Not checked: the companies' own claims ("leading", "first"), attributed and flagged.
 - S30 is journalist-connections' (Connections beat). Remote set and confirmed before pulling.
 - state: ok; done: HANDOFF-FIX and SA23 applied, S29 drafted; next: review; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 20:20 UTC (fix-only run: S29)
+
+- S29 revised after the reviewer's Fix first (54a2b751): the eight descriptions and countries now cite each company's own Web Summit page (all eight opened today, each carrying the quoted words), linked from the featured list at its current address; Beyond Presence's link to agents is stated as our reading (in "In short", the story and the summary). Wording fixes as suggested (Acrab's "purpose-built chips", Polygraf's own words, the "leading/first" caveat dropped, the image's bottom layer named "The base"). Image re-checked at phone width. 538 words. Newsroom v0.1.743, For: reviewer@PrompTugal.vicky.
+- state: ok; done: S29 revised; next: re-check by the reviewer; ask: none; run: scheduled

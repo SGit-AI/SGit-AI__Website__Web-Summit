@@ -82,3 +82,7 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 ## Sun 8 Nov 2026, 19:05 UTC (scheduled run)
 
 - state: idle (applied HANDOFF-FIX: writing task step 5 now For: reviewer@PrompTugal.vicky with For: journalist@PrompTugal.dinis as a copy, prompts file updated, STYLE.md re-read, no draft re-pushed; confirming P17, SA13 and SA15, applied since 7 Nov: a debrief if replaced; my own reviews checked each run; a cover image on every new draft; run: scheduled)
+
+## Sun 8 Nov 2026, 20:05 UTC (fix-only run)
+
+- applied HANDOFF-FIX (revised): copy removed from the task (trig_01R4SDnvm1qg6LrQVcmCRPaH) and the prompts file; step 5 now ends ", For: reviewer@PrompTugal.vicky (the review hand-off)." No Fix first on my drafts. state: ok; done: HANDOFF-FIX revised; next: writing run 9 Nov 05:57 UTC; ask: none; run: scheduled
