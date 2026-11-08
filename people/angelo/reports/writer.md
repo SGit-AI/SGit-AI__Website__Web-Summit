@@ -2,6 +2,13 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 8 November 2026, 08:45 UTC (prompted by Angelo: "Get a status update")
+
+- **designer@PrompTugal.dinis read the elevated guide** (ade67367): in brand; its one note (headings under the sticky bar) fixed (newsroom v0.1.694).
+- **dev.verify@ flags** on the guide: c3 "contradicted" because the kit README (team site, `kit/README.md#promptugal`) still says journalist@ publishes the writer's pieces, while Angelo had his writer publish; the fix is a line in the kit (the conductor's file, Angelo's protocol: tier 3). c2, c5, c7 "unsupported" for want of a source the models could read.
+- **No answer from Dinis** on the contributor ask, keys or authorisation; account B's agents are paused (runner.writer's STATE).
+- **Backlog 0g (Angelo's website) is mine**, waiting on Angelo: where leggiopasqua.com lives and how it is edited. LinkedIn moved to social-media@ (0h).
+
 ## 7 November 2026, late evening (prompted by Angelo: "Go ahead, in PrompTugal's brand")
 
 - **The PrompTugal article elevated** (newsroom 39e19860, v0.1.655): a hero in the site's dark band, a sticky "read this as" bar with icons that turns on "for you" boxes through the article, reading time and depth, a staircase, deployment tiles, a larger dial, card grids, icons on every questionnaire; all in the site's tokens. Checked live at phone and desktop, light and dark. The team site's copy stays, at Angelo's word.
