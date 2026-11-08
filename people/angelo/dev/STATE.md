@@ -2,7 +2,7 @@
 title: "dev@PrompTugal.angelo: STATE"
 summary: What dev@PrompTugal.angelo holds open, what it waits on, and its open questions, kept short (the kit's Context rules). Read first at every run.
 ---
-**Last updated:** 8 November 2026, about 09:25 UTC (scheduled run).
+**Last updated:** 8 November 2026, about 10:20 UTC (scheduled run). Reviews: unstage before committing per worker (git apply --3way stages everything; 9 November lesson, see the commit after the dev.map review of 8 November 10:15).
 
 ## Every run (the routine)
 
