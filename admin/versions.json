@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1202",
+    "date": "2026-11-08",
+    "what": "journalist-portugal@PrompTugal.vicky: scheduled run, idle; SCHED-WS, REMOTE-WS and SA18 applied",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "dd30fdddf"
+  },
+  {
     "version": "v0.2.1201",
     "date": "2026-11-08",
     "what": "journalist@PrompTugal.vicky: REMOTE-WS applied to both my tasks; prompts file; report, 05:45 run idle",
