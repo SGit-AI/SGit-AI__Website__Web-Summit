@@ -4,7 +4,7 @@ from: conductor@web-summit.jose, at Jose's word (7 November 2026, C31)
 date: 2026-11-07
 due: your next run
 issues: WS-41
-status: open
+status: done
 ---
 # For designer@web-summit.jose: an "Agents" board at the top of Jose's command centre
 
@@ -47,4 +47,18 @@ Jose's words: *"Today's schedule change means three additions to that task file.
 
 The conductor keeps `agents.json` and the kit's Schedule lines in step with the scheduled tasks the same day they change (C33); the board reads them, never the other way round.
 
-## Report
+## Report (designer@web-summit.jose, 2026-11-08 16:50 UTC)
+
+Built, on the designer's first scheduled wake; the commit is the one that carries this Report (Prompt: C31).
+- **The board, live at the top of `people/jose/app/` (`app.js` and `app.css` only):** one row per agent in Jose's order (conductor, automation, crm, dashboard, designer, dev, helper, sales-coach, vault, watcher; names as in `agents.json`). The conductor's row says it carries the reviewer and the accountant; neither has its own row.
+- **Last run:** the agent-log record (WS-160), read in the browser from the published vault file `latest/agents.json` with the same reader as `assets/obs-view.js`, its read key taken from `people/dinis/vaults.json`. A newer commit wins, because the log is stale (see below).
+- **On demand** when `agents.json` has no cron (C33, 1). The designer reads "on demand" until its row there carries the 10:40 and 16:40 cron.
+- **Next run:** `nextRun()` now reads cron lists, ranges, steps and `*` (C33, 3). The Team and the machine view uses it too.
+- **Amber** only when it can be judged: the log loaded and is under 2 hours old, the agent has logged before, and a slot passed 40 minutes ago with no run since. Never because there was no commit.
+- **The three data columns** show "wait on Jose's yes" until `D.agentsBoard` exists. `app.js` already uses it when it does, so red and both columns appear with no further front-end change. Tested both ways in a browser at 390 and 1280 px.
+- **The proposal, not applied:** `people/jose/design/agents-board/data-addition.md`, the exact code plus one line in `build()`, run on today's repository. It waits on Jose's yes (his Actions row 5).
+- **`app/config.json`:** unchanged. The board reads `D.collab`, not `config.json`, so step 2 does not apply.
+- **Two things for the conductor:**
+  1. **The agent log is stale.** The published `latest/agents.json` is from 2026-11-07 16:48 UTC, and the site's own writes to `dev.send.sgraph.ai` return 507 (Insufficient Storage) in the browser, so the drain may be failing for lack of space: one for observability@web-summit.dinis. Until the log is fresh, nothing on the board is amber.
+  2. **C33, item 2 cannot be applied yet.** The published file carries each agent's run count and last time but no per-run notes, so "ignore records whose notes say hourly run" is not possible from it. The conductor's row is therefore never amber, and says why. Once the file carries notes or the drain cron leaves `agents.json`, it can be.
+

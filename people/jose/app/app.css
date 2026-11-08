@@ -121,3 +121,22 @@ nav.ak-switch a { font: 600 14px/20px var(--rm-font); color: var(--rm-action); t
 /* a long due text ("after the summit (Fri 13 Nov), unless ...") wraps inside its card instead of widening the page */
 .ak-card .chip { white-space: normal; height: auto; min-height: 24px; max-width: 100%; }
 .ak-open { min-width: 0; }
+
+/* ---------- the Agents board, at the top of the command centre (task 2026-11-07, C31): the shared tokens and chips ---------- */
+.jb { display: grid; gap: 10px; margin-bottom: 16px; padding: 16px 18px; }
+.jb-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; }
+.jb-head h2 { margin: 0; font: 600 18px/26px var(--rm-font); }
+.jb-rows { list-style: none; margin: 0; padding: 0; display: grid; }
+.jb-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 10px 0; border-top: 1px solid var(--rm-border); min-height: 44px; }
+.jb-row:first-child { border-top: 0; }
+@media (min-width: 900px) { .jb-row { grid-template-columns: minmax(0, 220px) minmax(0, 1fr); align-items: center; gap: 16px; } }
+.jb-who { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; min-width: 0; }
+.jb-who a { display: inline-flex; align-items: center; min-height: 44px; color: var(--rm-text); text-decoration: none; }
+.jb-who a:hover b { text-decoration: underline; text-underline-offset: 3px; }
+.jb-sub { flex-basis: 100%; font: 400 12px/17px var(--rm-font); color: var(--rm-text-muted); }
+.jb-cells { display: flex; flex-wrap: wrap; gap: 2px 18px; font: 400 13px/19px var(--rm-font); color: var(--rm-text-secondary); min-width: 0; }
+.jb-cells b { color: var(--rm-text); font-weight: 600; font-variant-numeric: tabular-nums; }
+.jb-src, .jb-why { color: var(--rm-text-muted); }
+.jb-why { flex-basis: 100%; font-size: 12px; }
+.jb-wait { margin: 0; }
+.jb-wait a, .jb-cells a { color: var(--rm-action); }
