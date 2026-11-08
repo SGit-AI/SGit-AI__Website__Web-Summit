@@ -56,15 +56,18 @@ const INIT = (fs.readFileSync(path.join(__dirname, '../desktop/src-tauri/src/mai
   // right-click hands the menu the current setting; a cancelled frame never runs
   const fps = () => p.evaluate(() => new Promise(res => { let k = 0; const f = () => { k++; requestAnimationFrame(f) }; requestAnimationFrame(f); setTimeout(() => res(k), 1000) }))
   await p.evaluate(() => { window.__calls = []; window.__TAURI_INTERNALS__ = { invoke: (cmd, args) => { __calls.push([cmd, args]); return Promise.resolve() } } })
-  const off = await fps(); await p.evaluate(() => __hexapp.setCalm(true)); const on = await fps()
+  // Calm is on by default (Angelo, 8 November: the fan); no scroll bar; the control panel's gear and close are there
+  const def = await p.evaluate(() => __hexapp.calm())
+  const ui = await p.evaluate(() => ({ scroll: getComputedStyle(document.documentElement).overflow === 'hidden' && getComputedStyle(document.body).overflow === 'hidden', gear: !!document.querySelector('#hexapp-bar [data-a=panel]'), close: !!document.querySelector('#hexapp-bar [data-a=quit]'), panel: !!document.querySelector('#hexapp-panel [data-a=size_l]') }))
+  await p.evaluate(() => __hexapp.setCalm(false)); const off = await fps(); await p.evaluate(() => __hexapp.setCalm(true)); const on = await fps()
   await p.mouse.click(210, 210, { button: 'right' }); const call = await p.evaluate(() => __calls.find(x => x[0] === 'show_menu'))
   const cancelled = await p.evaluate(() => new Promise(res => { let ran = false; const id = requestAnimationFrame(() => ran = true); cancelAnimationFrame(id); setTimeout(() => res(!ran), 300) }))
   const f0 = await p.evaluate(() => document.querySelectorAll('.lv-display .lv-pulses circle').length)
   await p.reload({ waitUntil: 'networkidle' }); await p.waitForSelector('.lv-display .lv-svg'); await p.waitForTimeout(1500)
   const kept = await p.evaluate(() => __hexapp.calm()), moving = await p.evaluate(() => document.querySelectorAll('.lv-display .lv-pulses circle').length)
   await p.evaluate(() => __hexapp.setCalm(false))
-  console.log('calm', JSON.stringify({ off, on, call, cancelled, f0, kept, moving }))
-  if (!(off >= 40) || !(on >= 10 && on <= 17) || !call || !call[1] || call[1].calm !== true || !cancelled || !kept || !moving) fail('calm')
+  console.log('calm', JSON.stringify({ def, ui, off, on, call, cancelled, f0, kept, moving }))
+  if (def !== true || !ui.scroll || !ui.gear || !ui.close || !ui.panel || !(off >= 40) || !(on >= 10 && on <= 17) || !call || !call[1] || call[1].calm !== true || !cancelled || !kept || !moving) fail('calm')
   await c.close() }
  // (5) 3D, in step with the pop-out (1f87ac2: the popped-out 3D drew black): in the app's transparent window the 3D canvas
  // draws, the corners stay clear, it is not black (lit pixels), and the page's own hiding stands, so the app shows the same
