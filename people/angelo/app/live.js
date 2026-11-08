@@ -44,6 +44,10 @@
 .lv-dot.off { background: var(--rm-text-muted, #9EB2C7); color: transparent; }
 .lv-bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 0 0 10px; }
 .lv-page { display: grid; gap: 10px; }
+.lv-frame:fullscreen, .lv-frame:-webkit-full-screen { width: 100vw; height: 100vh; border: 0; border-radius: 0; }
+/* display mode (?display=1): the graph alone, filling the screen, for a screen left on for days (spec-realtime.md) */
+.lv-display { position: fixed; inset: 0; z-index: 300; background: var(--rm-bg, #07111F); }
+.lv-display .lv { cursor: none; }
 .lv-frame { height: min(78vh, 760px); min-height: 320px; border-radius: var(--rm-radius-card, 12px); overflow: hidden; border: 1px solid var(--rm-border, #294A64); }
 `
     const f1 = n => n.toFixed(1), SEEN = new Set()   // what has been shown, kept when the page redraws
@@ -180,8 +184,11 @@
             dot.className = 'lv-dot ' + (!ok ? 'off' : age > STALE_MIN ? 'old' : '')
             dot.title = !ok ? 'Could not read the latest exchanges; trying again' : `Up to date as of ${new Date(built).toISOString().slice(11, 16)} UTC${age > STALE_MIN ? ' (a quiet spell, or a slow release)' : ''}`
         }
+        // back from sleep or lost Wi-Fi: read at once instead of waiting for the next tick (a failed read is simply tried again)
+        const again = () => { if (!alive || win.document.visibilityState === 'hidden') return; win.clearTimeout(timer); read(false) }
+        win.addEventListener('online', again); win.document.addEventListener('visibilitychange', again)
         read(true); kick()
-        return { destroy() { alive = false; win.clearTimeout(timer); if (raf) win.cancelAnimationFrame(raf); fly.length = 0 } }
+        return { destroy() { alive = false; win.clearTimeout(timer); if (raf) win.cancelAnimationFrame(raf); fly.length = 0; win.removeEventListener('online', again); win.document.removeEventListener('visibilitychange', again) } }
     }
 
     // ---- the page view (#live) and the pop-out ----
@@ -196,14 +203,35 @@
         for (const l of to.querySelectorAll('link[rel="stylesheet"]')) l.href = new URL(l.getAttribute('href'), from.baseURI).href
     }
     const supported = () => !!(root.documentPictureInPicture && root.documentPictureInPicture.requestWindow)
+    // full screen: the standard call, or Safari's (iPad and Mac); an iPhone has neither for a page, so the button is not shown there
+    const fsOf = e => e.requestFullscreen ? () => e.requestFullscreen() : e.webkitRequestFullscreen ? () => e.webkitRequestFullscreen() : null
+    const isDisplay = () => { try { return /(^|[?&])display=1(&|$)/.test(root.location.search.slice(1)) || /[?&]display=1(&|$)/.test(root.location.hash) } catch { return false } }
+    // display mode keeps the screen awake where the browser allows it (asked again whenever the page is shown) and reloads every
+    // six hours, at a moment with nothing in flight, so a screen left on for days returns all its memory
+    let lock = null, reloadAt = 0
+    async function wake() { try { if (root.navigator.wakeLock && document.visibilityState === 'visible' && !lock) { lock = await root.navigator.wakeLock.request('screen'); lock.addEventListener('release', () => { lock = null }) } } catch { lock = null } }
+    function display(host, o) {
+        if (current) { current.destroy(); current = null }
+        if (!document.getElementById('lv-css')) { stylesInto(document); document.head.lastChild.id = 'lv-css' }
+        host.innerHTML = '<div class="lv-display" data-lv-display></div>'
+        current = mount(host.querySelector('[data-lv-display]'), { ...o, win: root })
+        wake(); if (!root.__lvWake) { root.__lvWake = true; document.addEventListener('visibilitychange', wake) }
+        // no controls; Esc leaves display mode for the normal view
+        if (!root.__lvEsc) { root.__lvEsc = true; root.addEventListener('keydown', e => { if (e.key === 'Escape' && isDisplay()) root.location.href = root.location.pathname + '#live' }) }
+        if (!reloadAt) { reloadAt = Date.now() + 6 * 36e5; const tick = () => { if (Date.now() >= reloadAt && !document.querySelector('.lv-pulses circle:not(.flow)')) root.location.reload(); else root.setTimeout(tick, 30000) }; root.setTimeout(tick, 30000) }
+        return { destroy() { if (current) { current.destroy(); current = null } } }
+    }
     function view(host, o) {
+        if (isDisplay()) return display(host, o)
         if (current) { current.destroy(); current = null }
         if (!host.ownerDocument.getElementById('lv-css')) { stylesInto(host.ownerDocument); host.ownerDocument.head.lastChild.id = 'lv-css' }
-        host.innerHTML = `<div class="lv-page"><div class="lv-bar"><button type="button" class="cc-btn" data-lv-pop>⧉ Pop out</button><span class="note" data-lv-note>${supported() ? 'An always-on-top window with this graph. Close it to come back here.' : 'Pop-out needs Chrome or Edge on a computer. On a Mac or iPad, keep this page open on its own.'}</span></div><div class="lv-frame" data-lv-frame></div><p class="note">Lines and dots only. Each exchange between agents (a commit with a For: line, in any repository the agents work in: this site, its workers' branches, the newsroom, the apps) travels along its line a few minutes after it is made, at its real pace. The faint dots between are the flow of recent hours: busier pairs, more dots. A dashed ring that turns slowly is an agent that starts a fresh session each run: it is there between runs, and its ring is bright for two hours after it last sent something. The light in the corner shows only when the data is late or cannot be read. Names, edges and times only: no message text.</p></div>`
+        host.innerHTML = `<div class="lv-page"><div class="lv-bar"><button type="button" class="cc-btn" data-lv-pop>⧉ Pop out</button><button type="button" class="cc-btn" data-lv-fs hidden>⛶ Full screen</button><a class="cc-btn" data-lv-display href="?display=1#live">Display mode</a><span class="note" data-lv-note>${supported() ? 'An always-on-top window with this graph. Close it to come back here.' : 'Pop-out needs Chrome or Edge on a computer. On Safari (Mac or iPad), use Full screen, or Display mode for a screen left on.'}</span></div><div class="lv-frame" data-lv-frame></div><p class="note">Lines and dots only. Each exchange between agents (a commit with a For: line, in any repository the agents work in: this site, its workers' branches, the newsroom, the apps) travels along its line a few minutes after it is made, at its real pace. The faint dots between are the flow of recent hours: busier pairs, more dots. A dashed ring that turns slowly is an agent that starts a fresh session each run: it is there between runs, and its ring is bright for two hours after it last sent something. The light in the corner shows only when the data is late or cannot be read. Names, edges and times only: no message text.</p></div>`
         const frame = host.querySelector('[data-lv-frame]'), btn = host.querySelector('[data-lv-pop]'), note = host.querySelector('[data-lv-note]')
         const inline = () => { current = mount(frame, { ...o, win: root }) }
         if (popped) { frame.innerHTML = '<p class="note" style="padding:16px">Popped out.</p>' } else inline()
         btn.disabled = !supported()
+        const fb = host.querySelector('[data-lv-fs]'), go = fsOf(frame)
+        if (go) { fb.hidden = false; fb.onclick = () => { try { const r = go(); if (r && r.catch) r.catch(() => { }) } catch { } } }
         btn.onclick = async () => {
             if (popped) { popped.close(); return }
             try {
@@ -219,5 +247,5 @@
         }
         return { destroy() { if (current) { current.destroy(); current = null } } }
     }
-    root.AngeloLive = { mount, view, supported }
+    root.AngeloLive = { mount, view, supported, isDisplay }
 })(typeof self !== 'undefined' ? self : this)

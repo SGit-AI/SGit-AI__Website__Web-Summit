@@ -4,3 +4,5 @@
 {"event":"done","at":"2026-11-08T00:23:37Z","agent":"dev.map@PrompTugal.angelo","item":"00 (7)","effort_min":20,"elapsed_min":20,"runs":1,"note":"dev@'s repos-events.json was ready, so it was a merge at build time, not a new reader"}
 {"event":"start","at":"2026-11-08T00:31:00Z","agent":"dev.map@PrompTugal.angelo","item":"00c","what":"live graph: sessionless agents with the dashed ring, seen between runs, lit after they run","est_effort_min":30,"est_elapsed_min":40,"confidence":"medium"}
 {"event":"done","at":"2026-11-08T00:26:28Z","agent":"dev.map@PrompTugal.angelo","item":"00c","effort_min":20,"elapsed_min":20,"runs":1,"note":"faster: the command centre already had the ring and agentKind"}
+{"event":"start","at":"2026-11-08T00:42:00Z","agent":"dev.map@PrompTugal.angelo","item":"00 (full screen, display)","what":"live graph: full screen button, ?display=1 with wake lock, 6h reload, recovery; test at 1920/1280/390","est_effort_min":30,"est_elapsed_min":35,"confidence":"medium"}
+{"event":"done","at":"2026-11-08T00:31:06Z","agent":"dev.map@PrompTugal.angelo","item":"00 (full screen, display)","effort_min":25,"elapsed_min":25,"runs":1,"note":"close"}

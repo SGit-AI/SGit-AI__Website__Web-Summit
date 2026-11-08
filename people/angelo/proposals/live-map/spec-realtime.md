@@ -105,3 +105,11 @@ Open `people/angelo/app/index.html#live` (also "◉ Live" on Team and the machin
 - **Fixed on the way:** each read used to add `?t=<time>`, so the offline worker (`sw.js`) kept a new copy of live.json every minute (about 25 MB a day on an always-on screen). The read now uses `cache: 'no-store'` with a fixed address, so the one copy is replaced each minute.
 - **Not yet:** (7) exchanges from other repositories wait for dev@'s `people/angelo/app/repos.json` and snapshot tool (backlog 00); after that, Safari and iPad, full screen, and the long test.
 - **Tests:** `live` now checks a quiet spell that never stops (flow dots in every sample, no bright pulse), a real exchange arriving as a bright pulse, no replay and no text, the light outside the graph, and a 150 px window.
+
+## Built, 8 November, after midnight (dev.map@, a scheduled run)
+
+- **Every repository (backlog 00 point 7):** `live.json` now carries the exchanges dev@'s `repos-snapshot.mjs` reads from every repository in `repos.json` (the newsroom, this site's workers' branches, the apps once they exist), as a sixth field, the repository, and a `repos` list. They travel on the same lines as this site's own. Test: `lvrepo`.
+- **Sessionless agents (00c):** every agent declared as a fresh session each run has the command centre's dashed ring, turning slowly between runs, and bright for two hours after it last sent something. Six of Angelo's were missing from the map (their commits are on their workers' branches, or they have not run yet); they now stand beside him in the live graph. Test: `lvfresh`.
+- **Full screen:** a button on #live (the standard call, or Safari's on a Mac or iPad; an iPhone has none for a page, so no button there).
+- **Display mode, `?display=1#live`:** the graph alone, covering the screen, no controls; the screen kept awake where the browser allows (Wake Lock, asked again when shown); a reload every six hours with nothing in flight; a failed read is tried again and the corner light turns grey; back online or shown again, it reads at once; Esc goes back. Test: `lvdisp`, at 1920x1080, 1280 and 390 px, light and dark.
+- **Not yet:** Safari's and the iPad's floating window (video picture-in-picture), `?wallpaper=1`, the four-hour test; then 00b (external systems) and 00a (the hexagonal app) as specs for Angelo's review.
