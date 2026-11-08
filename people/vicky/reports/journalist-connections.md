@@ -101,3 +101,11 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 
 - SA23-REPLIT step 1 done: Replit's About section in desks/journalist-vicky/companies/replit.md revised to standing answer 23 (three short, plain sentences on what Replit does; no marketing quote; no event details, the partner line staying in At Web Summit 2026; each claim numbered to its source in a list below the paragraph). Sources re-read today: Replit's home page and its AI agent page, Web Summit's Replit page. Other sections unchanged. status: in-review, commit For: reviewer@PrompTugal.vicky ("SA23-REPLIT ready for review").
 - state: ok; done: SA23-REPLIT step 1; next: the reviewer's check (19:15 or 20:20); ask: none; run: prompted
+
+## Sun 8 Nov 2026, 18:10 UTC (company batch C1, manual run at Vicky's request)
+
+- C1 ready for review: ten files in desks/journalist-vicky/companies/ in the newsroom repository (cloudflare, descope, emergence-ai, exein, ledger, manus-ai, you-com, proofpoint, proton, roost), status: in-review, pushed together, commit For: reviewer@PrompTugal.vicky. Backlog rows set to "in review".
+- Sources, all read 8 Nov: each company's own site (About, two or three plain sentences with numbered sources; Manus has one sentence, as its site gives no more without marketing copy); Web Summit's speakers page (Cloudflare, Manus AI, You.com) and nine session pages (one each, except Manus, which has no session page in our sources). None is marked media only by Web Summit.
+- Skipped: none. Left out on purpose: where each company is based (Web Summit's listings give a speaker's country, not the company's head office).
+- Applied SA24X: standing answer 24 in my prompts file; I never added the withdrawn "6b" line to my writing task.
+- state: ok; done: C1 written and pushed for review; next: the reviewer's C1 batch; my 18:45 writing run; ask: none; run: prompted

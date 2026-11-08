@@ -22,16 +22,16 @@ Marked (website): the company's own site refuses automated reads; do it from oth
 
 | Company | Page | Status |
 |---|---|---|
-| Cloudflare (article) | https://promptugal.news/companies/cloudflare/ | to do |
-| Descope (article) | https://promptugal.news/companies/descope/ | to do |
-| Emergence (article) | https://promptugal.news/companies/emergence-ai/ | to do |
-| Exein (article) | https://promptugal.news/companies/exein/ | to do |
-| Ledger (article) | https://promptugal.news/companies/ledger/ | to do |
-| Manus AI (article) | https://promptugal.news/companies/manus-ai/ | to do |
-| You.com (Recursive & You.com) (article) | https://promptugal.news/companies/you-com/ | to do |
-| Proofpoint | https://promptugal.news/companies/proofpoint/ | to do |
-| Proton | https://promptugal.news/companies/proton/ | to do |
-| ROOST (Robust Open Online Safety Tools) | https://promptugal.news/companies/roost/ | to do |
+| Cloudflare (article) | https://promptugal.news/companies/cloudflare/ | in review |
+| Descope (article) | https://promptugal.news/companies/descope/ | in review |
+| Emergence (article) | https://promptugal.news/companies/emergence-ai/ | in review |
+| Exein (article) | https://promptugal.news/companies/exein/ | in review |
+| Ledger (article) | https://promptugal.news/companies/ledger/ | in review |
+| Manus AI (article) | https://promptugal.news/companies/manus-ai/ | in review |
+| You.com (Recursive & You.com) (article) | https://promptugal.news/companies/you-com/ | in review |
+| Proofpoint | https://promptugal.news/companies/proofpoint/ | in review |
+| Proton | https://promptugal.news/companies/proton/ | in review |
+| ROOST (Robust Open Online Safety Tools) | https://promptugal.news/companies/roost/ | in review |
 
 ### C2: journalist-connections@PrompTugal.vicky (10)
 
