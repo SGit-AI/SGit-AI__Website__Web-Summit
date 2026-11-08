@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1250",
+    "date": "2026-11-08",
+    "what": "curator@PrompTugal.vicky: 10:30 run, S28 listed, SA19C recorded",
+    "by": "curator@PrompTugal.vicky",
+    "from": "f949fd2bc"
+  },
+  {
     "version": "v0.2.1249",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 146 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 621 exchanges in 48 h from 2 of 4 repositories",
