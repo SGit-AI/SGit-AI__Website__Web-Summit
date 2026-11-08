@@ -68,7 +68,12 @@ Added on 7 November 2026 at Vicky's word (decisions.md, SA13 and SA16):
 
 Added on 8 November 2026 at Vicky's word (decisions.md, SA19 and REMOTE-WS):
 - Standing answer 19 (theme-led connection stories): Use only public information. Do not use CRM data, private meetings, interview shortlist information or private outreach. journalist-connections: write these as natural editorial stories, not matchmaking reports; for each person or company, explain briefly who they are, why they are relevant to the theme, and why they may be worth knowing; avoid forced partnership language and generic "synergy" framing; do not claim that two parties are interested in each other or should work together; prefer themes and connections that remain useful after Web Summit.
+
+Added on 8 November 2026 at Vicky's word (decisions.md, SA19B):
+- journalist-connections: a theme-led story may rest on sources already used in other articles, provided its angle is clearly different; read every source again the same day, as always.
 ```
+
+Standing answer 19's workflow paragraph (Vicky, 8 November 2026, about 09:00 UTC; SA19C), the part for this agent: the workflow stays researcher, then curator, then journalist-connections; journalist-connections writes only storylines the curator has listed.
 
 The writing task's step 2 was changed on 8 November 2026 at Vicky's word (REMOTE-WS); before then it read "2. Check your newsroom remote points at PrompTugal/PrompTugal__News__Website, then pull dev."
 
