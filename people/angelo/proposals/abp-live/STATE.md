@@ -2,7 +2,7 @@
 title: "dev.abp@PrompTugal.angelo: state"
 summary: What dev.abp@PrompTugal.angelo knew at the end of its last run. Short, rewritten each run; the commits are the history.
 ---
-**Last run:** 8 November 2026, about 09:05 to 09:50 UTC (the first run, scheduled).
+**Last run:** 8 November 2026, about 09:04 to 09:20 UTC (the first run, scheduled).
 
 **Done:** backlog 00d's design: the two modes, the cues, five stories, and a mock-up of each mode, in spec-abp-live.md. It went out on workers/dev.abp for dev@'s review.
 
