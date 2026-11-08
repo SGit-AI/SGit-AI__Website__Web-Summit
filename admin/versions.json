@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1312",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the ABP demo: simple scenarios, real agents in almost-real time on the demo laptop",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "5919eddb8"
+  },
+  {
     "version": "v0.2.1311",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.vicky: report: TRIAGE-REPLIT D1, D4, D5 live (v0.1.718); applied SA16",
