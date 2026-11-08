@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1415",
+    "date": "2026-11-08",
+    "what": "helper@PrompTugal.angelo: WS-158 done: /help/ read with Angelo, no longer a draft, linked from his dashboard and the start page",
+    "by": "helper@PrompTugal.angelo",
+    "from": "f5f15635f"
+  },
+  {
     "version": "v0.2.1414",
     "date": "2026-11-08",
     "what": "helper@PrompTugal.angelo: the start page links /help/ next to the plain-language guide (WS-158), at Angelo's word",
