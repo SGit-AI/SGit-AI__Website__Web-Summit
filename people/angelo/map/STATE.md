@@ -7,7 +7,7 @@ Eleventh run, 8 November 2026 (10:17 to about 11:25 UTC). Backlog 0e and 0f (the
 - 0f, part: every declared agent is on the replay (normal) map, in all layouts, the quiet ones (no commit on dev yet) from the start of playback. Test `tmall` (fails on the old code). Options for the fresh-session mark, for Angelo to pick: `people/angelo/proposals/live-map/fresh-mark-options.svg` (A hollow centre, B thin inner ring, C a small moon). The dashed ring stays until he picks.
 
 ## Open
-- 0f's rest: build Angelo's pick of the mark (both views, 3D, the legend "a fresh session each run"); count each worker's commits under its own name and draw dev@'s review as worker -> dev@. Idea for the counts: the workers' commits already reach live.json / repos-events.json (dev@'s snapshot reads workers/ branches); data.mjs could count from there rather than CI fetching the branches.
+- 0f's rest: build Angelo's pick of the mark (both views, 3D, the legend "a fresh session each run"). Done this run too: each worker's own commits counted under its name and its For: lines (dev@'s review) drawn, from repos-events.json (48 hours; as fresh as dev@'s last snapshot).
 - lvmsg fails in a fresh shallow session on dev's own tree too (2 sealed messages in its window, it wants 3): dev@'s test, reported.
 - Item 00's rest: Safari and iPad untested (no WebKit here).
 - Piece 4 (public /team/map/) needs build.mjs and the newsroom: a question for the desk.
