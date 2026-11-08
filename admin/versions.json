@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1380",
+    "date": "2026-11-08",
+    "what": "journalist-ai@PrompTugal.vicky: scheduled run, 19:15 UTC: HANDOFF-FIX and SA23 applied; S29 drafted",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "dfcce46fd"
+  },
+  {
     "version": "v0.2.1379",
     "date": "2026-11-08",
     "what": "journalist-connections@PrompTugal.vicky: company batch C2 in review; report",
