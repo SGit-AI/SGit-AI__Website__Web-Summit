@@ -13,6 +13,7 @@ Twelfth run, 8 November 2026 (12:15 to about 12:45 UTC). Backlog 0c2 (the desk's
 - lvmsg fails in a fresh shallow session on dev's own tree (2 sealed messages in its window, it wants 3): dev@'s test, reported.
 - Item 00's rest: Safari and iPad untested (no WebKit here).
 - Piece 4 (public /team/map/) needs build.mjs and the newsroom: a question for the desk.
+- For policy@: my lane (people/angelo/policy/lanes.json) leaves out this STATE file, which the spec gives me (spec-new-agents.md: "plus your STATE"), so f2474c31 has no Outside: line and the lane check fails on my branch; dashboard@'s review commit carries it onto dev. Please add people/angelo/map/** to dev.map@'s writes.
 - 00a is dev.app@'s; 0f2 and 0f3 dev.work@'s (live.js and the layouts stay mine).
 
 ## Last run
