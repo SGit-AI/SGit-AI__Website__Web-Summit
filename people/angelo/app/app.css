@@ -401,3 +401,7 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 /* "Exchanges | Work" (backlog 0f2, dev.work@PrompTugal.angelo): the chosen side filled like the primary buttons, not underlined (dashboard@'s a32ac287) */
 [data-wv-sw] .rp-chip { text-decoration: none !important; }   /* as .cc-btn: .cc a:hover would underline the chip under a finger */
 [data-wv-sw] .rp-chip.on { background: var(--rm-action); border-color: var(--rm-action); color: var(--rm-action-ink); font-weight: 600; }
+/* "⤓ Download clip" under the playback bar (backlog 0f3, dev.work@PrompTugal.angelo, clip-button.js) */
+.tmf-clip { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0 0; }
+.tmf-clipst { color: var(--rm-text-secondary); font: 500 13px/18px var(--rm-font); display: inline-flex; align-items: center; gap: 8px; }
+.tmf-clipst .cc-btn { min-height: 32px; padding: 0 10px; font-size: 13px; }

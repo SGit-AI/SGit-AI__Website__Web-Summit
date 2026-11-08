@@ -180,11 +180,13 @@
             for (const [, s] of sq) if (s.lit && s.lit <= now) { s.lit = 0; s.g.classList.remove('wv-lit') }
         }
         let raf = 0, alive = true
-        const manual = o.clock === 'manual'
+        let manual = o.clock === 'manual'
         const frame = ts => { raf = 0; if (!alive) return; step(ts); if (live.length || [...sq.values()].some(s => s.lit)) raf = win.requestAnimationFrame(frame) }
         const kick = () => { if (!manual && !raf && alive) raf = win.requestAnimationFrame(frame) }
         function destroy() { alive = false; if (RO) RO.disconnect(); if (raf) win.cancelAnimationFrame(raf); top.remove(); wrap.classList.remove('lv-workview'); live.length = 0 }
-        return { fly, counts, step, destroy, inAir: () => live.length, light, pills: () => laid }
+        // manual(on): the clip (clip-button.js) takes the frames over while it records, and gives them back after
+        const setManual = on => { manual = !!on; if (manual && raf) { win.cancelAnimationFrame(raf); raf = 0 } else if (!manual && live.length) kick() }
+        return { fly, counts, step, destroy, inAir: () => live.length, light, pills: () => laid, manual: setManual }
     }
 
     root.AngeloWorkDraw = { attach, pillsFor, LOGO, MARK }

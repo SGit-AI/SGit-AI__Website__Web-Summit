@@ -48,11 +48,14 @@
     // o.t0: replay's moment when wired (the counts show for it at once, before the first tick).
     function wire(V, A, W, o = {}) {
         const win = o.win || root, P = player(A, A.unpack(W), { offset: offset(o.rFrom, W.from), window: o.window })
-        const now = () => (win.performance ? win.performance.now() : Date.now())
+        let clock = null   // the clip's own clock (clock(fn)), while it records; else the screen's
+        const now = () => clock ? clock() : (win.performance ? win.performance.now() : Date.now())
         const on = e => { if (e.detail == null) return; const r = P.at(+e.detail, true); V.counts(r.counts); if (r.fly.length) V.fly(r.fly, now()) }
         if (o.t0 != null) V.counts(P.at(+o.t0, false).counts)
         win.addEventListener('ak-clock', on)
-        return () => win.removeEventListener('ak-clock', on)
+        const off = () => win.removeEventListener('ak-clock', on)
+        off.clock = fn => { clock = fn || null; if (V.manual) V.manual(!!fn) }
+        return off
     }
 
     // the viewBox that leaves room for the rim around a map drawn in S units: the map shown at `scale` of the frame, as live.js
@@ -87,7 +90,9 @@
             if (vb != null) { svg.setAttribute('viewBox', vb); svg.classList.remove('wv-map') }
             unhook = V = layer = null; vb = null
         }
-        return { ready, destroy, view: () => V }
+        // clock(fn): the clip (clip-button.js) flies the deliveries on its own clock (fn() in milliseconds) and steps them itself with
+        // view().step(fn()); clock(null) gives them back to the screen
+        return { ready, destroy, view: () => V, clock: fn => { if (unhook && unhook.clock) unhook.clock(fn) } }
     }
 
     return { JUMP, SCALE, offset, due, perFrame, player, wire, roomy, mountMap }

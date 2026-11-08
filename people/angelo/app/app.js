@@ -465,6 +465,9 @@ ${teamMap()}<section class="ak-tl" aria-label="Timeline"><div class="tm-top"><h3
                     drawCollab.wv = window.AngeloWorkReplay.mountMap(host, { svg: svgEl, pos: m.pos, col: m.col, rFrom: D.replay.from, t0: Math.round((Date.now() - Date.parse(D.replay.from)) / 6e4), base: new URL('./', here).href })
                 }).catch(() => null)
             }
+            // "⤓ Download clip" on the playback bar (backlog 0f3, dev.work@PrompTugal.angelo, clip-button.js): a video of this playback
+            // that WhatsApp plays inline; clip.js and the button load with the playback, the muxer only when a clip is made
+            if (svgEl && lastMap && haveEv && window.AngeloReplay && window.AngeloReplay.flow) (window.AngeloClip ? Promise.resolve() : load('clip.js')).then(() => window.AngeloClipButton || load('clip-button.js')).then(() => { if (host.isConnected) window.AngeloClipButton.mount(host, { work: () => drawCollab.wv, base: new URL('./', here).href }) }).catch(() => null)
             const tlHost = view.querySelector('[data-ak-tl]'); if (tlHost && window.AngeloReplay) window.AngeloReplay.render(tlHost, { D, ownTitle, ago, note: () => '', embed: true })
             const tlt = view.querySelector('[data-ak-tl-toggle]'); if (tlt) tlt.onclick = () => setTl(!tlOpen())
             const tm = view.querySelector('[data-tm-toggle]'); if (tm) tm.onclick = () => setC({ ...cstate(), map: !cstate().map, f: '' })
