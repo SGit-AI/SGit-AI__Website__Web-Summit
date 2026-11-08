@@ -22,8 +22,8 @@
    "by": "dev@PrompTugal.angelo"
   },
   "vault.kms": {
-   "sha": "a3d3d1ae",
-   "at": "2026-11-07T22:00Z",
+   "sha": "fd18876e",
+   "at": "2026-11-08T21:55Z",
    "by": "vault@PrompTugal.angelo"
   },
   "dev.abp": {
@@ -37,8 +37,8 @@
    "by": "dev@PrompTugal.angelo"
   },
   "dev.work": {
-   "sha": "837f929a",
-   "at": "2026-11-08T20:55Z",
+   "sha": "465e37c7",
+   "at": "2026-11-08T22:50Z",
    "by": "dashboard@PrompTugal.angelo"
   },
   "dev.app": {
