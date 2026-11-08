@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1420",
+    "date": "2026-11-08",
+    "what": "OVERNIGHT-9NOV: the C2 fixes before S2 (00:01) and a fix-only round at 02:45 to 02:49, one-off wakes",
+    "by": "conductor@web-summit.vicky",
+    "from": "0bff3729c"
+  },
+  {
     "version": "v0.2.1419",
     "date": "2026-11-08",
     "what": "review: bring workers/dev.app's new work onto dev (one commit)",
