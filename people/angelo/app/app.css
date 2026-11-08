@@ -315,6 +315,9 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .tm-a.tmf-lane .tmf-lr { display: inline; stroke: var(--rm-gold); stroke-width: 1; opacity: .9; }
 .tm-svg .tmf-seals circle { fill: var(--rm-gold); stroke: var(--rm-text); stroke-width: 1.5; }
 .tm-svg .tmf-seals .z { display: none; }
+.tm-svg .tmf-msgs circle { stroke: var(--rm-gold); stroke-width: 1.5; }
+.tm-svg .tmf-msgs path { fill: none; stroke: #fff; stroke-width: 1.2; stroke-linejoin: round; }
+.tm-svg .tmf-msgs .z { display: none; }
 @keyframes tmf-born { 0% { stroke: var(--rm-action); stroke-width: 9; } 100% { stroke-width: 1.5; } }
 .tm-a .tmf-l { display: none; fill: var(--rm-text); font: 600 13px/1 var(--rm-font); text-anchor: middle; pointer-events: none; paint-order: stroke; stroke: var(--rm-surface); stroke-width: 3px; }
 .tm-a.tmf-hot .tmf-l { display: inline; }

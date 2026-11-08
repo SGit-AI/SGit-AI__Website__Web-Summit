@@ -265,7 +265,8 @@ function replay(root) {
 // vault@'s data-and-who-may-see-it.md is the rule. Each is [minutes since REPLAY_FROM, ...names]; before 2 November is negative.
 // keys: [t, agent, 'published'|'ended'], from each commit of data/keys.json. handovers: [t, by, to], every file in data/sealed/
 // drawn only as "a key handed over" (decision 1): never its name, kind or contents. lanes: [t, agent, 'inbox'|'feedback'], an
-// agent that can receive sealed messages, from the commit that first gave it the lane. Names only: no token, key or vault id.
+// agent that can receive sealed messages, from the commit that first gave it the lane. messages: [t, agent, 'sent'|'verified',
+// commit], a sealed message an agent says it sent or verified. Names only: no token, key or vault id.
 const minsOf = iso => Math.round((Date.parse(iso) - REPLAY_FROM) / 6e4)
 const sealedAt = a => { const m = String(a || '').match(/^(\d{4}-\d\d-\d\d)T(\d\d):?(\d\d)(?::?(\d\d))?(?:\.\d+)?Z$/); return m ? `${m[1]}T${m[2]}:${m[3]}:${m[4] || '00'}Z` : null }
 function liveEvents(root) {
@@ -315,7 +316,18 @@ function liveEvents(root) {
         for (const l of ls) if (parseName(l.agent || '') && !fbSeen.has(l.agent)) { fbSeen.add(l.agent); lanes.push([minsOf(at), asNow(l.agent), 'feedback']) }
     }
     lanes.sort((x, y) => x[0] - y[0]); keys.sort((x, y) => x[0] - y[0])
-    return neverList(root, { keys, handovers, lanes })
+    // messages: a sealed or signed message sent or verified, only where an agent says so in its own commit's subject (a body
+    // often quotes others' events, so it is not read). [t, agent, 'sent'|'verified', short commit]: never the subject's text.
+    const messages = [], MSG_V = /\b(?:signed|sealed) message\b[^;]{0,40}?\b(?:verified|read)\b|\breply verified\b|\bverified both ways\b|\bworks both ways\b|\bsignature verified\b/i
+    const MSG_S = /\b(?:signed|sealed) (?:message|test|reply)\b[^;]{0,40}?\bsent\b|\breply sent to\b|\bsent (?:on|to) (?:\S+ ){0,3}lane\b|\b(?:a|my|the) first sealed message\b|\bsealed test\b/i
+    for (const c of git(root, ['log', '--since=2026-11-02T00:00:00Z', '--format=%h%x1f%cI%x1f%s%x1f%b%x1e']).split('\x1e')) {
+        const [h, at, s = '', b = ''] = c.trim().split('\x1f'); if (!h || /^site v\d/.test(s)) continue
+        const kind = MSG_V.test(s) ? 'verified' : MSG_S.test(s) ? 'sent' : null; if (!kind) continue
+        const who = committer(s, b), wp = who && parseName(who)
+        if (wp && people.has(wp.person)) messages.push([minsOf(at), asNow(who), kind, h.slice(0, 8)])
+    }
+    messages.sort((x, y) => x[0] - y[0])
+    return neverList(root, { keys, handovers, lanes, messages })
 }
 // the never list (data-and-who-may-see-it.md): no sealed file's name, no token, no key, no vault id. Anything that looks like one
 // drops the whole section, so a leak is never published; the build says why.
