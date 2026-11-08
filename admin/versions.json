@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1345",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: a share button on PrompTugal.news, from how other newspapers do it: a spec for dev.venues@",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "db8058666"
+  },
+  {
     "version": "v0.2.1344",
     "date": "2026-11-08",
     "what": "token ledger line",
