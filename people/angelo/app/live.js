@@ -4,7 +4,8 @@
 // live.json (the last 48 hours of exchanges: who, to whom, when, never a word of text) again about every minute, and
 // shows each exchange at its real moment, a few minutes behind (never accelerated, no replay), and under them a constant faint
 // flow along every line, as dense as that pair has been in recent hours: it never stops, and nothing in it is invented.
-// "Pop out" puts it in an always-on-top window (Document Picture-in-Picture: Chrome and Edge on a desktop).
+// "Pop out" puts it in an always-on-top window (Document Picture-in-Picture: Chrome and Edge on a desktop); where that is
+// missing (Safari on a Mac or iPad), in a floating video: the graph drawn into a canvas, the canvas's stream played in picture-in-picture.
 (function (root) {
     'use strict'
     const NS = 'http://www.w3.org/2000/svg'
@@ -203,6 +204,46 @@
         for (const l of to.querySelectorAll('link[rel="stylesheet"]')) l.href = new URL(l.getAttribute('href'), from.baseURI).href
     }
     const supported = () => !!(root.documentPictureInPicture && root.documentPictureInPicture.requestWindow)
+    // Safari has no always-on-top page window, but it floats a video (macOS, and iPadOS 14 on). ?pip=video forces it, for the tests.
+    const videoPip = () => { try { const V = root.HTMLVideoElement.prototype; return !!(root.HTMLCanvasElement.prototype.captureStream && (V.requestPictureInPicture && document.pictureInPictureEnabled !== false || V.webkitSetPresentationMode)) } catch { return false } }
+    const pipMode = () => { try { if (/[?&]pip=video(&|$)/.test(root.location.search)) return videoPip() ? 'video' : '' } catch { } return supported() ? 'doc' : videoPip() ? 'video' : '' }
+    // the graph as a picture: a copy of the drawing with the page's colours and the map's and the live graph's rules inside it
+    // (every variable named in those rules or in the drawing's own attributes, the people's colours among them, given its value here)
+    function svgStyle(doc, svgText) {
+        const vars = new Set(), rules = [], names = t => { for (const m of t.matchAll(/--[\w-]+/g)) vars.add(m[0]) }
+        for (const sh of doc.styleSheets) { let rs; try { rs = sh.cssRules } catch { continue } for (const r of rs) if (r.selectorText && /\.(tm-|lv-)/.test(r.selectorText)) { rules.push(r.cssText); names(r.cssText) } }
+        names(svgText)
+        const cs = root.getComputedStyle(doc.documentElement)
+        return `svg{${[...vars].map(v => `${v}:${cs.getPropertyValue(v).trim()}`).filter(x => !/:$/.test(x)).join(';')}}\n` + rules.join('\n')
+    }
+    // the floating video: about 12 pictures a second of the graph on this page (which keeps running under it), closed from its own
+    // window or the button. It moves while this page runs: Safari slows or pauses a page it hides, and the picture waits with it.
+    function popVideo(src, onEnd) {
+        const W = 440, R = 2, cv = document.createElement('canvas'); cv.width = cv.height = W * R
+        const cx = cv.getContext('2d'), v = document.createElement('video')
+        v.muted = true; v.playsInline = true; v.setAttribute('playsinline', ''); v.setAttribute('data-lv-pipvideo', '')
+        v.style.cssText = 'position:fixed;left:0;bottom:0;width:2px;height:2px;opacity:0.01;pointer-events:none'
+        document.body.appendChild(v)
+        let css = '', cssAt = 0; const bg = root.getComputedStyle(document.documentElement).getPropertyValue('--rm-bg').trim() || '#07111F'
+        let busy = false, alive = true
+        const draw = () => {
+            const s = src(); if (!alive || busy || !s) return; busy = true
+            const c = s.cloneNode(true); c.setAttribute('xmlns', NS); c.setAttribute('width', W * R); c.setAttribute('height', W * R); c.setAttribute('class', 'lv lv-svg tm-svg')
+            if (!css || Date.now() - cssAt > 60000) { css = svgStyle(document, new root.XMLSerializer().serializeToString(s)); cssAt = Date.now() }   // again each minute: new agents, new colours
+            const st = document.createElementNS(NS, 'style'); st.textContent = css; c.insertBefore(st, c.firstChild)
+            const img = new root.Image(); img.onload = () => { cx.fillStyle = bg; cx.fillRect(0, 0, cv.width, cv.height); cx.drawImage(img, 0, 0, cv.width, cv.height); busy = false }; img.onerror = () => { busy = false }
+            img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new root.XMLSerializer().serializeToString(c))
+        }
+        cx.fillStyle = bg; cx.fillRect(0, 0, cv.width, cv.height); draw()
+        const iv = root.setInterval(draw, 1000 / 12), stream = cv.captureStream(12); v.srcObject = stream
+        const stop = () => { if (!alive) return; alive = false; root.clearInterval(iv); for (const t of stream.getTracks()) t.stop(); v.remove(); onEnd() }
+        v.addEventListener('leavepictureinpicture', stop); v.addEventListener('webkitpresentationmodechanged', () => { if (v.webkitPresentationMode === 'inline') stop() })
+        const open = async () => {
+            await v.play()
+            if (v.requestPictureInPicture && document.pictureInPictureEnabled !== false) await v.requestPictureInPicture(); else v.webkitSetPresentationMode('picture-in-picture')
+        }
+        return { open, stop, close: async () => { try { if (document.pictureInPictureElement === v) await document.exitPictureInPicture(); else if (v.webkitPresentationMode === 'picture-in-picture') v.webkitSetPresentationMode('inline') } catch { } stop() } }
+    }
     // full screen: the standard call, or Safari's (iPad and Mac); an iPhone has neither for a page, so the button is not shown there
     const fsOf = e => e.requestFullscreen ? () => e.requestFullscreen() : e.webkitRequestFullscreen ? () => e.webkitRequestFullscreen() : null
     const isDisplay = () => { try { return /(^|[?&])display=1(&|$)/.test(root.location.search.slice(1)) || /[?&]display=1(&|$)/.test(root.location.hash) } catch { return false } }
@@ -225,15 +266,22 @@
         if (isDisplay()) return display(host, o)
         if (current) { current.destroy(); current = null }
         if (!host.ownerDocument.getElementById('lv-css')) { stylesInto(host.ownerDocument); host.ownerDocument.head.lastChild.id = 'lv-css' }
-        host.innerHTML = `<div class="lv-page"><div class="lv-bar"><button type="button" class="cc-btn" data-lv-pop>⧉ Pop out</button><button type="button" class="cc-btn" data-lv-fs hidden>⛶ Full screen</button><a class="cc-btn" data-lv-display href="?display=1#live">Display mode</a><span class="note" data-lv-note>${supported() ? 'An always-on-top window with this graph. Close it to come back here.' : 'Pop-out needs Chrome or Edge on a computer. On Safari (Mac or iPad), use Full screen, or Display mode for a screen left on.'}</span></div><div class="lv-frame" data-lv-frame></div><p class="note">Lines and dots only. Each exchange between agents (a commit with a For: line, in any repository the agents work in: this site, its workers' branches, the newsroom, the apps) travels along its line a few minutes after it is made, at its real pace. The faint dots between are the flow of recent hours: busier pairs, more dots. A dashed ring that turns slowly is an agent that starts a fresh session each run: it is there between runs, and its ring is bright for two hours after it last sent something. The light in the corner shows only when the data is late or cannot be read. Names, edges and times only: no message text.</p></div>`
+        host.innerHTML = `<div class="lv-page"><div class="lv-bar"><button type="button" class="cc-btn" data-lv-pop>⧉ Pop out</button><button type="button" class="cc-btn" data-lv-fs hidden>⛶ Full screen</button><a class="cc-btn" data-lv-display href="?display=1#live">Display mode</a><span class="note" data-lv-note>${pipMode() === 'doc' ? 'An always-on-top window with this graph. Close it to come back here.' : pipMode() === 'video' ? 'A floating window with this graph, over your other windows and apps. It moves while this page is open; close it from its own window.' : 'Pop-out needs Chrome or Edge on a computer, or Safari on a Mac or iPad. Otherwise use Full screen, or Display mode for a screen left on.'}</span></div><div class="lv-frame" data-lv-frame></div><p class="note">Lines and dots only. Each exchange between agents (a commit with a For: line, in any repository the agents work in: this site, its workers' branches, the newsroom, the apps) travels along its line a few minutes after it is made, at its real pace. The faint dots between are the flow of recent hours: busier pairs, more dots. A dashed ring that turns slowly is an agent that starts a fresh session each run: it is there between runs, and its ring is bright for two hours after it last sent something. The light in the corner shows only when the data is late or cannot be read. Names, edges and times only: no message text.</p></div>`
         const frame = host.querySelector('[data-lv-frame]'), btn = host.querySelector('[data-lv-pop]'), note = host.querySelector('[data-lv-note]')
         const inline = () => { current = mount(frame, { ...o, win: root }) }
         if (popped) { frame.innerHTML = '<p class="note" style="padding:16px">Popped out.</p>' } else inline()
-        btn.disabled = !supported()
+        const mode = pipMode(); btn.disabled = !mode
         const fb = host.querySelector('[data-lv-fs]'), go = fsOf(frame)
         if (go) { fb.hidden = false; fb.onclick = () => { try { const r = go(); if (r && r.catch) r.catch(() => { }) } catch { } } }
         btn.onclick = async () => {
             if (popped) { popped.close(); return }
+            if (mode === 'video') {
+                // the graph stays on this page, drawing the floating picture
+                const pv = popVideo(() => frame.querySelector('.lv-svg'), () => { popped = null; btn.textContent = '⧉ Pop out' })
+                popped = { close: () => pv.close() }; btn.textContent = '✕ Close the floating window'
+                try { await pv.open() } catch (e) { pv.stop(); note.textContent = 'The floating window could not open: ' + (e && e.message ? e.message : e) }
+                return
+            }
             try {
                 const w = await root.documentPictureInPicture.requestWindow({ width: 440, height: 440 })
                 popped = w; if (current) { current.destroy(); current = null }
