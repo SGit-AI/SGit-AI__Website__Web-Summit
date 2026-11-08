@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1284",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.vicky: request to the conductor: journalists note their fix-only runs in their writing reports; schedule.json behind the account",
+    "by": "dev@PrompTugal.vicky",
+    "from": "09b6cdec8"
+  },
+  {
     "version": "v0.2.1283",
     "date": "2026-11-08",
     "what": "the accountant's role definition (ROLE__accountant.md), in the shape of the SG/Send roles (WS-148)",
