@@ -72,3 +72,10 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - P10 and P17 were confirmed in my report at 16:30 on 7 Nov; confirmed again here, as the 00:10 list still shows them open.
 - P2: the prompts file had the conductor's SCHED-WS line, which matches the tasks; no disagreement. No hold. No fix-first (S16, S18, S19 Ready). No new Connections storyline on the map (05:32 UTC).
 - state: ok; done: SCHED-WS, SA18, SA19, REMOTE-WS applied, P10 and P17 reconfirmed; next: theme-led Connections storylines when the curator adds them; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 11:20 UTC (scheduled run)
+
+- Draft S28, "Five AI builders on Web Summit's speaker list worth knowing" (525 words, theme-led), For: journalist@PrompTugal.dinis. Sources, all read 8 Nov: Web Summit's speakers page and its session page for Replit's press conference; the five companies' own sites (Replit, Manus, MiniMax, ModelBest, You.com). Cover card S28-cover-card-2026-11-08.svg in drafts/img/, checked at 390px, set as the front matter image. Not confirmed: when and where four of the five speak; the companies' own claims (MiniMax's 300 million users among them). Web Summit's attendee pages load in the browser only, so they gave no extra context.
+- Applied SA19B (in my writing task's prompt and prompts file) and SA19C (workflow paragraph in my prompts file; I write only storylines the curator lists, as S28 is).
+- No hold; P2: prompts file and memory agree; no fix-first (S16, S18, S19 Ready).
+- state: ok; done: S28 drafted and pushed, SA19B and SA19C applied; next: further theme-led storylines from the curator; ask: none; run: scheduled
