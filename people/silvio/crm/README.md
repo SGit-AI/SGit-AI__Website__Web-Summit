@@ -61,3 +61,7 @@ Proposed by this agent, approved by Silvio ("aprovo"). In the private CRM the 97
 | postponed | 21 priority-2 interview/article targets (for the newsroom) and 21 priority-2 buyers (an online meeting, like `online.json`) | 42 | 20 Nov |
 
 Everything still waits on Dinis's yes to the PromptUGAL-first shape and the PromptUGAL address in Silvio's Gmail. This agent sends nothing.
+
+## 8 November, 19:00 UTC: wave C written
+
+From outreach's 4acb1035: the 16 wave-C buyer actions are now `drafted` (text in Portuguese in `people/silvio/outreach/wave-c-emails.md`, not yet Gmail drafts). 5 of them have a PromptUGAL page (Galp, Government of Portugal, Banco Português de Fomento, IAPMEI, Universidade de Lisboa); 11 need one from newsroom@web-summit.dinis first. Turismo de Portugal's world-1 action is `drafted` too (outreach lifted its hold and wrote it with wave C); it is not in the approved waves, so it has no due date until Silvio decides. Pushed.

@@ -111,7 +111,7 @@
             if (route() === 'replay') {   // Replay's timeline lives under Team and the machine's map; old #replay addresses land there (the clip stays on its own)
                 const i = location.hash.indexOf('?'), q = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1))
                 if (q.get('c') === '1') return drawReplay()
-                const n = new URLSearchParams({ map: '1' }); if (q.get('w')) n.set('w', q.get('w'))
+                const n = new URLSearchParams({ map: '1', tl: '1' }); if (q.get('w')) n.set('w', q.get('w'))
                 for (const k of ['p', 'k', 'a', 'i', 'sel', 'm', 'r']) if (q.get(k)) n.set('r_' + k, q.get(k))
                 history.replaceState(history.state, '', location.pathname + location.search + '#collab?' + n.toString().replace(/%2C/g, ','))
                 return drawCollab()
@@ -353,7 +353,27 @@ ${D.tasks.unplaced.length ? `<p class="note">Could not place: ${esc(D.tasks.unpl
         const keyOpen = () => { try { return localStorage.getItem('ak-tm-key') !== '0' } catch { return true } }
         document.addEventListener('toggle', e => { if (e.target && e.target.classList && e.target.classList.contains('tm-key')) try { localStorage.setItem('ak-tm-key', e.target.open ? '1' : '0') } catch { } }, true)
         const cstate = () => { const i = location.hash.indexOf('?'); const p = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)); return { p: p.get('p') || '', map: p.get('map') === '1', f: p.get('f') || '', l: p.get('l') || '', fs: p.get('fs') === '1', w: p.get('w') || '', d3: p.get('d3') === '1' } }
-        const setC = c => { const q = []; if (c.map) q.push('map=1'); if (c.l && c.l !== 'ring') q.push('l=' + c.l); if (c.f) q.push('f=' + encodeURIComponent(c.f)); if (c.p) q.push('p=' + encodeURIComponent(c.p)); if (c.fs && c.map) q.push('fs=1'); if (c.w && c.map) q.push('w=' + c.w); if (c.d3 && c.map) q.push('d3=1'); if (c.map) for (const [k, v] of new URLSearchParams(location.hash.slice(location.hash.indexOf('?') + 1))) if (k.startsWith('r_') && location.hash.includes('?')) q.push(k + '=' + encodeURIComponent(v).replace(/%2C/g, ',')); history.replaceState(history.state, '', location.pathname + location.search + '#collab' + (q.length ? '?' + q.join('&') : '')); drawCollab() }
+        const setC = c => { const q = []; if (c.map) q.push('map=1'); if (c.l && c.l !== 'ring') q.push('l=' + c.l); if (c.f) q.push('f=' + encodeURIComponent(c.f)); if (c.p) q.push('p=' + encodeURIComponent(c.p)); if (c.fs && c.map) q.push('fs=1'); if (c.w && c.map) q.push('w=' + c.w); if (c.d3 && c.map) q.push('d3=1'); for (const [k, v] of new URLSearchParams(location.hash.slice(location.hash.indexOf('?') + 1))) if ((k.startsWith('r_') || k === 'tl') && location.hash.includes('?')) q.push(k + '=' + encodeURIComponent(v).replace(/%2C/g, ',')); history.replaceState(history.state, '', location.pathname + location.search + '#collab' + (q.length ? '?' + q.join('&') : '')); drawCollab() }
+        // backlog 0c3 (6), Angelo, 8 November: "The timeline in the team and the machine page should be independently collapsed, so
+        // that it doesn't load a huge amount of data for nothing." Closed by default, on its own (not the map's state), remembered on
+        // this device; an address that asks for it (tl=1, an old #replay link) or carries its filters (r_*) opens it. Closing drops them.
+        const TL_KEY = 'ak-tl-open'
+        const tlOpen = () => { let v = null; try { v = localStorage.getItem(TL_KEY) } catch { } return v === '1' || /[?&](tl=1|r_[a-z]+=)/.test(location.hash) }
+        const setTl = on => {
+            try { localStorage.setItem(TL_KEY, on ? '1' : '0') } catch { }
+            if (!on) { const i = location.hash.indexOf('?'), q = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)); for (const k of [...q.keys()]) if (k.startsWith('r_') || k === 'tl') q.delete(k); const t = q.toString().replace(/%2C/g, ','); history.replaceState(history.state, '', location.pathname + location.search + '#collab' + (t ? '?' + t : '')) }
+            drawCollab()
+        }
+        // every commit since 2 November (the map's playback and the timeline): replay-events.json, out of data.json since 0c3 (6),
+        // fetched once, the first time the map or the timeline is opened. A build that still carries them in data.json needs nothing.
+        let evQ = null, evFailed = ''
+        const needEvents = () => {
+            if (!D || !D.replay || D.replay.events) return Promise.resolve()
+            if (!evQ) evQ = fetch(new URL('replay-events.json', DATA || location.href), { cache: 'no-cache' }).then(r => r.ok ? r.json() : Promise.reject(new Error('replay-events.json: ' + r.status)))
+                .then(j => { if (!Array.isArray(j.events)) throw new Error('replay-events.json holds no events'); D.replay.events = j.events; evFailed = '' })
+                .catch(e => { evQ = null; evFailed = String(e.message || e); throw e })
+            return evQ
+        }
         const openPerson = id => { history.pushState({ akCard: true }, ''); history.replaceState(history.state, '', location.pathname + location.search + '#collab?p=' + encodeURIComponent(id)); drawCollab() }
         const closePerson = () => { if (history.state && history.state.akCard) history.back(); else { history.replaceState(history.state, '', location.pathname + location.search + '#collab'); drawCollab() } }
         const initials = n => String(n).split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase()
@@ -389,6 +409,10 @@ ${D.tasks.unplaced.length ? `<p class="note">Could not place: ${esc(D.tasks.unpl
             if (!D || !D.collab) { view.innerHTML = failed ? `<p class="note">The board could not load its data (${esc(failed)}).</p>` : '<p class="note">Loading the team…</p>'; return }
             const C = D.collab, M = C.machine, name = id => (C.people.find(p => p.id === id) || { name: id }).name
             const max = Math.max(1, ...C.links.map(l => l.messages + l.shared))
+            const tl = tlOpen(), haveEv = !!(D.replay && D.replay.events)
+            if ((cstate().map || tl) && D.replay && !haveEv && !evFailed) needEvents().catch(() => null).then(() => { if (route() === 'collab') drawCollab() })
+            const evNote = !D.replay ? 'This build has no commits to show.' : evFailed ? `The commits could not load (${esc(evFailed)}).` : 'Loading the commits…'
+            const tlBody = !tl ? '<p class="note">Every commit since 2 November, a row per agent, on the map\'s clock, with its own filters. Closed, it loads and draws nothing.</p>' : haveEv ? '<div data-ak-tl></div>' : `<p class="note" data-ak-tl-wait>${evNote}</p>`
             view.innerHTML = `<div class="ak">${ownNote()}
 <nav class="ak-switch" aria-label="More views"><a href="#kanban">← Kanban <span class="ak-mk" aria-hidden="true">✦</span></a><a href="#summit">Summit days → <span class="ak-mk" aria-hidden="true">✦</span></a></nav>
 <section class="ak-machine" aria-label="The machine">
@@ -401,7 +425,7 @@ ${D.tasks.unplaced.length ? `<p class="note">Could not place: ${esc(D.tasks.unpl
                 const next = p.agents.map(a => ({ a, r: nextRun(a.schedule) })).filter(x => x.r).sort((x, y) => parseInt(x.r.wait) * (/h$/.test(x.r.wait) ? 60 : 1) - parseInt(y.r.wait) * (/h$/.test(y.r.wait) ? 60 : 1))[0]
                 return `<button type="button" class="ak-person" data-ak-person="${esc(p.id)}"><span class="ak-av">${esc(initials(p.name))}</span><span class="ak-pn"><b>${esc(p.name)}</b><small>${esc(p.role)}</small></span><span class="ak-meta"><span class="chip ${p.level >= 4 ? 't-green' : p.level >= 2 ? 't-blue' : 't-slate'}">L${esc(p.level)}</span><span class="chip plain">${p.agents.length} agent${p.agents.length === 1 ? '' : 's'}</span>${p.work.length ? `<span class="chip t-yellow">${p.work.length} picked</span>` : ''}</span>${next ? `<small class="note">Next run: ${esc(next.a.name.split('@')[0])} ${esc(next.r.wait)}</small>` : runs.length ? '' : '<small class="note">No schedule recorded</small>'}</button>`
             }).join('')}</div></section>
-${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane">Timeline</h3><div data-ak-tl></div></section>' : ''}
+${teamMap()}<section class="ak-tl" aria-label="Timeline"><div class="tm-top"><h3 class="ak-lane">Timeline</h3><button type="button" class="cc-btn" data-ak-tl-toggle aria-expanded="${tl}">${tl ? 'Hide the timeline' : 'Show the timeline'}</button></div>${tlBody}</section>
 <section aria-label="Who works with whom"><h3 class="ak-lane">Who works with whom</h3><p class="note">Messages: commits from one person's agents to another's (For: lines, last 7 days). Shared: open issues they both own.</p>
 <ul class="ak-links">${C.links.slice(0, 14).map(l => `<li><span>${esc(name(l.a))} and ${esc(name(l.b))}</span><span class="ak-barw"><span class="ak-barf" style="width:${Math.round((l.messages + l.shared) / max * 100)}%"></span></span><small class="note">${l.messages} messages, ${l.shared} shared</small></li>`).join('')}</ul></section>
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}. Next runs are worked out in this browser from each agent's recorded schedule.</p>
@@ -409,7 +433,8 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
             view.querySelectorAll('[data-ak-person]').forEach(b => b.onclick = () => openPerson(b.dataset.akPerson))
             // the map played back (replay.js's mountFlow, on this map's own layout and focus)
             const host = view.querySelector('section.tm'), svgEl = host && host.querySelector('.tm-svg')
-            if (svgEl && lastMap && window.AngeloReplay && window.AngeloReplay.mountFlow) {
+            if (svgEl && lastMap && !haveEv) { const bar = host.querySelector('[data-tmf]'); if (bar) bar.innerHTML = `<p class="note">${evNote}</p>` }
+            if (svgEl && lastMap && haveEv && window.AngeloReplay && window.AngeloReplay.mountFlow) {
                 const { pos, C: MC, pull, col, focus, wl, place } = lastMap, c0 = cstate()
                 const personOf = n => { const m = String(n).match(/@(?:web-summit|promptugal)\.([a-z0-9-]+)$/i) || String(n).match(/^pt:([a-z0-9-]+):/); return m ? m[1].toLowerCase() : n }
                 const nodeOf = n => { const x = pos.get(n); if (x && x.kind !== 'k') return n; const pid = personOf(n); return pos.has(pid) && pos.get(pid).kind === 'p' ? pid : null }
@@ -417,6 +442,7 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
                 window.AngeloReplay.mountFlow(host, { D, place, key: [c0.w || '24h', c0.l, c0.f].join('|'), svg: svgEl, pos, nodeOf, keep, w: c0.w || '24h', colOf: p => col.get(p), ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return { x: mx + (MC - mx) * pull, y: my + (MC - my) * pull } }, setWindow: w => setC({ ...cstate(), w }) })
             }
             const tlHost = view.querySelector('[data-ak-tl]'); if (tlHost && window.AngeloReplay) window.AngeloReplay.render(tlHost, { D, ownTitle, ago, note: () => '', embed: true })
+            const tlt = view.querySelector('[data-ak-tl-toggle]'); if (tlt) tlt.onclick = () => setTl(!tlOpen())
             const tm = view.querySelector('[data-tm-toggle]'); if (tm) tm.onclick = () => setC({ ...cstate(), map: !cstate().map, f: '' })
             view.querySelectorAll('[data-tm-l]').forEach(g => g.onclick = () => setC({ ...cstate(), l: g.dataset.tmL, f: '' }))
             view.querySelectorAll('[data-tm-3d]').forEach(g => g.onclick = () => setC({ ...cstate(), d3: !cstate().d3 }))
@@ -623,6 +649,7 @@ ${day ? `<h3 class="ak-lane">${esc(DAYNAME(day))}${day === today ? ' (today)' : 
             if (!view) return
             if (!D || !window.AngeloReplay) { view.innerHTML = failed ? `<p class="note">Replay could not load (${esc(failed)}).</p>` : '<p class="note">Loading Replay…</p>'; return }
             document.title = `Replay · ${(D.person.name || D.person.id).split(' ')[0]}'s command centre`
+            if (D.replay && !D.replay.events) { view.innerHTML = `<p class="note">${evFailed ? `Replay could not load its commits (${esc(evFailed)}).` : 'Loading the commits…'}</p>`; if (!evFailed) needEvents().catch(() => null).then(() => { if (route() === 'replay') drawReplay() }); return }
             window.AngeloReplay.render(view, { D, title, note: ownNote, ownTitle, ago })
         }
         // Where (where.js, WS-181 step 1): the team's whereabouts and logistics, a demo kept on this device

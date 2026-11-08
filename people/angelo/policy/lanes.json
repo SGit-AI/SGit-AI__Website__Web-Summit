@@ -43,9 +43,12 @@
     "dashboard@PrompTugal.angelo": {
       "writes": [
         "people/angelo/dashboard.md",
-        "people/angelo/app/config.json"
+        "people/angelo/app/config.json",
+        "people/angelo/app/**",
+        "people/angelo/workers/**",
+        "people/angelo/map/**"
       ],
-      "source": "ABP Mandate (the standard prompt's 'only', and Angelo's word for app/config.json)",
+      "source": "ABP Mandate (the standard prompt's 'only', and Angelo's word for app/config.json); from 8 November the reviewer of the map and app workers, bringing their work onto dev (kit, Angelo's \"Go as above for the dashboard agent\"): the command centre, people/angelo/workers/ and people/angelo/map/. pages.mjs stays outside: it is watched (P-09).",
       "aliases": [
         "dashboard@web-summit.angelo"
       ]
@@ -174,6 +177,24 @@
       "aliases": [],
       "branch": "workers/vault.kms",
       "source": "ABP; never SHarness's repositories"
+    },
+    "dev.abp@PrompTugal.angelo": {
+      "writes": [],
+      "aliases": [],
+      "branch": "workers/dev.abp",
+      "source": "a worker on workers/dev.abp; its work reaches dev only through its reviewer's commit; lane to be read from its ABP"
+    },
+    "dev.app@PrompTugal.angelo": {
+      "writes": [],
+      "aliases": [],
+      "branch": "workers/dev.app",
+      "source": "a worker on workers/dev.app; its work reaches dev only through its reviewer's commit; lane to be read from its ABP"
+    },
+    "dev.work@PrompTugal.angelo": {
+      "writes": [],
+      "aliases": [],
+      "branch": "workers/dev.work",
+      "source": "a worker on workers/dev.work; its work reaches dev only through its reviewer's commit; lane to be read from its ABP"
     }
   },
   "everyone": {

@@ -1,5 +1,194 @@
 [
   {
+    "version": "v0.2.1394",
+    "date": "2026-11-08",
+    "what": "back after 27 hours offline (8 wakes missed); brief 36",
+    "by": "conductor@web-summit.dinis",
+    "from": "230d1ab61"
+  },
+  {
+    "version": "v0.2.1393",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: report, 20:20 re-check: S29 and S30 Ready",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "5093d5c4f"
+  },
+  {
+    "version": "v0.2.1392",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: 20:21 run, nothing to route, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "143618bb4"
+  },
+  {
+    "version": "v0.2.1391",
+    "date": "2026-11-08",
+    "what": "journalist-ai@PrompTugal.vicky: fix-only run, 20:20 UTC: S29 revised after review",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "869a6cec4"
+  },
+  {
+    "version": "v0.2.1390",
+    "date": "2026-11-08",
+    "what": "the ABP levels experiment in ABP in action; six new ABPs; a catch-up run",
+    "by": "abp@web-summit.dinis",
+    "from": "3adf98ba9"
+  },
+  {
+    "version": "v0.2.1389",
+    "date": "2026-11-08",
+    "what": "the merch milestone: paid, at the printer, Dinis and Silvio collect Monday 9 or Tuesday 10 (WS-48)",
+    "by": "dashboard@web-summit.dinis",
+    "from": "58db4f8c5"
+  },
+  {
+    "version": "v0.2.1388",
+    "date": "2026-11-08",
+    "what": "journalist-portugal@PrompTugal.vicky: HANDOFF-FIX (revised) applied, copy to Dinis's journalist removed",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "af9403ee7"
+  },
+  {
+    "version": "v0.2.1387",
+    "date": "2026-11-08",
+    "what": "journalist@PrompTugal.vicky: HANDOFF-FIX applied (step 5 to the reviewer); SA18 and SCHED-WS confirmed",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "ae3ab7003"
+  },
+  {
+    "version": "v0.2.1386",
+    "date": "2026-11-08",
+    "what": "journalist-connections@PrompTugal.vicky: report, S30 fixed (fix-only run)",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "dff549e6e"
+  },
+  {
+    "version": "v0.2.1385",
+    "date": "2026-11-08",
+    "what": "/people/silvio/videos/, the team's video library, ready to post",
+    "by": "video@web-summit.silvio",
+    "from": "2079d4c62"
+  },
+  {
+    "version": "v0.2.1384",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 165 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 566 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "582d0cd7b"
+  },
+  {
+    "version": "v0.2.1383",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: report, 19:15 run: applied HANDOFF-FIX, SA24X, SA25; S29 and S30 Fix first",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "713005325"
+  },
+  {
+    "version": "v0.2.1382",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: ledger line for the 19:21 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "c5e39eb54"
+  },
+  {
+    "version": "v0.2.1381",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: 19:21 run, nothing to route, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "df1abfbff"
+  },
+  {
+    "version": "v0.2.1380",
+    "date": "2026-11-08",
+    "what": "journalist-ai@PrompTugal.vicky: scheduled run, 19:15 UTC: HANDOFF-FIX and SA23 applied; S29 drafted",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "dfcce46fd"
+  },
+  {
+    "version": "v0.2.1379",
+    "date": "2026-11-08",
+    "what": "journalist-connections@PrompTugal.vicky: company batch C2 in review; report",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "053ca936b"
+  },
+  {
+    "version": "v0.2.1378",
+    "date": "2026-11-08",
+    "what": "journalist-europe@PrompTugal.vicky: scheduled run 19:03, idle; HANDOFF-FIX and SA23 applied",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "cb4c13d47"
+  },
+  {
+    "version": "v0.2.1377",
+    "date": "2026-11-08",
+    "what": "HANDOFF-FIX: journalist-portugal pending until it removes the Dinis copy from its task and prompts file",
+    "by": "conductor@web-summit.vicky",
+    "from": "7fd377de9"
+  },
+  {
+    "version": "v0.2.1376",
+    "date": "2026-11-08",
+    "what": "HANDOFF-FIX corrected: no default copy to Dinis's journalist; routine review and publication through our reviewer only",
+    "by": "conductor@web-summit.vicky",
+    "from": "948cbea53"
+  },
+  {
+    "version": "v0.2.1375",
+    "date": "2026-11-08",
+    "what": "journalist-portugal@PrompTugal.vicky: scheduled run, idle; HANDOFF-FIX applied; P17, SA13, SA15 confirmed",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "4b4b432c4"
+  },
+  {
+    "version": "v0.2.1374",
+    "date": "2026-11-08",
+    "what": "HANDOFF-FIX: draft hand-offs go to our reviewer, not Dinis's journalist; no draft was missed",
+    "by": "conductor@web-summit.vicky",
+    "from": "e49a16496"
+  },
+  {
+    "version": "v0.2.1373",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the work view can't be seen yet: dev.map@ applies dev.work@'s hook first",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "a2c8e4c7d"
+  },
+  {
+    "version": "v0.2.1372",
+    "date": "2026-11-08",
+    "what": "journalist-connections@PrompTugal.vicky: report, S30 drafted (scheduled run 18:45)",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "3447a8aba"
+  },
+  {
+    "version": "v0.2.1371",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: Fretefy done; batch P1 complete (backlog); report",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "0fd2e8511"
+  },
+  {
+    "version": "v0.2.1370",
+    "date": "2026-11-08",
+    "what": "curator@PrompTugal.vicky: desk requests routed to the researcher, pagination gap recorded only (rule 27)",
+    "by": "curator@PrompTugal.vicky",
+    "from": "dbb06ab2c"
+  },
+  {
+    "version": "v0.2.1369",
+    "date": "2026-11-08",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "241122722"
+  },
+  {
+    "version": "v0.2.1368",
+    "date": "2026-11-08",
+    "what": "startups pages 2 to 26 left at Vicky's word; the 100-company capture handed to the curator",
+    "by": "researcher@web-summit.vicky",
+    "from": "e6202f23b"
+  },
+  {
     "version": "v0.2.1367",
     "date": "2026-11-08",
     "what": "one-off, startups pages 2 to 26 not read: the page uses Algolia, not graphql.cilabs.com",

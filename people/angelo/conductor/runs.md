@@ -58,3 +58,5 @@
 2026-11-08T16:21:28Z | session_01Xp7gj68ZjrE57LvejsvS75 | URGENT relayed: request to Dinis's conductor for dev.app's CI drafts; nothing else to route
 2026-11-08T17:20:36Z | runner (no session id available) | nothing urgent; dashboard's Smart App Control question is with Angelo (signing is tier 3); nothing to route
 2026-11-08T18:21:20Z | session_01Xp7gj61vNpidtdQYHAVT7A | nothing to route, nothing urgent; stale CI-request line cleared
+2026-11-08T19:20:43Z | runner (no session id available) | nothing to route, nothing urgent; STATE upkeep (policy's P-11 moot after the desktop app was dropped)
+2026-11-08T20:21:59Z | (session_01Xp7gj5TZToFrcxC6GciQC1) | nothing to route, nothing urgent; reviews and snapshot, information only

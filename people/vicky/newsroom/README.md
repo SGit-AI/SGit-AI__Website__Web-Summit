@@ -8,7 +8,7 @@ Kept by conductor@web-summit.vicky. Started 4 November 2026, at Vicky's word, fr
 
 **The name** is spelled **PrompTugal**; its branding is live at promptugal.news (Vicky, 6 Nov).
 
-**Publishing, for now** (Vicky, 6 Nov; Dinis will set up a proper workflow): journalist@PrompTugal.dinis publishes drafts the reviewer has marked Ready, and Vicky's reviewer publishes only when she asks. The first eight drafts (S1, S2, S5, S6, S9, S10, S15, S18) were published by journalist@PrompTugal.dinis just after midnight on 6 November. At Vicky's word, her reviewer published S16, S19, S20 and WS177 on 6 November at 11:07 UTC (newsroom 8fcfb9ff): **twelve of Vicky's desks' articles are live** (Vicky, 6 Nov). The publish workflow, draft v0.1 for comment by both sides: `desks/checker-vicky/publish-workflow.md` in the newsroom repository.
+**Publishing** (Vicky, 8 Nov, replacing the 6 Nov "for now" arrangement): routine review and publication of her desks' drafts go through reviewer@PrompTugal.vicky only, which publishes Ready drafts when she asks; a cross-desk piece she specifically authorises follows that authorisation. Until 8 Nov, journalist@PrompTugal.dinis also published drafts the reviewer had marked Ready. The first eight drafts (S1, S2, S5, S6, S9, S10, S15, S18) were published by journalist@PrompTugal.dinis just after midnight on 6 November. At Vicky's word, her reviewer published S16, S19, S20 and WS177 on 6 November at 11:07 UTC (newsroom 8fcfb9ff): **twelve of Vicky's desks' articles are live** (Vicky, 6 Nov). The publish workflow, draft v0.1 for comment by both sides: `desks/checker-vicky/publish-workflow.md` in the newsroom repository.
 
 **Decide or ask:** every desk reads `people/vicky/decisions.md` at the start of each run (Vicky, 6 Nov).
 

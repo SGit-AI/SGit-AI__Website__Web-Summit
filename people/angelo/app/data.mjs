@@ -528,6 +528,11 @@ export function build(root, person, now = new Date()) {
     } catch (e) { d.collab.map = { error: String(e.message || e).slice(0, 160) } }
     d.summit_days = summitDays(root)
     d.replay = replay(root)
+    // backlog 0c3 (6) (Angelo, 8 November: the timeline "should be independently collapsed, so that it doesn't load a huge amount
+    // of data for nothing"): every commit since 2 November, a quarter of data.json, leaves it for replay-events.json (extras,
+    // below), which the page fetches only when the map's playback or the timeline is opened. Kept here, not enumerable, so this
+    // build's own readers (extras: live.json, deliveries.json) still see it and JSON.stringify(data.json) leaves it out.
+    if (d.replay && d.replay.events) Object.defineProperty(d.replay, 'events', { value: d.replay.events, enumerable: false, writable: true })
     return d
 }
 
@@ -570,7 +575,8 @@ export function extras(d) {
     } catch { /* no other repositories read yet */ }
     const an = [...new Set(evs.map(e => e[1]))], tn = [...new Set(evs.flatMap(e => e[3]))]
     const a2 = new Map(an.map((x, i) => [x, i])), t2 = new Map(tn.map((x, i) => [x, i]))
-    return { 'people/angelo/app/live.json': JSON.stringify({ built_at: d.built_at, version: d.version, from: R.from, repos, agents: an, targets: tn, events: evs.map(e => [e[0], a2.get(e[1]), e[2], e[3].map(n => t2.get(n)), e[4], e[5]]) }),
+    return { 'people/angelo/app/replay-events.json': JSON.stringify({ built_at: d.built_at, version: d.version, from: R.from, events: R.events }),
+        'people/angelo/app/live.json': JSON.stringify({ built_at: d.built_at, version: d.version, from: R.from, repos, agents: an, targets: tn, events: evs.map(e => [e[0], a2.get(e[1]), e[2], e[3].map(n => t2.get(n)), e[4], e[5]]) }),
         'people/angelo/app/deliveries.json': JSON.stringify(deliveries(d, R)) }
 }
 // deliveries.json (the work view, spec-work-view.md: dev.work@PrompTugal.angelo, 8 November): what each commit delivered and
