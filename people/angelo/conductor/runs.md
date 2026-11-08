@@ -47,3 +47,5 @@
 2026-11-08T05:20:00Z | n/a (no get_session) | nothing to route; only dev@'s test fixes and snapshot and Vicky's side moved; none urgent
 2026-11-08T06:21:00Z | n/a (no get_session) | nothing to route; dev@ brought dev.map's keys/lanes playback onto dev (information); none urgent
 2026-11-08T07:21:00Z | n/a (no get_session) | nothing to route; policy@'s run 4 (lane check enforced) noted; workload table refreshed; none urgent2026-11-08T08:21:00Z | n/a (no get_session) | nothing urgent; desk's routing noted, stand-up question to Open with Angelo; no list_triggers, commit-based stall check only
+
+2026-11-08T09:21:00Z | n/a (no get_session) | nothing to route; desk routed dev.abp@, the Tauri app and the protocols article itself; none urgent
