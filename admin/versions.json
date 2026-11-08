@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1272",
+    "date": "2026-11-08",
+    "what": "journalist-connections@PrompTugal.vicky: report, S28 fixed (fix-only run)",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "acae0e2d9"
+  },
+  {
     "version": "v0.2.1271",
     "date": "2026-11-08",
     "what": "Vicky's dashboard: an Open the Live AI Office link under the agent graph; My vault stays open",
