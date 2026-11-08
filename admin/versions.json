@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1274",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: report, 12:20 re-check: S28 Ready",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "64fe71ec2"
+  },
+  {
     "version": "v0.2.1273",
     "date": "2026-11-08",
     "what": "the stand loop sharper, one video per language, and a stand page to choose the language",
