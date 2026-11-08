@@ -45,12 +45,16 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt
 
-Created on 6 November 2026 at Vicky's request, daily at 08:00 and 16:00 UTC, into this session (task "journalist-europe@PrompTugal.vicky: twice-daily run", renamed "journalist-europe@PrompTugal.vicky: three-times-daily run" at Vicky's word on 7 November). Moved to 08:12 and 16:12 UTC on 6 November (P5), then to 08:12, 12:12 and 20:12 UTC on 7 November (SCHED-7NOV), then to 08:12, 12:12, 16:12 and 20:12 UTC the same evening (SCHED-7NOV, four rounds). On 7 November its prompt gained standing answer 13 and P1 to P3 word for word (SA13, SA16); the full prompt as it now stands is below.
+**From 8 Nov midday (standing answer 22, connections first):** writing at :03 past 06, 11, 15, 19 UTC; fix-only at :08 past 07, 12, 16, 20 UTC (`trig_01A87nPnVKv8jMhzDzwi5eYU`), both set by the conductor at Vicky's word.
+
+**From 8 Nov (SCHED-WS):** writing at :57 past 05, 10, 14, 18 UTC; fix-only at :02 past 07, 12, 16, 20 UTC (`trig_01A87nPnVKv8jMhzDzwi5eYU`), both set by the conductor at Vicky's word, 7 Nov.
+
+Created on 6 November 2026 at Vicky's request, daily at 08:00 and 16:00 UTC, into this session (task "journalist-europe@PrompTugal.vicky: twice-daily run", renamed "journalist-europe@PrompTugal.vicky: three-times-daily run" at Vicky's word on 7 November). Moved to 08:12 and 16:12 UTC on 6 November (P5), then to 08:12, 12:12 and 20:12 UTC on 7 November (SCHED-7NOV), then to 08:12, 12:12, 16:12 and 20:12 UTC the same evening (SCHED-7NOV, four rounds), then by the conductor at Vicky's word to 05:57, 10:57, 14:57 and 18:57 UTC from 8 November (SCHED-WS). On 8 November step 2 was replaced word for word (REMOTE-WS). On 7 November its prompt gained standing answer 13 and P1 to P3 word for word (SA13, SA16); the full prompt as it now stands is below.
 
 ```
 Scheduled run for journalist-europe@PrompTugal.vicky:
 1. Read people/vicky/decisions.md on the team site and follow it.
-2. Check your newsroom remote points at PrompTugal/PrompTugal__News__Website, then pull dev.
+2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
 3. Read desks/journalist-vicky/STYLE.md.
 4. Read desks/curator/README.md and pick the storylines in your beat that have no draft yet in desks/journalist-vicky/drafts/, desks/journalist-promptugal/drafts/ or content/articles/.
 5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: journalist@PrompTugal.dinis.
@@ -100,3 +104,31 @@ Dinis asked for new names: from now on you are journalist-europe@PrompTugal.vick
 - P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
 - P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
 - P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
+
+## Fix-only follow-up task's prompt
+
+Created in this session by conductor@web-summit.vicky at Vicky's word on 7 November 2026 (standing answer 18, SCHED-WS): daily at 07:02, 12:02, 16:02 and 20:02 UTC (task "journalist-europe@PrompTugal.vicky fix-only follow-up"). Step 2 replaced word for word on 8 November (REMOTE-WS). As it now stands:
+
+```
+Fix-only follow-up run for journalist-europe@PrompTugal.vicky (standing answer 18 in people/vicky/decisions.md; Web Summit timetable, Vicky's word, 7 November 2026). Not a writing round.
+1. Read people/vicky/decisions.md on the team site and follow it, P1 to P3 included (stop if people/vicky/HOLD.md exists; re-read your own people/vicky/prompts/<short name>.md; end your report line with the status block).
+2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
+3. Check desks/reviewer-vicky/reviews/ for any new Fix first on your own drafts since your last run. Revise only those drafts, following STYLE.md and the review, and repush each through newsroom/tools/release.sh, For: reviewer@PrompTugal.vicky.
+4. Never pick up a new storyline in this run.
+5. If there is nothing to fix, write nothing, push nothing and add no report line.
+6. If you revised a draft, add one report line in people/vicky/reports/journalist-europe.md on the team site, ending with the status block (run: scheduled).
+Never push to main, never use --force, never push to a session branch.
+```
+
+## Standing answer 18 (word for word from people/vicky/decisions.md, 8 November 2026)
+
+18. **A fix-only follow-up run after each reviewer round** (Vicky, 7 Nov; for the five journalists): not a new writing round. It only checks your own reviews in `desks/reviewer-vicky/reviews/` for any new Fix first result, revises and repushes that draft if needed, stays silent if there is nothing to fix, and does not pick up a new storyline. It is a second scheduled task of your own beside your four writing rounds; the conductor created it at Vicky's word on 7 Nov (see SCHED-WS below for its id). Times (UTC, the Web Summit timetable from 8 Nov):
+    - journalist: 06:50, 11:50, 15:50, 19:50
+    - journalist-portugal: 06:56, 11:56, 15:56, 19:56
+    - journalist-europe: 07:02, 12:02, 16:02, 20:02
+    - journalist-ai: 07:08, 12:08, 16:08, 20:08
+    - journalist-connections: 07:14, 12:14, 16:14, 20:14
+
+## Times from 8 November 2026, about 12:45 UTC (standing answer 22, SA22)
+
+Moved by conductor@web-summit.vicky at Vicky's word (connections first in every round): writing task trig_01KRJSLJ46fntBKdqukvLoKx at 06:03, 11:03, 15:03 and 19:03 UTC; fix-only task trig_01A87nPnVKv8jMhzDzwi5eYU at 07:08, 12:08, 16:08 and 20:08 UTC. The other journalists, me included, keep "at most two" stories a run.

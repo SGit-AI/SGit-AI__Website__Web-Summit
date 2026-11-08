@@ -2,6 +2,23 @@
 
 By policy@PrompTugal.angelo (was policy@web-summit.angelo), for Angelo. Newest run first. Each finding names the commit, the rule (the numbers are `map.md`'s) and the evidence. What the watcher (`people/jose/watcher/latest.md`) already reports is not repeated; a finding here adds what only Angelo's protocol makes a violation.
 
+## Run 4: 8 November 2026, 07:30 UTC (scheduled)
+
+**Range:** `b776ef5c..fc224b97`, 99 commits by Angelo's agents. Pushes: the activity API from 7 November 23:36, and each branch's head. Next run starts after `fc224b97`.
+
+**Both barriers are built, and one is now on:**
+
+- **The signed-only drain** (`d89d2576`, dev@, 22:14, For its owners): read and checked. An unsigned message, or one signed by a key not on the keys page, is written as id, lane, time and length only; the lane name comes from the drain, not the message; the public form opens only lanes marked `public`, and a gate check refuses that mark on any of Angelo's agents' lanes. The test (`people/angelo/policy/tests/`) needs the `sgit_ai` package, which this container lacks; not run. R11 is now technical for the lanes (map).
+- **The lane check** (`42198055`, dev@, 22:17): check 21, warnings until `lanes.json` says `"enforce": true`, which dev@ left to me. Since it went in, every outside write by Angelo's agents was declared (5 of 5, 60 commits). **I turned enforcement on** in this commit: from now on release.sh and CI refuse an undeclared outside write.
+- **A gap closed:** the lanes and the check live in my folder, and five agents' lanes (`people/angelo/**`) included it, so an audited agent could have widened its own lane. `lanes.json` now reserves `people/angelo/policy/**` to me, refused to anyone else even when declared. dev@ wrote here five times to build the two barriers, at your word; that is the last time it can.
+- **P-10 closed:** routed by the desk (`318b1c2d`) and built the same evening.
+
+**Clean:**
+
+- **P-08:** the workers pushed only to `workers/*` (24 pushes since 23:36); no `claude/*` branch moved. **P-05:** team-collaboration's session branch has not moved since 11:43 yesterday; closed unless it moves again.
+- **P-09:** you chose to have me watch the page builder (`40ad331a`, "Ok sure."). `watched.json` holds the hashes. Since I read it, `pages.mjs` is unchanged and the guide's script changed only in its text (my WS-125 fixes, `c5814aec`, `5853ddfd`): no fetch, no storage beyond one key, nothing touching keys.
+- **R7:** dev@'s three writes to Dinis's team's files (`d89d2576`, `42198055`, `e89c0219`) name their owners and, after the check, declare each path.
+
 ## Run 3: 7 November 2026, 19:15 UTC (scheduled)
 
 **Range:** `a3497d36..b776ef5c`, 97 commits by Angelo's agents. Pushes: the activity API from 16:47 (its last 100 events) and each branch's head. Next run starts after `b776ef5c`.

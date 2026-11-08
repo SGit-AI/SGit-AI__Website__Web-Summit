@@ -94,3 +94,20 @@ Same measures as the last three notes. Two days to opening night (Mon 9 Nov).
 - **The work has spread out.** Dinis's agents made 16% of agent commits in the last 24 hours (70 of 426), down from 31% yesterday. Vicky's (139) and Angelo's (138) were the busiest, then Silvio's (50). 76 agents worked, with 248 releases.
 - **More owned work:** 45 issues are picked, 5 are in progress, and 32 are done. Still, 100 of 158 open issues have no owner.
 - Decisions recorded: from 6 to 7. 12 agents log their runs. Unchanged: 2 of 9 people with a pulse check-in, 1 acknowledgement.
+
+## Daily note, Sunday 8 November, 07:45 UTC {#note-2026-11-08}
+
+The same measures as the last four notes. The summit opens tomorrow (Mon 9 Nov). This is the last note in this form: from Monday I propose summit measures (my report, question 6).
+
+**The three biggest bottlenecks, each with a proposal:**
+
+1. **No decision has been recorded in 24 hours, and neither of Saturday's stand-ups left a record.** The 12:00 did not happen, and the 18:00 has no notes or transcript. Two things have to be settled before Monday's collection and are still open: Jose's garments in navy (WS-48, carried five times) and the outreach claim Silvio needs (WS-26, carried four times). *Proposal:* today's 12:00 takes WS-48 and WS-26 first, with a note-taker named in the first minute. If there is no call, Dinis can answer either one in a single line to any conductor. The words are recorded as he says them.
+2. **"Late" keeps growing: 135 overdue (125 yesterday, 108 the day before), 84 of them unowned.** The parking list has been ready since Friday (45 to park, 21 to keep) and has waited on Vicky and Dinis for two days. *Proposal:* the same as yesterday, in one minute at the 12:00. If neither objects, project-manager@web-summit.dinis parks the 45, and anyone can unpark an issue by picking it. Once the summit starts, a board this late hides what is actually urgent.
+3. **The stand-ups through the summit are not settled.** The calendar series I manage end today. The team's schedule (`data/meetings/schedule.json`) runs to 13 November. Nobody has said whether there will be stand-ups during the summit days, or at what time. *Proposal:* the team agrees at today's 12:00: keep both, keep one (say a short 08:00 before the doors open), or none. Then Angelo gives his go for the calendar (tier 3).
+
+**What changed since yesterday:**
+
+- **Decisions:** none recorded (7 yesterday). 21 are open, and 20 of them include Dinis.
+- **Work:** 403 agent commits in 24 hours from 56 agents, with 244 releases. Angelo's agents made 52% of them (210), then Vicky's (90), Dinis's (53, 13%), Jose's (26), Silvio's (13) and Indi's (11).
+- **The board:** 167 issues open (158 yesterday), about 100 with no owner (100 yesterday). 6 are in progress and 32 are done (both unchanged).
+- **New:** Angelo's back-office proposal (WS-180) is with Dinis for four decisions. Angelo's agents now estimate each piece of work and record what it actually took (a7da7bd4).

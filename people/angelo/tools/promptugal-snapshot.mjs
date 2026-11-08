@@ -43,11 +43,44 @@ for (const rec of git(['log', '--format=%cI%x1f%s%x1f%b%x1e']).split('\x1e')) {
         const k = `${id}|${to}`; links.set(k, (links.get(k) || 0) + 1)
     }
 }
+// spec-live-map.md piece 3 (approved, c6fc4442; dev.map@PrompTugal.angelo, 8 November). The newsroom's key events: board/keys.json
+// replayed commit by commit, [time, agent, 'published'|'ended'] for the agents this site knows by name.
+const keyEvents = [], kseen = new Map()
+for (const line of git(['log', '--reverse', '--format=%H %cI', '--', 'board/keys.json']).trim().split('\n').filter(Boolean)) {
+    const [h, at] = line.split(' '); let ks
+    try { ks = JSON.parse(git(['show', `${h}:board/keys.json`])).keys || [] } catch { continue }
+    for (const k of ks) {
+        const id = idOf(k.agent || String(k.label || '').split(' ')[0]); if (!id || !k.id) continue
+        const on = (!k.status || /^active$/i.test(k.status)) && !k.replaced_by, was = kseen.get(k.id)
+        if (was === undefined ? true : was !== on) keyEvents.push([at, id, on ? 'published' : 'ended'])
+        kseen.set(k.id, on)
+    }
+}
+// security@PrompTugal.dinis's comms ledger (board/team/security/comms/comms.json): who messaged or started whom, by the minute,
+// never the text. Its names carry no person ("dev@PrompTugal"), so a name is placed only where exactly one agent we know has it;
+// the rest are counted, never guessed. Kept: message, creates a session, inbox message (signed); the scheduler, schedules,
+// lanes and loops are not agent to agent. [time, from, to, 'message'|'session'|'sealed'], nothing else from a row.
+let comms = null
+try {
+    const L = JSON.parse(fs.readFileSync(path.join(clone, 'board/team/security/comms/comms.json'), 'utf8'))
+    const known = [...agents.keys()], KIND = { message: 'message', 'creates a session': 'session', 'inbox message (signed)': 'sealed' }
+    const place = n => { const m = String(n).match(/^([a-z0-9][a-z0-9.-]*)@(PrompTugal|web-summit)$/i); if (!m) return null
+        const c = known.filter(id => /^promptugal$/i.test(m[2]) ? id.startsWith('pt:') && id.split(':')[2] === m[1] : id.startsWith(m[1] + '@web-summit.')); return c.length === 1 ? c[0] : null }
+    const rows = [], unplaced = new Set(); let out2 = 0
+    for (const r of L.rows || []) {
+        const kind = KIND[r.channel]; if (!kind || !/^\d{4}-\d\d-\d\dT\d\d:\d\dZ$/.test(r.at || '')) { out2++; continue }
+        const from = place(r.from), to = place(r.to)
+        if (!from || !to || from === to) { out2++; for (const [n, x] of [[r.from, from], [r.to, to]]) if (!x && /@/.test(n)) unplaced.add(n); continue }
+        rows.push([r.at.replace('Z', ':00Z'), from, to, kind])
+    }
+    comms = { source: 'board/team/security/comms/comms.json', made: L.made || '', rows: rows.sort((a, b) => a[0] < b[0] ? -1 : 1), left_out: out2, unplaced: [...unplaced].sort() }
+} catch { }
 const out = {
     about: "The PrompTugal newsroom's agents, from the git log of PrompTugal/PrompTugal__News__Website (its dev branch), for Angelo's command centre; refreshed by dev@web-summit.angelo at its wakes. Names, counts and times only. pt:<person>:<agent> is a PrompTugal agent of that person.",
     source: 'https://github.com/PrompTugal/PrompTugal__News__Website', commit: head, read_at: new Date(now).toISOString(), days: 7,
     agents: [...agents.values()].map(a => ({ ...a, key: keyed.has(a.id) })).sort((x, y) => y.commits - x.commits),
     links: [...links].map(([k, n]) => { const [from, to] = k.split('|'); return { from, to, n } }).sort((x, y) => y.n - x.n),
+    keys: keyEvents, comms,
 }
 fs.writeFileSync(path.join(ROOT, 'people/angelo/app/promptugal.json'), JSON.stringify(out, null, 1) + '\n')
-console.log(`promptugal-snapshot: ${out.agents.length} agents, ${out.links.length} pairs in ${out.days} days, from ${head}`)
+console.log(`promptugal-snapshot: ${out.agents.length} agents, ${out.links.length} pairs in ${out.days} days, ${keyEvents.length} key events, ${comms ? comms.rows.length + ' ledger exchanges (' + comms.left_out + ' left out)' : 'no ledger'}, from ${head}`)

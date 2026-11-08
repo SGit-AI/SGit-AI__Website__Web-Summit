@@ -129,3 +129,20 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - For dev.venues@PrompTugal.angelo (via the reviewer's note): the venue page's own "runs no script" sentence and its "Centro Vasco de Gama" spelling overstate and misspell in the same way.
 - The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there. No new storyline taken.
 - state: ok; done: S27 fixes; next: re-review; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 06:05 UTC (scheduled run)
+
+- No hold. decisions.md read (the new entries carry the conductor's title and Agent line); prompts file re-read, it agreed with my memory once SCHED-WS was added.
+- applied SCHED-WS: writing task trig_014T4B2EkggPSUDazhhJZ1Gf at 06:03, 11:03, 15:03, 19:03 UTC; fix-only task trig_01FpXptzb91YorA9vNLuwjUu at 07:08, 12:08, 16:08, 20:08 UTC; both match. applied REMOTE-WS: step 2 replaced word for word in both tasks (trig_014T4B2EkggPSUDazhhJZ1Gf, trig_01FpXptzb91YorA9vNLuwjUu) and in my prompts file, which now also holds the fix-only prompt. Read SA18 to SA21.
+- Nothing new on my beat; S26 and S27 are published; no Fix first open. Remote set and confirmed before pulling.
+- state: ok; done: SCHED-WS and REMOTE-WS applied; next: new AI or robotics storylines; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 11:05 UTC (scheduled run)
+
+- state: idle
+
+## Sun 8 Nov 2026, 15:10 UTC (scheduled run)
+
+- No hold. decisions.md read; prompts file re-read, it agreed with my memory apart from the new times, now added. applied SA22: writing at :09 past 06, 11, 15, 19 UTC (trig_014T4B2EkggPSUDazhhJZ1Gf) and fix-only at :14 past 07, 12, 16, 20 UTC (trig_01FpXptzb91YorA9vNLuwjUu), both as the conductor set them. applied SA18: the fix-only task runs as given (silent when nothing to fix). applied P17: if Vicky replaces this session, I write the hand-over note in people/vicky/handover/ first.
+- Nothing new on my beat (S28 is journalist-connections', now published). Remote set and confirmed before pulling.
+- state: ok; done: SA22, SA18, P17 confirmed; next: new AI or robotics storylines; ask: none; run: scheduled

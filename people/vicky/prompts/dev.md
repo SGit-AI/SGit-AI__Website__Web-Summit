@@ -23,3 +23,11 @@ Second task, after that: render desks/checker-vicky/publish-workflow.md as a pag
 ```
 Also: mark the old dev@web-summit.vicky key as retired, with the time, in the team site's data/keys.json (your own commit).
 ```
+
+## Standing rules P1 to P3 (decisions.md, standing answer 16; added 8 November 2026)
+
+Word for word, as standing answer 16 asks. No scheduled task, so they apply to each run Vicky starts.
+
+- P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
+- P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
+- P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.

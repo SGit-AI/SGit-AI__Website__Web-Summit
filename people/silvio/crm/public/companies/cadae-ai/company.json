@@ -1,0 +1,52 @@
+{
+  "id": "cadae-ai",
+  "type": "company",
+  "kind": "company",
+  "name": "Cadae AI",
+  "aliases": [],
+  "website": "https://cadae.ai",
+  "what": "\"A virtual chief engineer for every hotel\": energy and water performance for hotels; its AI prepares next steps for the hotel team to review and approve (its own site).",
+  "category": "Travel & hospitality",
+  "country": "United Kingdom",
+  "attending": "at Web Summit Lisbon 2026: an ALPHA startup on its lis26 appearance page (no booth day or session published)",
+  "attending_as": "ALPHA startup",
+  "topics": [],
+  "ai_facts": [
+    {
+      "text": "An MCP server to connect Claude, ChatGPT or Cursor to a hotel portfolio, scoped to the access held (15 August 2026).",
+      "source": "https://cadae.ai/en-GB/mcp",
+      "read_at": "2026-11-07"
+    },
+    {
+      "text": "\"Cadae does not commit budget, contact contractors or change how plant runs.\"",
+      "source": "https://cadae.ai/en-GB/services",
+      "read_at": "2026-11-07"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://cadae.ai/en-GB",
+      "read_at": "2026-11-07",
+      "supports": "what it does"
+    },
+    {
+      "url": "https://cadae.ai/en-GB/services",
+      "read_at": "2026-11-07",
+      "supports": "AI facts"
+    },
+    {
+      "url": "https://cadae.ai/en-GB/mcp",
+      "read_at": "2026-11-07",
+      "supports": "MCP server"
+    },
+    {
+      "url": "https://websummit.com/appearances/lis26/994635a7-943f-4d65-9da3-f6ac75d746f0/cadae-ai/",
+      "read_at": "2026-11-07",
+      "supports": "attending, industry"
+    }
+  ],
+  "world": "world 1: hospitality, tourism and the Algarve (people/silvio/outreach/worlds.md)",
+  "staged_from": "people/silvio/outreach/world1/five-more.md (outreach@web-summit.silvio, read 2026-11-07)",
+  "updated_at": "2026-11-08T07:34:36Z",
+  "updated_by": "crm@web-summit.silvio"
+}

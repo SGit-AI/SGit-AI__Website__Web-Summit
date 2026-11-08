@@ -203,6 +203,14 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .tm { display: grid; gap: 8px; }
 .tm-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .tm-wrap { max-width: 860px; width: 100%; margin: 0 auto; }
+.tm-wrap.tm-3d-on { position: relative; }
+.tm-3d-on .tm-svg { visibility: hidden; }
+.tm-3d { position: absolute; inset: 0; overflow: hidden; border-radius: 12px; }
+.tm-3d > .note { margin: 0; padding: 16px; }
+.tm-3d { touch-action: none; cursor: grab; } .tm-3d:active { cursor: grabbing; }
+.tm-3d canvas { display: block; }
+.tm-3d .lv-3dl { position: absolute; left: 0; top: 0; pointer-events: none; font: 600 12px/1 var(--rm-font, system-ui, sans-serif); color: var(--rm-text); text-shadow: 0 0 4px var(--rm-bg), 0 0 2px var(--rm-bg); white-space: nowrap; }
+.tm-3d .tm-3dlive { position: absolute; right: 10px; bottom: 10px; }
 .tm-svg { width: 100%; height: auto; display: block; }
 .tm-links path { fill: none; opacity: .35; }
 .tm-links path.on { opacity: .9; }
@@ -304,7 +312,20 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .tm-replay .tm-a.tmf-gone { opacity: 0; pointer-events: none; }
 .tm-replay .tm-spokes, .tm-replay .tm-flows { display: none; }
 .tm-a.tmf-hot > circle:not(.tm-kr), .tm-a.tmf-hot > rect { stroke: var(--rm-text); stroke-width: 3; }
+.tm-a.tmf-pick > circle:not(.tm-kr), .tm-a.tmf-pick > rect { stroke: var(--rm-text); stroke-width: 4; stroke-dasharray: 5 3; }
+.tm-a.tmf-pick .tmf-l { display: inline; }
 .tm-a.tmf-born > circle:not(.tm-kr), .tm-a.tmf-born > rect { animation: tmf-born .9s ease-out; }
+/* the record's own events while playing back (spec-live-map.md section 2): a key mark, grey once ended; a lane's thin gold ring;
+   "a key handed over" as a gold dot with a dark edge */
+.tmf-km, .tmf-lr { fill: none; display: none; pointer-events: none; }
+.tm-a.tmf-key .tmf-km, .tm-a.tmf-keyend .tmf-km { display: inline; stroke: var(--rm-gold); stroke-width: 1.5; stroke-linecap: round; }
+.tm-a.tmf-keyend .tmf-km { stroke: var(--rm-text-muted); }
+.tm-a.tmf-lane .tmf-lr { display: inline; stroke: var(--rm-gold); stroke-width: 1; opacity: .9; }
+.tm-svg .tmf-seals circle { fill: var(--rm-gold); stroke: var(--rm-text); stroke-width: 1.5; }
+.tm-svg .tmf-seals .z { display: none; }
+.tm-svg .tmf-msgs circle { stroke: var(--rm-gold); stroke-width: 1.5; }
+.tm-svg .tmf-msgs path { fill: none; stroke: #fff; stroke-width: 1.2; stroke-linejoin: round; }
+.tm-svg .tmf-msgs .z { display: none; }
 @keyframes tmf-born { 0% { stroke: var(--rm-action); stroke-width: 9; } 100% { stroke-width: 1.5; } }
 .tm-a .tmf-l { display: none; fill: var(--rm-text); font: 600 13px/1 var(--rm-font); text-anchor: middle; pointer-events: none; paint-order: stroke; stroke: var(--rm-surface); stroke-width: 3px; }
 .tm-a.tmf-hot .tmf-l { display: inline; }
@@ -361,4 +382,14 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
   .ak-task { padding: 14px; }
   .ak-tt { font-size: 17px; line-height: 24px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .ak-since .cc-btn { margin-left: 0; }
+}
+/* dashboard@'s check (d4853e79): titles clamp everywhere; on a phone the tabs as a 2 x 2 grid, the banner one line */
+.ak-tt { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+@media (max-width: 767px) {
+  .ak-tt { -webkit-line-clamp: 2; }
+  .ak-tabs.ak-tabs-2x2 { display: grid; grid-template-columns: 1fr 1fr; overflow: visible; }
+  .ak-tabs.ak-tabs-2x2 button { width: 100%; }
+  .ak-since-1 { flex-wrap: nowrap; padding: 6px 10px; justify-content: space-between; }
+  .ak-since-1 span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ak-since-1 .cc-btn { flex: none; }
 }

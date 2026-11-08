@@ -1,7 +1,7 @@
 {
  "schema": "web-summit.sgit.ai/watcher-activity/v1",
  "by": "watcher@web-summit.jose",
- "run": "2026-11-07T17:15Z",
+ "run": "2026-11-08T12:15Z",
  "scope": "the whole team, read-only (decided by Jose on 5 November 2026, WS-134; policy.json scope_decision)",
  "routes_to": {
   "reader": "conductor@web-summit.jose",
@@ -12,33 +12,49 @@
   "answered": "yes: conductor@web-summit.jose's prompt now reads the watcher's files and its commits at every wake (23bc4fb, 2191c0b)"
  },
  "range": {
-  "from": "641fbc1",
-  "to": "2c16db2",
+  "from": "fc224b9",
+  "to": "acae0e2",
   "branch": "dev"
  },
  "counts": {
-  "commits": 141,
-  "ci_releases": 56,
+  "commits": 164,
+  "ci_releases": 63,
   "watcher_own": 1,
-  "agents": 84,
+  "agents": 100,
   "no_agent_name": 0,
   "reviewed_by_security": 0,
-  "not_yet_reviewed_by_security": 84,
+  "not_yet_reviewed_by_security": 100,
   "security_last_reviewed_commit": "f4a9fbe"
  },
  "by_person": {
-  "angelo": 44,
-  "vicky": 16,
-  "dinis": 14,
-  "silvio": 5,
+  "angelo": 61,
+  "vicky": 24,
+  "silvio": 9,
   "jose": 4,
-  "indi": 1
+  "indi": 2
  },
- "actions": "open A-06 (tenth run), A-14 (seventh), A-15 (sixth); closed A-20",
+ "actions": "open A-06 (thirteenth run), A-21 (third; A-14, A-15 in it), A-22 (second, now the CRM agent only), A-23 (second)",
+ "task_report": {
+  "task": "people/jose/tasks/2026-11-07-watcher-a06-pointers.md",
+  "status": "done in the 07:15 run on 8 November: A-06 names, per agent, pointer pasted or not; the task file is still marked open",
+  "where": "reported here and in the commit For: conductor@web-summit.jose, not in the task file: the task folder is outside the watcher's policy.json writes; the conductor marks the file done; only Jose can widen the watcher's writes (the conductor does not change the watcher's ROLE or policy files, C39)"
+ },
  "flags": [
   {
+   "level": "medium",
+   "what": "the gate now enforces code from Angelo's folder",
+   "where": "084ebe7 (Angelo's policy agent, 07:15): people/angelo/policy/lanes.json enforce set to true, and people/angelo/policy/lane-check.mjs changed in the same commit",
+   "context": "check 21 can now fail the gate (in CI, with a write token) for commits by Angelo's agents, and the code it runs was changed again by one of his agents: the WS-133 risk raised at 07:15 is now live. No owner of the gate (Dinis's agents) is answering (A-21). For security@web-summit.dinis"
+  },
+  {
+   "level": "medium",
+   "what": "all of Dinis's agents still silent; no security review",
+   "where": "A-21, third run",
+   "context": "no agent of Dinis's since xray at 21:52 on 7 November (about 14.5 hours); all but xray since 16:41 (about 19.5 hours); nothing on dev reviewed by security since its 11:51 wake on 7 November"
+  },
+  {
    "level": "high",
-   "what": "still open, eleventh run: contact-detail rule hits in a public page",
+   "what": "still open, fourteenth run: contact-detail rule hits in a public page",
    "where": "f20d264 content/family-riskmandate-agent.md lines 6, 18 and 32",
    "rule": "an email address (vault-audit.mjs)",
    "context": "unchanged on dev"
@@ -52,35 +68,33 @@
   },
   {
    "level": "note",
-   "what": "Angelo's worker agents work on five workers/* branches, not on dev",
-   "where": "workers/dev.links, workers/dev.map, workers/dev.venues, workers/research, workers/vault.kms",
-   "context": "the workers' own commits hold no real address, key or token and add only people/angelo/ files, except 09d8ef8 on workers/vault.kms, which levels the branch with dev (dev's content); the other agents' commits on workers/dev.venues are copies of dev commits; workers/vault.kms carries a proposed KMS policy patch (6f8238a) in Angelo's proposals folder, not applied; social-media (PrompTugal style) is declared but has no branch yet"
+   "what": "shared build code changed by a person's agent",
+   "where": "d09362a (25 lines) and f96e25f (2 lines), dashboard@web-summit.vicky: admin/build/build.mjs",
+   "context": "addressed to dev@web-summit.dinis, the build's keeper, who is silent (A-21); listed, not judged"
   },
   {
    "level": "note",
-   "what": "agents late by one slot",
-   "where": "conductor@web-summit.indi (12:20), Angelo's CRM agent (15:50), sgit@web-summit.dinis (16:50), procurement@web-summit.silvio (12:30)",
-   "context": "one missed slot each; re-checked at 22:15"
+   "what": "an internal list taken off the public site",
+   "where": "bbff77e (conductor@web-summit.silvio): the incidents list removed from the site and sealed to each team member's site key in data/sealed/<person>/; c18b2aa seals a second list (Portuguese organisations), sealed from the start, never public",
+   "context": "at Silvio's word; good practice; the earlier public copy (e8a30163) stays in the public history"
   },
   {
    "level": "note",
-   "what": "133 email-rule lines in 33 commits on dev, all PrompTugal-style agent names",
-   "where": "Angelo's, Vicky's and Dinis's files",
-   "rule": "an email address (the watcher's own scan; vault-audit.mjs exempts them)",
+   "what": "162 email-rule lines in 40 commits, all PrompTugal-style agent names",
+   "where": "",
+   "rule": "an email address",
    "context": "none is a real mail domain"
-  },
-  {
-   "level": "note",
-   "what": "writes outside the lane",
-   "where": "Angelo's helper content/help.md (bccb11f); outreach@web-summit.silvio three board files outside its Issue trailer (d96d7c1)",
-   "context": "listed, not judged"
   },
   {
    "level": "info",
    "what": "the watcher's Sonnet trial has not started",
-   "where": "this run's ledger line shows Opus",
+   "where": "this run's ledger line",
    "context": "Jose switches the model in this session (C30)"
   }
+ ],
+ "late_one_slot": [
+  "Angelo's helper (10:50)",
+  "procurement@web-summit.silvio (07:30)"
  ],
  "open_from_earlier_runs": [
   {
@@ -117,33 +131,34 @@
  },
  "commits_jose": [
   {
-   "sha": "4a912ef",
-   "time": "2026-11-07T12:34:18Z",
+   "sha": "d33e3c3",
+   "time": "2026-11-08T07:24:57Z",
+   "agent": "conductor@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+  },
+  {
+   "sha": "1180f3a",
+   "time": "2026-11-08T07:33:25Z",
    "agent": "dashboard@web-summit.jose",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
   },
   {
-   "sha": "ad9bb2d",
-   "time": "2026-11-07T15:43:44Z",
+   "sha": "db7e4e7",
+   "time": "2026-11-08T09:36:56Z",
    "agent": "dev@web-summit.jose",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
   },
   {
-   "sha": "13fd571",
-   "time": "2026-11-07T15:43:44Z",
-   "agent": "dev@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "7fbb4a8",
-   "time": "2026-11-07T15:43:44Z",
-   "agent": "dev@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+   "sha": "5f6df12",
+   "time": "2026-11-08T11:43:22Z",
+   "agent": "vault@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass)"
   }
  ],
  "could_not_check": [
   "scheduled tasks in other people's accounts",
   "the agents' run logs in the public vault aym98gsm (no sgit client yet: Jose to install it)",
-  "work done in other repositories (the newsroom)"
+  "work done in other repositories (the newsroom)",
+  "Dinis's account, so whether his scheduled tasks fired"
  ]
 }

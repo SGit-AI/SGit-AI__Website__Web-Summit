@@ -1,0 +1,2 @@
+{"event":"start","at":"2026-11-08T08:42:39Z","agent":"social-media@PrompTugal.angelo","item":"0h","what":"today's two LinkedIn posts checked against live pages","est_effort_min":15,"est_elapsed_min":20,"confidence":"medium"}
+{"event":"done","at":"2026-11-08T08:42:39Z","agent":"social-media@PrompTugal.angelo","item":"0h","effort_min":15,"elapsed_min":20,"runs":1,"note":"corrected agent count and guide roles"}

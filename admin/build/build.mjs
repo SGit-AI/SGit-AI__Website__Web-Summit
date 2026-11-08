@@ -114,7 +114,13 @@ function render(md) {
     let i = 0
     while (i < lines.length) {
         const l = lines[i]
-        if (l.startsWith('```cards')) {
+        if (/^:::details .+$/.test(l)) {
+            // a collapsible block (Vicky's dashboard, 8 Nov): ":::details Title" ... ":::"; native <details>, no script. Nothing else uses it.
+            const title = l.slice(11).trim(), inner = []
+            for (i++; i < lines.length && lines[i].trim() !== ':::'; i++) inner.push(lines[i])
+            i++
+            out.push(`<details class="fold"><summary style="cursor:pointer;font-weight:600;padding:.4rem 0">${inline(title)}</summary>${render(inner.join('\n'))}</details>`)
+        } else if (l.startsWith('```cards')) {
             const rows = []
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) rows.push(lines[i].split('|').map(c => c.trim()))
             i++
@@ -124,11 +130,11 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
             out.push(CHARTS[name] ? `<figure class="chart">${CHARTS[name](arg)}</figure>` : `<p class="meta">(no chart called ${esc(name)})</p>`)
-        } else if (/^```vault-app [a-z0-9-]+ [a-z0-9]{8,12}\s*$/.test(l)) {
-            const [person, id] = l.slice(13).trim().split(' ')
+        } else if (/^```vault-app [a-z0-9-]+ [a-z0-9]{8,12}( auto)?\s*$/.test(l)) {
+            const [person, id, auto] = l.slice(13).trim().split(' ')
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
-            out.push(vaultAppHtml(person, id))
+            out.push(vaultAppHtml(person, id, auto === 'auto'))
         } else if (/^```obs-live [a-z0-9-]+ [a-z0-9]{8,12}\s*$/.test(l)) {
             const [person, id] = l.slice(12).trim().split(' ')
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
@@ -453,7 +459,17 @@ const vaultsMd = who => {
 // key by postMessage, pinned to its origin; the key is never in a URL or the frame's storage, and the vault opens
 // read-only. The key comes only from the person's vaults.json, which vaultsMd's check limits to sgit_public_read_.
 let VAULT_APPS = 0
-const vaultAppHtml = (person, id) => {
+// ```vault-app <person> <vault id> auto``` (Vicky's dashboard, 8 Nov, option 1): the same frame, but opened by itself when
+// the visitor's browser says it is <person> (localStorage "ws.me", the "Who are you?" picker) and the section scrolls into
+// view; every other visitor keeps click-to-load. Without the word "auto" the output is byte-for-byte what it was.
+const vaultAutoJs = person => `var P=${JSON.stringify(person)},me='';try{me=localStorage.getItem('ws.me')||'';}catch(e){}` +
+    `var sd=false;try{sd=!!(navigator.connection&&navigator.connection.saveData);}catch(e){}` +
+    `if(me===P&&!sd&&'IntersectionObserver' in window){` +
+    `var w=null,ov=null;if(window.matchMedia&&matchMedia('(pointer:coarse)').matches){f.style.height='60vh';w=document.createElement('div');w.style.position='relative';f.parentNode.insertBefore(w,f);w.appendChild(f);` +
+    `ov=document.createElement('button');ov.type='button';ov.setAttribute('style','position:absolute;left:0;right:0;top:0;bottom:0;width:100%;background:transparent;border:0;padding:0 .5rem .6rem;display:flex;align-items:flex-end;justify-content:center;font:inherit;touch-action:pan-y;cursor:pointer');var hint=document.createElement('span');hint.textContent='Tap to use the vault. Swipe here to keep scrolling the page.';hint.setAttribute('style','background:rgba(15,23,42,.9);color:#fff;font-size:.85rem;line-height:1.3;padding:.4rem .7rem;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.25)');ov.appendChild(hint);` +
+    `ov.addEventListener('click',function(){ov.hidden=true;});w.appendChild(ov);document.addEventListener('touchstart',function(e){if(ov.hidden&&!w.contains(e.target))ov.hidden=false;},{passive:true});}` +
+    `var io=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io.disconnect();b.querySelector('[data-mode="app"]').click();clearTimeout(T);T=setTimeout(function(){t.textContent='The handshake timed out. Press Open the app to try again.';},12000);},{rootMargin:'200px 0px'});io.observe(b);}`
+const vaultAppHtml = (person, id, auto = false) => {
     const v = VAULTS().find(x => x.person === person && x.vault_id === id)
     if (!v) throw new Error(`vault-app ${person} ${id}: no such vault in people/${person}/vaults.json`)
     if (!/^sgit_public_read_[0-9a-f]{64}$/.test(String(v.read_key || ''))) throw new Error(`people/${person}/vaults.json: "${v.name}" needs a read_key of the form sgit_public_read_<64 hex> (never a vault key)`)
@@ -468,7 +484,7 @@ const vaultAppHtml = (person, id) => {
         `function mount(m){armed=m;f.hidden=false;fs.hidden=false;t.textContent='Connecting to the vault...';f.src=O+(m==='vault'?'/en-gb/vault/':'/en-gb/app/')+'?embed=1&parent='+encodeURIComponent(location.origin);clearTimeout(T);` +
         `T=setTimeout(function(){if(m==='app'){f.src=O+'/#'+encodeURIComponent(C);t.textContent='The handshake timed out; opened by the link instead.';}else{t.textContent='The handshake timed out. Reload and try again.';}},12000);}` +
         `b.querySelectorAll('[data-mode]').forEach(function(x){x.addEventListener('click',function(){mount(x.getAttribute('data-mode'));});});` +
-        `fs.addEventListener('click',function(){try{if(f.requestFullscreen)f.requestFullscreen();}catch(e){}});b.querySelector('[data-newwin]').addEventListener('click',function(){window.open(O+'/#'+encodeURIComponent(C),'_blank','noopener');});}());</script>`
+        `fs.addEventListener('click',function(){try{if(f.requestFullscreen)f.requestFullscreen();}catch(e){}});b.querySelector('[data-newwin]').addEventListener('click',function(){window.open(O+'/#'+encodeURIComponent(C),'_blank','noopener');});${auto ? vaultAutoJs(person) : ''}}());</script>`
 }
 // the live observability panel: ```obs-live <person> <vault id>``` (observability@web-summit.dinis, 5 November 2026). The
 // page reads the vault itself, in the browser, with sgit.ai's reader (assets/vendor/sgit-ai/2026-11-05/vault-embed.js):
@@ -657,11 +673,24 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
         }
         continue
     }
-    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n\`\`\`chart agents-map ${m.id}\n\`\`\`\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
+    // compact: true in a person's dashboard.md front matter (Vicky's, 8 Nov) folds the long built sections; every other dashboard is built as before
+    const compact = String(meta.compact) === 'true', fold = (title, inner) => `:::details ${title}\n\n${inner.trim()}\n\n:::`
+    let SINCE = sinceMd(MEET, m.id, '../../'), AGENTS = `${myAgentsMd(INV, m.id)}\n\n\`\`\`chart agents-map ${m.id}\n\`\`\``, MENTOR = mentorMd(m.id)
+    if (compact) {
+        const ls = SINCE.split('\n'), li = ls.map((l, k) => l.startsWith('- ') ? k : -1).filter(k => k >= 0)
+        if (li.length > 3) {   // the summary counts and the latest 3 releases; the rest folded
+            const rest = li.slice(3).map(k => ls[k]), drop = new Set(li.slice(3))
+            SINCE = ls.flatMap((l, k) => drop.has(k) ? [] : k === li[2] ? [l, '', fold(`Earlier releases (${rest.length} more)`, rest.join('\n'))] : [l]).join('\n')
+        }
+        const mine = INV.agents.filter(a => a.person === m.id)
+        AGENTS = `${mine.length} agents, ${mine.filter(a => a.commits).length} with commits so far. The network shows who writes to whom.\n\n\`\`\`chart agents-map ${m.id}\n\`\`\`\n\n${meta.office_link && /^[a-z0-9][a-z0-9\/._-]*$/i.test(String(meta.office_link)) ? `**[Open the Live AI Office →](${meta.office_link})**: the live view of these agents.\n\n` : ''}${fold('Show agent details', myAgentsMd(INV, m.id))}`
+        MENTOR = MENTOR ? fold('From your mentor', MENTOR.replace(/^## From your mentor \{#mentor\}\n\n/, '')) + '\n\n' : ''
+    }
+    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${SINCE}\n\n## My agents, as the team sees them {#my-agents}\n\n${AGENTS}\n\n${MENTOR}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
     const rel = `people/${m.id}/index.html`
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel) }))
     pages.push({ rel, title: meta.title, description: meta.summary })
-    twin(rel, meta.title, meta.summary, body)
+    twin(rel, meta.title, meta.summary, compact ? body.replace(/^:::details (.+)$/gm, '### $1').replace(/^:::\s*$/gm, '') : body)
 }
 
 // a person's own extra pages (WS-27, dev@web-summit.indi, 3 November): people/<id>/pages.mjs exports
@@ -697,6 +726,7 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     // the switcher at the top of every command centre: everyone's, in roster order
     data.team = teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => ({ id: x.id, name: x.name, ...(fs.existsSync(path.join(ROOT, 'people', x.id, 'photo.jpg')) ? { photo: `../../${x.id}/photo.jpg` } : {}) }))
     write(`people/${m.id}/app/data.json`, JSON.stringify(data))
+    if (app.extras) for (const [rel, text] of Object.entries(app.extras(data, ROOT))) write(rel, text)   // files a person's own data.mjs adds beside data.json (Angelo's live.json)
     {   // this person's slice of me.json
         const o = onboard(m.id), nx = MEET.next(), a = MEET.ack(m.id), since = MEET.log(a?.acknowledged_at || new Date(Date.now() - 864e5).toISOString())
         const open = data.issues.filter(i => i.named && i.status !== 'done'), h = i => i.due_at ? (Date.parse(i.due_at) - Date.now()) / 36e5 : 1e9

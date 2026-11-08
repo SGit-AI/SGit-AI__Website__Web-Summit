@@ -8,8 +8,12 @@ Sources, read 5 November 2026: `content/videos.md` (the pipeline table), `data/v
 
 | Video | Length | State (7 November 2026) | Where |
 |---|---|---|---|
-| The stand loop, six languages | 67 s each | checked, final | vault `ws-team-videos` (h9in5em4), `stand-loop/` |
-| Your AI has access. Does it have permission? | 30 s, subtitled | checked, final | the vault, `access-permission-30s/`; Silvio's Drive original to upload |
+| The stand loop, six languages | 67 s each | checked, final | vault `ws-team-videos` (h9in5em4), `stand-loop-what-is-riskmandate/` |
+| Your AI has access. Does it have permission? | 30 s, subtitled | checked, final | the vault, `your-ai-has-access-does-it-have-permission/`; Silvio's Drive original to upload |
+| An X-ray, in 30 seconds (WS-197) | 30 s, silent | checked, final, for Silvio's yes | the vault, `riskmandate-xray-of-a-company/` |
+| The demo is us | 47 s, silent | checked, final, for Silvio's yes | the vault, `the-demo-is-us-our-team-and-its-agents/` |
+| The Licence to Operate, in 30 seconds | 30 s, square and 16:9 | checked, final, for Silvio's yes | the vault, `licence-to-operate-in-30-seconds/` |
+| With and without RiskMandate: the agent beyond its mandate, the access that stayed, the supplier with the open door | 19 s each, EN and PT, four frames | approved by Silvio, 8 November | the vault, `with-and-without-riskmandate/` |
 | Reach, Mandate, Gap | 53 s | **on hold: errors in frames** | not in the vault (PUBLISH.md says which) |
 | RiskMandate Stories: fifty new agents | 2 min 44 s | **on hold: a label over its title** | not in the vault |
 
@@ -39,6 +43,10 @@ Sources, read 5 November 2026: `content/videos.md` (the pipeline table), `data/v
 ## For the stand (Thursday 12 November)
 
 The loop on the stand's screen plays from a laptop, from the masters, not from the web (the operator's note: keep the originals on a laptop for longer conversations). What was made for the stand is in [LOOP.md](LOOP.md).
+
+## The names in the vault
+
+Every folder and file is named for what it shows: the title, the length, and the language at the end (Silvio, 8 November). For example `with-and-without-riskmandate/the-ai-agent-beyond-its-mandate-19s-en.mp4` and `o-agente-de-ia-fora-do-mandato-19s-pt.mp4`.
 
 ## The flow in one line
 

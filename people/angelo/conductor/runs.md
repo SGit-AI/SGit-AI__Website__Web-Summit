@@ -1,7 +1,5 @@
 # The conductor runner's runs
-
 `<start UTC> | <session id> | <what it did>`, newest last. Each session is titled `conductor-runner · <start> UTC` and tagged `angelo-conductor-runner`.
-
 2026-11-06T09:20Z | session_01Xp7gj2ZUKtDS9e3WJ9VD9M | first run: nothing new for Angelo's agents; naming tools unavailable, session untitled
 2026-11-06T10:20Z | session_01Xp7gj2iurpckMXqV8r3r8m | nothing to route; vault clean, crm's 18-company check pending; untitled (no naming tools)
 2026-11-06T11:21Z | session id unavailable (no get_session tool) | no commits since the desk's 11:25 state; nothing to route; untitled
@@ -39,3 +37,22 @@
 2026-11-07T19:20:00Z | n/a (no get_session) | nothing to route; policy P-09/P-10 and the Android repo noted for the desk
 2026-11-07T20:21Z | n/a (no get_session) | nothing to route; desk's keep-going rule and live-map real-time spec noted; no stalls listed; STATE upkeep
 2026-11-07T21:20Z | n/a (no get_session) | nothing to route; Angelo's leggiopasqua.com backlog item and dev's snapshot noted; no stalls; STATE upkeep
+2026-11-07T22:20Z | n/a (no get_session) | nothing to route; dev built both policy barriers (lane check warns until lanes widened), vault.kms tests refused in vault@'s session; no stalls; STATE upkeep
+2026-11-07T23:21Z | n/a (no get_session) | nothing to route; dev's live-graph fixes noted (For: desk); no stalls; STATE upkeep
+2026-11-08T00:20:46Z | n/a (no get_session) | nothing to route; writer's verify-flag question added to Open with Angelo; none urgent
+2026-11-08T01:21:00Z | session_01Xp7gj3Xakq1bDYpPBm4Ztc | nothing to route; ABP report decisions added to Open with Angelo; nothing urgent
+2026-11-08T02:20:36Z | n/a (no get_session) | nothing to route; dev.map's 00a/00b questions added to Open with Angelo; none urgent
+2026-11-08T03:21:00Z | n/a (no get_session) | nothing to route; only Vicky's Live AI Office went live (information only); none urgent
+2026-11-08T04:20:00Z | n/a (no get_session) | nothing to route; dev@'s dev.map/dev.venues reviews noted, Safari check added to Open with Angelo; none urgent
+2026-11-08T05:20:00Z | n/a (no get_session) | nothing to route; only dev@'s test fixes and snapshot and Vicky's side moved; none urgent
+2026-11-08T06:21:00Z | n/a (no get_session) | nothing to route; dev@ brought dev.map's keys/lanes playback onto dev (information); none urgent
+2026-11-08T07:21:00Z | n/a (no get_session) | nothing to route; policy@'s run 4 (lane check enforced) noted; workload table refreshed; none urgent2026-11-08T08:21:00Z | n/a (no get_session) | nothing urgent; desk's routing noted, stand-up question to Open with Angelo; no list_triggers, commit-based stall check only
+
+2026-11-08T09:21:00Z | n/a (no get_session) | nothing to route; desk routed dev.abp@, the Tauri app and the protocols article itself; none urgent
+2026-11-08T10:21:00Z | n/a (no get_session) | nothing to route; dev@ recorded worker reviews, vault@'s kms test result already routed to vault.kms@; none urgent
+2026-11-08T11:20:34Z | session_01Xp7gj4SKmQWimzFNZug7Rf | nothing to route; social-media's two questions to Open with Angelo; nothing urgent
+2026-11-08T12:21:00Z | session_01Xp7gj66oKtc1nocZgC7TGx | nothing urgent; dashboard@ brought map/app workers' work onto dev; dev.app CI draft and missing lanes noted for the desk
+2026-11-08T13:20:43Z | n/a (no get_session) | nothing urgent; Indi's accountant/token-reporting ask (tier 3) added to Open with Angelo; stand-ups end routed by the desk
+2026-11-08T14:21:16Z | session_01Xp7gj5ZKz2BQHCPCxFJHez | nothing urgent; desk's 'own website first' rule in the kit; workers' work brought onto dev; no stalls seen
+2026-11-08T15:21:15Z | runner (no session id available) | nothing urgent; Angelo's agents' reports only (dashboard, dev); others' work information
+2026-11-08T16:21:28Z | session_01Xp7gj68ZjrE57LvejsvS75 | URGENT relayed: request to Dinis's conductor for dev.app's CI drafts; nothing else to route

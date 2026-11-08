@@ -157,3 +157,44 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Two team topics listed (beat "AI and robotics", for journalist-ai), neither published nor drafted: S26, [PrompTugal.news, "The daily newsletter"](https://promptugal.news/newsletter/index.html), and S27, [PrompTugal.news, "The venue map"](https://promptugal.news/summit/venue/index.html), both read 7 November 2026; newsroom commit 2b28e5f1a, map desks/curator/2026-11-07-1945.json.
 - For the fact-checker: S27's session counts per building are the site's programme data of 7 November and will change; S26 says sending is the Web Summit team's, so the story must stay to what the page says.
 - state: ok; done: S26 and S27 listed; next: the 07:45 run on 8 November; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 05:30 UTC run
+
+- applied CURATOR-WS (also SA19 and SA20): the scheduled prompt now uses desks/curator/tools/readme.py (committed to the newsroom, commit 5b60ab742, it reproduces the page), allows people and companies in theme-led connection storylines, and carries the duplicate check before step 3; the prompts file matches word for word. P2: the run fired at 05:31, not 07:45; the cron is `30 5,10,14,18 * * *` since the conductor's change of 7 Nov 23:14 UTC, which my prompts file records, so the file wins and nothing is wrong. decisions.md read first: no HOLD.md; answers 18 and 21 are for others.
+- No new capture: vault 41j3e9s9 still at 4c3965130775 and the researcher's 05:15 run was idle ([Vicky's researcher report](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/reports/researcher.md)). No map.
+- Team topics S25, S26 and S27 are already drafted by journalist-ai (s25, s26, s27 in the journalist drafts); no new team topic. No theme-led connection storyline this run: the 33 captures' themes are already covered by published articles or drafts (S4, S10, S16, S19, S22), so by SA20 I add one only with a new capture or a clearly different angle.
+- state: ok; done: CURATOR-WS applied, generator committed; next: the 10:30 run; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 08:55 UTC (prompted pass, SA19B)
+
+- applied SA19B: step 3 of my scheduled prompt now says to look for a theme-led connection storyline with or without new research (replacement exactly as in decisions.md; the prompts file matches). Source: Vicky's word quoted in decisions.md by the conductor, 8 Nov.
+- Pass under SA19B and SA20: looked across the 34 captures, the 38 published articles, the drafts of all desks and the storyline map; no new theme-led storyline, so no map and nothing for journalist-connections. The candidates I weighed each have an article or draft doing the same job: where the money comes from (S4, S16, S17), expansion to Spain, Germany, Italy and Brazil (S4, S19, S11, S17), who supports startups in Portugal (S7, S3, S10, BR6 "Portugal as the door"), waste into value (S22; S23 dropped as a duplicate), robotics and the lineup (S12, S15). The one unused capture with room ([Web Summit, "Unveiling the creators joining us at Web Summit 2026"](https://websummit.com/blog/marketing/creator-programme-web-summit-2026/), read 4 November 2026) names no creator, so no one can be named from it.
+- Ask: a named-people storyline needs a capture that names people; the next researcher mandate could be "public, professional profiles of speakers and founders by theme (climate, health, fintech)". I recommend you pass that to the researcher.
+- state: idle; done: SA19B applied, pass run, nothing found; next: the 10:30 run; ask: researcher mandate for named people by theme (recommend yes); run: prompted
+
+## Sun 8 Nov 2026, 10:30 UTC run
+
+- applied SA19C: its workflow paragraph is in my prompts file (rule 23); I build theme-led storylines from the researcher's captures and the published articles only. decisions.md read first: no HOLD.md; the conductor's commit 862aad46 is the source; prompts file re-read, it matches.
+- New capture in vault 41j3e9s9 (commit 0a0f02e6e052, researcher's 10:15 run): [Web Summit, "Meet Web Summit's 2026 speakers"](https://websummit.com/speakers/), read 8 November 2026, twenty speakers by theme with role and organisation.
+- New storyline S28 for journalist-connections, beat "Connections: the summit": "Five AI builders on Web Summit's speaker list worth knowing" (Tao Zhang of Manus AI, Dahai Li of ModelBest, Alan Shen of MiniMax, Richard Socher of You.com, Michele Catasta of Replit). No article or draft names them; the robotics group is not listed again (S12 and S15 cover it). Newsroom: desks/curator/2026-11-08-1045.json.
+- For the fact-checker: only the page's first view was read and its order rotates, so the five are a sample; what each company does is not captured yet, so the writer takes it from each company's own page. Held for the next pass, when the researcher's "what each organisation does" arrives: the policy and investment group, mobility and devices, infrastructure and security.
+- state: ok; done: S28 listed, SA19C recorded; next: the 14:30 run; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 14:30 UTC run
+
+- applied SA22: the curator line is in my scheduled prompt (before step 3) and my prompts file (rule 24); my times are unchanged. decisions.md read first: no HOLD.md; PILOT-REPLIT is not for me; the conductor's commit e189da66 is the source; prompts file re-read, it matches.
+- New capture in vault 41j3e9s9 (researcher's 14:15 run): [Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/), read 8 November 2026, page 1 of 26, 100 startups with the page's industry tags (names and tags only). Mapped in desks/curator/2026-11-08-1445.json and held: no storyline yet, because what the startups do and where they are based is not captured; none of the names is in a published article or draft.
+- Priority list for journalist-connections: 1, S28 (the five AI builders), ready to write now, with the writer taking what each company does from its own page and re-reading the speakers page the same day. Nothing else is ready; the README has a section "Connection storylines: order and readiness" (newsroom).
+- state: ok; done: SA22 applied, startups capture mapped and held, S28 marked ready; next: the 18:30 run; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 15:20 UTC (prompted correction: S28 already published)
+
+- Corrected, at Vicky's word: S28 is published, [PrompTugal.news, "Five AI builders on Web Summit's speaker list worth knowing"](https://promptugal.news/articles/five-ai-builders-to-know.html), read 8 November 2026 (reviewer's commit b0eab872 at 12:29 UTC, v0.1.704). Both maps (2026-11-08-1045 and -1445) now say so, the README marks it "(published 8 Nov)" and its "Ready to write now" list is empty (newsroom release in progress).
+- Why the check missed it: at 14:30 I ran the duplicate check (standing answer 20) only on the 100 new startup names, not again on S28 itself before marking it ready, although its draft (11:12) and article (12:29) were already in the clone I had pulled. Fixed in my prompts file (rule 25) and in the generator, which now refuses a ready story whose title matches an article or a draft (tested: it stops on S28). I did not change the scheduled prompt.
+- PILOT-REPLIT is a separate addition to the existing Replit company page, not an S28 draft; nothing for me.
+- state: ok; done: S28 marked published, ready list empty, check added; next: the 18:30 run; ask: may I add one sentence to the scheduled prompt too, "before marking a connection storyline ready, re-check it against published articles and drafts"? (recommend yes, though rule 25 already binds me); run: prompted
+
+## Sun 8 Nov 2026, 15:35 UTC (prompted: re-check sentence)
+
+- Added to my scheduled prompt, at Vicky's word and word for word, right after standing answer 22's line: "Before marking a connection storyline ready, re-check it against published articles and drafts." Consistent with rule 25 and standing answer 20 (which still governs creating any storyline); the prompts file carries the same prompt text and a note under rule 25. Schedule unchanged: `30 5,10,14,18 * * *`, next run 18:30 UTC.
+- state: ok; done: sentence added to the task prompt and the prompts file; next: the 18:30 run; ask: none; run: prompted

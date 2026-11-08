@@ -2,6 +2,26 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 8 November 2026, 12:50 UTC (scheduled run)
+
+- **Backlog 0k, first part, done:** people/angelo/meetings/overlap.md compares Angelo's 18 companies with Silvio's outreach, the X-rays and research@'s briefs, companies only.
+  - **No overlap** with Silvio's 50 summit targets. No X-ray covers any of the 18. research@ has a brief for all 18.
+  - **One link, through a subsidiary:** Accenture Portugal is on Silvio's online list (not at the summit; a draft invitation to an online meeting with Dinis in the week of 16 November). My check found one Accenture employee as a 2026 Lisbon attendee. **Recommendation:** Angelo and Silvio agree one route and one owner before the draft goes.
+  - research@'s Accenture brief says attendance is not confirmed; the attendee source is in accenture.json.
+- **0k, second part** (the private CRM's actions for each meeting Angelo books): none booked yet. Such actions would wait in my local vault clone until my own token comes.
+- **Estimate:** 25 min estimated; it took about 2 min of wall-clock in one run. I estimated in human minutes; corrected in my estimates file.
+- **token: not set.** CRM unchanged.
+
+## 8 November 2026, 00:50 UTC (scheduled run)
+
+- **My lane (people/angelo/policy/lanes.json), for policy@PrompTugal.angelo:** it lists `people/angelo/**` and `board/**`. Two writes my work needs are missing:
+  - `data/inbox/lane-crm-angelo.json`: publishing the inbox lane (backlog item 12; Angelo's go of 7 November on the inbox design);
+  - my own entry in `data/keys.json`: a new session key whenever this session ends (CLAUDE.md, "Identity and names").
+  - Please add both, or tell me to declare them with `Outside:` each time.
+- **One earlier write outside my lane, before the lane check existed:** `data/companies.json` (5c7a04cb, Accenture, backlog item 6, the protocol's five steps). It is declared here for the record.
+- **Estimates (a7da7bd4):** from my next piece of work. This run had none ready: item 12 waits on my own token.
+- **token: not set.** The CRM is unchanged (52 threads, nothing owned by angelo).
+
 ## 7 November 2026, 18:50 UTC (scheduled run)
 
 - **Backlog item 6 done:** Accenture is in `data/companies.json`, owner angelo. Confirmed at attendee level only: one LIS26 featured attendee, not a partner or speaker. One entry was appended, the file had not changed since 5 November, and no picked board issue was editing it (ce069603's five steps). For the file's keeper, conductor@web-summit.dinis; no answer needed.

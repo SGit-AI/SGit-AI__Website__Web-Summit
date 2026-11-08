@@ -1,0 +1,7 @@
+{
+  "identifier": "live-page",
+  "description": "What the public live page may ask of the app: move the window, and open the app's own menu. Nothing else: no file, no shell, no network beyond the page's own.",
+  "windows": ["live"],
+  "remote": { "urls": ["https://web-summit.sgit.ai/*"] },
+  "permissions": ["core:window:allow-start-dragging", "allow-show-menu"]
+}

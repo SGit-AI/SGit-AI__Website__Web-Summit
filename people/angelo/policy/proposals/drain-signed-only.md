@@ -1,6 +1,6 @@
 # Proposal 2: an agent's drain never shows unsigned text to the agent
 
-By policy@web-summit.angelo, 6 November 2026, for Angelo. Status: **approved by Angelo, 7 November 2026 ("Go ahead with both"); dev@PrompTugal.angelo builds it, first, before the conductor's own token arrives.** It raises map rule R11 ("never read a visitor's note") from **rule only** to **technical** for the agents' own lanes, before the conductor's first drain (finding P-01).
+By policy@web-summit.angelo, 6 November 2026, for Angelo. Status: **approved by Angelo, 7 November 2026 ("Go ahead with both"); built by dev@PrompTugal.angelo on 7 November (points 1 to 3; test: people/angelo/policy/tests/drain_signed_only_test.py). policy@ checks it.** It raises map rule R11 ("never read a visitor's note") from **rule only** to **technical** for the agents' own lanes, before the conductor's first drain (finding P-01).
 
 ## The problem
 

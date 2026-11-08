@@ -225,7 +225,7 @@ footer{padding-block:30px 60px;color:var(--muted);font-size:.84rem;border-top:1p
   <span class="eyebrow">A guide for anyone starting with agents · by Angelo</span>
   <h1>Set up your AI agents, and decide what each one may do</h1>
   <p class="lede">From a few chats you copy and paste between, to a team of agents that works while you sleep. Each step gives your agents more reach. This guide shows what each step needs, what it risks, and how much control to put around it.</p>
-  <div class="meta"><span class="tag">Works with any agent product</span><span class="tag">Open source tools</span><span class="tag gold">Tested on our own team, Web Summit 2026</span></div>
+  <div class="meta"><span class="tag">Ideas for any agent product, tested with Claude</span><span class="tag">Open source tools</span><span class="tag gold">Tested on our own team, Web Summit 2026</span></div>
  </div>
  <svg class="hero-art" viewBox="0 0 400 400" role="img" aria-label="A person at the centre, three agents around them, each agent's reach drawn as a ring, and a barrier cutting off part of one ring">
   <circle cx="200" cy="200" r="182" fill="none" stroke="var(--line)" stroke-dasharray="3 7"/>
@@ -273,7 +273,7 @@ footer{padding-block:30px 60px;color:var(--muted);font-size:.84rem;border-top:1p
 <!-- FIND YOUR GUIDE -->
 <section id="find">
  <div class="sechead"><span class="eyebrow">Start here · 3 minutes</span><h2>Find your guide</h2>
- <p class="col">Two short questionnaires. Your answers stay in this browser: nothing is sent or saved. Each ends with the parts of this guide to read first.</p></div>
+ <p class="col">Two short questionnaires. Your answers stay in this browser: nothing is sent anywhere, and it remembers only which reader you chose. Each ends with the parts of this guide to read first.</p></div>
  <div class="tabs" role="tablist">
   <button class="tab" role="tab" aria-selected="true" data-quiz="qa"><svg class="ico"><use href="#i-path"/></svg>Where are you, and what worries you?</button>
   <button class="tab" role="tab" aria-selected="false" data-quiz="qb"><svg class="ico"><use href="#i-wrench"/></svg>What has gone wrong with agents?</button>
@@ -552,7 +552,7 @@ qa.addEventListener('submit',e=>{e.preventDefault();const f=new FormData(qa);
  const role=f.get('role'),stage=+f.get('stage'),reach=f.getAll('reach'),who=+f.get('who'),prod=f.get('prod'),env=f.get('env'),worry=f.getAll('worry');
  let dep='assist';
  if(reach.includes('money')||reach.includes('prod'))dep='money';else if(reach.includes('inbound'))dep='front';else if(stage>=6)dep='team';else if(stage===5||reach.includes('code'))dep='code';
- const D=DEP.find(x=>x.id===dep);let lvl=D.start;if(reach.includes('pii')&&lvl<2)lvl=2;
+ const D=DEP.find(x=>x.id===dep);let lvl=D.start;if(reach.includes('pii')&&lvl<2)lvl=2;if(reach.includes('public')||(reach.includes('docs')&&reach.includes('pii')))lvl=3;
  const W={mail:1,docs:1,code:1.5,prod:2.5,pii:2,money:3,public:1.5,inbound:2};
  const rScore=Math.min(1,(stage/6)*0.45+reach.reduce((s,k)=>s+W[k],0)/14);
  const cScore=Math.min(1,who/3*0.85+(env==='locked'?0.1:0));

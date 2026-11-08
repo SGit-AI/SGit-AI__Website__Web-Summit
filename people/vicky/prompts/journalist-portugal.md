@@ -45,10 +45,14 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt (from 6 November 2026; daily at 08:06, 12:06, 16:06 and 20:06 UTC since SCHED-7NOV (four rounds); P1 to P3 added 7 November at standing answer 16)
 
+**From 8 Nov midday (standing answer 22, connections first):** writing at :57 past 05, 10, 14, 18 UTC; fix-only at :02 past 07, 12, 16, 20 UTC (`trig_015W8aURM2zEyH9Sd9gJvzNx`), both set by the conductor at Vicky's word.
+
+**From 8 Nov midday (SCHED-WS, order from standing answer 22):** writing at :57 past 05, 10, 14, 18 UTC (`trig_01R4SDnvm1qg6LrQVcmCRPaH`); fix-only at :02 past 07, 12, 16, 20 UTC (`trig_015W8aURM2zEyH9Sd9gJvzNx`), both set by the conductor at Vicky's word (7 and 8 Nov).
+
 ```
 Scheduled run for journalist-portugal@PrompTugal.vicky:
 1. Read people/vicky/decisions.md on the team site and follow it.
-2. Check your newsroom remote points at PrompTugal/PrompTugal__News__Website, then pull dev.
+2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
 3. Read desks/journalist-vicky/STYLE.md.
 4. Read desks/curator/README.md and pick the storylines in your beat that have no draft yet in desks/journalist-vicky/drafts/, desks/journalist-promptugal/drafts/ or content/articles/.
 5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: journalist@PrompTugal.dinis.
@@ -61,6 +65,21 @@ Added at Vicky's standing answer 16 (7 Nov), word for word:
 - P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
 - P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 ```
+
+## Fix-only task's prompt (from 8 November 2026; created by the conductor at Vicky's word, standing answer 18; step 2 changed at REMOTE-WS)
+
+```
+Fix-only follow-up run for journalist-portugal@PrompTugal.vicky (standing answer 18 in people/vicky/decisions.md; Web Summit timetable, Vicky's word, 7 November 2026). Not a writing round.
+1. Read people/vicky/decisions.md on the team site and follow it, P1 to P3 included (stop if people/vicky/HOLD.md exists; re-read your own people/vicky/prompts/<short name>.md; end your report line with the status block).
+2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
+3. Check desks/reviewer-vicky/reviews/ for any new Fix first on your own drafts since your last run. Revise only those drafts, following STYLE.md and the review, and repush each through newsroom/tools/release.sh, For: reviewer@PrompTugal.vicky.
+4. Never pick up a new storyline in this run.
+5. If there is nothing to fix, write nothing, push nothing and add no report line.
+6. If you revised a draft, add one report line in people/vicky/reports/journalist-portugal.md on the team site, ending with the status block (run: scheduled).
+Never push to main, never use --force, never push to a session branch.
+```
+
+Standing answer 18 (Vicky, 7 Nov), as in decisions.md: a fix-only follow-up run after each reviewer round, not a new writing round. It only checks my own reviews for a new Fix first, revises and repushes that draft if needed, stays silent if there is nothing to fix, and does not pick up a new storyline.
 
 ## Standing rules given in chat
 

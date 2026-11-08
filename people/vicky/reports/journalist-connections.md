@@ -64,3 +64,40 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - Applied SCHED-7NOV (four rounds): my task now runs at 08:24, 12:24, 16:24 and 20:24 UTC, prompt kept; prompts file updated.
 - No hold; P2: prompts file and memory agree; no fix-first draft (S16, S18, S19 Ready; S23 Dropped); no new Connections storyline (S26 and S27 are AI and robotics).
 - state: ok; done: SCHED-7NOV (four rounds) applied; next: next Connections storyline from the curator; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 06:15 UTC (scheduled run)
+
+- Applied SCHED-WS: both tasks match (writing at :09 past 06, 11, 15 and 19 UTC, trig_01RqSqjPAC6WuwNmTbjKFzwa; fix-only at :14 past 07, 12, 16 and 20 UTC, trig_014fa4xbTLFyrXdfF4pzv8KD).
+- Applied SA18 (fix-only task's prompt and standing answer 18 in my prompts file; I had not made a fix-only task myself, so there is no duplicate), SA19 (in my writing task's prompt and prompts file) and REMOTE-WS (step 2 replaced in both tasks, trig_01RqSqjPAC6WuwNmTbjKFzwa and trig_014fa4xbTLFyrXdfF4pzv8KD; prompts file copies updated).
+- P10 and P17 were confirmed in my report at 16:30 on 7 Nov; confirmed again here, as the 00:10 list still shows them open.
+- P2: the prompts file had the conductor's SCHED-WS line, which matches the tasks; no disagreement. No hold. No fix-first (S16, S18, S19 Ready). No new Connections storyline on the map (05:32 UTC).
+- state: ok; done: SCHED-WS, SA18, SA19, REMOTE-WS applied, P10 and P17 reconfirmed; next: theme-led Connections storylines when the curator adds them; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 11:20 UTC (scheduled run)
+
+- Draft S28, "Five AI builders on Web Summit's speaker list worth knowing" (525 words, theme-led), For: journalist@PrompTugal.dinis. Sources, all read 8 Nov: Web Summit's speakers page and its session page for Replit's press conference; the five companies' own sites (Replit, Manus, MiniMax, ModelBest, You.com). Cover card S28-cover-card-2026-11-08.svg in drafts/img/, checked at 390px, set as the front matter image. Not confirmed: when and where four of the five speak; the companies' own claims (MiniMax's 300 million users among them). Web Summit's attendee pages load in the browser only, so they gave no extra context.
+- Applied SA19B (in my writing task's prompt and prompts file) and SA19C (workflow paragraph in my prompts file; I write only storylines the curator lists, as S28 is).
+- No hold; P2: prompts file and memory agree; no fix-first (S16, S18, S19 Ready).
+- state: ok; done: S28 drafted and pushed, SA19B and SA19C applied; next: further theme-led storylines from the curator; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 12:20 UTC (fix-only run)
+
+- S28 fixed after the reviewer's Fix first: Replit's press conference is a media-only event in the Media Village (checked again on Web Summit's session page today); now said where it is named, in the connection line, in What this does not claim and in its source line. Status back to draft, For: reviewer@PrompTugal.vicky. No point disputed.
+- state: ok; done: S28 revised and pushed; next: the reviewer's re-check; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 14:50 UTC (manual run, at Vicky's request)
+
+- PILOT-REPLIT content pushed: desks/journalist-vicky/companies/replit.md in the newsroom repository, status: in-review, For: reviewer@PrompTugal.vicky ("PILOT-REPLIT content ready for review"). About: four sentences from Replit's own pages (home page and "AI Coding Agent") and Web Summit's partner listing. At Web Summit 2026: event partner (AI and machine learning); three sessions on Tue 10 Nov from Web Summit's session pages (14:00 Centre Stage; 15:00 Stage 2 press conference, marked Media only, in the Media Village; 16:00 Stage 13, AI Summit). From the newsroom: S28, the only published article that names Replit. All sources read 8 Nov. S28 unchanged.
+- Not confirmed: the time zone of the session times (Web Summit's pages do not state it, so the file does not either).
+- state: ok; done: PILOT-REPLIT content pushed; next: the reviewer's check, then dev builds it; SA22 at my 15:09 run; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 14:50 UTC (scheduled run)
+
+- Applied SA22: step 5 of my writing task's prompt replaced as given (up to three connection stories, only as the curator lists them); prompts file has the new times (writing :45 past 05, 10, 14, 18; fix-only :50 past 06, 11, 15, 19 UTC, both set by the conductor) and standing answer 22. SA19B and SA19C were applied at 11:20 (see above).
+- No hold; P2: prompts file and memory agree. No new Connections storyline (S28 is published). PILOT-REPLIT file now status: ready (the reviewer's). S28's review file still reads Fix first in its header, but the reviewer re-checked it Ready at 12:22 and published it at 12:29; nothing open for me. For: reviewer@PrompTugal.vicky, if the header should be updated.
+- state: ok; done: SA22 applied; next: new connection storylines from the curator; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 16:15 UTC (manual run, at Vicky's request)
+
+- SA23-REPLIT step 1 done: Replit's About section in desks/journalist-vicky/companies/replit.md revised to standing answer 23 (three short, plain sentences on what Replit does; no marketing quote; no event details, the partner line staying in At Web Summit 2026; each claim numbered to its source in a list below the paragraph). Sources re-read today: Replit's home page and its AI agent page, Web Summit's Replit page. Other sections unchanged. status: in-review, commit For: reviewer@PrompTugal.vicky ("SA23-REPLIT ready for review").
+- state: ok; done: SA23-REPLIT step 1; next: the reviewer's check (19:15 or 20:20); ask: none; run: prompted

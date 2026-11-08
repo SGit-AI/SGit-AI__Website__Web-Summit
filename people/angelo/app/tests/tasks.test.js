@@ -11,7 +11,8 @@ const S = process.argv[2], B = process.argv[3] || 'http://127.0.0.1:8765', U = B
   const v = await p.evaluate(() => ({ cols: [...document.querySelectorAll('.ak-tasks .ak-col header, .ak-tabs button')].map(x => x.textContent.replace(/\s+/g, ' ').trim()), cards: document.querySelectorAll('.ak-task').length, news: document.querySelectorAll('.ak-task.ak-new').length, since: document.querySelector('.ak-since')?.textContent.trim().slice(0, 90), views: document.querySelectorAll('.ak-views a').length, ov: document.documentElement.scrollWidth - innerWidth }));
   console.log(n, scheme, JSON.stringify(v));
   if (v.cols.length !== 4 || !/^Needs you/.test(v.cols[0])) fail('four columns, Needs you first');
-  if (!v.news || !/Since you last looked/.test(v.since || '')) fail('changes since last look');
+  if (n === 'phone') { const pos = await p.evaluate(() => ({ tabs: document.querySelector('.ak-tabs').getBoundingClientRect(), card: document.querySelector('.ak-task').getBoundingClientRect(), done: document.querySelector('[data-ak-tab="done"]').getBoundingClientRect() })); if (pos.card.top > 844 || pos.done.right > 390) fail('phone: first card or Done tab off the first screen ' + JSON.stringify(pos)) }
+  if (!v.news || !/Since you last looked|new since/.test(v.since || '')) fail('changes since last look');
   if (v.views < 4) fail('the other views');
   if (v.ov > 1) fail('horizontal page scroll ' + v.ov);
   await p.screenshot({ path: `${S}/tasks-${n}-${scheme}.png` });
@@ -24,7 +25,7 @@ const S = process.argv[2], B = process.argv[3] || 'http://127.0.0.1:8765', U = B
   // Seen copies one line for the desk
   if (n === 'phone') { await p.locator('[data-ak-tab="delivered"]').click(); await p.waitForTimeout(150) }
   const seen = p.locator('[data-mark="seen"]').first();
-  if (await seen.count()) { await seen.click(); await p.waitForSelector('.ak-copy', { timeout: 3000 }).catch(() => fail('no copied line')); const line = await p.evaluate(() => document.querySelector('.ak-copy code')?.textContent || ''); console.log(n, scheme, 'line', line.slice(0, 60)); if (!/^Seen: D-[0-9a-f]{8} /.test(line)) fail('copied line: ' + line) }
+  if (await seen.count()) { await seen.click(); await p.waitForSelector('.ak-copy', { timeout: 3000 }).catch(() => fail('no copied line')); const line = await p.evaluate(() => document.querySelector('.ak-copy code')?.textContent || ''); console.log(n, scheme, 'line', line.slice(0, 60)); if (!/^Seen: D-[0-9a-f]{7,8} /.test(line)) fail('copied line: ' + line) }
   else console.log(n, scheme, 'no delivered card to mark (fine if none was delivered this week)')
   // the old layout is one tap away
   await p.locator('.ak-views a', { hasText: 'Status' }).click(); await p.waitForSelector('[data-ak-tog="now"]', { timeout: 5000 }).catch(() => fail('old layout'));

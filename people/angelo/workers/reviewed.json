@@ -1,30 +1,50 @@
 {
- "about": "The last commit of each worker branch that dev@PrompTugal.angelo (vault@ for vault.kms) reviewed and brought onto dev; the next review starts after it.",
+ "about": "The last commit of each worker branch that its reviewer brought onto dev (dev@PrompTugal.angelo for most; dashboard@PrompTugal.angelo for dev.map, dev.work and dev.app from 8 November; vault@ for vault.kms); the next review starts after it.",
  "reviewed": {
   "dev.map": {
-   "sha": "75c5d2d2",
-   "at": "2026-11-07T20:45Z",
-   "by": "dev@PrompTugal.angelo"
+   "sha": "1f3ab9cd",
+   "at": "2026-11-08T12:50Z",
+   "by": "dashboard@PrompTugal.angelo"
   },
   "research": {
-   "sha": "221b48ea",
-   "at": "2026-11-07T21:45Z",
+   "sha": "d8cda132",
+   "at": "2026-11-08T15:55Z",
    "by": "dev@PrompTugal.angelo"
   },
   "dev.links": {
-   "sha": "8fc4d339",
-   "at": "2026-11-07T21:45Z",
+   "sha": "5f934deb",
+   "at": "2026-11-08T13:50Z",
    "by": "dev@PrompTugal.angelo"
   },
   "dev.venues": {
-   "sha": "811f0b36",
-   "at": "2026-11-07T21:45Z",
+   "sha": "c6a3a96b",
+   "at": "2026-11-08T15:55Z",
    "by": "dev@PrompTugal.angelo"
   },
   "vault.kms": {
    "sha": "a3d3d1ae",
    "at": "2026-11-07T22:00Z",
    "by": "vault@PrompTugal.angelo"
+  },
+  "dev.abp": {
+   "sha": "68aa65c0",
+   "at": "2026-11-08T15:55Z",
+   "by": "dev@PrompTugal.angelo"
+  },
+  "social-media": {
+   "sha": "0f14af69",
+   "at": "2026-11-08T10:45Z",
+   "by": "dev@PrompTugal.angelo"
+  },
+  "dev.work": {
+   "sha": "d2118be8",
+   "at": "2026-11-08T15:52Z",
+   "by": "dashboard@PrompTugal.angelo"
+  },
+  "dev.app": {
+   "sha": "be0ed60e",
+   "at": "2026-11-08T15:50Z",
+   "by": "dashboard@PrompTugal.angelo"
   }
  }
 }

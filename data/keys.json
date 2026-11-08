@@ -1283,6 +1283,39 @@
         "fingerprint": "sha256:20d43179e545d40e",
         "signing_fingerprint": "sha256:15ddeeaf3529137d"
       }
+    },
+    {
+      "id": "dev-vicky-promptugal",
+      "label": "dev@PrompTugal.vicky (Claude Code session)",
+      "role": "Vicky Wang's developer (dev@PrompTugal.vicky, replacing dev@web-summit.vicky from 6 November 2026): changes to the newsroom site and to Vicky's pages on this site, when Vicky asks. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 6 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs), first published in the newsroom's board/keys.json; the same key, entered here by that session at Vicky's word on 8 November 2026. Not linked to an operator's key or confirmed on pki.sgit.ai. The private halves stay in the session (~/.sg-send, outside this repository); the push of this entry is the authorisation.",
+      "added": "2026-11-08",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA6NFeTdwnZqXyiOM6z6Ze\nGRKn3DpSTHcp2kjV6tSmBJoGGtNP4CZ4zH1sOWGJ8FWNBf4S9Sbe2coIScU6OM1Y\nHqZQ0fBmIGxdPEMc5qAZJwM7vFxlz7Drp1GUG7q03OxCxiLqjfT1Y3u6Q+93aBwb\n+TGrVwYrmgKiWdx9eV8yAYnuOF5yLrdSdjhJU0xxjwAmXKtYCaEhha20IaQET15D\nnJk8SIv2MoWMibbnRKZ/AQsBgRiNBxWK4spnlqzcdezVJu2+y+56HXTp8ZrV8D5q\nHMa/nYNKbScwTAQNA0uGJJjbF/zGJ4d5xxTFF/6WSnz8FXfe0AYBjiixUfB1AmQk\nO5/JhB+KVy05gNBXT2M1ZHwOxfM4quvOa8Uwa9XkNDFgalLb4x+aJjIUM5bTsvhC\nZ1XrMlHbuJ9gQscQK1BVPRqyPL734dhfhaYFv8YuFbbPa3P+hOtLmawc/t1+Yz6/\nG6g0z+clXI0EXX1+l1iNphXCCRh0f5yxi8uICO4vRFRmUENKkzrADJS9UVQKtdbs\nKee9A1P8G/maljpeGfmcoKcp2qnbXFan7ZFt3IHSvZD3ecWuSf4cjsOCDlY5thB4\nlC3HgRwewkWJx1GdzqA/4tMDBpYF9DY0NH2DjdFAeLYRA3kPA1bQalG2yrT4ph/e\njf4VQXYdtCjPWTF+YZz2aM8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEm+AdXgnr0yksrsYpFJA3m5n+s4/y\nUoBodEJSH+PaQ2ut63OLE5SMeJRjAQqiUvNJIOK8vulMYesSLISII3q66Q==\n-----END PUBLIC KEY-----\n",
+        "label": "dev@PrompTugal.vicky",
+        "fingerprint": "sha256:17d714aaca07c3e7",
+        "signing_fingerprint": "sha256:5795e1959875387e"
+      },
+      "status": "active"
+    },
+    {
+      "id": "synthetic-vicky",
+      "agent": "synthetic@web-summit.vicky",
+      "label": "synthetic@web-summit.vicky (Claude Code session)",
+      "role": "Vicky Wang's synthetic-reader agent: tests public PrompTugal.news pages as an imagined reader and reports findings to Vicky, on demand only. Never changes the pages it tests. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 8 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session at Vicky's word; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); not confirmed on pki.sgit.ai.",
+      "added": "2026-11-08",
+      "status": "active",
+      "bundle": {
+        "v": "1",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA4+C6QWNqardyMolBAN6f\nPZxZHT2SpCwPCKt713waR+c/zmQ8kG8Y6MSje2LuXWIi2GoNH0DhpEa2dui3SmBE\nJ1Vudrz803m2QUOGbW5QKYFigsqwVhLzFWgUgOv6KSPInNAkNGr063XMjn2CKSi+\nnDqLhlKCKSZy4RwIN4AUNc04oS6yzvU205LXEns5illyANzKPrPwczTmkFT1CL2A\nezUV1Bnjtlnn2QJ+splMUqo9OqvAgwjZWFZwgT8KjbAw5AeSElpebCRjDMEbMYuj\nxQGub8CcVuGs8FWEGigISiGyygQZ54sEU2lIzufPqe1FIb7fFWAyMHoc0nsJNYIw\n2CyfVZ8bFrq6d2IBCTZaxk+x8un3xq3J4d/k2JBMMhNNiGvwG7K8plw0v6/TgPs6\nsyGhkbnGz1w2pTyE2w1Xw7bmTylXbKgauLY8hRBrg3iUbk/Ai0+vEGa2aQ0iCpsm\nYjebHmFfkOG75DK1HeFUw1McI6FVDK+2JstVqnUZWWUILDackg0OBdSn3NAIRHLF\n/Rxllh8GX1prW4k/+72XkTcbDTESWZLAxB3g12cQg+Ooahg3ZP24m7+Uo7D9n5wC\nUCsNns0BzhNupXwFfWaSabQ3zBCaCxrfUqhR5oQwLqHLbWdkDPxiG4poHZWzp8rz\n2F79Oqa2MJvrSgq/bx52pP8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE5zbQy96rf8Ydo3qQc0YbE9RTOfkW\nWNIpKG//57apktPsqXguxkSoXOLKPvPWzSJKkRKPlplqxR32hsAUsDUGtA==\n-----END PUBLIC KEY-----\n",
+        "label": "synthetic@web-summit.vicky",
+        "fingerprint": "sha256:09ba942dd807325f",
+        "signing_fingerprint": "sha256:8c91b3408aef4979"
+      }
     }
   ]
 }

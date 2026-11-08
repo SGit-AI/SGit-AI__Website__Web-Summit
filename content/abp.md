@@ -11,6 +11,7 @@ At Dinis's word, 6 November 2026: **the ABPs are in the explorer phase.** The te
 ## Start here {#start}
 
 - **[ABP in action](in-action/index.html)**: what the policies caught, what saved the day, the rule that failed and became a technical barrier, and the capabilities that could do real damage, each with its commit.
+- **[Token efficiency](token-efficiency/index.html)**: one ABP for every agent's use of Claude. Tokens, not money; every wake measured and tied to its work; ten rules from the team's own token records (8 November).
 - **[Connectors](connectors/index.html)**: what every agent can do with Gmail and Google Drive, what read-only and write-only can mean today, and the gentle lock-down.
 
 ## Dinis's agents (16) {#dinis}

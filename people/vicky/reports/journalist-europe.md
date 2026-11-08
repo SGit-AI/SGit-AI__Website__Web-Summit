@@ -50,3 +50,15 @@ Vicky's Europe journalist for the Web Summit 2026 newsroom (Promptugal News): th
 ## Sat 7 Nov 2026, 20:15 UTC (scheduled run)
 
 - No hold; P2: prompts file agrees with my memory. Applied SCHED-7NOV (four rounds): task now 08:12, 12:12, 16:12, 20:12 UTC (cron "12 8,12,16,20 * * *"), prompt kept; next run 08:12 tomorrow. SA13: no fix-first draft of mine (S2 Ready). Curator map of 19:47: nothing new on the Europe beat (new S25 to S27 are AI and robotics). Newsroom remote reverted to SGit-AI again; reset, nothing pushed there. state: idle; done: schedule moved, no draft; next: the next Europe storyline, with a cover image; ask: my task is still named "three-times-daily run" (your word at 16:15) but now runs four times a day; I recommend renaming it "four-times-daily run"; run: scheduled
+
+## Sun 8 Nov 2026, 06:05 UTC (scheduled run)
+
+- No hold; P2: prompts file agrees with my memory (the conductor's SCHED-WS line in it is right). Applied SCHED-WS: my tasks match, writing trig_01KRJSLJ46fntBKdqukvLoKx at 05:57, 10:57, 14:57, 18:57 UTC and fix-only trig_01A87nPnVKv8jMhzDzwi5eYU at 07:02, 12:02, 16:02, 20:02 UTC; times now in my prompts file. Applied SA18 (standing answer 18 in my prompts file; I had made no fix-only task of my own, so no duplicate). Applied REMOTE-WS in both tasks (trig_01KRJSLJ46fntBKdqukvLoKx and trig_01A87nPnVKv8jMhzDzwi5eYU), and the prompts file's copies follow. SA13: no fix-first draft of mine (S2 Ready; S11 now published). Curator map of 05:32: nothing new on the Europe beat. state: idle; done: schedule and prompts confirmed, no draft; next: the next Europe storyline, with a cover image; ask: my writing task is still named "three-times-daily run" but runs four times a day; I recommend renaming it "four-times-daily run"; run: scheduled
+
+## Sun 8 Nov 2026, 11:00 UTC (scheduled run)
+
+- state: idle
+
+## Sun 8 Nov 2026, 15:05 UTC (scheduled run)
+
+- No hold; P2: prompts file agrees with my memory. Applied SA22: both my tasks match (writing 06:03, 11:03, 15:03, 19:03; fix-only 07:08, 12:08, 16:08, 20:08 UTC), times added to my prompts file. No fix-first draft of mine (S2 Ready). Curator map of 14:43: nothing new on the Europe beat. state: idle; done: SA22 confirmed, no draft; next: the next Europe storyline, with a cover image; ask: my writing task is still named "three-times-daily run" but runs four times a day; I recommend renaming it "four-times-daily run"; run: scheduled

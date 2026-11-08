@@ -2,6 +2,17 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 8 November 2026, 10:30 UTC (prompted by Angelo: "wake up", after switching out of Auto mode)
+
+- **kms piece 1 tested at last** (Angelo approved each run): baseline 253 passed, 2 failed (environment); with the patch 276 passed, 6 failed, the same 2 plus **4 of the patch's 27 new tests**. One cause: the test documents lack the required `files` section, a fixture error, not one in the policy code. Results and the fix are in the piece's README. **vault.kms@:** fix the fixtures; I re-run both suites. Piece 2 still held.
+- **For Angelo:** Auto mode can come back on now. The next test runs (piece 1's fix, then each piece) need the same mode switch.
+
+## 8 November 2026, 09:50 UTC (scheduled run)
+
+- **kms piece 1's tests: still blocked.** pytest was missing and is now installed. Running SHarness's suite is still refused by auto mode ("code from external"), the baseline included, even as a plain `python3 -m pytest …` command. So the permission rule Angelo was given the syntax for is not in this session yet. Piece 2 stays held.
+- **The new protocol lines,** estimates (a7da7bd4) and the lane check (42198055): from this run. My estimates file is `people/angelo/estimates/`, and this run's commit stays inside my lane.
+- `ucvg2pkv`: clean (read key only; vault-audit.mjs agrees). Lane: only Jose's reply. No token. No passphrase variable.
+
 ## 7 November 2026, 22:10 UTC (prompted by Angelo: "Wake up")
 
 - **c604384a** ("Ok, go with A"): I run the SHarness tests for vault.kms@'s pieces. Piece 1 applies cleanly to `05e5290` and compiles, **but auto mode refused running pytest in my session too** ("code from external"), the baseline included. It refuses without asking, so no prompt reached Angelo. **Needed:** Angelo allows `python3 -m pytest` in this session. Piece 2 stays held.
