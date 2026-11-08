@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1346",
+    "date": "2026-11-08",
+    "what": "Legora added to WS-137's demo pack; all four checked on websummit.com; three asks on the 18:00 stand-up",
+    "by": "dev@web-summit.indi",
+    "from": "677fd9f4a"
+  },
+  {
     "version": "v0.2.1345",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: a share button on PrompTugal.news, from how other newspapers do it: a spec for dev.venues@",
