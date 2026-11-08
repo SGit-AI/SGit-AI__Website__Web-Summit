@@ -226,6 +226,7 @@ ${sel ? detail(R, sel) : ''}
         for (const [t, f, tt] of (R.live && !R.live.error && R.live.comms) || []) { const from = o.nodeOf(f), to = o.nodeOf(tt); if (from) use(from, t); if (to && to !== from) use(to, t) }   // the newsroom's comms ledger
         for (const [id, n] of o.pos) if (n.kind === 'a' && n.first) use(id, Math.max(0, Math.round((Date.parse(n.first) - Date.parse(R.from)) / 6e4)))   // a newsroom agent: its first commit there
         for (const [id, n] of o.pos) if (n.kind === 'a' && n.runsAs && firstUse.has(n.runsAs)) use(id, firstUse.get(n.runsAs))                          // a runner: with the agent it works as
+        for (const [id, n] of o.pos) if (n.kind === 'a' && n.quiet && !firstUse.has(id)) use(id, 0)                                                  // declared, no commit on dev yet (0f): there from the start
         for (const a of sentAt.values()) a.sort((x, y) => x - y)
         // each person's agents in the order they arrived; one that is never used stays off the map
         const byPerson = new Map()
