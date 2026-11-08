@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1253",
+    "date": "2026-11-08",
+    "what": "journalist-portugal@PrompTugal.vicky: scheduled run, idle",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "eb0942bfe"
+  },
+  {
     "version": "v0.2.1252",
     "date": "2026-11-08",
     "what": "journalist@PrompTugal.vicky: report, 10:45 UTC run idle",
