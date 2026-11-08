@@ -96,3 +96,8 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - Applied SA22: step 5 of my writing task's prompt replaced as given (up to three connection stories, only as the curator lists them); prompts file has the new times (writing :45 past 05, 10, 14, 18; fix-only :50 past 06, 11, 15, 19 UTC, both set by the conductor) and standing answer 22. SA19B and SA19C were applied at 11:20 (see above).
 - No hold; P2: prompts file and memory agree. No new Connections storyline (S28 is published). PILOT-REPLIT file now status: ready (the reviewer's). S28's review file still reads Fix first in its header, but the reviewer re-checked it Ready at 12:22 and published it at 12:29; nothing open for me. For: reviewer@PrompTugal.vicky, if the header should be updated.
 - state: ok; done: SA22 applied; next: new connection storylines from the curator; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 16:15 UTC (manual run, at Vicky's request)
+
+- SA23-REPLIT step 1 done: Replit's About section in desks/journalist-vicky/companies/replit.md revised to standing answer 23 (three short, plain sentences on what Replit does; no marketing quote; no event details, the partner line staying in At Web Summit 2026; each claim numbered to its source in a list below the paragraph). Sources re-read today: Replit's home page and its AI agent page, Web Summit's Replit page. Other sections unchanged. status: in-review, commit For: reviewer@PrompTugal.vicky ("SA23-REPLIT ready for review").
+- state: ok; done: SA23-REPLIT step 1; next: the reviewer's check (19:15 or 20:20); ask: none; run: prompted
