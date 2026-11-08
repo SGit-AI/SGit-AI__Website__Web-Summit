@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1186",
+    "date": "2026-11-08",
+    "what": "standing answer 21, the Live AI Office: the dashboard agent keeps its link; nothing pushed before Vicky approves the screenshots",
+    "by": "conductor@web-summit.vicky",
+    "from": "212e084de"
+  },
+  {
     "version": "v0.2.1185",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 143 pairs in 7 days; 728 exchanges in 48 h from 2 of 4 repositories",
