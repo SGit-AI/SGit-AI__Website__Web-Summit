@@ -1,6 +1,6 @@
-# WS-137: the three companies for the demo pack
+# WS-137: the four companies for the demo pack
 
-Researched by dev@web-summit.indi on 8 November 2026, at Indi's word. Indi chooses; Nimay may change it. Written to [the plain-words standard](../EXPLAIN.md).
+Researched by dev@web-summit.indi on 8 November 2026, at Indi's word. Indi chose the first three on 8 November and added Legora the same evening; Nimay may change it. Written to [the plain-words standard](../EXPLAIN.md).
 
 ## What we looked for
 
@@ -17,7 +17,7 @@ Companies at Web Summit that could **buy** RiskMandate, not compete with it or p
 - Started from the team's company map (109 companies, sourced, read 1 November): kept the ones it marks as possible customers, or whose agents act for businesses.
 - Six went to a web check: GetVocal AI, Cnext, Legora, PolyAI, Make, Feedzai. Each was scored 1 to 5 on the five points above. Full results with sources: [ws-137-customer-research.json](ws-137-customer-research.json).
 
-## The three, and why
+## The four, and why
 
 **1. GetVocal AI (France).** AI agents that run customer support for large companies, with people supervising them.
 - Customers named in the press: Vodafone, Glovo and Movistar; a pilot with Deutsche Telekom. Telecoms are closely regulated.
@@ -34,10 +34,24 @@ Companies at Web Summit that could **buy** RiskMandate, not compete with it or p
 - Their session is called "Who let the agent in?", the RiskMandate question. Based in Lisbon, so the easiest to meet.
 - One caution: it works close to risk tools, so open as "a policy for your own agents", not as a seller to their customers. Score 20.
 
-**First reserve: Legora (Sweden)**, AI agents for lawyers. Score 20 and very regulated customers, but very large (valued at over $5 billion), so harder to reach in a week.
+**4. Legora (Sweden), added by Indi.** Collaborative AI and agents for lawyers: reviewing, drafting and researching legal documents.
+- Customers: law firms and in-house legal teams, among the most careful buyers there are (confidential documents, professional liability).
+- Their session, "Beyond the model: scaling AI agents for professional work", is about agents doing real professional work; that is when "what may the agent do?" matters most.
+- Very large (valued at over $5 billion in 2026), so a harder door to open in a week. Score 20.
+
+## When to find them at Web Summit (checked on websummit.com, 8 November)
+
+| Company | Who speaks | When and where |
+|---|---|---|
+| **PolyAI** | Nikola Mrkšić, co-founder and CEO | Wednesday 11 November, 15:00 to 15:20, Stage 13 (AI Summit): "Coaching an AI agent like human talent" |
+| **Legora** | Jacob Lauritzen, CTO | Thursday 12 November, 11:50 to 12:10, Stage 13 (AI Summit): "Beyond the model: scaling AI agents for professional work" |
+| **Feedzai** | Diogo Guerra, CTO | Thursday 12 November, 12:00 to 12:20, Stage 7 (SaaS Summit): "Who let the agent in?" |
+| **GetVocal AI** | no speaker listed | a growth-stage startup on Web Summit's featured startups list; its day and stand are not shown |
+
+**Note:** Legora and Feedzai speak at almost the same time on Thursday 12 November, our stand day, on different stages. Two people are needed to catch both.
 
 ## What we could not confirm
 
-- **Web Summit attendance:** this session cannot open websummit.com, and the web check found no public session pages. Attendance rests on the company map's links (read 1 November). Check each on websummit.com before outreach.
+- **GetVocal AI's day and stand** at the summit: its Web Summit page lists it, but not when or where.
 - Some figures come from a single press source (noted in the research file).
-- None of the six says anything public about the EU AI Act or about who is liable for their agents. That is our opening, but it also means we are guessing what they need.
+- None of the four says anything public about the EU AI Act or about who is liable for their agents. That is our opening, but it also means we are guessing what they need.

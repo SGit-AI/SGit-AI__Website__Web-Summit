@@ -4,7 +4,7 @@ Written 8 November 2026 at the end of the first session (its context had grown p
 
 ## Where things stand
 
-- **WS-137 (due Mon 9 Nov):** plan version 2 approved by Indi. Build order: (1) a vault per company (GetVocal AI, PolyAI, Feedzai) holding policy, infographic, animation, test data only; (2) test with wifi off and headless against a pretend model; (3) "Make the infographic" button in Dinis's policy studio, browser-only; (4) the animation built on the studio's own; (5) hand over on the board.
+- **WS-137 (due Mon 9 Nov):** plan version 2 approved by Indi. Build order: (1) a vault per company (GetVocal AI, PolyAI, Feedzai, Legora) holding policy, infographic, animation, test data only; (2) test with wifi off and headless against a pretend model; (3) "Make the infographic" button in Dinis's policy studio, browser-only; (4) the animation built on the studio's own; (5) hand over on the board.
 - **Waiting on Dinis** (asked on WS-137 and WS-133): the price answer, the WS-133 option, and whether an offline copy outside a vault is allowed.
 - **Asked of Indi's conductor:** add "Explain in plain words: people/indi/EXPLAIN.md" to the wake prompts it keeps (commit beebe638). Check it did.
 - **Every wake:** follow the token-efficiency ABP (measure at the end with people/indi/accountant/measure.mjs) and log the run with admin/tools/agent-log.mjs, prefixed `NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt`.

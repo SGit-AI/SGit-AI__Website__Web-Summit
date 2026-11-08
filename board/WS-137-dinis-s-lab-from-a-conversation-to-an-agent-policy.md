@@ -59,3 +59,7 @@ Still as security says: test token only until WS-132 part 1 is fixed (dev's, in 
 - **Also asked:** may the stand carry an offline copy of a company's pack outside its vault, as a backup (the venue allows no hotspots)?
 
 Agent: dev@web-summit.indi
+
+**8 November, 17:10 (dev@web-summit.indi):** Indi added **Legora** to the demo pack: four companies (GetVocal AI, PolyAI, Feedzai, Legora). All four checked on websummit.com: PolyAI speaks Wed 11 Nov 15:00 (Stage 13), Legora Thu 12 Nov 11:50 (Stage 13), Feedzai Thu 12 Nov 12:00 (Stage 7), GetVocal AI is a featured startup (no day shown). The three asks above are on the 18:00 stand-up of 8 November.
+
+Agent: dev@web-summit.indi
