@@ -253,6 +253,22 @@ ${sel ? detail(R, sel) : ''}
         }
         const pos = id => { const a = N.get(id); return a && a.cur ? a.cur : o.pos.get(id) }
         const ctrl = (a, b) => o.ctrl(a, b)
+        // ---- the record's own events (spec-live-map.md section 2, data.json's replay.live): a key mark on an agent while it
+        // holds a published key (grey once its keys have ended), a thin gold ring once it has a lane for sealed messages, and a
+        // gold dot from one to another for each sealed file, "a key handed over" and nothing more (decision 1) ----
+        const L = R.live && !R.live.error ? R.live : { keys: [], handovers: [], lanes: [] }
+        const mark = (g, cls) => { const e = document.createElementNS(NS, 'path'); e.setAttribute('class', cls); g.appendChild(e); return e }
+        for (const [t, who, st] of L.keys || []) { const a = N.get(o.nodeOf(who)); if (!a) continue; if (!a.keys) a.keys = []; a.keys.push([t, st === 'published' ? 1 : -1]) }
+        for (const [t, who] of L.lanes || []) { const a = N.get(o.nodeOf(who)); if (a && !(a.lane <= t)) a.lane = t }
+        for (const a of N.values()) {
+            if (a.keys) { let c = 0; a.keys = a.keys.sort((x, y) => x[0] - y[0]).map(([t, d]) => [t, c = Math.max(0, c + d)]); a.km = mark(a.g, 'tmf-km') }
+            if (a.lane != null) a.lr = mark(a.g, 'tmf-lr')
+        }
+        const seals = (L.handovers || []).filter(([t]) => t >= start && t <= end).map(([t, by, to]) => ({ t, from: o.nodeOf(by), to: o.nodeOf(to) })).filter(m => m.from && m.to && m.from !== m.to && o.keep(m.from, m.to))
+        const gs = document.createElementNS(NS, 'g'); gs.setAttribute('class', 'tmf-seals')
+        gs.innerHTML = Array.from({ length: 8 }, () => '<circle r="6.5" class="z"><title>a key handed over</title></circle>').join('')
+        o.svg.insertBefore(gs, nodesG)
+        const sealDots = [...gs.children]; let sfly = []
         bar.innerHTML = `<div class="rp-play tmf-play">
   <button type="button" class="cc-btn" data-tmf-play aria-pressed="false">▶ Play back</button>
   <label class="ak-sel"><span>Time</span><select data-tmf-w>${Object.entries(WINDOWS).map(([k, [l]]) => `<option value="${k}"${k === w ? ' selected' : ''}>${l}</option>`).join('')}</select></label>
@@ -281,6 +297,11 @@ ${sel ? detail(R, sel) : ''}
             for (const [id, a] of N) if (a.on === null) { a.on = false; a.g.classList.add('tmf-gone') }   // never used: off the map
             // size: the messages sent so far
             for (const [id, a] of N) { if (!a.on) continue; const ts = sentAt.get(id), n = ts ? lowerBound(ts, T, x => x) : 0, r = Math.min(13, 3.5 + 1.3 * Math.sqrt(n)); if (Math.abs(r - a.r) < 0.05) continue; a.r = r; size(a) }
+            // keys and lanes: as they were at T, on the agents that are on the map
+            for (const a of N.values()) {
+                if (a.km) { const k = lowerBound(a.keys, T, x => x[0]), st = !a.on || !k ? '' : a.keys[k - 1][1] > 0 ? 'on' : 'end'; if (st !== a.kst) { a.kst = st; a.g.classList.toggle('tmf-key', st === 'on'); a.g.classList.toggle('tmf-keyend', st === 'end') } }
+                if (a.lr) { const ln = !!a.on && T >= a.lane; if (ln !== a.ln) { a.ln = ln; a.g.classList.toggle('tmf-lane', ln) } }
+            }
             // lines: lit while a dot is on its way, then fading
             for (const p of P) {
                 const k = lowerBound(p.ts, T, x => x), last = k ? p.ts[k - 1] : null, ends = isOn(p.from) && isOn(p.to)
@@ -289,6 +310,7 @@ ${sel ? detail(R, sel) : ''}
                 if (vis) { const ow = (0.8 + 4.2 * Math.sqrt(k / maxN)).toFixed(2), oo = (0.15 + 0.65 * op).toFixed(2); if (ow !== p.ow) el.setAttribute('stroke-width', p.ow = ow); if (oo !== p.oo) el.setAttribute('stroke-opacity', p.oo = oo) }
             }
             const sent = lowerBound(msgs, T, m => m.t), lo = lowerBound(msgs, T - travel, m => m.t); fly = msgs.slice(Math.max(lo, sent - POOL), sent)
+            const ss = lowerBound(seals, T, m => m.t); sfly = seals.slice(Math.max(lowerBound(seals, T - travel * 2, m => m.t), ss - sealDots.length), ss)
             // busy: committed in the last moment of playback
             const busy = new Set()
             for (let i = lowerBound(acts, T - travel * 1.5, e => e[0]); i < acts.length && acts[i][0] <= T; i++) busy.add(o.nodeOf(R.agents[acts[i][1]].name))
@@ -308,6 +330,8 @@ ${sel ? detail(R, sel) : ''}
             if (a.dot.tagName === 'rect') { const s = r * 1.6; a.dot.setAttribute('x', f1(x - s / 2)); a.dot.setAttribute('y', f1(y - s / 2)); a.dot.setAttribute('width', f1(s)); a.dot.setAttribute('height', f1(s)) }
             else a.dot.setAttribute('r', f1(r))
             if (a.ring) a.ring.setAttribute('r', f1(r + 5))
+            if (a.km) { const cx = x + r * 0.8 + 3, cy = y - r * 0.8 - 3; a.km.setAttribute('d', `M${f1(cx - 2)} ${f1(cy)}a2 2 0 1 0 4 0a2 2 0 1 0 -4 0M${f1(cx + 2)} ${f1(cy)}h4.5m-1.6 0v2`) }
+            if (a.lr) { const q = r + 2.5; a.lr.setAttribute('d', `M${f1(x - q)} ${f1(y)}a${f1(q)} ${f1(q)} 0 1 0 ${f1(2 * q)} 0a${f1(q)} ${f1(q)} 0 1 0 ${f1(-2 * q)} 0`) }
             a.label.setAttribute('y', f1(y - r - 6))
         }
         // ---- drawing what moves: the agents gliding to their places, the lines and dots that follow them ----
@@ -326,6 +350,11 @@ ${sel ? detail(R, sel) : ''}
                 const a = pos(m.from), b = pos(m.to), q = ctrl(a, b), u = Math.min(1, Math.max(0, (T - m.t) / travel)), v = 1 - u
                 c.setAttribute('cx', f1(v * v * a.x + 2 * v * u * q.x + u * u * b.x)); c.setAttribute('cy', f1(v * v * a.y + 2 * v * u * q.y + u * u * b.y))
                 c.setAttribute('fill', o.colOf((o.pos.get(m.from) || {}).person) || 'var(--rm-text-muted)'); c.classList.remove('z')
+            })
+            sealDots.forEach((c, i) => {
+                const m = sfly[i]; if (!m) { if (!c.classList.contains('z')) c.classList.add('z'); return }
+                const a = pos(m.from), b = pos(m.to), q = ctrl(a, b), u = Math.min(1, Math.max(0, (T - m.t) / (travel * 2))), v = 1 - u
+                c.setAttribute('cx', f1(v * v * a.x + 2 * v * u * q.x + u * u * b.x)); c.setAttribute('cy', f1(v * v * a.y + 2 * v * u * q.y + u * u * b.y)); c.classList.remove('z')
             })
             return moving
         }

@@ -258,7 +258,80 @@ function replay(root) {
     // only the published read key's record (people/dinis/vaults.json), which the page uses to read latest/runs.json itself
     const obs = ((readJson(root, 'people/dinis/vaults.json') || {}).vaults || []).find(v => v.agent === 'observability@web-summit.dinis' && /^sgit_public_read_[0-9a-f]{64}$/.test(v.read_key || ''))
     const runs = obs ? { endpoint: 'https://dev.send.sgraph.ai', vault_id: obs.vault_id, read_key: obs.read_key, path: 'latest/runs.json', source: 'people/dinis/vaults.json' } : null
-    return { from: new Date(REPLAY_FROM).toISOString(), people, agents, targets, events, standups, runs, repo: 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit' }
+    return { from: new Date(REPLAY_FROM).toISOString(), people, agents, targets, events, standups, runs, live: liveEvents(root), repo: 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit' }
+}
+
+// spec-live-map.md section 2 (approved 7 November, c6fc4442), the record's own events, from the public files and their commits;
+// vault@'s data-and-who-may-see-it.md is the rule. Each is [minutes since REPLAY_FROM, ...names]; before 2 November is negative.
+// keys: [t, agent, 'published'|'ended'], from each commit of data/keys.json. handovers: [t, by, to], every file in data/sealed/
+// drawn only as "a key handed over" (decision 1): never its name, kind or contents. lanes: [t, agent, 'inbox'|'feedback'], an
+// agent that can receive sealed messages, from the commit that first gave it the lane. Names only: no token, key or vault id.
+const minsOf = iso => Math.round((Date.parse(iso) - REPLAY_FROM) / 6e4)
+const sealedAt = a => { const m = String(a || '').match(/^(\d{4}-\d\d-\d\d)T(\d\d):?(\d\d)(?::?(\d\d))?(?:\.\d+)?Z$/); return m ? `${m[1]}T${m[2]}:${m[3]}:${m[4] || '00'}Z` : null }
+function liveEvents(root) {
+    const keysNow = (readJson(root, 'data/keys.json') || {}).keys || []
+    // a name as the replay's agents carry it: an old name becomes the name its person's agents.json declares now
+    const DECL = declaredNames(root, ((readJson(root, 'data/team.json') || {}).members || []).filter(m => m.kind === 'human'))
+    const asNow = n => { const d = DECL.get(canon(n)); return viewId(d ? d.name : n) }
+    const agentOfKey = k => { const n = k.agent || (String(k.label || '').match(new RegExp(NAME_SRC, 'i')) || [])[0]; return n && parseName(n) ? asNow(n) : null }
+    const byId = new Map(keysNow.map(k => [k.id, agentOfKey(k)]))
+    // keys: replay the file's history, commit by commit, and note when each id first appears and when it stops being active
+    const keys = [], seen = new Map()
+    for (const line of git(root, ['log', '--reverse', '--format=%H %cI', '--', 'data/keys.json']).trim().split('\n').filter(Boolean)) {
+        const [h, at] = line.split(' '); let ks
+        try { ks = JSON.parse(git(root, ['show', `${h}:data/keys.json`])).keys || [] } catch { continue }
+        for (const k of ks) {
+            const who = agentOfKey(k) || byId.get(k.id); if (!who) continue
+            if (!byId.has(k.id)) byId.set(k.id, who)
+            const on = !k.status || k.status === 'active', was = seen.get(k.id)
+            if (was === undefined) keys.push([minsOf(at), who, on ? 'published' : 'ended'])
+            else if (was && !on) keys.push([minsOf(at), who, 'ended'])
+            else if (!was && on) keys.push([minsOf(at), who, 'published'])
+            seen.set(k.id, on)
+        }
+    }
+    // handovers: by and to, and when; "to" is a person's id or a key's id
+    const people = new Set(((readJson(root, 'data/team.json') || {}).members || []).filter(m => m.kind === 'human').map(m => m.id))
+    const party = n => { n = String(n || '').trim(); if (people.has(n)) return n; if (parseName(n)) return asNow(n); return byId.get(n) || null }
+    const handovers = [], sdir = path.join(root, 'data/sealed')
+    const walk = d => fs.existsSync(d) ? fs.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(path.join(d, e.name)) : e.name.endsWith('.json') ? [path.join(d, e.name)] : []) : []
+    for (const f of walk(sdir)) {
+        let j; try { j = JSON.parse(fs.readFileSync(f, 'utf8')) } catch { continue }
+        const by = party(j.by), to = party(j.to) || party(j.agent), at = sealedAt(j.at)
+        if (by && to && at && by !== to) handovers.push([minsOf(at), by, to])
+    }
+    handovers.sort((x, y) => x[0] - y[0])
+    // lanes: the inbox lane files, and the feedback pane's lanes, each from the commit that first gave the agent its lane
+    const lanes = [], firstAt = rel => git(root, ['log', '--diff-filter=A', '--format=%cI', '--', rel]).trim().split('\n').pop()
+    const idir = path.join(root, 'data/inbox')
+    for (const f of fs.existsSync(idir) ? fs.readdirSync(idir).filter(x => /^lane-.*\.json$/.test(x)) : []) {
+        const j = readJson(root, `data/inbox/${f}`) || {}, at = firstAt(`data/inbox/${f}`)
+        if (parseName(j.agent || '') && at) lanes.push([minsOf(at), asNow(j.agent), 'inbox'])
+    }
+    const fbSeen = new Set()
+    for (const line of git(root, ['log', '--reverse', '--format=%H %cI', '--', 'assets/feedback.json']).trim().split('\n').filter(Boolean)) {
+        const [h, at] = line.split(' '); let ls
+        try { ls = JSON.parse(git(root, ['show', `${h}:assets/feedback.json`])).lanes || [] } catch { continue }
+        for (const l of ls) if (parseName(l.agent || '') && !fbSeen.has(l.agent)) { fbSeen.add(l.agent); lanes.push([minsOf(at), asNow(l.agent), 'feedback']) }
+    }
+    lanes.sort((x, y) => x[0] - y[0]); keys.sort((x, y) => x[0] - y[0])
+    return neverList(root, { keys, handovers, lanes })
+}
+// the never list (data-and-who-may-see-it.md): no sealed file's name, no token, no key, no vault id. Anything that looks like one
+// drops the whole section, so a leak is never published; the build says why.
+export function neverList(root, live) {
+    const text = JSON.stringify(live), bad = []
+    const sdir = path.join(root, 'data/sealed'), names = []
+    const walk = d => fs.existsSync(d) ? fs.readdirSync(d, { withFileTypes: true }).forEach(e => e.isDirectory() ? walk(path.join(d, e.name)) : names.push(e.name.replace(/\.json$/, ''))) : null
+    walk(sdir)
+    for (const n of names) if (text.includes(n) || text.includes(n.replace(/^[\dT-]+Z-/, ''))) bad.push('a sealed file name')
+    if (/[0-9a-f]{32,}/i.test(text)) bad.push('a token or hash')
+    if (/BEGIN [A-Z ]*KEY|sgit_[a-z_]+_[0-9a-f]/i.test(text)) bad.push('a key')
+    const vaults = new Set([...(((readJson(root, 'assets/feedback.json') || {}).lanes) || []).map(l => l.vault_id)].filter(Boolean))
+    for (const f of fs.existsSync(path.join(root, 'data/inbox')) ? fs.readdirSync(path.join(root, 'data/inbox')) : []) { const v = (readJson(root, `data/inbox/${f}`) || {}).vault_id; if (v) vaults.add(v) }
+    for (const v of vaults) if (text.includes(`"${v}"`)) bad.push('a vault id')
+    if (bad.length) { console.error(`people/angelo/app/data.mjs: the live section is left out, it held ${[...new Set(bad)].join(', ')}`); return { error: 'left out by the never list' } }
+    return live
 }
 
 // For me (spec-kanban-tasks.md, approved 7 November, cb97bf39): Angelo's tasks as cards from four public sources, placed in

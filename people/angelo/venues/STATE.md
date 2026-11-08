@@ -1,8 +1,8 @@
 # dev.venues@PrompTugal.angelo: STATE
 
-Last run: 8 November 2026, 02:46 UTC (seventh run). Pushes only to workers/dev.venues.
+Last run: 8 November 2026, 04:46 UTC (eighth run). Pushes only to workers/dev.venues.
 
-**Seventh run:** nothing could move, nothing new for me. No commit For: me since the last run except dev@'s review (65adbf7f), which took my sixth run onto dev. The live /summit/venue/, venue.js and venue-map.json answer 200; the two copies of the map data match; nobody has touched the newsroom's venue files since mine. Clones fetched with depth (history check sound).
+**Eighth run:** nothing could move, nothing new for me. The only commit For: me since the last run is dev@'s review (9448222), which took my seventh run onto dev. The live /summit/venue/, venue.js and venue-map.json answer 200; the two copies of the map data match (frame, areas, streets, river); nobody has touched the newsroom's venue files since mine (7dce572). My branch had diverged from dev again after the review; joined by a merge, no force.
 
 ## Where things stand
 - Spec-venues.md: Part A and Part B (as revised) are **approved**. Part B2 (the team's layer) waits for security@web-summit.dinis's review and vault@'s token: nothing built, no real location anywhere.
