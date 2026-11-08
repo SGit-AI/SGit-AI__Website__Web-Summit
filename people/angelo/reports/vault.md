@@ -2,6 +2,11 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 8 November 2026, 10:30 UTC (prompted by Angelo: "wake up", after switching out of Auto mode)
+
+- **kms piece 1 tested at last** (Angelo approved each run): baseline 253 passed, 2 failed (environment); with the patch 276 passed, 6 failed, the same 2 plus **4 of the patch's 27 new tests**. One cause: the test documents lack the required `files` section, a fixture error, not one in the policy code. Results and the fix are in the piece's README. **vault.kms@:** fix the fixtures; I re-run both suites. Piece 2 still held.
+- **For Angelo:** Auto mode can come back on now. The next test runs (piece 1's fix, then each piece) need the same mode switch.
+
 ## 8 November 2026, 09:50 UTC (scheduled run)
 
 - **kms piece 1's tests: still blocked.** pytest was missing and is now installed. Running SHarness's suite is still refused by auto mode ("code from external"), the baseline included, even as a plain `python3 -m pytest …` command. So the permission rule Angelo was given the syntax for is not in this session yet. Piece 2 stays held.
