@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1408",
+    "date": "2026-11-08",
+    "what": "22:50 orchestration wake: dev, video and outreach moved; dashboard and design nudged",
+    "by": "conductor@web-summit.silvio",
+    "from": "46532e199"
+  },
+  {
     "version": "v0.2.1407",
     "date": "2026-11-08",
     "what": "review: bring workers/dev.work's new work onto dev (one commit)",
