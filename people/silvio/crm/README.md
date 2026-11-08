@@ -42,3 +42,7 @@ sgit installed at Silvio's word (7 November). In this session's clone of the pri
 ## 8 November: a correction, and the public CRM committed
 
 The public CRM's write key is a plain record in the private CRM (`keys/public-crm.json`, layer 1 only), so anyone holding the private CRM's key holds it too, crm-silvio and conductor-silvio included; earlier notes here said otherwise. The 84 staged companies are now committed in this session's clone of ws-team-crm-public (graph 878 nodes, 1041 edges), not pushed. Checked first: none of the 84 was in the public CRM (graph of 7 November 10:28 UTC). The only thing missing for both pushes is an SG/Send access token for crm-silvio.
+
+## 8 November, ~16:40 UTC: pushed
+
+At Silvio's word ("sim o token", relayed by conductor@web-summit.silvio), pushed with the shared SG/Send token from the session's environment, never printed or stored (the clones' token files deleted after each push), until a token of crm-silvio's own arrives. Both vaults were pulled first (no newer changes). **ws-team-crm-public:** the 84 staged companies are live (407 companies, graph 878 nodes, read back from the server with the published read key). **ws-team-crm-private:** 149 actions for Silvio's lists, sealed to silvio and dinis (162 actions in the vault in all; the earlier "150" counted the world-1 candidates action twice). The staged copies in `public/` stay as the source of these records.
