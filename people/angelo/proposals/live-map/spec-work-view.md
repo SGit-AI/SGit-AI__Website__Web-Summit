@@ -18,6 +18,9 @@ Today the map and the live graph draw **exchanges** (who addressed whom). The wo
 
 **The mock-up** (drawn from the rules below, positions illustrative): ![the work view](mockup-work-view.png)
 
+**At a phone's width** (390 px, dark and light; redrawn on 8 November with dashboard@'s look notes, 07d4d01): ![the work view on a phone](mockup-work-view-phone.png)
+
+
 ## Part 1: the work view (0f2)
 
 ### What it looks like
@@ -25,6 +28,9 @@ Today the map and the live graph draw **exchanges** (who addressed whom). The wo
 - **The live graph's look, unchanged** (dev.map@ owns live.js and the layouts): the people ring, each person's agents around them, their colours, the hexagon. The work view is a **view** of the same graph (a switch beside the layouts: "Exchanges | Work"), not a new page.
 - **Ten destinations at the rim**, in rounded squares like 00b's systems, each with its **real public logo or favicon** where one exists (Angelo's answer 3): PT News, the team site, research, infrastructure, the app, keys, the CRM, email drafts, LinkedIn, and **Drafts and proposals** (the generic one).
 - **The logos:** fetched once, by hand, from each destination's own public site (its favicon or the logo it publishes), committed in `people/angelo/app/work-logos/` with a `SOURCES.md` line each (the address and the date read), never hot-linked, shown small and unaltered, always beside the destination's name. A destination with no public mark (email drafts, Drafts and proposals, infrastructure, research) keeps a plain mark in the graph's style.
+- **The destinations' names** (dashboard@'s look notes, 07d4d01): each name sits **outside the rim**, in a pill on `--rm-surface` with a `--rm-border` edge, never on the hexagon's edge or across a line, so it reads on a phone; the destination's square (its logo) stays on the rim. On a phone the names keep at least 12 px and the squares grow, so the graph fills the width.
+- **The legend** ("what travels", the six icons): beside the graph on a desktop; on a phone it folds into **one line under the graph**, icons and words, no heading.
+- **Light theme:** a travelling icon is drawn on `--rm-bg` with its sender's colour as the stroke; the pale colours (Angelo's yellow) are too faint on white in the mock-up, so in light mode the icon's stroke uses a darker shade of the same colour, checked for contrast in the tests.
 - **Six icons** (approved, answer 1): doc, cog, key, record, envelope, post (the mock-up's legend). The icon is the kind of thing made; the destination is where it went. A doc can go to PT News, the site, research or Drafts.
 - **A delivery** travels from the agent (or the person, for a commit by a human) to its destination along a curved line in the sender's colour, the icon riding at its head, about 3 seconds; the destination's square lights when it lands and keeps a small count for the window shown ("PT News 4").
 - **Inner workings are hidden**: seals, snapshots, STATE files, ledgers, estimates, pulses, reviews, release commits and generated pages never travel (the rule table's "hidden" rows).
