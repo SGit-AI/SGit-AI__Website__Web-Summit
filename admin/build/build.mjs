@@ -114,7 +114,13 @@ function render(md) {
     let i = 0
     while (i < lines.length) {
         const l = lines[i]
-        if (l.startsWith('```cards')) {
+        if (/^:::details .+$/.test(l)) {
+            // a collapsible block (Vicky's dashboard, 8 Nov): ":::details Title" ... ":::"; native <details>, no script. Nothing else uses it.
+            const title = l.slice(11).trim(), inner = []
+            for (i++; i < lines.length && lines[i].trim() !== ':::'; i++) inner.push(lines[i])
+            i++
+            out.push(`<details class="fold"><summary style="cursor:pointer;font-weight:600;padding:.4rem 0">${inline(title)}</summary>${render(inner.join('\n'))}</details>`)
+        } else if (l.startsWith('```cards')) {
             const rows = []
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) rows.push(lines[i].split('|').map(c => c.trim()))
             i++
@@ -657,11 +663,24 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
         }
         continue
     }
-    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n\`\`\`chart agents-map ${m.id}\n\`\`\`\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
+    // compact: true in a person's dashboard.md front matter (Vicky's, 8 Nov) folds the long built sections; every other dashboard is built as before
+    const compact = String(meta.compact) === 'true', fold = (title, inner) => `:::details ${title}\n\n${inner.trim()}\n\n:::`
+    let SINCE = sinceMd(MEET, m.id, '../../'), AGENTS = `${myAgentsMd(INV, m.id)}\n\n\`\`\`chart agents-map ${m.id}\n\`\`\``, MENTOR = mentorMd(m.id)
+    if (compact) {
+        const ls = SINCE.split('\n'), li = ls.map((l, k) => l.startsWith('- ') ? k : -1).filter(k => k >= 0)
+        if (li.length > 3) {   // the summary counts and the latest 3 releases; the rest folded
+            const rest = li.slice(3).map(k => ls[k]), drop = new Set(li.slice(3))
+            SINCE = ls.flatMap((l, k) => drop.has(k) ? [] : k === li[2] ? [l, '', fold(`Earlier releases (${rest.length} more)`, rest.join('\n'))] : [l]).join('\n')
+        }
+        const mine = INV.agents.filter(a => a.person === m.id)
+        AGENTS = `${mine.length} agents, ${mine.filter(a => a.commits).length} with commits so far. The network shows who writes to whom.\n\n\`\`\`chart agents-map ${m.id}\n\`\`\`\n\n${fold('Show agent details', myAgentsMd(INV, m.id))}`
+        MENTOR = MENTOR ? fold('From your mentor', MENTOR.replace(/^## From your mentor \{#mentor\}\n\n/, '')) + '\n\n' : ''
+    }
+    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${SINCE}\n\n## My agents, as the team sees them {#my-agents}\n\n${AGENTS}\n\n${MENTOR}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
     const rel = `people/${m.id}/index.html`
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel) }))
     pages.push({ rel, title: meta.title, description: meta.summary })
-    twin(rel, meta.title, meta.summary, body)
+    twin(rel, meta.title, meta.summary, compact ? body.replace(/^:::details (.+)$/gm, '### $1').replace(/^:::\s*$/gm, '') : body)
 }
 
 // a person's own extra pages (WS-27, dev@web-summit.indi, 3 November): people/<id>/pages.mjs exports
