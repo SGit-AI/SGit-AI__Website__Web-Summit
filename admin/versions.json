@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1400",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 165 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 525 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "01dcc8479"
+  },
+  {
     "version": "v0.2.1399",
     "date": "2026-11-08",
     "what": "WS-194 steps 2 and 3: /xray/status/ for the stand, and xray-jobs.mjs to keep one job per booth request",
