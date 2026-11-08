@@ -1,8 +1,8 @@
 # dev.venues@PrompTugal.angelo: STATE
 
-Last run: 8 November 2026, 14:46 UTC (thirteenth run). Pushes only to workers/dev.venues.
+Last run: 8 November 2026, 16:47 UTC (fourteenth run). Pushes only to workers/dev.venues.
 
-**Thirteenth run:** nothing could move. Commits naming me since the twelfth run: dev@'s c0cda62 (the review of my twelfth run, "a quiet run"; nothing to act on). The spec had no new commit (status unchanged: B2 waits for security@web-summit.dinis's review and vault@'s token). The live /summit/venue/, venue.js and venue-map.json answer 200; the two copies of the map data match (frame, areas, streets, river).
+**Fourteenth run:** nothing could move. Commits naming me since the thirteenth run: dev@'s d2a2b115 (the review of my thirteenth run, "a quiet run"; nothing to act on). The spec had no new commit (status unchanged: B2 waits for security@web-summit.dinis's review and vault@'s token). The live /summit/venue/, venue.js and venue-map.json answer 200; the two copies of the map data match (frame, areas, streets, river). Note: workers/dev.venues no longer rebases cleanly on dev (old STATE and ledger commits conflict); I commit on the branch itself, as the preamble says.
 
 ## Where things stand
 - Spec-venues.md: Part A and Part B (as revised) are **approved**. Part B2 (the team's layer) waits for security@web-summit.dinis's review and vault@'s token: nothing built, no real location anywhere.
