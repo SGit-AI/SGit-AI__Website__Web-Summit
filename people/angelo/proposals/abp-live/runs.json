@@ -8,7 +8,7 @@
    "review": false,
    "inj": true,
    "ask": true,
-   "model": "Claude Haiku",
+   "model": "Claude Haiku 5.5",
    "recorded": "2026-11-08T12:50:00Z",
    "live": false,
    "events": [
@@ -256,7 +256,7 @@
    "review": false,
    "inj": true,
    "ask": true,
-   "model": "Claude Haiku",
+   "model": "Claude Haiku 5.5",
    "recorded": "2026-11-08T12:50:00Z",
    "live": false,
    "events": [
@@ -475,7 +475,7 @@
    "review": false,
    "inj": true,
    "ask": true,
-   "model": "Claude Haiku",
+   "model": "Claude Haiku 5.5",
    "recorded": "2026-11-08T12:50:00Z",
    "live": false,
    "events": [
@@ -685,7 +685,7 @@
    "review": false,
    "inj": true,
    "ask": true,
-   "model": "Claude Haiku",
+   "model": "Claude Haiku 5.5",
    "recorded": "2026-11-08T12:50:00Z",
    "live": false,
    "events": [
@@ -884,7 +884,7 @@
    "review": false,
    "inj": true,
    "ask": true,
-   "model": "Claude Opus",
+   "model": "Claude Opus 5.5",
    "recorded": "2026-11-08T12:50:00Z",
    "live": false,
    "events": [
@@ -1118,7 +1118,7 @@
    "review": false,
    "inj": true,
    "ask": true,
-   "model": "Claude Opus",
+   "model": "Claude Opus 5.5",
    "recorded": "2026-11-08T12:50:00Z",
    "live": false,
    "events": [
@@ -1361,7 +1361,7 @@
    "review": false,
    "inj": true,
    "ask": true,
-   "model": "Claude Opus",
+   "model": "Claude Opus 5.5",
    "recorded": "2026-11-08T12:50:00Z",
    "live": false,
    "events": [
@@ -1594,7 +1594,7 @@
    "review": false,
    "inj": true,
    "ask": true,
-   "model": "Claude Opus",
+   "model": "Claude Opus 5.5",
    "recorded": "2026-11-08T12:50:00Z",
    "live": false,
    "events": [
