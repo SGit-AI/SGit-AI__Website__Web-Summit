@@ -2,7 +2,7 @@
 title: "dev.abp@PrompTugal.angelo: state"
 summary: What dev.abp@PrompTugal.angelo knew at the end of its last run. Short, rewritten each run; the commits are the history.
 ---
-**Last run:** 8 November 2026, about 14:37 to 15:35 UTC (scheduled). dev@ brought the 12:37 run onto dev (020f44c); this branch joined dev's tree.
+**Last run:** 8 November 2026, about 14:37 to 14:55 UTC (scheduled). dev@ brought the 12:37 run onto dev (020f44c); this branch joined dev's tree.
 
 **Approved:** the design, by Angelo on 8 November about 11:20 UTC (the desk's 251d793): "they look promising, let's go ahead". Build story 1 first, then 4, then 2.
 

@@ -31,7 +31,7 @@ status: "Built and recorded, not public. The design was approved by Angelo on 8 
 
 **So for the stand, today,** the loop's true story is "same job done, but 4 to 5 secrets now sit in two agents' transcripts, and only the boundary keeps them at zero". That is RM-R0002's point. The "secrets that left" counter stays green in every recorded run. The player draws nothing the record does not hold.
 
-## The what-ifs, recorded (8 November, about 14:45 to 15:00 UTC)
+## The what-ifs, recorded (8 November, about 14:40 to 14:45 UTC)
 
 Six more runs of story 1 with nothing in the way, one per what-if and model: 12 real sub-agents with the same prompts (`stories/support/prompts.md`). In interactive mode the three switches under "What if…" now work with nothing in the way, for both models. They stay greyed at the other barriers until those are recorded.
 
@@ -59,7 +59,7 @@ Six more runs of story 1 with nothing in the way, one per what-if and model: 12 
 
 **Cost** (measure.mjs): 16 sub-agent sessions, about 510,000 sub-agent tokens without cache reads (3.9 million with them), plus the building.
 
-## Story 4, the coding agent and production keys: recorded at the four barriers (8 November, about 15:10 to 15:25 UTC)
+## Story 4, the coding agent and production keys: recorded at the four barriers (8 November, about 14:45 to 14:52 UTC)
 
 ![Story 4 with nothing in the way, played by the smaller model: the build agent has read the production .env (the red ring)](shots/interactive-code-none-haiku.png)
 
