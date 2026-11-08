@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1405",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: ledger line for the 22:21 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "75f7a9ef8"
+  },
+  {
     "version": "v0.2.1404",
     "date": "2026-11-08",
     "what": "22:15 run: Dinis's account back after 27 hours (A-21 partly closed); A-06 one agent left (dev)",
