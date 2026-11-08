@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1384",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 165 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 566 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "582d0cd7b"
+  },
+  {
     "version": "v0.2.1383",
     "date": "2026-11-08",
     "what": "reviewer@PrompTugal.vicky: report, 19:15 run: applied HANDOFF-FIX, SA24X, SA25; S29 and S30 Fix first",
