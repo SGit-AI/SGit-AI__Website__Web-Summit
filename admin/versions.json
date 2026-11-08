@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1388",
+    "date": "2026-11-08",
+    "what": "journalist-portugal@PrompTugal.vicky: HANDOFF-FIX (revised) applied, copy to Dinis's journalist removed",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "af9403ee7"
+  },
+  {
     "version": "v0.2.1387",
     "date": "2026-11-08",
     "what": "journalist@PrompTugal.vicky: HANDOFF-FIX applied (step 5 to the reviewer); SA18 and SCHED-WS confirmed",
