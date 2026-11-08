@@ -5,7 +5,10 @@
 (() => {
     'use strict'
     const here = document.currentScript ? document.currentScript.src : location.href
-    const load = rel => new Promise((ok, no) => { const s = document.createElement('script'); s.src = new URL(rel, here).href; s.onload = ok; s.onerror = no; document.head.appendChild(s) })
+    // each script carries this release's number (the page's own, as the site's assets do), so a browser never keeps last
+    // release's copy for the ten minutes the site lets it (Angelo, 7 November: a fix looked missing right after each release)
+    const VER = ((document.querySelector('a.ver') || {}).textContent || '').trim()
+    const load = rel => new Promise((ok, no) => { const s = document.createElement('script'); const u = new URL(rel, here); if (VER) u.searchParams.set('v', VER); s.src = u.href; s.onload = ok; s.onerror = no; document.head.appendChild(s) })
     const root = document.getElementById('cc')
     // the kanban's rules first, then the shared app; if the rules fail to load, the shared app still runs
     // the data file is fetched once (WS-84: 385 KB on the venue's wifi): this file starts the request, and the shared
@@ -20,7 +23,7 @@
             return orig.apply(this, arguments)
         }
     }
-    load('kanban-core.js').catch(() => null).then(() => load('replay.js').catch(() => null)).then(() => load('where.js').catch(() => null)).then(() => load('../../../assets/cc/app.js')).then(() => { if (root && window.AngeloKanban) start() })
+    load('kanban-core.js').catch(() => null).then(() => load('replay.js').catch(() => null)).then(() => load('live.js').catch(() => null)).then(() => load('where.js').catch(() => null)).then(() => load('../../../assets/cc/app.js')).then(() => { if (root && window.AngeloKanban) start() })
 
     // ---------- offline (WS-84 step 1, at Angelo's go): sw.js stores this page and what it loads ----------
     // ?offline=off unregisters the worker and deletes its store (remembered in this browser); ?offline=on turns it back on
@@ -62,7 +65,7 @@
     function start() {
         const K = window.AngeloKanban
         let D = null, failed = ''
-        const route = () => (location.hash.match(/^#(kanban|collab|where|summit|replay)(\?|$)/) || [])[1] || ''
+        const route = () => (location.hash.match(/^#(kanban|collab|where|summit|replay|live)(\?|$)/) || [])[1] || ''
         const mine = () => !!route()
         once.then(r => r.ok ? r.clone().json() : Promise.reject(new Error(r.status))).then(d => { D = d; nav(); loadCockpit(); if (mine()) draw() }).catch(e => { failed = e.message; if (mine()) draw() })
 
@@ -102,6 +105,7 @@
         // ---------- drawing ----------
         function draw() {
             if (route() === 'collab') return drawCollab()
+            if (route() === 'live') return drawLive()
             if (route() === 'where') return drawWhere()
             if (route() === 'summit') return drawSummit()
             if (route() === 'replay') {   // Replay's timeline lives under Team and the machine's map; old #replay addresses land there (the clip stays on its own)
@@ -348,8 +352,8 @@ ${D.tasks.unplaced.length ? `<p class="note">Could not place: ${esc(D.tasks.unpl
         // the map's key stays open or closed as Angelo last left it (this browser only)
         const keyOpen = () => { try { return localStorage.getItem('ak-tm-key') !== '0' } catch { return true } }
         document.addEventListener('toggle', e => { if (e.target && e.target.classList && e.target.classList.contains('tm-key')) try { localStorage.setItem('ak-tm-key', e.target.open ? '1' : '0') } catch { } }, true)
-        const cstate = () => { const i = location.hash.indexOf('?'); const p = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)); return { p: p.get('p') || '', map: p.get('map') === '1', f: p.get('f') || '', l: p.get('l') || '', fs: p.get('fs') === '1', w: p.get('w') || '' } }
-        const setC = c => { const q = []; if (c.map) q.push('map=1'); if (c.l && c.l !== 'ring') q.push('l=' + c.l); if (c.f) q.push('f=' + encodeURIComponent(c.f)); if (c.p) q.push('p=' + encodeURIComponent(c.p)); if (c.fs && c.map) q.push('fs=1'); if (c.w && c.map) q.push('w=' + c.w); if (c.map) for (const [k, v] of new URLSearchParams(location.hash.slice(location.hash.indexOf('?') + 1))) if (k.startsWith('r_') && location.hash.includes('?')) q.push(k + '=' + encodeURIComponent(v).replace(/%2C/g, ',')); history.replaceState(history.state, '', location.pathname + location.search + '#collab' + (q.length ? '?' + q.join('&') : '')); drawCollab() }
+        const cstate = () => { const i = location.hash.indexOf('?'); const p = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)); return { p: p.get('p') || '', map: p.get('map') === '1', f: p.get('f') || '', l: p.get('l') || '', fs: p.get('fs') === '1', w: p.get('w') || '', d3: p.get('d3') === '1' } }
+        const setC = c => { const q = []; if (c.map) q.push('map=1'); if (c.l && c.l !== 'ring') q.push('l=' + c.l); if (c.f) q.push('f=' + encodeURIComponent(c.f)); if (c.p) q.push('p=' + encodeURIComponent(c.p)); if (c.fs && c.map) q.push('fs=1'); if (c.w && c.map) q.push('w=' + c.w); if (c.d3 && c.map) q.push('d3=1'); if (c.map) for (const [k, v] of new URLSearchParams(location.hash.slice(location.hash.indexOf('?') + 1))) if (k.startsWith('r_') && location.hash.includes('?')) q.push(k + '=' + encodeURIComponent(v).replace(/%2C/g, ',')); history.replaceState(history.state, '', location.pathname + location.search + '#collab' + (q.length ? '?' + q.join('&') : '')); drawCollab() }
         const openPerson = id => { history.pushState({ akCard: true }, ''); history.replaceState(history.state, '', location.pathname + location.search + '#collab?p=' + encodeURIComponent(id)); drawCollab() }
         const closePerson = () => { if (history.state && history.state.akCard) history.back(); else { history.replaceState(history.state, '', location.pathname + location.search + '#collab'); drawCollab() } }
         const initials = n => String(n).split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase()
@@ -364,6 +368,17 @@ ${D.tasks.unplaced.length ? `<p class="note">Could not place: ${esc(D.tasks.unpl
         }
         const lastAgo = l => l ? ago(l.replace(' ', 'T') + ':00Z') : 'no commit yet'
         const kanbanLink = id => `#kanban?m=0&t=open,picked,in%20progress,done&o=${encodeURIComponent(id)}`
+
+        // the live graph (live.js): the map as an always-on view, in a hexagon, that can pop out into its own window
+        function drawLive() {
+            const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title'); if (!view) return
+            const first = D ? (D.person.name || D.person.id).split(' ')[0] : ''
+            if (title) title.innerHTML = `${ownTitle('Live')}<small>${esc(first)}'s command centre</small>`
+            document.title = `Live · ${first}'s command centre`
+            if (!D || !D.collab || !window.AngeloLive) { view.innerHTML = failed ? `<p class="note">The board could not load its data (${esc(failed)}).</p>` : '<p class="note">Loading the team…</p>'; return }
+            view.innerHTML = `<div class="ak">${ownNote()}<nav class="ak-switch" aria-label="More views"><a href="#collab?map=1">← Team and the machine <span class="ak-mk" aria-hidden="true">✦</span></a></nav><div data-ak-live></div></div>`
+            window.AngeloLive.view(view.querySelector('[data-ak-live]'), { D, liveUrl: new URL('live.json', location.href).href })
+        }
 
         function drawCollab() {
             const view = root.querySelector('#cc-view'), title = root.querySelector('#cc-title')
@@ -404,6 +419,10 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
             const tlHost = view.querySelector('[data-ak-tl]'); if (tlHost && window.AngeloReplay) window.AngeloReplay.render(tlHost, { D, ownTitle, ago, note: () => '', embed: true })
             const tm = view.querySelector('[data-tm-toggle]'); if (tm) tm.onclick = () => setC({ ...cstate(), map: !cstate().map, f: '' })
             view.querySelectorAll('[data-tm-l]').forEach(g => g.onclick = () => setC({ ...cstate(), l: g.dataset.tmL, f: '' }))
+            view.querySelectorAll('[data-tm-3d]').forEach(g => g.onclick = () => setC({ ...cstate(), d3: !cstate().d3 }))
+            { const v3 = view.querySelector('[data-tm-3dv]')
+              if (v3 && lastMap) { const m = lastMap; (window.AngeloMap3D ? Promise.resolve() : load('map3d.js')).then(() => window.AngeloMap3D.mount(v3, { pos: m.pos, C: m.C, links: m.links, colOf: p => m.col.get(p) })).catch(() => { v3.innerHTML = '<p class="note">The 3D view could not load. Switch 3D off for the map.</p>' }) }
+              else if (window.AngeloMap3D) window.AngeloMap3D.unmount() }
             const tf = view.querySelector('[data-tm-fs]'); if (tf) tf.onclick = () => { const c = cstate(), on = !c.fs; setC({ ...c, map: true, fs: on }); try { if (on && document.documentElement.requestFullscreen && !document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => null); if (!on && document.fullscreenElement) document.exitFullscreen().catch(() => null) } catch { } }
             const tcp = view.querySelector('[data-tm-copy]'); if (tcp) tcp.onclick = async () => { const n = view.querySelector('[data-tm-copied]'); try { await navigator.clipboard.writeText(location.href); if (n) n.textContent = 'Link copied' } catch { if (n) n.textContent = location.href } }
             if (!window.__tmEsc) { window.__tmEsc = true; addEventListener('keydown', e => { if (e.key === 'Escape' && route() === 'collab' && cstate().fs) { const c = cstate(); setC({ ...c, fs: false }) } }); document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement && route() === 'collab' && cstate().fs) setC({ ...cstate(), fs: false }) }) }
@@ -427,7 +446,7 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
             const c = cstate(), M = D.collab && D.collab.map, L0 = TM_LAYOUTS.some(([k]) => k === c.l) ? c.l : 'ring'
             // full screen (fs=1 in the address), so the map alone can be opened from a link, or shown on a screen
             const fs = c.fs && c.map
-            const head = `<section class="cc-card tm${fs ? ' tm-fs' : ''}" aria-label="The whole team as one map"><div class="tm-top"><h3 class="ak-h3">The whole team as one map</h3><span class="tm-acts">${c.map ? `<button type="button" class="cc-btn" data-tm-fs aria-pressed="${fs}" title="${fs ? 'Back to the page (Esc)' : 'The map alone, full screen, with its own link'}">${fs ? '✕ Close full screen' : '⛶ Full screen'}</button><button type="button" class="cc-btn" data-tm-copy title="Copy a link to this map, as you see it: layout, focus${fs ? ', full screen' : ''}">🔗 Copy link</button><span class="note" data-tm-copied role="status"></span>` : ''}${fs ? '' : `<button type="button" class="cc-btn" data-tm-toggle aria-pressed="${c.map}">${c.map ? 'Hide the map' : 'Show the map'}</button>`}</span></div>`
+            const head = `<section class="cc-card tm${fs ? ' tm-fs' : ''}" aria-label="The whole team as one map"><div class="tm-top"><h3 class="ak-h3">The whole team as one map</h3><span class="tm-acts">${c.map ? `<button type="button" class="cc-btn" data-tm-fs aria-pressed="${fs}" title="${fs ? 'Back to the page (Esc)' : 'The map alone, full screen, with its own link'}">${fs ? '✕ Close full screen' : '⛶ Full screen'}</button><a class="cc-btn" href="#live" data-tm-live title="The map as an always-on live view, in a hexagon; it can pop out into its own window">◉ Live</a><button type="button" class="cc-btn" data-tm-copy title="Copy a link to this map, as you see it: layout, focus${fs ? ', full screen' : ''}">🔗 Copy link</button><span class="note" data-tm-copied role="status"></span>` : ''}${fs ? '' : `<button type="button" class="cc-btn" data-tm-toggle aria-pressed="${c.map}">${c.map ? 'Hide the map' : 'Show the map'}</button>`}</span></div>`
             if (!c.map) return head + `<p class="note">Everyone and their agents, and who wrote to whom in the last 7 days${M && M.totals ? ` (${M.totals.people} people, ${M.totals.agents} agents, ${M.totals.messages} messages)` : ''}.</p></section>`
             if (!M || M.error) return head + `<p class="note">The map's data is missing from this build${M && M.error ? ` (${esc(M.error)})` : ''}.</p></section>`
             const S = 1000, C = S / 2, col = new Map(M.people.map((p, i) => [p.id, TM_COL[i % TM_COL.length]])), pos = new Map(), NP = M.people.length
@@ -463,7 +482,23 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
             const flowsOf = id => wl.filter(l => l.agent === id || 'k:' + l.kind === id)
             const near = id => { if (!c.f) return true; if (id === c.f) return true; const n = pos.get(id) || {}; if (!isAgentF && !isKindF) return n.person === c.f; if (isKindF) return n.kind === 'a' ? wl.some(l => l.agent === id && 'k:' + l.kind === c.f) : false; if (n.kind === 'k') return wl.some(l => l.agent === c.f && 'k:' + l.kind === id); return false }
             const links = M.links.filter(l => pos.has(l.from) && pos.has(l.to))
-            lastMap = { place: (pid, n) => placeFor(pos.get(pid), n), pos, C, pull: L0 === 'ring' ? 0.55 : L0 === 'agents' ? 0.25 : 0.1, col, focus: c.f, wl }
+            // the record's own events (spec-live-map.md section 2), as counts in each agent's tooltip: names and counts only
+            const LV = D.replay && D.replay.live && !D.replay.live.error ? D.replay.live : null, lc = new Map()
+            const cnt = (id, k) => { if (!pos.has(id)) return; const o = lc.get(id) || {}; o[k] = (o[k] || 0) + 1; lc.set(id, o) }
+            if (LV) {
+                for (const [, who, st] of LV.keys || []) cnt(who, st === 'published' ? 'kp' : 'ke')
+                for (const [, by, to] of LV.handovers || []) { cnt(by, 'hg'); cnt(to, 'hr') }
+                for (const [, who] of LV.lanes || []) { const o = lc.get(who); if (pos.has(who) && !(o && o.ln)) cnt(who, 'ln') }
+                for (const [, who, k] of LV.messages || []) cnt(who, k === 'verified' ? 'mv' : 'ms')
+            }
+            const pl = (n, one, many) => `${n} ${n === 1 ? one : many}`
+            const liveTip = id => { const o = lc.get(id); if (!o) return ''; const out = []
+                if (o.kp || o.ke) out.push(`keys: ${[o.kp ? `${o.kp} published` : '', o.ke ? `${o.ke} ended` : ''].filter(Boolean).join(', ')}`)
+                if (o.hg || o.hr) out.push(`${pl((o.hg || 0) + (o.hr || 0), 'key handed over', 'keys handed over')} (${[o.hg ? `${o.hg} given` : '', o.hr ? `${o.hr} received` : ''].filter(Boolean).join(', ')})`)
+                if (o.ln) out.push('a lane for sealed messages')
+                if (o.ms || o.mv) out.push(`sealed messages: ${[o.ms ? `${o.ms} sent` : '', o.mv ? `${o.mv} verified` : ''].filter(Boolean).join(', ')}`)
+                return out.length ? `. On the record: ${out.join('; ')}` : '' }
+            lastMap = { place: (pid, n) => placeFor(pos.get(pid), n), pos, links, C, pull: L0 === 'ring' ? 0.55 : L0 === 'agents' ? 0.25 : 0.1, col, focus: c.f, wl }
             const max = Math.max(1, ...links.map(l => l.n)), pull = L0 === 'ring' ? 0.55 : L0 === 'agents' ? 0.25 : 0.1
             const path = (a, b, k = pull) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return `M${a.x.toFixed(0)} ${a.y.toFixed(0)}Q${(mx + (C - mx) * k).toFixed(0)} ${(my + (C - my) * k).toFixed(0)} ${b.x.toFixed(0)} ${b.y.toFixed(0)}` }
             const lit = l => c.f && (l.from === c.f || l.to === c.f || (!isAgentF && !isKindF && ((pos.get(l.from) || {}).person === c.f || (pos.get(l.to) || {}).person === c.f)))
@@ -478,9 +513,10 @@ ${flows}
                 ? `<g class="tm-p${c.f && !near(id) ? ' off' : ''}" data-tm-f="${esc(id)}" tabindex="0" role="button" aria-label="${esc(n.label)}"><circle cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="26" fill="${col.get(id)}"/><text x="${n.x.toFixed(0)}" y="${(n.y + 5).toFixed(0)}">${esc(n.label)}</text></g>`
                 : n.kind === 'k'
                 ? `<g class="tm-k${c.f && !near(id) ? ' off' : ''}" data-tm-f="${esc(id)}" tabindex="0" role="button" aria-label="${esc(n.label)}" style="--kc:${TM_KIND[n.id][0]}">${shape(n.id, n.x, n.y, n.size)}<text x="${n.x.toFixed(0)}" y="${(n.y + n.size + 18).toFixed(0)}">${esc(n.label)}</text><title>${esc(n.label)}: ${n.total} commits in 7 days</title></g>`
-                : `<g class="tm-a${c.f && !near(id) && !(isAgentF ? links.some(l => lit(l) && (l.from === id || l.to === id)) : false) ? ' off' : ''}" data-tm-f="${esc(id)}"><${n.family !== 'web-summit' ? 'rect' : 'circle'} ${n.family !== 'web-summit' ? `x="${(n.x - 7).toFixed(0)}" y="${(n.y - 7).toFixed(0)}" width="14" height="14" transform="rotate(45 ${n.x.toFixed(0)} ${n.y.toFixed(0)})"` : `cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="${(4 + Math.min(8, Math.sqrt(n.commits || 0))).toFixed(1)}"`} fill="${col.get(n.person)}"/>${n.kind2 === 'fresh' || n.kind2 === 'scheduled' ? `<circle class="tm-kr ${n.kind2}" cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="${(9 + Math.min(8, Math.sqrt(n.commits || 0))).toFixed(1)}"/>` : ''}<title>${esc(n.name)}: ${n.runsAs ? `works as ${esc(n.runsAs)} (its commits count there)` : `${n.commits || 0} commits`}${n.family !== 'web-summit' ? ' (PrompTugal)' : ''}${n.kind2 ? `; ${({ fresh: 'a fresh session each run', scheduled: 'scheduled wakes into its own session', long: 'a long session' })[n.kind2] || n.kind2}` : ''}</title>${c.f && (id === c.f || (n.person === c.f && M.agents.filter(x => x.person === c.f).length <= 16)) ? `<text class="tm-al" x="${n.x.toFixed(0)}" y="${(n.y - 12).toFixed(0)}">${esc(n.label)}</text>` : ''}</g>`).join('')}</g></svg>`
+                : `<g class="tm-a${c.f && !near(id) && !(isAgentF ? links.some(l => lit(l) && (l.from === id || l.to === id)) : false) ? ' off' : ''}" data-tm-f="${esc(id)}"><${n.family !== 'web-summit' ? 'rect' : 'circle'} ${n.family !== 'web-summit' ? `x="${(n.x - 7).toFixed(0)}" y="${(n.y - 7).toFixed(0)}" width="14" height="14" transform="rotate(45 ${n.x.toFixed(0)} ${n.y.toFixed(0)})"` : `cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="${(4 + Math.min(8, Math.sqrt(n.commits || 0))).toFixed(1)}"`} fill="${col.get(n.person)}"/>${n.kind2 === 'fresh' || n.kind2 === 'scheduled' ? `<circle class="tm-kr ${n.kind2}" cx="${n.x.toFixed(0)}" cy="${n.y.toFixed(0)}" r="${(9 + Math.min(8, Math.sqrt(n.commits || 0))).toFixed(1)}"/>` : ''}<title>${esc(n.name)}: ${n.runsAs ? `works as ${esc(n.runsAs)} (its commits count there)` : `${n.commits || 0} commits`}${n.family !== 'web-summit' ? ' (PrompTugal)' : ''}${n.kind2 ? `; ${({ fresh: 'a fresh session each run', scheduled: 'scheduled wakes into its own session', long: 'a long session' })[n.kind2] || n.kind2}` : ''}${esc(liveTip(id))}</title>${c.f && (id === c.f || (n.person === c.f && M.agents.filter(x => x.person === c.f).length <= 16)) ? `<text class="tm-al" x="${n.x.toFixed(0)}" y="${(n.y - 12).toFixed(0)}">${esc(n.label)}</text>` : ''}</g>`).join('')}</g></svg>`
             const Lout = M.left_out || {}
-            const tabs = `<div class="tm-tabs" role="group" aria-label="Layout">${TM_LAYOUTS.map(([k, l]) => `<button type="button" class="rp-chip${k === L0 ? ' on' : ''}" data-tm-l="${k}" aria-pressed="${k === L0}">${esc(l)}</button>`).join('')}</div>`
+            // 3D (spec-live-map.md piece 5): a switch beside the layouts, off by default; the same map tilted and turned (map3d.js)
+            const tabs = `<div class="tm-tabs" role="group" aria-label="Layout">${TM_LAYOUTS.map(([k, l]) => `<button type="button" class="rp-chip${k === L0 ? ' on' : ''}" data-tm-l="${k}" aria-pressed="${k === L0}">${esc(l)}</button>`).join('')}<button type="button" class="rp-chip tm-3dsw${c.d3 ? ' on' : ''}" data-tm-3d aria-pressed="${c.d3}" title="The same map, tilted and turned; loads 1.6 MB of 3D libraries">3D</button></div>`
             const legend = W ? `<div class="tm-legend">${kinds.map(k => `<button type="button" class="tm-lg${c.f === 'k:' + k.id ? ' on' : ''}" data-tm-f="k:${k.id}" style="--kc:${TM_KIND[k.id][0]}"><svg viewBox="0 0 40 40" width="18" height="18" aria-hidden="true">${shape(k.id, 20, 20, 16)}</svg>${esc(k.label)} <b>${ktot[k.id]}</b></button>`).join('')}</div>` : ''
             // the key (Angelo, 6 November: "add a legend that clarifies what each type of symbol means"): every symbol on the
             // map, for the layout shown; the kinds of work keep their own tappable legend above (work layout)
@@ -501,7 +537,7 @@ ${flows}
             const what = L0 === 'work' ? 'Each flow is an agent\'s commits in 7 days on issues of that kind of work (from the issue\'s area on the board), wider for more; PrompTugal\'s newsroom agents count as newsroom work, from their own repository. Tap a shape, an agent or a person to follow their work.'
                 : L0 === 'agents' ? 'The agents at the centre, each in its person\'s sector, and the people around them; an arc is a pair of agents that wrote to each other in 7 days.'
                 : `An arc is a pair that wrote to each other, wider for more. ${M.agents.some(a => a.kind) ? 'A solid ring is an agent woken on a schedule into its own session, a dashed ring one that starts a fresh session each run. ' : ''}`
-            return head + tabs + `<p class="note">${M.totals.people} people and ${M.totals.agents} agents active in the last ${M.days} days (${M.totals.promptugal} of them PrompTugal's, the diamonds), and ${M.totals.messages} messages. ${what} Tap a person or an agent to focus them (a person with many agents: names on hover or tap)${c.f ? `; focused on <b>${esc(c.f.replace(/^k:/, ''))}</b>, tap again to clear` : ''}.${Lout.agents ? ` Left out, not active: ${Lout.agents} agents${(Lout.people || []).length ? ` and ${esc(Lout.people.join(', '))}` : ''}.` : ''}</p>${legend}${key}<div class="tm-wrap">${svg}</div><div class="tmf" data-tmf></div><p class="note">From team-collaboration@web-summit.angelo's team-map.mjs, built with this release${M.promptugal ? `, with the PrompTugal newsroom's agents from its own repository as of ${esc(new Date(M.promptugal.read_at).toISOString().slice(0, 16).replace('T', ' '))} UTC (refreshed at dev@web-summit.angelo's wakes)` : ''}.</p></section>`
+            return head + tabs + `<p class="note">${M.totals.people} people and ${M.totals.agents} agents active in the last ${M.days} days (${M.totals.promptugal} of them PrompTugal's, the diamonds), and ${M.totals.messages} messages. ${what} Tap a person or an agent to focus them (a person with many agents: names on hover or tap)${c.f ? `; focused on <b>${esc(c.f.replace(/^k:/, ''))}</b>, tap again to clear` : ''}.${Lout.agents ? ` Left out, not active: ${Lout.agents} agents${(Lout.people || []).length ? ` and ${esc(Lout.people.join(', '))}` : ''}.` : ''}</p>${legend}${key}<div class="tm-wrap${c.d3 ? ' tm-3d-on' : ''}">${svg}${c.d3 ? '<div class="tm-3d" data-tm-3dv><p class="note">Loading the 3D view…</p></div>' : ''}</div><div class="tmf" data-tmf></div><p class="note">From team-collaboration@web-summit.angelo's team-map.mjs, built with this release${M.promptugal ? `, with the PrompTugal newsroom's agents from its own repository as of ${esc(new Date(M.promptugal.read_at).toISOString().slice(0, 16).replace('T', ' '))} UTC (refreshed at dev@web-summit.angelo's wakes)` : ''}.</p></section>`
         }
 
         function personSheet(id) {

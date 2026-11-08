@@ -6,7 +6,7 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 
 | Agent | Job | Prompt |
 |---|---|---|
-| conductor@web-summit.vicky | runs Vicky's agents, keeps her records, the 09:45 brief | [conductor.md](conductor.md) |
+| conductor@web-summit.vicky | runs Vicky's agents, keeps her records, the 08:30 brief | [conductor.md](conductor.md) |
 | dashboard@web-summit.vicky | Vicky's dashboard and the stories page | [dashboard.md](dashboard.md) (start prompt in the [kit](../kit/README.md#dashboardweb-summitvicky)) |
 | vault@web-summit.vicky | Vicky's vaults (on demand) | [vault.md](vault.md) |
 | dev@web-summit.vicky | replaced by dev@PrompTugal.vicky (6 Nov) | [kit: dev](../kit/README.md#devweb-summitvicky) |
@@ -29,4 +29,4 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 
 tools@web-summit.vicky was never started (Vicky, 3 November), so it has no prompt.
 
-Last updated: 7 November 2026, about 21:40 UTC (20 saved here, 1 in the kit, 0 not saved yet; checker, curator, dashboard, pm and the five journalists updated theirs today with P1 to P3 and their new times, checked for anything that should not be public: nothing found).
+Last updated: 8 November 2026, about 08:50 UTC (20 saved here, 1 in the kit, 0 not saved yet; thirteen files changed overnight with the Web Summit timetable and the new prompt changes, checked for anything that should not be public: nothing found).

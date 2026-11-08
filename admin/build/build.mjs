@@ -697,6 +697,7 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     // the switcher at the top of every command centre: everyone's, in roster order
     data.team = teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => ({ id: x.id, name: x.name, ...(fs.existsSync(path.join(ROOT, 'people', x.id, 'photo.jpg')) ? { photo: `../../${x.id}/photo.jpg` } : {}) }))
     write(`people/${m.id}/app/data.json`, JSON.stringify(data))
+    if (app.extras) for (const [rel, text] of Object.entries(app.extras(data, ROOT))) write(rel, text)   // files a person's own data.mjs adds beside data.json (Angelo's live.json)
     {   // this person's slice of me.json
         const o = onboard(m.id), nx = MEET.next(), a = MEET.ack(m.id), since = MEET.log(a?.acknowledged_at || new Date(Date.now() - 864e5).toISOString())
         const open = data.issues.filter(i => i.named && i.status !== 'done'), h = i => i.due_at ? (Date.parse(i.due_at) - Date.now()) / 36e5 : 1e9

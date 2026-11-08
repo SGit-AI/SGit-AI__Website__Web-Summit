@@ -1,8 +1,8 @@
 {
  "about": "The PrompTugal newsroom's agents, from the git log of PrompTugal/PrompTugal__News__Website (its dev branch), for Angelo's command centre; refreshed by dev@web-summit.angelo at its wakes. Names, counts and times only. pt:<person>:<agent> is a PrompTugal agent of that person.",
  "source": "https://github.com/PrompTugal/PrompTugal__News__Website",
- "commit": "a1ce93c03",
- "read_at": "2026-11-07T21:36:50.324Z",
+ "commit": "42a74d4e1",
+ "read_at": "2026-11-08T09:05:30.549Z",
  "days": 7,
  "agents": [
   {
@@ -11,9 +11,9 @@
    "short": "dev",
    "family": "PrompTugal",
    "label": "PrompTugal's dev",
-   "commits": 271,
+   "commits": 295,
    "first": "2026-11-06T00:05:30+00:00",
-   "last": "2026-11-07T21:14:32+00:00",
+   "last": "2026-11-08T01:17:53+00:00",
    "key": true
   },
   {
@@ -33,9 +33,9 @@
    "short": "journalist",
    "family": "PrompTugal",
    "label": "PrompTugal's journalist",
-   "commits": 81,
+   "commits": 83,
    "first": "2026-11-06T00:06:05+00:00",
-   "last": "2026-11-07T20:28:29+00:00",
+   "last": "2026-11-08T00:30:34+00:00",
    "key": true
   },
   {
@@ -44,9 +44,9 @@
    "short": "synthetic",
    "family": "PrompTugal",
    "label": "PrompTugal's synthetic",
-   "commits": 80,
+   "commits": 82,
    "first": "2026-11-06T00:28:34+00:00",
-   "last": "2026-11-07T20:46:41+00:00",
+   "last": "2026-11-08T00:46:24+00:00",
    "key": true
   },
   {
@@ -55,9 +55,9 @@
    "short": "investors",
    "family": "PrompTugal",
    "label": "",
-   "commits": 73,
+   "commits": 77,
    "first": "2026-11-06T20:08:08+00:00",
-   "last": "2026-11-07T21:26:38+00:00",
+   "last": "2026-11-08T00:25:17+00:00",
    "key": true
   },
   {
@@ -66,9 +66,9 @@
    "short": "designer",
    "family": "PrompTugal",
    "label": "PrompTugal's designer",
-   "commits": 69,
+   "commits": 72,
    "first": "2026-11-06T00:08:58+00:00",
-   "last": "2026-11-07T21:34:39+00:00",
+   "last": "2026-11-08T00:34:46+00:00",
    "key": true
   },
   {
@@ -77,9 +77,9 @@
    "short": "researcher",
    "family": "PrompTugal",
    "label": "",
-   "commits": 67,
+   "commits": 71,
    "first": "2026-11-06T05:37:48+00:00",
-   "last": "2026-11-07T21:15:15+00:00",
+   "last": "2026-11-08T01:17:14+00:00",
    "key": true
   },
   {
@@ -88,9 +88,9 @@
    "short": "outreach",
    "family": "PrompTugal",
    "label": "PrompTugal's outreach",
-   "commits": 67,
+   "commits": 71,
    "first": "2026-11-06T00:05:47+00:00",
-   "last": "2026-11-07T20:39:46+00:00",
+   "last": "2026-11-08T00:38:51+00:00",
    "key": true
   },
   {
@@ -99,9 +99,9 @@
    "short": "reviewer",
    "family": "PrompTugal",
    "label": "",
-   "commits": 60,
+   "commits": 65,
    "first": "2026-11-06T10:20:27+00:00",
-   "last": "2026-11-07T21:10:27+00:00",
+   "last": "2026-11-07T22:21:36+00:00",
    "key": true
   },
   {
@@ -110,9 +110,20 @@
    "short": "ontologist",
    "family": "PrompTugal",
    "label": "PrompTugal's ontologist",
-   "commits": 57,
+   "commits": 61,
    "first": "2026-11-06T00:07:41+00:00",
-   "last": "2026-11-07T21:23:13+00:00",
+   "last": "2026-11-08T00:22:33+00:00",
+   "key": true
+  },
+  {
+   "id": "pt:dinis:conductor.b",
+   "person": "dinis",
+   "short": "conductor.b",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 45,
+   "first": "2026-11-06T21:38:06+00:00",
+   "last": "2026-11-08T06:08:43+00:00",
    "key": true
   },
   {
@@ -121,9 +132,20 @@
    "short": "correspondent",
    "family": "PrompTugal",
    "label": "PrompTugal's front page correspondent",
-   "commits": 42,
+   "commits": 44,
    "first": "2026-11-06T03:49:53+00:00",
-   "last": "2026-11-07T20:42:36+00:00",
+   "last": "2026-11-08T00:42:34+00:00",
+   "key": true
+  },
+  {
+   "id": "pt:dinis:devops",
+   "person": "dinis",
+   "short": "devops",
+   "family": "PrompTugal",
+   "label": "PrompTugal's devops",
+   "commits": 37,
+   "first": "2026-11-06T03:47:46+00:00",
+   "last": "2026-11-08T00:16:01+00:00",
    "key": true
   },
   {
@@ -138,36 +160,14 @@
    "key": true
   },
   {
-   "id": "pt:dinis:devops",
-   "person": "dinis",
-   "short": "devops",
-   "family": "PrompTugal",
-   "label": "PrompTugal's devops",
-   "commits": 35,
-   "first": "2026-11-06T03:47:46+00:00",
-   "last": "2026-11-07T20:18:13+00:00",
-   "key": true
-  },
-  {
-   "id": "pt:dinis:conductor.b",
-   "person": "dinis",
-   "short": "conductor.b",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 32,
-   "first": "2026-11-06T21:38:06+00:00",
-   "last": "2026-11-07T21:08:41+00:00",
-   "key": true
-  },
-  {
    "id": "pt:dinis:librarian",
    "person": "dinis",
    "short": "librarian",
    "family": "PrompTugal",
    "label": "PrompTugal's librarian",
-   "commits": 29,
+   "commits": 30,
    "first": "2026-11-06T03:52:31+00:00",
-   "last": "2026-11-07T18:59:26+00:00",
+   "last": "2026-11-07T21:58:42+00:00",
    "key": true
   },
   {
@@ -176,9 +176,9 @@
    "short": "journalist-ai",
    "family": "PrompTugal",
    "label": "",
-   "commits": 27,
+   "commits": 28,
    "first": "2026-11-06T10:50:12+00:00",
-   "last": "2026-11-07T20:23:08+00:00",
+   "last": "2026-11-07T21:57:37+00:00",
    "key": true
   },
   {
@@ -204,6 +204,17 @@
    "key": true
   },
   {
+   "id": "pt:dinis:sherpa",
+   "person": "dinis",
+   "short": "sherpa",
+   "family": "PrompTugal",
+   "label": "PrompTugal's sherpa",
+   "commits": 23,
+   "first": "2026-11-06T03:51:01+00:00",
+   "last": "2026-11-08T00:31:42+00:00",
+   "key": true
+  },
+  {
    "id": "pt:dinis:abp",
    "person": "dinis",
    "short": "abp",
@@ -215,14 +226,14 @@
    "key": true
   },
   {
-   "id": "pt:dinis:sherpa",
-   "person": "dinis",
-   "short": "sherpa",
+   "id": "pt:vicky:curator",
+   "person": "vicky",
+   "short": "curator",
    "family": "PrompTugal",
-   "label": "PrompTugal's sherpa",
-   "commits": 22,
-   "first": "2026-11-06T03:51:01+00:00",
-   "last": "2026-11-07T21:34:12+00:00",
+   "label": "",
+   "commits": 17,
+   "first": "2026-11-06T10:26:39+00:00",
+   "last": "2026-11-08T05:33:02+00:00",
    "key": true
   },
   {
@@ -235,17 +246,6 @@
    "first": "2026-11-04T00:35:45+00:00",
    "last": "2026-11-06T00:44:22+00:00",
    "key": false
-  },
-  {
-   "id": "pt:vicky:curator",
-   "person": "vicky",
-   "short": "curator",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 16,
-   "first": "2026-11-06T10:26:39+00:00",
-   "last": "2026-11-07T19:47:42+00:00",
-   "key": true
   },
   {
    "id": "pt:dinis:observability",
@@ -281,14 +281,25 @@
    "key": false
   },
   {
+   "id": "pt:angelo:writer",
+   "person": "angelo",
+   "short": "writer",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 13,
+   "first": "2026-11-06T23:09:46+00:00",
+   "last": "2026-11-08T08:40:01+00:00",
+   "key": true
+  },
+  {
    "id": "pt:dinis:backup",
    "person": "dinis",
    "short": "backup",
    "family": "PrompTugal",
    "label": "",
-   "commits": 12,
+   "commits": 13,
    "first": "2026-11-06T05:37:35+00:00",
-   "last": "2026-11-07T18:10:52+00:00",
+   "last": "2026-11-08T00:10:48+00:00",
    "key": true
   },
   {
@@ -312,17 +323,6 @@
    "first": "2026-11-05T20:19:09+00:00",
    "last": "2026-11-06T09:44:25+00:00",
    "key": false
-  },
-  {
-   "id": "pt:angelo:writer",
-   "person": "angelo",
-   "short": "writer",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 10,
-   "first": "2026-11-06T23:09:46+00:00",
-   "last": "2026-11-07T18:19:52+00:00",
-   "key": true
   },
   {
    "id": "journalist-connections@web-summit.vicky",
@@ -366,6 +366,17 @@
    "commits": 8,
    "first": "2026-11-06T18:58:26+00:00",
    "last": "2026-11-06T20:15:25+00:00",
+   "key": true
+  },
+  {
+   "id": "pt:vicky:programme",
+   "person": "vicky",
+   "short": "programme",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 7,
+   "first": "2026-11-06T10:28:37+00:00",
+   "last": "2026-11-08T05:06:39+00:00",
    "key": true
   },
   {
@@ -413,14 +424,14 @@
    "key": false
   },
   {
-   "id": "pt:vicky:programme",
-   "person": "vicky",
-   "short": "programme",
+   "id": "pt:jose:writer",
+   "person": "jose",
+   "short": "writer",
    "family": "PrompTugal",
    "label": "",
    "commits": 5,
-   "first": "2026-11-06T10:28:37+00:00",
-   "last": "2026-11-07T08:20:55+00:00",
+   "first": "2026-11-07T19:46:56+00:00",
+   "last": "2026-11-07T22:33:07+00:00",
    "key": true
   },
   {
@@ -446,15 +457,15 @@
    "key": false
   },
   {
-   "id": "pt:jose:writer",
-   "person": "jose",
-   "short": "writer",
+   "id": "pt:angelo:dev.venues",
+   "person": "angelo",
+   "short": "dev.venues",
    "family": "PrompTugal",
    "label": "",
    "commits": 4,
-   "first": "2026-11-07T19:46:56+00:00",
-   "last": "2026-11-07T20:16:21+00:00",
-   "key": true
+   "first": "2026-11-07T18:50:46+00:00",
+   "last": "2026-11-07T22:17:55+00:00",
+   "key": false
   },
   {
    "id": "journalist-europe@web-summit.vicky",
@@ -468,15 +479,15 @@
    "key": false
   },
   {
-   "id": "pt:angelo:dev.venues",
-   "person": "angelo",
-   "short": "dev.venues",
+   "id": "pt:dinis:investors.packs",
+   "person": "dinis",
+   "short": "investors.packs",
    "family": "PrompTugal",
    "label": "",
-   "commits": 2,
-   "first": "2026-11-07T18:50:46+00:00",
-   "last": "2026-11-07T20:50:42+00:00",
-   "key": false
+   "commits": 3,
+   "first": "2026-11-08T00:24:42+00:00",
+   "last": "2026-11-08T00:24:43+00:00",
+   "key": true
   },
   {
    "id": "dev@web-summit.dinis",
@@ -604,7 +615,7 @@
   {
    "from": "pt:dinis:dev",
    "to": "pt:dinis:conductor",
-   "n": 198
+   "n": 210
   },
   {
    "from": "pt:dinis:journalist",
@@ -632,6 +643,11 @@
    "n": 22
   },
   {
+   "from": "pt:dinis:conductor.b",
+   "to": "pt:dinis:conductor",
+   "n": 21
+  },
+  {
    "from": "pt:dinis:ontologist",
    "to": "pt:dinis:conductor",
    "n": 19
@@ -657,23 +673,23 @@
    "n": 16
   },
   {
-   "from": "pt:dinis:conductor.b",
-   "to": "pt:dinis:conductor",
-   "n": 15
+   "from": "pt:vicky:reviewer",
+   "to": "pt:dinis:journalist",
+   "n": 14
   },
   {
    "from": "pt:vicky:reviewer",
    "to": "pt:vicky:journalist-ai",
+   "n": 14
+  },
+  {
+   "from": "pt:dinis:conductor.b",
+   "to": "pt:dinis:accountant",
    "n": 13
   },
   {
    "from": "pt:dinis:observability",
    "to": "pt:dinis:conductor",
-   "n": 12
-  },
-  {
-   "from": "pt:vicky:reviewer",
-   "to": "pt:dinis:journalist",
    "n": 12
   },
   {
@@ -687,14 +703,9 @@
    "n": 11
   },
   {
-   "from": "pt:dinis:conductor.b",
-   "to": "pt:dinis:accountant",
-   "n": 9
-  },
-  {
    "from": "pt:vicky:curator",
    "to": "newsroom@web-summit.dinis",
-   "n": 9
+   "n": 10
   },
   {
    "from": "curator@web-summit.vicky",
@@ -705,6 +716,11 @@
    "from": "journalist@web-summit.vicky",
    "to": "newsroom@web-summit.dinis",
    "n": 8
+  },
+  {
+   "from": "pt:angelo:writer",
+   "to": "pt:dinis:conductor",
+   "n": 7
   },
   {
    "from": "pt:vicky:checker",
@@ -724,11 +740,6 @@
   {
    "from": "pt:vicky:reviewer",
    "to": "pt:vicky:journalist",
-   "n": 6
-  },
-  {
-   "from": "pt:angelo:writer",
-   "to": "pt:dinis:conductor",
    "n": 6
   },
   {
@@ -752,9 +763,29 @@
    "n": 6
   },
   {
+   "from": "pt:angelo:writer",
+   "to": "pt:angelo:desk.conductor",
+   "n": 5
+  },
+  {
    "from": "pt:dinis:synthetic",
    "to": "pt:dinis:dev",
    "n": 5
+  },
+  {
+   "from": "pt:jose:writer",
+   "to": "pt:dinis:conductor",
+   "n": 4
+  },
+  {
+   "from": "pt:vicky:reviewer",
+   "to": "pt:dinis:designer",
+   "n": 4
+  },
+  {
+   "from": "pt:angelo:dev.venues",
+   "to": "pt:dinis:dev",
+   "n": 4
   },
   {
    "from": "pt:angelo:writer",
@@ -807,13 +838,8 @@
    "n": 4
   },
   {
-   "from": "pt:jose:writer",
-   "to": "pt:dinis:conductor",
-   "n": 3
-  },
-  {
-   "from": "pt:angelo:writer",
-   "to": "pt:angelo:desk.conductor",
+   "from": "pt:vicky:programme",
+   "to": "newsroom@web-summit.dinis",
    "n": 3
   },
   {
@@ -867,8 +893,28 @@
    "n": 3
   },
   {
-   "from": "pt:angelo:dev.venues",
+   "from": "pt:angelo:writer",
+   "to": "pt:dinis:designer",
+   "n": 2
+  },
+  {
+   "from": "pt:dinis:conductor.b",
    "to": "pt:dinis:dev",
+   "n": 2
+  },
+  {
+   "from": "pt:jose:writer",
+   "to": "pt:dinis:journalist",
+   "n": 2
+  },
+  {
+   "from": "pt:angelo:writer",
+   "to": "pt:dinis:dev",
+   "n": 2
+  },
+  {
+   "from": "pt:vicky:journalist-ai",
+   "to": "pt:vicky:reviewer",
    "n": 2
   },
   {
@@ -889,16 +935,6 @@
   {
    "from": "pt:dinis:conductor.b",
    "to": "pt:dinis:dev.pages",
-   "n": 2
-  },
-  {
-   "from": "pt:vicky:reviewer",
-   "to": "pt:dinis:designer",
-   "n": 2
-  },
-  {
-   "from": "pt:vicky:programme",
-   "to": "newsroom@web-summit.dinis",
    "n": 2
   },
   {
@@ -987,13 +1023,18 @@
    "n": 2
   },
   {
-   "from": "pt:vicky:reviewer",
-   "to": "pt:angelo:dev.venues",
+   "from": "pt:dinis:conductor.b",
+   "to": "pt:dinis:dev.graphs",
    "n": 1
   },
   {
-   "from": "pt:jose:writer",
-   "to": "pt:dinis:journalist",
+   "from": "pt:dinis:conductor.b",
+   "to": "pt:dinis:investors",
+   "n": 1
+  },
+  {
+   "from": "pt:vicky:reviewer",
+   "to": "pt:angelo:dev.venues",
    "n": 1
   },
   {
@@ -1037,11 +1078,6 @@
    "n": 1
   },
   {
-   "from": "pt:vicky:journalist-ai",
-   "to": "pt:vicky:reviewer",
-   "n": 1
-  },
-  {
    "from": "pt:angelo:writer",
    "to": "pt:dinis:dev.verify",
    "n": 1
@@ -1049,11 +1085,6 @@
   {
    "from": "pt:dinis:conductor.b",
    "to": "pt:dinis:historian",
-   "n": 1
-  },
-  {
-   "from": "pt:dinis:conductor.b",
-   "to": "pt:dinis:dev",
    "n": 1
   },
   {
@@ -1296,5 +1327,921 @@
    "to": "dinis",
    "n": 1
   }
- ]
+ ],
+ "keys": [
+  [
+   "2026-11-06T00:09:38+00:00",
+   "pt:dinis:conductor",
+   "published"
+  ],
+  [
+   "2026-11-06T00:09:38+00:00",
+   "pt:dinis:dev",
+   "published"
+  ],
+  [
+   "2026-11-06T00:18:57+00:00",
+   "pt:dinis:designer",
+   "published"
+  ],
+  [
+   "2026-11-06T00:28:34+00:00",
+   "pt:dinis:synthetic",
+   "published"
+  ],
+  [
+   "2026-11-06T00:41:34+00:00",
+   "pt:dinis:outreach",
+   "published"
+  ],
+  [
+   "2026-11-06T01:23:34+00:00",
+   "pt:dinis:ontologist",
+   "published"
+  ],
+  [
+   "2026-11-06T01:29:07+00:00",
+   "pt:dinis:journalist",
+   "published"
+  ],
+  [
+   "2026-11-06T01:54:47+00:00",
+   "pt:dinis:observability",
+   "published"
+  ],
+  [
+   "2026-11-06T03:18:51+00:00",
+   "pt:dinis:historian",
+   "published"
+  ],
+  [
+   "2026-11-06T03:47:46+00:00",
+   "pt:dinis:devops",
+   "published"
+  ],
+  [
+   "2026-11-06T03:48:25+00:00",
+   "pt:dinis:security",
+   "published"
+  ],
+  [
+   "2026-11-06T03:49:04+00:00",
+   "pt:dinis:accountant",
+   "published"
+  ],
+  [
+   "2026-11-06T03:49:53+00:00",
+   "pt:dinis:correspondent",
+   "published"
+  ],
+  [
+   "2026-11-06T03:51:01+00:00",
+   "pt:dinis:sherpa",
+   "published"
+  ],
+  [
+   "2026-11-06T03:52:31+00:00",
+   "pt:dinis:librarian",
+   "published"
+  ],
+  [
+   "2026-11-06T04:52:31+00:00",
+   "pt:dinis:abp",
+   "published"
+  ],
+  [
+   "2026-11-06T04:55:54+00:00",
+   "pt:dinis:designer",
+   "ended"
+  ],
+  [
+   "2026-11-06T04:55:54+00:00",
+   "pt:dinis:designer",
+   "published"
+  ],
+  [
+   "2026-11-06T05:35:41+00:00",
+   "pt:dinis:customers",
+   "published"
+  ],
+  [
+   "2026-11-06T05:37:35+00:00",
+   "pt:dinis:backup",
+   "published"
+  ],
+  [
+   "2026-11-06T06:17:29+00:00",
+   "pt:dinis:dev.pages",
+   "published"
+  ],
+  [
+   "2026-11-06T06:17:29+00:00",
+   "pt:dinis:dev.graphs",
+   "published"
+  ],
+  [
+   "2026-11-06T06:17:29+00:00",
+   "pt:dinis:dev.search",
+   "published"
+  ],
+  [
+   "2026-11-06T06:17:29+00:00",
+   "pt:dinis:dev.verify",
+   "published"
+  ],
+  [
+   "2026-11-06T07:11:55+00:00",
+   "pt:dinis:dev.data",
+   "published"
+  ],
+  [
+   "2026-11-06T07:36:36+00:00",
+   "pt:dinis:designer.experiments",
+   "published"
+  ],
+  [
+   "2026-11-06T09:15:00+00:00",
+   "pt:dinis:researcher",
+   "published"
+  ],
+  [
+   "2026-11-06T10:12:44+00:00",
+   "pt:dinis:dev.portugal",
+   "published"
+  ],
+  [
+   "2026-11-06T10:18:26+00:00",
+   "pt:vicky:journalist",
+   "published"
+  ],
+  [
+   "2026-11-06T10:20:27+00:00",
+   "pt:vicky:reviewer",
+   "published"
+  ],
+  [
+   "2026-11-06T10:26:39+00:00",
+   "pt:vicky:curator",
+   "published"
+  ],
+  [
+   "2026-11-06T10:27:36+00:00",
+   "pt:vicky:designer",
+   "published"
+  ],
+  [
+   "2026-11-06T10:28:37+00:00",
+   "pt:vicky:programme",
+   "published"
+  ],
+  [
+   "2026-11-06T10:49:35+00:00",
+   "pt:vicky:journalist-europe",
+   "published"
+  ],
+  [
+   "2026-11-06T10:50:12+00:00",
+   "pt:vicky:journalist-ai",
+   "published"
+  ],
+  [
+   "2026-11-06T10:50:25+00:00",
+   "pt:vicky:journalist-portugal",
+   "published"
+  ],
+  [
+   "2026-11-06T10:51:35+00:00",
+   "pt:vicky:journalist-connections",
+   "published"
+  ],
+  [
+   "2026-11-06T11:02:11+00:00",
+   "pt:vicky:checker",
+   "published"
+  ],
+  [
+   "2026-11-06T17:34:37+00:00",
+   "pt:dinis:observability",
+   "published"
+  ],
+  [
+   "2026-11-06T18:58:26+00:00",
+   "pt:vicky:dev",
+   "published"
+  ],
+  [
+   "2026-11-06T19:49:25+00:00",
+   "pt:vicky:reviewer",
+   "published"
+  ],
+  [
+   "2026-11-06T19:49:25+00:00",
+   "pt:vicky:reviewer",
+   "ended"
+  ],
+  [
+   "2026-11-06T20:08:08+00:00",
+   "pt:dinis:investors",
+   "published"
+  ],
+  [
+   "2026-11-06T20:19:48+00:00",
+   "pt:vicky:curator",
+   "ended"
+  ],
+  [
+   "2026-11-06T20:32:13+00:00",
+   "pt:vicky:curator",
+   "published"
+  ],
+  [
+   "2026-11-06T21:56:14+00:00",
+   "pt:dinis:conductor.b",
+   "published"
+  ],
+  [
+   "2026-11-06T22:26:42+00:00",
+   "pt:dinis:librarian",
+   "ended"
+  ],
+  [
+   "2026-11-06T22:45:21+00:00",
+   "pt:dinis:designer.experiments",
+   "ended"
+  ],
+  [
+   "2026-11-06T22:45:21+00:00",
+   "pt:dinis:designer.experiments",
+   "published"
+  ],
+  [
+   "2026-11-06T22:45:54+00:00",
+   "pt:dinis:synthetic",
+   "ended"
+  ],
+  [
+   "2026-11-06T22:46:12+00:00",
+   "pt:dinis:journalist",
+   "ended"
+  ],
+  [
+   "2026-11-06T22:46:39+00:00",
+   "pt:dinis:designer",
+   "ended"
+  ],
+  [
+   "2026-11-06T22:46:39+00:00",
+   "pt:dinis:designer",
+   "published"
+  ],
+  [
+   "2026-11-06T22:47:08+00:00",
+   "pt:dinis:customers",
+   "ended"
+  ],
+  [
+   "2026-11-06T22:47:08+00:00",
+   "pt:dinis:customers",
+   "published"
+  ],
+  [
+   "2026-11-06T22:47:21+00:00",
+   "pt:dinis:ontologist",
+   "ended"
+  ],
+  [
+   "2026-11-06T22:47:54+00:00",
+   "pt:dinis:researcher",
+   "ended"
+  ],
+  [
+   "2026-11-06T22:47:54+00:00",
+   "pt:dinis:researcher",
+   "published"
+  ],
+  [
+   "2026-11-06T22:48:34+00:00",
+   "pt:dinis:devops",
+   "ended"
+  ],
+  [
+   "2026-11-06T22:48:34+00:00",
+   "pt:dinis:devops",
+   "published"
+  ],
+  [
+   "2026-11-06T22:48:52+00:00",
+   "pt:dinis:outreach",
+   "ended"
+  ],
+  [
+   "2026-11-06T22:48:52+00:00",
+   "pt:dinis:outreach",
+   "published"
+  ],
+  [
+   "2026-11-06T22:49:18+00:00",
+   "pt:dinis:investors",
+   "ended"
+  ],
+  [
+   "2026-11-06T22:49:18+00:00",
+   "pt:dinis:investors",
+   "published"
+  ],
+  [
+   "2026-11-06T22:49:36+00:00",
+   "pt:dinis:backup",
+   "ended"
+  ],
+  [
+   "2026-11-06T22:49:36+00:00",
+   "pt:dinis:backup",
+   "published"
+  ],
+  [
+   "2026-11-06T22:49:54+00:00",
+   "pt:dinis:historian",
+   "ended"
+  ],
+  [
+   "2026-11-06T22:49:54+00:00",
+   "pt:dinis:historian",
+   "published"
+  ],
+  [
+   "2026-11-06T22:50:21+00:00",
+   "pt:dinis:correspondent",
+   "ended"
+  ],
+  [
+   "2026-11-06T22:50:41+00:00",
+   "pt:dinis:sherpa",
+   "ended"
+  ],
+  [
+   "2026-11-06T22:50:41+00:00",
+   "pt:dinis:sherpa",
+   "published"
+  ],
+  [
+   "2026-11-06T23:09:46+00:00",
+   "pt:angelo:writer",
+   "published"
+  ],
+  [
+   "2026-11-06T23:17:30+00:00",
+   "pt:dinis:dev",
+   "ended"
+  ],
+  [
+   "2026-11-07T00:30:12+00:00",
+   "pt:dinis:dev.pages",
+   "ended"
+  ],
+  [
+   "2026-11-07T00:30:12+00:00",
+   "pt:dinis:dev.pages",
+   "published"
+  ],
+  [
+   "2026-11-07T00:39:39+00:00",
+   "pt:dinis:dev.data",
+   "ended"
+  ],
+  [
+   "2026-11-07T00:39:39+00:00",
+   "pt:dinis:dev.data",
+   "published"
+  ],
+  [
+   "2026-11-07T00:39:39+00:00",
+   "pt:dinis:dev.graphs",
+   "ended"
+  ],
+  [
+   "2026-11-07T00:39:39+00:00",
+   "pt:dinis:dev.graphs",
+   "published"
+  ],
+  [
+   "2026-11-07T00:39:39+00:00",
+   "pt:dinis:dev.portugal",
+   "published"
+  ],
+  [
+   "2026-11-07T00:39:39+00:00",
+   "pt:dinis:dev.search",
+   "ended"
+  ],
+  [
+   "2026-11-07T00:39:39+00:00",
+   "pt:dinis:dev.search",
+   "published"
+  ],
+  [
+   "2026-11-07T00:39:39+00:00",
+   "pt:dinis:dev.verify",
+   "ended"
+  ],
+  [
+   "2026-11-07T00:39:39+00:00",
+   "pt:dinis:dev.verify",
+   "published"
+  ],
+  [
+   "2026-11-07T03:11:42+00:00",
+   "pt:dinis:dev.portugal",
+   "ended"
+  ],
+  [
+   "2026-11-07T19:46:56+00:00",
+   "pt:jose:writer",
+   "published"
+  ],
+  [
+   "2026-11-08T00:24:42+00:00",
+   "pt:dinis:investors.packs",
+   "published"
+  ]
+ ],
+ "comms": {
+  "source": "board/team/security/comms/comms.json",
+  "made": "2026-11-06T16:16Z",
+  "rows": [
+   [
+    "2026-11-06T00:46:00Z",
+    "newsroom@web-summit.dinis",
+    "pt:dinis:conductor",
+    "message"
+   ],
+   [
+    "2026-11-06T01:53:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:observability",
+    "message"
+   ],
+   [
+    "2026-11-06T02:34:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:outreach",
+    "message"
+   ],
+   [
+    "2026-11-06T02:34:00Z",
+    "pt:dinis:observability",
+    "pt:dinis:conductor",
+    "message"
+   ],
+   [
+    "2026-11-06T03:14:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:historian",
+    "session"
+   ],
+   [
+    "2026-11-06T03:20:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:observability",
+    "message"
+   ],
+   [
+    "2026-11-06T03:32:00Z",
+    "pt:dinis:observability",
+    "pt:dinis:conductor",
+    "message"
+   ],
+   [
+    "2026-11-06T03:41:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:devops",
+    "session"
+   ],
+   [
+    "2026-11-06T03:41:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:accountant",
+    "session"
+   ],
+   [
+    "2026-11-06T03:41:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:security",
+    "session"
+   ],
+   [
+    "2026-11-06T03:41:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:sherpa",
+    "session"
+   ],
+   [
+    "2026-11-06T03:41:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:librarian",
+    "session"
+   ],
+   [
+    "2026-11-06T03:44:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:security",
+    "message"
+   ],
+   [
+    "2026-11-06T03:44:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:correspondent",
+    "session"
+   ],
+   [
+    "2026-11-06T03:54:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:sherpa",
+    "message"
+   ],
+   [
+    "2026-11-06T03:54:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:librarian",
+    "message"
+   ],
+   [
+    "2026-11-06T04:05:00Z",
+    "pt:dinis:sherpa",
+    "pt:dinis:conductor",
+    "message"
+   ],
+   [
+    "2026-11-06T04:17:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:correspondent",
+    "message"
+   ],
+   [
+    "2026-11-06T04:19:00Z",
+    "pt:dinis:correspondent",
+    "pt:dinis:conductor",
+    "message"
+   ],
+   [
+    "2026-11-06T04:36:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:observability",
+    "message"
+   ],
+   [
+    "2026-11-06T04:40:00Z",
+    "pt:dinis:ontologist",
+    "pt:dinis:conductor",
+    "sealed"
+   ],
+   [
+    "2026-11-06T05:20:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:abp",
+    "sealed"
+   ],
+   [
+    "2026-11-06T05:27:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:customers",
+    "session"
+   ],
+   [
+    "2026-11-06T05:28:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:abp",
+    "sealed"
+   ],
+   [
+    "2026-11-06T05:28:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:security",
+    "sealed"
+   ],
+   [
+    "2026-11-06T05:35:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:designer.experiments",
+    "session"
+   ],
+   [
+    "2026-11-06T05:35:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:researcher",
+    "session"
+   ],
+   [
+    "2026-11-06T05:35:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:backup",
+    "session"
+   ],
+   [
+    "2026-11-06T05:38:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:ontologist",
+    "sealed"
+   ],
+   [
+    "2026-11-06T05:43:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:outreach",
+    "sealed"
+   ],
+   [
+    "2026-11-06T05:43:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:backup",
+    "sealed"
+   ],
+   [
+    "2026-11-06T05:43:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:security",
+    "sealed"
+   ],
+   [
+    "2026-11-06T05:59:00Z",
+    "pt:dinis:customers",
+    "pt:dinis:conductor",
+    "sealed"
+   ],
+   [
+    "2026-11-06T07:55:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:accountant",
+    "sealed"
+   ],
+   [
+    "2026-11-06T08:54:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:sherpa",
+    "sealed"
+   ],
+   [
+    "2026-11-06T10:11:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:ontologist",
+    "message"
+   ],
+   [
+    "2026-11-06T10:11:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:accountant",
+    "sealed"
+   ],
+   [
+    "2026-11-06T10:13:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:accountant",
+    "sealed"
+   ],
+   [
+    "2026-11-06T10:13:00Z",
+    "pt:dinis:ontologist",
+    "pt:dinis:conductor",
+    "message"
+   ],
+   [
+    "2026-11-06T10:47:00Z",
+    "pt:dinis:synthetic",
+    "pt:dinis:abp",
+    "sealed"
+   ],
+   [
+    "2026-11-06T11:54:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:outreach",
+    "sealed"
+   ],
+   [
+    "2026-11-06T12:53:00Z",
+    "pt:dinis:accountant",
+    "pt:dinis:conductor",
+    "sealed"
+   ],
+   [
+    "2026-11-06T13:16:00Z",
+    "pt:dinis:librarian",
+    "pt:dinis:abp",
+    "sealed"
+   ],
+   [
+    "2026-11-06T13:42:00Z",
+    "pt:dinis:customers",
+    "pt:dinis:abp",
+    "sealed"
+   ],
+   [
+    "2026-11-06T14:07:00Z",
+    "pt:dinis:customers",
+    "pt:dinis:devops",
+    "sealed"
+   ],
+   [
+    "2026-11-06T14:07:00Z",
+    "pt:dinis:security",
+    "pt:dinis:librarian",
+    "sealed"
+   ],
+   [
+    "2026-11-06T14:10:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:devops",
+    "message"
+   ],
+   [
+    "2026-11-06T14:10:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:outreach",
+    "message"
+   ],
+   [
+    "2026-11-06T14:10:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:ontologist",
+    "message"
+   ],
+   [
+    "2026-11-06T14:10:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:synthetic",
+    "message"
+   ],
+   [
+    "2026-11-06T14:10:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:observability",
+    "message"
+   ],
+   [
+    "2026-11-06T14:10:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:correspondent",
+    "message"
+   ],
+   [
+    "2026-11-06T14:10:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:sherpa",
+    "message"
+   ],
+   [
+    "2026-11-06T14:11:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:designer.experiments",
+    "message"
+   ],
+   [
+    "2026-11-06T14:11:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:researcher",
+    "message"
+   ],
+   [
+    "2026-11-06T14:11:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:security",
+    "message"
+   ],
+   [
+    "2026-11-06T14:11:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:librarian",
+    "message"
+   ],
+   [
+    "2026-11-06T14:11:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:backup",
+    "message"
+   ],
+   [
+    "2026-11-06T14:11:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:customers",
+    "message"
+   ],
+   [
+    "2026-11-06T14:11:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:abp",
+    "message"
+   ],
+   [
+    "2026-11-06T14:11:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:accountant",
+    "message"
+   ],
+   [
+    "2026-11-06T14:11:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:historian",
+    "message"
+   ],
+   [
+    "2026-11-06T14:11:00Z",
+    "pt:dinis:designer.experiments",
+    "pt:dinis:conductor",
+    "sealed"
+   ],
+   [
+    "2026-11-06T14:11:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:researcher",
+    "message"
+   ],
+   [
+    "2026-11-06T14:12:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:researcher",
+    "message"
+   ],
+   [
+    "2026-11-06T14:12:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:ontologist",
+    "message"
+   ],
+   [
+    "2026-11-06T14:12:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:sherpa",
+    "message"
+   ],
+   [
+    "2026-11-06T14:12:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:synthetic",
+    "message"
+   ],
+   [
+    "2026-11-06T14:12:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:correspondent",
+    "message"
+   ],
+   [
+    "2026-11-06T14:14:00Z",
+    "pt:dinis:researcher",
+    "pt:dinis:conductor",
+    "message"
+   ],
+   [
+    "2026-11-06T14:16:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:ontologist",
+    "message"
+   ],
+   [
+    "2026-11-06T14:16:00Z",
+    "pt:dinis:ontologist",
+    "pt:dinis:conductor",
+    "message"
+   ],
+   [
+    "2026-11-06T14:17:00Z",
+    "pt:dinis:ontologist",
+    "pt:dinis:conductor",
+    "message"
+   ],
+   [
+    "2026-11-06T15:24:00Z",
+    "pt:dinis:ontologist",
+    "pt:dinis:librarian",
+    "sealed"
+   ],
+   [
+    "2026-11-06T15:44:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:customers",
+    "message"
+   ],
+   [
+    "2026-11-06T15:54:00Z",
+    "pt:dinis:conductor",
+    "pt:dinis:outreach",
+    "message"
+   ]
+  ],
+  "left_out": 437,
+  "unplaced": [
+   "conductor.3@web-summit",
+   "crm@web-summit",
+   "designer-2@PrompTugal",
+   "designer@PrompTugal",
+   "dev.data@PrompTugal",
+   "dev.graphs@PrompTugal",
+   "dev.pages@PrompTugal",
+   "dev.portugal@PrompTugal",
+   "dev.search@PrompTugal",
+   "dev.verify@PrompTugal",
+   "dev@PrompTugal",
+   "investors@web-summit",
+   "journalist@PrompTugal",
+   "observability@web-summit"
+  ]
+ }
 }

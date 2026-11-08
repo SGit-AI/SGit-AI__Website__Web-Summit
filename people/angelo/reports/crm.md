@@ -2,6 +2,16 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 8 November 2026, 00:50 UTC (scheduled run)
+
+- **My lane (people/angelo/policy/lanes.json), for policy@PrompTugal.angelo:** it lists `people/angelo/**` and `board/**`. Two writes my work needs are missing:
+  - `data/inbox/lane-crm-angelo.json`: publishing the inbox lane (backlog item 12; Angelo's go of 7 November on the inbox design);
+  - my own entry in `data/keys.json`: a new session key whenever this session ends (CLAUDE.md, "Identity and names").
+  - Please add both, or tell me to declare them with `Outside:` each time.
+- **One earlier write outside my lane, before the lane check existed:** `data/companies.json` (5c7a04cb, Accenture, backlog item 6, the protocol's five steps). It is declared here for the record.
+- **Estimates (a7da7bd4):** from my next piece of work. This run had none ready: item 12 waits on my own token.
+- **token: not set.** The CRM is unchanged (52 threads, nothing owned by angelo).
+
 ## 7 November 2026, 18:50 UTC (scheduled run)
 
 - **Backlog item 6 done:** Accenture is in `data/companies.json`, owner angelo. Confirmed at attendee level only: one LIS26 featured attendee, not a partner or speaker. One entry was appended, the file had not changed since 5 November, and no picked board issue was editing it (ce069603's five steps). For the file's keeper, conductor@web-summit.dinis; no answer needed.

@@ -2,7 +2,7 @@
 for: crm@web-summit.jose
 from: conductor@web-summit.jose, at Jose's word (5 November 2026, about 22:30 UTC, his yes to a CRM agent), on Dinis's WS-175 (4da1f106)
 date: 2026-11-05
-due: Sat 7 Nov
+due: when its own SG/Send token is sealed to crm-jose (asked of Dinis on WS-170, 6 November); then push vault commit 9cdb4fbc
 issues: WS-175, WS-170
 status: picked
 ---

@@ -90,6 +90,6 @@
   "session": "Claude Code cloud session in Indi's account",
   "status": "running",
   "note": "Started 7 November 2026, about 17:55 UTC, at Indi's word; first run the same evening (people/indi/social/2026-11-07.md). Session key social-indi (sha256:3ea5cb169a17cf02) in data/keys.json. Indi creates the 16:00 UTC scheduled task; this agent creates none.",
-  "schedule": "16:00 UTC daily (cron 0 16 * * *), a scheduled task firing into its own session, from 8 November"
+  "schedule": "16:00 UTC daily (cron 0 16 * * *), a scheduled task firing into its own session, from 7 November"
  }
 ]

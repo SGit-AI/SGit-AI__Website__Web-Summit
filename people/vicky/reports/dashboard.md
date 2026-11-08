@@ -144,3 +144,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Tables rebuilt (board-health.md 07:40, the 18:00 agenda, the 7 Nov brief, board front matter). New in "Needs me": Dinis's and your yes or no on parking the late unowned issues (18:00 agenda). Brief items 1 and 2 (the guard, the shortlist push) are done, so not shown. "To follow up" is now in due order.
 - Story candidates refreshed: 21 stories, 59 sources, all links (desks/curator/README.md, 11:50 UTC).
 - state: ok; done: SA16 applied, tables and stories refreshed; next: 07:50 wake on 8 Nov; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 07:55 UTC (wake)
+
+- Read people/vicky/decisions.md (212e084d; seven new conductor commits since last night, each with the Agent: line, pushed by riskmandate-vicky). No HOLD.md; session key present. Re-read prompts/dashboard.md (P2): it matches. **Applied SA21**: the Live AI Office link is on the "My agents" line (dev put it there) and stays through every rebuild; I touched nothing of dev's office pages.
+- Tables rebuilt (board-health.md 07:40, board front matter, the 18:00 agenda; no 12:00 agenda or new brief yet). The parking yes or no (team-collaboration's note 07:42: not taken in 24 hours) stays first in "Needs me", now overdue. WS-32 is now overdue; WS-168 and WS-166 are due today.
+- Story candidates refreshed: 23 stories, 61 sources, all links (desks/curator/README.md).
+- state: ok; done: SA21 applied, tables and stories refreshed; next: 17:45 wake; ask: none; run: scheduled

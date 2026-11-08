@@ -45,12 +45,14 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt (6 November 2026)
 
+**From 8 Nov (SCHED-WS):** writing at :09 past 06, 11, 15, 19 UTC; fix-only at :14 past 07, 12, 16, 20 UTC (`trig_014fa4xbTLFyrXdfF4pzv8KD`), both set by the conductor at Vicky's word, 7 Nov.
+
 Daily at 08:24, 12:24, 16:24 and 20:24 UTC since 7 November 2026, 20:25 UTC (SCHED-7NOV, four rounds; from 16:25 that day it was three rounds, 08:24, 12:24 and 20:24; before that 08:24 and 16:24 from P5, and 08:00 and 16:00 at first), firing into this session (scheduled task trig_01RqSqjPAC6WuwNmTbjKFzwa).
 
 ```
 Scheduled run for journalist-connections@PrompTugal.vicky:
 1. Read people/vicky/decisions.md on the team site and follow it.
-2. Check your newsroom remote points at PrompTugal/PrompTugal__News__Website, then pull dev.
+2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
 3. Read desks/journalist-vicky/STYLE.md.
 4. Read desks/curator/README.md and pick the storylines in your beat that have no draft yet in desks/journalist-vicky/drafts/, desks/journalist-promptugal/drafts/ or content/articles/.
 5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: journalist@PrompTugal.dinis.
@@ -63,7 +65,30 @@ Added on 7 November 2026 at Vicky's word (decisions.md, SA13 and SA16):
 - P1 (the hold): At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
 - P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
 - P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
+
+Added on 8 November 2026 at Vicky's word (decisions.md, SA19 and REMOTE-WS):
+- Standing answer 19 (theme-led connection stories): Use only public information. Do not use CRM data, private meetings, interview shortlist information or private outreach. journalist-connections: write these as natural editorial stories, not matchmaking reports; for each person or company, explain briefly who they are, why they are relevant to the theme, and why they may be worth knowing; avoid forced partnership language and generic "synergy" framing; do not claim that two parties are interested in each other or should work together; prefer themes and connections that remain useful after Web Summit.
 ```
+
+The writing task's step 2 was changed on 8 November 2026 at Vicky's word (REMOTE-WS); before then it read "2. Check your newsroom remote points at PrompTugal/PrompTugal__News__Website, then pull dev."
+
+## Fix-only task's prompt (8 November 2026)
+
+At :14 past 07, 12, 16 and 20 UTC (scheduled task trig_014fa4xbTLFyrXdfF4pzv8KD), created by the conductor at Vicky's word on 7 November 2026 (standing answer 18, SA18); step 2 changed by this agent on 8 November 2026 (REMOTE-WS).
+
+```
+Fix-only follow-up run for journalist-connections@PrompTugal.vicky (standing answer 18 in people/vicky/decisions.md; Web Summit timetable, Vicky's word, 7 November 2026). Not a writing round.
+1. Read people/vicky/decisions.md on the team site and follow it, P1 to P3 included (stop if people/vicky/HOLD.md exists; re-read your own people/vicky/prompts/<short name>.md; end your report line with the status block).
+2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
+3. Check desks/reviewer-vicky/reviews/ for any new Fix first on your own drafts since your last run. Revise only those drafts, following STYLE.md and the review, and repush each through newsroom/tools/release.sh, For: reviewer@PrompTugal.vicky.
+4. Never pick up a new storyline in this run.
+5. If there is nothing to fix, write nothing, push nothing and add no report line.
+6. If you revised a draft, add one report line in people/vicky/reports/journalist-connections.md on the team site, ending with the status block (run: scheduled).
+Never push to main, never use --force, never push to a session branch.
+```
+
+Standing answer 18 (Vicky, 7 November 2026), as decisions.md gives it: a fix-only follow-up run after each reviewer round; not a new writing round. It only checks your own reviews in `desks/reviewer-vicky/reviews/` for any new Fix first result, revises and repushes that draft if needed, stays silent if there is nothing to fix, and does not pick up a new storyline.
+
 
 ## Standing rules given in chat, word for word
 

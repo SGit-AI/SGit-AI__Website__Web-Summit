@@ -258,7 +258,99 @@ function replay(root) {
     // only the published read key's record (people/dinis/vaults.json), which the page uses to read latest/runs.json itself
     const obs = ((readJson(root, 'people/dinis/vaults.json') || {}).vaults || []).find(v => v.agent === 'observability@web-summit.dinis' && /^sgit_public_read_[0-9a-f]{64}$/.test(v.read_key || ''))
     const runs = obs ? { endpoint: 'https://dev.send.sgraph.ai', vault_id: obs.vault_id, read_key: obs.read_key, path: 'latest/runs.json', source: 'people/dinis/vaults.json' } : null
-    return { from: new Date(REPLAY_FROM).toISOString(), people, agents, targets, events, standups, runs, repo: 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit' }
+    return { from: new Date(REPLAY_FROM).toISOString(), people, agents, targets, events, standups, runs, live: liveEvents(root), repo: 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit' }
+}
+
+// spec-live-map.md section 2 (approved 7 November, c6fc4442), the record's own events, from the public files and their commits;
+// vault@'s data-and-who-may-see-it.md is the rule. Each is [minutes since REPLAY_FROM, ...names]; before 2 November is negative.
+// keys: [t, agent, 'published'|'ended'], from each commit of data/keys.json. handovers: [t, by, to], every file in data/sealed/
+// drawn only as "a key handed over" (decision 1): never its name, kind or contents. lanes: [t, agent, 'inbox'|'feedback'], an
+// agent that can receive sealed messages, from the commit that first gave it the lane. messages: [t, agent, 'sent'|'verified',
+// commit], a sealed message an agent says it sent or verified. comms: [t, from, to, kind], the newsroom's comms ledger. Names
+// only: no token, key or vault id.
+const minsOf = iso => Math.round((Date.parse(iso) - REPLAY_FROM) / 6e4)
+const sealedAt = a => { const m = String(a || '').match(/^(\d{4}-\d\d-\d\d)T(\d\d):?(\d\d)(?::?(\d\d))?(?:\.\d+)?Z$/); return m ? `${m[1]}T${m[2]}:${m[3]}:${m[4] || '00'}Z` : null }
+function liveEvents(root) {
+    const keysNow = (readJson(root, 'data/keys.json') || {}).keys || []
+    // a name as the replay's agents carry it: an old name becomes the name its person's agents.json declares now
+    const DECL = declaredNames(root, ((readJson(root, 'data/team.json') || {}).members || []).filter(m => m.kind === 'human'))
+    const asNow = n => { const d = DECL.get(canon(n)); return viewId(d ? d.name : n) }
+    const agentOfKey = k => { const n = k.agent || (String(k.label || '').match(new RegExp(NAME_SRC, 'i')) || [])[0]; return n && parseName(n) ? asNow(n) : null }
+    const byId = new Map(keysNow.map(k => [k.id, agentOfKey(k)]))
+    // keys: replay the file's history, commit by commit, and note when each id first appears and when it stops being active
+    const keys = [], seen = new Map()
+    for (const line of git(root, ['log', '--reverse', '--format=%H %cI', '--', 'data/keys.json']).trim().split('\n').filter(Boolean)) {
+        const [h, at] = line.split(' '); let ks
+        try { ks = JSON.parse(git(root, ['show', `${h}:data/keys.json`])).keys || [] } catch { continue }
+        for (const k of ks) {
+            const who = agentOfKey(k) || byId.get(k.id); if (!who) continue
+            if (!byId.has(k.id)) byId.set(k.id, who)
+            const on = !k.status || k.status === 'active', was = seen.get(k.id)
+            if (was === undefined) keys.push([minsOf(at), who, on ? 'published' : 'ended'])
+            else if (was && !on) keys.push([minsOf(at), who, 'ended'])
+            else if (!was && on) keys.push([minsOf(at), who, 'published'])
+            seen.set(k.id, on)
+        }
+    }
+    // handovers: by and to, and when; "to" is a person's id or a key's id
+    const people = new Set(((readJson(root, 'data/team.json') || {}).members || []).filter(m => m.kind === 'human').map(m => m.id))
+    const party = n => { n = String(n || '').trim(); if (people.has(n)) return n; if (parseName(n)) return asNow(n); return byId.get(n) || null }
+    const handovers = [], sdir = path.join(root, 'data/sealed')
+    const walk = d => fs.existsSync(d) ? fs.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(path.join(d, e.name)) : e.name.endsWith('.json') ? [path.join(d, e.name)] : []) : []
+    for (const f of walk(sdir)) {
+        let j; try { j = JSON.parse(fs.readFileSync(f, 'utf8')) } catch { continue }
+        const by = party(j.by), to = party(j.to) || party(j.agent), at = sealedAt(j.at)
+        if (by && to && at && by !== to) handovers.push([minsOf(at), by, to])
+    }
+    handovers.sort((x, y) => x[0] - y[0])
+    // lanes: the inbox lane files, and the feedback pane's lanes, each from the commit that first gave the agent its lane
+    const lanes = [], firstAt = rel => git(root, ['log', '--diff-filter=A', '--format=%cI', '--', rel]).trim().split('\n').pop()
+    const idir = path.join(root, 'data/inbox')
+    for (const f of fs.existsSync(idir) ? fs.readdirSync(idir).filter(x => /^lane-.*\.json$/.test(x)) : []) {
+        const j = readJson(root, `data/inbox/${f}`) || {}, at = firstAt(`data/inbox/${f}`)
+        if (parseName(j.agent || '') && at) lanes.push([minsOf(at), asNow(j.agent), 'inbox'])
+    }
+    const fbSeen = new Set()
+    for (const line of git(root, ['log', '--reverse', '--format=%H %cI', '--', 'assets/feedback.json']).trim().split('\n').filter(Boolean)) {
+        const [h, at] = line.split(' '); let ls
+        try { ls = JSON.parse(git(root, ['show', `${h}:assets/feedback.json`])).lanes || [] } catch { continue }
+        for (const l of ls) if (parseName(l.agent || '') && !fbSeen.has(l.agent)) { fbSeen.add(l.agent); lanes.push([minsOf(at), asNow(l.agent), 'feedback']) }
+    }
+    lanes.sort((x, y) => x[0] - y[0]); keys.sort((x, y) => x[0] - y[0])
+    // messages: a sealed or signed message sent or verified, only where an agent says so in its own commit's subject (a body
+    // often quotes others' events, so it is not read). [t, agent, 'sent'|'verified', short commit]: never the subject's text.
+    const messages = [], MSG_V = /\b(?:signed|sealed) message\b[^;]{0,40}?\b(?:verified|read)\b|\breply verified\b|\bverified both ways\b|\bworks both ways\b|\bsignature verified\b/i
+    const MSG_S = /\b(?:signed|sealed) (?:message|test|reply)\b[^;]{0,40}?\bsent\b|\breply sent to\b|\bsent (?:on|to) (?:\S+ ){0,3}lane\b|\b(?:a|my|the) first sealed message\b|\bsealed test\b/i
+    for (const c of git(root, ['log', '--since=2026-11-02T00:00:00Z', '--format=%h%x1f%cI%x1f%s%x1f%b%x1e']).split('\x1e')) {
+        const [h, at, s = '', b = ''] = c.trim().split('\x1f'); if (!h || /^site v\d/.test(s)) continue
+        const kind = MSG_V.test(s) ? 'verified' : MSG_S.test(s) ? 'sent' : null; if (!kind) continue
+        const who = committer(s, b), wp = who && parseName(who)
+        if (wp && people.has(wp.person)) messages.push([minsOf(at), asNow(who), kind, h.slice(0, 8)])
+    }
+    // the newsroom (piece 3), from the snapshot people/angelo/tools/promptugal-snapshot.mjs writes: its agents' key events join
+    // keys, and security@PrompTugal.dinis's comms ledger gives comms: [t, from, to, 'message'|'session'|'sealed'], names only
+    const PT = readJson(root, 'people/angelo/app/promptugal.json') || {}
+    for (const [at, who, st] of PT.keys || []) if (/^(published|ended)$/.test(st) && Date.parse(at)) keys.push([minsOf(at), who, st])
+    keys.sort((x, y) => x[0] - y[0])
+    const comms = ((PT.comms || {}).rows || []).filter(r => Date.parse(r[0]) && /^(message|session|sealed)$/.test(r[3])).map(([at, f, t, k]) => [minsOf(at), f, t, k]).sort((x, y) => x[0] - y[0])
+    messages.sort((x, y) => x[0] - y[0])
+    return neverList(root, { keys, handovers, lanes, messages, comms })
+}
+// the never list (data-and-who-may-see-it.md): no sealed file's name, no token, no key, no vault id. Anything that looks like one
+// drops the whole section, so a leak is never published; the build says why.
+export function neverList(root, live) {
+    const text = JSON.stringify(live), bad = []
+    const sdir = path.join(root, 'data/sealed'), names = []
+    const walk = d => fs.existsSync(d) ? fs.readdirSync(d, { withFileTypes: true }).forEach(e => e.isDirectory() ? walk(path.join(d, e.name)) : names.push(e.name.replace(/\.json$/, ''))) : null
+    walk(sdir)
+    for (const n of names) if (text.includes(n) || text.includes(n.replace(/^[\dT-]+Z-/, ''))) bad.push('a sealed file name')
+    if (/[0-9a-f]{32,}/i.test(text)) bad.push('a token or hash')
+    if (/BEGIN [A-Z ]*KEY|sgit_[a-z_]+_[0-9a-f]/i.test(text)) bad.push('a key')
+    const vaults = new Set([...(((readJson(root, 'assets/feedback.json') || {}).lanes) || []).map(l => l.vault_id)].filter(Boolean))
+    for (const f of fs.existsSync(path.join(root, 'data/inbox')) ? fs.readdirSync(path.join(root, 'data/inbox')) : []) { const v = (readJson(root, `data/inbox/${f}`) || {}).vault_id; if (v) vaults.add(v) }
+    for (const v of vaults) if (text.includes(`"${v}"`)) bad.push('a vault id')
+    if (bad.length) { console.error(`people/angelo/app/data.mjs: the live section is left out, it held ${[...new Set(bad)].join(', ')}`); return { error: 'left out by the never list' } }
+    return live
 }
 
 // For me (spec-kanban-tasks.md, approved 7 November, cb97bf39): Angelo's tasks as cards from four public sources, placed in
@@ -385,6 +477,17 @@ export function build(root, person, now = new Date()) {
             M.links.push({ from: me, to: host, n: 1, as: true })
           }
           M.totals = { ...M.totals, agents: M.agents.length } }
+        // sessionless agents (backlog 00c; dev.map@PrompTugal.angelo, 8 November): every agent its person declares as a fresh
+        // session each run (the runners and the workers). One already on the map keeps its node and gets its kind if it had none;
+        // one not on the map (its commits are on its workers/ branch, or it has not run yet) is listed in M.sessionless, which only
+        // the live graph draws, beside its person, so it is seen between runs too. Names only, from the agents.json files.
+        { const byId = new Map(M.agents.map(a => [a.id, a])); M.sessionless = []
+          for (const p of M.people) for (const a of readJson(root, `people/${p.id}/agents.json`) || []) {
+            if (!a || !a.name || !INV.agentKind || INV.agentKind(a.session, a.schedule) !== 'fresh') continue
+            const me = viewId(a.name), on = byId.get(me)
+            if (on) { if (!on.kind) on.kind = 'fresh'; continue }
+            M.sessionless.push({ id: me, person: p.id, family: me.startsWith('pt:') ? 'PrompTugal' : 'web-summit', short: me.startsWith('pt:') ? me.split(':')[2] : me.split('@')[0], commits: 0, kind: 'fresh' })
+          } }
         // the kinds of work (the third layout): each agent's commits in 7 days that name an issue, by the issue's board area,
         // grouped into seven kinds; the PrompTugal newsroom's agents, from their own repository, count as newsroom work
         const KINDS = [['build', 'Building the site and tools', ['tech', 'agents']], ['content', 'Content and the newsroom', ['content', 'video', 'newsroom']], ['outreach', 'Outreach', ['outreach', 'crm', 'friendly']], ['setup', 'Getting set up', ['onboarding', 'people', 'team']], ['running', 'Running the team', ['pm', 'operator', 'operations', 'ops']], ['riskmandate', 'RiskMandate', ['riskmandate', 'idea']], ['merch', 'Merch and design', ['merch', 'design']]]
@@ -419,4 +522,31 @@ export function summaryMd(d, now = new Date()) {
     md += `\n\n## Needs ${(d.person.name || d.person.id).split(' ')[0]} now (the kanban)\n\n`
     md += need.length ? need.map(i => `- **${i.id}** ${i.title} (${KANBAN.DUE_LABEL[KANBAN.dueBucket(i, now)].toLowerCase()}${(d.kanban.agenda[i.id] || []).some(a => a.forMe && a.status === 'open') ? ', a stand-up item waits on you' : ''})`).join('\n') : 'Nothing overdue, due today or waiting at a stand-up.'
     return md + '\n'
+}
+
+// live.json (people/angelo/proposals/live-map/spec-realtime.md, Angelo's go 7 November): the last 48 hours of exchanges, for the
+// live graph, which reads it again every minute. [minute since 2 Nov, agent index, kind, [For: target indexes], commit, repository index]; names
+// and times only, never a subject or any text. build.mjs writes what this returns, next to data.json.
+export function extras(d) {
+    const R = d.replay; if (!R) return {}
+    const cut = Math.round((Date.now() - Date.parse(R.from)) / 6e4) - 48 * 60
+    // names, not indexes, until the end, so this site's exchanges and the other repositories' share one list
+    const evs = R.events.filter(e => e[0] >= cut && e[1] >= 0).map(e => [e[0], R.agents[e[1]].name, e[2], e[3].map(i => R.targets[i]), e[6], 0])
+    // every other repository the agents work in (backlog 00 point 7: dev.map@PrompTugal.angelo, 8 November): repos-events.json,
+    // written by people/angelo/tools/repos-snapshot.mjs, the same names and times, drawn on the same lines; kind 'x', and the
+    // repository's index into `repos` (0 is this site's dev). A missing or unreadable file leaves this site's exchanges alone.
+    const SITE = 'SGit-AI/SGit-AI__Website__Web-Summit', repos = [SITE + ' (dev)']
+    try {
+        const X = JSON.parse(fs.readFileSync(path.join(HERE, 'repos-events.json'), 'utf8')), x0 = Math.round((Date.parse(X.from) - Date.parse(R.from)) / 6e4)
+        const ri = new Map()
+        for (const e of X.events || []) {
+            const m = x0 + e[0]; if (!(m >= cut)) continue
+            const r0 = (X.repos[e[3]] || {}).repo || '?', rn = r0 === SITE ? SITE + ' (workers)' : r0; if (!ri.has(rn)) { ri.set(rn, repos.length); repos.push(rn) }
+            evs.push([m, X.names[e[1]], 'x', e[2].map(i => X.names[i]), e[4], ri.get(rn)])
+        }
+        evs.sort((a, b) => a[0] - b[0])
+    } catch { /* no other repositories read yet */ }
+    const an = [...new Set(evs.map(e => e[1]))], tn = [...new Set(evs.flatMap(e => e[3]))]
+    const a2 = new Map(an.map((x, i) => [x, i])), t2 = new Map(tn.map((x, i) => [x, i]))
+    return { 'people/angelo/app/live.json': JSON.stringify({ built_at: d.built_at, version: d.version, from: R.from, repos, agents: an, targets: tn, events: evs.map(e => [e[0], a2.get(e[1]), e[2], e[3].map(n => t2.get(n)), e[4], e[5]]) }) }
 }

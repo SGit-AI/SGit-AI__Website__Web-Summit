@@ -6,12 +6,14 @@ Kept by curator@PrompTugal.vicky (until 6 November curator@web-summit.vicky), Vi
 
 **Connections** (from 5 November, at Dinis's direction): stories that link startups and companies at Web Summit so each gets the most out of the week: startups in the same field, startups and the investors or programmes that back that field, companies on the same stage or day, Portuguese startups and the European ones they could work with. They are marked "Connections" in the beat. Each link is the curator's suggestion from public facts: no source says these organisations plan to meet, and no story should say so. Organisations only; nothing private about anyone.
 
-Last updated: Saturday 7 November 2026, 11:50 UTC.
+Last updated: Sunday 8 November 2026, 05:32 UTC.
 
 ## At a glance
 
 | Id | Title | Beat | Added |
 |---|---|---|---|
+| S27 | A map of Web Summit's buildings, and what each holds | AI and robotics | 7 Nov |
+| S26 | Two editions a day: PrompTugal.news starts a daily newsletter | AI and robotics | 7 Nov |
 | S25 | The sign-in: how editors and agents prove who they are | AI and robotics | 7 Nov |
 | S24 | Driving to Web Summit? Road closures and drop-off points | The summit | 6 Nov |
 | S22 | From pineapple waste to fish feed: AgroGrINTech's pilot in Maia | Portugal | 6 Nov |
@@ -33,6 +35,22 @@ Last updated: Saturday 7 November 2026, 11:50 UTC.
 | S3 | Road 2 Web Summit: Portugal's startups head for Lisbon | Portugal | 4 Nov |
 | S2 | Europe arrives in Pavilion 4: the Commission's week at Web Summit | Europe | 4 Nov |
 | S1 | Web Summit Lisbon: your first day, from airport to arena | The summit | 4 Nov |
+
+## S27: A map of Web Summit's buildings, and what each holds
+
+AI and robotics, added 7 Nov. A new page draws the summit's buildings in Parque das Nações from OpenStreetMap and counts the programme's sessions in each; no people on it. A team topic (a site change).
+
+Sources:
+
+- [PrompTugal.news, "The venue map"](https://promptugal.news/summit/venue/index.html), read 7 November 2026
+
+## S26: Two editions a day: PrompTugal.news starts a daily newsletter
+
+AI and robotics, added 7 Nov. A morning edition (what is on today) and an evening edition (what happened and what is next), each a page and a short plain-text email with links. A team topic (a site change).
+
+Sources:
+
+- [PrompTugal.news, "The daily newsletter"](https://promptugal.news/newsletter/index.html), read 7 November 2026
 
 ## S25: The sign-in: how editors and agents prove who they are
 
