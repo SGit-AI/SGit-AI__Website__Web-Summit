@@ -23,7 +23,7 @@ summary: What dev@PrompTugal.angelo holds open, what it waits on, and its open q
 | **Kanban as Angelo's task board** (backlog #0, approved cb97bf39) | Built: For me is the default of `#kanban` (B, the copied line, works now); test `tasks.test.js` | A (signed on the desk's lane) once the desk's token comes (WS-170); the desk adds the backlog Status column and `[A-NN]` ids |
 | **Android** (backlog #7) | Spec approved; dev.android@ in agents.json, kit, new-agents spec, backlog #14 | Repository: I cannot create it (this session's GitHub scope); Angelo creates it, and dev.android@'s task |
 | **ABPs you can watch** (00d) | First night's experiment delivered (64213f46); handed over to dev.abp@PrompTugal.angelo (d37c6c6f), whose workers/dev.abp branch I review | Angelo's decisions in proposals/abp-live/spec-abp-live.md |
-| **pushed-by.mjs** (0a) | Fixed (81e9965a): the same answer in a fresh shallow session; UNKNOWN is not NOT-ANGELO | — |
+| **pushed-by.mjs** (0a) | Fixed (81e9965a): the same answer in a fresh shallow session; UNKNOWN is not NOT-ANGELO | nothing |
 | **The newsroom fix** (0b, 10b) | Still blocked: this session's guard refuses attaching the newsroom with push and running its gate | A permission rule from Angelo, here or in dev.links@'s session |
 | **policy@'s two barriers** (backlog 1b, 318b1c2d) | Built: the signed-only drain (d89d2576) and the lane check, check 21 (42198055), warnings until lanes.json says "enforce": true | policy@ widens dashboard@'s and writer@'s lanes, then turns enforcement on |
 | **Review workers/dev.links** | Reviewed to 069b5509 (run 2: crawler fix, five external 404s for their signers) | Its next run: 1547 unchecked links |
