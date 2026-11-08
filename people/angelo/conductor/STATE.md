@@ -41,6 +41,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Open with Angelo (the desk's list)
 
+- ABP in action, section 10 (abp@web-summit.dinis, 3adf98ba): left as it is (Angelo, 8 Nov about 23:40: "what he published is a sort of summary of what we're doing here. I don't see how he's in any way overlapping with our work. Let's keep building a complete system that we can use or show in demos."). "Keep it to us" means our demo itself is not shown to abp@ or xray@ nor made public until he has seen the final version; a summary of our public results by others is fine.
+
 - Desktop app dropped (Angelo, 8 Nov about 18:10 UTC): the website's pop-out is enough; the urgent CI request to Dinis's conductor withdrawn; no signing.
 
 - Asked the team at Angelo's word (dev@ 05b5bd01, his answer "Ask the team"): whoever has a Mac or an iPad tries the live graph's Pop out in Safari and says whether it keeps moving. Sent 8 Nov about 16:40 UTC to every conductor.
