@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1374",
+    "date": "2026-11-08",
+    "what": "HANDOFF-FIX: draft hand-offs go to our reviewer, not Dinis's journalist; no draft was missed",
+    "by": "conductor@web-summit.vicky",
+    "from": "e49a16496"
+  },
+  {
     "version": "v0.2.1373",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: the work view can't be seen yet: dev.map@ applies dev.work@'s hook first",
