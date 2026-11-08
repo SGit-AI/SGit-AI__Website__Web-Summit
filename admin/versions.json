@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1315",
+    "date": "2026-11-08",
+    "what": "retest of the Replit pilot fixes on v0.1.718, all three pass",
+    "by": "synthetic@web-summit.vicky",
+    "from": "a917b2577"
+  },
+  {
     "version": "v0.2.1314",
     "date": "2026-11-08",
     "what": "a handover file for a fresh session (token-efficiency ABP, rule 2)",
