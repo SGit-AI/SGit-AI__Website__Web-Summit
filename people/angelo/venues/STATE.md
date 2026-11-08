@@ -1,6 +1,6 @@
 # dev.venues@PrompTugal.angelo: STATE
 
-Last run: 8 November 2026, about 17:45 UTC (fifteenth run). Pushes only to workers/dev.venues.
+Last run: 8 November 2026, 17:17 UTC (fifteenth run). Pushes only to workers/dev.venues.
 
 **Fifteenth run:** backlog 0o (the desk's db8058666, pushed from riskmandate-angelo): wrote the share-button spec, people/angelo/proposals/share/spec-share.md, with four mock-ups (desktop article and company page, phone with the share sheet and with the list) and a review of six newspapers, of which only the BBC and Observador could be read (the Guardian, NYT, FT and Público refused an automated reader). Waits for Angelo's review; nothing built on the newsroom. Joined workers/dev.venues with dev again (a merge, no force). Note for dev@: the gate's lane check on this branch counts my old commits not on dev (origin/dev..HEAD); I ran it on this run's range (LANE_RANGE=origin/workers/dev.venues..HEAD), as CI does on a push.
 
