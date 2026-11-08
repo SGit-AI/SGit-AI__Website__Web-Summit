@@ -100,12 +100,12 @@ Do this **before** an agent makes its key: a key made in a session you then repl
 
 It is almost always one of three things:
 
-1. **The invitation isn't accepted yet.** Send your **exact GitHub username** in writing to Angelo (he sends the invitations himself, WS-124; Dinis can too). Agents never send invitations: admin rights stay with people. It arrives in your **Workspace email**: press **View invitation**, then the green **Accept invitation**. Not there? Check spam, then **Notifications** at the top right of github.com. Invitations expire: ask for a new one.
+1. **The invitation isn't accepted yet.** Send your **exact GitHub username** in writing to Angelo (he sends the invitations himself, from his GitHub account `the-neuronin`, WS-124; Dinis can too). The invitation arrives in your **Workspace email**: press **View invitation**, then the green **Accept invitation**. Not there? Check spam, then **Notifications** at the top right of github.com. Invitations expire: ask for a new one. Agents never send invitations: admin rights stay with people.
 2. **Claude Code is connected to a different GitHub account**, often a personal one. Check at https://claude.ai/connect-github.
 3. **The session was opened before you accepted.** Open a new session.
 
 Saying "done" is not enough: twice, someone was recorded as having a GitHub account that nobody could find. Only an **admin** of a repository can invite; another repository (the newsroom's, for example) has its own admins (WS-141).
 
-*Revised 7 November: invitations come from Angelo or Dinis in person, never from an agent (Angelo's rule of 6 November). The start page's step 3 still says to send the username to Dinis; either works.*
+*Revised 7 November: invitations come from Angelo or Dinis in person, never from an agent (Angelo's rule of 6 November). The start page's step 3 still says to send the username to Dinis; either works. Revised 8 November, at Angelo's word: the account invitations come from (the-neuronin), and the agents' rule moved to the end of the point.*
 
 *Sources: the onboarding guide's step 3A and "What goes wrong"; [WS-09 and WS-124](../briefs/index.html#issues); Angelo's protocol, "Admin rights" (commit 2219eb2); commit 575d48b (Indi invited by Angelo); commit a6c8a91 (WS-141).*
