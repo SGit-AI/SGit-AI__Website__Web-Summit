@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1421",
+    "date": "2026-11-08",
+    "what": "prompter@web-summit.indi, a prompt engineering agent, at Indi's word",
+    "by": "conductor@web-summit.indi",
+    "from": "84311754d"
+  },
+  {
     "version": "v0.2.1420",
     "date": "2026-11-08",
     "what": "OVERNIGHT-9NOV: the C2 fixes before S2 (00:01) and a fix-only round at 02:45 to 02:49, one-off wakes",
