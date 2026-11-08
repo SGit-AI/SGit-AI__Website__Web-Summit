@@ -9,13 +9,22 @@
 // Inside the hexagon (backlog 0d): RiskMandate's and PrompTugal.news's logos (their sites' own files), a pulsing LIVE label, and the
 // date and time of the moment on screen, in the viewer's time zone.
 // 3D (d3=1, backlog 0c): the same engine, drawn by live3d.js in WebGL: the same flow, pulses, lit lines and breathing, turned by hand.
+// Layouts (backlog 0e): the map's three (people ring, agents ring, agents and their work), switched by a quiet control in the hexagon's
+// corner, in the page and in the pop-out alike, remembered on this device (lv=<layout> in the address wins).
 (function (root) {
     'use strict'
     const NS = 'http://www.w3.org/2000/svg'
     // the same colours as the map in the command centre (app.js's TM_COL)
     const COL = ['var(--rm-role-conductor)', 'var(--rm-role-dev)', 'var(--rm-gold)', 'var(--rm-role-video)', 'var(--rm-green)', 'var(--rm-role-outreach)', 'var(--rm-orange)', 'var(--rm-blue)', 'var(--rm-red)']
-    const S = 1000, C = S / 2, RP = 300, PULL = 0.55
-    const SCALE = 0.84                    // the graph sits inside the hexagon: its corners are 7% in from the square's
+    const S = 1000, C = S / 2
+    // the map's three layouts (app.js's TM_LAYOUTS and placeFor, the same numbers): where the people sit, how far lines bend inward
+    const LAYOUTS = [['ring', 'People ring'], ['agents', 'Agents ring'], ['work', 'Agents and their work']]
+    // scale: the wide layouts (people at 445) a little smaller in the hexagon, so the top person clears the logos and LIVE
+    const GEO = { ring: { rp: 300, pull: 0.55, scale: 0.84 }, agents: { rp: 445, pull: 0.25, scale: 0.74 }, work: { rp: 445, pull: 0.1, scale: 0.74 } }
+    const LKEY = 'ak.lvLayout'
+    const layoutPref = () => { try { const m = String(root.location.hash).match(/[?&]lv=(\w+)/) || String(root.location.search).match(/[?&]lv=(\w+)/); if (m && GEO[m[1]]) return m[1] } catch { } try { const v = root.localStorage.getItem(LKEY); if (GEO[v]) return v } catch { } return 'ring' }
+    const KIND = { build: ['var(--rm-role-dev)', 6, 0], content: ['var(--rm-role-video)', 3, 0], outreach: ['var(--rm-role-outreach)', 5, 0.45], setup: ['var(--rm-green)', 4, 0], running: ['var(--rm-role-conductor)', 5, 0], riskmandate: ['var(--rm-gold)', 0, 0], merch: ['var(--rm-orange)', 8, 0] }
+    const shapePts = (k, x, y, r) => { const [, n, inner] = KIND[k] || ['', 0, 0]; if (!n) return null; const pts = [], m = inner ? n * 2 : n; for (let q = 0; q < m; q++) { const a = -Math.PI / 2 + q * 2 * Math.PI / m, rr = inner && q % 2 ? r * inner : r; pts.push(`${(x + rr * Math.cos(a)).toFixed(1)},${(y + rr * Math.sin(a)).toFixed(1)}`) } return pts.join(' ') }
     const POLL = (() => { try { return +new URLSearchParams(root.location.search).get('livepoll') || 0 } catch { return 0 } })()   // seconds; only for the tests
     const POLL_MS = POLL ? POLL * 1000 : 60000, SPREAD_MS = POLL ? 0 : 10000, TRAVEL_MS = 1600, FADE_MS = 3200, STALE_MIN = 30
     const DELAY_MS = (+new URLSearchParams(root.location.search || '').get('livedelay') || 4) * 6e4   // a fixed few minutes behind
@@ -25,7 +34,8 @@
     const LOGO_RM = () => new URL('brand/riskmandate-mark.svg', HERE).href, LOGO_PT = tone => new URL(`brand/pt-news-stamp-${tone}.svg`, HERE).href   // local copies (brand/README.md): no call to another site
     const HERE = document.currentScript ? document.currentScript.src : root.location.href
     const CSS = `
-.lv { container-type: size; position: relative; width: 100%; height: 100%; display: grid; place-items: center; background: var(--rm-bg, #07111F); overflow: hidden; }
+.lv { container-type: size; position: relative; width: 100%; height: 100%; display: grid; place-items: center; background: var(--rm-bg, #07111F); }
+/* no overflow: hidden here (backlog 0e): with it, Chromium hit-tested the layout switch in the corners as outside; the frame clips */
 .lv-hex { width: min(100cqw, 100cqh); height: min(100cqw, 100cqh); position: relative; }
 .lv-svg { width: 100%; height: 100%; display: block; }
 .lv-rim { fill: none; stroke: var(--rm-action, #4aa3ff); stroke-width: 3; stroke-linejoin: round; filter: drop-shadow(0 0 7px var(--rm-action, #4aa3ff)); opacity: .8; }
@@ -74,32 +84,63 @@
 .lv-3d-on .lv-svg > g { visibility: hidden; }
 .lv-3dl { position: absolute; left: 0; top: 0; pointer-events: none; font: 600 clamp(9px, 2.2cqmin, 14px)/1 var(--rm-font, system-ui, sans-serif); color: var(--rm-text, #fff); text-shadow: 0 0 4px var(--rm-bg, #07111F), 0 0 2px var(--rm-bg, #07111F); white-space: nowrap; }
 .lv-frame { height: min(78vh, 760px); min-height: 320px; border-radius: var(--rm-radius-card, 12px); overflow: hidden; border: 1px solid var(--rm-border, #294A64); }
+/* the layout switch (backlog 0e): in the empty upper right corner outside the hexagon, quiet until hovered or focused */
+.lv-lay { position: absolute; right: 0; top: 1%; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; z-index: 3; opacity: .4; transition: opacity .2s; }
+.lv-lay:hover, .lv-lay:focus-within { opacity: 1; }
+.lv-lay button { font: 600 clamp(9px, 1.9cqmin, 13px)/1 var(--rm-font, system-ui, sans-serif); color: var(--rm-text-secondary, #9EB2C7); background: var(--rm-surface, #0E2035); border: 1px solid var(--rm-border, #294A64); border-radius: 999px; padding: .35em .6em; cursor: pointer; white-space: nowrap; }
+.lv-lay button[aria-pressed="true"] { color: var(--rm-text, #fff); border-color: var(--rm-action, #4aa3ff); }
+@container (max-width: 420px) { .lv-lay button { width: 1.6em; height: 1.6em; padding: 0; overflow: hidden; text-indent: 3em; position: relative; } .lv-lay button::after { content: attr(data-s); position: absolute; inset: 0; display: grid; place-items: center; text-indent: 0; } }
+.lv-spokes line { stroke-width: 1.2; opacity: .18; }
+.lv-k { opacity: .55; }
+.lv-k polygon, .lv-k circle { fill: none; stroke: var(--kc); stroke-width: 3; }
+.lv-k text { fill: var(--rm-text-secondary, #9EB2C7); font: 600 18px var(--rm-font, system-ui, sans-serif); text-anchor: middle; }
+.lv-links path.wflow { opacity: .12; }
 `
     const f1 = n => n.toFixed(1), SEEN = new Set()   // what has been shown, kept when the page redraws
     const personOf = n => { const m = String(n).match(/@(?:web-summit|promptugal)\.([a-z0-9-]+)$/i) || String(n).match(/^pt:([a-z0-9-]+):/); return m ? m[1].toLowerCase() : n }
 
-    // the people ring, as the map draws it: people on a circle, each person's agents in two or three arcs beside them
-    function layout(M) {
-        const NP = M.people.length, pos = new Map(), col = new Map(M.people.map((p, i) => [p.id, COL[i % COL.length]]))
-        M.people.forEach((p, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / NP; pos.set(p.id, { x: C + RP * Math.cos(a), y: C + RP * Math.sin(a), a, kind: 'p', label: p.name.split(' ')[0], person: p.id }) })
+    // the map's layouts, as app.js's teamMap draws them: "ring", people on a circle, each person's agents in two or three arcs
+    // beside them; "agents" and "work", people outside and each person's agents in their own sector of one ring inside them,
+    // "work" adding the kinds of work at the centre (from data.json's map.work), a faint flow from each agent to each kind
+    function layout(M, L) {
+        const G = GEO[L] || GEO.ring, NP = M.people.length, pos = new Map(), col = new Map(M.people.map((p, i) => [p.id, COL[i % COL.length]]))
+        M.people.forEach((p, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / NP; pos.set(p.id, { x: C + G.rp * Math.cos(a), y: C + G.rp * Math.sin(a), a, kind: 'p', label: p.name.split(' ')[0], person: p.id }) })
         const all = M.agents.concat(M.sessionless || [])   // the sessionless agents not yet on the map stand beside their person too (00c)
         for (const p of M.people) {
-            const mine = all.filter(a => a.person === p.id).sort((x, y) => (y.commits || 0) - (x.commits || 0)), N = mine.length, P = pos.get(p.id)
-            const rows = N > 16 ? 3 : 2, spread = Math.min(Math.PI * (rows === 3 ? 1.3 : 0.95), (0.16 * N + 0.3) / (rows - 1))
-            mine.forEach((a, k) => { const t = P.a + (N > 1 ? -spread / 2 + k * spread / (N - 1) : 0), rr = 100 + (k % rows) * 32; pos.set(a.id, { x: P.x + rr * Math.cos(t), y: P.y + rr * Math.sin(t), kind: 'a', person: a.person, family: a.family, commits: a.commits, label: a.short, fresh: a.kind === 'fresh' }) })
+            const mine = all.filter(a => a.person === p.id).sort((x, y) => (y.commits || 0) - (x.commits || 0)), N = mine.length, P = pos.get(p.id), at = []
+            if (L === 'agents' || L === 'work') {
+                const r0 = 290, r1 = 370, width = 2 * Math.PI / NP * 0.86, rows = Math.max(1, Math.ceil(N / 12)), perRow = Math.ceil(N / rows)
+                for (let k = 0; k < N; k++) { const row = Math.floor(k / perRow), c2 = k % perRow, n = Math.min(perRow, N - row * perRow), t = P.a + (n > 1 ? -width / 2 + c2 * width / (n - 1) : 0), rr = rows > 1 ? r0 + (r1 - r0) * row / (rows - 1) : (r0 + r1) / 2; at.push({ x: C + rr * Math.cos(t), y: C + rr * Math.sin(t) }) }
+            } else {
+                const rows = N > 16 ? 3 : 2, spread = Math.min(Math.PI * (rows === 3 ? 1.3 : 0.95), (0.16 * N + 0.3) / (rows - 1))
+                for (let k = 0; k < N; k++) { const t = P.a + (N > 1 ? -spread / 2 + k * spread / (N - 1) : 0), rr = 100 + (k % rows) * 32; at.push({ x: P.x + rr * Math.cos(t), y: P.y + rr * Math.sin(t) }) }
+            }
+            mine.forEach((a, k) => pos.set(a.id, { x: at[k].x, y: at[k].y, kind: 'a', person: a.person, family: a.family, commits: a.commits, label: a.short, fresh: a.kind === 'fresh' }))
         }
-        return { pos, col }
+        // the kinds of work at the centre (work layout only), sized by their commits, as the map places them
+        const W = L === 'work' && M.work ? M.work : null, wl = W ? W.links.filter(l => pos.has(l.agent)) : [], ktot = {}
+        for (const l of wl) ktot[l.kind] = (ktot[l.kind] || 0) + l.n
+        const kinds = W ? W.kinds.filter(k => ktot[k.id]) : [], kmax = Math.max(1, ...Object.values(ktot))
+        kinds.forEach((k, q) => { const a = -Math.PI / 2 + q * 2 * Math.PI / kinds.length, r = kinds.length > 1 ? 170 : 0; pos.set('k:' + k.id, { x: C + r * Math.cos(a), y: C + r * Math.sin(a), kind: 'k', label: k.label, id: k.id, size: 16 + 22 * Math.sqrt(ktot[k.id] / kmax) }) })
+        return { pos, col, pull: G.pull, wl }
     }
-    const nodeOfIn = pos => n => { const x = pos.get(n); if (x) return n; const pid = personOf(n); return pos.has(pid) && pos.get(pid).kind === 'p' ? pid : null }
-    const bend = (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return { x: mx + (C - mx) * PULL, y: my + (C - my) * PULL } }
-    const curve = (a, b) => { const q = bend(a, b); return `M${f1(a.x)} ${f1(a.y)}Q${f1(q.x)} ${f1(q.y)} ${f1(b.x)} ${f1(b.y)}` }
+    const nodeOfIn = pos => n => { const x = pos.get(n); if (x && x.kind !== 'k') return n; const pid = personOf(n); return pos.has(pid) && pos.get(pid).kind === 'p' ? pid : null }
 
     // mount(host, { D, liveUrl, win }): draws the graph into host (an element, maybe in another window) and keeps it live.
     // Returns { destroy }. win is the window whose clock and frames drive it (the pop-out's own, so it runs when the page is hidden).
+    // The layout switch redraws in place: the instance is replaced, the caller's handle stays the same.
     function mount(host, o) {
+        let inst = null
+        const relayout = L => { try { root.localStorage.setItem(LKEY, L) } catch { } if (inst) inst.destroy(); inst = mountOne(host, o, L, relayout) }
+        inst = mountOne(host, o, o.layout || layoutPref(), relayout)
+        return { destroy() { if (inst) inst.destroy() }, get layout() { return inst && inst.layout } }
+    }
+    function mountOne(host, o, L, relayout) {
         const win = o.win || root, doc = host.ownerDocument, M = o.D && o.D.collab && o.D.collab.map
         if (!M || M.error || !M.people) { host.innerHTML = '<p class="note">The map\'s data is missing from this build.</p>'; return { destroy() { } } }
-        const { pos, col } = layout(M), nodeOf = nodeOfIn(pos), el = (t, a, p) => { const e = doc.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e }
+        if (!GEO[L]) L = 'ring'
+        const SCALE = GEO[L].scale            // the graph sits inside the hexagon: its corners are 7% in from the square's
+        const { pos, col, pull: PULL, wl } = layout(M, L), nodeOf = nodeOfIn(pos), el = (t, a, p) => { const e = doc.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e }
         host.innerHTML = ''
         const wrap = doc.createElement('div'); wrap.className = 'lv'; wrap.setAttribute('role', 'img'); wrap.setAttribute('aria-label', 'The team as one live graph: lines and dots, new exchanges travel along their lines')
         const hex = doc.createElement('div'); hex.className = 'lv-hex'; wrap.appendChild(hex)
@@ -107,11 +148,17 @@
         // the hexagon: a thin glowing rim and a slightly lighter floor; everything outside it is the page's own dark
         el('path', { class: 'lv-fill', d: HEX }, svg); el('path', { class: 'lv-rim', d: HEX }, svg)
         const g = el('g', { transform: `translate(${C} ${C}) scale(${SCALE}) translate(${-C} ${-C})` }, svg)
+        const bend = (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return { x: mx + (C - mx) * PULL, y: my + (C - my) * PULL } }
+        const curve = (a, b) => { const q = bend(a, b); return `M${f1(a.x)} ${f1(a.y)}Q${f1(q.x)} ${f1(q.y)} ${f1(b.x)} ${f1(b.y)}` }
+        // the rings' thin spokes (an agent to its person) and, for work, the faint flows to the kinds, under everything
+        if (L !== 'ring') { const sp = el('g', { class: 'lv-spokes' }, g); for (const [id, n] of pos) if (n.kind === 'a' && pos.get(n.person)) { const P = pos.get(n.person); el('line', { x1: f1(P.x), y1: f1(P.y), x2: f1(n.x), y2: f1(n.y), stroke: col.get(n.person) }, sp) } }
         const links = el('g', { class: 'lv-links' }, g), nodes = el('g', { class: 'tm-nodes' }, g), pulses = el('g', { class: 'lv-pulses' }, g)
         // the graph as it is today: the static links faint under everything, then the people and their agents
         for (const l of M.links || []) { const a = pos.get(l.from), b = pos.get(l.to); if (a && b) el('path', { class: 'base', d: curve(a, b), stroke: col.get((a || {}).person) || 'var(--rm-text-muted)', 'stroke-width': f1(0.6 + 3.4 * Math.sqrt(l.n / Math.max(1, ...M.links.map(x => x.n)))) }, links) }
+        if (wl.length) { const wmax = Math.max(1, ...wl.map(l => l.n)); for (const l of wl) { const a = pos.get(l.agent), b = pos.get('k:' + l.kind); if (a && b) el('path', { class: 'wflow', d: `M${f1(a.x)} ${f1(a.y)}Q${f1((a.x + b.x) / 2 - ((a.x + b.x) / 2 - C) * 0.15)} ${f1((a.y + b.y) / 2 - ((a.y + b.y) / 2 - C) * 0.15)} ${f1(b.x)} ${f1(b.y)}`, stroke: (KIND[l.kind] || ['var(--rm-text-muted)'])[0], 'stroke-width': f1(0.8 + 5 * Math.sqrt(l.n / wmax)) }, links) } }
         const N = new Map()
         for (const [id, n] of pos) {
+            if (n.kind === 'k') { const gk = el('g', { class: 'lv-k', style: `--kc:${(KIND[n.id] || ['var(--rm-text-muted)'])[0]}` }, nodes), pts = shapePts(n.id, n.x, n.y, n.size); if (pts) el('polygon', { points: pts }, gk); else el('circle', { cx: f1(n.x), cy: f1(n.y), r: f1(n.size) }, gk); const t = el('text', { x: f1(n.x), y: f1(n.y + n.size + 18) }, gk); t.textContent = n.label; continue }
             if (n.kind === 'p') { const gp = el('g', { class: 'tm-p' }, nodes); el('circle', { cx: f1(n.x), cy: f1(n.y), r: 26, fill: col.get(id) }, gp); const t = el('text', { x: f1(n.x), y: f1(n.y + 5) }, gp); t.textContent = n.label; N.set(id, gp) }
             else { const ga = el('g', { class: 'tm-a' }, nodes), r = 4 + Math.min(8, Math.sqrt(n.commits || 0)); if (n.family !== 'web-summit') el('rect', { x: f1(n.x - 7), y: f1(n.y - 7), width: 14, height: 14, transform: `rotate(45 ${f1(n.x)} ${f1(n.y)})`, fill: col.get(n.person) }, ga); else el('circle', { cx: f1(n.x), cy: f1(n.y), r: f1(r), fill: col.get(n.person) }, ga)
                 // a sessionless agent (a fresh session each run): the command centre's dashed ring, turning slowly between its runs
@@ -127,6 +174,11 @@
         for (const im of top.querySelectorAll('img')) im.onerror = () => im.classList.add('gone')   // offline: the label stays, the logo steps aside
         const dot = top.querySelector('[data-lv-live]'), when = doc.createElement('div'); when.className = 'lv-when'; when.setAttribute('data-lv-when', '')
         hex.appendChild(top); hex.appendChild(when)
+        // the layout switch: quiet, in the hexagon box's upper right corner, the same in the pop-out
+        const lay = doc.createElement('div'); lay.className = 'lv-lay'; lay.setAttribute('role', 'group'); lay.setAttribute('aria-label', 'Layout')
+        lay.innerHTML = LAYOUTS.map(([k, t]) => `<button type="button" data-lv-l="${k}" data-s="${({ ring: 'P', agents: 'A', work: 'W' })[k]}" aria-pressed="${k === L}" title="${t}">${t}</button>`).join('')
+        for (const b of lay.querySelectorAll('button')) b.onclick = () => { if (b.dataset.lvL !== L) relayout(b.dataset.lvL) }
+        if (!o.bare) hex.appendChild(lay)   // display mode has no controls: its layout comes from the address or the device
         // the moment on screen: now, less the fixed delay, in the viewer's own time zone
         // a small pop-out (the hexagon under 300 px) gets the short form: the day and the time, without the weekday and the zone
         const F = o => { try { return new Intl.DateTimeFormat(undefined, o) } catch { return { format: d => d.toString().slice(0, 21) } } }
@@ -144,10 +196,10 @@
             const shell = new Map(), nodes3 = []
             for (const [id, n] of pos) {
                 let z = 0; if (n.kind === 'a') { const k = shell.get(n.person) || 0; shell.set(n.person, k + 1); z = (k % 2 ? 1 : -1) * (40 + 38 * (Math.floor(k / 2) % 3)) }
-                nodes3.push({ id, x: n.x - C, y: C - n.y, z, color: col.get(n.person) || 'var(--rm-text-muted)', size: n.kind === 'p' ? 56 : n.family !== 'web-summit' ? 17 : 2 * (4 + Math.min(8, Math.sqrt(n.commits || 0))) + 2, ring: !!n.fresh, label: n.kind === 'p' ? n.label : '' })
+                nodes3.push({ id, x: n.x - C, y: C - n.y, z, color: n.kind === 'k' ? (KIND[n.id] || ['var(--rm-text-muted)'])[0] : col.get(n.person) || 'var(--rm-text-muted)', size: n.kind === 'k' ? 1.4 * n.size : n.kind === 'p' ? 56 : n.family !== 'web-summit' ? 17 : 2 * (4 + Math.min(8, Math.sqrt(n.commits || 0))) + 2, ring: !!n.fresh, label: n.kind === 'p' || n.kind === 'k' ? n.label : '' })
             }
             const lib = root.AngeloLive3D ? Promise.resolve() : new Promise((ok, no) => { const s = document.createElement('script'); s.src = (() => { const u = new URL('live3d.js', HERE), v = ((win.document.querySelector('a.ver') || document.querySelector('a.ver') || {}).textContent || '').trim(); if (v) u.searchParams.set('v', v); return u.href })(); s.onload = ok; s.onerror = () => no(new Error('live3d.js could not load')); document.head.appendChild(s) })
-            lib.then(() => root.AngeloLive3D.create(box, { nodes: nodes3, links: M.links || [], light, keep: !!o.keep3d, still: win.matchMedia('(prefers-reduced-motion: reduce)').matches, dist: 1650,
+            lib.then(() => root.AngeloLive3D.create(box, { nodes: nodes3, links: M.links || [], light, keep: !!o.keep3d, still: win.matchMedia('(prefers-reduced-motion: reduce)').matches, dist: Math.round(1650 * 0.84 / SCALE),
                 ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, mz = (a.z + b.z) / 2; return { x: mx * (1 - PULL), y: my * (1 - PULL), z: mz * (1 - PULL) } } }))
                 .then(r => { if (!r) return; if (!alive) { r.destroy(); return } r3 = r; box.r3 = r; kick() })
                 .catch(e => { wrap.classList.remove('lv-3d-on'); box.innerHTML = `<p class="note">The 3D view could not load (${String(e && e.message || e).replace(/[<>&]/g, '')}); this is the 2D graph.</p>` })
@@ -249,7 +301,7 @@
         const again = () => { if (!alive || win.document.visibilityState === 'hidden') return; win.clearTimeout(timer); read(false) }
         win.addEventListener('online', again); win.document.addEventListener('visibilitychange', again)
         read(true); kick()
-        return { destroy() { alive = false; if (r3) { r3.destroy(); r3 = null } win.clearTimeout(timer); if (raf) win.cancelAnimationFrame(raf); fly.length = 0; win.removeEventListener('online', again); win.document.removeEventListener('visibilitychange', again) } }
+        return { layout: L, destroy() { alive = false; if (r3) { r3.destroy(); r3 = null } win.clearTimeout(timer); if (raf) win.cancelAnimationFrame(raf); fly.length = 0; win.removeEventListener('online', again); win.document.removeEventListener('visibilitychange', again) } }
     }
 
     // ---- the page view (#live) and the pop-out ----
@@ -333,7 +385,7 @@
         if (current) { current.destroy(); current = null }
         if (!document.getElementById('lv-css')) { stylesInto(document); document.head.lastChild.id = 'lv-css' }
         host.innerHTML = '<div class="lv-display" data-lv-display></div>'
-        current = mount(host.querySelector('[data-lv-display]'), { ...o, win: root, d3: is3d() })
+        current = mount(host.querySelector('[data-lv-display]'), { ...o, win: root, d3: is3d(), bare: true })
         wake(); if (!root.__lvWake) { root.__lvWake = true; document.addEventListener('visibilitychange', wake) }
         // no controls; Esc leaves display mode for the normal view
         if (!root.__lvEsc) { root.__lvEsc = true; root.addEventListener('keydown', e => { if (e.key === 'Escape' && isDisplay()) root.location.href = root.location.pathname + '#live' }) }
@@ -345,7 +397,7 @@
         if (current) { current.destroy(); current = null }
         const d3 = is3d()
         if (!host.ownerDocument.getElementById('lv-css')) { stylesInto(host.ownerDocument); host.ownerDocument.head.lastChild.id = 'lv-css' }
-        host.innerHTML = `<div class="lv-page"><div class="lv-bar"><button type="button" class="cc-btn" data-lv-pop>⧉ Pop out</button><button type="button" class="cc-btn" data-lv-fs hidden>⛶ Full screen</button><a class="cc-btn" data-lv-3dsw aria-pressed="${d3}" href="${d3 ? root.location.pathname + root.location.search.replace(/([?&])d3=1(&|$)/, '$1').replace(/[?&]$/, '') + '#live' : '#live?d3=1'}" title="${d3 ? 'Back to the flat graph' : 'The same live graph in 3D: drag to turn it; loads 1.6 MB of 3D libraries'}">${d3 ? '✓ 3D' : '3D'}</a><a class="cc-btn" data-lv-display href="?display=1${d3 ? '&d3=1' : ''}#live">Display mode</a><span class="note" data-lv-note>${pipMode() === 'doc' ? 'An always-on-top window with this graph. Close it to come back here.' : pipMode() === 'video' ? 'A floating window with this graph, over your other windows and apps. It moves while this page is open; close it from its own window.' : 'Pop-out needs Chrome or Edge on a computer, or Safari on a Mac or iPad. Otherwise use Full screen, or Display mode for a screen left on.'}</span></div><div class="lv-frame" data-lv-frame></div><p class="note">Lines and dots only. Each exchange between agents (a commit with a For: line, in any repository the agents work in: this site, its workers' branches, the newsroom, the apps) travels along its line a few minutes after it is made, at its real pace. The faint dots between are the flow of recent hours: busier pairs, more dots. A dashed ring that turns slowly is an agent that starts a fresh session each run: it is there between runs, and its ring is bright for two hours after it last sent something. LIVE at the top pulses while the data is fresh; it turns amber and still when the data is over 30 minutes old, and grey when it cannot be read. The time at the foot is the moment on screen, a few minutes behind now, in your time zone. Names, edges and times only: no message text.</p></div>`
+        host.innerHTML = `<div class="lv-page"><div class="lv-bar"><button type="button" class="cc-btn" data-lv-pop>⧉ Pop out</button><button type="button" class="cc-btn" data-lv-fs hidden>⛶ Full screen</button><a class="cc-btn" data-lv-3dsw aria-pressed="${d3}" href="${d3 ? root.location.pathname + root.location.search.replace(/([?&])d3=1(&|$)/, '$1').replace(/[?&]$/, '') + '#live' : '#live?d3=1'}" title="${d3 ? 'Back to the flat graph' : 'The same live graph in 3D: drag to turn it; loads 1.6 MB of 3D libraries'}">${d3 ? '✓ 3D' : '3D'}</a><a class="cc-btn" data-lv-display href="?display=1${d3 ? '&d3=1' : ''}#live">Display mode</a><span class="note" data-lv-note>${pipMode() === 'doc' ? 'An always-on-top window with this graph. Close it to come back here.' : pipMode() === 'video' ? 'A floating window with this graph, over your other windows and apps. It moves while this page is open; close it from its own window.' : 'Pop-out needs Chrome or Edge on a computer, or Safari on a Mac or iPad. Otherwise use Full screen, or Display mode for a screen left on.'}</span></div><div class="lv-frame" data-lv-frame></div><p class="note">Lines and dots only. Each exchange between agents (a commit with a For: line, in any repository the agents work in: this site, its workers' branches, the newsroom, the apps) travels along its line a few minutes after it is made, at its real pace. The faint dots between are the flow of recent hours: busier pairs, more dots. A dashed ring that turns slowly is an agent that starts a fresh session each run: it is there between runs, and its ring is bright for two hours after it last sent something. LIVE at the top pulses while the data is fresh; it turns amber and still when the data is over 30 minutes old, and grey when it cannot be read. The time at the foot is the moment on screen, a few minutes behind now, in your time zone. The small buttons at the top right pick the layout, the map's three (remembered on this device). Names, edges and times only: no message text.</p></div>`
         const frame = host.querySelector('[data-lv-frame]'), btn = host.querySelector('[data-lv-pop]'), note = host.querySelector('[data-lv-note]')
         const inline = () => { current = mount(frame, { ...o, win: root, d3, keep3d: pipMode() === 'video' }) }
         if (popped) { frame.innerHTML = '<p class="note" style="padding:16px">Popped out.</p>' } else inline()
