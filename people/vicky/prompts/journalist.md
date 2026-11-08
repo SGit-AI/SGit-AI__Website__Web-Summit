@@ -42,6 +42,8 @@ Start now: set up your key, read the curator's README, and tell me in plain word
 
 ## Scheduled task prompt (6 November 2026)
 
+**From 8 Nov (SCHED-WS):** writing 05:45, 10:45, 14:45, 18:45 UTC; fix-only 06:50, 11:50, 15:50, 19:50 UTC (`trig_01ENwR7p1ggLZHK2RcyBPTud`), both set by the conductor at Vicky's word, 7 Nov.
+
 Daily at 08:00, 12:00, 16:00 and 20:00 UTC (cron `0 8,12,16,20 * * *`) since 7 November 2026, about 20:04 UTC (SCHED-7NOV, four rounds, in decisions.md; 08:00 and 16:00 until 7 November, then briefly 08:00, 12:00 and 20:00), into this session. Set up at Vicky's word on 6 November 2026; word for word, with the lines added on 7 November at the end:
 
 ```

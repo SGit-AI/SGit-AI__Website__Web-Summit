@@ -20,6 +20,8 @@ First run now: the agenda to 12 November, and start the shortlist (held outside 
 
 ## The scheduled task's prompt, word for word
 
+**From 8 Nov (SCHED-WS):** daily 05:00 UTC, cron `0 5 * * *` (set by the conductor at Vicky's word, 7 Nov).
+
 Task "programme@PrompTugal.vicky daily run", cron `15 8 * * *` (daily 08:15 UTC), firing into this desk's session. Its prompt as stored (last updated 6 November 2026, 10:57 UTC, at Vicky's word: at 10:41 the new name and newsroom/tools/release.sh for the newsroom; at 10:57 a first step, step 0, to read people/vicky/decisions.md and follow it, with the guard Vicky chose; everything else word for word as before):
 
 ```
