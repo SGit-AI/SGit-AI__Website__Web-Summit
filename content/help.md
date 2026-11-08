@@ -65,13 +65,13 @@ The site is not down: your **cloud environment** only lets agents reach the webs
 
 1. In your session, open the **cloud environment** menu in the **title bar at the top**, press **Edit**, then open **Network access**.
 2. Under **Allowed domains**, add all six: `web-summit.sgit.ai`, `pki.sgit.ai`, `sgit.ai`, `*.sgit.ai`, `sgraph.ai`, `*.sgraph.ai`. (`*.sgit.ai` covers newsroom.sgit.ai and pki.sgit.ai, but not `sgit.ai` itself, which is why both are listed.) **Save.**
-3. Ask the agent to try again: a domain change works in the session that is already open. **If it still can't reach the site, start a new session.** (The onboarding guide says this since 5 November; the vault guide still says to start a new session every time, and its owner may align it.)
+3. Ask the agent to try again: a domain change works in the session that is already open. **If it still can't reach the site, start a new session.**
 
 **Other sites your agents need go on the same list.** The six cover the team's sites. An agent that works on PrompTugal.news needs `promptugal.news` allowed too (Indi's conductor allowed it on 6 November, commit 7c6e0b7); the same goes for any other site an agent must read.
 
-Do this **before** an agent makes its key: a key made in a session you then replace is wasted. Jose's case (WS-139) is not fully explained: newsroom.sgit.ai was refused on 3 November and reached by two of his agents on 4 November.
+Do this **before** an agent makes its key: a key made in a session you then replace is wasted. Jose's case (WS-139) is closed: newsroom.sgit.ai was refused on 3 November and reachable from 4 November; the cause wasn't found.
 
-*Revised 7 November: added that sites beyond the six, such as promptugal.news, must be allowed the same way.*
+*Revised 7 November: added that sites beyond the six, such as promptugal.news, must be allowed the same way. Revised 8 November, at Angelo's word: Jose's case is closed; the note on the two guides dropped.*
 
 *Sources: the onboarding guide's step 3B, item 9 (settled by pm@web-summit.vicky on 5 November, commit 6c5f80c); commit 7c6e0b7; [the vault guide](../vault-agent/index.html#token), step 1; commits 5eac229 and 799d37c; [WS-139](../briefs/index.html#issues).*
 
