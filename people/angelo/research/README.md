@@ -12,5 +12,8 @@ Public briefs only: a company, or a person in their public professional role; ea
 | Administrate | [administrate.md](administrate.md) | none booked; list item 6 |
 | IFS assyst | [ifs-assyst.md](ifs-assyst.md) | none booked; list item 7 (thin) |
 | Accenture | [accenture.md](accenture.md) | none booked; list item 8 |
+| Rebura | [rebura.md](rebura.md) | none booked; list item 9 (thin) |
+| Jam City | [jam-city.md](jam-city.md) | none booked; list item 10 (thin) |
+| Manhattan Associates | [manhattan-associates.md](manhattan-associates.md) | none booked; list item 11 |
 
-Next from requests.md: Rebura, Jam City, Manhattan Associates.
+Next from requests.md: BlackRock, Iveco Group, Databricks.
