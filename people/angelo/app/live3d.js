@@ -15,6 +15,8 @@
         s.onload = () => root.BrainLibs ? ok(root.BrainLibs) : no(new Error('brain-libs.js loaded without its libraries'))
         s.onerror = () => { libs = null; no(new Error('brain-libs.js could not load')) }; document.head.appendChild(s)
     }))
+    const sheetsReady = doc => Promise.all([...doc.querySelectorAll('link[rel="stylesheet"]')].filter(l => !l.sheet).map(l => new Promise(ok => {
+        l.addEventListener('load', ok, { once: true }); l.addEventListener('error', ok, { once: true }); (doc.defaultView || root).setTimeout(ok, 4000) })))
     const SEG = 18, TRAIL = 5, MAXPAIRS = 900, MAXDOTS = 220
     // a CSS colour (the graph's colours are variables) as the browser resolves it, for WebGL
     const resolver = el => { const cache = new Map(); return v => { if (cache.has(v)) return cache.get(v); const t = el.ownerDocument.createElement('i'); t.style.color = v; t.hidden = true; el.appendChild(t); const c = el.ownerDocument.defaultView.getComputedStyle(t).color; t.remove(); cache.set(v, c); return c } }
@@ -32,7 +34,11 @@ void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 
     // create(el, { nodes: [{ id, x, y, z, color, size, ring, label }], links: [{ from, to, n }], ctrl(a, b) -> {x,y,z}, still })
     async function create(el, o) {
         const L = await loadLibs(), T = L.THREE, doc = el.ownerDocument, win = doc.defaultView || root
+        // a pop-out window's stylesheets are copied in as links and load after it opens: wait for them, or every colour (CSS
+        // variables) reads as black and stays so (Angelo, 8 November, backlog 0c2: "the 3d live version once popped out is all black shadows")
+        await sheetsReady(doc)
         if (!el.isConnected) return null
+        const light = typeof o.light === 'function' ? !!o.light() : !!o.light
         const res = resolver(el), rgb = v => new T.Color(res(v))
         const canvas = doc.createElement('canvas'); canvas.className = 'lv-3dc'; el.appendChild(canvas)
         const R = new T.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance', preserveDrawingBuffer: !!o.keep })
@@ -53,7 +59,7 @@ void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 
 
         // the lit layer: a slot per pair the first time it moves, its brightness written only when it changes
         const lit = new T.BufferGeometry(), lpos = buf(lit, 'position', MAXPAIRS * SEG * 2, 3), lcol = buf(lit, 'col', MAXPAIRS * SEG * 2, 3), lal = buf(lit, 'alpha', MAXPAIRS * SEG * 2, 1)
-        lit.setDrawRange(0, 0); const litObj = new T.LineSegments(lit, mat(VS_LN, FS_LN, o.light ? T.NormalBlending : T.AdditiveBlending)); litObj.frustumCulled = false; world.add(litObj)
+        lit.setDrawRange(0, 0); const litObj = new T.LineSegments(lit, mat(VS_LN, FS_LN, light ? T.NormalBlending : T.AdditiveBlending)); litObj.frustumCulled = false; world.add(litObj)
         const slots = new Map()
         const slotOf = key => { let s = slots.get(key); if (s !== undefined) return s; if (slots.size >= MAXPAIRS) return -1; const [f, t] = key.split('|'), a = P(f), b = P(t); if (!a || !b) return -1
             s = slots.size; slots.set(key, s); const c = rgb(a.color), p = {}, q = {}
@@ -72,7 +78,7 @@ void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 
 
         // the moving dots: real exchanges bright with a glow and a short trail, the flow small and faint
         const dg = new T.BufferGeometry(), dpos = buf(dg, 'position', MAXDOTS * (TRAIL + 1), 3), dcol = buf(dg, 'col', MAXDOTS * (TRAIL + 1), 3), dsz = buf(dg, 'size', MAXDOTS * (TRAIL + 1), 1), dal = buf(dg, 'alpha', MAXDOTS * (TRAIL + 1), 1)
-        dg.setDrawRange(0, 0); const dotsMat = mat(VS_PTS, FS_PTS(1), o.light ? T.NormalBlending : T.AdditiveBlending), dotsObj = new T.Points(dg, dotsMat); dotsObj.frustumCulled = false; world.add(dotsObj)
+        dg.setDrawRange(0, 0); const dotsMat = mat(VS_PTS, FS_PTS(1), light ? T.NormalBlending : T.AdditiveBlending), dotsObj = new T.Points(dg, dotsMat); dotsObj.frustumCulled = false; world.add(dotsObj)
 
         // people's names, as the 2D view writes them: a few HTML labels placed on the projected point each frame
         const labels = o.nodes.filter(n => n.label).map(n => { const s = doc.createElement('span'); s.className = 'lv-3dl'; s.textContent = n.label; el.appendChild(s); return { n, s } })
@@ -88,6 +94,9 @@ void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 
         const wheel = e => { e.preventDefault(); view.dist = Math.min(4000, Math.max(500, view.dist * Math.exp(e.deltaY * 0.001))) }
         canvas.addEventListener('pointerdown', down); canvas.addEventListener('pointermove', move); canvas.addEventListener('pointerup', up); canvas.addEventListener('pointercancel', up); canvas.addEventListener('wheel', wheel, { passive: false })
 
+        // the turn by itself: one turn every o.turnS seconds (the live graph's default 50, Angelo, 8 November, backlog 0c2: "it should
+        // spin a little faster"; it was about 105), held while a hand turns it and for 2.5 s after
+        const spin = 2 * Math.PI / (1000 * (o.turnS || 50))
         let W = 0, H = 0, PR = 1, frames = 0, ftSum = 0, ftMax = 0, lastT = 0, ringAt = -1e9
         const size = () => { const r = el.getBoundingClientRect(), w = Math.max(50, Math.round(r.width)), h = Math.max(50, Math.round(r.height)); if (w === W && h === H) return; W = w; H = h
             PR = Math.min(2, win.devicePixelRatio || 1); if (w * h * PR * PR > 4.5e6) PR = Math.max(1, Math.sqrt(4.5e6 / (w * h)))   // a big screen: fewer pixels, the same picture
@@ -101,7 +110,7 @@ void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 
             const t0 = win.performance.now(), dt = lastT ? Math.min(100, t0 - lastT) : 16; lastT = t0
             size()
             if (!view.drag) { view.vy *= 0.92; view.vx *= 0.92; if (Math.abs(view.vy) > 1e-4) view.ry += view.vy; if (Math.abs(view.vx) > 1e-4) view.rx = Math.max(-1.45, Math.min(1.45, view.rx + view.vx))
-                if (!o.still && t0 - view.idleAt > 2500) view.ry += 0.00006 * dt }
+                if (!o.still && t0 - view.idleAt > 2500) view.ry += spin * dt }
             world.rotation.set(view.rx, view.ry, 0, 'XYZ'); cam.position.set(0, 0, view.dist); cam.lookAt(0, 0, 0)
             // the lines lit by the engine, as bright as in 2D
             if (st.lines) { let ch = false; for (const [k, e] of st.lines) { const v = +e.op || 0; if (v === e.op3) continue; const s = slotOf(k); if (s < 0) continue; e.op3 = v; const a = Math.min(1, v * 1.05); for (let j = s * SEG * 2, n = j + SEG * 2; j < n; j++) lal.setX(j, a); ch = true } if (ch) lal.needsUpdate = true }
@@ -130,7 +139,7 @@ void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 
         // for the tests: the time draw() takes, per frame, in milliseconds
         const stats = () => ({ frames, avg: frames ? ftSum / frames : 0, max: ftMax, nodes: nN, links: base.length, lit: slots.size, calls: R.info.render.calls })
         const turn = (dx, dy) => { view.ry += dx; view.rx = Math.max(-1.45, Math.min(1.45, view.rx + dy)); view.idleAt = win.performance.now() }
-        return { draw, destroy, stats, turn, canvas }
+        return { draw, destroy, stats, turn, canvas, spin: () => ({ turnS: o.turnS || 50, ry: view.ry }) }
     }
     root.AngeloLive3D = { create, loadLibs }
 })(typeof self !== 'undefined' ? self : this)

@@ -45,6 +45,8 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt (from 6 November 2026; daily at 08:06, 12:06, 16:06 and 20:06 UTC since SCHED-7NOV (four rounds); P1 to P3 added 7 November at standing answer 16)
 
+**From 8 Nov midday (standing answer 22, connections first):** writing at :57 past 05, 10, 14, 18 UTC; fix-only at :02 past 07, 12, 16, 20 UTC (`trig_015W8aURM2zEyH9Sd9gJvzNx`), both set by the conductor at Vicky's word.
+
 **From 8 Nov (SCHED-WS):** writing at :51 past 05, 10, 14, 18 UTC; fix-only at :56 past 06, 11, 15, 19 UTC (`trig_015W8aURM2zEyH9Sd9gJvzNx`), both set by the conductor at Vicky's word, 7 Nov.
 
 ```

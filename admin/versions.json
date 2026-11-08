@@ -1,5 +1,145 @@
 [
   {
+    "version": "v0.2.1296",
+    "date": "2026-11-08",
+    "what": "curator@PrompTugal.vicky: S28 correction reported, rule 25 (re-check before ready)",
+    "by": "curator@PrompTugal.vicky",
+    "from": "688056481"
+  },
+  {
+    "version": "v0.2.1295",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: report, PILOT-REPLIT content Ready and handed to dev",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "6c3ecfef6"
+  },
+  {
+    "version": "v0.2.1294",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 150 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 570 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "7b71cfa0a"
+  },
+  {
+    "version": "v0.2.1293",
+    "date": "2026-11-08",
+    "what": "PILOT-REPLIT: the existing page cannot show it without a template change, so dev stays in; the Media only label must cite its source",
+    "by": "conductor@web-summit.vicky",
+    "from": "91001a149"
+  },
+  {
+    "version": "v0.2.1292",
+    "date": "2026-11-08",
+    "what": "Actions row 1: Jose raises the tokens with Dinis himself; the reminder is committed for Dinis's conductor",
+    "by": "conductor@web-summit.jose",
+    "from": "5c33ccf49"
+  },
+  {
+    "version": "v0.2.1291",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: the run's state, 14:21 UTC",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "fb1216608"
+  },
+  {
+    "version": "v0.2.1290",
+    "date": "2026-11-08",
+    "what": "runner.writer@PrompTugal.angelo: state after the 8 November run",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "6584d1edf"
+  },
+  {
+    "version": "v0.2.1289",
+    "date": "2026-11-08",
+    "what": "dashboard@PrompTugal.angelo: this run's ledger line",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "d30dd3fe9"
+  },
+  {
+    "version": "v0.2.1288",
+    "date": "2026-11-08",
+    "what": "the designer now has a schedule, 10:40 and 16:40 UTC (C30 trial); the one-door line for it",
+    "by": "designer@web-summit.jose",
+    "from": "f9e60c05f"
+  },
+  {
+    "version": "v0.2.1287",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 150 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 592 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "3b8785e31"
+  },
+  {
+    "version": "v0.2.1286",
+    "date": "2026-11-08",
+    "what": "the token-efficiency ABP for every agent, and its rollout (WS-148)",
+    "by": "conductor@web-summit.indi",
+    "from": "855c61dff"
+  },
+  {
+    "version": "v0.2.1285",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.vicky: report: the Live AI Office's run status corrected and live (v0.2.1284)",
+    "by": "dev@PrompTugal.vicky",
+    "from": "5fb2e9d1c"
+  },
+  {
+    "version": "v0.2.1284",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.vicky: request to the conductor: journalists note their fix-only runs in their writing reports; schedule.json behind the account",
+    "by": "dev@PrompTugal.vicky",
+    "from": "09b6cdec8"
+  },
+  {
+    "version": "v0.2.1283",
+    "date": "2026-11-08",
+    "what": "the accountant's role definition (ROLE__accountant.md), in the shape of the SG/Send roles (WS-148)",
+    "by": "conductor@web-summit.indi",
+    "from": "001fc0c3c"
+  },
+  {
+    "version": "v0.2.1282",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the stand-ups end; meetings on demand, today at 14:00",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "b310f63bc"
+  },
+  {
+    "version": "v0.2.1281",
+    "date": "2026-11-08",
+    "what": "the team's accounts inbox: a lane for every agent, and the token-reporting protocol (WS-148)",
+    "by": "conductor@web-summit.indi",
+    "from": "8deb20dc2"
+  },
+  {
+    "version": "v0.2.1280",
+    "date": "2026-11-08",
+    "what": "crm@PrompTugal.angelo: estimate correction for 0k (25 min estimated, about 2 min taken); overlap.md's time fixed",
+    "by": "crm@PrompTugal.angelo",
+    "from": "9724e2d6b"
+  },
+  {
+    "version": "v0.2.1279",
+    "date": "2026-11-08",
+    "what": "crm@PrompTugal.angelo: Angelo's 18 companies against Silvio's outreach and the X-rays: no summit overlap, no X-ray, one Accenture double route",
+    "by": "crm@PrompTugal.angelo",
+    "from": "2887495ab"
+  },
+  {
+    "version": "v0.2.1278",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: explore a live phone background with the 3D map",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "9d018ccd1"
+  },
+  {
+    "version": "v0.2.1277",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the Android app starts now, in this repository, until its own exists",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "828686fb3"
+  },
+  {
     "version": "v0.2.1276",
     "date": "2026-11-08",
     "what": "the vault's tap-to-use hint on a phone is a readable pill",

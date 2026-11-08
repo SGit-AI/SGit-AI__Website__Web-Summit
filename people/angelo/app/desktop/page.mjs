@@ -4,11 +4,11 @@
 // The page is also the iPad's and iPhone's Home Screen entry: its head carries the web app manifest and Apple's tags, and
 // opened from the Home Screen (standalone) it goes straight to the live graph's display mode, the same page and display
 // mode as the browser pop-out, so the app and the pop-out stay in step (Angelo's decision 2, 8 November).
-// Installers are never committed: the download links appear only once a build exists (DOWNLOADS below, filled in when CI
-// or Angelo publishes one).
-
-// Each entry: { os: 'Windows' | 'Mac', file, href, version, built } once a build is published; empty until then.
-export const DOWNLOADS = []
+// Installers are never committed, and are served from this site only (the kit's "Our own website first", 9f3f449): the
+// site's deploy puts the newest build in people/angelo/app/desktop/dl/ with dl/builds.json beside it (the draft
+// drafts/deploy-pages-step.md, for conductor@web-summit.dinis). The page reads dl/builds.json in the browser and shows a link
+// per installer; with no build there (no file, or no installer in it) it says "Not built yet".
+//   dl/builds.json: { "built": "<ISO time>", "commit": "<sha>", "files": [{ "os": "Mac" | "Windows", "file": "<name>", "bytes": <n> }] }
 
 const LIVE = '../index.html#live', DISPLAY = '../index.html?display=1#live'
 const SRC = 'https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/angelo/app/desktop'
@@ -17,12 +17,26 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
 export function pages() {
     const title = 'Team and the machine on your desktop: the hexagon app'
     const description = "Install the live graph of Angelo's team and agents as a small hexagon on your desktop (Windows, Mac), as a Home Screen app on an iPad or iPhone, or use it in the browser with nothing to install."
-    const dl = DOWNLOADS.length
-        ? `<ul>${DOWNLOADS.map(d => `<li><a href="${esc(d.href)}">${esc(d.os)}: ${esc(d.file)}</a> (version ${esc(d.version)}, built ${esc(d.built)})</li>`).join('')}</ul>`
-        : '<p><b>Not built yet.</b> The installers come from a build on GitHub\'s Windows and macOS machines, proposed to the site\'s conductor; the links appear here once the first one has run. Until then, use the Home Screen app or the browser, below, or build it yourself from <a href="' + SRC + '">the source</a> (its README says how).</p>'
-    const dlMd = DOWNLOADS.length
-        ? DOWNLOADS.map(d => `- [${d.os}: ${d.file}](${d.href}) (version ${d.version}, built ${d.built})`).join('\n')
-        : `**Not built yet.** The installers come from a build on GitHub's Windows and macOS machines, proposed to the site's conductor; the links appear here once the first one has run. Until then, use the Home Screen app or the browser, below, or build it yourself from [the source](${SRC}) (its README says how).`
+    const none = 'The installers come from a build on GitHub\'s Windows and macOS machines, proposed to the site\'s conductor, and are served from this site; the links appear here once the first one has run. Until then, use the Home Screen app or the browser, below, or build it yourself from '
+    const dl = `<div id="hx-dl" aria-live="polite"><p><b>Not built yet.</b> ${none}<a href="${SRC}">the source</a> (its README says how).</p></div>
+<script>(function () {
+  var box = document.getElementById('hx-dl'); if (!box || !window.fetch) return
+  fetch('dl/builds.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null }).then(function (b) {
+    var files = b && Array.isArray(b.files) ? b.files.filter(function (f) { return f && /^(Mac|Windows)$/.test(f.os) && /^[A-Za-z0-9_.-]+$/.test(f.file || '') }) : []
+    if (!files.length) return
+    var when = b.built ? new Date(b.built) : null, day = when && !isNaN(when) ? when.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) : ''
+    var ul = document.createElement('ul'); ul.className = 'hx-dl'
+    files.forEach(function (f) {
+      var li = document.createElement('li'), a = document.createElement('a')
+      a.setAttribute('href', 'dl/' + encodeURIComponent(f.file)); a.setAttribute('download', ''); a.textContent = f.os + ': ' + f.file
+      li.appendChild(a); if (f.bytes) li.appendChild(document.createTextNode(' (' + Math.round(f.bytes / 1048576) + ' MB)')); ul.appendChild(li)
+    })
+    var note = document.createElement('p'); note.className = 'note'
+    note.textContent = 'Built ' + day + (b.commit ? ' from ' + String(b.commit).slice(0, 8) : '') + ', served from this site.'
+    box.replaceChildren(ul, note)
+  }).catch(function () { })
+})()</script>`
+    const dlMd = `**Not built yet** in this copy of the page: the installers come from a build on GitHub's Windows and macOS machines, proposed to the site's conductor, and are served from this site. The page itself (index.html) shows a link per installer once the first build has run. Until then, use the Home Screen app or the browser, below, or build it yourself from [the source](${SRC}) (its README says how).`
     const head = `
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#07111F">
@@ -42,7 +56,7 @@ ${dl}
 <li><b>Mac:</b> in Applications, right-click (or Control-click) <i>Team and the machine</i>, choose <b>Open</b>, then <b>Open</b> again. On macOS 15 or later, if there is no Open button: System Settings, Privacy &amp; Security, scroll down, <b>Open Anyway</b>.</li>
 <li><b>Windows:</b> when "Windows protected your PC" appears, click <b>More info</b>, then <b>Run anyway</b>. It installs for you only; no administrator needed.</li>
 </ul>
-<p><b>Using it:</b> drag inside the hexagon to move it. Right-click for its menu: always on top (on at first), size (small, medium, large), reload, quit. Clicks outside the hexagon go to the window underneath. It remembers its size and place.</p>
+<p><b>Using it:</b> drag inside the hexagon to move it. Right-click for its menu: always on top (on at first), calm (fewer frames, for a laptop on battery), 3D (the same live graph in 3D, turning by itself), size (small, medium, large), open in browser, reload, quit. Clicks outside the hexagon go to the window underneath. It remembers its size and place.</p>
 <h2 id="ipad">2. iPad or iPhone: the Home Screen app</h2>
 <ol class="hx-steps">
 <li>Open this page in <b>Safari</b>.</li>
@@ -69,7 +83,7 @@ The first time you open it your computer warns you, because the app is not signe
 - **Mac:** in Applications, right-click (or Control-click) *Team and the machine*, choose **Open**, then **Open** again. On macOS 15 or later, if there is no Open button: System Settings, Privacy & Security, **Open Anyway**.
 - **Windows:** when "Windows protected your PC" appears, click **More info**, then **Run anyway**. It installs for you only.
 
-Using it: drag inside the hexagon to move it; right-click for its menu (always on top, size, reload, quit); clicks outside the hexagon go to the window underneath; it remembers its size and place.
+Using it: drag inside the hexagon to move it; right-click for its menu (always on top, calm, 3D, size, open in browser, reload, quit); clicks outside the hexagon go to the window underneath; it remembers its size and place.
 
 ## 2. iPad or iPhone: the Home Screen app
 

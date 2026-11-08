@@ -23,9 +23,11 @@ issue: backlog 00a
 ```css
 /* transparent=1 (dev.app@'s hexagonal app): no background anywhere, only the display layer shown, so a shaped window shows the desktop at the corners */
 html.lv-transparent, html.lv-transparent body { background: transparent !important; }
-html.lv-transparent body * { visibility: hidden; }
-html.lv-transparent .lv-display-clear, html.lv-transparent .lv-display-clear * { visibility: visible; }
+html.lv-transparent body *:not(.lv-display-clear):not(.lv-display-clear *) { visibility: hidden; }
+html.lv-transparent .lv-display-clear { visibility: visible; }
 .lv-display-clear, .lv-display-clear .lv { background: transparent; }
 ```
+
+**Updated 8 November, 12:30 UTC:** the hiding now leaves the display's own insides alone. The first version set `visibility: visible` on everything inside the display, which ties with `.lv-3d-on .lv-svg > g { visibility: hidden }` and, coming later, would draw the flat graph's layers under the 3D one (the app's own start-up script did this with `!important`: a stray dot outside the hexagon in 3D; fixed in main.rs, tested in hxapp's 3D section).
 
 **A test** (I will add it with my own tests once this is in, as `lvclear.test.js`, unless you prefer to): load `?display=1&transparent=1#live` at 600x600 with a transparent page background (Playwright `omitBackground: true` screenshot), and check that the four corners' pixels have alpha 0 and the centre's has alpha > 0; and that `?display=1#live` without it is unchanged (corners opaque).

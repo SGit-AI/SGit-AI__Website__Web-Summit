@@ -106,3 +106,10 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
 - Participants: 20 speakers from the first view of the speakers page, by name, role and organisation, grouped by theme (robotics, AI models, mobility and devices, infrastructure and security, investment and policy); the AgiBot A3 robot is now listed, which the 5 November capture could not confirm ([Web Summit, "Meet Web Summit's 2026 speakers"](https://websummit.com/speakers/)).
 - state: ok; done: SA19C applied, 1 participants capture; next: what each organisation does, and the partners and startup pages, from 14:15; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 14:15 UTC run (participants)
+
+- decisions.md read first (standing answer 22 is new, not for me; no HOLD.md); prompts file re-read, no difference.
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- Participants: 100 startups from page 1 of 26 of Web Summit's featured startups, under the page's own industry tags (30 in AI and machine learning, 11 fintech, 11 healthtech, 6 hardware and robotics, and more) ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)). The partners page lists past speakers only, so nothing from it.
+- state: partial; done: 1 participants capture; next: pages 2 to 26 and what the speakers' organisations do, at the next runs; ask: none; run: scheduled

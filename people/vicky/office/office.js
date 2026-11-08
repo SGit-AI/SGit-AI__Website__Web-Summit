@@ -1,12 +1,14 @@
 // The Live AI Office (people/vicky/office/), dev@PrompTugal.vicky, 8 November 2026, at Vicky's word (decisions.md, SA21).
 // Plain Canvas 2D, no library, no external script. Every minute it reads the office's data (built at each site release from
 // public facts) and, with the viewer's clock, works out each agent's state:
-//   confirmed  a commit shows the work (solid badge, its time)
-//   scheduled  a run is due (dashed badge, "due HH:MM")
-//   inferred   a run should be under way: from the due time until a commit confirms it or 30 minutes pass (faded, "?"),
-//              then "late" if the published data reaches past those 30 minutes, else "unconfirmed" (the data is too
-//              old to say whether the run happened)
-//   error      the agent's last report says blocked or URGENT
+//   confirmed  a report entry or a commit shows the run (solid badge, its time); a commit is not required
+//   idle       the agent's report says the run found nothing to do (soft badge, "idle HH:MM")
+//   scheduled  the next run is due at the time shown and has not started (dashed badge, "due HH:MM")
+//   running    inferred: within the run's expected 30 minutes, not yet confirmed (faded, "running?")
+//   late       the run should have finished, and the report the agent writes on every run is not there, with data
+//              recent enough to tell
+//   unknown    the data cannot tell: too old, a fix-only run (silent when there is nothing to fix), or no dated report
+//   error      the latest report says blocked, failed or URGENT
 //   on demand  works only when Vicky asks (no times for the inbox or the vault agent)
 // Agents walk between their room, their desk and the lounge as their state changes. All the art is original
 // (sprites/, drawn by make-sprites.mjs; CREDITS.md). Written from scratch: no code copied from any other project.
@@ -51,7 +53,7 @@
         const d = dark.matches
         C = {
             ink: v('--ink') || (d ? '#ecebe6' : '#1c1d21'), ink2: v('--ink-2') || '#5c5f66', surface: v('--surface') || (d ? '#1c1c19' : '#fff'),
-            ok: v('--ok') || '#146c43', warn: v('--warn') || '#9a5b00', warnSoft: v('--warn-soft') || '#fdf1dc', bad: v('--bad') || '#b42318',
+            ok: v('--ok') || '#146c43', okSoft: v('--ok-soft') || '#e3f4ea', warn: v('--warn') || '#9a5b00', warnSoft: v('--warn-soft') || '#fdf1dc', bad: v('--bad') || '#b42318',
             wait: v('--wait') || '#5c5f66', waitSoft: v('--wait-soft') || '#eeede8', line: v('--line-2') || '#d5d0c2',
             hall: d ? '#1b1a17' : '#ebe7dd', wall: d ? '#2f2c27' : '#d8cdb8', wallEdge: d ? '#3c3832' : '#c5b89f',
             floor: d ? ['#2a2622', '#27241f'] : ['#efe4cf', '#e8dcc4'], lounge: d ? ['#24282b', '#212528'] : ['#e3ecef', '#dbe6ea'], rug: d ? '#3a2f3f' : '#d9c7de', onSolid: d ? '#10130f' : '#ffffff',
@@ -123,21 +125,38 @@
         return out.sort((x, y) => x - y)
     }
     const dataAt = () => { const t = data && data.data_at ? Date.parse(data.data_at) : NaN; return isNaN(t) ? -Infinity : t }
+    // A run's evidence, best first: a dated entry in the agent's report (its time and state word), then a commit carrying
+    // its name. A commit supports, but is never required: an idle run often commits nothing. Nothing later than the
+    // viewer's clock counts. With no evidence, a run is late only when the agent must report on every run (SA16), the run is
+    // not one that may end silently (a fix-only follow-up), and the published data reaches past the run's window;
+    // otherwise it is unknown.
     function stateOf(a, nowMs) {
-        // the last commit at or before now: a commit later than the viewer's clock (a clock that is behind) never counts
-        const conf = a.confirmed.map(Date.parse).filter(t => t <= nowMs).sort((x, y) => y - x)[0] ?? null
-        if (a.urgent || a.status === 'blocked') return { kind: 'error', conf, why: a.urgent ? 'its last report says URGENT' : 'its last report says blocked' }
-        if (a.on_demand) return { kind: 'ondemand', conf }
+        const runs = (a.runs || []).map(r => ({ ...r, t: Date.parse(r.at) })).filter(r => r.t <= nowMs).sort((x, y) => y.t - x.t)
+        const commits = (a.confirmed || []).map(Date.parse).filter(t => t <= nowMs).sort((x, y) => y - x)
+        const base = { lastRun: runs[0] || null, lastCommit: commits[0] ?? null }
+        const top = runs[0]
+        if (top ? top.urgent || top.state === 'blocked' || top.state === 'failed' : a.urgent || a.status === 'blocked')
+            return { ...base, kind: 'error', why: `its latest report says ${top && top.urgent || !top && a.urgent ? 'URGENT' : (top ? top.state : a.status)}` }
+        if (a.on_demand) return { ...base, kind: 'ondemand' }
         const ds = dues(a, new Date(nowMs)), last = [...ds].reverse().find(t => t <= nowMs), next = ds.find(t => t > nowMs)
-        const since = t => conf != null && conf >= t
-        if (last != null && nowMs - last < LATE) return since(last) ? { kind: 'confirmed', conf, working: nowMs - conf < LATE, next } : { kind: 'inferred', due: last, conf, next }
-        // late only when the published data reaches past the late boundary: data older than that cannot show the commit
-        if (last != null && !since(last)) return dataAt() >= last + LATE ? { kind: 'late', due: last, conf, next } : { kind: 'unconfirmed', due: last, conf, next }
-        if (next != null && next - nowMs <= SOON) return { kind: 'scheduled', due: next, conf }
-        if (conf != null) return { kind: 'confirmed', conf, working: nowMs - conf < LATE, next }
-        return { kind: 'scheduled', due: next, conf }
+        const from = last == null ? -Infinity : last - 5 * MIN
+        const rep = runs.find(r => r.t >= from), com = commits.find(t => t >= from)
+        if (rep || com != null) {
+            const kind = rep && rep.state === 'idle' ? 'idle' : 'confirmed', at = rep ? rep.t : com, by = rep ? `report (${rep.state || 'no state word'})` : 'commit'
+            // the last run's outcome stays in view until 15 minutes before the next run (a journalist's fix-only run comes an
+            // hour after its writing run, so an hour would hide every idle result)
+            if (next != null && next - nowMs <= 15 * MIN && nowMs - at >= LATE) return { ...base, kind: 'scheduled', due: next, prev: kind, at }
+            return { ...base, kind, at, by, working: kind === 'confirmed' && nowMs - at < LATE, next }
+        }
+        if (last == null) return next != null ? { ...base, kind: 'scheduled', due: next } : { ...base, kind: 'unconfirmed', why: 'none' }
+        if (nowMs - last < LATE) return { ...base, kind: 'inferred', due: last, next }
+        const unknown = why => ({ ...base, kind: 'unconfirmed', due: last, next, why })
+        if (dataAt() < last + LATE) return unknown('data')
+        if ((a.quiet || []).includes(hm(new Date(last)))) return unknown('quiet')
+        if (!a.reports_every_run) return unknown('noreport')
+        return { ...base, kind: 'late', due: last, next }
     }
-    const LABEL = { confirmed: 'Confirmed', scheduled: 'Scheduled', inferred: 'Inferred', late: 'Late', unconfirmed: 'Unconfirmed', error: 'Error', ondemand: 'On demand' }
+    const LABEL = { confirmed: 'Confirmed', idle: 'Idle', scheduled: 'Scheduled', inferred: 'Running (inferred)', late: 'Late', unconfirmed: 'Unknown', error: 'Error', ondemand: 'On demand' }
     // the details under the office when a figure is tapped: one fact a line, every time in UTC, with its day when it is
     // not today (by the UTC calendar)
     const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -146,22 +165,32 @@
         const same = d.getUTCFullYear() === n.getUTCFullYear() && d.getUTCMonth() === n.getUTCMonth() && d.getUTCDate() === n.getUTCDate()
         return `${hm(d)} UTC` + (same ? '' : `, ${d.getUTCDate()} ${MON[d.getUTCMonth()]}`)
     }
+    const UNKNOWN = {
+        data: 'its run was due over 30 minutes ago, but the published data is older than that, so it cannot be told yet whether it ran',
+        quiet: 'a fix-only run leaves no record when there is nothing to fix, so whether this one ran cannot be told',
+        noreport: 'this agent keeps no dated report, so whether its run happened cannot be told from the data',
+        none: 'no run on record',
+    }
     function describe(a) {
         const s = a.state, lines = [], hidden = a.short === 'inbox' || a.short === 'vault'   // Vicky (SA21): none of their activity
         const why = {
-            confirmed: s.working ? 'its commit shows it working now' : 'its last run is done; its commit shows it',
-            scheduled: 'its next run is due; nothing has happened yet', inferred: 'its run should be under way; no commit confirms it yet',
-            late: 'its run was due over 30 minutes ago and no commit confirms it', error: s.why,
-            unconfirmed: 'its run was due over 30 minutes ago, but the published data is older than that, so it is not known yet whether it ran', ondemand: 'works only when Vicky asks',
+            confirmed: s.working ? `its ${s.by} shows it at work now` : `its ${s.by} shows the run`,
+            idle: 'its report says the run found nothing to do',
+            scheduled: 'its next run is due and has not started yet', inferred: 'it is within its run\'s expected 30 minutes; not confirmed yet',
+            late: 'its run should have finished by now, and its report, which it writes on every run, is not there', error: s.why,
+            unconfirmed: UNKNOWN[s.why], ondemand: 'works only when Vicky asks',
         }[s.kind]
         lines.push(`State: ${LABEL[s.kind]} (${why})`)
-        if (s.conf != null) lines.push(`Last confirmed activity: ${when(s.conf)}`)
-        else if (hidden) lines.push('Activity times: not shown for this agent')
-        else lines.push('Last confirmed activity: none on record')
-        if (s.kind === 'inferred' || s.kind === 'late' || s.kind === 'unconfirmed') lines.push(`Run due: ${when(s.due)}`)
+        const r = s.lastRun, c = s.lastCommit
+        if (hidden) lines.push('Activity times: not shown for this agent')
+        else if (r || c != null) {
+            const useRun = r && (c == null || r.t >= c - 10 * MIN)
+            lines.push(`Last confirmed activity: ${when(useRun ? r.t : c)} (${useRun ? `report: ${r.state || 'no state word'}` : 'commit'})`)
+            if (useRun && c != null && c > r.t) lines.push(`Last commit: ${when(c)}`)
+        } else lines.push('Last confirmed activity: none on record')
+        if (s.kind === 'inferred' || s.kind === 'late' || s.kind === 'unconfirmed') if (s.due) lines.push(`Run due: ${when(s.due)}`)
         const next = s.kind === 'scheduled' ? s.due : s.next
         if (next) lines.push(`Next run due: ${when(next)}`)
-        if (a.status) lines.push(`Last report: ${a.status}${a.urgent ? ', URGENT' : ''}`)
         return { title: `${a.short}: ${a.role}`, lines }
     }
     function show(a) {
@@ -172,7 +201,7 @@
     }
     const pill = a => {
         const s = a.state
-        return s.kind === 'confirmed' ? hm(new Date(s.conf)) : s.kind === 'scheduled' ? (s.due ? 'due ' + hm(new Date(s.due)) : 'due') : s.kind === 'inferred' ? '?' : s.kind === 'late' ? 'late' : s.kind === 'unconfirmed' ? 'unconfirmed' : s.kind === 'error' ? '!' : 'on demand'
+        return { confirmed: () => hm(new Date(s.at)), idle: () => 'idle ' + hm(new Date(s.at)), scheduled: () => s.due ? 'due ' + hm(new Date(s.due)) : 'due', inferred: () => 'running?', late: () => 'late', unconfirmed: () => 'unknown', error: () => '!', ondemand: () => 'on demand' }[s.kind]()
     }
 
     // where each state puts an agent
@@ -180,7 +209,7 @@
         const s = a.state
         if (s.kind === 'ondemand') return inRoom(a)
         if (s.kind === 'scheduled' && s.due && s.due - Date.now() <= SOON) return inLounge(a, a.loungeSpot)
-        if (s.kind === 'inferred' || s.kind === 'late' || s.kind === 'unconfirmed' || s.kind === 'error' || (s.kind === 'confirmed' && s.working)) return atDesk(a)
+        if (s.kind === 'inferred' || s.kind === 'late' || s.kind === 'error' || (s.kind === 'confirmed' && s.working)) return atDesk(a)
         return inRoom(a)
     }
     function place(a, snap) {
@@ -207,7 +236,7 @@
     function tick(force) {
         const now = Date.now()
         for (const a of agents) {
-            const s = stateOf(a, now), key = s.kind + (s.working ? 'w' : '') + (s.due || '') + (s.conf || '')
+            const s = stateOf(a, now), key = [s.kind, s.working, s.due, s.at, s.why, s.lastRun && s.lastRun.t, s.lastCommit].join('|')
             if (key !== a.key || force) {
                 a.state = s; a.key = key
                 if (layout.length) place(a, false)
@@ -246,7 +275,7 @@
         const line = (txt, bold) => { const e = document.createElement(bold ? 'b' : 'span'); e.textContent = txt; return e }
         banner.replaceChildren(line('Near-live: updated with each site release, last data '), line(isNaN(at) ? 'unknown' : full(at), true), line('.'))
         if (failedSince) warn.push(`Could not check for new data since ${hm(new Date(failedSince))} UTC; the office shows the data above, which may be out of date.`)
-        if (!isNaN(at) && now - at > STALE) warn.push(`This data is ${Math.floor((now - at) / (60 * MIN))} hours old: no site release since then, so later work is not shown and runs past due show as unconfirmed.`)
+        if (!isNaN(at) && now - at > STALE) warn.push(`This data is ${Math.floor((now - at) / (60 * MIN))} hours old: no site release since then, so later work is not shown and runs past due show as unknown.`)
         if (!isNaN(at) && at - now > MIN) warn.push("This device's clock is behind the data's time; states may be wrong.")
         const p = document.createElement('span'); p.className = 'office-checked'
         p.textContent = checkedAt ? ` Checked for new data by this browser at ${hm(new Date(checkedAt))} UTC; it checks every minute.` : ' Checking for new data...'
@@ -288,6 +317,7 @@
         let fg = C.ink
         ctx.setLineDash([]); ctx.lineWidth = 1.5
         if (s.kind === 'confirmed') { ctx.fillStyle = C.ok; ctx.fill(); fg = C.onSolid }
+        else if (s.kind === 'idle') { ctx.fillStyle = C.okSoft; ctx.fill(); ctx.strokeStyle = C.ok; ctx.stroke(); fg = C.ok }
         else if (s.kind === 'scheduled') { ctx.fillStyle = C.surface; ctx.fill(); ctx.setLineDash([3, 2]); ctx.strokeStyle = C.ink2; ctx.stroke(); ctx.setLineDash([]) }
         else if (s.kind === 'inferred') { ctx.fillStyle = C.surface; ctx.globalAlpha = .75; ctx.fill(); ctx.globalAlpha = 1; ctx.strokeStyle = C.line; ctx.stroke(); fg = C.ink2 }
         else if (s.kind === 'late') { ctx.fillStyle = C.warnSoft; ctx.fill(); ctx.strokeStyle = C.warn; ctx.stroke(); fg = C.warn }
@@ -317,7 +347,7 @@
                 if (d <= step) { a.x = p.x; a.y = p.y; a.path.shift() } else { a.x += dx / d * step; a.y += dy / d * step }
                 a.walking = true
             } else a.walking = false
-            const resting = a.state.kind === 'confirmed' && !a.state.working || a.state.kind === 'scheduled' && !(a.state.due && a.state.due - now <= SOON)
+            const resting = a.state.kind === 'confirmed' && !a.state.working || a.state.kind === 'idle' || a.state.kind === 'scheduled' && !(a.state.due && a.state.due - now <= SOON)
             if (!still && resting && !a.path.length && room('lounge')) {
                 if (!a.nextTrip) a.nextTrip = now + 15e3 + (a.seed * 7919 % 50) * 1e3
                 if (now > a.nextTrip && !a.trip) { const c = coffee(); a.trip = 'out'; a.path = route(a, { x: c.x - (a.seed % 5) * 6, y: c.y + (a.seed % 3) * 4 }); a.nextTrip = now + 6e3 }
