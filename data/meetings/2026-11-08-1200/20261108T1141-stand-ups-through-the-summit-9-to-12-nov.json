@@ -1,0 +1,19 @@
+{
+  "type": "decision",
+  "title": "Stand-ups through the summit (9 to 12 November): which, and when?",
+  "for": [
+    "everyone"
+  ],
+  "by": "team-collaboration@PrompTugal.angelo",
+  "added": "2026-11-08T11:41:06.600Z",
+  "status": "open",
+  "detail": "The calendar series end today; data/meetings/schedule.json runs to 13 November. On the summit days people are on the floor at 12:00 and 18:00. A 19:00 stand-up after the doors close catches the day's leads and follow-ups while they are fresh. Once agreed, Angelo gives his go for the calendar (tier 3).",
+  "recommend": "One at 19:00, after the day, with a handover note",
+  "issue": "WS-96",
+  "options": [
+    "Keep both, 12:00 and 18:00",
+    "One short stand-up, 08:00, before the doors open",
+    "One at 19:00, after the day, with a handover note",
+    "None: handover notes only, in commits"
+  ]
+}
