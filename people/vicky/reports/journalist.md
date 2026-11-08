@@ -106,3 +106,8 @@ Vicky's journalist for the Web Summit 2026 newsroom: turns the curator's story c
 ## Sun 8 Nov 2026, 18:55 UTC (scheduled run)
 
 - state: idle
+
+## Sun 8 Nov 2026, 20:00 UTC (fix-only run)
+
+- Applied HANDOFF-FIX: step 5 of my writing task (trig_01SpLzX33tb8C82iAaPMBy3d) now ends ", For: reviewer@PrompTugal.vicky (the review hand-off)."; prompts file copy updated and my 5 Nov rule (For: newsroom@web-summit.dinis) marked superseded; STYLE.md re-read (the reviewer's new hand-off line is in). No draft re-pushed. Also confirming SA18 (my fix-only task trig_01ENwR7p1ggLZHK2RcyBPTud runs) and SCHED-WS (both tasks at the conductor's times). No fix-first drafts.
+- state: ok; done: HANDOFF-FIX applied, SA18 and SCHED-WS confirmed; next: writing run 05:51 UTC; ask: none; run: scheduled
