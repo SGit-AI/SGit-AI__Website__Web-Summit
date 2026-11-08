@@ -162,6 +162,11 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .rp-now { font: 600 14px/20px var(--rm-font); min-width: 150px; }
 .rp-wrap { overflow-x: auto; border: 1px solid var(--rm-border); border-radius: var(--rm-radius-card); background: var(--rm-surface); }
 .rp-svg { display: block; font: 500 11px/1 var(--rm-font); }
+/* backlog 0c3: the chart on its own layer, the playhead in a small overlay above it, so a moving playhead repaints neither */
+.rp-stage { position: relative; width: max-content; }
+.rp-stage .rp-svg { will-change: transform; contain: paint; }
+.rp-headsvg { position: absolute; left: 0; top: 0; display: block; pointer-events: none; overflow: visible; }
+.rp-veil { fill: var(--rm-surface); opacity: .88; }
 .rp-svg text { fill: var(--rm-text-secondary); }
 .rp-grid line { stroke: var(--rm-border); stroke-width: 1; }
 .rp-stand line { stroke: var(--rm-gold); stroke-dasharray: 3 3; }
