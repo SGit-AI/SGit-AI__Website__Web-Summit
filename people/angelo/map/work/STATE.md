@@ -14,4 +14,4 @@ First run, 8 November 2026 (09:51 to about 10:15 UTC). Backlog 0f2 (the work vie
 1,978 non-release commits, 932 deliver by the rule table: site 574, infrastructure 235, app 116, keys 98, drafts 77, CRM 13, research 4. 22 "Delivered:" lines so far, none yet kind-first.
 
 ## Last run
-Fifth run, 8 November about 14:51 UTC: still not approved (no commit For: me from the desk since 12:51); nothing to build. Under the desk's "our own website first" (9f3f449, 591c03fe), Delivered: links point to the site: the spec and both mock-ups are live and current at https://web-summit.sgit.ai/people/angelo/proposals/live-map/spec-work-view.md (dashboard@ brought them onto dev, 33ec1444). Next run: if approved, start deliveries.mjs (the rule table, a test per row); else wait.
+Sixth run, 8 November about 15:51 UTC: still not approved (spec-work-view.md's status line says "draft"; no commit For: me from the desk since 12:51, only dashboard@'s review 149466ad bringing my fifth run onto dev). Lane still missing in people/angelo/policy/lanes.json. Nothing to build. Next run: if approved, start deliveries.mjs (the rule table, a test per row); else wait.
