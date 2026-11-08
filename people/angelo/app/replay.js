@@ -23,7 +23,7 @@
         if (embed) {
             const i = location.hash.indexOf('?'), q = new URLSearchParams(i < 0 ? '' : location.hash.slice(i + 1)), set = (k, v) => { if (v) q.set('r_' + k, v); else q.delete('r_' + k) }
             set('p', s.p.join(',')); set('k', s.k.join(',')); set('a', s.a); set('i', s.i); set('sel', s.sel); set('m', s.m ? '' : '0'); set('r', s.r ? '1' : '')
-            q.set('map', '1'); const t = q.toString().replace(/%2C/g, ',').replace(/%3A/g, ':'); return '#collab' + (t ? '?' + t : '')
+            const t = q.toString().replace(/%2C/g, ',').replace(/%3A/g, ':'); return '#collab' + (t ? '?' + t : '')
         }
         const q = []; if (s.w !== '24h') q.push('w=' + s.w); if (s.p.length) q.push('p=' + s.p.join(',')); if (s.k.length) q.push('k=' + s.k.join(','))
         if (s.a) q.push('a=' + encodeURIComponent(s.a)); if (s.i) q.push('i=' + encodeURIComponent(s.i)); if (s.sel) q.push('sel=' + s.sel); if (!s.m) q.push('m=0'); if (s.r) q.push('r=1'); if (s.c) q.push('c=1')
@@ -49,6 +49,7 @@
     // the map's clock (mountFlow) and the embedded timeline share one moment: the map says where it is, the timeline follows,
     // and a commit picked on the timeline moves the map there
     let flowApi = null, embedClock = null
+    const fa = () => flowApi && flowApi.alive() ? flowApi : null
     // slice 4: the agents' runs (WS-160), read in this browser from observability's public vault with its published read key,
     // through the site's vendored reader (assets/vendor/sgit-ai/.../vault-embed.js): only when asked, once per page
     let RUNS = null   // null | 'loading' | [runs] | Error
@@ -70,7 +71,7 @@
         if (title && !E) title.innerHTML = `${ownTitle('Replay')}<small>${esc((D.person.name || D.person.id).split(' ')[0])}'s command centre</small>`
         if (!R) { view.innerHTML = '<p class="note">Replay has no data in this build.</p>'; return }
         const s = parse(location.hash, E), nowMin = Math.round((Date.now() - Date.parse(R.from)) / 6e4)
-        if (E) setTimeout(() => { if (flowApi) flowApi.pick(s.sel) }, 0)   // the map, drawn before this timeline, picks out the commit's agent
+        if (E) setTimeout(() => { if (fa()) fa().pick(s.sel) }, 0)   // the map, drawn before this timeline, picks out the commit's agent
         const { start, end, ev } = select(R, s, nowMin), phone = PHONE()
         // rows: per agent grouped by person; on a phone, per person
         const agentsSeen = new Set(ev.filter(e => e[1] >= 0).map(e => e[1]))
@@ -157,7 +158,7 @@ ${sel ? detail(R, sel) : ''}
         const w = view.querySelector('[data-rp-w]'); if (w) w.onchange = () => go({ w: w.value })
         const a = view.querySelector('[data-rp-a]'); if (a) a.onchange = () => go({ a: a.value })
         const i = view.querySelector('[data-rp-i]'); if (i) { let t; i.oninput = () => { clearTimeout(t); t = setTimeout(() => { go({ i: i.value }); const n = view.querySelector('[data-rp-i]'); if (n) { n.focus(); n.setSelectionRange(n.value.length, n.value.length) } }, 300) } }
-        view.querySelectorAll('circle.rp-e').forEach(c => c.onclick = () => { if (ctx.embed && flowApi && c.dataset.h !== s.sel) flowApi.seek(+c.dataset.t); go({ sel: c.dataset.h === s.sel ? '' : c.dataset.h }) })
+        view.querySelectorAll('circle.rp-e').forEach(c => c.onclick = () => { if (ctx.embed && fa() && c.dataset.h !== s.sel) fa().seek(+c.dataset.t); go({ sel: c.dataset.h === s.sel ? '' : c.dataset.h }) })
         // playback: dots after the playhead fade; the pointer walks the sorted dots so each frame touches only what changed
         const dots = [...view.querySelectorAll('.rp-e')].sort((p, q) => +p.dataset.t - +q.dataset.t)
         const head = view.querySelector('.rp-head'), now = view.querySelector('[data-rp-now]'), scrub = view.querySelector('[data-rp-scrub]'), btn = view.querySelector('[data-rp-play]'), speed = view.querySelector('[data-rp-speed]')
@@ -191,7 +192,7 @@ ${sel ? detail(R, sel) : ''}
         // embedded: follow the map's clock
         if (embedClock) removeEventListener('ak-clock', embedClock)
         embedClock = null
-        if (ctx.embed) { embedClock = e => { if (view.isConnected) seek(e.detail, !!(flowApi && flowApi.playing && flowApi.playing())) }; addEventListener('ak-clock', embedClock); if (flowApi && flowApi.at() != null) seek(flowApi.at()) }
+        if (ctx.embed) { embedClock = e => { if (view.isConnected) seek(e.detail, !!(fa() && fa().playing())) }; addEventListener('ak-clock', embedClock); if (fa() && fa().at() != null) seek(fa().at()) }
         const stop = () => { if (play) { cancelAnimationFrame(play.raf); clearTimeout(play.raf) } play = null; arcs.forEach(a => a.classList.remove('now')); if (btn) { btn.textContent = '▶ Play'; btn.setAttribute('aria-pressed', 'false') } }
         if (scrub) scrub.oninput = () => { stop(); seek(+scrub.value) }
         const j = view.querySelector('[data-rp-jump]'); if (j) j.onchange = () => { if (j.value) { stop(); seek(+j.value) } }
@@ -224,7 +225,7 @@ ${sel ? detail(R, sel) : ''}
     // per map (o.key: window, layout, focus), and picked up again by the new map
     let flowState = { key: '', t: null, playing: false, speed: '' }
     function mountFlow(host, o) {
-        const R = o.D && o.D.replay, bar = host.querySelector('[data-tmf]'); if (!R || !bar || !o.svg) return
+        const R = o.D && o.D.replay, bar = host.querySelector('[data-tmf]'); if (!R || !R.events || !bar || !o.svg) return
         const w = WINDOWS[o.w] ? o.w : '24h', nowMin = Math.round((Date.now() - Date.parse(R.from)) / 6e4), end = nowMin, start = WINDOWS[w][1] ? Math.max(0, end - WINDOWS[w][1]) : 0
         const lowerBound = (arr, v, key) => { let lo = 0, hi = arr.length; while (lo < hi) { const mid = (lo + hi) >> 1; if (key(arr[mid]) <= v) lo = mid + 1; else hi = mid } return lo }
         const isAgent = id => { const n = o.pos.get(id); return !!n && n.kind === 'a' }
@@ -432,9 +433,9 @@ ${sel ? detail(R, sel) : ''}
             const onIds = new Set(); for (const [id, a] of N) if (a.on) onIds.add(id)
             return { fly: fly.map(m => ({ from: m.from, to: m.to, u: Math.min(1, Math.max(0, (T - m.t) / travel)) })), lines: lit3, hot, on: onIds }
         }
-        flowApi = { seek, at: () => flowState.t, pick, view3d, playing: () => playing }
+        flowApi = { seek, at: () => flowState.t, pick, view3d, playing: () => playing, alive: () => host.isConnected }
         return { seek, msgs: msgs.length }
     }
 
-    root.AngeloReplay = { render, parse, mountFlow, view3d: () => flowApi && flowApi.view3d ? flowApi.view3d() : null }
+    root.AngeloReplay = { render, parse, mountFlow, view3d: () => fa() ? fa().view3d() : null }
 })(typeof self !== 'undefined' ? self : this)

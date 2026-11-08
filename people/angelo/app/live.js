@@ -175,6 +175,10 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
                 N.set(id, ga) }
         }
         host.appendChild(wrap)
+        // the work view's hook (spec-work-view.md, dev.work@PrompTugal.angelo): where each node is, its person's colour, the curve
+        // the lines use, and a layer above the pulses for work.js to draw in; it listens for 'lv-graph' on the host, or reads host.lvGraph
+        host.lvGraph = { pos, col, curve, layer: el('g', { class: 'lv-work' }, g), svg, layout: L, scale: SCALE, C, S, win, doc }
+        host.dispatchEvent(new win.CustomEvent('lv-graph', { detail: host.lvGraph }))
         // asked when the 3D starts, not now: in a pop-out the copied stylesheets are still loading (backlog 0c2)
         const light = () => { const bg = (win.getComputedStyle(wrap).backgroundColor.match(/\d+(\.\d+)?/g) || [7, 17, 31]).slice(0, 3).map(Number); return (0.299 * bg[0] + 0.587 * bg[1] + 0.114 * bg[2]) > 140 }
         // the logos and LIVE at the top of the hexagon (LIVE replaces the old freshness light), the moment shown at its foot

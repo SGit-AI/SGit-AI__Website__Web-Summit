@@ -1,17 +1,25 @@
 # dev.map@PrompTugal.angelo: STATE
 
-Thirteenth run, 8 November 2026 (16:16 to about 17:40 UTC). Backlog 0c3 (the desk's 15:52 and 16:13 briefs, 1ef0b29b and 32b98d25, both pushed by riskmandate-angelo). dashboard@ reviews.
+Fourteenth run, 8 November 2026 (18:15 to about 19:40 UTC). Backlog 0c3 (6) (the desk's 16:50 brief, 422bd383, pushed by riskmandate-angelo). dashboard@ reviews.
 
 ## Done this run (on workers/dev.map, for dashboard@ to review)
-- 0c3 (1) the replay's stutter (f2882732): cause, from a Chrome trace: the timeline's chart under the map (about 9,000 SVG marks) repainted and re-layered on every frame, because the playhead moved inside it and its dots changed class each frame; script was under 1 ms. The playhead and a veil over the chart's future now sit in their own overlay, and the chart is left alone while the map plays. 72 h window, CPU at half speed, retina: 35 -> 59 fps; at a quarter speed 13 -> 31. Test `rpfps`.
-- 0c3 (2) to (4), the 3D (live3d.js, map3d.js, live.js, replay.js): brighter colours in the dark and a glow layer along every lit line (one more draw call, 6 in all); bigger heads on travelling dots; the live 3D's logos about 1.55 times their 2D size; a ball, not a disk (`AngeloLive3D.ball()`: people round the sphere's middle, each person's agents fanned pole to pole on its side in two shells); the replay's 3D holds only the agents on the 2D map at that moment, each joining from its person and fading in, the ball laid out again and easing to make room. Test `lv3dball`.
+- 0c3 (6), the timeline collapsed on its own (app.js, replay.js, data.mjs): closed by default, a "Show the timeline" button whether the map is open or not, remembered on this device (localStorage `ak-tl-open`); `tl=1` or the timeline's own filters (`r_*`) in the address open it, and an old `#replay` link lands with `tl=1`; closing drops them. Drawn only when open.
+- The data: every commit since 2 November (`replay.events`) left data.json for `replay-events.json` (extras in data.mjs; ignored by `people/angelo/app/.gitignore`), fetched once, only when the map or the timeline is opened. The first load of the command centre (any view): data.json 1,137 KB -> 858 KB, gzipped 307 KB -> 217 KB (-29%). With the map open the commits are still fetched (its playback needs them); the timeline's 9,000 marks are not drawn unless it is open. Test `tmtlc`; `rpfps` opens the timeline with `tl=1`.
+
+## Done in a parallel run (19:09 to 19:40 UTC, run 15)
+- 0c0, dev.work@'s hook in live.js (7751d4e, the desk's a2c8e4c7): host.lvGraph and the 'lv-graph' event; wv, wvdraw, wvlive and the lv tests pass on dev's tree. dev.work@ adds the switch next.
+- lvmsg is not broken: it needs three sealed messages and a shallow clone holds two; with `git fetch --depth=3000 origin dev` it passes.
+- Two runs overlapped (this schedule fired while run 14 was still working): before starting, fetch workers/dev.map and check its newest commit's time; if it is under an hour old and STATE has no "Last run" end, the other run may still be going: take an item it is not on.
 
 ## Open
+- lvlabel fixed in its test: the live clock follows the viewer's locale (12-hour in New York); the test assumed 24-hour and failed after 13:00 there.
+- Offline (sw.js): replay-events.json is stored only once it has been fetched, so the timeline and the playback work offline only after one online visit with the map or timeline open.
 - 0f's rest: build Angelo's pick of the fresh-session mark (options: `people/angelo/proposals/live-map/fresh-mark-options.svg`, A, B or C); the dashed ring stays until he picks.
-- The replay at a quarter CPU speed (a phone) is 31 fps: the rest is the map's own paint (about 5 ms a frame at full speed). Next step if wanted: draw the map's moving layer (pulses and lit lines) on a canvas over the SVG.
+- The replay at a quarter CPU speed (a phone) is 31 fps: the rest is the map's own paint. Next step if wanted: the map's moving layer on a canvas.
 - Item 00's rest: Safari and iPad untested (no WebKit here).
 - Piece 4 (public /team/map/) needs build.mjs and the newsroom: a question for the desk.
 - For policy@: my lane leaves out this STATE file (people/angelo/map/**); dashboard@'s review carries it onto dev.
 
 ## Last run
-Started from dev, joined workers/dev.map with `git merge -s ours` (needs `git fetch --depth=300 origin dev workers/dev.map` first in a shallow clone; `--depth=3000 origin dev` for tmf and the replay tests). Gate with LANE_RANGE=<the join commit>..HEAD.
+Pushing: the branch already holds workers/dev.map (the join), so push straight away; never rebase on it (this run a stopped rebase was pushed by mistake: ddfcbb38..1c407729 are copies of dev's commits, fixed forward by 4c58d9f6, a merge that keeps the tree).
+Started from dev, joined workers/dev.map with `git merge -s ours` (needs `git fetch --depth=300 origin dev workers/dev.map` first in a shallow clone; `--depth=6000 origin dev` for tmf and the replay tests). Gate with LANE_RANGE=<the join commit>..HEAD.
