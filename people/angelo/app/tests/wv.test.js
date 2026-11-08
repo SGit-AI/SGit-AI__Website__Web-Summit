@@ -73,5 +73,14 @@ const ROOT = path.resolve(__dirname, '../../../..')
  const files = /\.(md|json|mjs|js|html)\b/.test(JSON.stringify(P))
  console.log(JSON.stringify({ deliveries: list.length, makers: P.makers.length, by: Object.fromEntries(D.DESTS.map((d, i) => [d, P.rows.filter(r => r[3] === i).length])) }))
  if (!list.length || !shape || text || files) fail(`the list: ${list.length} rows, shape ${shape}, text ${text}, file names ${files}`)
+ // the build's deliveries.json beside live.json (data.mjs's extras): the same shape, makers named as live.json names agents
+ const DJ = path.join(ROOT, 'people/angelo/app/deliveries.json'), LJ = path.join(ROOT, 'people/angelo/app/live.json')
+ if (fs.existsSync(DJ) && fs.existsSync(LJ)) {
+  const W = JSON.parse(fs.readFileSync(DJ, 'utf8')), L = JSON.parse(fs.readFileSync(LJ, 'utf8'))
+  const same = W.from === L.from && W.rows.length > 0 && W.rows.every(r => r.length === 6 && r[1] < W.makers.length && W.icons[r[2]] && W.dests[r[3]])
+  const named = L.agents.filter(a => W.makers.includes(a)).length, raw = W.makers.filter(m => /@promptugal\./i.test(m)).length
+  console.log(JSON.stringify({ built: W.rows.length, sharedNames: named, rawPtNames: raw }))
+  if (!same || !named || raw || /"(subject|body|message|text|title)"/.test(JSON.stringify(W))) fail('deliveries.json: shape, names or text')
+ } else console.log('  (deliveries.json not built: run the build first; run.sh does)')
  console.log(ok ? 'PASS' : 'FAIL')
 })()
