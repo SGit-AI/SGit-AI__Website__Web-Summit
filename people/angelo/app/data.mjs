@@ -270,7 +270,10 @@ const minsOf = iso => Math.round((Date.parse(iso) - REPLAY_FROM) / 6e4)
 const sealedAt = a => { const m = String(a || '').match(/^(\d{4}-\d\d-\d\d)T(\d\d):?(\d\d)(?::?(\d\d))?(?:\.\d+)?Z$/); return m ? `${m[1]}T${m[2]}:${m[3]}:${m[4] || '00'}Z` : null }
 function liveEvents(root) {
     const keysNow = (readJson(root, 'data/keys.json') || {}).keys || []
-    const agentOfKey = k => { const n = k.agent || (String(k.label || '').match(new RegExp(NAME_SRC, 'i')) || [])[0]; return n && parseName(n) ? viewId(n) : null }
+    // a name as the replay's agents carry it: an old name becomes the name its person's agents.json declares now
+    const DECL = declaredNames(root, ((readJson(root, 'data/team.json') || {}).members || []).filter(m => m.kind === 'human'))
+    const asNow = n => { const d = DECL.get(canon(n)); return viewId(d ? d.name : n) }
+    const agentOfKey = k => { const n = k.agent || (String(k.label || '').match(new RegExp(NAME_SRC, 'i')) || [])[0]; return n && parseName(n) ? asNow(n) : null }
     const byId = new Map(keysNow.map(k => [k.id, agentOfKey(k)]))
     // keys: replay the file's history, commit by commit, and note when each id first appears and when it stops being active
     const keys = [], seen = new Map()
@@ -289,7 +292,7 @@ function liveEvents(root) {
     }
     // handovers: by and to, and when; "to" is a person's id or a key's id
     const people = new Set(((readJson(root, 'data/team.json') || {}).members || []).filter(m => m.kind === 'human').map(m => m.id))
-    const party = n => { n = String(n || '').trim(); if (people.has(n)) return n; if (parseName(n)) return viewId(n); return byId.get(n) || null }
+    const party = n => { n = String(n || '').trim(); if (people.has(n)) return n; if (parseName(n)) return asNow(n); return byId.get(n) || null }
     const handovers = [], sdir = path.join(root, 'data/sealed')
     const walk = d => fs.existsSync(d) ? fs.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(path.join(d, e.name)) : e.name.endsWith('.json') ? [path.join(d, e.name)] : []) : []
     for (const f of walk(sdir)) {
@@ -303,13 +306,13 @@ function liveEvents(root) {
     const idir = path.join(root, 'data/inbox')
     for (const f of fs.existsSync(idir) ? fs.readdirSync(idir).filter(x => /^lane-.*\.json$/.test(x)) : []) {
         const j = readJson(root, `data/inbox/${f}`) || {}, at = firstAt(`data/inbox/${f}`)
-        if (parseName(j.agent || '') && at) lanes.push([minsOf(at), viewId(j.agent), 'inbox'])
+        if (parseName(j.agent || '') && at) lanes.push([minsOf(at), asNow(j.agent), 'inbox'])
     }
     const fbSeen = new Set()
     for (const line of git(root, ['log', '--reverse', '--format=%H %cI', '--', 'assets/feedback.json']).trim().split('\n').filter(Boolean)) {
         const [h, at] = line.split(' '); let ls
         try { ls = JSON.parse(git(root, ['show', `${h}:assets/feedback.json`])).lanes || [] } catch { continue }
-        for (const l of ls) if (parseName(l.agent || '') && !fbSeen.has(l.agent)) { fbSeen.add(l.agent); lanes.push([minsOf(at), viewId(l.agent), 'feedback']) }
+        for (const l of ls) if (parseName(l.agent || '') && !fbSeen.has(l.agent)) { fbSeen.add(l.agent); lanes.push([minsOf(at), asNow(l.agent), 'feedback']) }
     }
     lanes.sort((x, y) => x[0] - y[0]); keys.sort((x, y) => x[0] - y[0])
     return neverList(root, { keys, handovers, lanes })
