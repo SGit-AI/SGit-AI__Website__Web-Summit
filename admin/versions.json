@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1396",
+    "date": "2026-11-08",
+    "what": "review: bring workers/dev.work's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "2e0eac449"
+  },
+  {
     "version": "v0.2.1395",
     "date": "2026-11-08",
     "what": "20:41 wake, back after 16 missed wakes: a note for Silvio covering two days",
