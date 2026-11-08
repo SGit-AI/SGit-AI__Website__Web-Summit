@@ -54,4 +54,30 @@ const INIT = (fs.readFileSync(path.join(__dirname, '../desktop/src-tauri/src/mai
   console.log('calm', JSON.stringify({ off, on, call, cancelled, f0, kept, moving }))
   if (!(off >= 40) || !(on >= 10 && on <= 17) || !call || !call[1] || call[1].calm !== true || !cancelled || !kept || !moving) fail('calm')
   await c.close() }
+ // (5) 3D, in step with the pop-out (1f87ac2: the popped-out 3D drew black): in the app's transparent window the 3D canvas
+ // draws, the corners stay clear, it is not black (lit pixels), and the page's own hiding stands, so the app shows the same
+ // flat layers as the browser's display mode (none, in 3D; the start-up script once forced them visible, a stray dot);
+ // the menu's 3D entry is remembered across a reload, and turning it off goes back to the flat graph
+ { const U3 = B + 'index.html?display=1&transparent=1&d3=1#live'
+  const seen = p => p.evaluate(() => [...document.querySelectorAll('.lv-display .lv-svg > g')].filter(e => getComputedStyle(e).visibility === 'visible').length)
+  const bc = await b.newContext({ viewport: { width: 420, height: 420 }, colorScheme: 'dark', serviceWorkers: 'block' }), bp = await bc.newPage()
+  await bp.goto(U3, { waitUntil: 'networkidle' }); await bp.waitForSelector('.lv-display .lv-3d canvas', { timeout: 20000 }).catch(() => { }); const browserSeen = await seen(bp); await bc.close()
+  const c = await b.newContext({ viewport: { width: 420, height: 420 }, colorScheme: 'dark', serviceWorkers: 'block' }); await c.addInitScript(INIT || '')
+  const p = await c.newPage(); await p.goto(U3, { waitUntil: 'networkidle' }); await p.waitForSelector('.lv-display .lv-3d canvas', { timeout: 20000 }).catch(() => { }); await p.waitForTimeout(2500)
+  const appSeen = await seen(p), canvas = await p.evaluate(() => !!document.querySelector('.lv-display .lv-3d canvas'))
+  const shot = await p.screenshot({ omitBackground: true, path: `${S}/hxapp-window-3d.png` })
+  const v = await b.newPage(); await v.setContent(`<img id=i src="data:image/png;base64,${shot.toString('base64')}">`); await v.waitForFunction(() => document.getElementById('i').complete)
+  const px = await v.evaluate(() => { const i = document.getElementById('i'), cv = document.createElement('canvas'); cv.width = i.naturalWidth; cv.height = i.naturalHeight; const g = cv.getContext('2d'); g.drawImage(i, 0, 0)
+   const w = cv.width, h = cv.height, d = g.getImageData(0, 0, w, h).data, a = (x, y) => d[(y * w + x) * 4 + 3]
+   let lit = 0; for (let y = Math.round(h * 0.15); y < h * 0.85; y += 2) for (let x = Math.round(w * 0.2); x < w * 0.8; x += 2) { const k = (y * w + x) * 4; if (Math.max(d[k], d[k + 1], d[k + 2]) > 140) lit++ }
+   return { corners: [a(3, 3), a(w - 4, 3), a(3, h - 4), a(w - 4, h - 4), a(40, 40)], lit } }); await v.close()
+  const menu = await p.evaluate(() => { window.__calls = []; window.__TAURI_INTERNALS__ = { invoke: (cmd, args) => { __calls.push([cmd, args]); return Promise.resolve() } }; return __hexapp.d3() })
+  await p.mouse.click(210, 210, { button: 'right' }); const call = await p.evaluate(() => __calls.find(x => x[0] === 'show_menu'))
+  // remembered: set on, then a fresh load of the flat page comes back in 3D; set off, back to flat
+  await p.evaluate(() => __hexapp.set3d(true)); await p.goto(B + 'index.html?display=1&transparent=1#live', { waitUntil: 'networkidle' }); const kept = await p.evaluate(() => /[?&]d3=1/.test(location.search))
+  await p.evaluate(() => __hexapp.set3d(false)); await p.waitForURL(u => !/d3=1/.test(String(u)), { timeout: 10000 }).catch(() => { }); await p.waitForSelector('.lv-display .lv-svg', { timeout: 15000 }).catch(() => { })
+  const flat = await p.evaluate(() => !/d3=1/.test(location.search) && !document.querySelector('.lv-3d') && localStorage.getItem('hexapp-3d') === '0')
+  console.log('3d', JSON.stringify({ canvas, browserSeen, appSeen, px, menu, call: call && call[1], kept, flat }))
+  if (!canvas || appSeen !== browserSeen || px.corners.some(x => x !== 0) || !(px.lit >= 20) || menu !== true || !call || !call[1] || call[1].d3 !== true || !kept || !flat) fail('3d')
+  await c.close() }
  await b.close(); console.log(ok ? 'PASS' : 'FAIL') })()
