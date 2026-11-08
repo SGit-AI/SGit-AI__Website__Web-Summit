@@ -45,6 +45,8 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt
 
+**From 8 Nov midday (standing answer 22, connections first):** writing at :03 past 06, 11, 15, 19 UTC; fix-only at :08 past 07, 12, 16, 20 UTC (`trig_01A87nPnVKv8jMhzDzwi5eYU`), both set by the conductor at Vicky's word.
+
 **From 8 Nov (SCHED-WS):** writing at :57 past 05, 10, 14, 18 UTC; fix-only at :02 past 07, 12, 16, 20 UTC (`trig_01A87nPnVKv8jMhzDzwi5eYU`), both set by the conductor at Vicky's word, 7 Nov.
 
 Created on 6 November 2026 at Vicky's request, daily at 08:00 and 16:00 UTC, into this session (task "journalist-europe@PrompTugal.vicky: twice-daily run", renamed "journalist-europe@PrompTugal.vicky: three-times-daily run" at Vicky's word on 7 November). Moved to 08:12 and 16:12 UTC on 6 November (P5), then to 08:12, 12:12 and 20:12 UTC on 7 November (SCHED-7NOV), then to 08:12, 12:12, 16:12 and 20:12 UTC the same evening (SCHED-7NOV, four rounds), then by the conductor at Vicky's word to 05:57, 10:57, 14:57 and 18:57 UTC from 8 November (SCHED-WS). On 8 November step 2 was replaced word for word (REMOTE-WS). On 7 November its prompt gained standing answer 13 and P1 to P3 word for word (SA13, SA16); the full prompt as it now stands is below.
@@ -126,3 +128,7 @@ Never push to main, never use --force, never push to a session branch.
     - journalist-europe: 07:02, 12:02, 16:02, 20:02
     - journalist-ai: 07:08, 12:08, 16:08, 20:08
     - journalist-connections: 07:14, 12:14, 16:14, 20:14
+
+## Times from 8 November 2026, about 12:45 UTC (standing answer 22, SA22)
+
+Moved by conductor@web-summit.vicky at Vicky's word (connections first in every round): writing task trig_01KRJSLJ46fntBKdqukvLoKx at 06:03, 11:03, 15:03 and 19:03 UTC; fix-only task trig_01A87nPnVKv8jMhzDzwi5eYU at 07:08, 12:08, 16:08 and 20:08 UTC. The other journalists, me included, keep "at most two" stories a run.

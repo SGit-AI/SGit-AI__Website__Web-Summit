@@ -13,6 +13,7 @@ Sources, read 5 November 2026: `content/videos.md` (the pipeline table), `data/v
 | An X-ray, in 30 seconds (WS-197) | 30 s, silent | checked, final, for Silvio's yes | the vault, `xray-30s/` |
 | The demo is us | 47 s, silent | checked, final, for Silvio's yes | the vault, `the-demo-is-us/` |
 | The Licence to Operate, in 30 seconds | 30 s, square and 16:9 | checked, final, for Silvio's yes | the vault, `licence-to-operate-30s/` |
+| With and without RiskMandate: the agent beyond its mandate, the access that stayed, the supplier with the open door | 19 s each, EN and PT, four frames | made 8 November, sent to Silvio; into the vault at his yes | not yet in the vault |
 | Reach, Mandate, Gap | 53 s | **on hold: errors in frames** | not in the vault (PUBLISH.md says which) |
 | RiskMandate Stories: fifty new agents | 2 min 44 s | **on hold: a label over its title** | not in the vault |
 

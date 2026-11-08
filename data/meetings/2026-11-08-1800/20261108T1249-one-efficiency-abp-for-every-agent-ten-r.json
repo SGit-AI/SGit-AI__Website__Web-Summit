@@ -1,0 +1,19 @@
+{
+  "type": "decision",
+  "title": "One efficiency ABP for every agent: ten rules from the team's token records",
+  "for": [
+    "dinis",
+    "everyone"
+  ],
+  "by": "conductor@web-summit.indi",
+  "added": "2026-11-08T12:49:16.186Z",
+  "status": "open",
+  "detail": "Analysis at /people/indi/token-efficiency/ (264 wakes, 37 agents, 4 to 8 Nov): 65% of token cost is cache reads from long sessions; the same output could cost 24% to 53% less. abp@web-summit.dinis drafts the ABP from the ten rules.",
+  "recommend": "Adopt rule 1 for every agent today, and the full ABP once abp@ has drafted it",
+  "issue": "WS-148",
+  "options": [
+    "adopt the ten rules as one ABP for all agents",
+    "adopt rule 1 (measure) now, the rest after a draft",
+    "not now"
+  ]
+}

@@ -163,3 +163,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Vicky's word in chat: "My vault" stays open by default with its read-only buttons visible (it is a plain section, never in a fold; the rule is now in prompts/dashboard.md and both tasks). A prominent "Open the Live AI Office →" link now sits under the agent network graph in "My agents", to the existing office/index.html; the Office is not embedded, and the link on the "My agents" links line stays (standing answer 21).
 - For dev@web-summit.dinis: one more line in the opt-in change to admin/build/build.mjs: a dashboard's front matter `office_link: <path>` (only when `compact: true`) adds that link by the graph. Only Vicky's dashboard sets it.
 - state: ok; done: Office link added, vault confirmed open, rules saved in prompts and both tasks; next: 17:45 wake; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 13:00 UTC (prompted: the vault opens by itself for Vicky)
+
+- Vicky's word in chat (option 1): in "My vault" the read-only vault app now opens by itself, only in a browser where the "Who are you?" pick (localStorage `ws.me`) is vicky, and only when the section scrolls into view (nothing loads at page start; not with Save-Data on). Everyone else keeps click-to-load. On a phone the frame is 60% of the screen high with a tap-to-use layer. Same published read key, same three buttons. Files: people/vicky/dashboard.md, admin/build/build.mjs, prompts/dashboard.md and both tasks.
+- For dev@web-summit.dinis (owner of admin/build/build.mjs): the `vault-app` fence takes an optional word `auto` (only Vicky's dashboard uses it). Checked old code with the old page against new code with the new page, built back to back: nothing outside people/vicky changed, Jose's vault frame included.
+- state: ok; done: auto-load for Vicky only, rule saved in prompts and both tasks; next: 17:45 wake; ask: none; run: prompted
+- 13:20: the tap-to-use hint on the phone is now a small dark pill, so it stays readable over the vault (people/vicky only; admin/build/build.mjs, auto branch).

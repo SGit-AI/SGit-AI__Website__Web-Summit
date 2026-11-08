@@ -79,6 +79,7 @@ export function build(ROOT) {
 <section><h2><span class="pill peach">3</span> Agents that work when you ask</h2>
 <p class="muted">No timetable: open their chat and give them a job.</p>
 <div class="oc">${D.oncall.map(o => `<div class="o ${o.colour}"><span class="ic">${esc(o.name[0])}</span><b>${esc(o.name)}</b><span>${esc(o.what)}</span><span class="c">${esc(o.chat)}</span></div>`).join('')}</div></section>
+<p class="muted">How much each agent costs, and how to spend less: <a href="../token-efficiency/index.html">token efficiency across the team</a>.</p>
 <p class="meta">Built by <code>people/indi/schedules/schedules.mjs</code> from <code>people/indi/schedules/schedules.json</code>. ${esc(D.about)}</p>
 </div>`
     const md = `${D.about}\n\n## A day at a glance\n\n${S.map(a => `- **${a.name}**${a.status === 'planned' ? ' (planned, not started)' : ''}: ${a.times.join(', ')} UTC`).join('\n')}\n\n## Each agent on a timetable\n\n${S.map(a => `### ${a.name}\n\n${a.what}\n\n- **Wakes at:** ${a.times.join(', ')} UTC (cron \`${a.cron}\`)${a.status === 'planned' ? ', planned, not started' : ''}\n- **Every wake, it:** ${a.each.join('; ')}\n- **It reads:** ${a.reads.join('; ')}\n- **It writes:** ${a.writes.join('; ')}\n- **It tells you:** ${a.tells}\n- **Its chat:** ${a.chat}`).join('\n\n')}\n\n## Agents that work when you ask\n\n${D.oncall.map(o => `- **${o.name}:** ${o.what} (chat: ${o.chat})`).join('\n')}\n`
