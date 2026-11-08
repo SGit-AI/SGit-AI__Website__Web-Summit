@@ -408,6 +408,9 @@ ${sel ? detail(R, sel) : ''}
         }
         const kick = () => { if (!raf) { lastTs = 0; raf = requestAnimationFrame(frame) } }
         function seek(t) { T = Math.max(start, Math.min(end, t)); if (!on) { on = true; o.svg.classList.add('tm-replay') } state(); kick(); return T }
+        // the clip (backlog 0f3, dev.work@PrompTugal.angelo, clip-button.js): one frame at t, moved dt seconds, on the clip's own clock
+        // and not the screen's, so a slow machine makes the same video; seek(T) afterwards hands the map back to the screen
+        function step(t, dt) { if (raf) { cancelAnimationFrame(raf); raf = 0 } T = Math.max(start, Math.min(end, t)); if (!on) { on = true; o.svg.classList.add('tm-replay') } state(); paint(dt); return T }
         const key = o.key || w
         if (flowState.key !== key) flowState = { key, t: null, playing: false, speed: flowState.speed }
         if (flowState.speed) speed.value = flowState.speed
@@ -436,9 +439,10 @@ ${sel ? detail(R, sel) : ''}
             const onIds = new Set(); for (const [id, a] of N) if (a.on) onIds.add(id)
             return { fly: fly.map(m => ({ from: m.from, to: m.to, u: Math.min(1, Math.max(0, (T - m.t) / travel)) })), lines: lit3, hot, on: onIds }
         }
-        flowApi = { seek, at: () => flowState.t, pick, view3d, playing: () => playing, alive: () => host.isConnected }
+        flowApi = { seek, at: () => flowState.t, pick, view3d, playing: () => playing, alive: () => host.isConnected,
+            step, stop, range: () => [start, end], rate, ms: m => Date.parse(R.from) + m * 6e4 }   // the last line for the clip (0f3)
         return { seek, msgs: msgs.length }
     }
 
-    root.AngeloReplay = { render, parse, mountFlow, view3d: () => fa() ? fa().view3d() : null }
+    root.AngeloReplay = { render, parse, mountFlow, view3d: () => fa() ? fa().view3d() : null, flow: () => fa() }
 })(typeof self !== 'undefined' ? self : this)

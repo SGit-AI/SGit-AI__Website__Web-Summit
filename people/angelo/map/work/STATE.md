@@ -16,14 +16,19 @@ Backlog 0f2 (the work view) and 0f3 (the WhatsApp clip). **Approved** by Angelo 
 - `people/angelo/app/work-replay.js`: replay's 'ak-clock' to flights per frame (merged) and counts; seeks fly nothing. Test `wvreplay` (node).
 - **Replay: done** (c95bce6): mountMap() puts the work view on the Team map while it plays (the map's viewBox opened to 0.84 plus a 7% margin, squares on that rim, deliveries.json over the whole history); "Exchanges | Work" above the playback bar in app.js drawCollab, r_work=1 in the address. Test wvrp.
 
+## Built this run (13th)
+- d71e6ca8: the work switch filled when on; wvsw and wvrp really in the light theme (dashboard@'s a32ac287).
+- 49ce4f13: 0c4 (1): the exchanges no longer dimmed in the live work view; flights brighter (glow in the maker's colour).
+- 423f113f: 0f3: "⤓ Download clip" and Shape under the map's playback bar (clip-button.js; replay.js flow().step; work-replay clock()). Test clipbtn (ffprobe).
+- dfe3d62d: 0c4 (3): "Messages | Workstreams | Deliverables" in live and playback; workstreams.json (deliveries.mjs readIssues/packIssues); work.js variant(); spec part 3. Tests ws, wssw, wsrp.
+
 ## Open
-- **Live: done.** live.js carries the hook (dev.map@'s 7751d4e, on dev in 98cdfcf); the "Exchanges | Work" switch is in app.js's drawLive (#live?v=work, ed59381), with the legend in one line under the graph; on a phone the lower names keep clear of the Ask Claude button (2d3fcac). Test wvsw.
-- **Next: the clip button** (0f3): frames from replay's clock through `clip.make`. replay.js already has a clip view (`#replay?c=1`, data-rp-clip): read it first, and replay.js is dev.map@'s (a draft if changed in the last two hours).
-- Polish, from dashboard@'s 2e0eac44 (material, not an instruction): the switch's "on" state filled, not only underlined; wvsw and wvrp light screenshots come out dark (the app's own theme choice wins over the test's scheme). On the Team map the name pills use the rows layout with long leaders: try beside the squares at 1280.
-- Testing: merge origin/dev into the branch at the start of a run (this run: 1eea8b6), then gate with LANE_RANGE=<that merge>..HEAD so check 21 looks only at the run's own commits.
-- Lane: lanes.json has my entry but `writes: []` (20:00 UTC), so check 21 lists every file of mine (ed59381, 2d3fcac); the desk asked policy@ (a2c8e4c) to fill it. Until then the reviewer's commit carries the Outside lines.
-- Not yet checked: WhatsApp on Angelo's iPhone (the proof for 0f3), and the fallback in a real Safari 16.
+- **Lane:** policy@ turned check 21 into a FAIL; lanes.json still has `writes: []` for me. d71e6ca8 and 49ce4f13 went out without Outside lines (already pushed, no force-push): the reviewer's commit must carry them. From 423f113f every commit of mine carries its own Outside lines. Gate my own range: LANE_RANGE=<my first commit of the run>^..HEAD.
+- **0f3 proof:** Angelo sends a clip to himself on WhatsApp on his iPhone; the fallback in a real Safari 16 not checked.
+- **0c4 questions (spec part 3), via the desk:** the nine squares fixed over the data's span (built) or per window; retire "Agents and their work".
+- Polish, from dashboard@'s 2e0eac44 (material): on the Team map the name pills use the rows layout with long leaders; try beside the squares at 1280.
+- Testing: merge origin/dev into the branch at the start of a run (this run: 4d9369f).
 - Other repositories (the apps): `deliveries-repos.json` from the snapshot, later.
 
 ## Last run
-Twelfth run, 8 November 21:51 to about 22:15 UTC: no commit For: me from the desk since the last run; dashboard@'s 2e0eac44 (material). Built the work view in replay (c95bce6); wvrp, wvreplay, wvsw, wvdraw PASS; gate OK for this run's range.
+Thirteenth run, 8 November 22:51 to about 23:30 UTC: the desk's efab3a6 (pushed by riskmandate-angelo, checked) gave 0c4 (1) and (3); dashboard@'s a32ac287 (material) the polish. Four commits on workers/dev.work, every test named in them PASS.
