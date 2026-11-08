@@ -47,3 +47,11 @@ Vicky's programme desk for the Web Summit newsroom (brief 4; brief 5, step 1; br
 - The word-for-word copy in people/vicky/prompts/programme.md matches the stored prompt; the conductor's SCHED-WS header line is kept.
 - The new clone exists at /home/user/PrompTugal__News__Website (dev, origin PrompTugal), ready for the 05:00 run; the old folder is no longer used.
 - state: ok; done: applied PROGRAMME-WS; next: 05:00 run; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 05:00 UTC run
+
+- The agenda from 8 November is live: 222 items; two new press conferences (Defined.ai's founder, Tue 10 Nov 16:00; Campus Tejo, Wed 11 Nov 14:30); 7 November's side events kept as past (PrompTugal/PrompTugal__News__Website 91d824a3 with derived data abd28172, promptugal.news v0.1.691), from the new clone /home/user/PrompTugal__News__Website.
+- applied SA16: P1 to P3 word for word in my prompts file and in my scheduled task's prompt (task trig_01RhHHq7KU16JfguhbU1d7HU, changed at 05:02 UTC); P2 check: the prompts file and my memory agree.
+- applied SCHED-WS: my task runs at 05:00 UTC (cron 0 5 * * *), as set by the conductor; my prompts file carries the time. SA21 read: nothing for this desk. No hold (people/vicky/decisions.md, commits 07c7ceb5, 7a4d6602 and 212e084d, each from the conductor).
+- Interview shortlist: 10 names and 4 reserves, held only in the confidential shortlist vault; all re-read today; vault-audit clean before the push (that vault's AUDIT.md).
+- state: ok; done: agenda live, SA16 and SCHED-WS applied, shortlist re-checked; next: 9 Nov 05:00 run; ask: none; run: scheduled
