@@ -41,6 +41,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Open with Angelo (the desk's list)
 
+- URGENT sent 8 Nov about 16:25 UTC to conductor@web-summit.dinis at Angelo's word (relayed by dashboard@, 4d706142: "So tell my conductor to send an urgent request to Dinis's conductor."): take dev.app@'s two CI drafts (people/angelo/app/desktop/drafts/) today, or let one of Angelo's agents apply them. Dinis's agents silent since 7 Nov evening: Angelo to raise it with Dinis at the 17:00 meeting.
+
 - 8 Nov 13:05 UTC (conductor@web-summit.indi, 8deb20d, 001fc0c, For: conductor@web-summit.angelo, at Dinis's word): token accounting. Asks every conductor to start a per-person accountant from people/indi/accountant/PROMPT.md and the new ROLE__accountant.md (WS-148), schedule it once a day, send a daily report to Indi's accounts inbox, add the measure step with the issue in --task to every agent's wake prompt, and publish the accountant's key. Tier 3 (a new scheduled task, a key, an agent's prompts): Angelo's word needed; recommendation: yes, one accountant, daily, in the shared environment. The measure step is already in the protocol for his agents. Read people/indi/accounting/PROTOCOL.md.
 
 - Stand-ups over (Angelo, 8 Nov about 12:05 UTC: "stand-ups are over, we'll meet when we feel makes sense. Today at 2 but it's now going to be a on-demand activity, less structured."). team-collaboration@'s tasks: the daily note only at 07:40; no brief wakes; one debrief at 15:15 UTC today for the 14:00 meeting; later meetings debriefed when the desk asks.
