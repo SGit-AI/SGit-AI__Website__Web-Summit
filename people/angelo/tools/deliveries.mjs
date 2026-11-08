@@ -114,6 +114,43 @@ export function pack(list, from) {
     return { from, icons: ICONS, dests: DESTS, makers, repos, rows }
 }
 
+// ---- Workstreams (backlog 0c4, spec-work-view.md part 3): each commit that names a WS issue in an Issue: trailer, as a flight
+// from its maker to that workstream. Names and minutes only: the maker, the issue id, the short sha; never a subject or a body.
+export function readIssues(root, { since = '2026-10-28T00:00:00Z', rev = 'HEAD' } = {}) {
+    let raw = ''
+    try { raw = execFileSync('git', ['log', rev, `--since=${since}`, '--format=%x1e%h%x1f%cI%x1f%s%x1f%b'], { cwd: root, encoding: 'utf8', maxBuffer: 256 << 20 }) } catch { return [] }
+    const out = []
+    for (const c of raw.split('\x1e')) {
+        const [h, at, s = '', b = ''] = c.split('\x1f'); if (!h || !at) continue
+        const who = maker(s, b); if (!who) continue
+        const ids = new Set(); for (const line of b.split('\n')) { const m = line.match(/^Issue:\s*(.*)$/i); if (m) for (const x of m[1].matchAll(/\bWS-(\d+)\b/g)) ids.add('WS-' + x[1].padStart(2, '0')) }
+        for (const issue of ids) out.push({ at, maker: who, issue, sha: h })
+    }
+    return out.sort((x, y) => Date.parse(x.at) - Date.parse(y.at))
+}
+// the issues' short titles, from board/WS-NN-*.md's front matter (title:), at most `max` characters
+export function issueTitles(root, max = 20) {
+    const out = {}
+    let files = []; try { files = fs.readdirSync(path.join(root, 'board')).filter(f => /^WS-\d+-.*\.md$/.test(f)) } catch { return out }
+    for (const f of files) {
+        try { const t = fs.readFileSync(path.join(root, 'board', f), 'utf8').match(/^title:\s*(.+)$/m); const id = f.match(/^(WS-\d+)/)[1]
+            if (t) { let x = t[1].trim().replace(/^["']|["']$/g, ''); if (x.length > max) { let o = ''; for (const w of x.split(/\s+/)) { if ((o + ' ' + w).trim().length > max - 1) break; o = (o + ' ' + w).trim() } x = (o || x.slice(0, max - 1)).replace(/[\s,:;.-]+$/, '') + '…' } out[id] = x } } catch { }
+    }
+    return out
+}
+// the same packed form as pack() (so the work view draws it as it is): the `top` busiest issues as destinations, in order of
+// commits, and 'other' for the rest; every flight a doc
+export const OTHER_WS = 'other'
+export function packIssues(list, from, titles = {}, top = 9) {
+    const n = new Map(); for (const d of list) n.set(d.issue, (n.get(d.issue) || 0) + 1)
+    const best = [...n.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'en', { numeric: true })).slice(0, top).map(([id]) => id)
+    const dests = [...best, OTHER_WS], names = Object.fromEntries(best.map(id => [id, titles[id] ? `${id} ${titles[id]}` : id])); names[OTHER_WS] = 'other workstreams'
+    const P = pack(list.map(d => ({ at: d.at, maker: d.maker, icon: 'doc', dest: best.includes(d.issue) ? d.issue : OTHER_WS, repo: 'SGit-AI/SGit-AI__Website__Web-Summit', sha: d.sha })), from)
+    P.dests = dests; P.names = names
+    P.rows = list.map((d, i) => { const r = P.rows[i]; r[3] = dests.indexOf(best.includes(d.issue) ? d.issue : OTHER_WS); return r })
+    return P
+}
+
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
     const a = process.argv.slice(2), opt = k => { const i = a.indexOf(k); return i >= 0 ? a[i + 1] : undefined }
     const list = readRepo(opt('--root') || '.', { since: opt('--since'), repo: opt('--repo') })

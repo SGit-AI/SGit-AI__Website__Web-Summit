@@ -11,8 +11,8 @@
 })(typeof self !== 'undefined' ? self : this, function () {
     'use strict'
     const S = 1000, C = S / 2
-    const DESTS = ['news', 'site', 'research', 'infra', 'app', 'keys', 'crm', 'email', 'linkedin', 'drafts']
-    const DEST_NAMES = { news: 'PT News', site: 'the team site', research: 'research', infra: 'infrastructure', app: 'the app', keys: 'keys', crm: 'the CRM', email: 'email drafts', linkedin: 'LinkedIn', drafts: 'Drafts and proposals' }
+    const DESTS0 = ['news', 'site', 'research', 'infra', 'app', 'keys', 'crm', 'email', 'linkedin', 'drafts']
+    const NAMES0 = { news: 'PT News', site: 'the team site', research: 'research', infra: 'infrastructure', app: 'the app', keys: 'keys', crm: 'the CRM', email: 'email drafts', linkedin: 'LinkedIn', drafts: 'Drafts and proposals' }
     const ICONS = ['doc', 'cog', 'key', 'record', 'envelope', 'post']
     const FLIGHT_MS = 3000
 
@@ -30,38 +30,49 @@
     // degrees), in DESTS' order clockwise from the upper left, each on the hexagon's edge (the pill with its name goes outside it).
     // The top edge carries live.js's logos and LIVE, and the foot its date line, so no square sits on either (dashboard@'s review,
     // de879c5), and the upper ones sit low enough to clear the layout switch in the box's upper right corner. SLOTS: [edge, fraction along it], edges numbered clockwise from the top (0 top, 1 upper right ... 5 upper left).
-    const SLOTS = { news: [5, 0.7], site: [1, 0.3], research: [1, 0.6], infra: [1, 0.9], app: [2, 0.35], keys: [2, 0.75], crm: [4, 0.25], email: [4, 0.65], linkedin: [5, 0.1], drafts: [5, 0.4] }
+    const SLOTS0 = { news: [5, 0.7], site: [1, 0.3], research: [1, 0.6], infra: [1, 0.9], app: [2, 0.35], keys: [2, 0.75], crm: [4, 0.25], email: [4, 0.65], linkedin: [5, 0.1], drafts: [5, 0.4] }
     const HEX = [[250, 67], [750, 67], [1000, 500], [750, 933], [250, 933], [0, 500]]
     function rimPoint(t) {               // t in [0, 1): a point along the hexagon's perimeter, clockwise from the top-left corner
         const k = ((t % 1) + 1) % 1 * 6, i = Math.floor(k), f = k - i, a = HEX[i], b = HEX[(i + 1) % 6]
         return { x: a[0] + (b[0] - a[0]) * f, y: a[1] + (b[1] - a[1]) * f }
     }
-    function places(scale = 0.86) {      // scale: how far in from the rim the squares sit (the graph itself sits at GEO's scale)
-        const out = new Map()
-        DESTS.forEach(d => { const [e, f] = SLOTS[d], p = rimPoint((e + f) / 6); out.set(d, { x: C + (p.x - C) * scale, y: C + (p.y - C) * scale, nx: (p.x - C) / C, ny: (p.y - C) / C }) })
-        return out
+    // the rules that depend on the destinations, made for a list of them: the ten of the work view by default; variant() makes the
+    // same for another ten (Workstreams, backlog 0c4: the busiest WS issues and "other"), each in the default's slot of its place
+    function level(DESTS, DEST_NAMES, SLOTS) {
+        function places(scale = 0.86) {      // scale: how far in from the rim the squares sit (the graph itself sits at GEO's scale)
+            const out = new Map()
+            DESTS.forEach(d => { const [e, f] = SLOTS[d], p = rimPoint((e + f) / 6); out.set(d, { x: C + (p.x - C) * scale, y: C + (p.y - C) * scale, nx: (p.x - C) / C, ny: (p.y - C) / C }) })
+            return out
+        }
+
+        // the deliveries in a window [from, to) of minutes: each with its maker's name, icon and destination
+        function unpack(W) {
+            if (!W || !Array.isArray(W.rows)) return []
+            return W.rows.map(r => ({ min: r[0], maker: W.makers[r[1]], icon: W.icons[r[2]], dest: W.dests[r[3]], repo: (W.repos || [])[r[4]], sha: r[5] }))
+                .filter(d => d.maker && ICONS.includes(d.icon) && DESTS.includes(d.dest))
+        }
+        // many at once: deliveries to the same destination in the same minute merge into one icon with a number; the icon shown is the
+        // most frequent kind among them (the first seen on a tie), the maker the one who sent most (the first seen on a tie)
+        function merge(list) {
+            const g = new Map()
+            for (const d of list) { const k = d.min + '|' + d.dest; if (!g.has(k)) g.set(k, { min: d.min, dest: d.dest, n: 0, icons: new Map(), makers: new Map(), shas: [] }); const x = g.get(k); x.n++; x.icons.set(d.icon, (x.icons.get(d.icon) || 0) + 1); x.makers.set(d.maker, (x.makers.get(d.maker) || 0) + 1); x.shas.push(d.sha) }
+            const top = m => { let b = null, n = -1; for (const [k, v] of m) if (v > n) { b = k; n = v } return b }
+            return [...g.values()].map(x => ({ min: x.min, dest: x.dest, n: x.n, icon: top(x.icons), maker: top(x.makers), makers: [...x.makers.keys()], shas: x.shas })).sort((a, b) => a.min - b.min || DESTS.indexOf(a.dest) - DESTS.indexOf(b.dest))
+        }
+        // the small count on each destination's square for the window shown ("PT News 4")
+        function counts(list, from, to) {
+            const c = Object.fromEntries(DESTS.map(d => [d, 0]))
+            for (const d of list) if (d.min >= from && d.min < to) c[d.dest]++
+            return c
+        }
+        return { DESTS, DEST_NAMES, SLOTS, places, unpack, merge, counts }
+    }
+    const L0 = level(DESTS0, NAMES0, SLOTS0)
+    function variant(dests, names) {
+        const slots = {}; dests.slice(0, DESTS0.length).forEach((d, i) => { slots[d] = SLOTS0[DESTS0[i]] })
+        return Object.assign({}, API, level(dests.slice(0, DESTS0.length), Object.assign({}, names), slots))
     }
 
-    // the deliveries in a window [from, to) of minutes: each with its maker's name, icon and destination
-    function unpack(W) {
-        if (!W || !Array.isArray(W.rows)) return []
-        return W.rows.map(r => ({ min: r[0], maker: W.makers[r[1]], icon: W.icons[r[2]], dest: W.dests[r[3]], repo: (W.repos || [])[r[4]], sha: r[5] }))
-            .filter(d => d.maker && ICONS.includes(d.icon) && DESTS.includes(d.dest))
-    }
-    // many at once: deliveries to the same destination in the same minute merge into one icon with a number; the icon shown is the
-    // most frequent kind among them (the first seen on a tie), the maker the one who sent most (the first seen on a tie)
-    function merge(list) {
-        const g = new Map()
-        for (const d of list) { const k = d.min + '|' + d.dest; if (!g.has(k)) g.set(k, { min: d.min, dest: d.dest, n: 0, icons: new Map(), makers: new Map(), shas: [] }); const x = g.get(k); x.n++; x.icons.set(d.icon, (x.icons.get(d.icon) || 0) + 1); x.makers.set(d.maker, (x.makers.get(d.maker) || 0) + 1); x.shas.push(d.sha) }
-        const top = m => { let b = null, n = -1; for (const [k, v] of m) if (v > n) { b = k; n = v } return b }
-        return [...g.values()].map(x => ({ min: x.min, dest: x.dest, n: x.n, icon: top(x.icons), maker: top(x.makers), makers: [...x.makers.keys()], shas: x.shas })).sort((a, b) => a.min - b.min || DESTS.indexOf(a.dest) - DESTS.indexOf(b.dest))
-    }
-    // the small count on each destination's square for the window shown ("PT News 4")
-    function counts(list, from, to) {
-        const c = Object.fromEntries(DESTS.map(d => [d, 0]))
-        for (const d of list) if (d.min >= from && d.min < to) c[d.dest]++
-        return c
-    }
     // where a delivery leaves from: the maker's own node, else its person's (an agent the map does not draw yet), else nothing
     function origin(maker, pos) {
         if (pos.has(maker)) return maker
@@ -86,13 +97,14 @@
     }
 
     function selfTest() {
-        const P = places(); if (P.size !== 10) throw new Error('work.js: ten places')
+        const P = L0.places(); if (P.size !== 10) throw new Error('work.js: ten places')
         for (const [, p] of P) if (!(p.x > 0 && p.x < S && p.y > 0 && p.y < S)) throw new Error('work.js: a place outside the square')
-        const m = merge([{ min: 1, dest: 'news', icon: 'doc', maker: 'a' }, { min: 1, dest: 'news', icon: 'doc', maker: 'b' }, { min: 2, dest: 'news', icon: 'doc', maker: 'a' }])
+        const m = L0.merge([{ min: 1, dest: 'news', icon: 'doc', maker: 'a' }, { min: 1, dest: 'news', icon: 'doc', maker: 'b' }, { min: 2, dest: 'news', icon: 'doc', maker: 'a' }])
         if (m.length !== 2 || m[0].n !== 2) throw new Error('work.js: merge')
         if (contrast(hex2rgb(strokeFor('#F5D547', true)), [255, 255, 255]) < 3) throw new Error('work.js: light stroke')
         return true
     }
 
-    return { S, C, DESTS, DEST_NAMES, ICONS, ICON_PATHS, FLIGHT_MS, SLOTS, places, rimPoint, unpack, merge, counts, origin, along, strokeFor, contrast, hex2rgb, selfTest }
+    const API = { S, C, ICONS, ICON_PATHS, FLIGHT_MS, rimPoint, origin, along, strokeFor, contrast, hex2rgb, selfTest, variant }
+    return Object.assign(API, L0)
 })

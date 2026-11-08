@@ -48,11 +48,14 @@
     // o.t0: replay's moment when wired (the counts show for it at once, before the first tick).
     function wire(V, A, W, o = {}) {
         const win = o.win || root, P = player(A, A.unpack(W), { offset: offset(o.rFrom, W.from), window: o.window })
-        const now = () => (win.performance ? win.performance.now() : Date.now())
+        let clock = null   // the clip's own clock (clock(fn)), while it records; else the screen's
+        const now = () => clock ? clock() : (win.performance ? win.performance.now() : Date.now())
         const on = e => { if (e.detail == null) return; const r = P.at(+e.detail, true); V.counts(r.counts); if (r.fly.length) V.fly(r.fly, now()) }
         if (o.t0 != null) V.counts(P.at(+o.t0, false).counts)
         win.addEventListener('ak-clock', on)
-        return () => win.removeEventListener('ak-clock', on)
+        const off = () => win.removeEventListener('ak-clock', on)
+        off.clock = fn => { clock = fn || null; if (V.manual) V.manual(!!fn) }
+        return off
     }
 
     // the viewBox that leaves room for the rim around a map drawn in S units: the map shown at `scale` of the frame, as live.js
@@ -76,10 +79,11 @@
             let W = o.W
             if (!W) { try { const r = await win.fetch(new URL(o.url || (o.base || '') + 'deliveries.json', win.location.href).href, { cache: 'no-store' }); if (!r.ok) throw new Error(r.status); W = await r.json() } catch { return false } }
             if (!alive || !svg.isConnected || !W || !W.rows) return false
+            const AL = W.names ? A.variant(W.dests || [], W.names) : A    // workstreams.json (backlog 0c4): its own ten destinations
             vb = svg.getAttribute('viewBox'); svg.setAttribute('viewBox', roomy(S, SCALE)); svg.classList.add('wv-map')
             layer = doc.createElementNS(NS, 'g'); layer.setAttribute('class', 'lv-work'); svg.appendChild(layer)
-            V = D.attach({ svg, pos: o.pos, col: o.col, layer, scale: SCALE, win, doc }, { base: o.base, light: o.light })
-            unhook = wire(V, A, W, { rFrom: o.rFrom, t0: o.t0, win, window: o.window })
+            V = D.attach({ svg, pos: o.pos, col: o.col, layer, scale: SCALE, win, doc }, { base: o.base, light: o.light, A: AL })
+            unhook = wire(V, AL, W, { rFrom: o.rFrom, t0: o.t0, win, window: o.window })
             return true
         })()
         function destroy() {
@@ -87,7 +91,9 @@
             if (vb != null) { svg.setAttribute('viewBox', vb); svg.classList.remove('wv-map') }
             unhook = V = layer = null; vb = null
         }
-        return { ready, destroy, view: () => V }
+        // clock(fn): the clip (clip-button.js) flies the deliveries on its own clock (fn() in milliseconds) and steps them itself with
+        // view().step(fn()); clock(null) gives them back to the screen
+        return { ready, destroy, view: () => V, clock: fn => { if (unhook && unhook.clock) unhook.clock(fn) } }
     }
 
     return { JUMP, SCALE, offset, due, perFrame, player, wire, roomy, mountMap }
