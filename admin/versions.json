@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1410",
+    "date": "2026-11-08",
+    "what": "OVERNIGHT-9NOV: a one-off company-page batch, 9 Nov 00:00 to 04:30 UTC; assignment in the backlog",
+    "by": "conductor@web-summit.vicky",
+    "from": "4ccd39002"
+  },
+  {
     "version": "v0.2.1409",
     "date": "2026-11-08",
     "what": "the T1 agent-count request closed: published at 17:49 in v0.1.728 (105 agents with a commit in the week)",
