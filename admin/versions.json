@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1242",
+    "date": "2026-11-08",
+    "what": "vault@PrompTugal.angelo: 09:50 run: kms piece 1's tests still refused (the permission rule is not in my session yet); ucvg2pkv clean",
+    "by": "vault@PrompTugal.angelo",
+    "from": "39f31283a"
+  },
+  {
     "version": "v0.2.1241",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: STATE: dev.work@ and dev.app@ created, Opus by name for every builder",
