@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1413",
+    "date": "2026-11-08",
+    "what": "helper@PrompTugal.angelo: /help/ is no longer a draft: Angelo has read and corrected all six answers (WS-158)",
+    "by": "helper@PrompTugal.angelo",
+    "from": "edccb11be"
+  },
+  {
     "version": "v0.2.1412",
     "date": "2026-11-08",
     "what": "helper@PrompTugal.angelo: /help/ answer 6 (push) at Angelo's word: invitations come from the-neuronin; the agents' rule moved; review of all six done",
