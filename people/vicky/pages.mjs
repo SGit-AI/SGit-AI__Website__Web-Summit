@@ -250,6 +250,7 @@ function office(ROOT) {
 .k-scheduled { border: 2px dashed var(--ink-2); color: var(--ink) }
 .k-inferred { border-color: var(--line-2); color: var(--ink-2); opacity: .7 }
 .k-late { background: var(--warn-soft); color: var(--warn); border-color: var(--warn) }
+.k-unconfirmed { border: 2px dotted var(--ink-2); color: var(--ink-2) }
 .k-error { background: var(--bad); color: var(--accent-ink, #fff); border-color: var(--bad) }
 .k-ondemand { background: var(--wait-soft); color: var(--wait); border-color: var(--line-2) }
 .office-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(8.2rem, 1fr)); gap: .4rem; list-style: none; padding: 0; margin: .5rem 0 1.25rem; counter-reset: st }
@@ -272,7 +273,8 @@ function office(ROOT) {
 <ul class="office-legend">
 <li><span class="office-key k-confirmed">12:05</span><span><b>Confirmed</b>: the agent committed its work; the badge shows when (UTC). Solid, because the site's record shows it.</span></li>
 <li><span class="office-key k-scheduled">due</span><span><b>Scheduled</b>: a run is due at the time shown (dashed outline), from its schedule. Nothing has happened yet.</span></li>
-<li><span class="office-key k-inferred">?</span><span><b>Inferred</b>: the run should be under way (faded, with a "?"), from the due time until a commit confirms it or 30 minutes pass; then it shows <span class="office-key k-late">late</span>.</span></li>
+<li><span class="office-key k-inferred">?</span><span><b>Inferred</b>: the run should be under way (faded, with a "?"), from the due time until a commit confirms it or 30 minutes pass; then it shows <span class="office-key k-late">late</span> if the published data reaches past those 30 minutes.</span></li>
+<li><span class="office-key k-unconfirmed">unconfirmed</span><span><b>Unconfirmed</b>: the run was due over 30 minutes ago, but the published data is older than that, so it is not known yet whether it ran.</span></li>
 <li><span class="office-key k-error">!</span><span><b>Error</b>: the agent's last report says blocked or URGENT.</span></li>
 <li><span class="office-key k-ondemand">On demand</span><span><b>On demand</b>: works only when Vicky asks; no times are shown for the inbox or the vault agent.</span></li>
 </ul>
@@ -283,6 +285,6 @@ function office(ROOT) {
 <p class="meta">Built from <code>people/vicky/schedule.json</code>, the site's commit record, the agents' reports and <code>people/vicky/stories/candidates.md</code>, at each site release: facts as of the last data time above. Characters and furniture are original pixel art (<a href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/office/CREDITS.md">credits</a>).</p>
 <script type="application/json" id="office-data">${embed}</script>
 <script src="office.js" defer></script>`
-    const md = `Vicky's AI agents as an office, near-live: updated with each site release, last data ${at} UTC. States: confirmed (a commit shows the work), scheduled (a run is due), inferred (a run should be under way; late after 30 minutes without a commit), error (blocked or URGENT), on demand.\n\n## The newsroom\n\n${newsroom.map(n => `- ${n.stage}: ${n.count}${n.of ? ` of ${n.of}` : ''} ${n.unit}`).join('\n')}\n\n## Who is where\n\n| Agent | Job | Room | Runs (UTC) | Last confirmed (UTC) | Last report |\n|---|---|---|---|---|---|\n${list.map(a => `| ${a.short} | ${a.role} | ${AREAS[a.area]} | ${when(a)} | ${a.confirmed[0] ? a.confirmed[0].replace('T', ' ').replace('Z', '') : (a.on_demand && NO_TIMES.has(a.short) ? 'not shown' : 'none')} | ${a.urgent ? 'URGENT' : a.status || 'none'} |`).join('\n')}\n\nThe same facts as JSON are inside the page, in its office-data block.`
+    const md = `Vicky's AI agents as an office, near-live: updated with each site release, last data ${at} UTC. States: confirmed (a commit shows the work), scheduled (a run is due), inferred (a run should be under way; late after 30 minutes without a commit, when the data reaches that far; unconfirmed when it does not), error (blocked or URGENT), on demand.\n\n## The newsroom\n\n${newsroom.map(n => `- ${n.stage}: ${n.count}${n.of ? ` of ${n.of}` : ''} ${n.unit}`).join('\n')}\n\n## Who is where\n\n| Agent | Job | Room | Runs (UTC) | Last confirmed (UTC) | Last report |\n|---|---|---|---|---|---|\n${list.map(a => `| ${a.short} | ${a.role} | ${AREAS[a.area]} | ${when(a)} | ${a.confirmed[0] ? a.confirmed[0].replace('T', ' ').replace('Z', '') : (a.on_demand && NO_TIMES.has(a.short) ? 'not shown' : 'none')} | ${a.urgent ? 'URGENT' : a.status || 'none'} |`).join('\n')}\n\nThe same facts as JSON are inside the page, in its office-data block.`
     return [{ rel: 'people/vicky/office/index.html', title: 'The Live AI Office', description: "Vicky's AI agents as a near-live pixel-art office: who is at their desk, who is due, who is late, and the newsroom's pipeline, updated with each site release.", body, head, md }]
 }

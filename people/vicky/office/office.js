@@ -4,7 +4,8 @@
 //   confirmed  a commit shows the work (solid badge, its time)
 //   scheduled  a run is due (dashed badge, "due HH:MM")
 //   inferred   a run should be under way: from the due time until a commit confirms it or 30 minutes pass (faded, "?"),
-//              then "late"
+//              then "late" if the published data reaches past those 30 minutes, else "unconfirmed" (the data is too
+//              old to say whether the run happened)
 //   error      the agent's last report says blocked or URGENT
 //   on demand  works only when Vicky asks (no times for the inbox or the vault agent)
 // Agents walk between their room, their desk and the lounge as their state changes. All the art is original
@@ -121,6 +122,7 @@
         for (const t of a.cron) { const [h, m] = t.split(':').map(Number); for (const k of [-1, 0, 1]) out.push(day + k * 864e5 + (h * 60 + m) * MIN) }
         return out.sort((x, y) => x - y)
     }
+    const dataAt = () => { const t = data && data.data_at ? Date.parse(data.data_at) : NaN; return isNaN(t) ? -Infinity : t }
     function stateOf(a, nowMs) {
         // the last commit at or before now: a commit later than the viewer's clock (a clock that is behind) never counts
         const conf = a.confirmed.map(Date.parse).filter(t => t <= nowMs).sort((x, y) => y - x)[0] ?? null
@@ -129,12 +131,13 @@
         const ds = dues(a, new Date(nowMs)), last = [...ds].reverse().find(t => t <= nowMs), next = ds.find(t => t > nowMs)
         const since = t => conf != null && conf >= t
         if (last != null && nowMs - last < LATE) return since(last) ? { kind: 'confirmed', conf, working: nowMs - conf < LATE, next } : { kind: 'inferred', due: last, conf, next }
-        if (last != null && !since(last)) return { kind: 'late', due: last, conf, next }
+        // late only when the published data reaches past the late boundary: data older than that cannot show the commit
+        if (last != null && !since(last)) return dataAt() >= last + LATE ? { kind: 'late', due: last, conf, next } : { kind: 'unconfirmed', due: last, conf, next }
         if (next != null && next - nowMs <= SOON) return { kind: 'scheduled', due: next, conf }
         if (conf != null) return { kind: 'confirmed', conf, working: nowMs - conf < LATE, next }
         return { kind: 'scheduled', due: next, conf }
     }
-    const LABEL = { confirmed: 'Confirmed', scheduled: 'Scheduled', inferred: 'Inferred', late: 'Late', error: 'Error', ondemand: 'On demand' }
+    const LABEL = { confirmed: 'Confirmed', scheduled: 'Scheduled', inferred: 'Inferred', late: 'Late', unconfirmed: 'Unconfirmed', error: 'Error', ondemand: 'On demand' }
     // the details under the office when a figure is tapped: one fact a line, every time in UTC, with its day when it is
     // not today (by the UTC calendar)
     const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -148,13 +151,14 @@
         const why = {
             confirmed: s.working ? 'its commit shows it working now' : 'its last run is done; its commit shows it',
             scheduled: 'its next run is due; nothing has happened yet', inferred: 'its run should be under way; no commit confirms it yet',
-            late: 'its run was due over 30 minutes ago and no commit confirms it', error: s.why, ondemand: 'works only when Vicky asks',
+            late: 'its run was due over 30 minutes ago and no commit confirms it', error: s.why,
+            unconfirmed: 'its run was due over 30 minutes ago, but the published data is older than that, so it is not known yet whether it ran', ondemand: 'works only when Vicky asks',
         }[s.kind]
         lines.push(`State: ${LABEL[s.kind]} (${why})`)
         if (s.conf != null) lines.push(`Last confirmed activity: ${when(s.conf)}`)
         else if (hidden) lines.push('Activity times: not shown for this agent')
         else lines.push('Last confirmed activity: none on record')
-        if (s.kind === 'inferred' || s.kind === 'late') lines.push(`Run due: ${when(s.due)}`)
+        if (s.kind === 'inferred' || s.kind === 'late' || s.kind === 'unconfirmed') lines.push(`Run due: ${when(s.due)}`)
         const next = s.kind === 'scheduled' ? s.due : s.next
         if (next) lines.push(`Next run due: ${when(next)}`)
         if (a.status) lines.push(`Last report: ${a.status}${a.urgent ? ', URGENT' : ''}`)
@@ -168,7 +172,7 @@
     }
     const pill = a => {
         const s = a.state
-        return s.kind === 'confirmed' ? hm(new Date(s.conf)) : s.kind === 'scheduled' ? (s.due ? 'due ' + hm(new Date(s.due)) : 'due') : s.kind === 'inferred' ? '?' : s.kind === 'late' ? 'late' : s.kind === 'error' ? '!' : 'on demand'
+        return s.kind === 'confirmed' ? hm(new Date(s.conf)) : s.kind === 'scheduled' ? (s.due ? 'due ' + hm(new Date(s.due)) : 'due') : s.kind === 'inferred' ? '?' : s.kind === 'late' ? 'late' : s.kind === 'unconfirmed' ? 'unconfirmed' : s.kind === 'error' ? '!' : 'on demand'
     }
 
     // where each state puts an agent
@@ -176,7 +180,7 @@
         const s = a.state
         if (s.kind === 'ondemand') return inRoom(a)
         if (s.kind === 'scheduled' && s.due && s.due - Date.now() <= SOON) return inLounge(a, a.loungeSpot)
-        if (s.kind === 'inferred' || s.kind === 'late' || s.kind === 'error' || (s.kind === 'confirmed' && s.working)) return atDesk(a)
+        if (s.kind === 'inferred' || s.kind === 'late' || s.kind === 'unconfirmed' || s.kind === 'error' || (s.kind === 'confirmed' && s.working)) return atDesk(a)
         return inRoom(a)
     }
     function place(a, snap) {
@@ -242,7 +246,7 @@
         const line = (txt, bold) => { const e = document.createElement(bold ? 'b' : 'span'); e.textContent = txt; return e }
         banner.replaceChildren(line('Near-live: updated with each site release, last data '), line(isNaN(at) ? 'unknown' : full(at), true), line('.'))
         if (failedSince) warn.push(`Could not check for new data since ${hm(new Date(failedSince))} UTC; the office shows the data above, which may be out of date.`)
-        if (!isNaN(at) && now - at > STALE) warn.push(`This data is ${Math.floor((now - at) / (60 * MIN))} hours old: no site release since then, so later work is not shown and runs may wrongly show as late.`)
+        if (!isNaN(at) && now - at > STALE) warn.push(`This data is ${Math.floor((now - at) / (60 * MIN))} hours old: no site release since then, so later work is not shown and runs past due show as unconfirmed.`)
         if (!isNaN(at) && at - now > MIN) warn.push("This device's clock is behind the data's time; states may be wrong.")
         const p = document.createElement('span'); p.className = 'office-checked'
         p.textContent = checkedAt ? ` Checked for new data by this browser at ${hm(new Date(checkedAt))} UTC; it checks every minute.` : ' Checking for new data...'
@@ -287,6 +291,7 @@
         else if (s.kind === 'scheduled') { ctx.fillStyle = C.surface; ctx.fill(); ctx.setLineDash([3, 2]); ctx.strokeStyle = C.ink2; ctx.stroke(); ctx.setLineDash([]) }
         else if (s.kind === 'inferred') { ctx.fillStyle = C.surface; ctx.globalAlpha = .75; ctx.fill(); ctx.globalAlpha = 1; ctx.strokeStyle = C.line; ctx.stroke(); fg = C.ink2 }
         else if (s.kind === 'late') { ctx.fillStyle = C.warnSoft; ctx.fill(); ctx.strokeStyle = C.warn; ctx.stroke(); fg = C.warn }
+        else if (s.kind === 'unconfirmed') { ctx.fillStyle = C.surface; ctx.fill(); ctx.setLineDash([1.5, 2]); ctx.strokeStyle = C.ink2; ctx.stroke(); ctx.setLineDash([]); fg = C.ink2 }
         else if (s.kind === 'error') { ctx.fillStyle = C.bad; ctx.fill(); fg = C.onSolid }
         else { ctx.fillStyle = C.waitSoft; ctx.fill(); ctx.strokeStyle = C.line; ctx.stroke(); fg = C.wait }
         ctx.fillStyle = fg; ctx.fillText(text, x + w / 2, y + h / 2 + .5)
@@ -354,7 +359,7 @@
             let fx = still ? 0 : Math.floor(tt * 1.5) % 2
             if (a.walking) fx = 2 + Math.floor(tt * 8) % 4
             else if (sat && (s.kind === 'confirmed' || s.kind === 'inferred')) fx = still ? 6 : 6 + Math.floor(tt * 4) % 2
-            const alpha = s.kind === 'inferred' ? .45 : s.kind === 'late' ? .6 : 1
+            const alpha = s.kind === 'inferred' || s.kind === 'unconfirmed' ? .45 : s.kind === 'late' ? .6 : 1
             items.push({ y: a.y, draw: () => sprite(a.short, fx, a.x - 8, a.y - 24, alpha) })
             tags.push(a)
         }
