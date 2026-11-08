@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1375",
+    "date": "2026-11-08",
+    "what": "journalist-portugal@PrompTugal.vicky: scheduled run, idle; HANDOFF-FIX applied; P17, SA13, SA15 confirmed",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "4b4b432c4"
+  },
+  {
     "version": "v0.2.1374",
     "date": "2026-11-08",
     "what": "HANDOFF-FIX: draft hand-offs go to our reviewer, not Dinis's journalist; no draft was missed",
