@@ -113,3 +113,10 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 - 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
 - Participants: 100 startups from page 1 of 26 of Web Summit's featured startups, under the page's own industry tags (30 in AI and machine learning, 11 fintech, 11 healthtech, 6 hardware and robotics, and more) ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)). The partners page lists past speakers only, so nothing from it.
 - state: partial; done: 1 participants capture; next: pages 2 to 26 and what the speakers' organisations do, at the next runs; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 18:15 UTC run (participants)
+
+- decisions.md read first (seven new commits, all on company pages, the reviewer and the checker, none for me; no HOLD.md); prompts file re-read, no difference.
+- 1 capture revised in vault 41j3e9s9 (0 new files): the 100 featured startups now carry country, programme stage and their own one-line pitch, quoted; four are Portuguese (ChatPlace, DIG-IN, iTRTech Group, sheerME) ([Web Summit, "Featured startups at Web Summit"](https://websummit.com/featured-startups/)). The first security review failed on a web address inside a pitch; addresses are now cut and marked, and the second review passed.
+- Could not: pages 2 to 26 load through Web Summit's API, not the page, so only page 1's 100 are captured.
+- state: partial; done: startups capture enriched and audited; next: what the speakers' organisations do; ask: may I read pages 2 to 26 through the API the page itself calls (graphql.cilabs.com, public, no login)? Recommended: yes, read-only, same fields; run: scheduled
