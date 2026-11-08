@@ -1,5 +1,5 @@
 // wvcore: the work view's rules in work.js (backlog 0f2, spec-work-view.md), no browser: ten destinations placed inside the
-// square, in order round the rim, none on top of another; ten deliveries to one destination in one minute merge into one icon
+// square, in order round the rim, none on top of another, none on the top edge or the foot; ten deliveries to one destination in one minute merge into one icon
 // with 10; counts for a window; a maker the map does not draw leaves from its person; the light theme's stroke readable on
 // white (3:1) for every person's colour; and the built deliveries.json unpacked with nothing dropped.
 const path = require('path'), fs = require('fs')
@@ -11,6 +11,8 @@ if (P.size !== 10 || W.DESTS.some(d => !P.has(d))) fail('ten places, one per des
 for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) if (Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y) < 120) fail(`places ${W.DESTS[i]} and ${W.DESTS[j]} too close`)
 const ang = pts.map(p => Math.atan2(p.y - W.C, p.x - W.C)), turns = ang.slice(1).map((a, i) => ((a - ang[i]) + 2 * Math.PI) % (2 * Math.PI))
 if (turns.some(t => t <= 0 || t > Math.PI)) fail('places not in order round the rim')
+// none on the top edge (live.js's logos and LIVE) or the foot (its date line): dashboard@'s review, de879c5
+for (const [d, p] of P) if (Math.abs(p.ny) > 0.8) fail(`the place for ${d} is on the hexagon's top or foot`)
 const ten = Array.from({ length: 10 }, (_, i) => ({ min: 5, dest: 'news', icon: i < 7 ? 'doc' : 'post', maker: i < 4 ? 'b' : 'a', sha: 'abc' + i }))
 const M = W.merge([...ten, { min: 6, dest: 'news', icon: 'doc', maker: 'a', sha: 'x' }, { min: 5, dest: 'keys', icon: 'key', maker: 'a', sha: 'y' }])
 const m5 = M.find(x => x.min === 5 && x.dest === 'news')
