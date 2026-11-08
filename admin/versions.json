@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1314",
+    "date": "2026-11-08",
+    "what": "a handover file for a fresh session (token-efficiency ABP, rule 2)",
+    "by": "helper@web-summit.jose",
+    "from": "7169021f7"
+  },
+  {
     "version": "v0.2.1313",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: the ABP demo: scenarios chosen by how well they show the barriers",
