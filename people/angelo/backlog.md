@@ -31,7 +31,7 @@ summary: Everything Angelo's agents are asked to do, in one list, ordered by pri
 | 3 | The venue map on PrompTugal.news: Part B 1 done (the map, "Where is it?" on event pages); Part B 2 (the team's private layer) waits on security@web-summit.dinis's review (WS-181) | dev.venues@ (dev@ reviews) | spec-venues.md | security's review |
 | 4 | ~~Fix the agent setup guide's claim-check flags~~ done: checker's five findings taken, article re-signed (newsroom v0.1.604), interactive guide aligned (5853ddfd) | writer@ | | |
 | 6 | ~~Accenture into data/companies.json, owner angelo~~ done (5c7a04cb) | crm@ | | |
-| 7 | The Android app: spec approved and dev.android@'s settings written (30a7f1d3); the repository PrompTugal/PrompTugal__App__Android still to create (dev@ cannot: repository creation is off for its session) | Angelo, then dev.android@ | 30a7f1d3 | Angelo creating the repository and dev.android@'s task |
+| 7 | The Android app's own repository, PrompTugal/PrompTugal__App__Android: Angelo creates it (desktop to-do); the work does not wait for it (item 14) | Angelo | 30a7f1d3 | Angelo, at a desktop |
 | 8 | Briefs before meetings, from Angelo's companies (people/angelo/card.md, answer 2) | research@ | the spec's section | sgit-ai in the shared environment (his), for the CRM's list only; the list is people/angelo/research/requests.md (his go) |
 | 9 | The sharness.kms changeset, piece by piece. Tests: vault@ runs the upstream tests on each piece in its own session and reports pass or fail For: vault.kms@ (Angelo: "Ok, go with A"); vault.kms@ builds the next piece once the last one passes | vault.kms@ (vault@ reviews and tests) | PLAN.md; this commit | vault@'s test result on piece 1 |
 | 10 | ~~Context rules in the kit and every prompt~~ done (5fae3759) | dev@ | | |
@@ -39,4 +39,4 @@ summary: Everything Angelo's agents are asked to do, in one list, ordered by pri
 | 11 | The links of promptugal.news, the rest of the site | dev.links@ | the spec's section | nothing |
 | 12 | The inbox agent's lane | crm@ | its scheduled prompt | crm@'s own SG/Send token (Dinis) |
 | 13 | WS-181's vaults | vault@ | daca6e6c | vault@'s token; security@web-summit.dinis's review |
-| 14 | The Android app's internal beta: the shell, the offline reader, an APK for the team (spec-android.md section 3) | dev.android@ (dev@ reviews) | e0183098 | the repository and dev.android@'s scheduled task (Angelo's) |
+| 14 | The Android app's internal beta: the shell, the offline reader, an APK for the team (spec-android.md section 3). Starts now in this repository (people/angelo/app/android/, workers/dev.android), Angelo 8 Nov: "Is there a place where the Android app work can start until we have a proper repo?"; moves to PrompTugal__App__Android when it exists | dev.android@ (dev@ reviews) | the desk's 12:00 commit | Angelo creating dev.android@'s task |
