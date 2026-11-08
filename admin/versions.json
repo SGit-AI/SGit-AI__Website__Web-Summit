@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1366",
+    "date": "2026-11-08",
+    "what": "WS-194: booth requests signed in the shape feedback_drain.py verifies (items_json and items)",
+    "by": "dev@web-summit.silvio",
+    "from": "727d52ae1"
+  },
+  {
     "version": "v0.2.1365",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: ABP demo: no leak hunt; reach and helpful over-reach are the story (Angelo's yes in dev@'s session)",
