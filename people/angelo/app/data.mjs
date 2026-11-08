@@ -422,13 +422,28 @@ export function summaryMd(d, now = new Date()) {
 }
 
 // live.json (people/angelo/proposals/live-map/spec-realtime.md, Angelo's go 7 November): the last 48 hours of exchanges, for the
-// live graph, which reads it again every minute. [minute since 2 Nov, agent index, kind, [For: target indexes], commit]; names
+// live graph, which reads it again every minute. [minute since 2 Nov, agent index, kind, [For: target indexes], commit, repository index]; names
 // and times only, never a subject or any text. build.mjs writes what this returns, next to data.json.
 export function extras(d) {
     const R = d.replay; if (!R) return {}
     const cut = Math.round((Date.now() - Date.parse(R.from)) / 6e4) - 48 * 60
-    const evs = R.events.filter(e => e[0] >= cut && e[1] >= 0).map(e => [e[0], e[1], e[2], e[3], e[6]])
-    const ai = [...new Set(evs.map(e => e[1]))], ti = [...new Set(evs.flatMap(e => e[3]))]
-    const a2 = new Map(ai.map((x, i) => [x, i])), t2 = new Map(ti.map((x, i) => [x, i]))
-    return { 'people/angelo/app/live.json': JSON.stringify({ built_at: d.built_at, version: d.version, from: R.from, agents: ai.map(i => R.agents[i].name), targets: ti.map(i => R.targets[i]), events: evs.map(e => [e[0], a2.get(e[1]), e[2], e[3].map(i => t2.get(i)), e[4]]) }) }
+    // names, not indexes, until the end, so this site's exchanges and the other repositories' share one list
+    const evs = R.events.filter(e => e[0] >= cut && e[1] >= 0).map(e => [e[0], R.agents[e[1]].name, e[2], e[3].map(i => R.targets[i]), e[6], 0])
+    // every other repository the agents work in (backlog 00 point 7: dev.map@PrompTugal.angelo, 8 November): repos-events.json,
+    // written by people/angelo/tools/repos-snapshot.mjs, the same names and times, drawn on the same lines; kind 'x', and the
+    // repository's index into `repos` (0 is this site's dev). A missing or unreadable file leaves this site's exchanges alone.
+    const SITE = 'SGit-AI/SGit-AI__Website__Web-Summit', repos = [SITE + ' (dev)']
+    try {
+        const X = JSON.parse(fs.readFileSync(path.join(HERE, 'repos-events.json'), 'utf8')), x0 = Math.round((Date.parse(X.from) - Date.parse(R.from)) / 6e4)
+        const ri = new Map()
+        for (const e of X.events || []) {
+            const m = x0 + e[0]; if (!(m >= cut)) continue
+            const r0 = (X.repos[e[3]] || {}).repo || '?', rn = r0 === SITE ? SITE + ' (workers)' : r0; if (!ri.has(rn)) { ri.set(rn, repos.length); repos.push(rn) }
+            evs.push([m, X.names[e[1]], 'x', e[2].map(i => X.names[i]), e[4], ri.get(rn)])
+        }
+        evs.sort((a, b) => a[0] - b[0])
+    } catch { /* no other repositories read yet */ }
+    const an = [...new Set(evs.map(e => e[1]))], tn = [...new Set(evs.flatMap(e => e[3]))]
+    const a2 = new Map(an.map((x, i) => [x, i])), t2 = new Map(tn.map((x, i) => [x, i]))
+    return { 'people/angelo/app/live.json': JSON.stringify({ built_at: d.built_at, version: d.version, from: R.from, repos, agents: an, targets: tn, events: evs.map(e => [e[0], a2.get(e[1]), e[2], e[3].map(n => t2.get(n)), e[4], e[5]]) }) }
 }
