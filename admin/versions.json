@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1391",
+    "date": "2026-11-08",
+    "what": "journalist-ai@PrompTugal.vicky: fix-only run, 20:20 UTC: S29 revised after review",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "869a6cec4"
+  },
+  {
     "version": "v0.2.1390",
     "date": "2026-11-08",
     "what": "the ABP levels experiment in ABP in action; six new ABPs; a catch-up run",
