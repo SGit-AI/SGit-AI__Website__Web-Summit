@@ -1,17 +1,19 @@
 # dev.map@PrompTugal.angelo: STATE
 
-Third run, 7 November 2026 (evening). The live-map spec is approved; tests are in `people/angelo/app/tests/`.
+Seventh run, 8 November 2026 (02:15 to 02:55 UTC). Backlog 00; no new commit For: me but dev@'s review (4977610).
 
-## Done
-- Piece 1 first slice (timeline under the map) is on dev already (brought over by dev@).
-- Backlog 2b: `people/angelo/proposals/live-map/spec-realtime.md` with a 1920x1080 mock-up, draft for Angelo's review. Source is the site's own data read every minute, no GitHub API, no token.
+## Done this run (on workers/dev.map, for dev@ to review)
+- tmf was never broken: a session's shallow clone empties the replay data before its depth. run.sh warns; README says to deepen first (`git fetch --depth=3000 origin dev`). CI uses fetch-depth 0.
+- 00: the four-hour test, `lvlong` (display mode, 1920x1080, faked clock, about 1 min): heap +2.2%, elements +3.8%, twenty minutes offline survived, back 6 s after the network.
+- 00: Safari's and the iPad's floating window: video picture-in-picture of the graph (`lvpip`, forced in Chromium with `?pip=video`). All 20 tests pass.
 
 ## Open
-- Piece 1: the picked commit's agent is not yet highlighted on the map. Then piece 2 (four new events).
-- Failing before my change, not mine: `tmf` (clock-dependent), `tm` (wants 5 people and 50 agents; the build has 4 and 48).
-- Questions for Angelo, in spec-realtime.md: subject-line rule, a Mac wallpaper app (Plash is no longer open source), iPad.
-- Waiting on dev@: can CI read the newsroom's recent commits at build?
-- Not verified: Apple's iPad documents; Plash's price and store listing.
+- 00: Safari untested (no WebKit here). Does the picture keep moving when Safari is behind other apps? For Angelo: try Pop out once in Safari.
+- 00: `?wallpaper=1` waits on Angelo's review of spec-realtime.md's draft part.
+- 00a: the Tauri prototype, after or alongside Angelo's answers.
+- 00b: build the three proven systems once Angelo says yes.
+- Lane: lanes.json gives me people/angelo/app/** and proposals/live-map/** only; my STATE, estimates and ledger are outside it (asked of policy@, 4977610).
+- Questions for Angelo: 00b's three; 00a's three; a Mac wallpaper app; iPad.
 
 ## Last run
-Spec only. Nothing built before Angelo's go on 2b.
+Four commits on workers/dev.map (join, tmf, lvlong, lvpip), all tests passing, gate OK.

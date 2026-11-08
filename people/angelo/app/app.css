@@ -304,6 +304,8 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .tm-replay .tm-a.tmf-gone { opacity: 0; pointer-events: none; }
 .tm-replay .tm-spokes, .tm-replay .tm-flows { display: none; }
 .tm-a.tmf-hot > circle:not(.tm-kr), .tm-a.tmf-hot > rect { stroke: var(--rm-text); stroke-width: 3; }
+.tm-a.tmf-pick > circle:not(.tm-kr), .tm-a.tmf-pick > rect { stroke: var(--rm-text); stroke-width: 4; stroke-dasharray: 5 3; }
+.tm-a.tmf-pick .tmf-l { display: inline; }
 .tm-a.tmf-born > circle:not(.tm-kr), .tm-a.tmf-born > rect { animation: tmf-born .9s ease-out; }
 @keyframes tmf-born { 0% { stroke: var(--rm-action); stroke-width: 9; } 100% { stroke-width: 1.5; } }
 .tm-a .tmf-l { display: none; fill: var(--rm-text); font: 600 13px/1 var(--rm-font); text-anchor: middle; pointer-events: none; paint-order: stroke; stroke: var(--rm-surface); stroke-width: 3px; }

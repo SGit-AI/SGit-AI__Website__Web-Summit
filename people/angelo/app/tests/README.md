@@ -22,11 +22,17 @@ Or run just some of them, for example `people/angelo/app/tests/run.sh tm tmf tml
 | `tmlife` | agents joining the map as they are first used and staying, growing and never shrinking, gliding into place, never a dot without its line, diamonds kept |
 | `rp` | the timeline under the map (`#replay` redirects there): filters in the address, a commit's detail; the clip (`#replay?c=1`) stays its own view |
 | `tmtl` | one clock: the map's controls move the timeline's playhead, a commit picked on the timeline moves the map; old `#replay` addresses land on the map; Replay is out of the menu |
+| `lvrepo` | the live graph draws every repository the agents work in: live.json carries the others' exchanges (names and times only), and one from another repository travels as a bright pulse; light and dark |
+| `lvfresh` | the live graph's sessionless agents: every agent declared as a fresh session each run is drawn with the dashed ring, even one not yet on the map; its ring lights for two hours after it sends something |
+| `lvdisp` | the live graph's Full screen button and display mode (`?display=1#live`): the graph alone covering the screen, no controls, still moving when reads fail, read again at once when the network returns, Esc back; at 1920, 1280 and 390 px, light and dark |
+| `lvlong` | the four-hour test (spec-realtime.md): display mode at 1920x1080 with a fake feed, four hours on a faked clock in about a minute; the flow never stops, heap and element count within 10% from the first hour to the last, twenty minutes of failed reads leave it moving with the light off, and it recovers within one tick |
+| `lvpip` | the live graph's floating window where Document Picture-in-Picture is missing (Safari on a Mac or iPad): the graph drawn into a canvas and played as a video in picture-in-picture (`?pip=video` forces it in Chromium); the picture has the page's colours and moves, the graph stays on the page, closing removes the video; at 1280 and 390 px, light and dark. Safari itself is not tested (no WebKit in the sessions) |
 | `arcs` | the timeline's arcs (For: lines), following the map's clock |
 | `sd` | Summit days: today, now and next |
 | `wzone` | Where: a zone by default, an exact spot only as a deliberate second step (WS-181, option C) |
 
 **Notes:**
+- **Deepen a shallow clone first.** The map's playback and the timeline read every commit since 2 November. A cloud session's clone is shallow, so their early hours come out empty and `tmf` fails although the page is right. `run.sh` warns when the clone is shallow; run `git fetch --depth=3000 origin dev` once, then the tests.
 - Some checks depend on the clock. The time windows end now, so the first minute of a 24-hour window may already hold a message. A test that fails only sometimes is probably that kind; fix the test's tolerance, not the page.
 - The tests read only this repository's public data, and the Where test uses only the demo's made-up people.
 - kb and cb ignore one outside error: a 507 from the site's page-view telemetry lane (`assets/telemetry.json`, vault 1ssnjy23), full since 7 November and reported to its owner. Every other console error still fails them.

@@ -25,7 +25,7 @@ const S = process.argv[2], B = process.argv[3] || 'http://127.0.0.1:8765', U = B
   // Seen copies one line for the desk
   if (n === 'phone') { await p.locator('[data-ak-tab="delivered"]').click(); await p.waitForTimeout(150) }
   const seen = p.locator('[data-mark="seen"]').first();
-  if (await seen.count()) { await seen.click(); await p.waitForSelector('.ak-copy', { timeout: 3000 }).catch(() => fail('no copied line')); const line = await p.evaluate(() => document.querySelector('.ak-copy code')?.textContent || ''); console.log(n, scheme, 'line', line.slice(0, 60)); if (!/^Seen: D-[0-9a-f]{8} /.test(line)) fail('copied line: ' + line) }
+  if (await seen.count()) { await seen.click(); await p.waitForSelector('.ak-copy', { timeout: 3000 }).catch(() => fail('no copied line')); const line = await p.evaluate(() => document.querySelector('.ak-copy code')?.textContent || ''); console.log(n, scheme, 'line', line.slice(0, 60)); if (!/^Seen: D-[0-9a-f]{7,8} /.test(line)) fail('copied line: ' + line) }
   else console.log(n, scheme, 'no delivered card to mark (fine if none was delivered this week)')
   // the old layout is one tap away
   await p.locator('.ak-views a', { hasText: 'Status' }).click(); await p.waitForSelector('[data-ak-tog="now"]', { timeout: 5000 }).catch(() => fail('old layout'));

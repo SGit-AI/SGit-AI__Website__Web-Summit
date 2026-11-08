@@ -11,8 +11,9 @@ const S = process.argv[2], U = 'http://127.0.0.1:8765/people/angelo/app/index.ht
   if (h) { await p.evaluate(h => document.querySelector(`circle[data-h="${h}"]`).dispatchEvent(new MouseEvent('click', { bubbles: true })), h); await p.waitForTimeout(300) }
   const on = await p.evaluate(() => document.querySelectorAll('.rp-arc.on').length);
   // playback fades arcs too
-  // (the map's controls drive the timeline now: one clock)
-  await p.locator('[data-tmf-speed]').selectOption('1440'); await p.locator('[data-tmf-play]').click(); await p.waitForTimeout(700); await p.locator('[data-tmf-play]').click();
+  // (the map's controls drive the timeline now: one clock). An hour a second: at a day a second, 0.7 s could carry the playhead
+  // past the phone's last arc (its timeline is 24 h, starting at the arc just picked), so none was left to fade (dev.map, 8 November)
+  await p.locator('[data-tmf-speed]').selectOption('60'); await p.locator('[data-tmf-play]').click(); await p.waitForTimeout(700); await p.locator('[data-tmf-play]').click();
   if (n === 'phone') await p.locator('.rp-filters > summary').click();
   const fut = await p.evaluate(() => ({ fut: document.querySelectorAll('.rp-arc.fut').length, all: document.querySelectorAll('.rp-arc').length }));
   // the toggle hides them and goes in the address

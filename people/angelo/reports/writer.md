@@ -2,6 +2,10 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 7 November 2026, late evening (prompted by Angelo: "Go ahead, in PrompTugal's brand")
+
+- **The PrompTugal article elevated** (newsroom 39e19860, v0.1.655): a hero in the site's dark band, a sticky "read this as" bar with icons that turns on "for you" boxes through the article, reading time and depth, a staircase, deployment tiles, a larger dial, card grids, icons on every questionnaire; all in the site's tokens. Checked live at phone and desktop, light and dark. The team site's copy stays, at Angelo's word.
+
 ## 7 November 2026, about 22:00 UTC (prompted by Angelo: "Yep push it")
 
 - **The interactive article is live on PrompTugal.news** (newsroom 3c4a60fd, v0.1.644), pushed by this desk at Angelo's word instead of waiting for dev@PrompTugal.dinis's review; the commit asks dev@ to review after the fact and tells Dinis. Checked on the live site: every control, phone and desktop, no errors; tables and lists without scripts.

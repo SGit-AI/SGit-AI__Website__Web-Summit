@@ -17,6 +17,8 @@ First run now: map the researcher's two earlier files. Then create a scheduled t
 
 ## Scheduled task's prompt (current, trig_01QqwpxE9hhp5rwuxSS9D9ZF, updated 6 November 2026 at about 20:53 UTC)
 
+**From 8 Nov (SCHED-WS):** 05:30, 10:30, 14:30, 18:30 UTC, cron `30 5,10,14,18 * * *` (set by the conductor at Vicky's word, 7 Nov).
+
 The task is "Curator desk run (curator@PrompTugal.vicky)", id `trig_01QqwpxE9hhp5rwuxSS9D9ZF`, cron `45 7,11,15,19 * * *` (UTC), firing into the new curator session; confirmed by Vicky (decisions.md, standing answer 11). The prompt below is word for word as the task holds it now. It is the previous session's prompt with these changes, at Vicky's word: this session's clone paths (`/home/user/PrompTugal__News__Website`, `/home/user/SGit-AI__Website__Web-Summit`, the vault clone `/home/user/vaults/research-41j3e9s9`), the README generator's new path (this session's scratchpad: the hand-over note's code plus a `DROPPED` list and a Dropped section), and standing rules 12 to 17 below. The previous task, `trig_01Y3m4gYrZsUwoJo8vu6L6g6`, was deleted at the first hand-over.
 
 ```
