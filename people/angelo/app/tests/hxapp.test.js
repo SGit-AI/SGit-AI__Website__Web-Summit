@@ -5,7 +5,7 @@ const S = process.argv[2], B = 'http://127.0.0.1:8765/people/angelo/app/', U = B
 // manifest valid with its start_url on the display mode and every icon loading at its size; (2) opened as a Home Screen app
 // (standalone) the page goes straight to the display mode, the same page as the pop-out; (3) the desktop app's own start-up
 // script (INIT in desktop/src-tauri/src/main.rs, run here in Chromium): on a transparent window the corners stay clear and
-// the hexagon is drawn, the graph moves, and Esc does not leave display mode.
+// the hexagon is drawn, the graph moves, and Esc does not leave display mode; (4) its calm setting (15 frames a second).
 const INIT = (fs.readFileSync(path.join(__dirname, '../desktop/src-tauri/src/main.rs'), 'utf8').match(/const INIT: &str = r#"([\s\S]*?)"#;/) || [])[1]
 ;(async () => { const b = await chromium.launch(); let ok = true; const fail = m => { ok = false; console.log('  FAIL', m) }
  for (const [n, vp] of [['desktop', { width: 1280, height: 900 }], ['phone', { width: 390, height: 844 }]]) for (const scheme of ['dark', 'light']) {
@@ -39,5 +39,19 @@ const INIT = (fs.readFileSync(path.join(__dirname, '../desktop/src-tauri/src/mai
   const flow = await p.evaluate(() => document.querySelectorAll('.lv-display .lv-pulses circle').length)
   await p.keyboard.press('Escape'); await p.waitForTimeout(600); const stays = await p.evaluate(() => /display=1/.test(location.href))
   console.log('window', JSON.stringify({ px, flow, stays }))
-  if (px.corners.some(x => x !== 0) || !(px.centre > 0) || !flow || !stays) fail('window'); await c.close() }
+  if (px.corners.some(x => x !== 0) || !(px.centre > 0) || !flow || !stays) fail('window')
+  // (4) calm: frames a second held to about 15 when on (and remembered), about 60 when off; the graph still moves; the
+  // right-click hands the menu the current setting; a cancelled frame never runs
+  const fps = () => p.evaluate(() => new Promise(res => { let k = 0; const f = () => { k++; requestAnimationFrame(f) }; requestAnimationFrame(f); setTimeout(() => res(k), 1000) }))
+  await p.evaluate(() => { window.__calls = []; window.__TAURI_INTERNALS__ = { invoke: (cmd, args) => { __calls.push([cmd, args]); return Promise.resolve() } } })
+  const off = await fps(); await p.evaluate(() => __hexapp.setCalm(true)); const on = await fps()
+  await p.mouse.click(210, 210, { button: 'right' }); const call = await p.evaluate(() => __calls.find(x => x[0] === 'show_menu'))
+  const cancelled = await p.evaluate(() => new Promise(res => { let ran = false; const id = requestAnimationFrame(() => ran = true); cancelAnimationFrame(id); setTimeout(() => res(!ran), 300) }))
+  const f0 = await p.evaluate(() => document.querySelectorAll('.lv-display .lv-pulses circle').length)
+  await p.reload({ waitUntil: 'networkidle' }); await p.waitForSelector('.lv-display .lv-svg'); await p.waitForTimeout(1500)
+  const kept = await p.evaluate(() => __hexapp.calm()), moving = await p.evaluate(() => document.querySelectorAll('.lv-display .lv-pulses circle').length)
+  await p.evaluate(() => __hexapp.setCalm(false))
+  console.log('calm', JSON.stringify({ off, on, call, cancelled, f0, kept, moving }))
+  if (!(off >= 40) || !(on >= 10 && on <= 17) || !call || !call[1] || call[1].calm !== true || !cancelled || !kept || !moving) fail('calm')
+  await c.close() }
  await b.close(); console.log(ok ? 'PASS' : 'FAIL') })()

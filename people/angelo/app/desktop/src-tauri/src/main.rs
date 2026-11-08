@@ -20,6 +20,9 @@ const LABEL: &str = "live";
 /// Run in the page before its own scripts: the page's backgrounds made transparent and everything but the graph hidden,
 /// so only the hexagon shows; a left-button drag inside the hexagon moves the window; a right-click opens the menu;
 /// Esc (which leaves display mode in a browser) does nothing here. The hit test mirrors hex.rs.
+/// Calm (the spec's battery risk): when on, the page's animation frames are held to 15 a second (the page's own clock
+/// advances by real time, so the graph moves at the same speed, in fewer steps); kept in the page's localStorage, so it
+/// survives a restart. The ids handed out start at 1e9, so a clearTimeout on one (replay.js does both) never hits a timer.
 const INIT: &str = r#"(() => {
   const css = 'html,body{background:transparent!important}body *{visibility:hidden!important}'
     + '.lv-display,.lv-display *{visibility:visible!important}.lv-display,.lv-display .lv{background:transparent!important}'
@@ -28,23 +31,36 @@ const INIT: &str = r#"(() => {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', add); else add();
   const inside = e => { const w = innerWidth, h = innerHeight, s = Math.min(w, h); const u = (e.clientX - (w - s) / 2) / s * 1000, v = (e.clientY - (h - s) / 2) / s * 1000, dv = Math.abs(v - 500); return dv <= 433 && Math.abs(u - 500) <= 500 - 250 * dv / 433 };
   const invoke = (cmd, args) => { try { return window.__TAURI_INTERNALS__.invoke(cmd, args || {}) } catch (e) { } };
+  let calm = false; try { calm = localStorage.getItem('hexapp-calm') === '1' } catch (e) { }
+  const R = window.requestAnimationFrame.bind(window), C = window.cancelAnimationFrame.bind(window), ids = new Map(); let n = 1e9, lastT = 0;
+  window.requestAnimationFrame = cb => { const id = ++n;
+    const go = () => ids.set(id, R(ts => { ids.delete(id); if (calm && ts !== lastT && ts - lastT < 60) return later(); lastT = ts; cb(ts) }));
+    const later = () => ids.set(id, -setTimeout(go, Math.max(0, lastT + 66 - performance.now())));
+    calm ? later() : go(); return id };
+  window.cancelAnimationFrame = id => { const r = ids.get(id); if (r === undefined) return C(id); ids.delete(id); r < 0 ? clearTimeout(-r) : C(r) };
+  window.__hexapp = { calm: () => calm, setCalm: v => { calm = !!v; try { localStorage.setItem('hexapp-calm', calm ? '1' : '0') } catch (e) { } } };
   addEventListener('mousedown', e => { if (e.button === 0 && inside(e)) { e.preventDefault(); invoke('plugin:window|start_dragging', { label: 'live' }) } }, true);
-  addEventListener('contextmenu', e => { e.preventDefault(); invoke('show_menu') }, true);
+  addEventListener('contextmenu', e => { e.preventDefault(); invoke('show_menu', { calm }) }, true);
   addEventListener('keydown', e => { if (e.key === 'Escape') { e.stopImmediatePropagation(); e.preventDefault() } }, true);
 })();"#;
 
 static ON_TOP: AtomicBool = AtomicBool::new(true);
 
-/// The app's menu, opened by a right-click on the hexagon.
+/// The full command centre, for "Open in browser".
+const BROWSER_URL: &str = "https://web-summit.sgit.ai/people/angelo/app/index.html#live";
+
+/// The app's menu, opened by a right-click on the hexagon; calm is the page's current setting (INIT keeps it).
 #[tauri::command]
-fn show_menu(window: WebviewWindow) -> Result<(), String> {
+fn show_menu(window: WebviewWindow, calm: Option<bool>) -> Result<(), String> {
     let app = window.app_handle();
     let err = |e: tauri::Error| e.to_string();
     let item = |id: &str, text: &str| MenuItem::with_id(app, id, text, true, None::<&str>).map_err(err);
     let size = Submenu::with_items(app, "Size", true, &[&item("size_s", "Small")?, &item("size_m", "Medium")?, &item("size_l", "Large")?]).map_err(err)?;
     let on_top = CheckMenuItem::with_id(app, "on_top", "Always on top", true, ON_TOP.load(Ordering::Relaxed), None::<&str>).map_err(err)?;
+    let calm = CheckMenuItem::with_id(app, "calm", "Calm (15 frames a second)", true, calm.unwrap_or(false), None::<&str>).map_err(err)?;
     let sep = PredefinedMenuItem::separator(app).map_err(err)?;
-    let menu = Menu::with_items(app, &[&on_top, &size, &item("reload", "Reload")?, &sep, &item("quit", "Quit")?]).map_err(err)?;
+    let sep2 = PredefinedMenuItem::separator(app).map_err(err)?;
+    let menu = Menu::with_items(app, &[&on_top, &calm, &size, &sep, &item("browser", "Open in browser")?, &item("reload", "Reload")?, &sep2, &item("quit", "Quit")?]).map_err(err)?;
     window.popup_menu(&menu).map_err(err)
 }
 
@@ -55,10 +71,23 @@ fn on_menu(app: &AppHandle, event: MenuEvent) {
         "size_s" => { let _ = w.set_size(LogicalSize::new(280.0, 280.0)); }
         "size_m" => { let _ = w.set_size(LogicalSize::new(420.0, 420.0)); }
         "size_l" => { let _ = w.set_size(LogicalSize::new(640.0, 640.0)); }
+        "calm" => { let _ = w.eval("window.__hexapp && __hexapp.setCalm(!__hexapp.calm())"); }
+        "browser" => open_in_browser(BROWSER_URL),
         "reload" => { let _ = w.eval("location.reload()"); }
         "quit" => app.exit(0),
         _ => {}
     }
+}
+
+/// The system's own way to open an address in the default browser; no plugin, no shell permission for the page.
+fn open_in_browser(url: &str) {
+    #[cfg(target_os = "macos")]
+    let r = std::process::Command::new("open").arg(url).spawn();
+    #[cfg(target_os = "windows")]
+    let r = std::process::Command::new("explorer").arg(url).spawn();
+    #[cfg(not(any(target_os = "macos", target_os = "windows")))]
+    let r = std::process::Command::new("xdg-open").arg(url).spawn();
+    let _ = r;
 }
 
 fn main() {
