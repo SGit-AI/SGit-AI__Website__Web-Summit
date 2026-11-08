@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1277",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the Android app starts now, in this repository, until its own exists",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "828686fb3"
+  },
+  {
     "version": "v0.2.1276",
     "date": "2026-11-08",
     "what": "the vault's tap-to-use hint on a phone is a readable pill",
