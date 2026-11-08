@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1292",
+    "date": "2026-11-08",
+    "what": "Actions row 1: Jose raises the tokens with Dinis himself; the reminder is committed for Dinis's conductor",
+    "by": "conductor@web-summit.jose",
+    "from": "5c33ccf49"
+  },
+  {
     "version": "v0.2.1291",
     "date": "2026-11-08",
     "what": "runner.conductor@PrompTugal.angelo: the run's state, 14:21 UTC",
