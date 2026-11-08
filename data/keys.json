@@ -1299,6 +1299,23 @@
         "signing_fingerprint": "sha256:5795e1959875387e"
       },
       "status": "active"
+    },
+    {
+      "id": "synthetic-vicky",
+      "agent": "synthetic@web-summit.vicky",
+      "label": "synthetic@web-summit.vicky (Claude Code session)",
+      "role": "Vicky Wang's synthetic-reader agent: tests public PrompTugal.news pages as an imagined reader and reports findings to Vicky, on demand only. Never changes the pages it tests. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 8 November 2026 (pki-agent.mjs keygen --session, the copy matching the sha256 pinned in admin/tools/seal.mjs) and pushed to this repository by that session at Vicky's word; the push is the authorisation. Linked to the operator's key sha256:db7f79fdd87e030a (operated-by); not confirmed on pki.sgit.ai.",
+      "added": "2026-11-08",
+      "status": "active",
+      "bundle": {
+        "v": "1",
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA4+C6QWNqardyMolBAN6f\nPZxZHT2SpCwPCKt713waR+c/zmQ8kG8Y6MSje2LuXWIi2GoNH0DhpEa2dui3SmBE\nJ1Vudrz803m2QUOGbW5QKYFigsqwVhLzFWgUgOv6KSPInNAkNGr063XMjn2CKSi+\nnDqLhlKCKSZy4RwIN4AUNc04oS6yzvU205LXEns5illyANzKPrPwczTmkFT1CL2A\nezUV1Bnjtlnn2QJ+splMUqo9OqvAgwjZWFZwgT8KjbAw5AeSElpebCRjDMEbMYuj\nxQGub8CcVuGs8FWEGigISiGyygQZ54sEU2lIzufPqe1FIb7fFWAyMHoc0nsJNYIw\n2CyfVZ8bFrq6d2IBCTZaxk+x8un3xq3J4d/k2JBMMhNNiGvwG7K8plw0v6/TgPs6\nsyGhkbnGz1w2pTyE2w1Xw7bmTylXbKgauLY8hRBrg3iUbk/Ai0+vEGa2aQ0iCpsm\nYjebHmFfkOG75DK1HeFUw1McI6FVDK+2JstVqnUZWWUILDackg0OBdSn3NAIRHLF\n/Rxllh8GX1prW4k/+72XkTcbDTESWZLAxB3g12cQg+Ooahg3ZP24m7+Uo7D9n5wC\nUCsNns0BzhNupXwFfWaSabQ3zBCaCxrfUqhR5oQwLqHLbWdkDPxiG4poHZWzp8rz\n2F79Oqa2MJvrSgq/bx52pP8CAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE5zbQy96rf8Ydo3qQc0YbE9RTOfkW\nWNIpKG//57apktPsqXguxkSoXOLKPvPWzSJKkRKPlplqxR32hsAUsDUGtA==\n-----END PUBLIC KEY-----\n",
+        "label": "synthetic@web-summit.vicky",
+        "fingerprint": "sha256:09ba942dd807325f",
+        "signing_fingerprint": "sha256:8c91b3408aef4979"
+      }
     }
   ]
 }
