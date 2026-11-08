@@ -79,10 +79,13 @@
         if (!cfg || !(window.crypto && crypto.subtle)) return { status: 'no-lane', why: 'the request lane could not be loaded' }
         const at = new Date().toISOString()
         const id = at.replace(/[-:]/g, '').replace(/\.\d+Z$/, 'Z') + '-' + b64(crypto.getRandomValues(new Uint8Array(3))).replace(/[^A-Za-z0-9]/g, 'x').toLowerCase()
-        const request_json = JSON.stringify({ v: 1, id, subject, at, by_booth: document.documentElement.classList.contains('xr-booth-on') })
+        // the same shape as the feedback pane's, so admin/tools/feedback_drain.py verifies it: a signature over items_json
+        // (byte for byte), and items equal to it; otherwise the drain writes it as "unsigned" and xray@ never reads the subject
+        const items = [{ kind: 'xray-request', v: 1, id, subject, at, by_booth: document.documentElement.classList.contains('xr-booth-on') }]
+        const items_json = JSON.stringify(items)
         try {
-            const signed = { person: KR.person, key: KR.fingerprint, alg: 'ECDSA-P256-SHA256-P1363', sig: await KR.sign(request_json) }
-            const enc = await seal(cfg.recipient.encrypt, JSON.stringify({ type: 'web-summit.xray-request/v1', to: XRAY_AGENT, site: location.origin, sent_at: at, from: `${KR.person} (signed with their key in this browser)`, request_json, signed }))
+            const signed = { person: KR.person, key: KR.fingerprint, alg: 'ECDSA-P256-SHA256-P1363', sig: await KR.sign(items_json) }
+            const enc = await seal(cfg.recipient.encrypt, JSON.stringify({ type: 'web-summit.xray-request/v1', to: XRAY_AGENT, site: location.origin, sent_at: at, from: `${KR.person} (signed with their key in this browser)`, signed, items_json, items }))
             const r = await fetch(`${cfg.host}/api/vault/append/write/${cfg.vault_id}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ append_token: cfg.append_token, payload: btoa(enc) }) })
             if (!r.ok) return { status: 'failed', why: r.status === 507 ? 'the lane is full: xray@ has not drained it yet' : `the lane said ${r.status}` }
             return { status: 'queued', id }
