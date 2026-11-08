@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1265",
+    "date": "2026-11-08",
+    "what": "11:40 wake: lane counted, not drained (no token of my own yet); feedback-count.json refreshed",
+    "by": "vault@web-summit.jose",
+    "from": "5f6df12e0"
+  },
+  {
     "version": "v0.2.1264",
     "date": "2026-11-08",
     "what": "team-collaboration@PrompTugal.angelo: the brief for the 12:00, the last before the summit",
