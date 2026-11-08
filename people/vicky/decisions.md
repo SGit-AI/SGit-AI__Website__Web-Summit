@@ -79,6 +79,15 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - Traceable: each claim carries a short marker (for example a number) that matches its source line below the paragraph, so a reader can see which source supports which sentence.
     - Event details (sessions, stages, times) stay in the page's own summit section, not in About.
 
+24. **Company pages: journalist-connections chooses which to enrich** (Vicky, 8 Nov, about 16:55 UTC; for journalist-connections, the reviewer, dev and the conductor). Vicky: "Please let journalist-connections choose which company pages to enrich, without asking me to select each company. Prioritise companies connected to our published or mature storylines, where the current page lacks useful context and enough verified public sources are available. Check existing work and ownership to avoid duplication. Use the existing workflow: journalist prepares the content under SA23, reviewer checks it, and dev updates and releases the page after the usual checks. I approve these routine updates within the existing company-page structure once reviewer marks them Ready. Ask me only if a wider scope or a decision is needed. Keep this within the existing runs and capacity. Do not add recurring tasks or reduce article priority."
+    - **Choosing (journalist-connections):** only companies that already have a page on promptugal.news (`data/companies/<id>/`), linked to a published article or a mature storyline of ours, whose page lacks useful context, and with enough verified public sources. Before starting one, check that no `desks/journalist-vicky/companies/<id>.md` exists or is in progress and that no other desk or agent is working on that company's page (recent commits on `data/companies/<id>/` and the company template); if someone is, skip it and note it. Never edit `data/` (the ontologist's) or another desk's files.
+    - **Capacity:** articles first. In a writing run, enrich at most one company page, and only after the run's storylines are written or when there is none. No new task, no extra run.
+    - **Content:** `desks/journalist-vicky/companies/<id>.md` in the same shape as Replit's: "## About" under standing answer 23, "## At Web Summit 2026" with each participation sourced (and "Media only" only where a Web Summit page says so), public and professional facts only. `status: in-review`, then a commit For: reviewer@PrompTugal.vicky.
+    - **Check and release (reviewer):** check wording and sources; when Ready, mark it `status: ready` and release it as usual. The existing template already shows a Ready file's About, "From the newsroom" and Media only marks, so the reviewer's release is the page update (Vicky approved these routine updates once Ready). Then load the live page at 390 px and at desktop width: no horizontal scroll, the sections readable; report the result. If anything is wrong, set the file back to `fix` and release at once, and tell dev.
+    - **dev:** only when a page needs more than the existing structure (a template change or a defect): it coordinates with the page owners (dev.pages@PrompTugal.dinis, dev@PrompTugal.dinis) under standing answer 10, and asks Vicky first if the scope is wider than the existing company-page structure.
+    - **Ask Vicky only** for a wider scope or a real decision (a new section, a company not yet on the site, a disagreement with Dinis's agents).
+    - **Report:** each run, in your report line: which company you took and why, or why none. The conductor lists completed pages and blockers in the brief.
+
 ## Updates for agents
 
 How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
@@ -158,6 +167,9 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 > 2. **reviewer, at your next run after that (19:15, or 20:20):** check the wording against standing answer 23 and every claim against its source; fix wording yourself (standing answer 17); mark it `status: ready` (or `fix` with the exact fixes). When Ready, commit For: dev@PrompTugal.vicky saying "SA23-REPLIT Ready: update the page". Confirm in your report.
 > 3. **dev, when Vicky opens your session:** show the revised About on Replit's page with the sources below the paragraph. If that needs a change to the company page template (newsroom/build/features/companies.mjs) beyond what your PILOT-REPLIT change already does, coordinate with its owners first (dev.pages@PrompTugal.dinis, and dev@PrompTugal.dinis for the build) in a commit For: them, saying what you will change and why, and say in your report how they answered or that you went ahead under standing answer 10. Gate, 390 px and desktop checks, release (Vicky approved publishing on those checks); commit For: the page owners (standing answer 10). Report the live version and the mobile check.
 
+**SA24, company pages chosen and enriched by journalist-connections** (Vicky, 8 Nov, about 16:55 UTC). For: journalist-connections, reviewer, dev.
+> Add standing answer 24 to your prompts file and follow it from your next run; confirm "applied SA24". journalist-connections: also add one line to your writing task's prompt (you change it yourself; keep the rest word for word), after step 6: "6b. After your storylines (articles first), you may enrich at most one company page under standing answers 23 and 24." Reviewer: add to both your tasks' prompts: "Company files in desks/journalist-vicky/companies/ are reviewed like drafts; when Ready, release, then check the live page at 390 px and desktop (standing answer 24)."
+
 Still to confirm (8 Nov, 08:45 UTC; the rest have confirmed):
 - P10: vault, designer, dev.
 - P17: journalist-ai, journalist-portugal, vault, designer, dev.
@@ -170,6 +182,7 @@ Still to confirm (8 Nov, 08:45 UTC; the rest have confirmed):
 - SCHED-WS: curator, journalist (both tasks already run at the new times).
 - SA19B: curator, journalist-connections.
 - SA19C: researcher, curator, journalist-connections.
+- SA24: journalist-connections, reviewer, dev.
 - SA23: journalist-connections, journalist, journalist-portugal, journalist-europe, journalist-ai, reviewer, dev (add standing answer 23 to your prompts file).
 - SA22: curator, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections.
 
