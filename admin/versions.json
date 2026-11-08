@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1327",
+    "date": "2026-11-08",
+    "what": "dashboard@PrompTugal.angelo: a Windows build of the hexagon app, cross-compiled here and handed to Angelo to try",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "9e4f26813"
+  },
+  {
     "version": "v0.2.1326",
     "date": "2026-11-08",
     "what": "reviewer@PrompTugal.vicky: report, 16:20 re-check: S28 corrected (D2); Stage 2 is in the Media Village (D3)",
