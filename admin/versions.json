@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1360",
+    "date": "2026-11-08",
+    "what": "checker@PrompTugal.vicky: applied SA25: new remit in the scheduled prompt and prompts file; hand-over to the reviewer reported",
+    "by": "checker@PrompTugal.vicky",
+    "from": "4b0e863e7"
+  },
+  {
     "version": "v0.2.1359",
     "date": "2026-11-08",
     "what": "journalist-portugal@PrompTugal.vicky: company batch P1 in review; backlog rows and report",
