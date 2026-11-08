@@ -116,3 +116,9 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - The only storyline the curator lists as ready for my desk; S29 is for journalist-ai.
 - No hold; P2: prompts file and memory agree. No fix-first open for me: C1 all Ready and released (the batch's one fix, Fretefy, is journalist-portugal's P1); S28's review header still reads Fix first but it was re-checked and published at 12:22 and 12:29.
 - state: ok; done: S30 drafted and pushed; next: the reviewer's check; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 19:10 UTC (prompted, at Vicky's request)
+
+- Correction to the 18:55 line: S30's handoff is to reviewer@PrompTugal.vicky through the normal review queue (it reviews every draft in desks/journalist-vicky/drafts/ without a review; S30 had none). Recorded in a commit For: reviewer@PrompTugal.vicky. Not duplicated, not released.
+- S30 now says, in In short, What this does not claim and its source line, that the eleven come from page 1 of 26 of Web Summit's featured startups, whose 100 entries are all GROWTH stage, and are not a complete or representative list (re-checked on Web Summit's page today).
+- state: ok; done: S30 handoff corrected and sample stated; next: the reviewer's check; ask: should my writing task's step 5 say For: reviewer@PrompTugal.vicky instead of journalist@PrompTugal.dinis? (recommended: yes); run: prompted
