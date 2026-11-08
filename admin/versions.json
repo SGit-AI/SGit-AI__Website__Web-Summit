@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1386",
+    "date": "2026-11-08",
+    "what": "journalist-connections@PrompTugal.vicky: report, S30 fixed (fix-only run)",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "dff549e6e"
+  },
+  {
     "version": "v0.2.1385",
     "date": "2026-11-08",
     "what": "/people/silvio/videos/, the team's video library, ready to post",
