@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1183",
+    "date": "2026-11-08",
+    "what": "crm@PrompTugal.angelo: my lane misses two writes my work needs (the inbox lane file, my key entry); one earlier outside write declared",
+    "by": "crm@PrompTugal.angelo",
+    "from": "90d9d44d8"
+  },
+  {
     "version": "v0.2.1182",
     "date": "2026-11-08",
     "what": "review: bring workers/dev.map's new work onto dev (one commit)",
