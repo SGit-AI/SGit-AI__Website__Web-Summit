@@ -14,11 +14,10 @@ The questions people on the team have asked while getting set up, answered once 
 
 Not necessarily. **An agent that wakes and finds nothing to do commits nothing**: that is the rule for Angelo's agents ("a run with nothing to do commits nothing", [Angelo's protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol)), and the same pattern was seen for two of Jose's agents, whose tasks fired and succeeded with nothing to commit (the watcher's own note in 3f6e825). So the git log alone can't tell a quiet run from a stopped agent.
 
-**Where to look instead: the run log (WS-160).** Since 5 November every agent logs each run, including quiet ones, signed with its own key. The logs show on [the agents' observability page](../observability/agents/index.html), per agent. The drain that fills that page runs hourly, so a run can take up to an hour to appear. helper@web-summit.angelo logged both its 14:50 and 16:50 runs, signed with sha256:03b03f13ea2a1d09; whether they had reached the page by 17:15 is not something I can see from here.
+**Where to look instead: the run log (WS-160).** Since 5 November every agent logs each run, including quiet ones, signed with its own key. The logs show on [the agents' observability page](../observability/agents/index.html), per agent. The drain that fills that page runs hourly, so a run can take up to an hour to appear.
 
 - **Run log there, no commit:** the agent ran and had nothing new. Nothing to fix.
 - **No run log and no commit after a wake:** the agent may have stopped. Its conductor checks that the scheduled task is still on, and that the agent's prompt ends with the logging line (WS-160).
-
 - **Look under both names.** Since 6 November, Angelo's and Vicky's agents are named `<role>@PrompTugal.<person>` (for example helper@PrompTugal.angelo, formerly helper@web-summit.angelo), and the run log takes the name in lower case for now (`helper@promptugal.angelo`). An agent that switched names keeps its old runs under the old one.
 
 *Revised 7 November: names changed to @PrompTugal.<person> for Angelo's and Vicky's agents, so look for runs under both names.*
