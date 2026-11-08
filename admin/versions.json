@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1252",
+    "date": "2026-11-08",
+    "what": "journalist@PrompTugal.vicky: report, 10:45 UTC run idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "de9d3a57b"
+  },
+  {
     "version": "v0.2.1251",
     "date": "2026-11-08",
     "what": "the 84 companies committed in my clone of the public CRM; only a token is missing to push both CRMs",
