@@ -2,7 +2,7 @@
 title: Jose's dashboard
 summary: The page Jose reads first. The top is built for Jose; the Actions section, the only list of what waits on him, is kept by his conductor (conductor@web-summit.jose); the rest, from the builder template, by his dashboard agent (dashboard@web-summit.jose): what happened, and what Jose and Jose's agents are doing.
 ---
-**Updated Sun 8 Nov, 07:35 UTC by `dashboard@web-summit.jose`; next update 12:30 UTC.** Since 5 November (your rule, C19: "You are my only door"), [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest of the page (your lanes, your agents, your issues) by your dashboard agent. [Your command centre](app/index.html) is becoming your first view (it is on your Actions).
+**Updated Sun 8 Nov, 17:35 UTC by `dashboard@web-summit.jose`; next update Mon 07:30 UTC.** Since 5 November (your rule, C19: "You are my only door"), [Actions](#actions), the only list of what waits on you, is kept by your conductor; the rest of the page (your lanes, your agents, your issues) by your dashboard agent. [Your command centre](app/index.html) is becoming your first view (it is on your Actions).
 
 ## Actions {#actions}
 
@@ -78,17 +78,7 @@ Your first demo piece, live: the "Reach, Mandate, Gap" vault app, made by `vault
 
 ## My agents {#agents}
 
-**Coming, at your word (C31):** an Agents board at the top of [your command centre](app/index.html), one row per agent (last run, doing now, waiting on you, a light), handed to your designer (it starts when you open its session; see [Actions](#actions)); once it is live, this section becomes one line linking to it. Today's trial: your watcher on Sonnet for one day (you switch it in its session; the accountant compares tomorrow).
-
-**One door (C19):** your agents take new work only from your conductor's task files ([people/jose/tasks](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/tree/dev/people/jose/tasks)) and report back to it, not to you; anything that needs you reaches [Actions](#actions) through the conductor.
-
-- **On schedule:** conductor, dashboard, dev, watcher (now also at 22:15 UTC), automation, helper, and vault (11:40 and 17:40 UTC, draining its lanes).
-- **On demand:** designer, writer@PrompTugal.jose (started 7 November: pieces with you for PrompTugal.news on how one person runs a team of agents, drafted in its own desk in the newsroom, never published or signed by it), sales-coach (started 5 November for your RiskMandate pitch, its key published), crm (started 5 November at your yes, key `crm-jose`; the private CRM's key is sealed to it, and it has written the channels area for WS-175, kept locally until it has an SG/Send token of its own), the reviewer as a sub-agent on every push, and the accountant once a day in your conductor's 07:20 wake (each agent measures its own run).
-- **New schedules, approved for a trial, waiting for you to paste them** into each agent's session: short pointers to each agent's steps in your kit ([schedules.md](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/schedules.md); the steps are on [Actions](#actions)).
-- **Your command centre was changed by another person's agent:** Silvio's dashboard agent added "two brains" to the command centres of Silvio, Angelo and you on 7 November (14f3f05, 07:07), through the shared engine and with a 1.6 MB 3D library, at Silvio's word and with no `For:` line to you or your agents (its commit says nothing in your own app was removed or changed); your watcher flagged it ([its latest](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/latest.md)). What to do about it goes to your conductor, who puts it on [Actions](#actions) if it needs you.
-- **Anything wrong with them** (late runs, missing reviews) is on [Actions](#actions); your watcher's latest run is [here](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/watcher/latest.md).
-
-The full list: [agents.json](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/agents.json); the prompts: [your kit](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/jose/kit/README.md). The improvements your designer proposed for everyone's command centre are WS-159 ("four improvements for the shared command centre"), for the engine's owners: nobody else's app changes unless they take it.
+Your agents, one row each (last run, doing now, waiting on you, a light): [the Agents board, at the top of your command centre](app/index.html#home).
 
 ## My issues {#issues}
 
