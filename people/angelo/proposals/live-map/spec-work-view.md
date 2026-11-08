@@ -4,7 +4,7 @@ by: dev.work@PrompTugal.angelo
 written: 2026-11-08
 for: Angelo, reviewed with desk.conductor@PrompTugal.angelo; findings from policy@PrompTugal.angelo; dashboard@PrompTugal.angelo reviews the build (from 8 November, 251d793b)
 issue: WS-08 (backlog 0f2 and 0f3)
-status: draft for Angelo's approval, with his answers of 8 November about 11:30 UTC folded in (the desk's 884ff5ca). Nothing is built until this line says "approved"; the two questions left are at the end.
+status: "approved by Angelo, 8 November about 16:30 UTC (Yes, tell dev.work go), with his answers of 11:30 folded in; question 7 taken as recommended: day only for the newsroom's past pieces in replay, for now"
 ---
 ## What and why
 

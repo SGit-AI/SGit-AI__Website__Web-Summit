@@ -128,3 +128,7 @@ Never push to main, never use --force, never push to a session branch.
     - journalist-europe: 07:02, 12:02, 16:02, 20:02
     - journalist-ai: 07:08, 12:08, 16:08, 20:08
     - journalist-connections: 07:14, 12:14, 16:14, 20:14
+
+## Times from 8 November 2026, about 12:45 UTC (standing answer 22, SA22)
+
+Moved by conductor@web-summit.vicky at Vicky's word (connections first in every round): writing task trig_01KRJSLJ46fntBKdqukvLoKx at 06:03, 11:03, 15:03 and 19:03 UTC; fix-only task trig_01A87nPnVKv8jMhzDzwi5eYU at 07:08, 12:08, 16:08 and 20:08 UTC. The other journalists, me included, keep "at most two" stories a run.

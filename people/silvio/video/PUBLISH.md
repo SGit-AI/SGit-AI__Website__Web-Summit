@@ -22,7 +22,7 @@ What is clean and can go up (WS-71), from the vault `ws-team-videos` (h9in5em4).
 
 ### A. Your AI has access. Does it have permission? (30 s, subtitled)
 
-File: `access-permission-30s/riskmandate-access-permission-30s.mp4` (or Silvio's original from Drive). Its page: https://web-summit.sgit.ai/videos/access-permission/index.html
+File: `your-ai-has-access-does-it-have-permission/your-ai-has-access-does-it-have-permission-30s-en.mp4` (or Silvio's original from Drive). Its page: https://web-summit.sgit.ai/videos/access-permission/index.html
 
 - **Title (YouTube):** Your AI has access. Does it have permission? | RiskMandate
 - **Description (EN):**
@@ -42,7 +42,7 @@ File: `access-permission-30s/riskmandate-access-permission-30s.mp4` (or Silvio's
 
 ### B. The stand loop, English (67 s, silent)
 
-File: `stand-loop/riskmandate-stand-loop-en.mp4` (or `-pt.mp4` for a Portuguese post). It has no page of its own yet: link to https://web-summit.sgit.ai/meet/ (where its QR goes).
+File: `stand-loop-what-is-riskmandate/what-is-riskmandate-stand-loop-67s-en-english.mp4` (or `-pt.mp4` for a Portuguese post). It has no page of its own yet: link to https://web-summit.sgit.ai/meet/ (where its QR goes).
 
 - **Title (YouTube):** Do you know what your AI agents can actually do? | RiskMandate
 - **Description (EN):**
@@ -59,7 +59,7 @@ File: `stand-loop/riskmandate-stand-loop-en.mp4` (or `-pt.mp4` for a Portuguese 
 | Account | RiskMandate's | RiskMandate's | RiskMandate's page (routed to Indi, WS-126) |
 | Video | the MP4 as it is (16:9, 1920x1080) | the MP4 as a feed video (16:9); a vertical 9:16 cut on request | upload natively, so it plays in the feed |
 | Text | title + description above | the first two lines + "link in bio" + hashtags; the page in the bio | the description, link in the text |
-| Thumbnail | a still: the 30-second film's last frame, or slide 1 of the loop (`stand-loop/previews/`) | the first frame | automatic |
+| Thumbnail | a still: the 30-second film's last frame, or slide 1 of the loop (`stand-loop-what-is-riskmandate/previews/`) | the first frame | automatic |
 | Captions | burned in; nothing to upload | burned in | burned in |
 | After | send the post's URL to video@web-summit.silvio, which records it here and on /videos/ through its owner | same | same |
 

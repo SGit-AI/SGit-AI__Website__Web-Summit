@@ -1,5 +1,278 @@
 [
   {
+    "version": "v0.2.1332",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: for the team: one quick test of the live graph's pop-out in Safari, on a Mac or an iPad",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "0c3b983fa"
+  },
+  {
+    "version": "v0.2.1331",
+    "date": "2026-11-08",
+    "what": "writer@PrompTugal.angelo: Sunday's graph post: \"six of us ... dozens of AI agents\", as the live articles say",
+    "by": "writer@PrompTugal.angelo",
+    "from": "b52d70139"
+  },
+  {
+    "version": "v0.2.1330",
+    "date": "2026-11-08",
+    "what": "the private CRM's key sealed to vault-silvio, at Silvio's yes",
+    "by": "conductor@web-summit.silvio",
+    "from": "05459678a"
+  },
+  {
+    "version": "v0.2.1329",
+    "date": "2026-11-08",
+    "what": "helper@PrompTugal.angelo: /help/ answer 4 (network) at Angelo's word: Jose's case closed; the guides' note dropped",
+    "by": "helper@PrompTugal.angelo",
+    "from": "0fd3a87db"
+  },
+  {
+    "version": "v0.2.1328",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the work view approved: dev.work@ builds now",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "7fcaf1089"
+  },
+  {
+    "version": "v0.2.1327",
+    "date": "2026-11-08",
+    "what": "dashboard@PrompTugal.angelo: a Windows build of the hexagon app, cross-compiled here and handed to Angelo to try",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "9e4f26813"
+  },
+  {
+    "version": "v0.2.1326",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: report, 16:20 re-check: S28 corrected (D2); Stage 2 is in the Media Village (D3)",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "63cecde1c"
+  },
+  {
+    "version": "v0.2.1325",
+    "date": "2026-11-08",
+    "what": "helper@PrompTugal.angelo: /help/ answer 2 (site key) at Angelo's word: lanes under their old names; what a signature proves",
+    "by": "helper@PrompTugal.angelo",
+    "from": "2f139c2cd"
+  },
+  {
+    "version": "v0.2.1324",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: URGENT for Dinis's team: two CI drafts so the team can install the hexagon app before the summit",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "16529c3e6"
+  },
+  {
+    "version": "v0.2.1323",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: the run's state, 16:21 UTC",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "73290f0e1"
+  },
+  {
+    "version": "v0.2.1322",
+    "date": "2026-11-08",
+    "what": "dashboard@PrompTugal.angelo: URGENT, from Angelo: ask Dinis's conductor today for the desktop app's build steps",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "4d7061428"
+  },
+  {
+    "version": "v0.2.1321",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: session report: Angelo's \"Wake up\" at 16:17: nothing waiting for me; the guide's two fixes are live",
+    "by": "dev@PrompTugal.angelo",
+    "from": "1da27b26a"
+  },
+  {
+    "version": "v0.2.1320",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: live 3D: message dots bigger and glowing, as in replay 3D",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "bc4a471a7"
+  },
+  {
+    "version": "v0.2.1319",
+    "date": "2026-11-08",
+    "what": "dashboard@PrompTugal.angelo: Angelo asked how to try the hexagon app; answered with the three ways that work today",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "467f8210a"
+  },
+  {
+    "version": "v0.2.1318",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: Angelo's website: why he can bring pilots to production, with proof from running tens of agents",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "644f9538b"
+  },
+  {
+    "version": "v0.2.1317",
+    "date": "2026-11-08",
+    "what": "runner.writer@PrompTugal.angelo: STATE: WS-125 published, no open finding",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "858d8d927"
+  },
+  {
+    "version": "v0.2.1316",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: LinkedIn: \"over a hundred AI agents\" is supported (111 have run, 89 in 48 h)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "e690065ae"
+  },
+  {
+    "version": "v0.2.1315",
+    "date": "2026-11-08",
+    "what": "retest of the Replit pilot fixes on v0.1.718, all three pass",
+    "by": "synthetic@web-summit.vicky",
+    "from": "a917b2577"
+  },
+  {
+    "version": "v0.2.1314",
+    "date": "2026-11-08",
+    "what": "a handover file for a fresh session (token-efficiency ABP, rule 2)",
+    "by": "helper@web-summit.jose",
+    "from": "7169021f7"
+  },
+  {
+    "version": "v0.2.1313",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the ABP demo: scenarios chosen by how well they show the barriers",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "37cc04f38"
+  },
+  {
+    "version": "v0.2.1312",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the ABP demo: simple scenarios, real agents in almost-real time on the demo laptop",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "5919eddb8"
+  },
+  {
+    "version": "v0.2.1311",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.vicky: report: TRIAGE-REPLIT D1, D4, D5 live (v0.1.718); applied SA16",
+    "by": "dev@PrompTugal.vicky",
+    "from": "a8fd5a63c"
+  },
+  {
+    "version": "v0.2.1310",
+    "date": "2026-11-08",
+    "what": "a handover file for a fresh session (token-efficiency ABP, rule 2); this session is far past 300,000 tokens",
+    "by": "dev@web-summit.jose",
+    "from": "339ef1fb4"
+  },
+  {
+    "version": "v0.2.1309",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 153 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 567 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "6c8293d78"
+  },
+  {
+    "version": "v0.2.1308",
+    "date": "2026-11-08",
+    "what": "held by reviewer@web-summit.jose: my handover file failed the gate's contact check; only the hold and its record pushed",
+    "by": "dev@web-summit.jose",
+    "from": "526a5f39b"
+  },
+  {
+    "version": "v0.2.1307",
+    "date": "2026-11-08",
+    "what": "the Replit report revised around reader value, evidence kept",
+    "by": "synthetic@web-summit.vicky",
+    "from": "3813b6aef"
+  },
+  {
+    "version": "v0.2.1306",
+    "date": "2026-11-08",
+    "what": "first test, Replit's company page with three personas; public key registered",
+    "by": "synthetic@web-summit.vicky",
+    "from": "d4edac90d"
+  },
+  {
+    "version": "v0.2.1305",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: the run's state, 15:21 UTC",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "8bd2ecf87"
+  },
+  {
+    "version": "v0.2.1304",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: report, 15:15 first review: idle",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "612768b74"
+  },
+  {
+    "version": "v0.2.1303",
+    "date": "2026-11-08",
+    "what": "the request to synthetic@PrompTugal.dinis for the Replit pilot test is superseded and withdrawn",
+    "by": "conductor@web-summit.vicky",
+    "from": "440d76daa"
+  },
+  {
+    "version": "v0.2.1302",
+    "date": "2026-11-08",
+    "what": "a request to synthetic@PrompTugal.dinis: a first-time-reader test of the live Replit page pilot, phone and desktop",
+    "by": "conductor@web-summit.vicky",
+    "from": "b60b8f1e3"
+  },
+  {
+    "version": "v0.2.1301",
+    "date": "2026-11-08",
+    "what": "\"with and without RiskMandate\" made, three 19-second films in EN and PT, sent to Silvio",
+    "by": "video@web-summit.silvio",
+    "from": "dccb2bde1"
+  },
+  {
+    "version": "v0.2.1300",
+    "date": "2026-11-08",
+    "what": "journalist-portugal@PrompTugal.vicky: scheduled run, idle; SA22 applied",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "3d0beaf27"
+  },
+  {
+    "version": "v0.2.1299",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.vicky: report: PILOT-REPLIT live on promptugal.news (v0.1.714); applied P10, P17, P22, P27",
+    "by": "dev@PrompTugal.vicky",
+    "from": "6e1c3c955"
+  },
+  {
+    "version": "v0.2.1298",
+    "date": "2026-11-08",
+    "what": "journalist@PrompTugal.vicky: report, 14:45 UTC run idle; SA22 confirmed",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "3b7dbd87b"
+  },
+  {
+    "version": "v0.2.1297",
+    "date": "2026-11-08",
+    "what": "curator@PrompTugal.vicky: the re-check sentence added to the scheduled prompt, at Vicky's word",
+    "by": "curator@PrompTugal.vicky",
+    "from": "8cc2721ed"
+  },
+  {
+    "version": "v0.2.1296",
+    "date": "2026-11-08",
+    "what": "curator@PrompTugal.vicky: S28 correction reported, rule 25 (re-check before ready)",
+    "by": "curator@PrompTugal.vicky",
+    "from": "688056481"
+  },
+  {
+    "version": "v0.2.1295",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: report, PILOT-REPLIT content Ready and handed to dev",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "6c3ecfef6"
+  },
+  {
+    "version": "v0.2.1294",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 150 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 570 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "7b71cfa0a"
+  },
+  {
     "version": "v0.2.1293",
     "date": "2026-11-08",
     "what": "PILOT-REPLIT: the existing page cannot show it without a template change, so dev stays in; the Media only label must cite its source",

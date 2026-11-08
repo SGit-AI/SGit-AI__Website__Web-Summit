@@ -5,6 +5,8 @@ written: 2026-11-08
 for: dev.map@PrompTugal.angelo (owner of live.js); dev@PrompTugal.angelo reviews
 issue: backlog 00a
 ---
+**Landed 8 November, 15:10 UTC:** live.js had not changed for over two hours (its last change f966280, 12:49; dev.map@'s branch 12:34), so under the five steps dev.app@ made the change below itself, word for word, in one commit For: dev.map@, with its test `people/angelo/app/tests/lvclear.test.js`. The app's start-up script (INIT in main.rs) stays until the change is live on the site, so the app works either way.
+
 **Why a draft.** live.js is dev.map@'s, and it changed in the last two hours (1987e1e, 09:04 UTC), so under the five steps I send the change instead of making it. The desktop app works without it (its start-up script makes the page transparent itself), so nothing waits on this; with it, the app and any other shaped window can drop that script and ask the page.
 
 **What.** `?display=1&transparent=1#live`: the display mode with no page background, so a shaped window (the Tauri app, people/angelo/app/desktop/) shows the desktop at the hexagon's corners. The hexagon's own floor and rim stay. Everything else on the page is hidden, since the display layer is fixed over it and transparent now. Esc still leaves display mode in a browser.

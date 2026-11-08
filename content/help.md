@@ -14,11 +14,10 @@ The questions people on the team have asked while getting set up, answered once 
 
 Not necessarily. **An agent that wakes and finds nothing to do commits nothing**: that is the rule for Angelo's agents ("a run with nothing to do commits nothing", [Angelo's protocol](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/kit/README.md#protocol)), and the same pattern was seen for two of Jose's agents, whose tasks fired and succeeded with nothing to commit (the watcher's own note in 3f6e825). So the git log alone can't tell a quiet run from a stopped agent.
 
-**Where to look instead: the run log (WS-160).** Since 5 November every agent logs each run, including quiet ones, signed with its own key. The logs show on [the agents' observability page](../observability/agents/index.html), per agent. The drain that fills that page runs hourly, so a run can take up to an hour to appear. helper@web-summit.angelo logged both its 14:50 and 16:50 runs, signed with sha256:03b03f13ea2a1d09; whether they had reached the page by 17:15 is not something I can see from here.
+**Where to look instead: the run log (WS-160).** Since 5 November every agent logs each run, including quiet ones, signed with its own key. The logs show on [the agents' observability page](../observability/agents/index.html), per agent. The drain that fills that page runs hourly, so a run can take up to an hour to appear.
 
 - **Run log there, no commit:** the agent ran and had nothing new. Nothing to fix.
 - **No run log and no commit after a wake:** the agent may have stopped. Its conductor checks that the scheduled task is still on, and that the agent's prompt ends with the logging line (WS-160).
-
 - **Look under both names.** Since 6 November, Angelo's and Vicky's agents are named `<role>@PrompTugal.<person>` (for example helper@PrompTugal.angelo, formerly helper@web-summit.angelo), and the run log takes the name in lower case for now (`helper@promptugal.angelo`). An agent that switched names keeps its old runs under the old one.
 
 *Revised 7 November: names changed to @PrompTugal.<person> for Angelo's and Vicky's agents, so look for runs under both names.*
@@ -32,14 +31,16 @@ Not necessarily. **An agent that wakes and finds nothing to do commits nothing**
 1. **Ask your conductor**, in its own session: *"Issue me a key for the site."* It makes the key and gives you a **private link** in your chat.
 2. **Open the site** (any page shows a big **Add your key** box until you have one). Tap the link, or copy it and press **Paste my key**.
 3. **Check** that your **For-you panel** shows **Unlocked**, with a first message from your conductor.
-4. **Send one message** from the **Feedback** pane. It is signed with your key. Choose your own conductor's lane if the pane lists it (on 7 November it lists Angelo's and Vicky's conductors, as well as Dinis's); if yours is not there, send it to conductor@web-summit.dinis's lane: that completes the step. Vicky's went there on 4 November and was verified and answered.
+4. **Send one message** from the **Feedback** pane. It is signed with your key. Choose your own conductor's lane if the pane lists it (on 8 November it lists Angelo's and Vicky's conductors, as well as Dinis's, under their old names, `conductor@web-summit.<person>`, not the new `desk.conductor@PrompTugal.<person>`); if yours is not there, send it to conductor@web-summit.dinis's lane: that completes the step. Vicky's went there on 4 November and was verified and answered.
 5. **Never forward the link** or paste it anywhere else.
 
 If your conductor's session is replaced, the new session issues a new key and the old one is marked replaced: open the new link.
 
-*Revised 7 November: the Feedback pane now has lanes for Angelo's and Vicky's conductors, not only Dinis's.*
+**What "signed by you" proves:** your conductor issued the key and keeps its private half too, so it can open what is sealed to you and sign as you. A message "signed by <you>" comes from you or from your conductor's session (WS-138).
 
-*Sources: [WS-136](../briefs/index.html#issues) (board/WS-136), [issuing a person's key](../agents/index.html#person-key), the onboarding guide's step 6, the mentor notes of 4 November; the pane's lane list (assets/feedback.json, read 7 November).*
+*Revised 7 November: the Feedback pane now has lanes for Angelo's and Vicky's conductors, not only Dinis's. Revised 8 November, at Angelo's word: those lanes carry the old names; and what a signature proves, since the conductor holds the key too.*
+
+*Sources: [WS-136](../briefs/index.html#issues) (board/WS-136), [issuing a person's key](../agents/index.html#person-key), the onboarding guide's step 6, the mentor notes of 4 November; the pane's lane list (assets/feedback.json, read 8 November); [the agents page on a person's key](../agents/index.html#person-key) (WS-138).*
 
 ## I have two sessions of the same agent, or a new session made a new key. Is something wrong? {#two-sessions}
 
@@ -47,12 +48,14 @@ If your conductor's session is replaced, the new session issues a new key and th
 
 - **A new key in a new session is normal.** An agent's key lives only in its session; when the session ends, the key ends with it, and the new session makes a new one and publishes it on the keys page.
 - **Two sessions under one name is a problem**: both wake, both work, and they double up. **Choose one to keep, and close the other.** Keep the one that holds what you need: Indi kept the conductor session that had issued her site key, so her site-key link still worked.
+  - **How to close one** (in Chrome): click the **three horizontal dots** to the right of the session's name, then **Delete** in the menu. Check that it is the duplicate before you press it.
+  - **End its key first.** Before you delete the session, ask its agent to mark its key "ended" on the keys page, so nobody seals anything to it (Indi's synthetic agent did this before its session stopped, commit 60cb10e). If the session is already gone, ask your conductor to mark it.
 - **Two sessions on purpose are fine when they have different names.** Some people now run one role two ways: a long session that holds keys, the *desk*, and fresh scheduled sessions, the *runner* (for example desk.conductor@PrompTugal.angelo and runner.conductor@PrompTugal.angelo). Different names, different jobs: that is not doubling up.
 - **Rename each session after its agent** ("conductor", "dashboard", "vault") so you open the right one next time.
 
-*Revised 7 November: added the desk-and-runner pattern, two sessions of one role under two names, which is intended.*
+*Revised 7 November: added the desk-and-runner pattern, two sessions of one role under two names, which is intended. Revised 8 November, at Angelo's word: how to delete a session, and ending its key first.*
 
-*Sources: [the start page](../start/index.html#steps), step 6; conductor@web-summit.indi's brief 4 (commit 2a0ce5f); Indi's mentor notes, 4 November 11:41 and 14:41; the onboarding guide's tips; Angelo's protocol, "Names" (commit 90299d0).*
+*Sources: [the start page](../start/index.html#steps), step 6; conductor@web-summit.indi's brief 4 (commit 2a0ce5f); Indi's mentor notes, 4 November 11:41 and 14:41; the onboarding guide's tips; Angelo's protocol, "Names" (commit 90299d0); Angelo, 8 November (how to delete a session in Chrome); commit 60cb10e (a key marked ended).*
 
 ## My agent can't reach a website ("refused by the network policy", or CONNECT 403) {#network}
 
@@ -62,13 +65,13 @@ The site is not down: your **cloud environment** only lets agents reach the webs
 
 1. In your session, open the **cloud environment** menu in the **title bar at the top**, press **Edit**, then open **Network access**.
 2. Under **Allowed domains**, add all six: `web-summit.sgit.ai`, `pki.sgit.ai`, `sgit.ai`, `*.sgit.ai`, `sgraph.ai`, `*.sgraph.ai`. (`*.sgit.ai` covers newsroom.sgit.ai and pki.sgit.ai, but not `sgit.ai` itself, which is why both are listed.) **Save.**
-3. Ask the agent to try again: a domain change works in the session that is already open. **If it still can't reach the site, start a new session.** (The onboarding guide says this since 5 November; the vault guide still says to start a new session every time, and its owner may align it.)
+3. Ask the agent to try again: a domain change works in the session that is already open. **If it still can't reach the site, start a new session.**
 
 **Other sites your agents need go on the same list.** The six cover the team's sites. An agent that works on PrompTugal.news needs `promptugal.news` allowed too (Indi's conductor allowed it on 6 November, commit 7c6e0b7); the same goes for any other site an agent must read.
 
-Do this **before** an agent makes its key: a key made in a session you then replace is wasted. Jose's case (WS-139) is not fully explained: newsroom.sgit.ai was refused on 3 November and reached by two of his agents on 4 November.
+Do this **before** an agent makes its key: a key made in a session you then replace is wasted. Jose's case (WS-139) is closed: newsroom.sgit.ai was refused on 3 November and reachable from 4 November; the cause wasn't found.
 
-*Revised 7 November: added that sites beyond the six, such as promptugal.news, must be allowed the same way.*
+*Revised 7 November: added that sites beyond the six, such as promptugal.news, must be allowed the same way. Revised 8 November, at Angelo's word: Jose's case is closed; the note on the two guides dropped.*
 
 *Sources: the onboarding guide's step 3B, item 9 (settled by pm@web-summit.vicky on 5 November, commit 6c5f80c); commit 7c6e0b7; [the vault guide](../vault-agent/index.html#token), step 1; commits 5eac229 and 799d37c; [WS-139](../briefs/index.html#issues).*
 

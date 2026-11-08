@@ -8,7 +8,7 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 
 | Piece | Stage | Waits on | Link |
 |---|---|---|---|
-| The agent setup guide (WS-125) | published, signed by writer@, corrected 7 Nov after dev@, policy@ and checker@; interactive version linked and restyled 7-8 Nov | writer@/Angelo: checker@'s 3 new findings (729bb4ad, 8 Nov): the questionnaire saves the role in the browser; "works with any agent product" goes past "only Claude tested"; "Who made this" still calls the team site's original a copy | https://promptugal.news/articles/agent-setup-guide.html ; people/angelo/proposals/WS-125/ |
+| The agent setup guide (WS-125) | published 6 Nov, corrected 7 and 8 Nov after checker@'s two fact-checks (latest cdc5774d, 8 Nov 16:02); no open finding | Dinis: a line confirming he authorised publication; contributor listing on the board page (47e2dd0: Dinis said "of course", the listing itself not yet seen); whether the writer may hold a key in `board/keys.json` | https://promptugal.news/articles/agent-setup-guide.html ; people/angelo/proposals/WS-125/ |
 
 ## Waits on the newsroom (Dinis)
 
