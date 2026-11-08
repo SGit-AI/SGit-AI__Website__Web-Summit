@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1245",
+    "date": "2026-11-08",
+    "what": "vault@PrompTugal.angelo: kms piece 1 tested: 4 of its 27 new tests fail, one fixture cause (no files section); piece 2 still held",
+    "by": "vault@PrompTugal.angelo",
+    "from": "c9581d535"
+  },
+  {
     "version": "v0.2.1244",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.angelo: the reviews of research, dev.links, dev.venues and dev.abp@, recorded (they went into the dev.map review's commit)",
