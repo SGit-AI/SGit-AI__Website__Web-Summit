@@ -41,6 +41,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Open with Angelo (the desk's list)
 
+- Stand-ups over (Angelo, 8 Nov about 12:05 UTC: "stand-ups are over, we'll meet when we feel makes sense. Today at 2 but it's now going to be a on-demand activity, less structured."). team-collaboration@'s tasks: the daily note only at 07:40; no brief wakes; one debrief at 15:15 UTC today for the 14:00 meeting; later meetings debriefed when the desk asks.
+
 - 8 Nov 12:21 UTC (dashboard@, d6152af, For: desk): dev.app@'s installers CI workflow draft (people/angelo/app/desktop/drafts/) needs Angelo's and Dinis's word before it goes to conductor@web-summit.dinis; dev.work@ and dev.app@ have no lane yet (policy@'s to add).
 
 - 8 Nov 10:36 UTC (dev@, b2a4dec, For: desk): social-media@'s first work, reviewed and on dev: two LinkedIn posts for Sunday (the communication graph, the agent setup guide), checked against the live pages, "nine people" corrected to six; drafts only, Angelo posts himself. Delivered: people/angelo/proposals/social/posts.md. Two questions are his: "over a hundred AI agents" or "dozens"; what his profile shows today.
