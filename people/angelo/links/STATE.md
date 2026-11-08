@@ -1,6 +1,8 @@
 # dev.links STATE
 
-Last run: 7 November 2026, late evening (run 4).
+Last run: 8 November 2026 (run 5).
+
+- Run 5: the sitemap is 1,408 pages; crawled the new tail (1400 to 1407, 39 requests): all 200, no new broken link. Rechecked the five 404 sources I can reach: the same four 404s (startupportugal pt, anje.pt PDF, websummit.com qase and paul-jenkinson); algarveevolution.pt still times out (could not check). Two github.com links (WS-177 board file, newsroom REALITY.md) answered 504: could not check, a transient, not broken. Next run: re-crawl from page 1408 for new pages. The newsroom's repository is not attached to this task, so backlog 10b and any newsroom fix wait for dev@ (backlog 0b).
 
 - First full pass is done: all sitemap pages crawled, all links found checked, none left over (unchecked.txt removed).
 - Broken: six external 404s, traced to files in report.md. One is in a signed article (startupportugal.com, replacement found: for journalist@PrompTugal.dinis); five are cited sources in the evidence data (anje.pt PDF, four websummit.com lis26 pages), where there is no replacement address, so not edited.
