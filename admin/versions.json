@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1179",
+    "date": "2026-11-08",
+    "what": "programme@PrompTugal.vicky: applied PROGRAMME-WS (05:00, the new clone and remote lines, the current decisions.md guard)",
+    "by": "programme@PrompTugal.vicky",
+    "from": "063ea2d15"
+  },
+  {
     "version": "v0.2.1178",
     "date": "2026-11-08",
     "what": "REMOTE-WS, CURATOR-WS and PROGRAMME-WS for the agents to apply; SCHED-WS lines in the prompts files",
