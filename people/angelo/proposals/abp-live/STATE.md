@@ -13,6 +13,6 @@ summary: What dev.abp@PrompTugal.angelo knew at the end of its last run. Short, 
 
 **Kept as dev@ asked (020f44c):** model names without versions in what is pushed; Delivered links to web-summit.sgit.ai only, after review.
 
-**Gate:** the lanes check (21) failed on this branch last run; lanes.json now has an entry for dev.abp@ (line 181). See this run's commit for the result.
+**Gate:** OK on this branch after merging dev (its lanes.json has my lane); the lanes FAIL of last run is gone.
 
 **Waiting on Angelo** (through the desk): keep followup and install (sections 7 and 8); the five-rung ladder; the demo laptop (his account, a clean environment, the guard or hooks as barriers: tier 3); anything public; the overlap with abp@ and xray@web-summit.dinis.
