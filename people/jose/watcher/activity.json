@@ -1,7 +1,7 @@
 {
  "schema": "web-summit.sgit.ai/watcher-activity/v1",
  "by": "watcher@web-summit.jose",
- "run": "2026-11-07T22:15Z",
+ "run": "2026-11-08T07:15Z",
  "scope": "the whole team, read-only (decided by Jose on 5 November 2026, WS-134; policy.json scope_decision)",
  "routes_to": {
   "reader": "conductor@web-summit.jose",
@@ -12,39 +12,47 @@
   "answered": "yes: conductor@web-summit.jose's prompt now reads the watcher's files and its commits at every wake (23bc4fb, 2191c0b)"
  },
  "range": {
-  "from": "2c16db2",
-  "to": "50bc27b",
+  "from": "50bc27b",
+  "to": "fc224b9",
   "branch": "dev"
  },
  "counts": {
-  "commits": 199,
-  "ci_releases": 67,
+  "commits": 147,
+  "ci_releases": 56,
   "watcher_own": 1,
-  "agents": 131,
+  "agents": 90,
   "no_agent_name": 0,
   "reviewed_by_security": 0,
-  "not_yet_reviewed_by_security": 131,
+  "not_yet_reviewed_by_security": 90,
   "security_last_reviewed_commit": "f4a9fbe"
  },
  "by_person": {
-  "angelo": 69,
-  "dinis": 24,
-  "vicky": 18,
-  "indi": 8,
-  "silvio": 6,
-  "jose": 6
+  "angelo": 61,
+  "vicky": 26,
+  "jose": 3
  },
- "actions": "open A-06 (eleventh run), A-14 (eighth), A-15 (seventh), A-21 (new: all of Dinis's scheduled agents silent since 16:41)",
+ "actions": "open A-06 (twelfth run, per agent), A-21 (second), A-14, A-15 (in A-21), A-22, A-23 (new)",
+ "task_report": {
+  "task": "people/jose/tasks/2026-11-07-watcher-a06-pointers.md",
+  "status": "done in this run: A-06 names, per agent, pointer pasted or not (actions.json A-06 per_agent)",
+  "where": "reported here and in the commit For: conductor@web-summit.jose, not in the task file: the task folder is outside the watcher's policy.json writes; the conductor marks the file done; only Jose can widen the watcher's writes (the conductor does not change the watcher's ROLE or policy files, C39)"
+ },
  "flags": [
   {
    "level": "medium",
-   "what": "all of Dinis's scheduled agents silent since 16:41",
-   "where": "conductor, journalist, sgit, mentor, abp, pulse, project-manager (and dev, dashboard for longer); only xray@web-summit.dinis committed",
-   "context": "A-21; likely account-wide; security's 23:50 review is one of these scheduled agents, so it may not run either"
+   "what": "the gate now runs code from a person's folder, in CI with a write token",
+   "where": "4219805 (Angelo's dev agent, 22:17): admin/build/validate.js check 21 runs people/angelo/policy/lane-check.mjs; .github/workflows/deploy-pages.yml passes it the push range",
+   "context": "exactly the risk of WS-133 (code in a person's folder runs in CI with a write token): any later change to that file by Angelo's agents runs inside CI. It prints warnings only until lanes.json says enforce. Approved by Angelo (80d54893) and addressed to the owners, dev@web-summit.dinis and conductor@web-summit.dinis, who are silent (A-21), so nobody who owns the gate has seen it. For security@web-summit.dinis"
+  },
+  {
+   "level": "medium",
+   "what": "all of Dinis's agents still silent; security's 23:50 review did not run",
+   "where": "A-21",
+   "context": "since 16:41 on 7 November; security's last wake was 11:51 on 7 November (last reviewed commit f4a9fbe, a CI release at 11:53)"
   },
   {
    "level": "high",
-   "what": "still open, twelfth run: contact-detail rule hits in a public page",
+   "what": "still open, thirteenth run: contact-detail rule hits in a public page",
    "where": "f20d264 content/family-riskmandate-agent.md lines 6, 18 and 32",
    "rule": "an email address (vault-audit.mjs)",
    "context": "unchanged on dev"
@@ -58,34 +66,22 @@
   },
   {
    "level": "note",
-   "what": "shared build code, including the gate, changed by a person's agent",
-   "where": "d89d257 (Angelo's dev agent, 22:13): admin/build/validate.js (adds check 20: no lane of Angelo's agents may be public), admin/tools/feedback_drain.py (signed-only drain), assets/feedback.js",
-   "context": "the gate gains a check, none removed; addressed to the owners, dev@web-summit.dinis and conductor@web-summit.dinis; listed, not judged"
+   "what": "the build lets a person's data.mjs write extra files",
+   "where": "e89c021 (a review commit bringing Angelo's map worker's work to dev): admin/build/build.mjs (app.extras) and .gitignore (people/*/app/live.json)",
+   "context": "shared build code; addressed to dev@web-summit.dinis; listed, not judged"
   },
   {
    "level": "note",
-   "what": "writes outside the lane",
-   "where": "Angelo's CRM agent data/companies.json (5c7a04c); conductor@web-summit.silvio three board files (28ba4f4); video@web-summit.silvio content/video-storyboard-xray.md, content/videos.md (7165b8a)",
-   "context": "listed, not judged"
-  },
-  {
-   "level": "note",
-   "what": "167 email-rule lines in 56 commits, all PrompTugal-style agent names",
+   "what": "169 email-rule lines in 56 commits, all PrompTugal-style agent names",
    "where": "",
    "rule": "an email address",
    "context": "none is a real mail domain"
   },
   {
    "level": "info",
-   "what": "new agents",
-   "where": "writer for Jose in the PrompTugal newsroom (2 commits, both with Reviewed-by; on demand), xray@web-summit.dinis (24 commits), social@web-summit.indi, Angelo's Android worker",
-   "context": ""
-  },
-  {
-   "level": "info",
    "what": "the watcher's Sonnet trial has not started",
-   "where": "this run's ledger line shows Opus",
-   "context": "Jose switches the model in this session (C30)"
+   "where": "this run's ledger line",
+   "context": "this run's ledger line shows Opus; Jose switches the model in this session (C30)"
   }
  ],
  "open_from_earlier_runs": [
@@ -112,7 +108,7 @@
   }
  ],
  "reviewer_trailer": {
-  "jose_commits_checked": 6,
+  "jose_commits_checked": 3,
   "missing": []
  },
  "branches": {
@@ -123,39 +119,21 @@
  },
  "commits_jose": [
   {
-   "sha": "d203aef",
-   "time": "2026-11-07T17:25:02Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "4f28416",
-   "time": "2026-11-07T17:33:56Z",
-   "agent": "dashboard@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "de3ea08",
-   "time": "2026-11-07T17:43:59Z",
-   "agent": "vault@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "f310674",
-   "time": "2026-11-07T19:31:25Z",
-   "agent": "conductor@web-summit.jose",
-   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
-  },
-  {
-   "sha": "2fded92",
-   "time": "2026-11-07T19:58:02Z",
+   "sha": "b818430",
+   "time": "2026-11-07T22:43:21Z",
    "agent": "writer@PrompTugal.jose",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
   },
   {
-   "sha": "9b2f12e",
-   "time": "2026-11-07T20:28:17Z",
-   "agent": "writer@PrompTugal.jose",
+   "sha": "ae8689e",
+   "time": "2026-11-08T00:01:45Z",
+   "agent": "conductor@web-summit.jose",
+   "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
+  },
+  {
+   "sha": "71de53d",
+   "time": "2026-11-08T01:41:20Z",
+   "agent": "conductor@web-summit.jose",
    "reviewed_by": "reviewer@web-summit.jose (pass with notes)"
   }
  ],
