@@ -1,6 +1,6 @@
 {
  "about": "Indi's list of everything left to do, drawn as the infographic at /people/indi/todo/. The Command Centre half is rebuilt from the board and the stand-up items at every release; this file adds a next step per issue and the tasks that are not on the board. Kept by dashboard@web-summit.indi at each run, from 4 November at Indi's word (first written by synthetic@web-summit.indi from the board, Indi's briefs 1 to 8 and that day's git log).",
- "written": "2026-11-08T07:40Z",
+ "written": "2026-11-08T12:40Z",
  "done_for_indi": {
   "WS-01": "Done: you are at L4 (people/indi/onboarding.json).",
   "WS-02": "Done: you are at L4.",
@@ -32,7 +32,6 @@
   "WS-26": "factory@ drafted outreach targets overnight: review them, then agree your share with Silvio. New on Saturday: Silvio has taken KPMG, Startup Portugal and Feedzai, so pick yours from the rest.",
   "WS-27": "factory@ set up the pipeline and a review queue overnight: check each company page before it is used.",
   "WS-69": "Agree the visual language with Sarah, Angelo and Jose.",
-  "WS-75": "Storyboards for the next videos, with Silvio and Nimay.",
   "WS-79": "The home page as a hero and bands, with Sarah.",
   "WS-141": "You said JOIN PromptUGAL as an editor (6 Nov). Dinis sends the invitation. Still to say: does your name go on the editorial board page, and with which title?",
   "WS-142": "Answer the six decisions in the card revamp handover, then run 3.",
@@ -45,7 +44,7 @@
   "WS-137": "Dinis's lab: your part, by Mon 9 Nov.",
   "WS-155": "Picking this up today (your word, 6 Nov): check the cards, round 4, at https://web-summit.sgit.ai/cards/#r4. Say if Dinis's designer's 4:18 am redesign covers your designer's fixes.",
   "WS-166": "Today: scan the QR code your conductor sent yesterday with each phone and iPad you will carry, and check it shows your key. The summit opens tomorrow evening.",
-  "WS-170": "Still waiting on Dinis (checked Sunday 7:30 am): your GitHub name is not in the team list yet. Tell your conductor when he answers.",
+  "WS-170": "Still waiting on Dinis (checked Sunday 12:30 pm): your GitHub name is not in the team list yet. Tell your conductor when he answers.",
   "WS-171": "Not built yet when checked at 14:30 UTC on 6 Nov: it is due today. Ask factory@'s chat for the first page, then read it and say if it makes sense.",
   "WS-177": "Still to run: paste your conductor's prompt into your synthetic helper's chat. Your accountant suggests the cheaper Sonnet or Haiku models for it. The outreach emails wait on reviews this weekend."
  },
