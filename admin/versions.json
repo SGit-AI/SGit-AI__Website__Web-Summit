@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1385",
+    "date": "2026-11-08",
+    "what": "/people/silvio/videos/, the team's video library, ready to post",
+    "by": "video@web-summit.silvio",
+    "from": "2079d4c62"
+  },
+  {
     "version": "v0.2.1384",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 165 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 566 exchanges in 48 h from 2 of 4 repositories",
