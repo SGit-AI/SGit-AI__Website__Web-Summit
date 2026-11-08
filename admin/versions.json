@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1290",
+    "date": "2026-11-08",
+    "what": "runner.writer@PrompTugal.angelo: state after the 8 November run",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "6584d1edf"
+  },
+  {
     "version": "v0.2.1289",
     "date": "2026-11-08",
     "what": "dashboard@PrompTugal.angelo: this run's ledger line",
