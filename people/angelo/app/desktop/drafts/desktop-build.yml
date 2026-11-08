@@ -1,8 +1,10 @@
 # DRAFT for conductor@web-summit.dinis (workflows are shared; dev.app@PrompTugal.angelo never edits .github/).
 # If accepted: copy to .github/workflows/desktop-build.yml. It builds the hexagon app (people/angelo/app/desktop/)
-# on GitHub's own Windows and macOS machines and publishes the unsigned installers on one GitHub release,
-# "desktop-latest", replaced at each build, so the download page links one fixed address per system.
-# It never touches the site's version, tags or Pages deploy; it runs only when the app's files change, or by hand.
+# on GitHub's own Windows and macOS machines and keeps the unsigned installers on one GitHub release, "desktop-latest",
+# replaced at each build. The release is storage only, linked from nowhere: the site's own deploy copies its files into
+# people/angelo/app/desktop/dl/ (drafts/deploy-pages-step.md), so the team downloads them from web-summit.sgit.ai
+# (the kit's "Our own website first", 9f3f449, 8 November). After a build it asks for one deploy, so the files reach the
+# site at once; otherwise the next release carries them. It never touches the site's version or tags.
 name: desktop app
 on:
   workflow_dispatch:
@@ -11,6 +13,7 @@ on:
     paths: ['people/angelo/app/desktop/**']
 permissions:
   contents: write          # only to replace the desktop-latest release's files
+  actions: write           # only to ask deploy-pages for one deploy once the files are there
 concurrency: { group: desktop-build, cancel-in-progress: true }
 jobs:
   build:
@@ -49,8 +52,18 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with: { path: out, merge-multiple: true }
+      - name: builds.json, which the download page reads (the time, the commit, each file's system and size)
+        run: |
+          node -e '
+            const fs = require("fs"), files = fs.readdirSync("out")
+            const os = f => /mac/i.test(f) ? "Mac" : /windows/i.test(f) ? "Windows" : ""
+            fs.writeFileSync("out/builds.json", JSON.stringify({ built: new Date().toISOString(), commit: process.argv[1],
+              files: files.filter(os).map(f => ({ os: os(f), file: f, bytes: fs.statSync("out/" + f).size })) }, null, 1))' "${{ github.sha }}"
       - name: replace the desktop-latest release's files
         env: { GH_TOKEN: "${{ github.token }}", GH_REPO: "${{ github.repository }}" }
         run: |
-          gh release view desktop-latest >/dev/null 2>&1 || gh release create desktop-latest --prerelease --target "${{ github.sha }}" --title "Team and the machine: desktop app (unsigned)" --notes "Built from people/angelo/app/desktop at each change. Unsigned: see https://web-summit.sgit.ai/people/angelo/app/desktop/ for the first-open steps."
+          gh release view desktop-latest >/dev/null 2>&1 || gh release create desktop-latest --prerelease --target "${{ github.sha }}" --title "Team and the machine: desktop app (storage for the site)" --notes "Storage only: the site's deploy copies these files to https://web-summit.sgit.ai/people/angelo/app/desktop/dl/, the one place the team downloads them from (https://web-summit.sgit.ai/people/angelo/app/desktop/index.html). Built from people/angelo/app/desktop at each change; unsigned."
           gh release upload desktop-latest out/* --clobber
+      - name: serve them from the site now (one deploy of dev; the deploy copies them into dl/)
+        env: { GH_TOKEN: "${{ github.token }}", GH_REPO: "${{ github.repository }}" }
+        run: gh workflow run deploy-pages.yml --ref dev

@@ -15,8 +15,9 @@ https://web-summit.sgit.ai/people/angelo/app/desktop/index.html, built from `pag
 | `src-tauri/tauri.conf.json`, `Cargo.toml`, `Cargo.lock`, `build.rs` | Tauri's settings; installers: a `.dmg` for Mac, an `.exe` (NSIS, per user) for Windows; unsigned |
 | `icons/` | `icon.svg` (the source), `icon-1024.png` (Tauri's icons are made from it at build time, never committed), the web app's 192, 512 and Apple 180 px icons |
 | `manifest.webmanifest` | the web app manifest: start_url is the display mode, scope the command centre |
-| `page.mjs` | the download page and install guide (placed by `people/angelo/pages.mjs`); `DOWNLOADS` holds the installer links once a build exists |
-| `drafts/desktop-build.yml` | the CI workflow proposed to conductor@web-summit.dinis (GitHub's Windows and macOS machines, one "desktop-latest" release) |
+| `page.mjs` | the download page and install guide (placed by `people/angelo/pages.mjs`); it reads `dl/builds.json` in the browser and links each installer under `dl/` on this site, or says "Not built yet" |
+| `drafts/desktop-build.yml` | the CI workflow proposed to conductor@web-summit.dinis (GitHub's Windows and macOS machines; one "desktop-latest" release kept as storage only, then one deploy of the site) |
+| `drafts/deploy-pages-step.md` | the one step proposed for `deploy-pages.yml`: the site's deploy copies the installers and `builds.json` into `dl/`, so they are served from web-summit.sgit.ai (the kit's "Our own website first") |
 | `drafts/live-transparent.md` | the `transparent=1` option proposed to dev.map@ for live.js |
 | `drafts/first-run-linux.png` | the first run of the real app, on Linux under a virtual screen, 8 November: only the hexagon drawn |
 
