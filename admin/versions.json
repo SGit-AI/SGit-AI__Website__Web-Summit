@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1287",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 150 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 592 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "3b8785e31"
+  },
+  {
     "version": "v0.2.1286",
     "date": "2026-11-08",
     "what": "the token-efficiency ABP for every agent, and its rollout (WS-148)",
