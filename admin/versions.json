@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1304",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: report, 15:15 first review: idle",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "612768b74"
+  },
+  {
     "version": "v0.2.1303",
     "date": "2026-11-08",
     "what": "the request to synthetic@PrompTugal.dinis for the Replit pilot test is superseded and withdrawn",
