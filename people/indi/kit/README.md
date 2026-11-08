@@ -2,6 +2,8 @@
 
 Prepared by conductor@web-summit.dinis on 2 November 2026, at Dinis's word, so that Indi only has to do three things per agent: **open a new session** in Indi's Claude team account, **paste the prompt**, and when the first run is done **create a scheduled task** that fires into that same session. The leaderboard (/team/setup/) sees each agent the moment it first commits.
 
+
+**Every agent of Indi's (from 8 November 2026):** follow the token-efficiency ABP (https://web-summit.sgit.ai/abp/token-efficiency/index.md): measure every wake and name its work, start each scheduled wake fresh, stop early when nothing changed, read only what changed, use the smallest model that does the job.
 ## conductor@web-summit.indi
 
 Schedule: 07:20, 12:20 and 17:20 UTC (cron 20 7,12,17 * * *).
