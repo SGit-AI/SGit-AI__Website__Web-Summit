@@ -13,8 +13,12 @@ const S = process.argv[2], U = 'http://127.0.0.1:8765/people/angelo/app/index.ht
   const before = await p.evaluate(() => document.querySelectorAll('.rp-embed .rp-e.fut').length);
   await p.evaluate(() => { const r = document.querySelector('[data-tmf-scrub]'); r.value = r.min; r.dispatchEvent(new Event('input', { bubbles: true })) }); await p.waitForTimeout(300);
   const after = await p.evaluate(() => ({ fut: document.querySelectorAll('.rp-embed .rp-e.fut').length, total: document.querySelectorAll('.rp-embed .rp-e').length, head: document.querySelector('.rp-embed .rp-head').getAttribute('x1') }));
-  // a commit picked on the timeline moves the map's clock there and is kept in the address
-  await p.locator('.rp-embed circle.rp-e').first().click({ force: true }); await p.waitForSelector('.rp-embed .rp-detail', { timeout: 4000 }).catch(() => fail('no detail'));
+  // a commit picked on the timeline moves the map's clock there and is kept in the address. The first commit whose agent is on
+  // the map: the timeline shows every agent's commits, the map leaves some out (runner.writer, a fresh session each run, is drawn
+  // only on the live graph), and which commit comes first depends on the hour (dev@'s review, 8426842)
+  const first = await p.evaluate(() => { const on = new Set([...document.querySelectorAll('.tm-a[data-tm-f]')].map(g => g.dataset.tmF)); return [...document.querySelectorAll('.rp-embed circle.rp-e')].findIndex(c => on.has(c.querySelector('title').textContent.split(', ')[0])) });
+  if (first < 0) fail('no commit on the timeline by an agent on the map');
+  await p.locator('.rp-embed circle.rp-e').nth(Math.max(0, first)).click({ force: true }); await p.waitForSelector('.rp-embed .rp-detail', { timeout: 4000 }).catch(() => fail('no detail'));
   const d = await p.evaluate(() => ({ hash: location.hash, scrub: +document.querySelector('[data-tmf-scrub]').value, min: +document.querySelector('[data-tmf-scrub]').min }));
   // the picked commit's agent is picked out on the map, and un-picked when the commit is
   await p.waitForTimeout(200); const picked = await p.evaluate(() => document.querySelectorAll('.tm-a.tmf-pick').length);
