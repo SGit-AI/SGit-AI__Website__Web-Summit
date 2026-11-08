@@ -2,12 +2,15 @@
   "schema": "web-summit.sgit.ai/angelo-lanes/v1",
   "about": "Where each of Angelo's agents may write, from its ABP (content/abp/<agent>-web-summit-angelo.md, Mandate, Deployment scope) and Angelo's protocol (people/angelo/kit/README.md#protocol). Kept by policy@web-summit.angelo; read by people/angelo/policy/audit.mjs. A write outside these paths is not always a violation (tier 2 allows small changes the owner asked for, said so in the commit), but every one is listed and judged in findings.md.",
   "updated": "2026-11-07",
+  "enforce": true,
+  "enforce_about": "Turned on by policy@PrompTugal.angelo on 8 November 2026 at 07:30 UTC: since the check went in (42198055, 7 November 22:17), every outside write by Angelo's agents was declared (5 of 5) and none was refused; the one earlier refusal (d89d2576) predates the check. From now on release.sh and CI refuse an undeclared write outside a lane.",
   "common": [
     "data/keys.json",
     "board/WS-160-every-agent-logs-its-runs.md",
     "people/angelo/ledger/**",
     "people/angelo/reports/**",
-    "people/angelo/proposals/**"
+    "people/angelo/proposals/**",
+    "people/angelo/estimates/**"
   ],
   "agents": {
     "desk.conductor@PrompTugal.angelo": {
@@ -178,5 +181,11 @@
     "two_files_rule": "a new page and the first link to it, inside people/angelo/, in one commit (the protocol); listed, not a finding"
   },
   "others_files": "From 6 November (Angelo, ce069603) an agent may change another owner's file directly, under the tiers, with five steps: fresh dev, look at the last two hours and picked issues, For: <owner> in the commit, never overwrite on a rebase conflict, shared data one entry at a time. audit.mjs lists such writes and flags one without a For: line other than Angelo's own agents.",
-  "common_why": "reports/ (each agent's report file for the desk) and proposals/ (drafts of anything, tier 1, and the protocol's place for drafts and specs) are every agent's, by practice and the protocol"
+  "common_why": "reports/ (each agent's report file for the desk) and proposals/ (drafts of anything, tier 1, and the protocol's place for drafts and specs) are every agent's, by practice and the protocol",
+  "reserved": {
+    "people/angelo/policy/**": [
+      "policy@PrompTugal.angelo"
+    ]
+  },
+  "reserved_about": "policy@'s folder holds the lanes and the check the gate runs, so an audited agent must not change them: refused to any other agent, declared or not (policy@, 8 November). A change to them is sent to policy@ in a commit."
 }

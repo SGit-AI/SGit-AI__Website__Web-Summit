@@ -1164,5 +1164,19 @@
       "status": "confirmed",
       "source": "s22"
     }
-  ]
+  ],
+  "reading": {
+    "by": "a reading agent: a Claude Code sub-agent of xray@web-summit.dinis, one per subject",
+    "tool_calls": 24,
+    "seconds": 310,
+    "tokens_thousands": 164,
+    "finished": "2026-11-07T19:14Z"
+  },
+  "review": {
+    "by": "xray@web-summit.dinis",
+    "on": "2026-11-07",
+    "notes": [
+      "Removed two \"incidents\" that were not events; Primitive's own note that it publishes no audit yet became a question."
+    ]
+  }
 }

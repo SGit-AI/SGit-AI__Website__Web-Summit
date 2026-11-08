@@ -1308,5 +1308,20 @@
     "Connectors are read and write and persist across all of an account's apps: can a builder scope a connector to read-only, or to one app, outside Enterprise?",
     "When Agent reads production through the read replica, is each read recorded and attributable to an Agent session, and is that record available outside the Enterprise audit logs?",
     "The Monitoring Agent can validate a fix and publish it automatically: what approval sits between it and production, and who can turn that on?"
-  ]
+  ],
+  "reading": {
+    "by": "a reading agent: a Claude Code sub-agent of xray@web-summit.dinis, one per subject",
+    "tool_calls": 40,
+    "seconds": 412,
+    "tokens_thousands": 200,
+    "finished": "2026-11-07T18:47Z"
+  },
+  "review": {
+    "by": "xray@web-summit.dinis",
+    "on": "2026-11-07",
+    "notes": [
+      "Moved the July 2025 incident to the first use case, so the deck leads with it.",
+      "Checked the person is named only by public role."
+    ]
+  }
 }

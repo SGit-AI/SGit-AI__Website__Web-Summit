@@ -21,7 +21,7 @@ Then just say what you did in your report.
 - deletes anything; or
 - conflicts with Dinis's agents' work.
 
-Ask one question, with your recommendation, at the end of your report (`people/vicky/reports/<short name>.md`). The conductor gathers every agent's questions into one list in Vicky's 09:30 brief.
+Ask one question, with your recommendation, at the end of your report (`people/vicky/reports/<short name>.md`). The conductor gathers every agent's questions into one list in Vicky's 09:45 brief.
 
 ## Standing answers
 
@@ -47,6 +47,27 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - P2 (re-read your prompts file): At the start of every run, after `decisions.md`, re-read your own `people/vicky/prompts/<short name>.md` (your startup prompt and the standing rules Vicky gave you in chat). Where it and your memory disagree, the file wins, and you say so in your report.
     - P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 17. **The reviewer fixes, the reviewer lists** (Vicky, 7 Nov; for the reviewer): when a draft only needs wording, structure, caption, image or length fixes, make them yourself and mark it Ready. Send it back as fix-first only for problems of fact or source, or anything you cannot check. At the end of every run, list the Ready drafts in your reply with a publish line Vicky can copy. (This widens standing answer 13's "small" edits; publishing still only at her word.)
+18. **A fix-only follow-up run after each reviewer round** (Vicky, 7 Nov; for the five journalists): not a new writing round. It only checks your own reviews in `desks/reviewer-vicky/reviews/` for any new Fix first result, revises and repushes that draft if needed, stays silent if there is nothing to fix, and does not pick up a new storyline. It is a second scheduled task of your own beside your four writing rounds; the conductor created it at Vicky's word on 7 Nov (see SCHED-WS below for its id). Times (UTC, the Web Summit timetable from 8 Nov):
+    - journalist: 06:50, 11:50, 15:50, 19:50
+    - journalist-portugal: 06:56, 11:56, 15:56, 19:56
+    - journalist-europe: 07:02, 12:02, 16:02, 20:02
+    - journalist-ai: 07:08, 12:08, 16:08, 20:08
+    - journalist-connections: 07:14, 12:14, 16:14, 20:14
+
+19. **Theme-led connection stories** (Vicky, 7 Nov; for the curator and journalist-connections). Use only public information. Do not use CRM data, private meetings, interview shortlist information or private outreach.
+    - Curator: actively create connection storylines when public information supports them; start from a useful theme, industry, market, problem or situation; identify relevant people and companies worth knowing within that theme; route these storylines to journalist-connections. (People may now be named, replacing "organisations only" for these storylines; as always, nothing about a person that is not already public and professional.)
+    - journalist-connections: write these as natural editorial stories, not matchmaking reports; for each person or company, explain briefly who they are, why they are relevant to the theme, and why they may be worth knowing; avoid forced partnership language and generic "synergy" framing; do not claim that two parties are interested in each other or should work together; prefer themes and connections that remain useful after Web Summit.
+    - Examples: Five people worth knowing if you're building in climate tech; Who fintech founders may want to meet at Web Summit; The people to know if you're expanding into Southern Europe; Companies working on the same problem from different angles.
+    - **No new capture needed** (Vicky, 8 Nov, about 08:50 UTC: "For theme-led connection stories, a new research capture should not be required. Curator should proactively look across existing public research, people, companies and published material for genuinely new cross-cutting editorial angles. Existing source material can be reused if the connection story itself has a clearly different angle and does not duplicate an existing article."). Curator: at every run, even when there is no new research, look across the existing captures, the people and companies already in them, and what is published, for a genuinely new cross-cutting theme; list it if standing answer 20 allows (a clearly different angle, no duplicate of an article, draft or storyline). journalist-connections: a theme-led story may rest on sources already used in other articles, provided its angle is clearly different; read every source again the same day, as always.
+    - **The workflow stays researcher, then curator, then journalist-connections** (Vicky, 8 Nov, about 09:00 UTC: "For SA19 support, researcher should only collect people and companies that can be confirmed from public Web Summit sources as attending, speaking, exhibiting or otherwise participating in Web Summit. Do not include people who cannot be tied to Web Summit participation. During each normal research pass, gather enough public professional context about those people and companies, grouped by useful themes, and make that material available to curator. Curator can then use that research to identify genuinely new cross-cutting connection storylines, apply SA20 for duplicates, and pass valid storylines to journalist-connections.").
+      - Researcher: in each normal run (no extra runs), capture people and companies only when a public Web Summit source (its speaker, partner, startup or exhibitor pages, the programme) confirms they attend, speak, exhibit or otherwise take part; the capture names that source. Add public professional context only (role, organisation, what it does, from public professional sources, each with its source and date read), grouped by theme. Nobody who cannot be tied to Web Summit participation; no contact details, social handles or anything private. Into the research vault as usual, so the curator reads it.
+      - Curator: build theme-led connection storylines from the researcher's captures and the published articles only (it does not research on its own), apply standing answer 20, and route valid ones to journalist-connections.
+      - journalist-connections: writes only storylines the curator has listed.
+
+20. **The curator's duplicate check** (Vicky, 7 Nov; for the curator, and every journalist reads it before writing). Before creating any storyline, curator should check: already published articles; existing drafts, including drafts not yet published; the existing curator storyline map. If the same subject or substantially similar angle already exists in any of those places, do not create it again unless there is a genuinely new development or a clearly different editorial angle. Apply this to all storylines, including the new theme-led connection stories.
+
+21. **The Live AI Office** (Vicky, 8 Nov; for dev and the dashboard agent; every agent reads it). A near-live pixel-art office of Vicky's agents at `/people/vicky/office/`, built by dev@PrompTugal.vicky from the brief Vicky sends it herself. Her choices: original pixel-art characters (CC0 furniture assets allowed; no Star Office UI or LimeZu art); inbox and vault shown as "On demand", with none of their activity. Public-safe facts only (names, roles, states, times, counts); never report text, prompts, ids, keys, or anything about the CRM, vaults or the shortlist. Files: `people/vicky/office/**` (dev's), one `office()` function in `people/vicky/pages.mjs`, and one link on the "My agents" line of `people/vicky/dashboard.md`. No change to any schedule, agent prompt or newsroom production. **Nothing is pushed or released until Vicky has reviewed and approved the screenshots.**
+    - Dashboard agent: keep `· [Live AI Office](office/index.html)` on the "My agents" line, after Work so far, whenever you rebuild `dashboard.md`; never remove it. If a rebuild would drop it, put it back and say so in your report.
 
 ## Updates for agents
 
@@ -73,31 +94,48 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 **SA15, a cover image on every article** (Vicky, 7 Nov). For: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
 > Follow standing answer 15 from your next draft (journalists: an image in every first draft, wired as the `/articles/` card cover; reviewer: a draft without one is not Ready), and confirm "applied SA15" in your report.
 
-**SCHED-7NOV, four rounds a day** (Vicky, 7 Nov, about 16:40 UTC; replaces the three-round schedule given earlier today). For: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
-> Vicky: keep the 16:xx journalist round, because otherwise the gap between midday and evening is too long, and the 15:30 researcher / 15:45 curator round has no journalist round immediately after it. Four writing rounds:
-> - journalist: 08:00, 12:00, 16:00, 20:00
-> - journalist-portugal: 08:06, 12:06, 16:06, 20:06
-> - journalist-europe: 08:12, 12:12, 16:12, 20:12
-> - journalist-ai: 08:18, 12:18, 16:18, 20:18
-> - journalist-connections: 08:24, 12:24, 16:24, 20:24
-> - reviewer: 09:00, 13:00, 17:00, 21:00
-> Update your own scheduled task to these UTC times at your next run (journalists: cron `<minute> 8,12,16,20 * * *`; reviewer: `0 9,13,17,21 * * *`), keep its prompt, and confirm "applied SCHED-7NOV (four rounds)" with the new times in your report. If you already moved to three rounds, move again.
+**SCHED-WS, the Web Summit newsroom timetable** (Vicky, 7 Nov, about 23:00 UTC; replaces SCHED-7NOV and the old fix-only times from 8 Nov). For: researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
+> Vicky: "Please apply the new Web Summit newsroom timetable tonight so the morning round can start at 05:15 tomorrow. You can change the affected newsroom scheduled tasks directly this time, and create the reviewer's second re-check task. Each agent can confirm the change at its next run."
+> The conductor has already set every task below (times UTC). Do not change or create a task yourself: check that yours match, put your new times in your prompts file (`people/vicky/prompts/<short name>.md`), and confirm "applied SCHED-WS" with your times in your report. If a time is wrong, say so For: conductor@web-summit.vicky.
+> - programme: 05:00 (task trig_01RhHHq7KU16JfguhbU1d7HU)
+> - researcher: 05:15, 10:15, 14:15, 18:15 (trig_01KV2FctiUnh6ratBLVcsfSj)
+> - curator: 05:30, 10:30, 14:30, 18:30 (trig_01QqwpxE9hhp5rwuxSS9D9ZF)
+> - writing, six minutes apart: journalist 05:45, 10:45, 14:45, 18:45 (trig_01SpLzX33tb8C82iAaPMBy3d); journalist-portugal :51 past 05, 10, 14, 18 (trig_01R4SDnvm1qg6LrQVcmCRPaH); journalist-europe :57 past 05, 10, 14, 18 (trig_01KRJSLJ46fntBKdqukvLoKx); journalist-ai 06:03, 11:03, 15:03, 19:03 (trig_014T4B2EkggPSUDazhhJZ1Gf); journalist-connections 06:09, 11:09, 15:09, 19:09 (trig_01RqSqjPAC6WuwNmTbjKFzwa)
+> - reviewer, first review: 06:15, 11:15, 15:15, 19:15 (trig_01JzwYcUkMpfFThdm1mbeGgs)
+> - fix-only (standing answer 18), new tasks the conductor created in your own sessions: journalist 06:50, 11:50, 15:50, 19:50 (trig_01ENwR7p1ggLZHK2RcyBPTud); journalist-portugal :56 past 06, 11, 15, 19 (trig_015W8aURM2zEyH9Sd9gJvzNx); journalist-europe :02 past 07, 12, 16, 20 (trig_01A87nPnVKv8jMhzDzwi5eYU); journalist-ai :08 past 07, 12, 16, 20 (trig_01FpXptzb91YorA9vNLuwjUu); journalist-connections :14 past 07, 12, 16, 20 (trig_014fa4xbTLFyrXdfF4pzv8KD)
+> - reviewer, re-check (a second task, new): 07:20, 12:20, 16:20, 20:20 (trig_01YQwEh2Z2UAjZX6vkrBqdNj). It looks first at drafts revised after a Fix first and applies standing answer 17.
+> - unchanged: dashboard, pm, logistics, checker, scout. The conductor: brief 08:30, light check 17:30, relay 20:45.
 
 **SA16, P1 to P3 word for word in your prompts file and scheduled prompt** (Vicky, 7 Nov). For: conductor, dashboard, pm, logistics, vault, researcher, curator, programme, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer, checker, designer, dev, scout, inbox.
 > Apply standing answer 16 at your next run, without asking first, and confirm "applied SA16" in your report (say whether you also changed a scheduled task's prompt).
 
-**SA17, the reviewer fixes, the reviewer lists** (Vicky, 7 Nov). For: reviewer.
-> Apply standing answer 17 from your next run (put it in your prompts file and your scheduled task's prompt), and confirm "applied SA17" in your report.
+**SA18, the fix-only follow-up run** (Vicky, 7 Nov). For: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections.
+> The conductor created your fix-only task at Vicky's word (ids in SCHED-WS). Do not create another one; if you already made one yourself, say so in your report For: conductor@web-summit.vicky and the conductor removes the duplicate. Put standing answer 18 in your prompts file and confirm "applied SA18" in your report.
 
-Still to confirm (7 Nov, 08:50 UTC; the rest have confirmed):
-- P10: journalist-europe, journalist-connections, vault, designer, dev.
-- P17: journalist-ai, journalist-europe, journalist-portugal, journalist-connections, reviewer, checker, vault, designer, dev.
-- P22: reviewer, checker, vault, designer, dev.
-- P27: reviewer, checker, scout, vault, designer, dev.
-- SA13: journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
-- SA17: reviewer.
-- SA16: every agent but the conductor (dashboard, pm, logistics, vault, researcher, curator, programme, the five journalists, reviewer, checker, designer, dev, scout, inbox).
-- SA15, and SCHED-7NOV (four rounds, replacing three): journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, reviewer.
+**SA19B, theme-led connection stories without new research** (Vicky, 8 Nov). For: curator, journalist-connections.
+> Vicky, in the conductor's session, 8 Nov about 08:50 UTC: "I think SA19 is being interpreted too narrowly. For theme-led connection stories, a new research capture should not be required. Curator should proactively look across existing public research, people, companies and published material for genuinely new cross-cutting editorial angles. Existing source material can be reused if the connection story itself has a clearly different angle and does not duplicate an existing article. Please update the standing rule for curator and journalist-connections accordingly."
+> Curator: in your scheduled task's prompt (you change it yourself; keep the rest word for word), replace "3) Find captures not covered by an earlier file in desks/curator/. If there is no new research, write nothing and stop." with "3) Find captures not covered by an earlier file in desks/curator/. Whether or not there is new research, look across the existing captures, the people and companies in them and the published articles for a genuinely new theme-led connection storyline (standing answers 19 and 20); reusing existing sources is fine when the angle is clearly different. If there is neither new research nor such a storyline, write nothing and stop." Update the copy in your prompts file and confirm "applied SA19B".
+> journalist-connections: add standing answer 19's new paragraph to your prompts file and your writing task's prompt (a theme-led story may reuse sources already used elsewhere when its angle is clearly different; re-read each source the same day), and confirm "applied SA19B".
+
+**SA19C, the researcher gathers Web Summit participants for connection stories** (Vicky, 8 Nov). For: researcher, curator, journalist-connections.
+> Vicky's words are in standing answer 19 (8 Nov, about 09:00 UTC).
+> Researcher: in your scheduled task's prompt (you change it yourself; keep the rest word for word), after "Collect what is new since the last capture: ... and announcements." add: "Also, for theme-led connection stories (standing answer 19): people and companies that a public Web Summit source confirms as attending, speaking, exhibiting or otherwise taking part, each capture naming that source; with public professional context only (role, organisation, what it does), each fact with its source and date read, grouped by theme. Nobody who cannot be tied to Web Summit participation; nothing private." Update the copy in your prompts file and confirm "applied SA19C".
+> Curator and journalist-connections: add standing answer 19's workflow paragraph to your prompts file (curator: work from the researcher's captures and the published articles only; journalist-connections: write only storylines the curator has listed), and confirm "applied SA19C".
+
+Still to confirm (8 Nov, 08:45 UTC; the rest have confirmed):
+- P10: vault, designer, dev.
+- P17: journalist-ai, journalist-portugal, vault, designer, dev.
+- P22: vault, designer, dev.
+- P27: vault, designer, dev.
+- SA13: journalist-portugal.
+- SA15: journalist-portugal.
+- SA16: vault, designer, dev, inbox.
+- SA18: journalist, journalist-ai (their fix-only tasks are in place; only the confirmation is missing).
+- SCHED-WS: curator, journalist (both tasks already run at the new times).
+- SA19B: curator, journalist-connections.
+- SA19C: researcher, curator, journalist-connections.
+
+Removed on 8 Nov once every agent they were for had confirmed them: SA17, SA19, SA20, REMOTE-WS, CURATOR-WS, PROGRAMME-WS and SA21. They stay in force through the standing answers and the agents' own prompts.
 
 Accepted and done on 7 Nov (Vicky's word): P21 (she turned off Gmail send, reply and forward in the account's connector settings, 6 Nov), P23 (inbox@web-summit.vicky started, on demand; key inbox-vicky, its own commit 714a2149) and P24 (the private CRM's key sealed to inbox-vicky by the conductor, recorded on WS-172). Only inbox@web-summit.vicky uses Gmail (P22).
 

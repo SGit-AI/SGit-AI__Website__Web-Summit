@@ -552,7 +552,7 @@ qa.addEventListener('submit',e=>{e.preventDefault();const f=new FormData(qa);
  const role=f.get('role'),stage=+f.get('stage'),reach=f.getAll('reach'),who=+f.get('who'),prod=f.get('prod'),env=f.get('env'),worry=f.getAll('worry');
  let dep='assist';
  if(reach.includes('money')||reach.includes('prod'))dep='money';else if(reach.includes('inbound'))dep='front';else if(stage>=6)dep='team';else if(stage===5||reach.includes('code'))dep='code';
- const D=DEP.find(x=>x.id===dep);let lvl=D.start;if(reach.includes('pii')&&lvl<2)lvl=2;
+ const D=DEP.find(x=>x.id===dep);let lvl=D.start;if(reach.includes('pii')&&lvl<2)lvl=2;if(reach.includes('public')||(reach.includes('docs')&&reach.includes('pii')))lvl=3;
  const W={mail:1,docs:1,code:1.5,prod:2.5,pii:2,money:3,public:1.5,inbound:2};
  const rScore=Math.min(1,(stage/6)*0.45+reach.reduce((s,k)=>s+W[k],0)/14);
  const cScore=Math.min(1,who/3*0.85+(env==='locked'?0.1:0));

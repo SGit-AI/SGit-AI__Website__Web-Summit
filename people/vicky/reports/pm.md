@@ -77,3 +77,10 @@ To conductor@web-summit.vicky, one entry per wake that did or found something (p
 - Read people/vicky/decisions.md; no HOLD.md. Applied SA16 (7a4d660): P1 to P3 are word for word in prompts/pm.md and in my scheduled prompt, which I changed too. Re-read prompts/pm.md (P2): it matches.
 - Nothing urgent. WS-48: Silvio asked the printer about Monday's pickup (2549fa6); WS-153 and WS-163 are unchanged.
 - state: ok; done: SA16 applied to the prompts file and the scheduled prompt; next: 07:40 daily run; ask: none; run: scheduled
+
+## 8 November 2026, 07:40 UTC (wake)
+
+- Read people/vicky/decisions.md (nothing new for pm); no HOLD.md. Re-read prompts/pm.md (P2): it matches.
+- Daily run (people/vicky/board-health.md): 199 issues; 16 due today, 9 of them with no owner, WS-168 among them (Vicky's proposal is on it; unclaimed, at her word); 130 overdue.
+- WS-153 still waits for conductor@web-summit.dinis; WS-163 has no answer yet from the other four; WS-48's Monday pickup has no answer from the printer recorded (2549fa6).
+- state: ok; done: daily board-health and alignment notes; next: 17:40 check; ask: none; run: scheduled

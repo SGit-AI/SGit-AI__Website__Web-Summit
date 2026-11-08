@@ -1008,5 +1008,20 @@
     "The satisfaction and accuracy figures come from your own chat logs and surveys: are they broken down by case type, and has anyone outside Klarna measured them?",
     "When the shopping assistant leads to a purchase on credit, what separates the recommendation from the credit offer, and how is the 'unbiased' summary evidenced?",
     "How do Kiki's answers respect each employee's own access to internal systems?"
-  ]
+  ],
+  "reading": {
+    "by": "a reading agent: a Claude Code sub-agent of xray@web-summit.dinis, one per subject",
+    "tool_calls": 32,
+    "seconds": 320,
+    "tokens_thousands": 162,
+    "finished": "2026-11-07T19:14Z"
+  },
+  "review": {
+    "by": "xray@web-summit.dinis",
+    "on": "2026-11-07",
+    "notes": [
+      "Checked every Klarna figure is given as Klarna's claim, and that its SEC answer sits beside the CEO's remark.",
+      "Asked the agent to cite SEC filings by a URL the repository's contact-detail check accepts."
+    ]
+  }
 }

@@ -18,7 +18,7 @@ import { expandSignoff } from './signoff-ui.mjs'
 import { keysPage as pkiKeysPage } from './pki.mjs'
 import * as GIT from './gitlog.mjs'
 import { highlights, highlightsHtml, highlightsMd, withHighlights } from './highlights.mjs'
-import { loadXray, xrayIndexHtml, xrayIndexMd, buildXray } from './xray.mjs'
+import { loadXray, xrayIndexHtml, xrayIndexMd, buildXray, buildXrayRuns } from './xray.mjs'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 const HOST = fs.readFileSync(path.join(ROOT, 'CNAME'), 'utf8').trim()
@@ -33,7 +33,7 @@ const SECTIONS = [
     { t: 'Work', h: 'briefs/index.html#issues', re: /^(plan|design|cards|log|print|print-order|procurement|videos|research|reports|board-health|site-review|updates|meetings)\b/, sub: [['Stand-ups', 'meetings/index.html'], ['Updates', 'updates/index.html'], ['The board', 'briefs/index.html#issues'], ['Site review', 'site-review/index.html'], ['Board health', 'board-health/index.html'], ['Reports', 'reports/index.html'], ['Plan', 'plan/index.html'], ['Design', 'design/index.html'], ['Cards', 'cards/index.html'], ['Videos', 'videos/index.html'], ['Log', 'log/index.html'], ['Print files', 'print/index.html'], ['Procurement', 'procurement/index.html'], ['Research', 'research/insider/index.html']] },
     { t: 'Summit', h: 'summit/index.html', re: /^(summit|companies)\b/, sub: [['Web Summit 2026', 'summit/index.html'], ['Companies', 'companies/index.html']] },
     // the RiskMandate X-ray for the booth (xray@web-summit.dinis, 7 November 2026, at Dinis's word): type a name, watch the agents X-ray it
-    { t: 'X-ray', h: 'xray/index.html', re: /^xray\b/, sub: [['X-ray a name', 'xray/index.html'], ...(fs.existsSync(path.join(ROOT, 'content/xray-decide.md')) ? [['Decide', 'xray/decide/index.html']] : []), ...XRAY.map(s => [s.subject.replace(/[&<>"]/g, ''), `xray/${s.slug}/index.html`])] },
+    { t: 'X-ray', h: 'xray/index.html', re: /^xray\b/, sub: [['X-ray a name', 'xray/index.html'], ['How it works', 'xray/how/index.html'], ...(fs.existsSync(path.join(ROOT, 'content/xray-decide.md')) ? [['Decide', 'xray/decide/index.html']] : []), ...XRAY.map(s => [s.subject.replace(/[&<>"]/g, ''), `xray/${s.slug}/index.html`])] },
     // the investors' section (WS-185, investors@web-summit.dinis, at Dinis's word of 6 November: "a very focused section just for investors")
     { t: 'Investors', h: 'investors/index.html', re: /^investors\b/, sub: [['For investors', 'investors/index.html'], ['Pitch deck', 'investors/pitch-deck/index.html'], ['Technology deck', 'investors/technology-deck/index.html'], ['The story', 'investors/story/index.html'], ['How we make money', 'investors/business-model/index.html'], ['The company', 'investors/company/index.html'], ['The investment', 'investors/investment/index.html'], ['Feedback', 'investors/feedback/index.html']] },
     { t: 'Observability', h: 'observability/index.html', re: /^observability\b/, sub: [['Explore', 'observability/index.html'], ['Dashboard', 'observability/dashboard/index.html'], ['Graph', 'observability/graph/index.html'], ['Agents', 'observability/agents/index.html'], ['Pages', 'observability/pages/index.html'], ['People', 'observability/team/index.html'], ['The vault', 'observability/vault/index.html'], ['How it works', 'observability/how-it-works/index.html'], ['The brief', 'brief-observability/index.html'], ['The pack', 'observability-pack/index.html']] },
@@ -114,7 +114,13 @@ function render(md) {
     let i = 0
     while (i < lines.length) {
         const l = lines[i]
-        if (l.startsWith('```cards')) {
+        if (/^:::details .+$/.test(l)) {
+            // a collapsible block (Vicky's dashboard, 8 Nov): ":::details Title" ... ":::"; native <details>, no script. Nothing else uses it.
+            const title = l.slice(11).trim(), inner = []
+            for (i++; i < lines.length && lines[i].trim() !== ':::'; i++) inner.push(lines[i])
+            i++
+            out.push(`<details class="fold"><summary style="cursor:pointer;font-weight:600;padding:.4rem 0">${inline(title)}</summary>${render(inner.join('\n'))}</details>`)
+        } else if (l.startsWith('```cards')) {
             const rows = []
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++) rows.push(lines[i].split('|').map(c => c.trim()))
             i++
@@ -657,11 +663,24 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
         }
         continue
     }
-    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${sinceMd(MEET, m.id, '../../')}\n\n## My agents, as the team sees them {#my-agents}\n\n${myAgentsMd(INV, m.id)}\n\n\`\`\`chart agents-map ${m.id}\n\`\`\`\n\n${mentorMd(m.id)}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
+    // compact: true in a person's dashboard.md front matter (Vicky's, 8 Nov) folds the long built sections; every other dashboard is built as before
+    const compact = String(meta.compact) === 'true', fold = (title, inner) => `:::details ${title}\n\n${inner.trim()}\n\n:::`
+    let SINCE = sinceMd(MEET, m.id, '../../'), AGENTS = `${myAgentsMd(INV, m.id)}\n\n\`\`\`chart agents-map ${m.id}\n\`\`\``, MENTOR = mentorMd(m.id)
+    if (compact) {
+        const ls = SINCE.split('\n'), li = ls.map((l, k) => l.startsWith('- ') ? k : -1).filter(k => k >= 0)
+        if (li.length > 3) {   // the summary counts and the latest 3 releases; the rest folded
+            const rest = li.slice(3).map(k => ls[k]), drop = new Set(li.slice(3))
+            SINCE = ls.flatMap((l, k) => drop.has(k) ? [] : k === li[2] ? [l, '', fold(`Earlier releases (${rest.length} more)`, rest.join('\n'))] : [l]).join('\n')
+        }
+        const mine = INV.agents.filter(a => a.person === m.id)
+        AGENTS = `${mine.length} agents, ${mine.filter(a => a.commits).length} with commits so far. The network shows who writes to whom.\n\n\`\`\`chart agents-map ${m.id}\n\`\`\`\n\n${fold('Show agent details', myAgentsMd(INV, m.id))}`
+        MENTOR = MENTOR ? fold('From your mentor', MENTOR.replace(/^## From your mentor \{#mentor\}\n\n/, '')) + '\n\n' : ''
+    }
+    const nxm = MEET.next(), body = `**[Open ${m.name.split(' ')[0]}'s command centre](app/index.html)**: tasks, workstreams, decisions, agents and Ask Claude, built from the repository at every release.\n\nEveryone's command centre: ${teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => `[${x.name.split(' ')[0]}](../${x.id}/app/index.html)`).join(' · ')}\n\n## Before the next stand-up {#standup}\n\n[Your briefing for ${nxm.day} ${nxm.time} UTC](../../meetings/${nxm.id}/${m.id}/index.html) · [the agenda](../../meetings/${nxm.id}/index.html)\n\n## Since you last looked {#since}\n\n${SINCE}\n\n## My agents, as the team sees them {#my-agents}\n\n${AGENTS}\n\n${MENTOR}*Everything above is built for you; everything below is yours and your agents' to change (\`people/${m.id}/dashboard.md\`).*\n\n` + expandIssues(rawBody, '../../')
     const rel = `people/${m.id}/index.html`
     write(rel, page({ rel, title: meta.title, description: meta.summary, body: render(body), mdTwin: twinPath(rel) }))
     pages.push({ rel, title: meta.title, description: meta.summary })
-    twin(rel, meta.title, meta.summary, body)
+    twin(rel, meta.title, meta.summary, compact ? body.replace(/^:::details (.+)$/gm, '### $1').replace(/^:::\s*$/gm, '') : body)
 }
 
 // a person's own extra pages (WS-27, dev@web-summit.indi, 3 November): people/<id>/pages.mjs exports
@@ -697,6 +716,7 @@ for (const m of teamData.members.filter(m => m.kind === 'human')) {
     // the switcher at the top of every command centre: everyone's, in roster order
     data.team = teamData.members.filter(x => x.kind === 'human' && fs.existsSync(path.join(ROOT, 'people', x.id))).map(x => ({ id: x.id, name: x.name, ...(fs.existsSync(path.join(ROOT, 'people', x.id, 'photo.jpg')) ? { photo: `../../${x.id}/photo.jpg` } : {}) }))
     write(`people/${m.id}/app/data.json`, JSON.stringify(data))
+    if (app.extras) for (const [rel, text] of Object.entries(app.extras(data, ROOT))) write(rel, text)   // files a person's own data.mjs adds beside data.json (Angelo's live.json)
     {   // this person's slice of me.json
         const o = onboard(m.id), nx = MEET.next(), a = MEET.ack(m.id), since = MEET.log(a?.acknowledged_at || new Date(Date.now() - 864e5).toISOString())
         const open = data.issues.filter(i => i.named && i.status !== 'done'), h = i => i.due_at ? (Date.parse(i.due_at) - Date.now()) / 36e5 : 1e9
@@ -957,6 +977,8 @@ ${sections.join('\n')}`
 
 // the RiskMandate X-ray: a page and a deck per subject (admin/build/xray.mjs)
 buildXray({ list: XRAY, write, page, twin, pages, VERSION })
+// what happened: a run page per subject (/xray/<slug>/run/) and how every X-ray is made (/xray/how/)
+buildXrayRuns({ list: XRAY, write, page, twin, pages, VERSION })
 
 // machine surfaces
 pages.sort((a, b) => a.rel.localeCompare(b.rel))

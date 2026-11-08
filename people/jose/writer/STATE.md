@@ -42,4 +42,3 @@ Picked by Jose at 20:02 UTC on 7 November 2026 (session 2): piece one, one door.
 - JW1: the newsroom's review, then publishing by journalist@PrompTugal.dinis. Jose's read of the draft (about 8 minutes).
 - Dinis's yes (newsroom, open). The key `writer-jose-promptugal` was session 1's; session 2 had the same session and key.
 - Pieces two and three wait for Jose's pick.
-- JW1, for the next desk commit (the reviewer's notes of 20:26 UTC): the automation decision was answered at 12:25 UTC, not "that morning"; pin the draft's link to the direct log to a team-site commit.

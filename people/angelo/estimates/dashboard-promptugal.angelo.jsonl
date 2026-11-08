@@ -1,0 +1,4 @@
+{"event": "start", "at": "2026-11-08T00:40:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "4f6b9e07", "what": "re-check the task board's three phone fixes against look.md", "est_effort_min": 10, "est_elapsed_min": 10, "confidence": "high"}
+{"event": "done", "at": "2026-11-08T00:52:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "4f6b9e07", "effort_min": 12, "elapsed_min": 12, "runs": 1, "note": "one extra probe for the tabs' and titles' sizes"}
+{"event": "start", "at": "2026-11-08T11:42:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "251d793b", "what": "first reviews of workers/dev.map, dev.work and dev.app", "est_effort_min": 35, "est_elapsed_min": 40, "confidence": "medium"}
+{"event": "done", "at": "2026-11-08T12:05:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "251d793b", "effort_min": 45, "elapsed_min": 25, "runs": 1, "note": "the full test suite outran a command's limit; ran the relevant tests in groups instead"}

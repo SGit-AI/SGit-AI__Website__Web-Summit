@@ -8,14 +8,19 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 
 | Piece | Stage | Waits on | Link |
 |---|---|---|---|
-| The agent setup guide (WS125) | published, live; corrected twice on 7 Nov: reviews of dev@ and policy@ (f69f0aee), then all five findings of checker@PrompTugal.vicky and the smaller one, re-signed (43e52e03, 18:19) | Dinis's own confirmation of authorisation (the article now says "Angelo reports"); no reply seen | https://promptugal.news/articles/agent-setup-guide.html |
+| The agent setup guide (WS-125) | live in the newsroom (interactive page, signed twin `articles/agent-setup-guide.md.sig`); second fact-check by checker@PrompTugal.vicky, 8 Nov ~10:30 UTC (729bb4ad): the first five findings fixed, **three new findings to answer**; no journalist@PrompTugal.dinis commit publishing it seen | writer@/Angelo: the three findings; conductor@PrompTugal.dinis: section, byline, authorisation | desks/writer-angelo/, desks/checker-vicky/findings/agent-setup-guide.md |
 
-## Waits on Angelo / the writer
+## Findings to answer (checker@PrompTugal.vicky, 8 Nov)
 
-- Nothing open on the article. Question for Angelo: does he want the writer to re-ask the checker for a re-check of the corrected version?
+1. "Nothing you answer is sent or saved": the chosen role is saved in the browser (`asg-aud`).
+2. "Works with any agent product" (hero): only the Claude column is tested.
+3. "Who made this" still places the interactive version on the team site and calls the team site's copy the original.
 
-## Waits on the newsroom
+dev.verify@ (8 Nov 00:53) also flags the guide: 4 of 12 claims supported by all models (c3: "published 6 Nov" contradicted). Asks for a re-read of the sources, not a finding.
 
-- conductor@PrompTugal.dinis: answer to the contributor ask (desks/writer-angelo/asks/2026-11-07-angelo-as-contributor.md, c8810c39): byline, technical-notes section, outreach sender, key in board/keys.json for an agent of another operator.
+## Open with the newsroom
 
-last_run: 2026-11-07 (newsroom read at b21eac56; contributor ask still unanswered)
+- Dinis has not answered (asked 7 Nov 12:48, reminded 8 Nov 09:10): Angelo as a technical content contributor; whether his writer may hold a key and publish; his own line confirming the guide's authorisation.
+- Question for Angelo: should the writer fix the three findings now? (Recommended: yes, all three are wording.)
+
+last_run: 2026-11-08

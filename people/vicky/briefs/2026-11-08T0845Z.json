@@ -1,0 +1,352 @@
+{
+ "number": 7,
+ "date": "8 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "Sunday: the Web Summit timetable ran on time, 22 articles live, the Live AI Office is up",
+ "when": "8 November 2026, 08:45 UTC (the daily brief; since brief 6, 7 Nov 08:45 UTC)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "None. No hold, no Gmail use, no unknown edit to decisions.md, no key mismatch; every change went live."
+ ],
+ "actions": [
+  {
+   "window": "conductor (this window)",
+   "items": [
+    {
+     "what": "Park the late, unowned issues: yes or no",
+     "why": "Overdue since the 7 Nov 18:00 stand-up, which did not take it; the list is ready (45 to park, 21 kept) and your dashboard puts it first.",
+     "reply": "Conductor: my answer on the parking is yes: park the 45 late, unowned issues and keep the 21. Record it for the next stand-up and tell pm."
+    },
+    {
+     "what": "journalist-europe's task name",
+     "why": "It asked twice (7 Nov 20:13, today 05:59); the task is still called \"three-times-daily run\" though it runs four rounds. Recommended: rename.",
+     "reply": "Conductor: rename journalist-europe's task to \"journalist-europe@PrompTugal.vicky scheduled run\", nothing else, and tell it in decisions.md."
+    }
+   ]
+  },
+  {
+   "window": "manual settings",
+   "items": [
+    {
+     "what": "Your key on your phone and iPad (WS-166)",
+     "why": "Due today: everyone's key on every device before Monday, so the command centres work for you at the summit.",
+     "reply": ""
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "The runs (✓ ran and reported, ○ ran with nothing to do, ✗ failed or blocked, · no report)",
+   "table": {
+    "head": [
+     "Agent",
+     "Sat 7 Nov, from 08:45 (old times)",
+     "Sun 8 Nov, Web Summit timetable"
+    ],
+    "rows": [
+     [
+      "programme",
+      "(08:15 before the window)",
+      "05:00 ✓"
+     ],
+     [
+      "researcher",
+      "11:30 ○ · 15:30 ○ · 19:30 ○",
+      "05:15 ○"
+     ],
+     [
+      "curator",
+      "11:45 ✓ · 15:45 ○ · 19:45 ✓",
+      "05:30 ✓"
+     ],
+     [
+      "journalist",
+      "12:00 · · 16:00 ○ · 20:00 ○",
+      "05:45 ○ · fix-only 06:50 silent"
+     ],
+     [
+      "journalist-portugal",
+      "12:06 · · 16:06 ○ · 20:06 ○",
+      "05:51 ○ · fix-only 06:56 silent"
+     ],
+     [
+      "journalist-europe",
+      "12:12 · · 16:12 ○ · 20:12 ○",
+      "05:57 ○ · fix-only 07:02 silent"
+     ],
+     [
+      "journalist-ai",
+      "12:18 ✓ (S25) · 16:18 ✓ · 20:18 ✓ (S26, S27)",
+      "06:03 ✓ · fix-only 07:08 silent"
+     ],
+     [
+      "journalist-connections",
+      "12:24 · · 16:24 ✓ · 20:24 ✓",
+      "06:09 ✓ · fix-only 07:14 silent"
+     ],
+     [
+      "reviewer",
+      "13:00 ✓ · 17:00 ✓ · 21:00 ✓",
+      "06:15 ✓ · re-check 07:20 ○"
+     ],
+     [
+      "checker",
+      "09:48 ✓ · 17:48 ✓",
+      "(09:48 after this brief)"
+     ],
+     [
+      "pm",
+      "17:40 ✓",
+      "07:40 ✓"
+     ],
+     [
+      "dashboard",
+      "17:45 ✓",
+      "07:50 ✓"
+     ],
+     [
+      "logistics",
+      "17:10 ✓",
+      "08:10 ○"
+     ],
+     [
+      "scout",
+      "22:00 ✓",
+      "(22:00)"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "Your agents: problems first",
+   "table": {
+    "head": [
+     "Agent",
+     "Runs",
+     "What it did",
+     "Problem"
+    ],
+    "rows": [
+     [
+      "journalists (12:xx, 7 Nov)",
+      "quiet",
+      "No report from four of the five midday runs yesterday (journalist-ai wrote S25)",
+      "Likely nothing in their beats (a quiet run may write only state: idle); no action"
+     ],
+     [
+      "journalist-europe",
+      "yes",
+      "Idle at 05:57; applied SCHED-WS, SA18, REMOTE-WS",
+      "Asks about its task name (action 2)"
+     ],
+     [
+      "dev",
+      "prompted",
+      "Built the Live AI Office, revised it at your review, released it at your approval (03:03, v0.2.1190); its own key dev-vicky-promptugal",
+      "None: I checked the page has no ids, emails, vault ids or shortlist, and inbox and vault show On demand only"
+     ],
+     [
+      "reviewer",
+      "yes",
+      "S24 to S27 Ready, then published at your word (S24 10:44, S25 13:36, S26 21:46, S27 22:21); today nothing to review",
+      "None"
+     ],
+     [
+      "journalist-ai",
+      "yes",
+      "Drafted S25, S26, S27; fixed S27 at the reviewer's Fix first",
+      "Deepest context of your agents (569k of 1M); no action"
+     ],
+     [
+      "programme",
+      "yes",
+      "Agenda to 12 Nov live (222 items); shortlist re-checked; applied PROGRAMME-WS at 00:07",
+      "None"
+     ],
+     [
+      "curator",
+      "yes",
+      "S25 to S27 listed yesterday; applied CURATOR-WS with SA19 and SA20 today; no new research this morning",
+      "None"
+     ],
+     [
+      "researcher",
+      "yes",
+      "Four runs, no new capture",
+      "None"
+     ],
+     [
+      "checker",
+      "yes",
+      "20 articles by others checked yesterday; 11 findings files; Angelo's writer fixed one",
+      "Brazil BR6 and BR3 findings not yet fixed by their author"
+     ],
+     [
+      "pm, dashboard, logistics, scout",
+      "yes",
+      "Board health (16 due today, 9 unowned); dashboard tables and the office link (SA21); printer day still unconfirmed; scout note 07",
+      "None"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "PrompTugal.news: your desks",
+   "items": [
+    "Live: 22 articles from your desks (plus six of your storylines published under Dinis's journalist). New since brief 6: S24 driving to Web Summit, S25 the sign-in, S26 two editions a day, S27 the venue map.",
+    "Ready but not published: none. No new draft this morning; the first round found nothing new in any beat.",
+    "The team series T1 to T5: all five live since 6 Nov (angelos-communication-graph, who-does-the-work, how-the-agents-talk, how-agents-avoid-collisions, mistakes-we-made); the checker sent one small finding each on T2, T4 and T5."
+   ]
+  },
+  {
+   "title": "Updates for agents: who has confirmed",
+   "items": [
+    "Confirmed by all and removed today: SA17, SA19, SA20, REMOTE-WS, CURATOR-WS, PROGRAMME-WS, SA21. REMOTE-WS is in all twelve journalist and reviewer task prompts (checked on the account).",
+    "Still waiting: P10, P22, P27 and SA16 from vault, designer, dev (and SA16 from inbox): all on demand or paused, so they confirm when you next open them. P17 also from journalist-ai and journalist-portugal; SA13 and SA15 from journalist-portugal; SA18 from journalist and journalist-ai (their fix-only tasks run); SCHED-WS from curator and journalist (their tasks run at the new times)."
+   ]
+  },
+  {
+   "title": "Usage, once a day (API-equivalent dollars, not money; never used to stop an agent)",
+   "table": {
+    "head": [
+     "Agent",
+     "Model",
+     "Dollars",
+     "Output tokens",
+     "Context used"
+    ],
+    "rows": [
+     [
+      "conductor",
+      "Opus",
+      "183.54",
+      "740,367",
+      "265k"
+     ],
+     [
+      "pm",
+      "Opus",
+      "76.10",
+      "188,042",
+      "547k"
+     ],
+     [
+      "journalist-ai",
+      "Opus",
+      "57.72",
+      "199,770",
+      "569k"
+     ],
+     [
+      "reviewer",
+      "Opus",
+      "50.26",
+      "249,580",
+      "544k"
+     ],
+     [
+      "researcher",
+      "Opus",
+      "47.15",
+      "144,282",
+      "431k"
+     ],
+     [
+      "programme",
+      "Opus",
+      "44.94",
+      "165,276",
+      "511k"
+     ],
+     [
+      "journalist",
+      "Opus",
+      "40.84",
+      "143,379",
+      "507k"
+     ],
+     [
+      "logistics",
+      "Opus",
+      "38.50",
+      "94,682",
+      "388k"
+     ],
+     [
+      "checker",
+      "Opus",
+      "38.29",
+      "221,587",
+      "504k"
+     ],
+     [
+      "journalist-connections",
+      "Opus",
+      "24.08",
+      "82,543",
+      "363k"
+     ],
+     [
+      "journalist-portugal",
+      "Opus",
+      "20.95",
+      "74,960",
+      "333k"
+     ],
+     [
+      "journalist-europe",
+      "Opus",
+      "17.59",
+      "55,955",
+      "296k"
+     ],
+     [
+      "scout",
+      "Opus",
+      "15.95",
+      "104,593",
+      "372k"
+     ],
+     [
+      "curator",
+      "Sonnet",
+      "7.17",
+      "65,657",
+      "296k"
+     ],
+     [
+      "dashboard",
+      "Sonnet",
+      "5.64",
+      "64,643",
+      "287k"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "Checks",
+   "items": [
+    "Deepest contexts: journalist-ai 569k, pm 547k, reviewer 544k (compaction starts near 902k). Total 668.76 API-equivalent dollars across 15 sessions.",
+    "Schedule: the account's 24 tasks match schedule.json (checked 08:45); fix-only and re-check tasks fired at their times.",
+    "decisions.md: 16 commits since brief 6, all mine. No hold. Inbox lane empty. Gmail: no sign of mailbox use; inbox@ did nothing since 7 Nov 12:14.",
+    "Keys: dev-vicky-promptugal added by dev's own commit (ca91873b). For vault@: nothing waiting.",
+    "Live AI Office: live at /people/vicky/office/; the link is on your page's My agents line, kept by the dashboard agent (SA21).",
+    "Scout: note 07's P28 to P30 rejected, P7 done, P11 parked; its README still shows them open (its own file).",
+    "Your issues: WS-166 (key on every device, due today) and WS-168 (articles from a conversation with a lead, your proposal, due today, no owner)."
+   ]
+  }
+ ],
+ "next": [
+  "09:48 the checker. 10:15 research, 10:30 curator, 10:45 to 11:09 writing, 11:15 first review, 11:50 to 12:14 fix-only, 12:20 re-check.",
+  "17:30 my newsroom check (silent unless something needs you), 20:45 my relay, 22:00 the scout.",
+  "Tomorrow, Monday 9 November: Web Summit opens; the same timetable."
+ ],
+ "sources": [
+  "people/vicky/reports/*.md since 7 Nov 08:45, read by a Sonnet sub-agent (P16); commits For: conductor@web-summit.vicky",
+  "The account's scheduled tasks and people/vicky/schedule.json; get_session usage numbers only (P6)",
+  "Newsroom repository PrompTugal/PrompTugal__News__Website, dev 1d719f1: content/articles/, desks/journalist-vicky/drafts/, desks/reviewer-vicky/reviews/, desks/checker-vicky/findings/",
+  "The built page people/vicky/office/index.html (v0.2.1223 build), board/WS-*.md, people/vicky/dashboard.md"
+ ]
+}

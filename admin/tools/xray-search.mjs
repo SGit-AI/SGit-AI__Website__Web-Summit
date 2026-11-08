@@ -6,25 +6,14 @@
 // citation they returned and the cost OpenRouter reported, to data/xray/<slug>/search/<stamp>.json.
 // What a model says is a lead, not a fact: it reaches a page only once its source has been read.
 import fs from 'node:fs'; import path from 'node:path'
+import { AGENTS, ask, DEFAULT_MAX_TOKENS } from './xray-ask.mjs'   // the agents and the question, shared with the run pages
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../..')
 const args = process.argv.slice(2)
 const flag = n => { const i = args.indexOf('--' + n); return i < 0 ? null : (args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : true) }
 const pos = args.filter((a, i) => !a.startsWith('--') && !(i > 0 && args[i - 1] === '--agents'))
 const [slug, subject, kind = 'company'] = pos
 if (!slug || !subject || !/^[a-z0-9-]+$/.test(slug)) { console.error('usage: xray-search.mjs <slug> "<subject>" [company|use-case|industry]'); process.exit(2) }
-export const AGENTS = {
-  perplexity: { label: 'Perplexity search', model: 'perplexity/sonar' },
-  openai: { label: 'OpenAI search', model: 'openai/gpt-5.4-nano:online' },
-  gemini: { label: 'Gemini search', model: 'google/gemini-3.1-flash-lite:online' },
-  openrouter: { label: 'OpenRouter web search', model: 'anthropic/claude-haiku-5.5', plugins: [{ id: 'web', max_results: 6 }], max_tokens: 7000 },
-}
-const ask = s => `You are a research agent for RiskMandate X-ray. Subject (a ${kind}): "${s}".
-Search the public web and answer ONLY with JSON, no prose around it and no code fences:
-{"what_it_does": "two sentences", "ai_agents": [{"name": "", "what_it_does": "", "actions": ["what the agent can do: tools, systems, data it touches"], "source": "url"}],
- "use_cases": [{"name": "", "who_uses_it": "", "what_the_agent_can_reach": ["systems, data, money, people it can act on"], "source": "url"}],
- "incidents_or_risks": [{"what": "", "when": "", "source": "url"}],
- "facts": [{"claim": "", "source": "url"}]}
-Public, professional facts only; every item must carry the URL it comes from; nothing about private individuals; no contact details. If you find nothing for a field, give an empty list.`
+export { AGENTS }
 const want = flag('agents')
 const picked = want && want !== true ? String(want).split(',') : Object.keys(AGENTS)
 // citations come back in several shapes: Perplexity's top-level `citations`, url_citation annotations (flat or nested)
@@ -44,7 +33,7 @@ export const urlsIn = v => [...new Set((JSON.stringify(v || '').match(/https?:\/
 async function run(id) {
   const a = AGENTS[id], t0 = Date.now()
   if (!a) return { id, model: '?', error: 'no such agent' }
-  const body = { model: a.model, messages: [{ role: 'user', content: ask(subject) }], max_tokens: a.max_tokens || 2500, usage: { include: true } }
+  const body = { model: a.model, messages: [{ role: 'user', content: ask(subject, kind) }], max_tokens: a.max_tokens || DEFAULT_MAX_TOKENS, usage: { include: true } }
   if (a.plugins) body.plugins = a.plugins
   if (flag('dry')) return { id, ...a, dry: true }
   try {

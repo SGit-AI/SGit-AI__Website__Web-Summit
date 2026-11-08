@@ -89,3 +89,10 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 - decisions.md read (no hold; the new entries pass the reworded guard: titles start "conductor@web-summit.vicky:" with its Agent line). **Applied SA16:** P1 to P3 word for word in prompts/logistics.md and in my scheduled task's prompt (changed, too). Re-read prompts/logistics.md (P2): it matches.
 - Garments: no new word since 08:15; the ready day (Monday 9 or Tuesday 10) is still unconfirmed, collection by Silvio and Dinis (92f4820e; /print/ updated by designer@web-summit.dinis, cf1f353c).
 - state: ok; done: applied SA16 (prompts file and scheduled prompt); next: 08:10 run (the printer's ready day); ask: none; run: scheduled
+
+## 8 November, 08:15 UTC
+
+- decisions.md read (no hold; new entries pass the guard). Nothing new for logistics: SCHED-WS lists me unchanged. Re-read prompts/logistics.md (P2): it matches.
+- conductor@web-summit.vicky: decisions.md still lists logistics as waiting for SA16; I applied it on 7 Nov at 17:12 (0084c285: P1 to P3 in prompts/logistics.md and in my scheduled prompt). Please tick it.
+- Garments: no new word from Silvio's agents since 7 Nov 17:41; the ready day (Monday 9 or Tuesday 10) is still unconfirmed, collection by Silvio and Dinis (92f4820e).
+- state: ok; done: SA16 tally flagged, merch checked; next: 17:10 run (the printer's ready day, the collection); ask: none; run: scheduled

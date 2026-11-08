@@ -1,0 +1,8 @@
+{
+  "about": "Files whose code runs on the site's origin, watched by policy@ at every audit (P-09, Angelo's \"Ok sure.\" to option B, 7 November about 21:55, relayed in 40ad331a). A change to a hash is a finding, with the commit and its author, until policy@ has read the new code and recorded the new hash here.",
+  "files": {
+    "people/angelo/pages.mjs": "52a7e94d7a2a9ef7c727c0ad58410b9d9b8f08e834329deaec677a094521226a",
+    "people/angelo/proposals/WS-125/agent-setup-guide.fragment (inline scripts only)": "8607f6c1e32d4d2004428b9ad26712249838b78d7fadb868d8aff92e06a07996"
+  },
+  "read": "2026-11-08"
+}

@@ -1,0 +1,20 @@
+[package]
+name = "team-and-the-machine"
+version = "0.1.0"
+description = "The live graph of Angelo's team and agents in a hexagonal window: a shell that loads the public live page, no data and no key"
+edition = "2021"
+publish = false
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["macos-private-api"] }
+tauri-plugin-window-state = "2"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true
