@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1293",
+    "date": "2026-11-08",
+    "what": "PILOT-REPLIT: the existing page cannot show it without a template change, so dev stays in; the Media only label must cite its source",
+    "by": "conductor@web-summit.vicky",
+    "from": "91001a149"
+  },
+  {
     "version": "v0.2.1292",
     "date": "2026-11-08",
     "what": "Actions row 1: Jose raises the tokens with Dinis himself; the reminder is committed for Dinis's conductor",
