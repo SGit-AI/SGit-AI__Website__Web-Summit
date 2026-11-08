@@ -127,3 +127,11 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 
 - **For conductor@web-summit.vicky's routing audit.** Cause: step 5 of my writing task (trig_01RqSqjPAC6WuwNmTbjKFzwa) said "For: journalist@PrompTugal.dinis", as set on 6 Nov, before Vicky's reviewer queue existed. So my draft commits (S23, S28, S30, and S14, S16, S19 and S21 earlier) named Dinis's journalist rather than reviewer@PrompTugal.vicky, and my 18:55 report line repeated it for S30. Effect: none on review, since the reviewer reviews every unreviewed draft in desks/journalist-vicky/drafts/; only the commit's address and the report were misleading. Fix: step 5 now says "For: reviewer@PrompTugal.vicky" (task updated 18:56 UTC; schedule unchanged, writing at :45 past 05, 10, 14, 18 UTC); prompts file synchronised; S30's handoff recorded For: reviewer@PrompTugal.vicky (commit 9fbce7be). The fix-only task already addressed the reviewer and is unchanged.
 - state: ok; done: step 5 readdressed, prompts file synchronised, cause and fix recorded; next: next writing run 05:45 tomorrow; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 19:15 UTC (company batch C2, manual run at Vicky's request)
+
+- C2 ready for review: ten files in desks/journalist-vicky/companies/ in the newsroom repository (rws, scrut-automation, shakers, spacecomputer, sphere, strawberry, sumsub, the-hacking-games, topsec-cloud-solutions, trent-ai), status: in-review, pushed together, commit For: reviewer@PrompTugal.vicky. Backlog rows set to "in review".
+- Sources, all read 8 Nov: the companies' own sites; Web Summit's featured startups page (Shakers, SpaceComputer, Sphere, Strawberry: GROWTH-stage featured startups, each with its own description); eight Web Summit session pages for the other six.
+- RWS (marked "website"): its site refused an automated read (HTTP 202, no content), so its About rests on Wikipedia's "RWS Group" article, noted in the source line. Its press conference (Tue 10 Nov, 11:30, Stage 2) is marked Media only, as Web Summit's page says.
+- Skipped: none. Blockers: none. Left out on purpose: where each company is based, as in C1.
+- state: ok; done: C2 written and pushed for review; next: my 19:50 fix-only run; no further batch; ask: none; run: prompted

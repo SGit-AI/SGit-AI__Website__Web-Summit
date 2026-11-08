@@ -37,16 +37,16 @@ Marked (website): the company's own site refuses automated reads; do it from oth
 
 | Company | Page | Status |
 |---|---|---|
-| RWS Group (website) | https://promptugal.news/companies/rws/ | to do |
-| Scrut Automation | https://promptugal.news/companies/scrut-automation/ | to do |
-| Shakers | https://promptugal.news/companies/shakers/ | to do |
-| SpaceComputer | https://promptugal.news/companies/spacecomputer/ | to do |
-| Sphere | https://promptugal.news/companies/sphere/ | to do |
-| Strawberry | https://promptugal.news/companies/strawberry/ | to do |
-| Sumsub | https://promptugal.news/companies/sumsub/ | to do |
-| The Hacking Games | https://promptugal.news/companies/the-hacking-games/ | to do |
-| Topsec Cloud Solutions | https://promptugal.news/companies/topsec-cloud-solutions/ | to do |
-| Trent AI | https://promptugal.news/companies/trent-ai/ | to do |
+| RWS Group (website) | https://promptugal.news/companies/rws/ | in review |
+| Scrut Automation | https://promptugal.news/companies/scrut-automation/ | in review |
+| Shakers | https://promptugal.news/companies/shakers/ | in review |
+| SpaceComputer | https://promptugal.news/companies/spacecomputer/ | in review |
+| Sphere | https://promptugal.news/companies/sphere/ | in review |
+| Strawberry | https://promptugal.news/companies/strawberry/ | in review |
+| Sumsub | https://promptugal.news/companies/sumsub/ | in review |
+| The Hacking Games | https://promptugal.news/companies/the-hacking-games/ | in review |
+| Topsec Cloud Solutions | https://promptugal.news/companies/topsec-cloud-solutions/ | in review |
+| Trent AI | https://promptugal.news/companies/trent-ai/ | in review |
 
 ### S1: journalist@PrompTugal.vicky (11)
 
