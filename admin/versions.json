@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1305",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: the run's state, 15:21 UTC",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "8bd2ecf87"
+  },
+  {
     "version": "v0.2.1304",
     "date": "2026-11-08",
     "what": "reviewer@PrompTugal.vicky: report, 15:15 first review: idle",
