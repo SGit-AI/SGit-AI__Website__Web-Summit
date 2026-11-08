@@ -1,7 +1,5 @@
 # The conductor runner's runs
-
 `<start UTC> | <session id> | <what it did>`, newest last. Each session is titled `conductor-runner · <start> UTC` and tagged `angelo-conductor-runner`.
-
 2026-11-06T09:20Z | session_01Xp7gj2ZUKtDS9e3WJ9VD9M | first run: nothing new for Angelo's agents; naming tools unavailable, session untitled
 2026-11-06T10:20Z | session_01Xp7gj2iurpckMXqV8r3r8m | nothing to route; vault clean, crm's 18-company check pending; untitled (no naming tools)
 2026-11-06T11:21Z | session id unavailable (no get_session tool) | no commits since the desk's 11:25 state; nothing to route; untitled
@@ -48,3 +46,4 @@
 2026-11-08T04:20:00Z | n/a (no get_session) | nothing to route; dev@'s dev.map/dev.venues reviews noted, Safari check added to Open with Angelo; none urgent
 2026-11-08T05:20:00Z | n/a (no get_session) | nothing to route; only dev@'s test fixes and snapshot and Vicky's side moved; none urgent
 2026-11-08T06:21:00Z | n/a (no get_session) | nothing to route; dev@ brought dev.map's keys/lanes playback onto dev (information); none urgent
+2026-11-08T07:21:00Z | n/a (no get_session) | nothing to route; policy@'s run 4 (lane check enforced) noted; workload table refreshed; none urgent

@@ -73,19 +73,24 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 - P-07 (policy@, 7 Nov, findings.md): is an email from a stranger a visitor's note (read by no agent, only sealed to Angelo)? Needed before inbox@'s design (crm@ due 16:50 run); also P-05 (team-collaboration still pushes its session branch).
 
-## Workload (7 Nov 08:20 UTC, last 24 h; tokens = ledger, without cache reads; commits counted by subject name, so a floor)
+## Workload (8 Nov 07:21 UTC, last 24 h; tokens = ledger, without cache reads, sub-agents included; commits counted by Agent trailer, so a floor)
 
 | Agent | Wakes | Commits | Open work | Waits on | Tokens | Recommend |
 |---|---|---|---|---|---|---|
-| dev | 12 (every 2 h) | 1+ | context rules into kit (due 18:00) | nothing | 4.77M (17 lines) | keep: the heaviest builder, busy with Replay and WS-181 |
-| team-collaboration | 11 | 2+ | 18:00 records none yet; P-05 branch push | Angelo's parking | 5.67M (14 lines) | slow down: highest tokens, the 07:40 note says the work has spread out; fewer inbox wakes (6/day) |
-| dashboard | 8 (every 3 h) | 0 by subject | none routed | Angelo's tapped-spots choice | 1.97M | keep, or every 6 h while Angelo's questions stay unanswered |
-| helper | 2 | 0 | none | no questions | 1.38M (3 lines) | keep (twice a day is already lean) |
-| vault | 2 | 0 | sharness.kms analysis (due 09:50) | Angelo's WS-181 go, own token (WS-170) | 0.60M | keep |
-| crm | 2 | 0 | Accenture entry (08:50), inbox@ design (16:50) | Dinis's tokens (WS-172) | 0.27M | keep |
-| policy | 1 (proposed daily 07:10) | 1 | P-07 for Angelo | Angelo | not yet measured | keep |
-| runner.conductor | 24 | 4 | none | nothing | 0.04M | keep |
-| desk.conductor | 0 (no schedule) | 0 | none | Angelo | 0.34M | keep: on demand |
+| dev | 22 ledger lines (hourly) | 12 | context rules, android spec, live-map follow-ups | nothing | 2.21M | keep: the builder; lighter than yesterday (4.77M) |
+| team-collaboration | 8 (6 inbox + stand-ups) | 0 by trailer | none routed | Angelo's parking | 2.66M | slow down: heaviest after dashboard for no commits; inbox wakes 6/day to 3 |
+| dashboard | 9 (every 3 h) | 0 | none routed | Angelo's tapped-spots choice | 4.08M | slow down: highest tokens, no commits, asks the same unanswered questions; every 6 h |
+| helper | 3 | 0 | none | no questions | 1.24M | keep, or once a day: nothing asked of it |
+| vault | 5 | 0 | WS-181 | Angelo's go, SG_SEND_PASSPHRASE, own token (WS-170) | 1.40M | keep |
+| crm | 4 | 0 | inbox@ design (done), Accenture | Angelo's go on inbox (tier 3), tokens | 1.47M | keep |
+| policy | 2 | 2 | P-07 closed with run 4; P-05 quiet | nothing | not in ledger | keep: daily |
+| dev.map | 9 | worker branch 06:55 | spec 00a/00b | Angelo's answers | 1.20M | keep |
+| dev.venues | 8 | worker branch 06:48 | WS-181 spec | Angelo's review | 0.50M | keep |
+| dev.links | 4 | worker branch 22:11 | none open | nothing | 0.28M | keep |
+| research | 3 | worker branch 22:13 | 18 companies | Angelo's go | 0.19M | keep |
+| vault.kms | 1 | worker branch 00:08 | sharness.kms steps | nothing | 0.06M | keep |
+| runner.conductor | 24 | 6 | none | nothing | 0.61M (two ledger names) | keep |
+| desk.conductor | 0 (no schedule) | 0 | none | Angelo | 0 | keep: on demand |
 
 - Angelo's social media (7 Nov, his note: "there is nothing there yet and it's not great"): a topic to open with him; starting points: WS-126 (LinkedIn), people/angelo/profiles-proposal.md, his card; posting in his name is tier 3.
 
@@ -113,6 +118,7 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Recent
 
+- 8 Nov 07:21: the runner: nothing to route; nothing urgent. Since 06:21: policy@ run 4 (084ebe7, For: angelo and desk): both barriers checked, the lane check now enforced (release.sh and CI refuse an undeclared write outside a lane), people/angelo/policy/** reserved to policy@; P-10 closed, R6 and R11 technical. Every agent of Angelo's now needs an "Outside: <path>; <why>" line for a write outside its lane. dev@ (657aa7c, 4644c18) brought dev.map's sealed-message playback onto dev and refreshed the snapshot (55 agents, 143 pairs). Workload table refreshed (dashboard and team-collaboration: slow down, for Angelo). Stalls (5c): none confirmed; dev.links and research quiet since 22:1x, their items wait on Angelo or are done.
 - 8 Nov 06:21: the runner: nothing to route; nothing urgent. Since 05:20 only dev@ (97442a6, a029494, For: dev.map@ and desk) brought dev.map's keys, lanes and "a key handed over" onto the map's playback (names and minutes only, never-list check, 22 tests pass) and refreshed the snapshot (55 agents, 143 pairs): reports, information only. Vicky's six journalists/curator/reviewer runs (SCHED-WS, REMOTE-WS): information only. Workload table not due (first run after 07:00 UTC). Stalls (5c): none seen.
 - 8 Nov 05:20: the runner: nothing to route; nothing urgent. Since 04:20 only dev@ (4f2d9ec, cdea857, v0.2.1197) brought dev.map's two test fixes (tmtl, arcs) onto dev and refreshed the snapshot (55 agents, 143 pairs): reports, information only. Vicky's side (programme@, researcher@ on the Web Summit timetable): information only. Workload table not due (first run after 07:00 UTC).
 - 8 Nov 04:20: the runner: nothing to route; nothing urgent. Only Angelo's agents moved since 03:21: dev@ (9448222, d5732b9, 50a8262, v0.2.1194) brought dev.map's long-run display test (four simulated hours, no leak per tick or read) and Safari's Pop out fallback (a floating video; untested on Safari itself) and dev.venues's quiet run onto dev, snapshot 55 agents/143 pairs: reports, information only. Added to Open with Angelo: trying Pop out once in Safari settles the fallback.
@@ -122,6 +128,5 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 - 8 Nov 00:21: the runner: nothing to route; nothing urgent (Angelo is in the desk session: 23:41 the live graph's hexagonal app, external-system icons and sessionless agents, items 00a-00c; 00:00 the ABP live-agents experiment briefed to dev@ with policy@, morning report due, anything public or handed to Dinis's abp@/xray@ is his call, 3ce11d7). Back: dev@ (b1167af, 561f5bd, beaacc0: brighter graph, release-numbered scripts, snapshot 54 agents/142 pairs); runner.writer@ (9d34640, For: desk): asks Angelo whether the writer may answer the verify flags on the setup guide (c3, c4, c5); added to Open with Angelo. Stalls (5c): none seen. Others' work, information only: Jose's conductor (kit wake pointers), Vicky's newsroom/programme edits.
 - 7 Nov 23:21: the runner: nothing to route; nothing urgent. Back: dev@ (539253a, 483a039, Prompted by Angelo, For: desk and dev.map@): the live graph's pop-out dots and the stray green dot fixed, then brighter, larger flow dots with each lighting its line; the real Document Picture-in-Picture window not verified, Angelo to retry. Stalls (5c): none seen (dev@ committed 23:19). Others' work, information only: Vicky's conductor set the Web Summit newsroom timetable from 8 Nov (SCHED-WS, 07c7ceb).
 - 7 Nov 22:30: the runner: nothing to route; nothing urgent (Angelo is in the desk session: 21:40 to 21:58 it routed policy@'s two barriers to dev@, vault@'s sharness tests for vault.kms@ ("Ok, go with A"), dev.links@'s five dead sources, P-09 settled, research@'s cap removed). Back: dev@ (5380423, For: desk and policy@): the task board's phone fixes, the signed-only drain (d89d257) and the lane check (4219805, gate check 21) built; the lane check only warns until policy@ widens dashboard@'s and writer@'s lanes and turns on "enforce" (dev addressed policy@ in the commit, nothing for the runner to add); still with Angelo: checking the task board on his phone, creating PrompTugal/PrompTugal__App__Android. vault@ (fae01ae): kms piece 1 compiles, its tests are refused by auto mode in its session too (the desk to tell Angelo). Stalls (5c): none seen; dev, vault, dashboard, writer and the workers all committed in the last hour. Others' work, information only: xray@ (Booking.com, Fidelidade, Feedzai verified), Vicky's team.
-- 7 Nov 21:20: the runner: nothing to route; nothing urgent (Angelo is in the desk session: 21:03 it put his own website, leggiopasqua.com, in the backlog for the writer, item 4b, b68458d). Back: dev@ (cada30d, 048f4e2: PrompTugal snapshot of 54 agents and 138 pairs in 7 days; dev.map's new work onto dev, For: desk); nothing else For: Angelo. Stalls (5c): none; workers/ branches last commits: dev.links 21:21, vault.kms 21:08, dev.venues 20:52, dev.map 20:19, research 12:27 (it waits on Angelo's go and its schedule, not a stall). Others' work, information only: Silvio's X-ray (third batch), Vicky's reviewer and journalists, Jose's writer.
 
-last_run: 2026-11-08T06:21:00Z (the runner)
+last_run: 2026-11-08T07:21:00Z (the runner)
