@@ -1,0 +1,2 @@
+{"event":"start","at":"2026-11-08T17:20:00Z","agent":"dev.venues@PrompTugal.angelo","item":"0o","what":"spec-share.md: a share button on every PrompTugal.news page and entity, with a review of six newspapers and a mock-up at phone and desktop width","est_effort_min":60,"est_elapsed_min":180,"confidence":"medium"}
+{"event":"progress","at":"2026-11-08T17:45:00Z","agent":"dev.venues@PrompTugal.angelo","item":"0o","effort_min":35,"note":"spec and mock-ups written; waits for Angelo's review before the build"}
