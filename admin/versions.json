@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1281",
+    "date": "2026-11-08",
+    "what": "the team's accounts inbox: a lane for every agent, and the token-reporting protocol (WS-148)",
+    "by": "conductor@web-summit.indi",
+    "from": "8deb20dc2"
+  },
+  {
     "version": "v0.2.1280",
     "date": "2026-11-08",
     "what": "crm@PrompTugal.angelo: estimate correction for 0k (25 min estimated, about 2 min taken); overlap.md's time fixed",
