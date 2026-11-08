@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1210",
+    "date": "2026-11-08",
+    "what": "07:15 run: A-06 per agent (no pointer pasted yet); Dinis's agents silent 14.5 hours, no security review; the gate now runs code from Angelo's folder",
+    "by": "watcher@web-summit.jose",
+    "from": "c62e0727e"
+  },
+  {
     "version": "v0.2.1209",
     "date": "2026-11-08",
     "what": "policy@PrompTugal.angelo: run 4: both barriers checked; the lane check enforced; my folder reserved to me",
