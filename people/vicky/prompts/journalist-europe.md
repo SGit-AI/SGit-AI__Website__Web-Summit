@@ -49,7 +49,7 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 **From 8 Nov (SCHED-WS):** writing at :57 past 05, 10, 14, 18 UTC; fix-only at :02 past 07, 12, 16, 20 UTC (`trig_01A87nPnVKv8jMhzDzwi5eYU`), both set by the conductor at Vicky's word, 7 Nov.
 
-Created on 6 November 2026 at Vicky's request, daily at 08:00 and 16:00 UTC, into this session (task "journalist-europe@PrompTugal.vicky: twice-daily run", renamed "journalist-europe@PrompTugal.vicky: three-times-daily run" at Vicky's word on 7 November). Moved to 08:12 and 16:12 UTC on 6 November (P5), then to 08:12, 12:12 and 20:12 UTC on 7 November (SCHED-7NOV), then to 08:12, 12:12, 16:12 and 20:12 UTC the same evening (SCHED-7NOV, four rounds), then by the conductor at Vicky's word to 05:57, 10:57, 14:57 and 18:57 UTC from 8 November (SCHED-WS). On 8 November step 2 was replaced word for word (REMOTE-WS). On 7 November its prompt gained standing answer 13 and P1 to P3 word for word (SA13, SA16); the full prompt as it now stands is below.
+Created on 6 November 2026 at Vicky's request, daily at 08:00 and 16:00 UTC, into this session (task "journalist-europe@PrompTugal.vicky: twice-daily run", renamed "journalist-europe@PrompTugal.vicky: three-times-daily run" at Vicky's word on 7 November). Moved to 08:12 and 16:12 UTC on 6 November (P5), then to 08:12, 12:12 and 20:12 UTC on 7 November (SCHED-7NOV), then to 08:12, 12:12, 16:12 and 20:12 UTC the same evening (SCHED-7NOV, four rounds), then by the conductor at Vicky's word to 05:57, 10:57, 14:57 and 18:57 UTC from 8 November (SCHED-WS). On 8 November step 2 was replaced word for word (REMOTE-WS), and step 5's hand-off changed from Dinis's journalist to Vicky's reviewer (HANDOFF-FIX). On 7 November its prompt gained standing answer 13 and P1 to P3 word for word (SA13, SA16); the full prompt as it now stands is below.
 
 ```
 Scheduled run for journalist-europe@PrompTugal.vicky:
@@ -57,7 +57,7 @@ Scheduled run for journalist-europe@PrompTugal.vicky:
 2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
 3. Read desks/journalist-vicky/STYLE.md.
 4. Read desks/curator/README.md and pick the storylines in your beat that have no draft yet in desks/journalist-vicky/drafts/, desks/journalist-promptugal/drafts/ or content/articles/.
-5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: journalist@PrompTugal.dinis.
+5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: reviewer@PrompTugal.vicky (the review hand-off).
 6. If there's nothing new in your beat, write nothing.
 7. Add a report line in people/vicky/reports/journalist-europe.md on the team site.
 Never push to main, never use --force, never push to a session branch.
@@ -132,3 +132,9 @@ Never push to main, never use --force, never push to a session branch.
 ## Times from 8 November 2026, about 12:45 UTC (standing answer 22, SA22)
 
 Moved by conductor@web-summit.vicky at Vicky's word (connections first in every round): writing task trig_01KRJSLJ46fntBKdqukvLoKx at 06:03, 11:03, 15:03 and 19:03 UTC; fix-only task trig_01A87nPnVKv8jMhzDzwi5eYU at 07:08, 12:08, 16:08 and 20:08 UTC. The other journalists, me included, keep "at most two" stories a run.
+
+## Standing answer 23 (word for word from people/vicky/decisions.md, 8 November 2026)
+
+23. **Company pages: the About section** (Vicky, 8 Nov, about 15:50 UTC; for journalist-connections, the other journalists, the reviewer and dev, whenever a company page is created or updated): "Keep About sections to two or three short, plain sentences explaining what the company does. Avoid marketing quotes and unrelated event details. Put supporting source links and read dates below the paragraph, with each factual claim still clearly traceable to its source. Apply this whenever company pages are created or updated. No bulk rewrite is needed."
+    - Traceable: each claim carries a short marker (for example a number) that matches its source line below the paragraph, so a reader can see which source supports which sentence.
+    - Event details (sessions, stages, times) stay in the page's own summit section, not in About.
