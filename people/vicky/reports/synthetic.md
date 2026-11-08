@@ -19,3 +19,10 @@ state: ok; done: Replit page tested with three personas on phone and desktop, fi
 - The conductor's triage (people/vicky/synthetic/2026-11-08-replit-triage.md) is untouched. Nothing was changed on any page.
 
 state: ok; done: Replit report revised around reader value, evidence retained; next: wait for Vicky; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 15:55 UTC (retest of the Replit pilot fixes, v0.1.718, prompted)
+
+- Retested https://promptugal.news/companies/replit/ at v0.1.718 on phone and desktop, fresh contexts. All three checks pass on both: the press conference keeps "Media only" and its source on /my-day/; "From the newsroom" shows the S28 summary naming the five companies; the article link is green and underlined and opens the article (HTTP 200).
+- Evidence and limits: section 9 of people/vicky/synthetic/2026-11-08-replit.md (appended; the persona assessment is unchanged). No new issues; the other points in the first report were not re-tested. No page was changed.
+
+state: ok; done: retest of the three pilot fixes on v0.1.718, phone and desktop, all pass; next: wait for Vicky; ask: none; run: prompted
