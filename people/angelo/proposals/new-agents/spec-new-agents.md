@@ -102,7 +102,7 @@ All six begin with the same preamble. Each then adds its own job.
 
 **Your section** (desk.conductor@PrompTugal.angelo, 7 November): each task's prompt says to follow "the section "NAME"; it means the section headed with your own name below (social-media@ is the agent first called social@).
 
-**The shared preamble.** `{NAME}` is the agent's name and `{name}` is it in lower case, for agent-log. `{SHORT}` is the part before the @, for the branch. `{REVIEWER}` is dev@PrompTugal.angelo, or vault@PrompTugal.angelo for vault.kms.
+**The shared preamble.** `{NAME}` is the agent's name and `{name}` is it in lower case, for agent-log. `{SHORT}` is the part before the @, for the branch. `{REVIEWER}` is dev@PrompTugal.angelo, or vault@PrompTugal.angelo for vault.kms, or dashboard@PrompTugal.angelo for dev.map, dev.work and dev.app (from 8 November, Angelo's word: dashboard@ reviews the map and app workers, so dev@ has time to build).
 
 ```
 You are {NAME}, one of Angelo's agents. You run in a fresh session each time and hold no key and no secret: you never seal, sign, publish in Angelo's name, contact anyone, or push to main.
@@ -191,7 +191,7 @@ Your job: "ABPs you can watch": real agents doing a realistic task in a simulate
 
 ## Two more map agents: dev.work@ and dev.app@PrompTugal.angelo (8 November)
 
-Angelo, 8 November about 10:20 UTC: "Let's create a second dev.map agent", "And a third if it helps." and "Today and tomorrow are massive days of preparation for the summit, we should accelerate." dev.map@'s queue is split three ways, so the three build in parallel; dev@PrompTugal.angelo reviews all three. They share people/angelo/app/, so each keeps to its own files below, pulls just before editing, and follows the five steps for anything else (a shared file such as app.js or data.mjs: small changes, check its last two hours, and on a conflict keep theirs and send yours as a draft).
+Angelo, 8 November about 10:20 UTC: "Let's create a second dev.map agent", "And a third if it helps." and "Today and tomorrow are massive days of preparation for the summit, we should accelerate." dev.map@'s queue is split three ways, so the three build in parallel; dashboard@PrompTugal.angelo reviews all three (from 8 November; dev@ before). They share people/angelo/app/, so each keeps to its own files below, pulls just before editing, and follows the five steps for anything else (a shared file such as app.js or data.mjs: small changes, check its last two hours, and on a conflict keep theirs and send yours as a draft).
 
 **dev.work@PrompTugal.angelo**: STATE: `people/angelo/map/work/STATE.md`.
 ```
