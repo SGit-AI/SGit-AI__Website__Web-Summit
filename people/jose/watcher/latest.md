@@ -1,34 +1,47 @@
 # Watcher: latest run
 
-**Run:** 2026-11-08 12:15 UTC (scheduled), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed is `activity.json`; the actions are `actions.json`, both beside this file. **Addressed to:** Jose and conductor@web-summit.jose, which reads it at every wake.
+**Run:** 2026-11-08 17:15 UTC (scheduled, now through its pointer), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed is `activity.json`; the actions are `actions.json`, both beside this file. **Addressed to:** Jose and conductor@web-summit.jose, which reads it at every wake.
 
-**Range:** `dev` from `fc224b9` to `acae0e2`.
+**Range:** `dev` from `acae0e2` to `fb659d1`.
 
 ## Who committed
 
-164 commits: 63 CI releases (counted), 1 by the watcher itself, none without an agent name, and 100 by agents: Angelo 61, Vicky 24, Silvio 9, Jose 4, Indi 2. None from Dinis. None is reviewed by security.
+220 commits: 78 CI releases (counted), 1 by the watcher itself, none without an agent name, and 141 by agents: Angelo 69, Vicky 41, Indi 13, Silvio 10, Jose 8. None from Dinis. None is reviewed by security.
 
-## Open actions (re-checked every run)
+## A-06, per agent: five done, three left
 
-1. **A-21, third run: all of Dinis's agents are still silent**: none since his xray agent's last commit at 21:52 yesterday (about 14.5 hours), and all but xray since 16:41 (about 19.5 hours). Nothing on `dev` has been reviewed by security since its 11:51 wake yesterday. His dev (about 60 hours) and dashboard (about 53 hours) agents are part of this. For Dinis, and for your conductor at today's stand-up.
-2. **A-06, thirteenth run, waiting on you:** no change since 07:15. No pointer from `people/jose/schedules.md#paste` is pasted into any of your scheduled tasks; the times are wrong for conductor, dev and helper; there is no designer task. (The 07:15 report has the table per agent.) The task file `people/jose/tasks/2026-11-07-watcher-a06-pointers.md` is still marked open: your conductor marks it done.
-3. **A-22, second run: Angelo's CRM agent**, no commit since 00:52 (three slots). His dashboard and writer runner committed again.
-4. **A-23, second run: inbox@web-summit.silvio**, no commit since 18:16 yesterday (eight mail-check slots).
+| Agent | Pointer | Time |
+|---|---|---|
+| conductor | done | done: every hour 07:20 to 21:20 |
+| vault | done | right |
+| helper | done | done: every two hours 07:50 to 21:50 |
+| watcher | done | right |
+| designer | done (new task, 13:38) | 10:40 and 16:40 |
+| **dev** | **not yet** (3 November text) | **not yet**: 09:30, 15:30; should be every two hours 07:30 to 21:30 |
+| **dashboard** | **not yet** (old full text) | right |
+| **automation** | **not yet** (old full text) | right |
 
-Late by one slot: Angelo's helper (10:50), procurement@web-summit.silvio (07:30).
+For you: paste the pointer into the dev, dashboard and automation tasks, and set dev's time. Open for fourteen runs, now three agents left. The task file is still marked open: your conductor marks it done.
+
+## Other open actions
+
+1. **A-21, fourth run: Dinis's agents are all still silent**: none since xray's last commit at 21:52 yesterday (about 19.5 hours), and all but xray since 16:41 (about 24.5 hours). **There has been no security review for about 29 hours** (since its 11:51 wake yesterday). The gate's owners are among the silent agents, while Angelo's check 21 is enforced. For Dinis, and for your conductor at the stand-up.
+2. **A-23, third run: inbox@web-summit.silvio**, no commit in about 23 hours, while Silvio's other agents work.
+3. **A-24, new: procurement@web-summit.silvio**, no commit since 17:41 yesterday; its 07:30 and 12:30 runs passed.
+
+Closed: A-22 (Angelo's CRM agent committed again).
 
 ## What to look at
 
-1. **Medium, for security: the gate now enforces code from Angelo's folder.** At 07:15 Angelo's policy agent (`084ebe7`) set `enforce` to true in `people/angelo/policy/lanes.json` and changed `people/angelo/policy/lane-check.mjs` in the same commit. Check 21 can now fail the gate, in CI with a write token, for commits by Angelo's agents, and the code it runs is being changed by his agents. This is the WS-133 risk flagged at 07:15, now live. No owner of the gate is answering (A-21).
-2. **High, open for the fourteenth run:** `content/family-riskmandate-agent.md` lines 6, 18 and 32 (from `f20d264`) still match the rule "an email address".
-3. **Medium, still open:** the public session branch `claude/optimistic-feynman-7pkot9` (`dc306d7`), `board/WS-26-*` line 16.
-4. **Note:** Vicky's dashboard agent changed the shared `admin/build/build.mjs` twice (`d09362a`, `f96e25f`), addressed to Dinis's dev agent, which is silent. Listed, not judged.
-5. **Note, good practice:** Silvio's conductor took an internal incidents list off the public site and sealed it to each team member's key (`bbff77e`); the earlier public copy (`e8a3016`) stays in the history. A second list (`c18b2aa`) was sealed from the start.
+1. **High, open for the fifteenth run:** `content/family-riskmandate-agent.md` lines 6, 18 and 32 (from `f20d264`) still match the rule "an email address".
+2. **Medium, still open:** the public session branch `claude/optimistic-feynman-7pkot9` (`dc306d7`), `board/WS-26-*` line 16.
+3. **Note, the reviewer worked:** your reviewer held dev@web-summit.jose at 15:37 (`526a5f3`): its handover file failed the gate's contact check, so only the hold and its record were pushed. The hold was lifted at 15:39 after the fix passed on re-review.
+4. **Note:** shared code and pages changed by person agents while their keepers (Dinis's agents) are silent: Vicky's dashboard agent `admin/build/build.mjs` again; Indi's conductor `content/agents.md`, `content/start.md` and three more pages; Silvio's dev agent `assets/xray.js` and `assets/feedback.json` (line 127: an append lane token, public by design). Listed, not judged.
 
 ## The checks
 
-- **Jose's agents:** 4 commits (conductor, dashboard, dev, vault), every one with `Reviewed-by`. All their scheduled tasks fired on time.
-- **Email rule:** 162 lines in 40 commits, all PrompTugal-style agent names.
+- **Jose's agents:** 8 commits (conductor 3, designer 2, dev 2, helper), every one with `Reviewed-by`. All their scheduled tasks fired on time.
+- **Email rule:** about 175 lines in 60 commits by the watcher's own scan, all PrompTugal-style agent names; the vault audit (since `326b690`) exempts them, so by its count none.
 - **Other branches:** nothing new on `main`.
 - **The Sonnet trial for the watcher has not started:** this run ran on Opus (its ledger line).
 
