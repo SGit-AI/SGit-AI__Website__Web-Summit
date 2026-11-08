@@ -1,4 +1,4 @@
-From 236148708c7dd6d8b956e937dbc1f9a00f09df2e Mon Sep 17 00:00:00 2001
+From f13c2c1b1d10fe2412b1ac517620ef51f2be25ad Mon Sep 17 00:00:00 2001
 From: "vault.kms" <noreply@anthropic.com>
 Date: Sat, 7 Nov 2026 15:07:41 +0000
 Subject: [PATCH] policy: per-agent kms rows (agent, vault_id, ops, max_uses,
@@ -9,8 +9,8 @@ under the optional key 'kms', and hashed like any other row. Nothing enforces
 them until the kms door exists (piece 2). Based on 05e5290.
 ---
  sharness_ai/policy.py         | 42 ++++++++++++++-
- tests/unit/test_policy_kms.py | 98 +++++++++++++++++++++++++++++++++++
- 2 files changed, 139 insertions(+), 1 deletion(-)
+ tests/unit/test_policy_kms.py | 99 +++++++++++++++++++++++++++++++++++
+ 2 files changed, 140 insertions(+), 1 deletion(-)
  create mode 100644 tests/unit/test_policy_kms.py
 
 diff --git a/sharness_ai/policy.py b/sharness_ai/policy.py
@@ -83,10 +83,10 @@ index 7ca998c..1397d1b 100644
          canonical(policy)
 diff --git a/tests/unit/test_policy_kms.py b/tests/unit/test_policy_kms.py
 new file mode 100644
-index 0000000..e81a256
+index 0000000..82d7f8f
 --- /dev/null
 +++ b/tests/unit/test_policy_kms.py
-@@ -0,0 +1,98 @@
+@@ -0,0 +1,99 @@
 +"""Per-agent kms rows in the policy (piece 1 of the sharness.kms changeset). No real vault id or key
 +appears here: every identifier is made up inside the test."""
 +import copy
@@ -96,11 +96,12 @@ index 0000000..e81a256
 +from sharness_ai.policy import PolicyError, check, kms_problems, policy_hash
 +from sharness_ai.level.l3.L3 import L3
 +
++FILES = {"read": [], "write": [], "exec": []}   # a v0 policy needs a files section; empty here
 +ROW = {"agent": "agent-a", "vault_id": "vault-1", "ops": ["read"], "max_uses": 20, "until": 1_800_000_000}
 +
 +
 +def base(*rows):
-+    return {"pbp": 1, "id": "kms-test", "network": "none", "kms": [dict(r) for r in rows]}
++    return {"pbp": 1, "id": "kms-test", "network": "none", "files": copy.deepcopy(FILES), "kms": [dict(r) for r in rows]}
 +
 +
 +class Test_Kms_Rows:
@@ -169,18 +170,18 @@ index 0000000..e81a256
 +class Test_Level3_Passes_Kms_Rows_Down:
 +
 +    def test_a_level_3_document_carries_kms_rows_into_the_v0_policy(self):
-+        doc = {"pbp": 1, "id": "kms-test", "level": 3, "network": "none", "kms": [dict(ROW)]}
++        doc = {"pbp": 1, "id": "kms-test", "level": 3, "network": "none", "files": copy.deepcopy(FILES), "kms": [dict(ROW)]}
 +        out = L3.compile(doc)["document"]
 +        assert out["kms"] == [ROW]
 +        assert check(out) == []
 +
 +    def test_a_bad_row_is_refused_at_level_3(self):
-+        doc = {"pbp": 1, "id": "kms-test", "level": 3, "network": "none", "kms": [dict(ROW, ops=["sign"])]}
++        doc = {"pbp": 1, "id": "kms-test", "level": 3, "network": "none", "files": copy.deepcopy(FILES), "kms": [dict(ROW, ops=["sign"])]}
 +        with pytest.raises(PolicyError):
 +            L3.compile(doc)
 +
 +    def test_secrets_names_and_kms_rows_stay_separate(self):
-+        doc = {"pbp": 1, "id": "kms-test", "level": 3, "network": "none",
++        doc = {"pbp": 1, "id": "kms-test", "level": 3, "network": "none", "files": copy.deepcopy(FILES),
 +               "secrets": ["SOME_ENV_NAME"], "kms": [dict(ROW)]}
 +        result = L3.compile(doc)
 +        assert "secrets" not in result["document"] and result["document"]["kms"] == [ROW]
