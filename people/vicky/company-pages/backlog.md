@@ -83,15 +83,15 @@ Marked (website): the company's own site refuses automated reads; do it from oth
 
 | Company | Page | Status |
 |---|---|---|
-| Just Travel (article) | https://promptugal.news/companies/just-travel/ | to do |
-| MEO (article) | https://promptugal.news/companies/meo/ | to do |
-| Mobile Brain (article) | https://promptugal.news/companies/mobile-brain/ | to do |
-| sheerME (article) | https://promptugal.news/companies/sheerme/ | to do |
-| AI Infinity | https://promptugal.news/companies/ai-infinity/ | to do |
-| ChatPlace | https://promptugal.news/companies/chatplace/ | to do |
-| DIG-IN | https://promptugal.news/companies/dig-in/ | to do |
-| FIDO | https://promptugal.news/companies/fido/ | to do |
-| FRETEFY TECNOLOGIA S.A. | https://promptugal.news/companies/fretefy/ | to do |
+| Just Travel (article) | https://promptugal.news/companies/just-travel/ | in review |
+| MEO (article) | https://promptugal.news/companies/meo/ | in review |
+| Mobile Brain (article) | https://promptugal.news/companies/mobile-brain/ | in review |
+| sheerME (article) | https://promptugal.news/companies/sheerme/ | in review |
+| AI Infinity | https://promptugal.news/companies/ai-infinity/ | in review |
+| ChatPlace | https://promptugal.news/companies/chatplace/ | in review |
+| DIG-IN | https://promptugal.news/companies/dig-in/ | in review |
+| FIDO | https://promptugal.news/companies/fido/ | in review |
+| FRETEFY TECNOLOGIA S.A. | https://promptugal.news/companies/fretefy/ | in review |
 
 ### P2: journalist-portugal@PrompTugal.vicky (9)
 
