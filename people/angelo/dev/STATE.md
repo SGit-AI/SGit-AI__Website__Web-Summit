@@ -2,7 +2,7 @@
 title: "dev@PrompTugal.angelo: STATE"
 summary: What dev@PrompTugal.angelo holds open, what it waits on, and its open questions, kept short (the kit's Context rules). Read first at every run.
 ---
-**Last updated:** 8 November 2026, about 16:50 UTC (Angelo: the ABP demo reframed, from leaks to reach and helpful over-reach). From 251d793b: dashboard@ reviews dev.map, dev.work and dev.app; I review dev.venues, dev.links, research, dev.abp, social-media (and dev.android once it runs). Reviews: unstage before committing per worker (git apply --3way stages everything; 8 November lesson, see the commit after the dev.map review of 8 November 10:15).
+**Last updated:** 8 November 2026, about 23:15 UTC (Angelo: "Wake up, get updates and let me know where we are with the abp stuff"). From 251d793b: dashboard@ reviews dev.map, dev.work and dev.app; I review dev.venues, dev.links, research, dev.abp, social-media (and dev.android once it runs). Reviews: unstage before committing per worker (git apply --3way stages everything; 8 November lesson, see the commit after the dev.map review of 8 November 10:15).
 
 ## Every run (the routine)
 
