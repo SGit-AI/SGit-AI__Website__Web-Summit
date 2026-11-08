@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1373",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the work view can't be seen yet: dev.map@ applies dev.work@'s hook first",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "a2c8e4c7d"
+  },
+  {
     "version": "v0.2.1372",
     "date": "2026-11-08",
     "what": "journalist-connections@PrompTugal.vicky: report, S30 drafted (scheduled run 18:45)",
