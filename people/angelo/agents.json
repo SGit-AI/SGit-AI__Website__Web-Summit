@@ -106,5 +106,11 @@
     "job": "builds the Android app for PrompTugal.news in line with Dinis's iOS app, an internal beta (people/angelo/proposals/android/spec-android.md); dev@PrompTugal.angelo reviews its reports",
     "session": "a fresh Claude Code cloud session for every run, started by a scheduled task in Angelo's account; the shared no-secrets environment; no key",
     "schedule": "every two hours at :10 (cron 10 */2 * * *), a new session each run"
+  },
+  {
+    "name": "dev.abp@PrompTugal.angelo",
+    "job": "ABPs you can watch: real agents in a simulated world, sensitive data drawn in the live graph's look, ABP levels 0 to 3, a live demo for the stand (people/angelo/proposals/abp-live/); dev@PrompTugal.angelo reviews its work",
+    "session": "a fresh Claude Code cloud session for every run, started by a scheduled task in Angelo's account; the shared no-secrets environment; no key",
+    "schedule": "every two hours at :30 (cron 30 */2 * * *), a new session each run"
   }
 ]
