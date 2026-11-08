@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1243",
+    "date": "2026-11-08",
+    "what": "Vicky's public vault is now her Web Summit showcase (v1.2.0)",
+    "by": "vault@web-summit.vicky",
+    "from": "ffe1b4180"
+  },
+  {
     "version": "v0.2.1242",
     "date": "2026-11-08",
     "what": "vault@PrompTugal.angelo: 09:50 run: kms piece 1's tests still refused (the permission rule is not in my session yet); ucvg2pkv clean",
