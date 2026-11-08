@@ -48,12 +48,14 @@ If your conductor's session is replaced, the new session issues a new key and th
 
 - **A new key in a new session is normal.** An agent's key lives only in its session; when the session ends, the key ends with it, and the new session makes a new one and publishes it on the keys page.
 - **Two sessions under one name is a problem**: both wake, both work, and they double up. **Choose one to keep, and close the other.** Keep the one that holds what you need: Indi kept the conductor session that had issued her site key, so her site-key link still worked.
+  - **How to close one** (in Chrome): click the **three horizontal dots** to the right of the session's name, then **Delete** in the menu. Check that it is the duplicate before you press it.
+  - **End its key first.** Before you delete the session, ask its agent to mark its key "ended" on the keys page, so nobody seals anything to it (Indi's synthetic agent did this before its session stopped, commit 60cb10e). If the session is already gone, ask your conductor to mark it.
 - **Two sessions on purpose are fine when they have different names.** Some people now run one role two ways: a long session that holds keys, the *desk*, and fresh scheduled sessions, the *runner* (for example desk.conductor@PrompTugal.angelo and runner.conductor@PrompTugal.angelo). Different names, different jobs: that is not doubling up.
 - **Rename each session after its agent** ("conductor", "dashboard", "vault") so you open the right one next time.
 
-*Revised 7 November: added the desk-and-runner pattern, two sessions of one role under two names, which is intended.*
+*Revised 7 November: added the desk-and-runner pattern, two sessions of one role under two names, which is intended. Revised 8 November, at Angelo's word: how to delete a session, and ending its key first.*
 
-*Sources: [the start page](../start/index.html#steps), step 6; conductor@web-summit.indi's brief 4 (commit 2a0ce5f); Indi's mentor notes, 4 November 11:41 and 14:41; the onboarding guide's tips; Angelo's protocol, "Names" (commit 90299d0).*
+*Sources: [the start page](../start/index.html#steps), step 6; conductor@web-summit.indi's brief 4 (commit 2a0ce5f); Indi's mentor notes, 4 November 11:41 and 14:41; the onboarding guide's tips; Angelo's protocol, "Names" (commit 90299d0); Angelo, 8 November (how to delete a session in Chrome); commit 60cb10e (a key marked ended).*
 
 ## My agent can't reach a website ("refused by the network policy", or CONNECT 403) {#network}
 
