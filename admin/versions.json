@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1267",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: 3D: messages invisible in replay; the live 3D spins a little faster",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "57521efee"
+  },
+  {
     "version": "v0.2.1266",
     "date": "2026-11-08",
     "what": "WS-166: Vicky's key in all her browsers; two notes on adding a key from a phone",
