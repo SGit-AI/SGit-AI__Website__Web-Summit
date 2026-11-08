@@ -79,16 +79,18 @@ Do this **before** an agent makes its key: a key made in a session you then repl
 
 *3 November 2026, updated 5 November. Asked by vault@web-summit.jose, whose session had no token and could not reach the vault server.*
 
-- **One token per agent, from 5 November** (Dinis's rule, WS-170). Dinis issues each agent its own token; your conductor seals it to that agent's key; the agent opens it itself, into memory or its own environment variable, and never prints it. No agent pushes a vault with your token or anyone else's. Until your vault agent has its own, its vault changes stay saved on its side and wait.
+- **One token per agent, from 5 November** (Dinis's rule, WS-170). No agent pushes a vault with your token or anyone else's. Until your vault agent has its own, its vault changes stay saved on its side and wait. How a token reaches its agent depends on whose agent it is:
+  - **Angelo's agents:** Angelo or Dinis types it into that agent's own environment settings (Angelo's protocol, "Secrets").
+  - **Everyone else's, as the vault guide says:** Dinis issues it, your conductor seals it to that agent's key, and the agent opens it itself, into memory or its own environment variable, and never prints it.
 - **Never paste a token into a chat**, a file or a message. If it goes in the environment's settings, it goes in an environment only that agent's sessions use:
   - Open the **cloud environment** menu in the **title bar at the top**, press **Edit**. Environment variables are **not** on the Network access page: go **back one level with the back arrow at the top**. They are all in **one text box**: type `SG_SEND_ACCESS_TOKEN=` and paste the token right after the `=`, on one line, no spaces. **Save.**
 - **Start a new session.** A session that is already open does not see a new variable; that is why the agent still says "no access token configured".
+- The vault agent checks first, without printing the token: is it set, and does `dev.send.sgraph.ai` answer? If not, fix the environment before it makes its key.
 - **One environment per agent that holds a secret** (WS-129; for Angelo's agents his rule of 6 November): every session in an environment can read its variables, so a token lives only in the environment of the one agent it belongs to.
 - **An old token still in a session?** A token removed from the environment's settings stays in sessions started before. Each agent checks its own session without printing it, and removes it if it is still there.
 - **After the vault is pushed, harden the session**: no token left in a vault clone, credentials opened into memory rather than files, a passphrase on the key store, and never print a key ([the vault guide's four steps](../vault-agent/index.html#hardening), 7 November).
-- The vault agent checks first, without printing the token: is it set, and does `dev.send.sgraph.ai` answer? If not, fix the environment before it makes its key.
 
-*Revised 7 November: one environment per agent with a secret, how an old token left in a running session is removed, and the vault guide's new hardening steps; the onboarding guide's step 8 now follows the one-token-per-agent rule too.*
+*Revised 7 November: one environment per agent with a secret, how an old token left in a running session is removed, and the vault guide's new hardening steps; the onboarding guide's step 8 now follows the one-token-per-agent rule too. Revised 8 November, at Angelo's word: the two routes a token takes (typed in by Angelo or Dinis for Angelo's agents; sealed by the conductor elsewhere), and the vault agent's first check moved up to where it happens.*
 
 *Sources: [the vault guide](../vault-agent/index.html#token), step 1 (one token per agent since 5 November, commit bd407d1), and the onboarding guide's step 8 (aligned 6 November, commit e5f521e); Angelo's protocol, "Secrets"; commit 66b37f0 (removing an old token); [when something goes wrong](../vault-agent/index.html#help).*
 
