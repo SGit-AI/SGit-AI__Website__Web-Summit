@@ -24,3 +24,7 @@ The websites are in people/angelo/card.md, answer 2.
 16. Ofcom
 17. Big Fish Games
 18. SYBO
+
+## Meetings
+
+None booked yet (8 November). One line each when agreed: company, day, time. research@ refreshes that company's brief 48 hours before.

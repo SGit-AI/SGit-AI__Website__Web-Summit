@@ -1,6 +1,6 @@
 # Large files into the videos vault (WS-174)
 
-**Nothing left for Silvio (7 November 2026):** video@web-summit.silvio uploaded the six-language loop itself, at Silvio's word, and the 30-second film's original (in Silvio's Drive and his Downloads) is the same size as the copy already in the vault, so it is in. The steps below stay for the next large file.
+**Nothing left for Silvio:** every file in the vault is now under 30 MB; the six-languages-in-a-row video was removed on 8 November at Silvio's word (the languages stay separate, with a stand page to choose), and the 30-second film's original is the same size as the copy already in the vault. The steps below stay for the next large file.
 
 The vault `ws-team-videos` (vault id h9in5em4) holds every checked video. Two files are over 30 MB, so they go in from your computer, with sgit. No key is written here: the vault key is with conductor@web-summit.silvio, sealed to it; it gives it to you the safe way (a sealed link or QR, never in a chat), and you keep it in your password manager.
 

@@ -1,0 +1,56 @@
+# DRAFT for conductor@web-summit.dinis (workflows are shared; dev.app@PrompTugal.angelo never edits .github/).
+# If accepted: copy to .github/workflows/desktop-build.yml. It builds the hexagon app (people/angelo/app/desktop/)
+# on GitHub's own Windows and macOS machines and publishes the unsigned installers on one GitHub release,
+# "desktop-latest", replaced at each build, so the download page links one fixed address per system.
+# It never touches the site's version, tags or Pages deploy; it runs only when the app's files change, or by hand.
+name: desktop app
+on:
+  workflow_dispatch:
+  push:
+    branches: [dev]
+    paths: ['people/angelo/app/desktop/**']
+permissions:
+  contents: write          # only to replace the desktop-latest release's files
+concurrency: { group: desktop-build, cancel-in-progress: true }
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: macos-latest, args: '--target universal-apple-darwin', name: mac }
+          - { os: windows-latest, args: '', name: windows }
+    runs-on: ${{ matrix.os }}
+    defaults: { run: { working-directory: people/angelo/app/desktop/src-tauri } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: dtolnay/rust-toolchain@stable
+        with: { targets: "${{ matrix.name == 'mac' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}" }
+      - name: icons (made from icons/icon-1024.png, never committed)
+        run: npx -y @tauri-apps/cli@2 icon ../icons/icon-1024.png
+      - name: the hit test
+        if: matrix.name == 'mac'
+        run: rustc --edition 2021 --test src/hex.rs -o hex-test && ./hex-test
+      - name: build (unsigned)
+        run: npx -y @tauri-apps/cli@2 build ${{ matrix.args }}
+      - name: collect the installer
+        shell: bash
+        run: |
+          mkdir -p out
+          if [ "${{ matrix.name }}" = mac ]; then cp target/universal-apple-darwin/release/bundle/dmg/*.dmg "out/Team-and-the-machine-mac.dmg"
+          else cp target/release/bundle/nsis/*-setup.exe "out/Team-and-the-machine-windows-setup.exe"; fi
+      - uses: actions/upload-artifact@v4
+        with: { name: "${{ matrix.name }}", path: people/angelo/app/desktop/src-tauri/out/* }
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { path: out, merge-multiple: true }
+      - name: replace the desktop-latest release's files
+        env: { GH_TOKEN: "${{ github.token }}", GH_REPO: "${{ github.repository }}" }
+        run: |
+          gh release view desktop-latest >/dev/null 2>&1 || gh release create desktop-latest --prerelease --target "${{ github.sha }}" --title "Team and the machine: desktop app (unsigned)" --notes "Built from people/angelo/app/desktop at each change. Unsigned: see https://web-summit.sgit.ai/people/angelo/app/desktop/ for the first-open steps."
+          gh release upload desktop-latest out/* --clobber

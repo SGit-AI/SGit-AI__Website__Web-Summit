@@ -415,11 +415,14 @@ function tasks(root, person, d, now) {
         const dl = b.match(/^Delivered:\s*(.+)$/m); if (!dl || !/^For: desk\.conductor@PrompTugal\.angelo/mi.test(b)) continue
         const who = (s.match(/^([a-z0-9.-]+)@/i) || [])[1] || '', id = 'D-' + h.slice(0, 8), m = marks.get(id)
         const ref = (dl[1].match(/https?:\/\/\S+|(?:people|board|content|data|admin|assets)\/[\w./@-]+/) || [])[0] || ''
-        cards.push({ id, src: 'delivery', col: m ? (m.action === 'changes' ? 'progress' : 'done') : 'delivered', title: plain(s.replace(/^[^:]+:\s*/, '')), agent: who ? who + '@' : '', brief: h, link: ref ? (/^http/.test(ref) ? ref : `${REPO}/blob/dev/${ref.replace(/[.,;]+$/, '')}`) : `${REPO}/commit/${h}`, commit: `${REPO}/commit/${h}`, chip: m ? (m.action === 'changes' ? 'needs changes' : 'seen') : 'delivered', note: m && m.action === 'changes' ? plain(m.text) : '', rank: 0, at: m ? m.at : at })
+        // the kind first, from the kit's short list ("Delivered: <kind>, <what> <path or link>", 8 November); an older line has none
+        const kind = ((dl[1].match(/^([a-z ]{3,14}),/i) || [])[1] || '').trim().toLowerCase(), KIND = DELIVERY_KINDS.includes(kind) ? kind : ''
+        cards.push({ id, src: 'delivery', kind: KIND, col: m ? (m.action === 'changes' ? 'progress' : 'done') : 'delivered', title: plain(s.replace(/^[^:]+:\s*/, '')), agent: who ? who + '@' : '', brief: h, link: ref ? (/^http/.test(ref) ? ref : `${REPO}/blob/dev/${ref.replace(/[.,;]+$/, '')}`) : `${REPO}/commit/${h}`, commit: `${REPO}/commit/${h}`, chip: m ? (m.action === 'changes' ? 'needs changes' : 'seen') : 'delivered', note: m && m.action === 'changes' ? plain(m.text) : '', rank: 0, at: m ? m.at : at })
     }
     return { cards, unplaced, counts: Object.fromEntries(['backlog', 'open', 'issue', 'delivery'].map(x => [x, cards.filter(c => c.src === x).length])) }
 }
 const DONE_WINDOW_DAYS = KANBAN.DONE_DAYS
+const DELIVERY_KINDS = ['article', 'brief', 'page', 'post', 'email draft', 'record', 'key', 'tool', 'app', 'spec', 'report']
 
 export function build(root, person, now = new Date()) {
     const d = CC.build(root, person, now)
@@ -487,6 +490,24 @@ export function build(root, person, now = new Date()) {
             const me = viewId(a.name), on = byId.get(me)
             if (on) { if (!on.kind) on.kind = 'fresh'; continue }
             M.sessionless.push({ id: me, person: p.id, family: me.startsWith('pt:') ? 'PrompTugal' : 'web-summit', short: me.startsWith('pt:') ? me.split(':')[2] : me.split('@')[0], commits: 0, kind: 'fresh' })
+          } }
+        // the workers' own work (backlog 0f): a fresh-session worker commits on its workers/ branch, and dev@ brings it onto dev in
+        // one review commit, so dev's history shows dev@, not the worker. repos-events.json (dev@'s snapshot, 48 hours, every branch
+        // of this repository) has the worker's own commits and their For: lines: each counts under the worker's own name, and each
+        // For: is a line from the worker to whom it names (dev@ for its review). Names, counts and times only.
+        { const RE = readJson(root, 'people/angelo/app/repos-events.json'), here = RE && (RE.repos || []).findIndex(r => r.repo === 'SGit-AI/SGit-AI__Website__Web-Summit')
+          const quiet = new Map((M.sessionless || []).map(a => [a.id, a])), node = new Map(M.agents.map(a => [a.id, a])), isNode = id => node.has(id) || quiet.has(id) || M.people.some(p => p.id === id)
+          if (RE && here >= 0 && Array.isArray(RE.events)) {
+            const own = new Map(), li = new Map(M.links.map(l => [`${l.from}|${l.to}`, l]))
+            for (const [, si, ti, ri, sha] of RE.events) {
+              if ((ri || 0) !== here) continue
+              const from = viewId(RE.names[si] || ''), a = quiet.get(from) || node.get(from)
+              if (!a || a.kind !== 'fresh') continue
+              if (!own.has(from)) own.set(from, new Set()); own.get(from).add(sha)
+              for (const t of ti || []) { const to = viewId(RE.names[t] || ''); if (!to || to === from || !isNode(to)) continue; const k = `${from}|${to}`; if (li.has(k)) li.get(k).n++; else { const l = { from, to, n: 1, worker: true }; li.set(k, l); M.links.push(l) } }
+            }
+            for (const [id, set] of own) { const a = quiet.get(id) || node.get(id); a.own = set.size; a.commits = Math.max(a.commits || 0, set.size) }
+            M.workers_from = { read_at: RE.read_at, hours: RE.hours }
           } }
         // the kinds of work (the third layout): each agent's commits in 7 days that name an issue, by the issue's board area,
         // grouped into seven kinds; the PrompTugal newsroom's agents, from their own repository, count as newsroom work

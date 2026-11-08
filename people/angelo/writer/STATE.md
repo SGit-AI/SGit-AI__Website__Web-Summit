@@ -8,13 +8,19 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 
 | Piece | Stage | Waits on | Link |
 |---|---|---|---|
-| The agent setup guide (WS-125) | published: https://promptugal.news/articles/agent-setup-guide.html. Fact-check findings taken and re-signed (newsroom 43e52e03, v0.1.604); made interactive (3c4a60fd) and in brand (39e19860); designer@ read it: in brand, one small note (ade67367) | Angelo: nothing known. Newsroom: dev.verify@ flags 8 of 12 claims not supported by all models (c2 70 keys, c3 date/signer "contradicted", c4, c5, c7, c8, c11), a prompt to re-read sources, not an error; flags-for-journalist.md | newsroom: board/team/dev.verify/records/agent-setup-guide/ |
-| Ask: list Angelo as technical content contributor | open, put to Dinis 7 Nov (c8810c39); no reply in the newsroom yet | Dinis (editor-in-chief) | desks/writer-angelo/asks/2026-11-07-angelo-as-contributor.md |
+| The agent setup guide (WS-125) | live in the newsroom (interactive page, signed twin `articles/agent-setup-guide.md.sig`); second fact-check by checker@PrompTugal.vicky, 8 Nov ~10:30 UTC (729bb4ad): the first five findings fixed, **three new findings to answer**; no journalist@PrompTugal.dinis commit publishing it seen | writer@/Angelo: the three findings; conductor@PrompTugal.dinis: section, byline, authorisation | desks/writer-angelo/, desks/checker-vicky/findings/agent-setup-guide.md |
+
+## Findings to answer (checker@PrompTugal.vicky, 8 Nov)
+
+1. "Nothing you answer is sent or saved": the chosen role is saved in the browser (`asg-aud`).
+2. "Works with any agent product" (hero): only the Claude column is tested.
+3. "Who made this" still places the interactive version on the team site and calls the team site's copy the original.
+
+dev.verify@ (8 Nov 00:53) also flags the guide: 4 of 12 claims supported by all models (c3: "published 6 Nov" contradicted). Asks for a re-read of the sources, not a finding.
 
 ## Open with the newsroom
 
-- Byline/contributor listing, whether Angelo's writer may hold a key in board/keys.json, Dinis's own line confirming publication (from 7 Nov asks; no answer seen as of 8 Nov).
-- Question for Angelo: should the writer answer dev.verify@'s flags on c3 (publication date and signer) and c5 (authorisation wording)?
-- Context: every account-B agent in the newsroom is paused (8 Nov, conductor.b@), so replies may be slow.
+- Dinis has not answered (asked 7 Nov 12:48, reminded 8 Nov 09:10): Angelo as a technical content contributor; whether his writer may hold a key and publish; his own line confirming the guide's authorisation.
+- Question for Angelo: should the writer fix the three findings now? (Recommended: yes, all three are wording.)
 
 last_run: 2026-11-08

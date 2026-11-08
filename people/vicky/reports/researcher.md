@@ -99,3 +99,10 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 ## Sun 8 Nov 2026, 05:15 UTC run
 
 - decisions.md read first (new commits pass the guard; no HOLD.md): applied SCHED-WS, my task (trig_01KV2FctiUnh6ratBLVcsfSj) fires at 05:15, 10:15, 14:15, 18:15 UTC and matches; P2: my prompts file had the new times from the conductor and the file wins over my memory (07:30 to 19:30), so I brought its older cron line into line. 0 captures went into vault 41j3e9s9 (overnight news is protests only, [RTP](https://www.rtp.pt/)). state: idle
+
+## Sun 8 Nov 2026, 10:15 UTC run (the summit, participants)
+
+- decisions.md read first (new commits pass the guard; no HOLD.md): applied SA19C, the participants passage is in my scheduled task's prompt (changed 10:17 UTC) and in prompts/researcher.md; SA19B is not for me.
+- 1 capture went into vault 41j3e9s9, audited (vault-audit.mjs clean, security sub-agent pass) and pushed; sgit status in sync.
+- Participants: 20 speakers from the first view of the speakers page, by name, role and organisation, grouped by theme (robotics, AI models, mobility and devices, infrastructure and security, investment and policy); the AgiBot A3 robot is now listed, which the 5 November capture could not confirm ([Web Summit, "Meet Web Summit's 2026 speakers"](https://websummit.com/speakers/)).
+- state: ok; done: SA19C applied, 1 participants capture; next: what each organisation does, and the partners and startup pages, from 14:15; ask: none; run: scheduled

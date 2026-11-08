@@ -1,5 +1,278 @@
 [
   {
+    "version": "v0.2.1274",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: report, 12:20 re-check: S28 Ready",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "64fe71ec2"
+  },
+  {
+    "version": "v0.2.1273",
+    "date": "2026-11-08",
+    "what": "the stand loop sharper, one video per language, and a stand page to choose the language",
+    "by": "video@web-summit.silvio",
+    "from": "174c2ab26"
+  },
+  {
+    "version": "v0.2.1272",
+    "date": "2026-11-08",
+    "what": "journalist-connections@PrompTugal.vicky: report, S28 fixed (fix-only run)",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "acae0e2d9"
+  },
+  {
+    "version": "v0.2.1271",
+    "date": "2026-11-08",
+    "what": "Vicky's dashboard: an Open the Live AI Office link under the agent graph; My vault stays open",
+    "by": "dashboard@web-summit.vicky",
+    "from": "f96e25f4f"
+  },
+  {
+    "version": "v0.2.1270",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: backlog: dev@'s finished items struck; venues waits on security; dev.abp@ unblocked",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "980905abb"
+  },
+  {
+    "version": "v0.2.1269",
+    "date": "2026-11-08",
+    "what": "dashboard@PrompTugal.angelo: reviewer of the map and app workers from today; the first three reviews in",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "52a333d40"
+  },
+  {
+    "version": "v0.2.1268",
+    "date": "2026-11-08",
+    "what": "RiskMandate explained, redone in the X-ray's visual language, with a simulation and PT/EN",
+    "by": "conductor@web-summit.silvio",
+    "from": "bb63b1991"
+  },
+  {
+    "version": "v0.2.1267",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: 3D: messages invisible in replay; the live 3D spins a little faster",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "57521efee"
+  },
+  {
+    "version": "v0.2.1266",
+    "date": "2026-11-08",
+    "what": "WS-166: Vicky's key in all her browsers; two notes on adding a key from a phone",
+    "by": "conductor@web-summit.vicky",
+    "from": "f379d5a9b"
+  },
+  {
+    "version": "v0.2.1265",
+    "date": "2026-11-08",
+    "what": "11:40 wake: lane counted, not drained (no token of my own yet); feedback-count.json refreshed",
+    "by": "vault@web-summit.jose",
+    "from": "5f6df12e0"
+  },
+  {
+    "version": "v0.2.1264",
+    "date": "2026-11-08",
+    "what": "team-collaboration@PrompTugal.angelo: the brief for the 12:00, the last before the summit",
+    "by": "team-collaboration@PrompTugal.angelo",
+    "from": "325b1260f"
+  },
+  {
+    "version": "v0.2.1263",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: hand dev.map, dev.work and dev.app's reviews to dashboard@; snapshots",
+    "by": "dev@PrompTugal.angelo",
+    "from": "a276b6d32"
+  },
+  {
+    "version": "v0.2.1262",
+    "date": "2026-11-08",
+    "what": "internal: Portuguese organisations' public problems and contacts, sealed to the team",
+    "by": "conductor@web-summit.silvio",
+    "from": "c18b2aabb"
+  },
+  {
+    "version": "v0.2.1261",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: report, 11:15 run: S28 Fix first",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "26ed3c959"
+  },
+  {
+    "version": "v0.2.1260",
+    "date": "2026-11-08",
+    "what": "three new films for the stand and LinkedIn, in the videos vault: the X-ray, the demo is us, the Licence",
+    "by": "video@web-summit.silvio",
+    "from": "5187f993b"
+  },
+  {
+    "version": "v0.2.1259",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: dashboard@ reviews the map and app workers, hourly; the ABP demo design approved",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "251d793b2"
+  },
+  {
+    "version": "v0.2.1258",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: run 11:20 UTC: nothing to route, social-media questions to Angelo's list Scheduled run. Agent: runner.conductor@PrompTugal.angelo",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "3084f7903"
+  },
+  {
+    "version": "v0.2.1257",
+    "date": "2026-11-08",
+    "what": "the incidents list is internal: removed from the public site, sealed to the team's keys",
+    "by": "conductor@web-summit.silvio",
+    "from": "bbff77ec1"
+  },
+  {
+    "version": "v0.2.1256",
+    "date": "2026-11-08",
+    "what": "journalist-connections@PrompTugal.vicky: report, S28 drafted; SA19B and SA19C applied",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "5c225df39"
+  },
+  {
+    "version": "v0.2.1255",
+    "date": "2026-11-08",
+    "what": "journalist-ai@PrompTugal.vicky: scheduled run, 11:05 UTC: idle",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "ce7099381"
+  },
+  {
+    "version": "v0.2.1254",
+    "date": "2026-11-08",
+    "what": "journalist-europe@PrompTugal.vicky: scheduled run 10:57, idle",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "b4d20ceb8"
+  },
+  {
+    "version": "v0.2.1253",
+    "date": "2026-11-08",
+    "what": "journalist-portugal@PrompTugal.vicky: scheduled run, idle",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "eb0942bfe"
+  },
+  {
+    "version": "v0.2.1252",
+    "date": "2026-11-08",
+    "what": "journalist@PrompTugal.vicky: report, 10:45 UTC run idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "de9d3a57b"
+  },
+  {
+    "version": "v0.2.1251",
+    "date": "2026-11-08",
+    "what": "the 84 companies committed in my clone of the public CRM; only a token is missing to push both CRMs",
+    "by": "crm@web-summit.silvio",
+    "from": "2d263072e"
+  },
+  {
+    "version": "v0.2.1250",
+    "date": "2026-11-08",
+    "what": "curator@PrompTugal.vicky: 10:30 run, S28 listed, SA19C recorded",
+    "by": "curator@PrompTugal.vicky",
+    "from": "f949fd2bc"
+  },
+  {
+    "version": "v0.2.1249",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 146 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 621 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "4fc55e29e"
+  },
+  {
+    "version": "v0.2.1248",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: run 10:21 UTC: nothing to route, STATE and runs upkeep",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "262d774e1"
+  },
+  {
+    "version": "v0.2.1247",
+    "date": "2026-11-08",
+    "what": "applied SA19C; 10:15 run, 1 participants capture in the research vault 41j3e9s9",
+    "by": "researcher@web-summit.vicky",
+    "from": "21aa973b3"
+  },
+  {
+    "version": "v0.2.1246",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 146 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 639 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "eda6f94a3"
+  },
+  {
+    "version": "v0.2.1245",
+    "date": "2026-11-08",
+    "what": "vault@PrompTugal.angelo: kms piece 1 tested: 4 of its 27 new tests fail, one fixture cause (no files section); piece 2 still held",
+    "by": "vault@PrompTugal.angelo",
+    "from": "c9581d535"
+  },
+  {
+    "version": "v0.2.1244",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: the reviews of research, dev.links, dev.venues and dev.abp@, recorded (they went into the dev.map review's commit)",
+    "by": "dev@PrompTugal.angelo",
+    "from": "c79f73ba2"
+  },
+  {
+    "version": "v0.2.1243",
+    "date": "2026-11-08",
+    "what": "Vicky's public vault is now her Web Summit showcase (v1.2.0)",
+    "by": "vault@web-summit.vicky",
+    "from": "ffe1b4180"
+  },
+  {
+    "version": "v0.2.1242",
+    "date": "2026-11-08",
+    "what": "vault@PrompTugal.angelo: 09:50 run: kms piece 1's tests still refused (the permission rule is not in my session yet); ucvg2pkv clean",
+    "by": "vault@PrompTugal.angelo",
+    "from": "39f31283a"
+  },
+  {
+    "version": "v0.2.1241",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: STATE: dev.work@ and dev.app@ created, Opus by name for every builder",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "cabfba315"
+  },
+  {
+    "version": "v0.2.1240",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: two more map agents, dev.work@ and dev.app@, to build in parallel with dev.map@",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "3aefaed70"
+  },
+  {
+    "version": "v0.2.1239",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: fresh-session agents drawn like any agent, with one quiet mark",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "2e57bf211"
+  },
+  {
+    "version": "v0.2.1238",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: replay: a Download clip button, an MP4 that WhatsApp plays inline",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "f1116585a"
+  },
+  {
+    "version": "v0.2.1237",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the work view: a generic destination for drafts and proposals",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "2c0743bf9"
+  },
+  {
+    "version": "v0.2.1236",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the work view: typed deliverables travelling to their destinations, past and present; Delivered: names its kind",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "4aa3298d5"
+  },
+  {
     "version": "v0.2.1235",
     "date": "2026-11-08",
     "what": "runner.conductor@PrompTugal.angelo: run 09:21 UTC: nothing to route, STATE and runs upkeep",

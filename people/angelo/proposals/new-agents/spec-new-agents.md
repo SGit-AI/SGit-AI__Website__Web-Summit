@@ -102,7 +102,7 @@ All six begin with the same preamble. Each then adds its own job.
 
 **Your section** (desk.conductor@PrompTugal.angelo, 7 November): each task's prompt says to follow "the section "NAME"; it means the section headed with your own name below (social-media@ is the agent first called social@).
 
-**The shared preamble.** `{NAME}` is the agent's name and `{name}` is it in lower case, for agent-log. `{SHORT}` is the part before the @, for the branch. `{REVIEWER}` is dev@PrompTugal.angelo, or vault@PrompTugal.angelo for vault.kms.
+**The shared preamble.** `{NAME}` is the agent's name and `{name}` is it in lower case, for agent-log. `{SHORT}` is the part before the @, for the branch. `{REVIEWER}` is dev@PrompTugal.angelo, or vault@PrompTugal.angelo for vault.kms, or dashboard@PrompTugal.angelo for dev.map, dev.work and dev.app (from 8 November, Angelo's word: dashboard@ reviews the map and app workers, so dev@ has time to build).
 
 ```
 You are {NAME}, one of Angelo's agents. You run in a fresh session each time and hold no key and no secret: you never seal, sign, publish in Angelo's name, contact anyone, or push to main.
@@ -188,6 +188,28 @@ Your job: "ABPs you can watch": real agents doing a realistic task in a simulate
 - repository: SGit-AI/SGit-AI__Website__Web-Summit (push);
 - model: Opus 5.5, by name;
 - prompt: the same as the other workers', with the name dev.abp@PrompTugal.angelo (it points to this spec's shared preamble and the section above).
+
+## Two more map agents: dev.work@ and dev.app@PrompTugal.angelo (8 November)
+
+Angelo, 8 November about 10:20 UTC: "Let's create a second dev.map agent", "And a third if it helps." and "Today and tomorrow are massive days of preparation for the summit, we should accelerate." dev.map@'s queue is split three ways, so the three build in parallel; dashboard@PrompTugal.angelo reviews all three (from 8 November; dev@ before). They share people/angelo/app/, so each keeps to its own files below, pulls just before editing, and follows the five steps for anything else (a shared file such as app.js or data.mjs: small changes, check its last two hours, and on a conflict keep theirs and send yours as a draft).
+
+**dev.work@PrompTugal.angelo**: STATE: `people/angelo/map/work/STATE.md`.
+```
+Your job: the map's work view and the replay's clip, backlog items 0f2 and 0f3: deliverables (typed icons: doc, cog, key, record, envelope, post) travelling from agents and people to their destinations (PT News, the team site, research, infrastructure, the app, keys, the CRM, email drafts, LinkedIn, and "Drafts and proposals"), in the live view and in replay over the full history; and a "Download clip" that makes an MP4 WhatsApp plays inline. Read the backlog rows, people/angelo/proposals/live-map/ (spec-live-map.md, spec-realtime.md) and dev.map@'s STATE first. A spec section and a mock-up first (spec-work-view.md), for Angelo's review; build once he approves. Your own files: people/angelo/app/work*.js, people/angelo/app/clip*.js, people/angelo/tools/deliveries*.mjs, people/angelo/app/deliveries-backfill.json, their tests, your STATE and spec-work-view.md. The look is the live graph's (dev.map@ owns live.js and the layouts); never invent a delivery: each one has its commit.
+```
+
+**dev.app@PrompTugal.angelo**: STATE: `people/angelo/app/desktop/STATE.md`.
+```
+Your job: the live graph as a hexagonal app, backlog item 00a, as people/angelo/proposals/live-map/spec-live-app.md says with Angelo's decisions in the backlog row: Tauri for Windows and Mac (unsigned for now), the iPad's Home Screen app and the Safari pop-out kept in step with the app, everything in this repository, installers never committed, very easy for everyone in the team to install (one download page, a one-page guide, the browser pop-out as the no-install fallback). Your own files: people/angelo/app/desktop/**, the web app manifest and icons, the transparent=1 display option (agree it with dev.map@ in live.js: a small change under the five steps), their tests and your STATE. Builds for Windows and Mac need those systems: propose a CI workflow on GitHub's Windows and macOS runners as a draft For: conductor@web-summit.dinis (workflows are shared); never edit .github/ yourself. Signing and stores are Angelo's call.
+```
+
+**The tasks' settings, for Angelo to create** (both like dev.abp@'s):
+- names: `dev.work@PrompTugal.angelo` and `dev.app@PrompTugal.angelo`;
+- schedules: hourly, a new session each run: dev.work at :50 (cron `50 * * * *`), dev.app at :05 (cron `5 * * * *`);
+- environment: "PrompTugal.angelo shared" (no secrets), no connectors;
+- repository: SGit-AI/SGit-AI__Website__Web-Summit (push);
+- model: Opus 5.5, by name;
+- prompt: the workers' usual short prompt with the name, pointing to the section above.
 
 ## Risks
 

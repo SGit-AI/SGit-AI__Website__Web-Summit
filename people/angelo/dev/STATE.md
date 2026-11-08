@@ -2,7 +2,7 @@
 title: "dev@PrompTugal.angelo: STATE"
 summary: What dev@PrompTugal.angelo holds open, what it waits on, and its open questions, kept short (the kit's Context rules). Read first at every run.
 ---
-**Last updated:** 8 November 2026, about 09:25 UTC (scheduled run).
+**Last updated:** 8 November 2026, about 11:45 UTC (scheduled run). From 251d793b: dashboard@ reviews dev.map, dev.work and dev.app; I review dev.venues, dev.links, research, dev.abp, social-media (and dev.android once it runs). Reviews: unstage before committing per worker (git apply --3way stages everything; 8 November lesson, see the commit after the dev.map review of 8 November 10:15).
 
 ## Every run (the routine)
 
@@ -24,7 +24,7 @@ summary: What dev@PrompTugal.angelo holds open, what it waits on, and its open q
 | **Android** (backlog #7) | Spec approved; dev.android@ in agents.json, kit, new-agents spec, backlog #14 | Repository: I cannot create it (this session's GitHub scope); Angelo creates it, and dev.android@'s task |
 | **ABPs you can watch** (00d) | First night's experiment delivered (64213f46); handed over to dev.abp@PrompTugal.angelo (d37c6c6f), whose workers/dev.abp branch I review | Angelo's decisions in proposals/abp-live/spec-abp-live.md |
 | **pushed-by.mjs** (0a) | Fixed (81e9965a): the same answer in a fresh shallow session; UNKNOWN is not NOT-ANGELO | nothing |
-| **The newsroom fix** (0b, 10b) | Still blocked: this session's guard refuses attaching the newsroom with push and running its gate | A permission rule from Angelo, here or in dev.links@'s session |
+| **The newsroom fix** (0b, 10b) | Handed to Dinis's agents at Angelo's word (0aa99384) | nothing for me |
 | **policy@'s two barriers** (backlog 1b, 318b1c2d) | Built: the signed-only drain (d89d2576) and the lane check, check 21 (42198055), warnings until lanes.json says "enforce": true | policy@ widens dashboard@'s and writer@'s lanes, then turns enforcement on |
 | **Review workers/dev.links** | Reviewed to 069b5509 (run 2: crawler fix, five external 404s for their signers) | Its next run: 1547 unchecked links |
 | **Review workers/dev.map** | Reviewed to 8c028f12: the live graph in a hexagon (#live, Pop out) is on dev | Its next steps: Safari/iPad picture-in-picture, full screen, the four-hour test | Its next pieces: the four new events, external connections, `/team/map/`, 3D |

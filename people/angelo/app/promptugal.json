@@ -1,8 +1,8 @@
 {
  "about": "The PrompTugal newsroom's agents, from the git log of PrompTugal/PrompTugal__News__Website (its dev branch), for Angelo's command centre; refreshed by dev@web-summit.angelo at its wakes. Names, counts and times only. pt:<person>:<agent> is a PrompTugal agent of that person.",
  "source": "https://github.com/PrompTugal/PrompTugal__News__Website",
- "commit": "42a74d4e1",
- "read_at": "2026-11-08T09:05:30.549Z",
+ "commit": "707bafe93",
+ "read_at": "2026-11-08T11:37:42.282Z",
  "days": 7,
  "agents": [
   {
@@ -99,9 +99,9 @@
    "short": "reviewer",
    "family": "PrompTugal",
    "label": "",
-   "commits": 65,
+   "commits": 67,
    "first": "2026-11-06T10:20:27+00:00",
-   "last": "2026-11-07T22:21:36+00:00",
+   "last": "2026-11-08T11:20:43+00:00",
    "key": true
   },
   {
@@ -121,9 +121,9 @@
    "short": "conductor.b",
    "family": "PrompTugal",
    "label": "",
-   "commits": 45,
+   "commits": 46,
    "first": "2026-11-06T21:38:06+00:00",
-   "last": "2026-11-08T06:08:43+00:00",
+   "last": "2026-11-08T09:07:59+00:00",
    "key": true
   },
   {
@@ -160,6 +160,17 @@
    "key": true
   },
   {
+   "id": "pt:vicky:checker",
+   "person": "vicky",
+   "short": "checker",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 32,
+   "first": "2026-11-06T11:02:11+00:00",
+   "last": "2026-11-08T09:57:11+00:00",
+   "key": true
+  },
+  {
    "id": "pt:dinis:librarian",
    "person": "dinis",
    "short": "librarian",
@@ -193,17 +204,6 @@
    "key": false
   },
   {
-   "id": "pt:vicky:checker",
-   "person": "vicky",
-   "short": "checker",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 26,
-   "first": "2026-11-06T11:02:11+00:00",
-   "last": "2026-11-07T18:01:43+00:00",
-   "key": true
-  },
-  {
    "id": "pt:dinis:sherpa",
    "person": "dinis",
    "short": "sherpa",
@@ -231,9 +231,9 @@
    "short": "curator",
    "family": "PrompTugal",
    "label": "",
-   "commits": 17,
+   "commits": 19,
    "first": "2026-11-06T10:26:39+00:00",
-   "last": "2026-11-08T05:33:02+00:00",
+   "last": "2026-11-08T10:40:01+00:00",
    "key": true
   },
   {
@@ -259,6 +259,17 @@
    "key": true
   },
   {
+   "id": "pt:angelo:writer",
+   "person": "angelo",
+   "short": "writer",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 15,
+   "first": "2026-11-06T23:09:46+00:00",
+   "last": "2026-11-08T09:10:44+00:00",
+   "key": true
+  },
+  {
    "id": "pt:dinis:accountant",
    "person": "dinis",
    "short": "accountant",
@@ -279,17 +290,6 @@
    "first": "2026-11-04T19:29:53+00:00",
    "last": "2026-11-06T07:47:39+00:00",
    "key": false
-  },
-  {
-   "id": "pt:angelo:writer",
-   "person": "angelo",
-   "short": "writer",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 13,
-   "first": "2026-11-06T23:09:46+00:00",
-   "last": "2026-11-08T08:40:01+00:00",
-   "key": true
   },
   {
    "id": "pt:dinis:backup",
@@ -334,6 +334,17 @@
    "first": "2026-11-05T20:23:14+00:00",
    "last": "2026-11-06T09:45:51+00:00",
    "key": false
+  },
+  {
+   "id": "pt:vicky:journalist-connections",
+   "person": "vicky",
+   "short": "journalist-connections",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 9,
+   "first": "2026-11-06T10:51:35+00:00",
+   "last": "2026-11-08T11:12:29+00:00",
+   "key": true
   },
   {
    "id": "journalist@web-summit.vicky",
@@ -399,17 +410,6 @@
    "commits": 7,
    "first": "2026-11-06T10:50:25+00:00",
    "last": "2026-11-06T17:07:22+00:00",
-   "key": true
-  },
-  {
-   "id": "pt:vicky:journalist-connections",
-   "person": "vicky",
-   "short": "journalist-connections",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 7,
-   "first": "2026-11-06T10:51:35+00:00",
-   "last": "2026-11-06T16:04:49+00:00",
    "key": true
   },
   {
@@ -648,14 +648,14 @@
    "n": 21
   },
   {
-   "from": "pt:dinis:ontologist",
-   "to": "pt:dinis:conductor",
+   "from": "pt:vicky:checker",
+   "to": "pt:dinis:journalist",
    "n": 19
   },
   {
-   "from": "pt:vicky:checker",
-   "to": "pt:dinis:journalist",
-   "n": 17
+   "from": "pt:dinis:ontologist",
+   "to": "pt:dinis:conductor",
+   "n": 19
   },
   {
    "from": "pt:dinis:synthetic",
@@ -693,6 +693,11 @@
    "n": 12
   },
   {
+   "from": "pt:vicky:curator",
+   "to": "newsroom@web-summit.dinis",
+   "n": 11
+  },
+  {
    "from": "pt:dinis:accountant",
    "to": "pt:dinis:conductor",
    "n": 11
@@ -703,24 +708,19 @@
    "n": 11
   },
   {
-   "from": "pt:vicky:curator",
-   "to": "newsroom@web-summit.dinis",
-   "n": 10
-  },
-  {
    "from": "curator@web-summit.vicky",
    "to": "newsroom@web-summit.dinis",
    "n": 9
   },
   {
-   "from": "journalist@web-summit.vicky",
-   "to": "newsroom@web-summit.dinis",
+   "from": "pt:angelo:writer",
+   "to": "pt:dinis:conductor",
    "n": 8
   },
   {
-   "from": "pt:angelo:writer",
-   "to": "pt:dinis:conductor",
-   "n": 7
+   "from": "journalist@web-summit.vicky",
+   "to": "newsroom@web-summit.dinis",
+   "n": 8
   },
   {
    "from": "pt:vicky:checker",
@@ -736,6 +736,11 @@
    "from": "pt:dinis:designer",
    "to": "pt:dinis:conductor",
    "n": 7
+  },
+  {
+   "from": "pt:angelo:writer",
+   "to": "pt:angelo:desk.conductor",
+   "n": 6
   },
   {
    "from": "pt:vicky:reviewer",
@@ -763,8 +768,13 @@
    "n": 6
   },
   {
-   "from": "pt:angelo:writer",
-   "to": "pt:angelo:desk.conductor",
+   "from": "pt:vicky:journalist-connections",
+   "to": "pt:dinis:journalist",
+   "n": 5
+  },
+  {
+   "from": "pt:vicky:checker",
+   "to": "pt:vicky:reviewer",
    "n": 5
   },
   {
@@ -808,11 +818,6 @@
    "n": 4
   },
   {
-   "from": "pt:vicky:journalist-connections",
-   "to": "pt:dinis:journalist",
-   "n": 4
-  },
-  {
    "from": "pt:dinis:synthetic",
    "to": "pt:dinis:journalist",
    "n": 4
@@ -836,6 +841,11 @@
    "from": "newsroom@web-summit.dinis",
    "to": "conductor@web-summit.dinis",
    "n": 4
+  },
+  {
+   "from": "pt:vicky:checker",
+   "to": "pt:vicky:journalist-ai",
+   "n": 3
   },
   {
    "from": "pt:vicky:programme",
@@ -893,6 +903,16 @@
    "n": 3
   },
   {
+   "from": "pt:vicky:checker",
+   "to": "pt:vicky:journalist-portugal",
+   "n": 2
+  },
+  {
+   "from": "pt:vicky:checker",
+   "to": "pt:angelo:writer",
+   "n": 2
+  },
+  {
    "from": "pt:angelo:writer",
    "to": "pt:dinis:designer",
    "n": 2
@@ -920,16 +940,6 @@
   {
    "from": "pt:jose:writer",
    "to": "pt:dinis:security",
-   "n": 2
-  },
-  {
-   "from": "pt:vicky:checker",
-   "to": "pt:vicky:journalist-ai",
-   "n": 2
-  },
-  {
-   "from": "pt:vicky:checker",
-   "to": "pt:vicky:reviewer",
    "n": 2
   },
   {
@@ -1023,6 +1033,31 @@
    "n": 2
   },
   {
+   "from": "pt:vicky:reviewer",
+   "to": "pt:vicky:journalist-connections",
+   "n": 1
+  },
+  {
+   "from": "pt:vicky:curator",
+   "to": "pt:vicky:journalist-connections",
+   "n": 1
+  },
+  {
+   "from": "pt:vicky:checker",
+   "to": "pt:vicky:journalist",
+   "n": 1
+  },
+  {
+   "from": "pt:angelo:writer",
+   "to": "pt:dinis:conductor.b",
+   "n": 1
+  },
+  {
+   "from": "pt:angelo:writer",
+   "to": "pt:angelo:policy",
+   "n": 1
+  },
+  {
    "from": "pt:dinis:conductor.b",
    "to": "pt:dinis:dev.graphs",
    "n": 1
@@ -1050,16 +1085,6 @@
   {
    "from": "pt:vicky:checker",
    "to": "pt:vicky:journalist-connections",
-   "n": 1
-  },
-  {
-   "from": "pt:vicky:checker",
-   "to": "pt:vicky:journalist-portugal",
-   "n": 1
-  },
-  {
-   "from": "pt:vicky:checker",
-   "to": "pt:angelo:writer",
    "n": 1
   },
   {
