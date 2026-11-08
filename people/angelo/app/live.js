@@ -76,6 +76,11 @@
 /* display mode (?display=1): the graph alone, filling the screen, for a screen left on for days (spec-realtime.md) */
 .lv-display { position: fixed; inset: 0; z-index: 300; background: var(--rm-bg, #07111F); }
 .lv-display .lv { cursor: none; }
+/* transparent=1 (dev.app@'s hexagonal app): no background anywhere, only the display layer shown, so a shaped window shows the desktop at the corners */
+html.lv-transparent, html.lv-transparent body { background: transparent !important; }
+html.lv-transparent body *:not(.lv-display-clear):not(.lv-display-clear *) { visibility: hidden; }
+html.lv-transparent .lv-display-clear { visibility: visible; }
+.lv-display-clear, .lv-display-clear .lv { background: transparent; }
 /* 3D (d3=1): the WebGL view inside the same hexagon; the SVG keeps the rim and the floor */
 .lv-3d { position: absolute; inset: 0; clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%); touch-action: none; cursor: grab; }
 .lv-3d:active { cursor: grabbing; }
@@ -377,6 +382,7 @@
     const fsOf = e => e.requestFullscreen ? () => e.requestFullscreen() : e.webkitRequestFullscreen ? () => e.webkitRequestFullscreen() : null
     const is3d = () => { try { return /(^|[?&])d3=1(&|$)/.test(root.location.search.slice(1)) || /[?&]d3=1(&|$)/.test(root.location.hash) } catch { return false } }
     const isDisplay = () => { try { return /(^|[?&])display=1(&|$)/.test(root.location.search.slice(1)) || /[?&]display=1(&|$)/.test(root.location.hash) } catch { return false } }
+    const isTransparent = () => { try { return /(^|[?&])transparent=1(&|$)/.test(root.location.search.slice(1)) || /[?&]transparent=1(&|$)/.test(root.location.hash) } catch { return false } }
     // display mode keeps the screen awake where the browser allows it (asked again whenever the page is shown) and reloads every
     // six hours, at a moment with nothing in flight, so a screen left on for days returns all its memory
     let lock = null, reloadAt = 0
@@ -385,6 +391,7 @@
         if (current) { current.destroy(); current = null }
         if (!document.getElementById('lv-css')) { stylesInto(document); document.head.lastChild.id = 'lv-css' }
         host.innerHTML = '<div class="lv-display" data-lv-display></div>'
+        if (isTransparent()) { document.documentElement.classList.add('lv-transparent'); host.querySelector('[data-lv-display]').classList.add('lv-display-clear') }
         current = mount(host.querySelector('[data-lv-display]'), { ...o, win: root, d3: is3d(), bare: true })
         wake(); if (!root.__lvWake) { root.__lvWake = true; document.addEventListener('visibilitychange', wake) }
         // no controls; Esc leaves display mode for the normal view
