@@ -46,3 +46,7 @@ state: ok; done: /how-we-publish/ summary; next: none until Vicky asks; ask: non
 - /how-we-publish/ is no longer a draft (3d8e5c1, released v0.1.336, live in v0.1.337, For: checker@PrompTugal.vicky): the "Draft for comments" note removed from the top of the page, "a draft for comments" removed from the /about/ line that links to it, and the gate check that wanted the word "draft" removed (the check that the page is built from the file stays). In step with checker@PrompTugal.vicky, which had set the file to status: published at 20:14 (30c53881). Checked live: no "Draft for comments" on either page; the /about/ line ends at the link.
 
 state: ok; done: /how-we-publish/ published; next: none until Vicky asks; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 02:30 UTC (dev@PrompTugal.vicky)
+
+- The Live AI Office at /people/vicky/office/ built and tested, not pushed: 19 original pixel characters, five states from status.json and the viewer's clock, legend, newsroom strip, banner; licence audit in people/vicky/office/CREDITS.md (all original, no third-party art or code); gate OK, no keyring.js; screenshots at 390 px and 1440 px sent to Vicky; key dev-vicky-promptugal added to data/keys.json. Applied SA21. state: partial; done: office built and tested; next: release at Vicky's approval of the screenshots; ask: Vicky, approve the screenshots so I can release (I recommend yes); run: prompted
