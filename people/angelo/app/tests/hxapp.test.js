@@ -1,8 +1,9 @@
 const { chromium } = require('playwright'); const fs = require('fs'); const path = require('path')
 const S = process.argv[2], B = 'http://127.0.0.1:8765/people/angelo/app/', U = B + 'desktop/index.html'
-// backlog 00a, the live graph as a hexagonal app (dev.app@PrompTugal.angelo): (1) the download page and install guide, at
-// 1280 and 390 px, light and dark: its three ways, the first-open steps for unsigned apps, how to use it (the ⚙ and ✕ controls, Calm on at first), no sideways scroll, the web app
-// manifest valid with its start_url on the display mode and every icon loading at its size; (2) opened as a Home Screen app
+// backlog 00a, the live graph as a hexagonal app (dev.app@PrompTugal.angelo; the desktop app dropped 8 November, desk be9b735):
+// (1) the page, at 1280 and 390 px, light and dark: its three ways (pop-out, display mode, Home Screen), the desktop app
+// marked dropped, no installer offered or linked, no sideways scroll, the web app manifest valid with its start_url on the
+// display mode and every icon loading at its size; (2) opened as a Home Screen app
 // (standalone) the page goes straight to the display mode, the same page as the pop-out; (3) the desktop app's own start-up
 // script (INIT in desktop/src-tauri/src/main.rs, run here in Chromium): on a transparent window the corners stay clear and
 // the hexagon is drawn, the graph moves, and Esc does not leave display mode; (4) its calm setting (15 frames a second).
@@ -16,24 +17,13 @@ const INIT = (fs.readFileSync(path.join(__dirname, '../desktop/src-tauri/src/mai
    const icons = man ? await Promise.all(man.icons.map(i => new Promise(res => { const im = new Image(); im.onload = () => res(`${im.naturalWidth}x${im.naturalHeight}` === i.sizes); im.onerror = () => res(false); im.src = new URL(i.src, m.href) }))) : []
    const t = document.body.innerText
    return { man: !!man, start: man && new URL(man.start_url, m.href).href, scope: man && new URL(man.scope, m.href).pathname, display: man && man.display, icons, apple: !!document.querySelector('link[rel=apple-touch-icon]') && !!document.querySelector('meta[name=apple-mobile-web-app-capable]'),
-    ways: ['desktop', 'ipad', 'browser'].every(id => document.getElementById(id)), mac: /Open Anyway/.test(t) && /right-click/.test(t), win: /More info/.test(t) && /Run anyway/.test(t), use: /⚙/.test(t) && /✕/.test(t) && /Calm, on at first/.test(t), scrollX: document.documentElement.scrollWidth - innerWidth,
+    ways: ['browser', 'display', 'ipad', 'desktop'].every(id => document.getElementById(id)), dropped: /dropped/i.test(document.getElementById('desktop').innerText) && /nothing to download/i.test(t),
+    none: !document.getElementById('hx-dl') && !document.querySelector('a[download], a[href*="dl/"], a[href$=".exe"], a[href$=".dmg"]') && !/Run anyway|Open Anyway/.test(t), scrollX: document.documentElement.scrollWidth - innerWidth,
     live: !!document.querySelector('a[href="../index.html#live"]'), disp: !!document.querySelector('a[href="../index.html?display=1#live"]') } })
   await p.screenshot({ path: `${S}/hxapp-${n}-${scheme}.png`, fullPage: true })
   console.log(n, scheme, JSON.stringify(r), errs)
-  if (!r.man || !/\/people\/angelo\/app\/index\.html\?display=1#live$/.test(r.start) || r.scope !== '/people/angelo/app/' || r.display !== 'standalone' || r.icons.length < 3 || !r.icons.every(Boolean) || !r.apple || !r.ways || !r.mac || !r.win || !r.use || r.scrollX > 0 || !r.live || !r.disp || errs.length) fail(`page ${n} ${scheme}`)
+  if (!r.man || !/\/people\/angelo\/app\/index\.html\?display=1#live$/.test(r.start) || r.scope !== '/people/angelo/app/' || r.display !== 'standalone' || r.icons.length < 3 || !r.icons.every(Boolean) || !r.apple || !r.ways || !r.dropped || !r.none || r.scrollX > 0 || !r.live || !r.disp || errs.length) fail(`page ${n} ${scheme}`)
   await p.close() }
- // (1b) the downloads, served from this site (the kit's "Our own website first"): none until dl/builds.json lists one; then a
- // link per installer, under dl/ on this site, and nothing else (a bad entry, another host, is dropped)
- { const c = await b.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: 'block' }); const p = await c.newPage(); const errs = []; p.on('pageerror', e => errs.push(e.message))
-  await p.goto(U, { waitUntil: 'networkidle' }); const before = await p.evaluate(() => ({ none: /Not built yet/.test(document.getElementById('hx-dl').innerText), links: document.querySelectorAll('#hx-dl a[download]').length }))
-  await p.route('**/desktop/dl/builds.json', r => r.fulfill({ contentType: 'application/json', body: JSON.stringify({ built: '2026-11-08T14:00:00Z', commit: '0123456789abcdef', files: [{ os: 'Mac', file: 'Team-and-the-machine-mac.dmg', bytes: 9.6e6 }, { os: 'Windows', file: 'Team-and-the-machine-windows-setup.exe', bytes: 4.2e6 }, { os: 'Mac', file: 'https://example.com/x.dmg' }, { os: 'Linux', file: 'x.AppImage' }] }) }))
-  await p.reload({ waitUntil: 'networkidle' }); await p.waitForSelector('#hx-dl a[download]', { timeout: 5000 }).catch(() => { })
-  const after = await p.evaluate(() => ({ hrefs: [...document.querySelectorAll('#hx-dl a')].map(a => a.href), none: /Not built yet/.test(document.getElementById('hx-dl').innerText), note: document.getElementById('hx-dl').innerText, scrollX: document.documentElement.scrollWidth - innerWidth }))
-  await p.screenshot({ path: `${S}/hxapp-downloads.png`, fullPage: true })
-  console.log('downloads', JSON.stringify({ before, after }), errs)
-  const own = h => h.startsWith(B + 'desktop/dl/')
-  if (!before.none || before.links || after.none || after.hrefs.length !== 2 || !after.hrefs.every(own) || !/\(9 MB\)/.test(after.note) || !/0123456/.test(after.note) || after.scrollX > 0 || errs.length) fail('downloads')
-  await c.close() }
  // (2) the Home Screen app: standalone goes to the display mode
  { const c = await b.newContext({ viewport: { width: 1024, height: 768 }, serviceWorkers: 'block' }); await c.addInitScript(() => Object.defineProperty(navigator, 'standalone', { get: () => true }))
   const p = await c.newPage(); await p.goto(U); await p.waitForSelector('.lv-display .lv-svg', { timeout: 15000 }).catch(() => { })
