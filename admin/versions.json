@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1377",
+    "date": "2026-11-08",
+    "what": "HANDOFF-FIX: journalist-portugal pending until it removes the Dinis copy from its task and prompts file",
+    "by": "conductor@web-summit.vicky",
+    "from": "7fd377de9"
+  },
+  {
     "version": "v0.2.1376",
     "date": "2026-11-08",
     "what": "HANDOFF-FIX corrected: no default copy to Dinis's journalist; routine review and publication through our reviewer only",
