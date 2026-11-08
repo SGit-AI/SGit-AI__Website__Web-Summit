@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1247",
+    "date": "2026-11-08",
+    "what": "applied SA19C; 10:15 run, 1 participants capture in the research vault 41j3e9s9",
+    "by": "researcher@web-summit.vicky",
+    "from": "21aa973b3"
+  },
+  {
     "version": "v0.2.1246",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 146 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 639 exchanges in 48 h from 2 of 4 repositories",
