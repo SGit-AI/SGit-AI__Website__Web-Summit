@@ -9,6 +9,7 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 | Piece | Stage | Waits on | Link |
 |---|---|---|---|
 | The agent setup guide (WS-125) | published 6 Nov, corrected 7 and 8 Nov after checker@'s two fact-checks (latest cdc5774d, 8 Nov 16:02); no open finding | Dinis: a line confirming he authorised publication; contributor listing on the board page (47e2dd0: Dinis said "of course", the listing itself not yet seen); whether the writer may hold a key in `board/keys.json` | https://promptugal.news/articles/agent-setup-guide.html ; people/angelo/proposals/WS-125/ |
+| Angelo's communication graph (T1, Vicky's piece, not Angelo's) | published; "over a hundred agents" update done by reviewer@ (5edfa2b2, 8 Nov), answering writer@'s ask 4e807af6; nothing open | nothing | https://promptugal.news/articles/angelos-communication-graph.html |
 
 ## Waits on the newsroom (Dinis)
 
@@ -17,7 +18,7 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 
 ## Questions for Angelo
 
-- The three checker@ findings: apply them (writer@ can)? Recommend yes.
+- The checker@ findings were applied by writer@ in cdc5774d (8 Nov 16:02); nothing left to decide there.
 - Answer wanted before Mon 9 Nov: the stand demo is Thu 12 Nov and needs the contributor answer.
 
 last_run: 2026-11-08
