@@ -2,7 +2,7 @@
 title: "dev@PrompTugal.angelo: STATE"
 summary: What dev@PrompTugal.angelo holds open, what it waits on, and its open questions, kept short (the kit's Context rules). Read first at every run.
 ---
-**Last updated:** 8 November 2026, about 16:20 UTC (Angelo: "Wake up"). From 251d793b: dashboard@ reviews dev.map, dev.work and dev.app; I review dev.venues, dev.links, research, dev.abp, social-media (and dev.android once it runs). Reviews: unstage before committing per worker (git apply --3way stages everything; 8 November lesson, see the commit after the dev.map review of 8 November 10:15).
+**Last updated:** 8 November 2026, about 16:30 UTC (Angelo answered four questions in this session: see the commit after 1da27b26). From 251d793b: dashboard@ reviews dev.map, dev.work and dev.app; I review dev.venues, dev.links, research, dev.abp, social-media (and dev.android once it runs). Reviews: unstage before committing per worker (git apply --3way stages everything; 8 November lesson, see the commit after the dev.map review of 8 November 10:15).
 
 ## Every run (the routine)
 
