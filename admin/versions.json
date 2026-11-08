@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1347",
+    "date": "2026-11-08",
+    "what": "WS-194 step 1: a subject typed at the booth becomes a signed, sealed request on xray@'s new lane",
+    "by": "dev@web-summit.silvio",
+    "from": "361a19caf"
+  },
+  {
     "version": "v0.2.1346",
     "date": "2026-11-08",
     "what": "Legora added to WS-137's demo pack; all four checked on websummit.com; three asks on the 18:00 stand-up",
