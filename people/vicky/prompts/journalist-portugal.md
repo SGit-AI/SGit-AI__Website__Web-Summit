@@ -43,7 +43,7 @@ Reporting: after each draft, add a short line to people/vicky/reports/[Name].md 
 Start now: set up your key, then write your first story. Before writing, check its sources at their own addresses; if they're too thin, tell me instead of writing.
 ```
 
-## Scheduled task's prompt (from 6 November 2026; daily at 08:06, 12:06, 16:06 and 20:06 UTC since SCHED-7NOV (four rounds); P1 to P3 added 7 November at standing answer 16)
+## Scheduled task's prompt (step 5 changed 8 November at HANDOFF-FIX; from 6 November 2026; daily at 08:06, 12:06, 16:06 and 20:06 UTC since SCHED-7NOV (four rounds); P1 to P3 added 7 November at standing answer 16)
 
 **From 8 Nov midday (standing answer 22, connections first):** writing at :57 past 05, 10, 14, 18 UTC; fix-only at :02 past 07, 12, 16, 20 UTC (`trig_015W8aURM2zEyH9Sd9gJvzNx`), both set by the conductor at Vicky's word.
 
@@ -55,7 +55,7 @@ Scheduled run for journalist-portugal@PrompTugal.vicky:
 2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
 3. Read desks/journalist-vicky/STYLE.md.
 4. Read desks/curator/README.md and pick the storylines in your beat that have no draft yet in desks/journalist-vicky/drafts/, desks/journalist-promptugal/drafts/ or content/articles/.
-5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: journalist@PrompTugal.dinis.
+5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: reviewer@PrompTugal.vicky (the review hand-off), with For: journalist@PrompTugal.dinis as a copy.
 6. If there's nothing new in your beat, write nothing.
 7. Add a report line in people/vicky/reports/journalist-portugal.md on the team site.
 Never push to main, never use --force, never push to a session branch.
