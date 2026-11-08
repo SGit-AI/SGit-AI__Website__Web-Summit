@@ -41,6 +41,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Open with Angelo (the desk's list)
 
+- Tasks checked 8 Nov about 09:50 UTC (list_triggers): dev.work@ (hourly :50) and dev.app@ (hourly :05) created by Angelo, Opus by name; dev.venues@ and vault.kms@ now Opus by name; dev.abp@ Opus. Still slower than recommended: dev.map@ every 2 h, dev.abp@ every 2 h, research@ every 3 h (desk recommended hourly, 10:20).
+
 - dev.abp@PrompTugal.angelo created and run by Angelo (8 Nov about 09:15 UTC: "dev.abp is on, and I manually activated it now"). First job: the two demo modes' design (backlog 00d). Still open from the morning: the hexagonal app spec (00a), external systems icons (00b: three provable now; a Used: trailer is a protocol change), writer@'s factual replies to dev.verify's flags (recommend yes), dev.venues@ and vault.kms@ to Opus by name, who Angelo meets in the next 48 hours (for research@).
 
 - Stand-up series end today (team-collaboration@, 8186810, daily note WS-97): extend them through the summit, change the times, or stop? Calendar is tier 3, Angelo's word needed; no decision recorded in 24 h; WS-48 and WS-26 still to settle before Monday.
