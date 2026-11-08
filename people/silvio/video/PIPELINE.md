@@ -10,6 +10,9 @@ Sources, read 5 November 2026: `content/videos.md` (the pipeline table), `data/v
 |---|---|---|---|
 | The stand loop, six languages | 67 s each | checked, final | vault `ws-team-videos` (h9in5em4), `stand-loop/` |
 | Your AI has access. Does it have permission? | 30 s, subtitled | checked, final | the vault, `access-permission-30s/`; Silvio's Drive original to upload |
+| An X-ray, in 30 seconds (WS-197) | 30 s, silent | checked, final, for Silvio's yes | the vault, `xray-30s/` |
+| The demo is us | 47 s, silent | checked, final, for Silvio's yes | the vault, `the-demo-is-us/` |
+| The Licence to Operate, in 30 seconds | 30 s, square and 16:9 | checked, final, for Silvio's yes | the vault, `licence-to-operate-30s/` |
 | Reach, Mandate, Gap | 53 s | **on hold: errors in frames** | not in the vault (PUBLISH.md says which) |
 | RiskMandate Stories: fifty new agents | 2 min 44 s | **on hold: a label over its title** | not in the vault |
 
