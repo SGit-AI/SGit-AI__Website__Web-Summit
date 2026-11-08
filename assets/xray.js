@@ -8,7 +8,8 @@
 // action against the mandate and grows the record. RiskMandate is never in the request path: read-only by design, so
 // nothing here ever shows it blocking, stopping or denying anything. Booth mode: ?booth=1 or the toggle (full screen,
 // larger type, an attract loop after 60 s idle, back to the input on any touch). prefers-reduced-motion skips to the
-// end state. No libraries, no network calls but this site's own data, and nothing typed is stored or sent.
+// end state. No libraries, no network calls but this site's own data, and nothing typed is stored or sent, except a
+// subject a team member chooses to request (WS-194): sealed in the browser to xray@'s key and appended to its lane.
 (() => {
     'use strict'
     const mount = document.getElementById('xray'); if (!mount) return
@@ -46,9 +47,47 @@
         }
         return best
     }
-    // The booth's request path (WS-194, Silvio's team): not wired yet. It stores nothing anywhere (no localStorage of
-    // what was typed, no network call) and never collects an email. WS-194 wires it to the real request queue.
-    function requestXray(subject) { void subject; return { status: 'not-wired' } }
+    // The booth's request path (WS-194, dev@web-summit.silvio, 8 November 2026, at Silvio's word; for xray@ to review).
+    // Only when a team member presses "Request": the subject (a company, a use case or an industry; never a person's
+    // name, an email, a phone number or a link) is signed with their key in this browser (assets/keyring.js), sealed to
+    // xray@'s public key exactly as the feedback pane seals (sgit hybrid v2, byte-compatible with PKI__Crypto) and
+    // appended to xray@'s write-only lane (assets/feedback.json, made with admin/tools/lane_for.py). xray@ drains it at
+    // its wake (admin/tools/feedback_drain.py), runs the subject and publishes it. Nothing is kept in this browser and no
+    // key that can read anything is in the page. Resolves to {status: queued|refused|no-key|no-lane|failed, id?, why?}.
+    const XRAY_AGENT = 'xray@web-summit.dinis'
+    let laneCfg = null
+    const lane = () => laneCfg || (laneCfg = fetch(`${up}assets/feedback.json`, { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(j => ((j && j.lanes) || []).find(l => l.agent === XRAY_AGENT) || null).catch(() => null))
+    const b64 = bytes => { let s = ''; for (const b of new Uint8Array(bytes)) s += String.fromCharCode(b); return btoa(s) }
+    const unpem = pem => Uint8Array.from(atob(pem.replace(/-----[^-]+-----/g, '').replace(/\s/g, '')), c => c.charCodeAt(0))
+    async function seal(pem, text) {
+        const subtle = crypto.subtle
+        const pub = await subtle.importKey('spki', unpem(pem), { name: 'RSA-OAEP', hash: 'SHA-256' }, false, ['encrypt'])
+        const aes = await subtle.generateKey({ name: 'AES-GCM', length: 256 }, true, ['encrypt'])
+        const iv = crypto.getRandomValues(new Uint8Array(12))
+        const c = await subtle.encrypt({ name: 'AES-GCM', iv, tagLength: 128 }, aes, new TextEncoder().encode(text))
+        const w = await subtle.encrypt({ name: 'RSA-OAEP' }, pub, await subtle.exportKey('raw', aes))
+        return btoa(JSON.stringify({ v: 2, w: b64(w), i: b64(iv), c: b64(c) }))
+    }
+    async function requestXray(subject) {
+        subject = String(subject || '').replace(/\s+/g, ' ').trim()
+        if (subject.length < 2 || subject.length > 80) return { status: 'refused', why: 'a subject is 2 to 80 characters' }
+        if (/@|https?:|www\.|\d[\d\s().+-]{6,}/i.test(subject)) return { status: 'refused', why: 'a company, a use case or an industry only: never an email, a phone number or a link' }
+        const KR = window.WSKeyring
+        if (KR && KR.ready) await KR.ready.catch(() => {})
+        if (!KR || !KR.person) return { status: 'no-key', why: 'requests are sent by the team: add your key to this browser (the start page)' }
+        const cfg = await lane()
+        if (!cfg || !(window.crypto && crypto.subtle)) return { status: 'no-lane', why: 'the request lane could not be loaded' }
+        const at = new Date().toISOString()
+        const id = at.replace(/[-:]/g, '').replace(/\.\d+Z$/, 'Z') + '-' + b64(crypto.getRandomValues(new Uint8Array(3))).replace(/[^A-Za-z0-9]/g, 'x').toLowerCase()
+        const request_json = JSON.stringify({ v: 1, id, subject, at, by_booth: document.documentElement.classList.contains('xr-booth-on') })
+        try {
+            const signed = { person: KR.person, key: KR.fingerprint, alg: 'ECDSA-P256-SHA256-P1363', sig: await KR.sign(request_json) }
+            const enc = await seal(cfg.recipient.encrypt, JSON.stringify({ type: 'web-summit.xray-request/v1', to: XRAY_AGENT, site: location.origin, sent_at: at, from: `${KR.person} (signed with their key in this browser)`, request_json, signed }))
+            const r = await fetch(`${cfg.host}/api/vault/append/write/${cfg.vault_id}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ append_token: cfg.append_token, payload: btoa(enc) }) })
+            if (!r.ok) return { status: 'failed', why: r.status === 507 ? 'the lane is full: xray@ has not drained it yet' : `the lane said ${r.status}` }
+            return { status: 'queued', id }
+        } catch (e) { return { status: 'failed', why: String((e && e.message) || e) } }
+    }
 
     // ---------- the timeline: events at times, frame functions, and particles along paths ----------
     function Timeline() {
@@ -453,9 +492,16 @@ ${INDEX.length ? `<div class="xr-chips" role="group" aria-label="Already X-rayed
 <ul class="xr-stats"><li><b>${(x.agents || []).length}</b>AI agents</li><li><b>${ucs.length}</b>use cases</li><li><b>${reach}</b>things they can reach</li><li class="gap"><b>${gaps}</b>in the gap</li><li><b>${(x.sources || []).length}</b>sources read</li>${typeof (x.run || {}).cost_usd === 'number' ? `<li><b>${money(x.run.cost_usd)}</b>run cost</li>` : ''}</ul>
 <p class="xr-links"><a class="xr-btn" href="${up}xray/${encodeURIComponent(x.slug || hit.slug)}/index.html">Open the full X-ray →</a><a class="xr-btn ghost" href="${up}xray/${encodeURIComponent(x.slug || hit.slug)}/deck/index.html">Open the deck</a><a class="xr-btn ghost" href="${up}xray/${encodeURIComponent(x.slug || hit.slug)}/run/index.html">How it was made</a></p>`
             } else {
-                const r = requestXray(q)
-                result.innerHTML = `<p class="xr-k">Not X-rayed yet</p><h2 class="xr-h">${esc(q)}</h2><p class="xr-tag">Not on our list yet. Soon a name typed here becomes a request our agents run between visits, so you can come back in an hour; that path is being built now.</p><p class="xr-cap">${hit && hit.status !== 'prepared' ? `${esc(hit.subject)} is ${esc(hit.status)}, not ready yet. ` : ''}The request path from the booth is being built (WS-194); for now nothing was stored or sent (${esc(r.status)}).${prepared.length ? ' Try one that is ready:' : ''}</p>${prepared.length ? `<div class="xr-chips">${prepared.map(s => `<button type="button" class="xr-chip" data-slug="${esc(s.slug)}"><b>${esc(s.subject)}</b><span>${esc(s.kind)}</span></button>`).join('')}</div>` : ''}`
+                result.innerHTML = `<p class="xr-k">Not X-rayed yet</p><h2 class="xr-h">${esc(q)}</h2><p class="xr-tag">Not on our list yet. Ask our agents to X-ray it: they run it between visits, so you can come back later.</p><p class="xr-links"><button type="button" class="xr-btn xr-request">Request an X-ray of ${esc(clip(q, 40))}</button></p><p class="xr-cap xr-req-status" role="status">${hit && hit.status !== 'prepared' ? `${esc(hit.subject)} is ${esc(hit.status)}, not ready yet. ` : ''}Nothing is sent until you press Request: a company, a use case or an industry, never a person's name or an email.${prepared.length ? ' Or try one that is ready:' : ''}</p>${prepared.length ? `<div class="xr-chips">${prepared.map(s => `<button type="button" class="xr-chip" data-slug="${esc(s.slug)}"><b>${esc(s.subject)}</b><span>${esc(s.kind)}</span></button>`).join('')}</div>` : ''}`
                 result.querySelectorAll('.xr-chip').forEach(bindChip)
+                const rb = result.querySelector('.xr-request'), rs = result.querySelector('.xr-req-status')
+                rb.addEventListener('click', async () => {
+                    rb.disabled = true; rb.textContent = 'Sealing and sending…'
+                    const r = await requestXray(q)
+                    rb.textContent = r.status === 'queued' ? 'Requested' : 'Request an X-ray'
+                    rb.disabled = r.status === 'queued'
+                    rs.textContent = r.status === 'queued' ? `Requested (${r.id}). Our X-ray agent runs it at its next wake; come back to this page later.` : `Not sent: ${r.why || r.status}.`
+                })
             }
             if (onRunEnd) onRunEnd()
         } })
