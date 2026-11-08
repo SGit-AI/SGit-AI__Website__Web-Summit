@@ -1,5 +1,180 @@
 [
   {
+    "version": "v0.2.1276",
+    "date": "2026-11-08",
+    "what": "the vault's tap-to-use hint on a phone is a readable pill",
+    "by": "dashboard@web-summit.vicky",
+    "from": "a2c9e0124"
+  },
+  {
+    "version": "v0.2.1275",
+    "date": "2026-11-08",
+    "what": "12:30 wake: quiet; WS-75 off Indi's list (done by video@web-summit.silvio, 5187f993)",
+    "by": "dashboard@web-summit.indi",
+    "from": "f3be24c98"
+  },
+  {
+    "version": "v0.2.1274",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: report, 12:20 re-check: S28 Ready",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "64fe71ec2"
+  },
+  {
+    "version": "v0.2.1273",
+    "date": "2026-11-08",
+    "what": "the stand loop sharper, one video per language, and a stand page to choose the language",
+    "by": "video@web-summit.silvio",
+    "from": "174c2ab26"
+  },
+  {
+    "version": "v0.2.1272",
+    "date": "2026-11-08",
+    "what": "journalist-connections@PrompTugal.vicky: report, S28 fixed (fix-only run)",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "acae0e2d9"
+  },
+  {
+    "version": "v0.2.1271",
+    "date": "2026-11-08",
+    "what": "Vicky's dashboard: an Open the Live AI Office link under the agent graph; My vault stays open",
+    "by": "dashboard@web-summit.vicky",
+    "from": "f96e25f4f"
+  },
+  {
+    "version": "v0.2.1270",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: backlog: dev@'s finished items struck; venues waits on security; dev.abp@ unblocked",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "980905abb"
+  },
+  {
+    "version": "v0.2.1269",
+    "date": "2026-11-08",
+    "what": "dashboard@PrompTugal.angelo: reviewer of the map and app workers from today; the first three reviews in",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "52a333d40"
+  },
+  {
+    "version": "v0.2.1268",
+    "date": "2026-11-08",
+    "what": "RiskMandate explained, redone in the X-ray's visual language, with a simulation and PT/EN",
+    "by": "conductor@web-summit.silvio",
+    "from": "bb63b1991"
+  },
+  {
+    "version": "v0.2.1267",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: 3D: messages invisible in replay; the live 3D spins a little faster",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "57521efee"
+  },
+  {
+    "version": "v0.2.1266",
+    "date": "2026-11-08",
+    "what": "WS-166: Vicky's key in all her browsers; two notes on adding a key from a phone",
+    "by": "conductor@web-summit.vicky",
+    "from": "f379d5a9b"
+  },
+  {
+    "version": "v0.2.1265",
+    "date": "2026-11-08",
+    "what": "11:40 wake: lane counted, not drained (no token of my own yet); feedback-count.json refreshed",
+    "by": "vault@web-summit.jose",
+    "from": "5f6df12e0"
+  },
+  {
+    "version": "v0.2.1264",
+    "date": "2026-11-08",
+    "what": "team-collaboration@PrompTugal.angelo: the brief for the 12:00, the last before the summit",
+    "by": "team-collaboration@PrompTugal.angelo",
+    "from": "325b1260f"
+  },
+  {
+    "version": "v0.2.1263",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: hand dev.map, dev.work and dev.app's reviews to dashboard@; snapshots",
+    "by": "dev@PrompTugal.angelo",
+    "from": "a276b6d32"
+  },
+  {
+    "version": "v0.2.1262",
+    "date": "2026-11-08",
+    "what": "internal: Portuguese organisations' public problems and contacts, sealed to the team",
+    "by": "conductor@web-summit.silvio",
+    "from": "c18b2aabb"
+  },
+  {
+    "version": "v0.2.1261",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: report, 11:15 run: S28 Fix first",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "26ed3c959"
+  },
+  {
+    "version": "v0.2.1260",
+    "date": "2026-11-08",
+    "what": "three new films for the stand and LinkedIn, in the videos vault: the X-ray, the demo is us, the Licence",
+    "by": "video@web-summit.silvio",
+    "from": "5187f993b"
+  },
+  {
+    "version": "v0.2.1259",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: dashboard@ reviews the map and app workers, hourly; the ABP demo design approved",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "251d793b2"
+  },
+  {
+    "version": "v0.2.1258",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: run 11:20 UTC: nothing to route, social-media questions to Angelo's list Scheduled run. Agent: runner.conductor@PrompTugal.angelo",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "3084f7903"
+  },
+  {
+    "version": "v0.2.1257",
+    "date": "2026-11-08",
+    "what": "the incidents list is internal: removed from the public site, sealed to the team's keys",
+    "by": "conductor@web-summit.silvio",
+    "from": "bbff77ec1"
+  },
+  {
+    "version": "v0.2.1256",
+    "date": "2026-11-08",
+    "what": "journalist-connections@PrompTugal.vicky: report, S28 drafted; SA19B and SA19C applied",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "5c225df39"
+  },
+  {
+    "version": "v0.2.1255",
+    "date": "2026-11-08",
+    "what": "journalist-ai@PrompTugal.vicky: scheduled run, 11:05 UTC: idle",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "ce7099381"
+  },
+  {
+    "version": "v0.2.1254",
+    "date": "2026-11-08",
+    "what": "journalist-europe@PrompTugal.vicky: scheduled run 10:57, idle",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "b4d20ceb8"
+  },
+  {
+    "version": "v0.2.1253",
+    "date": "2026-11-08",
+    "what": "journalist-portugal@PrompTugal.vicky: scheduled run, idle",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "eb0942bfe"
+  },
+  {
+    "version": "v0.2.1252",
+    "date": "2026-11-08",
+    "what": "journalist@PrompTugal.vicky: report, 10:45 UTC run idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "de9d3a57b"
+  },
+  {
     "version": "v0.2.1251",
     "date": "2026-11-08",
     "what": "the 84 companies committed in my clone of the public CRM; only a token is missing to push both CRMs",

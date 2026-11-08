@@ -8,6 +8,7 @@ This page is Silvio's, kept by Silvio and Silvio's agents in `people/silvio/dash
 
 - **My command centre:** [the full view](app/index.html): tasks from the board, workstreams, agents, decisions, Claude and voice, dark and light, phone and desktop.
 - **My media (videos and photos):** [the team's media library](../../media/index.html), and the shared Drive folder for everything else.
+- **RiskMandate explained (PT):** [how it helps, in one page](riskmandate-explicado/index.html): reach, mandate and the gap; the record; who reads it; the problems companies report and how much it helps with each.
 - **My outreach (WS-26):** [the campaign and the buyers](outreach/index.html): 100 companies confirmed at Web Summit, the emails and dates, and a card per buyer.
 - **Competitive analysis:** [who else controls AI agents at Web Summit](competitive/index.html): 11 companies, how each presents itself, and where RiskMandate differs.
 - **Fora da Web Summit / Outside Web Summit:** [269 side events and the team's picks](eventos/index.html), in Portuguese and English.

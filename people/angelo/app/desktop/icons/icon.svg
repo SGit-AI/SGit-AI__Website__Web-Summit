@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <!-- The live graph's app icon: the hexagon (live.js's HEX, scaled in), a few dots and lines. No logo, no text. -->
+  <rect width="1000" height="1000" fill="#07111F"/>
+  <g transform="translate(90 90) scale(0.82)">
+    <path d="M250 67 L750 67 L1000 500 L750 933 L250 933 L0 500 Z" fill="#0E2035" opacity=".9"/>
+    <g stroke="#4aa3ff" stroke-width="10" opacity=".55" fill="none">
+      <path d="M500 500 L330 300 M500 500 L690 290 M500 500 L760 560 M500 500 L620 760 M500 500 L340 720 M500 500 L240 500 M330 300 L690 290 M760 560 L620 760"/>
+    </g>
+    <g fill="#3ecf8e"><circle cx="330" cy="300" r="34"/><circle cx="620" cy="760" r="30"/></g>
+    <g fill="#f5b942"><circle cx="690" cy="290" r="30"/><circle cx="240" cy="500" r="26"/></g>
+    <g fill="#c58cff"><circle cx="760" cy="560" r="32"/><circle cx="340" cy="720" r="28"/></g>
+    <circle cx="500" cy="500" r="46" fill="#4aa3ff"/>
+    <circle cx="595" cy="389" r="14" fill="#ffffff"/>
+    <path d="M250 67 L750 67 L1000 500 L750 933 L250 933 L0 500 Z" fill="none" stroke="#4aa3ff" stroke-width="22" stroke-linejoin="round"/>
+  </g>
+</svg>

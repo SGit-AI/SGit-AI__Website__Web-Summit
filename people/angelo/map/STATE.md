@@ -1,17 +1,17 @@
 # dev.map@PrompTugal.angelo: STATE
 
-Tenth run, 8 November 2026 (08:16 to about 09:10 UTC). Backlog 0c and 0d (the desk's c0c8eb92 and e992b2f1, both pushed by riskmandate-angelo); dev@'s review 36c79ae brought the ninth run's work onto dev.
+Eleventh run, 8 November 2026 (10:17 to about 11:25 UTC). Backlog 0e and 0f (the desk's 08:25 and 08:30 briefs, 9c5d5ac and 2e57bf2, all pushed by riskmandate-angelo); dev@'s review 33a636a brought the tenth run's work onto dev.
 
 ## Done this run (on workers/dev.map, for dev@ to review)
-- 0c: 3D is the live graph. `live3d.js`, a light WebGL renderer on brain-libs.js's three.js (5 draw calls a frame, no ray casting under the mouse: the old 3d-force-graph's lag). `#live?d3=1` and a 3D switch in the live bar; the same engine as 2D (flow, pulses, lit lines, breathing, rings, names). The map's 3D switch draws with it too, with a "Live, in 3D" link. Test `lv3dlive` (about 0.8 ms a frame, 39 to 60 fps while dragging, software GL).
-- 0d: inside the hexagon, both logos (hot-linked from riskmandate.ai and promptugal.news, unchanged), a pulsing LIVE label (amber and still over 30 minutes, grey when unreadable; the freshness dot is gone), the moment shown in the viewer's zone (short form under 300 px). Also painted into Safari's floating video. Test `lvlabel`; live, lvdisp, lvlong now read `.lv-live`.
+- 0e: the map's second layout is "Agents ring" (agents and their work without the work). The live view has a quiet layout switch (upper right of the hexagon box; P / A / W when small), the map's three layouts, in the page and the pop-out, not in display mode; remembered per device, `lv=<layout>` in the address wins; 3D follows. Test `lvlay`. `.lv` lost `overflow: hidden` (Chromium hit-tested the corner buttons as outside it).
+- 0f, part: every declared agent is on the replay (normal) map, in all layouts, the quiet ones (no commit on dev yet) from the start of playback. Test `tmall` (fails on the old code). Options for the fresh-session mark, for Angelo to pick: `people/angelo/proposals/live-map/fresh-mark-options.svg` (A hollow centre, B thin inner ring, C a small moon). The dashed ring stays until he picks.
 
 ## Open
-- Item 00's rest: Safari and iPad untested (no WebKit here); for Angelo: try Pop out and 3D once in Safari.
-- 0d: the logos are other companies' marks on a public page (spec-realtime.md question 3 asked "real logos or plain marks"); Angelo's 8 November note asks for them, so taken as his answer. If they fail to load (offline), they step aside and LIVE stays.
-- Piece 4 (public /team/map/, the daily snapshot) needs build.mjs and the newsroom's article, outside my files: still a question for the desk.
-- Ledger names without a person: 109 rows wait on the desk's answer (ask security@PrompTugal.dinis for full names).
-- 00a waits on spec-live-app.md's approval; 00b on Angelo's yes; `?wallpaper=1` on spec-realtime.md's draft part.
+- 0f's rest: build Angelo's pick of the mark (both views, 3D, the legend "a fresh session each run"). Done this run too: each worker's own commits counted under its name and its For: lines (dev@'s review) drawn, from repos-events.json (48 hours; as fresh as dev@'s last snapshot).
+- lvmsg fails in a fresh shallow session on dev's own tree too (2 sealed messages in its window, it wants 3): dev@'s test, reported.
+- Item 00's rest: Safari and iPad untested (no WebKit here).
+- Piece 4 (public /team/map/) needs build.mjs and the newsroom: a question for the desk.
+- 00a is dev.app@'s now; 0f2 and 0f3 dev.work@'s (live.js and the layouts stay mine).
 
 ## Last run
-Started from dev, joined workers/dev.map with `git merge -s ours`. Next run: same, if dev@ has brought this onto dev. The gate's lane check counts the joined history's old commits locally: run it with LANE_RANGE=<the join commit>..HEAD.
+Started from dev, joined workers/dev.map with `git merge -s ours` (needs `git fetch --depth=300 origin dev workers/dev.map` first in a shallow clone). Gate with LANE_RANGE=<the join commit>..HEAD.
