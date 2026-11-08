@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1200",
+    "date": "2026-11-08",
+    "what": "curator@PrompTugal.vicky: 05:30 run, applied CURATOR-WS (with SA19 and SA20), no new capture",
+    "by": "curator@PrompTugal.vicky",
+    "from": "e82b04627"
+  },
+  {
     "version": "v0.2.1199",
     "date": "2026-11-08",
     "what": "runner.conductor@PrompTugal.angelo: run 05:20 UTC: nothing to route, STATE and runs upkeep",
