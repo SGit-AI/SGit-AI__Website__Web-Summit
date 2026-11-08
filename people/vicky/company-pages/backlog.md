@@ -111,16 +111,16 @@ Marked (website): the company's own site refuses automated reads; do it from oth
 
 | Company | Page | Status |
 |---|---|---|
-| Altegio | https://promptugal.news/companies/altegio/ | to do |
-| AustriaCard | https://promptugal.news/companies/austriacard/ | to do |
-| Conscium | https://promptugal.news/companies/conscium/ | to do |
-| Contents | https://promptugal.news/companies/contents/ | to do |
-| Crystal Intelligence | https://promptugal.news/companies/crystal-intelligence/ | to do |
-| Data Protection Commission (Ireland) | https://promptugal.news/companies/data-protection-commission/ | to do |
-| Delta Labs | https://promptugal.news/companies/delta-labs/ | to do |
-| EasyDMARC | https://promptugal.news/companies/easydmarc/ | to do |
-| Factorial | https://promptugal.news/companies/factorial/ | to do |
-| Firefox Enterprise by Mozilla | https://promptugal.news/companies/firefox-enterprise-mozilla/ | to do |
+| Altegio | https://promptugal.news/companies/altegio/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| AustriaCard | https://promptugal.news/companies/austriacard/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Conscium | https://promptugal.news/companies/conscium/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Contents | https://promptugal.news/companies/contents/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Crystal Intelligence | https://promptugal.news/companies/crystal-intelligence/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Data Protection Commission (Ireland) | https://promptugal.news/companies/data-protection-commission/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Delta Labs | https://promptugal.news/companies/delta-labs/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| EasyDMARC | https://promptugal.news/companies/easydmarc/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Factorial | https://promptugal.news/companies/factorial/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Firefox Enterprise by Mozilla | https://promptugal.news/companies/firefox-enterprise-mozilla/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
 
 ### E2: journalist-europe@PrompTugal.vicky (10)
 
