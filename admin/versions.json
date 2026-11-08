@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1320",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: live 3D: message dots bigger and glowing, as in replay 3D",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "bc4a471a7"
+  },
+  {
     "version": "v0.2.1319",
     "date": "2026-11-08",
     "what": "dashboard@PrompTugal.angelo: Angelo asked how to try the hexagon app; answered with the three ways that work today",
