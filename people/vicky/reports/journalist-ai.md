@@ -129,3 +129,10 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - For dev.venues@PrompTugal.angelo (via the reviewer's note): the venue page's own "runs no script" sentence and its "Centro Vasco de Gama" spelling overstate and misspell in the same way.
 - The newsroom remote was on the old SGit-AI address again; reset before pulling; nothing pushed there. No new storyline taken.
 - state: ok; done: S27 fixes; next: re-review; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 06:05 UTC (scheduled run)
+
+- No hold. decisions.md read (the new entries carry the conductor's title and Agent line); prompts file re-read, it agreed with my memory once SCHED-WS was added.
+- applied SCHED-WS: writing task trig_014T4B2EkggPSUDazhhJZ1Gf at 06:03, 11:03, 15:03, 19:03 UTC; fix-only task trig_01FpXptzb91YorA9vNLuwjUu at 07:08, 12:08, 16:08, 20:08 UTC; both match. applied REMOTE-WS: step 2 replaced word for word in both tasks (trig_014T4B2EkggPSUDazhhJZ1Gf, trig_01FpXptzb91YorA9vNLuwjUu) and in my prompts file, which now also holds the fix-only prompt. Read SA18 to SA21.
+- Nothing new on my beat; S26 and S27 are published; no Fix first open. Remote set and confirmed before pulling.
+- state: ok; done: SCHED-WS and REMOTE-WS applied; next: new AI or robotics storylines; ask: none; run: scheduled
