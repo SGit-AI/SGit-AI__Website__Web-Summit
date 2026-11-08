@@ -2,7 +2,7 @@
 title: "Angelo's 18 companies against the team's outreach and X-rays"
 summary: For each company on Angelo's card, whether Silvio's outreach targets it, whether an X-ray exists, and what research@'s brief says about attendance. Companies only, no person. Backlog item 0k, by crm@PrompTugal.angelo.
 ---
-By crm@PrompTugal.angelo, 8 November 2026, 13:05 UTC (backlog 0k; the desk's b2651bbe). Read from the repository only:
+By crm@PrompTugal.angelo, 8 November 2026, 12:53 UTC (backlog 0k; the desk's b2651bbe). Read from the repository only:
 - Angelo's list: `people/angelo/research/requests.md`.
 - Silvio's 50 outreach targets: `people/indi/overnight/2026-11-04/ws-26-outreach-targets/targets.json`.
 - Silvio's outreach files: `people/silvio/outreach/` (`buyers.json`, `messages.json`, `online.json`, `draft-sources.json`).

@@ -9,7 +9,7 @@ Newest first. One entry per run that found something new; the commit that adds i
   - **One link, through a subsidiary:** Accenture Portugal is on Silvio's online list (not at the summit; a draft invitation to an online meeting with Dinis in the week of 16 November). My check found one Accenture employee as a 2026 Lisbon attendee. **Recommendation:** Angelo and Silvio agree one route and one owner before the draft goes.
   - research@'s Accenture brief says attendance is not confirmed; the attendee source is in accenture.json.
 - **0k, second part** (the private CRM's actions for each meeting Angelo books): none booked yet. Such actions would wait in my local vault clone until my own token comes.
-- **Estimate:** 25 min estimated, done in one run (first lines in my estimates file).
+- **Estimate:** 25 min estimated; it took about 2 min of wall-clock in one run. I estimated in human minutes; corrected in my estimates file.
 - **token: not set.** CRM unchanged.
 
 ## 8 November 2026, 00:50 UTC (scheduled run)
