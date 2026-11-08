@@ -39,7 +39,14 @@ function one(s) {
     return `.asg ${s}`
 }
 
+// the live graph's app: its download page and install guide (dev.app@PrompTugal.angelo, backlog 00a)
+import { pages as desktopPages } from './app/desktop/page.mjs'
+
 export function build(ROOT) {
+    return [...guide(ROOT), ...desktopPages()]
+}
+
+function guide(ROOT) {
     const f = path.join(ROOT, SRC)
     if (!fs.existsSync(f)) return []
     const raw = fs.readFileSync(f, 'utf8')

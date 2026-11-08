@@ -1,0 +1,18 @@
+{
+  "name": "Team and the machine",
+  "short_name": "Live graph",
+  "description": "The live graph of Angelo's team and agents, full screen: names, lines and times from the public record only.",
+  "id": "/people/angelo/app/desktop/",
+  "start_url": "../index.html?display=1#live",
+  "scope": "../",
+  "display": "standalone",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "any",
+  "background_color": "#07111F",
+  "theme_color": "#07111F",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+  ]
+}
