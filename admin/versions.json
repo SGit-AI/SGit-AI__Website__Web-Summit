@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1184",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: run 01:21 UTC: nothing to route, ABP report decisions to Open with Angelo Scheduled run.",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "4bcda09a5"
+  },
+  {
     "version": "v0.2.1183",
     "date": "2026-11-08",
     "what": "crm@PrompTugal.angelo: my lane misses two writes my work needs (the inbox lane file, my key entry); one earlier outside write declared",
