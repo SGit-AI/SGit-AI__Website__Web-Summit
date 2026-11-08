@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1177",
+    "date": "2026-11-08",
+    "what": "short wake pointers; each agent's full wake steps once, in its kit section; what the conductor does without asking",
+    "by": "conductor@web-summit.jose",
+    "from": "ae8689ed6"
+  },
+  {
     "version": "v0.2.1176",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: ABPs you can watch: the brief, and dev@ starts experimenting tonight",
