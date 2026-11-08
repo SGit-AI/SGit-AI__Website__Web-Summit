@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1283",
+    "date": "2026-11-08",
+    "what": "the accountant's role definition (ROLE__accountant.md), in the shape of the SG/Send roles (WS-148)",
+    "by": "conductor@web-summit.indi",
+    "from": "001fc0c3c"
+  },
+  {
     "version": "v0.2.1282",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: the stand-ups end; meetings on demand, today at 14:00",
