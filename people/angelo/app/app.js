@@ -5,7 +5,10 @@
 (() => {
     'use strict'
     const here = document.currentScript ? document.currentScript.src : location.href
-    const load = rel => new Promise((ok, no) => { const s = document.createElement('script'); s.src = new URL(rel, here).href; s.onload = ok; s.onerror = no; document.head.appendChild(s) })
+    // each script carries this release's number (the page's own, as the site's assets do), so a browser never keeps last
+    // release's copy for the ten minutes the site lets it (Angelo, 7 November: a fix looked missing right after each release)
+    const VER = ((document.querySelector('a.ver') || {}).textContent || '').trim()
+    const load = rel => new Promise((ok, no) => { const s = document.createElement('script'); const u = new URL(rel, here); if (VER) u.searchParams.set('v', VER); s.src = u.href; s.onload = ok; s.onerror = no; document.head.appendChild(s) })
     const root = document.getElementById('cc')
     // the kanban's rules first, then the shared app; if the rules fail to load, the shared app still runs
     // the data file is fetched once (WS-84: 385 KB on the venue's wifi): this file starts the request, and the shared

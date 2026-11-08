@@ -1,5 +1,110 @@
 [
   {
+    "version": "v0.2.1179",
+    "date": "2026-11-08",
+    "what": "programme@PrompTugal.vicky: applied PROGRAMME-WS (05:00, the new clone and remote lines, the current decisions.md guard)",
+    "by": "programme@PrompTugal.vicky",
+    "from": "063ea2d15"
+  },
+  {
+    "version": "v0.2.1178",
+    "date": "2026-11-08",
+    "what": "REMOTE-WS, CURATOR-WS and PROGRAMME-WS for the agents to apply; SCHED-WS lines in the prompts files",
+    "by": "conductor@web-summit.vicky",
+    "from": "843617aaf"
+  },
+  {
+    "version": "v0.2.1177",
+    "date": "2026-11-08",
+    "what": "short wake pointers; each agent's full wake steps once, in its kit section; what the conductor does without asking",
+    "by": "conductor@web-summit.jose",
+    "from": "ae8689ed6"
+  },
+  {
+    "version": "v0.2.1176",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: ABPs you can watch: the brief, and dev@ starts experimenting tonight",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "3ce11d774"
+  },
+  {
+    "version": "v0.2.1175",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: the live graph: a hexagonal app for every device, external systems as icons, sessionless agents shown",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "95500a042"
+  },
+  {
+    "version": "v0.2.1174",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: snapshots: 54 agents, 142 pairs in 7 days; 741 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "beaacc005"
+  },
+  {
+    "version": "v0.2.1173",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: ledger line, Angelo's live graph fixes",
+    "by": "dev@PrompTugal.angelo",
+    "from": "fc99a3299"
+  },
+  {
+    "version": "v0.2.1172",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the live graph, brighter: larger glowing dots, thicker lit lines, more of them at once",
+    "by": "dev@PrompTugal.angelo",
+    "from": "b1167afb5"
+  },
+  {
+    "version": "v0.2.1171",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the command centre's scripts carry the release number, so a fix is seen at once, not ten minutes later",
+    "by": "dev@PrompTugal.angelo",
+    "from": "561f5bd3d"
+  },
+  {
+    "version": "v0.2.1170",
+    "date": "2026-11-07",
+    "what": "runner.conductor@PrompTugal.angelo: run 23:21 UTC: nothing to route, STATE and runs upkeep",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "eaf52f3f1"
+  },
+  {
+    "version": "v0.2.1169",
+    "date": "2026-11-07",
+    "what": "the Web Summit newsroom timetable from 8 Nov, and standing answer 20 (the curator's duplicate check)",
+    "by": "conductor@web-summit.vicky",
+    "from": "07c7ceb5e"
+  },
+  {
+    "version": "v0.2.1168",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: the live graph: dots stay visible in a small pop-out; the status light shows only when something is wrong",
+    "by": "dev@PrompTugal.angelo",
+    "from": "539253a20"
+  },
+  {
+    "version": "v0.2.1167",
+    "date": "2026-11-07",
+    "what": "dev@PrompTugal.angelo: ledger line, Angelo's 23:02 wake",
+    "by": "dev@PrompTugal.angelo",
+    "from": "7ed5f22d8"
+  },
+  {
+    "version": "v0.2.1166",
+    "date": "2026-11-07",
+    "what": "review: bring workers/dev.map's new work onto dev (one commit)",
+    "by": "dev@PrompTugal.angelo",
+    "from": "b7c0a9f4a"
+  },
+  {
+    "version": "v0.2.1165",
+    "date": "2026-11-07",
+    "what": "desk.conductor@PrompTugal.angelo: dev@ pushes dev.links@'s \"page removed\" fix to the newsroom after its gate, at Angelo's word",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "ce7ee5bb7"
+  },
+  {
     "version": "v0.2.1164",
     "date": "2026-11-07",
     "what": "desk.conductor@PrompTugal.angelo: the live graph shows every repository the agents work in",

@@ -2,7 +2,7 @@
 title: "dev@PrompTugal.angelo: STATE"
 summary: What dev@PrompTugal.angelo holds open, what it waits on, and its open questions, kept short (the kit's Context rules). Read first at every run.
 ---
-**Last updated:** 7 November 2026, about 23:00 UTC (scheduled run).
+**Last updated:** 7 November 2026, about 23:15 UTC (Angelo: "Wake up").
 
 ## Every run (the routine)
 
@@ -13,7 +13,7 @@ summary: What dev@PrompTugal.angelo holds open, what it waits on, and its open q
    - Take only the worker's own commits, as a patch onto current dev. Never take the branch's tip: dev.map's is based on an older dev.
    - Run the gate and `people/angelo/app/tests/run.sh` (13 tests).
    - Commit "review: bring workers/<agent>'s new work onto dev (one commit)" For: the worker, and update reviewed.json.
-3. Refresh the PrompTugal snapshot (`people/angelo/tools/promptugal-snapshot.mjs`, clone at `/home/user/promptugal/promptugal__news__website`).
+3. Refresh the PrompTugal snapshot (`people/angelo/tools/promptugal-snapshot.mjs`, clone at `/home/user/promptugal/promptugal__news__website`) and every repository's exchanges for the live graph (`people/angelo/tools/repos-snapshot.mjs`, list in `people/angelo/app/repos.json`).
 4. Commit, release, run log (`agent-log.mjs`, with my name in lower case and `--key sha256:b478b82a3a9995eb`), ledger line (by_model removed).
 
 ## Open now

@@ -15,10 +15,10 @@ First task: take Vicky through the onboarding on the start page, one step at a t
 
 The session became conductor@web-summit.vicky at Vicky's word (2 November: follow the start page exactly; its step 4 makes the first session the conductor), so it releases with `AGENT=conductor@web-summit.vicky`.
 
-## Scheduled task: the morning brief, 09:45 UTC (cron 45 9 * * *, trig_013xdhaBHbA52GD47m1JaKDL; 08:30 until 7 Nov, then briefly 09:00 and 09:30)
+## Scheduled task: the morning brief, 08:30 UTC (cron 30 8 * * *, trig_013xdhaBHbA52GD47m1JaKDL; from 8 Nov, the Web Summit timetable; on 7 Nov briefly 09:00, 09:30 and 09:45)
 
 ```
-Scheduled wake: conductor@web-summit.vicky, the morning brief (09:45 UTC). Pull dev on the team site. Read people/vicky/decisions.md, then people/vicky/prompts/conductor.md, and do the brief exactly as its section "The daily brief" says (the hold first). Where the file and your memory disagree, the file wins.
+Scheduled wake: conductor@web-summit.vicky, the morning brief (08:30 UTC). Pull dev on the team site. Read people/vicky/decisions.md, then people/vicky/prompts/conductor.md, and do the brief exactly as its section "The daily brief" says (the hold first). Where the file and your memory disagree, the file wins.
 
 P1 to P3, word for word (standing answer 16):
 P1: At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
@@ -26,10 +26,10 @@ P2: At the start of every run, after `decisions.md`, re-read your own `people/vi
 P3: End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 ```
 
-## Scheduled task: the evening relay, 21:30 UTC (cron 30 21 * * *, trig_016MC7wrcBLcFqSgfthMqAnZ; 17:50 until 7 Nov)
+## Scheduled task: the evening relay, 20:45 UTC (cron 45 20 * * *, trig_016MC7wrcBLcFqSgfthMqAnZ; from 8 Nov, the Web Summit timetable; 17:50 until 6 Nov, 21:30 on 7 Nov)
 
 ```
-Scheduled wake: conductor@web-summit.vicky, the evening relay (21:30 UTC). Pull dev on the team site. Read people/vicky/decisions.md, then people/vicky/prompts/conductor.md, and do the relay exactly as its section "The evening relay" says (the hold first). Where the file and your memory disagree, the file wins.
+Scheduled wake: conductor@web-summit.vicky, the evening relay (20:45 UTC). Pull dev on the team site. Read people/vicky/decisions.md, then people/vicky/prompts/conductor.md, and do the relay exactly as its section "The evening relay" says (the hold first). Where the file and your memory disagree, the file wins.
 
 P1 to P3, word for word (standing answer 16):
 P1: At the start of every run, after pulling dev: if `people/vicky/HOLD.md` exists on the team site, stop, write one line in your report saying you stopped for the hold, and push nothing. Only Vicky (through her conductor) writes or removes that file.
@@ -53,15 +53,17 @@ Scheduled wake: conductor@web-summit.vicky, the 17:30 newsroom check. Pull dev o
 
 ## The 17:30 newsroom check: what to do
 
-At Vicky's word (7 Nov): a lightweight check after the reviewer's 17:00 run. Not a brief: no PDF, no agent table, no usage. Silent unless something is actionable.
+At Vicky's word (7 Nov): a lightweight check, from 8 Nov after the reviewer's 16:20 re-check. Not a brief: no PDF, no agent table, no usage. Silent unless something is actionable.
 
 0. **Hold.** If `people/vicky/HOLD.md` exists, tell Vicky in one line that the hold is on and do nothing else.
 1. Pull dev; re-read decisions.md and this file. Fetch the newsroom (PrompTugal/PrompTugal__News__Website, dev).
-2. Look only for: (a) drafts the reviewer has marked Ready and not yet published (its 13:00 and 17:00 runs, and any Ready left from the morning); (b) blockers or risks: a report marked URGENT, a desk blocked or failing, a change to decisions.md not mine, Gmail use, a key mismatch, a change of hers that did not go live; (c) anything waiting for her decision that cannot wait for the 21:30 relay.
+2. Look only for: (a) drafts the reviewer has marked Ready and not yet published (its 11:15, 12:20, 15:15 and 16:20 runs, and any Ready left from the morning); (b) blockers or risks: a report marked URGENT, a desk blocked or failing, a change to decisions.md not mine, Gmail use, a key mismatch, a change of hers that did not go live; (c) anything waiting for her decision that cannot wait for the 20:45 relay.
 3. If there is any, tell her in this session in the brief's action format, briefly: **1. Urgent / Risks** (or "None"), then **2. Actions & Replies by window**, each item with its why and the exact reply in a code block (Ready drafts in the `reviewer` window with their publish line; decisions routed through me per standing answer 14).
 4. If there is nothing actionable, write nothing to her and commit nothing. Never WS-25, WS-29, WS-41 or WS-53 as urgent.
 
-## The daily brief (09:45 UTC): what to do
+## The daily brief (08:30 UTC): what to do
+
+From 8 Nov (the Web Summit timetable) the brief comes after the morning round: programme 05:00, research 05:15, curator 05:30, writing 05:45 to 06:09, the reviewer's first review 06:15, the fix-only runs 06:50 to 07:14 and the re-check 07:20.
 
 0. **Hold.** If `people/vicky/HOLD.md` exists on the team site: write no brief and change nothing; tell Vicky in this session, in one line, that the hold is on and since when (its commit). Removing it is only at her word.
 1. **Read.** Pull dev. Re-read `people/vicky/decisions.md`, this file, `people/vicky/inbox.md`, `people/vicky/conductor-notes.md`, `people/vicky/newsroom/README.md`, `people/vicky/kit/README.md` and my sections of `content/agents.md` (they may have changed), and Vicky's latest mentor note if there is one. If `/tmp/claude-0/-home-user/fa1055be-2078-5620-bc16-53f5ca9aa67a/scratchpad/brief-pending.md` exists, it holds items Vicky asked to have in this brief: re-check each as it says, put them in the brief, and delete the file after the brief is sent.
@@ -90,14 +92,14 @@ At Vicky's word (7 Nov): a lightweight check after the reviewer's 17:00 run. Not
 12b. **The inbox agent** (P22, P23, P24): inbox@web-summit.vicky is the only agent that may use Gmail; on demand. The private CRM's key was sealed to inbox-vicky on 7 Nov (data/sealed/agents/inbox@web-summit.vicky/, WS-172). A Gmail mention by any other agent stays URGENT (9b).
 12. **Always.** When Vicky answers something more than one agent asked about, add a standing answer to decisions.md (her words, dated). When she gives an update for agents, or says "accept scout's proposal N", add it to "Updates for agents" (her words, or the proposal word for word, dated, addressed by name or "all agents"). Never make WS-25, WS-29, WS-41 or WS-53 an ask or URGENT. The team CRM key (vault 5n0aocvz) is in `~/.sg-send/crm/`, cloned at `~/vaults/ws-team-crm-private`: keep it; use it only when she asks. Never a shortlist name. Every number from the record; no em-dashes; never a full agent name followed by .md. Coordinate, don't redo: writing is pm@'s, logistics logistics@'s, WS-46/47 and WS-100 pm@'s, vaults vault@'s, the newsroom desks their own. Never push to the newsroom repository. Never start tools@.
 
-## The evening relay (21:30 UTC): what to do
+## The evening relay (20:45 UTC): what to do
 
-From 7 Nov (Vicky's word) the relay runs at 21:30, after the journalists' 20:00 to 20:24 runs and the reviewer's 21:00 run. No PDF: one short message to Vicky in this session, only when something needs her.
+From 8 Nov (Vicky's word, the Web Summit timetable) the relay runs at 20:45, after the evening round: research 18:15, curator 18:30, writing 18:45 to 19:09, the reviewer's first review 19:15, the fix-only runs 19:50 to 20:14 and the re-check 20:20. No PDF: one short message to Vicky in this session, only when something needs her.
 
 0. **Hold.** As in the brief: if `people/vicky/HOLD.md` exists, tell Vicky in one line that the hold is on and do nothing else.
 1. Pull dev; re-read decisions.md and this file. Drain the inbox lane as in the brief (step 2).
-2. Read every report since my last wake (the journalists' 12:00, 16:00 and 20:00 rounds, the reviewer's 13:00, 17:00 and 21:00, logistics 17:10, pm 17:40, dashboard 17:45, the checker's 17:48) and commits For: conductor@web-summit.vicky or tools@web-summit.vicky; the newsroom's drafts and the reviewer's verdicts.
-3. If anything needs her before the morning, tell her in this session in the brief's action format, at most a few lines: **1. Urgent / Risks** (a report marked URGENT; a change to decisions.md not mine; Gmail use; a key mismatch; a change of hers that did not go live), then **2. Actions & Replies by window**: drafts the reviewer has marked Ready since the morning brief (the `reviewer` window, with the exact "publish" reply), and anything else that cannot wait for the morning (routed through me per standing answer 14). Everything else waits for the 09:45 brief. Never WS-25, WS-29, WS-41 or WS-53 as urgent or on an agenda.
+2. Read every report since my last wake (the journalists' midday, afternoon and evening rounds with their fix-only runs, the reviewer's first reviews and re-checks at 11:15, 12:20, 15:15, 16:20, 19:15 and 20:20, logistics 17:10, pm 17:40, dashboard 17:45, the checker's 17:48) and commits For: conductor@web-summit.vicky or tools@web-summit.vicky; the newsroom's drafts and the reviewer's verdicts.
+3. If anything needs her before the morning, tell her in this session in the brief's action format, at most a few lines: **1. Urgent / Risks** (a report marked URGENT; a change to decisions.md not mine; Gmail use; a key mismatch; a change of hers that did not go live), then **2. Actions & Replies by window**: drafts the reviewer has marked Ready since the morning brief (the `reviewer` window, with the exact "publish" reply), and anything else that cannot wait for the morning (routed through me per standing answer 14). Everything else waits for the 08:30 brief. Never WS-25, WS-29, WS-41 or WS-53 as urgent or on an agenda.
 4. Records, the only commits on this wake: names and prompts as in the brief (steps 6 and 7), and this file when a prompt of mine changes. If nothing needs her, write nothing to her and commit nothing.
 
 ## Standing rules from Vicky since 2 November (her word, by date)
@@ -144,3 +146,6 @@ From 7 Nov (Vicky's word) the relay runs at 21:30, after the journalists' 20:00 
 - **7 Nov, night:** the morning brief moves from 09:30 to 09:45 UTC, so it includes the journalists' fix-only follow-ups (09:15 to 09:39). The 17:30 check and the 21:30 relay are unchanged.
 - **7 Nov, night:** P7 marked done (its condition met: Dinis's permission is in the newsroom's own record; this replaces my earlier note of it as rejected). Scout's note 07: P28 rejected (Updates for agents covers it), P29 rejected (standing answer 14 already routes through me), P30 rejected (no further exception for storing her words in public files). P11 stays parked: raise it only if a real permissions problem appears.
 - **7 Nov, night:** standing answer 19 (theme-led connection stories): the curator creates theme-led connection storylines from public information, naming people and companies worth knowing, for journalist-connections, which writes them as editorial stories without matchmaking or partnership claims. No CRM data, private meetings, shortlist or outreach. Update SA19 for both to apply in their own prompts.
+- **7 Nov, about 23:00:** the Web Summit newsroom timetable (SCHED-WS in decisions.md), applied tonight at Vicky's word: "You can change the affected newsroom scheduled tasks directly this time, and create the reviewer's second re-check task. Each agent can confirm the change at its next run." Programme 05:00; research 05:15, 10:15, 14:15, 18:15; curator 15 minutes later; writing 30 minutes after research, six minutes apart; reviewer first review 06:15, 11:15, 15:15, 19:15; fix-only 06:50 to 07:14 (and :50 past 11, 15, 19); reviewer re-check 07:20, 12:20, 16:20, 20:20. I changed every affected task and created the reviewer's re-check task and the five fix-only tasks in the agents' own sessions (ids in schedule.json). My brief moves to 08:30 and my relay to 20:45; the 17:30 check stays. Dashboard, pm, logistics, checker and scout are unchanged. In the brief, list who has confirmed SCHED-WS.
+- **7 Nov, about 23:00:** standing answer 20, the curator's duplicate check (her words in decisions.md): before any storyline, check published articles, drafts (including unpublished ones) and the storyline map; no repeat unless there is a genuinely new development or a clearly different angle; theme-led ones included. Update SA20 for the curator.
+- **8 Nov, about 00:00:** Vicky approved the remote step for every journalist and reviewer task, the curator and programme prompt changes (with the current decisions.md guard for programme, and SA19 and SA20 for the curator) and the SCHED-WS header lines in the prompts files; existing sessions stay until after the summit, and no session source changes. The scheduling service refused my prompt edits (a task's prompt can be changed only from the session it fires into), so they went to decisions.md as REMOTE-WS, CURATOR-WS and PROGRAMME-WS for each agent to apply at its next run; I wrote the header lines myself. In the brief, list who has applied them.

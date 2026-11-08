@@ -15,7 +15,7 @@
     const POLL = (() => { try { return +new URLSearchParams(root.location.search).get('livepoll') || 0 } catch { return 0 } })()   // seconds; only for the tests
     const POLL_MS = POLL ? POLL * 1000 : 60000, SPREAD_MS = POLL ? 0 : 10000, TRAVEL_MS = 1600, FADE_MS = 3200, STALE_MIN = 20
     const DELAY_MS = (+new URLSearchParams(root.location.search || '').get('livedelay') || 4) * 6e4   // a fixed few minutes behind
-    const FLOW_BASE = 1.4, FLOW_MAX = 70, FLOW_TRAVEL_MS = 3000, HALF_LIFE_H = 3   // ambient dots a second, at most on screen, their travel, how fast the past fades
+    const FLOW_BASE = 3.5, FLOW_MAX = 70, FLOW_TRAVEL_MS = 3000, HALF_LIFE_H = 3   // ambient dots a second, at most on screen, their travel, how fast the past fades
     const HEX = 'M250 67 L750 67 L1000 500 L750 933 L250 933 L0 500 Z'
     const CSS = `
 .lv { container-type: size; position: relative; width: 100%; height: 100%; display: grid; place-items: center; background: var(--rm-bg, #07111F); overflow: hidden; }
@@ -26,11 +26,16 @@
 .lv-links path { fill: none; stroke-linecap: round; }
 .lv-links path.base { opacity: .1; }
 .lv-pulses circle { stroke: var(--rm-surface, #0E2035); stroke-width: 1.5; pointer-events: none; }
-.lv-pulses circle.flow { stroke: none; opacity: .38; }
-.lv-pulses circle.halo { stroke: none; opacity: .28; }
+.lv-pulses circle.flow { stroke: none; opacity: .8; }
+/* brighter (Angelo, 7 November: "make them brighter, more evident"): a soft glow on every moving dot and on the lit lines */
+.lv-pulses circle { filter: drop-shadow(0 0 3px rgba(255,255,255,.55)); }
+.lv-links path:not(.base) { filter: drop-shadow(0 0 2px rgba(255,255,255,.35)); }
+.lv-pulses circle.halo { stroke: none; opacity: .4; }
 .lv .tm-p, .lv .tm-a { cursor: default; }
 .lv .tm-a.lv-hot > circle, .lv .tm-a.lv-hot > rect { stroke: var(--rm-text, #fff); stroke-width: 3; }
-.lv-dot { position: absolute; left: 8px; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--rm-green, #3ecf8e); box-shadow: 0 0 6px currentColor; color: var(--rm-green, #3ecf8e); opacity: .8; }
+.lv-dot { display: none; position: absolute; left: 8px; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--rm-green, #3ecf8e); box-shadow: 0 0 6px currentColor; color: var(--rm-green, #3ecf8e); opacity: .8; }
+.lv-dot.old, .lv-dot.off { display: block; }
+/* the light shows only when something is wrong (Angelo, 7 November: a green dot that belongs to no one reads as an agent) */
 .lv-dot.old { background: var(--rm-orange, #f5a524); color: var(--rm-orange, #f5a524); }
 .lv-dot.off { background: var(--rm-text-muted, #9EB2C7); color: transparent; }
 .lv-bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 0 0 10px; }
@@ -82,15 +87,19 @@
         // ---- what moves ----
         const lines = new Map(), fly = [], hot = new Map(), seen = SEEN, queue = []
         let alive = true, raf = 0, timer = 0, built = 0, lastOk = 0, last = 0, debt = 0, flowN = 0, weights = [], wsum = 0, act = 1
-        const pairEl = (a, b) => { const k = a + '|' + b; let e = lines.get(k); if (!e) { e = { path: el('path', { stroke: col.get(pos.get(a).person) || 'var(--rm-text-muted)', 'stroke-width': 2.2, 'stroke-opacity': 0, d: curve(pos.get(a), pos.get(b)) }, links), at: -1e9 }; lines.set(k, e) } return e }
+        const pairEl = (a, b) => { const k = a + '|' + b; let e = lines.get(k); if (!e) { e = { path: el('path', { stroke: col.get(pos.get(a).person) || 'var(--rm-text-muted)', 'stroke-width': 3.2, 'stroke-opacity': 0, d: curve(pos.get(a), pos.get(b)) }, links), at: -1e9 }; lines.set(k, e) } return e }
         const colOf = id => col.get(pos.get(id).person) || 'var(--rm-text-muted)'
         // a real exchange: a bright dot with a halo, the line lit behind it
-        const launch = (from, to, now) => { const e = pairEl(from, to); e.at = now; const c = colOf(from); fly.push({ from, to, t0: now, ms: TRAVEL_MS, halo: el('circle', { r: 11, fill: c, class: 'halo' }, pulses), dot: el('circle', { r: 6, fill: c }, pulses) }); if (fly.length > 160) { const x = fly.shift(); x.dot.remove(); x.halo && x.halo.remove() } }
+        // the dots keep a minimum size on screen, so a small pop-out window still shows them moving (Angelo, 7 November: in the
+        // pop-out "the messages stop": they were there, but a pixel wide). unit: screen pixels per drawing unit, measured as drawn
+        let unit = 1, unitAt = -1e9
+        const px = (base, minPx, now) => { if (now - unitAt > 1000) { const w = svg.getBoundingClientRect().width; if (w) unit = w / S * SCALE; unitAt = now } return f1(Math.max(base, minPx / Math.max(unit, 0.05))) }
+        const launch = (from, to, now) => { const e = pairEl(from, to); e.at = now; const c = colOf(from); fly.push({ from, to, t0: now, ms: TRAVEL_MS, halo: el('circle', { r: px(14, 12, now), fill: c, class: 'halo' }, pulses), dot: el('circle', { r: px(7.5, 6, now), fill: c }, pulses) }); if (fly.length > 160) { const x = fly.shift(); x.dot.remove(); x.halo && x.halo.remove() } }
         // the constant flow: small, faint, slower dots on the lines, chosen by how busy each pair has been lately
         const flowOne = (now) => {
             if (!wsum || flowN >= FLOW_MAX) return
             let r = Math.random() * wsum, k = 0; while (k < weights.length - 1 && (r -= weights[k].w) > 0) k++
-            const w = weights[k]; flowN++; fly.push({ from: w.from, to: w.to, t0: now, ms: FLOW_TRAVEL_MS * (0.8 + Math.random() * 0.5), flow: true, dot: el('circle', { r: 2.6, fill: colOf(w.from), class: 'flow' }, pulses) })
+            const w = weights[k], e = pairEl(w.from, w.to), ms = FLOW_TRAVEL_MS * (0.8 + Math.random() * 0.5); e.flowAt = now; e.flowMs = ms; flowN++; fly.push({ from: w.from, to: w.to, t0: now, ms, flow: true, dot: el('circle', { r: px(5.5, 4.5, now), fill: colOf(w.from), class: 'flow' }, pulses) })
         }
         const busy = (id, now) => { if (!hot.has(id)) N.get(id).classList.add('lv-hot'); hot.set(id, now + 1200) }
         // one event: from its agent to each of its targets; with no target the agent alone lights up
@@ -112,9 +121,9 @@
                 const a = pos.get(f.from), b = pos.get(f.to), q = bend(a, b), v = 1 - u
                 const x = f1(v * v * a.x + 2 * v * u * q.x + u * u * b.x), y = f1(v * v * a.y + 2 * v * u * q.y + u * u * b.y)
                 f.dot.setAttribute('cx', x); f.dot.setAttribute('cy', y); if (f.halo) { f.halo.setAttribute('cx', x); f.halo.setAttribute('cy', y) }
-                if (f.flow) f.dot.style.opacity = (0.38 * Math.sin(Math.PI * u)).toFixed(2)
+                if (f.flow) f.dot.style.opacity = (0.55 + 0.45 * Math.sin(Math.PI * u)).toFixed(2)
             }
-            for (const [, e] of lines) { const age = now - e.at, op = age < TRAVEL_MS ? 0.9 : Math.max(0, 0.9 * (1 - (age - TRAVEL_MS) / FADE_MS)); const v = op.toFixed(2); if (v !== e.op) { e.op = v; e.path.setAttribute('stroke-opacity', v) } }
+            for (const [, e] of lines) { const age = now - e.at, fa = e.flowAt ? now - e.flowAt : 1e9, fop = fa < e.flowMs ? 0.75 : Math.max(0, 0.75 * (1 - (fa - e.flowMs) / 1500)), op = Math.max(fop, age < TRAVEL_MS ? 0.95 : Math.max(0, 0.95 * (1 - (age - TRAVEL_MS) / FADE_MS))); const v = op.toFixed(2); if (v !== e.op) { e.op = v; e.path.setAttribute('stroke-opacity', v) } }
             for (const [id, until] of hot) if (until <= now) { hot.delete(id); N.get(id).classList.remove('lv-hot') }
             raf = win.requestAnimationFrame(frame)
         }

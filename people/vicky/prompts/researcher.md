@@ -33,6 +33,8 @@ Rules always: public material only; every fact with its source URL and time read
 
 ## Scheduled task prompt (as saved, from 7 November 2026, 15:36 UTC)
 
+**From 8 Nov (SCHED-WS):** 05:15, 10:15, 14:15, 18:15 UTC, cron `15 5,10,14,18 * * *` (set by the conductor at Vicky's word, 7 Nov).
+
 "Research run", cron `30 7,11,15,19 * * *` (UTC), firing into this session. Created with the prompt in step 7 above; updated at Vicky's word on 4 November so each push uses the token, on 6 November with a first step to read people/vicky/decisions.md (see the standing rules), and on 7 November with P1 to P3 word for word, as standing answer 16 in decisions.md says. The prompt now reads:
 
 ```
