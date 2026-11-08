@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1221",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: Angelo's website and LinkedIn move to the top of his backlog",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "c88a13d33"
+  },
+  {
     "version": "v0.2.1220",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: the map misses Angelo's six workers: why, and the fix for dev.map@",
