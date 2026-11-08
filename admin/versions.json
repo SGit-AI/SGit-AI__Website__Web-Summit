@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1362",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the hexagonal desktop app dropped; the website's pop-out stays; the CI request withdrawn",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "be9b735d2"
+  },
+  {
     "version": "v0.2.1361",
     "date": "2026-11-08",
     "what": "wave C written: 17 first emails in Portuguese to the Portuguese buyers; correction: Turismo de Portugal is at Web Summit",
