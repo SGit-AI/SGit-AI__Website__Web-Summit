@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1288",
+    "date": "2026-11-08",
+    "what": "the designer now has a schedule, 10:40 and 16:40 UTC (C30 trial); the one-door line for it",
+    "by": "designer@web-summit.jose",
+    "from": "f9e60c05f"
+  },
+  {
     "version": "v0.2.1287",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 150 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 592 exchanges in 48 h from 2 of 4 repositories",
