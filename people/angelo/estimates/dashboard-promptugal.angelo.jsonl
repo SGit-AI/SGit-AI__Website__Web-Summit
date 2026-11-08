@@ -22,3 +22,5 @@
 {"event": "done", "at": "2026-11-08T20:06:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 19:40", "effort_min": 25, "elapsed_min": 25, "runs": 1, "note": ""}
 {"event": "start", "at": "2026-11-08T20:41:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 20:40", "what": "review dev.map (day label) and dev.work (the Work switch)", "est_effort_min": 15, "est_elapsed_min": 15, "confidence": "high"}
 {"event": "done", "at": "2026-11-08T20:57:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 20:40", "effort_min": 16, "elapsed_min": 16, "runs": 1, "note": ""}
+{"event": "start", "at": "2026-11-08T22:41:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 22:40", "what": "review dev.work (the work view in playback)", "est_effort_min": 15, "est_elapsed_min": 15, "confidence": "high"}
+{"event": "done", "at": "2026-11-08T22:58:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 22:40", "effort_min": 17, "elapsed_min": 17, "runs": 1, "note": ""}

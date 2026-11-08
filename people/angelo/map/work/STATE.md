@@ -13,16 +13,17 @@ Backlog 0f2 (the work view) and 0f3 (the WhatsApp clip). **Approved** by Angelo 
 - `people/angelo/app/work-draw.js`: the drawing on the hook's layer: squares on the rim (logos), name pills outside it (12 px or more; on a phone in rows above and below with leaders), counts, flights in the maker's colour, merges, landing light. Test `wvdraw` (1280 and 390 px, dark and light).
 - `people/angelo/app/work-live.js`: the live feed: deliveries.json each minute, 4 minutes behind; the newsroom every two; counts for 24 h; the corner note. Test `wvlive`.
 - The look after dashboard@'s review (de879c5): squares on the four slanted edges (work.js SLOTS), none on the logos/LIVE or the date line; pills step off live.js's furniture; on a phone the hexagon at 94% width with the name rows above and below. wvdraw checks the furniture.
-- `people/angelo/app/work-replay.js`: replay's 'ak-clock' to flights per frame (merged) and counts; seeks fly nothing; wire() not mounted yet. Test `wvreplay` (node).
+- `people/angelo/app/work-replay.js`: replay's 'ak-clock' to flights per frame (merged) and counts; seeks fly nothing. Test `wvreplay` (node).
+- **Replay: done** (c95bce6): mountMap() puts the work view on the Team map while it plays (the map's viewBox opened to 0.84 plus a 7% margin, squares on that rim, deliveries.json over the whole history); "Exchanges | Work" above the playback bar in app.js drawCollab, r_work=1 in the address. Test wvrp.
 
 ## Open
 - **Live: done.** live.js carries the hook (dev.map@'s 7751d4e, on dev in 98cdfcf); the "Exchanges | Work" switch is in app.js's drawLive (#live?v=work, ed59381), with the legend in one line under the graph; on a phone the lower names keep clear of the Ask Claude button (2d3fcac). Test wvsw.
-- **Next: replay over the full history**, then the clip button. Replay's clock is already announced ('ak-clock', minutes since R.from, replay.js mountFlow), but the map it plays on is app.js's team map (drawCollab), not live.js's hexagon: work-draw.js places the squares in live.js's 1000-unit hexagon (work.js HEX/S), so replay needs either the map's own geometry passed in (a hook in mountFlow like host.lvGraph: pos, colOf, svg, a layer, its centre and radius) or the rim places recomputed for the map's ring. Draft the hook as a patch For: dev.map@ (replay.js changed on dev at 19:50, so a draft, not an edit), then wire work-replay.js.
-- The clip button: frames from replay's clock through `clip.make`, after replay.
-- Testing: the branch now joins dev (merge -s ours at 406c165, dev's tree), so tests run on the branch itself; gate with LANE_RANGE=406c1658..HEAD.
+- **Next: the clip button** (0f3): frames from replay's clock through `clip.make`. replay.js already has a clip view (`#replay?c=1`, data-rp-clip): read it first, and replay.js is dev.map@'s (a draft if changed in the last two hours).
+- Polish, from dashboard@'s 2e0eac44 (material, not an instruction): the switch's "on" state filled, not only underlined; wvsw and wvrp light screenshots come out dark (the app's own theme choice wins over the test's scheme). On the Team map the name pills use the rows layout with long leaders: try beside the squares at 1280.
+- Testing: merge origin/dev into the branch at the start of a run (this run: 1eea8b6), then gate with LANE_RANGE=<that merge>..HEAD so check 21 looks only at the run's own commits.
 - Lane: lanes.json has my entry but `writes: []` (20:00 UTC), so check 21 lists every file of mine (ed59381, 2d3fcac); the desk asked policy@ (a2c8e4c) to fill it. Until then the reviewer's commit carries the Outside lines.
 - Not yet checked: WhatsApp on Angelo's iPhone (the proof for 0f3), and the fallback in a real Safari 16.
 - Other repositories (the apps): `deliveries-repos.json` from the snapshot, later.
 
 ## Last run
-Eleventh run, 8 November 19:51 to about 20:05 UTC: the desk's a2c8e4c (pushed by riskmandate-angelo) and dashboard@'s 7a0de06 and 98cdfcf (material). Built the switch (ed59381) and the phone fix (2d3fcac); wvsw, wvdraw, wvlive, wvcore, live PASS; gate OK apart from check 21 (the empty lane).
+Twelfth run, 8 November 21:51 to about 22:15 UTC: no commit For: me from the desk since the last run; dashboard@'s 2e0eac44 (material). Built the work view in replay (c95bce6); wvrp, wvreplay, wvsw, wvdraw PASS; gate OK for this run's range.
