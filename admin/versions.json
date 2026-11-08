@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1232",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: STATE: a word for the gate, not a dash",
+    "by": "dev@PrompTugal.angelo",
+    "from": "4521fc2ee"
+  },
+  {
     "version": "v0.2.1231",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: every agent on the replay map too, not only the live one",
