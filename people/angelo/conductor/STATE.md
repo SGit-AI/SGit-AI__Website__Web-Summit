@@ -41,6 +41,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Open with Angelo (the desk's list)
 
+- 8 Nov about 10:05 UTC: team-collaboration@'s inbox wake slowed from twice a day to once (09:45 UTC), at Angelo's "Happy to slow down the team-collaboration agent"; its debrief wakes unchanged. The newsroom's "page removed" fix handed to Dinis's team. vault@'s test permission: Angelo deals with it in vault@'s chat.
+
 - Tasks checked 8 Nov about 09:50 UTC (list_triggers): dev.work@ (hourly :50) and dev.app@ (hourly :05) created by Angelo, Opus by name; dev.venues@ and vault.kms@ now Opus by name; dev.abp@ Opus. Still slower than recommended: dev.map@ every 2 h, dev.abp@ every 2 h, research@ every 3 h (desk recommended hourly, 10:20).
 
 - dev.abp@PrompTugal.angelo created and run by Angelo (8 Nov about 09:15 UTC: "dev.abp is on, and I manually activated it now"). First job: the two demo modes' design (backlog 00d). Still open from the morning: the hexagonal app spec (00a), external systems icons (00b: three provable now; a Used: trailer is a protocol change), writer@'s factual replies to dev.verify's flags (recommend yes), dev.venues@ and vault.kms@ to Opus by name, who Angelo meets in the next 48 hours (for research@).
