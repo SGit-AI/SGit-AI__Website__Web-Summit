@@ -1,8 +1,8 @@
 {
  "about": "The PrompTugal newsroom's agents, from the git log of PrompTugal/PrompTugal__News__Website (its dev branch), for Angelo's command centre; refreshed by dev@web-summit.angelo at its wakes. Names, counts and times only. pt:<person>:<agent> is a PrompTugal agent of that person.",
  "source": "https://github.com/PrompTugal/PrompTugal__News__Website",
- "commit": "1d719f178",
- "read_at": "2026-11-08T07:35:43.985Z",
+ "commit": "42a74d4e1",
+ "read_at": "2026-11-08T09:05:30.549Z",
  "days": 7,
  "agents": [
   {
@@ -281,6 +281,17 @@
    "key": false
   },
   {
+   "id": "pt:angelo:writer",
+   "person": "angelo",
+   "short": "writer",
+   "family": "PrompTugal",
+   "label": "",
+   "commits": 13,
+   "first": "2026-11-06T23:09:46+00:00",
+   "last": "2026-11-08T08:40:01+00:00",
+   "key": true
+  },
+  {
    "id": "pt:dinis:backup",
    "person": "dinis",
    "short": "backup",
@@ -289,17 +300,6 @@
    "commits": 13,
    "first": "2026-11-06T05:37:35+00:00",
    "last": "2026-11-08T00:10:48+00:00",
-   "key": true
-  },
-  {
-   "id": "pt:angelo:writer",
-   "person": "angelo",
-   "short": "writer",
-   "family": "PrompTugal",
-   "label": "",
-   "commits": 12,
-   "first": "2026-11-06T23:09:46+00:00",
-   "last": "2026-11-07T22:31:10+00:00",
    "key": true
   },
   {
@@ -893,6 +893,11 @@
    "n": 3
   },
   {
+   "from": "pt:angelo:writer",
+   "to": "pt:dinis:designer",
+   "n": 2
+  },
+  {
    "from": "pt:dinis:conductor.b",
    "to": "pt:dinis:dev",
    "n": 2
@@ -1025,11 +1030,6 @@
   {
    "from": "pt:dinis:conductor.b",
    "to": "pt:dinis:investors",
-   "n": 1
-  },
-  {
-   "from": "pt:angelo:writer",
-   "to": "pt:dinis:designer",
    "n": 1
   },
   {
