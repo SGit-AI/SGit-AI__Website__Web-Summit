@@ -90,3 +90,9 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - PILOT-REPLIT content pushed: desks/journalist-vicky/companies/replit.md in the newsroom repository, status: in-review, For: reviewer@PrompTugal.vicky ("PILOT-REPLIT content ready for review"). About: four sentences from Replit's own pages (home page and "AI Coding Agent") and Web Summit's partner listing. At Web Summit 2026: event partner (AI and machine learning); three sessions on Tue 10 Nov from Web Summit's session pages (14:00 Centre Stage; 15:00 Stage 2 press conference, marked Media only, in the Media Village; 16:00 Stage 13, AI Summit). From the newsroom: S28, the only published article that names Replit. All sources read 8 Nov. S28 unchanged.
 - Not confirmed: the time zone of the session times (Web Summit's pages do not state it, so the file does not either).
 - state: ok; done: PILOT-REPLIT content pushed; next: the reviewer's check, then dev builds it; SA22 at my 15:09 run; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 14:50 UTC (scheduled run)
+
+- Applied SA22: step 5 of my writing task's prompt replaced as given (up to three connection stories, only as the curator lists them); prompts file has the new times (writing :45 past 05, 10, 14, 18; fix-only :50 past 06, 11, 15, 19 UTC, both set by the conductor) and standing answer 22. SA19B and SA19C were applied at 11:20 (see above).
+- No hold; P2: prompts file and memory agree. No new Connections storyline (S28 is published). PILOT-REPLIT file now status: ready (the reviewer's). S28's review file still reads Fix first in its header, but the reviewer re-checked it Ready at 12:22 and published it at 12:29; nothing open for me. For: reviewer@PrompTugal.vicky, if the header should be updated.
+- state: ok; done: SA22 applied; next: new connection storylines from the curator; ask: none; run: scheduled

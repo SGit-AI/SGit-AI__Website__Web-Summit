@@ -45,6 +45,10 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt (6 November 2026)
 
+**From 8 Nov (SA22, connections first):** writing at :45 past 05, 10, 14, 18 UTC (trig_01RqSqjPAC6WuwNmTbjKFzwa); fix-only at :50 past 06, 11, 15, 19 UTC (trig_014fa4xbTLFyrXdfF4pzv8KD); both moved by the conductor at Vicky's word, 8 Nov. Step 5 changed by this agent on 8 Nov (SA22); it read "5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: journalist@PrompTugal.dinis."
+
+Standing answer 22 (Vicky, 8 Nov, about 12:45 UTC), the part for this agent: journalist-connections may write up to 3 stories in one writing run, in the curator's priority order, as long as each storyline is already listed by the curator, each has enough verified public information, the duplicate checks (standing answer 20) have passed, and quality does not drop. "Do not create extra stories just to fill the quota."
+
 **From 8 Nov midday (standing answer 22, connections first):** writing 05:45, 10:45, 14:45, 18:45 UTC, up to three stories a run; fix-only 06:50, 11:50, 15:50, 19:50 UTC (`trig_014fa4xbTLFyrXdfF4pzv8KD`), both set by the conductor at Vicky's word.
 
 **From 8 Nov (SCHED-WS):** writing at :09 past 06, 11, 15, 19 UTC; fix-only at :14 past 07, 12, 16, 20 UTC (`trig_014fa4xbTLFyrXdfF4pzv8KD`), both set by the conductor at Vicky's word, 7 Nov.
@@ -57,7 +61,7 @@ Scheduled run for journalist-connections@PrompTugal.vicky:
 2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
 3. Read desks/journalist-vicky/STYLE.md.
 4. Read desks/curator/README.md and pick the storylines in your beat that have no draft yet in desks/journalist-vicky/drafts/, desks/journalist-promptugal/drafts/ or content/articles/.
-5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: journalist@PrompTugal.dinis.
+5. Write up to three of them (standing answer 22: only storylines the curator lists, in its priority order, each with enough verified public information and past the duplicate checks; never one just to fill the number), one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: journalist@PrompTugal.dinis.
 6. If there's nothing new in your beat, write nothing.
 7. Add a report line in people/vicky/reports/journalist-connections.md on the team site.
 Never push to main, never use --force, never push to a session branch.
