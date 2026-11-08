@@ -206,8 +206,16 @@ function office(ROOT) {
             const mo = MONTHS.indexOf(m[2].slice(0, 3)); if (mo < 0) return null
             m[3] = m[3] || year
             const body = t.slice(m.index, i + 1 < heads.length ? heads[i + 1].index : t.length), st = [...body.matchAll(/state:\s*(ok|partial|idle|blocked|failed)\b/gi)].pop()
-            return { at: new Date(Date.UTC(+m[3], mo, +m[1], +m[4], +m[5])).toISOString().slice(0, 16) + 'Z', state: st ? st[1].toLowerCase() : null, urgent: /\bURGENT\b/.test(body) }
-        }).filter(Boolean).sort((x, y) => y.at.localeCompare(x.at)).slice(0, 12)
+            const et = Date.UTC(+m[3], mo, +m[1], +m[4], +m[5]), iso = x => new Date(x).toISOString().slice(0, 16) + 'Z'
+            // a fix-only run is silent when there is nothing to fix; the journalist's next writing run (the same session)
+            // may say how it went, "fix-only 11:56: nothing to fix" or "fix-only 11:56: revised <draft>": that is evidence
+            // for the fix-only run, dated to its own time (the day before when the time is later than the entry's)
+            const fix = [...body.matchAll(/fix-only (\d{1,2}):(\d{2})(?: UTC)?: (nothing to fix|idle|revised)/gi)].map(f => {
+                let ft = Date.UTC(+m[3], mo, +m[1], +f[1], +f[2]); if (ft > et) ft -= 864e5
+                return { at: iso(ft), state: /revised/i.test(f[3]) ? 'ok' : 'idle', urgent: false }
+            })
+            return [{ at: iso(et), state: st ? st[1].toLowerCase() : null, urgent: /\bURGENT\b/.test(body) }, ...fix]
+        }).filter(Boolean).flat().sort((x, y) => y.at.localeCompare(x.at)).slice(0, 12)
     }
     // the agents whose rules make them write a report line on every run, "state: idle" when there is nothing to do (P3,
     // now in every agent's prompts: decisions.md, SA16 and its For: list): for them, and only for those with a dated
