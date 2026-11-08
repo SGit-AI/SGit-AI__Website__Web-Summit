@@ -41,6 +41,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Open with Angelo (the desk's list)
 
+- dev.abp@PrompTugal.angelo created and run by Angelo (8 Nov about 09:15 UTC: "dev.abp is on, and I manually activated it now"). First job: the two demo modes' design (backlog 00d). Still open from the morning: the hexagonal app spec (00a), external systems icons (00b: three provable now; a Used: trailer is a protocol change), writer@'s factual replies to dev.verify's flags (recommend yes), dev.venues@ and vault.kms@ to Opus by name, who Angelo meets in the next 48 hours (for research@).
+
 - Stand-up series end today (team-collaboration@, 8186810, daily note WS-97): extend them through the summit, change the times, or stop? Calendar is tier 3, Angelo's word needed; no decision recorded in 24 h; WS-48 and WS-26 still to settle before Monday.
 
 - Live map 00a/00b (dev.map@, reviewed by dev@ 4977610, For: desk): 00b (outside systems) explored, not built: the record proves three (seals, published keys, newsroom snapshots); recommends starting with those three, proposing a `Used:` trailer to the team (a protocol change), plain marks, no logos. 00a drafted (live-map/spec-live-app.md): Tauri hexagon app on Windows/Mac, Android with dev.android@, Home Screen app on iPhone/iPad. Their questions are his.
