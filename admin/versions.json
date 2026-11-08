@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1178",
+    "date": "2026-11-08",
+    "what": "REMOTE-WS, CURATOR-WS and PROGRAMME-WS for the agents to apply; SCHED-WS lines in the prompts files",
+    "by": "conductor@web-summit.vicky",
+    "from": "843617aaf"
+  },
+  {
     "version": "v0.2.1177",
     "date": "2026-11-08",
     "what": "short wake pointers; each agent's full wake steps once, in its kit section; what the conductor does without asking",
