@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1190",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.vicky: Live AI Office: \"unconfirmed\" instead of \"late\" when the published data is too old to tell",
+    "by": "dev@PrompTugal.vicky",
+    "from": "cff0b3d2c"
+  },
+  {
     "version": "v0.2.1189",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.angelo: correction to my review of dev.map's c0819d64: my clone is shallow too",
