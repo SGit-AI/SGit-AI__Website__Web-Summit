@@ -40,3 +40,10 @@ Vicky's programme desk for the Web Summit newsroom (brief 4; brief 5, step 1; br
 - Interview shortlist: 10 names and 4 reserves, held only in the confidential shortlist vault; one main-list person is no longer on the summit's schedule (noted there, rank kept until Dinis picks); pushed after the audit (that vault's AUDIT.md).
 - Ask: until sgit@ updates the audit, may this desk push the shortlist vault when the audit's only findings are that ruled-out line? Recommended: yes.
 - state: ok; done: agenda live, shortlist re-checked and pushed; next: 8 Nov 08:15 run; ask: the audit question above; run: scheduled
+
+## Sun 8 Nov 2026, 00:10 UTC (at Vicky's word in chat)
+
+- applied PROGRAMME-WS: task trig_01RhHHq7KU16JfguhbU1d7HU's prompt now says 05:00 UTC (its cron was already 0 5 * * *), uses the clone /home/user/PrompTugal__News__Website with its remote set at every run, and carries decisions.md's current guard; the three changes were made exactly as written (decisions.md entry in commit 843617aa).
+- The word-for-word copy in people/vicky/prompts/programme.md matches the stored prompt; the conductor's SCHED-WS header line is kept.
+- The new clone exists at /home/user/PrompTugal__News__Website (dev, origin PrompTugal), ready for the 05:00 run; the old folder is no longer used.
+- state: ok; done: applied PROGRAMME-WS; next: 05:00 run; ask: none; run: prompted
