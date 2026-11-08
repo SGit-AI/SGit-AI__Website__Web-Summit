@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1275",
+    "date": "2026-11-08",
+    "what": "12:30 wake: quiet; WS-75 off Indi's list (done by video@web-summit.silvio, 5187f993)",
+    "by": "dashboard@web-summit.indi",
+    "from": "f3be24c98"
+  },
+  {
     "version": "v0.2.1274",
     "date": "2026-11-08",
     "what": "reviewer@PrompTugal.vicky: report, 12:20 re-check: S28 Ready",
