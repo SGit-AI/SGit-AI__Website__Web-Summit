@@ -9,7 +9,7 @@ Kept by conductor@web-summit.vicky at Vicky's word (8 November 2026, about 17:45
 | Count | |
 |---|---|
 | Company pages on promptugal.news | 120 |
-| Already done | 1 (Replit) |
+| Already done | 19 (Replit; C1, ten; P1, eight) |
 | In this backlog | 101, in 10 batches |
 | Blocked, missing evidence | 14 |
 | Held, someone else working on the data | 4 |
@@ -22,16 +22,16 @@ Marked (website): the company's own site refuses automated reads; do it from oth
 
 | Company | Page | Status |
 |---|---|---|
-| Cloudflare (article) | https://promptugal.news/companies/cloudflare/ | in review |
-| Descope (article) | https://promptugal.news/companies/descope/ | in review |
-| Emergence (article) | https://promptugal.news/companies/emergence-ai/ | in review |
-| Exein (article) | https://promptugal.news/companies/exein/ | in review |
-| Ledger (article) | https://promptugal.news/companies/ledger/ | in review |
-| Manus AI (article) | https://promptugal.news/companies/manus-ai/ | in review |
-| You.com (Recursive & You.com) (article) | https://promptugal.news/companies/you-com/ | in review |
-| Proofpoint | https://promptugal.news/companies/proofpoint/ | in review |
-| Proton | https://promptugal.news/companies/proton/ | in review |
-| ROOST (Robust Open Online Safety Tools) | https://promptugal.news/companies/roost/ | in review |
+| Cloudflare (article) | https://promptugal.news/companies/cloudflare/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| Descope (article) | https://promptugal.news/companies/descope/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| Emergence (article) | https://promptugal.news/companies/emergence-ai/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| Exein (article) | https://promptugal.news/companies/exein/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| Ledger (article) | https://promptugal.news/companies/ledger/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| Manus AI (article) | https://promptugal.news/companies/manus-ai/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| You.com (Recursive & You.com) (article) | https://promptugal.news/companies/you-com/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| Proofpoint | https://promptugal.news/companies/proofpoint/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| Proton | https://promptugal.news/companies/proton/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| ROOST (Robust Open Online Safety Tools) | https://promptugal.news/companies/roost/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
 
 ### C2: journalist-connections@PrompTugal.vicky (10)
 
@@ -83,15 +83,15 @@ Marked (website): the company's own site refuses automated reads; do it from oth
 
 | Company | Page | Status |
 |---|---|---|
-| Just Travel (article) | https://promptugal.news/companies/just-travel/ | in review |
-| MEO (article) | https://promptugal.news/companies/meo/ | in review |
-| Mobile Brain (article) | https://promptugal.news/companies/mobile-brain/ | in review |
-| sheerME (article) | https://promptugal.news/companies/sheerme/ | in review |
-| AI Infinity | https://promptugal.news/companies/ai-infinity/ | in review |
-| ChatPlace | https://promptugal.news/companies/chatplace/ | in review |
-| DIG-IN | https://promptugal.news/companies/dig-in/ | in review |
-| FIDO | https://promptugal.news/companies/fido/ | in review |
-| FRETEFY TECNOLOGIA S.A. | https://promptugal.news/companies/fretefy/ | in review |
+| Just Travel (article) | https://promptugal.news/companies/just-travel/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| MEO (article) | https://promptugal.news/companies/meo/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| Mobile Brain (article) | https://promptugal.news/companies/mobile-brain/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| sheerME (article) | https://promptugal.news/companies/sheerme/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| AI Infinity | https://promptugal.news/companies/ai-infinity/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| ChatPlace | https://promptugal.news/companies/chatplace/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| DIG-IN | https://promptugal.news/companies/dig-in/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| FIDO | https://promptugal.news/companies/fido/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
+| FRETEFY TECNOLOGIA S.A. | https://promptugal.news/companies/fretefy/ | fix (its site says "Fretefy agora é Mobiis"; back to journalist-portugal) |
 
 ### P2: journalist-portugal@PrompTugal.vicky (9)
 
