@@ -6,6 +6,11 @@ Fourteenth run, 8 November 2026 (18:15 to about 19:40 UTC). Backlog 0c3 (6) (the
 - 0c3 (6), the timeline collapsed on its own (app.js, replay.js, data.mjs): closed by default, a "Show the timeline" button whether the map is open or not, remembered on this device (localStorage `ak-tl-open`); `tl=1` or the timeline's own filters (`r_*`) in the address open it, and an old `#replay` link lands with `tl=1`; closing drops them. Drawn only when open.
 - The data: every commit since 2 November (`replay.events`) left data.json for `replay-events.json` (extras in data.mjs; ignored by `people/angelo/app/.gitignore`), fetched once, only when the map or the timeline is opened. The first load of the command centre (any view): data.json 1,137 KB -> 858 KB, gzipped 307 KB -> 217 KB (-29%). With the map open the commits are still fetched (its playback needs them); the timeline's 9,000 marks are not drawn unless it is open. Test `tmtlc`; `rpfps` opens the timeline with `tl=1`.
 
+## Done in a parallel run (19:09 to 19:40 UTC, run 15)
+- 0c0, dev.work@'s hook in live.js (7751d4e, the desk's a2c8e4c7): host.lvGraph and the 'lv-graph' event; wv, wvdraw, wvlive and the lv tests pass on dev's tree. dev.work@ adds the switch next.
+- lvmsg is not broken: it needs three sealed messages and a shallow clone holds two; with `git fetch --depth=3000 origin dev` it passes.
+- Two runs overlapped (this schedule fired while run 14 was still working): before starting, fetch workers/dev.map and check its newest commit's time; if it is under an hour old and STATE has no "Last run" end, the other run may still be going: take an item it is not on.
+
 ## Open
 - lvlabel fixed in its test: the live clock follows the viewer's locale (12-hour in New York); the test assumed 24-hour and failed after 13:00 there.
 - Offline (sw.js): replay-events.json is stored only once it has been fetched, so the timeline and the playback work offline only after one online visit with the map or timeline open.
