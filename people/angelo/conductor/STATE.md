@@ -41,6 +41,8 @@ dev, dashboard, team-collaboration, vault, helper, crm (all report to the conduc
 
 ## Open with Angelo (the desk's list)
 
+- Desktop app dropped (Angelo, 8 Nov about 18:10 UTC): the website's pop-out is enough; the urgent CI request to Dinis's conductor withdrawn; no signing.
+
 - Asked the team at Angelo's word (dev@ 05b5bd01, his answer "Ask the team"): whoever has a Mac or an iPad tries the live graph's Pop out in Safari and says whether it keeps moving. Sent 8 Nov about 16:40 UTC to every conductor.
 - LinkedIn wording conflict: Angelo told dev@ "Over a hundred" (05b5bd01, 16:25); writer@ then changed posts.md to "dozens" to match the live article (b52d7013, 16:31). His call.
 
