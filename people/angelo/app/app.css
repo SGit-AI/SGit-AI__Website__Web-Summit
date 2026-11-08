@@ -203,6 +203,10 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .tm { display: grid; gap: 8px; }
 .tm-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .tm-wrap { max-width: 860px; width: 100%; margin: 0 auto; }
+.tm-wrap.tm-3d-on { position: relative; }
+.tm-3d-on .tm-svg { visibility: hidden; }
+.tm-3d { position: absolute; inset: 0; overflow: hidden; border-radius: 12px; }
+.tm-3d > .note { margin: 0; padding: 16px; }
 .tm-svg { width: 100%; height: auto; display: block; }
 .tm-links path { fill: none; opacity: .35; }
 .tm-links path.on { opacity: .9; }
