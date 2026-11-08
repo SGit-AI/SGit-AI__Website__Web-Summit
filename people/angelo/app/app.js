@@ -434,10 +434,12 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
         // the whole team as one map (WS-97, Angelo's ask, 6 November): people on a ring, their agents fanned around them,
         // an arc for each pair that wrote to each other in the last 7 days (team-map.mjs's data); tap anyone to focus them
         const TM_COL = ['var(--rm-role-conductor)', 'var(--rm-role-dev)', 'var(--rm-gold)', 'var(--rm-role-video)', 'var(--rm-green)', 'var(--rm-role-outreach)', 'var(--rm-orange)', 'var(--rm-blue)', 'var(--rm-red)']
-        // three layouts (Angelo, 6 November): "ring", people on a ring with their agents around them; "agents", the agents at the
-        // centre and the people outside; "work", people outside, agents in a middle ring, and the kinds of work they did at the
-        // centre, each a shape of its own, with a flow from each agent to each kind, wider for more commits
-        const TM_LAYOUTS = [['ring', 'People ring'], ['agents', 'Agents at the centre'], ['work', 'Agents and their work']]
+        // three layouts (Angelo, 6 November): "ring", people on a ring with their agents around them; "agents", the agents' ring:
+        // "agents and their work" without the work (Angelo, 8 November, backlog 0e: "it should look like agents and their work, but
+        // without the work, so all agents in the other ring"), people outside, each person's agents in the ring inside them, the
+        // centre left to the lines; "work", the same rings with the kinds of work they did at the centre, each a shape of its own,
+        // with a flow from each agent to each kind, wider for more commits. live.js draws the same three (its own copy of placeFor).
+        const TM_LAYOUTS = [['ring', 'People ring'], ['agents', 'Agents ring'], ['work', 'Agents and their work']]
         const TM_KIND = { build: ['var(--rm-role-dev)', 6, 0], content: ['var(--rm-role-video)', 3, 0], outreach: ['var(--rm-role-outreach)', 5, 0.45], setup: ['var(--rm-green)', 4, 0], running: ['var(--rm-role-conductor)', 5, 0], riskmandate: ['var(--rm-gold)', 0, 0], merch: ['var(--rm-orange)', 8, 0] }
         const shape = (k, x, y, r) => { const [, n, inner] = TM_KIND[k] || ['', 0, 0]; if (!n) return `<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${r.toFixed(1)}"/>`; const pts = []; const m = inner ? n * 2 : n; for (let q = 0; q < m; q++) { const a = -Math.PI / 2 + q * 2 * Math.PI / m, rr = inner && q % 2 ? r * inner : r; pts.push(`${(x + rr * Math.cos(a)).toFixed(1)},${(y + rr * Math.sin(a)).toFixed(1)}`) } return `<polygon points="${pts.join(' ')}"/>` }
         let lastMap = null
@@ -461,15 +463,15 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
                     const rows = N > 16 ? 3 : 2, spread = Math.min(Math.PI * (rows === 3 ? 1.3 : 0.95), (0.16 * N + 0.3) / (rows - 1))
                     for (let k = 0; k < N; k++) { const t = P.a + (N > 1 ? -spread / 2 + k * spread / (N - 1) : 0), rr = 100 + (k % rows) * 32; out.push({ x: P.x + rr * Math.cos(t), y: P.y + rr * Math.sin(t) }) }
                 } else {
-                    // each person's agents in their own sector, between an inner and an outer radius (agents: the inner disc; work: a middle ring)
-                    const [r0, r1] = L0 === 'agents' ? [120, 340] : [290, 370], width = 2 * Math.PI / NP * 0.86, rows = Math.max(1, Math.ceil(N / (L0 === 'agents' ? 7 : 12)))
+                    // each person's agents in their own sector of one ring inside the people (agents and work alike; work adds the centre)
+                    const [r0, r1] = [290, 370], width = 2 * Math.PI / NP * 0.86, rows = Math.max(1, Math.ceil(N / 12))
                     const perRow = Math.ceil(N / rows)
                     for (let k = 0; k < N; k++) { const row = Math.floor(k / perRow), col2 = k % perRow, n = Math.min(perRow, N - row * perRow), t = P.a + (n > 1 ? -width / 2 + col2 * width / (n - 1) : 0), rr = rows > 1 ? r0 + (r1 - r0) * row / (rows - 1) : (r0 + r1) / 2; out.push({ x: C + rr * Math.cos(t), y: C + rr * Math.sin(t) }) }
                 }
                 return out
             }
             M.people.forEach(p => {
-                const mine = M.agents.filter(a => a.person === p.id).sort((x, y) => L0 === 'agents' ? (x.commits || 0) - (y.commits || 0) : (y.commits || 0) - (x.commits || 0)), P = pos.get(p.id)
+                const mine = M.agents.filter(a => a.person === p.id).sort((x, y) => (y.commits || 0) - (x.commits || 0)), P = pos.get(p.id)
                 placeFor(P, mine.length).forEach((q, k) => pos.set(mine[k].id, agentNode(mine[k], q.x, q.y)))
             })
             // the kinds of work, at the centre (work layout)
@@ -535,7 +537,7 @@ ${flows}
             if (W) keyItems.push([sw('<path d="M3 20Q14 26 25 8" fill="none" stroke="var(--rm-text-secondary)" stroke-width="5" stroke-linecap="round" opacity=".7"/>'), "A flow: an agent's commits on one kind of work, wider for more; each kind of work is a shape, listed above"])
             const key = `<details class="tm-key"${keyOpen() ? ' open' : ''}><summary>Key: what each symbol means</summary><ul>${keyItems.map(([i, t]) => `<li>${i}<span>${esc(t)}</span></li>`).join('')}</ul><p class="note">Colour is the person. Tap anyone to focus them and their links; tap again to clear.</p></details>`
             const what = L0 === 'work' ? 'Each flow is an agent\'s commits in 7 days on issues of that kind of work (from the issue\'s area on the board), wider for more; PrompTugal\'s newsroom agents count as newsroom work, from their own repository. Tap a shape, an agent or a person to follow their work.'
-                : L0 === 'agents' ? 'The agents at the centre, each in its person\'s sector, and the people around them; an arc is a pair of agents that wrote to each other in 7 days.'
+                : L0 === 'agents' ? 'The agents in a ring, each beside its person, the people around them; an arc across the middle is a pair that wrote to each other in 7 days, wider for more.'
                 : `An arc is a pair that wrote to each other, wider for more. ${M.agents.some(a => a.kind) ? 'A solid ring is an agent woken on a schedule into its own session, a dashed ring one that starts a fresh session each run. ' : ''}`
             return head + tabs + `<p class="note">${M.totals.people} people and ${M.totals.agents} agents active in the last ${M.days} days (${M.totals.promptugal} of them PrompTugal's, the diamonds), and ${M.totals.messages} messages. ${what} Tap a person or an agent to focus them (a person with many agents: names on hover or tap)${c.f ? `; focused on <b>${esc(c.f.replace(/^k:/, ''))}</b>, tap again to clear` : ''}.${Lout.agents ? ` Left out, not active: ${Lout.agents} agents${(Lout.people || []).length ? ` and ${esc(Lout.people.join(', '))}` : ''}.` : ''}</p>${legend}${key}<div class="tm-wrap${c.d3 ? ' tm-3d-on' : ''}">${svg}${c.d3 ? '<div class="tm-3d" data-tm-3dv><p class="note">Loading the 3D view…</p></div>' : ''}</div><div class="tmf" data-tmf></div><p class="note">From team-collaboration@web-summit.angelo's team-map.mjs, built with this release${M.promptugal ? `, with the PrompTugal newsroom's agents from its own repository as of ${esc(new Date(M.promptugal.read_at).toISOString().slice(0, 16).replace('T', ' '))} UTC (refreshed at dev@web-summit.angelo's wakes)` : ''}.</p></section>`
         }
