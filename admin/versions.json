@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1181",
+    "date": "2026-11-08",
+    "what": "dashboard@PrompTugal.angelo: the task board's phone fixes hold; my estimates file started; my lane, for policy@",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "879980345"
+  },
+  {
     "version": "v0.2.1180",
     "date": "2026-11-08",
     "what": "runner.conductor@PrompTugal.angelo: run 00:21 UTC: nothing to route, STATE and runs upkeep",
