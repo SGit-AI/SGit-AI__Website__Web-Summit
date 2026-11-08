@@ -25,7 +25,7 @@ const S = process.argv[2], U = 'http://127.0.0.1:8765/people/angelo/app/index.ht
  for (let i = 0; i < 50 && !(await p.$('.lv-display .lv-svg')); i++) { await p.clock.runFor(100); await p.waitForTimeout(20) }
  const cdp = await ctx.newCDPSession(p)
  const mem = async () => { await cdp.send('HeapProfiler.collectGarbage'); const h = await cdp.send('Runtime.getHeapUsage'); return { heap: h.usedSize, els: await p.evaluate(() => document.getElementsByTagName('*').length) } }
- const st = () => p.evaluate(() => { const d = document.querySelector('.lv-display'); return { svg: !!(d && d.querySelector('.lv-svg')), txt: d ? d.querySelector('.lv').textContent.length : -1, flow: document.querySelectorAll('.lv-display .lv-pulses circle').length, dot: (document.querySelector('.lv-dot') || {}).className || '' } })
+ const st = () => p.evaluate(() => { const d = document.querySelector('.lv-display'); return { svg: !!(d && d.querySelector('.lv-svg')), txt: d ? d.querySelector('.lv').textContent.length : -1, flow: document.querySelectorAll('.lv-display .lv-pulses circle').length, dot: (document.querySelector('.lv-live') || {}).className || '' } })
  // one simulated minute: jump 59.4 s (timers and reads due fire once), let the read land, then 0.6 s of frames
  const minute = async () => { await p.clock.fastForward(59400); sim += 59400; await p.waitForTimeout(25); await p.clock.runFor(600); sim += 600; n++; return st() }
  let minFlow = 1e9, h1 = null, offAt = null, during = null, back = null

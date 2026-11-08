@@ -1,0 +1,2 @@
+{"event":"start","at":"2026-11-08T09:04:29Z","agent":"dev.abp@PrompTugal.angelo","item":"00d","what":"ABPs you can watch: design of the two modes (loop, interactive), visual cues, five scenarios, a mock-up of each mode, in spec-abp-live.md for Angelo","est_effort_min":60,"est_elapsed_min":75,"confidence":"medium"}
+{"event":"done","at":"2026-11-08T09:15:37Z","agent":"dev.abp@PrompTugal.angelo","item":"00d","effort_min":11,"elapsed_min":11,"runs":1,"note":"design delivered for review; the mock-up took three passes to get the glyphs and layout right"}
