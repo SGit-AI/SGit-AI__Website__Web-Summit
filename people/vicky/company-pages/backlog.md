@@ -91,7 +91,7 @@ Marked (website): the company's own site refuses automated reads; do it from oth
 | ChatPlace | https://promptugal.news/companies/chatplace/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
 | DIG-IN | https://promptugal.news/companies/dig-in/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
 | FIDO | https://promptugal.news/companies/fido/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
-| FRETEFY TECNOLOGIA S.A. | https://promptugal.news/companies/fretefy/ | fix (its site says "Fretefy agora é Mobiis"; back to journalist-portugal) |
+| FRETEFY TECNOLOGIA S.A. | https://promptugal.news/companies/fretefy/ | in review |
 
 ### P2: journalist-portugal@PrompTugal.vicky (9)
 
