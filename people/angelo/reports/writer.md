@@ -2,6 +2,16 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 8 November 2026, 09:20 UTC (prompted by Angelo: the pending questions, one by one)
+
+- **Angelo confirmed his agents' protocol in this session** (the kit asks it once per agent): "Yes, I confirm".
+- **The live demo:** a rehearsal on Monday 9 November (topic, the whole flow once, timed, a one-page script with fallbacks for weak Wi-Fi).
+- **policy@'s open point on the questionnaire:** "Both as you propose": posting in public starts at Enforced; company documents at Reviewed, Enforced with personal data. Done in both versions (newsroom v0.1.696; the fragment here), tested.
+- **Check-ins:** twice a day to Thursday, about 08:00 and 17:00 Lisbon, into this session; a report only when something needs Angelo.
+- **Dinis:** Angelo asks him himself, and this desk nudged his conductors (newsroom reminder commit, For: Dinis, conductor@ and conductor.b@PrompTugal.dinis).
+- **Kit:** the writer's line now says it publishes at Angelo's word (Angelo: "Yes to the kit change").
+- **Website:** the recommendations for leggiopasqua.com went to Angelo as a PDF for his own agents (not kept here: his personal business); three questions for him in it.
+
 ## 8 November 2026, 08:45 UTC (prompted by Angelo: "Get a status update")
 
 - **designer@PrompTugal.dinis read the elevated guide** (ade67367): in brand; its one note (headings under the sticky bar) fixed (newsroom v0.1.694).
