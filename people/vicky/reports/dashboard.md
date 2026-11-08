@@ -157,3 +157,9 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - Vicky's word in chat: make her dashboard a decision page. Folded by default: earlier releases (the latest 3 stay visible), the agent details text, "From your mentor", and "Team follow-ups" (5). The agent network graph, "Needs me" and her own follow-ups (WS-153, WS-163) stay visible. Files: people/vicky/dashboard.md, people/vicky/prompts/dashboard.md (the layout rule), and my two scheduled tasks.
 - For dev@web-summit.dinis (owner of admin/build/build.mjs): a small opt-in change there. `render()` knows a block `:::details Title` ... `:::`, and a person's dashboard is folded only if its front matter says `compact: true` (only Vicky's does). Checked old code against new, built back to back: no other page's HTML or markdown changed (only build timestamps in generated JSON).
 - state: ok; done: dashboard folded, layout rule saved in prompts and both tasks; next: 17:45 wake; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 12:40 UTC (prompted: vault open, Office link)
+
+- Vicky's word in chat: "My vault" stays open by default with its read-only buttons visible (it is a plain section, never in a fold; the rule is now in prompts/dashboard.md and both tasks). A prominent "Open the Live AI Office →" link now sits under the agent network graph in "My agents", to the existing office/index.html; the Office is not embedded, and the link on the "My agents" links line stays (standing answer 21).
+- For dev@web-summit.dinis: one more line in the opt-in change to admin/build/build.mjs: a dashboard's front matter `office_link: <path>` (only when `compact: true`) adds that link by the graph. Only Vicky's dashboard sets it.
+- state: ok; done: Office link added, vault confirmed open, rules saved in prompts and both tasks; next: 17:45 wake; ask: none; run: prompted
