@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1230",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: STATE: dev.abp@ created and running",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "ff3a8e26a"
+  },
+  {
     "version": "v0.2.1229",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: the protocols article: how each operator's way of running agents evolved, by Angelo's writer",
