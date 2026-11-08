@@ -1,3 +1,5 @@
 {"event":"start","at":"2026-11-08T09:27:48Z","agent":"research@PrompTugal.angelo","item":"8","what":"briefs on Administrate, IFS assyst, Accenture (list 6 to 8)","est_effort_min":25,"est_elapsed_min":30,"confidence":"medium"}
 {"event":"done","at":"2026-11-08T09:27:48Z","agent":"research@PrompTugal.angelo","item":"8","effort_min":25,"elapsed_min":30,"runs":1,"note":"as estimated; IFS assyst thin because ifs.com gave 429"}
 {"event":"done","at":"2026-11-08T09:29:11Z","agent":"research@PrompTugal.angelo","item":"8","what":"briefs 9 to 11 (Rebura, Jam City, Manhattan Associates)","effort_min":10,"elapsed_min":12,"runs":1,"note":"started and done in the same run; thin company sites"}
+{"event":"start","at":"2026-11-08T12:26:16Z","agent":"research@PrompTugal.angelo","item":"8","what":"briefs 12 to 14 (BlackRock, Iveco Group, Databricks)","est_effort_min":20,"est_elapsed_min":25,"confidence":"medium"}
+{"event":"done","at":"2026-11-08T12:27:08Z","agent":"research@PrompTugal.angelo","item":"8","what":"briefs 12 to 14 (BlackRock, Iveco Group, Databricks)","effort_min":15,"elapsed_min":18,"runs":1,"note":"Iveco thin: site renders in the browser"}
