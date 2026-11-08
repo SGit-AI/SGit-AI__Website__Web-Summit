@@ -266,7 +266,8 @@ function replay(root) {
 // keys: [t, agent, 'published'|'ended'], from each commit of data/keys.json. handovers: [t, by, to], every file in data/sealed/
 // drawn only as "a key handed over" (decision 1): never its name, kind or contents. lanes: [t, agent, 'inbox'|'feedback'], an
 // agent that can receive sealed messages, from the commit that first gave it the lane. messages: [t, agent, 'sent'|'verified',
-// commit], a sealed message an agent says it sent or verified. Names only: no token, key or vault id.
+// commit], a sealed message an agent says it sent or verified. comms: [t, from, to, kind], the newsroom's comms ledger. Names
+// only: no token, key or vault id.
 const minsOf = iso => Math.round((Date.parse(iso) - REPLAY_FROM) / 6e4)
 const sealedAt = a => { const m = String(a || '').match(/^(\d{4}-\d\d-\d\d)T(\d\d):?(\d\d)(?::?(\d\d))?(?:\.\d+)?Z$/); return m ? `${m[1]}T${m[2]}:${m[3]}:${m[4] || '00'}Z` : null }
 function liveEvents(root) {
@@ -326,8 +327,14 @@ function liveEvents(root) {
         const who = committer(s, b), wp = who && parseName(who)
         if (wp && people.has(wp.person)) messages.push([minsOf(at), asNow(who), kind, h.slice(0, 8)])
     }
+    // the newsroom (piece 3), from the snapshot people/angelo/tools/promptugal-snapshot.mjs writes: its agents' key events join
+    // keys, and security@PrompTugal.dinis's comms ledger gives comms: [t, from, to, 'message'|'session'|'sealed'], names only
+    const PT = readJson(root, 'people/angelo/app/promptugal.json') || {}
+    for (const [at, who, st] of PT.keys || []) if (/^(published|ended)$/.test(st) && Date.parse(at)) keys.push([minsOf(at), who, st])
+    keys.sort((x, y) => x[0] - y[0])
+    const comms = ((PT.comms || {}).rows || []).filter(r => Date.parse(r[0]) && /^(message|session|sealed)$/.test(r[3])).map(([at, f, t, k]) => [minsOf(at), f, t, k]).sort((x, y) => x[0] - y[0])
     messages.sort((x, y) => x[0] - y[0])
-    return neverList(root, { keys, handovers, lanes, messages })
+    return neverList(root, { keys, handovers, lanes, messages, comms })
 }
 // the never list (data-and-who-may-see-it.md): no sealed file's name, no token, no key, no vault id. Anything that looks like one
 // drops the whole section, so a leak is never published; the build says why.

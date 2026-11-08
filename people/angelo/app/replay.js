@@ -223,6 +223,7 @@ ${sel ? detail(R, sel) : ''}
             use(from, e[0])
             for (const ti of e[3]) { const to = o.nodeOf(R.targets[ti]); if (!to || to === from) continue; use(to, e[0]); if (isAgent(from)) { if (!sentAt.has(from)) sentAt.set(from, []); sentAt.get(from).push(e[0]) } }
         }
+        for (const [t, f, tt] of (R.live && !R.live.error && R.live.comms) || []) { const from = o.nodeOf(f), to = o.nodeOf(tt); if (from) use(from, t); if (to && to !== from) use(to, t) }   // the newsroom's comms ledger
         for (const [id, n] of o.pos) if (n.kind === 'a' && n.first) use(id, Math.max(0, Math.round((Date.parse(n.first) - Date.parse(R.from)) / 6e4)))   // a newsroom agent: its first commit there
         for (const [id, n] of o.pos) if (n.kind === 'a' && n.runsAs && firstUse.has(n.runsAs)) use(id, firstUse.get(n.runsAs))                          // a runner: with the agent it works as
         for (const a of sentAt.values()) a.sort((x, y) => x - y)
@@ -233,6 +234,9 @@ ${sel ? detail(R, sel) : ''}
         const ev = R.events.filter(e => e[0] >= start && e[0] <= end)
         const msgs = [], pairs = new Map()
         for (const e of ev) if (e[1] >= 0) { const from = o.nodeOf(R.agents[e[1]].name); if (!from) continue; for (const ti of e[3]) { const to = o.nodeOf(R.targets[ti]); if (!to || to === from || !o.keep(from, to)) continue; const k = from + '|' + to; if (!pairs.has(k)) pairs.set(k, { i: pairs.size, from, to, ts: [] }); msgs.push({ t: e[0], from, to, pair: pairs.get(k) }) } }
+        // the newsroom's comms ledger (spec-live-map.md piece 3): its messages and new sessions travel like ours
+        const LC = (R.live && !R.live.error && R.live.comms) || []
+        for (const [t, f, tt, k] of LC) if (k !== 'sealed' && t >= start && t <= end) { const from = o.nodeOf(f), to = o.nodeOf(tt); if (!from || !to || from === to || !o.keep(from, to)) continue; const key = from + '|' + to; if (!pairs.has(key)) pairs.set(key, { i: pairs.size, from, to, ts: [] }); msgs.push({ t, from, to, pair: pairs.get(key) }) }
         msgs.sort((x, y) => x.t - y.t); for (const m of msgs) m.pair.ts.push(m.t)
         const acts = ev.filter(e => e[1] >= 0 && o.nodeOf(R.agents[e[1]].name)).sort((x, y) => x[0] - y[0])
         const P = [...pairs.values()], maxN = Math.max(1, ...P.map(p => p.ts.length)), f1 = n => n.toFixed(1)
@@ -271,7 +275,11 @@ ${sel ? detail(R, sel) : ''}
         const sealDots = [...gs.children]; let sfly = []
         // a sealed message an agent says it sent or verified (in its own commit): a dot with a lock at the sender, in its colour,
         // linked to that commit; it swells and fades. Never the message or the subject, only "sent" or "verified".
-        const said = (L.messages || []).filter(([t]) => t >= start && t <= end).map(([t, who, k, h]) => ({ t, from: o.nodeOf(who), k, h })).filter(m => m.from && N.has(m.from))
+        // and the newsroom's signed inbox messages, from its comms ledger, linked to the ledger
+        const LEDGER = 'https://github.com/PrompTugal/PrompTugal__News__Website/blob/dev/board/team/security/comms/comms.json'
+        const said = [...(L.messages || []).map(([t, who, k, h]) => ({ t, from: o.nodeOf(who), k, h, href: `${R.repo}/commit/${h}` })),
+            ...LC.filter(r => r[3] === 'sealed').map(([t, f]) => ({ t, from: o.nodeOf(f), k: 'sent', h: `c${t}-${f}`, href: LEDGER }))]
+            .filter(m => m.t >= start && m.t <= end && m.from && N.has(m.from)).sort((x, y) => x.t - y.t)
         const gm = document.createElementNS(NS, 'g'); gm.setAttribute('class', 'tmf-msgs')
         gm.innerHTML = Array.from({ length: 4 }, () => '<a class="z" target="_blank" rel="noopener"><title></title><circle r="7"/><path d="M-2.6 -0.4h5.2v3.8h-5.2zM-1.6 -0.4v-1.4a1.6 1.6 0 0 1 3.2 0v1.4"/></a>').join('')
         o.svg.appendChild(gm)                                   // above the nodes, so its link can be clicked
@@ -367,7 +375,7 @@ ${sel ? detail(R, sel) : ''}
             msgDots.forEach((g, i) => {
                 const m = mfly[i]; if (!m) { if (!g.classList.contains('z')) g.classList.add('z'); return }
                 const a = pos(m.from), d = 0.75 * (Math.max(4, N.get(m.from).r) + 7), u = Math.min(1, Math.max(0, (T - m.t) / (travel * 3))), sc = (1 + 0.6 * Math.sin(Math.PI * Math.min(1, u * 2))).toFixed(2)
-                if (g.dataset.h !== m.h) { g.dataset.h = m.h; g.setAttribute('href', `${R.repo}/commit/${m.h}`); g.firstChild.textContent = `a sealed message ${m.k}`; g.querySelector('circle').setAttribute('fill', o.colOf((o.pos.get(m.from) || {}).person) || 'var(--rm-text-muted)') }
+                if (g.dataset.h !== m.h) { g.dataset.h = m.h; g.setAttribute('href', m.href); g.firstChild.textContent = `a sealed message ${m.k}`; g.querySelector('circle').setAttribute('fill', o.colOf((o.pos.get(m.from) || {}).person) || 'var(--rm-text-muted)') }
                 g.setAttribute('transform', `translate(${f1(a.x + d)} ${f1(a.y - d)}) scale(${sc})`); g.style.opacity = (1 - 0.7 * u).toFixed(2); g.classList.remove('z')
             })
             return moving

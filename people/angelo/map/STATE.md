@@ -1,20 +1,20 @@
 # dev.map@PrompTugal.angelo: STATE
 
-Eighth run, 8 November 2026 (04:16 to about 05:10 UTC). Backlog 00 (what can move) and 2; For: me since the last run: dev@'s reviews (2fc0504, 62683bd, d5732b9), all pushed by riskmandate-angelo.
+Ninth run, 8 November 2026 (06:15 to about 07:05 UTC). Backlog 2 (spec-live-map.md's pieces); For: me since the last run: dev@'s reviews 4f2d9ec4 and 97442a6b, both pushed by riskmandate-angelo (all my work so far is on dev).
 
 ## Done this run (on workers/dev.map, for dev@ to review)
-- tmtl after midnight (dev@'s 2fc0504): it clicked the timeline's first dot, sometimes runner.writer's, which the map leaves out. It now clicks the first dot whose agent is on the map. The page was right.
-- arcs, the phone flake: a day a second could carry the playhead past the phone's last arc in 0.7 s; now an hour a second (4 of 4 pass).
-- Item 2, spec-live-map.md piece 2: data.json's `replay.live` (keys published and ended, "a key handed over", lanes; names and minutes only), the never list (drops the section on a leak), and the map drawing them while it plays back: a gold key mark, a lane's gold ring, a gold dot for each handover. Tests `lvdata` and `lvmap`.
+- Piece 2 finished: "a sealed message sent or verified" (only from an agent's own commit subject; nine since 2 November) as a lock dot at the sender linked to the commit (`lvmsg`); and the still map's tooltips with each agent's counts (`lvtip`).
+- Piece 3: the newsroom's key events and security@PrompTugal.dinis's comms ledger, through promptugal-snapshot.mjs into replay.live, drawn in playback (`lvnews`). The snapshot data is its own commit, for dev@ to take or regenerate.
+- Piece 5, first slice: the 3D switch (`map3d.js`, `lv3d`), off by default, the same positions tilted.
+- `tmtl` fixed: at about 06:40 UTC the 72-hour window's first dot sits under the row labels; it now clicks the dot itself.
 
 ## Open
-- Piece 2's last event, "a sealed message sent or verified": only from what an agent says in a commit; needs a careful pattern (next run). Then the still map's tooltips with the counts (spec: "in the still map as counts in each node's tooltip").
-- The map leaves out the sessionless agents (runner.writer and the workers) though the timeline shows their commits; the live graph draws them. Worth a dashed ring on the map too? A question for the desk, not built.
+- Piece 5, next slice: playback in 3D (the pulses and marks), and time as depth.
+- Piece 4 (the public /team/map/ and the daily snapshot into Angelo's article) needs admin/build/build.mjs and the newsroom's article, outside my prompt's files: a question for the desk (who builds it: dev@, or my lane widened?).
+- The ledger's names carry no person ("dev@PrompTugal"); 109 agent-to-agent rows wait. Asked the desk whether to ask security@PrompTugal.dinis for full names (recommended) rather than reading them as Dinis's.
 - 00: Safari untested (no WebKit here). For Angelo: try Pop out once in Safari.
-- 00: `?wallpaper=1` waits on Angelo's review of spec-realtime.md's draft part.
-- 00a: the Tauri prototype waits on spec-live-app.md's approval (its own changes say "after approval").
-- 00b: the three proven systems wait on Angelo's yes.
-- Lane: lanes.json gives me people/angelo/app/** and proposals/live-map/** only; STATE, estimates and ledger are declared with Outside: lines (asked of policy@, 4977610).
+- 00: `?wallpaper=1` waits on Angelo's review of spec-realtime.md's draft part. 00a waits on spec-live-app.md's approval; 00b on Angelo's yes.
+- Lane: lanes.json gives me people/angelo/app/** and proposals/live-map/**; STATE, estimates, ledger and promptugal-snapshot.mjs are declared with Outside: lines.
 
 ## Last run
-Commits on workers/dev.map: the test fixes, the live data, the drawing; this STATE and the ledger line. An early push sent a half-rebased replay of dev's commits to the branch (a fast-forward, nothing lost); a merge commit set the tree back to dev plus this run's work. Next run: join dev's history with a merge (tree is dev's), never a rebase onto workers/dev.map.
+Five commits on workers/dev.map after a merge joining its history (tree = dev's). Next run: if dev@ has brought this onto dev, start from dev and join workers/dev.map with `git merge -s ours`, never a rebase.
