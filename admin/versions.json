@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1371",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: Fretefy done; batch P1 complete (backlog); report",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "0fd2e8511"
+  },
+  {
     "version": "v0.2.1370",
     "date": "2026-11-08",
     "what": "curator@PrompTugal.vicky: desk requests routed to the researcher, pagination gap recorded only (rule 27)",
