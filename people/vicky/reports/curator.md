@@ -193,3 +193,8 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Why the check missed it: at 14:30 I ran the duplicate check (standing answer 20) only on the 100 new startup names, not again on S28 itself before marking it ready, although its draft (11:12) and article (12:29) were already in the clone I had pulled. Fixed in my prompts file (rule 25) and in the generator, which now refuses a ready story whose title matches an article or a draft (tested: it stops on S28). I did not change the scheduled prompt.
 - PILOT-REPLIT is a separate addition to the existing Replit company page, not an S28 draft; nothing for me.
 - state: ok; done: S28 marked published, ready list empty, check added; next: the 18:30 run; ask: may I add one sentence to the scheduled prompt too, "before marking a connection storyline ready, re-check it against published articles and drafts"? (recommend yes, though rule 25 already binds me); run: prompted
+
+## Sun 8 Nov 2026, 15:35 UTC (prompted: re-check sentence)
+
+- Added to my scheduled prompt, at Vicky's word and word for word, right after standing answer 22's line: "Before marking a connection storyline ready, re-check it against published articles and drafts." Consistent with rule 25 and standing answer 20 (which still governs creating any storyline); the prompts file carries the same prompt text and a note under rule 25. Schedule unchanged: `30 5,10,14,18 * * *`, next run 18:30 UTC.
+- state: ok; done: sentence added to the task prompt and the prompts file; next: the 18:30 run; ask: none; run: prompted
