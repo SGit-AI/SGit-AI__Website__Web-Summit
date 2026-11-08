@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1296",
+    "date": "2026-11-08",
+    "what": "curator@PrompTugal.vicky: S28 correction reported, rule 25 (re-check before ready)",
+    "by": "curator@PrompTugal.vicky",
+    "from": "688056481"
+  },
+  {
     "version": "v0.2.1295",
     "date": "2026-11-08",
     "what": "reviewer@PrompTugal.vicky: report, PILOT-REPLIT content Ready and handed to dev",
