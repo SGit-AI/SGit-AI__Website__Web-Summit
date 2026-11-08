@@ -32,7 +32,11 @@
 .lv-links path:not(.base) { filter: drop-shadow(0 0 2px rgba(255,255,255,.35)); }
 .lv-pulses circle.halo { stroke: none; opacity: .4; }
 .lv .tm-p, .lv .tm-a { cursor: default; }
-.lv .tm-a.lv-hot > circle, .lv .tm-a.lv-hot > rect { stroke: var(--rm-text, #fff); stroke-width: 3; }
+.lv .tm-a .lv-kr { fill: none; stroke: var(--rm-text, #fff); stroke-width: 2; stroke-dasharray: 3 3; opacity: .45; animation: lv-turn 6s linear infinite; }
+.lv .tm-a.lv-ran .lv-kr { opacity: .95; stroke-width: 2.5; }
+@keyframes lv-turn { to { stroke-dashoffset: -24; } }
+@media (prefers-reduced-motion: reduce) { .lv .tm-a .lv-kr { animation: none; } }
+.lv .tm-a.lv-hot > circle:not(.lv-kr), .lv .tm-a.lv-hot > rect { stroke: var(--rm-text, #fff); stroke-width: 3; }
 .lv-dot { display: none; position: absolute; left: 8px; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--rm-green, #3ecf8e); box-shadow: 0 0 6px currentColor; color: var(--rm-green, #3ecf8e); opacity: .8; }
 .lv-dot.old, .lv-dot.off { display: block; }
 /* the light shows only when something is wrong (Angelo, 7 November: a green dot that belongs to no one reads as an agent) */
@@ -40,6 +44,10 @@
 .lv-dot.off { background: var(--rm-text-muted, #9EB2C7); color: transparent; }
 .lv-bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 0 0 10px; }
 .lv-page { display: grid; gap: 10px; }
+.lv-frame:fullscreen, .lv-frame:-webkit-full-screen { width: 100vw; height: 100vh; border: 0; border-radius: 0; }
+/* display mode (?display=1): the graph alone, filling the screen, for a screen left on for days (spec-realtime.md) */
+.lv-display { position: fixed; inset: 0; z-index: 300; background: var(--rm-bg, #07111F); }
+.lv-display .lv { cursor: none; }
 .lv-frame { height: min(78vh, 760px); min-height: 320px; border-radius: var(--rm-radius-card, 12px); overflow: hidden; border: 1px solid var(--rm-border, #294A64); }
 `
     const f1 = n => n.toFixed(1), SEEN = new Set()   // what has been shown, kept when the page redraws
@@ -49,10 +57,11 @@
     function layout(M) {
         const NP = M.people.length, pos = new Map(), col = new Map(M.people.map((p, i) => [p.id, COL[i % COL.length]]))
         M.people.forEach((p, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / NP; pos.set(p.id, { x: C + RP * Math.cos(a), y: C + RP * Math.sin(a), a, kind: 'p', label: p.name.split(' ')[0], person: p.id }) })
+        const all = M.agents.concat(M.sessionless || [])   // the sessionless agents not yet on the map stand beside their person too (00c)
         for (const p of M.people) {
-            const mine = M.agents.filter(a => a.person === p.id).sort((x, y) => (y.commits || 0) - (x.commits || 0)), N = mine.length, P = pos.get(p.id)
+            const mine = all.filter(a => a.person === p.id).sort((x, y) => (y.commits || 0) - (x.commits || 0)), N = mine.length, P = pos.get(p.id)
             const rows = N > 16 ? 3 : 2, spread = Math.min(Math.PI * (rows === 3 ? 1.3 : 0.95), (0.16 * N + 0.3) / (rows - 1))
-            mine.forEach((a, k) => { const t = P.a + (N > 1 ? -spread / 2 + k * spread / (N - 1) : 0), rr = 100 + (k % rows) * 32; pos.set(a.id, { x: P.x + rr * Math.cos(t), y: P.y + rr * Math.sin(t), kind: 'a', person: a.person, family: a.family, commits: a.commits, label: a.short }) })
+            mine.forEach((a, k) => { const t = P.a + (N > 1 ? -spread / 2 + k * spread / (N - 1) : 0), rr = 100 + (k % rows) * 32; pos.set(a.id, { x: P.x + rr * Math.cos(t), y: P.y + rr * Math.sin(t), kind: 'a', person: a.person, family: a.family, commits: a.commits, label: a.short, fresh: a.kind === 'fresh' }) })
         }
         return { pos, col }
     }
@@ -79,7 +88,11 @@
         const N = new Map()
         for (const [id, n] of pos) {
             if (n.kind === 'p') { const gp = el('g', { class: 'tm-p' }, nodes); el('circle', { cx: f1(n.x), cy: f1(n.y), r: 26, fill: col.get(id) }, gp); const t = el('text', { x: f1(n.x), y: f1(n.y + 5) }, gp); t.textContent = n.label; N.set(id, gp) }
-            else { const ga = el('g', { class: 'tm-a' }, nodes), r = 4 + Math.min(8, Math.sqrt(n.commits || 0)); if (n.family !== 'web-summit') el('rect', { x: f1(n.x - 7), y: f1(n.y - 7), width: 14, height: 14, transform: `rotate(45 ${f1(n.x)} ${f1(n.y)})`, fill: col.get(n.person) }, ga); else el('circle', { cx: f1(n.x), cy: f1(n.y), r: f1(r), fill: col.get(n.person) }, ga); N.set(id, ga) }
+            else { const ga = el('g', { class: 'tm-a' }, nodes), r = 4 + Math.min(8, Math.sqrt(n.commits || 0)); if (n.family !== 'web-summit') el('rect', { x: f1(n.x - 7), y: f1(n.y - 7), width: 14, height: 14, transform: `rotate(45 ${f1(n.x)} ${f1(n.y)})`, fill: col.get(n.person) }, ga); else el('circle', { cx: f1(n.x), cy: f1(n.y), r: f1(r), fill: col.get(n.person) }, ga)
+                // a sessionless agent (a fresh session each run): the command centre's dashed ring, turning slowly between its runs
+                // so it is seen while it sleeps, and lit for two hours after it last sent something (00c)
+                if (n.fresh) { ga.classList.add('lv-fresh'); ga.setAttribute('data-lv-id', id); el('circle', { class: 'lv-kr', cx: f1(n.x), cy: f1(n.y), r: f1(n.family !== 'web-summit' ? 13 : 9 + Math.min(8, Math.sqrt(n.commits || 0))) }, ga) }
+                N.set(id, ga) }
         }
         const dot = doc.createElement('i'); dot.className = 'lv-dot off'; dot.title = 'Reading the latest exchanges…'; wrap.appendChild(dot)   // a status light in the window's corner, outside the graph
         host.appendChild(wrap)
@@ -131,7 +144,8 @@
         const enqueue = (items) => { for (const it of items) queue.push(it); queue.sort((x, y) => x.at - y.at); kick() }
 
         // ---- the data: live.json, about once a minute ----
-        const toEv = (L, e) => ({ sha: e[4], ms: Date.parse(L.from) + e[0] * 6e4, agent: L.agents[e[1]], to: e[3].map(i => L.targets[i]) })
+        // every repository's exchanges come in the same list (live.json's repos; e[5] is the repository, 0 this site's dev), drawn alike
+        const toEv = (L, e) => ({ sha: (e[5] || 0) + ':' + e[4], ms: Date.parse(L.from) + e[0] * 6e4, agent: L.agents[e[1]], to: e[3].map(i => L.targets[i]), repo: (L.repos || [])[e[5] || 0] })
         // how busy each pair has been: events weighted by their age (half-life HALF_LIFE_H hours); with no recent events, the graph's own links
         const tally = evs => {
             const m = new Map(), nowMs = Date.now(); let hour = 0
@@ -143,6 +157,8 @@
             if (!m.size) for (const l of M.links || []) if (pos.get(l.from) && pos.get(l.to)) m.set(l.from + '|' + l.to, l.n)
             weights = [...m].map(([k, w]) => { const [from, to] = k.split('|'); return { from, to, w } }); wsum = weights.reduce((x, y) => x + y.w, 0)
             act = evs.length ? hour / (evs.length / 48) : 1
+            const ran = new Set(evs.filter(e => nowMs - e.ms < 2 * 36e5).map(e => nodeOf(e.agent)))
+            for (const [id, g] of N) if (pos.get(id).fresh) g.classList.toggle('lv-ran', ran.has(id))
         }
         async function read(first) {
             try {
@@ -168,8 +184,11 @@
             dot.className = 'lv-dot ' + (!ok ? 'off' : age > STALE_MIN ? 'old' : '')
             dot.title = !ok ? 'Could not read the latest exchanges; trying again' : `Up to date as of ${new Date(built).toISOString().slice(11, 16)} UTC${age > STALE_MIN ? ' (a quiet spell, or a slow release)' : ''}`
         }
+        // back from sleep or lost Wi-Fi: read at once instead of waiting for the next tick (a failed read is simply tried again)
+        const again = () => { if (!alive || win.document.visibilityState === 'hidden') return; win.clearTimeout(timer); read(false) }
+        win.addEventListener('online', again); win.document.addEventListener('visibilitychange', again)
         read(true); kick()
-        return { destroy() { alive = false; win.clearTimeout(timer); if (raf) win.cancelAnimationFrame(raf); fly.length = 0 } }
+        return { destroy() { alive = false; win.clearTimeout(timer); if (raf) win.cancelAnimationFrame(raf); fly.length = 0; win.removeEventListener('online', again); win.document.removeEventListener('visibilitychange', again) } }
     }
 
     // ---- the page view (#live) and the pop-out ----
@@ -184,14 +203,35 @@
         for (const l of to.querySelectorAll('link[rel="stylesheet"]')) l.href = new URL(l.getAttribute('href'), from.baseURI).href
     }
     const supported = () => !!(root.documentPictureInPicture && root.documentPictureInPicture.requestWindow)
+    // full screen: the standard call, or Safari's (iPad and Mac); an iPhone has neither for a page, so the button is not shown there
+    const fsOf = e => e.requestFullscreen ? () => e.requestFullscreen() : e.webkitRequestFullscreen ? () => e.webkitRequestFullscreen() : null
+    const isDisplay = () => { try { return /(^|[?&])display=1(&|$)/.test(root.location.search.slice(1)) || /[?&]display=1(&|$)/.test(root.location.hash) } catch { return false } }
+    // display mode keeps the screen awake where the browser allows it (asked again whenever the page is shown) and reloads every
+    // six hours, at a moment with nothing in flight, so a screen left on for days returns all its memory
+    let lock = null, reloadAt = 0
+    async function wake() { try { if (root.navigator.wakeLock && document.visibilityState === 'visible' && !lock) { lock = await root.navigator.wakeLock.request('screen'); lock.addEventListener('release', () => { lock = null }) } } catch { lock = null } }
+    function display(host, o) {
+        if (current) { current.destroy(); current = null }
+        if (!document.getElementById('lv-css')) { stylesInto(document); document.head.lastChild.id = 'lv-css' }
+        host.innerHTML = '<div class="lv-display" data-lv-display></div>'
+        current = mount(host.querySelector('[data-lv-display]'), { ...o, win: root })
+        wake(); if (!root.__lvWake) { root.__lvWake = true; document.addEventListener('visibilitychange', wake) }
+        // no controls; Esc leaves display mode for the normal view
+        if (!root.__lvEsc) { root.__lvEsc = true; root.addEventListener('keydown', e => { if (e.key === 'Escape' && isDisplay()) root.location.href = root.location.pathname + '#live' }) }
+        if (!reloadAt) { reloadAt = Date.now() + 6 * 36e5; const tick = () => { if (Date.now() >= reloadAt && !document.querySelector('.lv-pulses circle:not(.flow)')) root.location.reload(); else root.setTimeout(tick, 30000) }; root.setTimeout(tick, 30000) }
+        return { destroy() { if (current) { current.destroy(); current = null } } }
+    }
     function view(host, o) {
+        if (isDisplay()) return display(host, o)
         if (current) { current.destroy(); current = null }
         if (!host.ownerDocument.getElementById('lv-css')) { stylesInto(host.ownerDocument); host.ownerDocument.head.lastChild.id = 'lv-css' }
-        host.innerHTML = `<div class="lv-page"><div class="lv-bar"><button type="button" class="cc-btn" data-lv-pop>⧉ Pop out</button><span class="note" data-lv-note>${supported() ? 'An always-on-top window with this graph. Close it to come back here.' : 'Pop-out needs Chrome or Edge on a computer. On a Mac or iPad, keep this page open on its own.'}</span></div><div class="lv-frame" data-lv-frame></div><p class="note">Lines and dots only. Each exchange between agents (a commit with a For: line) travels along its line a few minutes after it is made, at its real pace. The faint dots between are the flow of recent hours: busier pairs, more dots. The light in the corner is green while the data is fresh. Names, edges and times only: no message text.</p></div>`
+        host.innerHTML = `<div class="lv-page"><div class="lv-bar"><button type="button" class="cc-btn" data-lv-pop>⧉ Pop out</button><button type="button" class="cc-btn" data-lv-fs hidden>⛶ Full screen</button><a class="cc-btn" data-lv-display href="?display=1#live">Display mode</a><span class="note" data-lv-note>${supported() ? 'An always-on-top window with this graph. Close it to come back here.' : 'Pop-out needs Chrome or Edge on a computer. On Safari (Mac or iPad), use Full screen, or Display mode for a screen left on.'}</span></div><div class="lv-frame" data-lv-frame></div><p class="note">Lines and dots only. Each exchange between agents (a commit with a For: line, in any repository the agents work in: this site, its workers' branches, the newsroom, the apps) travels along its line a few minutes after it is made, at its real pace. The faint dots between are the flow of recent hours: busier pairs, more dots. A dashed ring that turns slowly is an agent that starts a fresh session each run: it is there between runs, and its ring is bright for two hours after it last sent something. The light in the corner shows only when the data is late or cannot be read. Names, edges and times only: no message text.</p></div>`
         const frame = host.querySelector('[data-lv-frame]'), btn = host.querySelector('[data-lv-pop]'), note = host.querySelector('[data-lv-note]')
         const inline = () => { current = mount(frame, { ...o, win: root }) }
         if (popped) { frame.innerHTML = '<p class="note" style="padding:16px">Popped out.</p>' } else inline()
         btn.disabled = !supported()
+        const fb = host.querySelector('[data-lv-fs]'), go = fsOf(frame)
+        if (go) { fb.hidden = false; fb.onclick = () => { try { const r = go(); if (r && r.catch) r.catch(() => { }) } catch { } } }
         btn.onclick = async () => {
             if (popped) { popped.close(); return }
             try {
@@ -207,5 +247,5 @@
         }
         return { destroy() { if (current) { current.destroy(); current = null } } }
     }
-    root.AngeloLive = { mount, view, supported }
+    root.AngeloLive = { mount, view, supported, isDisplay }
 })(typeof self !== 'undefined' ? self : this)
