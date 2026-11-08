@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1353",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 157 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 567 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "cf99f53e5"
+  },
+  {
     "version": "v0.2.1352",
     "date": "2026-11-08",
     "what": "17:30 wake: brief 17 (the 18:00 stand-up asks, the lead-to-article prompt); my first token ledger line",
