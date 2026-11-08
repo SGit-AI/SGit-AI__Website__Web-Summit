@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1295",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: report, PILOT-REPLIT content Ready and handed to dev",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "6c3ecfef6"
+  },
+  {
     "version": "v0.2.1294",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 150 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 570 exchanges in 48 h from 2 of 4 repositories",
