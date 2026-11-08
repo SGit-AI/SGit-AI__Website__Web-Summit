@@ -269,6 +269,13 @@ ${sel ? detail(R, sel) : ''}
         gs.innerHTML = Array.from({ length: 8 }, () => '<circle r="6.5" class="z"><title>a key handed over</title></circle>').join('')
         o.svg.insertBefore(gs, nodesG)
         const sealDots = [...gs.children]; let sfly = []
+        // a sealed message an agent says it sent or verified (in its own commit): a dot with a lock at the sender, in its colour,
+        // linked to that commit; it swells and fades. Never the message or the subject, only "sent" or "verified".
+        const said = (L.messages || []).filter(([t]) => t >= start && t <= end).map(([t, who, k, h]) => ({ t, from: o.nodeOf(who), k, h })).filter(m => m.from && N.has(m.from))
+        const gm = document.createElementNS(NS, 'g'); gm.setAttribute('class', 'tmf-msgs')
+        gm.innerHTML = Array.from({ length: 4 }, () => '<a class="z" target="_blank" rel="noopener"><title></title><circle r="7"/><path d="M-2.6 -0.4h5.2v3.8h-5.2zM-1.6 -0.4v-1.4a1.6 1.6 0 0 1 3.2 0v1.4"/></a>').join('')
+        o.svg.appendChild(gm)                                   // above the nodes, so its link can be clicked
+        const msgDots = [...gm.children]; let mfly = []
         bar.innerHTML = `<div class="rp-play tmf-play">
   <button type="button" class="cc-btn" data-tmf-play aria-pressed="false">▶ Play back</button>
   <label class="ak-sel"><span>Time</span><select data-tmf-w>${Object.entries(WINDOWS).map(([k, [l]]) => `<option value="${k}"${k === w ? ' selected' : ''}>${l}</option>`).join('')}</select></label>
@@ -310,6 +317,7 @@ ${sel ? detail(R, sel) : ''}
                 if (vis) { const ow = (0.8 + 4.2 * Math.sqrt(k / maxN)).toFixed(2), oo = (0.15 + 0.65 * op).toFixed(2); if (ow !== p.ow) el.setAttribute('stroke-width', p.ow = ow); if (oo !== p.oo) el.setAttribute('stroke-opacity', p.oo = oo) }
             }
             const sent = lowerBound(msgs, T, m => m.t), lo = lowerBound(msgs, T - travel, m => m.t); fly = msgs.slice(Math.max(lo, sent - POOL), sent)
+            const ms = lowerBound(said, T, m => m.t); mfly = said.slice(Math.max(lowerBound(said, T - travel * 3, m => m.t), ms - msgDots.length), ms)
             const ss = lowerBound(seals, T, m => m.t); sfly = seals.slice(Math.max(lowerBound(seals, T - travel * 2, m => m.t), ss - sealDots.length), ss)
             // busy: committed in the last moment of playback
             const busy = new Set()
@@ -355,6 +363,12 @@ ${sel ? detail(R, sel) : ''}
                 const m = sfly[i]; if (!m) { if (!c.classList.contains('z')) c.classList.add('z'); return }
                 const a = pos(m.from), b = pos(m.to), q = ctrl(a, b), u = Math.min(1, Math.max(0, (T - m.t) / (travel * 2))), v = 1 - u
                 c.setAttribute('cx', f1(v * v * a.x + 2 * v * u * q.x + u * u * b.x)); c.setAttribute('cy', f1(v * v * a.y + 2 * v * u * q.y + u * u * b.y)); c.classList.remove('z')
+            })
+            msgDots.forEach((g, i) => {
+                const m = mfly[i]; if (!m) { if (!g.classList.contains('z')) g.classList.add('z'); return }
+                const a = pos(m.from), d = 0.75 * (Math.max(4, N.get(m.from).r) + 7), u = Math.min(1, Math.max(0, (T - m.t) / (travel * 3))), sc = (1 + 0.6 * Math.sin(Math.PI * Math.min(1, u * 2))).toFixed(2)
+                if (g.dataset.h !== m.h) { g.dataset.h = m.h; g.setAttribute('href', `${R.repo}/commit/${m.h}`); g.firstChild.textContent = `a sealed message ${m.k}`; g.querySelector('circle').setAttribute('fill', o.colOf((o.pos.get(m.from) || {}).person) || 'var(--rm-text-muted)') }
+                g.setAttribute('transform', `translate(${f1(a.x + d)} ${f1(a.y - d)}) scale(${sc})`); g.style.opacity = (1 - 0.7 * u).toFixed(2); g.classList.remove('z')
             })
             return moving
         }

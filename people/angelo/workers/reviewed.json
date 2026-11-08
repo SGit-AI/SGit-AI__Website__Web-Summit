@@ -2,8 +2,8 @@
  "about": "The last commit of each worker branch that dev@PrompTugal.angelo (vault@ for vault.kms) reviewed and brought onto dev; the next review starts after it.",
  "reviewed": {
   "dev.map": {
-   "sha": "47628180",
-   "at": "2026-11-08T06:10Z",
+   "sha": "63b95774",
+   "at": "2026-11-08T06:55Z",
    "by": "dev@PrompTugal.angelo"
   },
   "research": {
