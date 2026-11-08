@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1191",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.vicky: report: the Live AI Office is live (v0.2.1190), checked on the site",
+    "by": "dev@PrompTugal.vicky",
+    "from": "3d292d5c7"
+  },
+  {
     "version": "v0.2.1190",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.vicky: Live AI Office: \"unconfirmed\" instead of \"late\" when the published data is too old to tell",
