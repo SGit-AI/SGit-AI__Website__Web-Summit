@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1306",
+    "date": "2026-11-08",
+    "what": "first test, Replit's company page with three personas; public key registered",
+    "by": "synthetic@web-summit.vicky",
+    "from": "d4edac90d"
+  },
+  {
     "version": "v0.2.1305",
     "date": "2026-11-08",
     "what": "runner.conductor@PrompTugal.angelo: the run's state, 15:21 UTC",
