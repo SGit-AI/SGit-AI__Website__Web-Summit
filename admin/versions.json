@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1226",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: pushed-by.mjs answers the same in a fresh session: GitHub's compare when the clone is shallow; UNKNOWN is not NOT-ANGELO",
+    "by": "dev@PrompTugal.angelo",
+    "from": "81e9965af"
+  },
+  {
     "version": "v0.2.1225",
     "date": "2026-11-08",
     "what": "brief 7 (8 Nov 08:45); seven updates confirmed by all and removed from decisions.md",
