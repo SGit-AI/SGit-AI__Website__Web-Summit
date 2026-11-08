@@ -38,3 +38,7 @@ One action per company (7, plus one for the 15 more candidates) is sealed to sil
 ## 8 November, morning run
 
 sgit installed at Silvio's word (7 November). In this session's clone of the private CRM, committed and **not pushed** (no SG/Send token of my own yet): one action per company, sealed to silvio and dinis: the 50 targets (state `drafted`; 28 are Gmail drafts, the rest text only), the 47 buyers not in world 1 (`new`), the 38 online (`drafted`, text only), world 1 (the 7 of 7 November, the five Silvio added, the 10 candidates left, and the introduction request to Algarve Evolution, `drafted` in Gmail on 7 November). 150 actions; graph derived. States come only from outreach's and inbox's commits. The five added to world 1 (Lena Concierge, Cadae AI, 241.travel, easyInfluencer.travel, WeRoad) are staged here for the public CRM too (84 records now).
+
+## 8 November: a correction, and the public CRM committed
+
+The public CRM's write key is a plain record in the private CRM (`keys/public-crm.json`, layer 1 only), so anyone holding the private CRM's key holds it too, crm-silvio and conductor-silvio included; earlier notes here said otherwise. The 84 staged companies are now committed in this session's clone of ws-team-crm-public (graph 878 nodes, 1041 edges), not pushed. Checked first: none of the 84 was in the public CRM (graph of 7 November 10:28 UTC). The only thing missing for both pushes is an SG/Send access token for crm-silvio.
