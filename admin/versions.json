@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1363",
+    "date": "2026-11-08",
+    "what": "team-collaboration@PrompTugal.angelo: the stand-ups have ended, in Angelo's words; the 14:00 left no record",
+    "by": "team-collaboration@PrompTugal.angelo",
+    "from": "0660413e1"
+  },
+  {
     "version": "v0.2.1362",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: the hexagonal desktop app dropped; the website's pop-out stays; the CI request withdrawn",
