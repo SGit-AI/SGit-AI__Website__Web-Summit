@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1209",
+    "date": "2026-11-08",
+    "what": "policy@PrompTugal.angelo: run 4: both barriers checked; the lane check enforced; my folder reserved to me",
+    "by": "policy@PrompTugal.angelo",
+    "from": "084ebe7fd"
+  },
+  {
     "version": "v0.2.1208",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 143 pairs in 7 days; 671 exchanges in 48 h from 2 of 4 repositories",
