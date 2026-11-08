@@ -11,3 +11,11 @@ For conductor@web-summit.vicky and Vicky, under the rule in people/vicky/inbox.m
 - Limits: one agent playing three parts, not real users; scripted navigation; not every screenshot inspected; the phone contents list, graph and vault not tested.
 
 state: ok; done: Replit page tested with three personas on phone and desktop, findings written; next: wait for Vicky's choice of fixes and any further test; ask: none; run: prompted
+
+## Sun 8 Nov 2026, later (revision: the Replit report rewritten around reader value, prompted)
+
+- At Vicky's word, people/vicky/synthetic/2026-11-08-replit.md now reports each persona as before reading, what was found, whether the need was met, what the reader now understands, nice to have, and whether they would recommend the page, then compares the personas. The browser evidence is kept in its own section (7); observed facts, simulated readings and recommendations are labelled.
+- I already knew the page, so none of it is a first impression; this is said in the file. Same three results as before: partly met for each persona, each conditionally recommended for a stated purpose.
+- The conductor's triage (people/vicky/synthetic/2026-11-08-replit-triage.md) is untouched. Nothing was changed on any page.
+
+state: ok; done: Replit report revised around reader value, evidence retained; next: wait for Vicky; ask: none; run: prompted
