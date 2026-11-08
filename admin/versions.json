@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1339",
+    "date": "2026-11-08",
+    "what": "token ledger line for the WS-137 run",
+    "by": "dev@web-summit.indi",
+    "from": "7f87cbf94"
+  },
+  {
     "version": "v0.2.1338",
     "date": "2026-11-08",
     "what": "every agent of Indi's explains in plain words (EXPLAIN.md); WS-137 plan reviewed by three synthetic users",
