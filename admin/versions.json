@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1282",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the stand-ups end; meetings on demand, today at 14:00",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "b310f63bc"
+  },
+  {
     "version": "v0.2.1281",
     "date": "2026-11-08",
     "what": "the team's accounts inbox: a lane for every agent, and the token-reporting protocol (WS-148)",
