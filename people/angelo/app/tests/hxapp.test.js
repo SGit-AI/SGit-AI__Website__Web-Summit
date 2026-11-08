@@ -22,6 +22,18 @@ const INIT = (fs.readFileSync(path.join(__dirname, '../desktop/src-tauri/src/mai
   console.log(n, scheme, JSON.stringify(r), errs)
   if (!r.man || !/\/people\/angelo\/app\/index\.html\?display=1#live$/.test(r.start) || r.scope !== '/people/angelo/app/' || r.display !== 'standalone' || r.icons.length < 3 || !r.icons.every(Boolean) || !r.apple || !r.ways || !r.mac || !r.win || r.scrollX > 0 || !r.live || !r.disp || errs.length) fail(`page ${n} ${scheme}`)
   await p.close() }
+ // (1b) the downloads, served from this site (the kit's "Our own website first"): none until dl/builds.json lists one; then a
+ // link per installer, under dl/ on this site, and nothing else (a bad entry, another host, is dropped)
+ { const c = await b.newContext({ viewport: { width: 390, height: 844 }, serviceWorkers: 'block' }); const p = await c.newPage(); const errs = []; p.on('pageerror', e => errs.push(e.message))
+  await p.goto(U, { waitUntil: 'networkidle' }); const before = await p.evaluate(() => ({ none: /Not built yet/.test(document.getElementById('hx-dl').innerText), links: document.querySelectorAll('#hx-dl a[download]').length }))
+  await p.route('**/desktop/dl/builds.json', r => r.fulfill({ contentType: 'application/json', body: JSON.stringify({ built: '2026-11-08T14:00:00Z', commit: '0123456789abcdef', files: [{ os: 'Mac', file: 'Team-and-the-machine-mac.dmg', bytes: 9.6e6 }, { os: 'Windows', file: 'Team-and-the-machine-windows-setup.exe', bytes: 4.2e6 }, { os: 'Mac', file: 'https://example.com/x.dmg' }, { os: 'Linux', file: 'x.AppImage' }] }) }))
+  await p.reload({ waitUntil: 'networkidle' }); await p.waitForSelector('#hx-dl a[download]', { timeout: 5000 }).catch(() => { })
+  const after = await p.evaluate(() => ({ hrefs: [...document.querySelectorAll('#hx-dl a')].map(a => a.href), none: /Not built yet/.test(document.getElementById('hx-dl').innerText), note: document.getElementById('hx-dl').innerText, scrollX: document.documentElement.scrollWidth - innerWidth }))
+  await p.screenshot({ path: `${S}/hxapp-downloads.png`, fullPage: true })
+  console.log('downloads', JSON.stringify({ before, after }), errs)
+  const own = h => h.startsWith(B + 'desktop/dl/')
+  if (!before.none || before.links || after.none || after.hrefs.length !== 2 || !after.hrefs.every(own) || !/\(9 MB\)/.test(after.note) || !/0123456/.test(after.note) || after.scrollX > 0 || errs.length) fail('downloads')
+  await c.close() }
  // (2) the Home Screen app: standalone goes to the display mode
  { const c = await b.newContext({ viewport: { width: 1024, height: 768 }, serviceWorkers: 'block' }); await c.addInitScript(() => Object.defineProperty(navigator, 'standalone', { get: () => true }))
   const p = await c.newPage(); await p.goto(U); await p.waitForSelector('.lv-display .lv-svg', { timeout: 15000 }).catch(() => { })
