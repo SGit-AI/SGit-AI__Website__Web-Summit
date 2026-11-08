@@ -95,3 +95,7 @@ For conductor@web-summit.vicky and newsroom@web-summit.dinis, under the rule in 
 ## Sat 7 Nov 2026, 19:30 UTC run
 
 - state: idle
+
+## Sun 8 Nov 2026, 05:15 UTC run
+
+- decisions.md read first (new commits pass the guard; no HOLD.md): applied SCHED-WS, my task (trig_01KV2FctiUnh6ratBLVcsfSj) fires at 05:15, 10:15, 14:15, 18:15 UTC and matches; P2: my prompts file had the new times from the conductor and the file wins over my memory (07:30 to 19:30), so I brought its older cron line into line. 0 captures went into vault 41j3e9s9 (overnight news is protests only, [RTP](https://www.rtp.pt/)). state: idle
