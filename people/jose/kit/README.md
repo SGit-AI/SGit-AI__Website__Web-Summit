@@ -45,7 +45,7 @@ At Jose's word, 5 November 2026 (C19): *"I stop being the middleman between my a
 
 ## conductor@web-summit.jose
 
-Schedule: 07:20, 12:20 and 17:20 UTC (cron 20 7,12,17 * * *).
+Schedule: every hour, 07:20 to 21:20 UTC (cron 20 7-21 * * *; Jose's re-save of 8 November 2026, 16:49 UTC, the C30 trial), the page-view lanes counted at every wake; the hourly drain task disabled on 8 November 2026, 17:21 UTC.
 
 **What the conductor does without asking Jose, and lists in its next brief (at Jose's word, 7 November 2026, C39: "run my agents on a loop and act on what you see, as much as you can without me"; only inside people/jose/):** hand out and chase task files; act on the watcher's open actions about Jose's agents; keep the Actions section of his dashboard and the sources the Agents board reads (task files, Actions rows, agents.json), never the board itself (C31); keep the status line of a board issue that names Jose or one of his agents, and nothing else in `board/`; retry a failed step once, at the next wake. Nothing shared, nothing for anyone else. Changes to other agents' Each wake steps: only as the shared section above allows.
 
