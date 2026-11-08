@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1401",
+    "date": "2026-11-08",
+    "what": "vault@PrompTugal.angelo: kms piece 1 re-tested: 26 of 27 new tests pass; one left (its own old document lacks files)",
+    "by": "vault@PrompTugal.angelo",
+    "from": "3b4145739"
+  },
+  {
     "version": "v0.2.1400",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 165 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 525 exchanges in 48 h from 2 of 4 repositories",
