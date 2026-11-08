@@ -198,3 +198,8 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 
 - Added to my scheduled prompt, at Vicky's word and word for word, right after standing answer 22's line: "Before marking a connection storyline ready, re-check it against published articles and drafts." Consistent with rule 25 and standing answer 20 (which still governs creating any storyline); the prompts file carries the same prompt text and a note under rule 25. Schedule unchanged: `30 5,10,14,18 * * *`, next run 18:30 UTC.
 - state: ok; done: sentence added to the task prompt and the prompts file; next: the 18:30 run; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 17:00 UTC (prompted: desk review across all five desks)
+
+- applied (Vicky's word in chat): from the next run with new research I review the researcher's material across all five desks, summit, Europe, Portugal, AI and connections, and turn suitable material into mature, non-duplicate assignments for each desk's journalist, each with a reader angle and sources; connections are not the focus. A desk with nothing suitable gets a one-line reason in the map's `desk_review`, missing evidence goes to the researcher as a gap, and no story is forced. It is in my scheduled prompt (end of step 4) and my prompts file (rule 26); schedule unchanged, next run 18:30 UTC.
+- state: ok; done: desk review added to the task prompt and prompts file; next: the 18:30 run; ask: none; run: prompted
