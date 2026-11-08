@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1403",
+    "date": "2026-11-08",
+    "what": "runner.writer@PrompTugal.angelo: STATE: security finding S30 names Angelo's agents; nothing else changed",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "c3a336153"
+  },
+  {
     "version": "v0.2.1402",
     "date": "2026-11-08",
     "what": "22:00 wake: no topics left, idle",
