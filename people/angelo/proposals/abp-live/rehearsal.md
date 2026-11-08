@@ -29,7 +29,7 @@ One cycle plays every recorded run, then starts again:
 2. The same, played by the smaller model, then its summary.
 3. **The coding agent**, larger model, then smaller, each with its summary.
 
-One full cycle takes about 13 to 14 minutes (the first four runs timed on the live page on 8 November, at an iPad Pro 11 profile, about a minute each; the rest estimated from the record). Each run is a time-lapse of the real run, not the real speed.
+One full cycle takes about 14 minutes (829 seconds, timed on the live page on 8 November at an iPad Pro 11 profile, with no page errors). Each run is a time-lapse of the real run, not the real speed.
 
 What a visitor should see, from the record (runs.json):
 
