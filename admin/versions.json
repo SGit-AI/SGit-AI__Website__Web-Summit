@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1241",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: STATE: dev.work@ and dev.app@ created, Opus by name for every builder",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "cabfba315"
+  },
+  {
     "version": "v0.2.1240",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: two more map agents, dev.work@ and dev.app@, to build in parallel with dev.map@",
