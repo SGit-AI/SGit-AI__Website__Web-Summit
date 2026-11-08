@@ -23,7 +23,7 @@ background:var(--bg);color:var(--ink);border-radius:20px;padding:28px 24px 32px;
 .vl .filters button{border-radius:999px;padding:0 16px}
 .vl .filters button.on{background:var(--gold);color:#1a1406;border-color:var(--gold)}
 .vl .count{margin-left:auto;font-size:14px;color:var(--dim)}
-.vl .status{margin:14px 0 0;font-size:14px;color:var(--dim)}
+.vl .status{margin:16px 0 0;font-size:15px;line-height:1.5;color:#dfe4ee;background:#0e1830;border:1px solid #2f4366;border-left-color:#2f4366;border-radius:12px;padding:12px 14px}
 .vl section{margin-top:34px}
 .vl section>.h{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;border-bottom:1px solid #1d2a45;padding-bottom:10px;margin-bottom:16px}
 .vl section>.h h3{margin:0;font-size:1.5rem;color:var(--ink)}.vl section>.h p{margin:0;color:var(--dim)}
@@ -36,25 +36,30 @@ background:var(--bg);color:var(--ink);border-radius:20px;padding:28px 24px 32px;
 .vl .aud{margin:0;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
 .vl h4{margin:0;font-size:1.15rem;line-height:1.3;color:var(--gold)}
 .vl .shows{margin:0;font-size:15px;line-height:1.5;color:var(--soft)}
-.vl .tags{display:flex;flex-wrap:wrap;gap:6px}.vl .tags span{font-size:12px;font-weight:600;color:var(--soft);background:#15213b;border:1px solid #263656;border-radius:999px;padding:3px 10px}
-.vl .files{display:flex;flex-direction:column;gap:6px;margin-top:auto}
-.vl .file{display:grid;grid-template-columns:96px 1fr;align-items:start;gap:8px}
-.vl .file .fl{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);padding-top:13px}
-.vl .file .fb{display:flex;flex-wrap:wrap;gap:6px}
-.vl .file .fb button{padding:0 11px}
+.vl .shows{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;min-height:6em}
+.vl .ctl{margin-top:auto;display:flex;flex-direction:column;gap:10px;padding-top:6px;border-top:1px solid #1d2a45}
+.vl .row1{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px}
+.vl .pick{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+.vl .pick select{font:600 15px Inter,system-ui,sans-serif;color:var(--ink);background:#0e1830;border:1px solid var(--line2);border-radius:10px;min-height:44px;padding:0 10px;text-transform:none;letter-spacing:0}
+.vl .one{margin:0;font-size:14px;font-weight:600;color:var(--soft)}
+.vl .fmt{font-size:13px;font-weight:600;color:var(--dim)}
+.vl .acts{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.vl .acts>*{justify-content:center}
 .vl .play{background:var(--teal);color:#062a26;border-color:var(--teal)}
 .vl .post{background:#1d1708;color:var(--gold);border-color:#5c4a1c}
-.vl .text{background:#081022;border:1px solid #5c4a1c;border-radius:12px;padding:12px;display:none;flex-direction:column;gap:8px}
-.vl .text.open{display:flex}
-.vl .text h5{margin:0;font-size:12px;letter-spacing:.1em;color:var(--gold)}
-.vl .text pre{margin:0;white-space:pre-wrap;font:14px/1.5 inherit;color:#dfe4ee;font-family:inherit}
+.vl .ghost{background:transparent}
+.vl .where{margin:0;font-size:13px;line-height:1.4;color:var(--dim);word-break:break-word}.vl .where:empty{display:none}
+.vl .extra{display:flex;flex-wrap:wrap;gap:8px}
+.vl .text{display:none;background:#081022;border:1px solid #5c4a1c;border-radius:12px;padding:12px}.vl .text.open{display:block}
+.vl .text pre{margin:0;white-space:pre-wrap;font:14px/1.5 Inter,system-ui,sans-serif;color:#dfe4ee}
 .vl .how{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;background:#0b1427;border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:34px}
 .vl .how h3{grid-column:1/-1;margin:0;font-size:1.3rem}.vl .how p{margin:0;font-size:15px;line-height:1.5;color:var(--soft)}.vl .how b{display:block;color:var(--teal);margin-bottom:4px}
 .vl .foot{margin-top:22px;font-size:14px;color:var(--dim);line-height:1.5}
-.vl-modal{position:fixed;inset:0;background:rgba(3,6,14,.92);display:flex;align-items:center;justify-content:center;z-index:1000;padding:16px}
-.vl-modal video{max-width:min(1280px,100%);max-height:80vh;border-radius:12px;background:#000}
-.vl-modal .close{position:absolute;top:14px;right:14px;min-height:44px;padding:0 16px;border-radius:10px;border:1px solid #2f4366;background:#0e1830;color:#eef1f6;font:600 15px Inter,sans-serif;cursor:pointer}
-.vl-modal p{color:#eef1f6;font:15px Inter,sans-serif;text-align:center;max-width:40rem}
+.vl-modal{position:fixed;inset:0;background:rgba(3,6,14,.88);display:flex;align-items:center;justify-content:center;z-index:1000;padding:16px}
+.vl-box{background:#0c1529;border:1px solid #2f4366;border-radius:16px;padding:14px;max-width:min(1280px,100%);width:100%;display:flex;flex-direction:column;gap:12px;color:#eef1f6;font:15px Inter,system-ui,sans-serif}
+.vl-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.vl-x{min-height:44px;padding:0 16px;border-radius:10px;border:1px solid #2f4366;background:#0e1830;color:#eef1f6;font:600 15px Inter,sans-serif;cursor:pointer}
+.vl-box video{width:100%;max-height:75vh;border-radius:10px;background:#000}
 </style>`
 export function videos(ROOT) {
     const v = JSON.parse(fs.readFileSync(path.join(ROOT, 'people/silvio/vaults.json'), 'utf8')).vaults.find(x => x.vault_id === VAULT_ID)
