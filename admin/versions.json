@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1240",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: two more map agents, dev.work@ and dev.app@, to build in parallel with dev.map@",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "3aefaed70"
+  },
+  {
     "version": "v0.2.1239",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: fresh-session agents drawn like any agent, with one quiet mark",
