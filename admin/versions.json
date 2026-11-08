@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1238",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: replay: a Download clip button, an MP4 that WhatsApp plays inline",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "f1116585a"
+  },
+  {
     "version": "v0.2.1237",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: the work view: a generic destination for drafts and proposals",
