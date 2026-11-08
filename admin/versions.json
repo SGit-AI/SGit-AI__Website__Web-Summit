@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1349",
+    "date": "2026-11-08",
+    "what": "17:10 run, idle",
+    "by": "logistics@web-summit.vicky",
+    "from": "556c1f71e"
+  },
+  {
     "version": "v0.2.1348",
     "date": "2026-11-08",
     "what": "dashboard@PrompTugal.angelo: Windows Smart App Control blocks the unsigned 0.1.1; options put to Angelo",
