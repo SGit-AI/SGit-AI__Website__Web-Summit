@@ -86,6 +86,12 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - **dev:** only for template changes or defects, with the page owners (standing answer 10).
     - The conductor keeps the backlog file and reports its progress and blockers in the brief.
 
+25. **The checker's remit: articles by desks outside Vicky's** (Vicky, 8 Nov, about 17:58 UTC; for the checker and the reviewer). Vicky: "Please update checker's remit: check published newsroom articles written by desks outside mine, rather than only Dinis's articles. My own desks already have a review and fix workflow, so checker should not routinely check or re-check their articles. Determine ownership by the authoring desk, not by who released the page. Keep existing findings on my desks and hand them to reviewer for reconciliation through our existing workflow. Do not delete them or mark them resolved without evidence. After handoff, checker does not need to keep re-checking those articles. Keep the existing schedule and publication permissions unchanged."
+    - **In scope:** every published article in the newsroom's content/articles/ whose `author:` is not one of Vicky's desks (Dinis's, Angelo's, Jose's, Indi's or any other desk), plus the drafts folder the checker already checks (desks/journalist-promptugal/drafts/). **Out of scope:** any article whose `author:` names an agent of Vicky's (`...@PrompTugal.vicky` or `...@web-summit.vicky`), whoever released it.
+    - **Existing findings on Vicky's desks stay** in desks/checker-vicky/findings/ (never deleted). The checker hands them to the reviewer once; then it stops re-checking those articles. At the 17:58 scope, 12 findings files: daily-newsletter, driving-to-web-summit, europe-ai-help-and-portugal-ai-startups, following-robotics-at-web-summit, how-agents-avoid-collisions, lisbon-universities-at-web-summit, mistakes-we-made, octo-health-launches, the-sign-in, venue-map, web-summit-before-2026, who-does-the-work.
+    - **The reviewer reconciles** each handed-over finding in its normal runs, after the round's drafts: still true and a fact or source problem, Fix first to the authoring journalist (its fix-only run revises); a published article needing a correction, listed for Vicky with a publish line (corrections are published only at her word, as now); already fixed or not a problem, recorded with the evidence (the source, the line, the date). The outcome goes in the reviewer's own files (desks/reviewer-vicky/), committed For: checker@PrompTugal.vicky; the reviewer does not edit the checker's files, and nothing is called resolved without evidence.
+    - Times and publication permissions are unchanged.
+
 ## Updates for agents
 
 How this works (Vicky, 6 Nov): each update below is for the agents named. Apply it on your next run, including changing your own scheduled prompt if the update says so, and confirm in your report ("applied P1"). The conductor lists in each brief who has confirmed and who hasn't, and removes an update once every agent it is for has confirmed it. "Accept scout's proposal N" (from `people/vicky/learning/`) lands here word for word.
@@ -162,6 +168,10 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 **SA24X, company pages out of the scheduled runs** (Vicky, 8 Nov, about 17:45 UTC). For: journalist-connections, reviewer, dev.
 > Standing answer 24 now makes company-page enrichment a one-off project Vicky starts by hand; the 16:55 version (one company per writing run) is withdrawn. Do not add the line "6b ..." to your writing task's prompt, and reviewer: do not add the company-files line to your tasks' prompts; if you already added either, remove it (you change your own task's prompt; keep the rest word for word). Put the new standing answer 24 in your prompts file and confirm "applied SA24X".
 
+**SA25, the checker's new remit and the hand-over** (Vicky, 8 Nov, about 17:58 UTC). For: checker, reviewer.
+> Checker: at your next run (17:48 has passed; so 09:48 tomorrow, or sooner if Vicky opens your session), in your scheduled task's prompt (you change it yourself; keep the rest word for word), replace "4. Check articles only: content/articles/ and desks/journalist-promptugal/drafts/, whichever agent wrote them," with "4. Check articles only: content/articles/ whose author is not one of Vicky's desks (standing answer 25: ownership by the author field, not by who released it), and desks/journalist-promptugal/drafts/,". Then, once: commit a hand-over For: reviewer@PrompTugal.vicky listing the 12 findings files on Vicky's desks (standing answer 25) with what is still open in each; in desks/checker-vicky/findings/README.md mark each "handed to reviewer, <date>" (do not delete them or mark them resolved); stop re-checking those articles. Put standing answer 25 in your prompts file and confirm "applied SA25".
+> Reviewer: when the hand-over arrives, reconcile the findings under standing answer 25 in your normal runs, after the round's drafts, a few at a time; record each outcome with its evidence in desks/reviewer-vicky/, For: checker@PrompTugal.vicky; list any correction for Vicky with a publish line. Put standing answer 25 in your prompts file and confirm "applied SA25".
+
 Still to confirm (8 Nov, 08:45 UTC; the rest have confirmed):
 - P10: vault, designer, dev.
 - P17: journalist-ai, journalist-portugal, vault, designer, dev.
@@ -175,6 +185,7 @@ Still to confirm (8 Nov, 08:45 UTC; the rest have confirmed):
 - SA19B: curator, journalist-connections.
 - SA19C: researcher, curator, journalist-connections.
 - SA24X: journalist-connections, reviewer, dev.
+- SA25: checker, reviewer.
 - SA23: journalist-connections, journalist, journalist-portugal, journalist-europe, journalist-ai, reviewer, dev (add standing answer 23 to your prompts file).
 - SA22: curator, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections.
 
