@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1234",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the hexagonal app: Tauri, kept in this repository, easy for the whole team to install",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "6891bc2c9"
+  },
+  {
     "version": "v0.2.1233",
     "date": "2026-11-08",
     "what": "standing answer 19: the researcher gathers confirmed Web Summit participants for connection stories (update SA19C)",
