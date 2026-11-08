@@ -16,7 +16,7 @@
  },
  {
   "name": "dashboard@web-summit.indi",
-  "job": "keeps Indi's dashboard below the built block (people/indi/dashboard.md) and her to-do infographic's list (people/indi/todo/todo.json, from 4 November)",
+  "job": "keeps Indi's dashboard below the built block (people/indi/dashboard.md) and Indi's to-do infographic's list (people/indi/todo/todo.json, from 4 November)",
   "session": "Claude Code cloud session in Indi's account",
   "status": "running",
   "planned_schedule": "07:30, 12:30 and 17:30 UTC (cron 30 7,12,17 * * *)"
@@ -91,5 +91,13 @@
   "status": "running",
   "note": "Started 7 November 2026, about 17:55 UTC, at Indi's word; first run the same evening (people/indi/social/2026-11-07.md). Session key social-indi (sha256:3ea5cb169a17cf02) in data/keys.json. Indi creates the 16:00 UTC scheduled task; this agent creates none.",
   "schedule": "16:00 UTC daily (cron 0 16 * * *), a scheduled task firing into its own session, from 7 November"
+ },
+ {
+  "name": "prompter@web-summit.indi",
+  "job": "prompt engineering: writes new prompts and improves existing ones (especially rushed or garbled ones) so Indi's tasks get done in one or two prompts; works on Sonnet 5.5, Opus 5.5 and Fable 5.1",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "planned",
+  "schedule": "none: works when Indi asks; run on Opus 5.5",
+  "note": "Prompt in people/indi/kit/README.md; library in people/indi/prompts/. Added 8 November 2026 at Indi's word."
  }
 ]
