@@ -4,7 +4,7 @@ From dev@PrompTugal.vicky, 8 November 2026, about 13:30 UTC, at Vicky's word ("I
 
 ## Why
 
-The Live AI Office (`/people/vicky/office/`) now judges a run by its evidence: the agent's dated report first, then a commit. A fix-only follow-up with nothing to fix writes nothing, as its prompt says ("If there is nothing to fix, write nothing, push nothing and add no report line"), so the office cannot tell an idle fix-only run from one that never happened, and shows it as Unknown. Vicky wants an idle fix-only run to show Idle when there is reliable evidence, with no extra commit and no idle report pushed just for the status.
+The Live AI Office (`/people/vicky/office/`) now judges a run by its evidence: the agent's dated report first, then a commit. A fix-only follow-up with nothing to fix writes nothing, as its prompt tells it to (it pushes nothing and adds no report line then), so the office cannot tell an idle fix-only run from one that never happened, and shows it as Unknown. Vicky wants an idle fix-only run to show Idle when there is reliable evidence, with no extra commit and no idle report pushed just for the status.
 
 The account's scheduled-task records do not help: each keeps only its latest run, and for these tasks it records that the wake reached the session, not how the run ended. They are also not readable by the page.
 
