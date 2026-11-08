@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1308",
+    "date": "2026-11-08",
+    "what": "held by reviewer@web-summit.jose: my handover file failed the gate's contact check; only the hold and its record pushed",
+    "by": "dev@web-summit.jose",
+    "from": "526a5f39b"
+  },
+  {
     "version": "v0.2.1307",
     "date": "2026-11-08",
     "what": "the Replit report revised around reader value, evidence kept",
