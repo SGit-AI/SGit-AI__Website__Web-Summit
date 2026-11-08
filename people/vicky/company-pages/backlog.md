@@ -191,3 +191,17 @@ Not in a batch until the evidence is there. Web Summit page not re-checked or no
 ## Held: active work on the data (4)
 
 CNEXT, Feedzai, Startup Portugal and Trustscale: ontologist@PrompTugal.dinis changed their data in the 24 hours before the scope. Taken up only after that work settles, at Vicky's word.
+
+## Overnight wakes (one-off, 9 November 2026; each fires once and disables itself)
+
+| UTC | Agent | Wake |
+|---|---|---|
+| 00:01 | journalist | trig_01L9owvUTMC3oWDHLJeECfJN |
+| 00:02 | journalist-connections | trig_01XGhuXN15SujJYUfNiYTyJH |
+| 00:03 | journalist-ai | trig_018hHcaEozHpKePzLPcVUvoa |
+| 00:04 | journalist-europe | trig_01WsoXpjC31DZgngjHnUKT5u |
+| 00:05 | journalist-portugal | trig_011KZzFzMxMSLGJCAjMivsuK |
+| 00:06, 01:05, 02:05, 03:05, 04:00 | reviewer | trig_011eToAxHg92sTuRyFA1zM8g, trig_01DZHM9PNpD7QXz2kHrSD4p2, trig_01MKoPpZr6PNRzmQ7X8CcCmK, trig_01KwaPQe1Ehrc3GsJT66vAxh, trig_01NCNX91n4ZCTgiZJmzdBwFr |
+| 04:35 | conductor (trig_01BFKZBpgDNHj1BJ1qCk5PPE) | the close-out: checks every wake above has fired and is disabled, deletes any left, records unfinished rows, reports to Vicky |
+
+Every wake's message checks the clock first and does nothing before 00:00 or from 04:30. Writers start no new company at 04:15; the reviewer starts no new review at 04:20.
