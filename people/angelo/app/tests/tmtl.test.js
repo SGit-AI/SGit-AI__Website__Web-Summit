@@ -18,7 +18,9 @@ const S = process.argv[2], U = 'http://127.0.0.1:8765/people/angelo/app/index.ht
   // only on the live graph), and which commit comes first depends on the hour (dev@'s review, 8426842)
   const first = await p.evaluate(() => { const on = new Set([...document.querySelectorAll('.tm-a[data-tm-f]')].map(g => g.dataset.tmF)); return [...document.querySelectorAll('.rp-embed circle.rp-e')].findIndex(c => on.has(c.querySelector('title').textContent.split(', ')[0])) });
   if (first < 0) fail('no commit on the timeline by an agent on the map');
-  await p.locator('.rp-embed circle.rp-e').nth(Math.max(0, first)).click({ force: true }); await p.waitForSelector('.rp-embed .rp-detail', { timeout: 4000 }).catch(() => fail('no detail'));
+  // clicked as an event on the dot itself: at some hours the window's first dot sits at the very left edge, under the row labels,
+  // where a click by position lands on the label (dev.map, 8 November, 06:40 UTC)
+  await p.locator('.rp-embed circle.rp-e').nth(Math.max(0, first)).dispatchEvent('click'); await p.waitForSelector('.rp-embed .rp-detail', { timeout: 4000 }).catch(() => fail('no detail'));
   const d = await p.evaluate(() => ({ hash: location.hash, scrub: +document.querySelector('[data-tmf-scrub]').value, min: +document.querySelector('[data-tmf-scrub]').min }));
   // the picked commit's agent is picked out on the map, and un-picked when the commit is
   await p.waitForTimeout(200); const picked = await p.evaluate(() => document.querySelectorAll('.tm-a.tmf-pick').length);
