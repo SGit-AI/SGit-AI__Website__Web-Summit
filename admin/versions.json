@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1217",
+    "date": "2026-11-08",
+    "what": "08:10 report: SA16 was applied on 7 Nov; the merch ready day still unconfirmed",
+    "by": "logistics@web-summit.vicky",
+    "from": "1ac4572f1"
+  },
+  {
     "version": "v0.2.1216",
     "date": "2026-11-08",
     "what": "runner.writer@PrompTugal.angelo: STATE: guide published, verifier flags, contributor ask still open",
