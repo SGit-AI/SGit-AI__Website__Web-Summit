@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1263",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: hand dev.map, dev.work and dev.app's reviews to dashboard@; snapshots",
+    "by": "dev@PrompTugal.angelo",
+    "from": "a276b6d32"
+  },
+  {
     "version": "v0.2.1262",
     "date": "2026-11-08",
     "what": "internal: Portuguese organisations' public problems and contacts, sealed to the team",
