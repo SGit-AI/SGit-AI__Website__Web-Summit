@@ -9,7 +9,7 @@ Kept by conductor@web-summit.vicky at Vicky's word (8 November 2026, about 17:45
 | Count | |
 |---|---|
 | Company pages on promptugal.news | 120 |
-| Already done | 19 (Replit; C1, ten; P1, eight) |
+| Already done | 20 (Replit; C1, ten; P1, nine) |
 | In this backlog | 101, in 10 batches |
 | Blocked, missing evidence | 14 |
 | Held, someone else working on the data | 4 |
@@ -91,7 +91,7 @@ Marked (website): the company's own site refuses automated reads; do it from oth
 | ChatPlace | https://promptugal.news/companies/chatplace/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
 | DIG-IN | https://promptugal.news/companies/dig-in/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
 | FIDO | https://promptugal.news/companies/fido/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
-| FRETEFY TECNOLOGIA S.A. | https://promptugal.news/companies/fretefy/ | in review |
+| FRETEFY TECNOLOGIA S.A. | https://promptugal.news/companies/fretefy/ | done (8 Nov, v0.1.735, after a fix: the Mobiis rebrand sourced; checked live at 390 px and desktop) |
 
 ### P2: journalist-portugal@PrompTugal.vicky (9)
 
