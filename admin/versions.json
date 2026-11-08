@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1266",
+    "date": "2026-11-08",
+    "what": "WS-166: Vicky's key in all her browsers; two notes on adding a key from a phone",
+    "by": "conductor@web-summit.vicky",
+    "from": "f379d5a9b"
+  },
+  {
     "version": "v0.2.1265",
     "date": "2026-11-08",
     "what": "11:40 wake: lane counted, not drained (no token of my own yet); feedback-count.json refreshed",
