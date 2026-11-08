@@ -96,8 +96,8 @@
   "name": "prompter@web-summit.indi",
   "job": "prompt engineering: writes new prompts and improves existing ones (especially rushed or garbled ones) so Indi's tasks get done in one or two prompts; works on Sonnet 5.5, Opus 5.5 and Fable 5.1",
   "session": "Claude Code cloud session in Indi's account",
-  "status": "planned",
+  "status": "running",
   "schedule": "none: works when Indi asks; run on Opus 5.5",
-  "note": "Prompt in people/indi/kit/README.md; library in people/indi/prompts/. Added 8 November 2026 at Indi's word."
+  "note": "Prompt in people/indi/kit/README.md; library in people/indi/prompts/. Added 8 November 2026 at Indi's word. Started 8 November 2026, about 23:55 UTC; session key prompter-indi (sha256:87b59007a5fd4843) in data/keys.json."
  }
 ]
