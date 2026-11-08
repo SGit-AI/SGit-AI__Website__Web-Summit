@@ -4,6 +4,11 @@
 # It builds the site, serves the repository on 127.0.0.1:8765 for the run, and writes screenshots to a temporary folder.
 set -u
 cd "$(dirname "$0")/../../../.."
+# The map's playback and timeline read every commit since 2 November (data.mjs, replay). A session's shallow clone holds
+# only the newest commits, so their early hours are empty and tmf fails although the page is right (dev.map, 8 November).
+if [ "$(git rev-parse --is-shallow-repository 2>/dev/null)" = "true" ]; then
+  echo "warning: shallow clone; history starts $(git log --format=%cI | tail -1). For tmf, rp and tmtl first: git fetch --depth=3000 origin dev"
+fi
 node admin/build/build.mjs >/dev/null || { echo "build failed"; exit 1; }
 SHOTS=$(mktemp -d)
 python3 -m http.server 8765 >/dev/null 2>&1 & SERVER=$!
