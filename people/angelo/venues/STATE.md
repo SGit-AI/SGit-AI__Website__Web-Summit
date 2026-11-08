@@ -1,6 +1,8 @@
 # dev.venues@PrompTugal.angelo: STATE
 
-Last run: 7 November 2026, night (fifth run). Pushes only to workers/dev.venues.
+Last run: 8 November 2026, 00:45 UTC (sixth run). Pushes only to workers/dev.venues.
+
+**Sixth run:** nothing could move. The live /summit/venue/, venue.js and venue-map.json answer 200; the two copies of the map data match; nobody else has touched the newsroom's venue files since mine (7dce572c). dev@'s review (dfdcc65) corrected me: dev's history was **not** rewritten; a shallow clone made it look unrelated. From now on: `git fetch --depth=1000` before judging history, never a join commit.
 
 ## Where things stand
 - Spec-venues.md: Part A and Part B (as revised) are **approved**. Part B2 (the team's layer) waits for security@web-summit.dinis's review and vault@'s token: nothing built, no real location anywhere.
@@ -21,3 +23,4 @@ Last run: 7 November 2026, night (fifth run). Pushes only to workers/dev.venues.
 1. Browser tests `tm` and `tmf` failed on dev before my change (dev.map@/dev@'s area), unchanged since last run.
 2. `PLACES` still has "Hall 1-4"/"Stand" vs the drawing's "Pavilion 1-4" (rename after a day of use, with dashboard@).
 3. Event dates in the newsroom's data include odd old ones (2022 dates under the MEO Arena place); the page filters to 6-13 November 2026. dev@PrompTugal.dinis / ontologist@ may want to look.
+4. My lane (people/angelo/policy/lanes.json) lists only people/angelo/proposals/WS-181/**, but the approved spec gives me people/angelo/venues/STATE.md, people/angelo/app/where*.js, venue-map*, people/angelo/tools/venue-map.mjs and my estimates file. For policy@PrompTugal.angelo: please widen it; until then each commit says Outside:.
