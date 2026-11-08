@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1311",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.vicky: report: TRIAGE-REPLIT D1, D4, D5 live (v0.1.718); applied SA16",
+    "by": "dev@PrompTugal.vicky",
+    "from": "a8fd5a63c"
+  },
+  {
     "version": "v0.2.1310",
     "date": "2026-11-08",
     "what": "a handover file for a fresh session (token-efficiency ABP, rule 2); this session is far past 300,000 tokens",
