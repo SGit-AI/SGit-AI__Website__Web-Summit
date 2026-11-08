@@ -58,6 +58,9 @@
 .lv-top { position: absolute; left: 50%; top: 8.4%; transform: translateX(-50%); display: flex; align-items: center; gap: max(5px, 1.5cqmin); pointer-events: none; z-index: 2; }
 .lv-logo { width: clamp(14px, 4.6cqmin, 40px); height: clamp(14px, 4.6cqmin, 40px); border-radius: 22%; opacity: .92; display: block; }
 .lv-logo.gone { display: none; }
+/* larger in 3D (backlog 0c3, Angelo, 8 November: "The live 3d view should have the 2 logos bigger"), still inside the hexagon */
+.lv-3d-on .lv-logo { width: clamp(16px, 7.2cqmin, 66px); height: clamp(16px, 7.2cqmin, 66px); }
+.lv-3d-on .lv-top { top: 7.6%; gap: max(6px, 1.8cqmin); }
 .lv-live { display: inline-flex; align-items: center; gap: .45em; font: 700 clamp(8px, 2.2cqmin, 18px)/1 var(--rm-font, system-ui, sans-serif); letter-spacing: .14em; white-space: nowrap; color: var(--rm-red, #ff4d5e); padding: .32em .55em .32em .5em; border: 1px solid currentColor; border-radius: 999px; background: color-mix(in srgb, var(--rm-bg, #07111F) 75%, transparent); }
 .lv-live i { width: .62em; height: .62em; border-radius: 50%; background: currentColor; box-shadow: 0 0 .7em currentColor; animation: lv-pulse 1.6s ease-in-out infinite; }
 .lv-live.on { animation: lv-breathe 1.6s ease-in-out infinite; }
@@ -199,14 +202,14 @@ html.lv-transparent .lv-display-clear { visibility: visible; }
         let r3 = null, ranSet = new Set()
         if (o.d3) {
             wrap.classList.add('lv-3d-on'); const box = doc.createElement('div'); box.className = 'lv-3d'; box.setAttribute('data-lv3d', ''); hex.appendChild(box)
-            const shell = new Map(), nodes3 = []
+            // a ball, not a disk (backlog 0c3): live3d.js's ball() spreads the 2D layout over a sphere, once it has loaded
+            const nodes3 = [], sphere = () => { const at = root.AngeloLive3D.ball(nodes3); for (const n of nodes3) Object.assign(n, at.get(n.id)) }
             for (const [id, n] of pos) {
-                let z = 0; if (n.kind === 'a') { const k = shell.get(n.person) || 0; shell.set(n.person, k + 1); z = (k % 2 ? 1 : -1) * (40 + 38 * (Math.floor(k / 2) % 3)) }
-                nodes3.push({ id, x: n.x - C, y: C - n.y, z, color: n.kind === 'k' ? (KIND[n.id] || ['var(--rm-text-muted)'])[0] : col.get(n.person) || 'var(--rm-text-muted)', size: n.kind === 'k' ? 1.4 * n.size : n.kind === 'p' ? 56 : n.family !== 'web-summit' ? 17 : 2 * (4 + Math.min(8, Math.sqrt(n.commits || 0))) + 2, ring: !!n.fresh, label: n.kind === 'p' || n.kind === 'k' ? n.label : '' })
+                nodes3.push({ id, kind: n.kind, person: n.person, x: n.x - C, y: C - n.y, z: 0, color: n.kind === 'k' ? (KIND[n.id] || ['var(--rm-text-muted)'])[0] : col.get(n.person) || 'var(--rm-text-muted)', size: n.kind === 'k' ? 1.4 * n.size : n.kind === 'p' ? 56 : n.family !== 'web-summit' ? 17 : 2 * (4 + Math.min(8, Math.sqrt(n.commits || 0))) + 2, ring: !!n.fresh, label: n.kind === 'p' || n.kind === 'k' ? n.label : '' })
             }
             const lib = root.AngeloLive3D ? Promise.resolve() : new Promise((ok, no) => { const s = document.createElement('script'); s.src = (() => { const u = new URL('live3d.js', HERE), v = ((win.document.querySelector('a.ver') || document.querySelector('a.ver') || {}).textContent || '').trim(); if (v) u.searchParams.set('v', v); return u.href })(); s.onload = ok; s.onerror = () => no(new Error('live3d.js could not load')); document.head.appendChild(s) })
-            lib.then(() => root.AngeloLive3D.create(box, { nodes: nodes3, links: M.links || [], light, keep: !!o.keep3d, still: win.matchMedia('(prefers-reduced-motion: reduce)').matches, dist: Math.round(1650 * 0.84 / SCALE),
-                ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, mz = (a.z + b.z) / 2; return { x: mx * (1 - PULL), y: my * (1 - PULL), z: mz * (1 - PULL) } } }))
+            lib.then(() => (sphere(), root.AngeloLive3D.create(box, { nodes: nodes3, links: M.links || [], light, keep: !!o.keep3d, still: win.matchMedia('(prefers-reduced-motion: reduce)').matches, dist: Math.round(1650 * 0.84 / SCALE),
+                ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, mz = (a.z + b.z) / 2; return { x: mx * (1 - PULL), y: my * (1 - PULL), z: mz * (1 - PULL) } } })))
                 .then(r => { if (!r) return; if (!alive) { r.destroy(); return } r3 = r; box.r3 = r; kick() })
                 .catch(e => { wrap.classList.remove('lv-3d-on'); box.innerHTML = `<p class="note">The 3D view could not load (${String(e && e.message || e).replace(/[<>&]/g, '')}); this is the 2D graph.</p>` })
         }
