@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1195",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: run 04:20 UTC: nothing to route, STATE and runs upkeep",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "631cb5d13"
+  },
+  {
     "version": "v0.2.1194",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 143 pairs in 7 days; 692 exchanges in 48 h from 2 of 4 repositories",
