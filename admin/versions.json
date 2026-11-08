@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1259",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: dashboard@ reviews the map and app workers, hourly; the ABP demo design approved",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "251d793b2"
+  },
+  {
     "version": "v0.2.1258",
     "date": "2026-11-08",
     "what": "runner.conductor@PrompTugal.angelo: run 11:20 UTC: nothing to route, social-media questions to Angelo's list Scheduled run. Agent: runner.conductor@PrompTugal.angelo",
