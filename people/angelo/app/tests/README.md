@@ -30,6 +30,7 @@ Or run just some of them, for example `people/angelo/app/tests/run.sh tm tmf tml
 | `wzone` | Where: a zone by default, an exact spot only as a deliberate second step (WS-181, option C) |
 
 **Notes:**
+- **Deepen a shallow clone first.** The map's playback and the timeline read every commit since 2 November. A cloud session's clone is shallow, so their early hours come out empty and `tmf` fails although the page is right. `run.sh` warns when the clone is shallow; run `git fetch --depth=3000 origin dev` once, then the tests.
 - Some checks depend on the clock. The time windows end now, so the first minute of a 24-hour window may already hold a message. A test that fails only sometimes is probably that kind; fix the test's tolerance, not the page.
 - The tests read only this repository's public data, and the Where test uses only the demo's made-up people.
 - kb and cb ignore one outside error: a 507 from the site's page-view telemetry lane (`assets/telemetry.json`, vault 1ssnjy23), full since 7 November and reported to its owner. Every other console error still fails them.
