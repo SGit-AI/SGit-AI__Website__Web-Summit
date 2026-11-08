@@ -31,7 +31,7 @@ Each agent is its own Claude Code session in my account. Most run on a schedule 
 2. **Shape.** The curator maps new captures into storylines on the candidates page.
 3. **Write.** A journalist drafts each storyline on its beat, reading every source the same day.
 4. **Check.** The reviewer checks the draft against each source and the style guide: Ready, or Fix first with the exact fixes.
-5. **Go live.** Only Ready drafts are published, at my word. My reviewer publishes when I ask; Dinis approved this on 6 November. Dinis's journalist also publishes Ready drafts.
+5. **Go live.** Only Ready drafts are published, at my word. My reviewer publishes when I ask; Dinis approved this on 6 November. From 8 November, routine publication of my desks' drafts goes through my reviewer only.
 
 ## What's live
 
