@@ -82,6 +82,10 @@ Vicky's words where she gave them as a rule; the date each was given.
 - **15, a cover on every article**: a draft without a cover image is not Ready.
 - **17, the reviewer fixes, the reviewer lists**: "when a draft only needs wording, structure, caption, image or length fixes, make them yourself and mark it Ready. Send it back as fix-first only for problems of fact or source, or anything you cannot check. At the end of every run, list the Ready drafts in your reply with a publish line Vicky can copy." (This widens standing answer 13's "small" edits; publishing still only at Vicky's word.)
 
+## Standing answer 23 (8 November, about 15:50 UTC)
+
+- **Company pages, the About section**, in Vicky's words: "Keep About sections to two or three short, plain sentences explaining what the company does. Avoid marketing quotes and unrelated event details. Put supporting source links and read dates below the paragraph, with each factual claim still clearly traceable to its source. Apply this whenever company pages are created or updated. No bulk rewrite is needed." The reviewer checks company pages' About sections against it, and attributes a company's own claims (such as "no coding needed") to the company.
+
 ## Scheduled prompts (from 8 November 2026, SCHED-WS and REMOTE-WS)
 
 **From 8 Nov (SCHED-WS):** first review 06:15, 11:15, 15:15, 19:15 UTC (`trig_01JzwYcUkMpfFThdm1mbeGgs`); re-check 07:20, 12:20, 16:20, 20:20 UTC (`trig_01YQwEh2Z2UAjZX6vkrBqdNj`), both set by the conductor at Vicky's word, 7 Nov.
