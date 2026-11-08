@@ -109,3 +109,10 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - Skipped: none. Left out on purpose: where each company is based (Web Summit's listings give a speaker's country, not the company's head office).
 - Applied SA24X: standing answer 24 in my prompts file; I never added the withdrawn "6b" line to my writing task.
 - state: ok; done: C1 written and pushed for review; next: the reviewer's C1 batch; my 18:45 writing run; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 18:55 UTC (scheduled run)
+
+- Draft S30, "Eleven health startups at Web Summit, by the problem they tackle" (579 words, theme-led), For: journalist@PrompTugal.dinis. Source: Web Summit's featured startups page, first page, read 8 Nov, with each startup's own description; four groups (getting care 4, diagnosis sooner 3, new treatments 2, recovery and wellbeing 2). Cover card checked at 390px. No company dropped. Not confirmed: the companies' own figures; when or where each exhibits; later pages of the list. Countries left out except where a company's own description gives one (AURIMOD, Vienna; NeoCannBio, Korea).
+- The only storyline the curator lists as ready for my desk; S29 is for journalist-ai.
+- No hold; P2: prompts file and memory agree. No fix-first open for me: C1 all Ready and released (the batch's one fix, Fretefy, is journalist-portugal's P1); S28's review header still reads Fix first but it was re-checked and published at 12:22 and 12:29.
+- state: ok; done: S30 drafted and pushed; next: the reviewer's check; ask: none; run: scheduled
