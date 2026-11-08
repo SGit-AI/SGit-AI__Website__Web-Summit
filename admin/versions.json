@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1291",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: the run's state, 14:21 UTC",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "fb1216608"
+  },
+  {
     "version": "v0.2.1290",
     "date": "2026-11-08",
     "what": "runner.writer@PrompTugal.angelo: state after the 8 November run",
