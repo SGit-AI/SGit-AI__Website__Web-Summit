@@ -5,7 +5,8 @@
 // (people/angelo/policy/lanes.json: common + writes), or be declared in the commit with a trailer
 //   Outside: <path or glob>; <why: who asked, with a sha or a quote>
 // Tier-3 paths need the same line, and its reason should quote Angelo. CI's releases ("site vX.Y.Z") and merges are
-// skipped; other people's agents are not checked (their lanes may join later).
+// skipped; other people's agents are not checked (their lanes may join later). Reserved paths (lanes.json "reserved")
+// are refused to anyone not named there, declared or not.
 //   node people/angelo/policy/lane-check.mjs [<range, default origin/dev..HEAD>]     prints, exits 1 on a refusal
 // The gate (admin/build/validate.js, check 21) runs it on LANE_RANGE (CI: the push's before..after) or origin/dev..HEAD
 // (release.sh, before every push), so a write outside a lane never reaches dev from release.sh.
@@ -36,9 +37,14 @@ export function laneCheck(root, range) {
         const short = sha.slice(0, 8), lane = lanes[agent.toLowerCase()]
         if (!lane) { out.refused.push(`${short} ${agent.split('@')[0]}@: no lane in people/angelo/policy/lanes.json`); continue }
         const ok = (lane.writes || []).map(toRe), t3 = (lane.tier3_paths || []).map(toRe)
+        // reserved paths (lanes.json "reserved": {glob: [agents]}): the auditor's own folder, which holds the lanes this check
+        // reads, is written only by the agents named, whatever the writer's lane says and even if declared (policy@, 8 November)
+        const reserved = Object.entries(lanes0.reserved || {}).map(([g, who]) => ({ re: toRe(g), who: who.map(x => x.toLowerCase()) }))
         // declared outside writes: "Outside: <path or glob>; <why>" (a reason is required)
         const decl = [...text.matchAll(/^Outside:\s*([^;\n]+?)\s*;\s*(\S[^\n]*)$/gmi)].map(m => ({ re: toRe(m[1].trim()), path: m[1].trim(), why: m[2].trim() }))
         for (const f of git('diff-tree', '--no-commit-id', '--name-only', '-r', '--root', sha).split('\n').filter(Boolean)) {
+            const rv = reserved.find(x => x.re.test(f))
+            if (rv) { if (!rv.who.includes(lane.self.toLowerCase())) out.refused.push(`${short} ${lane.self.split('@')[0]}@ wrote ${f}, reserved to ${rv.who.join(', ')}: send the change to them in a commit instead`); continue }
             if (common.some(r => r.test(f)) || ok.some(r => r.test(f))) continue
             const d = decl.find(x => x.re.test(f))
             const tier3 = t3.some(r => r.test(f)) ? ' (tier 3)' : ''
