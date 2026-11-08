@@ -16,15 +16,13 @@ Backlog 0f2 (the work view) and 0f3 (the WhatsApp clip). **Approved** by Angelo 
 - `people/angelo/app/work-replay.js`: replay's 'ak-clock' to flights per frame (merged) and counts; seeks fly nothing; wire() not mounted yet. Test `wvreplay` (node).
 
 ## Open
-- **The hook in live.js** (dev.map@'s file): `people/angelo/map/work/drafts/live-hook.patch`, four lines, sent For: dev.map@; still not on dev at 19:00 UTC (live.js last changed on dev at 17:53, dev.map@'s review). wvdraw and wvlive serve live.js with the hook added and say so.
-- Next, once the hook lands: the "Exchanges | Work" switch in app.js (`AngeloWorkLive.mount(host, { base })`, scripts work.js, work-draw.js, work-newsroom.js, work-live.js), the legend (one line under the graph on a phone), replay over the full history, and the clip button (frames from replay's clock through `clip.make`).
-- Replay on the page also needs a hook in the map's playback (replay.js's flow, dev.map@'s): draft it once the live.js hook lands, to match.
-- Phone: the app's floating voice button covers part of "the app" pill (bottom right); the button is the app's.
-- Testing: the branch is based on dev of 09:49; tests run on a worktree of origin/dev with this branch's work files laid over (the old live.js here lacks what the hook uses).
-- Asked the desk (8ebf8b4): the app's square, its own icon or PT News's.
+- **Live: done.** live.js carries the hook (dev.map@'s 7751d4e, on dev in 98cdfcf); the "Exchanges | Work" switch is in app.js's drawLive (#live?v=work, ed59381), with the legend in one line under the graph; on a phone the lower names keep clear of the Ask Claude button (2d3fcac). Test wvsw.
+- **Next: replay over the full history**, then the clip button. Replay's clock is already announced ('ak-clock', minutes since R.from, replay.js mountFlow), but the map it plays on is app.js's team map (drawCollab), not live.js's hexagon: work-draw.js places the squares in live.js's 1000-unit hexagon (work.js HEX/S), so replay needs either the map's own geometry passed in (a hook in mountFlow like host.lvGraph: pos, colOf, svg, a layer, its centre and radius) or the rim places recomputed for the map's ring. Draft the hook as a patch For: dev.map@ (replay.js changed on dev at 19:50, so a draft, not an edit), then wire work-replay.js.
+- The clip button: frames from replay's clock through `clip.make`, after replay.
+- Testing: the branch now joins dev (merge -s ours at 406c165, dev's tree), so tests run on the branch itself; gate with LANE_RANGE=406c1658..HEAD.
+- Lane: lanes.json has my entry but `writes: []` (20:00 UTC), so check 21 lists every file of mine (ed59381, 2d3fcac); the desk asked policy@ (a2c8e4c) to fill it. Until then the reviewer's commit carries the Outside lines.
 - Not yet checked: WhatsApp on Angelo's iPhone (the proof for 0f3), and the fallback in a real Safari 16.
 - Other repositories (the apps): `deliveries-repos.json` from the snapshot, later.
-- Lane: lanes.json still has no entry for dev.work@ (18:00 UTC), so the gate's check 21 fails on my commits until policy@ adds it.
 
 ## Last run
-Tenth run, 8 November 18:51 to about 19:05 UTC: no commits For: me from the desk; dashboard@'s review de879c5 (material) asked for three look fixes, all done (2cc7e2d); built the replay rules (work-replay.js, e2d8c38). wvdraw, wvlive, wvcore, wv, wvreplay PASS; gate OK. Everything else waits on the hook.
+Eleventh run, 8 November 19:51 to about 20:05 UTC: the desk's a2c8e4c (pushed by riskmandate-angelo) and dashboard@'s 7a0de06 and 98cdfcf (material). Built the switch (ed59381) and the phone fix (2d3fcac); wvsw, wvdraw, wvlive, wvcore, live PASS; gate OK apart from check 21 (the empty lane).
