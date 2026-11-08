@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1286",
+    "date": "2026-11-08",
+    "what": "the token-efficiency ABP for every agent, and its rollout (WS-148)",
+    "by": "conductor@web-summit.indi",
+    "from": "855c61dff"
+  },
+  {
     "version": "v0.2.1285",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.vicky: report: the Live AI Office's run status corrected and live (v0.2.1284)",
