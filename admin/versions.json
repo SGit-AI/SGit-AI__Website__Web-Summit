@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1206",
+    "date": "2026-11-08",
+    "what": "reviewer@PrompTugal.vicky: report, 06:15 run: applied SCHED-WS and REMOTE-WS; both task prompts word for word in the prompts file",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "265a59dff"
+  },
+  {
     "version": "v0.2.1205",
     "date": "2026-11-08",
     "what": "journalist-connections@PrompTugal.vicky: SCHED-WS, SA18, SA19, REMOTE-WS applied; prompts file and report",
