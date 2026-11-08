@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1300",
+    "date": "2026-11-08",
+    "what": "journalist-portugal@PrompTugal.vicky: scheduled run, idle; SA22 applied",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "3d0beaf27"
+  },
+  {
     "version": "v0.2.1299",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.vicky: report: PILOT-REPLIT live on promptugal.news (v0.1.714); applied P10, P17, P22, P27",
