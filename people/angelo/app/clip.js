@@ -53,16 +53,17 @@
         cx.restore()
     }
 
-    // can this browser make the clip? 'webcodecs' (Chrome, Edge, Safari 17 and later, on a secure page), or '' with the reason
-    async function support(shape = 'square') {
+    // can this browser make the clip? 'webcodecs' (Chrome, Edge, Safari 17 and later, on a secure page), else 'mediarecorder' (the
+    // fallback below, with a note for the button), or '' with the reason. force = 'mediarecorder' tries the fallback (the tests).
+    async function support(shape = 'square', force) {
         const [width, height] = SIZES[shape] || SIZES.square
         try {
-            if (root.VideoEncoder && root.VideoFrame) {
+            if (root.VideoEncoder && root.VideoFrame && force !== 'mediarecorder') {
                 const r = await root.VideoEncoder.isConfigSupported({ codec: CODEC, width, height, bitrate: 2e6, framerate: FPS })
                 if (r && r.supported) return { way: 'webcodecs' }
             }
         } catch { }
-        // MediaRecorder's MP4 is fragmented and full range (checked 8 November): WhatsApp may take it as a file, so not offered yet
+        if (recType() && root.HTMLCanvasElement && root.HTMLCanvasElement.prototype.captureStream) return { way: 'mediarecorder', note: 'Made in real time by this browser\'s recorder: keep this tab in front until it is done. Colours may look a little flat.' }
         return { way: '', why: 'This browser cannot make an H.264 video here; try Chrome, Edge or Safari 17 or later.' }
     }
     function loadMuxer(base) {
@@ -118,6 +119,101 @@
         const blob = new root.Blob([target.buffer], { type: 'video/mp4' })
         return { blob, name: fileName(o.fromMs, o.toMs), bytes: blob.size, chunks, keyframes: keys, plan: p }
     }
+    // ---- the fallback, where WebCodecs is missing (Safari before 17): MediaRecorder's own H.264 MP4. It comes out fragmented (moof
+    // and mdat pairs, no fast start: WhatsApp may take it as a file), so defrag() reads its samples and the muxer writes them again
+    // as one fast-start file, unchanged (no re-encoding). It records in real time, so a slow machine drops frames; and it stays full
+    // range (yuvj420p): the samples are not touched, and flagging them limited would shift the colours. Both are said in the button.
+    const recType = () => { try { const R = root.MediaRecorder; for (const t of ['video/mp4;codecs=avc1.4D0028', 'video/mp4;codecs=avc1', 'video/mp4']) if (R && R.isTypeSupported(t)) return t } catch { } return '' }
+    function boxes(b, from, to) {
+        const out = []; let i = from
+        while (i + 8 <= to) {
+            let n = b.getUint32(i), h = 8; const t = String.fromCharCode(b.getUint8(i + 4), b.getUint8(i + 5), b.getUint8(i + 6), b.getUint8(i + 7))
+            if (n === 1) { n = b.getUint32(i + 8) * 2 ** 32 + b.getUint32(i + 12); h = 16 } else if (n === 0) n = to - i
+            if (n < h || i + n > to) break
+            out.push({ t, at: i, body: i + h, end: i + n }); i += n
+        }
+        return out
+    }
+    const kid = (b, x, t) => boxes(b, x.body, x.end).find(y => y.t === t)
+    const path = (b, x, ...ts) => { for (const t of ts) { x = x && kid(b, x, t); if (!x) return null } return x }
+    // a fragmented MP4's video samples: { width, height, codec, avcC, timescale, samples: [{ data, key, t, d, cto }] } (times in the track's units)
+    function defrag(buf) {
+        const u8 = buf instanceof Uint8Array ? buf : new Uint8Array(buf), b = new DataView(u8.buffer, u8.byteOffset, u8.byteLength), top = boxes(b, 0, u8.length)
+        const moov = top.find(x => x.t === 'moov'); if (!moov) throw new Error('no moov')
+        const trak = boxes(b, moov.body, moov.end).find(x => x.t === 'trak' && path(b, x, 'mdia', 'hdlr') && String.fromCharCode(...u8.subarray(path(b, x, 'mdia', 'hdlr').body + 8, path(b, x, 'mdia', 'hdlr').body + 12)) === 'vide')
+        if (!trak) throw new Error('no video track')
+        const tkhd = kid(b, trak, 'tkhd'), trackId = b.getUint32(tkhd.body + (u8[tkhd.body] === 1 ? 20 : 12))
+        const mdhd = path(b, trak, 'mdia', 'mdhd'), timescale = b.getUint32(mdhd.body + (u8[mdhd.body] === 1 ? 20 : 12))
+        const stsd = path(b, trak, 'mdia', 'minf', 'stbl', 'stsd'), avc1 = boxes(b, stsd.body + 8, stsd.end)[0]
+        if (!avc1 || !/^avc[13]$/.test(avc1.t)) throw new Error('not H.264')
+        const width = b.getUint16(avc1.body + 24), height = b.getUint16(avc1.body + 26)
+        const avcCb = boxes(b, avc1.body + 78, avc1.end).find(x => x.t === 'avcC'); if (!avcCb) throw new Error('no avcC')
+        const avcC = u8.slice(avcCb.body, avcCb.end), codec = 'avc1.' + [1, 2, 3].map(i => avcC[i].toString(16).padStart(2, '0')).join('').toUpperCase()
+        const trex = (() => { const mvex = kid(b, moov, 'mvex'); return mvex && boxes(b, mvex.body, mvex.end).find(x => x.t === 'trex' && b.getUint32(x.body + 4) === trackId) })()
+        const dflt = trex ? { d: b.getUint32(trex.body + 12), s: b.getUint32(trex.body + 16), f: b.getUint32(trex.body + 20) } : { d: 0, s: 0, f: 0 }
+        const samples = []; let next = 0
+        for (const moof of top.filter(x => x.t === 'moof')) for (const traf of boxes(b, moof.body, moof.end).filter(x => x.t === 'traf')) {
+            const tfhd = kid(b, traf, 'tfhd'), tf = b.getUint32(tfhd.body) & 0xffffff; if (b.getUint32(tfhd.body + 4) !== trackId) continue
+            let o = tfhd.body + 8, base = moof.at; const d = { ...dflt }
+            if (tf & 1) { base = b.getUint32(o) * 2 ** 32 + b.getUint32(o + 4); o += 8 }
+            if (tf & 2) o += 4
+            if (tf & 8) { d.d = b.getUint32(o); o += 4 }
+            if (tf & 0x10) { d.s = b.getUint32(o); o += 4 }
+            if (tf & 0x20) { d.f = b.getUint32(o); o += 4 }
+            const tfdt = kid(b, traf, 'tfdt'); let t = tfdt ? (u8[tfdt.body] === 1 ? b.getUint32(tfdt.body + 4) * 2 ** 32 + b.getUint32(tfdt.body + 8) : b.getUint32(tfdt.body + 4)) : next
+            for (const trun of boxes(b, traf.body, traf.end).filter(x => x.t === 'trun')) {
+                const rf = b.getUint32(trun.body) & 0xffffff, v1 = u8[trun.body] === 1, n = b.getUint32(trun.body + 4); let q = trun.body + 8, pos = base
+                if (rf & 1) { pos = base + b.getInt32(q); q += 4 }
+                let first = null; if (rf & 4) { first = b.getUint32(q); q += 4 }
+                for (let i = 0; i < n; i++) {
+                    let dur = d.d, size = d.s, fl = i === 0 && first !== null ? first : d.f, cto = 0
+                    if (rf & 0x100) { dur = b.getUint32(q); q += 4 }
+                    if (rf & 0x200) { size = b.getUint32(q); q += 4 }
+                    if (rf & 0x400) { fl = b.getUint32(q); q += 4; if (i === 0 && first !== null) fl = first }
+                    if (rf & 0x800) { cto = v1 ? b.getInt32(q) : b.getUint32(q); q += 4 }
+                    if (pos + size > u8.length) throw new Error('a sample runs past the file')
+                    samples.push({ data: u8.slice(pos, pos + size), key: !(fl & 0x10000), t, d: dur, cto }); pos += size; t += dur
+                }
+            }
+            next = t
+        }
+        if (!samples.length) throw new Error('no samples')
+        return { width, height, codec, avcC, timescale, samples }
+    }
+    // the samples written again as one fast-start MP4, unchanged
+    function refrag(buf, M) {
+        const v = defrag(buf), target = new M.ArrayBufferTarget(), us = x => Math.round(x * 1e6 / v.timescale)
+        const muxer = new M.Muxer({ target, video: { codec: 'avc', width: v.width, height: v.height }, fastStart: 'in-memory', firstTimestampBehavior: 'offset' })
+        const t0 = v.samples[0].t; let first = true
+        for (const s of v.samples) {
+            muxer.addVideoChunkRaw(s.data, s.key ? 'key' : 'delta', us(s.t - t0), us(s.d), first ? { decoderConfig: { codec: v.codec, codedWidth: v.width, codedHeight: v.height, description: v.avcC } } : undefined, s.cto ? us(s.cto) : undefined)
+            first = false
+        }
+        muxer.finalize(); return { buffer: target.buffer, frames: v.samples.length, codec: v.codec }
+    }
+    // the fallback's maker: the same frames, drawn in real time on a canvas MediaRecorder records, then refrag()
+    async function record(o) {
+        const p = plan(o), { width, height, fps, frames } = p, type = recType(); if (!type) throw new Error('no H.264 recorder')
+        const M = o.Mp4Muxer || await loadMuxer(o.base)
+        const cv = o.canvas || Object.assign(root.document.createElement('canvas'), { width, height }); cv.width = width; cv.height = height
+        const cx = cv.getContext('2d', { alpha: false }), stream = cv.captureStream(fps), parts = []
+        const rec = new root.MediaRecorder(stream, { mimeType: type, videoBitsPerSecond: p.bitrate })
+        rec.ondataavailable = e => { if (e.data && e.data.size) parts.push(e.data) }
+        const done = new Promise(ok => { rec.onstop = ok })
+        const paint = async i => { await o.draw(cx, i, o.fromMs + i * p.msPerFrame); if (o.caption !== false) caption(cx, width, height, o.fromMs, o.toMs, !!o.light) }
+        await paint(0); rec.start(1000); const t0 = performance.now()
+        try {
+            for (let i = 1; i < frames; i++) {
+                if (o.signal && o.signal.aborted) throw new Error('cancelled')
+                const wait = t0 + i * 1000 / fps - performance.now(); if (wait > 0) await new Promise(r => setTimeout(r, wait))
+                await paint(i); if (o.onProgress && (i % 10 === 0 || i === frames - 1)) o.onProgress(i + 1, frames)
+            }
+            await new Promise(r => setTimeout(r, 1000 / fps))
+        } finally { rec.stop(); for (const t of stream.getTracks()) t.stop(); await done }
+        const raw = new Uint8Array(await new root.Blob(parts).arrayBuffer()), out = refrag(raw, M)
+        const blob = new root.Blob([out.buffer], { type: 'video/mp4' })
+        return { blob, name: fileName(o.fromMs, o.toMs), bytes: blob.size, chunks: out.frames, keyframes: null, plan: p, way: 'mediarecorder', recorded: type }
+    }
     // hand the file over: the share sheet where it takes files (a phone: straight to WhatsApp), else a download
     async function save(blob, name) {
         const file = root.File ? new root.File([blob], name, { type: 'video/mp4' }) : null
@@ -134,5 +230,5 @@
             img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new root.XMLSerializer().serializeToString(c))
         })
     }
-    return { FPS, MAX_S, MAX_BYTES, CODEC, SIZES, MUXER, i420, plan, spanWords, fileName, captionText, caption, support, loadMuxer, make, save, svgImage }
+    return { FPS, MAX_S, MAX_BYTES, CODEC, SIZES, MUXER, i420, plan, spanWords, fileName, captionText, caption, support, loadMuxer, make, record, defrag, refrag, recType, save, svgImage }
 })
