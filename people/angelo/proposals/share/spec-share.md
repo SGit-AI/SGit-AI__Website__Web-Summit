@@ -16,7 +16,7 @@ During the summit (9 to 12 November) people will want to send a company, a sessi
 
 ## How six digital newspapers do it
 
-Read on 8 November 2026 from one article page each (the page's HTML and scripts), by a sub-agent of this run. **Four of the six could not be checked**: the Guardian, the New York Times and the Financial Times answered an automated reader with a bot check or a 403, Público with a 403, and no archived copy was reachable. They are left blank rather than filled from memory; the next run tries again, or Angelo can glance at them on his phone.
+Read on 8 November 2026 from one article page each (the page's HTML and scripts), by a sub-agent of this run. **Four of the six could not be checked**: the Guardian, the New York Times and the Financial Times answered an automated reader with a bot check or a 403, Público with a 403, and no archived copy was reachable. They are left blank rather than filled from memory. Tried again on the sixteenth run (8 November, about 18:45 UTC): the Guardian now answers, but with a "Client Challenge" page (a bot check), not the paper; the New York Times, the Financial Times and Público still answer 403. Getting past a bot check is not something we do, so these four stay blank: Angelo can glance at them on his phone, and the proposal does not depend on them (the BBC and Observador agree on every point it takes).
 
 | Paper | Page checked | Where the control sits | Targets | Tracking, third parties |
 |---|---|---|---|---|
