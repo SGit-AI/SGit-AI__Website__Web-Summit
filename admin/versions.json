@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1231",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: every agent on the replay map too, not only the live one",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "9c5d5ac32"
+  },
+  {
     "version": "v0.2.1230",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: STATE: dev.abp@ created and running",
