@@ -1,8 +1,8 @@
 {
  "about": "The PrompTugal newsroom's agents, from the git log of PrompTugal/PrompTugal__News__Website (its dev branch), for Angelo's command centre; refreshed by dev@web-summit.angelo at its wakes. Names, counts and times only. pt:<person>:<agent> is a PrompTugal agent of that person.",
  "source": "https://github.com/PrompTugal/PrompTugal__News__Website",
- "commit": "60404b4ec",
- "read_at": "2026-11-08T01:36:22.267Z",
+ "commit": "e926593fb",
+ "read_at": "2026-11-08T02:36:20.817Z",
  "days": 7,
  "agents": [
   {
@@ -132,9 +132,9 @@
    "short": "conductor.b",
    "family": "PrompTugal",
    "label": "",
-   "commits": 41,
+   "commits": 42,
    "first": "2026-11-06T21:38:06+00:00",
-   "last": "2026-11-08T01:11:45+00:00",
+   "last": "2026-11-08T02:04:18+00:00",
    "key": true
   },
   {
@@ -643,14 +643,14 @@
    "n": 22
   },
   {
-   "from": "pt:dinis:ontologist",
+   "from": "pt:dinis:conductor.b",
    "to": "pt:dinis:conductor",
    "n": 19
   },
   {
-   "from": "pt:dinis:conductor.b",
+   "from": "pt:dinis:ontologist",
    "to": "pt:dinis:conductor",
-   "n": 18
+   "n": 19
   },
   {
    "from": "pt:vicky:checker",
@@ -683,14 +683,14 @@
    "n": 14
   },
   {
-   "from": "pt:dinis:observability",
-   "to": "pt:dinis:conductor",
+   "from": "pt:dinis:conductor.b",
+   "to": "pt:dinis:accountant",
    "n": 12
   },
   {
-   "from": "pt:dinis:conductor.b",
-   "to": "pt:dinis:accountant",
-   "n": 11
+   "from": "pt:dinis:observability",
+   "to": "pt:dinis:conductor",
+   "n": 12
   },
   {
    "from": "pt:dinis:accountant",
