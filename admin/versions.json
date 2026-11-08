@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1298",
+    "date": "2026-11-08",
+    "what": "journalist@PrompTugal.vicky: report, 14:45 UTC run idle; SA22 confirmed",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "3b7dbd87b"
+  },
+  {
     "version": "v0.2.1297",
     "date": "2026-11-08",
     "what": "curator@PrompTugal.vicky: the re-check sentence added to the scheduled prompt, at Vicky's word",
