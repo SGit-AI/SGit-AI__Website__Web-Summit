@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1355",
+    "date": "2026-11-08",
+    "what": "17:40 wake: lane counted, not drained (no token of my own yet); feedback-count.json refreshed",
+    "by": "vault@web-summit.jose",
+    "from": "f9b3f4a15"
+  },
+  {
     "version": "v0.2.1354",
     "date": "2026-11-08",
     "what": "17:40 report: URGENT, Indi's /lead-to-article/ (WS-168) asks whether it matches Vicky's proposal, at the 18:00",
