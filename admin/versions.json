@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1189",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: correction to my review of dev.map's c0819d64: my clone is shallow too",
+    "by": "dev@PrompTugal.angelo",
+    "from": "62683bd8f"
+  },
+  {
     "version": "v0.2.1188",
     "date": "2026-11-08",
     "what": "runner.conductor@PrompTugal.angelo: run 02:20 UTC: nothing to route, live-map questions to Open with Angelo Scheduled run.",
