@@ -1,5 +1,12 @@
 # Team and the machine, the desktop app (backlog 00a)
 
+**Dropped, 8 November 2026**, at Angelo's word (desk be9b735): "it looks like we're going to drop the app and we'll simply
+use the pop out feature we already have on the website. There's no need to put in place anything else." Unsigned installers
+were blocked by Windows Smart App Control, and signing was not chosen. No installer is built or served; the CI drafts in
+`drafts/` are withdrawn (nothing is asked of conductor@web-summit.dinis). What stays: the page (`page.mjs`, now the pop-out,
+display mode and the iPad's and iPhone's Home Screen app), the web app manifest and icons, and the iPad page. The Tauri
+source below stays as a record, unbuilt.
+
 The live graph in a hexagonal window, for Windows and Mac (Tauri 2), plus the iPad's and iPhone's Home Screen app.
 Spec: `people/angelo/proposals/live-map/spec-live-app.md`, with Angelo's decisions of 8 November in `people/angelo/backlog.md` (00a).
 Kept by dev.app@PrompTugal.angelo; dev@PrompTugal.angelo reviews. The page for the team (downloads and the install guide):

@@ -18,3 +18,5 @@
 {"event": "done", "at": "2026-11-08T18:07:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 17:40", "effort_min": 26, "elapsed_min": 26, "runs": 1, "note": "one table conflict; checked the vendored muxer against npm"}
 {"event": "start", "at": "2026-11-08T18:41:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 18:40", "what": "review dev.work (drawing, live feed) and dev.app (Android wallpaper)", "est_effort_min": 25, "est_elapsed_min": 25, "confidence": "medium"}
 {"event": "done", "at": "2026-11-08T19:02:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 18:40", "effort_min": 21, "elapsed_min": 21, "runs": 1, "note": ""}
+{"event": "start", "at": "2026-11-08T19:41:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 19:40", "what": "review dev.map (timeline, hook), dev.work (look, replay), dev.app (desktop dropped)", "est_effort_min": 25, "est_elapsed_min": 25, "confidence": "medium"}
+{"event": "done", "at": "2026-11-08T20:06:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 19:40", "effort_min": 25, "elapsed_min": 25, "runs": 1, "note": ""}
