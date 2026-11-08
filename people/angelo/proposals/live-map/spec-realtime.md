@@ -113,3 +113,32 @@ Open `people/angelo/app/index.html#live` (also "◉ Live" on Team and the machin
 - **Full screen:** a button on #live (the standard call, or Safari's on a Mac or iPad; an iPhone has none for a page, so no button there).
 - **Display mode, `?display=1#live`:** the graph alone, covering the screen, no controls; the screen kept awake where the browser allows (Wake Lock, asked again when shown); a reload every six hours with nothing in flight; a failed read is tried again and the corner light turns grey; back online or shown again, it reads at once; Esc goes back. Test: `lvdisp`, at 1920x1080, 1280 and 390 px, light and dark.
 - **Not yet:** Safari's and the iPad's floating window (video picture-in-picture), `?wallpaper=1`, the four-hour test; then 00b (external systems) and 00a (the hexagonal app) as specs for Angelo's review.
+
+## 00b, explored (8 November): external systems at the graph's edge, for Angelo's review
+
+Angelo, 7 November about 23:10 (95500a0): *"explore expanding the graph to add icons representing connections to external systems"*. The desk added: only where a commit or a public record names the exchange. A draft for review, not built.
+
+**What the public record can show today** (commits on dev, 7 days, about 1,900, excluding release commits):
+
+| System | Commits naming it | Who most | A reliable signal? |
+|---|---|---|---|
+| the sgit.ai vault (SG/Send, sealing) | 196 | conductors (Dinis's, Angelo's, Jose's), sgit@ | **Yes, partly:** a commit that changes `data/sealed/` is a seal (22 in 7 days) |
+| pki.sgit.ai | 23 | conductors (Jose's, Indi's), abp@ | **Yes, partly:** a change to `data/keys.json` is a key published with pki-agent (94) |
+| promptugal.news | 61 | desk.conductor@, dev@, writer@ (Angelo's) | partly: dev@'s `promptugal.json` snapshots (29) are reads of the newsroom |
+| Gmail | 37 | outreach@ (Silvio's), conductors | no: text only |
+| LinkedIn | 34 | writer@PrompTugal.angelo, desk.conductor@ | no: text only (and no agent reads LinkedIn) |
+| WhatsApp | 21 | dev@ (Jose's), procurement@ (Silvio's) | no: text only |
+| Google Calendar | 17 | team-collaboration@ (Angelo's) | no: text only |
+| GitHub's API | 11 | several | no: and every commit is GitHub, so it is not drawn as an exchange |
+| Google Drive, Slack, YouTube, OpenStreetMap, the app stores | 2 to 6 each | | no |
+
+**The finding:** most mentions are words in a commit body ("Vicky turned off Gmail sending"), not exchanges. Drawing them would draw talk about a system as traffic to it, which breaks "nothing invented". The run logs (agent-log.mjs, `--read` URLs) name what each run read, but they are sealed to the observability lane, so not public.
+
+**Recommendation:**
+1. **Now, from files (buildable once Angelo approves):** draw only the exchanges a commit's files prove: a seal (`data/sealed/`) as a pulse from the agent to the vault icon; a key published (`data/keys.json`) to pki.sgit.ai; dev@'s newsroom snapshot from promptugal.news. Three icons, all real.
+2. **Then, a trailer (tier 3: a protocol change for every agent, Angelo's call, and Dinis's for the shared convention):** `Used: <system>` on a commit whose run exchanged with an outside system (`Used: gmail`, `Used: calendar`, `Used: linkedin-draft`). The graph draws an icon only for a system some commit has named that way in 48 hours, and never the content.
+3. **Never:** reading the connectors or the sealed run logs at view time; a person's mailbox, calendar or contacts; anything about what was exchanged.
+
+**The mock-up** (all nine candidates, from the text counts above, so it over-draws: with recommendation 1 only vault, pki and news would show): ![external systems at the rim](mockup-external.png). Icons sit just inside the hexagon's rim, small rounded squares with a short mark; lines to them are dotted, so they never read as agent-to-agent exchanges; a pulse travels to the icon at the exchange's real moment, as on any other line.
+
+**Questions for Angelo** (via the desk): (1) start with the three proven systems? (2) propose the `Used:` trailer to the team? (3) real logos or plain marks (logos are other companies' trademarks; plain marks are safer on a public page)?
