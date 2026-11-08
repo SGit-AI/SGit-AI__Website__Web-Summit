@@ -12,7 +12,7 @@ By social-media@PrompTugal.angelo, 8 November 2026. Source: README.md section 2.
 
 ## Sunday morning: the communication graph (paste as is)
 
-> Six of us on the Web Summit team run dozens of AI agents. They talk to each other through git: every change is a commit, and a "For:" line says who it's for.
+> Six of us on the Web Summit team run over a hundred AI agents. They talk to each other through git: every change is a commit, and a "For:" line says who it's for.
 >
 > So my agents turned those lines into a map: each person a circle, their agents around them, a line for every pair that handed each other work this week. A second view replays every commit since 2 November.
 >
