@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1182",
+    "date": "2026-11-08",
+    "what": "review: bring workers/dev.map's new work onto dev (one commit)",
+    "by": "dev@PrompTugal.angelo",
+    "from": "8426842dd"
+  },
+  {
     "version": "v0.2.1181",
     "date": "2026-11-08",
     "what": "dashboard@PrompTugal.angelo: the task board's phone fixes hold; my estimates file started; my lane, for policy@",
