@@ -16,6 +16,21 @@ Kept by conductor@web-summit.vicky at Vicky's word (8 November 2026, about 17:45
 
 Marked (website): the company's own site refuses automated reads; do it from other public sources or skip it. Marked (article): one of our published articles names or links it.
 
+## The overnight batch, 9 November 2026, 00:00 to 04:30 UTC (one-off)
+
+At Vicky's word (8 Nov, about 23:00 UTC). One-off wakes only, none recurring; nothing starts before 00:00 and nothing runs after 04:30. Each company is assigned once:
+
+| Batch | Companies | Overnight owner |
+|---|---|---|
+| S1 | 11 | journalist@PrompTugal.vicky |
+| S2 | 10 | journalist-connections@PrompTugal.vicky (moved from journalist, to balance the night) |
+| A1 | 11 | journalist-ai@PrompTugal.vicky |
+| E2, then A2 rows 1 to 6 (Make, Mastra, Neo4j, Open VSX (Eclipse Foundation), Orb, Primitive) | 16 | journalist-europe@PrompTugal.vicky |
+| P2, then A2 rows 7 to 11 (Prisma, Runpod, SageOx, TestMu AI, Twilio) | 14 | journalist-portugal@PrompTugal.vicky |
+| C2 and E1 (already written, in review) | 20 | reviewed first; nobody rewrites them |
+
+Status words in the Status column: `to do`, `writing` (taken tonight), `in review` (file pushed with status: in-review), `done` (Ready, released, live-checked), `fix` (back to the writer, not live), `skipped: <why>`, `unfinished at 04:30` (file not pushed, or pushed in-review and not reviewed; never live).
+
 ## Batches
 
 ### C1: journalist-connections@PrompTugal.vicky (10)
