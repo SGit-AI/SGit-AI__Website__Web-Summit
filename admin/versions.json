@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1219",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the map's layouts: agents on the outer ring, and the layout switch in the live view",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "57b7e33b7"
+  },
+  {
     "version": "v0.2.1218",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: the floating live graph: both logos, a pulsing LIVE label, the time it shows",
