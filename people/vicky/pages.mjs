@@ -137,13 +137,14 @@ function workSoFar(ROOT) {
 
 // The Live AI Office (Vicky, 8 November 2026; decisions.md, standing answer 21): /people/vicky/office/, a near-live
 // pixel-art office of Vicky's agents, by dev@PrompTugal.vicky. At build time, from files already on this site and the
-// site's own git log (Node's standard library only), it writes people/vicky/office/status.json: per agent its short name,
+// site's own git log (Node's standard library only), it puts together the office's data: per agent its short name,
 // role, area, cron times (UTC), the times of its last commits carrying "Agent: <name>", the status word from its report
 // and whether that entry says URGENT; and the newsroom's counts. Nothing else: no report text, prompts, session or task
 // ids, keys, nothing about the CRM, vaults or the shortlist; inbox and vault are "on demand", with no times at all. No
-// wall-clock time: the same commit always gives the same file. The browser (office/office.js) reads it every minute and
-// works out each state with the viewer's clock. status.json is generated: ignored by office/.gitignore, and named in
-// .generated.txt after build.mjs writes that list, so the gate's checks 9 and 10 see it as the build's output.
+// wall-clock time: the same commit always gives the same data. The data travels inside the generated page, as an inline
+// <script type="application/json" id="office-data"> (a block the gate's check 18 knows and leaves alone), so no extra file
+// is written: the page is the build's own output like any other. The browser (office/office.js) re-reads the page
+// every minute and works out each state with the viewer's clock.
 function office(ROOT) {
     const V = path.join(ROOT, 'people/vicky'), read = f => { try { return fs.readFileSync(path.join(V, f), 'utf8') } catch { return '' } }
     // who, in which room, doing what (public, in my words); the order is the order on the page
@@ -208,7 +209,8 @@ function office(ROOT) {
     const newsroom = [
         { stage: 'research', count: new Set(cand.match(/https?:\/\/[^\s)>\]]+/g) || []).size, unit: 'sources behind the storylines' },
         { stage: 'storylines', count: cand.split('\n').filter(l => /^\|\s*S\d+\s*\|/.test(l)).length, unit: 'open' },
-        { stage: 'drafts', count: writers.filter(a => a.status === 'ok').length, of: writers.length, unit: 'writers ok on their last run' },
+        // not a count of drafts (those are in the newsroom repository): how many of the writers said "ok" on their last run
+        { stage: 'writers', count: writers.filter(a => a.status === 'ok').length, of: writers.length, unit: 'reported ok on their last run' },
         { stage: 'first review', count: rounds.first || 0, unit: 'rounds a day' },
         { stage: 'fix only', count: rounds.fix || 0, unit: 'rounds a day' },
         { stage: 're-check', count: rounds.recheck || 0, unit: 'rounds a day' },
@@ -223,14 +225,7 @@ function office(ROOT) {
     // the examples are put together here, so no literal contact detail sits in this file (the comms check reads it too)
     const phone = ['+351', '912', '345', '678'], sample = [[['a', 'b.pt'].join('@')], [phone.join(' '), phone.join('')], ['ghp_' + 'abcdefghijkl', 'trig_' + '01QqwpxE9hhp'], ['the Short' + 'list']], clean = ['2026-11-08T05:31Z', '05:45', 'journalist-ai', '21 sources']
     if (!BAD.every(([, re], i) => sample[i].every(x => re.test(x))) || BAD.some(([, re]) => clean.some(c => re.test(c)))) throw new Error('people/vicky/pages.mjs office(): the privacy check failed its own examples')
-    for (const [what, re] of BAD) if (re.test(json)) throw new Error(`people/vicky/office/status.json would contain ${what}; nothing written (Vicky's brief, SA21)`)
-    // written once build.mjs has written .generated.txt (its exit handler was registered first, so it runs first)
-    process.once('exit', code => {
-        if (code !== 0) return
-        fs.writeFileSync(path.join(V, 'office/status.json'), json)
-        const g = path.join(ROOT, '.generated.txt'), had = fs.existsSync(g) ? fs.readFileSync(g, 'utf8') : ''
-        if (!had.split('\n').includes('people/vicky/office/status.json')) fs.writeFileSync(g, had + 'people/vicky/office/status.json\n')
-    })
+    for (const [what, re] of BAD) if (re.test(json)) throw new Error(`the Live AI Office's data would contain ${what}; nothing written (Vicky's brief, SA21)`)
     const AREAS = { research: 'Research', stories: 'Storylines', writing: 'Writing desks', review: 'Review', coord: 'Coordination', logistics: 'Logistics and design', ondemand: 'On demand' }
     const when = a => a.on_demand ? 'On demand' : a.cron.join(', ') + ' UTC'
     const row = a => `<tr data-agent="${esc(a.short)}"><th scope="row"><img src="sprites/${esc(a.short)}.png" alt="" width="16" height="24" class="office-face">${esc(a.short)}</th><td>${esc(a.role)}</td><td>${esc(AREAS[a.area])}</td><td>${esc(when(a))}</td><td class="office-state">${a.on_demand ? 'On demand' : 'needs JavaScript'}</td></tr>`
@@ -279,7 +274,8 @@ function office(ROOT) {
 <h2>Who is where</h2>
 <div class="office-wrap"><table class="office-table"><thead><tr><th scope="col">Agent</th><th scope="col">Job</th><th scope="col" class="col-room">Room</th><th scope="col">Runs (UTC)</th><th scope="col">Now</th></tr></thead><tbody id="office-rows">${list.map(row).join('')}</tbody></table></div>
 <p class="meta">Built from <code>people/vicky/schedule.json</code>, the site's commit record, the agents' reports and <code>people/vicky/stories/candidates.md</code>, at each site release: facts as of the last data time above. Characters and furniture are original pixel art (<a href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/office/CREDITS.md">credits</a>).</p>
+<script type="application/json" id="office-data">${json.replace(/</g, '\\u003c')}</script>
 <script src="office.js" defer></script>`
-    const md = `Vicky's AI agents as an office, near-live: updated with each site release, last data ${at} UTC. States: confirmed (a commit shows the work), scheduled (a run is due), inferred (a run should be under way; late after 30 minutes without a commit), error (blocked or URGENT), on demand.\n\n## The newsroom\n\n${newsroom.map(n => `- ${n.stage}: ${n.count}${n.of ? ` of ${n.of}` : ''} ${n.unit}`).join('\n')}\n\n## Who is where\n\n| Agent | Job | Room | Runs (UTC) | Last confirmed (UTC) | Last report |\n|---|---|---|---|---|---|\n${list.map(a => `| ${a.short} | ${a.role} | ${AREAS[a.area]} | ${when(a)} | ${a.confirmed[0] ? a.confirmed[0].replace('T', ' ').replace('Z', '') : (a.on_demand && NO_TIMES.has(a.short) ? 'not shown' : 'none')} | ${a.urgent ? 'URGENT' : a.status || 'none'} |`).join('\n')}\n\nThe same facts as JSON: status.json, beside this page.`
+    const md = `Vicky's AI agents as an office, near-live: updated with each site release, last data ${at} UTC. States: confirmed (a commit shows the work), scheduled (a run is due), inferred (a run should be under way; late after 30 minutes without a commit), error (blocked or URGENT), on demand.\n\n## The newsroom\n\n${newsroom.map(n => `- ${n.stage}: ${n.count}${n.of ? ` of ${n.of}` : ''} ${n.unit}`).join('\n')}\n\n## Who is where\n\n| Agent | Job | Room | Runs (UTC) | Last confirmed (UTC) | Last report |\n|---|---|---|---|---|---|\n${list.map(a => `| ${a.short} | ${a.role} | ${AREAS[a.area]} | ${when(a)} | ${a.confirmed[0] ? a.confirmed[0].replace('T', ' ').replace('Z', '') : (a.on_demand && NO_TIMES.has(a.short) ? 'not shown' : 'none')} | ${a.urgent ? 'URGENT' : a.status || 'none'} |`).join('\n')}\n\nThe same facts as JSON are inside the page, in its office-data block.`
     return [{ rel: 'people/vicky/office/index.html', title: 'The Live AI Office', description: "Vicky's AI agents as a near-live pixel-art office: who is at their desk, who is due, who is late, and the newsroom's pipeline, updated with each site release.", body, head, md }]
 }

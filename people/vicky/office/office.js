@@ -1,5 +1,5 @@
 // The Live AI Office (people/vicky/office/), dev@PrompTugal.vicky, 8 November 2026, at Vicky's word (decisions.md, SA21).
-// Plain Canvas 2D, no library, no external script. Every minute it reads status.json (built at each site release from
+// Plain Canvas 2D, no library, no external script. Every minute it reads the office's data (built at each site release from
 // public facts) and, with the viewer's clock, works out each agent's state:
 //   confirmed  a commit shows the work (solid badge, its time)
 //   scheduled  a run is due (dashed badge, "due HH:MM")
@@ -124,23 +124,43 @@
         if (a.on_demand) return { kind: 'ondemand', conf }
         const ds = dues(a, new Date(nowMs)), last = [...ds].reverse().find(t => t <= nowMs), next = ds.find(t => t > nowMs)
         const since = t => conf != null && conf >= t - 2 * MIN
-        if (last != null && nowMs - last < LATE) return since(last) ? { kind: 'confirmed', conf, working: nowMs - conf < LATE, next } : { kind: 'inferred', due: last, next }
+        if (last != null && nowMs - last < LATE) return since(last) ? { kind: 'confirmed', conf, working: nowMs - conf < LATE, next } : { kind: 'inferred', due: last, conf, next }
         if (last != null && !since(last)) return { kind: 'late', due: last, conf, next }
         if (next != null && next - nowMs <= SOON) return { kind: 'scheduled', due: next, conf }
         if (conf != null) return { kind: 'confirmed', conf, working: nowMs - conf < LATE, next }
         return { kind: 'scheduled', due: next, conf }
     }
     const LABEL = { confirmed: 'Confirmed', scheduled: 'Scheduled', inferred: 'Inferred', late: 'Late', error: 'Error', ondemand: 'On demand' }
+    // the details under the office when a figure is tapped: one fact a line, every time in UTC, with its day when it is
+    // not today (by the UTC calendar)
+    const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    function when(t) {
+        const d = new Date(t), n = new Date()
+        const same = d.getUTCFullYear() === n.getUTCFullYear() && d.getUTCMonth() === n.getUTCMonth() && d.getUTCDate() === n.getUTCDate()
+        return `${hm(d)} UTC` + (same ? '' : `, ${d.getUTCDate()} ${MON[d.getUTCMonth()]}`)
+    }
     function describe(a) {
-        const s = a.state, parts = [`${a.short}: ${a.role}.`]
-        if (s.kind === 'confirmed') parts.push(`Confirmed: last commit at ${hm(new Date(s.conf))} UTC${s.working ? ', working now' : ''}.` + (s.next ? ` Next run due ${hm(new Date(s.next))} UTC.` : ''))
-        if (s.kind === 'scheduled') parts.push(s.due ? `Scheduled: next run due ${hm(new Date(s.due))} UTC.` : 'Scheduled.')
-        if (s.kind === 'inferred') parts.push(`Inferred: a run was due at ${hm(new Date(s.due))} UTC and should be under way; no commit yet.`)
-        if (s.kind === 'late') parts.push(`Late: a run was due at ${hm(new Date(s.due))} UTC and no commit has confirmed it after 30 minutes.`)
-        if (s.kind === 'error') parts.push(`Error: ${s.why}.`)
-        if (s.kind === 'ondemand') parts.push('On demand: works when Vicky asks.' + (s.conf ? ` Last commit at ${hm(new Date(s.conf))} UTC.` : ''))
-        if (a.status && s.kind !== 'error') parts.push(`Last report: ${a.status}.`)
-        return parts.join(' ')
+        const s = a.state, lines = [], hidden = a.short === 'inbox' || a.short === 'vault'   // Vicky (SA21): none of their activity
+        const why = {
+            confirmed: s.working ? 'its commit shows it working now' : 'its last run is done; its commit shows it',
+            scheduled: 'its next run is due; nothing has happened yet', inferred: 'its run should be under way; no commit confirms it yet',
+            late: 'its run was due over 30 minutes ago and no commit confirms it', error: s.why, ondemand: 'works only when Vicky asks',
+        }[s.kind]
+        lines.push(`State: ${LABEL[s.kind]} (${why})`)
+        if (s.conf != null) lines.push(`Last confirmed activity: ${when(s.conf)}`)
+        else if (hidden) lines.push('Activity times: not shown for this agent')
+        else lines.push('Last confirmed activity: none on record')
+        if (s.kind === 'inferred' || s.kind === 'late') lines.push(`Run due: ${when(s.due)}`)
+        const next = s.kind === 'scheduled' ? s.due : s.next
+        if (next) lines.push(`Next run due: ${when(next)}`)
+        if (a.status) lines.push(`Last report: ${a.status}${a.urgent ? ', URGENT' : ''}`)
+        return { title: `${a.short}: ${a.role}`, lines }
+    }
+    function show(a) {
+        if (!detail) return
+        if (!a) { detail.innerHTML = ''; return }
+        const d = describe(a)
+        detail.innerHTML = `<b>${esc(d.title)}</b><br>` + d.lines.map(esc).join('<br>')
     }
     const pill = a => {
         const s = a.state
@@ -187,13 +207,17 @@
                 if (cell) cell.innerHTML = `<span class="office-key k-${s.kind}">${esc(pill(a))}</span>` + (s.kind === 'ondemand' ? '' : ` ${LABEL[s.kind]}`)
             }
         }
-        if (selected && detail) detail.textContent = describe(selected)
+        if (selected) show(selected)
     }
-    async function refresh() {
+    // the data is inside the page (an office-data block, written at each site release): read it from this page first,
+    // then every minute from a fresh copy of the page, so a release since the page was opened shows up without a reload
+    const parse = html => JSON.parse(new DOMParser().parseFromString(html, 'text/html').getElementById('office-data').textContent)
+    async function refresh(first) {
         try {
-            const r = await fetch(`status.json?t=${Date.now()}`, { cache: 'no-store' })
+            if (first) { const el = document.getElementById('office-data'); if (el) { apply(JSON.parse(el.textContent)); return } }
+            const r = await fetch(`${location.pathname}?t=${Date.now()}`, { cache: 'no-store' })
             if (!r.ok) throw new Error(r.status)
-            failed = false; apply(await r.json()); fetchedAt = Date.now()
+            failed = false; apply(parse(await r.text())); fetchedAt = Date.now()
         } catch { failed = true; if (data) apply(data) }
     }
 
@@ -317,13 +341,13 @@
         const b = canvas.getBoundingClientRect(), x = (e.clientX - b.left) / S, y = (e.clientY - b.top) / S
         const hit = agents.filter(a => x >= a.x - 9 && x <= a.x + 9 && y >= a.y - 26 && y <= a.y + 2).sort((p, q) => q.y - p.y)[0]
         selected = hit || null
-        if (detail) detail.textContent = hit ? describe(hit) : ''
+        show(hit)
     })
 
     theme()
     dark.addEventListener('change', theme)
     let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(doLayout, 150) })
-    refresh().then(() => { if (!layout.length) doLayout(); requestAnimationFrame(frame) })
+    refresh(true).then(() => { if (!layout.length) doLayout(); requestAnimationFrame(frame) })
     setInterval(refresh, 60e3)
     setInterval(() => tick(false), 1e3)
 })()

@@ -18,7 +18,7 @@ Audited by dev@PrompTugal.vicky on 8 November 2026, for Vicky Wang (decisions.md
 | `sprites/furniture.png` | Desk, chair, plant, sofa, coffee machine, bookshelf, whiteboard, boxes, mail tray, door | Original, drawn by `make-sprites.mjs` (same) | Apache-2.0 (this repository) | Yes |
 | `make-sprites.mjs` | The code that draws every PNG above (Node's standard library only); the same output on every run | Original, written from scratch | Apache-2.0 (this repository) | Yes |
 | `office.js` | The page's script: Canvas 2D, the rooms, the walking, the states | Original, written from scratch | Apache-2.0 (this repository) | Yes |
-| `status.json` | The data, built at each site release by `office()` in `people/vicky/pages.mjs` | Generated from this site's own files and commit record | Facts, no creative content | Yes |
+| The office's data (the `office-data` block inside the generated page) | Names, roles, rooms, times, status words and counts, built at each site release by `office()` in `people/vicky/pages.mjs` | Generated from this site's own files and commit record | Facts, no creative content | Yes |
 
 Floors, walls, badges and name tags are drawn by `office.js` at run time with plain rectangles and text; their colours are the site's own tokens (`assets/site.css`) or plain colour values in `office.js`. The text uses the reader's system fonts; no font file is loaded.
 
