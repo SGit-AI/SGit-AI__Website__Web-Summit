@@ -229,10 +229,17 @@ function office(ROOT) {
     const AREAS = { research: 'Research', stories: 'Storylines', writing: 'Writing desks', review: 'Review', coord: 'Coordination', logistics: 'Logistics and design', ondemand: 'On demand' }
     const when = a => a.on_demand ? 'On demand' : a.cron.join(', ') + ' UTC'
     const row = a => `<tr data-agent="${esc(a.short)}"><th scope="row"><img src="sprites/${esc(a.short)}.png" alt="" width="16" height="24" class="office-face">${esc(a.short)}</th><td>${esc(a.role)}</td><td>${esc(AREAS[a.area])}</td><td>${esc(when(a))}</td><td class="office-state">${a.on_demand ? 'On demand' : 'needs JavaScript'}</td></tr>`
-    const at = dataAt ? dataAt.slice(11, 16) : 'unknown'
+    // the data's time in full (UTC), from the commit, so it is the same on every build of that commit
+    const at = dataAt ? (d => `${['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][d.getUTCDay()]} ${d.getUTCDate()} ${['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][d.getUTCMonth()]} ${d.getUTCFullYear()}, ${dataAt.slice(11, 16)}`)(new Date(dataAt)) : 'unknown'
+    // the data inside the page: JSON with <, >, & and the two line separators written as \u escapes, so no value (not
+    // even one holding "</script>" or "<!--") can end the script block or start markup; JSON.parse gives back the same text
+    const embed = JSON.stringify(status).replace(/[<>&\u2028\u2029]/g, c => '\\u' + c.charCodeAt(0).toString(16).padStart(4, '0'))
     const head = `<style>
 .office-banner { margin: .5rem 0 1rem; padding: .55rem .8rem; border: 1px solid var(--line-2); border-radius: var(--radius, 8px); background: var(--surface-2); font-size: .92rem }
 .office-banner b { font-weight: 600 }
+.office-banner .office-checked { color: var(--ink-2) }
+.office-banner.office-stale { border-color: var(--warn); background: var(--warn-soft) }
+.office-banner .office-warn { display: block; margin-top: .3rem; color: var(--warn); font-weight: 600 }
 .office-stage { position: relative; margin: 0 0 .5rem; border: 1px solid var(--line-2); border-radius: var(--radius, 8px); overflow: hidden; background: var(--surface-2) }
 .office-stage canvas { display: block; width: 100%; image-rendering: pixelated; image-rendering: crisp-edges; cursor: pointer; touch-action: manipulation }
 .office-detail { min-height: 1.6em; font-size: .92rem; margin: .25rem 0 1rem }
@@ -258,7 +265,7 @@ function office(ROOT) {
 @media (max-width: 600px) { .office-table th:nth-child(2), .office-table td:nth-child(2), .office-table th:nth-child(3), .office-table td:nth-child(3) { display: none } .office-table th[scope=row] { white-space: normal } }
 </style>`
     const body = `<p>Vicky's AI agents at work, drawn as an office: each agent has a desk in its team's room, walks to it when a run is due, and rests in the lounge between runs. Tap a figure to see who it is and what we know.</p>
-<p class="office-banner" id="office-banner">Near-live: updated with each site release, last data <b>${esc(at)} UTC</b>.</p>
+<p class="office-banner" id="office-banner" aria-live="polite">Near-live: updated with each site release, last data <b>${esc(at)} UTC</b>.</p>
 <div class="office-stage"><canvas id="office-canvas" width="720" height="420" role="img" aria-label="An animated office of Vicky's agents; the same facts are in the table below">Your browser shows no canvas; the table below has the same facts.</canvas></div>
 <p class="office-detail" id="office-detail" aria-live="polite"></p>
 <h2>How to read it</h2>
@@ -270,11 +277,11 @@ function office(ROOT) {
 <li><span class="office-key k-ondemand">On demand</span><span><b>On demand</b>: works only when Vicky asks; no times are shown for the inbox or the vault agent.</span></li>
 </ul>
 <h2>The newsroom</h2>
-<ol class="office-strip" id="office-strip">${newsroom.map(n => `<li><span class="st">${esc(n.stage)}</span><b>${n.count}${n.of ? ` <small>of ${n.of}</small>` : ''}</b>${esc(n.unit)}</li>`).join('')}</ol>
+<ol class="office-strip" id="office-strip">${newsroom.map(n => `<li><span class="st">${esc(n.stage)}</span><b>${esc(n.count)}${n.of ? ` <small>of ${esc(n.of)}</small>` : ''}</b>${esc(n.unit)}</li>`).join('')}</ol>
 <h2>Who is where</h2>
 <div class="office-wrap"><table class="office-table"><thead><tr><th scope="col">Agent</th><th scope="col">Job</th><th scope="col" class="col-room">Room</th><th scope="col">Runs (UTC)</th><th scope="col">Now</th></tr></thead><tbody id="office-rows">${list.map(row).join('')}</tbody></table></div>
 <p class="meta">Built from <code>people/vicky/schedule.json</code>, the site's commit record, the agents' reports and <code>people/vicky/stories/candidates.md</code>, at each site release: facts as of the last data time above. Characters and furniture are original pixel art (<a href="https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/office/CREDITS.md">credits</a>).</p>
-<script type="application/json" id="office-data">${json.replace(/</g, '\\u003c')}</script>
+<script type="application/json" id="office-data">${embed}</script>
 <script src="office.js" defer></script>`
     const md = `Vicky's AI agents as an office, near-live: updated with each site release, last data ${at} UTC. States: confirmed (a commit shows the work), scheduled (a run is due), inferred (a run should be under way; late after 30 minutes without a commit), error (blocked or URGENT), on demand.\n\n## The newsroom\n\n${newsroom.map(n => `- ${n.stage}: ${n.count}${n.of ? ` of ${n.of}` : ''} ${n.unit}`).join('\n')}\n\n## Who is where\n\n| Agent | Job | Room | Runs (UTC) | Last confirmed (UTC) | Last report |\n|---|---|---|---|---|---|\n${list.map(a => `| ${a.short} | ${a.role} | ${AREAS[a.area]} | ${when(a)} | ${a.confirmed[0] ? a.confirmed[0].replace('T', ' ').replace('Z', '') : (a.on_demand && NO_TIMES.has(a.short) ? 'not shown' : 'none')} | ${a.urgent ? 'URGENT' : a.status || 'none'} |`).join('\n')}\n\nThe same facts as JSON are inside the page, in its office-data block.`
     return [{ rel: 'people/vicky/office/index.html', title: 'The Live AI Office', description: "Vicky's AI agents as a near-live pixel-art office: who is at their desk, who is due, who is late, and the newsroom's pipeline, updated with each site release.", body, head, md }]

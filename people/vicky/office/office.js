@@ -32,6 +32,9 @@
         { id: 'lounge', name: 'Lounge', slots: 6, lounge: true },
     ]
     const SLOT = 26, ROOM_H = 86, WALL = 14, HALL = 12, PAD = 6
+    // the hall along the left edge, where agents walk between rows: a figure is 16 px wide, drawn from its centre, so
+    // the walking line sits 9 px in and the rooms start 14 px in; nothing walks outside the canvas
+    const GUT = 14, HALL_X = 9
     // the furniture sheet's frames: [x, y, w, h] (make-sprites.mjs)
     const FURN = { desk: [0, 0, 24, 24], chair: [24, 0, 16, 24], plant: [40, 0, 16, 24], sofa: [56, 0, 32, 24], coffee: [88, 0, 16, 24], shelf: [104, 0, 16, 24], board: [120, 0, 32, 24], boxes: [152, 0, 16, 24], tray: [168, 0, 16, 24], door: [184, 0, 8, 24] }
 
@@ -64,11 +67,11 @@
         const out = []; let row = [], used = 0, y = 0
         const flush = () => {
             if (!row.length) return
-            const spare = W - 4 - used, add = Math.floor(spare / row.length); let x = 4
+            const spare = W - GUT - 2 - used, add = Math.floor(spare / row.length); let x = GUT
             for (const r of row) { const w = r._w + add; out.push({ ...r, x, y, w, h: ROOM_H, hallY: y + ROOM_H + HALL / 2 }); x += w }
             y += ROOM_H + HALL; row = []; used = 0
         }
-        for (const r of ROOMS) { const w = Math.min(want(r), W - 4); if (used + w > W - 4) flush(); row.push({ ...r, _w: w }); used += w }
+        for (const r of ROOMS) { const w = Math.min(want(r), W - GUT - 2); if (used + w > W - GUT - 2) flush(); row.push({ ...r, _w: w }); used += w }
         flush()
         layout = out; H = y
         const dpr = Math.max(1, Math.round(window.devicePixelRatio || 1))
@@ -103,7 +106,7 @@
         const pts = []
         if (rf) pts.push({ x: from.x, y: rf.y + rf.h - 4 }, { x: from.x, y: rf.hallY })
         const hy1 = rf ? rf.hallY : from.y, hy2 = rt ? rt.hallY : to.y
-        if (hy1 !== hy2) pts.push({ x: 2, y: hy1 }, { x: 2, y: hy2 })
+        if (hy1 !== hy2) pts.push({ x: HALL_X, y: hy1 }, { x: HALL_X, y: hy2 })
         if (rt) pts.push({ x: to.x, y: hy2 }, { x: to.x, y: rt.y + rt.h - 4 })
         pts.push(to)
         return pts
@@ -111,7 +114,7 @@
     const roomAt = p => layout.find(r => p.x >= r.x && p.x < r.x + r.w && p.y >= r.y && p.y <= r.y + r.h)
 
     // ---- the data and the states ----
-    let data = null, agents = [], fetchedAt = 0, failed = false
+    let data = null, agents = []
     const hm = d => d.toISOString().slice(11, 16)
     function dues(a, now) {
         const day = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()), out = []
@@ -119,11 +122,12 @@
         return out.sort((x, y) => x - y)
     }
     function stateOf(a, nowMs) {
-        const conf = a.confirmed.length ? Date.parse(a.confirmed[0]) : null
+        // the last commit at or before now: a commit later than the viewer's clock (a clock that is behind) never counts
+        const conf = a.confirmed.map(Date.parse).filter(t => t <= nowMs).sort((x, y) => y - x)[0] ?? null
         if (a.urgent || a.status === 'blocked') return { kind: 'error', conf, why: a.urgent ? 'its last report says URGENT' : 'its last report says blocked' }
         if (a.on_demand) return { kind: 'ondemand', conf }
         const ds = dues(a, new Date(nowMs)), last = [...ds].reverse().find(t => t <= nowMs), next = ds.find(t => t > nowMs)
-        const since = t => conf != null && conf >= t - 2 * MIN
+        const since = t => conf != null && conf >= t
         if (last != null && nowMs - last < LATE) return since(last) ? { kind: 'confirmed', conf, working: nowMs - conf < LATE, next } : { kind: 'inferred', due: last, conf, next }
         if (last != null && !since(last)) return { kind: 'late', due: last, conf, next }
         if (next != null && next - nowMs <= SOON) return { kind: 'scheduled', due: next, conf }
@@ -189,8 +193,8 @@
         let k = 0
         agents = (json.agents || []).map((x, i) => Object.assign(old[x.short] || { x: null, y: null, path: [], seed: 97 * (i + 3), loungeSpot: 0, nextTrip: 0 }, x))
         agents.forEach(a => { load(a.short); a.loungeSpot = k++ })
-        if (banner && json.data_at) banner.innerHTML = `Near-live: updated with each site release, last data <b>${json.data_at.slice(11, 16)} UTC</b>.` + (failed ? ' <span>(the last refresh failed; showing the data before it)</span>' : '')
-        if (strip && json.newsroom) strip.innerHTML = json.newsroom.map(n => `<li><span class="st">${esc(n.stage)}</span><b>${n.count}${n.of ? ` <small>of ${n.of}</small>` : ''}</b>${esc(n.unit)}</li>`).join('')
+        fresh()
+        if (strip && json.newsroom) strip.innerHTML = json.newsroom.map(n => `<li><span class="st">${esc(n.stage)}</span><b>${esc(n.count)}${n.of ? ` <small>of ${esc(n.of)}</small>` : ''}</b>${esc(n.unit)}</li>`).join('')
         tick(true)
         if (!layout.length) doLayout(); else agents.forEach(a => place(a, a.x == null))
     }
@@ -212,13 +216,39 @@
     // the data is inside the page (an office-data block, written at each site release): read it from this page first,
     // then every minute from a fresh copy of the page, so a release since the page was opened shows up without a reload
     const parse = html => JSON.parse(new DOMParser().parseFromString(html, 'text/html').getElementById('office-data').textContent)
+    // On load: the data in this page, then at once a fresh copy of the page, then every minute. cache: 'no-store' and a
+    // new query each time keep the browser's own cache out of it. The CDN in front of GitHub Pages is not bypassed (it
+    // ignores the query and the request's cache headers; checked 8 Nov 2026) and may answer with a copy up to 10 minutes
+    // old (max-age=600), so a release reaches an open page within about 10 minutes of going live. A copy older than the
+    // data already shown (one CDN node behind another) is ignored. A failed check keeps the data and says so in the banner.
+    let checkedAt = 0, failedSince = 0
     async function refresh(first) {
+        if (first) { const el = document.getElementById('office-data'); if (el) try { apply(JSON.parse(el.textContent)) } catch { } }
         try {
-            if (first) { const el = document.getElementById('office-data'); if (el) { apply(JSON.parse(el.textContent)); return } }
             const r = await fetch(`${location.pathname}?t=${Date.now()}`, { cache: 'no-store' })
             if (!r.ok) throw new Error(r.status)
-            failed = false; apply(parse(await r.text())); fetchedAt = Date.now()
-        } catch { failed = true; if (data) apply(data) }
+            const json = parse(await r.text())
+            checkedAt = Date.now(); failedSince = 0
+            if (!data || !data.data_at || (json.data_at || '') >= data.data_at) apply(json); else fresh()
+        } catch { if (!failedSince) failedSince = Date.now(); fresh() }
+    }
+    const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    const full = t => { const d = new Date(t); return `${DAYS[d.getUTCDay()]} ${d.getUTCDate()} ${MON[d.getUTCMonth()]} ${d.getUTCFullYear()}, ${hm(d)} UTC` }
+    const STALE = 8 * 60 * MIN   // no release for 8 hours: the overnight gap between Vicky's runs is 7
+    // the banner, from text nodes only: the data's own time (when the site published it) and, apart, when this browser checked
+    function fresh() {
+        if (!banner || !data) return
+        const now = Date.now(), at = data.data_at ? Date.parse(data.data_at) : NaN, warn = []
+        const line = (txt, bold) => { const e = document.createElement(bold ? 'b' : 'span'); e.textContent = txt; return e }
+        banner.replaceChildren(line('Near-live: updated with each site release, last data '), line(isNaN(at) ? 'unknown' : full(at), true), line('.'))
+        if (failedSince) warn.push(`Could not check for new data since ${hm(new Date(failedSince))} UTC; the office shows the data above, which may be out of date.`)
+        if (!isNaN(at) && now - at > STALE) warn.push(`This data is ${Math.floor((now - at) / (60 * MIN))} hours old: no site release since then, so later work is not shown and runs may wrongly show as late.`)
+        if (!isNaN(at) && at - now > MIN) warn.push("This device's clock is behind the data's time; states may be wrong.")
+        const p = document.createElement('span'); p.className = 'office-checked'
+        p.textContent = checkedAt ? ` Checked for new data by this browser at ${hm(new Date(checkedAt))} UTC; it checks every minute.` : ' Checking for new data...'
+        banner.append(p)
+        banner.classList.toggle('office-stale', warn.length > 0)
+        for (const w of warn) { const e = document.createElement('span'); e.className = 'office-warn'; e.textContent = ' ' + w; banner.append(e) }
     }
 
     // ---- drawing ----
@@ -243,11 +273,13 @@
         ctx.fillText(r.name, (r.x + 4) * S, (r.y + WALL / 2 - 1) * S)
     }
     function roundRect(x, y, w, h, rad) { ctx.beginPath(); ctx.moveTo(x + rad, y); ctx.arcTo(x + w, y, x + w, y + h, rad); ctx.arcTo(x + w, y + h, x, y + h, rad); ctx.arcTo(x, y + h, x, y, rad); ctx.arcTo(x, y, x + w, y, rad); ctx.closePath() }
+    // a label's centre, moved in so the whole label (w css px wide) stays on the canvas
+    const inside = (cx, w) => Math.min(Math.max(cx, w / 2 + 3), W * S - w / 2 - 3)   // 3 px: a badge's outline is 1.5 px wide
     function badge(a, cx, top, odd, space) {
         const s = a.state, text = pill(a), fs = S === 3 ? 12 : 10
         ctx.font = `600 ${fs}px ui-monospace, SFMono-Regular, Menlo, monospace`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'
         // a badge wider than a desk would cover its neighbour's: every other one sits a row higher
-        const w = Math.max(fs + 6, ctx.measureText(text).width + 10), h = fs + 6, x = cx - w / 2, y = top - h - 2 - (odd && w > space - 2 ? h + 2 : 0)
+        const w = Math.max(fs + 6, ctx.measureText(text).width + 10), h = fs + 6, x = inside(cx, w) - w / 2, y = top - h - 2 - (odd && w > space - 2 ? h + 2 : 0)
         roundRect(x, y, w, h, h / 2)
         let fg = C.ink
         ctx.setLineDash([]); ctx.lineWidth = 1.5
@@ -257,12 +289,13 @@
         else if (s.kind === 'late') { ctx.fillStyle = C.warnSoft; ctx.fill(); ctx.strokeStyle = C.warn; ctx.stroke(); fg = C.warn }
         else if (s.kind === 'error') { ctx.fillStyle = C.bad; ctx.fill(); fg = C.onSolid }
         else { ctx.fillStyle = C.waitSoft; ctx.fill(); ctx.strokeStyle = C.line; ctx.stroke(); fg = C.wait }
-        ctx.fillStyle = fg; ctx.fillText(text, cx, y + h / 2 + .5)
+        ctx.fillStyle = fg; ctx.fillText(text, x + w / 2, y + h / 2 + .5)
     }
     function tag(a, cx, y, i) {
         const fs = S === 3 ? 11 : 9
         ctx.font = `${fs}px system-ui, sans-serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'top'
         const t = a.short.replace('journalist-', 'j-'), w = ctx.measureText(t).width + 6, yy = y + (i % 2 ? fs + 2 : 0)
+        cx = inside(cx, w)
         ctx.globalAlpha = .85; ctx.fillStyle = C.surface; ctx.fillRect(cx - w / 2, yy, w, fs + 3); ctx.globalAlpha = 1
         ctx.fillStyle = C.ink; ctx.fillText(t, cx, yy + 1)
     }
@@ -349,5 +382,6 @@
     let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(doLayout, 150) })
     refresh(true).then(() => { if (!layout.length) doLayout(); requestAnimationFrame(frame) })
     setInterval(refresh, 60e3)
+    setInterval(fresh, 30e3)
     setInterval(() => tick(false), 1e3)
 })()
