@@ -1,4 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- backlog 0m, the stand's iPads: added to the Home Screen it opens full screen, no Safari bars (the status bar stays above it) -->
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="ABPs"><meta name="theme-color" content="#07111F">
 <title>ABPs you can watch</title>
 <!-- dev.abp@PrompTugal.angelo, 8 November 2026. The shared player of spec-abp-live.md (approved by Angelo, 8 November about
      11:20): one file, two modes. ?mode=loop (a screen on the stand, nobody touching it) or ?mode=interactive (with a customer).
@@ -8,13 +11,16 @@
 :root{--bg:#07111F;--panel:#0a1626;--line:#1d3550;--rim:#22b8e6;--tx:#E8EEF5;--mu:#93A6BC;--ok:#3ecf8e;--bad:#ff4d5e;--amb:#f5b942;--ag:#9b8cff;--inj:#c084fc}
 [hidden]{display:none!important}*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.4 Inter,system-ui,sans-serif;overflow:hidden}
 svg{display:block}
+/* touch (backlog 0m): a quick second tap on the dial is a second tap, not a zoom; no grey flash; Safari keeps the text size on rotation */
+html{-webkit-text-size-adjust:100%}button,input,label,.card,.stop,.pill{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+body{-webkit-user-select:none;user-select:none}
 #loop{position:fixed;inset:0;display:grid;grid-template-rows:auto 1fr auto}
 #loop .top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:22px 30px 0}
 #loop h1{margin:0;font-size:clamp(19px,3vw,38px);font-weight:600;letter-spacing:-.01em}
 .capline{color:var(--mu);font-size:clamp(14px,1.6vw,22px);margin-top:6px;min-height:1.5em}
 .kind{font-size:clamp(17px,2.4vw,32px);font-weight:600;text-align:right;white-space:nowrap}.kind small{display:block;color:var(--mu);font-size:.5em;font-weight:400;white-space:normal}
 .kind .gl,.stop .gl,.scell .gl{font-family:"DejaVu Sans","Segoe UI Symbol",system-ui,sans-serif}
-#loop .stage{display:grid;place-items:center;min-height:0;position:relative}#loop .stage svg{height:100%;max-height:74vh;width:auto;max-width:96vw}
+#loop .stage{display:grid;place-items:center;min-height:0;position:relative}#loop .stage svg{height:100%;max-height:74vh;max-height:74dvh;width:auto;max-width:96vw}
 .counters{display:flex;justify-content:center;gap:clamp(14px,4vw,64px);padding:0 16px 40px;flex-wrap:wrap}
 .ctr{text-align:center;min-width:70px}.ctr b{display:block;font-size:clamp(28px,4.5vw,64px);font-weight:700;line-height:1}.ctr span{color:var(--mu);font-size:clamp(11px,1.2vw,16px)}
 .ctr.bad b{color:var(--bad)}.ctr.ok b{color:var(--ok)}.ctr.amb b{color:var(--amb)}.ctr.zero b{color:var(--ok)}
@@ -43,7 +49,7 @@ svg{display:block}
 .legend{font-size:12px;color:var(--mu)}.legend div{display:flex;gap:8px;align-items:center;margin:5px 0}.legend svg{flex:none}
 .note{font-size:12px;color:var(--mu);margin-top:10px}
 .empty{position:fixed;inset:0;display:grid;place-items:center;color:var(--mu);text-align:center;padding:20px}
-@media (max-width:900px){body{overflow:auto}#inter{position:static;display:flex;flex-direction:column}#inter>header{order:0}#inter>.mid{order:1}#inter>aside:last-of-type{order:2}#inter>aside:first-of-type{order:3}.mid{height:auto}.mid svg{height:min(92vw,560px)}#inter header{padding:12px 16px 4px}.side{padding:8px 16px}}
+@media (max-width:900px){body{overflow:auto}#inter{position:static;display:flex;flex-direction:column}#inter>header{order:0}#inter>.mid{order:1}#inter>aside:last-of-type{order:2}#inter>aside:first-of-type{order:3}.mid{height:auto}.mid svg{height:min(92vw,560px,70vh)}#inter header{padding:12px 16px 4px}.side{padding:8px 16px}}
 @media (max-width:600px){#loop .top{padding:14px 16px 0;flex-direction:column;gap:6px}.kind{text-align:left;white-space:normal}.sgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.counters{padding-bottom:44px}}
 </style></head><body>
 <section id="loop" hidden>
@@ -214,7 +220,12 @@ const glyph=k=>`<span class="gl">${KIND[k].g}</span>`
 function runsFor(D,story,model,opt={}){return D.runs.filter(r=>r.story===story&&r.model===model&&!!r.review===!!opt.review&&r.inj===(opt.inj!==false)&&r.ask===(opt.ask!==false))}
 
 // ---- loop mode ----
+// the stand's screens (backlog 0m): ask the browser to keep the screen on while the loop plays, and again whenever the page
+// comes back to the front (the lock is dropped when it is hidden). Where it is not supported, nothing changes.
+function keepAwake(){const ask=()=>{try{if(navigator.wakeLock&&document.visibilityState==='visible')navigator.wakeLock.request('screen').catch(()=>{})}catch{}}
+ ask();document.addEventListener('visibilitychange',ask)}
 async function loop(D){$('loop').hidden=false;let W
+ keepAwake()
  const stories=STORIES.filter(s=>D.runs.some(r=>r.story===s.id))
  const setCount=c=>{$('cSeen').textContent=c.seen;$('cLeft').textContent=c.left;$('ctrLeft').className='ctr '+(c.left?'bad':'zero');$('cStop').textContent=c.stopped+(c.held?' +'+c.held+' held':'');$('cJob').textContent=c.done?(c.job?'✓':'✗'):'…'}
  for(;;){for(const st of stories){W=drawWorld($('lSvg'),st.id)
@@ -236,7 +247,7 @@ function interactive(D){$('inter').hidden=false;let W=drawWorld($('iSvg'),'suppo
  S.model=models('support')[0]
  $('cards').innerHTML=STORIES.map(s=>{const has=D.runs.some(r=>r.story===s.id);return`<button class="card${s.id===S.story?' sel':''}" ${has?'':'disabled'} data-s="${s.id}"><b>${s.title}</b><span>${has?s.sub:'designed; recorded runs to come'}</span></button>`}).join('')
  const render=()=>{
-  $('dial').innerHTML=KINDS.map(k=>{const ok=runsFor(D,S.story,S.model,S).some(r=>r.barrier===k.k);return`<button class="stop${k.k===S.barrier?' on':''}" data-k="${k.k}" ${ok?'':'disabled title="not recorded yet"'}>${glyph(k.k)}${k.l}<small>${k.s}</small></button>`}).join('')
+  $('dial').innerHTML=KINDS.map(k=>{const ok=runsFor(D,S.story,S.model,S).some(r=>r.barrier===k.k);return`<button class="stop${k.k===S.barrier?' on':''}" data-k="${k.k}" ${ok?'':'disabled title="not recorded yet"'}>${glyph(k.k)}${k.l}<small>${ok?k.s:'not recorded yet'}</small></button>`}).join('')
   $('models').innerHTML='Played by '+models(S.story).map(m=>`<button class="pill${m===S.model?' on':''}" data-m="${m}">${m}</button>`).join('')
   const opts=WHATIFS[S.story]||WHATIFS.support
   $('whatifs').innerHTML=opts.map(([k,l])=>{const alt={...S,[k]:!S[k]};const ok=runsFor(D,S.story,S.model,alt).some(r=>r.barrier===S.barrier);return`<label class="toggle${ok?'':' off'}"><input type="checkbox" data-w="${k}" ${S[k]?'checked':''} ${ok?'':'disabled'}><span>${l}${ok?'':' <em>(the other way: not recorded yet)</em>'}</span></label>`}).join('')

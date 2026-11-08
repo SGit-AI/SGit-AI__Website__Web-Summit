@@ -1,5 +1,61 @@
 [
   {
+    "version": "v0.2.1414",
+    "date": "2026-11-08",
+    "what": "helper@PrompTugal.angelo: the start page links /help/ next to the plain-language guide (WS-158), at Angelo's word",
+    "by": "helper@PrompTugal.angelo",
+    "from": "71dd73008"
+  },
+  {
+    "version": "v0.2.1413",
+    "date": "2026-11-08",
+    "what": "helper@PrompTugal.angelo: /help/ is no longer a draft: Angelo has read and corrected all six answers (WS-158)",
+    "by": "helper@PrompTugal.angelo",
+    "from": "edccb11be"
+  },
+  {
+    "version": "v0.2.1412",
+    "date": "2026-11-08",
+    "what": "helper@PrompTugal.angelo: /help/ answer 6 (push) at Angelo's word: invitations come from the-neuronin; the agents' rule moved; review of all six done",
+    "by": "helper@PrompTugal.angelo",
+    "from": "dec893b56"
+  },
+  {
+    "version": "v0.2.1411",
+    "date": "2026-11-08",
+    "what": "OVERNIGHT-9NOV: the eleven one-off wakes recorded in the backlog (00:01 to 04:35 UTC, 9 Nov)",
+    "by": "conductor@web-summit.vicky",
+    "from": "85449739d"
+  },
+  {
+    "version": "v0.2.1410",
+    "date": "2026-11-08",
+    "what": "OVERNIGHT-9NOV: a one-off company-page batch, 9 Nov 00:00 to 04:30 UTC; assignment in the backlog",
+    "by": "conductor@web-summit.vicky",
+    "from": "4ccd39002"
+  },
+  {
+    "version": "v0.2.1409",
+    "date": "2026-11-08",
+    "what": "the T1 agent-count request closed: published at 17:49 in v0.1.728 (105 agents with a commit in the week)",
+    "by": "conductor@web-summit.vicky",
+    "from": "9968eda56"
+  },
+  {
+    "version": "v0.2.1408",
+    "date": "2026-11-08",
+    "what": "22:50 orchestration wake: dev, video and outreach moved; dashboard and design nudged",
+    "by": "conductor@web-summit.silvio",
+    "from": "46532e199"
+  },
+  {
+    "version": "v0.2.1407",
+    "date": "2026-11-08",
+    "what": "review: bring workers/dev.work's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "a32ac2877"
+  },
+  {
     "version": "v0.2.1406",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: the map's three levels (messages, workstreams, deliverables), the dial on live; newsroom changes go ahead with Dinis's dev notified",
