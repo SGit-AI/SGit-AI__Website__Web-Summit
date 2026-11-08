@@ -41,8 +41,9 @@
     // rows above the hexagon (the upper half's) or below it (the lower half's), each joined to its square by a thin leader; on a
     // phone the hexagon keeps nearly the frame's width and the rows use the room above and below it (dashboard@'s review, de879c5).
     // avoid: the graph's own furniture (live.js's logos and LIVE, its date line, the layout switch) as boxes in drawing units;
-    // no pill is left on one.
-    function pillsFor(P, names, font, lo = -Infinity, hi = Infinity, sq = SQ, avoid = []) {
+    // no pill is left on one. clearLow: in rows, how much of the frame's right side the lower rows leave free (the app's floating
+    // Ask Claude button stays in that column on a phone, whatever the scroll: dashboard@'s review, 7a0de06c).
+    function pillsFor(P, names, font, lo = -Infinity, hi = Infinity, sq = SQ, avoid = [], clearLow = 0) {
         const hits = b => avoid.find(o => b.x < o.x + o.w && o.x < b.x + b.w && b.y < o.y + o.h && o.y < b.y + b.h)
         const C = W().C, h = Math.round(font * 1.6), gap = Math.round(font * 0.5), out = new Map(), wOf = d => Math.round(names[d].length * font * 0.56 + font * 1.2)
         let fits = true
@@ -67,7 +68,7 @@
         for (const upper of [true, false]) {
             const mine = [...P].filter(([, p]) => (p.y < C) === upper).sort((x, y) => x[1].x - y[1].x), rows = []
             for (const [d, p] of mine) {
-                const w = wOf(d), x = Math.max(lo, Math.min(hi - w, p.x - w / 2))
+                const w = wOf(d), x = Math.max(lo, Math.min((upper ? hi : hi - clearLow) - w, p.x - w / 2))
                 const edge = upper ? Math.min(67, p.y) - sq / 2 - gap : Math.max(933, p.y) + sq / 2 + gap, yAt = r => upper ? edge - h - r * (h + gap) : edge + r * (h + gap)
                 let r = 0; while ((rows[r] || []).some(o => x < o.x + o.w + gap && o.x < x + w + gap) || (r < 12 && hits({ x, y: yAt(r), w, h }))) r++
                 ;(rows[r] = rows[r] || []).push({ x, w })
@@ -122,7 +123,8 @@
             const lo = k > 0 ? (fr.left - r.left) / k + 4 : -Infinity, hi = k > 0 ? (fr.right - r.left) / k - 4 : Infinity
             const box = e => { const b = e.getBoundingClientRect(); return { x: (b.left - r.left) / k - 6, y: (b.top - r.top) / k - 6, w: b.width / k + 12, h: b.height / k + 12 } }
             const avoid = k > 0 ? [...wrap.querySelectorAll('.lv-top, .lv-when, .lv-lay')].filter(e => e.getBoundingClientRect().width).map(box) : []
-            const L = pillsFor(P, A.DEST_NAMES, font, lo, hi, size, avoid)
+            const fab = doc.querySelector('.cc-askfab'), fb = fab && fab.getBoundingClientRect(), clearLow = k > 0 && fb && fb.width && fb.left < fr.right && fb.right > fr.left ? (fr.right - fb.left) / k + 4 : 0
+            const L = pillsFor(P, A.DEST_NAMES, font, lo, hi, size, avoid, clearLow)
             for (const [d, s] of sq) {
                 const b = L.get(d), p = s.p
                 s.inner.setAttribute('transform', `scale(${(size / SQ).toFixed(3)})`)
