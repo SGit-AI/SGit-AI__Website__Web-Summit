@@ -455,7 +455,7 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
             const angleOf = i => -Math.PI / 2 + i * 2 * Math.PI / NP
             const RP = L0 === 'ring' ? 300 : 445
             M.people.forEach((p, i) => { const a = angleOf(i); pos.set(p.id, { x: C + RP * Math.cos(a), y: C + RP * Math.sin(a), a, kind: 'p', label: p.name.split(' ')[0], person: p.id }) })
-            const agentNode = (a, x, y) => ({ x, y, kind: 'a', label: a.short, person: a.person, family: a.family, commits: a.commits, name: a.id.startsWith('pt:') ? `${a.short}, PrompTugal (${a.id.split(':')[1]})` : a.id, kind2: a.kind || '', runsAs: a.runsAs || '', first: a.elsewhere ? a.first || '' : '' })
+            const agentNode = (a, x, y) => ({ x, y, kind: 'a', label: a.short, person: a.person, family: a.family, commits: a.commits, name: a.id.startsWith('pt:') ? `${a.short}, PrompTugal (${a.id.split(':')[1]})` : a.id, kind2: a.kind || '', runsAs: a.runsAs || '', first: a.elsewhere ? a.first || '' : '', quiet: !!a.quiet })
             // where a person's N agents sit, for this layout (also used while playing back, as agents arrive one by one)
             const placeFor = (P, N) => {
                 const out = []
@@ -470,8 +470,11 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
                 }
                 return out
             }
+            // every agent its person declares (backlog 0f): the ones with no commits on dev yet (fresh sessions whose work is on
+            // their workers/ branch, or not yet run: data.mjs's M.sessionless) stand beside their person too, as in the live view
+            const ALL = M.agents.concat((M.sessionless || []).map(a => ({ ...a, quiet: true })))
             M.people.forEach(p => {
-                const mine = M.agents.filter(a => a.person === p.id).sort((x, y) => (y.commits || 0) - (x.commits || 0)), P = pos.get(p.id)
+                const mine = ALL.filter(a => a.person === p.id).sort((x, y) => (y.commits || 0) - (x.commits || 0)), P = pos.get(p.id)
                 placeFor(P, mine.length).forEach((q, k) => pos.set(mine[k].id, agentNode(mine[k], q.x, q.y)))
             })
             // the kinds of work, at the centre (work layout)
@@ -504,7 +507,7 @@ ${teamMap()}${cstate().map ? '<section aria-label="Timeline"><h3 class="ak-lane"
             const max = Math.max(1, ...links.map(l => l.n)), pull = L0 === 'ring' ? 0.55 : L0 === 'agents' ? 0.25 : 0.1
             const path = (a, b, k = pull) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return `M${a.x.toFixed(0)} ${a.y.toFixed(0)}Q${(mx + (C - mx) * k).toFixed(0)} ${(my + (C - my) * k).toFixed(0)} ${b.x.toFixed(0)} ${b.y.toFixed(0)}` }
             const lit = l => c.f && (l.from === c.f || l.to === c.f || (!isAgentF && !isKindF && ((pos.get(l.from) || {}).person === c.f || (pos.get(l.to) || {}).person === c.f)))
-            const spokes = L0 === 'ring' ? '' : `<g class="tm-spokes">${M.agents.filter(a => pos.has(a.id)).map(a => `<line x1="${pos.get(a.person).x.toFixed(0)}" y1="${pos.get(a.person).y.toFixed(0)}" x2="${pos.get(a.id).x.toFixed(0)}" y2="${pos.get(a.id).y.toFixed(0)}" stroke="${col.get(a.person)}" class="${c.f && !near(a.id) ? 'off' : ''}"/>`).join('')}</g>`
+            const spokes = L0 === 'ring' ? '' : `<g class="tm-spokes">${ALL.filter(a => pos.has(a.id)).map(a => `<line x1="${pos.get(a.person).x.toFixed(0)}" y1="${pos.get(a.person).y.toFixed(0)}" x2="${pos.get(a.id).x.toFixed(0)}" y2="${pos.get(a.id).y.toFixed(0)}" stroke="${col.get(a.person)}" class="${c.f && !near(a.id) ? 'off' : ''}"/>`).join('')}</g>`
             const wmax = Math.max(1, ...wl.map(l => l.n))
             const flows = W ? `<g class="tm-flows">${wl.map(l => { const on = !c.f || (isKindF ? 'k:' + l.kind === c.f : isAgentF ? l.agent === c.f : (pos.get(l.agent) || {}).person === c.f); return `<path d="${path(pos.get(l.agent), pos.get('k:' + l.kind), -0.15)}" stroke="${TM_KIND[l.kind][0]}" stroke-width="${(0.8 + 5 * Math.sqrt(l.n / wmax)).toFixed(2)}" class="${c.f ? (on ? 'on' : 'off') : ''}"><title>${esc((pos.get(l.agent) || {}).name || l.agent)}: ${l.n} commits on ${esc((W.kinds.find(k => k.id === l.kind) || {}).label || l.kind)}</title></path>` }).join('')}</g>` : ''
             const svg = `<svg class="tm-svg tm-${L0}" viewBox="0 0 ${S} ${S}" role="img" aria-label="${M.totals.people} people and ${M.totals.agents} agents${W ? ', and the kinds of work they did' : ', and who wrote to whom'}">

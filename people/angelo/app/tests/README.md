@@ -17,6 +17,7 @@ Or run just some of them, for example `people/angelo/app/tests/run.sh tm tmf tml
 | `cb` | Team and the machine: people, levels, agents and keys |
 | `tm` | the whole-team map: people, agents, diamonds, links, focus, a bookmarked focus |
 | `tml` | the map's three layouts: people ring, agents ring, agents and their work |
+| `tmall` | every agent a person declares (all of Angelo's, from people/angelo/agents.json) is drawn and visible on the map in all three layouts, the workers whose commits are on workers/ branches included, and the live view draws as many agents as the record holds (backlog 0f) |
 | `lvlay` | the layouts (backlog 0e): the map's agents ring (each person's agents in one ring inside the people, no kinds of work); the live view's quiet switch with the same three layouts, people where the map puts them, kinds and flows in "work", remembered on the device, `lv=<layout>` in the address winning, 3D redrawn on a switch; 1280 and 390 px, light and dark |
 | `tmfs` | the map's full screen: it fits, covers the page, its link is copied, Esc closes it |
 | `tmf` | the map's playback: controls, pulses in the sender's colour, lines building and fading, pause, window, layouts, focus |
