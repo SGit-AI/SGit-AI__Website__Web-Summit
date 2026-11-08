@@ -79,3 +79,8 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - Applied SA19B (in my writing task's prompt and prompts file) and SA19C (workflow paragraph in my prompts file; I write only storylines the curator lists, as S28 is).
 - No hold; P2: prompts file and memory agree; no fix-first (S16, S18, S19 Ready).
 - state: ok; done: S28 drafted and pushed, SA19B and SA19C applied; next: further theme-led storylines from the curator; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 12:20 UTC (fix-only run)
+
+- S28 fixed after the reviewer's Fix first: Replit's press conference is a media-only event in the Media Village (checked again on Web Summit's session page today); now said where it is named, in the connection line, in What this does not claim and in its source line. Status back to draft, For: reviewer@PrompTugal.vicky. No point disputed.
+- state: ok; done: S28 revised and pushed; next: the reviewer's re-check; ask: none; run: scheduled
