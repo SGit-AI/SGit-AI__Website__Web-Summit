@@ -4,13 +4,14 @@
 // what the drawing (work-draw.js's fly and counts) needs: the deliveries that fall in each frame, merged per frame and destination
 // (at "1 day a second" a frame covers about 24 minutes, so the screen never floods), and the counts for the window shown. A seek,
 // a jump of more than JUMP minutes or the clock going back flies nothing: it only resets the counts. Pure rules here, the same file
-// in node for the tests and in the browser as window.AngeloWorkReplay; the wiring waits on the graph's hook (as work-live.js does).
+// in node for the tests and in the browser as window.AngeloWorkReplay; mountMap puts it on the map replay plays on.
 (function (root, make) {
     const m = make()
     if (typeof module === 'object' && module.exports) module.exports = m
     else root.AngeloWorkReplay = m
 })(typeof self !== 'undefined' ? self : this, function () {
     'use strict'
+    const root = typeof self !== 'undefined' ? self : globalThis   // the browser's window (wire and mountMap); unused in node
     const JUMP = 120              // replay minutes: a step longer than this is a seek, not playback (1 day a second is ~24 a frame)
     const lower = (a, x) => { let lo = 0, hi = a.length; while (lo < hi) { const m = (lo + hi) >> 1; if (a[m].min < x) lo = m + 1; else hi = m } return lo }
 
@@ -44,13 +45,50 @@
     // wire(V, A, W, o): the browser side. V is work-draw.js's attach(); W the deliveries.json read; o.rFrom replay's `from`.
     // Listens for 'ak-clock' on o.win (default window); a 'stop' (the event replay sends on pause) arrives as the same T again,
     // which flies nothing. Returns a function that unhooks it.
+    // o.t0: replay's moment when wired (the counts show for it at once, before the first tick).
     function wire(V, A, W, o = {}) {
         const win = o.win || root, P = player(A, A.unpack(W), { offset: offset(o.rFrom, W.from), window: o.window })
         const now = () => (win.performance ? win.performance.now() : Date.now())
         const on = e => { if (e.detail == null) return; const r = P.at(+e.detail, true); V.counts(r.counts); if (r.fly.length) V.fly(r.fly, now()) }
+        if (o.t0 != null) V.counts(P.at(+o.t0, false).counts)
         win.addEventListener('ak-clock', on)
         return () => win.removeEventListener('ak-clock', on)
     }
 
-    return { JUMP, offset, due, perFrame, player, wire }
+    // the viewBox that leaves room for the rim around a map drawn in S units: the map shown at `scale` of the frame, as live.js
+    // shows its graph inside the hexagon, so the squares sit outside the outermost agents; plus MARGIN of the frame so the squares,
+    // centred on the rim, are not cut at the map's edge
+    const MARGIN = 0.07
+    const roomy = (S, scale) => { const C = S / 2, h = C / scale * (1 + MARGIN); return [C - h, C - h, 2 * h, 2 * h].map(v => +v.toFixed(2)).join(' ') }
+
+    // mountMap(host, o): the work view on Team and the machine's map while it plays back (replay.js's mountFlow draws the map and
+    // sends 'ak-clock'). o.svg (the map's <svg>, S units square), o.pos (node id -> {x, y, person}), o.col (person -> colour),
+    // o.rFrom (replay's `from`), o.t0 (its moment now), o.base (the app's folder), o.url (deliveries.json, default base + it),
+    // o.W (the file itself, for tests). The map is shown at SCALE of its frame while the work view is on, and put back after.
+    // Returns { ready (a promise: true once drawn, false if the file could not be read or it was taken down), destroy }.
+    const SCALE = 0.84
+    function mountMap(host, o = {}) {
+        const win = o.win || root, doc = o.doc || win.document, A = win.AngeloWork, D = win.AngeloWorkDraw, svg = o.svg
+        const NS = 'http://www.w3.org/2000/svg', S = A ? A.S : 1000
+        let alive = true, V = null, unhook = null, layer = null, vb = null
+        const ready = (async () => {
+            if (!A || !D || !svg) return false
+            let W = o.W
+            if (!W) { try { const r = await win.fetch(new URL(o.url || (o.base || '') + 'deliveries.json', win.location.href).href, { cache: 'no-store' }); if (!r.ok) throw new Error(r.status); W = await r.json() } catch { return false } }
+            if (!alive || !svg.isConnected || !W || !W.rows) return false
+            vb = svg.getAttribute('viewBox'); svg.setAttribute('viewBox', roomy(S, SCALE)); svg.classList.add('wv-map')
+            layer = doc.createElementNS(NS, 'g'); layer.setAttribute('class', 'lv-work'); svg.appendChild(layer)
+            V = D.attach({ svg, pos: o.pos, col: o.col, layer, scale: SCALE, win, doc }, { base: o.base, light: o.light })
+            unhook = wire(V, A, W, { rFrom: o.rFrom, t0: o.t0, win, window: o.window })
+            return true
+        })()
+        function destroy() {
+            alive = false; if (unhook) unhook(); if (V) V.destroy(); if (layer) layer.remove()
+            if (vb != null) { svg.setAttribute('viewBox', vb); svg.classList.remove('wv-map') }
+            unhook = V = layer = null; vb = null
+        }
+        return { ready, destroy, view: () => V }
+    }
+
+    return { JUMP, SCALE, offset, due, perFrame, player, wire, roomy, mountMap }
 })
