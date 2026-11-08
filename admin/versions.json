@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1354",
+    "date": "2026-11-08",
+    "what": "17:40 report: URGENT, Indi's /lead-to-article/ (WS-168) asks whether it matches Vicky's proposal, at the 18:00",
+    "by": "pm@web-summit.vicky",
+    "from": "39a38fac3"
+  },
+  {
     "version": "v0.2.1353",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 157 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 567 exchanges in 48 h from 2 of 4 repositories",
