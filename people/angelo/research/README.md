@@ -18,5 +18,9 @@ Public briefs only: a company, or a person in their public professional role; ea
 | BlackRock | [blackrock.md](blackrock.md) | none booked; list item 12 |
 | Iveco Group | [iveco-group.md](iveco-group.md) | none booked; list item 13 (thin) |
 | Databricks | [databricks.md](databricks.md) | none booked; list item 14 |
+| Nory | [nory.md](nory.md) | none booked; list item 15 |
+| Ofcom | [ofcom.md](ofcom.md) | none booked; list item 16 (stub: not readable) |
+| Big Fish Games | [big-fish-games.md](big-fish-games.md) | none booked; list item 17 (stub: not readable) |
+| SYBO | [sybo.md](sybo.md) | none booked; list item 18 (thin) |
 
-Next from requests.md: Nory, Ofcom, Big Fish Games, SYBO.
+All 18 on requests.md have a brief or a stub. Next: redo the thin ones (VGW, IFS assyst, Rebura, Jam City, Iveco) and the stubs when a rendered read is possible, and refresh any company 48 hours before a booked meeting.
