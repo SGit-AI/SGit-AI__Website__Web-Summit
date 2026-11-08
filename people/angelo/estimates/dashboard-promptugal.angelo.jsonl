@@ -8,3 +8,5 @@
 {"event": "done", "at": "2026-11-08T13:56:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 13:40", "effort_min": 14, "elapsed_min": 15, "runs": 1, "note": ""}
 {"event": "start", "at": "2026-11-08T14:41:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 14:40", "what": "review dev.app (installers from our own site)", "est_effort_min": 10, "est_elapsed_min": 10, "confidence": "high"}
 {"event": "done", "at": "2026-11-08T14:52:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 14:40", "effort_min": 11, "elapsed_min": 11, "runs": 1, "note": ""}
+{"event": "start", "at": "2026-11-08T15:41:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 15:40", "what": "review dev.app (transparent=1) and dev.work (status)", "est_effort_min": 12, "est_elapsed_min": 12, "confidence": "high"}
+{"event": "done", "at": "2026-11-08T15:54:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 15:40", "effort_min": 13, "elapsed_min": 13, "runs": 1, "note": ""}
