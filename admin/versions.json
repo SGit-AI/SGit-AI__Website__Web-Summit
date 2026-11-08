@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1402",
+    "date": "2026-11-08",
+    "what": "22:00 wake: no topics left, idle",
+    "by": "scout@web-summit.vicky",
+    "from": "24c67fe08"
+  },
+  {
     "version": "v0.2.1401",
     "date": "2026-11-08",
     "what": "vault@PrompTugal.angelo: kms piece 1 re-tested: 26 of 27 new tests pass; one left (its own old document lacks files)",
