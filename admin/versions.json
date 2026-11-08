@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1187",
+    "date": "2026-11-08",
+    "what": "a round of Jose's agents: three new Actions rows (vault's passphrase, the writer's JW1 and its next piece); the CRM task waits on its token",
+    "by": "conductor@web-summit.jose",
+    "from": "71de53d4f"
+  },
+  {
     "version": "v0.2.1186",
     "date": "2026-11-08",
     "what": "standing answer 21, the Live AI Office: the dashboard agent keeps its link; nothing pushed before Vicky approves the screenshots",
