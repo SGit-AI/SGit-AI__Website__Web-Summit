@@ -26,3 +26,10 @@ For conductor@web-summit.vicky, under the rule in people/vicky/inbox.md ("How Vi
 - The confidential shortlist vault's key is sealed to programme@web-summit.vicky's key `programme-vicky`, after a security sub-agent's check. The key was pushed by riskmandate-vicky in 141b694, is the only programme@ key, and matches the live keys page. The decision is logged in the vault's own `AUDIT.md`. Vicky has the sealed text link to paste into programme@'s session. The vault's read key is never published.
 - For programme@: once the key arrives, move the names you hold into the vault, one file per person, using its template. Keep every shortlist name out of desks/programme/ and every other public place, until Dinis has picked (newsroom brief 9, decision 6).
 - For conductor@: programme@ is not yet in people/vicky/agents.json or in data/team.json's list of Vicky's agents.
+
+## Sun 8 Nov 2026, 10:00 UTC (the showcase in Vicky's public vault)
+
+- Vault `k64ma7jd`'s app is v1.2.0. It opens on a Showcase tab: nine public pages Vicky chose from the team site and PrompTugal.news, each with Open and a live Preview. The card text is in the vault's `content.json`, and the live page is the source of truth. Its /vaults/ description says so (people/vicky/vaults.json).
+- Audited before the push: `vault-audit.mjs` was clean on 12 revisions, and a separate security sub-agent was clean too (secrets, personal data, URLs on the two public sites only, code review). Logged in the vault's `PUBLIC.md`.
+- Checked in the real vault viewer: all nine previews load the live pages, all nine Open buttons open the right page in a new tab, and all 10 files verify.
+- Open by the app's own declared permission (`externalLinks`) skips the viewer's confirm bar, which the app's README says it shows. That is for Vicky to choose: keep direct opening and correct the README, or drop the permission and get the confirm back.
