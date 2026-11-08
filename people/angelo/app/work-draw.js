@@ -33,6 +33,7 @@
 .wv-fly path { fill: none; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
 .wv-trail { fill: none; stroke-width: 3; stroke-linecap: round; }
 .wv-num { font-size: 15px; }
+.wv-ws { font-family: var(--rm-font, system-ui, sans-serif); font-weight: 700; font-size: 22px; fill: var(--rm-text-secondary, #BCCCDC); }
 `
     const el = (doc, t, a, p) => { const e = doc.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e }
     const f1 = n => (+n).toFixed(1)
@@ -90,10 +91,11 @@
         return (0.299 * bg[0] + 0.587 * bg[1] + 0.114 * bg[2]) > 140
     }
 
-    // attach(G, o): G is live.js's host.lvGraph; o.base is the app's folder (for the logos), o.clock 'manual' for replay and the clip
+    // attach(G, o): G is live.js's host.lvGraph; o.base is the app's folder (for the logos); o.A another level's rules (work.js's
+    // variant(), Workstreams: a WS square shows its number); o.clock 'manual' for replay and the clip
     // (frames stepped by step(now)), else the drawing runs on G.win's frames. Returns { fly(list, now), counts(c), step(now), destroy }.
     function attach(G, o = {}) {
-        const A = W(), win = G.win || root, doc = G.doc || root.document, svg = G.svg, wrap = svg.closest('.lv') || svg.parentNode
+        const A = o.A || W(), win = G.win || root, doc = G.doc || root.document, svg = G.svg, wrap = svg.closest('.lv') || svg.parentNode
         if (!doc.getElementById('wv-css')) { const s = doc.createElement('style'); s.id = 'wv-css'; s.textContent = CSS; doc.head.appendChild(s) }
         wrap.classList.add('lv-workview')
         const scale = G.scale || 0.84, C = A.C, light = o.light != null ? o.light : isLight(win, wrap)
@@ -110,7 +112,8 @@
             el(doc, 'rect', { x: -SQ / 2, y: -SQ / 2, width: SQ, height: SQ, rx: 12 }, inner)
             const logo = LOGO[d]
             if (logo) el(doc, 'image', { href: (o.base || '') + 'work-logos/' + logo[light ? 'light' : 'dark'], x: -18, y: -18, width: 36, height: 36 }, inner)
-            else el(doc, 'path', { class: 'wv-mark', d: A.ICON_PATHS[MARK[d]], transform: 'scale(1.5)' }, inner)
+            else if (/^WS-\d+$/.test(d)) { const t = el(doc, 'text', { class: 'wv-ws', 'text-anchor': 'middle', y: 8 }, inner); t.textContent = d.slice(3) }   // a workstream: its number
+            else el(doc, 'path', { class: 'wv-mark', d: A.ICON_PATHS[MARK[d] || 'doc'], transform: 'scale(1.5)' }, inner)
             const lead = el(doc, 'path', { class: 'wv-lead' }, squares)
             const pill = el(doc, 'g', { class: 'wv-pill', 'data-dest': d }, squares)
             const pr = el(doc, 'rect', {}, pill), pt = el(doc, 'text', { 'text-anchor': 'middle' }, pill); pt.textContent = A.DEST_NAMES[d]

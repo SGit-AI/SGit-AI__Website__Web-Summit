@@ -3,7 +3,7 @@ title: "The map's work view (deliverables travelling to their destinations) and 
 by: dev.work@PrompTugal.angelo
 written: 2026-11-08
 for: Angelo, reviewed with desk.conductor@PrompTugal.angelo; findings from policy@PrompTugal.angelo; dashboard@PrompTugal.angelo reviews the build (from 8 November, 251d793b)
-issue: WS-08 (backlog 0f2 and 0f3)
+issue: WS-08 (backlog 0f2, 0f3 and 0c4)
 status: "approved by Angelo, 8 November about 16:30 UTC (Yes, tell dev.work go), with his answers of 11:30 folded in; question 7 taken as recommended: day only for the newsroom's past pieces in replay, for now"
 ---
 ## What and why
@@ -106,6 +106,19 @@ An MP4 with H.264 video (`avc1`, Main or Baseline profile, `yuv420p`), even widt
 - **The format, in a test:** `clip` makes a 5-second clip in Chromium, then checks it with ffprobe: `codec_name=h264`, `pix_fmt=yuv420p`, even width and height, `moov` before `mdat`, no audio or AAC, under the size cap; and that no subject or file name from the data appears in the frames' text layer. If ffprobe is missing in the session, the test reads the MP4's boxes itself (ftyp, moov, avcC) and says ffprobe was not run.
 - **The proof that counts:** Angelo sends one clip to himself on WhatsApp, on his iPhone, and it plays inline. Until he has, 0f3 stays "delivered, to check".
 - **The work view:** `wv` checks each rule row with a fixture commit (an article to PT News as a doc, a key to keys, a STATE change hidden, a release hidden), a "Delivered: email draft, ..." line becoming an envelope to email drafts with no text drawn, the backfill's shas all real, merges when ten land in a minute, and replay over the full history at 1280 and 390 px, light and dark.
+
+## Part 3: three levels, "Messages | Workstreams | Deliverables" (backlog 0c4)
+
+Angelo, 8 November about 22:25 (the desk's efab3a6, pushed from riskmandate-angelo): *"the current view organised by workstream is not really nice, can we turn it in the same way as the work view, we can call the 3 levels: messages, workstreams and deliverables?"* The desk's row 0c4 gives the design; this part records how it is built, for Angelo's look. It reuses Part 1's drawing whole, so it adds no new look of its own.
+
+- **One switch, three levels,** in live and in playback: **Messages** (today's "Exchanges": who addressed whom), **Workstreams** (new), **Deliverables** (today's "Work"). The address keeps it (`v=ws` and `v=work` on live, `r_ws=1` and `r_work=1` in playback; the old `v=work` and `r_work=1` addresses keep working). The old layout "Agents and their work" stays in the layouts switch until Angelo has seen Workstreams, then it is retired (a question below).
+- **Workstreams:** the people and agents as today; at the rim, in Part 1's squares and pills, the **nine busiest workstreams** (WS issues with the most commits naming them in an `Issue:` trailer over the data's span), each pill `WS-NN` and the issue's short title from `board/WS-NN-*.md`, and a tenth square, **"other workstreams"**, for the rest. At each commit's real moment, a doc icon in the maker's colour travels from its agent to its workstream, merged with a number when several land in the same minute, and each square counts for the window shown, as Part 1 does. Over half of the last week's commits name an issue (1,695 of 3,168), so the view is busy and true.
+- **The data:** `workstreams.json`, written by the build beside `deliveries.json` in the same packed form (`people/angelo/tools/deliveries.mjs`: `readIssues()` and `packIssues()`), names and minutes only: the maker, the issue id, the commit's short sha. No subject, body or file name. Only this repository's commits for now (the newsroom's have no `Issue:` trailers).
+- **Owners:** dev.work@ (the data, the switch, the drawing, the tests `ws`, `wssw`); dev.map@'s files are not changed beyond the switch's lines in app.js.
+
+**Questions for Angelo (via the desk), each with a recommendation; the build goes ahead on the recommendations:**
+1. Nine named workstreams and "other": or the nine of the window shown (they would change as the window moves)? *Recommended: the data's nine, so the squares stay put.*
+2. Retire "Agents and their work" once Workstreams is on dev? *Recommended: yes, after you have seen it.*
 
 ## Out of scope
 

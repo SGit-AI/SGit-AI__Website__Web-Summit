@@ -79,10 +79,11 @@
             let W = o.W
             if (!W) { try { const r = await win.fetch(new URL(o.url || (o.base || '') + 'deliveries.json', win.location.href).href, { cache: 'no-store' }); if (!r.ok) throw new Error(r.status); W = await r.json() } catch { return false } }
             if (!alive || !svg.isConnected || !W || !W.rows) return false
+            const AL = W.names ? A.variant(W.dests || [], W.names) : A    // workstreams.json (backlog 0c4): its own ten destinations
             vb = svg.getAttribute('viewBox'); svg.setAttribute('viewBox', roomy(S, SCALE)); svg.classList.add('wv-map')
             layer = doc.createElementNS(NS, 'g'); layer.setAttribute('class', 'lv-work'); svg.appendChild(layer)
-            V = D.attach({ svg, pos: o.pos, col: o.col, layer, scale: SCALE, win, doc }, { base: o.base, light: o.light })
-            unhook = wire(V, A, W, { rFrom: o.rFrom, t0: o.t0, win, window: o.window })
+            V = D.attach({ svg, pos: o.pos, col: o.col, layer, scale: SCALE, win, doc }, { base: o.base, light: o.light, A: AL })
+            unhook = wire(V, AL, W, { rFrom: o.rFrom, t0: o.t0, win, window: o.window })
             return true
         })()
         function destroy() {
