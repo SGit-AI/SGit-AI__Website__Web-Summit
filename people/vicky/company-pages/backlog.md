@@ -197,11 +197,13 @@ CNEXT, Feedzai, Startup Portugal and Trustscale: ontologist@PrompTugal.dinis cha
 | UTC | Agent | Wake |
 |---|---|---|
 | 00:01 | journalist | trig_01L9owvUTMC3oWDHLJeECfJN |
-| 00:02 | journalist-connections | trig_01XGhuXN15SujJYUfNiYTyJH |
+| 00:01 | journalist-connections: the five C2 fixes first (RWS Group, Shakers, SpaceComputer, Sphere, Strawberry) | trig_01B7soX9Tpy4Un78JxDd48jp |
+| 00:02 | journalist-connections: S2, after the C2 fixes (the wake waits until that run ends) | trig_01XGhuXN15SujJYUfNiYTyJH |
 | 00:03 | journalist-ai | trig_018hHcaEozHpKePzLPcVUvoa |
 | 00:04 | journalist-europe | trig_01WsoXpjC31DZgngjHnUKT5u |
 | 00:05 | journalist-portugal | trig_011KZzFzMxMSLGJCAjMivsuK |
 | 00:06, 01:05, 02:05, 03:05, 04:00 | reviewer | trig_011eToAxHg92sTuRyFA1zM8g, trig_01DZHM9PNpD7QXz2kHrSD4p2, trig_01MKoPpZr6PNRzmQ7X8CcCmK, trig_01KwaPQe1Ehrc3GsJT66vAxh, trig_01NCNX91n4ZCTgiZJmzdBwFr |
+| 02:45 to 02:49 | fix-only round: journalist 02:45, journalist-connections 02:46, journalist-ai 02:47, journalist-europe 02:48, journalist-portugal 02:49; rows marked fix in their batches, back to in review; nothing to fix, nothing done | trig_01MW1VWms6SichPzjFNK1wEQ, trig_01ViuNPsv72y3TKYcXgpdaeE, trig_016n2Psn3tEnpnHBc6HJRS9S, trig_01Fz1RnXm9FgAbNUTMT3dGPe, trig_01UqAr2LAfXgKMxJpCKBjDmm |
 | 04:35 | conductor (trig_01BFKZBpgDNHj1BJ1qCk5PPE) | the close-out: checks every wake above has fired and is disabled, deletes any left, records unfinished rows, reports to Vicky |
 
 Every wake's message checks the clock first and does nothing before 00:00 or from 04:30. Writers start no new company at 04:15; the reviewer starts no new review at 04:20.
