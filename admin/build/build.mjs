@@ -130,11 +130,11 @@ function render(md) {
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
             out.push(CHARTS[name] ? `<figure class="chart">${CHARTS[name](arg)}</figure>` : `<p class="meta">(no chart called ${esc(name)})</p>`)
-        } else if (/^```vault-app [a-z0-9-]+ [a-z0-9]{8,12}\s*$/.test(l)) {
-            const [person, id] = l.slice(13).trim().split(' ')
+        } else if (/^```vault-app [a-z0-9-]+ [a-z0-9]{8,12}( auto)?\s*$/.test(l)) {
+            const [person, id, auto] = l.slice(13).trim().split(' ')
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
             i++
-            out.push(vaultAppHtml(person, id))
+            out.push(vaultAppHtml(person, id, auto === 'auto'))
         } else if (/^```obs-live [a-z0-9-]+ [a-z0-9]{8,12}\s*$/.test(l)) {
             const [person, id] = l.slice(12).trim().split(' ')
             for (i++; i < lines.length && !lines[i].startsWith('```'); i++);
@@ -459,7 +459,17 @@ const vaultsMd = who => {
 // key by postMessage, pinned to its origin; the key is never in a URL or the frame's storage, and the vault opens
 // read-only. The key comes only from the person's vaults.json, which vaultsMd's check limits to sgit_public_read_.
 let VAULT_APPS = 0
-const vaultAppHtml = (person, id) => {
+// ```vault-app <person> <vault id> auto``` (Vicky's dashboard, 8 Nov, option 1): the same frame, but opened by itself when
+// the visitor's browser says it is <person> (localStorage "ws.me", the "Who are you?" picker) and the section scrolls into
+// view; every other visitor keeps click-to-load. Without the word "auto" the output is byte-for-byte what it was.
+const vaultAutoJs = person => `var P=${JSON.stringify(person)},me='';try{me=localStorage.getItem('ws.me')||'';}catch(e){}` +
+    `var sd=false;try{sd=!!(navigator.connection&&navigator.connection.saveData);}catch(e){}` +
+    `if(me===P&&!sd&&'IntersectionObserver' in window){` +
+    `var w=null,ov=null;if(window.matchMedia&&matchMedia('(pointer:coarse)').matches){f.style.height='60vh';w=document.createElement('div');w.style.position='relative';f.parentNode.insertBefore(w,f);w.appendChild(f);` +
+    `ov=document.createElement('button');ov.type='button';ov.textContent='Tap to use the vault. Swipe here to keep scrolling the page.';ov.setAttribute('style','position:absolute;left:0;right:0;top:0;bottom:0;width:100%;background:transparent;border:0;padding:0 .5rem .6rem;display:flex;align-items:flex-end;justify-content:center;font:inherit;font-size:.85rem;color:inherit;opacity:.8;touch-action:pan-y;cursor:pointer');` +
+    `ov.addEventListener('click',function(){ov.hidden=true;});w.appendChild(ov);document.addEventListener('touchstart',function(e){if(ov.hidden&&!w.contains(e.target))ov.hidden=false;},{passive:true});}` +
+    `var io=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io.disconnect();b.querySelector('[data-mode="app"]').click();clearTimeout(T);T=setTimeout(function(){t.textContent='The handshake timed out. Press Open the app to try again.';},12000);},{rootMargin:'200px 0px'});io.observe(b);}`
+const vaultAppHtml = (person, id, auto = false) => {
     const v = VAULTS().find(x => x.person === person && x.vault_id === id)
     if (!v) throw new Error(`vault-app ${person} ${id}: no such vault in people/${person}/vaults.json`)
     if (!/^sgit_public_read_[0-9a-f]{64}$/.test(String(v.read_key || ''))) throw new Error(`people/${person}/vaults.json: "${v.name}" needs a read_key of the form sgit_public_read_<64 hex> (never a vault key)`)
@@ -474,7 +484,7 @@ const vaultAppHtml = (person, id) => {
         `function mount(m){armed=m;f.hidden=false;fs.hidden=false;t.textContent='Connecting to the vault...';f.src=O+(m==='vault'?'/en-gb/vault/':'/en-gb/app/')+'?embed=1&parent='+encodeURIComponent(location.origin);clearTimeout(T);` +
         `T=setTimeout(function(){if(m==='app'){f.src=O+'/#'+encodeURIComponent(C);t.textContent='The handshake timed out; opened by the link instead.';}else{t.textContent='The handshake timed out. Reload and try again.';}},12000);}` +
         `b.querySelectorAll('[data-mode]').forEach(function(x){x.addEventListener('click',function(){mount(x.getAttribute('data-mode'));});});` +
-        `fs.addEventListener('click',function(){try{if(f.requestFullscreen)f.requestFullscreen();}catch(e){}});b.querySelector('[data-newwin]').addEventListener('click',function(){window.open(O+'/#'+encodeURIComponent(C),'_blank','noopener');});}());</script>`
+        `fs.addEventListener('click',function(){try{if(f.requestFullscreen)f.requestFullscreen();}catch(e){}});b.querySelector('[data-newwin]').addEventListener('click',function(){window.open(O+'/#'+encodeURIComponent(C),'_blank','noopener');});${auto ? vaultAutoJs(person) : ''}}());</script>`
 }
 // the live observability panel: ```obs-live <person> <vault id>``` (observability@web-summit.dinis, 5 November 2026). The
 // page reads the vault itself, in the browser, with sgit.ai's reader (assets/vendor/sgit-ai/2026-11-05/vault-embed.js):

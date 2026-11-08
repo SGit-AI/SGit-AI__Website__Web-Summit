@@ -41,9 +41,9 @@ Not mine, but on the plan: due by Thursday, overdue, or blocking someone. **No o
 
 ## My vault {#vault}
 
-Open it here, live from the vault (read only; nothing loads until you click). All the team's vaults: [the vaults page](../../vaults/index.html).
+Open it here, live from the vault (read only). If the site knows it is you ("Who are you?"), it opens by itself when you scroll here; for everyone else nothing loads until you click. All the team's vaults: [the vaults page](../../vaults/index.html).
 
-```vault-app vicky k64ma7jd
+```vault-app vicky k64ma7jd auto
 ```
 
 - **My agents:** [Reports](../../reports/index.html) · [Board health](../../board-health/index.html) · [Team pulse](../../pulse/index.html) · [Work so far](work-so-far/index.html) · [Live AI Office](office/index.html)
