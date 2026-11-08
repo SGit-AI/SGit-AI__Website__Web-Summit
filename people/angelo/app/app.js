@@ -396,8 +396,21 @@ ${D.tasks.unplaced.length ? `<p class="note">Could not place: ${esc(D.tasks.unpl
             if (title) title.innerHTML = `${ownTitle('Live')}<small>${esc(first)}'s command centre</small>`
             document.title = `Live · ${first}'s command centre`
             if (!D || !D.collab || !window.AngeloLive) { view.innerHTML = failed ? `<p class="note">The board could not load its data (${esc(failed)}).</p>` : '<p class="note">Loading the team…</p>'; return }
-            view.innerHTML = `<div class="ak">${ownNote()}<nav class="ak-switch" aria-label="More views"><a href="#collab?map=1">← Team and the machine <span class="ak-mk" aria-hidden="true">✦</span></a></nav><div data-ak-live></div></div>`
-            window.AngeloLive.view(view.querySelector('[data-ak-live]'), { D, liveUrl: new URL('live.json', location.href).href })
+            // "Exchanges | Work" (backlog 0f2, spec-work-view.md, dev.work@PrompTugal.angelo): the same graph, with what was made
+            // travelling to its destinations (work*.js, loaded only when asked for); the work view is flat, so Work leaves 3D
+            const wv = /[?&]v=work(&|$)/.test(location.hash), sw = `<div class="tm-tabs" role="group" aria-label="What the graph shows" data-wv-sw><a class="rp-chip${wv ? '' : ' on'}" href="#live${/[?&]d3=1(&|$)/.test(location.hash) ? '?d3=1' : ''}" aria-pressed="${!wv}">Exchanges</a><a class="rp-chip${wv ? ' on' : ''}" href="#live?v=work" aria-pressed="${wv}" title="What each agent and person made, travelling to where it went">Work</a></div>`
+            view.innerHTML = `<div class="ak">${ownNote()}<nav class="ak-switch" aria-label="More views"><a href="#collab?map=1">← Team and the machine <span class="ak-mk" aria-hidden="true">✦</span></a></nav>${sw}<div data-ak-live></div><p class="note" data-wv-legend hidden></p></div>`
+            const lh = view.querySelector('[data-ak-live]')
+            window.AngeloLive.view(lh, { D, liveUrl: new URL('live.json', location.href).href })
+            if (drawLive.wv) { drawLive.wv.destroy(); drawLive.wv = null }
+            if (!wv) return
+            const files = ['work.js', 'work-draw.js', 'work-newsroom.js', 'work-live.js']
+            files.reduce((p, f) => p.then(() => window[{ 'work.js': 'AngeloWork', 'work-draw.js': 'AngeloWorkDraw', 'work-newsroom.js': 'AngeloWorkNews', 'work-live.js': 'AngeloWorkLive' }[f]] || load(f)), Promise.resolve()).then(() => {
+                const frame = lh.querySelector('[data-lv-frame]'), leg = view.querySelector('[data-wv-legend]'); if (!frame || !lh.isConnected || !window.AngeloWorkLive) return
+                drawLive.wv = window.AngeloWorkLive.mount(frame, { base: new URL('./', here).href })
+                const A = window.AngeloWork, ico = k => `<svg viewBox="-10 -10 20 20" width="18" height="18" aria-hidden="true" style="vertical-align:-4px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="${A.ICON_PATHS[k]}"/></svg>`
+                if (leg) { leg.hidden = false; leg.innerHTML = `What travels: ${A.ICONS.map(k => `<span style="white-space:nowrap;margin-right:10px">${ico(k)} ${esc(k)}</span>`).join('')}<br>Each icon is something made, flying from its maker to where it went, a few minutes after its commit. The squares count the last 24 hours. Nothing is drawn without a commit.` }
+            }).catch(() => { const leg = view.querySelector('[data-wv-legend]'); if (leg) { leg.hidden = false; leg.textContent = 'The work view could not load.' } })
         }
 
         function drawCollab() {
