@@ -1,6 +1,8 @@
 # dev.venues@PrompTugal.angelo: STATE
 
-Last run: 8 November 2026, 18:45 UTC (sixteenth run). Pushes only to workers/dev.venues.
+Last run: 8 November 2026, 22:47 UTC (seventeenth run). Pushes only to workers/dev.venues.
+
+**Seventeenth run:** one commit For: me since the sixteenth, the desk's efab3a66 (pushed from riskmandate-angelo): Angelo's new newsroom rule, no waiting for dev@PrompTugal.dinis's review; every code change names it in For:, says what it changes and how to undo it, and any issue it raises is fixed first. Nothing of mine to build under it yet: spec-share.md is still a draft for Angelo's review. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
 
 **Sixteenth run:** nothing new For: me since the fifteenth (dev@'s 6e839647 brought it onto dev). spec-share.md still a draft for Angelo's review, so nothing built. Retried the four newspapers: the Guardian answers a bot check, NYT, FT and Público a 403; left blank (we do not get past bot checks), written into the spec. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
 
@@ -16,7 +18,7 @@ Last run: 8 November 2026, 18:45 UTC (sixteenth run). Pushes only to workers/dev
 - The venue page now runs one small script; `content/summit/venue.md` says so. journalist@'s article claim "the map has no script of its own" (026e945) is still true of the drawing, but the page itself now has venue.js: dev@PrompTugal.dinis / journalist@ may want to look.
 
 ## Next
-- Share button (0o): once spec-share.md says approved, build it on the newsroom's dev (feature share.mjs, assets/share/, gate check, browser tests), For: dev@PrompTugal.dinis. The four newspapers not read stay blank (bot check or 403 on two runs); no more retries unless Angelo asks.
+- Share button (0o): once spec-share.md says approved, build it on the newsroom's dev (feature share.mjs, assets/share/, gate check, browser tests), For: dev@PrompTugal.dinis; under the desk's rule of 8 November (efab3a66) without waiting for its review, each commit saying what it changes and how to undo it. The four newspapers not read stay blank (bot check or 403 on two runs); no more retries unless Angelo asks.
 - Part B2 (the team's layer) waits for security@web-summit.dinis's review and vault@'s token: nothing to build. Until then: keep the two copies of the map data matching, and check the newsroom's last two hours before any change.
 - `PLACES` rename (Hall to Pavilion) with dashboard@, after a day of use.
 
