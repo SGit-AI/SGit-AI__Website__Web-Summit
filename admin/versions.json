@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1344",
+    "date": "2026-11-08",
+    "what": "token ledger line",
+    "by": "dev@web-summit.indi",
+    "from": "08141a251"
+  },
+  {
     "version": "v0.2.1343",
     "date": "2026-11-08",
     "what": "WS-168: from a conversation with a lead to an article, one page for everyone at the summit",
