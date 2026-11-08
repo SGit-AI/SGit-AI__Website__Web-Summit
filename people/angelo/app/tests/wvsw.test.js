@@ -9,7 +9,7 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
   const b = await chromium.launch(); const out = {}
   for (const [w, h] of [[1280, 900], [390, 844]]) for (const scheme of ['dark', 'light']) {
     const tag = `${w}-${scheme}`
-    const ctx = await b.newContext({ viewport: { width: w, height: h }, colorScheme: scheme, serviceWorkers: 'block' }); const p = await ctx.newPage(); const errs = []
+    const ctx = await b.newContext({ viewport: { width: w, height: h }, colorScheme: scheme, serviceWorkers: 'block' }); await ctx.addInitScript(t => { try { localStorage.setItem('cc.theme', JSON.stringify(t)) } catch { } }, scheme); const p = await ctx.newPage(); const errs = []   // the app's own theme choice wins over the scheme (dashboard@'s a32ac287)
     p.on('pageerror', e => errs.push(e.message)); p.on('console', m => { if (m.type() === 'error' && !/507|favicon|500|ERR_/.test(m.text())) errs.push(m.text()) })
     await p.route('https://promptugal.news/**', r => r.fulfill({ json: { stories: [] }, headers: { 'access-control-allow-origin': '*' } }))
     await p.goto(BASE + 'index.html#live', { waitUntil: 'networkidle' }); await p.waitForSelector('.lv-svg')
@@ -32,6 +32,9 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
     if (wk.over) fail(`${tag}: the page scrolls sideways`)
     if (w === 390) { const under = await p.evaluate(() => { const f = document.querySelector('.cc-askfab'), fb = f && f.getBoundingClientRect(), mid = document.querySelector('.lv-svg').getBoundingClientRect(); return fb && fb.width ? [...document.querySelectorAll('.wv-pill')].filter(e => { const r = e.getBoundingClientRect(); return r.top > mid.top + mid.height / 2 && r.right > fb.left }).map(e => e.textContent) : [] }); if (under.length) fail(`${tag}: under the Ask Claude button's column: ${under.join(', ')}`) }
     if (w === 390) { const lines = await p.evaluate(() => { const l = document.querySelector('[data-wv-legend]'); return Math.round(l.querySelector('span').getBoundingClientRect().height) }); if (lines > 24) fail(`${tag}: a legend item wraps (${lines} px)`) }
+    { const th = await p.evaluate(() => { const on = document.querySelector('[data-wv-sw] .on'), off = document.querySelector('[data-wv-sw] a:not(.on)'), cs = e => getComputedStyle(e); return { theme: document.documentElement.dataset.theme, onBg: cs(on).backgroundColor, offBg: cs(off).backgroundColor, line: cs(on).textDecorationLine } })
+      if (th.theme !== scheme) fail(`${tag}: the page is in the ${th.theme} theme, not ${scheme}`)
+      if (th.onBg === th.offBg || th.line !== 'none') fail(`${tag}: the switch's on state is not filled ${JSON.stringify(th)}`) }   // dashboard@'s a32ac287
     await p.screenshot({ path: `${S}/wvsw-${tag}.png`, fullPage: false })
     await p.click('[data-wv-sw] a:has-text("Exchanges")'); await p.waitForTimeout(700)
     const back = await st()

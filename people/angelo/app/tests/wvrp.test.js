@@ -9,7 +9,7 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
   const b = await chromium.launch(); const out = {}
   for (const [w, h] of [[1280, 900], [390, 844]]) for (const scheme of ['dark', 'light']) {
     const tag = `${w}-${scheme}`
-    const ctx = await b.newContext({ viewport: { width: w, height: h }, colorScheme: scheme, serviceWorkers: 'block' }); const p = await ctx.newPage(); const errs = []
+    const ctx = await b.newContext({ viewport: { width: w, height: h }, colorScheme: scheme, serviceWorkers: 'block' }); await ctx.addInitScript(t => { try { localStorage.setItem('cc.theme', JSON.stringify(t)) } catch { } }, scheme); const p = await ctx.newPage(); const errs = []   // the app's own theme choice wins over the scheme (dashboard@'s a32ac287)
     p.on('pageerror', e => errs.push(e.message)); p.on('console', m => { if (m.type() === 'error' && !/507|favicon|500|ERR_/.test(m.text())) errs.push(m.text()) })
     await p.goto(BASE + 'index.html#collab?map=1', { waitUntil: 'networkidle' }); await p.waitForSelector('[data-tmf-play]')
     const st = () => p.evaluate(() => ({ sw: [...document.querySelectorAll('[data-wv-sw] a')].map(a => a.textContent + ':' + a.getAttribute('aria-pressed')), sq: document.querySelectorAll('.tm-svg .wv-sq').length,
@@ -30,6 +30,9 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
     // play the window from its start: icons fly, the squares count
     await p.$eval('[data-tmf-scrub]', s => { s.value = s.min; s.dispatchEvent(new Event('input')) })
     await p.click('[data-tmf-play]'); let maxFly = 0, shot = false
+    { const th = await p.evaluate(() => { const on = document.querySelector('[data-wv-sw] .on'), off = document.querySelector('[data-wv-sw] a:not(.on)'), cs = e => getComputedStyle(e); return { theme: document.documentElement.dataset.theme, onBg: cs(on).backgroundColor, offBg: cs(off).backgroundColor, line: cs(on).textDecorationLine } })
+      if (th.theme !== scheme) fail(`${tag}: the page is in the ${th.theme} theme, not ${scheme}`)
+      if (th.onBg === th.offBg || th.line !== 'none') fail(`${tag}: the switch's on state is not filled ${JSON.stringify(th)}`) }   // dashboard@'s a32ac287
     for (let i = 0; i < 40; i++) { await p.waitForTimeout(250); const s = await st(); maxFly = Math.max(maxFly, s.fly); if (s.fly && !shot) { await p.locator('section.tm').screenshot({ path: `${S}/wvrp-${tag}.png` }); shot = true } }
     const end = await st()
     if (!maxFly) fail(`${tag}: no icon flew in playback`)
