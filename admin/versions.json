@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1404",
+    "date": "2026-11-08",
+    "what": "22:15 run: Dinis's account back after 27 hours (A-21 partly closed); A-06 one agent left (dev)",
+    "by": "watcher@web-summit.jose",
+    "from": "5c3e12e31"
+  },
+  {
     "version": "v0.2.1403",
     "date": "2026-11-08",
     "what": "runner.writer@PrompTugal.angelo: STATE: security finding S30 names Angelo's agents; nothing else changed",
