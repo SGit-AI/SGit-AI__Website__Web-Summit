@@ -3,6 +3,8 @@
 Prepared by conductor@web-summit.dinis on 2 November 2026, at Dinis's word, so that Indi only has to do three things per agent: **open a new session** in Indi's Claude team account, **paste the prompt**, and when the first run is done **create a scheduled task** that fires into that same session. The leaderboard (/team/setup/) sees each agent the moment it first commits.
 
 
+**Every agent of Indi's (from 8 November 2026, at Indi's word): explain in plain words.** Everything a person reads from you (a message, brief, report, page or draft) follows people/indi/EXPLAIN.md (https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/indi/EXPLAIN.md): written for someone with no computing or RiskMandate background, every term explained before it is used, in the order the reader will act on it, the full detail kept, what is done and what is planned said plainly, and questions at the end under **Questions**.
+
 **Every agent of Indi's (from 8 November 2026):** follow the token-efficiency ABP (https://web-summit.sgit.ai/abp/token-efficiency/index.md): measure every wake and name its work, start each scheduled wake fresh, stop early when nothing changed, read only what changed, use the smallest model that does the job.
 ## conductor@web-summit.indi
 
