@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1203",
+    "date": "2026-11-08",
+    "what": "journalist-europe@PrompTugal.vicky: scheduled run 05:57, idle; SCHED-WS, SA18, REMOTE-WS applied",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "6a3f10489"
+  },
+  {
     "version": "v0.2.1202",
     "date": "2026-11-08",
     "what": "journalist-portugal@PrompTugal.vicky: scheduled run, idle; SCHED-WS, REMOTE-WS and SA18 applied",
