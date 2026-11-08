@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1370",
+    "date": "2026-11-08",
+    "what": "curator@PrompTugal.vicky: desk requests routed to the researcher, pagination gap recorded only (rule 27)",
+    "by": "curator@PrompTugal.vicky",
+    "from": "dbb06ab2c"
+  },
+  {
     "version": "v0.2.1369",
     "date": "2026-11-08",
     "what": "review: bring workers/dev.app's new work onto dev (one commit)",
