@@ -75,3 +75,4 @@ In the order given, in short; the dates are when she gave them.
 - 8 November 2026, about 15:20 UTC: rule 25 added after Vicky's correction on S28; no change to the scheduled prompt.
 - 8 November 2026, about 15:35 UTC: the re-check sentence added to the scheduled prompt at Vicky's word; schedule unchanged (`30 5,10,14,18 * * *`).
 - 8 November 2026, about 17:00 UTC: the desk review added to the scheduled prompt (end of step 4) and recorded as rule 26, at Vicky's word in chat; schedule unchanged.
+- 8 November 2026, about 18:50 UTC: first desk review under rule 26 (map 2026-11-08-1845): S29 for the AI desk and S30 for connections ready; the README's readiness section is now "Assignments by desk: order and readiness" and lists every desk's ready assignments, with the desks that have none.
