@@ -1,91 +1,127 @@
-// /people/silvio/riskmandate-explicado/: how RiskMandate helps with the problems companies report, as one infographic
-// page in Portuguese, for Silvio and the team at the stand. By conductor@web-summit.silvio, 8 November 2026.
-// Generic on purpose: no company is named here (the cases behind it are internal, sealed to the team). RiskMandate is
-// described only in riskmandate.ai's own words: it "measures what your agents can actually reach, evidences the controls
-// that contain them, prices the exposure, and produces that record", and is "never in the request path: read-only by
-// design". So nothing here says it blocks or prevents anything.
+// /people/silvio/riskmandate-explicado/: how RiskMandate helps with the problems companies report, as one page in the
+// X-ray's visual language (dark stage, teal mandate, rose gap, gold accents, monospace labels, a step-by-step
+// simulation). Portuguese first, English on a switch. By conductor@web-summit.silvio, 8 November 2026, at Silvio's word.
+// Generic on purpose: no company is named (the cases behind it are internal, sealed to the team). RiskMandate is described
+// only in riskmandate.ai's words: it "measures what your agents can actually reach, evidences the controls that contain
+// them, prices the exposure, and produces that record", and is "never in the request path: read-only by design". So the
+// simulation shows actions placed against the mandate, never RiskMandate blocking one.
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+// a text in both languages: shown in Portuguese, switched by explica.js
+const T = (pt, en, tag = 'span', cls = '') => `<${tag}${cls ? ` class="${cls}"` : ''} data-pt="${esc(pt)}" data-en="${esc(en)}">${esc(pt)}</${tag}>`
 
 const CSS = `<style>
-.rx{--ink:#1d2433;--soft:#5b6478;--line:#d9dee8;--card:#fff;--bg2:#f4f6fa;--reach:#2f6fdf;--mandate:#c9a227;--gap:#d64f6a;--ok:#14a37f;--mid:#e0892b;--low:#8a93a6;font-size:16px;color:var(--ink)}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .rx{--ink:#e8ecf4;--soft:#a3acbf;--line:#334058;--card:#18202e;--bg2:#111826;--reach:#6c9cf0;--mandate:#e5c75c;--gap:#ec7a90;--ok:#3cc9a2;--mid:#f0a85a;--low:#8a93a6}}
-:root[data-theme=dark] .rx{--ink:#e8ecf4;--soft:#a3acbf;--line:#334058;--card:#18202e;--bg2:#111826;--reach:#6c9cf0;--mandate:#e5c75c;--gap:#ec7a90;--ok:#3cc9a2;--mid:#f0a85a;--low:#8a93a6}
-.rx .hero{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:22px;margin:0 0 18px}
-.rx .hero b.big{display:block;font-size:1.7rem;line-height:1.25}.rx .hero p{color:var(--soft);margin:.5rem 0 0}
-.rx h2{margin-top:2rem}.rx svg{width:100%;height:auto;display:block}.rx svg text{fill:var(--ink);font-family:inherit}.rx svg .s{fill:var(--soft)}
-.rx .panel{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0}
-.rx .five{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
-.rx .five div{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:14px;padding:12px}.rx .five b{display:block;font-size:1.05rem}
-.rx .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-.rx .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:8px}
-.rx .card h3{margin:0;font-size:1.05rem}.rx .lvl{display:flex;gap:4px;align-items:center;font-size:.85rem;color:var(--soft)}
-.rx .lvl i{width:22px;height:8px;border-radius:4px;background:var(--line)}.rx .lvl i.on{background:var(--l)}
-.rx .tag{font-weight:700;color:var(--l)}.rx .how{font-size:.95rem}.rx .no{font-size:.85rem;color:var(--soft)}
-.rx .dd{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-.rx .dd div{border-radius:14px;padding:14px;border:2px solid var(--c);background:var(--card)}.rx .dd b{color:var(--c)}
-.rx .meta{color:var(--soft);font-size:.85rem}
+.xe{--bg:#070d1a;--bg2:#0b1020;--panel:#0d1730;--line:#1e2b4a;--line2:#2c3d63;--ink:#e8eefc;--soft:#93a3c4;--cyan:#5eead4;--mandate:#2dd4bf;--gap:#fb7185;--gold:#fbbf24;--blue:#3c5590;
+background:radial-gradient(1200px 600px at 20% -10%,#0f2a3a 0,transparent 60%),var(--bg);color:var(--ink);border-radius:22px;padding:22px;border:1px solid var(--line);font-size:16px}
+.xe .bar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.xe .brand{font:600 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;color:var(--soft)}.xe .brand b{color:var(--cyan)}
+.xe .brand i{display:inline-block;width:10px;height:10px;border-radius:50%;border:2px solid var(--cyan);box-shadow:0 0 10px var(--cyan);margin-right:8px;vertical-align:-1px}
+.xe button{font:inherit;cursor:pointer;border-radius:12px;padding:8px 14px;border:1px solid var(--line2);background:var(--panel);color:var(--ink)}
+.xe button.on,.xe button.go{background:linear-gradient(180deg,#5eead4,#14b8a6);color:#04201c;border-color:transparent;font-weight:700}
+.xe h1x{display:block;font-size:clamp(1.6rem,4vw,2.6rem);line-height:1.15;font-weight:800;margin:22px 0 8px}
+.xe .lead{color:var(--soft);max-width:60rem;margin:0}
+.xe .sec{margin-top:34px}.xe .sec>h2x{display:block;font-size:1.35rem;font-weight:800;margin:0 0 4px}.xe .sec>.k{font:600 12px ui-monospace,monospace;letter-spacing:.14em;color:var(--cyan);text-transform:uppercase}
+.xe .stage{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:14px}
+.xe svg{width:100%;height:auto;display:block}.xe svg text{font-family:inherit}
+.xe .sim{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px}@media(max-width:780px){.xe .sim{grid-template-columns:1fr}}
+.xe ol.steps{margin:10px 0 0;padding-left:1.3rem}.xe ol.steps li{margin:0 0 10px;opacity:.28;transition:opacity .3s}.xe ol.steps li.lit{opacity:1}
+.xe ol.steps .w{display:block;font-size:.82rem;color:var(--soft)}.xe .in{color:var(--mandate);font-weight:700}.xe .out{color:var(--gap);font-weight:700}
+.xe .tally{font:600 13px ui-monospace,monospace;color:var(--soft);margin-top:6px}
+.xe .five{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.xe .five div{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;position:relative;overflow:hidden}
+.xe .five div:before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--c);box-shadow:0 0 14px var(--c)}
+.xe .five b{display:block;color:var(--c);font:700 12px ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.xe .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px}
+.xe .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:start}
+.xe .card h3{margin:0 0 4px;font-size:1.02rem}.xe .card .p{font-size:.86rem;color:var(--soft);margin:0 0 6px}.xe .card .h{font-size:.92rem;margin:0}
+.xe .lvl{font:700 11px ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--l)}
+.xe .dd{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px}
+.xe .dd div{border-radius:16px;padding:16px;background:var(--panel);border:1px solid var(--c);box-shadow:inset 0 0 0 1px rgba(255,255,255,.02),0 0 22px -12px var(--c)}
+.xe .dd b{display:block;color:var(--c);font:700 12px ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.xe .foot{color:var(--soft);font-size:.82rem;margin-top:26px}
+@keyframes xepulse{0%{stroke-dashoffset:40}100%{stroke-dashoffset:0}}.xe .flow{stroke-dasharray:6 10;animation:xepulse 1.4s linear infinite}
+@keyframes xeglow{0%,100%{opacity:.55}50%{opacity:1}}.xe .glow{animation:xeglow 2.4s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.xe .flow,.xe .glow{animation:none}}
 </style>`
 
-// the reach / mandate / gap picture: a big dome (reach), a small ring (mandate), the gap between them
-function model() {
-    return `<svg viewBox="0 0 900 430" role="img" aria-label="O alcance de um agente é maior do que o seu mandato; a diferença entre os dois é o risco.">
-<defs><pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" stroke="var(--gap)" stroke-width="3" opacity=".45"/></pattern></defs>
-<circle cx="300" cy="215" r="150" fill="url(#hatch)" stroke="var(--reach)" stroke-width="4"/>
-<circle cx="300" cy="215" r="150" fill="var(--reach)" opacity=".08"/>
-<circle cx="300" cy="215" r="70" fill="var(--card)" stroke="var(--mandate)" stroke-width="5"/>
-<text x="300" y="208" text-anchor="middle" font-size="20" font-weight="700">MANDATO</text><text x="300" y="232" text-anchor="middle" font-size="14" class="s">o que foi autorizado</text>
-<text x="300" y="30" text-anchor="middle" font-size="20" font-weight="700" style="fill:var(--reach)">ALCANCE</text>
-<text x="300" y="52" text-anchor="middle" font-size="14" class="s">tudo o que o agente consegue tocar</text>
-<path d="M200 320 L130 392" stroke="var(--gap)" stroke-width="2.5"/><circle cx="200" cy="320" r="5" fill="var(--gap)"/><text x="110" y="408" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--gap)">A DIFERENÇA</text>
-<text x="110" y="428" text-anchor="middle" font-size="14" class="s">consegue, mas ninguém pediu</text>
-<g font-size="15"><rect x="510" y="90" width="370" height="250" rx="16" fill="var(--bg2)" stroke="var(--line)"/>
-<text x="530" y="128" font-weight="700" font-size="18">Um agente de IA típico</text>
-<circle cx="540" cy="162" r="6" fill="var(--reach)"/><text x="556" y="167">Alcance: email, ficheiros, CRM, pagamentos</text>
-<circle cx="540" cy="198" r="6" fill="var(--mandate)"/><text x="556" y="203">Mandato: responder a pedidos de clientes</text>
-<circle cx="540" cy="234" r="6" fill="var(--gap)"/><text x="556" y="239">Diferença: pagamentos, apagar ficheiros,</text>
-<text x="556" y="259">enviar dados para fora</text>
-<text x="530" y="306" class="s">É na diferença que o risco vive.</text></g>
-</svg>`
+// the simulation's stage: the gap (dashed rose), the mandate (teal), the agent at the centre; the actions are drawn by explica.js
+function stage() {
+    return `<svg viewBox="0 0 520 520" role="img" aria-label="O mandato do agente dentro do seu alcance; cada ação é colocada dentro do mandato ou na diferença.">
+<defs><radialGradient id="xeg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fb7185" stop-opacity=".10"/><stop offset="1" stop-color="#fb7185" stop-opacity="0"/></radialGradient>
+<radialGradient id="xem" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#2dd4bf" stop-opacity=".18"/><stop offset="1" stop-color="#2dd4bf" stop-opacity=".02"/></radialGradient></defs>
+<circle cx="260" cy="270" r="215" fill="url(#xeg)" stroke="#fb7185" stroke-width="2" stroke-dasharray="6 8" opacity=".85"/>
+<text x="260" y="40" text-anchor="middle" fill="#fb7185" font-size="13" font-weight="700" letter-spacing="2" font-family="ui-monospace,monospace" data-pt="A DIFERENÇA: ALCANCE PARA LÁ DO MANDATO" data-en="THE GAP: REACH BEYOND THE MANDATE">A DIFERENÇA: ALCANCE PARA LÁ DO MANDATO</text>
+<circle cx="260" cy="270" r="105" fill="url(#xem)" stroke="#2dd4bf" stroke-width="2.5" class="glow"/>
+<text x="260" y="185" text-anchor="middle" fill="#5eead4" font-size="12" font-weight="700" letter-spacing="2" font-family="ui-monospace,monospace" data-pt="O MANDATO" data-en="THE MANDATE">O MANDATO</text>
+<g transform="translate(240 250)"><rect x="0" y="6" width="40" height="30" rx="9" fill="#0f1b38" stroke="#5eead4" stroke-width="2"/><circle cx="13" cy="21" r="4" fill="#5eead4"/><circle cx="27" cy="21" r="4" fill="#5eead4"/><line x1="20" y1="6" x2="20" y2="-2" stroke="#5eead4" stroke-width="2"/><circle cx="20" cy="-4" r="3" fill="#fbbf24"/></g>
+<g id="xe-dots"></g></svg>`
 }
 
-// the record and who reads it: one record, four readers
+// one record, four readers: a glowing hub and four nodes, with flowing links
 function readers() {
-    const R = [['Gestão', 'que agentes temos e que risco correm'], ['Segurança', 'que acessos sobram e que barreiras há'], ['Auditor e regulador', 'a prova do que cada sistema faz'], ['Seguradora', 'a exposição, com um preço']]
-    return `<svg viewBox="0 0 900 250" role="img" aria-label="Um só registo por agente, lido pela gestão, segurança, auditor e seguradora.">
-<rect x="20" y="70" width="240" height="110" rx="18" fill="var(--card)" stroke="var(--reach)" stroke-width="3"/>
-<text x="140" y="112" text-anchor="middle" font-size="18" font-weight="700">O registo do agente</text><text x="140" y="138" text-anchor="middle" font-size="14" class="s">Agent Behaviour Policy</text>
-<text x="140" y="160" text-anchor="middle" font-size="13" class="s">só leitura, nunca no caminho</text>
-${R.map(([t, s], i) => { const y = 14 + i * 58; return `<path d="M262 125 C 380 125, 420 ${y + 24}, 520 ${y + 24}" fill="none" stroke="var(--line)" stroke-width="3"/><rect x="520" y="${y}" width="360" height="48" rx="12" fill="var(--bg2)" stroke="var(--line)"/><text x="538" y="${y + 21}" font-size="16" font-weight="700">${esc(t)}</text><text x="538" y="${y + 39}" font-size="13" class="s">${esc(s)}</text>` }).join('')}
+    const R = [['Gestão', 'Leadership', 'que agentes temos e que risco correm', 'which agents we run, and their risk', 90, 70], ['Segurança', 'Security', 'que acessos sobram e que barreiras há', 'which access is spare, which barriers hold', 810, 70], ['Auditor e regulador', 'Auditor and regulator', 'a prova do que cada sistema faz', 'evidence of what each system does', 90, 290], ['Seguradora', 'Insurer', 'a exposição, com um preço', 'the exposure, priced', 810, 290]]
+    return `<svg viewBox="0 0 900 360" role="img" aria-label="Um registo por agente, lido pela gestão, segurança, auditor e seguradora.">
+${R.map(([, , , , x, y]) => `<path d="M450 180 C ${(450 + x) / 2} 180, ${(450 + x) / 2} ${y}, ${x < 450 ? x + 150 : x - 150} ${y}" fill="none" stroke="#2c3d63" stroke-width="2"/><path d="M450 180 C ${(450 + x) / 2} 180, ${(450 + x) / 2} ${y}, ${x < 450 ? x + 150 : x - 150} ${y}" fill="none" stroke="#5eead4" stroke-width="2" class="flow" opacity=".7"/>`).join('')}
+<circle cx="450" cy="180" r="74" fill="#0d1730" stroke="#5eead4" stroke-width="3"/><circle cx="450" cy="180" r="90" fill="none" stroke="#5eead4" stroke-width="1" opacity=".35" class="glow"/>
+<text x="450" y="172" text-anchor="middle" fill="#e8eefc" font-size="17" font-weight="800" data-pt="O registo" data-en="The record">O registo</text>
+<text x="450" y="194" text-anchor="middle" fill="#93a3c4" font-size="12" font-family="ui-monospace,monospace" data-pt="por agente · só leitura" data-en="per agent · read-only">por agente · só leitura</text>
+${R.map(([pt, en, spt, sen, x, y]) => { const bx = x < 450 ? 10 : 590; return `<rect x="${bx}" y="${y - 34}" width="300" height="68" rx="14" fill="#0d1730" stroke="#1e2b4a"/><circle cx="${x < 450 ? bx + 300 : bx}" cy="${y}" r="7" fill="#5eead4"/><text x="${bx + 20}" y="${y - 6}" fill="#e8eefc" font-size="16" font-weight="700" data-pt="${esc(pt)}" data-en="${esc(en)}">${esc(pt)}</text><text x="${bx + 20}" y="${y + 18}" fill="#93a3c4" font-size="12.5" data-pt="${esc(spt)}" data-en="${esc(sen)}">${esc(spt)}</text>` }).join('')}
 </svg>`
 }
 
-// problem types, each with how much RiskMandate helps (3 strong, 2 partial, 1 little) and how
+// a help gauge: an arc filled to 1, 2 or 3 thirds
+function gauge(n, col) {
+    const arc = f => { const a = Math.PI * (1 - f), x = 32 + 26 * Math.cos(a), y = 36 - 26 * Math.sin(a); return `M6 36 A26 26 0 0 1 ${x.toFixed(1)} ${y.toFixed(1)}` }
+    return `<svg viewBox="0 0 64 44" aria-hidden="true"><path d="M6 36 A26 26 0 0 1 58 36" fill="none" stroke="#1e2b4a" stroke-width="7" stroke-linecap="round"/><path d="${arc(n / 3)}" fill="none" stroke="${col}" stroke-width="7" stroke-linecap="round"/><text x="32" y="40" text-anchor="middle" fill="${col}" font-size="13" font-weight="800">${n}/3</text></svg>`
+}
+
 const PROBLEMS = [
-    ['Acessos que ficaram a mais', 3, 'Uma conta ou um agente ainda alcança dados que já não está autorizado a ver.', 'O registo mostra essa diferença, conta a conta e agente a agente, antes de alguém a usar.'],
-    ['Fornecedores e integrações', 3, 'O risco entra por quem tem acesso indireto: um fornecedor, um conector, uma credencial esquecida.', 'Mostra a que cada ligação e cada fornecedor consegue chegar, num só sítio.'],
-    ['Agentes de IA fora do mandato', 3, 'Um agente apaga dados, envia informação para fora ou age sem aprovação.', 'Torna visível, antes, o que o agente consegue fazer além do que lhe pediram, para quem o pode fechar.'],
-    ['Multas e auditorias', 2, 'O regulador pergunta quem autorizou o quê e com que controlos.', 'O registo é prova documentada: o que cada sistema faz e que barreiras tem, com evidência.'],
-    ['Chatbots que respondem mal', 2, 'O assistente automático erra ou não resolve, e os clientes queixam-se.', 'Ajuda a fixar o mandato do chatbot: o que lhe confiar e o que passar a uma pessoa. Não corrige as respostas.'],
-    ['Ransomware e quedas de serviço', 1, 'Um ataque cifra ou derruba os sistemas.', 'Não impede o ataque. Mostra que agentes e contas automáticas tocam nos sistemas críticos e com que barreiras.']
+    [3, 'Acessos que ficaram a mais', 'Access left behind', 'Uma conta ou um agente ainda alcança dados que já não está autorizado a ver.', 'An account or an agent still reaches data it is no longer authorised to see.', 'O registo mostra essa diferença, conta a conta e agente a agente, antes de alguém a usar.', 'The record shows that gap, account by account and agent by agent, before anyone uses it.'],
+    [3, 'Fornecedores e integrações', 'Suppliers and integrations', 'O risco entra por quem tem acesso indireto: um fornecedor, um conector, uma credencial esquecida.', 'Risk comes in through indirect access: a supplier, a connector, a forgotten credential.', 'Mostra a que cada ligação e cada fornecedor consegue chegar, num só sítio.', 'It shows what each connection and supplier can reach, in one place.'],
+    [3, 'Agentes de IA fora do mandato', 'AI agents beyond their mandate', 'Um agente apaga dados, envia informação para fora ou age sem aprovação.', 'An agent deletes data, sends information out or acts without approval.', 'Torna visível, antes, o que o agente consegue fazer além do que lhe pediram, para quem o pode fechar.', 'It makes visible, beforehand, what the agent can do beyond what it was asked, for whoever can close it.'],
+    [2, 'Multas e auditorias', 'Fines and audits', 'O regulador pergunta quem autorizou o quê e com que controlos.', 'The regulator asks who authorised what, with which controls.', 'O registo é prova documentada: o que cada sistema faz e que barreiras tem, com evidência.', 'The record is documented evidence: what each system does and which barriers it has.'],
+    [2, 'Chatbots que respondem mal', 'Chatbots that answer badly', 'O assistente automático erra ou não resolve, e os clientes queixam-se.', 'The automated assistant gets it wrong or does not solve it, and customers complain.', 'Ajuda a fixar o mandato do chatbot: o que lhe confiar e o que passar a uma pessoa. Não corrige as respostas.', 'It helps set the chatbot\'s mandate: what to trust it with, and what goes to a person. It does not fix the answers.'],
+    [1, 'Ransomware e quedas de serviço', 'Ransomware and outages', 'Um ataque cifra ou derruba os sistemas.', 'An attack encrypts or takes down the systems.', 'Não impede o ataque. Mostra que agentes e contas automáticas tocam nos sistemas críticos, e com que barreiras.', 'It does not stop the attack. It shows which agents and automated accounts touch critical systems, and with which barriers.']
 ]
-const LVL = { 3: ['Ajuda muito', '--ok'], 2: ['Ajuda em parte', '--mid'], 1: ['Ajuda pouco', '--low'] }
+const LVL = { 3: ['Ajuda muito', 'Helps a lot', '#2dd4bf'], 2: ['Ajuda em parte', 'Helps partly', '#fbbf24'], 1: ['Ajuda pouco', 'Helps a little', '#93a3c4'] }
+
+// the simulation's steps (read by explica.js from data attributes): a generic customer-service agent
+const STEPS = [
+    ['in', 'Lê o pedido do cliente', 'Reads the customer\'s request', 'email do apoio ao cliente', 'the support inbox'],
+    ['in', 'Consulta a encomenda no CRM', 'Looks up the order in the CRM', 'registo de encomendas', 'order records'],
+    ['in', 'Responde ao cliente', 'Replies to the customer', 'email de saída', 'outgoing email'],
+    ['out', 'Faz um reembolso de 2.000 € sem aprovação', 'Issues a €2,000 refund without approval', 'sistema de pagamentos', 'the payments system'],
+    ['out', 'Exporta a lista completa de clientes', 'Exports the full customer list', 'base de dados de clientes', 'the customer database'],
+    ['out', 'Apaga ficheiros na pasta partilhada', 'Deletes files in the shared drive', 'ficheiros da empresa', 'company files']
+]
 
 export function explica() {
-    const five = [['Alcance', '--reach', 'Tudo o que o agente consegue tocar: sistemas, dados, ações, ligações.'], ['Mandato', '--mandate', 'O que a empresa o autorizou a fazer: a tarefa, o âmbito, o propósito.'], ['Diferença', '--gap', 'O que consegue fazer mas ninguém pediu. É aqui que está o risco.'], ['Barreiras', '--ok', 'Os controlos reais que o travam, cada um com prova.'], ['Proveniência', '--soft', 'Quem é o dono, quem o reviu, que versão está a correr.']]
-    const body = `<div class="rx">
-<div class="hero"><b class="big">A RiskMandate não apaga fogos. Mostra onde está a gasolina.</b>
-<p>Nas palavras de riskmandate.ai: mede o que os agentes conseguem realmente alcançar, prova os controlos que os contêm, põe um preço na exposição e produz esse registo. Só lê: nunca está no caminho das operações, e por isso nunca bloqueia nada.</p></div>
-<h2 id="modelo">1. O problema numa imagem</h2><div class="panel">${model()}</div>
-<h2 id="registo">2. O registo de cada agente, em cinco partes</h2>
-<div class="five">${five.map(([t, c, s]) => `<div style="--c:var(${c})"><b>${esc(t)}</b>${esc(s)}</div>`).join('')}</div>
-<h2 id="leitores">3. Um registo, quatro leitores</h2><div class="panel">${readers()}</div>
-<h2 id="problemas">4. Os problemas que as empresas relatam, e quanto a RiskMandate ajuda em cada um</h2>
-<p class="meta">Os tipos de problema vêm dos casos públicos que a equipa recolheu em empresas portuguesas e da Web Summit (lista interna, encriptada para a equipa). Nenhuma empresa é nomeada aqui.</p>
-<div class="grid">${PROBLEMS.map(([t, n, p, h]) => { const [lab, col] = LVL[n]; return `<div class="card" style="--l:var(${col})"><h3>${esc(t)}</h3><div class="lvl">${[1, 2, 3].map(k => `<i class="${k <= n ? 'on' : ''}"></i>`).join('')} <span class="tag">${lab}</span></div><div class="no"><b>O problema:</b> ${esc(p)}</div><div class="how"><b>Como ajuda:</b> ${esc(h)}</div></div>` }).join('')}</div>
-<h2 id="mensagem">5. Como o dizer a uma empresa</h2>
-<div class="dd"><div style="--c:var(--gap)"><b>Não dizer</b><br>"A RiskMandate teria impedido isto."<br>Abrir o contacto com o problema deles.</div>
-<div style="--c:var(--ok)"><b>Dizer</b><br>"Os agentes de IA vão ter acessos como os que causaram estes casos. A RiskMandate mostra-vos, agente a agente, o que cada um consegue alcançar, o que está autorizado a fazer e a diferença, num registo que a gestão, a segurança e a seguradora entendem."<br>Abrir com valor: a página PromptUGAL sobre a empresa.</div></div>
-<p class="meta">Feito por conductor@web-summit.silvio para o Silvio e a equipa, 8 de novembro de 2026. As frases sobre a RiskMandate são as de riskmandate.ai e do site da equipa.</p></div>`
-    const md = `A RiskMandate não apaga fogos: mostra onde está a gasolina. Nas palavras de riskmandate.ai, mede o que os agentes conseguem realmente alcançar, prova os controlos que os contêm, põe um preço na exposição e produz esse registo; só lê, nunca bloqueia.\n\n## O registo, em cinco partes\n\n${five.map(([t, , s]) => `- **${t}:** ${s}`).join('\n')}\n\n## Um registo, quatro leitores\n\nGestão, segurança, auditor e regulador, seguradora.\n\n## Os problemas e quanto ajuda\n\n${PROBLEMS.map(([t, n, p, h]) => `- **${t}** (${LVL[n][0]}): ${p} ${h}`).join('\n')}\n\n## Como o dizer\n\n- Não dizer: "a RiskMandate teria impedido isto"; não abrir com o problema deles.\n- Dizer: o registo mostra, agente a agente, alcance, mandato e diferença; abrir com a página PromptUGAL da empresa.\n`
-    return { rel: 'people/silvio/riskmandate-explicado/index.html', title: 'Como a RiskMandate ajuda: o problema, o registo e onde entra', description: 'A RiskMandate explicada numa página: alcance, mandato e a diferença entre os dois; o registo de cada agente em cinco partes; quem o lê; os problemas que as empresas relatam e quanto ajuda em cada um; como o dizer.', body, md, head: CSS }
+    const five = [['Alcance', 'Reach', '#3c8cf0', 'Tudo o que o agente consegue tocar: sistemas, dados, ações, ligações.', 'Everything the agent can touch: systems, data, actions, connections.'], ['Mandato', 'Mandate', '#2dd4bf', 'O que a empresa o autorizou a fazer: a tarefa, o âmbito, o propósito.', 'What the business authorised it to do: the task, the scope, the purpose.'], ['Diferença', 'Gap', '#fb7185', 'O que consegue fazer mas ninguém pediu. É aqui que está o risco.', 'What it can do but nobody asked for. This is where the risk lives.'], ['Barreiras', 'Barriers', '#fbbf24', 'Os controlos reais que o travam, cada um com prova.', 'The real controls that contain it, each with evidence.'], ['Proveniência', 'Provenance', '#93a3c4', 'Quem é o dono, quem o reviu, que versão está a correr.', 'Who owns it, who reviewed it, which version is running.']]
+    const body = `<div class="xe" id="xe">
+<div class="bar"><span class="brand"><i></i>RISKMANDATE <b data-pt="EXPLICADO" data-en="EXPLAINED">EXPLICADO</b></span><span><button type="button" class="on" data-lang="pt">PT</button> <button type="button" data-lang="en">EN</button></span></div>
+${T('A RiskMandate não apaga fogos. Mostra onde está a gasolina.', 'RiskMandate does not put out fires. It shows where the fuel is.', 'h1x')}
+${T('Nas palavras de riskmandate.ai: mede o que os agentes conseguem realmente alcançar, prova os controlos que os contêm, põe um preço na exposição e produz esse registo. Só lê: nunca está no caminho das operações, por isso nunca bloqueia nada.', 'In riskmandate.ai\'s words: it measures what your agents can actually reach, evidences the controls that contain them, prices the exposure, and produces that record. Read-only: never in the request path, so it never blocks anything.', 'p', 'lead')}
+
+<div class="sec">${T('01 · A simulação', '01 · The simulation', 'span', 'k')}${T('Cada ação de um agente, colocada contra o seu mandato', 'Each action of an agent, placed against its mandate', 'h2x')}
+${T('Um agente de apoio ao cliente, ilustrativo. Carrega em Play: as ações dentro do mandato ficam no círculo; as que ele consegue fazer mas ninguém pediu caem na diferença. A RiskMandate não as trava: regista-as e mostra-as, antes.', 'An illustrative customer-service agent. Press Play: actions inside the mandate stay in the circle; those it can do but nobody asked for fall in the gap. RiskMandate does not stop them: it records them and shows them, beforehand.', 'p', 'lead')}
+<div class="sim" style="margin-top:12px"><div class="stage">${stage()}</div>
+<div class="stage"><div><button type="button" class="go" id="xe-play">▶ Play</button> <button type="button" id="xe-step" data-pt="Passo" data-en="Step">Passo</button> <button type="button" id="xe-reset">↺ <span data-pt="Recomeçar" data-en="Restart">Recomeçar</span></button></div>
+<ol class="steps" id="xe-steps">${STEPS.map(([k, pt, en, wpt, wen]) => `<li data-k="${k}">${T(pt, en, 'b')}<span class="w">${T('alcança: ' + wpt, 'reaches: ' + wen)} · <span class="${k}">${T(k === 'in' ? 'dentro do mandato' : 'na diferença', k === 'in' ? 'inside the mandate' : 'in the gap')}</span></span></li>`).join('')}</ol>
+<div class="tally" id="xe-tally"></div></div></div></div>
+
+<div class="sec">${T('02 · O registo', '02 · The record', 'span', 'k')}${T('O registo de cada agente, em cinco partes', 'Each agent\'s record, in five parts', 'h2x')}
+<div class="five" style="margin-top:12px">${five.map(([pt, en, c, spt, sen]) => `<div style="--c:${c}"><b data-pt="${esc(pt)}" data-en="${esc(en)}">${esc(pt)}</b>${T(spt, sen)}</div>`).join('')}</div></div>
+
+<div class="sec">${T('03 · Quem o lê', '03 · Who reads it', 'span', 'k')}${T('Um registo, quatro leitores', 'One record, four readers', 'h2x')}<div class="stage" style="margin-top:12px">${readers()}</div></div>
+
+<div class="sec">${T('04 · Onde entra', '04 · Where it fits', 'span', 'k')}${T('Os problemas que as empresas relatam, e quanto a RiskMandate ajuda em cada um', 'The problems companies report, and how much RiskMandate helps with each', 'h2x')}
+${T('Os tipos vêm dos casos públicos que a equipa recolheu (lista interna, encriptada). Nenhuma empresa é nomeada aqui.', 'The kinds come from public cases the team collected (an internal, sealed list). No company is named here.', 'p', 'lead')}
+<div class="grid" style="margin-top:12px">${PROBLEMS.map(([n, pt, en, ppt, pen, hpt, hen]) => { const [lpt, len, col] = LVL[n]; return `<div class="card" style="--l:${col}">${gauge(n, col)}<div><span class="lvl" data-pt="${esc(lpt)}" data-en="${esc(len)}">${esc(lpt)}</span>${T(pt, en, 'h3')}${T(ppt, pen, 'p', 'p')}${T(hpt, hen, 'p', 'h')}</div></div>` }).join('')}</div></div>
+
+<div class="sec">${T('05 · Como o dizer', '05 · How to say it', 'span', 'k')}${T('Numa conversa com uma empresa', 'In a conversation with a company', 'h2x')}
+<div class="dd" style="margin-top:12px"><div style="--c:#fb7185"><b data-pt="Não dizer" data-en="Do not say">Não dizer</b>${T('"A RiskMandate teria impedido isto." E não abrir o contacto com o problema deles.', '"RiskMandate would have stopped this." And do not open the conversation with their problem.')}</div>
+<div style="--c:#2dd4bf"><b data-pt="Dizer" data-en="Say">Dizer</b>${T('"Os agentes de IA vão ter acessos como os que causaram estes casos. A RiskMandate mostra-vos, agente a agente, o que cada um consegue alcançar, o que está autorizado a fazer e a diferença, num registo que a gestão, a segurança e a seguradora entendem." Abrir com valor: a página PromptUGAL sobre a empresa.', '"AI agents will have access like the access behind these cases. RiskMandate shows you, agent by agent, what each can reach, what it is authorised to do and the gap, in one record leadership, security and your insurer can read." Open with value: the company\'s PromptUGAL page.')}</div></div></div>
+${T('Feito por conductor@web-summit.silvio para o Silvio e a equipa, 8 de novembro de 2026, no estilo do X-ray. As frases sobre a RiskMandate são as de riskmandate.ai.', 'Made by conductor@web-summit.silvio for Silvio and the team, 8 November 2026, in the X-ray\'s style. What it says about RiskMandate is in riskmandate.ai\'s words.', 'p', 'foot')}
+</div>`
+    const md = `A RiskMandate não apaga fogos: mostra onde está a gasolina. Nas palavras de riskmandate.ai, mede o que os agentes conseguem realmente alcançar, prova os controlos que os contêm, põe um preço na exposição e produz esse registo; só lê, nunca bloqueia.\n\n## A simulação (um agente de apoio ao cliente, ilustrativo)\n\n${STEPS.map(([k, pt, , wpt]) => `- ${pt} (alcança: ${wpt}): ${k === 'in' ? 'dentro do mandato' : 'na diferença'}`).join('\n')}\n\n## O registo, em cinco partes\n\n${five.map(([t, , , s]) => `- **${t}:** ${s}`).join('\n')}\n\n## Um registo, quatro leitores\n\nGestão, segurança, auditor e regulador, seguradora.\n\n## Os problemas e quanto ajuda\n\n${PROBLEMS.map(([n, t, , p, , h]) => `- **${t}** (${LVL[n][0]}, ${n}/3): ${p} ${h}`).join('\n')}\n\n## Como o dizer\n\n- Não dizer: "a RiskMandate teria impedido isto"; não abrir com o problema deles.\n- Dizer: o registo mostra, agente a agente, alcance, mandato e diferença; abrir com a página PromptUGAL da empresa.\n`
+    return { rel: 'people/silvio/riskmandate-explicado/index.html', title: 'Como a RiskMandate ajuda: o problema, o registo e onde entra', description: 'A RiskMandate explicada no estilo do X-ray: uma simulação de um agente contra o seu mandato, o registo em cinco partes, quem o lê, os problemas que as empresas relatam e quanto ajuda em cada um, e como o dizer. Português e inglês.', body, md, head: CSS + '<script src="../explica/explica.js" defer></script>' }
 }
