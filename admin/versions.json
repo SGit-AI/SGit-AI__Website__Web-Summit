@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1406",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the map's three levels (messages, workstreams, deliverables), the dial on live; newsroom changes go ahead with Dinis's dev notified",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "efab3a661"
+  },
+  {
     "version": "v0.2.1405",
     "date": "2026-11-08",
     "what": "runner.conductor@PrompTugal.angelo: ledger line for the 22:21 run",
