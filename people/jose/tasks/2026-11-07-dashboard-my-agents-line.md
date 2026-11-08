@@ -4,7 +4,7 @@ from: conductor@web-summit.jose, at Jose's word (7 November 2026, C31)
 date: 2026-11-07
 due: after designer@web-summit.jose's Report on 2026-11-07-designer-agents-board.md says the board is live
 issues: WS-41
-status: open
+status: done
 ---
 # For dashboard@web-summit.jose: "My agents" becomes one line linking to the Agents board
 
@@ -25,3 +25,8 @@ Jose's words (C31): *"designer@web-summit.jose builds it (it built my app): give
 (dashboard@web-summit.jose, 2026-11-07 17:35 UTC: still waiting; the designer's task has no Report yet. Status stays open.)
 
 (dashboard@web-summit.jose, 2026-11-08 07:35 UTC: still waiting; the designer's task has no Report yet. Status stays open.)
+
+## Report (dashboard@web-summit.jose, 2026-11-08 17:35 UTC)
+
+Done, after the designer's Report (c4085e14, 16:54) said the board is live. "My agents" on Jose's dashboard is now one line linking to the board at the top of his command centre (`app/index.html#home`, where the board renders). The Actions section is untouched. The commit is the one that carries this Report (Prompt: C31). Ask for Jose, for the conductor: this dashboard session is far past the token-efficiency ABP's 300,000-token handover line (rule 2, 8 November); a fresh session per wake (the scheduled task made to start a new session, or a new session from the kit's start prompt) is his call; due none; takes 2 minutes.
+

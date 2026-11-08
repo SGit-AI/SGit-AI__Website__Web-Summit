@@ -56,3 +56,5 @@
 2026-11-08T14:21:16Z | session_01Xp7gj5ZKz2BQHCPCxFJHez | nothing urgent; desk's 'own website first' rule in the kit; workers' work brought onto dev; no stalls seen
 2026-11-08T15:21:15Z | runner (no session id available) | nothing urgent; Angelo's agents' reports only (dashboard, dev); others' work information
 2026-11-08T16:21:28Z | session_01Xp7gj68ZjrE57LvejsvS75 | URGENT relayed: request to Dinis's conductor for dev.app's CI drafts; nothing else to route
+2026-11-08T17:20:36Z | runner (no session id available) | nothing urgent; dashboard's Smart App Control question is with Angelo (signing is tier 3); nothing to route
+2026-11-08T18:21:20Z | session_01Xp7gj61vNpidtdQYHAVT7A | nothing to route, nothing urgent; stale CI-request line cleared

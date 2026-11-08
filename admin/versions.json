@@ -1,5 +1,173 @@
 [
   {
+    "version": "v0.2.1369",
+    "date": "2026-11-08",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "241122722"
+  },
+  {
+    "version": "v0.2.1368",
+    "date": "2026-11-08",
+    "what": "startups pages 2 to 26 left at Vicky's word; the 100-company capture handed to the curator",
+    "by": "researcher@web-summit.vicky",
+    "from": "e6202f23b"
+  },
+  {
+    "version": "v0.2.1367",
+    "date": "2026-11-08",
+    "what": "one-off, startups pages 2 to 26 not read: the page uses Algolia, not graphql.cilabs.com",
+    "by": "researcher@web-summit.vicky",
+    "from": "a62ba8a53"
+  },
+  {
+    "version": "v0.2.1366",
+    "date": "2026-11-08",
+    "what": "WS-194: booth requests signed in the shape feedback_drain.py verifies (items_json and items)",
+    "by": "dev@web-summit.silvio",
+    "from": "727d52ae1"
+  },
+  {
+    "version": "v0.2.1365",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: ABP demo: no leak hunt; reach and helpful over-reach are the story (Angelo's yes in dev@'s session)",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "673a1958d"
+  },
+  {
+    "version": "v0.2.1364",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: 18:21 run, nothing to route, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "731f13ebe"
+  },
+  {
+    "version": "v0.2.1363",
+    "date": "2026-11-08",
+    "what": "team-collaboration@PrompTugal.angelo: the stand-ups have ended, in Angelo's words; the 14:00 left no record",
+    "by": "team-collaboration@PrompTugal.angelo",
+    "from": "0660413e1"
+  },
+  {
+    "version": "v0.2.1362",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the hexagonal desktop app dropped; the website's pop-out stays; the CI request withdrawn",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "be9b735d2"
+  },
+  {
+    "version": "v0.2.1361",
+    "date": "2026-11-08",
+    "what": "wave C written: 17 first emails in Portuguese to the Portuguese buyers; correction: Turismo de Portugal is at Web Summit",
+    "by": "outreach@web-summit.silvio",
+    "from": "4acb10354"
+  },
+  {
+    "version": "v0.2.1360",
+    "date": "2026-11-08",
+    "what": "checker@PrompTugal.vicky: applied SA25: new remit in the scheduled prompt and prompts file; hand-over to the reviewer reported",
+    "by": "checker@PrompTugal.vicky",
+    "from": "4b0e863e7"
+  },
+  {
+    "version": "v0.2.1359",
+    "date": "2026-11-08",
+    "what": "journalist-portugal@PrompTugal.vicky: company batch P1 in review; backlog rows and report",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "0896526f8"
+  },
+  {
+    "version": "v0.2.1358",
+    "date": "2026-11-08",
+    "what": "standing answer 25: the checker checks articles by desks outside Vicky's; its findings on her desks go to the reviewer",
+    "by": "conductor@web-summit.vicky",
+    "from": "9668504bb"
+  },
+  {
+    "version": "v0.2.1357",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: build the Android live wallpaper of the agents map now, for pre-installed devices",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "54b287736"
+  },
+  {
+    "version": "v0.2.1356",
+    "date": "2026-11-08",
+    "what": "17:45 wake: tables for Sun 8 Nov (lead-to-article decision first), story candidates refreshed",
+    "by": "dashboard@web-summit.vicky",
+    "from": "0392bc7dc"
+  },
+  {
+    "version": "v0.2.1355",
+    "date": "2026-11-08",
+    "what": "17:40 wake: lane counted, not drained (no token of my own yet); feedback-count.json refreshed",
+    "by": "vault@web-summit.jose",
+    "from": "f9b3f4a15"
+  },
+  {
+    "version": "v0.2.1354",
+    "date": "2026-11-08",
+    "what": "17:40 report: URGENT, Indi's /lead-to-article/ (WS-168) asks whether it matches Vicky's proposal, at the 18:00",
+    "by": "pm@web-summit.vicky",
+    "from": "39a38fac3"
+  },
+  {
+    "version": "v0.2.1353",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 157 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 567 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "cf99f53e5"
+  },
+  {
+    "version": "v0.2.1352",
+    "date": "2026-11-08",
+    "what": "17:30 wake: brief 17 (the 18:00 stand-up asks, the lead-to-article prompt); my first token ledger line",
+    "by": "dashboard@web-summit.indi",
+    "from": "fc09a7b18"
+  },
+  {
+    "version": "v0.2.1351",
+    "date": "2026-11-08",
+    "what": "17:20 wake: brief 17 to Jose (the Agents board live; its data yes; page views fill tonight); the drain task off, my hourly wake recorded",
+    "by": "conductor@web-summit.jose",
+    "from": "fd67216ff"
+  },
+  {
+    "version": "v0.2.1350",
+    "date": "2026-11-08",
+    "what": "brief 17, Sunday evening: the first team follows the token rules",
+    "by": "conductor@web-summit.indi",
+    "from": "8a7e75185"
+  },
+  {
+    "version": "v0.2.1349",
+    "date": "2026-11-08",
+    "what": "17:10 run, idle",
+    "by": "logistics@web-summit.vicky",
+    "from": "556c1f71e"
+  },
+  {
+    "version": "v0.2.1348",
+    "date": "2026-11-08",
+    "what": "dashboard@PrompTugal.angelo: Windows Smart App Control blocks the unsigned 0.1.1; options put to Angelo",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "d3df324da"
+  },
+  {
+    "version": "v0.2.1347",
+    "date": "2026-11-08",
+    "what": "WS-194 step 1: a subject typed at the booth becomes a signed, sealed request on xray@'s new lane",
+    "by": "dev@web-summit.silvio",
+    "from": "361a19caf"
+  },
+  {
+    "version": "v0.2.1346",
+    "date": "2026-11-08",
+    "what": "Legora added to WS-137's demo pack; all four checked on websummit.com; three asks on the 18:00 stand-up",
+    "by": "dev@web-summit.indi",
+    "from": "677fd9f4a"
+  },
+  {
     "version": "v0.2.1345",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: a share button on PrompTugal.news, from how other newspapers do it: a spec for dev.venues@",

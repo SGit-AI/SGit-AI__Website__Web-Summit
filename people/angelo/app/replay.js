@@ -428,7 +428,9 @@ ${sel ? detail(R, sel) : ''}
         const view3d = () => {
             if (!on || !host.isConnected) return null
             for (const p of P) { const k = p.from + '|' + p.to; let e = lit3.get(k); if (!e) lit3.set(k, e = { op: 0 }); e.op = p.op || 0 }
-            return { fly: fly.map(m => ({ from: m.from, to: m.to, u: Math.min(1, Math.max(0, (T - m.t) / travel)) })), lines: lit3, hot }
+            // who is on the map now (backlog 0c3): the 3D adds, fades and makes room as the 2D does
+            const onIds = new Set(); for (const [id, a] of N) if (a.on) onIds.add(id)
+            return { fly: fly.map(m => ({ from: m.from, to: m.to, u: Math.min(1, Math.max(0, (T - m.t) / travel)) })), lines: lit3, hot, on: onIds }
         }
         flowApi = { seek, at: () => flowState.t, pick, view3d, playing: () => playing }
         return { seek, msgs: msgs.length }

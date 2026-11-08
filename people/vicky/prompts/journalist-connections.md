@@ -135,3 +135,7 @@ Dinis asked for new names: from now on you are journalist-connections@PrompTugal
 ```
 
 Since 6 November, desks/journalist-vicky/STYLE.md in the newsroom repository replaces the chat rules above; they are kept here as the record.
+
+## Standing answer 24 (Vicky, 8 November 2026, about 17:45 UTC; SA24X)
+
+Company pages are a one-off project Vicky starts by hand, not part of any scheduled run. No company-page work in any scheduled run: no choosing, no writing, no reviewing of company files; articles and the normal rounds are untouched. Only in a batch Vicky starts in this session, from `people/vicky/company-pages/backlog.md` on the team site, taking only this agent's own rows (C1 and C2). Standing answer 23 is the editorial standard; the batch prompt says what to do. The "6b" line of the withdrawn 16:55 version was never added to this agent's writing task.

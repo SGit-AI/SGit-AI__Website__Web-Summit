@@ -1,17 +1,27 @@
 # dev.work@PrompTugal.angelo: STATE
 
-First run, 8 November 2026 (09:51 to about 10:15 UTC). Backlog 0f2 (the work view) and 0f3 (the WhatsApp clip), from the desk's 3aefaed (pushed by riskmandate-angelo).
+Backlog 0f2 (the work view) and 0f3 (the WhatsApp clip). **Approved** by Angelo 8 November about 16:30 UTC (the desk's 7fcaf108 and d36afd88, both pushed by riskmandate-angelo): building, deliveries.mjs first, then the view, then the clip.
+
+## Built (on workers/dev.work, for dashboard@ to review)
+- `people/angelo/tools/deliveries.mjs`: the spec's rule table, "Delivered:" lines, the maker, readRepo(), backfill(), pack(). Test `wv` (a fixture per row).
+- `people/angelo/app/deliveries.json`, written by the build (data.mjs extras(), .gitignore line), makers named as live.json names agents. Test `wv` checks it.
+- `people/angelo/app/work.js`: the view's pure rules (rim places, merge, counts, origin, the light theme's stroke). Test `wvcore`.
+- `people/angelo/app/work-newsroom.js`: the newsroom read live (stories.json every two minutes), shape check, live diff, poller. Test `wvnews` against `tests/wv-stories.json`.
+- `people/angelo/app/deliveries-backfill.json`: empty, with its shape.
+- `people/angelo/app/clip.js` (0f3): sizes, caps, caption, file name; WebCodecs H.264 Main 4.0 as limited-range I420 into a fast-start MP4; the fallback for Safari before 17 (MediaRecorder, its fragmented file rewritten as one fast-start MP4); share or download. `vendor/mp4-muxer-5.2.2/` (MIT, sha256 in SOURCE.txt). Test `clip` (ffprobe).
+- `people/angelo/app/work-logos/`: PT News (light, dark) and LinkedIn favicons, SOURCES.md; the rest plain marks.
+- `people/angelo/app/work-draw.js`: the drawing on the hook's layer: squares on the rim (logos), name pills outside it (12 px or more; on a phone in rows above and below with leaders), counts, flights in the maker's colour, merges, landing light. Test `wvdraw` (1280 and 390 px, dark and light).
+- `people/angelo/app/work-live.js`: the live feed: deliveries.json each minute, 4 minutes behind; the newsroom every two; counts for 24 h; the corner note. Test `wvlive`.
 
 ## Open
-- **Waiting on Angelo's approval** of spec-work-view.md (people/angelo/proposals/live-map/). His five answers (884ff5ca, pushed by riskmandate-angelo) are folded in (third run); two questions left: may it say "approved", and the newsroom's day-only times. Nothing is built until its status line says "approved". The mock-up still shows plain marks, not logos (the logos are fetched in the build).
-- Reviewer: dashboard@PrompTugal.angelo from 8 November (251d793b), not dev@.
-- The clip's section is in spec-work-view.md, not spec-realtime.md as the backlog row says, to keep to my own files; the desk may want a one-line pointer there (dev.map@'s file).
-- Lane: lanes.json still has no entry for me at 11:55 UTC (policy@'s to add, 3aefaed; dev@ asked policy@ in a276b6dd), so the gate's check 21 stays red on my commits.
-- Shared outputs (deliveries.json, deliveries-repos.json beside live.json) are not in my prompt's file list: asked the desk.
-- Codecs checked (second run): the session's Chromium encodes H.264 Main/High in WebCodecs (localhost only: secure context); MediaRecorder's MP4 is fragmented and yuvj420p, so the fallback must be rewritten by the muxer. ffprobe and ffmpeg are installed. In the spec's Risks.
-
-## Measured (this repository's dev, 2 to 8 November)
-1,978 non-release commits, 932 deliver by the rule table: site 574, infrastructure 235, app 116, keys 98, drafts 77, CRM 13, research 4. 22 "Delivered:" lines so far, none yet kind-first.
+- **The hook in live.js** (dev.map@'s file): `people/angelo/map/work/drafts/live-hook.patch`, four lines, sent For: dev.map@; not on dev or workers/dev.map at 18:00 UTC (dev.map@ changed live.js at 17:09, so it stays a draft). wvdraw and wvlive serve live.js with the hook added and say so.
+- Next, once the hook lands: the "Exchanges | Work" switch in app.js (`AngeloWorkLive.mount(host, { base })`, scripts work.js, work-draw.js, work-newsroom.js, work-live.js), the legend (one line under the graph on a phone), replay over the full history, and the clip button (frames from replay's clock through `clip.make`).
+- Look: PT News's square sits close to dev.map@'s logos and LIVE at the hexagon's top; for dashboard@'s review.
+- Testing: the branch is based on dev of 09:49; tests run on a worktree of origin/dev with this branch's work files laid over (the old live.js here lacks what the hook uses).
+- Asked the desk (8ebf8b4): the app's square, its own icon or PT News's.
+- Not yet checked: WhatsApp on Angelo's iPhone (the proof for 0f3), and the fallback in a real Safari 16.
+- Other repositories (the apps): `deliveries-repos.json` from the snapshot, later.
+- Lane: lanes.json still has no entry for dev.work@ (18:00 UTC), so the gate's check 21 fails on my commits until policy@ adds it.
 
 ## Last run
-Fifth run, 8 November about 14:51 UTC: still not approved (no commit For: me from the desk since 12:51); nothing to build. Under the desk's "our own website first" (9f3f449, 591c03fe), Delivered: links point to the site: the spec and both mock-ups are live and current at https://web-summit.sgit.ai/people/angelo/proposals/live-map/spec-work-view.md (dashboard@ brought them onto dev, 33ec1444). Next run: if approved, start deliveries.mjs (the rule table, a test per row); else wait.
+Ninth run, 8 November 17:51 to about 18:05 UTC: no commits For: me since the last; the hook not yet on dev. Built the drawing (work-draw.js, test wvdraw) and the live feed (work-live.js, test wvlive), in two commits. Tests wvdraw, wvlive, wvcore, wv PASS.

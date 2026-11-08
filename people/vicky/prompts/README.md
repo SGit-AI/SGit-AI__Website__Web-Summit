@@ -23,7 +23,7 @@ The newsroom desks other than the researcher become `<role>@PrompTugal.vicky` as
 | journalist-ai@PrompTugal.vicky | drafts: AI and robotics | [journalist-ai.md](journalist-ai.md) |
 | journalist-connections@PrompTugal.vicky | drafts: connections | [journalist-connections.md](journalist-connections.md) |
 | reviewer@PrompTugal.vicky | checks drafts against sources, tidies style; publishes when Vicky asks | [reviewer.md](reviewer.md) |
-| checker@PrompTugal.vicky | fact-checks the articles Dinis's agents write | [checker.md](checker.md) |
+| checker@PrompTugal.vicky | fact-checks published articles by desks outside Vicky's | [checker.md](checker.md) |
 | scout@web-summit.vicky | learning notes and proposals from how Dinis's agents work (daily 22:00 UTC) | [scout.md](scout.md) |
 | inbox@web-summit.vicky | the only agent that touches Vicky's mailbox; never sends (on demand) | [inbox.md](inbox.md) |
 

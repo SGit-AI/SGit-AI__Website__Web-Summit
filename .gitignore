@@ -38,6 +38,7 @@ index.md
 # the command centres' data (admin/build/commandcentre.mjs), written by the build for every person
 /people/*/app/data.json
 /people/*/app/live.json
+/people/*/app/deliveries.json
 /people/*/dashboard.json
 /me.json
 

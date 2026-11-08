@@ -19,7 +19,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** today, your key on each phone and iPad, and RiskMandate's first LinkedIn post at 6 pm (check the stand number with Dinis first). Then three yes-or-no answers for your accountant. The summit opens tomorrow evening. Everything else is on [your to-do list](todo/index.html).
+**Right now:** at the 6 pm stand-up, ask Dinis to confirm two things: the stand number for tonight's LinkedIn post, and the token rules (how your helpers save on cost) for the whole team. Then post at 6 pm. Before Monday evening: give your helper the 'lead to article' prompt. The summit opens tomorrow evening. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 

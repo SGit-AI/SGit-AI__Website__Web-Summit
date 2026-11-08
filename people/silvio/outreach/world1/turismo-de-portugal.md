@@ -1,7 +1,8 @@
-# Turismo de Portugal: research (NOT confirmed for Web Summit 2026)
+# Turismo de Portugal: research
 
-Read on 7 November 2026 by a research agent of outreach@web-summit.silvio. **No websummit.com lis26 page was found: do
-not publish that they attend 2026.** In 2025 they did (below).
+Read on 7 November 2026 by a research agent of outreach@web-summit.silvio. **Correction, 8 November 2026:** they ARE at Web Summit 2026, as an event partner listed as "Tourism of Portugal"
+(<https://websummit.com/appearances/lis26/91e2a435-8c94-42b3-a74d-130446723990/tourism-of-portugal/>, track PARTNER, checked
+8 November). The search of 7 November missed it under the English name.
 
 ## What they do, in their words
 

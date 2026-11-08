@@ -12,6 +12,7 @@ import { fileURLToPath } from 'url'
 const HERE = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(HERE, '../../..')
 const CC = await import(path.join(ROOT, 'admin/build/commandcentre.mjs'))
+const WORK = await import(path.join(ROOT, 'people/angelo/tools/deliveries.mjs'))   // the work view's deliveries (spec-work-view.md, dev.work@PrompTugal.angelo)
 const KANBAN = createRequire(import.meta.url)('./kanban-core.js')
 
 // the kanban's rules are tested on every build: a broken rule fails the build, not Angelo's phone
@@ -569,5 +570,15 @@ export function extras(d) {
     } catch { /* no other repositories read yet */ }
     const an = [...new Set(evs.map(e => e[1]))], tn = [...new Set(evs.flatMap(e => e[3]))]
     const a2 = new Map(an.map((x, i) => [x, i])), t2 = new Map(tn.map((x, i) => [x, i]))
-    return { 'people/angelo/app/live.json': JSON.stringify({ built_at: d.built_at, version: d.version, from: R.from, repos, agents: an, targets: tn, events: evs.map(e => [e[0], a2.get(e[1]), e[2], e[3].map(n => t2.get(n)), e[4], e[5]]) }) }
+    return { 'people/angelo/app/live.json': JSON.stringify({ built_at: d.built_at, version: d.version, from: R.from, repos, agents: an, targets: tn, events: evs.map(e => [e[0], a2.get(e[1]), e[2], e[3].map(n => t2.get(n)), e[4], e[5]]) }),
+        'people/angelo/app/deliveries.json': JSON.stringify(deliveries(d, R)) }
+}
+// deliveries.json (the work view, spec-work-view.md: dev.work@PrompTugal.angelo, 8 November): what each commit delivered and
+// where, from deliveries.mjs's rule table, plus its backfill; makers named as live.json names agents (the declared name now)
+function deliveries(d, R) {
+    const DM = declaredNames(ROOT, ((readJson(ROOT, 'data/team.json') || {}).members || []).filter(m => m.kind === 'human'))
+    const list = [...WORK.readRepo(ROOT, { since: '2026-10-28T00:00:00Z' }), ...WORK.backfill(path.join(HERE, 'deliveries-backfill.json'))].sort((x, y) => Date.parse(x.at) - Date.parse(y.at))
+    const P = WORK.pack(list, R.from)
+    P.makers = P.makers.map(m => { const c = canon(m), dd = c && DM.get(c); return viewId(dd ? dd.name : m) })
+    return { built_at: d.built_at, ...P }
 }
