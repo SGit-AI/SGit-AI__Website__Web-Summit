@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1409",
+    "date": "2026-11-08",
+    "what": "the T1 agent-count request closed: published at 17:49 in v0.1.728 (105 agents with a commit in the week)",
+    "by": "conductor@web-summit.vicky",
+    "from": "9968eda56"
+  },
+  {
     "version": "v0.2.1408",
     "date": "2026-11-08",
     "what": "22:50 orchestration wake: dev, video and outreach moved; dashboard and design nudged",
