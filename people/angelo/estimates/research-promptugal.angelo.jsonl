@@ -1,0 +1,2 @@
+{"event":"start","at":"2026-11-08T09:27:48Z","agent":"research@PrompTugal.angelo","item":"8","what":"briefs on Administrate, IFS assyst, Accenture (list 6 to 8)","est_effort_min":25,"est_elapsed_min":30,"confidence":"medium"}
+{"event":"done","at":"2026-11-08T09:27:48Z","agent":"research@PrompTugal.angelo","item":"8","effort_min":25,"elapsed_min":30,"runs":1,"note":"as estimated; IFS assyst thin because ifs.com gave 429"}
