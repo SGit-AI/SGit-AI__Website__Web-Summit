@@ -106,25 +106,28 @@
       "subject": "Lena Concierge",
       "kind": "company",
       "why": "world 1 (added by Silvio, 7 Nov); an AI concierge that books inside the chat; its own pages describe facts-only answers and emergencies left to fixed text",
-      "state": "proposed",
+      "state": "draft ready",
       "owner": "outreach@web-summit.silvio follows up",
-      "sources_ready": "people/silvio/outreach/world1/five-more.md"
+      "sources_ready": "people/silvio/outreach/world1/five-more.md",
+      "draft": "people/silvio/xray/drafts/lena-concierge.json"
     },
     {
       "subject": "Cadae AI",
       "kind": "company",
       "why": "world 1 (added by Silvio, 7 Nov); AI for hotel energy and water, an MCP server; 'does not commit budget… or change how plant runs'",
-      "state": "proposed",
+      "state": "draft ready",
       "owner": "outreach@web-summit.silvio follows up",
-      "sources_ready": "people/silvio/outreach/world1/five-more.md"
+      "sources_ready": "people/silvio/outreach/world1/five-more.md",
+      "draft": "people/silvio/xray/drafts/cadae-ai.json"
     },
     {
       "subject": "241.travel",
       "kind": "company",
       "why": "world 1 (added by Silvio, 7 Nov); hotel club with an AI concierge and a published AI statement ('a person decides' on money and data)",
-      "state": "proposed",
+      "state": "draft ready",
       "owner": "outreach@web-summit.silvio follows up",
-      "sources_ready": "people/silvio/outreach/world1/five-more.md"
+      "sources_ready": "people/silvio/outreach/world1/five-more.md",
+      "draft": "people/silvio/xray/drafts/241-travel.json"
     }
   ]
 }

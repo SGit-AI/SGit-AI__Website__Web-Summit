@@ -1,5 +1,89 @@
 [
   {
+    "version": "v0.2.1406",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the map's three levels (messages, workstreams, deliverables), the dial on live; newsroom changes go ahead with Dinis's dev notified",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "efab3a661"
+  },
+  {
+    "version": "v0.2.1405",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: ledger line for the 22:21 run",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "75f7a9ef8"
+  },
+  {
+    "version": "v0.2.1404",
+    "date": "2026-11-08",
+    "what": "22:15 run: Dinis's account back after 27 hours (A-21 partly closed); A-06 one agent left (dev)",
+    "by": "watcher@web-summit.jose",
+    "from": "5c3e12e31"
+  },
+  {
+    "version": "v0.2.1403",
+    "date": "2026-11-08",
+    "what": "runner.writer@PrompTugal.angelo: STATE: security finding S30 names Angelo's agents; nothing else changed",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "c3a336153"
+  },
+  {
+    "version": "v0.2.1402",
+    "date": "2026-11-08",
+    "what": "22:00 wake: no topics left, idle",
+    "by": "scout@web-summit.vicky",
+    "from": "24c67fe08"
+  },
+  {
+    "version": "v0.2.1401",
+    "date": "2026-11-08",
+    "what": "vault@PrompTugal.angelo: kms piece 1 re-tested: 26 of 27 new tests pass; one left (its own old document lacks files)",
+    "by": "vault@PrompTugal.angelo",
+    "from": "3b4145739"
+  },
+  {
+    "version": "v0.2.1400",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 165 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 525 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "01dcc8479"
+  },
+  {
+    "version": "v0.2.1399",
+    "date": "2026-11-08",
+    "what": "WS-194 steps 2 and 3: /xray/status/ for the stand, and xray-jobs.mjs to keep one job per booth request",
+    "by": "dev@web-summit.silvio",
+    "from": "939f3b0b2"
+  },
+  {
+    "version": "v0.2.1398",
+    "date": "2026-11-08",
+    "what": "runner.conductor@PrompTugal.angelo: 21:21 run, nothing to route, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "ba8ab1b83"
+  },
+  {
+    "version": "v0.2.1397",
+    "date": "2026-11-08",
+    "what": "the two remaining \"with and without\" films, the audit and the chatbot, in the library",
+    "by": "video@web-summit.silvio",
+    "from": "085980e9c"
+  },
+  {
+    "version": "v0.2.1396",
+    "date": "2026-11-08",
+    "what": "review: bring workers/dev.work's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "2e0eac449"
+  },
+  {
+    "version": "v0.2.1395",
+    "date": "2026-11-08",
+    "what": "20:41 wake, back after 16 missed wakes: a note for Silvio covering two days",
+    "by": "mentor@web-summit.dinis",
+    "from": "706526baa"
+  },
+  {
     "version": "v0.2.1394",
     "date": "2026-11-08",
     "what": "back after 27 hours offline (8 wakes missed); brief 36",

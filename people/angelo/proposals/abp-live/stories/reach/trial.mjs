@@ -2,7 +2,8 @@
 // One real trial of a reach scenario, with the trial agent given the practice shell and nothing else
 // (dev.abp@PrompTugal.angelo, 8 November 2026, after dev@'s flag in d8389b2: in earlier trials sub-agents reached past
 // act.mjs to the session's own tools).
-//   node trial.mjs <install|tidy|followup|spend> <rung 0-4> <run folder> [model alias, default haiku]
+//   TRIAL_MODEL=<model alias> TRIAL_LABEL=<smaller|larger> node trial.mjs <install|tidy|followup|spend> <rung 0-4> <run folder>
+// (the model is a setting given at run time; what is recorded and pushed is only the label, larger or smaller)
 // A separate Claude Code process (claude -p), started in the run's world folder, with one tool, Bash, whose every
 // command goes through guard.sh (CLAUDE_CODE_SHELL_PREFIX): guard.mjs runs this run's act.mjs and nothing else, and
 // answers anything else with "not available" (counted in gw/outside.jsonl), so the agent carries on rather than
@@ -13,8 +14,8 @@ import path from 'node:path'
 import { execFileSync, spawnSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 const HERE = path.dirname(fileURLToPath(import.meta.url))
-const [name, lv, dir, model = 'haiku'] = process.argv.slice(2)
-if (!name || lv == null || !dir) { console.error('trial.mjs <scenario> <rung> <run folder> [model]'); process.exit(2) }
+const [name, lv, dir] = process.argv.slice(2), model = process.env.TRIAL_MODEL, label = process.env.TRIAL_LABEL || 'unlabelled'
+if (!name || lv == null || !dir || !model) { console.error('TRIAL_MODEL=<alias> TRIAL_LABEL=<smaller|larger> trial.mjs <scenario> <rung> <run folder>'); process.exit(2) }
 const RUN = path.resolve(dir), ACT = path.join(HERE, 'act.mjs')
 const prompt = execFileSync('node', [path.join(HERE, 'setup.mjs'), name, lv, RUN], { encoding: 'utf8' })
 const r = spawnSync('claude', ['-p', prompt, '--model', model, '--tools', 'Bash', '--allowedTools', 'Bash',
@@ -27,6 +28,6 @@ const lines = (r.stdout || '').split('\n').filter(Boolean).map(l => { try { retu
 const res = lines.find(l => l.type === 'result') || {}
 const of = path.join(RUN, 'gw', 'outside.jsonl')
 const denied = (res.permission_denials || []).length + (fs.existsSync(of) ? fs.readFileSync(of, 'utf8').trim().split('\n').filter(Boolean).length : 0)
-fs.writeFileSync(path.join(RUN, 'gw', 'trial.json'), JSON.stringify({ model, denied_outside_shell: denied, turns: res.num_turns, cost_usd: res.total_cost_usd, reply: res.result || '' }))
+fs.writeFileSync(path.join(RUN, 'gw', 'trial.json'), JSON.stringify({ model: label, denied_outside_shell: denied, turns: res.num_turns, cost_usd: res.total_cost_usd, reply: res.result || '' }))
 const sum = JSON.parse(execFileSync('node', [path.join(HERE, 'summary.mjs'), RUN], { encoding: 'utf8' }))
-console.log(JSON.stringify({ ...sum, model, denied_outside_shell: denied, turns: res.num_turns }))
+console.log(JSON.stringify({ ...sum, model: label, denied_outside_shell: denied, turns: res.num_turns }))
