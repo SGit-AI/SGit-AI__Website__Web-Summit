@@ -29,6 +29,7 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
     if (wk.sq !== 10) fail(`${tag}: ${wk.sq} squares in Work`)
     if (wk.leg !== 6) fail(`${tag}: legend icons ${wk.leg}`)
     if (!wk.cls) fail(`${tag}: the graph is not in the work view`)
+    { const op = await p.evaluate(() => ['.lv-links', '.lv-pulses'].map(q => { const e = document.querySelector(q); return e ? getComputedStyle(e).opacity : '1' })); if (op.some(o => +o < 1)) fail(`${tag}: the exchanges are dimmed in Work (${op}); backlog 0c4`) }
     if (wk.over) fail(`${tag}: the page scrolls sideways`)
     if (w === 390) { const under = await p.evaluate(() => { const f = document.querySelector('.cc-askfab'), fb = f && f.getBoundingClientRect(), mid = document.querySelector('.lv-svg').getBoundingClientRect(); return fb && fb.width ? [...document.querySelectorAll('.wv-pill')].filter(e => { const r = e.getBoundingClientRect(); return r.top > mid.top + mid.height / 2 && r.right > fb.left }).map(e => e.textContent) : [] }); if (under.length) fail(`${tag}: under the Ask Claude button's column: ${under.join(', ')}`) }
     if (w === 390) { const lines = await p.evaluate(() => { const l = document.querySelector('[data-wv-legend]'); return Math.round(l.querySelector('span').getBoundingClientRect().height) }); if (lines > 24) fail(`${tag}: a legend item wraps (${lines} px)`) }

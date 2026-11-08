@@ -15,7 +15,8 @@
     const MARK = { site: 'cog', research: 'doc', infra: 'cog', app: 'cog', keys: 'key', crm: 'record', email: 'envelope', drafts: 'doc' }
     const SQ = 58, FONT = 19, MIN_PX = 12
     const CSS = `
-.lv.lv-workview .lv-links, .lv.lv-workview .lv-pulses { opacity: .35; }
+/* the exchanges stay as visible as in Exchanges (Angelo, 8 November about 22:25, backlog 0c4: "the dots and arcs are faint"): the
+   deliveries stand out by being brighter on top, never by dimming the rest */
 .lv.lv-workview .lv-svg { overflow: visible; }
 .lv.lv-workview .lv-hex { width: min(58cqw, 84cqh); height: min(58cqw, 84cqh); }
 @container (max-width: 640px) { .lv.lv-workview .lv-hex { width: min(94cqw, 64cqh); height: min(94cqw, 64cqh); } }
@@ -28,8 +29,9 @@
 .wv-n circle { fill: var(--rm-action, #4aa3ff); }
 .wv-n text { fill: #fff; font-size: 15px; }
 .wv-fly circle.wv-bg { fill: var(--rm-bg, #07111F); }
-.wv-fly path { fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-.wv-trail { fill: none; stroke-width: 2.4; stroke-linecap: round; }
+.wv-fly { filter: drop-shadow(0 0 6px currentColor); }
+.wv-fly path { fill: none; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
+.wv-trail { fill: none; stroke-width: 3; stroke-linecap: round; }
 .wv-num { font-size: 15px; }
 `
     const el = (doc, t, a, p) => { const e = doc.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e }
@@ -151,8 +153,8 @@
                 const from = A.origin(d.maker, G.pos), s = sq.get(d.dest); if (!from || !s) continue
                 const a = out(G.pos.get(from)), b = s.p, stroke = colourOf(d.maker)
                 const trail = el(doc, 'path', { class: 'wv-trail', stroke, 'stroke-opacity': 0, d: '' }, trails)
-                const g = el(doc, 'g', { class: 'wv-fly', 'data-icon': d.icon, 'data-dest': d.dest }, flights)
-                el(doc, 'circle', { class: 'wv-bg', r: 17, stroke, 'stroke-width': 1.5 }, g)
+                const g = el(doc, 'g', { class: 'wv-fly', 'data-icon': d.icon, 'data-dest': d.dest, style: 'color:' + stroke }, flights)   // its glow in the maker's colour
+                el(doc, 'circle', { class: 'wv-bg', r: 17, stroke, 'stroke-width': 2.5 }, g)
                 el(doc, 'path', { d: A.ICON_PATHS[d.icon], stroke }, g)
                 if (d.n > 1) { const t = el(doc, 'text', { class: 'wv-num', x: 20, y: -12 }, g); t.textContent = String(d.n) }
                 live.push({ d, t0: now, a, b, g, trail })
@@ -173,7 +175,7 @@
                 f.g.setAttribute('transform', `translate(${f1(p.x)} ${f1(p.y)})`)
                 const q = A.along(f.a, f.b, Math.max(0, e - 0.25)), m = A.along(f.a, f.b, Math.max(0, e - 0.12))
                 f.trail.setAttribute('d', `M${f1(q.x)} ${f1(q.y)}Q${f1(m.x)} ${f1(m.y)} ${f1(p.x)} ${f1(p.y)}`)
-                f.trail.setAttribute('stroke-opacity', f1(0.6 * Math.sin(Math.PI * u)))
+                f.trail.setAttribute('stroke-opacity', f1(0.85 * Math.sin(Math.PI * u)))
             }
             for (const [, s] of sq) if (s.lit && s.lit <= now) { s.lit = 0; s.g.classList.remove('wv-lit') }
         }
