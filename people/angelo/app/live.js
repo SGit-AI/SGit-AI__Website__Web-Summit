@@ -6,6 +6,7 @@
 // flow along every line, as dense as that pair has been in recent hours: it never stops, and nothing in it is invented.
 // "Pop out" puts it in an always-on-top window (Document Picture-in-Picture: Chrome and Edge on a desktop); where that is
 // missing (Safari on a Mac or iPad), in a floating video: the graph drawn into a canvas, the canvas's stream played in picture-in-picture.
+// 3D (d3=1, backlog 0c): the same engine, drawn by live3d.js in WebGL: the same flow, pulses, lit lines and breathing, turned by hand.
 (function (root) {
     'use strict'
     const NS = 'http://www.w3.org/2000/svg'
@@ -18,6 +19,7 @@
     const DELAY_MS = (+new URLSearchParams(root.location.search || '').get('livedelay') || 4) * 6e4   // a fixed few minutes behind
     const FLOW_BASE = 3.5, FLOW_MAX = 70, FLOW_TRAVEL_MS = 3000, HALF_LIFE_H = 3   // ambient dots a second, at most on screen, their travel, how fast the past fades
     const HEX = 'M250 67 L750 67 L1000 500 L750 933 L250 933 L0 500 Z'
+    const HERE = document.currentScript ? document.currentScript.src : root.location.href
     const CSS = `
 .lv { container-type: size; position: relative; width: 100%; height: 100%; display: grid; place-items: center; background: var(--rm-bg, #07111F); overflow: hidden; }
 .lv-hex { width: min(100cqw, 100cqh); height: min(100cqw, 100cqh); position: relative; }
@@ -49,6 +51,13 @@
 /* display mode (?display=1): the graph alone, filling the screen, for a screen left on for days (spec-realtime.md) */
 .lv-display { position: fixed; inset: 0; z-index: 300; background: var(--rm-bg, #07111F); }
 .lv-display .lv { cursor: none; }
+/* 3D (d3=1): the WebGL view inside the same hexagon; the SVG keeps the rim and the floor */
+.lv-3d { position: absolute; inset: 0; clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%); touch-action: none; cursor: grab; }
+.lv-3d:active { cursor: grabbing; }
+.lv-3d canvas { display: block; }
+.lv-3d .note { position: absolute; inset: 40% 15% auto; text-align: center; }
+.lv-3d-on .lv-svg > g { visibility: hidden; }
+.lv-3dl { position: absolute; left: 0; top: 0; pointer-events: none; font: 600 clamp(9px, 2.2cqmin, 14px)/1 var(--rm-font, system-ui, sans-serif); color: var(--rm-text, #fff); text-shadow: 0 0 4px var(--rm-bg, #07111F), 0 0 2px var(--rm-bg, #07111F); white-space: nowrap; }
 .lv-frame { height: min(78vh, 760px); min-height: 320px; border-radius: var(--rm-radius-card, 12px); overflow: hidden; border: 1px solid var(--rm-border, #294A64); }
 `
     const f1 = n => n.toFixed(1), SEEN = new Set()   // what has been shown, kept when the page redraws
@@ -98,6 +107,23 @@
         const dot = doc.createElement('i'); dot.className = 'lv-dot off'; dot.title = 'Reading the latest exchanges…'; wrap.appendChild(dot)   // a status light in the window's corner, outside the graph
         host.appendChild(wrap)
 
+        // 3D: the WebGL view over the hexagon's floor, fed by the engine below on each frame (live3d.js, loaded only now)
+        let r3 = null, ranSet = new Set()
+        if (o.d3) {
+            wrap.classList.add('lv-3d-on'); const box = doc.createElement('div'); box.className = 'lv-3d'; box.setAttribute('data-lv3d', ''); hex.appendChild(box)
+            const shell = new Map(), nodes3 = []
+            for (const [id, n] of pos) {
+                let z = 0; if (n.kind === 'a') { const k = shell.get(n.person) || 0; shell.set(n.person, k + 1); z = (k % 2 ? 1 : -1) * (40 + 38 * (Math.floor(k / 2) % 3)) }
+                nodes3.push({ id, x: n.x - C, y: C - n.y, z, color: col.get(n.person) || 'var(--rm-text-muted)', size: n.kind === 'p' ? 56 : n.family !== 'web-summit' ? 17 : 2 * (4 + Math.min(8, Math.sqrt(n.commits || 0))) + 2, ring: !!n.fresh, label: n.kind === 'p' ? n.label : '' })
+            }
+            const bg = (win.getComputedStyle(wrap).backgroundColor.match(/\d+(\.\d+)?/g) || [7, 17, 31]).slice(0, 3).map(Number), light = (0.299 * bg[0] + 0.587 * bg[1] + 0.114 * bg[2]) > 140
+            const lib = root.AngeloLive3D ? Promise.resolve() : new Promise((ok, no) => { const s = document.createElement('script'); s.src = new URL('live3d.js', HERE).href; s.onload = ok; s.onerror = () => no(new Error('live3d.js could not load')); document.head.appendChild(s) })
+            lib.then(() => root.AngeloLive3D.create(box, { nodes: nodes3, links: M.links || [], light, keep: !!o.keep3d, still: win.matchMedia('(prefers-reduced-motion: reduce)').matches, dist: 1650,
+                ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, mz = (a.z + b.z) / 2; return { x: mx * (1 - PULL), y: my * (1 - PULL), z: mz * (1 - PULL) } } }))
+                .then(r => { if (!r) return; if (!alive) { r.destroy(); return } r3 = r; box.r3 = r; kick() })
+                .catch(e => { wrap.classList.remove('lv-3d-on'); box.innerHTML = `<p class="note">The 3D view could not load (${String(e && e.message || e).replace(/[<>&]/g, '')}); this is the 2D graph.</p>` })
+        }
+
         // ---- what moves ----
         const lines = new Map(), fly = [], hot = new Map(), seen = SEEN, queue = []
         let alive = true, raf = 0, timer = 0, built = 0, lastOk = 0, last = 0, debt = 0, flowN = 0, weights = [], wsum = 0, act = 1
@@ -132,13 +158,16 @@
             for (let i = fly.length - 1; i >= 0; i--) {
                 const f = fly[i], u = (now - f.t0) / f.ms
                 if (u >= 1) { f.dot.remove(); if (f.halo) f.halo.remove(); if (f.flow) flowN--; fly.splice(i, 1); continue }
+                f.u = u; if (r3) continue
                 const a = pos.get(f.from), b = pos.get(f.to), q = bend(a, b), v = 1 - u
                 const x = f1(v * v * a.x + 2 * v * u * q.x + u * u * b.x), y = f1(v * v * a.y + 2 * v * u * q.y + u * u * b.y)
                 f.dot.setAttribute('cx', x); f.dot.setAttribute('cy', y); if (f.halo) { f.halo.setAttribute('cx', x); f.halo.setAttribute('cy', y) }
                 if (f.flow) f.dot.style.opacity = (0.55 + 0.45 * Math.sin(Math.PI * u)).toFixed(2)
             }
-            for (const [, e] of lines) { const age = now - e.at, fa = e.flowAt ? now - e.flowAt : 1e9, fop = fa < e.flowMs ? 0.75 : Math.max(0, 0.75 * (1 - (fa - e.flowMs) / 1500)), op = Math.max(fop, age < TRAVEL_MS ? 0.95 : Math.max(0, 0.95 * (1 - (age - TRAVEL_MS) / FADE_MS))); const v = op.toFixed(2); if (v !== e.op) { e.op = v; e.path.setAttribute('stroke-opacity', v) } }
+            for (const [, e] of lines) { const age = now - e.at, fa = e.flowAt ? now - e.flowAt : 1e9, fop = fa < e.flowMs ? 0.75 : Math.max(0, 0.75 * (1 - (fa - e.flowMs) / 1500)), op = Math.max(fop, age < TRAVEL_MS ? 0.95 : Math.max(0, 0.95 * (1 - (age - TRAVEL_MS) / FADE_MS))); const v = op.toFixed(2); if (v !== e.op) { e.op = v; if (!r3) e.path.setAttribute('stroke-opacity', v) } }
             for (const [id, until] of hot) if (until <= now) { hot.delete(id); N.get(id).classList.remove('lv-hot') }
+            // 3D: the same state, drawn in WebGL; the dots breathe more when the team is busier
+            if (r3) { try { r3.draw({ now, fly, lines, hot, ran: ranSet, breath: 0.035 + 0.035 * Math.min(2, act) }) } catch (e) { r3 = null } }
             raf = win.requestAnimationFrame(frame)
         }
         const kick = () => { if (!raf && alive) raf = win.requestAnimationFrame(frame) }
@@ -160,6 +189,7 @@
             act = evs.length ? hour / (evs.length / 48) : 1
             const ran = new Set(evs.filter(e => nowMs - e.ms < 2 * 36e5).map(e => nodeOf(e.agent)))
             for (const [id, g] of N) if (pos.get(id).fresh) g.classList.toggle('lv-ran', ran.has(id))
+            ranSet = ran
         }
         async function read(first) {
             try {
@@ -189,7 +219,7 @@
         const again = () => { if (!alive || win.document.visibilityState === 'hidden') return; win.clearTimeout(timer); read(false) }
         win.addEventListener('online', again); win.document.addEventListener('visibilitychange', again)
         read(true); kick()
-        return { destroy() { alive = false; win.clearTimeout(timer); if (raf) win.cancelAnimationFrame(raf); fly.length = 0; win.removeEventListener('online', again); win.document.removeEventListener('visibilitychange', again) } }
+        return { destroy() { alive = false; if (r3) { r3.destroy(); r3 = null } win.clearTimeout(timer); if (raf) win.cancelAnimationFrame(raf); fly.length = 0; win.removeEventListener('online', again); win.document.removeEventListener('visibilitychange', again) } }
     }
 
     // ---- the page view (#live) and the pop-out ----
@@ -227,7 +257,10 @@
         let css = '', cssAt = 0; const bg = root.getComputedStyle(document.documentElement).getPropertyValue('--rm-bg').trim() || '#07111F'
         let busy = false, alive = true
         const draw = () => {
-            const s = src(); if (!alive || busy || !s) return; busy = true
+            const s = src(); if (!alive || busy || !s) return
+            const c3 = s.parentNode && s.parentNode.querySelector('.lv-3dc')
+            if (c3) { cx.fillStyle = bg; cx.fillRect(0, 0, cv.width, cv.height); try { cx.drawImage(c3, 0, 0, cv.width, cv.height) } catch { } return }   // 3D: the WebGL picture itself
+            busy = true
             const c = s.cloneNode(true); c.setAttribute('xmlns', NS); c.setAttribute('width', W * R); c.setAttribute('height', W * R); c.setAttribute('class', 'lv lv-svg tm-svg')
             if (!css || Date.now() - cssAt > 60000) { css = svgStyle(document, new root.XMLSerializer().serializeToString(s)); cssAt = Date.now() }   // again each minute: new agents, new colours
             const st = document.createElementNS(NS, 'style'); st.textContent = css; c.insertBefore(st, c.firstChild)
@@ -246,6 +279,7 @@
     }
     // full screen: the standard call, or Safari's (iPad and Mac); an iPhone has neither for a page, so the button is not shown there
     const fsOf = e => e.requestFullscreen ? () => e.requestFullscreen() : e.webkitRequestFullscreen ? () => e.webkitRequestFullscreen() : null
+    const is3d = () => { try { return /(^|[?&])d3=1(&|$)/.test(root.location.search.slice(1)) || /[?&]d3=1(&|$)/.test(root.location.hash) } catch { return false } }
     const isDisplay = () => { try { return /(^|[?&])display=1(&|$)/.test(root.location.search.slice(1)) || /[?&]display=1(&|$)/.test(root.location.hash) } catch { return false } }
     // display mode keeps the screen awake where the browser allows it (asked again whenever the page is shown) and reloads every
     // six hours, at a moment with nothing in flight, so a screen left on for days returns all its memory
@@ -255,7 +289,7 @@
         if (current) { current.destroy(); current = null }
         if (!document.getElementById('lv-css')) { stylesInto(document); document.head.lastChild.id = 'lv-css' }
         host.innerHTML = '<div class="lv-display" data-lv-display></div>'
-        current = mount(host.querySelector('[data-lv-display]'), { ...o, win: root })
+        current = mount(host.querySelector('[data-lv-display]'), { ...o, win: root, d3: is3d() })
         wake(); if (!root.__lvWake) { root.__lvWake = true; document.addEventListener('visibilitychange', wake) }
         // no controls; Esc leaves display mode for the normal view
         if (!root.__lvEsc) { root.__lvEsc = true; root.addEventListener('keydown', e => { if (e.key === 'Escape' && isDisplay()) root.location.href = root.location.pathname + '#live' }) }
@@ -265,10 +299,11 @@
     function view(host, o) {
         if (isDisplay()) return display(host, o)
         if (current) { current.destroy(); current = null }
+        const d3 = is3d()
         if (!host.ownerDocument.getElementById('lv-css')) { stylesInto(host.ownerDocument); host.ownerDocument.head.lastChild.id = 'lv-css' }
-        host.innerHTML = `<div class="lv-page"><div class="lv-bar"><button type="button" class="cc-btn" data-lv-pop>⧉ Pop out</button><button type="button" class="cc-btn" data-lv-fs hidden>⛶ Full screen</button><a class="cc-btn" data-lv-display href="?display=1#live">Display mode</a><span class="note" data-lv-note>${pipMode() === 'doc' ? 'An always-on-top window with this graph. Close it to come back here.' : pipMode() === 'video' ? 'A floating window with this graph, over your other windows and apps. It moves while this page is open; close it from its own window.' : 'Pop-out needs Chrome or Edge on a computer, or Safari on a Mac or iPad. Otherwise use Full screen, or Display mode for a screen left on.'}</span></div><div class="lv-frame" data-lv-frame></div><p class="note">Lines and dots only. Each exchange between agents (a commit with a For: line, in any repository the agents work in: this site, its workers' branches, the newsroom, the apps) travels along its line a few minutes after it is made, at its real pace. The faint dots between are the flow of recent hours: busier pairs, more dots. A dashed ring that turns slowly is an agent that starts a fresh session each run: it is there between runs, and its ring is bright for two hours after it last sent something. The light in the corner shows only when the data is late or cannot be read. Names, edges and times only: no message text.</p></div>`
+        host.innerHTML = `<div class="lv-page"><div class="lv-bar"><button type="button" class="cc-btn" data-lv-pop>⧉ Pop out</button><button type="button" class="cc-btn" data-lv-fs hidden>⛶ Full screen</button><a class="cc-btn" data-lv-3dsw aria-pressed="${d3}" href="${d3 ? root.location.pathname + root.location.search.replace(/([?&])d3=1(&|$)/, '$1').replace(/[?&]$/, '') + '#live' : '#live?d3=1'}" title="${d3 ? 'Back to the flat graph' : 'The same live graph in 3D: drag to turn it; loads 1.6 MB of 3D libraries'}">${d3 ? '✓ 3D' : '3D'}</a><a class="cc-btn" data-lv-display href="?display=1${d3 ? '&d3=1' : ''}#live">Display mode</a><span class="note" data-lv-note>${pipMode() === 'doc' ? 'An always-on-top window with this graph. Close it to come back here.' : pipMode() === 'video' ? 'A floating window with this graph, over your other windows and apps. It moves while this page is open; close it from its own window.' : 'Pop-out needs Chrome or Edge on a computer, or Safari on a Mac or iPad. Otherwise use Full screen, or Display mode for a screen left on.'}</span></div><div class="lv-frame" data-lv-frame></div><p class="note">Lines and dots only. Each exchange between agents (a commit with a For: line, in any repository the agents work in: this site, its workers' branches, the newsroom, the apps) travels along its line a few minutes after it is made, at its real pace. The faint dots between are the flow of recent hours: busier pairs, more dots. A dashed ring that turns slowly is an agent that starts a fresh session each run: it is there between runs, and its ring is bright for two hours after it last sent something. The light in the corner shows only when the data is late or cannot be read. Names, edges and times only: no message text.</p></div>`
         const frame = host.querySelector('[data-lv-frame]'), btn = host.querySelector('[data-lv-pop]'), note = host.querySelector('[data-lv-note]')
-        const inline = () => { current = mount(frame, { ...o, win: root }) }
+        const inline = () => { current = mount(frame, { ...o, win: root, d3, keep3d: pipMode() === 'video' }) }
         if (popped) { frame.innerHTML = '<p class="note" style="padding:16px">Popped out.</p>' } else inline()
         const mode = pipMode(); btn.disabled = !mode
         const fb = host.querySelector('[data-lv-fs]'), go = fsOf(frame)
@@ -288,12 +323,12 @@
                 copyTheme(document, w.document); stylesInto(w.document)
                 const st = w.document.createElement('style'); st.textContent = 'html,body{margin:0;height:100%;background:var(--rm-bg,#07111F)} body>div{height:100%}'; w.document.head.appendChild(st)
                 const box = w.document.createElement('div'); w.document.body.appendChild(box)
-                const inst = mount(box, { ...o, win: w })
+                const inst = mount(box, { ...o, win: w, d3 })
                 frame.innerHTML = '<p class="note" style="padding:16px">Popped out. Close its window to bring the graph back here.</p>'; btn.textContent = '✕ Bring it back'
-                w.addEventListener('pagehide', () => { inst.destroy(); popped = null; if (host.isConnected) { btn.textContent = '⧉ Pop out'; frame.innerHTML = ''; current = mount(frame, { ...o, win: root }) } })
+                w.addEventListener('pagehide', () => { inst.destroy(); popped = null; if (host.isConnected) { btn.textContent = '⧉ Pop out'; frame.innerHTML = ''; current = mount(frame, { ...o, win: root, d3, keep3d: pipMode() === 'video' }) } })
             } catch (e) { note.textContent = 'The pop-out window could not open: ' + (e && e.message ? e.message : e) }
         }
         return { destroy() { if (current) { current.destroy(); current = null } } }
     }
-    root.AngeloLive = { mount, view, supported, isDisplay }
+    root.AngeloLive = { mount, view, supported, isDisplay, is3d }
 })(typeof self !== 'undefined' ? self : this)

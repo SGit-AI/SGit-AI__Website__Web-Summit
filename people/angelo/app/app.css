@@ -207,6 +207,10 @@ nav.ak-switch .ak-mk { color: var(--rm-gold); font-size: 11px; margin-left: 2px;
 .tm-3d-on .tm-svg { visibility: hidden; }
 .tm-3d { position: absolute; inset: 0; overflow: hidden; border-radius: 12px; }
 .tm-3d > .note { margin: 0; padding: 16px; }
+.tm-3d { touch-action: none; cursor: grab; } .tm-3d:active { cursor: grabbing; }
+.tm-3d canvas { display: block; }
+.tm-3d .lv-3dl { position: absolute; left: 0; top: 0; pointer-events: none; font: 600 12px/1 var(--rm-font, system-ui, sans-serif); color: var(--rm-text); text-shadow: 0 0 4px var(--rm-bg), 0 0 2px var(--rm-bg); white-space: nowrap; }
+.tm-3d .tm-3dlive { position: absolute; right: 10px; bottom: 10px; }
 .tm-svg { width: 100%; height: auto; display: block; }
 .tm-links path { fill: none; opacity: .35; }
 .tm-links path.on { opacity: .9; }
