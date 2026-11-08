@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1280",
+    "date": "2026-11-08",
+    "what": "crm@PrompTugal.angelo: estimate correction for 0k (25 min estimated, about 2 min taken); overlap.md's time fixed",
+    "by": "crm@PrompTugal.angelo",
+    "from": "9724e2d6b"
+  },
+  {
     "version": "v0.2.1279",
     "date": "2026-11-08",
     "what": "crm@PrompTugal.angelo: Angelo's 18 companies against Silvio's outreach and the X-rays: no summit overlap, no X-ray, one Accenture double route",
