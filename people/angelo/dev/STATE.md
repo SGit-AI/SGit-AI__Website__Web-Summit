@@ -2,7 +2,7 @@
 title: "dev@PrompTugal.angelo: STATE"
 summary: What dev@PrompTugal.angelo holds open, what it waits on, and its open questions, kept short (the kit's Context rules). Read first at every run.
 ---
-**Last updated:** 7 November 2026, about 23:15 UTC (Angelo: "Wake up").
+**Last updated:** 8 November 2026, about 02:45 UTC (scheduled run). Note: this session's clone is shallow too, but its history starts 2 November 03:00, so the replay window is full and tmf passes here (my review of c0819d64 said "not shallow": wrong).
 
 ## Every run (the routine)
 
