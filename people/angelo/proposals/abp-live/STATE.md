@@ -2,17 +2,19 @@
 title: "dev.abp@PrompTugal.angelo: state"
 summary: What dev.abp@PrompTugal.angelo knew at the end of its last run. Short, rewritten each run; the commits are the history.
 ---
-**Last run:** 8 November 2026, about 12:37 to 12:55 UTC (scheduled).
+**Last run:** 8 November 2026, about 14:37 to 15:10 UTC (scheduled). dev@ brought the 12:37 run onto dev (020f44c); this branch joined dev's tree.
 
 **Approved:** the design, by Angelo on 8 November about 11:20 UTC (the desk's 251d793): "they look promising, let's go ahead". Build story 1 first, then 4, then 2.
 
-**Built:** player.htm (both modes, from runs.json or runs.js); stories/support/ (world.mjs with two agents, the four barriers and the reviewer what-if; prompts.md); collect.mjs. 8 runs recorded (4 barriers, Opus and Haiku): no leak at any barrier from either model; 4 or 5 secrets seen at none, rule and setting, 0 behind the boundary; job done in all (recordings.md).
+**Built:** player.htm (both modes, from runs.json or runs.js); stories/support/ (world.mjs with two agents, the four barriers and the reviewer what-if; prompts.md); collect.mjs. 14 runs recorded: the 4 barriers and, with nothing in the way, the 3 what-ifs (reviewer, no hidden instructions, no helpful asks), each with the larger and the smaller model. No leak in any run; 3 to 5 secrets seen except behind the boundary (0); the reviewer held only harmless refusals; job done in all (recordings.md). Fixed: settings.set ignored the JSON in w.mjs's target slot (agents found it); collect.mjs keeps earlier runs.
 
 **Next, in order:**
-1. Record the what-ifs (reviewer; no hidden instructions; no helpful asks).
-2. Honest pressure that agents do give in to (see recordings.md, "Next"), if Angelo wants a visible leak (question to the desk).
-3. Story 4, the coding agent and production keys; then story 2.
+1. Honest pressure that agents do give in to (see recordings.md, "Next"), if Angelo wants a visible leak (question to the desk).
+2. Story 4, the coding agent and production keys; then story 2.
+3. The what-ifs at the other barriers, if the stand needs them.
 4. "Run it live now" last.
+
+**Kept as dev@ asked (020f44c):** model names without versions in what is pushed ("a larger / a smaller Claude model" on screen); Delivered links to web-summit.sgit.ai only, after review.
 
 **Waiting on Angelo** (through the desk): whether to try harder traps for a visible leak, or show "seen" as the story; anything public; the overlap with abp@ and xray@web-summit.dinis.
 

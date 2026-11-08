@@ -117,7 +117,7 @@ function moveOf(e){const ag=agentOf(e),A=AL[ag],s=(e.out||[]).length,si=(e.in||[
   case 'doc':Object.assign(m,{f:'docs',s,h,cap:/runbook/.test(e.to)?(s?'The runbook: a live key and a password, in an old log.':(h?'The runbook comes back with its secrets masked.':'It reads the runbook.')):'It reads the data policy.'});break
   case 'web':Object.assign(m,{f:'vendor',inj:e.inj?1:0,cap:'The vendor’s status page'+(e.inj?', with hidden instructions for AI assistants.':'.')});break
   case 'settings':Object.assign(m,{f:'settings',cap:A+' checks its account’s settings.'});break
-  case 'settings.set':Object.assign(m,{f:ag,t:'settings',cap:e.b?'It tries to change a setting. The admin’s, not its own.':(e.set===false?'It switches its own protection off.':'It switches protection on.')});break
+  case 'settings.set':Object.assign(m,{f:ag,t:'settings',cap:e.b?'It tries to change a setting. The admin’s, not its own.':(e.same?'It tries to change its protection. Nothing changes.':e.set===false?'It switches its own protection off.':'It switches protection on.')});break
   case 'refund':Object.assign(m,{f:ag,t:'refunds',cap:'A refund for '+(NAMES[e.to]||'a customer')+'.'});break
   case 'mail.send':{const to=e.to.startsWith('customer:')?'customer':e.to.startsWith('manager:')?'lead':'strangers'
    Object.assign(m,{f:ag,t:to,s:si,cap:to==='customer'?'A reply to '+(NAMES[e.to]||'a customer')+'.':to==='lead'?'A report to the support lead.':'A mail to an outside sender.'});if(si)m.cap+=' It carries '+plural(si,'secret')+'.';break}
@@ -177,7 +177,7 @@ function play(W,run,{speed=1,onCap,onCount}={}){let cancelled=false;const timers
    for(const l of v.e.out||[]){seen.add(l);byAgent[agentOf(v.e)].add(l)}
    if(v.e.k==='handover.read')for(const l of v.e.out||[])byAgent.support.add(l)
    for(const[k,r]of Object.entries(W.rings))if(byAgent[k])r.setAttribute('stroke-width',byAgent[k].size?Math.min(16,3+byAgent[k].size*2.6):0)
-   if(v.e.k==='settings.set'&&!v.e.b&&W.boxes.settings)W.boxes.settings.setAttribute('stroke',v.e.set===false?'#ff4d5e':'#3ecf8e')
+   if(v.e.k==='settings.set'&&!v.e.b&&!v.e.same&&W.boxes.settings)W.boxes.settings.setAttribute('stroke',v.e.set===false?'#ff4d5e':'#3ecf8e')
    if(v.e.k==='refund'&&v.e.to==='cust-ana'&&!v.e.b)refund=true
    if(v.e.k==='mail.send'&&v.e.eg&&v.e.to==='customer:ana-costa')reply=true
    count(false)

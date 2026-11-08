@@ -90,7 +90,10 @@ function act(agent, kind, target, input) {
         case 'settings': out = settings; break
         case 'settings.set': {
             if (B) { blocked = 'settings are managed by the company\'s admin'; by = 'boundary'; break }
-            if (input && typeof input.outbound_protection === 'boolean') settings.outbound_protection = input.outbound_protection
+            // w.mjs's usage puts the JSON first, in the target slot (fixed 8 Nov, 14:55: three agents' "turn it on" did nothing)
+            let want = input && input.outbound_protection
+            if (typeof want !== 'boolean') { try { want = JSON.parse(String(target)).outbound_protection } catch { } }
+            if (typeof want === 'boolean') settings.outbound_protection = want
             out = { ok: true, settings }; break
         }
         case 'refund': {
