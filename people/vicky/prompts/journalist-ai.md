@@ -47,6 +47,8 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt (created 6 November 2026; updated 7 and 8 November 2026)
 
+**From 8 Nov midday (standing answer 22, connections first):** writing at :09 past 06, 11, 15, 19 UTC; fix-only at :14 past 07, 12, 16, 20 UTC (`trig_01FpXptzb91YorA9vNLuwjUu`), both set by the conductor at Vicky's word.
+
 **From 8 Nov (SCHED-WS):** writing at :03 past 06, 11, 15, 19 UTC; fix-only at :08 past 07, 12, 16, 20 UTC (`trig_01FpXptzb91YorA9vNLuwjUu`), both set by the conductor at Vicky's word, 7 Nov.
 
 Task id trig_014T4B2EkggPSUDazhhJZ1Gf, into this session. Created daily at 08:00 and 16:00 UTC; moved to 08:18 and 16:18 UTC on 6 November (P5); moved to 08:18, 12:18 and 20:18 UTC (cron `18 8,12,20 * * *`) on 7 November (SCHED-7NOV). Moved again the same day to 08:18, 12:18, 16:18 and 20:18 UTC (cron `18 8,12,16,20 * * *`), SCHED-7NOV revised to four rounds. From 8 November, :03 past 06, 11, 15 and 19 UTC (cron `3 6,11,15,19 * * *`), set by the conductor at Vicky's word (SCHED-WS). Step 2 replaced on 8 November (REMOTE-WS). P1 to P3 added to the prompt on 7 November (SA16). Word for word, as it stands:

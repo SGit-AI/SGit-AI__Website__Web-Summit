@@ -48,11 +48,12 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - P3 (the status line): End every run's report line with: `state: ok|partial|idle|blocked; done: ...; next: ...; ask: ... (or none); run: scheduled|prompted`. If the run found nothing to do, write only `state: idle` and push nothing else.
 17. **The reviewer fixes, the reviewer lists** (Vicky, 7 Nov; for the reviewer): when a draft only needs wording, structure, caption, image or length fixes, make them yourself and mark it Ready. Send it back as fix-first only for problems of fact or source, or anything you cannot check. At the end of every run, list the Ready drafts in your reply with a publish line Vicky can copy. (This widens standing answer 13's "small" edits; publishing still only at her word.)
 18. **A fix-only follow-up run after each reviewer round** (Vicky, 7 Nov; for the five journalists): not a new writing round. It only checks your own reviews in `desks/reviewer-vicky/reviews/` for any new Fix first result, revises and repushes that draft if needed, stays silent if there is nothing to fix, and does not pick up a new storyline. It is a second scheduled task of your own beside your four writing rounds; the conductor created it at Vicky's word on 7 Nov (see SCHED-WS below for its id). Times (UTC, the Web Summit timetable from 8 Nov):
-    - journalist: 06:50, 11:50, 15:50, 19:50
-    - journalist-portugal: 06:56, 11:56, 15:56, 19:56
-    - journalist-europe: 07:02, 12:02, 16:02, 20:02
-    - journalist-ai: 07:08, 12:08, 16:08, 20:08
-    - journalist-connections: 07:14, 12:14, 16:14, 20:14
+    - journalist-connections: 06:50, 11:50, 15:50, 19:50
+    - journalist: 06:56, 11:56, 15:56, 19:56
+    - journalist-portugal: 07:02, 12:02, 16:02, 20:02
+    - journalist-europe: 07:08, 12:08, 16:08, 20:08
+    - journalist-ai: 07:14, 12:14, 16:14, 20:14
+    (Order changed at Vicky's word, 8 Nov: journalist-connections first; standing answer 22.)
 
 19. **Theme-led connection stories** (Vicky, 7 Nov; for the curator and journalist-connections). Use only public information. Do not use CRM data, private meetings, interview shortlist information or private outreach.
     - Curator: actively create connection storylines when public information supports them; start from a useful theme, industry, market, problem or situation; identify relevant people and companies worth knowing within that theme; route these storylines to journalist-connections. (People may now be named, replacing "organisations only" for these storylines; as always, nothing about a person that is not already public and professional.)
@@ -68,6 +69,11 @@ Ask one question, with your recommendation, at the end of your report (`people/v
 
 21. **The Live AI Office** (Vicky, 8 Nov; for dev and the dashboard agent; every agent reads it). A near-live pixel-art office of Vicky's agents at `/people/vicky/office/`, built by dev@PrompTugal.vicky from the brief Vicky sends it herself. Her choices: original pixel-art characters (CC0 furniture assets allowed; no Star Office UI or LimeZu art); inbox and vault shown as "On demand", with none of their activity. Public-safe facts only (names, roles, states, times, counts); never report text, prompts, ids, keys, or anything about the CRM, vaults or the shortlist. Files: `people/vicky/office/**` (dev's), one `office()` function in `people/vicky/pages.mjs`, and one link on the "My agents" line of `people/vicky/dashboard.md`. No change to any schedule, agent prompt or newsroom production. **Nothing is pushed or released until Vicky has reviewed and approved the screenshots.**
     - Dashboard agent: keep `· [Live AI Office](office/index.html)` on the "My agents" line, after Work so far, whenever you rebuild `dashboard.md`; never remove it. If a rebuild would drop it, put it back and say so in your report.
+
+22. **Connections first, and up to three connection stories a run** (Vicky, 8 Nov, about 12:45 UTC; for the curator, the five journalists and the reviewer). "Connections is currently producing the most useful new material, while several other beats are often idle."
+    - Order in every writing round and every fix-only round: journalist-connections, journalist, journalist-portugal, journalist-europe, journalist-ai, six minutes apart (times in standing answer 18 and SCHED-WS). The conductor moved the tasks at Vicky's word; the reviewer's times are unchanged.
+    - journalist-connections may write up to 3 stories in one writing run, in the curator's priority order, as long as: each storyline is already listed by the curator; each has enough verified public information; the duplicate checks (standing answer 20) have passed; quality does not drop. "Do not create extra stories just to fill the quota." The other journalists keep "at most two".
+    - Curator: list connection storylines in priority order, and mark which are mature enough to write now.
 
 ## Updates for agents
 
@@ -100,9 +106,9 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 > - programme: 05:00 (task trig_01RhHHq7KU16JfguhbU1d7HU)
 > - researcher: 05:15, 10:15, 14:15, 18:15 (trig_01KV2FctiUnh6ratBLVcsfSj)
 > - curator: 05:30, 10:30, 14:30, 18:30 (trig_01QqwpxE9hhp5rwuxSS9D9ZF)
-> - writing, six minutes apart: journalist 05:45, 10:45, 14:45, 18:45 (trig_01SpLzX33tb8C82iAaPMBy3d); journalist-portugal :51 past 05, 10, 14, 18 (trig_01R4SDnvm1qg6LrQVcmCRPaH); journalist-europe :57 past 05, 10, 14, 18 (trig_01KRJSLJ46fntBKdqukvLoKx); journalist-ai 06:03, 11:03, 15:03, 19:03 (trig_014T4B2EkggPSUDazhhJZ1Gf); journalist-connections 06:09, 11:09, 15:09, 19:09 (trig_01RqSqjPAC6WuwNmTbjKFzwa)
+> - writing, six minutes apart (order from 8 Nov midday, standing answer 22): journalist-connections 05:45, 10:45, 14:45, 18:45 (trig_01RqSqjPAC6WuwNmTbjKFzwa); journalist :51 past 05, 10, 14, 18 (trig_01SpLzX33tb8C82iAaPMBy3d); journalist-portugal :57 past 05, 10, 14, 18 (trig_01R4SDnvm1qg6LrQVcmCRPaH); journalist-europe 06:03, 11:03, 15:03, 19:03 (trig_01KRJSLJ46fntBKdqukvLoKx); journalist-ai 06:09, 11:09, 15:09, 19:09 (trig_014T4B2EkggPSUDazhhJZ1Gf)
 > - reviewer, first review: 06:15, 11:15, 15:15, 19:15 (trig_01JzwYcUkMpfFThdm1mbeGgs)
-> - fix-only (standing answer 18), new tasks the conductor created in your own sessions: journalist 06:50, 11:50, 15:50, 19:50 (trig_01ENwR7p1ggLZHK2RcyBPTud); journalist-portugal :56 past 06, 11, 15, 19 (trig_015W8aURM2zEyH9Sd9gJvzNx); journalist-europe :02 past 07, 12, 16, 20 (trig_01A87nPnVKv8jMhzDzwi5eYU); journalist-ai :08 past 07, 12, 16, 20 (trig_01FpXptzb91YorA9vNLuwjUu); journalist-connections :14 past 07, 12, 16, 20 (trig_014fa4xbTLFyrXdfF4pzv8KD)
+> - fix-only (standing answer 18), same order: journalist-connections 06:50, 11:50, 15:50, 19:50 (trig_014fa4xbTLFyrXdfF4pzv8KD); journalist :56 past 06, 11, 15, 19 (trig_01ENwR7p1ggLZHK2RcyBPTud); journalist-portugal :02 past 07, 12, 16, 20 (trig_015W8aURM2zEyH9Sd9gJvzNx); journalist-europe :08 past 07, 12, 16, 20 (trig_01A87nPnVKv8jMhzDzwi5eYU); journalist-ai :14 past 07, 12, 16, 20 (trig_01FpXptzb91YorA9vNLuwjUu)
 > - reviewer, re-check (a second task, new): 07:20, 12:20, 16:20, 20:20 (trig_01YQwEh2Z2UAjZX6vkrBqdNj). It looks first at drafts revised after a Fix first and applies standing answer 17.
 > - unchanged: dashboard, pm, logistics, checker, scout. The conductor: brief 08:30, light check 17:30, relay 20:45.
 
@@ -122,6 +128,12 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 > Researcher: in your scheduled task's prompt (you change it yourself; keep the rest word for word), after "Collect what is new since the last capture: ... and announcements." add: "Also, for theme-led connection stories (standing answer 19): people and companies that a public Web Summit source confirms as attending, speaking, exhibiting or otherwise taking part, each capture naming that source; with public professional context only (role, organisation, what it does), each fact with its source and date read, grouped by theme. Nobody who cannot be tied to Web Summit participation; nothing private." Update the copy in your prompts file and confirm "applied SA19C".
 > Curator and journalist-connections: add standing answer 19's workflow paragraph to your prompts file (curator: work from the researcher's captures and the published articles only; journalist-connections: write only storylines the curator has listed), and confirm "applied SA19C".
 
+**SA22, connections first and up to three stories** (Vicky, 8 Nov, about 12:45 UTC). For: curator, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections.
+> Vicky: "Please move journalist-connections to the first journalist slot in each round, then keep the others staggered by 6 minutes after it ... Apply the same ordering to the fix-only round." and "If the curator has multiple mature connection storylines ready, journalist-connections may write up to 3 in the same run, in priority order ... Do not create extra stories just to fill the quota."
+> The conductor has already moved your writing and fix-only tasks (times in standing answer 18 and SCHED-WS); do not change them. Put your new times in your prompts file and confirm "applied SA22".
+> journalist-connections: in your writing task's prompt (you change it yourself; keep the rest word for word), replace "5. Write at most two of them, one at a time," with "5. Write up to three of them (standing answer 22: only storylines the curator lists, in its priority order, each with enough verified public information and past the duplicate checks; never one just to fill the number), one at a time,". Add standing answer 22 to your prompts file.
+> Curator: add standing answer 22's curator line to your prompts file and your task's prompt (list connection storylines in priority order and mark which are mature enough to write now).
+
 Still to confirm (8 Nov, 08:45 UTC; the rest have confirmed):
 - P10: vault, designer, dev.
 - P17: journalist-ai, journalist-portugal, vault, designer, dev.
@@ -134,6 +146,7 @@ Still to confirm (8 Nov, 08:45 UTC; the rest have confirmed):
 - SCHED-WS: curator, journalist (both tasks already run at the new times).
 - SA19B: curator, journalist-connections.
 - SA19C: researcher, curator, journalist-connections.
+- SA22: curator, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections.
 
 Removed on 8 Nov once every agent they were for had confirmed them: SA17, SA19, SA20, REMOTE-WS, CURATOR-WS, PROGRAMME-WS and SA21. They stay in force through the standing answers and the agents' own prompts.
 

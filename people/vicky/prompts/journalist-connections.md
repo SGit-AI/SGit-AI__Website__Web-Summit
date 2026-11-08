@@ -45,6 +45,8 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt (6 November 2026)
 
+**From 8 Nov midday (standing answer 22, connections first):** writing 05:45, 10:45, 14:45, 18:45 UTC, up to three stories a run; fix-only 06:50, 11:50, 15:50, 19:50 UTC (`trig_014fa4xbTLFyrXdfF4pzv8KD`), both set by the conductor at Vicky's word.
+
 **From 8 Nov (SCHED-WS):** writing at :09 past 06, 11, 15, 19 UTC; fix-only at :14 past 07, 12, 16, 20 UTC (`trig_014fa4xbTLFyrXdfF4pzv8KD`), both set by the conductor at Vicky's word, 7 Nov.
 
 Daily at 08:24, 12:24, 16:24 and 20:24 UTC since 7 November 2026, 20:25 UTC (SCHED-7NOV, four rounds; from 16:25 that day it was three rounds, 08:24, 12:24 and 20:24; before that 08:24 and 16:24 from P5, and 08:00 and 16:00 at first), firing into this session (scheduled task trig_01RqSqjPAC6WuwNmTbjKFzwa).

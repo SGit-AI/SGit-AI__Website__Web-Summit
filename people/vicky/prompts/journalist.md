@@ -42,6 +42,8 @@ Start now: set up your key, read the curator's README, and tell me in plain word
 
 ## Scheduled task prompt (6 November 2026)
 
+**From 8 Nov midday (standing answer 22, connections first):** writing at :51 past 05, 10, 14, 18 UTC; fix-only at :56 past 06, 11, 15, 19 UTC (`trig_01ENwR7p1ggLZHK2RcyBPTud`), both set by the conductor at Vicky's word.
+
 **From 8 Nov (SCHED-WS):** writing 05:45, 10:45, 14:45, 18:45 UTC; fix-only 06:50, 11:50, 15:50, 19:50 UTC (`trig_01ENwR7p1ggLZHK2RcyBPTud`), both set by the conductor at Vicky's word, 7 Nov.
 
 Task trig_01SpLzX33tb8C82iAaPMBy3d, into this session. From 8 November at 05:45, 10:45, 14:45 and 18:45 UTC (cron `45 5,10,14,18 * * *`, SCHED-WS, set by the conductor at Vicky's word on 7 Nov); before that 08:00 and 16:00, then three and four rounds on 7 November. Step 2 replaced on 8 November (REMOTE-WS), into this session. Set up at Vicky's word on 6 November 2026; word for word, with the lines added on 7 November at the end:
