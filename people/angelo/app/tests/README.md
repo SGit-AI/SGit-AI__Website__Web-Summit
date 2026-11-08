@@ -23,6 +23,7 @@ Or run just some of them, for example `people/angelo/app/tests/run.sh tm tmf tml
 | `rp` | the timeline under the map (`#replay` redirects there): filters in the address, a commit's detail; the clip (`#replay?c=1`) stays its own view |
 | `tmtl` | one clock: the map's controls move the timeline's playhead, a commit picked on the timeline moves the map; old `#replay` addresses land on the map; Replay is out of the menu |
 | `lvrepo` | the live graph draws every repository the agents work in: live.json carries the others' exchanges (names and times only), and one from another repository travels as a bright pulse; light and dark |
+| `lvfresh` | the live graph's sessionless agents: every agent declared as a fresh session each run is drawn with the dashed ring, even one not yet on the map; its ring lights for two hours after it sends something |
 | `arcs` | the timeline's arcs (For: lines), following the map's clock |
 | `sd` | Summit days: today, now and next |
 | `wzone` | Where: a zone by default, an exact spot only as a deliberate second step (WS-181, option C) |

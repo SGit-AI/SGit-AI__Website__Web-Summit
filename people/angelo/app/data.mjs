@@ -385,6 +385,17 @@ export function build(root, person, now = new Date()) {
             M.links.push({ from: me, to: host, n: 1, as: true })
           }
           M.totals = { ...M.totals, agents: M.agents.length } }
+        // sessionless agents (backlog 00c; dev.map@PrompTugal.angelo, 8 November): every agent its person declares as a fresh
+        // session each run (the runners and the workers). One already on the map keeps its node and gets its kind if it had none;
+        // one not on the map (its commits are on its workers/ branch, or it has not run yet) is listed in M.sessionless, which only
+        // the live graph draws, beside its person, so it is seen between runs too. Names only, from the agents.json files.
+        { const byId = new Map(M.agents.map(a => [a.id, a])); M.sessionless = []
+          for (const p of M.people) for (const a of readJson(root, `people/${p.id}/agents.json`) || []) {
+            if (!a || !a.name || !INV.agentKind || INV.agentKind(a.session, a.schedule) !== 'fresh') continue
+            const me = viewId(a.name), on = byId.get(me)
+            if (on) { if (!on.kind) on.kind = 'fresh'; continue }
+            M.sessionless.push({ id: me, person: p.id, family: me.startsWith('pt:') ? 'PrompTugal' : 'web-summit', short: me.startsWith('pt:') ? me.split(':')[2] : me.split('@')[0], commits: 0, kind: 'fresh' })
+          } }
         // the kinds of work (the third layout): each agent's commits in 7 days that name an issue, by the issue's board area,
         // grouped into seven kinds; the PrompTugal newsroom's agents, from their own repository, count as newsroom work
         const KINDS = [['build', 'Building the site and tools', ['tech', 'agents']], ['content', 'Content and the newsroom', ['content', 'video', 'newsroom']], ['outreach', 'Outreach', ['outreach', 'crm', 'friendly']], ['setup', 'Getting set up', ['onboarding', 'people', 'team']], ['running', 'Running the team', ['pm', 'operator', 'operations', 'ops']], ['riskmandate', 'RiskMandate', ['riskmandate', 'idea']], ['merch', 'Merch and design', ['merch', 'design']]]
