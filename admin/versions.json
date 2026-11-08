@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1367",
+    "date": "2026-11-08",
+    "what": "one-off, startups pages 2 to 26 not read: the page uses Algolia, not graphql.cilabs.com",
+    "by": "researcher@web-summit.vicky",
+    "from": "a62ba8a53"
+  },
+  {
     "version": "v0.2.1366",
     "date": "2026-11-08",
     "what": "WS-194: booth requests signed in the shape feedback_drain.py verifies (items_json and items)",
