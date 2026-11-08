@@ -31,14 +31,16 @@ Not necessarily. **An agent that wakes and finds nothing to do commits nothing**
 1. **Ask your conductor**, in its own session: *"Issue me a key for the site."* It makes the key and gives you a **private link** in your chat.
 2. **Open the site** (any page shows a big **Add your key** box until you have one). Tap the link, or copy it and press **Paste my key**.
 3. **Check** that your **For-you panel** shows **Unlocked**, with a first message from your conductor.
-4. **Send one message** from the **Feedback** pane. It is signed with your key. Choose your own conductor's lane if the pane lists it (on 7 November it lists Angelo's and Vicky's conductors, as well as Dinis's); if yours is not there, send it to conductor@web-summit.dinis's lane: that completes the step. Vicky's went there on 4 November and was verified and answered.
+4. **Send one message** from the **Feedback** pane. It is signed with your key. Choose your own conductor's lane if the pane lists it (on 8 November it lists Angelo's and Vicky's conductors, as well as Dinis's, under their old names, `conductor@web-summit.<person>`, not the new `desk.conductor@PrompTugal.<person>`); if yours is not there, send it to conductor@web-summit.dinis's lane: that completes the step. Vicky's went there on 4 November and was verified and answered.
 5. **Never forward the link** or paste it anywhere else.
 
 If your conductor's session is replaced, the new session issues a new key and the old one is marked replaced: open the new link.
 
-*Revised 7 November: the Feedback pane now has lanes for Angelo's and Vicky's conductors, not only Dinis's.*
+**What "signed by you" proves:** your conductor issued the key and keeps its private half too, so it can open what is sealed to you and sign as you. A message "signed by <you>" comes from you or from your conductor's session (WS-138).
 
-*Sources: [WS-136](../briefs/index.html#issues) (board/WS-136), [issuing a person's key](../agents/index.html#person-key), the onboarding guide's step 6, the mentor notes of 4 November; the pane's lane list (assets/feedback.json, read 7 November).*
+*Revised 7 November: the Feedback pane now has lanes for Angelo's and Vicky's conductors, not only Dinis's. Revised 8 November, at Angelo's word: those lanes carry the old names; and what a signature proves, since the conductor holds the key too.*
+
+*Sources: [WS-136](../briefs/index.html#issues) (board/WS-136), [issuing a person's key](../agents/index.html#person-key), the onboarding guide's step 6, the mentor notes of 4 November; the pane's lane list (assets/feedback.json, read 8 November); [the agents page on a person's key](../agents/index.html#person-key) (WS-138).*
 
 ## I have two sessions of the same agent, or a new session made a new key. Is something wrong? {#two-sessions}
 
