@@ -9,12 +9,27 @@ Kept by conductor@web-summit.vicky at Vicky's word (8 November 2026, about 17:45
 | Count | |
 |---|---|
 | Company pages on promptugal.news | 120 |
-| Already done | 20 (Replit; C1, ten; P1, nine) |
+| Already done | 35 (Replit; C1, ten; P1, nine; E1, ten; C2, five) |
 | In this backlog | 101, in 10 batches |
 | Blocked, missing evidence | 14 |
 | Held, someone else working on the data | 4 |
 
 Marked (website): the company's own site refuses automated reads; do it from other public sources or skip it. Marked (article): one of our published articles names or links it.
+
+## The overnight batch, 9 November 2026, 00:00 to 04:30 UTC (one-off)
+
+At Vicky's word (8 Nov, about 23:00 UTC). One-off wakes only, none recurring; nothing starts before 00:00 and nothing runs after 04:30. Each company is assigned once:
+
+| Batch | Companies | Overnight owner |
+|---|---|---|
+| S1 | 11 | journalist@PrompTugal.vicky |
+| S2 | 10 | journalist-connections@PrompTugal.vicky (moved from journalist, to balance the night) |
+| A1 | 11 | journalist-ai@PrompTugal.vicky |
+| E2, then A2 rows 1 to 6 (Make, Mastra, Neo4j, Open VSX (Eclipse Foundation), Orb, Primitive) | 16 | journalist-europe@PrompTugal.vicky |
+| P2, then A2 rows 7 to 11 (Prisma, Runpod, SageOx, TestMu AI, Twilio) | 14 | journalist-portugal@PrompTugal.vicky |
+| C2 and E1 (already written, in review) | 20 | reviewed first; nobody rewrites them |
+
+Status words in the Status column: `to do`, `writing` (taken tonight), `in review` (file pushed with status: in-review), `done` (Ready, released, live-checked), `fix` (back to the writer, not live), `skipped: <why>`, `unfinished at 04:30` (file not pushed, or pushed in-review and not reviewed; never live).
 
 ## Batches
 
@@ -37,16 +52,16 @@ Marked (website): the company's own site refuses automated reads; do it from oth
 
 | Company | Page | Status |
 |---|---|---|
-| RWS Group (website) | https://promptugal.news/companies/rws/ | in review |
-| Scrut Automation | https://promptugal.news/companies/scrut-automation/ | in review |
-| Shakers | https://promptugal.news/companies/shakers/ | in review |
-| SpaceComputer | https://promptugal.news/companies/spacecomputer/ | in review |
-| Sphere | https://promptugal.news/companies/sphere/ | in review |
-| Strawberry | https://promptugal.news/companies/strawberry/ | in review |
-| Sumsub | https://promptugal.news/companies/sumsub/ | in review |
-| The Hacking Games | https://promptugal.news/companies/the-hacking-games/ | in review |
-| Topsec Cloud Solutions | https://promptugal.news/companies/topsec-cloud-solutions/ | in review |
-| Trent AI | https://promptugal.news/companies/trent-ai/ | in review |
+| RWS Group (website) | https://promptugal.news/companies/rws/ | fix (its own site now loads, so the About can rest on it, not Wikipedia alone; source note wrong; back to journalist-connections) |
+| Scrut Automation | https://promptugal.news/companies/scrut-automation/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Shakers | https://promptugal.news/companies/shakers/ | fix (cite its own Web Summit page, not the featured list; back to journalist-connections) |
+| SpaceComputer | https://promptugal.news/companies/spacecomputer/ | fix (cite its own Web Summit page, not the featured list; attribute its self-description; back to journalist-connections) |
+| Sphere | https://promptugal.news/companies/sphere/ | fix (cite its own Web Summit page, not the featured list; back to journalist-connections) |
+| Strawberry | https://promptugal.news/companies/strawberry/ | fix (cite its own Web Summit page, not the featured list; attribute its claim; back to journalist-connections) |
+| Sumsub | https://promptugal.news/companies/sumsub/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| The Hacking Games | https://promptugal.news/companies/the-hacking-games/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Topsec Cloud Solutions | https://promptugal.news/companies/topsec-cloud-solutions/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Trent AI | https://promptugal.news/companies/trent-ai/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
 
 ### S1: journalist@PrompTugal.vicky (11)
 
@@ -111,16 +126,16 @@ Marked (website): the company's own site refuses automated reads; do it from oth
 
 | Company | Page | Status |
 |---|---|---|
-| Altegio | https://promptugal.news/companies/altegio/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| AustriaCard | https://promptugal.news/companies/austriacard/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| Conscium | https://promptugal.news/companies/conscium/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| Contents | https://promptugal.news/companies/contents/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| Crystal Intelligence | https://promptugal.news/companies/crystal-intelligence/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| Data Protection Commission (Ireland) | https://promptugal.news/companies/data-protection-commission/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| Delta Labs | https://promptugal.news/companies/delta-labs/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| EasyDMARC | https://promptugal.news/companies/easydmarc/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| Factorial | https://promptugal.news/companies/factorial/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| Firefox Enterprise by Mozilla | https://promptugal.news/companies/firefox-enterprise-mozilla/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Altegio | https://promptugal.news/companies/altegio/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| AustriaCard | https://promptugal.news/companies/austriacard/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Conscium | https://promptugal.news/companies/conscium/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Contents | https://promptugal.news/companies/contents/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Crystal Intelligence | https://promptugal.news/companies/crystal-intelligence/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Data Protection Commission (Ireland) | https://promptugal.news/companies/data-protection-commission/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Delta Labs | https://promptugal.news/companies/delta-labs/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| EasyDMARC | https://promptugal.news/companies/easydmarc/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Factorial | https://promptugal.news/companies/factorial/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Firefox Enterprise by Mozilla | https://promptugal.news/companies/firefox-enterprise-mozilla/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
 
 ### E2: journalist-europe@PrompTugal.vicky (10)
 
@@ -176,3 +191,17 @@ Not in a batch until the evidence is there. Web Summit page not re-checked or no
 ## Held: active work on the data (4)
 
 CNEXT, Feedzai, Startup Portugal and Trustscale: ontologist@PrompTugal.dinis changed their data in the 24 hours before the scope. Taken up only after that work settles, at Vicky's word.
+
+## Overnight wakes (one-off, 9 November 2026; each fires once and disables itself)
+
+| UTC | Agent | Wake |
+|---|---|---|
+| 00:01 | journalist | trig_01L9owvUTMC3oWDHLJeECfJN |
+| 00:02 | journalist-connections | trig_01XGhuXN15SujJYUfNiYTyJH |
+| 00:03 | journalist-ai | trig_018hHcaEozHpKePzLPcVUvoa |
+| 00:04 | journalist-europe | trig_01WsoXpjC31DZgngjHnUKT5u |
+| 00:05 | journalist-portugal | trig_011KZzFzMxMSLGJCAjMivsuK |
+| 00:06, 01:05, 02:05, 03:05, 04:00 | reviewer | trig_011eToAxHg92sTuRyFA1zM8g, trig_01DZHM9PNpD7QXz2kHrSD4p2, trig_01MKoPpZr6PNRzmQ7X8CcCmK, trig_01KwaPQe1Ehrc3GsJT66vAxh, trig_01NCNX91n4ZCTgiZJmzdBwFr |
+| 04:35 | conductor (trig_01BFKZBpgDNHj1BJ1qCk5PPE) | the close-out: checks every wake above has fired and is disabled, deletes any left, records unfinished rows, reports to Vicky |
+
+Every wake's message checks the clock first and does nothing before 00:00 or from 04:30. Writers start no new company at 04:15; the reviewer starts no new review at 04:20.

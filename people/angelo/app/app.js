@@ -454,6 +454,17 @@ ${teamMap()}<section class="ak-tl" aria-label="Timeline"><div class="tm-top"><h3
                 const keep = (a, b) => { if (!focus) return true; if (focus.startsWith('k:')) return [a, b].some(id => wl.some(l => l.agent === id && 'k:' + l.kind === focus)); if (focus.includes('@') || focus.startsWith('pt:')) return a === focus || b === focus; return [a, b].some(id => id === focus || (pos.get(id) || {}).person === focus) }
                 window.AngeloReplay.mountFlow(host, { D, place, key: [c0.w || '24h', c0.l, c0.f].join('|'), svg: svgEl, pos, nodeOf, keep, w: c0.w || '24h', colOf: p => col.get(p), ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return { x: mx + (MC - mx) * pull, y: my + (MC - my) * pull } }, setWindow: w => setC({ ...cstate(), w }) })
             }
+            // "Exchanges | Work" in playback (backlog 0f2, dev.work@PrompTugal.angelo): r_work=1 draws what was made on this map as it
+            // plays, from deliveries.json over the whole history (work-replay.js's mountMap); the files load only when asked for
+            if (drawCollab.wv) { drawCollab.wv.destroy(); drawCollab.wv = null }
+            if (svgEl && lastMap && haveEv && window.AngeloReplay && window.AngeloReplay.mountFlow) {
+                const m = lastMap, h0 = location.hash.replace(/[?&]r_work=1(?=&|$)/, '').replace(/#collab&/, '#collab?'), wv = h0 !== location.hash, on = h0 + (h0.includes('?') ? '&' : '?') + 'r_work=1'
+                const bar = host.querySelector('[data-tmf]'); if (bar) bar.insertAdjacentHTML('beforebegin', `<div class="tm-tabs" role="group" aria-label="What the playback shows" data-wv-sw><a class="rp-chip${wv ? '' : ' on'}" href="${esc(h0)}" aria-pressed="${!wv}">Exchanges</a><a class="rp-chip${wv ? ' on' : ''}" href="${esc(on)}" aria-pressed="${wv}" title="What each agent and person made, travelling to where it went">Work</a></div>`)
+                if (wv) ['work.js', 'work-draw.js', 'work-replay.js'].reduce((p, f) => p.then(() => window[{ 'work.js': 'AngeloWork', 'work-draw.js': 'AngeloWorkDraw', 'work-replay.js': 'AngeloWorkReplay' }[f]] || load(f)), Promise.resolve()).then(() => {
+                    if (!svgEl.isConnected || drawCollab.wv) return
+                    drawCollab.wv = window.AngeloWorkReplay.mountMap(host, { svg: svgEl, pos: m.pos, col: m.col, rFrom: D.replay.from, t0: Math.round((Date.now() - Date.parse(D.replay.from)) / 6e4), base: new URL('./', here).href })
+                }).catch(() => null)
+            }
             const tlHost = view.querySelector('[data-ak-tl]'); if (tlHost && window.AngeloReplay) window.AngeloReplay.render(tlHost, { D, ownTitle, ago, note: () => '', embed: true })
             const tlt = view.querySelector('[data-ak-tl-toggle]'); if (tlt) tlt.onclick = () => setTl(!tlOpen())
             const tm = view.querySelector('[data-tm-toggle]'); if (tm) tm.onclick = () => setC({ ...cstate(), map: !cstate().map, f: '' })
