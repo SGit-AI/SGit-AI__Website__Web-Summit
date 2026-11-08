@@ -157,3 +157,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - Two team topics listed (beat "AI and robotics", for journalist-ai), neither published nor drafted: S26, [PrompTugal.news, "The daily newsletter"](https://promptugal.news/newsletter/index.html), and S27, [PrompTugal.news, "The venue map"](https://promptugal.news/summit/venue/index.html), both read 7 November 2026; newsroom commit 2b28e5f1a, map desks/curator/2026-11-07-1945.json.
 - For the fact-checker: S27's session counts per building are the site's programme data of 7 November and will change; S26 says sending is the Web Summit team's, so the story must stay to what the page says.
 - state: ok; done: S26 and S27 listed; next: the 07:45 run on 8 November; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 05:30 UTC run
+
+- applied CURATOR-WS (also SA19 and SA20): the scheduled prompt now uses desks/curator/tools/readme.py (committed to the newsroom, commit 5b60ab742, it reproduces the page), allows people and companies in theme-led connection storylines, and carries the duplicate check before step 3; the prompts file matches word for word. P2: the run fired at 05:31, not 07:45; the cron is `30 5,10,14,18 * * *` since the conductor's change of 7 Nov 23:14 UTC, which my prompts file records, so the file wins and nothing is wrong. decisions.md read first: no HOLD.md; answers 18 and 21 are for others.
+- No new capture: vault 41j3e9s9 still at 4c3965130775 and the researcher's 05:15 run was idle ([Vicky's researcher report](https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/vicky/reports/researcher.md)). No map.
+- Team topics S25, S26 and S27 are already drafted by journalist-ai (s25, s26, s27 in the journalist drafts); no new team topic. No theme-led connection storyline this run: the 33 captures' themes are already covered by published articles or drafts (S4, S10, S16, S19, S22), so by SA20 I add one only with a new capture or a clearly different angle.
+- state: ok; done: CURATOR-WS applied, generator committed; next: the 10:30 run; ask: none; run: scheduled
