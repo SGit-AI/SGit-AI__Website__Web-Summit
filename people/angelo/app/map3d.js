@@ -31,13 +31,14 @@
         }
         const ids = new Set(nodes.map(n => n.id)), links = (o.links || []).filter(l => ids.has(l.from) && ids.has(l.to))
         let r
-        try { r = await window.AngeloLive3D.create(el, { nodes, links, still, dist: 1700, ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, mz = (a.z + b.z) / 2; return { x: mx * 0.8, y: my * 0.8, z: mz * 0.8 } } }) }
+        try { r = await window.AngeloLive3D.create(el, { nodes, links, still, dist: 1700, turnS: 105, light: () => { const m = (getComputedStyle(document.body).backgroundColor.match(/\d+(\.\d+)?/g) || [7, 17, 31]).map(Number); return (0.299 * m[0] + 0.587 * m[1] + 0.114 * m[2]) > 140 && !(m.length > 3 && m[3] === 0) }, ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, mz = (a.z + b.z) / 2; return { x: mx * 0.8, y: my * 0.8, z: mz * 0.8 } } }) }
         catch (e) { el.innerHTML = `<p class="note">The 3D view could not load (${esc(e.message || e)}). Switch 3D off for the map.</p>`; return }
         if (!r || !el.isConnected) { r && r.destroy(); return }
         const go = el.ownerDocument.createElement('a'); go.className = 'cc-btn tm-3dlive'; go.href = '#live?d3=1'; go.textContent = '◉ Live, in 3D'; go.title = 'The live graph in 3D: every exchange travels and lights its line'; el.appendChild(go)
         el.dataset.tm3dNodes = String(nodes.length); el.dataset.tm3dLinks = String(links.length); el.dataset.tm3dOrbit = still ? 'still' : 'orbit'
         const win = el.ownerDocument.defaultView || window, c = { r, win, alive: true, raf: 0, el }
-        const tick = t => { if (!c.alive || !el.isConnected) return; r.draw({ now: t }); c.raf = win.requestAnimationFrame(tick) }
+        // the playback's own moment (o.flow, from replay.js): its messages travel and light their lines here as in 2D (backlog 0c2)
+        const tick = t => { if (!c.alive || !el.isConnected) return; let f = null; try { f = o.flow && o.flow() } catch { } r.draw(f ? { now: t, fly: f.fly, lines: f.lines, hot: f.hot } : { now: t }); c.raf = win.requestAnimationFrame(tick) }
         c.raf = win.requestAnimationFrame(tick); cur = c
     }
     window.AngeloMap3D = { mount, unmount }

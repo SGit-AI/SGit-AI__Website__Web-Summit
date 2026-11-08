@@ -323,6 +323,7 @@ ${sel ? detail(R, sel) : ''}
                 const k = lowerBound(p.ts, T, x => x), last = k ? p.ts[k - 1] : null, ends = isOn(p.from) && isOn(p.to)
                 const op = last == null || !ends ? 0 : T <= last + travel ? 1 : Math.max(0, 1 - (T - last - travel) / fade), el = links[p.i], vis = op > 0.03
                 if (vis !== p.vis) { el.classList.toggle('z', !vis); p.vis = vis }
+                p.op = vis ? op : 0
                 if (vis) { const ow = (0.8 + 4.2 * Math.sqrt(k / maxN)).toFixed(2), oo = (0.15 + 0.65 * op).toFixed(2); if (ow !== p.ow) el.setAttribute('stroke-width', p.ow = ow); if (oo !== p.oo) el.setAttribute('stroke-opacity', p.oo = oo) }
             }
             const sent = lowerBound(msgs, T, m => m.t), lo = lowerBound(msgs, T - travel, m => m.t); fly = msgs.slice(Math.max(lo, sent - POOL), sent)
@@ -408,9 +409,18 @@ ${sel ? detail(R, sel) : ''}
             const e = sha && R.events.find(x => x[6] === sha && x[1] >= 0), from = e && o.nodeOf(R.agents[e[1]].name), v = from && N.get(from)
             if (v) v.g.classList.add('tmf-pick')
         }
-        flowApi = { seek, at: () => flowState.t, pick }
+        // the same moment for the map in 3D (backlog 0c2, Angelo, 8 November: "the current 3D view in the replay page doesn't show
+        // the messages flowing, for some reason they are invisible": map3d.js was never given them). What is in flight, the lit
+        // lines and who is busy, in live3d.js's own terms, read by map3d.js on each of its frames; nothing before Play back or a seek.
+        const lit3 = new Map()
+        const view3d = () => {
+            if (!on || !host.isConnected) return null
+            for (const p of P) { const k = p.from + '|' + p.to; let e = lit3.get(k); if (!e) lit3.set(k, e = { op: 0 }); e.op = p.op || 0 }
+            return { fly: fly.map(m => ({ from: m.from, to: m.to, u: Math.min(1, Math.max(0, (T - m.t) / travel)) })), lines: lit3, hot }
+        }
+        flowApi = { seek, at: () => flowState.t, pick, view3d }
         return { seek, msgs: msgs.length }
     }
 
-    root.AngeloReplay = { render, parse, mountFlow }
+    root.AngeloReplay = { render, parse, mountFlow, view3d: () => flowApi && flowApi.view3d ? flowApi.view3d() : null }
 })(typeof self !== 'undefined' ? self : this)

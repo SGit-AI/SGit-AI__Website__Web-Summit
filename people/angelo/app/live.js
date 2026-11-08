@@ -167,7 +167,8 @@
                 N.set(id, ga) }
         }
         host.appendChild(wrap)
-        const bg = (win.getComputedStyle(wrap).backgroundColor.match(/\d+(\.\d+)?/g) || [7, 17, 31]).slice(0, 3).map(Number), light = (0.299 * bg[0] + 0.587 * bg[1] + 0.114 * bg[2]) > 140
+        // asked when the 3D starts, not now: in a pop-out the copied stylesheets are still loading (backlog 0c2)
+        const light = () => { const bg = (win.getComputedStyle(wrap).backgroundColor.match(/\d+(\.\d+)?/g) || [7, 17, 31]).slice(0, 3).map(Number); return (0.299 * bg[0] + 0.587 * bg[1] + 0.114 * bg[2]) > 140 }
         // the logos and LIVE at the top of the hexagon (LIVE replaces the old freshness light), the moment shown at its foot
         const top = doc.createElement('div'); top.className = 'lv-top'
         top.innerHTML = `<img class="lv-logo" data-lv-logo="riskmandate" alt="RiskMandate" title="RiskMandate" crossorigin="anonymous" referrerpolicy="no-referrer" src="${LOGO_RM()}"><span class="lv-live off" data-lv-live title="Reading the latest exchanges…"><i></i>LIVE</span><img class="lv-logo" data-lv-logo="promptugal" alt="PrompTugal.news" title="PrompTugal.news" crossorigin="anonymous" referrerpolicy="no-referrer" src="${LOGO_PT(light ? 'light' : 'dark')}">`
