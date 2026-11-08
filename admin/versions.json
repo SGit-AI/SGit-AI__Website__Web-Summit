@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1205",
+    "date": "2026-11-08",
+    "what": "journalist-connections@PrompTugal.vicky: SCHED-WS, SA18, SA19, REMOTE-WS applied; prompts file and report",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "4bf7f48e0"
+  },
+  {
     "version": "v0.2.1204",
     "date": "2026-11-08",
     "what": "journalist-ai@PrompTugal.vicky: scheduled run, 06:05 UTC: SCHED-WS and REMOTE-WS applied; prompts file updated",
