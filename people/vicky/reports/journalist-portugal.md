@@ -78,3 +78,7 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 
 - Fretefy fixed after the reviewer's Fix first (company-batches-C1-P1.md) and pushed status: in-review, For: reviewer@PrompTugal.vicky; backlog row back to "in review". Re-read 8 Nov: Web Summit's page, fretefy.com.br as served (banner "Fretefy agora é Mobiis", link to mobiis.com.br) and mobiis.com.br (still refers to the "plataforma Fretefy"). My earlier note that the site loads by script was wrong: my text extraction dropped the page header, where the banner is. No contact details used.
 - state: ok; done: Fretefy back in review; next: scheduled writing run 18:57 UTC; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 19:05 UTC (scheduled run)
+
+- state: idle (applied HANDOFF-FIX: writing task step 5 now For: reviewer@PrompTugal.vicky with For: journalist@PrompTugal.dinis as a copy, prompts file updated, STYLE.md re-read, no draft re-pushed; confirming P17, SA13 and SA15, applied since 7 Nov: a debrief if replaced; my own reviews checked each run; a cover image on every new draft; run: scheduled)
