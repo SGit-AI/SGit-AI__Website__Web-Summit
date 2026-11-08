@@ -56,7 +56,7 @@ ${dl}
 <li><b>Mac:</b> in Applications, right-click (or Control-click) <i>Team and the machine</i>, choose <b>Open</b>, then <b>Open</b> again. On macOS 15 or later, if there is no Open button: System Settings, Privacy &amp; Security, scroll down, <b>Open Anyway</b>.</li>
 <li><b>Windows:</b> when "Windows protected your PC" appears, click <b>More info</b>, then <b>Run anyway</b>. It installs for you only; no administrator needed.</li>
 </ul>
-<p><b>Using it:</b> drag inside the hexagon to move it. Right-click for its menu: always on top (on at first), calm (fewer frames, for a laptop on battery), 3D (the same live graph in 3D, turning by itself), size (small, medium, large), open in browser, reload, quit. Clicks outside the hexagon go to the window underneath. It remembers its size and place.</p>
+<p><b>Using it:</b> drag inside the hexagon to move it. At its top, beside the logos, <b>⚙</b> opens the controls and <b>✕</b> closes the app. The controls: View (people ring, agents ring, work; 2D or 3D, the 3D turning by itself), Size (S, M, L), Window (always on top, on at first; Calm, on at first: fewer frames, so the fan stays quiet; turn it off for smoother movement), open in browser, reload, close. Right-click gives the same choices as a menu. Clicks outside the hexagon go to the window underneath. It remembers its size and place.</p>
 <h2 id="ipad">2. iPad or iPhone: the Home Screen app</h2>
 <ol class="hx-steps">
 <li>Open this page in <b>Safari</b>.</li>
@@ -64,6 +64,7 @@ ${dl}
 <li>Open <b>Live graph</b> from your Home Screen: it opens full screen, straight into the live graph.</li>
 </ol>
 <p>Apple lets no app float over other apps, so on an iPad the floating window is Safari's pop-out instead (way 3).</p>
+<p>An iPad at the stand, showing the graph all day? <a href="ipad.html">Set up an iPad for the stand</a>.</p>
 <h2 id="browser">3. Nothing to install: the browser</h2>
 <ul class="hx-steps">
 <li><a href="${LIVE}">Open the live graph</a> and press <b>⧉ Pop out</b> for a floating window over your other windows (Chrome or Edge on a computer; Safari on a Mac or an iPad).</li>
@@ -83,7 +84,7 @@ The first time you open it your computer warns you, because the app is not signe
 - **Mac:** in Applications, right-click (or Control-click) *Team and the machine*, choose **Open**, then **Open** again. On macOS 15 or later, if there is no Open button: System Settings, Privacy & Security, **Open Anyway**.
 - **Windows:** when "Windows protected your PC" appears, click **More info**, then **Run anyway**. It installs for you only.
 
-Using it: drag inside the hexagon to move it; right-click for its menu (always on top, calm, 3D, size, open in browser, reload, quit); clicks outside the hexagon go to the window underneath; it remembers its size and place.
+Using it: drag inside the hexagon to move it; at its top, ⚙ opens the controls and ✕ closes the app; the controls: View (people ring, agents ring, work; 2D or 3D), Size (S, M, L), Window (always on top and Calm, both on at first; Calm keeps the fan quiet), open in browser, reload, close; right-click gives the same choices as a menu; clicks outside the hexagon go to the window underneath; it remembers its size and place.
 
 ## 2. iPad or iPhone: the Home Screen app
 
@@ -100,5 +101,72 @@ Using it: drag inside the hexagon to move it; right-click for its menu (always o
 
 Nothing of yours: a window around the public live page (names, lines and times from the public record). No key, no account; it keeps only its window's size and place. Source: [people/angelo/app/desktop](${SRC}).
 `
-    return [{ rel: 'people/angelo/app/desktop/index.html', title, description, head, body, md }]
+    return [{ rel: 'people/angelo/app/desktop/index.html', title, description, head, body, md }, ipad()]
+}
+
+// The stand's iPads (backlog 0m, Angelo 8 November, relaying Dinis: two iPads for demos at the stand, "to show our multiple
+// apps in action"): one page to set one up, with the links it needs. people/angelo/app/desktop/ipad.html
+const ABP = '../../proposals/abp-live/player.htm'
+function ipad() {
+    const title = 'Set up an iPad for the stand'
+    const description = 'One page to make an iPad at the stand show the live graph or the ABP demo all day: open it, add it to the Home Screen, keep the screen on, and lock it to the one app with Guided Access.'
+    const links = [
+        ['The live graph, full screen', 'index.html', 'open in Safari, then Add to Home Screen (step 2 below): it opens straight into the live graph, full screen'],
+        ['The live graph in Safari (display mode)', DISPLAY, 'the same picture, nothing to install'],
+        ['ABPs you can watch: the loop', ABP + '?mode=loop', 'recorded runs replayed one after another, no touch needed'],
+        ['ABPs you can watch: interactive', ABP + '?mode=interactive', 'for a visitor to tap through the barriers'],
+    ]
+    const body = `<p>For the two iPads at the stand (Dinis, 8 November: "to show our multiple apps in action"). About ten minutes per iPad, once. Each iPad shows one thing all day: the live graph or the ABP demo.</p>
+<h2 id="links">The links</h2>
+<ul class="hx-steps">
+${links.map(([t, h, w]) => `<li><a href="${h}">${esc(t)}</a>: ${esc(w)}.</li>`).join('\n')}
+</ul>
+<h2 id="setup">Once per iPad</h2>
+<ol class="hx-steps">
+<li><b>Charge it</b>, and plan a charger at the stand: an iPad left on all day needs one.</li>
+<li><b>Open this page in Safari</b>, then tap a link above. For the live graph: tap <b>Share</b> (the square with an arrow), <b>Add to Home Screen</b>, <b>Add</b>, and open <b>Live graph</b> from the Home Screen.</li>
+<li><b>Keep the screen on:</b> Settings, Display &amp; Brightness, <b>Auto-Lock</b>, <b>Never</b>. Turn <b>Low Power Mode</b> off (Settings, Battery): it slows the animation.</li>
+<li><b>Quiet:</b> turn on <b>Do Not Disturb</b> (Control Centre, Focus), so no notification covers the screen.</li>
+<li><b>Turn on Guided Access:</b> Settings, Accessibility, <b>Guided Access</b>, on. In <b>Passcode Settings</b>, set a passcode the stand's team knows. Set <b>Display Auto-Lock</b> there to <b>Never</b> too.</li>
+</ol>
+<h2 id="day">Each morning</h2>
+<ol class="hx-steps">
+<li>Connect to the stand's Wi-Fi: the live graph needs the internet to stay live.</li>
+<li>Open the app (or the page), then <b>triple-click</b> the top button (or the Home button, on an iPad that has one) and tap <b>Start</b>. The iPad now stays on that one app: no Home Screen, no swiping away.</li>
+<li>To leave: triple-click again, enter the passcode, tap <b>End</b>.</li>
+</ol>
+<h2 id="check">If something looks wrong</h2>
+<ul class="hx-steps">
+<li>A blank or frozen picture: end Guided Access, close the app, open it again, start Guided Access.</li>
+<li>The live graph fills the screen best in landscape; both pages fit either way.</li>
+</ul>
+<p class="note">Kept by dev.app@PrompTugal.angelo (backlog 0m). Checked in a browser at iPad sizes with touch; not yet on a real iPad. The <a href="index.html">app page</a> has the desktop app and the pop-out.</p>`
+    const md = `For the two iPads at the stand (Dinis, 8 November: "to show our multiple apps in action"). About ten minutes per iPad, once. Each iPad shows one thing all day: the live graph or the ABP demo.
+
+## The links
+
+${links.map(([t, h, w]) => `- [${t}](${h}): ${w}.`).join('\n')}
+
+## Once per iPad
+
+1. Charge it, and plan a charger at the stand.
+2. Open this page in Safari, then a link above. For the live graph: Share, Add to Home Screen, Add, and open Live graph from the Home Screen.
+3. Keep the screen on: Settings, Display & Brightness, Auto-Lock, Never. Turn Low Power Mode off (Settings, Battery).
+4. Quiet: Do Not Disturb (Control Centre, Focus).
+5. Guided Access: Settings, Accessibility, Guided Access, on; Passcode Settings, set a passcode the team knows; Display Auto-Lock, Never.
+
+## Each morning
+
+1. Connect to the stand's Wi-Fi.
+2. Open the app, triple-click the top button (or the Home button) and tap Start.
+3. To leave: triple-click, the passcode, End.
+
+## If something looks wrong
+
+- A blank or frozen picture: end Guided Access, close the app, open it again, start Guided Access.
+- The live graph fills the screen best in landscape.
+
+Kept by dev.app@PrompTugal.angelo (backlog 0m). Checked in a browser at iPad sizes; not yet on a real iPad.
+`
+    return { rel: 'people/angelo/app/desktop/ipad.html', title, description, head: '<style>.hx-steps li{margin:0 0 6px}</style>', body, md }
 }
