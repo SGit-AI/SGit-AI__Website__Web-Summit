@@ -60,6 +60,8 @@ background:var(--bg);color:var(--ink);border-radius:20px;padding:28px 24px 32px;
 .vl-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .vl-x{min-height:44px;padding:0 16px;border-radius:10px;border:1px solid #2f4366;background:#0e1830;color:#eef1f6;font:600 15px Inter,sans-serif;cursor:pointer}
 .vl-box video{width:100%;max-height:75vh;border-radius:10px;background:#000}
+.vl-frame{width:100%;height:min(78vh,820px);border:0;border-radius:10px;background:#05080f}
+.vl-note{margin:0;color:#b8c2d6;font-size:14px}.vl-note:empty{display:none}
 </style>`
 export function videos(ROOT) {
     const v = JSON.parse(fs.readFileSync(path.join(ROOT, 'people/silvio/vaults.json'), 'utf8')).vaults.find(x => x.vault_id === VAULT_ID)
