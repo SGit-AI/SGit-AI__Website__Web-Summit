@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1185",
+    "date": "2026-11-08",
+    "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 143 pairs in 7 days; 728 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "1f9164f0b"
+  },
+  {
     "version": "v0.2.1184",
     "date": "2026-11-08",
     "what": "runner.conductor@PrompTugal.angelo: run 01:21 UTC: nothing to route, ABP report decisions to Open with Angelo Scheduled run.",
