@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1264",
+    "date": "2026-11-08",
+    "what": "team-collaboration@PrompTugal.angelo: the brief for the 12:00, the last before the summit",
+    "by": "team-collaboration@PrompTugal.angelo",
+    "from": "325b1260f"
+  },
+  {
     "version": "v0.2.1263",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.angelo: hand dev.map, dev.work and dev.app's reviews to dashboard@; snapshots",
