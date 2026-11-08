@@ -1,8 +1,8 @@
 {
  "about": "The PrompTugal newsroom's agents, from the git log of PrompTugal/PrompTugal__News__Website (its dev branch), for Angelo's command centre; refreshed by dev@web-summit.angelo at its wakes. Names, counts and times only. pt:<person>:<agent> is a PrompTugal agent of that person.",
  "source": "https://github.com/PrompTugal/PrompTugal__News__Website",
- "commit": "6ad6145b6",
- "read_at": "2026-11-08T05:47:08.946Z",
+ "commit": "1d719f178",
+ "read_at": "2026-11-08T06:48:33.732Z",
  "days": 7,
  "agents": [
   {
@@ -121,9 +121,9 @@
    "short": "conductor.b",
    "family": "PrompTugal",
    "label": "",
-   "commits": 44,
+   "commits": 45,
    "first": "2026-11-06T21:38:06+00:00",
-   "last": "2026-11-08T03:09:22+00:00",
+   "last": "2026-11-08T06:08:43+00:00",
    "key": true
   },
   {
@@ -645,7 +645,7 @@
   {
    "from": "pt:dinis:conductor.b",
    "to": "pt:dinis:conductor",
-   "n": 20
+   "n": 21
   },
   {
    "from": "pt:dinis:ontologist",
