@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1397",
+    "date": "2026-11-08",
+    "what": "the two remaining \"with and without\" films, the audit and the chatbot, in the library",
+    "by": "video@web-summit.silvio",
+    "from": "085980e9c"
+  },
+  {
     "version": "v0.2.1396",
     "date": "2026-11-08",
     "what": "review: bring workers/dev.work's new work onto dev (one commit)",
