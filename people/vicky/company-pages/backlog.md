@@ -9,7 +9,7 @@ Kept by conductor@web-summit.vicky at Vicky's word (8 November 2026, about 17:45
 | Count | |
 |---|---|
 | Company pages on promptugal.news | 120 |
-| Already done | 20 (Replit; C1, ten; P1, nine) |
+| Already done | 35 (Replit; C1, ten; P1, nine; E1, ten; C2, five) |
 | In this backlog | 101, in 10 batches |
 | Blocked, missing evidence | 14 |
 | Held, someone else working on the data | 4 |
@@ -52,16 +52,16 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 
 | Company | Page | Status |
 |---|---|---|
-| RWS Group (website) | https://promptugal.news/companies/rws/ | in review |
-| Scrut Automation | https://promptugal.news/companies/scrut-automation/ | in review |
-| Shakers | https://promptugal.news/companies/shakers/ | in review |
-| SpaceComputer | https://promptugal.news/companies/spacecomputer/ | in review |
-| Sphere | https://promptugal.news/companies/sphere/ | in review |
-| Strawberry | https://promptugal.news/companies/strawberry/ | in review |
-| Sumsub | https://promptugal.news/companies/sumsub/ | in review |
-| The Hacking Games | https://promptugal.news/companies/the-hacking-games/ | in review |
-| Topsec Cloud Solutions | https://promptugal.news/companies/topsec-cloud-solutions/ | in review |
-| Trent AI | https://promptugal.news/companies/trent-ai/ | in review |
+| RWS Group (website) | https://promptugal.news/companies/rws/ | fix (its own site now loads, so the About can rest on it, not Wikipedia alone; source note wrong; back to journalist-connections) |
+| Scrut Automation | https://promptugal.news/companies/scrut-automation/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Shakers | https://promptugal.news/companies/shakers/ | fix (cite its own Web Summit page, not the featured list; back to journalist-connections) |
+| SpaceComputer | https://promptugal.news/companies/spacecomputer/ | fix (cite its own Web Summit page, not the featured list; attribute its self-description; back to journalist-connections) |
+| Sphere | https://promptugal.news/companies/sphere/ | fix (cite its own Web Summit page, not the featured list; back to journalist-connections) |
+| Strawberry | https://promptugal.news/companies/strawberry/ | fix (cite its own Web Summit page, not the featured list; attribute its claim; back to journalist-connections) |
+| Sumsub | https://promptugal.news/companies/sumsub/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| The Hacking Games | https://promptugal.news/companies/the-hacking-games/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Topsec Cloud Solutions | https://promptugal.news/companies/topsec-cloud-solutions/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Trent AI | https://promptugal.news/companies/trent-ai/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
 
 ### S1: journalist@PrompTugal.vicky (11)
 
@@ -126,16 +126,16 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 
 | Company | Page | Status |
 |---|---|---|
-| Altegio | https://promptugal.news/companies/altegio/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| AustriaCard | https://promptugal.news/companies/austriacard/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| Conscium | https://promptugal.news/companies/conscium/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| Contents | https://promptugal.news/companies/contents/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| Crystal Intelligence | https://promptugal.news/companies/crystal-intelligence/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| Data Protection Commission (Ireland) | https://promptugal.news/companies/data-protection-commission/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| Delta Labs | https://promptugal.news/companies/delta-labs/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| EasyDMARC | https://promptugal.news/companies/easydmarc/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| Factorial | https://promptugal.news/companies/factorial/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
-| Firefox Enterprise by Mozilla | https://promptugal.news/companies/firefox-enterprise-mozilla/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Altegio | https://promptugal.news/companies/altegio/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| AustriaCard | https://promptugal.news/companies/austriacard/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Conscium | https://promptugal.news/companies/conscium/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Contents | https://promptugal.news/companies/contents/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Crystal Intelligence | https://promptugal.news/companies/crystal-intelligence/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Data Protection Commission (Ireland) | https://promptugal.news/companies/data-protection-commission/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Delta Labs | https://promptugal.news/companies/delta-labs/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| EasyDMARC | https://promptugal.news/companies/easydmarc/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Factorial | https://promptugal.news/companies/factorial/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
+| Firefox Enterprise by Mozilla | https://promptugal.news/companies/firefox-enterprise-mozilla/ | done (8 Nov, v0.1.752; checked live at 390 px and desktop) |
 
 ### E2: journalist-europe@PrompTugal.vicky (10)
 
