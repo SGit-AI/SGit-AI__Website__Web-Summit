@@ -56,7 +56,7 @@ ${dl}
 <li><b>Mac:</b> in Applications, right-click (or Control-click) <i>Team and the machine</i>, choose <b>Open</b>, then <b>Open</b> again. On macOS 15 or later, if there is no Open button: System Settings, Privacy &amp; Security, scroll down, <b>Open Anyway</b>.</li>
 <li><b>Windows:</b> when "Windows protected your PC" appears, click <b>More info</b>, then <b>Run anyway</b>. It installs for you only; no administrator needed.</li>
 </ul>
-<p><b>Using it:</b> drag inside the hexagon to move it. Right-click for its menu: always on top (on at first), calm (fewer frames, for a laptop on battery), 3D (the same live graph in 3D, turning by itself), size (small, medium, large), open in browser, reload, quit. Clicks outside the hexagon go to the window underneath. It remembers its size and place.</p>
+<p><b>Using it:</b> drag inside the hexagon to move it. At its top, beside the logos, <b>⚙</b> opens the controls and <b>✕</b> closes the app. The controls: View (people ring, agents ring, work; 2D or 3D, the 3D turning by itself), Size (S, M, L), Window (always on top, on at first; Calm, on at first: fewer frames, so the fan stays quiet; turn it off for smoother movement), open in browser, reload, close. Right-click gives the same choices as a menu. Clicks outside the hexagon go to the window underneath. It remembers its size and place.</p>
 <h2 id="ipad">2. iPad or iPhone: the Home Screen app</h2>
 <ol class="hx-steps">
 <li>Open this page in <b>Safari</b>.</li>
@@ -84,7 +84,7 @@ The first time you open it your computer warns you, because the app is not signe
 - **Mac:** in Applications, right-click (or Control-click) *Team and the machine*, choose **Open**, then **Open** again. On macOS 15 or later, if there is no Open button: System Settings, Privacy & Security, **Open Anyway**.
 - **Windows:** when "Windows protected your PC" appears, click **More info**, then **Run anyway**. It installs for you only.
 
-Using it: drag inside the hexagon to move it; right-click for its menu (always on top, calm, 3D, size, open in browser, reload, quit); clicks outside the hexagon go to the window underneath; it remembers its size and place.
+Using it: drag inside the hexagon to move it; at its top, ⚙ opens the controls and ✕ closes the app; the controls: View (people ring, agents ring, work; 2D or 3D), Size (S, M, L), Window (always on top and Calm, both on at first; Calm keeps the fan quiet), open in browser, reload, close; right-click gives the same choices as a menu; clicks outside the hexagon go to the window underneath; it remembers its size and place.
 
 ## 2. iPad or iPhone: the Home Screen app
 
