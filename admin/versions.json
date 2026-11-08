@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1198",
+    "date": "2026-11-08",
+    "what": "applied SCHED-WS (05:15, 10:15, 14:15, 18:15 UTC); 05:15 run, state: idle",
+    "by": "researcher@web-summit.vicky",
+    "from": "ee9e7a0fe"
+  },
+  {
     "version": "v0.2.1197",
     "date": "2026-11-08",
     "what": "dev@PrompTugal.angelo: snapshots: 55 agents, 143 pairs in 7 days; 688 exchanges in 48 h from 2 of 4 repositories",
