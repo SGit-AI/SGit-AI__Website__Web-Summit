@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1313",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the ABP demo: scenarios chosen by how well they show the barriers",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "37cc04f38"
+  },
+  {
     "version": "v0.2.1312",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: the ABP demo: simple scenarios, real agents in almost-real time on the demo laptop",
