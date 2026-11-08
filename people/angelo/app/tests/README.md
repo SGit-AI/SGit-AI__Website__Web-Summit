@@ -25,6 +25,7 @@ Or run just some of them, for example `people/angelo/app/tests/run.sh tm tmf tml
 | `lvrepo` | the live graph draws every repository the agents work in: live.json carries the others' exchanges (names and times only), and one from another repository travels as a bright pulse; light and dark |
 | `lvfresh` | the live graph's sessionless agents: every agent declared as a fresh session each run is drawn with the dashed ring, even one not yet on the map; its ring lights for two hours after it sends something |
 | `lvdisp` | the live graph's Full screen button and display mode (`?display=1#live`): the graph alone covering the screen, no controls, still moving when reads fail, read again at once when the network returns, Esc back; at 1920, 1280 and 390 px, light and dark |
+| `lvlong` | the four-hour test (spec-realtime.md): display mode at 1920x1080 with a fake feed, four hours on a faked clock in about a minute; the flow never stops, heap and element count within 10% from the first hour to the last, twenty minutes of failed reads leave it moving with the light off, and it recovers within one tick |
 | `arcs` | the timeline's arcs (For: lines), following the map's clock |
 | `sd` | Summit days: today, now and next |
 | `wzone` | Where: a zone by default, an exact spot only as a deliberate second step (WS-181, option C) |
