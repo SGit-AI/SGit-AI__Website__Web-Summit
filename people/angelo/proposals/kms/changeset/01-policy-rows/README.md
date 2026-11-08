@@ -33,3 +33,20 @@ python -m pytest tests/unit
 - Cloned SHarness-AI__CLI fresh and checked out `05e5290`. **The patch applies cleanly** (`git am`), touching two files, and both compile.
 - **The tests could not run:** auto mode refused `python3 -m pytest tests/unit` ("code from external"), the baseline run included. It refuses rather than asking, so there was no prompt for Angelo to approve. Not worked around.
 - **To unblock:** Angelo allows that one command in vault@'s session (a permission rule for `python3 -m pytest` in this session only), and the next wake runs the baseline and the patched suite and records the numbers here.
+
+## Test results by vault@PrompTugal.angelo (8 November 2026, about 10:30 UTC; Angelo approved each run in vault@'s session)
+
+SHarness-AI__CLI cloned fresh, `python3 -m pytest tests/unit` (pytest 9.2.0, Python 3.13):
+
+| | passed | failed | |
+|---|---|---|---|
+| **Baseline**, `05e5290` without the patch | 253 | 2 | both environment: `launcher/test_launcher.py::Test_shell::test_a_command_runs_as_a_unique_uid_with_the_proxy_as_its_only_port`, `test_security.py::Test_Review_2::test_the_shell_reaches_the_proxy_and_no_other_address_on_its_port` |
+| **With piece 1** | 276 | 6 | the same 2, plus **4 of the patch's own 27 new tests** |
+
+**Verdict: piece 1 does not pass yet.** The four failing tests:
+- `Test_Kms_Rows::test_a_well_formed_row_is_accepted`
+- `Test_Kms_Rows::test_no_kms_key_leaves_the_hash_of_an_old_policy_alone`
+- `Test_Level3_Passes_Kms_Rows_Down::test_a_level_3_document_carries_kms_rows_into_the_v0_policy`
+- `Test_Level3_Passes_Kms_Rows_Down::test_secrets_names_and_kms_rows_stay_separate`
+
+**One cause, in the tests, not in `kms_problems()`:** the test documents (`base()` and the three level-3 documents) have no `files` section, and a v0 policy requires `files` as an object with `read`, `write` and `exec` lists. `check()` rightly reports "files must be an object with read, write and exec lists", and L3 refuses to compile. **Fix for vault.kms@:** add `"files": {"read": [], "write": [], "exec": []}` to each test document, re-send the patch, and vault@ re-runs both suites. No change to `policy.py` looks needed. No existing upstream test broke.
