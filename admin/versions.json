@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1257",
+    "date": "2026-11-08",
+    "what": "the incidents list is internal: removed from the public site, sealed to the team's keys",
+    "by": "conductor@web-summit.silvio",
+    "from": "bbff77ec1"
+  },
+  {
     "version": "v0.2.1256",
     "date": "2026-11-08",
     "what": "journalist-connections@PrompTugal.vicky: report, S28 drafted; SA19B and SA19C applied",
