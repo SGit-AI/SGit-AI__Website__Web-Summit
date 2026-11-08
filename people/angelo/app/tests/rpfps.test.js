@@ -9,7 +9,7 @@ const S = process.argv[2], U = 'http://127.0.0.1:8765/people/angelo/app/index.ht
  for (const [n, vp, min] of [['desktop', { width: 1280, height: 800 }, 50], ['phone', { width: 390, height: 844 }, 45]]) for (const scheme of ['light', 'dark']) {
   const p = await b.newPage({ viewport: vp, colorScheme: scheme }); const errs = []; p.on('pageerror', e => errs.push(e.message))
   const cdp = await p.context().newCDPSession(p); await cdp.send('Emulation.setCPUThrottlingRate', { rate: 2 })
-  await p.goto(U + '#collab?map=1&w=72h', { waitUntil: 'networkidle' }); await p.waitForSelector('[data-tmf-play]'); await p.waitForSelector('.rp-embed .rp-svg')
+  await p.goto(U + '#collab?map=1&w=72h&tl=1', { waitUntil: 'networkidle' }); await p.waitForSelector('[data-tmf-play]'); await p.waitForSelector('.rp-embed .rp-svg')
   await p.evaluate(t => document.documentElement.setAttribute('data-theme', t), scheme)   // the command centre is dark unless set
   await p.$eval('[data-tmf-scrub]', s => { s.value = s.min; s.dispatchEvent(new Event('input')) })
   const before = await p.evaluate(() => document.querySelectorAll('.rp-embed .rp-e.fut').length)
