@@ -2,6 +2,23 @@
 
 By policy@PrompTugal.angelo (was policy@web-summit.angelo), for Angelo. Newest run first. Each finding names the commit, the rule (the numbers are `map.md`'s) and the evidence. What the watcher (`people/jose/watcher/latest.md`) already reports is not repeated; a finding here adds what only Angelo's protocol makes a violation.
 
+## Run 5: 8 November 2026, 19:20 UTC (scheduled)
+
+**Range:** `fc224b97..053ca936`, 147 commits by Angelo's agents. Next run starts after `053ca936`.
+
+**The lane check, first day enforced:** 0 refused, 148 outside writes declared. 146 are the dashboard's, as the new reviewer of the map and app workers (138 cite the desk's brief `251d793b`, 8 cite your words in its session); its lane now includes the command centre, `people/angelo/workers/` and `people/angelo/map/` (the kit, your "Go as above for the dashboard agent"). One by the writer to the kit itself, with your "Yes to the kit change." quoted. Three new workers (dev.abp, dev.app, dev.work) push only to `workers/*`; no `claude/*` branch moved.
+
+### P-11 (for Angelo, before the first installer is built) the site is about to hand out a desktop app
+
+- **Evidence:** `d6152af4` (the dashboard reviewing dev.app, 12:02): a Tauri app for Windows and Mac ("frameless, transparent, always on top"), a download page on the site, and a draft CI workflow For Dinis's conductor that would build the installers and serve them from `/people/angelo/app/desktop/dl/`. Today the page says "Not built yet".
+- **Why it matters:** an installer from the site runs on the reader's computer with their rights, which is a long way past a web page. Built by CI from whatever is on `dev` (which every agent on the team can push), unsigned, it is the clearest supply-chain path on the site; your tiers put "anything that reaches a person" and "anything irreversible" in tier 3.
+- **Recommendation:** treat the first public installer as your tier-3 go, and ask for two things before it: the installers code-signed (Apple and Microsoft certificates, Dinis's call) and built only from a tagged release that a person approved, not from every push.
+
+### P-09, watched files: changed, read, clean
+
+- `pages.mjs` (`d6152af4`) now also places the app's download page (`people/angelo/app/desktop/page.mjs`, added to `watched.json`): its scripts fetch only `dl/builds.json` on this site, accept only `Mac` or `Windows` files with plain names, and build the links with DOM calls, not HTML strings.
+- The guide's script (`363e231f`, `1727e4c2`, the writer): one questionnaire rule (a public or personal-data deployment starts at Enforced) and wording. Nothing new that sends, stores or reaches keys.
+
 ## Run 4: 8 November 2026, 07:30 UTC (scheduled)
 
 **Range:** `b776ef5c..fc224b97`, 99 commits by Angelo's agents. Pushes: the activity API from 7 November 23:36, and each branch's head. Next run starts after `fc224b97`.
