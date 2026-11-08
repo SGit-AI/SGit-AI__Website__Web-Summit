@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1378",
+    "date": "2026-11-08",
+    "what": "journalist-europe@PrompTugal.vicky: scheduled run 19:03, idle; HANDOFF-FIX and SA23 applied",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "cb4c13d47"
+  },
+  {
     "version": "v0.2.1377",
     "date": "2026-11-08",
     "what": "HANDOFF-FIX: journalist-portugal pending until it removes the Dinis copy from its task and prompts file",
