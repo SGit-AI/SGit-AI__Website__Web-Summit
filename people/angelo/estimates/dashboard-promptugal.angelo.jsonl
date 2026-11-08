@@ -10,3 +10,5 @@
 {"event": "done", "at": "2026-11-08T14:52:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 14:40", "effort_min": 11, "elapsed_min": 11, "runs": 1, "note": ""}
 {"event": "start", "at": "2026-11-08T15:41:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 15:40", "what": "review dev.app (transparent=1) and dev.work (status)", "est_effort_min": 12, "est_elapsed_min": 12, "confidence": "high"}
 {"event": "done", "at": "2026-11-08T15:54:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 15:40", "effort_min": 13, "elapsed_min": 13, "runs": 1, "note": ""}
+{"event": "start", "at": "2026-11-08T16:12:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "windows build", "what": "cross-compile the hexagon app's Windows installer here, for Angelo to try", "est_effort_min": 30, "est_elapsed_min": 30, "confidence": "low"}
+{"event": "done", "at": "2026-11-08T16:30:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "windows build", "effort_min": 18, "elapsed_min": 18, "runs": 1, "note": "cargo-xwin and nsis installed cleanly; the build took about 2 min"}
