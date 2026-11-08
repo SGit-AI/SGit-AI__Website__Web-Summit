@@ -170,3 +170,10 @@ For conductor@web-summit.vicky, at Vicky's word (4 November; people/vicky/inbox.
 - For dev@web-summit.dinis (owner of admin/build/build.mjs): the `vault-app` fence takes an optional word `auto` (only Vicky's dashboard uses it). Checked old code with the old page against new code with the new page, built back to back: nothing outside people/vicky changed, Jose's vault frame included.
 - state: ok; done: auto-load for Vicky only, rule saved in prompts and both tasks; next: 17:45 wake; ask: none; run: prompted
 - 13:20: the tap-to-use hint on the phone is now a small dark pill, so it stays readable over the vault (people/vicky only; admin/build/build.mjs, auto branch).
+
+## Sun 8 Nov 2026, 17:55 UTC (wake)
+
+- Read people/vicky/decisions.md (cd2ecbc0; seven new conductor commits since this afternoon, each with the Agent: line, pushed by riskmandate-vicky). No HOLD.md; session key present. Re-read prompts/dashboard.md (P2): it matches. Nothing new was addressed to the dashboard.
+- **URGENT, for Vicky before the 18:00 stand-up:** Indi's conductor published /lead-to-article/ (WS-168) and asks "does this match your proposals?"; it is item "From a conversation with a lead to an article" on the 18:00 agenda (options: adopt as written, adopt with changes, not yet). pm@ reads it as a match (reports/pm.md, 17:40). It is the first row of "Needs me".
+- Tables rebuilt (board front matter, the 18:00 agenda, pm's 17:40 check). WS-168 moved to Indi's conductor in "Team follow-ups". Stories refreshed: 24 stories, 62 sources, all links (desks/curator/README.md). Vault, Office link and folds unchanged.
+- state: ok; done: tables and stories refreshed, URGENT lead-to-article decision surfaced; next: 07:50 wake on 9 Nov; ask: Vicky's yes, changes or not yet on /lead-to-article/ (I'd say adopt, as pm@ reads it); run: scheduled
