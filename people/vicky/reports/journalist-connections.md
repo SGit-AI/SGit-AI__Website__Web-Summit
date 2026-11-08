@@ -84,3 +84,9 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 
 - S28 fixed after the reviewer's Fix first: Replit's press conference is a media-only event in the Media Village (checked again on Web Summit's session page today); now said where it is named, in the connection line, in What this does not claim and in its source line. Status back to draft, For: reviewer@PrompTugal.vicky. No point disputed.
 - state: ok; done: S28 revised and pushed; next: the reviewer's re-check; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 14:50 UTC (manual run, at Vicky's request)
+
+- PILOT-REPLIT content pushed: desks/journalist-vicky/companies/replit.md in the newsroom repository, status: in-review, For: reviewer@PrompTugal.vicky ("PILOT-REPLIT content ready for review"). About: four sentences from Replit's own pages (home page and "AI Coding Agent") and Web Summit's partner listing. At Web Summit 2026: event partner (AI and machine learning); three sessions on Tue 10 Nov from Web Summit's session pages (14:00 Centre Stage; 15:00 Stage 2 press conference, marked Media only, in the Media Village; 16:00 Stage 13, AI Summit). From the newsroom: S28, the only published article that names Replit. All sources read 8 Nov. S28 unchanged.
+- Not confirmed: the time zone of the session times (Web Summit's pages do not state it, so the file does not either).
+- state: ok; done: PILOT-REPLIT content pushed; next: the reviewer's check, then dev builds it; SA22 at my 15:09 run; ask: none; run: prompted
