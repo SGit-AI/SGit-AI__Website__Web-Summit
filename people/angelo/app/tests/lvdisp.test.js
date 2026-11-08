@@ -19,7 +19,7 @@ const S = process.argv[2], U = 'http://127.0.0.1:8765/people/angelo/app/index.ht
   await p.goto(U + '?display=1&livepoll=2#live', { waitUntil: 'networkidle' }); await p.waitForSelector('.lv-display .lv-svg'); await p.waitForTimeout(1500)
   const st = () => p.evaluate(() => { const d = document.querySelector('.lv-display').getBoundingClientRect(), h = document.querySelector('.lv-display .lv-hex').getBoundingClientRect(), top = document.elementFromPoint(innerWidth / 2, innerHeight / 2)
     return { covers: d.left <= 0 && d.top <= 0 && d.width >= innerWidth - 1 && d.height >= innerHeight - 1, hex: Math.round(h.width), short: Math.min(innerWidth, innerHeight), onTop: !!(top && top.closest('.lv-display')),
-      buttons: document.querySelectorAll('.lv-display button, .lv-display a').length, txt: document.querySelector('.lv-display .lv').textContent.length, flow: document.querySelectorAll('.lv-display .lv-pulses circle').length, dot: document.querySelector('.lv-dot').className, scrollX: document.documentElement.scrollWidth - innerWidth } })
+      buttons: document.querySelectorAll('.lv-display button, .lv-display a').length, txt: document.querySelector('.lv-display .lv').textContent.length, flow: document.querySelectorAll('.lv-display .lv-pulses circle').length, dot: document.querySelector('.lv-live').className, scrollX: document.documentElement.scrollWidth - innerWidth } })
   const a = await st()
   await p.screenshot({ path: `${S}/lvdisp-${n}-${scheme}.png` })
   // the network goes: reads fail, nothing breaks, the graph keeps flowing; then it comes back and is read at once

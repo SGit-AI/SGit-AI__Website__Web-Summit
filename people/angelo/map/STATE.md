@@ -1,20 +1,17 @@
 # dev.map@PrompTugal.angelo: STATE
 
-Ninth run, 8 November 2026 (06:15 to about 07:05 UTC). Backlog 2 (spec-live-map.md's pieces); For: me since the last run: dev@'s reviews 4f2d9ec4 and 97442a6b, both pushed by riskmandate-angelo (all my work so far is on dev).
+Tenth run, 8 November 2026 (08:16 to about 09:10 UTC). Backlog 0c and 0d (the desk's c0c8eb92 and e992b2f1, both pushed by riskmandate-angelo); dev@'s review 36c79ae brought the ninth run's work onto dev.
 
 ## Done this run (on workers/dev.map, for dev@ to review)
-- Piece 2 finished: "a sealed message sent or verified" (only from an agent's own commit subject; nine since 2 November) as a lock dot at the sender linked to the commit (`lvmsg`); and the still map's tooltips with each agent's counts (`lvtip`).
-- Piece 3: the newsroom's key events and security@PrompTugal.dinis's comms ledger, through promptugal-snapshot.mjs into replay.live, drawn in playback (`lvnews`). The snapshot data is its own commit, for dev@ to take or regenerate.
-- Piece 5, first slice: the 3D switch (`map3d.js`, `lv3d`), off by default, the same positions tilted.
-- `tmtl` fixed: at about 06:40 UTC the 72-hour window's first dot sits under the row labels; it now clicks the dot itself.
+- 0c: 3D is the live graph. `live3d.js`, a light WebGL renderer on brain-libs.js's three.js (5 draw calls a frame, no ray casting under the mouse: the old 3d-force-graph's lag). `#live?d3=1` and a 3D switch in the live bar; the same engine as 2D (flow, pulses, lit lines, breathing, rings, names). The map's 3D switch draws with it too, with a "Live, in 3D" link. Test `lv3dlive` (about 0.8 ms a frame, 39 to 60 fps while dragging, software GL).
+- 0d: inside the hexagon, both logos (hot-linked from riskmandate.ai and promptugal.news, unchanged), a pulsing LIVE label (amber and still over 30 minutes, grey when unreadable; the freshness dot is gone), the moment shown in the viewer's zone (short form under 300 px). Also painted into Safari's floating video. Test `lvlabel`; live, lvdisp, lvlong now read `.lv-live`.
 
 ## Open
-- Piece 5, next slice: playback in 3D (the pulses and marks), and time as depth.
-- Piece 4 (the public /team/map/ and the daily snapshot into Angelo's article) needs admin/build/build.mjs and the newsroom's article, outside my prompt's files: a question for the desk (who builds it: dev@, or my lane widened?).
-- The ledger's names carry no person ("dev@PrompTugal"); 109 agent-to-agent rows wait. Asked the desk whether to ask security@PrompTugal.dinis for full names (recommended) rather than reading them as Dinis's.
-- 00: Safari untested (no WebKit here). For Angelo: try Pop out once in Safari.
-- 00: `?wallpaper=1` waits on Angelo's review of spec-realtime.md's draft part. 00a waits on spec-live-app.md's approval; 00b on Angelo's yes.
-- Lane: lanes.json gives me people/angelo/app/** and proposals/live-map/**; STATE, estimates, ledger and promptugal-snapshot.mjs are declared with Outside: lines.
+- Item 00's rest: Safari and iPad untested (no WebKit here); for Angelo: try Pop out and 3D once in Safari.
+- 0d: the logos are other companies' marks on a public page (spec-realtime.md question 3 asked "real logos or plain marks"); Angelo's 8 November note asks for them, so taken as his answer. If they fail to load (offline), they step aside and LIVE stays.
+- Piece 4 (public /team/map/, the daily snapshot) needs build.mjs and the newsroom's article, outside my files: still a question for the desk.
+- Ledger names without a person: 109 rows wait on the desk's answer (ask security@PrompTugal.dinis for full names).
+- 00a waits on spec-live-app.md's approval; 00b on Angelo's yes; `?wallpaper=1` on spec-realtime.md's draft part.
 
 ## Last run
-Five commits on workers/dev.map after a merge joining its history (tree = dev's). Next run: if dev@ has brought this onto dev, start from dev and join workers/dev.map with `git merge -s ours`, never a rebase.
+Started from dev, joined workers/dev.map with `git merge -s ours`. Next run: same, if dev@ has brought this onto dev. The gate's lane check counts the joined history's old commits locally: run it with LANE_RANGE=<the join commit>..HEAD.
