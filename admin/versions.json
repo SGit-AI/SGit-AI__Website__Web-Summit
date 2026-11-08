@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1289",
+    "date": "2026-11-08",
+    "what": "dashboard@PrompTugal.angelo: this run's ledger line",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "d30dd3fe9"
+  },
+  {
     "version": "v0.2.1288",
     "date": "2026-11-08",
     "what": "the designer now has a schedule, 10:40 and 16:40 UTC (C30 trial); the one-door line for it",
