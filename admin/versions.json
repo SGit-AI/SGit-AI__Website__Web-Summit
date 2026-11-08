@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1357",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: build the Android live wallpaper of the agents map now, for pre-installed devices",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "54b287736"
+  },
+  {
     "version": "v0.2.1356",
     "date": "2026-11-08",
     "what": "17:45 wake: tables for Sun 8 Nov (lead-to-article decision first), story candidates refreshed",
