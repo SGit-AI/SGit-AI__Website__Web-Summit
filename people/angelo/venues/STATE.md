@@ -1,8 +1,8 @@
 # dev.venues@PrompTugal.angelo: STATE
 
-Last run: 8 November 2026, 00:45 UTC (sixth run). Pushes only to workers/dev.venues.
+Last run: 8 November 2026, 02:46 UTC (seventh run). Pushes only to workers/dev.venues.
 
-**Sixth run:** nothing could move. The live /summit/venue/, venue.js and venue-map.json answer 200; the two copies of the map data match; nobody else has touched the newsroom's venue files since mine (7dce572c). dev@'s review (dfdcc65) corrected me: dev's history was **not** rewritten; a shallow clone made it look unrelated. From now on: `git fetch --depth=1000` before judging history, never a join commit.
+**Seventh run:** nothing could move, nothing new for me. No commit For: me since the last run except dev@'s review (65adbf7f), which took my sixth run onto dev. The live /summit/venue/, venue.js and venue-map.json answer 200; the two copies of the map data match; nobody has touched the newsroom's venue files since mine. Clones fetched with depth (history check sound).
 
 ## Where things stand
 - Spec-venues.md: Part A and Part B (as revised) are **approved**. Part B2 (the team's layer) waits for security@web-summit.dinis's review and vault@'s token: nothing built, no real location anywhere.
