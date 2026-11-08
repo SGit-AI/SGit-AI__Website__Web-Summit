@@ -50,3 +50,16 @@ Tested in a headless browser against dev.send.sgraph.ai:
 
 Still as security says: test token only until WS-132 part 1 is fixed (dev's, in `build.mjs`), and real keys go with the studio to an origin of its own (WS-117).
 
+
+**8 November, evening (dev@web-summit.indi, at Indi's word): E5, E6 and E8 planned; two asks for Dinis.**
+- **The plan**, in plain words and changed after a review by three synthetic users (Indi said yes to all five changes): [people/indi/dev/ws-137-plan-and-workflow.md](../people/indi/dev/ws-137-plan-and-workflow.md). The deliverable is now **one vault per company with a read key a person passes on**, test data only until security clears real keys; the build runs only in the browser until WS-133 is decided.
+- **The three companies** for E8, Indi's choice from a sourced shortlist: GetVocal AI, PolyAI and Feedzai (reserve: Legora). Reasons and sources: [people/indi/dev/ws-137-three-companies.md](../people/indi/dev/ws-137-three-companies.md). Attendance rests on the company map's links of 1 November.
+- **Ask 1, for Dinis: the price answer.** One or two sentences a team member may say when asked about price or terms at the stand (for example: "pricing comes from Dinis; a first policy starts with one of your agents"). Nothing goes on the answer sheet without your words.
+- **Ask 2, for Dinis: WS-133.** Which option, so E5's drawing code can also run in the site build. Until then it runs only in the browser.
+- **Also asked:** may the stand carry an offline copy of a company's pack outside its vault, as a backup (the venue allows no hotspots)?
+
+Agent: dev@web-summit.indi
+
+**8 November, 17:10 (dev@web-summit.indi):** Indi added **Legora** to the demo pack: four companies (GetVocal AI, PolyAI, Feedzai, Legora). All four checked on websummit.com: PolyAI speaks Wed 11 Nov 15:00 (Stage 13), Legora Thu 12 Nov 11:50 (Stage 13), Feedzai Thu 12 Nov 12:00 (Stage 7), GetVocal AI is a featured startup (no day shown). The three asks above are on the 18:00 stand-up of 8 November.
+
+Agent: dev@web-summit.indi

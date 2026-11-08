@@ -1,0 +1,82 @@
+{
+ "persona": "tomas-coach",
+ "synthetic": true,
+ "verdict": "The problem story is good (agent as a new employee with a master key) and the flow from opening question to leave-behind is sensible. But it is a demo script, not a sales process. It never says who the buyer is, never qualifies the prospect, and the best part (steps 5 and 7) is not built yet, with the build due Monday and stand day Thursday. Make sure the team can sell well with only what exists today.",
+ "positioning": "The master key and gap idea is clear, memorable and different from generic AI safety talk, because it ends in one page that the boss, security and the insurer all read. What is missing is the one-line answer to why now and why us, and the plain statement of who inside the company cares and what it saves them.",
+ "steps": [
+  {
+   "step": 1,
+   "assessment": "Good prep habit and it exists today, but make it a 5-minute checklist so new people actually do it and do not read the page out loud.",
+   "keep|change|cut": "keep"
+  },
+  {
+   "step": 2,
+   "assessment": "Strong opener that starts on their problem, but add a follow-up question to find out whether they run any agents at all.",
+   "keep|change|cut": "keep"
+  },
+  {
+   "step": 3,
+   "assessment": "The master key line works well; keep it to 30 seconds and swap in their own example as soon as you have one.",
+   "keep|change|cut": "keep"
+  },
+  {
+   "step": 4,
+   "assessment": "This is discovery and it is the heart of the call, but typing into a studio can turn it into data entry; the rule should be to ask, listen, and note the answers first, and use test keys only.",
+   "keep|change|cut": "change"
+  },
+  {
+   "step": 5,
+   "assessment": "The best moment in the flow but it is not built; the team needs a fallback (a hand-drawn reach and mandate circle, or the existing panel) so the call does not depend on code landing by Monday.",
+   "keep|change|cut": "change"
+  },
+  {
+   "step": 6,
+   "assessment": "Showing a draft policy is concrete and credible, but it risks a long walk through a document; show one page for one agent and stop.",
+   "keep|change|cut": "keep"
+  },
+  {
+   "step": 7,
+   "assessment": "Leaving something behind is right, but today it is only a factory page link, and a link with no named person and no date will go cold.",
+   "keep|change|cut": "change"
+  },
+  {
+   "step": 8,
+   "assessment": "Person reads and sends the follow-up is the right control; add a time rule such as same day or next morning, and one specific ask.",
+   "keep|change|cut": "keep"
+  },
+  {
+   "step": 9,
+   "assessment": "A concrete next step (one real agent) is correct and the no-promises rule is clear; give the team a script for the price question so nobody improvises.",
+   "keep|change|cut": "keep"
+  }
+ ],
+ "missing_steps": [
+  "Qualification: who they are, whether they run agents today, and how big the exposure is, so the team can spend time on the right visitors.",
+  "Who the buyer is: name the roles to ask for (security lead, risk or compliance, CTO, head of AI) and how to reach the one who signs.",
+  "Why now: a trigger such as regulation, insurer questions, a board request or a recent incident.",
+  "Objection handling: no section prepares the team for pushback.",
+  "Timing and a time box: a 3-minute version for a busy passer-by and a 15-minute version for a booked meeting.",
+  "Capture: where every conversation is logged (name, role, company, agents, next step) so follow-up in step 8 has something to work from.",
+  "Success measure: what counts as a good stand day, for example number of meetings that end with a named first agent.",
+  "Role split for a mixed team: who greets, who demos, who logs, and who escalates product or price questions to Dinis."
+ ],
+ "objections_to_prepare": [
+  "We already have security tools. Answer: those protect systems; this writes down what each agent is meant to do and shows the gap, as one page people can read.",
+  "We don't use AI agents yet. Answer: then this is the best time to decide what they may do before the first one gets a master key.",
+  "This is too early or too small for us. Answer: we can start with one agent and one page, no big project.",
+  "How do I know this is real and not just a nice picture? Answer: the page lists the barriers with proof, and we can write one for a real agent of yours together.",
+  "Who are you and why should we trust you with this? Answer: here is who built it and who stands behind it; ask for the named person, and we will share only what you choose to."
+ ],
+ "plan_priorities": "For selling on Thursday, the demo pack with an offline copy (step 4) and the test and hand over step (step 5) matter most, because the venue has no hotspots and a broken demo costs more than a missing one. The infographic button (step 2) is next, and the live drawings (step 1) only matter if they enable it. The animation (step 3) is lovely but could wait; a static picture of the gap plus a good spoken story does the same job on day one.",
+ "stand_tips": [
+  "Practise the 3-minute version out loud with a partner, twice, before Thursday; the opener and the master key line should come without notes.",
+  "Test the offline pack on a laptop with Wi-Fi switched off, and carry a printed one-page policy and the QR card as a backup.",
+  "Log every conversation within minutes (name, role, agents, next step); five good notes beat fifty badge scans.",
+  "Say out loud, early: there is no pricing on the stand, and one next step is to write a real policy for one of your agents."
+ ],
+ "top_3_changes": [
+  "Add a short qualification and buyer step (who they are, do they run agents, who owns the risk) between the opener and the demo, and a simple capture sheet for every conversation.",
+  "Write a one-page objection and price answer sheet and rehearse it, so new sellers have the same answers and make no promises on price or terms.",
+  "Decide today what the team shows if steps 2 and 3 are not ready by Monday: a fallback static picture and the existing panel, and freeze the demo scope on Monday for testing."
+ ]
+}

@@ -140,3 +140,9 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 ## Sun 8 Nov 2026, 11:05 UTC (scheduled run)
 
 - state: idle
+
+## Sun 8 Nov 2026, 15:10 UTC (scheduled run)
+
+- No hold. decisions.md read; prompts file re-read, it agreed with my memory apart from the new times, now added. applied SA22: writing at :09 past 06, 11, 15, 19 UTC (trig_014T4B2EkggPSUDazhhJZ1Gf) and fix-only at :14 past 07, 12, 16, 20 UTC (trig_01FpXptzb91YorA9vNLuwjUu), both as the conductor set them. applied SA18: the fix-only task runs as given (silent when nothing to fix). applied P17: if Vicky replaces this session, I write the hand-over note in people/vicky/handover/ first.
+- Nothing new on my beat (S28 is journalist-connections', now published). Remote set and confirmed before pulling.
+- state: ok; done: SA22, SA18, P17 confirmed; next: new AI or robotics storylines; ask: none; run: scheduled

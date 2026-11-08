@@ -47,7 +47,7 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 **From 8 Nov midday (standing answer 22, connections first):** writing at :57 past 05, 10, 14, 18 UTC; fix-only at :02 past 07, 12, 16, 20 UTC (`trig_015W8aURM2zEyH9Sd9gJvzNx`), both set by the conductor at Vicky's word.
 
-**From 8 Nov (SCHED-WS):** writing at :51 past 05, 10, 14, 18 UTC; fix-only at :56 past 06, 11, 15, 19 UTC (`trig_015W8aURM2zEyH9Sd9gJvzNx`), both set by the conductor at Vicky's word, 7 Nov.
+**From 8 Nov midday (SCHED-WS, order from standing answer 22):** writing at :57 past 05, 10, 14, 18 UTC (`trig_01R4SDnvm1qg6LrQVcmCRPaH`); fix-only at :02 past 07, 12, 16, 20 UTC (`trig_015W8aURM2zEyH9Sd9gJvzNx`), both set by the conductor at Vicky's word (7 and 8 Nov).
 
 ```
 Scheduled run for journalist-portugal@PrompTugal.vicky:

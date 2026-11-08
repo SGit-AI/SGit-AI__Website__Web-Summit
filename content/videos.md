@@ -15,6 +15,9 @@ Storyboard: for sellers of agents | storyboard-sellers/index.html | About 60 s. 
 Storyboard: the Licence to Operate in 30 s | storyboard-licence/index.html | For LinkedIn: who authorised it, who owns it, until when. For comment.
 Storyboard: the demo is us | storyboard-our-team/index.html | About 90 s. Our own team and its agents, under behaviour policies. For comment.
 Storyboard: an X-ray in 30 seconds | storyboard-xray/index.html | For the stand loop: one real X-ray run, silent and captioned (WS-197). For Silvio's yes.
+With and without RiskMandate: the access that stayed | storyboard-access-stayed/index.html | About 40 s, EN and PT. An account left behind; a person closes it. For Silvio's yes.
+With and without RiskMandate: the agent beyond its mandate | storyboard-agent-beyond-mandate/index.html | About 40 s, EN and PT. A refund and deleted files; the access removed beforehand. For Silvio's yes.
+With and without RiskMandate: the supplier with the open door | storyboard-supplier-open-door/index.html | About 40 s, EN and PT. A supplier's connection narrowed to what is needed. For Silvio's yes.
 ```
 
 ## Where the videos live {#where}

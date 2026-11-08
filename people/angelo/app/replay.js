@@ -106,7 +106,7 @@ ${rows.map((r, n) => `<g class="rp-row ${r.kind}"><rect x="0" y="${TOP + n * RH}
 <g class="rp-arcs">${arcs.map(([e, n]) => `<path class="rp-e rp-arc${e[6] === s.sel ? ' on' : ''}" data-t="${e[0]}" data-h="${esc(e[6])}" d="${arcPath(e, n)}" stroke="${KINDS[e[2]][1]}"/>`).join('')}</g>
 <g class="rp-runs">${runMarks.map(([u, n, t]) => `<rect class="rp-e rp-run${u.signed ? ' signed' : ''}" data-t="${t}" x="${(x(t) - 4).toFixed(1)}" y="${TOP + n * RH + 2}" width="8" height="${RH - 4}" rx="2"><title>${esc(u.agent)} ran at ${esc(u.run.slice(11, 16))} UTC (${esc(u.trigger || 'run')}${u.signed ? ', signed' : ''}): read ${(u.read || []).length}, did ${(u.did || []).length}${u.notes ? '. ' + esc(u.notes) : ''}</title></rect>`).join('')}</g>
 <g class="rp-dots">${ev.filter(e => e[1] >= 0 && rowOf.has(e[1])).map(e => `<circle class="rp-e${e[6] === s.sel ? ' on' : ''}" data-t="${e[0]}" data-h="${esc(e[6])}" cx="${x(e[0]).toFixed(1)}" cy="${TOP + rowOf.get(e[1]) * RH + RH / 2}" r="${phone ? 4 : 3.5}" fill="${KINDS[e[2]][1]}"><title>${esc(R.agents[e[1]].name)}, ${esc(hhmm(at(R, e[0])))} UTC: ${esc(e[5])}</title></circle>`).join('')}</g>
-<line class="rp-head" x1="${x(end)}" x2="${x(end)}" y1="${TOP - 10}" y2="${H}"/></svg>`
+</svg><svg class="rp-headsvg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" aria-hidden="true"><rect class="rp-veil" x="${x(end)}" y="${TOP - 4}" width="0" height="${H - TOP + 4}" display="none"/><line class="rp-head" x1="${x(end)}" x2="${x(end)}" y1="${TOP - 10}" y2="${H}"/></svg>`
         const chip = (k, v, l, on, col) => `<button type="button" class="rp-chip${on ? ' on' : ''}" data-rp="${k}" data-v="${esc(v)}" aria-pressed="${on}">${col ? `<i style="background:${col}"></i>` : ''}${esc(l)}</button>`
         const agentOpts = [...agentsSeen].map(i => R.agents[i].name).sort()
         view.innerHTML = `<div class="${E ? 'rp rp-embed' : 'ak rp'}${s.c ? ' rp-clip' : ''}">${s.c ? `<header class="rp-cliphead"><b>The team at work: ${esc(WINDOWS[s.w][0].toLowerCase())}, in 60 seconds</b><span data-rp-now></span><button type="button" class="cc-btn" data-rp-exit>Close the clip</button></header>` : note()}
@@ -129,7 +129,7 @@ ${rows.map((r, n) => `<g class="rp-row ${r.kind}"><rect x="0" y="${TOP + n * RH}
 </div>
 <p class="note">${ev.length} commits and releases shown. Tap a dot for the commit;  an arc is a commit's For: line, from its agent to the agent or person it is for. Kinds are read from each commit (who it is from and to), so they are a guide, not a record.</p>
 ${s.r ? `<p class="note rp-runnote">${RUNS === 'loading' || !RUNS ? 'Reading the agents\' run logs from observability\'s public vault…' : RUNS instanceof Error ? `The run logs could not be read (${esc(RUNS.message)}).` : `${runMarks.length} runs shown (▮, green when signed), from the latest ${RUNS.length} the agents logged (WS-160); runs carry no duration, so each is a mark at its minute.`}</p>` : ''}
-<div class="rp-wrap">${rows.length ? svg : '<p class="note">Nothing in this window for these filters.</p>'}</div>
+<div class="rp-wrap">${rows.length ? `<div class="rp-stage">${svg}</div>` : '<p class="note">Nothing in this window for these filters.</p>'}</div>
 ${sel ? detail(R, sel) : ''}
 <p class="ak-fresh">As of ${esc(D.version)}, built ${esc(ago(D.built_at))}: every commit on dev since 2 November up to that release.</p>
 </div>`
@@ -165,21 +165,33 @@ ${sel ? detail(R, sel) : ''}
         let shown = dots.length
         const rateNow = () => s.c ? Math.max(1, (end - start) / 60) : +(speed ? speed.value : 60)
         const arcs = [...view.querySelectorAll('.rp-arc')], playing = () => !!play
-        function seek(t) {
+        // backlog 0c3 (Angelo, 8 November: "The replay agents map is very slow, when I play it it stutters quite a bit"): the
+        // chart holds thousands of marks, and every change inside it repainted all of them, once a frame while the map played.
+        // The playhead now lives in its own small overlay (moving it repaints nothing else), and while the chart follows the
+        // map's clock while the map plays, the marks stay as they are and a light veil over the chart's future moves with the
+        // playhead instead; each mark fades as before once the map pauses, or on any seek by hand.
+        const veil = view.querySelector('.rp-veil'), right = x(end)
+        let veiled = false
+        function seek(t, follow) {
             t = Math.max(start, Math.min(end, t))
+            if (head) { head.setAttribute('x1', x(t)); head.setAttribute('x2', x(t)) }
+            if (now) { const nt = `${dayLabel(at(R, t))} ${hhmm(at(R, t))} UTC`; if (now.textContent !== nt) now.textContent = nt }   // the same text again still costs a layout
+            if (scrub && +scrub.value !== Math.round(t)) scrub.value = Math.round(t)
+            if (follow && veil) {
+                if (!veiled) { veiled = true; veil.removeAttribute('display'); while (shown < dots.length) dots[shown++].classList.remove('fut') }
+                veil.setAttribute('x', x(t)); veil.setAttribute('width', Math.max(0, right - x(t)).toFixed(1)); return t
+            }
+            if (veiled) { veiled = false; if (veil) veil.setAttribute('display', 'none') }   // SVG has no hidden
             while (shown > 0 && +dots[shown - 1].dataset.t > t) dots[--shown].classList.add('fut')
             while (shown < dots.length && +dots[shown].dataset.t <= t) dots[shown++].classList.remove('fut')
             // slice 3: the messages of the last 90 minutes before the playhead are drawn bright, so each one lights up as it happens
             if (arcs.length && playing()) for (const a of arcs) a.classList.toggle('now', +a.dataset.t <= t && +a.dataset.t > t - 90)
-            if (head) { head.setAttribute('x1', x(t)); head.setAttribute('x2', x(t)) }
-            if (now) now.textContent = `${dayLabel(at(R, t))} ${hhmm(at(R, t))} UTC`
-            if (scrub && +scrub.value !== Math.round(t)) scrub.value = Math.round(t)
             return t
         }
         // embedded: follow the map's clock
         if (embedClock) removeEventListener('ak-clock', embedClock)
         embedClock = null
-        if (ctx.embed) { embedClock = e => { if (view.isConnected) seek(e.detail) }; addEventListener('ak-clock', embedClock); if (flowApi && flowApi.at() != null) seek(flowApi.at()) }
+        if (ctx.embed) { embedClock = e => { if (view.isConnected) seek(e.detail, !!(flowApi && flowApi.playing && flowApi.playing())) }; addEventListener('ak-clock', embedClock); if (flowApi && flowApi.at() != null) seek(flowApi.at()) }
         const stop = () => { if (play) { cancelAnimationFrame(play.raf); clearTimeout(play.raf) } play = null; arcs.forEach(a => a.classList.remove('now')); if (btn) { btn.textContent = '▶ Play'; btn.setAttribute('aria-pressed', 'false') } }
         if (scrub) scrub.oninput = () => { stop(); seek(+scrub.value) }
         const j = view.querySelector('[data-rp-jump]'); if (j) j.onchange = () => { if (j.value) { stop(); seek(+j.value) } }
@@ -337,7 +349,7 @@ ${sel ? detail(R, sel) : ''}
             hot = busy
             const e = acts[lowerBound(acts, T, x => x[0]) - 1], key = e ? e[6] : ''
             if (key !== lastTick) { lastTick = key; tick.innerHTML = e ? `<b>${esc(hhmm(at(R, e[0])))}</b> ${esc(nameOf(R.agents[e[1]].name))}${e[3].length ? ' → ' + esc(e[3].map(i => nameOf(R.targets[i])).join(', ')) : ''}: ${esc(e[5])}` : '' }
-            now.textContent = `${dayLabel(at(R, T))} ${hhmm(at(R, T))} UTC · ${total} agent${total === 1 ? '' : 's'}`
+            const nt = `${dayLabel(at(R, T))} ${hhmm(at(R, T))} UTC · ${total} agent${total === 1 ? '' : 's'}`; if (now.textContent !== nt) now.textContent = nt
             if (+scrub.value !== Math.round(T)) scrub.value = Math.round(T)
             flowState.t = T
             dispatchEvent(new CustomEvent('ak-clock', { detail: T }))
@@ -395,7 +407,7 @@ ${sel ? detail(R, sel) : ''}
         const key = o.key || w
         if (flowState.key !== key) flowState = { key, t: null, playing: false, speed: flowState.speed }
         if (flowState.speed) speed.value = flowState.speed
-        function stop() { playing = false; flowState.playing = false; btn.textContent = '▶ Play back'; btn.setAttribute('aria-pressed', 'false') }
+        function stop() { playing = false; flowState.playing = false; btn.textContent = '▶ Play back'; btn.setAttribute('aria-pressed', 'false'); if (on) dispatchEvent(new CustomEvent('ak-clock', { detail: T })) }   // the timeline drops its veil
         function play() { playing = true; flowState.playing = true; btn.textContent = '❚❚ Pause'; btn.setAttribute('aria-pressed', 'true'); kick() }
         scrub.oninput = () => { stop(); seek(+scrub.value) }
         const j = bar.querySelector('[data-tmf-jump]'); j.onchange = () => { if (j.value) { stop(); seek(+j.value) } }
@@ -418,7 +430,7 @@ ${sel ? detail(R, sel) : ''}
             for (const p of P) { const k = p.from + '|' + p.to; let e = lit3.get(k); if (!e) lit3.set(k, e = { op: 0 }); e.op = p.op || 0 }
             return { fly: fly.map(m => ({ from: m.from, to: m.to, u: Math.min(1, Math.max(0, (T - m.t) / travel)) })), lines: lit3, hot }
         }
-        flowApi = { seek, at: () => flowState.t, pick, view3d }
+        flowApi = { seek, at: () => flowState.t, pick, view3d, playing: () => playing }
         return { seek, msgs: msgs.length }
     }
 

@@ -51,7 +51,7 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 **From 8 Nov (SCHED-WS):** writing at :03 past 06, 11, 15, 19 UTC; fix-only at :08 past 07, 12, 16, 20 UTC (`trig_01FpXptzb91YorA9vNLuwjUu`), both set by the conductor at Vicky's word, 7 Nov.
 
-Task id trig_014T4B2EkggPSUDazhhJZ1Gf, into this session. Created daily at 08:00 and 16:00 UTC; moved to 08:18 and 16:18 UTC on 6 November (P5); moved to 08:18, 12:18 and 20:18 UTC (cron `18 8,12,20 * * *`) on 7 November (SCHED-7NOV). Moved again the same day to 08:18, 12:18, 16:18 and 20:18 UTC (cron `18 8,12,16,20 * * *`), SCHED-7NOV revised to four rounds. From 8 November, :03 past 06, 11, 15 and 19 UTC (cron `3 6,11,15,19 * * *`), set by the conductor at Vicky's word (SCHED-WS). Step 2 replaced on 8 November (REMOTE-WS). P1 to P3 added to the prompt on 7 November (SA16). Word for word, as it stands:
+Task id trig_014T4B2EkggPSUDazhhJZ1Gf, into this session. Created daily at 08:00 and 16:00 UTC; moved to 08:18 and 16:18 UTC on 6 November (P5); moved to 08:18, 12:18 and 20:18 UTC (cron `18 8,12,20 * * *`) on 7 November (SCHED-7NOV). Moved again the same day to 08:18, 12:18, 16:18 and 20:18 UTC (cron `18 8,12,16,20 * * *`), SCHED-7NOV revised to four rounds. From 8 November, :03 past 06, 11, 15 and 19 UTC (cron `3 6,11,15,19 * * *`), set by the conductor at Vicky's word (SCHED-WS). Step 2 replaced on 8 November (REMOTE-WS). From 8 November midday (SA22, journalist-connections first): :09 past 06, 11, 15 and 19 UTC, moved by the conductor at Vicky's word. P1 to P3 added to the prompt on 7 November (SA16). Word for word, as it stands:
 
 ```
 Scheduled run for journalist-ai@PrompTugal.vicky:
@@ -71,7 +71,7 @@ P3 (the status line): End every run's report line with: `state: ok|partial|idle|
 
 ## Fix-only follow-up task (created 7 November 2026 by the conductor at Vicky's word; standing answer 18)
 
-Task id trig_01FpXptzb91YorA9vNLuwjUu, into this session, at :08 past 07, 12, 16 and 20 UTC (cron `8 7,12,16,20 * * *`). Step 2 replaced on 8 November (REMOTE-WS). Word for word, as it stands:
+Task id trig_01FpXptzb91YorA9vNLuwjUu, into this session, at :08 past 07, 12, 16 and 20 UTC (cron `8 7,12,16,20 * * *`). Step 2 replaced on 8 November (REMOTE-WS). From 8 November midday (SA22): :14 past 07, 12, 16 and 20 UTC, moved by the conductor at Vicky's word. Word for word, as it stands:
 
 ```
 Fix-only follow-up run for journalist-ai@PrompTugal.vicky (standing answer 18 in people/vicky/decisions.md; Web Summit timetable, Vicky's word, 7 November 2026). Not a writing round.

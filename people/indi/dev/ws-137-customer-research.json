@@ -1,0 +1,184 @@
+{
+ "companies": [
+  {
+   "name": "GetVocal AI",
+   "agents_do": "Governed conversational AI agents for enterprise customer support, with human oversight on decisions. Glovo scaled from 1 to 80 agents in under 12 weeks (self-reported). System access not detailed publicly.",
+   "customers": "Vodafone, Glovo and Movistar named. Deutsche Telekom is a pilot. Telecom and delivery, largely EU-regulated.",
+   "trust_statements": "Positions itself as transparent, governed, trustworthy AI with human supervision. CEO cites governance as the success factor. No EU AI Act statement found.",
+   "size": "$26M Series A (Nov 2025, Creandum, Elaia, Speedinvest); about $30M total.",
+   "web_summit_2026": "Listed on LIS26 per our records. No session or speaker verified.",
+   "scores": {
+    "reach": 4,
+    "regulated_customers": 4,
+    "trust_in_pitch": 5,
+    "not_competitor": 5,
+    "reachable": 3
+   },
+   "total": 21,
+   "sources": [
+    {
+     "url": "https://tech.eu/2025/11/18/ai-customer-support-agent-startup-getvocal-raises-26m/",
+     "supports": "Series A, investors, customers, governed-AI positioning"
+    },
+    {
+     "url": "https://retailtechinnovationhub.com/home/2025/11/18/conversational-ai-agents-specialist-getvocal-lands-26-million-series-a-round-led-by-creandum",
+     "supports": "Glovo fleet growth and customer list"
+    }
+   ]
+  },
+  {
+   "name": "Cnext",
+   "agents_do": "Described as an AI consultancy: strategy, implementation and engineering, adoption design. Kairos platform not found in public sources, so agent reach is unknown.",
+   "customers": "CB Insights profile says regulated industries (logistics, finance, insurance). No named customers found.",
+   "trust_statements": "None found. The consultancy offers behavioural-science adoption design, which is not a trust or governance claim.",
+   "size": "Mechelen, Belgium; founded 2007; 30+ staff (village.ai profile). No funding found.",
+   "web_summit_2026": "Listed per our records. Not independently verified.",
+   "scores": {
+    "reach": 3,
+    "regulated_customers": 4,
+    "trust_in_pitch": 2,
+    "not_competitor": 5,
+    "reachable": 3
+   },
+   "total": 17,
+   "sources": [
+    {
+     "url": "https://village.ai/company/cnext",
+     "supports": "Company profile: AI consultancy, founded 2007, 30+ staff"
+    },
+    {
+     "url": "https://www.cbinsights.com/compare/cnext-1-vs-delaware-1",
+     "supports": "Regulated-industry focus (unclaimed profile)"
+    }
+   ]
+  },
+  {
+   "name": "Legora",
+   "agents_do": "Collaborative AI workspace and agents for lawyers: review, drafting and research on privileged legal documents. Agentic vision expanded in 2026 via the Walter AI acquisition. Exact system integrations not verified.",
+   "customers": "Law firms and legal teams, claimed 800+ (secondary blog citing a March 2026 release). Legal is confidential and professionally liable.",
+   "trust_statements": "No security, compliance or liability statement found in my searches. CTO talk 'Beyond Chat' covers agents doing real work.",
+   "size": "$550M Series D at $5.55B (Mar 2026), $50M extension to $5.6B (Apr 2026). A $550M Series E at $8.8B (Oct 2026) is reported by only two sources.",
+   "web_summit_2026": "Session 'Beyond the model: scaling AI agents for professional work' per our records. I could not find it on public pages.",
+   "scores": {
+    "reach": 4,
+    "regulated_customers": 5,
+    "trust_in_pitch": 3,
+    "not_competitor": 5,
+    "reachable": 3
+   },
+   "total": 20,
+   "sources": [
+    {
+     "url": "https://siliconangle.com/?p=733951",
+     "supports": "Series D, $5.55B valuation, March 2026"
+    },
+    {
+     "url": "https://www.startuphub.ai/news/jacob-lauritzen-on-ai-agents-beyond-chat",
+     "supports": "CTO view on agents doing complex professional work"
+    }
+   ]
+  },
+  {
+   "name": "PolyAI",
+   "agents_do": "Enterprise voice agents that handle customer-service calls end to end, built in its Agent Studio. Back-end actions are not detailed publicly.",
+   "customers": "200+ enterprise brands. Starling Bank and UniCredit reported, with a dedicated banking page. Strongly regulated sectors.",
+   "trust_statements": "Markets 'secure' banking voice AI. No public governance, audit, EU AI Act or liability detail found.",
+   "size": "$86M Series D (Dec 2025) at about $750M valuation; over $200M total. Investors include Georgian, Hedosophia, Khosla, NVentures, Citi, British Business Bank.",
+   "web_summit_2026": "Session 'Coaching an AI agent like human talent' per our records. Not verified on public pages.",
+   "scores": {
+    "reach": 4,
+    "regulated_customers": 5,
+    "trust_in_pitch": 3,
+    "not_competitor": 5,
+    "reachable": 3
+   },
+   "total": 20,
+   "sources": [
+    {
+     "url": "https://siliconangle.com/2025/12/15/call-center-chatbot-startup-polyai-raises-86m-750m-valuation/",
+     "supports": "Series D, valuation, investors"
+    },
+    {
+     "url": "https://poly.ai/financial-services/",
+     "supports": "Banking focus and secure-conversation claim"
+    }
+   ]
+  },
+  {
+   "name": "Make",
+   "agents_do": "No-code platform to build automations and AI agents inside scenarios. It can call any connected app via integrations, and an MCP server connects AI to business actions. Next-gen agents released 11 Feb 2026.",
+   "customers": "Broad SMB and enterprise base, mostly not regulated. Only named case study is parent Celonis (expense audit, human in the loop).",
+   "trust_statements": "Stresses transparency ('AI's glass box'), observability via Make Grid, audit logs and 2FA. No liability or EU AI Act statement found.",
+   "size": "Owned by Celonis (acquired 2020, reported about $100M). No independent funding round found for 2026.",
+   "web_summit_2026": "Masterclass 'Make AI agents work beyond the demo' per our records. Not verified on public pages.",
+   "scores": {
+    "reach": 5,
+    "regulated_customers": 3,
+    "trust_in_pitch": 4,
+    "not_competitor": 4,
+    "reachable": 3
+   },
+   "total": 19,
+   "sources": [
+    {
+     "url": "https://make.com/en/success-stories/make-ai-agents-help-celonis-lower-expense-auditing-costs",
+     "supports": "AI agents with human in the loop, Celonis case"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Make_(platform)",
+     "supports": "Platform background and Celonis ownership"
+    }
+   ]
+  },
+  {
+   "name": "Feedzai",
+   "agents_do": "AI fraud and financial-crime platform. Launched Farol, an embedded AI agent that automates fraud analysis and investigation for banks. Acts on transaction and case data.",
+   "customers": "Banks and payment firms; ECB framework agreement as first-ranked tenderer for digital euro fraud mechanism. Highly regulated.",
+   "trust_statements": "Agentic fraud focus. No public agent liability or governance statement found. Adjacent to risk tooling (not an AI-governance vendor).",
+   "size": "$75M Series D (Oct 2025) at over $2B valuation; about $350M+ total (sources conflict).",
+   "web_summit_2026": "Session 'Who let the agent in?' per our records. Not found on public pages. Lisbon-based, CEO Nuno Sebastiao.",
+   "scores": {
+    "reach": 4,
+    "regulated_customers": 5,
+    "trust_in_pitch": 4,
+    "not_competitor": 3,
+    "reachable": 4
+   },
+   "total": 20,
+   "sources": [
+    {
+     "url": "https://www.fintechfutures.com/financial-crime-fraud-prevention/feedzai-fusion-tackles-fraud-in-the-agentic-ai-era-with-farol-debut",
+     "supports": "Farol embedded AI agent for fraud investigation"
+    },
+    {
+     "url": "https://www.crowdfundinsider.com/2025/10/254101-feedzais-75m-round-boosts-valuation-past-2b/",
+     "supports": "Series D and valuation over $2B"
+    }
+   ]
+  }
+ ],
+ "top_3": [
+  {
+   "name": "GetVocal AI",
+   "why": "Its agents work in telecom and delivery customers' live support systems, and governance and human oversight are the core of its pitch, so a third-party Agent Behaviour Policy backs its sales story. It is young and funded for enterprise expansion into regulated European accounts."
+  },
+  {
+   "name": "PolyAI",
+   "why": "Voice agents act for banks such as Starling and UniCredit, whose risk teams will ask what the agent can do and who is liable. Its public trust messaging is thin, so a Licence to Operate fills a clear gap."
+  },
+  {
+   "name": "Feedzai",
+   "why": "Its session title 'Who let the agent in?' is the RiskMandate question, and its agents act on bank fraud cases for regulators and central banks. It is Lisbon-based and easy to reach, but it is adjacent to risk tooling, so pitch it as a partner or buyer for its own agents. Legora (20) is a tie and the first alternate."
+  }
+ ],
+ "caveats": [
+  "No Web Summit LIS26 session or speaker listing was found for any of the six, so all session titles rest on our records, not public pages. Verify on websummit.com.",
+  "Cnext 'Kairos' platform could not be found anywhere; Cnext appears to be a roughly 30-person consultancy. Its scores are low-confidence.",
+  "Legora Series E ($8.8B, Oct 2026) rests on two secondary sources. The 800+ customers figure is from a secondary blog.",
+  "None of the six has a public statement on the EU AI Act or agent liability that I could find. Trust scores reflect positioning language only.",
+  "Total funding for Feedzai conflicts across sources. Make has no independent funding data.",
+  "GetVocal's Deutsche Telekom relationship is a pilot, not a full deployment. Glovo metrics are self-reported.",
+  "Reachable scores of 3 reflect no confirmed speaker role. Feedzai gets 4 for being Lisbon-based.",
+  "Searches were US-only standard mode and I did not fetch company sites directly, so agent access details (Reach) are inferred from product descriptions."
+ ]
+}
