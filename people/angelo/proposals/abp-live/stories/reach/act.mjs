@@ -77,6 +77,7 @@ function one(cmd) {
         if ((c === 'npm' && ['install', 'i', 'add'].includes(a[1])) || (c !== 'npm' && c !== 'npx' && /install|add/.test(a[1] || '')) || c === 'npx') {
             const pkgs = a.slice(2).filter(x => !x.startsWith('-')); if (c === 'npx') pkgs.push(a[1])
             if (!pkgs.length) { say('up to date, audited 0 packages'); return }
+            if (a.includes('--dry-run')) { say(`would add ${pkgs.length} package(s) from the public registry (dry run: nothing installed)`); record({ action: 'look', command: cmd }); return }
             const [o, by, why] = gate('install', { capOk: false, capWhy: 'only packages from the company mirror, and it has none of these', content: cmd })
             act('install', { packages: pkgs, from: 'the public registry', outcome: o, by, why, rule: 'RM-R0012' })
             if (o === 'done') { st.installed.push(...pkgs); say(`added ${pkgs.length} package(s) from the public registry in 2s`) } else say(`${o} by ${by}: ${why}`)
