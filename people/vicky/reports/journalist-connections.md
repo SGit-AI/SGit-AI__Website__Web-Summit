@@ -109,3 +109,34 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 - Skipped: none. Left out on purpose: where each company is based (Web Summit's listings give a speaker's country, not the company's head office).
 - Applied SA24X: standing answer 24 in my prompts file; I never added the withdrawn "6b" line to my writing task.
 - state: ok; done: C1 written and pushed for review; next: the reviewer's C1 batch; my 18:45 writing run; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 18:55 UTC (scheduled run)
+
+- Draft S30, "Eleven health startups at Web Summit, by the problem they tackle" (579 words, theme-led), For: journalist@PrompTugal.dinis. Source: Web Summit's featured startups page, first page, read 8 Nov, with each startup's own description; four groups (getting care 4, diagnosis sooner 3, new treatments 2, recovery and wellbeing 2). Cover card checked at 390px. No company dropped. Not confirmed: the companies' own figures; when or where each exhibits; later pages of the list. Countries left out except where a company's own description gives one (AURIMOD, Vienna; NeoCannBio, Korea).
+- The only storyline the curator lists as ready for my desk; S29 is for journalist-ai.
+- No hold; P2: prompts file and memory agree. No fix-first open for me: C1 all Ready and released (the batch's one fix, Fretefy, is journalist-portugal's P1); S28's review header still reads Fix first but it was re-checked and published at 12:22 and 12:29.
+- state: ok; done: S30 drafted and pushed; next: the reviewer's check; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 19:10 UTC (prompted, at Vicky's request)
+
+- Correction to the 18:55 line: S30's handoff is to reviewer@PrompTugal.vicky through the normal review queue (it reviews every draft in desks/journalist-vicky/drafts/ without a review; S30 had none). Recorded in a commit For: reviewer@PrompTugal.vicky. Not duplicated, not released.
+- S30 now says, in In short, What this does not claim and its source line, that the eleven come from page 1 of 26 of Web Summit's featured startups, whose 100 entries are all GROWTH stage, and are not a complete or representative list (re-checked on Web Summit's page today).
+- state: ok; done: S30 handoff corrected and sample stated; next: the reviewer's check; ask: should my writing task's step 5 say For: reviewer@PrompTugal.vicky instead of journalist@PrompTugal.dinis? (recommended: yes); run: prompted
+
+## Sun 8 Nov 2026, 19:00 UTC (prompted, at Vicky's request): routing fix
+
+- **For conductor@web-summit.vicky's routing audit.** Cause: step 5 of my writing task (trig_01RqSqjPAC6WuwNmTbjKFzwa) said "For: journalist@PrompTugal.dinis", as set on 6 Nov, before Vicky's reviewer queue existed. So my draft commits (S23, S28, S30, and S14, S16, S19 and S21 earlier) named Dinis's journalist rather than reviewer@PrompTugal.vicky, and my 18:55 report line repeated it for S30. Effect: none on review, since the reviewer reviews every unreviewed draft in desks/journalist-vicky/drafts/; only the commit's address and the report were misleading. Fix: step 5 now says "For: reviewer@PrompTugal.vicky" (task updated 18:56 UTC; schedule unchanged, writing at :45 past 05, 10, 14, 18 UTC); prompts file synchronised; S30's handoff recorded For: reviewer@PrompTugal.vicky (commit 9fbce7be). The fix-only task already addressed the reviewer and is unchanged.
+- state: ok; done: step 5 readdressed, prompts file synchronised, cause and fix recorded; next: next writing run 05:45 tomorrow; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 19:15 UTC (company batch C2, manual run at Vicky's request)
+
+- C2 ready for review: ten files in desks/journalist-vicky/companies/ in the newsroom repository (rws, scrut-automation, shakers, spacecomputer, sphere, strawberry, sumsub, the-hacking-games, topsec-cloud-solutions, trent-ai), status: in-review, pushed together, commit For: reviewer@PrompTugal.vicky. Backlog rows set to "in review".
+- Sources, all read 8 Nov: the companies' own sites; Web Summit's featured startups page (Shakers, SpaceComputer, Sphere, Strawberry: GROWTH-stage featured startups, each with its own description); eight Web Summit session pages for the other six.
+- RWS (marked "website"): its site refused an automated read (HTTP 202, no content), so its About rests on Wikipedia's "RWS Group" article, noted in the source line. Its press conference (Tue 10 Nov, 11:30, Stage 2) is marked Media only, as Web Summit's page says.
+- Skipped: none. Blockers: none. Left out on purpose: where each company is based, as in C1.
+- state: ok; done: C2 written and pushed for review; next: my 19:50 fix-only run; no further batch; ask: none; run: prompted
+
+## Sun 8 Nov 2026, 19:58 UTC (fix-only run)
+
+- S30 fixed after the reviewer's Fix first, all points accepted and checked today: the eleven companies' own Web Summit pages now cited and linked (each with its description and GROWTH badge), and the text says the descriptions come from those pages; NeoCannBio "says it is building" its chain; AURIMOD's drug-free claim attributed; the cover card and its alt text say the eleven are from page 1 of Web Summit's featured list; group label now "doctors, bookings, claims". Status back to draft, For: reviewer@PrompTugal.vicky. Note for the record: the descriptions were also in the list page's embedded data, which is where I first read them; citing each company's page is clearer for readers.
+- state: ok; done: S30 revised and pushed; next: the reviewer's 20:20 re-check; ask: none; run: scheduled

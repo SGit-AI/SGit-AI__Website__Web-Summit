@@ -9,7 +9,7 @@ Kept by conductor@web-summit.vicky at Vicky's word (8 November 2026, about 17:45
 | Count | |
 |---|---|
 | Company pages on promptugal.news | 120 |
-| Already done | 19 (Replit; C1, ten; P1, eight) |
+| Already done | 20 (Replit; C1, ten; P1, nine) |
 | In this backlog | 101, in 10 batches |
 | Blocked, missing evidence | 14 |
 | Held, someone else working on the data | 4 |
@@ -37,16 +37,16 @@ Marked (website): the company's own site refuses automated reads; do it from oth
 
 | Company | Page | Status |
 |---|---|---|
-| RWS Group (website) | https://promptugal.news/companies/rws/ | to do |
-| Scrut Automation | https://promptugal.news/companies/scrut-automation/ | to do |
-| Shakers | https://promptugal.news/companies/shakers/ | to do |
-| SpaceComputer | https://promptugal.news/companies/spacecomputer/ | to do |
-| Sphere | https://promptugal.news/companies/sphere/ | to do |
-| Strawberry | https://promptugal.news/companies/strawberry/ | to do |
-| Sumsub | https://promptugal.news/companies/sumsub/ | to do |
-| The Hacking Games | https://promptugal.news/companies/the-hacking-games/ | to do |
-| Topsec Cloud Solutions | https://promptugal.news/companies/topsec-cloud-solutions/ | to do |
-| Trent AI | https://promptugal.news/companies/trent-ai/ | to do |
+| RWS Group (website) | https://promptugal.news/companies/rws/ | in review |
+| Scrut Automation | https://promptugal.news/companies/scrut-automation/ | in review |
+| Shakers | https://promptugal.news/companies/shakers/ | in review |
+| SpaceComputer | https://promptugal.news/companies/spacecomputer/ | in review |
+| Sphere | https://promptugal.news/companies/sphere/ | in review |
+| Strawberry | https://promptugal.news/companies/strawberry/ | in review |
+| Sumsub | https://promptugal.news/companies/sumsub/ | in review |
+| The Hacking Games | https://promptugal.news/companies/the-hacking-games/ | in review |
+| Topsec Cloud Solutions | https://promptugal.news/companies/topsec-cloud-solutions/ | in review |
+| Trent AI | https://promptugal.news/companies/trent-ai/ | in review |
 
 ### S1: journalist@PrompTugal.vicky (11)
 
@@ -91,7 +91,7 @@ Marked (website): the company's own site refuses automated reads; do it from oth
 | ChatPlace | https://promptugal.news/companies/chatplace/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
 | DIG-IN | https://promptugal.news/companies/dig-in/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
 | FIDO | https://promptugal.news/companies/fido/ | done (8 Nov, v0.1.732; checked live at 390 px and desktop) |
-| FRETEFY TECNOLOGIA S.A. | https://promptugal.news/companies/fretefy/ | in review |
+| FRETEFY TECNOLOGIA S.A. | https://promptugal.news/companies/fretefy/ | done (8 Nov, v0.1.735, after a fix: the Mobiis rebrand sourced; checked live at 390 px and desktop) |
 
 ### P2: journalist-portugal@PrompTugal.vicky (9)
 
@@ -111,16 +111,16 @@ Marked (website): the company's own site refuses automated reads; do it from oth
 
 | Company | Page | Status |
 |---|---|---|
-| Altegio | https://promptugal.news/companies/altegio/ | to do |
-| AustriaCard | https://promptugal.news/companies/austriacard/ | to do |
-| Conscium | https://promptugal.news/companies/conscium/ | to do |
-| Contents | https://promptugal.news/companies/contents/ | to do |
-| Crystal Intelligence | https://promptugal.news/companies/crystal-intelligence/ | to do |
-| Data Protection Commission (Ireland) | https://promptugal.news/companies/data-protection-commission/ | to do |
-| Delta Labs | https://promptugal.news/companies/delta-labs/ | to do |
-| EasyDMARC | https://promptugal.news/companies/easydmarc/ | to do |
-| Factorial | https://promptugal.news/companies/factorial/ | to do |
-| Firefox Enterprise by Mozilla | https://promptugal.news/companies/firefox-enterprise-mozilla/ | to do |
+| Altegio | https://promptugal.news/companies/altegio/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| AustriaCard | https://promptugal.news/companies/austriacard/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Conscium | https://promptugal.news/companies/conscium/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Contents | https://promptugal.news/companies/contents/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Crystal Intelligence | https://promptugal.news/companies/crystal-intelligence/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Data Protection Commission (Ireland) | https://promptugal.news/companies/data-protection-commission/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Delta Labs | https://promptugal.news/companies/delta-labs/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| EasyDMARC | https://promptugal.news/companies/easydmarc/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Factorial | https://promptugal.news/companies/factorial/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
+| Firefox Enterprise by Mozilla | https://promptugal.news/companies/firefox-enterprise-mozilla/ | in review (8 Nov, commit 0dc3f784, for reviewer@PrompTugal.vicky) |
 
 ### E2: journalist-europe@PrompTugal.vicky (10)
 

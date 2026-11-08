@@ -45,6 +45,8 @@ Start now: set up your key, then write your first story. Before writing, check i
 
 ## Scheduled task's prompt (6 November 2026)
 
+**From 8 Nov, 18:56 UTC (at Vicky's word):** step 5 addresses new drafts For: reviewer@PrompTugal.vicky (before then: For: journalist@PrompTugal.dinis, the address set on 6 Nov). Schedule unchanged.
+
 **From 8 Nov (SA22, connections first):** writing at :45 past 05, 10, 14, 18 UTC (trig_01RqSqjPAC6WuwNmTbjKFzwa); fix-only at :50 past 06, 11, 15, 19 UTC (trig_014fa4xbTLFyrXdfF4pzv8KD); both moved by the conductor at Vicky's word, 8 Nov. Step 5 changed by this agent on 8 Nov (SA22); it read "5. Write at most two of them, one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: journalist@PrompTugal.dinis."
 
 Standing answer 22 (Vicky, 8 Nov, about 12:45 UTC), the part for this agent: journalist-connections may write up to 3 stories in one writing run, in the curator's priority order, as long as each storyline is already listed by the curator, each has enough verified public information, the duplicate checks (standing answer 20) have passed, and quality does not drop. "Do not create extra stories just to fill the quota."
@@ -61,7 +63,7 @@ Scheduled run for journalist-connections@PrompTugal.vicky:
 2. In your newsroom clone, run `git remote set-url origin https://github.com/PrompTugal/PrompTugal__News__Website`, confirm it with `git remote get-url origin`, then pull dev. Never push to the old SGit-AI newsroom address, even if the session lists it as a source.
 3. Read desks/journalist-vicky/STYLE.md.
 4. Read desks/curator/README.md and pick the storylines in your beat that have no draft yet in desks/journalist-vicky/drafts/, desks/journalist-promptugal/drafts/ or content/articles/.
-5. Write up to three of them (standing answer 22: only storylines the curator lists, in its priority order, each with enough verified public information and past the duplicate checks; never one just to fill the number), one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: journalist@PrompTugal.dinis.
+5. Write up to three of them (standing answer 22: only storylines the curator lists, in its priority order, each with enough verified public information and past the duplicate checks; never one just to fill the number), one at a time, each sourced and read today. Push each to dev through newsroom/tools/release.sh, For: reviewer@PrompTugal.vicky.
 6. If there's nothing new in your beat, write nothing.
 7. Add a report line in people/vicky/reports/journalist-connections.md on the team site.
 Never push to main, never use --force, never push to a session branch.
@@ -139,3 +141,11 @@ Since 6 November, desks/journalist-vicky/STYLE.md in the newsroom repository rep
 ## Standing answer 24 (Vicky, 8 November 2026, about 17:45 UTC; SA24X)
 
 Company pages are a one-off project Vicky starts by hand, not part of any scheduled run. No company-page work in any scheduled run: no choosing, no writing, no reviewing of company files; articles and the normal rounds are untouched. Only in a batch Vicky starts in this session, from `people/vicky/company-pages/backlog.md` on the team site, taking only this agent's own rows (C1 and C2). Standing answer 23 is the editorial standard; the batch prompt says what to do. The "6b" line of the withdrawn 16:55 version was never added to this agent's writing task.
+
+## Standing rule given in chat, 8 November 2026
+
+```
+Yes. Change step 5 of your writing task so new drafts are addressed to reviewer@PrompTugal.vicky instead of journalist@PrompTugal.dinis.
+
+Synchronise your working instructions and prompts file, keep the schedule unchanged, and confirm when applied. Record this cause and fix for conductor's routing audit. No further change to S30 is needed for this handoff.
+```

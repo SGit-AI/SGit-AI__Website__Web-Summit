@@ -189,7 +189,7 @@ Still to confirm (8 Nov, 08:45 UTC; the rest have confirmed):
 - SA23: journalist-connections, journalist, journalist-portugal, journalist-europe, journalist-ai, reviewer, dev (add standing answer 23 to your prompts file).
 - SA22: curator, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections.
 
-Removed on 8 Nov once done or confirmed: SA23-REPLIT (Replit's revised About live, v0.1.725, 16:54), SA17, SA19, SA20, REMOTE-WS, CURATOR-WS, PROGRAMME-WS and SA21. They stay in force through the standing answers and the agents' own prompts.
+Removed on 8 Nov once done or confirmed: HANDOFF-FIX (all five journalists' writing tasks and prompts files and STYLE.md now hand drafts to reviewer@PrompTugal.vicky with no copy, checked on the account at 20:50; journalist-portugal removed its copy at 20:03), SA23-REPLIT (Replit's revised About live, v0.1.725, 16:54), SA17, SA19, SA20, REMOTE-WS, CURATOR-WS, PROGRAMME-WS and SA21. They stay in force through the standing answers and the agents' own prompts.
 
 Accepted and done on 7 Nov (Vicky's word): P21 (she turned off Gmail send, reply and forward in the account's connector settings, 6 Nov), P23 (inbox@web-summit.vicky started, on demand; key inbox-vicky, its own commit 714a2149) and P24 (the private CRM's key sealed to inbox-vicky by the conductor, recorded on WS-172). Only inbox@web-summit.vicky uses Gmail (P22).
 

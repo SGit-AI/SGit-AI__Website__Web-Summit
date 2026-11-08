@@ -18,7 +18,7 @@
 .lv.lv-workview .lv-links, .lv.lv-workview .lv-pulses { opacity: .35; }
 .lv.lv-workview .lv-svg { overflow: visible; }
 .lv.lv-workview .lv-hex { width: min(58cqw, 84cqh); height: min(58cqw, 84cqh); }
-@container (max-width: 640px) { .lv.lv-workview .lv-hex { width: min(80cqw, 56cqh); height: min(80cqw, 56cqh); } }
+@container (max-width: 640px) { .lv.lv-workview .lv-hex { width: min(94cqw, 64cqh); height: min(94cqw, 64cqh); } }
 .wv-sq rect { fill: var(--rm-surface, #0E2035); stroke: var(--rm-border, #294A64); stroke-width: 2; }
 .wv-sq.wv-lit rect { stroke: var(--rm-action, #4aa3ff); stroke-width: 4; }
 .wv-sq .wv-mark { fill: none; stroke: var(--rm-text-secondary, #BCCCDC); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
@@ -38,8 +38,13 @@
     // where each destination's name goes: outside the rim, away from the centre, inside the frame [lo, hi] (drawing units), never on
     // another pill. font: the pill's text size in drawing units, so it shows at least 12 px whatever the graph's size (dashboard@'s
     // note); sq: the squares' size. Beside its square where the frame leaves room; where it does not (a phone), every name goes in
-    // rows above the hexagon (the upper half's) or below it (the lower half's), each joined to its square by a thin leader.
-    function pillsFor(P, names, font, lo = -Infinity, hi = Infinity, sq = SQ) {
+    // rows above the hexagon (the upper half's) or below it (the lower half's), each joined to its square by a thin leader; on a
+    // phone the hexagon keeps nearly the frame's width and the rows use the room above and below it (dashboard@'s review, de879c5).
+    // avoid: the graph's own furniture (live.js's logos and LIVE, its date line, the layout switch) as boxes in drawing units;
+    // no pill is left on one. clearLow: in rows, how much of the frame's right side the lower rows leave free (the app's floating
+    // Ask Claude button stays in that column on a phone, whatever the scroll: dashboard@'s review, 7a0de06c).
+    function pillsFor(P, names, font, lo = -Infinity, hi = Infinity, sq = SQ, avoid = [], clearLow = 0) {
+        const hits = b => avoid.find(o => b.x < o.x + o.w && o.x < b.x + b.w && b.y < o.y + o.h && o.y < b.y + b.h)
         const C = W().C, h = Math.round(font * 1.6), gap = Math.round(font * 0.5), out = new Map(), wOf = d => Math.round(names[d].length * font * 0.56 + font * 1.2)
         let fits = true
         for (const [d, p] of P) {
@@ -54,6 +59,8 @@
                 const a = all[i], b = all[j]
                 if (a.x < b.x + b.w && b.x < a.x + a.w && a.y < b.y + b.h && b.y < a.y + a.h) { const up = a.y + a.h / 2 < b.y + b.h / 2 ? a : b, down = up === a ? b : a, need = (up.y + up.h + 4 - down.y) / 2; up.y -= need; down.y += need }
             }
+            // a pill on the furniture steps off it vertically, the way away from the furniture's middle
+            for (const a of all) for (let k = 0, o; k < 4 && (o = hits(a)); k++) a.y = a.y + a.h / 2 < o.y + o.h / 2 ? o.y - a.h - 4 : o.y + o.h + 4
             return out
         }
         // rows: the hexagon's top edge is at y 67 and its bottom at 933 (work.js's HEX); rows stack outwards from there
@@ -61,11 +68,11 @@
         for (const upper of [true, false]) {
             const mine = [...P].filter(([, p]) => (p.y < C) === upper).sort((x, y) => x[1].x - y[1].x), rows = []
             for (const [d, p] of mine) {
-                const w = wOf(d), x = Math.max(lo, Math.min(hi - w, p.x - w / 2))
-                let r = 0; while ((rows[r] || []).some(o => x < o.x + o.w + gap && o.x < x + w + gap)) r++
+                const w = wOf(d), x = Math.max(lo, Math.min((upper ? hi : hi - clearLow) - w, p.x - w / 2))
+                const edge = upper ? Math.min(67, p.y) - sq / 2 - gap : Math.max(933, p.y) + sq / 2 + gap, yAt = r => upper ? edge - h - r * (h + gap) : edge + r * (h + gap)
+                let r = 0; while ((rows[r] || []).some(o => x < o.x + o.w + gap && o.x < x + w + gap) || (r < 12 && hits({ x, y: yAt(r), w, h }))) r++
                 ;(rows[r] = rows[r] || []).push({ x, w })
-                const edge = upper ? Math.min(67, p.y) - sq / 2 - gap : Math.max(933, p.y) + sq / 2 + gap
-                out.set(d, { x, y: upper ? edge - h - r * (h + gap) : edge + r * (h + gap), w, h, mode: 'rows', row: r })
+                out.set(d, { x, y: yAt(r), w, h, mode: 'rows', row: r })
             }
         }
         return out
@@ -114,7 +121,10 @@
             const r = svg.getBoundingClientRect(), fr = wrap.getBoundingClientRect(), k = r.width / A.S
             const font = k > 0 ? Math.max(FONT, MIN_PX / k) : FONT, size = k > 0 ? Math.max(SQ, 26 / k) : SQ
             const lo = k > 0 ? (fr.left - r.left) / k + 4 : -Infinity, hi = k > 0 ? (fr.right - r.left) / k - 4 : Infinity
-            const L = pillsFor(P, A.DEST_NAMES, font, lo, hi, size)
+            const box = e => { const b = e.getBoundingClientRect(); return { x: (b.left - r.left) / k - 6, y: (b.top - r.top) / k - 6, w: b.width / k + 12, h: b.height / k + 12 } }
+            const avoid = k > 0 ? [...wrap.querySelectorAll('.lv-top, .lv-when, .lv-lay')].filter(e => e.getBoundingClientRect().width).map(box) : []
+            const fab = doc.querySelector('.cc-askfab'), fb = fab && fab.getBoundingClientRect(), clearLow = k > 0 && fb && fb.width && fb.left < fr.right && fb.right > fr.left ? (fr.right - fb.left) / k + 4 : 0
+            const L = pillsFor(P, A.DEST_NAMES, font, lo, hi, size, avoid, clearLow)
             for (const [d, s] of sq) {
                 const b = L.get(d), p = s.p
                 s.inner.setAttribute('transform', `scale(${(size / SQ).toFixed(3)})`)

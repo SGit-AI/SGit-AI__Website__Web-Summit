@@ -4,7 +4,7 @@ const S = process.argv[2] || require('os').tmpdir(), BASE = 'http://127.0.0.1:87
 // hook (host.lvGraph). Until dev.map@ lands the hook (people/angelo/map/work/drafts/live-hook.patch), this test serves live.js
 // with the hook's lines added, as the patch does, and says so. At 1280 and 390 px, dark and light: ten destination squares on the
 // hexagon's rim, each with its name in a pill outside the rim (none overlapping another, none crossing the rim, text at least 12 px
-// on screen, inside the frame); PT News and LinkedIn show their logos; deliveries from deliveries.json fly from their makers' nodes
+// on screen, inside the frame); no square or pill on live.js's logos, LIVE, date line or layout switch; PT News and LinkedIn show their logos; deliveries from deliveries.json fly from their makers' nodes
 // as typed icons in their makers' colours (in light, a shade readable on white), merged ones carry their number, each lands on its
 // square and lights it; the counts show; no text but the destinations' names and numbers; no page error.
 const PATCH = fs.readFileSync(path.join(__dirname, '../../map/work/drafts/live-hook.patch'), 'utf8')
@@ -43,13 +43,17 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
       const squares = q('.wv-sq').map(g => { const r = g.getBoundingClientRect(); return { d: g.dataset.dest, x: (r.left + r.right) / 2, y: (r.top + r.bottom) / 2, logo: !!g.querySelector('image'), w: r.width } })
       // the squares sit on the rim: their centres within a few pixels of the hexagon's edge (inside one way, outside the other)
       const onRim = squares.map(s => { const k = s.w * 0.25; return [[k, 0], [-k, 0], [0, k], [0, -k]].map(([dx, dy]) => inside(s.x + dx, s.y + dy)) }).map(a => a.includes(true) && a.includes(false))
+      // the graph's furniture (live.js's logos and LIVE, the date line, the layout switch): no square and no pill on it (de879c5)
+      const furn = q('.lv-top > *, .lv-when, .lv-lay button').map(e => { const b = e.getBoundingClientRect(); return { n: e.className || e.textContent, l: b.left, t: b.top, r: b.right, b: b.bottom } }).filter(b => b.r > b.l)
+      const on = q('.wv-sq rect, .wv-pill').map(e => { const b = e.getBoundingClientRect(), g = e.closest('[data-dest]'); return { d: g.dataset.dest + (e.tagName === 'rect' ? ' square' : ' pill'), l: b.left, t: b.top, r: b.right, b: b.bottom } })
+      const clash = []; for (const a of on) for (const f of furn) if (a.l < f.r && f.l < a.r && a.t < f.b && f.t < a.b) clash.push(`${a.d} on ${f.n}`)
       V.step(3200)
       const after = { inAir: V.inAir(), lit: q('.wv-sq.wv-lit').length }
       V.step(4500)
       const texts = q('.wv text').map(t => t.textContent)
       const counts = q('.wv-n').filter(n => n.style.display !== 'none').length
       const logosOk = await Promise.all(q('.wv-sq image').map(i => fetch(i.getAttribute('href')).then(r => r.ok)))
-      return { n: shown.length, merged: merged.length ? merged[0].n : 0, mid, pills, squares, onRim, after, litLater: q('.wv-sq.wv-lit').length, texts, counts, logosOk, light: V.light, frame: { l: frame.left, r: frame.right }, names: A.DEST_NAMES }
+      return { clash, n: shown.length, merged: merged.length ? merged[0].n : 0, mid, pills, squares, onRim, after, litLater: q('.wv-sq.wv-lit').length, texts, counts, logosOk, light: V.light, frame: { l: frame.left, r: frame.right }, names: A.DEST_NAMES }
     }, { base: BASE })
     if (r.err) { fail(`${tag}: ${r.err}`); await ctx.close(); continue }
     if (r.squares.length !== 10 || r.pills.length !== 10) fail(`${tag}: ${r.squares.length} squares, ${r.pills.length} pills`)
@@ -62,6 +66,7 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
       if (pl.r.l < r.frame.l - 1 || pl.r.r > r.frame.r + 1) fail(`${tag}: the pill for ${pl.d} leaves the frame`)
     }
     for (let i = 0; i < r.pills.length; i++) for (let j = i + 1; j < r.pills.length; j++) { const a = r.pills[i].r, c = r.pills[j].r; if (a.l < c.r && c.l < a.r && a.t < c.b && c.t < a.b) fail(`${tag}: pills ${r.pills[i].d} and ${r.pills[j].d} overlap`) }
+    for (const c of r.clash) fail(`${tag}: ${c}`)
     if (r.n < 3) fail(`${tag}: only ${r.n} deliveries to fly (is deliveries.json built?)`)
     if (r.mid.length !== r.n) fail(`${tag}: ${r.mid.length} of ${r.n} icons in the air at 1.5 s`)
     if (r.light !== (theme === 'light')) fail(`${tag}: the drawing thinks the theme is ${r.light ? 'light' : 'dark'}`)

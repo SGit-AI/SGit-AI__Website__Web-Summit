@@ -1,47 +1,37 @@
 # Watcher: latest run
 
-**Run:** 2026-11-08 17:15 UTC (scheduled, now through its pointer), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed is `activity.json`; the actions are `actions.json`, both beside this file. **Addressed to:** Jose and conductor@web-summit.jose, which reads it at every wake.
+**Run:** 2026-11-08 22:15 UTC (scheduled), by watcher@web-summit.jose. **Scope:** the whole team, read-only (decided by Jose on 5 November 2026, WS-134). The feed is `activity.json`; the actions are `actions.json`, both beside this file. **Addressed to:** Jose and conductor@web-summit.jose, which reads it at every wake.
 
-**Range:** `dev` from `acae0e2` to `fb659d1`.
+**Range:** `dev` from `fb659d1` to `524075d`.
 
 ## Who committed
 
-220 commits: 78 CI releases (counted), 1 by the watcher itself, none without an agent name, and 141 by agents: Angelo 69, Vicky 41, Indi 13, Silvio 10, Jose 8. None from Dinis. None is reviewed by security.
+152 commits: 54 CI releases (counted), 1 by the watcher itself, none without an agent name, and 97 by agents: Vicky 38, Angelo 34, Silvio 11, Indi 7, Dinis 4, Jose 3. None is reviewed by security.
 
-## A-06, per agent: five done, three left
+## A-06: seven done, one left
 
-| Agent | Pointer | Time |
-|---|---|---|
-| conductor | done | done: every hour 07:20 to 21:20 |
-| vault | done | right |
-| helper | done | done: every two hours 07:50 to 21:50 |
-| watcher | done | right |
-| designer | done (new task, 13:38) | 10:40 and 16:40 |
-| **dev** | **not yet** (3 November text) | **not yet**: 09:30, 15:30; should be every two hours 07:30 to 21:30 |
-| **dashboard** | **not yet** (old full text) | right |
-| **automation** | **not yet** (old full text) | right |
-
-For you: paste the pointer into the dev, dashboard and automation tasks, and set dev's time. Open for fourteen runs, now three agents left. The task file is still marked open: your conductor marks it done.
+Dashboard (20:12) and automation (20:11) now have their pointers, and the hourly drain task was disabled at 17:21, as planned. **Only dev is left:** it still runs the 3 November text at 09:30 and 15:30. For you: paste the pointer into the dev task and set it to every two hours, 07:30 to 21:30. The task file is still marked open: your conductor marks it done.
 
 ## Other open actions
 
-1. **A-21, fourth run: Dinis's agents are all still silent**: none since xray's last commit at 21:52 yesterday (about 19.5 hours), and all but xray since 16:41 (about 24.5 hours). **There has been no security review for about 29 hours** (since its 11:51 wake yesterday). The gate's owners are among the silent agents, while Angelo's check 21 is enforced. For Dinis, and for your conductor at the stand-up.
-2. **A-23, third run: inbox@web-summit.silvio**, no commit in about 23 hours, while Silvio's other agents work.
-3. **A-24, new: procurement@web-summit.silvio**, no commit since 17:41 yesterday; its 07:30 and 12:30 runs passed.
+1. **A-21, fifth run, partly recovered: Dinis's account is back.** His conductor's own words: "back after 27 hours offline". His dashboard (20:08), abp (20:13), conductor (20:29) and mentor (20:43) committed again. Not yet back: dev, security, journalist, sgit, pulse, project-manager, designer and xray. **Security has not reviewed anything since its 11:51 wake yesterday**, so about 35 hours of commits wait for its 23:50 review.
+2. **A-14, twelfth run: dev@web-summit.dinis**, no commit in about 70 hours, even after the account came back.
+3. **A-23, fourth run: inbox@web-summit.silvio**, about 28 hours.
+4. **A-24, second run: procurement@web-summit.silvio**, missed its 07:30, 12:30 and 17:30 runs today.
 
-Closed: A-22 (Angelo's CRM agent committed again).
+Closed: A-15 (Dinis's dashboard agent committed at 20:08).
 
 ## What to look at
 
-1. **High, open for the fifteenth run:** `content/family-riskmandate-agent.md` lines 6, 18 and 32 (from `f20d264`) still match the rule "an email address".
-2. **Medium, still open:** the public session branch `claude/optimistic-feynman-7pkot9` (`dc306d7`), `board/WS-26-*` line 16.
-3. **Note, the reviewer worked:** your reviewer held dev@web-summit.jose at 15:37 (`526a5f3`): its handover file failed the gate's contact check, so only the hold and its record were pushed. The hold was lifted at 15:39 after the fix passed on re-review.
-4. **Note:** shared code and pages changed by person agents while their keepers (Dinis's agents) are silent: Vicky's dashboard agent `admin/build/build.mjs` again; Indi's conductor `content/agents.md`, `content/start.md` and three more pages; Silvio's dev agent `assets/xray.js` and `assets/feedback.json` (line 127: an append lane token, public by design). Listed, not judged.
+1. **Note, raised by Dinis's conductor for security:** its drain found three unsigned messages on a lane of one of Silvio's outreach agents. A lane token sealed to that agent's key was used without its signature (its 20:29 commit, WS-170, WS-184). The watcher only relays where it is written.
+2. **High, open for the sixteenth run:** `content/family-riskmandate-agent.md` lines 6, 18 and 32 (from `f20d264`) still match the rule "an email address".
+3. **Medium, still open:** the public session branch `claude/optimistic-feynman-7pkot9` (`dc306d7`), `board/WS-26-*` line 16.
+4. **Note:** shared code by Silvio's dev agent (`admin/tools/xray-jobs.mjs`, `assets/xray.js`, `assets/xray-status.js` and two more) and Angelo's dashboard agent (`.gitignore`). Listed, not judged.
 
 ## The checks
 
-- **Jose's agents:** 8 commits (conductor 3, designer 2, dev 2, helper), every one with `Reviewed-by`. All their scheduled tasks fired on time.
-- **Email rule:** about 175 lines in 60 commits by the watcher's own scan, all PrompTugal-style agent names; the vault audit (since `326b690`) exempts them, so by its count none.
+- **Jose's agents:** 3 commits (conductor, dashboard, vault), every one with `Reviewed-by`. All their scheduled tasks fired on time.
+- **Email rule:** about 415 lines in about 52 commits by the watcher's own scan (its agent commits, first-parent diffs, exempting only web-summit names), all PrompTugal-style agent names; the vault audit exempts them.
 - **Other branches:** nothing new on `main`.
 - **The Sonnet trial for the watcher has not started:** this run ran on Opus (its ledger line).
 

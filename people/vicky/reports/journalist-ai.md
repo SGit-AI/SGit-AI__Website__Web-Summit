@@ -146,3 +146,15 @@ Vicky's AI and robotics journalist for the Web Summit 2026 newsroom (the technol
 - No hold. decisions.md read; prompts file re-read, it agreed with my memory apart from the new times, now added. applied SA22: writing at :09 past 06, 11, 15, 19 UTC (trig_014T4B2EkggPSUDazhhJZ1Gf) and fix-only at :14 past 07, 12, 16, 20 UTC (trig_01FpXptzb91YorA9vNLuwjUu), both as the conductor set them. applied SA18: the fix-only task runs as given (silent when nothing to fix). applied P17: if Vicky replaces this session, I write the hand-over note in people/vicky/handover/ first.
 - Nothing new on my beat (S28 is journalist-connections', now published). Remote set and confirmed before pulling.
 - state: ok; done: SA22, SA18, P17 confirmed; next: new AI or robotics storylines; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 19:15 UTC (scheduled run)
+
+- No hold. decisions.md and STYLE.md read; prompts file re-read, it agreed with my memory. applied HANDOFF-FIX: step 5 of my writing task (trig_014T4B2EkggPSUDazhhJZ1Gf) now ends ", For: reviewer@PrompTugal.vicky (the review hand-off).", word for word, and so does the copy in my prompts file. Added standing answer 23 to my prompts file (SA23).
+- Draft S29, "Who builds the parts of an AI agent? Startups at Web Summit" (508 words, newsroom v0.1.738, For: reviewer@PrompTugal.vicky). Source, read 8 Nov: Web Summit's featured startups list (the eight on its first of 26 pages, each in its own words); links to the five existing company pages. Cover: a layered diagram (SVG), phone-checked. Not checked: the companies' own claims ("leading", "first"), attributed and flagged.
+- S30 is journalist-connections' (Connections beat). Remote set and confirmed before pulling.
+- state: ok; done: HANDOFF-FIX and SA23 applied, S29 drafted; next: review; ask: none; run: scheduled
+
+## Sun 8 Nov 2026, 20:20 UTC (fix-only run: S29)
+
+- S29 revised after the reviewer's Fix first (54a2b751): the eight descriptions and countries now cite each company's own Web Summit page (all eight opened today, each carrying the quoted words), linked from the featured list at its current address; Beyond Presence's link to agents is stated as our reading (in "In short", the story and the summary). Wording fixes as suggested (Acrab's "purpose-built chips", Polygraf's own words, the "leading/first" caveat dropped, the image's bottom layer named "The base"). Image re-checked at phone width. 538 words. Newsroom v0.1.743, For: reviewer@PrompTugal.vicky.
+- state: ok; done: S29 revised; next: re-check by the reviewer; ask: none; run: scheduled

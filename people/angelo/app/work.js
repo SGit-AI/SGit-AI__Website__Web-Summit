@@ -26,8 +26,11 @@
         post: 'M-8 -8h16v12h-9l-4 4v-4h-3zM-4 -4h8M-4 0h5',
     }
 
-    // the destinations' places at the rim: ten squares spread round the hexagon (flat top, corners at 0, 60 ... 300 degrees),
-    // in DESTS' order clockwise from the top left, each on the hexagon's edge (the pill with its name goes outside it)
+    // the destinations' places at the rim: ten squares on the hexagon's four slanted edges (flat top, corners at 0, 60 ... 300
+    // degrees), in DESTS' order clockwise from the upper left, each on the hexagon's edge (the pill with its name goes outside it).
+    // The top edge carries live.js's logos and LIVE, and the foot its date line, so no square sits on either (dashboard@'s review,
+    // de879c5), and the upper ones sit low enough to clear the layout switch in the box's upper right corner. SLOTS: [edge, fraction along it], edges numbered clockwise from the top (0 top, 1 upper right ... 5 upper left).
+    const SLOTS = { news: [5, 0.7], site: [1, 0.3], research: [1, 0.6], infra: [1, 0.9], app: [2, 0.35], keys: [2, 0.75], crm: [4, 0.25], email: [4, 0.65], linkedin: [5, 0.1], drafts: [5, 0.4] }
     const HEX = [[250, 67], [750, 67], [1000, 500], [750, 933], [250, 933], [0, 500]]
     function rimPoint(t) {               // t in [0, 1): a point along the hexagon's perimeter, clockwise from the top-left corner
         const k = ((t % 1) + 1) % 1 * 6, i = Math.floor(k), f = k - i, a = HEX[i], b = HEX[(i + 1) % 6]
@@ -35,7 +38,7 @@
     }
     function places(scale = 0.86) {      // scale: how far in from the rim the squares sit (the graph itself sits at GEO's scale)
         const out = new Map()
-        DESTS.forEach((d, i) => { const p = rimPoint((i + 0.5) / DESTS.length); out.set(d, { x: C + (p.x - C) * scale, y: C + (p.y - C) * scale, nx: (p.x - C) / C, ny: (p.y - C) / C }) })
+        DESTS.forEach(d => { const [e, f] = SLOTS[d], p = rimPoint((e + f) / 6); out.set(d, { x: C + (p.x - C) * scale, y: C + (p.y - C) * scale, nx: (p.x - C) / C, ny: (p.y - C) / C }) })
         return out
     }
 
@@ -91,5 +94,5 @@
         return true
     }
 
-    return { S, C, DESTS, DEST_NAMES, ICONS, ICON_PATHS, FLIGHT_MS, places, rimPoint, unpack, merge, counts, origin, along, strokeFor, contrast, hex2rgb, selfTest }
+    return { S, C, DESTS, DEST_NAMES, ICONS, ICON_PATHS, FLIGHT_MS, SLOTS, places, rimPoint, unpack, merge, counts, origin, along, strokeFor, contrast, hex2rgb, selfTest }
 })

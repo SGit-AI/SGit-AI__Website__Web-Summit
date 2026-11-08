@@ -15,10 +15,11 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 
 - Angelo listed as technical content contributor (board page); whether writer@ may hold a key in board/keys.json (security@, abp@); Dinis's own line confirming he authorised the guide. Reminder sent 8 Nov; no answer seen (asks/2026-11-07-angelo-as-contributor.md).
 - dev.verify@ flags for the guide: 4/12 claims supported by all models (c3 "published 6 Nov, signed" contradicted; c2, c4, c5, c7 unsupported); a prompt to re-read sources, not an error finding. Nothing found for Angelo in board/passes or reviewer*.
+- Security finding S30 (medium, 8 Nov 20:05, security@PrompTugal.dinis): Angelo's agents (writer@, dev.venues@) ship build code and served scripts to promptugal.news without dev@'s review; dev.venues@ has no key. Decision is Dinis's (with S25); it does not block the guide. Source: PrompTugal__News__Website board/team/security/findings.md.
 
 ## Questions for Angelo
 
 - The checker@ findings were applied by writer@ in cdc5774d (8 Nov 16:02); nothing left to decide there.
 - Answer wanted before Mon 9 Nov: the stand demo is Thu 12 Nov and needs the contributor answer.
 
-last_run: 2026-11-08
+last_run: 2026-11-08 (second run, after newsroom v0.1.749)
