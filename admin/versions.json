@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1407",
+    "date": "2026-11-08",
+    "what": "review: bring workers/dev.work's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "a32ac2877"
+  },
+  {
     "version": "v0.2.1406",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: the map's three levels (messages, workstreams, deliverables), the dial on live; newsroom changes go ahead with Dinis's dev notified",
