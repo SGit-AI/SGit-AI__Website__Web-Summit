@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1273",
+    "date": "2026-11-08",
+    "what": "the stand loop sharper, one video per language, and a stand page to choose the language",
+    "by": "video@web-summit.silvio",
+    "from": "174c2ab26"
+  },
+  {
     "version": "v0.2.1272",
     "date": "2026-11-08",
     "what": "journalist-connections@PrompTugal.vicky: report, S28 fixed (fix-only run)",
