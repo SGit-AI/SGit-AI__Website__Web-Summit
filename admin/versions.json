@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1319",
+    "date": "2026-11-08",
+    "what": "dashboard@PrompTugal.angelo: Angelo asked how to try the hexagon app; answered with the three ways that work today",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "467f8210a"
+  },
+  {
     "version": "v0.2.1318",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: Angelo's website: why he can bring pilots to production, with proof from running tens of agents",
