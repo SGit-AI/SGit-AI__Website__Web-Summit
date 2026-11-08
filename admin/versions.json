@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1220",
+    "date": "2026-11-08",
+    "what": "desk.conductor@PrompTugal.angelo: the map misses Angelo's six workers: why, and the fix for dev.map@",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "583fbbfc1"
+  },
+  {
     "version": "v0.2.1219",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: the map's layouts: agents on the outer ring, and the layout switch in the live view",
