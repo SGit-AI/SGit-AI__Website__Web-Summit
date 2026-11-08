@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1268",
+    "date": "2026-11-08",
+    "what": "RiskMandate explained, redone in the X-ray's visual language, with a simulation and PT/EN",
+    "by": "conductor@web-summit.silvio",
+    "from": "bb63b1991"
+  },
+  {
     "version": "v0.2.1267",
     "date": "2026-11-08",
     "what": "desk.conductor@PrompTugal.angelo: 3D: messages invisible in replay; the live 3D spins a little faster",
