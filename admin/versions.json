@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1368",
+    "date": "2026-11-08",
+    "what": "startups pages 2 to 26 left at Vicky's word; the 100-company capture handed to the curator",
+    "by": "researcher@web-summit.vicky",
+    "from": "e6202f23b"
+  },
+  {
     "version": "v0.2.1367",
     "date": "2026-11-08",
     "what": "one-off, startups pages 2 to 26 not read: the page uses Algolia, not graphql.cilabs.com",
