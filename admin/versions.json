@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1519",
+    "date": "2026-11-09",
+    "what": "run 2, 566 commits: no critical or high; one medium (openrouter.ai coming to the RiskMandate Android app), two low",
+    "by": "security.repos@web-summit.dinis",
+    "from": "8e152fc12"
+  },
+  {
     "version": "v0.2.1518",
     "date": "2026-11-09",
     "what": "Tasks by day; notifications, Live Activities, chat and calls",
