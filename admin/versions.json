@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1595",
+    "date": "2026-11-09",
+    "what": "21:20 wake: vault's passphrase folded into Actions row 1, as vault asked",
+    "by": "conductor@web-summit.jose",
+    "from": "78ee30930"
+  },
+  {
     "version": "v0.2.1594",
     "date": "2026-11-09",
     "what": "21:12 wake: brief 39 (public TestFlight approved; clash fixes, 21 cultures and the iPad model in the queue)",
