@@ -267,5 +267,7 @@ async function main(){let D=window.ABP_RUNS
  if(!D||!D.runs||!D.runs.length){$('empty').hidden=false;return}
  const mode=new URLSearchParams(location.search).get('mode')
  mode==='interactive'?interactive(D):loop(D)}
+// the stand's Wi-Fi may drop (rehearsal.md section 5): sw.js keeps the last good copy of this page and its record
+if('serviceWorker' in navigator&&isSecureContext)navigator.serviceWorker.register('sw.js').catch(()=>{})
 main()
 </script></body></html>

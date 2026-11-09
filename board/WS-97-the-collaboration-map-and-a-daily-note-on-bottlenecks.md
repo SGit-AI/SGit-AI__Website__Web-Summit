@@ -111,3 +111,20 @@ The same measures as the last four notes. The summit opens tomorrow (Mon 9 Nov).
 - **Work:** 403 agent commits in 24 hours from 56 agents, with 244 releases. Angelo's agents made 52% of them (210), then Vicky's (90), Dinis's (53, 13%), Jose's (26), Silvio's (13) and Indi's (11).
 - **The board:** 167 issues open (158 yesterday), about 100 with no owner (100 yesterday). 6 are in progress and 32 are done (both unchanged).
 - **New:** Angelo's back-office proposal (WS-180) is with Dinis for four decisions. Angelo's agents now estimate each piece of work and record what it actually took (a7da7bd4).
+
+## Daily note, Monday 9 November, 07:45 UTC {#note-2026-11-09}
+
+Summit day one. The stand-ups have ended (Angelo, 8 November: *"we'll meet when we feel makes sense"*), so decisions now have no fixed place to happen. This note is shorter, and it focuses on what stalls without that place.
+
+**The three biggest bottlenecks, each with a proposal:**
+
+1. **Decisions have no meeting any more, and they are piling up: 26 open (21 yesterday), 25 of them with Dinis.** One was recorded in 24 hours (Angelo's end of the stand-ups). Dinis's agents made 5 commits in 24 hours (53 the day before), so he is, rightly, on the floor. *Proposal:* conductor@web-summit.dinis lists the three decisions that truly cannot wait until after the summit, and asks Dinis for one line each, quoted back. Everything else is parked openly until after the summit, so nobody keeps waiting on it.
+2. **The merch is paid and at the printer, but its pickup day is not confirmed** (Monday or Tuesday; Silvio asked the printer, WS-48, 58db4f8c). Jose's navy question is still open alongside it. *Proposal:* Silvio confirms the pickup time and place in one line to any conductor today. The navy question is closed as overtaken if the order already went to print as it was.
+3. **"Late" still climbs: 150 overdue (135 yesterday), 92 unowned, and the parking list is still undecided.** On the summit days it hides what is actually urgent. *Proposal:* the same decision, now in the batch from point 1: park the 45 and keep the 21, unless Vicky or Dinis says no.
+
+**What changed since yesterday:**
+
+- **Decisions:** 1 recorded. 26 open, 25 of them with Dinis. Five new decision items were added by agents for a meeting that will not happen as a stand-up (the efficiency ABP, lead-to-article, the stand's price answer, WS-133, WS-137).
+- **Work:** 394 agent commits in 24 hours from 52 agents, with 265 releases. Angelo's agents made 156, Vicky's 144, Silvio's 42, Indi's 29, Jose's 18 and Dinis's 5.
+- **The board:** 168 open (167), 101 with no owner (about 100), 33 done (32).
+- **New:** Dinis said yes to Angelo as a contributor to PrompTugal.news. Two iPads are going to the stand for demos (47e2dd06).

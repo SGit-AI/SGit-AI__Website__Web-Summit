@@ -4,18 +4,20 @@
 // published file read every two minutes (work-newsroom.js), a new step flying when first seen. The squares' counts are for the last
 // 24 hours. Nothing older than the delay plays on opening. Says in the view's corner when the newsroom cannot be read.
 // mount(host, o): host is live.js's host (it carries host.lvGraph once the graph is drawn, and fires 'lv-graph' when it redraws).
-// o: base (the app's folder), delayMs (4 minutes), every (60 s), newsEvery (2 min), newsUrl, win. Returns { destroy }.
+// o: base (the app's folder), delayMs (4 minutes), every (60 s), newsEvery (2 min), newsUrl, win; file: another level's file in
+// deliveries.json's form (workstreams.json, backlog 0c4: its own destinations, no newsroom). Returns { destroy }.
 (function (root) {
     'use strict'
     const DAY = 864e5
     function mount(host, o = {}) {
-        const A = root.AngeloWork, Dr = root.AngeloWorkDraw, News = root.AngeloWorkNews, win = o.win || root
+        const Dr = root.AngeloWorkDraw, News = o.file ? null : root.AngeloWorkNews, win = o.win || root, file = o.file || 'deliveries.json'
+        let A = o.file ? null : root.AngeloWork        // o.file (workstreams.json, backlog 0c4): its own destinations, known once it is read
         const base = o.base || '', delay = o.delayMs != null ? o.delayMs : 4 * 6e4, every = o.every || 6e4
         let V = null, alive = true, timer = 0, newsPoll = null, note = null, newsFirst = true
         const seen = new Set(), past = []            // keys already shown; every delivery known, for the counts: { at, dest }
         const timers = new Set()
         const later = (fn, ms) => { const t = win.setTimeout(() => { timers.delete(t); if (alive) fn() }, Math.max(0, ms)); timers.add(t) }
-        const recount = () => { if (!V) return; const now = Date.now(), c = Object.fromEntries(A.DESTS.map(d => [d, 0])); for (const d of past) if (d.at > now - DAY && d.at <= now - (d.news ? 0 : delay)) c[d.dest]++; V.counts(c) }
+        const recount = () => { if (!V || !A) return; const now = Date.now(), c = Object.fromEntries(A.DESTS.map(d => [d, 0])); for (const d of past) if (d.at > now - DAY && d.at <= now - (d.news ? 0 : delay)) c[d.dest]++; V.counts(c) }
         // a batch of new deliveries ({ at, maker, icon, dest, key }): merged by minute and destination, each flying at at + delay
         // (one that reached us later than that flies at once, a beat apart)
         function play(list, now, lag) {
@@ -27,8 +29,10 @@
         const rowsOf = W => { const from = Date.parse(W.from); return A.unpack(W).map(d => ({ at: from + d.min * 6e4, maker: d.maker, icon: d.icon, dest: d.dest, key: (d.repo || '') + ':' + d.sha + ':' + d.dest })) }
         async function read(first) {
             try {
-                const r = await win.fetch(new URL(base + 'deliveries.json', win.location.href).href, { cache: 'no-store' }); if (!r.ok) throw new Error(r.status)
-                const list = rowsOf(await r.json()), now = Date.now()
+                const r = await win.fetch(new URL(base + file, win.location.href).href, { cache: 'no-store' }); if (!r.ok) throw new Error(r.status)
+                const W = await r.json()
+                if (!A) { A = root.AngeloWork.variant(W.dests || [], W.names || {}); if (host.lvGraph) attach(host.lvGraph) }
+                const list = rowsOf(W), now = Date.now()
                 if (first) for (const d of list) if (d.at <= now - delay) { seen.add(d.key); past.push({ at: d.at, dest: d.dest }) }
                 play(list, now, delay); recount()
             } catch { }
@@ -41,9 +45,9 @@
             note.textContent = text
         }
         function attach(G) {
-            if (!alive || !G) return
+            if (!alive || !G || !A) return
             if (V) V.destroy()
-            V = Dr.attach(G, { base }); recount()
+            V = Dr.attach(G, { base, A }); recount()
         }
         const onGraph = e => attach(e.detail || host.lvGraph)
         host.addEventListener('lv-graph', onGraph)

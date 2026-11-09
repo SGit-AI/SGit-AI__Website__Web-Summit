@@ -12,68 +12,89 @@
     const W = () => root.AngeloWork
     // each destination's mark: its own logo (work-logos/, SOURCES.md) or a plain mark, one of the six icons, in the graph's style
     const LOGO = { news: { dark: 'pt-news-dark.svg', light: 'pt-news-light.svg' }, linkedin: { dark: 'linkedin.svg', light: 'linkedin.svg' } }
-    const MARK = { site: 'cog', research: 'doc', infra: 'cog', app: 'cog', keys: 'key', crm: 'record', email: 'envelope', drafts: 'doc' }
+    // no two destinations alike (Angelo, 8 November about 23:00, backlog 0c4 (5): "there are various icons that use the same image"):
+    // the three icons that are also kinds of delivery (key, record, envelope) mark keys, the CRM and email drafts; the rest have
+    // their own marks, in the same 24 x 24 box and stroke: the team site a browser window, research a magnifier, infrastructure a
+    // server rack, the app a phone, drafts a pencil
+    const MARK = { site: 'site', research: 'research', infra: 'infra', app: 'app', keys: 'key', crm: 'record', email: 'envelope', drafts: 'drafts' }
+    const MARK_PATHS = {
+        site: 'M-9 -7h18v14h-18zM-9 -3h18M-6.5 -5h0.5M-4 -5h0.5',
+        research: 'M-7 -3a5 5 0 1 0 10 0a5 5 0 1 0 -10 0M1.6 0.6l6.4 6.4',
+        infra: 'M-8 -8h16v6h-16zM-8 2h16v6h-16zM-5 -5h3M-5 5h3M4 -5h0.5M4 5h0.5',
+        app: 'M-5 -9h10v18h-10zM-2 6h4',
+        drafts: 'M-7 7l1.5 -5l9 -9l3.5 3.5l-9 9zM-5.5 2l3.5 3.5M1.5 -5l3.5 3.5',
+    }
+    const markPath = (A, k) => MARK_PATHS[k] || A.ICON_PATHS[k] || A.ICON_PATHS.doc
     const SQ = 58, FONT = 19, MIN_PX = 12
     const CSS = `
-.lv.lv-workview .lv-links, .lv.lv-workview .lv-pulses { opacity: .35; }
+/* the exchanges stay as visible as in Exchanges (Angelo, 8 November about 22:25, backlog 0c4: "the dots and arcs are faint"): the
+   deliveries stand out by being brighter on top, never by dimming the rest */
 .lv.lv-workview .lv-svg { overflow: visible; }
 .lv.lv-workview .lv-hex { width: min(58cqw, 84cqh); height: min(58cqw, 84cqh); }
 @container (max-width: 640px) { .lv.lv-workview .lv-hex { width: min(94cqw, 64cqh); height: min(94cqw, 64cqh); } }
 .wv-sq rect { fill: var(--rm-surface, #0E2035); stroke: var(--rm-border, #294A64); stroke-width: 2; }
 .wv-sq.wv-lit rect { stroke: var(--rm-action, #4aa3ff); stroke-width: 4; }
 .wv-sq .wv-mark { fill: none; stroke: var(--rm-text-secondary, #BCCCDC); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.wv-lead { fill: none; stroke: var(--rm-border, #294A64); stroke-width: 2; }
 .wv-pill rect { fill: var(--rm-surface, #0E2035); stroke: var(--rm-border, #294A64); stroke-width: 1.5; }
 .wv-pill text, .wv-n text, .wv-num { font-family: var(--rm-font, system-ui, sans-serif); font-weight: 600; fill: var(--rm-text, #F7FAFC); }
 .wv-n circle { fill: var(--rm-action, #4aa3ff); }
 .wv-n text { fill: #fff; font-size: 15px; }
 .wv-fly circle.wv-bg { fill: var(--rm-bg, #07111F); }
-.wv-fly path { fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-.wv-trail { fill: none; stroke-width: 2.4; stroke-linecap: round; }
+.wv-fly { filter: drop-shadow(0 0 6px currentColor); }
+.wv-fly path { fill: none; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
+.wv-trail { fill: none; stroke-width: 3; stroke-linecap: round; }
 .wv-num { font-size: 15px; }
+.wv-ws { font-family: var(--rm-font, system-ui, sans-serif); font-weight: 700; font-size: 22px; fill: var(--rm-text-secondary, #BCCCDC); }
 `
     const el = (doc, t, a, p) => { const e = doc.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e }
     const f1 = n => (+n).toFixed(1)
 
-    // where each destination's name goes: outside the rim, away from the centre, inside the frame [lo, hi] (drawing units), never on
-    // another pill. font: the pill's text size in drawing units, so it shows at least 12 px whatever the graph's size (dashboard@'s
-    // note); sq: the squares' size. Beside its square where the frame leaves room; where it does not (a phone), every name goes in
-    // rows above the hexagon (the upper half's) or below it (the lower half's), each joined to its square by a thin leader; on a
-    // phone the hexagon keeps nearly the frame's width and the rows use the room above and below it (dashboard@'s review, de879c5).
-    // avoid: the graph's own furniture (live.js's logos and LIVE, its date line, the layout switch) as boxes in drawing units;
-    // no pill is left on one. clearLow: in rows, how much of the frame's right side the lower rows leave free (the app's floating
-    // Ask Claude button stays in that column on a phone, whatever the scroll: dashboard@'s review, 7a0de06c).
-    function pillsFor(P, names, font, lo = -Infinity, hi = Infinity, sq = SQ, avoid = [], clearLow = 0) {
-        const hits = b => avoid.find(o => b.x < o.x + o.w && o.x < b.x + b.w && b.y < o.y + o.h && o.y < b.y + b.h)
-        const C = W().C, h = Math.round(font * 1.6), gap = Math.round(font * 0.5), out = new Map(), wOf = d => Math.round(names[d].length * font * 0.56 + font * 1.2)
-        let fits = true
+    // where each destination's name goes: in a pill beside its own square (Angelo, 8 November about 23:00, backlog 0c4 (5): "the
+    // labels aren't all clearly visible, can these be brought closer to their icon?"). Outside the rim, away from the centre, with
+    // the full name where the frame [lo, hi] (drawing units) leaves room; else outside with the short name; else (a phone, where
+    // the hexagon takes nearly the frame's width) inside the rim, on the square's inner side, with the short name cut to fit
+    // ("…"). Never in rows away from the square. font: the pill's text size in drawing units, so it shows at least 12 px whatever
+    // the graph's size; sq: the squares' size; avoid: the graph's own furniture (live.js's logos and LIVE, its date line, the
+    // layout switch) as boxes in drawing units; no pill is left on one, nor on another destination's square. short: the short
+    // names ({ dest: name }), falling back to the names. clearLow: how much of the frame's right side the lower half's pills leave
+    // free (the app's floating Ask Claude button stays in that column on a phone: dashboard@'s review, 7a0de06c). Returns { dest: { x, y, w, h, mode: 'beside' | 'inside', text } }.
+    const INSIDE = 0.28   // how far across the drawing a pill inside the rim may reach
+    function pillsFor(P, names, font, lo = -Infinity, hi = Infinity, sq = SQ, avoid = [], short = {}, clearLow = 0) {
+        const C = W().C, h = Math.round(font * 1.6), gap = Math.round(font * 0.5), out = new Map()
+        const wOf = t => Math.round(t.length * font * 0.56 + font * 1.2), fit = (t, room) => {
+            if (wOf(t) <= room) return t
+            const n = Math.max(4, Math.floor((room - font * 1.2) / (font * 0.56)))
+            return t.length <= n ? t : t.slice(0, n - 1).replace(/[\s.,:;-]+$/, '') + '…'
+        }
+        const sqBox = (p, pad = 2) => ({ x: p.x - sq / 2 - pad, y: p.y - sq / 2 - pad, w: sq + 2 * pad, h: sq + 2 * pad })
         for (const [d, p] of P) {
-            const w = wOf(d); let x, y
-            if (Math.abs(p.ny) > 0.8) { x = p.x - w / 2; y = p.ny < 0 ? p.y - sq / 2 - gap - h : p.y + sq / 2 + gap }   // top and bottom edges
-            else { x = p.x > C ? p.x + sq / 2 + gap : p.x - sq / 2 - gap - w; y = p.y - h / 2; if (x < lo || x + w > hi) fits = false }
-            out.set(d, { x: Math.max(lo, Math.min(hi - w, x)), y, w, h, mode: 'beside' })
+            const full = names[d], sh = short[d] || full, right = p.x > C, hi2 = p.y > C ? hi - clearLow : hi
+            let b = null
+            if (Math.abs(p.ny) > 0.8) { const t = fit(full, hi - lo), w = wOf(t); b = { x: Math.max(lo, Math.min(hi - w, p.x - w / 2)), y: p.ny < 0 ? p.y - sq / 2 - gap - h : p.y + sq / 2 + gap, w, h, mode: 'beside', text: t } }   // top and bottom edges
+            else {
+                const room = right ? hi2 - (p.x + sq / 2 + gap) : (p.x - sq / 2 - gap) - lo
+                for (const t of [full, sh]) if (!b && wOf(t) <= room) { const w = wOf(t); b = { x: right ? p.x + sq / 2 + gap : p.x - sq / 2 - gap - w, y: p.y - h / 2, w, h, mode: 'beside', text: t } }
+                if (!b) {   // inside the rim, on the square's inner side: as far as 28% of the drawing across (40% lay across the
+                    // people's clusters on a phone: dashboard@'s review, 52832206), and never past the frame; the full name stays in its title
+                    const inner = Math.min(INSIDE * W().S, right ? (p.x - sq / 2 - gap) - lo : hi2 - (p.x + sq / 2 + gap)), t = fit(sh, inner), w = wOf(t)
+                    b = { x: right ? p.x - sq / 2 - gap - w : p.x + sq / 2 + gap, y: p.y - h / 2, w, h, mode: 'inside', text: t }
+                }
+            }
+            out.set(d, b)
         }
-        if (fits) {
-            const all = [...out.values()]   // pills that overlap move apart vertically, away from each other
+        const all = [...out.entries()]
+        const overlap = (a, o) => a.x < o.x + o.w && o.x < a.x + a.w && a.y < o.y + o.h && o.y < a.y + a.h
+        // pills that overlap move apart vertically, away from each other; a pill on the furniture or on another destination's square
+        // steps off it vertically, the way away from its middle; the two in turn, until nothing moves
+        const blocks = new Map(all.map(([d]) => [d, avoid.concat([...P].filter(([e]) => e !== d).map(([, q]) => sqBox(q)))]))
+        for (let round = 0; round < 6; round++) {
+            let moved = false
             for (let pass = 0; pass < 6; pass++) for (let i = 0; i < all.length; i++) for (let j = i + 1; j < all.length; j++) {
-                const a = all[i], b = all[j]
-                if (a.x < b.x + b.w && b.x < a.x + a.w && a.y < b.y + b.h && b.y < a.y + a.h) { const up = a.y + a.h / 2 < b.y + b.h / 2 ? a : b, down = up === a ? b : a, need = (up.y + up.h + 4 - down.y) / 2; up.y -= need; down.y += need }
+                const a = all[i][1], b = all[j][1]
+                if (overlap(a, b)) { const up = a.y + a.h / 2 < b.y + b.h / 2 ? a : b, down = up === a ? b : a, need = (up.y + up.h + 4 - down.y) / 2; up.y -= need; down.y += need; moved = true }
             }
-            // a pill on the furniture steps off it vertically, the way away from the furniture's middle
-            for (const a of all) for (let k = 0, o; k < 4 && (o = hits(a)); k++) a.y = a.y + a.h / 2 < o.y + o.h / 2 ? o.y - a.h - 4 : o.y + o.h + 4
-            return out
-        }
-        // rows: the hexagon's top edge is at y 67 and its bottom at 933 (work.js's HEX); rows stack outwards from there
-        out.clear()
-        for (const upper of [true, false]) {
-            const mine = [...P].filter(([, p]) => (p.y < C) === upper).sort((x, y) => x[1].x - y[1].x), rows = []
-            for (const [d, p] of mine) {
-                const w = wOf(d), x = Math.max(lo, Math.min((upper ? hi : hi - clearLow) - w, p.x - w / 2))
-                const edge = upper ? Math.min(67, p.y) - sq / 2 - gap : Math.max(933, p.y) + sq / 2 + gap, yAt = r => upper ? edge - h - r * (h + gap) : edge + r * (h + gap)
-                let r = 0; while ((rows[r] || []).some(o => x < o.x + o.w + gap && o.x < x + w + gap) || (r < 12 && hits({ x, y: yAt(r), w, h }))) r++
-                ;(rows[r] = rows[r] || []).push({ x, w })
-                out.set(d, { x, y: yAt(r), w, h, mode: 'rows', row: r })
-            }
+            for (const [d, a] of all) for (let k = 0, o; k < 4 && (o = blocks.get(d).find(x => overlap(a, x))); k++) { a.y = a.y + a.h / 2 < o.y + o.h / 2 ? o.y - a.h - 4 : o.y + o.h + 4; moved = true }
+            if (!moved) break
         }
         return out
     }
@@ -88,10 +109,11 @@
         return (0.299 * bg[0] + 0.587 * bg[1] + 0.114 * bg[2]) > 140
     }
 
-    // attach(G, o): G is live.js's host.lvGraph; o.base is the app's folder (for the logos), o.clock 'manual' for replay and the clip
+    // attach(G, o): G is live.js's host.lvGraph; o.base is the app's folder (for the logos); o.A another level's rules (work.js's
+    // variant(), Workstreams: a WS square shows its number); o.clock 'manual' for replay and the clip
     // (frames stepped by step(now)), else the drawing runs on G.win's frames. Returns { fly(list, now), counts(c), step(now), destroy }.
     function attach(G, o = {}) {
-        const A = W(), win = G.win || root, doc = G.doc || root.document, svg = G.svg, wrap = svg.closest('.lv') || svg.parentNode
+        const A = o.A || W(), win = G.win || root, doc = G.doc || root.document, svg = G.svg, wrap = svg.closest('.lv') || svg.parentNode
         if (!doc.getElementById('wv-css')) { const s = doc.createElement('style'); s.id = 'wv-css'; s.textContent = CSS; doc.head.appendChild(s) }
         wrap.classList.add('lv-workview')
         const scale = G.scale || 0.84, C = A.C, light = o.light != null ? o.light : isLight(win, wrap)
@@ -108,13 +130,14 @@
             el(doc, 'rect', { x: -SQ / 2, y: -SQ / 2, width: SQ, height: SQ, rx: 12 }, inner)
             const logo = LOGO[d]
             if (logo) el(doc, 'image', { href: (o.base || '') + 'work-logos/' + logo[light ? 'light' : 'dark'], x: -18, y: -18, width: 36, height: 36 }, inner)
-            else el(doc, 'path', { class: 'wv-mark', d: A.ICON_PATHS[MARK[d]], transform: 'scale(1.5)' }, inner)
-            const lead = el(doc, 'path', { class: 'wv-lead' }, squares)
+            else if (/^WS-\d+$/.test(d)) { const t = el(doc, 'text', { class: 'wv-ws', 'text-anchor': 'middle', y: 8 }, inner); t.textContent = d.slice(3) }   // a workstream: its number
+            else el(doc, 'path', { class: 'wv-mark', 'data-mark': MARK[d] || 'doc', d: markPath(A, MARK[d] || 'doc'), transform: 'scale(1.5)' }, inner)
             const pill = el(doc, 'g', { class: 'wv-pill', 'data-dest': d }, squares)
+            el(doc, 'title', {}, pill).textContent = A.DEST_NAMES[d]
             const pr = el(doc, 'rect', {}, pill), pt = el(doc, 'text', { 'text-anchor': 'middle' }, pill); pt.textContent = A.DEST_NAMES[d]
             const n = el(doc, 'g', { class: 'wv-n', transform: `translate(${SQ / 2 - 4} ${-SQ / 2 + 4})`, style: 'display:none' }, inner)
             el(doc, 'circle', { r: 13 }, n); const nt = el(doc, 'text', { y: 5, 'text-anchor': 'middle' }, n)
-            sq.set(d, { p, g, inner, lead, n, nt, pill, pr, pt, lit: 0 })
+            sq.set(d, { p, g, inner, n, nt, pill, pr, pt, lit: 0 })
         }
         // the pills, laid out for the size the graph is shown at: text at least MIN_PX on screen, inside the frame (re-laid on resize)
         function layoutPills() {
@@ -124,15 +147,13 @@
             const box = e => { const b = e.getBoundingClientRect(); return { x: (b.left - r.left) / k - 6, y: (b.top - r.top) / k - 6, w: b.width / k + 12, h: b.height / k + 12 } }
             const avoid = k > 0 ? [...wrap.querySelectorAll('.lv-top, .lv-when, .lv-lay')].filter(e => e.getBoundingClientRect().width).map(box) : []
             const fab = doc.querySelector('.cc-askfab'), fb = fab && fab.getBoundingClientRect(), clearLow = k > 0 && fb && fb.width && fb.left < fr.right && fb.right > fr.left ? (fr.right - fb.left) / k + 4 : 0
-            const L = pillsFor(P, A.DEST_NAMES, font, lo, hi, size, avoid, clearLow)
+            const L = pillsFor(P, A.DEST_NAMES, font, lo, hi, size, avoid, A.DEST_SHORT || {}, clearLow)
             for (const [d, s] of sq) {
                 const b = L.get(d), p = s.p
                 s.inner.setAttribute('transform', `scale(${(size / SQ).toFixed(3)})`)
-                // the leader, in rows: from the pill's edge nearest the square, straight to the square's outer side
-                const lx = Math.max(b.x + b.h / 2, Math.min(b.x + b.w - b.h / 2, p.x)), ly = p.y < A.C ? b.y + b.h : b.y
-                s.lead.setAttribute('d', b.mode === 'rows' ? `M${f1(lx)} ${f1(ly)}L${f1(p.x)} ${f1(p.y + (p.y < A.C ? -size / 2 : size / 2))}` : '')
                 s.pill.setAttribute('transform', `translate(${f1(b.x)} ${f1(b.y)})`)
                 for (const [k2, v] of Object.entries({ width: b.w, height: b.h, rx: b.h / 2 })) s.pr.setAttribute(k2, f1(v))
+                s.pt.textContent = b.text; s.pill.dataset.mode = b.mode
                 s.pt.setAttribute('x', f1(b.w / 2)); s.pt.setAttribute('y', f1(b.h / 2 + font * 0.36)); s.pt.style.fontSize = f1(font) + 'px'
             }
             return { font, px: font * k }
@@ -151,8 +172,8 @@
                 const from = A.origin(d.maker, G.pos), s = sq.get(d.dest); if (!from || !s) continue
                 const a = out(G.pos.get(from)), b = s.p, stroke = colourOf(d.maker)
                 const trail = el(doc, 'path', { class: 'wv-trail', stroke, 'stroke-opacity': 0, d: '' }, trails)
-                const g = el(doc, 'g', { class: 'wv-fly', 'data-icon': d.icon, 'data-dest': d.dest }, flights)
-                el(doc, 'circle', { class: 'wv-bg', r: 17, stroke, 'stroke-width': 1.5 }, g)
+                const g = el(doc, 'g', { class: 'wv-fly', 'data-icon': d.icon, 'data-dest': d.dest, style: 'color:' + stroke }, flights)   // its glow in the maker's colour
+                el(doc, 'circle', { class: 'wv-bg', r: 17, stroke, 'stroke-width': 2.5 }, g)
                 el(doc, 'path', { d: A.ICON_PATHS[d.icon], stroke }, g)
                 if (d.n > 1) { const t = el(doc, 'text', { class: 'wv-num', x: 20, y: -12 }, g); t.textContent = String(d.n) }
                 live.push({ d, t0: now, a, b, g, trail })
@@ -173,17 +194,19 @@
                 f.g.setAttribute('transform', `translate(${f1(p.x)} ${f1(p.y)})`)
                 const q = A.along(f.a, f.b, Math.max(0, e - 0.25)), m = A.along(f.a, f.b, Math.max(0, e - 0.12))
                 f.trail.setAttribute('d', `M${f1(q.x)} ${f1(q.y)}Q${f1(m.x)} ${f1(m.y)} ${f1(p.x)} ${f1(p.y)}`)
-                f.trail.setAttribute('stroke-opacity', f1(0.6 * Math.sin(Math.PI * u)))
+                f.trail.setAttribute('stroke-opacity', f1(0.85 * Math.sin(Math.PI * u)))
             }
             for (const [, s] of sq) if (s.lit && s.lit <= now) { s.lit = 0; s.g.classList.remove('wv-lit') }
         }
         let raf = 0, alive = true
-        const manual = o.clock === 'manual'
+        let manual = o.clock === 'manual'
         const frame = ts => { raf = 0; if (!alive) return; step(ts); if (live.length || [...sq.values()].some(s => s.lit)) raf = win.requestAnimationFrame(frame) }
         const kick = () => { if (!manual && !raf && alive) raf = win.requestAnimationFrame(frame) }
         function destroy() { alive = false; if (RO) RO.disconnect(); if (raf) win.cancelAnimationFrame(raf); top.remove(); wrap.classList.remove('lv-workview'); live.length = 0 }
-        return { fly, counts, step, destroy, inAir: () => live.length, light, pills: () => laid }
+        // manual(on): the clip (clip-button.js) takes the frames over while it records, and gives them back after
+        const setManual = on => { manual = !!on; if (manual && raf) { win.cancelAnimationFrame(raf); raf = 0 } else if (!manual && live.length) kick() }
+        return { fly, counts, step, destroy, inAir: () => live.length, light, pills: () => laid, manual: setManual }
     }
 
-    root.AngeloWorkDraw = { attach, pillsFor, LOGO, MARK }
+    root.AngeloWorkDraw = { attach, pillsFor, LOGO, MARK, MARK_PATHS }
 })(typeof self !== 'undefined' ? self : this)

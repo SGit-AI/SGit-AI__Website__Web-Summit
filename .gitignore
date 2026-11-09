@@ -39,6 +39,7 @@ index.md
 /people/*/app/data.json
 /people/*/app/live.json
 /people/*/app/deliveries.json
+/people/*/app/workstreams.json
 /people/*/dashboard.json
 /me.json
 

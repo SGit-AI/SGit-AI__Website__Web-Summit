@@ -1,0 +1,343 @@
+{
+ "number": 8,
+ "date": "9 November 2026",
+ "kicker": "Web Summit 2026 · Vicky's conductor brief",
+ "title": "Day one: 25 articles from your desks, 100 company pages live, S31 ready",
+ "when": "9 November 2026, 08:45 UTC (the daily brief; since brief 7, 8 Nov 08:45 UTC)",
+ "by": "conductor@web-summit.vicky",
+ "urgent": [
+  "Indi's /lead-to-article/ (WS-168) has waited for your answer since yesterday 17:02; pm and dashboard both marked it URGENT (action 3).",
+  "No hold, no Gmail use, no unknown edit to decisions.md, no key mismatch."
+ ],
+ "actions": [
+  {
+   "window": "reviewer",
+   "items": [
+    {
+     "what": "Publish S31",
+     "why": "\"Beyond Lisbon: where Road 2 Web Summit's 78 startups come from\" (journalist-portugal) is Ready since 06:25; it is the only draft waiting.",
+     "reply": "Publish S31."
+    },
+    {
+     "what": "Corrections to S24, S25 and S27",
+     "why": "The reviewer reconciled the first 3 of the checker's 12 handed-over findings (SA25): all three still stand, so the published articles need dated corrections; its publish lines are in desks/reviewer-vicky/reviews/checker-findings-sa25.md.",
+     "reply": "Publish the corrections to S24, S25 and S27 as set out in checker-findings-sa25.md, each with a dated correction note."
+    }
+   ]
+  },
+  {
+   "window": "conductor (this window)",
+   "items": [
+    {
+     "what": "Answer Indi on /lead-to-article/ (WS-168)",
+     "why": "Indi's conductor built the six-step page on your proposal and asks whether it matches; pm reads that it does (your demo and the leads group), adding a voice memo and a yes before any article. Recommended: yes.",
+     "reply": "Conductor: record my answer on WS-168 for Indi: yes, /lead-to-article/ matches my proposal, and the voice memo and the yes before any article are fine. Ask pm to note it on the issue."
+    },
+    {
+     "what": "Wikipedia as the only source for a company's About",
+     "why": "journalist-connections asked three times overnight; Persona went live with a Wikipedia-only About and RWS is held in fix. Recommended: Wikipedia may support, never stand alone.",
+     "reply": "Conductor: add a standing rule for company pages: Wikipedia may support an About but never be its only source; the company's own site or its Web Summit page must support it. Send Persona back to fix until it has one; RWS stays in fix."
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "title": "The runs (✓ ran and reported, ○ ran with nothing to do, · no report)",
+   "table": {
+    "head": [
+     "Agent",
+     "Sun 8 Nov, from 08:45",
+     "Mon 9 Nov, to 08:45"
+    ],
+    "rows": [
+     [
+      "researcher",
+      "10:15 ✓ · 14:15 ✓ · 18:15 ✓",
+      "05:15 ✓"
+     ],
+     [
+      "curator",
+      "10:30 ✓ · 14:30 ✓ · 18:30 ✓",
+      "05:30 ✓"
+     ],
+     [
+      "programme",
+      "",
+      "05:00 ✓"
+     ],
+     [
+      "journalist-connections",
+      "10:45 ✓ (S28) · 14:45 ✓ · 18:45 ✓ (S30)",
+      "05:45 ○"
+     ],
+     [
+      "journalist",
+      "10:45 ○ · 14:51 ○ · 18:51 ○",
+      "05:51 ○"
+     ],
+     [
+      "journalist-portugal",
+      "10:51 ○ · 14:57 ○ · 18:57 ○",
+      "05:57 ✓ (S31)"
+     ],
+     [
+      "journalist-europe",
+      "10:57 ○ · 15:03 ○ · 19:03 ○",
+      "06:03 ○"
+     ],
+     [
+      "journalist-ai",
+      "11:03 ○ · 15:09 ✓ · 19:09 ✓ (S29)",
+      "06:09 ○"
+     ],
+     [
+      "reviewer",
+      "11:15 ✓ · 12:20 ✓ · 15:15 ○ · 16:20 ✓ · 19:15 ✓ · 20:20 ✓",
+      "06:15 ✓ · 07:20 ○"
+     ],
+     [
+      "checker",
+      "09:48 ✓ · 17:48 ✓",
+      "(09:48 after this brief)"
+     ],
+     [
+      "pm",
+      "17:40 ✓",
+      "07:40 ✓"
+     ],
+     [
+      "dashboard",
+      "17:45 ✓",
+      "07:50 ✓"
+     ],
+     [
+      "logistics",
+      "17:10 ○",
+      "08:10 ○"
+     ],
+     [
+      "scout",
+      "22:00 ○ (no topics left)",
+      ""
+     ]
+    ]
+   }
+  },
+  {
+   "title": "Your agents: problems first",
+   "table": {
+    "head": [
+     "Agent",
+     "Runs",
+     "What it did",
+     "Problem"
+    ],
+    "rows": [
+     [
+      "journalist-connections",
+      "yes",
+      "S28, S30; company pages C1, C2, S2 overnight",
+      "Asks about Wikipedia-only Abouts (action 4); RWS held"
+     ],
+     [
+      "journalist-europe",
+      "yes",
+      "Idle on its beat; E1, E2 and A2 rows 1 to 6 overnight",
+      "Its task-name question is still open (rename to \"scheduled run\"; recommended yes, brief 7)"
+     ],
+     [
+      "reviewer",
+      "yes",
+      "S28 to S31 reviewed; S28, S29, S30 published at your word; 65 company pages released overnight; 3 of 12 checker findings reconciled",
+      "None; context freshly compacted (137k)"
+     ],
+     [
+      "checker",
+      "yes",
+      "Two runs, 9 articles by other desks; handed its 12 findings on your desks to the reviewer (SA25)",
+      "None"
+     ],
+     [
+      "researcher, curator",
+      "yes",
+      "Speakers and startups by theme for connection stories (SA19C); S28 to S31 assigned",
+      "Featured-startup pages 2 to 26 left at your word"
+     ],
+     [
+      "programme",
+      "yes",
+      "Opening-day agenda live, 226 items; shortlist re-checked in its vault",
+      "None"
+     ],
+     [
+      "dev, synthetic, vault",
+      "prompted",
+      "Replit pilot and its fixes, the Live AI Office status; Replit test and retest (all pass); vault showcase v1.2.1",
+      "None"
+     ],
+     [
+      "pm, dashboard, logistics, scout",
+      "yes",
+      "Board 201 issues, 145 overdue; dashboard compact layout and the office link; logistics idle; scout has no topics left",
+      "pm and dashboard: WS-168 (action 3)"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "PrompTugal.news: your desks",
+   "items": [
+    "Live: 25 articles from your desks. New since brief 7: S28 five AI builders (12:29, corrected 16:23), S29 who builds an AI agent's parts and S30 eleven health startups (22:57). T1's agent count updated at 17:49 (closed).",
+    "Ready, waiting for you: S31 (action 1). Corrections waiting: S24, S25, S27 (action 2); 9 more handed-over findings for the reviewer to reconcile.",
+    "Company pages: 100 live (Replit plus 99), RWS in fix, Rapidoc skipped (its site refuses automated reads); overnight batch closed at 04:40 with every one-off wake fired and disabled; 14 blocked for evidence and 4 held remain outside the batches."
+   ]
+  },
+  {
+   "title": "Updates for agents",
+   "items": [
+    "Confirmed by all and removed: SA13, SA15, SA18, SA19B, SA19C, SA22, SA25, PILOT-REPLIT, TRIAGE-REPLIT, OVERNIGHT-9NOV (and HANDOFF-FIX last night).",
+    "Still waiting: P10, P17, P22, P27 from vault and designer; SA16 from vault, designer, inbox (all on demand or paused); SCHED-WS from curator (its task already runs at the new times); SA23 from journalist and dev; SA24X from dev."
+   ]
+  },
+  {
+   "title": "Usage, once a day (API-equivalent dollars, not money; never used to stop an agent)",
+   "table": {
+    "head": [
+     "Agent",
+     "Model",
+     "Dollars",
+     "Output tokens",
+     "Context used"
+    ],
+    "rows": [
+     [
+      "conductor",
+      "Opus",
+      "240.06",
+      "949,556",
+      "729k"
+     ],
+     [
+      "reviewer",
+      "Opus",
+      "127.06",
+      "577,556",
+      "137k"
+     ],
+     [
+      "journalist-ai",
+      "Opus",
+      "107.90",
+      "256,802",
+      "741k"
+     ],
+     [
+      "journalist",
+      "Opus",
+      "89.65",
+      "181,991",
+      "623k"
+     ],
+     [
+      "pm",
+      "Opus",
+      "85.62",
+      "194,787",
+      "564k"
+     ],
+     [
+      "journalist-connections",
+      "Opus",
+      "75.55",
+      "198,107",
+      "621k"
+     ],
+     [
+      "researcher",
+      "Opus",
+      "69.24",
+      "203,439",
+      "527k"
+     ],
+     [
+      "journalist-portugal",
+      "Opus",
+      "61.08",
+      "142,316",
+      "534k"
+     ],
+     [
+      "checker",
+      "Opus",
+      "57.90",
+      "321,455",
+      "597k"
+     ],
+     [
+      "journalist-europe",
+      "Opus",
+      "50.79",
+      "119,359",
+      "491k"
+     ],
+     [
+      "programme",
+      "Opus",
+      "49.85",
+      "173,091",
+      "528k"
+     ],
+     [
+      "logistics",
+      "Opus",
+      "44.59",
+      "97,075",
+      "403k"
+     ],
+     [
+      "curator",
+      "Sonnet",
+      "22.81",
+      "175,628",
+      "527k"
+     ],
+     [
+      "scout",
+      "Opus",
+      "18.82",
+      "105,749",
+      "379k"
+     ],
+     [
+      "dashboard",
+      "Sonnet",
+      "14.39",
+      "152,801",
+      "478k"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "Checks",
+   "items": [
+    "Deepest contexts: journalist-ai 741k, conductor 729k, journalist 623k (compaction near 902k). Total 1,115 API-equivalent dollars across 15 sessions, up from 669 yesterday, mostly the company-page work. Scout's open P20 (a fresh session past about 500k) bears on this; no action unless you ask.",
+    "Schedule: no regular task changed since the 8 Nov checks; the overnight one-off wakes all fired and are disabled.",
+    "decisions.md: all edits mine. No hold. Inbox lane empty. Gmail: no sign of mailbox use; inbox@ idle since 7 Nov.",
+    "Keys: synthetic-vicky added by its own commit (d4edac90). For vault@: nothing waiting.",
+    "Scout: no topics left; open proposals P12 to P15 and P20."
+   ]
+  }
+ ],
+ "next": [
+  "09:48 the checker. 10:15 research, 10:30 curator, 10:45 to 11:09 writing (connections first), 11:15 first review, 11:50 to 12:14 fix-only, 12:20 re-check.",
+  "12:00 stand-up; 17:30 my check; 20:45 my relay.",
+  "Web Summit day one."
+ ],
+ "sources": [
+  "people/vicky/reports/*.md since 8 Nov 08:45, read by a Sonnet sub-agent (P16)",
+  "The account's scheduled tasks; get_session usage numbers only (P6)",
+  "Newsroom PrompTugal/PrompTugal__News__Website dev 3016980d; people/vicky/company-pages/backlog.md; desks/reviewer-vicky/reviews/checker-findings-sa25.md"
+ ]
+}

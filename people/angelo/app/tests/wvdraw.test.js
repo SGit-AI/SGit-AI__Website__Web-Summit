@@ -3,8 +3,10 @@ const S = process.argv[2] || require('os').tmpdir(), BASE = 'http://127.0.0.1:87
 // wvdraw: the work view's drawing (work-draw.js, backlog 0f2, spec-work-view.md) on the real live graph (#live), through live.js's
 // hook (host.lvGraph). Until dev.map@ lands the hook (people/angelo/map/work/drafts/live-hook.patch), this test serves live.js
 // with the hook's lines added, as the patch does, and says so. At 1280 and 390 px, dark and light: ten destination squares on the
-// hexagon's rim, each with its name in a pill outside the rim (none overlapping another, none crossing the rim, text at least 12 px
-// on screen, inside the frame); no square or pill on live.js's logos, LIVE, date line or layout switch; PT News and LinkedIn show their logos; deliveries from deliveries.json fly from their makers' nodes
+// hexagon's rim, each with its name in a pill beside its own square (backlog 0c4 (5), Angelo 8 Nov about 23:00: "can these be
+// brought closer to their icon?"): outside the rim where it fits, else inside it (a phone), never across it, none overlapping
+// another pill or another square, text at least 12 px on screen, inside the frame, the full name or a short form of it; no two
+// destinations with the same mark ("there are various icons that use the same image"); no square or pill on live.js's logos, LIVE, date line or layout switch; PT News and LinkedIn show their logos; deliveries from deliveries.json fly from their makers' nodes
 // as typed icons in their makers' colours (in light, a shade readable on white), merged ones carry their number, each lands on its
 // square and lights it; the counts show; no text but the destinations' names and numbers; no page error.
 const PATCH = fs.readFileSync(path.join(__dirname, '../../map/work/drafts/live-hook.patch'), 'utf8')
@@ -38,9 +40,9 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
       const rim = document.querySelector('.lv-rim'), svg = G.svg, pt = svg.createSVGPoint()
       const inside = (x, y) => { const m = svg.getScreenCTM().inverse(); pt.x = x; pt.y = y; const v = pt.matrixTransform(m); return rim.isPointInFill(v) }
       const frame = document.querySelector('.lv').getBoundingClientRect()
-      const pills = q('.wv-pill').map(g => { const r = g.getBoundingClientRect(), t = g.querySelector('text'); return { d: g.dataset.dest, r: { l: r.left, t: r.top, r: r.right, b: r.bottom }, px: parseFloat(getComputedStyle(t).fontSize) * (svg.getBoundingClientRect().width / 1000), text: t.textContent,
-        crosses: [[r.left + 2, r.top + 2], [r.right - 2, r.top + 2], [r.left + 2, r.bottom - 2], [r.right - 2, r.bottom - 2]].some(([x, y]) => inside(x, y)) } })
-      const squares = q('.wv-sq').map(g => { const r = g.getBoundingClientRect(); return { d: g.dataset.dest, x: (r.left + r.right) / 2, y: (r.top + r.bottom) / 2, logo: !!g.querySelector('image'), w: r.width } })
+      const pills = q('.wv-pill').map(g => { const r = g.getBoundingClientRect(), t = g.querySelector('text'), c = [[r.left + 2, r.top + 2], [r.right - 2, r.top + 2], [r.left + 2, r.bottom - 2], [r.right - 2, r.bottom - 2]].map(([x, y]) => inside(x, y)); return { d: g.dataset.dest, mode: g.dataset.mode, r: { l: r.left, t: r.top, r: r.right, b: r.bottom }, px: parseFloat(getComputedStyle(t).fontSize) * (svg.getBoundingClientRect().width / 1000), text: t.textContent,
+        crosses: c.includes(true) && c.includes(false), within: c.every(Boolean) } })
+      const squares = q('.wv-sq').map(g => { const r = g.querySelector('rect').getBoundingClientRect(), m = g.querySelector('image, .wv-mark, .wv-ws'); return { d: g.dataset.dest, x: (r.left + r.right) / 2, y: (r.top + r.bottom) / 2, logo: !!g.querySelector('image'), w: r.width, r: { l: r.left, t: r.top, r: r.right, b: r.bottom }, mark: m ? (m.getAttribute('href') || m.getAttribute('d') || m.textContent) : '' } })
       // the squares sit on the rim: their centres within a few pixels of the hexagon's edge (inside one way, outside the other)
       const onRim = squares.map(s => { const k = s.w * 0.25; return [[k, 0], [-k, 0], [0, k], [0, -k]].map(([dx, dy]) => inside(s.x + dx, s.y + dy)) }).map(a => a.includes(true) && a.includes(false))
       // the graph's furniture (live.js's logos and LIVE, the date line, the layout switch): no square and no pill on it (de879c5)
@@ -53,20 +55,32 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
       const texts = q('.wv text').map(t => t.textContent)
       const counts = q('.wv-n').filter(n => n.style.display !== 'none').length
       const logosOk = await Promise.all(q('.wv-sq image').map(i => fetch(i.getAttribute('href')).then(r => r.ok)))
-      return { clash, n: shown.length, merged: merged.length ? merged[0].n : 0, mid, pills, squares, onRim, after, litLater: q('.wv-sq.wv-lit').length, texts, counts, logosOk, light: V.light, frame: { l: frame.left, r: frame.right }, names: A.DEST_NAMES }
+      // long names (a workstream's title) inside the rim reach at most 28% of the drawing across, so they stay off the people's
+      // clusters (dashboard@'s review, 52832206): laid out in the frame of the hexagon alone, as on a phone
+      const longN = Object.fromEntries(A.DESTS.map(d => [d, 'a workstream with a long title, ' + d])), LL = D.pillsFor(A.places(1), longN, V.pills().font, 0, A.S)
+      const insideMax = Math.max(0, ...[...LL.values()].filter(b => b.mode === 'inside').map(b => b.w / A.S))
+      return { insideMax, short: A.DEST_SHORT, clash, n: shown.length, merged: merged.length ? merged[0].n : 0, mid, pills, squares, onRim, after, litLater: q('.wv-sq.wv-lit').length, texts, counts, logosOk, light: V.light, frame: { l: frame.left, r: frame.right }, names: A.DEST_NAMES }
     }, { base: BASE })
     if (r.err) { fail(`${tag}: ${r.err}`); await ctx.close(); continue }
     if (r.squares.length !== 10 || r.pills.length !== 10) fail(`${tag}: ${r.squares.length} squares, ${r.pills.length} pills`)
     r.onRim.forEach((ok, i) => { if (!ok) fail(`${tag}: the square for ${r.squares[i].d} is not on the rim`) })
     for (const s of r.squares) if (['news', 'linkedin'].includes(s.d) !== s.logo) fail(`${tag}: ${s.d} logo ${s.logo}`)
     if (r.logosOk.some(x => !x)) fail(`${tag}: a logo does not load`)
+    if (!(r.insideMax > 0 && r.insideMax <= 0.285)) fail(`${tag}: a long name inside the rim reaches ${(r.insideMax * 100).toFixed(1)}% across (at most 28%)`)
     for (const pl of r.pills) {
-      if (pl.crosses) fail(`${tag}: the pill for ${pl.d} is on the rim`)
+      if (pl.crosses) fail(`${tag}: the pill for ${pl.d} crosses the rim`)
+      if ((pl.mode === 'inside') !== pl.within) fail(`${tag}: the pill for ${pl.d} is ${pl.within ? 'inside' : 'outside'} the rim, its mode ${pl.mode}`)
+      const own = r.squares.find(x => x.d === pl.d).r, dx = Math.max(0, own.l - pl.r.r, pl.r.l - own.r), dy = Math.max(0, own.t - pl.r.b, pl.r.t - own.b)
+      if (dx > 16 || dy > 16) fail(`${tag}: the pill for ${pl.d} is ${Math.round(Math.max(dx, dy))} px from its square`)
+      for (const o of r.squares) if (o.d !== pl.d && pl.r.l < o.r.r && o.r.l < pl.r.r && pl.r.t < o.r.b && o.r.t < pl.r.b) fail(`${tag}: the pill for ${pl.d} is on the square for ${o.d}`)
+      const full = r.names[pl.d], sh = r.short[pl.d] || full, cut = pl.text.endsWith('…') && sh.startsWith(pl.text.slice(0, -1))
+      if (pl.text !== full && pl.text !== sh && !cut) fail(`${tag}: the pill for ${pl.d} says "${pl.text}"`)
       if (pl.px < 11.9) fail(`${tag}: the pill for ${pl.d} at ${pl.px.toFixed(1)} px`)
       if (pl.r.l < r.frame.l - 1 || pl.r.r > r.frame.r + 1) fail(`${tag}: the pill for ${pl.d} leaves the frame`)
     }
     for (let i = 0; i < r.pills.length; i++) for (let j = i + 1; j < r.pills.length; j++) { const a = r.pills[i].r, c = r.pills[j].r; if (a.l < c.r && c.l < a.r && a.t < c.b && c.t < a.b) fail(`${tag}: pills ${r.pills[i].d} and ${r.pills[j].d} overlap`) }
     for (const c of r.clash) fail(`${tag}: ${c}`)
+    { const marks = r.squares.map(x => x.mark), dup = marks.filter((m, i) => !m || marks.indexOf(m) !== i); if (dup.length) fail(`${tag}: two destinations share a mark (${r.squares.filter(x => dup.includes(x.mark)).map(x => x.d).join(', ')})`) }
     if (r.n < 3) fail(`${tag}: only ${r.n} deliveries to fly (is deliveries.json built?)`)
     if (r.mid.length !== r.n) fail(`${tag}: ${r.mid.length} of ${r.n} icons in the air at 1.5 s`)
     if (r.light !== (theme === 'light')) fail(`${tag}: the drawing thinks the theme is ${r.light ? 'light' : 'dark'}`)
@@ -75,13 +89,13 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
     if (r.merged > 1 && !r.mid.some(m => m.num === String(r.merged))) fail(`${tag}: the merged delivery's number ${r.merged} not shown`)
     if (r.after.inAir !== 0 || r.after.lit < 1) fail(`${tag}: after landing ${JSON.stringify(r.after)}`)
     if (r.litLater !== 0) fail(`${tag}: squares still lit long after`)
-    const allowed = new Set(Object.values(r.names)); for (const t of r.texts) if (!allowed.has(t) && !/^(\d+|99\+)$/.test(t)) fail(`${tag}: text drawn: ${t}`)
+    const allowed = new Set(Object.values(r.names).concat(Object.values(r.short))), cutOf = t => t.endsWith('…') && [...allowed].some(a => a.startsWith(t.slice(0, -1))); for (const t of r.texts) if (!allowed.has(t) && !cutOf(t) && !/^(\d+|99\+)$/.test(t)) fail(`${tag}: text drawn: ${t}`)
     if (r.counts < 1) fail(`${tag}: no counts shown`)
     if (errs.length) fail(`${tag}: page errors: ${errs.slice(0, 3).join(' | ')}`)
     // a picture with icons in the air, for the reviewer
     await p.evaluate(() => { const { V, shown } = window.__wv; V.fly(shown, 10000); V.step(11400) })
     await p.locator('.lv').screenshot({ path: `${S}/wvdraw-${tag}.png` })
-    console.log(tag, JSON.stringify({ flew: r.n, merged: r.merged, minPx: Math.min(...r.pills.map(x => x.px)).toFixed(1), lit: r.after.lit, counts: r.counts }))
+    console.log(tag, JSON.stringify({ modes: [...new Set(r.pills.map(x => x.mode))].join('+'), flew: r.n, merged: r.merged, minPx: Math.min(...r.pills.map(x => x.px)).toFixed(1), lit: r.after.lit, counts: r.counts }))
     await ctx.close()
   }
   await b.close()

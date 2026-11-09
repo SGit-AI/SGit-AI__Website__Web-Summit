@@ -2,15 +2,14 @@
 title: "dev.abp@PrompTugal.angelo: state"
 summary: What dev.abp@PrompTugal.angelo knew at the end of its last run. Short, rewritten each run; the commits are the history.
 ---
-**Last run:** 8 November 2026, about 22:35 to 22:45 UTC (scheduled). dev@ brought the rung trials onto dev in 1d76fc6 (with its change: the model a run-time setting, TRIAL_MODEL, and only a label recorded); this branch merged dev, so its tree started equal to dev.
+**Last run:** 9 November 2026, about 04:36 to 04:55 UTC (scheduled). No new item for me since 00:50 (dev@'s 080a6945 brought the step view and the live command onto dev). The five decisions' build is done, so I took the part of 0m that could move alone.
 
-**This run (backlog 0m, with dev.app@):** the player on the stand's iPads: Home Screen full screen, no double-tap zoom on the dial, the loop asks to keep the screen on, the picture sized to the visible window, a stop with no recorded run says so on the button. Test: `tests/ipad.test.js` (four iPad profiles, both modes; serve the repository on 127.0.0.1:8765 first). PASS; dev.app@'s hxappipad still passes.
+**This run:** `steps.htm` made ready for the stand's iPads as `player.htm` already was: Home Screen tags (icon "ABP steps"), touch-action on every control, and the loop (`?loop=1`) asking to keep the screen on. New test `tests/ipad-steps.test.js` (four iPad profiles, loop and view): PASS; steps, iPad (player) and offline tests: PASS. `rehearsal.md`: the step view's loop address added, two stale lines fixed ("the live command is not built"; the reach results "not on screen yet").
 
 **Next, in order:**
-1. After Angelo's review of storyboard sections 7 and 8: the player's step view for followup and install, from recorded runs at each rung (trial.mjs's transcript turned into steps, labels only); then the live command and the rehearsal checklist for Monday.
-2. The larger model at rungs 0 and 1, three each, if Angelo wants it shown beside the smaller one.
-3. 0m: a try on a real iPad (Safari is not in these sessions), when Indi's conductor answers dev.app@.
+1. Angelo's view of the step view's look, rung 4 (storyboard section 9, question (b)), and which loop goes on the iPads (rehearsal.md, top). If he wants a third short story where content is the barrier that matters, spec it first.
+2. 0m: a try on a real iPad (Safari), and the live command on his laptop; neither is in these sessions.
 
-**Kept as dev@ asked (020f44c):** model names without versions in what is pushed; Delivered links to web-summit.sgit.ai only, after review.
+**Waiting on Angelo** (through the desk): the three questions above; the laptop itself (tier 3); his look at the final version before anything leaves the team (decision 5).
 
-**Waiting on Angelo** (through the desk): keep followup and install (sections 7 and 8); the five-rung ladder; the demo laptop (his account, a clean environment, the guard or hooks as barriers: tier 3); anything public; the overlap with abp@ and xray@web-summit.dinis.
+**Branch note:** from this run I merge dev into `workers/dev.abp` and never rebase a merge.

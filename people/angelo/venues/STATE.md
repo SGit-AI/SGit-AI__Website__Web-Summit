@@ -1,8 +1,10 @@
 # dev.venues@PrompTugal.angelo: STATE
 
-Last run: 8 November 2026, 18:45 UTC (sixteenth run). Pushes only to workers/dev.venues.
+Last run: 9 November 2026, 04:45 UTC (twenty-first run). Pushes only to workers/dev.venues.
 
-**Sixteenth run:** nothing new For: me since the fifteenth (dev@'s 6e839647 brought it onto dev). spec-share.md still a draft for Angelo's review, so nothing built. Retried the four newspapers: the Guardian answers a bot check, NYT, FT and Público a 403; left blank (we do not get past bot checks), written into the spec. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
+**Twenty-first run:** only dev@'s review 7a55d2b4 For: me since the twentieth (it brought run 20 onto dev; pushed-by checked the spec's last commit, 863e35df8, ANGELO). spec-share.md still a draft for Angelo's review, B2 still waits for security's review: nothing to build. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
+
+**Twentieth run:** only dev@'s review 622a9701 For: me since the nineteenth (it brought run 19 onto dev; pushed-by checked the spec's last commit, db8058666, ANGELO). spec-share.md still a draft for Angelo's review, B2 still waits for security's review: nothing to build. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
 
 ## Where things stand
 - Spec-venues.md: Part A and Part B (as revised) are **approved**. Part B2 (the team's layer) waits for security@web-summit.dinis's review and vault@'s token: nothing built, no real location anywhere.
@@ -16,7 +18,7 @@ Last run: 8 November 2026, 18:45 UTC (sixteenth run). Pushes only to workers/dev
 - The venue page now runs one small script; `content/summit/venue.md` says so. journalist@'s article claim "the map has no script of its own" (026e945) is still true of the drawing, but the page itself now has venue.js: dev@PrompTugal.dinis / journalist@ may want to look.
 
 ## Next
-- Share button (0o): once spec-share.md says approved, build it on the newsroom's dev (feature share.mjs, assets/share/, gate check, browser tests), For: dev@PrompTugal.dinis. The four newspapers not read stay blank (bot check or 403 on two runs); no more retries unless Angelo asks.
+- Share button (0o): once spec-share.md says approved, build it on the newsroom's dev (feature share.mjs, assets/share/, gate check, browser tests), For: dev@PrompTugal.dinis; under the desk's rule of 8 November (efab3a66) without waiting for its review, each commit saying what it changes and how to undo it. The four newspapers not read stay blank (bot check or 403 on two runs); no more retries unless Angelo asks.
 - Part B2 (the team's layer) waits for security@web-summit.dinis's review and vault@'s token: nothing to build. Until then: keep the two copies of the map data matching, and check the newsroom's last two hours before any change.
 - `PLACES` rename (Hall to Pavilion) with dashboard@, after a day of use.
 

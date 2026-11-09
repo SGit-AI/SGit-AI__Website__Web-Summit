@@ -17,13 +17,14 @@ Backlog 0f2 (the work view) and 0f3 (the WhatsApp clip). **Approved** by Angelo 
 - **Replay: done** (c95bce6): mountMap() puts the work view on the Team map while it plays (the map's viewBox opened to 0.84 plus a 7% margin, squares on that rim, deliveries.json over the whole history); "Exchanges | Work" above the playback bar in app.js drawCollab, r_work=1 in the address. Test wvrp.
 
 ## Open
-- **Live: done.** live.js carries the hook (dev.map@'s 7751d4e, on dev in 98cdfcf); the "Exchanges | Work" switch is in app.js's drawLive (#live?v=work, ed59381), with the legend in one line under the graph; on a phone the lower names keep clear of the Ask Claude button (2d3fcac). Test wvsw.
-- **Next: the clip button** (0f3): frames from replay's clock through `clip.make`. replay.js already has a clip view (`#replay?c=1`, data-rp-clip): read it first, and replay.js is dev.map@'s (a draft if changed in the last two hours).
-- Polish, from dashboard@'s 2e0eac44 (material, not an instruction): the switch's "on" state filled, not only underlined; wvsw and wvrp light screenshots come out dark (the app's own theme choice wins over the test's scheme). On the Team map the name pills use the rows layout with long leaders: try beside the squares at 1280.
-- Testing: merge origin/dev into the branch at the start of a run (this run: 1eea8b6), then gate with LANE_RANGE=<that merge>..HEAD so check 21 looks only at the run's own commits.
-- Lane: lanes.json has my entry but `writes: []` (20:00 UTC), so check 21 lists every file of mine (ed59381, 2d3fcac); the desk asked policy@ (a2c8e4c) to fill it. Until then the reviewer's commit carries the Outside lines.
-- Not yet checked: WhatsApp on Angelo's iPhone (the proof for 0f3), and the fallback in a real Safari 16.
-- Other repositories (the apps): `deliveries-repos.json` from the snapshot, later.
+- **Review: nothing waiting.** Everything up to the 19th run is on dev (dashboard@'s 118aafb); my branch differs from dev only by this run's STATE and ledger line.
+- **Branch:** the 14th run's 36 copies of dev's commits are resolved: the 15th run's merge (45253ee) has origin/dev's tree plus my own work, so the branch differs from dev only by my files. Merge origin/dev, never rebase.
+- **Seen:** in a 440 px pop-out live.js's layout switch sits over the upper right square (WS-14 / the team site): dev.map@'s furniture, told in b62ea65e.
+- **Lane:** policy@ turned check 21 into a FAIL; lanes.json still has `writes: []` for me. d71e6ca8 and 49ce4f13 went out without Outside lines (already pushed, no force-push): the reviewer's commit must carry them. From 423f113f every commit of mine carries its own Outside lines. Gate my own range: LANE_RANGE=<my first commit of the run>^..HEAD.
+- **0f3 proof:** Angelo sends a clip to himself on WhatsApp on his iPhone; the fallback in a real Safari 16 not checked.
+- **0c4 questions (spec part 3), via the desk:** the nine squares fixed over the data's span (built) or per window; retire "Agents and their work".
+- Testing: merge origin/dev into the branch at the start of a run (16th run: 51d667fe).
+- **The apps' repositories (spec rule table, last row): question to the desk, 15th run.** Read 9 November 00:50: PrompTugal__App__iOS dev, 1,141 commits, no Agent: line (makers "Claude", a bot): nothing to draw without inventing a maker. PrompTugal__App__Android dev, 71 commits, 68 with Agent: <role>@promptugal.ai (conductor.android, security.android, release.android, play.android ...), For: Dinis: not <role>@PrompTugal.<person>, so no roster person; repos-snapshot.mjs drops them too (0 events). Build waits on how to name them (Dinis's, as pt:dinis:<role>, or listed as their own group).
 
 ## Last run
-Twelfth run, 8 November 21:51 to about 22:15 UTC: no commit For: me from the desk since the last run; dashboard@'s 2e0eac44 (material). Built the work view in replay (c95bce6); wvrp, wvreplay, wvsw, wvdraw PASS; gate OK for this run's range.
+Twentieth run, 9 November about 06:53 to 07:05 UTC: no new commits For me from the desk, runner.conductor or dev@ since the 19th run (only dashboard@'s review 118aafb, which brought the 18th and 19th runs' STATE and ledger onto dev); spec-new-agents.md's last commit (db80586) pushed by riskmandate-angelo. Merged origin/dev (branch tree equals dev's). Every item of mine (0f2, 0f3, 0c4 (1, 3, 5)) is built and on dev; the rest waits on the desk (0c4 questions, the apps' naming) and Angelo (the WhatsApp proof). No code changed.
