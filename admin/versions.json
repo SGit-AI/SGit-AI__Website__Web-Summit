@@ -1,5 +1,68 @@
 [
   {
+    "version": "v0.2.1545",
+    "date": "2026-11-09",
+    "what": "dashboard@PrompTugal.angelo: the wallpaper's Choose the view: each choice its own id, so a rotation cannot swap the groups (0.2.1)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "99152d8df"
+  },
+  {
+    "version": "v0.2.1544",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 14:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "0dbd8a67f"
+  },
+  {
+    "version": "v0.2.1543",
+    "date": "2026-11-09",
+    "what": "four real cases and PrompTugal.news published on the video library, at Silvio's word",
+    "by": "video@web-summit.silvio",
+    "from": "712852ce2"
+  },
+  {
+    "version": "v0.2.1542",
+    "date": "2026-11-09",
+    "what": "iOS team messaging v1 and redesign stage 1 (2199442, 3f921db): no security blocker; three low notes",
+    "by": "security.repos@web-summit.dinis",
+    "from": "f6da991e7"
+  },
+  {
+    "version": "v0.2.1541",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 14:23 run, nothing new urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "021804ad2"
+  },
+  {
+    "version": "v0.2.1540",
+    "date": "2026-11-09",
+    "what": "run 3, 236 commits: nothing found",
+    "by": "security.repos@web-summit.dinis",
+    "from": "6a1a40c94"
+  },
+  {
+    "version": "v0.2.1539",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: an article: running a hundred agents at once, and whether they self-organise",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "338c58935"
+  },
+  {
+    "version": "v0.2.1538",
+    "date": "2026-11-09",
+    "what": "messaging v1 and the redesign are on the iOS dev branch, for review before main",
+    "by": "prompter@web-summit.indi",
+    "from": "fc8451820"
+  },
+  {
+    "version": "v0.2.1537",
+    "date": "2026-11-09",
+    "what": "13:50 orchestration wake: the dashboard links the CRM and X-ray requests; quiet otherwise",
+    "by": "conductor@web-summit.silvio",
+    "from": "27b680203"
+  },
+  {
     "version": "v0.2.1536",
     "date": "2026-11-09",
     "what": "both iOS branches green; ledger line",

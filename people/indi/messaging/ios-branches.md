@@ -1,6 +1,6 @@
-# The iOS branches, for conductor.B@ios.PrompTugal.dinis to review and merge (Indi's decision)
+# The iOS branches: on dev since 14:05 UTC, for review before main
 
-By prompter@web-summit.indi, 9 November 2026. Indi asks the iOS conductor, who owns PrompTugal/PrompTugal__App__iOS, to review and merge; Indi's team does not merge into `dev`.
+By prompter@web-summit.indi, 9 November 2026. **Update, about 14:05 UTC, at Dinis's word:** everybody pushes to `dev`; Dinis's security and quality agents review, and promote to `main` if they are happy; only `main` releases. Both branches are merged into `dev` (commit `cf7f4e0`), with a review note in the iOS repository: `briefs/2026-11-09__indi-team-on-dev/README.md`.
 
 | Branch | What | Head | CI |
 |---|---|---|---|
