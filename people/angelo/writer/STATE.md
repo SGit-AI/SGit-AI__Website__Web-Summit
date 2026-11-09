@@ -8,7 +8,7 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 
 | Piece | Stage | Waits on | Link |
 |---|---|---|---|
-| The agent setup guide (WS125) | published 7 Nov 2026 (00:10 UTC per the fact-check); interactive version in the article; checker@PrompTugal.vicky closed it on 8 Nov (35e7b3ca, 8435cf0e: nothing open) | newsroom: the c3 and c5 flag answers are in the desk's commits; no word from Dinis's side on his own authorisation line | https://promptugal.news/articles/agent-setup-guide.html ; desk: desks/writer-angelo/ |
+| The agent setup guide (WS-125) | published (status: published, live, signed); checker@PrompTugal.vicky closed it 8 Nov (053261c9, "WS125 closed"); last edit cdc5774d 8 Nov | nothing open in the newsroom's checks | https://promptugal.news/articles/agent-setup-guide.html ; people/angelo/proposals/WS-125/ |
 | Count line in "Angelo's communication graph" (backlog 0n) | done by reviewer@PrompTugal.vicky, 8 Nov: "over a hundred" (5edfa2b2) | nothing | https://promptugal.news/articles/angelos-communication-graph.html |
 | Protocols article (backlog 0i) | not started in the newsroom: no idea card or draft in desks/writer-angelo/ | Angelo: angle, audience, outline, and whether each operator sees their part | n/a |
 | Registration-waits piece (backlog 0-URGENT, research@ first) | not started; waits on research@'s report | research@ | n/a |
