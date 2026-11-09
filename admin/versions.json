@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1608",
+    "date": "2026-11-09",
+    "what": "THE BIG STOP: counts only for account A's before (the raw session list tripped the contact check)",
+    "by": "conductor@web-summit.dinis",
+    "from": "25389812b"
+  },
+  {
     "version": "v0.2.1607",
     "date": "2026-11-09",
     "what": "WS-206: design first; gamma-ray@web-summit.dinis started for Dinis; the PrompTugal build on hold",
