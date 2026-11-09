@@ -125,3 +125,9 @@ Each can be switched off in More, then Settings. The prototype shows them on its
 | Calls: two pathways | **Done** (this page) |
 | The brief for Dinis's iPhone agents | **Updated** (version 5: tasks by day, late-task notifications, Live Activities, the wording rules) |
 | Building any of it | **Waiting** for Dinis (Team app item on today's stand-ups) |
+
+## Indi's decisions (Monday 9 November, afternoon)
+
+- **Chat:** left for now. Dinis is designing the chat workflow himself.
+- **Call shortcut:** left for now.
+- **Who gets "Still late":** as recommended. For a task someone gave you: that person. For a team issue: the other people the issue is for (not "anyone", not the owner); new issues made in the app record who asked. If nobody qualifies, only the owner is reminded. Written into the brief, version 6.
