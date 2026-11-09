@@ -35,7 +35,9 @@ public class LiveMapWallpaper extends WallpaperService {
     static final String BASE = "https://web-summit.sgit.ai/people/angelo/app/";
     static final long FPS_MS = 1000 / 15, SAVER_MS = 1000 / 5, LIVE_MS = 60_000, MAP_MS = 6 * 3600_000L;
     // what the server last said of each file (its ETag), so an unchanged file is not downloaded again: it answers 304, no body
-    static final java.util.Map<String, String> etags = new java.util.concurrent.ConcurrentHashMap<>();
+    // kept only once the body has been read and stored (confirm), so a damaged body is downloaded again next time (dev.app@'s d6ad26fd)
+    static final java.util.Map<String, String> etags = new java.util.concurrent.ConcurrentHashMap<>(), pending = new java.util.concurrent.ConcurrentHashMap<>();
+    static void confirm(String url) { String t = pending.remove(url); if (t != null) etags.put(url, t); }
     // the view, chosen in SettingsActivity (Angelo, 9 November: "choosing the view as in the website"); kept on the phone
     static final String PREFS = "view", LAYOUT = "layout", THEME = "theme", LEVEL = "level";
     static String layout(Context c) { return c.getSharedPreferences(PREFS, MODE_PRIVATE).getString(LAYOUT, "3d"); }
@@ -145,14 +147,14 @@ public class LiveMapWallpaper extends WallpaperService {
             if (graph == null || now - mapAt > MAP_MS) {
                 mapAt = now;   // asked: the next ask in six hours, whether it came back new, unchanged (304) or not at all
                 String d = get(BASE + "data.json");
-                if (d != null) { try { Graph g = build(Json.parse(d)); graph = g; mapAt = now; write(cache("data.json"), d); } catch (Exception e) { Log.w("LiveMap", "map unreadable", e); } }
+                if (d != null) { try { Graph g = build(Json.parse(d)); graph = g; mapAt = now; write(cache("data.json"), d); confirm(BASE + "data.json"); } catch (Exception e) { Log.w("LiveMap", "map unreadable", e); } }
             }
             String l = get(BASE + "live.json");
-            if (l != null && graph != null) { try { events = Graph.events(Json.parse(l)); write(cache("live.json"), l); } catch (Exception e) { Log.w("LiveMap", "live.json unreadable", e); } }
+            if (l != null && graph != null) { try { events = Graph.events(Json.parse(l)); write(cache("live.json"), l); confirm(BASE + "live.json"); } catch (Exception e) { Log.w("LiveMap", "live.json unreadable", e); } }
             String lf = levelFile(), v = level(LiveMapWallpaper.this);
             if (lf != null) {   // workstreams.json about 50 KB, deliveries.json about 15 KB, only while that level is chosen
                 String w = get(BASE + lf);
-                if (w != null) { try { Object f = Json.parse(w); write(cache(lf), w); levelFrom(f, v); } catch (Exception e) { Log.w("LiveMap", lf + " unreadable", e); } }
+                if (w != null) { try { Object f = Json.parse(w); write(cache(lf), w); levelFrom(f, v); confirm(BASE + lf); } catch (Exception e) { Log.w("LiveMap", lf + " unreadable", e); } }
             }
         }
         private File cache(String name) { return new File(getFilesDir(), name); }
@@ -169,7 +171,7 @@ public class LiveMapWallpaper extends WallpaperService {
             if (code != 200) return null;
             String et = c.getHeaderField("ETag");
             String body; try (InputStream in = c.getInputStream()) { body = new String(all(in), StandardCharsets.UTF_8); }
-            if (et != null) etags.put(url, et); return body;
+            if (et != null) pending.put(url, et); else pending.remove(url); return body;
         } catch (Exception e) { return null; } finally { if (c != null) c.disconnect(); }
     }
     static String read(File f) { if (!f.exists()) return null; try (InputStream in = new FileInputStream(f)) { return new String(all(in), StandardCharsets.UTF_8); } catch (Exception e) { return null; } }

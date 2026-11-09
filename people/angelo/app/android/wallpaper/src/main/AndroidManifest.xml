@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- The live wallpaper of the agents map (backlog 00a2), by dev.app@PrompTugal.angelo. Only the network, to read this site. -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="news.promptugal.wallpaper" android:versionCode="7" android:versionName="0.4.2">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="news.promptugal.wallpaper" android:versionCode="8" android:versionName="0.4.3">
     <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="35" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-feature android:name="android.software.live_wallpaper" android:required="true" />

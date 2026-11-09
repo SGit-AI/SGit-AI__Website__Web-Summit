@@ -45,7 +45,7 @@ final class MapRenderer implements GLSurfaceView.Renderer {
     // change between maps, so they live on the GPU (buffer objects), uploaded once per map, not copied over every frame (about
     // 690 KB a frame for today's 684 lines); and every shader variable is looked up once, not on every draw
     private final int[] vbo = new int[6];   // base lines: position, colour, alpha; spokes: position, colour, alpha
-    private final Map<String, Integer> loc = new HashMap<>();
+    private final Map<Integer, Map<String, Integer>> loc = new HashMap<>();   // program, then name (a literal: no key built per call)
     private final float[] v4 = new float[4], o4 = new float[4]; private String overlayKey = "";
     // the level (Workstreams): its rows, the frame's geometry for its squares, the flights' textures by colour
     private Work wk; private float fx0, fy0, fk; private int litTex = 0; private float litPx = 0;
@@ -217,8 +217,9 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, 0);
         GLES20.glDrawArrays(GLES20.GL_LINES, 0, n);
     }
-    private int attrLoc(int pr, String name) { String key = pr + "a" + name; Integer v = loc.get(key); if (v == null) { v = GLES20.glGetAttribLocation(pr, name); loc.put(key, v); } return v; }
-    private int uniLoc(int pr, String name) { String key = pr + "u" + name; Integer v = loc.get(key); if (v == null) { v = GLES20.glGetUniformLocation(pr, name); loc.put(key, v); } return v; }
+    // attribute and uniform names never clash in these shaders, so one table per program serves both
+    private int attrLoc(int pr, String name) { Map<String, Integer> m = loc.get(pr); if (m == null) loc.put(pr, m = new HashMap<>()); Integer v = m.get(name); if (v == null) { v = GLES20.glGetAttribLocation(pr, name); m.put(name, v); } return v; }
+    private int uniLoc(int pr, String name) { Map<String, Integer> m = loc.get(pr); if (m == null) loc.put(pr, m = new HashMap<>()); Integer v = m.get(name); if (v == null) { v = GLES20.glGetUniformLocation(pr, name); m.put(name, v); } return v; }
     private void lines(FloatBuffer pos, FloatBuffer col, FloatBuffer al, int n) {
         if (n <= 0) return; GLES20.glUseProgram(progLn); mats(progLn); GLES20.glLineWidth(lineW);
         attr(progLn, "position", pos, 3); attr(progLn, "col", col, 3); attr(progLn, "alpha", al, 1);
