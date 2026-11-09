@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1539",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: an article: running a hundred agents at once, and whether they self-organise",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "338c58935"
+  },
+  {
     "version": "v0.2.1538",
     "date": "2026-11-09",
     "what": "messaging v1 and the redesign are on the iOS dev branch, for review before main",
