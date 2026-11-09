@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1508",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: the desk may wake agents with ready work, each wake logged; first wake: research@ for the editorial team",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "9577ee892"
+  },
+  {
     "version": "v0.2.1507",
     "date": "2026-11-09",
     "what": "hand-over note for the new conductor session; vault keys, lane credentials and Vicky's key copy deleted from this session",
