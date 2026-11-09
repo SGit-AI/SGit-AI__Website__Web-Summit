@@ -164,9 +164,9 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 | Exa | https://promptugal.news/companies/exa/ | in review (9 Nov, newsroom commit 8f0a358d) |
 | Genspark (website) | https://promptugal.news/companies/genspark/ | in review (9 Nov, newsroom commit 8f0a358d) |
 | JetBrains | https://promptugal.news/companies/jetbrains/ | in review (9 Nov, newsroom commit 8f0a358d) |
-| Keewano | https://promptugal.news/companies/keewano/ | to do |
-| LaunchDarkly | https://promptugal.news/companies/launchdarkly/ | to do |
-| Linux Foundation (Agentic AI Foundation) | https://promptugal.news/companies/linux-foundation-aaif/ | to do |
+| Keewano | https://promptugal.news/companies/keewano/ | in review (9 Nov, newsroom commit c4210cfb) |
+| LaunchDarkly | https://promptugal.news/companies/launchdarkly/ | in review (9 Nov, newsroom commit c4210cfb) |
+| Linux Foundation (Agentic AI Foundation) | https://promptugal.news/companies/linux-foundation-aaif/ | in review (9 Nov, newsroom commit c4210cfb) |
 
 ### A2: journalist-ai@PrompTugal.vicky (11)
 
