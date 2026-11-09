@@ -1,5 +1,40 @@
 [
   {
+    "version": "v0.2.1578",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.map's, dev.work's and dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "1efbc49ae"
+  },
+  {
+    "version": "v0.2.1577",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 18:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "4d76b4339"
+  },
+  {
+    "version": "v0.2.1576",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: live graph's snapshots refreshed (18:35 run); Dinis's WS-205 passed to the desk",
+    "by": "dev@PrompTugal.angelo",
+    "from": "39d1de983"
+  },
+  {
+    "version": "v0.2.1575",
+    "date": "2026-11-09",
+    "what": "/pipeline/: from a voice brief to a release, two case studies traced commit by commit (messaging; the web app); WS-205 to make it live",
+    "by": "conductor@web-summit.dinis",
+    "from": "774d6265d"
+  },
+  {
+    "version": "v0.2.1574",
+    "date": "2026-11-09",
+    "what": "checker@PrompTugal.vicky: report of the 9 November evening run",
+    "by": "checker@PrompTugal.vicky",
+    "from": "d949fe757"
+  },
+  {
     "version": "v0.2.1573",
     "date": "2026-11-09",
     "what": "for conductor@web-summit.dinis: nobody is reviewing or promoting Indi's team's iOS work yet",
