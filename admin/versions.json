@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1607",
+    "date": "2026-11-09",
+    "what": "WS-206: design first; gamma-ray@web-summit.dinis started for Dinis; the PrompTugal build on hold",
+    "by": "conductor@web-summit.dinis",
+    "from": "9e6756aef"
+  },
+  {
     "version": "v0.2.1606",
     "date": "2026-11-09",
     "what": "runner.conductor@PrompTugal.angelo: scheduled run 23:20: nothing urgent",
