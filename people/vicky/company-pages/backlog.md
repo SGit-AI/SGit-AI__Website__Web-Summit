@@ -67,10 +67,10 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 
 | Company | Page | Status |
 |---|---|---|
-| 0xbow | https://promptugal.news/companies/0xbow/ | to do |
-| 1Password (website) | https://promptugal.news/companies/1password/ | to do |
-| Air Apps (website) | https://promptugal.news/companies/air-apps/ | to do |
-| Airia | https://promptugal.news/companies/airia/ | to do |
+| 0xbow | https://promptugal.news/companies/0xbow/ | in review |
+| 1Password (website) | https://promptugal.news/companies/1password/ | in review |
+| Air Apps (website) | https://promptugal.news/companies/air-apps/ | in review |
+| Airia | https://promptugal.news/companies/airia/ | in review |
 | AISLE | https://promptugal.news/companies/aisle/ | to do |
 | Akamai (website) | https://promptugal.news/companies/akamai/ | to do |
 | Arima | https://promptugal.news/companies/arima/ | to do |
