@@ -2,7 +2,8 @@
 // The live command for the stand laptop (dev.abp@PrompTugal.angelo, 9 November 2026; backlog 00d1, Angelo's decision 3 of
 // 8 November, f8000851: "Live, clean environment": his account, a fresh environment with no secrets, the trial agent
 // locked to the practice tool by guard.mjs, not hooks; the recorded loop as the fallback).
-//   node people/angelo/proposals/abp-live/stories/reach/live.mjs [--port 8770] [--model haiku]
+//   node people/angelo/proposals/abp-live/stories/reach/live.mjs --model <the smaller model's alias> [--port 8770]
+// (the alias is a setting given at run time, from the desk; no model name is kept in this repository)
 // Serves the step view on http://127.0.0.1:<port>/ (this machine only) and, when someone presses "Run it live now",
 // starts one real run of the chosen story at the chosen rung (trial.mjs: a separate Claude Code process with one tool,
 // the practice shell). The page polls /live.json and shows each step as the gateway records it. One run at a time.
@@ -19,7 +20,8 @@ import { stepsOf } from './steps.mjs'
 import { SCENARIOS } from './scenarios.mjs'
 const HERE = path.dirname(fileURLToPath(import.meta.url)), ROOT = path.resolve(HERE, '../..')
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d }
-const PORT = +arg('--port', 8770), MODEL = arg('--model', 'haiku')
+const PORT = +arg('--port', 8770), MODEL = arg('--model', process.env.ABP_MODEL)
+if (!MODEL) { console.error('live.mjs: give the smaller model\'s alias with --model <alias> (or ABP_MODEL); the desk has it'); process.exit(2) }
 // only these files are served, from the abp-live folder
 const FILES = { '/': 'steps.htm', '/steps.htm': 'steps.htm', '/reach-runs.js': 'reach-runs.js', '/reach-runs.json': 'reach-runs.json' }
 const TYPES = { '.htm': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.json': 'application/json' }

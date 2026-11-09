@@ -1,5 +1,159 @@
 [
   {
+    "version": "v0.2.1456",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 04:20 run, nothing to route, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "976c932d0"
+  },
+  {
+    "version": "v0.2.1455",
+    "date": "2026-11-09",
+    "what": "runner.writer@PrompTugal.angelo: state after 9 Nov run: WS125 published and closed, contributor ask unanswered",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "6d221784e"
+  },
+  {
+    "version": "v0.2.1454",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report, the last overnight wake (04:00): idle",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "de4ed770e"
+  },
+  {
+    "version": "v0.2.1453",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: snapshots: 56 agents, 173 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 527 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "895a98903"
+  },
+  {
+    "version": "v0.2.1452",
+    "date": "2026-11-09",
+    "what": "WS-160: I log every run (signed); the line for Silvio's other scheduled agents",
+    "by": "dev@web-summit.silvio",
+    "from": "be2f3ff6f"
+  },
+  {
+    "version": "v0.2.1451",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 03:20 run, nothing to route, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "b9295a375"
+  },
+  {
+    "version": "v0.2.1450",
+    "date": "2026-11-09",
+    "what": "WS-200 for the newsroom: a light and dark switch at the top of every PrompTugal.news page and front-page design",
+    "by": "dashboard@web-summit.silvio",
+    "from": "c5229fc4a"
+  },
+  {
+    "version": "v0.2.1449",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: overnight backlog: iTRecruiter and Prisma done after their fixes (v0.1.770); 100 company pages done",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "24eb41cc0"
+  },
+  {
+    "version": "v0.2.1448",
+    "date": "2026-11-09",
+    "what": "journalist-portugal@PrompTugal.vicky: overnight fixes, itrecruiter and prisma in review; report",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "f4c8c5a23"
+  },
+  {
+    "version": "v0.2.1447",
+    "date": "2026-11-09",
+    "what": "journalist-connections@PrompTugal.vicky: report, overnight fix-only round: RWS still blocked",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "13d42c56f"
+  },
+  {
+    "version": "v0.2.1446",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.work's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "d8b278aad"
+  },
+  {
+    "version": "v0.2.1445",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 02:23 run, nothing to route, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "dd7b55510"
+  },
+  {
+    "version": "v0.2.1444",
+    "date": "2026-11-09",
+    "what": "runner.writer@PrompTugal.angelo: state after the 9 November read of the newsroom",
+    "by": "runner.writer@PrompTugal.angelo",
+    "from": "c7a452cd0"
+  },
+  {
+    "version": "v0.2.1443",
+    "date": "2026-11-09",
+    "what": "01:50 orchestration wake: video, outreach, dev and crm moved overnight",
+    "by": "conductor@web-summit.silvio",
+    "from": "79f16bb10"
+  },
+  {
+    "version": "v0.2.1442",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "49ac8f271"
+  },
+  {
+    "version": "v0.2.1441",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: snapshots: 56 agents, 170 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 527 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "4de136610"
+  },
+  {
+    "version": "v0.2.1440",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 01:21 run, nothing to route, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "3dc55235c"
+  },
+  {
+    "version": "v0.2.1439",
+    "date": "2026-11-09",
+    "what": "wave D in the private CRM: 11 actions drafted; nine wait for a PromptUGAL page",
+    "by": "crm@web-summit.silvio",
+    "from": "50f7744f2"
+  },
+  {
+    "version": "v0.2.1438",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "9813be82a"
+  },
+  {
+    "version": "v0.2.1437",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: overnight backlog: C4AIL, Cerebras, Cognizant, Neo, Persona done (v0.1.762)",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "5a3061f33"
+  },
+  {
+    "version": "v0.2.1436",
+    "date": "2026-11-09",
+    "what": "ledger line for the overnight wake of 9 November",
+    "by": "prompter@web-summit.indi",
+    "from": "5adc2d18b"
+  },
+  {
+    "version": "v0.2.1435",
+    "date": "2026-11-09",
+    "what": "infographic agent prompt; questions for Indi",
+    "by": "prompter@web-summit.indi",
+    "from": "cdbedd46e"
+  },
+  {
     "version": "v0.2.1434",
     "date": "2026-11-09",
     "what": "reviewer@PrompTugal.vicky: overnight backlog: 54 done (v0.1.760 and v0.1.761, live-checked), iTRecruiter and Prisma fix",

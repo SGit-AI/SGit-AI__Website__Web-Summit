@@ -83,12 +83,12 @@ Do not say:
 
 **Set up once, before the day (Angelo's, tier 3: his account and his laptop).**
 - [ ] A clean place to run it: a separate user account on the laptop, or at least a new folder and a terminal with no keys in its environment (`env | grep -i -E 'key|token|secret'` shows nothing). No mail, no password manager, no other projects in that account.
-- [ ] Node 22 or later (`node -v`), and Claude Code installed and logged in with Angelo's account (`claude --version`; `claude -p "say ok" --model haiku` answers "ok").
+- [ ] Node 22 or later (`node -v`), and Claude Code installed and logged in with Angelo's account (`claude --version`; `claude -p "say ok" --model <alias>`, with the smaller model's alias, which the desk gives Angelo answers "ok").
 - [ ] This repository's `dev`, once dev@ has reviewed the step view onto it: `git clone --depth 1 -b dev https://github.com/SGit-AI/SGit-AI__Website__Web-Summit`, then `cd` into it. Only `people/angelo/proposals/abp-live/` is used.
 - [ ] Nothing else installed or changed: no hooks, no MCP servers, no connectors. Each trial runs with no settings loaded and one tool, the practice shell, locked by `guard.mjs` (decision 3).
 
 **On the morning.**
-- [ ] Start it: `node people/angelo/proposals/abp-live/stories/reach/live.mjs`. It prints two addresses. Both are on this laptop only (127.0.0.1); nobody on the Wi-Fi can reach it.
+- [ ] Start it: `node people/angelo/proposals/abp-live/stories/reach/live.mjs --model <alias>` (the smaller model's alias, as above). It prints two addresses. Both are on this laptop only (127.0.0.1); nobody on the Wi-Fi can reach it.
 - [ ] Open `http://127.0.0.1:8770/?live=1` on the laptop's screen, full screen. Pick **The follow-up** and **Rung 0**, press **Run it live now**, and watch it finish. Then do rung 3. If both finish, it is ready.
 - [ ] Optional second screen: `http://127.0.0.1:8770/?loop=1` plays the recorded runs forever. The iPads play the recorded player from the site (sections 1 and 2); they cannot reach the laptop's live view.
 
@@ -99,5 +99,5 @@ Do not say:
 
 **If it goes wrong.**
 - **"the live command is not answering":** the terminal was closed. Start it again (above) and reload.
-- **"the run failed":** look at the terminal. Most often Claude Code is logged out or offline: run `claude -p "say ok" --model haiku` there. Meanwhile press **Loop**: the recorded runs are the fallback (decision 3).
+- **"the run failed":** look at the terminal. Most often Claude Code is logged out or offline: run `claude -p "say ok" --model <alias>`, with the smaller model's alias, which the desk gives Angelo there. Meanwhile press **Loop**: the recorded runs are the fallback (decision 3).
 - **Stopping:** Ctrl+C in the terminal. The last run's folder (its fake keys included) is in the system's temporary folder and is deleted when the command stops or the next run starts.

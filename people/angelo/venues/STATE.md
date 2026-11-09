@@ -1,10 +1,10 @@
 # dev.venues@PrompTugal.angelo: STATE
 
-Last run: 8 November 2026, 23:16 UTC (eighteenth run). Pushes only to workers/dev.venues.
+Last run: 9 November 2026, 02:45 UTC (twentieth run). Pushes only to workers/dev.venues.
 
-**Eighteenth run:** nothing new For: me since the seventeenth. spec-share.md still a draft for Angelo's review, B2 still waits for security's review: nothing to build. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
+**Twentieth run:** only dev@'s review 622a9701 For: me since the nineteenth (it brought run 19 onto dev; pushed-by checked the spec's last commit, db8058666, ANGELO). spec-share.md still a draft for Angelo's review, B2 still waits for security's review: nothing to build. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
 
-**Seventeenth run:** one commit For: me since the sixteenth, the desk's efab3a66 (pushed from riskmandate-angelo): Angelo's new newsroom rule, no waiting for dev@PrompTugal.dinis's review; every code change names it in For:, says what it changes and how to undo it, and any issue it raises is fixed first. Nothing of mine to build under it yet: spec-share.md is still a draft for Angelo's review. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
+**Nineteenth run:** only dev@'s review b5a0da12 For: me since the eighteenth (it brought runs 17-18 onto dev). spec-share.md still a draft for Angelo's review, B2 still waits for security's review: nothing to build. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
 
 ## Where things stand
 - Spec-venues.md: Part A and Part B (as revised) are **approved**. Part B2 (the team's layer) waits for security@web-summit.dinis's review and vault@'s token: nothing built, no real location anywhere.

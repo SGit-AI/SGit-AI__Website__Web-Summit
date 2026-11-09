@@ -2,12 +2,12 @@ const { chromium } = require('playwright')
 // backlog 00d1 (f8000851, decision 3): the live command. Starts stories/reach/live.mjs, presses "Run it live now" on the
 // follow-up at the chosen rung, and checks that the step view shows the run's steps as they happen, ends with the
 // verdict, never serves a fake secret's value, and serves nothing outside its own files. Needs the claude command
-// (logged in); one real run of the smaller model, about 20 to 40 seconds.
+// (logged in) and ABP_MODEL set to the smaller model's alias; one real run of the smaller model, about 20 to 40 seconds.
 //   node people/angelo/proposals/abp-live/tests/live.test.js [rung]
 const path = require('path'), { spawn } = require('child_process')
 const RUNG = +(process.argv[2] || 0), PORT = 8771, U = `http://127.0.0.1:${PORT}`
 ;(async () => { let ok = true; const fail = m => { ok = false; console.log('  FAIL', m) }
- const srv = spawn('node', [path.join(__dirname, '../stories/reach/live.mjs'), '--port', String(PORT)], { stdio: ['ignore', 'pipe', 'inherit'] })
+ const srv = spawn('node', [path.join(__dirname, '../stories/reach/live.mjs'), '--port', String(PORT)], { stdio: ['ignore', 'pipe', 'inherit'], env: process.env })   // the model: ABP_MODEL, the smaller model's alias, set by whoever runs the test
  await new Promise(r => srv.stdout.once('data', r))
  const b = await chromium.launch(), p = await b.newPage({ viewport: { width: 1280, height: 800 } }), errs = [], seenN = new Set(), bodies = []
  p.on('pageerror', e => errs.push(e.message))
