@@ -99,6 +99,18 @@
         const out = [...g].map(([k, n]) => { const [person, dest] = k.split('|'); return { person, dest, n } }).sort((a, b) => b.n - a.n || (a.person + a.dest).localeCompare(b.person + b.dest))
         return { routes: out, weights, max: out.reduce((m, r) => Math.max(m, r.n), 0) }
     }
+    // agentRoutes(list, now, person, has): one person's last seven days by maker and destination, for "tap a person to see their
+    // agents' own routes" (the spec, question 2). has(id): whether the graph draws that maker; a maker it does not draw, and the
+    // person's own commits, go from the person. Returns [{ from, person, dest, n }], the busiest first.
+    function agentRoutes(list, now, person, has = () => true) {
+        const g = new Map()
+        for (const d of list) {
+            if (!(d.at > now - WEEK && d.at <= now) || personOf(d.maker) !== person) continue
+            const from = d.maker !== person && has(d.maker) ? d.maker : person, k = from + '|' + d.dest
+            g.set(k, (g.get(k) || 0) + 1)
+        }
+        return [...g].map(([k, n]) => { const i = k.lastIndexOf('|'); return { from: k.slice(0, i), person, dest: k.slice(i + 1), n } }).sort((a, b) => b.n - a.n || (a.from + a.dest).localeCompare(b.from + b.dest))
+    }
     // a route's width in the frame's units: thin for one delivery, at most 18 for the busiest (by the square root, so the busiest
     // does not drown the rest)
     const width = (n, max) => n > 0 && max > 0 ? +(1.5 + 16.5 * Math.sqrt(n / max)).toFixed(2) : 0
@@ -119,5 +131,5 @@
     // net, so a graph point p lands at net + (p - C) * k
     function netMap(L, C = 500, S = 1000) { const k = L.net.r / (S / 2); return { k, tx: L.net.x - C * k, ty: L.net.y - C * k, map: p => ({ x: L.net.x + (p.x - C) * k, y: L.net.y + (p.y - C) * k }) } }
 
-    return { ORIENTS, ORIENT_NAMES, ABBR, WEEK, orient, turn, box, ordered, layout, label, abbrOf, personOf, routes, width, route, at, svgPath, netMap }
+    return { ORIENTS, ORIENT_NAMES, ABBR, WEEK, orient, turn, box, ordered, layout, label, abbrOf, personOf, routes, agentRoutes, width, route, at, svgPath, netMap }
 })

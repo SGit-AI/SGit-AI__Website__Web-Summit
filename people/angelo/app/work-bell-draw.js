@@ -4,7 +4,8 @@
 // the bell at the other end (work-bell.js's places: the busiest in the middle, the quiet ones dimmed at the ends); one route per
 // person and destination, in the person's colour, as wide as the last seven days; each new delivery flying along its route as
 // its typed icon and lighting its destination when it lands. No counts, no list (Angelo, 17:25 and 17:35). The full name is each
-// icon's title. Orientation is a setting (Automatic, top, below, left, right), kept in this browser. Same face as work-draw.js's
+// icon's title. A tap on a person shows their agents' own routes, the others dimmed; a tap on them again, anywhere off a
+// person, or Escape, shows everyone again (the spec, question 2). Orientation is a setting (Automatic, top, below, left, right), kept in this browser. Same face as work-draw.js's
 // attach() (fly, counts, step, destroy, inAir, manual), so work-live.js can use either; plus week(list, now) for the routes.
 // Runs in the browser as window.AngeloWorkBellDraw; needs AngeloWork, AngeloWorkBell and AngeloWorkDraw (for the marks and logos).
 (function (root) {
@@ -16,7 +17,11 @@
 .lv.lv-bellview .lv-fill, .lv.lv-bellview .lv-rim { display: none; }
 .lv.lv-bellview .lv-svg { overflow: visible; }
 .wb-net { fill: var(--rm-surface, #0E2035); fill-opacity: .55; stroke: var(--rm-action, #1A8FB0); stroke-opacity: .7; stroke-width: 3; }
-.wb-route { fill: none; stroke-linecap: round; stroke-opacity: .45; mix-blend-mode: screen; }
+.wb-route { fill: none; stroke-linecap: round; stroke-opacity: .45; mix-blend-mode: screen; transition: stroke-opacity .2s; }
+.wb-route.wb-dim { stroke-opacity: .08; }
+.wb-route.wb-agent { stroke-opacity: .75; stroke-dasharray: none; }
+.lv.lv-bellview .tm-p { cursor: pointer; }
+.lv.lv-bellview[data-focus] .tm-p:not(.wb-on) { opacity: .45; }
 :root[data-theme="light"] .wb-route { mix-blend-mode: multiply; stroke-opacity: .5; }
 .wb-ic rect { fill: var(--rm-surface, #0E2035); stroke: var(--rm-border, #294A64); stroke-width: 2.5; }
 .wb-ic .wv-mark { fill: none; stroke: var(--rm-text, #F7FAFC); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
@@ -53,7 +58,7 @@
         const over = el(doc, 'g', { class: 'wb wb-over' }, svg)
         const netC = el(doc, 'circle', { class: 'wb-net' }, under), routesG = el(doc, 'g', { class: 'wb-routes' }, under)
         const icons = el(doc, 'g', { class: 'wb-icons' }, over), flights = el(doc, 'g', { class: 'wv-flights' }, over)
-        let setting = o.orient || pref(), or = null, L = null, NM = null, weights = {}, R = { routes: [], weights: {}, max: 0 }, lastList = [], lastNow = 0
+        let focus = null, setting = o.orient || pref(), or = null, L = null, NM = null, weights = {}, R = { routes: [], weights: {}, max: 0 }, lastList = [], lastNow = 0
         const IC = new Map()
         // a graph node's place in the frame: live.js's own scale about the centre, then into the network's circle
         const placeOf = id => { const p = G.pos.get(id); if (!p || !NM) return null; return NM.map({ x: G.C + (p.x - G.C) * G.scale, y: G.C + (p.y - G.C) * G.scale }) }
@@ -105,13 +110,40 @@
                 x.ab.setAttribute('x', f1(lb.x)); x.ab.setAttribute('y', f1(lb.y)); x.ab.setAttribute('text-anchor', lb.anchor); x.ab.style.fontSize = f1(font) + 'px'
             }
         }
+        // the routes by person; with a person tapped, that person's by agent (from each agent the graph draws, the rest from the
+        // person) and everyone else's dimmed. Widths on the same scale either way.
         function drawRoutes() {
             while (routesG.firstChild) routesG.firstChild.remove()
+            const path = (a, b, cls, at) => el(doc, 'path', { class: cls, ...at, d: B.svgPath(B.route(or, a, b)) }, routesG)
             for (const rt of R.routes) {
+                if (rt.person === focus) continue
                 const a = placeOf(rt.person), b = L.places.get(rt.dest); if (!a || !b) continue
-                el(doc, 'path', { class: 'wb-route', 'data-person': rt.person, 'data-dest': rt.dest, d: B.svgPath(B.route(or, a, b)), stroke: colourOf(rt.person), 'stroke-width': f1(B.width(rt.n, R.max)) }, routesG)
+                path(a, b, 'wb-route' + (focus ? ' wb-dim' : ''), { 'data-person': rt.person, 'data-dest': rt.dest, stroke: colourOf(rt.person), 'stroke-width': f1(B.width(rt.n, R.max)) })
+            }
+            if (focus) for (const rt of B.agentRoutes(lastList, lastNow, focus, id => G.pos.has(id))) {
+                const a = placeOf(rt.from), b = L.places.get(rt.dest); if (!a || !b) continue
+                path(a, b, 'wb-route wb-agent', { 'data-person': rt.person, 'data-from': rt.from, 'data-dest': rt.dest, stroke: colourOf(rt.person), 'stroke-width': f1(B.width(rt.n, R.max)) })
             }
         }
+        // a tap: the person under it (their node, or near enough to hit on a phone: 22 px), else nobody
+        function personAt(cx, cy) {
+            const m = svg.getScreenCTM(); if (!m || !NM) return null
+            const pt = svg.createSVGPoint(); pt.x = cx; pt.y = cy; const q = pt.matrixTransform(m.inverse()), k = sizeK()
+            const reach = Math.max(26 * G.scale * NM.k * 1.3, k > 0 ? 22 / k : 0)
+            let best = null, bd = Infinity
+            for (const [id, n] of G.pos) { if (n.kind !== 'p') continue; const p = placeOf(id), d = p ? Math.hypot(p.x - q.x, p.y - q.y) : Infinity; if (d < bd) { bd = d; best = id } }
+            return bd <= reach ? best : null
+        }
+        function setFocus(id) {
+            focus = id && G.pos.has(id) && G.pos.get(id).kind === 'p' ? id : null
+            if (focus) wrap.dataset.focus = focus; else delete wrap.dataset.focus
+            for (const n of graph.querySelectorAll('.tm-p')) n.classList.remove('wb-on')
+            if (focus) { const p = G.pos.get(focus); for (const n of graph.querySelectorAll('.tm-p')) { const c = n.querySelector('circle'); if (c && Math.abs(+c.getAttribute('cx') - p.x) < 0.2 && Math.abs(+c.getAttribute('cy') - p.y) < 0.2) n.classList.add('wb-on') } }
+            if (L) drawRoutes()
+        }
+        const onTap = e => { if (e.button) return; const id = personAt(e.clientX, e.clientY); if (id || focus) setFocus(id === focus ? null : id) }
+        const onKey = e => { if (e.key === 'Escape' && focus) setFocus(null) }
+        svg.addEventListener('click', onTap); doc.addEventListener('keydown', onKey)
         // week(list, now): the last seven days' deliveries ({ at, maker, dest }) as routes; the bell re-ordered if the busiest changed
         function week(list, now) {
             lastList = list; lastNow = now
@@ -157,14 +189,14 @@
         const frame = ts => { raf = 0; if (!alive) return; step(ts); if (live.length || [...IC.values()].some(s => s.lit)) raf = win.requestAnimationFrame(frame) }
         const kick = () => { if (!manual && !raf && alive) raf = win.requestAnimationFrame(frame) }
         function destroy() {
-            alive = false; if (RO) RO.disconnect(); if (raf) win.cancelAnimationFrame(raf)
+            alive = false; if (RO) RO.disconnect(); svg.removeEventListener('click', onTap); doc.removeEventListener('keydown', onKey); setFocus(null); if (raf) win.cancelAnimationFrame(raf)
             under.remove(); over.remove(); sel.remove(); live.length = 0
             if (vb0) svg.setAttribute('viewBox', vb0); if (par0) svg.setAttribute('preserveAspectRatio', par0); else svg.removeAttribute('preserveAspectRatio')
             if (tr0) graph.setAttribute('transform', tr0); else graph.removeAttribute('transform')
             wrap.classList.remove('lv-bellview'); delete wrap.dataset.bell
         }
         const setManual = on => { manual = !!on; if (manual && raf) { win.cancelAnimationFrame(raf); raf = 0 } else if (!manual && live.length) kick() }
-        return { fly, counts() { }, step, destroy, week, inAir: () => live.length, light, manual: setManual, orient: () => or, layout: () => L, routes: () => R, bell: true }
+        return { fly, counts() { }, step, destroy, week, inAir: () => live.length, light, manual: setManual, focus: id => { if (id !== undefined) setFocus(id); return focus }, orient: () => or, layout: () => L, routes: () => R, bell: true }
     }
     root.AngeloWorkBellDraw = { attach, OKEY }
 })(typeof self !== 'undefined' ? self : this)

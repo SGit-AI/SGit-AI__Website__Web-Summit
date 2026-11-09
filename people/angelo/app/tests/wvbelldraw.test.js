@@ -5,7 +5,7 @@ const S = process.argv[2] || require('os').tmpdir(), BASE = 'http://127.0.0.1:87
 // on the left on the desktop and on top on the phone; ten icons, each with its abbreviation (3 to 4 letters, at least 12 px on
 // screen) and its full name as its title, inside the view, none overlapping another; the network inside its circle (every
 // person's node inside it); routes from people to destinations, none to an unknown one, widths from the last seven days; no
-// count anywhere. The setting (lower left) moves the team below, to the right, and back to Automatic, and is remembered. Then,
+// count anywhere. A tap on a person shows their agents' own routes and dims the rest; a second tap, or Escape, undoes it. The setting (lower left) moves the team below, to the right, and back to Automatic, and is remembered. Then,
 // on the graph directly (clock stepped by hand): deliveries from deliveries.json fly along their routes as typed icons in their
 // makers' colours, land on their icons and light them; destroy() gives live.js its graph back as it was. No page error.
 const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
@@ -49,6 +49,20 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
       if (!r.sel) fail(`${tag} ${lvl}: no setting`)
       if (lvl === 'work' && theme === 'dark') await p.screenshot({ path: path.join(S, `wvbell-${n}-${lvl}.png`) })
       if (lvl === 'work') {
+        // tap a person (the spec, question 2): their agents' own routes, everyone else's dimmed; tap again, or Escape, for everyone
+        const who = await p.evaluate(() => { const c = {}; for (const e of document.querySelectorAll('.wb-route')) c[e.dataset.person] = (c[e.dataset.person] || 0) + 1; return Object.entries(c).sort((a, b) => b[1] - a[1])[0] })
+        const at = who && await p.evaluate(id => { const G = document.querySelector('.lv').parentNode.lvGraph, n = G.pos.get(id), c = [...document.querySelectorAll('.tm-p circle')].find(c => Math.abs(+c.getAttribute('cx') - n.x) < 0.2 && Math.abs(+c.getAttribute('cy') - n.y) < 0.2); if (!c) return null; const b = c.getBoundingClientRect(); return { x: (b.left + b.right) / 2, y: (b.top + b.bottom) / 2 } }, who[0])
+        if (!at) fail(`${tag}: no person to tap`)
+        else {
+          const seen = () => p.evaluate(id => { const q = s => [...document.querySelectorAll(s)]; return { focus: document.querySelector('.lv.lv-bellview').dataset.focus || null, agent: q('.wb-route.wb-agent').filter(e => e.dataset.person === id).length, agentOther: q('.wb-route.wb-agent').filter(e => e.dataset.person !== id).length, fromOk: q('.wb-route.wb-agent').every(e => e.dataset.from), mineByPerson: q('.wb-route:not(.wb-agent)').filter(e => e.dataset.person === id).length, others: q('.wb-route:not(.wb-agent)').length, dim: q('.wb-route.wb-dim').length, on: q('.tm-p.wb-on').length } }, who[0])
+          await p.mouse.click(at.x, at.y); await p.waitForTimeout(150); const s1 = await seen()
+          if (s1.focus !== who[0] || !s1.agent || s1.agentOther || !s1.fromOk || s1.mineByPerson || s1.dim !== s1.others || s1.on !== 1) fail(`${tag}: tapping ${who[0]} gave ${JSON.stringify(s1)}`)
+          if (theme === 'dark') await p.screenshot({ path: path.join(S, `wvbell-${n}-focus.png`) })
+          await p.mouse.click(at.x, at.y); await p.waitForTimeout(150); const s2 = await seen()
+          if (s2.focus || s2.agent || s2.dim || s2.on || s2.mineByPerson !== who[1]) fail(`${tag}: tapping ${who[0]} again gave ${JSON.stringify(s2)}`)
+          await p.mouse.click(at.x, at.y); await p.keyboard.press('Escape'); await p.waitForTimeout(100); const s3 = await seen()
+          if (s3.focus || s3.dim) fail(`${tag}: Escape gave ${JSON.stringify(s3)}`)
+        }
         for (const [o, side] of [['below', 'b'], ['right', 'r'], ['top', 't'], ['left', 'l']]) {
           await p.selectOption('.wb-or', o); await p.waitForTimeout(150)
           const s = await p.evaluate(() => { const w = document.querySelector('.lv.lv-bellview'), f = w.getBoundingClientRect(), c = document.querySelector('.wb-net').getBoundingClientRect(), ic = [...document.querySelectorAll('.wb-ic rect')].map(e => e.getBoundingClientRect()); return { bell: w.dataset.bell, cx: (c.left + c.right) / 2 - (f.left + f.right) / 2, cy: (c.top + c.bottom) / 2 - (f.top + f.bottom) / 2, ix: ic.reduce((s, b) => s + (b.left + b.right) / 2, 0) / ic.length - (f.left + f.right) / 2, iy: ic.reduce((s, b) => s + (b.top + b.bottom) / 2, 0) / ic.length - (f.top + f.bottom) / 2 } })

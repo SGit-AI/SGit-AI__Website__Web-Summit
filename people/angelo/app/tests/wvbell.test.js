@@ -2,7 +2,7 @@
 // ends (top, below, left, right): the ten destinations inside the frame with room for the icon and its abbreviation (on its outer side, away from the team), no two
 // closer than an icon and its gap, all well away from the network's circle, the middle of the bell nearest the team; the busiest
 // in the middle and the quiet ones at the ends; Automatic picks top on a portrait screen and left on a landscape one; routes by
-// person over the last seven days only (older, future and unknown makers dropped), widths growing with the count and capped;
+// person over the last seven days only, and a tapped person's by agent, (older, future and unknown makers dropped), widths growing with the count and capped;
 // each route leaving along the dumbbell's axis and arriving square on at its icon; the abbreviations 3 to 4 letters, one per
 // destination, none alike; a workstream's from its first word; and the built deliveries.json turned into routes with nothing invented.
 const path = require('path'), fs = require('fs')
@@ -66,6 +66,11 @@ const list = [
 const R = B.routes(list, now, ['angelo', 'dinis', 'indi'])
 const key = R.routes.map(r => `${r.person}>${r.dest}:${r.n}`).join(' ')
 if (key !== 'angelo>site:3 dinis>infra:1' || R.max !== 3 || R.weights.site !== 3 || R.weights.news || R.weights.keys || R.weights.crm) fail('routes: ' + key + ' ' + JSON.stringify(R.weights))
+// tap a person: their agents' own routes (the spec, question 2); a maker the graph does not draw, and their own commits, from the person
+const AR = B.agentRoutes(list, now, 'angelo', id => id === 'pt:angelo:dev').map(r => `${r.from}>${r.dest}:${r.n}`).join(' ')
+if (AR !== 'angelo>site:2 pt:angelo:dev>site:1') fail('agentRoutes: ' + AR)
+if (B.agentRoutes(list, now, 'dinis').map(r => `${r.from}>${r.dest}:${r.n}`).join(' ') !== 'conductor@' + 'web-summit.dinis>infra:1') fail('agentRoutes, dinis')
+if (B.agentRoutes(list, now, 'nobody-here').length) fail('agentRoutes, someone with nothing')
 if (!(B.width(1, 3) < B.width(2, 3) && B.width(2, 3) < B.width(3, 3)) || B.width(3, 3) > 18 || B.width(0, 3) !== 0 || B.width(1, 0) !== 0) fail('width')
 if (B.personOf('pt:angelo:dev.work') !== 'angelo' || B.personOf('dev@' + 'web-summit.dinis') !== 'dinis' || B.personOf('Claude') !== null) fail('personOf')
 // the abbreviations: one per destination, 3 to 4 capitals, none alike, as the spec lists them
