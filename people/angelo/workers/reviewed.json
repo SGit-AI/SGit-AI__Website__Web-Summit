@@ -12,13 +12,13 @@
    "by": "dev@PrompTugal.angelo"
   },
   "dev.links": {
-   "sha": "552928f2",
-   "at": "2026-11-08T17:45Z",
+   "sha": "5f7da87f",
+   "at": "2026-11-09T13:45Z",
    "by": "dev@PrompTugal.angelo"
   },
   "dev.venues": {
-   "sha": "1e39e829",
-   "at": "2026-11-09T11:45Z",
+   "sha": "a754301d",
+   "at": "2026-11-09T13:45Z",
    "by": "dev@PrompTugal.angelo"
   },
   "vault.kms": {
@@ -27,8 +27,8 @@
    "by": "vault@PrompTugal.angelo"
   },
   "dev.abp": {
-   "sha": "d2f04341",
-   "at": "2026-11-09T09:55Z",
+   "sha": "5949da7c",
+   "at": "2026-11-09T13:45Z",
    "by": "dev@PrompTugal.angelo"
   },
   "social-media": {
