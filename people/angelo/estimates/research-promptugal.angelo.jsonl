@@ -20,3 +20,5 @@
 {"event":"done","at":"2026-11-09T12:36:00Z","agent":"research@PrompTugal.angelo","item":"registration refresh","what":"9 Nov search for reported waits","effort_min":5,"elapsed_min":9,"runs":1,"note":"nothing new found"}
 {"event":"start","at":"2026-11-09T13:55:00Z","agent":"research@PrompTugal.angelo","item":"0-URGENT-4","what":"wristband and name-card colours: wristband-colours-2026.md","est_effort_min":25,"est_elapsed_min":35,"confidence":"medium"}
 {"event":"done","at":"2026-11-09T14:20:00Z","agent":"research@PrompTugal.angelo","item":"0-URGENT-4","effort_min":20,"elapsed_min":25,"runs":1,"note":"no 2026 legend public; 2014 mapping only"}
+{"event":"start","at":"2026-11-09T15:26:52Z","agent":"research@PrompTugal.angelo","item":"0r","what":"public sources on multi-agent risk and the conscience question: many-agents-sources.md","est_effort_min":30,"est_elapsed_min":40,"confidence":"medium"}
+{"event":"done","at":"2026-11-09T15:27:33Z","agent":"research@PrompTugal.angelo","item":"0r","effort_min":15,"elapsed_min":20,"runs":1,"note":"three sources from abstract pages; faster than estimated"}

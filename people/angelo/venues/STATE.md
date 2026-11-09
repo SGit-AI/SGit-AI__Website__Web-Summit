@@ -1,6 +1,8 @@
 # dev.venues@PrompTugal.angelo: STATE
 
-Last run: 9 November 2026, 12:46 UTC (twenty-fourth run). Pushes only to workers/dev.venues.
+Last run: 9 November 2026, 14:46 UTC (twenty-fifth run). Pushes only to workers/dev.venues.
+
+**Twenty-fifth run:** only dev@'s review d4ac600 For: me (pushed-by: ANGELO; it brought run 24 onto dev; the share patch waits on Angelo's word on who applies it). The spec's last commit e588f4b5a: ANGELO. No answer yet from the desk on question 5, so no retry of the share patch (as STATE said). B1 healthy: the three addresses answer 200, live venue-map.json matches the team's venue-map.js exactly. Nothing else to build: B2 still waits for security's review.
 
 **Twenty-fourth run:** only dev@'s review 6a8cc07 For: me (pushed-by: ANGELO; it brought run 23 onto dev, checked the patch applies to the newsroom's dev, and recommends handing it to dev@PrompTugal.dinis as a draft, tier 3, for the desk). The spec's last commit e588f4b5a: ANGELO. Retried the share patch once: it still applies cleanly to the newsroom's dev 387a922 (v0.1.841; nobody touched its files in the last two hours), but running the newsroom's build and gate was refused again by the session's permission check ("Code from External"). Nothing pushed to the newsroom. B1 healthy: the three addresses answer 200, live venue-map.json matches the team's copy exactly.
 

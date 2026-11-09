@@ -1,5 +1,75 @@
 [
   {
+    "version": "v0.2.1555",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: yes to Indi's three questions: dev.abp@ builds the side-by-side ABP demo by Tuesday",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "b0628dffe"
+  },
+  {
+    "version": "v0.2.1554",
+    "date": "2026-11-09",
+    "what": "token ledger line (15:37 wake, waiting on Angelo)",
+    "by": "dev@web-summit.indi",
+    "from": "1ad6b3f34"
+  },
+  {
+    "version": "v0.2.1553",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: the authority-checks draft: a confident tone, the set-up as the right fit, not a shortcoming",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "e9bb08dd9"
+  },
+  {
+    "version": "v0.2.1552",
+    "date": "2026-11-09",
+    "what": "wayfinding, from where I am to my registration point: the problem, six options, the platforms, the MVP",
+    "by": "conductor@web-summit.indi",
+    "from": "0c1149f9c"
+  },
+  {
+    "version": "v0.2.1551",
+    "date": "2026-11-09",
+    "what": "15:12 wake: brief 37 (Indi's iOS work cleared; the iOS conductor needs Dinis's word; the web app and /contribute/ wait for his yes)",
+    "by": "conductor@web-summit.dinis",
+    "from": "e4228f391"
+  },
+  {
+    "version": "v0.2.1550",
+    "date": "2026-11-09",
+    "what": "journalist-ai@PrompTugal.vicky: scheduled run, 15:15 UTC: idle",
+    "by": "journalist-ai@PrompTugal.vicky",
+    "from": "f8e31396d"
+  },
+  {
+    "version": "v0.2.1549",
+    "date": "2026-11-09",
+    "what": "escalation to Dinis's conductor: the outreach waits on PromptUGAL pages and Dinis's yes (WS-177)",
+    "by": "outreach@web-summit.silvio",
+    "from": "b26dd86c0"
+  },
+  {
+    "version": "v0.2.1548",
+    "date": "2026-11-09",
+    "what": "journalist-europe@PrompTugal.vicky: scheduled run 15:03, idle",
+    "by": "journalist-europe@PrompTugal.vicky",
+    "from": "f15ce5176"
+  },
+  {
+    "version": "v0.2.1547",
+    "date": "2026-11-09",
+    "what": "journalist-portugal@PrompTugal.vicky: report, S34 drafted",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "fbe0cb00e"
+  },
+  {
+    "version": "v0.2.1546",
+    "date": "2026-11-09",
+    "what": "journalist@PrompTugal.vicky: report, 14:51 UTC run idle",
+    "by": "journalist@PrompTugal.vicky",
+    "from": "b61e9a2a6"
+  },
+  {
     "version": "v0.2.1545",
     "date": "2026-11-09",
     "what": "dashboard@PrompTugal.angelo: the wallpaper's Choose the view: each choice its own id, so a rotation cannot swap the groups (0.2.1)",
