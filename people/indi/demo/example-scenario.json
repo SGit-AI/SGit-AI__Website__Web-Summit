@@ -1,7 +1,7 @@
 {
   "v": 1,
   "note": "A fictional example for rehearsal. Lumen Phones, its people, partners and data are made up. A visitor's real scenario is made at run time and never committed.",
-  "company": {"name": "Lumen Phones (fictional)", "public_facts": [], "sources": []},
+  "company": {"name": "Lumen Phones (simulation)", "public_facts": [], "sources": []},
   "answers": {
     "agents_for": "after-sales support and reports for retail partners",
     "risk_today": "customer personal data spread across many tools and folders",

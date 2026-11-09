@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Team and the machine</string>
-    <string name="description">The live 3D map of the team and its agents, from web-summit.sgit.ai</string>
+    <string name="description">The live map of the team and its agents, from web-summit.sgit.ai: 3D, People ring or Agents ring, dark or light</string>
+    <string name="settings">Choose the view</string>
 </resources>

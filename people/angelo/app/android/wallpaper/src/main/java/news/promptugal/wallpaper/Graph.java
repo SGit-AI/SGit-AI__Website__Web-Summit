@@ -40,6 +40,24 @@ public final class Graph {
     // the wallpaper's own, calmer than the page (spec: "a calm frame rate, slow spin"): one turn in 80 s, not 50
     public static final double TURN_S = 80;
 
+    // ---------------------------------------------------------------- the views (Angelo, 9 November: "choosing the view as in the website")
+    /** The site's two themes (assets/cc/app.css): the page's background, surface, text, muted, action, LIVE's red and the people's colours. */
+    public static final class Theme {
+        public final boolean light; public final int bg, surface, text, muted, action, live; public final int[] col;
+        Theme(boolean light, int bg, int surface, int text, int muted, int action, int gold) {
+            this.light = light; this.bg = bg; this.surface = surface; this.text = text; this.muted = muted; this.action = action; this.live = LIVE_RED;
+            col = COL.clone(); col[2] = gold;   // only the gold differs between the themes (#F5B942 dark, #976000 light)
+        }
+        /** live3d.js's rgb(): in the dark each colour is lifted towards white; on a light page the colours are as they are. */
+        public float[] rgb(int c) { return light ? new float[] { ((c >> 16) & 255) / 255f, ((c >> 8) & 255) / 255f, (c & 255) / 255f } : lift(c); }
+    }
+    public static final Theme DARK = new Theme(false, 0x07111F, 0x0E2035, 0xF7FAFC, 0x9EB2C7, 0x05BFE9, 0xF5B942);
+    public static final Theme LIGHT = new Theme(true, 0xF7F8F8, 0xFFFFFF, 0x17243A, 0x56697F, 0x08769A, 0x976000);
+    /** The layouts the wallpaper offers: the page's 3D ball (live3d.js, from the people ring), and two of live.js's flat layouts. */
+    public static final String[] LAYOUTS = { "3d", "ring", "agents" };
+    // live.js's GEO: where the people sit, how far lines bend inward, how large the graph is inside the hexagon
+    static double[] geo(String L) { return "agents".equals(L) ? new double[] { 445, 0.25, 0.74 } : new double[] { RP, PULL, 0.84 }; }
+
     public static final class Node {
         public String id, kind, person, label, family; public double commits;
         public double x, y, z, size; public float r, g, b; public boolean ring; public int index;
@@ -50,20 +68,29 @@ public final class Graph {
     public final List<Node> nodes = new ArrayList<>();
     public final Map<String, Node> byId = new LinkedHashMap<>();
     public final List<Link> links = new ArrayList<>();
+    /** The agents ring's thin spokes, each agent to its person (live.js's lv-spokes); empty in the other layouts. */
+    public final List<Link> spokes = new ArrayList<>();
     public double maxN = 1;
+    /** Which view this graph was built for: "3d" (the ball, turning), "ring" or "agents" (flat, as the page's 2D map). */
+    public final String layout; public final boolean flat; public final Theme theme; public final double pull;
 
     // ---------------------------------------------------------------- the model: data.json's collab.map
 
-    /** Builds the graph from data.json (or its collab.map alone). Throws if the map is missing. */
-    public static Graph fromData(Object dataJson) {
+    /** Builds the graph from data.json (or its collab.map alone): the 3D ball in the dark, as the wallpaper first was. */
+    public static Graph fromData(Object dataJson) { return fromData(dataJson, "3d", DARK); }
+    /** The same, for a chosen layout ("3d", "ring" or "agents") and theme. Throws if the map is missing. */
+    public static Graph fromData(Object dataJson, String layout, Theme theme) {
         Map<String, Object> d = Json.obj(dataJson);
         Map<String, Object> m = d.containsKey("collab") ? Json.obj(Json.obj(d.get("collab")).get("map")) : d;
         if (!m.containsKey("people")) throw new IllegalArgumentException("no collab.map.people in the data");
-        return new Graph(m);
+        return new Graph(m, layout, theme == null ? DARK : theme);
     }
 
-    private Graph(Map<String, Object> M) {
-        // live.js layout(M, 'ring'): people on a circle, each person's agents in two or three arcs beside them
+    private Graph(Map<String, Object> M, String layout, Theme theme) {
+        this.layout = "ring".equals(layout) || "agents".equals(layout) ? layout : "3d"; this.flat = !"3d".equals(this.layout); this.theme = theme;
+        // live.js layout(M, L): the 3D ball starts from the people ring; "agents" puts the people outside and each person's
+        // agents in their own sector of one ring inside them
+        String L = flat ? this.layout : "ring"; double[] G = geo(L); double rp = G[0]; this.pull = G[1];
         List<Object> people = Json.arr(M.get("people"));
         int NP = people.size();
         Map<String, Integer> colIdx = new HashMap<>();
@@ -71,7 +98,7 @@ public final class Graph {
         for (int i = 0; i < NP; i++) {
             Map<String, Object> p = Json.obj(people.get(i));
             Node n = new Node(); n.id = Json.str(p.get("id")); n.kind = "p"; n.person = n.id;
-            n.a = -Math.PI / 2 + i * 2 * Math.PI / NP; n.x = C + RP * Math.cos(n.a); n.y = C + RP * Math.sin(n.a);
+            n.a = -Math.PI / 2 + i * 2 * Math.PI / NP; n.x = C + rp * Math.cos(n.a); n.y = C + rp * Math.sin(n.a);
             String name = Json.str(p.get("name")); n.label = name == null ? n.id : name.split(" ")[0];
             colIdx.put(n.id, i % COL.length); pos.put(n.id, n);
         }
@@ -83,26 +110,40 @@ public final class Graph {
             Collections.sort(mine, (x, y) -> Double.compare(Json.num(y.get("commits"), 0), Json.num(x.get("commits"), 0)));   // stable, as JS's sort
             int N = mine.size(), rows = N > 16 ? 3 : 2;
             double spread = Math.min(Math.PI * (rows == 3 ? 1.3 : 0.95), (0.16 * N + 0.3) / (rows - 1));
+            // the agents ring (live.js): r0 290 to r1 370, a sector 86% of the person's share, rows of at most twelve
+            double width = 2 * Math.PI / NP * 0.86; int arows = Math.max(1, (int) Math.ceil(N / 12.0)), perRow = (int) Math.ceil(N / (double) arows);
             for (int k = 0; k < N; k++) {
                 Map<String, Object> a = mine.get(k);
-                double t = P.a + (N > 1 ? -spread / 2 + k * spread / (N - 1) : 0), rr = 100 + (k % rows) * 32;
+                double ax, ay;
+                if ("agents".equals(L)) {
+                    int row = k / perRow, c2 = k % perRow, n2 = Math.min(perRow, N - row * perRow);
+                    double t = P.a + (n2 > 1 ? -width / 2 + c2 * width / (n2 - 1) : 0), rr = arows > 1 ? 290 + 80.0 * row / (arows - 1) : 330;
+                    ax = C + rr * Math.cos(t); ay = C + rr * Math.sin(t);
+                } else {
+                    double t = P.a + (N > 1 ? -spread / 2 + k * spread / (N - 1) : 0), rr = 100 + (k % rows) * 32;
+                    ax = P.x + rr * Math.cos(t); ay = P.y + rr * Math.sin(t);
+                }
                 String id = Json.str(a.get("id"));
                 Node n = pos.containsKey(id) ? pos.get(id) : new Node();   // a repeated id keeps its first place in the order, as a JS Map
-                n.id = id; n.kind = "a"; n.person = pid; n.x = P.x + rr * Math.cos(t); n.y = P.y + rr * Math.sin(t);
+                n.id = id; n.kind = "a"; n.person = pid; n.x = ax; n.y = ay;
                 n.family = Json.str(a.get("family")); n.commits = Json.num(a.get("commits"), 0); n.ring = "fresh".equals(Json.str(a.get("kind"))); n.label = "";
                 pos.put(id, n);
             }
         }
-        // live.js's nodes3: centred, y up, flat; colour by person; sizes as the 3D view gives them
+        // live.js's nodes3: centred, y up, flat; colour by person; sizes as the 3D view gives them. Flat, as the page's 2D map:
+        // the graph scaled into the hexagon (GEO's scale), a person 26 across in radius, an agent 4 + sqrt(commits) up to 12
+        double k = flat ? G[2] : 1;
         for (Node n : pos.values()) {
-            n.x = n.x - C; n.y = C - n.y; n.z = 0;
-            int c = colIdx.containsKey(n.person) ? COL[colIdx.get(n.person)] : MUTED;
-            float[] l = lift(c); n.r = l[0]; n.g = l[1]; n.b = l[2];
-            n.size = "p".equals(n.kind) ? 56 : !"web-summit".equals(n.family) ? 17 : 2 * (4 + Math.min(8, Math.sqrt(n.commits))) + 2;
+            n.x = (n.x - C) * k; n.y = (C - n.y) * k; n.z = 0;
+            int c = colIdx.containsKey(n.person) ? theme.col[colIdx.get(n.person)] : theme.muted;
+            float[] l = theme.rgb(c); n.r = l[0]; n.g = l[1]; n.b = l[2];
+            n.size = flat ? k * ("p".equals(n.kind) ? 52 : !"web-summit".equals(n.family) ? 18 : 2 * (4 + Math.min(8, Math.sqrt(n.commits))))
+                    : "p".equals(n.kind) ? 56 : !"web-summit".equals(n.family) ? 17 : 2 * (4 + Math.min(8, Math.sqrt(n.commits))) + 2;
             if (!"p".equals(n.kind)) n.label = "";
             n.index = nodes.size(); nodes.add(n); byId.put(n.id, n);
         }
-        ball(nodes);
+        if (!flat) ball(nodes);
+        if ("agents".equals(this.layout)) for (Node n : nodes) { Node P = byId.get(n.person); if ("a".equals(n.kind) && P != null && "p".equals(P.kind)) spokes.add(new Link(n, P, 1)); }
         for (Object o : Json.arr(M.get("links"))) {
             Map<String, Object> l = Json.obj(o); Node f = byId.get(Json.str(l.get("from"))), t = byId.get(Json.str(l.get("to")));
             double n = Json.num(l.get("n"), 1); maxN = Math.max(maxN, n == 0 ? 1 : n);
@@ -138,8 +179,11 @@ public final class Graph {
     }
 
     /** The control point of the curve between two nodes: the midpoint pulled towards the centre (live.js's ctrl). */
-    public static void curveAt(Node a, Node b, double u, double[] out) {
-        double qx = (a.x + b.x) / 2 * (1 - PULL), qy = (a.y + b.y) / 2 * (1 - PULL), qz = (a.z + b.z) / 2 * (1 - PULL), v = 1 - u;
+    public static void curveAt(Node a, Node b, double u, double[] out) { curveAt(a, b, u, out, PULL); }
+    /** The same, with this graph's own pull (the agents ring bends its lines less: GEO.agents.pull). */
+    public void curve(Node a, Node b, double u, double[] out) { curveAt(a, b, u, out, pull); }
+    static void curveAt(Node a, Node b, double u, double[] out, double pull) {
+        double qx = (a.x + b.x) / 2 * (1 - pull), qy = (a.y + b.y) / 2 * (1 - pull), qz = (a.z + b.z) / 2 * (1 - pull), v = 1 - u;
         out[0] = v * v * a.x + 2 * v * u * qx + u * u * b.x; out[1] = v * v * a.y + 2 * v * u * qy + u * u * b.y; out[2] = v * v * a.z + 2 * v * u * qz + u * u * b.z;
     }
 
@@ -199,6 +243,8 @@ public final class Graph {
 
     /** Carries the engine's state over to a newer map (the people and agents change rarely; the moving dots are let finish). */
     public void takeOver(Graph old) { if (old == null) return; seen.addAll(old.seen); act = old.act; }
+    /** Whether this graph was built for that view (a change of view rebuilds the graph from the same data). */
+    public boolean isFor(String layout, Theme theme) { return this.layout.equals("ring".equals(layout) || "agents".equals(layout) ? layout : "3d") && this.theme == theme; }
 
     /**
      * A new copy of live.json (about once a minute). wallMs: the wall clock now; now: the engine's own clock (monotonic ms).

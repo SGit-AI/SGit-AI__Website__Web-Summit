@@ -1,12 +1,12 @@
 # dev.venues@PrompTugal.angelo: STATE
 
-Last run: 9 November 2026, 10:46 UTC (twenty-third run). Pushes only to workers/dev.venues.
+Last run: 9 November 2026, 12:46 UTC (twenty-fourth run). Pushes only to workers/dev.venues.
+
+**Twenty-fourth run:** only dev@'s review 6a8cc07 For: me (pushed-by: ANGELO; it brought run 23 onto dev, checked the patch applies to the newsroom's dev, and recommends handing it to dev@PrompTugal.dinis as a draft, tier 3, for the desk). The spec's last commit e588f4b5a: ANGELO. Retried the share patch once: it still applies cleanly to the newsroom's dev 387a922 (v0.1.841; nobody touched its files in the last two hours), but running the newsroom's build and gate was refused again by the session's permission check ("Code from External"). Nothing pushed to the newsroom. B1 healthy: the three addresses answer 200, live venue-map.json matches the team's copy exactly.
 
 **Twenty-third run:** the desk's 20e9501 (pushed-by: ANGELO): spec-share.md **approved** by Angelo (09:05, "All as recommended"), build 0o today. Wrote the build as a patch, people/angelo/proposals/share/build/0001-share-row.patch (share.mjs, assets/share/, site.json words, one shell line), against the newsroom's dev 1d340a3c. **Not run, not pushed:** this session's permission check refused to run the newsroom's build and gate ("code from an external repository"), and the gate must pass first. Also dev@'s 441e50a (review of run 22) and 4aa219a (pushed-by --last-touch, used: 76bc54fa8, ANGELO).
 
 **Twenty-second run:** only dev@'s review 4eee9a12 For: me since the twenty-first (it brought run 21 onto dev; pushed-by checked the spec's last commit, db8058666, ANGELO). spec-share.md still a draft for Angelo's review, B2 still waits for security's review: nothing to build. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
-
-**Twenty-first run:** only dev@'s review 7a55d2b4 For: me since the twentieth (it brought run 20 onto dev; pushed-by checked the spec's last commit, 863e35df8, ANGELO). spec-share.md still a draft for Angelo's review, B2 still waits for security's review: nothing to build. B1 healthy: /summit/venue/, venue.js and venue-map.json answer 200, and the live venue-map.json matches the team's venue-map.js exactly.
 
 ## Where things stand
 - Spec-venues.md: Part A and Part B (as revised) are **approved**. Part B2 (the team's layer) waits for security@web-summit.dinis's review and vault@'s token: nothing built, no real location anywhere.
@@ -20,7 +20,7 @@ Last run: 9 November 2026, 10:46 UTC (twenty-third run). Pushes only to workers/
 - The venue page now runs one small script; `content/summit/venue.md` says so. journalist@'s article claim "the map has no script of its own" (026e945) is still true of the drawing, but the page itself now has venue.js: dev@PrompTugal.dinis / journalist@ may want to look.
 
 ## Next
-- Share button (0o): APPROVED. The patch is written (people/angelo/proposals/share/build/); next run, if the session may run the newsroom's gate: git am it on a fresh dev, gate OK, browser tests at 1280/390 light/dark, push For: dev@PrompTugal.dinis. If the gate is refused again, the desk must decide (question 5). Originally: build it on the newsroom's dev (feature share.mjs, assets/share/, gate check, browser tests), For: dev@PrompTugal.dinis; under the desk's rule of 8 November (efab3a66) without waiting for its review, each commit saying what it changes and how to undo it. The four newspapers not read stay blank (bot check or 403 on two runs); no more retries unless Angelo asks.
+- Share button (0o): APPROVED. The patch is written (people/angelo/proposals/share/build/); next run, if the session may run the newsroom's gate: git am it on a fresh dev, gate OK, browser tests at 1280/390 light/dark, push For: dev@PrompTugal.dinis. Refused again on run 24: the desk must decide (question 5); no more retries until it does. Originally: build it on the newsroom's dev (feature share.mjs, assets/share/, gate check, browser tests), For: dev@PrompTugal.dinis; under the desk's rule of 8 November (efab3a66) without waiting for its review, each commit saying what it changes and how to undo it. The four newspapers not read stay blank (bot check or 403 on two runs); no more retries unless Angelo asks.
 - Part B2 (the team's layer) waits for security@web-summit.dinis's review and vault@'s token: nothing to build. Until then: keep the two copies of the map data matching, and check the newsroom's last two hours before any change.
 - `PLACES` rename (Hall to Pavilion) with dashboard@, after a day of use.
 

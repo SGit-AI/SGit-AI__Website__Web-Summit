@@ -28,7 +28,7 @@ import javax.microedition.khronos.opengles.GL10;
  * names. It only draws: the engine is Graph.step(). By dev.app@PrompTugal.angelo, 8 November 2026 (backlog 00a2).
  */
 final class MapRenderer implements GLSurfaceView.Renderer {
-    interface Source { Graph graph(); List<Graph.Event> takeEvents(); Bitmap[] logos(); }
+    interface Source { Graph graph(); List<Graph.Event> takeEvents(); Bitmap[] logos(boolean light); }
 
     private final Source src; private final float density;
     volatile boolean still;            // the chooser's preview: no turning
@@ -38,7 +38,9 @@ final class MapRenderer implements GLSurfaceView.Renderer {
     private final float[] P = new float[16], V = new float[16], Mx = new float[16], My = new float[16], Mm = new float[16], MV = new float[16];
     private double ry = 0, lastT = 0;
     private Graph built, cur; private List<Graph.Event> lastEvs;
-    private FloatBuffer bPos, bCol, bAl, lPos, lCol, lAl, gPos, gCol, gSz, gAl, nPos, nCol, nSz, nAl, rPos, rCol, rSz, rAl, dPos, dCol, dSz, dAl, quad;
+    private Graph.Theme overlayTheme; private int nSpokes = 0;
+    private FloatBuffer sPos, sCol, sAl,
+                        bPos, bCol, bAl, lPos, lCol, lAl, gPos, gCol, gSz, gAl, nPos, nCol, nSz, nAl, rPos, rCol, rSz, rAl, dPos, dCol, dSz, dAl, quad;
     private int slotsWritten = 0, nRings = 0; private final List<Graph.Node> rings = new ArrayList<>();
     private int overlayTex = 0; private final List<int[]> labelTex = new ArrayList<>(); private final List<Graph.Node> labelNodes = new ArrayList<>();
     private final double[] tmp = new double[3];
@@ -57,42 +59,52 @@ final class MapRenderer implements GLSurfaceView.Renderer {
 
     @Override public void onSurfaceChanged(GL10 unused, int w, int h) {
         W = Math.max(1, w); H = Math.max(1, h); GLES20.glViewport(0, 0, W, H);
-        float aspect = (float) W / H;
-        // a phone stands upright: back the camera off until the ball fits the width (the page's view is about square)
-        double dist = Graph.DIST * Math.max(1, 0.7 / aspect);
-        Matrix.perspectiveM(P, 0, (float) Graph.FOV, aspect, 10, 8000);
-        Matrix.setLookAtM(V, 0, 0, 0, (float) dist, 0, 0, 0, 0, 1, 0);
+        Matrix.perspectiveM(P, 0, (float) Graph.FOV, (float) W / H, 10, 8000);
         scale = (float) (H / (2 * Math.tan(Math.toRadians(Graph.FOV / 2))));
+        camera(cur != null && cur.flat);
         if (overlayTex != 0) { GLES20.glDeleteTextures(1, new int[] { overlayTex }, 0); overlayTex = 0; }
+    }
+    // the 3D ball: a phone stands upright, so the camera backs off until the ball fits the width (the page's view is about
+    // square). Flat: face on, the page's 1000-unit square exactly on the hexagon drawn by overlay() (side = 98% of the width)
+    private void camera(boolean flat) {
+        double dist = flat ? scale * 1000 / (Math.min(W, H) * 0.98) : Graph.DIST * Math.max(1, 0.7 / ((double) W / H));
+        Matrix.setLookAtM(V, 0, 0, 0, (float) dist, 0, 0, 0, 0, 1, 0);
     }
 
     @Override public void onDrawFrame(GL10 unused) {
-        int c = Graph.BG;
-        GLES20.glClearColor(((c >> 16) & 255) / 255f, ((c >> 8) & 255) / 255f, (c & 255) / 255f, 1); GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
-        if (overlayTex == 0) overlayTex = texture(overlay());
-        normal(); drawTex(overlayTex, -1, -1, 1, 1, 1);
         double t0 = SystemClock.uptimeMillis(), dt = lastT > 0 ? Math.min(250, t0 - lastT) : 16; lastT = t0;
         // the engine runs on this thread only: a newer map or a new live.json, read by the wallpaper, is taken in here
-        Graph ng = src.graph(); if (ng == null) return;
-        if (ng != cur) { ng.takeOver(cur); cur = ng; if (lastEvs != null) cur.read(lastEvs, System.currentTimeMillis(), t0); }
+        Graph ng = src.graph();
+        if (ng != null && ng != cur) { ng.takeOver(cur); cur = ng; if (lastEvs != null) cur.read(lastEvs, System.currentTimeMillis(), t0); }
+        Graph.Theme th = cur != null ? cur.theme : Graph.DARK; int c = th.bg;
+        GLES20.glClearColor(((c >> 16) & 255) / 255f, ((c >> 8) & 255) / 255f, (c & 255) / 255f, 1); GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
+        if (overlayTex != 0 && overlayTheme != th) { GLES20.glDeleteTextures(1, new int[] { overlayTex }, 0); overlayTex = 0; }
+        if (overlayTex == 0) { overlayTheme = th; overlayTex = texture(overlay(th)); }
+        normal(); drawTex(overlayTex, -1, -1, 1, 1, 1);
+        if (cur == null) return;
         List<Graph.Event> evs = src.takeEvents(); if (evs != null) { lastEvs = evs; cur.read(evs, System.currentTimeMillis(), t0); }
         Graph g = cur; g.step(t0, dt);
         if (g != built) build(g);
-        if (!still) ry += 2 * Math.PI / (1000 * Graph.TURN_S) * dt;
-        Matrix.setRotateM(Mx, 0, (float) Math.toDegrees(Graph.RX), 1, 0, 0);
-        Matrix.setRotateM(My, 0, (float) Math.toDegrees(ry + (offsetX - 0.5) * Math.PI / 3), 0, 1, 0);
-        Matrix.multiplyMM(Mm, 0, Mx, 0, My, 0); Matrix.multiplyMM(MV, 0, V, 0, Mm, 0);
+        if (g.flat) Matrix.setIdentityM(Mm, 0);   // the page's 2D map does not turn
+        else {
+            if (!still) ry += 2 * Math.PI / (1000 * Graph.TURN_S) * dt;
+            Matrix.setRotateM(Mx, 0, (float) Math.toDegrees(Graph.RX), 1, 0, 0);
+            Matrix.setRotateM(My, 0, (float) Math.toDegrees(ry + (offsetX - 0.5) * Math.PI / 3), 0, 1, 0);
+            Matrix.multiplyMM(Mm, 0, Mx, 0, My, 0);
+        }
+        Matrix.multiplyMM(MV, 0, V, 0, Mm, 0);
+        boolean light = th.light;
 
-        // the faint graph
-        normal(); lines(bPos, bCol, bAl, g.links.size() * Graph.SEG * 2);
+        // the agents ring's spokes, then the faint graph
+        normal(); lines(sPos, sCol, sAl, nSpokes * 2); lines(bPos, bCol, bAl, g.links.size() * Graph.SEG * 2);
         // the lit layer and its glow: a slot per pair the first time it moves
         for (Graph.Line e : g.lines.values()) {
             if (e.slot >= slotsWritten) { writeSlot(e); slotsWritten = e.slot + 1; }
-            float a = (float) Math.min(1, e.op * 1.05), ga = a * 0.3f;
+            float a = (float) Math.min(1, e.op * 1.05), ga = a * (light ? 0.22f : 0.3f);
             for (int j = e.slot * Graph.SEG * 2, n = j + Graph.SEG * 2; j < n; j++) lAl.put(j, a);
             for (int j = e.slot * (Graph.SEG + 1), n = j + Graph.SEG + 1; j < n; j++) gAl.put(j, ga);
         }
-        additive(); lines(lPos, lCol, lAl, slotsWritten * Graph.SEG * 2);
+        glow(light); lines(lPos, lCol, lAl, slotsWritten * Graph.SEG * 2);
         points(3, gPos, gCol, gSz, gAl, slotsWritten * (Graph.SEG + 1));
         // the nodes: busy ones larger and whiter, all breathing gently with the team's activity
         double now = t0;
@@ -109,10 +121,10 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         int k = 0, cap = Graph.MAXDOTS * (Graph.TRAIL + 1);
         for (Graph.Fly f : g.fly) {
             if (k >= cap - Graph.TRAIL - 1) break; Graph.Node a = f.from;
-            if (f.flow) { Graph.curveAt(a, f.to, Math.max(0, f.u), tmp); dot(k++, a, 13, 0.5 + 0.45 * Math.sin(Math.PI * f.u)); continue; }
-            for (int j = 0; j <= Graph.TRAIL; j++) { Graph.curveAt(a, f.to, Math.max(0, f.u - j * 0.025), tmp); dot(k++, a, j > 0 ? 26 - j * 3.5 : 48, j > 0 ? 0.65 * (1 - j / (double) (Graph.TRAIL + 1)) : 1); }
+            if (f.flow) { g.curve(a, f.to, Math.max(0, f.u), tmp); dot(k++, a, 13, 0.5 + 0.45 * Math.sin(Math.PI * f.u)); continue; }
+            for (int j = 0; j <= Graph.TRAIL; j++) { g.curve(a, f.to, Math.max(0, f.u - j * 0.025), tmp); dot(k++, a, j > 0 ? 26 - j * 3.5 : 48, j > 0 ? 0.65 * (1 - j / (double) (Graph.TRAIL + 1)) : 1); }
         }
-        additive(); points(1, dPos, dCol, dSz, dAl, k);
+        glow(light); points(1, dPos, dCol, dSz, dAl, k);
         // the people's names, where they now are
         normal(); float[] v = new float[4], o = new float[4];
         for (int i = 0; i < labelNodes.size(); i++) {
@@ -132,12 +144,16 @@ final class MapRenderer implements GLSurfaceView.Renderer {
     // ---- the buffers, built once per map
     private void build(Graph g) {
         built = g; slotsWritten = 0; int nl = g.links.size() * Graph.SEG * 2;
+        camera(g.flat);
+        // the spokes: straight, thin and faint (.lv-spokes: opacity .18), in the person's colour
+        nSpokes = g.spokes.size(); sPos = fb(nSpokes * 6); sCol = fb(nSpokes * 6); sAl = fb(nSpokes * 2);
+        for (int k = 0; k < nSpokes; k++) { Graph.Link l = g.spokes.get(k); put3(sPos, k * 2, new double[] { l.from.x, l.from.y, l.from.z }); put3(sPos, k * 2 + 1, new double[] { l.to.x, l.to.y, l.to.z }); col3(sCol, k * 2, l.to); col3(sCol, k * 2 + 1, l.to); sAl.put(k * 2, 0.18f); sAl.put(k * 2 + 1, 0.18f); }
         bPos = fb(nl * 3); bCol = fb(nl * 3); bAl = fb(nl);
         double[] p = new double[3], q = new double[3];
         for (int k = 0; k < g.links.size(); k++) {
             Graph.Link l = g.links.get(k); float w = (float) g.baseAlpha(l);
             for (int s = 0; s < Graph.SEG; s++) {
-                Graph.curveAt(l.from, l.to, s / (double) Graph.SEG, p); Graph.curveAt(l.from, l.to, (s + 1) / (double) Graph.SEG, q); int j = (k * Graph.SEG + s) * 2;
+                g.curve(l.from, l.to, s / (double) Graph.SEG, p); g.curve(l.from, l.to, (s + 1) / (double) Graph.SEG, q); int j = (k * Graph.SEG + s) * 2;
                 put3(bPos, j, p); put3(bPos, j + 1, q); col3(bCol, j, l.from); col3(bCol, j + 1, l.from); bAl.put(j, w); bAl.put(j + 1, w);
             }
         }
@@ -146,22 +162,24 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         int nn = g.nodes.size(); nPos = fb(nn * 3); nCol = fb(nn * 3); nSz = fb(nn); nAl = fb(nn);
         rings.clear(); for (Graph.Node n : g.nodes) { put3(nPos, n.index, new double[] { n.x, n.y, n.z }); nAl.put(n.index, 0.95f); if (n.ring) rings.add(n); }
         nRings = rings.size(); rPos = fb(Math.max(1, nRings) * 3); rCol = fb(Math.max(1, nRings) * 3); rSz = fb(Math.max(1, nRings)); rAl = fb(Math.max(1, nRings));
-        float[] tc = Graph.lift(Graph.TEXT);
+        float[] tc = g.theme.rgb(g.theme.text);
         for (int i = 0; i < nRings; i++) { Graph.Node n = rings.get(i); put3(rPos, i, new double[] { n.x, n.y, n.z }); rCol.put(i * 3, tc[0]); rCol.put(i * 3 + 1, tc[1]); rCol.put(i * 3 + 2, tc[2]); rSz.put(i, (float) (n.size * 2.1)); rAl.put(i, 0.45f); }
         int nd = Graph.MAXDOTS * (Graph.TRAIL + 1); dPos = fb(nd * 3); dCol = fb(nd * 3); dSz = fb(nd); dAl = fb(nd);
         for (int[] t : labelTex) GLES20.glDeleteTextures(1, new int[] { t[0] }, 0);
         labelTex.clear(); labelNodes.clear();
-        for (Graph.Node n : g.nodes) if (n.label != null && !n.label.isEmpty()) { labelNodes.add(n); labelTex.add(label(n.label)); }
+        for (Graph.Node n : g.nodes) if (n.label != null && !n.label.isEmpty()) { labelNodes.add(n); labelTex.add(label(n.label, g.theme)); }
     }
     private void writeSlot(Graph.Line e) {
-        double[] p = new double[3], q = new double[3]; int s = e.slot;
-        for (int k = 0; k < Graph.SEG; k++) { Graph.curveAt(e.from, e.to, k / (double) Graph.SEG, p); Graph.curveAt(e.from, e.to, (k + 1) / (double) Graph.SEG, q); int j = (s * Graph.SEG + k) * 2; put3(lPos, j, p); put3(lPos, j + 1, q); col3(lCol, j, e.from); col3(lCol, j + 1, e.from); }
-        for (int k = 0; k <= Graph.SEG; k++) { Graph.curveAt(e.from, e.to, k / (double) Graph.SEG, p); int j = s * (Graph.SEG + 1) + k; put3(gPos, j, p); col3(gCol, j, e.from); gSz.put(j, 30); }
+        double[] p = new double[3], q = new double[3]; int s = e.slot; Graph g = built; float gsz = g.theme.light ? 16 : 30;
+        for (int k = 0; k < Graph.SEG; k++) { g.curve(e.from, e.to, k / (double) Graph.SEG, p); g.curve(e.from, e.to, (k + 1) / (double) Graph.SEG, q); int j = (s * Graph.SEG + k) * 2; put3(lPos, j, p); put3(lPos, j + 1, q); col3(lCol, j, e.from); col3(lCol, j + 1, e.from); }
+        for (int k = 0; k <= Graph.SEG; k++) { g.curve(e.from, e.to, k / (double) Graph.SEG, p); int j = s * (Graph.SEG + 1) + k; put3(gPos, j, p); col3(gCol, j, e.from); gSz.put(j, gsz); }
     }
 
     // ---- drawing calls
     private void normal() { GLES20.glBlendFuncSeparate(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA, GLES20.GL_ONE, GLES20.GL_ONE_MINUS_SRC_ALPHA); }
     private void additive() { GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE); }
+    // live3d.js: the lit lines, their glow and the dots add light in the dark; on a light page they are drawn as they are
+    private void glow(boolean light) { if (light) normal(); else additive(); }
     private void lines(FloatBuffer pos, FloatBuffer col, FloatBuffer al, int n) {
         if (n <= 0) return; GLES20.glUseProgram(progLn); mats(progLn); GLES20.glLineWidth(lineW);
         attr(progLn, "position", pos, 3); attr(progLn, "col", col, 3); attr(progLn, "alpha", al, 1);
@@ -187,32 +205,32 @@ final class MapRenderer implements GLSurfaceView.Renderer {
     }
 
     // ---- the overlay: the hexagon's floor and rim, the logos and LIVE, as the page has them (lv-fill, lv-rim, lv-top)
-    private Bitmap overlay() {
+    private Bitmap overlay(Graph.Theme th) {
         Bitmap bm = Bitmap.createBitmap(W, H, Bitmap.Config.ARGB_8888); Canvas cv = new Canvas(bm);
         float side = Math.min(W, H) * 0.98f, x0 = (W - side) / 2, y0 = (H - side) / 2, k = side / 1000f;
         Path hex = new Path(); float[][] pts = { { 250, 67 }, { 750, 67 }, { 1000, 500 }, { 750, 933 }, { 250, 933 }, { 0, 500 } };
         hex.moveTo(x0 + pts[0][0] * k, y0 + pts[0][1] * k); for (int i = 1; i < 6; i++) hex.lineTo(x0 + pts[i][0] * k, y0 + pts[i][1] * k); hex.close();
-        Paint fill = new Paint(Paint.ANTI_ALIAS_FLAG); fill.setColor(0xFF000000 | Graph.SURFACE); fill.setAlpha((int) (255 * 0.55)); cv.drawPath(hex, fill);
-        Paint rim = new Paint(Paint.ANTI_ALIAS_FLAG); rim.setStyle(Paint.Style.STROKE); rim.setStrokeJoin(Paint.Join.ROUND); rim.setStrokeWidth(3 * k); rim.setColor(0xFF000000 | Graph.ACTION); rim.setAlpha((int) (255 * 0.8));
-        rim.setShadowLayer(7 * k * 2, 0, 0, 0xFF000000 | Graph.ACTION); cv.drawPath(hex, rim);
+        Paint fill = new Paint(Paint.ANTI_ALIAS_FLAG); fill.setColor(0xFF000000 | th.surface); fill.setAlpha((int) (255 * 0.55)); cv.drawPath(hex, fill);
+        Paint rim = new Paint(Paint.ANTI_ALIAS_FLAG); rim.setStyle(Paint.Style.STROKE); rim.setStrokeJoin(Paint.Join.ROUND); rim.setStrokeWidth(3 * k); rim.setColor(0xFF000000 | th.action); rim.setAlpha((int) (255 * 0.8));
+        rim.setShadowLayer(7 * k * 2, 0, 0, 0xFF000000 | th.action); cv.drawPath(hex, rim);
         // the top row: the two logos, then LIVE, centred, 7.6% down the hexagon
-        Bitmap[] logos = src.logos(); float ls = Math.max(16 * density, Math.min(66 * density, side * 0.072f)), gap = Math.max(6 * density, side * 0.018f), ty = y0 + side * 0.076f;
-        Paint live = new Paint(Paint.ANTI_ALIAS_FLAG); live.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD)); live.setTextSize(Math.max(8 * density, Math.min(18 * density, side * 0.022f))); live.setLetterSpacing(0.14f); live.setColor(0xFF000000 | Graph.LIVE_RED);
+        Bitmap[] logos = src.logos(th.light); float ls = Math.max(16 * density, Math.min(66 * density, side * 0.072f)), gap = Math.max(6 * density, side * 0.018f), ty = y0 + side * 0.076f;
+        Paint live = new Paint(Paint.ANTI_ALIAS_FLAG); live.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD)); live.setTextSize(Math.max(8 * density, Math.min(18 * density, side * 0.022f))); live.setLetterSpacing(0.14f); live.setColor(0xFF000000 | th.live);
         float tw = live.measureText("LIVE"), pillW = tw + live.getTextSize() * 1.9f, pillH = live.getTextSize() * 1.64f;
         int nl = logos == null ? 0 : logos.length; float rowW = nl * ls + nl * gap + pillW, x = (W - rowW) / 2;
         Paint bp = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG); bp.setAlpha((int) (255 * 0.92));
         for (int i = 0; i < nl; i++) { if (logos[i] != null) cv.drawBitmap(logos[i], null, new RectF(x, ty, x + ls, ty + ls), bp); x += ls + gap; }
         float py = ty + (ls - pillH) / 2; RectF pill = new RectF(x, py, x + pillW, py + pillH);
-        Paint pb = new Paint(Paint.ANTI_ALIAS_FLAG); pb.setColor(0xFF000000 | Graph.BG); pb.setAlpha(190); cv.drawRoundRect(pill, pillH, pillH, pb);
+        Paint pb = new Paint(Paint.ANTI_ALIAS_FLAG); pb.setColor(0xFF000000 | th.bg); pb.setAlpha(190); cv.drawRoundRect(pill, pillH, pillH, pb);
         Paint ps = new Paint(live); ps.setStyle(Paint.Style.STROKE); ps.setStrokeWidth(Math.max(1, density)); cv.drawRoundRect(pill, pillH, pillH, ps);
-        float dr = live.getTextSize() * 0.31f; Paint dp = new Paint(live); dp.setShadowLayer(dr * 2.2f, 0, 0, 0xFF000000 | Graph.LIVE_RED); cv.drawCircle(x + live.getTextSize() * 0.5f + dr, py + pillH / 2, dr, dp);
+        float dr = live.getTextSize() * 0.31f; Paint dp = new Paint(live); dp.setShadowLayer(dr * 2.2f, 0, 0, 0xFF000000 | th.live); cv.drawCircle(x + live.getTextSize() * 0.5f + dr, py + pillH / 2, dr, dp);
         cv.drawText("LIVE", x + live.getTextSize() * 0.5f + dr * 2 + live.getTextSize() * 0.45f, py + pillH / 2 + live.getTextSize() * 0.36f, live);
         return bm;
     }
     // a person's name, as the page writes it (600, white, with a dark halo); returns { texture, half width px, half height px }
-    private int[] label(String s) {
+    private int[] label(String s, Graph.Theme th) {
         Paint p = new Paint(Paint.ANTI_ALIAS_FLAG); p.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD)); p.setTextSize(Math.max(11 * density, Math.min(14 * density, Math.min(W, H) * 0.022f)));
-        p.setColor(0xFF000000 | Graph.TEXT); p.setShadowLayer(4 * density, 0, 0, 0xFF000000 | Graph.BG);
+        p.setColor(0xFF000000 | th.text); p.setShadowLayer(4 * density, 0, 0, 0xFF000000 | th.bg);
         int w = (int) Math.ceil(p.measureText(s) + 12 * density), h = (int) Math.ceil(p.getTextSize() * 1.6f + 8 * density);
         Bitmap bm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888); new Canvas(bm).drawText(s, 6 * density, h / 2f + p.getTextSize() * 0.36f, p);
         return new int[] { texture(bm), w, h };

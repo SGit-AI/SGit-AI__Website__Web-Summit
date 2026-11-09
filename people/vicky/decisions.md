@@ -99,6 +99,7 @@ Ask one question, with your recommendation, at the end of your report (`people/v
     - inbox@ only: nothing from a memo goes in any public file, commit or report; the draft is never sent by an agent. No consent to be recorded, no recording or transcript kept anywhere.
     - inbox@ ends each memo's report line with `follow-up drafts waiting: N` (a count only). The conductor puts that count in the morning brief (Vicky, 9 Nov, about 11:25 UTC: "Count only, never names, companies or content. If inbox has not run since the last brief, show the last count with its date.").
     - The agents cannot hear audio: a memo needs a text transcript with it (the phone's own transcript is enough).
+    - **Interviews: nothing stored for now** (Vicky, 9 Nov, about 13:40 UTC, replacing the interview part above): "the newsroom's private interview vault does not exist yet (vault@ checked today: not in REALITY.md or the security desk's key register). Until Dinis's side builds it, inbox@ stores no interview recordings or transcripts anywhere; I keep them on my phone. inbox@ will not use the shortlist vault key sealed today. The CRM part of SA27 stays as it is." Her request to Dinis to build that vault, with a write-only lane for inbox@, is `people/vicky/requests/2026-11-09-interview-vault.md`.
 
 ## Updates for agents
 
@@ -142,6 +143,7 @@ How this works (Vicky, 6 Nov): each update below is for the agents named. Apply 
 > Everyone listed: add standing answer 26 to your prompts file and confirm "applied SA26".
 
 **SA27, voice memos** (Vicky, 9 Nov, about 11:20 UTC). For: inbox, vault.
+> Changed 9 Nov, about 13:40 UTC (standing answer 27, "Interviews: nothing stored for now"): inbox@ stores no interview recordings or transcripts anywhere and does not use the shortlist vault key sealed to it at 11:35; the CRM part is unchanged. vault@ resealed the key at 11:35 (applied SA27); nothing more for vault@. inbox@: put the change in your prompts file and confirm "applied SA27".
 > inbox@: put standing answer 27 in your prompts file and confirm "applied SA27". vault@: Vicky said "go reseal the interview shortlist vault's key to inbox-vicky" (9 Nov, about 11:20 UTC): reseal it to inbox-vicky (sha256:417758c5d74f2b4f) after your usual check, log it in the vault's AUDIT.md, report it, and confirm "applied SA27".
 
 Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
@@ -151,7 +153,7 @@ Still to confirm (9 Nov, 08:45 UTC; the rest have confirmed):
 - SA23: journalist, dev.
 - SA24X: dev.
 - SA26: reviewer, journalist, journalist-portugal, journalist-europe, journalist-ai, journalist-connections, dev.
-- SA27 (added 9 Nov, 11:25): inbox, vault.
+- SA27 (added 9 Nov, 11:25; changed 13:40): inbox. (vault applied it at 11:35.)
 
 Removed on 9 Nov once done or confirmed: SA13, SA15, SA18, SA19B, SA19C, SA22, SA25, PILOT-REPLIT, TRIAGE-REPLIT and OVERNIGHT-9NOV (closed at 04:40, people/vicky/company-pages/backlog.md).
 

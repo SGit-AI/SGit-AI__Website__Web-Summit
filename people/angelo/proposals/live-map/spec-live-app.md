@@ -67,6 +67,15 @@ Angelo, 8 November about 12:00 UTC (9d018cc, pushed from riskmandate-angelo): *"
 
 **Questions for Angelo:** (4) Go for the Android live wallpaper in the Android app (dev.android@ builds, dev.app@ the drawing contract)? (5) On the iPhone, is a Live Photo from the replay (moves a few seconds on waking, not live) worth trying, or skip it? (6) A widget would need the iOS app's owner: ask, or not now?
 
+### The wallpaper's views (WS-203, 9 November; built)
+
+Angelo, 9 November about 13:10 UTC, with the wallpaper on his phone: *"Can we enhance the live wallpaper to enable choosing the view as in the website?"*; about 13:20: *"The wallpaper is working and it's beautiful, please let's go ahead with the enhancements."* The desk gave the work to dashboard@PrompTugal.angelo (e87fa92c); dev.app@ keeps the drawing contract and its test in step.
+
+- **Where:** Android's own place for a live wallpaper's options, the **Settings** button in the wallpaper picker (`settingsActivity` in `wallpaper.xml`), and a **Choose the view** button in the app. Kept on the phone (SharedPreferences); the wallpaper redraws at once.
+- **Layout:** 3D (the ball, as before), People ring, Agents ring: the page's own `layout()` ported into `Graph.java`, flat and face on, scaled into the hexagon by `GEO`'s scale, the lines bent by its pull, the Agents ring's spokes. **Theme:** dark, light (app.css's light tokens, the light PT News stamp, glows drawn plainly as `live3d.js` does on a light page) or the phone's own.
+- **Held to the page by tests:** `hxappwall` (the 3D ball, dark, unchanged) and `hxwallviews` (the flat layouts and the light theme).
+- **To come, in this order:** the Workstreams level (`workstreams.json`), then Deliverables, then the Agents and their work layout.
+
 ## Questions for Angelo (via the desk)
 
 1. Tauri for the desktops, as recommended (small, open source, uses the system's web view)? The alternative, Electron, is larger but more familiar.

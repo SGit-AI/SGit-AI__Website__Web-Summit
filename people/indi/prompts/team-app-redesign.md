@@ -1,7 +1,7 @@
 ---
 name: team-app-redesign
 for: Dinis's iOS conductor (account B) and the sessions it runs; written at Indi's word
-version: 6
+version: 7
 model: Opus 5.5 for the lead session; Sonnet 5.5 for each stage's worker sessions
 date: 2026-11-09
 by: prompter@web-summit.indi
@@ -36,7 +36,7 @@ Turn the Team app into the team's one place for the summit: where everyone is, w
 <steps>
 Do the stages in order. After each stage: the CI run on dev is green, and you write two lines in the commit body (what changed, what you checked) before you start the next.
 
-1. Navigation. In Destinations.swift and AppShell.swift, give the iPhone five tabs: Now, Where, Plan, Tasks, More. Move every other destination under More with an everyday name (for example "Wakes" becomes "What our agents did"). Remove the "(web)" duplicates from the iPhone list where a native screen exists; keep them on the iPad sidebar. Keep every destination reachable, so no feature is lost.
+1. Navigation. In Destinations.swift and AppShell.swift, give the iPhone five tabs: Now, Where, Plan, Tasks, Messages (WS-203; built from people/indi/prompts/team-messaging-ios.md), with More opened from the round button at the top right. Move every other destination under More with an everyday name (for example "Wakes" becomes "What our agents did"). Remove the "(web)" duplicates from the iPhone list where a native screen exists; keep them on the iPad sidebar. Keep every destination reachable, so no feature is lost.
 2. Now tab (draft D). The greeting with tonight's hotel, the "I'm at" card (place, then how long; remember the last length), "Your day" as one timeline that starts with where I am now and shows the teammates each item involves, and "Needs you": at most three of my tasks, late ones first, each with a tick circle.
 3. Where tab (draft E). A line saying who sees it and for how long ("Seen by the team only. Places, never GPS. Kept for 12 hours."), a search field, the team's gold initials circles with a coloured dot and word for each place, then a "Venue plan | By place" switch. Follow spec-venues.md Part A for the data: places, not coordinates; each person writes only their own line to the private vault ws-team-logistics-private through an append lane; local first, synced when online; fade a line older than 3 hours, "not seen since" after 12. A person card shows place, when they are free or back, next, hotel name (team only) and open tasks, with a close button, and three actions: "Ask to come over" (one tap: WhatsApp opens with "Can you come to <my place> now?" and the request is added to Plan), "WhatsApp", "Plan a meetup".
 4. Plan tab (draft D). A Monday to Thursday switch; each day as one timeline merging agenda picks, official Web Summit events from PTAgenda, the stand-ups (12:00 and 18:00 Lisbon), stand shifts and meetups, with the people each involves; then "Due that day" (tasks with owners); then "Where we're staying" (hotel names only, team only, from the private vault). "+ Meetup" offers chips only (what, where, when, who); sending adds it to the timeline at once, marked "Sent to the WhatsApp group", opens WhatsApp with the message written (https://wa.me/?text=<encoded>, or the share sheet), and offers "Also add to my calendar" with EventKit write-only access.
@@ -93,6 +93,7 @@ You have finished when: all seven stages are on dev with green CI; the Team app 
 
 ## Previous versions
 
+- **Version 6** (9 November 2026): the fifth tab was More. Version 7 makes it Messages (Dinis's WS-203) and moves More to the top-right button.
 - **Version 5** (9 November 2026, afternoon): "Still late" went to "whoever gave it" without saying who that is for a board issue. Version 6 defines it (given_by, the issue's for: minus its owner, or asked_by) and leaves chat and the call shortcut out (Dinis is designing chat).
 - **Version 4** (9 November 2026, midday): Tasks in five layouts for Indi to choose. Version 5 builds Indi's choice (grouped by day, a starred Priority group, folding days, 44-point targets) and adds late-task notifications with their wording (5c) and Live Activities (5d).
 - **Version 3** (9 November 2026, late morning): kept today's look and pointed to five drafts (https://claude.ai/artifact/UNEQvnWpSuoeDX9iBEhoVi). Version 4 builds Indi's mix (Now and Plan from D, Where from E), a to-do-style Tasks tab, the synthetic users' fixes, and live task sync to the team board.
