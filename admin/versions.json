@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1562",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: the share button: the writer applies dev.venues@'s patch in its next session",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "de6b95a06"
+  },
+  {
     "version": "v0.2.1561",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.map's, dev.work's and dev.app's new work onto dev (one commit)",
