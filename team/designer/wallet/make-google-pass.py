@@ -5,7 +5,7 @@ conductor@web-summit.indi, 9 November 2026, at Indi's word. The same green card 
 (pass/pass.json): one generic pass class and one generic pass object, carried inside a signed JWT, so nothing
 needs to exist on Google's side before someone taps the link.
 
-    python3 -I team/designer/wallet/make-google-pass.py --issuer-id 3388000000012345678 --sa-key key.json
+    python3 -I team/designer/wallet/make-google-pass.py --issuer-id <your issuer id> --sa-key key.json
 
 Needs (from a Google account; none of it is ever committed):
 - an Issuer account in the Google Pay & Wallet Console (its issuer ID);
@@ -34,7 +34,7 @@ def card(issuer):
         'header': {'defaultValue': {'language': 'en-GB', 'value': 'Know their reach. Define their mandate. Control the gap.'}},
         'subheader': {'defaultValue': {'language': 'en-GB', 'value': 'Agent Behaviour Policies'}},
         'hexBackgroundColor': '#161615',
-        'logo': {'sourceUri': {'uri': WALLET + '/pass/thumbnail@3x.png'},
+        'logo': {'sourceUri': {'uri': WALLET + '/google-logo.png'},
                  'contentDescription': {'defaultValue': {'language': 'en-GB', 'value': 'RiskMandate seal'}}},
         'heroImage': {'sourceUri': {'uri': WALLET + '/google-hero.png'},
                       'contentDescription': {'defaultValue': {'language': 'en-GB', 'value': 'Know their reach. Define their mandate. Control the gap.'}}},
