@@ -74,7 +74,8 @@ Angelo, 9 November about 13:10 UTC, with the wallpaper on his phone: *"Can we en
 - **Where:** Android's own place for a live wallpaper's options, the **Settings** button in the wallpaper picker (`settingsActivity` in `wallpaper.xml`), and a **Choose the view** button in the app. Kept on the phone (SharedPreferences); the wallpaper redraws at once.
 - **Layout:** 3D (the ball, as before), People ring, Agents ring: the page's own `layout()` ported into `Graph.java`, flat and face on, scaled into the hexagon by `GEO`'s scale, the lines bent by its pull, the Agents ring's spokes. **Theme:** dark, light (app.css's light tokens, the light PT News stamp, glows drawn plainly as `live3d.js` does on a light page) or the phone's own.
 - **Held to the page by tests:** `hxappwall` (the 3D ball, dark, unchanged) and `hxwallviews` (the flat layouts and the light theme).
-- **To come, in this order:** the Workstreams level (`workstreams.json`), then Deliverables, then the Agents and their work layout.
+- **Level** (0.3.0, 9 November): Messages, or Workstreams: `work.js`, `work-draw.js` and `work-live.js` ported into `Work.java` (squares, numbers, pills, counts, the document flights in the maker's colour, darker on light), held to the page by `hxwallws`. Squares and pills drawn into the hexagon's overlay (again when a count changes), the flights each frame from the maker's node where it is on screen, so they work on the turning ball too.
+- **To come, in this order:** Deliverables (its marks need the icons' arcs), then the Agents and their work layout.
 
 ## Questions for Angelo (via the desk)
 
