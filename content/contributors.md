@@ -6,6 +6,8 @@ At Dinis's word (9 November 2026, about 13:00 UTC, a voice brief to the main con
 
 ![Help us cover the summit: the rules of the game (open source, we review and publish, no payment for now), how it works in seven steps, and where to start](../assets/contributors/the-game.png)
 
+**The wall of collaborators:** [/collaborators/](../collaborators/index.html) (the first, Andrew, found by Silvio on 9 November).
+
 ## Why: the law of numbers {#why}
 
 *"Everybody that they meet is a potential recruiter for us. Everybody that they talk to is a potential person that we should have involved."* Vicky joined because, of the ten or fifteen people Dinis had the same conversation with, she was the one who followed up. Our workflows are examples of what we do, and they should excite many of the people we meet. So we make it **super easy** to follow up.
