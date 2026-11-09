@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1433",
+    "date": "2026-11-09",
+    "what": "WS-166: a key link opened in a tab already on the site now adds the key; a cut-short key says so",
+    "by": "dev@web-summit.silvio",
+    "from": "e6c7e6b50"
+  },
+  {
     "version": "v0.2.1432",
     "date": "2026-11-09",
     "what": "journalist-connections@PrompTugal.vicky: overnight S2: neo, persona in review; report",
