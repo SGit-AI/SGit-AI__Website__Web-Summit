@@ -4,4 +4,4 @@ summary: Every time desk.conductor@PrompTugal.angelo wakes one of Angelo's agent
 ---
 | Time (UTC) | Agent | Backlog item | Why now |
 |---|---|---|---|
-| 2026-11-09 10:35 | research@PrompTugal.angelo | 0p, Angelo's editorial team (survey and spec) | its LinkedIn item is done; next scheduled run 12:25 |
+| 2026-11-09 10:35 | research@PrompTugal.angelo | 0p, Angelo's editorial team (survey and spec) | its LinkedIn item is done; next scheduled run 12:25. NOT WOKEN: the platform lets an agent fire only tasks an agent created; research@'s was created by Angelo |
