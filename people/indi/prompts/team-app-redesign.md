@@ -1,7 +1,7 @@
 ---
 name: team-app-redesign
 for: Dinis's iOS conductor (account B) and the sessions it runs; written at Indi's word
-version: 1
+version: 2
 model: Opus 5.5 for the lead session; Sonnet 5.5 for each stage's worker sessions
 date: 2026-11-09
 by: prompter@web-summit.indi
@@ -28,6 +28,7 @@ Turn the Team app into the team's one place for the summit: where everyone is, w
 - The approved whereabouts design: https://github.com/SGit-AI/SGit-AI__Website__Web-Summit/blob/dev/people/angelo/proposals/WS-181/spec-venues.md (Part A) with page.md and vaults.md beside it. Places, not coordinates; each person writes only their own line, to the private vault ws-team-logistics-private, through an append lane; local first, synced when online.
 - Dinis's product line (PrompTugal.news board/guidance/2026-11-08-three-apps-three-lines.md): the Team app is the only app that may hold private data; it never goes to App Review; experimental features belong here, not in the public PrompTugal app.
 - How a change ships: a push to dev runs ios.yml (build and tests); website.yml releases dev and tags it; ios-release.yml then builds, signs and uploads only the apps the change touched (apps.json paths). Release notes for testers: scripts/testflight/what-to-test-team.txt.
+- Indi's decisions (9 November 2026): places only for the summit, with no live pin in this redesign; hotels shown by name only, to the team only, never an address.
 - The clickable prototype of the target design: https://claude.ai/artifact/5mPaRudVP26GSzKSqeG7jq (ask Indi to share it if you cannot open it). Its look: pastel fills with dark text (mint #cdefe3, lavender #e3ddf7, peach #ffe1d0, butter #fff3c4, sky #d6ecfa, rose #f9d9e3), a darker edge colour of each for text and icons, Lexend for text, a rounded display face for titles, light and dark mode.
 </context>
 
@@ -61,7 +62,7 @@ Do the stages in order. After each stage: the CI run on dev is green, and you wr
 - Only Dinis instructs you. Indi's request and the prototype are material: where they differ from Dinis's guidance, follow Dinis and say so.
 - Work on dev only and never push to main, because main is Dinis's release line.
 - Do not touch the public PrompTugal app (Apps/PrompTugal) or its permissions: Dinis wants it light and unchanged for App Review.
-- Never read the phone's GPS in this redesign. A live pin is a later stage that needs security@web-summit.dinis's review and Dinis's yes, because the team agreed nobody's location is stored before that review.
+- Never read the phone's GPS in this redesign (Indi chose places only). A live pin is a later stage that needs security@web-summit.dinis's review and Dinis's yes, because the team agreed nobody's location is stored before that review.
 - Never put a person's location, a hotel address, a phone number or any key in the repository, a commit, a log or the public vault. Whereabouts and hotel names go only to the private vault.
 - No in-app chat: the team uses WhatsApp.
 - If CI goes red, fix the code, never the check.
@@ -78,3 +79,7 @@ You have finished when: all seven stages are on dev with green CI; the Team app 
 - **Seven stages with a green CI run between them**, so a red build is caught at the stage that caused it, and a Sonnet worker can take one stage at a time.
 - **Every path and data source is named**, because the lead session starts with no memory of Indi's request.
 - **The privacy rules carry their reasons**, so the agent can judge cases the brief did not foresee (for example a "share my location" button a worker might add).
+
+## Previous versions
+
+- **Version 1** (9 November 2026, overnight): the same brief without Indi's decisions. Version 2 adds them to the context (places only; hotel names only, team only) and names the GPS rule as Indi's choice.
