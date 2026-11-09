@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1575",
+    "date": "2026-11-09",
+    "what": "/pipeline/: from a voice brief to a release, two case studies traced commit by commit (messaging; the web app); WS-205 to make it live",
+    "by": "conductor@web-summit.dinis",
+    "from": "774d6265d"
+  },
+  {
     "version": "v0.2.1574",
     "date": "2026-11-09",
     "what": "checker@PrompTugal.vicky: report of the 9 November evening run",
