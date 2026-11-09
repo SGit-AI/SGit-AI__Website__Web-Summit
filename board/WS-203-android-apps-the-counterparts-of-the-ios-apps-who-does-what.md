@@ -20,7 +20,7 @@ Angelo, 9 November 2026, about 10:45 UTC: "the work to build android apps for th
 |---|---|---|---|
 | The shell: one project, three app modules, the shared reader and vault format (port the iOS tests first) | the iOS app's core | conductor.android@promptugal.ai (exists, build 0.1.78); angelo on hold | done in part |
 | The event app (Lisbon event version) | event app | angelo (dev.app@) | after the shell |
-| The team app ("PT News Team"), with the live map as its "what the agents are doing" view and the live wallpaper | team app | angelo (dev.app@) | the wallpaper is built (people/angelo/app/android/wallpaper/), untested on a phone |
+| The team app ("PT News Team"), with the live map as its "what the agents are doing" view and the live wallpaper | team app | angelo (dev.app@) | the wallpaper is built (people/angelo/app/android/wallpaper/) and tested by Angelo on his phone, 9 November about 12:30: "working nicely"; enhancements with dashboard@ |
 | The RiskMandate app (demos, videos) | RiskMandate app | open | |
 | Builds a person can install (debug-signed APKs; the signing key and any store are Dinis's and the owners' call) | TestFlight | open | |
 
