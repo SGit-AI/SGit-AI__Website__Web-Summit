@@ -83,10 +83,10 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 
 | Company | Page | Status |
 |---|---|---|
-| CrowdStrike | https://promptugal.news/companies/crowdstrike/ | to do |
-| Defined.ai | https://promptugal.news/companies/defined-ai/ | to do |
-| Delinea | https://promptugal.news/companies/delinea/ | to do |
-| Google Cloud | https://promptugal.news/companies/google-cloud/ | to do |
+| CrowdStrike | https://promptugal.news/companies/crowdstrike/ | in review |
+| Defined.ai | https://promptugal.news/companies/defined-ai/ | in review |
+| Delinea | https://promptugal.news/companies/delinea/ | in review |
+| Google Cloud | https://promptugal.news/companies/google-cloud/ | in review |
 | IBM | https://promptugal.news/companies/ibm/ | to do |
 | Kiggu | https://promptugal.news/companies/kiggu/ | to do |
 | LawVu | https://promptugal.news/companies/lawvu/ | to do |
