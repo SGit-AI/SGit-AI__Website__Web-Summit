@@ -68,7 +68,7 @@ At Dinis's word (9 November 2026, about 11:45 UTC, spoken to the main conductor)
   - **SGitVault:** reading and writing vaults.
 
   Messaging is a new package (say `PTMessages`) on top of PTLanes and PTVaultUI. The repository's conductor is conductor.B@ios.PrompTugal.dinis (account B); coordinate with it through the repository's `briefs/` folder.
-- **The shared messaging vault:** created by the main conductor or Indi's team. Each person's and each agent's lane is issued with the existing `admin/tools/inbox.py`, extended to people and devices. Its keys are sealed to each key holder, never published.
+- **The shared messaging vault:** `ws-team-messages` (`wh23l3zm`), created by the main conductor on 9 November; its key is sealed to conductor@web-summit.indi and messaging@web-summit.indi in `data/sealed/agents/`. Each person's and each agent's lane is issued with the existing `admin/tools/inbox.py`, extended to people and devices. Its keys are sealed to each key holder, never published.
 - **Agents:** a small `send` and `drain` in the team site's tools, so any agent can email or message a person.
 
 ## First version (a day), then more {#phases}

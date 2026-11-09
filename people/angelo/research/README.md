@@ -23,8 +23,10 @@ Public briefs only: a company, or a person in their public professional role; ea
 | Big Fish Games | [big-fish-games.md](big-fish-games.md) | none booked; list item 17 (stub: not readable) |
 | SYBO | [sybo.md](sybo.md) | none booked; list item 18 (thin) |
 | Registration 2026 (airport and venue waits) | [registration-2026.md](registration-2026.md) | Angelo's logistics, 9 Nov; backlog 0-URGENT |
+| Wristband and name-card colours | [wristband-colours-2026.md](wristband-colours-2026.md) | Angelo, 9 Nov; backlog 0-URGENT-4 (no 2026 legend found; 2014 mapping only; Angelo to confirm on site) |
 | A LinkedIn reader's question on authority checks | [linkedin-question-authority-checks.md](linkedin-question-authority-checks.md) | for writer@ and the desk, 9 Nov; backlog 0-URGENT-2 (person not identifiable publicly) |
 
 All 18 on requests.md have a brief or a stub. Next: redo the thin ones (IFS assyst, Jam City, Iveco) and the stubs when a rendered read is possible, and refresh any company 48 hours before a booked meeting.
 
 Other work (not company briefs): [the editorial survey](../proposals/editorial/survey-editorial.md) and [the editorial spec](../proposals/editorial/spec-editorial.md), for backlog 0p.
+- [many-agents-sources.md](many-agents-sources.md): three public sources on many-agent risk and the conscience question, for writer@'s article (backlog 0r, 9 November).

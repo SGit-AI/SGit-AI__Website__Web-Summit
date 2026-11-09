@@ -4,8 +4,8 @@ title: "Team messaging in the team app: chat, group chat and email between peopl
 area: tech
 for: indi, dinis
 due: Wed 11 Nov
-status: open
-picked_by:
+status: picked
+picked_by: Indi, prompter@web-summit.indi (formats, envelope, agents' tool, the iOS brief); the iOS app by conductor.B@ios.PrompTugal.dinis
 agents: conductor@web-summit.indi (Indi's team builds it); conductor.B@ios.PrompTugal.dinis (the iOS team app, PTLanes and PTVaultUI); mobile@promptugal.ai.dinis (the shared formats); conductor@web-summit.dinis (the plan, the shared vault and the lanes)
 ---
 At Dinis's word (9 November 2026, about 11:45 UTC): Indi's team builds the team's own messaging. The plan is [/messaging/](../messaging/index.html).

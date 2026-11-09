@@ -3,7 +3,9 @@
 Backlog 00a (dropped), 00a2, 0m and 14 (on hold). Short; the commits are the history.
 
 ## Last run
-2026-11-09 12:09 UTC. For: me since 11:10, all the desk's and pushed by riskmandate-angelo (checked): 54d01e4 (WS-202, the Android counterparts of the iOS apps, shared on one board issue), 36eb0d8 (my job is now the Android apps, in people/angelo/app/android/; no dev.android@ task) and e588f4b (11:36: PrompTugal/PrompTugal__App__Android already exists and ships, build 0.1.78, run by Dinis's conductor.android@promptugal.ai; our Android rows ON HOLD, nothing built in parallel; WS-202 renumbered WS-203). So I built nothing: backlog 14 is on hold, and the wallpaper stays ready as a module to offer, Angelo's call. dashboard@'s 3a51666 (material): it built the Windows desktop app v0.1.1 on 8 November and Angelo installed and ran it on his laptop, so my "never built or installed" was wrong; corrected in Open.
+2026-11-09 16:07 UTC. Spec checked (e588f4b, riskmandate-angelo). For: me since 15:07: dashboard@'s 48a75f6 (wallpaper 0.3.0: Workstreams level, Work.java, WorkDump, hxwallws) and eaeead3 (my 15:07 review brought onto dev). Reviewed 0.3.0 on dev c46da09 for the drawing contract: workstreams.json read only while Workstreams is chosen, with live.json once a minute; flights from the maker's node; light strokes 3:1. hxappwall PASS, hxwallviews PASS, hxwallws PASS (10 squares, 153 rows, 146 merged, 2 queued; phone pills inside, wide beside). No finding. I built nothing (14 on hold).
+
+For the desk (material, low): two board files carry id WS-203: board/WS-203-android-apps-...md (ours, renumbered from WS-202 in e588f4b) and board/WS-203-team-messaging.md (conductor@web-summit.dinis's c2eca10a, picked by prompter@web-summit.indi). Commits saying "Issue: WS-203" now mean either. Suggest the desk asks the board's keeper which one moves to a fresh number.
 
 ## Open
 - 0m: not yet tried on a real iPad (Safari/WebKit not in these sessions). Asked conductor@web-summit.indi when someone can try the two iPads. Seen, for dev.map@ (not mine): display mode is 32 px taller than the window at every size (cc-nav below), and its Pause button is 41x23, small for a finger.
@@ -16,9 +18,12 @@ Backlog 00a (dropped), 00a2, 0m and 14 (on hold). Short; the commits are the his
 
 - 14 (ON HOLD, the desk's e588f4b, board/WS-203): the Android apps exist in PrompTugal/PrompTugal__App__Android (Dinis's conductor.android@promptugal.ai). Nothing built in parallel. The wallpaper (android/wallpaper/) stays ready as a module to offer; whether to offer it is Angelo's call, then conductor.android@'s answer on WS-203.
 
+- 00a2b (overtaken: Angelo's go went to dashboard@, who built the first piece in 6e9ac5dd; the desk's e87fa92c leaves me the drawing contract): the wallpaper's views (aa1d3e6). Sizing, for the desk: the site has four layouts (live.js LAYOUTS: People ring, Agents ring, Agents and their work; live3d.js: 3D) and the wallpaper ports only the 3D ball today (MapRenderer.java, Graph.java, about 840 lines of Java in all). A Settings activity (android:settingsActivity in wallpaper.xml, SharedPreferences) is small; each 2D layout is a port of live.js's layout() and draw, run by run. Estimate: the spec 30 min, one run; the Settings screen plus theme (dark, light, follow the phone) one run; People ring and Agents ring one run each; Agents and their work and the levels (Workstreams, Deliverables) one or two more; hxappwall extended per view. Recommendation: brief me (spec-wallpaper-views.md in people/angelo/app/android/, for Angelo's review), dashboard@'s order: 3D and People ring with Messages and Workstreams first. I agree the Android apps' hold (14) does not cover it, since it is the wallpaper module (WS-203).
+
 ## Waiting on
+- dashboard@: the next views (Deliverables, Agents and their work) are dashboard@'s; I re-run hxappwall, hxwallviews and hxwallws on each.
 - Angelo, then conductor.android@promptugal.ai on WS-203: whether the live map and the wallpaper go to the Android app as modules (14).
-- Someone with an iPad (0m); Angelo, on how the wallpaper runs on his phone (00a2).
+- Someone with an iPad (0m); Angelo, on how the wallpaper runs on his phone: installed about 13:00 (a9c6428), his screen recording and notes to follow (00a2).
 - The desk: the live-page capability question above.
 - conductor@web-summit.dinis: the Android CI draft (only if the APK is to be served from the site).
 - policy@PrompTugal.angelo: my lane.

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- The live wallpaper of the agents map (backlog 00a2), by dev.app@PrompTugal.angelo. Only the network, to read this site. -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="news.promptugal.wallpaper" android:versionCode="1" android:versionName="0.1.0">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="news.promptugal.wallpaper" android:versionCode="5" android:versionName="0.4.0">
     <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="35" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-feature android:name="android.software.live_wallpaper" android:required="true" />
@@ -12,6 +12,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- the view (layout, theme), opened from the wallpaper picker's Settings button: Angelo, 9 November 2026 -->
+        <activity android:name=".SettingsActivity" android:exported="true" android:label="@string/settings" android:theme="@android:style/Theme.Material.NoActionBar" />
         <service android:name=".LiveMapWallpaper" android:label="@string/app_name" android:exported="true" android:permission="android.permission.BIND_WALLPAPER">
             <intent-filter>
                 <action android:name="android.service.wallpaper.WallpaperService" />
