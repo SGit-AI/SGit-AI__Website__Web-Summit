@@ -10,10 +10,10 @@ Written by research@PrompTugal.angelo, 9 November 2026, from backlog 0-URGENT-2 
 
 ## 1. The person: not identifiable from public pages
 
-- The only handle given is the one in his profile address, `usmananzaar`. I searched the open web for that exact handle and for the likely spellings of the name ("Usman Anzaar", "Usman Anzar") together with AI-agent authorization (2026-11-09). **Nothing public matched**: the results were generic name pages and unrelated people. I did not guess among them.
-- So I cannot confirm his name, role, company or what it sells. Writing any of that would be a guess presented as fact, so I leave it out.
-- What the question itself shows, and only that: he uses the vocabulary of authorization and access control ("deterministic authority checks", "upstream validation", "each node"). That fits a security or identity engineer, a founder or buyer in agent governance, or a researcher; the text cannot tell which. The topic is an active market in 2026 (public examples of products and papers about authorization layers for AI agents exist), so a vendor angle is possible but unproven.
-- **Ask for Angelo (one line):** open his public profile yourself and give the desk the name, role and company as he shows them; I will then check the company's own site and any public talks. Until then, answer the question, not the person.
+- I searched the open web for the handle in the reader's profile address and the likely spellings of the name, together with AI-agent authorization (2026-11-09). **Nothing public matched**: the results were generic name pages and unrelated people. I did not guess among them. (The handle and the name spellings are left out of this page by dev@'s review: a private person's details do not go on a public page; the desk has them from Angelo.)
+- So I cannot confirm the reader's name, role, company or what it sells. Writing any of that would be a guess presented as fact, so I leave it out.
+- What the question itself shows, and only that: the reader uses the vocabulary of authorization and access control ("deterministic authority checks", "upstream validation", "each node"). That fits a security or identity engineer, a founder or buyer in agent governance, or a researcher; the text cannot tell which. The topic is an active market in 2026 (public examples of products and papers about authorization layers for AI agents exist), so a vendor angle is possible but unproven.
+- **Ask for Angelo (one line):** open the reader's public profile yourself and give the desk the name, role and company as the profile shows them; I will then check the company's own site and any public talks. Until then, answer the question, not the person.
 
 ## 2. Existing resources that answer it
 
@@ -38,9 +38,9 @@ Links checked on 2026-11-09 (all returned 200 unless stated).
 Both, by design. Written down, not tested by me:
 - **Checked by code at the node:** who pushed a commit is checked against GitHub's record before an agent acts on it (`people/angelo/tools/pushed-by.mjs`); the lane check (check 21) lists writes outside an agent's area and refuses an undeclared one once enforcement is on; the site's gate refuses a bad build; signed messages name recipient, action and old value and are refused on replay; a secret lives only in its own agent's environment.
 - **Only a rule or a review (upstream, human or agent):** tier 3 needs Angelo's own words (a rule an agent follows, not a technical block); workers' branches are reviewed by dev@, dashboard@ or vault@ before reaching `dev`; policy@'s audits; fact-checkers.
-- **Say plainly:** the lane check's enforcement is described as "once policy@ turns it on"; I did not check today whether it is on. The ABP pages are explorer-phase: they observe, they do not block. The article must not claim every node is enforced.
+- **Say plainly:** the lane check's enforcement is described as "once policy@ turns it on"; I did not check today whether it is on. (dev@'s review, 9 November: it is on, `people/angelo/policy/lanes.json` has `"enforce": true`; the gate refuses an undeclared write outside a lane.) The ABP pages are explorer-phase: they observe, they do not block. The article must not claim every node is enforced.
 
 ## 4. What I could not check
 
-- Who he is (above). LinkedIn itself, his post thread and any comments: login-only, not read.
+- Who the reader is (above). LinkedIn itself, the post's thread and any comments: login-only, not read.
 - Whether the lane check is currently enforcing, and whether every "rule" above has an evidence page; the writer should read check 21 and `/abp/` before writing.

@@ -5,7 +5,7 @@ const { chromium, devices } = require('playwright')
 // picture inside the visible window, no sideways scroll, a tap on a dial stop turning it on, and a stop with no recorded run
 // saying so on the button. Run from the repository's root while it is served on 127.0.0.1:8765
 // (python3 -m http.server 8765):  node people/angelo/proposals/abp-live/tests/ipad.test.js <screenshot folder>
-const S = process.argv[2] || '.', U = 'http://127.0.0.1:8765/people/angelo/proposals/abp-live/player.htm'
+const S = process.argv[2] || '.', U = (process.env.BASE || 'http://127.0.0.1:8765') + '/people/angelo/proposals/abp-live/player.htm'
 ;(async () => { const b = await chromium.launch(); let ok = true; const fail = m => { ok = false; console.log('  FAIL', m) }
  for (const dn of ['iPad (gen 7) landscape', 'iPad (gen 7)', 'iPad Pro 11 landscape', 'iPad Pro 11']) for (const mode of ['loop', 'interactive']) {
   const c = await b.newContext({ ...devices[dn], serviceWorkers: 'block' })
