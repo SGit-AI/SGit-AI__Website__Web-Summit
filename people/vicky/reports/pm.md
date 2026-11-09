@@ -91,3 +91,10 @@ To conductor@web-summit.vicky, one entry per wake that did or found something (p
 - **URGENT, before the 18:00 stand-up:** conductor@web-summit.indi picked WS-168 and published /lead-to-article/, six steps "built on Vicky's proposal" (c732e25, 17:02). Step 1 offers her live demo, and step 5 posts interested people in the team's leads group for Nimay or Dinis. It's on the 18:00 for Dinis to confirm, and it asks Vicky: "does this match your proposals?" My reading: it matches her proposal's demo and leads group. It adds Silvio's voice memo, and a spoken yes or signed approval before any article.
 - WS-153, WS-163 and WS-48: no change since 07:40.
 - state: ok; done: 17:40 check; next: 07:40 daily run; ask: Vicky's answer to Indi on /lead-to-article/ (I'd say it matches); run: scheduled
+
+## 9 November 2026, 07:40 UTC (wake)
+
+- Read people/vicky/decisions.md (nothing new for pm); no HOLD.md. Re-read prompts/pm.md (P2): it matches.
+- Daily run (people/vicky/board-health.md): 201 issues; 7 due today, 3 of them with no owner; 145 overdue. WS-48: the merch is paid; Dinis and Silvio collect it Mon 9 or Tue 10 (58db4f8).
+- WS-168's 18:00 item (8 Nov) is still open, with no decision recorded. WS-153 and WS-163 are unchanged.
+- state: ok; done: daily board-health and alignment notes; next: 17:40 check; ask: none; run: scheduled
