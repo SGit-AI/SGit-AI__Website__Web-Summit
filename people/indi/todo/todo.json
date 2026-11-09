@@ -1,6 +1,6 @@
 {
  "about": "Indi's list of everything left to do, drawn as the infographic at /people/indi/todo/. The Command Centre half is rebuilt from the board and the stand-up items at every release; this file adds a next step per issue and the tasks that are not on the board. Kept by dashboard@web-summit.indi at each run, from 4 November at Indi's word (first written by synthetic@web-summit.indi from the board, Indi's briefs 1 to 8 and that day's git log).",
- "written": "2026-11-09T07:40Z",
+ "written": "2026-11-09T12:40Z",
  "done_for_indi": {
   "WS-01": "Done: you are at L4 (people/indi/onboarding.json).",
   "WS-02": "Done: you are at L4.",
@@ -41,20 +41,26 @@
   "WS-60": "Daniela's website and learning environment, with Angelo.",
   "WS-121": "Start your vault agent; the SG/Send access token is in your environment already.",
   "WS-148": "Ask Dinis in person today, in one sentence, to confirm the token rules (how your helpers save on cost) for the whole team. Stand-ups now only happen when someone calls one.",
-  "WS-137": "Your dev helper's plan now uses three companies (GetVocal AI, PolyAI, Feedzai) and has two questions for Dinis on tonight's stand-up.",
+  "WS-137": "Your dev helper made company pages for GetVocal AI, PolyAI and Legora for the demo. You asked Angelo three yes-or-no questions about the side-by-side demo, wanted by Tuesday. Waiting on Angelo.",
   "WS-155": "Picking this up today (your word, 6 Nov): check the cards, round 4, at https://web-summit.sgit.ai/cards/#r4. Say if Dinis's designer's 4:18 am redesign covers your designer's fixes.",
-  "WS-166": "Overdue since Sunday: scan your key's QR code with each phone and iPad you will carry. The summit opens tonight at 6 pm.",
-  "WS-170": "Still waiting on Dinis (checked Monday 7:30 am): your GitHub name is not in the team list yet. He is back online, so ask him in person.",
+  "WS-166": "Still not done: scan your key's QR code with each phone and iPad you will carry. The summit opens tonight at 6 pm.",
+  "WS-170": "Still waiting on Dinis (checked Monday 12:30 pm): your GitHub name is not in the team list yet. Ask him in person.",
   "WS-171": "Not built yet when checked at 14:30 UTC on 6 Nov: it is due today. Ask factory@'s chat for the first page, then read it and say if it makes sense.",
   "WS-177": "Still to run: paste your conductor's prompt into your synthetic helper's chat. Your accountant suggests the cheaper Sonnet or Haiku models for it. The outreach emails wait on reviews this weekend.",
-  "WS-168": "Ask Dinis in person today to read the 'lead to article' page. Your conductor now takes your voice memos after each summit chat."
+  "WS-168": "Vicky reviewed the 'lead to article' page: the six steps work, keep the title. She suggests doing interviews on the spot at the stand. Read her note and say if you want that."
  },
  "other": [
   {
-   "group": "Waiting on you",
-   "title": "Your prompt helper's ten questions",
-   "detail": "Each one takes a word. Reply with numbers, like '1 yes, 2 no'. Question 3 (the Team app brief for Dinis) is the most urgent.",
-   "source": "brief 18"
+   "group": "Waiting on others",
+   "title": "Angelo: three answers on the side-by-side demo",
+   "detail": "May we build on his engine, may his helper build the two-column view, and may it run on his stand laptop. Wanted by Tuesday 10 Nov.",
+   "source": "your ask to Angelo, Monday midday"
+  },
+  {
+   "group": "Your agents",
+   "title": "Your infographic helper is added",
+   "detail": "It makes plain-word picture pages when you ask, and tests each one on a stranger first. No schedule: it works when you ask.",
+   "source": "your yes to question 10, Monday"
   },
   {
    "group": "Your agents",

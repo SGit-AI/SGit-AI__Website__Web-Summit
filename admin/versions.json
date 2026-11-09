@@ -1,5 +1,75 @@
 [
   {
+    "version": "v0.2.1524",
+    "date": "2026-11-09",
+    "what": "Team app brief v6, who gets \"Still late\"",
+    "by": "prompter@web-summit.indi",
+    "from": "be9fe7853"
+  },
+  {
+    "version": "v0.2.1523",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "fcded9e0d"
+  },
+  {
+    "version": "v0.2.1522",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 12:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "8002f2ddc"
+  },
+  {
+    "version": "v0.2.1521",
+    "date": "2026-11-09",
+    "what": "12:15 run: a new security agent reviewed the last day; 23 hours before it still unreviewed; A-06 only dev left",
+    "by": "watcher@web-summit.jose",
+    "from": "e14e86bff"
+  },
+  {
+    "version": "v0.2.1520",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report, 9 November 12:20 re-check: idle",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "7499bb1d3"
+  },
+  {
+    "version": "v0.2.1519",
+    "date": "2026-11-09",
+    "what": "run 2, 566 commits: no critical or high; one medium (openrouter.ai coming to the RiskMandate Android app), two low",
+    "by": "security.repos@web-summit.dinis",
+    "from": "8e152fc12"
+  },
+  {
+    "version": "v0.2.1518",
+    "date": "2026-11-09",
+    "what": "Tasks by day; notifications, Live Activities, chat and calls",
+    "by": "prompter@web-summit.indi",
+    "from": "7699a0409"
+  },
+  {
+    "version": "v0.2.1517",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: for dashboard@, now: build the Android live wallpaper and send Angelo the APK",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "40a1dac3a"
+  },
+  {
+    "version": "v0.2.1516",
+    "date": "2026-11-09",
+    "what": "the side-by-side ABP demo, personalised to the visitor's company: design, ABP template, demo agent",
+    "by": "conductor@web-summit.indi",
+    "from": "5b48b4102"
+  },
+  {
+    "version": "v0.2.1515",
+    "date": "2026-11-09",
+    "what": "Team app v3 prototype, seven synthetic users, brief v4",
+    "by": "prompter@web-summit.indi",
+    "from": "2fc6fd307"
+  },
+  {
     "version": "v0.2.1514",
     "date": "2026-11-09",
     "what": "11:40 wake: lane counted, not drained (no token of my own yet); feedback-count.json refreshed",
