@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1438",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "9813be82a"
+  },
+  {
     "version": "v0.2.1437",
     "date": "2026-11-09",
     "what": "reviewer@PrompTugal.vicky: overnight backlog: C4AIL, Cerebras, Cognizant, Neo, Persona done (v0.1.762)",
