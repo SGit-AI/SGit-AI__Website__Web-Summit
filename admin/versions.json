@@ -1,5 +1,40 @@
 [
   {
+    "version": "v0.2.1464",
+    "date": "2026-11-09",
+    "what": "journalist-connections@PrompTugal.vicky: report, scheduled run 05:45, idle",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "06e3fc237"
+  },
+  {
+    "version": "v0.2.1463",
+    "date": "2026-11-09",
+    "what": "curator@PrompTugal.vicky: 05:30 run, desk review of the Road 2 Web Summit 78, S31 ready",
+    "by": "curator@PrompTugal.vicky",
+    "from": "3367413d4"
+  },
+  {
+    "version": "v0.2.1462",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 05:20 run, nothing to route, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "4b092c2c5"
+  },
+  {
+    "version": "v0.2.1461",
+    "date": "2026-11-09",
+    "what": "programme@PrompTugal.vicky: 05:00 run: the opening-day agenda live, the shortlist re-checked",
+    "by": "programme@PrompTugal.vicky",
+    "from": "f93554a58"
+  },
+  {
+    "version": "v0.2.1460",
+    "date": "2026-11-09",
+    "what": "04:50 orchestration wake: two films for Silvio, run logs, the newsroom's dark switch",
+    "by": "conductor@web-summit.silvio",
+    "from": "7725da861"
+  },
+  {
     "version": "v0.2.1459",
     "date": "2026-11-09",
     "what": "two new films made and sent to Silvio: four real cases with the gap closed, and PrompTugal.news",

@@ -2,14 +2,14 @@
 title: "dev.abp@PrompTugal.angelo: state"
 summary: What dev.abp@PrompTugal.angelo knew at the end of its last run. Short, rewritten each run; the commits are the history.
 ---
-**Last run:** 9 November 2026, about 00:37 to 00:50 UTC (scheduled). Acted on Angelo's five decisions (dev@'s f8000851, the desk's a8b257b and 85d2ac7, all pushed from riskmandate-angelo): the follow-up and the install, five rungs, live on his laptop in a clean environment with the guard, the smaller model only, kept to us.
+**Last run:** 9 November 2026, about 04:36 to 04:55 UTC (scheduled). No new item for me since 00:50 (dev@'s 080a6945 brought the step view and the live command onto dev). The five decisions' build is done, so I took the part of 0m that could move alone.
 
-**This run:** (1) ad753bb: `steps.htm`, the step view, from 30 new recorded runs at rungs 0 to 4 (`reach-runs.json`, made by `stories/reach/steps.mjs`, labels only); storyboard section 9. (2) 79f0260: `stories/reach/live.mjs`, the live command (127.0.0.1 only, "Run it live now"), and rehearsal.md section 7, the clean-environment checklist. Tests: steps, live (a real run), offline and iPad: all PASS.
-
-**Note for dev@:** this run's first rebase flattened the merge of dev into this branch, so `workers/dev.abp` now carries copies of 61 dev commits. Its tree differs from dev only in my files, so a one-commit review still works. Next time I merge dev, I won't rebase it.
+**This run:** `steps.htm` made ready for the stand's iPads as `player.htm` already was: Home Screen tags (icon "ABP steps"), touch-action on every control, and the loop (`?loop=1`) asking to keep the screen on. New test `tests/ipad-steps.test.js` (four iPad profiles, loop and view): PASS; steps, iPad (player) and offline tests: PASS. `rehearsal.md`: the step view's loop address added, two stale lines fixed ("the live command is not built"; the reach results "not on screen yet").
 
 **Next, in order:**
-1. Angelo's view of the step view's look, and of rung 4 (it changes nothing visible in these two stories: storyboard section 9, question (b)). If he wants a third short story where content is the barrier that matters, spec it first.
-2. 0m: a try on a real iPad, and the live command on his laptop (Safari and his machine are not in these sessions).
+1. Angelo's view of the step view's look, rung 4 (storyboard section 9, question (b)), and which loop goes on the iPads (rehearsal.md, top). If he wants a third short story where content is the barrier that matters, spec it first.
+2. 0m: a try on a real iPad (Safari), and the live command on his laptop; neither is in these sessions.
 
-**Waiting on Angelo** (through the desk): the step view's look; rung 4; the laptop itself (tier 3); his look at the final version before anything leaves the team (decision 5).
+**Waiting on Angelo** (through the desk): the three questions above; the laptop itself (tier 3); his look at the final version before anything leaves the team (decision 5).
+
+**Branch note:** from this run I merge dev into `workers/dev.abp` and never rebase a merge.
