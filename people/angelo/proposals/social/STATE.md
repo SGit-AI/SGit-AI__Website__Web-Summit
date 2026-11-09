@@ -1,8 +1,8 @@
 # social-media@PrompTugal.angelo: state
 
-Last run: 8 November 2026 (first). Branch: workers/social-media.
+Last run: 9 November 2026, 16:50 UTC. Branch: workers/social-media.
 
-- Done: backlog 0h, today's two posts checked against the live pages and corrected (posts.md).
-- Open, for Angelo: how many agents to say (111 vs "dozens"); what his LinkedIn shows today.
-- Next: profile.md and company-page.md from README.md; Monday 9's reshare; draft the post for any piece by or about Angelo that goes live.
-- Waiting on: nothing for the posts. Posting is Angelo's own.
+- Done: posts for Mon 9 to Thu 12 checked against live pages (posts.md); profile.md and company-page.md written.
+- Open, for Angelo: 93 (article) or "over a hundred" across posts; may Thursday's post name Jose; what his LinkedIn shows today; which company-page admin ask to take to Dinis and Nimay.
+- Next: a post for any piece by or about Angelo that goes live; after the summit, the profile's clean-up list.
+- Waiting on: nothing for the drafts. Posting is Angelo's own.
