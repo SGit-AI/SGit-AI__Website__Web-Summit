@@ -19,7 +19,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** the summit opens tonight at 6 pm. First, your key on each phone and iPad (overdue since Sunday). Then your prompt helper's ten one-word questions. Dinis is back today: ask him in person about your GitHub name, the token rules and the 'lead to article' page. Today's LinkedIn post is drafted. Everything else is on [your to-do list](todo/index.html).
+**Right now:** the summit opens tonight at 6 pm. Your key on each phone and iPad is still not done. Ask Dinis in person about your GitHub name. Angelo has three yes-or-no questions from you about the side-by-side demo. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 
