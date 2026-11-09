@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1558",
+    "date": "2026-11-09",
+    "what": "run 4, 200 commits: one HIGH (Android promote.yml trusts the default branch, which is dev), not live yet",
+    "by": "security.repos@web-summit.dinis",
+    "from": "54d442b15"
+  },
+  {
     "version": "v0.2.1557",
     "date": "2026-11-09",
     "what": "a detailed venue map in the Team app: Mapbox, Apple Maps, IMDF or MapLibre (Indi's question)",
