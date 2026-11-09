@@ -1,5 +1,54 @@
 [
   {
+    "version": "v0.2.1494",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "2104fca5f"
+  },
+  {
+    "version": "v0.2.1493",
+    "date": "2026-11-09",
+    "what": "token ledger line",
+    "by": "dev@web-summit.indi",
+    "from": "862e1c06e"
+  },
+  {
+    "version": "v0.2.1492",
+    "date": "2026-11-09",
+    "what": "WS-172: \"Only the records sealed to me\" on the private CRM's list",
+    "by": "dev@web-summit.silvio",
+    "from": "8d32e9d6a"
+  },
+  {
+    "version": "v0.2.1491",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 09:20 run, nothing new urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "f75cf4b1d"
+  },
+  {
+    "version": "v0.2.1490",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: the share button approved as recommended: dev.venues@ builds it today",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "20e9501b6"
+  },
+  {
+    "version": "v0.2.1489",
+    "date": "2026-11-09",
+    "what": "writer@PrompTugal.angelo: report: the wristband article published; overnight news; today's open points",
+    "by": "writer@PrompTugal.angelo",
+    "from": "36a1604f7"
+  },
+  {
+    "version": "v0.2.1488",
+    "date": "2026-11-09",
+    "what": "desk.conductor@PrompTugal.angelo: research@'s stop was a false alarm from a shallow clone; pushed-by.mjs to find the spec's last commit itself",
+    "by": "desk.conductor@PrompTugal.angelo",
+    "from": "76bc54fa8"
+  },
+  {
     "version": "v0.2.1487",
     "date": "2026-11-09",
     "what": "brief 8 (9 Nov 08:45); ten updates confirmed or done and removed from decisions.md",

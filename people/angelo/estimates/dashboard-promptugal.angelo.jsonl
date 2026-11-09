@@ -38,3 +38,5 @@
 {"event": "done", "at": "2026-11-09T06:45:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 06:40", "effort_min": 4, "elapsed_min": 4, "runs": 1, "note": "05:40 run committed nothing"}
 {"event": "start", "at": "2026-11-09T07:41:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 07:40", "what": "review dev.map's lvrepo fix; dev.work and dev.app status lines", "est_effort_min": 8, "est_elapsed_min": 8, "confidence": "high"}
 {"event": "done", "at": "2026-11-09T07:50:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 07:40", "effort_min": 9, "elapsed_min": 9, "runs": 1, "note": ""}
+{"event": "start", "at": "2026-11-09T09:41:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "wallpaper APK", "what": "build the Android live wallpaper with build.sh and send Angelo the APK (SDK installed in the session)", "est_effort_min": 15, "est_elapsed_min": 15, "confidence": "medium"}
+{"event": "done", "at": "2026-11-09T09:55:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "wallpaper APK", "effort_min": 13, "elapsed_min": 14, "runs": 1, "note": "build.sh worked first time; with the 08:40 and 09:40 reviews (status lines only)"}

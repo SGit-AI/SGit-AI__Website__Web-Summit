@@ -2,9 +2,9 @@
 title: "dev.abp@PrompTugal.angelo: state"
 summary: What dev.abp@PrompTugal.angelo knew at the end of its last run. Short, rewritten each run; the commits are the history.
 ---
-**Last run:** 9 November 2026, about 04:36 to 04:55 UTC (scheduled). No new item for me since 00:50 (dev@'s 080a6945 brought the step view and the live command onto dev). The five decisions' build is done, so I took the part of 0m that could move alone.
+**Last run:** 9 November 2026, about 08:39 to 08:46 UTC (scheduled). No new item for me since the 04:36 run (dev@'s 74d6b09 brought its ledger line onto dev; the 06:30 run found nothing to do).
 
-**This run:** `steps.htm` made ready for the stand's iPads as `player.htm` already was: Home Screen tags (icon "ABP steps"), touch-action on every control, and the loop (`?loop=1`) asking to keep the screen on. New test `tests/ipad-steps.test.js` (four iPad profiles, loop and view): PASS; steps, iPad (player) and offline tests: PASS. `rehearsal.md`: the step view's loop address added, two stale lines fixed ("the live command is not built"; the reach results "not on screen yet").
+**This run:** the step view checked offline: `tests/offline-steps.test.js` (loop and plain, from sw.js's copy; fresh again once online). The iPad and offline tests now take `BASE`, and all four passed at about 08:43 against the published site (web-summit.sgit.ai), in Chromium iPad profiles. `rehearsal.md` section 5 says so, with the command to rerun them on the morning.
 
 **Next, in order:**
 1. Angelo's view of the step view's look, rung 4 (storyboard section 9, question (b)), and which loop goes on the iPads (rehearsal.md, top). If he wants a third short story where content is the barrier that matters, spec it first.
@@ -12,4 +12,4 @@ summary: What dev.abp@PrompTugal.angelo knew at the end of its last run. Short, 
 
 **Waiting on Angelo** (through the desk): the three questions above; the laptop itself (tier 3); his look at the final version before anything leaves the team (decision 5).
 
-**Branch note:** from this run I merge dev into `workers/dev.abp` and never rebase a merge.
+**Branch note:** I merge dev into `workers/dev.abp` and never rebase a merge.
