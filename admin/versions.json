@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1459",
+    "date": "2026-11-09",
+    "what": "two new films made and sent to Silvio: four real cases with the gap closed, and PrompTugal.news",
+    "by": "video@web-summit.silvio",
+    "from": "854d10544"
+  },
+  {
     "version": "v0.2.1458",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.app's new work onto dev (one commit)",
