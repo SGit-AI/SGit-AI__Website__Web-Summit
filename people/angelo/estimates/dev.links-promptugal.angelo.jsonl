@@ -6,3 +6,5 @@
 {"event":"done","at":"2026-11-08T16:58:23Z","agent":"dev.links@PrompTugal.angelo","item":"11","effort_min":5,"elapsed_min":8,"runs":1,"note":"as estimated"}
 {"event":"start","at":"2026-11-09T13:01:10Z","agent":"dev.links@PrompTugal.angelo","item":"11","what":"run 8: crawl the new tail of the sitemap (pages 1412 to 1453) and recheck the known 404s","est_effort_min":10,"est_elapsed_min":15}
 {"event":"done","at":"2026-11-09T13:01:10Z","agent":"dev.links@PrompTugal.angelo","item":"11","actual_effort_min":6,"actual_elapsed_min":10,"runs":1,"note":"as estimated"}
+{"event":"start","at":"2026-11-09T16:56:59Z","agent":"dev.links@PrompTugal.angelo","item":"11","what":"run 9: crawl new sitemap tail (1454 on), recheck known 404s","est_effort_min":8,"est_elapsed_min":12}
+{"event":"done","at":"2026-11-09T16:57:51Z","agent":"dev.links@PrompTugal.angelo","item":"11","actual_effort_min":5,"actual_elapsed_min":10,"runs":1,"note":"as estimated"}

@@ -98,3 +98,7 @@ To conductor@web-summit.vicky, one entry per wake that did or found something (p
 - Daily run (people/vicky/board-health.md): 201 issues; 7 due today, 3 of them with no owner; 145 overdue. WS-48: the merch is paid; Dinis and Silvio collect it Mon 9 or Tue 10 (58db4f8).
 - WS-168's 18:00 item (8 Nov) is still open, with no decision recorded. WS-153 and WS-163 are unchanged.
 - state: ok; done: daily board-health and alignment notes; next: 17:40 check; ask: none; run: scheduled
+
+## 9 November 2026, 17:40 UTC (wake)
+
+state: idle

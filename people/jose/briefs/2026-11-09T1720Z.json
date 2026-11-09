@@ -1,0 +1,56 @@
+{
+  "number": 19,
+  "date": "9 November 2026",
+  "kicker": "Web Summit 2026 · Jose's conductor brief",
+  "title": "Summit day one, evening: four answers would unblock your agents",
+  "when": "9 November 2026, 17:20 UTC (scheduled wake; since brief 18, 07:26 UTC)",
+  "by": "conductor@web-summit.jose",
+  "headline": "A quiet day for your agents: most are idle or waiting on you. Page views have been lost all day (all five lanes full since last night). Dinis has put the team's access token in the WhatsApp group (13:40); one word from you and I drain. The paste texts for dev's and the helper's fresh sessions are ready in my 16:40 reply.",
+  "stats": [
+    {"n": "5,000", "label": "page views waiting, all lanes full all day: new views lost"},
+    {"n": "1", "label": "token in the team's WhatsApp group (Dinis, 13:40)"},
+    {"n": "7 of 8", "label": "wake pointers saved; dev's left"},
+    {"n": "0", "label": "commits by your agents since 12:24"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "🔑 The token: say \"drain\", or set it and start a fresh conductor",
+      "detail": "If the WhatsApp token matches SG_SEND_ACCESS_TOKEN in the environment your conductor's session runs in, say \"drain\": I drain all five lanes at once and every hour, and tell vault and crm they can push. If it differs, put it in that environment's settings (and vault's and crm's, if you want them to push) and I write you a fresh-conductor text (this session cannot see changed settings).",
+      "options": ["drain", "it differs: fresh conductor"],
+      "recommend": "Compare tonight; it ends a day of lost page views."
+    },
+    {
+      "id": "2",
+      "ask": "🔄 Fresh sessions for dev and the helper (two pastes)",
+      "detail": "The texts are in my 16:40 reply: each new session reads its handover, follows its kit start prompt and creates its own scheduled task, as the designer did; dev's starts the schedule trial. Then delete the two old tasks.",
+      "options": ["tonight", "tomorrow morning"],
+      "recommend": "Tomorrow morning before the stand, 5 minutes."
+    },
+    {
+      "id": "3",
+      "ask": "✅ Two one-word answers: the board's data (row 5) and JW1",
+      "detail": "\"Yes to row 5\": I give the designer a task to apply its prepared change. JW1 is stuck in fact-check with no newsroom reviewer: keep your writer's no-publish rule and ask Vicky's reviewer to take it (my advice), or let your writer publish after your reviewer passes it (Dinis's decisions of 10:55, items 6 and 10, allow it).",
+      "options": ["yes to row 5; keep the rule", "yes to row 5; let it publish", "after the summit"],
+      "recommend": "Yes to row 5; keep the rule until after the summit."
+    }
+  ],
+  "you_asked": [
+    {"at": "9 Nov, about 16:30", "said": "Go through the rest of the agents", "done": "A round: watcher, vault and designer active; dev, helper, automation and dashboard idle; crm and sales-coach on demand; the writer's JW1 in fact-check", "where": "this session", "status": "done"},
+    {"at": "9 Nov, about 16:40", "said": "What can you do to unblock them", "done": "Paste texts for dev's and the helper's fresh sessions, and three one-word answers (this brief's asks)", "where": "this session", "status": "done"},
+    {"at": "9 Nov, about 11:50", "said": "Check what dinis says about this", "done": "Dinis's decision (10:55) and his conductor's note (13:40): the token is in the team's WhatsApp group; ask your person; never commit it", "where": "3bfbc8c7, c2fec20f", "status": "done"}
+  ],
+  "sections": [
+    {
+      "title": "For your interview: today, summit day one",
+      "items": [
+        "What your agents did: the designer gave my row its amber rule; the watcher saw Dinis's new security agent review a day of commits; vault counted its lane; the others were idle.",
+        "What Dinis decided: the token via the WhatsApp group; everyone trusted to push and publish; outreach parked; his security agent every two hours; contributors under CC BY 4.0.",
+        "Still open: the token; dev's and the helper's fresh sessions; row 5; JW1; which app for your agents (row 31); vault's passphrase.",
+        "What you learned at the stand today, in your words."
+      ]
+    }
+  ],
+  "next": ["Every hour to 21:20, then 07:20 tomorrow, summit day two."],
+  "sources": ["telemetry_drain.py --dry (17:20)", "git log origin/dev since 12:24", "3bfbc8c7, c2fec20f (Dinis's conductor)", "your Drive folder (titles only: no new files)"]
+}

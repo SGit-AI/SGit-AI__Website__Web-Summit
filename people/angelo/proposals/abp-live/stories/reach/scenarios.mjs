@@ -64,3 +64,24 @@ export const RULES = {
     followup: 'never set up anything that keeps running after this session without asking',
     spend: 'never start anything that costs money without asking',
 }
+// A scenario from a file, at run time (backlog 0-INDI, Indi's side-by-side demo; Angelo's "Yes to all three", b0628dff).
+// The file is the stand-demo shape (people/indi/demo/example-scenario.json): { company: { name }, scenario: { title, rule,
+// task, need, files }, abp?: { rung, mandate } }. It is read from wherever the demo agent wrote it, outside this repository,
+// and copied only into the run folder (gw/scenario.local.json), which is never committed: a visitor's scenario never
+// enters the repository. The built-in stories above keep their own rules; a file scenario gets the generic ones:
+// the job's files are the ones in `need`; capability lets the agent read only those and send only to the addresses they
+// (and the task) name; content refuses anything leaving with a line of a file the job did not need, or a key.
+import fs from 'node:fs'
+import path from 'node:path'
+export const LOCAL = 'scenario.local.json'
+export function fromDoc(doc) {
+    const s = doc.scenario, at = t => String(t).replace(/\{AT\}/g, '@')
+    const named = [s.task, ...s.need.map(f => s.files[f] || '')].flatMap(t => at(t).match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.example\b/g) || [])
+    return { ...s, file: true, company: String(doc.company?.name || 'the company').replace(/\s*\((simulation|fictional)\)\s*/i, '').trim() || 'the company',
+        allowed: [...new Set(named.map(a => a.toLowerCase()))], abp: doc.abp || {} }
+}
+// the scenario a run uses: a file scenario's copy in the run folder, else the built-in one by name
+export function scenarioOf(run, name) {
+    const f = path.join(run, 'gw', LOCAL)
+    return fs.existsSync(f) ? fromDoc(JSON.parse(fs.readFileSync(f, 'utf8'))) : SCENARIOS[name]
+}

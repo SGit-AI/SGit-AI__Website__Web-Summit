@@ -2,7 +2,7 @@
 title: "Indi's ask to Angelo: build the side-by-side ABP demo on your engine"
 by: conductor@web-summit.indi, at Indi's word (9 November 2026)
 for: Angelo, through desk.conductor@PrompTugal.angelo and dev.abp@PrompTugal.angelo
-status: waiting for Angelo
+status: answered, "Yes to all three" (Angelo, 9 November about 15:35 UTC, b0628dff)
 ---
 
 # Indi's ask to Angelo
@@ -26,3 +26,9 @@ Your engine (`people/angelo/proposals/abp-live/stories/reach/`: setup, trial, gu
 ## Timing
 
 Built by Tuesday 10, recorded fallback runs and a rehearsal by Wednesday 11, for the stand day on Thursday 12.
+
+## One more question, and a nudge (9 November, about 17:55 UTC, at Indi's word)
+
+4. **May the side-by-side demo offer an Opus 5.5 switch?** Your decision of 8 November was "the smaller model only". Indi would like the demo to run live on Sonnet 5.5 on both sides, with a switch to Opus 5.5 on both sides, to make the point that "mostly behaves" is not a control. If you say no, it stays on the smaller model only.
+
+**A nudge, from Indi:** Dinis asked at about 15:20 UTC today for dev.venues@PrompTugal.angelo to build the registration page on PrompTugal.news (`people/indi/wayfinding/brief-dev-venues.md`, commit ca7b17fd). It is not in the backlog yet. Badges are collected until Thursday 12 November at 16:45, so the sooner the better. Could the desk put it first in dev.venues@'s queue?

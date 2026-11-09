@@ -108,7 +108,9 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         // the lit layer and its glow: a slot per pair the first time it moves
         for (Graph.Line e : g.lines.values()) {
             if (e.slot >= slotsWritten) { writeSlot(e); slotsWritten = e.slot + 1; }
-            float a = (float) Math.min(1, e.op * 1.05), ga = a * (light ? 0.22f : 0.3f);
+            // as bright as during a burst, all the time (Angelo, 9 November: "Can we have the glowy version all the time?"): a line
+            // lit by the steady flow (op 0.75) draws near full, as a line lit by a real exchange (0.95) does
+            float a = (float) Math.min(1, e.op * 1.25), ga = a * (light ? 0.22f : 0.3f);
             for (int j = e.slot * Graph.SEG * 2, n = j + Graph.SEG * 2; j < n; j++) lAl.put(j, a);
             for (int j = e.slot * (Graph.SEG + 1), n = j + Graph.SEG + 1; j < n; j++) gAl.put(j, ga);
         }
@@ -129,7 +131,11 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         int k = 0, cap = Graph.MAXDOTS * (Graph.TRAIL + 1);
         for (Graph.Fly f : g.fly) {
             if (k >= cap - Graph.TRAIL - 1) break; Graph.Node a = f.from;
-            if (f.flow) { g.curve(a, f.to, Math.max(0, f.u), tmp); dot(k++, a, 13, 0.5 + 0.45 * Math.sin(Math.PI * f.u)); continue; }
+            // the steady flow drawn as a real exchange is (a bright glowing head and a short trail), a little smaller, so the
+            // graph glows between bursts too; real exchanges keep the larger head
+            if (f.flow) { double fa = 0.55 + 0.4 * Math.sin(Math.PI * f.u);
+                for (int j = 0; j <= 3; j++) { g.curve(a, f.to, Math.max(0, f.u - j * 0.025), tmp); dot(k++, a, j > 0 ? 20 - j * 3.5 : 34, j > 0 ? fa * 0.6 * (1 - j / 4.0) : fa); }
+                continue; }
             for (int j = 0; j <= Graph.TRAIL; j++) { g.curve(a, f.to, Math.max(0, f.u - j * 0.025), tmp); dot(k++, a, j > 0 ? 26 - j * 3.5 : 48, j > 0 ? 0.65 * (1 - j / (double) (Graph.TRAIL + 1)) : 1); }
         }
         glow(light); points(1, dPos, dCol, dSz, dAl, k);
