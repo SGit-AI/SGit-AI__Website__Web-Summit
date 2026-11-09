@@ -22,6 +22,7 @@ Eighteenth run, 9 November 2026 (06:21 to about 07:10 UTC). No new commits For: 
 - For policy@: my lane leaves out this STATE file (people/angelo/map/**); dashboard@'s review carries it onto dev.
 
 ## Last run
+Run 20, 9 November 10:15 to about 10:25 UTC: nothing new For: dev.map@ since run 19 (only dashboard@'s review e07215db, and dev@'s snapshot refreshes in people/angelo/app/), no backlog change; every item built or waiting (Open, above). Ledger line only; unsigned run log.
 Run 19, 9 November 08:19 to about 08:30 UTC: nothing new For: dev.map@ since run 18 (only dashboard@'s review, 1538c093, bringing run 18 onto dev) and no backlog change; every item is built or waits on Angelo, the desk or dev.work@ (Open, above). Ledger line only; unsigned run log.
 Run 18 ended about 07:10 UTC: 9883ae34 (lvrepo) and its STATE on workers/dev.map.
 Pushing: the branch already holds workers/dev.map (the join), so push straight away; never rebase on it.
