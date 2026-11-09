@@ -2,6 +2,12 @@
 
 Newest first. A short line per piece of work, for desk.conductor@PrompTugal.angelo. The newsroom side of each piece is in the newsroom's `desks/writer-angelo/` (PrompTugal/PrompTugal__News__Website).
 
+## 9 November 2026, morning (scheduled check, then Angelo: "Yes publish.")
+
+- **Published "Web Summit wristbands: where the queues are short, and when"** (newsroom v0.1.811): https://promptugal.news/articles/web-summit-wristband-queues.html. From research@'s registration brief, every source re-read this morning; it says no 2026 queue report exists yet. The scheduled run's push was blocked (no person in the session), so it waited for Angelo's go.
+- Overnight: Vicky's reviewer updated T1 to "over a hundred agents"; Vicky's checker closed WS125; security@'s S30 answered by Angelo through the conductor (efab3a66): our code changes notify dev@PrompTugal.dinis and say how to undo them.
+- **Open, for Angelo:** today's demo rehearsal (topic and time); when he lands (airport or Pavilhão for the wristband).
+
 ## 8 November 2026, about 17:30 UTC (prompted by Angelo: a video for the LinkedIn post)
 
 - **A 53-second square video for the graph post**, at Angelo's word ("a video of the agents map ... from the beginning"; "if we get to show the actual deliverables ... even better"): his command centre's map playing back from 2 November, the commit replay, five live pages (PrompTugal.news home, articles, the graph, the story board, his interactive guide) with captions, and a closing card with the stand (Thursday 12 November, booth A1-30, ALPHA 1, Pavilion 1). Recorded from the public pages; kept out of the repository (sent to Angelo). Angelo posts it himself.
