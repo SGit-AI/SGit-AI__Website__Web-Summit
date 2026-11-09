@@ -16,19 +16,15 @@ Backlog 0f2 (the work view) and 0f3 (the WhatsApp clip). **Approved** by Angelo 
 - `people/angelo/app/work-replay.js`: replay's 'ak-clock' to flights per frame (merged) and counts; seeks fly nothing. Test `wvreplay` (node).
 - **Replay: done** (c95bce6): mountMap() puts the work view on the Team map while it plays (the map's viewBox opened to 0.84 plus a 7% margin, squares on that rim, deliveries.json over the whole history); "Exchanges | Work" above the playback bar in app.js drawCollab, r_work=1 in the address. Test wvrp.
 
-## Built this run (14th)
-- be2077cb: 0c4 (5): each label in a pill beside its own square (outside with the full name where it fits; else outside short; else inside the rim, short, cut to fit: a phone); no rows, no leaders. Every destination its own mark (site window, research magnifier, infra rack, app phone, drafts pencil). work.js DEST_SHORT. Test wvdraw checks it.
-- b62ea65e: 0c4 (5): the three-way switch in the pop-out (live.js o.onPop, two lines under the five steps; app.js popSync). Test wvpop.
-
 ## Open
-- **Branch:** this run rebased once onto workers/dev.work and so carried 36 copies of dev's commits (be2077cb's parents); content equals dev, harmless for a one-commit review. Next runs: merge origin/dev, never rebase.
+- **Waiting on dashboard@'s review:** be2077cb and b62ea65e (0c4 (5)), not on dev at 00:50.
+- **Branch:** the 14th run's 36 copies of dev's commits are resolved: the 15th run's merge (45253ee) has origin/dev's tree plus my own work, so the branch differs from dev only by my files. Merge origin/dev, never rebase.
 - **Seen:** in a 440 px pop-out live.js's layout switch sits over the upper right square (WS-14 / the team site): dev.map@'s furniture, told in b62ea65e.
 - **Lane:** policy@ turned check 21 into a FAIL; lanes.json still has `writes: []` for me. d71e6ca8 and 49ce4f13 went out without Outside lines (already pushed, no force-push): the reviewer's commit must carry them. From 423f113f every commit of mine carries its own Outside lines. Gate my own range: LANE_RANGE=<my first commit of the run>^..HEAD.
 - **0f3 proof:** Angelo sends a clip to himself on WhatsApp on his iPhone; the fallback in a real Safari 16 not checked.
 - **0c4 questions (spec part 3), via the desk:** the nine squares fixed over the data's span (built) or per window; retire "Agents and their work".
-- Polish, from dashboard@'s 2e0eac44 (material): on the Team map the name pills use the rows layout with long leaders; try beside the squares at 1280.
-- Testing: merge origin/dev into the branch at the start of a run (this run: 4d9369f).
-- Other repositories (the apps): `deliveries-repos.json` from the snapshot, later.
+- Testing: merge origin/dev into the branch at the start of a run (15th run: 45253ee).
+- **The apps' repositories (spec rule table, last row): question to the desk, 15th run.** Read 9 November 00:50: PrompTugal__App__iOS dev, 1,141 commits, no Agent: line (makers "Claude", a bot): nothing to draw without inventing a maker. PrompTugal__App__Android dev, 71 commits, 68 with Agent: <role>@promptugal.ai (conductor.android, security.android, release.android, play.android ...), For: Dinis: not <role>@PrompTugal.<person>, so no roster person; repos-snapshot.mjs drops them too (0 events). Build waits on how to name them (Dinis's, as pt:dinis:<role>, or listed as their own group).
 
 ## Last run
-Fourteenth run, 8 November 23:52 to 9 November about 00:20 UTC: the desk's f12844f8 (pushed by riskmandate-angelo, checked) gave 0c4 (5); all three parts built. Two commits on workers/dev.work; wvdraw, wssw, wvsw, wvpop, wvrp, wsrp, clipbtn, wvreplay, wvcore, wvlive, lvpip, lvdisp, live PASS.
+Fifteenth run, 9 November 00:49 to about 01:00 UTC: no new commits For me; merged origin/dev (45253ee); the 14th run's two commits wait on dashboard@; the apps' repositories checked, a question for the desk. Gate OK (LANE_RANGE=HEAD^1..HEAD).
