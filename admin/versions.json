@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1446",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.work's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "d8b278aad"
+  },
+  {
     "version": "v0.2.1445",
     "date": "2026-11-09",
     "what": "runner.conductor@PrompTugal.angelo: 02:23 run, nothing to route, nothing urgent",
