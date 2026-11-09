@@ -107,5 +107,13 @@
   "status": "planned",
   "schedule": "none: at the stand, per visitor; Fable 5.1 or Opus 5.5",
   "note": "Design in people/indi/demo/README.md; prompt in people/indi/prompts/stand-demo.md. Added 9 November 2026 at Indi's word. The runner reuses Angelo's ABP demo engine, with his yes."
+ },
+ {
+  "name": "infographic@web-summit.indi",
+  "job": "makes plain-word, pastel infographic pages on the team site at Indi's request, each tested on a stranger (a small sub-agent) before Indi sees it",
+  "session": "Claude Code cloud session in Indi's account",
+  "status": "planned",
+  "schedule": "none: works when Indi asks; Opus 5.5 for the first run, then Sonnet 5.5",
+  "note": "Prompt in people/indi/prompts/infographic-agent.md (prompter@web-summit.indi, 9 November 2026). Added at Indi's yes, 9 November."
  }
 ]
