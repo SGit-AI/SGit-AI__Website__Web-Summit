@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1592",
+    "date": "2026-11-09",
+    "what": "WS-48 done: the merch is collected (Silvio, 9 Nov)",
+    "by": "conductor@web-summit.silvio",
+    "from": "9412f7785"
+  },
+  {
     "version": "v0.2.1591",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.map's, dev.work's and dev.app's new work onto dev (one commit)",
