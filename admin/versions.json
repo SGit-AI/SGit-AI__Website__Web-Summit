@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1471",
+    "date": "2026-11-09",
+    "what": "reviewer@PrompTugal.vicky: report, 9 November 06:45 run: S31 Ready, three findings reconciled",
+    "by": "reviewer@PrompTugal.vicky",
+    "from": "6c20a84bc"
+  },
+  {
     "version": "v0.2.1470",
     "date": "2026-11-09",
     "what": "runner.conductor@PrompTugal.angelo: 06:23 run, research's registration brief flagged for Angelo",
