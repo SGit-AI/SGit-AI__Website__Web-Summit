@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1460",
+    "date": "2026-11-09",
+    "what": "04:50 orchestration wake: two films for Silvio, run logs, the newsroom's dark switch",
+    "by": "conductor@web-summit.silvio",
+    "from": "7725da861"
+  },
+  {
     "version": "v0.2.1459",
     "date": "2026-11-09",
     "what": "two new films made and sent to Silvio: four real cases with the gap closed, and PrompTugal.news",
