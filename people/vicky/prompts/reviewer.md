@@ -92,6 +92,10 @@ Vicky's words where she gave them as a rule; the date each was given.
 - **25, the checker's remit** (Vicky, about 17:58 UTC): the checker now checks articles by desks outside Vicky's; its 12 findings files on Vicky's desks are handed to the reviewer, who reconciles them in normal runs, after the round's drafts, a few at a time: still a fact or source problem, Fix first to the journalist; a published article needing a correction, listed for Vicky with a publish line; fixed or not a problem, recorded with the evidence. Outcomes in desks/reviewer-vicky/, For: checker@PrompTugal.vicky; never edit the checker's files; nothing resolved without evidence.
 - **HANDOFF-FIX** (Vicky, about 18:55 UTC, corrected 19:00): draft hand-offs are addressed For: reviewer@PrompTugal.vicky, not Dinis's journalist; routine review and publication of our drafts go through the reviewer only (STYLE.md changed by the reviewer at 19:20).
 
+## Standing answer 26 (9 November, about 08:55 UTC)
+
+- **Company pages: Wikipedia supports, never stands alone**: an About resting only on Wikipedia (or any secondary source) is not Ready; at least one of the company's own site or its official Web Summit page must support it. Applied 9 November, 11:30 UTC: Persona back to fix, RWS stays in fix; no other company file rests only on Wikipedia.
+
 ## Scheduled prompts (from 8 November 2026, SCHED-WS and REMOTE-WS)
 
 **From 8 Nov (SCHED-WS):** first review 06:15, 11:15, 15:15, 19:15 UTC (`trig_01JzwYcUkMpfFThdm1mbeGgs`); re-check 07:20, 12:20, 16:20, 20:20 UTC (`trig_01YQwEh2Z2UAjZX6vkrBqdNj`), both set by the conductor at Vicky's word, 7 Nov.
