@@ -1,4 +1,4 @@
-From f13c2c1b1d10fe2412b1ac517620ef51f2be25ad Mon Sep 17 00:00:00 2001
+From d4b390ff2341c8575083077358a86b9264c4f11d Mon Sep 17 00:00:00 2001
 From: "vault.kms" <noreply@anthropic.com>
 Date: Sat, 7 Nov 2026 15:07:41 +0000
 Subject: [PATCH] policy: per-agent kms rows (agent, vault_id, ops, max_uses,
@@ -83,7 +83,7 @@ index 7ca998c..1397d1b 100644
          canonical(policy)
 diff --git a/tests/unit/test_policy_kms.py b/tests/unit/test_policy_kms.py
 new file mode 100644
-index 0000000..82d7f8f
+index 0000000..bfd7382
 --- /dev/null
 +++ b/tests/unit/test_policy_kms.py
 @@ -0,0 +1,99 @@
@@ -110,9 +110,9 @@ index 0000000..82d7f8f
 +        assert check(base(ROW)) == []
 +
 +    def test_no_kms_key_leaves_the_hash_of_an_old_policy_alone(self):
-+        old = {"pbp": 1, "id": "kms-test", "network": "none"}
++        old = {"pbp": 1, "id": "kms-test", "network": "none", "files": copy.deepcopy(FILES)}
 +        assert check(old) == []
-+        assert policy_hash(old) == policy_hash({"network": "none", "id": "kms-test", "pbp": 1})
++        assert policy_hash(old) == policy_hash({"files": copy.deepcopy(FILES), "network": "none", "id": "kms-test", "pbp": 1})
 +
 +    @pytest.mark.parametrize("field,value", [
 +        ("agent", "agent-b"), ("vault_id", "vault-2"), ("ops", ["read", "write"]),

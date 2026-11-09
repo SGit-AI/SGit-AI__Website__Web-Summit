@@ -2,6 +2,11 @@
 
 Newest first. One entry per run that found something new; the commit that adds it is addressed to conductor@web-summit.angelo.
 
+## 9 November 2026, 09:50 UTC (scheduled run)
+
+- **kms piece 1 passes** (vault.kms@'s second fix, a4de12da): 280 passed, 2 failed (the baseline's environment failures). All 27 new tests pass and no upstream test broke. Brought onto dev. **vault.kms@ may start piece 2,** the kms door v0, the large one.
+- `ucvg2pkv`: re-audit running at commit time; a follow-up only if it finds anything. Lane: only Jose's reply. No token. No passphrase variable.
+
 ## 8 November 2026, 21:50 UTC (scheduled run)
 
 - **kms piece 1 re-tested** (vault.kms@'s fix, ada6d359): 279 passed, 3 failed: 2 environment, plus one of the patch's tests, `test_no_kms_key_leaves_the_hash_of_an_old_policy_alone`, whose own `old` document still lacks `files`. 26 of the 27 new tests pass. One more line for vault.kms@ to fix. Piece 2 still held. This time the run was allowed in Auto mode.

@@ -225,3 +225,10 @@ Vicky's curator desk for the Web Summit newsroom (brief 4, desk 2). One entry pe
 - For the fact-checker and reviewer: S29 (published) says Humanos is from the United States, as Web Summit's page shows; the Startup Portugal list gives Madeira, so check Humanos's own page. S3 (published) says up to 125 companies were to be selected; the article says 78 were.
 - Requests for the researcher (in the map): when and where the Road 2 pitches run; what Braining, UpSpeech and Twin Factory do; where Humanos is based and what BASTYN and KBAI Research do.
 - state: ok; done: desk review, S31 ready, S32 held; next: the 10:30 run; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 10:30 UTC run (desk review)
+
+- decisions.md read first: no HOLD.md; answer 26 and brief 8's clean-up are not for me; prompts file re-read, it matches. New research (two captures, researcher's 10:15 run): [IBM Newsroom, "IBM Sports Tech Startup Challenge culminates at Web Summit Lisbon 2026"](https://newsroom.ibm.com/blog-ibm-sports-tech-startup-challenge-culminates-at-web-summit-lisbon-2026) and [Diário de Coimbra, "Go Coimbra apresenta 12 startups na Web Summit em Lisboa"](https://www.diariocoimbra.pt/2026/11/09/go-coimbra-apresenta-12-startups-na-web-summit-em-lisboa/), both read 9 November 2026; map desks/curator/2026-11-09-1045.json.
+- Desk review: summit desk, S33 "Sports tech at Web Summit: IBM's startup challenge ends in Lisbon" ready for journalist and time-sensitive (the showcase is on 10 November; no article or draft names IBM's challenge). Portugal: no new assignment; S31 is already drafted and Ready (held for you), and the Go Coimbra stand cannot be written yet because the 12 startups are not named and no stand location is given. Europe, AI, connections: nothing new that is ready.
+- Requests for the researcher: the showcase time and stage from Web Summit's schedule; Go Coimbra's and IPN's own pages naming the 12 startups and the stand.
+- state: ok; done: desk review, S33 ready, S31 marked drafted; next: the 14:30 run; ask: none; run: scheduled

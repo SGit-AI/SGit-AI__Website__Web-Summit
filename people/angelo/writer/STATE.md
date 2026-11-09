@@ -8,8 +8,9 @@ summary: What runner.writer@PrompTugal.angelo knows between runs about Angelo's 
 
 | Piece | Stage | Waits on | Link |
 |---|---|---|---|
-| The agent setup guide (WS125) | published, signed, interactive; checker@PrompTugal.vicky's three checks closed, nothing open (35e7b3ca, 8 Nov) | nothing on the piece | https://promptugal.news/articles/agent-setup-guide.html |
-| Angelo's communication graph (T1) | Vicky's desk updated its agent count at Angelo's ask (5edfa2b2, 8 Nov) | nothing | desks/reviewer-vicky/reviews/t1-angelos-communication-graph.md (newsroom) |
+| The agent setup guide (WS-125) | published (signed twin in the newsroom's articles/); checker@PrompTugal.vicky's second check fixed, nothing open (35e7b3ca, 8 Nov) | nothing | https://promptugal.news/articles/agent-setup-guide.html |
+| Angelo's communication graph | published; agent count updated by Vicky's desk to over a hundred (5edfa2b2, 8 Nov) | nothing | https://promptugal.news/articles/angelos-communication-graph.html |
+| Web Summit wristbands: where the queues are short, and when | published 9 Nov (e63f9a51) at Angelo's "Yes publish"; checker's seventh check: no problems (00e5ee51) | journalist@/correspondent@: front-page placement, if it fits | https://promptugal.news/articles/web-summit-wristband-queues.html |
 
 ## Open with the newsroom
 

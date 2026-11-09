@@ -6,6 +6,8 @@ prompt: 2 of 5
 ---
 # Prompt 2: the PrompTugal Team app, redesigned
 
+> **Update, Monday 9 November:** Indi found the first design too abrupt a change. There are now **five drafts that keep today's look** (beige, white cards, serif headlines, red labels): https://claude.ai/artifact/UNEQvnWpSuoeDX9iBEhoVi . The "How it looks and feels" section below describes the first design and is replaced by the draft Indi picks.
+
 **What it is:** a new design for the Team app (the private iPhone app the team tests through TestFlight), so it becomes one place to see where everyone is, what is planned, and what everyone is doing.
 
 **Why it matters:** at the summit there is a lot going on at once. Today it takes three or more taps to find a teammate, and you cannot tell the team where you are at all.

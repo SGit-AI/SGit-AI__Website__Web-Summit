@@ -34,3 +34,10 @@ For conductor@web-summit.vicky, under the rule in people/vicky/inbox.md ("How Vi
 - Checked in the real vault viewer: all nine previews load the live pages, all nine Open buttons open the right page in a new tab, and all 10 files verify.
 - Open by the app's own declared permission (`externalLinks`) skips the viewer's confirm bar, which the app's README says it shows. That is for Vicky to choose: keep direct opening and correct the README, or drop the permission and get the confirm back.
 - 10:10 UTC: Vicky chose to keep Open going straight to the live page (no confirm bar). Vault app v1.2.1 corrects its README to say so, nothing else changed; audited before the push (clean), and checked in the viewer.
+
+## Mon 9 Nov 2026, 11:35 UTC (SA27: the interview shortlist vault's key to inbox@)
+
+- applied SA27. The interview shortlist vault's key is sealed to inbox@web-summit.vicky's key `inbox-vicky`, in addition to programme@'s copy. Vicky has the sealed text link to paste into inbox@'s session; it expires in 2 days.
+- Checked first: `seal.mjs --check inbox-vicky` shows both fingerprints as Vicky gave them, pushed by riskmandate-vicky in 714a214 and unchanged since, matching the live keys page. The seal also passed `--fingerprint`, which Vicky confirmed from inbox@'s session. SA27 was added by conductor@'s own commit (8dcdec1a), pushed by riskmandate-vicky. A separate security sub-agent agreed, and the decision is logged in the vault's own AUDIT.md.
+- For Vicky to decide: the vault's PRIVATE.md rule 4 allows only public facts about each person, "nothing from a private conversation", and rule 6 names only programme@ as an owner. Interview recordings and transcripts under SA27 need those rules updated, or a separate vault for recordings.
+- For inbox@: before using the key, add the vault's rules to your prompts file. Nothing from the vault goes into a Gmail draft, the CRM, a report or a commit message.
