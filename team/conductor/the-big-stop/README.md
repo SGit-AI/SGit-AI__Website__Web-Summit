@@ -5,7 +5,7 @@ Dinis: *"Stop all work (unless it is critical) until we realign on our strategy.
 ## Account A (Dinis's main account), stopped by the main conductor
 
 **Before**, at 23:30 UTC:
-- 100 sessions: 82 idle, 17 archived, 1 running (the main conductor). Raw list: `before-sessions-account-a.json`.
+- 100 sessions: 82 idle, 17 archived, 1 running (the main conductor). Counts: `before-account-a.json`.
 - 5 active in the last hour: the main conductor, gamma-ray@, conductor.android@, conductor@PrompTugal, observability@PrompTugal.
 - **7 scheduled wakes**, about 2.4 an hour:
   - the main conductor hourly;
