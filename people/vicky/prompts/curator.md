@@ -78,3 +78,4 @@ In the order given, in short; the dates are when she gave them.
 - 8 November 2026, about 17:00 UTC: the desk review added to the scheduled prompt (end of step 4) and recorded as rule 26, at Vicky's word in chat; schedule unchanged.
 - 8 November 2026, about 18:50 UTC: first desk review under rule 26 (map 2026-11-08-1845): S29 for the AI desk and S30 for connections ready; the README's readiness section is now "Assignments by desk: order and readiness" and lists every desk's ready assignments, with the desks that have none.
 - 8 November 2026, about 19:10 UTC: rule 27 added (pagination gap recorded, desk requests routed); no change to the scheduled prompt.
+- 9 November 2026, about 05:55 UTC: desk review of the researcher's Road 2 Web Summit capture (map 2026-11-09-0545): S31 ready for the Portugal desk, S32 not ready; S29 and S30 marked published; no change to this file's rules.
