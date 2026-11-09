@@ -14,7 +14,7 @@ summary: What is charged and how money is made. The code is free; what is sold i
 | **2. Customised agentic teams** | a team of agents set up in their own accounts, with keys, policies and a conductor, then kept running and changed | individuals (experts), teams | the first is being made for our first friendly; not yet sold |
 | **3. Packages and small products** | things that sell themselves once asked for often enough: a personal schedule for an event, a summit brief, a monthly ticket for encrypted vaults, a reading top-up | readers, attendees, buyers of line 1 | one is on sale (the reading top-up); the rest are proposals |
 
-Behind these sit RiskMandate (its own early-access customers, [Our first customers](https://newsroom.sgit.ai/articles/our-first-customers.html)) and the hosted vault service (sgraph.ai, where "the strategy turns into revenue", [sgit.ai/about](https://sgit.ai/about/index.md)). **Which company sells which of these is still to be settled** ([the company](../../investors/company/index.html)).
+Behind these sit RiskMandate (its own early-access customers, [Our first customers](https://newsroom.sgit.ai/articles/our-first-customers.html)) and the hosted vault service (sgraph.ai, where "the strategy turns into revenue", [sgit.ai/about](https://sgit.ai/about/index.md)). **Today the commercial work runs through The Cyber Boardroom Limited**, Dinis's wholly owned UK company; My Feeds, the company to invest in, carries little activity yet (Dinis, 9 November 2026; [two companies](../../investors/company/index.html#two)).
 
 ## How a sale happens {#sale}
 
