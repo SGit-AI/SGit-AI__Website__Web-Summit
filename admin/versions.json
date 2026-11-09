@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1477",
+    "date": "2026-11-09",
+    "what": "07:15 run: no security review for 44 hours before the summit; the site's key handling changed meanwhile",
+    "by": "watcher@web-summit.jose",
+    "from": "d53521409"
+  },
+  {
     "version": "v0.2.1476",
     "date": "2026-11-09",
     "what": "reviewer@PrompTugal.vicky: report, 9 November 07:30 re-check: idle",
