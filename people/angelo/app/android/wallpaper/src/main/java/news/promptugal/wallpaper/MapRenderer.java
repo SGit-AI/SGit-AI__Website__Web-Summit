@@ -40,7 +40,13 @@ final class MapRenderer implements GLSurfaceView.Renderer {
     private final float[] P = new float[16], V = new float[16], Mx = new float[16], My = new float[16], Mm = new float[16], MV = new float[16];
     private double ry = 0, lastT = 0;
     private Graph built, cur; private List<Graph.Event> lastEvs;
-    private Graph.Theme overlayTheme; private int nSpokes = 0; private String overlayKey = "";
+    private Graph.Theme overlayTheme; private int nSpokes = 0;
+    // battery (Angelo, 9 November: "make sure this live wallpaper is extremely efficient"): the faint graph and the spokes never
+    // change between maps, so they live on the GPU (buffer objects), uploaded once per map, not copied over every frame (about
+    // 690 KB a frame for today's 684 lines); and every shader variable is looked up once, not on every draw
+    private final int[] vbo = new int[6];   // base lines: position, colour, alpha; spokes: position, colour, alpha
+    private final Map<String, Integer> loc = new HashMap<>();
+    private final float[] v4 = new float[4], o4 = new float[4]; private String overlayKey = "";
     // the level (Workstreams): its rows, the frame's geometry for its squares, the flights' textures by colour
     private Work wk; private float fx0, fy0, fk; private int litTex = 0; private float litPx = 0;
     private final Map<String, int[]> iconTex = new HashMap<>(); private final Map<Integer, Integer> dotTex = new HashMap<>();
@@ -56,7 +62,8 @@ final class MapRenderer implements GLSurfaceView.Renderer {
     @Override public void onSurfaceCreated(GL10 unused, EGLConfig cfg) {
         progLn = program(Shaders.VS_LN, Shaders.FS_LN); progTx = program(Shaders.VS_TX, Shaders.FS_TX);
         for (int k = 0; k < 4; k++) progPt[k] = program(Shaders.VS_PTS, Shaders.fsPts(k));
-        built = null; overlayTex = 0; labelTex.clear();
+        built = null; overlayTex = 0; labelTex.clear(); loc.clear(); java.util.Arrays.fill(vbo, 0);
+        iconTex.clear(); dotTex.clear(); litTex = 0;   // a new context: the old textures and buffers are gone with it
         GLES20.glDisable(GLES20.GL_DEPTH_TEST); GLES20.glEnable(GLES20.GL_BLEND);
         float[] range = new float[2]; GLES20.glGetFloatv(GLES20.GL_ALIASED_LINE_WIDTH_RANGE, range, 0);
         lineW = Math.max(1, Math.min(range[1], density * 0.75f));
@@ -104,7 +111,7 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         boolean light = th.light;
 
         // the agents ring's spokes, then the faint graph
-        normal(); lines(sPos, sCol, sAl, nSpokes * 2); lines(bPos, bCol, bAl, g.links.size() * Graph.SEG * 2);
+        normal(); linesVbo(3, nSpokes * 2); linesVbo(0, g.links.size() * Graph.SEG * 2);
         // the lit layer and its glow: a slot per pair the first time it moves
         for (Graph.Line e : g.lines.values()) {
             if (e.slot >= slotsWritten) { writeSlot(e); slotsWritten = e.slot + 1; }
@@ -141,7 +148,7 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         glow(light); points(1, dPos, dCol, dSz, dAl, k);
         if (wk != null) { wk.step(t0); normal(); drawLevel(g, th, t0); }
         // the people's names, where they now are
-        normal(); float[] v = new float[4], o = new float[4];
+        normal(); float[] v = v4, o = o4;
         for (int i = 0; i < labelNodes.size(); i++) {
             Graph.Node n = labelNodes.get(i); int[] t = labelTex.get(i);
             v[0] = (float) n.x; v[1] = (float) n.y; v[2] = (float) n.z; v[3] = 1; Matrix.multiplyMV(o, 0, MV, 0, v, 0); Matrix.multiplyMV(v, 0, P, 0, o, 0);
@@ -172,6 +179,7 @@ final class MapRenderer implements GLSurfaceView.Renderer {
                 put3(bPos, j, p); put3(bPos, j + 1, q); col3(bCol, j, l.from); col3(bCol, j + 1, l.from); bAl.put(j, w); bAl.put(j + 1, w);
             }
         }
+        upload(0, bPos, bCol, bAl); upload(3, sPos, sCol, sAl);
         int ls = Graph.MAXPAIRS * Graph.SEG * 2, gs = Graph.MAXPAIRS * (Graph.SEG + 1);
         lPos = fb(ls * 3); lCol = fb(ls * 3); lAl = fb(ls); gPos = fb(gs * 3); gCol = fb(gs * 3); gSz = fb(gs); gAl = fb(gs);
         int nn = g.nodes.size(); nPos = fb(nn * 3); nCol = fb(nn * 3); nSz = fb(nn); nAl = fb(nn);
@@ -195,6 +203,22 @@ final class MapRenderer implements GLSurfaceView.Renderer {
     private void additive() { GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE); }
     // live3d.js: the lit lines, their glow and the dots add light in the dark; on a light page they are drawn as they are
     private void glow(boolean light) { if (light) normal(); else additive(); }
+    // the static layers into buffer objects (at = 0: base lines, 3: spokes), replacing the last map's
+    private void upload(int at, FloatBuffer pos, FloatBuffer col, FloatBuffer al) {
+        if (vbo[at] != 0) GLES20.glDeleteBuffers(3, vbo, at);
+        GLES20.glGenBuffers(3, vbo, at); FloatBuffer[] b = { pos, col, al };
+        for (int i = 0; i < 3; i++) { b[i].position(0); GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, vbo[at + i]); GLES20.glBufferData(GLES20.GL_ARRAY_BUFFER, b[i].capacity() * 4, b[i], GLES20.GL_STATIC_DRAW); }
+        GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, 0);
+    }
+    private void linesVbo(int at, int n) {
+        if (n <= 0 || vbo[at] == 0) return; GLES20.glUseProgram(progLn); mats(progLn); GLES20.glLineWidth(lineW);
+        int[] k = { 3, 3, 1 }; String[] names = { "position", "col", "alpha" };
+        for (int i = 0; i < 3; i++) { int a = attrLoc(progLn, names[i]); if (a < 0) continue; GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, vbo[at + i]); GLES20.glEnableVertexAttribArray(a); GLES20.glVertexAttribPointer(a, k[i], GLES20.GL_FLOAT, false, 0, 0); }
+        GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, 0);
+        GLES20.glDrawArrays(GLES20.GL_LINES, 0, n);
+    }
+    private int attrLoc(int pr, String name) { String key = pr + "a" + name; Integer v = loc.get(key); if (v == null) { v = GLES20.glGetAttribLocation(pr, name); loc.put(key, v); } return v; }
+    private int uniLoc(int pr, String name) { String key = pr + "u" + name; Integer v = loc.get(key); if (v == null) { v = GLES20.glGetUniformLocation(pr, name); loc.put(key, v); } return v; }
     private void lines(FloatBuffer pos, FloatBuffer col, FloatBuffer al, int n) {
         if (n <= 0) return; GLES20.glUseProgram(progLn); mats(progLn); GLES20.glLineWidth(lineW);
         attr(progLn, "position", pos, 3); attr(progLn, "col", col, 3); attr(progLn, "alpha", al, 1);
@@ -202,18 +226,18 @@ final class MapRenderer implements GLSurfaceView.Renderer {
     }
     private void points(int kind, FloatBuffer pos, FloatBuffer col, FloatBuffer sz, FloatBuffer al, int n) {
         if (n <= 0) return; int pr = progPt[kind]; GLES20.glUseProgram(pr); mats(pr);
-        GLES20.glUniform1f(GLES20.glGetUniformLocation(pr, "scale"), scale);
+        GLES20.glUniform1f(uniLoc(pr, "scale"), scale);
         attr(pr, "position", pos, 3); attr(pr, "col", col, 3); attr(pr, "size", sz, 1); attr(pr, "alpha", al, 1);
         GLES20.glDrawArrays(GLES20.GL_POINTS, 0, n);
     }
-    private void mats(int pr) { GLES20.glUniformMatrix4fv(GLES20.glGetUniformLocation(pr, "uMV"), 1, false, MV, 0); GLES20.glUniformMatrix4fv(GLES20.glGetUniformLocation(pr, "uP"), 1, false, P, 0); }
-    private static void attr(int pr, String name, FloatBuffer b, int k) { int at = GLES20.glGetAttribLocation(pr, name); if (at < 0) return; b.position(0); GLES20.glEnableVertexAttribArray(at); GLES20.glVertexAttribPointer(at, k, GLES20.GL_FLOAT, false, 0, b); }
+    private void mats(int pr) { GLES20.glUniformMatrix4fv(uniLoc(pr, "uMV"), 1, false, MV, 0); GLES20.glUniformMatrix4fv(uniLoc(pr, "uP"), 1, false, P, 0); }
+    private void attr(int pr, String name, FloatBuffer b, int k) { int at = attrLoc(pr, name); if (at < 0) return; b.position(0); GLES20.glEnableVertexAttribArray(at); GLES20.glVertexAttribPointer(at, k, GLES20.GL_FLOAT, false, 0, b); }
     private void drawTex(int tex, float x0, float y0, float x1, float y1, float alpha) {
         if (quad == null) quad = fb(16);
         float[] q = { x0, y0, 0, 1, x1, y0, 1, 1, x0, y1, 0, 0, x1, y1, 1, 0 }; quad.position(0); quad.put(q);
         GLES20.glUseProgram(progTx); GLES20.glActiveTexture(GLES20.GL_TEXTURE0); GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, tex);
-        GLES20.glUniform1i(GLES20.glGetUniformLocation(progTx, "tex"), 0); GLES20.glUniform1f(GLES20.glGetUniformLocation(progTx, "alpha"), alpha);
-        int a = GLES20.glGetAttribLocation(progTx, "position"), u = GLES20.glGetAttribLocation(progTx, "uv");
+        GLES20.glUniform1i(uniLoc(progTx, "tex"), 0); GLES20.glUniform1f(uniLoc(progTx, "alpha"), alpha);
+        int a = attrLoc(progTx, "position"), u = attrLoc(progTx, "uv");
         quad.position(0); GLES20.glEnableVertexAttribArray(a); GLES20.glVertexAttribPointer(a, 2, GLES20.GL_FLOAT, false, 16, quad);
         quad.position(2); GLES20.glEnableVertexAttribArray(u); GLES20.glVertexAttribPointer(u, 2, GLES20.GL_FLOAT, false, 16, quad);
         GLES20.glDrawArrays(GLES20.GL_TRIANGLE_STRIP, 0, 4);
@@ -295,12 +319,13 @@ final class MapRenderer implements GLSurfaceView.Renderer {
         if (litTex != 0) { GLES20.glDeleteTextures(1, new int[] { litTex }, 0); litTex = 0; }
     }
     // a frame point (the page's 1000 units) to the screen's -1..1
+    private final double[] lp = new double[2];
     private float nx(double fx) { return (fx0 + (float) fx * fk) / W * 2 - 1; }
     private float ny(double fy) { return 1 - (fy0 + (float) fy * fk) / H * 2; }
     /** The flights: each leaves its maker's node (where it now is on screen) for its square, eased over 3 s, its trail behind it
      *  fading in and out; a landed one lights its square for 0.9 s (work-draw.js's step). */
     private void drawLevel(Graph g, Graph.Theme th, double now) {
-        float[] v = new float[4], o = new float[4]; double[] p = new double[2]; float sq = sqUnits();
+        float[] v = v4, o = o4; double[] p = lp; float sq = sqUnits();
         if (litTex == 0) { int side = Math.max(4, Math.round(sq * fk + 8)); Bitmap b = Bitmap.createBitmap(side, side, Bitmap.Config.ARGB_8888); Paint pl = new Paint(Paint.ANTI_ALIAS_FLAG); pl.setStyle(Paint.Style.STROKE); pl.setStrokeWidth(4 * fk * sq / (float) Work.SQ); pl.setColor(0xFF000000 | th.action); float r = 12 * fk * sq / (float) Work.SQ; new Canvas(b).drawRoundRect(new RectF(4, 4, side - 4, side - 4), r, r, pl); litPx = side; litTex = texture(b); }
         for (Work.Dest d : wk.dests) if (d.litUntil > now) { float hw = litPx / W, hh = litPx / H; drawTex(litTex, nx(d.x) - hw, ny(d.y) - hh, nx(d.x) + hw, ny(d.y) + hh, 1); }
         for (Work.Flight f : wk.inAir) {
