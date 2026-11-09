@@ -178,11 +178,11 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 | Open VSX (Eclipse Foundation) | https://promptugal.news/companies/open-vsx/ | in review (9 Nov, overnight, commit 89b699d4) |
 | Orb | https://promptugal.news/companies/orb/ | in review (9 Nov, overnight, commit 89b699d4) |
 | Primitive | https://promptugal.news/companies/primitive/ | in review (9 Nov, overnight, commit 89b699d4) |
-| Prisma | https://promptugal.news/companies/prisma/ | to do |
-| Runpod | https://promptugal.news/companies/runpod/ | to do |
-| SageOx | https://promptugal.news/companies/sageox/ | to do |
-| TestMu AI | https://promptugal.news/companies/testmu-ai/ | to do |
-| Twilio | https://promptugal.news/companies/twilio/ | to do |
+| Prisma | https://promptugal.news/companies/prisma/ | in review (9 Nov, overnight) |
+| Runpod | https://promptugal.news/companies/runpod/ | in review (9 Nov, overnight) |
+| SageOx | https://promptugal.news/companies/sageox/ | in review (9 Nov, overnight) |
+| TestMu AI | https://promptugal.news/companies/testmu-ai/ | in review (9 Nov, overnight) |
+| Twilio | https://promptugal.news/companies/twilio/ | in review (9 Nov, overnight) |
 
 ## Blocked: missing evidence (14)
 
