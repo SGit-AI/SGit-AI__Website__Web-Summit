@@ -180,13 +180,19 @@
                 } catch (e) { mail.querySelector('[data-mail]').textContent = 'Could not open the mail view: ' + (e.message || e) }
             }
             out.innerHTML = `<p class="meta">${nodes.length} record${nodes.length === 1 ? '' : 's'} in ${esc(CFG.private.name)} (${esc(CFG.private.vault_id)}). Layer 2: each sealed record opens only if you are in its audience.</p><ol class="crm-plist">${nodes.map(n => `<li data-f="${esc(n.file)}"><b>${esc(n.sealed ? '🔒 ' + n.type : label(n))}</b> <span class="meta">${esc(n.file)}</span><div class="crm-pbody meta">${n.sealed ? 'Opening...' : esc(sub(n))}</div></li>`).join('')}</ol>`
+            // only mine (WS-172, dev@web-summit.silvio, 9 November): with hundreds of records, a person sees the ones sealed to them
+            const plist = out.querySelector('.crm-plist'), pbar = document.createElement('p')
+            pbar.className = 'crm-pfilter'; pbar.innerHTML = `<label><input type="checkbox" data-mine> Only the records sealed to me (${esc(KR.person)})</label> <span class="meta" data-mine-n></span>`
+            out.insertBefore(pbar, plist)
+            const mineCount = () => { pbar.querySelector('[data-mine-n]').textContent = `${plist.querySelectorAll('li.opened').length} opened for you` }
+            pbar.querySelector('[data-mine]').onchange = e => { plist.classList.toggle('mine', e.target.checked); mineCount() }
             for (const n of nodes.filter(n => n.sealed)) {
                 const li = out.querySelector(`[data-f="${CSS.escape(n.file)}"]`), body = li.querySelector('.crm-pbody')
                 try {
                     const e = await readJson(v, n.file), r = e.recipients.find(x => x.to === KR.person && x.key === KR.fingerprint)
                     if (!r) { body.textContent = `Sealed to ${e.audience.join(', ')}: not you.`; li.classList.add('not-you'); continue }
                     const rec = await openRecord(e, r)                         // layer 2
-                    li.classList.add('opened'); li.querySelector('b').textContent = '🔓 ' + (rec.title || rec.id)
+                    li.classList.add('opened'); li.querySelector('b').textContent = '🔓 ' + (rec.title || rec.id); mineCount()
                     body.classList.remove('meta')
                     body.innerHTML = rec.type === 'vault-key' ? `<p>The public CRM's full vault key (write access to ${esc(rec.vault)}), opened in memory. <button type="button" data-copy>Copy it</button> <span class="meta" data-msg></span></p>` : fields(Object.fromEntries(Object.entries(rec).filter(([k]) => !['title', 'sources'].includes(k))))
                     const c = body.querySelector('[data-copy]'); if (c) c.onclick = async () => { try { await navigator.clipboard.writeText(rec.vault_key); body.querySelector('[data-msg]').textContent = 'Copied.' } catch { body.querySelector('[data-msg]').textContent = 'This browser did not allow copying.' } }
