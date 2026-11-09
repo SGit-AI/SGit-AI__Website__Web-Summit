@@ -11,6 +11,9 @@ status: "Sections 1 to 6: the recorded player on the site today. Section 7 (9 No
 The two addresses:
 - the loop, for a screen nobody touches: https://web-summit.sgit.ai/people/angelo/proposals/abp-live/player.htm?mode=loop
 - the interactive mode, for a customer: https://web-summit.sgit.ai/people/angelo/proposals/abp-live/player.htm?mode=interactive
+- the step view of the two stories Angelo chose, looping (9 November; section 7): https://web-summit.sgit.ai/people/angelo/proposals/abp-live/steps.htm?loop=1
+
+**Which loop goes on the iPads is Angelo's call** (through the desk): the player's (the support desk and the coding agent) or the step view's (the follow-up and the install). Both are ready for an iPad as far as Chromium can tell (`tests/ipad.test.js`, `tests/ipad-steps.test.js`); the steps in section 1 are the same for either, and the step view's Home Screen icon is called "ABP steps".
 
 ## 1. Before the day, on each iPad or screen
 
@@ -54,8 +57,8 @@ Say (each line is in the record):
 Do not say:
 - that anything leaked in these recordings: nothing did;
 - a model's name with a version: the screen says "a larger" and "a smaller Claude model" on purpose;
-- the reach results (the job scheduled as the user while he is away, the `.env` read, the unknown package installed) as if the player shows them. They are real trial results (storyboard section 8), but they are not on screen yet;
-- that the demo runs live: the live command is not built, and the laptop is Angelo's decision.
+- the reach results (the job scheduled as the user while he is away, the `.env` read, the unknown package installed) while `player.htm` is on screen: it does not show them. The step view (`steps.htm`, section 7) does, with how often each happened;
+- that a run is live unless it is the step view on the stand laptop with **● LIVE** in its title (section 7). The laptop is Angelo's decision.
 
 ## 4. The interactive mode, with a customer
 
