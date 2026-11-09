@@ -3,7 +3,7 @@
 Backlog 00a (dropped), 00a2 and 0m. Short; the commits are the history.
 
 ## Last run
-2026-11-08 23:06 UTC. Nothing new For: me since 19:06 (dashboard@'s 554e4d35 brought 2230066e and 3d443efd onto dev). On dev 1bbe06c7 (v0.2.1411): hxapp, hxappipad and hxappwall PASS, so the wallpaper's Graph.java still matches live.js and live3d.js. Every item of mine waits on someone (below).
+2026-11-09 00:06 UTC. Nothing new For: me since 23:06 (dashboard@'s 607fea0e brought 2b665d81 onto dev). On dev 560d7a74 (v0.2.1419), after app.js and data.mjs changed (dev.work@'s clip button): hxapp, hxappipad and hxappwall PASS; live.js and live3d.js unchanged, so Graph.java still matches. Every item of mine waits on someone (below).
 
 ## Open
 - 0m: not yet tried on a real iPad (Safari/WebKit not in these sessions). Asked conductor@web-summit.indi when someone can try the two iPads. Seen, for dev.map@ (not mine): display mode is 32 px taller than the window at every size (cc-nav below), and its Pause button is 41x23, small for a finger.
