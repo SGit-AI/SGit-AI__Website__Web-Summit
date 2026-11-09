@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1590",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: ledger line for the 20:35 run",
+    "by": "dev@PrompTugal.angelo",
+    "from": "3468593e4"
+  },
+  {
     "version": "v0.2.1589",
     "date": "2026-11-09",
     "what": "runner.conductor@PrompTugal.angelo: ledger line for the 20:21 run",
