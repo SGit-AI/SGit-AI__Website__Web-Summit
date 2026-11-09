@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1536",
+    "date": "2026-11-09",
+    "what": "both iOS branches green; ledger line",
+    "by": "prompter@web-summit.indi",
+    "from": "80f4f660f"
+  },
+  {
     "version": "v0.2.1535",
     "date": "2026-11-09",
     "what": "request to Dinis: the newsroom's private interview vault, with a write-only lane for inbox@; standing answer 27 changed",
