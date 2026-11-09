@@ -1,0 +1,27 @@
+{
+ "about": "Team messaging groups (WS-203): group name to members, person ids and agent names. Public membership only; every message is sealed. Kept by Indi's team (admin/tools/messages.mjs --group <name>).",
+ "groups": {
+  "team": [
+   "dinis",
+   "silvio",
+   "nimay",
+   "angelo",
+   "vicky",
+   "daniela",
+   "indi",
+   "jose",
+   "sarah"
+  ],
+  "stand": [
+   "indi",
+   "jose",
+   "angelo",
+   "vicky"
+  ],
+  "indi-agents": [
+   "indi",
+   "conductor@web-summit.indi",
+   "prompter@web-summit.indi"
+  ]
+ }
+}
