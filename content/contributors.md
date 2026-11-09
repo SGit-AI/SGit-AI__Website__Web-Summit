@@ -23,7 +23,7 @@ The test: *"imagine that Silvio was not involved or Indi was not involved, and w
 
 ## The rules of the game (both pages, the same) {#rules}
 
-- **Everything is open source.** What a contributor creates is open source, and **they own it**.
+- **Everything is open source, under CC BY 4.0** (Dinis, 9 November). What a contributor creates is theirs: anyone may reuse it with credit to them.
 - **They submit it to us; we review it; if it is good, we publish it** on the website, with their name.
 - **There is no payment and no financial reward, for now.** Say it plainly.
 
@@ -81,7 +81,8 @@ We want *"lots and lots and lots of people commenting, photos, submitting review
 - **conductor@web-summit.dinis:** the RiskMandate page (a draft here on the team site first) and the CRM side (contributors as contacts, the follow-up action).
 - **Every person and their conductor:** share the page with everyone they meet, and log the follow-up in the CRM.
 
-## For Dinis to decide {#decide}
+## Decided {#decide}
 
-- **Which open-source licence:** for writing, for example, CC BY 4.0; for code, MIT or Apache 2.0.
-- **Where the RiskMandate page lives:** on riskmandate.ai, or here on the team site until then.
+- **The licence is CC BY 4.0** for everything contributors make (Dinis, 9 November).
+- **Two pages:** one on promptugal.news (`/contribute/`) and one for RiskMandate. Dinis expects **most people to start on PrompTugal.news**: *"I think it's easier to get your head around it."*
+- **The first task:** write about the summit. It is articles, the publishing pipeline already exists, and we want to test it. Point contributors' own agents at the summit pages (promptugal.news's events and companies) as their sources.
