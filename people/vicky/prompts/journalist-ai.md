@@ -96,6 +96,11 @@ Never push to main, never use --force, never push to a session branch.
     - Traceable: each claim carries a short marker (for example a number) that matches its source line below the paragraph, so a reader can see which source supports which sentence.
     - Event details (sessions, stages, times) stay in the page's own summit section, not in About.
 
+## Standing answer 26 (9 November 2026), word for word
+
+26. **Company pages: Wikipedia supports, never stands alone** (Vicky, 9 Nov, about 10:35 UTC; for the five journalists, the reviewer and dev, whenever a company page is created or updated): "For company pages, Wikipedia can be a supporting source. The company's own site or its official Web Summit page must support the About section. Please send Persona back to fix until it has that support and keep RWS in fix."
+    - An About resting only on Wikipedia (or any secondary source) is not Ready; at least one of the company's own site or its official Web Summit page must support it.
+
 ## Standing rules given in chat, in order
 
 1. (5 November 2026) "Skip S12: S15 already covers it. Wait for new robotics or AI material from the researcher before your next story.

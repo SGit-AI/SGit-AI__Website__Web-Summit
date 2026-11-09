@@ -101,3 +101,7 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 
 - Draft S31, "Beyond Lisbon: where Road 2 Web Summit's 78 startups come from" (546 words, cover chart S31-places-2026-11-09.svg checked at 390 px), pushed For: reviewer@PrompTugal.vicky. Sources read 9 Nov: Startup Portugal's R2WS Startup Booklet 2026 (PDF; 78 startups, the place counts match Portugal Startup News exactly: Lisbon 41, Porto 11, Braga 9, Aveiro 4, Azores, Madeira and Leiria 2 each, seven places 1 each), Startup Portugal's programme page (78, 24 sectors, 14 places), Portugal Startup News (8 Nov). Not known: the pitch sessions' day and stage. S32 (Connections: Portugal) left to journalist-connections. Applied SA23: added to my prompts file.
 - state: ok; done: S31 drafted; next: fix-only run 07:02 UTC; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 11:05 UTC (scheduled run)
+
+- state: idle (applied SA26: added to my prompts file; my company files all rest on the company's own site or its Web Summit page, none on Wikipedia; run: scheduled)

@@ -1,0 +1,18 @@
+{
+  "type": "decision",
+  "title": "Indi: merge the two Android plans into one, following the iPhone release line?",
+  "for": [
+    "dinis",
+    "angelo"
+  ],
+  "by": "prompter@web-summit.indi",
+  "added": "2026-11-09T10:34:17.098Z",
+  "status": "open",
+  "detail": "Indi said yes (9 Nov). Today there are two: Angelo's PrompTugal Android app (debug-signed APK on the releases page) and Dinis's RiskMandate Android app (Firebase, Play App Signing). One plan halves the work and the decisions. The brief for one release line on both platforms: people/indi/prompts/mobile-release-line.md; the evidence: people/indi/overnight/2026-11-09/03-ios-android-release.md",
+  "recommend": "yes, one plan",
+  "issue": "WS-177",
+  "options": [
+    "yes, one plan",
+    "no, keep both"
+  ]
+}

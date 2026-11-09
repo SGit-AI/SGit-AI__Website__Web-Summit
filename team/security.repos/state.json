@@ -1,0 +1,131 @@
+{
+  "about": "Where security.repos@web-summit.dinis stopped, per repository and branch: the last commit reviewed (the branch head when the run read it). The next run reviews every commit reachable from any branch and not from these. From the second run, every branch is listed, not only those active since the baseline.",
+  "agent": "security.repos@web-summit.dinis",
+  "last_run": "2026-11-09T12:40Z",
+  "baseline_from": "2026-11-08T11:00Z",
+  "repos": {
+    "SGit-AI/SGit-AI__Website__Web-Summit": {
+      "branches": {
+        "dev": "7699a04092df985510bc1f77c8ee9c253cda96a3",
+        "claude/awesome-dirac-rp94os": "1cc9740af65206906617362b879004f6564e0e8d",
+        "claude/beautiful-clarke-mqhept": "a88e8c65a2e854b41b5b2e2f7506bab1c53e2ddf",
+        "claude/conductor-jose-setup-ogxaka": "ccfecefe90fb74e838fd1b0b0f89b40be179593d",
+        "claude/epic-johnson-nid58i": "47aa51fdd1a2d706ddebcf14d7c91db04490e9b8",
+        "claude/fervent-fermi-wvb0sd": "7eeb148b705cdbce0f22dbfecd99fda6ee3fad52",
+        "claude/funny-mayer-7jpij1": "12feb45aafbc87b59a54ac69c5e2b4033f90650f",
+        "claude/hopeful-rubin-3zcktn": "d39754a7251b084ee1aad98b6e22f03fa8a2b925",
+        "claude/modest-brahmagupta-37bfva": "60e4404e43c38faa28846c2ec1eaf535b0dcb11c",
+        "claude/modest-lamport-v1ejmm": "166b66501b59025132aae019e694655073cab8f1",
+        "claude/nifty-bell-f1rkca": "d9a32357538247a32141124b9a97c597e0e851fc",
+        "claude/nifty-knuth-cnyek0": "359a829d401c847b468b04e08b63391a77511427",
+        "claude/optimistic-feynman-7pkot9": "dc306d7a08898d1d79bc05440601138fad218353",
+        "claude/relaxed-hypatia-eo624i": "63e25ecfce5cecb52d2d4c817683af82eb7b3ec8",
+        "claude/sharp-archimedes-chn14g": "0834db3f6515dc674b0da7e5ee217b9e0ccb9481",
+        "claude/sweet-euler-cn5pcs": "00a78212e7926e30d26e5a1fac6497dd002788c2",
+        "claude/web-summit-helper-setup-v3whh6": "a7ce18d89847f906365ff22848cb1cf1e2521a41",
+        "claude/wonderful-archimedes-e5vx9e": "f8e1b0f60636d819a7a67cd83c3160927e488631",
+        "main": "81353d4559f18c8eaccc915f54f6c521961a3dda",
+        "workers/dev.abp": "d2f04341487f6801fc5a4da8bbe2e71b734772e6",
+        "workers/dev.app": "f61535d128823d6368fe3c6c1b700f1a7e31033c",
+        "workers/dev.links": "552928f2513e336cb6af52f3c8b1ca6ee03959d1",
+        "workers/dev.map": "b6584c8b930914541d04dd1c2c9449c3b74fdb24",
+        "workers/dev.venues": "1e39e829b5fb71b8b0e87d93e04c5b55b8b2bb14",
+        "workers/dev.work": "3ec98438cba24fabb1c341194f7e948b8626c9b4",
+        "workers/research": "aaa86b8c7e122889b8f55ef5d54b1708f1c4aa4e",
+        "workers/social-media": "0f14af69634ba6daaee6312f8950ddd49840e598",
+        "workers/vault.kms": "22771e5b6af886f6ac26306f9d02fa5a16db7ff8"
+      }
+    },
+    "PrompTugal/PrompTugal__News__Website": {
+      "branches": {
+        "dev": "cb760fec755ca94253e75b7142973a7e57de6eee",
+        "claude/serene-keller-r1pzfc": "3affa4b4a3478ef40565a13154ffe10e0c55e8bc",
+        "claude/sweet-heisenberg-m1vm71": "c9217130f27dae9a55e5a7080e644f286b31f73e",
+        "main": "9629432a48d2514aa11d89172fb3173f4aedce90",
+        "work/conductor-silvio": "e9ffd69b1fc3f1cf3aecbb1ee3474c57493ea465",
+        "work/designer.experiments": "1177421a6cc6e53eff0b578a5b78ad2eaf1427ca",
+        "work/dev.data": "44fe40fb62a8b347b730d918db108bffd031f0b6",
+        "work/dev.graphs": "2ef1b2804e8054603af24b79bcc9460ec0d64c3b",
+        "work/dev.pages": "46372dd125631ce9b84823857ea6f9ca4a4d6116",
+        "work/dev.portugal": "71a42bb579d76e9f1683153dafb322f54f430f8d",
+        "work/dev.search": "938ab51070025f1221ecfe415dc1b8170b3a692e",
+        "work/dev.verify": "5e7c04bd0fe4c45ffb415c114912de1b0895abc1",
+        "work/investors.packs": "6b61e94420daa2ef0e0f58b2113d3e2ad0044a74",
+        "work/writer-angelo": "ccd77f7be2b8279c63c6860e9e537efd1c75b91f"
+      }
+    },
+    "PrompTugal/PrompTugal__App__Android": {
+      "branches": {
+        "dev": "c5d98c0ae8e534cfc838517f6f6954274a4be149",
+        "main": "0b299ae1db8bdb6194a61192401c39686ac3c3c5",
+        "work/app": "1db8b74bf6cab8a69c498c6b322d6aeaa87a7c53",
+        "work/architect": "5e7eda702fd474e8a4787fa2f00baa7f167ea77f",
+        "work/design": "55026cb1e50119e2f87cdaf172e108f82ca2aca1",
+        "work/dev.abpdemo": "29f60131cc4cf7a8f15ef249e95a59978375add1",
+        "work/dev.chat": "abcf5b4fe2d053679bfdf3074e35e83f5235a3d3",
+        "work/dev.lab": "7c5e73f6b2b3e259ffc529f4c608f21d662a5133",
+        "work/dev.llm": "d01998432c1010a294b571333934b10540d30dba",
+        "work/dev.mandate": "f53e3d7a6d8116497ffdea6ec6cdd96f29fe466e",
+        "work/dev.releases": "873dd244987370095920f7fe30d1e268237bb2d9",
+        "work/dev.site": "124cd4e588e339251c9f635c681e34eb573c386f",
+        "work/dev.stand": "b49d3d11ebcfad94d4aae8a7c75ce0d758881351",
+        "work/devices": "117f6a8da7274f5f53d8a7744527d24626a3e906",
+        "work/editor": "a34a546869c336d8fab67e94deccd76303e79780",
+        "work/eval": "9bcd6709d8c0446eb0859428a42b08586c53dd46",
+        "work/play": "dbf311e00e46bd4e87411080d55d88560be23b35",
+        "work/qa": "e5f4b5b476675474bca79b3b9b32d4e8360d189d",
+        "work/release": "a4aeb01487bb3e8cdded231a7b1545e71bf9a183",
+        "work/security": "6746d84f1c1152d2a02bd828b68be4539ab936b2"
+      }
+    },
+    "PrompTugal/PrompTugal__App__iOS": {
+      "branches": {
+        "dev": "f43acf8872b4806d3da7fef24735d78e9f78a0f1",
+        "claude/serene-edison-22z0xn": "38f17268b7830bbf185a2fa3e48f2c2abc15b766",
+        "conductor/self-hosted-trial": "3e960dff1c15a152d9a081d8d30c48495673e3d8",
+        "main": "2bd40e27f2212a9166916ad18cc558b75106feda",
+        "night/collab": "54cc56875f97721a0100fc2d074e99514b5b3d8a",
+        "night/design": "89b17e80a2340370688afc06b757207c7a415f32",
+        "night/editor": "e7cfc2c8ee59571031887c7217df4b8f9525be40",
+        "night/platform": "8dfacdecc3507a7c455258267d78ec8e898e416f",
+        "night/release": "8f95a01a88f94c1c889e5bff486ef4e01ee34e8f",
+        "night/team": "768cae223558b913a228a1c15db94b08782567bd",
+        "night/vault": "7f4ebfa92f6040d130eab1b217d150fd86317247",
+        "split/apps": "9d35705685035567c392726bc861eade84106569",
+        "split/collab": "730c32738139b4c394dbe9ea8917bfdadf75a648",
+        "split/collab-seams": "86c1f7b05a058333e10f7dcbf02ce5753d1afe24",
+        "split/deck": "5207750195f0046caf2e5620d1532f35d8a2dc7e",
+        "split/design": "706e416486bd959c6f0cc5d9d693c4facffb8cf3",
+        "split/editor": "93279d1c4eec3997e5e1f5068b30fc7b784c6653",
+        "split/i18n": "01ed7527190ce9a30bf22b468a1158eb90b20020",
+        "split/platform": "bd79c0735d27174aa39fd07f4eff8f53da3affbc",
+        "split/rc": "75203d50016c5e6e55c254d5fbcab4ca1366ed64",
+        "split/rc10": "e9629cac0c38f38ab82ec461979993b1afd6424c",
+        "split/rc2": "3de45dd67f72590ce247e4bf823fe887b53ae6cc",
+        "split/rc3": "98767dd475438c0303a0fdbac9d64b61df6990ea",
+        "split/rc4": "56a630e0a5569bc3c1596503cdfed2c4d64db5b9",
+        "split/rc5": "d051bf526ba9d03cab107e8511157a84a454344a",
+        "split/rc6": "47531b5d70b6e2bfcfeee89c3e3ccd23567391d0",
+        "split/rc7": "535e9ba388dd1a1d44b6042a47d272895757f3c8",
+        "split/rc8": "4f589655b2cdcd0084a0c8a18bd4621e4e8da198",
+        "split/rc9": "640e631fe8f25bd2303d7b64524a4440275d7006",
+        "split/release": "55054d543f11ab46ec44f4bc4b9840408ce795b9",
+        "split/review": "85b373b60c0a1037dd82b1fd9f5807a262f9531e",
+        "split/team": "f9a4996a523f3b6db110defab58fcf634d324dd3",
+        "split/testflight": "833d77ab143e0fad121e61cc1d7b4934e4018048",
+        "split/ux": "22b2c6ff5330bcb2798d66682555325fa7ca5e22",
+        "split/vault": "9e61110c6c3a27eb57f6012773a108a7b64d9659"
+      }
+    },
+    "PrompTugal/PrompTugal__App__Mobile": {
+      "branches": {
+        "dev": "9b48685df5efa3b0d506c3191265ef7677f42184",
+        "main": "9b48685df5efa3b0d506c3191265ef7677f42184"
+      }
+    },
+    "SGit-AI/sgit-ai__website__newsroom__web-summit": {
+      "branches": {},
+      "note": "The same repository as PrompTugal/PrompTugal__News__Website (GitHub redirects the old name; identical refs on 9 Nov 2026): reviewed once, under that name."
+    }
+  }
+}

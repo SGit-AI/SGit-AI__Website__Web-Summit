@@ -29,7 +29,7 @@ He has also written about other shapes than issuing new shares, such as an inves
 
 ## Before anyone invests {#before}
 
-Three things to settle, said plainly ([the company](../../investors/company/index.html#open)): the company's status at the official register; who owns and manages it; and which company sells what, between My Feeds and The Cyber Boardroom Limited. They are Dinis's to settle and these pages will say when they are.
+Two things to settle, said plainly ([the company](../../investors/company/index.html#open)): the company's status at the official register, and how an investment in My Feeds is matched by the activity that goes through it, since today most of the commercial work runs through The Cyber Boardroom Limited, Dinis's wholly owned UK company ([two companies](../../investors/company/index.html#two)). They are Dinis's to settle and these pages will say when they are.
 
 ## Next step {#next}
 

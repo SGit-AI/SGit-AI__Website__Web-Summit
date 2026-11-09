@@ -163,3 +163,9 @@ Vicky's Connections journalist for the Web Summit 2026 newsroom (which startups,
 ## Mon 9 Nov 2026, 05:47 UTC (scheduled run)
 
 - state: idle
+
+## Mon 9 Nov 2026, 10:50 UTC (scheduled run)
+
+- Applied SA26: standing answer 26 in my prompts file. Persona and RWS are my files (S2 and C2); each needs its own site or an official Web Summit company page under its About. Neither site answers this session, and our sources show no Web Summit company page for either (only session and speaker pages), so both wait for a batch Vicky starts (standing answer 24), not a scheduled run.
+- No hold; P2: prompts file and memory agree; no new Connections storyline ready (S32 held by the curator); no fix-first open on my drafts.
+- state: ok; done: SA26 applied; next: Persona and RWS when Vicky starts a batch; ask: none; run: scheduled

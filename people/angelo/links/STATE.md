@@ -1,6 +1,8 @@
 # dev.links STATE
 
-Last run: 8 November 2026 (run 7).
+Last run: 9 November 2026 (run 8).
+
+- Run 8 (9 November): the sitemap is 1,454 pages; crawled the new tail (1412 to 1453, 107 requests): all 200, 65 links checked, no new broken link. Rechecked: the same 404s (startupportugal pt programs page, anje.pt PDF, websummit.com qase, paul-jenkinson and two sessions pages); algarveevolution.pt still unreachable (could not check). Next run: re-crawl from page 1454 for new pages (crawl.mjs's last page is exclusive). The worker branch was again rebuilt on dev.
 
 - Run 7: the sitemap is 1,412 pages; crawled page 1411 (offline/index.html, 11 requests in all): 200, no new broken link. Rechecked: qase and paul-jenkinson websummit.com pages still 404; algarveevolution.pt still times out (could not check). Next run: re-crawl from page 1412 for new pages. Note: crawl.mjs's last page is exclusive (1411 1412 fetches one page). The worker branch had to be rebuilt on dev (its old commits were already brought onto dev by reviews), so this run's commit sets the tree to dev's plus this change.
 

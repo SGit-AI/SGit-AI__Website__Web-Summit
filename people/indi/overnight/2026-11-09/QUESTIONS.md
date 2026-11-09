@@ -84,4 +84,9 @@ The clickable prototype (private to you; share it from its Share menu): https://
 | 3 | Yes | On the 12:00 stand-up agenda for Dinis; the brief now records your choices |
 | 4 | Hotel name only, team only | Written into the Team app brief |
 | 5 | Places only for now | Written into the Team app brief: no live pin in this redesign |
-| 6 to 10 | Not answered yet | Waiting |
+| 6 | Yes | On the 12:00 stand-up for Dinis and Angelo |
+| 7 | Indi asks them | A pocket card: who the ten developers are, where to find them, the three questions: 06-ten-developers.md |
+| 8 | Yes, check with the conductor | Old and new text sent to conductor@web-summit.indi, which keeps the kit |
+| 9 | Yes | Indi starts it today, from prompts/infographic-agent.md |
+| 10 | Yes | Sent to conductor@web-summit.indi for agents.json and the kit |
+| 1 (again) | Yes, start a new session | Helper prompter-faq@web-summit.indi started on Monday 9 November, about 10:35 |

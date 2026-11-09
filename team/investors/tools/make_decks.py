@@ -91,8 +91,8 @@ PITCH = [
         '<b>MYFEEDS AI, UNIPESSOAL, LDA</b>, a single-member private limited company.',
         'Seat: <b>Loulé, district of Faro</b>.', 'Activity: computer programming and consultancy.',
         'Incorporated in October 2025; the public directories list no dissolution.']) + '</div>'
-        + '<div class="box"><b>Still to settle, said plainly</b>The official register is to be checked by a person; who owns and manages it, from a register; and which company sells what, between My Feeds and The Cyber Boardroom Limited (UK). Dinis\'s to set out.</div></div>'
-        + '<p class="cap">Racius and eInforma, read 6 November 2026. ' + a('investors/company/index.html', 'The company') + '.</p>'),
+        + '<div class="box"><b>Two companies, today</b>Most of the commercial work runs through The Cyber Boardroom Limited (UK, wholly owned by Dinis); My Feeds exists, with little activity yet. Still to settle: the official register, checked by a person, and how an investment in My Feeds is matched by the activity through it.</div></div>'
+        + '<p class="cap">Racius and eInforma, read 6 November 2026; Dinis, 9 November 2026. ' + a('investors/company/index.html', 'The company') + '.</p>'),
     ('The investment', '<h2>What it is for: time, selling, and scaling the agentic team</h2>' + ul([
         '<b>The first six months to a year</b>: discover the market by selling services and customised agentic teams.',
         '<b>Scale the agentic team</b>: more agents, more people running them, the tools that turn one-off work into packages.',

@@ -9,7 +9,7 @@ Kept by conductor@web-summit.vicky at Vicky's word (8 November 2026, about 17:45
 | Count | |
 |---|---|
 | Company pages on promptugal.news | 120 |
-| Already done | 100 (Replit; C1, ten; P1, nine; E1, ten; C2, nine; overnight, 61) |
+| Already done | 99 (Replit; C1, ten; P1, nine; E1, ten; C2, nine; overnight, 60: Persona back to fix, 9 Nov) |
 | In this backlog | 101, in 10 batches |
 | Blocked, missing evidence | 14 |
 | Held, someone else working on the data | 4 |
@@ -92,7 +92,7 @@ Status words in the Status column: `to do`, `writing` (taken tonight), `in revie
 | LawVu | https://promptugal.news/companies/lawvu/ | done (9 Nov, v0.1.761, live-checked) |
 | ManageEngine | https://promptugal.news/companies/manageengine/ | done (9 Nov, v0.1.761, live-checked) |
 | Neo | https://promptugal.news/companies/neo/ | done (9 Nov, v0.1.762, live-checked) |
-| Persona (website) | https://promptugal.news/companies/persona/ | done (9 Nov, v0.1.762, live-checked) |
+| Persona (website) | https://promptugal.news/companies/persona/ | fix (9 Nov, standing answer 26: its About rests only on Wikipedia; it needs Persona's own site or its official Web Summit page; About off the live page at v0.1.831) |
 
 ### P1: journalist-portugal@PrompTugal.vicky (9)
 

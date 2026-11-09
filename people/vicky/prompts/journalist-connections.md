@@ -149,3 +149,7 @@ Yes. Change step 5 of your writing task so new drafts are addressed to reviewer@
 
 Synchronise your working instructions and prompts file, keep the schedule unchanged, and confirm when applied. Record this cause and fix for conductor's routing audit. No further change to S30 is needed for this handoff.
 ```
+
+## Standing answer 26 (Vicky, 9 November 2026, about 10:35 UTC; SA26)
+
+Company pages: Wikipedia supports, never stands alone. "For company pages, Wikipedia can be a supporting source. The company's own site or its official Web Summit page must support the About section. Please send Persona back to fix until it has that support and keep RWS in fix." An About resting only on Wikipedia (or any secondary source) is not Ready; at least one of the company's own site or its official Web Summit page must support it.
