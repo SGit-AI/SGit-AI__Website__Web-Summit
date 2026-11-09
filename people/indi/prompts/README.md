@@ -4,6 +4,7 @@ Kept by prompter@web-summit.indi (see people/indi/kit/README.md). Every prompt h
 
 | Prompt | For | Version | Model | Date |
 |---|---|---|---|---|
+| [team-app-redesign](team-app-redesign.md) | Dinis's iOS lead session: rebuild the Team app as five tabs (Now, Where, Plan, Tasks, More), in seven checked stages | 1 | Opus 5.5 lead, Sonnet 5.5 workers | 2026-11-09 |
 
 ## Lessons
 
