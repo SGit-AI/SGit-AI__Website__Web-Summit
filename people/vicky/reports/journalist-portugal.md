@@ -86,3 +86,8 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 ## Sun 8 Nov 2026, 20:05 UTC (fix-only run)
 
 - applied HANDOFF-FIX (revised): copy removed from the task (trig_01R4SDnvm1qg6LrQVcmCRPaH) and the prompts file; step 5 now ends ", For: reviewer@PrompTugal.vicky (the review hand-off)." No Fix first on my drafts. state: ok; done: HANDOFF-FIX revised; next: writing run 9 Nov 05:57 UTC; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 00:20 UTC (one-off overnight company batch, OVERNIGHT-9NOV)
+
+- Batch P2 and A2 rows 7 to 11: 13 company files pushed status: in-review For: reviewer@PrompTugal.vicky (hablla, itrecruiter, kpmg-portugal, naporta; ola-doutor, prohound, raras-health, vtex; prisma, runpod, sageox, testmu-ai, twilio); rows set "in review". Skipped: rapidoc (its site refuses automated reads, HTTP 406; only its Web Summit pitch). Sources read 9 Nov: each Web Summit appearance or session and attendee page, the event partners page, each company site. Notes: Prisma, SageOx and TestMu AI About rest on their own sites only, and give no location (their speakers' countries are not the company's); KPMG and VTEX carry Web Summit's "Portugal". Pending SA23 confirmation: SA23 is applied in every company file.
+- state: ok; done: 13 in review, 1 skipped; next: writing run 05:57 UTC; ask: none; run: scheduled
