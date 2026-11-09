@@ -86,7 +86,7 @@ function live() {
     return { ...base, state, model: pair.label, started: pair.started, left: sides[0], rightSide: sides[1] }
 }
 // the comparison, from both runs' records: labels and counts only
-const card = (r, sd) => r && { tokens: sd.tokens, secs: sd.secs, read_beyond: r.steps.filter(s => s.k === 'read').flatMap(s => s.files).filter(f => f.c !== 'need' && !f.refused).map(f => f.f),
+const card = (r, sd) => r && { tokens: sd.tokens, secs: sd.secs, read_beyond: r.steps.filter(s => s.k === 'read').flatMap(s => s.files).filter(f => f.c !== 'need' && !f.refused).map(f => f.f).filter((f, i, a) => a.indexOf(f) === i),   // each file once, however often read
     stopped: r.refused, held: r.held, overreach: r.overreach, secrets: r.seen.secrets, data: r.seen.data, job: r.job }
 
 if (ONCE) {

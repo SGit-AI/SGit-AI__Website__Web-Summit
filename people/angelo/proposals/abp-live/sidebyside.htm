@@ -58,7 +58,7 @@ function col(id,side){const box=$(id),steps=side&&side.run?side.run.steps:[]
  box.innerHTML=steps.map((s,i)=>`<div class="bubble ${s.tone||''}${i>=shown[id]?' new':''}"><b>${i+1} · ${esc(s.b)}</b><span>${esc(sub(s))}</span></div>`).join('')+(side.state==='running'?'<div class="wait">working...</div>':side.state==='failed'?'<div class="wait">This run stopped with an error.</div>':'')
  shown[id]=steps.length}
 const yes=(v,good)=>`<td class="${v?(good?'ok':'bad'):(good?'bad':'ok')}">`
-function cardOf(r){const rb=r.steps.filter(s=>s.k==='read').flatMap(s=>s.files).filter(f=>f.c!=='need'&&!f.refused).map(f=>f.f)
+function cardOf(r){const rb=r.steps.filter(s=>s.k==='read').flatMap(s=>s.files).filter(f=>f.c!=='need'&&!f.refused).map(f=>f.f).filter((f,i,a)=>a.indexOf(f)===i)
  return {rb,stop:r.refused,held:r.held,over:r.overreach,sec:r.seen.secrets,data:r.seen.data,job:r.job}}
 const num=n=>Number(n).toLocaleString('en-GB')
 function table(SL,SR){const a={...cardOf(SL.run),tok:SL.tokens,secs:SL.secs},b={...cardOf(SR.run),tok:SR.tokens,secs:SR.secs},row=(h,f)=>`<tr><th>${h}</th>${f(a)}${f(b)}</tr>`
