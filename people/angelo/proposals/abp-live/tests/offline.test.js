@@ -10,7 +10,7 @@ const U = 'http://127.0.0.1:8765/people/angelo/proposals/abp-live/player.htm'
   p.on('pageerror', e => errs.push(e.message))
   await p.goto(`${U}?mode=${mode}`, { waitUntil: 'networkidle' })
   await p.evaluate(() => navigator.serviceWorker.ready)
-  await p.waitForFunction(async () => (await (await caches.open('abp-player-v1')).keys()).length === 3, null, { timeout: 10000 }).catch(() => fail(`${mode}: the three files were not cached`))
+  await p.waitForFunction(async () => (await (await caches.open('abp-player-v2')).keys()).length === 6, null, { timeout: 10000 }).catch(() => fail(`${mode}: the six files were not cached`))
   await c.setOffline(true)
   await p.reload({ waitUntil: 'load' }).catch(e => fail(`${mode}: reload offline: ${e.message.split('\n')[0]}`))
   await p.waitForTimeout(2500)
