@@ -55,13 +55,18 @@ const fails = []; const fail = m => { fails.push(m); console.log('  FAIL', m) }
       const texts = q('.wv text').map(t => t.textContent)
       const counts = q('.wv-n').filter(n => n.style.display !== 'none').length
       const logosOk = await Promise.all(q('.wv-sq image').map(i => fetch(i.getAttribute('href')).then(r => r.ok)))
-      return { short: A.DEST_SHORT, clash, n: shown.length, merged: merged.length ? merged[0].n : 0, mid, pills, squares, onRim, after, litLater: q('.wv-sq.wv-lit').length, texts, counts, logosOk, light: V.light, frame: { l: frame.left, r: frame.right }, names: A.DEST_NAMES }
+      // long names (a workstream's title) inside the rim reach at most 28% of the drawing across, so they stay off the people's
+      // clusters (dashboard@'s review, 52832206): laid out in the frame of the hexagon alone, as on a phone
+      const longN = Object.fromEntries(A.DESTS.map(d => [d, 'a workstream with a long title, ' + d])), LL = D.pillsFor(A.places(1), longN, V.pills().font, 0, A.S)
+      const insideMax = Math.max(0, ...[...LL.values()].filter(b => b.mode === 'inside').map(b => b.w / A.S))
+      return { insideMax, short: A.DEST_SHORT, clash, n: shown.length, merged: merged.length ? merged[0].n : 0, mid, pills, squares, onRim, after, litLater: q('.wv-sq.wv-lit').length, texts, counts, logosOk, light: V.light, frame: { l: frame.left, r: frame.right }, names: A.DEST_NAMES }
     }, { base: BASE })
     if (r.err) { fail(`${tag}: ${r.err}`); await ctx.close(); continue }
     if (r.squares.length !== 10 || r.pills.length !== 10) fail(`${tag}: ${r.squares.length} squares, ${r.pills.length} pills`)
     r.onRim.forEach((ok, i) => { if (!ok) fail(`${tag}: the square for ${r.squares[i].d} is not on the rim`) })
     for (const s of r.squares) if (['news', 'linkedin'].includes(s.d) !== s.logo) fail(`${tag}: ${s.d} logo ${s.logo}`)
     if (r.logosOk.some(x => !x)) fail(`${tag}: a logo does not load`)
+    if (!(r.insideMax > 0 && r.insideMax <= 0.285)) fail(`${tag}: a long name inside the rim reaches ${(r.insideMax * 100).toFixed(1)}% across (at most 28%)`)
     for (const pl of r.pills) {
       if (pl.crosses) fail(`${tag}: the pill for ${pl.d} crosses the rim`)
       if ((pl.mode === 'inside') !== pl.within) fail(`${tag}: the pill for ${pl.d} is ${pl.within ? 'inside' : 'outside'} the rim, its mode ${pl.mode}`)
