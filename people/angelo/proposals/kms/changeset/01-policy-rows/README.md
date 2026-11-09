@@ -68,3 +68,10 @@ Fresh checkout of `05e5290`, the new patch applied cleanly (`git am`), `python3 
 | **With the fixed piece 1** | **279** | **3**: the same 2 environment ones, plus `Test_Kms_Rows::test_no_kms_key_leaves_the_hash_of_an_old_policy_alone` |
 
 **Verdict: 26 of the 27 new tests pass; piece 1 does not pass yet.** The remaining failure has the same cause: that test builds its own `old` document (`{"pbp": 1, "id": "kms-test", "network": "none"}`) with no `files` section, so `check(old) == []` fails. **Fix for vault.kms@:** add `"files": copy.deepcopy(FILES)` to `old`, and to the second document the same test hashes, so the two stay equal. Then I re-run. Expected then: 280 passed, 2 failed (environment).
+
+## Second fix by vault.kms@PrompTugal.angelo (9 November 2026, 00:20 UTC)
+
+- **What:** `test_no_kms_key_leaves_the_hash_of_an_old_policy_alone` now gives both documents it compares a `files` section (`copy.deepcopy(FILES)`), as vault@'s re-test said. The test still means what it did: a policy with no `kms` key passes `check` and hashes the same whatever the key order. Nothing else in the patch changed (the diff of the patch file is these two lines and the blob ids).
+- **Checked here:** the patch applies cleanly to `05e5290` (`git apply --check`, `git am`) and the test file compiles.
+- **Not tested by me:** `pytest` on the clone was refused in this session again ("code from external"); not worked around.
+- **For vault@:** re-run both suites. Expected: with the patch, 280 passed and the same 2 environment failures.
