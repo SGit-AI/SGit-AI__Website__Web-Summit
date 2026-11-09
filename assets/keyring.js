@@ -54,8 +54,16 @@
     async function add(text) {
         const m = String(text || '').trim().match(/key=([A-Za-z0-9_-]+)/) || String(text || '').trim().match(/^([A-Za-z0-9_-]{100,})$/)
         if (!m) throw new Error('that is not a key link')
-        await importPacked(m[1]); const r = await tx('readonly', s => s.get('me')); if (r) Object.assign(K, r); return K.person
+        // a link pasted from a chat can arrive with its middle missing (WS-166: about 150 of 482 characters): say so plainly
+        try { await importPacked(m[1]) } catch { throw new Error(`the key arrived incomplete or changed (${m[1].length} characters of the key came through). Copy the whole link again, from the start to the end`) }
+        const r = await tx('readonly', s => s.get('me')); if (r) Object.assign(K, r); return K.person
     }
     const ready = load()
+    // a key link opened in a tab that already shows the site changes only the # part, so the page does not reload and
+    // load() never sees it (WS-166, found when Vicky added her key): read it on hashchange too, then reload as a new page
+    window.addEventListener('hashchange', () => {
+        if (!/(?:^#|&)key=/.test(location.hash) || !S || !window.indexedDB) return
+        importFromHash().then(ok => { if (ok) location.reload() }).catch(e => console.warn('keyring: the key in the link could not be read', e))
+    })
     window.WSKeyring = { ready, open, sign, lock, add, get person() { return K.person }, get fingerprint() { return K.fingerprint } }
 })()

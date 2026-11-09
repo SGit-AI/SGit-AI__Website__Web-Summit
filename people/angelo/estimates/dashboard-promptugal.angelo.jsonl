@@ -24,3 +24,5 @@
 {"event": "done", "at": "2026-11-08T20:57:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 20:40", "effort_min": 16, "elapsed_min": 16, "runs": 1, "note": ""}
 {"event": "start", "at": "2026-11-08T22:41:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 22:40", "what": "review dev.work (the work view in playback)", "est_effort_min": 15, "est_elapsed_min": 15, "confidence": "high"}
 {"event": "done", "at": "2026-11-08T22:58:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 22:40", "effort_min": 17, "elapsed_min": 17, "runs": 1, "note": ""}
+{"event": "start", "at": "2026-11-08T23:41:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 23:40", "what": "review dev.work (three levels, clip button, light theme) and dev.app (STATE)", "est_effort_min": 20, "est_elapsed_min": 20, "confidence": "medium"}
+{"event": "done", "at": "2026-11-09T00:00:00Z", "agent": "dashboard@PrompTugal.angelo", "item": "reviews 23:40", "effort_min": 19, "elapsed_min": 19, "runs": 1, "note": ""}

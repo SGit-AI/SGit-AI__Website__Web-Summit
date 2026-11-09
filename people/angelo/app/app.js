@@ -396,20 +396,24 @@ ${D.tasks.unplaced.length ? `<p class="note">Could not place: ${esc(D.tasks.unpl
             if (title) title.innerHTML = `${ownTitle('Live')}<small>${esc(first)}'s command centre</small>`
             document.title = `Live · ${first}'s command centre`
             if (!D || !D.collab || !window.AngeloLive) { view.innerHTML = failed ? `<p class="note">The board could not load its data (${esc(failed)}).</p>` : '<p class="note">Loading the team…</p>'; return }
-            // "Exchanges | Work" (backlog 0f2, spec-work-view.md, dev.work@PrompTugal.angelo): the same graph, with what was made
-            // travelling to its destinations (work*.js, loaded only when asked for); the work view is flat, so Work leaves 3D
-            const wv = /[?&]v=work(&|$)/.test(location.hash), sw = `<div class="tm-tabs" role="group" aria-label="What the graph shows" data-wv-sw><a class="rp-chip${wv ? '' : ' on'}" href="#live${/[?&]d3=1(&|$)/.test(location.hash) ? '?d3=1' : ''}" aria-pressed="${!wv}">Exchanges</a><a class="rp-chip${wv ? ' on' : ''}" href="#live?v=work" aria-pressed="${wv}" title="What each agent and person made, travelling to where it went">Work</a></div>`
+            // "Messages | Workstreams | Deliverables" (backlog 0f2 and 0c4, spec-work-view.md, dev.work@PrompTugal.angelo): the same graph,
+            // with each commit flying to its workstream, or what was made travelling to its destination (work*.js, loaded only when
+            // asked for); both are flat, so they leave 3D
+            const lvl = /[?&]v=ws(&|$)/.test(location.hash) ? 'ws' : /[?&]v=work(&|$)/.test(location.hash) ? 'work' : '', wv = !!lvl
+            const chip = (k, href, label, title) => `<a class="rp-chip${lvl === k ? ' on' : ''}" href="${href}" aria-pressed="${lvl === k}"${title ? ` title="${title}"` : ''}>${label}</a>`
+            const sw = `<div class="tm-tabs" role="group" aria-label="What the graph shows" data-wv-sw>${chip('', '#live' + (/[?&]d3=1(&|$)/.test(location.hash) ? '?d3=1' : ''), 'Messages', 'Who wrote to whom')}${chip('ws', '#live?v=ws', 'Workstreams', 'Each commit flying to the workstream (WS issue) it names')}${chip('work', '#live?v=work', 'Deliverables', 'What each agent and person made, travelling to where it went')}</div>`
             view.innerHTML = `<div class="ak">${ownNote()}<nav class="ak-switch" aria-label="More views"><a href="#collab?map=1">← Team and the machine <span class="ak-mk" aria-hidden="true">✦</span></a></nav>${sw}<div data-ak-live></div><p class="note" data-wv-legend hidden></p></div>`
             const lh = view.querySelector('[data-ak-live]')
             window.AngeloLive.view(lh, { D, liveUrl: new URL('live.json', location.href).href })
             if (drawLive.wv) { drawLive.wv.destroy(); drawLive.wv = null }
             if (!wv) return
-            const files = ['work.js', 'work-draw.js', 'work-newsroom.js', 'work-live.js']
+            const files = lvl === 'ws' ? ['work.js', 'work-draw.js', 'work-live.js'] : ['work.js', 'work-draw.js', 'work-newsroom.js', 'work-live.js']
             files.reduce((p, f) => p.then(() => window[{ 'work.js': 'AngeloWork', 'work-draw.js': 'AngeloWorkDraw', 'work-newsroom.js': 'AngeloWorkNews', 'work-live.js': 'AngeloWorkLive' }[f]] || load(f)), Promise.resolve()).then(() => {
                 const frame = lh.querySelector('[data-lv-frame]'), leg = view.querySelector('[data-wv-legend]'); if (!frame || !lh.isConnected || !window.AngeloWorkLive) return
-                drawLive.wv = window.AngeloWorkLive.mount(frame, { base: new URL('./', here).href })
+                drawLive.wv = window.AngeloWorkLive.mount(frame, lvl === 'ws' ? { base: new URL('./', here).href, file: 'workstreams.json' } : { base: new URL('./', here).href })
                 const A = window.AngeloWork, ico = k => `<svg viewBox="-10 -10 20 20" width="18" height="18" aria-hidden="true" style="vertical-align:-4px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="${A.ICON_PATHS[k]}"/></svg>`
-                if (leg) { leg.hidden = false; leg.innerHTML = `What travels: ${A.ICONS.map(k => `<span style="white-space:nowrap;margin-right:10px">${ico(k)} ${esc(k)}</span>`).join('')}<br>Each icon is something made, flying from its maker to where it went, a few minutes after its commit. The squares count the last 24 hours. Nothing is drawn without a commit.` }
+                if (leg && lvl === 'ws') { leg.hidden = false; leg.innerHTML = `What travels: <span style="white-space:nowrap;margin-right:10px">${ico('doc')} a commit</span><br>Each doc is a commit that names a workstream (its Issue: line), flying from its maker to that workstream a few minutes after the commit. The squares are the nine busiest workstreams and the rest; they count the last 24 hours.` }
+                else if (leg) { leg.hidden = false; leg.innerHTML = `What travels: ${A.ICONS.map(k => `<span style="white-space:nowrap;margin-right:10px">${ico(k)} ${esc(k)}</span>`).join('')}<br>Each icon is something made, flying from its maker to where it went, a few minutes after its commit. The squares count the last 24 hours. Nothing is drawn without a commit.` }
             }).catch(() => { const leg = view.querySelector('[data-wv-legend]'); if (leg) { leg.hidden = false; leg.textContent = 'The work view could not load.' } })
         }
 
@@ -454,17 +458,22 @@ ${teamMap()}<section class="ak-tl" aria-label="Timeline"><div class="tm-top"><h3
                 const keep = (a, b) => { if (!focus) return true; if (focus.startsWith('k:')) return [a, b].some(id => wl.some(l => l.agent === id && 'k:' + l.kind === focus)); if (focus.includes('@') || focus.startsWith('pt:')) return a === focus || b === focus; return [a, b].some(id => id === focus || (pos.get(id) || {}).person === focus) }
                 window.AngeloReplay.mountFlow(host, { D, place, key: [c0.w || '24h', c0.l, c0.f].join('|'), svg: svgEl, pos, nodeOf, keep, w: c0.w || '24h', colOf: p => col.get(p), ctrl: (a, b) => { const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2; return { x: mx + (MC - mx) * pull, y: my + (MC - my) * pull } }, setWindow: w => setC({ ...cstate(), w }) })
             }
-            // "Exchanges | Work" in playback (backlog 0f2, dev.work@PrompTugal.angelo): r_work=1 draws what was made on this map as it
-            // plays, from deliveries.json over the whole history (work-replay.js's mountMap); the files load only when asked for
+            // "Messages | Workstreams | Deliverables" in playback (backlog 0f2 and 0c4, dev.work@PrompTugal.angelo): r_ws=1 flies each
+            // commit to the workstream it names (workstreams.json), r_work=1 what was made to where it went (deliveries.json), over the
+            // whole history (work-replay.js's mountMap); the files load only when asked for
             if (drawCollab.wv) { drawCollab.wv.destroy(); drawCollab.wv = null }
             if (svgEl && lastMap && haveEv && window.AngeloReplay && window.AngeloReplay.mountFlow) {
-                const m = lastMap, h0 = location.hash.replace(/[?&]r_work=1(?=&|$)/, '').replace(/#collab&/, '#collab?'), wv = h0 !== location.hash, on = h0 + (h0.includes('?') ? '&' : '?') + 'r_work=1'
-                const bar = host.querySelector('[data-tmf]'); if (bar) bar.insertAdjacentHTML('beforebegin', `<div class="tm-tabs" role="group" aria-label="What the playback shows" data-wv-sw><a class="rp-chip${wv ? '' : ' on'}" href="${esc(h0)}" aria-pressed="${!wv}">Exchanges</a><a class="rp-chip${wv ? ' on' : ''}" href="${esc(on)}" aria-pressed="${wv}" title="What each agent and person made, travelling to where it went">Work</a></div>`)
-                if (wv) ['work.js', 'work-draw.js', 'work-replay.js'].reduce((p, f) => p.then(() => window[{ 'work.js': 'AngeloWork', 'work-draw.js': 'AngeloWorkDraw', 'work-replay.js': 'AngeloWorkReplay' }[f]] || load(f)), Promise.resolve()).then(() => {
+                const m = lastMap, h0 = location.hash.replace(/[?&]r_(work|ws)=1(?=&|$)/g, '').replace(/#collab&/, '#collab?'), lvl = /[?&]r_ws=1(&|$)/.test(location.hash) ? 'ws' : /[?&]r_work=1(&|$)/.test(location.hash) ? 'work' : ''
+                const to = k => k ? h0 + (h0.includes('?') ? '&' : '?') + 'r_' + k + '=1' : h0, chip = (k, label, title) => `<a class="rp-chip${lvl === k ? ' on' : ''}" href="${esc(to(k))}" aria-pressed="${lvl === k}" title="${title}">${label}</a>`
+                const bar = host.querySelector('[data-tmf]'); if (bar) bar.insertAdjacentHTML('beforebegin', `<div class="tm-tabs" role="group" aria-label="What the playback shows" data-wv-sw>${chip('', 'Messages', 'Who wrote to whom')}${chip('ws', 'Workstreams', 'Each commit flying to the workstream (WS issue) it names')}${chip('work', 'Deliverables', 'What each agent and person made, travelling to where it went')}</div>`)
+                if (lvl) ['work.js', 'work-draw.js', 'work-replay.js'].reduce((p, f) => p.then(() => window[{ 'work.js': 'AngeloWork', 'work-draw.js': 'AngeloWorkDraw', 'work-replay.js': 'AngeloWorkReplay' }[f]] || load(f)), Promise.resolve()).then(() => {
                     if (!svgEl.isConnected || drawCollab.wv) return
-                    drawCollab.wv = window.AngeloWorkReplay.mountMap(host, { svg: svgEl, pos: m.pos, col: m.col, rFrom: D.replay.from, t0: Math.round((Date.now() - Date.parse(D.replay.from)) / 6e4), base: new URL('./', here).href })
+                    drawCollab.wv = window.AngeloWorkReplay.mountMap(host, { svg: svgEl, pos: m.pos, col: m.col, rFrom: D.replay.from, t0: Math.round((Date.now() - Date.parse(D.replay.from)) / 6e4), base: new URL('./', here).href, ...(lvl === 'ws' ? { url: new URL('workstreams.json', here).href } : {}) })
                 }).catch(() => null)
             }
+            // "⤓ Download clip" on the playback bar (backlog 0f3, dev.work@PrompTugal.angelo, clip-button.js): a video of this playback
+            // that WhatsApp plays inline; clip.js and the button load with the playback, the muxer only when a clip is made
+            if (svgEl && lastMap && haveEv && window.AngeloReplay && window.AngeloReplay.flow) (window.AngeloClip ? Promise.resolve() : load('clip.js')).then(() => window.AngeloClipButton || load('clip-button.js')).then(() => { if (host.isConnected) window.AngeloClipButton.mount(host, { work: () => drawCollab.wv, base: new URL('./', here).href }) }).catch(() => null)
             const tlHost = view.querySelector('[data-ak-tl]'); if (tlHost && window.AngeloReplay) window.AngeloReplay.render(tlHost, { D, ownTitle, ago, note: () => '', embed: true })
             const tlt = view.querySelector('[data-ak-tl-toggle]'); if (tlt) tlt.onclick = () => setTl(!tlOpen())
             const tm = view.querySelector('[data-tm-toggle]'); if (tm) tm.onclick = () => setC({ ...cstate(), map: !cstate().map, f: '' })

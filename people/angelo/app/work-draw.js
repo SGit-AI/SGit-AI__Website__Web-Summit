@@ -15,7 +15,8 @@
     const MARK = { site: 'cog', research: 'doc', infra: 'cog', app: 'cog', keys: 'key', crm: 'record', email: 'envelope', drafts: 'doc' }
     const SQ = 58, FONT = 19, MIN_PX = 12
     const CSS = `
-.lv.lv-workview .lv-links, .lv.lv-workview .lv-pulses { opacity: .35; }
+/* the exchanges stay as visible as in Exchanges (Angelo, 8 November about 22:25, backlog 0c4: "the dots and arcs are faint"): the
+   deliveries stand out by being brighter on top, never by dimming the rest */
 .lv.lv-workview .lv-svg { overflow: visible; }
 .lv.lv-workview .lv-hex { width: min(58cqw, 84cqh); height: min(58cqw, 84cqh); }
 @container (max-width: 640px) { .lv.lv-workview .lv-hex { width: min(94cqw, 64cqh); height: min(94cqw, 64cqh); } }
@@ -28,9 +29,11 @@
 .wv-n circle { fill: var(--rm-action, #4aa3ff); }
 .wv-n text { fill: #fff; font-size: 15px; }
 .wv-fly circle.wv-bg { fill: var(--rm-bg, #07111F); }
-.wv-fly path { fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-.wv-trail { fill: none; stroke-width: 2.4; stroke-linecap: round; }
+.wv-fly { filter: drop-shadow(0 0 6px currentColor); }
+.wv-fly path { fill: none; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
+.wv-trail { fill: none; stroke-width: 3; stroke-linecap: round; }
 .wv-num { font-size: 15px; }
+.wv-ws { font-family: var(--rm-font, system-ui, sans-serif); font-weight: 700; font-size: 22px; fill: var(--rm-text-secondary, #BCCCDC); }
 `
     const el = (doc, t, a, p) => { const e = doc.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e }
     const f1 = n => (+n).toFixed(1)
@@ -88,10 +91,11 @@
         return (0.299 * bg[0] + 0.587 * bg[1] + 0.114 * bg[2]) > 140
     }
 
-    // attach(G, o): G is live.js's host.lvGraph; o.base is the app's folder (for the logos), o.clock 'manual' for replay and the clip
+    // attach(G, o): G is live.js's host.lvGraph; o.base is the app's folder (for the logos); o.A another level's rules (work.js's
+    // variant(), Workstreams: a WS square shows its number); o.clock 'manual' for replay and the clip
     // (frames stepped by step(now)), else the drawing runs on G.win's frames. Returns { fly(list, now), counts(c), step(now), destroy }.
     function attach(G, o = {}) {
-        const A = W(), win = G.win || root, doc = G.doc || root.document, svg = G.svg, wrap = svg.closest('.lv') || svg.parentNode
+        const A = o.A || W(), win = G.win || root, doc = G.doc || root.document, svg = G.svg, wrap = svg.closest('.lv') || svg.parentNode
         if (!doc.getElementById('wv-css')) { const s = doc.createElement('style'); s.id = 'wv-css'; s.textContent = CSS; doc.head.appendChild(s) }
         wrap.classList.add('lv-workview')
         const scale = G.scale || 0.84, C = A.C, light = o.light != null ? o.light : isLight(win, wrap)
@@ -108,7 +112,8 @@
             el(doc, 'rect', { x: -SQ / 2, y: -SQ / 2, width: SQ, height: SQ, rx: 12 }, inner)
             const logo = LOGO[d]
             if (logo) el(doc, 'image', { href: (o.base || '') + 'work-logos/' + logo[light ? 'light' : 'dark'], x: -18, y: -18, width: 36, height: 36 }, inner)
-            else el(doc, 'path', { class: 'wv-mark', d: A.ICON_PATHS[MARK[d]], transform: 'scale(1.5)' }, inner)
+            else if (/^WS-\d+$/.test(d)) { const t = el(doc, 'text', { class: 'wv-ws', 'text-anchor': 'middle', y: 8 }, inner); t.textContent = d.slice(3) }   // a workstream: its number
+            else el(doc, 'path', { class: 'wv-mark', d: A.ICON_PATHS[MARK[d] || 'doc'], transform: 'scale(1.5)' }, inner)
             const lead = el(doc, 'path', { class: 'wv-lead' }, squares)
             const pill = el(doc, 'g', { class: 'wv-pill', 'data-dest': d }, squares)
             const pr = el(doc, 'rect', {}, pill), pt = el(doc, 'text', { 'text-anchor': 'middle' }, pill); pt.textContent = A.DEST_NAMES[d]
@@ -151,8 +156,8 @@
                 const from = A.origin(d.maker, G.pos), s = sq.get(d.dest); if (!from || !s) continue
                 const a = out(G.pos.get(from)), b = s.p, stroke = colourOf(d.maker)
                 const trail = el(doc, 'path', { class: 'wv-trail', stroke, 'stroke-opacity': 0, d: '' }, trails)
-                const g = el(doc, 'g', { class: 'wv-fly', 'data-icon': d.icon, 'data-dest': d.dest }, flights)
-                el(doc, 'circle', { class: 'wv-bg', r: 17, stroke, 'stroke-width': 1.5 }, g)
+                const g = el(doc, 'g', { class: 'wv-fly', 'data-icon': d.icon, 'data-dest': d.dest, style: 'color:' + stroke }, flights)   // its glow in the maker's colour
+                el(doc, 'circle', { class: 'wv-bg', r: 17, stroke, 'stroke-width': 2.5 }, g)
                 el(doc, 'path', { d: A.ICON_PATHS[d.icon], stroke }, g)
                 if (d.n > 1) { const t = el(doc, 'text', { class: 'wv-num', x: 20, y: -12 }, g); t.textContent = String(d.n) }
                 live.push({ d, t0: now, a, b, g, trail })
@@ -173,16 +178,18 @@
                 f.g.setAttribute('transform', `translate(${f1(p.x)} ${f1(p.y)})`)
                 const q = A.along(f.a, f.b, Math.max(0, e - 0.25)), m = A.along(f.a, f.b, Math.max(0, e - 0.12))
                 f.trail.setAttribute('d', `M${f1(q.x)} ${f1(q.y)}Q${f1(m.x)} ${f1(m.y)} ${f1(p.x)} ${f1(p.y)}`)
-                f.trail.setAttribute('stroke-opacity', f1(0.6 * Math.sin(Math.PI * u)))
+                f.trail.setAttribute('stroke-opacity', f1(0.85 * Math.sin(Math.PI * u)))
             }
             for (const [, s] of sq) if (s.lit && s.lit <= now) { s.lit = 0; s.g.classList.remove('wv-lit') }
         }
         let raf = 0, alive = true
-        const manual = o.clock === 'manual'
+        let manual = o.clock === 'manual'
         const frame = ts => { raf = 0; if (!alive) return; step(ts); if (live.length || [...sq.values()].some(s => s.lit)) raf = win.requestAnimationFrame(frame) }
         const kick = () => { if (!manual && !raf && alive) raf = win.requestAnimationFrame(frame) }
         function destroy() { alive = false; if (RO) RO.disconnect(); if (raf) win.cancelAnimationFrame(raf); top.remove(); wrap.classList.remove('lv-workview'); live.length = 0 }
-        return { fly, counts, step, destroy, inAir: () => live.length, light, pills: () => laid }
+        // manual(on): the clip (clip-button.js) takes the frames over while it records, and gives them back after
+        const setManual = on => { manual = !!on; if (manual && raf) { win.cancelAnimationFrame(raf); raf = 0 } else if (!manual && live.length) kick() }
+        return { fly, counts, step, destroy, inAir: () => live.length, light, pills: () => laid, manual: setManual }
     }
 
     root.AngeloWorkDraw = { attach, pillsFor, LOGO, MARK }

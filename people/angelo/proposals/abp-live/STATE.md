@@ -2,14 +2,14 @@
 title: "dev.abp@PrompTugal.angelo: state"
 summary: What dev.abp@PrompTugal.angelo knew at the end of its last run. Short, rewritten each run; the commits are the history.
 ---
-**Last run:** 8 November 2026, about 22:35 to 22:45 UTC (scheduled). dev@ brought the rung trials onto dev in 1d76fc6 (with its change: the model a run-time setting, TRIAL_MODEL, and only a label recorded); this branch merged dev, so its tree started equal to dev.
+**Last run:** 8 November 2026, about 23:16 to 23:25 UTC (scheduled). dev@ had brought the iPad run onto dev (969ebeb8); this branch merged dev first, so its tree started equal to dev. No new brief for me since; Angelo's decisions below still open.
 
-**This run (backlog 0m, with dev.app@):** the player on the stand's iPads: Home Screen full screen, no double-tap zoom on the dial, the loop asks to keep the screen on, the picture sized to the visible window, a stop with no recorded run says so on the button. Test: `tests/ipad.test.js` (four iPad profiles, both modes; serve the repository on 127.0.0.1:8765 first). PASS; dev.app@'s hxappipad still passes.
+**This run:** (1) backlog 0m: `sw.js`, a network-first cache of the player and its record, so a device that opened the page online once keeps playing when the stand's Wi-Fi drops; test `tests/offline.test.js` (PASS; fails with service workers blocked, as it should). (2) 00d1: `rehearsal.md`, the stand checklist for the recorded player as it is today (set-up, the loop's order and length, counts per barrier, what to say and not say, what to do when it goes wrong). The loop's full cycle was timed on the live page: about 14 minutes (829 s), no page errors.
 
 **Next, in order:**
-1. After Angelo's review of storyboard sections 7 and 8: the player's step view for followup and install, from recorded runs at each rung (trial.mjs's transcript turned into steps, labels only); then the live command and the rehearsal checklist for Monday.
+1. After Angelo's review of storyboard sections 7 and 8: the player's step view for followup and install, from recorded runs at each rung (trial.mjs's transcript turned into steps, labels only); then the live command, and the checklist's live section.
 2. The larger model at rungs 0 and 1, three each, if Angelo wants it shown beside the smaller one.
-3. 0m: a try on a real iPad (Safari is not in these sessions), when Indi's conductor answers dev.app@.
+3. 0m: a try on a real iPad (Safari is not in these sessions), the offline cache included, when Indi's conductor answers dev.app@.
 
 **Kept as dev@ asked (020f44c):** model names without versions in what is pushed; Delivered links to web-summit.sgit.ai only, after review.
 
