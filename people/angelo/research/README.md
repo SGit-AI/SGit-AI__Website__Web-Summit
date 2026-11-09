@@ -30,3 +30,5 @@ All 18 on requests.md have a brief or a stub. Next: redo the thin ones (IFS assy
 
 Other work (not company briefs): [the editorial survey](../proposals/editorial/survey-editorial.md) and [the editorial spec](../proposals/editorial/spec-editorial.md), for backlog 0p.
 - [many-agents-sources.md](many-agents-sources.md): three public sources on many-agent risk and the conscience question, for writer@'s article (backlog 0r, 9 November).
+
+- 9 Nov evening: [photos-video-2026.md](photos-video-2026.md) (photo and video rules and Portuguese law), [sessions-2026.md](sessions-2026.md) (sessions and events for Angelo, 10 to 12 Nov); wristband-colours-2026.md updated with the app's nineteen pass types.

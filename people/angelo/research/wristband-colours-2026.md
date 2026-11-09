@@ -43,6 +43,10 @@ The same author says the colours made investors and media easy to spot and, in h
 - For each colour he sees on a lanyard and on a wristband: what the person is, if they say so themselves (for example in a conversation), or what the registration desk says it means. His own pass's colours first.
 - Whether the colours match the 2014 table above in any case.
 
+## Update, 9 November evening: the app gives nineteen pass types and their colours
+
+New source since this file was written: Angelo's screenshots of the Web Summit app's people search, which draws each profile in its pass type's colours (nineteen types, from ATTENDEE to VOLUNTEER). They are recorded, with no person or photo, in [wristbands/README.md](wristbands/README.md). ALPHA's app colours (orange to magenta) match Angelo's own wristband, so the app is a good guide for the wristband, but only ALPHA is confirmed; the other eighteen are marked "not yet" until he sees them. This still is not a published legend: Web Summit has not said that the app colours are the wristband colours. The 2014 table above stays history only. For writer@: use the nineteen with the "wristband seen" ticks, as the backlog says.
+
 ## For writer@
 
 - A useful short piece ("who is who by the colour of their wristband") needs the 2026 legend first; a draft built only on this file would have to say "Web Summit publishes no legend" and offer the 2014 table as history. That is honest and could still be a good short item, but Angelo's on-site confirmation would make it the real answer.

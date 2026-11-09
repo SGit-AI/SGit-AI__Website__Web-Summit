@@ -1,0 +1,312 @@
+{
+ "number": 6,
+ "date": "2026-11-09",
+ "kicker": "Web Summit 2026 · token accountant",
+ "title": "Brief 6: four agents measured, one marathon session",
+ "when": "9 November 2026, 17:45 UTC (window: since brief 5, 8 November 17:39 UTC)",
+ "by": "accountant@web-summit.indi",
+ "headline": "4,442,069 fresh tokens and 164 million cache reads from four agents; the biggest saving is still fresh sessions (A6), now with prompter's day as the clearest case: context per call grew from 92,085 to 716,897 tokens.",
+ "stats": [
+  {
+   "n": "4,442,069",
+   "label": "tokens today (fresh input + output + cache writes)"
+  },
+  {
+   "n": "164,462,806",
+   "label": "cache reads today"
+  },
+  {
+   "n": "4 of 12",
+   "label": "agents measured of agents running"
+  },
+  {
+   "n": "~1.3 million",
+   "label": "fresh saving per day from A6 (my estimate)"
+  }
+ ],
+ "for_you": [
+  {
+   "id": "A6",
+   "ask": "A fresh session per wake for dashboard, dev and me, and per task for prompter (brief 5, stronger evidence)?",
+   "detail": "dashboard: 3 wakes, 693,416 of 700,403 fresh tokens were re-loading, for 6,964 tokens of output. dev's quiet 15:38 wake ('Angelo not yet answered'): 371,156 fresh, up from 206,199 yesterday. prompter: one session all day, context per call 92,085 rising to 716,897; 139.9 million cache reads. Old: each scheduled task fires into one standing session. New: create_new_session_on_fire, same prompt; prompter starts a new session per task. Saving about 1.3 million fresh tokens a day, plus most of prompter's cache reads (my estimate, confirmed over three wakes).",
+   "options": [
+    "Yes, all four",
+    "Dashboard and me first",
+    "No"
+   ],
+   "recommend": "Yes, all four"
+  },
+  {
+   "id": "A7",
+   "ask": "Test dashboard's wake on Sonnet 5.5 (replaces A2 as the first model test)?",
+   "detail": "It repeats three times a day, writes about 2,300 tokens, and passed every time on Opus 5.5. One run on Sonnet 5.5 in a scratch folder, scored blind against today's output. Under 200,000 tokens, once.",
+   "options": [
+    "Yes",
+    "No"
+   ],
+   "recommend": "Yes"
+  },
+  {
+   "id": "A4",
+   "ask": "Angelo's workload view (brief 3)?",
+   "detail": "Still open.",
+   "options": [
+    "Yes, once",
+    "No"
+   ],
+   "recommend": "Yes, once"
+  }
+ ],
+ "you_asked": [],
+ "sections": [
+  {
+   "title": "1. Ledger",
+   "table": {
+    "head": [
+     "Agent",
+     "Wakes",
+     "Fresh input",
+     "Output",
+     "Cache write",
+     "Cache read",
+     "Sub-agent tokens",
+     "Per wake (trend)",
+     "Pass rate"
+    ],
+    "rows": [
+     [
+      "prompter@indi",
+      "6*",
+      "687",
+      "366,136",
+      "1,410,214",
+      "139,910,361",
+      "500,082",
+      "379,520 (new)",
+      "6/6"
+     ],
+     [
+      "dev@indi",
+      "3",
+      "70",
+      "29,023",
+      "1,029,420",
+      "13,229,019",
+      "220,524",
+      "426,346 (up from 239,028)",
+      "3/3"
+     ],
+     [
+      "dashboard@indi",
+      "3",
+      "23",
+      "6,964",
+      "693,416",
+      "2,677,766",
+      "0",
+      "233,468 (up from 219,031)",
+      "3/3"
+     ],
+     [
+      "accountant@indi",
+      "1",
+      "48",
+      "16,241",
+      "169,221",
+      "4,980,429",
+      "0",
+      "185,510 (up from 137,217)",
+      "1/1"
+     ],
+     [
+      "8 other agents",
+      "0",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-",
+      "-"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "2. Biggest three savings",
+   "items": [
+    "Marathon session (prompter): its 13:50 wake made 177 calls carrying 552,656 tokens of context each; 97.8 million cache reads in one wake. A new session per task (A6).",
+    "Re-loading (dashboard, dev, me): 99% of dashboard's fresh tokens and 97% of dev's are cache writes re-loading old context. A6.",
+    "Model fit (dashboard): a short, repeating, passing task on the largest model. Test on Sonnet 5.5 first (A7)."
+   ]
+  },
+  {
+   "title": "3. Model tests run",
+   "text": "None yet: A7 waits on your yes."
+  },
+  {
+   "title": "4. Agents not yet measuring",
+   "text": "Told to their conductor (every one asked once): conductor, designer, messaging, factory, builder, ux, journalist, social. prompter asked to fix its --since windows (commit today)."
+  },
+  {
+   "title": "5. Data notes and 6. My own use",
+   "text": "* prompter: 11 lines, 5 inside a wider window, so 6 counted; its 7 sub-agents counted once (500,082). Estimates labelled. Inbox report for 8 Nov sent; today's sent this wake. My use: brief 7."
+  }
+ ],
+ "next": [
+  "10 November: brief 7; three-wake checks continue."
+ ],
+ "sources": [
+  "people/indi/accountant/ledger/ (dashboard, dev, prompter, accountant files)",
+  "people/indi/agents.json",
+  "people/indi/accountant/asks.md"
+ ],
+ "friendly": {
+  "title": "Your agents' token use, 9 November",
+  "summary": "Four agents report now. The pattern is clear: each one lives in one long session that grows all day. Prompter's grew to about 717,000 tokens carried on every step. Fresh sessions (A6) are the big fix.",
+  "numbers": [
+   {
+    "n": "4.44 million",
+    "label": "Fresh tokens today",
+    "explain": "prompter, dev, dashboard and me."
+   },
+   {
+    "n": "164 million",
+    "label": "Cache reads today",
+    "explain": "Old context re-read at every step. 140 million of it is prompter's."
+   },
+   {
+    "n": "4 of 12",
+    "label": "Agents reporting",
+    "explain": "Up from 3. prompter is new."
+   },
+   {
+    "n": "~1.3 million",
+    "label": "Saving per day (A6)",
+    "explain": "Fresh tokens, my estimate, checked over three runs."
+   }
+  ],
+  "agents": [
+   {
+    "name": "prompter",
+    "state": "reports",
+    "on": true
+   },
+   {
+    "name": "dev",
+    "state": "reports",
+    "on": true
+   },
+   {
+    "name": "dashboard",
+    "state": "reports",
+    "on": true
+   },
+   {
+    "name": "accountant",
+    "state": "reports",
+    "on": true
+   },
+   {
+    "name": "conductor, designer, messaging, factory, builder, ux, journalist, social",
+    "state": "not yet",
+    "on": false
+   }
+  ],
+  "bars_title": "Prompter: old context carried on every step, through the day",
+  "bars": [
+   {
+    "label": "00:02",
+    "value": 92085,
+    "shown": "92,085"
+   },
+   {
+    "label": "00:40",
+    "value": 208165,
+    "shown": "208,165"
+   },
+   {
+    "label": "08:16",
+    "value": 257606,
+    "shown": "257,606"
+   },
+   {
+    "label": "10:46",
+    "value": 312813,
+    "shown": "312,813"
+   },
+   {
+    "label": "13:50",
+    "value": 552656,
+    "shown": "552,656"
+   },
+   {
+    "label": "14:25",
+    "value": 716897,
+    "shown": "716,897"
+   }
+  ],
+  "bars_note": "One session, all day. Every step re-reads everything before it. A new session per task starts near zero.",
+  "savings": [
+   {
+    "title": "New session per task",
+    "plain": "Prompter's session grew all day. Its 13:50 run alone re-read 97.8 million tokens.",
+    "evidence": "177 steps at 552,656 each."
+   },
+   {
+    "title": "Stop re-loading",
+    "plain": "Dashboard spent 99% of its tokens re-loading old context, to write about 2,300 tokens each run.",
+    "evidence": "693,416 of 700,403."
+   },
+   {
+    "title": "Try Sonnet 5.5 on dashboard",
+    "plain": "A short task that repeats three times a day and always passes. A good first test (A7).",
+    "evidence": "3 of 3 passed on Opus 5.5."
+   }
+  ],
+  "decisions": [
+   {
+    "id": "A6",
+    "question": "Fresh sessions for dashboard, dev, prompter and me?",
+    "plain": "Same instructions, new session each run (prompter: each task). About 1.3 million tokens a day saved.",
+    "options": [
+     "Yes, all four",
+     "Dashboard and me first",
+     "No"
+    ],
+    "recommend": "Yes, all four"
+   },
+   {
+    "id": "A7",
+    "question": "Test dashboard's run on Sonnet 5.5?",
+    "plain": "One run, scored blind against today's. Under 200,000 tokens.",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "recommend": "Yes"
+   },
+   {
+    "id": "A4",
+    "question": "Angelo's workload view?",
+    "plain": "Still open from brief 3.",
+    "options": [
+     "Yes, once",
+     "No"
+    ],
+    "recommend": "Yes, once"
+   }
+  ],
+  "glossary": [
+   [
+    "Fresh tokens",
+    "new reading, writing and memory: the real work."
+   ],
+   [
+    "Context per step",
+    "everything the agent carries and re-reads at each step."
+   ]
+  ],
+  "next": "10 November at 17:30 UTC."
+ }
+}

@@ -82,3 +82,4 @@ In the order given, in short; the dates are when she gave them.
 - 9 November 2026, about 05:55 UTC: desk review of the researcher's Road 2 Web Summit capture (map 2026-11-09-0545): S31 ready for the Portugal desk, S32 not ready; S29 and S30 marked published; no change to this file's rules.
 - 9 November 2026, about 10:50 UTC: desk review of IBM's challenge and Go Coimbra (map 2026-11-09-1045): S33 ready for the summit desk, S31 marked drafted; no change to this file's rules.
 - 9 November 2026, about 14:45 UTC: SA28 applied: the curator part added to the scheduled prompt, the desk-review trigger and step 3 amended to include an agenda change, rule 26 amended, rule 28 added; schedule unchanged.
+- 9 November 2026, about 18:55 UTC: desk review of the researcher's seven session-page captures (map 2026-11-09-1850): S35 for the summit desk and S36 for the Portugal desk ready; S34 marked drafted; no change to this file's rules.

@@ -104,3 +104,7 @@ To conductor@web-summit.vicky, under the rule in `people/vicky/inbox.md` ("How V
 ## 9 November, 08:20 UTC
 
 - state: idle
+
+## 9 November, 17:15 UTC
+
+- state: idle

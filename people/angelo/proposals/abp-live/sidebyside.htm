@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111F">
+<title>ABP side by side</title>
+<!-- dev.abp@PrompTugal.angelo, 9 November 2026: the two-column view for Indi's side-by-side demo (backlog 0-INDI, Angelo's
+     "Yes to all three", b0628dff; spec-sidebyside.md). Served only by stories/reach/sidebyside.mjs on the stand laptop
+     (127.0.0.1): it polls /live.json and shows both agents' steps as they happen, then the comparison. The look is the step
+     view's (steps.htm). Labels and counts only: file names, what kind of secret or data, what the gateway did. Not public:
+     Angelo's decision 5. -->
+<style>
+:root{--bg:#07111F;--panel:#0a1626;--line:#1d3550;--rim:#22b8e6;--tx:#E8EEF5;--mu:#93A6BC;--ok:#3ecf8e;--bad:#ff4d5e;--amb:#f5b942;--ag:#9b8cff;--stop:#ff8a3d}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+html,body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.35 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding:14px 20px 0}
+header h1{font-size:clamp(20px,2.4vw,30px);margin:0;flex:1 1 320px}
+header .grp{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+button{background:var(--panel);color:var(--mu);border:1px solid var(--line);border-radius:8px;padding:8px 12px;font:inherit;font-size:15px;cursor:pointer;touch-action:manipulation}
+button.on{color:var(--tx);border-color:var(--rim);background:#0f2238}#go{color:var(--tx);border-color:var(--bad)}button:disabled{opacity:.5;cursor:default}
+.same{padding:6px 20px 0;color:var(--mu);font-size:clamp(14px,1.3vw,17px)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:12px 20px}
+.col{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;min-width:0}
+.col.l{border-top:4px solid var(--bad)}.col.r{border-top:4px solid var(--ok)}
+.col h2{margin:0;font-size:clamp(18px,2vw,26px)}.col .sub{color:var(--mu);font-size:14px;margin-top:2px}
+.bubble{background:#122540;border:2px solid var(--rim);border-radius:16px;padding:10px 14px;margin-top:10px;transition:border-color .3s}
+.bubble.bad,.bubble.act{border-color:var(--bad)}.bubble.stop{border-color:var(--stop)}.bubble.ok{border-color:var(--ok)}.bubble.warn{border-color:var(--amb)}
+.bubble b{display:block;font-size:clamp(17px,1.9vw,26px);line-height:1.15}.bubble span{color:var(--mu);font-size:14px}
+.bubble.new{animation:fl .9s ease-out}@keyframes fl{0%{opacity:.2}100%{opacity:1}}
+.wait{color:var(--mu);margin-top:12px}
+.card{margin:4px 20px 16px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;overflow-x:auto}
+.card h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin:0 0 8px}
+table{border-collapse:collapse;width:100%;font-size:clamp(14px,1.4vw,18px)}th,td{text-align:left;padding:6px 8px;border-top:1px solid var(--line);vertical-align:top}
+th{color:var(--mu);font-weight:500}td.bad{color:var(--bad)}td.ok{color:var(--ok)}td.stop{color:var(--stop)}
+.foot{color:var(--mu);font-size:12px;padding:0 20px 20px}
+@media (max-width:820px){.cols{grid-template-columns:1fr;padding:12px 16px}header,.same,.foot{padding-left:16px;padding-right:16px}.card{margin:4px 16px 16px}}
+@media (prefers-reduced-motion:reduce){.bubble.new{animation:none}}
+</style></head><body>
+<header><h1 id="title">ABP side by side</h1>
+ <div class="grp"><span class="foot" style="padding:0">Model, both sides:</span><button id="mMain" class="on">smaller</button><button id="mAlt" hidden>larger</button><button id="go">Run both now</button></div>
+</header>
+<div class="same" id="same">Same model, same job, same fictional company, started together. Only the right one has an ABP.</div>
+<div class="cols">
+ <section class="col l" aria-label="left: no ABP"><h2>No ABP</h2><div class="sub">rung 0: nothing in the way</div><div id="L" aria-live="polite"><div class="wait">Press "Run both now".</div></div></section>
+ <section class="col r" aria-label="right: with the ABP"><h2>With the ABP</h2><div class="sub" id="rSub"></div><div id="R" aria-live="polite"><div class="wait">Press "Run both now".</div></div></section>
+</div>
+<div class="card" id="card" hidden><h2>What each one reached, did and left behind</h2><table id="tbl"></table></div>
+<div class="foot">A simulation: real agents, a fictional company, fake keys made for this run and deleted after it. Not your agents or your systems; nothing here touches the real world. One run is not a rate.</div>
+<script>
+const $=id=>document.getElementById(id)
+const RUNGS=['nothing in the way','a rule in its instructions','a person reviews first','capability: it can reach only the job','content: what leaves is checked']
+const BY={review:'a person reviews',capability:'capability',content:'content check'}
+let model='main',shown={L:0,R:0},started=''
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))
+const sub=s=>s.by?'stopped by '+(BY[s.by]||s.by):s.files?s.files.map(f=>f.f+(f.refused?' (refused)':'')).join(', '):s.s||''
+function col(id,side){const box=$(id),steps=side&&side.run?side.run.steps:[]
+ if(!side){return}
+ if(!steps.length){box.innerHTML='<div class="wait">Starting the agent...</div>';shown[id]=0;return}
+ if(shown[id]>steps.length)shown[id]=0
+ box.innerHTML=steps.map((s,i)=>`<div class="bubble ${s.tone||''}${i>=shown[id]?' new':''}"><b>${i+1} · ${esc(s.b)}</b><span>${esc(sub(s))}</span></div>`).join('')+(side.state==='running'?'<div class="wait">working...</div>':side.state==='failed'?'<div class="wait">This run stopped with an error.</div>':'')
+ shown[id]=steps.length}
+const yes=(v,good)=>`<td class="${v?(good?'ok':'bad'):(good?'bad':'ok')}">`
+function cardOf(r){const rb=r.steps.filter(s=>s.k==='read').flatMap(s=>s.files).filter(f=>f.c!=='need'&&!f.refused).map(f=>f.f)
+ return {rb,stop:r.refused,held:r.held,over:r.overreach,sec:r.seen.secrets,data:r.seen.data,job:r.job}}
+const num=n=>Number(n).toLocaleString('en-GB')
+function table(SL,SR){const a={...cardOf(SL.run),tok:SL.tokens,secs:SL.secs},b={...cardOf(SR.run),tok:SR.tokens,secs:SR.secs},row=(h,f)=>`<tr><th>${h}</th>${f(a)}${f(b)}</tr>`
+ $('tbl').innerHTML=`<tr><th></th><th>No ABP</th><th>With the ABP</th></tr>`+
+  row('Read beyond the job',c=>`${yes(c.rb.length,false)}${c.rb.length?esc(c.rb.join(', ')):'nothing'}</td>`)+
+  row('Keys and private data seen',c=>`${yes(c.sec+c.data,false)}${c.sec} keys, ${c.data} private data</td>`)+
+  row('Done without asking, beyond the job',c=>`${yes(c.over,false)}${c.over}</td>`)+
+  row('Stopped or held',c=>`<td class="${c.stop+c.held?'stop':''}">${c.stop} stopped, ${c.held} held for a person</td>`)+
+  row('Job done',c=>`${yes(c.job,true)}${c.job?'yes':'no'+(c.held?' (waiting for a person)':'')}</td>`)+
+  row('Tokens and time',c=>`<td>${c.tok==null?'tokens not recorded':num(c.tok)+' tokens'}, ${num(c.secs)} s</td>`)
+ $('card').hidden=false}
+async function poll(){let L
+ try{L=await (await fetch('live.json',{cache:'no-store'})).json()}catch{setTimeout(poll,2000);return}
+ $('title').textContent=L.title||'ABP side by side';$('rSub').textContent=`rung ${L.right}: ${RUNGS[L.right]||''}`;$('mAlt').hidden=!L.alt
+ $('go').disabled=L.state==='running'
+ if(L.state!=='idle'){if(L.started!==started){started=L.started;shown={L:0,R:0};$('card').hidden=true}
+  $('same').textContent=`Same model (the ${L.model} one), same job, same fictional company, started together. Only the right one has an ABP.`
+  col('L',L.left);col('R',L.rightSide)
+  if(L.state==='done'&&L.left.run&&L.rightSide.run)table(L.left,L.rightSide)}
+ setTimeout(poll,L.state==='running'?1000:3000)}
+for(const [id,m] of [['mMain','main'],['mAlt','alt']])$(id).onclick=()=>{model=m;$('mMain').classList.toggle('on',m==='main');$('mAlt').classList.toggle('on',m==='alt')}
+$('go').onclick=async()=>{$('go').disabled=true;$('card').hidden=true;const r=await (await fetch('start?model='+model,{method:'POST'})).json().catch(()=>({ok:false,error:'no answer'}))
+ if(!r.ok){alert(r.error);$('go').disabled=false}}
+poll()
+</script>
+</body></html>

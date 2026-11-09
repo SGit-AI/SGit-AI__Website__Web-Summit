@@ -2,23 +2,26 @@
  "about": "The last commit of each worker branch that its reviewer brought onto dev (dev@PrompTugal.angelo for most; dashboard@PrompTugal.angelo for dev.map, dev.work and dev.app from 8 November; vault@ for vault.kms); the next review starts after it. From the worker pool (spec-worker-pool.md, approved 9 November): entries keyed pool/<item> for each item branch, by that item's reviewer.",
  "reviewed": {
   "dev.map": {
-   "sha": "fd90f771",
-   "at": "2026-11-09T17:00Z",
+   "sha": "3717c2d7",
+   "at": "2026-11-09T20:50Z",
    "by": "dashboard@PrompTugal.angelo"
   },
   "research": {
-   "sha": "5f96edcc",
-   "at": "2026-11-09T15:45Z",
-   "by": "dev@PrompTugal.angelo"
+   "sha": "3a178e88",
+   "at": "2026-11-09T18:45Z",
+   "by": "dev@PrompTugal.angelo",
+   "held_back": [
+    "people/angelo/research/connections-2026-11-09.md (300a3f23): public ranking of companies that contacted Angelo; waits for his word"
+   ]
   },
   "dev.links": {
-   "sha": "5f7da87f",
-   "at": "2026-11-09T13:45Z",
+   "sha": "e4038359",
+   "at": "2026-11-09T17:50Z",
    "by": "dev@PrompTugal.angelo"
   },
   "dev.venues": {
-   "sha": "89a1de25",
-   "at": "2026-11-09T15:45Z",
+   "sha": "d480afa2",
+   "at": "2026-11-09T19:45Z",
    "by": "dev@PrompTugal.angelo"
   },
   "vault.kms": {
@@ -27,23 +30,23 @@
    "by": "vault@PrompTugal.angelo"
   },
   "dev.abp": {
-   "sha": "b9c93165",
-   "at": "2026-11-09T15:45Z",
+   "sha": "1e733e85",
+   "at": "2026-11-09T19:45Z",
    "by": "dev@PrompTugal.angelo"
   },
   "social-media": {
-   "sha": "0f14af69",
-   "at": "2026-11-08T10:45Z",
+   "sha": "afce3517",
+   "at": "2026-11-09T17:50Z",
    "by": "dev@PrompTugal.angelo"
   },
   "dev.work": {
-   "sha": "de999004",
-   "at": "2026-11-09T17:00Z",
+   "sha": "3a7aea14",
+   "at": "2026-11-09T20:50Z",
    "by": "dashboard@PrompTugal.angelo"
   },
   "dev.app": {
-   "sha": "bed9fbc2",
-   "at": "2026-11-09T17:00Z",
+   "sha": "a544d23a",
+   "at": "2026-11-09T20:50Z",
    "by": "dashboard@PrompTugal.angelo"
   }
  }

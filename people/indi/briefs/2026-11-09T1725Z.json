@@ -1,0 +1,65 @@
+{
+  "number": 19,
+  "date": "9 November 2026",
+  "kicker": "Web Summit 2026 · Indi's conductor brief",
+  "title": "Opening night: your card is in Apple Wallet, and Angelo said yes to the demo",
+  "when": "9 November 2026, 17:25 UTC (scheduled wake; since brief 18, 07:25 UTC)",
+  "by": "conductor@web-summit.indi",
+  "headline": "A busy day. The business card is on your phone and in Apple Wallet. Angelo said yes: his helper builds the side-by-side ABP demo by tomorrow. The Team app's redesign and messaging are on TestFlight. The summit opens tonight at 18:00. Nothing is decided here.",
+  "stats": [
+    {"n": "1 tap", "label": "to add the RiskMandate card to Apple Wallet (web-summit.sgit.ai/card/)"},
+    {"n": "3 of 3", "label": "yes from Angelo to your demo asks"},
+    {"n": "4", "label": "trials of the demo helper's prompt, all passed"},
+    {"n": "18:00", "label": "tonight: the summit's opening night"}
+  ],
+  "for_you": [
+    {
+      "id": "1",
+      "ask": "Add the card to your Wallet, and share the link with the team",
+      "detail": "Open web-summit.sgit.ai/card/ in Safari on your iPhone, tap Add to Apple Wallet, then Add. Double-click the side button to show it.",
+      "options": ["I'll share it", "you post it in the team's group"],
+      "recommend": "Share it tonight: everyone forgot their printed cards."
+    },
+    {
+      "id": "2",
+      "ask": "Who sets up team messaging (WS-203)?",
+      "detail": "The messaging vault's key was sealed to an old key of mine, so I cannot open it. Your messaging helper can.",
+      "options": ["your messaging helper", "Dinis's conductor re-seals it to me"],
+      "recommend": "Your messaging helper: it already holds the key, and messaging is its job."
+    },
+    {
+      "id": "3",
+      "ask": "The venue map in the Team app: Apple Maps with our own drawing?",
+      "detail": "Mapbox would not give us Web Summit's detail: that drawing is theirs. Apple Maps is free, needs no account, and is already in the app.",
+      "options": ["yes, Apple Maps", "Mapbox anyway", "not now"],
+      "recommend": "Yes, Apple Maps, after the summit's first days."
+    }
+  ],
+  "you_asked": [
+    {"at": "9 Nov, afternoon", "said": "A digital business card, and add it to Apple Wallet", "done": "The green card at /card/, on your Home Screen in two taps, and a signed Apple Wallet pass made with Dinis's access.", "where": "web-summit.sgit.ai/card/", "status": "done"},
+    {"at": "9 Nov, midday", "said": "The side-by-side ABP demo, personalised to the visitor", "done": "Designed; the demo helper's prompt is at version 3 and passed four trials; Angelo said yes; his helper builds the runner by Tuesday, yours reviews.", "where": "people/indi/demo/", "status": "in progress"},
+    {"at": "9 Nov, afternoon", "said": "Can we use Mapbox in the Team app?", "done": "Researched: four options, Apple Maps recommended.", "where": "people/indi/wayfinding/05-venue-map.md", "status": "your decision"},
+    {"at": "9 Nov, afternoon (Dinis)", "said": "A page from where I am to my registration point", "done": "Six options written; Angelo's venues helper asked to build it on PrompTugal.news. Not picked up yet.", "where": "people/indi/wayfinding/", "status": "waiting on Angelo's helper"}
+  ],
+  "sections": [
+    {
+      "title": "1. What happened since brief 18",
+      "items": [
+        "The Team app's redesign (five tabs) and team messaging reached TestFlight at 14:23 (version 0.4.34); fixes followed in 0.4.40. Update PrompTugal Team in TestFlight.",
+        "Your helpers 8 and 10: helpers now report to me, and the infographic helper is on your list.",
+        "Your accounts inbox received one message that was not a valid report; it was dropped unread, as the rules say.",
+        "Your social helper drafted Tuesday's post: 'the demo is us' (2304b18)."
+      ]
+    }
+  ],
+  "next": [
+    "Tonight 18:00: the opening night.",
+    "Tuesday 10 November: Angelo's helper builds the side-by-side demo; yours reviews it.",
+    "Tuesday 12:45: I check how many helpers follow the token rules."
+  ],
+  "sources": [
+    "git log since 07:25 UTC: b0628dff, 2304b182, 974b91a5, 8b8e875a, e169f693, 0c1149f9, ca7b17fd",
+    "PrompTugal/PrompTugal__App__iOS: iOS release run 115 (TestFlight, 14:23 UTC), wallet-pass run 3",
+    "drain.py at 17:26 UTC: 1 pending, 1 dropped"
+  ]
+}
