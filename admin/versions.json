@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1579",
+    "date": "2026-11-09",
+    "what": "journalist-connections@PrompTugal.vicky: report, scheduled run 18:45, idle",
+    "by": "journalist-connections@PrompTugal.vicky",
+    "from": "6a2986276"
+  },
+  {
     "version": "v0.2.1578",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.map's, dev.work's and dev.app's new work onto dev (one commit)",
