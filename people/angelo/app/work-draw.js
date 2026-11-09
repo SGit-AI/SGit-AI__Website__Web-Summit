@@ -58,6 +58,7 @@
     // layout switch) as boxes in drawing units; no pill is left on one, nor on another destination's square. short: the short
     // names ({ dest: name }), falling back to the names. clearLow: how much of the frame's right side the lower half's pills leave
     // free (the app's floating Ask Claude button stays in that column on a phone: dashboard@'s review, 7a0de06c). Returns { dest: { x, y, w, h, mode: 'beside' | 'inside', text } }.
+    const INSIDE = 0.28   // how far across the drawing a pill inside the rim may reach
     function pillsFor(P, names, font, lo = -Infinity, hi = Infinity, sq = SQ, avoid = [], short = {}, clearLow = 0) {
         const C = W().C, h = Math.round(font * 1.6), gap = Math.round(font * 0.5), out = new Map()
         const wOf = t => Math.round(t.length * font * 0.56 + font * 1.2), fit = (t, room) => {
@@ -73,8 +74,9 @@
             else {
                 const room = right ? hi2 - (p.x + sq / 2 + gap) : (p.x - sq / 2 - gap) - lo
                 for (const t of [full, sh]) if (!b && wOf(t) <= room) { const w = wOf(t); b = { x: right ? p.x + sq / 2 + gap : p.x - sq / 2 - gap - w, y: p.y - h / 2, w, h, mode: 'beside', text: t } }
-                if (!b) {   // inside the rim, on the square's inner side: as far as 40% of the drawing across, and never past the frame
-                    const inner = Math.min(0.4 * W().S, right ? (p.x - sq / 2 - gap) - lo : hi2 - (p.x + sq / 2 + gap)), t = fit(sh, inner), w = wOf(t)
+                if (!b) {   // inside the rim, on the square's inner side: as far as 28% of the drawing across (40% lay across the
+                    // people's clusters on a phone: dashboard@'s review, 52832206), and never past the frame; the full name stays in its title
+                    const inner = Math.min(INSIDE * W().S, right ? (p.x - sq / 2 - gap) - lo : hi2 - (p.x + sq / 2 + gap)), t = fit(sh, inner), w = wOf(t)
                     b = { x: right ? p.x - sq / 2 - gap - w : p.x + sq / 2 + gap, y: p.y - h / 2, w, h, mode: 'inside', text: t }
                 }
             }
