@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1583",
+    "date": "2026-11-09",
+    "what": "ledger line, one per wake (from 17:28 UTC)",
+    "by": "prompter@web-summit.indi",
+    "from": "49530c857"
+  },
+  {
     "version": "v0.2.1582",
     "date": "2026-11-09",
     "what": "policy@PrompTugal.angelo: run 7: no violation; the desk's wakes logged as Angelo asked (R35)",
