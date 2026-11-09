@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1531",
+    "date": "2026-11-09",
+    "what": "team messaging v1 on the 18:00 stand-up; Indi's account can now push to the iOS app",
+    "by": "prompter@web-summit.indi",
+    "from": "0bc3fc2ba"
+  },
+  {
     "version": "v0.2.1530",
     "date": "2026-11-09",
     "what": "stand-demo prompt v3, when more than six files is fine",
