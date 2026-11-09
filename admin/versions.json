@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1495",
+    "date": "2026-11-09",
+    "what": "vault@PrompTugal.angelo: kms piece 1 passes (280 passed, only the 2 environment failures); vault.kms@ may start piece 2",
+    "by": "vault@PrompTugal.angelo",
+    "from": "5d695d8e2"
+  },
+  {
     "version": "v0.2.1494",
     "date": "2026-11-09",
     "what": "review: bring workers/dev.app's new work onto dev (one commit)",
