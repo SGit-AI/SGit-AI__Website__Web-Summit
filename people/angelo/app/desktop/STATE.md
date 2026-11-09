@@ -3,7 +3,7 @@
 Backlog 00a (dropped), 00a2, 0m and 14 (on hold). Short; the commits are the history.
 
 ## Last run
-2026-11-09 12:09 UTC. For: me since 11:10, all the desk's and pushed by riskmandate-angelo (checked): 54d01e4 (WS-202, the Android counterparts of the iOS apps, shared on one board issue), 36eb0d8 (my job is now the Android apps, in people/angelo/app/android/; no dev.android@ task) and e588f4b (11:36: PrompTugal/PrompTugal__App__Android already exists and ships, build 0.1.78, run by Dinis's conductor.android@promptugal.ai; our Android rows ON HOLD, nothing built in parallel; WS-202 renumbered WS-203). So I built nothing: backlog 14 is on hold, and the wallpaper stays ready as a module to offer, Angelo's call. dashboard@'s 3a51666 (material): it built the Windows desktop app v0.1.1 on 8 November and Angelo installed and ran it on his laptop, so my "never built or installed" was wrong; corrected in Open.
+2026-11-09 13:10 UTC. Spec checked (e588f4b, riskmandate-angelo). For: me since 12:09: the desk's 40a1dac (ANGELO; a brief for dashboard@: build the wallpaper APK and send it to Angelo, done in fcded9e, 66,261 bytes, SHA-256 adde534f…f141c); dashboard@'s a9c6428 (Angelo installed the wallpaper on his phone at about 13:00, the first real-device install; his screen recording and notes on smoothness, warmth and battery to follow) and aa1d3e6 (Angelo, relayed: "Can we enhance the live wallpaper to enable choosing the view as in the website?"; dashboard@ proposes a Settings screen, for the desk to brief me). Both are dashboard@'s, so material: I built nothing and wrote no spec, and asked the desk below. 
 
 ## Open
 - 0m: not yet tried on a real iPad (Safari/WebKit not in these sessions). Asked conductor@web-summit.indi when someone can try the two iPads. Seen, for dev.map@ (not mine): display mode is 32 px taller than the window at every size (cc-nav below), and its Pause button is 41x23, small for a finger.
@@ -16,9 +16,12 @@ Backlog 00a (dropped), 00a2, 0m and 14 (on hold). Short; the commits are the his
 
 - 14 (ON HOLD, the desk's e588f4b, board/WS-203): the Android apps exist in PrompTugal/PrompTugal__App__Android (Dinis's conductor.android@promptugal.ai). Nothing built in parallel. The wallpaper (android/wallpaper/) stays ready as a module to offer; whether to offer it is Angelo's call, then conductor.android@'s answer on WS-203.
 
+- 00a2b (proposed, not briefed): the wallpaper's views (aa1d3e6). Sizing, for the desk: the site has four layouts (live.js LAYOUTS: People ring, Agents ring, Agents and their work; live3d.js: 3D) and the wallpaper ports only the 3D ball today (MapRenderer.java, Graph.java, about 840 lines of Java in all). A Settings activity (android:settingsActivity in wallpaper.xml, SharedPreferences) is small; each 2D layout is a port of live.js's layout() and draw, run by run. Estimate: the spec 30 min, one run; the Settings screen plus theme (dark, light, follow the phone) one run; People ring and Agents ring one run each; Agents and their work and the levels (Workstreams, Deliverables) one or two more; hxappwall extended per view. Recommendation: brief me (spec-wallpaper-views.md in people/angelo/app/android/, for Angelo's review), dashboard@'s order: 3D and People ring with Messages and Workstreams first. I agree the Android apps' hold (14) does not cover it, since it is the wallpaper module (WS-203).
+
 ## Waiting on
+- The desk: a brief for the wallpaper's views (00a2b), or not.
 - Angelo, then conductor.android@promptugal.ai on WS-203: whether the live map and the wallpaper go to the Android app as modules (14).
-- Someone with an iPad (0m); Angelo, on how the wallpaper runs on his phone (00a2).
+- Someone with an iPad (0m); Angelo, on how the wallpaper runs on his phone: installed about 13:00 (a9c6428), his screen recording and notes to follow (00a2).
 - The desk: the live-page capability question above.
 - conductor@web-summit.dinis: the Android CI draft (only if the APK is to be served from the site).
 - policy@PrompTugal.angelo: my lane.
