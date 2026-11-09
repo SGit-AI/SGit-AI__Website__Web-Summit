@@ -1333,6 +1333,21 @@
         "fingerprint": "sha256:87b59007a5fd4843",
         "signing_fingerprint": "sha256:dbe58fca8be86c93"
       }
+    },
+    {
+      "id": "outreach-silvio",
+      "label": "outreach@web-summit.silvio (Claude Code session)",
+      "role": "Silvio Switha's outreach agent (outreach@web-summit.silvio): targets, research and the text of each email; inbox@web-summit.silvio makes the Gmail drafts and Silvio sends; never sends. A session key: it ends with its session.",
+      "how": "Made by the agent in its own session on 9 November 2026 (pki-agent.mjs keygen --session) and pushed to this repository by that session; the push is the authorisation. Linked locally to the operator's key sha256:db7f79fdd87e030a; not yet submitted to or confirmed on pki.sgit.ai.",
+      "added": "2026-11-09",
+      "bundle": {
+        "v": 1,
+        "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAr3UwJ3fSuk5OSucWyYTW\nR2XG67kXL1bFUL2CghomAN14ofzxaZzqD/wgnQJVBRdesYHkojyXoRHczAIYDiZ8\nBDwVAnRyybDmRIHFTsCQOUf93PAoS/5rfiHfi907joQxH9RpNIe3ukOF/MUrDcBH\nhG7qKcYgJZKjwtXxukD+FSSNmDmwAHyTNHBSeKJWAY/zBHsrwebExguGVkLcSkoy\nrgHl4ll294oYRiUQX7w26BpSBU9QFyWZFELzZfTZRXLTH3SHMam98BlBrUVpkXGA\nMdSapnY1jeoRBiD/pNnySbNg8dQapTqAmV5ER186iYW2BSmWOtgBmBA3IBqXEl7G\nPL/M336PzNn+aeYQvF0rHYbzVJhIvKPIwIdV8z5hNK+KuRxSX/a8cSkbG8UgOYZE\nNUHY2heKAkKsXCYsJuSeO+ICea5Cl1JSq9eY9ByzsU8yLrgtoVHZcJzN2SCfw/j8\nevpQZf4/nTuFk1XNBRFlEslfgWPn6Hd4j8z7Nk4pvKQjMrNIKp+bol2HfAb8KiiT\n0BHAOJOS7athDVPhoaq2ruxm26FNo64XoTjGJn/hIH2+Dird4mW+CABKlbjJGGO4\nM/7N9eKOWJ9VF9tyFykke1yX5eb40OArEN5IdWCiwsUZ+Mpb0DXYCfUSI7WLDD2W\nn8QIwy0SUDU8ZiilG2REibMCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+        "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEM0MCjuw0o6+nb6Xsr2C8HxZGKIyQ\nkGzpgrpUZ5O4kzsPjYqxm2awrx6jKnX8cnjIVYORy/w8hHJpPwl6YlYC0g==\n-----END PUBLIC KEY-----\n",
+        "label": "outreach@web-summit.silvio",
+        "fingerprint": "sha256:05a9f1bf9d031a66",
+        "signing_fingerprint": "sha256:410d6d0666200ce6"
+      }
     }
   ]
 }
