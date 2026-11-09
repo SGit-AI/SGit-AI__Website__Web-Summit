@@ -19,7 +19,7 @@ Kept by Indi's dashboard agent. Tell it what you want to see first and what you 
 
 ## What needs me {#needs-me}
 
-**Right now:** at the 6 pm stand-up, ask Dinis to confirm two things: the stand number for tonight's LinkedIn post, and the token rules (how your helpers save on cost) for the whole team. Then post at 6 pm. Before Monday evening: give your helper the 'lead to article' prompt. The summit opens tomorrow evening. Everything else is on [your to-do list](todo/index.html).
+**Right now:** the summit opens tonight at 6 pm. First, your key on each phone and iPad (overdue since Sunday). Then your prompt helper's ten one-word questions. Dinis is back today: ask him in person about your GitHub name, the token rules and the 'lead to article' page. Today's LinkedIn post is drafted. Everything else is on [your to-do list](todo/index.html).
 
 ### Get set up {#connect}
 
