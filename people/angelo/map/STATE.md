@@ -1,20 +1,19 @@
 # dev.map@PrompTugal.angelo: STATE
 
-Sixteenth run, 8 November 2026 (20:15 to about 21:00 UTC). No new commit For: dev.map@ since run 15; every named backlog item of mine is done or waiting on Angelo. dashboard@ reviews.
+Seventeenth run, 8 November 2026 (23:16 to 23:52 UTC). Two desk commits For: dev.map@ (efab3a6, f12844f, both pushed by riskmandate-angelo): backlog 0c4 (4) and (6). dashboard@ reviews.
 
 ## Done this run (on workers/dev.map, for dashboard@ to review)
-- 0c3 (1), the phone: the map's playback at a quarter CPU, 390 px, three days, timeline open was 31 fps (47 closed). JavaScript is about 16% of the time; the rest is painting and layering the map's SVG (2,590 elements) each frame. Tried and dropped (no measurable change): containment on the timeline, a layer for the playhead overlay, content-visibility, no transitions on the lines. Kept: dayLabel from one cached Intl.DateTimeFormat, one label per UTC day (it built a formatter every frame): 33 to 34 fps. A canvas for the moving layer is the real fix: a question for the desk.
+- 0c4 (6), RiskMandate's logo as big as PT News's (live.js): both were already the same square; on the dark hexagon RiskMandate's dark tile melted into it and only its inner ring showed, while PT's cream square showed whole. A faint edge round the RiskMandate tile on a dark hexagon (none on a light one; the file unchanged), so both read as the same square, in 2D, 3D and the pop-out (re-checked each second, as the pop-out's styles arrive late). Tried first and dropped: drawing it 1.4 times larger (its tile then showed bigger than PT's). Test `lvlogo`.
+- 0c4 (4), the replay's dial on the live view (live.js): a slim time dial in the strip under the hexagon's foot, over all live.json holds (from 2 November); dragging moves the moment at the foot; on release the graph plays from there at the real pace (queue rebuilt from live.json, the flow weighed as it was then), LIVE goes grey and a "● LIVE" button returns. Not in display mode. host.lvGraph.back and a 'lv-time' event for dev.work@'s work view to follow (work-live.js does not yet). Test `lvdial`.
 
-## Run 14 (18:15 to about 19:40 UTC)
-- 0c3 (6), the timeline collapsed on its own (app.js, replay.js, data.mjs): closed by default, a "Show the timeline" button whether the map is open or not, remembered on this device (localStorage `ak-tl-open`); `tl=1` or the timeline's own filters (`r_*`) in the address open it, and an old `#replay` link lands with `tl=1`; closing drops them. Drawn only when open.
-- The data: every commit since 2 November (`replay.events`) left data.json for `replay-events.json` (extras in data.mjs; ignored by `people/angelo/app/.gitignore`), fetched once, only when the map or the timeline is opened. The first load of the command centre (any view): data.json 1,137 KB -> 858 KB, gzipped 307 KB -> 217 KB (-29%). With the map open the commits are still fetched (its playback needs them); the timeline's 9,000 marks are not drawn unless it is open. Test `tmtlc`; `rpfps` opens the timeline with `tl=1`.
-
-## Done in a parallel run (19:09 to 19:40 UTC, run 15)
-- 0c0, dev.work@'s hook in live.js (7751d4e, the desk's a2c8e4c7): host.lvGraph and the 'lv-graph' event; wv, wvdraw, wvlive and the lv tests pass on dev's tree. dev.work@ adds the switch next.
-- lvmsg is not broken: it needs three sealed messages and a shallow clone holds two; with `git fetch --depth=3000 origin dev` it passes.
-- Two runs overlapped (this schedule fired while run 14 was still working): before starting, fetch workers/dev.map and check its newest commit's time; if it is under an hour old and STATE has no "Last run" end, the other run may still be going: take an item it is not on.
+## Earlier today (runs 14 to 16)
+- 0c3 (1) phone playback 31 to 33-34 fps (cached day formatter); 0c3 (6) the timeline collapsed and the commits out of data.json (replay-events.json); 0c0 dev.work@'s hook in live.js.
+- Two runs can overlap: before starting, fetch workers/dev.map and check its newest commit's time; if under an hour old and STATE has no "Last run" end, take an item the other run is not on.
 
 ## Open
+- The dial over six days is coarse with a mouse on a phone (about 30 minutes a pixel); the arrow keys step one minute. If Angelo wants finer: a 48-hour default with a "whole record" switch.
+- The work view (dev.work@'s work-live.js) does not follow the dial yet: it can listen for 'lv-time' (detail.back) on the host. For dev.work@.
+- PT News's stamp is always the cream one: live.js passes the function `light` (always true) instead of `light()`; left as Angelo knows it, a question for the desk.
 - lvlabel fixed in its test: the live clock follows the viewer's locale (12-hour in New York); the test assumed 24-hour and failed after 13:00 there.
 - Offline (sw.js): replay-events.json is stored only once it has been fetched, so the timeline and the playback work offline only after one online visit with the map or timeline open.
 - 0f's rest: build Angelo's pick of the fresh-session mark (options: `people/angelo/proposals/live-map/fresh-mark-options.svg`, A, B or C); the dashed ring stays until he picks.
@@ -24,5 +23,6 @@ Sixteenth run, 8 November 2026 (20:15 to about 21:00 UTC). No new commit For: de
 - For policy@: my lane leaves out this STATE file (people/angelo/map/**); dashboard@'s review carries it onto dev.
 
 ## Last run
+Run 17 ended 23:52 UTC: two commits (dc791bdb, 123b5bf0) and this one on workers/dev.map; unsigned run log; ledger line.
 Pushing: the branch already holds workers/dev.map (the join), so push straight away; never rebase on it (this run a stopped rebase was pushed by mistake: ddfcbb38..1c407729 are copies of dev's commits, fixed forward by 4c58d9f6, a merge that keeps the tree).
 Started from dev, joined workers/dev.map with `git merge -s ours` (needs `git fetch --depth=300 origin dev workers/dev.map` first in a shallow clone; `--depth=6000 origin dev` for tmf and the replay tests). Gate with LANE_RANGE=<the join commit>..HEAD.

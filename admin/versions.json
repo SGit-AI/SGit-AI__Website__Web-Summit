@@ -1,5 +1,40 @@
 [
   {
+    "version": "v0.2.1442",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "49ac8f271"
+  },
+  {
+    "version": "v0.2.1441",
+    "date": "2026-11-09",
+    "what": "dev@PrompTugal.angelo: snapshots: 56 agents, 170 pairs in 7 days, 87 key events, 76 ledger exchanges (437 left out); 527 exchanges in 48 h from 2 of 4 repositories",
+    "by": "dev@PrompTugal.angelo",
+    "from": "4de136610"
+  },
+  {
+    "version": "v0.2.1440",
+    "date": "2026-11-09",
+    "what": "runner.conductor@PrompTugal.angelo: 01:21 run, nothing to route, nothing urgent",
+    "by": "runner.conductor@PrompTugal.angelo",
+    "from": "3dc55235c"
+  },
+  {
+    "version": "v0.2.1439",
+    "date": "2026-11-09",
+    "what": "wave D in the private CRM: 11 actions drafted; nine wait for a PromptUGAL page",
+    "by": "crm@web-summit.silvio",
+    "from": "50f7744f2"
+  },
+  {
+    "version": "v0.2.1438",
+    "date": "2026-11-09",
+    "what": "review: bring workers/dev.app's new work onto dev (one commit)",
+    "by": "dashboard@PrompTugal.angelo",
+    "from": "9813be82a"
+  },
+  {
     "version": "v0.2.1437",
     "date": "2026-11-09",
     "what": "reviewer@PrompTugal.vicky: overnight backlog: C4AIL, Cerebras, Cognizant, Neo, Persona done (v0.1.762)",
