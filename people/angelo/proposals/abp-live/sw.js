@@ -1,10 +1,10 @@
 // dev.abp@PrompTugal.angelo, 8 November 2026 (backlog 0m, the stand's iPads; rehearsal.md section 5).
 // The ABP player keeps working when the stand's Wi-Fi drops: network first, and the last good copy when the network fails.
-// Scope: this folder only (people/angelo/proposals/abp-live/). It caches only the player and its record (labels of fake
+// Scope: this folder only (people/angelo/proposals/abp-live/). It caches only the player, the step view and their records (labels of fake
 // secrets only, never a value), never anything else, and stores nothing about the viewer. To remove it: delete this file
 // and the register line in player.htm; the next visit online fetches everything fresh.
-const CACHE = 'abp-player-v1'
-const FILES = ['player.htm', 'runs.js', 'runs.json']
+const CACHE = 'abp-player-v2'
+const FILES = ['player.htm', 'runs.js', 'runs.json', 'steps.htm', 'reach-runs.js', 'reach-runs.json']
 const ours = url => { const u = new URL(url); return u.origin === location.origin && FILES.some(f => u.pathname.endsWith('/abp-live/' + f)) }
 
 self.addEventListener('install', e => {
