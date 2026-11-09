@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1586",
+    "date": "2026-11-09",
+    "what": "journalist-portugal@PrompTugal.vicky: report, S36 fixed",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "cb3f42ac3"
+  },
+  {
     "version": "v0.2.1585",
     "date": "2026-11-09",
     "what": "dev@PrompTugal.angelo: ledger line for the 19:35 run",
