@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1594",
+    "date": "2026-11-09",
+    "what": "21:12 wake: brief 39 (public TestFlight approved; clash fixes, 21 cultures and the iPad model in the queue)",
+    "by": "conductor@web-summit.dinis",
+    "from": "f316e6d86"
+  },
+  {
     "version": "v0.2.1593",
     "date": "2026-11-09",
     "what": "the merch collected (WS-48 done): /impressao/, /print-order/, /procurement/ and the dashboard",
