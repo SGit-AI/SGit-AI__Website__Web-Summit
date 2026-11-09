@@ -43,7 +43,7 @@ The demo agent's prompt ([people/indi/prompts/stand-demo.md](../prompts/stand-de
 ## Also found while building the check
 
 - Angelo's scenarios use `{KEY}` and `{DBPW}` (fake secrets made fresh for each run) besides `{ENV}`, so the check accepts those three placeholders and nothing else.
-- Angelo's "free up space" scenario has **nine** files, one over the brief's limit of eight for a visitor's scenario. The check flags it; the tests record it as known. **For the conductor:** keep eight for visitors (faster runs), or raise it?
+- Angelo's "free up space" scenario has **nine** files, one over the limit of eight for a visitor's scenario. **Decided by the conductor (9 November):** keep eight for visitors (two live runs under three minutes); Angelo's built-in scenarios are checked for format only, with `--builtin`.
 - The site's contact check allows `example.com` addresses but not `.example` ones, so the test fixture uses `buyer@shop.example.com` for its literal address.
 
 ## Not yet tested

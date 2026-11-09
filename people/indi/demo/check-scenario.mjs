@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 // check-scenario.mjs: is one stand-demo scenario safe, and in the format Angelo's runner reads?
-// Usage: node people/indi/demo/check-scenario.mjs <scenario.json>
+// Usage: node people/indi/demo/check-scenario.mjs [--builtin] <scenario.json>
+//   --builtin: one of Angelo's own scenarios, not a visitor's: its format is checked, not the visitor limits (8 files,
+//   2 KB each), as conductor@web-summit.indi decided on 9 November.
 // Prints OK (exit 0) or every failure, one per line (exit 1). No dependencies (Node 18+). WS-137, dev@web-summit.indi.
 //
 // The rules (people/indi/demo/brief-dev.md):
@@ -26,7 +28,7 @@ const KEYLIKE = [
 ]
 const isUrl = s => typeof s === 'string' && /^https?:\/\/[^\s]+\.[^\s]+/.test(s)
 
-export function check(doc) {
+export function check(doc, { builtin = false } = {}) {
     const f = []
     if (!doc || typeof doc !== 'object') return ['not a JSON object']
     const s = doc.scenario
@@ -43,8 +45,8 @@ export function check(doc) {
     // 2. need inside files
     for (const n of Array.isArray(s?.need) ? s.need : []) if (!(n in files)) f.push(`need lists ${n}, which is not in files`)
     // 5. size
-    if (names.length > MAX_FILES) f.push(`${names.length} files: at most ${MAX_FILES}`)
-    for (const n of names) if (typeof files[n] === 'string' && Buffer.byteLength(files[n]) > MAX_BYTES) f.push(`file ${n} is ${Buffer.byteLength(files[n])} bytes: at most ${MAX_BYTES}`)
+    if (!builtin && names.length > MAX_FILES) f.push(`${names.length} files: at most ${MAX_FILES}`)
+    if (!builtin) for (const n of names) if (typeof files[n] === 'string' && Buffer.byteLength(files[n]) > MAX_BYTES) f.push(`file ${n} is ${Buffer.byteLength(files[n])} bytes: at most ${MAX_BYTES}`)
     // 3 and 4: every text the runner turns into the world (the task and the files)
     const texts = [['scenario.task', s?.task], ...names.map(n => [`file ${n}`, files[n]])].filter(([, t]) => typeof t === 'string')
     for (const [where, t] of texts) {
@@ -71,11 +73,11 @@ export function check(doc) {
 }
 
 if (process.argv[1] && fs.realpathSync(process.argv[1]) === fs.realpathSync(new URL(import.meta.url).pathname)) {
-    const file = process.argv[2]
-    if (!file) { console.error('usage: node check-scenario.mjs <scenario.json>'); process.exit(2) }
+    const args = process.argv.slice(2), builtin = args.includes('--builtin'), file = args.find(a => !a.startsWith('--'))
+    if (!file) { console.error('usage: node check-scenario.mjs [--builtin] <scenario.json>'); process.exit(2) }
     let doc
     try { doc = JSON.parse(fs.readFileSync(file, 'utf8')) } catch (e) { console.log(`FAIL ${file}: not readable JSON (${e.message})`); process.exit(1) }
-    const f = check(doc)
+    const f = check(doc, { builtin })
     if (!f.length) { console.log(`OK ${file}`); process.exit(0) }
     for (const x of f) console.log(`FAIL ${x}`)
     process.exit(1)

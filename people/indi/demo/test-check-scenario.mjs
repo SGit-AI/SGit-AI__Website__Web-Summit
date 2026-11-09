@@ -34,10 +34,11 @@ if (fs.existsSync(angelo)) {
     const mod = await import(pathToFileURL(angelo).href)
     const list = mod.SCENARIOS || {}
     const items = Array.isArray(list) ? list : Object.values(list)
-    // Known: his "free up space" scenario has 9 files, one over the brief's limit of 8 for a visitor's scenario
-    // (raised in trials.md). Everything else in his four must pass.
-    items.filter(x => x && x.files).forEach((sc, i) => expect(`Angelo's scenario ${i + 1} (${sc.title}) passes`, check({ company: {}, scenario: sc }),
-        Object.keys(sc.files).length > 8 ? [`${Object.keys(sc.files).length} files`] : []))
+    // His built-in scenarios are not visitors': format only, no visitor limits (the conductor, 9 November)
+    items.filter(x => x && x.files).forEach((sc, i) => expect(`Angelo's scenario ${i + 1} (${sc.title}) passes as built-in`, check({ company: {}, scenario: sc }, { builtin: true }), []))
+    // and the visitor limit still bites: the same 9-file scenario fails as a visitor's
+    const big = items.find(x => x && x.files && Object.keys(x.files).length > 8)
+    if (big) expect('a 9-file scenario fails as a visitor\'s', check({ company: {}, scenario: big }), [`${Object.keys(big.files).length} files`])
 }
 console.log(bad ? `${bad} failing` : 'PASS')
 process.exit(bad ? 1 : 0)
