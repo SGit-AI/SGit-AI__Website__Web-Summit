@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1475",
+    "date": "2026-11-09",
+    "what": "policy@PrompTugal.angelo: run 6: quiet; P-11 closed (the desktop installers dropped at Angelo's word)",
+    "by": "policy@PrompTugal.angelo",
+    "from": "18240523d"
+  },
+  {
     "version": "v0.2.1474",
     "date": "2026-11-09",
     "what": "logging my runs (WS-160), signed; the line in both my scheduled tasks",
