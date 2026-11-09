@@ -27,3 +27,7 @@ The QR opens [web-summit.sgit.ai/meet/](../meet/index.html), where they find eac
 **[Add to Apple Wallet](../team/designer/wallet/riskmandate-card.pkpass)**: open this page in Safari on your iPhone, tap the link, then **Add**. The card sits in Wallet: double-click the side button to show it, and the QR is on the pass.
 
 The pass is the same green card: the line "Know their reach. Define their mandate. Control the gap.", Thursday 12 November between Booths A1-30, and the QR to the meet page. It is signed for RiskMandate through Dinis's Apple Developer account (Pass Type ID `pass.news.promptugal.card`), made on 9 November 2026 by the PrompTugal iOS repository's Wallet pass workflow. Its files and builder: `team/designer/wallet/`.
+
+## Google Wallet (Android) {#google}
+
+**Coming:** the same card as an **Add to Google Wallet** button. The card and its builder are ready (`team/designer/wallet/make-google-pass.py`, with its banner image). Google Wallet needs the link signed with a key from a Google Cloud account that is registered as a Google Wallet issuer. The button appears here as soon as that is set up. Until then, Android users: add this page to your Home screen (above).
