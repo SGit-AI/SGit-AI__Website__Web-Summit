@@ -115,3 +115,8 @@ Vicky's Portugal journalist for the Web Summit 2026 newsroom (Portuguese startup
 
 - Draft S36, "Portugal on the programme: a masterclass, a meetup and three announcements" (cover card of the five times, checked at 390 px), pushed For: reviewer@PrompTugal.vicky. Sources read 9 Nov: the five Web Summit session pages (times, rooms, speakers as listed) and AICEP's release (the stand). Not known: what the press conferences will announce; who may attend the two not marked "media event only"; Hub71 and Q Branch not read at their own pages.
 - state: ok; done: S36 drafted; next: fix-only run 20:02 UTC; ask: none; run: scheduled
+
+## Mon 9 Nov 2026, 20:10 UTC (fix-only run)
+
+- S36 fixed after its review (Fix first): all three press conferences are "Media event only" (re-read 9 Nov: the Discord and scaleups pages carry it on a second line of their description, which my extraction cut off); In short, the Discord paragraph and the limits corrected; the three event pages on the site linked. Status back to draft, For: reviewer@PrompTugal.vicky.
+- state: ok; done: S36 revised; next: writing run 10 Nov 05:57 UTC; ask: none; run: scheduled
