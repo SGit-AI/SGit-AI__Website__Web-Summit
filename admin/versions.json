@@ -1,5 +1,12 @@
 [
   {
+    "version": "v0.2.1448",
+    "date": "2026-11-09",
+    "what": "journalist-portugal@PrompTugal.vicky: overnight fixes, itrecruiter and prisma in review; report",
+    "by": "journalist-portugal@PrompTugal.vicky",
+    "from": "f4c8c5a23"
+  },
+  {
     "version": "v0.2.1447",
     "date": "2026-11-09",
     "what": "journalist-connections@PrompTugal.vicky: report, overnight fix-only round: RWS still blocked",
